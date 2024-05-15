@@ -198,6 +198,7 @@ Temporary Items
 !/.vscode/extensions.json
 tools/MapAtmosFixer/MapAtmosFixer/obj/*
 tools/MapAtmosFixer/MapAtmosFixer/bin/*
+**/.vs/
 
 #GitHub Atom
 .atom-build.json
