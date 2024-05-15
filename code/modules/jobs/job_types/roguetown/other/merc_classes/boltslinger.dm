@@ -1,0 +1,49 @@
+/datum/advclass/mercenary/boltslinger
+	name = "Boltslinger"
+	tutorial = "A cutthroat and a soldier of fortune, your mastery of the crossbow has brought you to many battlefields, all in pursuit of mammon."
+	allowed_sexes = list("male", "female")
+	allowed_races = list("Humen",
+	"Humen",
+	"Half-Elf",
+	"Tiefling",
+	"Dwarf",
+	"Dark Elf",
+	"Aasimar"
+	)
+	outfit = /datum/outfit/job/roguetown/mercenary/boltslinger
+	ismerc = TRUE
+
+
+/datum/outfit/job/roguetown/mercenary/boltslinger/pre_equip(mob/living/carbon/human/H)
+	..()
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	cloak = /obj/item/clothing/cloak/half
+	head = /obj/item/clothing/head/roguetown/helmet/sallet
+	gloves = /obj/item/clothing/gloves/roguetown/angle
+	belt = /obj/item/storage/belt/rogue/leather
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
+	beltr = /obj/item/rogueweapon/sword/iron
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
+	beltl = /obj/item/quiver/bolts
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+	pants = /obj/item/clothing/under/roguetown/tights/black
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+		H.change_stat("perception", 3)
+		H.change_stat("endurance", 1)
+		H.change_stat("strength", 1)
+	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)

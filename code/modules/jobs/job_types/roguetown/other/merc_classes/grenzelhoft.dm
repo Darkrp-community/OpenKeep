@@ -1,0 +1,47 @@
+/datum/advclass/mercenary/grenzelhoft
+	name = "Grenzelhoft"
+	tutorial = "A mercenary from the Grenzelhoft Empire's Mercenary Guild. Their only care is coin, and the procurement of coin."
+	allowed_sexes = list("male", "female")
+	allowed_races = list("Humen",
+	"Humen",
+	"Dwarf")
+	outfit = /datum/outfit/job/roguetown/mercenary/grenzelhoft
+	ismerc = TRUE
+
+
+/datum/outfit/job/roguetown/mercenary/grenzelhoft/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+	
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
+
+	if(H.gender == FEMALE)
+		H.underwear = "Femleotard"
+		H.underwear_color = CLOTHING_BLACK
+		H.update_body()
+	
+	pants = /obj/item/clothing/under/roguetown/grenzelpants
+	shoes = /obj/item/clothing/shoes/roguetown/grenzelhoft
+	gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+	belt = /obj/item/storage/belt/rogue/leather
+	shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
+	head = /obj/item/clothing/head/roguetown/grenzelhofthat
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+	backl = /obj/item/storage/backpack/rogue/satchel
+	backr = /obj/item/rogueweapon/greatsword/zwei
+	backpack_contents = list(/obj/item/roguekey/mercenary)
+
+	H.change_stat("strength", 1)
+	H.change_stat("endurance", 1)
+	H.change_stat("speed", -1)
+	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
