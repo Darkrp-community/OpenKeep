@@ -226,3 +226,6 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 config/admins.txt
 cfg/admin.txt
 config/admins.txt
+
+# Ignore compile options to default to testing environment
+#/code/_compile_options.dm
