@@ -1,3 +1,0 @@
-<!-- Most valid html will work in here, excluding images. -->
-STONEKEEP Discord Server: <a href="https://discord.gg/224QdHzv3x">discord.gg/Stonekeep</a>
-<center>* Unstable Playtest - Expect Restarts *</center>
