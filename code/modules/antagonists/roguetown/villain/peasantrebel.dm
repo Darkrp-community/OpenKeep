@@ -1,5 +1,5 @@
 //How often to check for promotion possibility
-#define HEAD_UPDATE_PERIOD 300
+#define INGAME_ROLE_HEAD_UPDATE_PERIOD 300
 
 /datum/antagonist/prebel
 	name = "Peasant Rebel"

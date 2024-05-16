@@ -367,8 +367,8 @@
 //			return FALSE
 //		else
 //			if(!supress_message)
-//				AM.visible_message("<span class='danger'>[src] has pulled [AM] from [AM.pulledby]'s grip.</span>", \
-//								"<span class='danger'>[src] has pulled me from [AM.pulledby]'s grip.</span>", null, null, src)
+//				AM.visible_message("<span class='danger'>[src] has pulled [AM] from [AM.pulledby]'s grip.</span>", "<span class='danger'>[src] has pulled me from [AM.pulledby]'s grip.</span>", null, null, src)
+//
 //				to_chat(src, "<span class='notice'>I pull [AM] from [AM.pulledby]'s grip!</span>")
 //			log_combat(AM, AM.pulledby, "pulled from", src)
 //			AM.pulledby.stop_pulling() //an object can't be pulled by two mobs at once.
@@ -1813,7 +1813,7 @@
 		visible_message("<span class='info'>[src] looks around.</span>")
 	var/looktime = 50 - (STAPER * 2)
 	if(do_after(src, looktime, target = src))
-		var/huhsneak
+		// var/huhsneak
 		for(var/mob/living/M in view(7,src))
 			if(M == src)
 				continue

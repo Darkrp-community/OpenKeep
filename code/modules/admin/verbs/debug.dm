@@ -825,6 +825,8 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	set name = "Start Line Profiling"
 	set desc = ""
 
+	LINE_PROFILE_START
+
 	message_admins("<span class='adminnotice'>[key_name_admin(src)] started line by line profiling.</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Start Line Profiling")
 	log_admin("[key_name(src)] started line by line profiling.")
@@ -833,6 +835,8 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	set category = "Profile"
 	set name = "Stops Line Profiling"
 	set desc = ""
+
+	LINE_PROFILE_STOP
 
 	message_admins("<span class='adminnotice'>[key_name_admin(src)] stopped line by line profiling.</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Stop Line Profiling")
