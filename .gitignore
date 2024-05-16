@@ -214,6 +214,18 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 #dmdoc default folder
 /dmdoc
 
-# Ignore config folder except for example files
-/config/*
-!/config/_EXAMPLE/
+# Ignore custom music and title screens (amend as appropriate)
+/config/jukebox_music/sounds/*
+!/config/jukebox_music/sounds/exclude
+/config/title_music/sounds/*
+!/config/title_music/sounds/exclude
+!/config/title_music/sounds/title1.ogg
+/config/title_screens/images/*
+!/config/title_screens/images/exclude
+/data/triumphs.sav
+config/admins.txt
+cfg/admin.txt
+config/admins.txt
+
+# Ignore compile options to default to testing environment
+#/code/_compile_options.dm

@@ -46,8 +46,8 @@
 				L.roguepray(msg)
 				return
 			L.check_prayer(L,msg)
-			for(var/mob/living/L in hearers(2,src))
-				L.succumb_timer=world.time
+			for(var/mob/living/LICKMYBALLS in hearers(2,src))
+				LICKMYBALLS.succumb_timer = world.time
 
 /mob/living/proc/check_prayer(mob/living/L,message)
 	if(!L || !message)
@@ -326,7 +326,7 @@
 				H.CloseWings()
 			else
 				H.OpenWings()
-			addtimer(CALLBACK(H, open ? /mob/living/carbon/human.proc/OpenWings : /mob/living/carbon/human.proc/CloseWings), wing_time)
+			addtimer(CALLBACK(H, open ? TYPE_PROC_REF(/mob/living/carbon/human, OpenWings) : TYPE_PROC_REF(/mob/living/carbon/human, CloseWings)), wing_time)
 
 /datum/emote/living/flap/aflap
 	key = "aflap"
