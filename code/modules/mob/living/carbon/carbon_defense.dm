@@ -390,7 +390,7 @@
 		do_jitter_animation(jitteriness)
 		stuttering += 2
 		emote("painscream")
-	addtimer(CALLBACK(src, .proc/secondary_shock, should_stun), 20)
+	addtimer(CALLBACK(src, PROC_REF(secondary_shock), should_stun), 20)
 	return shock_damage
 
 ///Called slightly after electrocute act to reduce jittering and apply a secondary stun.
@@ -408,8 +408,7 @@
 //		if(buckled)
 //			to_chat(M, "<span class='warning'>I need to unbuckle [src] first to do that!</span>")
 //			return
-//		M.visible_message("<span class='notice'>[M] shakes [src] trying to get [p_them()] up!</span>", \
-//						"<span class='notice'>I shake [src] trying to get [p_them()] up!</span>")
+//		M.visible_message("<span class='notice'>[M] shakes [src] trying to get [p_them()] up!</span>", "<span class='notice'>I shake [src] trying to get [p_them()] up!</span>")					
 //	else
 	M.visible_message("<span class='notice'>[M] shakes [src].</span>", \
 				"<span class='notice'>I shake [src] to get [p_their()] attention.</span>")

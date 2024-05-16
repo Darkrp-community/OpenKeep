@@ -13,28 +13,28 @@
     var/last_sound
 
 /datum/component/footstep/Initialize(footstep_type_ = FOOTSTEP_MOB_BAREFOOT, volume_ = 0.5, e_range_ = -1)
-    if(!isliving(parent))
-        return COMPONENT_INCOMPATIBLE
-    volume = volume_
-    e_range = e_range_
-    footstep_type = footstep_type_
-    switch(footstep_type)
-        if(FOOTSTEP_MOB_HUMAN)
-            if(!ishuman(parent))
-                return COMPONENT_INCOMPATIBLE
-            RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), .proc/play_humanstep) // Changed PROC_REF to proc call
-        if(FOOTSTEP_MOB_CLAW)
-            footstep_sounds = GLOB.clawfootstep
-        if(FOOTSTEP_MOB_BAREFOOT)
-            footstep_sounds = GLOB.barefootstep
-        if(FOOTSTEP_MOB_HEAVY)
-            footstep_sounds = GLOB.heavyfootstep
-        if(FOOTSTEP_MOB_SHOE)
-            footstep_sounds = GLOB.footstep
-        if(FOOTSTEP_MOB_SLIME)
-            footstep_sounds = 'sound/blank.ogg'
-    if(footstep_type != FOOTSTEP_MOB_HUMAN)
-        RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), .proc/play_simplestep) // Changed PROC_REF to proc call
+	if(!isliving(parent))
+		return COMPONENT_INCOMPATIBLE
+	volume = volume_
+	e_range = e_range_
+	footstep_type = footstep_type_
+	switch(footstep_type)
+		if(FOOTSTEP_MOB_HUMAN)
+			if(!ishuman(parent))
+				return COMPONENT_INCOMPATIBLE
+			RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), PROC_REF(play_humanstep))
+			return
+		if(FOOTSTEP_MOB_CLAW)
+			footstep_sounds = GLOB.clawfootstep
+		if(FOOTSTEP_MOB_BAREFOOT)
+			footstep_sounds = GLOB.barefootstep
+		if(FOOTSTEP_MOB_HEAVY)
+			footstep_sounds = GLOB.heavyfootstep
+		if(FOOTSTEP_MOB_SHOE)
+			footstep_sounds = GLOB.footstep
+		if(FOOTSTEP_MOB_SLIME)
+			footstep_sounds = 'sound/blank.ogg'
+	RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), PROC_REF(play_simplestep)) //Note that this doesn't get called for humans.
 
 ///Prepares a footstep. Determines if it should get played. Returns the turf it should get played on. Note that it is always a /turf/open
 /datum/component/footstep/proc/prepare_step()
