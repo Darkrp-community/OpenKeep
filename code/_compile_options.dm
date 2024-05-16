@@ -4,7 +4,7 @@
 //#define DATUMVAR_DEBUGGING_MODE	//Enables the ability to cache datum vars and retrieve later for debugging which vars changed.
 
 #define MATURESERVER
-//#define TESTSERVER
+#define TESTSERVER
 #define ALLOWPLAY
 
 #define RESPAWNTIME 0
