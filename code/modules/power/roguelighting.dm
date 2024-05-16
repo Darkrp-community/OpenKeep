@@ -108,7 +108,7 @@
 	on = FALSE
 	set_light(0)
 	update_icon()
-	addtimer(CALLBACK(src, .proc/lights_on), 5 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(lights_on)), 5 MINUTES)
 
 /obj/machinery/light/roguestreet/proc/lights_on()
 	on = TRUE
@@ -238,7 +238,8 @@
 		update_icon()
 		if(soundloop)
 			soundloop.start()
-		addtimer(CALLBACK(src, .proc/trigger_weather), rand(5,20))
+		addtimer(CALLBACK(src, PROC_REF(trigger_weather)), rand(5,20))
+		return TRUE
 
 /obj/proc/trigger_weather()
 	if(!QDELETED(src))
@@ -501,7 +502,8 @@
 				update_icon()
 				if(soundloop)
 					soundloop.start()
-				addtimer(CALLBACK(src, .proc/trigger_weather), rand(5,20))
+				addtimer(CALLBACK(src, PROC_REF(trigger_weather)), rand(5,20))
+				return TRUE
 
 /obj/machinery/light/rogue/torchholder/Initialize()
 	torchy = new /obj/item/flashlight/flare/torch(src)
@@ -560,7 +562,7 @@
 					on = TRUE
 					update()
 					update_icon()
-					addtimer(CALLBACK(src, .proc/trigger_weather), rand(5,20))
+					addtimer(CALLBACK(src, PROC_REF(trigger_weather)), rand(5,20))
 					return
 			if(!LR.on && on)
 				if(LR.fuel > 0)
@@ -574,7 +576,7 @@
 				on = TRUE
 				update()
 				update_icon()
-				addtimer(CALLBACK(src, .proc/trigger_weather), rand(5,20))
+				addtimer(CALLBACK(src, PROC_REF(trigger_weather)), rand(5,20))
 			else
 				LR.forceMove(src)
 				torchy = LR
