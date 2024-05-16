@@ -31,7 +31,7 @@ jobs:
         run: |
           ls -h $HOME/
           source $HOME/BYOND/byond/bin/byondsetup
-          DreamMaker roguetown.dme
+          DreamMaker stonekeep.dme
 
       - name: Check for errors
         id: check-errors
