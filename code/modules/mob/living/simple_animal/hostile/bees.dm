@@ -311,7 +311,7 @@
 
 /mob/living/simple_animal/hostile/poison/bees/short/Initialize(mapload, timetolive=50 SECONDS)
 	. = ..()
-	addtimer(CALLBACK(src, .proc/death), timetolive)
+	addtimer(CALLBACK(src, PROC_REF(death)), timetolive)
 
 /mob/living/simple_animal/hostile/poison/bees/get_sound(input)
 	switch(input)

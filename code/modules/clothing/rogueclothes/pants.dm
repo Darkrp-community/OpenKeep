@@ -163,7 +163,7 @@
 	detail_tag = "_detail"
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_BLUNT)
-	var/colorgrenz = TRUE
+	colorgrenz = TRUE
 
 /obj/item/clothing/under/roguetown/grenzelpants/update_icon()
 	cut_overlays()

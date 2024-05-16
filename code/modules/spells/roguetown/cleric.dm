@@ -180,8 +180,8 @@
 			continue
 		L.adjust_fire_stacks(5)
 		L.IgniteMob()
-		sleep(40)
-		L.ExtinguishMob()
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, ExtinguishMob)), 4 SECONDS)
+		return TRUE
 
 /obj/effect/proc_holder/spell/invoked/revive
 	name = "Anastasis"
