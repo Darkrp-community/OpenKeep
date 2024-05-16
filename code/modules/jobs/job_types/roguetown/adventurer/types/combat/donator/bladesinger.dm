@@ -9,7 +9,7 @@
 	plevel_req = 1
 	israre = TRUE
 
-/datum/outfit/job/roguetown/adventurer/bladesinger/pre_equip((mob/living/carbon/human/H))
+/datum/outfit/job/roguetown/adventurer/bladesinger/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
