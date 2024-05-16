@@ -6,8 +6,6 @@
 
 GLOBAL_LIST_EMPTY(vampire_objects)
 
-#define MOBSTATS list("strength", "perception", "intelligence", "constitution", "endurance", "speed", "fortune")
-
 /datum/antagonist/vampirelord
 	name = "Vampire Lord"
 	roundend_category = "Vampires"

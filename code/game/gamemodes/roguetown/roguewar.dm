@@ -371,7 +371,7 @@
 
 /datum/game_mode/chaosmode/make_antag_chance(mob/living/carbon/human/character) //klatejoin
 	return
-//******** VILLAINS
+******** VILLAINS
 	var/num_villains = round((num_players() * 0.30)+1, 1)
 	if((SSticker.mode.villains.len + pre_villains.len) >= num_villains) //Upper cap for number of latejoin antagonists
 		return
@@ -409,4 +409,5 @@
 			return "vampire"
 	if(werewolves.len)
 		if(vampires.len)
-			return "werewolf"*/
+			return "werewolf"
+*/
