@@ -204,8 +204,6 @@
 	result = /obj/item/rogueweapon/shovel/small
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 			/obj/item/grown/log/tree/stick = 1)
-
-
 /obj/item/rogueweapon/shovel/small/crafted
 	sellprice = 5
 
@@ -215,6 +213,14 @@
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/arrow = 1,
 				/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 1)
 	craftdiff = 0
+/datum/crafting_recipe/roguetown/book_crafting_kit
+	name = "book crafting kit"
+	result = /obj/item/book_crafting_kit
+	reqs = list(
+			/obj/item/natural/hide = 2,
+			/obj/item/natural/cloth = 1)
+	tools = list(/obj/item/needle = 1)
+	req_table = TRUE
 
 /datum/crafting_recipe/roguetown/pyroarrow
 	name = "pyroclastic arrow"
