@@ -150,8 +150,9 @@
 
 /mob/living/carbon/human/species/goblin/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/after_creation), 10)
-	configure_mind()
+	spawn(10)
+		after_creation()
+	//addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
 
 /mob/living/carbon/human/species/goblin/proc/configure_mind()
     if(!mind)
@@ -417,7 +418,9 @@
 		return
 	spawning = TRUE
 	update_icon()
-	addtimer(CALLBACK(src, .proc/creategob), 4 SECONDS)
+	spawn(2 SECONDS)
+		creategob()
+	//addtimer(CALLBACK(src, PROC_REF(creategob)), 4 SECONDS)
 
 /obj/structure/gob_portal/Destroy()
 	soundloop.stop()
