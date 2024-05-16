@@ -24,13 +24,8 @@ body:
     multiple: true
     description: Where did the bug happen?
     options:
-      - Horizon
-      - Intrepid
-      - Spark
-      - Away Site
-      - Third party ship
-      - Overmap
-      - Event / Other
+      - RogueTown
+      - RogueWorld
   validations:
     required: true
 
@@ -49,10 +44,7 @@ body:
     label: How to reproduce
     description: Describe how to reproduce the issue or, if unable to reproduce it, what steps you did that you believe might have caused the bug.
     placeholder: |
-      Tell us the steps required to trigger your bug. Example:
-      1. Open the PDA
-      2. Click the "Crew Manifest" program
-      3. Byond crashes
+      Tell us the steps required to trigger your bug.
   validations:
     required: false
 
