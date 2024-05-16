@@ -62,11 +62,25 @@
 
 /proc/create_random_books_rogue(amount = 2, location)
 	var/list/possible_books = subtypesof(/obj/item/book/rogue/)
+	var/list/player_book_titles = SSlibrarian.pull_player_book_titles()
 	for(var/b in 1 to amount)
-		var/obj/item/book/rogue/addition = pick(possible_books)
-		if(istype(addition, /obj/item/book/rogue/secret))
-			continue
-		new addition(location)
+		if(prob(0.1))
+			new /obj/item/book_crafting_kit(location)
+		if(prob(clamp(length(player_book_titles), 10, 90)))
+			var/obj/item/book/rogue/playerbook/newbook = new /obj/item/book/rogue/playerbook(location)
+			if(prob(33))
+				newbook.pages = SSlibrarian.file2playerbook("ruined")["text"]
+		else
+			var/obj/item/book/rogue/addition = pick(possible_books)
+			var/obj/item/book/rogue/newbook = new addition(location)
+			if(istype(newbook, /obj/item/book/rogue/secret))
+				qdel(newbook)
+				continue
+			if(istype(newbook, /obj/item/book/rogue/bibble))
+				qdel(newbook)
+				continue
+			if(prob(33))
+				newbook.bookfile = "ruined.json"
 
 
 /obj/structure/bookcase/random/fiction
