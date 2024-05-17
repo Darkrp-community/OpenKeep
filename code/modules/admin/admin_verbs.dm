@@ -116,7 +116,6 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/set_dynex_scale,
 	/client/proc/drop_dynex_bomb,
 	/client/proc/cinematic,
-	/client/proc/one_click_antag,
 	/client/proc/cmd_admin_add_freeform_ai_law,
 	/client/proc/object_say,
 	/client/proc/toggle_random_events,
@@ -689,6 +688,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 /client/proc/check_ai_laws()
 	set name = "Check AI Laws"
 	set category = "Admin"
+	set hidden = 1
 	if(holder)
 		src.holder.output_ai_laws()
 
@@ -784,6 +784,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 /client/proc/end_party()
 	set category = "GameMaster"
 	set name = "EndPlaytest"
+	set hidden = 1
 	if(!holder)
 		return
 	if(!SSticker.end_party)
@@ -796,7 +797,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 /client/proc/delete_player_book()
 	set name = "Database Delete Player Book"
 	set category = "Admin"
-	set desc = ""
+	set name = "Delete Player Made Book"
 	if(!holder)
 		return
 	if(SSlibrarian.del_player_book(input(src, "What is the book file you want to delete? (spaces and other characters are their url encode versions for the file name, so for example spaces are +)")))
