@@ -6,8 +6,6 @@
 
 GLOBAL_LIST_EMPTY(vampire_objects)
 
-#define MOBSTATS list("strength", "perception", "intelligence", "constitution", "endurance", "speed", "fortune")
-
 /datum/antagonist/vampirelord
 	name = "Vampire Lord"
 	roundend_category = "Vampires"
@@ -77,7 +75,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			mypool = mansion
 		equip_spawn()
 		greet()
-		addtimer(CALLBACK(owner.current, /mob/living/carbon/human/.proc/spawn_pick_class, "VAMPIRE SPAWN"), 5 SECONDS)
+		addtimer(CALLBACK(owner.current, TYPE_PROC_REF(/mob/living/carbon/human, spawn_pick_class), "VAMPIRE SPAWN"), 5 SECONDS)
 	else
 		forge_vampirelord_objectives()
 		finalize_vampire()
@@ -86,7 +84,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		for(var/obj/structure/vampire/bloodpool/mansion in GLOB.vampire_objects)
 			mypool = mansion
 		equip_lord()
-		addtimer(CALLBACK(owner.current, /mob/living/carbon/human/.proc/choose_name_popup, "VAMPIRE LORD"), 5 SECONDS)
+		addtimer(CALLBACK(owner.current, TYPE_PROC_REF(/mob/living/carbon/human, choose_name_popup), "VAMPIRE LORD"), 5 SECONDS)
 		greet()
 	return ..()
 // OLD AND EDITED
@@ -172,7 +170,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	blocksound = PLATEHIT
-	var/do_sound = FALSE
+	do_sound = FALSE
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 	r_sleeve_status = SLEEVE_NOMOD
@@ -218,7 +216,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	nodismemsleeves = TRUE
 	max_integrity = 500
 	allowed_sex = list(MALE, FEMALE)
-	var/do_sound = TRUE
+	do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
@@ -293,13 +291,13 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 /datum/antagonist/vampirelord/proc/finalize_vampire()
 	owner.current.forceMove(pick(GLOB.vlord_starts))
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
-	..()
+	
 
 /datum/antagonist/vampirelord/proc/finalize_vampire_lesser()
 	if(!sired)
 		owner.current.forceMove(pick(GLOB.vspawn_starts))
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
-	..()
+	
 
 /datum/antagonist/vampirelord/proc/vamp_look()
 	var/mob/living/carbon/human/V = owner.current
@@ -1035,8 +1033,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 /obj/structure/vampire/portal/sending
 	name = "Eerie Portal"
 	icon_state = "portal"
-	var/duration = 999
-	var/spawntime = null
+	duration = 999
+	spawntime = null
 	var/turf/destloc
 // LANDMARKS
 
@@ -1084,11 +1082,11 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 /mob/dead/observer/rogue/arcaneeye
 	sight = 0
 	see_in_dark = 2
-	var/next_gmove
-	var/misting = 0
+
+	misting = 0
 	var/mob/living/carbon/human/vampirelord = null
 	icon_state = "arcaneeye"
-	var/draw_icon = FALSE
+	draw_icon = FALSE
 	hud_type = /datum/hud/eye
 
 /mob/proc/scry(can_reenter_corpse = 1, force_respawn = FALSE, drawskip)
