@@ -12,7 +12,7 @@
 	plevel_req = 1
 	israre = TRUE
 
-/datum/outfit/job/roguetown/adventurer/longbeard/pre_equip((mob/living/carbon/human/H))
+/datum/outfit/job/roguetown/adventurer/longbeard/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)

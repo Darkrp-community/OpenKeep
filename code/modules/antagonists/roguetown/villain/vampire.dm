@@ -116,7 +116,7 @@
 
 /datum/antagonist/vampire/proc/finalize_vampire()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
-	..()
+	
 
 
 /datum/antagonist/vampire/on_life(mob/user)
@@ -376,7 +376,7 @@
 	if(mob_timers["becoming_vampire"])
 		return
 	mob_timers["becoming_vampire"] = world.time
-	addtimer(CALLBACK(src, .mob/living/carbon/human/proc/vampire_finalize), 2 MINUTES)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, vampire_finalize)), 2 MINUTES)
 	to_chat(src, "<span class='danger'>I feel sick...</span>")
 	src.playsound_local(get_turf(src), 'sound/music/horror.ogg', 80, FALSE, pressure_affected = FALSE)
 	flash_fullscreen("redflash3")
@@ -408,4 +408,4 @@
 		H.layer = SPLASHSCREEN_LAYER+0.1
 		client.screen += H
 		H.Fade()
-		addtimer(CALLBACK(H, /obj/screen/gameover/proc/Fade, TRUE), 100)
+		addtimer(CALLBACK(H, TYPE_PROC_REF(/obj/screen/gameover, Fade), TRUE), 100)

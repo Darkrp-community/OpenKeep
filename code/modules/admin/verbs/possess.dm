@@ -1,5 +1,6 @@
 /proc/possess(obj/O in world)
 	set name = "Possess Obj"
+	set category = null
 	set hidden = 0
 
 	if((O.obj_flags & DANGEROUS_POSSESSION) && CONFIG_GET(flag/forbid_singulo_possession))
@@ -25,8 +26,9 @@
 	usr.control_object = O
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Possess Object") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/proc/release()
+/proc/release(obj/O in world)
 	set name = "Release Obj"
+	set category = null
 	set hidden = 0
 	//usr.loc = get_turf(usr)
 
@@ -42,6 +44,7 @@
 	usr.loc = get_turf(usr.control_object)
 	usr.reset_perspective()
 	usr.control_object = null
+	usr.forceMove(O.loc)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Release Object") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /proc/givetestverbs(mob/M in GLOB.mob_list)

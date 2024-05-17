@@ -59,7 +59,6 @@
 			H.possibleclass += A
 
 /mob/living/carbon/human/proc/mercsetup()
-	..()
 	if(!advsetup)
 		testing("RETARD")
 		return TRUE

@@ -38,7 +38,7 @@
 				H.toggle_rogmove_intent(MOVE_INTENT_WALK, TRUE)
 				playsound(src, "genblunt", 100, TRUE)
 				H.visible_message("<span class='warning'>[H] runs into [src]!</span>", "<span class='warning'>I run into [src]!</span>")
-				addtimer(CALLBACK(H, /mob/living/carbon/human/.proc/Knockdown, 10), 10)
+				addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, Knockdown), 10), 10)
 
 
 /obj/structure/Destroy()
@@ -124,8 +124,7 @@
 	adjusted_climb_time -= user.STASPD * 2
 	adjusted_climb_time = max(adjusted_climb_time, 0)
 //	if(adjusted_climb_time)
-//		user.visible_message("<span class='warning'>[user] starts climbing onto [src].</span>", \
-//									"<span class='warning'>I start climbing onto [src]...</span>")
+//		user.visible_message("<span class='warning'>[user] starts climbing onto [src].</span>", "<span class='warning'>I start climbing onto [src]...</span>")								
 	structureclimber = user
 	if(do_mob(user, user, adjusted_climb_time))
 		if(src.loc) //Checking if structure has been destroyed
