@@ -1665,7 +1665,7 @@
 		if(H.stress)
 			state2use = "stress1"
 			if(H.stress == STRESS_VGOOD)
-				state2use = "stress0"
+				state2use = "stress1"
 			if(H.stress >= STRESS_GOOD)
 				state2use = "stress1"
 			if(H.stress >= STRESS_BAD)
