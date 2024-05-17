@@ -370,7 +370,6 @@ SUBSYSTEM_DEF(job)
 
 	//Shuffle players and jobs
 	unassigned = shuffle(unassigned)
-	unassigned = sort_male_female(unassigned)
 
 	HandleFeedbackGathering()
 
