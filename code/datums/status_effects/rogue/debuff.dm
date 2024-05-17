@@ -5,13 +5,11 @@
 
 /datum/status_effect/debuff/hungryt1
 	id = "hungryt1"
-	alert_type = /obj/screen/alert/status_effect/debuff/hungryt1
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/hungryt1
 	effectedstats = list("speed" = -1,"strength" = -1, "constitution" = -1, "endurance" = -1)
 	duration = 100
 
-/obj/screen/alert/status_effect/debuff/hungryt1
-	name = "Peckish, stomach growling"
-	desc = "<span class='warning'>I am getting hungry.</span>\n"
+/atom/movable/screen/alert/status_effect/debuff/hungryt1
 	icon_state = "hunger1"
 
 /datum/status_effect/debuff/hungryt1/on_apply()
@@ -28,11 +26,11 @@
 
 /datum/status_effect/debuff/hungryt2
 	id = "hungryt2"
-	alert_type = /obj/screen/alert/status_effect/debuff/hungryt2
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/hungryt2
 	effectedstats = list("speed" = -4,"strength" = -2, "constitution" = -2, "endurance" = -1)
 	duration = 100
 
-/obj/screen/alert/status_effect/debuff/hungryt2
+/atom/movable/screen/alert/status_effect/debuff/hungryt2
 	name = "Hungry, need food"
 	desc = "<span class='warning'>My stomach hurts, I need food.</span>\n"
 	icon_state = "hunger2"
@@ -51,11 +49,11 @@
 
 /datum/status_effect/debuff/hungryt3
 	id = "hungryt3"
-	alert_type = /obj/screen/alert/status_effect/debuff/hungryt3
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/hungryt3
 	effectedstats = list("speed" = -6,"strength" = -6, "constitution" = -6, "endurance" = -6)
 	duration = 100
 
-/obj/screen/alert/status_effect/debuff/hungryt3
+/atom/movable/screen/alert/status_effect/debuff/hungryt3
 	name = "STARVING"
 	desc = "<span class='boldwarning'>I AM STARVING!</span>\n"
 	icon_state = "hunger3"
@@ -74,12 +72,12 @@
 ////////////////////
 
 /datum/status_effect/debuff/thirstyt1
-	id = "thirstyt1"
-	alert_type = /obj/screen/alert/status_effect/debuff/thirstyt1
+	id = "thirsty1"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/thirstyt1
 	effectedstats = list("endurance" = -1, "speed" = -1)
 	duration = 100
 
-/obj/screen/alert/status_effect/debuff/thirstyt1
+/atom/movable/screen/alert/status_effect/debuff/thirstyt1
 	name = "Getting thirsty"
 	desc = "<span class='warning'>I could use a drink.</span>\n"
 	icon_state = "thirst1"
@@ -98,12 +96,12 @@
 	return ..()
 
 /datum/status_effect/debuff/thirstyt2
-	id = "thirstyt2"
-	alert_type = /obj/screen/alert/status_effect/debuff/thirstyt2
+	id = "thirsty2"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/thirstyt2
 	effectedstats = list("speed" = -4, "endurance" = -4)
 	duration = 100
 
-/obj/screen/alert/status_effect/debuff/thirstyt2
+/atom/movable/screen/alert/status_effect/debuff/thirstyt2
 	name = "Extremly thirsty"
 	desc = "<span class='warning'>If I don't drink something soon, my mouth will be sand.</span>\n"
 	icon_state = "thirst2"
@@ -121,12 +119,12 @@
 	return ..()
 
 /datum/status_effect/debuff/thirstyt3
-	id = "thirstyt3"
-	alert_type = /obj/screen/alert/status_effect/debuff/thirstyt3
+	id = "thirsty3"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/thirstyt3
 	effectedstats = list("strength" = -6, "speed" = -6, "endurance" = -6)
 	duration = 100
 
-/obj/screen/alert/status_effect/debuff/thirstyt3
+/atom/movable/screen/alert/status_effect/debuff/thirstyt3
 	name = "Extreme Dehydration"
 	desc = "<span class='boldwarning'>I AM DYING OF THIRST!</span>\n"
 	icon_state = "thirst3"
@@ -218,53 +216,53 @@
 
 /datum/status_effect/debuff/bleeding
 	id = "bleedingt1"
-	alert_type = /obj/screen/alert/status_effect/debuff/bleedingt1
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/bleedingt1
 	effectedstats = list("speed" = -2)
 	duration = 100
 
-/obj/screen/alert/status_effect/debuff/bleedingt1
+/atom/movable/screen/alert/status_effect/debuff/bleedingt1
 	name = "Dizzy"
 	desc = "<span class='warning'>Gah! I am bleeding!</span>\n"
 	icon_state = "bleed1"
 
 /datum/status_effect/debuff/bleedingworse
 	id = "bleedingt2"
-	alert_type = /obj/screen/alert/status_effect/debuff/bleedingt2
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/bleedingt2
 	effectedstats = list("strength" = -1, "speed" = -4)
 	duration = 100
 
-/obj/screen/alert/status_effect/debuff/bleedingt2
+/atom/movable/screen/alert/status_effect/debuff/bleedingt2
 	name = "Faint"
 	desc = "<span class='warning'>I am bleeding heavily! Help!</span>\n"
 	icon_state = "bleed2"
 
 /datum/status_effect/debuff/bleedingworst
 	id = "bleedingt3"
-	alert_type = /obj/screen/alert/status_effect/debuff/bleedingt3
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/bleedingt3
 	effectedstats = list("strength" = -3, "speed" = -6)
 	duration = 100
 
-/obj/screen/alert/status_effect/debuff/bleedingt3
+/atom/movable/screen/alert/status_effect/debuff/bleedingt3
 	name = "Drained"
 	desc = "<span class='boldwarning'>I feel like I am dying.. so.. weak..</span>\n"
 	icon_state = "bleed3"
 
 /datum/status_effect/debuff/sleepytime
 	id = "sleepytime"
-	alert_type = /obj/screen/alert/status_effect/debuff/sleepytime
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/sleepytime
 	effectedstats = list("speed" = -2, "endurance" = -2)
 
-/obj/screen/alert/status_effect/debuff/sleepytime
+/atom/movable/screen/alert/status_effect/debuff/sleepytime
 	name = "Tired"
 	desc = "<span class='warning'>I am feeling tired.</span>\n"
 	icon_state = "sleepy"
 
 /datum/status_effect/debuff/trainsleep
 	id = "trainsleep"
-	alert_type = /obj/screen/alert/status_effect/debuff/trainsleep
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/trainsleep
 	effectedstats = list("strength" = -3, "speed" = -3,"endurance" = -3)
 
-/obj/screen/alert/status_effect/debuff/trainsleep
+/atom/movable/screen/alert/status_effect/debuff/trainsleep
 	name = "Muscle Soreness"
 	desc = "<span class='warning'>Gaaaah, So sooooooore.</span>\n"
 	icon_state = "muscles"
