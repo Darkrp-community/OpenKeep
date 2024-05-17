@@ -795,7 +795,6 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		to_chat(src, "<span class='interface'>Ending DISABLED.</span>")
 
 /client/proc/delete_player_book()
-	set name = "Database Delete Player Book"
 	set category = "Admin"
 	set name = "Delete Player Made Book"
 	if(!holder)
