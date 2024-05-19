@@ -221,7 +221,7 @@
 				BUFSPE++
 			STASPD = newamt
 
-			update_movespeed(TRUE)
+			update_move_intent_slowdown()
 
 		if("fortune")
 			newamt = STALUC + amt
