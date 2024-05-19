@@ -350,8 +350,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	name = "indoors"
 	icon_state = "blueold"
 	droning_sound = 'sound/music/area/indoor.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = null
+	droning_sound_dusk = 'sound/music/area/septimus.ogg'
+	droning_sound_night = 'sound/music/area/sleeping.ogg'
 	converted_type = /area/rogue/outdoors/exposed/town
 /area/rogue/outdoors/exposed/town
 	icon_state = "town"
@@ -439,6 +439,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = 'sound/music/jukeboxes/tavern2.ogg'
 	converted_type = /area/rogue/outdoors/exposed/tavern
 /area/rogue/outdoors/exposed/tavern
+	icon_state = "tavern"
 	droning_sound = 'sound/music/jukeboxes/tavern1.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = 'sound/music/jukeboxes/tavern2.ogg'
@@ -515,7 +516,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 /area/rogue/outdoors/town/sargoth
 	name = "outdoors"
-	icon_state = "red"
+	icon_state = "sargoth"
 	droning_sound = 'sound/music/area/sargoth.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
