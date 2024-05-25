@@ -195,6 +195,7 @@
 /mob/living/carbon/human/species/goblin/after_creation()
 	..()
 	gender = MALE
+	QDEL_NULL(sexcon)
 	if(src.dna && src.dna.species)
 		var/obj/item/headdy = get_bodypart("head")
 		if(headdy)
