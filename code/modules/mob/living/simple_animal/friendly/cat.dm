@@ -1,3 +1,5 @@
+#define isdarkelf(A) (is_species(A, /datum/species/elf/dark)) // guess we don't have ishelpers yet
+
 //Cat
 /mob/living/simple_animal/pet/cat
 	name = "Inn cat"
