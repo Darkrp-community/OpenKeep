@@ -13,11 +13,9 @@
 /mob/living/carbon/human/species/skeleton/npc
 	aggressive=1
 	mode = AI_IDLE
-	static_npc = FALSE
 	wander = TRUE
 
 /mob/living/carbon/human/species/skeleton/npc/ambush
-	static_npc = FALSE
 	wander = TRUE
 
 /mob/living/carbon/human/species/skeleton/Initialize()

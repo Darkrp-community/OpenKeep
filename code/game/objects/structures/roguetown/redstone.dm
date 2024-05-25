@@ -7,10 +7,11 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 
 /obj/structure/LateInitialize()
 	. = ..()
-	for(var/obj/structure/S in GLOB.redstone_objs)
-		if(S.redstone_id == redstone_id)
-			redstone_attached |= S
-			S.redstone_attached |= src
+	if(redstone_id)
+		for(var/obj/structure/S in GLOB.redstone_objs)
+			if(S.redstone_id == redstone_id)
+				redstone_attached |= S
+				S.redstone_attached |= src
 
 /obj/structure/proc/redstone_triggered()
 	return
@@ -31,9 +32,10 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 		L.changeNext_move(CLICK_CD_MELEE)
 		var/used_time = 100 - (L.STASTR * 10)
 		user.visible_message("<span class='warning'>[user] pulls the lever.</span>")
+		log_game("[key_name(user)] pulled the lever with redstone id \"[redstone_id]\"")
 		if(do_after(user, used_time, target = user))
 			for(var/obj/structure/O in redstone_attached)
-				addtimer(CALLBACK(O, /obj/structure.proc/redstone_triggered, 0))
+				spawn(0) O.redstone_triggered()
 			toggled = !toggled
 			icon_state = "leverfloor[toggled]"
 			playsound(src, 'sound/foley/lever.ogg', 100, extrarange = 3)
@@ -49,7 +51,7 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 
 /obj/structure/floordoor
 	name = "floorhatch"
-	desc = ""
+	desc = "A handy floor hatch for people who need privacy upstairs."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "floorhatch1"
 	density = FALSE

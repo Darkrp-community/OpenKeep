@@ -19,7 +19,6 @@
 	dodgetime = 15 //they can dodge easily, but have a cooldown on it
 	canparry = TRUE
 	flee_in_pain = FALSE
-	static_npc = FALSE
 	wander = TRUE
 
 /mob/living/carbon/human/species/orc/npc/ambush
@@ -28,7 +27,6 @@
 	dodgetime = 15
 	canparry = TRUE
 	flee_in_pain = FALSE
-	static_npc = FALSE
 	wander = TRUE
 
 /obj/item/bodypart/chest/orc
