@@ -104,7 +104,7 @@
 /obj/item/book/rogue/update_icon()
 	icon_state = "[base_icon_state]_[open]"
 
-/obj/item/book/rogue/secret/ledger
+/obj/item/book/rogue/ledger
 	name = "catatoma"
 	icon_state = "ledger_0"
 	base_icon_state = "ledger"
