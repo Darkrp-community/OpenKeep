@@ -1,5 +1,3 @@
-#define isdarkelf(A) (is_species(A, /datum/species/elf/dark)) // guess we don't have ishelpers yet
-
 //Cat
 /mob/living/simple_animal/pet/cat
 	name = "Inn cat"
@@ -235,12 +233,13 @@
 	if((src.loc) && isturf(src.loc))
 		if(!stat && !resting && !buckled)
 			for(var/obj/item/reagent_containers/food/snacks/smallrat/M in view(1,src))
-				if(Adjacent(M) && !(M.dead))
-					visible_message("<span class='notice'>The cat kills the rat!</span>")
-					M.obj_destruction()
-					movement_target = null
-					stop_automated_movement = 0
-					break
+				if(Adjacent(M))
+					if(!M.dead)
+						visible_message("<span class='notice'>The cat kills the rat!</span>")
+						M.obj_destruction()
+						movement_target = null
+						stop_automated_movement = 0
+						break
 
 	
 /mob/living/simple_animal/pet/cat/attack_hand(mob/living/carbon/human/M)
