@@ -1,8 +1,8 @@
 /obj/item/storage/roguebag
 	name = "sack"
-	desc = ""
+	desc = "A simple canvas sack."
 	icon_state = "cbag"
-	item_state = "cbag"
+	item_state = "bag"
 	icon = 'icons/roguetown/items/misc.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head_items.dmi'
 	slot_flags = ITEM_SLOT_HEAD
@@ -10,6 +10,11 @@
 	resistance_flags = NONE
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	max_integrity = 300
+	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/rogue_righthand.dmi'
+	experimental_inhand = FALSE
+	experimental_onhip = FALSE
+	experimental_onback = FALSE
 
 /obj/item/storage/roguebag/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
