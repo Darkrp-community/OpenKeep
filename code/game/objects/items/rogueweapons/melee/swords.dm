@@ -403,7 +403,7 @@
 
 /datum/intent/sword/thrust/short
 	clickcd = 10
-	penfactor = 15
+	penfactor = 30
 	damfactor = 1.2
 
 /obj/item/rogueweapon/sword/iron/messer
