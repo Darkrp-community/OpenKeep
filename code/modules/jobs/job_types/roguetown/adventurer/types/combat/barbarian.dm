@@ -18,6 +18,7 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
@@ -48,7 +49,7 @@
 			beltr = /obj/item/rogueweapon/sword/iron
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		if(5)
-			beltr = /obj/item/rogueweapon/mace/woodclub
+			beltr = /obj/item/rogueweapon/mace
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 	H.change_stat("strength", 3)
 	H.change_stat("endurance", 3)

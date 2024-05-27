@@ -1,7 +1,7 @@
 
 /datum/advclass/combat/puritan
 	name = "Witch Hunter"
-	tutorial = "Witch Hunters know all too well the evils that lurk on this island and have trained for years at identfying and hunting vampires and werewolves and make it their soul duty to rid the land of their filth"
+	tutorial = "Witch Hunters know all too well the evils that lurk on this island and have trained for years at identfying and hunting vampires and werevolves and make it their soul duty to rid the land of their filth"
 	allowed_sexes = list("male")
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/puritan

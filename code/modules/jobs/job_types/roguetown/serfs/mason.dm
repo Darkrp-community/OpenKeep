@@ -27,8 +27,10 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, rand(1,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, rand(1,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, rand(1,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, rand(4,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, rand(4,5), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/masonry, rand(4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, rand(2,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
@@ -48,7 +50,7 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/hammer/claw
 	backl = /obj/item/storage/backpack/rogue/backpack
-	backpack_contents = list(/obj/item/roguekey/mason = 1)
+	backpack_contents = list(/obj/item/roguekey/mason = 1, /obj/item/rogueweapon/huntingknife = 1)
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", 1)
 	H.change_stat("endurance", 1)

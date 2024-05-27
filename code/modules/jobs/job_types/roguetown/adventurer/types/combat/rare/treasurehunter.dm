@@ -26,9 +26,8 @@
 	backpack_contents = list(/obj/item/bait = 1)
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless
 	cloak = /obj/item/clothing/cloak/raincloak/mortus
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
 	shoes = /obj/item/clothing/shoes/roguetown/boots
-	beltr = /obj/item/storage/belt/rogue/pouch
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backr = /obj/item/rogueweapon/shovel
 	head = /obj/item/clothing/head/roguetown/puritan
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
