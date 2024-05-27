@@ -416,6 +416,19 @@
 	minstr = 4
 	wdefense = 2
 
+/obj/item/rogueweapon/sword/short
+	force = 12
+	name = "short sword"
+	desc = "An archaic steel sword made for stabbing."
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
+	icon_state = "swordshort"
+	gripped_intents = null
+	minstr = 4
+	wdefense = 4
+	max_blade_int = 180
+	max_integrity = 270
+
+
 // Sabres
 /obj/item/rogueweapon/sword/sabre
 	name = "sabre"
@@ -453,6 +466,18 @@
 	wdefense = 6
 	wbalance = 1
 	sellprice = 140
+
+/obj/item/rogueweapon/sword/sabre/messer //not IRL sabre, but its a one handed cutting weapon, way lower defense, but has higher damage and the axe chop intent
+	name = "falchion"
+	desc = "A heavy steel falchion."
+	force = 20
+	icon_state = "falchion"
+	smeltresult = /obj/item/ingot/steel
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/axe/chop)
+	gripped_intents = null
+	gripped_intents = null
+	minstr = 4
+	wdefense = 2
 
 //Rapiers
 /obj/item/rogueweapon/sword/rapier
