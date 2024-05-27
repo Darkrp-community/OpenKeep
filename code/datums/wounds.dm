@@ -183,7 +183,7 @@
 
 /datum/wound/bruise
 	name = "hematoma"
-	bleed_rate = 0
+	bleed_rate = 0.3
 	can_sew = FALSE
 	whp = 40
 	woundpain = 20
