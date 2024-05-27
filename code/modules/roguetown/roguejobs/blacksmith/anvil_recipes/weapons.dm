@@ -52,6 +52,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/sword/iron
+
 /datum/anvil_recipe/weapons/idagger
 	name = "iron dagger"
 	appro_skill = /datum/skill/craft/weaponsmithing
@@ -59,11 +60,19 @@
 	created_item = list(/obj/item/rogueweapon/huntingknife/idagger,
 	/obj/item/rogueweapon/huntingknife/idagger)
 
+/datum/anvil_recipe/weapons/sdagger
+	name = "steel dagger"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	created_item = list(/obj/item/rogueweapon/huntingknife/idagger/steel,
+	/obj/item/rogueweapon/huntingknife/idagger/steel)
+
 /datum/anvil_recipe/weapons/sidagger
 	name = "silver dagger"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/silver
 	created_item = /obj/item/rogueweapon/huntingknife/idagger/silver
+
 
 /datum/anvil_recipe/weapons/iflail
 	name = "iron flail"
@@ -92,13 +101,6 @@
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/sword
 
-/datum/anvil_recipe/weapons/sdagger
-	name = "steel dagger"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/steel
-	created_item = list(/obj/item/rogueweapon/huntingknife/idagger/steel,
-	/obj/item/rogueweapon/huntingknife/idagger/steel)
-
 /datum/anvil_recipe/weapons/ssaber
 	name = "steel sabre"
 	appro_skill = /datum/skill/craft/weaponsmithing
@@ -116,6 +118,12 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/sword/cutlass
+
+/datum/anvil_recipe/weapons/sswordshort
+	name = "steel short sword"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/rogueweapon/sword/short
 
 /datum/anvil_recipe/weapons/decsword
 	name = "decorated sword (+g)"
