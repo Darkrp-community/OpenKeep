@@ -81,6 +81,16 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/flail
 
+/datum/anvil_recipe/weapons/iswordshort
+	name = "iron short sword"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/rogueweapon/sword/iron/short
+
+/datum/anvil_recipe/weapons/imesser
+	name = "iron messer"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/rogueweapon/sword/iron/messer
+
 // STEEL GEAR - Fancy shit for Knights
 /datum/anvil_recipe/weapons/sflail
 	name = "steel flail"
