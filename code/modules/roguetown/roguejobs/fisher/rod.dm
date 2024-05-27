@@ -72,11 +72,11 @@
 				if(do_after(user,rand(80,150), target = target)) //rogtodo based on fishing skill
 					if(baited)
 						var/bc = baited.baitchance
-						var/ft = 30
+						var/ft = 0
 						if(user.mind)
 							var/sl = user.mind.get_skill_level(/datum/skill/labor/fishing)
 							if(!sl)
-								bc = 0
+								ft = baited.baitchance
 							else
 								ft += (sl * 10)
 								bc += (sl * 10)
