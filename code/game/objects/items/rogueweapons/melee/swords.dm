@@ -382,6 +382,53 @@
 	max_integrity = 180
 	sellprice = 10
 
+/obj/item/rogueweapon/sword/iron/short
+	name = "short sword"
+	desc = "An archaic iron sword."
+	icon_state = "iswordshort"
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
+	gripped_intents = null
+	minstr = 4
+	wdefense = 3
+
+/obj/item/rogueweapon/sword/iron/short/chipped
+	force = 9
+	desc = "An ancient-looking iron sword."
+	icon_state = "iswordshort_d"
+	max_integrity = 75
+
+/datum/intent/sword/cut/short
+	clickcd = 10
+	damfactor = 0.9
+
+/datum/intent/sword/thrust/short
+	clickcd = 10
+	penfactor = 30
+	damfactor = 1.2
+
+/obj/item/rogueweapon/sword/iron/messer
+	name = "iron messer"
+	desc = "A single edged blade to slice and chop with."
+	force = 12
+	icon_state = "imesser"
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
+	gripped_intents = null
+	minstr = 4
+	wdefense = 2
+
+/obj/item/rogueweapon/sword/short
+	force = 12
+	name = "short sword"
+	desc = "An archaic steel sword made for stabbing."
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
+	icon_state = "swordshort"
+	gripped_intents = null
+	minstr = 4
+	wdefense = 4
+	max_blade_int = 180
+	max_integrity = 270
+
+
 // Sabres
 /obj/item/rogueweapon/sword/sabre
 	name = "sabre"
@@ -419,6 +466,18 @@
 	wdefense = 6
 	wbalance = 1
 	sellprice = 140
+
+/obj/item/rogueweapon/sword/sabre/messer //not IRL sabre, but its a one handed cutting weapon, way lower defense, but has higher damage and the axe chop intent
+	name = "falchion"
+	desc = "A heavy steel falchion."
+	force = 20
+	icon_state = "falchion"
+	smeltresult = /obj/item/ingot/steel
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/axe/chop)
+	gripped_intents = null
+	gripped_intents = null
+	minstr = 4
+	wdefense = 2
 
 //Rapiers
 /obj/item/rogueweapon/sword/rapier
