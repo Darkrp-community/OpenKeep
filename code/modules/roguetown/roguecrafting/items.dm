@@ -260,3 +260,12 @@ datum/crafting_recipe/roguetown/poisonbolt
 			/obj/item/natural/hide = 2,
 			/obj/item/natural/fibers = 2,
 			/obj/item/needle = 1)
+
+/datum/crafting_recipe/roguetown/psicross_d
+	name = "Dendoran psicross"
+	result = /obj/item/clothing/neck/roguetown/psicross/dendor
+	reqs = list(
+			/obj/item/natural/fibers = 1,
+			/obj/item/grown/log/tree/small = 1)
+	craftdiff = 1
+	skillcraft = /datum/skill/craft/crafting

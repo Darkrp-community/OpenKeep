@@ -49,3 +49,13 @@
 	created_item = list(/obj/item/clothing/ring/silver,
 						/obj/item/clothing/ring/silver,
 						/obj/item/clothing/ring/silver)
+
+/datum/anvil_recipe/valuables/psycross_a
+	name = "Astratan psycross"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/neck/roguetown/psicross/astrata
+
+/datum/anvil_recipe/valuables/psycross_n
+	name = "Necran psycross"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/neck/roguetown/psicross/necra
