@@ -6,9 +6,10 @@
 	total_positions = 2
 	spawn_positions = 2
 
-	allowed_races = list("Humen",
-	"Humen",
-	"Half-Elf")
+	allowed_races = list(
+		"Humen",
+		"Half-Elf"
+	)
 	allowed_ages = list(AGE_YOUNG)
 
 	tutorial = "Granted a comfortable life in the Lord's manor as one of his servants! You will appreciate it more and more every day as you clean the floors and are beaten for nothing."
