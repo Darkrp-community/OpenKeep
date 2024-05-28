@@ -88,6 +88,7 @@
 /obj/item/rogue/instrument/lute
 	force = 15
 	name = "lute"
+	desc = "Its graceful curves were designed to weave joyful melodies."
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	icon_state = "lute"
 	minstr = 0
@@ -103,6 +104,7 @@
 
 /obj/item/rogue/instrument/accord
 	name = "accordion"
+	desc = "A harmonious vessel of nostalgia and celebration."
 	icon_state = "accordion"
 	song_list = list("Song 1" = 'sound/music/instruments/accord (1).ogg',
 	"Song 2" = 'sound/music/instruments/accord (2).ogg',
@@ -114,6 +116,7 @@
 /obj/item/rogue/instrument/guitar
 	force = 15
 	name = "guitar"
+	desc = "A guitar made of expensive wood and expert craftsmanship."
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	icon_state = "guitar"
 	minstr = 0
@@ -128,6 +131,7 @@
 
 /obj/item/rogue/instrument/harp
 	name = "harp"
+	desc = "A harp of elven craftsmanship."
 	icon_state = "harp"
 	song_list = list("Song 1" = 'sound/music/instruments/harb (1).ogg',
 	"Song 2" = 'sound/music/instruments/harb (2).ogg',
@@ -135,6 +139,7 @@
 
 /obj/item/rogue/instrument/flute
 	name = "flute"
+	desc = "A slender flute carefully carved from a smooth wood piece."
 	icon_state = "flute"
 	song_list = list("Song 1" = 'sound/music/instruments/flute (1).ogg',
 	"Song 2" = 'sound/music/instruments/flute (2).ogg',
@@ -145,6 +150,7 @@
 
 /obj/item/rogue/instrument/drum
 	name = "drum"
+	desc = "Fashioned from taut skins across a sturdy frame, pulses like a giant heartbeat."
 	icon_state = "drum"
 	song_list = list("Song 1" = 'sound/music/instruments/drum (1).ogg',
 	"Song 2" = 'sound/music/instruments/drum (2).ogg',
