@@ -417,7 +417,7 @@
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/iron
 
-/obj/item/clothing/head/roguetown/helmet/heavy/sheriff
+/obj/item/clothing/head/roguetown/helmet/heavy/captain
 	name = "barred helmet"
 	desc = ""
 	icon_state = "gatehelm"
