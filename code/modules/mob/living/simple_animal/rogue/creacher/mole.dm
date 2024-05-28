@@ -46,7 +46,7 @@
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/mole
-//*
+/*
 /mob/living/simple_animal/hostile/retaliate/rogue/mole/greater
 	name = "Greater Brown Mole"
 	desc = "Holy Moley"
@@ -57,7 +57,7 @@
 						/obj/item/natural/fur = 2)
 	melee_damage_lower = 50
 	melee_damage_upper = 60
-*//
+*/
 /obj/effect/decal/remains/mole
 	name = "remains"
 	gender = PLURAL
