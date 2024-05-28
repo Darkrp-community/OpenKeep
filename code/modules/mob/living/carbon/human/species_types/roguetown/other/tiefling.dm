@@ -9,7 +9,7 @@
 	Having shown up sometime within the past two centuries, very little is known about their culture \
 	as many seem to simply intergrate within whatever society they find themselves in. \
 	Tieflings usually cause strong disturbances with their presence, as their fiendish looks \
-	Many have claimed that they are the spawn of a succubus (Or incubus) laying with a mortal. \
+	many have claimed that they are the spawn of a succubus (Or incubus) laying with a mortal. \
 	In this, their species has suffered vast tragedy throughout their short history, \
 	Facing scrutiny, judgement and even genocide in the past. Wounding many tiefling psyche \
 	and leading to most seeking a solitary life outside the watchful eyes of others. \
