@@ -15,6 +15,9 @@
 	being seen as a massive boon in their society. They are academic and usually well taught\
 	through are noted to suffer from their biology, which tends to be weak and falls apart\
 	without careful upkeep..."
+
+	skin_tone_wording = "Origin City-State"
+
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "ears" = "ElfW", "wings" = "None")
@@ -69,13 +72,13 @@
 
 /datum/species/elf/dark/get_skin_list()
 	return sortList(list(
-	"skin1" = "9796a9",
-	"skin2" = "897489",
-	"skin3" = "938f9c",
-	"skin4" = "737373",
-	"skin5" = "6a616d",
-	"skin6" = "5f5f70",
-	"skin7" = "2F2F38"
+		"Commorah" = SKIN_COLOR_COMMORAH,
+		"Gloomhaven" = SKIN_COLOR_GLOOMHAVEN,
+		"Darkpila" = SKIN_COLOR_DARKPILA,
+		"Sshanntynlan" = SKIN_COLOR_SSHANNTYNLAN,
+		"Llurth Dreir" = SKIN_COLOR_LLURTH_DREIR,
+		"Tafravma" = SKIN_COLOR_TAFRAVMA,
+		"Yuethindrynn" = SKIN_COLOR_YUETHINDRYNN,
 	))
 
 /datum/species/elf/dark/get_hairc_list()

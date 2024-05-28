@@ -6,7 +6,7 @@
 	id = "elf"
 	desc = "<b>Elf</b><br>\
 	Elves, or Wood-Elf by the Elder races, are a generic term for tall, pointy-eared \
-	humanoids that trace their original heritage to the ancient Snow Elves. \
+	humanoids that trace their original heritage to the ancient mysterious Snow Elves. \
 	Considering their diverse history, it is extremely difficult for other mortals \
 	to even concept the various intricacies found in elven society, and the hundreds \
 	if not thousands of tribes that exist within their culture! \
@@ -14,7 +14,11 @@
 	been rivals in various conflicts and territorial disputes. This however does not stop \
 	many humans and elves from forming relationships, which are capable of producing child.\
 	Elves are known for their intelligence and sharp eyes, but their graceful nature does \
-	not lend itself to the concepts of strength or durability..."
+	not lend itself to the concepts of strength or durability... \
+	There are elves from a small smattering of tribes in these parts."
+
+	skin_tone_wording = "Tribal Identity"
+
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
@@ -64,13 +68,13 @@
 
 /datum/species/elf/snow/get_skin_list()
 	return sortList(list(
-	"skin1" = "ffe0d1",
-	"skin2" = "fcccb3",
-	"skin3" = "edc6b3",
-	"skin4" = "e2b9a3",
-	"skin5" = "c9a893",
-	"skin6" = "ba9882",
-	"skin7" = "5d4c41"
+		"Dandelion Creek" = SKIN_COLOR_DANDELION_CREEK,
+		"Roseveil" = SKIN_COLOR_ROSEVEIL,
+		"Azuregrove" = SKIN_COLOR_AZUREGROVE,
+		"Arborshome" = SKIN_COLOR_ARBORSHOME,
+		"Almondvalle" = SKIN_COLOR_ALMONDVALLE,
+		"Walnut Woods" = SKIN_COLOR_WALNUT_WOODS,
+		"Timberborn" = SKIN_COLOR_TIMBERBORN,
 	))
 
 /datum/species/elf/snow/get_hairc_list()

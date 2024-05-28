@@ -12,6 +12,9 @@
 	have historically been at odds with one another. Being the eldest of the weeping God, humen\
 	tend to find fortune easier than the other races, and are so diverse that no other racial trait\
 	are dominant in their species..."
+
+	skin_tone_wording = "Ancestry"
+
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
@@ -49,17 +52,17 @@
 
 /datum/species/human/northern/get_skin_list()
 	return sortList(list(
-	"skin1" = "fff0e9",
-	"skin2" = "ffe0d1",
-	"skin3" = "fcccb3",
-	"skin3" = "edc6b3",
-	"skin4" = "e2b9a3",
-	"skin5" = "d9a284",
-	"skin6" = "c9a893",
-	"skin7" = "ba9882",
-	"skin8" = "ac8369",
-	"skin9" = "9c6f52",
-	"skin10" = "4e3729"
+		"Grenzelhoft" = SKIN_COLOR_GRENZELHOFT,
+		"Hammerhold" = SKIN_COLOR_HAMMERHOLD,
+		"Avar" = SKIN_COLOR_AVAR,
+		"Rockhill" = SKIN_COLOR_ROCKHILL,
+		"Otava" = SKIN_COLOR_OTAVA,
+		"Etrusca" = SKIN_COLOR_ETRUSCA,
+		"Gronn" = SKIN_COLOR_GRONN,
+		"Giza" = SKIN_COLOR_GIZA,
+		"Shalvistine" = SKIN_COLOR_SHALVISTINE,
+		"Lalvestine" = SKIN_COLOR_LALVESTINE,
+		"Ebon" = SKIN_COLOR_EBON,
 	))
 
 /datum/species/human/northern/get_hairc_list()
