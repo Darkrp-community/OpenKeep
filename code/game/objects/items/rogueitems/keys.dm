@@ -77,7 +77,7 @@
 
 /obj/item/roguekey/warehouse
 	name = "Warehouse Key"
-	desc = "This key opens the Stewards warehouse."
+	desc = "This key opens the Steward's warehouse."
 	icon_state = "rustkey"
 	lockid = "warehouse"
 
