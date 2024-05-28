@@ -98,6 +98,7 @@
 	force = 18
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "axe"
+	desc = "A regular iron woodcutting axe."
 	icon_state = "axe"
 	max_blade_int = 130
 	max_integrity = 300
@@ -111,6 +112,7 @@
 /obj/item/rogueweapon/stoneaxe/woodcut/steel
 	slot_flags = ITEM_SLOT_HIP
 	name = "axe"
+	desc = "A steel woodcutting axe. Performs much better than its iron counterpart."
 	icon_state = "saxe"
 	force = 20
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
