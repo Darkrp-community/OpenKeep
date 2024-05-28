@@ -100,6 +100,20 @@
                 /obj/item/natural/fibers = 3)
     craftdiff = 2
 
+/datum/crafting_recipe/roguetown/sewing/fancyhat
+	name = "fancy hat"
+	result = list(/obj/item/clothing/head/roguetown/fancyhat)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/sewing/bardhat
+	name = "bard hat"
+	result = list(/obj/item/clothing/head/roguetown/bardhat)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 4
+
 /datum/crafting_recipe/roguetown/sewing/hgambeson
     name = "padded gambeson"
     result = list(/obj/item/clothing/suit/roguetown/armor/gambeson/heavy)
@@ -107,3 +121,7 @@
                 /obj/item/natural/fibers = 3,
                 /obj/item/natural/hide = 3,
                 /obj/item/natural/fur = 2)
+    craftdiff = 3
+
+
+
