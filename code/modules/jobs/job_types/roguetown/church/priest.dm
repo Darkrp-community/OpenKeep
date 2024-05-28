@@ -148,29 +148,3 @@
 			to_chat(src, "<span class='warning'>I need to do this from the chapel.</span>")
 			return FALSE
 		priority_announce("[inputty]", title = "The Priest Speaks", sound = 'sound/misc/bell.ogg')
-
-
-/obj/effect/proc_holder/spell/self/convertrole/monk
-	name = "Recruit Acolyte"
-	new_role = "Acolyte"
-	recruitment_faction = "Church"
-	recruitment_message = "Serve the Ten, %RECRUIT!"
-	accept_message = "FOR PSYDON!"
-	refuse_message = "I refuse."
-
-/obj/effect/proc_holder/spell/self/convertrole/monk/can_convert(mob/living/carbon/human/recruit)
-	. = ..()
-	if(!.)
-		return
-	if(!recruit.PATRON || !(recruit.PATRON in ALL_PATRON_NAMES_LIST))
-		return FALSE
-
-/obj/effect/proc_holder/spell/self/convertrole/monk/convert(mob/living/carbon/human/recruit, mob/living/carbon/human/recruiter)
-	. = ..()
-	if(!.)
-		return
-	var/datum/devotion/cleric_holder/holder = new /datum/devotion/cleric_holder(recruit, recruit.PATRON)
-	holder.holder_mob = recruit
-	holder.update_devotion(50, 50)
-	holder.grant_spells(recruit)
-	recruit.verbs |= list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
