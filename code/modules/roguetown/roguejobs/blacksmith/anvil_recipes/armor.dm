@@ -148,6 +148,11 @@
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/pigface)
 
+/datum/anvil_recipe/armor/bascinet
+	name = "bascinet helmet"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/bascinet
+
 /datum/anvil_recipe/armor/helmetknight
 	name = "knight's helmet (2)"
 	req_bar = /obj/item/ingot/steel
