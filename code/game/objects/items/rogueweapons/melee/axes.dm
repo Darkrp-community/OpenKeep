@@ -3,7 +3,7 @@
 	force = 12
 	possible_item_intents = list(/datum/intent/axe/chop/stone)
 	name = "stone axe"
-	desc = ""
+	desc = "A crude axe made out of a wooden pole and a rock secured with some fibers. It's not glorious, but will do the job when cutting trees and trunks."
 	icon_state = "stoneaxe"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "axe"
@@ -71,6 +71,7 @@
 	force = 33
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "battle axe"
+	desc = "A fine, massive and high quality battle axe. It looks as dangerous as it's massive. You can tell this well crafted amalgamation of steel is precisely designed to cut a man in half, armor or not. A very lethal choice."
 	icon_state = "battleaxe"
 	max_blade_int = 300
 	smeltresult = /obj/item/ingot/steel

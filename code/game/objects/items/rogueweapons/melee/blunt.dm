@@ -4,7 +4,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
 	name = "mace"
-	desc = ""
+	desc = "A classic blunt weapon with a lot of momentum. Has a decent force to it, and deals a fair amount of damage."
 	icon_state = "mace"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "mace_greyscale"
@@ -41,7 +41,7 @@
 	force = 10
 	force_wielded = 12
 	name = "mace"
-	desc = ""
+	desc = "A well-crafted mace with a steel head. Very sturdy and delivers formidably higher damage and defensive capacities than a regular mace."
 	icon_state = "smace"
 	wbalance = -1
 	smeltresult = /obj/item/ingot/steel
@@ -86,7 +86,7 @@
 	force = 10
 	force_wielded = 12
 	name = "club"
-	desc = ""
+	desc = "An extremely crude wooden club that looks like it has fallen off a tree. Would offer little defensive properties, yet deliver an applicable amount of damage."
 	icon_state = "club1"
 	//dropshrink = 0.75
 	wbalance = 0
@@ -142,7 +142,7 @@
 	force = 5
 	force_wielded = 8
 	name = "wooden sword"
-	desc = ""
+	desc = "A wooden sword. It does absolutely minimal damage and offers minimal defensive capacities, perfect for sparring."
 	icon_state = "wsword"
 	//dropshrink = 0.75
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
@@ -173,7 +173,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/dagger/thrust)
 	name = "warclub"
-	desc = "Good morning."
+	desc = "A large pole-like weapon with a steel end. It would deliver formidable blunt damage but offer extremely poor defensive capacities. Won't have as much force unwielded..."
 	icon_state = "goedendag"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	sharpness = IS_BLUNT
