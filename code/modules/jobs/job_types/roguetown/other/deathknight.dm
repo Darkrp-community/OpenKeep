@@ -10,7 +10,7 @@
 	allowed_races = list(
 		"Humen",
 		"Elf", 
-		"Half-Elf","
+		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf"
