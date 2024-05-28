@@ -154,7 +154,7 @@
 	name = "Recruit Acolyte"
 	new_role = "Acolyte"
 	recruitment_faction = "Church"
-	recruitment_message = "Serve the ten, %RECRUIT!"
+	recruitment_message = "Serve the Ten, %RECRUIT!"
 	accept_message = "FOR PSYDON!"
 	refuse_message = "I refuse."
 

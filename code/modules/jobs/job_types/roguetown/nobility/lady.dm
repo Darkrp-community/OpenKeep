@@ -76,7 +76,7 @@
 	name = "Recruit Servant"
 	new_role = "Servant"
 	recruitment_faction = "Servants"
-	recruitment_message = "Serve the crown, %RECRUIT!"
+	recruitment_message = "Serve the Crown, %RECRUIT!"
 	accept_message = "FOR THE CROWN!"
 	refuse_message = "I refuse."
 	charge_max = 100
