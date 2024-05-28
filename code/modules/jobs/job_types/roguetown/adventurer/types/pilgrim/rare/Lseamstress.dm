@@ -7,12 +7,14 @@
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
-		"Dark Elf",,
+		"Dark Elf",
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/seamstress
 	isvillager = TRUE
 	ispilgrim = FALSE
+	maxchosen = 1
+	israre = TRUE
 
 /datum/outfit/job/roguetown/adventurer/seamstress/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -26,7 +28,6 @@
 	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
-	mouth = /obj/item/needle
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	pants = /obj/item/clothing/under/roguetown/tights/random
 	armor = /obj/item/clothing/suit/roguetown/armor/armordress
@@ -37,7 +38,7 @@
 	beltr = /obj/item/rogueweapon/huntingknife/idagger
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	beltl = /obj/item/needle
-	backpack_contents = list(/obj/item/natural/cloth = 1, /obj/item/natural/cloth = 1, /obj/item/natural/bundle/fibers = 1)
+	backpack_contents = list(/obj/item/natural/cloth = 1, /obj/item/natural/cloth = 1, /obj/item/natural/bundle/fibers = 1, /obj/item/needle = 1)
 	H.change_stat("intelligence", 2)
 	H.change_stat("speed", 2)
 	H.change_stat("perception", 1)

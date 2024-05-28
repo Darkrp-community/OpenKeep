@@ -54,7 +54,7 @@
 		beltl = /obj/item/rogueweapon/huntingknife
 		H.change_stat("strength", 2)
 		H.change_stat("constitution", 1)
-		H.change_stat("intelligence", 2)
+		H.change_stat("intelligence", 1)
 		H.change_stat("speed", 1)
 	else
 		head = /obj/item/clothing/head/roguetown/armingcap
