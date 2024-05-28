@@ -16,10 +16,9 @@
 	the various challenges they face. Even if, in some irony: this behaviour \
 	leads the race towards technological advacement as they continue \
 	to improve their craft through powerful mechanization and forging \
-	Dwarves are hearty, but are not known for their speed or eyesight... \
-	Each dwarf hails from a ancient fortress named after the most plentiful mineral."
+	Dwarves are hearty, but are not known for their speed or eyesight..."
 
-	skin_tone_wording = "Fortress Origin"
+	skin_tone_wording = "Ore Attunement"
 
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,YOUNGBEARD,STUBBLE,OLDGREY)
