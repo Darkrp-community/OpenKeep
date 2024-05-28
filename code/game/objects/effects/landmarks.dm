@@ -287,6 +287,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Fisher"
 	icon_state = "arrow"
 
+/obj/effect/landmark/start/seamstress
+	name = "Seamstress"
+	icon_state = "arrow"
+
 /obj/effect/landmark/start/lumberjack
 	name = "Lumberjack"
 	icon_state = "arrow"
