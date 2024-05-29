@@ -1,14 +1,12 @@
 /datum/advclass/seamstress
 	name = "Seamstress"
 	allowed_sexes = list("female")
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
+	allowed_races = list("Humen",
+	"Elf",
+	"Half-Elf",
+	"Dwarf",
+	"Tiefling",
+	"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/seamstress
 	isvillager = TRUE
