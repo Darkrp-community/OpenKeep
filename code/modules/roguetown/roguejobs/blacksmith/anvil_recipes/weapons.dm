@@ -21,7 +21,7 @@
 	name = "copper bludgeons (+s)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
-	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
+	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = list(/obj/item/rogueweapon/mace/copperbludgeon)
 
 /datum/anvil_recipe/weapons/cmace
