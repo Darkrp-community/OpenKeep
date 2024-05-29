@@ -17,6 +17,7 @@
 
 /turf/closed/wall/mineral/rogue/stone
 	name = "stone wall"
+	desc = "A wall of smooth, unyielding stone."
 	icon = 'icons/turf/walls/stone_wall.dmi'
 	icon_state = "stone"
 	smooth = SMOOTH_MORE
@@ -57,6 +58,7 @@
 
 /turf/closed/wall/mineral/rogue/craftstone
 	name = "stone wall"
+	desc = "A wall of smooth, unyielding stone."
 	icon = 'icons/turf/walls/craftstone.dmi'
 	icon_state = "box"
 	smooth = SMOOTH_MORE
@@ -75,6 +77,7 @@
 
 /turf/closed/wall/mineral/rogue/stonebrick
 	name = "brick wall"
+	desc = "Several bricks form this wall."
 	icon = 'icons/turf/walls/stonebrick.dmi'
 	icon_state = "stonebrick"
 	smooth = SMOOTH_MORE
@@ -93,6 +96,7 @@
 
 /turf/closed/wall/mineral/rogue/wood
 	name = "wall"
+	desc = "A rough-hewn wall of wood."
 	icon = 'icons/turf/walls/roguewood.dmi'
 	icon_state = "wood"
 	smooth = SMOOTH_MORE
@@ -108,6 +112,8 @@
 	climbdiff = 3
 
 /turf/closed/wall/mineral/rogue/wood/window
+	name = "wooden window"
+	desc = "A window with a rough-hewn wooden frame."
 	opacity = FALSE
 	max_integrity = 550
 
@@ -123,6 +129,7 @@
 
 /turf/closed/wall/mineral/rogue/tent
 	name = "tent"
+	desc = "Made from durable fabric and wooden branches."
 	icon = 'icons/turf/roguewall.dmi'
 	icon_state = "tent"
 	smooth = SMOOTH_FALSE
@@ -143,7 +150,8 @@
 	return
 
 /turf/closed/wall/mineral/rogue/wooddark
-	name = "wall"
+	name = "wooden wall"
+	desc = "Made from durable, somewhat darker wood."
 	icon = 'icons/turf/roguewall.dmi'
 	icon_state = "corner"
 	smooth = SMOOTH_FALSE
@@ -158,23 +166,23 @@
 	climbdiff = 3
 
 /turf/closed/wall/mineral/rogue/wooddark/horizontal
-	name = "wall"
+	name = "wooden wall"
 	icon_state = "horizwooddark"
 
 /turf/closed/wall/mineral/rogue/wooddark/vertical
-	name = "wall"
+	name = "wooden wall"
 	icon_state = "vertwooddark"
 
 /turf/closed/wall/mineral/rogue/wooddark/end
-	name = "wall"
+	name = "wooden wall"
 	icon_state = "endwooddark"
 
 /turf/closed/wall/mineral/rogue/wooddark/slitted
-	name = "wall"
+	name = "wooden wall"
 	icon_state = "slittedwooddark"
 
 /turf/closed/wall/mineral/rogue/wooddark/window
-	name = "wall"
+	name = "wooden window"
 	icon_state = "subwindow"
 	opacity = FALSE
 
@@ -210,7 +218,8 @@
 	icon_state = "roofTurf_IC"
 
 /turf/closed/wall/mineral/rogue/decowood
-	name = "wall"
+	name = "decorated wooden wall"
+	desc = "This one is a fancy wooden wall."
 	icon = 'icons/turf/roguewall.dmi'
 	icon_state = "decowood"
 	smooth = SMOOTH_FALSE
@@ -232,7 +241,8 @@
 	icon_state = "decowood-vert"
 
 /turf/closed/wall/mineral/rogue/decostone
-	name = "stone wall"
+	name = "decorated stone wall"
+	desc = "The masons did some good work here."
 	icon = 'icons/turf/roguewall.dmi'
 	icon_state = "decostone-b"
 	smooth = SMOOTH_MORE
@@ -274,7 +284,7 @@
 
 /turf/closed/wall/shroud //vines
 	name = "thick treetop"
-	desc = ""
+	desc = "All the birds flew away before I could see one!"
 	icon = 'icons/turf/roguewall.dmi'
 	icon_state = "shroud1"
 	var/smooth_icon = 'icons/turf/smoothrocks.dmi'
