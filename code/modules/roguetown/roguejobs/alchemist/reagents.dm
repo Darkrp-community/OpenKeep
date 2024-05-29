@@ -11,7 +11,7 @@
 /datum/reagent/medicine/healthpot/on_mob_life(mob/living/carbon/M)
 	if(M.bleed_rate < 0.3)
 		M.blood_volume = min(M.blood_volume+2, BLOOD_VOLUME_MAXIMUM)
-	for(var/datum/disease/A in H.diseases)
+	for(var/datum/disease/A in M.diseases)
 		if(istype(A,/datum/disease/sexdisease))
 			if(prob(10))
 				A.cure(FALSE)
