@@ -33,6 +33,10 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/roguekey/nightmaiden
 	ADD_TRAIT(H, RTRAIT_GOODLOVER, TRAIT_GENERIC)
+	H.virginity = FALSE
+
+	if(prob(80)) // :)
+		H.ForceContractDisease(new /datum/disease/sexdisease)
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)

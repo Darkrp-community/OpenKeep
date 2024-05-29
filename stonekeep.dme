@@ -489,6 +489,7 @@
 #include "code\datums\components\storage\concrete\wallet.dm"
 #include "code\datums\diseases\_disease.dm"
 #include "code\datums\diseases\_MobProcs.dm"
+#include "code\datums\diseases\aids.dm"
 #include "code\datums\diseases\anxiety.dm"
 #include "code\datums\diseases\appendicitis.dm"
 #include "code\datums\diseases\beesease.dm"

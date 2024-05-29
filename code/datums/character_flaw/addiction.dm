@@ -114,3 +114,13 @@
 	desc = "I must make love!"
 	time = 30 MINUTES
 	needsate_text = "Time to get happy."
+
+/datum/charflaw/addiction/lovefiend/on_mob_creation(mob/user)
+	..()
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	if(prob(80)) // :)
+		H.ForceContractDisease(new /datum/disease/sexdisease)
+		H.virginity = FALSE
+	

@@ -57,6 +57,8 @@
 		r_hand = /obj/item/rogueweapon/mace/woodclub
 	if(prob(5))
 		l_hand = /obj/item/rogueweapon/mace/woodclub
+	if(prob(5))
+		H.ForceContractDisease(new /datum/disease/sexdisease)
 	H.change_stat("strength", -1)
 	H.change_stat("intelligence", -4)
 	H.change_stat("constitution", -3)
