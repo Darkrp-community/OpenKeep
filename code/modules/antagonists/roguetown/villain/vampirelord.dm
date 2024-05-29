@@ -41,7 +41,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		return "<span class='boldnotice'>Another deadite.</span>"
 
 /datum/antagonist/vampirelord/on_gain()
-	var/datum/game_mode/game_mode/C = SSticker.mode
+	var/datum/game_mode/C = SSticker.mode
 	C.vampires |= owner
 	. = ..()
 	owner.special_role = name
