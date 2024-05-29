@@ -1,7 +1,7 @@
 #ifdef TESTING
-	//#define FASTLOAD
-	//#define DEPLOY_TEST
-	//#define ROGUEWORLD
+	#define FASTLOAD
+	#define DEPLOY_TEST
+	#define ROGUEWORLD
 #endif
 
 #ifdef FASTLOAD
