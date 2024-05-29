@@ -18,11 +18,11 @@
 	created_item = list(/obj/item/rogueweapon/knife/copperdagger, /obj/item/rogueweapon/knife/copperdagger)
 
 /datum/anvil_recipe/weapons/cbludgeon
-	name = "copper bludgeons (+2s)"
+	name = "copper bludgeons (+s)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
-	created_item = list(/obj/item/rogueweapon/mace/copperbludgeon, /obj/item/rogueweapon/mace/copperbludgeon)
+	created_item = list(/obj/item/rogueweapon/mace/copperbludgeon)
 
 /datum/anvil_recipe/weapons/cmace
 	name = "copper mace (2)"
