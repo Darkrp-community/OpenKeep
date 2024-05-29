@@ -110,7 +110,7 @@
 	icon_state = "g_ring_sapphire"
 	sellprice = 70
 
-/obj/item/clothing/ring/diamonds
+/obj/item/clothing/ring/diamond
 	name = "dorpel ring"
 	icon_state = "g_ring_diamond"
 	sellprice = 70
