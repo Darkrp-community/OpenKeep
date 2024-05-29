@@ -142,11 +142,3 @@
 	additional_items = list(/obj/item/roguegem/diamond)	
 	created_item = /obj/item/clothing/ring/diamonds
 	i_type = "Valuables"
-
-/datum/anvil_recipe/valuables/terminus
-	name = "Terminus Est (+gold) (+steel) (+Rontz)"
-	req_bar = /obj/item/ingot/gold
-	additional_items = list(/obj/item/ingot/gold, /obj/item/ingot/steel, /obj/item/roguegem)	
-	created_item = /obj/item/rogueweapon/sword/long/exe/cloth
-	craftdiff = 3
-	i_type = "Weapons"
