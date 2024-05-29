@@ -55,6 +55,17 @@
 	swingdelay = 0
 	misscost = 5
 
+/datum/intent/axe/battleaxe/chop
+	name = "chop"
+	icon_state = "inchop"
+	blade_class = BCLASS_CHOP
+	attack_verb = list("chops", "hacks")
+	animname = "chop"
+	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
+	penfactor = 25
+	swingdelay = 1
+	misscost = 10
+
 /datum/intent/axe/chop
 	name = "chop"
 	icon_state = "inchop"
@@ -70,12 +81,12 @@
 	slot_flags = ITEM_SLOT_HIP
 	force = 15
 	force_wielded = 30
-	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	possible_item_intents = list(/datum/intent/axe/cut)
 	name = "battle axe"
 	icon_state = "battleaxe"
 	max_blade_int = 500
 	smeltresult = /obj/item/ingot/steel
-	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/battleaxe/chop)
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces

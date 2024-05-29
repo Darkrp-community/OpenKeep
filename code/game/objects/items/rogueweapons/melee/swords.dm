@@ -6,7 +6,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	name = "sword"
-	desc = "A simple steel sword. Inelegant and fitting for a retinuemen."
+	desc = "A simple steel sword. Inelegant and fitting for lessers."
 	icon_state = "sword1"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
@@ -85,7 +85,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "bastard sword"
-	desc = "a weapon said to have been named for its use by man-at-arm retinue and mercenaries alike, or at least claimed by the poor bastards that carry them."
+	desc = "A weapon said to have been named for its use by man-at-arm retinue and mercenaries alike, or at least claimed by the poor bastards that carry them."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -286,7 +286,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "cataphracti warsaber"
-	desc = "Zybantian cataphracts are a legendary troop, said to have been raised from birth with a sword and crimson saiga lead in their hand."
+	desc = "Zybantian cataphracts are as legendary as the blades they use. Designed for saiga-back riding."
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'

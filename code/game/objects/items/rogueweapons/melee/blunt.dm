@@ -4,7 +4,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
 	name = "iron mace"
-	desc = "an iron mace, prefered by those with a grudge against knightly whoresons."
+	desc = "An iron mace, prefered by those with a grudge against knightly whoresons."
 	icon_state = "mace"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "mace_greyscale"
@@ -40,7 +40,7 @@
 
 /obj/item/rogueweapon/mace/steel
 	name = "steel mace"
-	desc = "a steel mace, easier to control and hits just as hard."
+	desc = "A steel mace, easier to control and hits just as hard."
 	icon_state = "smace"
 	wbalance = 0
 	smeltresult = /obj/item/ingot/steel
@@ -180,11 +180,11 @@
 
 /obj/item/rogueweapon/mace/goden
 	force = 15
-	force_wielded = 40
-	possible_item_intents = list(/datum/intent/mace/strike)
-	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash, /datum/intent/dagger/thrust)
+	force_wielded = 35
+	possible_item_intents = list(/datum/intent/mace/heavy/strike)
+	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/dagger/thrust)
 	name = "warclub"
-	desc = "a weapon design with a long history of use by the Hui. Adopted later by the Abyssite 'Beastkin' in their later conflicts."
+	desc = "A weapon design with a long history of use by the Hui. Adopted later by the Abyssite 'Beastkin' in their later conflicts."
 	icon_state = "goedendag"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	sharpness = IS_BLUNT
@@ -225,7 +225,7 @@
 	icon_state = "polemace"
 	max_integrity = 600
 	force = 15
-	force_wielded = 40
+	force_wielded = 35
 
 /obj/item/rogueweapon/mace/goden/steel/getonmobprop(tag)
 	. = ..()
@@ -259,7 +259,7 @@
 	chargetime = 3
 	swingdelay = 3
 	icon_state = "insmash"
-	misscost = 25
+	misscost = 30
 
 
 // Copper Bludgeon - Extremely Cheap, crafts in 2's
@@ -270,7 +270,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
 	name = "copper bludgeon"
-	desc = "an extremely crude weapon for cruder bastards."
+	desc = "An extremely crude weapon for cruder bastards."
 	icon_state = "cbludgeon"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "mace_greyscale"
@@ -298,7 +298,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
 	name = "copper mace"
-	desc = "simple and indelicate lover of skulls."
+	desc = "Simple and indelicate lover of skulls."
 	icon_state = "cclub"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "mace_greyscale"
@@ -340,7 +340,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
 	name = "warhammer"
-	desc = "Dwarves are not known to be subtle about their adoration for hammers. The tool of their God Malum, forged into a viscious weapon of war."
+	desc = "Dwarves are not known to be subtle about their adoration for hammers. The tool of their God Malum, forged into a vicious weapon of war."
 	icon_state = "warhammer"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	sharpness = IS_BLUNT
