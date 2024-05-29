@@ -15,7 +15,7 @@
 
 /datum/outfit/job/roguetown/adventurer/sfighter/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2), TRUE)	
+	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/polearms, pick(3,4), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(3,4), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(1,2), TRUE)
@@ -53,13 +53,13 @@
 		beltl = /obj/item/rogueweapon/sword/iron
 	else if(prob(50))
 		beltl = /obj/item/rogueweapon/sword/iron/messer
-	else 
+	else
 		beltl = /obj/item/rogueweapon/sword/short
 	if(prob(66))
 		neck = /obj/item/clothing/neck/roguetown/chaincoif
 	else
 		head = /obj/item/clothing/head/roguetown/helmet/skullcap
-		neck - /obj/item/clothing/neck/roguetown/gorget
+		neck = /obj/item/clothing/neck/roguetown/gorget
 
 	H.change_stat("strength", 2)
 	H.change_stat("endurance", 1) // 7 stat points total as a low-skill martial role without magic. Compared to Pally with 5 points.
