@@ -6,7 +6,6 @@
 	"Half-Elf",
 	"Dwarf",
 	"Tiefling",
-	"Dark Elf",
 	"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/seamstress
