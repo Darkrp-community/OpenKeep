@@ -75,8 +75,8 @@
 
 // Long Swords
 /obj/item/rogueweapon/sword/long
-	force = 20
-	force_wielded = 30
+	force = 18
+	force_wielded = 28
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
 	icon_state = "longsword"
@@ -119,7 +119,7 @@
 	force = 15
 	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/thrust, /datum/intent/sword/strike, /datum/intent/longsword/chop)
 	icon_state = "heirloom"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "longsword"
@@ -157,7 +157,7 @@
 	force = 15
 	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/thrust, /datum/intent/sword/strike, /datum/intent/longsword/chop)
 	icon_state = "judgement"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "judgement"
@@ -197,7 +197,7 @@
 	force = 18
 	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/thrust, /datum/intent/sword/strike, /datum/intent/longsword/chop)
 	icon_state = "vlord"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "vlord"
@@ -239,7 +239,7 @@
 	force = 15
 	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/longsword/chop)
 	icon_state = "tabi"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "tabi"
@@ -279,7 +279,7 @@
 	force = 15
 	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop, /datum/intent/longsword/thrust)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/longsword/chop, /datum/intent/longsword/thrust)
 	icon_state = "marlin"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "marlin"
@@ -318,6 +318,68 @@
 			if("onbelt")
 				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+/obj/item/rogueweapon/greatsword
+	force = 12
+	force_wielded = 32
+	possible_item_intents = list(/datum/intent/sword/chop,/datum/intent/sword/strike) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/chop, /datum/intent/sword/thrust, /datum/intent/sword/strike)
+	name = "greatsword"
+	desc = "An oversized hunk of metal designed for putting fear into men and killing beasts."
+	icon_state = "gsw"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	parrysound = "bladedlarge"
+	swingsound = BLADEWOOSH_HUGE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
+	wlength = WLENGTH_GREAT
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	thrown_bclass = BCLASS_CUT
+	throwforce = 15
+	minstr = 12
+	smeltresult = /obj/item/ingot/steel
+	associated_skill = /datum/skill/combat/swords
+	max_blade_int = 100
+	max_integrity = 300
+	wdefense = 3
+
+/obj/item/rogueweapon/greatsword/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = 6,"nx" = 6,"ny" = 7,"wx" = 0,"wy" = 5,"ex" = -1,"ey" = 7,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -50,"sturn" = 40,"wturn" = 50,"eturn" = -50,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 9,"sy" = -4,"nx" = -7,"ny" = 1,"wx" = -9,"wy" = 2,"ex" = 10,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 5,"sturn" = -190,"wturn" = -170,"eturn" = -10,"nflip" = 4,"sflip" = 4,"wflip" = 1,"eflip" = 0)
+			if("onback")
+				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
+
+/obj/item/rogueweapon/greatsword/flamberge
+	name = "flamberge"
+	desc = "Commonly known as a flame-bladed sword, this weapon has an undulating blade. It's wave-like form distributes force better, and is less likely to break on impact."
+	icon_state = "flamberge"
+	smeltresult = /obj/item/ingot/iron
+	wdefense = 3
+
+/obj/item/rogueweapon/greatsword/zwei
+	name = "zweihander"
+	desc = "Sometimes known as a doppelhander or beidhander, this weapon's size is so impressive that it's handling properties are more akin to that of a polearm than a sword."
+	icon_state = "steelzwei"
+	smeltresult = /obj/item/ingot/steel
+	wdefense = 3
+
+/obj/item/rogueweapon/greatsword/elfgsword
+	force = 12
+	force_wielded = 23
+	name = "elven kriegsmesser"
+	desc = "A huge, curved elven blade. It's metal is of a high quality, yet still light, crafted by the greatest elven bladesmiths."
+	icon_state = "kriegsmesser"
+	minstr = 10
+
 // Attack Intents
 /datum/intent/sword/strike
 	name = "pommel strike"
@@ -343,6 +405,20 @@
 	reach = 2
 	misscost = 10
 
+/datum/intent/longsword/chop
+	name = "chop"
+	icon_state = "inchop"
+	attack_verb = list("chops", "hacks")
+	animname = "chop"
+	blade_class = BCLASS_CHOP
+	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
+	penfactor = 20
+	damfactor = 1.1
+	chargetime = 1.2
+	swingdelay = 1.5
+	misscost = 15
+	warnie = "mobwarning"
+
 /datum/intent/sword/chop
 	name = "chop"
 	icon_state = "inchop"
@@ -352,9 +428,7 @@
 	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
 	penfactor = 15
 	damfactor = 1.1
-	chargetime = 1
 	swingdelay = 1
-	warnie = "mobwarning"
 
 /obj/item/rogueweapon/sword/long/exe
 	possible_item_intents = list(/datum/intent/sword/strike)
