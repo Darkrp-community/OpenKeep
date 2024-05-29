@@ -30,7 +30,7 @@
 /obj/item/roguegem/green
 	name = "gemerald"
 	icon_state = "emerald_cut"
-	sellprice = 22
+	sellprice = 42
 	desc = ""
 
 /obj/item/roguegem/blue
@@ -42,7 +42,7 @@
 /obj/item/roguegem/yellow
 	name = "toper"
 	icon_state = "topaz_cut"
-	sellprice = 14
+	sellprice = 34
 	desc = ""
 
 /obj/item/roguegem/violet
@@ -51,6 +51,11 @@
 	sellprice = 56
 	desc = ""
 
+/obj/item/roguegem/diamond
+	name = "dorpel"
+	icon_state = "diamond_cut"
+	sellprice = 121
+	desc = "Beautifully clear, it demands respect."
 
 /// riddle
 

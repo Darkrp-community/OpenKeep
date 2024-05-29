@@ -58,64 +58,81 @@
 						if(C.domhand)
 							used_str = C.get_str_arms(C.used_hand)
 						C.rogfat_add(max(30 - (used_str * 3), 0))
-					if(hingot.currecipe.advance(user))
-						playsound(src,pick('sound/items/bsmith1.ogg','sound/items/bsmith2.ogg','sound/items/bsmith3.ogg','sound/items/bsmith4.ogg'), 100, FALSE)
-					else
-						shake_camera(user, 1, 1)
-						playsound(src,'sound/items/bsmithfail.ogg', 100, FALSE)
-					if(prob(23))
+					var/total_chance = 7 * user.mind.get_skill_level(hingot.currecipe.appro_skill)
+					var/breakthrough = 0
+					if(prob(1 + total_chance)) //Small chance to flash
 						user.flash_fullscreen("whiteflash")
 						var/datum/effect_system/spark_spread/S = new()
 						var/turf/front = get_turf(src)
 						S.set_up(1, 1, front)
 						S.start()
-				else
-					if(choose_recipe(user))
-						user.flash_fullscreen("whiteflash")
-						shake_camera(user, 1, 1)
+						breakthrough = 1
+
+						if(!hingot.currecipe.advance(user, breakthrough))
+							shake_camera(user, 1, 1)
+							playsound(src,'sound/items/bsmithfail.ogg', 100, FALSE)
 						playsound(src,pick('sound/items/bsmith1.ogg','sound/items/bsmith2.ogg','sound/items/bsmith3.ogg','sound/items/bsmith4.ogg'), 100, FALSE)
-					else
+	
+						for(var/mob/M in GLOB.player_list)
+							if(!is_in_zweb(M.z,src.z))
+								continue
+							var/turf/M_turf = get_turf(M)
+							var/far_smith_sound = sound(pick('sound/items/smithdist1.ogg','sound/items/smithdist2.ogg','sound/items/smithdist3.ogg'))
+							if(M_turf)
+								var/dist = get_dist(M_turf, loc)
+								if(dist < 7)
+									continue
+								M.playsound_local(M_turf, null, 100, 1, get_rand_frequency(), falloff = 5, S = far_smith_sound)
 						return
-				for(var/mob/M in GLOB.player_list)
-					if(!is_in_zweb(M.z,src.z))
-						continue
-					var/turf/M_turf = get_turf(M)
-					var/far_smith_sound = sound(pick('sound/items/smithdist1.ogg','sound/items/smithdist2.ogg','sound/items/smithdist3.ogg'))
-					if(M_turf)
-						var/dist = get_dist(M_turf, loc)
-						if(dist < 7)
-							continue
-						M.playsound_local(M_turf, null, 100, 1, get_rand_frequency(), falloff = 5, S = far_smith_sound)
-			else
-				to_chat(user, "<span class='warning'>It's too cold.</span>")
-				return
-			return
-	if(hingot && hingot.currecipe && hingot.currecipe.needed_item && istype(W, hingot.currecipe.needed_item))
-		hingot.currecipe.item_added(user)
-		qdel(W)
-		return
-	if(W.anvilrepair)
-		user.visible_message("<span class='info'>[user] places [W] on the anvil.</span>")
-		W.forceMove(src.loc)
-		return
-	..()
+
+					if(hingot && hingot.currecipe && hingot.currecipe.needed_item && istype(W, hingot.currecipe.needed_item))
+						hingot.currecipe.item_added(user)
+						qdel(W)
+						return
+
+					if(W.anvilrepair)
+						user.visible_message("<span class='info'>[user] places [W] on the anvil.</span>")
+						W.forceMove(src.loc)
+						return
+					..()
 
 /obj/machinery/anvil/proc/choose_recipe(user)
-	if(!hingot || !hott)
-		return
-	var/list/appro_recipe = GLOB.anvil_recipes.Copy()
-	for(var/I in appro_recipe)
-		var/datum/anvil_recipe/R = I
-		if(!R.req_bar)
-			appro_recipe -= R
-		if(!istype(hingot, R.req_bar))
-			appro_recipe -= R
-	if(appro_recipe.len)
-		var/datum/chosen_recipe = input(user, "Choose A Creation", "Anvil") as null|anything in sortNames(appro_recipe.Copy())
-		if(!hingot.currecipe && chosen_recipe)
-			hingot.currecipe = new chosen_recipe.type(hingot)
-			return TRUE
-	return FALSE
+    if(!hingot || !hott)
+        return
+
+    var/list/valid_types = list()
+
+    for(var/datum/anvil_recipe/R in GLOB.anvil_recipes)
+        if(istype(hingot, R.req_bar))
+            if(!valid_types.Find(R.i_type))
+                valid_types += R.i_type
+
+    if(!valid_types.len)
+        return
+
+    var/i_type_choice = input(user, "Choose a type", "Anvil") as null|anything in valid_types
+    if(!i_type_choice)
+        return
+
+    var/list/appro_recipe = list()
+    for(var/datum/anvil_recipe/R in GLOB.anvil_recipes)
+        if(R.i_type == i_type_choice && istype(hingot, R.req_bar))
+            appro_recipe += R
+
+    for(var/I in appro_recipe)
+        var/datum/anvil_recipe/R = I
+        if(!R.req_bar)
+            appro_recipe -= R
+        if(!istype(hingot, R.req_bar))
+            appro_recipe -= R
+
+    if(appro_recipe.len)
+        var/datum/chosen_recipe = input(user, "Choose A Creation", "Anvil") as null|anything in sortNames(appro_recipe.Copy())
+        if(!hingot.currecipe && chosen_recipe)
+            hingot.currecipe = new chosen_recipe.type(hingot)
+            return TRUE
+
+    return FALSE
 
 /obj/machinery/anvil/attack_hand(mob/user, params)
 	if(hingot)

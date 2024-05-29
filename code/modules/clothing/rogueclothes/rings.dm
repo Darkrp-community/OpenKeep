@@ -20,7 +20,7 @@
 /obj/item/clothing/ring/gold
 	name = "gold ring"
 	icon_state = "ring_g"
-	sellprice = 70
+	sellprice = 50
 
 /obj/item/clothing/ring/active
 	var/active = FALSE
@@ -82,3 +82,67 @@
 	var/datum/component/magcom = GetComponent(/datum/component/anti_magic)
 	if(magcom)
 		magcom.RemoveComponent()
+
+// Golden Rings
+
+/obj/item/clothing/ring/emerald
+    name = "gemerald ring"
+    icon_state = "g_ring_emerald"
+    sellprice = 70
+
+/obj/item/clothing/ring/ruby
+    name = "rontz ring"
+    icon_state = "g_ring_ruby"
+    sellprice = 70
+
+/obj/item/clothing/ring/topaz
+    name = "topaz ring"
+    icon_state = "g_ring_topaz"
+    sellprice = 70
+
+/obj/item/clothing/ring/quartz
+	name = "blortz ring"
+	icon_state = "g_ring_quartz"
+	sellprice = 70
+
+/obj/item/clothing/ring/sapphire
+	name = "saffira ring"
+	icon_state = "g_ring_sapphire"
+	sellprice = 70
+
+/obj/item/clothing/ring/diamonds
+	name = "dorpel ring"
+	icon_state = "g_ring_diamond"
+	sellprice = 70
+
+// Silver Rings
+
+/obj/item/clothing/ring/emeralds
+    name = "gemerald ring"
+    icon_state = "s_ring_emerald"
+    sellprice = 50
+
+/obj/item/clothing/ring/rubys
+    name = "rontz ring"
+    icon_state = "s_ring_ruby"
+    sellprice = 50
+
+/obj/item/clothing/ring/topazs
+    name = "topaz ring"
+    icon_state = "s_ring_topaz"
+    sellprice = 50
+
+/obj/item/clothing/ring/quartzs
+	name = "blortz ring"
+	icon_state = "s_ring_quartz"
+	sellprice = 50
+
+/obj/item/clothing/ring/sapphires
+	name = "saffira ring"
+	icon_state = "s_ring_sapphire"
+	sellprice = 50
+
+/obj/item/clothing/ring/diamonds
+	name = "dorpel ring"
+	icon_state = "s_ring_diamond"
+	sellprice = 50
