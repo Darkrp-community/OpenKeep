@@ -179,6 +179,11 @@
 	name = "fur hat"
 	icon_state = "hatblu"
 
+/obj/item/clothing/head/roguetown/papakha
+	name = "papakha"
+	icon_state = "papakha"
+	item_state = "papakha"
+
 /obj/item/clothing/head/roguetown/fisherhat
 	name = "straw hat"
 	icon_state = "fisherhat"
