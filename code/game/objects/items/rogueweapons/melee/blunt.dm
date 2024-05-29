@@ -265,6 +265,7 @@
 	minstr = 5
 	wdefense = 1
 	blade_dulling = DULLING_BASHCHOP
+	smeltresult = /obj/item/ingot/copper
 
 // Copper War-Mace
 /obj/item/rogueweapon/mace/coppermace
@@ -293,6 +294,7 @@
 	wdefense = 2
 	wbalance = -1
 	blade_dulling = DULLING_BASHCHOP
+	smeltresult = /obj/item/ingot/copper
 
 /obj/item/rogueweapon/mace/coppermace/getonmobprop(tag)
 	. = ..()
