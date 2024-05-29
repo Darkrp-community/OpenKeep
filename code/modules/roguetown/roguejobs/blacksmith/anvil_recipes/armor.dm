@@ -192,9 +192,9 @@
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/plateboot
-    name = "plated boots"
-    req_bar = /obj/item/ingot/steel
-    created_item = /obj/item/clothing/shoes/roguetown/boots/armor
+	name = "plated boots"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/shoes/roguetown/boots/armor
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/platemask/steel
