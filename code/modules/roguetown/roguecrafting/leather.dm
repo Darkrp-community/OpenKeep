@@ -121,3 +121,9 @@
 	name = "quiver"
 	result = /obj/item/quiver
 	reqs = list(/obj/item/natural/hide = 3)
+
+/datum/crafting_recipe/roguetown/leather/whip
+	name = "leather whip"
+	result = /obj/item/rogueweapon/whip
+	reqs = list(/obj/item/natural/hide = 2)
+	sellprice = 39	
