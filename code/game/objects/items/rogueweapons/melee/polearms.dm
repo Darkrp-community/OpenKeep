@@ -10,7 +10,7 @@
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
 	penfactor = 50
 	swingdelay = 1
-	misscost = 5
+	misscost = 10
 
 /datum/intent/spear/bash
 	name = "bash"
@@ -31,7 +31,7 @@
 	hitsound = list('sound/combat/hits/bladed/genslash (1).ogg', 'sound/combat/hits/bladed/genslash (2).ogg', 'sound/combat/hits/bladed/genslash (3).ogg')
 	reach = 2
 	swingdelay = 1
-	misscost = 5
+	misscost = 10
 
 /obj/item/rogueweapon/woodstaff
 	force = 10
@@ -104,7 +104,7 @@
 
 /obj/item/rogueweapon/spear
 	force = 15
-	force_wielded = 30
+	force_wielded = 25
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
 	name = "spear"
@@ -145,7 +145,7 @@
 	name = "billhook"
 	desc = ""
 	icon_state = "billhook"
-	force = 15
+	force = 12
 	force_wielded = 30
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, /datum/intent/axe/chop, SPEAR_BASH)
@@ -169,8 +169,8 @@
 
 
 /obj/item/rogueweapon/spear/stone
-	force = 15
-	force_wielded = 18
+	force = 10
+	force_wielded = 15
 	name = "simple spear"
 	icon_state = "stonespear"
 	pixel_y = -16
@@ -191,11 +191,37 @@
 	wdefense = 4
 	max_integrity = 120
 
+// Halberd Class
+
+/datum/intent/spear/halberd/chop
+	name = "chop"
+	icon_state = "inchop"
+	attack_verb = list("chops", "hacks")
+	animname = "chop"
+	blade_class = BCLASS_CHOP
+	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
+	penfactor = 25
+	chargetime = 1.5
+	damfactor = 1.2
+	swingdelay = 2
+	misscost = 20
+
+/datum/intent/spear/halberd/cut
+	name = "cut"
+	blade_class = BCLASS_CUT
+	attack_verb = list("cuts", "slashes")
+	icon_state = "incut"
+	damfactor = 0.8
+	hitsound = list('sound/combat/hits/bladed/genslash (1).ogg', 'sound/combat/hits/bladed/genslash (2).ogg', 'sound/combat/hits/bladed/genslash (3).ogg')
+	reach = 2
+	swingdelay = 1
+	misscost = 10
+
 /obj/item/rogueweapon/halberd
-	force = 15
-	force_wielded = 30
+	force = 10
+	force_wielded = 35
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
-	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, /datum/intent/axe/chop, SPEAR_BASH)
+	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, /datum/intent/spear/halberd/chop, SPEAR_BASH)
 	name = "halbert"
 	desc = ""
 	icon_state = "halberd"

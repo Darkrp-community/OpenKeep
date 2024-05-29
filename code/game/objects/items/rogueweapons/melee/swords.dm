@@ -1,12 +1,12 @@
 // Sword base
 /obj/item/rogueweapon/sword
 	slot_flags = ITEM_SLOT_HIP
-	force = 10
-	force_wielded = 15
+	force = 20
+	force_wielded = 25
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	name = "sword"
-	desc = "A simple steel sord."
+	desc = "A simple steel sword. Inelegant and fitting for a retinuemen."
 	icon_state = "sword1"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
@@ -25,7 +25,7 @@
 	//dropshrink = 0.75
 	smeltresult = /obj/item/ingot/steel
 	minstr = 7
-	sellprice = 30
+	sellprice = 20
 	wdefense = 4
 
 /obj/item/rogueweapon/sword/Initialize()
@@ -75,8 +75,8 @@
 
 // Long Swords
 /obj/item/rogueweapon/sword/long
-	force = 28
-	force_wielded = 35
+	force = 20
+	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
 	icon_state = "longsword"
@@ -85,7 +85,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "bastard sword"
-	desc = ""
+	desc = "a weapon said to have been named for its use by man-at-arm retinue and mercenaries alike, or at least claimed by the poor bastards that carry them."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -116,10 +116,10 @@
 			if("onbelt") return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogueweapon/sword/long/heirloom
-	force = 28
-	force_wielded = 35
+	force = 15
+	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
 	icon_state = "heirloom"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "longsword"
@@ -155,16 +155,16 @@
 
 /obj/item/rogueweapon/sword/long/judgement
 	force = 15
-	force_wielded = 20
+	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
 	icon_state = "judgement"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "judgement"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "judgement"
-	desc = "A sword with a silver grip, a topaz gem hilt and a steel blade, what more could a noble ask for."
+	desc = "A sword with a silver grip, a topaz gem hilt and a steel blade, what more could a noble ask for?"
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -194,10 +194,10 @@
 			if("onbelt") return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogueweapon/sword/long/vlord
-	force = 15
-	force_wielded = 20
+	force = 18
+	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
 	icon_state = "vlord"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "vlord"
@@ -237,7 +237,7 @@
 
 /obj/item/rogueweapon/sword/long/rider
 	force = 15
-	force_wielded = 20
+	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop)
 	icon_state = "tabi"
@@ -245,8 +245,8 @@
 	item_state = "tabi"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	name = "kilij scimitar"
-	desc = ""
+	name = "zybantian scimitar"
+	desc = "The Zybantians commonly equip their troops w, now equally found within the hands of mercenaries hailing from the Western Dunes."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -276,17 +276,17 @@
 				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogueweapon/sword/long/marlin
-	force = 26
-	force_wielded = 31
+	force = 15
+	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop, /datum/intent/longsword/thrust)
 	icon_state = "marlin"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "marlin"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	name = "shalal saber"
-	desc = ""
+	name = "cataphracti warsaber"
+	desc = "Zybantian cataphracts are a legendary troop, said to have been raised from birth with a sword and crimson saiga lead in their hand."
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -327,9 +327,21 @@
 	blade_class = BCLASS_BLUNT
 	hitsound = list('sound/combat/hits/blunt/metalblunt (1).ogg', 'sound/combat/hits/blunt/metalblunt (2).ogg', 'sound/combat/hits/blunt/metalblunt (3).ogg')
 	chargetime = 0
-	penfactor = 20
+	penfactor = 25
 	swingdelay = 1
 	damfactor = 0.8
+
+
+/datum/intent/longsword/thrust
+	name = "stab"
+	icon_state = "instab"
+	attack_verb = list("stabs")
+	animname = "stab"
+	blade_class = BCLASS_STAB
+	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
+	penfactor = 20
+	reach = 2
+	misscost = 10
 
 /datum/intent/sword/chop
 	name = "chop"
@@ -339,6 +351,8 @@
 	blade_class = BCLASS_CHOP
 	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
 	penfactor = 15
+	damfactor = 1.1
+	chargetime = 1
 	swingdelay = 1
 
 /obj/item/rogueweapon/sword/long/exe
@@ -375,7 +389,7 @@
 //Short Swords
 /obj/item/rogueweapon/sword/iron
 	name = "sword"
-	desc = "A simple iron sword."
+	desc = "A simple iron sword. For the extremely lowly troop."
 	icon_state = "isword"
 	minstr = 6
 	smeltresult = /obj/item/ingot/iron
@@ -385,7 +399,7 @@
 // Sabres
 /obj/item/rogueweapon/sword/sabre
 	name = "sabre"
-	desc = "A swift saber."
+	desc = "A swift saber. Commonly seen in the hands of Western Tribal infantry."
 	icon_state = "saber"
 	smeltresult = /obj/item/ingot/steel
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust)
@@ -407,8 +421,8 @@
 	penfactor = 15
 
 /obj/item/rogueweapon/sword/sabre/dec
-	name = "Sabre"
-	desc = "A Sabre"
+	name = "royal sabre"
+	desc = "A sabre decorated with gold. Befitting that of even a Zyb Kshatriya."
 	icon_state = "decsaber"
 	smeltresult = /obj/item/ingot/steel
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust)
@@ -462,7 +476,7 @@
 /obj/item/rogueweapon/sword/rapier/lord
 	force = 20
 	name = "Kings Sword"
-	desc = "Passed down through the ages, this is the Kings sword."
+	desc = "Passed down through the ages, a weapon that once carved a kingdom out now relegated to a decorative piece."
 	icon_state = "lordrap"
 	sellprice = 300
 	max_integrity = 300
@@ -486,8 +500,8 @@
 // Copper Messer
 
 /obj/item/rogueweapon/sword/coppermesser
-	force = 10
-	force_wielded = 15
+	force = 15
+	force_wielded = 20
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop)
 	icon_state = "cmesser"

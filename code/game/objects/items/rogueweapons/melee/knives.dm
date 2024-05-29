@@ -1,7 +1,7 @@
 
 
 /obj/item/rogueweapon/huntingknife
-	force = 12
+	force = 10
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	name = "hunting knife"
@@ -105,7 +105,7 @@
 	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/cleaver/combat
-	force = 10
+	force = 12
 	name = "knife"
 	desc = ""
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)

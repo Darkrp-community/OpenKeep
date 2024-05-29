@@ -36,7 +36,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/ingot/copper)
-	created_item = (/obj/item/rogueweapon/stoneaxe/copperaxe)
+	created_item = (/obj/item/rogueweapon/copperaxe)
 
 /datum/anvil_recipe/weapons/cspears
 	name = "copper spears (+4s)"
@@ -142,21 +142,21 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/stoneaxe/battle
+	created_item = /obj/item/rogueweapon/battle
 
 /datum/anvil_recipe/weapons/saxe
 	name = "steel axe (+s)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/item/rogueweapon/stoneaxe/woodcut/steel
+	created_item = /obj/item/rogueweapon/woodcut/steel
 
 /datum/anvil_recipe/weapons/axe
 	name = "axe (+s)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/item/rogueweapon/stoneaxe/woodcut
+	created_item = /obj/item/rogueweapon/woodcut
 
 /datum/anvil_recipe/weapons/hknife
 	name = "hunting knife"

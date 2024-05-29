@@ -66,22 +66,23 @@
 	swingdelay = 1
 	misscost = 5
 
-/obj/item/rogueweapon/stoneaxe/battle
+/obj/item/rogueweapon/battle
 	slot_flags = ITEM_SLOT_HIP
-	force = 33
+	force = 15
+	force_wielded = 30
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "battle axe"
 	icon_state = "battleaxe"
-	max_blade_int = 300
+	max_blade_int = 500
 	smeltresult = /obj/item/ingot/steel
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
-	minstr = 14 //meant to be a orc weapon or barbarian weapon
-	wdefense = 4
+	minstr = 10 //meant to be a orc weapon or barbarian weapon
+	wdefense = 3
 
-/obj/item/rogueweapon/stoneaxe/battle/getonmobprop(tag)
+/obj/item/rogueweapon/battle/getonmobprop(tag)
 	if(tag)
 		switch(tag)
 			if("gen")
@@ -92,9 +93,10 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
 	return ..()
 
-/obj/item/rogueweapon/stoneaxe/woodcut
+/obj/item/rogueweapon/woodcut
 	slot_flags = ITEM_SLOT_HIP
-	force = 18
+	force = 20
+	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "axe"
 	icon_state = "axe"
@@ -107,11 +109,12 @@
 	associated_skill = /datum/skill/combat/axesmaces
 	wdefense = 2
 
-/obj/item/rogueweapon/stoneaxe/woodcut/steel
+/obj/item/rogueweapon/woodcut/steel
 	slot_flags = ITEM_SLOT_HIP
 	name = "axe"
 	icon_state = "saxe"
 	force = 20
+	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	max_blade_int = 180
 	max_integrity = 300
@@ -122,7 +125,7 @@
 	associated_skill = /datum/skill/combat/axesmaces
 	wdefense = 3
 
-/obj/item/rogueweapon/stoneaxe/woodcut/getonmobprop(tag)
+/obj/item/rogueweapon/woodcut/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)
@@ -134,9 +137,10 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
 
 // Copper Hatchet
-/obj/item/rogueweapon/stoneaxe/copperaxe
+/obj/item/rogueweapon/copperaxe
 	slot_flags = ITEM_SLOT_HIP
-	force = 18
+	force = 15
+	force_wielded = 20
 	possible_item_intents = list(/datum/intent/axe/chop)
 	name = "copper axe"
 	desc = ""
@@ -149,9 +153,10 @@
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
-	max_blade_int = 100
-	max_integrity = 100
+	max_blade_int = 120
+	max_integrity = 120
 	wdefense = 2
+	smeltresult = /obj/item/ingot/copper
 	w_class = WEIGHT_CLASS_BULKY
 	wlength = WLENGTH_SHORT
 	pickup_sound = 'sound/foley/equip/rummaging-03.ogg'
