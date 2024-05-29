@@ -34,16 +34,31 @@
 		H.underwear = "Femleotard"
 		H.underwear_color = CLOTHING_BLACK
 		H.update_body()
-	pants = /obj/item/clothing/under/roguetown/tights/black
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
+	if(prob(25))
+		armor = /obj/item/clothing/suit/roguetown/armor/chainmail
+		pants = /obj/item/clothing/under/roguetown/tights/black
+	else if(prob(50))
+		armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
+		pants = /obj/item/clothing/under/roguetown/tights/black
+	else
+		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+		pants = /obj/item/clothing/under/roguetown/chainlegs/iron
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/shield/wood
-	beltl = /obj/item/rogueweapon/sword/iron
-	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	if(prob(33))
+		beltl = /obj/item/rogueweapon/sword/iron
+	else if(prob(50))
+		beltl = /obj/item/rogueweapon/sword/iron/messer
+	else 
+		beltl = /obj/item/rogueweapon/sword/short
+	if(prob(66))
+		neck = /obj/item/clothing/neck/roguetown/chaincoif
+	else
+		head = /obj/item/clothing/head/roguetown/helmet/skullcap
 
 	H.change_stat("strength", 2)
 	H.change_stat("endurance", 1) // 7 stat points total as a low-skill martial role without magic. Compared to Pally with 5 points.
