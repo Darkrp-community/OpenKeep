@@ -311,8 +311,8 @@
 	max_blade_int = 300
 
 /obj/item/rogueweapon/greatsword
-	force = 10
-	force_wielded = 20
+	force = 12
+	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/chop,/datum/intent/sword/strike) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop, /datum/intent/sword/thrust/zwei, /datum/intent/sword/strike)
 	name = "northern greatsword"
