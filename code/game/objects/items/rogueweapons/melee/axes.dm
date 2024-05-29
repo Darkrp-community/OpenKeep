@@ -108,6 +108,7 @@
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
 	wdefense = 2
+	minstr = 6
 
 /obj/item/rogueweapon/woodcut/steel
 	slot_flags = ITEM_SLOT_HIP
@@ -124,6 +125,7 @@
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
 	wdefense = 3
+	minstr = 6
 
 /obj/item/rogueweapon/woodcut/getonmobprop(tag)
 	. = ..()
@@ -156,6 +158,7 @@
 	max_blade_int = 120
 	max_integrity = 120
 	wdefense = 2
+	minstr = 6
 	smeltresult = /obj/item/ingot/copper
 	w_class = WEIGHT_CLASS_BULKY
 	wlength = WLENGTH_SHORT
