@@ -2,7 +2,7 @@ GLOBAL_LIST_EMPTY(outlawed_players)
 GLOBAL_LIST_EMPTY(lord_decrees)
 
 /obj/structure/roguemachine/titan
-	name = "throat"
+	name = "THROAT"
 	desc = "He who wears the crown holds the key to this strange thing. If all else fails, yell \"Help!\""
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = ""
