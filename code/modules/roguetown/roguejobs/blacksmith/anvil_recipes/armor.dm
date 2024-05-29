@@ -164,6 +164,7 @@
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/head/roguetown/helmet/sallet/visored
+	craftdiff = 2
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/helmetbuc
@@ -171,6 +172,7 @@
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
+	craftdiff = 2
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/helmetpig
@@ -178,6 +180,7 @@
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/pigface
+	craftdiff = 2
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/helmetknight
@@ -185,6 +188,7 @@
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/knight
+	craftdiff = 2
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/plateboot
