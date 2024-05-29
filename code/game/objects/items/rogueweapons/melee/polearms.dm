@@ -205,6 +205,7 @@
 	damfactor = 1.2
 	swingdelay = 2
 	misscost = 20
+	warnie = "mobwarning"
 
 /datum/intent/spear/halberd/cut
 	name = "cut"

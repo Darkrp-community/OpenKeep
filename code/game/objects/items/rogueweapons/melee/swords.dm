@@ -354,6 +354,7 @@
 	damfactor = 1.1
 	chargetime = 1
 	swingdelay = 1
+	warnie = "mobwarning"
 
 /obj/item/rogueweapon/sword/long/exe
 	possible_item_intents = list(/datum/intent/sword/strike)

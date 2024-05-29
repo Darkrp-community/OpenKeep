@@ -260,6 +260,7 @@
 	swingdelay = 3
 	icon_state = "insmash"
 	misscost = 30
+	warnie = "mobwarning"
 
 
 // Copper Bludgeon - Extremely Cheap, crafts in 2's
