@@ -59,6 +59,7 @@
 		neck = /obj/item/clothing/neck/roguetown/chaincoif
 	else
 		head = /obj/item/clothing/head/roguetown/helmet/skullcap
+		neck - /obj/item/clothing/neck/roguetown/gorget
 
 	H.change_stat("strength", 2)
 	H.change_stat("endurance", 1) // 7 stat points total as a low-skill martial role without magic. Compared to Pally with 5 points.
