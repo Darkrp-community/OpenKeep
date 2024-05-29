@@ -91,6 +91,9 @@
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
 	minstr = 10 //meant to be a orc weapon or barbarian weapon
+	icon = 'icons/roguetown/weapons/32.dmi'
+	max_blade_int = 200
+	max_integrity = 300
 	wdefense = 3
 
 /obj/item/rogueweapon/battle/getonmobprop(tag)
@@ -111,6 +114,7 @@
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "axe"
 	icon_state = "axe"
+	icon = 'icons/roguetown/weapons/32.dmi'
 	max_blade_int = 130
 	max_integrity = 300
 	smeltresult = /obj/item/ingot/iron
@@ -125,6 +129,7 @@
 	slot_flags = ITEM_SLOT_HIP
 	name = "axe"
 	icon_state = "saxe"
+	icon = 'icons/roguetown/weapons/32.dmi'
 	force = 20
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
