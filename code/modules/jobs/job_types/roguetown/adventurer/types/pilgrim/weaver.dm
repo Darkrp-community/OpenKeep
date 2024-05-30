@@ -1,6 +1,6 @@
-/datum/advclass/seamstress
-	name = "Seamstress"
-	allowed_sexes = list("female")
+/datum/advclass/weaver
+	name = "Weaver"
+	allowed_sexes = list("Male", "female")
 	allowed_races = list("Humen",
 	"Elf",
 	"Half-Elf",
@@ -12,7 +12,6 @@
 	isvillager = TRUE
 	ispilgrim = FALSE
 	maxchosen = 1
-	israre = TRUE
 
 /datum/outfit/job/roguetown/adventurer/seamstress/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -28,7 +27,6 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	pants = /obj/item/clothing/under/roguetown/tights/random
-	armor = /obj/item/clothing/suit/roguetown/armor/armordress
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	backl = /obj/item/storage/backpack/rogue/satchel
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
