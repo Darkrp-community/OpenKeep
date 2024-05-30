@@ -79,8 +79,8 @@
 	var/list/subtargets = list()		//these are subtargets that can be attacked with weapons (crits)
 	var/list/grabtargets = list()		//these are subtargets that can be grabbed
 
-	var/rotted = 0
-	var/skeletonized = 0
+	var/rotted = FALSE
+	var/skeletonized = FALSE
 
 	var/fingers = TRUE
 
@@ -309,7 +309,7 @@
 	if(owner && updating_health)
 		owner.updatehealth()
 	consider_processing()
-	update_disabled(TRUE)
+	update_disabled()
 	cremation_progress = min(0, cremation_progress - ((brute_dam + burn_dam)*(100/max_damage)))
 	return update_bodypart_damage_state()
 
@@ -321,37 +321,29 @@
 	return total
 
 //Checks disabled status thresholds
-/obj/item/bodypart/proc/update_disabled(heal = FALSE)
+/obj/item/bodypart/proc/update_disabled()
 	update_HP()
-	if(heal)
-		if(world.time > (last_disable + 10))
-			set_disabled(is_disabled(TRUE))
-	else if(!disabled)
-		set_disabled(is_disabled())
+	set_disabled(is_disabled())
 
-/obj/item/bodypart/proc/is_disabled(heal = FALSE)
+/obj/item/bodypart/proc/is_disabled()
+	if(!can_disable() || HAS_TRAIT(owner, TRAIT_NOLIMBDISABLE))
+		return BODYPART_NOT_DISABLED
+	//yes this does mean vampires can use rotten limbs
+	if((rotted || skeletonized) && !(owner.mob_biotypes & MOB_UNDEAD))
+		return BODYPART_DISABLED_ROT
 	if(HAS_TRAIT(src, TRAIT_PARALYSIS))
 		return BODYPART_DISABLED_PARALYSIS
-	if(can_disable() && !HAS_TRAIT(owner, TRAIT_NOLIMBDISABLE))
-		. = disabled //inertia, to avoid limbs healing 0.1 damage and being re-enabled
-		if((brute_dam >= max_damage) || (HAS_TRAIT(owner, TRAIT_EASYLIMBDISABLE) && (brute_dam >= (max_damage * 0.6))))
-			return BODYPART_DISABLED_DAMAGE
-		if(burn_dam >= max_damage)
-			return BODYPART_DISABLED_PARALYSIS
-		if(heal)
-//			if(disabled == BODYPART_DISABLED_DAMAGE && (get_damage(TRUE) <= (max_damage * 0.5)))
-//				return BODYPART_NOT_DISABLED
-			for(var/datum/wound/fracture/F in wounds)
-				return BODYPART_DISABLED_CRIT
-			return BODYPART_NOT_DISABLED
-	else
-		return BODYPART_NOT_DISABLED
+	for(var/datum/wound/ouchie as anything in wounds)
+		if(ouchie.disabling)
+			return BODYPART_DISABLED_FRACTURE
+	var/total_dam = brute_dam + burn_dam
+	if((total_dam >= max_damage) || (HAS_TRAIT(owner, TRAIT_EASYLIMBDISABLE) && (total_dam >= (max_damage * 0.6))))
+		return BODYPART_DISABLED_DAMAGE
+	return BODYPART_NOT_DISABLED
 
 /obj/item/bodypart/proc/set_disabled(new_disabled)
 	if(disabled == new_disabled)
 		return
-	if(new_disabled == BODYPART_DISABLED_FALL)
-		playsound(owner, "drybreak", 100, FALSE)
 	disabled = new_disabled
 	last_disable = world.time
 	owner.update_health_hud() //update the healthdoll
@@ -587,7 +579,7 @@
 	. = ..()
 	if(!.)
 		return
-	if(disabled == BODYPART_DISABLED_DAMAGE|BODYPART_DISABLED_FALL)
+	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_FRACTURE)
 		if(owner.stat < DEAD)
 			to_chat(owner, "<span class='warning'>I feel a sharp pain in my back!</span>")
 
@@ -646,15 +638,15 @@
 	offset_f = OFFSET_GLOVES_F
 
 /obj/item/bodypart/l_arm/is_disabled()
-	if(HAS_TRAIT(owner, TRAIT_PARALYSIS_L_ARM))
+	. = ..()
+	if(!. && owner && HAS_TRAIT(owner, TRAIT_PARALYSIS_L_ARM))
 		return BODYPART_DISABLED_PARALYSIS
-	return ..()
 
 /obj/item/bodypart/l_arm/set_disabled(new_disabled)
 	. = ..()
 	if(!.)
 		return
-	if(disabled == BODYPART_DISABLED_DAMAGE)
+	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_FRACTURE)
 		if(owner.stat < DEAD)
 			to_chat(owner, "<span class='boldwarning'>I can no longer move my [name]!</span>")
 		if(held_index)
@@ -711,15 +703,15 @@
 	offset_f = OFFSET_GLOVES_F
 
 /obj/item/bodypart/r_arm/is_disabled()
-	if(HAS_TRAIT(owner, TRAIT_PARALYSIS_R_ARM))
+	. = ..()
+	if(!. && owner && HAS_TRAIT(owner, TRAIT_PARALYSIS_R_ARM))
 		return BODYPART_DISABLED_PARALYSIS
-	return ..()
 
 /obj/item/bodypart/r_arm/set_disabled(new_disabled)
 	. = ..()
 	if(!.)
 		return
-	if(disabled == BODYPART_DISABLED_DAMAGE)
+	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_FRACTURE)
 		if(owner.stat < DEAD)
 			to_chat(owner, "<span class='danger'>I can no longer move my [name]!</span>")
 		if(held_index)
@@ -773,15 +765,15 @@
 	grabtargets = list(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_L_LEG)
 
 /obj/item/bodypart/l_leg/is_disabled()
-	if(HAS_TRAIT(owner, TRAIT_PARALYSIS_L_LEG))
+	. = ..()
+	if(!. && owner && HAS_TRAIT(owner, TRAIT_PARALYSIS_L_LEG))
 		return BODYPART_DISABLED_PARALYSIS
-	return ..()
 
 /obj/item/bodypart/l_leg/set_disabled(new_disabled)
 	. = ..()
 	if(!.)
 		return
-	if(disabled == BODYPART_DISABLED_DAMAGE)
+	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_FRACTURE)
 		if(owner.stat < DEAD)
 			to_chat(owner, "<span class='danger'>I can no longer move my [name]!</span>")
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
@@ -831,15 +823,15 @@
 	grabtargets = list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_R_LEG)
 
 /obj/item/bodypart/r_leg/is_disabled()
-	if(HAS_TRAIT(owner, TRAIT_PARALYSIS_R_LEG))
+	. = ..()
+	if(!. && owner && HAS_TRAIT(owner, TRAIT_PARALYSIS_R_LEG))
 		return BODYPART_DISABLED_PARALYSIS
-	return ..()
 
 /obj/item/bodypart/r_leg/set_disabled(new_disabled)
 	. = ..()
 	if(!.)
 		return
-	if(disabled == BODYPART_DISABLED_DAMAGE)
+	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_FRACTURE)
 		if(owner.stat < DEAD)
 			to_chat(owner, "<span class='danger'>I can no longer move my [name]!</span>")
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)

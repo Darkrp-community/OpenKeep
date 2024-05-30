@@ -408,13 +408,12 @@
 			if(user.mind.has_antag_datum(/datum/antagonist/werewolf))
 				var/mob/living/carbon/human/H = C
 				if(prob(25) && H)
-					H.werewolf_infect()
+					spawn(3 MINUTES)
+						H.werewolf_infect()
 					//addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_infect)), 3 MINUTES)
 			if(user.mind.has_antag_datum(/datum/antagonist/zombie))
 				var/mob/living/carbon/human/H = C
-				if(prob(25)) //Delay is handled in zombie infect anyways
-					H.zombie_infect()
-					//addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon/human, zombie_infect)), 3 MINUTES)
+				INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human, zombie_infect_attempt))
 				if(C.stat)
 					if(istype(limb_grabbed, /obj/item/bodypart/head))
 						var/obj/item/bodypart/head/HE = limb_grabbed

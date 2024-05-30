@@ -37,6 +37,18 @@
 		bandage_expire()
 	owner.update_damage_overlays()
 
+/obj/item/bodypart/proc/temporary_crit_paralysis(duration = 60 SECONDS)
+	if(HAS_TRAIT_FROM(src, TRAIT_PARALYSIS, CRIT_TRAIT))
+		return FALSE
+	ADD_TRAIT(src, TRAIT_PARALYSIS, CRIT_TRAIT)
+	addtimer(CALLBACK(src, PROC_REF(remove_crit_paralysis)), duration)
+	update_disabled()
+	return TRUE
+
+/obj/item/bodypart/proc/remove_crit_paralysis()
+	REMOVE_TRAIT(src, TRAIT_PARALYSIS, CRIT_TRAIT)
+	update_disabled()
+
 /obj/item/bodypart/proc/try_crit(bclass,dam,mob/living/user,zone_precise)
 	if(!dam)
 		return
@@ -48,9 +60,11 @@
 			if(owner == user)
 				used = 0
 		if(prob(used))
-			if(is_disabled() == BODYPART_DISABLED_FALL)
+			if(HAS_TRAIT_FROM(src, TRAIT_PARALYSIS, CRIT_TRAIT))
 				if(brute_dam < max_damage)
-					return
+					return FALSE
+				for(var/datum/wound/fracture/W in wounds)
+					return FALSE
 				var/list/phrases = list("The bone shatters!", "The bone is broken!", "The [src.name] is mauled!", "The bone snaps through the skin!")
 				owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> [pick(phrases)]</span>"
 				add_wound(/datum/wound/fracture)
@@ -61,20 +75,23 @@
 				owner.emote("paincrit", TRUE)
 				owner.Slowdown(20)
 				shake_camera(owner, 2, 2)
-				set_disabled(BODYPART_DISABLED_CRIT)
+				update_disabled()
 			else
 				var/list/phrases = list("The [src] jolts painfully!", "The [src] is disabled!")
 				owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> [pick(phrases)]</span>"
 				owner.emote("paincrit", TRUE)
 				owner.Slowdown(20)
 				shake_camera(owner, 2, 2)
-				set_disabled(BODYPART_DISABLED_FALL)
+				temporary_crit_paralysis()
+				playsound(owner, "drybreak", 100, FALSE)
 		return FALSE
 	if(bclass == BCLASS_BLUNT || bclass == BCLASS_SMASH)
 		for(var/datum/wound/fracture/W in wounds)
 			return FALSE
 		if(brute_dam)
 			dam += round(max((brute_dam / max_damage)*20, 1), 1)
+		if(HAS_TRAIT_FROM(src, TRAIT_PARALYSIS, CRIT_TRAIT))
+			dam += 20
 		if(user)
 			if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 15
@@ -89,7 +106,7 @@
 			owner.emote("paincrit", TRUE)
 			owner.Slowdown(5)
 			shake_camera(owner, 2, 2)
-			set_disabled(BODYPART_DISABLED_CRIT)
+			update_disabled()
 			return FALSE
 	if(bclass == BCLASS_CUT || bclass == BCLASS_CHOP || bclass == BCLASS_STAB || bclass == BCLASS_BITE)
 		if(!can_bloody_wound())
@@ -107,11 +124,11 @@
 					return TRUE
 				return FALSE
 			playsound(owner, pick('sound/combat/crit.ogg'), 100, FALSE)
-			owner.emote("paincrit", TRUE)
+			owner.emote("paincrit")
 			owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> Blood sprays from [owner]'s [src.name]!</span>"
 			add_wound(/datum/wound/artery)
-			set_disabled(BODYPART_DISABLED_CRIT)
-			owner.Slowdown(10)
+			temporary_crit_paralysis()
+			owner.Slowdown(20)
 			shake_camera(owner, 2, 2)
 			if(bclass == BCLASS_STAB)
 				return TRUE
@@ -137,7 +154,9 @@
 				return FALSE
 		if(brute_dam)
 			dam += round(max((brute_dam / max_damage)*20, 1), 1)
-		if(prob(round(max(dam / 12, 1), 1))) //higher prob
+		if(HAS_TRAIT_FROM(src, TRAIT_PARALYSIS, CRIT_TRAIT))
+			dam += 20
+		if(prob(round(max(dam / 3, 1), 1)))
 			var/list/phrases = list("The ribs shatter in a splendid way!", "The ribs are smashed!", "The chest is mauled!", "The chest caves in!")
 			owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> [pick(phrases)]</span>"
 			add_wound(/datum/wound/fracture)
@@ -146,7 +165,7 @@
 				playsound(owner, 'sound/combat/tf2crit.ogg', 100, FALSE)
 			else
 				playsound(owner, "wetbreak", 100, FALSE)
-			set_disabled(BODYPART_DISABLED_CRIT)
+			update_disabled()
 			owner.Slowdown(20)
 			shake_camera(owner, 2, 2)
 			return FALSE
@@ -240,7 +259,9 @@
 	if(bclass == BCLASS_BLUNT || bclass == BCLASS_PICK || bclass == BCLASS_SMASH)
 		if(dam < 5)
 			return FALSE
-		var/used = round((brute_dam / max_damage)*20 + (dam / 6), 1)
+		var/used = round((brute_dam / max_damage)*20 + (dam / 3), 1)
+		if(HAS_TRAIT_FROM(src, TRAIT_PARALYSIS, CRIT_TRAIT))
+			used += 20
 		if(user)
 			if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 				used += 10
@@ -264,7 +285,7 @@
 				playsound(owner, 'sound/combat/tf2crit.ogg', 100, FALSE)
 			else
 				playsound(owner, "headcrush", 100, FALSE)
-			set_disabled(BODYPART_DISABLED_CRIT)
+			update_disabled()
 			shake_camera(owner, 2, 2)
 			owner.death()
 			brainkill = TRUE
