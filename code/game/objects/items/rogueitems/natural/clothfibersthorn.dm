@@ -30,6 +30,41 @@
 			B.amount += 1
 			qdel(src)
 
+/obj/item/natural/silk
+	name = "silk"
+	icon_state = "fibers"
+	possible_item_intents = list(/datum/intent/use)
+	desc = "Silken strands. Their usage in clothing is exotic in all places save the underdark"
+	force = 0
+	throwforce = 0
+	obj_flags = null
+	color = "#e6e3db"
+	firefuel = 5 MINUTES
+	resistance_flags = FLAMMABLE
+	slot_flags = ITEM_SLOT_MOUTH
+	max_integrity = 20
+	muteinmouth = TRUE
+	w_class = WEIGHT_CLASS_TINY
+	spitoutmouth = FALSE
+
+/obj/item/natural/silk/attack_right(mob/user)
+	to_chat(user, "<span class='warning'>I start to collect [src]...</span>")
+	if(move_after(user, 5 SECONDS, target = src))
+		var/silkcount = 0
+		for(var/obj/item/natural/silk/F in get_turf(src))
+			silkcount++
+		while(silkcount > 0)
+			if(silkcount == 1)
+				new /obj/item/natural/silk(get_turf(user))
+				silkcount--
+			else if(silkcount >= 2)
+				var/obj/item/natural/bundle/silk/B = new(get_turf(user))
+				B.amount = clamp(silkcount, 2, 6)
+				B.update_bundle()
+				silkcount -= clamp(silkcount, 2, 6)
+		for(var/obj/item/natural/silk/F in get_turf(src))
+			qdel(F)
+
 #ifdef TESTSERVER
 
 /client/verb/bloodnda()
@@ -242,6 +277,23 @@
 	spitoutmouth = FALSE
 	var/amount = 2
 
+/obj/item/natural/bundle/silk
+	name = "silken weave"
+	icon_state = "fibersroll1"
+	possible_item_intents = list(/datum/intent/use)
+	desc = "Silk neatly woven together."
+	force = 0
+	throwforce = 0
+	obj_flags = null
+	color = "#e6e3db"
+	firefuel = 5 MINUTES
+	resistance_flags = FLAMMABLE
+	slot_flags = ITEM_SLOT_MOUTH
+	max_integrity = 20
+	muteinmouth = TRUE
+	w_class = WEIGHT_CLASS_TINY
+	spitoutmouth = FALSE
+	var/amount = 2
 
 /obj/item/natural/bundle/cloth/examine(mob/user)
 	. = ..()
@@ -329,6 +381,52 @@
 	update_bundle()
 
 /obj/item/natural/bundle/fibers/proc/update_bundle()
+	switch(amount)
+		if(1 to 3)
+			icon_state = "fibersroll1"
+		if(4 to 6)
+			icon_state = "fibersroll2"
+
+/obj/item/natural/bundle/silk/examine(mob/user)
+	. = ..()
+	to_chat(user, "<span class='notice'>silk in the weave: [amount]</span>")
+
+/obj/item/natural/bundle/silk/attackby(obj/item/W, mob/living/user)
+	if(istype(W, /obj/item/natural/silk))
+		if(amount >= 6)
+			to_chat(user, "There's not enough space in the bundle.")
+			return
+		amount += 1
+		user.visible_message("[user] adds [W] to [src]")
+		qdel(W)
+	if(istype(W, /obj/item/natural/bundle/silk))
+		var/obj/item/natural/bundle/silk/B = W
+		if(B.amount + amount <= 6)
+			user.visible_message("[user] adds [B] to [src]")
+			amount += B.amount
+			qdel(B)
+		else
+			to_chat(user, "There's not enough space in the bundle.")
+	update_bundle()
+
+/obj/item/natural/bundle/silk/attack_right(mob/user)
+	var/mob/living/carbon/human/H = user
+	switch(amount)
+		if(2)
+			var/obj/item/natural/silk/F = new (src.loc)
+			var/obj/item/natural/silk/I = new (src.loc)
+			H.put_in_hands(F)
+			H.put_in_hands(I)
+			qdel(src)
+			return
+		else
+			amount -= 1
+			var/obj/item/natural/silk/F = new (src.loc)
+			H.put_in_hands(F)
+			user.visible_message("[user] removes [F] from [src]")
+	update_bundle()
+
+/obj/item/natural/bundle/silk/proc/update_bundle()
 	switch(amount)
 		if(1 to 3)
 			icon_state = "fibersroll1"
