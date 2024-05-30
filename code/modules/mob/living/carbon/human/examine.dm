@@ -393,6 +393,8 @@
 				. += "<span class='warning'><B>[t_He] look[p_s()] much weaker.</B></span>"
 			else
 				. += "<span class='warning'>[t_He] look[p_s()] weaker.</span>"
+		else
+			. += "[t_He] look[p_s()] about as strong as I."
 
 	if(Adjacent(user))
 		. += "<a href='?src=[REF(src)];inspect_limb=1'>Inspect [parse_zone(check_zone(user.zone_selected))]</a>"

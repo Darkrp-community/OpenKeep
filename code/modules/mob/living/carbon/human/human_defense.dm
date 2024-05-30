@@ -809,15 +809,15 @@
 
 	if(HAS_TRAIT(src, TRAIT_PARALYSIS))
 		if(HAS_TRAIT(src, TRAIT_NO_BITE))
-			examination += "<span class='danger'>[m1] TETRAPLEGIC!</span>"
+			examination += "<span class='danger'>[m1] PARALYZED!</span>"
 		else
-			examination += "<span class='danger'>[m1] QUADRIPLEGIC!</span>"
+			examination += "<span class='danger'>[m1] TETRAPLEGIC!</span>"
 	else if(HAS_TRAIT(src, TRAIT_PARALYSIS_R_LEG) && HAS_TRAIT(src, TRAIT_PARALYSIS_L_LEG))
 		examination += "<span class='warning'>[m1] PARAPLEGIC!</span>"
 
 	if(roundstart_quirks.len)
 		examination += "I have these quirks: [get_trait_string()]."
-	
+
 	var/static/list/body_zones = list(
 		BODY_ZONE_HEAD,
 		BODY_ZONE_CHEST,
@@ -854,7 +854,7 @@
 		examination += "<span class='notice'>Let's see how [src]'s [parse_zone(choice)] is doing.</span>"
 		if(!user.stat && !silent)
 			visible_message("<span class='notice'>[user] examines [src]'s [parse_zone(choice)].</span>")
-	
+
 	var/obj/item/bodypart/examined_part = get_bodypart(choice)
 	if(examined_part)
 		examination += examined_part.check_for_injuries(user, advanced)
