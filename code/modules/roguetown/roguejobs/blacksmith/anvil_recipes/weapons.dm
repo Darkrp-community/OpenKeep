@@ -18,10 +18,10 @@
 	i_type = "Weapons"
 
 /datum/anvil_recipe/weapons/cbludgeon
-	name = "copper bludgeons (+2 sticks)"	
+	name = "copper bludgeon (+stick)"
 	req_bar = /obj/item/ingot/copper
-	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
-	created_item = list(/obj/item/rogueweapon/mace/copperbludgeon, /obj/item/rogueweapon/mace/copperbludgeon)
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/mace/copperbludgeon
 	i_type = "Weapons"
 
 /datum/anvil_recipe/weapons/cmace
@@ -43,7 +43,7 @@
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
 	created_item = list(/obj/item/rogueweapon/copperspear, /obj/item/rogueweapon/copperspear)
-
+	i_type = "Weapons"
 
 // IRON GEAR - Middle Tier, what most disgusting Men at Arms have
 
@@ -355,13 +355,3 @@
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = list(/obj/item/ammo_casing/caseless/rogue/bolt, /obj/item/ammo_casing/caseless/rogue/bolt, /obj/item/ammo_casing/caseless/rogue/bolt)
-	i_type = "Ammo"
-
-// BOWS
-
-/datum/anvil_recipe/weapons/arrows
-	name = "5x Arrows (+stick)"
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = list(/obj/item/ammo_casing/caseless/rogue/arrow,/obj/item/ammo_casing/caseless/rogue/arrow,/obj/item/ammo_casing/caseless/rogue/arrow, /obj/item/ammo_casing/caseless/rogue/arrow, /obj/item/ammo_casing/caseless/rogue/arrow)
-	i_type = "Ammo"

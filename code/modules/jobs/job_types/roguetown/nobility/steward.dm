@@ -6,13 +6,13 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list("Humen",
-	"Humen",
-	"Elf",
-	"Dwarf",
-	"Dwarf",
-	"Aasimar",
-	"Half-Elf")
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Aasimar",
+	)
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_STEWARD
 	bypass_lastclass = TRUE
