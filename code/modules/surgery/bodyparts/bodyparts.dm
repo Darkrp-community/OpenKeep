@@ -543,9 +543,9 @@
 
 
 	if(should_draw_greyscale && !skeletonized)
-		var/draw_color = mutation_color || species_color || (skin_tone)
-		if(draw_color && rotted)
-			draw_color = "878f79"
+		var/draw_color =  mutation_color || species_color || skin_tone
+		if(rotted || (owner && HAS_TRAIT(owner, TRAIT_ROTMAN)))
+			draw_color = SKIN_COLOR_ROT
 		if(draw_color)
 			limb.color = "#[draw_color]"
 			if(aux_zone && !hideaux)
@@ -553,8 +553,7 @@
 
 /obj/item/bodypart/deconstruct(disassembled = TRUE)
 	drop_organs()
-	qdel(src)
-
+	return ..()
 /obj/item/bodypart/chest
 	name = BODY_ZONE_CHEST
 	desc = ""

@@ -1614,6 +1614,7 @@
 	screen_loc = ui_backhudl
 	layer = BACKHUD_LAYER
 	plane = FULLSCREEN_PLANE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /atom/movable/screen/backhudl/Click()
 	return
