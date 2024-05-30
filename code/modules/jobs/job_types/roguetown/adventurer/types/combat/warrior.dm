@@ -2,14 +2,15 @@
 /datum/advclass/combat/sfighter
 	name = "Warrior"
 	tutorial = "Warriors are the heart of any party, hidden behind a large shield with the courage to take on any foe."
-	allowed_sexes = list("male", "female")
-	allowed_races = list("Humen",
-	"Humen",
-	"Elf",
-	"Dwarf",
-	"Half-Elf",
-	"Dark Elf",
-	"Tiefling")
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Dark Elf",
+		"Tiefling"
+	)
 	outfit = /datum/outfit/job/roguetown/adventurer/sfighter
 
 
