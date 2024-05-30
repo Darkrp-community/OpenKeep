@@ -12,9 +12,10 @@
 #define RTRAIT_NOBLE					"Noble Blooded"
 #define RTRAIT_EMPATH					"Empath"
 #define RTRAIT_BREADY					"Battleready"
-#define RTRAIT_MEDIUMARMOR					"Maille Training"
-#define RTRAIT_HEAVYARMOR					"Plate Training"
+#define RTRAIT_MEDIUMARMOR				"Maille Training"
+#define RTRAIT_HEAVYARMOR				"Plate Training"
 #define RTRAIT_VILLAIN					"Villain"
+#define RTRAIT_CRITICAL_RESISTANCE		"Critical Resistance"
 
 #define TRAIT_SPELLCOCKBLOCK "spellcockblock" //prevents spellcasting
 #define TRAIT_NOFATSTAM				"nofatstam" //for ai
@@ -45,7 +46,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	RTRAIT_BREADY = "Defensive stance does not passively fatigue me.",
 	RTRAIT_MEDIUMARMOR = "I can move freely in medium armor.",
 	RTRAIT_HEAVYARMOR = "I can move freely in heavy armor.",
-	RTRAIT_VILLAIN = "I am a devious, conniving villain!"
+	RTRAIT_VILLAIN = "I am a devious, conniving villain!",
+	RTRAIT_CRITICAL_RESISTANCE = "My skin is strong as armor, blessed by those above."
 	))
 
 
