@@ -55,6 +55,31 @@
 			icon_state = "[icon_living]"
 	regenerate_icons()
 
+
+/mob/living/simple_animal/pet/cat/Crossed(mob/living/L) // Gato Basado - makes it leave when people step too close
+	. = ..()
+	if(L)
+		if(health > 1)
+			if(isturf(loc))
+				dir = pick(GLOB.cardinals)
+				step(src, dir)
+			if(!stat && resting && !buckled)
+				resting = FALSE
+
+/mob/living/simple_animal/proc/personal_space()
+	if(locate(/mob/living/carbon) in get_turf(src))
+		sleep(1)
+		dir = pick(GLOB.alldirs)
+		step(src, dir)	
+		personal_space()
+	else
+		return
+
+
+/mob/living/simple_animal/pet/cat/inn
+	name = "Inn cat"
+	desc = "Pest control, even if he was better at it when younger and less fat."
+
 /mob/living/simple_animal/pet/cat/black
 	name = "black cat"
 	desc = ""
@@ -321,26 +346,8 @@
 		L.reagents.add_reagent(/datum/reagent/consumable/nutriment/vitamin, 0.4)
 
 
-/mob/living/simple_animal/pet/cat/Crossed(mob/living/L) // Gato Basado - makes it leave when people step too close
-	. = ..()
-	if(L)
-		if(health > 1)
-			if(isturf(loc))
-				dir = pick(GLOB.cardinals)
-				step(src, dir)
-			if(!stat && resting && !buckled)
-				resting = FALSE
 
-/mob/living/simple_animal/proc/personal_space()
-	if(locate(/mob/living/carbon) in get_turf(src))
-		sleep(1)
-		dir = pick(GLOB.alldirs)
-		step(src, dir)	
-		personal_space()
-	else
-		return
-
-/mob/living/simple_animal/pet/cat/attack_hand(mob/living/carbon/human/M) // Gato Basado - not all pets are welcome
+/mob/living/simple_animal/pet/cat/inn/attack_hand(mob/living/carbon/human/M) // Gato Basado - not all pets are welcome
 	. = ..()
 	if((isdarkelf(M)))  // l´cursed bonbonbon
 		visible_message("<span class='notice'>The cat hisses at [M] and recoils in disgust.</span>")
