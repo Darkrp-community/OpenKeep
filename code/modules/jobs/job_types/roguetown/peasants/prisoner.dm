@@ -7,10 +7,14 @@
 	spawn_positions = 2
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list("Humen",
-	"Elf",
-	"Half-Elf",
-	"Aasimar"
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
 	)
 	tutorial = "How does it feel to be the rat in the cage? Youre unwanted, unloved and entirely worthless in society. Youre kept around for the amusement of the Guards and for the oft chance someone comes to pay your ransom. Might as well start praying to whatever God you find solace in."
 
