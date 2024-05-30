@@ -1,5 +1,5 @@
 /datum/anvil_recipe/weapons
-	appro_skill = /datum/skill/craft/weaponsmithing	
+	appro_skill = /datum/skill/craft/weaponsmithing
 	craftdiff = 1
 
 // COPPER TIER - Pretty dogshit, but EXTREMELY cheap.
