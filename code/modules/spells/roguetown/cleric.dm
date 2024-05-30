@@ -85,9 +85,9 @@
 			var/mob/living/carbon/C = target
 			var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(user.zone_selected))
 			if(affecting)
-				if(affecting.heal_damage(20, 20, 0, null, FALSE))
+				if(affecting.heal_damage(20, 20))
 					C.update_damage_overlays()
-				if(affecting.heal_wounds(50))
+				if(affecting.heal_wounds(20))
 					C.update_damage_overlays()
 		else
 			target.adjustBruteLoss(-5)
@@ -137,7 +137,7 @@
 			var/mob/living/carbon/C = target
 			var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(user.zone_selected))
 			if(affecting)
-				if(affecting.heal_damage(50, 50, 0, null, FALSE))
+				if(affecting.heal_damage(50, 50))
 					C.update_damage_overlays()
 				if(affecting.heal_wounds(50))
 					C.update_damage_overlays()

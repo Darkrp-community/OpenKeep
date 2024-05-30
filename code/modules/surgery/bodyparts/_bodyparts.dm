@@ -112,6 +112,8 @@
 		owner = 0
 	if(bandage)
 		QDEL_NULL(bandage)
+	for(var/datum/wound/wound as anything in wounds)
+		qdel(wound)
 	return ..()
 
 
@@ -331,11 +333,11 @@
 	//yes this does mean vampires can use rotten limbs
 	if((rotted || skeletonized) && !(owner.mob_biotypes & MOB_UNDEAD))
 		return BODYPART_DISABLED_ROT
-	if(HAS_TRAIT(src, TRAIT_PARALYSIS))
+	if(HAS_TRAIT(owner, TRAIT_PARALYSIS) || HAS_TRAIT(src, TRAIT_PARALYSIS))
 		return BODYPART_DISABLED_PARALYSIS
 	for(var/datum/wound/ouchie as anything in wounds)
 		if(ouchie.disabling)
-			return BODYPART_DISABLED_FRACTURE
+			return BODYPART_DISABLED_WOUND
 	var/total_dam = brute_dam + burn_dam
 	if((total_dam >= max_damage) || (HAS_TRAIT(owner, TRAIT_EASYLIMBDISABLE) && (total_dam >= (max_damage * 0.6))))
 		return BODYPART_DISABLED_DAMAGE
@@ -578,7 +580,7 @@
 	. = ..()
 	if(!.)
 		return
-	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_FRACTURE)
+	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_WOUND)
 		if(owner.stat < DEAD)
 			to_chat(owner, "<span class='warning'>I feel a sharp pain in my back!</span>")
 
@@ -635,6 +637,7 @@
 	grabtargets = list(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_L_ARM)
 	offset = OFFSET_GLOVES
 	offset_f = OFFSET_GLOVES_F
+	dismember_wound = /datum/wound/dismemberment/l_arm
 
 /obj/item/bodypart/l_arm/is_disabled()
 	. = ..()
@@ -645,7 +648,7 @@
 	. = ..()
 	if(!.)
 		return
-	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_FRACTURE)
+	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_WOUND)
 		if(owner.stat < DEAD)
 			to_chat(owner, "<span class='boldwarning'>I can no longer move my [name]!</span>")
 		if(held_index)
@@ -700,6 +703,7 @@
 	grabtargets = list(BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_R_ARM)
 	offset = OFFSET_GLOVES
 	offset_f = OFFSET_GLOVES_F
+	dismember_wound = /datum/wound/dismemberment/r_arm
 
 /obj/item/bodypart/r_arm/is_disabled()
 	. = ..()
@@ -710,7 +714,7 @@
 	. = ..()
 	if(!.)
 		return
-	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_FRACTURE)
+	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_WOUND)
 		if(owner.stat < DEAD)
 			to_chat(owner, "<span class='danger'>I can no longer move my [name]!</span>")
 		if(held_index)
@@ -762,6 +766,7 @@
 	aux_layer = LEG_PART_LAYER
 	subtargets = list(BODY_ZONE_PRECISE_L_FOOT)
 	grabtargets = list(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_L_LEG)
+	dismember_wound = /datum/wound/dismemberment/l_leg
 
 /obj/item/bodypart/l_leg/is_disabled()
 	. = ..()
@@ -772,7 +777,7 @@
 	. = ..()
 	if(!.)
 		return
-	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_FRACTURE)
+	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_WOUND)
 		if(owner.stat < DEAD)
 			to_chat(owner, "<span class='danger'>I can no longer move my [name]!</span>")
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
@@ -820,6 +825,7 @@
 	aux_layer = LEG_PART_LAYER
 	subtargets = list(BODY_ZONE_PRECISE_R_FOOT)
 	grabtargets = list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_R_LEG)
+	dismember_wound = /datum/wound/dismemberment/r_leg
 
 /obj/item/bodypart/r_leg/is_disabled()
 	. = ..()
@@ -830,7 +836,7 @@
 	. = ..()
 	if(!.)
 		return
-	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_FRACTURE)
+	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_WOUND)
 		if(owner.stat < DEAD)
 			to_chat(owner, "<span class='danger'>I can no longer move my [name]!</span>")
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)

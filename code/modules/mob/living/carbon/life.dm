@@ -1,21 +1,6 @@
 /mob/living/proc/handle_wounds()
-	for(var/datum/wound/WO in simple_wounds)
-		if(WO.passive_heal)
-			if(WO.whp > 0)
-				WO.whp = WO.whp - 1
-				if(WO.whp <= 0)
-					simple_wounds -= WO
-					qdel(WO)
-
-/mob/living/carbon/handle_wounds()
-	for(var/obj/item/bodypart/BP in bodyparts)
-		for(var/datum/wound/WO in BP.wounds)
-			if(WO.passive_heal)
-				if(WO.whp > 0)
-					WO.whp = WO.whp - 1
-					if(WO.whp <= 0)
-						BP.wounds -= WO
-						qdel(WO)
+	for(var/datum/wound/wound as anything in get_wounds())
+		wound.on_life()
 
 /mob/living/carbon/Life()
 	set invisibility = 0
@@ -38,9 +23,8 @@
 			return
 
 		handle_blood()
-
-		handle_roguebreath()
 		handle_wounds()
+		handle_roguebreath()
 		var/bprv = handle_bodyparts()
 		if(bprv & BODYPART_LIFE_UPDATE_HEALTH)
 			update_stamina() //needs to go before updatehealth to remove stamcrit
@@ -63,11 +47,15 @@
 				if(hydration > 0 || yess)
 					if(!bleed_rate)
 						blood_volume = min(blood_volume + 10, BLOOD_VOLUME_MAXIMUM)
-					for(var/X in bodyparts)
-						var/obj/item/bodypart/affecting = X
-						if(affecting.get_bleedrate() <= 0.1)
-							if(affecting.heal_damage(buckled.sleepy, buckled.sleepy, null, BODYPART_ORGANIC) || affecting.heal_wounds(3, sleep_heal = TRUE))
+					for(var/obj/item/bodypart/affecting as anything in bodyparts)
+						//for context, it takes 5 small cuts (0.2 x 5) or 3 normal cuts (0.4 x 3) for a bodypart to not be able to heal itself
+						if(affecting.get_bleed_rate() < 1)
+							if(affecting.heal_damage(buckled.sleepy, buckled.sleepy, required_status = BODYPART_ORGANIC))
 								src.update_damage_overlays()
+							for(var/datum/wound/wound as anything in affecting.wounds)
+								if(!wound.sleep_healing)
+									continue
+								wound.heal_wound(wound.sleep_healing * buckled.sleepy)
 					adjustToxLoss(-buckled.sleepy)
 					if(eyesclosed && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 						Sleeping(300)
@@ -81,6 +69,37 @@
 						Sleeping(300)
 				else
 					rogstam_add(buckled.sleepy * 10)
+
+			// Resting on the ground (not sleeping or with eyes closed and about to fall asleep)
+			else if(!buckled && lying)
+				if(eyesclosed)
+					if(!fallingas)
+						to_chat(src, "<span class='warning'>I'll fall asleep soon, although a bed would be more comfortable...</span>")
+					fallingas++
+					if(fallingas > 25)
+						Sleeping(300)
+				else
+					rogstam_add(10)
+
+			// Healing while sleeping on the ground (less efficient than comfortable seats/beds)
+				if(stat)
+					var/yess = HAS_TRAIT(src, TRAIT_NOHUNGER)
+					if(nutrition > 0 || yess)
+						rogstam_add(25)
+					if(hydration > 0 || yess)
+						if(!bleed_rate)
+							blood_volume = min(blood_volume + 10, BLOOD_VOLUME_MAXIMUM)
+						for(var/obj/item/bodypart/affecting as anything in bodyparts)
+							//for context, it takes 5 small cuts (0.2 x 5) or 3 normal cuts (0.4 x 3) for a bodypart to not be able to heal itself
+							if(affecting.get_bleed_rate() < 1)
+								if(affecting.heal_damage(0.5, 0.5, required_status = BODYPART_ORGANIC))
+									src.update_damage_overlays()
+								for(var/datum/wound/wound as anything in affecting.wounds)
+									if(!wound.sleep_healing)
+										continue
+									wound.heal_wound(wound.sleep_healing)
+						adjustToxLoss(-0.1)
+
 			else if(fallingas)
 				fallingas = 0
 			tiredness = min(tiredness + 1, 100)
@@ -495,19 +514,13 @@
 			. |= BP.on_life(stam_regen)
 
 /mob/living/carbon/proc/canspeak()
-	for(var/I in bodyparts)
-		var/obj/item/bodypart/BP = I
-		if(BP.body_zone == BODY_ZONE_HEAD)
-			for(var/datum/wound/artery/throat/A in BP.wounds)
-				return FALSE
-			for(var/obj/item/grabbing/G in grabbedby)
-				if(G.sublimb_grabbed == BODY_ZONE_PRECISE_MOUTH)
-					return FALSE
-			if(mouth && mouth.muteinmouth)
-				return FALSE
-	if(sexcon)
-		if(sexcon.weeating)
+	if(mouth?.muteinmouth)
+		return FALSE
+	for(var/obj/item/grabbing/grab in grabbedby)
+		if(grab.sublimb_grabbed == BODY_ZONE_PRECISE_MOUTH)
 			return FALSE
+	if(has_wound(/datum/wound/artery/throat))
+		return FALSE
 	if(istype(loc, /turf/open/water) && lying)
 		return FALSE
 	return TRUE
