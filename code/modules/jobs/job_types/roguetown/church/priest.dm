@@ -8,7 +8,13 @@
 	spawn_positions = 1
 
 	f_title = "Priestess"
-	allowed_races = list("Humen","Humen","Elf", "Dwarf","Half-Elf","Aasimar")
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Aasimar"
+	)
 	allowed_patrons = list("Astrata")
 	tutorial = "The Divine is all that matters in a world of the immoral. The Weeping god left his children to rule over us mortals and you will preach their wisdom to any who still heed their will. The faithless are growing in number, it is up to you to shepard them to a God-Fearing future."
 	whitelist_req = FALSE
@@ -98,7 +104,7 @@
 		var/dispjob = mind.assigned_role
 		GLOB.badomens -= "nolord"
 		say("By the authority of the gods, I pronounce you Ruler of all Rockhill!")
-		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of ROGUETOWN!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
+		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of Rockhill!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
 		return
 
 /mob/living/carbon/human/proc/churchexcommunicate()
@@ -141,5 +147,3 @@
 			to_chat(src, "<span class='warning'>I need to do this from the chapel.</span>")
 			return FALSE
 		priority_announce("[inputty]", title = "The Priest Speaks", sound = 'sound/misc/bell.ogg')
-
-

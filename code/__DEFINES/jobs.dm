@@ -1,7 +1,7 @@
 
 #define ENGSEC			(1<<0)
 
-#define CAPTAIN			(1<<0)
+#define CAPTAIN_SS13	(1<<0)
 #define HOS				(1<<1)
 #define WARDEN			(1<<2)
 #define DETECTIVE		(1<<3)
@@ -95,10 +95,11 @@
 #define NOBLEMEN		(1<<0)
 
 #define LORD		(1<<0)
-#define STEWARD		(1<<1)
-#define KNIGHT		(1<<2)
-#define WIZARD		(1<<3)
-#define SHERIFF		(1<<4)
+#define LADY		(1<<1)
+#define STEWARD		(1<<2)
+#define HAND		(1<<3)
+#define WIZARD		(1<<4)
+#define CAPTAIN		(1<<5)
 
 #define GARRISON		(1<<1)
 

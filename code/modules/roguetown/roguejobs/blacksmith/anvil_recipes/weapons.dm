@@ -18,11 +18,11 @@
 	created_item = list(/obj/item/rogueweapon/knife/copperdagger, /obj/item/rogueweapon/knife/copperdagger)
 
 /datum/anvil_recipe/weapons/cbludgeon
-	name = "copper bludgeons (+2s)"
+	name = "copper bludgeons (+s)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
-	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
-	created_item = list(/obj/item/rogueweapon/mace/copperbludgeon, /obj/item/rogueweapon/mace/copperbludgeon)
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = list(/obj/item/rogueweapon/mace/copperbludgeon)
 
 /datum/anvil_recipe/weapons/cmace
 	name = "copper mace (2)"
@@ -79,6 +79,16 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/flail
 
+/datum/anvil_recipe/weapons/iswordshort
+	name = "iron short sword"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/rogueweapon/sword/iron/short
+
+/datum/anvil_recipe/weapons/imesser
+	name = "iron messer"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/rogueweapon/sword/iron/messer
+
 // STEEL GEAR - Fancy shit for Knights
 /datum/anvil_recipe/weapons/sflail
 	name = "steel flail"
@@ -108,6 +118,12 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/sword/cutlass
+
+/datum/anvil_recipe/weapons/sswordshort
+	name = "steel short sword"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/rogueweapon/sword/short
 
 /datum/anvil_recipe/weapons/decsword
 	name = "decorated sword (+g)"

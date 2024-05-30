@@ -1,14 +1,14 @@
 /datum/advclass/mercenary/zybantine
 	name = "Zybantine"
 	tutorial = "A cutthroat from the southern countries, you've headed into foreign lands to make even greater coin than you had prior."
-	allowed_sexes = list("male", "female")
-	allowed_races = list("Humen",
-	"Humen",
-	"Half-Elf",
-	"Tiefling",
-	"Dwarf",
-	"Dark Elf",
-	"Aasimar"
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list(
+		"Humen",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/zybantine
 	ismerc = TRUE
@@ -27,10 +27,6 @@
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	backl = /obj/item/storage/backpack/rogue/satchel
-	if(H.gender == FEMALE)
-		pants = /obj/item/clothing/under/roguetown/tights/black
-		beltl = /obj/item/rogueweapon/sword/sabre
-		beltr= /obj/item/flashlight/flare/torch/lantern
 	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/clothing/head/roguetown/roguehood/shalal)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
