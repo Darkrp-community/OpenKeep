@@ -208,9 +208,8 @@
 							spawn(3 MINUTES)
 								H.werewolf_infect()
 							//addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_infect)), 3 MINUTES)
-				if(user.mind.has_antag_datum(/datum/antagonist/zombie))
-					if(!src.mind.has_antag_datum(/datum/antagonist/zombie))
-						INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human, zombie_infect_attempt))
+				if(user.mind.has_antag_datum(/datum/antagonist/zombie) && !src.mind.has_antag_datum(/datum/antagonist/zombie))
+					INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human, zombie_infect_attempt))
 
 	var/obj/item/grabbing/bite/B = new()
 	user.equip_to_slot_or_del(B, SLOT_MOUTH)
@@ -364,6 +363,9 @@
 					return
 				if(!get_location_accessible(src, BODY_ZONE_PRECISE_MOUTH, grabs="other"))
 					to_chat(src, "<span class='warning'>My mouth is blocked.</span>")
+					return
+				if(HAS_TRAIT(src, TRAIT_NO_BITE))
+					to_chat(src, "<span class='warning'>I can't bite.</span>")
 					return
 				changeNext_move(mmb_intent.clickcd)
 				face_atom(A)

@@ -39,20 +39,21 @@
 	destroy_message = "<span class='warning'>[yea]</span>"
 
 /obj/item/rogueweapon/get_dismemberment_chance(obj/item/bodypart/affecting)
-	if(affecting.can_dismember(src) && isliving(loc))
-		var/mob/living/L = loc
-		var/nuforce = get_complex_damage(src, L)
-		if(istype(L.rmb_intent, /datum/rmb_intent/strong))
-			nuforce = nuforce * 1.1
-		if(istype(L.rmb_intent, /datum/rmb_intent/weak))
-			nuforce = 0
-		if(L.used_intent.blade_class == BCLASS_CHOP) //chopping attacks are 10% better at dismembering
-			nuforce = nuforce * 1.1 //used to be 1*1 but whatever
-		else
-			if(L.used_intent.blade_class == BCLASS_CUT)
-				if(affecting.get_damage() < affecting.max_damage)
-					return 0
-			else
+	if(!affecting.can_dismember(src))
+		return 0
+	var/mob/living/L = loc
+	if(!istype(L))
+		return 0
+	var/nuforce = get_complex_damage(src, L)
+	if(istype(L.rmb_intent, /datum/rmb_intent/strong))
+		nuforce = nuforce * 1.1
+	if(istype(L.rmb_intent, /datum/rmb_intent/weak))
+		nuforce = 0
+	if(L.used_intent.blade_class == BCLASS_CHOP) //chopping attacks are 10% better at dismembering
+		nuforce = nuforce * 1.1 //used to be 1*1 but whatever
+	else
+		if(L.used_intent.blade_class == BCLASS_CUT)
+			if(affecting.get_damage() < affecting.max_damage)
 				return 0
 		if(nuforce >= 10)
 			var/probmod = (affecting.get_damage() / affecting.max_damage)

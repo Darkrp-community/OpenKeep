@@ -697,16 +697,6 @@
 	else
 		remove_movespeed_modifier(MOVESPEED_ID_CARBON_SOFTCRIT, TRUE)
 
-/mob/living/carbon/human/updatehealth()
-	if(mind && mind.has_antag_datum(/datum/antagonist/zombie))
-		health = 100
-		update_stat()
-		update_mobility()
-		med_hud_set_health()
-		remove_movespeed_modifier(MOVESPEED_ID_CARBON_SOFTCRIT, TRUE)
-		return
-	..()
-
 /mob/living/carbon/update_stamina()
 	var/stam = getStaminaLoss()
 	if(stam > DAMAGE_PRECISION && (maxHealth - stam) <= crit_threshold && !stat)
@@ -1050,8 +1040,7 @@
 		if(admin_revive) //reset rot when being healed by eating limbs
 			bodypart.rotted = FALSE
 			bodypart.skeletonized = FALSE
-	if(mind?.has_antag_datum(/datum/antagonist/zombie))
-		mind.remove_antag_datum(/datum/antagonist/zombie)
+	mind.remove_antag_datum(/datum/antagonist/zombie)
 	if(admin_revive)
 		suiciding = FALSE
 		regenerate_limbs()
@@ -1067,6 +1056,7 @@
 	// heal ears after healing traits, since ears check TRAIT_DEAF trait
 	// when healing.
 	restoreEars()
+	update_disabled_bodyparts()
 
 /mob/living/carbon/can_be_revived()
 	. = ..()
@@ -1281,3 +1271,15 @@
 	if(mood)
 		if(mood.sanity < SANITY_UNSTABLE)
 			return TRUE
+
+/mob/living/carbon/can_speak_vocal()
+	. = ..()
+	if(!.)
+		return
+	if(mouth?.muteinmouth)
+		return FALSE
+	for(var/obj/item/grabbing/grab in grabbedby)
+		if(grab.sublimb_grabbed == BODY_ZONE_PRECISE_MOUTH)
+			return FALSE
+	if(istype(loc, /turf/open/water) && lying)
+		return FALSE

@@ -24,7 +24,7 @@
 	/// Last time we bit someone - Zombies will try to bite after 10 seconds of not biting
 	/// Traits applied to the owner mob when we turn into a zombie
 	var/static/list/traits_zombie = list(
-		TRAIT_NOFATSTAM,
+		RTRAIT_NOROGSTAM,
 		TRAIT_NOMOOD,
 		TRAIT_NOLIMBDISABLE,
 		TRAIT_NOHUNGER,
