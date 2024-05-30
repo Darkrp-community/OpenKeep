@@ -3,6 +3,7 @@
 #define RTRAIT_NOSTINK 					"Dead Nose"
 #define RTRAIT_ZJUMP 					"High Jumping"
 #define RTRAIT_NOSEGRAB 				"Intimidating"
+#define RTRAIT_NUTCRACKER 				"Nutcracker"
 #define RTRAIT_SEEPRICES				"Golden Blood"
 #define RTRAIT_STRONGBITE				"Strong Bite"
 #define RTRAIT_TORTURER					"Torturer"
@@ -41,9 +42,10 @@
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	RTRAIT_WEBWALK = "I can move freely between webs.",
-	RTRAIT_NOSTINK = "My nose is numb to the smell of decay.",
-	RTRAIT_ZJUMP = "Who needs to climb when you can make great leaps?",
-	RTRAIT_NOSEGRAB = "I love to grab the idiots by their noses.",
+	RTRAIT_NOSTINK = "<span class='deadsay'>My nose is numb to the smell of decay.</span>",
+	RTRAIT_ZJUMP = "Time to reach a new high.",
+	RTRAIT_NOSEGRAB = "I love to grab idiots by their noses!",
+	RTRAIT_NUTCRACKER = "I love kicking idiots on the nuts!",
 	RTRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
 	RTRAIT_STRONGBITE = "Stronger bites, critical bite attacks.",
 	RTRAIT_TORTURER = "I've learned the art of confessions.",
@@ -70,11 +72,6 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SHOCKIMMUNE = "I am immune to electrical shocks.",
 	TRAIT_NOSLEEP = "<span class='warning'>I can't sleep.</span>",
 ))
-
-
-
-
-
 
 // trait accessor defines
 #define ADD_TRAIT(target, trait, source) \
@@ -239,10 +236,14 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_BLOODLOSS_IMMUNE "bloodloss_immune" // can bleed, but will never die from blood loss
 #define TRAIT_ROTMAN "rotman" //you are a rotman and need occasional maintenance
 #define TRAIT_ZOMBIE_IMMUNE "zombie_immune" //immune to zombie infection
-#define TRAIT_PARALYSIS	"paralysis" //Used for limb-based paralysis and full body paralysis
 #define TRAIT_NO_BITE "no_bite" //prevents biting
 
-// item traits
+//bodypart traits
+#define TRAIT_PARALYSIS	"paralysis" //Used for limb-based paralysis and full body paralysis
+#define TRAIT_BRITTLE "brittle" //The limb is more susceptible to fractures
+#define TRAIT_FINGERLESS "fingerless" //The limb has no fingies
+
+//item traits
 #define TRAIT_NODROP            "nodrop"
 #define TRAIT_T_RAY_VISIBLE     "t-ray-visible" // Visible on t-ray scanners if the atom/var/level == 1
 #define TRAIT_NO_TELEPORT		"no-teleport" //you just can't

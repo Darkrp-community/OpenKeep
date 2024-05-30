@@ -56,3 +56,4 @@
 //		H.facial_hair_color = "cd65cb"
 //		H.update_body_parts_head_only()
 	ADD_TRAIT(H, RTRAIT_EMPATH, TRAIT_GENERIC)
+	ADD_TRAIT(H, RTRAIT_NUTCRACKER, TRAIT_GENERIC)

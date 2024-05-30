@@ -23,8 +23,9 @@
 /datum/outfit/job/roguetown/lady/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	ADD_TRAIT(H, RTRAIT_SEEPRICES, TRAIT_GENERIC)
-	beltl = /obj/item/keyring/queen
-//	head = /obj/item/clothing/head/roguetown/hennin
+	ADD_TRAIT(H, RTRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, RTRAIT_NUTCRACKER, TRAIT_GENERIC)
+	beltl = /obj/item/roguekey/manor
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	armor = /obj/item/clothing/suit/roguetown/armor/armordress
