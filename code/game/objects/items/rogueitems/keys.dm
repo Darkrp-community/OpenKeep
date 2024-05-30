@@ -87,9 +87,9 @@
 	icon_state = "cheesekey"
 	lockid = "vault"
 
-/obj/item/roguekey/sheriff
-	name = "bailiff's key"
-	desc = "This key belongs to the Captain of the Guard."
+/obj/item/roguekey/captain
+	name = "captain's key"
+  desc = "This key belongs to the Captain of the Guard."
 	icon_state = "cheesekey"
 	lockid = "sheriff"
 

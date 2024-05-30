@@ -16,7 +16,7 @@
 	vision_range = 2
 	aggro_vision_range = 2
 	base_intents = list(/datum/intent/simple/bite)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1, /obj/item/natural/fur = 1)
 	faction = list("rats")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_sound = 'sound/combat/wooshes/punch/punchwoosh (2).ogg'
