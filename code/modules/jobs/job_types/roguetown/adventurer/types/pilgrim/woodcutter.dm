@@ -1,13 +1,11 @@
-/datum/advclass/woodcutter
+/datum/advclass/pilgrim/woodcutter
 	name = "Woodcutter"
-	allowed_sexes = list("male")
+	allowed_sexes = list("male", "female")
 	allowed_races = list("Humen",
-	"Humen",
 	"Elf",
 	"Dark Elf",
 	"Half-Elf",
 	"Tiefling",
-	"Dwarf",
 	"Dwarf",
 	"Aasimar"
 	)

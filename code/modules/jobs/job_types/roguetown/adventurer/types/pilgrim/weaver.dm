@@ -1,6 +1,6 @@
-/datum/advclass/weaver
+/datum/advclass/pilgrim/weaver
 	name = "Weaver"
-	allowed_sexes = list("Male", "female")
+	allowed_sexes = list("male", "female")
 	allowed_races = list("Humen",
 	"Elf",
 	"Half-Elf",
@@ -12,6 +12,7 @@
 	isvillager = TRUE
 	ispilgrim = FALSE
 	maxchosen = 1
+
 
 /datum/outfit/job/roguetown/adventurer/seamstress/pre_equip(mob/living/carbon/human/H)
 	..()
