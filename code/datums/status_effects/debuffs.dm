@@ -117,7 +117,7 @@
 			healing -= 0.3
 		else if((locate(/obj/structure/table) in owner.loc))
 			healing -= 0.1
-		if(locate(/obj/structure/bed/rogue/sleepingbag in owner.loc))
+		if(locate(/obj/structure/bed/rogue/sleepingbag) in owner.loc)
 			sleptonground = TRUE
 		for(var/obj/item/bedsheet/bedsheet in range(owner.loc,0))
 			if(bedsheet.loc != owner.loc) //bedsheets in my backpack/neck don't give you comfort
