@@ -68,7 +68,7 @@
 		else
 			BB.damage = BB.damage
 			BB.embedchance = 100
-			BB.damage = round(BB.damage * (user.STAPER / 10) * damfactor)
+			BB.damage = BB.damage * (user.STAPER / 10) * damfactor
 	..()
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/update_icon()
