@@ -60,11 +60,14 @@
 	. = ..()
 	if(L)
 		if(health > 1)
+			icon_state = "[icon_living]"
+			set_resting(FALSE)
+			update_mobility()
 			if(isturf(loc))
 				dir = pick(GLOB.cardinals)
 				step(src, dir)
 			if(!stat && resting && !buckled)
-				resting = FALSE
+				return
 
 /mob/living/simple_animal/proc/personal_space()
 	if(locate(/mob/living/carbon) in get_turf(src))
