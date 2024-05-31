@@ -76,6 +76,6 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/rogueweapon/hammer/claw
 	backl = /obj/item/storage/backpack/rogue/backpack
-	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/huntingknife/sdagger = 1)
+	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/huntingknife/idagger/steel = 1)
 	H.change_stat("intelligence", 2)
 	H.change_stat("speed", -1)

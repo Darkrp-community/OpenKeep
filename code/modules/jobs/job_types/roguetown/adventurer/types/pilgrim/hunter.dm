@@ -60,7 +60,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/quiver/arrows
 	beltl = /obj/item/flashlight/flare/torch/lantern
-	backpack_contents = list( /obj/item/bait = 1, /obj/item/rogueweapon/huntingknife/sdagger = 1, )
+	backpack_contents = list( /obj/item/bait = 1, /obj/item/rogueweapon/huntingknife/idagger/steel = 1)
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
