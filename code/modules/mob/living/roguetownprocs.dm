@@ -144,8 +144,6 @@
 			var/obj/item/mainhand = get_active_held_item()
 			var/obj/item/offhand = get_inactive_held_item()
 			var/obj/item/used_weapon = mainhand
-			var/obj/item/rogueweapon/shield/buckler/skiller = get_inactive_held_item()  // buckler code
-			var/obj/item/rogueweapon/shield/buckler/skillerbuck = get_active_held_item()
 
 			if(mainhand)
 				if(mainhand.can_parry)
