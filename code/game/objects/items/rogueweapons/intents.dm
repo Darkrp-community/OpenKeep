@@ -354,12 +354,12 @@
 
 /datum/intent/unarmed/claw
 	name = "claw"
-	icon_state = inpunch
+	icon_state = "inpunch"
 	attack_verb = list("claws", "scratches", "rends", "rips at")
 	chargetime = 0
 	animname = "blank22"
 	hitsound = "smallslash"
-	misccost = 5
+	missost = 5
 	releasedrain = 5
 	swingdelay = 0
 	rmb_ranged = TRUE
