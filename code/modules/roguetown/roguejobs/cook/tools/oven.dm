@@ -32,6 +32,7 @@
 			donefoods = FALSE
 			W.forceMove(src)
 			food += W
+			playsound(get_turf(src.loc), 'sound/items/wood_sharpen.ogg', 50) // neu cooking			
 			user.visible_message("<span class='warning'>[user] puts something in the oven.</span>")
 			need_underlay_update = TRUE
 			update_icon()
@@ -106,8 +107,7 @@
 			I.pixel_y = 0
 			var/mutable_appearance/M = new /mutable_appearance(I)
 			M.transform *= 0.5
-			M.pixel_y = rand(8,10)
-			M.pixel_y = rand(-5,5)
+			M.pixel_y = rand(-3,4) // WHY WOULD YOU WANT TO HIDE THE ENTIRE SPRITE?? Fixed now
 			M.layer = 4.24
 			underlays += M
 		var/mutable_appearance/M = mutable_appearance(icon, "oven_under")
