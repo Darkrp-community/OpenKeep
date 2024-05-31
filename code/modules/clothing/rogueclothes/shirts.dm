@@ -159,7 +159,7 @@
 /obj/item/clothing/suit/roguetown/shirt/tunic/purple
 	color = CLOTHING_PURPLE
 
-/obj/item/clothing/suit/roguetown/shirt/tunic/ucolored
+/obj/item/clothing/suit/roguetown/shirt/tunic/uncolored
 	color = COLOR_GRAY
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/random/Initialize()

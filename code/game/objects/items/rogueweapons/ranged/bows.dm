@@ -19,6 +19,7 @@
 	cartridge_wording = "arrow"
 	load_sound = 'sound/foley/nockarrow.ogg'
 	associated_skill = /datum/skill/combat/bows
+	var/damfactor = 1
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/getonmobprop(tag)
 	. = ..()
@@ -67,7 +68,7 @@
 		else
 			BB.damage = BB.damage
 			BB.embedchance = 100
-		BB.damage = BB.damage * (user.STAPER / 10)
+			BB.damage = round(BB.damage * (user.STAPER / 10) * damfactor)
 	..()
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/update_icon()
@@ -189,3 +190,23 @@
 				return list("shrink" = 0.7,"sx" = -7,"sy" = 2,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
 				return list("shrink" = 0.7,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
+	name = "recurve bow"
+	desc = "A long but slender bow, finely crafted from horn, sinew, and wood. It has an atypical shape."
+	icon_state = "bowr"
+	possible_item_intents = list(/datum/intent/shoot/bow/recurve, /datum/intent/arc/bow/recurve,INTENT_GENERIC)
+	randomspread = 1
+	spread = 1
+	force = 9
+	damfactor = 0.9
+
+/datum/intent/shoot/bow/recurve
+	chargetime = 0.75
+	chargedrain = 1.5
+	charging_slowdown = 2.5
+
+/datum/intent/arc/bow/recurve
+	chargetime = 0.75
+	chargedrain = 1.5
+	charging_slowdown = 2.5

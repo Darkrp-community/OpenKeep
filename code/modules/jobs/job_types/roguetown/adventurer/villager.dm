@@ -5,6 +5,7 @@
 	faction = "Station"
 	total_positions = 15
 	spawn_positions = 15
+	allowed_ages = list(AGE_YOUNG,AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	allowed_races = list(
 		"Humen",
 		"Elf",

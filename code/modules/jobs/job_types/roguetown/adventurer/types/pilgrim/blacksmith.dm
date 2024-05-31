@@ -11,7 +11,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/blacksmith
-	isvillager = TRUE
+	isvillager = FALSE
 	ispilgrim = TRUE
 
 /datum/outfit/job/roguetown/adventurer/blacksmith/pre_equip(mob/living/carbon/human/H)
@@ -32,14 +32,14 @@
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(2,3), TRUE) // If you can make a sword you can swing one.
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2,2,3), TRUE) 
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2,2,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE) 
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE) // The strongest fists in the land.
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE) 
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(0,0,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(1,2,2), TRUE)
@@ -62,7 +62,12 @@
 
 	if(H.gender == MALE)
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt	
+		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
 	else
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
+
+/datum/advclass/pilgrim/blacksmith/villager
+	isvillager = TRUE
+	ispilgrim = FALSE
+	maxchosen = 1
