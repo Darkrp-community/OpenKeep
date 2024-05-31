@@ -12627,10 +12627,6 @@
 	icon_state = "plating2"
 	},
 /area/rogue/outdoors/town/roofs)
-"tHZ" = (
-/obj/structure/stairs/stone,
-/turf/closed/mineral/rogue/bedrock,
-/area/rogue/under/town/basement)
 "tIa" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/fluff/railing/wood,
@@ -35598,7 +35594,7 @@ kIj
 hJv
 juU
 qSX
-tHZ
+hpg
 aqZ
 fDe
 mgv
