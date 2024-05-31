@@ -13,16 +13,16 @@
 	icon_state = "hunger1"
 
 /datum/status_effect/debuff/hungryt1/on_apply()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/peckish)
-	return ..()
 
 /datum/status_effect/debuff/hungryt1/on_remove()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stressevent/peckish)
-	return ..()
 
 /datum/status_effect/debuff/hungryt2
 	id = "hungryt2"
@@ -36,16 +36,16 @@
 	icon_state = "hunger2"
 
 /datum/status_effect/debuff/hungryt2/on_apply()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/hungry)
-	return ..()
 
 /datum/status_effect/debuff/hungryt2/on_remove()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stressevent/hungry)
-	return ..()
 
 /datum/status_effect/debuff/hungryt3
 	id = "hungryt3"
@@ -59,16 +59,17 @@
 	icon_state = "hunger3"
 
 /datum/status_effect/debuff/hungryt3/on_apply()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/starving)
-	return ..()
 
 /datum/status_effect/debuff/hungryt3/on_remove()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stressevent/starving)
-	return ..()
+
 ////////////////////
 
 /datum/status_effect/debuff/thirstyt1
@@ -84,16 +85,16 @@
 
 
 /datum/status_effect/debuff/thirstyt1/on_apply()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/drym)
-	return ..()
 
 /datum/status_effect/debuff/thirstyt1/on_remove()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stressevent/drym)
-	return ..()
 
 /datum/status_effect/debuff/thirstyt2
 	id = "thirsty2"
@@ -107,16 +108,16 @@
 	icon_state = "thirst2"
 
 /datum/status_effect/debuff/thirstyt2/on_apply()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/thirst)
-	return ..()
 
 /datum/status_effect/debuff/thirstyt2/on_remove()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stressevent/thirst)
-	return ..()
 
 /datum/status_effect/debuff/thirstyt3
 	id = "thirsty3"
@@ -130,16 +131,16 @@
 	icon_state = "thirst3"
 
 /datum/status_effect/debuff/thirstyt3/on_apply()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/parched)
-	return ..()
 
 /datum/status_effect/debuff/thirstyt3/on_remove()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stressevent/parched)
-	return ..()
 
 /////////
 
@@ -147,72 +148,72 @@
 	id = "uncookedfood"
 	effectedstats = null
 	duration = 10 MINUTES
-	alert_type = /obj/screen/alert/status_effect/debuff/uncookedfood
+	alert_type = /atom/movable/alert/status_effect/debuff/uncookedfood
 
-/obj/screen/alert/status_effect/debuff/uncookedfood
+/atom/movable/alert/status_effect/debuff/uncookedfood
 	name = "Raw Food!"
 	desc = "<span class='warning'>Augh! Why didn't I bring that food to fire!?"
 	icon_state = "uncookedfood"
 
 /datum/status_effect/debuff/uncookedfood/on_apply()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_nausea(100)
 		C.add_stress(/datum/stressevent/uncookedfood)
-	return ..()
 
 /datum/status_effect/debuff/badmeal
-	alert_type = /obj/screen/alert/status_effect/debuff/badmeal
+	alert_type = /atom/movable/alert/status_effect/debuff/badmeal
 	id = "badmeal"
 	effectedstats = null
 	duration = 10 MINUTES
 
-/obj/screen/alert/status_effect/debuff/badmeal
+/atom/movable/alert/status_effect/debuff/badmeal
 	name = "Foul Food!"
 	desc = "<span class='warning'>That tasted like zcum!"
 	icon_state = "badmeal"
 
 /datum/status_effect/debuff/badmeal/on_apply()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/badmeal)
-	return ..()
 
 /datum/status_effect/debuff/burnedfood
-	alert_type = /obj/screen/alert/status_effect/debuff/burntmeal
+	alert_type = /atom/movable/alert/status_effect/debuff/burntmeal
 	id = "burnedfood"
 	effectedstats = null
 	duration = 10 MINUTES
 
 /datum/status_effect/debuff/burnedfood/on_apply()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/burntmeal)
 		C.add_nausea(100)
-	return ..()
 
-/obj/screen/alert/status_effect/debuff/burntmeal
+/atom/movable/alert/status_effect/debuff/burntmeal
 	name = "Burnt Food!"
 	desc = "<span class='warning'>That tasted like charcoal and cinder!"
 	icon_state = "burntmeal"
 
 /datum/status_effect/debuff/rotfood
-	alert_type = /obj/screen/alert/status_effect/debuff/rotfood
+	alert_type = /atom/movable/alert/status_effect/debuff/rotfood
 	id = "rotfood"
 	effectedstats = null
 	duration = 10 MINUTES
 
-/obj/screen/alert/status_effect/debuff/rotfood
+/atom/movable/alert/status_effect/debuff/rotfood
 	name = "Rotten Food!"
 	desc = "<span class='warning'>MAGGOT-INFESTED BILE RISES TO MY THROAT!"
 	icon_state = "burntmeal"
 
 /datum/status_effect/debuff/rotfood/on_apply()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_nausea(200)
 		C.add_stress(/datum/stressevent/rotfood)
-	return ..()
 
 /datum/status_effect/debuff/bleeding
 	id = "bleedingt1"
