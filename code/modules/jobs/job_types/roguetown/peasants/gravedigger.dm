@@ -6,14 +6,14 @@
 	total_positions = 3
 	spawn_positions = 3
 
-	allowed_races = list("Humen",
-	"Humen",
-	"Elf",
-	"Half-Elf",
-	"Dwarf",
-	"Tiefling",
-	"Dark Elf",
-	"Aasimar"
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
 	)
 	tutorial = "The dead dont speak, least if youre doing your job right. Youve a pilfers dream, for few have enough to pay for your services out of pocket- So you take it from the fallen. Your job isnt considered highly, but without you: who else would disgrace the sanctity of the dead?"
 

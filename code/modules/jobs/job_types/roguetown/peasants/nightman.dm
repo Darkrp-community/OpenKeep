@@ -6,13 +6,14 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_sexes = list("male")
-	allowed_races = list("Humen",
-	"Humen",
-	"Elf",
-	"Half-Elf",
-	"Dark Elf",
-	"Tiefling",
+	allowed_sexes = list(MALE)
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dark Elf",
+		"Tiefling",
+		"Aasimar"
 	)
 
 	tutorial = "You are renting out the bath-house in a joint operation with the barkeep. Providing security for the bathwenches and helping them find work, or a troublemaking rake that the others hate to tolerate."
