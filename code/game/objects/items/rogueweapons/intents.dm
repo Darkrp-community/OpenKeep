@@ -359,7 +359,7 @@
 	chargetime = 0
 	animname = "blank22"
 	hitsound = "smallslash"
-	missost = 5
+	misscost = 5
 	releasedrain = 5
 	swingdelay = 0
 	rmb_ranged = TRUE
