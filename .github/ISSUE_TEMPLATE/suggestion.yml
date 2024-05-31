@@ -11,7 +11,7 @@ body:
 - type: dropdown
   id: category
   attributes:
-    label: Categroy
+    label: Category
     multiple: true
     description: What sort of suggestion is this?
     options:
