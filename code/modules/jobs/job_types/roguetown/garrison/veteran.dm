@@ -7,12 +7,13 @@
 	spawn_positions = 1
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
+	allowed_races = list("Humen",
+	"Humen",
+	"Elf",
+	"Dwarf",
+	"Aasimar",
+	"Half-Elf",
+	"Tiefling"
 	)
 	tutorial = "Youve known combat your entire life. There isnt a way to kill a man you havent practiced in the tapestries of war itself. You wouldnt call yourself a hero, those belong to the men left rotting in the fields of where you practiced your ancient trade. You dont sleep well at night anymore, you dont like remembering what youve had to do to survive. Trading adventure for stable pay was the only logical solution, and maybe someday youll get to lay down the blade.."
 	allowed_ages = list(AGE_OLD)
