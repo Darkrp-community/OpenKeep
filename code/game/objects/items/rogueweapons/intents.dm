@@ -353,7 +353,21 @@
 	return
 
 /datum/intent/unarmed/claw
+	name = "claw"
+	icon_state = inpunch
+	attack_verb = list("claws", "scratches", "rends", "rips at")
+	chargetime = 0
+	animname = "blank22"
+	hitsound = "smallslash"
+	misccost = 5
+	releasedrain = 5
+	swingdelay = 0
+	rmb_ranged = TRUE
+	candodge = TRUE
+	canparry = TRUE
 	blade_class = BCLASS_CUT
+	miss_text = "claws at thin air!"
+	miss_sound = "punchwoosh"
 
 /datum/intent/unarmed/shove
 	name = "shove"
