@@ -61,7 +61,7 @@
 		return 1
 
 /obj/item/bodypart/l_leg/rproesthetic
-	name = "wooden lleg"
+	name = "wooden leg"
 	desc = "A left leg made of wood."
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "pleg"
