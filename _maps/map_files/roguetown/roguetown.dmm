@@ -1288,7 +1288,7 @@
 "ccu" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "ccT" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle,
 /area/rogue/indoors/town/dwarfin)
@@ -5205,7 +5205,7 @@
 	},
 /obj/structure/fluff/statue/knight/interior,
 /turf/open/floor/rogue/blocks,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "hWb" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
@@ -6072,7 +6072,7 @@
 	},
 /obj/structure/fluff/statue/knight/interior/r,
 /turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "jpw" = (
 /obj/structure/roguewindow/openclose{
 	icon_state = "woodwindowdir";
@@ -7310,7 +7310,7 @@
 	},
 /obj/structure/fluff/walldeco/maidendrape,
 /turf/open/transparent/openspace,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "lnA" = (
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/church,
@@ -7334,7 +7334,7 @@
 	},
 /obj/machinery/light/rogue/wallfire/candle/blue,
 /turf/open/floor/rogue/blocks,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "lqi" = (
 /obj/structure/roguemachine/mail/r,
 /turf/open/floor/rogue/blocks,
@@ -8166,7 +8166,7 @@
 	},
 /obj/machinery/light/rogue/wallfire/candle/blue,
 /turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "mBS" = (
 /obj/structure/table/wood{
 	icon_state = "largetable";
@@ -10511,6 +10511,9 @@
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor)
+"qdG" = (
+/turf/closed/wall/mineral/rogue/stone/moss,
+/area/rogue/indoors/town)
 "qdH" = (
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/outdoors/rtfield)
@@ -12603,6 +12606,10 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/church)
+"tEy" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/rogue/blocks,
+/area/rogue/indoors/town)
 "tHe" = (
 /obj/structure/rack/rogue,
 /obj/item/storage/roguebag,
@@ -12787,7 +12794,7 @@
 "tTZ" = (
 /obj/structure/stairs/stone,
 /turf/open/floor/rogue/blocks,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "tUt" = (
 /obj/machinery/light/rogue/wallfire/candle/r,
 /obj/structure/table/wood{
@@ -13238,7 +13245,7 @@
 	locked = 1
 	},
 /turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "uFM" = (
 /obj/structure/table/wood{
 	icon_state = "longtable";
@@ -59613,9 +59620,9 @@ sXM
 eSf
 cyz
 iSH
-uQz
-kxk
-uQz
+qdG
+gwA
+qdG
 oxd
 lzO
 uQu
@@ -59769,11 +59776,11 @@ ieR
 mhf
 lac
 wtQ
-uQz
+qdG
 mBy
 hVW
-tDt
-ohe
+cbH
+nWQ
 xIy
 kOx
 lzO
@@ -59926,7 +59933,7 @@ ieR
 pHs
 eSf
 bWW
-kxk
+gwA
 lnk
 tTZ
 ccu
@@ -60083,11 +60090,11 @@ eSf
 lac
 ieR
 mXt
-uQz
+qdG
 lpO
 joL
-clF
-ohe
+tEy
+nWQ
 ari
 tDt
 vCv
@@ -60241,9 +60248,9 @@ crQ
 nva
 cyz
 uYU
-ohe
-uQz
-ohe
+nWQ
+qdG
+nWQ
 tCa
 tDt
 htB
