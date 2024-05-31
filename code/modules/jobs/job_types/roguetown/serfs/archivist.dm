@@ -13,6 +13,7 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
+		"Dark Elf",
 		"Aasimar"
 	)
 	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fetch)
