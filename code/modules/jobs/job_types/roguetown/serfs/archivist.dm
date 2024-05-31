@@ -6,6 +6,15 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
+
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Aasimar"
+	)
 	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fetch)
 	allowed_patrons = list("Noc")
 
