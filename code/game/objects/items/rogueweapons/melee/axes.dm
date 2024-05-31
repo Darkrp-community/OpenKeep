@@ -20,7 +20,7 @@
 	wlength = WLENGTH_SHORT
 	pickup_sound = 'sound/foley/equip/rummaging-03.ogg'
 	gripped_intents = list(/datum/intent/axe/chop/stone)
-
+	smeltresult = /obj/item/ingot/copper
 
 /obj/item/rogueweapon/stoneaxe/getonmobprop(tag)
 	if(tag)

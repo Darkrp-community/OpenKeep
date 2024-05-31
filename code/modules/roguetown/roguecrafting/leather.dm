@@ -27,6 +27,14 @@
 	sellprice = 45
 	craftdiff = 2
 
+/datum/crafting_recipe/roguetown/leather/waterskin
+	name = "waterskin"
+	result = /obj/item/reagent_containers/glass/bottle/waterskin
+	reqs = list(/obj/item/natural/hide = 1,
+				/obj/item/natural/fibers = 2)
+	sellprice = 10
+	craftdiff = 2
+
 /datum/crafting_recipe/roguetown/leather/gloves
 	name = "leather gloves"
 	result = list(/obj/item/clothing/gloves/roguetown/leather,
