@@ -6,12 +6,10 @@
 	total_positions = 0
 	spawn_positions = 0
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
+	allowed_races = list("Humen",
+	"Humen",
+	"Dwarf",
+	"Dwarf",
 	)
 
 	tutorial = "You came to rockhill either to seek knowledge or riches."

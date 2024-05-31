@@ -6,12 +6,11 @@
 	total_positions = 2
 	spawn_positions = 2
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
+	allowed_races = list("Humen",
+	"Humen",
+	"Dwarf",
+	"Dwarf",
+	"Aasimar"
 	)
 	allowed_sexes = list(MALE, FEMALE)
 

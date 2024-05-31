@@ -4,7 +4,7 @@
 /datum/advclass/combat/rare
 	name = "Rarec"
 	tutorial = "rarec"
-	allowed_sexes = list(MALE, FEMALE)
+	allowed_sexes = list("male", "female")
 	allowed_races = list("Humen",
 	"Dwarf",
 	"Elf",

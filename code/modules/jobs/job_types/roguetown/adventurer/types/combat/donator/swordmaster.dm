@@ -1,7 +1,7 @@
 /datum/advclass/combat/swordmaster
 	name = "Swordmaster"
 	tutorial = "You spent years serving the northern Humen lords, and now you spend your days as a travelling hedge knight. Upon this island, you like to increase the fame of your swordskills, as well as your honor."
-	allowed_sexes = list(MALE)
+	allowed_sexes = list("male")
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/swordmaster
 	maxchosen = 1

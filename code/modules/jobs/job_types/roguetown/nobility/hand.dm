@@ -1,18 +1,19 @@
 /datum/job/roguetown/hand
 	title = "Hand"
-	flag = HAND
+	flag = SHERIFF
 	department_flag = NOBLEMEN
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
-	)
+	allowed_races = list("Humen",
+	"Humen",
+	"Elf",
+	"Elf",
+	"Dwarf",
+	"Dwarf",
+	"Aasimar",
+	"Half-Elf")
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/hand
 	display_order = JDO_HAND

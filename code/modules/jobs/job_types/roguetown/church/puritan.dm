@@ -6,9 +6,8 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list(
-		"Humen",
-		"Aasimar"
+	allowed_races = list("Humen",
+	"Humen"
 	)
 	allowed_sexes = list(MALE)
 

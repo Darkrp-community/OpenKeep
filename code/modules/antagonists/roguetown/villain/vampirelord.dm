@@ -41,7 +41,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		return "<span class='boldnotice'>Another deadite.</span>"
 
 /datum/antagonist/vampirelord/on_gain()
-	var/datum/game_mode/C = SSticker.mode
+	var/datum/game_mode/chaosmode/C = SSticker.mode
 	C.vampires |= owner
 	. = ..()
 	owner.special_role = name
@@ -291,13 +291,13 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 /datum/antagonist/vampirelord/proc/finalize_vampire()
 	owner.current.forceMove(pick(GLOB.vlord_starts))
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
-
+	
 
 /datum/antagonist/vampirelord/proc/finalize_vampire_lesser()
 	if(!sired)
 		owner.current.forceMove(pick(GLOB.vspawn_starts))
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
-
+	
 
 /datum/antagonist/vampirelord/proc/vamp_look()
 	var/mob/living/carbon/human/V = owner.current
@@ -1305,3 +1305,4 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			to_chat(L, "<font color='purple'>You feel like a curtain is coming over your mind.</font>")
 			sleep(50)
 			L.Sleeping(300)
+

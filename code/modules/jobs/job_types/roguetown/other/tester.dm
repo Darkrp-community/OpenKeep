@@ -10,15 +10,16 @@
 	total_positions = 0
 	spawn_positions = 0
 #endif
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
+	allowed_sexes = list("male", "female")
+	allowed_races = list("Humen",
+	"Humen",
+	"Elf",
+	"Elf",
+	"Half-Elf",
+	"Dark Elf",
+	"Tiefling",
+	"Dwarf",
+	"Dwarf"
 	)
 	tutorial = ""
 	outfit = /datum/outfit/job/roguetown/tester

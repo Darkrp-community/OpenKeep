@@ -3,12 +3,10 @@
 /datum/advclass/combat/rare/sentinel
 	name = "Sentinel"
 	tutorial = "Your elvish overseers have sent you to this distant island as a forward scout for future expansion. Ensure the prosperity of your people and warden over them with justice and firm rulings. Your steed will carry you through any challenges ahead."
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(	
-		"Elf",
-		"Half-Elf",
-		"Dark Elf"
-	)
+	allowed_sexes = list("male", "female")
+	allowed_races = list("Elf",
+	"Half-Elf",
+	"Dark Elf")
 	outfit = /datum/outfit/job/roguetown/adventurer/sentinel
 	maxchosen = 1
 	israre = TRUE

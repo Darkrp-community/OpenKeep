@@ -54,9 +54,6 @@
 /obj/item/clothing/under/roguetown/tights/black
 	color = CLOTHING_BLACK
 
-/obj/item/clothing/under/roguetown/tights/red
-	color = CLOTHING_RED
-
 /obj/item/clothing/under/roguetown/tights/jester
 	desc = "Funny tights!"
 	color = "#1E3B20"

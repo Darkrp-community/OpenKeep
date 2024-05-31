@@ -5,7 +5,7 @@
 	name = "Longbeard"
 	tutorial = "An old dwarf is a pinnacle of tradition, justice and willpower. You've come to establish order and with your hammer of grudges you'll see it through."
 	allowed_ages = list( AGE_MIDDLEAGED, AGE_OLD)
-	allowed_sexes = list(MALE, FEMALE)
+	allowed_sexes = list("male", "female")
 	allowed_races = list("Dwarf")
 	outfit = /datum/outfit/job/roguetown/adventurer/longbeard
 	maxchosen = 1

@@ -3,7 +3,7 @@
 /datum/advclass/combat/lancer
 	name = "Lancer"
 	tutorial = "Working for many years as a famous mercenary in the southern Humen kingdoms, you've started heading north to avoid the skeletons of your past. With your polearm by your side, you can face down any foe."
-	allowed_sexes = list(MALE, FEMALE)
+	allowed_sexes = list("male", "female")
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/lancer
 	maxchosen = 1

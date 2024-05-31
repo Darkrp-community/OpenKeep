@@ -1,7 +1,8 @@
 /datum/advclass/whitecheese
 	name = "WHITE CHEESE"
-	allowed_sexes = list(MALE)
-	allowed_races = list("Humen")
+	allowed_sexes = list("male")
+	allowed_races = list("Humen",
+							"Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/whitecheese
 	plevel_req = 999
 	special_req = TRUE

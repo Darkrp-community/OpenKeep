@@ -214,14 +214,14 @@
 			pic.color = get_detail_color()
 		add_overlay(pic)
 
-/obj/item/clothing/suit/roguetown/armor/brigandine/captain/Initialize()
+/obj/item/clothing/suit/roguetown/armor/brigandine/sheriff/Initialize()
 	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
 		GLOB.lordcolor += src
 
-/obj/item/clothing/suit/roguetown/armor/brigandine/captain/lordcolor(primary,secondary)
+/obj/item/clothing/suit/roguetown/armor/brigandine/sheriff/lordcolor(primary,secondary)
 	detail_tag = "_det"
 	detail_color = primary
 	update_icon()
@@ -229,7 +229,7 @@
 		var/mob/L = loc
 		L.update_inv_cloak()
 
-/obj/item/clothing/suit/roguetown/armor/brigandine/captain/Destroy()
+/obj/item/clothing/suit/roguetown/armor/brigandine/sheriff/Destroy()
 	GLOB.lordcolor -= src
 	return ..()
 

@@ -49,8 +49,3 @@
 	name = "Crossbow Bolt"
 	cost = 4
 	contains = list(/obj/item/ammo_casing/caseless/rogue/bolt,)
-
-/datum/supply_pack/rogue/weapons/whip
-	name = "Leather Whip"
-	cost = 65
-	contains = list(/obj/item/rogueweapon/whip)

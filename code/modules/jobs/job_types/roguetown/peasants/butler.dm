@@ -7,12 +7,13 @@
 	spawn_positions = 3
 
 	f_title = "Maid"
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
+	allowed_races = list("Humen",
+	"Humen",
+	"Elf",
+	"Dwarf",
+	"Dwarf",
+	"Aasimar",
+	"Half-Elf"
 	)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 

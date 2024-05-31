@@ -1,12 +1,10 @@
 /datum/advclass/combat/grenzelhoft
 	name = "Grenzelhoft mercenary"
 	tutorial = "A mercenary from the grenzelhoft emperiate mercenary guild, only cares about coin."
-	allowed_sexes = list(MALE)
-	allowed_races = list(
-		"Humen",
-		"Tiefling",
-		"Aasimar"
-	)
+	allowed_sexes = list("male")
+	allowed_races = list("Humen",
+	"Tiefling",
+	"Aasimar")
 	outfit = /datum/outfit/job/roguetown/adventurer/grenzelhoft
 	plevel_req = 0
 	maxchosen = 0

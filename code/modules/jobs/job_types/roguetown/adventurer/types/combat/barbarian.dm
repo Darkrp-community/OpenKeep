@@ -3,8 +3,9 @@
 	name = "Barbarian"
 	tutorial = "Barbarians are humen men who live in the outskirts of society, \
 	living off the land and bathing in the red glory of combat."
-	allowed_sexes = list(MALE)
-	allowed_races = list("Humen")
+	allowed_sexes = list("male")
+	allowed_races = list("Humen",
+	"Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/barbarian
 
 

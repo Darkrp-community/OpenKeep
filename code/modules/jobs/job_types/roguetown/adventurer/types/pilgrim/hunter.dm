@@ -1,14 +1,15 @@
 /datum/advclass/pilgrim/hunter
 	name = "Hunter"
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
+	allowed_sexes = list("male", "female")
+	allowed_races = list("Humen",
+	"Humen",
+	"Elf",
+	"Elf",
+	"Half-Elf",
+	"Tiefling",
+	"Dark Elf",
+	"Dwarf",
+	"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/hunter
 	isvillager = TRUE

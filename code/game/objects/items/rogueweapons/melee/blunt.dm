@@ -238,7 +238,7 @@
 	force = 10
 	force_wielded = 12
 
-// Copper Bludgeon 
+// Copper Bludgeon - Extremely Cheap, crafts in 2's
 
 /obj/item/rogueweapon/mace/copperbludgeon
 	force = 6

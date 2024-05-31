@@ -6,16 +6,8 @@
 	total_positions = 0
 	spawn_positions = 0
 
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf", 
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
-	)
+	allowed_sexes = list("male", "female")
+	allowed_races = list("Humen","Humen", "Half-Elf","Dark Elf","Elf","Elf", "Dwarf","Dwarf")
 	tutorial = ""
 
 	outfit = /datum/outfit/job/roguetown/skeleton

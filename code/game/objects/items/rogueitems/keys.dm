@@ -79,8 +79,8 @@
 	icon_state = "cheesekey"
 	lockid = "vault"
 
-/obj/item/roguekey/captain
-	name = "captain's key"
+/obj/item/roguekey/sheriff
+	name = "bailiff's key"
 	icon_state = "cheesekey"
 	lockid = "sheriff"
 

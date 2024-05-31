@@ -1,16 +1,15 @@
 /datum/advclass/combat/rogue
 	name = "Rogue"
 	tutorial = "Where is the gold?"
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
-	)
+	allowed_sexes = list("male", "female")
+	allowed_races = list("Humen",
+	"Humen",
+	"Elf",
+	"Dark Elf",
+	"Half-Elf",
+	"Dwarf",
+	"Tiefling",
+	"Aasimar")
 	outfit = /datum/outfit/job/roguetown/adventurer/rogue
 
 /datum/outfit/job/roguetown/adventurer/rogue/pre_equip(mob/living/carbon/human/H)

@@ -6,14 +6,12 @@
 	total_positions = 2
 	spawn_positions = 2
 
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
-	)
+	allowed_sexes = list("male", "female")
+	allowed_races = list("Humen",
+	"Elf",
+	"Dwarf",
+	"Aasimar",
+	"Half-Elf")
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	tutorial = "An elite guardsman with extra training. Protect the nobles."
 	display_order = JDO_ROYALGUARD

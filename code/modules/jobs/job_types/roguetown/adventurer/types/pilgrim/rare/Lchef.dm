@@ -2,13 +2,11 @@
 
 /datum/advclass/pilgrim/rare/masterchef
 	name = "Master Chef"
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
+	allowed_sexes = list("male", "female")
+	allowed_races = list("Humen",
+	"Dwarf",
+	"Aasimar",
+	"Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/masterchef
 	isvillager = FALSE

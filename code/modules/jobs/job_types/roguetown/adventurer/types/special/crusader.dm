@@ -1,12 +1,13 @@
 /datum/advclass/crusader
 	name = "Crusader"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
+	allowed_races = list("Humen",
+	"Humen",
+	"Elf",
+	"Elf",
+	"Half-Elf",
+	"Dwarf",
+	"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/crusader
 	plevel_req = 0

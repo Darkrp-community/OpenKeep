@@ -6,14 +6,13 @@
 	total_positions = 3
 	spawn_positions = 3
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
+	allowed_races = list("Humen",
+	"Humen",
+	"Elf",
+	"Half-Elf",
+	"Dwarf",
+	"Tiefling",
+	"Dark Elf",
 	)
 
 	tutorial = "Hauler is one of the lowest positions in town, they are expected to aid steward, merchant, masons, and blacksmiths in hauling goods and deliveries."
