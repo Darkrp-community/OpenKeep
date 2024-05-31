@@ -146,11 +146,6 @@
 			var/obj/item/used_weapon = mainhand
 			var/obj/item/rogueweapon/shield/buckler/skiller = get_inactive_held_item()  // buckler code
 			var/obj/item/rogueweapon/shield/buckler/skillerbuck = get_active_held_item()
-			
-			if(istype(offhand, /obj/item/rogueweapon/shield/buckler))
-				skiller.bucklerskill(H)
-			if(istype(mainhand, /obj/item/rogueweapon/shield/buckler))
-				skillerbuck.bucklerskill(H)  //buckler code end
 
 			if(mainhand)
 				if(mainhand.can_parry)
@@ -160,7 +155,7 @@
 				if(offhand.can_parry)
 					offhand_defense += (H.mind ? (H.mind.get_skill_level(offhand.associated_skill) * 20) : 20)
 					offhand_defense += (offhand.wdefense * 10)
-			
+
 			if(mainhand_defense >= offhand_defense)
 				highest_defense += mainhand_defense
 			else
@@ -169,7 +164,7 @@
 
 			var/defender_skill = 0
 			var/attacker_skill = 0
-			
+
 			if(highest_defense <= (H.mind ? (H.mind.get_skill_level(/datum/skill/combat/unarmed) * 20) : 20))
 				defender_skill = H.mind?.get_skill_level(/datum/skill/combat/unarmed)
 				prob2defend += (defender_skill * 20)
@@ -201,18 +196,18 @@
 				to_chat(src, "<span class='warning'>The enemy defeated my parry!</span>")
 				return FALSE
 
-			drained = max(drained, 5)		
-			
+			drained = max(drained, 5)
+
 			if(weapon_parry == TRUE)
 				if(do_parry(used_weapon, drained, user)) //show message
-					
+
 					if((mobility_flags & MOBILITY_STAND) && attacker_skill && (defender_skill < attacker_skill - SKILL_LEVEL_NOVICE))
 						mind.adjust_experience(used_weapon.associated_skill, max(round(STAINT/2), 0), FALSE)
 
 					var/obj/item/AB = intenty.masteritem
-					
+
 					//attacker skill gain
-					
+
 					if(U.mind)
 						if((U.mobility_flags & MOBILITY_STAND) && defender_skill && (attacker_skill < defender_skill - SKILL_LEVEL_NOVICE))
 							if(AB)
