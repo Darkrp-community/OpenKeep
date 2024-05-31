@@ -246,6 +246,37 @@
 	gender = MALE
 	specuse = list("elf")
 
+/datum/sprite_accessory/hair/hair_sidecut
+	name = "Tied Sidecut"
+	icon_state = "TIED_SIDECUT"
+	gender = MALE
+	specuse = list("human", "tiefling", "aasimar")
+
+/datum/sprite_accessory/hair/hair_sidecut_untied
+	name = "Wild Sidecut"
+	icon_state = "UNTIED_SIDECUT"
+	gender = MALE
+	specuse = list("human", "tiefling", "aasimar")
+
+/datum/sprite_accessory/hair/hair_trimmerd
+	name = "Trimmed hair"
+	icon_state = "HAIR_TRIMMED"
+	gender = MALE
+	specuse = list("human", "tiefling", "aasimar")
+
+/datum/sprite_accessory/hair/manbun_rows
+	name = "Manbun"
+	icon_state = "MANBUN_ROWS"
+	gender = MALE
+	specuse = list("human", "tiefling", "aasimar")
+
+/datum/sprite_accessory/hair/manbun_rows
+	name = "Manbun alt"
+	icon_state = "MANBUN_2"
+	gender = MALE
+	specuse = list("human", "tiefling", "aasimar")
+
+
 /////////////////////////////
 // GIRLY Hair Definitions  //
 /////////////////////////////
