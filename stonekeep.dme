@@ -1101,7 +1101,6 @@
 #include "code\game\objects\items\rogueitems\prostheticarm.dm"
 #include "code\game\objects\items\rogueitems\ropechainbola.dm"
 #include "code\game\objects\items\rogueitems\undies.dm"
-#include "code\game\objects\items\rogueitems\waterskins.dm"
 #include "code\game\objects\items\rogueitems\natural\animals.dm"
 #include "code\game\objects\items\rogueitems\natural\ash.dm"
 #include "code\game\objects\items\rogueitems\natural\clothfibersthorn.dm"

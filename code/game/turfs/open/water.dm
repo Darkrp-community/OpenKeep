@@ -14,10 +14,10 @@
 
 /turf/open/water
 	gender = PLURAL
-	name = "water"
-	desc = "It's.. well, water."
-	icon = 'icons/turf/newwater.dmi'
-	icon_state = "together"
+	name = ""
+	desc = ""
+	icon = null
+	icon_state = ""
 	baseturfs = /turf/open/water
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	slowdown = 20
@@ -335,8 +335,8 @@
 /turf/open/water/river
 	name = "water"
 	desc = "Crystal clear water! Flowing swiflty along the river."
-	icon_state = "rivermove"
-	icon = 'icons/turf/newwater.dmi'
+	icon_state = "rockwd"
+	icon = 'icons/turf/roguefloor.dmi'
 	water_level = 3
 	slowdown = 20
 	wash_in = TRUE
