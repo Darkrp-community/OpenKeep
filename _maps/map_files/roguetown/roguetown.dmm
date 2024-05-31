@@ -12786,7 +12786,7 @@
 /area/rogue/indoors/town/magician)
 "tTZ" = (
 /obj/structure/stairs/stone,
-/turf/closed,
+/turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
 "tUt" = (
 /obj/machinery/light/rogue/wallfire/candle/r,
