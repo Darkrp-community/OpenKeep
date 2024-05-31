@@ -3,8 +3,8 @@
 	flag = APPRENTICE
 	department_flag = YOUNGFOLK
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 
 	allowed_races = list(
 		"Humen",
@@ -29,6 +29,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
+		neck = /obj/item/roguekey/church
 	if(H.gender == MALE)
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		belt = /obj/item/storage/belt/rogue/leather/rope

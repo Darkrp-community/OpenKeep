@@ -26,7 +26,7 @@
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather/rope
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
+	shirt = shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/uncolored
 	pants = /obj/item/clothing/under/roguetown/trou
 	head = /obj/item/clothing/head/roguetown/armingcap
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes

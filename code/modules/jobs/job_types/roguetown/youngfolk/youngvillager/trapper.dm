@@ -1,5 +1,5 @@
 /datum/advclass/pilgrim/trapper
-	name = "Hunter"
+	name = "Trapper"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -23,8 +23,7 @@
 /datum/outfit/job/roguetown/adventurer/trapper/villager/pre_equip(mob/living/carbon/human/H)
 	..()
 	pants = /obj/item/clothing/under/roguetown/tights/random
-	if (prob(50))
-	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/purple
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/green
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	cloak = /obj/item/clothing/cloak/raincloak/red

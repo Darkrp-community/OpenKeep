@@ -1,5 +1,5 @@
 /datum/advclass/pilgrim/farmhand
-	name = "student"
+	name = "Student"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -38,7 +38,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 	backr = /obj/item/storage/backpack/rogue/satchel
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger = 1,/obj/item/paper/scroll = 1,/obj/item/natural/feather = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/sdagger = 1,/obj/item/paper/scroll = 1,/obj/item/natural/feather = 1)
 	H.change_stat("strength", -1)
 	H.change_stat("intelligence", 3)
 	H.change_stat("constitution", -2)

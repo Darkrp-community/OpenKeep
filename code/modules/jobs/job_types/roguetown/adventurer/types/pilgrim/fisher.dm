@@ -95,5 +95,5 @@
 		backr = /obj/item/storage/backpack/rogue/satchel
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/fishingrod
-		beltl = /obj/item/rogueweapon/huntingknife
+		beltl = /obj/item/rogueweapon/sdagger
 		backpack_contents = list(/obj/item/natural/worms = 2,/obj/item/rogueweapon/shovel/small=1)

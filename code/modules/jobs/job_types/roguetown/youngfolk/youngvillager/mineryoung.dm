@@ -19,14 +19,14 @@
 	..()
 	pants = /obj/item/clothing/under/roguetown/trou
 	armor = /obj/item/clothing/suit/roguetown/armor/workervest
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/uncolored
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	belt = /obj/item/storage/belt/rogue/leather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/rogueweapon/pick
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	backl = /obj/item/storage/backpack/rogue/backpack
-	backpack_contents = list(/obj/item/flint = 1, /obj/item/candle = 2)
+	backpack_contents = list(/obj/item/flint = 1, /obj/item/candle/yellow = 4)
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
