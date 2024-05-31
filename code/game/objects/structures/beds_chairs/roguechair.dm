@@ -309,8 +309,10 @@
 		if(A.density && !(A.flags_1 & ON_BORDER_1))
 			to_chat(user, "<span class='warning'>There is already something here!</span>")
 			return
-	new /obj/structure/bed/rogue/sleepingbag(get_turf(src))
-	qdel(src)
+	user.visible_message("<span class='notice'>[user] begins planting \the [src] down on the ground.</span>")
+	if(do_after(user, 2 SECONDS, TRUE, src))
+		new /obj/structure/bed/rogue/sleepingbag(get_turf(src))
+		qdel(src)
 
 /obj/structure/bed/rogue/post_buckle_mob(mob/living/M)
 	..()
