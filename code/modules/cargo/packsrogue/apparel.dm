@@ -49,3 +49,8 @@
 	name = "Hide Cloak"
 	cost = 15
 	contains = list(/obj/item/clothing/cloak/raincloak/brown,)
+
+/datum/supply_pack/rogue/apparel/tunics
+	name = "Crate of Tunics"
+	cost = 30
+	contains = list(/obj/item/clothing/suit/roguetown/shirt/tunic/red,/obj/item/clothing/suit/roguetown/shirt/tunic/blue,/obj/item/clothing/suit/roguetown/shirt/tunic/green,/obj/item/clothing/suit/roguetown/shirt/tunic/uncolored)
