@@ -39,8 +39,8 @@
 	backr = /obj/item/storage/backpack/rogue/satchel
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger = 1,/obj/item/paper/scroll = 1,/obj/item/natural/feather = 1)
-	H.change_stat("strength", -1)
-	H.change_stat("intelligence", 3)
-	H.change_stat("constitution", -2)
+	H.change_stat("strength", -2)
+	H.change_stat("intelligence", 4)
+	H.change_stat("constitution", -3)
 	H.mind.adjust_skillrank(/datum/skill/labor/mathematics, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
