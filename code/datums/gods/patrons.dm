@@ -59,6 +59,7 @@ GLOBAL_LIST_EMPTY(patronlist)
 	t0 = /obj/effect/proc_holder/spell/invoked/heal/lesser
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/churn
+	t3 = /obj/effect/proc_holder/spell/targeted/touch/necrotic
 
 /datum/patrongods/xylix
 	name = "Xylix"
