@@ -1,5 +1,5 @@
 /obj/structure/roguemachine/submission
-	name = "HOLE OF SUBMISSION"
+	name = "submission hole"
 	desc = ""
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "submit"

@@ -34,12 +34,12 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
-
+		
 	if(H.gender == FEMALE)
 		H.underwear = "Femleotard"
 		H.underwear_color = CLOTHING_BLACK
 		H.update_body()
-
+	
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	gloves = /obj/item/clothing/gloves/roguetown/leather
@@ -52,9 +52,8 @@
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
-
+	
 	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, RTRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	H.change_stat("strength", 1)
 	H.change_stat("perception", 2)
 	H.change_stat("speed", 2)

@@ -12,9 +12,8 @@
 #define RTRAIT_NOBLE					"Noble Blooded"
 #define RTRAIT_EMPATH					"Empath"
 #define RTRAIT_BREADY					"Battleready"
-#define RTRAIT_MEDIUMARMOR				"Maille Training"
-#define RTRAIT_HEAVYARMOR				"Plate Training"
-#define RTRAIT_DODGEEXPERT              "Fast Reflexes"
+#define RTRAIT_MEDIUMARMOR					"Maille Training"
+#define RTRAIT_HEAVYARMOR					"Plate Training"
 #define RTRAIT_VILLAIN					"Villain"
 
 #define TRAIT_NOFATSTAM				"nofatstam" //for ai
@@ -43,7 +42,6 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	RTRAIT_BREADY = "Defensive stance does not passively fatigue me.",
 	RTRAIT_MEDIUMARMOR = "I can move freely in medium armor.",
 	RTRAIT_HEAVYARMOR = "I can move freely in heavy armor.",
-	RTRAIT_DODGEEXPERT = "I can dodge easly while only wearing light armor.",
 	RTRAIT_VILLAIN = "I am a devious, conniving villain!"
 	))
 

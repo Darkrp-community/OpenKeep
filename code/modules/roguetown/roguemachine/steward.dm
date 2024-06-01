@@ -6,7 +6,7 @@
 #define TAB_LOG 6
 
 /obj/structure/roguemachine/steward
-	name = "MASTER OF NERVES"
+	name = "nerve master"
 	desc = ""
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "steward_machine"
@@ -29,7 +29,6 @@
 			update_icon()
 			return
 		else
-			playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 			to_chat(user, "<span class='warning'>Wrong key.</span>")
 			return
 	if(istype(P, /obj/item/keyring))
@@ -40,7 +39,6 @@
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 				update_icon()
 				return
-		playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 		to_chat(user, "<span class='warning'>Wrong key.</span>")
 		return
 	return ..()
@@ -217,7 +215,7 @@
 	var/contents
 	switch(current_tab)
 		if(TAB_MAIN)
-			contents += "<center>MASTER OF NERVES<BR>"
+			contents += "<center>NERVE MASTER<BR>"
 			contents += "--------------<BR>"
 			contents += "<a href='?src=\ref[src];switchtab=[TAB_BANK]'>\[Bank\]</a><BR>"
 			contents += "<a href='?src=\ref[src];switchtab=[TAB_STOCK]'>\[Stockpile\]</a><BR>"
