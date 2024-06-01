@@ -156,3 +156,15 @@
 	wlength = WLENGTH_SHORT
 	pickup_sound = 'sound/foley/equip/rummaging-03.ogg'
 	gripped_intents = list(/datum/intent/axe/chop/stone)
+
+// Pickaxe-axe ; Technically both a tool and weapon, but it goes here due to weapon function. Subtype of steel axe.
+/obj/item/rogueweapon/stoneaxe/woodcut/steel/pick
+	slot_flags = ITEM_SLOT_HIP
+	name = "axe"
+	desc = "An odd mix of a pickaxe front and a hatchet blade back, capable of being switched between."
+	icon_state = "paxe"
+	force = 19
+	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop, /datum/intent/pick)
+	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	wlength = WLENGTH_NORMAL
+	toolspeed = 2
