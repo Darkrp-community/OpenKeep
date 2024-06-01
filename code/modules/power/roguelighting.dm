@@ -227,6 +227,7 @@
 		GLOB.fires_list -= src
 
 /obj/machinery/light/rogue/Destroy()
+	QDEL_NULL(soundloop)	
 	GLOB.fires_list -= src
 	. = ..()
 
@@ -259,6 +260,9 @@
 /obj/machinery/light/rogue/attackby(obj/item/W, mob/living/user, params)
 	if(cookonme)
 		if(istype(W, /obj/item/reagent_containers/food/snacks))
+			if(istype(W, /obj/item/reagent_containers/food/snacks/egg))
+				to_chat(user, "<span class='warning'>I wouldn't be able to cook this over the fire...</span>")
+				return FALSE
 			var/obj/item/A = user.get_inactive_held_item()
 			if(A)
 				var/foundstab = FALSE
@@ -612,40 +616,74 @@
 	name = "hearth"
 	icon_state = "hearth1"
 	base_state = "hearth"
-	density = FALSE
+	density = TRUE
 	anchored = TRUE
-	layer = 2.8
-	var/obj/item/attachment = null
-	var/obj/item/reagent_containers/food/snacks/food = null
+	climbable = TRUE
+	climb_time = 3 SECONDS
+	layer = TABLE_LAYER
+	climb_offset = 14
 	on = FALSE
 	cookonme = TRUE
+	var/obj/item/attachment = null
+	var/obj/item/reagent_containers/food/snacks/food = null
+	var/datum/looping_sound/boilloop/boilloop
+
+/obj/machinery/light/rogue/hearth/Initialize()
+	boilloop = new(list(src), FALSE)
+	. = ..()
 
 /obj/machinery/light/rogue/hearth/attackby(obj/item/W, mob/living/user, params)
 	if(!attachment)
-		if(istype(W, /obj/item/cooking/pan))
-			W.forceMove(src)
+		if(istype(W, /obj/item/cooking/pan) || istype(W, /obj/item/cooking/pot))
+			playsound(get_turf(user), 'sound/foley/dropsound/shovel_drop.ogg', 100, TRUE, -1)
 			attachment = W
+			W.forceMove(src)
 			update_icon()
 			return
 	else
 		if(istype(attachment, /obj/item/cooking/pan))
 			if(W.type in subtypesof(/obj/item/reagent_containers/food/snacks))
 				var/obj/item/reagent_containers/food/snacks/S = W
+				if(istype(W, /obj/item/reagent_containers/food/snacks/egg)) // added
+					playsound(get_turf(user), 'sound/neu/eggbreak.ogg', 100, TRUE, -1)
+					sleep(25) // to get egg crack before frying hiss
+					W.icon_state = "rawegg" // added
 				if(!food)
 					S.forceMove(src)
 					food = S
 					update_icon()
 					playsound(src.loc, 'sound/misc/frying.ogg', 100, FALSE, extrarange = 5)
 					return
+/* from Blackstone, made for their cooking pot. Retained for consistency.
+		else if(istype(attachment, /obj/item/cooking/pot))
+			var/obj/item/cooking/pot = attachment
+			if(W.type in subtypesof(/obj/item/reagent_containers/food/snacks) || W.type == /obj/item/reagent_containers/powder/flour) 
+				if(pot.reagents.chem_temp < 374)
+					to_chat(user, "<span class='warning'>[pot] isn't boiling!</span>")
+					return
+				var/nutrimentamount = W.reagents.get_reagent_amount(/datum/reagent/consumable/nutriment)
+				if(W.type in subtypesof(/obj/item/reagent_containers/food/snacks))
+					var/obj/item/reagent_containers/food/snacks/snack = W
+					if(snack.type in subtypesof(/obj/item/reagent_containers/food/snacks/grown) || snack.eat_effect == /datum/status_effect/debuff/uncookedfood)
+						nutrimentamount *= 1.25 //Boiling food makes more nutrients digestable.
+				if(istype(W, /obj/item/reagent_containers/food/snacks/grown/wheat) || istype(W, /obj/item/reagent_containers/food/snacks/grown/oat) || istype(W, /obj/item/reagent_containers/powder/flour))
+					nutrimentamount += 2 //Boiling is a way of cooking grain without baking
+				if(nutrimentamount > 0)
+					if(nutrimentamount + pot.reagents.total_volume > pot.volume)
+						to_chat(user, "<span class='warning'>[attachment] is full!</span>")
+						return
+					user.visible_message("<span class='info'>[user] places [W] into the pot.</span>")
+					pot.reagents.add_reagent(/datum/reagent/consumable/nutriment, nutrimentamount)
+					qdel(W)
+				return
+*/
 	. = ..()
-
-
 
 /obj/machinery/light/rogue/hearth/update_icon()
 	cut_overlays()
 	icon_state = "[base_state][on]"
 	if(attachment)
-		if(attachment.type == /obj/item/cooking/pan)
+		if(istype(attachment, /obj/item/cooking/pan) || istype(attachment, /obj/item/cooking/pot))
 			var/obj/item/I = attachment
 			I.pixel_x = 0
 			I.pixel_y = 0
@@ -662,7 +700,7 @@
 		return
 
 	if(attachment)
-		if(attachment.type == /obj/item/cooking/pan)
+		if(istype(attachment, /obj/item/cooking/pan))
 			if(food)
 				if(!user.put_in_active_hand(food))
 					food.forceMove(user.loc)
@@ -673,6 +711,12 @@
 					attachment.forceMove(user.loc)
 				attachment = null
 				update_icon()
+		if(istype(attachment, /obj/item/cooking/pot))
+			if(!user.put_in_active_hand(attachment))
+				attachment.forceMove(user.loc)
+			attachment = null
+			update_icon()
+			boilloop.stop()
 	else
 		if(on)
 			var/mob/living/carbon/human/H = user
@@ -704,6 +748,13 @@
 					if(C)
 						qdel(food)
 						food = C
+			if(istype(attachment, /obj/item/cooking/pot))
+				if(attachment.reagents)
+					attachment.reagents.expose_temperature(400, 0.033)
+					if(attachment.reagents.chem_temp > 374)
+						boilloop.start()
+					else
+						boilloop.stop()
 		update_icon()
 
 
@@ -712,6 +763,9 @@
 		user.visible_message("<span class='warning'>[user] snuffs [src].</span>")
 		burn_out()
 
+/obj/machinery/light/rogue/hearth/Destroy()
+	QDEL_NULL(boilloop)	
+	. = ..()
 
 /obj/machinery/light/rogue/campfire
 	name = "campfire"
