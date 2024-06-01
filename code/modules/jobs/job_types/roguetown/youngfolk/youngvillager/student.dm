@@ -17,6 +17,7 @@
 
 /datum/outfit/job/roguetown/adventurer/student/pre_equip(mob/living/carbon/human/H)
 	..()
+	ADD_TRAIT(H, RTRAIT_NOBLE, TRAIT_GENERIC)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, rand(1,3), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
