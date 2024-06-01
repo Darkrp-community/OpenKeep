@@ -1,5 +1,5 @@
 /obj/structure/roguemachine/stockpile
-	name = "stockpile"
+	name = "STOCKLOAD"
 	desc = ""
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "stockpile_vendor"
