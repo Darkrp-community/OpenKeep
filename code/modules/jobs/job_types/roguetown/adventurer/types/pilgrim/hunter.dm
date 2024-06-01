@@ -74,7 +74,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/traps, pick(1,2) TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/traps, pick(1,2), TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
