@@ -1,5 +1,5 @@
 /datum/advclass/pilgrim/farmhand
-	name = "farmhand"
+	name = "Farmhand"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",

@@ -1,4 +1,4 @@
-/datum/advclass/pilgrimminer
+/datum/advclass/mineryoung
 	name = "Miner"
 	allowed_sexes = list(MALE)
 	allowed_races = list(

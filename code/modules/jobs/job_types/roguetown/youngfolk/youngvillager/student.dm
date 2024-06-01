@@ -1,4 +1,4 @@
-/datum/advclass/pilgrim/farmhand
+/datum/advclass/pilgrim/student
 	name = "Student"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(

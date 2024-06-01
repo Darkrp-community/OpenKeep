@@ -15,12 +15,7 @@
 	isvillager = TRUE
 	ispilgrim = FALSE
 
-	/datum/advclass/pilgrim/hunter/villager
-	outfit = /datum/outfit/job/roguetown/adventurer/trapper
-	isvillager = TRUE
-	ispilgrim = FALSE
-
-/datum/outfit/job/roguetown/adventurer/trapper/villager/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/adventurer/trapper/pre_equip(mob/living/carbon/human/H)
 	..()
 	pants = /obj/item/clothing/under/roguetown/tights/random
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/green
