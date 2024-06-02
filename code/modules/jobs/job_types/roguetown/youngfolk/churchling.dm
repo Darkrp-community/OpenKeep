@@ -32,7 +32,6 @@
 	if(H.gender == MALE)
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		belt = /obj/item/storage/belt/rogue/leather/rope
-		beltl = /obj/item/roguekey/church
 		pants = /obj/item/clothing/under/roguetown/tights
 		backr = /obj/item/storage/backpack/rogue/satchel
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
@@ -42,7 +41,6 @@
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		belt = /obj/item/storage/belt/rogue/leather/rope
-		beltl = /obj/item/roguekey/church
 		pants = /obj/item/clothing/under/roguetown/tights
 		backr = /obj/item/storage/backpack/rogue/satchel
 		head = /obj/item/clothing/head/roguetown/armingcap
