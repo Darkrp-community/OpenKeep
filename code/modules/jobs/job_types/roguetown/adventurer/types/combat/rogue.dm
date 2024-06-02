@@ -1,6 +1,6 @@
 /datum/advclass/combat/rogue
 	name = "Rogue"
-	tutorial = "Where is the gold?"
+	tutorial = "You are either a thieving scoundrel or a good-natured bandit from the rich. Or perhaps you are somewhere morally in-between. You are proficient in all manners of infiltration, and the world is yours to steal from. Just don't get caught."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -17,7 +17,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
@@ -40,10 +40,13 @@
 	cloak = /obj/item/clothing/cloak/raincloak/mortus
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltr = /obj/item/rogueweapon/huntingknife/idagger/steel
-	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-	beltl = /obj/item/quiver/bolts
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+	beltl = /obj/item/quiver/arrows
 	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, RTRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	H.change_stat("strength", -1)
 	H.change_stat("perception", 2)
+	H.change_stat("intelligence", 1)
+	H.change_stat("constitution", -1)
+	H.change_stat("endurance", -1)
 	H.change_stat("speed", 2)
