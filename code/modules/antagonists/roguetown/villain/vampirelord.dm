@@ -617,22 +617,21 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 						P.name = naming
 					user.playsound_local(get_turf(src), 'sound/misc/vcraft.ogg', 100, FALSE, pressure_affected = FALSE)
 		if("Shape Armor")
+			var/list/armorpieces = list(
+				/obj/item/clothing/under/roguetown/platelegs/vampire,
+				/obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire,
+				/obj/item/clothing/shoes/roguetown/boots/armor/vampire,
+				/obj/item/clothing/head/roguetown/helmet/heavy/guard)
 			if(alert(user, "Craft a new set of armor? Cost:1500","","Yes","No") == "Yes")
 				if(!check_withdraw(-1500))
 					to_chat(user, "I don't have enough vitae!")
 					return
 				if(do_after(user, 100))
 					lord.handle_vitae(-1500)
-			var/list/armorpieces = list(
-				/obj/item/clothing/under/roguetown/platelegs/vampire,
-				/obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire,
-				/obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire,
-				/obj/item/clothing/shoes/roguetown/boots/armor/vampire,
-				/obj/item/clothing/head/roguetown/helmet/heavy/guard
-			)
-			for(var/armorType in armorpieces)
-				new armorType(src.loc)
-			user.playsound_local(get_turf(src), 'sound/misc/vcraft.ogg', 100, FALSE, pressure_affected = FALSE)
+					user.playsound_local(get_turf(src), 'sound/misc/vcraft.ogg', 100, FALSE, pressure_affected = FALSE)
+					for(var/armorType in armorpieces)
+						new armorType(src.loc)
+
 
 /obj/structure/vampire/bloodpool/proc/update_pool(change)
 	var/datum/game_mode/chaosmode/C = SSticker.mode
