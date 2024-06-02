@@ -61,6 +61,9 @@
 	return ..()
 
 /mob/living/proc/ZImpactDamage(turf/T, levels)
+	if(!density) //lets cats and similar avoid death by falling
+		visible_message("<span class='notice'>The creature lands unharmed...</span>")
+		return
 	adjustBruteLoss((levels * 5) ** 1.5)
 	AdjustStun(levels * 20)
 	AdjustKnockdown(levels * 20)
