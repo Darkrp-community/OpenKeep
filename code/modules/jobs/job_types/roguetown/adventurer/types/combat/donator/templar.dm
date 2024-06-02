@@ -4,9 +4,11 @@
 	name = "Paladin"
 	tutorial = "Paladins are former noblemen and clerics who have dedicated themselves to great combat prowess. Often, they were promised redemption for past sins if they crusaded in the name of the gods."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list("Humen",
-	"Tiefling",
-	"Aasimar")
+	allowed_races = list(	
+		"Humen",
+		"Tiefling",
+		"Aasimar"
+	)
 	outfit = /datum/outfit/job/roguetown/adventurer/templar
 	maxchosen = 1
 	plevel_req = 1
