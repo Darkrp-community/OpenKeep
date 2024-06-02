@@ -280,7 +280,8 @@
 	if(!amt2change && !raisin)
 		return
 	adjust_playerquality(amt2change, ckey, admin, raisin)
-	to_chat(M.client, "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message linkify\">Your PQ has been adjusted by [amt2change] by [admin] for reason: [raisin]</span></span>")
+// Below commented out on staff request - gives players a popup as soon as PQ changes, immersion issue.
+//	to_chat(M.client, "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message linkify\">Your PQ has been adjusted by [amt2change] by [admin] for reason: [raisin]</span></span>")
 
 /datum/admins/proc/access_news_network() //MARKER
 	set category = "Fun"
