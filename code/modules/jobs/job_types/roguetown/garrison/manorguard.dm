@@ -1,5 +1,5 @@
 /datum/job/roguetown/manorguard
-	title = "Royal Guard"
+	title = "Royal Knight"
 	flag = GUARDSMAN
 	department_flag = GARRISON
 	faction = "Station"
@@ -41,32 +41,33 @@
 
 /datum/outfit/job/roguetown/manorguard/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/helmet
-	pants = /obj/item/clothing/under/roguetown/chainlegs
-	cloak = /obj/item/clothing/cloak/stabard/surcoat/guard
-	neck = /obj/item/clothing/neck/roguetown/gorget
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
-	shoes = /obj/item/clothing/shoes/roguetown/boots
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/knight
+	gloves = /obj/item/clothing/gloves/roguetown/plate
+	pants = /obj/item/clothing/under/roguetown/platelegs
+	cloak = /obj/item/clothing/cloak/tabard/knight/guard
+	neck = /obj/item/clothing/neck/roguetown/bervor
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/full
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	beltl = /obj/item/keyring/guardcastle
-	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/rogueweapon/sword
-	backr = /obj/item/storage/backpack/rogue/satchel
+	belt = /obj/item/storage/belt/rogue/leather/hand
+	backr = /obj/item/storage/backpack/rogue/satchel/black
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.change_stat("strength", 2)
-		H.change_stat("perception", 2)
-		H.change_stat("endurance", 1)
-		H.change_stat("speed", 1)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
+		backl = /obj/item/rogueweapon/sword/long
+		H.change_stat("strength", 3)
+		H.change_stat("constitution", 3)
+		H.change_stat("endurance", 2)
+		H.change_stat("speed", -1)
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)

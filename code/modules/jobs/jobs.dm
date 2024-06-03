@@ -70,7 +70,7 @@ GLOBAL_LIST_INIT(noble_positions, list(
 
 GLOBAL_LIST_INIT(garrison_positions, list(
 	"Garrison Guard",
-	"Royal Guard",
+	"Royal Knight",
 	"Veteran",
 	"Dungeoneer",
 	"Garrison Archer",
