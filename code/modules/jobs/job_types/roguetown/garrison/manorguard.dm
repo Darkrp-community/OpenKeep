@@ -39,7 +39,7 @@
 			S.name = "knight tabard ([index])"
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
-		var/honorary = "Sir"
+		var/honorary = "Ser"
 		if(H.gender == FEMALE)
 			honorary = "Dame"
 		H.real_name = "[honorary] [prev_real_name]"
@@ -72,7 +72,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
 		backl = /obj/item/rogueweapon/sword/long
-		H.change_stat("strength", 5)
+		H.change_stat("strength", 3)
 		H.change_stat("constitution", 4)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", -1)
