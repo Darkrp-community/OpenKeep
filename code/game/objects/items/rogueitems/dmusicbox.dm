@@ -2,7 +2,7 @@
 /datum/looping_sound/dmusloop
 	mid_sounds = list()
 	mid_length = 60
-	volume = 80
+	volume = 90
 	extra_range = 3
 	var/stress2give = /datum/stressevent/music
 	persistent_loop = TRUE
