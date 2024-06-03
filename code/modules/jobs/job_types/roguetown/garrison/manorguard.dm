@@ -29,14 +29,21 @@
 	..()
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/surcoat/guard))
+		if(istype(H.cloak, /obj/item/clothing/cloak/tabard/knight/guard))
 			var/obj/item/clothing/S = H.cloak
 			var/index = findtext(H.real_name, " ")
 			if(index)
 				index = copytext(H.real_name, 1,index)
 			if(!index)
 				index = H.real_name
-			S.name = "guard's tabard ([index])"
+			S.name = "knight tabard ([index])"
+		var/prev_real_name = H.real_name
+		var/prev_name = H.name
+		var/honorary = "Sir"
+		if(H.gender == FEMALE)
+			honorary = "Dame"
+		H.real_name = "[honorary] [prev_real_name]"
+		H.name = "[honorary] [prev_name]"
 
 
 /datum/outfit/job/roguetown/manorguard/pre_equip(mob/living/carbon/human/H)
@@ -65,8 +72,8 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
 		backl = /obj/item/rogueweapon/sword/long
-		H.change_stat("strength", 3)
-		H.change_stat("constitution", 3)
+		H.change_stat("strength", 5)
+		H.change_stat("constitution", 55)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", -1)
 	H.verbs |= /mob/proc/haltyell
