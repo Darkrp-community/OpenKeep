@@ -1,5 +1,6 @@
 /obj/item/reagent_containers/glass/cup
 	name = "metal cup"
+	desc = "A sturdy cup, often used by warriors, the guard and other sturdy men."
 	icon_state = "iron"
 	icon = 'icons/roguetown/items/cooking.dmi'
 	force = 5
@@ -29,17 +30,20 @@
 
 /obj/item/reagent_containers/glass/cup/wooden
 	name = "wooden cup"
+	desc = "This cup whispers tales of drunken battles and feasts."
 	resistance_flags = FLAMMABLE
 	icon_state = "wooden"
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 
 /obj/item/reagent_containers/glass/cup/steel
 	name = "goblet"
+	desc = "A steel goblet, its surface adorned with intricate carvings."
 	icon_state = "steel"
 	sellprice = 10
 
 /obj/item/reagent_containers/glass/cup/silver
 	name = "silver goblet"
+	desc = "A silver goblet, its surface adorned with intricate carvings and runes."
 	icon_state = "silver"
 	sellprice = 30
 
@@ -69,9 +73,11 @@
 
 /obj/item/reagent_containers/glass/cup/golden
 	name = "golden goblet"
+	desc = "Adorned with gemstones, this goblet radiates opulence and grandeur."
 	icon_state = "golden"
 	sellprice = 50
 
 /obj/item/reagent_containers/glass/cup/skull
 	name = "skull goblet"
+	desc = "The hollow eye sockets tell you of forgotten, dark rituals."
 	icon_state = "skull"

@@ -1,6 +1,7 @@
 
 /obj/structure/flora/roguegrass/maneater
 	name = "grass"
+	desc = "Green and vivid.. Did I see.. a tendril?"
 	icon = 'icons/roguetown/mob/monster/maneater.dmi'
 	icon_state = "maneater-hidden"
 	max_integrity = 5
