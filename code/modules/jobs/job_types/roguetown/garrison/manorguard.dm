@@ -1,5 +1,5 @@
 /datum/job/roguetown/manorguard
-	title = "Royal Knight"
+	title = "Royal Guard"
 	flag = GUARDSMAN
 	department_flag = GARRISON
 	faction = "Station"
@@ -15,7 +15,7 @@
 		"Aasimar"
 	)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
-	tutorial = "An elite guardsman with extra training. Protect the nobles."
+	tutorial = "You an Elite Guardsman, Knighted for your honorable deeds in service of your Monarch. Death before dishonor."
 	display_order = JDO_ROYALGUARD
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
@@ -73,7 +73,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
 		backl = /obj/item/rogueweapon/sword/long
 		H.change_stat("strength", 5)
-		H.change_stat("constitution", 55)
+		H.change_stat("constitution", 4)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", -1)
 	H.verbs |= /mob/proc/haltyell

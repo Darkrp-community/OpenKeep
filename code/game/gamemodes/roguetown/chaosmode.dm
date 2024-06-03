@@ -270,7 +270,7 @@
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_vampires()
-	restricted_jobs = list("Acolyte","Priest","Adventurer","Confessor","Garrison Guard","Veteran","Royal Knight","Captain")
+	restricted_jobs = list("Acolyte","Priest","Adventurer","Confessor","Garrison Guard","Veteran","Royal Guard","Captain")
 /*	var/num_vampires = rand(1,3)
 #ifdef TESTSERVER
 	num_vampires = 100
