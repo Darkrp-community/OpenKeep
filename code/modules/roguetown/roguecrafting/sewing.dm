@@ -118,8 +118,8 @@
 /datum/crafting_recipe/roguetown/sewing/gambeson
     name = "gambeson"
     result = list(/obj/item/clothing/suit/roguetown/armor/gambeson/)
-    reqs = list(/obj/item/natural/cloth = 6,
-                /obj/item/natural/fibers = 3)
+    reqs = list(/obj/item/natural/cloth = 4,
+				/obj/item/natural/fibers = 1)
     craftdiff = 2
 
 /datum/crafting_recipe/roguetown/sewing/tabard
@@ -215,19 +215,13 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
 
-/datum/crafting_recipe/roguetown/sewing/gambeson
-	name = "gambeson"
-	result = /obj/item/clothing/suit/roguetown/armor/gambeson
-	reqs = list(/obj/item/natural/cloth = 4,
-				/obj/item/natural/fibers = 1)
-	tools = list(/obj/item/needle)
-	craftdiff = 3
-
 /datum/crafting_recipe/roguetown/sewing/armordress
 	name = "padded dress"
 	result = /obj/item/clothing/suit/roguetown/armor/armordress
 	reqs = list(/obj/item/natural/cloth = 5,
-				/obj/item/natural/fibers = 2)
+				/obj/item/natural/fibers = 3,
+				/obj/item/natural/hide = 3,
+                /obj/item/natural/fur = 2)
 	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/sewing/bardhat
@@ -240,10 +234,10 @@
 /datum/crafting_recipe/roguetown/sewing/hgambeson
     name = "padded gambeson"
     result = list(/obj/item/clothing/suit/roguetown/armor/gambeson/heavy)
-    reqs = list(/obj/item/natural/cloth = 6,
-                /obj/item/natural/fibers = 3,
-                /obj/item/natural/hide = 3,
-                /obj/item/natural/fur = 2)
+    reqs = list(/obj/item/natural/cloth = 5,
+                /obj/item/natural/fibers = 2,
+                /obj/item/natural/hide = 2,
+				/obj/item/natural/fur = 1)
     craftdiff = 3
 
 /datum/crafting_recipe/roguetown/sewing/cape

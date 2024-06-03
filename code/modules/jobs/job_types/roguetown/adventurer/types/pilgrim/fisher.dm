@@ -1,5 +1,7 @@
 /datum/advclass/pilgrim/fisher
 	name = "Fisher"
+	tutorial = "Simple folk with an affinity for catching fish out of any body of water, \
+				they are decent cooks and swimmers, living off the gifts of Dendor."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -24,8 +26,9 @@
 		H.mind.adjust_skillrank(/datum/skill/labor/fishing, pick(4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank(/datum/skill/labor/fishing, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+			H.change_stat("constitution", 1)
 		H.change_stat("constitution", 2)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/random

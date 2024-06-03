@@ -101,7 +101,7 @@
 	log_combat(doctor, patient, "sew", "needle")
 
 /obj/item/needle/thorn
-	name = "needle"
+	name = "wooden needle"
 	icon_state = "thornneedle"
 	desc = ""
 	stringamt = 3

@@ -12,7 +12,8 @@
 	result = /obj/structure/handcart
 	reqs = list(/obj/item/grown/log/tree/small = 3,
 				/obj/item/rope = 1)
-	verbage = "carpents"
+	verbage = "carpent"
+	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
 
 /datum/crafting_recipe/roguetown/structure/psycrss
@@ -20,14 +21,16 @@
 	result = /obj/structure/fluff/psycross/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/grown/log/tree/stake = 3)
-	verbage = "carpents"
+	verbage = "carpent"
+	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
 
 /datum/crafting_recipe/roguetown/structure/door
 	name = "wooden door"
 	result = /obj/structure/mineral_door/wood/deadbolt
 	reqs = list(/obj/item/grown/log/tree/small = 2)
-	verbage = "carpents"
+	verbage = "carpent"
+	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 
@@ -35,7 +38,8 @@
 	name = "wooden barrel"
 	result = /obj/structure/fermenting_barrel/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1)
-	verbage = "barrelmakes"
+	verbage = "construct"
+	verbage_tp = "makes"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 
@@ -46,7 +50,8 @@
 	name = "wooden bin"
 	result = /obj/item/roguebin
 	reqs = list(/obj/item/grown/log/tree/small = 2)
-	verbage = "barrelmakes"
+	verbage = "construct"
+	verbage_tp = "makes"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 0
@@ -55,7 +60,8 @@
 	name = "wooden chair"
 	result = /obj/item/chair/rogue/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1)
-	verbage = "carpents"
+	verbage = "carpent"
+	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 
@@ -67,7 +73,8 @@
 	result = /obj/item/chair/stool/bar/rogue/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	skillcraft = /datum/skill/craft/carpentry
-	verbage = "carpents"
+	verbage = "carpent"
+	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
 
 /obj/item/chair/stool/bar/rogue/crafted
@@ -78,7 +85,8 @@
 	result = /obj/machinery/anvil
 	reqs = list(/obj/item/ingot/iron = 1)
 
-	verbage = "builds"
+	verbage = "build"
+	verbage_tp = "builds"
 	craftsound = 'sound/foley/Building-01.ogg'
 
 /datum/crafting_recipe/roguetown/structure/smelter
@@ -86,7 +94,8 @@
 	result = /obj/machinery/light/rogue/smelter
 	reqs = list(/obj/item/natural/stone = 4,
 			/obj/item/rogueore/coal = 1)
-	verbage = "crafts"
+	verbage = "build"
+	verbage_tp = "builds"
 	craftsound = null
 
 /datum/crafting_recipe/roguetown/structure/greatsmelter
@@ -95,7 +104,8 @@
 	reqs = list(/obj/item/ingot/iron = 2,
 				/obj/item/riddleofsteel = 1,
 				/obj/item/rogueore/coal = 1)
-	verbage = "crafts"
+	verbage = "build"
+	verbage_tp = "builds"
 	craftsound = null
 
 /datum/crafting_recipe/roguetown/structure/forge
@@ -104,7 +114,8 @@
 	reqs = list(/obj/item/natural/stone = 4,
 				/obj/item/rogueore/coal = 1)
 
-	verbage = "builds"
+	verbage = "build"
+	verbage_tp = "builds"
 	craftsound = null
 
 /datum/crafting_recipe/roguetown/structure/sharpwheel
@@ -113,7 +124,8 @@
 	reqs = list(/obj/item/ingot/iron = 1,
 				/obj/item/natural/stone = 1)
 
-	verbage = "crafts"
+	verbage = "construct"
+	verbage_tp = "constructs"
 	craftsound = null
 /*
 /datum/crafting_recipe/roguetown/structure/stairs
@@ -150,7 +162,8 @@
 	result = /obj/structure/stairs/d
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	skillcraft = /datum/skill/craft/carpentry
-	verbage = "carpent"
+	verbage = "construct"
+	verbage_tp = "constructs"
 	craftsound = 'sound/foley/Building-01.ogg'
 	ontile = TRUE
 
@@ -179,7 +192,8 @@
 	result = /obj/structure/fluff/railing/fence
 	reqs = list(/obj/item/grown/log/tree/stake = 2)
 	ontile = TRUE
-	verbage = "carpent"
+	verbage = "build"
+	verbage_tp = "builds"
 	craftsound = 'sound/foley/Building-01.ogg'
 	buildsame = TRUE
 
@@ -188,7 +202,8 @@
 	result = /obj/structure/fluff/railing/fence
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	ontile = TRUE
-	verbage = "carpent"
+	verbage = "build"
+	verbage_tp = "builds"
 	craftsound = 'sound/foley/Building-01.ogg'
 	buildsame = TRUE
 
@@ -197,6 +212,7 @@
 	result = /obj/structure/closet/crate/chest/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "construct"
+	verbage_tp = "constructs"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 0
@@ -209,6 +225,7 @@
 	result = /obj/structure/closet/crate/roguecloset
 	reqs = list(/obj/item/grown/log/tree/small = 2)
 	verbage = "construct"
+	verbage_tp = "constructs"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 
@@ -220,6 +237,7 @@
 	result = /obj/machinery/light/rogue/campfire
 	reqs = list(/obj/item/grown/log/tree/stick = 2)
 	verbage = "build"
+	verbage_tp = "builds"
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/structure/densefire
@@ -228,6 +246,7 @@
 	reqs = list(/obj/item/grown/log/tree/stick = 2,
 				/obj/item/natural/stone = 2)
 	verbage = "build"
+	verbage_tp = "builds"
 
 /datum/crafting_recipe/roguetown/structure/cookpit
 	name = "cookpit"
@@ -235,6 +254,7 @@
 	reqs = list(/obj/item/grown/log/tree/stick = 1,
 				/obj/item/natural/stone = 3)
 	verbage = "build"
+	verbage_tp = "builds"
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/structure/brazier
@@ -243,6 +263,7 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/rogueore/coal = 1)
 	verbage = "build"
+	verbage_tp = "builds"
 
 /datum/crafting_recipe/roguetown/structure/oven
 	name = "oven"
@@ -250,6 +271,7 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/stone = 3)
 	verbage = "mason"
+	verbage_tp = "masons"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/masonry
 	wallcraft = TRUE
@@ -259,6 +281,7 @@
 	result = /obj/structure/fluff/dryingrack
 	reqs = list(/obj/item/grown/log/tree/stick = 3)
 	verbage = "construct"
+	verbage_tp = "constructs"
 	craftsound = 'sound/foley/Building-01.ogg'
 
 /datum/crafting_recipe/roguetown/structure/bed
@@ -267,6 +290,7 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/fibers = 1)
 	verbage = "carpent"
+	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
 	craftdiff = 0
 
@@ -277,6 +301,7 @@
 				/obj/item/natural/cloth = 1)
 	tools = list(/obj/item/needle)
 	verbage = "carpent"
+	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 2
@@ -286,6 +311,7 @@
 	result = /obj/structure/table/wood/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "carpent"
+	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 
@@ -294,8 +320,8 @@
 	result = /obj/structure/fluff/millstone
 	reqs = list(/obj/item/natural/stone = 3)
 	verbage = "mason"
+	verbage_tp = "masons"
 	craftsound = null
-	wallcraft = TRUE
 	skillcraft = /datum/skill/craft/masonry
 
 /datum/crafting_recipe/roguetown/structure/lever
@@ -303,6 +329,7 @@
 	result = /obj/structure/lever
 	reqs = list(/obj/item/roguegear = 1)
 	verbage = "construct"
+	verbage_tp = "constructs"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/engineering
 
@@ -312,6 +339,7 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 					/obj/item/roguegear = 1)
 	verbage = "construct"
+	verbage_tp = "constructs"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/engineering
 
@@ -327,6 +355,7 @@
 	result = /obj/structure/fluff/customsign
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "construct"
+	verbage_tp = "constructs"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 1
@@ -336,6 +365,7 @@
 	result = /obj/structure/fluff/statue/tdummy
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "construct"
+	verbage_tp = "constructs"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 1
@@ -345,7 +375,8 @@
 	result = /obj/structure/bars/passage
 	reqs = list(/obj/item/ingot/iron = 1,
 					/obj/item/roguegear = 1)
-	verbage = "construct"
+	verbage = "build"
+	verbage_tp = "builds"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/engineering
 
@@ -363,7 +394,8 @@
 	result = /obj/structure/wallladder
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "carpent"
+	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 	wallcraft = TRUE
-	craftdiff = 1
+	craftdiff = 0

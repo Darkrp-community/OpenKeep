@@ -76,7 +76,7 @@
 						if(user.mind)
 							var/sl = user.mind.get_skill_level(/datum/skill/labor/fishing)
 							if(!sl)
-								bc = 0
+								bc = 5 // Give us at least a 5% chance to catch fish so we can level it
 							else
 								ft += (sl * 10)
 								bc += (sl * 10)

@@ -36,6 +36,10 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 5, TRUE)
+		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Used to dismembering live stock, unsensitized to it.
+		H.change_stat("strength", 1)
+		H.change_stat("endurance", 1)
+		H.change_stat("intelligence", -1)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
@@ -53,7 +57,3 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		backl = /obj/item/storage/backpack/rogue/satchel
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
-	if(H.mind)
-		H.change_stat("strength", 1)
-		H.change_stat("endurance", 1)
-		H.change_stat("intelligence", -1)

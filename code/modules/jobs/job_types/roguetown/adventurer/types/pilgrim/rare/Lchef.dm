@@ -2,6 +2,8 @@
 
 /datum/advclass/pilgrim/rare/masterchef
 	name = "Master Chef"
+	tutorial = "More than mere housekeepers, a Master Chef has cooked meals for royalty \
+	throughout all of their lives, making feasts of utter delicacies in a flash."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
