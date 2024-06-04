@@ -137,12 +137,14 @@
 /obj/item/rogueweapon/huntingknife/idagger
 	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut)
 	name = "dagger"
+	force = 12
 	desc = ""
 	icon_state = "idagger"
 	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel
 	name = "dagger"
+	force = 14
 	icon_state = "sdagger"
 	smeltresult = null
 
@@ -151,6 +153,7 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
 	name = "dagger"
+	force = 12
 	icon_state = "sildagger"
 	smeltresult = null
 	sellprice = 50
