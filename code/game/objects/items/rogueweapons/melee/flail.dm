@@ -1,5 +1,5 @@
 /obj/item/rogueweapon/flail
-	force = 12
+	force = 25
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/flail/strike/smash)
 	name = "flail"
 	desc = "A gruesome threshing weapon that sends shivers down the spine of everyone who is unfortunate enough to face this abstraction. Has no defensive capacities, yet would deliver formidable force."
@@ -36,7 +36,7 @@
 	no_early_release = TRUE
 	penfactor = 80
 	recovery = 10
-	damfactor = 1.5
+	damfactor = 1.2
 	chargedloop = /datum/looping_sound/flailswing
 	keep_looping = TRUE
 	icon_state = "insmash"
@@ -56,7 +56,7 @@
 
 
 /obj/item/rogueweapon/flail/sflail
-	force = 40
+	force = 30
 	icon_state = "flail"
 	smeltresult = /obj/item/ingot/steel
 	minstr = 5

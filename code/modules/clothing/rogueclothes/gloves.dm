@@ -60,6 +60,7 @@
 	icon_state = "cgloves"
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	armor_class = ARMOR_CLASS_MEDIUM
 	resistance_flags = null
 	blocksound = CHAINHIT
 	max_integrity = 200
@@ -78,6 +79,7 @@
 	icon_state = "gauntlets"
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT)
+	armor_class = ARMOR_CLASS_HEAVY
 	resistance_flags = null
 	blocksound = PLATEHIT
 	body_parts_covered = ARMS|HANDS
@@ -104,12 +106,12 @@
 	sewrepair = TRUE
 
 /obj/item/clothing/gloves/roguetown/rare
-	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'	
+	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleeved = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleevetype = null
 
-/obj/item/clothing/gloves/roguetown/rare/elfplate	
+/obj/item/clothing/gloves/roguetown/rare/elfplate
 	name = "elvish plate gauntlets"
 	desc = ""
 	item_state = "elfhand"

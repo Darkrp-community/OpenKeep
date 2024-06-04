@@ -1,7 +1,7 @@
 
 
 /obj/item/rogueweapon/huntingknife
-	force = 12
+	force = 10
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	name = "hunting knife"
@@ -19,8 +19,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	parrysound = list('sound/combat/parry/bladed/bladedsmall (1).ogg','sound/combat/parry/bladed/bladedsmall (2).ogg','sound/combat/parry/bladed/bladedsmall (3).ogg')
 	swingsound = list('sound/combat/wooshes/bladed/wooshmed (1).ogg','sound/combat/wooshes/bladed/wooshmed (2).ogg','sound/combat/wooshes/bladed/wooshmed (3).ogg')
-	max_blade_int = 100
-	max_integrity = 150
+	max_blade_int = 140
+	max_integrity = 300
 	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
 	associated_skill = /datum/skill/combat/knives
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
@@ -105,7 +105,7 @@
 	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/cleaver/combat
-	force = 10
+	force = 12
 	name = "knife"
 	desc = "A knife designed for combat situations. It would deal quite the amount of damage."
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
@@ -137,12 +137,14 @@
 /obj/item/rogueweapon/huntingknife/idagger
 	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut)
 	name = "dagger"
+	force = 12
 	desc = ""
 	icon_state = "idagger"
 	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel
 	name = "dagger"
+	force = 14
 	icon_state = "sdagger"
 	smeltresult = null
 
@@ -151,6 +153,7 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
 	name = "dagger"
+	force = 12
 	icon_state = "sildagger"
 	smeltresult = null
 	sellprice = 50
