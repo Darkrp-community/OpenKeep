@@ -6,7 +6,7 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 
-//	........	Dirt changes	................
+//	........   Dirt changes   ................
 /turf/open/floor/rogue/dirt //truffles, var needed for the sniffing function
 	var/hidden_truffles
 	var/hidden_toxicshrooms
@@ -39,7 +39,7 @@
 	else ..()
 
 
-//	........	Truffles	................
+//	........   Truffles   ................
 /obj/item/reagent_containers/food/snacks/rogue/truffles
 	name = "truffles"
 	icon = 'icons/roguetown/mob/monster/piggie.dmi'
@@ -71,7 +71,7 @@
 	icon_state = pick("mushroom1_full","mushroom1_full","mushroom1_full")
 	. = ..()
 
-//	........	Truffle Pig	................
+//	........   Truffle Pig   ................
 /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig
 	icon = 'icons/roguetown/mob/monster/piggie.dmi'
 	name = "truffle pig"
@@ -115,8 +115,6 @@
 	response_help_simple = "give the signal to the"
 	var/hangry_meter = 0
 
-/mob/living/simple_animal/hostile/retaliate/rogue/trufflepig/tamed
-	tame = TRUE // testing to see if can be beckoned so dragging it isnt needed?
 
 /obj/effect/decal/remains/pig
 	name = "remains"
@@ -180,7 +178,7 @@
 		return ..()
 
 
-//	........	Truffle Search	................
+//	........   Truffle Search   ................
 /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig/proc/trufflesearch(turf/T, range = world.view)
 	var/list/found_stuff = list()
 	for(var/turf/open/floor/rogue/dirt/M in range(range, T))
