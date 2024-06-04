@@ -355,6 +355,12 @@
 		brokenstate = TRUE
 	..()
 
+/obj/structure/mineral_door/OnCrafted(dirin, user)
+	. = ..()
+	keylock = FALSE
+	GLOB.lockhashes.Remove(lockhash)
+	lockhash = 0
+
 /////////////////////// TOOL OVERRIDES ///////////////////////
 
 
@@ -557,7 +563,6 @@
 	max_integrity = 1000
 	damage_deflection = 12
 	layer = ABOVE_MOB_LAYER
-	keylock = TRUE
 	icon = 'icons/roguetown/misc/doors.dmi'
 	blade_dulling = DULLING_BASHCHOP
 	break_sound = 'sound/combat/hits/onwood/destroywalldoor.ogg'
