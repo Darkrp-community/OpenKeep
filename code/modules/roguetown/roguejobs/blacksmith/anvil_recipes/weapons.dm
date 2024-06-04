@@ -35,7 +35,7 @@
 	name = "copper axe (+copper)"	
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/ingot/copper)
-	created_item = /obj/item/rogueweapon/stoneaxe/copperaxe
+	created_item = /obj/item/rogueweapon/copperaxe
 	i_type = "Weapons"
 
 /datum/anvil_recipe/weapons/cspears
@@ -72,10 +72,11 @@
 	i_type = "Weapons"
 
 /datum/anvil_recipe/weapons/sdagger
-	name = "steel dagger"	
+	name = "steel dagger"
+	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/huntingknife/idagger/steel
-	i_type = "Weapons"
+	created_item = list(/obj/item/rogueweapon/huntingknife/idagger/steel,
+	/obj/item/rogueweapon/huntingknife/idagger/steel)
 
 /datum/anvil_recipe/weapons/sidagger
 	name = "silver dagger"
@@ -96,6 +97,13 @@
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/flail/sflail
 	i_type = "Weapons"
+
+/datum/anvil_recipe/weapons/sdagger
+	name = "steel dagger"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	created_item = list(/obj/item/rogueweapon/huntingknife/idagger/steel,
+	/obj/item/rogueweapon/huntingknife/idagger/steel)
 
 /datum/anvil_recipe/weapons/ssword
 	name = "steel sword"
@@ -203,56 +211,30 @@
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/rogueweapon/stoneaxe/battle
-	craftdiff = 2
-	i_type = "Weapons"
-
-/datum/anvil_recipe/weapons/ccleaver
-	name = "knife (+steel)"
-	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/huntingknife/cleaver/combat
-	craftdiff = 2
-	i_type = "Weapons"
-
-/datum/anvil_recipe/weapons/smace
-	name = "steel mace (+steel)"
-	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/mace/steel
-	craftdiff = 2
-	i_type = "Weapons"
-
-/datum/anvil_recipe/weapons/zweihander
-	name = "zweihander (+2 iron)"
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/ingot/iron, /obj/item/ingot/iron)
-	created_item = /obj/item/rogueweapon/greatsword/zwei
-	craftdiff = 3
-	i_type = "Weapons"
-
-/datum/anvil_recipe/weapons/greatsword
-	name = "greatsword (+2 steel)"
-	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/greatsword
-	craftdiff = 3
-	i_type = "Weapons"
-
-// STICK HANDLE
 
 /datum/anvil_recipe/weapons/saxe
 	name = "steel axe (+stick)"	
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/stoneaxe/woodcut/steel
-	i_type = "Weapons"
 
 /datum/anvil_recipe/weapons/axe
 	name = "axe (+stick)"	
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/stoneaxe/woodcut
-	i_type = "Weapons"
+
+/datum/anvil_recipe/weapons/hknife
+	name = "hunting knife"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/rogueweapon/huntingknife
+
+/datum/anvil_recipe/weapons/cleaver
+	name = "cleaver"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/rogueweapon/huntingknife/cleaver
 
 /datum/anvil_recipe/weapons/mace
 	name = "mace (+stick)"

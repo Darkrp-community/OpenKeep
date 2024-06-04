@@ -2,6 +2,7 @@
 	appro_skill = /datum/skill/craft/armorsmithing
 	craftdiff = 1
 
+// --------- COPPER -----------
 /datum/anvil_recipe/armor/ichainmail
 	name = "chainmail"
 	req_bar = /obj/item/ingot/iron
@@ -51,6 +52,19 @@
 	created_item = /obj/item/clothing/head/roguetown/helmet/skullcap
 	i_type = "Armor"
 
+/datum/anvil_recipe/armor/studdedleather
+	name = "studded leather (2h)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/hide, /obj/item/natural/hide)
+	created_item = /obj/item/clothing/suit/roguetown/armor/leather/studded
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/studdedleather
+	name = "studded leather (2h)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/hide, /obj/item/natural/hide)
+	created_item = /obj/item/clothing/suit/roguetown/armor/leather/studded
+
 // --------- STEEL -----------
 
 /datum/anvil_recipe/armor/haubergeon
@@ -70,7 +84,7 @@
 /datum/anvil_recipe/armor/plate
 	name = "munition plate armor (+2 steel)"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel)
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
 	created_item = /obj/item/clothing/suit/roguetown/armor/plate
 	craftdiff = 3
 	i_type = "Armor"
@@ -78,15 +92,15 @@
 /datum/anvil_recipe/armor/platefull
 	name = "full-plate armor (+3 steel)"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel,/obj/item/ingot/steel)
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/ingot/steel)
 	created_item = /obj/item/clothing/suit/roguetown/armor/plate/full
 	craftdiff = 4
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/brigandine
-	name = "brigandine (+steel + gambeson)"
+	name = "brigandine (+2 steel) (+cloth)"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel, /obj/item/clothing/suit/roguetown/armor/gambeson)
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/natural/cloth)
 	created_item = /obj/item/clothing/suit/roguetown/armor/brigandine
 	craftdiff = 3
 	i_type = "Armor"
@@ -195,6 +209,12 @@
 	name = "plated boots"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/shoes/roguetown/boots/armor
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/platebootlight
+	name = "light plate boots"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/shoes/roguetown/boots/armor/light
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/platemask/steel
