@@ -576,7 +576,7 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "dwarvish plate helmet"
 	desc = ""
-	allowed_sex = list(MALE)
+	allowed_sex = list(MALE, FEMALE)
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
 	flags_inv = HIDEEARS
 	allowed_race = list("dwarf")

@@ -127,7 +127,7 @@
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 
-/obj/item/clothing/gloves/roguetown/rare/dwarfplate
+/obj/item/clothing/gloves/roguetown/rare/dwarfplate 
 	name = "dwarvish plate gauntlets"
 	desc = ""
 	item_state = "dwarfhand"
@@ -136,7 +136,7 @@
 	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT)
 	resistance_flags = null
 	allowed_race = list("dwarf")
-	allowed_sex = list(MALE)
+	allowed_sex = list(MALE, FEMALE)
 	blocksound = PLATEHIT
 	body_parts_covered = HANDS
 	max_integrity = 400

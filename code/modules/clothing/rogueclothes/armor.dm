@@ -473,7 +473,6 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	nodismemsleeves = TRUE
 	max_integrity = 500
-	allowed_sex = list(MALE)
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
