@@ -41,7 +41,7 @@
 	var/randy = rand(1,5)
 	switch(randy)
 		if(1 to 2)
-			beltr = /obj/item/rogueweapon/stoneaxe/woodcut
+			beltr = /obj/item/rogueweapon/woodcut
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		if(3 to 4)
 			beltr = /obj/item/rogueweapon/sword/iron
