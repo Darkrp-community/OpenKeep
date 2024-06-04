@@ -338,7 +338,7 @@
 
 /obj/item/natural/bundle/stick
 	name = "bundle of sticks"
-	desc = "A faggot, weak when seperated, mighty together."
+	desc = "A bundle of wooden sticks, weak when seperated, mighty together."
 	icon_state = "stickbundle1"
 	possible_item_intents = list(/datum/intent/use)
 	desc = ""
