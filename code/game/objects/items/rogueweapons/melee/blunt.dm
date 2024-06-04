@@ -86,7 +86,7 @@
 	force = 10
 	force_wielded = 12
 	name = "club"
-	desc = ""
+	desc = "A weapon older than recorded time itself."
 	icon_state = "club1"
 	//dropshrink = 0.75
 	wbalance = 0
@@ -119,7 +119,7 @@
 	force_wielded = 12
 	name = "cudgel"
 	icon_state = "cudgel"
-	desc = "A stubby little club for brigands."
+	desc = "A stubby little club favored for thwacking thieves and smart-mouthed peasant folk."
 	gripped_intents = null
 	smeltresult = /obj/item/ash
 	wlength = WLENGTH_SHORT
@@ -142,7 +142,7 @@
 	force = 5
 	force_wielded = 8
 	name = "wooden sword"
-	desc = ""
+	desc = "Crude wood assembled into the shape of a sword, a terrible weapon to be on the recieving end of."
 	icon_state = "wsword"
 	//dropshrink = 0.75
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
@@ -173,7 +173,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/dagger/thrust)
 	name = "warclub"
-	desc = "Good morning."
+	desc = "A two handed club, decorated with a spiked cap crown. A perfect way to say Good Morning to any would be noble-knight."
 	icon_state = "goedendag"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	sharpness = IS_BLUNT
@@ -209,7 +209,7 @@
 
 /obj/item/rogueweapon/mace/goden/steel
 	name = "grand mace"
-	desc = "Good morning, sire."
+	desc = "A casted polearm, rumored to be the weapon-design used by the Forgotten God himself."
 	icon_state = "polemace"
 	max_integrity = 300
 	force = 10
@@ -238,7 +238,7 @@
 	force = 10
 	force_wielded = 12
 
-// Copper Bludgeon 
+// Copper Bludgeon
 
 /obj/item/rogueweapon/mace/copperbludgeon
 	force = 6
@@ -316,7 +316,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
 	name = "warhammer"
-	desc = "A great weapon for a great dwarf."
+	desc = "A grand weapon designed in the fashion of the Langobard Warhammers, enscribed with oaths on it's flattop."
 	icon_state = "warhammer"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	sharpness = IS_BLUNT
