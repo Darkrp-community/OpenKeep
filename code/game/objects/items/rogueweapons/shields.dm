@@ -87,7 +87,7 @@
 
 /obj/item/rogueweapon/shield/tower
 	name = "tower shield"
-	desc = ""
+	desc = "A gigantic shield that covers the entire body, a replica of the Aasimar shields of an era gone by."
 	icon_state = "shield_tower"
 	force = 15
 	throwforce = 10
@@ -111,7 +111,7 @@
 
 /obj/item/rogueweapon/shield/tower/metal
 	name = "kite shield"
-	desc = ""
+	desc = "A ginormous shield that covers the entire body, reinforced with studdent iron bars for additional protection. Adorned with a colorful heraldry."
 	icon_state = "ironsh"
 	force = 20
 	throwforce = 10

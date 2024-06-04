@@ -3,7 +3,7 @@
 	force = 12
 	possible_item_intents = list(/datum/intent/axe/chop/stone)
 	name = "stone axe"
-	desc = ""
+	desc = "Hewn wood, steadfast thread, a chipped stone. A recipe to bend nature to your will."
 	icon_state = "stoneaxe"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "axe"
@@ -71,6 +71,7 @@
 	force = 33
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "battle axe"
+	desc = "A masterfully constructed ax, with additional weights in the form of ornate spikes and practical edges."
 	icon_state = "battleaxe"
 	max_blade_int = 300
 	smeltresult = /obj/item/ingot/steel
@@ -97,6 +98,7 @@
 	force = 18
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "axe"
+	desc = "Tool, weapon, loyal companion."
 	icon_state = "axe"
 	max_blade_int = 130
 	max_integrity = 300
@@ -110,6 +112,7 @@
 /obj/item/rogueweapon/stoneaxe/woodcut/steel
 	slot_flags = ITEM_SLOT_HIP
 	name = "axe"
+	desc = "The bearded ax, a hatched revered by dwarf, humen and elf alike."
 	icon_state = "saxe"
 	force = 20
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
@@ -139,7 +142,7 @@
 	force = 18
 	possible_item_intents = list(/datum/intent/axe/chop)
 	name = "copper axe"
-	desc = ""
+	desc = "An Aasimarian designed handaxe, an outdated weaponry from simpler times."
 	icon_state = "chatchet"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "axe"

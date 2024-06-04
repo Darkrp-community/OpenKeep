@@ -6,7 +6,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	name = "sword"
-	desc = "A simple steel sword."
+	desc = "A trustworthy blade design, the first dedicated tool of war since before the age of history."
 	icon_state = "sword1"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
@@ -84,8 +84,8 @@
 	item_state = "longsword"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	name = "bastard sword"
-	desc = ""
+	name = "longsword"
+	desc = "A long hand-and-a-half blade, wielded by the virtuous and vile alike."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -126,7 +126,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "old sword"
-	desc = "A old steel sword with a green leather grip."
+	desc = "An old steel sword with a heraldic green leather grip, mouldered by years of neglect."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -164,7 +164,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "judgement"
-	desc = "A sword with a silver grip, a topaz gem hilt and a steel blade, what more could a noble ask for."
+	desc = "A sword with a silvered grip, a jeweled hilt and a honed blade; a design fit for nobility."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -203,8 +203,8 @@
 	item_state = "vlord"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	name = "crimson fang"
-	desc = "A strange long sword with a green metal composition."
+	name = "Jaded Fang"
+	desc = "An ancestral long blade with an ominous glow, serrated with barbs along it's edges. Stained with a strange green tint."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -246,7 +246,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "kilij scimitar"
-	desc = ""
+	desc = "A curved blade of Zybantu origin, the standard sword that saw the conquest of the Zybantine continent and peoples."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -286,7 +286,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "shalal saber"
-	desc = ""
+	desc = "A saber of Zybantu origin, in the style of the renown Shalal tribesfolk. Renown for their rumored defiance against magical properties and mastery of swordsmanship."
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -345,8 +345,8 @@
 	possible_item_intents = list(/datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/chop)
 	icon_state = "exe"
-	name = "execution sword"
-	desc = ""
+	name = "executioner's sword"
+	desc = "An ancient blade of ginormous stature, with a round ended tip. The pride and joy of Roguetown's greatest passtime, executions."
 	minstr = 10
 	slot_flags = ITEM_SLOT_BACK
 
@@ -375,7 +375,7 @@
 //Short Swords
 /obj/item/rogueweapon/sword/iron
 	name = "sword"
-	desc = "A simple iron sword."
+	desc = "A simple iron sword with a tested edge, sharp and true."
 	icon_state = "isword"
 	minstr = 6
 	smeltresult = /obj/item/ingot/iron
@@ -384,7 +384,7 @@
 
 /obj/item/rogueweapon/sword/iron/short
 	name = "short sword"
-	desc = "An archaic iron sword."
+	desc = "An iron sword of shortened design, a reduced grip for primarily single hand use."
 	icon_state = "iswordshort"
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
 	gripped_intents = null
@@ -393,7 +393,7 @@
 
 /obj/item/rogueweapon/sword/iron/short/chipped
 	force = 9
-	desc = "An ancient-looking iron sword."
+	desc = "An ancient-looking iron sword that has seen better days."
 	icon_state = "iswordshort_d"
 	max_integrity = 75
 
@@ -408,7 +408,7 @@
 
 /obj/item/rogueweapon/sword/iron/messer
 	name = "iron messer"
-	desc = "A single edged blade to slice and chop with."
+	desc = "A single edged blade fashioned in the Grenzelhoft messer style."
 	force = 12
 	icon_state = "imesser"
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
@@ -419,7 +419,7 @@
 /obj/item/rogueweapon/sword/short
 	force = 12
 	name = "short sword"
-	desc = "An archaic steel sword made for stabbing."
+	desc = "An archaic steel sword made for penetrating the bodies of impudents."
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
 	icon_state = "swordshort"
 	gripped_intents = null
@@ -431,8 +431,8 @@
 
 // Sabres
 /obj/item/rogueweapon/sword/sabre
-	name = "sabre"
-	desc = "A swift saber."
+	name = "saber"
+	desc = "A swift sabre, favored by duelists and cut-throats alike."
 	icon_state = "saber"
 	smeltresult = /obj/item/ingot/steel
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust)
@@ -454,8 +454,8 @@
 	penfactor = 15
 
 /obj/item/rogueweapon/sword/sabre/dec
-	name = "Sabre"
-	desc = "A Sabre"
+	name = "decorated saber"
+	desc = "A saber decorated with fashionable additions without sacrificing it's lethal practicality."
 	icon_state = "decsaber"
 	smeltresult = /obj/item/ingot/steel
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust)
@@ -469,7 +469,7 @@
 
 /obj/item/rogueweapon/sword/sabre/messer //not IRL sabre, but its a one handed cutting weapon, way lower defense, but has higher damage and the axe chop intent
 	name = "falchion"
-	desc = "A heavy steel falchion."
+	desc = "A broad steel falchion, a favored sword among the few created by dwarffolk."
 	force = 20
 	icon_state = "falchion"
 	smeltresult = /obj/item/ingot/steel
@@ -482,7 +482,7 @@
 //Rapiers
 /obj/item/rogueweapon/sword/rapier
 	name = "rapier"
-	desc = "A precise raper."
+	desc = "A precise rapier, favored by the small, eloquent and bloodthristy."
 	icon_state = "rapier"
 	smeltresult = /obj/item/ingot/steel
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
@@ -521,7 +521,7 @@
 /obj/item/rogueweapon/sword/rapier/lord
 	force = 20
 	name = "Kings Sword"
-	desc = "Passed down through the ages, this is the Kings sword."
+	desc = "The regal blade of the ruler, from the first pirate founders of the isle to now, engraved with the family crest and words."
 	icon_state = "lordrap"
 	sellprice = 300
 	max_integrity = 300
@@ -531,7 +531,7 @@
 // Cutless
 /obj/item/rogueweapon/sword/cutlass
 	name = "cutlass"
-	desc = "Used by pirates and deckhands."
+	desc = "Both tool and weapon of war, favored by Abyssor cultists for seafaring battle."
 	icon_state = "cutlass"
 	smeltresult = /obj/item/ingot/steel
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
@@ -554,7 +554,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "copper messer"
-	desc = "a copper messer. Made for (cheaply) hacking limbs off."
+	desc = "A weapon of war from simpler times, its copper material is unideal but still efficient for the price."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'

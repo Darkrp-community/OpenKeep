@@ -1,6 +1,6 @@
 /obj/item/bodypart/l_arm/rproesthetic
 	name = "wooden larm"
-	desc = "A left arm of wood."
+	desc = "A left arm carved out of wood."
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "prarm"
 	resistance_flags = FLAMMABLE
@@ -31,7 +31,7 @@
 
 /obj/item/bodypart/r_arm/rproesthetic
 	name = "wooden rarm"
-	desc = "A right arm of wood."
+	desc = "A right arm carved out of wood."
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "prarm"
 	resistance_flags = FLAMMABLE
