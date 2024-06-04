@@ -39,4 +39,5 @@
 		H.change_stat("perception", -1)
 	if(H.PATRON != /datum/patrongods/ravox)
 		H.PATRON = GLOB.patronlist["Ravox"]
+		//H.PATRON = new /datum/patrongods/ravox
 		to_chat(H, "<span class='warning'>My patron had not endorsed my practices in my younger years. I've since grown acustomed to [H.PATRON].")
