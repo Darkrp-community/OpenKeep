@@ -96,7 +96,7 @@
 
 //		if(yeae)
 //			if(mind)
-//				if((mind.assigned_role == "Lord") || (mind.assigned_role == "Priest") || (mind.assigned_role == "Sheriff") || (mind.assigned_role == "Merchant"))
+//				if((mind.assigned_role == "Lord") || (mind.assigned_role == "Priest") || (mind.assigned_role == "Captain") || (mind.assigned_role == "Merchant"))
 //					addomen("importantdeath")
 
 		if(!gibbed && yeae)

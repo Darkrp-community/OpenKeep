@@ -1,10 +1,11 @@
 /datum/advclass/mercenary/grenzelhoft
 	name = "Grenzelhoft"
 	tutorial = "A mercenary from the Grenzelhoft Empire's Mercenary Guild. Their only care is coin, and the procurement of coin."
-	allowed_sexes = list("male", "female")
-	allowed_races = list("Humen",
-	"Humen",
-	"Dwarf")
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list(
+		"Humen",
+		"Dwarf"
+	)
 	outfit = /datum/outfit/job/roguetown/mercenary/grenzelhoft
 	ismerc = TRUE
 
