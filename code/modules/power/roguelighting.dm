@@ -635,7 +635,7 @@
 /obj/machinery/light/rogue/hearth/attackby(obj/item/W, mob/living/user, params)
 	if(!attachment)
 		if(istype(W, /obj/item/cooking/pan) || istype(W, /obj/item/cooking/pot))
-			playsound(get_turf(user), 'sound/foley/dropsound/shovel_drop.ogg', 100, TRUE, -1)
+			playsound(get_turf(user), 'sound/foley/dropsound/shovel_drop.ogg', 80, TRUE, -1)
 			attachment = W
 			W.forceMove(src)
 			update_icon()
@@ -645,14 +645,14 @@
 			if(W.type in subtypesof(/obj/item/reagent_containers/food/snacks))
 				var/obj/item/reagent_containers/food/snacks/S = W
 				if(istype(W, /obj/item/reagent_containers/food/snacks/egg)) // added
-					playsound(get_turf(user), 'sound/neu/eggbreak.ogg', 100, TRUE, -1)
+					playsound(get_turf(user), 'modular/Neu_Food/sound/eggbreak.ogg', 100, TRUE, -1)
 					sleep(25) // to get egg crack before frying hiss
 					W.icon_state = "rawegg" // added
 				if(!food)
 					S.forceMove(src)
 					food = S
 					update_icon()
-					playsound(src.loc, 'sound/misc/frying.ogg', 100, FALSE, extrarange = 5)
+					playsound(src.loc, 'sound/misc/frying.ogg', 90, FALSE, extrarange = 5)
 					return
 /* from Blackstone, made for their cooking pot. Retained for consistency.
 		else if(istype(attachment, /obj/item/cooking/pot))
