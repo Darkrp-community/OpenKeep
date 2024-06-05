@@ -53,7 +53,7 @@
 	inhand_y_dimension = 64
 	max_blade_int = 120
 	max_integrity = 200
-	wdefense = 4
+	wdefense = 5
 	bigboy = TRUE
 	gripsprite = TRUE
 	associated_skill = /datum/skill/combat/polearms
@@ -87,7 +87,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	dropshrink = 0.6
-	wdefense = 4
+	wdefense = 5
 	bigboy = TRUE
 	gripsprite = TRUE
 	associated_skill = /datum/skill/combat/polearms
@@ -128,7 +128,7 @@
 	dropshrink = 0.6
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
-	wdefense = 5
+	wdefense = 4
 	thrown_bclass = BCLASS_STAB
 	throwforce = 25
 
@@ -263,7 +263,7 @@
 	dropshrink = 0.6
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
-	wdefense = 6
+	wdefense = 5
 
 /obj/item/rogueweapon/eaglebeak/getonmobprop(tag)
 	. = ..()

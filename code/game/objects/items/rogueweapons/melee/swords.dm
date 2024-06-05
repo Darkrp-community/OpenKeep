@@ -440,7 +440,7 @@
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 5
-	wdefense = 6
+	wdefense = 5
 	wbalance = 1
 
 /datum/intent/sword/cut/sabre
@@ -463,7 +463,7 @@
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 6
-	wdefense = 6
+	wdefense = 5
 	wbalance = 1
 	sellprice = 140
 
@@ -490,7 +490,7 @@
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 6
-	wdefense = 6
+	wdefense = 5
 	wbalance = 1
 
 /datum/intent/sword/cut/rapier
@@ -539,7 +539,7 @@
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 6
-	wdefense = 6
+	wdefense = 5
 	wbalance = 1
 
 // Copper Messer

@@ -13,8 +13,8 @@
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
-	max_blade_int = 40
-	max_integrity = 40
+	max_blade_int = 50
+	max_integrity = 50
 	wdefense = 1
 	w_class = WEIGHT_CLASS_BULKY
 	wlength = WLENGTH_SHORT
@@ -94,12 +94,12 @@
 
 /obj/item/rogueweapon/stoneaxe/woodcut
 	slot_flags = ITEM_SLOT_HIP
-	force = 18
+	force = 16
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "axe"
 	icon_state = "axe"
 	max_blade_int = 130
-	max_integrity = 300
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
