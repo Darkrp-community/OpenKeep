@@ -1245,7 +1245,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	charge_max = 5 SECONDS
 	include_user = 0
 	max_targets = 1
-	cooldown_min = 50
+
 
 /obj/effect/proc_holder/spell/targeted/transfix/cast(list/targets, mob/user = usr)
 	var/bloodskill = user.mind.get_skill_level(/datum/skill/magic/blood)
@@ -1288,6 +1288,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	charge_max = 5 SECONDS
 	include_user = 0
 	max_targets = 0
+	cooldown_min = 100
 
 /obj/effect/proc_holder/spell/targeted/transfix/master/cast(list/targets, mob/user = usr)
 	var/bloodskill = user.mind.get_skill_level(/datum/skill/magic/blood)
