@@ -498,7 +498,7 @@
 /obj/item/rogueweapon/sword/iron/messer
 	name = "iron messer"
 	desc = "A single edged blade to slice and chop with."
-	force = 12
+	force = 21
 	icon_state = "imesser"
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
 	gripped_intents = null
@@ -506,7 +506,7 @@
 	wdefense = 2
 
 /obj/item/rogueweapon/sword/short
-	force = 12
+	force = 22
 	name = "short sword"
 	desc = "An archaic steel sword made for stabbing."
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
