@@ -481,19 +481,18 @@
 	wdefense = 3
 
 /obj/item/rogueweapon/sword/iron/short/chipped
-	force = 9
+	force = 19
 	desc = "An ancient-looking iron sword."
 	icon_state = "iswordshort_d"
 	max_integrity = 75
 
 /datum/intent/sword/cut/short
 	clickcd = 10
-	damfactor = 0.9
+	damfactor = 0.85
 
 /datum/intent/sword/thrust/short
 	clickcd = 10
 	penfactor = 30
-	damfactor = 1.2
 
 /obj/item/rogueweapon/sword/iron/messer
 	name = "iron messer"
