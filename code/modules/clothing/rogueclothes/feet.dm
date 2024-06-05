@@ -161,7 +161,7 @@
 /obj/item/clothing/shoes/roguetown/boots/rare/dwarfplate
 	name = "dwarvish plated boots"
 	allowed_race = list("dwarf")
-	allowed_sex = list(MALE)
+	allowed_sex = list(MALE, FEMALE)
 	desc = ""
 	body_parts_covered = FEET|LEGS
 	icon_state = "dwarfshoe"
