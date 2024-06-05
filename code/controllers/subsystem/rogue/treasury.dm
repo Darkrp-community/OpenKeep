@@ -66,7 +66,7 @@ SUBSYSTEM_DEF(treasury)
 				return
 			if(!I.submitted_to_stockpile)
 				I.submitted_to_stockpile = TRUE
-			amt_to_generate += (I.get_real_price()*0.25)
+			amt_to_generate += (I.get_real_price()*0.1)
 		amt_to_generate = amt_to_generate - (amt_to_generate * queens_tax)
 		amt_to_generate = round(amt_to_generate)
 		give_money_treasury(amt_to_generate, "wealth horde")
