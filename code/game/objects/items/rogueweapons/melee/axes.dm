@@ -112,11 +112,11 @@
 	force = 20
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
-	name = "axe"
+	name = "iron axe"
 	icon_state = "axe"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	max_blade_int = 130
-	max_integrity = 300
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
@@ -127,7 +127,7 @@
 
 /obj/item/rogueweapon/woodcut/steel
 	slot_flags = ITEM_SLOT_HIP
-	name = "axe"
+	name = "steel axe"
 	icon_state = "saxe"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	force = 20
