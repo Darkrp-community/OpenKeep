@@ -110,6 +110,14 @@
 	color = null
 	blocksound = PLATEHIT
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 500
+	armor_class = ARMOR_CLASS_HEAVY
+
+/obj/item/clothing/shoes/roguetown/boots/armor/light
+	name = "light plate boots"
+	desc = ""
+	max_integrity = 250
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/shoes/roguetown/boots/leather
 	name = "leather boots"
@@ -124,7 +132,7 @@
 	name = "funny shoes"
 	icon_state = "jestershoes"
 	resistance_flags = null
-	
+
 /obj/item/clothing/shoes/roguetown/grenzelhoft
 	name = "grenzelhoft boots"
 	icon_state = "grenzelboots"
@@ -133,7 +141,7 @@
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/boots/rare
-	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'	
+	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleeved = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleevetype = null
@@ -153,7 +161,7 @@
 /obj/item/clothing/shoes/roguetown/boots/rare/dwarfplate
 	name = "dwarvish plated boots"
 	allowed_race = list("dwarf")
-	allowed_sex = list(MALE, FEMALE)
+	allowed_sex = list(MALE)
 	desc = ""
 	body_parts_covered = FEET|LEGS
 	icon_state = "dwarfshoe"
@@ -166,7 +174,7 @@
 /obj/item/clothing/shoes/roguetown/boots/rare/humanswplate
 	name = "northern plate boots"
 	allowed_race = list("human")
-	allowed_sex = list(MALE)	
+	allowed_sex = list(MALE)
 	desc = ""
 	body_parts_covered = FEET|LEGS
 	icon_state = "human_swordshoes"
@@ -179,7 +187,7 @@
 /obj/item/clothing/shoes/roguetown/boots/rare/humanspplate
 	name = "southern plate boots"
 	allowed_race = list("human")
-	allowed_sex = list(MALE)	
+	allowed_sex = list(MALE)
 	desc = ""
 	body_parts_covered = FEET|LEGS
 	icon_state = "human_spearshoe"
