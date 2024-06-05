@@ -16,10 +16,11 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltl = /obj/item/rogueweapon/woodcut
+	beltl = /obj/item/quiver/bolts
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	r_hand = /obj/item/rogueweapon/woodcut
 	if(prob(23))
 		shoes = /obj/item/clothing/shoes/roguetown/boots
 	if(prob(23))
