@@ -18,7 +18,7 @@
     shoes = /obj/item/clothing/shoes/roguetown/boots/leather
     belt = /obj/item/storage/belt/rogue/leather
     neck = /obj/item/clothing/neck/roguetown/chaincoif
-    beltl = /obj/item/rogueweapon/stoneaxe/woodcut/steel/pick
+    beltl = /obj/item/rogueweapon/woodcut/pick
     beltr = /obj/item/rogueweapon/huntingknife
     backl = /obj/item/storage/backpack/rogue/backpack
     backr = /obj/item/rogueweapon/shield/wood
