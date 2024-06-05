@@ -20,7 +20,7 @@
 	range = 30
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
 	embedchance = 100
-	armor_penetration = 100
+	armor_penetration = 50
 	woundclass = BCLASS_STAB
 	flag = "bullet"
 	speed = 0.3
@@ -142,7 +142,7 @@
 	range = 30
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
 	embedchance = 100
-	armor_penetration = 50
+	armor_penetration = 25
 	woundclass = BCLASS_STAB
 	flag = "bullet"
 	speed = 0.4
