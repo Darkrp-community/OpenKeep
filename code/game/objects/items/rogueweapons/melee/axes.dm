@@ -3,7 +3,7 @@
 	force = 12
 	possible_item_intents = list(/datum/intent/axe/chop/stone)
 	name = "stone axe"
-	desc = ""
+	desc = "A crude axe made out of a wooden pole and a rock secured with some fibers. It's not glorious, but will do the job when cutting trees and trunks."
 	icon_state = "stoneaxe"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "axe"
@@ -55,6 +55,17 @@
 	swingdelay = 0
 	misscost = 5
 
+/datum/intent/axe/battleaxe/chop
+	name = "chop"
+	icon_state = "inchop"
+	blade_class = BCLASS_CHOP
+	attack_verb = list("chops", "hacks")
+	animname = "chop"
+	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
+	penfactor = 25
+	swingdelay = 1
+	misscost = 10
+
 /datum/intent/axe/chop
 	name = "chop"
 	icon_state = "inchop"
@@ -66,22 +77,27 @@
 	swingdelay = 1
 	misscost = 5
 
-/obj/item/rogueweapon/stoneaxe/battle
+/obj/item/rogueweapon/battle
 	slot_flags = ITEM_SLOT_HIP
-	force = 33
-	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	force = 15
+	force_wielded = 30
+	possible_item_intents = list(/datum/intent/axe/cut)
 	name = "battle axe"
+	desc = "A fine, massive and high quality battle axe. It looks as dangerous as it's massive. You can tell this well crafted amalgamation of steel is precisely designed to cut a man in half, armor or not. A very lethal choice."
 	icon_state = "battleaxe"
-	max_blade_int = 300
+	max_blade_int = 500
 	smeltresult = /obj/item/ingot/steel
-	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/battleaxe/chop)
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
-	minstr = 14 //meant to be a orc weapon or barbarian weapon
-	wdefense = 4
+	minstr = 10 //meant to be a orc weapon or barbarian weapon
+	icon = 'icons/roguetown/weapons/32.dmi'
+	max_blade_int = 200
+	max_integrity = 300
+	wdefense = 3
 
-/obj/item/rogueweapon/stoneaxe/battle/getonmobprop(tag)
+/obj/item/rogueweapon/battle/getonmobprop(tag)
 	if(tag)
 		switch(tag)
 			if("gen")
@@ -92,12 +108,15 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
 	return ..()
 
-/obj/item/rogueweapon/stoneaxe/woodcut
+/obj/item/rogueweapon/woodcut
 	slot_flags = ITEM_SLOT_HIP
-	force = 18
+	force = 20
+	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "axe"
+	desc = "A regular iron woodcutting axe."
 	icon_state = "axe"
+	icon = 'icons/roguetown/weapons/32.dmi'
 	max_blade_int = 130
 	max_integrity = 300
 	smeltresult = /obj/item/ingot/iron
@@ -106,12 +125,16 @@
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
 	wdefense = 2
+	minstr = 6
 
-/obj/item/rogueweapon/stoneaxe/woodcut/steel
+/obj/item/rogueweapon/woodcut/steel
 	slot_flags = ITEM_SLOT_HIP
 	name = "axe"
+	desc = "A steel woodcutting axe. Performs much better than its iron counterpart."
 	icon_state = "saxe"
+	icon = 'icons/roguetown/weapons/32.dmi'
 	force = 20
+	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	max_blade_int = 180
 	max_integrity = 300
@@ -121,8 +144,9 @@
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
 	wdefense = 3
+	minstr = 6
 
-/obj/item/rogueweapon/stoneaxe/woodcut/getonmobprop(tag)
+/obj/item/rogueweapon/woodcut/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)
@@ -134,9 +158,10 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
 
 // Copper Hatchet
-/obj/item/rogueweapon/stoneaxe/copperaxe
+/obj/item/rogueweapon/copperaxe
 	slot_flags = ITEM_SLOT_HIP
-	force = 18
+	force = 15
+	force_wielded = 20
 	possible_item_intents = list(/datum/intent/axe/chop)
 	name = "copper axe"
 	desc = ""
@@ -149,9 +174,11 @@
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
-	max_blade_int = 100
-	max_integrity = 100
+	max_blade_int = 120
+	max_integrity = 120
 	wdefense = 2
+	minstr = 6
+	smeltresult = /obj/item/ingot/copper
 	w_class = WEIGHT_CLASS_BULKY
 	wlength = WLENGTH_SHORT
 	pickup_sound = 'sound/foley/equip/rummaging-03.ogg'
