@@ -12,7 +12,7 @@
 	vision_range = 5
 	aggro_vision_range = 5
 	base_intents = list(/datum/intent/simple/bite)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/spider = 1, /obj/item/reagent_containers/food/snacks/spiderleg = 8)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/spider = 1, /obj/item/reagent_containers/food/snacks/spiderleg = 8,/obj/item/reagent_containers/food/snacks/rogue/honey = 1)
 	faction = list("bugs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_sound = 'sound/combat/wooshes/punch/punchwoosh (2).ogg'

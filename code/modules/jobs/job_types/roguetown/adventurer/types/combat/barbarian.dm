@@ -3,9 +3,8 @@
 	name = "Barbarian"
 	tutorial = "Barbarians are humen men who live in the outskirts of society, \
 	living off the land and bathing in the red glory of combat."
-	allowed_sexes = list("male")
-	allowed_races = list("Humen",
-	"Humen")
+	allowed_sexes = list(MALE)
+	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/barbarian
 
 
@@ -42,7 +41,7 @@
 	var/randy = rand(1,5)
 	switch(randy)
 		if(1 to 2)
-			beltr = /obj/item/rogueweapon/stoneaxe/woodcut
+			beltr = /obj/item/rogueweapon/woodcut
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		if(3 to 4)
 			beltr = /obj/item/rogueweapon/sword/iron

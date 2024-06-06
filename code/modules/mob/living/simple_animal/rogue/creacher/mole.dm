@@ -1,6 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/mole
 	icon = 'icons/roguetown/mob/monster/mole.dmi'
 	name = "Lesser Brown Mole"
+	desc = "If this is a lesser mole, you don't want to see the greater one"
 	icon_state = "mole"
 	icon_living = "mole"
 	icon_dead = "mole_dead"
@@ -45,7 +46,18 @@
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/mole
-
+/*
+/mob/living/simple_animal/hostile/retaliate/rogue/mole/greater
+	name = "Greater Brown Mole"
+	desc = "Holy Moley"
+	health = 400
+	maxHealth = 400
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 4,
+						/obj/item/natural/hide = 3,
+						/obj/item/natural/fur = 2)
+	melee_damage_lower = 50
+	melee_damage_upper = 60
+*/
 /obj/effect/decal/remains/mole
 	name = "remains"
 	gender = PLURAL
