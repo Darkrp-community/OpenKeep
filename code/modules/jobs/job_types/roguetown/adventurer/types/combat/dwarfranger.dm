@@ -3,8 +3,8 @@
 	tutorial = "Dwarfish rangers, much like their humen counterparts, \
 	live outside of society and explore the far corners of the creation. They \
 	protect dwarfish settlements from wild beasts and sell their notes to the cartographers."
-	allowed_sexes = list("male", "female")
-	allowed_races = list("Dwarf","Dwarf")
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list("Dwarf")
 	outfit = /datum/outfit/job/roguetown/adventurer/dranger
 
 /datum/outfit/job/roguetown/adventurer/dranger/pre_equip(mob/living/carbon/human/H)
@@ -16,7 +16,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltl = /obj/item/rogueweapon/stoneaxe/woodcut
+	beltl = /obj/item/rogueweapon/woodcut
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather

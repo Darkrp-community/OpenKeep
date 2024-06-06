@@ -1,3 +1,53 @@
+// -------------- FOOD PLATE -----------------
+// plating - logic is meals (defined as cooked meals with pretty good nutrition, some skill/rare resources needed) can be plated for a small bonus
+/obj/item/trash/plate/wood
+	name = "plate"
+	icon = 'icons/roguetown/items/cooking.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/rogue_righthand.dmi'
+	icon_state = "plate_wood"
+	resistance_flags = NONE
+	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
+	experimental_inhand = FALSE
+
+// -------------- KITCHEN TOOLS -----------------
+/obj/item/kitchen/spoon/plastic
+	icon = 'icons/roguetown/items/cooking.dmi'
+
+/obj/item/kitchen/rollingpin
+	icon = 'icons/roguetown/items/cooking.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/rogue_righthand.dmi'
+	experimental_inhand = FALSE
+
+/obj/item/rogueweapon/huntingknife/cleaver
+	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/rogue_righthand.dmi'
+	item_state = "cleav"
+	experimental_inhand = FALSE
+	experimental_onhip = FALSE
+	experimental_onback = FALSE
+
+/obj/item/reagent_containers/glass/bowl
+	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/rogue_righthand.dmi'
+	experimental_inhand = FALSE
+
+/obj/item/reagent_containers/glass/cup
+	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/rogue_righthand.dmi'
+	experimental_inhand = FALSE
+
+
+// -------------- PEPPER MILL -----------------
+/obj/item/reagent_containers/peppermill
+	name = "pepper mill"
+	icon = 'icons/roguetown/items/cooking.dmi'
+	icon_state = "peppermill"
+	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
+	list_reagents = list(/datum/reagent/consumable/blackpepper = 5)
+	reagent_flags = TRANSPARENT
+
 
 /datum/crafting_recipe/roguetown/cooking/raisins
 	name = "raisins"

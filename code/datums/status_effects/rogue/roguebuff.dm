@@ -14,16 +14,15 @@
 	icon_state = "drunk"
 
 /datum/status_effect/buff/drunk/on_apply()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/drunk)
-	. = ..()
-
 /datum/status_effect/buff/drunk/on_remove()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stressevent/drunk)
-	. = ..()
 
 /datum/status_effect/buff/foodbuff
 	id = "foodbuff"
@@ -37,10 +36,10 @@
 	icon_state = "foodbuff"
 
 /datum/status_effect/buff/foodbuff/on_apply()
+	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/goodfood)
-	. = ..()
 
 /datum/status_effect/buff/druqks
 	id = "druqks"
@@ -63,6 +62,7 @@
 
 
 /datum/status_effect/buff/druqks/on_remove()
+	. = ..()
 	if(owner?.client)
 		if(owner.client.screen && owner.client.screen.len)
 			var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in owner.client.screen
@@ -73,7 +73,6 @@
 			PM.backdrop(owner)
 			var/mob/living/carbon/C = owner
 			C.remove_stress(/datum/stressevent/high)
-	. = ..()
 
 /atom/movable/screen/alert/status_effect/buff/druqks
 	name = "High"
@@ -94,11 +93,11 @@
 	ADD_TRAIT(owner, TRAIT_NOPAIN, TRAIT_GENERIC)
 
 /datum/status_effect/buff/ozium/on_remove()
+	. = ..()
 	REMOVE_TRAIT(owner, TRAIT_NOPAIN, TRAIT_GENERIC)
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stressevent/ozium)
-	. = ..()
 
 /datum/status_effect/buff/moondust
 	id = "moondust"
@@ -163,6 +162,7 @@
 			C.add_stress(/datum/stressevent/weed)
 
 /datum/status_effect/buff/weed/on_remove()
+	. = ..()
 	if(owner?.client)
 		if(owner.client.screen && owner.client.screen.len)
 			var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in owner.client.screen
@@ -173,7 +173,6 @@
 			PM.backdrop(owner)
 			var/mob/living/carbon/C = owner
 			C.remove_stress(/datum/stressevent/weed)
-	. = ..()
 
 /atom/movable/screen/alert/status_effect/buff/weed
 	name = "Dazed"

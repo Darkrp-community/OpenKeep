@@ -2,9 +2,8 @@
 
 /datum/advclass/pilgrim/rare/fishermaster
 	name = "Master Fisher"
-	allowed_sexes = list("male", "female")
-	allowed_races = list("Humen"
-	)
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/fishermaster
 	isvillager = FALSE
 	ispilgrim = TRUE
