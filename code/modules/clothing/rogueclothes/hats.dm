@@ -412,6 +412,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
+	max_integrity = 250
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard
 	name = "savoyard"
@@ -467,7 +468,7 @@
 		user.update_fov_angles()
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket
-	name = "bucket helmet"
+	name = "great helmet"
 	icon_state = "topfhelm"
 	item_state = "topfhelm"
 	emote_environment = 3
@@ -554,7 +555,7 @@
 		add_overlay(pic)
 
 /obj/item/clothing/head/roguetown/rare
-	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'	
+	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleevetype = null
 
