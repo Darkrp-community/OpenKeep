@@ -1,6 +1,7 @@
 /datum/anvil_recipe/armor
 	appro_skill = /datum/skill/craft/armorsmithing
 
+// --------- COPPER -----------
 /datum/anvil_recipe/armor/ichainmail
 	name = "chainmail"
 	req_bar = /obj/item/ingot/iron
@@ -28,7 +29,8 @@
 /datum/anvil_recipe/armor/ichainleg
 	name = "chain chausses"
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/clothing/under/roguetown/chainlegs/iron
+	created_item = list(/obj/item/clothing/under/roguetown/chainlegs/iron,
+						/obj/item/clothing/under/roguetown/chainlegs/iron)
 
 /datum/anvil_recipe/armor/platemask
 	name = "iron mask"
@@ -41,6 +43,12 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/clothing/head/roguetown/helmet/skullcap,
 						/obj/item/clothing/head/roguetown/helmet/skullcap)
+
+/datum/anvil_recipe/armor/studdedleather
+	name = "studded leather (2h)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/hide, /obj/item/natural/hide)
+	created_item = /obj/item/clothing/suit/roguetown/armor/leather/studded
 
 // --------- STEEL -----------
 
@@ -65,20 +73,23 @@
 	name = "chain gauntlets"
 	req_bar = /obj/item/ingot/steel
 	created_item = list(/obj/item/clothing/gloves/roguetown/chain,
-						/obj/item/clothing/gloves/roguetown/chain,
-						/obj/item/clothing/gloves/roguetown/chain)
+						/obj/item/clothing/gloves/roguetown/chain,)
 
 /datum/anvil_recipe/armor/plateglove
 	name = "plate gauntlets"
 	req_bar = /obj/item/ingot/steel
-	created_item = list(/obj/item/clothing/gloves/roguetown/plate,
-						/obj/item/clothing/gloves/roguetown/plate)
+	created_item = list(/obj/item/clothing/gloves/roguetown/plate)
 
 /datum/anvil_recipe/armor/chainleg
 	name = "chain chausses"
 	req_bar = /obj/item/ingot/steel
 	created_item = list(/obj/item/clothing/under/roguetown/chainlegs,
 						/obj/item/clothing/under/roguetown/chainlegs)
+
+/datum/anvil_recipe/armor/plateleg
+	name = "plate chausses"
+	req_bar = /obj/item/ingot/steel
+	created_item = list(/obj/item/clothing/under/roguetown/platelegs)
 
 /datum/anvil_recipe/armor/plate
 	name = "munition plate armor (3)"
@@ -96,6 +107,12 @@
 	name = "breastplate"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/suit/roguetown/armor/plate/half
+
+/datum/anvil_recipe/armor/brigadine
+	name = "brigadine (3s 1c)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/natural/cloth)
+	created_item = /obj/item/clothing/suit/roguetown/armor/brigandine
 
 /datum/anvil_recipe/armor/scalemail
 	name = "scalemail"
@@ -157,8 +174,13 @@
 /datum/anvil_recipe/armor/plateboot
     name = "plated boots"
     req_bar = /obj/item/ingot/steel
-    created_item = list(/obj/item/clothing/shoes/roguetown/boots/armor,
-                        /obj/item/clothing/shoes/roguetown/boots/armor)
+    created_item = list(/obj/item/clothing/shoes/roguetown/boots/armor)
+
+/datum/anvil_recipe/armor/platebootlight
+    name = "light plate boots"
+    req_bar = /obj/item/ingot/steel
+    created_item = list(/obj/item/clothing/shoes/roguetown/boots/armor/light,
+						/obj/item/clothing/shoes/roguetown/boots/armor/light)
 
 /datum/anvil_recipe/armor/platemask/steel
 	name = "steel mask"

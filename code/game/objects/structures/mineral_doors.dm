@@ -766,3 +766,15 @@
 /obj/structure/mineral_door/bars/onkick(mob/user)
 	user.visible_message("<span class='warning'>[user] kicks [src]!</span>")
 	return
+
+
+/obj/structure/mineral_door/wood/deadbolt/shutter
+	name = "serving hatch"
+	desc = "Can be locked from the inside."
+	icon_state = "serving"
+	base_state = "serving"
+	max_integrity = 100
+	over_state = "servingopen"
+	openSound = 'sound/neu/blindsopen.ogg'
+	closeSound = 'sound/neu/blindsclose.ogg'
+	dir = NORTH
