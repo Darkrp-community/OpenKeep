@@ -435,7 +435,7 @@
 	gripped_intents = list(/datum/intent/sword/chop)
 	icon_state = "exe"
 	name = "executioner's sword"
-	desc = "An ancient blade of ginormous stature, with a round ended tip. The pride and joy of Roguetown's greatest passtime, executions."
+	desc = "An ancient blade of ginormous stature, with a round ended tip. The pride and joy of Roguetown's greatest pastime, executions."
 	minstr = 10
 	slot_flags = ITEM_SLOT_BACK
 
@@ -570,7 +570,7 @@
 //Rapiers
 /obj/item/rogueweapon/sword/rapier
 	name = "rapier"
-	desc = "A precise rapier, favored by the small, eloquent and bloodthristy."
+	desc = "A precise rapier, favored by the small, eloquent and bloodthirsty."
 	icon_state = "rapier"
 	smeltresult = /obj/item/ingot/steel
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
