@@ -119,7 +119,6 @@
 	desc = "A corrupted lute, a heritage instrument of Tiefling pedigree."
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	icon_state = "guitar"
-	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	force = 15
 	minstr = 0
 	wbalance = 0
