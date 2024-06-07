@@ -142,7 +142,6 @@
 /obj/item/clothing/suit/roguetown/armor/plate/half/eleven
 	name = "eleven guardian cuirass"
 	desc = "A cuirass made of steel with a thin decorative gold plating. Lightweight and durable."
-	allowed_race = list("elf", "half-elf", "dark elf")
 	color = COLOR_ASSEMBLY_GOLD
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale

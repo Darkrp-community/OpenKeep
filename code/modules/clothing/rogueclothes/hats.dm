@@ -404,7 +404,6 @@
 	desc = "A steel helmet with a thin gold plating designed for Eleven woodland guardians."
 	icon_state = "bascinet_novisor"
 	item_state = "bascinet_novisor"
-	allowed_race = list("elf", "half-elf", "dark elf")
 	color = COLOR_ASSEMBLY_GOLD
 
 /obj/item/clothing/head/roguetown/helmet/heavy
