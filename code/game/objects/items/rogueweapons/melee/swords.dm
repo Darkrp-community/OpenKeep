@@ -481,24 +481,23 @@
 	wdefense = 3
 
 /obj/item/rogueweapon/sword/iron/short/chipped
-	force = 9
+	force = 19
 	desc = "An ancient-looking iron sword."
 	icon_state = "iswordshort_d"
 	max_integrity = 75
 
 /datum/intent/sword/cut/short
 	clickcd = 10
-	damfactor = 0.9
+	damfactor = 0.85
 
 /datum/intent/sword/thrust/short
 	clickcd = 10
 	penfactor = 30
-	damfactor = 1.2
 
 /obj/item/rogueweapon/sword/iron/messer
 	name = "iron messer"
 	desc = "A single edged blade to slice and chop with."
-	force = 12
+	force = 21
 	icon_state = "imesser"
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
 	gripped_intents = null
@@ -506,7 +505,7 @@
 	wdefense = 2
 
 /obj/item/rogueweapon/sword/short
-	force = 12
+	force = 22
 	name = "short sword"
 	desc = "An archaic steel sword made for stabbing."
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
