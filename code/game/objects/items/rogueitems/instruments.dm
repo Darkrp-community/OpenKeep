@@ -89,6 +89,7 @@
 /obj/item/rogue/instrument/lute
 	force = 15
 	name = "lute"
+	desc = "The favored instrument of Eora, made of wood and simple string."
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	icon_state = "lute"
 	minstr = 0
@@ -104,6 +105,7 @@
 
 /obj/item/rogue/instrument/accord
 	name = "accordion"
+	desc = "A complex piece of dwarven intuition, composed of metal, wood, hide and ivory. Favored by Abyssorian bards."
 	icon_state = "accordion"
 	song_list = list("Song 1" = 'sound/music/instruments/accord (1).ogg',
 	"Song 2" = 'sound/music/instruments/accord (2).ogg',
@@ -114,7 +116,8 @@
 
 /obj/item/rogue/instrument/guitar
 	name = "guitar"
-	desc = "Traditional tiberian instrument." 
+	desc = "A corrupted lute, a heritage instrument of Tiefling pedigree."
+	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	icon_state = "guitar"
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	force = 15
@@ -139,6 +142,7 @@
 
 /obj/item/rogue/instrument/harp
 	name = "harp"
+	desc = "An elven instrument of a great and proud heritage."
 	icon_state = "harp"
 	song_list = list("Song 1" = 'sound/music/instruments/harb (1).ogg',
 	"Song 2" = 'sound/music/instruments/harb (2).ogg',
@@ -146,6 +150,7 @@
 
 /obj/item/rogue/instrument/flute
 	name = "flute"
+	desc = "A cacophonous wind-instrument, played primarily by humens all around Grimoria."
 	icon_state = "flute"
 	song_list = list("Song 1" = 'sound/music/instruments/flute (1).ogg',
 	"Song 2" = 'sound/music/instruments/flute (2).ogg',
@@ -156,6 +161,7 @@
 
 /obj/item/rogue/instrument/drum
 	name = "drum"
+	desc = "The adopted instrument of Aasimar, used for signaling and rhythmic marches alike."
 	icon_state = "drum"
 	song_list = list("Song 1" = 'sound/music/instruments/drum (1).ogg',
 	"Song 2" = 'sound/music/instruments/drum (2).ogg',
