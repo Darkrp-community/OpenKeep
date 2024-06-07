@@ -17,6 +17,7 @@
 	l_sleeve_zone = BODY_ZONE_L_LEG
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
+	dropshrink = 0.8
 
 /obj/item/clothing/under/roguetown/AdjustClothes(mob/user)
 #ifdef MATURESERVER
@@ -53,6 +54,9 @@
 
 /obj/item/clothing/under/roguetown/tights/black
 	color = CLOTHING_BLACK
+
+/obj/item/clothing/under/roguetown/tights/red
+	color = CLOTHING_RED
 
 /obj/item/clothing/under/roguetown/tights/jester
 	desc = "Funny tights!"
@@ -111,7 +115,9 @@
 //	adjustable = CAN_CADJUST
 	sewrepair = FALSE
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 300
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	armor_class = ARMOR_CLASS_MEDIUM
 	blocksound = CHAINHIT
 	var/do_sound = FALSE
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
@@ -126,12 +132,14 @@
 	name = "plated chausses"
 	desc = ""
 	gender = PLURAL
-	icon_state = "chain_legs"
+	icon_state = "plate_legs"
 	item_state = "chain_legs"
-//	adjustable = CAN_CADJUST
+	// adjustable = CAN_CADJUST
 	sewrepair = FALSE
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 500
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	armor_class = ARMOR_CLASS_HEAVY
 	blocksound = PLATEHIT
 	var/do_sound = FALSE
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'

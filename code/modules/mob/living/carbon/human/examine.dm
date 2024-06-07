@@ -112,7 +112,7 @@
 					var/shit = bD.examine_friendorfoe(aD,user,src)
 					if(shit)
 						. += shit
-		if(user.mind.has_antag_datum(/datum/antagonist/vampirelord) || user.mind.has_antag_datum(/datum/antagonist/vampire))
+		if(user.mind?.has_antag_datum(/datum/antagonist/vampirelord) || user.mind?.has_antag_datum(/datum/antagonist/vampire))
 			. += "<span class='userdanger'>Blood Volume: [blood_volume]</span>"
 
 	var/list/obscured = check_obscured_slots()

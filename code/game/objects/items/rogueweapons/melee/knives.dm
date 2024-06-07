@@ -1,11 +1,11 @@
 
 
 /obj/item/rogueweapon/huntingknife
-	force = 12
+	force = 10
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	name = "hunting knife"
-	desc = ""
+	desc = "A hunting knife designed for rudimentary applications such as basic butchering or skinning, along with other everyday needs as a tool. Has small defensive capacities to it, and would deliver decent damage if aimed well."
 	icon_state = "huntingknife"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "bone_dagger"
@@ -19,8 +19,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	parrysound = list('sound/combat/parry/bladed/bladedsmall (1).ogg','sound/combat/parry/bladed/bladedsmall (2).ogg','sound/combat/parry/bladed/bladedsmall (3).ogg')
 	swingsound = list('sound/combat/wooshes/bladed/wooshmed (1).ogg','sound/combat/wooshes/bladed/wooshmed (2).ogg','sound/combat/wooshes/bladed/wooshmed (3).ogg')
-	max_blade_int = 100
-	max_integrity = 150
+	max_blade_int = 140
+	max_integrity = 300
 	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
 	associated_skill = /datum/skill/combat/knives
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
@@ -91,7 +91,7 @@
 /obj/item/rogueweapon/huntingknife/cleaver
 	force = 10
 	name = "cleaver"
-	desc = ""
+	desc = "A sharp weapon with a large cutting area. Perfect for butchering beasts or your neighbor."
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	icon_state = "cleav"
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -105,9 +105,9 @@
 	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/cleaver/combat
-	force = 10
+	force = 12
 	name = "knife"
-	desc = ""
+	desc = "A knife designed for combat situations. It would deal quite the amount of damage."
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	icon_state = "combatknife"
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -137,12 +137,14 @@
 /obj/item/rogueweapon/huntingknife/idagger
 	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut)
 	name = "dagger"
+	force = 12
 	desc = ""
 	icon_state = "idagger"
 	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel
 	name = "dagger"
+	force = 14
 	icon_state = "sdagger"
 	smeltresult = null
 
@@ -151,6 +153,7 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
 	name = "dagger"
+	force = 12
 	icon_state = "sildagger"
 	smeltresult = null
 	sellprice = 50
@@ -183,7 +186,7 @@
 /obj/item/rogueweapon/huntingknife/stoneknife
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)
 	name = "stone knife"
-	desc = ""
+	desc = "A crude tool consisting of a sharpened rock and a wooden piece. Does it's job, but offers minuscule defensive capacities and wouldn't deal much damage."
 	icon_state = "stone_knife"
 	smeltresult = null
 	max_integrity = 15

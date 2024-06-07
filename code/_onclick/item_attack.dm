@@ -67,6 +67,7 @@
 
 /mob/living
 	var/tempatarget = null
+	var/pegleg = 0			//Handles check & slowdown for peglegs. Fuckin' bootleg, literally, but hey it at least works.
 
 /obj/item/proc/attack(mob/living/M, mob/living/user)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
@@ -120,7 +121,7 @@
 		user.rogfat_add(12)
 	if(M.checkdefense(user.used_intent, user))
 		if(M.d_intent == INTENT_PARRY)
-			if(!M.get_active_held_item()) //we parried with a bracer, redirect damage
+			if(!M.get_active_held_item() && !M.get_inactive_held_item()) //we parried with a bracer, redirect damage
 				if(M.active_hand_index == 1)
 					user.tempatarget = "l_arm"
 				else

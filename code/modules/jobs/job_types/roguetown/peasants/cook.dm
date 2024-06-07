@@ -6,15 +6,15 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list("Humen",
-	"Humen",
-	"Elf",
-	"Elf",
-	"Half-Elf",
-	"Dwarf",
-	"Tiefling",
-	"Aasimar"
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Aasimar"
 	)
+	allowed_ages = list(AGE_YOUNG, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD,)
 	tutorial = "Working closely with the barkeep who owns Skull Crack Inn, the cook should focus on cooking food for all the hungry mouths of Roguetown."
 
 	outfit = /datum/outfit/job/roguetown/cook

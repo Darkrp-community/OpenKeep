@@ -1,5 +1,5 @@
 /obj/item/roguemachine/merchant
-	name = "navigator"
+	name = "SKY HANDLER"
 	desc = "A machine that attracts the attention of trading balloons."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "ballooner"
@@ -146,6 +146,7 @@
 			update_icon()
 			return attack_hand(user)
 		else
+			playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 			to_chat(user, "<span class='warning'>Wrong key.</span>")
 			return
 	if(istype(P, /obj/item/keyring))

@@ -243,7 +243,7 @@ SUBSYSTEM_DEF(ticker)
 			if(firstvote)
 				if(world.time > round_start_time + time_until_vote)
 					SSvote.initiate_vote("restart", "The Gods")
-					time_until_vote = 20 MINUTES
+					time_until_vote = 40 MINUTES
 					last_vote_time = world.time
 					firstvote = FALSE
 			else

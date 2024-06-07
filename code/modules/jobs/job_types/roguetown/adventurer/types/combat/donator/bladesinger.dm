@@ -1,9 +1,11 @@
 /datum/advclass/combat/bladesinger
 	name = "Bladesinger"
 	tutorial = "Your vigil over the elven cities has long since ended. Though dutiful, the inevitable happened and now you hope these lands have use for your talents."
-	allowed_sexes = list("male", "female")
-	allowed_races = list("Elf",
-	"Dark Elf")
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list(
+		"Elf",
+		"Dark Elf"
+	)
 	outfit = /datum/outfit/job/roguetown/adventurer/bladesinger
 	maxchosen = 1
 	plevel_req = 1

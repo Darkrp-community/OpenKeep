@@ -1,14 +1,14 @@
 /datum/advclass/mercenary/boltslinger
 	name = "Boltslinger"
 	tutorial = "A cutthroat and a soldier of fortune, your mastery of the crossbow has brought you to many battlefields, all in pursuit of mammon."
-	allowed_sexes = list("male", "female")
-	allowed_races = list("Humen",
-	"Humen",
-	"Half-Elf",
-	"Tiefling",
-	"Dwarf",
-	"Dark Elf",
-	"Aasimar"
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list(
+		"Humen",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/boltslinger
 	ismerc = TRUE
