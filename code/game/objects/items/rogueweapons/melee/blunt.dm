@@ -40,7 +40,7 @@
 
 /obj/item/rogueweapon/mace/steel
 	name = "steel mace"
-	desc = "A steel mace, easier to control and hits just as hard."
+	desc = "A well-crafted mace with a steel head. Easier to control and hits just as hard."
 	icon_state = "smace"
 	wbalance = 0
 	smeltresult = /obj/item/ingot/steel
@@ -86,7 +86,7 @@
 	force = 15
 	force_wielded = 20
 	name = "club"
-	desc = "simple wooden club. Beloved by troglodytes and savages alike."
+	desc = "An extremely crude wooden club that looks like it has fallen off a tree. Beloved by troglodytes and savages alike."
 	icon_state = "club1"
 	//dropshrink = 0.75
 	wbalance = 0
@@ -153,7 +153,7 @@
 	force = 5
 	force_wielded = 8
 	name = "wooden sword"
-	desc = ""
+	desc = "A wooden sword. It does absolutely minimal damage and offers minimal defensive capacities, perfect for sparring."
 	icon_state = "wsword"
 	//dropshrink = 0.75
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
