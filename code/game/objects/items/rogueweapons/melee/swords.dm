@@ -126,7 +126,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "old sword"
-	desc = "A old steel sword with a green leather grip."
+	desc = "A old steel sword with a green leather grip. Despite its age, it has properties to be feared of. Offers high damage output and even higher if wielded. Comparable to the bastard sword."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -204,7 +204,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "crimson fang"
-	desc = "A strange long sword with a green metal composition."
+	desc = "A strange long sword with a green metal composition. Delivers serious damage, especially when wielded."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -246,7 +246,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "zybantian scimitar"
-	desc = "The Zybantians commonly equip their troops w, now equally found within the hands of mercenaries hailing from the Western Dunes."
+	desc = "The Zybantians commonly equip their troops with these, now equally found within the hands of mercenaries hailing from the Western Dunes."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -435,7 +435,7 @@
 	gripped_intents = list(/datum/intent/sword/chop)
 	icon_state = "exe"
 	name = "execution sword"
-	desc = ""
+	desc = "A sword designed to carry out executions. Still has some dried blood on it."
 	minstr = 10
 	slot_flags = ITEM_SLOT_BACK
 
@@ -464,7 +464,7 @@
 //Short Swords
 /obj/item/rogueweapon/sword/iron
 	name = "sword"
-	desc = "A simple iron sword. For the extremely lowly troop."
+	desc = "A simple iron sword. Nothing extreme, does the job for the extremely lowly troop."
 	icon_state = "isword"
 	minstr = 6
 	smeltresult = /obj/item/ingot/iron
@@ -571,7 +571,7 @@
 //Rapiers
 /obj/item/rogueweapon/sword/rapier
 	name = "rapier"
-	desc = "A precise raper."
+	desc = "A precise rapier. Offers high capacity to defend oneself. Designed to be a stabbing weapon."
 	icon_state = "rapier"
 	smeltresult = /obj/item/ingot/steel
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
@@ -620,7 +620,7 @@
 // Cutless
 /obj/item/rogueweapon/sword/cutlass
 	name = "cutlass"
-	desc = "Used by pirates and deckhands."
+	desc = "Used by pirates and deckhands. Whilst it is nothing special, its lethality is not to be questioned."
 	icon_state = "cutlass"
 	smeltresult = /obj/item/ingot/steel
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
