@@ -87,7 +87,7 @@
 
 /obj/item/rogueweapon/shield/tower
 	name = "tower shield"
-	desc = "A large rectangular shield, which covers a significant portion of the wearers body. Has an excellent parrying ability, it won't protect the wearer much more than a regular round shield but sports slightly higher durability."
+	desc = "A gigantic shield that covers the entire body, a design-copy of the Aasimar shields of an era gone by."
 	icon_state = "shield_tower"
 	force = 15
 	throwforce = 10
@@ -111,7 +111,7 @@
 
 /obj/item/rogueweapon/shield/tower/metal
 	name = "kite shield"
-	desc = "A kite shaped shield with a high quality build. Made predominantly from metallic materials, and offers higher protection along with superior integrity."
+	desc = "A ginormous shield that covers the entire body, reinforced with studdent iron bars for additional protection. Adorned with a colorful heraldry."
 	icon_state = "ironsh"
 	force = 20
 	throwforce = 10

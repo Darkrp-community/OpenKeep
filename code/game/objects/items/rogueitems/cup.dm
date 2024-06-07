@@ -1,5 +1,6 @@
 /obj/item/reagent_containers/glass/cup
 	name = "metal cup"
+	desc = "An iron cup, it's rim gnawed upon and grimey."
 	icon_state = "iron"
 	icon = 'icons/roguetown/items/cooking.dmi'
 	force = 5
@@ -29,17 +30,20 @@
 
 /obj/item/reagent_containers/glass/cup/wooden
 	name = "wooden cup"
+	desc = "A wooden cup that has seen it's fair share of use and barfights."
 	resistance_flags = FLAMMABLE
 	icon_state = "wooden"
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 
 /obj/item/reagent_containers/glass/cup/steel
 	name = "goblet"
+	desc = "A steel goblet that bears a few dents from previous scuffles."
 	icon_state = "steel"
 	sellprice = 10
 
 /obj/item/reagent_containers/glass/cup/silver
 	name = "silver goblet"
+	desc = "A silver goblet, smooth, ornate and artisanal."
 	icon_state = "silver"
 	sellprice = 30
 
@@ -69,9 +73,11 @@
 
 /obj/item/reagent_containers/glass/cup/golden
 	name = "golden goblet"
+	desc = "A golden gilded goblet which gleams pathetically despite it's illustrious metal."
 	icon_state = "golden"
 	sellprice = 50
 
 /obj/item/reagent_containers/glass/cup/skull
 	name = "skull goblet"
+	desc = "A mug fit for you and only you."
 	icon_state = "skull"

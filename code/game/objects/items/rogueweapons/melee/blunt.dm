@@ -86,7 +86,7 @@
 	force = 15
 	force_wielded = 20
 	name = "club"
-	desc = "An extremely crude wooden club that looks like it has fallen off a tree. Beloved by troglodytes and savages alike."
+	desc = "A weapon older than recorded time itself."
 	icon_state = "club1"
 	//dropshrink = 0.75
 	wbalance = 0
@@ -130,7 +130,7 @@
 	force_wielded = 20
 	name = "cudgel"
 	icon_state = "cudgel"
-	desc = "A stubby little club designed to cheaply shatter kneecaps."
+	desc = "A stubby little club favored for thwacking thieves and smart-mouthed peasant folk."
 	gripped_intents = null
 	smeltresult = /obj/item/ash
 	wlength = WLENGTH_SHORT
@@ -153,7 +153,7 @@
 	force = 5
 	force_wielded = 8
 	name = "wooden sword"
-	desc = "A wooden sword. It does absolutely minimal damage and offers minimal defensive capacities, perfect for sparring."
+	desc = "Crude wood assembled into the shape of a sword, a terrible weapon to be on the recieving end of during a training spat."
 	icon_state = "wsword"
 	//dropshrink = 0.75
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
@@ -184,7 +184,7 @@
 	possible_item_intents = list(/datum/intent/mace/heavy/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/dagger/thrust)
 	name = "warclub"
-	desc = "A weapon design with a long history of use by the Hui. Adopted later by the Abyssite 'Beastkin' in their later conflicts."
+	desc = "A two handed club, decorated with a spiked cap crown. A perfect way to say Good Morning to any would be noble-knight."
 	icon_state = "goedendag"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	sharpness = IS_BLUNT
@@ -221,7 +221,7 @@
 
 /obj/item/rogueweapon/mace/goden/steel
 	name = "grand mace"
-	desc = "Pride of the East, the First Legion has historically made legendary use of these grand and beautiful weapons."
+	desc = "A casted polearm, rumored to be the weapon-design used by the Forgotten God himself."
 	icon_state = "polemace"
 	max_integrity = 600
 	force = 15
@@ -263,7 +263,7 @@
 	warnie = "mobwarning"
 
 
-// Copper Bludgeon 
+// Copper Bludgeon
 
 /obj/item/rogueweapon/mace/copperbludgeon
 	force = 12
@@ -343,7 +343,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
 	name = "warhammer"
-	desc = "Dwarves are not known to be subtle about their adoration for hammers. The tool of their God Malum, forged into a vicious weapon of war."
+	desc = "A great warhammer made of stern steel, enscratched with oaths of battle and time."
 	icon_state = "warhammer"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	sharpness = IS_BLUNT

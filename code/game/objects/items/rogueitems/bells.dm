@@ -53,7 +53,7 @@
 
 /obj/structure/stationary_bell
 	name = "church bell"
-	desc = "A large bell that rings out for all to hear."
+	desc = "A large cast bronze bell that rings out for all to hear."
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	icon_state = "churchbell"
 	anchored = TRUE
