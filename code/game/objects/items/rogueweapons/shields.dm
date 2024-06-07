@@ -56,7 +56,7 @@
 
 /obj/item/rogueweapon/shield/wood
 	name = "wooden shield"
-	desc = "A crude, simple wooden shield with leather padding. \nIt won't last long, but at least will keep you safe."
+	desc = "A simple, emblazoned round wooden shield with leather padding. \nCan exceptionally block attacks, but is more brittle than metal ones."
 	icon_state = "woodsh"
 	dropshrink = 0.8
 	coverage = 50
@@ -89,7 +89,7 @@
 
 /obj/item/rogueweapon/shield/tower
 	name = "tower shield"
-	desc = "A sturdy, big shield with superior coverage and durability, as well as weight."
+	desc = "A large, sturdy shield with superior coverage and durability, but quite heavy. \nReinforced with iron, it can tolerate more punishment before breaking."
 	icon_state = "shield_tower"
 	force = 15
 	throwforce = 10
@@ -115,7 +115,7 @@
 
 /obj/item/rogueweapon/shield/tower/metal
 	name = "kite shield"
-	desc = "A knightly steel shield, emblazoned with heraldry."
+	desc = "A knightly, kite shaped steel shield, emblazoned with heraldry. \nBoasts superior coverage and durability, owed to its exquisite craftsmanship."
 	icon_state = "ironsh"
 	force = 20
 	throwforce = 10
