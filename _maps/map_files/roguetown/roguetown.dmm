@@ -1862,6 +1862,14 @@
 	dir = 8
 	},
 /area/rogue/outdoors/town/roofs)
+"cMK" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/wood/rogue{
+	dir = 1;
+	icon_state = "chair2"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town)
 "cMR" = (
 /obj/structure/chair/bench,
 /turf/open/floor/rogue/cobble/mossy,
@@ -6505,6 +6513,20 @@
 /obj/effect/decal/remains/wolf,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
+"jtl" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/wood{
+	icon_state = "longtable"
+	},
+/obj/effect/holodeck_effect/cards{
+	pixel_y = 11;
+	pixel_x = -7
+	},
+/obj/item/storage/belt/rogue/pouch{
+	pixel_y = 8
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town)
 "juU" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 1;
@@ -6814,6 +6836,13 @@
 	dir = 4
 	},
 /area/rogue/indoors/town/manor)
+"jRT" = (
+/obj/structure/chair/wood/rogue{
+	dir = 1;
+	icon_state = "chair2"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town)
 "jSj" = (
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/grown/wheat,
@@ -7984,6 +8013,16 @@
 /obj/machinery/light/rogue/firebowl,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
+"lyM" = (
+/obj/structure/table/wood{
+	dir = 1;
+	icon_state = "longtable"
+	},
+/obj/item/rogueweapon/huntingknife/idagger{
+	pixel_y = 9
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town)
 "lzO" = (
 /obj/effect/decal/cobbleedge{
 	dir = 10
@@ -8947,6 +8986,13 @@
 	icon_state = "greenstone"
 	},
 /area/rogue/indoors/town/magician)
+"mUd" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/rogue/wallfire/candle{
+	pixel_y = -32
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town)
 "mUj" = (
 /obj/effect/decal/cobbleedge{
 	dir = 6
@@ -9783,6 +9829,7 @@
 	pixel_x = -32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/stairs,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "odk" = (
@@ -10440,6 +10487,11 @@
 /obj/machinery/light/rogue/chand,
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor)
+"oUw" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/rogue/wallfire/candle/r,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town)
 "oUW" = (
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
@@ -10470,6 +10522,12 @@
 "oXi" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison)
+"oXq" = (
+/obj/structure/bed/rogue/inn/hay,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/rogue/wallfire/candle,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town)
 "oYt" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_x = -32;
@@ -12218,6 +12276,15 @@
 /obj/structure/bars/pipe,
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town)
+"rCi" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/railing/wood{
+	icon_state = "woodrailing";
+	dir = 8;
+	pixel_y = -1
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/town)
 "rCq" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/tile{
@@ -13161,6 +13228,13 @@
 /obj/structure/chair/wood/rogue,
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/town/basement)
+"tiv" = (
+/obj/structure/bed/rogue/inn/hay,
+/obj/effect/landmark/start/villager,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/rogue/wallfire/candle,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town)
 "tjs" = (
 /obj/structure/closet/crate/chest,
 /obj/item/rogueore/iron,
@@ -13477,7 +13551,7 @@
 "tHE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/drawer,
-/turf/open/floor/rogue/twig,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
 "tIa" = (
 /obj/effect/decal/cleanable/cobweb,
@@ -80850,7 +80924,7 @@ luz
 tgV
 luz
 tgV
-doW
+tgV
 doW
 doW
 doW
@@ -81006,8 +81080,8 @@ luz
 usj
 ixF
 ocW
+qlQ
 vBf
-doW
 doW
 doW
 doW
@@ -81162,9 +81236,9 @@ osr
 jAq
 amA
 uIa
+rCi
 qlQ
 vBf
-doW
 doW
 doW
 doW
@@ -81317,11 +81391,11 @@ oiP
 pen
 osr
 tgV
-slA
-qlQ
-qlQ
+oXq
+dSj
+dSj
+mUd
 tgV
-doW
 doW
 doW
 doW
@@ -81475,10 +81549,10 @@ pen
 osr
 luz
 tHE
-qlQ
-qlQ
+dSj
+jtl
+cMK
 vBf
-doW
 doW
 doW
 doW
@@ -81631,11 +81705,11 @@ oiP
 pen
 osr
 luz
-iJv
-mvC
-ees
+tiv
+oUw
+lyM
+jRT
 vBf
-doW
 doW
 doW
 doW
@@ -81792,7 +81866,7 @@ eFm
 tgV
 eFm
 tgV
-doW
+tgV
 doW
 doW
 doW
