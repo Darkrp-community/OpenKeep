@@ -102,7 +102,7 @@
 
 /obj/item/clothing/shoes/roguetown/boots/armor
 	name = "plated boots"
-	desc = "Armored boots made from iron offering heavy protection against both melee and ranged attacks."
+	desc = "Armored boots made from steel offering heavy protection against both melee and ranged attacks."
 	body_parts_covered = FEET
 	icon_state = "armorboots"
 	item_state = "armorboots"
@@ -115,7 +115,10 @@
 
 /obj/item/clothing/shoes/roguetown/boots/armor/light
 	name = "light plate boots"
-	desc = ""
+	icon_state = "vboots"
+	item_state = "vboots"
+	desc = "Lightly armored boots made from iron offering protection against both melee and ranged attacks."
+	armor = list("melee" = 80, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 250
 	armor_class = ARMOR_CLASS_MEDIUM
 

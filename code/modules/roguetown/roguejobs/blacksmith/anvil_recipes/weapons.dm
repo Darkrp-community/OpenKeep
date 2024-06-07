@@ -84,7 +84,7 @@
 	created_item = /obj/item/rogueweapon/sword/iron/messer
 
 /datum/anvil_recipe/weapons/halberd/iron
-	name = "halbet (2) (+w)"
+	name = "iron halberd (2) (+w)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)

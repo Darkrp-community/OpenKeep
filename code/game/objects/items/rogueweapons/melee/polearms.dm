@@ -121,7 +121,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	max_blade_int = 100
-	max_integrity = 450
+	max_integrity = 300
 	minstr = 8
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
@@ -219,7 +219,7 @@
 	misscost = 10
 
 /obj/item/rogueweapon/halberd
-	force = 10
+	force = 15
 	force_wielded = 35
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, /datum/intent/spear/halberd/chop, SPEAR_BASH)
@@ -238,7 +238,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	minstr = 8
 	max_blade_int = 100
-	max_integrity = 450
+	max_integrity = 500
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/polearms
 	dropshrink = 0.6
@@ -265,11 +265,15 @@
 	max_blade_int = 300
 
 /obj/item/rogueweapon/halberd/iron
-	name = "halbert"
+	name = "iron halberd"
 	desc = ""
+	force = 12
+	force_wielded = 30
 	icon_state = "ihalberd"
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 300
+	max_integrity = 300
+	
 
 /obj/item/rogueweapon/eaglebeak
 	force = 15
@@ -293,6 +297,7 @@
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/polearms
 	max_blade_int = 300
+	max_integrity = 500
 	dropshrink = 0.6
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
@@ -313,9 +318,12 @@
 /obj/item/rogueweapon/eaglebeak/lucerne
 	name = "lucerne"
 	desc = ""
+	force = 12
+	force_wielded = 25
 	icon_state = "polehammer"
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 300
+	max_integrity = 300
 
 // Copper Spear
 
