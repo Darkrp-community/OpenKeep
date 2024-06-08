@@ -15,7 +15,7 @@
 
 /obj/structure/guillotine
 	name = "guillotine"
-	desc = ""
+	desc = "This is the end."
 	icon = 'icons/obj/guillotine.dmi'
 	icon_state = "guillotine_raised"
 	can_buckle = TRUE
