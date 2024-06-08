@@ -1,6 +1,6 @@
 /obj/item/ammo_casing/caseless/rogue/bolt
 	name = "bolt"
-	desc = ""
+	desc = "A small and sturdy bolt, with simple plume and metal tip, alongside a groove to load onto a crossbow."
 	projectile_type = /obj/projectile/bullet/reusable/bolt
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	caliber = "regbolt"
@@ -12,6 +12,7 @@
 
 /obj/projectile/bullet/reusable/bolt
 	name = "bolt"
+	desc = "A small and sturdy bolt, with simple plume and metal tip, alongside a groove to load onto a crossbow."
 	damage = 50
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -27,7 +28,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/bolt/poison
 	name = "poison bolt"
-	desc = "a bolt tipped with a potent poison"
+	desc = "A bolt dipped with a potent poison."
 	projectile_type = /obj/projectile/bullet/reusable/bolt/poison
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	caliber = "regbolt"
@@ -39,6 +40,7 @@
 
 /obj/projectile/bullet/reusable/bolt/poison
 	name = "poison bolt"
+	desc = "A bolt dipped with a potent poison."
 	damage = 35
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -81,7 +83,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/bolt/pyro
 	name = "pyroclastic bolt"
-	desc = ""
+	desc = "A bolt smeared with a flammable tincture."
 	projectile_type = /obj/projectile/bullet/bolt/pyro
 	possible_item_intents = list(/datum/intent/mace/strike)
 	caliber = "regbolt"
@@ -93,6 +95,7 @@
 
 /obj/projectile/bullet/bolt/pyro
 	name = "pyroclastic bolt"
+	desc = "A bolt smeared with a flammable tincture."
 	damage = 20
 	damage_type = BURN
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -122,7 +125,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/arrow
 	name = "arrow"
-	desc = ""
+	desc = "A fletched projectile, with simple plumes and metal tip."
 	projectile_type = /obj/projectile/bullet/reusable/arrow
 	caliber = "arrow"
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -134,6 +137,7 @@
 
 /obj/projectile/bullet/reusable/arrow
 	name = "arrow"
+	desc = "A fletched projectile, with simple plumes and metal tip."
 	damage = 40
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -156,6 +160,7 @@
 
 /obj/projectile/bullet/reusable/arrow/poison
 	name = "poison arrow"
+	desc = "An arrow with it's tip drenched in a powerful poison."
 	damage = 20
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -171,7 +176,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/arrow/poison
 	name = "poison arrow"
-	desc = ""
+	desc = "An arrow with it's tip drenched in a powerful poison."
 	projectile_type = /obj/projectile/bullet/reusable/arrow/poison
 	caliber = "arrow"
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -210,7 +215,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/arrow/pyro
 	name = "pyroclastic arrow"
-	desc = ""
+	desc = "An arrow with it's tip drenched in a flammable tincture."
 	projectile_type = /obj/projectile/bullet/arrow/pyro
 	possible_item_intents = list(/datum/intent/mace/strike)
 	caliber = "arrow"
@@ -222,6 +227,7 @@
 
 /obj/projectile/bullet/arrow/pyro
 	name = "pyroclatic arrow"
+	desc = "An arrow with it's tip drenched in a flammable tincture."
 	damage = 15
 	damage_type = BURN
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -263,6 +269,7 @@
 
 /obj/projectile/bullet/reusable/bullet
 	name = "lead ball"
+	desc = "A round lead shot, simple and spherical."
 	damage = 50
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -278,7 +285,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/bullet
 	name = "lead ball"
-	desc = ""
+	desc = "A round lead shot, simple and spherical."
 	projectile_type = /obj/projectile/bullet/reusable/bullet
 	caliber = "musketball"
 	icon = 'icons/roguetown/weapons/ammo.dmi'

@@ -39,7 +39,7 @@
 	possible_item_intents = list(SPEAR_BASH)
 	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood)
 	name = "wooden staff"
-	desc = ""
+	desc = "The ultimate tool of travel for weary wanderers, support your weight or crack the heads that don't support you."
 	icon_state = "woodstaff"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	wlength = WLENGTH_LONG
@@ -71,8 +71,8 @@
 
 
 /obj/item/rogueweapon/woodstaff/aries
-	name = "staff of the shepherd"
-	desc = ""
+	name = "staff of the testimonium"
+	desc = "A symbolic staff, granted to graduating acolyte's who have achieved and bear witnessed to the miracles of the Gods."
 	force = 15
 	force_wielded = 25
 	possible_item_intents = list(SPEAR_BASH)
@@ -108,7 +108,7 @@
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
 	name = "spear"
-	desc = ""
+	desc = "The humble spear, use the pointy end."
 	icon_state = "spear"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -143,7 +143,7 @@
 
 /obj/item/rogueweapon/spear/billhook
 	name = "billhook"
-	desc = ""
+	desc = "A polearm with a curved krag, a Valorian design for dismounting mounted warriors and to strike down monstrous beasts."
 	icon_state = "billhook"
 	force = 12
 	force_wielded = 30
@@ -172,6 +172,7 @@
 	force = 10
 	force_wielded = 15
 	name = "simple spear"
+	desc = "With this weapon, the tribes of humenity became the chosen people of the Forgotten God."
 	icon_state = "stonespear"
 	pixel_y = -16
 	pixel_x = -16
@@ -224,7 +225,7 @@
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, /datum/intent/spear/halberd/chop, SPEAR_BASH)
 	name = "halbert"
-	desc = ""
+	desc = "A reinforced polearm for clobbering ordained with a crested ax head, pick and sharp point, a royal arm for defence and aggression."
 	icon_state = "halberd"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -259,7 +260,7 @@
 
 /obj/item/rogueweapon/halberd/bardiche
 	name = "bardiche"
-	desc = ""
+	desc = "A grand ax of northernly design, renown for decisive and delimbing as well as stunning bashes."
 	icon_state = "bardiche"
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 300
@@ -281,7 +282,7 @@
 	possible_item_intents = list(SPEAR_BASH, SPEAR_THRUST) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_BASH, SPEAR_THRUST, /datum/intent/mace/heavy/smash)
 	name = "eagle's beak"
-	desc = ""
+	desc = "A reinforced pole affixed with an ornate steel eagle's head, of which it's beak is intended to pierce with great harm."
 	icon_state = "eaglebeak"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -317,13 +318,189 @@
 
 /obj/item/rogueweapon/eaglebeak/lucerne
 	name = "lucerne"
-	desc = ""
+	desc = "A polehammer of simple iron, fracture bone and dissent with simple brute force."
 	force = 12
 	force_wielded = 25
 	icon_state = "polehammer"
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 300
 	max_integrity = 300
+
+/obj/item/rogueweapon/greatsword
+	force = 10
+	force_wielded = 20
+	possible_item_intents = list(/datum/intent/sword/chop,/datum/intent/sword/strike) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop, /datum/intent/sword/thrust/zwei, /datum/intent/sword/strike)
+	name = "northern greatsword"
+	desc = "A huge blade, crafted by the Northern humen empires. Takes a truly strong man to wield."
+	icon_state = "gsw"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	parrysound = "bladedlarge"
+	swingsound = BLADEWOOSH_HUGE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
+	wlength = WLENGTH_GREAT
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	thrown_bclass = BCLASS_CUT
+	throwforce = 15
+	minstr = 12
+	smeltresult = /obj/item/ingot/steel
+	associated_skill = /datum/skill/combat/swords
+	max_blade_int = 100
+	max_integrity = 300
+	wdefense = 3
+
+/obj/item/rogueweapon/greatsword/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = 6,"nx" = 6,"ny" = 7,"wx" = 0,"wy" = 5,"ex" = -1,"ey" = 7,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -50,"sturn" = 40,"wturn" = 50,"eturn" = -50,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 9,"sy" = -4,"nx" = -7,"ny" = 1,"wx" = -9,"wy" = 2,"ex" = 10,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 5,"sturn" = -190,"wturn" = -170,"eturn" = -10,"nflip" = 4,"sflip" = 4,"wflip" = 1,"eflip" = 0)
+			if("onback")
+				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
+
+/obj/item/rogueweapon/greatsword/flamberge
+	name = "flamberge"
+	desc = "Commonly known as a flame-bladed sword, this weapon has an undulating blade. It's wave-like form distributes force better, and is less likely to break on impact."
+	icon_state = "flamberge"
+	smeltresult = /obj/item/ingot/iron
+	wdefense = 3
+
+/obj/item/rogueweapon/greatsword/zwei
+	name = "zweihander"
+	desc = "Sometimes known as a doppelhander or beidhander, this weapon's Grenzelhoftian deisgn bears a size is so impressive that it's handling properties are more akin to that of a polearm than a sword."
+	icon_state = "steelzwei"
+	smeltresult = /obj/item/ingot/steel
+	wdefense = 3
+
+/datum/intent/sword/cut/zwei
+	name = "cut"
+	blade_class = BCLASS_CUT
+	attack_verb = list("cuts", "slashes")
+	icon_state = "incut"
+	damfactor = 0.8
+	hitsound = list('sound/combat/hits/bladed/genslash (1).ogg', 'sound/combat/hits/bladed/genslash (2).ogg', 'sound/combat/hits/bladed/genslash (3).ogg')
+	reach = 1
+	swingdelay = 1
+	misscost = 5
+
+/datum/intent/sword/thrust/zwei
+    name = "thrust"
+    blade_class = BCLASS_STAB
+    attack_verb = list("stabs")
+    animname = "stab"
+    icon_state = "instab"
+    reach = 1
+    chargetime = 1
+    warnie = "mobwarning"
+    hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
+    penfactor = 20
+    swingdelay = 1
+    misscost = 5
+
+/obj/item/rogueweapon/greatsword/elfgsword
+	force = 12
+	force_wielded = 23
+	name = "elven kriegsmesser"
+	desc = "A huge, curved elven blade. An ancestral and coveted design used to hunt and dismember the prey of elvenkind, light and nimble, crafted by the treasured elven master bladesmiths."
+	icon_state = "kriegsmesser"
+	minstr = 10
+
+
+/obj/item/rogueweapon/greatsword
+	force = 10
+	force_wielded = 20
+	possible_item_intents = list(/datum/intent/sword/chop,/datum/intent/sword/strike) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop, /datum/intent/sword/thrust/zwei, /datum/intent/sword/strike)
+	name = "northern greatsword"
+	desc = "A huge blade, crafted by the Northern humen empires. Takes a truly strong man to wield."
+	icon_state = "gsw"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	parrysound = "bladedlarge"
+	swingsound = BLADEWOOSH_HUGE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
+	wlength = WLENGTH_GREAT
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	thrown_bclass = BCLASS_CUT
+	throwforce = 15
+	minstr = 12
+	smeltresult = /obj/item/ingot/steel
+	associated_skill = /datum/skill/combat/swords
+	max_blade_int = 100
+	max_integrity = 300
+	wdefense = 3
+
+/obj/item/rogueweapon/greatsword/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = 6,"nx" = 6,"ny" = 7,"wx" = 0,"wy" = 5,"ex" = -1,"ey" = 7,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -50,"sturn" = 40,"wturn" = 50,"eturn" = -50,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 9,"sy" = -4,"nx" = -7,"ny" = 1,"wx" = -9,"wy" = 2,"ex" = 10,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 5,"sturn" = -190,"wturn" = -170,"eturn" = -10,"nflip" = 4,"sflip" = 4,"wflip" = 1,"eflip" = 0)
+			if("onback")
+				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
+
+/obj/item/rogueweapon/greatsword/flamberge
+	name = "flamberge"
+	desc = "Commonly known as a flame-bladed sword, this weapon has an undulating blade. It's wave-like form distributes force better, and is less likely to break on impact."
+	icon_state = "flamberge"
+	smeltresult = /obj/item/ingot/iron
+	wdefense = 3
+
+/obj/item/rogueweapon/greatsword/zwei
+	name = "zweihander"
+	desc = "Sometimes known as a doppelhander or beidhander, this weapon's Grenzelhoftian deisgn bears a size is so impressive that it's handling properties are more akin to that of a polearm than a sword."
+	icon_state = "steelzwei"
+	smeltresult = /obj/item/ingot/steel
+	wdefense = 3
+
+/datum/intent/sword/cut/zwei
+	name = "cut"
+	blade_class = BCLASS_CUT
+	attack_verb = list("cuts", "slashes")
+	icon_state = "incut"
+	damfactor = 0.8
+	hitsound = list('sound/combat/hits/bladed/genslash (1).ogg', 'sound/combat/hits/bladed/genslash (2).ogg', 'sound/combat/hits/bladed/genslash (3).ogg')
+	reach = 1
+	swingdelay = 1
+	misscost = 5
+
+/datum/intent/sword/thrust/zwei
+    name = "thrust"
+    blade_class = BCLASS_STAB
+    attack_verb = list("stabs")
+    animname = "stab"
+    icon_state = "instab"
+    reach = 1
+    chargetime = 1
+    warnie = "mobwarning"
+    hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
+    penfactor = 20
+    swingdelay = 1
+    misscost = 5
+
+/obj/item/rogueweapon/greatsword/elfgsword
+	force = 12
+	force_wielded = 23
+	name = "elven kriegsmesser"
+	desc = "A huge, curved elven blade. An ancestral and coveted design used to hunt and dismember the prey of elvenkind, light and nimble, crafted by the treasured elven master bladesmiths."
+	icon_state = "kriegsmesser"
+	minstr = 10
+
 
 // Copper Spear
 
@@ -333,7 +510,7 @@
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
 	name = "copper spear"
-	desc = "the walking stick of the poor fucking infantry."
+	desc = "A spear of Aasimar design, outdated but still serves it's purpose."
 	icon_state = "cspear"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16

@@ -1,7 +1,7 @@
 
 /obj/item/roguekey
 	name = "key"
-	desc = ""
+	desc = "A simple key of simple uses."
 	icon_state = "iron"
 	icon = 'icons/roguetown/items/keys.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'

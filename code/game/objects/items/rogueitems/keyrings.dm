@@ -2,7 +2,7 @@
 
 /obj/item/keyring
 	name = "keyring"
-	desc = ""
+	desc = "A circular ring of metal for hooking additional rings."
 	icon_state = "keyring0"
 	icon = 'icons/roguetown/items/keys.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
