@@ -16,7 +16,7 @@
 
 /obj/item/dmusicbox
 	name = "dwarven music box"
-	desc = "It is essential that the deepest caves be tuned to the right frequency of vibrations."
+	desc = "A renown design of the Dwarven Cult of Malum, bombastic machine with odd musical functions."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "mbox0"
 	gripped_intents = list(INTENT_GENERIC)
