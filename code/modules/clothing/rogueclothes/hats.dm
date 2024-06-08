@@ -399,9 +399,8 @@
 					H.update_inv_head()
 		user.update_fov_angles()
 
-/obj/item/clothing/head/roguetown/helmet/sallet/eleven
-	name = "eleven guardian helmet"
-	desc = "A steel helmet with a thin gold plating designed for Eleven woodland guardians."
+/obj/item/clothing/head/roguetown/helmet/sallet/ele
+	desc = "A steel helmet with a thin gold plating designed for Elven woodland guardians."
 	icon_state = "bascinet_novisor"
 	item_state = "bascinet_novisor"
 	color = COLOR_ASSEMBLY_GOLD

@@ -139,8 +139,8 @@
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_HEAVY
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/eleven
-	name = "eleven guardian cuirass"
+/obj/item/clothing/suit/roguetown/armor/plate/half/elven
+	name = "elven guardian cuirass"
 	desc = "A cuirass made of steel with a thin decorative gold plating. Lightweight and durable."
 	color = COLOR_ASSEMBLY_GOLD
 
