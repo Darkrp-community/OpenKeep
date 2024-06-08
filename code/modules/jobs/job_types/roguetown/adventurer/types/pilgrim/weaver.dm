@@ -10,7 +10,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/seamstress
 	isvillager = TRUE
-	ispilgrim = FALSE
+	ispilgrim = TRUE
 	maxchosen = 1
 
 
