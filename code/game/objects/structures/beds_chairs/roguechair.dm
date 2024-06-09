@@ -283,7 +283,7 @@
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	sleepy = 0.5
 
-/obj/structure/bed/rogue/sleepingbag/attack_hand(mob/user)
+/obj/structure/bed/rogue/sleepingbag/MiddleClick(mob/user, params)
 	..()
 	user.visible_message("<span class='notice'>[user] begins rolling up \the [src].</span>")
 	if(do_after(user, 2 SECONDS, TRUE, src))
