@@ -304,7 +304,7 @@
 		return
 	for(var/obj/A in T)
 		if(istype(A, /obj/structure))
-			to_chat(user, "<span class='warning'>There is already a sleepcloth here!</span>")
+			to_chat(user, "<span class='warning'>I need some free space to deploy a [src] here!</span>")
 			return
 		if(A.density && !(A.flags_1 & ON_BORDER_1))
 			to_chat(user, "<span class='warning'>There is already something here!</span>")
