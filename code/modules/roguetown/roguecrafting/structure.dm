@@ -127,6 +127,18 @@
 	verbage = "construct"
 	verbage_tp = "constructs"
 	craftsound = null
+
+/datum/crafting_recipe/roguetown/structure/loom
+	name = "loom"
+	result = /obj/machinery/loom
+	reqs = list(/obj/item/grown/log/tree/small = 2,
+				/obj/item/grown/log/tree/stick = 2,
+				/obj/item/natural/fibers = 2)
+
+	verbage = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/carpentry
+
 /*
 /datum/crafting_recipe/roguetown/structure/stairs
 	name = "stairs (up)"
