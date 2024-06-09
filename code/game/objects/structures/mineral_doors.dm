@@ -563,6 +563,7 @@
 	max_integrity = 1000
 	damage_deflection = 12
 	layer = ABOVE_MOB_LAYER
+	keylock = TRUE
 	icon = 'icons/roguetown/misc/doors.dmi'
 	blade_dulling = DULLING_BASHCHOP
 	break_sound = 'sound/combat/hits/onwood/destroywalldoor.ogg'
