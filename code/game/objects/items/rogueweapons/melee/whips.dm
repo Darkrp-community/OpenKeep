@@ -15,6 +15,7 @@
 	parrysound = list('sound/combat/parry/parrygen.ogg')
 	swingsound = WHIPWOOSH
 	throwforce = 5
+	canparry = FALSE
 	wdefense = 0
 	minstr = 4
 
@@ -42,7 +43,7 @@
 	attack_verb = list("lashes", "cracks")
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
 	chargetime = 0
-	recovery = 7
+	recovery = 5
 	penfactor = 10
 	reach = 2
 	icon_state = "inlash"
@@ -52,8 +53,8 @@
 	blade_class = BCLASS_LASHING
 	attack_verb = list("cracks", "strikes") //something something dwarf fotresss
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
-	chargetime = 0
-	recovery = 10
+	chargetime = 5
+	recovery = 5
 	penfactor = 20
 	reach = 2
 	icon_state = "incrack"
