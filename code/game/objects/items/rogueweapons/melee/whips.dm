@@ -15,7 +15,6 @@
 	parrysound = list('sound/combat/parry/parrygen.ogg')
 	swingsound = WHIPWOOSH
 	throwforce = 5
-	canparry = FALSE
 	wdefense = 0
 	minstr = 4
 
@@ -33,7 +32,7 @@
 	force = 26
 	name = "Repenta En"
 	desc = "An extremely well maintained whip, with a polished steel tip and gilded handle"
-	minstr = 11
+	minstr = 7
 	icon_state = "gwhip"
 
 
@@ -47,6 +46,7 @@
 	penfactor = 10
 	reach = 2
 	icon_state = "inlash"
+	canparry = FALSE
 
 /datum/intent/whip/crack
 	name = "crack"
@@ -54,6 +54,7 @@
 	attack_verb = list("cracks", "strikes") //something something dwarf fotresss
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
 	chargetime = 5
+	canparry = FALSE
 	recovery = 5
 	penfactor = 20
 	reach = 2
