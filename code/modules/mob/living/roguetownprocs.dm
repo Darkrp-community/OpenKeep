@@ -357,7 +357,7 @@
 			return FALSE
 		if(L)
 			if(H?.check_dodge_skill())
-				prob2defend = prob2defend + (L.STASPD * 15)
+				prob2defend = prob2defend + (L.STASPD * 12)
 			else
 				prob2defend = prob2defend + (L.STASPD * 10)
 		if(U)

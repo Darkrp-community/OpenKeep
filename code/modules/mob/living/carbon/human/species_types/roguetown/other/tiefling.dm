@@ -94,7 +94,7 @@
 /datum/species/tieberian/get_skin_list()
 	return sortList(list(
 	"Castillian" = "cc5757",
-	"Devil" = "ff0000",
+	"Devil" = "a74a4a",
 	"Wicked" = "D2042D",
 	"Gypsy" = "a23737"
 	))
