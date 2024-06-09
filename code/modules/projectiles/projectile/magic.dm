@@ -528,6 +528,23 @@
 			var/obj/item/I = target
 			I.throw_at(throw_target, 200, 4)
 
+/obj/projectile/magic/swap
+	name = "bolt of swapping"
+	icon_state = "cursehand0"
+	range = 6
+
+/obj/projectile/magic/swap/on_hit(target)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/L = target
+		if(L.anti_magic_check() || !firer)
+			L.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			return BULLET_ACT_BLOCK
+		var/Lloc = L.loc
+		var/firerloc = firer.loc
+		L.forceMove(firerloc)
+		firer.forceMove(Lloc)
+
 /obj/projectile/magic/sapping
 	name = "bolt of sapping"
 	icon_state = "sapping"

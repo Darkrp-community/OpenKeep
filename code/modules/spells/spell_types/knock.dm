@@ -12,6 +12,11 @@
 
 	action_icon_state = "knock"
 
+/obj/effect/proc_holder/spell/aoe_turf/knock/nerfed
+	range = 2
+	cooldown_min = 25
+	invocation = "Open up your secrets."
+
 /obj/effect/proc_holder/spell/aoe_turf/knock/cast(list/targets,mob/user = usr)
 	SEND_SOUND(user, sound('sound/blank.ogg'))
 	for(var/turf/T in targets)
