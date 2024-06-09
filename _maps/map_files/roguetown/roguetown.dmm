@@ -1666,7 +1666,7 @@
 	},
 /area/rogue/indoors/town)
 "cuo" = (
-/obj/machinery/light/rogue/campfire/densefire,
+/obj/machinery/light/rogue/campfire,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "cuP" = (
@@ -9772,6 +9772,11 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
+"nZx" = (
+/obj/structure/flora/newtree,
+/obj/structure/flora/newtree,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
 "nZL" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/carpet/royalblack,
@@ -42001,7 +42006,7 @@ uca
 lOR
 uca
 uca
-fsZ
+nZx
 rSN
 fLk
 imw
@@ -73407,9 +73412,9 @@ pxw
 gas
 ckN
 bhm
-mkh
-mkh
-mkh
+doW
+doW
+doW
 doW
 doW
 doW
@@ -73565,8 +73570,8 @@ uaM
 ckN
 bhm
 mkh
-mkh
-mkh
+doW
+doW
 doW
 doW
 doW
@@ -73722,8 +73727,8 @@ lXp
 ckN
 bhm
 mkh
-mkh
-mkh
+doW
+doW
 doW
 doW
 doW
@@ -73878,9 +73883,9 @@ pxw
 oxO
 ckN
 bhm
-mkh
-mkh
-mkh
+doW
+doW
+doW
 doW
 doW
 doW
@@ -74820,7 +74825,7 @@ obZ
 bNO
 bRP
 bhm
-doW
+mkh
 doW
 doW
 doW
@@ -75126,15 +75131,15 @@ doW
 doW
 doW
 doW
-tBD
-bYR
-bYR
-bYR
-tBD
-tBD
+jep
+jep
+jep
+jep
 tBD
 tBD
-doW
+tBD
+tBD
+mkh
 doW
 doW
 doW
@@ -75283,10 +75288,10 @@ doW
 doW
 doW
 doW
-tBD
-bYR
+jep
+jep
 doW
-bYR
+jep
 tBD
 tBD
 tBD
@@ -75441,9 +75446,9 @@ doW
 doW
 doW
 doW
-bYR
-bYR
-bYR
+jep
+jep
+jep
 doW
 doW
 doW
@@ -75600,7 +75605,7 @@ doW
 doW
 doW
 doW
-doW
+mkh
 doW
 doW
 doW
@@ -75758,7 +75763,7 @@ doW
 doW
 doW
 doW
-doW
+mkh
 doW
 doW
 doW
@@ -99463,9 +99468,9 @@ mNp
 mNp
 mNp
 doW
-bYR
-bYR
-bYR
+doW
+doW
+doW
 doW
 doW
 doW
@@ -99620,9 +99625,9 @@ mNp
 mNp
 mNp
 doW
-bYR
 doW
-bYR
+doW
+doW
 doW
 doW
 doW
@@ -99777,9 +99782,9 @@ mNp
 mNp
 mNp
 doW
-bYR
-bYR
-bYR
+doW
+doW
+doW
 doW
 doW
 doW
