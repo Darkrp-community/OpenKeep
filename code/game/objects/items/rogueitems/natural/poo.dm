@@ -1,6 +1,6 @@
 /obj/item/natural/poo
 	name = "nitesoil"
-	desc = "This smells bad.Excrement from some disgusting individual."
+	desc = "This smells bad. Excrement from some disgusting individual."
 	icon_state = "humpoo"
 	dropshrink = 0.75
 	throwforce = 0
