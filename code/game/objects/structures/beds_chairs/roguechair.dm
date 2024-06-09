@@ -303,7 +303,7 @@
 		to_chat(user, "<span class='warning'>I need ground to plant this on!</span>")
 		return
 	for(var/obj/A in T)
-		if(istype(A, /obj/structure/chair))
+		if(istype(A, /obj/structure))
 			to_chat(user, "<span class='warning'>There is already a sleepcloth here!</span>")
 			return
 		if(A.density && !(A.flags_1 & ON_BORDER_1))
