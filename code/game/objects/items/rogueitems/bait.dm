@@ -101,7 +101,7 @@
 
 /obj/item/bait/bloody
 	name = "bag of bloodbait"
-	desc = "Hopefully lickers don't get attracted to this..."
+	desc = "A deployable bag of bait used by hunters to attract predators within the wilds."
 	icon_state = "baitb"
 	attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 20,
 						/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10)

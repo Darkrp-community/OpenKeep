@@ -1,6 +1,6 @@
 /obj/structure/handcart
 	name = "cart"
-	desc = "A wooden cart that will help you carry many things."
+	desc = "A faithful handcart for logistical and transporation uses."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "cart-empty"
 	density = TRUE

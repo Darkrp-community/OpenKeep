@@ -36,7 +36,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/ingot/copper)
-	created_item = (/obj/item/rogueweapon/stoneaxe/copperaxe)
+	created_item = (/obj/item/rogueweapon/copperaxe)
 
 /datum/anvil_recipe/weapons/cspears
 	name = "copper spears (+4s)"
@@ -60,12 +60,6 @@
 	created_item = list(/obj/item/rogueweapon/huntingknife/idagger,
 	/obj/item/rogueweapon/huntingknife/idagger)
 
-/datum/anvil_recipe/weapons/sdagger
-	name = "steel dagger"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/steel
-	created_item = list(/obj/item/rogueweapon/huntingknife/idagger/steel,
-	/obj/item/rogueweapon/huntingknife/idagger/steel)
 
 /datum/anvil_recipe/weapons/sidagger
 	name = "silver dagger"
@@ -89,11 +83,25 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/sword/iron/messer
 
+/datum/anvil_recipe/weapons/halberd/iron
+	name = "halbet (2) (+w)"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
+	created_item = /obj/item/rogueweapon/halberd/iron
+
 // STEEL GEAR - Fancy shit for Knights
 /datum/anvil_recipe/weapons/sflail
 	name = "steel flail"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/flail/sflail
+
+/datum/anvil_recipe/weapons/sdagger
+	name = "steel dagger"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	created_item = list(/obj/item/rogueweapon/huntingknife/idagger/steel,
+	/obj/item/rogueweapon/huntingknife/idagger/steel)
 
 /datum/anvil_recipe/weapons/ssword
 	name = "steel sword"
@@ -158,21 +166,21 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/stoneaxe/battle
+	created_item = /obj/item/rogueweapon/battle
 
 /datum/anvil_recipe/weapons/saxe
 	name = "steel axe (+s)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/item/rogueweapon/stoneaxe/woodcut/steel
+	created_item = /obj/item/rogueweapon/woodcut/steel
 
 /datum/anvil_recipe/weapons/axe
 	name = "axe (+s)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/item/rogueweapon/stoneaxe/woodcut
+	created_item = /obj/item/rogueweapon/woodcut
 
 /datum/anvil_recipe/weapons/hknife
 	name = "hunting knife"

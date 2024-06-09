@@ -9,6 +9,7 @@
 	force = 23
 	throwforce = 7
 	throw_range = 4
+	dropshrink = 0.8
 	var/datum/looping_sound/dmusloop/soundloop
 	var/list/song_list = list()
 	var/playing = FALSE
@@ -88,7 +89,7 @@
 /obj/item/rogue/instrument/lute
 	force = 15
 	name = "lute"
-	desc = "Its graceful curves were designed to weave joyful melodies."
+	desc = "The favored instrument of Eora, made of wood and simple string."
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	icon_state = "lute"
 	minstr = 0
@@ -104,7 +105,7 @@
 
 /obj/item/rogue/instrument/accord
 	name = "accordion"
-	desc = "A harmonious vessel of nostalgia and celebration."
+	desc = "A complex piece of dwarven intuition, composed of metal, wood, hide and ivory. Favored by Abyssorian bards."
 	icon_state = "accordion"
 	song_list = list("Song 1" = 'sound/music/instruments/accord (1).ogg',
 	"Song 2" = 'sound/music/instruments/accord (2).ogg',
@@ -114,11 +115,11 @@
 	"Song 6" = 'sound/music/instruments/accord (6).ogg')
 
 /obj/item/rogue/instrument/guitar
-	force = 15
 	name = "guitar"
-	desc = "A guitar made of expensive wood and expert craftsmanship."
+	desc = "A corrupted lute, a heritage instrument of Tiefling pedigree."
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	icon_state = "guitar"
+	force = 15
 	minstr = 0
 	wbalance = 0
 	wdefense = 1
@@ -127,11 +128,20 @@
 	"Song 3" = 'sound/music/instruments/guitar (3).ogg',
 	"Song 4" = 'sound/music/instruments/guitar (4).ogg',
 	"Song 5" = 'sound/music/instruments/guitar (5).ogg',
-	"Song 6" = 'sound/music/instruments/guitar (6).ogg')
+	"Song 6" = 'sound/music/instruments/guitar (6).ogg',
+	"Tiberian Sunset" = 'sound/music/instruments/guitar (Tiberian Sunset).ogg',	
+	"Romanza" = 'sound/music/instruments/guitar (Romanza).ogg',	
+	"Malaguena" = 'sound/music/instruments/guitar (Malaguena).ogg',
+	"Cancion del mariachi" = 'sound/music/instruments/guitar (Cancion del mariachi).ogg',	
+	"El Masque" = 'sound/music/instruments/guitar (El Masque).ogg',
+	"Evolvado" = 'sound/music/instruments/guitar (Evolvado).ogg',	
+	"Asturias" = 'sound/music/instruments/guitar (Asturias).ogg',
+	"La Follia" = 'sound/music/instruments/guitar (La Follia).ogg',	
+	)
 
 /obj/item/rogue/instrument/harp
 	name = "harp"
-	desc = "A harp of elven craftsmanship."
+	desc = "An elven instrument of a great and proud heritage."
 	icon_state = "harp"
 	song_list = list("Song 1" = 'sound/music/instruments/harb (1).ogg',
 	"Song 2" = 'sound/music/instruments/harb (2).ogg',
@@ -139,7 +149,7 @@
 
 /obj/item/rogue/instrument/flute
 	name = "flute"
-	desc = "A slender flute carefully carved from a smooth wood piece."
+	desc = "A cacophonous wind-instrument, played primarily by humens all around Grimoria."
 	icon_state = "flute"
 	song_list = list("Song 1" = 'sound/music/instruments/flute (1).ogg',
 	"Song 2" = 'sound/music/instruments/flute (2).ogg',
@@ -150,7 +160,7 @@
 
 /obj/item/rogue/instrument/drum
 	name = "drum"
-	desc = "Fashioned from taut skins across a sturdy frame, pulses like a giant heartbeat."
+	desc = "The adopted instrument of Aasimar, used for signaling and rhythmic marches alike."
 	icon_state = "drum"
 	song_list = list("Song 1" = 'sound/music/instruments/drum (1).ogg',
 	"Song 2" = 'sound/music/instruments/drum (2).ogg',

@@ -33,7 +33,7 @@
 
 /obj/item/natural/rock
 	name = "rock"
-	desc = "A rock protudes from the ground."
+	desc = "A large stone that looks breakable."
 	icon_state = "stonebig1"
 	dropshrink = 0
 	throwforce = 25

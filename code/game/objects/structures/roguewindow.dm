@@ -1,7 +1,7 @@
 
 /obj/structure/roguewindow
 	name = "window"
-	desc = "A glass window. Glass is very rare nowadays."
+	desc = "A window of simple paned glass."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "window-solid"
 	layer = TABLE_LAYER

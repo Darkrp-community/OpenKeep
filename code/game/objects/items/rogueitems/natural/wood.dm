@@ -2,7 +2,7 @@
 	icon = 'icons/roguetown/items/natural.dmi'
 	seed = null
 	name = "log"
-	desc = "A big tree log. It's very heavy, and huge."
+	desc = "Refined lumber, ready for use or processing."
 	icon_state = "log"
 	blade_dulling = DULLING_CUT
 	max_integrity = 30
@@ -19,6 +19,7 @@
 	name = "small log"
 	desc = "A smaller log that came from a larger log. Suitable for building."
 	icon_state = "logsmall"
+	desc = "A chopped piece of refined lumber, ready for use or processing."
 	max_integrity = 30
 	static_debris = list(/obj/item/grown/log/tree/stick = 3)
 	firefuel = 20 MINUTES
@@ -30,7 +31,7 @@
 /obj/item/grown/log/tree/stick
 	seed = null
 	name = "stick"
-	desc = "A dry stick from a tree branch."
+	desc = "A wooden stick, a mighty weapon to the imaginative."
 	icon_state = "stick1"
 	blade_dulling = 0
 	max_integrity = 20
@@ -95,7 +96,7 @@
 
 /obj/item/grown/log/tree/stake
 	name = "stake"
-	desc = "A wooden stake, and it's pointy end!"
+	desc = "A sharpened piece of wood, fantastic for piercing"
 	icon_state = "stake"
 	force = 2
 	throwforce = 2
