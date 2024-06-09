@@ -414,7 +414,7 @@
 							else
 								to_chat(src, "<span class='warning'>I didn't find anything there. Perhaps I should look elsewhere.</span>")
 						else
-							to_chat(src, "I fumbled it!")
+							to_chat(src, "<span class='warning'>I fumbled it!")
 					if(stealroll <= 4)
 						to_chat(V, "<span class='danger'>Someone tried pickpocketing me!</span>")
 					if(stealroll < targetperception)
