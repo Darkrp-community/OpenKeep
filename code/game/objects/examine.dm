@@ -41,7 +41,7 @@
 			. += "[src] is made of fire-retardant materials."
 */
 // Only show if it's actually useable as bait, so that it doesn't show up on every single item of the game.
-	if(!baitpenalty <= 100)
+	if(isbait)
 		var/baitquality = ""
 		switch(baitpenalty)
 			if(0)

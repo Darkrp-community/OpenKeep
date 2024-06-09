@@ -28,7 +28,7 @@
 
 /obj/item/fishingrod/attackby(obj/item/I, mob/user, params)
 	if(!baited)
-		if(!I.baitpenalty <= 100) // Don't use anything with baitpenalty of 100
+		if(isbait) // Don't use items that aren't bait
 			user.visible_message("<span class='notice'>[user] hooks something to the line.</span>", \
 								"<span class='notice'>I hook [I] to my line.</span>")
 			playsound(src.loc, 'sound/foley/pierce.ogg', 50, FALSE)
