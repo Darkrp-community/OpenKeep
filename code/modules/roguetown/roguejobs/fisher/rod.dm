@@ -86,7 +86,8 @@
 						var/fishchance = 100 // Total fishing chance, deductions applied below
 						if(user.mind)
 							if(!sl) // If we have zero fishing skill...
-								fishchance -= 60 // 40% chance to fish no matter the bait
+								fishchance -= 60 // 40% chance to fish base
+								fishchance -= bp // On top of it, deduct penalties from bait quality, if any
 							else
 								fishchance -= bp // Deduct penalties from bait quality, if any
 								fishchance -= fpp // Deduct a penalty the lower our fishing level is (-0 at legendary)

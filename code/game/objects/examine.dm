@@ -40,6 +40,17 @@
 		if(resistance_flags & FIRE_PROOF)
 			. += "[src] is made of fire-retardant materials."
 */
+// Only show if it's actually useable as bait, so that it doesn't show up on every single item of the game.
+	if(!baitpenalty <= 100)
+		var/baitquality = ""
+		switch(baitpenalty)
+			if(0)
+				baitquality = "excellent"
+			if(5)
+				baitquality = "good"
+			if(10)
+				baitquality = "passable"
+		. += "<span class='info'>It is \a [baitquality] bait for fish.</span>"		
 
 	for(var/datum/examine_effect/E in examine_effects)
 		E.trigger(user)

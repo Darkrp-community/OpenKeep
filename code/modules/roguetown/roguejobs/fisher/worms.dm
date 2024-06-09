@@ -1,5 +1,5 @@
 /obj/item
-	var/baitpenalty = 100 // Using this as bait will incurr a penalty to fishing chance. 100 makes it useless as bait.
+	var/baitpenalty = 100 // Using this as bait will incurr a penalty to fishing chance. 100 makes it useless as bait. Lower values are better, but Never make it past 10.
 	var/list/fishloot = null
 
 /obj/item/natural/worms
