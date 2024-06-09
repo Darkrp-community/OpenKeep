@@ -19,7 +19,6 @@
 	name = "small log"
 	desc = "A smaller log that came from a larger log. Suitable for building."
 	icon_state = "logsmall"
-	desc = "A chopped piece of refined lumber, ready for use or processing."
 	max_integrity = 30
 	static_debris = list(/obj/item/grown/log/tree/stick = 3)
 	firefuel = 20 MINUTES
