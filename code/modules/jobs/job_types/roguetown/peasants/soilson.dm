@@ -38,7 +38,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(2,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/farming, pick(3,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 
@@ -51,10 +51,11 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		belt = /obj/item/storage/belt/rogue/leather/rope
+		beltr = /obj/item/roguekey/soilson
 		beltl = /obj/item/rogueweapon/huntingknife
 		H.change_stat("strength", 2)
 		H.change_stat("constitution", 1)
-		H.change_stat("intelligence", 1)
+		H.change_stat("intelligence", 2)
 		H.change_stat("speed", 1)
 	else
 		head = /obj/item/clothing/head/roguetown/armingcap
@@ -63,6 +64,7 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		belt = /obj/item/storage/belt/rogue/leather/rope
+		beltr = /obj/item/roguekey/soilson
 		beltl = /obj/item/rogueweapon/huntingknife
 		H.change_stat("strength", 1)
 		H.change_stat("constitution", 1)

@@ -67,7 +67,7 @@
 /obj/item/roguekey/soilson
 	name = "Soilson Key"
 	icon_state = "rustkey"
-	lockid = "woodsm"
+	lockid = "soilson"
 
 /obj/item/roguekey/warehouse
 	name = "Warehouse Key"
@@ -79,8 +79,8 @@
 	icon_state = "cheesekey"
 	lockid = "vault"
 
-/obj/item/roguekey/sheriff
-	name = "bailiff's key"
+/obj/item/roguekey/captain
+	name = "captain's key"
 	icon_state = "cheesekey"
 	lockid = "sheriff"
 
