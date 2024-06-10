@@ -285,6 +285,9 @@
 						used += 5
 			if(owner == user)
 				used = 80
+			if(HAS_TRAIT(user, RTRAIT_SILENTKILLER)) // assassino
+				if(owner.stat != CONSCIOUS)
+					used = 80
 			if(prob(used))
 				playsound(owner, pick('sound/combat/crit.ogg'), 100, FALSE)
 				if(owner.stat != DEAD)

@@ -28,7 +28,17 @@
 	wdefense = 3
 	smeltresult = /obj/item/ingot/steel
 
+/obj/item/rogueweapon/huntingknife/wristblade
+	name = "wrist blade"
+	desc = "More so like the blade itself."
+	icon_state = "wristbladeitem"
 
+/obj/item/rogueweapon/huntingknife/wristblade/dropped(mob/user, silent) // failsafe
+	qdel(src)
+
+/obj/item/rogueweapon/huntingknife/wristblade/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 /datum/intent/dagger
 	clickcd = 8

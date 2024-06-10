@@ -16,6 +16,7 @@
 #define RTRAIT_HEAVYARMOR				"Plate Training"
 #define RTRAIT_DODGEEXPERT              "Fast Reflexes"
 #define RTRAIT_VILLAIN					"Villain"
+#define RTRAIT_SILENTKILLER				"Silent Killer"
 
 #define TRAIT_NOFATSTAM				"nofatstam" //for ai
 #define TRAIT_NOSLEEP				"nosleep"
@@ -44,7 +45,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	RTRAIT_MEDIUMARMOR = "I can move freely in medium armor.",
 	RTRAIT_HEAVYARMOR = "I can move freely in heavy armor.",
 	RTRAIT_DODGEEXPERT = "I can dodge easly while only wearing light armor.",
-	RTRAIT_VILLAIN = "I am a devious, conniving villain!"
+	RTRAIT_VILLAIN = "I am a devious, conniving villain!",
+	RTRAIT_SILENTKILLER = "I was embowed with the ability to know my way around the wrist blades, a sleeping man will be dead in mere seconds with their throat slit."
 	))
 
 

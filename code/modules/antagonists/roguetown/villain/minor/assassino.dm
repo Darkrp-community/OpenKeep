@@ -13,8 +13,10 @@
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/traitor.ogg', 80, FALSE, pressure_affected = FALSE)
 	. = ..()
 	ADD_TRAIT(owner.current, RTRAIT_VILLAIN, TRAIT_GENERIC)
+	ADD_TRAIT(owner.current, RTRAIT_SILENTKILLER, TRAIT_GENERIC)
+	ADD_TRAIT(owner.current, RTRAIT_ZJUMP, TRAIT_GENERIC) // this might be OP or very irrelevant but we can't tell before we test merge
 	var/mob/living/carbon/human/H = owner.current
-	H.change_stat("strength", -3)
+	H.change_stat("strength", -4)
 	H.change_stat("speed", 4)
 	H.change_stat("intelligence", 2)
 	H.change_stat("endurance", 2)
@@ -22,8 +24,8 @@
 	H.cmode_music = 'sound/music/combatsneaky.ogg'
 	owner.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE) // Knows their way around the blade. Or so.
 	owner.adjust_skillrank(/datum/skill/combat/unarmed, -1, TRUE)
-	owner.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
-	owner.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE)
+	owner.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
+	owner.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
 	owner.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 	owner.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE)
 
@@ -32,6 +34,7 @@
 
 /datum/antagonist/assassino/greet()
 	to_chat(owner.current, "<span class='userdanger'>They call me the Assassino, I am sent to places when some things just aren't right. And I have lots of correcting to do.</span>")
+	to_chat(owner.current, "<span class='userdanger'>Noble crow mailmen deliver me messages to use the <b>middle-mind</b> on any bush, tree, clock or even statue to summon up a hidden compartment to reveal my 'Articulus Ferrum'. My wrist mounted blade.</span>")
 	owner.announce_objectives()
 	..()
 
@@ -64,3 +67,29 @@
 		to_chat(owner.current,"<span class='danger'>I am no longer a [job_rank]!</span>")
 	owner.special_role = null
 	return ..()
+
+// WRIST BLADE
+
+/obj/item/clothing/wrists/roguetown/bracers/wristblade // TODO: make this bring up the blade in the dominant hand
+	desc = "Engrained into the metal, skillfully crafted a message reads: 'Articulus Ferrum, the article of iron. The Wrist Blade.' Curious."
+	var/deployed = FALSE
+
+/obj/item/clothing/wrists/roguetown/bracers/wristblade/MiddleClick(mob/user, params)
+	. = ..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(!can_use)
+			return
+		if(deployed)
+			owner.current.playsound_local(get_turf(owner.current), 'sound/combat/hiddenbladeretract.ogg', 80, FALSE, pressure_affected = FALSE)
+			qdel(blade)
+			deployed = FALSE
+		else
+			owner.current.playsound_local(get_turf(owner.current), 'sound/combat/hiddenbladedraw.ogg', 80, FALSE, pressure_affected = FALSE)
+			var/obj/item/rogueweapon/huntingknife/wristblade/thing = new
+			H.put_in_r_hand(thing)
+
+/obj/item/clothing/wrists/roguetown/bracers/wristblade/examine(mob/user)
+	. = ..()
+	if(user.mind.special_role == "Assassin")
+		to_chat(user, "The noble crow mailmen tell me of a middle mind to bring the blade to stab. It will only raise if the right hand is unoccupied.")
