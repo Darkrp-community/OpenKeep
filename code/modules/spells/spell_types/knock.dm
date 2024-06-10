@@ -14,7 +14,7 @@
 
 /obj/effect/proc_holder/spell/aoe_turf/knock/nerfed
 	range = 2
-	cooldown_min = 25
+	cooldown_min = 70
 	invocation = "Open up your secrets."
 
 /obj/effect/proc_holder/spell/aoe_turf/knock/cast(list/targets,mob/user = usr)
