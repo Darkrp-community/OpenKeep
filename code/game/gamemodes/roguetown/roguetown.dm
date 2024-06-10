@@ -163,14 +163,42 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 				pick_bandits()
 				log_game("Minor Antagonist: Bandit")
 			if(2)
-				pick_bandits()
-				log_game("Minor Antagonist: Aspirant")
+				pick_assassino()
+				log_game("Minor Antagonist: Assassino")
 			if(3)
 				log_game("Minor Antagonist: Extended") // placeholder.
 		if(prob(30))
 			continue
 		else
 			return TRUE
+
+/datum/game_mode/chaosmode/proc/pick_assassino()
+	//ASSASSINO
+	restricted_jobs = list("King",
+	"Queen",
+	"Merchant",
+	"Steward",
+	"Priest")
+
+	antag_candidates = get_players_for_role(ROLE_ASSASSIN)
+	var/datum/mind/villain = pick_n_take(antag_candidates)
+	if(villain)
+		var/blockme = FALSE
+		if(!(villain in allantags))
+			blockme = TRUE
+		if(villain.assigned_role in GLOB.youngfolk_positions)
+			blockme = TRUE
+		if(blockme)
+			return
+		allantags -= villain
+		pre_villains += villain
+		villain.special_role = "Assassin"
+		villain.restricted_roles = restricted_jobs.Copy()
+		testing("[key_name(villain)] has been selected as the [villain.special_role]")
+		log_game("[key_name(villain)] has been selected as the [villain.special_role]")
+	for(var/antag in pre_villains)
+		GLOB.pre_setup_antags |= antag
+	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_bandits()
 	//BANDITS
