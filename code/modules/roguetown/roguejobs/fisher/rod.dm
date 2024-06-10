@@ -104,11 +104,11 @@
 										new M(target)
 									else
 										new M(user.loc)
-									user.mind.adjust_experience(/datum/skill/labor/fishing, fisherman.STAINT, FALSE) // High risk high reward
+									user.mind.adjust_experience(/datum/skill/labor/fishing, fisherman.STAINT * 2, FALSE) // High risk high reward
 								else
 									new A(user.loc)
 									to_chat(user, "<span class='warning'>Reel 'em in!</span>")
-									user.mind.adjust_experience(/datum/skill/labor/fishing, round(fisherman.STAINT/2, 1), FALSE) // Level up!
+									user.mind.adjust_experience(/datum/skill/labor/fishing, round(fisherman.STAINT + (sl * 5), 1), FALSE) // Level up!
 								playsound(src.loc, 'sound/items/Fish_out.ogg', 100, TRUE)
 								if(prob(80 - (sl * 10))) // Higher skill levels make you less likely to lose your bait
 									to_chat(user, "<span class='warning'>Damn, it ate my bait.</span>")
