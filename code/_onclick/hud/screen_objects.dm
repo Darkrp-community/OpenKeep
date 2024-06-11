@@ -251,6 +251,7 @@
 
 
 /atom/movable/screen/inventory/hand
+	nomouseover =  TRUE
 	var/mutable_appearance/handcuff_overlay
 	var/static/mutable_appearance/blocked_overlay = mutable_appearance('icons/mob/screen_gen.dmi', "blocked")
 	var/held_index = 0
@@ -844,29 +845,38 @@
 			var/mob/living/L = hud.mymob
 			L.look_around()
 
-/atom/movable/screen/eye_intent/update_icon(mob/user)
-    if(!user && hud)
-        user = hud.mymob
-    if(!user)
-        return
-    if(!isliving(user))
-        return
-    cut_overlays()
-    var/mob/living/L = user
-    if(L.eyesclosed)
-        icon_state = "eye_closed"
-    else if(user.tempfixeye)
-        icon_state = "eye_target"
-    else if(user.fixedeye)
-        icon_state = "eye_fixed"
-    else
-        icon_state = "eye"
-    /*if(ishuman(user))
-        var/mob/living/carbon/human/H = user
-        if(H.eye_color)
-            var/mutable_appearance/MA = mutable_appearance(icon, "o[icon_state]")
-            MA.color = "#[H.eye_color]"
-            add_overlay(MA)*/
+/atom/movable/screen/eye_intent/update_icon_state()
+	. = ..()
+	var/mob/living/L = hud.mymob
+	if(!istype(L))
+		icon_state = "eye"
+		return
+	if(L.eyesclosed)
+		icon_state = "eye_closed"
+	else if(L.tempfixeye)
+		icon_state = "eye_target"
+	else if(L.fixedeye)
+		icon_state = "eye_fixed"
+	else
+		icon_state = "eye"
+
+/atom/movable/screen/eye_intent/update_overlays()
+	. = ..()
+	var/mob/living/carbon/human/human = hud.mymob
+	if(!istype(human))
+		return
+	var/mutable_appearance/iris = mutable_appearance(src.icon, "oeye")
+	switch(icon_state)
+		if("eye_closed")
+			iris.icon_state = "oeye_closed"
+		if("eye_target")
+			iris.icon_state = "oeye_target"
+		if("eye_fixed")
+			iris.icon_state = "oeye_fixed"
+		else
+			iris.icon_state = "oeye"
+	iris.color = "#" + human.eye_color
+	. += iris
 
 /atom/movable/screen/eye_intent/proc/toggle(mob/user)
 	if(isobserver(user))
@@ -1020,7 +1030,7 @@
 
 	if(PL["right"] && ishuman(hud.mymob))
 		var/mob/living/carbon/human/H = hud.mymob
-		return H.check_limb_for_injuries(check_zone(choice))
+		return H.check_limb_for_injuries(H, choice = check_zone(choice))
 	else
 		return set_selected_zone(choice, usr)
 
@@ -1344,9 +1354,6 @@
 				. += limby
 				continue
 			var/damage = BP.burn_dam + BP.brute_dam
-			if(BP.wounds.len)
-				for(var/datum/wound/W in BP.wounds)
-					damage = damage + W.woundpain
 			if(damage > BP.max_damage)
 				damage = BP.max_damage
 			var/comparison = (damage/BP.max_damage)
@@ -1475,39 +1482,14 @@
 	if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
 		if(modifiers["left"])
-			var/headpercent	= 0
-			var/burnspercent	= 0
-			var/toxpercent = H.getToxLoss()
-			var/oxpercent = H.getOxyLoss()
-			var/bloodpercent = (H.blood_volume / BLOOD_VOLUME_NORMAL) * 100
-			for(var/X in H.bodyparts)	//hardcoded to streamline things a bit
-				var/obj/item/bodypart/BP = X
-				if(BP.name == "head")
-					headpercent	+= (BP.brute_dam / BP.max_damage) * 100
-					if(burnspercent < BP.burn_dam)
-						burnspercent = (BP.burn_dam / BP.max_damage) * 100
-				if(BP.name == "chest")
-					if(burnspercent < BP.burn_dam)
-						burnspercent = (BP.burn_dam / BP.max_damage) * 100
-
-			if(headpercent)
-				to_chat(H, "<span class='purple'>Mortal Wounds</span>")
-			if(burnspercent)
-				to_chat(H, "<span class='orange'>Mortal Burns</span>")
-			if(bloodpercent < 100)
-				to_chat(H, "<span class='red'>Bloodloss</span>")
-			if(toxpercent)
-				to_chat(H, "<span class='green'>Poisoned</span>")
-			if(oxpercent)
-				to_chat(H, "<span class='grey'>Suffocation</span>")
-			if(H.nutrition < 0)
-				to_chat(H, "<span class='red'>Starving to Death</span>")
+			H.check_for_injuries(H)
 		if(modifiers["right"])
-			if(H.mind)
-				if(H.mind.known_people.len)
-					H.mind.display_known_people(H)
-				else
-					to_chat(H, "<span class='warning'>I don't know anyone.</span>")
+			if(!H.mind)
+				return
+			if(length(H.mind.known_people))
+				H.mind.display_known_people(H)
+			else
+				to_chat(H, "<span class='warning'>I don't know anyone.</span>")
 
 /atom/movable/screen/splash
 	icon = 'icons/blank_title.png'
@@ -1619,6 +1601,7 @@
 	screen_loc = ui_backhudl
 	layer = BACKHUD_LAYER
 	plane = FULLSCREEN_PLANE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /atom/movable/screen/backhudl/Click()
 	return

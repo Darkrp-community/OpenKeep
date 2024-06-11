@@ -16,6 +16,7 @@
 					/obj/item/reagent_containers/food/snacks/fish/eel = 5,
 					/obj/item/reagent_containers/food/snacks/fish/angler = 1)
 	drop_sound = 'sound/foley/dropsound/food_drop.ogg'
+	var/amt = 1
 
 /obj/item/natural/worms/grubs
 	name = "grub"
@@ -27,3 +28,10 @@
 		/obj/item/reagent_containers/food/snacks/fish/angler = 1,
 		/obj/item/reagent_containers/food/snacks/fish/clownfish = 1,
 	)
+
+/obj/item/natural/worms/update_icon()
+	icon_state = "worm[amt]"
+	if(amt > 1)
+		name = "[initial(name)]s"
+	else
+		name = initial(name)

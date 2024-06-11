@@ -183,7 +183,7 @@
 		if(user.goodluck(2))
 			dam += 10
 	if(bclass in GLOB.dislocation_bclasses)
-		used = round(damage_dividend * 20 + (dam / 3), 1)
+		used = round(damage_dividend * 20 + (dam / 6), 1)
 		if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 			used += 10
 		if(prob(used))
@@ -192,7 +192,7 @@
 			else
 				attempted_wounds += /datum/wound/dislocation
 	if(bclass in GLOB.fracture_bclasses)
-		used = round(damage_dividend * 20 + (dam / 3), 1)
+		used = round(damage_dividend * 20 + (dam / 6), 1)
 		if(user)
 			if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 				used += 10
@@ -202,7 +202,7 @@
 			attempted_wounds += /datum/wound/dislocation
 			attempted_wounds += /datum/wound/fracture
 	if(bclass in GLOB.artery_bclasses)
-		used = round(damage_dividend * 20 + (dam / 3), 1)
+		used = round(damage_dividend * 20 + (dam / 6), 1)
 		if(user)
 			if((bclass in GLOB.artery_strong_bclasses) && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				used += 10
@@ -238,7 +238,7 @@
 			owner.emote("groin", TRUE)
 			owner.Stun(10)
 	if((bclass in GLOB.fracture_bclasses) && (zone_precise != BODY_ZONE_PRECISE_STOMACH))
-		used = round(damage_dividend * 20 + (dam / 3), 1)
+		used = round(damage_dividend * 20 + (dam / 6), 1)
 		if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 			used += 10
 		if(HAS_TRAIT(src, TRAIT_BRITTLE))
@@ -284,14 +284,14 @@
 		if(user.goodluck(2))
 			dam += 10
 	if((bclass in GLOB.dislocation_bclasses) && (total_dam >= max_damage))
-		used = round(damage_dividend * 20 + (dam / 3), 1)
+		used = round(damage_dividend * 20 + (dam / 6), 1)
 		if(prob(used))
 			if(HAS_TRAIT(src, TRAIT_BRITTLE))
 				attempted_wounds += /datum/wound/fracture/neck
 			else
 				attempted_wounds += /datum/wound/dislocation/neck
 	if(bclass in GLOB.fracture_bclasses)
-		used = round(damage_dividend * 20 + (dam / 3), 1)
+		used = round(damage_dividend * 20 + (dam / 6), 1)
 		if(HAS_TRAIT(src, TRAIT_BRITTLE))
 			used += 20
 		if(user)
@@ -324,7 +324,7 @@
 				attempted_wounds += dislocation_type
 			attempted_wounds += fracture_type
 	if(bclass in GLOB.artery_bclasses)
-		used = round(damage_dividend * 20 + (dam / 3), 1)
+		used = round(damage_dividend * 20 + (dam / 6), 1)
 		if(user)
 			if(bclass == BCLASS_CHOP)
 				if(istype(user.rmb_intent, /datum/rmb_intent/strong))
@@ -342,7 +342,7 @@
 					var/obj/item/organ/ears/my_ears = owner.getorganslot(ORGAN_SLOT_EARS)
 					if(!my_ears || has_wound(/datum/wound/facial/ears))
 						attempted_wounds += /datum/wound/fracture/head/ears
-					else 
+					else
 						attempted_wounds += /datum/wound/facial/ears
 				else if(zone_precise in eyestab_zones)
 					var/obj/item/organ/my_eyes = owner.getorganslot(ORGAN_SLOT_EYES)
@@ -378,7 +378,7 @@
 	if(!embedder || !can_embed(embedder))
 		return FALSE
 	if(owner && ((owner.status_flags & GODMODE) || HAS_TRAIT(owner, TRAIT_PIERCEIMMUNE)))
-		return FALSE 
+		return FALSE
 	LAZYADD(embedded_objects, embedder)
 	embedder.is_embedded = TRUE
 	embedder.forceMove(src)
