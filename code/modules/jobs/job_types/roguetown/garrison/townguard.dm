@@ -50,7 +50,7 @@
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
-	if(prob(50))
+	if(prob(30))
 		head = /obj/item/clothing/head/roguetown/helmet/kettle
 	else
 		head = /obj/item/clothing/head/roguetown/helmet
