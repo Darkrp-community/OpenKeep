@@ -173,7 +173,7 @@ SUBSYSTEM_DEF(ticker)
 			for(var/client/C in GLOB.clients)
 				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
 //			to_chat(world, "<span class='boldnotice'>Welcome to [station_name()]!</span>")
-			send2chat(new /datum/tgs_message_content("New round starting on [SSmapping.config.map_name]!"), CONFIG_GET(string/chat_announce_new_game))
+//			send2chat(new /datum/tgs_message_content("New round starting on [SSmapping.config.map_name]!"), CONFIG_GET(string/chat_announce_new_game))
 			current_state = GAME_STATE_PREGAME
 			//Everyone who wants to be an observer is now spawned
 			create_observers()
@@ -216,6 +216,7 @@ SUBSYSTEM_DEF(ticker)
 					timeLeft = null
 					Master.SetRunLevel(RUNLEVEL_LOBBY)
 				else
+					send2chat(new /datum/tgs_message_content("New round starting on [SSmapping.config.map_name]!"), CONFIG_GET(string/chat_announce_new_game))
 					current_state = GAME_STATE_SETTING_UP
 					Master.SetRunLevel(RUNLEVEL_SETUP)
 					if(start_immediately)
@@ -243,7 +244,7 @@ SUBSYSTEM_DEF(ticker)
 			if(firstvote)
 				if(world.time > round_start_time + time_until_vote)
 					SSvote.initiate_vote("restart", "The Gods")
-					time_until_vote = 20 MINUTES
+					time_until_vote = 40 MINUTES
 					last_vote_time = world.time
 					firstvote = FALSE
 			else

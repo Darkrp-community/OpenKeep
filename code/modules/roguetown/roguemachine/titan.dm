@@ -12,7 +12,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	return laws[chosen_lawset]["laws"]
 
 /obj/structure/roguemachine/titan
-	name = "throat"
+	name = "THROAT"
 	desc = "He who wears the crown holds the key to this strange thing. If all else fails, yell \"Help!\""
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = ""
@@ -74,7 +74,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	switch(mode)
 		if(0)
 			if(findtext(message2recognize, "help"))
-				say("My commands are: Make Decree, Make Announcement, Set Taxes, Declare Outlaw, Summon Crown, Nevermind")
+				say("My commands are: Make Announcement, Make Decree, Make Law, Remove Law, Purge Laws, Declare Outlaw, Set Taxes, Summon Crown, Nevermind")
 				playsound(src, 'sound/misc/machinelong.ogg', 100, FALSE, -1)
 			if(findtext(message2recognize, "make announcement"))
 				if(nocrown)

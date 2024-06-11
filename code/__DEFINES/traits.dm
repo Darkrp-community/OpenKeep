@@ -14,6 +14,7 @@
 #define RTRAIT_BREADY					"Battleready"
 #define RTRAIT_MEDIUMARMOR				"Maille Training"
 #define RTRAIT_HEAVYARMOR				"Plate Training"
+#define RTRAIT_DODGEEXPERT              "Fast Reflexes"
 #define RTRAIT_VILLAIN					"Villain"
 #define RTRAIT_CRITICAL_RESISTANCE		"Critical Resistance"
 #define RTRAIT_CRITICAL_WEAKNESS		"Critical Weakness"
@@ -56,22 +57,9 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	RTRAIT_BREADY = "Defensive stance does not passively fatigue me.",
 	RTRAIT_MEDIUMARMOR = "I can move freely in medium armor.",
 	RTRAIT_HEAVYARMOR = "I can move freely in heavy armor.",
-	RTRAIT_DECEIVING_MEEKNESS = "People look at me and think I am a weakling. They are mistaken.",
-	RTRAIT_CRITICAL_RESISTANCE = "I am resistant to wounds that would be life threatening to others.",
-	RTRAIT_CRITICAL_WEAKNESS = "<span class='danger'>I am weak to wounds that others could survive.</span>",
-	RTRAIT_MANIAC_AWOKEN = "<span class='danger'>I am <b>WAKING UP</b> and the sheeple know this. They will resist.</span>",
-	RTRAIT_NOROGSTAM = "I have boundless energy, I will never tire.",
-	RTRAIT_NUDIST = "I <b>refuse</b> to wear clothes. They are a hindrance to my freedom.",
-	RTRAIT_KNEESTINGER_IMMUNITY = "I am immune to the shock of kneestingers.",
-	RTRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
-	RTRAIT_NASTY_EATER = "<span class='dead'>I can eat bad food, and water that would be toxic to humen will not affect me.</span>",
-	RTRAIT_ROT_EATER = "<span class='necrosis'>I can eat rotten food.</span>",
-	RTRAIT_ORGAN_EATER = "<span class='bloody'>I can eat organs and raw flesh.</span>",
-	TRAIT_MISSING_NOSE = "<span class='warning'>I struggle to breathe.</span>",
-	TRAIT_ANTIMAGIC = "I am immune to most forms of magic.",
-	TRAIT_SHOCKIMMUNE = "I am immune to electrical shocks.",
-	TRAIT_NOSLEEP = "<span class='warning'>I can't sleep.</span>",
-))
+	RTRAIT_DODGEEXPERT = "I can dodge easly while only wearing light armor.",
+	RTRAIT_VILLAIN = "I am a devious, conniving villain!"
+	))
 
 // trait accessor defines
 #define ADD_TRAIT(target, trait, source) \

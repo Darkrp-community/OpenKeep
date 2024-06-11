@@ -47,3 +47,4 @@
 	H.change_stat("constitution", 1)
 	H.change_stat("speed", 1)
 	ADD_TRAIT(H, RTRAIT_NOSEGRAB, TRAIT_GENERIC)
+	ADD_TRAIT(H, RTRAIT_DODGEEXPERT, TRAIT_GENERIC)

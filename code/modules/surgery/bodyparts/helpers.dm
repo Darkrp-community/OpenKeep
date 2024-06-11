@@ -40,8 +40,6 @@
 	return FALSE
 
 
-
-
 /mob/proc/has_left_hand(check_disabled = TRUE)
 	return TRUE
 

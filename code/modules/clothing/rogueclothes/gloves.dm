@@ -11,7 +11,7 @@
 
 /obj/item/clothing/gloves/roguetown/leather
 	name = "leather gloves"
-	desc = ""
+	desc = "Gloves made out of sturdy leather. Warm, and offer very small protection against melee attacks."
 	icon_state = "leather_gloves"
 	armor = list("melee" = 12, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
@@ -28,7 +28,7 @@
 
 /obj/item/clothing/gloves/roguetown/fingerless
 	name = "fingerless gloves"
-	desc = ""
+	desc = "Fingerless gloves made out of leather offering no melee protection."
 	icon_state = "fingerless_gloves"
 	resistance_flags = null
 	blocksound = SOFTHIT
@@ -41,7 +41,7 @@
 
 /obj/item/clothing/gloves/roguetown/angle
 	name = "heavy leather gloves"
-	desc = ""
+	desc = "A heavier, more reinforced format of leather gloves. These look like they can take some beating. Fair melee protection and decent durability."
 	icon_state = "angle"
 	armor = list("melee" = 30, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
@@ -56,10 +56,11 @@
 
 /obj/item/clothing/gloves/roguetown/chain
 	name = "chain gauntlets"
-	desc = ""
+	desc = "Gauntlets made out of steel chains. Great melee protection and higher integrity."
 	icon_state = "cgloves"
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	armor_class = ARMOR_CLASS_MEDIUM
 	resistance_flags = null
 	blocksound = CHAINHIT
 	max_integrity = 200
@@ -74,14 +75,14 @@
 //rogtodo sprites for this
 /obj/item/clothing/gloves/roguetown/plate
 	name = "plate gauntlets"
-	desc = ""
+	desc = "Gauntlets made out of of steel ingots. Offer the best protection against melee attacks and have high integrity."
 	icon_state = "gauntlets"
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT)
+	armor_class = ARMOR_CLASS_HEAVY
 	resistance_flags = null
 	blocksound = PLATEHIT
 	body_parts_covered = ARMS|HANDS
-
 	max_integrity = 400
 	blade_dulling = DULLING_BASH
 	break_sound = 'sound/foley/breaksound.ogg'
@@ -105,12 +106,12 @@
 	sewrepair = TRUE
 
 /obj/item/clothing/gloves/roguetown/rare
-	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'	
+	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleeved = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleevetype = null
 
-/obj/item/clothing/gloves/roguetown/rare/elfplate	
+/obj/item/clothing/gloves/roguetown/rare/elfplate
 	name = "elvish plate gauntlets"
 	desc = ""
 	item_state = "elfhand"

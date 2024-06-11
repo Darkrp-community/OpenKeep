@@ -918,10 +918,15 @@
 	layer = HUD_LAYER
 	plane = HUD_PLANE
 
-/atom/movable/screen/restup/Click()
+/atom/movable/screen/restup/Click(location, control, params)
+	var/paramslist = params2list(params)
+
 	if(isliving(usr))
 		var/mob/living/L = usr
-		L.stand_up()
+		if(paramslist["right"])
+			L.look_up()
+		else
+			L.stand_up()
 
 /atom/movable/screen/restdown
 	name = "lay down"
@@ -930,10 +935,20 @@
 	layer = HUD_LAYER
 	plane = HUD_PLANE
 
-/atom/movable/screen/restdown/Click()
+/atom/movable/screen/restdown/Click(location, control, params)
+	var/paramslist = params2list(params)
+
 	if(isliving(usr))
 		var/mob/living/L = usr
-		L.lay_down()
+		if(paramslist["right"])
+			var/turf/O
+			for(var/turf/T in range(1, L))
+				if(istransparentturf(T))
+					O = T
+					break
+			L.look_down(O)
+		else
+			L.lay_down()
 
 /atom/movable/screen/storage
 	name = "storage"

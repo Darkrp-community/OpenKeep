@@ -84,6 +84,7 @@
 	var/skeletonized = FALSE
 
 	var/fingers = TRUE
+	var/is_prosthetic = FALSE
 
 	resistance_flags = FLAMMABLE
 

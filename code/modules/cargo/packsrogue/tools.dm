@@ -64,7 +64,6 @@
 	cost = 3
 	contains = list(/obj/item/natural/worms/grubs,)
 
-
 /datum/supply_pack/rogue/tools/prarml
 	name = "Proesthetic Arm (L)"
 	cost = 15
@@ -74,3 +73,13 @@
 	name = "Proesthetic Arm (R)"
 	cost = 15
 	contains = list(/obj/item/bodypart/r_arm/rproesthetic)
+
+/datum/supply_pack/rogue/tools/prlegl
+	name = "Prosthetic Leg (L)"
+	cost = 15
+	contains = list(/obj/item/bodypart/l_leg/rproesthetic)
+
+/datum/supply_pack/rogue/tools/prlegr
+	name = "Prosthetic Leg (R)"
+	cost = 15
+	contains = list(/obj/item/bodypart/r_leg/rproesthetic)

@@ -1,7 +1,7 @@
 /obj/item/needle
 	name = "needle"
 	icon_state = "needle"
-	desc = ""
+	desc = "A firm needle affixed with a simple thread, Pestra's most favored tool."
 	icon = 'icons/roguetown/items/misc.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'

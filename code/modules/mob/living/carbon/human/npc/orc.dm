@@ -269,7 +269,7 @@
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 			if(prob(23))
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-				r_hand = /obj/item/rogueweapon/stoneaxe/battle
+				r_hand = /obj/item/rogueweapon/battle
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			if(prob(80))
 				head = /obj/item/clothing/head/roguetown/helmet/orc
@@ -277,7 +277,7 @@
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 		if(5) //heavy armored sword/flail/shields
 			if(prob(30))
-				r_hand = /obj/item/rogueweapon/stoneaxe/battle
+				r_hand = /obj/item/rogueweapon/battle
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			else
@@ -288,11 +288,11 @@
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
-				r_hand = /obj/item/rogueweapon/stoneaxe/battle
+				r_hand = /obj/item/rogueweapon/battle
 			else
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-				r_hand = /obj/item/rogueweapon/stoneaxe/battle
+				r_hand = /obj/item/rogueweapon/battle
 			if(prob(50))
 				r_hand = /obj/item/rogueweapon/sword/iron
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
@@ -302,6 +302,6 @@
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			if(prob(20))
-				r_hand = /obj/item/rogueweapon/stoneaxe/battle
+				r_hand = /obj/item/rogueweapon/battle
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc

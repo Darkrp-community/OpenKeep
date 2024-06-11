@@ -41,7 +41,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		return "<span class='boldnotice'>Another deadite.</span>"
 
 /datum/antagonist/vampirelord/on_gain()
-	var/datum/game_mode/chaosmode/C = SSticker.mode
+	var/datum/game_mode/C = SSticker.mode
 	C.vampires |= owner
 	. = ..()
 	owner.special_role = name
@@ -1305,4 +1305,3 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			to_chat(L, "<font color='purple'>You feel like a curtain is coming over your mind.</font>")
 			sleep(50)
 			L.Sleeping(300)
-
