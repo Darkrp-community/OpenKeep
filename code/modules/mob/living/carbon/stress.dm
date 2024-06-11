@@ -201,4 +201,4 @@
 		var/turf/T = get_turf(mob)
 		if(T)
 			T.flash_lighting_fx(30)
-#endif*/
+#endif
