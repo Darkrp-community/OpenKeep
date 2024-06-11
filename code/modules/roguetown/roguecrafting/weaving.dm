@@ -79,6 +79,20 @@
 	craftdiff = 3
 	sellprice = 20
 
+/datum/crafting_recipe/roguetown/weaving/nunhood
+	name = "nun hood"
+	result = list(/obj/item/clothing/head/roguetown/nun)
+	reqs = list(/obj/item/natural/silk = 2)
+	craftdiff = 3
+	sellprice = 20
+
+/datum/crafting_recipe/roguetown/weaving/nunrobe
+	name = "nun robe"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/nun)
+	reqs = list(/obj/item/natural/silk = 3)
+	craftdiff = 3
+	sellprice = 20
+
 /datum/crafting_recipe/roguetown/weaving/barkeep
 	name = "bar dress"
 	result = list (/obj/item/clothing/suit/roguetown/shirt/dress)

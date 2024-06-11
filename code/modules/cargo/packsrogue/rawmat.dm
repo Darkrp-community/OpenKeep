@@ -36,6 +36,18 @@
 	/obj/item/natural/cloth,
 	/obj/item/natural/cloth)
 
+/datum/supply_pack/rogue/rawmats/silk
+	name = "Silk"
+	cost = 40
+	contains = list(/obj/item/natural/silk,
+	/obj/item/natural/silk,
+	/obj/item/natural/silk,
+	/obj/item/natural/silk,
+	/obj/item/natural/silk,
+	/obj/item/natural/silk,
+	/obj/item/natural/silk,
+	/obj/item/natural/silk)
+
 /datum/supply_pack/rogue/rawmats/ash
 	name = "Ash"
 	cost = 20
