@@ -256,3 +256,13 @@
 	stressadd = 20
 	desc = "<span class='blue'>I need another hit.</span>"
 	timer = 1 MINUTES
+
+/datum/stressevent/sleepfloor
+	timer = 1 MINUTES
+	stressadd = 3
+	desc = "<span class='red'>I slept on the floor. It was uncomfortable.</span>"
+
+/datum/stressevent/sleepfloornoble
+	timer = 3 MINUTES
+	stressadd = 6
+	desc = "<span class='red'>I slept on the floor! What am I?! An animal?!</span>"

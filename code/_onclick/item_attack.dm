@@ -116,16 +116,16 @@
 				user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
 			return
 	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
-		user.rogfat_add(15)
+		user.rogfat_add(10)
 	if(istype(user.rmb_intent, /datum/rmb_intent/swift))
-		user.rogfat_add(12)
+		user.rogfat_add(10)
 	if(M.checkdefense(user.used_intent, user))
 		if(M.d_intent == INTENT_PARRY)
 			if(!M.get_active_held_item() && !M.get_inactive_held_item()) //we parried with a bracer, redirect damage
 				if(M.active_hand_index == 1)
-					user.tempatarget = "l_arm"
+					user.tempatarget = BODY_ZONE_L_ARM
 				else
-					user.tempatarget = "r_arm"
+					user.tempatarget = BODY_ZONE_R_ARM
 				if(M.attacked_by(src, user)) //we change intents when attacking sometimes so don't play if we do (embedding items)
 					if(user.used_intent == cached_intent)
 						var/tempsound = user.used_intent.hitsound
@@ -140,7 +140,7 @@
 				user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
 		return
 
-	if(user.zone_selected == BODY_ZONE_R_INHAND)
+	if(user.zone_selected == BODY_ZONE_PRECISE_R_INHAND)
 		var/offh = 0
 		var/obj/item/W = M.held_items[1]
 		if(W)
@@ -152,7 +152,7 @@
 							"<span class='boldwarning'>I'm disarmed by [user]!</span>")
 			return
 
-	if(user.zone_selected == BODY_ZONE_L_INHAND)
+	if(user.zone_selected == BODY_ZONE_PRECISE_L_INHAND)
 		var/offh = 0
 		var/obj/item/W = M.held_items[2]
 		if(W)
@@ -195,9 +195,10 @@
 /atom/movable/proc/attacked_by()
 	return FALSE
 
-/proc/get_complex_damage(obj/item/I, mob/living/user, blade_dulling)
+
+/proc/get_complex_damage(obj/item/I, mob/living/user, blade_dulling, turf/closed/mineral/T)
 	var/dullfactor = 1
-	if(!I.force)
+	if(!I?.force)
 		return 0
 	var/newforce = I.force
 	testing("startforce [newforce]")
@@ -215,7 +216,7 @@
 		used_str--
 	used_str = CLAMP(used_str, 1, 20)
 	if(used_str >= 11)
-		newforce = newforce + (newforce * ((used_str - 10) * 0.15))
+		newforce = newforce + (newforce * ((used_str - 10) * 0.1))
 	else if(used_str <= 9)
 		newforce = newforce - (newforce * ((10 - used_str) * 0.1))
 
@@ -273,15 +274,22 @@
 				if(BCLASS_BLUNT)
 					cont = TRUE
 				if(BCLASS_PICK)
-					dullfactor = 1.5
+					var/mob/living/miner = user
+					var/mineskill = miner.mind.get_skill_level(/datum/skill/labor/mining)
+					dullfactor = 1.5 * (mineskill * 0.1)
 					cont = TRUE
 			if(!cont)
 				return 0
 		if(DULLING_PICK) //cannot deal damage if not a pick item. aka rock walls
+
 			if(user.used_intent.blade_class != BCLASS_PICK)
 				return 0
-			newforce = newforce * 30
+			var/mob/living/miner = user
+			var/mineskill = miner.mind.get_skill_level(/datum/skill/labor/mining)
+			newforce = newforce * (8+(mineskill*1.5))
 			shake_camera(user, 1, 1)
+			miner.mind.adjust_experience(/datum/skill/labor/mining, (miner.STAINT*0.2))
+
 	newforce = (newforce * user.used_intent.damfactor) * dullfactor
 	if(user.used_intent.get_chargetime() && user.client?.chargedprog < 100)
 		newforce = newforce * 0.5
@@ -369,7 +377,7 @@
 			return "body"
 		if(BODY_ZONE_PRECISE_MOUTH)
 			return "body"
-		if(BODY_ZONE_PRECISE_HAIR)
+		if(BODY_ZONE_PRECISE_SKULL)
 			return "body"
 		if(BODY_ZONE_PRECISE_EARS)
 			return "body"
@@ -387,9 +395,9 @@
 			return "body"
 		if(BODY_ZONE_PRECISE_GROIN)
 			return "body"
-		if(BODY_ZONE_R_INHAND)
+		if(BODY_ZONE_PRECISE_R_INHAND)
 			return "body"
-		if(BODY_ZONE_L_INHAND)
+		if(BODY_ZONE_PRECISE_L_INHAND)
 			return "body"
 	return "body"
 

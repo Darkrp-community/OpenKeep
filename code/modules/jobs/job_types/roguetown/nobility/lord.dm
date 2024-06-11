@@ -1,3 +1,6 @@
+GLOBAL_VAR(lordsurname)
+GLOBAL_LIST_EMPTY(lord_titles)
+
 /datum/job/roguetown/lord
 	title = "King"
 	flag = LORD
@@ -74,7 +77,20 @@
 				qdel(H.wear_mask)
 				mask = /obj/item/clothing/mask/rogue/lordmask/l
 
-	ADD_TRAIT(H, RTRAIT_NOBLE, TRAIT_GENERIC)
-	ADD_TRAIT(H, RTRAIT_NOSEGRAB, TRAIT_GENERIC)
-	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 //	SSticker.rulermob = H
+
+/proc/give_lord_surname(mob/living/carbon/human/family_guy, preserve_original = FALSE)
+	if(!GLOB.lordsurname)
+		return
+	if(preserve_original)
+		family_guy.fully_replace_character_name(family_guy.real_name, family_guy.real_name + " " + GLOB.lordsurname)
+		return family_guy.real_name
+	var/list/chopped_name = splittext(family_guy.real_name, " ")
+	if(length(chopped_name) > 1)
+		family_guy.fully_replace_character_name(family_guy.real_name, chopped_name[1] + " " + GLOB.lordsurname)
+	else
+		family_guy.fully_replace_character_name(family_guy.real_name, family_guy.real_name + " " + GLOB.lordsurname)
+	return family_guy.real_name

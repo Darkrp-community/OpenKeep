@@ -109,6 +109,9 @@
 	for(var/obj/item/grabbing/grab in grabbedby)
 		bleed_rate *= grab.bleed_suppressing
 	bleed_rate = max(round(bleed_rate, 0.1), 0)
+	var/surgery_flags = get_surgery_flags()
+	if(surgery_flags & SURGERY_CLAMPED)
+		return min(bleed_rate, 0.5)
 	return bleed_rate
 
 /// Called after a bodypart is attacked so that wounds and critical effects can be applied
@@ -221,13 +224,13 @@
 	var/used
 	var/total_dam = get_damage()
 	var/damage_dividend = (total_dam / max_damage)
-	var/resistance = HAS_TRAIT(owner, RTRAIT_CRITICAL_RESISTANCE)
+	var/resistance = HAS_TRAIT(owner, TRAIT_CRITICAL_RESISTANCE)
 	if(user && dam)
 		if(user.goodluck(2))
 			dam += 10
 	if((bclass in GLOB.cbt_classes) && (zone_precise == BODY_ZONE_PRECISE_GROIN))
 		var/cbt_multiplier = 1
-		if(user && HAS_TRAIT(user, RTRAIT_NUTCRACKER))
+		if(user && HAS_TRAIT(user, TRAIT_NUTCRACKER))
 			cbt_multiplier = 2
 		if(!resistance && prob(round(dam/5) * cbt_multiplier))
 			attempted_wounds += /datum/wound/cbt
@@ -268,12 +271,12 @@
 	var/static/list/tonguestab_zones = list(BODY_ZONE_PRECISE_MOUTH)
 	var/static/list/nosestab_zones = list(BODY_ZONE_PRECISE_NOSE)
 	var/static/list/earstab_zones = list(BODY_ZONE_PRECISE_EARS)
-	var/static/list/knockout_zones = list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_HAIR)
+	var/static/list/knockout_zones = list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_SKULL)
 	var/list/attempted_wounds = list()
 	var/used
 	var/total_dam = get_damage()
 	var/damage_dividend = (total_dam / max_damage)
-	var/resistance = HAS_TRAIT(owner, RTRAIT_CRITICAL_RESISTANCE)
+	var/resistance = HAS_TRAIT(owner, TRAIT_CRITICAL_RESISTANCE)
 	var/from_behind = FALSE
 	if(user && (owner.dir == turn(get_dir(owner,user), 180)))
 		from_behind = TRUE
@@ -306,7 +309,7 @@
 		var/necessary_damage = 0.9
 		if(resistance)
 			fracture_type = /datum/wound/fracture
-		else if(zone_precise == BODY_ZONE_PRECISE_HAIR)
+		else if(zone_precise == BODY_ZONE_PRECISE_SKULL)
 			necessary_damage = 0.8
 			used += 5
 		else if(zone_precise == BODY_ZONE_PRECISE_MOUTH)
@@ -335,53 +338,33 @@
 		if(prob(used))
 			attempted_wounds += artery_type
 			if((bclass in GLOB.stab_bclasses) && !resistance)
-				if(zone_precise in eyestab_zones)
-					var/obj/item/organ/eyes/my_eyes = owner.getorganslot(ORGAN_SLOT_EYES)
-					if(my_eyes)
-						playsound(owner, 'sound/combat/crit.ogg', 100, FALSE)
-						owner.Stun(5)
-						owner.blind_eyes(5)
-						if((zone_precise == BODY_ZONE_PRECISE_R_EYE) && !my_eyes.right_poked)
-							my_eyes.right_poked = TRUE
-							if(!my_eyes.left_poked)
-								owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> The right eye is poked out!</span>"
-						else if((zone_precise == BODY_ZONE_PRECISE_L_EYE) && !my_eyes.left_poked)
-							my_eyes.left_poked = TRUE
-							if(!my_eyes.right_poked)
-								owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> The left eye is poked out!</span>"
-						if(my_eyes.right_poked && my_eyes.left_poked)
-							owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> The eyes are gored!</span>"
-							my_eyes.forceMove(get_turf(owner))
-							my_eyes.Remove(owner)
-						owner.update_fov_angles()
-					else
+				if(zone_precise in earstab_zones)
+					var/obj/item/organ/ears/my_ears = owner.getorganslot(ORGAN_SLOT_EARS)
+					if(!my_ears || has_wound(/datum/wound/facial/ears))
+						attempted_wounds += /datum/wound/fracture/head/ears
+					else 
+						attempted_wounds += /datum/wound/facial/ears
+				else if(zone_precise in eyestab_zones)
+					var/obj/item/organ/my_eyes = owner.getorganslot(ORGAN_SLOT_EYES)
+					if(!my_eyes || (has_wound(/datum/wound/facial/eyes/left) && has_wound(/datum/wound/facial/eyes/right)))
 						attempted_wounds += /datum/wound/fracture/head/eyes
+					else if(my_eyes)
+						if(zone_precise == BODY_ZONE_PRECISE_R_EYE)
+							attempted_wounds += /datum/wound/facial/eyes/right
+						else if(zone_precise == BODY_ZONE_PRECISE_L_EYE)
+							attempted_wounds += /datum/wound/facial/eyes/left
 				else if(zone_precise in tonguestab_zones)
 					var/obj/item/organ/tongue/tongue_up_my_asshole = owner.getorganslot(ORGAN_SLOT_TONGUE)
-					if(tongue_up_my_asshole)
-						playsound(owner, 'sound/combat/crit.ogg', 100, FALSE)
-						owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> The tongue flies off in an arc!</span>"
-						owner.Stun(10)
-						tongue_up_my_asshole.forceMove(get_turf(owner))
-						tongue_up_my_asshole.Remove(owner)
-					else
+					if(!tongue_up_my_asshole || has_wound(/datum/wound/facial/tongue))
 						attempted_wounds += /datum/wound/fracture/mouth
-				else if(zone_precise in nosestab_zones)
-					if(!has_wound(/datum/wound/nose))
-						attempted_wounds += /datum/wound/nose
-					else if(!has_wound(/datum/wound/fracture/head/nose))
-						attempted_wounds +=/datum/wound/fracture/head/nose
-				else if(zone_precise in earstab_zones)
-					var/obj/item/organ/ears/my_ears = owner.getorganslot(ORGAN_SLOT_EARS)
-					if(my_ears)
-						owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> The eardrums are ruptured!</span>"
-						playsound(owner, 'sound/combat/crit.ogg', 100, FALSE)
-						owner.Stun(10)
-						my_ears.forceMove(get_turf(owner))
-						my_ears.Remove(owner)
 					else
-						attempted_wounds += /datum/wound/fracture/head/ears
-				else
+						attempted_wounds += /datum/wound/facial/tongue
+				else if(zone_precise in nosestab_zones)
+					if(has_wound(/datum/wound/facial/disfigurement/nose))
+						attempted_wounds +=/datum/wound/fracture/head/nose
+					else
+						attempted_wounds += /datum/wound/facial/disfigurement/nose
+				else if(zone_precise in knockout_zones)
 					attempted_wounds += /datum/wound/fracture/head/brain
 
 	for(var/wound_type in shuffle(attempted_wounds))
@@ -406,6 +389,7 @@
 			playsound(owner, 'sound/combat/newstuck.ogg', 100, vary = TRUE)
 		if(crit_message)
 			owner.next_attack_msg += " <span class='userdanger'>[embedder] is stuck in [owner]'s [src]!</span>"
+		update_disabled()
 	return TRUE
 
 /// Removes an embedded object from this bodypart
@@ -423,9 +407,11 @@
 		embedder.forceMove(drop_location)
 	else
 		qdel(embedder)
-	if(owner && !owner?.has_embedded_objects())
-		owner.clear_alert("embeddedobject")
-		SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "embedded")
+	if(owner)
+		if(!owner.has_embedded_objects())
+			owner.clear_alert("embeddedobject")
+			SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "embedded")
+		update_disabled()
 	return TRUE
 
 /obj/item/bodypart/proc/try_bandage(obj/item/new_bandage)
@@ -499,3 +485,38 @@
 	if(owner)
 		update_disabled()
 	return TRUE
+
+/// Returns surgery flags applicable to this bodypart
+/obj/item/bodypart/proc/get_surgery_flags()
+	var/returned_flags = NONE
+	if(can_bloody_wound())
+		returned_flags |= SURGERY_BLOODY
+	for(var/datum/wound/slash/incision/incision in wounds)
+		if(incision.is_sewn())
+			continue
+		returned_flags |= SURGERY_INCISED
+		break
+	var/static/list/retracting_behaviors = list(
+		TOOL_RETRACTOR,
+		TOOL_CROWBAR,
+	)
+	var/static/list/clamping_behaviors = list(
+		TOOL_HEMOSTAT,
+		TOOL_WIRECUTTER,
+	)
+	for(var/obj/item/embedded as anything in embedded_objects)
+		if((embedded.tool_behaviour in retracting_behaviors) || embedded.embedding?.retract_limbs)
+			returned_flags |= SURGERY_RETRACTED
+		if((embedded.tool_behaviour in clamping_behaviors) || embedded.embedding?.clamp_limbs)
+			returned_flags |= SURGERY_CLAMPED
+	if(has_wound(/datum/wound/dislocation))
+		returned_flags |= SURGERY_DISLOCATED
+	if(has_wound(/datum/wound/fracture))
+		returned_flags |= SURGERY_BROKEN
+	for(var/datum/wound/puncture/drilling/drilling in wounds)
+		if(drilling.is_sewn())
+			continue
+		returned_flags |= SURGERY_DRILLED
+	if(skeletonized)
+		returned_flags |= SURGERY_INCISED | SURGERY_RETRACTED | SURGERY_DRILLED //ehh... we have access to whatever organ is there
+	return returned_flags

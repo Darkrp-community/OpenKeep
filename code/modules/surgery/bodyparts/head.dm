@@ -39,15 +39,11 @@
 	offset = OFFSET_HEAD
 	offset_f = OFFSET_HEAD_F
 	//subtargets for crits
-	subtargets = list(BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_NOSE, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_HAIR, BODY_ZONE_PRECISE_EARS, BODY_ZONE_PRECISE_NECK)
+	subtargets = list(BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_NOSE, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_SKULL, BODY_ZONE_PRECISE_EARS, BODY_ZONE_PRECISE_NECK)
 	//grabtargets for grabs
-	grabtargets = list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_NOSE, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_HAIR, BODY_ZONE_PRECISE_EARS, BODY_ZONE_PRECISE_NECK)
+	grabtargets = list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_NOSE, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_SKULL, BODY_ZONE_PRECISE_EARS, BODY_ZONE_PRECISE_NECK)
 	resistance_flags = FLAMMABLE
 
-	/// Our left eye has been poked out, ouch
-	var/left_eye_poked = FALSE
-	/// Our right eye has been poked out, ouch
-	var/right_eye_poked = FALSE
 	/// Brainkill means that this head is considered dead and revival is impossible
 	var/brainkill = FALSE
 
@@ -60,7 +56,7 @@
 			return list(/datum/intent/grab/move, /datum/intent/grab/twist, /datum/intent/grab/smash)
 		if(BODY_ZONE_PRECISE_NOSE)
 			return list(/datum/intent/grab/move, /datum/intent/grab/twist, /datum/intent/grab/smash)
-		if(BODY_ZONE_PRECISE_HAIR)
+		if(BODY_ZONE_PRECISE_SKULL)
 			return list(/datum/intent/grab/move, /datum/intent/grab/smash)
 		if(BODY_ZONE_PRECISE_L_EYE)
 			return list(/datum/intent/grab/move, /datum/intent/grab/smash)
@@ -117,9 +113,6 @@
 			brain = null
 			update_icon_dropped()
 		else
-			if(istype(I, /obj/item/reagent_containers/pill))
-				for(var/datum/action/item_action/hands_free/activate_pill/AP in I.actions)
-					qdel(AP)
 			I.forceMove(T)
 	eyes = null
 	ears = null

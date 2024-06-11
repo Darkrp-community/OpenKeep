@@ -179,9 +179,9 @@
 
 	var/nodmg = FALSE
 	var/dam2do = 10*(user.STASTR/20)
-	if(HAS_TRAIT(user, RTRAIT_STRONGBITE))
+	if(HAS_TRAIT(user, TRAIT_STRONGBITE))
 		dam2do *= 2
-	if(!HAS_TRAIT(user, RTRAIT_STRONGBITE))
+	if(!HAS_TRAIT(user, TRAIT_STRONGBITE))
 		if(!affecting.has_wound(/datum/wound/bite))
 			nodmg = TRUE
 	if(!nodmg)
@@ -310,7 +310,7 @@
 				if(!ismob(A) && !isturf(A))
 					return
 				if(A.z != src.z)
-					if(!HAS_TRAIT(src, RTRAIT_ZJUMP))
+					if(!HAS_TRAIT(src, TRAIT_ZJUMP))
 						return
 				changeNext_move(mmb_intent.clickcd)
 				face_atom(A)

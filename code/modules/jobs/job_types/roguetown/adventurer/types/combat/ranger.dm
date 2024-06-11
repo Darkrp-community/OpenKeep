@@ -54,8 +54,8 @@
 	beltl = /obj/item/quiver/arrows
 	H.change_stat("perception", 3)
 	H.change_stat("endurance", 1)
-	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, RTRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	if(prob(23))
 		if(!H.has_language(/datum/language/elvish))
 			H.grant_language(/datum/language/elvish)

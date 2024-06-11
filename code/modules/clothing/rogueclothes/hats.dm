@@ -563,6 +563,10 @@
 /obj/item/clothing/head/roguetown/wizhat/gen
 	icon_state = "wizardhatgen"
 
+/obj/item/clothing/head/roguetown/physician
+	name = "doctor's hat"
+	desc = "My cure is most effective."
+
 /obj/item/clothing/head/roguetown/nyle
 	name = "jewel of nyle"
 	icon_state = "nile"

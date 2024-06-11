@@ -62,7 +62,7 @@
 				else
 					. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [race_name] [used_title].")
 		else
-			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [race_name] the returning Pilgrim.")
+			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name].")
 
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
@@ -275,6 +275,7 @@
 			else
 				msg += "<span class='bloody'>[m1] [bleed_wording]!</span>"
 
+	// Missing limbs
 	var/missing_head = FALSE
 	var/list/missing_limbs = list()
 	for(var/missing_zone in get_missing_limbs())
@@ -286,6 +287,8 @@
 		var/missing_limb_message = "<B>[capitalize(m2)] [english_list(missing_limbs)] [missing_limbs.len > 1 ? "are" : "is"] gone.</B>"
 		if(missing_head)
 			missing_limb_message = "<span class='dead'>[missing_limb_message]</span>"
+		else
+			missing_limb_message = "<span class='danger'>[missing_limb_message]</span>"
 		msg += missing_limb_message
 
 	//Grabbing
@@ -347,7 +350,7 @@
 					msg += "[m1] a shitfaced, slobbering wreck."
 
 			//Stress
-			if(HAS_TRAIT(user, RTRAIT_EMPATH))
+			if(HAS_TRAIT(user, TRAIT_EMPATH))
 				switch(stress)
 					if(20 to INFINITY)
 						msg += "[m1] extremely stressed."
@@ -377,7 +380,7 @@
 			msg += "<span class='warning'>[m1] barely conscious.</span>"
 		else
 			if(stat >= UNCONSCIOUS)
-				msg += "[m1] unconscious."
+				msg += "[m1] [IsSleeping() ? "sleeping" : "unconscious"]."
 			else if(eyesclosed)
 				msg += "[capitalize(m2)] eyes are closed."
 			else if(has_status_effect(/datum/status_effect/debuff/sleepytime))

@@ -4,7 +4,7 @@
 	antag_hud_name = "zombie"
 	show_in_roundend = FALSE
 	/// SET TO FALSE IF WE DON'T TURN INTO ROTMEN WHEN REMOVED
-	var/become_rotman = TRUE
+	var/become_rotman = FALSE
 	var/zombie_start
 	var/revived = FALSE
 	var/next_idle_sound
@@ -24,7 +24,7 @@
 	/// Last time we bit someone - Zombies will try to bite after 10 seconds of not biting
 	/// Traits applied to the owner mob when we turn into a zombie
 	var/static/list/traits_zombie = list(
-		RTRAIT_NOROGSTAM,
+		TRAIT_NOROGSTAM,
 		TRAIT_NOMOOD,
 		TRAIT_NOLIMBDISABLE,
 		TRAIT_NOHUNGER,
@@ -43,6 +43,7 @@
 		TRAIT_LIMPDICK,
 		TRAIT_ZOMBIE_SPEECH,
 		TRAIT_ZOMBIE_IMMUNE,
+		TRAIT_EMOTEMUTE,
 		TRAIT_ROTMAN,
 	)
 	/// Traits applied to the owner when we are cured and turn into just "rotmen"
