@@ -129,7 +129,7 @@
 	return FALSE
 
 /obj/item/needle/thorn
-	name = "needle"
+	name = "wooden needle"
 	icon_state = "thornneedle"
 	desc = "This rough needle can be used to sew cloth and wounds."
 	stringamt = 3

@@ -1,5 +1,7 @@
 /datum/advclass/pilgrim/rare/farmermaster
 	name = "Master Farmer"
+	tutorial = "A veteran among the serfs that tend to cattle and fields of produce, \
+	able to handle every single task there is to do on a fief by their own."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Human",

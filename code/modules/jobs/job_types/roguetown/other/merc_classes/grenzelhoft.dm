@@ -19,6 +19,9 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, pick(1,1,2), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(1,1,2), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(0,0,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	
@@ -41,7 +44,7 @@
 	backr = /obj/item/rogueweapon/greatsword/zwei
 	backpack_contents = list(/obj/item/roguekey/mercenary)
 
-	H.change_stat("strength", 1)
+	H.change_stat("strength", 2) // They need this to roll at least min STR for the Zwei.
 	H.change_stat("endurance", 1)
 	H.change_stat("speed", -1)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
