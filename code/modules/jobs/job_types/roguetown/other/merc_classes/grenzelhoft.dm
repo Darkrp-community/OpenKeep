@@ -44,7 +44,7 @@
 	backr = /obj/item/rogueweapon/greatsword/zwei
 	backpack_contents = list(/obj/item/roguekey/mercenary)
 
-	H.change_stat("strength", 1)
+	H.change_stat("strength", 2) // They need this to roll at least min STR for the Zwei.
 	H.change_stat("endurance", 1)
 	H.change_stat("speed", -1)
 	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)

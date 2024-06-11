@@ -35,15 +35,25 @@
 					ammo_list -= AR
 					B.attackby(AR, loc, params)
 					break
+				else
+					to_chat(loc, "<span class='warning'>Wrong ammunition kind!</span>")
+					return
 		return
 	if(istype(A, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow))
 		var/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/C = A
-		if(ammo_list.len && !C.chambered)
-			for(var/BT in ammo_list)
-				if(istype(BT, /obj/item/ammo_casing/caseless/rogue/bolt))
-					ammo_list -= BT
-					C.attackby(BT, loc, params)
-					break
+		if(C.cocked)
+			if(ammo_list.len && !C.chambered)
+				for(var/BT in ammo_list)
+					if(istype(BT, /obj/item/ammo_casing/caseless/rogue/bolt))
+						ammo_list -= BT
+						C.attackby(BT, loc, params)
+						break
+					else
+						to_chat(loc, "<span class='warning'>Wrong ammunition kind!</span>")
+						return
+		else
+			to_chat(loc, "<span class='warning'>I need to cock the crossbow first.</span>")
+			return
 	..()
 
 /obj/item/quiver/attack_right(mob/user)

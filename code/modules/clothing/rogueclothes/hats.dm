@@ -375,6 +375,7 @@
 	adjustable = CAN_CADJUST
 	flags_inv = HIDEEARS|HIDEFACE
 	flags_cover = HEADCOVERSEYES
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
 	block2add = FOV_BEHIND
 
@@ -387,12 +388,14 @@
 			body_parts_covered = HEAD|EARS|HAIR
 			flags_inv = HIDEEARS
 			flags_cover = null
+			prevent_crits -= list(BCLASS_STAB) // Vulnerable to eye stabbing while visor is open
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
 				H.update_inv_head()
 			block2add = null
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
+			prevent_crits += list(BCLASS_STAB)
 			if(user)
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
@@ -444,6 +447,9 @@
 	adjustable = CAN_CADJUST
 	emote_environment = 3
 	block2add = FOV_RIGHT|FOV_LEFT
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight/black
@@ -456,8 +462,9 @@
 			adjustable = CADJUSTED
 			icon_state = "knightum"
 			body_parts_covered = HEAD|HAIR|EARS
-			flags_inv = HIDEEARS
+			flags_inv = HIDEEARS|HIDEHAIR
 			flags_cover = null
+			prevent_crits -= list(BCLASS_STAB) // Vulnerable to eye stabs with the cover up
 			emote_environment = 0
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
@@ -465,6 +472,7 @@
 			block2add = null
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
+			prevent_crits += list(BCLASS_STAB)
 			emote_environment = 3
 			if(user)
 				if(ishuman(user))
@@ -478,6 +486,7 @@
 	item_state = "topfhelm"
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
 
