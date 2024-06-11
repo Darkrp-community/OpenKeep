@@ -2111,7 +2111,6 @@
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\donator\swordmaster.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\donator\templar.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\donator\vaquero.dm"
-#include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\rare\assassin.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\rare\freelancer.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\rare\heartfelt.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\rare\heartfelthand.dm"

@@ -10,6 +10,7 @@
 /datum/antagonist/assassino/on_gain()
 	owner.special_role = name
 	var/yea = pick(/obj/item/clothing/wrists/roguetown/bracers/wristblade)
+	owner.special_items["Poison"] = /obj/item/reagent_containers/glass/bottle/rogue/poison
 	owner.special_items["Articulus Ferrum"] = yea
 	greet()
 	forge_objectives()
@@ -37,7 +38,7 @@
 
 /datum/antagonist/assassino/greet()
 	to_chat(owner.current, "<span class='userdanger'>They call me the Assassino, I am sent to places when some things just aren't right. And I have lots of correcting to do.</span>")
-	to_chat(owner.current, "<span class='userdanger'>Noble crow mailmen deliver me messages to use the <b>right-mind</b> on any bush, tree, clock or even statue to summon up a hidden compartment to reveal my 'Articulus Ferrum'. My wrist mounted blade.</span>")
+	to_chat(owner.current, "<b>Noble crow mailmen deliver me messages to use the <b>right-mind</b> on any bush, tree, clock or even statue to summon up a hidden compartment to reveal my 'Articulus Ferrum'. My wrist mounted blade.</b>")
 	to_chat(owner.current, "<b>Even after my objectives are complete I was instructed not to leave before the week ends. I could pass the time by taking contracts from the localfolk.</b>")
 	owner.announce_objectives()
 	..()
