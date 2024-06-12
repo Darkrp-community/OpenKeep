@@ -639,3 +639,44 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = null
 	droning_sound_night = null
 	first_time_text = "The Forest of Repentence"
+
+/// Dakkatown Areas
+// Players should be fined for any damage they do to the Guild's property
+/area/rogue/outdoors/beach/boat
+	name = "sophia's cry"
+	ambientsounds = AMB_BEACH
+	ambientnight = AMB_BEACH
+	droning_sound = 'sound/music/area/townstreets.ogg'
+	droning_sound_dusk = 'sound/music/area/septimus.ogg'
+	droning_sound_night = 'sound/music/area/sleeping.ogg'
+
+// Players should not be able to enter the Guild Captain's Quarters (it's magically protected)
+/area/rogue/outdoors/beach/boat/captain
+	name = "guild captain"
+	ambientsounds = AMB_BEACH
+	ambientnight = AMB_BEACH
+	droning_sound = 'sound/music/area/townstreets.ogg'
+	droning_sound_dusk = 'sound/music/area/septimus.ogg'
+	droning_sound_night = 'sound/music/area/sleeping.ogg'
+
+/area/rogue/indoors/town/theatre
+	name = "theatre"
+	icon_state = "manor"
+	droning_sound = null
+	droning_sound_dusk = null
+	droning_sound_night = null
+	converted_type = /area/rogue/outdoors/exposed/theatre
+
+/area/rogue/outdoors/exposed/theatre
+	name = "theatre"
+	icon_state = "manor"
+	droning_sound = null
+	droning_sound_dusk = null
+	droning_sound_night = null
+
+/area/rogue/indoors/town/apothecary
+	name = "apothecary"
+	icon_state = "manor"
+	droning_sound = null
+	droning_sound_dusk = null
+	droning_sound_night = null

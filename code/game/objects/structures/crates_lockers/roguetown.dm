@@ -125,3 +125,9 @@
 	base_icon_state = "drawer5"
 	dir = SOUTH
 	pixel_y = 16
+
+// When players exit the round via boat, their items get transported here
+/obj/structure/closet/crate/chest/lostandfound
+	desc = "An incredibly sturdy chest; the Guild can afford the best materials after all."
+	anchored = 1
+	max_integrity = 2000
