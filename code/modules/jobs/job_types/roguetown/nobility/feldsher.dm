@@ -17,7 +17,7 @@
 	..()
 	H.virginity = TRUE
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
 	backr = /obj/item/storage/backpack/rogue/satchel
 	pants = /obj/item/clothing/under/roguetown/tights/random
 	gloves = /obj/item/clothing/gloves/roguetown/leather/feld

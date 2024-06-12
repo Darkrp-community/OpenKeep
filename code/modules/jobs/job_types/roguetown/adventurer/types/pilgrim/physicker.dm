@@ -23,7 +23,7 @@
     mask = /obj/item/clothing/mask/rogue/phys
     head = /obj/item/clothing/head/roguetown/roguehood/phys
     shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-    shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
+    shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
     backr = /obj/item/storage/backpack/rogue/satchel
     pants = /obj/item/clothing/under/roguetown/tights/random
     gloves = /obj/item/clothing/gloves/roguetown/leather/phys
