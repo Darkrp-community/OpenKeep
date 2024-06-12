@@ -1039,6 +1039,13 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
+"GV" = (
+/obj/effect/landmark/mapGenerator/sunlights{
+	endTurfX = 155;
+	endTurfY = 155
+	},
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/outdoors/woods)
 "Hw" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/shovel,
@@ -1311,6 +1318,10 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
+"ON" = (
+/obj/effect/sunlight,
+/turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "OP" = (
 /obj/structure/closet/crate/roguecloset,
@@ -1823,7 +1834,7 @@ qi
 qi
 qi
 qi
-qi
+GV
 "}
 (2,1,1) = {"
 qi
@@ -18697,7 +18708,7 @@ jv
 jv
 tr
 TP
-Kr
+ON
 Kr
 dp
 dp
