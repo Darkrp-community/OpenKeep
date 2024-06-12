@@ -26,7 +26,7 @@
     if(H.mind)
         H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)
-        H.mind.adjust_skillrank(/datum/skill/mining, 3, TRUE)
+        H.mind.adjust_skillrank(/datum/skill/mining, 2, TRUE)//they are adventurers and mercenaries with pickaxes, not fully a miner
         H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
         H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
