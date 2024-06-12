@@ -72,7 +72,7 @@
 					add_wound(/datum/wound/cut)
 				if(16 to INFINITY)
 					add_wound(/datum/wound/cut/large)
-		if(BCLASS_SMASH || BCLASS_BLUNT)
+		if(BCLASS_SMASH || BCLASS_BLUNT || BCLASS_LASHING)
 			switch(dam)
 				if(1 to 5)
 					add_wound(/datum/wound/bruise/small)
