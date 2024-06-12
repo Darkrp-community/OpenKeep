@@ -32,7 +32,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 	icon_state = "haubergeon"
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
 	blocksound = CHAINHIT
 	var/do_sound = FALSE
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
@@ -506,7 +506,6 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	nodismemsleeves = TRUE
 	max_integrity = 500
-	allowed_sex = list(MALE)
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel

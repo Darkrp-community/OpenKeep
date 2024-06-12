@@ -3383,4 +3383,5 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "modular\Trufflepig\code\trufflepig.dm"
 // END_INCLUDE

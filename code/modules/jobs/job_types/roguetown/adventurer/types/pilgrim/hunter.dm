@@ -1,8 +1,8 @@
 /datum/advclass/pilgrim/hunter
 	name = "Hunter"
-	tutorial = "You are a hunter, a professional slaughterer and skinner of local wildlife; domesticated and wild alike. \
-	Your job is a tough one, not envied by many, but you are the backbone of food supply and leather on this island."
-	allowed_sexes = list(MALE, FEMALE)
+	tutorial = "Peasants that thrive on the woods, hunting creechers for pelt and hide, \
+				or the boons of Dendor for their meat to sell, or consume."
+	allowed_sexes = list(MALE)
 	allowed_races = list(
 		"Humen",
 		"Elf",
@@ -47,6 +47,25 @@
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
+			H.change_stat("perception", 1)
 		H.change_stat("intelligence", 1)
 		H.change_stat("perception", 3)
-		H.change_stat("speed", 1)
+// Female variant below
+
+/datum/advclass/pilgrim/huntress
+	name = "Huntress"
+	tutorial = "Women that thrive on the woods, hunting creechers for pelt and hide, \
+				or the boons of Dendor for their meat to sell, or consume."
+	allowed_sexes = list(FEMALE)
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
+	)
+	outfit = /datum/outfit/job/roguetown/adventurer/hunter // Everything is the same
+	isvillager = TRUE
+	ispilgrim = TRUE

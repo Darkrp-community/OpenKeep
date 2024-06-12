@@ -151,6 +151,13 @@
 	flag = "bullet"
 	speed = 0.4
 
+// Weaker version of arrow projectile because handmade and brittle, but still decent to hunt with.
+/obj/projectile/bullet/reusable/arrow/stone
+	damage = 30
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/stone
+	embedchance = 80
+	armor_penetration = 40
+
 /obj/projectile/bullet/reusable/arrow/poison
 	name = "poison arrow"
 	desc = "An arrow with it's tip drenched in a powerful poison."
@@ -255,7 +262,9 @@
 	explosion(T, -1, exp_heavy, exp_light, exp_flash, 0, flame_range = exp_fire, soundin = explode_sound)
 
 /obj/item/ammo_casing/caseless/rogue/arrow/stone
+	name = "stone arrow"
 	icon_state = "stonearrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/stone //weaker projectile
 	max_integrity = 5
 
 /obj/projectile/bullet/reusable/bullet

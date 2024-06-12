@@ -1,5 +1,7 @@
 /datum/advclass/pilgrimminer
 	name = "Miner"
+	tutorial = "Hardy people who ceaselessly toil at the mines for ores and salt, \
+				who will ever know what they'll find beneath?"
 	allowed_sexes = list(MALE)
 	allowed_races = list(
 		"Humen",
