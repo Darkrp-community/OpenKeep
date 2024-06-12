@@ -128,7 +128,7 @@
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 
-/obj/item/clothing/gloves/roguetown/rare/dwarfplate 
+/obj/item/clothing/gloves/roguetown/rare/dwarfplate
 	name = "dwarvish plate gauntlets"
 	desc = ""
 	item_state = "dwarfhand"
@@ -181,3 +181,15 @@
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
+
+/obj/item/clothing/gloves/roguetown/leather/feld
+	name = "feldsher's gloves"
+	desc = "Improved grip for wielding the tools of the trade."
+	icon_state = "feldgloves"
+	item_state = "feldgloves"
+
+/obj/item/clothing/gloves/roguetown/leather/phys
+	name = "physicker's gloves"
+	desc = "Improved grip for wielding disembowled organs."
+	icon_state = "surggloves"
+	item_state = "surggloves"

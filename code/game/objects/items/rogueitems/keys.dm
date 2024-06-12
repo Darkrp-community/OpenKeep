@@ -228,7 +228,7 @@
 
 /obj/item/roguekey/doctor
 	name = "doctor's key"
-	icon_state = "rustkey"
+	icon_state = "birdkey"
 	lockid = "doctor"
 
 //grenchensnacker

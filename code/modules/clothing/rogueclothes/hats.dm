@@ -572,10 +572,6 @@
 /obj/item/clothing/head/roguetown/wizhat/gen
 	icon_state = "wizardhatgen"
 
-/obj/item/clothing/head/roguetown/physician
-	name = "doctor's hat"
-	desc = "My cure is most effective."
-
 /obj/item/clothing/head/roguetown/nyle
 	name = "jewel of nyle"
 	icon_state = "nile"
@@ -621,7 +617,7 @@
 		add_overlay(pic)
 
 /obj/item/clothing/head/roguetown/rare
-	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'	
+	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleevetype = null
 
@@ -686,3 +682,25 @@
 	desc = "Known as devil masks amongst the Northern Kingdoms, these serve part decorative headpiece, part protective helmet."
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+
+/obj/item/clothing/head/roguetown/roguehood/feld
+	name = "feldsher's hood"
+	desc = "My cure is most effective."
+	icon_state = "feldhood"
+	item_state = "feldhood"
+
+/obj/item/clothing/head/roguetown/roguehood/phys
+	name = "physicker's hood"
+	desc = "My cure is mostly effective."
+	icon_state = "surghood"
+	item_state = "surghood"
+
+/obj/item/clothing/head/roguetown/helmet/feld
+	name = "feldsher's cage"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	desc = "To protect me from the maggets and creechers I treat."
+	icon_state = "headcage"
+	icon_state = "headcage"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES

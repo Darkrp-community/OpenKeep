@@ -144,16 +144,20 @@
 	color = null
 	sellprice = 100
 
-/obj/item/clothing/suit/roguetown/shirt/robe/physician
-	name = "plague coat"
-	desc = "Medicum morbo adhibere."
-	icon = 'icons/roguetown/clothing/armor.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
-	icon_state = "physcoat"
+/obj/item/clothing/suit/roguetown/shirt/robe/feld
+	name = "feldsher's robe"
+	desc = "Red to hide the blood."
+	icon_state = "feldrobe"
+	item_state = "feldrobe"
 	slot_flags = ITEM_SLOT_ARMOR
-	sleeved = null
 	boobed = TRUE
 	color = null
-	flags_inv = HIDEBOOB
-	r_sleeve_status = SLEEVE_NORMAL
-	l_sleeve_status = SLEEVE_NORMAL
+
+/obj/item/clothing/suit/roguetown/shirt/robe/phys
+	name = "physicker's robe"
+	desc = "Part robe, part butcher's apron."
+	icon_state = "surgrobe"
+	item_state = "surgrobe"
+	slot_flags = ITEM_SLOT_ARMOR
+	boobed = TRUE
+	color = null

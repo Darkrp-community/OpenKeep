@@ -156,11 +156,38 @@
 		damtype = BRUTE
 	update_icon()
 
-/obj/item/storage/backpack/rogue/backpack/surgery/PopulateContents()
-	new /obj/item/rogueweapon/surgery/scalpel(src)
-	new /obj/item/rogueweapon/surgery/saw(src)
-	new /obj/item/rogueweapon/surgery/hemostat(src)
-	new /obj/item/rogueweapon/surgery/hemostat(src) //2 forceps so you can clamp bleeders AND manipulate organs
-	new /obj/item/rogueweapon/surgery/retractor(src)
-	new /obj/item/rogueweapon/surgery/bonesetter(src)
-	new /obj/item/rogueweapon/surgery/cautery(src)
+/obj/item/rogueweapon/surgery/hammer
+	name = "examination hammer"
+	desc = "A small hammer used to check a patient's reactions and diagnose their condition."
+	icon_state = "kneehammer"
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/use)
+	slot_flags = ITEM_SLOT_HIP
+	parrysound = list('sound/combat/parry/parrygen.ogg')
+	swingsound = BLUNTWOOSH_MED
+	force = 10
+	throwforce = 8
+	wdefense = 3
+	wbalance = -1
+	associated_skill = /datum/skill/combat/axesmaces
+	sharpness = IS_BLUNT
+	w_class = WEIGHT_CLASS_NORMAL
+	thrown_bclass = BCLASS_BLUNT
+
+
+/obj/item/rogueweapon/surgery/hammer/pre_attack(atom/A, mob/living/user, params)
+	if(!istype(user.a_intent, /datum/intent/use))
+		return ..()
+	if(user.mind.get_skill_level(/datum/skill/misc/medicine) < 1)
+		return ..()
+	if(ishuman(A))
+		if(A == user)
+			user.visible_message("<span class='info'>[user] begins smacking themself with a small hammer.</span>")
+		else
+			user.visible_message("<span class='info'>[user] begins to smack [A] with a small hammer.</span>")
+		if(do_after(user, 5 SECONDS, target = A))
+			A.visible_message("<span class='info'>[A] jerks their knee after the hammer strikes!</span>")
+			if(prob(1))
+				playsound(user, 'sound/misc/bonk.ogg', 100, FALSE, -1)
+			var/mob/living/carbon/human/human_target = A
+			human_target.check_for_injuries(user)
+	return ..()

@@ -192,10 +192,10 @@
 	if(amt > 1)
 		name = "[initial(name)]es"
 
-/obj/item/natural/worms/leech/cheele
-	name = "cheele"
-	desc = "A beautiful, blood-infusing altruistic organism made by Pestra herself."
-	icon_state = "cheele"
+/obj/item/natural/worms/leech/parasite
+	name = "the parasite"
+	desc = "A foul, wriggling creecher. Known to suck whole villages of their blood, these rare freeks have been domesticated for medical purposes."
+	icon_state = "parasite"
 	baitpenalty = 0
 	isbait = TRUE
 	color = null
@@ -205,7 +205,7 @@
 	blood_storage = BLOOD_VOLUME_SURVIVE
 	blood_maximum = BLOOD_VOLUME_BAD
 
-/obj/item/natural/worms/leech/cheele/attack_self(mob/user)
+/obj/item/natural/worms/leech/parasite/attack_self(mob/user)
 	. = ..()
 	giving = !giving
 	if(giving)

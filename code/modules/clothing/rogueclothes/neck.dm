@@ -211,3 +211,17 @@
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
 	sellprice = 15
+
+/obj/item/clothing/neck/roguetown/feld
+	name = "feldsher's collar"
+	desc = "Fits snug."
+	icon_state = "feldcollar"
+	item_state = "feldcollar"
+	sellprice = 15
+
+/obj/item/clothing/neck/roguetown/phys
+	name = "physicker's collar"
+	desc = "Fits snug."
+	icon_state = "surgcollar"
+	item_state = "surgcollar"
+	sellprice = 15

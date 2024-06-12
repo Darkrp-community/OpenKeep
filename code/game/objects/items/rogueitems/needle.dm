@@ -134,7 +134,7 @@
 	desc = "This rough needle can be used to sew cloth and wounds."
 	stringamt = 3
 
-/obj/item/needle/pestra
-	name = "needle of pestra"
-	desc = "<span class='green'>This needle has been blessed by the goddess of medicine herself!</span>"
+/obj/item/needle/blessed
+	name = "blessed needle"
+	desc = "<span class='hierophant'>A needle blessed by the ordained of the Church. A coveted item.</span>"
 	infinite = TRUE

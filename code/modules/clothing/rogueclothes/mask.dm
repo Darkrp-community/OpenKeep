@@ -128,10 +128,21 @@
 					var/mob/living/carbon/H = user
 					H.update_inv_wear_mask()
 
-/obj/item/clothing/mask/rogue/physician
-	name = "plague mask"
-	desc = "What better laboratory than the blood-soaked battlefield?"
-	icon_state = "physmask"
+/obj/item/clothing/mask/rogue/feld
+	name = "feldsher's mask"
+	desc = "Three times the beaks means three times the doctor."
+	icon_state = "feldmask"
+	item_state = "feldmask"
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	body_parts_covered = FACE|EARS|EYES|MOUTH|NECK
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	sewrepair = TRUE
+
+/obj/item/clothing/mask/rogue/phys
+	name = "physicker's mask"
+	desc = "Packed with herbs to conceal the rot."
+	icon_state = "surgmask"
+	item_state = "surgmask"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	body_parts_covered = FACE|EARS|EYES|MOUTH|NECK
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP

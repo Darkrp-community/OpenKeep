@@ -984,12 +984,12 @@
 	},
 /area/rogue/indoors/town/tavern)
 "byT" = (
-/obj/structure/bed/rogue/shit,
 /obj/structure/curtain/bounty{
 	color = "grey"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old,
+/obj/structure/table/optable,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -1602,7 +1602,9 @@
 	},
 /area/rogue/outdoors/rtfield)
 "cpm" = (
-/obj/structure/roguemachine/vendor,
+/obj/structure/roguemachine/vendor{
+	keycontrol = "doctor"
+	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -1865,15 +1867,21 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
-/obj/item/needle,
-/obj/item/needle{
-	pixel_x = 7
-	},
 /obj/item/reagent_containers/glass/bottle/rogue{
-	pixel_y = 20;
-	pixel_x = -8
+	pixel_y = 10;
+	pixel_x = -8;
+	layer = 5
 	},
 /obj/machinery/light/rogue/wallfire/candle,
+/obj/item/reagent_containers/glass/bottle/rogue{
+	pixel_y = 10;
+	layer = 6
+	},
+/obj/item/reagent_containers/glass/bottle/rogue{
+	pixel_y = 10;
+	pixel_x = 8;
+	layer = 7
+	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -6697,9 +6705,6 @@
 /obj/item/rogueweapon/tongs{
 	pixel_x = -3
 	},
-/obj/item/needle{
-	pixel_x = 11
-	},
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -8875,12 +8880,12 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "msI" = (
-/obj/structure/bed/rogue/shit,
 /obj/structure/curtain/bounty{
 	color = "grey"
 	},
 /obj/machinery/light/rogue/wallfire/candle/r,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/optable,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -11847,11 +11852,11 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church)
 "qtt" = (
-/obj/structure/bed/rogue/shit,
 /obj/structure/curtain/bounty{
 	color = "grey"
 	},
 /obj/machinery/light/rogue/wallfire/candle/l,
+/obj/structure/table/optable,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -14431,6 +14436,9 @@
 /area/rogue/outdoors/town)
 "umn" = (
 /obj/machinery/light/rogue/wallfire/candle/r,
+/obj/effect/landmark/start/feldsher{
+	dir = 1
+	},
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/town)
 "umq" = (
