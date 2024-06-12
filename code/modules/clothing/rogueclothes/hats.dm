@@ -688,12 +688,14 @@
 	desc = "My cure is most effective."
 	icon_state = "feldhood"
 	item_state = "feldhood"
+	color = null
 
 /obj/item/clothing/head/roguetown/roguehood/phys
 	name = "physicker's hood"
 	desc = "My cure is mostly effective."
 	icon_state = "surghood"
 	item_state = "surghood"
+	color = null
 
 /obj/item/clothing/head/roguetown/helmet/feld
 	name = "feldsher's cage"
