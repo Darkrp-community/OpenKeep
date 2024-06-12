@@ -29,6 +29,7 @@ GLOBAL_LIST_INIT(cbt_classes, list(
 	BCLASS_CHOP,
 	BCLASS_PICK,
 	BCLASS_PUNCH,
+	BCLASS_TWIST
 ))
 
 GLOBAL_LIST_INIT(stab_bclasses, list(
