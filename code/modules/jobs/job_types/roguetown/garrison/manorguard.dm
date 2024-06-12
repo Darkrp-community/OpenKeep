@@ -15,7 +15,7 @@
 		"Aasimar"
 	)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
-	tutorial = "You're an elite member of the Garrison, awarded with a knighthood for your prowess and loyalty. Be a stalwart guardian for the royal family, and serve them until your dying breath."
+	tutorial = "You're an elite member of the Garrison, awarded with knighthood for your prowess and loyalty. Be a stalwart guardian for the royal family, and serve them until your dying breath."
 	display_order = JDO_ROYALGUARD
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
