@@ -317,12 +317,6 @@
 /obj/structure/fermenting_barrel,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/beach/boat)
-"Hm" = (
-/obj/effect/landmark/start/mercenarylate{
-	dir = 1
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/beach/boat)
 "Hy" = (
 /obj/structure/closet/crate/roguecloset/lord{
 	lockid = "guild"
@@ -9896,7 +9890,7 @@ PN
 Jo
 su
 su
-Hm
+su
 su
 su
 su
@@ -9943,7 +9937,7 @@ Jy
 Jy
 su
 su
-Hm
+su
 su
 co
 HC
@@ -10037,7 +10031,7 @@ Jy
 Jy
 su
 su
-Hm
+su
 su
 co
 QC
@@ -10084,7 +10078,7 @@ PN
 Jo
 su
 su
-Hm
+su
 su
 aF
 xA

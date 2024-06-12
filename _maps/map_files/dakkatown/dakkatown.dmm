@@ -6993,7 +6993,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "FB" = (
-/turf/closed/wall/mineral/rogue/stone/moss,
+/turf/closed,
 /area/rogue/under/cave)
 "FD" = (
 /obj/structure/roguewindow,

@@ -739,6 +739,9 @@
 /area/rogue/indoors)
 "xO" = (
 /obj/structure/bed/rogue/shit,
+/obj/effect/landmark/start/farmer{
+	dir = 1
+	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors)
 "yb" = (
@@ -817,10 +820,9 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "As" = (
+/obj/structure/bed/rogue/shit,
 /obj/effect/landmark/start/farmer,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "horzw"
-	},
+/turf/open/floor/rogue/woodturned,
 /area/rogue/indoors)
 "At" = (
 /obj/structure/closet/crate/chest,
@@ -888,10 +890,6 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
-"BT" = (
-/obj/effect/landmark/start/farmer,
-/turf/open/floor/rogue/ruinedwood/turned,
-/area/rogue/indoors)
 "BV" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1
@@ -17587,7 +17585,7 @@ jv
 tu
 dW
 dW
-As
+dW
 dW
 Ot
 XY
@@ -18216,7 +18214,7 @@ NW
 wv
 Tk
 uq
-BT
+uq
 uq
 wv
 Vb
@@ -18687,7 +18685,7 @@ TP
 vC
 km
 uq
-BT
+uq
 uq
 vC
 dp
@@ -41608,7 +41606,7 @@ Ea
 jz
 jz
 wv
-xO
+As
 qn
 qn
 xO
@@ -41922,7 +41920,7 @@ Ea
 jz
 jz
 XY
-xO
+As
 qn
 qn
 xO
