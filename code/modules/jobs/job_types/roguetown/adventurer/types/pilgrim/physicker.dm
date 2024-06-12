@@ -39,3 +39,5 @@
         H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
     H.change_stat("intelligence", 2)
     H.change_stat("speed", 1)
+    ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
