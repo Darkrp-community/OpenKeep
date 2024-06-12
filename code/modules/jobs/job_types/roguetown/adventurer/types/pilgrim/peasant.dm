@@ -25,6 +25,7 @@
 	H.mind.adjust_skillrank(/datum/skill/labor/farming, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(3,3,4), TRUE)
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	pants = /obj/item/clothing/under/roguetown/trou
@@ -52,4 +53,4 @@
 		backr = /obj/item/rogueweapon/pitchfork
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", -2)
-	H.change_stat("speed", -1)
+	ADD_TRAIT(H, RTRAIT_NOSTINK, TRAIT_GENERIC)	//Peasents probably smell terrible. (:

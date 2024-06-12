@@ -52,8 +52,9 @@
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/huntingknife = 1)
 	beltl = /obj/item/quiver/arrows
-	H.change_stat("perception", 3)
+	H.change_stat("perception", 2)
 	H.change_stat("endurance", 1)
+	H.change_stat("speed", 1)
 	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, RTRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	if(prob(23))

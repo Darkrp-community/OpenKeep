@@ -605,6 +605,9 @@
 /obj/item/clothing/cloak/raincloak/red
 	color = CLOTHING_RED
 
+/obj/item/clothing/cloak/raincloak/purple
+	color = CLOTHING_PURPLE
+
 /obj/item/clothing/cloak/raincloak/mortus
 	color = CLOTHING_BLACK
 

@@ -271,15 +271,20 @@
 				if(BCLASS_BLUNT)
 					cont = TRUE
 				if(BCLASS_PICK)
-					dullfactor = 1.5
+					var/mob/living/miner = user
+					var/mineskill = miner.mind.get_skill_level(/datum/skill/labor/mining)
+					dullfactor = 1.5 * (mineskill * 0.1)
 					cont = TRUE
 			if(!cont)
 				return 0
 		if(DULLING_PICK) //cannot deal damage if not a pick item. aka rock walls
 			if(user.used_intent.blade_class != BCLASS_PICK)
 				return 0
-			newforce = newforce * 30
+			var/mob/living/miner = user
+			var/mineskill = miner.mind.get_skill_level(/datum/skill/labor/mining)
+			newforce = newforce * (8+(mineskill*1.5))
 			shake_camera(user, 1, 1)
+			miner.mind.adjust_experience(/datum/skill/labor/mining, (miner.STAINT*0.2))
 	newforce = (newforce * user.used_intent.damfactor) * dullfactor
 	if(user.used_intent.get_chargetime() && user.client?.chargedprog < 100)
 		newforce = newforce * 0.5
