@@ -16,6 +16,8 @@
 	devotion_cost = -25
 
 /obj/effect/proc_holder/spell/invoked/lesser_heal/cast(list/targets, mob/living/user)
+	if(target == user)
+				return FALSE
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
 		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
