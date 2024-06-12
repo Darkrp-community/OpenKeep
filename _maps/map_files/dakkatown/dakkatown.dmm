@@ -28,7 +28,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 4
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/town/sargoth)
 "ak" = (
 /obj/structure/closet/crate/roguecloset,
@@ -124,7 +124,7 @@
 	dir = 4
 	},
 /obj/structure/barricade/wooden/crude,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
 "aJ" = (
 /obj/structure/closet/crate/roguecloset,
@@ -438,7 +438,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 4
 	},
-/turf/closed/wall/mineral/rogue/decowood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "cf" = (
 /obj/structure/roguewindow/openclose{
@@ -491,9 +491,11 @@
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church/chapel)
 "cs" = (
-/obj/structure/roguewindow/openclose,
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town)
+/obj/structure/roguewindow/openclose{
+	dir = 4
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/indoors/town/tavern)
 "ct" = (
 /turf/open/floor/rogue/blocks/newstone/alt,
 /area/rogue/outdoors/exposed/church)
@@ -744,7 +746,7 @@
 /area/rogue/indoors/town/manor)
 "dA" = (
 /obj/structure/roguewindow,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
 "dC" = (
 /obj/structure/closet/crate/roguecloset/inn,
@@ -1483,7 +1485,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 1
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
 "gN" = (
 /obj/structure/mineral_door/wood/donjon{
@@ -1737,7 +1739,7 @@
 /area/rogue/outdoors/town)
 "hV" = (
 /obj/structure/roguewindow,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "hW" = (
 /obj/structure/table/wood{
@@ -3673,7 +3675,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 8
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
 "qp" = (
 /obj/structure/closet/crate/roguecloset,
@@ -3885,7 +3887,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 1
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "rl" = (
 /obj/structure/fluff/walldeco/church/line{
@@ -4391,7 +4393,7 @@
 /area/rogue/indoors/town)
 "tv" = (
 /obj/structure/roguewindow/openclose,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
 "tx" = (
 /obj/structure/table/wood{
@@ -4829,7 +4831,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 4
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/apothecary)
 "vv" = (
 /obj/structure/closet/crate/roguecloset,
@@ -4871,7 +4873,7 @@
 /area/rogue/indoors/town)
 "vA" = (
 /obj/structure/roguewindow/openclose,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
 "vB" = (
 /obj/structure/mineral_door/wood{
@@ -5111,7 +5113,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 4
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
 "wG" = (
 /obj/structure/fluff/railing/border{
@@ -5477,7 +5479,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 1
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
 "yB" = (
 /obj/structure/roguemachine/scomm{
@@ -6560,7 +6562,7 @@
 /area/rogue/outdoors/town)
 "DB" = (
 /obj/structure/roguewindow/openclose,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
 "DC" = (
 /obj/structure/fluff/railing/border,
@@ -7831,7 +7833,7 @@
 /area/rogue/indoors/town/manor)
 "Jv" = (
 /obj/structure/roguewindow/openclose,
-/turf/closed/wall/mineral/rogue/decowood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "Jx" = (
 /obj/structure/mineral_door/wood/donjon/stone{
@@ -8902,10 +8904,10 @@
 /area/rogue/outdoors/town/roofs)
 "Og" = (
 /obj/structure/roguewindow/openclose{
-	dir = 1
+	dir = 8
 	},
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/indoors/town)
+/turf/open/floor/rogue/blocks,
+/area/rogue/indoors/town/tavern)
 "Oh" = (
 /obj/structure/mineral_door/wood/fancywood{
 	locked = 1;
@@ -8925,7 +8927,7 @@
 /area/rogue/indoors/town/garrison)
 "Om" = (
 /obj/structure/roguewindow,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
 "On" = (
 /obj/structure/fluff/wallclock/r,
@@ -9207,7 +9209,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 4
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
 "PA" = (
 /obj/structure/mineral_door/wood/deadbolt{
@@ -9322,7 +9324,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 8
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "PY" = (
 /obj/structure/closet/crate/coffin,
@@ -9598,7 +9600,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 8
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
 "Rh" = (
 /obj/item/reagent_containers/food/snacks/crow,
@@ -9670,7 +9672,7 @@
 /area/rogue/indoors/town/manor)
 "Rv" = (
 /obj/structure/roguewindow/openclose,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/tavern)
 "Rw" = (
 /obj/structure/closet/crate/chest,
@@ -9775,7 +9777,7 @@
 /area/rogue/indoors/town/manor)
 "RX" = (
 /obj/structure/roguewindow,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor)
 "RY" = (
 /obj/structure/closet/crate/coffin,
@@ -11030,7 +11032,7 @@
 /area/rogue/indoors/town/church)
 "Xy" = (
 /obj/structure/roguewindow/openclose,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/apothecary)
 "Xz" = (
 /obj/structure/table/wood{
@@ -11320,7 +11322,7 @@
 "YG" = (
 /obj/structure/roguewindow/openclose,
 /obj/structure/barricade/wooden/crude,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
 "YH" = (
 /obj/structure/fluff/railing/border{
@@ -11363,7 +11365,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 1
 	},
-/turf/closed/wall/mineral/rogue/decowood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/theatre)
 "YQ" = (
 /obj/effect/decal/cobbleedge{
@@ -11596,14 +11598,14 @@
 /obj/structure/roguewindow{
 	color = "#CCCCCC"
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/magician)
 "ZP" = (
 /obj/structure/roguewindow/openclose{
-	dir = 4
+	dir = 1
 	},
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town)
+/turf/open/floor/rogue/blocks,
+/area/rogue/indoors/town/tavern)
 "ZR" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_y = 32
@@ -43900,7 +43902,7 @@ Pe
 Yl
 Lj
 Lj
-cs
+Jv
 ej
 ej
 ej
@@ -44528,7 +44530,7 @@ rX
 Yl
 Lj
 Lj
-cs
+Jv
 ej
 ej
 ej
@@ -68084,7 +68086,7 @@ Bb
 bz
 bz
 bz
-ZP
+ce
 bz
 Yr
 Bb
@@ -70261,12 +70263,12 @@ pl
 Ow
 uJ
 uJ
-gH
+cs
 uJ
 uJ
 uJ
 uJ
-gH
+cs
 uJ
 uJ
 uJ
@@ -71221,7 +71223,7 @@ fn
 fn
 fn
 bw
-hr
+ZP
 pl
 pl
 pl
@@ -71680,7 +71682,7 @@ uJ
 uJ
 pp
 uJ
-kY
+Og
 uJ
 uJ
 uJ
@@ -71849,7 +71851,7 @@ KR
 KR
 KR
 KR
-hr
+ZP
 pl
 pl
 pl
@@ -72157,10 +72159,10 @@ Ow
 uJ
 uJ
 uJ
-kY
+Og
 uJ
 uJ
-kY
+Og
 uJ
 uJ
 Ow
@@ -72963,7 +72965,7 @@ Yr
 Bb
 bz
 bz
-ZP
+ce
 bz
 bz
 kv
@@ -73273,7 +73275,7 @@ iN
 iN
 iN
 iN
-cs
+Jv
 tk
 tk
 tk
@@ -73571,7 +73573,7 @@ yO
 Ao
 Ao
 Ao
-Og
+ri
 jj
 jj
 jj

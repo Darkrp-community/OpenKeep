@@ -1039,10 +1039,6 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
-"GV" = (
-/obj/structure/fluff/traveltile,
-/turf/open/water/river,
-/area/rogue/outdoors/woods)
 "Hw" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/shovel,
@@ -13759,7 +13755,7 @@ Tz
 Tz
 Tz
 Tz
-GV
+Tz
 "}
 (78,1,1) = {"
 qi
@@ -13916,7 +13912,7 @@ vN
 Tz
 Tz
 Tz
-GV
+Tz
 "}
 (79,1,1) = {"
 qi
@@ -14073,7 +14069,7 @@ Tz
 Tz
 Tz
 Tz
-GV
+Tz
 "}
 (80,1,1) = {"
 qi

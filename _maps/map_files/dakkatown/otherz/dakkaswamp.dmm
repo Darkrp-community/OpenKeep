@@ -153,12 +153,6 @@
 "tj" = (
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/bog)
-"tQ" = (
-/obj/structure/stairs/stone{
-	dir = 8
-	},
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/bog)
 "uP" = (
 /obj/structure/glowshroom,
 /turf/open/water/swamp/deep,
@@ -204,12 +198,6 @@
 	name = "Abandoned Hut"
 	},
 /turf/open/floor/rogue/twig,
-/area/rogue/outdoors/bog)
-"DB" = (
-/obj/structure/stairs/stone{
-	dir = 8
-	},
-/turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/bog)
 "Fa" = (
 /turf/closed/mineral/random/rogue/med,
@@ -300,7 +288,7 @@
 /obj/structure/stairs/stone{
 	dir = 8
 	},
-/turf/open/transparent/openspace,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/bog)
 "Su" = (
 /obj/structure/flora/roguetree/burnt,
@@ -7874,10 +7862,10 @@ Hr
 Zi
 Su
 TM
-tQ
-tQ
-tQ
-DB
+Sm
+Sm
+Sm
+Sm
 At
 cX
 cX

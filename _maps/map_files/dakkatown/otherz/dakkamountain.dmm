@@ -248,7 +248,7 @@
 /obj/structure/stairs/stone{
 	dir = 1
 	},
-/turf/open/floor/rogue/naturalstone,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains)
 "Qu" = (
 /obj/structure/fluff/grindwheel,
@@ -288,12 +288,6 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors)
-"Wh" = (
-/obj/structure/stairs/stone{
-	dir = 4
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/mountains)
 "Ws" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_y = 32
@@ -31973,10 +31967,10 @@ bk
 od
 od
 bk
-Wh
-Wh
-Wh
-Wh
+pr
+pr
+pr
+pr
 bk
 bk
 bk

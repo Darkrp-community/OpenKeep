@@ -59,7 +59,7 @@
 /obj/structure/stairs/stone{
 	dir = 1
 	},
-/turf/open/floor/rogue/dirt/road,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/beach)
 "hH" = (
 /obj/machinery/light/rogue/torchholder/c,
@@ -297,12 +297,6 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/beach/boat/captain)
-"EQ" = (
-/obj/structure/stairs/stone{
-	dir = 1
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/beach)
 "Fv" = (
 /obj/machinery/light/rogue/torchholder/c{
 	pixel_y = -32
@@ -2436,7 +2430,7 @@ ut
 ut
 ut
 ut
-ut
+cn
 hw
 vn
 vn
@@ -2483,7 +2477,7 @@ ut
 ut
 ut
 ut
-ut
+cn
 hw
 vn
 vn
@@ -2530,7 +2524,7 @@ ut
 ut
 ut
 ut
-ut
+cn
 hw
 vn
 vn
@@ -3047,7 +3041,7 @@ ut
 ut
 ut
 ut
-ut
+cn
 hw
 vn
 vn
@@ -3094,7 +3088,7 @@ ut
 ut
 ut
 ut
-ut
+cn
 hw
 vn
 vn
@@ -3141,7 +3135,7 @@ ut
 ut
 ut
 ut
-ut
+cn
 hw
 vn
 vn
@@ -9722,7 +9716,7 @@ ut
 ut
 vn
 vn
-EQ
+hw
 PN
 PN
 PN
@@ -9769,7 +9763,7 @@ ut
 ut
 vn
 vn
-EQ
+hw
 PN
 PN
 PN
@@ -9816,7 +9810,7 @@ ut
 ut
 vn
 vn
-EQ
+hw
 PN
 PN
 PN
@@ -10333,7 +10327,7 @@ ut
 ut
 vn
 vn
-EQ
+hw
 PN
 PN
 PN
@@ -10380,7 +10374,7 @@ ut
 ut
 vn
 vn
-EQ
+hw
 PN
 PN
 PN
@@ -10427,7 +10421,7 @@ ut
 ut
 vn
 vn
-EQ
+hw
 PN
 PN
 PN
