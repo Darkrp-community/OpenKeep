@@ -179,7 +179,7 @@
 	. = ..()
 	if(. && isliving(user))
 		var/mob/living/L = user
-		L.Unconscious(40)
+		L.SetKnockdown(40)
 
 /datum/emote/living/whisper
 	key = "whisper"

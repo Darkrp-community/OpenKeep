@@ -43,7 +43,7 @@
 	dodgetime = 15
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
-	remains_type = /obj/item/rogueweapon/stoneaxe/battle
+	remains_type = /obj/item/rogueweapon/battle
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/death(gibbed)
 	..()

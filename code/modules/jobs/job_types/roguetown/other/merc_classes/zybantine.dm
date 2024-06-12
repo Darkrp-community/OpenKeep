@@ -1,14 +1,15 @@
 /datum/advclass/mercenary/zybantine
 	name = "Zybantine"
 	tutorial = "A cutthroat from the southern countries, you've headed into foreign lands to make even greater coin than you had prior."
-	allowed_sexes = list("male", "female")
-	allowed_races = list("Humen",
-	"Humen",
-	"Half-Elf",
-	"Tiefling",
-	"Dwarf",
-	"Dark Elf",
-	"Aasimar"
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list(
+		"Humen",
+		"Half-Elf",
+		"Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/zybantine
 	ismerc = TRUE
@@ -41,6 +42,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(0,1,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 2)

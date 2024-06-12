@@ -6,8 +6,9 @@
 	total_positions = 0
 	spawn_positions = 1
 
-	allowed_races = list("Humen",
-	"Humen")
+	allowed_races = list(
+		"Humen"
+	)
 	allowed_sexes = list(MALE)
 	outfit = /datum/outfit/job/roguetown/lord
 	display_order = JDO_LORD
@@ -40,6 +41,7 @@
 		id = /obj/item/clothing/ring/active/nomag
 		l_hand = /obj/item/rogueweapon/lordscepter
 		if(H.mind)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/convertrole/guard)
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)

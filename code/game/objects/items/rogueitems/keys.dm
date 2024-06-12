@@ -1,7 +1,7 @@
 
 /obj/item/roguekey
 	name = "key"
-	desc = ""
+	desc = "A simple key of simple uses."
 	icon_state = "iron"
 	icon = 'icons/roguetown/items/keys.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
@@ -79,8 +79,8 @@
 	icon_state = "cheesekey"
 	lockid = "vault"
 
-/obj/item/roguekey/sheriff
-	name = "bailiff's key"
+/obj/item/roguekey/captain
+	name = "captain's key"
 	icon_state = "cheesekey"
 	lockid = "sheriff"
 

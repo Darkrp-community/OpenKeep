@@ -1,14 +1,16 @@
 /datum/advclass/pilgrim/peasant
 	name = "Peasant"
-	allowed_sexes = list("male", "female")
-	allowed_races = list("Humen",
-	"Humen",
-	"Elf",
-	"Tiefling",
-	"Half-Elf",
-	"Dwarf",
-	"Dwarf",
-	"Aasimar"
+	tutorial = "A serf with no particular proficiency of their own, born poor \
+				and more likely to die poor. Farm workers, carriers, handymen."
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/peasant
 	isvillager = TRUE
@@ -53,5 +55,6 @@
 	else
 		backr = /obj/item/rogueweapon/pitchfork
 	H.change_stat("strength", 1)
+	H.change_stat("constitution", 1)
 	H.change_stat("intelligence", -2)
 	H.change_stat("speed", -1)

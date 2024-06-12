@@ -280,7 +280,7 @@
 		return
 	if(known_skills[S] >= old_level)
 		if(known_skills[S] > old_level)
-			to_chat(current, "<span class='nicegreen'>My [S.name] grows!</span>")
+			to_chat(current, "<span class='nicegreen'>My proficiency in [S.name] grows!</span>")
 	else
 		to_chat(current, "<span class='warning'>My [S.name] has weakened!</span>")
 

@@ -271,7 +271,7 @@
 							var/atom/movable/I = new R.result (T)
 							I.CheckParts(parts, R)
 							I.OnCrafted(user.dir)
-					user.visible_message("<span class='notice'>[user] [R.verbage] \a [R.name]!</span>", \
+					user.visible_message("<span class='notice'>[user] [R.verbage_tp] \a [R.name]!</span>", \
 										"<span class='notice'>I [R.verbage] \a [R.name]!</span>")
 					if(user.mind && R.skillcraft)
 						if(isliving(user))

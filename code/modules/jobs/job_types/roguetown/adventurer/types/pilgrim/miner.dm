@@ -1,14 +1,16 @@
 /datum/advclass/pilgrimminer
 	name = "Miner"
-	allowed_sexes = list("male")
-	allowed_races = list("Humen",
-	"Humen",
-	"Dark Elf",
-	"Tiefling",
-	"Half-Elf",
-	"Dwarf",
-	"Dwarf",
-	"Aasimar"
+	tutorial = "Hardy people who ceaselessly toil at the mines for ores and salt, \
+				who will ever know what they'll find beneath?"
+	allowed_sexes = list(MALE)
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/miner
 	isvillager = TRUE

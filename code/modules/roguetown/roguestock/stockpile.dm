@@ -58,13 +58,23 @@
 	export_price = 4
 	importexport_amt = 10
 
+/datum/roguestock/stockpile/silk
+	name = "Silk"
+	desc = "Strands of fine silk used for exotic weaving"
+	item_type = /obj/item/natural/silk
+	held_items = 7
+	payout_price = 4
+	withdraw_price = 6
+	export_price = 6
+	importexport_amt = 10
+
 /datum/roguestock/stockpile/salt
 	name = "Salt"
 	desc = "Rock salt useful for curing and cooking."
 	item_type = /obj/item/reagent_containers/powder/flour/salt
 	held_items = 2
-	payout_price = 5
-	withdraw_price = 8
+	payout_price = 4
+	withdraw_price = 6
 	export_price = 8
 	importexport_amt = 15
 
