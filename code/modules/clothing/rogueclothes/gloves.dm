@@ -59,7 +59,7 @@
 	desc = "Gauntlets made out of steel chains. Great melee protection and higher integrity."
 	icon_state = "cgloves"
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB)
 	armor_class = ARMOR_CLASS_MEDIUM
 	resistance_flags = null
 	blocksound = CHAINHIT
@@ -128,7 +128,7 @@
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 
-/obj/item/clothing/gloves/roguetown/rare/dwarfplate
+/obj/item/clothing/gloves/roguetown/rare/dwarfplate 
 	name = "dwarvish plate gauntlets"
 	desc = ""
 	item_state = "dwarfhand"
@@ -137,7 +137,7 @@
 	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT)
 	resistance_flags = null
 	allowed_race = list("dwarf")
-	allowed_sex = list(MALE)
+	allowed_sex = list(MALE, FEMALE)
 	blocksound = PLATEHIT
 	body_parts_covered = HANDS
 	max_integrity = 400

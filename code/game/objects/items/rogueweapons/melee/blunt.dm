@@ -182,7 +182,7 @@
 	force = 15
 	force_wielded = 35
 	possible_item_intents = list(/datum/intent/mace/heavy/strike)
-	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/dagger/thrust)
+	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/mace/thrust)
 	name = "warclub"
 	desc = "A two handed club, decorated with a spiked cap crown. A perfect way to say Good Morning to any would be noble-knight."
 	icon_state = "goedendag"
@@ -222,8 +222,9 @@
 /obj/item/rogueweapon/mace/goden/steel
 	name = "grand mace"
 	desc = "A casted polearm, rumored to be the weapon-design used by the Forgotten God himself."
+	gripped_intents = list(/datum/intent/mace/heavy/smash) // It's a 2h flanged mace, not a goedendag.
 	icon_state = "polemace"
-	max_integrity = 600
+	max_integrity = 500
 	force = 15
 	force_wielded = 35
 
@@ -262,6 +263,20 @@
 	misscost = 30
 	warnie = "mobwarning"
 
+// For the Goedendag. If it applies to the grand mace, use this one instead.
+/datum/intent/mace/thrust
+	name = "thrust"
+	blade_class = BCLASS_STAB
+	attack_verb = list("stabs")
+	animname = "stab"
+	icon_state = "instab"
+	reach = 2
+	chargetime = 1
+	warnie = "mobwarning"
+	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
+	penfactor = 40
+	swingdelay = 1
+	misscost = 15
 
 // Copper Bludgeon
 
@@ -283,7 +298,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_HIP
 	associated_skill = /datum/skill/combat/axesmaces
-	gripped_intents = list(/datum/intent/mace/strike,/datum/intent/mace/smash)
 	parrysound = list('sound/combat/parry/parrygen.ogg')
 	swingsound = BLUNTWOOSH_MED
 	max_integrity = 80
@@ -354,7 +368,7 @@
 	associated_skill = /datum/skill/combat/axesmaces
 	smeltresult = /obj/item/ingot/steel
 	swingsound = BLUNTWOOSH_HUGE
-	max_integrity = 200
+	max_integrity = 500
 	minstr = 10
 	wdefense = 3
 	pixel_y = -16

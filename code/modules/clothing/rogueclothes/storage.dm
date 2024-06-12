@@ -45,10 +45,11 @@
 		for(var/obj/item/I in things)
 			STR.remove_from_storage(I, get_turf(src))
 
+// Until ninja stars are fixed (able to be removed from embedding), replacing them with poison berries for arrow crafting.
 /obj/item/storage/belt/rogue/leather/assassin/PopulateContents()
-	new /obj/item/throwing_star/ninja(src)
-	new /obj/item/throwing_star/ninja(src)
-	new /obj/item/throwing_star/ninja(src)
+	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
+	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
+	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
 
 /obj/item/storage/belt/rogue/leather/plaquegold
 	name = "plaque belt"
