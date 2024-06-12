@@ -32,6 +32,7 @@
 	name = "wrist blade"
 	desc = "More so like the blade itself."
 	icon_state = "wristbladeitem"
+	pickup_sound = 'sound/combat/hiddenbladedraw.ogg' // not as silent
 
 /obj/item/rogueweapon/huntingknife/wristblade/dropped(mob/user, silent) // failsafe
 	qdel(src)
