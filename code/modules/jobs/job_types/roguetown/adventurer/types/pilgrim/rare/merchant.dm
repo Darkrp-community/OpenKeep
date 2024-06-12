@@ -2,7 +2,7 @@
 	name = "Travelling Merchant"
 	tutorial = "You are a travelling merchant, possibly either of local origin or from far away lands. \
 	You've picked up many wears on your various adventures, now it's time to peddle them back to these locals."
-	allowed_sexes = list("male", "female")
+	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
 		"Elf",

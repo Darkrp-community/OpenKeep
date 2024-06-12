@@ -64,7 +64,7 @@
 		neck = /obj/item/clothing/neck/roguetown/gorget
 
 	H.change_stat("strength", 2)
-	H.change_stat("endurance", 1) // 7 stat points total as a low-skill martial role without magic. Compared to Pally with 5 points. <- you what?
+	H.change_stat("endurance", 1)
 	H.change_stat("speed", 1)
 	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)

@@ -48,4 +48,3 @@
 	H.change_stat("strength", -1)
 	H.change_stat("perception", 2)
 	H.change_stat("speed", 2)
-	H.change_stat("intelligence", 1)
