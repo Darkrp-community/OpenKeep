@@ -525,7 +525,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/church)
 "cz" = (
-/obj/structure/bookcase,
+/obj/structure/bookcase/random/archive,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
 "cC" = (
@@ -1264,9 +1264,9 @@
 	},
 /area/rogue/indoors/town/dwarfin)
 "fS" = (
-/obj/structure/closet/crate/roguecloset/inn/chest,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /obj/item/reagent_containers/food/snacks/butter,
+/obj/structure/closet/crate/chest,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/church)
 "fT" = (
@@ -2348,6 +2348,7 @@
 "kx" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/mace/cudgel,
+/obj/item/rogueweapon/whip,
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/cell)
 "ky" = (
@@ -3032,7 +3033,7 @@
 	lockid = "hand";
 	name = "Hand's Chambers"
 	},
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/manor)
 "nz" = (
 /turf/closed/wall/mineral/rogue/wooddark/horizontal,
@@ -5480,12 +5481,9 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
 "yx" = (
-/obj/structure/mineral_door/wood/violet{
-	lockid = "nightmaiden";
-	name = "Maiden's Room"
-	},
-/turf/open/floor/rogue/woodturned/nosmooth,
-/area/rogue/indoors/town/bath)
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/floor/rogue/ruinedwood/chevron,
+/area/rogue/indoors/town/church)
 "yy" = (
 /obj/item/grown/log/tree,
 /turf/open/floor/rogue/blocks,
@@ -7068,8 +7066,8 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "FJ" = (
-/obj/structure/closet/crate/roguecloset/inn/chest,
 /obj/item/reagent_containers/food/snacks/store/cheesewheel,
+/obj/structure/closet/crate/chest,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/church)
 "FK" = (
@@ -7088,7 +7086,6 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/church)
 "FP" = (
-/obj/structure/mineral_door/wood/deadbolt,
 /obj/structure/mineral_door/wood/deadbolt{
 	name = "Roof Access"
 	},
@@ -8946,7 +8943,7 @@
 	lockid = "manor";
 	name = "Librarium"
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor)
 "Oi" = (
 /obj/machinery/light/rogue/torchholder/l,
@@ -9522,6 +9519,10 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)
+"QG" = (
+/obj/item/rogueweapon/whip,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors/town/church)
 "QH" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/outdoors/rtfield)
@@ -9857,7 +9858,7 @@
 	lockid = "nightman";
 	locked = 1
 	},
-/turf/closed/wall/mineral/rogue/craftstone,
+/turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
 "Sg" = (
 /obj/structure/table/wood{
@@ -10826,7 +10827,9 @@
 	lockid = "lord";
 	name = "King's Chambers"
 	},
-/turf/open/floor/carpet/red,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
 /area/rogue/indoors/town/manor)
 "Wn" = (
 /obj/structure/closet/crate/drawer/inn,
@@ -57549,7 +57552,7 @@ Wa
 BY
 BY
 AW
-Mg
+QG
 Mg
 Mg
 Mg
@@ -77583,7 +77586,7 @@ pl
 pl
 tj
 lc
-yx
+kd
 lc
 lc
 lc
@@ -78432,7 +78435,7 @@ OA
 bT
 bT
 IQ
-An
+yx
 mg
 iN
 iN
