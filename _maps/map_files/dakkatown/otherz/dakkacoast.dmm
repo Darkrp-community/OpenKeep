@@ -17,12 +17,9 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach/boat)
-"cK" = (
-/obj/effect/landmark/mapGenerator/sunlights{
-	endTurfX = 155;
-	endTurfY = 45
-	},
-/turf/open/water/swamp/deep,
+"cE" = (
+/obj/effect/sunlight,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/beach)
 "dg" = (
 /obj/structure/mineral_door/wood{
@@ -82,9 +79,6 @@
 /obj/item/roguegem,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/beach/boat/captain)
-"iP" = (
-/turf/closed/mineral/random/rogue/med,
-/area/rogue/outdoors/caves)
 "kt" = (
 /obj/structure/closet/crate/chest/gold{
 	lockid = "guild";
@@ -183,9 +177,19 @@
 "rP" = (
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/beach)
+"ss" = (
+/obj/effect/landmark/mapGenerator/sunlights{
+	endTurfX = 155;
+	endTurfY = 45
+	},
+/turf/open/water/swamp/deep,
+/area/rogue/outdoors/beach)
 "su" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach/boat)
+"sz" = (
+/turf/closed/mineral/random/rogue/med,
+/area/rogue/outdoors/caves)
 "ut" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/beach)
@@ -442,6 +446,9 @@
 	},
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/outdoors/beach/boat)
+"Pw" = (
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/beach)
 "PJ" = (
 /obj/machinery/light/rogue/torchholder/c{
 	pixel_y = -32
@@ -458,9 +465,6 @@
 "QC" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach/boat)
-"St" = (
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/beach)
 "Tz" = (
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/beach/boat)
@@ -557,7 +561,7 @@ rP
 rP
 rP
 rP
-cK
+ss
 "}
 (2,1,1) = {"
 ut
@@ -2494,7 +2498,7 @@ ut
 cn
 hw
 vn
-vn
+cE
 vn
 vn
 vn
@@ -4095,7 +4099,7 @@ ut
 ut
 ut
 AC
-iP
+sz
 AC
 vn
 vn
@@ -4142,7 +4146,7 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 vn
@@ -4189,7 +4193,7 @@ ut
 ut
 AC
 AC
-iP
+sz
 Kz
 Kz
 Kz
@@ -4235,8 +4239,8 @@ ut
 ut
 AC
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
 Kz
@@ -4281,8 +4285,8 @@ ut
 ut
 ut
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
 Kz
@@ -4328,12 +4332,12 @@ ut
 ut
 AC
 AC
-iP
+sz
 Kz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 ut
 vn
@@ -4374,13 +4378,13 @@ ut
 ut
 ut
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
 Kz
-iP
-iP
+sz
+sz
 AC
 ut
 vn
@@ -4421,12 +4425,12 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 AC
 ut
@@ -4468,12 +4472,12 @@ ut
 ut
 AC
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
-iP
+sz
+sz
 AC
 ut
 ut
@@ -4514,12 +4518,12 @@ ut
 ut
 ut
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 AC
 ut
@@ -4561,12 +4565,12 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
-iP
+sz
+sz
 AC
 ut
 ut
@@ -4608,11 +4612,11 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 AC
 ut
@@ -4655,11 +4659,11 @@ ut
 ut
 AC
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 ut
 ut
@@ -4701,12 +4705,12 @@ ut
 ut
 ut
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
-iP
-iP
+sz
+sz
 AC
 ut
 ut
@@ -4748,11 +4752,11 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 AC
 ut
@@ -4795,11 +4799,11 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 AC
 ut
@@ -4842,12 +4846,12 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
-iP
+sz
+sz
 AC
 ut
 ut
@@ -4889,12 +4893,12 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 ut
 ut
@@ -4936,12 +4940,12 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
-iP
+sz
+sz
 AC
 ut
 ut
@@ -4983,11 +4987,11 @@ ut
 ut
 ut
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
-iP
+sz
 AC
 AC
 ut
@@ -5031,10 +5035,10 @@ ut
 ut
 AC
 AC
-iP
+sz
 Kz
 Kz
-iP
+sz
 AC
 AC
 ut
@@ -5078,10 +5082,10 @@ ut
 ut
 AC
 AC
-iP
+sz
 Kz
 Kz
-iP
+sz
 AC
 AC
 ut
@@ -5124,12 +5128,12 @@ ut
 ut
 ut
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
-iP
-iP
+sz
+sz
 AC
 ut
 ut
@@ -5171,12 +5175,12 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 ut
 ut
@@ -5218,12 +5222,12 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
-iP
+sz
+sz
 AC
 ut
 ut
@@ -5265,11 +5269,11 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 AC
 ut
@@ -5312,12 +5316,12 @@ ut
 ut
 ut
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
-iP
-iP
+sz
+sz
 AC
 ut
 ut
@@ -5360,11 +5364,11 @@ ut
 ut
 AC
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 ut
 ut
@@ -5407,11 +5411,11 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 ut
 ut
@@ -5454,11 +5458,11 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 ut
 ut
@@ -5501,11 +5505,11 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 AC
 ut
@@ -5548,12 +5552,12 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
-iP
-iP
+sz
+sz
 AC
 AC
 ut
@@ -5595,13 +5599,13 @@ ut
 ut
 ut
 AC
-iP
+sz
 Kz
 Kz
 Kz
 Kz
-iP
-iP
+sz
+sz
 AC
 ut
 ut
@@ -5642,13 +5646,13 @@ ut
 ut
 ut
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
 Kz
 Kz
-iP
+sz
 AC
 AC
 ut
@@ -5690,13 +5694,13 @@ ut
 ut
 AC
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
 Kz
-iP
-iP
+sz
+sz
 AC
 AC
 ut
@@ -5738,13 +5742,13 @@ ut
 ut
 AC
 AC
-iP
+sz
 Kz
 Kz
 Kz
 Kz
-iP
-iP
+sz
+sz
 AC
 ut
 vn
@@ -5785,12 +5789,12 @@ ut
 ut
 ut
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
 Kz
-iP
+sz
 Kz
 AC
 vn
@@ -5833,8 +5837,8 @@ ut
 ut
 AC
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
 Kz
@@ -5881,7 +5885,7 @@ ut
 ut
 AC
 AC
-iP
+sz
 Kz
 Kz
 Kz
@@ -5928,8 +5932,8 @@ ut
 ut
 ut
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
 Kz
@@ -5976,8 +5980,8 @@ ut
 ut
 AC
 AC
-iP
-iP
+sz
+sz
 Kz
 Kz
 vn
@@ -6024,7 +6028,7 @@ ut
 ut
 AC
 AC
-iP
+sz
 Kz
 vn
 vn
@@ -9494,7 +9498,7 @@ PN
 ut
 ut
 ut
-St
+Pw
 PN
 PN
 PN
@@ -9540,8 +9544,8 @@ PN
 (38,1,2) = {"
 ut
 ut
-St
-St
+Pw
+Pw
 PN
 PN
 PN
@@ -9588,7 +9592,7 @@ PN
 ut
 ut
 ut
-St
+Pw
 PN
 PN
 PN
@@ -9635,7 +9639,7 @@ PN
 ut
 ut
 ut
-St
+Pw
 PN
 PN
 PN
@@ -9728,7 +9732,7 @@ PN
 (42,1,2) = {"
 ut
 ut
-St
+Pw
 vn
 hw
 PN
@@ -9869,7 +9873,7 @@ PN
 (45,1,2) = {"
 ut
 ut
-St
+Pw
 vn
 PN
 PN
@@ -9916,10 +9920,10 @@ PN
 (46,1,2) = {"
 cn
 Qm
-St
+Pw
 vn
 vn
-St
+Pw
 PN
 PN
 PN
@@ -9963,12 +9967,12 @@ PN
 (47,1,2) = {"
 cn
 le
-St
+Pw
 vn
-St
-St
-St
-St
+Pw
+Pw
+Pw
+Pw
 PN
 PN
 dD
@@ -10009,14 +10013,14 @@ PN
 "}
 (48,1,2) = {"
 dI
-St
+Pw
 NX
 NX
 NX
 vn
 vn
-St
-St
+Pw
+Pw
 vn
 qw
 qw
@@ -10150,13 +10154,13 @@ PN
 "}
 (51,1,2) = {"
 dI
-St
-St
+Pw
+Pw
 NX
 vn
 NX
-St
-St
+Pw
+Pw
 vn
 vn
 qw
@@ -10198,11 +10202,11 @@ PN
 (52,1,2) = {"
 cn
 le
-St
+Pw
 vn
 vn
-St
-St
+Pw
+Pw
 PN
 PN
 PN
@@ -10245,7 +10249,7 @@ PN
 (53,1,2) = {"
 cn
 Qm
-St
+Pw
 vn
 vn
 PN
@@ -10291,7 +10295,7 @@ PN
 "}
 (54,1,2) = {"
 ut
-St
+Pw
 vn
 vn
 PN
@@ -10386,7 +10390,7 @@ PN
 (56,1,2) = {"
 ut
 ut
-St
+Pw
 vn
 hw
 PN
@@ -10433,7 +10437,7 @@ PN
 (57,1,2) = {"
 ut
 ut
-St
+Pw
 vn
 hw
 PN
@@ -10481,7 +10485,7 @@ PN
 ut
 ut
 Qm
-St
+Pw
 PN
 PN
 PN
@@ -10528,7 +10532,7 @@ PN
 ut
 ut
 ut
-St
+Pw
 PN
 PN
 PN
@@ -10575,7 +10579,7 @@ PN
 ut
 ut
 ut
-St
+Pw
 PN
 PN
 PN

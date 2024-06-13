@@ -650,7 +650,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 
-// Players should not be able to enter the Guild Captain's Quarters (it's magically protected)
+// Players are penalized for entering the Guild Gaptain's quarters (FAFO)
 /area/rogue/outdoors/beach/boat/captain
 	name = "guild captain"
 	ambientsounds = AMB_BEACH
