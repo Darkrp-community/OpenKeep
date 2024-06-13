@@ -42,7 +42,7 @@
 
 /obj/item/clothing/under/roguetown/tights
 	name = "tights"
-	desc = ""
+	desc = "Comfortable loose pants."
 	gender = PLURAL
 	icon_state = "tights"
 	item_state = "tights"
@@ -82,9 +82,18 @@
 	name = "pants"
 	icon_state = "sailorpants"
 
+/obj/item/clothing/under/roguetown/webs
+	name = "webbing"
+	desc = "A fine webbing made from spidersilk, popular fashion within the underdark."
+	gender = PLURAL
+	icon_state = "webs"
+	item_state = "webs"
+	r_sleeve_status = SLEEVE_NOMOD
+	l_sleeve_status = SLEEVE_NOMOD
+
 /obj/item/clothing/under/roguetown/trou
 	name = "work trousers"
-	desc = ""
+	desc = "Padded pants for hardy workers."
 	gender = PLURAL
 	icon_state = "trou"
 	item_state = "trou"
@@ -100,6 +109,7 @@
 /obj/item/clothing/under/roguetown/trou/leather
 	name = "leather trousers"
 	icon_state = "leathertrou"
+	desc = "Standard leather pants for hardy workers."
 
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
@@ -108,15 +118,15 @@
 
 /obj/item/clothing/under/roguetown/chainlegs
 	name = "chain chausses"
-	desc = ""
+	desc = "Chain maille chausses made of exquisite steel rings boasting superior protection."
 	gender = PLURAL
 	icon_state = "chain_legs"
 	item_state = "chain_legs"
 //	adjustable = CAN_CADJUST
 	sewrepair = FALSE
-	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 100, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 300
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
 	armor_class = ARMOR_CLASS_MEDIUM
 	blocksound = CHAINHIT
 	var/do_sound = FALSE
@@ -127,16 +137,20 @@
 
 /obj/item/clothing/under/roguetown/chainlegs/iron
 	icon_state = "ichain_legs"
+	name = "iron chain chausses"
+	desc = "Chain maille chausses made of iron rings woven together, offering protection against cuts and stabs."
+	max_integrity = 180
+	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/under/roguetown/platelegs
 	name = "plated chausses"
-	desc = ""
+	desc = "Chausses made of plated steel, offering additional protection against blunt force."
 	gender = PLURAL
-	icon_state = "plate_legs"
-	item_state = "chain_legs"
+	icon_state = "heavyleggies" // Finally a sprite
+	item_state = "heavyleggies"
 	// adjustable = CAN_CADJUST
 	sewrepair = FALSE
-	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 500
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	armor_class = ARMOR_CLASS_HEAVY
@@ -149,7 +163,7 @@
 
 /obj/item/clothing/under/roguetown/loincloth
 	name = "loincloth"
-	desc = ""
+	desc = "Protects your modesty, but not much else."
 	icon_state = "loincloth"
 	item_state = "loincloth"
 //	adjustable = CAN_CADJUST
@@ -164,7 +178,7 @@
 
 /obj/item/clothing/under/roguetown/grenzelpants
 	name = "grenzelhoftian paumpers"
-	desc = "padded for extra comfort and protection"
+	desc = "Padded pants for extra comfort and protection, adorned in vibrant colors."
 	icon_state = "grenzelpants"
 	item_state = "grenzelpants"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'

@@ -12,7 +12,7 @@
 	vision_range = 5
 	aggro_vision_range = 5
 	base_intents = list(/datum/intent/simple/bite)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/spider = 1, /obj/item/reagent_containers/food/snacks/spiderleg = 8,/obj/item/reagent_containers/food/snacks/rogue/honey = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/spider = 1, /obj/item/reagent_containers/food/snacks/spiderleg = 8,/obj/item/reagent_containers/food/snacks/rogue/honey = 1, /obj/item/natural/silk = 2)
 	faction = list("bugs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_sound = 'sound/combat/wooshes/punch/punchwoosh (2).ogg'
@@ -111,7 +111,7 @@
 				playsound(T, pick('sound/vo/mobs/spider/speak (1).ogg','sound/vo/mobs/spider/speak (2).ogg','sound/vo/mobs/spider/speak (3).ogg','sound/vo/mobs/spider/speak (4).ogg'), 100, TRUE, -1)
 				new /obj/item/reagent_containers/food/snacks/rogue/honey(T)
 	if(pulledby && !tame)
-		if(HAS_TRAIT(pulledby, RTRAIT_WEBWALK))
+		if(HAS_TRAIT(pulledby, TRAIT_WEBWALK))
 			return
 		Retaliate()
 		GiveTarget(pulledby)
@@ -128,7 +128,7 @@
 			return "nose"
 		if(BODY_ZONE_PRECISE_MOUTH)
 			return "mouth"
-		if(BODY_ZONE_PRECISE_HAIR)
+		if(BODY_ZONE_PRECISE_SKULL)
 			return "head"
 		if(BODY_ZONE_PRECISE_EARS)
 			return "head"

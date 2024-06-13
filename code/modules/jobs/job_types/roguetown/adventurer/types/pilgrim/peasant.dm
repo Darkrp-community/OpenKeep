@@ -1,5 +1,7 @@
 /datum/advclass/pilgrim/peasant
 	name = "Peasant"
+	tutorial = "A serf with no particular proficiency of their own, born poor \
+				and more likely to die poor. Farm workers, carriers, handymen."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -51,5 +53,6 @@
 	else
 		backr = /obj/item/rogueweapon/pitchfork
 	H.change_stat("strength", 1)
+	H.change_stat("constitution", 1)
 	H.change_stat("intelligence", -2)
 	H.change_stat("speed", -1)
