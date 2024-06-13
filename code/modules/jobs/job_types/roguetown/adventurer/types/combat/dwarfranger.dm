@@ -16,16 +16,19 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltl = /obj/item/rogueweapon/stoneaxe/woodcut
+	beltl = /obj/item/quiver/bolts
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	r_hand = /obj/item/rogueweapon/sword/sabre/messer
+	backpack_contents = list(/obj/item/bait = 1)
 	if(prob(23))
 		shoes = /obj/item/clothing/shoes/roguetown/boots
 	if(prob(23))
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	cloak = /obj/item/clothing/cloak/raincloak/brown
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)

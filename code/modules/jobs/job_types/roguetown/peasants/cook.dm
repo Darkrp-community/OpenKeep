@@ -12,8 +12,10 @@
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
+		"Dark Elf",
 		"Aasimar"
 	)
+	allowed_ages = list(AGE_YOUNG, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD,)
 	tutorial = "Working closely with the barkeep who owns Skull Crack Inn, the cook should focus on cooking food for all the hungry mouths of Roguetown."
 
 	outfit = /datum/outfit/job/roguetown/cook

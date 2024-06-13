@@ -61,6 +61,9 @@
 	return ..()
 
 /mob/living/proc/ZImpactDamage(turf/T, levels)
+	if(!density) //lets cats and similar avoid death by falling
+		visible_message("<span class='notice'>The creature lands unharmed...</span>")
+		return
 	adjustBruteLoss((levels * 5) ** 1.5)
 	AdjustStun(levels * 20)
 	AdjustKnockdown(levels * 20)
@@ -1609,6 +1612,8 @@
 			limbless_slowdown += 6 - (has_legs * 3)
 			if(!has_legs && has_arms < 2)
 				limbless_slowdown += 6 - (has_arms * 3)
+		if(pegleg)
+			limbless_slowdown += pegleg
 		if(limbless_slowdown)
 			add_movespeed_modifier(MOVESPEED_ID_LIVING_LIMBLESS, update=TRUE, priority=100, override=TRUE, multiplicative_slowdown=limbless_slowdown, movetypes=GROUND)
 		else

@@ -5,6 +5,7 @@
 	allowed_races = list(
 		"Humen",
 		"Half-Elf",
+		"Elf",
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
@@ -41,6 +42,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(0,1,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 2)
