@@ -18,8 +18,8 @@ GLOBAL_LIST_EMPTY(patronlist)
 	domain = "Goddess of the Sun, Day, and Order"
 	summary = "The Firstborn of Psydon, twin of Noc, gifted man the Sun as her divine gift."
 	worshippers = "The Noble Hearted, Zealots, Farmers"
-	t0 = /obj/effect/proc_holder/spell/invoked/heal/lesser
-	t1 = /obj/effect/proc_holder/spell/targeted/sacred_flame_rogue
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal/
+	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	t2 = /obj/effect/proc_holder/spell/invoked/heal
 	t3 = /obj/effect/proc_holder/spell/invoked/revive
 
@@ -34,7 +34,7 @@ GLOBAL_LIST_EMPTY(patronlist)
 	domain = "God of the Earth and Nature"
 	summary = "The Primordial Son, patron of beasts and the wood. Gone mad with time."
 	worshippers = "Druids, Beasts, Madmen"
-	t0 = /obj/effect/proc_holder/spell/invoked/heal/lesser
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/blesscrop
 	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
 	t3 = null
@@ -56,7 +56,7 @@ GLOBAL_LIST_EMPTY(patronlist)
 	domain = "Goddess of Death and the Afterlife"
 	summary = "The Veiled Lady, a feared but respected God who leads the dead."
 	worshippers = " Necromancers, The Dead, Gravekeepers"
-	t0 = /obj/effect/proc_holder/spell/invoked/heal/lesser
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/churn
 

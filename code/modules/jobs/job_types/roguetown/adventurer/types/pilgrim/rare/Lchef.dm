@@ -2,6 +2,8 @@
 
 /datum/advclass/pilgrim/rare/masterchef
 	name = "Master Chef"
+	tutorial = "More than mere housekeepers, a Master Chef has cooked meals for royalty \
+	throughout all of their lives, making feasts of utter delicacies in a flash."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -36,8 +38,9 @@
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	beltr = /obj/item/cooking/pan
+	beltl = /obj/item/rogueweapon/huntingknife/cleaver
 	backpack_contents = list(/obj/item/reagent_containers/powder/flour/salt = 1,/obj/item/reagent_containers/food/snacks/rogue/cheese=1,/obj/item/reagent_containers/food/snacks/rogue/cheddar=1)
 	H.change_stat("intelligence", 3)
 	H.change_stat("constitution", 2)
 	if(H.age == AGE_OLD)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+		H.change_stat("constitution", 1)

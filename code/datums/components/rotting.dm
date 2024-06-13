@@ -49,12 +49,11 @@
 	if(!(C.mob_biotypes & (MOB_ORGANIC|MOB_UNDEAD)))
 		qdel(src)
 		return
-	if(amount > 5 MINUTES)
+	if(amount > 2 MINUTES)
 		if(is_zombie)
 			var/datum/antagonist/zombie/Z = C.mind.has_antag_datum(/datum/antagonist/zombie)
-			if(Z)
-				if(C.stat == DEAD)
-					Z.wake_zombie()
+			if(Z && !Z.has_turned && !Z.revived && C.stat == DEAD)
+				Z.wake_zombie()
 
 	var/findonerotten = FALSE
 	var/shouldupdate = FALSE

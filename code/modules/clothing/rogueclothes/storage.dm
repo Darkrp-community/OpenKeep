@@ -45,10 +45,11 @@
 		for(var/obj/item/I in things)
 			STR.remove_from_storage(I, get_turf(src))
 
+// Until ninja stars are fixed (able to be removed from embedding), replacing them with poison berries for arrow crafting.
 /obj/item/storage/belt/rogue/leather/assassin/PopulateContents()
-	new /obj/item/throwing_star/ninja(src)
-	new /obj/item/throwing_star/ninja(src)
-	new /obj/item/throwing_star/ninja(src)
+	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
+	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
+	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
 
 /obj/item/storage/belt/rogue/leather/plaquegold
 	name = "plaque belt"
@@ -222,3 +223,31 @@
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
 		STR.max_items = 14
 		STR.not_while_equipped = TRUE
+
+/obj/item/storage/backpack/rogue/satchel/surgbag
+	name = "surgery bag"
+	desc = "Contains all the phreakish devices one needs to cut a person up."
+	slot_flags = null
+	item_state = "doctorbag"
+	icon_state = "doctorbag"
+	attack_verb = list("beats", "bludgeons")
+
+/obj/item/storage/backpack/rogue/satchel/surgbag/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		STR.max_combined_w_class = 42
+		STR.max_w_class = WEIGHT_CLASS_NORMAL
+		STR.max_items = 14
+
+/obj/item/storage/backpack/rogue/satchel/surgbag/PopulateContents()
+	new /obj/item/needle/blessed(src)
+	new /obj/item/rogueweapon/surgery/scalpel(src)
+	new /obj/item/rogueweapon/surgery/saw(src)
+	new /obj/item/rogueweapon/surgery/hemostat(src)
+	new /obj/item/rogueweapon/surgery/hemostat(src)
+	new /obj/item/rogueweapon/surgery/retractor(src)
+	new /obj/item/rogueweapon/surgery/bonesetter(src)
+	new /obj/item/rogueweapon/surgery/cautery(src)
+	new /obj/item/natural/worms/leech/parasite(src)
+	new /obj/item/rogueweapon/surgery/hammer(src)

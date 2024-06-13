@@ -179,9 +179,9 @@
 
 	var/nodmg = FALSE
 	var/dam2do = 10*(user.STASTR/20)
-	if(HAS_TRAIT(user, RTRAIT_STRONGBITE))
+	if(HAS_TRAIT(user, TRAIT_STRONGBITE))
 		dam2do *= 2
-	if(!HAS_TRAIT(user, RTRAIT_STRONGBITE))
+	if(!HAS_TRAIT(user, TRAIT_STRONGBITE))
 		if(!affecting.has_wound(/datum/wound/bite))
 			nodmg = TRUE
 	if(!nodmg)
@@ -191,7 +191,7 @@
 			next_attack_msg += " <span class='warning'>Armor stops the damage.</span>"
 
 	if(!nodmg)
-		affecting.attacked_by(BCLASS_BITE, dam2do, user, user.zone_selected)
+		affecting.bodypart_attacked_by(BCLASS_BITE, dam2do, user, user.zone_selected, crit_message = TRUE)
 	visible_message("<span class='danger'>[user] bites [src]'s [parse_zone(user.zone_selected)]![next_attack_msg.Join()]</span>", \
 					"<span class='userdanger'>[user] bites my [parse_zone(user.zone_selected)]![next_attack_msg.Join()]</span>")
 
@@ -205,20 +205,18 @@
 				if(user.mind.has_antag_datum(/datum/antagonist/werewolf))
 					if(!src.mind.has_antag_datum(/datum/antagonist/werewolf))
 						if(prob(10))
-							H.werewolf_infect()
+							spawn(3 MINUTES)
+								H.werewolf_infect()
 							//addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_infect)), 3 MINUTES)
-				if(user.mind.has_antag_datum(/datum/antagonist/zombie))
-					if(!src.mind.has_antag_datum(/datum/antagonist/zombie))
-						if(prob(25)) // Delay is handled in zombie_infect anyways
-							H.zombie_infect()
-							//addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, zombie_infect)), 3 MINUTES)
+				if(user.mind.has_antag_datum(/datum/antagonist/zombie) && !src.mind.has_antag_datum(/datum/antagonist/zombie))
+					INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human, zombie_infect_attempt))
 
 	var/obj/item/grabbing/bite/B = new()
 	user.equip_to_slot_or_del(B, SLOT_MOUTH)
 	if(user.mouth == B)
 		var/used_limb = src.find_used_grab_limb(user)
-		B.name = "[src]'s [used_limb]"
-		var/obj/item/bodypart/BP = get_bodypart(check_zone(user.zone_selected))
+		B.name = "[src]'s [parse_zone(used_limb)]"
+		var/obj/item/bodypart/BP = get_bodypart(check_zone(used_limb))
 		BP.grabbedby += B
 		B.grabbed = src
 		B.grabbee = user
@@ -312,7 +310,7 @@
 				if(!ismob(A) && !isturf(A))
 					return
 				if(A.z != src.z)
-					if(!HAS_TRAIT(src, RTRAIT_ZJUMP))
+					if(!HAS_TRAIT(src, TRAIT_ZJUMP))
 						return
 				changeNext_move(mmb_intent.clickcd)
 				face_atom(A)
@@ -366,6 +364,9 @@
 				if(!get_location_accessible(src, BODY_ZONE_PRECISE_MOUTH, grabs="other"))
 					to_chat(src, "<span class='warning'>My mouth is blocked.</span>")
 					return
+				if(HAS_TRAIT(src, TRAIT_NO_BITE))
+					to_chat(src, "<span class='warning'>I can't bite.</span>")
+					return
 				changeNext_move(mmb_intent.clickcd)
 				face_atom(A)
 				A.onbite(src)
@@ -388,42 +389,44 @@
 						if(!(zone_selected in stealablezones))
 							to_chat(src, "<span class='warning'>What am I going to steal from there?</span>")
 							return
-						switch(U.zone_selected)
-							if("chest")
-								if (V.get_item_by_slot(SLOT_BACK_L))
-									stealpos.Add(V.get_item_by_slot(SLOT_BACK_L))
-								if (V.get_item_by_slot(SLOT_BACK_R))
-									stealpos.Add(V.get_item_by_slot(SLOT_BACK_R))
-							if("neck")
-								if (V.get_item_by_slot(SLOT_NECK))
-									stealpos.Add(V.get_item_by_slot(SLOT_NECK))
-							if("groin")
-								if (V.get_item_by_slot(SLOT_BELT_R))
-									stealpos.Add(V.get_item_by_slot(SLOT_BELT_R))
-								if (V.get_item_by_slot(SLOT_BELT_L))
-									stealpos.Add(V.get_item_by_slot(SLOT_BELT_L))	
-							if("r_hand" || "l_hand")
-								if (V.get_item_by_slot(SLOT_RING))
-									stealpos.Add(V.get_item_by_slot(SLOT_RING))
-						if (length(stealpos) > 0)
-							var/obj/item/picked = pick(stealpos)
-							V.dropItemToGround(picked)
-							put_in_active_hand(picked)						
-							to_chat(src, "<span class='green'>I stole [picked]!</span>")
+						if(do_after(U, 2 SECONDS, target = V, progress = 0))
+							switch(U.zone_selected)
+								if("chest")
+									if (V.get_item_by_slot(SLOT_BACK_L))
+										stealpos.Add(V.get_item_by_slot(SLOT_BACK_L))
+									if (V.get_item_by_slot(SLOT_BACK_R))
+										stealpos.Add(V.get_item_by_slot(SLOT_BACK_R))
+								if("neck")
+									if (V.get_item_by_slot(SLOT_NECK))
+										stealpos.Add(V.get_item_by_slot(SLOT_NECK))
+								if("groin")
+									if (V.get_item_by_slot(SLOT_BELT_R))
+										stealpos.Add(V.get_item_by_slot(SLOT_BELT_R))
+									if (V.get_item_by_slot(SLOT_BELT_L))
+										stealpos.Add(V.get_item_by_slot(SLOT_BELT_L))
+								if("r_hand" || "l_hand")
+									if (V.get_item_by_slot(SLOT_RING))
+										stealpos.Add(V.get_item_by_slot(SLOT_RING))
+							if (length(stealpos) > 0)
+								var/obj/item/picked = pick(stealpos)
+								V.dropItemToGround(picked)
+								put_in_active_hand(picked)
+								to_chat(src, "<span class='green'>I stole [picked]!</span>")
+							else
+								to_chat(src, "<span class='warning'>I didn't find anything there. Perhaps I should look elsewhere.</span>")
 						else
-							to_chat(src, "<span class='warning'>I didn't find anything there. Perhaps I should look elsewhere.</span>")
-					if(stealroll <= 4)	
+							to_chat(src, "<span class='warning'>I fumbled it!")
+					if(stealroll <= 4)
 						to_chat(V, "<span class='danger'>Someone tried pickpocketing me!</span>")
 					if(stealroll < targetperception)
 						to_chat(src, "<span class='danger'>I failed to pick the pocket!</span>")
 					changeNext_move(mmb_intent.clickcd)
 				return
 			if(INTENT_SPELL)
-				if(ranged_ability)
-					if(ranged_ability.InterceptClickOn(src, params, A))
-						changeNext_move(mmb_intent.clickcd)
-						if(mmb_intent.releasedrain)
-							rogfat_add(mmb_intent.releasedrain)
+				if(ranged_ability?.InterceptClickOn(src, params, A))
+					changeNext_move(mmb_intent.clickcd)
+					if(mmb_intent.releasedrain)
+						rogfat_add(mmb_intent.releasedrain)
 				return
 
 //Return TRUE to cancel other attack hand effects that respect it.
