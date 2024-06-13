@@ -89,6 +89,13 @@
 /obj/item/roguegem/blue,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/beach/boat/captain)
+"kU" = (
+/obj/effect/landmark/mapGenerator/rogue/beach{
+	endTurfX = 155;
+	endTurfY = 45
+	},
+/turf/open/water/swamp/deep,
+/area/rogue/outdoors/beach)
 "le" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_y = 32
@@ -257,6 +264,12 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/beach/boat/captain)
+"yH" = (
+/obj/machinery/light/rogue/wallfire/candle{
+	pixel_y = -10
+	},
+/turf/open/floor/rogue/ruinedwood/chevron,
+/area/rogue/outdoors/beach/boat)
 "zV" = (
 /obj/structure/stairs{
 	dir = 8
@@ -285,6 +298,10 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/beach/boat)
+"Cc" = (
+/obj/machinery/light/rogue/wallfire/candle/l,
+/turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/outdoors/beach/boat)
 "CG" = (
 /obj/item/reagent_containers/food/snacks/rogue/pieslice,
@@ -345,12 +362,12 @@
 /turf/closed/indestructible/wooddark,
 /area/rogue/outdoors/beach/boat/captain)
 "IJ" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 4;
-	icon_state = "fancy_wood";
+/obj/structure/mineral_door/wood/window{
 	locked = 1;
 	max_integrity = 10000;
-	name = "Guild Captain's Quarters"
+	name = "Guild Captain's Quarters";
+	keylock = 0;
+	desc = "This is a deceivingly strong door, just what did they make this thing with?"
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/beach/boat/captain)
@@ -440,17 +457,14 @@
 "NX" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/beach)
-"NY" = (
-/obj/effect/landmark/mapGenerator/rogue/beach{
-	endTurfX = 155;
-	endTurfY = 45
-	},
-/turf/open/water/swamp/deep,
-/area/rogue/outdoors/beach)
 "Ot" = (
 /obj/structure/mineral_door/wood{
 	name = "Passenger Room"
 	},
+/turf/open/floor/rogue/ruinedwood/chevron,
+/area/rogue/outdoors/beach/boat)
+"OJ" = (
+/obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/outdoors/beach/boat)
 "Pw" = (
@@ -490,6 +504,12 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
+"UH" = (
+/obj/structure/bed/rogue,
+/obj/effect/landmark/latejoin,
+/obj/machinery/light/rogue/wallfire/candle,
+/turf/open/floor/rogue/ruinedwood/chevron,
+/area/rogue/outdoors/beach/boat)
 "Vd" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/sword/rapier/dec,
@@ -502,6 +522,14 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/beach/boat/captain)
+"WA" = (
+/obj/structure/bed/rogue,
+/obj/effect/landmark/latejoin,
+/obj/machinery/light/rogue/wallfire/candle{
+	pixel_y = -10
+	},
+/turf/open/floor/rogue/ruinedwood/chevron,
+/area/rogue/outdoors/beach/boat)
 "Xv" = (
 /obj/structure/fermenting_barrel,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -615,7 +643,7 @@ rP
 rP
 rP
 rP
-NY
+kU
 "}
 (3,1,1) = {"
 ut
@@ -2016,7 +2044,7 @@ El
 El
 El
 bR
-Db
+Cc
 bR
 El
 El
@@ -2247,7 +2275,7 @@ rP
 rP
 rP
 El
-Db
+OJ
 Db
 Ot
 Tz
@@ -2255,7 +2283,7 @@ Tz
 Tz
 Ot
 Db
-Db
+yH
 El
 rP
 rP
@@ -2435,7 +2463,7 @@ rP
 rP
 El
 El
-Db
+OJ
 Db
 Ot
 Tz
@@ -2443,7 +2471,7 @@ Tz
 Tz
 Ot
 Db
-Db
+yH
 El
 El
 rP
@@ -3046,7 +3074,7 @@ rP
 rP
 El
 El
-bR
+UH
 Db
 dg
 Tz
@@ -3054,7 +3082,7 @@ Tz
 Tz
 dg
 Db
-bR
+WA
 El
 El
 rP
