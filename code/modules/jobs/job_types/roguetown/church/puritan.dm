@@ -66,7 +66,7 @@
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-	ADD_TRAIT(H, RTRAIT_TORTURER, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_TORTURER, TRAIT_GENERIC)
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 

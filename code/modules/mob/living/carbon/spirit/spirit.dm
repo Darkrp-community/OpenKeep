@@ -51,7 +51,7 @@
 	create_internal_organs()
 	. = ..()
 	var/L = new /obj/item/flashlight/lantern/shrunken(src.loc)
-	put_in_hands(L)	
+	put_in_hands(L)
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_BAREFOOT, 1, 2)
 
 /mob/living/carbon/spirit/create_internal_organs()
@@ -81,14 +81,14 @@
 	..()
 	if(statpanel("Status"))
 		stat(null, "Intent: [a_intent]")
-		stat(null, "Move Mode: [m_intent]")		
+		stat(null, "Move Mode: [m_intent]")
 	return
 
 /mob/living/carbon/spirit/returntolobby()
 	set name = "{RETURN TO LOBBY}"
 	set category = "Options"
 	set hidden = 1
-	
+
 	if(key)
 		GLOB.respawntimes[key] = world.time
 
@@ -129,3 +129,15 @@
 	for(var/obj/effect/landmark/underworld/A in GLOB.landmarks_list)
 		forceMove(A.loc)
 	beingmoved = FALSE
+
+///Get the underworld spirit associated with this mob (from the mind)
+/mob/proc/get_spirit()
+	var/mind_key = key || mind?.key
+	if(!mind_key)
+		return
+	for(var/mob/living/carbon/spirit/spirit in GLOB.carbon_list)
+		if((spirit.key == mind_key) || (spirit.mind?.key == mind_key))
+			return spirit
+
+/mob/living/carbon/spirit/get_spirit()
+	return src

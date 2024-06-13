@@ -125,6 +125,7 @@
 #define TAILOR		(1<<5)
 #define MERCHANT	(1<<6)
 #define SCRIBE		(1<<7)
+#define FELDSHER    (1<<8)
 
 #define PEASANTS		(1<<4)
 
@@ -164,8 +165,10 @@
 #define JDO_HAND 2
 #define JDO_STEWARD 3
 
-#define JDO_MAGICIAN 5
-#define JDO_WAPP 6
+#define JDO_MAGICIAN 4
+#define JDO_WAPP 5
+
+#define JDO_FELDSHER 6
 
 #define JDO_CAPTAIN 7
 #define JDO_ROYALGUARD 7.1

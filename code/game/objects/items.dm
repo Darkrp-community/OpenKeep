@@ -93,6 +93,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER //the icon to indicate this object is being dragged
 
 	var/datum/embedding_behavior/embedding
+	var/is_embedded = FALSE
 
 	var/flags_cover = 0 //for flags such as GLASSESCOVERSEYES
 	var/heat = 0
@@ -194,8 +195,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	var/list/blocksound //played when an item that is equipped blocks a hit
 
-/obj/item/New()
-	..()
+/obj/item/Initialize()
+	. = ..()
 	if(!pixel_x && !pixel_y && !bigboy)
 		pixel_x = rand(-5,5)
 		pixel_y = rand(-5,5)
@@ -312,6 +313,13 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		m.temporarilyRemoveItemFromInventory(src, TRUE)
 	for(var/X in actions)
 		qdel(X)
+	if(is_embedded)
+		if(isbodypart(loc))
+			var/obj/item/bodypart/embedded_part = loc
+			embedded_part.remove_embedded_object(src)
+		else if(isliving(loc))
+			var/mob/living/embedded_mob = loc
+			embedded_mob.simple_remove_embedded_object(src)
 	return ..()
 
 /obj/item/proc/check_allowed_items(atom/target, not_inside, target_self)
@@ -362,7 +370,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 			inspec += "\n<b>MIN.STR:</b> [minstr]"
 
 		if(wbalance)
-			inspec += "\n<b>BALANCE:</b>"
+			inspec += "\n<b>BALANCE: </b>"
 			if(wbalance < 0)
 				inspec += "Heavy"
 			if(wbalance > 0)
@@ -899,20 +907,22 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 ///Returns the sharpness of src. If you want to get the sharpness of an item use this.
 /obj/item/proc/get_sharpness()
-	for(var/X in possible_item_intents)
-		var/datum/intent/D = new X()
-		if(D.blade_class == BCLASS_CUT)
-			return TRUE
-		if(D.blade_class == BCLASS_CHOP)
-			return TRUE
-	return sharpness
+	//Oh no, we are dulled out!
+	if(max_blade_int && (blade_int <= 0))
+		return FALSE
+	var/max_sharp = sharpness
+	for(var/datum/intent/intent as anything in possible_item_intents)
+		if(initial(intent.blade_class) == BCLASS_CUT)
+			max_sharp = max(max_sharp, IS_SHARP)
+		if(initial(intent.blade_class) == BCLASS_CHOP)
+			max_sharp = max(max_sharp, IS_SHARP)
+	return max_sharp
 
-/obj/item/proc/get_dismemberment_chance(obj/item/bodypart/affecting, input)
-	if(!input)
-		input = force
-	if(affecting.can_dismember(src))
-		if((sharpness || damtype == BURN) && w_class >= WEIGHT_CLASS_NORMAL && input >= 10)
-			. = force * (affecting.get_damage() / affecting.max_damage)
+/obj/item/proc/get_dismemberment_chance(obj/item/bodypart/affecting, mob/user)
+	if(!affecting.can_dismember(src))
+		return 0
+	if((get_sharpness() || damtype == BURN) && (w_class >= WEIGHT_CLASS_NORMAL) && force >= 10)
+		return force * (affecting.get_damage() / affecting.max_damage)
 
 /obj/item/proc/get_dismember_sound()
 	if(damtype == BURN)
@@ -1131,6 +1141,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	return owner.dropItemToGround(src)
 
 /obj/item/update_icon()
+	. = ..()
 	update_transform()
 
 /obj/item/proc/ungrip(mob/living/carbon/user, show_message = TRUE)
