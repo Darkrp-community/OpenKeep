@@ -15,6 +15,7 @@
 #define TRAIT_MEDIUMARMOR				"Maille Training"
 #define TRAIT_HEAVYARMOR				"Plate Training"
 #define TRAIT_DODGEEXPERT              "Fast Reflexes"
+#define TRAIT_SILENTKILLER				"Silent Killer"
 #define TRAIT_VILLAIN					"Villain"
 #define TRAIT_CRITICAL_RESISTANCE		"Critical Resistance"
 #define TRAIT_CRITICAL_WEAKNESS		"Critical Weakness"
@@ -68,7 +69,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_VILLAIN = "I am a devious, conniving villain!",
 	TRAIT_SOUL_EXAMINE = "<span class='deadsay'>I know when someone's soul has departed.</span>",
 	TRAIT_CYCLOPS_RIGHT = "<span class='warning'>My right eye has been poked out...</span>",
-	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes."
+	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
+	TRAIT_SILENTKILLER = "I was embowed with the ability to know my way around the wrist blades, a sleeping man will be dead in mere seconds with their throat slit."
 	))
 
 // trait accessor defines

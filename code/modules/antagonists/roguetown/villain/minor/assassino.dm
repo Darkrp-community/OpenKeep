@@ -15,9 +15,9 @@
 	greet()
 	forge_objectives()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/traitor.ogg', 80, FALSE, pressure_affected = FALSE)
-	ADD_TRAIT(owner.current, RTRAIT_VILLAIN, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, RTRAIT_SILENTKILLER, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, RTRAIT_ZJUMP, TRAIT_GENERIC) // this might be OP or very irrelevant but we can't tell before we test merge
+	ADD_TRAIT(owner.current, TRAIT_VILLAIN, TRAIT_GENERIC)
+	ADD_TRAIT(owner.current, TRAIT_SILENTKILLER, TRAIT_GENERIC)
+	ADD_TRAIT(owner.current, TRAIT_ZJUMP, TRAIT_GENERIC) // this might be OP or very irrelevant but we can't tell before we test merge
 	var/mob/living/carbon/human/H = owner.current
 	H.change_stat("strength", -4)
 	H.change_stat("speed", 4)
