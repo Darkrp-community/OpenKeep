@@ -5,7 +5,6 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	tutorial = ""
 	outfit = /datum/outfit/job/roguetown/feldsher
 	display_order = JDO_FELDSHER
 	tutorial = "You have seen countless wounds over your time. Stitched the sores of blades, sealed honey over the bubous of plague. \

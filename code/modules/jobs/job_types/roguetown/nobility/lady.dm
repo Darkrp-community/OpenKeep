@@ -20,27 +20,12 @@
 	bypass_lastclass = TRUE
 	give_bank_account = 500
 
-/datum/job/roguetown/exlady //just used to change the ladys title
-	title = "Queen Dowager"
-	flag = ADVENTURER
-	department_flag = NOBLEMEN
-	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
-	display_order = JDO_LADY
-	give_bank_account = TRUE
-
-/datum/job/roguetown/lady/after_spawn(mob/living/H, mob/M, latejoin)
-	. = ..()
-	if(GLOB.lordsurname && H)
-		give_lord_surname(H, preserve_original = TRUE)
-
 /datum/outfit/job/roguetown/lady/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
-	beltl = /obj/item/roguekey/manor
+	beltl = /obj/item/keyring/queen
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	armor = /obj/item/clothing/suit/roguetown/armor/armordress
