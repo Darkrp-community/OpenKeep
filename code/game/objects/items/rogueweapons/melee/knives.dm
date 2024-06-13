@@ -113,7 +113,7 @@
 	slot_flags = ITEM_SLOT_HIP
 	thrown_bclass = BCLASS_CHOP
 	w_class = WEIGHT_CLASS_NORMAL
-	smeltresult = null
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/rogueweapon/huntingknife/cleaver/combat
 	force = 12
@@ -129,7 +129,7 @@
 	slot_flags = ITEM_SLOT_HIP
 	thrown_bclass = BCLASS_CHOP
 	w_class = WEIGHT_CLASS_NORMAL
-	smeltresult = null
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/rogueweapon/huntingknife/cleaver/getonmobprop(tag)
 	. = ..()
@@ -205,6 +205,7 @@
 	max_integrity = 15
 	max_blade_int = 15
 	wdefense = 1
+	smeltresult = /obj/item/ash
 
 /obj/item/rogueweapon/knife/copperdagger
 	force = 8

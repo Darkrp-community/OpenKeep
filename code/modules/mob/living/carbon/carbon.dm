@@ -100,11 +100,34 @@
 		mode() // Activate held item
 
 /mob/living/carbon/attackby(obj/item/I, mob/user, params)
+	if(!user.cmode)
+		var/try_to_fail = !istype(user.rmb_intent, /datum/rmb_intent/weak)
+		var/list/possible_steps = list()
+		for(var/datum/surgery_step/surgery_step as anything in GLOB.surgery_steps)
+			if(!surgery_step.name)
+				continue
+			if(surgery_step.can_do_step(user, src, user.zone_selected, I, user.used_intent))
+				possible_steps[surgery_step.name] = surgery_step
+		var/possible_len = length(possible_steps)
+		if(possible_len)
+			var/datum/surgery_step/done_step
+			if(possible_len > 1)
+				var/input = input(user, "Which surgery step do you want to perform?", "PESTRA", ) as null|anything in possible_steps
+				if(input)
+					done_step = possible_steps[input]
+			else
+				done_step = possible_steps[possible_steps[1]]
+			if(done_step?.try_op(user, src, user.zone_selected, I, user.used_intent, try_to_fail))
+				return TRUE
+		if(I.item_flags & SURGICAL_TOOL)
+			return TRUE
+	/*
 	for(var/datum/surgery/S in surgeries)
 		if(!(mobility_flags & MOBILITY_STAND) || !S.lying_required)
-			if((S.self_operable || user != src) && (user.used_intent.type == INTENT_HELP || user.used_intent.type == INTENT_DISARM))
-				if(S.next_step(user,user.used_intent))
+			if(S.self_operable || user != src)
+				if(S.next_step(user, user.used_intent))
 					return 1
+	*/
 	return ..()
 
 /mob/living/carbon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
@@ -283,29 +306,6 @@
 	"}
 	user << browse(dat, "window=mob[REF(src)];size=325x500")
 	onclose(user, "mob[REF(src)]")
-
-/mob/living/carbon/Topic(href, href_list)
-	..()
-	//strip panel
-	if(href_list["internal"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		var/slot = text2num(href_list["internal"])
-		var/obj/item/ITEM = get_item_by_slot(slot)
-		if(ITEM && istype(ITEM, /obj/item/tank) && wear_mask && (wear_mask.clothing_flags & MASKINTERNALS))
-			visible_message("<span class='danger'>[usr] tries to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name].</span>", \
-							"<span class='danger'>[usr] tries to [internal ? "close" : "open"] the valve on your [ITEM.name].</span>", null, null, usr)
-			to_chat(usr, "<span class='notice'>I try to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name]...</span>")
-			if(do_mob(usr, src, POCKET_STRIP_DELAY))
-				if(internal)
-					internal = null
-					update_internals_hud_icon(0)
-				else if(ITEM && istype(ITEM, /obj/item/tank))
-					if((wear_mask && (wear_mask.clothing_flags & MASKINTERNALS)) || getorganslot(ORGAN_SLOT_BREATHING_TUBE))
-						internal = ITEM
-						update_internals_hud_icon(1)
-
-				visible_message("<span class='danger'>[usr] [internal ? "opens" : "closes"] the valve on [src]'s [ITEM.name].</span>", \
-								"<span class='danger'>[usr] [internal ? "opens" : "closes"] the valve on your [ITEM.name].</span>", null, null, usr)
-				to_chat(usr, "<span class='notice'>I [internal ? "open" : "close"] the valve on [src]'s [ITEM.name].</span>")
 
 /mob/living/carbon/fall(forced)
     loc.handle_fall(src, forced)//it's loc so it doesn't call the mob's handle_fall which does nothing
@@ -672,14 +672,16 @@
 	var/total_tox = getToxLoss()
 	var/total_oxy = getOxyLoss()
 	var/used_damage = 0
-	for(var/X in bodyparts)	//hardcoded to streamline things a bit
-		var/obj/item/bodypart/BP = X
-		if(BP.name == "head")
-			total_burn = ((BP.burn_dam / BP.max_damage) * 100)
-		if(BP.name == "chest")
-			total_burn = ((BP.burn_dam / BP.max_damage) * 100)
-		if(used_damage < total_burn)
-			used_damage = total_burn
+	var/static/list/lethal_zones = list(
+		BODY_ZONE_HEAD,
+		BODY_ZONE_CHEST,
+	)
+	for(var/obj/item/bodypart/bodypart as anything in bodyparts) //hardcoded to streamline things a bit
+		if(!(bodypart.body_zone in lethal_zones))
+			continue
+		var/my_burn = abs((bodypart.burn_dam / bodypart.max_damage) * DAMAGE_THRESHOLD_FIRE_CRIT)
+		total_burn = max(total_burn, my_burn)
+		used_damage = max(used_damage, my_burn)
 	if(used_damage < total_tox)
 		used_damage = total_tox
 	if(used_damage < total_oxy)
@@ -696,16 +698,6 @@
 		add_movespeed_modifier(MOVESPEED_ID_CARBON_SOFTCRIT, TRUE, multiplicative_slowdown = SOFTCRIT_ADD_SLOWDOWN)
 	else
 		remove_movespeed_modifier(MOVESPEED_ID_CARBON_SOFTCRIT, TRUE)
-
-/mob/living/carbon/human/updatehealth()
-	if(mind && mind.has_antag_datum(/datum/antagonist/zombie))
-		health = 100
-		update_stat()
-		update_mobility()
-		med_hud_set_health()
-		remove_movespeed_modifier(MOVESPEED_ID_CARBON_SOFTCRIT, TRUE)
-		return
-	..()
 
 /mob/living/carbon/update_stamina()
 	var/stam = getStaminaLoss()
@@ -827,7 +819,7 @@
 	else
 		clear_fullscreen("CMODE")
 
-	if(health <= crit_threshold || (blood_volume in -INFINITY to BLOOD_VOLUME_SURVIVE))
+	if(health <= crit_threshold || ((blood_volume in -INFINITY to BLOOD_VOLUME_SURVIVE) && !HAS_TRAIT(src, TRAIT_BLOODLOSS_IMMUNE)))
 		var/severity = 0
 		switch(health)
 			if(-20 to -10)
@@ -992,7 +984,7 @@
 			death()
 			cure_blind(UNCONSCIOUS_BLIND)
 			return
-		if((blood_volume in -INFINITY to BLOOD_VOLUME_SURVIVE) || IsUnconscious() || IsSleeping() || getOxyLoss() > 75 || (HAS_TRAIT(src, TRAIT_DEATHCOMA)) || (health <= HEALTH_THRESHOLD_FULLCRIT && !HAS_TRAIT(src, TRAIT_NOHARDCRIT)))
+		if(((blood_volume in -INFINITY to BLOOD_VOLUME_SURVIVE) && !HAS_TRAIT(src, TRAIT_BLOODLOSS_IMMUNE)) || IsUnconscious() || IsSleeping() || getOxyLoss() > 75 || (HAS_TRAIT(src, TRAIT_DEATHCOMA)) || (health <= HEALTH_THRESHOLD_FULLCRIT && !HAS_TRAIT(src, TRAIT_NOHARDCRIT)))
 			stat = UNCONSCIOUS
 			become_blind(UNCONSCIOUS_BLIND)
 			if(CONFIG_GET(flag/near_death_experience) && health <= HEALTH_THRESHOLD_NEARDEATH && !HAS_TRAIT(src, TRAIT_NODEATH))
@@ -1046,16 +1038,10 @@
 	var/datum/component/rot/corpse/CR = GetComponent(/datum/component/rot/corpse)
 	if(CR)
 		CR.amount = 0
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/BP = X
-		for(var/datum/wound/D in BP.wounds)
-			BP.wounds -= D
-			qdel(D)
-		if(BP.rotted && !BP.skeletonized) //reset rot when being healed by eating limbs
-			BP.rotted = FALSE
-			change_stat("constitution", 0, "rottenlimbs")
-	if(mind?.has_antag_datum(/datum/antagonist/zombie))
-		mind.remove_antag_datum(/datum/antagonist/zombie)
+	if(admin_revive) //reset rot on admin revives
+		for(var/obj/item/bodypart/bodypart as anything in bodyparts)
+			bodypart.rotted = FALSE
+			bodypart.skeletonized = FALSE
 	if(admin_revive)
 		suiciding = FALSE
 		regenerate_limbs()
@@ -1071,6 +1057,7 @@
 	// heal ears after healing traits, since ears check TRAIT_DEAF trait
 	// when healing.
 	restoreEars()
+	update_disabled_bodyparts()
 
 /mob/living/carbon/can_be_revived()
 	. = ..()
@@ -1285,3 +1272,15 @@
 	if(mood)
 		if(mood.sanity < SANITY_UNSTABLE)
 			return TRUE
+
+/mob/living/carbon/can_speak_vocal()
+	. = ..()
+	if(!.)
+		return
+	if(mouth?.muteinmouth)
+		return FALSE
+	for(var/obj/item/grabbing/grab in grabbedby)
+		if(grab.sublimb_grabbed == BODY_ZONE_PRECISE_MOUTH)
+			return FALSE
+	if(istype(loc, /turf/open/water) && !(mobility_flags & MOBILITY_STAND))
+		return FALSE

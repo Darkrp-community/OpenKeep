@@ -23,7 +23,7 @@
 //	if(has_inspect_verb || (obj_integrity < max_integrity))
 //		. += "<span class='notice'><a href='?src=[REF(src)];inspect=1'>Inspect</a></span>"
 
-	if(get_real_price() > 0 && (HAS_TRAIT(user, RTRAIT_SEEPRICES) || simpleton_price))
+	if(get_real_price() > 0 && (HAS_TRAIT(user, TRAIT_SEEPRICES) || simpleton_price))
 		. += "<span class='info'>Value: [get_real_price()] mammon</span>"
 
 //	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item."
@@ -40,6 +40,17 @@
 		if(resistance_flags & FIRE_PROOF)
 			. += "[src] is made of fire-retardant materials."
 */
+// Only show if it's actually useable as bait, so that it doesn't show up on every single item of the game.
+	if(isbait)
+		var/baitquality = ""
+		switch(baitpenalty)
+			if(0)
+				baitquality = "excellent"
+			if(5)
+				baitquality = "good"
+			if(10)
+				baitquality = "passable"
+		. += "<span class='info'>It is \a [baitquality] bait for fish.</span>"		
 
 	for(var/datum/examine_effect/E in examine_effects)
 		E.trigger(user)

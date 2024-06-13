@@ -225,6 +225,12 @@
 	name = "archive key"
 	icon_state = "ekey"
 	lockid = "archive"
+
+/obj/item/roguekey/doctor
+	name = "doctor's key"
+	icon_state = "birdkey"
+	lockid = "doctor"
+
 //grenchensnacker
 /obj/item/roguekey/porta
 	name = "strange key"

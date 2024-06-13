@@ -138,7 +138,7 @@
 			return "snout"
 		if(BODY_ZONE_PRECISE_MOUTH)
 			return "snout"
-		if(BODY_ZONE_PRECISE_HAIR)
+		if(BODY_ZONE_PRECISE_SKULL)
 			return "head"
 		if(BODY_ZONE_PRECISE_EARS)
 			return "head"
@@ -282,7 +282,7 @@
 			return "snout"
 		if(BODY_ZONE_PRECISE_MOUTH)
 			return "snout"
-		if(BODY_ZONE_PRECISE_HAIR)
+		if(BODY_ZONE_PRECISE_SKULL)
 			return "head"
 		if(BODY_ZONE_PRECISE_EARS)
 			return "head"

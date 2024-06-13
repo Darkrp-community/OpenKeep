@@ -304,6 +304,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Adventurer"
 	icon_state = "arrow"
 
+/obj/effect/landmark/start/feldsher
+	name = "Feldsher"
+	icon_state = "arrow"
+
 //yrf
 
 /obj/effect/landmark/start/squire
@@ -722,5 +726,3 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/underworldcoin/Initialize(mapload)
 	GLOB.underworldcoin += loc
 	return
-
-
