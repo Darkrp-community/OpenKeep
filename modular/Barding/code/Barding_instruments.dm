@@ -158,7 +158,7 @@
 	"Song 4" = 'modular/Barding/sound/instruments/accord (4).ogg',
 	"Song 5" = 'modular/Barding/sound/instruments/accord (5).ogg',
 	"Song 6" = 'modular/Barding/sound/instruments/accord (6).ogg',
-	"Sokoly" = 'modular/Barding/sound/instruments/accord (Sokoly).ogg')
+	"Song of the Falconeer" = 'modular/Barding/sound/instruments/accord (7).ogg')
 
 /obj/item/rogue/instrument/guitar
 	name = "guitar"
@@ -176,14 +176,14 @@
 	"Song 4" = 'modular/Barding/sound/instruments/guitar (4).ogg',
 	"Song 5" = 'modular/Barding/sound/instruments/guitar (5).ogg',
 	"Song 6" = 'modular/Barding/sound/instruments/guitar (6).ogg',
-	"Tiberian Sunset" = 'modular/Barding/sound/instruments/guitar (Tiberian Sunset).ogg',	
-	"Romanza" = 'modular/Barding/sound/instruments/guitar (Romanza).ogg',	
-	"Malaguena" = 'modular/Barding/sound/instruments/guitar (Malaguena).ogg',
-	"Cancion del mariachi" = 'modular/Barding/sound/instruments/guitar (Cancion del mariachi).ogg',	
-	"El Masque" = 'modular/Barding/sound/instruments/guitar (El Masque).ogg',
-	"Evolvado" = 'modular/Barding/sound/instruments/guitar (Evolvado).ogg',	
-	"Asturias" = 'modular/Barding/sound/instruments/guitar (Asturias).ogg',
-	"La Follia" = 'modular/Barding/sound/instruments/guitar (La Follia).ogg',	
+	"Sunset ballad" = 'modular/Barding/sound/instruments/guitar (7).ogg',	
+	"Romanza" = 'modular/Barding/sound/instruments/guitar (8).ogg',	
+	"Malaguena" = 'modular/Barding/sound/instruments/guitar (9).ogg',
+	"Song of the Archer" = 'modular/Barding/sound/instruments/guitar (10).ogg',	
+	"The Mask" = 'modular/Barding/sound/instruments/guitar (11).ogg',
+	"Evolvado" = 'modular/Barding/sound/instruments/guitar (12).ogg',	
+	"Asturias" = 'modular/Barding/sound/instruments/guitar (13).ogg',
+	"The Fools Journey" = 'modular/Barding/sound/instruments/guitar (14).ogg',	
 	)
 
 /obj/item/rogue/instrument/harp
@@ -194,7 +194,7 @@
 	"Song 1" = 'modular/Barding/sound/instruments/harb (1).ogg',
 	"Song 2" = 'modular/Barding/sound/instruments/harb (2).ogg',
 	"Song 3" = 'modular/Barding/sound/instruments/harb (3).ogg',
-	"Song of the Magi" = 'modular/Barding/sound/instruments/harp (Magi).ogg')
+	"Dance of the Mages" = 'modular/Barding/sound/instruments/harp (4).ogg')
 
 /obj/item/rogue/instrument/flute // small rats approach a little when begin playing
 	name = "flute"
@@ -209,7 +209,7 @@
 	"Song 4" = 'modular/Barding/sound/instruments/flute (4).ogg',
 	"Song 5" = 'modular/Barding/sound/instruments/flute (5).ogg',
 	"Song 6" = 'modular/Barding/sound/instruments/flute (6).ogg',
-	"Kalyna" = 'modular/Barding/sound/instruments/flute (Kalyna).ogg')
+	"Flower Melody" = 'modular/Barding/sound/instruments/flute (7).ogg')
 
 /obj/item/rogue/instrument/drum
 	name = "drum"
@@ -219,4 +219,4 @@
 	"Song 1" = 'modular/Barding/sound/instruments/drum (1).ogg',
 	"Song 2" = 'modular/Barding/sound/instruments/drum (2).ogg',
 	"Song 3" = 'modular/Barding/sound/instruments/drum (3).ogg',
-	"Snare drum" = 'modular/Barding/sound/instruments/drum (Snare).ogg')
+	"Snare drum" = 'modular/Barding/sound/instruments/drum (4).ogg')
