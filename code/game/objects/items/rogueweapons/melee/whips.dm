@@ -32,7 +32,7 @@
 	force = 26
 	name = "Repenta En"
 	desc = "An extremely well maintained whip, with a polished steel tip and gilded handle"
-	minstr = 11
+	minstr = 7
 	icon_state = "gwhip"
 
 
@@ -42,18 +42,20 @@
 	attack_verb = list("lashes", "cracks")
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
 	chargetime = 0
-	recovery = 7
+	recovery = 5
 	penfactor = 10
 	reach = 2
 	icon_state = "inlash"
+	canparry = FALSE
 
 /datum/intent/whip/crack
 	name = "crack"
-	blade_class = BCLASS_CUT
+	blade_class = BCLASS_LASHING
 	attack_verb = list("cracks", "strikes") //something something dwarf fotresss
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
-	chargetime = 0
-	recovery = 10
-	penfactor = 40
-	reach = 3
+	chargetime = 5
+	canparry = FALSE
+	recovery = 5
+	penfactor = 20
+	reach = 2
 	icon_state = "incrack"

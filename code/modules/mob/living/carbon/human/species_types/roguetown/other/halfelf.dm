@@ -57,7 +57,6 @@
 	"skin5" = "5a4a41"
 	))
 
-
 /datum/species/human/halfelf/get_hairc_list()
 	return sortList(list(
 	"black - oil" = "181a1d",

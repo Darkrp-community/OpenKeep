@@ -50,6 +50,7 @@
 	max_integrity = 20
 	integrity_failure = 0.5
 	block2add = FOV_RIGHT
+	body_parts_covered = EYES
 
 /obj/item/clothing/mask/rogue/eyepatch/left
 	desc = "An eyepatch, fitted for the left eye."
@@ -74,7 +75,7 @@
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	resistance_flags = FIRE_PROOF
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	flags_inv = HIDEFACE
 	body_parts_covered = FACE
 	block2add = FOV_BEHIND
@@ -127,3 +128,23 @@
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
 					H.update_inv_wear_mask()
+
+/obj/item/clothing/mask/rogue/feld
+	name = "feldsher's mask"
+	desc = "Three times the beaks means three times the doctor."
+	icon_state = "feldmask"
+	item_state = "feldmask"
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	body_parts_covered = FACE|EARS|EYES|MOUTH|NECK
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	sewrepair = TRUE
+
+/obj/item/clothing/mask/rogue/phys
+	name = "physicker's mask"
+	desc = "Packed with herbs to conceal the rot."
+	icon_state = "surgmask"
+	item_state = "surgmask"
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	body_parts_covered = FACE|EARS|EYES|MOUTH|NECK
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	sewrepair = TRUE
