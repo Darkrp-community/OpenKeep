@@ -8,7 +8,7 @@
 /datum/objective/proc/get_random_noble()
 	var/list/possible_targets = list()
 	for(var/datum/mind/possible_target in get_living_crew())
-		if(HAS_TRAIT(possible_target.current, RTRAIT_NOBLE))
+		if(HAS_TRAIT(possible_target.current, TRAIT_NOBLE))
 			possible_targets += possible_target
 	if(!possible_targets.len) // failback if no nobles
 		for(var/datum/mind/possible_target in get_living_crew())

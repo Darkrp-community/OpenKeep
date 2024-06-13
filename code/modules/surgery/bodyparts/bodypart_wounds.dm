@@ -335,7 +335,7 @@
 		var/artery_type = /datum/wound/artery
 		if(zone_precise == BODY_ZONE_PRECISE_NECK)
 			artery_type = /datum/wound/artery/neck
-		if(HAS_TRAIT(user, RTRAIT_SILENTKILLER)) // assassino
+		if(HAS_TRAIT(user, TRAIT_SILENTKILLER)) // assassino
 			if(owner.stat != CONSCIOUS)
 				used = 80
 		if(prob(used))
