@@ -812,9 +812,7 @@
 	},
 /area/rogue/indoors)
 "zX" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck{
-	tame = 1
-	},
+/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "At" = (

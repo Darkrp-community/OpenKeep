@@ -440,6 +440,13 @@
 "NX" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/beach)
+"NY" = (
+/obj/effect/landmark/mapGenerator/rogue/beach{
+	endTurfX = 155;
+	endTurfY = 45
+	},
+/turf/open/water/swamp/deep,
+/area/rogue/outdoors/beach)
 "Ot" = (
 /obj/structure/mineral_door/wood{
 	name = "Passenger Room"
@@ -608,7 +615,7 @@ rP
 rP
 rP
 rP
-rP
+NY
 "}
 (3,1,1) = {"
 ut

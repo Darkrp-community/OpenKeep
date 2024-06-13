@@ -356,6 +356,12 @@
 /obj/item/roguebin,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/dwarfin)
+"bK" = (
+/obj/structure/mineral_door/wood/deadbolt{
+	name = "Stables"
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/town)
 "bN" = (
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/theatre)
@@ -597,6 +603,11 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
+"cR" = (
+/turf/open/floor/rogue/rooftop{
+	icon_state = "roofg"
+	},
+/area/rogue/outdoors/exposed/manorgarri)
 "cS" = (
 /obj/structure/roguemachine/scomm,
 /turf/open/floor/rogue/blocks/stonered,
@@ -4354,6 +4365,9 @@
 "tk" = (
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town)
+"tn" = (
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors/town)
 "to" = (
 /obj/structure/rack/rogue,
 /obj/structure/fluff/wallclock{
@@ -5003,6 +5017,9 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/manorgarri)
+"wf" = (
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/town)
 "wg" = (
 /obj/structure/stairs{
 	dir = 4
@@ -5309,6 +5326,12 @@
 /obj/item/paper/scroll,
 /obj/item/natural/feather,
 /turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town)
+"xG" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1
+	},
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
 "xH" = (
 /turf/open/floor/rogue/blocks/stonered/tiny,
@@ -5786,6 +5809,12 @@
 	},
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/shelter/town/sargoth)
+"zS" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/town)
 "zT" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/clothing/suit/roguetown/shirt/dress,
@@ -9582,6 +9611,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town/dwarfin)
+"QU" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/town)
 "QV" = (
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/outdoors/town)
@@ -10473,6 +10506,12 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/garrison)
+"UM" = (
+/obj/structure/chair/wood/rogue{
+	dir = 8
+	},
+/turf/open/floor/rogue/wood/nosmooth,
+/area/rogue/indoors/town)
 "UN" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
@@ -44697,9 +44736,9 @@ LD
 LD
 LD
 nI
-qQ
-qQ
-qQ
+Yr
+bz
+bz
 qQ
 qQ
 qQ
@@ -44854,9 +44893,9 @@ LD
 LD
 LD
 LD
-QC
-qQ
-qQ
+zS
+tn
+wf
 qQ
 qQ
 pl
@@ -45011,9 +45050,9 @@ jk
 LD
 LD
 LD
-nI
-qQ
-qQ
+zS
+QU
+oG
 qQ
 qQ
 pl
@@ -45168,9 +45207,9 @@ wx
 nI
 LD
 LD
-jk
-qQ
-qQ
+xG
+wf
+tn
 qQ
 qQ
 pl
@@ -45325,9 +45364,9 @@ wx
 Kf
 LD
 LD
-jk
-qQ
-qQ
+zS
+wf
+oG
 qQ
 qQ
 pl
@@ -45482,9 +45521,9 @@ jB
 jk
 LD
 LD
-QC
-qQ
-qQ
+sN
+oG
+Jr
 qQ
 qQ
 pl
@@ -45639,9 +45678,9 @@ QC
 nI
 LD
 LD
-QC
-qQ
-qQ
+bK
+Jr
+Jr
 qQ
 qQ
 pl
@@ -45796,9 +45835,9 @@ QC
 nI
 LD
 LD
-nI
-qQ
-qQ
+sN
+UM
+Jr
 qQ
 qQ
 pl
@@ -45953,9 +45992,9 @@ jB
 nI
 LD
 LD
-nI
-qQ
-qQ
+Yr
+bz
+bz
 qQ
 qQ
 qQ
@@ -46424,7 +46463,7 @@ jB
 jk
 LD
 LD
-jk
+Fk
 qQ
 qQ
 qQ
@@ -69190,7 +69229,7 @@ Kr
 Kr
 Kr
 Kr
-Kr
+cR
 cp
 yd
 yd
@@ -69347,7 +69386,7 @@ Kr
 Kr
 Kr
 Kr
-Kr
+cR
 cp
 yd
 yd
@@ -69504,7 +69543,7 @@ wx
 Kr
 Kr
 Kr
-Kr
+cR
 cp
 yd
 yd
@@ -69661,7 +69700,7 @@ wx
 Kr
 Kr
 Kr
-Kr
+cR
 cp
 dZ
 yd
@@ -69818,7 +69857,7 @@ Kr
 Kr
 Kr
 Kr
-Kr
+cR
 cp
 yd
 yd
@@ -69975,7 +70014,7 @@ Kr
 Kr
 Kr
 Kr
-Kr
+cR
 cp
 yd
 yd
@@ -70132,7 +70171,7 @@ Kr
 Kr
 Kr
 Kr
-Kr
+cR
 cp
 yd
 yd
@@ -70289,7 +70328,7 @@ Kr
 Kr
 Kr
 Kr
-Kr
+cR
 cp
 yd
 yd
