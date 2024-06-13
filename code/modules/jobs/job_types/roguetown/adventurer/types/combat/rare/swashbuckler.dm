@@ -52,6 +52,6 @@
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	H.change_stat("strength", 1)
 	H.change_stat("speed", 2)

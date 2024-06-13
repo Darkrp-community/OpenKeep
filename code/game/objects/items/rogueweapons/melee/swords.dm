@@ -90,6 +90,8 @@
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
 	bigboy = 1
+	max_blade_int = 300
+	max_integrity = 500
 	wlength = WLENGTH_LONG
 	gripsprite = TRUE
 	pixel_y = -16
@@ -131,6 +133,8 @@
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
 	bigboy = 1
+	max_blade_int = 180 // Neglected, unused
+	max_integrity = 300
 	wlength = WLENGTH_LONG
 	gripsprite = TRUE
 	pixel_y = -16
@@ -343,8 +347,8 @@
 	minstr = 12
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/swords
-	max_blade_int = 100
-	max_integrity = 300
+	max_blade_int = 300
+	max_integrity = 500
 	wdefense = 3
 
 /obj/item/rogueweapon/greatsword/getonmobprop(tag)
@@ -362,25 +366,63 @@
 	name = "flamberge"
 	desc = "Commonly known as a flame-bladed sword, this weapon has an undulating blade. It's wave-like form distributes force better, and is less likely to break on impact."
 	icon_state = "flamberge"
-	smeltresult = /obj/item/ingot/iron
+	force = 10
+	force_wielded = 28 // Unique weapon from rare job
+	smeltresult = /obj/item/ingot/steel
+	max_blade_int = 200
+	max_integrity = 400
 	wdefense = 3
 
 /obj/item/rogueweapon/greatsword/zwei
 	name = "zweihander"
 	desc = "Sometimes known as a doppelhander or beidhander, this weapon's size is so impressive that it's handling properties are more akin to that of a polearm than a sword."
 	icon_state = "steelzwei"
-	smeltresult = /obj/item/ingot/steel
+	force_wielded = 25 // A weapon worth 3 iron bars can't be as good as one worth 3 steel bars. Steel sword tier.
+	possible_item_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/thrust, /datum/intent/sword/strike, /datum/intent/longsword/chop)
+	smeltresult = /obj/item/ingot/iron
+	max_blade_int = 150 // Iron tier
+	max_integrity = 300
 	wdefense = 3
 
 /obj/item/rogueweapon/greatsword/elfgsword
 	force = 12
-	force_wielded = 23
+	force_wielded = 28 // Unique weapon from rare job
 	name = "elven kriegsmesser"
 	desc = "A huge, curved elven blade. It's metal is of a high quality, yet still light, crafted by the greatest elven bladesmiths."
 	icon_state = "kriegsmesser"
+	smeltresult = /obj/item/ingot/steel
+	max_blade_int = 150 // Iron tier
+	max_integrity = 300
 	minstr = 10
 
 // Attack Intents
+
+/datum/intent/sword/cut/zwei
+	name = "cut"
+	blade_class = BCLASS_CUT
+	attack_verb = list("cuts", "slashes")
+	icon_state = "incut"
+	damfactor = 0.8
+	hitsound = list('sound/combat/hits/bladed/genslash (1).ogg', 'sound/combat/hits/bladed/genslash (2).ogg', 'sound/combat/hits/bladed/genslash (3).ogg')
+	reach = 1
+	swingdelay = 1
+	misscost = 5
+
+/datum/intent/sword/thrust/zwei
+    name = "thrust"
+    blade_class = BCLASS_STAB
+    attack_verb = list("stabs")
+    animname = "stab"
+    icon_state = "instab"
+    reach = 1
+    chargetime = 1
+    warnie = "mobwarning"
+    hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
+    penfactor = 20
+    swingdelay = 1
+    misscost = 5
+
 /datum/intent/sword/strike
 	name = "pommel strike"
 	icon_state = "instrike"
@@ -467,6 +509,8 @@
 	desc = "A simple iron sword with a tested edge, sharp and true."
 	icon_state = "isword"
 	minstr = 6
+	force = 15 // Iron tier. Higher than steel daggers, still.
+	force_wielded = 20
 	smeltresult = /obj/item/ingot/iron
 	max_integrity = 180
 	sellprice = 10
@@ -497,7 +541,7 @@
 /obj/item/rogueweapon/sword/iron/messer
 	name = "iron messer"
 	desc = "A single edged blade fashioned in the Grenzelhoft messer style."
-	force = 21
+	force = 18 // Can't be dual wielded, but shouldn't be higher than a steel equivalent.
 	icon_state = "imesser"
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
 	gripped_intents = null
@@ -505,7 +549,7 @@
 	wdefense = 2
 
 /obj/item/rogueweapon/sword/short
-	force = 22
+	force = 25
 	name = "short sword"
 	desc = "An archaic steel sword made for penetrating the bodies of impudents."
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
@@ -513,8 +557,8 @@
 	gripped_intents = null
 	minstr = 4
 	wdefense = 4
-	max_blade_int = 180
-	max_integrity = 270
+	max_blade_int = 200
+	max_integrity = 300
 
 
 // Sabres
@@ -523,12 +567,12 @@
 	desc = "A swift sabre, favored by duelists and cut-throats alike."
 	icon_state = "saber"
 	smeltresult = /obj/item/ingot/steel
-	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust)
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/chop)
 	gripped_intents = null
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 5
-	wdefense = 6
+	wdefense = 5
 	wbalance = 1
 
 /datum/intent/sword/cut/sabre
@@ -546,12 +590,11 @@
 	desc = "A saber decorated with fashionable additions without sacrificing it's lethal practicality."
 	icon_state = "decsaber"
 	smeltresult = /obj/item/ingot/steel
-	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust)
 	gripped_intents = null
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 6
-	wdefense = 6
+	wdefense = 5
 	wbalance = 1
 	sellprice = 140
 
@@ -578,7 +621,7 @@
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 6
-	wdefense = 6
+	wdefense = 5
 	wbalance = 1
 
 /datum/intent/sword/cut/rapier
@@ -622,19 +665,19 @@
 	desc = "Both tool and weapon of war, favored by Abyssor cultists and sailors for seafaring battle."
 	icon_state = "cutlass"
 	smeltresult = /obj/item/ingot/steel
-	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/chop)
 	gripped_intents = null
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 6
-	wdefense = 6
+	wdefense = 5
 	wbalance = 1
 
 // Copper Messer
 
 /obj/item/rogueweapon/sword/coppermesser
-	force = 15
-	force_wielded = 20
+	force = 12 // Less than iron shortsword, it's copper-tier.
+	force_wielded = 18
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop)
 	icon_state = "cmesser"

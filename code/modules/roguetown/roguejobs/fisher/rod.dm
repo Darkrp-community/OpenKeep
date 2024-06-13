@@ -27,23 +27,30 @@
 
 
 /obj/item/fishingrod/attackby(obj/item/I, mob/user, params)
-	if(I.baitchance && !baited)
-		user.visible_message("<span class='notice'>[user] hooks something to the line.</span>", \
-							"<span class='notice'>I hook [I] to my line.</span>")
-		playsound(src.loc, 'sound/foley/pierce.ogg', 50, FALSE)
-		if(istype(I,/obj/item/natural/worms))
-			var/obj/item/natural/worms/W = I
-			if(W.amt > 1)
-				W.amt--
-				var/obj/item/natural/worms/N = new W.type(src)
-				baited = N
+	if(!baited)
+		if(I.isbait) // Don't use items that aren't bait
+			user.visible_message("<span class='notice'>[user] hooks something to the line.</span>", \
+								"<span class='notice'>I hook [I] to my line.</span>")
+			playsound(src.loc, 'sound/foley/pierce.ogg', 50, FALSE)
+			if(istype(I,/obj/item/natural/worms))
+				var/obj/item/natural/worms/W = I
+				if(W.amt > 1)
+					W.amt--
+					var/obj/item/natural/worms/N = new W.type(src)
+					baited = N
+				else
+					W.forceMove(src)
+					baited = W
 			else
-				W.forceMove(src)
-				baited = W
+				I.forceMove(src)
+				baited = I
+			update_icon()
+			return
 		else
-			I.forceMove(src)
-			baited = I
-		update_icon()
+			to_chat(user, "<span class='notice'>This isn't suitable as bait...</span>")
+			return
+	else
+		to_chat(user, "<span class='warning'>The rod already has bait on it!</span>")
 		return
 	. = ..()
 
@@ -57,6 +64,9 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/fishingrod/afterattack(obj/target, mob/user, proximity)
+	var/sl = user.mind.get_skill_level(/datum/skill/labor/fishing) // User's skill level
+	var/ft = 120 //Time to get a catch, in ticks
+	var/fpp =  100 - (40 + (sl * 10)) // Fishing power penalty based on fishing skill level
 	if(user.used_intent.type == SPEAR_BASH)
 		return ..()
 
@@ -69,39 +79,53 @@
 				user.visible_message("<span class='warning'>[user] casts a line!</span>", \
 									"<span class='notice'>I cast a line.</span>")
 				playsound(src.loc, 'sound/items/fishing_plouf.ogg', 100, TRUE)
-				if(do_after(user,rand(80,150), target = target)) //rogtodo based on fishing skill
+				ft -= (sl * 20) //Instant at legendary, every skill lvl is -2 seconds
+				if(do_after(user,ft, target = target))
 					if(baited)
-						var/bc = baited.baitchance
-						var/ft = 30
+						var/bp = baited.baitpenalty // Penalty to fishing chance based on how good bait is. Lower is better.
+						var/fishchance = 100 // Total fishing chance, deductions applied below
 						if(user.mind)
-							var/sl = user.mind.get_skill_level(/datum/skill/labor/fishing)
-							if(!sl)
-								bc = 0
+							if(!sl) // If we have zero fishing skill...
+								fishchance -= 60 // 40% chance to fish base
+								fishchance -= bp // On top of it, deduct penalties from bait quality, if any
 							else
-								ft += (sl * 10)
-								bc += (sl * 10)
-						if(prob(bc))
+								fishchance -= bp // Deduct penalties from bait quality, if any
+								fishchance -= fpp // Deduct a penalty the lower our fishing level is (-0 at legendary)
+						if(prob(fishchance)) // Finally, roll the dice to see if we fish.
 							var/A = pickweight(baited.fishloot)
+							var/ow = 30 + (sl * 10) // Opportunity window, in ticks. Longer means you get more time to cancel your bait
 							to_chat(user, "<span class='notice'>Something tugs the line!</span>")
 							playsound(src.loc, 'sound/items/fishing_plouf.ogg', 100, TRUE)
-							if(!do_after(user,ft, target = target)) //rogtodo based on fishing skill
-								if(ismob(A))
+							if(!do_after(user,ow, target = target))
+								var/mob/living/fisherman = user
+								if(ismob(A)) // TODO: Baits with mobs on their fishloot lists
 									var/mob/M = A
 									if(M.type in subtypesof(/mob/living/simple_animal/hostile))
 										new M(target)
 									else
 										new M(user.loc)
+									user.mind.adjust_experience(/datum/skill/labor/fishing, fisherman.STAINT * 2, FALSE) // High risk high reward
 								else
 									new A(user.loc)
+									to_chat(user, "<span class='warning'>Reel 'em in!</span>")
+									user.mind.adjust_experience(/datum/skill/labor/fishing, round(fisherman.STAINT + (sl * 5), 1), FALSE) // Level up!
 								playsound(src.loc, 'sound/items/Fish_out.ogg', 100, TRUE)
+								if(prob(80 - (sl * 10))) // Higher skill levels make you less likely to lose your bait
+									to_chat(user, "<span class='warning'>Damn, it ate my bait.</span>")
+									qdel(baited)
+									baited = null
 							else
-								to_chat(user, "<span class='warning'>Damn, got away...</span>")
+								to_chat(user, "<span class='warning'>Damn, it got away...</span>")
+								if(prob(100 - (sl * 10))) // Higher chance for it to flee with your bait.
+									to_chat(user, "<span class='warning'>...And took my bait, too.</span>")
+									qdel(baited)
+									baited = null
 						else
-							to_chat(user, "<span class='warning'>Damn, got away...</span>")
-						qdel(baited)
-						baited = null
+							to_chat(user, "<span class='warning'>Not even a nibble...</span>")
 					else
-						to_chat(user, "<span class='warning'>This seems pointless.</span>")
+						to_chat(user, "<span class='warning'>This seems pointless without a bait.</span>")
+				else
+					to_chat(user, "<span class='warning'>I must stand still to fish.</span>")
 			update_icon()
 
 /obj/item/fishingrod/update_icon()
