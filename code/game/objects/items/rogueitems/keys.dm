@@ -1,7 +1,7 @@
 
 /obj/item/roguekey
 	name = "key"
-	desc = ""
+	desc = "A simple key of simple uses."
 	icon_state = "iron"
 	icon = 'icons/roguetown/items/keys.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
@@ -225,6 +225,12 @@
 	name = "archive key"
 	icon_state = "ekey"
 	lockid = "archive"
+
+/obj/item/roguekey/doctor
+	name = "doctor's key"
+	icon_state = "birdkey"
+	lockid = "doctor"
+
 //grenchensnacker
 /obj/item/roguekey/porta
 	name = "strange key"

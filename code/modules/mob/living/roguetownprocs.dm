@@ -1,11 +1,9 @@
-
-
 /proc/accuracy_check(zone, mob/living/user, mob/living/target, associated_skill, datum/intent/used_intent, obj/item/I)
 	if(!zone)
 		return
 	if(user == target)
 		return zone
-	if(zone == "chest")
+	if(zone == BODY_ZONE_CHEST)
 		return zone
 	if(target.grabbedby == user)
 		if(user.grab_state >= GRAB_AGGRESSIVE)
@@ -59,9 +57,7 @@
 		else
 			if(user.client?.prefs.showrolls)
 				to_chat(user, "<span class='warning'>Ultra accuracy fail! [chance2hit]%</span>")
-			return "chest"
-
-
+			return BODY_ZONE_CHEST
 
 /mob/proc/get_generic_parry_drain()
 	return 30
@@ -144,6 +140,7 @@
 			var/obj/item/mainhand = get_active_held_item()
 			var/obj/item/offhand = get_inactive_held_item()
 			var/obj/item/used_weapon = mainhand
+			var/force_shield = FALSE // If our offhand weapon is a shield type, turn this on to force us to block with it.
 
 			if(mainhand)
 				if(mainhand.can_parry)
@@ -153,9 +150,11 @@
 				if(offhand.can_parry)
 					offhand_defense += (H.mind ? (H.mind.get_skill_level(offhand.associated_skill) * 20) : 20)
 					offhand_defense += (offhand.wdefense * 10)
-
-			if(mainhand_defense >= offhand_defense)
-				highest_defense += mainhand_defense
+					if(istype(offhand, /obj/item/rogueweapon/shield))
+						force_shield = TRUE
+			if(!force_shield)
+				if(mainhand_defense >= offhand_defense)
+					highest_defense += mainhand_defense
 			else
 				used_weapon = offhand
 				highest_defense += offhand_defense
@@ -198,20 +197,24 @@
 
 			if(weapon_parry == TRUE)
 				if(do_parry(used_weapon, drained, user)) //show message
-
+					 // defender skill gain
 					if((mobility_flags & MOBILITY_STAND) && attacker_skill && (defender_skill < attacker_skill - SKILL_LEVEL_NOVICE))
-						mind.adjust_experience(used_weapon.associated_skill, max(round(STAINT/2), 0), FALSE)
+						// No duping exp gains by attacking with a shield on active hand
+						if(used_weapon == offhand && istype(used_weapon, /obj/item/rogueweapon/shield))
+							// Most shield users aren't bright, let's not make it near impossible to learn
+							H.mind?.adjust_experience(/datum/skill/combat/shields, max(round(H.STAINT - 3), 0), FALSE)
+						else
+							H.mind?.adjust_experience(used_weapon.associated_skill, max(round(H.STAINT/2), 0), FALSE)
 
 					var/obj/item/AB = intenty.masteritem
 
 					//attacker skill gain
 
-					if(U.mind)
-						if((U.mobility_flags & MOBILITY_STAND) && defender_skill && (attacker_skill < defender_skill - SKILL_LEVEL_NOVICE))
-							if(AB)
-								U.mind.adjust_experience(AB.associated_skill, max(round(U.STAINT/2), 0), FALSE)
-							else
-								U.mind.adjust_experience(/datum/skill/combat/unarmed, max(round(STAINT/2), 0), FALSE)
+					if((U.mobility_flags & MOBILITY_STAND) && defender_skill && (attacker_skill < defender_skill - SKILL_LEVEL_NOVICE))
+						if(AB)
+							U.mind?.adjust_experience(AB.associated_skill, max(round(U.STAINT/2), 0), FALSE)
+						else
+							U.mind?.adjust_experience(/datum/skill/combat/unarmed, max(round(U.STAINT/2), 0), FALSE)
 
 					if(prob(66) && AB)
 						if((used_weapon.flags_1 & CONDUCT_1) && (AB.flags_1 & CONDUCT_1))
@@ -313,6 +316,12 @@
 				playsound(get_turf(src), pick(W.parrysound), 100, FALSE)
 			if(istype(rmb_intent, /datum/rmb_intent/riposte))
 				src.visible_message("<span class='boldwarning'><b>[src]</b> ripostes [user] with [W]!</span>")
+			else if(istype(W, /obj/item/rogueweapon/shield))
+				src.visible_message("<span class='boldwarning'><b>[src]</b> blocks [user] with [W]!</span>")
+				var/shieldur
+				shieldur = round(((W.obj_integrity / W.max_integrity) * 100), 1)
+				if(shieldur <= 30)
+					src.visible_message("<span class='boldwarning'><b>\The [W] is about to break!</b></span>")
 			else
 				src.visible_message("<span class='boldwarning'><b>[src]</b> parries [user] with [W]!</span>")
 			return TRUE
@@ -329,7 +338,7 @@
 		var/mob/living/carbon/human/H = src
 		if(H.rogfat_add(parrydrain))
 			playsound(get_turf(src), pick(parry_sound), 100, FALSE)
-			src.visible_message("<span class='warning'><b>[src]</b> parries [user]!</span>")
+			src.visible_message("<span class='warning'><b>[src]</b> parries [user] with their hands!</span>")
 			return TRUE
 		else
 			to_chat(src, "<span class='boldwarning'>I'm too tired to parry!</span>")
@@ -357,7 +366,7 @@
 			return FALSE
 		if(L)
 			if(H?.check_dodge_skill())
-				prob2defend = prob2defend + (L.STASPD * 15)
+				prob2defend = prob2defend + (L.STASPD * 12)
 			else
 				prob2defend = prob2defend + (L.STASPD * 10)
 		if(U)

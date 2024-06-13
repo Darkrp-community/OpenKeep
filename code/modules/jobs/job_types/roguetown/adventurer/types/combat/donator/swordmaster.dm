@@ -32,4 +32,4 @@
 	head = /obj/item/clothing/head/roguetown/rare/humanswplate
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 
-	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

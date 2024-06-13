@@ -660,86 +660,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 /proc/anyprob(value)
 	return (rand(1,value)==value)
 
-/proc/parse_zone(zone)
-	if(zone == BODY_ZONE_PRECISE_R_HAND)
-		return "right hand"
-	else if (zone == BODY_ZONE_PRECISE_L_HAND)
-		return "left hand"
-	else if (zone == BODY_ZONE_L_ARM)
-		return "left arm"
-	else if (zone == BODY_ZONE_R_ARM)
-		return "right arm"
-	else if (zone == BODY_ZONE_L_LEG)
-		return "left leg"
-	else if (zone == BODY_ZONE_R_LEG)
-		return "right leg"
-	else if (zone == BODY_ZONE_PRECISE_L_FOOT)
-		return "left foot"
-	else if (zone == BODY_ZONE_PRECISE_R_FOOT)
-		return "right foot"
-	else if (zone == BODY_ZONE_PRECISE_NECK)
-		return "throat"
-	else if (zone == BODY_ZONE_PRECISE_GROIN)
-		return "groin"
-	else if (zone == BODY_ZONE_PRECISE_EARS)	//we want the chatlog to say 'grabbed his ear' not 'grabbed his ears' etc
-		return "ear"
-	else if (zone == BODY_ZONE_PRECISE_R_EYE)
-		return "eyes"
-	else if (zone == BODY_ZONE_PRECISE_L_EYE)
-		return "eyes"
-	else if (zone == BODY_ZONE_PRECISE_NOSE)
-		return "nose"
-	else if (zone == BODY_ZONE_R_INHAND)
-		return "right hand"
-	else if (zone == BODY_ZONE_L_INHAND)
-		return "left hand"
-	else if (zone == BODY_ZONE_PRECISE_HAIR)
-		return "hair"
-	else if (zone == BODY_ZONE_PRECISE_MOUTH)
-		return "mouth"
-	else
-		return zone
-
-/mob/living/carbon/proc/parse_zone(zone, mob/living/target)
-	if(zone == BODY_ZONE_PRECISE_R_HAND)
-		return "right hand"
-	else if (zone == BODY_ZONE_PRECISE_L_HAND)
-		return "left hand"
-	else if (zone == BODY_ZONE_L_ARM)
-		return "left arm"
-	else if (zone == BODY_ZONE_R_ARM)
-		return "right arm"
-	else if (zone == BODY_ZONE_L_LEG)
-		return "left leg"
-	else if (zone == BODY_ZONE_R_LEG)
-		return "right leg"
-	else if (zone == BODY_ZONE_PRECISE_L_FOOT)
-		return "left foot"
-	else if (zone == BODY_ZONE_PRECISE_R_FOOT)
-		return "right foot"
-	else if (zone == BODY_ZONE_PRECISE_NECK)
-		return "throat"
-	else if (zone == BODY_ZONE_PRECISE_GROIN)
-		return "groin"
-	else if (zone == BODY_ZONE_PRECISE_EARS)	//we want the chatlog to say 'grabbed his ear' not 'grabbed his ears' etc
-		return "ear"
-	else if (zone == BODY_ZONE_PRECISE_R_EYE)
-		return "right eye"
-	else if (zone == BODY_ZONE_PRECISE_L_EYE)
-		return "left eye"
-	else if (zone == BODY_ZONE_PRECISE_NOSE)
-		return "nose"
-	else if (zone == BODY_ZONE_R_INHAND)
-		return parse_inhand(zone)
-	else if (zone == BODY_ZONE_L_INHAND)
-		return parse_inhand(zone)
-	else if (zone == BODY_ZONE_PRECISE_HAIR)
-		return "hair"
-	else if (zone == BODY_ZONE_PRECISE_MOUTH)
-		return "mouth"
-	else
-		return zone
-
 /*
 
  Gets the turf this atom's *ICON* appears to inhabit
@@ -805,22 +725,12 @@ Turf and target are separate in case you want to teleport some distance from a t
 		loc = loc.loc
 	return null
 
-
-//For objects that should embed, but make no sense being is_sharp or is_pointed()
-//e.g: rods
-GLOBAL_LIST_INIT(can_embed_types, typecacheof(list(
-	/obj/item/stack/rods,
-	/obj/item/pipe)))
-
-/proc/can_embed(obj/item/W)
-	if(W.get_sharpness())
-		return 1
-	if(is_pointed(W))
-		return 1
-
-	if(is_type_in_typecache(W, GLOB.can_embed_types))
-		return 1
-
+/proc/can_embed(obj/item/weapon)
+	if(HAS_TRAIT(weapon, TRAIT_NODROP) || HAS_TRAIT(weapon, TRAIT_NOEMBED))
+		return FALSE
+	if(!weapon.embedding?.embed_chance)
+		return FALSE
+	return TRUE
 
 /*
 Checks if that loc and dir has an item on the wall

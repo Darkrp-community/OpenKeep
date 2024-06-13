@@ -49,12 +49,14 @@
 			H.change_stat("constitution", 1)
 			H.change_stat("speed", 1)
 	else
-		beltl = /obj/item/roguekey/manor
 		head = /obj/item/clothing/head/roguetown/hennin
 		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
-		belt = /obj/item/storage/belt/rogue/leather/cloth/lady
-		armor = /obj/item/clothing/suit/roguetown/armor/armordress
+		armor = /obj/item/clothing/suit/roguetown/armor/silkcoat
+		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
+		belt = /obj/item/storage/belt/rogue/leather/cloth/lady
+		beltl = /obj/item/roguekey/manor
+		backr = /obj/item/storage/backpack/rogue/satchel
 		if(H.mind)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
@@ -65,5 +67,5 @@
 			H.change_stat("strength", -3)
 			H.change_stat("constitution", 1)
 			H.change_stat("speed", 2)
-	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, RTRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)

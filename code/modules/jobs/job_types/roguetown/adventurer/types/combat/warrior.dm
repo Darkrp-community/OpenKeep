@@ -25,6 +25,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(3,4), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,3), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(1,1,2), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, pick(1,1,2), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
@@ -65,5 +66,5 @@
 	H.change_stat("strength", 2)
 	H.change_stat("endurance", 1) // 7 stat points total as a low-skill martial role without magic. Compared to Pally with 5 points.
 	H.change_stat("speed", 1)
-	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
