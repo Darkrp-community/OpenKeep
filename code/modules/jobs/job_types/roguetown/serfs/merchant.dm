@@ -34,7 +34,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 6, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/mathematics, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
-	ADD_TRAIT(H, RTRAIT_SEEPRICES, type)
+	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
 	if(H.gender == MALE)
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
@@ -66,4 +66,4 @@
 		H.change_stat("intelligence", 2)
 		H.change_stat("perception", 1)
 		H.change_stat("strength", -2)
-	ADD_TRAIT(H, RTRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
