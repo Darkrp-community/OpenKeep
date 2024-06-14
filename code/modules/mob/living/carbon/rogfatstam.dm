@@ -5,7 +5,9 @@
 
 	if(world.time > last_fatigued + 20) //regen fatigue
 		var/added = rogstam / maxrogstam
-		added = round(-10+ (added*-30))
+		added = round(-10+ (added*-40))
+		if(HAS_TRAIT(src, TRAIT_MISSING_NOSE))
+			added = round(added * 0.5, 1)
 		if(rogfat >= 1)
 			rogfat_add(added)
 		else
@@ -18,12 +20,15 @@
 	if(mind)
 		athletics_skill = mind.get_skill_level(/datum/skill/misc/athletics)
 	maxrogstam = (STAEND + (athletics_skill/2 ) ) * 100
+	if(cmode)
+		if(!HAS_TRAIT(src, TRAIT_BREADY))
+			rogstam_add(-2)
 
 /mob/proc/rogstam_add(added as num)
 	return
 
 /mob/living/rogstam_add(added as num)
-	if(HAS_TRAIT(src, TRAIT_NOFATSTAM))
+	if(HAS_TRAIT(src, TRAIT_NOROGSTAM))
 		return TRUE
 	if(m_intent == MOVE_INTENT_RUN)
 		mind.adjust_experience(/datum/skill/misc/athletics, (STAINT*0.02))
@@ -44,7 +49,7 @@
 	return TRUE
 
 /mob/living/rogfat_add(added as num, emote_override, force_emote = TRUE) //call update_rogfat here and set last_fatigued, return false when not enough fatigue left
-	if(HAS_TRAIT(src, TRAIT_NOFATSTAM))
+	if(HAS_TRAIT(src, TRAIT_NOROGSTAM))
 		return TRUE
 	rogfat = CLAMP(rogfat+added, 0, maxrogfat)
 	if(added > 0)
@@ -93,7 +98,7 @@
 	var/heart_attacking = FALSE
 
 /mob/living/carbon/proc/heart_attack()
-	if(HAS_TRAIT(src, TRAIT_NOFATSTAM))
+	if(HAS_TRAIT(src, TRAIT_NOROGSTAM))
 		return
 	if(!heart_attacking)
 		heart_attacking = TRUE

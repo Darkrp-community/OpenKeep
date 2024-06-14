@@ -9,10 +9,12 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 	dodgetime = 30
 	flee_in_pain = TRUE
 	possible_rmb_intents = list()
+
 	wander = FALSE
 
 /mob/living/carbon/human/species/human/northern/bum/ambush
 	aggressive=1
+
 	wander = TRUE
 
 /mob/living/carbon/human/species/human/northern/bum/retaliate(mob/living/L)
@@ -43,7 +45,7 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOFATSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/vagrant)
 
 /mob/living/carbon/human/species/human/northern/bum/npc_idle()

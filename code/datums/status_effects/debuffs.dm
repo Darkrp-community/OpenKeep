@@ -98,7 +98,7 @@
 		SSdroning.play_area_sound(get_area(src), human_owner.client)
 		SSdroning.play_loop(get_area(src), human_owner.client)
 	if(sleptonground)
-		if(HAS_TRAIT(human_owner, RTRAIT_NOBLE))
+		if(HAS_TRAIT(human_owner, TRAIT_NOBLE))
 			human_owner.add_stress(/datum/stressevent/sleepfloornoble)
 		else
 			human_owner.add_stress(/datum/stressevent/sleepfloor)

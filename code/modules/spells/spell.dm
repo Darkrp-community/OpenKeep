@@ -178,6 +178,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	var/associated_skill = /datum/skill/magic/arcane
 	var/miracle = FALSE
 	var/devotion_cost = 0
+	var/ignore_cockblock = FALSE //whether or not to ignore TRAIT_SPELLCOCKBLOCK
 
 	action_icon_state = "spell0"
 	action_icon = 'icons/mob/actions/roguespells.dmi'
@@ -224,7 +225,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	return releasedrain
 
 
-/obj/effect/proc_holder/spell/proc/cast_check(skipcharge = 0,mob/user = usr) //checks if the spell can be cast based on its settings; skipcharge is used when an additional cast_check is called inside the spell
+/obj/effect/proc_holder/spell/proc/cast_check(skipcharge = 0, mob/user = usr) //checks if the spell can be cast based on its settings; skipcharge is used when an additional cast_check is called inside the spell
 	if(player_lock)
 		if(!user.mind || !(src in user.mind.spell_list) && !(src in user.mob_spell_list))
 			to_chat(user, "<span class='warning'>I shouldn't have this spell! Something's wrong.</span>")
@@ -246,6 +247,9 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 
 	if(user.stat && !stat_allowed)
 		to_chat(user, "<span class='warning'>Not when you're incapacitated!</span>")
+		return FALSE
+
+	if(!ignore_cockblock && HAS_TRAIT(user, TRAIT_SPELLCOCKBLOCK))
 		return FALSE
 
 	if(!antimagic_allowed)
@@ -635,6 +639,9 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	if(user.stat && !stat_allowed)
 		return FALSE
 
+	if(!ignore_cockblock && HAS_TRAIT(user, TRAIT_SPELLCOCKBLOCK))
+		return FALSE
+
 	if(!antimagic_allowed && user.anti_magic_check(TRUE, FALSE, FALSE, 0, TRUE))
 		return FALSE
 
@@ -643,13 +650,10 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 			return FALSE
 		if(nonabstract_req && (isbrain(user) || ispAI(user)))
 			return FALSE
-	if(iscarbon(user))
-		var/mob/living/carbon/C = user
-		var/obj/item/bodypart/B = C.get_bodypart(BODY_ZONE_HEAD)
-		if(B)
-			for(var/obj/item/grabbing/G in grabbedby)
-				if(G.sublimb_grabbed == BODY_ZONE_PRECISE_MOUTH)
-					return FALSE
+	if((invocation_type == "whisper" || invocation_type == "shout") && isliving(user))
+		var/mob/living/living_user = user
+		if(!living_user.can_speak_vocal())
+			return FALSE
 
 	return TRUE
 

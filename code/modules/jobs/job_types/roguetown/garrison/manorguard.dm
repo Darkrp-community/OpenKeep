@@ -77,4 +77,4 @@
 		H.change_stat("endurance", 2)
 		H.change_stat("constitution", 1)
 	H.verbs |= /mob/proc/haltyell
-	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

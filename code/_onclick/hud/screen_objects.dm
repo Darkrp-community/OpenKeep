@@ -251,6 +251,7 @@
 
 
 /atom/movable/screen/inventory/hand
+	nomouseover =  TRUE
 	var/mutable_appearance/handcuff_overlay
 	var/static/mutable_appearance/blocked_overlay = mutable_appearance('icons/mob/screen_gen.dmi', "blocked")
 	var/held_index = 0
@@ -803,7 +804,7 @@
 		if(H.job == "Mercenary")
 			if(H.mercsetup())
 				qdel(src)
-		
+
 		else if(H.advsetup())
 			qdel(src)
 
@@ -844,29 +845,38 @@
 			var/mob/living/L = hud.mymob
 			L.look_around()
 
-/atom/movable/screen/eye_intent/update_icon(mob/user)
-    if(!user && hud)
-        user = hud.mymob
-    if(!user)
-        return
-    if(!isliving(user))
-        return
-    cut_overlays()
-    var/mob/living/L = user
-    if(L.eyesclosed)
-        icon_state = "eye_closed"
-    else if(user.tempfixeye)
-        icon_state = "eye_target"
-    else if(user.fixedeye)
-        icon_state = "eye_fixed"
-    else
-        icon_state = "eye"
-    /*if(ishuman(user))
-        var/mob/living/carbon/human/H = user
-        if(H.eye_color)
-            var/mutable_appearance/MA = mutable_appearance(icon, "o[icon_state]")
-            MA.color = "#[H.eye_color]"
-            add_overlay(MA)*/
+/atom/movable/screen/eye_intent/update_icon_state()
+	. = ..()
+	var/mob/living/L = hud.mymob
+	if(!istype(L))
+		icon_state = "eye"
+		return
+	if(L.eyesclosed)
+		icon_state = "eye_closed"
+	else if(L.tempfixeye)
+		icon_state = "eye_target"
+	else if(L.fixedeye)
+		icon_state = "eye_fixed"
+	else
+		icon_state = "eye"
+
+/atom/movable/screen/eye_intent/update_overlays()
+	. = ..()
+	var/mob/living/carbon/human/human = hud.mymob
+	if(!istype(human))
+		return
+	var/mutable_appearance/iris = mutable_appearance(src.icon, "oeye")
+	switch(icon_state)
+		if("eye_closed")
+			iris.icon_state = "oeye_closed"
+		if("eye_target")
+			iris.icon_state = "oeye_target"
+		if("eye_fixed")
+			iris.icon_state = "oeye_fixed"
+		else
+			iris.icon_state = "oeye"
+	iris.color = "#" + human.eye_color
+	. += iris
 
 /atom/movable/screen/eye_intent/proc/toggle(mob/user)
 	if(isobserver(user))
@@ -1020,7 +1030,7 @@
 
 	if(PL["right"] && ishuman(hud.mymob))
 		var/mob/living/carbon/human/H = hud.mymob
-		return H.check_limb_for_injuries(check_zone(choice))
+		return H.check_limb_for_injuries(H, choice = check_zone(choice))
 	else
 		return set_selected_zone(choice, usr)
 
@@ -1075,37 +1085,37 @@
 			if(1 to 3)
 				switch(icon_x)
 					if(5 to 7)
-						return BODY_ZONE_R_INHAND
+						return BODY_ZONE_PRECISE_R_INHAND
 					if(17 to 28)
 						return BODY_ZONE_PRECISE_R_FOOT
 					if(38 to 49)
 						return BODY_ZONE_PRECISE_L_FOOT
 					if(59 to 61)
-						return BODY_ZONE_L_INHAND
+						return BODY_ZONE_PRECISE_L_INHAND
 			if(4 to 5)
 				switch(icon_x)
 					if(5 to 7)
-						return BODY_ZONE_R_INHAND
+						return BODY_ZONE_PRECISE_R_INHAND
 					if(17 to 28)
 						return BODY_ZONE_PRECISE_R_FOOT
 					if(38 to 49)
 						return BODY_ZONE_PRECISE_L_FOOT
 					if(59 to 61)
-						return BODY_ZONE_L_INHAND
+						return BODY_ZONE_PRECISE_L_INHAND
 			if(6 to 15)
 				switch(icon_x)
 					if(5 to 7)
-						return BODY_ZONE_R_INHAND
+						return BODY_ZONE_PRECISE_R_INHAND
 					if(20 to 29)
 						return BODY_ZONE_R_LEG
 					if(37 to 46)
 						return BODY_ZONE_L_LEG
 					if(59 to 61)
-						return BODY_ZONE_L_INHAND
+						return BODY_ZONE_PRECISE_L_INHAND
 			if(16 to 21)
 				switch(icon_x)
 					if(5 to 7)
-						return BODY_ZONE_R_INHAND
+						return BODY_ZONE_PRECISE_R_INHAND
 					if(12 to 18)
 						return BODY_ZONE_PRECISE_R_HAND
 					if(20 to 29)
@@ -1115,11 +1125,11 @@
 					if(48 to 54)
 						return BODY_ZONE_PRECISE_L_HAND
 					if(59 to 61)
-						return BODY_ZONE_L_INHAND
+						return BODY_ZONE_PRECISE_L_INHAND
 			if(22 to 24)
 				switch(icon_x)
 					if(5 to 7)
-						return BODY_ZONE_R_INHAND
+						return BODY_ZONE_PRECISE_R_INHAND
 					if(12 to 18)
 						return BODY_ZONE_PRECISE_R_HAND
 					if(20 to 29)
@@ -1131,7 +1141,7 @@
 					if(48 to 54)
 						return BODY_ZONE_PRECISE_L_HAND
 					if(59 to 61)
-						return BODY_ZONE_L_INHAND
+						return BODY_ZONE_PRECISE_L_INHAND
 			if(25 to 29)
 				switch(icon_x)
 					if(16 to 22)
@@ -1191,34 +1201,34 @@
 								return BODY_ZONE_PRECISE_L_EYE
 						if(icon_y in 53 to 55)
 							if(icon_x in 29 to 37)
-								return BODY_ZONE_PRECISE_HAIR
+								return BODY_ZONE_PRECISE_SKULL
 						return BODY_ZONE_HEAD
 	else
 		switch(icon_y)
 			if(1 to 7)
 				switch(icon_x)
 					if(12 to 14)
-						return BODY_ZONE_R_INHAND
+						return BODY_ZONE_PRECISE_R_INHAND
 					if(26 to 32)
 						return BODY_ZONE_PRECISE_R_FOOT
 					if(34 to 40)
 						return BODY_ZONE_PRECISE_L_FOOT
 					if(52 to 54)
-						return BODY_ZONE_L_INHAND
+						return BODY_ZONE_PRECISE_L_INHAND
 			if(8 to 16)
 				switch(icon_x)
 					if(12 to 14)
-						return BODY_ZONE_R_INHAND
+						return BODY_ZONE_PRECISE_R_INHAND
 					if(24 to 31)
 						return BODY_ZONE_R_LEG
 					if(35 to 42)
 						return BODY_ZONE_L_LEG
 					if(52 to 54)
-						return BODY_ZONE_L_INHAND
+						return BODY_ZONE_PRECISE_L_INHAND
 			if(17 to 20)
 				switch(icon_x)
 					if(12 to 14)
-						return BODY_ZONE_R_INHAND
+						return BODY_ZONE_PRECISE_R_INHAND
 					if(20 to 23)
 						return BODY_ZONE_PRECISE_R_HAND
 					if(24 to 31)
@@ -1228,11 +1238,11 @@
 					if(43 to 46)
 						return BODY_ZONE_PRECISE_L_HAND
 					if(52 to 54)
-						return BODY_ZONE_L_INHAND
+						return BODY_ZONE_PRECISE_L_INHAND
 			if(21)
 				switch(icon_x)
 					if(12 to 14)
-						return BODY_ZONE_R_INHAND
+						return BODY_ZONE_PRECISE_R_INHAND
 					if(20 to 23)
 						return BODY_ZONE_PRECISE_R_HAND
 					if(30 to 36)
@@ -1240,11 +1250,11 @@
 					if(43 to 46)
 						return BODY_ZONE_PRECISE_L_HAND
 					if(52 to 54)
-						return BODY_ZONE_L_INHAND
+						return BODY_ZONE_PRECISE_L_INHAND
 			if(22 to 23)
 				switch(icon_x)
 					if(12 to 14)
-						return BODY_ZONE_R_INHAND
+						return BODY_ZONE_PRECISE_R_INHAND
 					if(20 to 25)
 						return BODY_ZONE_R_ARM
 					if(30 to 36)
@@ -1252,7 +1262,7 @@
 					if(41 to 46)
 						return BODY_ZONE_L_ARM
 					if(52 to 54)
-						return BODY_ZONE_L_INHAND
+						return BODY_ZONE_PRECISE_L_INHAND
 			if(24 to 29)
 				switch(icon_x)
 					if(20 to 25)
@@ -1309,11 +1319,11 @@
 								return BODY_ZONE_PRECISE_L_EYE
 						if(icon_y in 50 to 51)
 							if(icon_x in 30 to 36)
-								return BODY_ZONE_PRECISE_HAIR
+								return BODY_ZONE_PRECISE_SKULL
 						return BODY_ZONE_HEAD
 			if(52)
 				if(icon_x in 30 to 36)
-					return BODY_ZONE_PRECISE_HAIR
+					return BODY_ZONE_PRECISE_SKULL
 
 /atom/movable/screen/zone_sel/proc/set_selected_zone(choice, mob/user)
 	if(user != hud?.mymob)
@@ -1344,9 +1354,6 @@
 				. += limby
 				continue
 			var/damage = BP.burn_dam + BP.brute_dam
-			if(BP.wounds.len)
-				for(var/datum/wound/W in BP.wounds)
-					damage = damage + W.woundpain
 			if(damage > BP.max_damage)
 				damage = BP.max_damage
 			var/comparison = (damage/BP.max_damage)
@@ -1354,7 +1361,7 @@
 			var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud64.dmi', "[H.gender == "male" ? "m" : "f"]w-[BP.body_zone]") //apply wounded overlay
 			limby.alpha = (comparison*255)*2
 			. += limby
-			if(BP.get_bleedrate())
+			if(BP.get_bleed_rate())
 				. += mutable_appearance('icons/mob/roguehud64.dmi', "[H.gender == "male" ? "m" : "f"]-[BP.body_zone]-bleed") //apply healthy limb
 		for(var/X in H.get_missing_limbs())
 			var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud64.dmi', "[H.gender == "male" ? "m" : "f"]-[X]") //missing limb
@@ -1457,7 +1464,7 @@
 /atom/movable/screen/healthdoll/Click(location, control, params)
 	if (ishuman(usr))
 		var/mob/living/carbon/human/H = usr
-		H.check_self_for_injuries()
+		H.check_for_injuries(H)
 
 /atom/movable/screen/mood
 	name = "mood"
@@ -1475,39 +1482,14 @@
 	if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
 		if(modifiers["left"])
-			var/headpercent	= 0
-			var/burnspercent	= 0
-			var/toxpercent = H.getToxLoss()
-			var/oxpercent = H.getOxyLoss()
-			var/bloodpercent = (H.blood_volume / BLOOD_VOLUME_NORMAL) * 100
-			for(var/X in H.bodyparts)	//hardcoded to streamline things a bit
-				var/obj/item/bodypart/BP = X
-				if(BP.name == "head")
-					headpercent	+= (BP.brute_dam / BP.max_damage) * 100
-					if(burnspercent < BP.burn_dam)
-						burnspercent = (BP.burn_dam / BP.max_damage) * 100
-				if(BP.name == "chest")
-					if(burnspercent < BP.burn_dam)
-						burnspercent = (BP.burn_dam / BP.max_damage) * 100
-
-			if(headpercent)
-				to_chat(H, "<span class='purple'>Mortal Wounds</span>")
-			if(burnspercent)
-				to_chat(H, "<span class='orange'>Mortal Burns</span>")
-			if(bloodpercent < 100)
-				to_chat(H, "<span class='red'>Bloodloss</span>")
-			if(toxpercent)
-				to_chat(H, "<span class='green'>Poisoned</span>")
-			if(oxpercent)
-				to_chat(H, "<span class='grey'>Suffocation</span>")
-			if(H.nutrition < 0)
-				to_chat(H, "<span class='red'>Starving to Death</span>")
+			H.check_for_injuries(H)
 		if(modifiers["right"])
-			if(H.mind)
-				if(H.mind.known_people.len)
-					H.mind.display_known_people(H)
-				else
-					to_chat(H, "<span class='warning'>I don't know anyone.</span>")
+			if(!H.mind)
+				return
+			if(length(H.mind.known_people))
+				H.mind.display_known_people(H)
+			else
+				to_chat(H, "<span class='warning'>I don't know anyone.</span>")
 
 /atom/movable/screen/splash
 	icon = 'icons/blank_title.png'
@@ -1619,6 +1601,7 @@
 	screen_loc = ui_backhudl
 	layer = BACKHUD_LAYER
 	plane = FULLSCREEN_PLANE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /atom/movable/screen/backhudl/Click()
 	return
@@ -1670,7 +1653,7 @@
 
 /atom/movable/screen/stress/update_icon()
 	cut_overlays()
-	var/state2use = "stress1"	
+	var/state2use = "stress1"
 	if(ishuman(hud.mymob))
 		var/mob/living/carbon/H = hud.mymob
 		if(H.stress)

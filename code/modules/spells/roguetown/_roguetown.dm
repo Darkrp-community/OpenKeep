@@ -8,8 +8,8 @@
 	no_early_release = TRUE
 	charge_max = 30
 	charge_type = "recharge"
-	var/active_sound
 	invocation_type = "shout"
+	var/active_sound
 
 /obj/effect/proc_holder/spell/update_icon()
 	if(!action)
@@ -52,12 +52,12 @@
 	return
 
 /obj/effect/proc_holder/spell/invoked/InterceptClickOn(mob/living/caller, params, atom/target)
-	if(..())
+	. = ..()
+	if(.)
 		return FALSE
 	if(!cast_check(0, ranged_ability_user))
 		return FALSE
-	var/list/targets = list(target)
-	if(perform(targets, TRUE, user = ranged_ability_user))
+	if(perform(list(target), TRUE, user = ranged_ability_user))
 		return TRUE
 
 /obj/effect/proc_holder/spell/invoked/projectile
