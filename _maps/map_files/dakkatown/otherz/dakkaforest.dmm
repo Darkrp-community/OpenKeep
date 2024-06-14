@@ -71,6 +71,12 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
+"co" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors)
 "cs" = (
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/dirt/road,
@@ -511,10 +517,10 @@
 "qn" = (
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors)
-"qs" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled,
-/turf/open/floor/rogue/grass,
-/area/rogue/indoors)
+"qw" = (
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/rtfield)
 "qy" = (
 /turf/open/transparent/openspace,
 /area/rogue/indoors)
@@ -662,12 +668,6 @@
 /area/rogue/outdoors/woods)
 "vy" = (
 /obj/structure/rack/rogue,
-/obj/item/grown/log/tree/stick,
-/obj/item/grown/log/tree/stick,
-/obj/item/grown/log/tree/stick,
-/obj/item/grown/log/tree/stick,
-/obj/item/grown/log/tree/stick,
-/obj/item/grown/log/tree/stick,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "vC" = (
@@ -686,6 +686,10 @@
 /turf/closed/wall/mineral/rogue/wooddark/end{
 	dir = 8
 	},
+/area/rogue/indoors)
+"wA" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled,
+/turf/open/floor/rogue/grass,
 /area/rogue/indoors)
 "wE" = (
 /obj/structure/fluff/railing/border{
@@ -815,8 +819,9 @@
 	},
 /area/rogue/indoors)
 "zX" = (
-/turf/open/floor/rogue/grass,
-/area/rogue/indoors)
+/mob/living/simple_animal/hostile/retaliate/rogue/troll,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/woods)
 "At" = (
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/powder/flour/salt,
@@ -850,13 +855,6 @@
 /area/rogue/outdoors/rtfield)
 "AQ" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
-/area/rogue/indoors)
-"AT" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	name = "Stables";
-	dir = 4
-	},
-/turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "AZ" = (
 /turf/open/floor/rogue/cobble,
@@ -909,10 +907,6 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
-"Ci" = (
-/obj/machinery/light/rogue/torchholder/r,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/rtfield)
 "CV" = (
 /obj/structure/ladder,
 /turf/open/floor/rogue/cobble,
@@ -968,6 +962,9 @@
 /area/rogue/indoors)
 "Ew" = (
 /turf/open/floor/rogue/dirt,
+/area/rogue/indoors)
+"Ez" = (
+/turf/open/floor/rogue/grass,
 /area/rogue/indoors)
 "EG" = (
 /turf/open/floor/rogue/grass,
@@ -1123,8 +1120,9 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
 "IQ" = (
-/obj/structure/fluff/railing/wood{
-	dir = 1
+/obj/structure/mineral_door/wood/deadbolt{
+	name = "Stables";
+	dir = 4
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
@@ -7993,7 +7991,7 @@ RN
 RN
 RN
 jt
-hA
+zX
 Tz
 Tz
 pt
@@ -15886,7 +15884,7 @@ dp
 dp
 dp
 dp
-Ci
+qw
 rm
 Kr
 TP
@@ -16044,7 +16042,7 @@ dp
 dp
 Ly
 Vh
-AT
+IQ
 Ly
 Kr
 TP
@@ -16199,8 +16197,8 @@ rm
 dp
 dp
 dp
-IQ
-zX
+co
+Ez
 bl
 wv
 rm
@@ -16357,8 +16355,8 @@ TZ
 dp
 dp
 db
-qs
-zX
+wA
+Ez
 vC
 TP
 Kr
@@ -16513,8 +16511,8 @@ mY
 TZ
 dp
 dp
-IQ
-zX
+co
+Ez
 bl
 vC
 TP
@@ -16670,9 +16668,9 @@ Eu
 TZ
 dp
 dp
-IQ
+co
 Ew
-zX
+Ez
 Io
 Kr
 Kr
@@ -32328,10 +32326,10 @@ Ea
 Ea
 Ea
 Ea
-Ea
-Ea
+yY
 AZ
-QF
+Ea
+Ea
 Ea
 Ea
 Ea
