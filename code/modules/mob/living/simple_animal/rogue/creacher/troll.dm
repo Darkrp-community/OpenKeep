@@ -43,13 +43,7 @@
 	dodgetime = 20
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
-	remains_type = /obj/effect/decal/remains/troll
-
-/obj/effect/decal/remains/troll
-	name = "remains"
-	gender = PLURAL
-	icon_state = "Troll2d"
-	icon = 'icons/roguetown/mob/monster/trolls.dmi'
+	remains_type = /obj/item/rogueweapon/battle
 
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/death(gibbed)
