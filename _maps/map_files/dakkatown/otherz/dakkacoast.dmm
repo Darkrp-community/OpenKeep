@@ -17,10 +17,6 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach/boat)
-"cE" = (
-/obj/effect/sunlight,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/beach)
 "dg" = (
 /obj/structure/mineral_door/wood{
 	name = "Passenger Bunks"
@@ -93,13 +89,6 @@
 /obj/item/roguegem/blue,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/beach/boat/captain)
-"kU" = (
-/obj/effect/landmark/mapGenerator/rogue/beach{
-	endTurfX = 155;
-	endTurfY = 45
-	},
-/turf/open/water/swamp/deep,
-/area/rogue/outdoors/beach)
 "le" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_y = 32
@@ -121,13 +110,6 @@
 	},
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/beach/boat/captain)
-"nb" = (
-/obj/effect/landmark/mapGenerator/sunlights{
-	endTurfX = 155;
-	endTurfY = 45
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/beach)
 "nB" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -186,13 +168,6 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/beach/boat/captain)
 "rP" = (
-/turf/open/water/swamp/deep,
-/area/rogue/outdoors/beach)
-"ss" = (
-/obj/effect/landmark/mapGenerator/sunlights{
-	endTurfX = 155;
-	endTurfY = 45
-	},
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/beach)
 "su" = (
@@ -291,11 +266,6 @@
 /obj/structure/fluff/railing/border{
 	dir = 1
 	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/beach/boat)
-"Bc" = (
-/obj/structure/fluff/railing/border,
-/obj/effect/sunlight,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach/boat)
 "BD" = (
@@ -609,7 +579,7 @@ rP
 rP
 rP
 rP
-ss
+rP
 "}
 (2,1,1) = {"
 ut
@@ -656,7 +626,7 @@ rP
 rP
 rP
 rP
-kU
+rP
 "}
 (3,1,1) = {"
 ut
@@ -2546,7 +2516,7 @@ ut
 cn
 hw
 vn
-cE
+vn
 vn
 vn
 vn
@@ -7895,7 +7865,7 @@ PN
 PN
 PN
 PN
-nb
+PN
 "}
 (2,1,2) = {"
 ut
@@ -10046,7 +10016,7 @@ su
 su
 su
 su
-Bc
+co
 QC
 QC
 QC
