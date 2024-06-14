@@ -437,7 +437,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
 "Jy" = (
-/turf/open/floor/rogue/woodturned,
+/turf/open/floor/rogue/plank,
 /area/rogue/outdoors/beach)
 "JK" = (
 /obj/structure/fluff/railing/border{
