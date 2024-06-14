@@ -12,10 +12,9 @@
 		"Dark Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/assassin
-	maxchosen = 1
-	plevel_req = 2
-	israre = TRUE
-	maximum_possible_slots = -1
+	min_pq = 2
+	maximum_possible_slots = 1
+	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/assassin/pre_equip(mob/living/carbon/human/H)
 	..()

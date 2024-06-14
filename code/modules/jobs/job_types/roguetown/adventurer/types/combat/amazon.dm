@@ -9,9 +9,6 @@
 	maximum_possible_slots = 2
 	category_tags = list(CTAG_ADVENTURER)
 
-	traits_applied = list(TRAIT_CRITICAL_RESISTANCE, TRAIT_NOPAINSTUN, TRAIT_STEELHEARTED)
-	cmode_music = 'sound/music/combat_gronn.ogg'
-
 /datum/outfit/job/roguetown/adventurer/amazon/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)

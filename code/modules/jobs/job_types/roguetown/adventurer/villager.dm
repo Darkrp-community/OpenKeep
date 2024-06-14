@@ -14,13 +14,10 @@
 	display_order = JDO_VILLAGER
 	give_bank_account = TRUE
 	min_pq = -15
-	max_pq = null
-	wanderer_examine = FALSE
-	advjob_examine = TRUE
 	always_show_on_latechoices = TRUE
 	same_job_respawn_delay = 0
 
-	
+
 
 /datum/job/roguetown/villager/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

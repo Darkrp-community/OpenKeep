@@ -20,9 +20,6 @@
 
 	var/horse = FALSE
 	var/vampcompat = TRUE
-	var/israre = FALSE
-	var/ismerc = FALSE
-	var/min_pq = -999
 
 	/// This class is immune to species-based swapped gender locks
 	var/immune_to_genderswap = FALSE
@@ -54,8 +51,8 @@
 		if(horse)
 			new horse(TU)
 
-	for(var/trait in traits_applied)
-		ADD_TRAIT(H, trait, ADVENTURER_TRAIT)
+/*	for(var/trait in traits_applied)
+		ADD_TRAIT(H, trait, ADVENTURER_TRAIT) */
 
 	if(CTAG_TOWNER in category_tags)
 		for(var/mob/M in GLOB.billagerspawns)
@@ -72,17 +69,10 @@
 */
 /datum/advclass/proc/check_requirements(mob/living/carbon/human/H)
 
-	var/datum/species/pref_species = H.dna.species
 	var/list/local_allowed_sexes = list()
 	if(length(allowed_sexes))
 		local_allowed_sexes |= allowed_sexes
-	if(!immune_to_genderswap && pref_species?.gender_swapping)
-		if(MALE in allowed_sexes)
-			local_allowed_sexes -= MALE
-			local_allowed_sexes += FEMALE
-		if(FEMALE in allowed_sexes)
-			local_allowed_sexes -= FEMALE
-			local_allowed_sexes += MALE
+
 	if(length(local_allowed_sexes) && !(H.gender in local_allowed_sexes))
 		return FALSE
 
@@ -90,9 +80,6 @@
 		return FALSE
 
 	if(length(allowed_ages) && !(H.age in allowed_ages))
-		return FALSE
-
-	if(length(allowed_patrons) && !(H.patron in allowed_patrons))
 		return FALSE
 
 	if(maximum_possible_slots > -1)
@@ -115,4 +102,3 @@
 
 //Final proc in the set for really retarded shit
 ///datum/advclass/proc/extra_slop_proc_ending(mob/living/carbon/human/H)
-

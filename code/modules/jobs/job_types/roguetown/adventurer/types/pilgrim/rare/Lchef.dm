@@ -44,12 +44,3 @@
 	H.change_stat("constitution", 2)
 	if(H.age == AGE_OLD)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-
-	isvillager = FALSE
-	ispilgrim = TRUE
-	maxchosen = 1
-	israre = TRUE
-
-	maximum_possible_slots = 1
-	pickprob = 5
-	category_tags = list(CTAG_PILGRIM)

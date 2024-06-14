@@ -19,17 +19,15 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 
 	var/isvillager = FALSE
 	var/ispilgrim = FALSE
-	var/israre = FALSE
 	display_order = JDO_ADVENTURER
 	show_in_credits = FALSE
 	min_pq = 0
-	max_pq = null
-	
+	always_show_on_latechoices = FALSE
+	job_reopens_slots_on_death = TRUE
+	same_job_respawn_delay = 5 MINUTES
+
 	advclass_cat_rolls = list(CTAG_ADVENTURER = 5)
 
-	wanderer_examine = TRUE
-	advjob_examine = TRUE
-	always_show_on_latechoices = FALSE
 	job_reopens_slots_on_death = FALSE
 	same_job_respawn_delay = 15 MINUTES
 
@@ -41,31 +39,3 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 		H.advsetup = 1
 		H.invisibility = INVISIBILITY_MAXIMUM
 		H.become_blind("advsetup")
-
-		if(GLOB.adventurer_hugbox_duration)
-			///FOR SOME RETARDED FUCKING REASON THIS REFUSED TO WORK WITHOUT A FUCKING TIMER IT JUST FUCKED SHIT UP
-			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, adv_hugboxing_start)), 1)
-
-/mob/living/carbon/human/proc/adv_hugboxing_start()
-	to_chat(src, "<span class='warning'>I will be in danger once I start moving.</span>")
-	status_flags |= GODMODE
-	ADD_TRAIT(src, TRAIT_PACIFISM, HUGBOX_TRAIT)
-	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(adv_hugboxing_moved))
-	//Lies, it goes away even if you don't move after enough time
-	if(GLOB.adventurer_hugbox_duration_still)
-		addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, adv_hugboxing_end)), GLOB.adventurer_hugbox_duration_still)
-
-/mob/living/carbon/human/proc/adv_hugboxing_moved()
-	UnregisterSignal(src, COMSIG_MOVABLE_MOVED)
-	to_chat(src, "<span class='danger'>I have [DisplayTimeText(GLOB.adventurer_hugbox_duration)] to begone!</span>")
-	addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, adv_hugboxing_end)), GLOB.adventurer_hugbox_duration)
-
-/mob/living/carbon/human/proc/adv_hugboxing_end()
-	if(QDELETED(src))
-		return
-	//hugbox already ended
-	if(!(status_flags & GODMODE))
-		return
-	status_flags &= ~GODMODE
-	REMOVE_TRAIT(src, TRAIT_PACIFISM, HUGBOX_TRAIT)
-	to_chat(src, "<span class='danger'>My joy is gone! Danger surrounds me.</span>")

@@ -111,13 +111,6 @@
 	var/list/local_allowed_sexes = list()
 	if(length(current_wave.allowed_sexes))
 		local_allowed_sexes |= current_wave.allowed_sexes
-	if(!current_wave.immune_to_genderswap && target_client.prefs.pref_species.gender_swapping)
-		if(MALE in current_wave.allowed_sexes)
-			local_allowed_sexes -= MALE
-			local_allowed_sexes += FEMALE
-		if(FEMALE in current_wave.allowed_sexes)
-			local_allowed_sexes -= FEMALE
-			local_allowed_sexes += MALE
 	if(length(local_allowed_sexes) && !(target_client.prefs.gender in local_allowed_sexes))
 		return JOB_UNAVAILABLE_SEX
 	if(length(current_wave.allowed_sexes) && !(target_client.prefs.gender in current_wave.allowed_sexes))
@@ -146,4 +139,4 @@
 	//		continue
 
 	//	cur_menu.show_drifter_queue_menu()
-			
+

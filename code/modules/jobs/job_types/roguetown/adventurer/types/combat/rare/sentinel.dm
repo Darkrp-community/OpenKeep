@@ -10,17 +10,13 @@
 		"Dark Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/sentinel
-	maxchosen = 1
-	israre = TRUE
-	plevel_req = 1
 	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
-	outfit = /datum/outfit/job/roguetown/adventurer/sentinal
-	maximum_possible_slots = 5
+	outfit = /datum/outfit/job/roguetown/adventurer/sentinel
+	maximum_possible_slots = 1
 	pickprob = 50
-	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_DODGEEXPERT)
 	category_tags = list(CTAG_ADVENTURER)
 
-/datum/advclass/combat/vaquero/equipme(mob/living/carbon/human/H)
+/datum/advclass/combat/sentinel/equipme(mob/living/carbon/human/H)
 	if(H.gender == FEMALE)
 		horse = /mob/living/simple_animal/hostile/retaliate/rogue/saiga/tame/saddled
 	return ..()

@@ -20,9 +20,6 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/bandit
 	category_tags = list(CTAG_ANTAG, CTAG_BANDIT)
 
-/datum/outfit/job/roguetown/adventurer/bandit
-	allowed_patrons = list(/datum/patron/inhumen/matthios)
-
 /datum/outfit/job/roguetown/adventurer/bandit/pre_equip(mob/living/carbon/human/H)
 	..()
 
@@ -30,4 +27,4 @@
 	. = ..()
 	var/datum/antagonist/new_antag = new /datum/antagonist/bandit()
 	H.mind.add_antag_datum(new_antag)
-	
+

@@ -9,13 +9,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/crusader
-	traits_applied = list(TRAIT_HEAVYARMOR, TRAIT_MEDIUMARMOR)
-
-	maximum_possible_slots = 1
-
-	plevel_req = 0
-	maxchosen = 2
-	isvillager = FALSE
+	maximum_possible_slots = 2
 	tutorial = "The crusaders... Knights who have pledged \
 	their wealth and lands to the church, taking up the banner \
 	of one of the rival Orders dedicated to retaking the holy land. \

@@ -114,8 +114,6 @@
 #define AGE_MIDDLEAGED		"Middle-Aged"
 #define AGE_OLD				"Old"
 
-#define ALL_AGES_LIST		list(AGE_YOUNG, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-
 //alignment
 #define ALIGNMENT_LG		"Lawful Good"
 #define ALIGNMENT_NG		"Neutral Good"
@@ -136,3 +134,7 @@
 							ALIGNMENT_LE,\
 							ALIGNMENT_NE,\
 							ALIGNMENT_CE)
+
+#define YOUNG_AGES_LIST list(AGE_YOUNG)
+#define ALL_AGES_LIST list(AGE_YOUNG, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+#define ADULT_AGES_LIST list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)

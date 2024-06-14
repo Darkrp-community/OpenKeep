@@ -100,9 +100,17 @@
 
 	var/can_random = TRUE
 
+	/// This job always shows on latechoices
+	var/always_show_on_latechoices = FALSE
+
+	/// This job has a cooldown if you died in it and attempt to rejoin as it
+	var/same_job_respawn_delay = FALSE
+
+	/// This job re-opens slots if someone dies as it
+	var/job_reopens_slots_on_death = FALSE
 
 /*
-	How this works, its CTAG_DEFINE = amount_to_attempt_to_role 
+	How this works, its CTAG_DEFINE = amount_to_attempt_to_role
 	EX: advclass_cat_rolls = list(CTAG_PILGRIM = 5, CTAG_ADVENTURER = 5)
 	You will still need to contact the subsystem though
 */
@@ -379,4 +387,3 @@
 	if(CONFIG_GET(flag/security_has_maint_access))
 		return list(ACCESS_MAINT_TUNNELS)
 	return list()
-

@@ -7,8 +7,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/vaquero
 	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
 	category_tags = list(CTAG_ADVENTURER)
-	plevel_req = 1
-	israre = TRUE
+	min_pq = 1
 
 /datum/advclass/combat/vaquero/equipme(mob/living/carbon/human/H)
 	if(H.gender == FEMALE)

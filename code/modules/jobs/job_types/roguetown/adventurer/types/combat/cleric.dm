@@ -4,17 +4,17 @@
 	tutorial = "Clerics are wandering warriors of the Gods, an asset to any party."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Humen", 
-		"Elf", 
+		"Humen",
+		"Elf",
 		"Half-Elf",
-		"Dwarf", 
+		"Dwarf",
 		"Dark Elf",
 		"Aasimar"
 	)
 	vampcompat = FALSE
 	outfit = /datum/outfit/job/roguetown/adventurer/cleric
-	traits_applied = list(TRAIT_HEAVYARMOR)
 	category_tags = list(CTAG_ADVENTURER)
+	maximum_possible_slots = 2
 
 /datum/outfit/job/roguetown/adventurer/cleric/pre_equip(mob/living/carbon/human/H)
 	..()

@@ -212,7 +212,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;'>Change Character</a>"
 			dat += "</td>"
 
-	
+
 			dat += "<td style='width:33%;text-align:center'>"
 			if(SStriumphs.triumph_buys_enabled)
 				dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=triumph_buy_menu'>Triumph Buy</a>"
@@ -892,7 +892,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<a href ='?_src_=prefs;preference=keybinds;task=keybindings_set'>\[Reset to default\]</a>"
 			dat += "</body>"
 
-		
+
 	if(!IsGuestKey(user.key))
 		dat += "<a href='?_src_=prefs;preference=save'>Save</a><br>"
 		dat += "<a href='?_src_=prefs;preference=load'>Undo</a><br>"
@@ -910,15 +910,10 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>UNREADY</a> <b>READY</b>"
 	else
 		dat += "<a href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
-	dat += "</td>"
-	dat += "<td width='33%' align='right'>"
-	dat += "<b>Be voice:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Enabled":"Disabled"]</a><br>"
-	dat += "</td>"
-	dat += "</tr>"
-	dat += "</table>"
 //	dat += "<a href='?_src_=prefs;preference=reset_all'>Reset Setup</a>"
+		dat += "</center>"
 
-	
+
 	if(user.client.is_new_player())
 		dat = list("<center>REGISTER!</center>")
 
@@ -980,7 +975,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 		HTML += "<center><a href='?_src_=prefs;preference=job;task=close'>Done</a></center><br>" // Easier to press up here.
 		if(joblessrole != RETURNTOLOBBY && joblessrole != BERANDOMJOB) // this is to catch those that used the previous definition and reset.
 			joblessrole = RETURNTOLOBBY
-		HTML += "<b>If Role Unavailable:</b><font color='purple'><a href='?_src_=prefs;preference=job;task=nojob'>[joblessrole]</a></font><BR>"		
+		HTML += "<b>If Role Unavailable:</b><font color='purple'><a href='?_src_=prefs;preference=job;task=nojob'>[joblessrole]</a></font><BR>"
 		HTML += "<script type='text/javascript'>function setJobPrefRedirect(level, rank) { window.location.href='?_src_=prefs;preference=job;task=setJobLevel;level=' + level + ';text=' + encodeURIComponent(rank); return false; }</script>"
 		HTML += "<table width='100%' cellpadding='1' cellspacing='0'><tr><td width='20%'>" // Table within a table for alignment, also allows you to easily add more colomns.
 		HTML += "<table width='100%' cellpadding='1' cellspacing='0'>"
@@ -1519,7 +1514,7 @@ Slots: [job.spawn_positions]</span>
 
 	else if(href_list["preference"] == "triumphs")
 		user.show_triumphs_list()
-	
+
 	else if(href_list["preference"] == "drifters")
 		switch(href_list["task"])
 			if("show_drifter_queue")

@@ -7,7 +7,7 @@
 		"Dark Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/underdweller
-	ismerc = TRUE
+	category_tags = list(CTAG_MERCENARY)
 
 /datum/outfit/job/roguetown/mercenary/underdweller/pre_equip(mob/living/carbon/human/H)
     ..()

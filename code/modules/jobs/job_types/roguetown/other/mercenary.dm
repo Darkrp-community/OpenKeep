@@ -24,7 +24,7 @@
 	outfit = null
 	outfit_female = null
 
-/datum/job/roguetown/mercenary/after_spawn(mob/living/L, mob/M)
+/* /datum/job/roguetown/mercenary/after_spawn(mob/living/L, mob/M)
 	..()
 	if(L)
 		var/mob/living/carbon/human/H = L
@@ -40,10 +40,10 @@
 
 		for(var/I in classes)
 			var/datum/advclass/mercenary/A = I
-				
+
 			if(!A.ismerc)
 				continue
-				
+
 			if(!(H.dna.species.name in A.allowed_races))
 				testing("[A.name] had a different required race")
 				continue
@@ -55,7 +55,7 @@
 
 /*			if(A.min_pq > get_playerquality(H.ckey))
 				testing("player PQ was not high enough") */
-			
+
 			testing("[A.name] added to possible classes")
 			H.possibleclass += A
 
@@ -63,7 +63,7 @@
 	if(!advsetup)
 		testing("RETARD")
 		return TRUE
-	
+
 	if(possibleclass.len)
 		var/datum/advclass/C = input(src, "What is my class?", "Mercenary") as null|anything in sortNames(possibleclass)
 		testing("class select started")
@@ -91,3 +91,4 @@
 		invisibility = 0
 		cure_blind("advsetup")
 		return TRUE
+*/
