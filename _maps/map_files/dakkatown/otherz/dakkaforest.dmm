@@ -8,10 +8,9 @@
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors)
 "aS" = (
-/obj/structure/fluff/railing/wood{
-	dir = 4
-	},
-/turf/open/floor/rogue/dirt,
+/obj/effect/decal/cleanable/blood/old,
+/obj/item/chair/rogue,
+/turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors)
 "aU" = (
 /turf/closed/wall/mineral/rogue/roofwall/innercorner,
@@ -85,9 +84,9 @@
 /area/rogue/outdoors/woods)
 "db" = (
 /obj/structure/fluff/railing/wood{
-	dir = 4
+	dir = 1
 	},
-/turf/open/floor/rogue/dirt/road,
+/turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
 "dp" = (
 /turf/open/floor/rogue/cobblerock,
@@ -512,6 +511,10 @@
 "qn" = (
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors)
+"qs" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors)
 "qy" = (
 /turf/open/transparent/openspace,
 /area/rogue/indoors)
@@ -812,8 +815,7 @@
 	},
 /area/rogue/indoors)
 "zX" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled,
-/turf/open/floor/rogue/dirt/road,
+/turf/open/floor/rogue/grass,
 /area/rogue/indoors)
 "At" = (
 /obj/structure/closet/crate/chest,
@@ -848,6 +850,13 @@
 /area/rogue/outdoors/rtfield)
 "AQ" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
+/area/rogue/indoors)
+"AT" = (
+/obj/structure/mineral_door/wood/deadbolt{
+	name = "Stables";
+	dir = 4
+	},
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "AZ" = (
 /turf/open/floor/rogue/cobble,
@@ -900,6 +909,10 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
+"Ci" = (
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/rtfield)
 "CV" = (
 /obj/structure/ladder,
 /turf/open/floor/rogue/cobble,
@@ -1110,8 +1123,8 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
 "IQ" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	name = "Stables"
+/obj/structure/fluff/railing/wood{
+	dir = 1
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
@@ -15715,9 +15728,9 @@ dp
 TP
 rm
 Kr
-aH
+dp
 Kr
-TP
+rm
 Kr
 Kr
 ir
@@ -15871,10 +15884,10 @@ dp
 dp
 dp
 dp
+dp
+dp
+Ci
 rm
-rm
-Kr
-TP
 Kr
 TP
 TP
@@ -16029,10 +16042,10 @@ dp
 dp
 dp
 dp
-TP
-rm
-Kr
-TP
+Ly
+Vh
+AT
+Ly
 Kr
 TP
 Kr
@@ -16186,10 +16199,10 @@ rm
 dp
 dp
 dp
-rm
-Kr
-TP
-TP
+IQ
+zX
+bl
+wv
 rm
 TP
 TP
@@ -16343,12 +16356,12 @@ TZ
 TZ
 dp
 dp
+db
+qs
+zX
+vC
 TP
-rm
 Kr
-TP
-TP
-rm
 Kr
 rm
 dp
@@ -16500,13 +16513,13 @@ mY
 TZ
 dp
 dp
-Ly
-Vh
-dF
-dF
-dF
-ip
-Ly
+IQ
+zX
+bl
+vC
+TP
+TP
+qX
 Kr
 dp
 dp
@@ -16657,14 +16670,14 @@ Eu
 TZ
 dp
 dp
-vC
-bl
-bl
+IQ
 Ew
-Ew
-Ew
-wv
+zX
+Io
 Kr
+Kr
+Kr
+dp
 dp
 dp
 TP
@@ -16814,14 +16827,14 @@ LJ
 tx
 dp
 dp
-IQ
-bl
-bl
-zX
-bl
-Ew
-vC
-TP
+Ly
+Vh
+ip
+Ly
+Kr
+rm
+dp
+dp
 dp
 dp
 rm
@@ -16971,13 +16984,13 @@ IF
 TZ
 dp
 dp
-vC
-Ew
-bl
-bl
-bl
-bl
-Io
+dp
+Kr
+Kr
+rm
+dp
+dp
+dp
 dp
 dp
 dp
@@ -17128,16 +17141,16 @@ TZ
 TZ
 dp
 dp
-Ly
-db
-db
-db
-aS
-db
-Ly
+rm
 dp
 dp
 dp
+dp
+dp
+rm
+dp
+dp
+rm
 Kr
 rm
 TP
@@ -17293,7 +17306,7 @@ dp
 dp
 dp
 dp
-dp
+rm
 TP
 rm
 Kr
@@ -17448,11 +17461,11 @@ dp
 dp
 dp
 dp
-dp
-dp
-dp
+Kr
 rm
-rm
+Kr
+Kr
+Kr
 TP
 lm
 TP
@@ -17605,12 +17618,12 @@ dp
 rm
 TP
 TP
+Kr
+Kr
+Kr
 rm
-rm
-rm
-rm
-rm
-rm
+Kr
+Kr
 Kr
 TP
 rm
@@ -17769,7 +17782,7 @@ Pm
 OD
 rm
 rm
-rm
+Kr
 Kr
 TP
 Kr
@@ -20254,7 +20267,7 @@ Io
 rm
 TP
 wv
-uq
+aS
 uq
 uq
 wv
@@ -40365,10 +40378,10 @@ Ea
 Ea
 Ea
 Ea
-Ea
-Ea
-Ea
-Ea
+jz
+jz
+jz
+jz
 Ea
 Ea
 Ea
@@ -40522,10 +40535,10 @@ Ea
 Ea
 Ea
 Ea
-Ea
-Ea
-Ea
-Ea
+jz
+jz
+jz
+jz
 Ea
 Ea
 Ea
@@ -40679,10 +40692,10 @@ ip
 Ly
 Ea
 Ea
-Ea
-Ea
-Ea
-Ea
+jz
+jz
+jz
+jz
 Ea
 Ea
 Ea
@@ -40840,9 +40853,9 @@ jz
 jz
 jz
 jz
-jz
-jz
-jz
+Ea
+Ea
+Ea
 Ea
 Ea
 Ea
@@ -40997,9 +41010,9 @@ jz
 jz
 jz
 jz
-jz
-jz
-jz
+Ea
+Ea
+Ea
 Ea
 Ea
 Ea
@@ -41154,9 +41167,9 @@ jz
 jz
 jz
 jz
-jz
-jz
-jz
+Ea
+Ea
+Ea
 Ea
 Ea
 Ea
@@ -41307,13 +41320,13 @@ Dt
 Io
 Ea
 Ea
-jz
-jz
-jz
-jz
-jz
-jz
-jz
+Ea
+Ea
+Ea
+Ea
+Ea
+Ea
+Ea
 Ea
 Ea
 Ea
@@ -41464,13 +41477,13 @@ ip
 Ly
 Ea
 Ea
-jz
-jz
-jz
-jz
-jz
-jz
-jz
+Ea
+Ea
+Ea
+Ea
+Ea
+Ea
+Ea
 Ea
 Ea
 Ea
