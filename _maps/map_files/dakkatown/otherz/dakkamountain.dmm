@@ -204,7 +204,10 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "Js" = (
-/obj/structure/fluff/traveltile/vampire,
+/obj/structure/fluff/traveltile/vampire{
+	aportalgoesto = "vampin";
+	aportalid = "vampexit"
+	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains)
 "Jw" = (
