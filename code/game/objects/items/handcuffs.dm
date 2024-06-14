@@ -270,15 +270,15 @@
 			return FALSE
 		if(C.badluck(5))
 			add_mob_blood(C)
-			if(!locate(/obj/item/restraints/legcuffs/beartrap) in BP.embedded_objects)
-				BP.embedded_objects |= src
-				forceMove(C)
+			if(!BP.is_object_embedded(src))
+				BP.add_embedded_object(src)
 			close_trap()
 			C.visible_message("<span class='boldwarning'>[C] triggers \the [src].</span>", \
 					"<span class='userdanger'>I trigger \the [src]!</span>")
 			C.emote("agony")
 			C.Stun(80)
 			BP.add_wound(/datum/wound/fracture)
+			BP.update_disabled()
 			C.apply_damage(trap_damage, BRUTE, def_zone)
 			C.consider_ambush()
 			return FALSE
@@ -295,14 +295,14 @@
 				return FALSE
 			else
 				add_mob_blood(C)
-				if(!locate(/obj/item/restraints/legcuffs/beartrap) in BP.embedded_objects)
-					BP.embedded_objects |= src
-					forceMove(C)
+				if(!BP.is_object_embedded(src))
+					BP.add_embedded_object(src)
 				close_trap()
 				C.visible_message("<span class='boldwarning'>[C] triggers \the [src].</span>", \
 						"<span class='userdanger'>I trigger \the [src]!</span>")
 				C.emote("agony")
 				BP.add_wound(/datum/wound/fracture)
+				BP.update_disabled()
 				C.apply_damage(trap_damage, BRUTE, def_zone)
 				C.consider_ambush()
 				return FALSE
@@ -384,11 +384,10 @@
 					var/obj/item/bodypart/BP = C.get_bodypart(def_zone)
 					if(BP)
 						add_mob_blood(C)
-						if(!locate(/obj/item/restraints/legcuffs/beartrap) in BP.embedded_objects)
-							BP.embedded_objects |= src
-							forceMove(C)
+						if(!BP.is_object_embedded(src))
+							BP.add_embedded_object(src)
 						C.emote("agony")
-						//BP.set_disabled(BODYPART_DISABLED_CRIT)
+						//BP.set_disabled(BODYPART_DISABLED_WOUND)
 						//BP.add_wound(/datum/wound/fracture)
 			else if(snap && isanimal(L))
 				var/mob/living/simple_animal/SA = L

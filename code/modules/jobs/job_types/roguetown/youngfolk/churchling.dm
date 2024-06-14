@@ -24,7 +24,7 @@
 	..()
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, rand(3,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
@@ -33,7 +33,6 @@
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		pants = /obj/item/clothing/under/roguetown/tights
-		backr = /obj/item/storage/backpack/rogue/satchel
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 		armor = /obj/item/clothing/suit/roguetown/shirt/robe
 	else
@@ -42,8 +41,17 @@
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		pants = /obj/item/clothing/under/roguetown/tights
-		backr = /obj/item/storage/backpack/rogue/satchel
 		head = /obj/item/clothing/head/roguetown/armingcap
+	backl = /obj/item/storage/backpack/rogue/backpack
+	backpack_contents = list(
+		/obj/item/needle = 1,
+		/obj/item/rogueweapon/surgery/scalpel = 1,
+		/obj/item/rogueweapon/surgery/saw = 1,
+		/obj/item/rogueweapon/surgery/hemostat = 2, //2 forceps so you can clamp bleeders AND manipulate organs
+		/obj/item/rogueweapon/surgery/retractor = 1,
+		/obj/item/rogueweapon/surgery/bonesetter = 1,
+		/obj/item/rogueweapon/surgery/cautery = 1,
+	)
 
 	H.change_stat("perception", 1)
 	H.change_stat("speed", 2)

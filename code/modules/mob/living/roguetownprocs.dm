@@ -1,11 +1,9 @@
-
-
 /proc/accuracy_check(zone, mob/living/user, mob/living/target, associated_skill, datum/intent/used_intent, obj/item/I)
 	if(!zone)
 		return
 	if(user == target)
 		return zone
-	if(zone == "chest")
+	if(zone == BODY_ZONE_CHEST)
 		return zone
 	if(target.grabbedby == user)
 		if(user.grab_state >= GRAB_AGGRESSIVE)
@@ -59,9 +57,7 @@
 		else
 			if(user.client?.prefs.showrolls)
 				to_chat(user, "<span class='warning'>Ultra accuracy fail! [chance2hit]%</span>")
-			return "chest"
-
-
+			return BODY_ZONE_CHEST
 
 /mob/proc/get_generic_parry_drain()
 	return 30
@@ -159,8 +155,11 @@
 			if(!force_shield)
 				if(mainhand_defense >= offhand_defense)
 					highest_defense += mainhand_defense
+				else
+					used_weapon = offhand // If our offhand wins the defense thug-of-war, use it
+					highest_defense += offhand_defense
 			else
-				used_weapon = offhand
+				used_weapon = offhand // Forced to parry with offhand since we have a shield there.
 				highest_defense += offhand_defense
 
 			var/defender_skill = 0

@@ -45,17 +45,17 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	C.vampires |= owner
 	. = ..()
 	owner.special_role = name
-	ADD_TRAIT(owner.current, RTRAIT_STRONGBITE, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, TRAIT_NOFATSTAM, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, TRAIT_NOBREATH, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, TRAIT_NOPAIN, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, TRAIT_NOSLEEP, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, TRAIT_LIMPDICK, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, TRAIT_VAMPMANSION, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, RTRAIT_VILLAIN, TRAIT_GENERIC)
+	ADD_TRAIT(owner.current, TRAIT_CRITICAL_WEAKNESS, "[type]") //half assed but necessary otherwise these guys be invincible
+	ADD_TRAIT(owner.current, TRAIT_STRONGBITE, "[type]")
+	ADD_TRAIT(owner.current, TRAIT_NOROGSTAM, "[type]")
+	ADD_TRAIT(owner.current, TRAIT_NOHUNGER, "[type]")
+	ADD_TRAIT(owner.current, TRAIT_NOBREATH, "[type]")
+	ADD_TRAIT(owner.current, TRAIT_NOPAIN, "[type]")
+	ADD_TRAIT(owner.current, TRAIT_TOXIMMUNE, "[type]")
+	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, "[type]")
+	ADD_TRAIT(owner.current, TRAIT_NOSLEEP, "[type]")
+	ADD_TRAIT(owner.current, TRAIT_LIMPDICK, "[type]")
+	ADD_TRAIT(owner.current, TRAIT_VAMPMANSION, "[type]")
 	owner.current.cmode_music = 'sound/music/combatvamp.ogg'
 	var/obj/item/organ/eyes/eyes = owner.current.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
@@ -168,7 +168,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	item_state = "vpants"
 	sewrepair = FALSE
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
 	do_sound = FALSE
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
@@ -212,7 +212,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	icon_state = "vplate"
 	item_state = "vplate"
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	nodismemsleeves = TRUE
 	max_integrity = 500
 	allowed_sex = list(MALE, FEMALE)
@@ -228,7 +228,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	body_parts_covered = FEET
 	icon_state = "vboots"
 	item_state = "vboots"
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	color = null
 	blocksound = PLATEHIT
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -1258,19 +1258,36 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			return
 		if(L.cmode)
 			willroll += 10
+		var/found_psycross = FALSE
+		for(var/obj/item/clothing/neck/roguetown/psicross/silver in L.contents)
+			found_psycross = TRUE
+			break
+
 		if(bloodroll >= willroll)
-			to_chat(L, "You feel like a curtain is coming over your mind.")
-			to_chat(user, "Their mind gives way, they will soon be asleep.")
-			sleep(2)
-			L.Sleeping(15)
+			if(found_psycross == TRUE)
+				to_chat(L, "<font color='white'>The silver psycross shines and protect me from the unholy magic.</font>")
+				to_chat(user, "<span class='userdanger'>[L] has my BANE!It causes me to fail to ensnare their mind!</span>")
+			else
+				to_chat(L, "You feel like a curtain is coming over your mind.")
+				to_chat(user, "Their mind gives way, they will soon be asleep.")
+				sleep(50)
+				L.Sleeping(300)
 		if(willroll >= bloodroll)
-			to_chat(user, "I fail to ensnare their mind.")
+			if(found_psycross == TRUE)
+				to_chat(L, "<font color='white'>The silver psycross shines and protect me from the unholy magic.</font>")
+				to_chat(user, "<span class='userdanger'>[L] has my BANE!It causes me to fail to ensnare their mind!</span>")
+			else
+				to_chat(user, "I fail to ensnare their mind.")
 			if(willroll - bloodroll >= 3)
-				to_chat(L, "I feel like something is messing with my head.")
-				var/holyskill = user.mind.get_skill_level(/datum/skill/magic/holy)
-				var/arcaneskill = user.mind.get_skill_level(/datum/skill/magic/arcane)
-				if(holyskill + arcaneskill >= 3)
-					to_chat(L, "I feel like the magic came from [user]")
+				if(found_psycross == TRUE)
+					to_chat(L, "<font color='white'> The silver psycross shines and protect me from the blood magic, the one who used bllod magic was [user]!</font>")
+				else
+					to_chat(user, "I fail to ensnare their mind.")
+					to_chat(L, "I feel like someone or something unholy is messing with my head. I should get out of here!")
+					var/holyskill = user.mind.get_skill_level(/datum/skill/magic/holy)
+					var/arcaneskill = user.mind.get_skill_level(/datum/skill/magic/arcane)
+					if(holyskill + arcaneskill >= 1)
+						to_chat(L, "I feel like the unholy magic came from [user]. I should use my magic or miracles on them.")
 
 /obj/effect/proc_holder/spell/targeted/transfix/master
 	name = "Subjugate"
