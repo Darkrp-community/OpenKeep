@@ -95,8 +95,8 @@ Slimecrossing Armor
 		new /obj/structure/light_prism(get_turf(owner), glasses.glasses_color)
 
 /obj/item/clothing/head/peaceflower
-	name = "heroine bud"
-	desc = ""
+	name = "eoran bud"
+	desc = "A flower of gentle petals, associated with Eora or Necra. Usually adorned as a headress or laid at graves as a symbol of love or peace."
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "peaceflower"
 	item_state = "peaceflower"
