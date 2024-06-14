@@ -4210,7 +4210,7 @@
 /obj/structure/mineral_door/wood/violet{
 	lockid = "archive";
 	locked = 1;
-	name = "Apartments"
+	name = "Apartments I - IV"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
@@ -8430,7 +8430,7 @@
 "LX" = (
 /obj/structure/mineral_door/wood{
 	lockid = "steward";
-	name = "Apartments"
+	name = "Apartments V - VI"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood{
