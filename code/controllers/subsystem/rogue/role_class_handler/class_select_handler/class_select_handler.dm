@@ -248,7 +248,7 @@
 
 	if(H.job == "Drifter")
 		data += {"
-			<a class='mo_bottom_buttons' href='?src=\ref[src];show_challenge_class=1'>[showing_challenge_classes ? "Hide Combat Classes" : "Show Pilgrim Classes"]</a>
+			<a class='mo_bottom_buttons' href='?src=\ref[src];show_challenge_class=1'>[showing_challenge_classes ? "Show Combat Classes" : "Show Pilgrim Classes"]</a>
 		</div>
 		"}
 
