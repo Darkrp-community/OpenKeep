@@ -253,6 +253,9 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/cell)
+"bh" = (
+/turf/open/floor/rogue/plank,
+/area/rogue/outdoors/town)
 "bk" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle{
 	dir = 1
@@ -9222,6 +9225,9 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/garrison)
+"Pk" = (
+/turf/open/floor/rogue/plank/h,
+/area/rogue/outdoors/town)
 "Pm" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/concrete,
@@ -64848,11 +64854,11 @@ Lj
 Lj
 Lj
 Lj
-pl
-pl
+bh
+bh
 Lj
-pl
-pl
+bh
+bh
 Lj
 Lj
 Lj
@@ -69289,7 +69295,7 @@ hb
 bX
 bX
 bX
-pl
+bh
 bX
 bX
 bX
@@ -69603,7 +69609,7 @@ bX
 bX
 bX
 bX
-pl
+bh
 bX
 hb
 hb
@@ -70548,7 +70554,7 @@ MS
 pl
 pl
 pl
-pl
+Pk
 pl
 pl
 pl
@@ -71961,7 +71967,7 @@ ez
 pl
 pl
 pl
-pl
+Pk
 pl
 pl
 pl
@@ -73062,7 +73068,7 @@ pl
 pl
 pl
 pl
-pl
+Pk
 pl
 pl
 pl
@@ -73685,7 +73691,7 @@ iN
 iN
 iN
 iN
-pl
+bh
 bX
 bX
 hb
@@ -74002,7 +74008,7 @@ iN
 pl
 pl
 pl
-pl
+Pk
 pl
 pl
 pl
@@ -74164,7 +74170,7 @@ bX
 bX
 pl
 pl
-pl
+Pk
 pl
 pl
 pl
@@ -81176,7 +81182,7 @@ Lj
 Lj
 pl
 Lj
-pl
+bh
 Lj
 Lj
 Lj
@@ -81331,7 +81337,7 @@ Lj
 Lj
 Lj
 Lj
-pl
+bh
 Lj
 pl
 pl
@@ -81339,9 +81345,9 @@ Lj
 Lj
 Lj
 Lj
-pl
-pl
-pl
+bh
+bh
+bh
 Lj
 Lj
 Lj
