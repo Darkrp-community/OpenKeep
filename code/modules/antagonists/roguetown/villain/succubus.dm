@@ -65,4 +65,4 @@
 
 /datum/antagonist/succubus/proc/finalize_succubus()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/traitor.ogg', 80, FALSE, pressure_affected = FALSE)
-	ADD_TRAIT(owner.current, RTRAIT_ANTAG, TRAIT_GENERIC)
+	ADD_TRAIT(owner.current, TRAIT_ANTAG, TRAIT_GENERIC)
