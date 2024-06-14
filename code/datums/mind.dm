@@ -280,7 +280,7 @@
 		return
 	if(known_skills[S] >= old_level)
 		if(known_skills[S] > old_level)
-			to_chat(current, "<span class='nicegreen'>My [S.name] grows!</span>")
+			to_chat(current, "<span class='nicegreen'>My proficiency in [S.name] grows!</span>")
 	else
 		to_chat(current, "<span class='warning'>My [S.name] has weakened!</span>")
 
@@ -859,6 +859,15 @@
 		return
 	spell_list += S
 	S.action.Grant(current)
+
+/datum/mind/proc/has_spell(spell_type, specific = FALSE)
+	if(istype(spell_type, /obj/effect/proc_holder))
+		var/obj/instanced_spell = spell_type
+		spell_type = instanced_spell.type
+	for(var/obj/effect/proc_holder/spell as anything in spell_list)
+		if((specific && spell.type == spell_type) || istype(spell, spell_type))
+			return TRUE
+	return FALSE
 
 /datum/mind/proc/owns_soul()
 	return soulOwner == src

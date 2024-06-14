@@ -47,7 +47,7 @@
 /datum/antagonist/werewolf/on_gain()
 	transform_cooldown = SSticker.round_start_time
 	owner.special_role = name
-	ADD_TRAIT(owner.current, RTRAIT_VILLAIN, TRAIT_GENERIC)
+	ADD_TRAIT(owner.current, TRAIT_VILLAIN, TRAIT_GENERIC)
 	if(increase_votepwr)
 		forge_werewolf_objectives()
 	finalize_werewolf()

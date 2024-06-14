@@ -283,8 +283,8 @@
 					continue
 				if(BP.skeletonized)
 					continue
-				var/obj/item/natural/worms/leeches/I = new(C)
-				BP.embedded_objects |= I
+				var/obj/item/natural/worms/leech/I = new(C)
+				BP.add_embedded_object(I, silent = TRUE)
 				return .
 
 /turf/open/water/swamp/deep
@@ -312,8 +312,8 @@
 					continue
 				if(BP.skeletonized)
 					continue
-				var/obj/item/natural/worms/leeches/I = new(C)
-				BP.embedded_objects |= I
+				var/obj/item/natural/worms/leech/I = new(C)
+				BP.add_embedded_object(I, silent = TRUE)
 				return .
 
 /turf/open/water/cleanshallow
