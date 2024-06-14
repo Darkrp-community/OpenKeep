@@ -11,7 +11,6 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/seamstress
 	isvillager = TRUE
 	ispilgrim = TRUE
-	maxchosen = 1
 
 
 /datum/outfit/job/roguetown/adventurer/seamstress/pre_equip(mob/living/carbon/human/H)
