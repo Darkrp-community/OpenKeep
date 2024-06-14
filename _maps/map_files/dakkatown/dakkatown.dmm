@@ -5080,12 +5080,10 @@
 	},
 /area/rogue/outdoors/river)
 "ww" = (
-/obj/structure/bed/rogue/shit,
-/obj/effect/landmark/start/grabber{
-	dir = 1
-	},
-/turf/open/floor/rogue/ruinedwood/turned,
-/area/rogue/indoors/town)
+/obj/structure/chair/stool/rogue,
+/obj/effect/landmark/start/grabber,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern)
 "wx" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/indoors/town/manor)
@@ -6261,9 +6259,6 @@
 /area/rogue/indoors/town)
 "Cc" = (
 /obj/structure/bed/rogue/shit,
-/obj/effect/landmark/start/grabber{
-	dir = 8
-	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town)
 "Cd" = (
@@ -7104,9 +7099,11 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/shop)
 "FR" = (
-/obj/structure/mineral_door/wood/deadbolt{
+/obj/structure/mineral_door/wood/donjon{
+	lockid = "steward";
+	locked = 1;
 	name = "Warehouse";
-	locked = 1
+	dir = 1
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
@@ -9231,6 +9228,13 @@
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
+"Pu" = (
+/obj/structure/chair/stool/rogue,
+/obj/effect/landmark/start/grabber{
+	dir = 4
+	},
+/turf/open/floor/rogue/ruinedwood/turned,
+/area/rogue/indoors/town)
 "Pv" = (
 /obj/structure/chair/wood/rogue{
 	dir = 1
@@ -11459,6 +11463,13 @@
 /obj/structure/closet/crate/chest,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
+"YX" = (
+/obj/structure/chair/stool/rogue,
+/obj/effect/landmark/start/grabber{
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/turned,
+/area/rogue/indoors/town)
 "YY" = (
 /obj/structure/table/wood,
 /obj/structure/bars{
@@ -49016,7 +49027,7 @@ ik
 Wl
 tk
 tk
-HI
+Pu
 tk
 tk
 Wl
@@ -49175,7 +49186,7 @@ tk
 HI
 nl
 HI
-ww
+Cc
 Wl
 vi
 sN
@@ -49330,7 +49341,7 @@ mj
 Wl
 tk
 yo
-HI
+YX
 tk
 tk
 Wl
@@ -71280,7 +71291,7 @@ rw
 sI
 Gw
 sI
-Vy
+ww
 BG
 jf
 nS

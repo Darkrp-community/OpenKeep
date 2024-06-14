@@ -43,6 +43,10 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/beach)
+"dZ" = (
+/obj/structure/bed/rogue/shit,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/beach)
 "eq" = (
 /obj/structure/stairs{
 	dir = 8
@@ -50,6 +54,16 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach/boat)
+"fB" = (
+/turf/closed/wall/mineral/rogue/wooddark/end{
+	dir = 4
+	},
+/area/rogue/outdoors/beach)
+"fJ" = (
+/turf/closed/wall/mineral/rogue/wooddark/end{
+	dir = 1
+	},
+/area/rogue/outdoors/beach)
 "fK" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/ruinedwood,
@@ -69,6 +83,13 @@
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/beach/boat)
+"hN" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/reagent_containers/glass/bottle/rogue/beer/spottedhen,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/beach)
 "ix" = (
 /obj/structure/closet/crate/chest/gold{
 	lockid = "guild";
@@ -110,6 +131,10 @@
 	},
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/beach/boat/captain)
+"nf" = (
+/obj/machinery/light/rogue/campfire,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/beach)
 "nB" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -202,11 +227,27 @@
 "vn" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/beach)
+"vF" = (
+/turf/closed/wall/mineral/rogue/wooddark/end,
+/area/rogue/outdoors/beach)
+"vM" = (
+/turf/closed/wall/mineral/rogue/wooddark/end{
+	dir = 8
+	},
+/area/rogue/outdoors/beach)
 "wl" = (
 /obj/structure/fluff/railing/border{
 	dir = 9
 	},
 /turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+"wN" = (
+/obj/structure/mineral_door/wood/deadbolt{
+	dir = 1;
+	name = "Abandoned Hut";
+	locked = 1
+	},
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/beach)
 "xr" = (
 /obj/structure/fluff/railing/border{
@@ -268,6 +309,13 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach/boat)
+"AZ" = (
+/obj/structure/chair/stool/rogue,
+/obj/effect/landmark/start/grabber{
+	dir = 4
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/beach)
 "BD" = (
 /obj/structure/stairs{
 	dir = 8
@@ -302,6 +350,13 @@
 "Db" = (
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/outdoors/beach/boat)
+"Dk" = (
+/turf/closed/wall/mineral/rogue/wooddark,
+/area/rogue/outdoors/beach)
+"Ea" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/beach)
 "El" = (
 /turf/closed/indestructible/wooddark,
 /area/rogue/outdoors/beach/boat)
@@ -335,12 +390,19 @@
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/beach/boat/captain)
+"Hz" = (
+/turf/closed/wall/mineral/rogue/wooddark/horizontal,
+/area/rogue/outdoors/beach)
 "HC" = (
 /obj/structure/stairs{
 	dir = 8
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/beach/boat)
+"HQ" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/beach)
 "HY" = (
 /turf/closed/indestructible/wooddark,
 /area/rogue/outdoors/beach/boat/captain)
@@ -469,6 +531,9 @@
 "QC" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach/boat)
+"Sb" = (
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/beach)
 "Tz" = (
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/beach/boat)
@@ -1810,7 +1875,7 @@ ut
 ut
 ut
 vn
-vn
+HQ
 vn
 vn
 vn
@@ -1857,7 +1922,7 @@ ut
 ut
 vn
 vn
-vn
+nf
 vn
 vn
 vn
@@ -1904,7 +1969,7 @@ ut
 ut
 vn
 vn
-vn
+HQ
 vn
 vn
 vn
@@ -1947,10 +2012,10 @@ rP
 (31,1,1) = {"
 ut
 ut
-ut
-ut
-vn
-vn
+Dk
+fJ
+vF
+Dk
 vn
 vn
 vn
@@ -1994,11 +2059,11 @@ rP
 (32,1,1) = {"
 ut
 ut
-ut
-vn
-vn
-vn
-vn
+vM
+AZ
+Sb
+vM
+Sb
 vn
 vn
 vn
@@ -2041,11 +2106,11 @@ rP
 (33,1,1) = {"
 ut
 ut
-ut
-vn
-vn
-vn
-vn
+Hz
+hN
+Sb
+wN
+Sb
 vn
 vn
 vn
@@ -2088,11 +2153,11 @@ rP
 (34,1,1) = {"
 ut
 ut
-ut
-vn
-vn
-vn
-vn
+Hz
+Ea
+Sb
+Hz
+Sb
 vn
 vn
 vn
@@ -2135,10 +2200,10 @@ rP
 (35,1,1) = {"
 ut
 ut
-ut
-vn
-vn
-vn
+fB
+dZ
+Sb
+fB
 vn
 vn
 vn
@@ -2182,10 +2247,10 @@ rP
 (36,1,1) = {"
 ut
 ut
-ut
-vn
-vn
-vn
+Dk
+fJ
+vF
+Dk
 vn
 vn
 vn
@@ -9233,10 +9298,10 @@ PN
 (31,1,2) = {"
 ut
 ut
-ut
-ut
-PN
-PN
+Sb
+Sb
+Sb
+Sb
 PN
 PN
 PN
@@ -9280,10 +9345,10 @@ PN
 (32,1,2) = {"
 ut
 ut
-ut
+Sb
+Sb
 PN
-PN
-PN
+Sb
 PN
 PN
 PN
@@ -9327,10 +9392,10 @@ PN
 (33,1,2) = {"
 ut
 ut
-ut
-PN
-PN
-PN
+Sb
+Sb
+Sb
+Sb
 PN
 PN
 PN
@@ -9374,10 +9439,10 @@ PN
 (34,1,2) = {"
 ut
 ut
-ut
+Sb
 PN
-PN
-PN
+Sb
+Sb
 PN
 PN
 PN
@@ -9421,10 +9486,10 @@ PN
 (35,1,2) = {"
 ut
 ut
-ut
-PN
-PN
-PN
+Sb
+Sb
+Sb
+Sb
 PN
 PN
 PN
@@ -9468,10 +9533,10 @@ PN
 (36,1,2) = {"
 ut
 ut
-ut
-PN
-PN
-PN
+Sb
+Sb
+Sb
+Sb
 PN
 PN
 PN
