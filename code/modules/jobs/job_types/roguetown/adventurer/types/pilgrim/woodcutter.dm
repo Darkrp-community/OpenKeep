@@ -38,6 +38,6 @@
 	beltr = /obj/item/rogueweapon/woodcut
 	beltl = /obj/item/rogueweapon/huntingknife
 	backpack_contents = list(/obj/item/flint = 1)
-	H.change_stat("strength", 3)
+	H.change_stat("strength", 2)
 	H.change_stat("constitution", 1)
 	H.change_stat("speed", -1)
