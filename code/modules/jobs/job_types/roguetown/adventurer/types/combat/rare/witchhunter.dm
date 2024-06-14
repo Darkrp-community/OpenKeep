@@ -9,6 +9,9 @@
 	maxchosen = 1
 	plevel_req = 2
 
+/datum/outfit/job/roguetown/adventurer/puritan
+	allowed_patrons = ALL_CLERIC_PATRONS		//Placeholder; decide what Gods they should really be worshiping.
+
 /datum/outfit/job/roguetown/adventurer/puritan/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan

@@ -10,7 +10,7 @@
 		"Humen",
 		"Half-Elf"
 	)
-	allowed_ages = list(AGE_YOUNG)
+	allowed_ages = YOUNG_AGES_LIST
 
 	tutorial = "Dozens of unwanted children are born in the kingdom of Psydonia every day. They sometimes make something of themselves but much more often die early in the streets."
 

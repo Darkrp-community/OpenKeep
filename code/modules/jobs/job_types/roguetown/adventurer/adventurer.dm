@@ -59,15 +59,15 @@ GLOBAL_LIST_EMPTY(billagerspawns)
 				if(A.ispilgrim || A.isvillager)
 					continue
 
-			if(!(H.gender in A.allowed_sexes))
+			if(length(A.allowed_sexes) && !(H.gender in A.allowed_sexes))
 				testing("[A.name] had a different required sex")
 				continue
 				
-			if(!(H.dna.species.name in A.allowed_races))
+			if(length(A.allowed_races) && !(H.dna.species.name in A.allowed_races))
 				testing("[A.name] had a different required race")
 				continue
 
-			if(!(H.age in A.allowed_ages))
+			if(length(A.allowed_ages) && !(H.age in A.allowed_ages))
 				testing("[A.name] had a different required age")
 				continue
 

@@ -7,6 +7,8 @@
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/barbarian
 
+/datum/outfit/job/roguetown/adventurer/barbarian
+	allowed_patrons = list(/datum/patron/divine/ravox, /datum/patron/inhumen/graggar)
 
 /datum/outfit/job/roguetown/adventurer/barbarian/pre_equip(mob/living/carbon/human/H)
 	..()
