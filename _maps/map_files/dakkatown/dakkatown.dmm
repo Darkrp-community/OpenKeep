@@ -368,6 +368,10 @@
 /area/rogue/under/town/basement)
 "bR" = (
 /obj/structure/closet/crate/roguecloset,
+/obj/item/reagent_containers/glass/bottle/rogue/beer/butterhairs,
+/obj/item/reagent_containers/glass/bottle/rogue/beer/spottedhen,
+/obj/item/reagent_containers/glass/bottle/rogue/beer/spottedhen,
+/obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "bS" = (
@@ -630,6 +634,13 @@
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/town/basement)
+"cY" = (
+/obj/structure/chair/stool/rogue,
+/obj/effect/landmark/start/grabber{
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/turned,
+/area/rogue/indoors/town)
 "cZ" = (
 /obj/structure/chair/wood/rogue,
 /turf/open/floor/rogue/woodturned,
@@ -5081,9 +5092,11 @@
 /area/rogue/outdoors/river)
 "ww" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber,
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town/tavern)
+/obj/effect/landmark/start/grabber{
+	dir = 4
+	},
+/turf/open/floor/rogue/ruinedwood/turned,
+/area/rogue/indoors/town)
 "wx" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/indoors/town/manor)
@@ -8088,6 +8101,11 @@
 "Kr" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/exposed/manorgarri)
+"Kt" = (
+/obj/structure/chair/stool/rogue,
+/obj/effect/landmark/start/grabber,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern)
 "Kv" = (
 /obj/structure/ladder,
 /turf/open/floor/carpet/royalblack,
@@ -9228,13 +9246,6 @@
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
-"Pu" = (
-/obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber{
-	dir = 4
-	},
-/turf/open/floor/rogue/ruinedwood/turned,
-/area/rogue/indoors/town)
 "Pv" = (
 /obj/structure/chair/wood/rogue{
 	dir = 1
@@ -11463,13 +11474,6 @@
 /obj/structure/closet/crate/chest,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
-"YX" = (
-/obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber{
-	dir = 8
-	},
-/turf/open/floor/rogue/ruinedwood/turned,
-/area/rogue/indoors/town)
 "YY" = (
 /obj/structure/table/wood,
 /obj/structure/bars{
@@ -49027,7 +49031,7 @@ ik
 Wl
 tk
 tk
-Pu
+ww
 tk
 tk
 Wl
@@ -49341,7 +49345,7 @@ mj
 Wl
 tk
 yo
-YX
+cY
 tk
 tk
 Wl
@@ -71291,7 +71295,7 @@ rw
 sI
 Gw
 sI
-ww
+Kt
 BG
 jf
 nS
