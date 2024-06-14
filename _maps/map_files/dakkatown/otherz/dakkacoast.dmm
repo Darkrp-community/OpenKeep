@@ -360,6 +360,10 @@
 "El" = (
 /turf/closed/indestructible/wooddark,
 /area/rogue/outdoors/beach/boat)
+"ED" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/beach/boat)
 "EM" = (
 /obj/structure/chair/wood/rogue/fancy{
 	dir = 8
@@ -501,6 +505,13 @@
 /area/rogue/outdoors/beach/boat/captain)
 "NX" = (
 /turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/beach)
+"Om" = (
+/obj/effect/landmark/mapGenerator/rogue/beach{
+	endTurfX = 155;
+	endTurfY = 45
+	},
+/turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/beach)
 "Ot" = (
 /obj/structure/mineral_door/wood{
@@ -644,7 +655,7 @@ rP
 rP
 rP
 rP
-rP
+Om
 "}
 (2,1,1) = {"
 ut
@@ -9279,7 +9290,7 @@ PN
 PN
 PN
 PN
-di
+PN
 Jo
 su
 su
@@ -10077,7 +10088,7 @@ lF
 lF
 PN
 Jo
-su
+ED
 su
 su
 su

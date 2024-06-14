@@ -1,4 +1,3 @@
-
 /obj/effect/landmark/mapGenerator/rogue/beach
 	mapGeneratorType = /datum/mapGenerator/beach
 	endTurfX = 1
@@ -10,7 +9,8 @@
 	modules = list(/datum/mapGeneratorModule/beach)
 
 /datum/mapGeneratorModule/beach
-	clusterCheckFlags = CLUSTER_CHECK_SAME_ATOMS|CLUSTER_CHECK_DIFFERENT_ATOMS
+	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	allowed_turfs = list(/turf/open/floor/rogue/dirt/road)
-	spawnableAtoms = list(	/obj/item/natural/stone = 11,
-							/obj/item/grown/log/tree/stick = 1)
+	allowed_areas = list(/area/rogue/outdoors/beach)
+	spawnableAtoms = list(	/obj/item/natural/stone = 50,
+							/obj/item/grown/log/tree/stick = 50)
