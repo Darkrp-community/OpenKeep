@@ -19,12 +19,12 @@
 	outfit_female = null
 
 	display_order = JDO_DRIFTER
-	show_in_credits = FALSE
+	show_in_credits = TRUE
 	min_pq = -999
 
 	total_positions = 0
 	spawn_positions = 0
-	advclass_cat_rolls = list(CTAG_PILGRIM = 5, CTAG_ADVENTURER = 5)
+	advclass_cat_rolls = list(CTAG_PILGRIM = 2, CTAG_ADVENTURER = 2)
 
 /datum/job/roguetown/drifters/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -33,4 +33,3 @@
 		H.advsetup = 1
 		H.invisibility = INVISIBILITY_MAXIMUM
 		H.become_blind("advsetup")
-

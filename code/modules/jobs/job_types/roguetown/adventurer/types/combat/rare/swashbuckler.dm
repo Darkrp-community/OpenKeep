@@ -13,8 +13,6 @@
 		"Dark Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/swashbuckler
-	plevel_req = TRUE
-	outfit = /datum/outfit/job/roguetown/adventurer/rare
 	maximum_possible_slots = 1
 	category_tags = list(CTAG_ADVENTURER)
 

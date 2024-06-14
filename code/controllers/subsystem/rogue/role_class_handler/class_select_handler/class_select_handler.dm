@@ -202,29 +202,55 @@
 	//Class href fill-in
 	data += "<div id='top_handwriting'> The fates giveth... </div>"
 	data += "<div id='class_select_box_div'>"
+	var/mob/living/carbon/human/H = linked_client.mob
+	if(!H.job)
+		return
+	if(H.job == "Drifter" && !showing_challenge_classes)
+		for(var/datum/advclass/datums in rolled_classes)
+			if(!(CTAG_ADVENTURER in datums.category_tags))
+				continue
+			var/plus_str = ""
+			if(rolled_classes[datums] > 0)
+				var/plus_factor = rolled_classes[datums]
 
-	for(var/datum/advclass/datums in rolled_classes)
-		var/plus_str = ""
-		if(rolled_classes[datums] > 0)
-			var/plus_factor = rolled_classes[datums]
+				for(var/i in 1 to plus_factor)
+					plus_str += "+"
+			data += "<div class='class_bar_div'><a class='vagrant' href='?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='haha_skull.gif' width=32 height=32>[datums.name]<span id='green_plussa'>[plus_str]</span><img class='ninetysskull' src='haha_skull.gif' width=32 height=32></a></div>"
+	else if(!showing_challenge_classes)
+		for(var/datum/advclass/datums in rolled_classes)
+			var/plus_str = ""
+			if(rolled_classes[datums] > 0)
+				var/plus_factor = rolled_classes[datums]
 
-			for(var/i in 1 to plus_factor)
-				plus_str += "+"
-		data += "<div class='class_bar_div'><a class='vagrant' href='?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='haha_skull.gif' width=32 height=32>[datums.name]<span id='green_plussa'>[plus_str]</span><img class='ninetysskull' src='haha_skull.gif' width=32 height=32></a></div>"
+				for(var/i in 1 to plus_factor)
+					plus_str += "+"
+			data += "<div class='class_bar_div'><a class='vagrant' href='?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='haha_skull.gif' width=32 height=32>[datums.name]<span id='green_plussa'>[plus_str]</span><img class='ninetysskull' src='haha_skull.gif' width=32 height=32></a></div>"
+
 	if(special_session_queue && special_session_queue.len)
 		for(var/datum/advclass/datums in special_session_queue)
 			data += "<div class='class_bar_div'><a class='vagrant' href='?src=\ref[src];special_selected=1;selected_special=\ref[datums];'><img class='ninetysskull' src='haha_skull.gif' width=32 height=32>[datums.name]<img class='ninetysskull' src='haha_skull.gif' width=32 height=32></a></div>"
+
 	if(showing_challenge_classes)
-		for(var/datum/advclass/datums in SSrole_class_handler.sorted_class_categories[CTAG_CHALLENGE])
-			data += "<div class='class_bar_div'><a class='vagrant' href='?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='haha_skull.gif' width=32 height=32>[datums.name]<img class='ninetysskull' src='haha_skull.gif' width=32 height=32></a></div>"
+		for(var/datum/advclass/datums in rolled_classes)
+			if(!(CTAG_PILGRIM in datums.category_tags))
+				continue
+			var/plus_str = ""
+			if(rolled_classes[datums] > 0)
+				var/plus_factor = rolled_classes[datums]
+
+				for(var/i in 1 to plus_factor)
+					plus_str += "+"
+			data += "<div class='class_bar_div'><a class='vagrant' href='?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='haha_skull.gif' width=32 height=32>[datums.name]<span id='green_plussa'>[plus_str]</span><img class='ninetysskull' src='haha_skull.gif' width=32 height=32></a></div>"
 	data += "</div>"
 
 	//Buttondiv Segment
 	data += "<div class='footer'>"
-	data += {"
-		<a class='mo_bottom_buttons' href='?src=\ref[src];show_challenge_class=1'>[showing_challenge_classes ? "Hide Challenge Classes" : "Show Challenge Classes"]</a>
-	</div>
-	"}
+
+	if(H.job == "Drifter")
+		data += {"
+			<a class='mo_bottom_buttons' href='?src=\ref[src];show_challenge_class=1'>[showing_challenge_classes ? "Hide Combat Classes" : "Show Pilgrim Classes"]</a>
+		</div>
+		"}
 
 	//Closing Tags
 	data += {"

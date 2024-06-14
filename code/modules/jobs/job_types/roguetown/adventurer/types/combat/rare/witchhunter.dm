@@ -6,7 +6,7 @@
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/puritan
 	maximum_possible_slots = 1
-	pickprob = 11
+	pickprob = 15
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 2
 

@@ -735,7 +735,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	SStriumphs.remove_triumph_buy_menu(client)
 	SSrole_class_handler.cleanup_drifter_queue(client)
 
-	winshow(src, "preferencess_window", FALSE)
+	winshow(src, "stonekeep_prefwin", FALSE)
 	src << browse(null, "window=preferences_browser")
 	src << browse(null, "window=lobby_window")
 // Used to make sure that a player has a valid job preference setup, used to knock players out of eligibility for anything if their prefs don't make sense.
