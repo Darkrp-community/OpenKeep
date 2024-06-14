@@ -14,6 +14,11 @@
 	israre = TRUE
 	plevel_req = 1
 	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
+	outfit = /datum/outfit/job/roguetown/adventurer/sentinal
+	maximum_possible_slots = 5
+	pickprob = 50
+	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_DODGEEXPERT)
+	category_tags = list(CTAG_ADVENTURER)
 
 /datum/advclass/combat/vaquero/equipme(mob/living/carbon/human/H)
 	if(H.gender == FEMALE)

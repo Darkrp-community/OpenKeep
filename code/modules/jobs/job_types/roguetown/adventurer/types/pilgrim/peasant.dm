@@ -13,9 +13,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/peasant
-	isvillager = TRUE
-	ispilgrim = TRUE
-
+	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 
 /datum/outfit/job/roguetown/adventurer/peasant/pre_equip(mob/living/carbon/human/H)
 	..()

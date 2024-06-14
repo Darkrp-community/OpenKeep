@@ -14,6 +14,9 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/sfighter
 
 
+	category_tags = list(CTAG_ADVENTURER)
+
+
 /datum/outfit/job/roguetown/adventurer/sfighter/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2), TRUE)

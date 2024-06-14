@@ -16,6 +16,9 @@
 	maxchosen = 1
 	israre = TRUE
 	plevel_req = TRUE
+	outfit = /datum/outfit/job/roguetown/adventurer/rare
+	maximum_possible_slots = 1
+	pickprob = 11
 
 	/datum/outfit/job/roguetown/adventurer/swashbuckler/pre_equip((mob/living/carbon/human/H))
 	..()

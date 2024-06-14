@@ -6,6 +6,9 @@
 	allowed_sexes = list(MALE)
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/barbarian
+	traits_applied = list(TRAIT_CRITICAL_RESISTANCE, TRAIT_NOPAINSTUN, TRAIT_STEELHEARTED)
+	cmode_music = 'sound/music/combat_gronn.ogg'
+	category_tags = list(CTAG_ADVENTURER)
 
 
 /datum/outfit/job/roguetown/adventurer/barbarian/pre_equip(mob/living/carbon/human/H)

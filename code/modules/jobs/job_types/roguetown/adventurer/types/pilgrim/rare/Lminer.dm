@@ -12,6 +12,11 @@
 	maxchosen = 1
 	israre = TRUE
 
+	maximum_possible_slots = 1
+	pickprob = 5
+
+	category_tags = list(CTAG_PILGRIM)
+
 /datum/outfit/job/roguetown/adventurer/minermaster/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/armingcap

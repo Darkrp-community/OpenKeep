@@ -13,6 +13,8 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/sorceress
 	maxchosen = 2
+	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
+	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/sorceress/pre_equip(mob/living/carbon/human/H)
 	..()

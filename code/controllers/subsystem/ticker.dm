@@ -445,7 +445,7 @@ SUBSYSTEM_DEF(ticker)
 
 	log_game("GAME SETUP: round start events success")
 	LAZYCLEARLIST(round_start_events)
-
+	SSrole_class_handler.RoundStart()
 	CHECK_TICK
 	if(isrogueworld)
 		for(var/obj/structure/fluff/traveltile/TT in GLOB.traveltiles)
@@ -480,8 +480,9 @@ SUBSYSTEM_DEF(ticker)
 			C.mob.playsound_local(C.mob, 'sound/misc/roundstart.ogg', 100, FALSE)
 
 //	SEND_SOUND(world, sound('sound/misc/roundstart.ogg'))
-
 	current_state = GAME_STATE_PLAYING
+	
+	
 	Master.SetRunLevel(RUNLEVEL_GAME)
 /*
 	if(SSevents.holidays)
@@ -509,7 +510,7 @@ SUBSYSTEM_DEF(ticker)
 	job_change_locked = FALSE
 
 //	setup_hell()
-
+	SStriumphs.fire_on_PostSetup()
 	for(var/i in GLOB.start_landmarks_list)
 		var/obj/effect/landmark/start/S = i
 		if(istype(S))							//we can not runtime here. not in this important of a proc.
@@ -830,7 +831,8 @@ SUBSYSTEM_DEF(ticker)
 		to_chat(world, "<span class='boldannounce'>A game master has delayed the round end.</span>")
 		return
 
-//	to_chat(world, "<span class='boldannounce'>Rebooting World in [DisplayTimeText(delay)]. [reason]</span>")
+	SStriumphs.end_triumph_saving_time()
+	to_chat(world, "<span class='boldannounce'>Rebooting World in [DisplayTimeText(delay)]. [reason]</span>")
 
 	to_chat(world, "<span class='boldannounce'>Rebooting World in [DisplayTimeText(delay)].</span>")
 

@@ -6,7 +6,7 @@
 	allowed_races = list("Tiefling")
 	outfit = /datum/outfit/job/roguetown/adventurer/vaquero
 	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
-	maxchosen = 1
+	category_tags = list(CTAG_ADVENTURER)
 	plevel_req = 1
 	israre = TRUE
 

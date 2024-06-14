@@ -6,10 +6,9 @@
 		"Elf",
 		"Dark Elf"
 	)
+	maximum_possible_slots = 1
+	pickprob = 11
 	outfit = /datum/outfit/job/roguetown/adventurer/bladesinger
-	maxchosen = 1
-	plevel_req = 1
-	israre = TRUE
 
 /datum/outfit/job/roguetown/adventurer/bladesinger/pre_equip(mob/living/carbon/human/H)
 	..()

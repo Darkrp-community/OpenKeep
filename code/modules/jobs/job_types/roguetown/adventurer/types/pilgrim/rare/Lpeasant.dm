@@ -12,6 +12,12 @@
 	ispilgrim = TRUE
 	maxchosen = 1
 	israre = TRUE
+
+	maximum_possible_slots = 1
+	pickprob = 5
+
+	category_tags = list(CTAG_PILGRIM)
+
 /datum/outfit/job/roguetown/adventurer/farmermaster/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)

@@ -11,9 +11,10 @@
 		"Dark Elf",
 		"Aasimar"
 	)
-	allowed_patrons = list("Astrata", "Dendor", "Necra")
-	ispilgrim = FALSE
+	vampcompat = FALSE
 	outfit = /datum/outfit/job/roguetown/adventurer/cleric
+	traits_applied = list(TRAIT_HEAVYARMOR)
+	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/cleric/pre_equip(mob/living/carbon/human/H)
 	..()

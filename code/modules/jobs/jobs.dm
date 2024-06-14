@@ -118,8 +118,11 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Nightmaiden",
 	"Docker",
 	"Prisoner",
-	"Beggar"
-	))
+	"Beggar",
+	"Adventurer",
+	"Pilgrim",
+	"Drifter"
+))
 
 GLOBAL_LIST_INIT(youngfolk_positions, list(
 	"Squire",
