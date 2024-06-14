@@ -2,7 +2,7 @@
 
 /obj/item/scrying
 	name = "scrying orb"
-	desc = "On it's glass depths, you can scry on many unsuspecting beings.."
+	desc = "On its glass depths, you can scry on many unsuspecting beings.."
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state ="scrying"
 	throw_speed = 3
