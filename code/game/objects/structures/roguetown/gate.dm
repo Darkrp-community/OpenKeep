@@ -2,7 +2,7 @@ GLOBAL_LIST_EMPTY(biggates)
 
 /obj/structure/gate
 	name = "gate"
-	desc = "A steel, strong gate."
+	desc = "A strong steel gate."
 	icon = 'icons/roguetown/misc/gate.dmi'
 	icon_state = "gate1"
 	density = TRUE
