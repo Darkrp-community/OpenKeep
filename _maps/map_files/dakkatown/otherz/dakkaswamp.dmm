@@ -164,7 +164,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/bog)
 "yR" = (
-/obj/effect/landmark/start/adventurerlate{
+/obj/effect/landmark/start/combatlate{
 	dir = 1
 	},
 /turf/open/floor/rogue/dirt/road,
@@ -215,7 +215,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/bog)
 "Hi" = (
-/obj/effect/landmark/start/adventurerlate,
+/obj/effect/landmark/start/combatlate,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "Hr" = (
@@ -272,7 +272,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "PL" = (
-/obj/effect/landmark/start/adventurerlate{
+/obj/effect/landmark/start/combatlate{
 	dir = 8
 	},
 /turf/open/floor/rogue/dirt/road,

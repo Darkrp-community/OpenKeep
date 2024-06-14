@@ -293,7 +293,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
 "kd" = (
-/obj/effect/landmark/start/adventurerlate{
+/obj/effect/landmark/start/combatlate{
 	dir = 4
 	},
 /turf/open/floor/rogue/grass,
@@ -338,7 +338,7 @@
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/outdoors/town/roofs)
 "kH" = (
-/obj/effect/landmark/start/adventurerlate,
+/obj/effect/landmark/start/combatlate,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "kI" = (
@@ -1356,7 +1356,7 @@
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors)
 "Qh" = (
-/obj/effect/landmark/start/adventurerlate{
+/obj/effect/landmark/start/combatlate{
 	dir = 4
 	},
 /turf/open/floor/rogue/dirt/road,
