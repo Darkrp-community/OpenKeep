@@ -79,5 +79,5 @@
 					mask = /obj/item/clothing/mask/rogue/eyepatch
 
 	H.verbs |= /mob/proc/haltyell
-	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Desensitized through thousand campaigns

@@ -14,7 +14,7 @@
 	desc = "Gloves made out of sturdy leather. Warm, and offer very small protection against melee attacks."
 	icon_state = "leather_gloves"
 	armor = list("melee" = 12, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	resistance_flags = null
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
@@ -44,7 +44,7 @@
 	desc = "A heavier, more reinforced format of leather gloves. These look like they can take some beating. Fair melee protection and decent durability."
 	icon_state = "angle"
 	armor = list("melee" = 30, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	resistance_flags = null
 	blocksound = SOFTHIT
 	max_integrity = 100
@@ -128,7 +128,7 @@
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 
-/obj/item/clothing/gloves/roguetown/rare/dwarfplate 
+/obj/item/clothing/gloves/roguetown/rare/dwarfplate
 	name = "dwarvish plate gauntlets"
 	desc = ""
 	item_state = "dwarfhand"
@@ -181,3 +181,15 @@
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
+
+/obj/item/clothing/gloves/roguetown/leather/feld
+	name = "feldsher's gloves"
+	desc = "Improved grip for wielding the tools of the trade."
+	icon_state = "feldgloves"
+	item_state = "feldgloves"
+
+/obj/item/clothing/gloves/roguetown/leather/phys
+	name = "physicker's gloves"
+	desc = "Improved grip for wielding disembowled organs."
+	icon_state = "surggloves"
+	item_state = "surggloves"

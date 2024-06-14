@@ -323,7 +323,7 @@
 	sleevetype = null
 	sleeved = null
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	dynamic_hair_suffix = "+generic"
 	bloody_icon_state = "helmetblood"
 	anvilrepair = /datum/skill/craft/armorsmithing
@@ -417,8 +417,7 @@
 	flags_inv = HIDEEARS|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
-	anvilrepair = /datum/skill/craft/armorsmithing
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
 
@@ -505,8 +504,21 @@
 	desc = ""
 	body_parts_covered = HEAD|HAIR|EARS|NOSE
 	icon_state = "leatherhelm"
-	armor = list("melee" = 60, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	armor = list("melee" = 27, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
+	anvilrepair = null
+	sewrepair = TRUE
+	blocksound = SOFTHIT
+
+/obj/item/clothing/head/roguetown/helmet/leather/volfhelm
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	name = "volf helmet"
+	desc = "Bandit initiation rites involve the slaying of a volf."
+	body_parts_covered = HEAD|HAIR|EARS
+	icon_state = "volfhead"
+	item_state = "volfhead"
+	armor = list("melee" = 27, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
 	anvilrepair = null
 	sewrepair = TRUE
 	blocksound = SOFTHIT
@@ -605,7 +617,7 @@
 		add_overlay(pic)
 
 /obj/item/clothing/head/roguetown/rare
-	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'	
+	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleevetype = null
 
@@ -670,3 +682,27 @@
 	desc = "Known as devil masks amongst the Northern Kingdoms, these serve part decorative headpiece, part protective helmet."
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+
+/obj/item/clothing/head/roguetown/roguehood/feld
+	name = "feldsher's hood"
+	desc = "My cure is most effective."
+	icon_state = "feldhood"
+	item_state = "feldhood"
+	color = null
+
+/obj/item/clothing/head/roguetown/roguehood/phys
+	name = "physicker's hood"
+	desc = "My cure is mostly effective."
+	icon_state = "surghood"
+	item_state = "surghood"
+	color = null
+
+/obj/item/clothing/head/roguetown/helmet/feld
+	name = "feldsher's cage"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	desc = "To protect me from the maggets and creechers I treat."
+	icon_state = "headcage"
+	icon_state = "headcage"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES

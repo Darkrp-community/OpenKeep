@@ -56,8 +56,8 @@
 			backr = /obj/item/rogue/instrument/harp
 		if(H.dna.species.id == "tiefling")
 			backr = /obj/item/rogue/instrument/guitar
-	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, RTRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	H.change_stat("perception", 1)
 	H.change_stat("speed", 2)
 	H.change_stat("strength", -1)

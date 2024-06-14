@@ -34,4 +34,4 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.change_stat("endurance", 2)
 		H.change_stat("strength", 1)
-	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
