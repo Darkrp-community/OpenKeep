@@ -42,12 +42,10 @@
 		r_hand = /obj/item/rogueweapon/spear
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 	H.change_stat("strength", 2)
-	H.change_stat("intelligence", -2)
-	H.change_stat("perception", 2)
+	H.change_stat("intelligence", -1)
 	H.change_stat("endurance", 2)
 	H.change_stat("speed", 1)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	if(H.wear_mask) //for stupid retards with bad eyes
 		var/obj/I = H.wear_mask
 		H.dropItemToGround(H.wear_mask, TRUE)

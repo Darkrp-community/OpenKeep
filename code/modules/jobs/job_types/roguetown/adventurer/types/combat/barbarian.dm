@@ -51,10 +51,9 @@
 			beltr = /obj/item/rogueweapon/mace/woodclub
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 	H.change_stat("strength", 3)
-	H.change_stat("endurance", 3)
+	H.change_stat("endurance", 2)
 	H.change_stat("constitution", 2)
 	H.change_stat("intelligence", -1)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	if(H.dna?.species)
 		H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
