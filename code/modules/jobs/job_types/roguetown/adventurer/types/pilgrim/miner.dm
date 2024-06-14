@@ -38,7 +38,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(3,3,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 		H.change_stat("strength", 1)
