@@ -50,7 +50,7 @@
 		if(5)
 			beltr = /obj/item/rogueweapon/mace/woodclub
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-	H.change_stat("strength", 2)
+	H.change_stat("strength", 3)
 	H.change_stat("endurance", 3)
 	H.change_stat("constitution", 2)
 	H.change_stat("intelligence", -1)

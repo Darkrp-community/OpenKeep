@@ -23,6 +23,10 @@
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/pick
 	backl = /obj/item/storage/backpack/rogue/backpack
+	if(H.age == AGE_OLD)
+		H.change_stat("endurance", -1)
+		H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
