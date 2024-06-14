@@ -3,7 +3,7 @@
 /obj/item/natural/hide
 	name = "hide"
 	icon_state = "hide"
-	desc = "Hide from one of Gott's creachers."
+	desc = "Hide from one of Dendor's creachers."
 	dropshrink = 0.50
 	force = 0
 	throwforce = 0
@@ -15,7 +15,7 @@
 /obj/item/natural/fur
 	name = "fur"
 	icon_state = "wool1"
-	desc = "Fur from one of Gott's creachers."
+	desc = "Fur from one of Dendor's creachers."
 	force = 0
 	throwforce = 0
 	w_class = WEIGHT_CLASS_SMALL
@@ -27,6 +27,7 @@
 //RTD make this a storage item and make clickign on animals with things put it in storage
 /obj/item/natural/saddle
 	name = "saddle"
+	desc = "A culmination of leather, fur and hide. Strapped onto the backs of beasts for ease of riding."
 	icon_state = "saddle"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK_L

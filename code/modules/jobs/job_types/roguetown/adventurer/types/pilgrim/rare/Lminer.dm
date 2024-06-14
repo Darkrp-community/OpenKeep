@@ -2,6 +2,8 @@
 
 /datum/advclass/pilgrim/rare/minermaster
 	name = "Master Miner"
+	tutorial = "Hardy dwarves who dedicated their entire life to a singular purpose: \
+	the acquisition of ore, precious stones, and anything deep below the mines."
 	allowed_sexes = list(MALE)
 	allowed_races = list("Dwarf")
 	outfit = /datum/outfit/job/roguetown/adventurer/minermaster
@@ -23,11 +25,12 @@
 	backl = /obj/item/storage/backpack/rogue/backpack
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 1, TRUE)
 		H.change_stat("strength", 2)
 		H.change_stat("intelligence", 2)
 		H.change_stat("endurance", 2)

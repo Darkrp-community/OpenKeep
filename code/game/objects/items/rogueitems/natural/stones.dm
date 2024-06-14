@@ -3,7 +3,7 @@
 /obj/item/natural/stone
 	name = "stone"
 	icon_state = "stone1"
-	desc = ""
+	desc = "A rock, a stone, a tool, a weapon."
 	gripped_intents = null
 	dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)
@@ -33,7 +33,7 @@
 
 /obj/item/natural/rock
 	name = "rock"
-	desc = ""
+	desc = "A large stone that looks breakable."
 	icon_state = "stonebig1"
 	dropshrink = 0
 	throwforce = 25

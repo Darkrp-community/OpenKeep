@@ -58,7 +58,43 @@
 		if(CLERIC_T3) // already maxed out
 			return
 
-// Devotion Debugs
+// Cleric Spell Spawner
+/datum/devotion/cleric_holder/proc/grant_spells_priest(mob/living/carbon/human/H)
+	if(!H || !H.mind)
+		return
+
+	var/datum/patrongods/A = H.PATRON
+	var/list/spelllist = list(A.t0, A.t1, A.t2, A.t3)
+	for(var/spell_type in spelllist)
+		if(!spell_type || H.mind.has_spell(spell_type))
+			continue
+		H.mind.AddSpell(new spell_type)
+	level = CLERIC_T3
+	update_devotion(300, 900)
+
+/datum/devotion/cleric_holder/proc/grant_spells(mob/living/carbon/human/H)
+	if(!H || !H.mind)
+		return
+
+	var/datum/patrongods/A = H.PATRON
+	var/list/spelllist = list(A.t0, A.t1)
+	for(var/spell_type in spelllist)
+		if(!spell_type || H.mind.has_spell(spell_type))
+			continue
+		H.mind.AddSpell(new spell_type)
+	level = CLERIC_T1
+
+/datum/devotion/cleric_holder/proc/grant_spells_templar(mob/living/carbon/human/H)
+	if(!H || !H.mind)
+		return
+
+	var/datum/patrongods/A = H.PATRON
+	var/list/spelllist = list(/obj/effect/proc_holder/spell/targeted/churn, A.t0)
+	for(var/spell_type in spelllist)
+		if(!spell_type || H.mind.has_spell(spell_type))
+			continue
+		H.mind.AddSpell(new spell_type)
+	level = CLERIC_T0
 
 /mob/living/carbon/human/proc/devotionreport()
 	set name = "Check Devotion"
@@ -67,6 +103,7 @@
 	var/datum/devotion/cleric_holder/C = src.cleric
 	to_chat(src,"My devotion is [C.devotion].")
 
+// Debug verb
 /mob/living/carbon/human/proc/devotionchange()
 	set name = "(DEBUG)Change Devotion"
 	set category = "Special Verbs"
@@ -82,7 +119,7 @@
 /mob/living/carbon/human/proc/clericpray()
 	set name = "Give Prayer"
 	set category = "Cleric"
-	
+
 	var/datum/devotion/cleric_holder/C = src.cleric
 	var/prayersesh = 0
 

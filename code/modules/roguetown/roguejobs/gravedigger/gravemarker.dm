@@ -4,6 +4,7 @@
 	reqs = list(/obj/item/grown/log/tree/stick = 1)
 	time = 10 SECONDS
 	verbage = "tie"
+	verbage_tp = "ties"
 	craftsound = 'sound/foley/Building-01.ogg'
 	structurecraft = /obj/structure/closet/dirthole
 	craftdiff = 0
@@ -14,7 +15,7 @@
 		return FALSE
 	for(var/obj/structure/closet/dirthole/D in T)
 		if(D.stage != 4)
-			to_chat(user, "<span class='warning'>I can't.</span>")
+			to_chat(user, "<span class='warning'>I can't tie a grave marker on an open grave.</span>")
 			return FALSE
 	if(locate(/obj/structure/gravemarker) in T)
 		to_chat(user, "<span class='warning'>This grave is already hallowed.</span>")
@@ -42,7 +43,7 @@
 		if(amt)
 			if(GLOB.respawntimes[ckey])
 				GLOB.respawntimes[ckey] = GLOB.respawntimes[ckey] + amt
-				to_chat(src, "<span class='rose'>My soul finds peace buried in creation.</span>")
+				to_chat(src, "<span class='rose'>My soul finds peace buried in consecrated grounds.</span>")
 
 
 /obj/structure/gravemarker/OnCrafted(dir)
@@ -63,13 +64,13 @@
 			var/mob/dead/observer/O = L.ghostize(force_respawn = TRUE)
 			if(O)
 				testing("bur1")
-				to_chat(O, "<span class='rose'>My soul finds peace buried in creation.</span>")
+				to_chat(O, "<span class='rose'>My soul finds peace buried in consecrated grounds.</span>")
 				O.returntolobby(RESPAWNTIME*-1)
 			else
 				O = L.get_ghost()
 				if(istype(O))
 					testing("bur2")
-					to_chat(O, "<span class='rose'>My soul finds peace buried in creation.</span>")
+					to_chat(O, "<span class='rose'>My soul finds peace buried in consecrated grounds.</span>")
 					O.returntolobby(RESPAWNTIME*-1)
 				else
 					testing("bur8")
@@ -86,13 +87,13 @@
 				var/mob/dead/observer/O = B.ghostize()
 				if(O)
 					testing("bur4")
-					to_chat(O, "<span class='rose'>My soul finds peace buried in creation.</span>")
+					to_chat(O, "<span class='rose'>My soul finds peace buried in consecrated grounds.</span>")
 					O.returntolobby(RESPAWNTIME*-1)
 				else
 					O = B.get_ghost()
 					if(istype(O))
 						testing("bur5")
-						to_chat(O, "<span class='rose'>My soul finds peace buried in creation.</span>")
+						to_chat(O, "<span class='rose'>My soul finds peace buried in consecrated grounds.</span>")
 						O.returntolobby(RESPAWNTIME*-1)
 					else
 						testing("bur7")

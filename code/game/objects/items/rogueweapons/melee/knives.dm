@@ -5,7 +5,7 @@
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	name = "hunting knife"
-	desc = ""
+	desc = "Loyal companion to hunters and poachers, from humble bone to truest steel, disembowel your prey with glee."
 	icon_state = "huntingknife"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "bone_dagger"
@@ -91,7 +91,7 @@
 /obj/item/rogueweapon/huntingknife/cleaver
 	force = 10
 	name = "cleaver"
-	desc = ""
+	desc = "A chef's tool turned armament, cleave off cumbersome flesh with rudimentary ease."
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	icon_state = "cleav"
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -102,12 +102,12 @@
 	slot_flags = ITEM_SLOT_HIP
 	thrown_bclass = BCLASS_CHOP
 	w_class = WEIGHT_CLASS_NORMAL
-	smeltresult = null
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/rogueweapon/huntingknife/cleaver/combat
 	force = 12
 	name = "knife"
-	desc = ""
+	desc = "A short blade that even the weakest of hands can aspire to do harm with."
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	icon_state = "combatknife"
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -118,7 +118,7 @@
 	slot_flags = ITEM_SLOT_HIP
 	thrown_bclass = BCLASS_CHOP
 	w_class = WEIGHT_CLASS_NORMAL
-	smeltresult = null
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/rogueweapon/huntingknife/cleaver/getonmobprop(tag)
 	. = ..()
@@ -137,13 +137,14 @@
 /obj/item/rogueweapon/huntingknife/idagger
 	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut)
 	name = "dagger"
+	desc = "Thin, sharp, pointed death."
 	force = 12
-	desc = ""
 	icon_state = "idagger"
 	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel
 	name = "dagger"
+	desc = "A dagger made of refined steel."
 	force = 14
 	icon_state = "sdagger"
 	smeltresult = null
@@ -153,6 +154,7 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
 	name = "dagger"
+	desc = "A dagger made of fine silver."
 	force = 12
 	icon_state = "sildagger"
 	smeltresult = null
@@ -186,19 +188,20 @@
 /obj/item/rogueweapon/huntingknife/stoneknife
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)
 	name = "stone knife"
-	desc = ""
+	desc = "A tool favored by the wood-elves, easy to make, useful for skinning the flesh of beast and man alike."
 	icon_state = "stone_knife"
 	smeltresult = null
 	max_integrity = 15
 	max_blade_int = 15
 	wdefense = 1
+	smeltresult = /obj/item/ash
 
 /obj/item/rogueweapon/knife/copperdagger
 	force = 8
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	name = "copper dagger"
-	desc = ""
+	desc = "A dagger of an older design, the copper serves decent enough."
 	icon_state = "cdagger"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "bone_dagger"
