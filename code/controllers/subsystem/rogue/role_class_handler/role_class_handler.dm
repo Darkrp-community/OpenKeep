@@ -140,14 +140,14 @@ SUBSYSTEM_DEF(role_class_handler)
 	H.cure_blind("advsetup")
 
 	//If we get any plus factor at all, we run the datums boost proc on the human also.
-	if(plus_factor) 
+	if(plus_factor)
 		picked_class.boost_by_plus_power(plus_factor, H)
 
 
 	// In retrospect, If I don't just delete these Ill have to actually attempt to keep track of when a byond browser window is actually open lol
 	// soooo..... this will be the place where we take it out, as it means they finished class selection, and we can safely delete the handler.
 	related_handler.ForceCloseMenus() // force menus closed
-	
+
 	// Remove the key from the list and with it the value too
 	class_select_handlers.Remove(related_handler.linked_client.ckey)
 	// Call qdel on it
@@ -159,13 +159,10 @@ SUBSYSTEM_DEF(role_class_handler)
 /datum/controller/subsystem/role_class_handler/proc/adjust_class_amount(datum/advclass/target_datum, amount)
 	target_datum.total_slots_occupied += amount
 
-	if((target_datum.total_slots_occupied >= target_datum.maximum_possible_slots)) // We just hit a cap, iterate all the class handlers and inform them.
-		for(var/CUCKS in class_select_handlers)
-			var/datum/class_select_handler/found_menu = class_select_handlers[CUCKS]
-			
-			if(target_datum in found_menu.rolled_classes) // We found the target datum in one of the classes they rolled aka in the list of options they got visible,
-				found_menu.rolled_class_is_full(target_datum) //  inform the datum of its error.
+	if(!(target_datum.maximum_possible_slots == -1)) // Is the class not set to infinite?
+		if((target_datum.total_slots_occupied >= target_datum.maximum_possible_slots)) // We just hit a cap, iterate all the class handlers and inform them.
+			for(var/CUCKS in class_select_handlers)
+				var/datum/class_select_handler/found_menu = class_select_handlers[CUCKS]
 
-
-
-
+				if(target_datum in found_menu.rolled_classes) // We found the target datum in one of the classes they rolled aka in the list of options they got visible,
+					found_menu.rolled_class_is_full(target_datum) //  inform the datum of its error.
