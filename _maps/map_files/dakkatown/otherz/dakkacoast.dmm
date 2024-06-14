@@ -54,6 +54,10 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach/boat)
+"fK" = (
+/obj/machinery/light/rogue/torchholder/l,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/outdoors/beach/boat)
 "fT" = (
 /obj/structure/bed/rogue/inn/double,
 /obj/item/bedsheet/rogue/fabric_double,
@@ -248,6 +252,10 @@
 	},
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/beach/boat/captain)
+"xS" = (
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/outdoors/beach/boat)
 "xU" = (
 /obj/structure/closet/crate/roguecloset/lord{
 	lockid = "guild"
@@ -313,6 +321,11 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/beach/boat/captain)
+"CM" = (
+/obj/structure/rack/rogue,
+/obj/item/rope,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/beach/boat)
 "CP" = (
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/beach/boat/captain)
@@ -2605,13 +2618,13 @@ rP
 El
 El
 Tz
+fK
 Tz
 Tz
 Tz
 Tz
 Tz
-Tz
-Tz
+fK
 Tz
 El
 El
@@ -2746,13 +2759,13 @@ rP
 El
 El
 Tz
-Fv
+Tz
 El
 HC
 HC
 HC
 El
-hH
+Tz
 Tz
 El
 El
@@ -2887,13 +2900,13 @@ rP
 El
 El
 Tz
+xS
 Tz
 Tz
 Tz
 Tz
 Tz
-Tz
-Tz
+xS
 Tz
 El
 El
@@ -9660,7 +9673,7 @@ eq
 su
 FM
 FM
-FM
+CM
 su
 BD
 zV
