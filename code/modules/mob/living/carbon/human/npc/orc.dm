@@ -14,12 +14,13 @@
 	possible_rmb_intents = list()
 
 /mob/living/carbon/human/species/orc/npc
-	aggressive = 1
+	aggressive=1
 	mode = AI_IDLE
 	dodgetime = 15 //they can dodge easily, but have a cooldown on it
 	canparry = TRUE
 	flee_in_pain = FALSE
-	wander = TRUE
+
+	wander = FALSE
 
 /mob/living/carbon/human/species/orc/npc/ambush
 	aggressive=1
@@ -82,7 +83,7 @@
 	apply_overlay(BODY_LAYER)
 	dna.species.update_damage_overlays()
 
-/mob/living/carbon/human/species/orc/proc/update_wearable()
+/mob/living/carbon/human/species/orc/npc/proc/update_wearable()
 	remove_overlay(ARMOR_LAYER)
 
 	var/list/standing = list()
@@ -100,17 +101,17 @@
 
 	apply_overlay(ARMOR_LAYER)
 
-/mob/living/carbon/human/species/orc/update_inv_head()
+/mob/living/carbon/human/species/orc/npc/update_inv_head()
 	update_wearable()
-/mob/living/carbon/human/species/orc/update_inv_armor()
+/mob/living/carbon/human/species/orc/npc/update_inv_armor()
 	update_wearable()
 
-/mob/living/carbon/human/species/orc/Initialize()
+/mob/living/carbon/human/species/orc/npc/Initialize()
 	. = ..()
 	addtimer(CALLBACK(src, .proc/after_creation), 10)
 	configure_mind()
 
-/mob/living/carbon/human/species/orc/proc/configure_mind()
+/mob/living/carbon/human/species/orc/npc/proc/configure_mind()
     if(!mind)
         mind = new /datum/mind(src)
 
@@ -121,13 +122,13 @@
     mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
     mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 
-/mob/living/carbon/human/species/orc/handle_combat()
+/mob/living/carbon/human/species/orc/npc/handle_combat()
 	if(mode == AI_HUNT)
 		if(prob(2))
 			emote("aggro")
 	. = ..()
 
-/mob/living/carbon/human/species/orc/after_creation()
+/mob/living/carbon/human/species/orc/npc/after_creation()
 	..()
 	gender = MALE
 	QDEL_NULL(sexcon)
@@ -164,7 +165,7 @@
 		if(O)
 			equipOutfit(O)
 
-/datum/species/orc
+/datum/species/orc/npc
 	name = "orc"
 	id = "orc"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
@@ -175,10 +176,10 @@
 	damage_overlay_type = ""
 	var/raceicon = "orc"
 
-/datum/species/orc/update_damage_overlays(var/mob/living/carbon/human/H)
+/datum/species/orc/npc/update_damage_overlays(var/mob/living/carbon/human/H)
 	return
 
-/datum/species/orc/regenerate_icons(var/mob/living/carbon/human/H)
+/datum/species/orc/npc/regenerate_icons(var/mob/living/carbon/human/H)
 //	H.cut_overlays()
 	H.icon_state = ""
 	if(H.notransform)
@@ -188,12 +189,12 @@
 	H.update_inv_legcuffed()
 	H.update_fire()
 	H.update_body()
-	var/mob/living/carbon/human/species/orc/G = H
+	var/mob/living/carbon/human/species/orc/npc/G = H
 	G.update_wearable()
 	H.update_transform()
 	return TRUE
 
-/datum/component/rot/corpse/orc/process()
+/datum/component/rot/corpse/orc/npc/process()
 	var/amt2add = 10 //1 second
 	if(last_process)
 		amt2add = ((world.time - last_process)/10) * amt2add
