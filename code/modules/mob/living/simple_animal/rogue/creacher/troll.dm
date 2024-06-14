@@ -45,7 +45,6 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/item/rogueweapon/battle
 
-
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/death(gibbed)
 	..()
 	update_icon()
