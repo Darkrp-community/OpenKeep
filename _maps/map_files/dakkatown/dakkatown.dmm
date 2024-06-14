@@ -253,9 +253,6 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/cell)
-"bh" = (
-/turf/open/floor/rogue/plank,
-/area/rogue/outdoors/town)
 "bk" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle{
 	dir = 1
@@ -4820,6 +4817,9 @@
 /obj/structure/fermenting_barrel,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
+"vl" = (
+/turf/open/floor/rogue/plank,
+/area/rogue/outdoors/town)
 "vm" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/cobble/mossy,
@@ -8987,6 +8987,9 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/garrison)
+"Ok" = (
+/turf/open/floor/rogue/plank/h,
+/area/rogue/outdoors/town)
 "Om" = (
 /obj/structure/roguewindow,
 /turf/open/floor/rogue/blocks,
@@ -9225,9 +9228,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/garrison)
-"Pk" = (
-/turf/open/floor/rogue/plank/h,
-/area/rogue/outdoors/town)
 "Pm" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/concrete,
@@ -56879,10 +56879,10 @@ yJ
 QV
 Ge
 Ge
-ps
+QV
 lO
 lO
-ps
+yJ
 Ge
 Ge
 yJ
@@ -57036,10 +57036,10 @@ yJ
 yJ
 TI
 TI
-ps
+yJ
 lO
 lO
-lO
+QV
 TI
 TI
 QV
@@ -64854,11 +64854,11 @@ Lj
 Lj
 Lj
 Lj
-bh
-bh
+vl
+vl
 Lj
-bh
-bh
+vl
+vl
 Lj
 Lj
 Lj
@@ -69295,7 +69295,7 @@ hb
 bX
 bX
 bX
-bh
+vl
 bX
 bX
 bX
@@ -69609,7 +69609,7 @@ bX
 bX
 bX
 bX
-bh
+vl
 bX
 hb
 hb
@@ -70554,7 +70554,7 @@ MS
 pl
 pl
 pl
-Pk
+Ok
 pl
 pl
 pl
@@ -71967,7 +71967,7 @@ ez
 pl
 pl
 pl
-Pk
+Ok
 pl
 pl
 pl
@@ -73068,7 +73068,7 @@ pl
 pl
 pl
 pl
-Pk
+Ok
 pl
 pl
 pl
@@ -73691,7 +73691,7 @@ iN
 iN
 iN
 iN
-bh
+vl
 bX
 bX
 hb
@@ -74008,7 +74008,7 @@ iN
 pl
 pl
 pl
-Pk
+Ok
 pl
 pl
 pl
@@ -74170,7 +74170,7 @@ bX
 bX
 pl
 pl
-Pk
+Ok
 pl
 pl
 pl
@@ -81182,7 +81182,7 @@ Lj
 Lj
 pl
 Lj
-bh
+vl
 Lj
 Lj
 Lj
@@ -81213,14 +81213,14 @@ Lj
 Lj
 Lj
 Lj
-sR
 pl
 pl
-pl
-pl
-pl
-pl
-pl
+Lj
+Lj
+Lj
+Lj
+vl
+vl
 Lj
 Lj
 Lj
@@ -81337,7 +81337,7 @@ Lj
 Lj
 Lj
 Lj
-bh
+vl
 Lj
 pl
 pl
@@ -81345,9 +81345,9 @@ Lj
 Lj
 Lj
 Lj
-bh
-bh
-bh
+vl
+vl
+vl
 Lj
 Lj
 Lj
@@ -81370,12 +81370,12 @@ Lj
 Lj
 Lj
 Lj
-sR
-pl
-pl
-pl
-pl
-pl
+vl
+vl
+Lj
+Lj
+Lj
+Lj
 pl
 pl
 Lj
@@ -81529,10 +81529,10 @@ bs
 qT
 pl
 pl
-pl
-pl
-pl
-pl
+qT
+qT
+qT
+qT
 pl
 pl
 Wa
