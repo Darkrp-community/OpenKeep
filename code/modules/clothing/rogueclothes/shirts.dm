@@ -41,6 +41,12 @@
 /obj/item/clothing/suit/roguetown/shirt/undershirt/red
 	color = "#851a16"
 
+/obj/item/clothing/suit/roguetown/shirt/undershirt/purple
+	color = CLOTHING_PURPLE
+
+/obj/item/clothing/suit/roguetown/shirt/undershirt/green
+	color = "#3c693c"
+
 /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	color = CLOTHING_RED
 
@@ -191,6 +197,9 @@
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/blue
 	color = CLOTHING_BLUE
+
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/green
+	color = "#3c693c"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
 	color = CLOTHING_PURPLE
