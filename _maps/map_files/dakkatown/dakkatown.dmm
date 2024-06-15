@@ -1959,6 +1959,10 @@
 	},
 /turf/open/floor/rogue/churchrough,
 /area/rogue/indoors/town/church/chapel)
+"iI" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/rogue/greenstone,
+/area/rogue/under/town/sewer)
 "iJ" = (
 /obj/structure/roguemachine/scomm{
 	pixel_y = 0;
@@ -2317,7 +2321,7 @@
 /area/rogue/indoors/town/dwarfin)
 "kk" = (
 /obj/structure/mineral_door/bars,
-/turf/open/floor/rogue/cobble/mossy,
+/turf/open/floor/rogue/greenstone,
 /area/rogue/under/town/sewer)
 "kl" = (
 /obj/machinery/light/rogue/wallfire/candle/r,
@@ -5877,6 +5881,10 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
+"Aj" = (
+/obj/structure/bars,
+/turf/open/floor/rogue/greenstone,
+/area/rogue/under/town/sewer)
 "Ak" = (
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town)
@@ -8091,7 +8099,7 @@
 /area/rogue/outdoors/rtfield)
 "Ko" = (
 /obj/item/roguecoin/gold,
-/turf/open/floor/rogue/cobble/mossy,
+/turf/open/floor/rogue/greenstone,
 /area/rogue/under/town/sewer)
 "Kq" = (
 /obj/structure/rack/rogue,
@@ -8916,7 +8924,7 @@
 /area/rogue/outdoors/exposed/church)
 "NT" = (
 /mob/living/simple_animal/hostile/rogue/werewolf,
-/turf/open/floor/rogue/cobble/mossy,
+/turf/open/floor/rogue/greenstone,
 /area/rogue/under/town/sewer)
 "NV" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat,
@@ -27820,11 +27828,11 @@ kt
 oj
 vm
 kt
-qO
-qO
-qO
-qO
-qO
+Aj
+Aj
+Aj
+Aj
+Aj
 oj
 kt
 kt
@@ -27978,10 +27986,10 @@ oj
 kt
 kt
 kk
-kt
+SM
 Ko
-vm
-qO
+iI
+Aj
 oj
 KZ
 kt
@@ -28134,11 +28142,11 @@ oj
 oj
 oj
 oj
-qO
-vm
+Aj
+iI
 NT
-kt
-qO
+SM
+Aj
 oj
 oj
 kt
@@ -28291,10 +28299,10 @@ kt
 oj
 Uy
 oj
-qO
+Aj
 Ko
-vm
-kt
+iI
+SM
 kk
 kt
 oj
@@ -28448,11 +28456,11 @@ kt
 oj
 kt
 kt
-qO
-qO
-qO
-qO
-qO
+Aj
+Aj
+Aj
+Aj
+Aj
 kt
 kt
 kt
