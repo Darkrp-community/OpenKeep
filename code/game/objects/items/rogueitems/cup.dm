@@ -43,7 +43,7 @@
 
 /obj/item/reagent_containers/glass/cup/silver
 	name = "silver goblet"
-	desc = "A silver goblet, smooth, ornate and artisanal."
+	desc = "A silver goblet, its surface adorned with intricate carvings and runes."
 	icon_state = "silver"
 	sellprice = 30
 
@@ -79,5 +79,5 @@
 
 /obj/item/reagent_containers/glass/cup/skull
 	name = "skull goblet"
-	desc = "A mug fit for you and only you."
+	desc = "The hollow eye sockets tell you of forgotten, dark rituals."
 	icon_state = "skull"
