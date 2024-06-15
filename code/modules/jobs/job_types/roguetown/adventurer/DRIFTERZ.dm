@@ -8,6 +8,7 @@
 	flag = WAVE_DRIFTER
 	department_flag = PEASANTS
 	faction = "Station"
+	show_in_credits = FALSE
 
 	// Everyone can be a homeless man looking for work!
 	allowed_races = ALL_RACES_LIST_NAMES
