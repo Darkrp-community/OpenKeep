@@ -41,6 +41,7 @@
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("intelligence", -1)
+	backpack_contents = list(/obj/item/reagent_containers/food/snacks/rogue/truffles)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
