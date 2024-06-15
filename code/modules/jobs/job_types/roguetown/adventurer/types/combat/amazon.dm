@@ -22,6 +22,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	shoes = /obj/item/clothing/shoes/roguetown/gladiator
 	if(prob(44))
@@ -40,7 +41,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	else
 		r_hand = /obj/item/rogueweapon/spear
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 	H.change_stat("strength", 2)
 	H.change_stat("intelligence", -1)
 	H.change_stat("endurance", 2)
