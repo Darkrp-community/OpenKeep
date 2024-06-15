@@ -1,6 +1,6 @@
 /datum/drifter_wave/drifters
 	// Name of the wave to be shown where relevant
-	wave_type_name = "Drifters"
+	wave_type_name = "Adventurers"
 	// Maximum playercount of wave
 	maximum_playercount = 6
 	// Tooltip when moused over on wave
@@ -15,7 +15,7 @@
 
 	// BUILD THE LIST!
 	drifter_dropzone_targets = list()
-	
+
 /datum/drifter_wave/drifters/build_dropzone()
 	// This will be full of turfs
 	var/list/potential_target_dropzones = list()
