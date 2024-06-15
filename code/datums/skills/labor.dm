@@ -2,6 +2,9 @@
 	name = "Labor"
 	desc = ""
 
+/datum/skill/labor/mining
+	name = "Mining"
+
 /datum/skill/labor/farming
 	name = "Farming"
 
