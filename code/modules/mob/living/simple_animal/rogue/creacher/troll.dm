@@ -43,7 +43,7 @@
 	dodgetime = 20
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
-	remains_type = /obj/item/rogueweapon/battle
+	remains_type = /obj/effect/decal/remains/human // Placeholder until Troll remains are sprited.
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/death(gibbed)
 	..()
