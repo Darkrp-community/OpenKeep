@@ -385,11 +385,6 @@
     icon_state ="book_random"
     base_icon_state = "book"
     bookfile = "whateveryourbookisnamed.json"
-
-/obj/item/book/rogue/random/Initialize()  // ...Book cover random generator
-    . = ..()
-    icon_state = "[icon_state][rand(1,8)_0]"
-
 /obj/item/book/rogue/random/vownecrapage
 	name = "Necra's Vow of Silence"
 	icon_state = "book8_0"
