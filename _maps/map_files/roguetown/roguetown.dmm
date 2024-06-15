@@ -7390,12 +7390,6 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/dwarfin)
-"kkD" = (
-/obj/machinery/light/rogue/wallfire{
-	pixel_y = 32
-	},
-/turf/open/floor/carpet/royalblack,
-/area/rogue/indoors/town/manor)
 "klx" = (
 /obj/structure/fluff/railing/border{
 	dir = 1;
@@ -7562,17 +7556,6 @@
 	icon_state = "horzw"
 	},
 /area/rogue/under/town/basement)
-"kyJ" = (
-/obj/machinery/light/rogue/wallfire/candle/l,
-/obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
-	},
-/obj/item/book/rogue/law,
-/obj/item/candle/yellow/lit,
-/obj/item/toy/cards/deck,
-/turf/open/floor/rogue/woodturned,
-/area/rogue/indoors/town/manor)
 "kyN" = (
 /obj/structure/mineral_door/wood/deadbolt,
 /turf/open/floor/rogue/cobble,
@@ -7789,13 +7772,6 @@
 /obj/structure/table/wood{
 	dir = 10;
 	icon_state = "largetable"
-	},
-/turf/open/floor/rogue/woodturned,
-/area/rogue/indoors/town/manor)
-"kND" = (
-/obj/structure/chair/wood/rogue{
-	icon_state = "chair2";
-	dir = 1
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
@@ -8868,14 +8844,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
-"mrQ" = (
-/obj/structure/mineral_door/wood{
-	icon_state = "wcv";
-	locked = 1;
-	lockid = "manor"
-	},
-/turf/open/floor/rogue/woodturned,
-/area/rogue/indoors/town/manor)
 "mrS" = (
 /obj/item/reagent_containers/powder/flour/salt,
 /turf/open/floor/rogue/cobble,
@@ -12172,16 +12140,6 @@
 	dir = 1
 	},
 /area/rogue/outdoors/mountains)
-"qRe" = (
-/obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
-	},
-/obj/item/clothing/mask/cigarette/rollie,
-/obj/item/clothing/mask/cigarette/rollie,
-/obj/item/reagent_containers/glass/bottle/rogue/wine,
-/turf/open/floor/rogue/woodturned,
-/area/rogue/indoors/town/manor)
 "qRp" = (
 /obj/effect/landmark/start/beastmonger,
 /turf/open/floor/rogue/ruinedwood{
@@ -14672,10 +14630,6 @@
 	},
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church)
-"uCP" = (
-/obj/item/roguebin/water,
-/turf/open/floor/rogue/woodturned,
-/area/rogue/indoors/town/manor)
 "uDw" = (
 /obj/effect/landmark/start/monk,
 /turf/open/floor/rogue/hexstone,
@@ -14750,12 +14704,6 @@
 /obj/effect/decal/cobbleedge,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
-"uHh" = (
-/obj/structure/closet/crate/chest,
-/obj/item/rope/chain,
-/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
-/turf/open/floor/carpet/royalblack,
-/area/rogue/indoors/town/manor)
 "uHp" = (
 /obj/structure/bed/rogue,
 /obj/effect/landmark/start/prisoner,
@@ -52153,7 +52101,7 @@ lxt
 dnj
 vuX
 vcC
-kyJ
+aHZ
 soA
 oJC
 oEQ
@@ -52464,7 +52412,7 @@ lcA
 lcA
 kyR
 lxt
-kkD
+aOB
 yhr
 yhr
 yhr
@@ -81112,21 +81060,21 @@ oiP
 oiP
 oiP
 oiP
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
 doW
 doW
 doW
@@ -81278,12 +81226,12 @@ oiP
 oiP
 oiP
 oiP
-doW
-doW
-doW
-doW
-doW
-doW
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
 doW
 doW
 doW
@@ -104823,20 +104771,20 @@ mtD
 mtD
 mtD
 mtD
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+mtD
+mtD
+mtD
+mtD
+mtD
+mtD
 uqu
 uqu
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
 doW
 doW
 doW
@@ -104980,20 +104928,20 @@ mtD
 mtD
 mtD
 mtD
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+mtD
+mtD
+mtD
+mtD
+mtD
+mtD
 uqu
 uqu
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
 doW
 doW
 doW
@@ -105137,20 +105085,20 @@ mtD
 mtD
 mtD
 mtD
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+mtD
+mtD
+mtD
+mtD
+mtD
 uqu
 uqu
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
 doW
 doW
 doW
@@ -105294,20 +105242,20 @@ mtD
 mtD
 mtD
 mtD
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+mtD
+mtD
+mtD
+mtD
+mtD
 uqu
 uqu
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
 doW
 doW
 doW
@@ -105451,20 +105399,20 @@ oiP
 oiP
 oiP
 oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
 uqu
 uqu
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
 doW
 doW
 doW
@@ -105608,20 +105556,20 @@ oiP
 oiP
 oiP
 oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
 uqu
 uqu
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
 doW
 doW
 doW
@@ -105765,20 +105713,20 @@ oiP
 oiP
 oiP
 oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
 uqu
 uqu
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
 doW
 doW
 doW
@@ -105917,25 +105865,25 @@ oiP
 oiP
 oiP
 oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+oiP
+mtD
 mtD
 mtD
 mtD
 mtD
 mtD
 uqu
-uqu
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
-doW
 doW
 doW
 doW
@@ -106091,7 +106039,7 @@ mtD
 mtD
 mtD
 mtD
-uqu
+mtD
 uqu
 doW
 doW
@@ -106248,7 +106196,7 @@ mtD
 mtD
 mtD
 mtD
-uqu
+mtD
 uqu
 doW
 doW
@@ -106405,7 +106353,7 @@ mtD
 mtD
 mtD
 mtD
-uqu
+mtD
 uqu
 doW
 doW
@@ -106562,7 +106510,7 @@ mtD
 mtD
 mtD
 mtD
-uqu
+mtD
 uqu
 doW
 doW
@@ -106719,7 +106667,7 @@ mtD
 mtD
 mtD
 mtD
-uqu
+mtD
 uqu
 doW
 doW
@@ -106876,7 +106824,7 @@ mtD
 mtD
 mtD
 mtD
-uqu
+mtD
 uqu
 doW
 doW
