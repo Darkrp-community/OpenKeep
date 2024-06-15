@@ -10,7 +10,7 @@
 	rot_type = /datum/component/rot/corpse/orc
 	var/gob_outfit = /datum/outfit/job/roguetown/npc/orc
 	ambushable = FALSE
-	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw, /datum/intent/simple/bite)
+	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw, /datum/intent/simple/bite, /datum/intent/kick)
 	possible_rmb_intents = list()
 
 /mob/living/carbon/human/species/orc/npc
@@ -83,7 +83,7 @@
 	apply_overlay(BODY_LAYER)
 	dna.species.update_damage_overlays()
 
-/mob/living/carbon/human/species/orc/npc/proc/update_wearable()
+/mob/living/carbon/human/species/orc/proc/update_wearable()
 	remove_overlay(ARMOR_LAYER)
 
 	var/list/standing = list()
@@ -101,17 +101,24 @@
 
 	apply_overlay(ARMOR_LAYER)
 
-/mob/living/carbon/human/species/orc/npc/update_inv_head()
+/mob/living/carbon/human/species/orc/update_inv_head()
 	update_wearable()
-/mob/living/carbon/human/species/orc/npc/update_inv_armor()
+/mob/living/carbon/human/species/orc/update_inv_armor()
 	update_wearable()
 
-/mob/living/carbon/human/species/orc/npc/Initialize()
+/mob/living/carbon/human/species/orc/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/after_creation), 10)
-	configure_mind()
+	spawn(10)
+		after_creation()
+	//addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
 
-/mob/living/carbon/human/species/orc/npc/proc/configure_mind()
+/mob/living/carbon/human/species/orc/handle_combat()
+	if(mode == AI_HUNT)
+		if(prob(2))
+			emote("aggro")
+	. = ..()
+
+/mob/living/carbon/human/species/orc/proc/configure_mind()
     if(!mind)
         mind = new /datum/mind(src)
 
@@ -122,13 +129,13 @@
     mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
     mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 
-/mob/living/carbon/human/species/orc/npc/handle_combat()
+/mob/living/carbon/human/species/orc/handle_combat()
 	if(mode == AI_HUNT)
 		if(prob(2))
 			emote("aggro")
 	. = ..()
 
-/mob/living/carbon/human/species/orc/npc/after_creation()
+/mob/living/carbon/human/species/orc/after_creation()
 	..()
 	gender = MALE
 	QDEL_NULL(sexcon)
@@ -165,7 +172,7 @@
 		if(O)
 			equipOutfit(O)
 
-/datum/species/orc/npc
+/datum/species/orc
 	name = "orc"
 	id = "orc"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
@@ -176,10 +183,10 @@
 	damage_overlay_type = ""
 	var/raceicon = "orc"
 
-/datum/species/orc/npc/update_damage_overlays(var/mob/living/carbon/human/H)
+/datum/species/orc/update_damage_overlays(var/mob/living/carbon/human/H)
 	return
 
-/datum/species/orc/npc/regenerate_icons(var/mob/living/carbon/human/H)
+/datum/species/orc/regenerate_icons(var/mob/living/carbon/human/H)
 //	H.cut_overlays()
 	H.icon_state = ""
 	if(H.notransform)
@@ -189,12 +196,12 @@
 	H.update_inv_legcuffed()
 	H.update_fire()
 	H.update_body()
-	var/mob/living/carbon/human/species/orc/npc/G = H
+	var/mob/living/carbon/human/species/orc/G = H
 	G.update_wearable()
 	H.update_transform()
 	return TRUE
 
-/datum/component/rot/corpse/orc/npc/process()
+/datum/component/rot/corpse/orc/process()
 	var/amt2add = 10 //1 second
 	if(last_process)
 		amt2add = ((world.time - last_process)/10) * amt2add
@@ -247,13 +254,16 @@
 	switch(loadout)
 		if(1) //tribal spear
 			r_hand = /obj/item/rogueweapon/spear/stone
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 		if(2) //tribal axe
 			r_hand = /obj/item/rogueweapon/sword/iron
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 		if(3) //tribal club
-			r_hand = /obj/item/rogueweapon/mace/cudgel
+			r_hand = /obj/item/rogueweapon/mace/spiked//removed the cudgel because it's way too good at knock people out
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			if(prob(10))
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				r_hand = /obj/item/rogueweapon/spear/stone
@@ -263,19 +273,22 @@
 			if(prob(50))
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				r_hand = /obj/item/rogueweapon/mace/spiked
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+				head = /obj/item/clothing/head/roguetown/helmet/leather
 			if(prob(30))
 				l_hand = /obj/item/rogueweapon/sword/iron
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
+				head = /obj/item/clothing/head/roguetown/helmet/leather
 			if(prob(23))
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 				r_hand = /obj/item/rogueweapon/battle
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+				head = /obj/item/clothing/head/roguetown/helmet/leather
 			if(prob(80))
-				head = /obj/item/clothing/head/roguetown/helmet/orc
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+				head = /obj/item/clothing/head/roguetown/helmet/leather
 		if(5) //heavy armored sword/flail/shields
 			if(prob(30))
 				r_hand = /obj/item/rogueweapon/battle
