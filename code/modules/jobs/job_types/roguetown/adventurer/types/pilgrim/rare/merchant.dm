@@ -60,3 +60,4 @@
 			backpack_contents = list(/obj/item/roguegem/yellow, /obj/item/roguegem/yellow, /obj/item/roguegem/green, /obj/item/roguegem/green, /obj/item/roguegem/violet)
 			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 1, TRUE)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
