@@ -621,13 +621,14 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				if(!check_withdraw(-1500))
 					to_chat(user, "I don't have enough vitae!")
 					return
+				user.playsound_local(get_turf(src), 'sound/misc/vcraft.ogg', 100, FALSE, pressure_affected = FALSE)
 				if(do_after(user, 100))
 					lord.handle_vitae(-1500)
 					new /obj/item/clothing/under/roguetown/platelegs/vampire (src.loc)
 					new /obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire (src.loc)
 					new /obj/item/clothing/shoes/roguetown/boots/armor/vampire (src.loc)
 					new /obj/item/clothing/head/roguetown/helmet/heavy/guard (src.loc)
-					user.playsound_local(get_turf(src), 'sound/misc/vcraft.ogg', 100, FALSE, pressure_affected = FALSE)
+
 
 /obj/structure/vampire/bloodpool/proc/update_pool(change)
 	var/datum/game_mode/chaosmode/C = SSticker.mode
