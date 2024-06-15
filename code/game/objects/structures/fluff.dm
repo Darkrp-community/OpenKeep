@@ -954,6 +954,13 @@
 				return
 	..()
 
+/obj/structure/fluff/statue/mannequin
+	name = "mannequin"
+	desc = "A creepy looking person-sized doll... did its eye just move?"
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "mannequin"
+	max_integrity = 100
+
 /obj/structure/fluff/psycross
 	name = "pantheon cross"
 	icon_state = "psycross"
