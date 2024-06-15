@@ -44,13 +44,13 @@
 	switch(randy)
 		if(1 to 2)
 			beltr = /obj/item/rogueweapon/woodcut
-			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 		if(3 to 4)
 			beltr = /obj/item/rogueweapon/sword/iron
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		if(5)
 			beltr = /obj/item/rogueweapon/mace/woodclub
-			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 	H.change_stat("strength", 3)
 	H.change_stat("endurance", 2)
 	H.change_stat("constitution", 2)
