@@ -450,6 +450,17 @@
 /obj/structure/fluff/psycross,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/manor)
+"aHZ" = (
+/obj/machinery/light/rogue/wallfire/candle/l,
+/obj/structure/table/wood{
+	icon_state = "tablewood1";
+	dir = 1
+	},
+/obj/item/book/rogue/law,
+/obj/item/candle/yellow/lit,
+/obj/item/toy/cards/deck,
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/manor)
 "aIs" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
@@ -555,6 +566,12 @@
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
+/area/rogue/indoors/town/manor)
+"aOB" = (
+/obj/machinery/light/rogue/wallfire{
+	pixel_y = 32
+	},
+/turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor)
 "aOX" = (
 /obj/structure/fluff/railing/border{
@@ -7775,6 +7792,13 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
+"kND" = (
+/obj/structure/chair/wood/rogue{
+	icon_state = "chair2";
+	dir = 1
+	},
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/manor)
 "kOx" = (
 /obj/effect/decal/cobbleedge{
 	dir = 8
@@ -8844,6 +8868,14 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
+"mrQ" = (
+/obj/structure/mineral_door/wood{
+	icon_state = "wcv";
+	locked = 1;
+	lockid = "manor"
+	},
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/manor)
 "mrS" = (
 /obj/item/reagent_containers/powder/flour/salt,
 /turf/open/floor/rogue/cobble,
@@ -12140,6 +12172,16 @@
 	dir = 1
 	},
 /area/rogue/outdoors/mountains)
+"qRe" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1";
+	dir = 1
+	},
+/obj/item/clothing/mask/cigarette/rollie,
+/obj/item/clothing/mask/cigarette/rollie,
+/obj/item/reagent_containers/glass/bottle/rogue/wine,
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/manor)
 "qRp" = (
 /obj/effect/landmark/start/beastmonger,
 /turf/open/floor/rogue/ruinedwood{
@@ -14630,6 +14672,10 @@
 	},
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church)
+"uCP" = (
+/obj/item/roguebin/water,
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/manor)
 "uDw" = (
 /obj/effect/landmark/start/monk,
 /turf/open/floor/rogue/hexstone,
@@ -14705,10 +14751,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "uHh" = (
-/obj/item/book/rogue/law,
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/obj/structure/closet/crate/chest,
+/obj/item/rope/chain,
+/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
+/turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor)
 "uHp" = (
 /obj/structure/bed/rogue,
@@ -51483,7 +51529,7 @@ nfH
 nfH
 oJC
 lxt
-yhr
+sTA
 yhr
 ojC
 xrt
@@ -52893,7 +52939,7 @@ rtg
 glV
 fUf
 deQ
-uHh
+deQ
 bim
 pfo
 tpv
