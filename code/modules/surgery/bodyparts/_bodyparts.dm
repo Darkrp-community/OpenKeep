@@ -92,7 +92,7 @@
 	return list(/datum/intent/grab/move, /datum/intent/grab/twist, /datum/intent/grab/smash)
 
 /obj/item/bodypart/chest/grabbedintents(mob/living/user, precise)
-	if(used_limb == BODY_ZONE_PRECISE_GROIN)
+	if(precise == BODY_ZONE_PRECISE_GROIN)
 		return list(/datum/intent/grab/move, /datum/intent/grab/twist, /datum/intent/grab/shove)
 	return list(/datum/intent/grab/move, /datum/intent/grab/shove)
 
