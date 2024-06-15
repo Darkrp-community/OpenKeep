@@ -623,16 +623,11 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 					return
 				if(do_after(user, 100))
 					lord.handle_vitae(-1500)
-			var/list/armorpieces = list(
-				/obj/item/clothing/under/roguetown/platelegs/vampire,
-				/obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire,
-				/obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire,
-				/obj/item/clothing/shoes/roguetown/boots/armor/vampire,
-				/obj/item/clothing/head/roguetown/helmet/heavy/guard
-			)
-			for(var/armorType in armorpieces)
-				new armorType(src.loc)
-			user.playsound_local(get_turf(src), 'sound/misc/vcraft.ogg', 100, FALSE, pressure_affected = FALSE)
+					new /obj/item/clothing/under/roguetown/platelegs/vampire (src.loc)
+					new /obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire (src.loc)
+					new /obj/item/clothing/shoes/roguetown/boots/armor/vampire (src.loc)
+					new /obj/item/clothing/head/roguetown/helmet/heavy/guard (src.loc)
+					user.playsound_local(get_turf(src), 'sound/misc/vcraft.ogg', 100, FALSE, pressure_affected = FALSE)
 
 /obj/structure/vampire/bloodpool/proc/update_pool(change)
 	var/datum/game_mode/chaosmode/C = SSticker.mode
@@ -1305,6 +1300,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	charge_max = 5 SECONDS
 	include_user = 0
 	max_targets = 0
+	cooldown_min = 100 // 10 second cooldown
 
 /obj/effect/proc_holder/spell/targeted/transfix/master/cast(list/targets, mob/user = usr)
 	var/bloodskill = user.mind.get_skill_level(/datum/skill/magic/blood)
