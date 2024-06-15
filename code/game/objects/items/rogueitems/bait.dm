@@ -1,7 +1,7 @@
 
 /obj/item/bait
 	name = "bag of bait"
-	desc = "A deployable bag of bait used by hunters to attract beasts within the wilds."
+	desc = "Horrid smell to me, wonderful smell to big game."
 	icon_state = "bait"
 	icon = 'icons/roguetown/items/misc.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
@@ -90,7 +90,7 @@
 
 /obj/item/bait/sweet
 	name = "bag of sweetbait"
-	desc = "A deployable bag of bait used by hunters to attract prey within the wilds."
+	desc = "This bait doesn't smell as bad. I might even try a bite.."
 	icon_state = "baitp"
 	attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/goat = 33,
 							/mob/living/simple_animal/hostile/retaliate/rogue/goatmale = 33,
