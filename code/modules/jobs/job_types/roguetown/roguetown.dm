@@ -19,7 +19,7 @@
 		for(var/X in GLOB.noble_positions)
 			peopleiknow += X
 			peopleknowme += X
-		for(var/X in GLOB.youngfolk_positions)
+		for(var/X in GLOB.folkfolk_positions)
 			peopleiknow += X
 			peopleknowme += X
 

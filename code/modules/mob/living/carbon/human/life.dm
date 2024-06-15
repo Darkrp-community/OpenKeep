@@ -100,7 +100,7 @@
 			else
 				if(mob_timers["slo"])
 					mob_timers["slo"] = null
-					
+
 		if(dna?.species)
 			dna.species.spec_life(src) // for mutantraces
 
@@ -129,7 +129,7 @@
 	if(dna?.species)
 		if(STUBBLE in dna.species.species_traits)
 			if(gender == MALE)
-				if(age != AGE_YOUNG)
+				if(prob(50))
 					has_stubble = TRUE
 					update_hair()
 

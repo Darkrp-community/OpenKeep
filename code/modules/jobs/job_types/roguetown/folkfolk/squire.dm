@@ -1,7 +1,7 @@
 /datum/job/roguetown/squire
 	title = "Squire"
 	flag = SQUIRE
-	department_flag = YOUNGFOLK
+	department_flag = FOLKFOLK
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
@@ -11,7 +11,7 @@
 		"Half-Elf"
 	)
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_ages = list(AGE_YOUNG)
+	allowed_ages = list(AGE_ADULT)
 
 	tutorial = "Mom n Da said you were going to be something, they had better aspirations for you than the life of a peasant. Your friends and you practiced the basics in the field, swordfighting with sticks, chasing rabbits with grain flail and helping around the house lifting heavy bags of grain. The Captain took notice of your potential and brought you on as his personal ward. Youre going to be something someday. "
 

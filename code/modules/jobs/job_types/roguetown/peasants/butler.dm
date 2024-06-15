@@ -14,7 +14,7 @@
 		"Dwarf",
 		"Aasimar"
 	)
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	allowed_ages = ALL_AGES_LIST
 
 	tutorial = "Servitude unto death, your blade a charcuterie of artisanal cheeses and meat, your armor wit and classical training. You dont consider yourself a slave, if anything youre a part of the family now. You alone have raised Kings, Queens, Princesses and Princees; without you the royals would have all starved to death."
 

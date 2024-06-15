@@ -1,7 +1,7 @@
 /datum/job/roguetown/servant
 	title = "Servant"
 	flag = SERVANT
-	department_flag = YOUNGFOLK
+	department_flag = FOLKFOLK
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
@@ -10,7 +10,7 @@
 		"Humen",
 		"Half-Elf"
 	)
-	allowed_ages = list(AGE_YOUNG)
+	allowed_ages = list(AGE_ADULT)
 
 	tutorial = "Granted a comfortable life in the Lord's manor as one of his servants! You will appreciate it more and more every day as you clean the floors and are beaten for nothing."
 
