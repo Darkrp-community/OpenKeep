@@ -127,6 +127,7 @@
 
 /obj/structure/flora/roguetree/stump/burnt
 	name = "tree stump"
+	desc = "This stump is burnt. Maybe someone is trying to get coal the easy way."
 	icon_state = "st1"
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	stump_type = null
@@ -150,6 +151,7 @@
 
 /obj/structure/flora/roguetree/stump
 	name = "tree stump"
+	desc = "Someone cut this tree down."
 	icon_state = "t1stump"
 	opacity = 0
 	max_integrity = 100
@@ -211,13 +213,13 @@
 
 /obj/structure/flora/roguegrass/water
 	name = "grass"
-	desc = "Murky grass."
+	desc = "This grass is sodden and muddy."
 	icon_state = "swampgrass"
 	max_integrity = 5
 
 /obj/structure/flora/roguegrass/water/reeds
 	name = "reeds"
-	desc = "A collection of long thin reeds."
+	desc = "This plant thrives in water, and shelters dangers."
 	icon_state = "reeds"
 	opacity = 1
 	max_integrity = 10
@@ -569,6 +571,7 @@
 
 /obj/structure/flora/shroomstump
 	name = "shroom stump"
+	desc = "It was a very happy shroom. Not anymore."
 	icon_state = "mush1stump"
 	desc = "Here once stood a mighty nether-cap, you feel a great sadness."
 	opacity = 0
