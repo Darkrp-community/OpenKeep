@@ -1,14 +1,14 @@
-/datum/advclass/woodcutter
+/datum/advclass/pilgrim/woodcutter
 	name = "Woodcutter"
-	allowed_sexes = list(MALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list("Humen",
+	"Elf",
+	"Dark Elf",
+	"Half-Elf",
+	"Tiefling",
+	"Dwarf",
+	"Aasimar"
+
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/woodcutter
 	isvillager = TRUE
