@@ -1,7 +1,7 @@
 /obj/item/flint
 	name = "flint"
+	desc = "A jagged piece of flint, witness to the dances of fire and stone."
 	icon_state = "flint"
-	desc = "A convenience, a flicker of light in a world of darkness."
 	gripped_intents = null
 	//dropshrink = 0.75
 	force = 0
