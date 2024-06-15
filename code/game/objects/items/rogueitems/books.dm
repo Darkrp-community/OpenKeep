@@ -371,6 +371,12 @@
 	base_icon_state = "book8"
 	bookfile = "tales14.json"
 
+/obj/item/book/rogue/vownecrapage
+	name = "Necra's Vow of Silence"
+	icon_state = "book8_0"
+	base_icon_state = "book8"
+	bookfile = "VowOfNecraPage.json"
+
 /obj/item/book/rogue/playerbook
 	var/player_book_text = "moisture in the air or water leaks have rendered the carefully written caligraphy of this book unreadable"
 	var/player_book_title = "unknown title"
