@@ -1,16 +1,15 @@
 /datum/advclass/pilgrim/hunter
 	name = "Hunter"
-	tutorial = "Peasants that thrive on the woods, hunting creechers for pelt and hide, \
-				or the boons of Dendor for their meat to sell, or consume."
-	allowed_sexes = list(MALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
+	allowed_sexes = list("male", "female")
+	allowed_races = list("Humen",
+	"Humen",
+	"Elf",
+	"Elf",
+	"Half-Elf",
+	"Tiefling",
+	"Dark Elf",
+	"Dwarf",
+	"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/hunter
 	isvillager = TRUE

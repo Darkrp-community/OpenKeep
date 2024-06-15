@@ -2074,3 +2074,51 @@
 	color = "#E6E6DA"
 	taste_mult = 0
 
+//casting system
+
+/datum/reagent/liquidbronze
+	name = "Liquid Bronze"
+	description = ""
+	reagent_state = LIQUID
+	color = "#af773e"
+	taste_description = "LIQUID FIRE"
+
+/datum/reagent/liquidbronze/on_mob_life(mob/living/carbon/M)
+	M.adjust_blurriness(10)
+	M.adjustFireLoss(20)
+	M.add_nausea(30)
+	..()
+
+/datum/reagent/liquidtin
+	name = "Liquid Tin"
+	description = ""
+	reagent_state = LIQUID
+	color = "#7e868d"
+	taste_description = "THROAT IGNITION"
+
+/datum/reagent/liquidtin/on_mob_life(mob/living/carbon/M)
+	M.adjust_blurriness(10)
+	M.adjustFireLoss(20)
+	M.add_nausea(30)
+	..()
+
+/datum/reagent/liquidcopper
+	name = "Liquid Copper"
+	description = ""
+	reagent_state = LIQUID
+	color = "#7e868d"
+	taste_description = "ETERNAL DAMNATION"
+
+/datum/reagent/liquidcopper/on_mob_life(mob/living/carbon/M)
+	M.adjust_blurriness(10)
+	M.adjustFireLoss(20)
+	M.add_nausea(30)
+	..()
+
+/datum/chemical_reaction/liquidbronze
+	name = "liquidbronze"
+	id = /datum/reagent/liquidbronze
+	results = list(/datum/reagent/liquidbronze = 4)
+	required_reagents = list(/datum/reagent/liquidtin = 1, /datum/reagent/liquidcopper = 3)
+	required_container = /obj/item/reagent_containers/crucible
+	required_temp = 913

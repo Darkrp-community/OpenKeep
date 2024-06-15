@@ -156,7 +156,7 @@
 	body_parts_covered = FEET
 	icon_state = "elfshoes"
 	item_state = "elfshoes"
-	allowed_race = list("elf", "half-elf", "dark elf")
+	allowed_race = list("elf", "half-elf", "dark elf", "abyssariad")
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	color = null
 	blocksound = PLATEHIT

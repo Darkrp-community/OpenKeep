@@ -148,3 +148,25 @@
 	body_parts_covered = FACE|EARS|EYES|MOUTH|NECK
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	sewrepair = TRUE
+
+/obj/item/clothing/mask/rogue/facemask/banished
+	name = "dishonor mask"
+	desc = "The veil of the dishonored, for those unentitled to be called Beastkins."
+	icon_state = "bmask"
+	max_integrity = 200
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	resistance_flags = FIRE_PROOF
+	armor = list("melee" = 50, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+
+/obj/item/clothing/mask/rogue/facemask/banished/dishonor/Initialize()
+	. = ..()
+	name = "dishonor mask"
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)

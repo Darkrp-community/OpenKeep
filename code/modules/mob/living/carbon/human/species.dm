@@ -35,6 +35,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/custom_clothes = FALSE //append species id to clothing sprite name
 	var/use_f = FALSE //males use female clothes. for elves
+	var/use_m = FALSE //females use male clothes for oni
 
 	var/datum/voicepack/soundpack_m = /datum/voicepack/male
 	var/datum/voicepack/soundpack_f = /datum/voicepack/female
@@ -342,6 +343,22 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		spec_hair += "None"
 		return spec_hair
 
+/datum/species/proc/horns_list()
+	if(!GLOB.horns_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/horns, GLOB.horns_list)
+	var/list/spec_hair = list()
+	var/datum/sprite_accessory/X
+	for(var/O in GLOB.horns_list)
+		X = GLOB.horns_list[O]
+		if(X)
+			if(id in X.specuse)
+				spec_hair += X.name
+	if(spec_hair.len)
+		return spec_hair
+	else
+		spec_hair += "None"
+		return spec_hair
+
 /datum/species/proc/tails_list()
 	if(!GLOB.tails_list_human.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails, GLOB.tails_list_human)
@@ -508,6 +525,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			features["ears"] = default_features["ears"]
 		if(default_features["tail_human"])
 			features["tail_human"] = default_features["tail_human"]
+		if(default_features["horns"])
+			features["horns"] = default_features["horns"]
 		H.dna.features = features.Copy()
 	H.update_body()
 	H.update_hair()

@@ -7,15 +7,17 @@ GLOBAL_LIST_EMPTY(billagerspawns)
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 5
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
-	)
+	allowed_races = list("Humen",
+	"Elf",
+	"Half-Elf",
+	"Dwarf",
+	"Tiefling",
+	"Dark Elf",
+	"Aasimar",
+	"Kitsune",
+	"Tengu",
+	"Oni",
+	"Kappa")
 	tutorial = "Hero of Nothing, Adventurer by trade. Whatever led you to this fate is up to the wind to decide, and youve never fancied yourself for much other than the thrill. Someday your pride is going to catch up to you, and youre going to find out why most men dont end up in the annals of history."
 
 

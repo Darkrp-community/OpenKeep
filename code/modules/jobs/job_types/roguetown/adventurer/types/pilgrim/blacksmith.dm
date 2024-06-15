@@ -3,14 +3,17 @@
 	tutorial = "Hardy worksmen that are at home in the forge, dedicating their lives \
 	to ceaselessly toil in dedication to Malum."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
+	allowed_races = list("Humen",
+	"Elf",
+	"Half-Elf",
+	"Dwarf",
+	"Tiefling",
+	"Dark Elf",
+	"Aasimar",
+	"Kitsune",
+	"Tengu",
+	"Oni",
+	"Kappa")
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/blacksmith
 	isvillager = TRUE

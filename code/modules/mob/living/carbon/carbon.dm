@@ -649,6 +649,17 @@
 		var/atom/throw_target = get_edge_target_turf(guts, dir)
 		guts.throw_at(throw_target, power, 4, src)
 
+/mob/living/carbon/proc/sepuku(power = 2, amt = 1)
+	for(var/i in 1 to amt)
+		if(!internal_organs.len)
+			break
+		var/obj/item/organ/guts = pick("/obj/item/organ/heart","/obj/item/organ/lungs","/obj/item/organ/stomach")
+		var/turf/T = get_turf(src)
+		guts.Remove(src)
+		guts.forceMove(T)
+		var/atom/throw_target = get_edge_target_turf(guts, dir)
+		guts.throw_at(throw_target, power, 2, src)
+		new /obj/effect/gibspawner/generic(src)
 
 /mob/living/carbon/fully_replace_character_name(oldname,newname)
 	..()

@@ -261,7 +261,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
 	blocksound = SOFTHIT
 	allowed_sex = list("female")
-	allowed_race = list("human", "tiefling", "elf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "abyssariad")
 	blade_dulling = DULLING_BASHCHOP
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
@@ -302,7 +302,7 @@
 	name = "arming jacket"
 	icon_state = "dgamb"
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 
 /obj/item/clothing/suit/roguetown/armor/leather
 	name = "leather armor"
@@ -391,7 +391,7 @@
 	icon_state = "nightman"
 	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/hand
@@ -582,3 +582,17 @@
 		AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/fullplate (1).ogg',\
 													'sound/foley/footsteps/armor/fullplate (2).ogg',\
 													'sound/foley/footsteps/armor/fullplate (3).ogg'), 100)
+
+//casting armor
+
+/obj/item/clothing/suit/roguetown/armor/plate/scale
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "copper scalemail"
+	desc = ""
+	body_parts_covered = CHEST|VITALS|GROIN|LEGS
+	allowed_sex = list(MALE, FEMALE)
+	icon_state = "lamellar"
+	max_integrity = 200
+	smeltresult = /obj/item/ingot/steel
+	equip_delay_self = 40
+	armor_class = ARMOR_CLASS_MEDIUM

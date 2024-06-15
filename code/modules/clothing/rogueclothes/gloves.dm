@@ -119,7 +119,7 @@
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT)
 	resistance_flags = null
-	allowed_race = list("elf", "half-elf", "dark elf")
+	allowed_race = list("elf", "half-elf", "dark elf", "abyssariad")
 	blocksound = PLATEHIT
 	body_parts_covered = HANDS
 	max_integrity = 400

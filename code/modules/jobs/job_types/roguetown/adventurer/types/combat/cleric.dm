@@ -3,14 +3,17 @@
 	name = "Cleric"
 	tutorial = "Clerics are wandering warriors of the Gods, an asset to any party."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen", 
-		"Elf", 
-		"Half-Elf",
-		"Dwarf", 
-		"Dark Elf",
-		"Aasimar"
-	)
+	allowed_races = list("Humen",
+	"Elf",
+	"Half-Elf",
+	"Dwarf",
+	"Tiefling",
+	"Dark Elf",
+	"Aasimar",
+	"Kitsune",
+	"Tengu",
+	"Oni",
+	"Kappa")
 	allowed_patrons = list("Astrata", "Dendor", "Necra")
 	ispilgrim = FALSE
 	outfit = /datum/outfit/job/roguetown/adventurer/cleric

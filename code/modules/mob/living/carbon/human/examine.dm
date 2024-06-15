@@ -8,6 +8,13 @@
 		if(user.dna.species.name != "Tiefling")
 			if(dna.species.name == "Tiefling")
 				user.add_stress(/datum/stressevent/tieb)
+		if(user.dna.species?.id == "abyssariad")
+			if(user.dna.species.name == "Kitsune")
+				if(dna.species.name == "Tengu")
+					user.add_stress(/datum/stressevent/teng)
+			if(user.dna.species.name == "Tengu")
+				if(dna.species.name == "Kitsune")
+					user.add_stress(/datum/stressevent/vulp)
 	if(user.has_flaw(/datum/charflaw/paranoid))
 		if((STASTR - user.STASTR) > 1)
 			user.add_stress(/datum/stressevent/parastr)
@@ -80,6 +87,8 @@
 				. += "<span class='userdanger'>BANDIT!</span>"
 			if(mind && mind.special_role == "Vampire Lord")
 				. += "<span class='userdanger'>A MONSTER!</span>"
+			if(mind && mind.special_role == "Burakumin || Panderer || Courtesan || Gang Member || Tosher")
+				. += "<span class='warning'>Filthy outcast.</span>"
 
 	if(leprosy == 1)
 		. += "<span class='necrosis'>A LEPER...</span>"

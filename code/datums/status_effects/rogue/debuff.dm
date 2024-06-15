@@ -279,3 +279,46 @@
 	name = "Muscle Soreness"
 	desc = "<span class='warning'>Gaaaah, So sooooooore.</span>\n"
 	icon_state = "muscles"
+
+/datum/status_effect/debuff/dishonor
+	id = "dishonor"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/dishonor
+	effectedstats = list("fortune" = -4, "endurance" = -4)
+
+/atom/movable/screen/alert/status_effect/debuff/dishonor
+	name = "Dishonored"
+	desc = "<span class='warning'>I've sacrificed my principles, my legacy and oath - dishonored.</span>\n"
+	icon_state = "thirst2"
+
+/datum/status_effect/debuff/thirstyt2/on_apply()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/status_effect/debuff/dishonor)
+	return ..()
+
+/datum/status_effect/debuff/disgrace
+	id = "disgrace"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/disgrace
+	effectedstats = list("speed" = -2, "constitution" = -2)
+
+/atom/movable/screen/alert/status_effect/debuff/disgrace
+	name = "Disgraced"
+	desc = "<span class='warning'>I am a disgrace. I've breach my oath of monogamy. What is wrong with me?.</span>\n"
+	icon_state = "thirst2"
+
+/datum/status_effect/debuff/disgrace/on_apply()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/status_effect/debuff/dishonor)
+	return ..()
+
+/atom/movable/screen/alert/status_effect/debuff/unbonded
+	name = "Soulmate loss"
+	desc = "<span class='warning'>My soulmate is gone, I am half dead and incomplete.</span>\n"
+	icon_state = "thirst2"
+
+/datum/status_effect/debuff/unbonded/on_apply()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/status_effect/debuff/unbonded)
+	return ..()

@@ -1037,17 +1037,37 @@
 	if(stat)
 		return
 	surrendering = 1
-	if(alert(src, "Yield in surrender?",,"YES","NO") == "YES")
-		changeNext_move(CLICK_CD_EXHAUSTED)
-		var/image/flaggy = image('icons/effects/effects.dmi',src,"surrender",ABOVE_MOB_LAYER)
-		flaggy.appearance_flags = RESET_TRANSFORM|KEEP_APART
-		flaggy.transform = null
-		flaggy.pixel_y = 12
-		flick_overlay_view(flaggy, src, 150)
-		Stun(150)
-		src.visible_message("<span class='notice'>[src] yields!</span>")
-		playsound(src, 'sound/misc/surrender.ogg', 100, FALSE, -1)
-		sleep(150)
+	var/am_abyssariad = FALSE
+	if(ishuman(src))
+		var/mob/living/carbon/human/C = src
+		if(C.dna.species?.id == "abyssariad")
+			am_abyssariad = TRUE
+	if(am_abyssariad == TRUE)
+		var/mob/living/carbon/C = src
+		if(C.stat != CONSCIOUS && !C.handcuffed)
+			to_chat(src, "<span class='warning'>You cannot do this ritual while unable to reach your chest.</span>")
+			return
+		else
+			if(alert(src, "Commit ritualistic disembowelment?","YES","NO") == "YES")
+				say("Hesitation is DEFEAT!")
+				visible_message("<span class='warning'>'s claws carves their own guts before splitting themselves apart!</span>", \
+				"<span class='notice'>You voluntarily sever your boundaries to this consciousness as vitae spills out in waves.</span>", null, null, pulledby)
+				to_chat(src, "<span class='warning'>Your ancestors honors your sacrifice.</span>")
+				spill_organs(TRUE, FALSE, TRUE)
+				adjust_triumphs(1)
+		return
+	if(alert(src, "Yield in surrender?",,"YES","NO") != "YES")
+		return
+	changeNext_move(CLICK_CD_EXHAUSTED)
+	var/image/flaggy = image('icons/effects/effects.dmi',src,"surrender",ABOVE_MOB_LAYER)
+	flaggy.appearance_flags = RESET_TRANSFORM|KEEP_APART
+	flaggy.transform = null
+	flaggy.pixel_y = 12
+	flick_overlay_view(flaggy, src, 150)
+	Stun(150)
+	src.visible_message("<span class='notice'>[src] yields!</span>")
+	playsound(src, 'sound/misc/surrender.ogg', 100, FALSE, -1)
+	sleep(150)
 	surrendering = 0
 
 
