@@ -127,6 +127,7 @@
 
 /obj/structure/flora/roguetree/stump/burnt
 	name = "tree stump"
+	desc = "This stump is burnt. Maybe someone is trying to get coal the easy way."
 	icon_state = "st1"
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	stump_type = null
@@ -150,6 +151,7 @@
 
 /obj/structure/flora/roguetree/stump
 	name = "tree stump"
+	desc = "Someone cut this tree down."
 	icon_state = "t1stump"
 	opacity = 0
 	max_integrity = 100
@@ -211,13 +213,13 @@
 
 /obj/structure/flora/roguegrass/water
 	name = "grass"
-	desc = "Murky grass."
+	desc = "This grass is sodden and muddy."
 	icon_state = "swampgrass"
 	max_integrity = 5
 
 /obj/structure/flora/roguegrass/water/reeds
 	name = "reeds"
-	desc = "A collection of long thin reeds."
+	desc = "This plant thrives in water, and shelters dangers."
 	icon_state = "reeds"
 	opacity = 1
 	max_integrity = 10
@@ -263,7 +265,7 @@
 	if(prob(88))
 		bushtype = pickweight(list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue=5,
 					/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison=3,
-					/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed=1))
+					/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed=2))
 	loot_replenish()
 	pixel_x += rand(-3,3)
 	return ..()
@@ -345,12 +347,9 @@
 //						H.throw_alert("embeddedobject", /atom/movable/screen/alert/embeddedobject)
 						var/obj/item/bodypart/BP = pick(H.bodyparts)
 						var/obj/item/natural/thorn/TH = new(src.loc)
-						BP.embedded_objects |= TH
-						TH.add_mob_blood(H)//it embedded itself in you, of course it's bloody!
-						TH.forceMove(H)
+						BP.add_embedded_object(TH, silent = TRUE)
 						BP.receive_damage(10)
 						to_chat(H, "<span class='danger'>\A [TH] impales my [BP.name]!</span>")
-						SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "embedded", /datum/mood_event/embedded)
 				else
 					var/obj/item/bodypart/BP = pick(H.bodyparts)
 					to_chat(H, "<span class='warning'>A thorn [pick("slices","cuts","nicks")] my [BP.name].</span>")
@@ -572,6 +571,7 @@
 
 /obj/structure/flora/shroomstump
 	name = "shroom stump"
+	desc = "It was a very happy shroom. Not anymore."
 	icon_state = "mush1stump"
 	desc = "Here once stood a mighty nether-cap, you feel a great sadness."
 	opacity = 0

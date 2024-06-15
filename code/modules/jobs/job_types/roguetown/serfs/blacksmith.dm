@@ -11,6 +11,7 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
+		"Dark Elf",
 		"Aasimar"
 	)
 
@@ -68,10 +69,13 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list("Humen",
-	"Humen",
-	"Dwarf",
-	"Dwarf",
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Dark Elf",
+		"Aasimar"
 	)
 
 	tutorial = "You studied for many decades under your master with a few other apprentices to become a Weaponsmith, a trade that is as ancient as the secrets of steel itself! Youve repaired the blades of cooks, the cracked hoes of peasants and greased the spears of many soldiers into war."

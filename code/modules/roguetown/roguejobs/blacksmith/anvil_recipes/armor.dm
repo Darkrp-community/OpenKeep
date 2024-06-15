@@ -50,6 +50,12 @@
 	additional_items = list(/obj/item/natural/hide, /obj/item/natural/hide)
 	created_item = /obj/item/clothing/suit/roguetown/armor/leather/studded
 
+/datum/anvil_recipe/armor/platebootlight
+    name = "light plate boots"
+    req_bar = /obj/item/ingot/iron
+    created_item = list(/obj/item/clothing/shoes/roguetown/boots/armor/light,
+						/obj/item/clothing/shoes/roguetown/boots/armor/light)
+
 // --------- STEEL -----------
 
 /datum/anvil_recipe/armor/haubergeon
@@ -175,12 +181,6 @@
     name = "plated boots"
     req_bar = /obj/item/ingot/steel
     created_item = list(/obj/item/clothing/shoes/roguetown/boots/armor)
-
-/datum/anvil_recipe/armor/platebootlight
-    name = "light plate boots"
-    req_bar = /obj/item/ingot/steel
-    created_item = list(/obj/item/clothing/shoes/roguetown/boots/armor/light,
-						/obj/item/clothing/shoes/roguetown/boots/armor/light)
 
 /datum/anvil_recipe/armor/platemask/steel
 	name = "steel mask"

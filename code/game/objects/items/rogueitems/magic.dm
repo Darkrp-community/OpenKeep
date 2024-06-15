@@ -2,7 +2,7 @@
 
 /obj/item/scrying
 	name = "scrying orb"
-	desc = "Look, look if you dare."
+	desc = "On its glass depths, you can scry on many unsuspecting beings.."
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state ="scrying"
 	throw_speed = 3
@@ -44,7 +44,7 @@
 				return
 			S.ManualFollow(HL)
 			last_scry = world.time
-			user.visible_message("<span class='danger'>[user] stares into [src], \their eyes rolling back into \their head.</span>")
+			user.visible_message("<span class='danger'>[user] stares into [src], [p_their()] eyes rolling back into [p_their()] head.</span>")
 			addtimer(CALLBACK(S, TYPE_PROC_REF(/mob/dead/observer, reenter_corpse)), 8 SECONDS)
 			if(!HL.stat)
 				if(HL.STAPER >= 15)

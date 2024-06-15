@@ -9,6 +9,7 @@
 	force = 23
 	throwforce = 7
 	throw_range = 4
+	dropshrink = 0.8
 	var/datum/looping_sound/dmusloop/soundloop
 	var/list/song_list = list()
 	var/playing = FALSE
@@ -114,11 +115,11 @@
 	"Song 6" = 'sound/music/instruments/accord (6).ogg')
 
 /obj/item/rogue/instrument/guitar
-	force = 15
 	name = "guitar"
 	desc = "A corrupted lute, a heritage instrument of Tiefling pedigree."
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	icon_state = "guitar"
+	force = 15
 	minstr = 0
 	wbalance = 0
 	wdefense = 1
@@ -127,7 +128,16 @@
 	"Song 3" = 'sound/music/instruments/guitar (3).ogg',
 	"Song 4" = 'sound/music/instruments/guitar (4).ogg',
 	"Song 5" = 'sound/music/instruments/guitar (5).ogg',
-	"Song 6" = 'sound/music/instruments/guitar (6).ogg')
+	"Song 6" = 'sound/music/instruments/guitar (6).ogg',
+	"Tiberian Sunset" = 'sound/music/instruments/guitar (Tiberian Sunset).ogg',	
+	"Romanza" = 'sound/music/instruments/guitar (Romanza).ogg',	
+	"Malaguena" = 'sound/music/instruments/guitar (Malaguena).ogg',
+	"Cancion del mariachi" = 'sound/music/instruments/guitar (Cancion del mariachi).ogg',	
+	"El Masque" = 'sound/music/instruments/guitar (El Masque).ogg',
+	"Evolvado" = 'sound/music/instruments/guitar (Evolvado).ogg',	
+	"Asturias" = 'sound/music/instruments/guitar (Asturias).ogg',
+	"La Follia" = 'sound/music/instruments/guitar (La Follia).ogg',	
+	)
 
 /obj/item/rogue/instrument/harp
 	name = "harp"
