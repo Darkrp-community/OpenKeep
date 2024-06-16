@@ -252,70 +252,71 @@
 	H.STAEND = 13
 	var/loadout = rand(1,5)
 	switch(loadout)
-		if(1) //tribal spear
-			r_hand = /obj/item/rogueweapon/spear/stone
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-		if(2) //tribal axe
-			r_hand = /obj/item/rogueweapon/sword/iron
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-		if(3) //tribal club
-			r_hand = /obj/item/rogueweapon/mace/spiked//removed the cudgel because it's way too good at knock people out
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+		if(1) //Stolen Tool armed raider
+			r_hand = /obj/item/rogueweapon/woodcut
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+		if(2) //Stolen Tool armed raider
+			r_hand = /obj/item/rogueweapon/thresher
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+		if(3) //Stolen Tool armed raider
+			r_hand = /obj/item/rogueweapon/pitchfork//removed the cudgel because it's way too good at knock people out
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			if(prob(10))
-				head = /obj/item/clothing/head/roguetown/helmet/orc
-				r_hand = /obj/item/rogueweapon/spear/stone
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+				//head = /obj/item/clothing/head/roguetown/helmet/orc
+				r_hand = /obj/item/rogueweapon/sickle
+				armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 		if(4) //lightly armored sword/flail/daggers
 			if(prob(50))
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				r_hand = /obj/item/rogueweapon/mace/spiked
 				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
-				head = /obj/item/clothing/head/roguetown/helmet/leather
+				//head = /obj/item/clothing/head/roguetown/helmet/leather/orc
 			if(prob(30))
 				l_hand = /obj/item/rogueweapon/sword/iron
 				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
-				head = /obj/item/clothing/head/roguetown/helmet/leather
+				//head = /obj/item/clothing/head/roguetown/helmet/leather/orc
 			if(prob(23))
 				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
-				r_hand = /obj/item/rogueweapon/battle
+				r_hand = /obj/item/rogueweapon/huntingknife/idagger
+				l_hand = /obj/item/rogueweapon/huntingknife/idagger
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
-				head = /obj/item/clothing/head/roguetown/helmet/leather
+				//head = /obj/item/clothing/head/roguetown/helmet/leather/orc
 			if(prob(80))
 				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
-				head = /obj/item/clothing/head/roguetown/helmet/leather
+				//head = /obj/item/clothing/head/roguetown/helmet/leather/orc
 		if(5) //heavy armored sword/flail/shields
-			if(prob(30))
-				r_hand = /obj/item/rogueweapon/battle
+			if(prob(20))
+				r_hand = /obj/item/rogueweapon/mace//readded the blunt weapon, this time with an very rare "slavist" orc
+				l_hand = /obj/item/rogueweapon/whip
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			else
-				l_hand = /obj/item/rogueweapon/huntingknife/cleaver/combat
+				r_hand = /obj/item/rogueweapon/sword/iron/short
+				l_hand = /obj/item/rogueweapon/sword/iron/short
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			if(prob(80))
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
-				r_hand = /obj/item/rogueweapon/battle
+				r_hand = /obj/item/rogueweapon/flail
 			else
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 				r_hand = /obj/item/rogueweapon/battle
 			if(prob(50))
 				r_hand = /obj/item/rogueweapon/sword/iron
+				l_hand = /obj/item/rogueweapon/shield/wood
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			else
 				r_hand = /obj/item/rogueweapon/mace/spiked
+				l_hand = /obj/item/rogueweapon/shield/wood
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
-			if(prob(20))
-				r_hand = /obj/item/rogueweapon/battle
+			if(prob(30))
+				r_hand = /obj/item/rogueweapon/sword/iron/messer
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
