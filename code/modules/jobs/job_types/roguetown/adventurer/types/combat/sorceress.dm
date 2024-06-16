@@ -12,7 +12,8 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/sorceress
-	maxchosen = 2
+	maximum_possible_slots = 2
+	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/sorceress/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -40,4 +41,3 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
-

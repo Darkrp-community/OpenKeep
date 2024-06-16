@@ -5,9 +5,10 @@
 	allowed_sexes = list(MALE)
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/heartfelthand
-	maxchosen = 1
-	plevel_req = 2
-	israre = TRUE
+	maximum_possible_slots = 1
+	min_pq = 1
+	pickprob = 50
+	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/heartfelthand/pre_equip(mob/living/carbon/human/H)
 	..()
