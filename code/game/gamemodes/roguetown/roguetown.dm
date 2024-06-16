@@ -319,7 +319,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.noble_positions)
 					blockme = TRUE
-				if(rebelguy.assigned_role in GLOB.youngfolk_positions)
+				if(rebelguy.assigned_role in GLOB.apprentices_positions)
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.church_positions)
 					blockme = TRUE
@@ -347,7 +347,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 		var/blockme = FALSE
 		if(!(villain in allantags))
 			blockme = TRUE
-		if(villain.assigned_role in GLOB.youngfolk_positions)
+		if(villain.assigned_role in GLOB.apprentices_positions)
 			blockme = TRUE
 		if(villain.current)
 			if(villain.current.gender == FEMALE)
@@ -380,7 +380,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 			blockme = TRUE
 		if(vampire.assigned_role in GLOB.noble_positions)
 			continue
-		if(vampire.assigned_role in GLOB.youngfolk_positions)
+		if(vampire.assigned_role in GLOB.apprentices_positions)
 			blockme = TRUE
 		if(blockme)
 			continue
@@ -411,7 +411,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 			blockme = TRUE
 		if(werewolf.assigned_role in GLOB.noble_positions)
 			blockme = TRUE
-		if(werewolf.assigned_role in GLOB.youngfolk_positions)
+		if(werewolf.assigned_role in GLOB.apprentices_positions)
 			blockme = TRUE
 		if(blockme)
 			return
@@ -463,6 +463,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 		bandito.add_antag_datum(new_antag)
 		GLOB.pre_setup_antags -= bandito
 		bandits += bandito
+		SSrole_class_handler.bandits_in_round = TRUE
 ///////////////// ASPIRANTS
 	for(var/datum/mind/rogue in pre_aspirants) // Do the aspirant first, so the suppporter works right.
 		if(rogue.special_role == "Aspirant")
