@@ -10848,7 +10848,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor)
 "UP" = (
-/obj/structure/fermenting_barrel/beer,
+/obj/structure/fermenting_barrel/random/beer,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/church)
 "UQ" = (
@@ -10991,10 +10991,6 @@
 /obj/structure/roguemachine/scomm,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/manor)
-"Vw" = (
-/obj/structure/fermenting_barrel/random/water,
-/turf/open/floor/rogue/blocks/stonered,
-/area/rogue/indoors/town/church)
 "Vx" = (
 /obj/structure/closet/crate/chest/gold,
 /obj/item/roguecoin/gold/pile,
@@ -56213,7 +56209,7 @@ UZ
 BY
 UZ
 UZ
-Vw
+UP
 UP
 UZ
 UP
