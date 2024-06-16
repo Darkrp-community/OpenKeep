@@ -1089,7 +1089,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 </style>
 
-<div class="tutorialhover"><font color=[job.selection_color]>[used_name]</font>
+<div class="tutorialhover">[used_name]</font>
 <span class="tutorial">[job.tutorial]<br>
 Slots: [job.spawn_positions]</span>
 </div>
