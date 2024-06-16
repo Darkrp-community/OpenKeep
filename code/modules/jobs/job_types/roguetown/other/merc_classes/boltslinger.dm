@@ -12,7 +12,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/boltslinger
-	ismerc = TRUE
+	category_tags = list(CTAG_MERCENARY)
 
 
 /datum/outfit/job/roguetown/mercenary/boltslinger/pre_equip(mob/living/carbon/human/H)
@@ -47,6 +47,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.change_stat("perception", 3)
 		H.change_stat("endurance", 1)
 		H.change_stat("strength", 1)

@@ -17,8 +17,8 @@
 
 /obj/item/grown/log/tree/small
 	name = "small log"
+	desc = "A smaller log that came from a larger log. Suitable for building."
 	icon_state = "logsmall"
-	desc = "A chopped piece of refined lumber, ready for use or processing."
 	max_integrity = 30
 	static_debris = list(/obj/item/grown/log/tree/stick = 3)
 	firefuel = 20 MINUTES
@@ -30,8 +30,8 @@
 /obj/item/grown/log/tree/stick
 	seed = null
 	name = "stick"
-	icon_state = "stick1"
 	desc = "A wooden stick, a mighty weapon to the imaginative."
+	icon_state = "stick1"
 	blade_dulling = 0
 	max_integrity = 20
 	static_debris = null
@@ -96,8 +96,8 @@
 
 /obj/item/grown/log/tree/stake
 	name = "stake"
+	desc = "A sharpened piece of wood, fantastic for piercing"
 	icon_state = "stake"
-	desc = "A sharpened piece of wood, fantastic for piercing."
 	force = 2
 	throwforce = 2
 	possible_item_intents = list(/datum/intent/stab, /datum/intent/pick)
@@ -114,8 +114,8 @@
 /obj/item/grown/log/tree/lumber
 	seed = null
 	name = "lumber"
+	desc = "This is some lumber."
 	icon_state = "lumber"
-	desc = ""
 	blade_dulling = 0
 	max_integrity = 50
 	firefuel = 5 MINUTES
