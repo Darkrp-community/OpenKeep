@@ -23,6 +23,7 @@
 	max_integrity = 60
 	allowed_race = list("goblin")
 	sellprice = 0
+	smeltresult = /obj/item/ash
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
 	name = "goblin loincloth"
@@ -33,6 +34,7 @@
 	armor = list("melee" = 30, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN
 	sellprice = 0
+	smeltresult = /obj/item/ash
 
 /obj/item/clothing/head/roguetown/helmet/leather/goblin
 	name = "goblin helmet"
@@ -43,6 +45,7 @@
 	body_parts_covered = HEAD|EARS|HAIR|EYES
 	allowed_race = list("goblin")
 	sellprice = 0
+	smeltresult = /obj/item/ash
 
 /obj/item/clothing/head/roguetown/helmet/goblin
 	name = "goblin helmet"
@@ -53,3 +56,4 @@
 	armor = list("melee" = 80, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|EARS|HAIR|EYES
 	sellprice = 0
+	smeltresult = /obj/item/ingot/iron

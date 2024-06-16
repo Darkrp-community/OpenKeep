@@ -16,32 +16,50 @@
 	alternate_worn_layer = UNDER_CLOAK_LAYER
 	strip_delay = 20
 	var/max_storage = 20
-	var/list/arrows = list()
+	var/list/ammo_list = list()
 
 /obj/item/quiver/attackby(obj/A, loc, params)
 	if(A.type in subtypesof(/obj/item/ammo_casing/caseless/rogue))
-		if(arrows.len < max_storage)
+		if(ammo_list.len < max_storage)
 			A.forceMove(src)
-			arrows += A
+			ammo_list += A
 			update_icon()
 		else
 			to_chat(loc, "<span class='warning'>Full!</span>")
 		return
 	if(istype(A, /obj/item/gun/ballistic/revolver/grenadelauncher/bow))
 		var/obj/item/gun/ballistic/revolver/grenadelauncher/bow/B = A
-		if(arrows.len && !B.chambered)
-			for(var/AR in arrows)
+		if(ammo_list.len && !B.chambered)
+			for(var/AR in ammo_list)
 				if(istype(AR, /obj/item/ammo_casing/caseless/rogue/arrow))
-					arrows -= AR
+					ammo_list -= AR
 					B.attackby(AR, loc, params)
 					break
+				else
+					to_chat(loc, "<span class='warning'>Wrong ammunition kind!</span>")
+					return
 		return
+	if(istype(A, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow))
+		var/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/C = A
+		if(C.cocked)
+			if(ammo_list.len && !C.chambered)
+				for(var/BT in ammo_list)
+					if(istype(BT, /obj/item/ammo_casing/caseless/rogue/bolt))
+						ammo_list -= BT
+						C.attackby(BT, loc, params)
+						break
+					else
+						to_chat(loc, "<span class='warning'>Wrong ammunition kind!</span>")
+						return
+		else
+			to_chat(loc, "<span class='warning'>I need to cock the crossbow first.</span>")
+			return
 	..()
 
 /obj/item/quiver/attack_right(mob/user)
-	if(arrows.len)
-		var/obj/O = arrows[arrows.len]
-		arrows -= O
+	if(ammo_list.len)
+		var/obj/O = ammo_list[ammo_list.len]
+		ammo_list -= O
 		O.forceMove(user.loc)
 		user.put_in_hands(O)
 		update_icon()
@@ -49,11 +67,11 @@
 
 /obj/item/quiver/examine(mob/user)
 	. = ..()
-	if(arrows.len)
-		. += "<span class='notice'>[arrows.len] inside.</span>"
+	if(ammo_list.len)
+		. += "<span class='notice'>[ammo_list.len] inside.</span>"
 
 /obj/item/quiver/update_icon()
-	if(arrows.len)
+	if(ammo_list.len)
 		icon_state = "quiver1"
 	else
 		icon_state = "quiver0"
@@ -62,12 +80,12 @@
 	..()
 	for(var/i in 1 to max_storage)
 		var/obj/item/ammo_casing/caseless/rogue/arrow/A = new()
-		arrows += A
+		ammo_list += A
 	update_icon()
 
 /obj/item/quiver/bolts/Initialize()
 	..()
 	for(var/i in 1 to max_storage)
 		var/obj/item/ammo_casing/caseless/rogue/bolt/A = new()
-		arrows += A
+		ammo_list += A
 	update_icon()

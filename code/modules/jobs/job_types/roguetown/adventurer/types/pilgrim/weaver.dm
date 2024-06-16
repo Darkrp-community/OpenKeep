@@ -1,5 +1,7 @@
 /datum/advclass/weaver
 	name = "Weaver"
+	tutorial = "Tailors, weavers and seamstresses, who make deft work of cloths and fiber \
+				in order to craft clothes fit for a King, or royalty in general."
 	allowed_sexes = list("Male", "female")
 	allowed_races = list("Humen",
 	"Elf",
@@ -16,6 +18,7 @@
 /datum/outfit/job/roguetown/adventurer/seamstress/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/weaving, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)

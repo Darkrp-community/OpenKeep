@@ -355,6 +355,12 @@
 		brokenstate = TRUE
 	..()
 
+/obj/structure/mineral_door/OnCrafted(dirin, user)
+	. = ..()
+	keylock = FALSE
+	GLOB.lockhashes.Remove(lockhash)
+	lockhash = 0
+
 /////////////////////// TOOL OVERRIDES ///////////////////////
 
 
