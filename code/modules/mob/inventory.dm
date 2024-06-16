@@ -140,6 +140,15 @@
 	return FALSE
 
 /mob/proc/can_put_in_hand(I, hand_index)
+	if(hand_index > held_items.len)
+		return FALSE
+	if(!put_in_hand_check(I))
+		return FALSE
+	if(!has_hand_for_held_index(hand_index))
+		return FALSE
+	return !held_items[hand_index]
+
+/mob/proc/put_in_hand(obj/item/I, hand_index, forced = FALSE, ignore_anim = TRUE)
 	if(hand_index == null || (!forced && !can_put_in_hand(I, hand_index)))
 		return FALSE
 
@@ -168,34 +177,6 @@
 		hud_used.give_intent?.update_icon()
 	givingto = null
 	return hand_index
-
-/mob/proc/put_in_hand(obj/item/I, hand_index, forced = FALSE, ignore_anim = TRUE)
-	if(forced || can_put_in_hand(I, hand_index))
-		if(isturf(I.loc) && !ignore_anim)
-			I.do_pickup_animation(src)
-		if(hand_index == null)
-			return FALSE
-		if(get_item_for_held_index(hand_index) != null)
-			return FALSE
-//			dropItemToGround(get_item_for_held_index(hand_index), force = TRUE)
-		I.forceMove(src)
-		held_items[hand_index] = I
-		if(I.possible_item_intents)
-			update_a_intents()
-		I.layer = ABOVE_HUD_LAYER
-		I.plane = ABOVE_HUD_PLANE
-		I.equipped(src, SLOT_HANDS)
-		if(I.pulledby)
-			I.pulledby.stop_pulling()
-		update_inv_hands()
-		I.pixel_x = initial(I.pixel_x)
-		I.pixel_y = initial(I.pixel_y)
-		if(hud_used)
-			hud_used.throw_icon?.update_icon()
-			hud_used.give_intent?.update_icon()
-		givingto = null
-		return hand_index || TRUE
-	return FALSE
 
 //Puts the item into the first available left hand if possible and calls all necessary triggers/updates. returns 1 on success.
 /mob/proc/put_in_l_hand(obj/item/I)
