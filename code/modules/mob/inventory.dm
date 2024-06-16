@@ -140,13 +140,34 @@
 	return FALSE
 
 /mob/proc/can_put_in_hand(I, hand_index)
-	if(hand_index > held_items.len)
+	if(hand_index == null || (!forced && !can_put_in_hand(I, hand_index)))
 		return FALSE
-	if(!put_in_hand_check(I))
+
+	if(isturf(I.loc) && !ignore_anim)
+		I.do_pickup_animation(src)
+	if(get_item_for_held_index(hand_index) != null)
 		return FALSE
-	if(!has_hand_for_held_index(hand_index))
+//		dropItemToGround(get_item_for_held_index(hand_index), force = TRUE)
+	I.forceMove(src)
+	held_items[hand_index] = I
+	I.layer = ABOVE_HUD_LAYER
+	I.plane = ABOVE_HUD_PLANE
+	I.equipped(src, ITEM_SLOT_HANDS)
+	if(QDELETED(I)) // this is here because some ABSTRACT items like slappers and circle hands could be moved from hand to hand then delete, which meant you'd have a null in your hand until you cleared it (say, by dropping it)
+		held_items[hand_index] = null
 		return FALSE
-	return !held_items[hand_index]
+	if(I.possible_item_intents)
+		update_a_intents()
+	if(I.pulledby)
+		I.pulledby.stop_pulling()
+	update_inv_hands()
+	I.pixel_x = initial(I.pixel_x)
+	I.pixel_y = initial(I.pixel_y)
+	if(hud_used)
+		hud_used.throw_icon?.update_icon()
+		hud_used.give_intent?.update_icon()
+	givingto = null
+	return hand_index
 
 /mob/proc/put_in_hand(obj/item/I, hand_index, forced = FALSE, ignore_anim = TRUE)
 	if(forced || can_put_in_hand(I, hand_index))
