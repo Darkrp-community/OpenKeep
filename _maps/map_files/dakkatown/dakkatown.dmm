@@ -1097,6 +1097,14 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)
+"eM" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/reagent_containers/glass/mortar,
+/obj/item/pestle,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town)
 "eN" = (
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/greenstone,
@@ -1597,8 +1605,9 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "gT" = (
-/obj/structure/mineral_door/wood/red{
-	name = "Quarantine"
+/obj/structure/mineral_door/wood/green{
+	name = "Quarantine";
+	lockid = "doctor"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
@@ -2182,7 +2191,8 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/cell)
 "jv" = (
-/obj/structure/closet/crate/chest,
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/natural/worms/leech,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town)
 "jw" = (
@@ -2500,10 +2510,10 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
 "kH" = (
-/obj/structure/mineral_door/wood/red{
-	name = "Shop IV";
+/obj/structure/mineral_door/wood/green{
+	locked = 1;
 	lockid = "shop4";
-	locked = 1
+	name = "Shop IV"
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town/shop)
@@ -2711,10 +2721,10 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
 "lv" = (
-/obj/structure/mineral_door/wood/red{
-	name = "Shop III";
+/obj/structure/mineral_door/wood/green{
+	locked = 1;
 	lockid = "shop3";
-	locked = 1
+	name = "Shop III"
 	},
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/shop)
@@ -3217,10 +3227,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/manorgarri)
 "nJ" = (
-/obj/structure/mineral_door/wood/red{
-	name = "Shop VI";
+/obj/structure/mineral_door/wood/green{
+	locked = 1;
 	lockid = "shop6";
-	locked = 1
+	name = "Shop VI"
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/shop)
@@ -3321,9 +3331,10 @@
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/under/town/sewer)
 "ok" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 1;
-	name = "Examination"
+/obj/structure/mineral_door/wood/green{
+	name = "Examination";
+	lockid = "doctor";
+	locked = 1
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
@@ -3713,6 +3724,8 @@
 /area/rogue/outdoors/town)
 "pM" = (
 /obj/structure/closet/crate/chest/old_crate,
+/obj/item/natural/worms/leech,
+/obj/item/natural/worms/leech,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town)
 "pN" = (
@@ -4360,8 +4373,8 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/town/basement)
 "sC" = (
-/obj/structure/closet/crate/chest,
 /obj/item/fishingrod/crafted,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town)
 "sD" = (
@@ -4882,8 +4895,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "uV" = (
-/obj/structure/mineral_door/wood/red{
-	name = "Study"
+/obj/structure/mineral_door/wood/green{
+	name = "Study";
+	lockid = "doctor";
+	locked = 1
 	},
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town)
@@ -5491,7 +5506,8 @@
 "xu" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 1;
-	name = "Shop"
+	name = "Shop";
+	locked = 1
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
@@ -5874,6 +5890,12 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors/town/dwarfin)
+"zl" = (
+/obj/structure/closet/crate/chest/neu,
+/obj/item/reagent_containers/powder/ozium,
+/obj/item/reagent_containers/powder/ozium,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town)
 "zm" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/carpet/red,
@@ -6597,10 +6619,10 @@
 	},
 /area/rogue/outdoors/town/roofs)
 "Cz" = (
-/obj/structure/mineral_door/wood/red{
-	name = "Shop V";
+/obj/structure/mineral_door/wood/green{
+	locked = 1;
 	lockid = "shop5";
-	locked = 1
+	name = "Shop V"
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town/shop)
@@ -7996,7 +8018,8 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/mineral_door/wood/donjon{
 	name = "Surgery";
-	lockid = "doctor"
+	lockid = "doctor";
+	locked = 1
 	},
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town)
@@ -8016,10 +8039,10 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/town/sewer)
 "II" = (
-/obj/structure/mineral_door/wood/red{
-	name = "Shop I";
+/obj/structure/mineral_door/wood/green{
+	locked = 1;
 	lockid = "shop1";
-	locked = 1
+	name = "Shop I"
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/shop)
@@ -10142,6 +10165,13 @@
 "RR" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
+"RS" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/natural/worms/leech,
+/obj/item/natural/worms/leech,
+/obj/item/natural/worms/leech,
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town)
 "RV" = (
 /obj/structure/fluff/railing/border{
 	dir = 6
@@ -11020,10 +11050,10 @@
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor)
 "VE" = (
-/obj/structure/mineral_door/wood/red{
-	name = "Shop II";
+/obj/structure/mineral_door/wood/green{
+	locked = 1;
 	lockid = "shop2";
-	locked = 2
+	name = "Shop II"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/shop)
@@ -11126,10 +11156,10 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/dwarfin)
 "Wd" = (
-/obj/structure/mineral_door/wood/red{
-	name = "Shop VII";
+/obj/structure/mineral_door/wood/green{
+	locked = 1;
 	lockid = "shop7";
-	locked = 1
+	name = "Shop VII"
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/shop)
@@ -44952,7 +44982,7 @@ Ca
 dv
 dv
 Wl
-yd
+zl
 yd
 yH
 yd
@@ -45421,11 +45451,11 @@ Lj
 Wl
 hr
 kY
-dv
+RS
 Wl
 RB
 DD
-yd
+eM
 dM
 lQ
 xG
