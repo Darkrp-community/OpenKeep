@@ -1,6 +1,6 @@
 /datum/job/roguetown/wapprentice
 	title = "Magician's Apprentice"
-	department_flag = FOLKFOLK
+	department_flag = APPRENTICES
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 0

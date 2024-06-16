@@ -1,15 +1,12 @@
 /datum/job/roguetown/bapprentice
 	title = "Smithy Apprentice"
 	flag = APPRENTICE
-	department_flag = FOLKFOLK
+	department_flag = APPRENTICES
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
 
-	allowed_races = list(
-		"Humen",
-		"Half-Elf"
-	)
+	allowed_races = ALL_RACES_LIST_NAMES
 	allowed_ages = list(AGE_ADULT)
 
 	tutorial = "Long hours and back-breaking work wouldnt even describe a quarter of what you do in a day for your Master. Its exhausting, filthy and you dont get much freetime: but someday youll get your own smithy, and youll have TWICE as many apprentices as your master does."

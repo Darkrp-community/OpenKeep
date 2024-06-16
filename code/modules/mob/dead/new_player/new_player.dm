@@ -562,7 +562,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	omegalist += list(GLOB.garrison_positions)
 	omegalist += list(GLOB.church_positions)
 	omegalist += list(GLOB.peasant_positions)
-	omegalist += list(GLOB.folkfolk_positions)
+	omegalist += list(GLOB.apprentices_positions)
 	omegalist += list(GLOB.serf_positions)
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
@@ -597,11 +597,13 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 					cat_name = "Nobles"
 				if (GARRISON)
 					cat_name = "Garrison"
+				if (SERFS)
+					cat_name = "Subjects"
 				if (CHURCHMEN)
 					cat_name = "Churchmen"
 				if (PEASANTS)
 					cat_name = "Peasants"
-				if (FOLKFOLK)
+				if (APPRENTICES)
 					cat_name = "Apprentices"
 
 			dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"

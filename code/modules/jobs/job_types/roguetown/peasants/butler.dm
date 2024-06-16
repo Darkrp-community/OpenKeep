@@ -3,8 +3,8 @@
 	flag = BUTLER
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 2
-	spawn_positions = 3
+	total_positions = 4
+	spawn_positions = 4
 
 	f_title = "Maid"
 	allowed_races = list(
@@ -54,4 +54,3 @@
 		H.change_stat("strength", -1)
 		H.change_stat("intelligence", 1)
 		H.change_stat("perception", 1)
-

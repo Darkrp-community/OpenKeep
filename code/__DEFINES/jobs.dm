@@ -144,7 +144,7 @@
 #define GRABBER		(1<<11)
 #define WAVE_DRIFTER (1<<16)
 
-#define FOLKFOLK		(1<<5)
+#define APPRENTICES		(1<<5)
 
 #define APPRENTICE	(1<<0)
 #define SQUIRE		(1<<1)
