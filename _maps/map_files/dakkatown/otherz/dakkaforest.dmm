@@ -684,6 +684,12 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
+"wF" = (
+/obj/structure/stairs/stone{
+	dir = 4
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/woods)
 "wJ" = (
 /obj/structure/chair/wood/rogue{
 	dir = 8
@@ -799,7 +805,7 @@
 /area/rogue/indoors)
 "zX" = (
 /obj/structure/stairs/stone{
-	dir = 4
+	dir = 8
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods)
@@ -32156,8 +32162,8 @@ Ea
 Ea
 Ea
 yY
-zX
-zX
+wF
+wF
 QF
 Ea
 Ea
@@ -32381,8 +32387,8 @@ Ea
 Ea
 Ea
 yY
-zX
-zX
+wF
+wF
 QF
 Ea
 Ea
@@ -33098,8 +33104,8 @@ Ea
 Ea
 Ea
 yY
-AZ
-AZ
+zX
+zX
 QF
 Ea
 Ea
@@ -33166,8 +33172,8 @@ Ea
 Ea
 Ea
 yY
-AZ
-AZ
+zX
+zX
 QF
 Ea
 Ea
