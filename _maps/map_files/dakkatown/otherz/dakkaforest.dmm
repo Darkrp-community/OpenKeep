@@ -180,6 +180,12 @@
 /obj/item/reagent_containers/powder/flour,
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors)
+"gB" = (
+/obj/structure/stairs/stone{
+	dir = 4
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/woods)
 "gE" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/ruinedwood,
@@ -262,6 +268,10 @@
 "iL" = (
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors)
+"iU" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
 "jt" = (
 /obj/structure/flora/roguegrass/water,
 /turf/open/water/cleanshallow,
@@ -468,6 +478,10 @@
 "oJ" = (
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors)
+"oM" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "oQ" = (
 /obj/structure/closet/crate/roguecloset,
 /turf/open/floor/rogue/ruinedwood,
@@ -684,12 +698,6 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
-"wF" = (
-/obj/structure/stairs/stone{
-	dir = 4
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods)
 "wJ" = (
 /obj/structure/chair/wood/rogue{
 	dir = 8
@@ -804,10 +812,8 @@
 	},
 /area/rogue/indoors)
 "zX" = (
-/obj/structure/stairs/stone{
-	dir = 8
-	},
-/turf/open/floor/rogue/cobble,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
 "At" = (
 /obj/item/reagent_containers/powder/flour/salt,
@@ -1158,6 +1164,14 @@
 /obj/item/reagent_containers/glass/cup/wooden,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors)
+"JX" = (
+/obj/structure/fluff/traveltile/bandit{
+	aportalid = "banditexit";
+	aportalgoesto = "banditin"
+	},
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "Kb" = (
 /obj/structure/fluff/railing/border{
 	dir = 5
@@ -1335,6 +1349,12 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
+"Pt" = (
+/obj/structure/stairs/stone{
+	dir = 8
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/woods)
 "Pv" = (
 /obj/structure/stairs/stone{
 	dir = 8
@@ -1655,6 +1675,10 @@
 /area/rogue/outdoors/woods)
 "Zx" = (
 /turf/closed/wall/mineral/rogue/stone,
+/area/rogue/outdoors/woods)
+"ZF" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "ZK" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle{
@@ -6487,7 +6511,7 @@ ft
 RN
 SS
 SS
-tp
+zX
 SS
 EG
 SS
@@ -6798,7 +6822,7 @@ RN
 YZ
 EG
 SS
-tp
+zX
 SS
 EG
 zz
@@ -7423,14 +7447,14 @@ RN
 RN
 RN
 EG
-tp
+zX
 tp
 tp
 zz
 YZ
 SS
 SS
-EG
+iU
 RN
 RN
 RN
@@ -7738,7 +7762,7 @@ RN
 RN
 zz
 tp
-tp
+zX
 zz
 RN
 RN
@@ -7764,7 +7788,7 @@ zz
 SS
 SS
 SS
-zz
+oM
 RN
 RN
 RN
@@ -8377,7 +8401,7 @@ RN
 zz
 EG
 zz
-zz
+oM
 SS
 EG
 zz
@@ -9496,7 +9520,7 @@ zz
 EG
 EG
 SS
-EG
+iU
 SS
 SS
 RN
@@ -10134,7 +10158,7 @@ SS
 SS
 SS
 SS
-SS
+ZF
 EG
 ft
 RN
@@ -10768,7 +10792,7 @@ zz
 SS
 SS
 EG
-SS
+ZF
 qB
 "}
 (59,1,1) = {"
@@ -11083,7 +11107,7 @@ EG
 SS
 SS
 SS
-Us
+JX
 "}
 (61,1,1) = {"
 qi
@@ -11237,7 +11261,7 @@ EG
 SS
 SS
 EG
-EG
+iU
 zz
 zz
 qB
@@ -15727,7 +15751,7 @@ ir
 kE
 kE
 ir
-Kr
+ir
 dp
 dp
 TP
@@ -32162,8 +32186,8 @@ Ea
 Ea
 Ea
 yY
-wF
-wF
+gB
+gB
 QF
 Ea
 Ea
@@ -32387,8 +32411,8 @@ Ea
 Ea
 Ea
 yY
-wF
-wF
+gB
+gB
 QF
 Ea
 Ea
@@ -33104,8 +33128,8 @@ Ea
 Ea
 Ea
 yY
-zX
-zX
+Pt
+Pt
 QF
 Ea
 Ea
@@ -33172,8 +33196,8 @@ Ea
 Ea
 Ea
 yY
-zX
-zX
+Pt
+Pt
 QF
 Ea
 Ea
