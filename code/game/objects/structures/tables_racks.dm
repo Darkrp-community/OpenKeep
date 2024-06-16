@@ -362,7 +362,48 @@
 	icon_state = "vtable2"
 	debris = list(/obj/item/grown/log/tree/small = 1)
 
-/obj/structure/table/fine
+/obj/structure/table/wood/counter
+    name = "counter"
+    icon_state = "longtable_mid"
+
+/obj/structure/table/wood/counter/end
+    icon_state = "longtable"
+
+/obj/structure/table/wood/plain
+    icon_state = "tablewood1"
+
+/obj/structure/table/wood/plain/alt
+    icon_state = "tablewood2"
+
+/obj/structure/table/wood/plain/alto
+    icon_state = "tablewood3"
+
+/obj/structure/table/wood/reinforced
+    name = "reinforced table"
+    icon_state = "tablewood"
+
+/obj/structure/table/wood/reinforced_alt
+    icon_state = "tablewood_alt2"
+
+/obj/structure/table/wood/large
+    icon_state = "largetable_mid"
+
+/obj/structure/table/wood/large/corner
+    icon_state = "largetable"
+
+/obj/structure/table/wood/large_alt
+    icon_state = "largetable_mid_alt"
+
+/obj/structure/table/wood/large/corner_alt
+    icon_state = "largetable_alt"
+
+/obj/structure/table/wood/large_blue
+    icon_state = "largetable_mid_alt2"
+
+/obj/structure/table/wood/large/corner_blue
+    icon_state = "largetable_alt2"
+
+/obj/structure/table/wood/fine
 	name = "wooden table"
 	desc = ""
 	icon = 'icons/roguetown/misc/tables.dmi'
@@ -373,7 +414,7 @@
 	debris = list(/obj/item/grown/log/tree/small = 2)
 	climb_offset = 10
 
-/obj/structure/table/finer
+/obj/structure/table/wood/finer
 	name = "wooden table"
 	desc = ""
 	icon = 'icons/roguetown/misc/tables.dmi'
