@@ -179,6 +179,10 @@
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
+"gb" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/trufflepig,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/rtfield)
 "gq" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1";
@@ -228,6 +232,9 @@
 "hS" = (
 /obj/structure/rack/rogue,
 /obj/item/natural/cloth,
+/obj/machinery/light/rogue/torchholder/c{
+	pixel_y = -32
+	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors)
 "hW" = (
@@ -757,7 +764,6 @@
 /area/rogue/indoors)
 "yt" = (
 /obj/structure/rack/rogue,
-/obj/item/roguekey/butcher,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors)
 "yu" = (
@@ -940,7 +946,6 @@
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/woods)
 "DV" = (
-/obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef,
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef,
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef,
@@ -949,6 +954,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/bacon,
 /obj/item/reagent_containers/food/snacks/rogue/meat/bacon,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "Ea" = (
@@ -1022,8 +1028,11 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "Gk" = (
-/obj/machinery/light/rogue/torchholder/r,
-/turf/open/floor/rogue/ruinedwood/turned,
+/obj/structure/mineral_door/wood/deadbolt{
+	dir = 1;
+	name = "Pig Pen"
+	},
+/turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "Gn" = (
 /obj/structure/roguemachine/mail{
@@ -1185,7 +1194,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "Ki" = (
-/obj/structure/closet/crate/chest,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -1277,7 +1286,7 @@
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors)
 "NW" = (
-/obj/structure/closet/crate/chest,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "NY" = (
@@ -1330,9 +1339,9 @@
 	},
 /area/rogue/indoors)
 "OQ" = (
-/obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/grown/oat,
 /obj/item/reagent_containers/food/snacks/grown/oat,
+/obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "Pm" = (
@@ -1373,7 +1382,6 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "Qi" = (
-/obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry,
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry,
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet,
@@ -1381,6 +1389,7 @@
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "QC" = (
@@ -1447,7 +1456,6 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
 "Tk" = (
-/obj/structure/closet/crate/chest,
 /obj/item/seeds/wheat,
 /obj/item/seeds/wheat,
 /obj/item/seeds/wheat,
@@ -1456,6 +1464,7 @@
 /obj/item/seeds/wheat,
 /obj/item/seeds/wheat,
 /obj/item/seeds/wheat,
+/obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
 "Tl" = (
@@ -1467,16 +1476,19 @@
 /area/rogue/outdoors/woods)
 "TI" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/cow,
+/obj/structure/fluff/railing/wood{
+	dir = 1
+	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "TP" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "TS" = (
-/obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/grown/wheat,
 /obj/item/reagent_containers/food/snacks/grown/wheat,
 /obj/item/reagent_containers/food/snacks/grown/wheat,
+/obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "TV" = (
@@ -1508,13 +1520,13 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "UT" = (
-/obj/structure/closet/crate/chest,
 /obj/item/seeds/wheat/oat,
 /obj/item/seeds/wheat/oat,
 /obj/item/seeds/pipeweed,
 /obj/item/seeds/pipeweed,
 /obj/item/seeds/pipeweed,
 /obj/item/seeds/apple,
+/obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
 "Vb" = (
@@ -1541,7 +1553,8 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
 "Vw" = (
-/obj/structure/closet/crate/chest,
+/obj/structure/closet/crate/chest/neu,
+/obj/item/roguekey/butcher,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
 "VJ" = (
@@ -1575,6 +1588,10 @@
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
+/area/rogue/indoors)
+"WW" = (
+/obj/structure/closet/crate/chest/neu,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors)
 "WY" = (
 /obj/structure/fluff/railing/border{
@@ -1649,8 +1666,8 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
 "Yq" = (
-/obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/powder/flour/salt,
+/obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
 "Yz" = (
@@ -19342,9 +19359,9 @@ Ly
 bu
 Ly
 Ly
-rm
-Kr
-Kr
+Pm
+pJ
+Pm
 TI
 rm
 Kr
@@ -19500,9 +19517,9 @@ bu
 bu
 vC
 TP
+TP
 rm
-Kr
-Kr
+OD
 Kr
 Kr
 Kr
@@ -19656,10 +19673,10 @@ uq
 uq
 uq
 XY
-Kr
-Kr
-Kr
+rm
+gb
 TP
+OA
 Kr
 Kr
 Kr
@@ -19813,10 +19830,10 @@ uq
 uq
 bW
 Io
-Kr
-Kr
-Kr
+TP
 rm
+TP
+BV
 Kr
 rm
 Tl
@@ -19971,9 +19988,9 @@ hS
 Ly
 Ly
 TP
-Kr
-Kr
-Kr
+TP
+rm
+OD
 Kr
 Kr
 rm
@@ -20125,12 +20142,12 @@ xw
 Ke
 uq
 yt
-wv
+vC
 TP
 rm
-Kr
-Kr
-Kr
+TP
+gb
+OD
 rm
 Kr
 Kr
@@ -20281,13 +20298,13 @@ Io
 xw
 Ke
 uq
+uq
 Gk
-Io
 TP
-Kr
-Kr
-Kr
-Kr
+rm
+TP
+TP
+OD
 rm
 Kr
 Kr
@@ -20442,9 +20459,9 @@ ip
 Ly
 TP
 TP
-TP
-Kr
-TP
+rm
+rm
+OA
 TP
 rm
 TP
@@ -43179,8 +43196,8 @@ Ea
 Ea
 Ea
 Io
-Vw
-Vw
+WW
+WW
 cb
 dT
 Io
