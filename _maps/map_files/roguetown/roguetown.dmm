@@ -12152,15 +12152,6 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
-"qSp" = (
-/obj/structure/mineral_door/wood/donjon{
-	dir = 8;
-	icon_state = "donjondir";
-	locked = 1;
-	lockid = "garrison"
-	},
-/turf/open/floor/rogue/blocks,
-/area/rogue/under/town/basement)
 "qSq" = (
 /obj/structure/fluff/nest,
 /turf/open/floor/rogue/grass,
@@ -35658,9 +35649,9 @@ oVk
 aWn
 aWn
 oVk
-qSp
-aqZ
-aqZ
+oVk
+oVk
+aWn
 oVk
 oVk
 oVk
@@ -51477,7 +51468,7 @@ nfH
 nfH
 oJC
 lxt
-sTA
+yhr
 yhr
 ojC
 xrt
@@ -83395,8 +83386,8 @@ aRV
 wVe
 ltg
 emx
-fdy
-gRj
+hmg
+hmg
 eCr
 tfO
 oiP
@@ -84180,8 +84171,8 @@ vDC
 wVe
 tPF
 bzO
-hmg
-hmg
+gRj
+fdy
 eCr
 tfO
 oiP
