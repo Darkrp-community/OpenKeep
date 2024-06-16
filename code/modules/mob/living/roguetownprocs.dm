@@ -155,8 +155,11 @@
 			if(!force_shield)
 				if(mainhand_defense >= offhand_defense)
 					highest_defense += mainhand_defense
+				else
+					used_weapon = offhand // If our offhand wins the defense thug-of-war, use it
+					highest_defense += offhand_defense
 			else
-				used_weapon = offhand
+				used_weapon = offhand // Forced to parry with offhand since we have a shield there.
 				highest_defense += offhand_defense
 
 			var/defender_skill = 0

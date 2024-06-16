@@ -1,7 +1,7 @@
 /obj/item/needle
 	name = "needle"
-	icon_state = "needle"
 	desc = "A firm needle affixed with a simple thread, Pestra's most favored tool."
+	icon_state = "needle"
 	icon = 'icons/roguetown/items/misc.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
@@ -130,8 +130,8 @@
 
 /obj/item/needle/thorn
 	name = "wooden needle"
+	desc = "This rough needle can be used to sew cloth and wounds alike."
 	icon_state = "thornneedle"
-	desc = "This rough needle can be used to sew cloth and wounds."
 	stringamt = 3
 
 /obj/item/needle/blessed
