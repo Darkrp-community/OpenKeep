@@ -9,7 +9,6 @@
 /area/rogue/indoors)
 "aS" = (
 /obj/effect/decal/cleanable/blood/old,
-/obj/item/chair/rogue,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors)
 "aU" = (
@@ -247,6 +246,11 @@
 /obj/structure/fluff/railing/fence,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
+"ig" = (
+/obj/structure/closet/crate/roguecloset,
+/obj/item/rogueweapon/mace/cudgel,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors)
 "ip" = (
 /turf/closed/wall/mineral/rogue/wooddark/end,
 /area/rogue/indoors)
@@ -442,8 +446,8 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/rtfield)
 "mY" = (
-/obj/structure/closet/crate/chest,
 /obj/item/roguekey/elder,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors)
 "no" = (
@@ -549,8 +553,8 @@
 	},
 /area/rogue/indoors)
 "qV" = (
-/obj/structure/closet/crate/chest,
 /obj/item/roguekey/elder,
+/obj/structure/closet/crate/chest/neu,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "qW" = (
@@ -567,7 +571,7 @@
 /obj/structure/chair/wood/rogue{
 	dir = 1
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/rtfield)
 "rR" = (
 /obj/structure/bed/rogue,
@@ -686,7 +690,7 @@
 	},
 /area/rogue/outdoors/woods)
 "wo" = (
-/obj/structure/closet/crate/chest,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors)
 "wv" = (
@@ -762,6 +766,11 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
+"yg" = (
+/obj/item/chair/rogue,
+/obj/item/rope,
+/turf/open/floor/rogue/ruinedwood/turned,
+/area/rogue/indoors)
 "yt" = (
 /obj/structure/rack/rogue,
 /turf/open/floor/rogue/ruinedwood/turned,
@@ -829,11 +838,11 @@
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/woods)
 "At" = (
-/obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/powder/flour/salt,
 /obj/item/reagent_containers/powder/flour/salt,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
+/obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors)
 "Au" = (
@@ -866,9 +875,9 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods)
 "Bi" = (
-/obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "Bp" = (
@@ -913,6 +922,10 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
+"Ci" = (
+/obj/structure/closet/crate/chest/neu,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors)
 "CV" = (
 /obj/structure/ladder,
 /turf/open/floor/rogue/cobble,
@@ -924,7 +937,7 @@
 	},
 /obj/item/clothing/mask/cigarette/pipe/westman,
 /obj/item/needle/thorn,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/rtfield)
 "Dt" = (
 /obj/structure/rack/rogue,
@@ -939,7 +952,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 4
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors)
 "DF" = (
 /obj/structure/roguerock,
@@ -1048,7 +1061,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 8
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors)
 "Gy" = (
 /obj/structure/fluff/railing/border{
@@ -1565,7 +1578,7 @@
 /area/rogue/indoors)
 "VO" = (
 /obj/structure/fluff/dryingrack,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/rtfield)
 "VU" = (
 /obj/structure/mineral_door/wood/deadbolt{
@@ -1590,9 +1603,8 @@
 	},
 /area/rogue/indoors)
 "WW" = (
-/obj/structure/closet/crate/chest/neu,
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors)
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/rtfield)
 "WY" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -17444,7 +17456,7 @@ rm
 rm
 rm
 rm
-jv
+WW
 XY
 dW
 dW
@@ -17601,7 +17613,7 @@ rm
 rm
 rm
 rm
-jv
+WW
 tu
 dW
 dW
@@ -20440,7 +20452,7 @@ rm
 rm
 Io
 uq
-uq
+yg
 uq
 Io
 Kr
@@ -40536,7 +40548,7 @@ Ea
 Ea
 Ea
 wv
-oQ
+ig
 aV
 wv
 qy
@@ -43196,8 +43208,8 @@ Ea
 Ea
 Ea
 Io
-WW
-WW
+Ci
+Ci
 cb
 dT
 Io
