@@ -27,8 +27,8 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors)
 "cu" = (
-/obj/structure/closet/crate/chest,
 /obj/item/trash/applecore,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors)
 "dw" = (
@@ -78,8 +78,8 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains)
 "nH" = (
-/obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/powder/flour/salt,
+/obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors)
 "od" = (
@@ -100,12 +100,12 @@
 	},
 /area/rogue/outdoors/river)
 "rv" = (
-/obj/structure/closet/crate/chest,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors)
 "tK" = (
-/obj/structure/closet/crate/chest,
 /obj/item/roguegem/violet,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors)
 "tU" = (
@@ -135,9 +135,15 @@
 /obj/item/rogueweapon/spear,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors)
+"Ak" = (
+/obj/structure/closet/crate/chest/wicker,
+/obj/item/rogueore/coal,
+/obj/item/rogueore/coal,
+/turf/open/floor/rogue/blocks/stonered,
+/area/rogue/indoors)
 "BG" = (
-/obj/structure/closet/crate/chest,
 /obj/item/roguegem/yellow,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors)
 "BH" = (
@@ -159,7 +165,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains)
 "DL" = (
-/obj/structure/closet/crate/chest,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "DN" = (
@@ -221,10 +227,8 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains)
 "Kc" = (
-/obj/structure/closet/crate/chest,
-/obj/item/rogueore/coal,
-/obj/item/rogueore/coal,
-/turf/open/floor/rogue/blocks/stonered,
+/obj/machinery/light/rogue/hearth,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "Ki" = (
 /turf/closed/wall/mineral/rogue/tent,
@@ -18924,7 +18928,7 @@ Ir
 Ir
 SY
 SY
-SY
+Ak
 VV
 bk
 bk
@@ -19391,8 +19395,8 @@ SY
 Ir
 SY
 VV
-Kc
-rv
+SY
+SY
 SY
 Ir
 SY
@@ -34934,8 +34938,8 @@ bk
 bk
 bk
 lQ
-Jf
 Up
+Jf
 DL
 lQ
 Ws
@@ -35249,7 +35253,7 @@ bk
 bk
 lQ
 Jf
-Jf
+Kc
 Jf
 uF
 wq
@@ -35562,8 +35566,8 @@ bk
 bk
 bk
 lQ
-Jf
 Up
+Jf
 DL
 lQ
 Ws

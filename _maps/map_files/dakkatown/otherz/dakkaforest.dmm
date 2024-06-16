@@ -482,8 +482,8 @@
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors)
 "ov" = (
-/obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/woods)
 "oJ" = (

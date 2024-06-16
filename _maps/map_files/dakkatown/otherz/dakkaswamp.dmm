@@ -17,8 +17,8 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "cQ" = (
-/obj/structure/closet/crate/chest,
 /obj/item/cooking/pan,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/bog)
 "cX" = (
@@ -90,8 +90,8 @@
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/bog)
 "nL" = (
-/obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "oO" = (
@@ -136,8 +136,8 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "sg" = (
-/obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/glass/bottle/rogue/poison,
+/obj/structure/closet/crate/chest/neu,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "st" = (
@@ -357,8 +357,8 @@
 	},
 /area/rogue/outdoors/bog)
 "ZD" = (
-/obj/structure/closet/crate/chest,
 /obj/item/fishingrod,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 
