@@ -581,8 +581,8 @@
 		add_overlay(mutable_appearance(icon, "[over_state]", ABOVE_MOB_LAYER))
 	..()
 
-/obj/structure/mineral_door/wood/blue
-	icon_state = "wcb"
+/obj/structure/mineral_door/wood/green
+	icon_state = "wcg"
 /obj/structure/mineral_door/wood/red
 	icon_state = "wcr"
 /obj/structure/mineral_door/wood/violet
