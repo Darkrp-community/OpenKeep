@@ -10,6 +10,16 @@
 				if(D.buried && D.funeral)
 					D.returntolobby()
 					return
+
+				// Check if the player's job is hiv+
+				var/datum/job/target_job = SSjob.GetJob(D.mind.assigned_role)
+				if(target_job)
+					if(target_job.job_reopens_slots_on_death)
+						target_job.current_positions = max(0, target_job.current_positions - 1)
+					if(target_job.same_job_respawn_delay)
+						// Store the current time for the player
+						GLOB.job_respawn_delays[src.ckey] = world.time + target_job.same_job_respawn_delay
+
 			for(var/obj/effect/landmark/underworld/A in world)
 				var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(A.loc)
 				O.livingname = mob.name
@@ -317,4 +327,3 @@
 		for(var/mob/living/carbon/human/A in view(4))
 			to_chat(A, "The monster's form dematerializes as it nears the Carriage.")
 		qdel(AM)
-
