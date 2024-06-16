@@ -84,10 +84,8 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/beach/boat)
 "hN" = (
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
-	},
 /obj/item/reagent_containers/glass/bottle/rogue/beer/spottedhen,
+/obj/structure/table/wood/plain/alt,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/beach)
 "ix" = (
@@ -219,9 +217,7 @@
 /obj/item/reagent_containers/glass/cup/golden,
 /obj/item/reagent_containers/glass/cup/golden,
 /obj/item/reagent_containers/glass/cup/golden,
-/obj/structure/table/wood{
-	icon_state = "tablefine2"
-	},
+/obj/structure/table/wood/finer,
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/beach/boat/captain)
 "vn" = (
@@ -263,9 +259,7 @@
 /area/rogue/outdoors/beach/boat)
 "xM" = (
 /obj/structure/globe,
-/obj/structure/table/wood{
-	icon_state = "tablefine2"
-	},
+/obj/structure/table/wood/finer,
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/beach/boat/captain)
 "xS" = (
@@ -283,9 +277,7 @@
 "yq" = (
 /obj/item/paper/scroll,
 /obj/item/natural/feather,
-/obj/structure/table/wood{
-	icon_state = "tablefine2"
-	},
+/obj/structure/table/wood/finer,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/beach/boat/captain)
 "yH" = (
@@ -334,9 +326,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/pieslice,
 /obj/item/reagent_containers/food/snacks/rogue/pieslice,
 /obj/item/reagent_containers/food/snacks/rogue/pieslice,
-/obj/structure/table/wood{
-	icon_state = "tablefine2"
-	},
+/obj/structure/table/wood/finer,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/beach/boat/captain)
 "CM" = (
@@ -421,7 +411,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/beach/boat/captain)
 "IK" = (
-/obj/structure/closet/crate/roguecloset/inn/chest,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/beach/boat)
 "Jc" = (
@@ -506,13 +496,6 @@
 "NX" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/beach)
-"Om" = (
-/obj/effect/landmark/mapGenerator/rogue/beach{
-	endTurfX = 155;
-	endTurfY = 45
-	},
-/turf/closed/mineral/rogue/bedrock,
-/area/rogue/outdoors/beach)
 "Ot" = (
 /obj/structure/mineral_door/wood{
 	name = "Passenger Room"
@@ -576,9 +559,7 @@
 /area/rogue/outdoors/beach/boat/captain)
 "VU" = (
 /obj/item/reagent_containers/glass/cup/golden,
-/obj/structure/table/wood{
-	icon_state = "tablefine2"
-	},
+/obj/structure/table/wood/finer,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/beach/boat/captain)
 "WA" = (
@@ -655,7 +636,7 @@ rP
 rP
 rP
 rP
-Om
+rP
 "}
 (2,1,1) = {"
 ut

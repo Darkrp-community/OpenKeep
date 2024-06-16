@@ -21,9 +21,9 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors)
 "cr" = (
-/obj/structure/table/wood,
 /obj/item/paper,
 /obj/item/natural/feather,
+/obj/structure/table/wood/plain,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors)
 "cu" = (
@@ -57,6 +57,10 @@
 	},
 /turf/open/water/river,
 /area/rogue/outdoors/river)
+"lx" = (
+/obj/structure/table/wood/counter/end,
+/turf/open/floor/rogue/blocks/stonered,
+/area/rogue/indoors)
 "lE" = (
 /obj/structure/chair/wood/rogue{
 	dir = 8
@@ -120,7 +124,9 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "uU" = (
-/obj/structure/table/wood,
+/obj/structure/rack/rogue/shelf/biggest{
+	pixel_y = 16
+	},
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors)
 "wq" = (
@@ -180,6 +186,10 @@
 /obj/machinery/light/rogue/campfire,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/mountains)
+"Fc" = (
+/obj/structure/table/wood/plain,
+/turf/open/floor/rogue/blocks/stonered,
+/area/rogue/indoors)
 "Fw" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/blocks/stonered/tiny,
@@ -247,6 +257,12 @@
 "Nk" = (
 /turf/closed/mineral/random/rogue/high,
 /area/rogue/outdoors/mountains/decap)
+"Oh" = (
+/obj/structure/table/wood/counter/end{
+	dir = 1
+	},
+/turf/open/floor/rogue/blocks/stonered,
+/area/rogue/indoors)
 "Oq" = (
 /obj/machinery/light/rogue/smelter,
 /turf/open/floor/rogue/blocks/stonered/tiny,
@@ -16408,13 +16424,13 @@ Nk
 Nk
 Kn
 Kn
-uU
+Fc
 cr
-uU
+Fc
 VV
 uU
 SY
-SY
+Xg
 SY
 Nb
 IB
@@ -16569,11 +16585,11 @@ Ir
 lE
 SY
 VV
-Xg
-Ir
-Ir
-Ir
 nH
+Ir
+Ir
+Ir
+SY
 VV
 bk
 bk
@@ -16726,7 +16742,7 @@ Fw
 Ir
 SY
 IB
-uU
+lx
 Ir
 Fw
 Ir
@@ -16883,7 +16899,7 @@ SY
 Ir
 SY
 VV
-uU
+Oh
 SY
 SY
 Ir
