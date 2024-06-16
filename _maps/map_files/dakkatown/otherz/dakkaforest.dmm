@@ -798,8 +798,10 @@
 	},
 /area/rogue/indoors)
 "zX" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/troll,
-/turf/open/water/cleanshallow,
+/obj/structure/stairs/stone{
+	dir = 4
+	},
+/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods)
 "At" = (
 /obj/item/reagent_containers/powder/flour/salt,
@@ -7975,7 +7977,7 @@ RN
 RN
 RN
 jt
-zX
+hA
 Tz
 Tz
 pt
@@ -32154,8 +32156,8 @@ Ea
 Ea
 Ea
 yY
-AZ
-AZ
+zX
+zX
 QF
 Ea
 Ea
@@ -32379,8 +32381,8 @@ Ea
 Ea
 Ea
 yY
-AZ
-AZ
+zX
+zX
 QF
 Ea
 Ea
