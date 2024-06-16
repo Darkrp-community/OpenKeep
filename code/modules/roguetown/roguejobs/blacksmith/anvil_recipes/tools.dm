@@ -116,3 +116,13 @@
 	created_item = list(/obj/item/roguegear,
 						/obj/item/roguegear,
 						/obj/item/roguegear)
+
+/datum/anvil_recipe/tools/locks
+	name = "5x locks"
+	req_bar = /obj/item/ingot/iron
+	created_item = list(/obj/item/customlock, /obj/item/customlock, /obj/item/customlock, /obj/item/customlock, /obj/item/customlock)
+
+/datum/anvil_recipe/tools/keys
+	name = "5x keys"
+	req_bar = /obj/item/ingot/iron
+	created_item = list(/obj/item/customblank, /obj/item/customblank, /obj/item/customblank, /obj/item/customblank, /obj/item/customblank)
