@@ -7999,7 +7999,8 @@
 "IE" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/mineral_door/wood/donjon{
-	name = "Surgery"
+	name = "Surgery";
+	lockid = "doctor"
 	},
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town)

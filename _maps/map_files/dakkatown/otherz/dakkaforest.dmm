@@ -973,6 +973,10 @@
 "Ea" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/woods)
+"Em" = (
+/obj/structure/fluff/walldeco/chains,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
 "Eu" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/mace/wsword,
@@ -18413,7 +18417,7 @@ dp
 TP
 Lr
 jv
-rm
+Em
 jv
 OI
 rm
@@ -18884,7 +18888,7 @@ dp
 dp
 Kf
 jv
-rm
+Em
 jv
 mD
 rm
