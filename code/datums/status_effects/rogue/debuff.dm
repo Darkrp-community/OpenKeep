@@ -3,7 +3,7 @@
 
 ///////////////////////////
 
-/datum/status_effect/debuff/hungryt1\
+/datum/status_effect/debuff/hungryt1
 	id = "hungryt1"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/hungryt1
 	effectedstats = list("speed" = -1,"strength" = -1, "constitution" = -1, "endurance" = -1)
