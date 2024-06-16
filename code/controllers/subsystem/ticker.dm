@@ -274,7 +274,7 @@ SUBSYSTEM_DEF(ticker)
 						if(player.IsJobUnavailable(V) != JOB_AVAILABLE)
 							to_chat(player, "<span class='warning'>You cannot be [V] and thus are not considered.</span>")
 							continue
-				readied_jobs.Add(V)
+					readied_jobs.Add(V)
 	if("Merchant" in readied_jobs)
 		if(("King" in readied_jobs) || ("Queen" in readied_jobs))
 			if("King" in readied_jobs)
@@ -306,7 +306,7 @@ SUBSYSTEM_DEF(ticker)
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			amt_ready++
 	if(amt_ready < 2)
-		to_chat(world, "<span class='purple'>[amt_ready]/20 players ready.</span>")
+		to_chat(world, "<span class='purple'>[amt_ready]/2 players ready.</span>")
 /*		failedstarts++
 		if(failedstarts > 7)
 			to_chat(world, "<span class='purple'>[failedstarts]/13</span>")
@@ -481,8 +481,8 @@ SUBSYSTEM_DEF(ticker)
 
 //	SEND_SOUND(world, sound('sound/misc/roundstart.ogg'))
 	current_state = GAME_STATE_PLAYING
-	
-	
+
+
 	Master.SetRunLevel(RUNLEVEL_GAME)
 /*
 	if(SSevents.holidays)
@@ -544,10 +544,10 @@ SUBSYSTEM_DEF(ticker)
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/player = i
 		if(!player)
-			message_admins("THERES A FUCKING NULL IN THE NEW_PLAYER_LIST, REPORT IT TO BLACKEDSTONE DEVELOPMENT STAFF NOW!")
+			message_admins("THERES A FUCKING NULL IN THE NEW_PLAYER_LIST, REPORT IT TO STONEKEEP DEVELOPMENT STAFF NOW!")
 			continue
 		if(!player.mind)
-			message_admins("THERES A MIND LACKING PLAYER IN THE NEW_PLAYER_LIST, REPORT IT TO BLACKEDSTONE DEVELOPMENT STAFF NOW!")
+			message_admins("THERES A MIND LACKING PLAYER IN THE NEW_PLAYER_LIST, REPORT IT TO STONEKEEP DEVELOPMENT STAFF NOW!")
 			continue
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			GLOB.joined_player_list += player.ckey

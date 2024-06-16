@@ -557,7 +557,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		"v4shim.css"          = 'html/font-awesome/css/v4-shims.min.css'
 	)*/
 
-/datum/asset/simple/blackedstone_class_menu_slop_layout
+/datum/asset/simple/stonekeep_class_menu_slop_layout
 	verify = FALSE
 	assets = list(
 		"try4.png" = 'icons/roguetown/misc/try4.png',
@@ -566,7 +566,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		"gragstar.gif" = 'icons/roguetown/misc/gragstar.gif'
 	)
 
-/datum/asset/simple/blackedstone_triumph_buy_menu_slop_layout
+/datum/asset/simple/stonekeep_triumph_buy_menu_slop_layout
 	verify = FALSE
 	assets = list(
 		"try5.png" = 'icons/roguetown/misc/try5.png',
@@ -574,7 +574,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		"slop_menustyle3.css" = 'html/browser/slop_menustyle3.css'
 	)
 
-/datum/asset/simple/blackedstone_drifter_queue_menu_slop_layout
+/datum/asset/simple/stonekeep_drifter_queue_menu_slop_layout
 	verify = FALSE
 	assets = list(
 		"slop_menustyle4.css" = 'html/browser/slop_menustyle4.css',

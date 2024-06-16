@@ -5,7 +5,7 @@
 	var/client/linked_client
 
 /datum/drifter_queue_menu/proc/first_show_drifter_queue_menu()
-	var/datum/asset/thicc_assets = get_asset_datum(/datum/asset/simple/blackedstone_drifter_queue_menu_slop_layout)
+	var/datum/asset/thicc_assets = get_asset_datum(/datum/asset/simple/stonekeep_drifter_queue_menu_slop_layout)
 	thicc_assets.send(linked_client)
 	show_drifter_queue_menu()
 
@@ -21,7 +21,7 @@
 			<style>
 			</style>
 			<link rel='stylesheet' type='text/css' href='slop_menustyle4.css'>
-			
+
 		</head>
 	"}
 	//<script type='text/javascript' src='slop_scriptstyle4.js'></script>
@@ -43,7 +43,7 @@
 
 	data += "<table class='wave_container'>"
 
-	
+
 	if(SSrole_class_handler.drifter_wave_schedule.len)
 		// Amount of iterations
 		var/current_iteration = 0
@@ -73,7 +73,7 @@
 
 			if(current_iteration >= max_to_display)
 				break
-	
+
 	data += "</table>"
 	data += "<hr class='fadeout_line'>"
 
@@ -85,7 +85,7 @@
 	data += {"
 		<script>
 			function update_timer(new_time) {
-				document.getElementById('queue_timer').innerHTML = new_time; 
+				document.getElementById('queue_timer').innerHTML = new_time;
 			}
 
 			function update_playersegments(new_count, list) {
