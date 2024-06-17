@@ -27,6 +27,7 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried
 	slices_num = 1
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef
+	slice_bclass = BCLASS_CHOP
 
 
 /*	.............   Minced meat & stuffing sausages   ................ */

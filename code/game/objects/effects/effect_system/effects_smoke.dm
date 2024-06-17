@@ -329,6 +329,7 @@
 
 /obj/effect/particle_effect/smoke/transparent
 	opaque = FALSE
+	alpha = 70
 
 /proc/do_smoke(range=0, location=null, smoke_type=/obj/effect/particle_effect/smoke)
 	var/datum/effect_system/smoke_spread/smoke = new

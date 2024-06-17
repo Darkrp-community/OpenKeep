@@ -6,7 +6,6 @@
  * * * * * * * * * * * **/
 
 
-
 /*	........   Nutrition defines   ................ */
 #define MEAL_FILLING 30
 #define MEAL_GOOD 24
@@ -71,13 +70,13 @@
 		qdel(src)
 	var/obj/item/I = new path(T)
 	eater.put_in_active_hand(I)
-
+/*
 /obj/item/reagent_containers/food/snacks/attackby(obj/item/W, mob/user, params)
 	. = ..()
 	if(user.mind)
 		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))	
 		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
-
+*/
 /* added to proc
 /obj/item/reagent_containers/food/snacks/proc/slice(obj/item/W, mob/user)
 	if(slice_sound)

@@ -19,16 +19,19 @@
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried/attackby(obj/item/I, mob/user, params)
 	var/obj/item/reagent_containers/peppermill/mill = I
-	var/found_table = locate(/obj/structure/table) in (loc)
+	if (!isturf(src.loc) || \
+		!(locate(/obj/structure/table) in src.loc) && \
+		!(locate(/obj/structure/table/optable) in src.loc) && \
+		!(locate(/obj/item/storage/bag/tray) in src.loc))
+		to_chat(user, "<span class='warning'>I need to use a table.</span>")
+		return FALSE
 	if(user.mind)
 		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
 		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
-	if(!istype(mill))
-		return ..()
-	if(!mill.reagents.has_reagent(/datum/reagent/consumable/blackpepper, 1))
-		to_chat(user, "There's not enough black pepper to make anything with.")
-		return TRUE
-	if(isturf(loc)&& (found_table))
+	if(istype(mill))
+		if(!mill.reagents.has_reagent(/datum/reagent/consumable/blackpepper, 1))
+			to_chat(user, "There's not enough black pepper to make anything with.")
+			return TRUE
 		mill.icon_state = "peppermill_grind"
 		to_chat(user, "You start rubbing the steak with black pepper.")
 		playsound(get_turf(user), 'sound/neu/peppermill.ogg', 100, TRUE, -1)
@@ -39,18 +42,15 @@
 			mill.reagents.remove_reagent(/datum/reagent/consumable/blackpepper, 1)
 			new /obj/item/reagent_containers/food/snacks/rogue/peppersteak(loc)
 			qdel(src)
-			return TRUE
 
-	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/peeledonion))
-		if(isturf(loc)&& (found_table))
-			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
-			to_chat(user, "<span class='notice'>Adding onions...</span>")
-			if(do_after(user,short_cooktime, target = src))
-				new /obj/item/reagent_containers/food/snacks/rogue/onionsteak(loc)
-				qdel(I)
-				qdel(src)
-		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/preserved/onion_fried))
+		playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
+		to_chat(user, "<span class='notice'>Adding onions...</span>")
+		if(do_after(user,short_cooktime, target = src))
+			new /obj/item/reagent_containers/food/snacks/rogue/onionsteak(loc)
+			qdel(I)
+			qdel(src)
+
 	else
 		to_chat(user, "<span class='warning'>You need to put [src] on a table to knead in the spice.</span>")
 
@@ -169,7 +169,7 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	rotprocess = SHELFLIFE_DECENT
 
-/obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked/wiener
+/obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked/wiener // wiener meant to be made from beef or maybe mince + bacon, luxury sausage, not implemented yet
 	name = "wiener"
 
 

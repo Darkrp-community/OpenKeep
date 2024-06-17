@@ -8,7 +8,7 @@
 
 /*	..................   Onions   ................... */
 /obj/item/reagent_containers/food/snacks/grown/onion/rogue
-	desc = "A fragrant vegetable with many layers, particularly favored by Aasimars for it's broad flavor profile."
+	desc = "A wonderful vegetable with many layers and broad flavor profile."
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/peeledonion
 	tastes = list("onion" = 1)
 	chopping_sound = TRUE
