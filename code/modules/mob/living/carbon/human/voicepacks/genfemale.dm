@@ -1,4 +1,4 @@
-/datum/voicepack/female/get_sound(soundin, modifiers)
+/datum/voicepack/female/abyssariad/get_sound(soundin, modifiers)
 	var/used
 	switch(modifiers)
 		if("old")

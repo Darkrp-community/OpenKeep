@@ -369,3 +369,46 @@
 	visible_message("<FONT COLOR='green'>[usr] soothes the beastblood with Dendor's whisper.</FONT><BR>")
 	for(var/mob/living/simple_animal/hostile/retaliate/B in oview(2))
 		B.aggressive = 0
+
+//Abyssonian
+
+/*
+/obj/effect/proc_holder/spell/revive/cast(list/targets, mob/living/user)
+	for(/turf/open/water/S in oview(5, user))
+		found = S
+	if(!found)
+		to_chat(user, "<span class='warning'>I found no suitable water source.</span>")
+		return FALSE
+	else
+		return TRUE
+
+	..()
+	if(isliving(targets[1]))
+		testing("revived1")
+		var/mob/living/target = targets[1]
+		if(target == user)
+			return FALSE
+		if(!user.Adjacent(target))
+			return FALSE
+		if(GLOB.tod == "night")
+			to_chat(user, "<span class='warning'>Let there be light.</span>")
+		for(var/obj/structure/fluff/psycross/S in oview(5, user))
+			S.AOE_flash(user, range = 8)
+		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
+			target.visible_message("<span class='danger'>[target] is unmade by holy light!</span>", "<span class='userdanger'>I'm unmade by holy light!</span>")
+			target.gib()
+		else
+			if(target.stat == DEAD)
+				if(target.revive(full_heal = FALSE))
+					testing("revived2")
+					target.grab_ghost(force = TRUE) // even suicides
+					target.emote("breathgasp")
+					target.Jitter(100)
+					to_chat(target, "<span class='notice'>I awake from the void.</span>")
+					return TRUE
+			target.visible_message("<span class='warning'>Nothing happens.</span>")
+			return FALSE
+		return TRUE
+	else
+		return FALSE
+*/

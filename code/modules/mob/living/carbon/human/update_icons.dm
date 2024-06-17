@@ -146,7 +146,7 @@ There are several things that need to be remembered:
 				legdam_overlays += legdam_overlay
 				var/mutable_appearance/armdam_overlay = mutable_appearance(limb_icon, "armdam_[BP.body_zone]_0[BP.burnstate]", -ARM_DAMAGE_LAYER)
 				armdam_overlays += armdam_overlay
-			if(BP.get_bleedrate())
+			if(BP.get_bleed_rate())
 				bleed_checker = TRUE
 				if(BP.bandage)
 					var/mutable_appearance/damage_overlay = mutable_appearance(limb_icon, "[BP.body_zone]_b", -DAMAGE_LAYER)
@@ -159,10 +159,10 @@ There are several things that need to be remembered:
 					armdam_overlay.color = BP.bandage.color
 					armdam_overlays += armdam_overlay
 			wound_overlays = list()
-			for(var/datum/wound/W in BP.wounds)
-				if(!W.mob_overlay)
+			for(var/datum/wound/wound as anything in BP.wounds)
+				if(!wound.mob_overlay)
 					continue
-				wound_overlays |= W.mob_overlay
+				wound_overlays |= wound.mob_overlay
 			for(var/wound_overlay in wound_overlays)
 				var/mutable_appearance/damage_overlay = mutable_appearance(limb_icon, "[BP.body_zone]_[wound_overlay]", -DAMAGE_LAYER)
 				damage_overlays += damage_overlay
@@ -404,11 +404,11 @@ There are several things that need to be remembered:
 		update_observer_view(wear_ring)
 		if(dna && dna.species.sexes)
 			var/G = (gender == FEMALE) ? "f" : "m"
-			if(G == "f" || dna.species.use_f)
+			if(G == "f" && !dna.species.use_m || dna.species.use_f)
 				id_overlay = wear_ring.build_worn_icon(default_layer = RING_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = TRUE)
 			else
 				id_overlay = wear_ring.build_worn_icon(default_layer = RING_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = FALSE)
-		if(gender == MALE)
+		if(gender == MALE || dna.species.use_m)
 			if(OFFSET_ID in dna.species.offset_features)
 				id_overlay.pixel_x += dna.species.offset_features[OFFSET_ID][1]
 				id_overlay.pixel_y += dna.species.offset_features[OFFSET_ID][2]
@@ -457,12 +457,12 @@ There are several things that need to be remembered:
 				racecustom = dna.species.id
 			var/G = (gender == FEMALE) ? "f" : "m"
 			var/armsindex = get_limbloss_index(ARM_RIGHT, ARM_LEFT)
-			if(G == "f" || dna.species.use_f)
+			if(G == "f" && !dna.species.use_m || dna.species.use_f)
 				gloves_overlay = gloves.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = TRUE, sleeveindex = armsindex)
 			else
 				gloves_overlay = gloves.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = FALSE, sleeveindex = armsindex, customi = racecustom)
 
-			if(gender == MALE)
+			if(gender == MALE || dna.species.use_m)
 				if(OFFSET_GLOVES in dna.species.offset_features)
 					gloves_overlay.pixel_x += dna.species.offset_features[OFFSET_GLOVES][1]
 					gloves_overlay.pixel_y += dna.species.offset_features[OFFSET_GLOVES][2]
@@ -480,7 +480,7 @@ There are several things that need to be remembered:
 			if(sleeves)
 				for(var/X in sleeves)
 					var/mutable_appearance/S = X
-					if(gender == MALE)
+					if(gender == MALE || dna.species.use_m)
 						if(OFFSET_GLOVES in dna.species.offset_features)
 							S.pixel_x += dna.species.offset_features[OFFSET_GLOVES][1]
 							S.pixel_y += dna.species.offset_features[OFFSET_GLOVES][2]
@@ -515,12 +515,12 @@ There are several things that need to be remembered:
 			var/G = (gender == FEMALE) ? "f" : "m"
 			var/armsindex = get_limbloss_index(ARM_RIGHT, ARM_LEFT)
 			var/mutable_appearance/wrists_overlay
-			if(G == "f" || dna.species.use_f)
+			if(G == "f" && !dna.species.use_m || dna.species.use_f)
 				wrists_overlay = wear_wrists.build_worn_icon(default_layer = WRISTS_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = TRUE, sleeveindex = armsindex)
 			else
 				wrists_overlay = wear_wrists.build_worn_icon(default_layer = WRISTS_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = FALSE, sleeveindex = armsindex, customi = racecustom)
 
-			if(gender == MALE)
+			if(gender == MALE || dna.species.use_m)
 				if(OFFSET_WRISTS in dna.species.offset_features)
 					wrists_overlay.pixel_x += dna.species.offset_features[OFFSET_WRISTS][1]
 					wrists_overlay.pixel_y += dna.species.offset_features[OFFSET_WRISTS][2]
@@ -538,7 +538,7 @@ There are several things that need to be remembered:
 			if(sleeves)
 				for(var/X in sleeves)
 					var/mutable_appearance/S = X
-					if(gender == MALE)
+					if(gender == MALE || dna.species.use_m)
 						if(OFFSET_WRISTS in dna.species.offset_features)
 							S.pixel_x += dna.species.offset_features[OFFSET_WRISTS][1]
 							S.pixel_y += dna.species.offset_features[OFFSET_WRISTS][2]
@@ -628,7 +628,7 @@ There are several things that need to be remembered:
 			var/mutable_appearance/shoes_overlay
 			if(dna.species.custom_clothes)
 				racecustom = dna.species.id
-			if(G == "f" || dna.species.use_f)
+			if(G == "f" && !dna.species.use_m || dna.species.use_f)
 				shoes_overlay = shoes.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = "f", customi = racecustom, sleeveindex = footindex)
 			else
 				shoes_overlay = shoes.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = FALSE, customi = racecustom, sleeveindex = footindex)
@@ -701,7 +701,7 @@ There are several things that need to be remembered:
 		var/mutable_appearance/head_overlay = overlays_standing[HEAD_LAYER]
 		if(head_overlay)
 			remove_overlay(HEAD_LAYER)
-			if(gender == MALE)
+			if(gender == MALE || dna.species.use_m)
 				if(OFFSET_HEAD in dna.species.offset_features)
 					head_overlay.pixel_x += dna.species.offset_features[OFFSET_HEAD][1]
 					head_overlay.pixel_y += dna.species.offset_features[OFFSET_HEAD][2]
@@ -754,7 +754,7 @@ There are several things that need to be remembered:
 					if(ishuman(src))
 						var/mob/living/carbon/human/H = src
 						if(H.dna && H.dna.species)
-							if(gender == MALE)
+							if(gender == MALE || dna.species.use_m)
 								if(OFFSET_BELT in H.dna.species.offset_features)
 									onbelt_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BELT][1]
 									onbelt_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BELT][2]
@@ -771,7 +771,7 @@ There are several things that need to be remembered:
 			else
 				onbelt_overlay = beltr.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = 'icons/roguetown/clothing/onmob/belt_r.dmi')
 				if(onbelt_overlay)
-					if(gender == MALE)
+					if(gender == MALE || dna.species.use_m)
 						if(OFFSET_BELT in dna.species.offset_features)
 							onbelt_overlay.pixel_x += dna.species.offset_features[OFFSET_BELT][1]
 							onbelt_overlay.pixel_y += dna.species.offset_features[OFFSET_BELT][2]
@@ -806,7 +806,7 @@ There are several things that need to be remembered:
 					if(ishuman(src))
 						var/mob/living/carbon/human/H = src
 						if(H.dna && H.dna.species)
-							if(gender == MALE)
+							if(gender == MALE || dna.species.use_m)
 								if(OFFSET_BELT in H.dna.species.offset_features)
 									onbelt_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BELT][1]
 									onbelt_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BELT][2]
@@ -823,7 +823,7 @@ There are several things that need to be remembered:
 			else
 				onbelt_overlay = beltl.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = 'icons/roguetown/clothing/onmob/belt_l.dmi')
 				if(onbelt_overlay)
-					if(gender == MALE)
+					if(gender == MALE || dna.species.use_m)
 						if(OFFSET_BELT in dna.species.offset_features)
 							onbelt_overlay.pixel_x += dna.species.offset_features[OFFSET_BELT][1]
 							onbelt_overlay.pixel_y += dna.species.offset_features[OFFSET_BELT][2]
@@ -845,12 +845,12 @@ There are several things that need to be remembered:
 				var/mutable_appearance/mbeltoverlay
 				if(dna.species.custom_clothes)
 					racecustom = dna.species.id
-				if(G == "f" || dna.species.use_f)
+				if(G == "f" && !dna.species.use_m || dna.species.use_f)
 					mbeltoverlay = belt.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = 'icons/roguetown/clothing/onmob/belts.dmi', coom = "f", customi = racecustom)
 				else
 					mbeltoverlay = belt.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = 'icons/roguetown/clothing/onmob/belts.dmi', coom = FALSE, customi = racecustom)
 				if(mbeltoverlay && !dna.species.custom_clothes)
-					if(gender == MALE)
+					if(gender == MALE || dna.species.use_m)
 						if(OFFSET_BELT in dna.species.offset_features)
 							mbeltoverlay.pixel_x += dna.species.offset_features[OFFSET_BELT][1]
 							mbeltoverlay.pixel_y += dna.species.offset_features[OFFSET_BELT][2]
@@ -924,7 +924,7 @@ There are several things that need to be remembered:
 	var/mutable_appearance/mask_overlay = overlays_standing[MASK_LAYER]
 	if(mask_overlay)
 		remove_overlay(MASK_LAYER)
-		if(gender == MALE)
+		if(gender == MALE || dna.species.use_m)
 			if(OFFSET_FACEMASK in dna.species.offset_features)
 				mask_overlay.pixel_x += dna.species.offset_features[OFFSET_FACEMASK][1]
 				mask_overlay.pixel_y += dna.species.offset_features[OFFSET_FACEMASK][2]
@@ -974,7 +974,7 @@ There are several things that need to be remembered:
 					if(ishuman(src))
 						var/mob/living/carbon/human/H = src
 						if(H.dna && H.dna.species)
-							if(gender == MALE)
+							if(gender == MALE || dna.species.use_m)
 								if(OFFSET_BACK in H.dna.species.offset_features)
 									back_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BACK][1]
 									back_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BACK][2]
@@ -990,7 +990,7 @@ There are several things that need to be remembered:
 					backbehind += behindback_overlay
 			else
 				back_overlay = backr.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = 'icons/roguetown/clothing/onmob/back_r.dmi')
-				if(gender == MALE)
+				if(gender == MALE || dna.species.use_m)
 					if(OFFSET_BACK in dna.species.offset_features)
 						back_overlay.pixel_x += dna.species.offset_features[OFFSET_BACK][1]
 						back_overlay.pixel_y += dna.species.offset_features[OFFSET_BACK][2]
@@ -1027,7 +1027,7 @@ There are several things that need to be remembered:
 					if(ishuman(src))
 						var/mob/living/carbon/human/H = src
 						if(H.dna && H.dna.species)
-							if(gender == MALE)
+							if(gender == MALE || dna.species.use_m)
 								if(OFFSET_BACK in H.dna.species.offset_features)
 									back_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BACK][1]
 									back_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BACK][2]
@@ -1043,7 +1043,7 @@ There are several things that need to be remembered:
 					backbehind += behindback_overlay
 			else
 				back_overlay = backl.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = 'icons/roguetown/clothing/onmob/back_l.dmi')
-				if(gender == MALE)
+				if(gender == MALE || dna.species.use_m)
 					if(OFFSET_BACK in dna.species.offset_features)
 						back_overlay.pixel_x += dna.species.offset_features[OFFSET_BACK][1]
 						back_overlay.pixel_y += dna.species.offset_features[OFFSET_BACK][2]
@@ -1090,7 +1090,7 @@ There are several things that need to be remembered:
 			var/mutable_appearance/cloak_overlay
 			if(dna.species.custom_clothes)
 				racecustom = dna.species.id
-			if(G == "f")
+			if(G == "f" && !dna.species.use_m)
 				cloak_overlay = cloak.build_worn_icon(default_layer = CLOAK_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = "f", customi = racecustom)
 			else
 				if(dna.species.use_f)
@@ -1098,7 +1098,7 @@ There are several things that need to be remembered:
 				else
 					cloak_overlay = cloak.build_worn_icon(default_layer = CLOAK_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = FALSE, customi = racecustom)
 
-			if(gender == MALE)
+			if(gender == MALE || dna.species.use_m)
 				if(OFFSET_CLOAK in dna.species.offset_features)
 					cloak_overlay.pixel_x += dna.species.offset_features[OFFSET_CLOAK][1]
 					cloak_overlay.pixel_y += dna.species.offset_features[OFFSET_CLOAK][2]
@@ -1121,7 +1121,7 @@ There are several things that need to be remembered:
 			if(cloaksleeves.len)
 				for(var/X in cloaksleeves)
 					var/mutable_appearance/S = X
-					if(gender == MALE)
+					if(gender == MALE || dna.species.use_m)
 						if(OFFSET_SHIRT in dna.species.offset_features)
 							S.pixel_x += dna.species.offset_features[OFFSET_CLOAK][1]
 							S.pixel_y += dna.species.offset_features[OFFSET_CLOAK][2]
@@ -1138,7 +1138,7 @@ There are several things that need to be remembered:
 			var/mutable_appearance/cloak_overlay
 			if(dna.species.custom_clothes)
 				racecustom = dna.species.id
-			if(G == "f")
+			if(G == "f" && !dna.species.use_m)
 				cloak_overlay = backr.build_worn_icon(default_layer = CLOAK_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = "f", customi = racecustom)
 			else
 				if(dna.species.use_f)
@@ -1146,7 +1146,7 @@ There are several things that need to be remembered:
 				else
 					cloak_overlay = backr.build_worn_icon(default_layer = CLOAK_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = FALSE, customi = racecustom)
 
-			if(gender == MALE)
+			if(gender == MALE || dna.species.use_m)
 				if(OFFSET_CLOAK in dna.species.offset_features)
 					cloak_overlay.pixel_x += dna.species.offset_features[OFFSET_CLOAK][1]
 					cloak_overlay.pixel_y += dna.species.offset_features[OFFSET_CLOAK][2]
@@ -1169,7 +1169,7 @@ There are several things that need to be remembered:
 			if(cloaksleeves.len)
 				for(var/X in cloaksleeves)
 					var/mutable_appearance/S = X
-					if(gender == MALE)
+					if(gender == MALE || dna.species.use_m)
 						if(OFFSET_SHIRT in dna.species.offset_features)
 							S.pixel_x += dna.species.offset_features[OFFSET_CLOAK][1]
 							S.pixel_y += dna.species.offset_features[OFFSET_CLOAK][2]
@@ -1215,15 +1215,15 @@ There are several things that need to be remembered:
 				var/obj/item/I = cloak
 				if(I.flags_inv & HIDEBOOB)
 					hideboob = TRUE
-			if(G == "f" && !hideboob)
+			if(G == "f" && !hideboob || G == "f" && !dna.species.use_m)
 				shirt_overlay = wear_shirt.build_worn_icon(default_layer = SHIRT_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = "f", customi = racecustom, sleeveindex = armsindex)
 			else
-				if(dna.species.use_f || G == "f")
+				if(dna.species.use_f || G == "f" && !dna.species.use_m)
 					shirt_overlay = wear_shirt.build_worn_icon(default_layer = SHIRT_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = "e", customi = racecustom, sleeveindex = armsindex)
 				else
 					shirt_overlay = wear_shirt.build_worn_icon(default_layer = SHIRT_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = FALSE, customi = racecustom, sleeveindex = armsindex)
 
-			if(gender == MALE)
+			if(gender == MALE || dna.species.use_m)
 				if(OFFSET_SHIRT in dna.species.offset_features)
 					shirt_overlay.pixel_x += dna.species.offset_features[OFFSET_SHIRT][1]
 					shirt_overlay.pixel_y += dna.species.offset_features[OFFSET_SHIRT][2]
@@ -1241,7 +1241,7 @@ There are several things that need to be remembered:
 			if(sleeves)
 				for(var/X in sleeves)
 					var/mutable_appearance/S = X
-					if(gender == MALE)
+					if(gender == MALE || dna.species.use_m)
 						if(OFFSET_SHIRT in dna.species.offset_features)
 							S.pixel_x += dna.species.offset_features[OFFSET_SHIRT][1]
 							S.pixel_y += dna.species.offset_features[OFFSET_SHIRT][2]
@@ -1286,7 +1286,7 @@ There are several things that need to be remembered:
 					hideboob = TRUE
 			if(dna.species.custom_clothes)
 				racecustom = dna.species.id
-			if(G == "f" && !hideboob || G == "f")
+			if(G == "f" && !hideboob || G == "f" && !dna.species.use_m)
 				armor_overlay = wear_armor.build_worn_icon(default_layer = ARMOR_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = "f", customi = racecustom, sleeveindex = armsindex)
 			else
 				if(dna.species.use_f)
@@ -1294,7 +1294,7 @@ There are several things that need to be remembered:
 				else
 					armor_overlay = wear_armor.build_worn_icon(default_layer = ARMOR_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = null, customi = racecustom, sleeveindex = armsindex)
 
-			if(gender == MALE)
+			if(gender == MALE || dna.species.use_m)
 				if(OFFSET_ARMOR in dna.species.offset_features)
 					armor_overlay.pixel_x += dna.species.offset_features[OFFSET_ARMOR][1]
 					armor_overlay.pixel_y += dna.species.offset_features[OFFSET_ARMOR][2]
@@ -1312,7 +1312,7 @@ There are several things that need to be remembered:
 			if(sleeves)
 				for(var/X in sleeves)
 					var/mutable_appearance/S = X
-					if(gender == MALE)
+					if(gender == MALE || dna.species.use_m)
 						if(OFFSET_ARMOR in dna.species.offset_features)
 							S.pixel_x += dna.species.offset_features[OFFSET_ARMOR][1]
 							S.pixel_y += dna.species.offset_features[OFFSET_ARMOR][2]
@@ -1353,7 +1353,7 @@ There are several things that need to be remembered:
 			var/mutable_appearance/pants_overlay
 			if(dna.species.custom_clothes)
 				racecustom = dna.species.id
-			if(G == "f")
+			if(G == "f" && !dna.species.use_m)
 				pants_overlay = wear_pants.build_worn_icon(default_layer = PANTS_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = "f", customi = racecustom, sleeveindex = legsindex)
 			else
 				if(dna.species.use_f)
@@ -1361,7 +1361,7 @@ There are several things that need to be remembered:
 				else
 					pants_overlay = wear_pants.build_worn_icon(default_layer = PANTS_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = FALSE, customi = racecustom, sleeveindex = legsindex)
 
-			if(G == "m")
+			if(G == "m" || dna.species.use_m)
 				if(OFFSET_PANTS in dna.species.offset_features)
 					pants_overlay.pixel_x += dna.species.offset_features[OFFSET_PANTS][1]
 					pants_overlay.pixel_y += dna.species.offset_features[OFFSET_PANTS][2]
@@ -1382,7 +1382,7 @@ There are several things that need to be remembered:
 			if(sleeves)
 				for(var/X in sleeves)
 					var/mutable_appearance/S = X
-					if(gender == MALE)
+					if(gender == MALE || dna.species.use_m)
 						if(OFFSET_PANTS in dna.species.offset_features)
 							S.pixel_x += dna.species.offset_features[OFFSET_PANTS][1]
 							S.pixel_y += dna.species.offset_features[OFFSET_PANTS][2]

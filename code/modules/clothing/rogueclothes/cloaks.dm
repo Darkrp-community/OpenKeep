@@ -461,7 +461,7 @@
 	nodismemsleeves = TRUE
 	inhand_mod = TRUE
 //	allowed_sex = list("male")
-	allowed_race = list("human", "tiefling", "elf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "abyssariad")
 	detail_tag = "_det"
 	detail_color = CLOTHING_PURPLE
 
@@ -606,6 +606,8 @@
 	color = CLOTHING_RED
 
 /obj/item/clothing/cloak/raincloak/mortus
+	name = "funeral cloak"
+	desc = "You're always shrouded by death."
 	color = CLOTHING_BLACK
 
 /obj/item/clothing/cloak/raincloak/brown
@@ -696,12 +698,12 @@
 
 /obj/item/clothing/cloak/cape/puritan
 	icon_state = "puritan_cape"
-	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar", "abyssariad")
 
 /obj/item/clothing/cloak/cape/archivist
 	icon_state = "puritan_cape"
 	color = CLOTHING_BLACK
-	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar", "abyssariad")
 
 /obj/item/clothing/cloak/cape/rogue
 	name = "cape"
@@ -728,7 +730,7 @@
 	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	nodismemsleeves = TRUE
 
 
@@ -755,7 +757,7 @@
 	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	sellprice = 50
 	nodismemsleeves = TRUE
 
@@ -768,7 +770,7 @@
 	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	sellprice = 50
 	nodismemsleeves = TRUE
 
@@ -789,7 +791,7 @@
 	toggle_icon_state = FALSE
 	color = CLOTHING_BLACK
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = list("human", "tiefling", "elf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "abyssariad")
 
 /obj/item/clothing/cloak/half/brown
 	color = CLOTHING_BROWN
@@ -802,7 +804,7 @@
 	icon_state = "guardcloak"
 	color = CLOTHING_RED
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	inhand_mod = FALSE
 
 /obj/item/clothing/cloak/half/vet/Initialize()

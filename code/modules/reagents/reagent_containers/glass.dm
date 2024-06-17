@@ -33,6 +33,14 @@
 	candodge = FALSE
 	misscost = 0
 
+/datum/intent/panning
+	name = "panning"
+	icon_state = "infill"
+	chargetime = 0
+	noaa = TRUE
+	candodge = FALSE
+	misscost = 0
+
 /obj/item/reagent_containers/glass/attack(mob/M, mob/user, obj/target)
 	testing("a1")
 	if(istype(M))
@@ -620,3 +628,82 @@
 	icon_state = "colocup[rand(0, 6)]"
 	pixel_x = rand(-4,4)
 	pixel_y = rand(-4,4)
+
+
+/obj/item/reagent_containers/crucible
+	name = "crucible"
+	icon_state = "crucible"
+	item_state = "crucible"
+	icon = 'icons/roguetown/items/misc.dmi'
+	custom_materials = null
+	force = 5
+	throwforce = 10
+	amount_per_transfer_from_this = 9
+	volume = 16
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
+	resistance_flags = FLAMMABLE
+	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
+	dropshrink = 0.8
+	slot_flags = null
+
+/obj/item/reagent_containers/crucible/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/natural/cloth))
+		var/obj/item/natural/cloth/T = I
+		if(T.wet && !T.return_blood_DNA())
+			return
+		var/removereg = /datum/reagent/water
+		if(!reagents.has_reagent(/datum/reagent/water, 5))
+			removereg = /datum/reagent/water/gross
+			if(!reagents.has_reagent(/datum/reagent/water/gross, 5))
+				to_chat(user, "<span class='warning'>No water to soak in.</span>")
+				return
+		wash_atom(T)
+		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
+		reagents.remove_reagent(removereg, 5)
+		user.visible_message("<span class='info'>[user] soaks [T] in [src].</span>")
+		return
+	..()
+
+/obj/item/reagent_containers/crucible/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.5,"sx" = -5,"sy" = -8,"nx" = 7,"ny" = -9,"wx" = -1,"wy" = -8,"ex" = -1,"ey" = -8,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
+
+/obj/item/reagent_containers/crucible/update_icon(dont_fill=FALSE)
+	if(dont_fill)
+		testing("dontfull")
+		return ..()
+
+	cut_overlays()
+
+	if(reagents.total_volume)
+		var/mutable_appearance/filling = mutable_appearance('icons/roguetown/items/misc.dmi', "woodbucketfilling")
+
+		filling.color = mix_color_from_reagents(reagents.reagent_list)
+		filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
+		add_overlay(filling)
+
+
+/obj/item/reagent_containers/crucible/equipped(mob/user, slot)
+	..()
+	if (slot == SLOT_HEAD)
+		if(reagents.total_volume)
+			to_chat(user, "<span class='danger'>[src]'s contents spill all over you!</span>")
+			reagents.reaction(user, TOUCH)
+			reagents.clear_reagents()
+		reagents.flags = NONE
+
+/obj/item/reagent_containers/crucible/dropped(mob/user)
+	. = ..()
+	reagents.flags = initial(reagent_flags)
+
+/obj/item/reagent_containers/crucible/equip_to_best_slot(var/mob/M)
+	if(reagents.total_volume) //If there is water in a bucket, don't quick equip it to the head
+		var/index = slot_equipment_priority.Find(SLOT_HEAD)
+		slot_equipment_priority.Remove(SLOT_HEAD)
+		. = ..()
+		slot_equipment_priority.Insert(index, SLOT_HEAD)
+		return
+	return ..()

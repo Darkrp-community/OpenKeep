@@ -40,8 +40,8 @@ Exclude = AUTOADMIN
 Edit =
 
 Name = Moderator
-Include = ADMIN STEALTH SERVER
-Exclude = AUTOADMIN DEBUG BAN SOUND VAREDIT
+Include = ADMIN
+Exclude =
 Edit =
 
 Name = Admin Candidate
@@ -59,29 +59,34 @@ Include = @ POSSESS POLL BUILD SERVER FUN
 Exclude =
 Edit =
 
-Name = Head Admin
-Include = EVERYTHING
-Exclude = AUTOADMIN SOUND
+Name = Game Admin
+Include = @ STEALTH SOUND DEBUG
+Exclude =
 Edit =
 
 Name = Game Master
 Include = EVERYTHING
-Exclude = AUTOADMIN SOUND
-Edit = 
+Exclude =
+Edit = EVERYTHING
+
+Name = Lazy Master
+Include = EVERYTHING
+Exclude = AUTOADMIN
+Edit = EVERYTHING
 
 Name = Host
 Include = EVERYTHING
-Exclude = 
+Exclude = AUTOADMIN
 Edit = EVERYTHING
 
 Name = Coder
-Include = ADMIN SERVER POLL STEALTH
-Exclude = AUTOADMIN DEBUG BAN SOUND VAREDIT BUILD
+Include = DEBUG VAREDIT SERVER SPAWN POLL
+Exclude = AUTOADMIN
 Edit =
 
 #--- rt
 
 Name = Watcher
-Include = WATCH
-Exclude = AUTOADMIN DEBUG BAN SOUND BUILD SERVER FUN POLL PERMISSIONS ADMIN POSSESS SPAWN VAREDIT
+Include = WATCH BAN
+Exclude =
 Edit =

@@ -13,8 +13,8 @@
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
-	max_blade_int = 40
-	max_integrity = 40
+	max_blade_int = 50
+	max_integrity = 50
 	wdefense = 1
 	w_class = WEIGHT_CLASS_BULKY
 	wlength = WLENGTH_SHORT
@@ -113,12 +113,12 @@
 	force = 20
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
-	name = "axe"
+	name = "iron axe"
 	desc = "Tool, weapon, loyal iron companion."
 	icon_state = "axe"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	max_blade_int = 130
-	max_integrity = 300
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
@@ -127,10 +127,20 @@
 	wdefense = 2
 	minstr = 6
 
+// Pickaxe-axe ; Technically both a tool and weapon, but it goes here due to weapon function. Subtype of steel axe.
+/obj/item/rogueweapon/woodcut/pick
+	name = "axe"
+	desc = "An odd mix of a pickaxe front and a hatchet blade back, capable of being switched between."
+	icon_state = "paxe"
+	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop, /datum/intent/pick)
+	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	wlength = WLENGTH_NORMAL
+	toolspeed = 2
+
 /obj/item/rogueweapon/woodcut/steel
 	slot_flags = ITEM_SLOT_HIP
-	name = "axe"
-	desc = "The bearded steel ax, a hatched revered by dwarf, humen and elf alike."
+	name = "steel axe"
+	desc = "A bearded steel axe revered by dwarf, humen and elf alike. Performs much better than its iron counterpart."
 	icon_state = "saxe"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	force = 20

@@ -639,3 +639,124 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = null
 	droning_sound_night = null
 	first_time_text = "The Forest of Repentence"
+
+	///// Kaizoku: Call of the Sea //////
+// Kaizoku: Tower Zones //
+/area/rogue/indoors/kaizoku/tower
+	name = "tower_indoor"
+	icon_state = "blueold"
+	droning_sound = 'sound/music/area/indoor.ogg'
+	droning_sound_dusk = 'sound/music/area/septimus.ogg'
+	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	converted_type = /area/rogue/outdoors/kaizoku/exposed/tower
+	first_time_text = "TOWER OF THE TEN-SIDED DICE"
+/area/rogue/outdoors/kaizoku/exposed/tower
+	icon_state = "town"
+	droning_sound = 'sound/music/area/towngen.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+
+/area/rogue/under/kaizoku/tower/basement
+	name = "basement"
+	icon_state = "basement"
+	ambientsounds = AMB_BASEMENT
+	ambientnight = AMB_BASEMENT
+	spookysounds = SPOOKY_DUNGEON
+	spookynight = SPOOKY_DUNGEON
+	droning_sound = 'sound/music/area/catacombs.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	soundenv = 5
+	converted_type = /area/rogue/outdoors/exposed/under/basement
+/area/rogue/outdoors/kaizoku/exposed/under/basement
+	icon_state = "basement"
+	droning_sound = 'sound/music/area/catacombs.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+
+/area/rogue/under/kaizoku/tower/sewer
+	name = "sewer"
+	icon_state = "sewer"
+	ambientsounds = AMB_CAVEWATER
+	ambientnight = AMB_CAVEWATER
+	spookysounds = SPOOKY_RATS
+	spookynight = SPOOKY_RATS
+	droning_sound = 'sound/music/area/sewers.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	ambientrain = RAIN_SEWER
+	/*ambush_types = list(
+				/turf/open/floor/rogue/trash)*/
+	ambush_mobs = list(
+				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 60,
+				/mob/living/simple_animal/hostile/retaliate/rogue/trollbog = 10,
+				/mob/living/carbon/human/species/goblin/npc/ambush = 45,
+				/mob/living/simple_animal/hostile/retaliate/rogue/mole = 25)
+	converted_type = /area/rogue/outdoors/kaizoku/exposed/under/sewer
+/area/rogue/outdoors/kaizoku/exposed/under/sewer
+	icon_state = "sewer"
+	droning_sound = 'sound/music/area/sewers.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+
+area/rogue/indoor/kaizoku/tower/parlor
+	name = "parlor"
+	icon_state = "sargoth"
+	droning_sound = 'sound/music/area/sargoth.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	first_time_text = "THE PARLOR"
+
+/area/rogue/indoor/kaizoku/tower/industrial
+	name = "pelphia"
+	icon_state = "dwarf"
+	droning_sound = 'sound/music/area/dwarf.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	first_time_text = "Industrial Pelphia"
+	converted_type = /area/rogue/indoors/shelter/town/dwarf
+
+/area/rogue/indoors/town/kaizoku/palace
+	name = "palace"
+	icon_state = "manor"
+	droning_sound = 'sound/music/area/manor.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	first_time_text = "HALLOW PALACE"
+	converted_type = /area/rogue/outdoors/kaizoku/exposed/palacegarri
+/area/rogue/outdoors/kaizoku/exposed/palacegarri
+	icon_state = "manorgarri"
+	droning_sound = 'sound/music/area/manor.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+
+// Kaizoku: Outside Zones //
+
+/area/rogue/outdoors/kaizoku/mire
+	name = "abyssonian_mire"
+	icon_state = "woods"
+	ambientsounds = AMB_FORESTDAY
+	ambientnight = AMB_FORESTNIGHT
+	spookysounds = SPOOKY_CROWS
+	spookynight = SPOOKY_FOREST
+	droning_sound = 'sound/music/area/forest.ogg'
+	droning_sound_dusk = 'sound/music/area/septimus.ogg'
+	droning_sound_night = 'sound/music/area/forestnight.ogg'
+	soundenv = 15
+	ambush_times = list("night","dawn","dusk","day")
+	ambush_types = list(
+				/turf/open/floor/rogue/grass)
+	ambush_mobs = list(
+				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 60,
+				/mob/living/simple_animal/hostile/retaliate/rogue/trollbog = 10,
+				/mob/living/carbon/human/species/goblin/npc/ambush = 45,
+				/mob/living/simple_animal/hostile/retaliate/rogue/mole = 25)
+	first_time_text = "THE ABYSSONIAN MIRE"
+	converted_type = /area/rogue/indoors/kaizoku/shelter/mire
+/area/rogue/indoors/kaizoku/shelter/mire
+	icon_state = "woods"
+	droning_sound = 'sound/music/area/forest.ogg'
+	droning_sound_dusk = 'sound/music/area/septimus.ogg'
+	droning_sound_night = 'sound/music/area/forestnight.ogg'
+
+// Kaizoku: Raiding Zones //

@@ -20,7 +20,7 @@
 			zone = BODY_ZONE_HEAD
 		if(BODY_ZONE_PRECISE_MOUTH)
 			zone = BODY_ZONE_HEAD
-		if(BODY_ZONE_PRECISE_HAIR)
+		if(BODY_ZONE_PRECISE_SKULL)
 			zone = BODY_ZONE_HEAD
 		if(BODY_ZONE_PRECISE_EARS)
 			zone = BODY_ZONE_HEAD
@@ -38,9 +38,9 @@
 			zone = BODY_ZONE_CHEST
 		if(BODY_ZONE_PRECISE_STOMACH)
 			zone = BODY_ZONE_CHEST
-		if(BODY_ZONE_R_INHAND)
+		if(BODY_ZONE_PRECISE_R_INHAND)
 			zone = BODY_ZONE_R_ARM
-		if(BODY_ZONE_L_INHAND)
+		if(BODY_ZONE_PRECISE_L_INHAND)
 			zone = BODY_ZONE_L_ARM
 
 	return zone
@@ -498,8 +498,44 @@
 				qdel(mmb_intent)
 				input = null
 				mmb_intent = null
+				var/mob/living/carbon/human/H = src
+				if(ishuman(src) && H.dna.species.name == "Kitsune") //The intention is to make them get an overlay. They may crit with their bite, but everyone will know they are biting.
+					var/mutable_appearance/eldritch_maw = mutable_appearance('icons/roguetown/mob/bodies/m/mt_kit.dmi', "eldritch_maw", MOUTH_LAYER)
+					H.remove_overlay(eldritch_maw)
+					visible_message("<span class='warning'>[src]'s face knits together.</span>")
+					playsound(src.loc, 'sound/combat/fracture/fracturewet (2).ogg', 50, 1)
+					H.cut_overlay(eldritch_maw)
+					update_icon()
+					H.update_body()
 			else
 				mmb_intent = new INTENT_BITE(src)
+				var/mob/living/carbon/human/H = src
+				if(ishuman(src) && H.dna.species.name == "Kitsune") //The intention is to make them get an overlay. They may crit with their bite, but everyone will know they are biting.
+					var/mutable_appearance/eldritch_maw = mutable_appearance('icons/roguetown/mob/bodies/m/mt_kit.dmi', "eldritch_maw", MOUTH_LAYER)
+					H.remove_overlay(eldritch_maw)
+					visible_message("<span class='warning'>[src]'s face splits into a deadly maw.</span>")
+					playsound(src.loc, 'sound/combat/fracture/fracturewet (2).ogg', 50, 1)
+					add_overlay(eldritch_maw)
+					update_icon()
+					H.update_body()
+
+/*
+		if(QINTENT_STEAL)
+		if(QINTENT_KICK)
+		if(QINTENT_SPELL)
+		if(QINTENT_JUMP)
+		if(QINTENT_GIVE)
+		if(QINTENT_SPELL)
+
+
+
+var/mutable_appearance/colored_overlay = mutble_appearance(icon, "lipstick_uncap_color")
+colored_overlay.color = colour
+icon_state = "lipstick_uncap"
+add_overlay(colored_overlay)
+*/
+
+
 		if(QINTENT_JUMP)
 			if(mmb_intent?.type == INTENT_JUMP)
 				qdel(mmb_intent)
@@ -596,7 +632,7 @@
 		if(19)
 			zone_selected = BODY_ZONE_HEAD
 		if(18)
-			zone_selected = BODY_ZONE_PRECISE_HAIR
+			zone_selected = BODY_ZONE_PRECISE_SKULL
 		if(17)
 			zone_selected = BODY_ZONE_PRECISE_EARS
 		if(16)
@@ -638,14 +674,17 @@
 			if(hud_used.zone_select)
 				hud_used.zone_select.update_icon()
 
+/mob/proc/select_organ_slot(choice)
+	organ_slot_selected = choice
+
 /mob/proc/select_zone(choice)
 	zone_selected = choice
 	switch(choice)
-		if(BODY_ZONE_HEAD)
+		if(BODY_ZONE_PRECISE_SKULL)
 			aimheight = 19
-		if(BODY_ZONE_PRECISE_HAIR)
+		if(BODY_ZONE_PRECISE_SKULL)
 			aimheight = 18
-		if(BODY_ZONE_PRECISE_EARS)
+		if(BODY_ZONE_HEAD)
 			aimheight = 17
 		if(BODY_ZONE_PRECISE_R_EYE)
 			aimheight = 16

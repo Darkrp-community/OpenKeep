@@ -125,6 +125,7 @@
 #define TAILOR		(1<<5)
 #define MERCHANT	(1<<6)
 #define SCRIBE		(1<<7)
+#define FELDSHER    (1<<8)
 
 #define PEASANTS		(1<<4)
 
@@ -164,8 +165,10 @@
 #define JDO_HAND 2
 #define JDO_STEWARD 3
 
-#define JDO_MAGICIAN 5
-#define JDO_WAPP 6
+#define JDO_MAGICIAN 4
+#define JDO_WAPP 5
+
+#define JDO_FELDSHER 6
 
 #define JDO_CAPTAIN 7
 #define JDO_ROYALGUARD 7.1
@@ -219,3 +222,60 @@
 
 #define JDO_VAGRANT 34
 #define JDO_ORPHAN 35
+
+// == // Kaizoku Edition + Job Display Orders // == // 
+// Kaizoku: Aristocrat caste //
+#define JDO_DAIMYO 1
+#define JDO_CLAN 1.2
+#define JDO_KARO 2
+#define JDO_BUGYO 3
+#define JDO_SAMURAI 4
+#define JDO_ONMYOJI 5
+#define JDO_ONMAPP 6
+
+// Kaizoku: Samurai Caste //
+#define JDO_SHOGUN 7
+#define JDO_KAISHA 8
+#define JDO_MONBAN 9
+#define JDO_ASHIGARU 10
+#define JDO_RAIDER 10.1
+#define JDO_KYUODOKA 11
+#define JDO_KOSHO 11
+
+// Kaizoku: Sacrosanct Caste //
+#define JDO_KANNUSHI 12
+#define JDO_METSUKE 13
+#define JDO_HOSHI 14
+#define JDO_SOHEI 15
+#define JDO_JISHA 16
+
+// Kaizoku: Commoner Caste //
+#define JDO_TMERCHANT 17
+#define JDO_SILKRUNNER 18
+#define JDO_STEELWEAVER 19
+#define JDO_BLADESMITH 21
+#define JDO_FORGER 22
+#define JDO_ARCHI 23
+#define JDO_PSERVANT 24
+#define JDO_IZAKAYA 25
+#define JDO_GEISHA 26
+#define JDO_KCOOK 27
+#define JDO_TOWNER 27
+#define JDO_PLOWMAN 27.1
+#define JDO_KBUTCHER 27.2
+#define JDO_VILLAGELEAD 28
+#define JDO_CARETAKER 29
+#define JDO_DESHI 30
+
+// Kaizoku: Outcast Caste //
+#define JDO_KPRISONER 31
+#define JDO_BURAKUMIN 32
+#define JDO_PANDERER 33
+#define JDO_COURTESAN 34
+#define JDO_GANGMEMBER 35
+#define JDO_TOSHER 36
+
+// Kaizoku: MISC Caste //
+#define JDO_DAREDEVIL 37
+#define JDO_WANDERER 37.1
+#define JDO_TAIKOMOCHI 38

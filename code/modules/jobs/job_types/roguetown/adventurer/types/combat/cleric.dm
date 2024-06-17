@@ -3,14 +3,17 @@
 	name = "Cleric"
 	tutorial = "Clerics are wandering warriors of the Gods, an asset to any party."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen", 
-		"Elf", 
-		"Half-Elf",
-		"Dwarf", 
-		"Dark Elf",
-		"Aasimar"
-	)
+	allowed_races = list("Humen",
+	"Elf",
+	"Half-Elf",
+	"Dwarf",
+	"Tiefling",
+	"Dark Elf",
+	"Aasimar",
+	"Kitsune",
+	"Tengu",
+	"Oni",
+	"Kappa")
 	allowed_patrons = list("Astrata", "Dendor", "Necra")
 	ispilgrim = FALSE
 	outfit = /datum/outfit/job/roguetown/adventurer/cleric
@@ -70,7 +73,7 @@
 		H.change_stat("constitution", 2)
 		H.change_stat("endurance", 3)
 		H.change_stat("speed", -1)
-	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.PATRON)
 	C.holder_mob = H
 	C.grant_spells(H)

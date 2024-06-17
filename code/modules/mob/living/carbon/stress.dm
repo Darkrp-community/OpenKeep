@@ -146,32 +146,13 @@
 				qdel(D)
 	return TRUE
 
-/datum/stressevent
-	var/timer
-	var/stressadd
-	var/desc
-	var/time_added
-	var/max_stacks = 1 //if higher than 0, can stack
-
-/datum/stressevent/proc/get_desc(mob/living/user)
-	return desc
-
-/*/datum/stressevent/test
-	timer = 5 SECONDS
-	stressadd = 3
-	desc = "<span class='red'>This is a test event.</span>"
-
-/datum/stressevent/testr
-	timer = 5 SECONDS
-	stressadd = -3
-	desc = "<span class='green'>This is a test event.</span>"
-
 #ifdef TESTSERVER
 /client/verb/add_stress()
 	set category = "DEBUGTEST"
 	set name = "stressBad"
 	if(mob)
 		mob.add_stress(/datum/stressevent/test)
+
 /client/verb/remove_stress()
 	set category = "DEBUGTEST"
 	set name = "stressGood"
@@ -186,6 +167,7 @@
 		mob.remove_client_colour(/datum/client_colour/test2)
 		mob.remove_client_colour(/datum/client_colour/test3)
 		mob.add_client_colour(/datum/client_colour/test1)
+
 /client/verb/filter2()
 	set category = "DEBUGTEST"
 	set name = "TestFilter2"
@@ -194,6 +176,7 @@
 		mob.remove_client_colour(/datum/client_colour/test2)
 		mob.remove_client_colour(/datum/client_colour/test3)
 		mob.add_client_colour(/datum/client_colour/test2)
+
 /client/verb/filter3()
 	set category = "DEBUGTEST"
 	set name = "TestFilter3"
@@ -218,7 +201,7 @@
 		var/turf/T = get_turf(mob)
 		if(T)
 			T.flash_lighting_fx(30)
-#endif*/
+#endif
 
 //**********************************************
 //************** NEGATIVE STRESS ****************
@@ -412,6 +395,17 @@
 	timer = 1 MINUTES
 	stressadd = 1
 	desc = "<span class='red'>Helldweller... better stay away.</span>"
+
+
+/datum/stressevent/teng
+	timer = 1 MINUTES
+	stressadd = 1
+	desc = "<span class='red'>Filthy, coward weakling. Beware.</span>"
+
+/datum/stressevent/vulp
+	timer = 1 MINUTES
+	stressadd = 1
+	desc = "<span class='red'>Selfish, self-sacrificial lamb. Beware.</span>"
 
 /datum/stressevent/paracrowd
 	timer = 15 SECONDS
