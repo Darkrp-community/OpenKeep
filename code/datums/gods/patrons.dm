@@ -72,15 +72,15 @@ GLOBAL_LIST_EMPTY(patronlist)
 // ............ SAINTS ..................
 /datum/patrongods/ravox
 	name = "Ravox"
-	domain = "Saint of Warfare, Struggle and Strife"
+	domain = "Saint of Warfare, Struggle and Chivalry"
 	summary = "The strong-arm of the Pantheon, he watches man from afar."
 	flaws= "Careless, Confrontational, Proud"
 	worshippers = "Warriors, Sellswords & the Ambitious"
-	sins = "Cowardice, Dishonoring a duel, Weakness"
+	sins = "Cowardice, Cruelty, Stagnation"
 
 /datum/patrongods/xylix
 	name = "Xylix"
-	domain = "Saint of Deceit, Misfortune and Creativity"
+	domain = "Saint of Trickery, Freedom and Inspiration"
 	summary = "Mortal turned trickster and shadow of the Pantheon."
 	flaws= "Annoying, Liar, Deceitful"
 	worshippers = "Cheats, Artists, the Hopeless"
@@ -108,6 +108,6 @@ GLOBAL_LIST_EMPTY(patronlist)
 	summary = "Blind love for all, without a shred of hate in her heart"
 	flaws= "Naive, Compulsive, Ignorant"
 	worshippers = "Lovers, Harlots, Doting Grandparents"
-	sins = "Cruelty, Celibacy, Ruining beauty"
+	sins = "Sadism, Celibacy, Ruining beauty"
 
 
