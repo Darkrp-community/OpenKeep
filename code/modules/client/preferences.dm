@@ -2122,7 +2122,7 @@ Slots: [job.spawn_positions]</span>
 					to_chat(user, "<font color='red'>[pick(loly)]</font>")
 					return
 				if("faith")
-					to_chat(user, "<font color='purple'>You are a worshipper of the gods of the Divine Pantheon. May Almighty Psydon and the 10 protect us from Zizo!</font>")
+					to_chat(user, "<font color='purple'>You are a worshipper of the gods of the Divine Pantheon. May the Ten protect us from Zizo!</font>")
 					return
 				if("alignment")
 ///					to_chat(user, "<font color='puple'>Alignment is how you communicate to the Game Masters if your character follows a certain set of behavior restrictions. This allows you to </font>")
