@@ -2102,6 +2102,11 @@
 	},
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/shelter/town/sargoth)
+"jo" = (
+/turf/closed/wall/mineral/rogue/wooddark/end{
+	dir = 1
+	},
+/area/rogue/indoors/town/apothecary)
 "jq" = (
 /turf/closed/wall/mineral/rogue/decostone,
 /area/rogue/under/town/basement)
@@ -4369,9 +4374,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town)
 "tb" = (
-/turf/closed/wall/mineral/rogue/wooddark/end{
-	dir = 4
-	},
+/turf/closed/wall/mineral/rogue/wooddark/end,
 /area/rogue/indoors/town/apothecary)
 "tc" = (
 /obj/structure/fermenting_barrel/beer,
@@ -4388,12 +4391,6 @@
 /obj/structure/rack/rogue,
 /turf/open/floor/rogue/blocks/newstone/alt,
 /area/rogue/indoors/town/shop)
-"tg" = (
-/obj/structure/fluff/walldeco/bigpainting/lake{
-	pixel_x = 0
-	},
-/turf/open/floor/rogue/carpet,
-/area/rogue/indoors/town/manor)
 "tj" = (
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/indoors/town/bath)
@@ -4556,12 +4553,6 @@
 "tV" = (
 /turf/open/floor/rogue/blocks/paving,
 /area/rogue/indoors/town)
-"tW" = (
-/obj/item/reagent_containers/food/snacks/crow{
-	dir = 8
-	},
-/turf/open/floor/rogue/blocks,
-/area/rogue/outdoors/town/roofs)
 "tX" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 8;
@@ -5677,11 +5668,6 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/shelter/town/sargoth)
-"yT" = (
-/turf/closed/wall/mineral/rogue/wooddark/end{
-	dir = 8
-	},
-/area/rogue/indoors/town/apothecary)
 "yU" = (
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors/town/apothecary)
@@ -5755,11 +5741,12 @@
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/manor)
-"zo" = (
-/turf/closed/wall/mineral/rogue/wooddark/end{
-	dir = 1
+"zn" = (
+/obj/structure/fluff/walldeco/rpainting/forest{
+	pixel_y = -32
 	},
-/area/rogue/indoors/town/apothecary)
+/turf/open/floor/rogue/carpet,
+/area/rogue/indoors/town/manor)
 "zp" = (
 /obj/structure/table/wood/large/corner_alt,
 /turf/open/floor/carpet/purple,
@@ -5799,6 +5786,12 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/blocks/newstone/alt,
 /area/rogue/indoors/town/shop)
+"zy" = (
+/obj/structure/fluff/walldeco/rpainting/crown{
+	pixel_y = -32
+	},
+/turf/open/floor/rogue/carpet,
+/area/rogue/indoors/town/manor)
 "zz" = (
 /obj/structure/flora/roguegrass/bush,
 /turf/open/floor/rogue/dirt,
@@ -6164,8 +6157,8 @@
 	},
 /area/rogue/indoors/town)
 "Bd" = (
-/obj/structure/fluff/walldeco/rpainting/forest{
-	pixel_y = -32
+/obj/structure/fluff/walldeco/bigpainting/lake{
+	pixel_x = 0
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor)
@@ -7026,6 +7019,11 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/dwarfin)
+"EY" = (
+/turf/closed/wall/mineral/rogue/wooddark/end{
+	dir = 4
+	},
+/area/rogue/indoors/town/apothecary)
 "Fa" = (
 /turf/closed/wall/mineral/rogue/pipe,
 /area/rogue/outdoors/town/roofs)
@@ -7873,6 +7871,12 @@
 /obj/item/reagent_containers/glass/cup/wooden,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/garrison)
+"IP" = (
+/obj/structure/fluff/walldeco/rpainting{
+	pixel_x = 32
+	},
+/turf/open/floor/rogue/carpet,
+/area/rogue/indoors/town/manor)
 "IQ" = (
 /turf/closed/wall/mineral/rogue/decostone,
 /area/rogue/indoors/town/church)
@@ -8045,11 +8049,11 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/town/sewer)
 "JD" = (
-/obj/structure/fluff/walldeco/rpainting/crown{
-	pixel_y = -32
+/obj/item/reagent_containers/food/snacks/crow{
+	dir = 8
 	},
-/turf/open/floor/rogue/carpet,
-/area/rogue/indoors/town/manor)
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/town/roofs)
 "JE" = (
 /obj/machinery/light/rogue/firebowl,
 /turf/open/floor/rogue/rooftop{
@@ -8518,6 +8522,11 @@
 "LP" = (
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/dwarfin)
+"LQ" = (
+/turf/closed/wall/mineral/rogue/wooddark/end{
+	dir = 8
+	},
+/area/rogue/indoors/town/apothecary)
 "LS" = (
 /obj/structure/stairs/stone{
 	dir = 8
@@ -9347,6 +9356,12 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/garrison)
+"Pl" = (
+/obj/structure/fluff/walldeco/moon{
+	pixel_y = 32
+	},
+/turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/town/manor)
 "Pm" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/concrete,
@@ -10799,9 +10814,6 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
-"VB" = (
-/turf/closed/wall/mineral/rogue/wooddark/end,
-/area/rogue/indoors/town/apothecary)
 "VC" = (
 /obj/machinery/light/rogue/wallfire{
 	pixel_x = 32
@@ -11111,12 +11123,6 @@
 "WP" = (
 /obj/structure/telescope,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/manor)
-"WQ" = (
-/obj/structure/fluff/walldeco/moon{
-	pixel_y = 32
-	},
-/turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor)
 "WR" = (
 /turf/open/floor/rogue/tile/masonic/inverted,
@@ -11816,12 +11822,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town)
-"ZV" = (
-/obj/structure/fluff/walldeco/rpainting{
-	pixel_x = 32
-	},
-/turf/open/floor/rogue/carpet,
-/area/rogue/indoors/town/manor)
 "ZW" = (
 /obj/structure/table/wood,
 /obj/structure/bars{
@@ -45518,13 +45518,13 @@ wK
 wK
 lM
 qT
-qT
-qT
-qT
-qT
-qT
-qT
-ij
+pl
+pl
+pl
+pl
+pl
+pl
+hK
 Lj
 Lj
 Lj
@@ -70890,7 +70890,7 @@ Wa
 wx
 wx
 HE
-tg
+Bd
 eK
 mX
 CB
@@ -71688,7 +71688,7 @@ eK
 eK
 eK
 eK
-Bd
+zn
 HE
 wx
 wx
@@ -73572,7 +73572,7 @@ eK
 eK
 eK
 eK
-JD
+zy
 HE
 HE
 HE
@@ -73721,7 +73721,7 @@ eK
 eK
 eK
 eK
-ZV
+IP
 eK
 eK
 eK
@@ -78812,7 +78812,7 @@ pl
 Df
 Df
 Df
-tW
+JD
 Df
 Df
 Df
@@ -80088,10 +80088,10 @@ pl
 pl
 pl
 eY
-zo
+jo
 yU
 yU
-VB
+tb
 eY
 pl
 pl
@@ -80244,12 +80244,12 @@ pl
 pl
 pl
 pl
-yT
+LQ
 fz
 qP
 uu
 zY
-yT
+LQ
 pl
 Wa
 Wa
@@ -80558,7 +80558,7 @@ pl
 pl
 pl
 pl
-tb
+EY
 Is
 qX
 iv
@@ -80713,7 +80713,7 @@ pl
 pl
 pl
 eY
-zo
+jo
 yU
 eY
 Is
@@ -81034,7 +81034,7 @@ Is
 Is
 Is
 Is
-tb
+EY
 Wa
 Wa
 Wa
@@ -81184,13 +81184,13 @@ pl
 pl
 pl
 eY
-zo
+jo
 yU
 yU
 yU
 yU
 yU
-VB
+tb
 eY
 Wa
 Wa
@@ -99307,7 +99307,7 @@ ax
 Wa
 uw
 wx
-WQ
+Pl
 Sy
 lq
 CL
