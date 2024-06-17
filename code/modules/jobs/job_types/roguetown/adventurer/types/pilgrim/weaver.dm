@@ -11,9 +11,7 @@
 	"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/seamstress
-	isvillager = TRUE
-	ispilgrim = FALSE
-	maxchosen = 1
+	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 
 /datum/outfit/job/roguetown/adventurer/seamstress/pre_equip(mob/living/carbon/human/H)
 	..()

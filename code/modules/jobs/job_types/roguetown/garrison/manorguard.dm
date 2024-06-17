@@ -23,6 +23,7 @@
 	outfit = /datum/outfit/job/roguetown/royalguard
 	give_bank_account = 30
 	min_pq = -4
+	selection_color = "#920909"
 
 
 /datum/job/roguetown/royalguard/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
@@ -64,7 +65,7 @@
 		head = /obj/item/clothing/head/roguetown/helmet/heavy/knight
 	else
 		head = /obj/item/clothing/head/roguetown/helmet/sallet
-		
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)

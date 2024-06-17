@@ -56,11 +56,10 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	if(!ishuman(speaker))
 		return
 	var/mob/living/carbon/human/H = speaker
-	if(!H.head)
-		return
-	var/nocrown
-	if(!istype(H.head, /obj/item/clothing/head/roguetown/crown/serpcrown))
-		nocrown = TRUE
+	var/nocrown = TRUE
+	if(H.head)
+		if(istype(H.head, /obj/item/clothing/head/roguetown/crown/serpcrown))
+			nocrown = FALSE
 	var/notlord
 	if(SSticker.rulermob != H)
 		notlord = TRUE
@@ -165,7 +164,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 				return
 			if(findtext(message2recognize, "summon crown"))
 				if(SSroguemachine.crown)
-					var/obj/item/I = SSroguemachine.crown
+					var/obj/item/clothing/head/roguetown/crown/serpcrown/I = SSroguemachine.crown
 					if(!I)
 						I = new /obj/item/clothing/head/roguetown/crown/serpcrown(src.loc)
 					if(ishuman(I.loc))
