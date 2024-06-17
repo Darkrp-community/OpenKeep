@@ -9031,7 +9031,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/outdoors/exposed/church)
 "NT" = (
-/mob/living/simple_animal/hostile/rogue/werewolf,
+/mob/living/simple_animal/hostile/retaliate/rogue/trollbog,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/town/sewer)
 "NW" = (
