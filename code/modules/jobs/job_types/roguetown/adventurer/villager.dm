@@ -1,27 +1,31 @@
-/datum/job/roguetown/adventurer/villager
+/datum/job/roguetown/villager
 	title = "Towner"
 	flag = ADVENTURER
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 15
-	spawn_positions = 15
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
-	)
-	tutorial = "Youve lived in this shithole for effectively all your life. You are not an explorer, nor exactly a warrior in many cases. Youre just some average poor bastard who thinks theyll be something someday."
-
+	total_positions = 50
+	spawn_positions = 50
+	allowed_races = ALL_RACES_LIST_NAMES
+	tutorial = "You've lived in this shithole for effectively all your life. You are not an explorer, nor exactly a warrior in many cases. You're just some average poor bastard who thinks they'll be something someday."
+	advclass_cat_rolls = list(CTAG_TOWNER = 20)
 	outfit = null
 	outfit_female = null
 	bypass_jobban = FALSE
 	display_order = JDO_VILLAGER
-	isvillager = TRUE
 	give_bank_account = TRUE
+	min_pq = -15
+	same_job_respawn_delay = 0
+
+
+
+/datum/job/roguetown/villager/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+	..()
+	if(L)
+		var/mob/living/carbon/human/H = L
+		H.advsetup = 1
+		H.invisibility = INVISIBILITY_MAXIMUM
+		H.become_blind("advsetup")
+
 /*
 /datum/job/roguetown/adventurer/villager/New()
 	. = ..()

@@ -21,6 +21,7 @@
 	display_order = JDO_VET
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
+	selection_color = "#920909"
 
 	outfit = /datum/outfit/job/roguetown/veteran
 	give_bank_account = 50

@@ -5,7 +5,9 @@
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/amazon
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
-	maxchosen = 2
+	pickprob = 50
+	maximum_possible_slots = 2
+	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/amazon/pre_equip(mob/living/carbon/human/H)
 	..()
