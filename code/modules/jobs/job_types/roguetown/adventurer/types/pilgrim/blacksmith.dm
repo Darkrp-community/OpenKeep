@@ -14,7 +14,6 @@
 	"Tengu",
 	"Oni",
 	"Kappa")
-	)
 	outfit = /datum/outfit/job/roguetown/adventurer/blacksmith
 	isvillager = TRUE
 	ispilgrim = TRUE

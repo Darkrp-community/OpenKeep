@@ -983,6 +983,23 @@
 	color_src = 0
 	offsetti = TRUE
 
+/datum/sprite_accessory/tails/human/kappav
+	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
+	name = "Kappav"
+	icon_state = "kappav"
+	specuse = list("kappa")
+	gender = NEUTER
+	color_src = HAIR
+	offsetti = TRUE
+
+/datum/sprite_accessory/ears/kappae
+	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
+	name = "Kappae"
+	icon_state = "kappae"
+	specuse = list("kappa")
+	color_src = SKINCOLOR
+	offsetti = TRUE
+
 /datum/sprite_accessory/wings/none
 	name = "None"
 	icon_state = "none"

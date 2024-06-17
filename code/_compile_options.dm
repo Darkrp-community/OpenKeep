@@ -56,18 +56,18 @@
 #endif
 
 //Additional code for the above flags.
-#ifdef TESTING
-#warn compiling in TESTING mode. testing() debug messages will be visible.
-#endif
+//#ifdef TESTING
+//#warn compiling in TESTING mode. testing() debug messages will be visible.
+//#endif
 
-#ifdef GC_FAILURE_HARD_LOOKUP
-#define FIND_REF_NO_CHECK_TICK
-#endif
+//#ifdef GC_FAILURE_HARD_LOOKUP
+//#define FIND_REF_NO_CHECK_TICK
+//#endif
 
-#ifdef TRAVISBUILDING
-#define UNIT_TESTS
-#endif
+//#ifdef TRAVISBUILDING
+//#define UNIT_TESTS
+//#endif
 
-#ifdef TRAVISTESTING
-#define TESTING
-#endif
+//#ifdef TRAVISTESTING
+//#define TESTING
+//#endif

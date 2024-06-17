@@ -36,6 +36,7 @@
 	else
 		name = initial(name)
 
+/*
 /obj/item/natural/worms/leeches
 	name = "leech"
 	baitchance = 100
@@ -200,6 +201,7 @@
 	embedding = list("embedded_unsafe_removal_time" = 0, "embedded_pain_chance" = 0, "embedded_pain_multiplier" = 1, "embed_chance" = 0, "embedded_fall_chance" = 0,"embedded_bloodloss"=0)
 
 //It does not conserve space because the creature is STILL ALIVE.
+*/
 /*
 /obj/item/needle/attack(mob/living/M, mob/user)
 	antclamp(M, user)
