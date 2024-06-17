@@ -523,7 +523,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/indoors/shelter/town/sargoth
-	first_time_text = "SARGOTH"
+
 /area/rogue/indoors/shelter/town/sargoth
 	icon_state = "sargoth"
 	droning_sound = 'sound/music/area/sargoth.ogg'
