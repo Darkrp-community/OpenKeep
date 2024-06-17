@@ -268,6 +268,7 @@
 /area/rogue/indoors/town)
 "bo" = (
 /obj/machinery/light/rogue/hearth,
+/obj/item/cooking/pot,
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors/town/tavern)
 "bp" = (
@@ -1444,12 +1445,8 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison)
 "gu" = (
-/obj/item/rogueweapon/sword/iron{
-	max_integrity = 0;
-	sharpness = 0;
-	required_repair_skill = 99
-	},
 /obj/effect/decal/remains/human,
+/obj/item/rogueweapon/sword/coppermesser,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/town/sewer)
 "gw" = (
@@ -1548,13 +1545,9 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
 "gO" = (
-/obj/item/rogueweapon/sword/iron{
-	max_integrity = 0;
-	sharpness = 0;
-	required_repair_skill = 99
-	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/closet/crate/chest/neu,
+/obj/item/rogueweapon/mace/coppermace,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/town/sewer)
 "gR" = (
@@ -2864,6 +2857,7 @@
 /area/rogue/indoors/town/dwarfin)
 "mD" = (
 /obj/machinery/light/rogue/hearth,
+/obj/item/cooking/pot,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor)
 "mF" = (
@@ -10155,6 +10149,7 @@
 /area/rogue/indoors/town/dwarfin)
 "SJ" = (
 /obj/effect/decal/remains/human,
+/obj/item/rogueweapon/knife/copperdagger,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/town/sewer)
 "SK" = (
@@ -19143,7 +19138,7 @@ oj
 oj
 oj
 oj
-kt
+vx
 oj
 oj
 OX
@@ -24628,7 +24623,7 @@ zO
 kt
 kt
 kt
-kt
+vx
 SM
 gu
 SM

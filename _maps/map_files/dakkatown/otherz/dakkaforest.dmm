@@ -584,6 +584,7 @@
 /area/rogue/outdoors/rtfield)
 "sN" = (
 /obj/machinery/light/rogue/hearth,
+/obj/item/cooking/pot,
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors)
 "sQ" = (
