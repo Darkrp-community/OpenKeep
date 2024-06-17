@@ -1676,10 +1676,12 @@ Slots: [job.spawn_positions]</span>
 					var/datum/patrongods/god_input = input(user, "Choose your character's patron god", "Patron God") as null|anything in GLOB.patronlist
 					if(god_input)
 						selected_patron = god_input
-						to_chat(user, "<font color='purple'>Patron: [selected_patron]</font>")
+						to_chat(user, "<font color='yellow'>Patron: [selected_patron]</font>")
 						to_chat(user, "<font color='purple'>Domain: [selected_patron.domain]</font>")
 						to_chat(user, "<font color='purple'>Background: [selected_patron.summary]</font>")
+						to_chat(user, "<font color='purple'>Flawed aspects: [selected_patron.flaws]</font>")
 						to_chat(user, "<font color='purple'>Likely Worshippers: [selected_patron.worshippers]</font>")
+						to_chat(user, "<font color='red'>Considers these to be Sins: [selected_patron.sins]</font>")
 
 				if("hair")
 					var/new_hair
