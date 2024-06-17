@@ -3651,6 +3651,7 @@
 /area/rogue/indoors/town)
 "pU" = (
 /obj/item/restraints/legcuffs/beartrap/armed,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "pV" = (
@@ -3910,6 +3911,11 @@
 /obj/structure/chair/bench/church/r,
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church/chapel)
+"rb" = (
+/turf/closed/wall/mineral/rogue/wooddark/end{
+	dir = 8
+	},
+/area/rogue/indoors/town/apothecary)
 "rc" = (
 /turf/open/floor/rogue/blocks/newstone/alt,
 /area/rogue/indoors/town/church)
@@ -4368,11 +4374,11 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town)
 "tb" = (
-/obj/effect/landmark/start/lumberjack{
-	dir = 4
+/obj/item/reagent_containers/food/snacks/crow{
+	dir = 8
 	},
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield)
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/town/roofs)
 "tc" = (
 /obj/structure/fermenting_barrel/beer,
 /turf/open/floor/rogue/blocks/green,
@@ -4634,6 +4640,11 @@
 /obj/structure/closet/crate/chest/neu,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/town/sewer)
+"uo" = (
+/turf/closed/wall/mineral/rogue/wooddark/end{
+	dir = 4
+	},
+/area/rogue/indoors/town/apothecary)
 "up" = (
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/theatre)
@@ -5782,9 +5793,8 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "zA" = (
-/obj/effect/landmark/start/lumberjack,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield)
+/turf/closed/wall/mineral/rogue/wooddark/end,
+/area/rogue/indoors/town/apothecary)
 "zC" = (
 /obj/item/natural/cloth,
 /obj/item/natural/cloth,
@@ -6142,11 +6152,10 @@
 	},
 /area/rogue/indoors/town)
 "Bd" = (
-/obj/effect/landmark/start/lumberjack{
+/turf/closed/wall/mineral/rogue/wooddark/end{
 	dir = 1
 	},
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield)
+/area/rogue/indoors/town/apothecary)
 "Be" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack/rogue,
@@ -8023,11 +8032,9 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/town/sewer)
 "JD" = (
-/obj/effect/landmark/start/lumberjack{
-	dir = 8
-	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/rtfield)
+/obj/item/reagent_containers/food/snacks/crow,
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/town/roofs)
 "JE" = (
 /obj/machinery/light/rogue/firebowl,
 /turf/open/floor/rogue/rooftop{
@@ -39187,7 +39194,7 @@ lG
 PC
 lG
 nT
-tb
+nT
 pF
 jF
 nT
@@ -41666,7 +41673,7 @@ pY
 pF
 pF
 lG
-zA
+nT
 nT
 cw
 pF
@@ -44595,7 +44602,7 @@ VO
 pF
 nT
 nT
-Bd
+nT
 lG
 lG
 nT
@@ -58530,7 +58537,7 @@ lG
 pF
 nT
 zJ
-JD
+pF
 pF
 VO
 VO
@@ -64776,7 +64783,7 @@ HS
 HS
 pl
 pl
-pl
+HS
 pl
 pl
 HS
@@ -70437,7 +70444,7 @@ uJ
 Hd
 uJ
 uJ
-uJ
+Ow
 hE
 xS
 pl
@@ -76919,7 +76926,7 @@ kd
 XA
 Di
 lc
-lc
+tj
 Wa
 Wa
 Wa
@@ -77813,7 +77820,7 @@ pl
 Df
 Df
 Df
-Df
+JD
 Df
 Df
 Df
@@ -78775,7 +78782,7 @@ pl
 Df
 Df
 Df
-Df
+tb
 Df
 Df
 Df
@@ -79405,7 +79412,7 @@ Df
 Df
 Df
 Df
-Df
+JD
 Df
 Df
 Df
@@ -80051,10 +80058,10 @@ pl
 pl
 pl
 eY
+Bd
 yU
 yU
-yU
-yU
+zA
 eY
 pl
 pl
@@ -80207,12 +80214,12 @@ pl
 pl
 pl
 pl
-VH
+rb
 fz
 qP
 uu
 zY
-VH
+rb
 pl
 Wa
 Wa
@@ -80521,7 +80528,7 @@ pl
 pl
 pl
 pl
-VH
+uo
 Is
 qX
 iv
@@ -80676,7 +80683,7 @@ pl
 pl
 pl
 eY
-yU
+Bd
 yU
 eY
 Is
@@ -80997,7 +81004,7 @@ Is
 Is
 Is
 Is
-VH
+uo
 Wa
 Wa
 Wa
@@ -81147,13 +81154,13 @@ pl
 pl
 pl
 eY
+Bd
 yU
 yU
 yU
 yU
 yU
-yU
-yU
+zA
 eY
 Wa
 Wa
@@ -81566,19 +81573,19 @@ Wa
 Wa
 Wa
 Wa
+qT
+qT
+qT
+qT
+qT
+pl
+qT
 pl
 pl
-pl
-pl
-pl
-pl
-pl
-pl
-pl
-pl
-pl
-pl
-pl
+qT
+qT
+qT
+qT
 pl
 pl
 pl
