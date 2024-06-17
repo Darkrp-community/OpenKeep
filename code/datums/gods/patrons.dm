@@ -51,7 +51,7 @@ GLOBAL_LIST_EMPTY(patronlist)
 	summary = "By some worshipped as the Undermaiden, death cares little for the living."
 	flaws= "Unchanging, Apathetic, Strict"
 	worshippers = " The Dead, Gravekeepers and Mourners"
-	sins = "Undeath, Grave robbing, Creating life"
+	sins = "Undeath"
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/churn
