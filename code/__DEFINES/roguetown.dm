@@ -1,7 +1,7 @@
 //used in various places
 #define ALL_RACES_LIST		list("human", "dwarf", "elf", "tiefling", "aasimar")
 
-#define ALL_RACES_LIST_NAMES		list("Humen", "Humen", "Half-Elf", "Elf", "Elf", "Dwarf","Dwarf","Tiefling", "Aasimar")
+#define ALL_RACES_LIST_NAMES		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Dwarf","Tiefling", "Aasimar")
 
 #define ALL_PATRON_NAMES_LIST		list("Astrata", "Noc", "Xylix", "Eora", "Malum", "Dendor", "Abyssor", "Necra", "Pestra", "Malum", "Ravox")
 
@@ -77,6 +77,7 @@ GLOBAL_LIST_INIT(wolf_suffixes, list("Fang", "Claw", "Stalker", "Prowler", "Roar
 
 
 GLOBAL_LIST_EMPTY(sunlights)
+GLOBAL_LIST_EMPTY(job_respawn_delays)
 
 //stress levels
 #define STRESS_MAX 30
@@ -95,3 +96,37 @@ GLOBAL_LIST_EMPTY(sunlights)
 #define SNACK_NUTRITIOUS 12
 #define SNACK_DECENT 6
 #define SNACK_POOR 3
+
+
+/*
+	Formerly bitflags, now we are strings
+	Currently used for classes, I could have used these for drifters tho
+*/
+
+#define CTAG_ALLCLASS		"CAT_ALLCLASS"		// jus a define for allclass to not deal with actively typing strings
+#define CTAG_DISABLED 		"CAT_DISABLED" 		// Disabled, aka don't make it fuckin APPEAR
+#define CTAG_PILGRIM 		"CAT_PILGRIM"  		// Pilgrim classes
+#define CTAG_ADVENTURER 	"CAT_ADVENTURER"  	// Adventurer classes
+#define CTAG_TOWNER 		"CAT_TOWNER"  		// Villager class - Villagers can use it
+#define CTAG_ANTAG 			"CAT_ANTAG"  		// Antag class - results in an antag
+#define CTAG_BANDIT			"CAT_BANDIT"		// Bandit class - Tied to the bandit antag really
+#define CTAG_CHALLENGE 		"CAT_CHALLENGE"  	// Challenge class - Meant to be free for everyone
+#define CTAG_MERCENARY		"CAT_MERCENARY"
+
+/*
+	String category tags
+	This time for the drifter waves, used for sorting and scheduling purposes
+*/
+#define DTAG_ALLWAVES		"CAT_ALLWAVES"		// Another define for jus the basic allclass
+#define DTAG_DISABLED		"CAT_DISABLED"		// Disabled, do not use
+#define DTAG_FILLERS		"CAT_FILLER"		// If we have nothing better to do, time for filler
+#define DTAG_ANTAGS			"CAT_ANTAGS"		// A catchall for antag groups
+#define DTAG_BANDITS		"CAT_BANDITS"		// some bandits I guess
+
+/*
+	Defines for the triumph buy datum categories
+*/
+#define TRIUMPH_CAT_ROUND_EFX "ROUND-EFX"
+#define TRIUMPH_CAT_CHARACTER "CHARACTER"
+#define TRIUMPH_CAT_MISC "MISC!"
+#define TRIUMPH_CAT_ACTIVE_DATUMS "ACTIVE"
