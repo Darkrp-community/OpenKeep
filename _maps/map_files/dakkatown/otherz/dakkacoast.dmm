@@ -90,7 +90,6 @@
 /area/rogue/outdoors/beach)
 "ix" = (
 /obj/structure/closet/crate/chest/gold{
-	lockid = "guild";
 	locked = 1
 	},
 /obj/item/roguecoin/gold/pile,
@@ -100,7 +99,6 @@
 /area/rogue/outdoors/beach/boat/captain)
 "kt" = (
 /obj/structure/closet/crate/chest/gold{
-	lockid = "guild";
 	locked = 1
 	},
 /obj/item/roguecoin/gold/pile,
@@ -140,9 +138,6 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
 "nO" = (
-/obj/structure/closet/crate/roguecloset/lord{
-	lockid = "guild"
-	},
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
@@ -163,6 +158,7 @@
 /obj/item/paper,
 /obj/item/paper,
 /obj/item/paper,
+/obj/structure/closet/crate/roguecloset/dark,
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/beach/boat/captain)
 "nR" = (
@@ -182,7 +178,6 @@
 /area/rogue/outdoors/beach)
 "rD" = (
 /obj/structure/closet/crate/chest/gold{
-	lockid = "guild";
 	locked = 1
 	},
 /obj/item/roguecoin/gold/pile,
@@ -204,7 +199,6 @@
 /area/rogue/outdoors/beach)
 "uz" = (
 /obj/structure/closet/crate/chest/gold{
-	lockid = "guild";
 	locked = 1
 	},
 /obj/item/roguecoin/gold/pile,
@@ -267,11 +261,9 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/beach/boat)
 "xU" = (
-/obj/structure/closet/crate/roguecloset/lord{
-	lockid = "guild"
-	},
 /obj/item/clothing/suit/pirate,
 /obj/item/clothing/head/pirate,
+/obj/structure/closet/crate/roguecloset/dark,
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/beach/boat/captain)
 "yq" = (
@@ -375,13 +367,11 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/beach/boat)
 "Hy" = (
-/obj/structure/closet/crate/roguecloset/lord{
-	lockid = "guild"
-	},
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
+/obj/structure/closet/crate/roguecloset/dark,
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/beach/boat/captain)
 "Hz" = (
@@ -485,7 +475,6 @@
 /area/rogue/outdoors/beach)
 "Nr" = (
 /obj/structure/closet/crate/chest/gold{
-	lockid = "guild";
 	locked = 1
 	},
 /obj/item/roguecoin/gold/pile,
