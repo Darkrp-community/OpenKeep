@@ -692,6 +692,11 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/apothecary)
+"dj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/rogue/haunt,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/under/town/sewer)
 "dk" = (
 /obj/structure/fermenting_barrel,
 /turf/open/floor/rogue/ruinedwood/turned,
@@ -867,8 +872,10 @@
 /area/rogue/indoors/town)
 "dS" = (
 /obj/structure/mineral_door/wood/green{
-	name = "Old Door"
+	name = "Old Door";
+	locked = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/town/sewer)
 "dT" = (
@@ -2309,6 +2316,19 @@
 	},
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/bath)
+"kf" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/chest/wicker,
+/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/flour/salt,
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/town/sewer)
 "kh" = (
 /obj/structure/rack/rogue,
 /turf/open/floor/rogue/hexstone,
@@ -5115,6 +5135,19 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)
+"wl" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/chest/wicker,
+/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,
+/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,
+/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,
+/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,
+/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,
+/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,
+/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,
+/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/town/sewer)
 "wn" = (
 /obj/structure/stairs,
 /turf/open/floor/rogue/wood,
@@ -6947,6 +6980,10 @@
 	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/town/sewer)
+"Ey" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/greenstone,
+/area/rogue/under/town/sewer)
 "Ez" = (
 /obj/structure/roguemachine/scomm,
 /turf/open/floor/rogue/wood,
@@ -7203,6 +7240,11 @@
 "FB" = (
 /turf/closed,
 /area/rogue/under/cave)
+"FC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/rogue/haunt,
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/town/sewer)
 "FD" = (
 /obj/structure/roguewindow,
 /turf/open/floor/rogue/blocks,
@@ -8240,6 +8282,12 @@
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
+"Kh" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/roguecoin/silver/pile,
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/town/sewer)
 "Ki" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
 /turf/open/floor/rogue/blocks/stonered,
@@ -8275,6 +8323,12 @@
 "Ko" = (
 /obj/item/natural/dirtclod,
 /turf/open/floor/rogue/dirt/road,
+/area/rogue/under/town/sewer)
+"Kp" = (
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/rogue/haunt,
+/turf/open/floor/rogue/cobble,
 /area/rogue/under/town/sewer)
 "Kq" = (
 /obj/structure/rack/rogue,
@@ -8317,6 +8371,10 @@
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
+"KC" = (
+/obj/item/storage/roguebag,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/town/sewer)
 "KD" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/woodturned,
@@ -10505,6 +10563,10 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/manor)
+"TP" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/under/town/sewer)
 "TQ" = (
 /obj/structure/fermenting_barrel/random/water,
 /turf/open/floor/rogue/ruinedwood,
@@ -11338,6 +11400,12 @@
 /obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/magician)
+"XF" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/rogueweapon/huntingknife/idagger/silver,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/under/town/sewer)
 "XG" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1
@@ -11614,6 +11682,7 @@
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town/dwarfin)
 "YK" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/sewer)
 "YL" = (
@@ -16669,7 +16738,7 @@ zO
 zO
 zO
 zO
-zO
+Gr
 zO
 zO
 zO
@@ -16826,7 +16895,7 @@ kt
 hi
 kt
 kt
-kt
+oj
 kt
 kt
 kt
@@ -17338,7 +17407,7 @@ zO
 zO
 zO
 zO
-zO
+Gr
 zO
 zO
 zO
@@ -17495,7 +17564,7 @@ kt
 kt
 kt
 zt
-zt
+oj
 zt
 zt
 kt
@@ -19337,7 +19406,7 @@ kt
 zO
 oj
 oj
-zt
+OX
 zt
 zt
 oj
@@ -19490,7 +19559,7 @@ oe
 mk
 mk
 oj
-kt
+zt
 zO
 kt
 oj
@@ -19647,7 +19716,7 @@ mk
 mk
 mk
 oj
-kt
+OX
 zO
 zO
 Gr
@@ -19804,9 +19873,9 @@ mk
 mk
 mk
 oj
-kt
-zO
-kt
+zt
+OX
+zt
 oj
 oj
 oj
@@ -19961,8 +20030,8 @@ mk
 mk
 mk
 oj
-kt
-zO
+zt
+zt
 kt
 oj
 Uy
@@ -20119,11 +20188,11 @@ mk
 mk
 oj
 kt
-zO
+kt
 kt
 oj
-kt
-je
+zt
+KC
 kt
 kt
 oj
@@ -20191,8 +20260,8 @@ oj
 oj
 oj
 oj
-zO
-kt
+Gr
+oj
 oj
 vY
 vY
@@ -20276,12 +20345,12 @@ mk
 mk
 oj
 oj
-zO
 kt
+zt
 oj
-kt
-kt
-kt
+OX
+zt
+zt
 vm
 oj
 kt
@@ -20433,11 +20502,11 @@ mk
 mk
 oj
 kt
-zO
-kt
+zt
+OX
 oj
 oj
-kt
+OX
 oj
 oj
 oj
@@ -20590,14 +20659,14 @@ mk
 mk
 oj
 kt
-zO
-kt
+zt
+OX
 oj
-kt
-kt
-kt
-kt
-kt
+OX
+OX
+zt
+OX
+zt
 kt
 zO
 zO
@@ -20747,15 +20816,15 @@ mk
 mk
 oj
 kt
-zO
-zO
-zO
-zO
-zO
-zO
-zO
-zO
-zO
+kt
+zt
+zt
+zt
+zt
+OX
+zt
+zt
+kt
 zO
 kt
 kt
@@ -20908,7 +20977,7 @@ kt
 kt
 kt
 zt
-zt
+OX
 oj
 zt
 zt
@@ -21126,14 +21195,14 @@ kt
 zO
 kt
 oj
+Kp
+TP
+wl
+kf
+TP
+FC
 YK
-kt
-YK
-YK
-kt
-YK
-YK
-kt
+TP
 oj
 kt
 zO
@@ -21284,13 +21353,13 @@ zO
 kt
 Bo
 YK
-SM
-SM
-SM
-SM
-kt
-SM
-kt
+Ey
+Ey
+Ey
+Ey
+TP
+Ey
+XF
 oj
 kt
 zO
@@ -21440,13 +21509,13 @@ kt
 zO
 kt
 dS
-kt
-SM
-SM
-kt
-SM
-SM
-SM
+TP
+Ey
+Ey
+dj
+Ey
+Ey
+Ey
 YK
 Bo
 kt
@@ -21597,13 +21666,13 @@ kt
 zO
 kt
 oj
-kt
-kt
-SM
-SM
-kt
-SM
-kt
+TP
+TP
+Ey
+Ey
+TP
+Ey
+TP
 YK
 Bo
 kt
@@ -21755,12 +21824,12 @@ zO
 kt
 oj
 YK
-kt
+dj
 YK
 YK
-YK
-kt
-YK
+Kh
+TP
+FC
 YK
 Bo
 kt
@@ -23791,8 +23860,8 @@ kt
 kt
 zt
 oj
-zt
-zO
+oj
+Gr
 oj
 oj
 oj
@@ -25166,11 +25235,11 @@ oj
 oj
 oj
 zO
-kt
-kt
-oj
-oj
-oj
+zt
+zt
+zt
+zt
+zt
 oj
 OX
 OX
@@ -25323,12 +25392,12 @@ kt
 oj
 kt
 zO
-kt
-kt
-kt
-oj
-kt
 zt
+zt
+OX
+oj
+OX
+oj
 zt
 zt
 zt
@@ -25480,13 +25549,13 @@ kt
 oj
 kt
 zO
-kt
-kt
-kt
+zt
+OX
+OX
 oj
-kt
-kt
-kt
+OX
+zt
+OX
 zt
 oj
 zt
@@ -25536,8 +25605,8 @@ oj
 oj
 oj
 oj
-kt
-zO
+oj
+Gr
 oj
 oj
 vY
@@ -26564,8 +26633,8 @@ Qe
 Qe
 Qe
 oj
-kt
-zO
+oj
+Gr
 oj
 oj
 oj
@@ -26881,7 +26950,7 @@ oj
 kt
 zO
 kt
-oj
+kt
 vm
 kt
 kt
@@ -27197,7 +27266,7 @@ zO
 kt
 oj
 oj
-kt
+oj
 oj
 oj
 kt
@@ -29050,7 +29119,7 @@ kt
 zt
 zt
 zt
-zt
+oj
 zt
 zt
 Ic
@@ -29207,7 +29276,7 @@ zO
 zO
 zO
 zO
-zO
+Gr
 zO
 zO
 zO
@@ -30966,7 +31035,7 @@ zt
 kt
 kt
 kt
-kt
+oj
 kt
 kt
 zt
@@ -31123,7 +31192,7 @@ zO
 zO
 zO
 zO
-zO
+Gr
 zO
 zO
 zO
@@ -32967,7 +33036,7 @@ zO
 zO
 zO
 zO
-zO
+Gr
 zO
 zO
 zO
@@ -33124,11 +33193,11 @@ kt
 kt
 kt
 kt
+qO
+qO
 kt
-kt
-kt
-kt
-kt
+qO
+qO
 oj
 oj
 zt
@@ -33441,7 +33510,7 @@ kt
 zO
 zO
 zO
-zO
+Gr
 zO
 zO
 zO
