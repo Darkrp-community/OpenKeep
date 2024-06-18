@@ -387,6 +387,9 @@
 	return !density
 	..()
 
+/obj/structure/bars/bent
+	icon_state = "barsbent"
+
 /obj/structure/bars/chainlink
 	icon_state = "chainlink"
 

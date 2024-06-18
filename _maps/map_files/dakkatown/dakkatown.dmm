@@ -114,10 +114,7 @@
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/under/town/basement)
 "aF" = (
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /obj/structure/table/wood,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
@@ -1840,10 +1837,7 @@
 "hX" = (
 /obj/structure/table/wood,
 /obj/structure/roguemachine/vendor,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
 "hY" = (
@@ -1957,10 +1951,7 @@
 /area/rogue/indoors/town)
 "iB" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /obj/structure/roguemachine/vendor{
 	keycontrol = "weaponsmith"
 	},
@@ -2089,10 +2080,7 @@
 /area/rogue/under/town/basement)
 "iY" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/garrison)
 "iZ" = (
@@ -2325,10 +2313,7 @@
 /area/rogue/indoors/town)
 "jZ" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
 "ka" = (
@@ -3151,10 +3136,7 @@
 /area/rogue/outdoors/rtfield)
 "nB" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/apothecary)
 "nC" = (
@@ -3584,10 +3566,7 @@
 /area/rogue/indoors/town/garrison)
 "po" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/shop)
 "pp" = (
@@ -5939,10 +5918,7 @@
 /area/rogue/indoors/town/manor)
 "zG" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /obj/structure/roguemachine/vendor{
 	keycontrol = "blacksmith"
 	},
@@ -6230,10 +6206,7 @@
 /area/rogue/indoors/town/tavern)
 "AR" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /obj/structure/roguemachine/vendor{
 	keycontrol = "armorsmith"
 	},
@@ -6521,10 +6494,7 @@
 /area/rogue/indoors/town)
 "Cl" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/church)
 "Cn" = (
@@ -7997,10 +7967,7 @@
 /area/rogue/indoors/town)
 "IC" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /obj/structure/roguemachine/vendor{
 	keycontrol = "doctor"
 	},
@@ -9422,10 +9389,7 @@
 /area/rogue/indoors/town/manor)
 "OM" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
 "ON" = (
@@ -10580,10 +10544,7 @@
 /area/rogue/indoors/town/garrison)
 "TB" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "TC" = (
@@ -10734,10 +10695,7 @@
 /area/rogue/under/town/basement)
 "Ul" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/shop)
 "Um" = (
@@ -11846,10 +11804,7 @@
 /area/rogue/indoors/town)
 "YY" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town/shop)
 "YZ" = (
@@ -12074,10 +12029,7 @@
 /area/rogue/outdoors/town)
 "ZW" = (
 /obj/structure/table/wood,
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
+/obj/structure/bars/bent,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/shop)
 "ZX" = (

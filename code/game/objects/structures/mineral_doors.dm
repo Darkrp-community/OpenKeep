@@ -759,11 +759,6 @@
 	ridethrough = TRUE
 	swing_closed = FALSE
 
-/obj/structure/mineral_door/barsold
-	name = "iron door"
-	desc = ""
-	icon_state = "barsold"
-
 /obj/structure/mineral_door/bars/Initialize()
 	..()
 	add_overlay(mutable_appearance(icon, "barsopen", ABOVE_MOB_LAYER))
