@@ -4508,6 +4508,10 @@
 /obj/structure/roguewindow/openclose,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
+"tw" = (
+/obj/effect/spawner/roguemap/treeorstump,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/rtfield)
 "tx" = (
 /obj/structure/table/wood/large/corner_alt{
 	dir = 10
@@ -9531,6 +9535,10 @@
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
+"Pu" = (
+/obj/effect/spawner/roguemap/treeorstump,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/rtfield)
 "Pv" = (
 /obj/structure/chair/wood/rogue{
 	dir = 1
@@ -10589,6 +10597,10 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town)
+"TM" = (
+/obj/effect/spawner/roguemap/treeorstump,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
 "TN" = (
 /obj/structure/roguemachine/scomm,
 /turf/open/floor/rogue/cobble,
@@ -39393,7 +39405,7 @@ wL
 lG
 lG
 lG
-yb
+TM
 pF
 lG
 nT
@@ -39702,7 +39714,7 @@ uq
 lG
 pF
 lG
-uq
+tw
 lG
 lG
 pF
@@ -39862,12 +39874,12 @@ pF
 pF
 nT
 lG
-uq
+tw
 lG
 pF
 nT
 nT
-zQ
+Pu
 nT
 pF
 pF
@@ -40022,7 +40034,7 @@ nT
 pF
 pF
 lG
-zQ
+Pu
 nT
 nT
 nT
@@ -40324,15 +40336,15 @@ zQ
 nT
 pF
 lG
-uq
+tw
 lG
 lG
 nT
-zQ
+Pu
 nT
 lG
 lG
-uq
+tw
 lG
 nT
 nT
@@ -40793,12 +40805,12 @@ uq
 lG
 lG
 lG
-zQ
+Pu
 nT
 pF
 nT
 nT
-zQ
+Pu
 lG
 pF
 nT
@@ -41110,7 +41122,7 @@ lG
 lG
 pF
 nT
-zQ
+Pu
 lG
 lG
 lG
@@ -41280,7 +41292,7 @@ nT
 nT
 lG
 nT
-XH
+Pu
 VO
 VO
 VO
@@ -41591,7 +41603,7 @@ lG
 lG
 lG
 pF
-XH
+Pu
 lG
 VO
 VO
@@ -41901,7 +41913,7 @@ VO
 VO
 nT
 nT
-pY
+tw
 pF
 pF
 lG
@@ -42061,7 +42073,7 @@ lG
 nT
 nT
 nT
-pY
+tw
 lG
 nT
 VO
