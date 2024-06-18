@@ -865,6 +865,12 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
+"dS" = (
+/obj/structure/mineral_door/wood/green{
+	name = "Old Door"
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/under/town/sewer)
 "dT" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -1193,7 +1199,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
 "fp" = (
-/obj/structure/stairs/stone{
+/obj/structure/stairs/stone/church{
 	dir = 1
 	},
 /turf/open/floor/rogue/churchrough,
@@ -1321,6 +1327,11 @@
 /obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/church)
+"fU" = (
+/obj/structure/roguetent,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/under/town/sewer)
 "fV" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 4;
@@ -2105,6 +2116,11 @@
 	dir = 1
 	},
 /area/rogue/indoors/town/apothecary)
+"jp" = (
+/obj/structure/bed/rogue/shit,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/under/town/sewer)
 "jq" = (
 /turf/closed/wall/mineral/rogue/decostone,
 /area/rogue/under/town/basement)
@@ -6217,6 +6233,9 @@
 "Bn" = (
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/manor)
+"Bo" = (
+/turf/closed/wall/mineral/rogue/stonebrick,
+/area/rogue/under/town/sewer)
 "Bp" = (
 /obj/structure/fluff/statue/knight,
 /turf/open/floor/rogue/cobblerock,
@@ -8565,7 +8584,7 @@
 	},
 /area/rogue/indoors/town/apothecary)
 "LS" = (
-/obj/structure/stairs/stone{
+/obj/structure/stairs/stone/church{
 	dir = 8
 	},
 /turf/open/floor/rogue/herringbone,
@@ -11594,6 +11613,9 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town/dwarfin)
+"YK" = (
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/town/sewer)
 "YL" = (
 /obj/structure/fluff/railing/border{
 	dir = 9
@@ -20946,15 +20968,15 @@ oj
 kt
 zO
 kt
+Bo
+Bo
 oj
 oj
 oj
+Bo
+Bo
 oj
-kt
-oj
-oj
-oj
-oj
+Bo
 oj
 kt
 zO
@@ -21104,14 +21126,14 @@ kt
 zO
 kt
 oj
-Uy
+YK
 kt
-oj
+YK
+YK
 kt
+YK
+YK
 kt
-oj
-zt
-zt
 oj
 kt
 zO
@@ -21260,16 +21282,16 @@ oj
 oj
 zO
 kt
+Bo
+YK
+SM
+SM
+SM
+SM
 kt
+SM
 kt
-vm
 oj
-VU
-kt
-oj
-zt
-zt
-zt
 kt
 zO
 kt
@@ -21417,16 +21439,16 @@ oj
 kt
 zO
 kt
-oj
+dS
 kt
+SM
+SM
 kt
-oj
-oj
-oj
-oj
-vr
-zt
-oj
+SM
+SM
+SM
+YK
+Bo
 kt
 zO
 kt
@@ -21575,15 +21597,15 @@ kt
 zO
 kt
 oj
-oj
-oj
-oj
 kt
-rJ
-oj
-oj
 kt
-oj
+SM
+SM
+kt
+SM
+kt
+YK
+Bo
 kt
 zO
 kt
@@ -21731,16 +21753,16 @@ oj
 kt
 zO
 kt
-qO
-kt
-kt
-kt
-kt
-vm
-kt
 oj
-oj
-oj
+YK
+kt
+YK
+YK
+YK
+kt
+YK
+YK
+Bo
 kt
 zO
 kt
@@ -21888,15 +21910,15 @@ kt
 kt
 zO
 kt
-kt
-kt
-kt
-kt
-kt
-kt
 oj
 oj
-kt
+Bo
+oj
+Bo
+Bo
+oj
+oj
+Bo
 oj
 oj
 zO
@@ -22203,7 +22225,7 @@ kt
 zO
 kt
 oj
-kt
+rJ
 kt
 kt
 zO
@@ -26885,7 +26907,7 @@ zO
 zt
 zt
 zt
-zt
+Aj
 zt
 kt
 kt
@@ -27519,7 +27541,7 @@ kt
 kt
 oj
 kt
-kt
+vm
 oj
 kt
 kt
@@ -28143,9 +28165,9 @@ Ko
 iI
 gS
 oj
-KZ
+jp
 kt
-Tl
+fU
 kt
 zO
 zO

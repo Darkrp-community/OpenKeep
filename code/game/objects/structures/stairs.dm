@@ -20,6 +20,12 @@
 	icon = 'icons/obj/stairs.dmi'
 	icon_state = "stonestairs"
 
+// original icon = 'icons/roguetown/topadd/cre/enigma_misc1.dmi'
+/obj/structure/stairs/stone/church
+	name = "stone stairs"
+	icon = 'icons/obj/stairs.dmi'
+	icon_state = "churchstairs"
+
 //	climb_offset = 10
 	//RTD animate climbing offset so this can be here
 
