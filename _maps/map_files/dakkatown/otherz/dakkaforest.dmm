@@ -415,6 +415,9 @@
 /obj/structure/fluff/railing/border{
 	dir = 8
 	},
+/obj/item/reagent_containers/glass/cup/wooden{
+	pixel_y = 15
+	},
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "mB" = (
@@ -772,7 +775,13 @@
 /area/rogue/outdoors/rtfield)
 "yK" = (
 /obj/structure/table/wood/plain,
-/obj/item/candle/yellow,
+/obj/item/candle/yellow{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/glass/bottle/rogue/redwine{
+	pixel_y = 12;
+	pixel_x = 6
+	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "yY" = (
@@ -1533,9 +1542,9 @@
 "UT" = (
 /obj/item/seeds/wheat/oat,
 /obj/item/seeds/wheat/oat,
-/obj/item/seeds/pipeweed,
-/obj/item/seeds/pipeweed,
-/obj/item/seeds/pipeweed,
+/obj/item/seeds/garlic,
+/obj/item/seeds/onion,
+/obj/item/seeds/cabbage,
 /obj/item/seeds/apple,
 /obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/rogue/cobble,
