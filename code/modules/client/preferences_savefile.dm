@@ -333,8 +333,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		var/new_race = GLOB.species_list[species_name]
 		if(new_race)
 			pref_species = new new_race
-	var/vice_name
 //flaw
+	var/vice_name
 	S["charflaw"]			>> vice_name
 	if(vice_name)
 		var/new_vice = GLOB.character_flaws[vice_name]
