@@ -51,9 +51,9 @@
 	name = "goblin helmet"
 	icon_state = "plate_helm_item"
 	item_state = "plate_helm"
+	smeltresult = /obj/item/ingot/iron
 	icon = 'icons/roguetown/mob/monster/goblins.dmi'
 	allowed_race = list("goblin")
 	armor = list("melee" = 80, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|EARS|HAIR|EYES
 	sellprice = 0
-	smeltresult = /obj/item/ingot/iron
