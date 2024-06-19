@@ -141,6 +141,7 @@
 /area/rogue/indoors)
 "ea" = (
 /obj/machinery/light/rogue/torchholder/c,
+/obj/structure/chair/wood/rogue/fancy,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "ef" = (
@@ -502,6 +503,17 @@
 /obj/structure/stairs,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
+"pT" = (
+/obj/structure/chair/wood/rogue{
+	dir = 1
+	},
+/obj/effect/landmark/start/farmer{
+	dir = 1
+	},
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "horzw"
+	},
+/area/rogue/indoors)
 "pX" = (
 /obj/structure/bed/rogue,
 /obj/effect/landmark/start/beastmonger,
@@ -733,8 +745,8 @@
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "xO" = (
-/obj/structure/bed/rogue/shit,
 /obj/effect/landmark/start/farmer,
+/obj/structure/bed/rogue,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors)
 "xQ" = (
@@ -888,10 +900,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "BT" = (
-/obj/structure/bed/rogue/shit,
 /obj/effect/landmark/start/farmer{
 	dir = 1
 	},
+/obj/structure/bed/rogue,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors)
 "BV" = (
@@ -17786,7 +17798,7 @@ rm
 rn
 vC
 kO
-yu
+pT
 dW
 dW
 bu
