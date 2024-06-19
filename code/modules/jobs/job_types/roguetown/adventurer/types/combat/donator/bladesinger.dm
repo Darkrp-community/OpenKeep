@@ -6,10 +6,12 @@
 		"Elf",
 		"Dark Elf"
 	)
+	maximum_possible_slots = 1
+	pickprob = 15
 	outfit = /datum/outfit/job/roguetown/adventurer/bladesinger
-	maxchosen = 1
-	plevel_req = 1
-	israre = TRUE
+	category_tags = list(CTAG_ADVENTURER)
+	min_pq = 2
+
 
 /datum/outfit/job/roguetown/adventurer/bladesinger/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -40,4 +42,4 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	head = /obj/item/clothing/head/roguetown/rare/elfplate
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

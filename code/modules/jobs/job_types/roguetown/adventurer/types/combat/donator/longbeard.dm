@@ -8,9 +8,10 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list("Dwarf")
 	outfit = /datum/outfit/job/roguetown/adventurer/longbeard
-	maxchosen = 1
-	plevel_req = 1
-	israre = TRUE
+	maximum_possible_slots = 1
+	pickprob = 15
+	category_tags = list(CTAG_ADVENTURER)
+	min_pq = 2
 
 /datum/outfit/job/roguetown/adventurer/longbeard/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -28,7 +29,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
-		
+
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	backr = /obj/item/rogueweapon/mace/warhammer
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
@@ -40,4 +41,4 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	head = /obj/item/clothing/head/roguetown/rare/dwarfplate
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

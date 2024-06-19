@@ -2,13 +2,14 @@
 
 /datum/advclass/pilgrim/rare/fishermaster
 	name = "Master Fisher"
+	tutorial = "Humen who have mastered the seas, able to catch any fish with ease \
+	no matter the body of water, who are also skilled swimmers and cooks."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/fishermaster
-	isvillager = FALSE
-	ispilgrim = TRUE
-	maxchosen = 1
-	israre = TRUE
+	maximum_possible_slots = 1
+	pickprob = 15
+	category_tags = list(CTAG_PILGRIM)
 
 /datum/outfit/job/roguetown/adventurer/fishermaster/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -30,7 +31,7 @@
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 5, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/labor/fishing, 6, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/labor/fishing, 5, TRUE)
 			if(H.age == AGE_OLD)
 				H.mind.adjust_skillrank(/datum/skill/labor/fishing, 1, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
