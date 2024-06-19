@@ -12,7 +12,8 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/mage
-	maxchosen = 2
+	category_tags = list(CTAG_ADVENTURER)
+	maximum_possible_slots = 2
 
 /datum/outfit/job/roguetown/adventurer/mage
 	allowed_patrons = list(/datum/patron/divine/noc)

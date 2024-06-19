@@ -12,7 +12,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/boltslinger
-	ismerc = TRUE
+	category_tags = list(CTAG_MERCENARY)
 
 
 /datum/outfit/job/roguetown/mercenary/boltslinger/pre_equip(mob/living/carbon/human/H)

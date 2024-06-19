@@ -10,8 +10,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/monk
-	isvillager = FALSE
-	ispilgrim = FALSE
+	category_tags = list(CTAG_ADVENTURER)
 	vampcompat = FALSE
 
 
@@ -26,7 +25,7 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backr = /obj/item/rogueweapon/woodstaff
-	
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)

@@ -279,7 +279,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	var/list/dat = list()
 	dat += GLOB.roleplay_readme
 	if(dat)
-		var/datum/browser/popup = new(src, "Primer", "RT", 460, 550)
+		var/datum/browser/popup = new(src, "Primer", "STONEKEEP", 460, 550)
 		popup.set_content(dat.Join())
 		popup.open()
 
@@ -341,6 +341,11 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 			return "[jobtitle] requires more faith."
 		if(JOB_UNAVAILABLE_LASTCLASS)
 			return "You have played [jobtitle] recently."
+		if(JOB_UNAVAILABLE_JOB_COOLDOWN)
+			if(usr.ckey in GLOB.job_respawn_delays)
+				var/next_respawn_time = GLOB.job_respawn_delays[usr.ckey]
+				var/remaining_time = round((next_respawn_time - world.time) / 10)
+				return "You must wait [remaining_time] seconds before playing as an [jobtitle] again."
 	return "Error: Unknown job availability."
 
 //used for latejoining
@@ -363,9 +368,15 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 		else
 			if(rank == "Death Knight")
 				return JOB_UNAVAILABLE_GENERIC
+
 	var/datum/job/job = SSjob.GetJob(rank)
 	if(!job)
 		return JOB_UNAVAILABLE_GENERIC
+	// Check if the player is on cooldown for the hiv+ role
+	if((job.same_job_respawn_delay) && (ckey in GLOB.job_respawn_delays))
+		if(world.time < GLOB.job_respawn_delays[ckey])
+			return JOB_UNAVAILABLE_JOB_COOLDOWN
+
 	if((job.current_positions >= job.total_positions) && job.total_positions != -1)
 		if(job.title == "Assistant")
 			if(isnum(client.player_age) && client.player_age <= 14) //Newbies can always be assistants
@@ -396,12 +407,12 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 		return JOB_UNAVAILABLE_GENERIC
 	if(length(job.allowed_races) && !(client.prefs.pref_species.name in job.allowed_races))
 		return JOB_UNAVAILABLE_RACE
-	if(length(job.allowed_patrons) && !(client.prefs.selected_patron.type in job.allowed_patrons))
-		return JOB_UNAVAILABLE_PATRON
+/*	if(length(job.allowed_patrons) && !(client.prefs.selected_patron.type in job.allowed_patrons))
+		return JOB_UNAVAILABLE_PATRON */
 	if(job.plevel_req > client.patreonlevel())
 		testing("PATREONLEVEL [client.patreonlevel()] req [job.plevel_req]")
 		return JOB_UNAVAILABLE_GENERIC
-	if(get_playerquality(ckey) < job.min_pq)
+	if(!isnull(job.min_pq) && (get_playerquality(ckey) < job.min_pq))
 		return JOB_UNAVAILABLE_GENERIC
 	if(length(job.allowed_sexes) && !(client.prefs.gender in job.allowed_sexes))
 		return JOB_UNAVAILABLE_RACE
@@ -419,7 +430,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 /mob/dead/new_player/proc/AttemptLateSpawn(rank)
 	var/error = IsJobUnavailable(rank)
 	if(error != JOB_AVAILABLE)
-		alert(src, get_job_unavailable_error_message(error, rank))
+		to_chat(src, "<span class='warning'>[get_job_unavailable_error_message(error, rank)]</span>")
 		return FALSE
 
 	if(SSticker.late_join_disabled)
@@ -441,6 +452,10 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	//Remove the player from the join queue if he was in one and reset the timer
 	SSticker.queued_players -= src
 	SSticker.queue_delay = 4
+
+	// Jus remove them from drifter queue if they were in it.
+	// This shit shouldn't be firing before the round starts anyways sooo this is one of the only ways in
+	SSrole_class_handler.cleanup_drifter_queue(client)
 
 	testing("basedtest 1")
 
@@ -531,21 +546,24 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 
 
 /mob/dead/new_player/proc/LateChoices()
-	var/list/dat = list("<div class='notice'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]</div>")
+	var/list/dat = list("<div class='notice' style='font-style: normal; font-size: 14px; margin-bottom: 2px; padding-bottom: 0px'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time, 1)]</div>")
 	if(SSshuttle.emergency)
 		switch(SSshuttle.emergency.mode)
 			if(SHUTTLE_ESCAPE)
 				dat += "<div class='notice red'>The last boat has left Roguetown.</div><br>"
-//			if(SHUTTLE_CALL)
-//				if(!SSshuttle.canRecall())
-//					dat += "<div class='notice red'>The station is currently undergoing evacuation procedures.</div><br>"
 	for(var/datum/job/prioritized_job in SSjob.prioritized_jobs)
 		if(prioritized_job.current_positions >= prioritized_job.total_positions)
 			SSjob.prioritized_jobs -= prioritized_job
 	dat += "<table><tr><td valign='top'>"
 	var/column_counter = 0
 
-	var/list/omegalist = list(GLOB.noble_positions) + list(GLOB.garrison_positions) + list(GLOB.church_positions) + list(GLOB.serf_positions) + list(GLOB.peasant_positions) + list(GLOB.youngfolk_positions)
+	var/list/omegalist = list()
+	omegalist += list(GLOB.noble_positions)
+	omegalist += list(GLOB.garrison_positions)
+	omegalist += list(GLOB.church_positions)
+	omegalist += list(GLOB.peasant_positions)
+	omegalist += list(GLOB.apprentices_positions)
+	omegalist += list(GLOB.serf_positions)
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
 		var/datum/game_mode/chaosmode/C = SSticker.mode
@@ -558,49 +576,76 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 		if(!SSjob.name_occupations[category[1]])
 			testing("HELP NO THING FOUND FOR [category[1]]")
 			continue
-		var/cat_color = SSjob.name_occupations[category[1]].selection_color //use the color of the first job in the category (the department head) as the category color
-		dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
-		dat += "<legend align='center' style='color: [cat_color]'>[SSjob.name_occupations[category[1]].exp_type_department]</legend>"
-		var/datum/game_mode/chaosmode/C = SSticker.mode
-		if(istype(C))
-			if(C.skeletons)
-				dat += "<a class='job command' href='byond://?src=[REF(src)];SelectedJob=skeleton'>BECOME AN EVIL SKELETON</a>"
-				dat += "</fieldset><br>"
-				column_counter++
-				if(column_counter > 0 && (column_counter % 3 == 0))
-					dat += "</td><td valign='top'>"
-				break
-			if(C.deathknightspawn)
-				dat += "<a class='job command' href='byond://?src=[REF(src)];SelectedJob=Death Knight'>JOIN THE VAMPIRE LORD AS A DEATH KNIGHT</a>"
-				dat += "</fieldset><br>"
-				column_counter++
-				if(column_counter > 0 && (column_counter % 3 == 0))
-					dat += "</td><td valign='top'>"
-				break
-		var/list/dept_dat = list()
+
+		var/list/available_jobs = list()
 		for(var/job in category)
 			var/datum/job/job_datum = SSjob.name_occupations[job]
-			if(job_datum && IsJobUnavailable(job_datum.title, TRUE) == JOB_AVAILABLE)
-				var/command_bold = ""
-				if(job in GLOB.noble_positions)
-					command_bold = " command"
-				var/used_name = job_datum.title
-				if(client.prefs.gender == FEMALE && job_datum.f_title)
-					used_name = job_datum.f_title
-				if(job_datum in SSjob.prioritized_jobs)
-					dept_dat += "<a class='job[command_bold]' href='byond://?src=[REF(src)];SelectedJob=[job_datum.title]'><span class='priority'>[used_name] ([job_datum.current_positions])</span></a>"
-				else
-					dept_dat += "<a class='job[command_bold]' href='byond://?src=[REF(src)];SelectedJob=[job_datum.title]'>[used_name] ([job_datum.current_positions])</a>"
-//		if(!dept_dat.len)
-//			dept_dat += "<span class='nopositions'>No positions open.</span>"
-		dat += jointext(dept_dat, "")
-		dat += "</fieldset><br>"
-		column_counter++
-		if(column_counter > 0 && (column_counter % 3 == 0))
-			dat += "</td><td valign='top'>"
+			if(!job_datum)
+				continue
+			// Make sure hiv+ jobs always appear on list, even if unavailable
+			var/is_job_available = (IsJobUnavailable(job_datum.title, TRUE) == JOB_AVAILABLE)
+			if(job_datum.always_show_on_latechoices)
+				is_job_available = TRUE
+			if(is_job_available)
+				available_jobs += job
+
+		if (length(available_jobs))
+			var/cat_color = SSjob.name_occupations[category[1]].selection_color //use the color of the first job in the category (the department head) as the category color
+			var/cat_name = ""
+			switch (SSjob.name_occupations[category[1]].department_flag)
+				if (NOBLEMEN)
+					cat_name = "Nobles"
+				if (GARRISON)
+					cat_name = "Garrison"
+				if (SERFS)
+					cat_name = "Subjects"
+				if (CHURCHMEN)
+					cat_name = "Churchmen"
+				if (PEASANTS)
+					cat_name = "Peasants"
+				if (APPRENTICES)
+					cat_name = "Apprentices"
+
+			dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
+			dat += "<legend align='center' style='font-weight: bold; color: [cat_color]'>[cat_name]</legend>"
+			var/datum/game_mode/chaosmode/C = SSticker.mode
+			if(istype(C))
+				if(C.skeletons)
+					dat += "<a class='job command' href='byond://?src=[REF(src)];SelectedJob=skeleton'>BECOME AN EVIL SKELETON</a>"
+					dat += "</fieldset><br>"
+					column_counter++
+					if(column_counter > 0 && (column_counter % 3 == 0))
+						dat += "</td><td valign='top'>"
+					break
+				if(C.deathknightspawn)
+					dat += "<a class='job command' href='byond://?src=[REF(src)];SelectedJob=Death Knight'>JOIN THE VAMPIRE LORD AS A DEATH KNIGHT</a>"
+					dat += "</fieldset><br>"
+					column_counter++
+					if(column_counter > 0 && (column_counter % 3 == 0))
+						dat += "</td><td valign='top'>"
+					break
+
+			for(var/job in available_jobs)
+				var/datum/job/job_datum = SSjob.name_occupations[job]
+				if(job_datum)
+					var/command_bold = ""
+					if(job in GLOB.noble_positions)
+						command_bold = " command"
+					var/used_name = job_datum.title
+					if(client.prefs.gender == FEMALE && job_datum.f_title)
+						used_name = job_datum.f_title
+					if(job_datum in SSjob.prioritized_jobs)
+						dat += "<a class='job[command_bold]' href='byond://?src=[REF(src)];SelectedJob=[job_datum.title]'><span class='priority'>[used_name] ([job_datum.current_positions])</span></a>"
+					else
+						dat += "<a class='job[command_bold]' href='byond://?src=[REF(src)];SelectedJob=[job_datum.title]'>[used_name] ([job_datum.current_positions])</a>"
+
+			dat += "</fieldset><br>"
+			column_counter++
+			if(column_counter > 0 && (column_counter % 4 == 0))
+				dat += "</td><td valign='top'>"
 	dat += "</td></tr></table></center>"
 	dat += "</div></div>"
-	var/datum/browser/popup = new(src, "latechoices", "Choose Class", 680, 580)
+	var/datum/browser/popup = new(src, "latechoices", "Choose Class", 720, 580)
 	popup.add_stylesheet("playeroptions", 'html/browser/playeroptions.css')
 	popup.set_content(jointext(dat, ""))
 	popup.open(FALSE) // 0 is passed to open so that it doesn't use the onclose() proc
@@ -688,6 +733,10 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	src << browse(null, "window=preferences") //closes job selection
 	src << browse(null, "window=mob_occupation")
 	src << browse(null, "window=latechoices") //closes late job selection
+
+	SStriumphs.remove_triumph_buy_menu(client)
+	SSrole_class_handler.cleanup_drifter_queue(client)
+
 	winshow(src, "stonekeep_prefwin", FALSE)
 	src << browse(null, "window=preferences_browser")
 	src << browse(null, "window=lobby_window")
