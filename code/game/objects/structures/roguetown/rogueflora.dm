@@ -101,6 +101,7 @@
 
 /obj/structure/flora/roguetree/wise
 	name = "wise tree"
+	desc = "Dendor's favored."
 	icon_state = "mystical"
 
 /obj/structure/flora/roguetree/wise/Initialize()
@@ -114,7 +115,7 @@
 
 /obj/structure/flora/roguetree/burnt
 	name = "burnt tree"
-	desc = ""
+	desc = "A scorched pillar of a once living tree."
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	icon_state = "t1"
 	stump_type = /obj/structure/flora/roguetree/stump/burnt
@@ -126,6 +127,7 @@
 
 /obj/structure/flora/roguetree/stump/burnt
 	name = "tree stump"
+	desc = "This stump is burnt. Maybe someone is trying to get coal the easy way."
 	icon_state = "st1"
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	stump_type = null
@@ -149,6 +151,7 @@
 
 /obj/structure/flora/roguetree/stump
 	name = "tree stump"
+	desc = "Someone cut this tree down."
 	icon_state = "t1stump"
 	opacity = 0
 	max_integrity = 100
@@ -170,6 +173,7 @@
 
 /obj/structure/flora/roguetree/stump/log
 	name = "ancient log"
+	desc = "A felled piece of tree long forgotten, the poorman's table."
 	icon_state = "log1"
 	opacity = 0
 	max_integrity = 200
@@ -187,7 +191,7 @@
 
 /obj/structure/flora/roguegrass
 	name = "grass"
-	desc = ""
+	desc = "The kindest blades you will ever meet in this world."
 	icon = 'icons/roguetown/misc/foliage.dmi'
 	icon_state = "grass1"
 	attacked_sound = "plantcross"
@@ -209,11 +213,13 @@
 
 /obj/structure/flora/roguegrass/water
 	name = "grass"
+	desc = "This grass is sodden and muddy."
 	icon_state = "swampgrass"
 	max_integrity = 5
 
 /obj/structure/flora/roguegrass/water/reeds
 	name = "reeds"
+	desc = "This plant thrives in water, and shelters dangers."
 	icon_state = "reeds"
 	opacity = 1
 	max_integrity = 10
@@ -244,7 +250,7 @@
 // normal bush
 /obj/structure/flora/roguegrass/bush
 	name = "bush"
-	desc = "A bush, I think I can see some spiders crawling in it."
+	desc = "A bush, a den for critters and treasures."
 	icon_state = "bush1"
 	layer = ABOVE_ALL_MOB_LAYER
 	var/res_replenish
@@ -259,7 +265,7 @@
 	if(prob(88))
 		bushtype = pickweight(list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue=5,
 					/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison=3,
-					/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed=1))
+					/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed=2))
 	loot_replenish()
 	pixel_x += rand(-3,3)
 	return ..()
@@ -274,7 +280,7 @@
 // fyrituis bush
 /obj/structure/flora/roguegrass/pyroclasticflowers
 	name = "odd group of flowers"
-	desc = "A cluster of dangerously combustible flowers"
+	desc = "A cluster of dangerously combustible flowers."
 	icon_state = "pyroflower1"
 	layer = ABOVE_ALL_MOB_LAYER
 	max_integrity = 1
@@ -301,7 +307,7 @@
 // swarmpweed bush
 /obj/structure/flora/roguegrass/swampweed
 	name = "bunch of swampweed"
-	desc = "a green root good for smoking"
+	desc = "a green root good for smoking."
 	icon_state = "swampweed1"
 	layer = ABOVE_ALL_MOB_LAYER
 	max_integrity = 1
@@ -341,12 +347,9 @@
 //						H.throw_alert("embeddedobject", /atom/movable/screen/alert/embeddedobject)
 						var/obj/item/bodypart/BP = pick(H.bodyparts)
 						var/obj/item/natural/thorn/TH = new(src.loc)
-						BP.embedded_objects |= TH
-						TH.add_mob_blood(H)//it embedded itself in you, of course it's bloody!
-						TH.forceMove(H)
+						BP.add_embedded_object(TH, silent = TRUE)
 						BP.receive_damage(10)
 						to_chat(H, "<span class='danger'>\A [TH] impales my [BP.name]!</span>")
-						SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "embedded", /datum/mood_event/embedded)
 				else
 					var/obj/item/bodypart/BP = pick(H.bodyparts)
 					to_chat(H, "<span class='warning'>A thorn [pick("slices","cuts","nicks")] my [BP.name].</span>")
@@ -465,7 +468,7 @@
 
 /obj/structure/flora/roguegrass/bush/wall
 	name = "great bush"
-	desc = "A bush, this one's roots are thick and block the way."
+	desc = "A bush, this one's roots are too thick and block the way."
 	opacity = TRUE
 	density = 1
 	climbable = FALSE
@@ -493,6 +496,7 @@
 
 /obj/structure/flora/roguegrass/bush/wall/tall
 	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	desc = "A tall bush that has grown into a hedge."
 	icon_state = "tallbush1"
 	opacity = 1
 	pixel_x = -16
@@ -506,7 +510,7 @@
 
 /obj/structure/flora/rogueshroom
 	name = "shroom"
-	desc = ""
+	desc = "A ginormous mushroom, prized by dwarves for their shroomwood."
 	icon = 'icons/roguetown/misc/foliagetall.dmi'
 	icon_state = "mush1"
 	opacity = 0
@@ -567,7 +571,9 @@
 
 /obj/structure/flora/shroomstump
 	name = "shroom stump"
+	desc = "It was a very happy shroom. Not anymore."
 	icon_state = "mush1stump"
+	desc = "Here once stood a mighty nether-cap, you feel a great sadness."
 	opacity = 0
 	max_integrity = 100
 	climbable = TRUE
@@ -588,6 +594,7 @@
 
 /obj/structure/roguerock
 	name = "rock"
+	desc = "Stone, faithful tool, weapon and companion."
 	icon_state = "rock1"
 	icon = 'icons/roguetown/misc/foliage.dmi'
 	opacity = 0
@@ -613,7 +620,7 @@
 
 /obj/structure/flora/roguegrass/thorn_bush
     name = "thorn bush"
-    desc = "A thorny bush, watch your step!"
+    desc = "A thorny bush, bearing a bountiful collection of razor sharp thorns!"
     icon_state = "thornbush"
     layer = ABOVE_ALL_MOB_LAYER
     blade_dulling = DULLING_CUT

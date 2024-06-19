@@ -16,7 +16,8 @@
 	reqs = list(/obj/item/natural/fibers = 2)
 	tools = list(/obj/item/needle)
 	skillcraft = /datum/skill/misc/sewing
-	verbage = "sews"
+	verbage = "sew"
+	verbage_tp = "sews"
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/clothbelt
@@ -24,13 +25,15 @@
 	result = /obj/item/storage/belt/rogue/leather/cloth
 	reqs = list(/obj/item/natural/cloth = 1)
 	craftdiff = 0
-	verbage = "ties"
+	verbage = "tie"
+	verbage_tp = "ties"
 
 /datum/crafting_recipe/roguetown/rope
 	name = "rope"
 	result = /obj/item/rope
 	reqs = list(/obj/item/natural/fibers = 3)
-	verbage = "braids"
+	verbage = "braid"
+	verbage_tp = "braids"
 
 /datum/crafting_recipe/roguetown/torch
 	name = "torch"
@@ -253,10 +256,11 @@ datum/crafting_recipe/roguetown/poisonbolt
 	craftdiff = 3
 	skillcraft = /datum/skill/craft/carpentry
 
-/datum/crafting_recipe/roguetown/book_crafting_kit
-	name = "book crafting kit"
-	result = /obj/item/book_crafting_kit
+/datum/crafting_recipe/roguetown/flint
+	name = "flint"
+	result = /obj/item/flint
 	reqs = list(
-			/obj/item/natural/hide = 2,
-			/obj/item/natural/fibers = 2,
-			/obj/item/needle = 1)
+			/obj/item/natural/stone = 1,
+			/obj/item/ingot/iron = 1)
+	skillcraft = /datum/skill/craft/engineering
+	craftdiff = 0 // Something to practice engineering with.
