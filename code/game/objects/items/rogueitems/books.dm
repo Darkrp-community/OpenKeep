@@ -371,6 +371,26 @@
 	base_icon_state = "book8"
 	bookfile = "tales14.json"
 
+// ...... Books made by the Stonekeep community within #lore channel
+/obj/item/book/rogue/random/Initialize()
+    . = ..()
+    if(icon_state == "book_random")
+        base_icon_state = "book[rand(1,8)]"
+        icon_state = "[base_icon_state]_0"
+
+// .....Example of layout of added in book.
+/obj/item/book/rogue/random/templatebooknamehere
+    name = "Title of your book here"
+    desc = "Who wrote it or maybe some flavor here"
+    icon_state ="book_random"
+    base_icon_state = "book"
+    bookfile = "whateveryourbookisnamed.json"
+/obj/item/book/rogue/random/vownecrapage
+	name = "Necra's Vow of Silence"
+	icon_state = "book8_0"
+	base_icon_state = "book8"
+	bookfile = "VowOfNecraPage.json"
+
 /obj/item/book/rogue/playerbook
 	var/player_book_text = "moisture in the air or water leaks have rendered the carefully written caligraphy of this book unreadable"
 	var/player_book_title = "unknown title"
