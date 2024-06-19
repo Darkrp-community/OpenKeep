@@ -32,7 +32,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 	icon_state = "haubergeon"
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	blocksound = CHAINHIT
 	var/do_sound = FALSE
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
@@ -91,7 +91,7 @@
 	icon_state = "halfplate"
 	item_state = "halfplate"
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	nodismemsleeves = TRUE
 	max_integrity = 500
 	allowed_sex = list(MALE, FEMALE)
@@ -138,11 +138,6 @@
 	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_HEAVY
-
-/obj/item/clothing/suit/roguetown/armor/plate/half/elven
-	name = "elven guardian cuirass"
-	desc = "A cuirass made of steel with a thin decorative gold plating. Lightweight and durable."
-	color = COLOR_ASSEMBLY_GOLD
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale
 	slot_flags = ITEM_SLOT_ARMOR
@@ -239,18 +234,6 @@
 	GLOB.lordcolor -= src
 	return ..()
 
-/obj/item/clothing/suit/roguetown/armor/brigandine/coatplates
-	slot_flags = ITEM_SLOT_ARMOR
-	name = "coat of plates"
-	desc = "A leather coat with plates attached to it to increase protection while retaining mobility"
-	icon_state = "coat_of_plates"
-	blocksound = PLATEHIT
-	body_parts_covered = CHEST|GROIN|VITALS|ARMS
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
-	max_integrity = 250
-	armor_class = ARMOR_CLASS_HEAVY
-
 /obj/item/clothing/suit/roguetown/armor/armordress
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "padded dress"
@@ -310,8 +293,8 @@
 	icon_state = "leather"
 //	color = "#514339"
 	body_parts_covered = CHEST|GROIN|VITALS
-	armor = list("melee" = 25, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	armor = list("melee" = 65, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT,BCLASS_BLUNT)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
 	break_sound = 'sound/foley/cloth_rip.ogg'
@@ -335,7 +318,7 @@
 	icon_state = "studleather"
 	item_state = "studleather"
 	blocksound = SOFTHIT
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_CHOP)
+	prevent_crits = list(BCLASS_CUT,BCLASS_BLUNT,BCLASS_CHOP)
 	nodismemsleeves = TRUE
 	body_parts_covered = CHEST|GROIN|VITALS
 	max_integrity = 300
@@ -424,32 +407,6 @@
 	color = pick("#94b4b6", "#ba8f9e", "#bd978c", "#92bd8c", "#c7c981")
 	..()
 
-/obj/item/clothing/suit/roguetown/armor/silkcoat
-	name = "silk coat"
-	desc = "A padded dressing made from the finest silks."
-	icon_state = "bliaut"
-	color = null
-	armor = list("melee" = 40, "bullet" = 7, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
-	blocksound = SOFTHIT
-	slot_flags = ITEM_SLOT_ARMOR
-	blade_dulling = DULLING_BASHCHOP
-	body_parts_covered = CHEST|LEGS|VITALS|GROIN
-	break_sound = 'sound/foley/cloth_rip.ogg'
-	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
-	sewrepair = TRUE
-	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
-	sleevetype = "shirt"
-	max_integrity = 100
-	sellprice = 50
-	armor_class = ARMOR_CLASS_LIGHT
-	allowed_sex = list(FEMALE)
-	allowed_race = list("humen", "tiefling", "dwarfm","argonian", "elfd", "elfw", "helf", "aasimar")
-
-/obj/item/clothing/suit/roguetown/armor/silkcoat/Initialize()
-	color = pick(CLOTHING_PURPLE, null,CLOTHING_GREEN, CLOTHING_RED)
-	..()
-
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 	name = "orc mail"
 	icon_state = "marauder_armor_item"
@@ -463,22 +420,6 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 	max_integrity = 120
 	sellprice = 10
-
-obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
-	name = "Orc Marauder Chain Vest"
-	icon_state = "orc_chainvest"
-	item_state = "orc_chainvest_item"
-	icon = 'icons/roguetown/mob/monster/Orc.dmi'
-	smeltresult = /obj/item/ingot/iron
-	allowed_race = list("orc")
-	armor = list("melee" = 50, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
-	armor_class = ARMOR_CLASS_MEDIUM
-	blocksound = PLATEHIT
-	max_integrity = 100
-	sellprice = 10
-
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 	slot_flags = ITEM_SLOT_ARMOR
@@ -534,6 +475,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	nodismemsleeves = TRUE
 	max_integrity = 500
+	allowed_sex = list(MALE)
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel

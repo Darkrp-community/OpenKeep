@@ -4,9 +4,9 @@
 	allowed_sexes = list(MALE)
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/swordmaster
-	maximum_possible_slots = 1
-	pickprob = 15
-	category_tags = list(CTAG_ADVENTURER)
+	maxchosen = 1
+	plevel_req = 1
+	israre = TRUE
 
 
 /datum/outfit/job/roguetown/adventurer/swordmaster/pre_equip(mob/living/carbon/human/H)
@@ -17,7 +17,6 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.change_stat("strength", 2)
 		H.change_stat("speed", -1)
 
@@ -33,4 +32,4 @@
 	head = /obj/item/clothing/head/roguetown/rare/humanswplate
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)

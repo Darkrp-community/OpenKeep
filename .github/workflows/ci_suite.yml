@@ -18,10 +18,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Set Compile Options
-        run: |
-          sed -i "/#define TESTING/c\\/\/#define TESTING" code/_compile_options.dm
       
       - name: Install BYOND
         run: |

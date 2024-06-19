@@ -34,9 +34,8 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, rand(2,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/labor/mining, 2, TRUE)
 
 	head = /obj/item/clothing/head/roguetown/hatfur
 	if(prob(50))

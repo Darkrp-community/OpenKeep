@@ -1,7 +1,5 @@
 /datum/advclass/pilgrim/cheesemaker
 	name = "Cheesemaker"
-	tutorial = "Craftsmen who have mastered the art of curdling milks \
-				into delicious and long lasting wheels of cheese."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -13,14 +11,14 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/cheesemaker
-
-	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
+	isvillager = TRUE
+	ispilgrim = TRUE
 
 /datum/outfit/job/roguetown/adventurer/cheesemaker/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE) 
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(0,1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE) 
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(0,1,1), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
@@ -28,7 +26,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 4, TRUE)

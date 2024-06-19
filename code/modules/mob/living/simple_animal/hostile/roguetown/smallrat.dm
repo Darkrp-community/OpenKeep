@@ -1,9 +1,3 @@
-GLOBAL_LIST_INIT(RATS_DONT_EAT, typecacheof(list(
-	/obj/item/reagent_containers/food/snacks/smallrat,
-	/obj/item/reagent_containers/food/snacks/grown/onion/rogue,
-	/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
-	)))
-
 /obj/item/reagent_containers/food/snacks/smallrat
 	name = "rat"
 	desc = ""
@@ -20,6 +14,7 @@ GLOBAL_LIST_INIT(RATS_DONT_EAT, typecacheof(list(
 	max_integrity = 10
 	sellprice = 0
 	rotprocess = null
+
 
 /obj/item/reagent_containers/food/snacks/smallrat/onbite(mob/living/carbon/human/user)
 	if(loc == user)
@@ -120,8 +115,6 @@ GLOBAL_LIST_INIT(RATS_DONT_EAT, typecacheof(list(
 		dir = pick(GLOB.cardinals)
 		step(src, dir)
 		for(var/obj/item/reagent_containers/food/snacks/S in loc)
-			if(is_type_in_typecache(S, GLOB.RATS_DONT_EAT))
-				return
 			if(S != src)
 				qdel(S)
 				playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
@@ -132,9 +125,6 @@ GLOBAL_LIST_INIT(RATS_DONT_EAT, typecacheof(list(
 						dead = TRUE
 						qdel(src)
 						break
-
-
-
 
 /obj/item/reagent_containers/food/snacks/smallrat/obj_destruction(damage_flag)
 	//..()

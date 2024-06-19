@@ -62,6 +62,3 @@
 
 /datum/skill/combat/unarmed
 	name = "Fist-fighting"
-
-/datum/skill/combat/shields
-	name = "Shields"

@@ -3,12 +3,11 @@
 	allowed_sexes = list(MALE)
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/whitecheese
-	// oh god oh fuck this dont seem very safe to do
-	// this looks kinda op so imma just leave it at patreon level 1 until someone puts this behind a different lock
-	maximum_possible_slots = 0
-
+	plevel_req = 999
+	special_req = TRUE
+	maxchosen = 0
+	isvillager = FALSE
 	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
-	category_tags = list(CTAG_DISABLED)
 
 /datum/outfit/job/roguetown/adventurer/whitecheese
 	name = "WHITE CHEESE"
@@ -47,8 +46,8 @@
 			H.dna.species.soundpack_m = new /datum/voicepack/male/evil/blkknight()
 
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_BREADY, TRAIT_GENERIC)
+	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, RTRAIT_BREADY, TRAIT_GENERIC)
 	H.change_stat("intelligence", 3)
 	H.change_stat("strength", 4)
 	H.change_stat("endurance", 4)

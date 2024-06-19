@@ -19,15 +19,12 @@
 	wlength = WLENGTH_SHORT
 	resistance_flags = FLAMMABLE
 	can_parry = TRUE
-	associated_skill = /datum/skill/combat/shields
-	wdefense = 5
+	wdefense = 15
 	var/coverage = 90
 	parrysound = "parrywood"
 	attacked_sound = "parrywood"
 	max_integrity = 100
 	blade_dulling = DULLING_BASHCHOP
-	anvilrepair = /datum/skill/craft/armorsmithing
-	smeltresult = /obj/item/ash
 
 /obj/item/rogueweapon/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the projectile", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, args)
@@ -56,11 +53,12 @@
 
 /obj/item/rogueweapon/shield/wood
 	name = "wooden shield"
-	desc = "A simple, emblazoned round wooden shield with leather padding. \nCan exceptionally block attacks, but is more brittle than metal ones."
+	desc = "A round wooden shield, decent middle ground. Can exceptionally parry attacks and handle a lot of beating. Essential for any battle."
 	icon_state = "woodsh"
 	dropshrink = 0.8
+	wdefense = 6
 	coverage = 50
-	max_integrity = 150
+	max_integrity = 100
 
 /obj/item/rogueweapon/shield/wood/attack_hand(mob/user)
 	if(!overlays.len)
@@ -89,20 +87,18 @@
 
 /obj/item/rogueweapon/shield/tower
 	name = "tower shield"
-	desc = "A gigantic, iron reinforced shield that covers the entire body, a design-copy of the Aasimar shields of an era gone by."
+	desc = "A large rectangular shield, which covers a significant portion of the wearers body. Has an excellent parrying ability, it won't protect the wearer much more than a regular round shield but sports slightly higher durability."
 	icon_state = "shield_tower"
 	force = 15
 	throwforce = 10
 	throw_speed = 1
 	throw_range = 3
 	wlength = WLENGTH_NORMAL
-	wbalance = -1 // Heavy, big shield
 	resistance_flags = FLAMMABLE
 	wdefense = 6
 	coverage = 65
 	parrysound = list('sound/combat/parry/shield/towershield (1).ogg','sound/combat/parry/shield/towershield (2).ogg','sound/combat/parry/shield/towershield (3).ogg')
-	max_integrity = 300
-	smeltresult = /obj/item/ingot/iron // Made with an iron ingot, let us recover it
+	max_integrity = 200
 
 /obj/item/rogueweapon/shield/tower/getonmobprop(tag)
 	. = ..()
@@ -115,7 +111,7 @@
 
 /obj/item/rogueweapon/shield/tower/metal
 	name = "kite shield"
-	desc = "A knightly, kite shaped steel shield, emblazoned with heraldry. \nBoasts superior coverage and durability, owed to its exquisite craftsmanship."
+	desc = "A kite shaped shield with a high quality build. Made predominantly from metallic materials, and offers higher protection along with superior integrity."
 	icon_state = "ironsh"
 	force = 20
 	throwforce = 10
@@ -124,14 +120,13 @@
 	wlength = WLENGTH_NORMAL
 	resistance_flags = null
 	flags_1 = CONDUCT_1
-	wdefense = 8
+	wdefense = 6
 	coverage = 70
 	attacked_sound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
 	parrysound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
-	max_integrity = 500
+	max_integrity = 300
 	blade_dulling = DULLING_BASH
 	sellprice = 30
-	smeltresult = /obj/item/ingot/steel // Made with steel, let us repurpose it
 
 /obj/item/rogueweapon/shield/tower/metal/getonmobprop(tag)
 	if(tag)

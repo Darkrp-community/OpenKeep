@@ -86,7 +86,7 @@
 	force = 15
 	force_wielded = 20
 	name = "club"
-	desc = "A weapon older than recorded time itself."
+	desc = "An extremely crude wooden club that looks like it has fallen off a tree. Beloved by troglodytes and savages alike."
 	icon_state = "club1"
 	//dropshrink = 0.75
 	wbalance = 0
@@ -130,7 +130,7 @@
 	force_wielded = 20
 	name = "cudgel"
 	icon_state = "cudgel"
-	desc = "A stubby little club favored for thwacking thieves and smart-mouthed peasant folk."
+	desc = "A stubby little club designed to cheaply shatter kneecaps."
 	gripped_intents = null
 	smeltresult = /obj/item/ash
 	wlength = WLENGTH_SHORT
@@ -153,7 +153,7 @@
 	force = 5
 	force_wielded = 8
 	name = "wooden sword"
-	desc = "Crude wood assembled into the shape of a sword, a terrible weapon to be on the recieving end of during a training spat."
+	desc = "A wooden sword. It does absolutely minimal damage and offers minimal defensive capacities, perfect for sparring."
 	icon_state = "wsword"
 	//dropshrink = 0.75
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
@@ -182,9 +182,9 @@
 	force = 15
 	force_wielded = 35
 	possible_item_intents = list(/datum/intent/mace/heavy/strike)
-	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/mace/thrust)
+	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/dagger/thrust)
 	name = "warclub"
-	desc = "A two handed club, decorated with a spiked cap crown. A perfect way to say Good Morning to any would be noble-knight."
+	desc = "A weapon design with a long history of use by the Hui. Adopted later by the Abyssite 'Beastkin' in their later conflicts."
 	icon_state = "goedendag"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	sharpness = IS_BLUNT
@@ -221,10 +221,9 @@
 
 /obj/item/rogueweapon/mace/goden/steel
 	name = "grand mace"
-	desc = "A casted polearm, rumored to be the weapon-design used by the Forgotten God himself."
-	gripped_intents = list(/datum/intent/mace/heavy/smash) // It's a 2h flanged mace, not a goedendag.
+	desc = "Pride of the East, the First Legion has historically made legendary use of these grand and beautiful weapons."
 	icon_state = "polemace"
-	max_integrity = 500
+	max_integrity = 600
 	force = 15
 	force_wielded = 35
 
@@ -263,22 +262,8 @@
 	misscost = 30
 	warnie = "mobwarning"
 
-// For the Goedendag. If it applies to the grand mace, use this one instead.
-/datum/intent/mace/thrust
-	name = "thrust"
-	blade_class = BCLASS_STAB
-	attack_verb = list("stabs")
-	animname = "stab"
-	icon_state = "instab"
-	reach = 2
-	chargetime = 1
-	warnie = "mobwarning"
-	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-	penfactor = 40
-	swingdelay = 1
-	misscost = 15
 
-// Copper Bludgeon
+// Copper Bludgeon 
 
 /obj/item/rogueweapon/mace/copperbludgeon
 	force = 12
@@ -298,6 +283,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_HIP
 	associated_skill = /datum/skill/combat/axesmaces
+	gripped_intents = list(/datum/intent/mace/strike,/datum/intent/mace/smash)
 	parrysound = list('sound/combat/parry/parrygen.ogg')
 	swingsound = BLUNTWOOSH_MED
 	max_integrity = 80
@@ -357,7 +343,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
 	name = "warhammer"
-	desc = "A great warhammer made of stern steel, enscratched with oaths of battle and time."
+	desc = "Dwarves are not known to be subtle about their adoration for hammers. The tool of their God Malum, forged into a vicious weapon of war."
 	icon_state = "warhammer"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	sharpness = IS_BLUNT
@@ -368,7 +354,7 @@
 	associated_skill = /datum/skill/combat/axesmaces
 	smeltresult = /obj/item/ingot/steel
 	swingsound = BLUNTWOOSH_HUGE
-	max_integrity = 500
+	max_integrity = 200
 	minstr = 10
 	wdefense = 3
 	pixel_y = -16

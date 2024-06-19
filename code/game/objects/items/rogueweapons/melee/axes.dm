@@ -3,7 +3,7 @@
 	force = 12
 	possible_item_intents = list(/datum/intent/axe/chop/stone)
 	name = "stone axe"
-	desc = "Hewn wood, steadfast thread, a chipped stone. A recipe to bend nature to your will."
+	desc = "A crude axe made out of a wooden pole and a rock secured with some fibers. It's not glorious, but will do the job when cutting trees and trunks."
 	icon_state = "stoneaxe"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "axe"
@@ -13,8 +13,8 @@
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
-	max_blade_int = 50
-	max_integrity = 50
+	max_blade_int = 40
+	max_integrity = 40
 	wdefense = 1
 	w_class = WEIGHT_CLASS_BULKY
 	wlength = WLENGTH_SHORT
@@ -83,7 +83,7 @@
 	force_wielded = 30
 	possible_item_intents = list(/datum/intent/axe/cut)
 	name = "battle axe"
-	desc = "A masterfully constructed ax, with additional weights in the form of ornate spikes and practical edges."
+	desc = "A fine, massive and high quality battle axe. It looks as dangerous as it's massive. You can tell this well crafted amalgamation of steel is precisely designed to cut a man in half, armor or not. A very lethal choice."
 	icon_state = "battleaxe"
 	max_blade_int = 500
 	smeltresult = /obj/item/ingot/steel
@@ -113,12 +113,12 @@
 	force = 20
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
-	name = "iron axe"
-	desc = "Tool, weapon, loyal iron companion."
+	name = "axe"
+	desc = "A regular iron woodcutting axe."
 	icon_state = "axe"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	max_blade_int = 130
-	max_integrity = 200
+	max_integrity = 300
 	smeltresult = /obj/item/ingot/iron
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
@@ -127,20 +127,10 @@
 	wdefense = 2
 	minstr = 6
 
-// Pickaxe-axe ; Technically both a tool and weapon, but it goes here due to weapon function. Subtype of steel axe.
-/obj/item/rogueweapon/woodcut/pick
-	name = "axe"
-	desc = "An odd mix of a pickaxe front and a hatchet blade back, capable of being switched between."
-	icon_state = "paxe"
-	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop, /datum/intent/pick)
-	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
-	wlength = WLENGTH_NORMAL
-	toolspeed = 2
-
 /obj/item/rogueweapon/woodcut/steel
 	slot_flags = ITEM_SLOT_HIP
-	name = "steel axe"
-	desc = "A bearded steel axe revered by dwarf, humen and elf alike. Performs much better than its iron counterpart."
+	name = "axe"
+	desc = "A steel woodcutting axe. Performs much better than its iron counterpart."
 	icon_state = "saxe"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	force = 20
@@ -174,7 +164,7 @@
 	force_wielded = 20
 	possible_item_intents = list(/datum/intent/axe/chop)
 	name = "copper axe"
-	desc = "An Aasimarian designed handaxe, an outdated weaponry from simpler times."
+	desc = ""
 	icon_state = "chatchet"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "axe"

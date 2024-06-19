@@ -7,7 +7,7 @@ FLOOR SAFES
 //SAFES
 /obj/structure/safe
 	name = "safe"
-	desc = "You can keep your greatest treasures inside.. Or your greatest secrets."
+	desc = ""
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "safe"
 	anchored = TRUE

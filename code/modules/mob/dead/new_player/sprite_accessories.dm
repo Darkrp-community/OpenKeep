@@ -370,7 +370,6 @@
 	icon_state = "fhair_bob2"
 	gender = FEMALE
 	specuse = list("human","dwarf", "tiefling", "aasimar")
-
 /datum/sprite_accessory/hair/fpix
 	name = "Pixie"
 	icon_state = "fhair_pixie"
@@ -380,30 +379,6 @@
 	name = "Wisp"
 	icon_state = "felfhair_wisp"
 	gender = FEMALE
-	specuse = list("elf")
-
-/datum/sprite_accessory/hair/ffancy
-	name = "Fancy"
-	icon_state = "felfhair_fancy"
-	gender = NEUTER
-	specuse = list("elf")
-
-/datum/sprite_accessory/hair/dmajesty
-	name = "Majestic Dwarf"
-	icon_state = "fdwarf_majestic"
-	gender = FEMALE
-	specuse = list("dwarf")
-
-/datum/sprite_accessory/hair/fmajesty
-	name = "Majestic Human"
-	icon_state = "fhair_majestic"
-	gender = FEMALE
-	specuse = list("human")
-
-/datum/sprite_accessory/hair/elfmajesty
-	name = "Majestic Elf"
-	icon_state = "elfhair_majestic"
-	gender = NEUTER
 	specuse = list("elf")
 
 /datum/sprite_accessory/hair/flongtails
@@ -423,8 +398,6 @@
 	icon_state = "felfhair_hime"
 	gender = FEMALE
 	specuse = list("elf")
-
-
 /*
 /datum/sprite_accessory/hair/felfhair_fatherless
 	name = "Princessly"

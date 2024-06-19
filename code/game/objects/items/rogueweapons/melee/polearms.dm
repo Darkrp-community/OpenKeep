@@ -39,7 +39,7 @@
 	possible_item_intents = list(SPEAR_BASH)
 	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood)
 	name = "wooden staff"
-	desc = "The ultimate tool of travel for weary wanderers, support your weight or crack the heads that don't support you."
+	desc = ""
 	icon_state = "woodstaff"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	wlength = WLENGTH_LONG
@@ -53,7 +53,7 @@
 	inhand_y_dimension = 64
 	max_blade_int = 120
 	max_integrity = 200
-	wdefense = 5
+	wdefense = 4
 	bigboy = TRUE
 	gripsprite = TRUE
 	associated_skill = /datum/skill/combat/polearms
@@ -71,8 +71,8 @@
 
 
 /obj/item/rogueweapon/woodstaff/aries
-	name = "staff of the testimonium"
-	desc = "A symbolic staff, granted to graduating acolyte's who have achieved and bear witnessed to the miracles of the Gods."
+	name = "staff of the shepherd"
+	desc = ""
 	force = 15
 	force_wielded = 25
 	possible_item_intents = list(SPEAR_BASH)
@@ -87,7 +87,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	dropshrink = 0.6
-	wdefense = 5
+	wdefense = 4
 	bigboy = TRUE
 	gripsprite = TRUE
 	associated_skill = /datum/skill/combat/polearms
@@ -108,7 +108,7 @@
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
 	name = "spear"
-	desc = "The humble spear, use the pointy end."
+	desc = ""
 	icon_state = "spear"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -121,14 +121,14 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	max_blade_int = 100
-	max_integrity = 300
+	max_integrity = 450
 	minstr = 8
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
 	dropshrink = 0.6
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
-	wdefense = 4
+	wdefense = 5
 	thrown_bclass = BCLASS_STAB
 	throwforce = 25
 
@@ -143,7 +143,7 @@
 
 /obj/item/rogueweapon/spear/billhook
 	name = "billhook"
-	desc = "A polearm with a curved krag, a Valorian design for dismounting mounted warriors and to strike down monstrous beasts."
+	desc = ""
 	icon_state = "billhook"
 	force = 12
 	force_wielded = 30
@@ -172,7 +172,6 @@
 	force = 10
 	force_wielded = 15
 	name = "simple spear"
-	desc = "With this weapon, the tribes of humenity became the chosen people of the Forgotten God."
 	icon_state = "stonespear"
 	pixel_y = -16
 	pixel_x = -16
@@ -220,12 +219,12 @@
 	misscost = 10
 
 /obj/item/rogueweapon/halberd
-	force = 15
+	force = 10
 	force_wielded = 35
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, /datum/intent/spear/halberd/chop, SPEAR_BASH)
 	name = "halbert"
-	desc = "A reinforced polearm for clobbering ordained with a crested ax head, pick and sharp point, a royal arm for defence and aggression."
+	desc = ""
 	icon_state = "halberd"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -239,7 +238,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	minstr = 8
 	max_blade_int = 100
-	max_integrity = 500
+	max_integrity = 450
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/polearms
 	dropshrink = 0.6
@@ -258,23 +257,13 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+
 /obj/item/rogueweapon/halberd/bardiche
 	name = "bardiche"
-	desc = "A grand ax of northernly design, renown for decisive and delimbing as well as stunning bashes."
+	desc = ""
 	icon_state = "bardiche"
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 300
-
-/obj/item/rogueweapon/halberd/iron
-	name = "iron halberd"
-	desc = ""
-	force = 12
-	force_wielded = 30
-	icon_state = "ihalberd"
-	smeltresult = /obj/item/ingot/iron
-	max_blade_int = 300
-	max_integrity = 300
-	
 
 /obj/item/rogueweapon/eaglebeak
 	force = 15
@@ -282,7 +271,7 @@
 	possible_item_intents = list(SPEAR_BASH, SPEAR_THRUST) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_BASH, SPEAR_THRUST, /datum/intent/mace/heavy/smash)
 	name = "eagle's beak"
-	desc = "A reinforced pole affixed with an ornate steel eagle's head, of which it's beak is intended to pierce with great harm."
+	desc = ""
 	icon_state = "eaglebeak"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -298,11 +287,10 @@
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/polearms
 	max_blade_int = 300
-	max_integrity = 500
 	dropshrink = 0.6
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
-	wdefense = 5
+	wdefense = 6
 
 /obj/item/rogueweapon/eaglebeak/getonmobprop(tag)
 	. = ..()
@@ -318,13 +306,10 @@
 
 /obj/item/rogueweapon/eaglebeak/lucerne
 	name = "lucerne"
-	desc = "A polehammer of simple iron, fracture bone and dissent with simple brute force."
-	force = 12
-	force_wielded = 25
+	desc = ""
 	icon_state = "polehammer"
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 300
-	max_integrity = 300
 
 // Copper Spear
 
@@ -334,7 +319,7 @@
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
 	name = "copper spear"
-	desc = "A spear of Aasimar design, outdated but still serves it's purpose."
+	desc = "the walking stick of the poor fucking infantry."
 	icon_state = "cspear"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16

@@ -40,8 +40,7 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed = 1)
 	structurecraft = /obj/structure/fluff/dryingrack
 	time = 2 SECONDS
-	verbage = "dry"
-	verbage_tp = "dries"
+	verbage = "dries"
 	craftsound = null
 	skillcraft = null
 
@@ -52,8 +51,7 @@
 				/obj/item/paper/scroll = 1)
 	req_table = TRUE
 	time = 10 SECONDS
-	verbage = "roll"
-	verbage_tp = "rolls"
+	verbage = "rolls"
 	craftdiff = 0
 
 //westleach leaf
@@ -97,8 +95,7 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed = 1)
 	structurecraft = /obj/structure/fluff/dryingrack
 	time = 2 SECONDS
-	verbage = "dry"
-	verbage_tp = "dries"
+	verbage = "drie"
 	craftsound = null
 	skillcraft = null
 
@@ -110,7 +107,6 @@
 	req_table = TRUE
 	time = 10 SECONDS
 	verbage = "roll"
-	verbage_tp = "rolls"
 	craftdiff = 0
 
 

@@ -67,7 +67,7 @@
 	force_wielded = 15
 	name = "stunmace"
 	icon_state = "stunmace0"
-	desc = "A dwarven invention, a mace that bears tiny soul-gems that imbue the crown of the mace with lightning mana."
+	desc = "Pain is our currency here."
 	gripped_intents = null
 	w_class = WEIGHT_CLASS_NORMAL
 	possible_item_intents = list(/datum/intent/mace/strike/stunner, /datum/intent/mace/smash/stunner)
@@ -128,7 +128,7 @@
 		on = FALSE
 	else
 		if(charge <= 33)
-			to_chat(user, "<span class='warning'>It's out of mana.</span>")
+			to_chat(user, "<span class='warning'>It's out of juice.</span>")
 			return
 		user.visible_message("<span class='warning'>[user] flicks [src] on.</span>")
 		on = TRUE

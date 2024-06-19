@@ -1,7 +1,7 @@
 
 /obj/item/rope
 	name = "rope"
-	desc = "A series of threads interwined to create a firm rope for binding, hanging and other jobs."
+	desc = ""
 	gender = PLURAL
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "rope"
@@ -126,7 +126,7 @@
 
 /obj/item/rope/chain
 	name = "chain"
-	desc = "Metal chains designed to interlock and apply the harshest confinement on the villainous."
+	desc = ""
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "chain"
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_WRISTS

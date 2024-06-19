@@ -593,7 +593,6 @@
 	build_path = /obj/item/organ/ears/cybernetic/upgraded
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
 /////////////////////
 ///Surgery Designs///
 /////////////////////
@@ -603,9 +602,8 @@
 	id = "surgery_parent"
 	research_icon = 'icons/obj/surgery.dmi'
 	research_icon_state = "surgery_any"
-	var/datum/surgery_step/surgery_step
+	var/surgery
 
-/*
 /datum/design/surgery/experimental_dissection
 	name = "Advanced Dissection"
 	desc = ""
@@ -751,4 +749,3 @@
 	id = "surgery_zombie"
 	surgery = /datum/surgery/advanced/necrotic_revival
 	research_icon_state = "surgery_head"
-*/ 

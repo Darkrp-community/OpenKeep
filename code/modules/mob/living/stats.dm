@@ -50,6 +50,11 @@
 				for(var/S in H.dna.species.specstats)
 					change_stat(S, H.dna.species.specstats[S])
 		switch(H.age)
+			if(AGE_YOUNG)
+				change_stat("strength", -1) //now young adult
+				change_stat("constitution", 1)
+				change_stat("perception", 1)
+				change_stat("speed", 1)
 			if(AGE_MIDDLEAGED)
 				change_stat("endurance", 1) //if a stat isn't listed then it dosen't have a bonus or negative
 				change_stat("perception", 1)

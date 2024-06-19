@@ -2,7 +2,7 @@ GLOBAL_LIST_EMPTY(biggates)
 
 /obj/structure/gate
 	name = "gate"
-	desc = "A strong steel gate."
+	desc = ""
 	icon = 'icons/roguetown/misc/gate.dmi'
 	icon_state = "gate1"
 	density = TRUE
@@ -125,7 +125,7 @@ GLOBAL_LIST_EMPTY(biggates)
 
 /obj/structure/winch
 	name = "winch"
-	desc = "A Gatekeeper's only, and most important responsibility."
+	desc = ""
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "winch"
 	density = TRUE

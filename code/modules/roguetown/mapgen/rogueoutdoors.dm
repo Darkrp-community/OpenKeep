@@ -39,6 +39,7 @@
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 	spawnableTurfs = list(/turf/open/floor/rogue/grass = 15)
+	spawnableAtoms = list()
 	allowed_areas = list(/area/rogue/outdoors/rtfield)
 
 /datum/mapGeneratorModule/roguetowngrass

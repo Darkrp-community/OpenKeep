@@ -39,11 +39,13 @@
 	pixel_x = rand(-8, 8)
 	pixel_y = rand(-5, 5)
 	if(isturf(T) && quantity > 1)
-		for(var/i in 2 to quantity) // exclude the first coin
-			var/obj/item/roguecoin/new_coin = new type(T)
-			new_coin.set_quantity(1) // prevent exploits with coin piles
-			new_coin.pixel_x = rand(-8, 8)
-			new_coin.pixel_y = rand(-5, 5)
+		var/obj/structure/table/TA = locate() in T
+		if(!TA) //no table
+			for(var/i in 2 to quantity) // exclude the first coin
+				var/obj/item/roguecoin/new_coin = new type(T)
+				new_coin.set_quantity(1) // prevent exploits with coin piles
+				new_coin.pixel_x = rand(-8, 8)
+				new_coin.pixel_y = rand(-5, 5)
 
 	set_quantity(1)
 

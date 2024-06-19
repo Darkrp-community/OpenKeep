@@ -2,14 +2,13 @@
 
 /datum/advclass/pilgrim/rare/minermaster
 	name = "Master Miner"
-	tutorial = "Hardy dwarves who dedicated their entire life to a singular purpose: \
-	the acquisition of ore, precious stones, and anything deep below the mines."
 	allowed_sexes = list(MALE)
 	allowed_races = list("Dwarf")
 	outfit = /datum/outfit/job/roguetown/adventurer/minermaster
-	maximum_possible_slots = 1
-	pickprob = 15
-	category_tags = list(CTAG_PILGRIM)
+	isvillager = FALSE
+	ispilgrim = TRUE
+	maxchosen = 1
+	israre = TRUE
 
 /datum/outfit/job/roguetown/adventurer/minermaster/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -22,22 +21,13 @@
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/pick
 	backl = /obj/item/storage/backpack/rogue/backpack
-	if(H.age == AGE_OLD)
-		H.change_stat("endurance", -1)
-		H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/labor/mining, 6, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(3,3,4), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 		H.change_stat("strength", 2)
 		H.change_stat("intelligence", 2)
 		H.change_stat("endurance", 2)

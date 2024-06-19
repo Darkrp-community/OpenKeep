@@ -53,17 +53,17 @@
 	if(!is_lesser)
 		owner.adjust_skillrank(/datum/skill/combat/wrestling, 6, TRUE)
 		owner.adjust_skillrank(/datum/skill/combat/unarmed, 6, TRUE)
-		ADD_TRAIT(owner.current, TRAIT_NOBLE, TRAIT_GENERIC)
+		ADD_TRAIT(owner.current, RTRAIT_NOBLE, TRAIT_GENERIC)
 	owner.special_role = name
-	ADD_TRAIT(owner.current, TRAIT_STRONGBITE, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(owner.current, RTRAIT_STRONGBITE, TRAIT_GENERIC)
+	ADD_TRAIT(owner.current, TRAIT_NOFATSTAM, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_NOBREATH, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_NOPAIN, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_LIMPDICK, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, TRAIT_VILLAIN, TRAIT_GENERIC)
+	ADD_TRAIT(owner.current, RTRAIT_VILLAIN, TRAIT_GENERIC)
 	owner.current.cmode_music = 'sound/music/combatvamp.ogg'
 	var/obj/item/organ/eyes/eyes = owner.current.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
@@ -136,7 +136,7 @@
 					if(T.get_lumcount() > 0.15)
 						if(disguised)
 							vitae -= 8
-							to_chat(H, "<span class='warning'>My vitae dwindles!</span>")
+							to_chat(H, "<span class='warning'>My silver blood dwindles!</span>")
 						else
 							H.fire_act(1,5)
 
@@ -160,7 +160,7 @@
 				H.vampire_undisguise(src)
 		vitae -= 1
 	else
-		to_chat(H, "<span class='userdanger'>I RAN OUT OF VITAE!</span>")
+		to_chat(H, "<span class='userdanger'>I RAN OUT OF SILVER BLOOD!</span>")
 		var/obj/shapeshift_holder/SS = locate() in H
 		if(SS)
 			SS.shape.dust()
@@ -262,7 +262,7 @@
 		to_chat(src, "<span class='warning'>My curse is hidden.</span>")
 		return
 	if(VD.vitae < 500)
-		to_chat(src, "<span class='warning'>Not enough vitae.</span>")
+		to_chat(src, "<span class='warning'>Not enough silver blood.</span>")
 		return
 	if(has_status_effect(/datum/status_effect/buff/celerity))
 		to_chat(src, "<span class='warning'>Already active.</span>")
@@ -297,7 +297,7 @@
 		to_chat(src, "<span class='warning'>My curse is hidden.</span>")
 		return
 	if(VD.vitae < 200)
-		to_chat(src, "<span class='warning'>Not enough vitae.</span>")
+		to_chat(src, "<span class='warning'>Not enough silver blood.</span>")
 		return
 	if(has_status_effect(/datum/status_effect/buff/fortitude))
 		to_chat(src, "<span class='warning'>Already active.</span>")
@@ -340,7 +340,7 @@
 	icon_state = null
 	body_parts_covered = FULL_BODY
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_CUT,BCLASS_STAB,BCLASS_BLUNT)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
 	sewrepair = TRUE
@@ -350,18 +350,11 @@
 	set name = "Regenerate"
 	set category = "VAMPIRE"
 
-	var/silver_curse_status = FALSE
-	for(var/datum/status_effect/debuff/silver_curse in status_effects)
-		silver_curse_status = TRUE
-		break
 	var/datum/antagonist/vampirelord/VD = mind.has_antag_datum(/datum/antagonist/vampirelord)
 	if(!VD)
 		return
 	if(VD.disguised)
 		to_chat(src, "<span class='warning'>My curse is hidden.</span>")
-		return
-	if(silver_curse_status)
-		to_chat(src, "<span class='warning'>My BANE is not letting me REGEN!.</span>")	
 		return
 	if(VD.vitae < 500)
 		to_chat(src, "<span class='warning'>Not enough vitae.</span>")

@@ -53,7 +53,7 @@
 
 /obj/structure/stationary_bell
 	name = "church bell"
-	desc = "A large cast bronze bell that rings out for all to hear."
+	desc = "A large bell that rings out for all to hear."
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	icon_state = "churchbell"
 	anchored = TRUE
@@ -81,10 +81,10 @@
 	if(ringing)
 		return
 	if(istype(used_item, /obj/item/rogueweapon/mace/church))
-		for(var/mob/M in GLOB.player_list) // @everyone
-			if(M.client && M.can_hear()) // Disregard NPC's with no mind and sleeping/unconscious people
-				to_chat(M, "<span class='notice'>The church bell rings, echoing solemnly far and wide across the realm.</span>")
-				M.playsound_local(M, 'sound/misc/bell.ogg', 50, 1)
+		playsound(loc, 'sound/misc/bell.ogg', 50, 1)
+		for(var/mob/M in orange(150, src))
+			if(M.client)
+				to_chat(M, "<span class='notice'>The church bell rings, echoing solemnly through the area.</span>")
 		visible_message("<span class='notice'>[user] uses the [used_item] to ring the [src].</span>")
 		ringing = TRUE
 		sleep(cooldown)

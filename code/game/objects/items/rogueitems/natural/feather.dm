@@ -1,9 +1,9 @@
 
 /obj/item/natural/feather
 	name = "feather"
-	desc = "The plume from some avian."
 	icon_state = "feather"
 	possible_item_intents = list(/datum/intent/use)
+	desc = ""
 	force = 0
 	throwforce = 0
 	obj_flags = null

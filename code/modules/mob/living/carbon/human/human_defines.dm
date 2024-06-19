@@ -97,7 +97,7 @@
 	var/list/shuffle_combat = list()
 	var/classesunlocked = FALSE
 	var/advsetup = 0
-
+	var/advpicking
 
 //	var/alignment = ALIGNMENT_TN
 

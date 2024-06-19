@@ -87,7 +87,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/adventurerlate
 	name = "Adventurerlate"
 	icon_state = "arrow"
-	jobspawn_override = list("Skeleton", "Drifter", "Pilgrim", "Adventurer")
+	jobspawn_override = list("Adventurer", "Pilgrim", "skeleton")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vagrantlate
@@ -302,10 +302,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/adventurer
 	name = "Adventurer"
-	icon_state = "arrow"
-
-/obj/effect/landmark/start/feldsher
-	name = "Feldsher"
 	icon_state = "arrow"
 
 //yrf
@@ -726,3 +722,5 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/underworldcoin/Initialize(mapload)
 	GLOB.underworldcoin += loc
 	return
+
+

@@ -107,7 +107,7 @@
 			return "nose"
 		if(BODY_ZONE_PRECISE_MOUTH)
 			return "mouth"
-		if(BODY_ZONE_PRECISE_SKULL)
+		if(BODY_ZONE_PRECISE_HAIR)
 			return "head"
 		if(BODY_ZONE_PRECISE_EARS)
 			return "head"

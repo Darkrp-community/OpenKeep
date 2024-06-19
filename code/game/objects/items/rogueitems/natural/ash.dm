@@ -1,6 +1,5 @@
 /obj/item/ash
 	name = "ash"
-	desc = "A handful of soot."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ash"
 	w_class = WEIGHT_CLASS_TINY

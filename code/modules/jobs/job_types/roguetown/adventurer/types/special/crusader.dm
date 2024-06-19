@@ -9,13 +9,13 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/crusader
-	maximum_possible_slots = 2
+	plevel_req = 0
+	maxchosen = 2
+	isvillager = FALSE
 	tutorial = "The crusaders... Knights who have pledged \
 	their wealth and lands to the church, taking up the banner \
 	of one of the rival Orders dedicated to retaking the holy land. \
 	The 451st crusade is sure to be the last."
-
-	category_tags = list(CTAG_DISABLED)
 
 /datum/outfit/job/roguetown/adventurer/crusader
 	name = "Crusader"
@@ -42,7 +42,6 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, 5, TRUE)
@@ -53,12 +52,12 @@
 	H.change_stat("endurance", 2)
 	H.change_stat("constitution", 2)
 	H.change_stat("intelligence", -1)
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)
 
-	for(var/I in SSrole_class_handler.sorted_class_categories[CTAG_ALLCLASS])
+	for(var/I in GLOB.adv_classes)
 		var/datum/advclass/A = I
 		if(A.name == name)
-			if(A.total_slots_occupied > 1)
+			if(A.amtchosen > 1)
 				armor = /obj/item/clothing/cloak/stabard/crusader/t
 				cloak = /obj/item/clothing/cloak/raincloak/furcloak
 				beltl = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t

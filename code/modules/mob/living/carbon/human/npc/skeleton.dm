@@ -1,6 +1,5 @@
 /mob/living/carbon/human/species/skeleton
 	name = "skeleton"
-	
 	race = /datum/species/human/northern
 	gender = MALE
 	bodyparts = list(/obj/item/bodypart/chest, /obj/item/bodypart/head, /obj/item/bodypart/l_arm,
@@ -12,7 +11,7 @@
 	possible_rmb_intents = list()
 
 /mob/living/carbon/human/species/skeleton/npc
-	aggressive = 1
+	aggressive=1
 	mode = AI_IDLE
 	wander = TRUE
 
@@ -25,7 +24,7 @@
 	spawn(10)
 		after_creation()
 
-//	addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)  fired loadout equip again, leading to duping inhands. Unclear why its here.
+	addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
 
 /mob/living/carbon/human/species/skeleton/after_creation()
 	..()
@@ -60,7 +59,7 @@
 	name = "skeleton"
 	real_name = "skeleton"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOFATSTAM, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOLIMBDISABLE, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)

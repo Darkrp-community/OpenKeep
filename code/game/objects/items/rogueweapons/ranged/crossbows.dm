@@ -1,7 +1,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	name = "crossbow"
-	desc = "A mechanical ranged weapon of simple design, affixed with a stirrup and fired via trigger."
+	desc = ""
 	icon = 'icons/roguetown/weapons/32.dmi'
 	icon_state = "crossbow0"
 	item_state = "crossbow"
@@ -89,9 +89,11 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/attackby(obj/item/A, mob/user, params)
 	if(istype(A, /obj/item/ammo_box) || istype(A, /obj/item/ammo_casing))
 		if(cocked)
+			if((loc == user) && (user.get_inactive_held_item() != src))
+				return
 			..()
 		else
-			to_chat(user, "<span class='warning'>I need to cock the crossbow first.</span>")
+			to_chat(user, "<span class='warning'>I need to cock the bow first.</span>")
 
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)

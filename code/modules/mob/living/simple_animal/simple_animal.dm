@@ -741,28 +741,22 @@ mob/living/simple_animal/handle_fire()
 /mob/living/simple_animal/hostile/user_unbuckle_mob(mob/living/M, mob/user)
 	if(user != M)
 		return
-	var/time2mount = 0
-	var/amt = M.mind.get_skill_level(/datum/skill/misc/riding)
+	var/time2mount = 12
 	if(M.mind)
+		var/amt = M.mind.get_skill_level(/datum/skill/misc/riding)
 		if(amt)
-			if(amt <= 3)
-				time2mount = 40 - (amt * 10)
-			else
-				time2mount = 0 // Instant at Expert and above
+			if(amt > 3)
+				time2mount = 0
 		else
-			time2mount = 40
+			time2mount = 30
 	if(ssaddle)
 		playsound(src, 'sound/foley/saddledismount.ogg', 100, TRUE)
 	if(!move_after(M,time2mount, target = src))
-		if(amt < 3) // Skilled prevents you from fumbling
-			M.Paralyze(50)
-			M.Stun(50)
-			playsound(src.loc, 'sound/foley/zfall.ogg', 100, FALSE)
-			M.visible_message("<span class='danger'>[M] falls off [src]!</span>")
-		else
-			return
+		M.Paralyze(50)
+		M.Stun(50)
+		playsound(src.loc, 'sound/foley/zfall.ogg', 100, FALSE)
+		M.visible_message("<span class='danger'>[M] falls off [src]!</span>")
 	..()
-	M.mind.adjust_experience(/datum/skill/misc/riding, M.STAINT, FALSE)
 	update_icon()
 
 /mob/living/simple_animal/hostile/user_buckle_mob(mob/living/M, mob/user)
@@ -775,10 +769,8 @@ mob/living/simple_animal/handle_fire()
 		if(M.mind)
 			var/amt = M.mind.get_skill_level(/datum/skill/misc/riding)
 			if(amt)
-				if(amt <= 3)
-					time2mount = 50 - (amt * 10)
-				else
-					time2mount = 0 // Instant at Master and above
+				if(amt > 3)
+					time2mount = 0
 			else
 				time2mount = 50
 
@@ -790,7 +782,6 @@ mob/living/simple_animal/handle_fire()
 //			if(A != src && A != M && A.density)
 //				return
 		M.forceMove(get_turf(src))
-		M.mind.adjust_experience(/datum/skill/misc/riding, M.STAINT, FALSE)
 		if(ssaddle)
 			playsound(src, 'sound/foley/saddlemount.ogg', 100, TRUE)
 	..()
@@ -835,13 +826,11 @@ mob/living/simple_animal/handle_fire()
 				if(MD && !MD.ridethrough)
 					if(isliving(user))
 						var/mob/living/L = user
-						var/strong_thighs = L.mind.get_skill_level((/datum/skill/misc/riding))
-						if(prob(60 - (strong_thighs * 10))) // Legendary riders do not fall!
-							unbuckle_mob(L)
-							L.Paralyze(50)
-							L.Stun(50)
-							playsound(L.loc, 'sound/foley/zfall.ogg', 100, FALSE)
-							L.visible_message("<span class='danger'>[L] falls off [src]!</span>")
+						unbuckle_mob(L)
+						L.Paralyze(50)
+						L.Stun(50)
+						playsound(L.loc, 'sound/foley/zfall.ogg', 100, FALSE)
+						L.visible_message("<span class='danger'>[L] falls off [src]!</span>")
 
 /mob/living/simple_animal/buckle_mob(mob/living/buckled_mob, force = 0, check_loc = 1)
 	. = ..()

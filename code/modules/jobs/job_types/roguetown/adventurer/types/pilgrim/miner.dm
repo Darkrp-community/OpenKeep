@@ -1,7 +1,5 @@
 /datum/advclass/pilgrimminer
 	name = "Miner"
-	tutorial = "Hardy people who ceaselessly toil at the mines for ores and salt, \
-				who will ever know what they'll find beneath?"
 	allowed_sexes = list(MALE)
 	allowed_races = list(
 		"Humen",
@@ -13,7 +11,8 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/miner
-	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
+	isvillager = TRUE
+	ispilgrim = TRUE
 
 /datum/outfit/job/roguetown/adventurer/miner/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -30,17 +29,12 @@
 	backpack_contents = list(/obj/item/flint = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/labor/mining, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 		H.change_stat("strength", 1)
 		H.change_stat("intelligence", -2)
 		H.change_stat("endurance", 1)
-		H.change_stat("constitution", 1)

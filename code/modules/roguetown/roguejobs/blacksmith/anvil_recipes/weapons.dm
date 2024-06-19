@@ -83,13 +83,6 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/sword/iron/messer
 
-/datum/anvil_recipe/weapons/halberd/iron
-	name = "iron halberd (2) (+w)"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/halberd/iron
-
 // STEEL GEAR - Fancy shit for Knights
 /datum/anvil_recipe/weapons/sflail
 	name = "steel flail"
@@ -305,15 +298,8 @@
 	created_item = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 
 /datum/anvil_recipe/weapons/bolts
-	name = "crossbow bolt x3 (+s)"
+	name = "crossbow bolts (+s)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = list(/obj/item/ammo_casing/caseless/rogue/bolt, /obj/item/ammo_casing/caseless/rogue/bolt, /obj/item/ammo_casing/caseless/rogue/bolt)
-
-/datum/anvil_recipe/weapons/arrows
-	name = "arrows x3 (+s)"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = list(/obj/projectile/bullet/reusable/arrow, /obj/projectile/bullet/reusable/arrow, /obj/projectile/bullet/reusable/arrow)

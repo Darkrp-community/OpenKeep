@@ -1,11 +1,12 @@
 
 /obj/item/roguegem
 	name = "rontz"
-	desc = "Its facets shine so brightly."
 	icon_state = "ruby_cut"
 	icon = 'icons/roguetown/items/gems.dmi'
+	desc = ""
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	desc = ""
 	w_class = WEIGHT_CLASS_TINY
 	slot_flags = ITEM_SLOT_MOUTH
 	dropshrink = 0.4
@@ -28,27 +29,27 @@
 
 /obj/item/roguegem/green
 	name = "gemerald"
-	desc = "Glints with verdant brilliance."
 	icon_state = "emerald_cut"
 	sellprice = 22
+	desc = ""
 
 /obj/item/roguegem/blue
 	name = "blortz"
-	desc = "Pale blue, like a frozen tear."
 	icon_state = "quartz_cut"
 	sellprice = 88
+	desc = ""
 
 /obj/item/roguegem/yellow
 	name = "toper"
-	desc = "Its amber hues remind you of the sunset."
 	icon_state = "topaz_cut"
 	sellprice = 14
+	desc = ""
 
 /obj/item/roguegem/violet
 	name = "saffira"
-	desc = "This gem is admired by many wizards."
 	icon_state = "sapphire_cut"
 	sellprice = 56
+	desc = ""
 
 
 /// riddle
@@ -61,6 +62,7 @@
 	desc = "Flesh, mind."
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	desc = ""
 	w_class = WEIGHT_CLASS_TINY
 	slot_flags = ITEM_SLOT_MOUTH
 	dropshrink = 0.4

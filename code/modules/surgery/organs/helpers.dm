@@ -6,16 +6,6 @@
   */
 /mob/proc/getorgan(typepath)
 	return
-
-/**
-  * Get an organ relating to a specific slot
-  *
-  * Arguments:
-  * * slot Slot to get the organ from
-  */
-/mob/proc/getorganslot(slot)
-	return
-
 /**
   * Get organ objects by zone
   *
@@ -26,23 +16,32 @@
   */
 /mob/proc/getorganszone(zone)
 	return
+/**
+  * Get an organ relating to a specific slot
+  *
+  * Arguments:
+  * * slot Slot to get the organ from
+  */
+/mob/proc/getorganslot(slot)
+	return
 
 /mob/living/carbon/getorgan(typepath)
 	return (locate(typepath) in internal_organs)
 
-/mob/living/carbon/getorganslot(slot)
-	return internal_organs_slot[slot]
-
-/mob/living/carbon/getorganszone(zone, subzones = FALSE)
+/mob/living/carbon/getorganszone(zone, subzones = 0)
 	var/list/returnorg = list()
 	if(subzones)
-		var/obj/item/bodypart/bodypart = get_bodypart(zone)
-		if(bodypart)
-			for(var/subzone in (bodypart.subtargets - zone))
-				returnorg += getorganszone(subzone)
+		// Include subzones - groin for chest, eyes and mouth for head
+		if(zone == BODY_ZONE_HEAD)
+			returnorg = getorganszone(BODY_ZONE_PRECISE_R_EYE) + getorganszone(BODY_ZONE_PRECISE_MOUTH)
+		if(zone == BODY_ZONE_CHEST)
+			returnorg = getorganszone(BODY_ZONE_PRECISE_GROIN)
 
-	for(var/obj/item/organ/organ as anything in internal_organs)
-		if(organ.zone != zone)
-			continue
-		returnorg += organ
+	for(var/X in internal_organs)
+		var/obj/item/organ/O = X
+		if(zone == O.zone)
+			returnorg += O
 	return returnorg
+
+/mob/living/carbon/getorganslot(slot)
+	return internal_organs_slot[slot]

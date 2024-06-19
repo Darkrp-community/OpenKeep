@@ -2,7 +2,7 @@
 	force = 19
 	possible_item_intents = list(/datum/intent/whip/crack, /datum/intent/whip/lash)
 	name = "whip"
-	desc = "A leather whip, intertwining rope, leather and a fanged tip to inflict enormous pain. Favored by slavers and beast-tamers."
+	desc = "A leather whip, built to last with an sharp stone for a tip"
 	icon_state = "whip"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	sharpness = IS_BLUNT
@@ -12,7 +12,7 @@
 	slot_flags = ITEM_SLOT_HIP | ITEM_SLOT_BELT
 	associated_skill = /datum/skill/combat/whipsflails
 	anvilrepair = /datum/skill/craft/tanning
-	can_parry = FALSE
+	parrysound = list('sound/combat/parry/parrygen.ogg')
 	swingsound = WHIPWOOSH
 	throwforce = 5
 	wdefense = 0
@@ -32,7 +32,7 @@
 	force = 26
 	name = "Repenta En"
 	desc = "An extremely well maintained whip, with a polished steel tip and gilded handle"
-	minstr = 7
+	minstr = 11
 	icon_state = "gwhip"
 
 
@@ -42,20 +42,18 @@
 	attack_verb = list("lashes", "cracks")
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
 	chargetime = 0
-	recovery = 5
+	recovery = 7
 	penfactor = 10
 	reach = 2
 	icon_state = "inlash"
-	canparry = FALSE
 
 /datum/intent/whip/crack
 	name = "crack"
-	blade_class = BCLASS_LASHING
+	blade_class = BCLASS_CUT
 	attack_verb = list("cracks", "strikes") //something something dwarf fotresss
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
-	chargetime = 5
-	canparry = FALSE
-	recovery = 5
-	penfactor = 20
-	reach = 2
+	chargetime = 0
+	recovery = 10
+	penfactor = 40
+	reach = 3
 	icon_state = "incrack"

@@ -10,8 +10,6 @@
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/hungryt1
-	name = "Peckish, stomach growling"
-	desc = "<span class='warning'>I am getting hungry.</span>\n"
 	icon_state = "hunger1"
 
 /datum/status_effect/debuff/hungryt1/on_apply()
@@ -71,18 +69,6 @@
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stressevent/starving)
-
-//SILVER DAGGER EFFECT
-
-/datum/status_effect/debuff/silver_curse
-	id = "silver_curse"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/silver_curse
-	duration = 5 SECONDS
-
-/atom/movable/screen/alert/status_effect/debuff/silver_curse
-	name = "Silver Curse"
-	desc = "My BANE!"
-	icon_state = "hunger3"
 
 ////////////////////
 

@@ -69,7 +69,7 @@
 	var/list/allowed_sexes = list(MALE,FEMALE)
 	var/list/allowed_races = ALL_RACES_LIST_NAMES
 	var/list/allowed_patrons = ALL_PATRON_NAMES_LIST
-	var/list/allowed_ages = ALL_AGES_LIST
+	var/list/allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 
 	/// Innate skill levels unlocked at roundstart. Format is list(/datum/skill/foo = SKILL_EXP_NOVICE) with exp as an integer or as per code/_DEFINES/skills.dm
 	var/list/skills
@@ -99,28 +99,6 @@
 	var/give_bank_account = FALSE
 
 	var/can_random = TRUE
-
-	/// This job always shows on latechoices
-	var/always_show_on_latechoices = FALSE
-
-	/// This job has a cooldown if you died in it and attempt to rejoin as it
-	var/same_job_respawn_delay = FALSE
-
-	/// This job re-opens slots if someone dies as it
-	var/job_reopens_slots_on_death = FALSE
-
-/*
-	How this works, its CTAG_DEFINE = amount_to_attempt_to_role
-	EX: advclass_cat_rolls = list(CTAG_PILGRIM = 5, CTAG_ADVENTURER = 5)
-	You will still need to contact the subsystem though
-*/
-	var/list/advclass_cat_rolls
-/*
-	Basically this is just a ref to a drifter wave if its attached to one
-	The role class handler will grab relevant data out of it it uses a class select
-	Just make sure to unattach afterward we are done.
-*/
-	var/datum/drifter_wave/drifter_wave_attachment
 
 
 /datum/job/proc/special_job_check(mob/dead/new_player/player)
@@ -188,11 +166,9 @@
 		return
 	var/thename = "[real_name]"
 	var/datum/job/J = SSjob.GetJob(mind.assigned_role)
-	var/used_title
-	if(J)
-		used_title = J.title
-		if(gender == FEMALE && J.f_title)
-			used_title = J.f_title
+	var/used_title = J.title
+	if(gender == FEMALE && J.f_title)
+		used_title = J.f_title
 	if(used_title)
 		thename = "[real_name] the [used_title]"
 	GLOB.credits_icons[thename] = list()
@@ -387,3 +363,4 @@
 	if(CONFIG_GET(flag/security_has_maint_access))
 		return list(ACCESS_MAINT_TUNNELS)
 	return list()
+

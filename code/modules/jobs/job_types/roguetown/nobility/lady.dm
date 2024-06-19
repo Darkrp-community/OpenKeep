@@ -22,17 +22,15 @@
 
 /datum/outfit/job/roguetown/lady/pre_equip(mob/living/carbon/human/H)
 	. = ..()
-	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
+	ADD_TRAIT(H, RTRAIT_SEEPRICES, TRAIT_GENERIC)
 	beltl = /obj/item/keyring/queen
+//	head = /obj/item/clothing/head/roguetown/hennin
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	armor = /obj/item/clothing/suit/roguetown/armor/armordress
 	backr = /obj/item/storage/backpack/rogue/satchel
 	if(SSticker.rulertype == "Queen")
 		head = /obj/item/clothing/head/roguetown/crown/serpcrown
-		SSroguemachine.crown = head
 		cloak = /obj/item/clothing/cloak/lordcloak
 		belt = /obj/item/storage/belt/rogue/leather/plaquegold
 		armor = /obj/item/clothing/suit/roguetown/armor/armordress/alt
@@ -51,6 +49,7 @@
 			H.change_stat("speed", 2)
 			H.change_stat("perception", 2)
 			H.change_stat("fortune", 5)
+//		SSticker.rulermob = H
 	if(prob(66))
 		armor = /obj/item/clothing/suit/roguetown/armor/armordress/alt
 	id = /obj/item/clothing/ring/silver

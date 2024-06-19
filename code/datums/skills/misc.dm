@@ -30,10 +30,7 @@
 	name = "Music"
 
 /datum/skill/misc/medicine
-	name = "Medicine"
+	name = "Healing"
 
 /datum/skill/misc/sewing
 	name = "Sewing"
-
-/datum/skill/misc/weaving
-	name = "Weaving"

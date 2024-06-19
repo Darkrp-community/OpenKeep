@@ -1,9 +1,8 @@
 /obj/item/organ/ears
 	name = "ears"
-	icon = 'icons/roguetown/items/surgery.dmi'
-	icon_state = "ear"
+	icon_state = "ears"
 	desc = ""
-	zone = BODY_ZONE_PRECISE_EARS
+	zone = BODY_ZONE_HEAD
 	slot = ORGAN_SLOT_EARS
 	gender = PLURAL
 
@@ -27,11 +26,6 @@
 	var/bang_protect = 0
 	// Multiplier for both long term and short term ear damage
 	var/damage_multiplier = 1
-
-/obj/item/organ/ears/Insert(mob/living/carbon/M, special, drop_if_replaced)
-	. = ..()
-	for(var/datum/wound/facial/ears/ear_wound as anything in M.get_wounds())
-		qdel(ear_wound)
 
 /obj/item/organ/ears/on_life()
 	if(!iscarbon(owner))

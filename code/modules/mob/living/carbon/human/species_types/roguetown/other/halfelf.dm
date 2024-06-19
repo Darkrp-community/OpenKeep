@@ -19,7 +19,7 @@
 	default_features = list("mcolor" = "FFF", "ears" = "ElfH", "wings" = "None")
 	mutant_bodyparts = list("ears")
 	use_skintones = 1
-	possible_ages = ALL_AGES_LIST
+	possible_ages = list(AGE_YOUNG, AGE_ADULT, AGE_MIDDLEAGED)
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
@@ -56,6 +56,7 @@
 	"skin4" = "e2b9a3",
 	"skin5" = "5a4a41"
 	))
+
 
 /datum/species/human/halfelf/get_hairc_list()
 	return sortList(list(

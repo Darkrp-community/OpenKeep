@@ -2,7 +2,7 @@
 /datum/looping_sound/dmusloop
 	mid_sounds = list()
 	mid_length = 60
-	volume = 92
+	volume = 80
 	extra_range = 3
 	var/stress2give = /datum/stressevent/music
 	persistent_loop = TRUE
@@ -16,7 +16,7 @@
 
 /obj/item/dmusicbox
 	name = "dwarven music box"
-	desc = "A renown design of the Dwarven Cult of Malum, bombastic machine with odd musical functions."
+	desc = "It is essential that the deepest caves be tuned to the right frequency of vibrations."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "mbox0"
 	gripped_intents = list(INTENT_GENERIC)

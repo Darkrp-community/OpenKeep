@@ -43,7 +43,7 @@
 	dodgetime = 20
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
-	remains_type = /obj/effect/decal/remains/human // Placeholder until Troll remains are sprited.
+	remains_type = /obj/item/rogueweapon/battle
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/death(gibbed)
 	..()
@@ -91,7 +91,7 @@
 			return "nose"
 		if(BODY_ZONE_PRECISE_MOUTH)
 			return "mouth"
-		if(BODY_ZONE_PRECISE_SKULL)
+		if(BODY_ZONE_PRECISE_HAIR)
 			return "head"
 		if(BODY_ZONE_PRECISE_EARS)
 			return "head"

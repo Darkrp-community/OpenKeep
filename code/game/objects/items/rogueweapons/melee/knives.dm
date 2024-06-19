@@ -5,7 +5,7 @@
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	name = "hunting knife"
-	desc = "Loyal companion to hunters and poachers, from humble bone to truest steel, disembowel your prey with glee."
+	desc = "A hunting knife designed for rudimentary applications such as basic butchering or skinning, along with other everyday needs as a tool. Has small defensive capacities to it, and would deliver decent damage if aimed well."
 	icon_state = "huntingknife"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "bone_dagger"
@@ -91,7 +91,7 @@
 /obj/item/rogueweapon/huntingknife/cleaver
 	force = 10
 	name = "cleaver"
-	desc = "A chef's tool turned armament, cleave off cumbersome flesh with rudimentary ease."
+	desc = "A sharp weapon with a large cutting area. Perfect for butchering beasts or your neighbor."
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	icon_state = "cleav"
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -102,12 +102,12 @@
 	slot_flags = ITEM_SLOT_HIP
 	thrown_bclass = BCLASS_CHOP
 	w_class = WEIGHT_CLASS_NORMAL
-	smeltresult = /obj/item/ingot/iron
+	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/cleaver/combat
 	force = 12
 	name = "knife"
-	desc = "A short blade that even the weakest of hands can aspire to do harm with."
+	desc = "A knife designed for combat situations. It would deal quite the amount of damage."
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	icon_state = "combatknife"
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -118,7 +118,7 @@
 	slot_flags = ITEM_SLOT_HIP
 	thrown_bclass = BCLASS_CHOP
 	w_class = WEIGHT_CLASS_NORMAL
-	smeltresult = /obj/item/ingot/iron
+	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/cleaver/getonmobprop(tag)
 	. = ..()
@@ -137,14 +137,13 @@
 /obj/item/rogueweapon/huntingknife/idagger
 	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut)
 	name = "dagger"
-	desc = "Thin, sharp, pointed death."
 	force = 12
+	desc = ""
 	icon_state = "idagger"
 	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel
 	name = "dagger"
-	desc = "A dagger made of refined steel."
 	force = 14
 	icon_state = "sdagger"
 	smeltresult = null
@@ -154,115 +153,52 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
 	name = "dagger"
-	desc = "A dagger made of fine silver."
 	force = 12
 	icon_state = "sildagger"
 	smeltresult = null
 	sellprice = 50
-	smeltresult = /obj/item/ingot/silver
-	var/last_used = 0
-
-/obj/item/rogueweapon/huntingknife/idagger/silver/pickup(mob/user)
-	. = ..()
-	var/mob/living/carbon/human/H = user
-	if(ishuman(H))
-		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
-			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
-			H.Knockdown(20)
-			H.adjustFireLoss(60)
-			H.Paralyze(20)
-			H.fire_act(1,5)
-		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
-			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
-			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
-				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
-				H.Knockdown(10)
-				H.Paralyze(10)
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	. = ..()
 	if(ishuman(M))
-		var/datum/antagonist/vampirelord/V_lord = FALSE
 		var/mob/living/carbon/human/H = M
-		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord))
-			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
-		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
-			H.Knockdown(20)
-			H.adjustFireLoss(60)
-			H.Paralyze(20)
-			H.fire_act(1,5)
-		if(V_lord)
-			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
-				H.Knockdown(10)
-				H.Paralyze(10)
+		if(H.dna && H.dna.species)
+			if(istype(H.dna.species, /datum/species/werewolf))
+				return FALSE
+	if(M.mind && M.mind.has_antag_datum(/datum/antagonist/vampirelord))
+		return FALSE
 
-/obj/item/rogueweapon/huntingknife/idagger/silver/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
-	if(world.time < src.last_used + 100)
-		to_chat(user, "<span class='notice'>The silver effect is on cooldown.</span>")
-		return
-
-
-
+/obj/item/rogueweapon/huntingknife/idagger/silver/funny_attack_effects(mob/living/target, mob/living/user, nodmg)
 	. = ..()
 	if(ishuman(target))
-		var/mob/living/carbon/human/s_user = user
 		var/mob/living/carbon/human/H = target
-		var/datum/antagonist/vampirelord/lesser/V = FALSE
-		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
-			V =  H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
-		var/datum/antagonist/vampirelord/V_lord = FALSE
-		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/))
-			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
-		if(V)
-			if(V.disguised)
-				H.Stun(20)
-				H.visible_message("<font color='white'>The silver weapon manifests the [H] curse!</font>")
-				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(30)
-				H.Paralyze(20)
-				H.fire_act(1,4)
-				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
-				src.last_used = world.time
-			else
-				H.Stun(20)
-				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(30)
-				H.Paralyze(20)
-				H.fire_act(1,4)
-				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
-				src.last_used = world.time
-		if(V_lord)
-			if(V_lord.vamplevel < 4 && !V)
-				H.Stun(10)
-				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(25)
-				H.Paralyze(10)
-				H.fire_act(1,4)
-				src.last_used = world.time
-			if(V_lord.vamplevel == 4 && !V)
-				s_user.Stun(10)
-				s_user.Paralyze(10)
-				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
-				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I AM THE ANCIENT!</span>")
+		if(H.dna && H.dna.species)
+			if(istype(H.dna.species, /datum/species/werewolf))
+				target.Knockdown(30)
+				target.Stun(30)
+	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/vampirelord))
+		var/datum/antagonist/vampirelord/VD = target.mind.has_antag_datum(/datum/antagonist/vampirelord)
+		if(!VD.disguised)
+			target.Knockdown(30)
+			target.Stun(30)
 
 
 /obj/item/rogueweapon/huntingknife/stoneknife
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)
 	name = "stone knife"
-	desc = "A tool favored by the wood-elves, easy to make, useful for skinning the flesh of beast and man alike."
+	desc = "A crude tool consisting of a sharpened rock and a wooden piece. Does it's job, but offers minuscule defensive capacities and wouldn't deal much damage."
 	icon_state = "stone_knife"
 	smeltresult = null
 	max_integrity = 15
 	max_blade_int = 15
 	wdefense = 1
-	smeltresult = /obj/item/ash
 
 /obj/item/rogueweapon/knife/copperdagger
 	force = 8
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	name = "copper dagger"
-	desc = "A dagger of an older design, the copper serves decent enough."
+	desc = ""
 	icon_state = "cdagger"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "bone_dagger"

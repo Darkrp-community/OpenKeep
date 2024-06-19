@@ -13,4 +13,5 @@
 		"Dark Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/rare
+	maxchosen = 1
 	pickprob = 11
