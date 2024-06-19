@@ -20,21 +20,21 @@
 //Simply removes < and > and limits the length of the message
 /proc/strip_html_simple(t,limit=MAX_MESSAGE_LEN)
 	var/list/strip_chars = list("<",">")
-	t = copytext(t,1,limit)
+	t = copytext_char(t,1,limit)
 	for(var/char in strip_chars)
-		var/index = findtext(t, char)
+		var/index = findtext_char(t, char)
 		while(index)
-			t = copytext(t, 1, index) + copytext(t, index+1)
-			index = findtext(t, char)
+			t = copytext_char(t, 1, index) + copytext_char(t, index+1)
+			index = findtext_char(t, char)
 	return t
 
 //Removes a few problematic characters
 /proc/sanitize_simple(t,list/repl_chars = list("\n"="#","\t"="#"))
 	for(var/char in repl_chars)
-		var/index = findtext(t, char)
+		var/index = findtext_char(t, char)
 		while(index)
-			t = copytext(t, 1, index) + repl_chars[char] + copytext(t, index+1)
-			index = findtext(t, char, index+1)
+			t = copytext_char(t, 1, index) + repl_chars[char] + copytext_char(t, index+1)
+			index = findtext_char(t, char, index+1)
 	return t
 
 /proc/sanitize_filename(t)
@@ -61,21 +61,21 @@
 //Runs sanitize and strip_html_simple
 //I believe strip_html_simple() is required to run first to prevent '<' from displaying as '&lt;' after sanitize() calls byond's html_encode()
 /proc/strip_html(t,limit=MAX_MESSAGE_LEN)
-	return copytext((sanitize(strip_html_simple(t))),1,limit)
+	return copytext_char((sanitize(strip_html_simple(t))),1,limit)
 
 //Runs byond's sanitization proc along-side strip_html_simple
 //I believe strip_html_simple() is required to run first to prevent '<' from displaying as '&lt;' that html_encode() would cause
 /proc/adminscrub(t,limit=MAX_MESSAGE_LEN)
-	return copytext((html_encode(strip_html_simple(t))),1,limit)
+	return copytext_char((html_encode(strip_html_simple(t))),1,limit)
 
 
 //Returns null if there is any bad text in the string
 /proc/reject_bad_text(text, max_length=512)
-	if(length(text) > max_length)
+	if(length_char(text) > max_length)
 		return			//message too long
 	var/non_whitespace = 0
-	for(var/i=1, i<=length(text), i++)
-		switch(text2ascii(text,i))
+	for(var/i=1, i<=length_char(text), i++)
+		switch(text2ascii_char(text,i))
 			if(62,60,92,47)
 				return			//rejects the text if it contains these bad characters: <, >, \ or /
 			if(127 to 255)
@@ -94,7 +94,7 @@
 /proc/stripped_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
 	var/name = input(user, message, title, default) as text|null
 	if(no_trim)
-		return copytext(html_encode(name), 1, max_length)
+		return copytext_char(html_encode(name), 1, max_length)
 	else
 		return trim(html_encode(name), max_length) //trim is "outside" because html_encode can expand single symbols into multiple symbols (such as turning < into &lt;)
 
@@ -102,21 +102,21 @@
 /proc/stripped_multiline_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
 	var/name = input(user, message, title, default) as message|null
 	if(no_trim)
-		return copytext(html_encode(name), 1, max_length)
+		return copytext_char(html_encode(name), 1, max_length)
 	else
 		return trim(html_encode(name), max_length)
 
 //Filters out undesirable characters from names
 /proc/reject_bad_name(t_in, allow_numbers=0, max_length=MAX_NAME_LEN)
-	if(!t_in || length(t_in) > max_length)
+	if(!t_in || length_char(t_in) > max_length)
 		return //Rejects the input if it is null or if it is longer then the max length allowed
 
 	var/number_of_alphanumeric	= 0
 	var/last_char_group			= 0
 	var/t_out = ""
 
-	for(var/i=1, i<=length(t_in), i++)
-		var/ascii_char = text2ascii(t_in,i)
+	for(var/i=1, i<=length_char(t_in), i++)
+		var/ascii_char = text2ascii_char(t_in,i)
 		switch(ascii_char)
 			// A  .. Z
 			if(65 to 90)			//Uppercase Letters
@@ -173,7 +173,7 @@
 		return		//protects against tiny names like "A" and also names like "' ' ' ' ' ' ' '"
 
 	if(last_char_group == 1)
-		t_out = copytext(t_out,1,length(t_out))	//removes the last character (in this case a space)
+		t_out = copytext_char(t_out,1,length_char(t_out))	//removes the last character (in this case a space)
 
 	for(var/bad_name in list("space","floor","wall","r-wall","monkey","unknown","inactive ai"))	//prevents these common metagamey names
 		if(cmptext(t_out,bad_name))
@@ -198,97 +198,97 @@
 //Returns the position of the substring or 0 if it was not found
 /proc/dd_hasprefix(text, prefix)
 	var/start = 1
-	var/end = length(prefix) + 1
-	return findtext(text, prefix, start, end)
+	var/end = length_char(prefix) + 1
+	return findtext_char(text, prefix, start, end)
 
 //Checks the beginning of a string for a specified sub-string. This proc is case sensitive
 //Returns the position of the substring or 0 if it was not found
 /proc/dd_hasprefix_case(text, prefix)
 	var/start = 1
-	var/end = length(prefix) + 1
-	return findtextEx(text, prefix, start, end)
+	var/end = length_char(prefix) + 1
+	return findtextEx_char(text, prefix, start, end)
 
 //Checks the end of a string for a specified substring.
 //Returns the position of the substring or 0 if it was not found
 /proc/dd_hassuffix(text, suffix)
-	var/start = length(text) - length(suffix)
+	var/start = length_char(text) - length_char(suffix)
 	if(start)
-		return findtext(text, suffix, start, null)
+		return findtext_char(text, suffix, start, null)
 	return
 
 //Checks the end of a string for a specified substring. This proc is case sensitive
 //Returns the position of the substring or 0 if it was not found
 /proc/dd_hassuffix_case(text, suffix)
-	var/start = length(text) - length(suffix)
+	var/start = length_char(text) - length_char(suffix)
 	if(start)
-		return findtextEx(text, suffix, start, null)
+		return findtextEx_char(text, suffix, start, null)
 
 //Checks if any of a given list of needles is in the haystack
 /proc/text_in_list(haystack, list/needle_list, start=1, end=0)
 	for(var/needle in needle_list)
-		if(findtext(haystack, needle, start, end))
+		if(findtext_char(haystack, needle, start, end))
 			return 1
 	return 0
 
 //Like above, but case sensitive
 /proc/text_in_list_case(haystack, list/needle_list, start=1, end=0)
 	for(var/needle in needle_list)
-		if(findtextEx(haystack, needle, start, end))
+		if(findtextEx_char(haystack, needle, start, end))
 			return 1
 	return 0
 
 //Adds 'u' number of zeros ahead of the text 't'
 /proc/add_zero(t, u)
-	while (length(t) < u)
+	while (length_char(t) < u)
 		t = "0[t]"
 	return t
 
 //Adds 'u' number of spaces ahead of the text 't'
 /proc/add_lspace(t, u)
-	while(length(t) < u)
+	while(length_char(t) < u)
 		t = " [t]"
 	return t
 
 //Adds 'u' number of spaces behind the text 't'
 /proc/add_tspace(t, u)
-	while(length(t) < u)
+	while(length_char(t) < u)
 		t = "[t] "
 	return t
 
 //Returns a string with reserved characters and spaces before the first letter removed
 /proc/trim_left(text)
-	for (var/i = 1 to length(text))
-		if (text2ascii(text, i) > 32)
-			return copytext(text, i)
+	for (var/i = 1 to length_char(text))
+		if (text2ascii_char(text, i) > 32)
+			return copytext_char(text, i)
 	return ""
 
 //Returns a string with reserved characters and spaces after the last letter removed
 /proc/trim_right(text)
-	for (var/i = length(text), i > 0, i--)
-		if (text2ascii(text, i) > 32)
-			return copytext(text, 1, i + 1)
+	for (var/i = length_char(text), i > 0, i--)
+		if (text2ascii_char(text, i) > 32)
+			return copytext_char(text, 1, i + 1)
 
 	return ""
 
 //Returns a string with reserved characters and spaces before the first word and after the last word removed.
 /proc/trim(text, max_length)
 	if(max_length)
-		text = copytext(text, 1, max_length)
+		text = copytext_char(text, 1, max_length)
 	return trim_left(trim_right(text))
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(t as text)
-	return uppertext(copytext(t, 1, 2)) + copytext(t, 2)
+	return uppertext(copytext_char(t, 1, 2)) + copytext_char(t, 2)
 
 //Centers text by adding spaces to either side of the string.
-/proc/dd_centertext(message, length)
+/proc/dd_centertext(message, length_char)
 	var/new_message = message
-	var/size = length(message)
-	var/delta = length - size
-	if(size == length)
+	var/size = length_char(message)
+	var/delta = length_char - size
+	if(size == length_char)
 		return new_message
-	if(size > length)
-		return copytext(new_message, 1, length + 1)
+	if(size > length_char)
+		return copytext_char(new_message, 1, length_char + 1)
 	if(delta == 1)
 		return new_message + " "
 	if(delta % 2)
@@ -297,12 +297,12 @@
 	var/spaces = add_lspace("",delta/2-1)
 	return spaces + new_message + spaces
 
-//Limits the length of the text. Note: MAX_MESSAGE_LEN and MAX_NAME_LEN are widely used for this purpose
-/proc/dd_limittext(message, length)
-	var/size = length(message)
-	if(size <= length)
+//Limits the length_char of the text. Note: MAX_MESSAGE_LEN and MAX_NAME_LEN are widely used for this purpose
+/proc/dd_limittext(message, length_char)
+	var/size = length_char(message)
+	if(size <= length_char)
 		return message
-	return copytext(message, 1, length + 1)
+	return copytext_char(message, 1, length_char + 1)
 
 
 /proc/stringmerge(text,compare,replace = "*")
@@ -310,18 +310,18 @@
 //is in the other string at the same spot (assuming it is not a replace char).
 //This is used for fingerprints
 	var/newtext = text
-	if(length(text) != length(compare))
+	if(length_char(text) != length_char(compare))
 		return 0
-	for(var/i = 1, i < length(text), i++)
-		var/a = copytext(text,i,i+1)
-		var/b = copytext(compare,i,i+1)
+	for(var/i = 1, i < length_char(text), i++)
+		var/a = copytext_char(text,i,i+1)
+		var/b = copytext_char(compare,i,i+1)
 //if it isn't both the same letter, or if they are both the replacement character
 //(no way to know what it was supposed to be)
 		if(a != b)
 			if(a == replace) //if A is the replacement char
-				newtext = copytext(newtext,1,i) + b + copytext(newtext, i+1)
+				newtext = copytext_char(newtext,1,i) + b + copytext_char(newtext, i+1)
 			else if(b == replace) //if B is the replacement char
-				newtext = copytext(newtext,1,i) + a + copytext(newtext, i+1)
+				newtext = copytext_char(newtext,1,i) + a + copytext_char(newtext, i+1)
 			else //The lists disagree, Uh-oh!
 				return 0
 	return newtext
@@ -332,25 +332,25 @@
 	if(!text || !character)
 		return 0
 	var/count = 0
-	for(var/i = 1, i <= length(text), i++)
-		var/a = copytext(text,i,i+1)
+	for(var/i = 1, i <= length_char(text), i++)
+		var/a = copytext_char(text,i,i+1)
 		if(a == character)
 			count++
 	return count
 
 /proc/reverse_text(text = "")
 	var/new_text = ""
-	for(var/i = length(text); i > 0; i--)
-		new_text += copytext(text, i, i+1)
+	for(var/i = length_char(text); i > 0; i--)
+		new_text += copytext_char(text, i, i+1)
 	return new_text
 
 GLOBAL_LIST_INIT(zero_character_only, list("0"))
 GLOBAL_LIST_INIT(hex_characters, list("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"))
-GLOBAL_LIST_INIT(alphabet, list("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"))
+GLOBAL_LIST_INIT(alphabet, list("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","а","б","в","г","д","е","ё","ж","з","и","й","к","л","м","н","о","п","р","с","т","у","ф","х","ц","ч","ш","щ","ъ","ы","ь","э","ю","я"))
 GLOBAL_LIST_INIT(binary, list("0","1"))
-/proc/random_string(length, list/characters)
+/proc/random_string(length_char, list/characters)
 	. = ""
-	for(var/i=1, i<=length, i++)
+	for(var/i=1, i<=length_char, i++)
 		. += pick(characters)
 
 /proc/repeat_string(times, string="")
@@ -366,11 +366,11 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 
 /proc/add_zero2(t, u)
 	var/temp1
-	while (length(t) < u)
+	while (length_char(t) < u)
 		t = "0[t]"
 	temp1 = t
-	if (length(t) > u)
-		temp1 = copytext(t,2,u+1)
+	if (length_char(t) > u)
+		temp1 = copytext_char(t,2,u+1)
 	return temp1
 
 //merges non-null characters (3rd argument) from "from" into "into". Returns result
@@ -385,87 +385,87 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 		into = ""
 	if(!istext(from))
 		from = ""
-	var/null_ascii = istext(null_char) ? text2ascii(null_char,1) : null_char
+	var/null_ascii = istext(null_char) ? text2ascii_char(null_char,1) : null_char
 
 	var/previous = 0
 	var/start = 1
-	var/end = length(into) + 1
+	var/end = length_char(into) + 1
 
 	for(var/i=1, i<end, i++)
-		var/ascii = text2ascii(from, i)
+		var/ascii = text2ascii_char(from, i)
 		if(ascii == null_ascii)
 			if(previous != 1)
-				. += copytext(from, start, i)
+				. += copytext_char(from, start, i)
 				start = i
 				previous = 1
 		else
 			if(previous != 0)
-				. += copytext(into, start, i)
+				. += copytext_char(into, start, i)
 				start = i
 				previous = 0
 
 	if(previous == 0)
-		. += copytext(from, start, end)
+		. += copytext_char(from, start, end)
 	else
-		. += copytext(into, start, end)
+		. += copytext_char(into, start, end)
 
 //finds the first occurrence of one of the characters from needles argument inside haystack
 //it may appear this can be optimised, but it really can't. findtext() is so much faster than anything you can do in byondcode.
 //stupid byond :(
 /proc/findchar(haystack, needles, start=1, end=0)
 	var/temp
-	var/len = length(needles)
+	var/len = length_char(needles)
 	for(var/i=1, i<=len, i++)
-		temp = findtextEx(haystack, ascii2text(text2ascii(needles,i)), start, end)	//Note: ascii2text(text2ascii) is faster than copytext()
+		temp = findtextEx_char(haystack, ascii2text(text2ascii_char(needles,i)), start, end)	//Note: ascii2text(text2ascii_char) is faster than copytext_char()
 		if(temp)
 			end = temp
 	return end
 
 /proc/parsemarkdown_basic_step1(t, limited=FALSE)
-	if(length(t) <= 0)
+	if(length_char(t) <= 0)
 		return
 
 	// This parses markdown with no custom rules
 
 	// Escape backslashed
 
-	t = replacetext(t, "$", "$-")
-	t = replacetext(t, "\\\\", "$1")
-	t = replacetext(t, "\\**", "$2")
-	t = replacetext(t, "\\*", "$3")
-	t = replacetext(t, "\\__", "$4")
-	t = replacetext(t, "\\_", "$5")
-	t = replacetext(t, "\\^", "$6")
-	t = replacetext(t, "\\((", "$7")
-	t = replacetext(t, "\\))", "$8")
-	t = replacetext(t, "\\|", "$9")
-	t = replacetext(t, "\\%", "$0")
+	t = replacetext_char(t, "$", "$-")
+	t = replacetext_char(t, "\\\\", "$1")
+	t = replacetext_char(t, "\\**", "$2")
+	t = replacetext_char(t, "\\*", "$3")
+	t = replacetext_char(t, "\\__", "$4")
+	t = replacetext_char(t, "\\_", "$5")
+	t = replacetext_char(t, "\\^", "$6")
+	t = replacetext_char(t, "\\((", "$7")
+	t = replacetext_char(t, "\\))", "$8")
+	t = replacetext_char(t, "\\|", "$9")
+	t = replacetext_char(t, "\\%", "$0")
 
 	// Escape  single characters that will be used
 
-	t = replacetext(t, "!", "$a")
+	t = replacetext_char(t, "!", "$a")
 
 	// Parse hr and small
 
 	if(!limited)
-		t = replacetext(t, "((", "<font size=\"1\">")
-		t = replacetext(t, "))", "</font>")
-		t = replacetext(t, regex("(-){3,}", "gm"), "<hr>")
-		t = replacetext(t, regex("^\\((-){3,}\\)$", "gm"), "$1")
+		t = replacetext_char(t, "((", "<font size=\"1\">")
+		t = replacetext_char(t, "))", "</font>")
+		t = replacetext_char(t, regex("(-){3,}", "gm"), "<hr>")
+		t = replacetext_char(t, regex("^\\((-){3,}\\)$", "gm"), "$1")
 
 		// Parse lists
 
-		var/list/tlist = splittext(t, "\n")
+		var/list/tlist = splittext_char(t, "\n")
 		var/tlistlen = tlist.len
 		var/listlevel = -1
 		var/singlespace = -1 // if 0, double spaces are used before asterisks, if 1, single are
 		for(var/i = 1, i <= tlistlen, i++)
 			var/line = tlist[i]
-			var/count_asterisk = length(replacetext(line, regex("\[^\\*\]+", "g"), ""))
-			if(count_asterisk % 2 == 1 && findtext(line, regex("^\\s*\\*", "g"))) // there is an extra asterisk in the beggining
+			var/count_asterisk = length_char(replacetext_char(line, regex("\[^\\*\]+", "g"), ""))
+			if(count_asterisk % 2 == 1 && findtext_char(line, regex("^\\s*\\*", "g"))) // there is an extra asterisk in the beggining
 
-				var/count_w = length(replacetext(line, regex("^( *)\\*.*$", "g"), "$1")) // whitespace before asterisk
-				line = replacetext(line, regex("^ *(\\*.*)$", "g"), "$1")
+				var/count_w = length_char(replacetext(line, regex("^( *)\\*.*$", "g"), "$1")) // whitespace before asterisk
+				line = replacetext_char(line, regex("^ *(\\*.*)$", "g"), "$1")
 
 				if(singlespace == -1 && count_w == 2)
 					if(listlevel == 0)
@@ -476,7 +476,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 				if(singlespace == 0)
 					count_w = count_w % 2 ? round(count_w / 2 + 0.25) : count_w / 2
 
-				line = replacetext(line, regex("\\*", ""), "<li>")
+				line = replacetext_char(line, regex("\\*", ""), "<li>")
 				while(listlevel < count_w)
 					line = "<ul>" + line
 					listlevel++
@@ -500,50 +500,50 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 			listlevel--
 
 	else
-		t = replacetext(t, "((", "")
-		t = replacetext(t, "))", "")
+		t = replacetext_char(t, "((", "")
+		t = replacetext_char(t, "))", "")
 
 	// Parse headers
 
-	t = replacetext(t, regex("^#(?!#) ?(.+)$", "gm"), "<h2>$1</h2>")
-	t = replacetext(t, regex("^##(?!#) ?(.+)$", "gm"), "<h3>$1</h3>")
-	t = replacetext(t, regex("^###(?!#) ?(.+)$", "gm"), "<h4>$1</h4>")
-	t = replacetext(t, regex("^#### ?(.+)$", "gm"), "<h5>$1</h5>")
+	t = replacetext_char(t, regex("^#(?!#) ?(.+)$", "gm"), "<h2>$1</h2>")
+	t = replacetext_char(t, regex("^##(?!#) ?(.+)$", "gm"), "<h3>$1</h3>")
+	t = replacetext_char(t, regex("^###(?!#) ?(.+)$", "gm"), "<h4>$1</h4>")
+	t = replacetext_char(t, regex("^#### ?(.+)$", "gm"), "<h5>$1</h5>")
 
 	// Parse most rules
 
-	t = replacetext(t, regex("\\*(\[^\\*\]*)\\*", "g"), "<i>$1</i>")
-	t = replacetext(t, regex("_(\[^_\]*)_", "g"), "<i>$1</i>")
-	t = replacetext(t, "<i></i>", "!")
-	t = replacetext(t, "</i><i>", "!")
-	t = replacetext(t, regex("\\!(\[^\\!\]+)\\!", "g"), "<b>$1</b>")
-	t = replacetext(t, regex("\\^(\[^\\^\]+)\\^", "g"), "<font size=\"4\">$1</font>")
-	t = replacetext(t, regex("\\|(\[^\\|\]+)\\|", "g"), "<center>$1</center>")
-	t = replacetext(t, "!", "</i><i>")
+	t = replacetext_char(t, regex("\\*(\[^\\*\]*)\\*", "g"), "<i>$1</i>")
+	t = replacetext_char(t, regex("_(\[^_\]*)_", "g"), "<i>$1</i>")
+	t = replacetext_char(t, "<i></i>", "!")
+	t = replacetext_char(t, "</i><i>", "!")
+	t = replacetext_char(t, regex("\\!(\[^\\!\]+)\\!", "g"), "<b>$1</b>")
+	t = replacetext_char(t, regex("\\^(\[^\\^\]+)\\^", "g"), "<font size=\"4\">$1</font>")
+	t = replacetext_char(t, regex("\\|(\[^\\|\]+)\\|", "g"), "<center>$1</center>")
+	t = replacetext_char(t, "!", "</i><i>")
 
 	return t
 
 /proc/parsemarkdown_basic_step2(t)
-	if(length(t) <= 0)
+	if(length_char(t) <= 0)
 		return
 
 	// Restore the single characters used
 
-	t = replacetext(t, "$a", "!")
+	t = replacetext_char(t, "$a", "!")
 
 	// Redo the escaping
 
-	t = replacetext(t, "$1", "\\")
-	t = replacetext(t, "$2", "**")
-	t = replacetext(t, "$3", "*")
-	t = replacetext(t, "$4", "__")
-	t = replacetext(t, "$5", "_")
-	t = replacetext(t, "$6", "^")
-	t = replacetext(t, "$7", "((")
-	t = replacetext(t, "$8", "))")
-	t = replacetext(t, "$9", "|")
-	t = replacetext(t, "$0", "%")
-	t = replacetext(t, "$-", "$")
+	t = replacetext_char(t, "$1", "\\")
+	t = replacetext_char(t, "$2", "**")
+	t = replacetext_char(t, "$3", "*")
+	t = replacetext_char(t, "$4", "__")
+	t = replacetext_char(t, "$5", "_")
+	t = replacetext_char(t, "$6", "^")
+	t = replacetext_char(t, "$7", "((")
+	t = replacetext_char(t, "$8", "))")
+	t = replacetext_char(t, "$9", "|")
+	t = replacetext_char(t, "$0", "%")
+	t = replacetext_char(t, "$-", "$")
 
 	return t
 
@@ -553,44 +553,45 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	return t
 
 /proc/parsemarkdown(t, mob/user=null, limited=FALSE)
-	if(length(t) <= 0)
+	if(length_char(t) <= 0)
 		return
 
 	// Premanage whitespace
 
-	t = replacetext(t, regex("\[^\\S\\r\\n \]", "g"), "  ")
+	t = replacetext_char(t, regex("\[^\\S\\r\\n \]", "g"), "  ")
 
 	t = parsemarkdown_basic_step1(t)
 
-	t = replacetext(t, regex("%s(?:ign)?(?=\\s|$)", "igm"), user ? "<font face=\"[SIGNFONT]\"><i>[user.real_name]</i></font>" : "<span class=\"paper_field\"></span>")
-	t = replacetext(t, regex("%f(?:ield)?(?=\\s|$)", "igm"), "<span class=\"paper_field\"></span>")
+	t = replacetext_char(t, regex("%s(?:ign)?(?=\\s|$)", "igm"), user ? "<font face=\"[SIGNFONT]\"><i>[user.real_name]</i></font>" : "<span class=\"paper_field\"></span>")
+	t = replacetext_char(t, regex("%f(?:ield)?(?=\\s|$)", "igm"), "<span class=\"paper_field\"></span>")
 
 	t = parsemarkdown_basic_step2(t)
 
 	// Manage whitespace
 
-	t = replacetext(t, regex("(?:\\r\\n?|\\n)", "g"), "<br>")
+	t = replacetext_char(t, regex("(?:\\r\\n?|\\n)", "g"), "<br>")
 
-	t = replacetext(t, "  ", "&nbsp;&nbsp;")
+	t = replacetext_char(t, "  ", "&nbsp;&nbsp;")
+
 
 	// Done
 
 	return t
 
-#define string2charlist(string) (splittext(string, regex("(.)")) - splittext(string, ""))
+#define string2charlist(string) (splittext_char(string, regex("(.)")) - splittext_char(string, ""))
 
 /proc/rot13(text = "")
 	var/list/textlist = string2charlist(text)
 	var/list/result = list()
 	for(var/c in textlist)
-		var/ca = text2ascii(c)
-		if(ca >= text2ascii("a") && ca <= text2ascii("m"))
+		var/ca = text2ascii_char(c)
+		if(ca >= text2ascii_char("a") && ca <= text2ascii_char("m"))
 			ca += 13
-		else if(ca >= text2ascii("n") && ca <= text2ascii("z"))
+		else if(ca >= text2ascii_char("n") && ca <= text2ascii_char("z"))
 			ca -= 13
-		else if(ca >= text2ascii("A") && ca <= text2ascii("M"))
+		else if(ca >= text2ascii_char("A") && ca <= text2ascii_char("M"))
 			ca += 13
-		else if(ca >= text2ascii("N") && ca <= text2ascii("Z"))
+		else if(ca >= text2ascii_char("N") && ca <= text2ascii_char("Z"))
 			ca -= 13
 		result += ascii2text(ca)
 	return jointext(result, "")
@@ -609,38 +610,38 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 
 	var/list/accepted = list()
 	for(var/string in proposed)
-		if(findtext(string,GLOB.is_website) || findtext(string,GLOB.is_email) || findtext(string,all_invalid_symbols) || !findtext(string,GLOB.is_alphanumeric))
+		if(findtext_char(string,GLOB.is_website) || findtext_char(string,GLOB.is_email) || findtext_char(string,all_invalid_symbols) || !findtext_char(string,GLOB.is_alphanumeric))
 			continue
 		var/buffer = ""
 		var/early_culling = TRUE
-		for(var/pos = 1, pos <= length(string), pos++)
-			var/let = copytext(string, pos, (pos + 1) % length(string))
-			if(early_culling && !findtext(let,GLOB.is_alphanumeric))
+		for(var/pos = 1, pos <= length_char(string), pos++)
+			var/let = copytext_char(string, pos, (pos + 1) % length_char(string))
+			if(early_culling && !findtext_char(let,GLOB.is_alphanumeric))
 				continue
 			early_culling = FALSE
 			buffer += let
-		if(!findtext(buffer,GLOB.is_alphanumeric))
+		if(!findtext_char(buffer,GLOB.is_alphanumeric))
 			continue
 		var/punctbuffer = ""
-		var/cutoff = length(buffer)
-		for(var/pos = length(buffer), pos >= 0, pos--)
-			var/let = copytext(buffer, pos, (pos + 1) % length(buffer))
-			if(findtext(let,GLOB.is_alphanumeric))
+		var/cutoff = length_char(buffer)
+		for(var/pos = length_char(buffer), pos >= 0, pos--)
+			var/let = copytext_char(buffer, pos, (pos + 1) % length_char(buffer))
+			if(findtext_char(let,GLOB.is_alphanumeric))
 				break
-			if(findtext(let,GLOB.is_punctuation))
+			if(findtext_char(let,GLOB.is_punctuation))
 				punctbuffer = let + punctbuffer //Note this isn't the same thing as using +=
 				cutoff = pos
 		if(punctbuffer) //We clip down excessive punctuation to get the letter count lower and reduce repeats. It's not perfect but it helps.
 			var/exclaim = FALSE
 			var/question = FALSE
 			var/periods = 0
-			for(var/pos = length(punctbuffer), pos >= 0, pos--)
-				var/punct = copytext(punctbuffer, pos, (pos + 1) % length(punctbuffer))
-				if(!exclaim && findtext(punct,"!"))
+			for(var/pos = length_char(punctbuffer), pos >= 0, pos--)
+				var/punct = copytext_char(punctbuffer, pos, (pos + 1) % length_char(punctbuffer))
+				if(!exclaim && findtext_char(punct,"!"))
 					exclaim = TRUE
-				if(!question && findtext(punct,"?"))
+				if(!question && findtext_char(punct,"?"))
 					question = TRUE
-				if(!exclaim && !question && findtext(punct,"."))
+				if(!exclaim && !question && findtext_char(punct,"."))
 					periods += 1
 			if(exclaim)
 				if(question)
@@ -654,10 +655,10 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 					punctbuffer = "..."
 				else
 					punctbuffer = "" //Grammer nazis be damned
-			buffer = copytext(buffer, 1, cutoff) + punctbuffer
-		if(!findtext(buffer,GLOB.is_alphanumeric))
+			buffer = copytext_char(buffer, 1, cutoff) + punctbuffer
+		if(!findtext_char(buffer,GLOB.is_alphanumeric))
 			continue
-		if(!buffer || length(buffer) > 280 || length(buffer) <= cullshort || buffer in accepted)
+		if(!buffer || length_char(buffer) > 280 || length_char(buffer) <= cullshort || buffer in accepted)
 			continue
 
 		accepted += buffer
@@ -678,7 +679,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	var/list/finalized = list()
 	finalized = accepted.Copy() + oldentries.Copy() //we keep old and unreferenced phrases near the bottom for culling
 	listclearnulls(finalized)
-	if(!isemptylist(finalized) && length(finalized) > storemax)
+	if(!isemptylist(finalized) && length_char(finalized) > storemax)
 		finalized.Cut(storemax + 1)
 	fdel(log)
 
@@ -688,22 +689,22 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 
 //Used for applying byonds text macros to strings that are loaded at runtime
 /proc/apply_text_macros(string)
-	var/next_backslash = findtext(string, "\\")
+	var/next_backslash = findtext_char(string, "\\")
 	if(!next_backslash)
 		return string
 
-	var/leng = length(string)
+	var/leng = length_char(string)
 
-	var/next_space = findtext(string, " ", next_backslash + 1)
+	var/next_space = findtext_char(string, " ", next_backslash + 1)
 	if(!next_space)
 		next_space = leng - next_backslash
 
 	if(!next_space)	//trailing bs
 		return string
 
-	var/base = next_backslash == 1 ? "" : copytext(string, 1, next_backslash)
-	var/macro = lowertext(copytext(string, next_backslash + 1, next_space))
-	var/rest = next_backslash > leng ? "" : copytext(string, next_space + 1)
+	var/base = next_backslash == 1 ? "" : copytext_char(string, 1, next_backslash)
+	var/macro = lowertext(copytext_char(string, next_backslash + 1, next_space))
+	var/rest = next_backslash > leng ? "" : copytext_char(string, next_space + 1)
 
 	//See https://secure.byond.com/docs/ref/info.html#/DM/text/macros
 	switch(macro)
@@ -779,25 +780,25 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	return uppertext(pick(GLOB.alphabet))
 
 /proc/unintelligize(message)
-	var/prefix=copytext(message,1,2)
+	var/prefix=copytext_char(message,1,2)
 	if(prefix == ";")
-		message = copytext(message,2)
+		message = copytext_char(message,2)
 	else if(prefix in list(":","#"))
-		prefix += copytext(message,2,3)
-		message = copytext(message,3)
+		prefix += copytext_char(message,2,3)
+		message = copytext_char(message,3)
 	else
 		prefix=""
 
-	var/list/words = splittext(message," ")
+	var/list/words = splittext_char(message," ")
 	var/list/rearranged = list()
 	for(var/i=1;i<=words.len;i++)
 		var/cword = pick(words)
 		words.Remove(cword)
-		var/suffix = copytext(cword,length(cword)-1,length(cword))
-		while(length(cword)>0 && suffix in list(".",",",";","!",":","?"))
-			cword  = copytext(cword,1              ,length(cword)-1)
-			suffix = copytext(cword,length(cword)-1,length(cword)  )
-		if(length(cword))
+		var/suffix = copytext_char(cword,length_char(cword)-1,length_char(cword))
+		while(length_char(cword)>0 && suffix in list(".",",",";","!",":","?"))
+			cword  = copytext_char(cword,1              ,length_char(cword)-1)
+			suffix = copytext_char(cword,length_char(cword)-1,length_char(cword)  )
+		if(length_char(cword))
 			rearranged += cword
 	message = "[prefix][jointext(rearranged," ")]"
 	. = message
@@ -808,10 +809,10 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 		message = pick("GHHHHHH...", "GLLLL...", "ZZRRRRR...")
 	else
 		var/new_message = ""
-		var/m_len = length(message)
+		var/m_len = length_char(message)
 		var/tracker = 1
 		while(tracker < m_len)
-			var/nletter = copytext(message, tracker, tracker + 1)
+			var/nletter = copytext_char(message, tracker, tracker + 1)
 			if(!(nletter in list("A", "E", "I", "O", "U", " ")) && (tracker % 2))
 				nletter = pick("GH", "SHK", "KSS", "SS", "GNHH")
 			else if((nletter == " ") && prob(50))
@@ -830,7 +831,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 
 	// Have every letter have a chance of creating corruption on either side
 	// Small chance of letters being removed in place of corruption - still overall readable
-	for(var/letter_index = 1; letter_index <= length(text); letter_index++)
+	for(var/letter_index = 1; letter_index <= length_char(text); letter_index++)
 		var/letter = text[letter_index]
 
 		if (prob(15))
@@ -846,8 +847,8 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 
 	return corrupted_text
 
-#define is_alpha(X) ((text2ascii(X) <= 122) && (text2ascii(X) >= 97))
-#define is_digit(X) ((length(X) == 1) && (length(text2num(X)) == 1))
+#define is_alpha(X) ((text2ascii_char(X) <= 122) && (text2ascii_char(X) >= 97))
+#define is_digit(X) ((length_char(X) == 1) && (length_char(text2num(X)) == 1))
 
 //json decode that will return null on parse error instead of runtiming.
 /proc/safe_json_decode(data)

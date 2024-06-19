@@ -66,16 +66,16 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	var/message2recognize = sanitize_hear_message(raw_message)
 
 	if(mode)
-		if(findtext(message2recognize, "nevermind"))
+		if(findtext_char(message2recognize, "неважно"))
 			mode = 0
 			return
 
 	switch(mode)
 		if(0)
-			if(findtext(message2recognize, "help"))
-				say("My commands are: Make Announcement, Make Decree, Make Law, Remove Law, Purge Laws, Declare Outlaw, Set Taxes, Summon Crown, Nevermind")
+			if(findtext_char(message2recognize, "помощь"))
+				say("Мои команды: Сделать объявление, Издать указ, Принять закон, Отменить закон, Удалить все законы, Объявить вне закона, Установить налоги, Призвать корону, Неважно")
 				playsound(src, 'sound/misc/machinelong.ogg', 100, FALSE, -1)
-			if(findtext(message2recognize, "make announcement"))
+			if(findtext_char(message2recognize, "сделать объявление"))
 				if(nocrown)
 					say("You need the crown.")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
@@ -87,7 +87,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 				playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 				mode = 1
 				return
-			if(findtext(message2recognize, "make decree"))
+			if(findtext_char(message2recognize, "издать указ"))
 				if(!SScommunications.can_announce(H))
 					say("I must gather my strength!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
@@ -100,7 +100,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 				playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 				mode = 2
 				return
-			if(findtext(message2recognize, "make law"))
+			if(findtext_char(message2recognize, "принять закон"))
 				if(!SScommunications.can_announce(H))
 					say("I must gather my strength!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
@@ -113,7 +113,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 				playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 				mode = 4
 				return
-			if(findtext(message2recognize, "remove law"))
+			if(findtext_char(message2recognize, "отменить закон"))
 				if(!SScommunications.can_announce(H))
 					say("I must gather my strength!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
@@ -131,7 +131,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 				playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 				remove_law(law_index)
 				return
-			if(findtext(message2recognize, "purge laws"))
+			if(findtext_char(message2recognize, "удалить все законы"))
 				if(!SScommunications.can_announce(H))
 					say("I must gather my strength!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
@@ -144,7 +144,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 				playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 				purge_laws()
 				return
-			if(findtext(message2recognize, "declare outlaw"))
+			if(findtext_char(message2recognize, "объявить вне закона"))
 				if(notlord || nocrown)
 					say("You are not my master!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
@@ -153,7 +153,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 				playsound(src, 'sound/misc/machinequestion.ogg', 100, FALSE, -1)
 				mode = 3
 				return
-			if(findtext(message2recognize, "set taxes"))
+			if(findtext_char(message2recognize, "установить налоги"))
 				if(notlord || nocrown)
 					say("You are not my master!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
@@ -162,7 +162,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 				playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 				give_tax_popup(H)
 				return
-			if(findtext(message2recognize, "summon crown"))
+			if(findtext_char(message2recognize, "призвать корону"))
 				if(SSroguemachine.crown)
 					var/obj/item/clothing/head/roguetown/crown/serpcrown/I = SSroguemachine.crown
 					if(!I)
@@ -202,7 +202,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	if(newtax)
 		if(!Adjacent(user))
 			return
-		if(findtext(num2text(newtax), "."))
+		if(findtext_char(num2text(newtax), "."))
 			return
 		newtax = CLAMP(newtax, 1, 99)
 		SStreasury.tax_value = newtax / 100
