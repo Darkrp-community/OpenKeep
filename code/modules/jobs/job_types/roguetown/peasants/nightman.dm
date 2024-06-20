@@ -57,7 +57,7 @@
 	else
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 		pants = /obj/item/clothing/under/roguetown/trou/leather
-		armor = /obj/item/clothing/suit/roguetown/armor/silkcoat
+		armor = /obj/item/clothing/suit/roguetown/armor/armordress
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/keyring/nightman
 		beltl = /obj/item/rogueweapon/huntingknife
