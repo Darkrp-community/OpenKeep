@@ -1274,6 +1274,13 @@
 /obj/item/reagent_containers/food/snacks/grown/nettle,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/apothecary)
+"fA" = (
+/obj/structure/bars/bent,
+/obj/structure/table/wood/counter{
+	dir = 1
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/indoors/town/shop)
 "fB" = (
 /turf/closed/wall/mineral/rogue/wooddark/window,
 /area/rogue/indoors/town)
@@ -1853,9 +1860,11 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "hX" = (
-/obj/structure/table/wood,
 /obj/structure/roguemachine/vendor,
 /obj/structure/bars/bent,
+/obj/structure/table/wood/counter/end{
+	dir = 1
+	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
 "hY" = (
@@ -9434,8 +9443,8 @@
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor)
 "OM" = (
-/obj/structure/table/wood,
 /obj/structure/bars/bent,
+/obj/structure/table/wood/counter/end,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
 "ON" = (
@@ -16167,7 +16176,7 @@ Id
 Id
 aY
 aY
-aY
+UG
 aY
 lH
 Id
@@ -16323,7 +16332,7 @@ lH
 lH
 lH
 aY
-aY
+UG
 UG
 UG
 lH
@@ -16636,9 +16645,9 @@ lH
 lH
 lH
 lH
+UG
 aY
-UG
-UG
+aY
 aY
 lH
 lH
@@ -47367,7 +47376,7 @@ hK
 Lj
 Lj
 Lj
-OM
+fA
 Zq
 Zq
 Ff
