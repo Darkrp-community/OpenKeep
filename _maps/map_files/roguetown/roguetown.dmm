@@ -1032,6 +1032,21 @@
 /obj/structure/bed/rogue/shit,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
+"byt" = (
+/obj/structure/mirror{
+	pixel_y = 0;
+	pixel_x = -32
+	},
+/obj/structure/table/wood{
+	dir = 10;
+	icon_state = "tablewood2"
+	},
+/obj/item/rogueweapon/sword/long/exe/cloth,
+/obj/item/natural/stone,
+/turf/open/floor/rogue/tile{
+	icon_state = "chess"
+	},
+/area/rogue/indoors/town/garrison)
 "byI" = (
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -1469,7 +1484,8 @@
 "ceG" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 1;
-	icon_state = "wooddir"
+	icon_state = "wooddir";
+	name = "kitchen door"
 	},
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
@@ -1805,6 +1821,15 @@
 "czv" = (
 /turf/open/water/sewer,
 /area/rogue/under/town/sewer)
+"czK" = (
+/obj/structure/mineral_door/wood/window{
+	lockid = "dungeon";
+	name = "dungeoneer's room door"
+	},
+/turf/open/floor/rogue/tile{
+	icon_state = "chess"
+	},
+/area/rogue/indoors/town/garrison)
 "cAm" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/blocks{
@@ -4179,6 +4204,11 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
+"fKx" = (
+/turf/open/floor/rogue/rooftop{
+	dir = 1
+	},
+/area/rogue/indoors/town/garrison)
 "fLk" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
@@ -5613,6 +5643,7 @@
 /area/rogue/indoors/town/dwarfin)
 "hLz" = (
 /obj/item/roguebin/water,
+/obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "hMh" = (
@@ -5905,6 +5936,13 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/magician)
+"ifw" = (
+/obj/structure/fluff/railing/border{
+	dir = 10;
+	icon_state = "border"
+	},
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/garrison)
 "ifS" = (
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/wood,
@@ -6161,7 +6199,8 @@
 /obj/structure/mineral_door/wood{
 	icon_state = "wcr";
 	locked = 1;
-	lockid = "sheriff"
+	lockid = "sheriff";
+	name = "captain's room door"
 	},
 /obj/effect/decal/cobbleedge{
 	dir = 1
@@ -7233,7 +7272,8 @@
 	dir = 4;
 	icon_state = "donjondir";
 	locked = 1;
-	lockid = "garrison"
+	lockid = "garrison";
+	name = "squireroom door"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison)
@@ -7609,6 +7649,13 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
+"kwn" = (
+/obj/structure/closet/crate/chest,
+/obj/item/flashlight/flare/torch/lantern,
+/turf/open/floor/rogue/tile{
+	icon_state = "chess"
+	},
+/area/rogue/indoors/town/garrison)
 "kwt" = (
 /obj/item/natural/poo,
 /turf/open/water/sewer,
@@ -7878,7 +7925,8 @@
 /area/rogue/outdoors/rtfield)
 "kPa" = (
 /obj/structure/mineral_door/wood/window{
-	lockid = "garrison"
+	lockid = "garrison";
+	name = "garrison bunkroom door"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison)
@@ -8384,7 +8432,8 @@
 	dir = 4;
 	icon_state = "donjondir";
 	locked = 1;
-	lockid = "garrison"
+	lockid = "garrison";
+	name = "permanent hold door"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
@@ -9145,8 +9194,8 @@
 	dir = 4;
 	icon_state = "stairs"
 	},
-/obj/structure/fluff/railing/wood,
-/turf/open/transparent/openspace,
+/obj/structure/fluff/railing/border,
+/turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "mCL" = (
 /obj/effect/decal/cobbleedge{
@@ -9879,9 +9928,11 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/under/town/basement)
 "nGc" = (
-/obj/effect/landmark/events/haunts,
-/turf/open/floor/rogue/blocks/stonered/tiny,
-/area/rogue/indoors/town/bath)
+/obj/structure/fluff/railing/wood{
+	pixel_y = -4
+	},
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/garrison)
 "nGk" = (
 /obj/structure/roguewindow/openclose{
 	dir = 8;
@@ -9953,6 +10004,13 @@
 	icon_state = "wooden_floort"
 	},
 /area/rogue/outdoors/town/roofs)
+"nLC" = (
+/obj/structure/bed/rogue,
+/obj/item/bedsheet/rogue/cloth,
+/turf/open/floor/rogue/tile{
+	icon_state = "chess"
+	},
+/area/rogue/indoors/town/garrison)
 "nMj" = (
 /obj/structure/closet/crate/chest,
 /obj/item/rogueore/coal,
@@ -10180,7 +10238,8 @@
 /area/rogue/under/town/basement)
 "nZd" = (
 /obj/structure/mineral_door/wood{
-	lockid = "garrison"
+	lockid = "garrison";
+	name = "supply storage door"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
@@ -13222,9 +13281,14 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town)
+"ste" = (
+/obj/effect/landmark/events/haunts,
+/turf/open/floor/rogue/blocks/stonered/tiny,
+/area/rogue/indoors/town/bath)
 "stV" = (
 /obj/structure/mineral_door/wood{
-	lockid = "garrison"
+	lockid = "garrison";
+	name = "armory door"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -13818,7 +13882,11 @@
 	dir = 4;
 	icon_state = "stairs"
 	},
-/turf/open/transparent/openspace,
+/obj/structure/fluff/railing/border{
+	dir = 1;
+	icon_state = "border"
+	},
+/turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "tiv" = (
 /obj/structure/bed/rogue/inn/hay,
@@ -15419,7 +15487,8 @@
 /area/rogue/indoors/town/church/chapel)
 "vpY" = (
 /obj/structure/mineral_door/wood/window{
-	lockid = "sheriff"
+	lockid = "sheriff";
+	name = "captain's office door"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
@@ -16005,6 +16074,12 @@
 /obj/effect/landmark/start/wapprentice,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/magician)
+"vYZ" = (
+/obj/machinery/light/rogue/wallfire/candle,
+/turf/open/floor/rogue/tile{
+	icon_state = "chess"
+	},
+/area/rogue/indoors/town/garrison)
 "vZw" = (
 /turf/open/floor/rogue/blocks{
 	icon_state = "newstone2"
@@ -17047,6 +17122,13 @@
 /obj/structure/fluff/psycross,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
+"xyb" = (
+/obj/structure/fluff/railing/border{
+	dir = 9;
+	icon_state = "border"
+	},
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/garrison)
 "xyd" = (
 /turf/closed/wall/mineral/rogue/pipe{
 	icon_state = "iron_corner"
@@ -17557,7 +17639,8 @@
 /obj/structure/mineral_door/wood{
 	icon_state = "wcr";
 	locked = 1;
-	lockid = "garrison"
+	lockid = "garrison";
+	name = "pantry door"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison)
@@ -62055,7 +62138,7 @@ bjg
 bjg
 qFZ
 vTl
-nGc
+ste
 vTl
 vTl
 vTl
@@ -82480,7 +82563,7 @@ doW
 doW
 oiP
 oiP
-tfO
+qSS
 eCr
 eCr
 eCr
@@ -82637,11 +82720,11 @@ doW
 doW
 oiP
 oiP
-tfO
-eCr
-cDN
-cDN
-cDN
+qSS
+kwn
+byt
+wVe
+nGc
 cDN
 cDN
 cDN
@@ -82794,13 +82877,13 @@ doW
 doW
 oiP
 oiP
-tfO
-eCr
-cDN
-cDN
+qSS
+vYZ
+hmg
+wVe
+nGc
 cDN
 aXf
-cDN
 cDN
 cDN
 cDN
@@ -82951,11 +83034,11 @@ doW
 doW
 oiP
 oiP
-tfO
-eCr
-cDN
-cDN
-cDN
+qSS
+nLC
+hmg
+czK
+nGc
 cDN
 cDN
 cDN
@@ -83108,11 +83191,11 @@ doW
 doW
 oiP
 oiP
-tfO
+qSS
 eCr
-cDN
-cDN
-cDN
+lvb
+qvm
+nGc
 cDN
 cDN
 cDN
@@ -83269,9 +83352,9 @@ tfO
 eCr
 cDN
 cDN
+nGc
 cDN
 aXf
-cDN
 cDN
 cDN
 cDN
@@ -83426,7 +83509,7 @@ tfO
 eCr
 thn
 mCp
-cDN
+nGc
 cDN
 cDN
 cDN
@@ -83581,9 +83664,9 @@ oiP
 oiP
 tfO
 rLO
+xyb
+ifw
 aRV
-aRV
-oam
 oam
 oam
 oam
@@ -83895,7 +83978,7 @@ oiP
 oiP
 tfO
 eCr
-qvm
+eCr
 lvb
 azH
 lvb
@@ -84051,8 +84134,8 @@ doW
 oiP
 oiP
 tfO
+rrU
 eCr
-wVe
 iIi
 oXi
 iIi
@@ -84208,8 +84291,8 @@ doW
 oiP
 oiP
 tfO
+rrU
 eCr
-wVe
 iYB
 oXi
 oXi
@@ -84365,8 +84448,8 @@ doW
 oiP
 oiP
 tfO
+rrU
 eCr
-wVe
 eZj
 oXi
 eZj
@@ -84522,7 +84605,7 @@ doW
 oiP
 oiP
 tfO
-eCr
+rrU
 eCr
 eCr
 aFz
@@ -108074,7 +108157,7 @@ doW
 oiP
 sjf
 bcE
-wVe
+eiK
 eiK
 eiK
 khK
@@ -108230,8 +108313,8 @@ doW
 doW
 oiP
 sjf
-bcE
-tWo
+uJX
+jVq
 eiK
 eiK
 qvm
@@ -108387,8 +108470,8 @@ doW
 doW
 oiP
 sjf
+fKx
 bcE
-qvm
 lvb
 qcr
 qvm
@@ -108543,9 +108626,9 @@ doW
 doW
 doW
 oiP
-sjf
+oiP
+fKx
 bcE
-eiK
 qsr
 eiK
 eiK
@@ -108700,9 +108783,9 @@ doW
 doW
 doW
 oiP
-sjf
+oiP
+fKx
 uJX
-pCc
 iFX
 pCc
 iFX
@@ -108857,8 +108940,8 @@ doW
 doW
 doW
 oiP
+oiP
 bPu
-xRY
 xRY
 xRY
 xRY
