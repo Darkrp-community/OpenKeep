@@ -218,14 +218,15 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 		for(var/datum/antagonist/D in user.mind.antag_datums)
 			if(istype(D, istype(D, /datum/antagonist/werewolf) || istype(D, /datum/antagonist/skeleton) || istype(D, /datum/antagonist/zombie)))
 				return
-	var/mob/living/carbon/human/H = user
 	var/oldrecent = hallucinated_recently
 	if(oldrecent)
 		if(next_hal)
 			if(world.time > next_hal)
 				hallucinated_recently = FALSE
 	if(!hallucinated_recently)
-		var/picked_hallucination = pick(/datum/hallucination/message, /datum/hallucination/sounds)
-		new picked_hallucination(H, TRUE)
+		var/mob/living/carbon/V = user
+		var/datum/hallucination/picked_hallucination = pick(/datum/hallucination/message, /datum/hallucination/sounds)
+		new picked_hallucination(V, TRUE)
+		to_chat(V, "DEBUG: Testing hallucination! Hallucination picked: [picked_hallucination]")
 		next_hal = world.time + hallucination_time
 		hallucinated_recently = TRUE

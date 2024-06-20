@@ -773,7 +773,8 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 /datum/hallucination/sounds/New(mob/living/carbon/C, forced = TRUE, sound_type)
 	set waitfor = FALSE
 	..()
-	var/turf/source = random_far_turf()
+	//var/turf/source = random_far_turf()
+	var/turf/source = get_turf(target)
 	if(!sound_type)
 		sound_type = pick("bells","bells louder","monster","notice","werevolf","obey","rebel","sudden noise")
 	feedback_details += "Type: [sound_type]"
