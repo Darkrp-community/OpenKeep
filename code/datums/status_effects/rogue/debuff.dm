@@ -10,6 +10,8 @@
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/hungryt1
+	name = "Peckish, stomach growling"
+	desc = "<span class='warning'>I am getting hungry.</span>\n"
 	icon_state = "hunger1"
 
 /datum/status_effect/debuff/hungryt1/on_apply()
@@ -80,7 +82,7 @@
 /atom/movable/screen/alert/status_effect/debuff/silver_curse
 	name = "Silver Curse"
 	desc = "My BANE!"
-	icon_state = "hunger3"	
+	icon_state = "hunger3"
 
 ////////////////////
 

@@ -16,6 +16,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/bard
+	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/bard/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -48,6 +49,7 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltr = /obj/item/rogueweapon/huntingknife/idagger/steel
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
+	backpack_contents = list(/obj/item/flint)
 	if(H.dna?.species)
 		if(H.dna.species.id == "human")
 			backr = /obj/item/rogue/instrument/lute

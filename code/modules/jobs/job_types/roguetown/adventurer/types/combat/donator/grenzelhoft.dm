@@ -8,8 +8,8 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/grenzelhoft
-	plevel_req = 0
-	maxchosen = 0
+	category_tags = list(CTAG_DISABLED)
+
 
 /datum/outfit/job/roguetown/adventurer/grenzelhoft/pre_equip(mob/living/carbon/human/H)
 	..()
