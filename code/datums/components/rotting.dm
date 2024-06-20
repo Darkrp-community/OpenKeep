@@ -57,7 +57,6 @@
 
 	var/findonerotten = FALSE
 	var/shouldupdate = FALSE
-	var/dustme = FALSE
 	for(var/obj/item/bodypart/B in C.bodyparts)
 		if(!B.skeletonized && B.is_organic_limb())
 			if(!B.rotted)
@@ -76,14 +75,6 @@
 						shouldupdate = TRUE
 				else
 					findonerotten = TRUE
-		if(amount > 25 MINUTES)
-			if(!is_zombie)
-				if(B.skeletonized)
-					dustme = TRUE
-
-	if(dustme)
-		qdel(src)
-		return C.dust(drop_items=TRUE)
 
 	if(findonerotten)
 		var/turf/open/T = C.loc
@@ -119,9 +110,6 @@
 		var/turf/open/T = get_turf(L)
 		if(istype(T))
 			T.add_pollutants(/datum/pollutant/rot, 5)
-	if(amount > 20 MINUTES)
-		qdel(R)
-		return L.dust(drop_items=TRUE)
 
 /datum/component/rot/gibs
 	amount = MIASMA_GIBS_MOLES
