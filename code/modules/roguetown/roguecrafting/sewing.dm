@@ -216,12 +216,3 @@
 	reqs = list(/obj/item/natural/fur = 2,
 				/obj/item/natural/hide = 4)
 	craftdiff = 5
-
-/datum/crafting_recipe/roguetown/weaving/armordress
-	name = "padded dress"
-	result = /obj/item/clothing/suit/roguetown/armor/armordress
-	reqs = list(/obj/item/natural/cloth = 6,
-				/obj/item/natural/fibers = 4,
-				/obj/item/natural/hide = 4)
-	craftdiff = 5
-	sellprice = 80
