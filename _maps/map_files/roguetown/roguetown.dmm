@@ -8381,7 +8381,7 @@
 /area/rogue/outdoors/town)
 "lAo" = (
 /obj/structure/mineral_door/wood/donjon{
-	dir = 8;
+	dir = 4;
 	icon_state = "donjondir";
 	locked = 1;
 	lockid = "garrison"
