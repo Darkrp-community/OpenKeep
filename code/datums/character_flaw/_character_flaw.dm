@@ -202,7 +202,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 /datum/charflaw/schizophrenia
 	name = "Voidsighten"
 	desc = "Sometimes I just see or hear things others do not. They're all blind."
-	var/hallucination_time = 15 MINUTES
+	var/hallucination_time = 20 MINUTES
 	var/hallucinated_recently = TRUE // we dont immediately begin schizoing round start
 	var/next_hal = 0 // next hallucination
 
