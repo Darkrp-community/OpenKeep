@@ -14,7 +14,7 @@
 	var/list/allowed_patrons = ALL_PATRON_NAMES_LIST
 	var/list/allowed_ages = ALL_AGES_LIST
 	var/pickprob = 100
-	var/maximum_possible_slots = -1
+	var/maximum_possible_slots = 999
 	var/total_slots_occupied = 0
 	var/min_pq = -100
 
