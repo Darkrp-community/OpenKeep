@@ -232,6 +232,6 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 		next_hal = world.time + hallucination_time
 		V.add_stress(/datum/stressevent/schizo)
 		hallucinated_recently = TRUE
-		overlay_fullscreen("painflash", /atom/movable/screen/fullscreen/painflash)
+		V.overlay_fullscreen("painflash", /atom/movable/screen/fullscreen/painflash)
 		sleep(3 SECONDS)
-		clear_fullscreen("painflash")
+		V.clear_fullscreen("painflash")
