@@ -228,6 +228,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 		var/datum/hallucination/picked_hallucination = pick(/datum/hallucination/message, /datum/hallucination/sounds, /datum/hallucination/fire, /datum/hallucination/delusion)
 		new picked_hallucination(V, TRUE)
 		//to_chat(V, "DEBUG: Testing hallucination! Hallucination picked: [picked_hallucination]")
+		V.emote(pick("twitch","tremble","scream"))
 		next_hal = world.time + hallucination_time
 		V.add_stress(/datum/stressevent/schizo)
 		hallucinated_recently = TRUE
