@@ -604,9 +604,16 @@
 	bookfile = "VowOfNecraPage.json"
 
 
-/obj/item/book/rogue/random/templatebooknamehere
+/obj/item/book/rogue/random/godofdreams&nightmares
 	name = "God of Dreams & Nightmares"
 	desc = "An old decrepit book, with seemingly no author."
 	icon_state ="book_random"
 	base_icon_state = "book"
 	bookfile = "godofdreams&nightmares.json"
+
+/obj/item/book/rogue/random/psybibleplayerbook
+	name = "Psybible"
+	desc = "An old tome, authored by Father Ambrose of Grenzelhoft."
+	icon_state ="book_random"
+	base_icon_state = "book"
+	bookfile = "psybibleplayerbook.json"
