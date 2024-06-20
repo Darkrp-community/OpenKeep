@@ -330,7 +330,7 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors)
 "Ws" = (
-/obj/structure/fluff/walldeco/customflag{
+/obj/structure/fluff/walldeco/masonflag{
 	pixel_y = 32
 	},
 /turf/open/floor/rogue/dirt/road,
@@ -34667,7 +34667,7 @@ oB
 oB
 oB
 oB
-wq
+oB
 wq
 wq
 wq
@@ -35133,7 +35133,7 @@ Jf
 Jf
 Jf
 Mq
-wq
+oB
 wq
 wq
 wq
@@ -35290,7 +35290,7 @@ Jf
 Kc
 Jf
 uF
-wq
+oB
 wq
 wq
 wq
@@ -35447,7 +35447,7 @@ Jf
 Jf
 Jf
 Mq
-wq
+oB
 wq
 wq
 wq
@@ -35915,9 +35915,9 @@ bk
 bk
 bk
 DN
-wq
-wq
-wq
+oB
+oB
+oB
 oB
 oB
 oB
@@ -36073,9 +36073,9 @@ bk
 bk
 DN
 DN
-wq
-wq
-wq
+oB
+oB
+oB
 oB
 oB
 oB
@@ -36232,7 +36232,7 @@ bk
 DN
 DN
 DN
-wq
+oB
 oB
 oB
 oB

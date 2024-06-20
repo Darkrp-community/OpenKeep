@@ -239,6 +239,11 @@
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors)
+"hT" = (
+/obj/structure/roguerock,
+/obj/structure/flora/roguegrass/water/reeds,
+/turf/open/water/river,
+/area/rogue/outdoors/woods)
 "hW" = (
 /obj/machinery/light/rogue/torchholder/c{
 	pixel_y = -32
@@ -11380,7 +11385,7 @@ qi
 jt
 hA
 jt
-DF
+jt
 jt
 Tz
 Tz
@@ -11533,7 +11538,7 @@ RN
 qi
 "}
 (63,1,1) = {"
-Tz
+hT
 Tz
 Tz
 Tz
@@ -11690,7 +11695,7 @@ qi
 qi
 "}
 (64,1,1) = {"
-Tz
+hT
 Tz
 Tz
 Tz
@@ -11847,7 +11852,7 @@ qi
 qi
 "}
 (65,1,1) = {"
-Tz
+hT
 Tz
 Tz
 Tz
@@ -12004,7 +12009,7 @@ qi
 qi
 "}
 (66,1,1) = {"
-Tz
+hT
 Tz
 Tz
 Tz
@@ -13727,7 +13732,7 @@ jt
 jt
 jt
 jt
-DF
+jt
 qi
 "}
 (77,1,1) = {"
@@ -13885,7 +13890,7 @@ Tz
 Tz
 Tz
 Tz
-Tz
+hT
 "}
 (78,1,1) = {"
 qi
@@ -14042,7 +14047,7 @@ vN
 Tz
 Tz
 Tz
-Tz
+hT
 "}
 (79,1,1) = {"
 qi
@@ -14199,7 +14204,7 @@ Tz
 Tz
 Tz
 Tz
-Tz
+hT
 "}
 (80,1,1) = {"
 qi
