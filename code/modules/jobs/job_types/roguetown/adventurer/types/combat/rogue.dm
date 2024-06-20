@@ -12,6 +12,8 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/rogue
+	category_tags = list(CTAG_ADVENTURER)
+
 /datum/outfit/job/roguetown/adventurer/rogue/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/boots

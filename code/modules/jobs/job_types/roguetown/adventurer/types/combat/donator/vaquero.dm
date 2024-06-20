@@ -6,9 +6,10 @@
 	allowed_races = list("Tiefling")
 	outfit = /datum/outfit/job/roguetown/adventurer/vaquero
 	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
-	maxchosen = 1
-	plevel_req = 1
-	israre = TRUE
+	category_tags = list(CTAG_ADVENTURER)
+	min_pq = 1
+	pickprob = 50
+	maximum_possible_slots = 1
 
 /datum/advclass/combat/vaquero/equipme(mob/living/carbon/human/H)
 	if(H.gender == FEMALE)

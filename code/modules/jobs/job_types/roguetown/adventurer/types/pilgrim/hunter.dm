@@ -13,8 +13,8 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/hunter
-	isvillager = TRUE
-	ispilgrim = TRUE
+
+	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 
 /datum/outfit/job/roguetown/adventurer/hunter/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -68,5 +68,4 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/hunter // Everything is the same
-	isvillager = TRUE
-	ispilgrim = TRUE
+	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)

@@ -10,8 +10,8 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/merchant
-	isvillager = FALSE
-	ispilgrim = TRUE
+	category_tags = (CTAG_PILGRIM)
+	maximum_possible_slots = 2
 
 
 /datum/outfit/job/roguetown/adventurer/merchant/pre_equip(mob/living/carbon/human/H)
