@@ -22,10 +22,10 @@
 	warming = 10 MINUTES
 
 /obj/item/reagent_containers/food/snacks/egg
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
+	icon = 'modular/Neu_Food/icons/food.dmi'
 	name = "cackleberry"
 	desc = ""
-	icon_state = "egg"
+	icon_state = "egg" 
 	list_reagents = list(/datum/reagent/consumable/eggyolk = 5)
 	cooked_type = null
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/friedegg

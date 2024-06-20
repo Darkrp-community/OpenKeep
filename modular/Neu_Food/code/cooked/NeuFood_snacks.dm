@@ -85,7 +85,7 @@
 	tastes = list("fried cackleberry" = 1)
 	name = "fried cackleberry"
 	desc = "A favorite dish among Astratans."
-	icon_state = "friedegg"
+	icon_state = "seggs"
 	foodtype = MEAT
 	warming = 5 MINUTES
 	rotprocess = 30 MINUTES
