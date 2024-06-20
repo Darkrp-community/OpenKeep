@@ -210,7 +210,7 @@
 //	if(user.pulling != src)
 //		return
 
-	var/probby =  20 - ((user.STASTR - STASTR) * 10)
+	var/probby =  20 - ((user.STACON - STACON) * 10)
 	if(src.pulling == user && !instant)
 		probby += 30
 

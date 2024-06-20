@@ -1086,7 +1086,7 @@
 	if(L.mind)
 		wrestling_diff -= (L.mind.get_skill_level(/datum/skill/combat/wrestling))
 
-	resist_chance += ((STASTR - L.STASTR) * 10)
+	resist_chance += ((STACON - L.STACON) * 10)
 
 	if(!(mobility_flags & MOBILITY_STAND))
 		resist_chance += -20 + min((wrestling_diff * 5), -20) //Can improve resist chance at high skill difference     
