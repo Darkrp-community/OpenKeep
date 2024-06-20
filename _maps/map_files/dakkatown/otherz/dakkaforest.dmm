@@ -239,11 +239,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors)
-"hT" = (
-/obj/structure/roguerock,
-/obj/structure/flora/roguegrass/water/reeds,
-/turf/open/water/river,
-/area/rogue/outdoors/woods)
 "hW" = (
 /obj/machinery/light/rogue/torchholder/c{
 	pixel_y = -32
@@ -437,6 +432,11 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
+"me" = (
+/obj/structure/roguerock,
+/obj/structure/flora/roguegrass/water/reeds,
+/turf/open/water/river,
+/area/rogue/outdoors/woods)
 "mn" = (
 /obj/structure/fermenting_barrel/random/water,
 /obj/structure/fluff/railing/border{
@@ -11383,7 +11383,7 @@ qB
 (62,1,1) = {"
 qi
 jt
-hA
+DF
 jt
 jt
 jt
@@ -11538,7 +11538,7 @@ RN
 qi
 "}
 (63,1,1) = {"
-hT
+Tz
 Tz
 Tz
 Tz
@@ -11695,7 +11695,7 @@ qi
 qi
 "}
 (64,1,1) = {"
-hT
+Tz
 Tz
 Tz
 Tz
@@ -11852,7 +11852,7 @@ qi
 qi
 "}
 (65,1,1) = {"
-hT
+Tz
 Tz
 Tz
 Tz
@@ -12009,12 +12009,12 @@ qi
 qi
 "}
 (66,1,1) = {"
-hT
+Tz
 Tz
 Tz
 Tz
 pt
-hA
+DF
 jt
 jt
 zz
@@ -13890,7 +13890,7 @@ Tz
 Tz
 Tz
 Tz
-hT
+me
 "}
 (78,1,1) = {"
 qi
@@ -14047,7 +14047,7 @@ vN
 Tz
 Tz
 Tz
-hT
+me
 "}
 (79,1,1) = {"
 qi
@@ -14204,7 +14204,7 @@ Tz
 Tz
 Tz
 Tz
-hT
+me
 "}
 (80,1,1) = {"
 qi
