@@ -2,4 +2,12 @@
 # Basically, a list of ckeys who make it past user connection                                 #
 # Case is not important for ckey.                                                             #
 ###############################################################################################
-Dekkar
+ZuperRubick
+oleggorru
+jonmetal
+Kostil
+felixarzt
+animusin
+aosker
+sansandertale
+filatelele

@@ -305,10 +305,10 @@ GLOBAL_VAR(restart_counter)
 
 /world/proc/update_status()
 	var/s = ""
-	s += "<center><a href=\"https://discord.gg/6UzZQYqVHT\">"
+	s += "<center><a href=\"https://discord.gg/qZw267fFsX\">"
 #ifdef MATURESERVER
-	s += "<big><b>STONEKEEP (18+)</b></big></a><br>"
-	s += "<b>Dark Medieval Fantasy World Roleplay,Whitelist Adult Content. https://discord.gg/224QdHzv3x</b></center><br>"
+	s += "<big><b>RU STONEKEEP (18+)</b></big></a><br>"
+	s += "<b>Dark Medieval Fantasy Roleplay, Whitelist >>> https://discord.gg/qZw267fFsX</b></center><br>"
 #else
 	s += "<big><b>ROGUEWORLD</b></big></a><br>"
 	s += "<b>Fantasy Computer Survival Game</b></center><br>"
