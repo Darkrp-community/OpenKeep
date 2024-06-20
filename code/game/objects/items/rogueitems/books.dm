@@ -581,18 +581,18 @@
 
 // ...... Book Cover Randomizer Code
 /obj/item/book/rogue/random/Initialize()
-    . = ..()
-    if(icon_state == "book_random")
-        base_icon_state = "book[rand(1,8)]"
-        icon_state = "[base_icon_state]_0"
+	. = ..()
+	if(icon_state == "book_random")
+		base_icon_state = "book[rand(1,8)]"
+		icon_state = "[base_icon_state]_0"
 
 // .....Example of layout of added in book.
 /obj/item/book/rogue/random/templatebooknamehere
-    name = "Title of your book here"
-    desc = "Who wrote it or maybe some flavor here"
-    icon_state ="book_random"
-    base_icon_state = "book"
-    bookfile = "templatebooknamehere.json"
+	name = "Title of your book here"
+	desc = "Who wrote it or maybe some flavor here"
+	icon_state ="book_random"
+	base_icon_state = "book"
+	bookfile = "templatebooknamehere.json"
 // .....End of Example
 
 
@@ -605,8 +605,8 @@
 
 
 /obj/item/book/rogue/random/templatebooknamehere
-    name = "God of Dreams & Nightmares"
-    desc = "An old decrepit book, with seemingly no author."
-    icon_state ="book_random"
-    base_icon_state = "book"
-    bookfile = "godofdreams&nightmares.json"
+	name = "God of Dreams & Nightmares"
+	desc = "An old decrepit book, with seemingly no author."
+	icon_state ="book_random"
+	base_icon_state = "book"
+	bookfile = "godofdreams&nightmares.json"
