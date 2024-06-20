@@ -604,12 +604,12 @@
 	bookfile = "VowOfNecraPage.json"
 
 
-/obj/item/book/rogue/random/godofdreams&nightmares
+/obj/item/book/rogue/random/godofdreamsandnightmares
 	name = "God of Dreams & Nightmares"
 	desc = "An old decrepit book, with seemingly no author."
 	icon_state ="book_random"
 	base_icon_state = "book"
-	bookfile = "godofdreams&nightmares.json"
+	bookfile = "godofdreamsandnightmares.json"
 
 /obj/item/book/rogue/random/psybibleplayerbook
 	name = "Psybible"
