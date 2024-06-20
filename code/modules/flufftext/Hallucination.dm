@@ -508,7 +508,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	set waitfor = FALSE
 	. = ..()
 	var/image/A = null
-	var/kind = force_kind ? force_kind : pick("nothing","monkey","corgi","carp","skeleton","demon","zombie")
+	var/kind = force_kind ? force_kind : pick("static","horror")
 	feedback_details += "Type: [kind]"
 	var/list/nearby
 	if(skip_nearby)
@@ -519,6 +519,12 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		if(skip_nearby && (H in nearby))
 			continue
 		switch(kind)
+			if("static")
+				A = image('icons/effects/effects.dmi',H,"static")
+				A.name = "..."
+			if("horror")
+				A = image('icons/mob/mob.dmi',H,pick("imp","shadowling_ascended","horror","mist","daemon"))
+				A.name = "horror"
 			if("nothing")
 				A = image('icons/effects/effects.dmi',H,"nothing")
 				A.name = "..."
@@ -748,20 +754,22 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 
 		message_pool.Add("<B>[other]</B> [pick("sneezes","coughs")].")
 
-	message_pool.Add("<span class='notice'>I hear something squeezing through the ducts...</span>", \
+	message_pool.Add("<span class='notice'>I hear something squeezing through pipes...</span>", \
 		"<span class='notice'>My [pick("arm", "leg", "back", "head")] itches.</span>",\
 		"<span class='warning'>I feel [pick("my legs crumbling","my skull being drilled","dry","angry","pain","faint")].</span>",
 		"<span class='warning'>My stomach rumbles.</span>",
 		"<span class='warning'>My head hurts.</span>",
 		"<span class='warning'>I hear a faint buzz in my head.</span>",
-		"<B>[target]</B> sneezes.")
-	if(prob(10))
+		"<B>[target]</B> sneezes.",
+		"I feel like someone or something unholy is messing with my head. I should get out of here!",
+		"<font color='red'>You feel like someone is watching you, or something.</font>")
+	if(prob(35))
 		message_pool.Add("<span class='warning'>Behind you.</span>",\
 			"<span class='warning'>I hear a faint laughter.</span>",
 			"<span class='warning'>I see something move.</span>",
 			"<span class='warning'>I hear skittering on the ceiling.</span>",
 			"<span class='warning'>I see an inhumanly tall silhouette moving in the distance.</span>")
-	if(prob(10))
+	if(prob(35))
 		message_pool.Add("[pick_list_replacements(HAL_LINES_FILE, "advice")]")
 	var/chosen = pick(message_pool)
 	feedback_details += "Message: [chosen]"

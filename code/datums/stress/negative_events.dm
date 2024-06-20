@@ -18,6 +18,11 @@
 	stressadd = 7
 	desc = list("<span class='red'>If I don't sate my desire soon, I am going to kill myself..</span>","<span class='red'>I need it. I need it. I need it.</span>")
 
+/datum/stressevent/schizo
+	timer = 2 MINUTES
+	stressadd = 3
+	desc = list("<span class='red'>I HEAR IT! ZIZO IS WHISPERING TO ME!</span>","<span class='red'>I HEAR IT. I HEAR IT. WHY DON'T THEY?!</span>")
+
 /*
 /datum/stressevent/failcraft
 	timer = 15 SECONDS

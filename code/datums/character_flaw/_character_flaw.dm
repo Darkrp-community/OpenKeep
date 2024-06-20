@@ -202,7 +202,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 /datum/charflaw/schizophrenia
 	name = "Voidsighten"
 	desc = "Sometimes I just see or hear things others do not. They're all blind."
-	var/hallucination_time = 10 MINUTES
+	var/hallucination_time = 15 MINUTES
 	var/hallucinated_recently = TRUE // we dont immediately begin schizoing round start
 	var/next_hal = 0 // next hallucination
 
@@ -225,8 +225,9 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 				hallucinated_recently = FALSE
 	if(!hallucinated_recently)
 		var/mob/living/carbon/V = user
-		var/datum/hallucination/picked_hallucination = pick(/datum/hallucination/message, /datum/hallucination/sounds)
+		var/datum/hallucination/picked_hallucination = pick(/datum/hallucination/message, /datum/hallucination/sounds, /datum/hallucination/fire, /datum/hallucination/delusion)
 		new picked_hallucination(V, TRUE)
-		to_chat(V, "DEBUG: Testing hallucination! Hallucination picked: [picked_hallucination]")
+		//to_chat(V, "DEBUG: Testing hallucination! Hallucination picked: [picked_hallucination]")
 		next_hal = world.time + hallucination_time
+		V.add_stress(/datum/stressevent/schizo)
 		hallucinated_recently = TRUE
