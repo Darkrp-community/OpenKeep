@@ -490,7 +490,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	WRITE_FILE(S["version"]			, SAVEFILE_VERSION_MAX)	//load_character will sanitize any bad data, so assume up-to-date.)
 
-	WRITE_FILE(S["pref_species"]	, pref_species.name)
+	WRITE_FILE(S["species"]	, pref_species.name)
 	WRITE_FILE(S["charflaw"]			, charflaw.name)
 	WRITE_FILE(S["selected_patron"]		, selected_patron)
 
