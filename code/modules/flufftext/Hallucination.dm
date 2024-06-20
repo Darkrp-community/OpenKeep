@@ -740,17 +740,17 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		if(istype(equipped_backpack))
 			for(var/i in 1 to 5) //increase the odds
 				message_pool.Add("<span class='notice'>[other] puts the [pick(\
-					"revolver","energy sword","cryptographic sequencer","power sink","energy bow",\
-					"hybrid taser","stun baton","flash","syringe gun","circular saw","tank transfer valve",\
-					"ritual dagger","spellbook",\
-					"pulse rifle","captain's spare ID","hand teleporter","hypospray","antique laser gun","X-01 MultiPhase Energy Gun","station's blueprints"\
+					"pregnant rat","sword of a thousand truths","devourer of worlds","vial of blood","crossbow",\
+					"lover's love","helping hand","light","weapon","bonesaw","bomb",\
+					"ritualistic dagger","scrying orb",\
+					"eyes","master key","crown of rockhill","filth","bow","arrow","bucket"\
 					)] into [equipped_backpack].</span>")
 
 		message_pool.Add("<B>[other]</B> [pick("sneezes","coughs")].")
 
 	message_pool.Add("<span class='notice'>I hear something squeezing through the ducts...</span>", \
 		"<span class='notice'>My [pick("arm", "leg", "back", "head")] itches.</span>",\
-		"<span class='warning'>I feel [pick("hot","cold","dry","wet","woozy","faint")].</span>",
+		"<span class='warning'>I feel [pick("my legs crumbling","my skull being drilled","dry","angry","pain","faint")].</span>",
 		"<span class='warning'>My stomach rumbles.</span>",
 		"<span class='warning'>My head hurts.</span>",
 		"<span class='warning'>I hear a faint buzz in my head.</span>",
@@ -775,53 +775,26 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	..()
 	var/turf/source = random_far_turf()
 	if(!sound_type)
-		sound_type = pick("airlock","airlock pry","console","explosion","far explosion","mech","glass","alarm","beepsky","mech","wall decon","door hack")
+		sound_type = pick("bells","bells louder","monster","notice","werevolf","obey","rebel","sudden noise")
 	feedback_details += "Type: [sound_type]"
 	//Strange audio
 	switch(sound_type)
-		if("airlock")
-			target.playsound_local(source,'sound/blank.ogg', 30, 1)
-		if("airlock pry")
-			target.playsound_local(source,'sound/blank.ogg', 100, 1)
-			sleep(50)
-			target.playsound_local(source, 'sound/blank.ogg', 30, 1)
-		if("console")
-			target.playsound_local(source,'sound/blank.ogg', 25, 1)
-		if("explosion")
-			if(prob(50))
-				target.playsound_local(source,'sound/blank.ogg', 50, 1)
-			else
-				target.playsound_local(source, 'sound/blank.ogg', 50, 1)
-		if("far explosion")
-			target.playsound_local(source, 'sound/blank.ogg', 50, 1)
-		if("glass")
-			target.playsound_local(source, pick('sound/blank.ogg'), 50, 1)
-		if("alarm")
-			target.playsound_local(source, 'sound/blank.ogg', 100, 0)
-		if("beepsky")
-			target.playsound_local(source, 'sound/blank.ogg', 35, 0)
-		if("mech")
-			var/mech_dir = pick(GLOB.cardinals)
-			for(var/i in 1 to rand(4,9))
-				if(prob(75))
-					target.playsound_local(source, 'sound/blank.ogg', 40, 1)
-					source = get_step(source, mech_dir)
-				else
-					target.playsound_local(source, 'sound/blank.ogg', 40, 1)
-					mech_dir = pick(GLOB.cardinals)
-				sleep(10)
-		//Deconstructing a wall
-		if("wall decon")
-			target.playsound_local(source, 'sound/blank.ogg', 50, 1)
-			sleep(105)
-			target.playsound_local(source, 'sound/blank.ogg', 50, 1)
-			sleep(15)
-			target.playsound_local(source, 'sound/blank.ogg', 50, 1)
-		//Hacking a door
-		if("door hack")
-			target.playsound_local(source, 'sound/blank.ogg', 50, 1)
-			sleep(rand(40,80))
-			target.playsound_local(source, 'sound/blank.ogg', 30, 1)
+		if("bells")
+			target.playsound_local(source,'sound/misc/lawdeclaration.ogg', 30, 1)
+		if("bells louder")
+			target.playsound_local(source, 'sound/misc/lawspurged.ogg', 30, 1)
+		if("monster")
+			target.playsound_local(source,'sound/misc/monster.ogg', 25, 1)
+		if("notice")
+			target.playsound_local(source, 'sound/misc/notice.ogg', 30, 1)
+		if("werevolf")
+			target.playsound_local(source, pick('sound/vo/mobs/wwolf/howldist (1).ogg','sound/vo/mobs/wwolf/howldist (2).ogg'), 30, 1)
+		if("obey")
+			target.playsound_local(source, 'sound/misc/obey.ogg', 50, 1)
+		if("rebel")
+			target.playsound_local(source, 'sound/misc/rebel.ogg', 30, 0)
+		if("sudden noise")
+			target.playsound_local(source, 'sound/misc/sudden noise.ogg', 35, 0)
 	qdel(src)
 
 /datum/hallucination/weird_sounds

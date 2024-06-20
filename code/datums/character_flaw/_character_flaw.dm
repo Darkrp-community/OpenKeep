@@ -9,6 +9,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	"No Arm (R)"=/datum/charflaw/limbloss/arm_r,
 	"No Arm (L)"=/datum/charflaw/limbloss/arm_l,
 	"Paranoid"=/datum/charflaw/paranoid,
+	"Voidsighten"=/datum/charflaw/schizophrenia,
 	"Random Flaw"=/datum/charflaw/randflaw,
 	"No Flaw (3 TRI)"=/datum/charflaw/noflaw))
 
@@ -197,3 +198,34 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
 	head?.add_wound(/datum/wound/facial/eyes/left/permanent)
 	H.update_fov_angles()
+
+/datum/charflaw/schizophrenia
+	name = "Voidsighten"
+	desc = "Sometimes I just see or hear things others do not. They're all blind."
+	var/hallucination_time = 10 MINUTES
+	var/hallucinated_recently = TRUE // we dont immediately begin schizoing round start
+	var/next_hal = 0 // next hallucination
+
+/datum/charflaw/schizophrenia/New()
+	. = ..()
+	next_hal = world.time + hallucination_time
+
+/datum/charflaw/schizophrenia/flaw_on_life(mob/user)
+	. = ..()
+	if(!ishuman(user))
+		return
+	if(user.mind.antag_datums)
+		for(var/datum/antagonist/D in user.mind.antag_datums)
+			if(istype(D, istype(D, /datum/antagonist/werewolf) || istype(D, /datum/antagonist/skeleton) || istype(D, /datum/antagonist/zombie)))
+				return
+	var/mob/living/carbon/human/H = user
+	var/oldrecent = hallucinated_recently
+	if(oldrecent)
+		if(next_hal)
+			if(world.time > next_hal)
+				hallucinated_recently = FALSE
+	if(!hallucinated_recently)
+		var/picked_hallucination = pick(/datum/hallucination/message, /datum/hallucination/sounds)
+		new picked_hallucination(H, TRUE)
+		next_hal = world.time + hallucination_time
+		hallucinated_recently = TRUE
