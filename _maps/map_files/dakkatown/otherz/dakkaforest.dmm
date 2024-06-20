@@ -31,6 +31,10 @@
 "bu" = (
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
+"bA" = (
+/obj/machinery/light/rogue/smelter,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "bP" = (
 /obj/structure/fermenting_barrel/random/beer,
 /obj/structure/fluff/railing/border{
@@ -176,6 +180,10 @@
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
+"fY" = (
+/obj/structure/bed/rogue/sleepingbag,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "gb" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig,
 /turf/open/floor/rogue/dirt,
@@ -212,6 +220,9 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
+"hI" = (
+/turf/closed/wall/mineral/rogue/tent,
+/area/rogue/outdoors/woods)
 "hK" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/goat,
 /turf/open/floor/rogue/dirt/road,
@@ -361,6 +372,16 @@
 	dir = 8
 	},
 /area/rogue/outdoors/woods)
+"ld" = (
+/obj/item/ash{
+	pixel_x = -6
+	},
+/obj/item/ash{
+	pixel_y = -6;
+	pixel_x = 4
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "li" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
@@ -446,6 +467,11 @@
 /obj/item/rope/chain,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors)
+"nD" = (
+/turf/closed/wall/mineral/rogue/tent{
+	dir = 8
+	},
+/area/rogue/outdoors/woods)
 "nJ" = (
 /obj/structure/bars,
 /turf/open/floor/rogue/cobble,
@@ -884,6 +910,10 @@
 /obj/structure/fluff/walldeco/wantedposter/l,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
+"By" = (
+/obj/structure/roguetent,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "BE" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 1;
@@ -1066,6 +1096,10 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
+"GS" = (
+/obj/item/grown/log/tree/small,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "Hw" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/shovel,
@@ -1083,6 +1117,16 @@
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
+"HL" = (
+/turf/closed/wall/mineral/rogue/tent{
+	dir = 4
+	},
+/area/rogue/outdoors/woods)
+"HO" = (
+/obj/structure/closet/crate/chest/wicker,
+/obj/item/rogueore/coal,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "HV" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/sickle,
@@ -1099,6 +1143,14 @@
 /obj/structure/portal,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors)
+"Im" = (
+/obj/item/ash,
+/obj/item/ash{
+	pixel_y = 5;
+	pixel_x = 11
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "Io" = (
 /turf/closed/wall/mineral/rogue/wooddark/end{
 	dir = 4
@@ -1363,6 +1415,18 @@
 /obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
+"OS" = (
+/obj/item/grown/log/tree{
+	pixel_x = -6
+	},
+/obj/item/grown/log/tree{
+	pixel_x = 7
+	},
+/obj/item/grown/log/tree{
+	pixel_y = 5
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "Pm" = (
 /obj/structure/fluff/railing/wood{
 	dir = 8
@@ -1677,6 +1741,12 @@
 /obj/machinery/light/rogue/campfire/densefire,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
+"XG" = (
+/obj/structure/closet/crate/chest/wicker,
+/obj/item/rogueore/coal,
+/obj/item/rogueore/coal,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "XT" = (
 /obj/structure/chair/wood/rogue{
 	dir = 4
@@ -1697,6 +1767,11 @@
 	dir = 8
 	},
 /turf/open/transparent/openspace,
+/area/rogue/outdoors/woods)
+"Yi" = (
+/turf/closed/wall/mineral/rogue/tent{
+	dir = 1
+	},
 /area/rogue/outdoors/woods)
 "Yk" = (
 /obj/structure/bed/rogue/shit,
@@ -6985,8 +7060,8 @@ Tz
 jt
 hA
 zz
-RN
-RN
+zz
+zz
 jt
 jt
 Tz
@@ -7141,9 +7216,9 @@ Tz
 pt
 jt
 zz
-RN
-RN
-RN
+SS
+SS
+SS
 zz
 hA
 Tz
@@ -7297,11 +7372,11 @@ Tz
 pt
 jt
 hA
-RN
-RN
-ft
-RN
-RN
+SS
+SS
+SS
+SS
+SS
 EG
 jt
 hA
@@ -7454,13 +7529,13 @@ pt
 jt
 jt
 zz
-RN
-RN
-RN
-RN
-RN
-RN
-zz
+SS
+SS
+SS
+SS
+SS
+SS
+SS
 jt
 jt
 jt
@@ -7610,14 +7685,14 @@ pt
 jt
 hA
 zz
-EG
-RN
-RN
-zz
-RN
-RN
-RN
-RN
+SS
+Im
+GS
+SS
+SS
+bA
+SS
+SS
 zz
 zz
 hA
@@ -7766,17 +7841,17 @@ jt
 hA
 jt
 zz
-EG
-RN
-RN
-RN
 SS
-EG
-ft
-RN
-RN
-EG
-EG
+SS
+bA
+SS
+SS
+SS
+ld
+SS
+SS
+SS
+zz
 RN
 zz
 EG
@@ -7922,17 +7997,17 @@ jt
 zz
 RN
 RN
-RN
-RN
-RN
-RN
-RN
 SS
-EG
-RN
-RN
-EG
-EG
+SS
+SS
+SS
+SS
+SS
+SS
+SS
+GS
+SS
+zz
 RN
 RN
 RN
@@ -8080,15 +8155,15 @@ zz
 RN
 RN
 RN
-RN
-RN
-RN
-zz
-RN
-EG
-EG
-EG
-EG
+SS
+SS
+OS
+SS
+XG
+HO
+SS
+SS
+SS
 RN
 RN
 RN
@@ -8240,11 +8315,11 @@ RN
 RN
 zz
 SS
-EG
-EG
-EG
-zz
-RN
+zX
+HL
+HL
+By
+HL
 SS
 YZ
 RN
@@ -8397,13 +8472,13 @@ RN
 zz
 ft
 zz
-EG
-EG
-ft
-zz
-EG
-zz
 SS
+zX
+SS
+zX
+Yi
+SS
+zz
 RN
 zz
 RN
@@ -8553,14 +8628,14 @@ EG
 SS
 zz
 zz
-zz
+xQ
 RN
+hI
+zX
+fY
+Yi
 zz
 zz
-SS
-SS
-EG
-SS
 zz
 zz
 zz
@@ -8712,10 +8787,10 @@ ft
 RN
 RN
 RN
-RN
-zz
-zz
-RN
+nD
+nD
+nD
+nD
 RN
 zz
 RN
