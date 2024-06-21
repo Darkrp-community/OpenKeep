@@ -4592,13 +4592,13 @@
 /turf/open/water/river,
 /area/rogue/outdoors/town)
 "tE" = (
-/obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/butter,
 /obj/item/reagent_containers/food/snacks/butter,
 /obj/item/reagent_containers/powder/flour/salt,
 /obj/item/reagent_containers/powder/flour/salt,
 /obj/item/reagent_containers/powder/flour,
 /obj/item/reagent_containers/powder/flour,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
 "tF" = (
@@ -6572,13 +6572,13 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
 "Cp" = (
-/obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
+/obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
 "Cq" = (
@@ -12096,6 +12096,12 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
+"ZQ" = (
+/mob/living/simple_animal/pet/cat/inn{
+	dir = 4
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "ZR" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_y = 32
@@ -71388,7 +71394,7 @@ sI
 sI
 Vy
 BG
-RR
+ZQ
 uJ
 Cp
 hE
