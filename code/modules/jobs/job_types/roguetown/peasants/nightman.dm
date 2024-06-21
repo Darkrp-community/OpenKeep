@@ -56,4 +56,5 @@
 			if(H.dna.species.id == "dwarf")
 				armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	else
+		pants = /obj/item/clothing/under/roguetown/tights
 		armor = /obj/item/clothing/suit/roguetown/armor/armordress/alt
