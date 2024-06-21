@@ -3332,11 +3332,6 @@
 /obj/structure/roguewindow,
 /turf/open/floor/rogue/churchrough,
 /area/rogue/indoors/town/church)
-"ezN" = (
-/obj/structure/fluff/dryingrack,
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/rogue/wood,
-/area/rogue/under/town/basement)
 "eAq" = (
 /obj/effect/landmark/start/grabber{
 	name = "Hauler"
@@ -17436,12 +17431,12 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "ycL" = (
+/obj/machinery/light/rogue/wallfire/candle/l,
 /obj/structure/stairs{
 	dir = 1;
 	icon_state = "stairs"
 	},
-/obj/machinery/light/rogue/wallfire/candle/l,
-/turf/closed/wall/mineral/rogue/craftstone,
+/turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "ydE" = (
 /turf/open/floor/rogue/tile{
@@ -52362,7 +52357,7 @@ kdB
 sug
 sug
 sug
-ezN
+uEy
 aWn
 aWn
 kdB
