@@ -349,7 +349,7 @@
 	if(user.mind)
 		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
 		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
-	if(istype(I, /obj/item/natural/cloth))
+	if(istype(I, /obj/item/natural/hide))
 		if(!reagents.has_reagent(/datum/reagent/consumable/milk/salted, 5))
 			to_chat(user, "<span class='warning'>Not enough salted milk.</span>")
 			return
@@ -360,6 +360,9 @@
 			new /obj/item/reagent_containers/food/snacks/rogue/cheese(loc)
 		return
 	..()
+
+
+
 
 /*	............   Making cheese wheel   ................ */
 /obj/item/natural/cloth/attackby(obj/item/I, mob/user, params)

@@ -426,7 +426,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/pastry
 	name = "pastry"
 	desc = "Favored among children and sweetlovers."
-	icon_state = "pastrypuff"
+	icon_state = "pastry"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	tastes = list("crispy butterdough" = 1)
 	w_class = WEIGHT_CLASS_NORMAL
