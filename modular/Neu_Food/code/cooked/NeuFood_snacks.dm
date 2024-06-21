@@ -85,7 +85,7 @@
 	tastes = list("fried cackleberry" = 1)
 	name = "fried cackleberry"
 	desc = "A favorite dish among Astratans."
-	icon_state = "seggs"
+	icon_state = "friedegg"
 	foodtype = MEAT
 	warming = 5 MINUTES
 	rotprocess = 30 MINUTES
@@ -111,7 +111,7 @@
 	tastes = list("fried cackleberries" = 1)
 	name = "fried cackleberries"
 	desc = "Double the yolks, double the fun."
-	icon_state = "spicedeggs"
+	icon_state = "seggs"
 /obj/item/reagent_containers/food/snacks/rogue/friedegg/two/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
