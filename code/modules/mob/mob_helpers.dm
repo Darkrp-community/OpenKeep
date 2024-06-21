@@ -98,38 +98,59 @@
   * Makes you speak like you're drunk
   */
 /proc/slur(n)
-	var/phrase = html_decode(n)
-	var/leng = length(phrase)
-	var/counter=length(phrase)
-	var/newphrase=""
-	var/newletter=""
-	while(counter>=1)
-		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
-		if(rand(1,3)==3)
-			if(lowertext(newletter)=="o")
-				newletter="u"
-			if(lowertext(newletter)=="s")
-				newletter="ch"
-			if(lowertext(newletter)=="a")
-				newletter="ah"
-			if(lowertext(newletter)=="u")
-				newletter="oo"
-			if(lowertext(newletter)=="c")
-				newletter="k"
-		if(rand(1,20)==20)
-			if(newletter==" ")
-				newletter="...huuuhhh..."
-			if(newletter==".")
-				newletter=" *BURP*."
-		switch(rand(1,20))
-			if(1)
-				newletter+="'"
-			if(10)
-				newletter+="[newletter]"
-			if(20)
-				newletter+="[newletter][newletter]"
-		newphrase+="[newletter]";counter-=1
-	return newphrase
+    var/phrase = html_decode(n)
+    var/leng = length_char(phrase)
+    var/counter = leng
+    var/newphrase = ""
+    var/newletter = ""
+    
+    while (counter >= 1)
+        newletter = copytext_char(phrase, (leng - counter) + 1, (leng - counter) + 2)
+        
+        
+        if (rand(1, 3) == 3)
+            switch (lowertext(newletter))
+                if ("o")
+                    newletter = "u"
+                if ("s")
+                    newletter = "sh"
+                if ("a")
+                    newletter = "ah"
+                if ("u")
+                    newletter = "oo"
+                if ("c")
+                    newletter = "k"
+                if ("о")  // cyrillic 'о'
+                    newletter = "у"
+                if ("с")  // cyrillic 'с'
+                    newletter = "ш"
+                if ("а")  // cyrillic 'а'
+                    newletter = "аа"
+                if ("у")  // cyrillic 'у'
+                    newletter = "оо"
+                if ("к")  // cyrillic 'к'
+                    newletter = "кк"
+
+        
+        if (rand(1, 20) == 20)
+            if (newletter == " ")
+                newletter = "...хууххх..."
+            if (newletter == ".")
+                newletter = " *ИК*."
+
+        
+        switch (rand(1, 20))
+            if (1)
+                newletter += "'"
+            if (10)
+                newletter += "[newletter]"
+            if (20)
+                newletter += "[newletter][newletter]"
+
+        newphrase += "[newletter]"
+        counter -= 1
+
+    return newphrase
 
 /// Makes you talk like you got cult stunned, which is slurring but with some dark messages
 /proc/cultslur(n) // Inflicted on victims of a stun talisman
@@ -175,27 +196,29 @@
 
 ///Adds stuttering to the message passed in
 /proc/stutter(n)
-	var/te = html_decode(n)
-	var/t = ""//placed before the message. Not really sure what it's for.
-	n = length(n)//length of the entire word
-	var/p = null
-	p = 1//1 is the start of any word
-	while(p <= n)//while P, which starts at 1 is less or equal to N which is the length.
-		var/n_letter = copytext(te, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
-		if (prob(80) && (ckey(n_letter) in list("b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z")))
-			if (prob(10))
-				n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]")//replaces the current letter with this instead.
-			else
-				if (prob(20))
-					n_letter = text("[n_letter]-[n_letter]-[n_letter]")
-				else
-					if (prob(5))
-						n_letter = null
-					else
-						n_letter = text("[n_letter]-[n_letter]")
-		t = text("[t][n_letter]")//since the above is ran through for each letter, the text just adds up back to the original word.
-		p++//for each letter p is increased to find where the next letter will be.
-	return copytext(sanitize(t),1,MAX_MESSAGE_LEN)
+    var/te = html_decode(n)
+    var/t = "" // placed before the message. Not really sure what it's for.
+    var/length_n = length_char(n) // length of the entire word
+    var/p = 1 // 1 is the start of any word
+
+    // List of consonants in both Latin and Cyrillic alphabets
+    var/list/consonants = list("b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z",
+                               "б","в","г","д","ж","з","й","к","л","м","н","п","р","с","т","ф","х","ц","ч","ш","щ")
+
+    while(p <= length_n) // while P, which starts at 1 is less or equal to N which is the length.
+        var/n_letter = copytext_char(te, p, p + 1) // copies text from a certain distance. In this case, only one letter at a time.
+        if (prob(80) && (n_letter in consonants))
+            if (prob(10))
+                n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]") // replaces the current letter with this instead.
+            else if (prob(20))
+                n_letter = text("[n_letter]-[n_letter]-[n_letter]")
+            else if (prob(5))
+                n_letter = null
+            else
+                n_letter = text("[n_letter]-[n_letter]")
+        t = text("[t][n_letter]") // since the above is ran through for each letter, the text just adds up back to the original word.
+        p++ // for each letter p is increased to find where the next letter will be.
+    return copytext_char(sanitize(t), 1, MAX_MESSAGE_LEN)
 
 ///Convert a message to derpy speak
 /proc/derpspeech(message, stuttering)

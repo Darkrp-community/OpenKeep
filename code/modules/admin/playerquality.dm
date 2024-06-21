@@ -121,29 +121,33 @@
 	check_pq_menu(theykey)
 
 /proc/check_pq_menu(ckey)
-	if(!fexists("data/player_saves/[copytext(ckey,1,2)]/[ckey]/preferences.sav"))
-		to_chat(src, "<span class='boldwarning'>User does not exist.</span>")
-		return
-	var/popup_window_data = "<center>[ckey]</center>"
-	popup_window_data += "<center>PQ: [get_playerquality(ckey, TRUE, TRUE)] ([get_playerquality(ckey, FALSE, TRUE)])</center>"
+    if(!fexists("data/player_saves/[copytext(ckey,1,2)]/[ckey]/preferences.sav"))
+        to_chat(src, "<span class='boldwarning'>User does not exist.</span>")
+        return
+    var/popup_window_data = "<!DOCTYPE html><html><head><meta charset='UTF-8'></head><body>"
+    popup_window_data += "<center>[ckey]</center>"
+    popup_window_data += "<center>PQ: [get_playerquality(ckey, TRUE, TRUE)] ([get_playerquality(ckey, FALSE, TRUE)])</center>"
 
-//	dat += "<table width=100%><tr><td width=33%><div style='text-align:left'><a href='?_src_=prefs;preference=playerquality;task=menu'><b>PQ:</b></a> [get_playerquality(user.ckey, text = TRUE)]</div></td><td width=34%><center><a href='?_src_=prefs;preference=triumphs;task=menu'><b>TRIUMPHS:</b></a> [user.get_triumphs() ? "\Roman [user.get_triumphs()]" : "None"]</center></td><td width=33%></td></tr></table>"
-	popup_window_data += "<center><a href='?_src_=holder;[HrefToken()];cursemenu=[ckey]'>CURSES</a></center>"
-	popup_window_data += "<table width=100%><tr><td width=33%><div style='text-align:left'>"
-	popup_window_data += "Commends: <a href='?_src_=holder;[HrefToken()];readcommends=[ckey]'>[get_commends(ckey)]</a></div></td>"
-	popup_window_data += "<td width=34%><center>ESL Points: [get_eslpoints(ckey)]</center></td>"
-	popup_window_data += "<td width=33%><div style='text-align:right'>Rounds Survived: [get_roundsplayed(ckey)]</div></td></tr></table>"
-	var/list/listy = world.file2list("data/player_saves/[copytext(ckey,1,2)]/[ckey]/playerquality.txt")
-	if(!listy.len)
-		popup_window_data += "<span class='info'>No data on record. Create some.</span>"
-	else
-		for(var/i = listy.len to 1 step -1)
-			var/ya = listy[i]
-			if(ya)
-				popup_window_data += "<span class='info'>[listy[i]]</span><br>"
-	var/datum/browser/noclose/popup = new(usr, "playerquality", "", 390, 320)
-	popup.set_content(popup_window_data)
-	popup.open()
+    // dat += "<table width=100%><tr><td width=33%><div style='text-align:left'><a href='?_src_=prefs;preference=playerquality;task=menu'><b>PQ:</b></a> [get_playerquality(user.ckey, text = TRUE)]</div></td><td width=34%><center><a href='?_src_=prefs;preference=triumphs;task=menu'><b>TRIUMPHS:</b></a> [user.get_triumphs() ? "\Roman [user.get_triumphs()]" : "None"]</center></td><td width=33%></td></tr></table>"
+    popup_window_data += "<center><a href='?_src_=holder;[HrefToken()];cursemenu=[ckey]'>CURSES</a></center>"
+    popup_window_data += "<table width=100%><tr><td width=33%><div style='text-align:left'>"
+    popup_window_data += "Commends: <a href='?_src_=holder;[HrefToken()];readcommends=[ckey]'>[get_commends(ckey)]</a></div></td>"
+    popup_window_data += "<td width=34%><center>ESL Points: [get_eslpoints(ckey)]</center></td>"
+    popup_window_data += "<td width=33%><div style='text-align:right'>Rounds Survived: [get_roundsplayed(ckey)]</div></td></tr></table>"
+
+    var/list/listy = world.file2list("data/player_saves/[copytext(ckey,1,2)]/[ckey]/playerquality.txt")
+    if(!listy.len)
+        popup_window_data += "<span class='info'>No data on record. Create some.</span>"
+    else
+        for(var/i = listy.len to 1 step -1)
+            var/ya = listy[i]
+            if(ya)
+                popup_window_data += "<span class='info'>[listy[i]]</span><br>"
+    popup_window_data += "</body></html>"
+    
+    var/datum/browser/noclose/popup = new(usr, "playerquality", "", 390, 320)
+    popup.set_content(popup_window_data)
+    popup.open()
 
 /client/proc/adjust_pq()
 	set category = "GameMaster"
