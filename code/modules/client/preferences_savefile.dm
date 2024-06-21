@@ -320,30 +320,33 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(needs_update == -2)		//fatal, can't load any data
 		return FALSE
 
-	//Species
-	var/species_name
-	S["species"]			>> species_name
-	if(species_name)
-		var/newtype = GLOB.species_list[species_name]
-		if(newtype)
-			pref_species = new newtype
-
-
-
-	var/charflaw_type
-	S["charflaw"]			>> charflaw_type
-	if(charflaw_type)
-		charflaw = new charflaw_type()
-	else
-		charflaw = pick(GLOB.character_flaws)
-		charflaw = GLOB.character_flaws[charflaw]
-		charflaw = new charflaw()
 
 	if(!S["features["mcolor"]"] || S["features["mcolor"]"] == "#000")
 		WRITE_FILE(S["features["mcolor"]"]	, "#FFF")
 
 	if(!S["feature_ethcolor"] || S["feature_ethcolor"] == "#000")
 		WRITE_FILE(S["feature_ethcolor"]	, "9c3030")
+
+	//race
+	var/species_name
+	S["pref_species"]		>> species_name
+	if(species_name)
+		var/new_race = GLOB.species_list[species_name]
+		if(new_race)
+			pref_species = new new_race
+	//charflaw
+	var/vice_name
+	S["charflaw"]			>> vice_name
+	if(vice_name)
+		var/new_vice = GLOB.character_flaws[vice_name]
+		if(new_vice)
+			charflaw = new new_vice
+	//patron
+	S["selected_patron"]	>> selected_patron
+	if(selected_patron)
+		var/newgod = GLOB.patronlist[selected_patron]
+		if(newgod)
+			selected_patron = new newgod
 
 	//Character
 	S["real_name"]			>> real_name
@@ -381,13 +384,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_moth_markings"]			>> features["moth_markings"]
 	S["feature_human_tail"]				>> features["tail_human"]
 	S["feature_human_ears"]				>> features["ears"]
-
-	var/patron_name
-	S["selected_patron"]	>> patron_name
-	if(patron_name)
-		var/newtype = GLOB.patronlist[patron_name]
-		if(newtype)
-			selected_patron = new newtype
 
 //	S["selected_patron"]				>> selected_patron
 
@@ -501,7 +497,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["real_name"]			, real_name)
 	WRITE_FILE(S["gender"]				, gender)
 	WRITE_FILE(S["domhand"]				, domhand)
-//	WRITE_FILE(S["alignment"]			, alignment)
+
+	//race,flaw,patron
+	WRITE_FILE(S["pref_species"]	, pref_species.name)
+	WRITE_FILE(S["charflaw"]			, charflaw.name)
+	WRITE_FILE(S["selected_patron"]		, selected_patron.name)
+
 	WRITE_FILE(S["age"]					, age)
 	WRITE_FILE(S["hair_color"]			, hair_color)
 	WRITE_FILE(S["facial_hair_color"]	, facial_hair_color)
@@ -520,8 +521,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["jumpsuit_style"]		, jumpsuit_style)
 	WRITE_FILE(S["uplink_loc"]			, uplink_spawn_loc)
 	WRITE_FILE(S["randomise"]		, randomise)
-	WRITE_FILE(S["species"]			, pref_species.name)
-	WRITE_FILE(S["charflaw"]			, charflaw.type)
 	WRITE_FILE(S["feature_mcolor"]					, features["mcolor"])
 	WRITE_FILE(S["feature_ethcolor"]					, features["ethcolor"])
 	WRITE_FILE(S["feature_lizard_tail"]			, features["tail_lizard"])
@@ -552,9 +551,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Quirks
 	WRITE_FILE(S["all_quirks"]			, all_quirks)
-
-	//Patron
-	WRITE_FILE(S["selected_patron"]		, selected_patron.name)
 
 	return TRUE
 
