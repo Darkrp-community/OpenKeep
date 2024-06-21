@@ -6509,7 +6509,10 @@
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/tavern)
 "Ca" = (
-/obj/structure/fluff/statue/mannequin,
+/obj/structure/fluff/statue/psy{
+	desc = "PLACE MANNEQUIN HERE, FUCKER!";
+	name = "MANNEQUIN SPOT"
+	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town)
 "Cb" = (
