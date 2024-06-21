@@ -2,6 +2,21 @@
 
 GLOBAL_VAR(restart_counter)
 
+/proc/auxtools_stack_trace(msg)
+	CRASH(msg)
+
+/proc/auxtools_expr_stub()
+	CRASH("auxtools not loaded")
+
+/proc/enable_debugging(mode, port)
+	CRASH("auxtools not loaded")
+
+/world/Del()
+	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
+	if (debug_server)
+		call_ext(debug_server, "auxtools_shutdown")()
+	. = ..()
+
 /**
   * World creation
   *
@@ -20,9 +35,14 @@ GLOBAL_VAR(restart_counter)
   */
 
 /world/New()
-
 	log_world("World loaded at [time_stamp()]!")
 
+	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
+	if(debug_server)
+		call_ext(debug_server, "auxtools_init")()
+		enable_debugging()
+	else
+		CRASH("NO AUXTOOLS FOUND! [world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")]")
 	SetupExternalRSC()
 
 	GLOB.config_error_log = GLOB.world_manifest_log = GLOB.world_pda_log = GLOB.world_job_debug_log = GLOB.sql_error_log = GLOB.world_href_log = GLOB.world_runtime_log = GLOB.world_attack_log = GLOB.world_game_log = "data/logs/config_error.[GUID()].log" //temporary file used to record errors with loading config, moved to log directory once logging is set bl
