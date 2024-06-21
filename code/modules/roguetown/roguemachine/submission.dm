@@ -25,7 +25,7 @@
 				playsound(src, 'sound/misc/coininsert.ogg', 100, FALSE, -1)
 				return
 			else
-				say("No account found. Submit your fingers to a shylock for inspection.")
+				say("No account found. Submit your fingers to a exchequer for inspection.")
 		else
 			for(var/datum/roguestock/R in SStreasury.stockpile_datums)
 				if(istype(P,R.item_type))
@@ -52,7 +52,7 @@
 					flick("submit_anim",src)
 					if(amt)
 						if(!SStreasury.give_money_account(amt, H, "+[amt] from [R.name] bounty"))
-							say("No account found. Submit your fingers to a shylock for inspection.")
+							say("No account found. Submit your fingers to a exchequer for inspection.")
 					return
 	return ..()
 
