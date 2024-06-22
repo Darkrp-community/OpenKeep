@@ -55,8 +55,9 @@
 		/obj/item/rogueweapon/pick=23,
 		/obj/item/riddleofsteel=2,
 		/obj/item/clothing/neck/roguetown/talkstone=2)
-	var/I = pickweight(loot)
-	new I(src)
+	if(prob(70))
+		var/I = pickweight(loot)
+		new I(src)
 
 /obj/structure/closet/crate/roguecloset
 	name = "closet"
