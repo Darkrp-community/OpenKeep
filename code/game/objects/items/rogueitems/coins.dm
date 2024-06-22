@@ -24,6 +24,11 @@
 	var/quantity = 1
 	var/plural_name
 
+/obj/item/roguecoin/Initialize(mapload, coin_amount)
+	. = ..()
+	if(coin_amount >= 1)
+		set_quantity(floor(coin_amount))
+
 /obj/item/roguecoin/getonmobprop(tag)
 	. = ..()
 	if(tag != "gen")
