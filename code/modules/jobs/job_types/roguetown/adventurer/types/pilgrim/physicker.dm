@@ -16,7 +16,7 @@
     )
     outfit = /datum/outfit/job/roguetown/adventurer/physicker
     category_tags = list(CTAG_PILGRIM)
-    maximum_possible_slots = 4
+    maximum_possible_slots = 3
 
 /datum/outfit/job/roguetown/adventurer/physicker/pre_equip(mob/living/carbon/human/H)
     ..()
