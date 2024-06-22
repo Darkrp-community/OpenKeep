@@ -2131,6 +2131,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
+/obj/item/paper/scroll,
+/obj/item/natural/feather,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/rtfield)
 "cXx" = (
@@ -4101,7 +4103,7 @@
 /area/rogue/under/town/basement)
 "fDJ" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/mace/warhammer,
+/obj/item/rogueweapon/sword/iron/messer,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "fEp" = (
@@ -4246,13 +4248,6 @@
 "fPF" = (
 /turf/closed/wall/mineral/rogue/roofwall/center,
 /area/rogue/indoors/town/dwarfin)
-"fPU" = (
-/obj/structure/mineral_door/wood{
-	locked = 1;
-	lockid = "merchant"
-	},
-/turf/closed/wall/mineral/rogue/wooddark/vertical,
-/area/rogue/indoors/town/shop)
 "fPW" = (
 /obj/structure/mineral_door/wood{
 	lockid = "nightmaiden"
@@ -5327,9 +5322,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/town)
-"hqh" = (
-/turf/open/floor/rogue/blocks/green,
-/area/rogue/under/cave)
 "hqw" = (
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/cobble,
@@ -16433,12 +16425,12 @@
 	},
 /area/rogue/indoors/town)
 "wsO" = (
-/obj/structure/mineral_door/wood{
-	locked = 1;
-	lockid = "merchant"
-	},
-/turf/closed,
-/area/rogue/indoors/town/shop)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/chest,
+/obj/item/paper/scroll,
+/obj/item/natural/feather,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/rtfield)
 "wsZ" = (
 /obj/structure/fluff/walldeco/wantedposter/r,
 /turf/open/floor/rogue/wood,
@@ -16726,7 +16718,7 @@
 "wQm" = (
 /obj/structure/mineral_door/bars{
 	locked = 0;
-	lockid = "sheriff"
+	lockid = "garrison"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
@@ -16766,6 +16758,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/chest,
 /obj/item/clothing/mask/cigarette/rollie/nicotine,
+/obj/item/paper/scroll,
+/obj/item/natural/feather,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/rtfield)
 "wUv" = (
@@ -32237,7 +32231,7 @@ oVk
 oVk
 oVk
 xZr
-hqh
+xZr
 rmN
 vIL
 aWn
@@ -46133,7 +46127,7 @@ jSD
 uWr
 xnx
 xEq
-sHv
+wsO
 uWr
 rSN
 rSN
@@ -78912,7 +78906,7 @@ xIk
 tNf
 qna
 uQd
-wsO
+bsi
 xIk
 uQd
 aCf
@@ -79696,7 +79690,7 @@ nOc
 nOc
 oyS
 oyS
-fPU
+wma
 wmp
 wmp
 uQd
@@ -81452,6 +81446,21 @@ doW
 doW
 doW
 doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
 qQG
 qQG
 qQG
@@ -81482,21 +81491,6 @@ nog
 nog
 nog
 nog
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
 "}
 (97,1,3) = {"
 nog
@@ -81627,6 +81621,12 @@ doW
 doW
 doW
 doW
+doW
+doW
+doW
+doW
+doW
+doW
 nog
 nog
 nog
@@ -81648,12 +81648,6 @@ nog
 nog
 nog
 nog
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
 "}
 (98,1,3) = {"
 nog
