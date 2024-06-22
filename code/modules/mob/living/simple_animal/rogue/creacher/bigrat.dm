@@ -37,7 +37,7 @@
 	deaggroprob = 0
 	defprob = 40
 	defdrain = 5
-	attack_same = 1
+	attack_same = FALSE // Lets two share a room. 
 	retreat_health = 0.3
 	aggressive = 1
 	stat_attack = UNCONSCIOUS
@@ -117,7 +117,7 @@
 			return "nose"
 		if(BODY_ZONE_PRECISE_MOUTH)
 			return "mouth"
-		if(BODY_ZONE_PRECISE_HAIR)
+		if(BODY_ZONE_PRECISE_SKULL)
 			return "head"
 		if(BODY_ZONE_PRECISE_EARS)
 			return "head"

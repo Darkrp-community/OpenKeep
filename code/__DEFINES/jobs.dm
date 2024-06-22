@@ -53,6 +53,7 @@
 #define JOB_UNAVAILABLE_WTEAM 8
 #define JOB_UNAVAILABLE_LASTCLASS 9
 #define JOB_UNAVAILABLE_PATRON 10
+#define JOB_UNAVAILABLE_JOB_COOLDOWN 11
 
 #define DEFAULT_RELIGION "Christianity"
 #define DEFAULT_DEITY "Space Jesus"
@@ -125,6 +126,7 @@
 #define TAILOR		(1<<5)
 #define MERCHANT	(1<<6)
 #define SCRIBE		(1<<7)
+#define FELDSHER    (1<<8)
 
 #define PEASANTS		(1<<4)
 
@@ -140,8 +142,9 @@
 #define ADVENTURER	(1<<9)
 #define COOK		(1<<10)
 #define GRABBER		(1<<11)
+#define WAVE_DRIFTER (1<<16)
 
-#define YOUNGFOLK		(1<<5)
+#define APPRENTICES		(1<<5)
 
 #define APPRENTICE	(1<<0)
 #define SQUIRE		(1<<1)
@@ -164,8 +167,10 @@
 #define JDO_HAND 2
 #define JDO_STEWARD 3
 
-#define JDO_MAGICIAN 5
-#define JDO_WAPP 6
+#define JDO_MAGICIAN 4
+#define JDO_WAPP 5
+
+#define JDO_FELDSHER 6
 
 #define JDO_CAPTAIN 7
 #define JDO_ROYALGUARD 7.1
@@ -214,6 +219,7 @@
 
 #define JDO_ADVENTURER 32.1
 #define JDO_PILGRIM 32.2
+#define JDO_DRIFTER 32.3
 
 #define JDO_MERCENARY 33
 

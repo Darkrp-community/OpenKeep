@@ -10,10 +10,9 @@
 		"Dwarf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/masterblacksmith
-	isvillager = FALSE
-	ispilgrim = TRUE
-	maxchosen = 1
-	israre = TRUE
+	maximum_possible_slots = 1
+	pickprob = 15
+	category_tags = list(CTAG_PILGRIM)
 
 /datum/outfit/job/roguetown/adventurer/masterblacksmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -29,7 +28,7 @@
 	cloak = /obj/item/clothing/cloak/apron/brown
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/tongs=1, /obj/item/rogueore/coal=1, /obj/item/rogueore/iron=1)
-	
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(2,3,3), TRUE)
@@ -54,7 +53,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 6, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 6, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, pick(1,2,2), TRUE)
-		ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		if(H.age == AGE_OLD) // Wise still on every field, but gimped stats from age.
 			H.change_stat("strength", 1)
 			H.change_stat("endurance", 1)
@@ -73,4 +72,3 @@
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-

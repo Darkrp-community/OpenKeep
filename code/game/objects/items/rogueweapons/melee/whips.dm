@@ -12,7 +12,7 @@
 	slot_flags = ITEM_SLOT_HIP | ITEM_SLOT_BELT
 	associated_skill = /datum/skill/combat/whipsflails
 	anvilrepair = /datum/skill/craft/tanning
-	parrysound = list('sound/combat/parry/parrygen.ogg')
+	can_parry = FALSE
 	swingsound = WHIPWOOSH
 	throwforce = 5
 	wdefense = 0

@@ -12,9 +12,10 @@
 		"Dark Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/assassin
-	maxchosen = 1
-	plevel_req = 2
-	israre = TRUE
+	min_pq = 2
+	maximum_possible_slots = 1
+	category_tags = list(CTAG_ADVENTURER)
+	pickprob = 15
 
 /datum/outfit/job/roguetown/adventurer/assassin/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -54,8 +55,8 @@
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	backpack_contents = list(/obj/item/natural/cloth = 1) // mouth gag for victims, or to patch themselves up
 
-	ADD_TRAIT(H, RTRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, RTRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	H.change_stat("strength", 1)
 	H.change_stat("perception", 2)
 	H.change_stat("speed", 2)

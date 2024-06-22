@@ -147,15 +147,10 @@
 			var/used_sound
 			var/possible_sounds
 			var/modifier
-			if(H.age == AGE_YOUNG)
-				modifier = "young"
 			if(H.age == AGE_OLD)
 				modifier = "old"
-			if(!ignore_silent)
-				if(H.silent)
-					modifier = "silenced"
-				if(!H.canspeak())
-					modifier = "silenced"
+			if(!ignore_silent && (H.silent || !H.can_speak()))
+				modifier = "silenced"
 			if(user.gender == FEMALE && H.dna.species.soundpack_f)
 				possible_sounds = H.dna.species.soundpack_f.get_sound(key,modifier)
 			else if(H.dna.species.soundpack_m)

@@ -21,6 +21,7 @@
 	display_order = JDO_VET
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
+	selection_color = "#920909"
 
 	outfit = /datum/outfit/job/roguetown/veteran
 	give_bank_account = 50
@@ -79,5 +80,5 @@
 					mask = /obj/item/clothing/mask/rogue/eyepatch
 
 	H.verbs |= /mob/proc/haltyell
-	ADD_TRAIT(H, RTRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Desensitized through thousand campaigns

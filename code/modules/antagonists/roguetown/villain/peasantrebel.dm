@@ -26,7 +26,7 @@
 	var/mob/living/carbon/human/H = owner.current
 	H.cmode_music = 'sound/music/combatbandit.ogg'
 	H.add_stress(/datum/stressevent/prebel)
-	ADD_TRAIT(H, RTRAIT_VILLAIN, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_VILLAIN, TRAIT_GENERIC)
 
 /datum/antagonist/prebel/greet()
 	to_chat(owner, "<span class='danger'>I am a peasant rebel! It's time for a change in leadership for this town.</span>")

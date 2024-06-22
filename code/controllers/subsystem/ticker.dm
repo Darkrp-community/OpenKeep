@@ -274,7 +274,7 @@ SUBSYSTEM_DEF(ticker)
 						if(player.IsJobUnavailable(V) != JOB_AVAILABLE)
 							to_chat(player, "<span class='warning'>You cannot be [V] and thus are not considered.</span>")
 							continue
-				readied_jobs.Add(V)
+					readied_jobs.Add(V)
 	if("Merchant" in readied_jobs)
 		if(("King" in readied_jobs) || ("Queen" in readied_jobs))
 			if("King" in readied_jobs)
@@ -306,7 +306,7 @@ SUBSYSTEM_DEF(ticker)
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			amt_ready++
 	if(amt_ready < 2)
-		to_chat(world, "<span class='purple'>[amt_ready]/20 players ready.</span>")
+		to_chat(world, "<span class='purple'>[amt_ready]/2 players ready.</span>")
 /*		failedstarts++
 		if(failedstarts > 7)
 			to_chat(world, "<span class='purple'>[failedstarts]/13</span>")
@@ -445,7 +445,7 @@ SUBSYSTEM_DEF(ticker)
 
 	log_game("GAME SETUP: round start events success")
 	LAZYCLEARLIST(round_start_events)
-
+	SSrole_class_handler.RoundStart()
 	CHECK_TICK
 	if(isrogueworld)
 		for(var/obj/structure/fluff/traveltile/TT in GLOB.traveltiles)
@@ -480,8 +480,9 @@ SUBSYSTEM_DEF(ticker)
 			C.mob.playsound_local(C.mob, 'sound/misc/roundstart.ogg', 100, FALSE)
 
 //	SEND_SOUND(world, sound('sound/misc/roundstart.ogg'))
-
 	current_state = GAME_STATE_PLAYING
+
+
 	Master.SetRunLevel(RUNLEVEL_GAME)
 /*
 	if(SSevents.holidays)
@@ -509,7 +510,7 @@ SUBSYSTEM_DEF(ticker)
 	job_change_locked = FALSE
 
 //	setup_hell()
-
+	SStriumphs.fire_on_PostSetup()
 	for(var/i in GLOB.start_landmarks_list)
 		var/obj/effect/landmark/start/S = i
 		if(istype(S))							//we can not runtime here. not in this important of a proc.
@@ -542,7 +543,13 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/proc/create_characters()
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/player = i
-		if(player.ready == PLAYER_READY_TO_PLAY && player.mind)
+		if(!player)
+			message_admins("THERES A FUCKING NULL IN THE NEW_PLAYER_LIST, REPORT IT TO STONEKEEP DEVELOPMENT STAFF NOW!")
+			continue
+		if(!player.mind)
+			message_admins("THERES A MIND LACKING PLAYER IN THE NEW_PLAYER_LIST, REPORT IT TO STONEKEEP DEVELOPMENT STAFF NOW!")
+			continue
+		if(player.ready == PLAYER_READY_TO_PLAY)
 			GLOB.joined_player_list += player.ckey
 			player.create_character(FALSE)
 		else
@@ -573,19 +580,22 @@ SUBSYSTEM_DEF(ticker)
 			SSticker.minds += P.new_character.mind
 		CHECK_TICK
 
-
 /datum/controller/subsystem/ticker/proc/equip_characters()
 //	var/captainless=1
-	for(var/i in GLOB.new_player_list)
-		var/mob/dead/new_player/N = i
-		var/mob/living/carbon/human/player = N.new_character
-		if(istype(player) && player.mind && player.mind.assigned_role)
+	var/list/valid_characters = list()
+	for(var/mob/dead/new_player/new_player as anything in GLOB.new_player_list)
+		var/mob/living/carbon/human/player = new_player.new_character
+		if(istype(player) && player.mind?.assigned_role)
 //			if(player.mind.assigned_role == "Captain")
 //				captainless=0
 			if(player.mind.assigned_role != player.mind.special_role)
-				SSjob.EquipRank(N, player.mind.assigned_role, 0)
-				if(CONFIG_GET(flag/roundstart_traits) && ishuman(N.new_character))
-					SSquirks.AssignQuirks(N.new_character, N.client, TRUE)
+				valid_characters[player] = new_player
+	sortTim(valid_characters, GLOBAL_PROC_REF(cmp_assignedrole_dsc))
+	for(var/mob/character as anything in valid_characters)
+		var/mob/new_player = valid_characters[character]
+		SSjob.EquipRank(new_player, character.mind.assigned_role, joined_late = FALSE)
+		if(CONFIG_GET(flag/roundstart_traits) && ishuman(character))
+			SSquirks.AssignQuirks(character, new_player.client, TRUE)
 		CHECK_TICK
 //	if(captainless)
 //		for(var/i in GLOB.new_player_list)
@@ -827,7 +837,8 @@ SUBSYSTEM_DEF(ticker)
 		to_chat(world, "<span class='boldannounce'>A game master has delayed the round end.</span>")
 		return
 
-//	to_chat(world, "<span class='boldannounce'>Rebooting World in [DisplayTimeText(delay)]. [reason]</span>")
+	SStriumphs.end_triumph_saving_time()
+	to_chat(world, "<span class='boldannounce'>Rebooting World in [DisplayTimeText(delay)]. [reason]</span>")
 
 	to_chat(world, "<span class='boldannounce'>Rebooting World in [DisplayTimeText(delay)].</span>")
 
