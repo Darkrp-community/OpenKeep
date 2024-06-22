@@ -17,6 +17,9 @@
 	var/eatspeed = 12
 	var/lasteat
 	var/mob/living/riding
+	var/obj/item/grabbing/tailfapping
+	var/tailfapspeed = 12
+	var/last_tail_fap
 	var/horny
 	var/maxhorny
 	var/lasthorny
@@ -82,9 +85,13 @@
 				if(G.grabbee == user)
 					if(G.sublimb_grabbed == BODY_ZONE_PRECISE_GROIN)
 						var/yea = list("fap")
+						if(istiefling(target))
+							yea += "tailfap"
 						var/td = input(user, "pleasures","") as null|anything in yea
 						if(td == "fap")
 							sexcon.begin_fapping(G, user)
+						if(td == "tailfap")
+							sexcon.begin_tailfap(G, user)
 	//US ONTO VICTIM
 	if(src != target && target == user)
 		var/what2do = list()
@@ -117,6 +124,8 @@
 			if(ourgroin && theirgroin)
 				what2do += "love"
 				what2do += "zodomy"
+				if(istiefling(user))
+					what2do += "tailfap"
 		if(user.gender == FEMALE)
 			if(ourgroin && theirgroin)
 				if(!user.lying && src.lying)
@@ -148,6 +157,9 @@
 			if("service")
 				if(G)
 					src.sexcon.begin_fapping(G, user)
+			if("tailfap")
+				if(G)
+					sexcon.begin_tailfap(G, user)
 
 /datum/sex_controller/proc/begin_fuck(mob/living/user)
 	testing("fuckstart")
@@ -593,6 +605,50 @@
 	START_PROCESSING(SSsex, user.sexcon)
 	START_PROCESSING(SSsex, src)
 
+/datum/sex_controller/proc/begin_tailfap(obj/item/grabbing/G, mob/living/user)
+	if(!G)
+		return
+
+	if(fucking)
+		return
+
+	if(eatingus)
+		return
+
+	if(!get_location_accessible(owner, BODY_ZONE_PRECISE_GROIN))
+		return
+
+	if(HAS_TRAIT(owner, TRAIT_LIMPDICK))
+		return
+
+	if(!istiefling(user))
+		return
+
+	if(tailfapping)
+		if(tailfapping == G)
+			if(tailfapspeed == initial(tailfapspeed))
+				tailfapspeed = max(round(tailfapspeed / 2), 1)
+			else
+				tailfapspeed = initial(tailfapspeed)
+		return
+	if(user == owner)
+		owner.visible_message("<span class='love'>[owner] wraps his tail around his cock.</span>")
+		if(horny < 0)
+			return
+
+	tailfapspeed = initial(tailfapspeed)
+	last_tail_fap = world.time
+	tailfapping = G
+	G.handaction = "tail fapping"
+	if(user != owner)
+		if(gender == MALE)
+			owner.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[fapping.grabbee] jerks [owner] with his tail!</span>")
+		else
+			owner.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[fapping.grabbee] rubs [owner] with his tail!</span>")
+	G.dependents += src
+	START_PROCESSING(SSsex, user.sexcon)
+	START_PROCESSING(SSsex, src)
+
 /datum/sex_controller/grabdropped(obj/item/grabbing/G)
 	..()
 	if(fapping == G)
@@ -613,6 +669,8 @@
 	var/datum/sex_controller/D
 	if(fapping)
 		stop_fapping_us()
+	if(tailfapping)
+		stop_tailfapping_us()
 	if(eatingus)
 		D = eatingus.sexcon
 		if(D.weeating == owner)
@@ -645,6 +703,9 @@
 		if(fapping)
 			cancelled = TRUE
 			stop_fapping()
+		if(tailfapping)
+			cancelled = TRUE
+			stop_tailfapping_us()
 	if(riding)
 		stop_riding()
 	if(fucking)
@@ -674,6 +735,8 @@
 	if(riding)
 		return FALSE
 	if(fapping && fapping.grabbee != owner)
+		return FALSE
+	if(tailfapping && tailfapping.grabbee != owner)
 		return FALSE
 	return TRUE
 
@@ -725,6 +788,16 @@
 	if(fapping && fapping.grabbee == owner)
 		fapping.handaction = null
 		fapping = null
+
+/datum/sex_controller/proc/stop_tailfapping_us()
+	if(tailfapping && tailfapping.grabbee != owner)
+		tailfapping.handaction = null
+		tailfapping = null
+
+/datum/sex_controller/proc/stop_tailfapping()
+	if(tailfapping && tailfapping.grabbee == owner)
+		tailfapping.handaction = null
+		tailfapping = null
 
 /datum/sex_controller/process()
 	if(!owner)
@@ -914,6 +987,35 @@
 								fapping.grabbee.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[fapping.grabbee] rubs [owner].</span>")
 						if(adjust_horny(2, "otherfapping"))
 							stop_fapping_us()
+
+	if(tailfapping)
+		if(!tailfapping.grabbee)
+			tailfapping = null
+		if(tailfapping)
+			doing = TRUE
+			if(world.time > last_tail_fap + max(tailfapspeed + rand(-3,3), 1))
+				last_tail_fap = world.time
+				if(tailfapping.grabbee == owner)
+					if(tailfapspeed != initial(tailfapspeed))
+						if(!owner.rogfat_add(3))
+							stop_tailfapping()
+					if(tailfapping)
+						playsound(owner, 'sound/misc/mat/fap.ogg', 30, TRUE, -2, ignore_walls = FALSE)
+						if(prob(33))
+							owner.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[owner] faps himself with his tail.</span>")
+						if(adjust_horny(1, "fapself"))
+							stop_tailfapping()
+				else
+					if(tailfapspeed != initial(tailfapspeed))
+						if(!tailfapping.grabbee.rogfat_add(1))
+							stop_tailfapping_us()
+					if(fapping)
+						playsound(owner, 'sound/misc/mat/fap.ogg', 30, TRUE, -2, ignore_walls = FALSE)
+						if(prob(33))
+							fapping.grabbee.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[fapping.grabbee] jerks [owner] with [fapping.grabbee]'s tail.</span>")
+						if(adjust_horny(2, "otherfapping"))
+							stop_tailfapping_us()
+
 	if(!doing)
 		STOP_PROCESSING(SSsex, src)
 
