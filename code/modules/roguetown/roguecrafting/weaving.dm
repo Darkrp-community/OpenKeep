@@ -117,3 +117,12 @@
 				/obj/item/natural/fur = 2)
 	craftdiff = 5
 	sellprice = 60
+
+/datum/crafting_recipe/roguetown/weaving/armordress
+	name = "padded dress"
+	result = /obj/item/clothing/suit/roguetown/armor/armordress
+	reqs = list(/obj/item/natural/silk = 4,
+				/obj/item/natural/fibers = 2,
+				/obj/item/natural/hide = 1)
+	craftdiff = 4
+	sellprice = 80

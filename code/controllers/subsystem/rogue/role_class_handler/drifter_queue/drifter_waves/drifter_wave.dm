@@ -8,7 +8,7 @@
 	// Title of the job related to the job subsystem thats being made/equipped towards for the wave
 	job_rank = "Drifter"
 	drifter_wave_categories = list(DTAG_FILLERS)
-	advclass_cat_rolls = list(CTAG_PILGRIM = 13, CTAG_ADVENTURER = 11)
+	advclass_cat_rolls = list(CTAG_PILGRIM = 26, CTAG_ADVENTURER = 22)
 	class_cat_plusboost_attempts = list(CTAG_PILGRIM = 3) // Here you go buddy, have a 3 on pilgrims
 
 	wave_delay_time = 2 MINUTES
