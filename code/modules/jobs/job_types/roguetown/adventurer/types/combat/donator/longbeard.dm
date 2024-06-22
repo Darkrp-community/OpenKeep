@@ -8,8 +8,6 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list("Dwarf")
 	outfit = /datum/outfit/job/roguetown/adventurer/longbeard
-	maximum_possible_slots = 1
-	pickprob = 15
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 2
 

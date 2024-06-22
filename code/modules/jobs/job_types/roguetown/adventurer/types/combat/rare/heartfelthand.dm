@@ -7,7 +7,6 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/heartfelthand
 	maximum_possible_slots = 1
 	min_pq = 1
-	pickprob = 50
 	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/heartfelthand/pre_equip(mob/living/carbon/human/H)

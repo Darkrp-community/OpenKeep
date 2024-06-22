@@ -13,7 +13,6 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/blacksmith
-	pickprob = 20
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 
 /datum/outfit/job/roguetown/adventurer/blacksmith/pre_equip(mob/living/carbon/human/H)

@@ -12,8 +12,6 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/sentinel
 	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
 	outfit = /datum/outfit/job/roguetown/adventurer/sentinel
-	maximum_possible_slots = 1
-	pickprob = 50
 	category_tags = list(CTAG_ADVENTURER)
 
 /datum/advclass/combat/sentinel/equipme(mob/living/carbon/human/H)
