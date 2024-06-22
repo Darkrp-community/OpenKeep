@@ -70,13 +70,7 @@
 		qdel(src)
 	var/obj/item/I = new path(T)
 	eater.put_in_active_hand(I)
-/*
-/obj/item/reagent_containers/food/snacks/attackby(obj/item/W, mob/user, params)
-	. = ..()
-	if(user.mind)
-		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))	
-		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
-*/
+
 /* added to proc
 /obj/item/reagent_containers/food/snacks/proc/slice(obj/item/W, mob/user)
 	if(slice_sound)
@@ -162,7 +156,7 @@
 
 /obj/item/book/rogue/yeoldecookingmanual // new book with some tips to learn
 	name = "Ye olde ways of cookinge"
-	desc = "By Svend Fatbeard"
+	desc = "Penned by Svend Fatbeard, butler in the fourth generation"
 	icon_state ="book8_0"
 	base_icon_state = "book8"
 	bookfile = "Neu_cooking.json"

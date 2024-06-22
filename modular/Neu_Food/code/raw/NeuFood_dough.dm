@@ -149,6 +149,7 @@
 	desc = "A slice of pedigree, to create lines of history."
 	icon_state = "butterdoughslice"
 	slices_num = 0
+	fried_type = /obj/item/reagent_containers/food/snacks/rogue/frybread
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pastry
 	w_class = WEIGHT_CLASS_NORMAL
 // Dough + rolling pin on table = flat dough. RT got some similar proc for this.
@@ -347,9 +348,6 @@
 	tastes = list("butter" = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 
-
-
-/
 // -------------- BREAD WITH FOOD ON IT (not american sandwich) -----------------
 /obj/item/reagent_containers/food/snacks/rogue/sandwich
 	desc = "A delightful piece of heaven, in every slice."
@@ -373,7 +371,7 @@
 	foodtype = GRAIN | MEAT
 
 
-// -------------- BREAD BUN -----------------
+/*	.................   Bread bun   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/bun
 	name = "bun"
 	desc = "Portable, quaint and entirely consumable"
@@ -421,6 +419,15 @@
 	bitesize = 2
 	rotprocess = 45 MINUTES
 
+/obj/item/reagent_containers/food/snacks/rogue/frybread
+	name = "frybread"
+	desc = "Flatbread fried at high heat with butter to give it a crispy outside. Staple of the elven kitchen."
+	icon_state = "frybread"
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
+	tastes = list("crispy bread with a soft inside" = 1)
+	w_class = WEIGHT_CLASS_NORMAL
+	bitesize = 3
+	eat_effect = /datum/status_effect/buff/foodbuff
 
 /*	.................   Pastry   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/pastry
@@ -680,4 +687,6 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	trash = /obj/item/cooking/platter
 
-//	desc = "A cake glazed with spider-honey, a favorite dish among the Dark Elf nobility in Grimoria. Symbol of authority, a delicious residue covers the sweet cake which causes playful stinging and numbness in the mouth."
+/* maybe split up spider honey cake WIP
+	desc = "A cake glazed with spider-honey, a favorite dish among the Dark Elf nobility in Grimoria. Symbol of authority, a delicious residue covers the sweet cake which causes playful stinging and numbness in the mouth."
+*/

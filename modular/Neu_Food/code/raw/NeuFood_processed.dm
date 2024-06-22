@@ -349,15 +349,27 @@
 	if(user.mind)
 		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
 		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
-	if(istype(I, /obj/item/natural/hide))
-		if(!reagents.has_reagent(/datum/reagent/consumable/milk/salted, 5))
-			to_chat(user, "<span class='warning'>Not enough salted milk.</span>")
+	if(istype(I, /obj/item/natural/cloth))
+		if(reagents.has_reagent(/datum/reagent/consumable/milk/salted, 5))
+			user.visible_message("<span class='info'>[user] strains fresh cheese...</span>")
+			playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
+			if(do_after(user,long_cooktime, target = src))
+				reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 5)
+				new /obj/item/reagent_containers/food/snacks/rogue/cheese(loc)
+
+		var/obj/item/natural/cloth/T = I
+		if(T.wet && !T.return_blood_DNA())
 			return
-		user.visible_message("<span class='info'>[user] strains fresh cheese...</span>")
+		var/removereg = /datum/reagent/water
+		if(!reagents.has_reagent(/datum/reagent/water, 5))
+			removereg = /datum/reagent/water/gross
+			if(!reagents.has_reagent(/datum/reagent/water/gross, 5))
+				to_chat(user, "<span class='warning'>No water to soak in.</span>")
+				return
+		wash_atom(T)
 		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
-		if(do_after(user,long_cooktime, target = src))
-			reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 5)
-			new /obj/item/reagent_containers/food/snacks/rogue/cheese(loc)
+		reagents.remove_reagent(removereg, 5)
+		user.visible_message("<span class='info'>[user] soaks [T] in [src].</span>")
 		return
 	..()
 

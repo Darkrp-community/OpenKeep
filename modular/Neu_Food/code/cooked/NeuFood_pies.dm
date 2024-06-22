@@ -138,32 +138,7 @@
 			update_icon()
 			qdel(I)
 			return
-/*
-	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheddarwedge) || istype(I, /obj/item/reagent_containers/food/snacks/rogue/potato_sliced)  || istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese) || istype(I, /obj/item/reagent_containers/food/snacks/egg) )
-		if (process_step > 4)
-			return
-		playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
-		if(process_step == 1 && do_after(user,short_cooktime, target = src))
-			to_chat(user, "<span class='notice'>Starting on a pot pie...</span>")
-			name = "unfinished pot pie"
-			process_step += 1
-			potpie = TRUE
-			update_icon()
-			qdel(I)
-			return
-		if(potpie && process_step == 2 && do_after(user,short_cooktime, target = src))
-			to_chat(user, "<span class='notice'>Adding filling to the pot pie. Needs more.</span>")
-			process_step += 1
-			update_icon()
-			qdel(I)
-			return
-		if(potpie && process_step == 3 && do_after(user,short_cooktime, target = src))
-			to_chat(user, "<span class='notice'>Filling the pot pie to the brim. Still lacks a pie roof.</span>")
-			process_step += 1
-			update_icon()
-			qdel(I)
-			return
-*/
+
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheddarwedge) || istype(I, /obj/item/reagent_containers/food/snacks/rogue/potato_sliced)  || istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese) )
 		if (process_step > 4)
 			return
