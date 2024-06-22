@@ -371,25 +371,6 @@
 	base_icon_state = "book8"
 	bookfile = "tales14.json"
 
-// ...... Books made by the Stonekeep community within #lore channel
-/obj/item/book/rogue/random/Initialize()
-    . = ..()
-    if(icon_state == "book_random")
-        base_icon_state = "book[rand(1,8)]"
-        icon_state = "[base_icon_state]_0"
-
-// .....Example of layout of added in book.
-/obj/item/book/rogue/random/templatebooknamehere
-    name = "Title of your book here"
-    desc = "Who wrote it or maybe some flavor here"
-    icon_state ="book_random"
-    base_icon_state = "book"
-    bookfile = "whateveryourbookisnamed.json"
-/obj/item/book/rogue/random/vownecrapage
-	name = "Necra's Vow of Silence"
-	icon_state = "book8_0"
-	base_icon_state = "book8"
-	bookfile = "VowOfNecraPage.json"
 
 /obj/item/book/rogue/playerbook
 	var/player_book_text = "moisture in the air or water leaks have rendered the carefully written caligraphy of this book unreadable"
@@ -589,3 +570,50 @@
 	desc = "Apply on a written manuscript to create a book"
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "book_crafting_kit"
+
+
+
+
+
+
+
+// ...... Books made by the Stonekeep community within #lore channel, approved & pushed by Guayo (current staff incharge of adding ingame books)
+
+// ...... Book Cover Randomizer Code
+/obj/item/book/rogue/random/Initialize()
+	. = ..()
+	if(icon_state == "book_random")
+		base_icon_state = "book[rand(1,8)]"
+		icon_state = "[base_icon_state]_0"
+
+// .....Example of layout of added in book.
+/obj/item/book/rogue/random/templatebooknamehere
+	name = "Title of your book here"
+	desc = "Who wrote it or maybe some flavor here"
+	icon_state ="book_random"
+	base_icon_state = "book"
+	bookfile = "templatebooknamehere.json"
+// .....End of Example
+
+
+/obj/item/book/rogue/random/vownecrapage
+	name = "Necra's Vow of Silence"
+	desc = "A faded page, with seemingly no author."
+	icon_state = "book8_0"
+	base_icon_state = "book8"
+	bookfile = "VowOfNecraPage.json"
+
+
+/obj/item/book/rogue/random/godofdreamsandnightmares
+	name = "God of Dreams & Nightmares"
+	desc = "An old decrepit book, with seemingly no author."
+	icon_state ="book_random"
+	base_icon_state = "book"
+	bookfile = "godofdreamsandnightmares.json"
+
+/obj/item/book/rogue/random/psybibleplayerbook
+	name = "Psybible"
+	desc = "An old tome, authored by Father Ambrose of Grenzelhoft."
+	icon_state ="book_random"
+	base_icon_state = "book"
+	bookfile = "psybibleplayerbook.json"
