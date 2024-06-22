@@ -3623,7 +3623,10 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "pp" = (
-/obj/structure/mineral_door/swing_door,
+/obj/structure/mineral_door/wood/red{
+	lockid = "tavern";
+	name = "Skull Crack Inn"
+	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
 "pq" = (
@@ -12016,7 +12019,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
 "Zz" = (
-/obj/structure/mineral_door/wood{
+/obj/structure/mineral_door/wood/red{
 	lockid = "tavern";
 	name = "Lounge"
 	},
