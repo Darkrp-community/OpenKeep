@@ -1,15 +1,19 @@
 /obj/item/rogueweapon/shovel
 	force = 5
-	force_wielded = 10
-	possible_item_intents = list(/datum/intent/mace/strike/shovel)
-	gripped_intents = list(/datum/intent/mace/strike/shovel, /datum/intent/shovelscoop)
+	force_wielded = 12
+	possible_item_intents = list(/datum/intent/mace/strike/shovel, /datum/intent/axe/chop/stone)
+	gripped_intents = list(/datum/intent/mace/strike/shovel, /datum/intent/shovelscoop, /datum/intent/axe/chop/stone)
 	name = "shovel"
 	desc = ""
 	icon_state = "shovel"
-	icon = 'icons/roguetown/weapons/tools.dmi'
+	icon = 'icons/roguetown/weapons/64.dmi'
 	sharpness = IS_BLUNT
-	dropshrink = 0.8
+	dropshrink = 0.9
 	wdefense = 1
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
@@ -118,7 +122,7 @@
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.6,"sx" = -5,"sy" = 6,"nx" = 8,"ny" = 6,"wx" = -5,"wy" = 6,"ex" = 0,"ey" = 6,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.6,"sx" = -6,"sy" = -1,"nx" = 8,"ny" = 0,"wx" = -4,"wy" = 0,"ex" = 2,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -23,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
 				return list("shrink" = 0.6,"sx" = 3,"sy" = -4,"nx" = 3,"ny" = -3,"wx" = -4,"wy" = -4,"ex" = 2,"ey" = -4,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 45,"sturn" = 135,"wturn" = -45,"eturn" = 45,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
