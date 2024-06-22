@@ -4248,6 +4248,13 @@
 "fPF" = (
 /turf/closed/wall/mineral/rogue/roofwall/center,
 /area/rogue/indoors/town/dwarfin)
+"fPU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/chest,
+/obj/item/paper/scroll,
+/obj/item/natural/feather,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/rtfield)
 "fPW" = (
 /obj/structure/mineral_door/wood{
 	lockid = "nightmaiden"
@@ -5977,8 +5984,6 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors/town/magician)
-"iiM" = (
-)
 "iiQ" = (
 /obj/structure/chair/bench/church/r{
 	dir = 1
@@ -16424,13 +16429,6 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town)
-"wsO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/chest,
-/obj/item/paper/scroll,
-/obj/item/natural/feather,
-/turf/open/floor/rogue/twig,
-/area/rogue/outdoors/rtfield)
 "wsZ" = (
 /obj/structure/fluff/walldeco/wantedposter/r,
 /turf/open/floor/rogue/wood,
@@ -46127,7 +46125,7 @@ jSD
 uWr
 xnx
 xEq
-wsO
+fPU
 uWr
 rSN
 rSN
@@ -105158,6 +105156,18 @@ doW
 doW
 doW
 doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
 qQG
 icy
 edT
@@ -105187,18 +105197,6 @@ nog
 nog
 nog
 nog
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
 "}
 (93,1,4) = {"
 nog
@@ -105315,6 +105313,18 @@ doW
 doW
 doW
 doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
 qQG
 icy
 edT
@@ -105344,18 +105354,6 @@ nog
 nog
 nog
 nog
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
 "}
 (94,1,4) = {"
 nog
@@ -105472,6 +105470,18 @@ doW
 doW
 doW
 doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
 qQG
 bGX
 cfz
@@ -105501,18 +105511,6 @@ nog
 nog
 nog
 nog
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
 "}
 (95,1,4) = {"
 nog
@@ -105629,6 +105627,18 @@ doW
 doW
 doW
 doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
 tBD
 tBD
 tBD
@@ -105658,18 +105668,6 @@ nog
 nog
 nog
 nog
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
 "}
 (96,1,4) = {"
 nog
@@ -105794,6 +105792,18 @@ doW
 doW
 doW
 doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
 nog
 nog
 nog
@@ -105815,18 +105825,6 @@ nog
 nog
 nog
 nog
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
 "}
 (97,1,4) = {"
 nog
@@ -105951,6 +105949,18 @@ doW
 doW
 doW
 doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
 nog
 nog
 nog
@@ -105972,18 +105982,6 @@ nog
 nog
 nog
 nog
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
 "}
 (98,1,4) = {"
 nog
@@ -106108,6 +106106,18 @@ doW
 doW
 doW
 doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
 nog
 nog
 nog
@@ -106129,18 +106139,6 @@ nog
 nog
 nog
 nog
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
 "}
 (99,1,4) = {"
 nog
@@ -106265,6 +106263,18 @@ doW
 doW
 doW
 doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
+doW
 nog
 nog
 nog
@@ -106286,18 +106296,6 @@ nog
 nog
 nog
 nog
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
-iiM
 "}
 (100,1,4) = {"
 nog
