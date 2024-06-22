@@ -30,8 +30,6 @@
 		TRAIT_NOHUNGER,
 		TRAIT_EASYDISMEMBER,
 		TRAIT_NOPAIN,
-		TRAIT_NOPAINSTUN,
-		TRAIT_NOBREATH,
 		TRAIT_NOBREATH,
 		TRAIT_TOXIMMUNE,
 		TRAIT_CHUNKYFINGERS,
@@ -148,6 +146,8 @@
 	zombie.add_client_colour(/datum/client_colour/monochrome)
 	for(var/trait_applied in traits_zombie)
 		ADD_TRAIT(zombie, trait_applied, "[type]")
+	if(HAS_TRAIT(zombie, TRAIT_DODGEEXPERT))
+		REMOVE_TRAIT(zombie, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	if(zombie.mind)
 		special_role = zombie.mind.special_role
 		zombie.mind.special_role = name
@@ -163,7 +163,7 @@
 	zombie.mode = AI_IDLE
 
 	var/obj/item/organ/eyes/eyes = new /obj/item/organ/eyes/night_vision/zombie
-	eyes.Insert(zombie, drop_if_replaced = TRUE)
+	eyes.Insert(zombie, drop_if_replaced = FALSE)
 	ambushable = zombie.ambushable
 	zombie.ambushable = FALSE
 
@@ -179,9 +179,6 @@
 			zombie_part.rotted = TRUE
 		zombie_part.update_disabled()
 	zombie.update_body()
-
-	if(prob(2))
-		zombie.STASTR = 18
 
 	if(prob(8))
 		zombie.STASPD = rand(5, 7)
