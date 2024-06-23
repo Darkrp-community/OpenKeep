@@ -157,3 +157,10 @@
 	reqs = list(/obj/item/natural/hide = 2)
 	sellprice = 39	
 	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/leather/coif
+	name = "leather coif"
+	result = /obj/item/clothing/neck/roguetown/coif
+	reqs = list(/obj/item/natural/hide = 1)
+	craftdiff = 2
+	sellprice = 10
