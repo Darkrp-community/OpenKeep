@@ -593,7 +593,7 @@
 	icon_state ="book_random"
 	base_icon_state = "book"
 	bookfile = "templatebooknamehere.json"
-// .....End of Example
+*/ // .....End of Example
 
 
 /obj/item/book/rogue/random/vownecrapage
