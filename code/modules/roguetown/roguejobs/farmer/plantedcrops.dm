@@ -294,7 +294,7 @@
 
 /obj/machinery/crop/attack_right(mob/living/user)
 	if(weeds > 0)
-		var/deweed_time = max((50 - user?.mind?.get_skill_level(/datum/skill/labor/farming) * 10), 2)
+		var/deweed_time = max((50 - user?.mind?.get_skill_level(/datum/skill/labor/farming) * 5), 2)
 		var/obj/item/offhand = user.get_inactive_held_item()//ghetto farming code starts here
 		if(offhand)
 			var/foundscoop = FALSE
