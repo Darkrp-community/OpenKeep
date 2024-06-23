@@ -111,8 +111,8 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	return ""
 
 /atom/movable/proc/say_mod(input, message_mode)
-	var/ending = copytext_char(input, length(input))
-	if(copytext_char(input, length(input) - 1) == "!!")
+	var/ending = copytext(input, length(input))
+	if(copytext(input, length(input) - 1) == "!!")
 		return verb_yell
 	else if(ending == "?")
 		return verb_ask
