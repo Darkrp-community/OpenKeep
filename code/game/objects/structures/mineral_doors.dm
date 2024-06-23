@@ -355,6 +355,12 @@
 		brokenstate = TRUE
 	..()
 
+/obj/structure/mineral_door/OnCrafted(dirin, user)
+	. = ..()
+	keylock = FALSE
+	GLOB.lockhashes.Remove(lockhash)
+	lockhash = 0
+
 /////////////////////// TOOL OVERRIDES ///////////////////////
 
 
@@ -773,8 +779,9 @@
 	desc = "Can be locked from the inside."
 	icon_state = "serving"
 	base_state = "serving"
-	max_integrity = 100
+	max_integrity = 250
 	over_state = "servingopen"
 	openSound = 'sound/neu/blindsopen.ogg'
 	closeSound = 'sound/neu/blindsclose.ogg'
 	dir = NORTH
+	locked = TRUE

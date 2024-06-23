@@ -136,7 +136,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 	var/selected = input(src, "Which class was I?", "VAMPIRE SPAWN") as anything in visoptions
 
-	for(var/datum/advclass/A in GLOB.adv_classes)
+	for(var/datum/advclass/A in SSrole_class_handler.sorted_class_categories[CTAG_ALLCLASS])
 		if(A.name == selected)
 			equipOutfit(A.outfit)
 			return
@@ -621,18 +621,14 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				if(!check_withdraw(-1500))
 					to_chat(user, "I don't have enough vitae!")
 					return
+				user.playsound_local(get_turf(src), 'sound/misc/vcraft.ogg', 100, FALSE, pressure_affected = FALSE)
 				if(do_after(user, 100))
 					lord.handle_vitae(-1500)
-			var/list/armorpieces = list(
-				/obj/item/clothing/under/roguetown/platelegs/vampire,
-				/obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire,
-				/obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire,
-				/obj/item/clothing/shoes/roguetown/boots/armor/vampire,
-				/obj/item/clothing/head/roguetown/helmet/heavy/guard
-			)
-			for(var/armorType in armorpieces)
-				new armorType(src.loc)
-			user.playsound_local(get_turf(src), 'sound/misc/vcraft.ogg', 100, FALSE, pressure_affected = FALSE)
+					new /obj/item/clothing/under/roguetown/platelegs/vampire (src.loc)
+					new /obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire (src.loc)
+					new /obj/item/clothing/shoes/roguetown/boots/armor/vampire (src.loc)
+					new /obj/item/clothing/head/roguetown/helmet/heavy/guard (src.loc)
+
 
 /obj/structure/vampire/bloodpool/proc/update_pool(change)
 	var/datum/game_mode/chaosmode/C = SSticker.mode
@@ -1258,19 +1254,36 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			return
 		if(L.cmode)
 			willroll += 10
+		var/found_psycross = FALSE
+		for(var/obj/item/clothing/neck/roguetown/psicross/silver in L.contents)
+			found_psycross = TRUE
+			break
+
 		if(bloodroll >= willroll)
-			to_chat(L, "You feel like a curtain is coming over your mind.")
-			to_chat(user, "Their mind gives way, they will soon be asleep.")
-			sleep(2)
-			L.Sleeping(15)
+			if(found_psycross == TRUE)
+				to_chat(L, "<font color='white'>The silver psycross shines and protect me from the unholy magic.</font>")
+				to_chat(user, "<span class='userdanger'>[L] has my BANE!It causes me to fail to ensnare their mind!</span>")
+			else
+				to_chat(L, "You feel like a curtain is coming over your mind.")
+				to_chat(user, "Their mind gives way, they will soon be asleep.")
+				sleep(50)
+				L.Sleeping(300)
 		if(willroll >= bloodroll)
-			to_chat(user, "I fail to ensnare their mind.")
+			if(found_psycross == TRUE)
+				to_chat(L, "<font color='white'>The silver psycross shines and protect me from the unholy magic.</font>")
+				to_chat(user, "<span class='userdanger'>[L] has my BANE!It causes me to fail to ensnare their mind!</span>")
+			else
+				to_chat(user, "I fail to ensnare their mind.")
 			if(willroll - bloodroll >= 3)
-				to_chat(L, "I feel like something is messing with my head.")
-				var/holyskill = user.mind.get_skill_level(/datum/skill/magic/holy)
-				var/arcaneskill = user.mind.get_skill_level(/datum/skill/magic/arcane)
-				if(holyskill + arcaneskill >= 3)
-					to_chat(L, "I feel like the magic came from [user]")
+				if(found_psycross == TRUE)
+					to_chat(L, "<font color='white'> The silver psycross shines and protect me from the blood magic, the one who used bllod magic was [user]!</font>")
+				else
+					to_chat(user, "I fail to ensnare their mind.")
+					to_chat(L, "I feel like someone or something unholy is messing with my head. I should get out of here!")
+					var/holyskill = user.mind.get_skill_level(/datum/skill/magic/holy)
+					var/arcaneskill = user.mind.get_skill_level(/datum/skill/magic/arcane)
+					if(holyskill + arcaneskill >= 1)
+						to_chat(L, "I feel like the unholy magic came from [user]. I should use my magic or miracles on them.")
 
 /obj/effect/proc_holder/spell/targeted/transfix/master
 	name = "Subjugate"
@@ -1288,6 +1301,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	charge_max = 5 SECONDS
 	include_user = 0
 	max_targets = 0
+	cooldown_min = 100 // 10 second cooldown
 
 /obj/effect/proc_holder/spell/targeted/transfix/master/cast(list/targets, mob/user = usr)
 	var/bloodskill = user.mind.get_skill_level(/datum/skill/magic/blood)

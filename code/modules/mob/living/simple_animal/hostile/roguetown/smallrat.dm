@@ -15,7 +15,6 @@
 	sellprice = 0
 	rotprocess = null
 
-
 /obj/item/reagent_containers/food/snacks/smallrat/onbite(mob/living/carbon/human/user)
 	if(loc == user)
 		if(user.mind && user.mind.has_antag_datum(/datum/antagonist/vampirelord))
@@ -115,6 +114,8 @@
 		dir = pick(GLOB.cardinals)
 		step(src, dir)
 		for(var/obj/item/reagent_containers/food/snacks/S in loc)
+			if(is_type_in_typecache(S, GLOB.RATS_DONT_EAT))
+				return
 			if(S != src)
 				qdel(S)
 				playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
@@ -125,6 +126,9 @@
 						dead = TRUE
 						qdel(src)
 						break
+
+
+
 
 /obj/item/reagent_containers/food/snacks/smallrat/obj_destruction(damage_flag)
 	//..()

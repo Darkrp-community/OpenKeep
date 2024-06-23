@@ -17,6 +17,7 @@
 	whitelist_req = FALSE
 	min_pq = 0
 	give_bank_account = 500
+	selection_color = "#7851A9"
 
 /datum/job/roguetown/lord/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

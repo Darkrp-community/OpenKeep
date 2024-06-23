@@ -230,6 +230,7 @@
 	craftdiff = 0
 
 /obj/structure/closet/crate/chest/crafted
+	keylock = FALSE
 	sellprice = 6
 
 /datum/crafting_recipe/roguetown/structure/closet
