@@ -586,7 +586,7 @@
 		base_icon_state = "book[rand(1,8)]"
 		icon_state = "[base_icon_state]_0"
 
-// .....Example of layout of added in book.
+/* .....Example of layout of added in book.
 /obj/item/book/rogue/random/templatebooknamehere
 	name = "Title of your book here"
 	desc = "Who wrote it or maybe some flavor here"
