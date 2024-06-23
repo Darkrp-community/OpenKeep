@@ -1,5 +1,6 @@
 #define SHIELD_BASH		/datum/intent/shield/bash
 #define SHIELD_BLOCK		/datum/intent/shield/block
+#define SHIELD_BANG_COOLDOWN (3 SECONDS)
 
 /obj/item/rogueweapon/shield
 	name = ""
@@ -28,6 +29,19 @@
 	blade_dulling = DULLING_BASHCHOP
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ash
+	COOLDOWN_DECLARE(shield_bang)
+
+// Shield banging
+/obj/item/rogueweapon/shield/attackby(obj/item/attackby_item, mob/user, params)
+	if(istype(attackby_item, /obj/item/rogueweapon))
+		if(!COOLDOWN_FINISHED(src, shield_bang))
+			return
+		user.visible_message("<span class='danger'>[user] bangs [src] with [attackby_item]!</span>")
+		playsound(user.loc, 'sound/combat/shieldbang.ogg', 50, TRUE)
+		COOLDOWN_START(src, shield_bang, SHIELD_BANG_COOLDOWN)
+		return
+
+	return ..()
 
 /obj/item/rogueweapon/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the projectile", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, args)
@@ -157,3 +171,5 @@
 		add_overlay(MU)
 	else
 		..()
+
+#undef SHIELD_BANG_COOLDOWN
