@@ -10,7 +10,8 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	"No Arm (L)"=/datum/charflaw/limbloss/arm_l,
 	"Paranoid"=/datum/charflaw/paranoid,
 	"Random Flaw"=/datum/charflaw/randflaw,
-	"No Flaw (3 TRI)"=/datum/charflaw/noflaw))
+	"No Flaw (3 TRI)"=/datum/charflaw/noflaw,
+	"Hunted"=/datum/charflaw/hunted))
 
 /datum/charflaw
 	var/name
@@ -197,3 +198,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
 	head?.add_wound(/datum/wound/facial/eyes/left/permanent)
 	H.update_fov_angles()
+
+/datum/charflaw/hunted
+	name = "Hunted"
+	desc = "Something in my past has made me a target. I'm always looking over my shoulder."

@@ -439,6 +439,11 @@
 			if(!(mobility_flags & MOBILITY_STAND) && user != src && (user.zone_selected == BODY_ZONE_CHEST))
 				. += "<a href='?src=[REF(src)];check_hb=1'>Listen to Heartbeat</a>"
 
+	// Characters with the hunted flaw will freak out if they can't see someone's face.
+	if(!appears_dead)
+		if(skipface && user.has_flaw(/datum/charflaw/hunted))
+			user.add_stress(/datum/stressevent/hunted)
+
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))
 		. += trait_exam

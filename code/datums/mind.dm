@@ -592,6 +592,17 @@
 	var/output = "<B>[current.real_name]'s Memories:</B><br>"
 	output += memory
 
+/datum/mind/proc/recall_targets(mob/recipient, window=1)
+	if(!recipient)
+		recipient = current
+	var/output = "<B>[current.real_name]'s Hitlist:</B><br>"
+	for (var/mob/living/carbon in world) // Iterate through all mobs in the world
+		//Find all mobs that have the target charflaw and are not the current mob, then add their name to the output, along with their job if they have one.
+		if ((carbon != current) && (carbon.has_flaw(/datum/charflaw/hunted)))
+			output += "<br>[carbon.real_name]"
+			if (carbon.job)
+				output += " - [carbon.job]"
+	output += "<br>Your creed is blood, your faith is steel. You will not rest until these souls are yours. Use the profane daggar."
 
 	var/list/all_objectives = list()
 	for(var/datum/antagonist/A in antag_datums)

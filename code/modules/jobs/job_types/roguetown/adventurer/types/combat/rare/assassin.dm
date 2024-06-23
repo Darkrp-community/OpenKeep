@@ -1,5 +1,3 @@
-//elf human specia lrogue 2 daggers throwing belt
-
 /datum/advclass/combat/assassin
 	name = "Assassin"
 	tutorial = "Enigma has always been ripe with business for your kind, even the old King had many of his undesirables sent to the Weeper's golden kingdom. You hope to rekindle old business partners and make a profit of mammons, exchanging blood for coin."
@@ -12,13 +10,13 @@
 		"Dark Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/assassin
-	min_pq = 2
-	maximum_possible_slots = 1
 	category_tags = list(CTAG_ADVENTURER)
-	pickprob = 15
+	maximum_possible_slots = 2
+	pickprob = 100
 
 /datum/outfit/job/roguetown/adventurer/assassin/pre_equip(mob/living/carbon/human/H)
 	..()
+	H.verbs |= /mob/living/carbon/human/proc/who_targets
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
@@ -60,3 +58,10 @@
 	H.change_stat("strength", 1)
 	H.change_stat("perception", 2)
 	H.change_stat("speed", 2)
+
+/mob/living/carbon/human/proc/who_targets()
+	set name = "Remember Targets"
+	set category = "Memory"
+	if(!mind)
+		return
+	mind.recall_targets(src)

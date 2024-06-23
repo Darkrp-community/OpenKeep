@@ -207,6 +207,11 @@
 	stressadd = 2
 	desc = "<span class='red'>They are plotting against me in evil tongues..</span>"
 
+/datum/stressevent/hunted // When a hunted character sees someone in a mask
+	timer = 2 MINUTES
+	stressadd = 2
+	desc = "<span class='red'>I can't see their face! Have they found me!?</span>"
+
 /datum/stressevent/coldhead
 	timer = 60 SECONDS
 	stressadd = 1
