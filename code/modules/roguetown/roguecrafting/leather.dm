@@ -77,6 +77,18 @@
 	reqs = list(/obj/item/natural/hide = 1)
 	sellprice = 27
 
+/datum/crafting_recipe/roguetown/leather/sandals
+	name = "sandals"
+	result = /obj/item/clothing/shoes/roguetown/sandals
+	reqs = list(/obj/item/natural/hide = 1)
+	sellprice = 10
+
+/datum/crafting_recipe/roguetown/leather/gladiator
+	name = "gladiator sandals"
+	result = /obj/item/clothing/shoes/roguetown/gladiator
+	reqs = list(/obj/item/natural/hide = 2)
+	sellprice = 17
+
 /datum/crafting_recipe/roguetown/leather/helmet
 	name = "leather helmet"
 	result = /obj/item/clothing/head/roguetown/helmet/leather
@@ -145,3 +157,10 @@
 	reqs = list(/obj/item/natural/hide = 2)
 	sellprice = 39	
 	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/leather/coif
+	name = "leather coif"
+	result = /obj/item/clothing/neck/roguetown/coif
+	reqs = list(/obj/item/natural/hide = 1)
+	craftdiff = 2
+	sellprice = 10

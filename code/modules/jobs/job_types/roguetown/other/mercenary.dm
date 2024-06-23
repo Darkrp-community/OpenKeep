@@ -23,7 +23,7 @@
 	min_pq = 0
 	outfit = null
 	outfit_female = null
-	advclass_cat_rolls = list(CTAG_MERCENARY = 6)
+	advclass_cat_rolls = list(CTAG_MERCENARY = 20)
 
 /datum/job/roguetown/mercenary/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
