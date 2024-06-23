@@ -8,7 +8,7 @@
 	bodyparts = list(/obj/item/bodypart/chest/orc, /obj/item/bodypart/head/orc, /obj/item/bodypart/l_arm/orc,
 					 /obj/item/bodypart/r_arm/orc, /obj/item/bodypart/r_leg/orc, /obj/item/bodypart/l_leg/orc)
 	rot_type = /datum/component/rot/corpse/orc
-	var/gob_outfit = /datum/outfit/job/roguetown/npc/orc
+	var/gob_outfit = /datum/outfit/job/roguetown/npc/orc/ambush
 	ambushable = FALSE
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw, /datum/intent/simple/bite, /datum/intent/kick)
 	possible_rmb_intents = list()
@@ -244,7 +244,7 @@
 ////
 ///
 
-/datum/outfit/job/roguetown/npc/orc/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/npc/orc/ambush/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.STASTR = 14
 	H.STASPD = 12
@@ -271,21 +271,21 @@
 				r_hand = /obj/item/rogueweapon/mace/spiked
 				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
-				//head = /obj/item/clothing/head/roguetown/helmet/leather/orc
+				head = /obj/item/clothing/head/roguetown/helmet/leather
 			if(prob(30))
 				l_hand = /obj/item/rogueweapon/sword/iron
 				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
-				//head = /obj/item/clothing/head/roguetown/helmet/leather/orc
+				head = /obj/item/clothing/head/roguetown/helmet/leather
 			if(prob(23))
 				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 				r_hand = /obj/item/rogueweapon/huntingknife/idagger
 				l_hand = /obj/item/rogueweapon/huntingknife/idagger
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
-				//head = /obj/item/clothing/head/roguetown/helmet/leather/orc
+				head = /obj/item/clothing/head/roguetown/helmet/leather
 			if(prob(80))
 				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
-				//head = /obj/item/clothing/head/roguetown/helmet/leather/orc
+				head = /obj/item/clothing/head/roguetown/helmet/leather
 		if(5) //heavy armored sword/flail/shields
 			if(prob(20))
 				r_hand = /obj/item/rogueweapon/mace//readded the blunt weapon, this time with an very rare "slavist" orc
@@ -320,3 +320,67 @@
 				r_hand = /obj/item/rogueweapon/sword/iron/messer
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
+
+//NEW ORCS WITH DIFFERENT GEAR AND SHIT
+
+/mob/living/carbon/human/species/orc/npc/tribal
+	aggressive=1
+	mode = AI_IDLE
+	dodgetime = 15
+	canparry = TRUE
+	flee_in_pain = FALSE
+	wander = TRUE
+	var/outfit = /datum/outfit/job/roguetown/npc/orc/tribal
+
+
+/datum/outfit/job/roguetown/npc/orc/tribal/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.STASTR = 14
+	H.STASPD = 12
+	H.STACON = 13
+	H.STAEND = 13
+	var/loadout = rand(1,5)
+	switch(loadout)
+		if(1) //Stolen Tool armed raider
+			r_hand = /obj/item/rogueweapon/stoneaxe
+			l_hand = /obj/item/rogueweapon/stoneaxe
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+			cloak = /obj/item/clothing/cloak/raincloak/brown
+		if(2) //Stolen Tool armed raider
+			r_hand = /obj/item/rogueweapon/woodstaff
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+			cloak = /obj/item/clothing/cloak/raincloak/brown
+		if(3) //Stolen Tool armed raider
+			r_hand = /obj/item/rogueweapon/mace/woodclub//removed the cudgel because it's way too good at knock people out
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+		if(4) //dagger fighter
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+			cloak = /obj/item/clothing/cloak/raincloak/brown
+			r_hand = /obj/item/rogueweapon/huntingknife/stoneknife
+			l_hand = /obj/item/rogueweapon/huntingknife/stoneknife
+		if(5) //heavy armored sword/flail/shields
+			r_hand = /obj/item/rogueweapon/spear/stone
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+			cloak = /obj/item/clothing/cloak/raincloak/brown
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
