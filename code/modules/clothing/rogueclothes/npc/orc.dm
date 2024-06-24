@@ -42,18 +42,6 @@
 	max_integrity = 100
 	sellprice = 5
 
-obj/item/clothing/head/roguetown/helmet/leather/orc
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
-	name = "leather helmet"
-	desc = ""
-	body_parts_covered = HEAD|HAIR|EARS|NOSE
-	icon_state = "leatherhelm"
-	armor = list("melee" = 27, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
-	anvilrepair = null
-	sewrepair = TRUE
-	blocksound = SOFTHIT
-
 /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 	name = "orc loincloth"
 	icon_state = "orc_leather_item"
