@@ -130,9 +130,21 @@
 				used_time -= (user.mind.get_skill_level(/datum/skill/labor/butchering) * 30)
 			visible_message("[user] begins to butcher \the [src].")
 			playsound(src, 'sound/foley/gross.ogg', 100, FALSE)
+			var/steaks = 0
+			switch(user.mind.get_skill_level(/datum/skill/labor/butchering))
+				if(3)
+					steaks = 1
+				if(4 to 5)
+					steaks = 2
+				if(6)
+					steaks = 3 // the steaks have never been higher
+			var/amt2raise = L.STAINT/3
 			if(do_after(user, used_time, target = src))
+				for(steaks, steaks<=3, steaks--)
+					new /obj/item/reagent_containers/food/snacks/rogue/meat/steak(get_turf(src))
 				new /obj/item/reagent_containers/food/snacks/rogue/meat/steak(get_turf(src))
 				new /obj/effect/decal/cleanable/blood/splatter(get_turf(src))
+				user.mind.adjust_experience(/datum/skill/labor/butchering, amt2raise, FALSE)
 				qdel(src)
 	..()
 
