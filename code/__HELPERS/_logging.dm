@@ -36,27 +36,27 @@
 /proc/log_admin(text)
 	GLOB.admin_log.Add(text)
 	if (CONFIG_GET(flag/log_admin))
-		WRITE_LOG(GLOB.world_game_log, "ADMIN: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] ADMIN: [text]")
 
 /proc/log_admin_private(text)
 	GLOB.admin_log.Add(text)
 	if (CONFIG_GET(flag/log_admin))
-		WRITE_LOG(GLOB.world_game_log, "ADMINPRIVATE: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] ADMINPRIVATE: [text]")
 
 /proc/log_adminsay(text)
 	GLOB.admin_log.Add(text)
 	if (CONFIG_GET(flag/log_adminchat))
-		WRITE_LOG(GLOB.world_game_log, "ADMINPRIVATE: ASAY: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] ADMINPRIVATE: ASAY: [text]")
 
 /proc/log_dsay(text)
 	if (CONFIG_GET(flag/log_adminchat))
-		WRITE_LOG(GLOB.world_game_log, "ADMIN: DSAY: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] ADMIN: DSAY: [text]")
 
 
 /* All other items are public. */
 /proc/log_game(text)
 	if (CONFIG_GET(flag/log_game))
-		WRITE_LOG(GLOB.world_game_log, "GAME: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] GAME: [text]")
 
 /proc/log_mecha(text)
 	if (CONFIG_GET(flag/log_mecha))
@@ -78,15 +78,16 @@
 
 /proc/log_access(text)
 	if (CONFIG_GET(flag/log_access))
-		WRITE_LOG(GLOB.world_game_log, "ACCESS: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] ACCESS: [text]")
 
 /proc/log_law(text)
 	if (CONFIG_GET(flag/log_law))
-		WRITE_LOG(GLOB.world_game_log, "LAW: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] LAW: [text]")
 
 /proc/log_attack(text)
 	if (CONFIG_GET(flag/log_attack))
-		WRITE_LOG(GLOB.world_attack_log, "ATTACK: [text]")
+		WRITE_LOG(GLOB.world_attack_log, "[worldtime2text()] ATTACK: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] ATTACK: [text]")
 
 /proc/log_manifest(ckey, datum/mind/mind,mob/body, latejoin = FALSE)
 	if (CONFIG_GET(flag/log_manifest))
@@ -108,23 +109,23 @@
 
 /proc/log_say(text)
 	if (CONFIG_GET(flag/log_say))
-		WRITE_LOG(GLOB.world_game_log, "SAY: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] SAY: [text]")
 
 /proc/log_ooc(text)
 	if (CONFIG_GET(flag/log_ooc))
-		WRITE_LOG(GLOB.world_game_log, "OOC: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] OOC: [text]")
 
 /proc/log_whisper(text)
 	if (CONFIG_GET(flag/log_whisper))
-		WRITE_LOG(GLOB.world_game_log, "WHISPER: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] WHISPER: [text]")
 
 /proc/log_emote(text)
 	if (CONFIG_GET(flag/log_emote))
-		WRITE_LOG(GLOB.world_game_log, "EMOTE: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] EMOTE: [text]")
 
 /proc/log_prayer(text)
 	if (CONFIG_GET(flag/log_prayer))
-		WRITE_LOG(GLOB.world_game_log, "PRAY: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] PRAY: [text]")
 
 /proc/log_pda(text)
 	if (CONFIG_GET(flag/log_pda))
@@ -146,11 +147,11 @@
 
 /proc/log_vote(text)
 	if (CONFIG_GET(flag/log_vote))
-		WRITE_LOG(GLOB.world_game_log, "VOTE: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] VOTE: [text]")
 
 
 /proc/log_topic(text)
-	WRITE_LOG(GLOB.world_game_log, "TOPIC: [text]")
+	WRITE_LOG(GLOB.world_game_log, "[worldtime2text()] TOPIC: [text]")
 
 /proc/log_href(text)
 	WRITE_LOG(GLOB.world_href_log, "HREF: [text]")
