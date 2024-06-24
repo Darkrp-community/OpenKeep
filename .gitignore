@@ -223,11 +223,12 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 /config/title_screens/images/*
 !/config/title_screens/images/exclude
 /data/triumphs.sav
-config/admins.txt
 cfg/admin.txt
 config/admins.txt
 config/whitelist.txt
+config/config.txt
 config/roguetown/wl_mat.txt
+config/roguetown/wl_test.txt
 config/roguetown/keys_with_ids.txt
 config/dbconfig.txt
 
