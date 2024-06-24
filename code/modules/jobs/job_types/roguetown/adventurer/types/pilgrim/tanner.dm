@@ -16,7 +16,7 @@
 /datum/outfit/job/roguetown/adventurer/tanner/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(3,4), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(3,3,4), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
