@@ -138,7 +138,7 @@
 					steaks = 2
 				if(6)
 					steaks = 3 // the steaks have never been higher
-			var/amt2raise = L.STAINT/3
+			var/amt2raise = user.STAINT/3
 			if(do_after(user, used_time, target = src))
 				for(steaks, steaks<=3, steaks--)
 					new /obj/item/reagent_containers/food/snacks/rogue/meat/steak(get_turf(src))

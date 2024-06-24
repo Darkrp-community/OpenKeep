@@ -418,13 +418,13 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 					used_time -= (user.mind.get_skill_level(/datum/skill/labor/butchering) * 30)
 				visible_message("[user] begins to butcher [src].")
 				playsound(src, 'sound/foley/gross.ogg', 100, FALSE)
-				var/amt2raise = L.STAINT/1.5 // this is due to the fact that butchering is not as spammable as training a sword because you cant just spam click
+				var/amt2raise = user.STAINT/1.5 // this is due to the fact that butchering is not as spammable as training a sword because you cant just spam click
 				if(do_after(user, used_time, target = src))
 					user.mind.adjust_experience(/datum/skill/labor/butchering, amt2raise, FALSE)
-					gib()
+					butcher(user)
 	..()
 
-/mob/living/simple_animal/gib()
+/mob/living/simple_animal/proc/butcher(mob/user)
 	if(ssaddle)
 		ssaddle.forceMove(get_turf(src))
 		ssaddle = null
@@ -450,7 +450,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 				if(rotstuff && istype(I,/obj/item/reagent_containers/food/snacks))
 					var/obj/item/reagent_containers/food/snacks/F = I
 					F.become_rotten()
-	..()
+	gib()
 
 /mob/living/simple_animal/spawn_dust(just_ash = FALSE)
 	if(just_ash || !remains_type)
