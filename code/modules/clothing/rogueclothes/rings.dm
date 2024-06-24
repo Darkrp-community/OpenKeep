@@ -95,3 +95,52 @@
 	var/datum/component/magcom = GetComponent(/datum/component/anti_magic)
 	if(magcom)
 		magcom.RemoveComponent()
+
+// ................... Ring of Protection ....................... (rare treasure, not for purchase)
+/obj/item/clothing/ring/gold/protection
+	name = "ring of protection"
+	desc = "Old ring, inscribed with arcane words. Once held magical powers, perhaps it does still?"
+	icon_state = "ring_protection"
+	var/antileechy
+	var/antimagika
+	var/antishocky
+
+/obj/item/clothing/ring/gold/protection/Initialize()
+	. = ..()
+	switch(rand(1,4))
+		if(1)
+			antileechy = TRUE
+		if(2)
+			antimagika = TRUE
+		if(3)
+			antishocky = TRUE
+		if(4)
+			return
+
+/obj/item/clothing/ring/gold/protection/equipped(mob/user, slot)
+	. = ..()
+	if(antileechy)
+		if (slot == SLOT_RING && istype(user))
+			ADD_TRAIT(user, TRAIT_LEECHIMMUNE,"Unleechable")
+		else
+			REMOVE_TRAIT(user, TRAIT_LEECHIMMUNE,"Unleechable")
+
+	if(antimagika)
+		if (slot == SLOT_RING && istype(user))
+			ADD_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
+		else
+			REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
+
+	if(antishocky)
+		if (slot == SLOT_RING && istype(user))
+			ADD_TRAIT(user, TRAIT_SHOCKIMMUNE,"Shock Immunity")
+		else
+			REMOVE_TRAIT(user, TRAIT_SHOCKIMMUNE,"Shock Immunity")
+
+/obj/item/clothing/ring/gold/protection/dropped(mob/user)
+	. = ..()
+	REMOVE_TRAIT(user, TRAIT_LEECHIMMUNE,"Unleechable")
+	REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
+	REMOVE_TRAIT(user, TRAIT_SHOCKIMMUNE, "Shock Immunity")
+	
+
