@@ -121,7 +121,7 @@
 		return
 	return ..()
 
-/obj/item/bodypart/MiddleClick(mob/user, params)
+/obj/item/bodypart/MiddleClick(mob/living/user, params)
 	var/obj/item/held_item = user.get_active_held_item()
 	if(held_item)
 		if(held_item.get_sharpness() && held_item.wlength == WLENGTH_SHORT)
