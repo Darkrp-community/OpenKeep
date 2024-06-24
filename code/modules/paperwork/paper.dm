@@ -147,7 +147,8 @@
 	if(!user.hud_used.reads)
 		return
 	if(!user.can_read(src))
-		user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
+		if(info)
+			user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
 		return
 	if(mailer)
 		return
