@@ -1873,6 +1873,8 @@
 #include "code\modules\discord\manipulation.dm"
 #include "code\modules\discord\tgs_commands.dm"
 #include "code\modules\discord\toggle_notify.dm"
+#include "code\modules\discord_notify\http.dm"
+#include "code\modules\discord_notify\notify_all.dm"
 #include "code\modules\droning\droning.dm"
 #include "code\modules\economy\_economy.dm"
 #include "code\modules\economy\account.dm"
