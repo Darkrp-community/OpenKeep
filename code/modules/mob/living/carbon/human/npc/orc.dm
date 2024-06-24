@@ -447,7 +447,7 @@ mob/living/carbon/human/species/orc/ambush/after_creation()
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				cloak = /obj/item/clothing/cloak/raincloak/brown
 			if(prob(30))
-				r_hand = /obj/item/rogueweapon/greatsword/zwei
+				r_hand = /obj/item/rogueweapon/woodcut
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				cloak = /obj/item/clothing/cloak/raincloak/brown
@@ -513,8 +513,56 @@ mob/living/carbon/human/species/orc/ambush/after_creation()
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 
 
+///////////////////////////////////////////////////////////////////////////////////////
+/mob/living/carbon/human/species/orc/warlord
+	name = "Warlord Orc"
+	var/loadout = /datum/outfit/job/roguetown/npc/orc/warlord
+	ambushable = FALSE
 
+/mob/living/carbon/human/species/orc/warlord/after_creation()
+	..()
+	QDEL_NULL(sexcon)
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/warlord)
+	aggressive=1
+	mode = AI_IDLE
+	dodgetime = 15
+	canparry = TRUE
+	flee_in_pain = FALSE
+	wander = TRUE
 
+/datum/outfit/job/roguetown/npc/orc/warlord/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.STASTR = 14
+	H.STASPD = 14
+	H.STACON = 13
+	H.STAEND = 13
+	var/loadout = rand(1,5)
+	switch(loadout)
+		if(1) //Halberd Warlord
+			r_hand = /obj/item/rogueweapon/halberd
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			head = /obj/item/clothing/head/roguetown/helmet/orc
+		if(2) //Greatsword Warlord
+			r_hand = /obj/item/rogueweapon/greatsword
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			head = /obj/item/clothing/head/roguetown/helmet/orc
+		if(3) //IF THERE IS A WHIP, THERE'S A WAY!
+			r_hand = /obj/item/rogueweapon/whip/antique
+			l_hand = /obj/item/rogueweapon/sword/short
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			head = /obj/item/clothing/head/roguetown/helmet/orc
+		if(4) // Big Sword and Big Shield
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			r_hand = /obj/item/rogueweapon/sword/sabre/messer
+			l_hand = /obj/item/rogueweapon/shield/tower
+			head = /obj/item/clothing/head/roguetown/helmet/orc
+		if(5) //Anti Knight STR Build
+			r_hand = /obj/item/rogueweapon/flail/sflail
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			head = /obj/item/clothing/head/roguetown/helmet/orc
 
 
 
