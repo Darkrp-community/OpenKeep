@@ -66,21 +66,6 @@
 	can_do_sex = 1
 	return can_do_sex
 
-/mob/living/carbon/human/proc/sex_ask(mob/living/guy)
-	if(!mind)
-		return
-	if(!client)
-		return
-	playsound_local(src, 'sound/misc/rebel.ogg', 100, FALSE)
-	var/garbaggio = alert(src, "Your character are gonna be zaped","Zape", "Agree", "Decline")
-	if(garbaggio == "Agree")
-			to_chat(guy,"<span class='blue'>[src] is forced into a perversion.</span>")
-			return TRUE
-	else
-		to_chat(src,"<span class='danger'>I resist with all forces left.</span>")
-		to_chat(guy,"<span class='danger'>[src] resists.</span>")
-		return FALSE
-
 /mob/living/carbon/MiddleMouseDrop_T(mob/living/target, mob/living/user)
 	// SELF ONTO SELF
 	if(user.mmb_intent)
@@ -114,9 +99,6 @@
 		var/ourgroin = TRUE
 		var/ourmouth = TRUE
 		var/theirmouth = TRUE
-		if(src.cmode)
-			if(!src.sex_ask(user))
-				return		
 		if(!get_location_accessible(src, BODY_ZONE_PRECISE_MOUTH))
 			theirmouth = FALSE
 		if(!get_location_accessible(src, BODY_ZONE_PRECISE_GROIN))
