@@ -1,6 +1,6 @@
 /obj/effect/sunlight
 	var/brightness = 10
-	light_power = 1
+	light_power = 2
 	light_color = "#2f1313"
 	layer = BELOW_MOB_LAYER
 	icon = 'icons/effects/effects.dmi'
@@ -16,7 +16,7 @@
 	light_height = 0
 
 /obj/effect/sunlight/Initialize()
-	light_color = pick("#dbbfbf", "#ddd7bd", "#add1b0", "#a4c0ca", "#ae9dc6", "#d09fbf")
+	light_color = pick("#ffefd5", "#fffacd", "#fafad2", "#e6e6fa", "#ffe4e1", "#ffffe0")
 	..()
 	if(istype(loc, /turf/open/transparent/openspace))
 		var/turf/target = get_step_multiz(src, DOWN)
@@ -46,13 +46,13 @@
 	mode = GLOB.tod
 	switch(mode)
 		if("night")
-			light_color = pick("#100a18", "#0c0412", "#0f0012")
+			light_color = pick("#1a0d2f", "#160920", "#210933")
 		if("dusk")
-			light_color = pick("#c26f56", "#c05271", "#b84933")
+			light_color = pick("#ff8c69", "#ff6f91", "#ff4500")
 		if("dawn")
-			light_color = pick("#394579", "#49385d", "#3a1537")
+			light_color = pick("#6a5acd", "#7b68ee", "#800080")
 		if("day")
-			light_color = pick("#dbbfbf", "#ddd7bd", "#add1b0", "#a4c0ca", "#ae9dc6", "#d09fbf")
+			light_color = pick("#ffefd5", "#fffacd", "#fafad2", "#e6e6fa", "#ffe4e1", "#ffffe0")
 	set_light(brightness, light_power, light_color)
 
 /obj/effect/sunlight/ultra
