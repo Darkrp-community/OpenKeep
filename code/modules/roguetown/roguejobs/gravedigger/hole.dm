@@ -44,6 +44,7 @@
 		switch(lootroll)
 			if(1)
 				new /mob/living/carbon/human/species/skeleton/npc(mastert)
+				new /obj/structure/closet/crate/chest/lootbox(mastert)
 			if(2)
 				new /obj/structure/closet/crate/chest/lootbox(mastert)
 	..()

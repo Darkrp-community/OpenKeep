@@ -81,6 +81,8 @@ All foods are distributed among various categories. Use common sense.
 	smeltresult = /obj/item/ash
 	//Placeholder for effect that trigger on eating that aren't tied to reagents.
 
+
+
 /datum/intent/food
 	name = "feed"
 	noaa = TRUE
@@ -172,7 +174,7 @@ All foods are distributed among various categories. Use common sense.
 			result = new /obj/item/reagent_containers/food/snacks/badrecipe(A)
 		initialize_cooked_food(result, 1)
 		return result
-	if(istype(A,/obj/machinery/light/rogue/hearth) || istype(A,/obj/machinery/light/rogue/firebowl))
+	if(istype(A,/obj/machinery/light/rogue/hearth) || istype(A,/obj/machinery/light/rogue/firebowl) || istype(A,/obj/machinery/light/rogue/campfire))
 		var/obj/item/result
 		if(fried_type)
 			result = new fried_type(A)
@@ -341,6 +343,7 @@ All foods are distributed among various categories. Use common sense.
 			else
 				. += "[src] was bitten multiple times!"
 
+
 /obj/item/reagent_containers/food/snacks/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/storage))
 		..() // -> item/attackby()
@@ -399,6 +402,11 @@ All foods are distributed among various categories. Use common sense.
 /obj/item/reagent_containers/food/snacks/proc/slice(obj/item/W, mob/user)
 	if((slices_num <= 0 || !slices_num) || !slice_path) //is the food sliceable?
 		return FALSE
+
+	if(slice_sound)
+		playsound(get_turf(user), 'sound/neu/slicing.ogg', 60, TRUE, -1) // added some choppy sound
+	if(chopping_sound)
+		playsound(get_turf(user), 'sound/neu/chopping_block.ogg', 60, TRUE, -1) // added some choppy sound
 
 	if ( \
 			!isturf(src.loc) || \

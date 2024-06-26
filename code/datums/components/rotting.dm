@@ -57,17 +57,16 @@
 
 	var/findonerotten = FALSE
 	var/shouldupdate = FALSE
-	var/dustme = FALSE
 	for(var/obj/item/bodypart/B in C.bodyparts)
 		if(!B.skeletonized && B.is_organic_limb())
 			if(!B.rotted)
-				if(amount > 5 MINUTES)
+				if(amount > 25 MINUTES)
 					B.rotted = TRUE
 					findonerotten = TRUE
 					shouldupdate = TRUE
 					C.change_stat("constitution", -8, "rottenlimbs")
 			else
-				if(amount > 15 MINUTES)
+				if(amount > 45 MINUTES)
 					if(!is_zombie)
 						B.skeletonize()
 						if(C.dna && C.dna.species)
@@ -76,14 +75,6 @@
 						shouldupdate = TRUE
 				else
 					findonerotten = TRUE
-		if(amount > 25 MINUTES)
-			if(!is_zombie)
-				if(B.skeletonized)
-					dustme = TRUE
-
-	if(dustme)
-		qdel(src)
-		return C.dust(drop_items=TRUE)
 
 	if(findonerotten)
 		var/turf/open/T = C.loc

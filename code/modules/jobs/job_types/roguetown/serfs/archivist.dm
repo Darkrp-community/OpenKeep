@@ -29,9 +29,9 @@
 		head  = /obj/item/clothing/head/roguetown/roguehood/black
 	else
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/nightman
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman
 		pants = /obj/item/clothing/under/roguetown/tights/black
-		head = /obj/item/clothing/head/roguetown/nightman
+		head = /obj/item/clothing/head/roguetown/niteman
 	H.virginity = TRUE
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver

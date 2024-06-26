@@ -35,7 +35,7 @@
 /obj/item/soap/examine(mob/user)
 	. = ..()
 	var/max_uses = initial(uses)
-	var/msg = "It looks like it just came out of the package."
+	var/msg = "It looks like it was just made."
 	if(uses != max_uses)
 		var/percentage_left = uses / max_uses
 		switch(percentage_left)
