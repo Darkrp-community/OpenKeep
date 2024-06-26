@@ -88,12 +88,12 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define STRESS_GOOD 1
 #define STRESS_VGOOD 0
 
-// --------- NUTRITION VALUES DEFINES --------------------
+/*	........   Nutrition defines   ................ */
 #define MEAL_FILLING 30
 #define MEAL_GOOD 24
-#define MEAL_AVERAGE 20
-#define MEAL_MEAGRE 16
-#define SNACK_NUTRITIOUS 12
+#define MEAL_AVERAGE 18
+#define MEAL_MEAGRE 15
+#define SNACK_NUTRITIOUS 9
 #define SNACK_DECENT 6
 #define SNACK_POOR 3
 
