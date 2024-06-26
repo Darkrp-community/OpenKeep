@@ -113,6 +113,6 @@
 
 /atom/movable/screen/alert/status_effect/buff/thinking_cap
 	name = "My mind is clear"
-	desc = "<span class='nicegreen'>My hat deflects mind-clouding rays of Ziso...</span>\n"
+	desc = "<span class='nicegreen'>My hat deflects mind-clouding rays of Zizo...</span>\n"
 	icon = 'icons/mob/actions/roguespells.dmi'
 	icon_state = ""
