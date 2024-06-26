@@ -79,9 +79,6 @@
 					if(racist.skin_tone == user_skin_tones[tone])
 						user_skin_tone_seen = lowertext(tone)
 						break
-				if((user_skin_tone_seen == "lalvestine" && skin_tone_seen == "shalvistine") || \
-					(user_skin_tone_seen == "shalvistine" && skin_tone_seen == "lalvestine"))
-					slop_lore_string = ", <span class='danger'>A TRAITOR!</span>"
 			. += "<span class='info'>[capitalize(m2)] [skin_tone_wording] is [skin_tone_seen][slop_lore_string]</span>"
 
 		if(ishuman(user))
