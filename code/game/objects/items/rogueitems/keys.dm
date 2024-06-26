@@ -217,7 +217,7 @@
 	lockid = "mason"
 
 /obj/item/roguekey/niteman
-	name = "nightmaster's key"
+	name = "nitemaster's key"
 	desc = "The master key of Eora's House."
 	icon_state = "greenkey"
 	lockid = "nightman"
