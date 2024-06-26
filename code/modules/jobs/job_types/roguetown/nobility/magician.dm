@@ -34,7 +34,7 @@
 	backr = /obj/item/storage/backpack/rogue/satchel
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/black
 	cloak = /obj/item/clothing/cloak/black_cloak
-//	id = /obj/item/clothing/ring/gold/protection
+	id = /obj/item/clothing/ring/gold/protection
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltr = /obj/item/keyring/mage
 	r_hand = /obj/item/rogueweapon/woodstaff
@@ -114,10 +114,3 @@
 	desc = "<span class='nicegreen'>My hat deflects mind-clouding rays of Ziso...</span>\n"
 	icon = 'icons/mob/actions/roguespells.dmi'
 	icon_state = ""
-
-/obj/item/book/rogue/magicaltheory
-    name = "Arcane Foundations - A historie of Magicks"
-    desc = "Written by the rector of the college of magick"
-	icon_state ="knowledge_0"
-	base_icon_state = "knowledge"
-    bookfile = "MagicalTheory.json"
