@@ -11,44 +11,57 @@
 		"Elf",
 		"Half-Elf",
 		"Aasimar",
+		"Dwarf",
 	)
 	allowed_sexes = list(MALE, FEMALE)
-	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fireball/greater, /obj/effect/proc_holder/spell/invoked/projectile/fireball, /obj/effect/proc_holder/spell/aoe_turf/repulse, /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt, /obj/effect/proc_holder/spell/invoked/projectile/fetch, /obj/effect/proc_holder/spell/targeted/ethereal_jaunt, /obj/effect/proc_holder/spell/targeted/projectile/magic_missile, /obj/effect/proc_holder/spell/aoe_turf/knock)
 	display_order = JDO_MAGICIAN
-	tutorial = "Your creed is one dedicated to the conquering of the arcane arts and the constant thrill of knowledge. \
-		You owe your life to the Lord, for it was his coin that allowed you to continue your studies in these dark times. \
-		In return, you have proven time and time again as justicar and trusted advisor to their reign."
+	tutorial ="Dream interpreter, soothsayer, astrologer and valued courtier. \
+	Indebted to the ruler for funding yils of mystical studies in these dark times, \
+	only wisdom and arcane knowledge amassed during a long life will allow a mage to unlock their full potential."
 	outfit = /datum/outfit/job/roguetown/magician
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
 	give_bank_account = 120
-	min_pq = -4
+	min_pq = 0
 
 /datum/outfit/job/roguetown/magician/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	head = /obj/item/clothing/head/roguetown/wizhat/gen
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	backr = /obj/item/storage/backpack/rogue/satchel
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/black
 	cloak = /obj/item/clothing/cloak/black_cloak
-	id = /obj/item/clothing/ring/gold
+//	id = /obj/item/clothing/ring/gold/protection
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltr = /obj/item/keyring/mage
-	id = /obj/item/clothing/ring/gold
 	r_hand = /obj/item/rogueweapon/woodstaff
+	backpack_contents = list(/obj/item/scrying = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/arcane, pick(6,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 		H.change_stat("strength", -2)
-		H.change_stat("intelligence", 5)
+		H.change_stat("intelligence", 3)
 		H.change_stat("constitution", -2)
 		H.change_stat("speed", -2)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse)
+		if((H.facial_hairstyle == "Wise Hermit") || (H.facial_hairstyle == "Knightly") || (H.facial_hairstyle == "Raider") || (H.facial_hairstyle == "Rumata") || (H.facial_hairstyle == "Choppe") || (H.facial_hairstyle == "Full Beard") || (H.facial_hairstyle == "Fullest Beard") || (H.facial_hairstyle == "Drinker") || (H.facial_hairstyle == "Knowledge") || (H.facial_hairstyle == "Brew") || (H.facial_hairstyle == "Ranger"))
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
 		if(H.age == AGE_OLD)
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/courtmage
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/ethereal_jaunt)
 			H.change_stat("speed", -1)
 			H.change_stat("intelligence", 1)
 			if(H.dna.species.id == "human")
@@ -57,4 +70,54 @@
 				head = /obj/item/clothing/head/roguetown/wizhat
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe/wizard
 				H.dna.species.soundpack_m = new /datum/voicepack/male/wizard()
-	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+
+//............... Unique Court Mage Stuff ...........................
+/obj/item/clothing/head/roguetown/wizhat/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind && user.mind.assigned_role == "Court Magician")
+		if(slot == SLOT_HEAD && istype(user))
+			user.apply_status_effect(/datum/status_effect/buff/thinking_cap)
+		else
+			user.remove_status_effect(/datum/status_effect/buff/thinking_cap)
+	else return
+
+/obj/item/clothing/head/roguetown/wizhat/dropped(mob/living/user, slot)
+	. = ..()
+	user.remove_status_effect(/datum/status_effect/buff/thinking_cap)
+
+
+/datum/status_effect/buff/thinking_cap
+	id = "thinkingcap"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/thinking_cap
+	effectedstats = list("intelligence" = 2)
+	duration = 240 MINUTES
+
+/datum/status_effect/buff/thinking_cap/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.remove_stress(/datum/stressevent/wheresmyhat)
+
+/datum/status_effect/buff/thinking_cap/on_remove()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/stressevent/wheresmyhat)
+
+/datum/stressevent/wheresmyhat
+	timer = 0
+	stressadd = 1
+	desc = "<span class='red'>I miss my hat....</span>"
+
+/atom/movable/screen/alert/status_effect/buff/thinking_cap
+	name = "My mind is clear"
+	desc = "<span class='nicegreen'>My hat deflects mind-clouding rays of Ziso...</span>\n"
+	icon = 'icons/mob/actions/roguespells.dmi'
+	icon_state = ""
+
+/obj/item/book/rogue/magicaltheory
+    name = "Arcane Foundations - A historie of Magicks"
+    desc = "Written by the rector of the college of magick"
+	icon_state ="knowledge_0"
+	base_icon_state = "knowledge"
+    bookfile = "MagicalTheory.json"
