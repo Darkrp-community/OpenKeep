@@ -781,7 +781,7 @@
 	base_state = "serving"
 	max_integrity = 250
 	over_state = "servingopen"
-	openSound = 'sound/neu/blindsopen.ogg'
-	closeSound = 'sound/neu/blindsclose.ogg'
+	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
+	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
 	dir = NORTH
 	locked = TRUE
