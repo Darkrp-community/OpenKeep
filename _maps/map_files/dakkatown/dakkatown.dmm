@@ -937,7 +937,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/shop)
 "ef" = (
-/obj/item/soap/deluxe,
+/obj/item/bath/soap,
 /turf/open/floor/rogue/tile/bath,
 /area/rogue/indoors/town/bath)
 "eg" = (
@@ -1995,9 +1995,10 @@
 /area/rogue/outdoors/exposed/manorgarri)
 "iF" = (
 /obj/structure/closet/crate/roguecloset/inn/south,
-/obj/item/clothing/suit/roguetown/shirt/dress/gen/black,
-/obj/item/clothing/suit/roguetown/shirt/dress/gen/blue,
-/obj/item/clothing/suit/roguetown/shirt/dress/gen/purple,
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress,
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/black,
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/green,
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random,
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -6512,10 +6513,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/tavern)
 "Ca" = (
-/obj/structure/fluff/statue/psy{
-	desc = "PLACE MANNEQUIN HERE, FUCKER!";
-	name = "MANNEQUIN SPOT"
-	},
+/obj/structure/mannequin/male,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town)
 "Cb" = (
@@ -7213,6 +7211,14 @@
 	dir = 4
 	},
 /area/rogue/indoors/town/apothecary)
+"EZ" = (
+/obj/structure/closet/crate/roguecloset,
+/obj/item/clothing/under/roguetown/loincloth/brown,
+/obj/item/clothing/under/roguetown/loincloth/brown,
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
+/turf/open/floor/rogue/ruinedwood/chevron,
+/area/rogue/indoors/town/bath)
 "Fa" = (
 /turf/closed/wall/mineral/rogue/pipe,
 /area/rogue/outdoors/town/roofs)
@@ -9876,8 +9882,6 @@
 /obj/item/roguekey/nightman,
 /obj/item/roguekey/nightmaiden,
 /obj/item/roguekey/nightmaiden,
-/obj/item/clothing/under/roguetown/loincloth/brown,
-/obj/item/clothing/under/roguetown/loincloth/brown,
 /obj/item/clothing/ring/silver,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/bath)
@@ -10670,6 +10674,7 @@
 /area/rogue/outdoors/town)
 "TO" = (
 /obj/structure/closet/crate/roguecloset/inn/south,
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess,
 /obj/item/clothing/suit/roguetown/shirt/dress,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -54321,7 +54326,7 @@ hK
 Lj
 Lj
 gL
-Di
+EZ
 Jz
 cM
 Jz
