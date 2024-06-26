@@ -216,14 +216,14 @@
 	icon_state = "brownkey"
 	lockid = "mason"
 
-/obj/item/roguekey/nightman
+/obj/item/roguekey/niteman
 	name = "nightmaster's key"
 	desc = "The master key of Eora's House."
 	icon_state = "greenkey"
 	lockid = "nightman"
 
-/obj/item/roguekey/nightmaiden
-	name = "nightmaiden's key"
+/obj/item/roguekey/nitemaiden
+	name = "nitemaiden's key"
 	desc = "This brownish key opens a few doors within the pleasure house."
 	icon_state = "brownkey"
 	lockid = "nightmaiden"
