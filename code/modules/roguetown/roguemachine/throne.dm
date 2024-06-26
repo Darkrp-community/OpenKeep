@@ -1,6 +1,6 @@
 /obj/structure/roguethrone
 	name = "throne of rockhill"
-	desc = "A big throne, to hold the Lord's giant personality. Say 'help' with the crown on your head if you are confused."
+	desc = "A big throne, to hold the Lord's giant personality. Say 'помощь' with the crown on your head if you are confused."
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	icon_state = "throne"
 	density = FALSE
