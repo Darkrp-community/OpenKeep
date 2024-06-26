@@ -71,7 +71,7 @@
 				return FALSE
 		else
 			L.mob_timers[MT_PSYPRAY] = world.time
-		if(!findtext(message2recognize, "[M.PATRON]"))
+		if(!findtext(message2recognize, "[M.patron]"))
 			return FALSE
 		else
 			L.playsound_local(L, 'sound/misc/notice (2).ogg', 100, FALSE)
@@ -100,9 +100,9 @@
 			L.forceMove(T)
 			return FALSE
 	if(length(message2recognize) > 15)
-		if(findtext(message2recognize, "[M.PATRON]"))
+		if(findtext(message2recognize, "[M.patron]"))
 			L.playsound_local(L, 'sound/misc/notice (2).ogg', 100, FALSE)
-			to_chat(L, "<font color='yellow'>I, [M.PATRON], have heard your prayer and grant you favor.</font>")
+			to_chat(L, "<font color='yellow'>I, [M.patron], have heard your prayer and yet cannot aid you.</font>")
 			var/obj/item/underworld/coin/C = new
 			L.put_in_active_hand(C)
 			return TRUE
