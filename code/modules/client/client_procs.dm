@@ -1140,4 +1140,4 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	set name = "Commend"
 	set desc = "Make that one person you had Quality RolePlay with happy."
 
-	commendation_popup()
+	commendation_popup(forced)
