@@ -159,7 +159,7 @@
 	name = "buckled hat"
 	icon_state = "puritan_hat"
 
-/obj/item/clothing/head/roguetown/nightman
+/obj/item/clothing/head/roguetown/niteman
 	name = "teller's hat"
 	icon_state = "tophat"
 	color = CLOTHING_BLACK
@@ -431,6 +431,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
+	max_integrity = 250
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard
 	name = "savoyard"
@@ -491,7 +492,7 @@
 		user.update_fov_angles()
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket
-	name = "bucket helmet"
+	name = "great helmet"
 	icon_state = "topfhelm"
 	item_state = "topfhelm"
 	emote_environment = 3

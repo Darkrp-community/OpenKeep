@@ -192,6 +192,7 @@
 	if(!user.hud_used.reads)
 		return
 	if(!user.can_read(src))
+		user.mind.adjust_experience(/datum/skill/misc/reading, 4, FALSE)
 		return
 	if(in_range(user, src) || isobserver(user))
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -204,7 +205,7 @@
 /obj/item/book/rogue/bibble/attack(mob/living/M, mob/user)
 	if(user.mind && user.mind.assigned_role == "Priest")
 		if(!user.can_read(src))
-			to_chat(user, "<span class='warning'>I don't understand these scribbly black lines.</span>")
+			//to_chat(user, "<span class='warning'>I don't understand these scribbly black lines.</span>")
 			return
 		M.apply_status_effect(/datum/status_effect/buff/blessed)
 		user.visible_message("<span class='notice'>[user] blesses [M].</span>")
@@ -499,6 +500,7 @@
 	if(!user.hud_used.reads)
 		return
 	if(!user.can_read(src))
+		user.mind.adjust_experience(/datum/skill/misc/reading, 4, FALSE)
 		return
 	if(in_range(user, src) || isobserver(user))
 		var/dat = {"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
@@ -586,14 +588,14 @@
 		base_icon_state = "book[rand(1,8)]"
 		icon_state = "[base_icon_state]_0"
 
-// .....Example of layout of added in book.
+/* .....Example of layout of added in book.
 /obj/item/book/rogue/random/templatebooknamehere
 	name = "Title of your book here"
 	desc = "Who wrote it or maybe some flavor here"
 	icon_state ="book_random"
 	base_icon_state = "book"
 	bookfile = "templatebooknamehere.json"
-// .....End of Example
+*/ // .....End of Example
 
 
 /obj/item/book/rogue/random/vownecrapage

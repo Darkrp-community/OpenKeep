@@ -42,7 +42,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/pick
-	backr = /obj/item/rogueweapon/stoneaxe/woodcut
+	backr = /obj/item/rogueweapon/woodcut
 	backl = /obj/item/storage/backpack/rogue/backpack
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", 2)
