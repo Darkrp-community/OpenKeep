@@ -15,8 +15,12 @@
 /obj/structure/fermenting_barrel/Initialize()
 	// Bluespace beakers, but without the portability or efficiency in circuits.
 	create_reagents(900, DRAINABLE | AMOUNT_VISIBLE | REFILLABLE)
-	icon_state = "barrel[rand(1,3)]"
+	if(icon_state == "barrel1")
+		icon_state = "barrel[rand(1,3)]"
 	. = ..()
+
+
+
 
 /obj/structure/fermenting_barrel/Destroy()
 	chem_splash(loc, 2, list(reagents))

@@ -35,7 +35,7 @@
 	icon_state = "potato_wedges"
 	filling_color = "#E9967A"
 	bitesize = 100
-
+/*
 
 /obj/item/reagent_containers/food/snacks/grown/potato/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
@@ -46,7 +46,7 @@
 		user.put_in_hands(Wedges)
 	else
 		return ..()
-
+*/
 
 // Sweet Potato
 /obj/item/seeds/potato/sweet
