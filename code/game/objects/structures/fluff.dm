@@ -673,6 +673,7 @@
 /obj/structure/fluff/signage/examine(mob/user)
 	. = ..()
 	if(!user.is_literate())
+		user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
 		. += "I have no idea what it says."
 	else
 		. += "It says \"TOWN ON ROCKHILL\""
@@ -685,6 +686,7 @@
 /obj/structure/fluff/buysign/examine(mob/user)
 	. = ..()
 	if(!user.is_literate())
+		user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
 		. += "I have no idea what it says."
 	else
 		. += "It says \"IMPORTS\""
@@ -697,6 +699,7 @@
 /obj/structure/fluff/sellsign/examine(mob/user)
 	. = ..()
 	if(!user.is_literate())
+		user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
 		. += "I have no idea what it says."
 	else
 		. += "It says \"EXPORTS\""
@@ -715,6 +718,7 @@
 	. = ..()
 	if(wrotesign)
 		if(!user.is_literate())
+			user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
 			. += "I have no idea what it says."
 		else
 			. += "It says \"[wrotesign]\"."
