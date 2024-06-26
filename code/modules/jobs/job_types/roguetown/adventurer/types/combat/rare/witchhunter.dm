@@ -5,9 +5,8 @@
 	allowed_sexes = list(MALE)
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/puritan
-	maximum_possible_slots = 1
-	pickprob = 15
 	category_tags = list(CTAG_ADVENTURER)
+	maximum_possible_slots = 2
 	min_pq = 2
 
 /datum/outfit/job/roguetown/adventurer/puritan/pre_equip(mob/living/carbon/human/H)
