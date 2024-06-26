@@ -41,7 +41,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/music, pick(1,2), TRUE)
 	if(H.gender == MALE)
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-		shirt = /obj/item/clothing/suit/roguetown/shirt
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 
 // Washing Implements
