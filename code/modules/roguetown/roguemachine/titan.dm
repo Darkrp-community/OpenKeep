@@ -73,7 +73,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	switch(mode)
 		if(0)
 			if(findtext(message2recognize, "help"))
-				say("My commands are: Make Announcement, Make Decree, Make Law, Remove Law, Purge Laws, Declare Outlaw, Set Taxes, Summon Crown, Nevermind")
+				say("My commands are: Make Announcement, Make Decree, Make Law, Remove Law, Purge Laws, Declare Outlaw, Set Taxes, Change Position, Summon Crown, Nevermind")
 				playsound(src, 'sound/misc/machinelong.ogg', 100, FALSE, -1)
 			if(findtext(message2recognize, "make announcement"))
 				if(nocrown)
@@ -162,6 +162,14 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 				playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 				give_tax_popup(H)
 				return
+			if(findtext_char(message2recognize, "change position"))
+				if(notlord || nocrown)
+					say("You are not my master!")
+					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
+					return
+				playsound(src, 'sound/misc/machinequestion.ogg', 100, FALSE, -1)
+				give_job_popup(H)
+				return
 			if(findtext(message2recognize, "summon crown"))
 				if(SSroguemachine.crown)
 					var/obj/item/clothing/head/roguetown/crown/serpcrown/I = SSroguemachine.crown
@@ -208,6 +216,27 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 		SStreasury.tax_value = newtax / 100
 		priority_announce("The new tax in Rockhill shall be [newtax] percent.", "The Generous Lord Decrees", 'sound/misc/alert.ogg', "Captain")
 
+/obj/structure/roguemachine/titan/proc/give_job_popup(mob/living/carbon/human/user)
+	if(!Adjacent(user))
+		return
+
+	var/mob/list/possible_mobs = orange(2, src)
+	var/mob/victim = input(user, "Who should change their post?", src, null) as null|mob in possible_mobs - user
+	if(isnull(victim) || !Adjacent(user))
+		return
+
+	var/list/possible_positions = GLOB.noble_positions + GLOB.garrison_positions + GLOB.church_positions + GLOB.serf_positions + GLOB.peasant_positions + GLOB.apprentices_positions + GLOB.allmig_positions - "King"
+	var/new_pos = input(user, "Select their new position", src, null) as anything in possible_positions
+
+	if(isnull(new_pos) || !Adjacent(user))
+		return
+
+	playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
+	victim.job = new_pos
+	if(!SScommunications.can_announce(user))
+		return
+
+	priority_announce("[victim.real_name]'s new position is [new_pos].", "The King Decrees", 'sound/misc/alert.ogg', "Captain")
 
 /obj/structure/roguemachine/titan/proc/make_announcement(mob/living/user, raw_message)
 	if(!SScommunications.can_announce(user))
