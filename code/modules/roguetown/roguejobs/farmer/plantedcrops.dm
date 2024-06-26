@@ -154,7 +154,7 @@
 /obj/machinery/crop/proc/rainedon()
 	water = 100
 
-/obj/machinery/crop/attackby(obj/item/I, mob/user, params)
+/obj/machinery/crop/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/seeds))
 		to_chat(user, "<span class='warning'>Something is already growing here.</span>")
 		return
@@ -176,6 +176,7 @@
 						myseed.yield -= 1
 						playsound(src,"plantcross", 100, FALSE)
 						user.visible_message("<span class='notice'>[user] harvests [src] with [I].</span>")
+						user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT)
 					else
 						break
 				if(myseed?.yield <= 0)
@@ -197,12 +198,14 @@
 				playsound(src,'sound/items/seed.ogg', 100, FALSE)
 				new /obj/item/natural/fibers(src.loc)
 				user.visible_message("<span class='notice'>[user] rips out [src] with [I].</span>")
+				user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT)
 				qdel(src)
 				return
 			else if(weeds > 0)
 				playsound(src,'sound/items/seed.ogg', 100, FALSE)
 				user.visible_message("<span class='notice'>[user] rips out some weeds with [I].</span>")
 				weeds = max(weeds - rand(1,50), 0)
+				user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT)
 				update_seed_icon()
 		return
 
@@ -232,7 +235,7 @@
 			return
 	..()
 
-/obj/machinery/crop/attack_hand(mob/M)
+/obj/machinery/crop/attack_hand(mob/living/M)
 	if(!myseed)
 		qdel(src)
 	var/harvtime = 60
@@ -248,18 +251,30 @@
 			update_seed_icon()
 			return
 	if(growth >= 100)
+		var/obj/item/offhand = M.get_inactive_held_item()//ghetto farming code starts here
+		var/success_chance = 10
+		if(offhand)
+			var/foundcut = FALSE
+			for(var/X in offhand.possible_item_intents)
+				var/datum/intent/D = new X
+				if(D.blade_class == BCLASS_CUT)
+					foundcut = TRUE
+					break
+			if(foundcut)
+				success_chance += 40
+				harvtime /= 2 //ghetto farming code ends here
 		for(var/i in 1 to myseed.yield)
 			if(php <= 0)
 				return
 			if(do_after(M,harvtime, target = src))
 				myseed.yield -= 1
 				playsound(src,"plantcross", 100, FALSE)
-				var/probbi = 10
 				if(M.mind.get_skill_level(/datum/skill/labor/farming))
-					probbi = 100
-				if(prob(probbi))
+					success_chance = 100
+				if(prob(success_chance))
 					new myseed.product(src.loc)
 					M.visible_message("<span class='info'>[M] harvests something from [src].</span>")
+					M?.mind?.adjust_experience(/datum/skill/labor/farming, M.STAINT)
 				else
 					M.visible_message("<span class='warning'>[M] spoils something from [src]!</span>")
 			else
@@ -277,11 +292,22 @@
 					php = 0
 				update_seed_icon()
 
-/obj/machinery/crop/attack_right(mob/user)
+/obj/machinery/crop/attack_right(mob/living/user)
 	if(weeds > 0)
-		if(do_after(user,50, target = src)) //ROGTODO make this based on farming skill
+		var/deweed_time = max((50 - user?.mind?.get_skill_level(/datum/skill/labor/farming) * 5), 2)
+		var/obj/item/offhand = user.get_inactive_held_item()//ghetto farming code starts here
+		if(offhand)
+			var/foundscoop = FALSE
+			for(var/X in offhand.possible_item_intents)
+				if(X == /datum/intent/shovelscoop)
+					foundscoop = TRUE
+					break
+			if(foundscoop)
+				deweed_time /= 2 //ghetto farming code ends here
+		if(do_after(user, deweed_time, target = src))
 			playsound(src,"plantcross", 100, FALSE)
 			user.visible_message("<span class='notice'>[user] rips out some weeds.</span>")
 			weeds = max(weeds - rand(1,30), 0)
+			user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT)
 			update_seed_icon()
 		return
