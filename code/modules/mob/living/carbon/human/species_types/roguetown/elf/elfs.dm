@@ -5,17 +5,16 @@
 	name = "Elf"
 	id = "elf"
 	desc = "<b>Elf</b><br>\
-	Elves, or Wood-Elf by the Elder races, are a generic term for tall, pointy-eared \
-	humanoids that trace their original heritage to the ancient mysterious Snow Elves. \
-	Considering their diverse history, it is extremely difficult for other mortals \
-	to even concept the various intricacies found in elven society, and the hundreds \
-	if not thousands of tribes that exist within their culture! \
-	Elves tend to be looked poorly upon by humans, as historically the two races have \
-	been rivals in various conflicts and territorial disputes. This however does not stop \
-	many humans and elves from forming relationships, which are capable of producing child.\
-	Elves are known for their intelligence and sharp eyes, but their graceful nature does \
-	not lend itself to the concepts of strength or durability... \
-	There are elves from a small smattering of tribes in these parts."
+	Elves, the first race of Grimoria is characterized by lengthened age, \
+	low fertility, and magical aptitude with a vast spectrum of cultures and sub-races. \
+	Previously immortal, now mortal as punishment by the Forgotten God for their crimes \
+	against the other races in their pre-historic days, enslavement, \
+	hunting as a game, and other horrendous activities. \
+	Elves have since been in rapid decline due to their divine judgment, \
+	enclaves are few and scattered around the various realms of their ancestral homeland of Grimoria. \
+	Now, the Elves have integrated into the multiple races realms in the known world, \
+	some forming relationships and strong bonds. \
+	There are Elves from a small smattering of tribes in these parts."
 
 	skin_tone_wording = "Tribal Identity"
 

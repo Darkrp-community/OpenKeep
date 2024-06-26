@@ -4,7 +4,17 @@
 /datum/species/aasimar
 	name = "Aasimar"
 	id = "aasimar"
-	desc = ""
+	desc = "<b>Aasimar</b><br>\
+	Offspring created using mysterious means by the Pantheon by command of Goddess Astrata, \
+	to serve as soldiers in the Apotheosis God-War. \
+	They quickly earned the scorn of the mortal races they fought alongside with \
+	for their insensitive and reckless decisions, leading to many deaths of those they were assigned to protect. \
+	They were abandoned by Astrata after the war concluded, \
+	now characterized as ignorant, innocent, and stubborn. \
+	Even long after the Apotheosis, \
+	surviving Aasimar still tend to be shunned for their \
+	dullness to the world, headstrong personalities, and violent legacy. \
+	The Aasimar are 'molded' from various parts of Godly creations and the Pantheon."
 
 	skin_tone_wording = "Crafted With"
 
