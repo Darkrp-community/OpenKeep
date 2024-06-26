@@ -107,6 +107,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/obj/item/organ/liver/mutantliver
 	var/obj/item/organ/stomach/mutantstomach
+	var/obj/item/organ/guts/mutantguts
 	var/override_float = FALSE
 
 	//Bitflag that controls what in game ways can select this species as a spawnable source
@@ -377,6 +378,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/organ/tongue/tongue = C.getorganslot(ORGAN_SLOT_TONGUE)
 	var/obj/item/organ/liver/liver = C.getorganslot(ORGAN_SLOT_LIVER)
 	var/obj/item/organ/stomach/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
+	var/obj/item/organ/guts/guts = C.getorganslot(ORGAN_SLOT_STOMACH_AID)
 	var/obj/item/organ/tail/tail = C.getorganslot(ORGAN_SLOT_TAIL)
 
 	var/should_have_brain = TRUE
@@ -419,13 +421,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	if(stomach && (!should_have_stomach || replace_current))
 		stomach.Remove(C,1)
+		guts.Remove(C,1)
 		QDEL_NULL(stomach)
+		QDEL_NULL(guts)
 	if(should_have_stomach && !stomach)
 		if(mutantstomach)
 			stomach = new mutantstomach()
+			guts = new mutantguts()
 		else
 			stomach = new()
+			guts = new()
 		stomach.Insert(C)
+		guts.Insert(C)
 
 	if(appendix && (!should_have_appendix || replace_current))
 		appendix.Remove(C,1)

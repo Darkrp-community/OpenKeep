@@ -1,5 +1,5 @@
 /obj/structure/roguemachine/atm
-	name = "SHYLOCK"
+	name = "MEISTER"
 	desc = ""
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "atm"

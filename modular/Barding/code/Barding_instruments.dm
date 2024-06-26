@@ -8,10 +8,16 @@
 	righthand_file = 'modular/Barding/icons/instruments_righthand.dmi'
 	experimental_inhand = FALSE
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK_R|ITEM_SLOT_BACK_L
-	can_parry = TRUE
-	force = 23
-	throwforce = 7
+	can_parry = FALSE
+	force = 0
+	minstr = 0
+	wbalance = 0
+	wdefense = 0
+	throwforce = 0
 	throw_range = 4
+	blade_dulling = DULLING_BASH
+	max_integrity = 100 // Flimsy instruments of wood.
+	destroy_message = "falls apart!"
 	dropshrink = 0.8
 	var/datum/looping_sound/dmusloop/soundloop
 	var/list/song_list = list()
@@ -130,14 +136,10 @@
 
 
 /obj/item/rogue/instrument/lute
-	force = 15
 	name = "lute"
 	desc = "The favored instrument of Eora, made of wood and simple string."
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	icon_state = "lute"
-	minstr = 0
-	wbalance = 0
-	wdefense = 1
 	song_list = list(
 	"Song 1" = 'modular/Barding/sound/instruments/lute (1).ogg',
 	"Song 2" = 'modular/Barding/sound/instruments/lute (2).ogg',
@@ -165,10 +167,6 @@
 	desc = "A corrupted lute, a heritage instrument of Tiefling pedigree."
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	icon_state = "guitar"
-	force = 15
-	minstr = 0
-	wbalance = 0
-	wdefense = 1
 	song_list = list(
 	"Song 1" = 'modular/Barding/sound/instruments/guitar (1).ogg',
 	"Song 2" = 'modular/Barding/sound/instruments/guitar (2).ogg',
