@@ -3393,6 +3393,7 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "modular\Barding\code\Barding_instruments.dm"
 #include "modular\Neu_Food\code\NeuFood.dm"
 #include "modular\Neu_Food\code\cooked\NeuFood_meals.dm"
 #include "modular\Neu_Food\code\cooked\NeuFood_pies.dm"
@@ -3401,6 +3402,5 @@
 #include "modular\Neu_Food\code\raw\NeuFood_meat.dm"
 #include "modular\Neu_Food\code\raw\NeuFood_processed.dm"
 #include "modular\Neu_Food\code\raw\NeuFood_veggies.dm"
-#include "modular\Barding\code\Barding_instruments.dm"
 #include "modular\Trufflepig\code\trufflepig.dm"
 // END_INCLUDE
