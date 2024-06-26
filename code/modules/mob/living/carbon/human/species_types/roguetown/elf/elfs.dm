@@ -6,15 +6,14 @@
 	id = "elf"
 	desc = "<b>Elf</b><br>\
 	Elves, the first race of Grimoria is characterized by lengthened age, \
-	low fertility, and magical aptitude with a vast spectrum of cultures and sub-races. \
+	low fertility, and magical aptitude originating from a vast array of tribal cultures and sub-races. \
 	Previously immortal, now mortal as punishment by the Forgotten God for their crimes \
-	against the other races in their pre-historic days, enslavement, \
-	hunting as a game, and other horrendous activities. \
+	against the other races in their pre-historic days: enslavement, \
+	hunting as a game, and other horrendous acts. \
 	Elves have since been in rapid decline due to their divine judgment, \
 	enclaves are few and scattered around the various realms of their ancestral homeland of Grimoria. \
 	Now, the Elves have integrated into the multiple races realms in the known world, \
-	some forming relationships and strong bonds. \
-	There are Elves from a small smattering of tribes in these parts."
+	some forming relationships and strong bonds."
 
 	skin_tone_wording = "Tribal Identity"
 

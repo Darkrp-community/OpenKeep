@@ -14,7 +14,7 @@
 	Even long after the Apotheosis, \
 	surviving Aasimar still tend to be shunned for their \
 	dullness to the world, headstrong personalities, and violent legacy. \
-	The Aasimar are 'molded' from various parts of Godly creations and the Pantheon."
+	The Aasimar are 'casted' from various influences of the Pantheon's divine host of Gods, Forces and Saints."
 
 	skin_tone_wording = "Crafted With"
 

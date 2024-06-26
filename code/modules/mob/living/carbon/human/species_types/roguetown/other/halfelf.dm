@@ -9,11 +9,11 @@
 	upon by more conservative peoples, although as racial tensions lower, \
 	more and more half-elves are being born. To the point that some scholars \
 	worry that someday, it may be impossible to distinguish the two species. \
-	Half-Elves are extremely diverse, as they bring in human and elvish culture\
+	Half-Elves are extremely diverse, as they bring in humen and elvish culture\
 	and it is widely considered that Half-Elf culture is simply a melting pot of \
-	various other cultures condensing into one vibrant entity. \
+	various others condensing into one vibrant entity. \
 	Due to their heritage, Half-Elves tend to gain racial traits depending on how strong their fathers, or mothers, genes were. \
-	Half-Elves also typically try to find identity in one of two regions they have similarities towards."
+	Half-Elves also typically try to find identity, in a world that sees them primarly as perversions."
 
 	skin_tone_wording = "Identifies As"
 

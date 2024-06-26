@@ -5,17 +5,17 @@
 	name = "Tiefling"
 	id = "tiefling"
 	desc = "<b>Tiefling</b><br>\
-	Tieflings, also known as Infernal-Spawn by the Dwarves, are a relatively new species in Grimmoria\
-	Having shown up sometime within the past two centuries, very little is known about their culture \
-	as many seem to simply intergrate within whatever society they find themselves in. \
-	Tieflings usually cause strong disturbances with their presence, as their fiendish looks \
-	many have claimed that they are the spawn of a succubus (Or incubus) laying with a mortal. \
-	In this, their species has suffered vast tragedy throughout their short history, \
-	Facing scrutiny, judgement and even genocide in the past. Wounding many tiefling psyche \
-	and leading to most seeking a solitary life outside the watchful eyes of others. \
-	Tiefling cannot reproduce with mortals, and so no half-breed exists. \
-	Tiefling tend to be extremely perceptive and paranoid, as luck is rarely on their side \
-	and their unique biology makes them extremely susceptible to injury."
+	Tieflings, also known as Infernal-Spawn, are a relatively new species in Grimoria\
+	Having shown up during the time of the Apotheosis War, \
+	descendants of mortals that willingly served and married Zizo Spawn in unholy union, \
+	they served as the chattel army under the forces of Zizo and Graggar. \
+	Due to their defeat and conversion, Tieflings have since been accepted, begrudgingly, as a proper Pantheon worshipping race. \
+	Their species has suffered vast tragedy throughout their short history, \
+	facing scrutiny, misjudgement and even genocide in the past. Wounding many tiefling psyche \
+	and leading to most seeking a solitary and nomadic life outside the watchful eyes of others. \
+	Tieflings can reproduce with mortals, but only produce more tieflings due to their strong Zizo taint, so no half-breeds exist. \
+	They also tend to be extremely perceptive and paranoid, as luck is rarely on their side \
+	and their unique anatomy makes them extremely susceptible to injury."
 
 	skin_tone_wording = "Progenitor"
 
