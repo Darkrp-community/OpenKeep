@@ -28,6 +28,9 @@
 						if(dna.species.id == "dwarf")
 							var/mob/living/carbon/V = src
 							V.add_stress(/datum/stressevent/dwarfshaved)
+						if(user.mind && user.mind.assigned_role == "Court Magician")
+							var/mob/living/carbon/V = src
+							V.add_stress(/datum/stressevent/dwarfshaved)
 				else
 					held_item.melee_attack_chain(user, src, params)
 		return
