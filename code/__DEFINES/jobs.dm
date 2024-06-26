@@ -208,8 +208,8 @@
 
 #define JDO_GRAVEMAN 28
 
-#define JDO_NIGHTMAN 28.1
-#define JDO_NIGHTMAIDEN 28.2
+#define JDO_NITEMAN 28.1
+#define JDO_NITEMAIDEN 28.2
 
 #define JDO_JESTER 29
 #define JDO_PRISONER 30

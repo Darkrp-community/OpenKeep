@@ -15,6 +15,7 @@
 	)
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
+	allowed_patrons = list(/datum/patron/divine/noc)
 	display_order = JDO_MAGICIAN
 	tutorial ="Dream interpreter, soothsayer, astrologer and valued courtier. \
 	Indebted to the ruler for funding yils of mystical studies in these dark times, \
