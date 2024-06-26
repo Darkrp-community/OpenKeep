@@ -69,3 +69,10 @@
 	name = "beartrap"
 	probby = 50
 	spawned = list(/obj/item/restraints/legcuffs/beartrap/armed/camouflage)
+
+/obj/effect/spawner/roguemap/tallgrass
+	icon_state = "grass"
+	name = "grass tile loot spawner"
+	probby = 75
+	spawned = list(/obj/structure/flora/roguegrass/bush = 10, /obj/structure/flora/roguegrass = 60, /obj/item/natural/stone = 8, /obj/item/natural/rock = 7, /obj/item/grown/log/tree/stick = 3, /obj/structure/closet/dirthole/closed/loot=0.1)
+
