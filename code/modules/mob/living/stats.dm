@@ -54,9 +54,8 @@
 					change_stat(S, H.dna.species.specstats[S])
 		switch(H.age)
 			if(AGE_MIDDLEAGED)
-				change_stat("endurance", 1) //if a stat isn't listed then it dosen't have a bonus or negative
-				change_stat("perception", 1)
-				change_stat("constitution", 1)
+				change_stat("speed", -1)
+				change_stat("endurance", 1)
 			if(AGE_OLD)
 				change_stat("strength", -2)
 				change_stat("speed", -1)
