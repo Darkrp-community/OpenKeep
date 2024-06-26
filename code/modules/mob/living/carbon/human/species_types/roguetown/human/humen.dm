@@ -52,17 +52,17 @@
 
 /datum/species/human/northern/get_skin_list()
 	return sortList(list(
-		"Grenzelhoft" = SKIN_COLOR_GRENZELHOFT,
-		"Hammerhold" = SKIN_COLOR_HAMMERHOLD,
-		"Avar" = SKIN_COLOR_AVAR,
-		"Rockhill" = SKIN_COLOR_ROCKHILL,
-		"Otava" = SKIN_COLOR_OTAVA,
-		"Etrusca" = SKIN_COLOR_ETRUSCA,
-		"Gronn" = SKIN_COLOR_GRONN,
-		"Giza" = SKIN_COLOR_GIZA,
-		"Shalvistine" = SKIN_COLOR_SHALVISTINE,
-		"Lalvestine" = SKIN_COLOR_LALVESTINE,
-		"Ebon" = SKIN_COLOR_EBON,
+		"Ice Cap" = SKIN_COLOR_ICECAP,
+		"Arctic" = SKIN_COLOR_ARCTIC,
+		"Tundra" = SKIN_COLOR_TUNDRA,
+		"Continental" = SKIN_COLOR_CONTINENTAL,
+		"Temperate" = SKIN_COLOR_TEMPERATE,
+		"Coastal" = SKIN_COLOR_COASTAL,
+		"Subtropical" = SKIN_COLOR_SUBTROPICAL,
+		"Tropical Dry" = SKIN_COLOR_TROPICALDRY,
+		"Tropical Wet" = SKIN_COLOR_TROPICALWET,
+		"Desert" = SKIN_COLOR_DESERT,
+		"Crimson Lands" = SKIN_COLOR_CRIMSONLANDS,
 	))
 
 /datum/species/human/northern/get_hairc_list()

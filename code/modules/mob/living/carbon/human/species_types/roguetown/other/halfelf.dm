@@ -55,9 +55,9 @@
 /datum/species/human/halfelf/get_skin_list()
 	return sortList(list(
 		"Timber-Gronn" = SKIN_COLOR_TIMBER_GRONN,
-		"Giza-Azure" = SKIN_COLOR_GIZA_AZURE,
+		"Solar-Hue" = SKIN_COLOR_SOLAR_HUE,
 		"Walnut-Stine" = SKIN_COLOR_WALNUT_STINE,
-		"Etrustcan-Dandelion" = SKIN_COLOR_ETRUSTCAN_DANDELION,
+		"Amber-Stained" = SKIN_COLOR_AMBER_STAINED,
 		"Ebon-Born" = SKIN_COLOR_EBON_BORN,
 	))
 

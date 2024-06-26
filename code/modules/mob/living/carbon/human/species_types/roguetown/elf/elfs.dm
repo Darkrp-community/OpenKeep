@@ -68,13 +68,13 @@
 
 /datum/species/elf/snow/get_skin_list()
 	return sortList(list(
-		"Dandelion Creek" = SKIN_COLOR_DANDELION_CREEK,
-		"Roseveil" = SKIN_COLOR_ROSEVEIL,
-		"Azuregrove" = SKIN_COLOR_AZUREGROVE,
-		"Arborshome" = SKIN_COLOR_ARBORSHOME,
-		"Almondvalle" = SKIN_COLOR_ALMONDVALLE,
-		"Walnut Woods" = SKIN_COLOR_WALNUT_WOODS,
-		"Timberborn" = SKIN_COLOR_TIMBERBORN,
+		"Snow Elf" = SKIN_COLOR_SNOW_ELF,
+		"Plain Elf" = SKIN_COLOR_PLAIN_ELF,
+		"Mountain Elf" = SKIN_COLOR_MOUNTAIN_ELF,
+		"Coastal Elf" = SKIN_COLOR_COASTAL_ELF,
+		"Sand Elf" = SKIN_COLOR_SAND ELF,
+		"Sea Elf" = SKIN_COLOR_SEA_ELF,
+		"Wood Elf" = SKIN_COLOR_WOOD_ELF,
 	))
 
 /datum/species/elf/snow/get_hairc_list()
