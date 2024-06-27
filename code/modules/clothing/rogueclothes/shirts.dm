@@ -333,7 +333,7 @@
 	icon_state = "eorarobes"
 	icon = 'icons/roguetown/clothing/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
-	sleeved = null
+	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
 	boobed = TRUE
 	color = null
 	flags_inv = HIDEBOOB
@@ -345,7 +345,7 @@
 	icon_state = "eorastraps"
 	icon = 'icons/roguetown/clothing/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
-	sleeved = null
+	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
 	boobed = TRUE
 	color = null
 	flags_inv = HIDEBOOB
