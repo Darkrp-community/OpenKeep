@@ -140,7 +140,10 @@
 					steaks = 3 // the steaks have never been higher
 			var/amt2raise = user.STAINT/3
 			if(do_after(user, used_time, target = src))
-				for(steaks, steaks<=3, steaks--)
+				for(steaks)
+					if(steaks < 0)
+						break
+					steaks--
 					new /obj/item/reagent_containers/food/snacks/rogue/meat/steak(get_turf(src))
 				new /obj/item/reagent_containers/food/snacks/rogue/meat/steak(get_turf(src))
 				new /obj/effect/decal/cleanable/blood/splatter(get_turf(src))
