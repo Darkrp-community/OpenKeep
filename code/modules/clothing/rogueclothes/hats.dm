@@ -87,7 +87,9 @@
 	icon_state = "eoramask"
 	item_state = "eoramask"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
-	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/roguetown/priestmask
