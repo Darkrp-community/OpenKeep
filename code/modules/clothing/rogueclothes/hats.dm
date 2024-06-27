@@ -81,6 +81,14 @@
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
 
+/obj/item/clothing/head/roguetown/eoramask
+	name = "eoran mask"
+	color = null
+	icon_state = "eoramask"
+	item_state = "eoramask"
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	dynamic_hair_suffix = ""
+
 /obj/item/clothing/head/roguetown/priestmask
 	name = "solar visage"
 	desc = "The sanctified helm of the most devoted. Thiefs beware."
