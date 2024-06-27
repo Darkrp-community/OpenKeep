@@ -6,14 +6,7 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Dark Elf",
-		"Aasimar"
-	)
+	allowed_races = ALL_RACES_LIST_NAMES
 
 	tutorial = "You studied for many decades under your master with a few other apprentices to become an Armorer, a trade that certainly has seen a boom in revenue in recent times with many a bannerlord seeing the importance in maintaining a well-equipped army."
 
@@ -69,14 +62,7 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Dark Elf",
-		"Aasimar"
-	)
+	allowed_races = ALL_RACES_LIST_NAMES
 
 	tutorial = "You studied for many decades under your master with a few other apprentices to become a Weaponsmith, a trade that is as ancient as the secrets of steel itself! Youve repaired the blades of cooks, the cracked hoes of peasants and greased the spears of many soldiers into war."
 
@@ -94,6 +80,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(3,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, pick(3,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/engineering, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1,2), TRUE)

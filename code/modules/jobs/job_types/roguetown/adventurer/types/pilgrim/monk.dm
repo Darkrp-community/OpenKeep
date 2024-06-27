@@ -10,15 +10,14 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/monk
-	isvillager = FALSE
-	ispilgrim = FALSE
+	category_tags = list(CTAG_ADVENTURER)
 	vampcompat = FALSE
 
 
 /datum/outfit/job/roguetown/adventurer/monk/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/roguehood
-	neck = /obj/item/clothing/neck/roguetown/psicross
+	neck = /obj/item/clothing/neck/roguetown/psicross/ravox
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe
@@ -26,18 +25,19 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backr = /obj/item/rogueweapon/woodstaff
-	
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
 
 		H.change_stat("strength", 3)
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 2)
 		H.change_stat("perception", -1)
-	if(H.PATRON != /datum/patrongods/ravox)
-		H.PATRON = GLOB.patronlist["Ravox"]
-		to_chat(H, "<span class='warning'>My patron had not endorsed my practices in my younger years. I've since grown acustomed to [H.PATRON].")
+	if(H.patron != /datum/patron/divine/ravox)
+		H.patron = GLOB.patronlist["Ravox"]
+		to_chat(H, "<span class='warning'>My patron had not endorsed my practices in my younger years. I've since grown acustomed to [H.patron].")

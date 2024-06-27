@@ -6,6 +6,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list("Dwarf")
 	outfit = /datum/outfit/job/roguetown/adventurer/dranger
+	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/dranger/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -39,5 +40,6 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 	H.change_stat("perception", 3)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)

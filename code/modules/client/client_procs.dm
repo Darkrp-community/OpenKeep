@@ -37,6 +37,8 @@ GLOBAL_LIST_EMPTY(respawncounts)
 
 /client
 	var/commendedsomeone
+	var/whitelisted = 2
+	var/blacklisted = 2
 
 /client/Topic(href, href_list, hsrc)
 	if(!usr || usr != mob)	//stops us calling Topic for somebody else's client. Also helps prevent usr=null
@@ -117,28 +119,7 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		return
 
 	if(href_list["commendsomeone"])
-		if(SSticker.current_state != GAME_STATE_FINISHED)
-			return
-		if(commendedsomeone)
-			return
-		var/list/selections = GLOB.character_ckey_list.Copy()
-		if(!selections.len)
-			return
-		var/selection = input(src,"Which Character?") as null|anything in sortList(selections)
-		if(!selection)
-			return
-		if(commendedsomeone)
-			return
-		var/theykey = selections[selection]
-		if(theykey == ckey)
-			to_chat(src,"You can't commend yourself.")
-			return
-		if(theykey)
-			commendedsomeone = TRUE
-			add_commend(theykey, ckey)
-			to_chat(src,"[selection] commended.")
-			log_game("COMMEND: [ckey] commends [theykey].")
-			log_admin("COMMEND: [ckey] commends [theykey].")
+		commendation_popup()
 		return
 
 	switch(href_list["_src_"])
@@ -167,6 +148,31 @@ GLOBAL_LIST_EMPTY(respawncounts)
 			return
 
 	..()	//redirect to hsrc.Topic()
+
+/client/proc/commendation_popup()
+	if(SSticker.current_state != GAME_STATE_FINISHED)
+		return
+	if(commendedsomeone)
+		return
+	var/list/selections = GLOB.character_ckey_list.Copy()
+	if(!selections.len)
+		return
+	var/selection = input(src,"Which Character?") as null|anything in sortList(selections)
+	if(!selection)
+		return
+	if(commendedsomeone)
+		return
+	var/theykey = selections[selection]
+	if(theykey == ckey)
+		to_chat(src,"You can't commend yourself.")
+		return
+	if(theykey)
+		commendedsomeone = TRUE
+		add_commend(theykey, ckey)
+		to_chat(src,"[selection] commended.")
+		log_game("COMMEND: [ckey] commends [theykey].")
+		log_admin("COMMEND: [ckey] commends [theykey].")
+	return
 
 /client/proc/is_content_unlocked()
 	if(!prefs.unlock_content)
@@ -1107,3 +1113,31 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 		if(isliving(mob)) //no ghost can call this
 			mob.ghostize(can_reenter_corpse)
 		testing("[mob] [mob.type] YEA CLIE")
+
+
+/client/proc/whitelisted()
+	if(whitelisted != 2)
+		return whitelisted
+	else
+		if(check_whitelist(ckey))
+			whitelisted = 1
+		else
+			whitelisted = 0
+		return whitelisted
+
+/client/proc/blacklisted()
+	if(blacklisted != 2)
+		return blacklisted
+	else
+		if(check_blacklist(ckey))
+			blacklisted = 1
+		else
+			blacklisted = 0
+		return blacklisted
+
+/client/proc/commendsomeone(var/forced = FALSE)
+	set category = "OOC"
+	set name = "Commend"
+	set desc = "Make that one person you had Quality RolePlay with happy."
+
+	commendation_popup(forced)

@@ -114,14 +114,17 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Pilgrim",
 	"Grabber",
 	"Mercenary",
-	"Nightman",
-	"Nightmaiden",
+	"Niteman",
+	"Nitemaiden",
 	"Docker",
 	"Prisoner",
-	"Beggar"
-	))
+	"Beggar",
+	"Adventurer",
+	"Pilgrim",
+	"Drifter"
+))
 
-GLOBAL_LIST_INIT(youngfolk_positions, list(
+GLOBAL_LIST_INIT(apprentices_positions, list(
 	"Squire",
 	"Smithy Apprentice",
 	"Magician's Apprentice",
@@ -163,7 +166,7 @@ GLOBAL_LIST_EMPTY(job_assignment_order)
 	sorting_order += GLOB.church_positions
 	sorting_order += GLOB.serf_positions
 	sorting_order += GLOB.peasant_positions
-	sorting_order += GLOB.youngfolk_positions
+	sorting_order += GLOB.apprentices_positions
 	sorting_order += GLOB.allmig_positions
 	return sorting_order
 

@@ -192,6 +192,7 @@
 	if(!user.hud_used.reads)
 		return
 	if(!user.can_read(src))
+		user.mind.adjust_experience(/datum/skill/misc/reading, 4, FALSE)
 		return
 	if(in_range(user, src) || isobserver(user))
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -204,7 +205,7 @@
 /obj/item/book/rogue/bibble/attack(mob/living/M, mob/user)
 	if(user.mind && user.mind.assigned_role == "Priest")
 		if(!user.can_read(src))
-			to_chat(user, "<span class='warning'>I don't understand these scribbly black lines.</span>")
+			//to_chat(user, "<span class='warning'>I don't understand these scribbly black lines.</span>")
 			return
 		M.apply_status_effect(/datum/status_effect/buff/blessed)
 		user.visible_message("<span class='notice'>[user] blesses [M].</span>")
@@ -371,6 +372,7 @@
 	base_icon_state = "book8"
 	bookfile = "tales14.json"
 
+
 /obj/item/book/rogue/playerbook
 	var/player_book_text = "moisture in the air or water leaks have rendered the carefully written caligraphy of this book unreadable"
 	var/player_book_title = "unknown title"
@@ -498,6 +500,7 @@
 	if(!user.hud_used.reads)
 		return
 	if(!user.can_read(src))
+		user.mind.adjust_experience(/datum/skill/misc/reading, 4, FALSE)
 		return
 	if(in_range(user, src) || isobserver(user))
 		var/dat = {"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
@@ -569,3 +572,50 @@
 	desc = "Apply on a written manuscript to create a book"
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "book_crafting_kit"
+
+
+
+
+
+
+
+// ...... Books made by the Stonekeep community within #lore channel, approved & pushed by Guayo (current staff incharge of adding ingame books)
+
+// ...... Book Cover Randomizer Code
+/obj/item/book/rogue/random/Initialize()
+	. = ..()
+	if(icon_state == "book_random")
+		base_icon_state = "book[rand(1,8)]"
+		icon_state = "[base_icon_state]_0"
+
+/* .....Example of layout of added in book.
+/obj/item/book/rogue/random/templatebooknamehere
+	name = "Title of your book here"
+	desc = "Who wrote it or maybe some flavor here"
+	icon_state ="book_random"
+	base_icon_state = "book"
+	bookfile = "templatebooknamehere.json"
+*/ // .....End of Example
+
+
+/obj/item/book/rogue/random/vownecrapage
+	name = "Necra's Vow of Silence"
+	desc = "A faded page, with seemingly no author."
+	icon_state = "book8_0"
+	base_icon_state = "book8"
+	bookfile = "VowOfNecraPage.json"
+
+
+/obj/item/book/rogue/random/godofdreamsandnightmares
+	name = "God of Dreams & Nightmares"
+	desc = "An old decrepit book, with seemingly no author."
+	icon_state ="book_random"
+	base_icon_state = "book"
+	bookfile = "godofdreamsandnightmares.json"
+
+/obj/item/book/rogue/random/psybibleplayerbook
+	name = "Psybible"
+	desc = "An old tome, authored by Father Ambrose of Grenzelhoft."
+	icon_state ="book_random"
+	base_icon_state = "book"
+	bookfile = "psybibleplayerbook.json"

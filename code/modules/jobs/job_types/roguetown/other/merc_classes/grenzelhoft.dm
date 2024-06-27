@@ -7,8 +7,7 @@
 		"Dwarf"
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/grenzelhoft
-	ismerc = TRUE
-
+	category_tags = list(CTAG_MERCENARY)
 
 /datum/outfit/job/roguetown/mercenary/grenzelhoft/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -17,6 +16,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)	//Big sword user so - really helps them.
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, pick(1,1,2), TRUE)
@@ -24,7 +24,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(0,0,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-	
+
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 
@@ -32,7 +32,7 @@
 		H.underwear = "Femleotard"
 		H.underwear_color = CLOTHING_BLACK
 		H.update_body()
-	
+
 	pants = /obj/item/clothing/under/roguetown/grenzelpants
 	shoes = /obj/item/clothing/shoes/roguetown/grenzelhoft
 	gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves

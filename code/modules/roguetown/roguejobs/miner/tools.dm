@@ -10,7 +10,7 @@
 	wlength = 10
 	slot_flags = ITEM_SLOT_HIP
 	toolspeed = 2
-	associated_skill = /datum/skill/combat/axesmaces
+	associated_skill = /datum/skill/labor/mining
 	smeltresult = /obj/item/ingot/iron
 
 /obj/item/rogueweapon/pick/getonmobprop(tag)

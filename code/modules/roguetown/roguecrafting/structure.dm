@@ -230,6 +230,7 @@
 	craftdiff = 0
 
 /obj/structure/closet/crate/chest/crafted
+	keylock = FALSE
 	sellprice = 6
 
 /datum/crafting_recipe/roguetown/structure/closet
@@ -381,6 +382,41 @@
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/structure/display_stand
+	name = "display stand"
+	result = /obj/structure/mannequin
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/grown/log/tree/stick = 3)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/mannequin
+	name = "mannequin"
+	result = /obj/structure/mannequin/male
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/natural/cloth = 1,
+				/obj/item/ingot/iron = 1)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/mannequin_f
+	name = "feminine mannequin"
+	result = /obj/structure/mannequin/male/female
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/natural/cloth = 1,
+				/obj/item/ingot/iron = 1)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/structure/passage
 	name = "passage"

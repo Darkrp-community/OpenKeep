@@ -386,7 +386,7 @@
 		for(var/obj/item/I in things)
 			STR.remove_from_storage(I, get_turf(src))
 
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/nightman
+/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman
 	name = "silk jacket"
 	icon_state = "nightman"
 	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
@@ -463,6 +463,22 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 	max_integrity = 120
 	sellprice = 10
+
+obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
+	name = "Orc Marauder Chain Vest"
+	icon_state = "orc_chainvest"
+	item_state = "orc_chainvest_item"
+	icon = 'icons/roguetown/mob/monster/Orc.dmi'
+	smeltresult = /obj/item/ingot/iron
+	allowed_race = list("orc")
+	armor = list("melee" = 50, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	armor_class = ARMOR_CLASS_MEDIUM
+	blocksound = PLATEHIT
+	max_integrity = 100
+	sellprice = 10
+
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 	slot_flags = ITEM_SLOT_ARMOR

@@ -7,7 +7,7 @@
         "Elf",
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/blackoak
-	ismerc = TRUE
+	category_tags = list(CTAG_MERCENARY)
 
 /datum/outfit/job/roguetown/mercenary/blackoak/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -27,6 +27,7 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)

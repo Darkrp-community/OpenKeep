@@ -2,8 +2,8 @@
 
 /obj/item/natural/stone
 	name = "stone"
+	desc = "A piece of rough ground stone."
 	icon_state = "stone1"
-	desc = "A rock, a stone, a tool, a weapon."
 	gripped_intents = null
 	dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)
@@ -118,4 +118,4 @@
 	mineralType = /obj/item/rogueore/coal
 
 /obj/item/natural/rock/salt
-	mineralType = /obj/item/reagent_containers/powder/flour/salt
+	mineralType = /obj/item/reagent_containers/powder/salt

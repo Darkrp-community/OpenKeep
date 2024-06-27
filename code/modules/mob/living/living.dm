@@ -11,6 +11,7 @@
 		diag_hud.add_to_hud(src)
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
+	init_faith()
 
 /mob/living/Destroy()
 	surgeries = null
@@ -1077,26 +1078,24 @@
 /mob/living/resist_grab(moving_resist)
 	. = TRUE
 
+	var/wrestling_diff = 0
 	var/resist_chance = 50
 	var/mob/living/L = pulledby
-	if(pulledby.grab_state >= GRAB_AGGRESSIVE)
-		resist_chance -= 25
-	var/diffy = STASTR - L.STASTR
-	if(diffy > 0)
-		resist_chance = 50 + (diffy * 25)
-//		if(!L.rogfat_add(diffy * 10)) //hard to keep a grip on them
-//			resist_chance = 100
-	if(diffy < 0)
-		resist_chance = 50 - (diffy * 25)
-	if(L.mind)
-		resist_chance -= (L.mind.get_skill_level(/datum/skill/combat/wrestling) * 10)
+
 	if(mind)
-		resist_chance += (mind.get_skill_level(/datum/skill/combat/wrestling) * 10)
+		wrestling_diff += (mind.get_skill_level(/datum/skill/combat/wrestling)) //NPCs don't use this
+	if(L.mind)
+		wrestling_diff -= (L.mind.get_skill_level(/datum/skill/combat/wrestling))
+
+	resist_chance += ((STACON - L.STACON) * 10)
 
 	if(!(mobility_flags & MOBILITY_STAND))
-		resist_chance -= 20
-
-	resist_chance = max(resist_chance, 1)
+		resist_chance += -20 + min((wrestling_diff * 5), -20) //Can improve resist chance at high skill difference     
+	if(pulledby.grab_state >= GRAB_AGGRESSIVE)
+		resist_chance += -20 + max((wrestling_diff * 10), 0) 
+		resist_chance = max(resist_chance, 50 + min((wrestling_diff * 5), 0))
+	else
+		resist_chance = max(resist_chance, 70 + min((wrestling_diff * 5), 0))
 
 
 	if(moving_resist && client) //we resisted by trying to move
@@ -1124,16 +1123,6 @@
 	var/mob/living/L = pulledby
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		if((H.age != AGE_YOUNG) && (age == AGE_YOUNG))
-			var/obj/item/bodypart/head = get_bodypart(BODY_ZONE_HEAD)
-			for(var/obj/item/grabbing/G in grabbedby)
-				if(G.limb_grabbed == head)
-					if(G.grabbee == pulledby)
-						if(G.sublimb_grabbed == BODY_ZONE_PRECISE_EARS)
-							visible_message("<span class='warning'>[src] struggles to break free from [pulledby]'s grip!</span>", \
-											"<span class='warning'>I struggle against [pulledby]'s grip!</span>", null, null, pulledby)
-							to_chat(pulledby, "<span class='warning'>[src] struggles against my grip!</span>")
-							return FALSE
 		if(HAS_TRAIT(H, TRAIT_NOSEGRAB) && !HAS_TRAIT(src, TRAIT_MISSING_NOSE))
 			var/obj/item/bodypart/head = get_bodypart(BODY_ZONE_HEAD)
 			for(var/obj/item/grabbing/G in grabbedby)

@@ -10,9 +10,10 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/templar
-	maxchosen = 1
-	plevel_req = 1
-	israre = TRUE
+	maximum_possible_slots = 1
+	min_pq = 2
+	pickprob = 15
+	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/templar/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -53,7 +54,7 @@
 			H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 		if(H.dna.species.id == "tiefling")
 			cloak = /obj/item/clothing/cloak/tabard/crusader/tief
-	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.PATRON)
+	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	C.holder_mob = H
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/lesser_heal/)

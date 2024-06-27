@@ -13,7 +13,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/icon_override
 	var/icon_override_m
 	var/icon_override_f
-	var/list/possible_ages = list(AGE_YOUNG, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	var/list/possible_ages = ALL_AGES_LIST
 	var/sexes = 1		// whether or not the race has sexual characteristics. at the moment this is only 0 for skeletons and shadows
 	var/patreon_req
 	var/max_age = 75
@@ -107,6 +107,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/obj/item/organ/liver/mutantliver
 	var/obj/item/organ/stomach/mutantstomach
+	var/obj/item/organ/guts/mutantguts
 	var/override_float = FALSE
 
 	//Bitflag that controls what in game ways can select this species as a spawnable source
@@ -382,6 +383,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/organ/tongue/tongue = C.getorganslot(ORGAN_SLOT_TONGUE)
 	var/obj/item/organ/liver/liver = C.getorganslot(ORGAN_SLOT_LIVER)
 	var/obj/item/organ/stomach/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
+	var/obj/item/organ/guts/guts = C.getorganslot(ORGAN_SLOT_STOMACH_AID)
 	var/obj/item/organ/tail/tail = C.getorganslot(ORGAN_SLOT_TAIL)
 
 	var/should_have_brain = TRUE
@@ -424,13 +426,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	if(stomach && (!should_have_stomach || replace_current))
 		stomach.Remove(C,1)
+		guts.Remove(C,1)
 		QDEL_NULL(stomach)
+		QDEL_NULL(guts)
 	if(should_have_stomach && !stomach)
 		if(mutantstomach)
 			stomach = new mutantstomach()
+			guts = new mutantguts()
 		else
 			stomach = new()
+			guts = new()
 		stomach.Insert(C)
+		guts.Insert(C)
 
 	if(appendix && (!should_have_appendix || replace_current))
 		appendix.Remove(C,1)
@@ -668,7 +675,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(I.flags_inv & HIDEFACIALHAIR)
 			facialhair_hidden = TRUE
 
-	if(H.facial_hairstyle && (FACEHAIR in species_traits) && (!facialhair_hidden || dynamic_fhair_suffix) && (H.age != AGE_YOUNG) )
+	if(H.facial_hairstyle && (FACEHAIR in species_traits) && (!facialhair_hidden || dynamic_fhair_suffix))
 		S = GLOB.facial_hairstyles_list[H.facial_hairstyle]
 		if(S)
 
@@ -690,7 +697,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 			var/mutable_appearance/facial_overlay = mutable_appearance(fhair_file, fhair_state, -HAIR_LAYER)
 
-			if((H.gender == MALE) && H.has_stubble && (STUBBLE in species_traits) && (H.age != AGE_YOUNG))
+			if((H.gender == MALE) && H.has_stubble && (STUBBLE in species_traits))
 				var/mutable_appearance/stubble_underlay = mutable_appearance('icons/roguetown/mob/facial.dmi', "facial_stubble")
 				facial_overlay.underlays += stubble_underlay
 
@@ -2227,7 +2234,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(can_impale && user.Adjacent(H))
 					affecting.add_embedded_object(I, silent = FALSE, crit_message = TRUE)
 					H.emote("embed")
-					H.grabbedby(user, 1, item_override = I)
+					affecting.receive_damage(I.embedding.embedded_unsafe_removal_pain_multiplier*I.w_class)//It hurts to rip it out, get surgery you dingus.
+					user.put_in_hands(I)
+					H.emote("pain", TRUE)
+					playsound(H.loc, 'sound/foley/flesh_rem.ogg', 100, TRUE, -2)
 //		if(H.used_intent.blade_class == BCLASS_BLUNT && I.force >= 15 && affecting.body_zone == "chest")
 //			var/turf/target_shove_turf = get_step(H.loc, get_dir(user.loc,H.loc))
 //			H.throw_at(target_shove_turf, 1, 1, H, spin = FALSE)

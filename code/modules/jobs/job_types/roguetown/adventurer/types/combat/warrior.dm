@@ -12,18 +12,19 @@
 		"Tiefling"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/sfighter
+	category_tags = list(CTAG_ADVENTURER)
 
 
 /datum/outfit/job/roguetown/adventurer/sfighter/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, pick(3,4), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(3,4), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(1,2), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(3,4), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(2,3), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,3), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(1,1,2), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, pick(1,1,2), TRUE)
@@ -64,7 +65,7 @@
 		neck = /obj/item/clothing/neck/roguetown/gorget
 
 	H.change_stat("strength", 2)
-	H.change_stat("endurance", 1) // 7 stat points total as a low-skill martial role without magic. Compared to Pally with 5 points.
+	H.change_stat("endurance", 1)
 	H.change_stat("speed", 1)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
