@@ -1,15 +1,22 @@
-
-
 /datum/supply_pack/rogue/luxury
 	group = "Luxury"
 	crate_name = "merchant guild's crate"
 	crate_type = /obj/structure/closet/crate/chest/merchant
 
-
 /datum/supply_pack/rogue/luxury/sigs
 	name = "Pipe Weed Zig"
 	cost = 3
 	contains = list(/obj/item/clothing/mask/cigarette/rollie/nicotine)
+
+/datum/supply_pack/rogue/luxury/zigbox
+	name = "Zigbox"
+	cost = 19
+	contains = list(/obj/item/storage/fancy/cigarettes/zig)
+
+/datum/supply_pack/rogue/luxury/zigboxempt
+	name = "Empty Zigbox"
+	cost = 1
+	contains = list(/obj/item/storage/fancy/cigarettes/zig/empty)
 
 /datum/supply_pack/rogue/luxury/moondust
 	name = "Moon Dust"

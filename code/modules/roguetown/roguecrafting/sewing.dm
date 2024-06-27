@@ -72,6 +72,13 @@
                 /obj/item/natural/fibers = 1)
     craftdiff = 0
 
+/datum/crafting_recipe/roguetown/sewing/zigbox
+	name = "zigbox"
+	result = list(/obj/item/storage/fancy/cigarettes/zig/empty)
+	reqs = list(/obj/item/paper = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 0
+
 /* craftdiff of 1 */
 
 /datum/crafting_recipe/roguetown/sewing/strawhat
