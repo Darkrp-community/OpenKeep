@@ -148,7 +148,7 @@
 	var/points = 0
 	var/points_to_win = 3
 	var/respawn_cooldown = DEFAULT_RESPAWN
-	//Capture Point/King of the Hill scoring
+	//Capture Point/Lord of the Hill scoring
 	var/control_points = 0
 	var/control_points_to_win = 180
 	var/list/team_members = list()

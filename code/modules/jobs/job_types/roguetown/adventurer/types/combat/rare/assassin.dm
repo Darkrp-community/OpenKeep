@@ -2,7 +2,7 @@
 
 /datum/advclass/combat/assassin
 	name = "Assassin"
-	tutorial = "Enigma has always been ripe with business for your kind, even the old King had many of his undesirables sent to the Weeper's golden kingdom. You hope to rekindle old business partners and make a profit of mammons, exchanging blood for coin."
+	tutorial = "Enigma has always been ripe with business for your kind, even the old Lord had many of his undesirables sent to the Weeper's golden kingdom. You hope to rekindle old business partners and make a profit of mammons, exchanging blood for coin."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",

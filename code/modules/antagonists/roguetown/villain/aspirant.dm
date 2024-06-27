@@ -114,7 +114,7 @@
 
 /datum/objective/aspirant/loyal/one
 	name = "Ruler"
-	explanation_text = "I must remain King."
+	explanation_text = "I must remain Lord."
 	triumph_count = 3
 
 /datum/objective/aspirant/loyal/one/check_completion()

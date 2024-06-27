@@ -248,13 +248,13 @@
 
 /obj/item/roguekey/hand
 	name = "hand's key"
-	desc = "This regal key belongs to the King's Right Hand."
+	desc = "This regal key belongs to the Lord's Right Hand."
 	icon_state = "cheesekey"
 	lockid = "hand"
 
 /obj/item/roguekey/steward
 	name = "steward's key"
-	desc = "This key belongs to the King's greedy Steward."
+	desc = "This key belongs to the Lord's greedy Steward."
 	icon_state = "cheesekey"
 	lockid = "steward"
 

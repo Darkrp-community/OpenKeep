@@ -91,7 +91,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	var/lord_dead = FALSE
 	for(var/mob/living/carbon/human/H in GLOB.human_list)
 		if(H.mind)
-			if(H.job == "King" || H.job == "Queen")
+			if(H.job == "Lord" || H.job == "Lady")
 				lord_found = TRUE
 				if(H.stat == DEAD)
 					lord_dead = TRUE
@@ -175,8 +175,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 /datum/game_mode/chaosmode/proc/pick_bandits()
 	//BANDITS
 	banditgoal = rand(200,400)
-	restricted_jobs = list("King",
-	"Queen",
+	restricted_jobs = list("Lord",
+	"Lady",
 	"Merchant",
 	"Priest")
 	var/num_bandits = 0
@@ -309,8 +309,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_maniac()
-	restricted_jobs = list("King",
-	"Queen",
+	restricted_jobs = list("Lord",
+	"Lady",
 	"Merchant",
 	"Priest")
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
@@ -338,8 +338,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 
 /datum/game_mode/chaosmode/proc/pick_vampires()
 	var/vampsremaining = 3
-	restricted_jobs = list("King",
-	"Queen",
+	restricted_jobs = list("Lord",
+	"Lady",
 	"Merchant",
 	"Priest")
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
