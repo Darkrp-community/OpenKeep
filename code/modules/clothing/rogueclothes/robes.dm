@@ -76,7 +76,7 @@
 /obj/item/clothing/suit/roguetown/shirt/robe/eora
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "eoran robe"
-	desc = ""
+	desc = "Holy robes, intended for use by followers of Eora"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "eorarobes"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -90,6 +90,7 @@
 
 /obj/item/clothing/suit/roguetown/shirt/robe/eora/alt
 	name = "eoran straps"
+	desc = "Sanctified, form fitting straps. Used by more radical followers of the Eoran Church"
 	icon_state = "eorastraps"
 	icon = 'icons/roguetown/clothing/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
