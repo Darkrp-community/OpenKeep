@@ -137,8 +137,8 @@
 /obj/item/keyring/guardcastle
 	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor)
 
-/obj/item/keyring/gatemaster
-	keys = list(/obj/item/roguekey/garrison, /obj/item/roguekey/walls)
+/obj/item/keyring/archivist
+	keys = list(/obj/item/roguekey/archive, /obj/item/roguekey/manor)
 
 /obj/item/keyring/merchant
 	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/merchant)
@@ -161,8 +161,8 @@
 /obj/item/keyring/shepherd
 	keys = list(/obj/item/roguekey/confession, /obj/item/roguekey/church)
 
-/obj/item/keyring/nightman
-	keys = list(/obj/item/roguekey/nightman, /obj/item/roguekey/nightmaiden)
+/obj/item/keyring/niteman
+	keys = list(/obj/item/roguekey/niteman, /obj/item/roguekey/nitemaiden)
 
 /obj/item/keyring/hand
 	keys = list(/obj/item/roguekey/hand, /obj/item/roguekey/steward, /obj/item/roguekey/tavern, /obj/item/roguekey/church, /obj/item/roguekey/walls, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard)

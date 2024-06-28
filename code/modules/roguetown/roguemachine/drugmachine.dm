@@ -60,7 +60,7 @@
 			if(drugrade_flags & DRUGRADE_MONEYB)
 				amt = recent_payments * 0.50
 			recent_payments = 0
-			send_ooc_note("<b>Income from PURITY:</b> [amt]", job = "Nightmaster")
+			send_ooc_note("<b>Income from PURITY:</b> [amt]", job = "Niteman")
 			secret_budget += amt
 
 /obj/structure/roguemachine/drugmachine/Topic(href, href_list)
@@ -178,7 +178,7 @@
 
 
 	var/mob/living/carbon/human/H = user
-	if(H.job == "Nightmaster")
+	if(H.job == "Niteman")
 		if(canread)
 			contents = "<a href='?src=[REF(src)];secrets=1'>Secrets</a>"
 		else

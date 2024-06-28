@@ -11,6 +11,17 @@
 	A thousand deaths stolen from the carriagemen, yet these people will still call you a charlatan. Prove them wrong, or right."
 	give_bank_account = 11
 
+	//Reason all races allowed is you are basically a very talented court physician; even 'lower races' would find this to be one of the only ways to obtain a sort of nobility.
+	allowed_races = list(
+		"Humen",
+		"Half-Elf",
+		"Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
+	)
+	allowed_sexes = list(MALE, FEMALE)
 
 /datum/outfit/job/roguetown/feldsher/pre_equip(mob/living/carbon/human/H)
 	..()

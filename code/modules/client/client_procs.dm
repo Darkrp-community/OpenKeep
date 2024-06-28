@@ -1140,26 +1140,4 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	set name = "Commend"
 	set desc = "Make that one person you had Quality RolePlay with happy."
 
-	if(commendedsomeone)
-		if(!forced)
-			to_chat(src, "<span class='danger'>You already commended someone this round.</span>")
-		return
-	if(alert(src,"Was there a character during this round that you would like to anonymously commend?", "Commendation", "YES", "NO") != "YES")
-		return
-	var/list/selections = GLOB.character_ckey_list.Copy()
-	if(!selections.len)
-		return
-	var/selection = input(src,"Which Character?") as null|anything in sortList(selections)
-	if(!selection)
-		return
-	var/theykey = selections[selection]
-	if(theykey == ckey)
-		to_chat(src,"You can't commend yourself.")
-		return
-	if(theykey)
-		commendedsomeone = TRUE
-		add_commend(theykey, ckey)
-		to_chat(src,"[selection] commended.")
-		log_game("COMMEND: [ckey] commends [theykey].")
-		log_admin("COMMEND: [ckey] commends [theykey].")
-	return
+	commendation_popup(forced)
