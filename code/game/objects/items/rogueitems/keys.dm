@@ -443,11 +443,6 @@
 	icon_state = "rustkey"
 	lockid = "butcher"
 
-/obj/item/roguekey/farmer
-	name = "farmer's key"
-	icon_state = "rustkey"
-	lockid = "farm"
-
 obj/item/roguekey/elder
 	name = "elder's key"
 	icon_state = "rustkey"
