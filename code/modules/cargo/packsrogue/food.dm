@@ -16,7 +16,7 @@
 /datum/supply_pack/rogue/food/wineb
 	name = "Grenzelhoftian Sour Wine"
 	cost = 25
-	contains = list(/obj/item/reagent_containers/glass/bottle/rogue/wine,)
+	contains = list(/obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine,)
 
 /datum/supply_pack/rogue/food/stonebeard
 	name = "Stonebeards Reserve"
