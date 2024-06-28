@@ -236,7 +236,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	if(!SScommunications.can_announce(user))
 		return
 
-	priority_announce("[victim.real_name]'s new position is [new_pos].", "The King Decrees", 'sound/misc/alert.ogg', "Captain")
+	priority_announce("Henceforth, the vassal known as [victim.real_name] shall have the title of [new_pos].", "The King Decrees", 'sound/misc/alert.ogg', "Captain")
 
 /obj/structure/roguemachine/titan/proc/make_announcement(mob/living/user, raw_message)
 	if(!SScommunications.can_announce(user))
