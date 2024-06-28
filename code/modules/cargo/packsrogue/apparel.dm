@@ -1,4 +1,3 @@
-
 /datum/supply_pack/rogue/apparel
 	group = "Apparel"
 	crate_name = "merchant guild's crate"
@@ -30,10 +29,9 @@
 	contains = list(/obj/item/storage/belt/rogue/leather,)
 
 /datum/supply_pack/rogue/apparel/crosses
-	name = "Silver Cross"
-	cost = 150
+	name = "Psycross"
+	cost = 20
 	contains = list(/obj/item/clothing/neck/roguetown/psicross)
-
 
 /datum/supply_pack/rogue/apparel/gloves
 	name = "Leather Gloves"
@@ -49,3 +47,18 @@
 	name = "Hide Cloak"
 	cost = 15
 	contains = list(/obj/item/clothing/cloak/raincloak/brown,)
+
+/datum/supply_pack/rogue/apparel/plaque_belts
+	name = "Gold Plaque Belt"
+	cost = 80
+	contains = list(/obj/item/storage/belt/rogue/leather/plaquegold)
+
+/datum/supply_pack/rogue/apparel/plaque_belts/silver
+	name = "Silver Plaque Belt"
+	cost = 60
+	contains = list(/obj/item/storage/belt/rogue/leather/plaquesilver)
+
+/datum/supply_pack/rogue/apparel/keffiyeh
+	name = "Keffiyeh"
+	cost = 25
+	contains = list(/obj/item/clothing/head/roguetown/roguehood/shalal)
