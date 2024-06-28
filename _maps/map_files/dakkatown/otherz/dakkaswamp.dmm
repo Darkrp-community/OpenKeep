@@ -10,7 +10,7 @@
 "eE" = (/turf/open/transparent/openspace,/area/rogue/outdoors/bog)
 "eI" = (/obj/structure/flora/roguegrass/water/reeds,/turf/open/water/swamp/deep,/area/rogue/outdoors/bog)
 "ff" = (/obj/structure/fluff/traveltile{aportalid = "swamproad"; aportalgoesto = "towneast"},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
-"fp" = (/obj/effect/landmark/mapGenerator/rogue/bog{endTurfX = 155; endTurfY = 155},/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/caves)
+"fp" = (/obj/effect/landmark/mapGenerator/rogue/bog{endTurfX = 155; endTurfY = 155},/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/bog)
 "gR" = (/mob/living/simple_animal/hostile/retaliate/rogue/spider,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
 "hE" = (/turf/open/floor/rogue/twig,/area/rogue/indoors/shelter/bog)
 "io" = (/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/bog)

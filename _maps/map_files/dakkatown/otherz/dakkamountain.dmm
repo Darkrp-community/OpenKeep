@@ -1,11 +1,11 @@
 "aA" = (/obj/structure/fluff/traveltile{aportalgoesto = "sewernortheast"; aportalid = "mountainrivereast"},/turf/open/water/river,/area/rogue/outdoors/river)
 "aH" = (/obj/structure/fluff/traveltile{aportalid = "mountainroad"; aportalgoesto = "townnorth"},/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/mountains/deception)
-"bk" = (/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/mountains/decap)
+"bk" = (/turf/closed/mineral/rogue/bedrock,/area/rogue/under/cave)
 "cn" = (/obj/effect/decal/remains/human,/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/indoors)
 "cr" = (/obj/item/paper,/obj/item/natural/feather,/obj/structure/table/wood/plain,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
 "cu" = (/obj/item/trash/applecore,/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
 "dw" = (/obj/structure/mineral_door/wood/red,/obj/structure/mineral_door/wood/red,/obj/structure/mineral_door/wood/red,/obj/structure/mineral_door/wood/red,/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/indoors)
-"ie" = (/turf/open/lava,/area/rogue/outdoors/mountains/decap)
+"ie" = (/turf/open/lava,/area/rogue/under/cave)
 "iM" = (/turf/open/water/river{dir = 4},/area/rogue/outdoors/river)
 "js" = (/obj/item/roguebin/water/gross,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
 "kD" = (/obj/structure/fluff/traveltile{aportalid = "mountainriverwest"; aportalgoesto = "sewernorthwest"},/turf/open/water/river,/area/rogue/outdoors/river)
@@ -14,9 +14,10 @@
 "lI" = (/obj/structure/handcart,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/deception)
 "lQ" = (/turf/closed/wall/mineral/rogue/tent,/area/rogue/indoors)
 "lZ" = (/turf/open/transparent/openspace,/area/rogue/outdoors/mountains/deception)
+"mb" = (/obj/effect/landmark/mapGenerator/rogue/cave{endTurfX = 155; endTurfY = 155},/turf/closed/mineral/rogue/bedrock,/area/rogue/under/cave)
 "nE" = (/obj/machinery/light/rogue/firebowl/stump,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/deception)
 "nH" = (/obj/item/reagent_containers/powder/flour/salt,/obj/structure/closet/crate/chest/wicker,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
-"od" = (/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap)
+"od" = (/turf/open/floor/rogue/dirt,/area/rogue/under/cave)
 "oB" = (/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/deception)
 "oL" = (/turf/open/floor/rogue/grass,/area/rogue/outdoors/mountains/deception)
 "pr" = (/obj/structure/stairs/stone{dir = 4},/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/mountains/deception)
@@ -32,10 +33,10 @@
 "zC" = (/obj/structure/rack/rogue,/obj/item/rogueweapon/spear,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
 "Ak" = (/obj/structure/closet/crate/chest/wicker,/obj/item/rogueore/coal,/obj/item/rogueore/coal,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
 "AZ" = (/turf/closed/wall/mineral/rogue/tent{dir = 8},/area/rogue/indoors)
-"BF" = (/obj/effect/landmark/mapGenerator/rogue/mountain{endTurfX = 155; endTurfY = 155},/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/mountains/decap)
+"BF" = (/obj/effect/landmark/mapGenerator/rogue/mountain{endTurfX = 155; endTurfY = 155},/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/mountains/deception)
 "BG" = (/obj/item/roguegem/yellow,/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
 "BH" = (/obj/structure/rack/rogue,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
-"BV" = (/turf/open/transparent/openspace,/area/rogue/outdoors/mountains/decap)
+"BV" = (/turf/open/transparent/openspace,/area/rogue/under/cave)
 "Cf" = (/obj/structure/rack/rogue,/obj/item/rogueweapon/woodcut/steel,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
 "Cv" = (/obj/effect/landmark/events/testportal{aportalloc = "decap"},/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/mountains/deception)
 "DL" = (/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors)
@@ -53,7 +54,7 @@
 "IB" = (/turf/closed/wall/mineral/rogue/stone,/area/rogue/indoors)
 "Jf" = (/turf/open/floor/rogue/dirt/road,/area/rogue/indoors)
 "Js" = (/obj/structure/fluff/traveltile/vampire{aportalgoesto = "vampin"; aportalid = "vampexit"},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/deception)
-"Jw" = (/turf/open/floor/rogue/volcanic,/area/rogue/outdoors/mountains/decap)
+"Jw" = (/turf/open/floor/rogue/volcanic,/area/rogue/under/cave)
 "JN" = (/obj/structure/fluff/traveltile{aportalid = "mountainroad"; aportalgoesto = "townnorth"},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/deception)
 "Kc" = (/obj/machinery/light/rogue/hearth,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors)
 "Ki" = (/turf/closed/wall/mineral/rogue/tent,/area/rogue/outdoors/mountains/deception)
@@ -61,7 +62,7 @@
 "Mq" = (/turf/closed/wall/mineral/rogue/tent{dir = 1},/area/rogue/indoors)
 "Nb" = (/obj/structure/closet/crate/roguecloset/dark,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
 "Nh" = (/obj/machinery/light/rogue/firebowl,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
-"Nk" = (/turf/closed/mineral/random/rogue/high,/area/rogue/outdoors/mountains/decap)
+"Nk" = (/turf/closed/mineral/random/rogue/high,/area/rogue/under/cave)
 "Oh" = (/obj/structure/table/wood/counter/end{dir = 1},/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
 "Oq" = (/obj/machinery/light/rogue/smelter,/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/indoors)
 "Py" = (/obj/structure/stairs/stone{dir = 1},/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/mountains/deception)
@@ -71,7 +72,7 @@
 "Tk" = (/turf/open/water/cleanshallow,/area/rogue/outdoors/mountains/deception)
 "Uo" = (/obj/structure/mineral_door/wood/red,/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/indoors)
 "Up" = (/obj/structure/bed/rogue/sleepingbag,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors)
-"Uq" = (/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/mountains/decap)
+"Uq" = (/turf/open/floor/rogue/naturalstone,/area/rogue/under/cave)
 "VB" = (/obj/structure/flora/roguegrass/water/reeds,/turf/open/water/cleanshallow,/area/rogue/outdoors/mountains/deception)
 "VV" = (/turf/closed/wall/mineral/rogue/stonebrick,/area/rogue/indoors)
 "Wg" = (/obj/effect/decal/remains/human,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
@@ -79,7 +80,7 @@
 "WR" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
 "Xg" = (/obj/machinery/light/rogue/hearth,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
 "Xs" = (/obj/machinery/light/rogue/forge,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
-"Yc" = (/turf/closed,/area/rogue/outdoors/mountains/decap)
+"Yc" = (/turf/closed,/area/rogue/under/cave)
 
 (1,1,1) = {"
 bkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
@@ -236,7 +237,7 @@ bkbkbkbkbkbkNkNkNkNkUqUqNkNkNkNkbkbkbkbkbkbkbkbkbkbkbkbkbkbkDNDNDNwqoBwqDNbkbkbk
 bkbkbkbkbkbkNkNkNkNkNkNkNkNkNkNkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkDNoBoBwqDNDNbkbkbkbkbkbkbkbkbkHUHUHUbkbkbkbkbkbkbkbkbkbkbkbkNkNkNkNkNkNkbkbkbkbkbkbkYcbkbkbkYcbkbkYcbkYcYcYcYcbkYcbkbkYcbkbkbkbkNkNkNkNkNkNkNkbkbkHUHUHUbkbkbkNkNkNkNkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
 bkbkbkbkbkbkbkbkNkNkNkNkNkNkNkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkoBoBwqDNDNbkbkbkbkbkbkbkbkbkHUHUHUbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkYcbkbkbkYcYcYcYcbkYcbkbkYcbkYcbkbkYcbkbkbkbkbkbkNkNkNkNkNkbkbkHUHUHUbkbkbkNkNkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
 bkbkbkbkbkbkbkbkbkNkNkNkbkNkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkDNwqoBDNbkbkbkbkbkbkbkbkbkbkHUHUHUbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkHUHUHUbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
-BFbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkJNaHaHJNbkbkbkbkbkbkbkbkbkbkkDkDkDbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkaAaAaAbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
+BFmbbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkJNaHaHJNbkbkbkbkbkbkbkbkbkbkkDkDkDbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkaAaAaAbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
 "}
 (1,1,2) = {"
 bkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
@@ -393,7 +394,7 @@ bkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkBVBVBVBVBVBVBVbkbkbk
 bkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkBVBVBVBVBVBVbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
 bkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkBVBVBVBVBVbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
 bkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkBVBVBVBVbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
-BFbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkBVBVBVBVbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
+BFmbbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkBVBVBVBVbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
 "}
 (1,1,3) = {"
 bkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkHUHUHUHUHUribkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkHUHUHUHUHUribkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
@@ -550,5 +551,5 @@ bkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbklZlZlZlZlZlZlZbkbkbk
 bkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbklZlZlZlZlZlZbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
 bkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbklZlZlZlZlZbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
 bkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbklZlZlZlZbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
-BFbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbklZlZlZlZbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
+BFmbbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbklZlZlZlZbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk
 "}
