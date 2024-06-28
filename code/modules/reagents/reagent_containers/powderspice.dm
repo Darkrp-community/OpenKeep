@@ -197,6 +197,8 @@
 	if(prob(10))
 		M.playsound_local(get_turf(M), 'sound/misc/jumpscare (2).ogg', 25)
 		M.flash_fullscreen("hey")
+	if(prob(20))
+		M.flash_fullscreen("whiteflash")
 	M.apply_status_effect(/datum/status_effect/buff/ozium)
 	..()
 
