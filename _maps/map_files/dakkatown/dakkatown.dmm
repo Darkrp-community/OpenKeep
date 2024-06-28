@@ -295,7 +295,7 @@
 "gN" = (/obj/structure/mineral_door/wood/donjon{name = "South Gate"; lockid = "garrison"; locked = 1; dir = 1},/turf/open/floor/rogue/cobble,/area/rogue/outdoors/town)
 "gO" = (/obj/effect/decal/cleanable/cobweb/cobweb2,/obj/structure/closet/crate/chest/neu,/obj/item/rogueweapon/mace/coppermace,/turf/open/floor/rogue/greenstone,/area/rogue/under/town/ruin)
 "gR" = (/obj/structure/fluff/railing/border,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town)
-"gS" = (/obj/effect/decal/cleanable/blood/old,/obj/item/bodypart/r_arm,/turf/open/floor/rogue/dirt/road,/area/rogue/under/town/sewer)
+"gS" = (/obj/effect/decal/cleanable/blood/gibs/up,/turf/open/floor/rogue/dirt,/area/rogue/under/town/sewer)
 "gT" = (/obj/structure/mineral_door/wood/green{name = "Quarantine"; lockid = "doctor"},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town)
 "gU" = (/obj/structure/chair/wood/rogue,/turf/open/floor/rogue/wood/nosmooth,/area/rogue/indoors/town)
 "gV" = (/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town/dwarfin)
@@ -1319,7 +1319,7 @@
 "EF" = (/turf/closed/wall/mineral/rogue/wooddark/vertical,/area/rogue/outdoors/town)
 "EG" = (/obj/item/candle/yellow,/obj/structure/table/wood/fine,/turf/open/floor/carpet/royalblack,/area/rogue/indoors/town)
 "EH" = (/obj/structure/stairs/stone{dir = 4},/turf/open/floor/rogue/hexstone,/area/rogue/outdoors/exposed/church)
-"EI" = (/obj/effect/decal/cleanable/blood/old,/obj/item/bodypart/r_leg,/turf/open/floor/rogue/dirt/road,/area/rogue/under/town/sewer)
+"EI" = (/obj/effect/decal/cleanable/blood/gibs/old,/turf/open/floor/rogue/dirt/road,/area/rogue/under/town/sewer)
 "EK" = (/obj/structure/chair/wood/rogue{dir = 1},/obj/effect/landmark/start/villager{dir = 1},/turf/open/floor/rogue/wood,/area/rogue/indoors/town/tavern)
 "EL" = (/obj/effect/decal/cleanable/blood/old,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/rogue/greenstone,/area/rogue/under/town/ruin)
 "EM" = (/obj/structure/stairs,/turf/open/floor/rogue/wood,/area/rogue/outdoors/town)
@@ -1446,7 +1446,7 @@
 "HA" = (/obj/structure/roguemachine/scomm,/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/cell)
 "HB" = (/turf/closed/wall/mineral/rogue/wooddark/horizontal,/area/rogue/indoors/town/garrison)
 "HC" = (/obj/structure/mineral_door/wood/deadbolt{dir = 1; name = "Bedroom"},/turf/open/floor/rogue/ruinedwood{icon_state = "vertw"; dir = 1},/area/rogue/indoors/town/dwarfin)
-"HD" = (/obj/item/bodypart/l_arm,/turf/open/floor/rogue/dirt/road,/area/rogue/under/town/sewer)
+"HD" = (/obj/item/bodypart/l_arm/rproesthetic,/turf/open/floor/rogue/dirt/road,/area/rogue/under/town/sewer)
 "HE" = (/turf/closed/wall/mineral/rogue/wood,/area/rogue/indoors/town/manor)
 "HF" = (/obj/structure/table/wood/plain,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town)
 "HG" = (/obj/effect/decal/cleanable/dirt/dust,/obj/item/flashlight/flare/torch,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/town)
@@ -1651,7 +1651,6 @@
 "Mq" = (/obj/structure/roguewindow/openclose{dir = 4},/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/theatre)
 "Mr" = (/obj/structure/roguemachine/scomm{pixel_y = 0; pixel_x = 32},/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/town)
 "Ms" = (/turf/closed/wall/mineral/rogue/decostone/long,/area/rogue/under/town/basement)
-"Mu" = (/obj/item/bodypart/l_leg,/turf/open/floor/rogue/dirt/road,/area/rogue/under/town/sewer)
 "Mv" = (/obj/machinery/light/rogue/torchholder/r,/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/tile,/area/rogue/indoors/town/garrison)
 "Mw" = (/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/ruinedwood/turned,/area/rogue/indoors/shelter/town/sargoth)
 "Mx" = (/obj/structure/fluff/traveltile{aportalid = "townnorth"; aportalgoesto = "mountainroad"},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/rtfield)
@@ -2325,10 +2324,10 @@ vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojztzOktojojojojojojojoj
 vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojztzOojojktKZojUyvmktojGSvrojktzOzOojktVUktojktzOzOzOzOzOktojoeoeoeojktzOktojojojojojztojojojGrojojojojktktztojojztojojojktojojktojojojojojktzOztojNTKoojHpOXDIojktzOztojjqlylyjqlYlYlYjqlylyjqojoeoeoeojktzOktojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
 vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojztzOktTlktktojktktktktktktojktzOktiTiTiTiTiTktktktojktzOktojoeoeoeojktzOktktktktktztztztztktzOktktztztztktztztktktztztktktktktktojktktktktktzOAjOXmbOXojDIztztAXktzOktojMsuKsBMslYlYlYMsoosBMsojoeoeoeojktzOktojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
 vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojojojojojojojojktktktktzOktiTXxXxgOiTojojojojojzOktojoeoeoeojktzOzOzOzOzOzOzOzOzOzOzOzOktztztojojojojojojqOmdqOojztztktktktzOzOzOzOzOzOztojOXojojojHDFUojktzOktojMsYqYqnDlYlYlYnDYqYqMsojoeoeoeojojzOktojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojojzOktojOXOXztojVUktojktktojktzOktVuXxXxXxiTUyvmktojktzOktojoeoeoeojktzOktktktktojktztztztojktktktztojGDktktktktktkthiojztztztktktzOztztktktztztojOXojOXztDwztojojzOktojMssBsBMslmlYbBMsuKsBMsojoeoeoeojktzOktojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojojzOktojOXOXztojVUktojktktojktzOktVuXxXxXxiTUyvmktojktzOktojoeoeoeojktzOktktktktojktztztztojktktktztojGDktktktktktkthiojztztztktktzOztztktktztztojOXojgSztDwztojojzOktojMssBsBMslmlYbBMsuKsBMsojoeoeoeojktzOktojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
 vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojOXztztojktktojktktojktzOktiTXxSJXxiTktktVUojktzOktojoeoeoeojaWiMaWojojojojojojojojojojojojojojojkSkSkSkSkSkSkSojojojojojztzOztojojojojojojAjKoNTOXztojojktzOktojjqlylyjqlYlYlYjqlylyjqojoeoeoeojztzOktojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojojztojojktojojojojojqOzOztiTiTiTiTiTojktojojktzOojojoeoemkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkoeojztzOztojOXOXojOXEIKoiIOXojFUxCojktzOktojMssBooMslYlYlYMssBuKMsojoeoeoeojztzOktojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojztzOktktztztztztktktktktojztztzOztOXojOXztktktktktktktzOktojoemkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkoeoeojztzOAjztztOXojOXOXztgSztztztMuojktzOktojMsYqYqnDlYlYlYnDYqYqMsojoeoeoeojztzOztojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojojztojojktojojojojojqOzOztiTiTiTiTiTojktojojktzOojojoeoemkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkoeojztzOztojOXOXojOXAjKoiIOXojFUxCojktzOktojMssBooMslYlYlYMssBuKMsojoeoeoeojztzOktojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojztzOktktztztztztktktktktojztztzOztOXojOXztktktktktktktzOktojoemkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkoeoeojztzOAjztztOXojOXOXEIAjztztztztojktzOktojMsYqYqnDlYlYlYnDYqYqMsojoeoeoeojztzOztojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
 vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojztzOzOzOzOzOzOzOzOzOzOzOzOzOzOzOzOzOzOzOzOzOzOzOzOzOzOzOktojmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkoeoeoeojojzOztojztojojojojojojojkkKotMojktzOktojMsuKsBMslmlYbBMsoosBMsojoeoeoeojojzOztojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
 vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojztztktojktzOktktktojktktktktztztOXOXztztktktojktktktktzOktojojojojojiUIziUojojojojojojojojojojojojojojojojojojojojojojojoeoeoeojktzOktojojojktvrojktjpojojOXNTojktzOktojjqlylyjqlYlYlYjqlylyjqojoeoeoeojktzOztojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
 vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojojojojojktzOktojojojojojojktojojojojojojojojojojojojktzOktojktktktktktzOktztztojktktktktktktktktojktktztztktktojktktktGDoeoeoekqktzOktojktvmktktojktktktojScOXojktzOktojMsdxdxdxlYlYlYdxdxdxMsojoeoeoeojztzOztojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
