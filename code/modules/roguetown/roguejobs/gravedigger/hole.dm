@@ -73,9 +73,10 @@
 	if(user.used_intent.type == /datum/intent/fill || user.used_intent.type == /datum/intent/splash)
 		if(bucket.reagents)
 			var/datum/reagent/master_reagent = bucket.reagents.get_master_reagent()
-			if(bucket.reagents.remove_reagent(master_reagent, 100))
+			if(bucket.reagents.remove_reagent(master_reagent, clamp(master_reagent.volume, 1, 100)))
 				var/turf/open/water/creatable/W = new(get_turf(src))
 				W.water_reagent = master_reagent
+				W.water_volume = clamp(master_reagent.volume, 1, 100)
 				W.update_icon()
 				playsound(W, 'sound/foley/waterenter.ogg', 100, FALSE)
 
