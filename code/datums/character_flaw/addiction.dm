@@ -102,7 +102,7 @@
 /datum/charflaw/addiction/masochist
 	name = "Pain Freek"
 	desc = "They call me a freek, but it just feels so good..."
-	time = 20 MINUTES
+	time = 25 MINUTES
 	needsate_text = "I need to feel good... punch me in the face!"
 
 /// LOVES SEEING VISCERA OR SOME SHIT
