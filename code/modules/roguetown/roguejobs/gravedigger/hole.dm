@@ -69,8 +69,21 @@
 /obj/structure/closet/dirthole/toggle(mob/living/user)
 	return
 
+/obj/structure/closet/dirthole/proc/attemptwatermake(mob/living/user, var/obj/item/reagent_containers/bucket)
+	if(user.used_intent.type == /datum/intent/fill || user.used_intent.type == /datum/intent/splash)
+		if(bucket.reagents)
+			var/datum/reagent/master_reagent = bucket.reagents.get_master_reagent()
+			if(bucket.reagents.remove_reagent(master_reagent, 100))
+				var/turf/open/water/creatable/W = new(get_turf(src))
+				W.water_reagent = master_reagent
+				W.update_icon()
+				playsound(W, 'sound/foley/waterenter.ogg', 100, FALSE)
+
 /obj/structure/closet/dirthole/attackby(obj/item/attacking_item, mob/user, params)
 	if(!istype(attacking_item, /obj/item/rogueweapon/shovel))
+		if(istype(attacking_item, /obj/item/reagent_containers/glass/bucket/wooden)) //  you can realistically only hold 100oz with a bukkit
+			var/obj/item/reagent_containers/glass/bucket/wooden/bucket = attacking_item
+			return attemptwatermake(user, bucket)
 		return ..()
 	var/obj/item/rogueweapon/shovel/attacking_shovel = attacking_item
 	if(user.used_intent.type != /datum/intent/shovelscoop)

@@ -177,10 +177,8 @@
 			return TRUE
 		adjustOxyLoss(5)
 		emote("drown")
-		var/list/waterl = list()
-		waterl[water_reagent] = 2
 		var/datum/reagents/reagents = new()
-		reagents.add_reagent_list(waterl)
+		reagents.add_reagent(W.water_reagent, 2)
 		reagents.trans_to(L, reagents.total_volume, transfered_by = user, method = INGEST)
 
 /mob/living/carbon/human/handle_inwater()
