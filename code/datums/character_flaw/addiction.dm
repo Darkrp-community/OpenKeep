@@ -144,25 +144,27 @@
 	var/mob/living/carbon/human/H = user
 	if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) || H.mind.has_antag_datum(/datum/antagonist/vampirelord)) // dont stunlock
 		return
-	if(!H.wear_neck)
-		var/obj/item/clothing/neck/roguetown/psicross/crosstype
-		switch(H.patron)
-			if(/datum/patron/divine/astrata)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/astrata
-			if(/datum/patron/divine/noc)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/noc
-			if(/datum/patron/divine/dendor)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/dendor
-			if(/datum/patron/divine/necra)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/necra
-			if(/datum/patron/divine/ravox)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/ravox
+	var/obj/item/clothing/neck/roguetown/psicross/crosstype
+	switch(H.patron)
+		if(/datum/patron/divine/astrata)
+			crosstype = /obj/item/clothing/neck/roguetown/psicross/astrata
+		if(/datum/patron/divine/noc)
+			crosstype = /obj/item/clothing/neck/roguetown/psicross/noc
+		if(/datum/patron/divine/dendor)
+			crosstype = /obj/item/clothing/neck/roguetown/psicross/dendor
+		if(/datum/patron/divine/necra)
+			crosstype = /obj/item/clothing/neck/roguetown/psicross/necra
+		if(/datum/patron/divine/ravox)
+			crosstype = /obj/item/clothing/neck/roguetown/psicross/ravox
+		else
+			if(prob(1))
+				crosstype = /obj/item/clothing/neck/roguetown/psicross/g
 			else
-				if(prob(1))
-					crosstype = /obj/item/clothing/neck/roguetown/psicross/g
-				else
-					crosstype = /obj/item/clothing/neck/roguetown/psicross
+				crosstype = /obj/item/clothing/neck/roguetown/psicross
+	if(!H.wear_neck)
 		H.equip_to_slot_or_del(new crosstype(H), SLOT_NECK)
+	if(!H.wear_wrists)
+		H.equip_to_slot_or_del(new crosstype(H), SLOT_WRISTS)
 
 /// ALCOHOLIC
 
