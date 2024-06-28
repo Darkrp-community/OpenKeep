@@ -17,7 +17,10 @@
 	var/BUFLUC = 0
 	var/statbuf = FALSE
 	var/list/statindex = list()
-	var/PATRON = null
+	var/datum/patron/patron = /datum/patron/godless
+
+/mob/living/proc/init_faith()
+	patron = GLOB.patronlist[/datum/patron/godless]
 
 /datum/species
 	var/list/specstats = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 0, "endurance" = 0, "speed" = 0, "fortune" = 0)
@@ -51,9 +54,8 @@
 					change_stat(S, H.dna.species.specstats[S])
 		switch(H.age)
 			if(AGE_MIDDLEAGED)
-				change_stat("endurance", 1) //if a stat isn't listed then it dosen't have a bonus or negative
-				change_stat("perception", 1)
-				change_stat("constitution", 1)
+				change_stat("speed", -1)
+				change_stat("endurance", 1)
 			if(AGE_OLD)
 				change_stat("strength", -2)
 				change_stat("speed", -1)

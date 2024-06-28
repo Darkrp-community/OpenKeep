@@ -16,7 +16,7 @@
 
 	display_order = JDO_DUNGEONEER
 
-	tutorial = "Sometimes at night you stare into the vacant room and feel the loneliness of your existence crawl into whatever remains of your loathsome soul. You will never know hunger, thirst or want for anything with the mammons you make: Just as you’ll never forget the sounds a saw makes cutting through the bone, what a drowning man will gurgle out between the blood and teeth strangling his breath. You’re a terrible person, and the carriagemen are going to enjoy walking you down that lonesome path to hell."
+	tutorial = "Sometimes at nite you stare into the vacant room and feel the loneliness of your existence crawl into whatever remains of your loathsome soul. You will never know hunger, thirst or want for anything with the mammons you make: Just as you’ll never forget the sounds a saw makes cutting through the bone, what a drowning man will gurgle out between the blood and teeth strangling his breath. You’re a terrible person, and the carriagemen are going to enjoy walking you down that lonesome path to hell."
 
 	outfit = /datum/outfit/job/roguetown/dungeoneer
 	give_bank_account = 30

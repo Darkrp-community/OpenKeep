@@ -42,6 +42,7 @@
 	show_when_dead = FALSE
 
 /datum/reagent/druqks/overdose_start(mob/living/M)
+	M.flash_fullscreen("hey")
 	M.visible_message("<span class='warning'>Blood runs from [M]'s nose.</span>")
 
 /datum/reagent/druqks/overdose_process(mob/living/M)
@@ -139,6 +140,7 @@
 	list_reagents = list(/datum/reagent/floure = 1)
 	volume = 1
 	sellprice = 0
+	
 /datum/reagent/floure
 	name = "flower"
 	description = ""
@@ -156,7 +158,7 @@
 	qdel(src)
 
 /obj/item/reagent_containers/powder/flour/salt
-	name = "salt"
+	name = "coder salt remove"
 	desc = ""
 	gender = PLURAL
 	icon_state = "salt"
@@ -164,7 +166,7 @@
 	volume = 1
 
 /obj/item/reagent_containers/powder/ozium
-	name = "powder"
+	name = "ozium"
 	desc = ""
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "ozium"
@@ -180,6 +182,10 @@
 	overdose_threshold = 16
 	metabolization_rate = 0.2
 
+/datum/reagent/ozium/on_mob_metabolize(mob/living/L)
+	. = ..()
+	L.flash_fullscreen("can_you_see")
+
 /datum/reagent/ozium/overdose_process(mob/living/M)
 	M.adjustToxLoss(0.25*REM, 0)
 	..()
@@ -188,6 +194,11 @@
 /datum/reagent/ozium/on_mob_life(mob/living/carbon/M)
 	if(M.has_flaw(/datum/charflaw/addiction/junkie))
 		M.sate_addiction()
+	if(prob(10))
+		M.playsound_local(get_turf(M), 'sound/misc/jumpscare (2).ogg', 25)
+		M.flash_fullscreen("hey")
+	if(prob(20))
+		M.flash_fullscreen("whiteflash")
 	M.apply_status_effect(/datum/status_effect/buff/ozium)
 	..()
 

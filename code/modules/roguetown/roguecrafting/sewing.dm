@@ -72,6 +72,13 @@
                 /obj/item/natural/fibers = 1)
     craftdiff = 0
 
+/datum/crafting_recipe/roguetown/sewing/zigbox
+	name = "zigbox"
+	result = list(/obj/item/storage/fancy/cigarettes/zig/empty)
+	reqs = list(/obj/item/paper = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 0
+
 /* craftdiff of 1 */
 
 /datum/crafting_recipe/roguetown/sewing/strawhat
@@ -188,13 +195,6 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
-
-/datum/crafting_recipe/roguetown/sewing/armordress
-	name = "padded dress"
-	result = /obj/item/clothing/suit/roguetown/armor/armordress
-	reqs = list(/obj/item/natural/cloth = 5,
-				/obj/item/natural/fibers = 2)
-	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/sewing/bardhat
 	name = "bard hat"
