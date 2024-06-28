@@ -1,4 +1,3 @@
-
 /datum/supply_pack/rogue/apparel
 	group = "Apparel"
 	crate_name = "merchant guild's crate"
@@ -30,10 +29,9 @@
 	contains = list(/obj/item/storage/belt/rogue/leather,)
 
 /datum/supply_pack/rogue/apparel/crosses
-	name = "Silver Cross"
-	cost = 150
+	name = "Psycross"
+	cost = 20
 	contains = list(/obj/item/clothing/neck/roguetown/psicross)
-
 
 /datum/supply_pack/rogue/apparel/gloves
 	name = "Leather Gloves"
