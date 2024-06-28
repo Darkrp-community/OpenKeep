@@ -63,8 +63,7 @@
 /datum/stressevent/dismembered
 	timer = 40 MINUTES
 	stressadd = 5
-	//desc = "<span class='red'>I've lost a limb.</span>"
-	desc = null
+	desc = "<span class='red'>I WAS USING THAT APPENDAGE!</span>"
 
 /datum/stressevent/dwarfshaved
 	timer = 40 MINUTES
@@ -83,12 +82,10 @@
 			return "<span class='red'>Another [H.dna.species.id] perished.</span>"
 	return desc
 
-
 /datum/stressevent/viewdismember
 	timer = 5 MINUTES
 	stressadd = 2
-	desc = "<span class='red'>I have seen combat</span>"
-
+	desc = "<span class='red'>I've seen men lose their limbs.</span>"
 
 /datum/stressevent/fviewdismember
 	timer = 1 MINUTES
@@ -113,7 +110,7 @@
 /datum/stressevent/freakout
 	timer = 15 SECONDS
 	stressadd = 2
-	desc = "<span class='red'>I'm panicing!</span>"
+	desc = "<span class='red'>I'm panicking!</span>"
 
 /datum/stressevent/felldown
 	timer = 1 MINUTES
@@ -195,12 +192,12 @@
 /datum/stressevent/parablood
 	timer = 15 SECONDS
 	stressadd = 3
-	desc = "<span class='red'>There is so much blood here.. it's like a battlefield!</span>"
+	desc = "<span class='red'>There is so much blood here... it's like a battlefield!</span>"
 
 /datum/stressevent/parastr
 	timer = 2 MINUTES
 	stressadd = 2
-	desc = "<span class='red'>That beast is stronger.. and might easily kill me!</span>"
+	desc = "<span class='red'>That beast is stronger... and might easily kill me!</span>"
 
 /datum/stressevent/paratalk
 	timer = 2 MINUTES

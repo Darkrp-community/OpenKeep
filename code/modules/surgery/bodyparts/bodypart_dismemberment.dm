@@ -56,6 +56,9 @@
 				if(stress2give == /datum/stressevent/viewdismember)
 					if(HAS_TRAIT(CA, TRAIT_STEELHEARTED))
 						continue
+					if(CA.has_flaw(/datum/charflaw/addiction/maniac))
+						CA.add_stress(/datum/stressevent/viewdismember/maniac)
+						continue
 					if(CA.gender == FEMALE)
 						CA.add_stress(/datum/stressevent/fviewdismember)
 						continue
