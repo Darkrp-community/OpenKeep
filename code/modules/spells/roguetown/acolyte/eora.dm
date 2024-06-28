@@ -35,7 +35,7 @@
 	movement_interrupt = FALSE
 	chargedloop = null
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross/eora)
-	sound = 'sound/items/beartrap.ogg'
+	sound = 'sound/combat/hits/blunt/genblunt (3).ogg'
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	charge_max = 15 SECONDS
