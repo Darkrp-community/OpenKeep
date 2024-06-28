@@ -62,8 +62,3 @@
 	name = "Ring of Null Magic"
 	cost = 300
 	contains = list(/obj/item/clothing/ring/active/nomag)
-
-/datum/supply_pack/rogue/luxury/scrying
-	name = "Scrying Orb"
-	cost = 460
-	contains = list(/obj/item/scrying)
