@@ -3,22 +3,22 @@
 	stressadd = -2
 	desc = "<span class='green'>I saw a sinner get punished!</span>"
 
-/datum/stressevent/miasmagas/maniac
+/datum/stressevent/miasmagasmaniac
 	timer = 10 SECONDS
 	stressadd = -1
 	desc = "<span class='green'>It smells like death in here.</span>"
 
-/datum/stressevent/viewdeath/maniac
+/datum/stressevent/viewdeathmaniac
 	timer = 30 SECONDS
 	stressadd = -1
 	desc = "<span class='green'>Death. Hehe...</span>"
 	
-/datum/stressevent/viewdismember/maniac
+/datum/stressevent/viewdismembermaniac
 	timer = 2 MINUTES
 	stressadd = -1
 	desc = "<span class='green'>I've limbs fly. Hehe...</span>"
 
-/datum/stressevent/viewgib/maniac
+/datum/stressevent/viewgibmaniac
 	timer = 2 MINUTES
 	stressadd = -2
 	desc = "<span class='green'>That was amazing! Can someone do it again? I wanna see it again.</span>"

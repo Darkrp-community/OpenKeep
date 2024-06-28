@@ -109,7 +109,7 @@
 							if(HU.dna.species.id == dna.species.id)
 								var/mob/living/carbon/D = HU
 								if(D.has_flaw(/datum/charflaw/addiction/maniac))
-									D.add_stress(/datum/stressevent/viewdeath/maniac)
+									D.add_stress(/datum/stressevent/viewdeathmaniac)
 									D.sate_addiction()
 								else
 									D.add_stress(/datum/stressevent/viewdeath)
@@ -156,7 +156,7 @@
 				CA.adjust_triumphs(-1)
 			var/mob/living/carbon/V = CA
 			if(V.has_flaw(/datum/charflaw/addiction/maniac))
-				V.add_stress(/datum/stressevent/viewgib/maniac)
+				V.add_stress(/datum/stressevent/viewgibmaniac)
 				V.sate_addiction()
 				continue
 			V.add_stress(/datum/stressevent/viewgib)
