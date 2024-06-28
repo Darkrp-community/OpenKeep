@@ -90,8 +90,8 @@
 /datum/status_effect/debuff/chastity
 	id = "chastity"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/chastity
-	effectedstats = list("intelligence" = -6, "fortune" = -6, "strength" = -6, "speed" = -6, "constitution" = -6, "endurance" = -6)
-	duration = 999
+	effectedstats = list("fortune" = -6)
+	duration = 999 MINUTES
 
 /atom/movable/screen/alert/status_effect/debuff/chastity
 	name = "Pantheons Curse"
@@ -101,8 +101,8 @@
 /datum/status_effect/debuff/wiz
 	id = "wiz"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/wiz
-	effectedstats = list("intelligence" = -10)
-	duration = 999
+	effectedstats = list("intelligence" = -5)
+	duration = 999 MINUTES
 
 /atom/movable/screen/alert/status_effect/debuff/wiz
 	name = "Fading Power"
