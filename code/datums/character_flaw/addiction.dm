@@ -86,7 +86,7 @@
 /datum/charflaw/addiction/pyromaniac // from tf2?
 	name = "Servant of Fire"
 	desc = "The warmth and just seeing something turn to ash is so much fun!"
-	time = 30 MINUTES
+	time = 10 MINUTES
 	needsate_text = "I need to see something turn to ash, or be at fire. Anything!"
 
 /// KLEPTOMANIAC
@@ -94,7 +94,7 @@
 /datum/charflaw/addiction/kleptomaniac
 	name = "Thief-borne"
 	desc = "As a child I had to rely on theft to survive. Whether that changed or not, I just can't get over it."
-	time = 20 MINUTES
+	time = 30 MINUTES
 	needsate_text = "I need to STEAL something! I'll die if I don't!"
 
 /// PAIN FREEK
