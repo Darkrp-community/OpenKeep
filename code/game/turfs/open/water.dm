@@ -160,9 +160,13 @@
 				playsound(user, 'sound/foley/drawwater.ogg', 100, FALSE)
 				if(!mapped && C.reagents.add_reagent(water_reagent, 10))
 					water_volume = water_volume - 10
+				else
+					C.reagents.add_reagent(water_reagent, 100)
 				to_chat(user, "<span class='notice'>I fill [C] from [src].</span>")
 			return
 	if(user.used_intent.type == /datum/intent/food)
+		if(mapped)
+			return
 		if(C.reagents)
 			if(water_volume >= water_maximum)
 				to_chat(user, "<span class='warning'>\The [src] is full.</span>")
