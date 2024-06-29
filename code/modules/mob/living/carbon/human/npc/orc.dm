@@ -549,7 +549,7 @@ mob/living/carbon/human/species/orc/ambush/after_creation()
 			r_hand = /obj/item/rogueweapon/greatsword
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 			head = /obj/item/clothing/head/roguetown/helmet/orc
-		if(3) //IF THERE IS A WHIP, THERE'S A WAY!
+		if(3) // WE DON'T WANNA GO TO WAR TODAY BUT THE LORD OF THE LASH SAYS "NAY NAY NAY!!" WE'RE GONNA MARCH ALL DAE, ALL DAE, ALL DAE! WHERE THERE'S A WHIP THERE'S A WAY!!
 			r_hand = /obj/item/rogueweapon/whip/antique
 			l_hand = /obj/item/rogueweapon/sword/short
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
