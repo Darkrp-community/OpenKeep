@@ -345,7 +345,7 @@
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	dropshrink = 0.8
 	slot_flags = null
-
+/* using the version in Neu_Food instead
 /obj/item/reagent_containers/glass/bucket/wooden/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/natural/cloth))
 		var/obj/item/natural/cloth/T = I
@@ -363,7 +363,7 @@
 		user.visible_message("<span class='info'>[user] soaks [T] in [src].</span>")
 		return
 	..()
-
+*/
 /obj/item/reagent_containers/glass/bucket/wooden/getonmobprop(tag)
 	. = ..()
 	if(tag)
