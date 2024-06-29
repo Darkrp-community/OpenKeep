@@ -172,9 +172,9 @@
 
 /mob/living/carbon/handle_inwater(var/turf/open/water/W)
 	..()
-	var/datum/reagents/reagents = new()
-	reagents.add_reagent(W.water_reagent, 2)
-	reagents.trans_to(L, reagents.total_volume, transfered_by = user, method = TOUCH)
+	var/datum/reagents/reagentstouch = new()
+	reagentstouch.add_reagent(W.water_reagent, 2)
+	reagentstouch.trans_to(src, reagents.total_volume, transfered_by = src, method = TOUCH)
 	if(lying)
 		if(HAS_TRAIT(src, TRAIT_NOBREATH))
 			return TRUE
@@ -182,7 +182,7 @@
 		emote("drown")
 		var/datum/reagents/reagents = new()
 		reagents.add_reagent(W.water_reagent, 2)
-		reagents.trans_to(L, reagents.total_volume, transfered_by = user, method = INGEST)
+		reagents.trans_to(src, reagents.total_volume, transfered_by = src, method = INGEST)
 
 /mob/living/carbon/human/handle_inwater()
 	. = ..()
