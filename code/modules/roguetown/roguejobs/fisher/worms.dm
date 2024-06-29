@@ -6,11 +6,11 @@
 /obj/item/natural/worms
 	name = "worm"
 	desc = ""
-	icon_state = "worm"
+	icon_state = "worm1"
 	throwforce = 10
 	baitpenalty = 10
 	isbait = TRUE
-	color = "#985544"
+	color = "#b65f49"
 	w_class = WEIGHT_CLASS_TINY
 	fishloot = list(/obj/item/reagent_containers/food/snacks/fish/carp = 10,
 					/obj/item/reagent_containers/food/snacks/fish/eel = 5,
@@ -33,15 +33,5 @@
 	icon_state = "worm[amt]"
 	if(amt > 1)
 		name = "[initial(name)]s"
-	if(amt > 3)
-		name = "[initial(name)]4"
-	if(amt == 3)
-		name = "[initial(name)]3"
-	if(amt == 2)
-		name = "[initial(name)]2"
 	else
 		name = initial(name)
-
-/obj/item/natural/worms/Initialize()
-	. = ..()
-	dir = rand(0,8)

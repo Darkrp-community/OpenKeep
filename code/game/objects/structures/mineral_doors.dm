@@ -779,9 +779,8 @@
 	desc = "Can be locked from the inside."
 	icon_state = "serving"
 	base_state = "serving"
-	max_integrity = 250
+	max_integrity = 100
 	over_state = "servingopen"
-	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
-	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
+	openSound = 'sound/neu/blindsopen.ogg'
+	closeSound = 'sound/neu/blindsclose.ogg'
 	dir = NORTH
-	locked = TRUE

@@ -51,7 +51,6 @@
 	return TRUE
 
 /turf/closed/wall/turf_destruction()
-	visible_message("<span class='notice'>\The [src] crumbles!</span>")
 	dismantle_wall(1,0)
 
 /turf/closed/wall/proc/dismantle_wall(devastated=0, explode=0)
@@ -177,15 +176,6 @@
 
 	//the istype cascade has been spread among various procs for easy overriding
 	if(try_clean(W, user, T) || try_wallmount(W, user, T) || try_decon(W, user, T))
-		return
-
-	// Are you trying to break your instrument? Go ahead!
-	if(istype(W, /obj/item/rogue/instrument))
-		if(T.attacked_by(src, user))
-			user.do_attack_animation(src)
-		visible_message("<span class='warning'>[user] slams \the [W] against \the [src]!</span>", 
-						"<span class='warning'>I slam \the [W] against \the [src]!</span>",null ,COMBAT_MESSAGE_RANGE)
-		W.take_damage(10, BRUTE, "melee")
 		return
 
 	return ..()

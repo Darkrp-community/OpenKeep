@@ -1,3 +1,9 @@
+GLOBAL_LIST_INIT(RATS_DONT_EAT, typecacheof(list(
+	/obj/item/reagent_containers/food/snacks/smallrat,
+	/obj/item/reagent_containers/food/snacks/grown/onion/rogue,
+	/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
+	)))
+
 /obj/item/reagent_containers/food/snacks/smallrat
 	name = "rat"
 	desc = ""

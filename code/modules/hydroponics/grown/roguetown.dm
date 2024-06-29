@@ -127,7 +127,7 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	desc = ""
 	icon_state = "onion"
 	slices_num = 1
-//	slice_path = /obj/item/reagent_containers/food/snacks/rogue/skinnedonion
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/skinnedonion
 	tastes = list("spicy sweetness" = 1)
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
@@ -178,9 +178,9 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	desc = ""
 	icon_state = "potato"
 	eat_effect = /datum/status_effect/debuff/uncookedfood
-//	slices_num = 1
-//	slice_path = /obj/item/reagent_containers/food/snacks/rogue/skinnedpotato
-//	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/cooked/bakedpotato
+	slices_num = 1
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/skinnedpotato
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/cooked/bakedpotato
 	tastes = list("starchy dirt" = 1)
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)

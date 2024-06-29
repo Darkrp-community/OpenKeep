@@ -47,6 +47,7 @@
 	specstats = list("strength" = -1, "perception" = 1, "intelligence" = 1, "constitution" = 0, "endurance" = 0, "speed" = 2, "fortune" = 0)
 	specstats_f = list("strength" = -1, "perception" = 1, "intelligence" = 2, "constitution" = -1, "endurance" = -1, "speed" = 3, "fortune" = 0)
 	enflamed_icon = "widefire"
+	possible_faiths = list(FAITH_PSYDON, FAITH_ELF)
 	patreon_req = 0
 
 /datum/species/elf/snow/check_roundstart_eligible()

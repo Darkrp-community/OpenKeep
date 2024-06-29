@@ -48,6 +48,7 @@
 	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = -2, "fortune" = 0)
 	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 1, "constitution" = 1, "endurance" = 1, "speed" = -1, "fortune" = 0)
 	enflamed_icon = "widefire"
+	possible_faiths = list(FAITH_PSYDON, FAITH_DWARF)
 	patreon_req = 0
 
 /datum/species/dwarf/mountain/check_roundstart_eligible()

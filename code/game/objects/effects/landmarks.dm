@@ -187,11 +187,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/nightman
-	name = "Niteman"
+	name = "Nightman"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/nightmaiden
-	name = "Nitemaiden"
+	name = "Nightmaiden"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/merchant

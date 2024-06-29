@@ -269,15 +269,6 @@
 	icon_state = "slime"
 	spawn_type = /obj/item/clothing/mask/cigarette/xeno
 
-/obj/item/storage/fancy/cigarettes/zig
-	name = "zigbox"
-	desc = ""
-	icon_state = "zig"
-	spawn_type = /obj/item/clothing/mask/cigarette/rollie/nicotine
-
-/obj/item/storage/fancy/cigarettes/zig/empty
-	spawn_type = null
-
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis
 	name = "\improper Freak Brothers' Special packet"
 	desc = ""

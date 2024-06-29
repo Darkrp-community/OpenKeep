@@ -11,11 +11,6 @@
 	crossfire = FALSE
 	plane = GAME_PLANE_UPPER
 	cookonme = FALSE
-	var/permanent
-
-/obj/machinery/light/rogue/lanternpost/fixed
-	desc = "The lamptern is permanently built into the structure of this one."
-	permanent = TRUE
 
 /obj/machinery/light/rogue/lanternpost/fire_act(added, maxstacks)
 	if(torchy)
@@ -50,7 +45,7 @@
 	. = ..()
 	if(.)
 		return
-	if(torchy && !permanent)
+	if(torchy)
 		if(!istype(user) || !Adjacent(user) || !user.put_in_active_hand(torchy))
 			torchy.forceMove(loc)
 		torchy = null

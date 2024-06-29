@@ -24,9 +24,6 @@
 	var/font_color = "purple"
 	var/prayer_type = "PRAYER"
 	var/deity
-	if(ishuman(src))
-		var/mob/living/carbon/human/human_user = src
-		deity = human_user.patron.name
 	if(usr.job == "Chaplain")
 		cross.icon_state = "kingyellow"
 		font_color = "blue"

@@ -16,14 +16,27 @@
 	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 5
 
-/datum/outfit/job/roguetown/adventurer/cleric
-	allowed_patrons = ALL_CLERIC_PATRONS
-
 /datum/outfit/job/roguetown/adventurer/cleric/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE
+	var/allowed_patrons = list("Astrata", "Dendor", "Necra")
 
-	switch(H.patron?.name)
+	var/datum/patrongods/ourpatron
+	if(istype(H.PATRON, /datum/patrongods))
+		ourpatron = H.PATRON
+
+	if(!ourpatron || !(ourpatron.name in allowed_patrons))
+
+		var/list/datum/patrongods/possiblegods = list()
+		for(var/datum/patrongods/P in GLOB.patronlist)
+			if(P.name in allowed_patrons)
+				possiblegods |= P
+
+		ourpatron = pick(possiblegods)
+		H.PATRON = ourpatron
+		to_chat(H, "<span class='warning'> My patron had not endorsed my practices in my younger years. I've since grown acustomed to [H.PATRON].")
+
+	switch(ourpatron.name)
 		if("Astrata")
 			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
 		if("Dendor")
@@ -59,7 +72,7 @@
 		H.change_stat("endurance", 3)
 		H.change_stat("speed", -1)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
+	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.PATRON)
 	C.holder_mob = H
 	C.grant_spells(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)

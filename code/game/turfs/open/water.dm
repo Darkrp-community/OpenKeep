@@ -274,8 +274,6 @@
 			return
 		if(iscarbon(AM))
 			var/mob/living/carbon/C = AM
-			if(HAS_TRAIT(AM, TRAIT_LEECHIMMUNE))
-				return
 			if(C.blood_volume <= 0)
 				return
 			var/zonee = list(BODY_ZONE_R_LEG,BODY_ZONE_L_LEG)
@@ -305,8 +303,6 @@
 			return
 		if(iscarbon(AM))
 			var/mob/living/carbon/C = AM
-			if(HAS_TRAIT(AM, TRAIT_LEECHIMMUNE))
-				return
 			if(C.blood_volume <= 0)
 				return
 			var/zonee = list(BODY_ZONE_CHEST,BODY_ZONE_R_LEG,BODY_ZONE_L_LEG,BODY_ZONE_R_ARM,BODY_ZONE_L_ARM)

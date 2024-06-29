@@ -7,12 +7,7 @@
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "villain"
 	var/special_role = ROLE_VILLAIN
-	confess_lines = list(
-		"I gave them no time to squeal.",
-		"I shant quit ripping them.",
-		"They deserve to be put at my blade.",
-		"Do what thou wilt shall be the whole of the law.",
-	)
+	confess_lines = list("I gave the lady no time to squeal.", "I am down on whores.", "I shant quit ripping them.")
 
 /datum/antagonist/villain/on_gain()
 	owner.special_role = "Maniac"

@@ -2,45 +2,41 @@
 
     "french": {
 		"shi": "shee",
-		"thi": "zee",
-		"them ": "zem ",
-		"that ": "zat ",
-		"will": "weell",
-		"through": "zrough",
-		"throw": "zrow",
-		"though": "zough",
-		"thought": "zhoght",
-		"with": "weef",
-		"those": "zose",
-		"they": "zey",
-		"another": "anozer",
-		"other": "ozer",
-		"brother": "brozer",
-		"Mother" : "Mozer",
-		"Father" : "Fazer",
-		" yes ": " yis ",
+		"thi": "thee",
+		" yes ": " oui ",
+		"no": "non",
+       		 "I'm ": "j' ", 
+   	     	" am ": " suis ", 
+		" a ": " un ",
         	" and ": " et ", 
 		"the ": "l' ",
 		"I ": "j' ",
-		"I'm ": "j' ",
+		"with": "weeth",
+		"of ": "de ",
+       		 "bad": "mal", 
         	"bye": [
            		 "adieu",
 			"au revoir"
        		 ], 
 		"cake": "gateau",
       		  "captain": "capitaine", 
+      		  "cook": "cuisinier", 
      		   "dad": "papa", 
+     		   "good": "bon", 
         "hello": [
             "'allo", 
             "bonjour",
 			"salut"
         ], 
         "mom ": "mama ", 
+        "my ": "mon ", 
 	"shit": "merde",
         "spaghetti": "macaroni", 
         "thanks": "merci",  
         "thank you": "merci",   
-        "wine": "vine"
+        "what's": "quel est",
+        "who's": "qui est",
+        "wine": "vin"
 		}
 		
 }

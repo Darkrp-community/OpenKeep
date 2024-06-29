@@ -108,7 +108,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			H.set_species(/datum/species/elf/snow) //setspecies randomizes body
 		H.after_creation()
 	H.equipOutfit(/datum/outfit/job/roguetown/vamplord)
-	H.patron = GLOB.patronlist[/datum/patron/inhumen/zizo]
 
 	return TRUE
 
@@ -776,12 +775,12 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 							sunstolen = FALSE
 						priority_announce("The Sun is torn from the sky!", "Terrible Omen", 'sound/misc/astratascream.ogg')
 						addomen("sunsteal")
-						for(var/mob/living/carbon/human/astrater in GLOB.human_list)
-							if(!istype(astrater.patron, /datum/patron/divine/astrata) || !length(astrater.mind?.antag_datums))
-								continue
-							to_chat(astrater, "<span class='userdanger'>You feel the pain of [astrater.patron.name]!</span>")
-							astrater.emote_scream()
-
+						for(var/mob/living/carbon/human/W in GLOB.human_list)
+							var/datum/patrongods/patron = W.client.prefs.selected_patron
+							if(patron.name == "Astrata")
+								if(!W.mind.antag_datums)
+									to_chat(W, "<span class='userdanger'>You feel the pain of your Patron!</span>")
+									W.emote_scream()
 
 	if(user.mind.special_role == "Vampire Spawn")
 		to_chat(user, "I don't have the power to use this!")

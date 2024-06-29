@@ -11,7 +11,6 @@
 		diag_hud.add_to_hud(src)
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
-	init_faith()
 
 /mob/living/Destroy()
 	surgeries = null
@@ -1078,24 +1077,26 @@
 /mob/living/resist_grab(moving_resist)
 	. = TRUE
 
-	var/wrestling_diff = 0
 	var/resist_chance = 50
 	var/mob/living/L = pulledby
-
-	if(mind)
-		wrestling_diff += (mind.get_skill_level(/datum/skill/combat/wrestling)) //NPCs don't use this
+	if(pulledby.grab_state >= GRAB_AGGRESSIVE)
+		resist_chance -= 25
+	var/diffy = STASTR - L.STASTR
+	if(diffy > 0)
+		resist_chance = 50 + (diffy * 25)
+//		if(!L.rogfat_add(diffy * 10)) //hard to keep a grip on them
+//			resist_chance = 100
+	if(diffy < 0)
+		resist_chance = 50 - (diffy * 25)
 	if(L.mind)
-		wrestling_diff -= (L.mind.get_skill_level(/datum/skill/combat/wrestling))
-
-	resist_chance += ((STACON - L.STACON) * 10)
+		resist_chance -= (L.mind.get_skill_level(/datum/skill/combat/wrestling) * 10)
+	if(mind)
+		resist_chance += (mind.get_skill_level(/datum/skill/combat/wrestling) * 10)
 
 	if(!(mobility_flags & MOBILITY_STAND))
-		resist_chance += -20 + min((wrestling_diff * 5), -20) //Can improve resist chance at high skill difference     
-	if(pulledby.grab_state >= GRAB_AGGRESSIVE)
-		resist_chance += -20 + max((wrestling_diff * 10), 0) 
-		resist_chance = max(resist_chance, 50 + min((wrestling_diff * 5), 0))
-	else
-		resist_chance = max(resist_chance, 70 + min((wrestling_diff * 5), 0))
+		resist_chance -= 20
+
+	resist_chance = max(resist_chance, 1)
 
 
 	if(moving_resist && client) //we resisted by trying to move

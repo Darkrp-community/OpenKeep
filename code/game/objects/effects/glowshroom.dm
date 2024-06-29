@@ -31,10 +31,6 @@
 	if(isliving(mover) && mover.z == z)
 //		var/throwdir = get_dir(src, mover)
 		var/mob/living/L = mover
-
-		if(istype(L.patron, /datum/patron/divine/dendor)) //Dendor kneestinger immunity
-			return TRUE
-		
 		if(L.electrocute_act(30, src))
 			L.consider_ambush()
 			if(L.throwing)
@@ -48,10 +44,9 @@
 	if(isliving(AM))
 		var/mob/living/L = AM
 		if(L.z == z)
-			if(!(istype(L.patron, /datum/patron/divine/dendor)))
-				if(L.electrocute_act(30, src))
-					L.emote("painscream")
-					L.consider_ambush()
+			if(L.electrocute_act(30, src))
+				L.emote("painscream")
+				L.consider_ambush()
 	. = ..()
 
 /obj/structure/glowshroom/attackby(obj/item/W, mob/user, params)

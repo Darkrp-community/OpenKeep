@@ -337,7 +337,7 @@
 	slot_flags = ITEM_SLOT_HIP
 	var/datum/looping_sound/torchloop/soundloop
 	var/should_self_destruct = TRUE //added for torch burnout
-	max_integrity = 40
+	max_integrity = 20
 	fuel = 30 MINUTES
 	light_depth = 0
 	light_height = 0
@@ -429,7 +429,7 @@
 
         if (should_self_destruct)  // check if self-destruct
             times_used += 1
-            if (times_used >= 8) //amount used before burning out
+            if (times_used >= 6) //amount used before burning out
                 user.visible_message("<span class='warning'>[src] has burnt out and falls apart!</span>")
                 qdel(src)
 

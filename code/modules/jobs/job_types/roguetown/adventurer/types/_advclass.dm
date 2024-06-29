@@ -2,7 +2,7 @@
 	var/name
 	var/outfit
 	var/tutorial = "Choose me!"
-	var/list/allowed_sexes
+	var/list/allowed_sexes = list("male","female")
 	var/list/allowed_races = list("Humen",
 	"Humen",
 	"Elf",
@@ -11,8 +11,8 @@
 	"Dwarf",
 	"Dwarf"
 	)
-	var/list/allowed_patrons
-	var/list/allowed_ages
+	var/list/allowed_patrons = ALL_PATRON_NAMES_LIST
+	var/list/allowed_ages = ALL_AGES_LIST
 	var/pickprob = 100
 	var/maximum_possible_slots = 999
 	var/total_slots_occupied = 0

@@ -4,13 +4,18 @@
 	name = "pot"
 	desc = ""
 	icon_state = "pote"
+	icon = 'icons/roguetown/items/cooking.dmi'
 	sharpness = IS_BLUNT
 	//dropshrink = 0.8
 	slot_flags = null
 	ingsize = 6
+
 	item_state = "pot"
+	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/rogue_righthand.dmi'
 	drop_sound = 'sound/foley/dropsound/shovel_drop.ogg'
 	w_class = WEIGHT_CLASS_BULKY
+	experimental_inhand = FALSE
 
 
 // THE SOUP UPDATE IS BEING WORKED ON HERE (But it is on hold for now while I figure this fucking shit out)

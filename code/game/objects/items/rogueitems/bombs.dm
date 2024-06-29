@@ -13,12 +13,6 @@
 	var/lit = FALSE
 	var/prob2fail = 23
 
-/obj/item/bomb/homemade
-	prob2fail = 30
-
-/obj/item/bomb/homemade/Initialize()
-	. = ..()
-	fuze = rand(20, 50)
 
 /obj/item/bomb/spark_act()
 	light()

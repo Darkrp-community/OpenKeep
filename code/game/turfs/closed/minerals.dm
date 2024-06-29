@@ -650,7 +650,7 @@
 /turf/closed/mineral/rogue/salt
 	desc = "seems rich in salt"
 	icon_state = "mingold"
-	mineralType = /obj/item/reagent_containers/powder/salt
+	mineralType = /obj/item/reagent_containers/powder/flour/salt
 	rockType = /obj/item/natural/rock/salt
 	spreadChance = 12
 	spread = 3

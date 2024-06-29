@@ -58,5 +58,3 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		backl = /obj/item/storage/backpack/rogue/satchel
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
-	backpack_contents = list(/obj/item/kitchen/spoon, /obj/item/reagent_containers/food/snacks/rogue/truffles)
-

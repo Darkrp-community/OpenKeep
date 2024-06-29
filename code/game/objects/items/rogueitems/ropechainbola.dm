@@ -21,7 +21,6 @@
 
 /datum/intent/tie
 	name = "tie"
-	icon_state = "intie"
 	chargetime = 0
 	noaa = TRUE
 	candodge = FALSE

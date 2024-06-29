@@ -100,9 +100,6 @@
 	if(!in_range(src, user))
 		return
 
-	if(user.buckled)
-		return
-
 	if (up && down)
 		var/result = alert("Go up or down [src]?", "Ladder", "Up", "Down", "Cancel")
 		if (!in_range(src, user))

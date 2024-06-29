@@ -107,7 +107,7 @@
 			I.pixel_y = 0
 			var/mutable_appearance/M = new /mutable_appearance(I)
 			M.transform *= 0.5
-			M.pixel_y = rand(-2,4) // WHY WOULD YOU WANT TO HIDE THE ENTIRE SPRITE?? Fixed now
+			M.pixel_y = rand(-3,4) // WHY WOULD YOU WANT TO HIDE THE ENTIRE SPRITE?? Fixed now
 			M.layer = 4.24
 			underlays += M
 		var/mutable_appearance/M = mutable_appearance(icon, "oven_under")

@@ -1,6 +1,8 @@
-/datum/advclass/pilgrim/weaver
+/datum/advclass/weaver
 	name = "Weaver"
-	allowed_sexes = list(MALE, FEMALE)
+	tutorial = "Tailors, weavers and seamstresses, who make deft work of cloths and fiber \
+				in order to craft clothes fit for a King, or royalty in general."
+	allowed_sexes = list("Male", "female")
 	allowed_races = list("Humen",
 	"Elf",
 	"Half-Elf",
