@@ -1,14 +1,13 @@
 /datum/advclass/mercenary/underdweller
-    name = "Underdweller"
-    tutorial = "A member of the Underdwellers, you've taken many of the deadliest contracts known to man in the Dwarven Federation. Drow or Dwarf, you've put your differences aside for coin and adventure."
-    allowed_sexes = list(MALE, FEMALE)
-    allowed_races = list(
-        "Dwarf",
-        "Dark Elf"
-    )
-    outfit = /datum/outfit/job/roguetown/mercenary/underdweller
-    category_tags = list(CTAG_MERCENARY)
-    maximum_possible_slots = 5
+	name = "Underdweller"
+	tutorial = "A member of the Underdwellers, you've taken many of the deadliest contracts known to man in the Dwarven Federation. Drow or Dwarf, you've put your differences aside for coin and adventure."
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list(
+		"Dwarf",
+		"Dark Elf"
+	)
+	outfit = /datum/outfit/job/roguetown/mercenary/underdweller
+	category_tags = list(CTAG_MERCENARY)
 
 /datum/outfit/job/roguetown/mercenary/underdweller/pre_equip(mob/living/carbon/human/H)
     ..()
