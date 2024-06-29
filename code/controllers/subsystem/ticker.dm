@@ -255,7 +255,6 @@ SUBSYSTEM_DEF(ticker)
 	var/last_bot_update = 0
 
 /datum/controller/subsystem/ticker/proc/checkreqroles()
-	return TRUE
 	var/list/readied_jobs = list()
 	var/list/required_jobs = list("Queen","King","Merchant")
 #ifdef DEPLOY_TEST
