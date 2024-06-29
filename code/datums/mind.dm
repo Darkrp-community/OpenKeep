@@ -592,17 +592,6 @@
 	var/output = "<B>[current.real_name]'s Memories:</B><br>"
 	output += memory
 
-/datum/mind/proc/recall_targets(mob/recipient, window=1)
-	if(!recipient)
-		recipient = current
-	var/output = "<B>[current.real_name]'s Hitlist:</B><br>"
-	for (var/mob/living/carbon in world) // Iterate through all mobs in the world
-		//Find all mobs that have the target charflaw and are not the current mob, then add their name to the output, along with their job if they have one.
-		if ((carbon != current) && (carbon.has_flaw(/datum/charflaw/hunted)))
-			output += "<br>[carbon.real_name]"
-			if (carbon.job)
-				output += " - [carbon.job]"
-	output += "<br>Your creed is blood, your faith is steel. You will not rest until these souls are yours. Use the profane daggar."
 
 	var/list/all_objectives = list()
 	for(var/datum/antagonist/A in antag_datums)
@@ -625,6 +614,19 @@
 		recipient << browse(output,"window=memory")
 	else if(all_objectives.len || memory)
 		to_chat(recipient, "<i>[output]</i>")
+
+/datum/mind/proc/recall_targets(mob/recipient, window=1)
+	var/output = "<B>[recipient.real_name]'s Hitlist:</B><br>"
+	for (var/mob/living/carbon in world) // Iterate through all mobs in the world
+		//Find all mobs that have the target charflaw and are not the current mob, then add their name to the output, along with their job if they have one.
+		if ((carbon.real_name != recipient.real_name) && (carbon.has_flaw(/datum/charflaw/hunted)))
+			output += "<br>[carbon.real_name]"
+			if (carbon.job)
+				output += " - [carbon.job]"
+	output += "<br>Your creed is blood, your faith is steel. You will not rest until these souls are yours. Use the profane dagger."
+
+	if(window)
+		recipient << browse(output,"window=memory")
 
 /datum/mind/Topic(href, href_list)
 	if(!check_rights(R_ADMIN))
