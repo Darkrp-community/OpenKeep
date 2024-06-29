@@ -304,6 +304,7 @@
  * Wooden tables
  */
 
+
 /obj/structure/table/wood
 	name = "wooden table"
 	desc = ""
@@ -415,6 +416,8 @@
 	climb_offset = 10
 
 /obj/structure/table/wood/finer
+
+/obj/structure/table/wood/nice
 	name = "wooden table"
 	desc = ""
 	icon = 'icons/roguetown/misc/tables.dmi'
