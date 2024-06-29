@@ -255,6 +255,8 @@ SUBSYSTEM_DEF(ticker)
 	var/last_bot_update = 0
 
 /datum/controller/subsystem/ticker/proc/checkreqroles()
+	return TRUE
+	/*
 	var/list/readied_jobs = list()
 	var/list/required_jobs = list("Queen","King","Merchant")
 #ifdef DEPLOY_TEST
@@ -323,6 +325,7 @@ SUBSYSTEM_DEF(ticker)
 		return FALSE
 	job_change_locked = TRUE
 	return TRUE
+	*/
 
 /datum/controller/subsystem/ticker
 	var/isroguefight = FALSE

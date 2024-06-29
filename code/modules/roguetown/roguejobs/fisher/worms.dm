@@ -2,6 +2,8 @@
 	var/baitpenalty = 100 // Using this as bait will incurr a penalty to fishing chance. 100 makes it useless as bait. Lower values are better, but Never make it past 10.
 	var/isbait = FALSE	// Is the item in question bait to be used?
 	var/list/fishloot = null
+	var/sizemod
+	var/raritymod
 
 /obj/item/natural/worms
 	name = "worm"
@@ -16,31 +18,19 @@
 					/obj/item/reagent_containers/food/snacks/fish/eel = 5,
 					/obj/item/reagent_containers/food/snacks/fish/angler = 1)
 	drop_sound = 'sound/foley/dropsound/food_drop.ogg'
-	var/amt = 1
+	bundletype = /obj/item/natural/bundle/worms
 
 /obj/item/natural/worms/grubs
 	name = "grub"
 	baitpenalty = 5
 	isbait = TRUE
 	color = null
+	bundletype = null
 	fishloot = list(
 		/obj/item/reagent_containers/food/snacks/fish/carp = 5,
 		/obj/item/reagent_containers/food/snacks/fish/angler = 1,
 		/obj/item/reagent_containers/food/snacks/fish/clownfish = 1,
 	)
-
-/obj/item/natural/worms/update_icon()
-	icon_state = "worm[amt]"
-	if(amt > 1)
-		name = "[initial(name)]s"
-	if(amt > 3)
-		name = "[initial(name)]4"
-	if(amt == 3)
-		name = "[initial(name)]3"
-	if(amt == 2)
-		name = "[initial(name)]2"
-	else
-		name = initial(name)
 
 /obj/item/natural/worms/Initialize()
 	. = ..()

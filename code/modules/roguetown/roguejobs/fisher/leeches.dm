@@ -7,6 +7,7 @@
 	icon_state = "leech"
 	baitpenalty = 0
 	isbait = TRUE
+	bundletype = null
 	fishloot = list(/obj/item/reagent_containers/food/snacks/fish/carp = 5,
 					/obj/item/reagent_containers/food/snacks/fish/eel = 5,
 					/obj/item/reagent_containers/food/snacks/fish/angler = 1)
@@ -186,11 +187,6 @@
 	if(length(descs))
 		desc = "[desc] [jointext(descs, " ")]"
 	return TRUE
-
-/obj/item/natural/worms/leeches/update_icon()
-	..()
-	if(amt > 1)
-		name = "[initial(name)]es"
 
 /obj/item/natural/worms/leech/parasite
 	name = "the parasite"

@@ -126,3 +126,8 @@
 	name = "5x keys"
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/customblank, /obj/item/customblank, /obj/item/customblank, /obj/item/customblank, /obj/item/customblank)
+
+/datum/anvil_recipe/tools/fishinghooks
+	name = "3x Fishing hooks"
+	req_bar = /obj/item/ingot/iron
+	created_item = list(/obj/item/fishing/hook/iron, /obj/item/fishing/hook/iron, /obj/item/fishing/hook/iron)

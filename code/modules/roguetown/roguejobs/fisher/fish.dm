@@ -8,33 +8,21 @@
 	obj_flags = CAN_BE_HIT
 	var/dead = TRUE
 	max_integrity = 50
-	sellprice = 10
+	sellprice = 8
 	dropshrink = 0.6
 	slices_num = 1
 	slice_bclass = BCLASS_CHOP
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/mince/fish
 	eat_effect = /datum/status_effect/debuff/uncookedfood
+	fishloot = list(/obj/item/reagent_containers/food/snacks/fish/carp = 1,
+					/obj/item/reagent_containers/food/snacks/fish/eel = 1)
 
 /obj/item/reagent_containers/food/snacks/fish/dead
 	dead = TRUE
 
 /obj/item/reagent_containers/food/snacks/fish/Initialize()
 	. = ..()
-	var/rarity = pickweight(list("gold" = 1, "ultra" =40, "rare"=50, "com"=900))
-	icon_state = "[initial(icon_state)][rarity]"
-	switch(rarity)
-		if("gold")
-			sellprice = sellprice * 10
-			name = "legendary [initial(name)]"
-		if("ultra")
-			sellprice = sellprice * 4
-			name = "ultra-rare [initial(name)]"
-		if("rare")
-			sellprice = sellprice * 2
-			name = "rare [initial(name)]"
-		if("com")
-			name = "common [initial(name)]"
 	if(!dead)
 		START_PROCESSING(SSobj, src)
 
@@ -81,21 +69,21 @@
 /obj/item/reagent_containers/food/snacks/fish/clownfish
 	name = "clownfish"
 	icon_state = "clownfish"
-	sellprice = 40
+	sellprice = 32
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish
 
 /obj/item/reagent_containers/food/snacks/fish/angler
 	name = "anglerfish"
 	icon_state = "angler"
-	sellprice = 15
+	sellprice = 12
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler
 
 /obj/item/reagent_containers/food/snacks/fish/eel
 	name = "eel"
 	icon_state = "eel"
-	sellprice = 5
+	sellprice = 4
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel
 
