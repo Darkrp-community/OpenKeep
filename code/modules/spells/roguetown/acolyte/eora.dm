@@ -28,17 +28,17 @@
 /obj/effect/proc_holder/spell/invoked/eoracurse
 	name = "Eoras Curse"
 	overlay_state = "curse2"
-	releasedrain = 30
-	chargetime = 10
+	releasedrain = 50
+	chargetime = 30
 	range = 7
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	chargedloop = null
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross/eora)
-	sound = 'sound/combat/hits/blunt/genblunt (3).ogg'
+	sound = 'sound/magic/whiteflame.ogg'
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
-	charge_max = 15 SECONDS
+	charge_max = 10 SECONDS
 	miracle = FALSE
 
 /obj/effect/proc_holder/spell/invoked/eoracurse/cast(list/targets, mob/living/user)

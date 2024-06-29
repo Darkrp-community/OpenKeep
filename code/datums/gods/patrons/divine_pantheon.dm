@@ -97,5 +97,5 @@
 	sins = "Sadism, Celibacy, Ruining beauty"
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/bud
-	t2 = /obj/effect/proc_holder/spell/invoked/crotchrot
+	t2 = /obj/effect/proc_holder/spell/invoked/eoracurse
 	t3 = null
