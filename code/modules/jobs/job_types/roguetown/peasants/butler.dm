@@ -12,8 +12,6 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
 		"Aasimar"
 	)
 	allowed_ages = ALL_AGES_LIST
