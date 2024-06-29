@@ -269,6 +269,9 @@
 /datum/reagent/consumable/milk/salted
 	taste_description = "salty milk"
 
+/datum/reagent/consumable/milk/salted/ashed
+	taste_description = "ashed salty milk"
+
 /obj/item/reagent_containers/attackby(obj/item/I, mob/user, params) // add cook time to containers & salted milk for butter churning
 	..()
 	if(user.mind)
@@ -284,6 +287,40 @@
 			reagents.remove_reagent(/datum/reagent/consumable/milk, 15)
 			reagents.add_reagent(/datum/reagent/consumable/milk/salted, 15)		
 			qdel(I)
+			return
+	if(istype(I, /obj/item/ash) && user.mind.get_skill_level(/datum/skill/magic/arcane))
+		if(!reagents.has_reagent(/datum/reagent/consumable/milk/salted, 15))
+			to_chat(user, "<span class='warning'>Not enough salted milk.</span>")
+			return
+		to_chat(user, "<span class='warning'>Adding ash to the salted milk.</span>")
+		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
+		if(do_after(user,2 SECONDS, target = src))
+			reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 15)
+			reagents.add_reagent(/datum/reagent/consumable/milk/salted/ashed, 15)		
+			qdel(I)
+			return
+	if(istype(I, /obj/item/rogueore/coal) && user.mind.get_skill_level(/datum/skill/magic/arcane))
+		if(!reagents.has_reagent(/datum/reagent/consumable/milk/salted/ashed, 15))
+			to_chat(user, "<span class='warning'>Not enough ashed and salted milk.</span>")
+			return
+		to_chat(user, "<span class='warning'>Adding coal to the potion.</span>")
+		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
+		if(do_after(user,2 SECONDS, target = src))
+			reagents.remove_reagent(/datum/reagent/consumable/milk/salted/ashed, 15)
+			reagents.add_reagent(/datum/reagent/medicine/manapot, 15)
+			qdel(I)
+			return
+	if(istype(I, /obj/item/rogueore/iron) && user.mind.get_skill_level(/datum/skill/magic/arcane))
+		if(!reagents.has_reagent(/datum/reagent/consumable/milk/salted/ashed, 15))
+			to_chat(user, "<span class='warning'>Not enough ashed and salted milk.</span>")
+			return
+		to_chat(user, "<span class='warning'>Adding ore to the potion.</span>")
+		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
+		if(do_after(user,2 SECONDS, target = src))
+			reagents.remove_reagent(/datum/reagent/consumable/milk/salted/ashed, 15)
+			reagents.add_reagent(/datum/reagent/medicine/healthpot, 40)
+			qdel(I)
+			return
 
 /*	............   Churning butter   ................ */
 /obj/item/reagent_containers/glass/bucket/wooden/attackby(obj/item/I, mob/user, params)
