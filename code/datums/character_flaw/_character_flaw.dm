@@ -12,7 +12,6 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	"Fire Servant"=/datum/charflaw/addiction/pyromaniac,
 	"Thief-Borne"=/datum/charflaw/addiction/kleptomaniac,
 	"Pain Freek"=/datum/charflaw/addiction/masochist,
-	"Maniac"=/datum/charflaw/addiction/maniac, // remove incase fragging problem
 	"Random Flaw"=/datum/charflaw/randflaw,
 	"No Flaw (3 TRI)"=/datum/charflaw/noflaw))
 
