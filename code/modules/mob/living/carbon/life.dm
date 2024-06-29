@@ -173,7 +173,7 @@
 /mob/living/carbon/handle_inwater(var/turf/open/water/W)
 	..()
 	var/datum/reagents/reagentstouch = new()
-	reagentstouch.add_reagent(W.water_reagent, 2)
+	reagentstouch.add_reagent(W.water_reagent, 4)
 	reagentstouch.trans_to(src, reagents.total_volume, transfered_by = src, method = TOUCH)
 	if(lying)
 		if(HAS_TRAIT(src, TRAIT_NOBREATH))

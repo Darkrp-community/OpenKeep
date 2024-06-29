@@ -43,25 +43,26 @@
 	nomouseover = FALSE
 	var/swimdir = FALSE
 
-/turf/open/water/process()
-	. = ..()
-	if(water_volume <= 0)
-		dryup()
-
 /turf/open/water/proc/dryup()
-	new /turf/open/floor/rogue/dirt/road(src.loc)
-	new /obj/structure/closet/dirthole/grave(src.loc)
-	qdel(src)
+	if(water_volume <= 0)
+		qdel(water_overlay)
+		qdel(water_top_overlay)
+		var/turf/open/floor/rogue/dirt/dirt = new(src)
+		new /obj/structure/closet/dirthole/grave(dirt)
 
 /turf/open/water/creatable
 	mapped = FALSE
 
 /turf/open/water/Initialize()
 	.  = ..()
-	START_PROCESSING(SSobj, src)
+	if(!mapped)
+		START_PROCESSING(SSobj, src)
 	water_overlay = new(src)
 	water_top_overlay = new(src)
 	update_icon()
+
+/turf/open/water/process()
+	dryup()
 
 /turf/open/water/update_icon()
 	if(water_overlay)
@@ -193,6 +194,11 @@
 			if(do_after(L, 30, target = src))
 				if(wash_in)
 					wash_atom(user, CLEAN_STRONG)
+				var/datum/reagents/reagents = new()
+				reagents.add_reagent(water_reagent, 4)
+				reagents.trans_to(L, reagents.total_volume, transfered_by = user, method = TOUCH)
+				if(!mapped)
+					water_volume = water_volume - 2
 				playsound(user, pick(wash), 100, FALSE)
 /*				if(water_reagent == /datum/reagent/water) //become shittified, checks so bath water can be naturally gross but not discolored
 					water_reagent = /datum/reagent/water/gross

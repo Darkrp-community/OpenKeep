@@ -70,22 +70,28 @@
 	return
 
 /obj/structure/closet/dirthole/proc/attemptwatermake(mob/living/user, var/obj/item/reagent_containers/bucket)
-	if(user.used_intent.type == /datum/intent/food || user.used_intent.type == /datum/intent/splash)
+	testing("attempting to make water proc called")
+	if(user.used_intent.type == /datum/intent/splash)
+		testing("intent check complete")
 		if(bucket.reagents)
+			testing("reagent check complete")
 			var/datum/reagent/master_reagent = bucket.reagents.get_master_reagent()
-			if(bucket.reagents.remove_reagent(master_reagent, clamp(master_reagent.volume, 1, 100)))
-				if(!do_after(user, 10 SECONDS, target = src))
-					return
-				var/turf/open/water/creatable/W = new(get_turf(src))
-				W.water_reagent = master_reagent
-				W.water_volume = clamp(master_reagent.volume, 1, 100)
-				W.update_icon()
-				playsound(W, 'sound/foley/waterenter.ogg', 100, FALSE)
+			if(do_after(user, 10 SECONDS, target = src))
+				if(bucket.reagents.remove_reagent(master_reagent.type, clamp(master_reagent.volume, 1, 100)))
+					testing("remove reagent proc complete")
+					var/turf/open/water/creatable/W = new(get_turf(src))
+					W.water_reagent = master_reagent.type
+					W.water_volume = clamp(master_reagent.volume, 1, 100)
+					W.update_icon()
+					playsound(W, 'sound/foley/waterenter.ogg', 100, FALSE)
+					qdel(src)
+	testing("proc ended")
 
 /obj/structure/closet/dirthole/attackby(obj/item/attacking_item, mob/user, params)
 	if(!istype(attacking_item, /obj/item/rogueweapon/shovel))
 		if(istype(attacking_item, /obj/item/reagent_containers/glass/bucket/wooden))
 			var/obj/item/reagent_containers/glass/bucket/wooden/bucket = attacking_item
+			testing("attempt water make proc should be called now")
 			attemptwatermake(user, bucket)
 			return
 		return ..()
