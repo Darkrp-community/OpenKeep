@@ -9,7 +9,7 @@
 "dD" = (/turf/closed/indestructible/wooddark,/area/rogue/outdoors/beach)
 "dG" = (/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/beach/boat)
 "dI" = (/obj/structure/fluff/traveltile{aportalid = "coast"; aportalgoesto = "townsouth"},/turf/open/floor/rogue/grass,/area/rogue/outdoors/beach)
-"dZ" = (/obj/structure/bed/rogue/shit,/turf/open/floor/rogue/twig,/area/rogue/outdoors/beach)
+"dZ" = (/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/grabber{dir = 8},/turf/open/floor/rogue/twig,/area/rogue/outdoors/beach)
 "eq" = (/obj/structure/stairs{dir = 8},/obj/structure/fluff/railing/border,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/beach/boat)
 "fB" = (/turf/closed/wall/mineral/rogue/wooddark/end{dir = 4},/area/rogue/outdoors/beach)
 "fJ" = (/turf/closed/wall/mineral/rogue/wooddark/end{dir = 1},/area/rogue/outdoors/beach)

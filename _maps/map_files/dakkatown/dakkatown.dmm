@@ -206,7 +206,7 @@
 "eJ" = (/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/manor)
 "eK" = (/turf/open/floor/rogue/carpet,/area/rogue/indoors/town/manor)
 "eL" = (/obj/item/reagent_containers/glass/cup/steel,/obj/structure/table/wood/nice,/turf/open/floor/carpet/royalblack,/area/rogue/indoors/town/bath)
-"eN" = (/obj/machinery/light/rogue/firebowl/standing,/turf/open/floor/rogue/greenstone,/area/rogue/under/town/basement)
+"eN" = (/obj/machinery/light/rogue/firebowl/standing,/turf/open/floor/rogue/greenstone,/area/rogue/indoors/town/vault)
 "eO" = (/obj/effect/landmark/start/guardsman{dir = 1},/turf/open/floor/rogue/carpet/lord/left,/area/rogue/indoors/town/manor)
 "eP" = (/obj/structure/table/wood/plain,/obj/machinery/light/rogue/wallfire/candle/blue,/obj/item/roguecoin/silver,/turf/open/floor/rogue/blocks/newstone/alt,/area/rogue/indoors/town)
 "eQ" = (/turf/closed/wall/mineral/rogue/roofwall/innercorner{dir = 8},/area/rogue/outdoors/town/roofs)
@@ -228,7 +228,7 @@
 "fi" = (/obj/item/soap,/obj/item/roguekey/theatre,/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/theatre)
 "fk" = (/obj/structure/fluff/walldeco/chains,/obj/effect/decal/cleanable/blood/old,/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/church)
 "fl" = (/obj/structure/flora/ausbushes/ywflowers,/turf/open/floor/rogue/grass,/area/rogue/outdoors/exposed/church)
-"fm" = (/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/town/basement)
+"fm" = (/turf/open/floor/rogue/tile/checkeralt,/area/rogue/indoors/town/vault)
 "fn" = (/turf/open/floor/rogue/tile,/area/rogue/indoors/town/tavern)
 "fo" = (/obj/structure/fluff/railing/wood{dir = 1},/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/town)
 "fp" = (/obj/structure/stairs/stone/church{dir = 1},/turf/open/floor/rogue/churchrough,/area/rogue/indoors/town/church/chapel)
@@ -250,7 +250,7 @@
 "fH" = (/obj/structure/mineral_door/wood/fancywood{locked = 1; lockid = "lord"; name = "Prince's Chambers"},/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/town/manor)
 "fI" = (/obj/structure/fluff/railing/border{dir = 8},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/theatre)
 "fJ" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/closet/crate/chest/wicker,/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,/turf/open/floor/rogue/cobble,/area/rogue/under/town/ruin)
-"fL" = (/obj/structure/fluff/statue,/turf/open/floor/rogue/blocks/paving,/area/rogue/under/town/basement)
+"fL" = (/obj/structure/fluff/statue,/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "fM" = (/turf/open/floor/carpet/inn,/area/rogue/indoors/town/bath)
 "fN" = (/turf/closed/wall/mineral/rogue/pipe,/area/rogue/indoors/town/dwarfin)
 "fR" = (/obj/structure/rack/rogue,/obj/item/rogueweapon/woodcut,/turf/open/floor/rogue/ruinedwood{icon_state = "vertw"; dir = 1},/area/rogue/indoors/town/dwarfin)
@@ -280,12 +280,11 @@
 "gw" = (/obj/structure/bookcase/random/archive,/turf/open/floor/carpet/royalblack,/area/rogue/indoors/town)
 "gx" = (/obj/structure/table/wood,/obj/item/roguekey/lord,/turf/open/floor/rogue/carpet/lord/right,/area/rogue/indoors/town/manor)
 "gy" = (/obj/structure/mineral_door/wood{lockid = "roomvi"; locked = 1; name = "Room VI"},/turf/open/floor/rogue/wood,/area/rogue/indoors/town/tavern)
-"gz" = (/obj/structure/chair/bench/church/smallbench{dir = 1},/turf/open/floor/rogue/grass,/area/rogue/outdoors/exposed/church)
 "gA" = (/obj/structure/rack/rogue,/obj/item/rogueweapon/halberd/iron,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/garrison)
 "gB" = (/obj/structure/table/wood/plain,/obj/item/reagent_containers/food/snacks/grown/garlic,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/apothecary)
 "gC" = (/obj/structure/mineral_door/wood/red{lockid = "tavern"; locked = 1; name = "Kitchen"},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/tavern)
 "gD" = (/obj/structure/stairs/fancy/c{dir = 1},/turf/open/floor/rogue/carpet/lord,/area/rogue/indoors/town/manor)
-"gE" = (/obj/structure/fluff/railing/border{dir = 9},/obj/structure/fluff/walldeco/church/line{dir = 4},/turf/open/floor/rogue/blocks/paving,/area/rogue/under/town/basement)
+"gE" = (/obj/structure/fluff/railing/border{dir = 9},/obj/structure/fluff/walldeco/church/line{dir = 4},/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "gF" = (/turf/open/floor/rogue/twig,/area/rogue/outdoors/rtfield)
 "gG" = (/obj/structure/table/wood/nice,/turf/open/floor/carpet/royalblack,/area/rogue/indoors/town/bath)
 "gH" = (/obj/machinery/light/rogue/wallfire/candle,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town)
@@ -329,7 +328,7 @@
 "hB" = (/obj/structure/fluff/railing/border{dir = 6},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/church)
 "hE" = (/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/tavern)
 "hG" = (/obj/structure/roguemachine/musicbox,/obj/structure/table/wood/plain/alto,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors/town/bath)
-"hH" = (/obj/structure/fluff/walldeco/church/line,/turf/open/floor/rogue/blocks/paving,/area/rogue/under/town/basement)
+"hH" = (/obj/structure/fluff/walldeco/church/line,/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "hI" = (/obj/structure/mineral_door/wood{lockid = "walls"; locked = 1; name = "Walls Access"},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town)
 "hJ" = (/obj/structure/fluff/wallclock,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/town/manor)
 "hK" = (/obj/structure/fluff/railing/wood,/turf/open/transparent/openspace,/area/rogue/outdoors/town)
@@ -368,6 +367,7 @@
 "iy" = (/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/cell)
 "iA" = (/obj/structure/mineral_door/wood/deadbolt{name = "Steward's Room"},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town)
 "iB" = (/obj/structure/bars/bent,/obj/structure/roguemachine/vendor{keycontrol = "weaponsmith"},/obj/structure/table/wood/counter{dir = 1},/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/dwarfin)
+"iC" = (/obj/structure/closet/crate/chest/old_crate,/obj/item/rogueweapon/shovel,/obj/item/rogueweapon/shovel,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/dwarfin)
 "iE" = (/obj/structure/well,/turf/open/floor/rogue/grass,/area/rogue/outdoors/exposed/manorgarri)
 "iF" = (/obj/structure/closet/crate/roguecloset/inn/south,/obj/item/clothing/suit/roguetown/shirt/dress/silkdress,/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/black,/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/green,/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random,/obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/town/manor)
 "iG" = (/turf/open/floor/rogue/carpet/lord/center,/area/rogue/indoors/town/manor)
@@ -473,7 +473,7 @@
 "kM" = (/obj/machinery/light/rogue/campfire,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/rtfield)
 "kN" = (/turf/open/floor/rogue/ruinedwood{icon_state = "horzw"},/area/rogue/indoors/town/dwarfin)
 "kO" = (/obj/structure/table/wood/plain/alt,/turf/open/floor/rogue/wood/nosmooth,/area/rogue/indoors/town)
-"kP" = (/obj/structure/mineral_door/wood{name = "Royal Vault"; locked = 1; lockid = "steward"},/obj/structure/bars/passage{redstone_id = "vault"},/turf/open/floor/rogue/blocks/paving,/area/rogue/under/town/basement)
+"kP" = (/obj/structure/mineral_door/wood{name = "Royal Vault"; locked = 1; lockid = "steward"},/obj/structure/bars/passage{redstone_id = "vault"},/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "kQ" = (/obj/structure/roguemachine/scomm{pixel_y = 0; pixel_x = 32},/turf/open/floor/rogue/herringbone,/area/rogue/indoors/town/church)
 "kR" = (/obj/structure/table/wood/large/corner{dir = 10},/turf/open/floor/rogue/woodturned,/area/rogue/indoors/town/tavern)
 "kS" = (/obj/structure/fluff/railing/wood,/turf/open/floor/rogue/cobble/mossy,/area/rogue/under/town/sewer)
@@ -574,7 +574,7 @@
 "nh" = (/obj/machinery/light/rogue/wallfire{pixel_y = 32},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/church)
 "ni" = (/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/shop)
 "nj" = (/obj/structure/flora/roguegrass/water/reeds,/turf/open/water/swamp,/area/rogue/outdoors/rtfield)
-"nk" = (/obj/machinery/light/rogue/firebowl/standing,/obj/structure/fluff/walldeco/church/line{dir = 4},/obj/structure/fluff/walldeco/customflag{pixel_y = -32},/turf/open/floor/rogue/blocks/paving,/area/rogue/under/town/basement)
+"nk" = (/obj/machinery/light/rogue/firebowl/standing,/obj/structure/fluff/walldeco/church/line{dir = 4},/obj/structure/fluff/walldeco/customflag{pixel_y = -32},/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "nl" = (/obj/structure/table/wood/plain,/obj/item/toy/cards/deck,/turf/open/floor/rogue/ruinedwood/turned,/area/rogue/indoors/town)
 "nm" = (/obj/structure/mineral_door/wood/deadbolt{dir = 4; name = "Warehouse"},/turf/open/floor/rogue/blocks/newstone/alt,/area/rogue/indoors/town/shop)
 "nn" = (/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/theatre)
@@ -682,7 +682,7 @@
 "pB" = (/obj/structure/closet/crate/roguecloset/inn/south,/turf/open/floor/rogue/wood,/area/rogue/indoors/town/tavern)
 "pC" = (/obj/structure/chair/wood/rogue{dir = 1},/obj/effect/landmark/start/villager{dir = 1},/turf/open/floor/rogue/woodturned,/area/rogue/indoors/town/tavern)
 "pD" = (/obj/item/clothing/suit/roguetown/shirt/jester,/obj/item/clothing/shoes/roguetown/jester,/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town/theatre)
-"pE" = (/obj/structure/table/wood,/obj/item/reagent_containers/glass/bottle/rogue/wine{name = "Priceless Vintage"},/turf/open/floor/rogue/greenstone,/area/rogue/under/town/basement)
+"pE" = (/obj/structure/table/wood,/obj/item/reagent_containers/glass/bottle/rogue/wine{name = "Priceless Vintage"},/turf/open/floor/rogue/greenstone,/area/rogue/indoors/town/vault)
 "pF" = (/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/rtfield)
 "pH" = (/obj/structure/mineral_door/wood{lockid = "apartment5"; name = "Apartment V"},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/dwarfin)
 "pJ" = (/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/church)
@@ -692,7 +692,7 @@
 "pN" = (/obj/structure/bars,/turf/open/floor/rogue/blocks,/area/rogue/under/town/basement)
 "pO" = (/obj/structure/chair/bench,/turf/open/floor/rogue/grass,/area/rogue/outdoors/town)
 "pP" = (/obj/structure/fluff/statue/astrata,/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/indoors/town/church/chapel)
-"pQ" = (/obj/structure/table/wood,/obj/item/roguestatue/gold,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/town/basement)
+"pQ" = (/obj/structure/table/wood,/obj/item/roguestatue/gold,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/indoors/town/vault)
 "pR" = (/obj/structure/closet/crate/roguecloset,/obj/item/clothing/under/roguetown/tights/random,/obj/item/clothing/suit/roguetown/shirt/undershirt/random,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/manor)
 "pS" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/rogue/concrete,/area/rogue/indoors/town/garrison)
 "pT" = (/obj/structure/mineral_door/wood{lockid = "house4"; name = "House IV"},/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/town)
@@ -819,7 +819,7 @@
 "sL" = (/obj/structure/fluff/railing/border{dir = 6},/turf/closed/wall/mineral/rogue/pipe,/area/rogue/indoors/town/dwarfin)
 "sM" = (/obj/structure/flora/roguetree/stump/log,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/rtfield)
 "sN" = (/turf/closed/wall/mineral/rogue/wooddark/horizontal,/area/rogue/indoors/town)
-"sO" = (/obj/structure/stairs/stone{dir = 4},/obj/structure/fluff/walldeco/customflag{pixel_y = 32},/turf/open/floor/rogue/blocks/paving,/area/rogue/under/town/basement)
+"sO" = (/obj/structure/stairs/stone{dir = 4},/obj/structure/fluff/walldeco/customflag{pixel_y = 32},/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "sP" = (/obj/machinery/light/rogue/wallfire/candle{pixel_y = -10},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town/bath)
 "sQ" = (/obj/structure/fluff/railing/border,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town)
 "sR" = (/obj/structure/fluff/railing/wood{dir = 1},/turf/open/transparent/openspace,/area/rogue/outdoors/town)
@@ -854,6 +854,7 @@
 "tC" = (/obj/structure/fluff/traveltile{aportalid = "sewernortheast"; aportalgoesto = "mountainrivereast"},/turf/open/water/river,/area/rogue/outdoors/town)
 "tE" = (/obj/item/reagent_containers/food/snacks/butter,/obj/item/reagent_containers/food/snacks/butter,/obj/item/reagent_containers/powder/salt,/obj/item/reagent_containers/powder/salt,/obj/item/reagent_containers/powder/flour,/obj/item/reagent_containers/powder/flour,/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/tavern)
 "tF" = (/obj/structure/table/wood/fine,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town/manor)
+"tG" = (/obj/structure/chair/bench/church/smallbench{dir = 1},/turf/open/floor/rogue/hexstone,/area/rogue/outdoors/exposed/church)
 "tH" = (/obj/structure/table/wood/plain,/obj/item/paper/scroll,/obj/item/natural/feather,/turf/open/floor/carpet/royalblack,/area/rogue/indoors/town)
 "tI" = (/obj/item/roguecoin/silver,/turf/open/floor/rogue/blocks/newstone/alt,/area/rogue/indoors/town)
 "tJ" = (/turf/open/floor/rogue/herringbone,/area/rogue/indoors/town/church)
@@ -939,7 +940,7 @@
 "vx" = (/obj/structure/plasticflaps,/turf/open/floor/rogue/cobble/mossy,/area/rogue/under/town/sewer)
 "vz" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/rogue/twig,/area/rogue/indoors/town)
 "vA" = (/obj/structure/roguewindow/openclose,/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/dwarfin)
-"vB" = (/obj/structure/mineral_door/wood{lockid = "sheriff"; locked = 1; name = "Sheriff's Room"},/turf/open/floor/rogue/tile,/area/rogue/indoors/town/garrison)
+"vB" = (/obj/structure/mineral_door/wood{lockid = "sheriff"; locked = 1; name = "Captain's Room"},/turf/open/floor/rogue/tile,/area/rogue/indoors/town/garrison)
 "vC" = (/obj/machinery/light/rogue/torchholder/c,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town/shop)
 "vD" = (/obj/structure/fluff/wallclock/l,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town)
 "vE" = (/obj/machinery/light/rogue/torchholder/c,/turf/open/floor/rogue/wood,/area/rogue/indoors/town/shop)
@@ -986,7 +987,7 @@
 "wD" = (/obj/machinery/light/rogue/wallfire{pixel_y = 32},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town/manor)
 "wE" = (/obj/structure/bars/cemetery,/turf/open/floor/rogue/grass,/area/rogue/outdoors/town)
 "wF" = (/obj/structure/roguewindow/openclose{dir = 4},/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/shop)
-"wG" = (/obj/structure/fluff/railing/border{dir = 8},/obj/structure/fluff/walldeco/church/line{dir = 4},/turf/open/floor/rogue/blocks/paving,/area/rogue/under/town/basement)
+"wG" = (/obj/structure/fluff/railing/border{dir = 8},/obj/structure/fluff/walldeco/church/line{dir = 4},/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "wH" = (/obj/structure/stairs/stone,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/town)
 "wI" = (/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/blocks,/area/rogue/under/town/basement)
 "wJ" = (/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/shop)
@@ -1054,11 +1055,11 @@
 "ym" = (/obj/effect/decal/cleanable/cobweb,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/dwarfin)
 "yn" = (/obj/structure/rack/rogue,/obj/item/chair/stool/bar/rogue,/obj/item/chair/stool/bar/rogue,/obj/item/chair/stool/bar/rogue,/obj/item/chair/stool/bar/rogue,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town/theatre)
 "yo" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/rogue/ruinedwood/turned,/area/rogue/indoors/town)
-"yq" = (/obj/structure/table/wood,/obj/item/roguestatue/gold/loot,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/town/basement)
+"yq" = (/obj/structure/table/wood,/obj/item/roguestatue/gold/loot,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/indoors/town/vault)
 "yr" = (/obj/structure/table/wood/fine,/obj/structure/globe,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/manor)
-"ys" = (/obj/structure/closet/crate/chest/gold,/obj/item/clothing/ring/gold,/obj/item/clothing/ring/gold,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/town/basement)
+"ys" = (/obj/structure/closet/crate/chest/gold,/obj/item/clothing/ring/gold,/obj/item/clothing/ring/gold,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/indoors/town/vault)
 "yu" = (/obj/structure/fluff/statue/gargoyle,/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/town)
-"yv" = (/obj/structure/mineral_door/wood{lockid = "sheriff"; locked = 1; name = "Armory"},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/garrison)
+"yv" = (/obj/structure/mineral_door/wood{lockid = "garrison"; locked = 1; name = "Armory"},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/garrison)
 "yw" = (/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/woodturned,/area/rogue/indoors/town/tavern)
 "yx" = (/obj/machinery/light/rogue/torchholder/c,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town/church)
 "yy" = (/obj/item/grown/log/tree,/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/dwarfin)
@@ -1213,7 +1214,7 @@
 "Ca" = (/obj/structure/mannequin/male,/turf/open/floor/rogue/woodturned,/area/rogue/indoors/town)
 "Cb" = (/obj/structure/fluff/railing/border{dir = 9},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town)
 "Cc" = (/obj/structure/bed/rogue/shit,/turf/open/floor/rogue/ruinedwood/turned,/area/rogue/indoors/town)
-"Cd" = (/obj/structure/table/wood,/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/turf/open/floor/rogue/greenstone,/area/rogue/under/town/basement)
+"Cd" = (/obj/structure/table/wood,/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/turf/open/floor/rogue/greenstone,/area/rogue/indoors/town/vault)
 "Cf" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/vagrant{dir = 1},/turf/open/floor/rogue/twig,/area/rogue/indoors/town)
 "Ch" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/rogue/concrete,/area/rogue/indoors/shelter/town/sargoth)
 "Ci" = (/obj/structure/fluff/railing/border{dir = 6},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/theatre)
@@ -1258,7 +1259,7 @@
 "Da" = (/obj/structure/rack/rogue,/obj/item/clothing/suit/roguetown/armor/armordress/alt,/turf/open/floor/rogue/tile,/area/rogue/indoors/town/manor)
 "Db" = (/obj/structure/table/wood/fine,/obj/item/scrying,/obj/machinery/light/rogue/wallfire/candle/blue/r,/turf/open/floor/carpet/purple,/area/rogue/indoors/town/magician)
 "Dd" = (/obj/structure/chair/wood/rogue{dir = 4},/obj/effect/landmark/start/villager{dir = 4},/turf/open/floor/rogue/ruinedwood,/area/rogue/outdoors/town)
-"De" = (/obj/structure/mineral_door/wood{lockid = "sheriff"; locked = 1; name = "Sheriff's Office"},/turf/open/floor/rogue/wood,/area/rogue/indoors/town/garrison)
+"De" = (/obj/structure/mineral_door/wood{lockid = "sheriff"; locked = 1; name = "Captain's Office"},/turf/open/floor/rogue/wood,/area/rogue/indoors/town/garrison)
 "Df" = (/turf/open/floor/rogue/blocks,/area/rogue/outdoors/town/roofs)
 "Dg" = (/obj/structure/fluff/walldeco/psybanner/red{pixel_x = 32},/turf/open/floor/rogue/hexstone,/area/rogue/outdoors/exposed/church)
 "Dh" = (/obj/structure/stairs{dir = 1},/obj/structure/fluff/railing/wood{dir = 4},/turf/open/floor/rogue/wood,/area/rogue/indoors/town/church)
@@ -1300,7 +1301,7 @@
 "Eb" = (/obj/item/reagent_containers/glass/bucket/wooden,/turf/open/floor/rogue/grass,/area/rogue/outdoors/town)
 "Ed" = (/turf/closed/wall/mineral/rogue/decostone,/area/rogue/indoors/town/church/chapel)
 "Ee" = (/obj/structure/closet/crate/roguecloset/dark,/obj/item/clothing/cloak/raincloak/mortus,/obj/item/clothing/cloak/raincloak/mortus,/obj/item/roguekey/graveyard,/turf/open/floor/rogue/blocks/newstone/alt,/area/rogue/under/town/basement)
-"Ef" = (/obj/structure/fluff/railing/border{dir = 5},/obj/structure/fluff/walldeco/church/line{dir = 8},/turf/open/floor/rogue/blocks/paving,/area/rogue/under/town/basement)
+"Ef" = (/obj/structure/fluff/railing/border{dir = 5},/obj/structure/fluff/walldeco/church/line{dir = 8},/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "Eh" = (/obj/effect/decal/cleanable/blood/gibs/core,/turf/open/floor/rogue/herringbone,/area/rogue/under/town/basement)
 "Ei" = (/turf/open/floor/rogue/ruinedwood/turned,/area/rogue/indoors/town/manor)
 "Ej" = (/obj/item/reagent_containers/food/snacks/egg,/obj/item/reagent_containers/food/snacks/egg,/obj/item/reagent_containers/food/snacks/egg,/obj/item/reagent_containers/food/snacks/grown/wheat,/obj/item/reagent_containers/food/snacks/grown/wheat,/obj/item/reagent_containers/food/snacks/butter,/obj/item/reagent_containers/food/snacks/rogue/meat/sausage,/obj/item/reagent_containers/food/snacks/rogue/meat/steak,/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/hexstone,/area/rogue/indoors/town/church)
@@ -1364,7 +1365,7 @@
 "Fu" = (/obj/structure/fluff/walldeco/bsmith{pixel_x = 26; name = "Dwarven District"},/turf/open/floor/rogue/cobble,/area/rogue/outdoors/town)
 "Fv" = (/obj/structure/table/wood/plain,/obj/item/candle/yellow,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/tavern)
 "Fw" = (/obj/structure/stairs{dir = 4},/turf/open/floor/rogue/wood,/area/rogue/indoors/town/tavern)
-"Fx" = (/obj/structure/stairs/stone{dir = 8},/turf/open/floor/rogue/blocks/paving,/area/rogue/under/town/basement)
+"Fx" = (/obj/structure/stairs/stone{dir = 8},/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "Fy" = (/obj/machinery/light/rogue/wallfire/candle{pixel_y = -10},/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/indoors/town/manor)
 "Fz" = (/obj/structure/chair/bench/ultimacouch/r{icon_state = "ultimacochright"},/turf/open/floor/rogue/wood,/area/rogue/indoors/town/manor)
 "FA" = (/turf/open/floor/rogue/cobble,/area/rogue/under/town/basement)
@@ -1373,9 +1374,10 @@
 "FE" = (/obj/structure/stairs/stone{dir = 1},/turf/open/floor/rogue/blocks,/area/rogue/outdoors/town)
 "FF" = (/obj/structure/table/wood,/obj/item/storage/pill_bottle/dice,/turf/open/floor/rogue/blocks/newstone/alt,/area/rogue/indoors/town/shop)
 "FG" = (/obj/structure/winch{gid = "manor"; redstone_id = "manor"},/turf/open/floor/rogue/tile/masonic/inverted,/area/rogue/indoors/town/manor)
+"FH" = (/turf/closed/wall/mineral/rogue/stonebrick,/area/rogue/indoors/town/vault)
 "FI" = (/obj/structure/closet/crate/chest/neu,/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/garrison)
 "FJ" = (/obj/structure/closet/crate/chest/old_crate,/obj/item/reagent_containers/food/snacks/rogue/cheddar/aged,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors/town/church)
-"FK" = (/obj/structure/stairs/stone{dir = 8},/obj/structure/fluff/walldeco/customflag{pixel_y = 32},/turf/open/floor/rogue/blocks/paving,/area/rogue/under/town/basement)
+"FK" = (/obj/structure/stairs/stone{dir = 8},/obj/structure/fluff/walldeco/customflag{pixel_y = 32},/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "FO" = (/obj/structure/fluff/railing/border{dir = 4},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/church)
 "FP" = (/obj/structure/mineral_door/wood/deadbolt{name = "Roof Access"},/turf/open/floor/rogue/ruinedwood/turned,/area/rogue/indoors/town)
 "FQ" = (/obj/item/candle/yellow,/obj/structure/table/wood/fine,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/shop)
@@ -1470,7 +1472,7 @@
 "HS" = (/obj/structure/fluff/railing/wood{dir = 4},/turf/open/transparent/openspace,/area/rogue/outdoors/town)
 "HT" = (/obj/structure/bed/rogue,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/rogue/cobble/mossy,/area/rogue/under/town/ruin)
 "HU" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/town)
-"HV" = (/obj/structure/fluff/railing/border{dir = 4},/obj/structure/fluff/walldeco/church/line{dir = 8},/turf/open/floor/rogue/blocks/paving,/area/rogue/under/town/basement)
+"HV" = (/obj/structure/fluff/railing/border{dir = 4},/obj/structure/fluff/walldeco/church/line{dir = 8},/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "HW" = (/obj/structure/roguemachine/mail/l,/turf/open/floor/rogue/blocks/newstone/alt,/area/rogue/under/town/basement)
 "HX" = (/obj/structure/table/wood/plain,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town)
 "HY" = (/obj/item/rogueore/coal,/obj/item/rogueore/coal,/obj/structure/closet/crate/chest/wicker,/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/indoors/town/dwarfin)
@@ -1491,7 +1493,7 @@
 "Iq" = (/obj/structure/mineral_door/wood/donjon/stone{lockid = "priest"; locked = 1; name = "Rafters Access"},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/church)
 "Ir" = (/turf/open/floor/rogue/concrete,/area/rogue/indoors/shelter/town/sargoth)
 "Is" = (/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/apothecary)
-"It" = (/obj/structure/fluff/walldeco/painting{pixel_y = -32},/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/town/basement)
+"It" = (/obj/structure/fluff/walldeco/painting{pixel_y = -32},/turf/open/floor/rogue/tile/checkeralt,/area/rogue/indoors/town/vault)
 "Iu" = (/obj/structure/rack/rogue/shelf/biggest,/turf/open/floor/rogue/ruinedwood/turned,/area/rogue/indoors/town/shop)
 "Iv" = (/obj/structure/fluff/traveltile{aportalid = "sewernorthwest"; aportalgoesto = "mountainriverwest"},/turf/open/water/river,/area/rogue/outdoors/town)
 "Ix" = (/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town)
@@ -1539,11 +1541,11 @@
 "Jx" = (/obj/structure/mineral_door/wood/donjon/stone{lockid = "priest"; locked = 1; name = "Rafters Access"},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/church/chapel)
 "Jz" = (/turf/open/floor/carpet/purple,/area/rogue/indoors/town/bath)
 "JA" = (/obj/structure/mineral_door/wood/deadbolt{dir = 1; name = "Storage"},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town/shop)
-"JB" = (/obj/structure/stairs/stone{dir = 4},/turf/open/floor/rogue/blocks/paving,/area/rogue/under/town/basement)
+"JB" = (/obj/structure/stairs/stone{dir = 4},/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "JC" = (/obj/item/bait/sweet,/obj/structure/closet/crate/chest/wicker,/turf/open/floor/rogue/cobble/mossy,/area/rogue/under/town/sewer)
 "JD" = (/obj/item/reagent_containers/food/snacks/crow{dir = 8},/turf/open/floor/rogue/blocks,/area/rogue/outdoors/town/roofs)
 "JE" = (/obj/machinery/light/rogue/firebowl,/turf/open/floor/rogue/rooftop{icon_state = "roofg"},/area/rogue/outdoors/town/roofs)
-"JG" = (/obj/structure/table/wood,/obj/item/reagent_containers/glass/bottle/rogue/manapot,/turf/open/floor/rogue/greenstone,/area/rogue/under/town/basement)
+"JG" = (/obj/structure/table/wood,/obj/item/reagent_containers/glass/bottle/rogue/manapot,/turf/open/floor/rogue/greenstone,/area/rogue/indoors/town/vault)
 "JH" = (/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/shop)
 "JJ" = (/obj/effect/landmark/start/watchman{dir = 8},/obj/structure/chair/wood/rogue{dir = 8},/turf/open/floor/rogue/rooftop{icon_state = "roofg"},/area/rogue/outdoors/town/roofs)
 "JK" = (/obj/structure/closet/crate/roguecloset/dark,/obj/item/paper/scroll,/obj/item/paper/bsmith,/obj/item/paper/bsmith,/obj/item/natural/feather,/turf/open/floor/rogue/ruinedwood{icon_state = "horzw"},/area/rogue/indoors/town/dwarfin)
@@ -1707,7 +1709,6 @@
 "Nv" = (/turf/closed/wall/mineral/rogue/roofwall/middle{dir = 8},/area/rogue/outdoors/town/roofs)
 "Nx" = (/obj/structure/rack/rogue,/obj/item/grown/log/tree/small,/obj/item/grown/log/tree/small,/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/indoors/town/dwarfin)
 "Ny" = (/obj/effect/decal/cleanable/dirt/dust,/obj/item/candle/yellow,/turf/open/floor/rogue/woodturned,/area/rogue/indoors/town/dwarfin)
-"Nz" = (/obj/structure/closet/crate/chest/old_crate,/obj/item/rogueweapon/shovel,/obj/item/rogueweapon/shovel,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/dwarfin)
 "NA" = (/obj/structure/bed/rogue,/obj/effect/landmark/start/mercenary{dir = 1},/turf/open/floor/rogue/wood,/area/rogue/indoors/shelter/town/sargoth)
 "NB" = (/obj/structure/stairs{dir = 4},/turf/open/floor/rogue/wood,/area/rogue/indoors/town/church)
 "NC" = (/obj/effect/landmark/start/magician{dir = 8},/turf/open/floor/rogue/tile/masonic/single,/area/rogue/indoors/town/manor)
@@ -1832,7 +1833,8 @@
 "Qq" = (/turf/open/floor/carpet/royalblack,/area/rogue/indoors/town/church)
 "Qr" = (/mob/living/carbon/human/species/human/northern/bum,/turf/open/floor/rogue/grass,/area/rogue/outdoors/town)
 "Qs" = (/obj/item/reagent_containers/food/snacks/rogue/meat/poultry,/obj/item/reagent_containers/food/snacks/rogue/meat/poultry,/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/church,/area/rogue/under/town/basement)
-"Qv" = (/obj/machinery/light/rogue/firebowl/standing,/obj/structure/fluff/walldeco/church/line{dir = 8},/obj/structure/fluff/walldeco/customflag{pixel_y = -32},/turf/open/floor/rogue/blocks/paving,/area/rogue/under/town/basement)
+"Qt" = (/turf/open/floor/rogue/greenstone,/area/rogue/indoors/town/vault)
+"Qv" = (/obj/machinery/light/rogue/firebowl/standing,/obj/structure/fluff/walldeco/church/line{dir = 8},/obj/structure/fluff/walldeco/customflag{pixel_y = -32},/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "Qw" = (/obj/structure/chair/wood/rogue/fancy{dir = 1},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/shop)
 "Qx" = (/obj/structure/mineral_door/wood/deadbolt{dir = 1; name = "Guardhouse"; locked = 1},/turf/open/floor/rogue/tile,/area/rogue/indoors/town/garrison)
 "Qy" = (/obj/effect/landmark/start/servant{dir = 8},/obj/structure/bed/rogue/inn/hay,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/manor)
@@ -1947,7 +1949,7 @@
 "SS" = (/obj/structure/bed/rogue/inn/double,/obj/item/bedsheet/rogue/fabric_double,/turf/open/floor/carpet/royalblack,/area/rogue/indoors/town/manor)
 "ST" = (/obj/structure/table/wood/plain,/obj/structure/fluff/millstone,/turf/open/floor/rogue/blocks,/area/rogue/under/town/basement)
 "SU" = (/obj/structure/fluff/walldeco/church/line{dir = 8},/obj/structure/fluff/walldeco/church/line{dir = 1},/turf/open/floor/rogue/churchmarble,/area/rogue/indoors/town/church/chapel)
-"SV" = (/obj/structure/chair/bench/church/smallbench{dir = 1},/turf/open/floor/rogue/hexstone,/area/rogue/outdoors/exposed/church)
+"SV" = (/obj/structure/chair/bench/church/smallbench{dir = 1},/obj/effect/landmark/start/vagrant{dir = 1},/turf/open/floor/rogue/hexstone,/area/rogue/outdoors/exposed/church)
 "SW" = (/obj/structure/mineral_door/wood/deadbolt{name = "Warehouse"},/turf/open/floor/rogue/blocks/newstone/alt,/area/rogue/indoors/town/shop)
 "SX" = (/obj/item/reagent_containers/glass/bucket/wooden,/turf/open/floor/rogue/cobble/mossy,/area/rogue/under/town/sewer)
 "SY" = (/obj/structure/rack/rogue,/obj/item/rogueweapon/sword/rapier/lord,/turf/open/floor/rogue/tile,/area/rogue/indoors/town/manor)
@@ -1999,6 +2001,7 @@
 "Uc" = (/obj/machinery/light/rogue/torchholder/c,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/town)
 "Ud" = (/obj/structure/fluff/railing/border{dir = 4},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town)
 "Ue" = (/obj/structure/table/wood/fine,/obj/machinery/light/rogue/wallfire/candle/blue/l,/obj/structure/roguemachine/musicbox,/turf/open/floor/carpet/purple,/area/rogue/indoors/town/magician)
+"Uf" = (/obj/structure/chair/bench/church/smallbench{dir = 1},/turf/open/floor/rogue/grass,/area/rogue/outdoors/exposed/church)
 "Ug" = (/obj/structure/lever{redstone_id = "warehouse"},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town)
 "Uh" = (/obj/machinery/light/rogue/wallfire/candle{pixel_y = -10},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/manor)
 "Ui" = (/obj/structure/fluff/walldeco/church/line{dir = 4},/obj/structure/fluff/walldeco/church/line{dir = 1},/turf/open/floor/rogue/churchmarble,/area/rogue/indoors/town/church/chapel)
@@ -2057,7 +2060,7 @@
 "Vu" = (/obj/structure/plasticflaps,/turf/open/floor/rogue/cobble/mossy,/area/rogue/under/town/ruin)
 "Vv" = (/obj/structure/roguemachine/scomm,/turf/open/floor/carpet/red,/area/rogue/indoors/town/manor)
 "Vw" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/vagrant,/turf/open/floor/rogue/twig,/area/rogue/indoors/town)
-"Vx" = (/obj/structure/closet/crate/chest/gold,/obj/item/roguecoin/gold/pile,/obj/item/roguecoin/silver/pile,/turf/open/floor/rogue/greenstone,/area/rogue/under/town/basement)
+"Vx" = (/obj/structure/closet/crate/chest/gold,/obj/item/roguecoin/gold/pile,/obj/item/roguecoin/silver/pile,/turf/open/floor/rogue/greenstone,/area/rogue/indoors/town/vault)
 "Vy" = (/obj/structure/chair/stool/rogue,/turf/open/floor/rogue/wood,/area/rogue/indoors/town/tavern)
 "Vz" = (/obj/structure/roguemachine/scomm{pixel_y = 0; pixel_x = -32},/turf/open/floor/rogue/blocks,/area/rogue/under/town/basement)
 "VA" = (/obj/machinery/light/rogue/wallfire/candle/r,/turf/open/floor/rogue/woodturned,/area/rogue/indoors/town/garrison)
@@ -2150,7 +2153,7 @@
 "Xw" = (/obj/structure/table/wood/plain,/obj/item/reagent_containers/glass/cup/silver,/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/church)
 "Xx" = (/turf/open/floor/rogue/greenstone,/area/rogue/under/town/ruin)
 "Xy" = (/obj/structure/roguewindow/openclose,/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/apothecary)
-"Xz" = (/obj/structure/table/wood/counter{dir = 1},/turf/open/floor/rogue/ruinedwood/turned,/area/rogue/indoors/town/shop)
+"Xz" = (/obj/structure/table/wood/counter{dir = 1},/obj/structure/roguemachine/atm{pixel_y = -32},/turf/open/floor/rogue/ruinedwood/turned,/area/rogue/indoors/town/shop)
 "XA" = (/turf/open/floor/carpet/royalblack,/area/rogue/indoors/town/bath)
 "XC" = (/obj/structure/fluff/dryingrack,/turf/open/floor/rogue/grass,/area/rogue/outdoors/rtfield)
 "XD" = (/obj/machinery/light/rogue/wallfire/candle/l,/turf/open/floor/rogue/ruinedwood/turned,/area/rogue/indoors/town/bath)
@@ -2262,6 +2265,7 @@
 "ZR" = (/obj/structure/fluff/walldeco/customflag{pixel_y = 32},/turf/open/floor/rogue/cobble,/area/rogue/outdoors/town)
 "ZS" = (/obj/structure/closet/crate/chest/old_crate,/obj/effect/decal/cleanable/dirt/dust,/obj/item/rogueweapon/huntingknife/idagger/silver,/turf/open/floor/rogue/cobble/mossy,/area/rogue/under/town/ruin)
 "ZT" = (/obj/structure/fluff/railing/wood,/obj/structure/fluff/railing/wood{dir = 4},/turf/open/transparent/openspace,/area/rogue/outdoors/town)
+"ZU" = (/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/vault)
 "ZV" = (/obj/effect/decal/cleanable/blood/gibs/up,/turf/open/floor/rogue/dirt,/area/rogue/under/town/sewer)
 "ZX" = (/obj/structure/chair/wood/rogue{dir = 1},/obj/machinery/light/rogue/wallfire/candle/blue/l,/turf/open/floor/rogue/wood/nosmooth,/area/rogue/indoors/town/manor)
 "ZY" = (/obj/structure/closet/crate/chest/neu_iron,/turf/open/floor/rogue/ruinedwood{icon_state = "horzw"},/area/rogue/indoors/town/dwarfin)
@@ -2278,17 +2282,17 @@ vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojow
 vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojowZISusqSuSuZIowoeoeoeCxXTXThYhYkaRxjOhYnsFAFAhYhYhYhYhYhYhYumumumhYhYhYhYhYhYhYlZYplZhYhYhYhYhYhYhYumumhYpNaShYqbqbqbhYqbqbqbhYhYCxoeoeoeojktzOktktktvmojktzOojktVUktojktktztztzOojojvYvYojktzOktojojztzOojojvYvYvYvYvYvYvYvYvYvYvYvYvY
 vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojowowowowowWxowowoeoeoeCxCxXThYhYhYhYhYhYnsFAFAhYhYXTXTXThYhYumumumhYhYXTXTXThYhYEldxYvhYhYXTXTXThYhYumumhYnsnshYAKqbxihYgiqbqbhYCxCxoeoeoeojktzOktojktktojktzOojojojojojojojojztzOztojvYvYojktzOktktktztzOktojvYvYvYvYvYvYvYvYvYvYvYvYvY
 vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojojojojojktktktojoeoemkoeCxXThYhYRxkakahYnsFAFAhYhYXTXTXThYhYhYhYhYhYhYXTXTXThYhYdxdxdxhYhYXTXTXThYhYhYhYhYnspohYdlqbqbhYqbqbqbhYCxoeQeoeoeojktzOojojktktojktzOzOzOktvrojktKZojktzOztojvYvYojojGrqOktzOzOzOktojvYvYvYvYvYvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojIczOktojoeoemkoeCxXThYhYRxRxRxhYnsFAFAhYhYhYhYhYhYhYhYhYhYhYhYhYhYhYhYhYhYkPhYhYhYhYhYhYhYhYhYhYhYnsnshYqbbEqbhYqbawxKhYCxoeoeoeoeojktzOktojktjeojktktktzOktktojktktojktzOktojojojojktzOqOktzOktktktojvYvYvYvYvYvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXThYhYCWRxnPNgnsFAiXhYhYhYhYhYhYhYhYhYhYhYhYhYhYhYhYhYfLdxfLhYhYhYhYhYhYYqpVYqpNnsnshYhYhYhYhYhYhYhYhYCxoeoeoeoeojktzOktojojojojojktojGrojojojojTlojojzOktktktktktktzOktktzOktojojojvYvYvYvYvYvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXThYhYjORxRxhYnsFAFAFApNnsWfhYRYoYoYhYhYXTXThYhYeNEqFKhHhHhHsOEqeNhYhYhYmccXYqrsnsnshYhYhYhYhYhYhYhYhYCxoeoeoeoeojojzOktktktktktktktktzOktktktktktktqOzOzOzOzOzOzOzOzOqOktGrojojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojojzOktojoeoeoeoeCxXThYhYjOkaRxhYnsFAFAFAsensnsfyoYoYfbhYhYXTXThYhYVxEqwGfmfmfmHVEqVxhYhYhYYqYqmcpNnsnspNmcYqYqhYhYXTXTXTCxoeoeoeoeojktzOktqOktktktktktktzOktktktktktktktktktktktktojzOktqOktzOktojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXThYhYhYhYhYhYhYhYhYhYhYnsnshYoYwtoYhYhYXTXThYhYpEEqwGfmyqfmHVEqCdhYhYhYhYhYhYhYnsnsrsYqrpeRhYhYXTXTXTCxoeoeoeoeojztzOktojojktojojojktzOojojojktojojojktojojojojojGrojojztzOktojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXThYhYhYhYhYhYhYhYhYhYhYnspohYhYhYhYhYhYXTXThYhYpEEqwGfmpQfmHVEqJGhYhYhYYqmcYqpNnsnspNYqmcYqhYhYXTXTXTCxoeoeoeoeojztzOztojktktktktojktzOktojktktktojktvmktojktSXktzOvNojztzOztojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOojojoeoeoeoeCxXTXTXTXTXTXTXTXTXTXThYhYnsnshYcgoYwthYhYXTXThYhYVxEqwGfmyqfmHVEqVxhYhYhYYqBHmcrsnspohYhYhYhYhYhYXTXTXTCxoeoeoeoeojztzOztojktktVUktojktzOktojktktktojktktojojktktktzOztztztzOOXojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXTXTXTXTXTXTXTXTXTXThYhYnsnsfywtoYfbhYhYXTXThYhYeNEqFxfmfmfmJBEqeNhYhYhYEhYqYqpNnsnshYhYhYhYhYhYXTXTXTCxoeoeoeoeojojGrojojojojojktojojGrojojojojojojojojojzOzOzOzOzOktojztzOOXojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXTXTXTXTXTXTXTXTXTXThYhYnsnshYoYwtoYhYhYXTXThYhYhYhYgEfmfmfmEfhYhYhYhYhYhYhYhYhYhYhYhYhYXTXTXTXTXTXTXTCxoeoeoeoeojztzOztojztztojojojUyzOzOktztztzOzOzOztztzOktktojojojojojzOztojojojojojojojojvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXTXTXTXTXTXTXTXTXTXThYhYhYhYhYhYhYhYhYhYXTXThYhYhYhYnkysItysQvhYhYhYhYhYhYhYhYhYhYhYhYhYXTXTXTXTXTXTXTCxoeoeoeoeojztzOztztztktojktktktktzOzOzOzOzOzOzOzOzOzOktktojktktojktzOztktktktktktIHktojvYvYvYvYvYvYvYvY
-vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXTXTXTXTXTXTXTXTXTXThYhYhYhYhYhYhYhYhYhYXTXTXTXThYhYhYhYhYhYhYhYhYXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTCxoeoeoeoeojktzOztojztktktktktvmktzOztztztzOzOzOztktojojojojktktktktzOzOzOzOzOzOzOzOhiojvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojIczOktojoeoemkoeCxXThYhYRxRxRxhYnsFAFAhYhYhYhYhYhYhYhYhYhYhYhYhYhYhYhYFHFHkPFHFHhYhYhYhYhYhYhYhYhYnsnshYqbbEqbhYqbawxKhYCxoeoeoeoeojktzOktojktjeojktktktzOktktojktktojktzOktojojojojktzOqOktzOktktktojvYvYvYvYvYvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXThYhYCWRxnPNgnsFAiXhYhYhYhYhYhYhYhYhYhYhYhYhYFHFHFHFHfLZUfLFHFHFHFHhYhYYqpVYqpNnsnshYhYhYhYhYhYhYhYhYCxoeoeoeoeojktzOktojojojojojktojGrojojojojTlojojzOktktktktktktzOktktzOktojojojvYvYvYvYvYvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXThYhYjORxRxhYnsFAFAFApNnsWfhYRYoYoYhYhYXTXThYFHeNQtFKhHhHhHsOQteNFHhYhYmccXYqrsnsnshYhYhYhYhYhYhYhYhYCxoeoeoeoeojojzOktktktktktktktktzOktktktktktktqOzOzOzOzOzOzOzOzOqOktGrojojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojojzOktojoeoeoeoeCxXThYhYjOkaRxhYnsFAFAFAsensnsfyoYoYfbhYhYXTXThYFHVxQtwGfmfmfmHVQtVxFHhYhYYqYqmcpNnsnspNmcYqYqhYhYXTXTXTCxoeoeoeoeojktzOktqOktktktktktktzOktktktktktktktktktktktktojzOktqOktzOktojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXThYhYhYhYhYhYhYhYhYhYhYnsnshYoYwtoYhYhYXTXThYFHpEQtwGfmyqfmHVQtCdFHhYhYhYhYhYhYnsnsrsYqrpeRhYhYXTXTXTCxoeoeoeoeojztzOktojojktojojojktzOojojojktojojojktojojojojojGrojojztzOktojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXThYhYhYhYhYhYhYhYhYhYhYnspohYhYhYhYhYhYXTXThYFHpEQtwGfmpQfmHVQtJGFHhYhYYqmcYqpNnsnspNYqmcYqhYhYXTXTXTCxoeoeoeoeojztzOztojktktktktojktzOktojktktktojktvmktojktSXktzOvNojztzOztojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOojojoeoeoeoeCxXTXTXTXTXTXTXTXTXTXThYhYnsnshYcgoYwthYhYXTXThYFHVxQtwGfmyqfmHVQtVxFHhYhYYqBHmcrsnspohYhYhYhYhYhYXTXTXTCxoeoeoeoeojztzOztojktktVUktojktzOktojktktktojktktojojktktktzOztztztzOOXojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXTXTXTXTXTXTXTXTXTXThYhYnsnsfywtoYfbhYhYXTXThYFHeNQtFxfmfmfmJBQteNFHhYhYEhYqYqpNnsnshYhYhYhYhYhYXTXTXTCxoeoeoeoeojojGrojojojojojktojojGrojojojojojojojojojzOzOzOzOzOktojztzOOXojvYvYvYvYvYvYvYvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXTXTXTXTXTXTXTXTXTXThYhYnsnshYoYwtoYhYhYXTXThYFHFHFHgEfmfmfmEfFHFHFHhYhYhYhYhYhYhYhYhYhYXTXTXTXTXTXTXTCxoeoeoeoeojztzOztojztztojojojUyzOzOktztztzOzOzOztztzOktktojojojojojzOztojojojojojojojojvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXTXTXTXTXTXTXTXTXTXThYhYhYhYhYhYhYhYhYhYXTXThYhYhYFHnkysItysQvFHhYhYhYhYhYhYhYhYhYhYhYhYXTXTXTXTXTXTXTCxoeoeoeoeojztzOztztztktojktktktktzOzOzOzOzOzOzOzOzOzOktktojktktojktzOztktktktktktIHktojvYvYvYvYvYvYvYvY
+vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXTXTXTXTXTXTXTXTXTXThYhYhYhYhYhYhYhYhYhYXTXTXTXThYFHFHFHFHFHFHFHhYXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTCxoeoeoeoeojktzOztojztktktktktvmktzOztztztzOzOzOztktojojojojktktktktzOzOzOzOzOzOzOzOhiojvYvYvYvYvYvYvYvY
 vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeoeCxXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXThYhYhYhYhYhYhYhYhYXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTCxoeoeoeoeojktzOktojojojojktktojojGrojojztztztztztojojROvrojktktojktktktktktojktktzOktojvYvYvYvYvYvYvYvY
 vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojojzOktojoeoeoeQeCxXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTCxoeoeoeoeojktzOktojktktojojojojzOzOktojojojojojztojojktktojojojojojojktojojojojktzOktojvYvYvYvYvYvYvYvY
 vYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYvYojktzOktojoeoeoeQeCxXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTXTCxmkoeoeoeojojzOktojvmktktojktktzOktktojUyktojztztOXojvmktojOXOXztojUyktojktBRojojzOztojvYvYvYvYvYvYvYvY
@@ -2448,7 +2452,7 @@ rdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdzQlGlGnTpFlGpFwLnTnTnTVOVOVOnTnTpFlGlGjblGVOVO
 rdrdrdrdrdrdrdrdrdrdrdrdrdzQlGrdrNlGlGKunTpFpFlGlGnTnTVOVOVOpFnTlGhZpFnTlGVOVOVOVOpFnTlGpFpYnTplplpliuszdWiyowETETjkwxwxjBQCQCjBwxwxjBQCQCjBwxwxDFLwGEGEtYiGOLGEGERfPfRfoRoRBltdBlBlBldXwxETnInInInInIETqQqQqQqQplplplHSNSmgrcrcIQflyzyzyzyzyzyztzIQrcrcbTBYUPUZUZUZUZxdtJtJtJnRtJtJnRtJtJtJMzURtJBYBYBYWaWaWaWaWaWaWa
 rdrdrdrdrdrdrdrdrdrdrdrdzQzQlGlGlGlGlGpFnTpFnThZnTnTpFVOVOVOnTlGlGlGnTnTnTVOVOVOVOnTnTpFpFlGnTplplplowowowowowLDLDLDnIKfjknInInInIFnjknInIjknIwxDFLwGEGEtYiGOLGEGERfVZRfoRoRdBRrVXBlHKdXwxXMnInIiEnInIXMqQqQqQqQplplplHSNSbTrcrcbTjAANyzyzyzyzANflbTrcrcbTBYUZUZUZUZklBYtJtJtJtJtJtJtJtJtJtJtJtJtJBYUaBYWaWaWaWaWaWaWa
 rdrdrdrdrdrdrdrdrdrdrdrdrdrdrdlGrdrdlGlGpFpFnTnTpFpFVOVOpFVOlGnTnTVOnTcwVOVOpFpFVOpFXHlGnTlGnTplplplplqQqQqQqQLDLDLDLDLDLDLDLDLDLDLDLDLDLDLDLDwxDFtLGEgqtYiGOLgqGEtLDFRuoRUNUNUNUNuvBldXwxXMnInInInInIXMqQqQqQqQplplplHSNSbTLcrcmgflyzyzyzyzyzyzjAmgrcqdbTBYUPUZPoPoUZBYBYBYBYBYBYBYBYBYBYBYBYtJtJBYBYBYWaWaWaWaWaWaWa
-rdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrNnTlGlGhZnTnTVOVOVOVOVOlGhZpFVOVOpFVOVOpFVOVOpFnTlGpFpYlGplplplplqQqQqQqQnILDLDLDLDLDLDLDLDLDLDLDLDLDLDLDwxVZftftftSmVZSmftftftVZwxMEUNUNCsfZwxwxwxwxXMnInInInIXMXMqQqQqQqQplplplHSNSbTrcrcmgtzsbyzgzgzyzsbtzmgrcrcbTBYBYBYBYBYBYBYBYBYBYBYBYBYBYBYBYBYBYtJtJBYBYWaWaWaWaWaWaWaWa
+rdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrNnTlGlGhZnTnTVOVOVOVOVOlGhZpFVOVOpFVOVOpFVOVOpFnTlGpFpYlGplplplplqQqQqQqQnILDLDLDLDLDLDLDLDLDLDLDLDLDLDLDwxVZftftftSmVZSmftftftVZwxMEUNUNCsfZwxwxwxwxXMnInInInIXMXMqQqQqQqQplplplHSNSbTrcrcmgtzsbyzUfUfyzsbtzmgrcrcbTBYBYBYBYBYBYBYBYBYBYBYBYBYBYBYBYBYBYtJtJBYBYWaWaWaWaWaWaWaWa
 rdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdpFlGlGnTnTpFVOVOVOVOVOVOVOVOVOVOVOVOVOpFVOpFnTnTlGpFnTnTplplplqQqQqQqQqQYrKLKLfoKLsNeGsNYrFknIFkLDLDLDuQwxwxwxwxwxETETXLwxwxwxwxwxwxwxhxwxwxwxwxwxwxXMXMnInIXMXMqQqQqQqQqQqQplplHSNSbTrcrcbTjAfltzjAtzfljAflbTrcrcIQgsgsgsgsgsgsgsIQBYWaWaWaWaWaWaWaBYBYtJtJBYBYBYBYWaWaWaWaWaWa
 rdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdpFlGlGpFcwpFpFVOpFVOpFpFVOVOVOVOVOVOVOpFVOnTnTlGpYpFpFnTplplplqQqQqQqQqQbzcRIKjUjUoGJrcVbzqQqQqQLDLDLDLDwxQCuAQCwxETETETwxQCuAQCwxnIqrLDnIqQqQqQqQqQqQqQqQqQqQqQqQqQqQqQqQqQplplHSNSbTrcrcIQgsmgmggsgsmgmggsIQrcrcbTNSNSNSuWNSOUnfbTBYWaWaWaWaWaWaWaBYBYtJtJBYBYBYBYWaWaWaWaWaWa
 rdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdrdpFpFnTpFVOpFpFVOVOVOVOVOVOpFnTnTpFpFVOVOVOnTXHlGlGlGpFnTplplplqQqQqQqQqQbzjUoGcRoGJrJrJrbzqQqQqQjkLDLDLDnInInInIJZLDLDLDJZnInInInInILDLDnIqQqQqQqQqQqQqQqQqQqQqQqQqQqQqQqQqQplplHSNSbTrcrcrcrcrcrcrcrcrcrcrcrcrcrccJENENENENENENEHbTBYWaWaWaWaWaWaWaBYBYtJtJtJtJBYBYWaWaWaWaWaWa
@@ -2488,7 +2492,7 @@ rdrdrdzQpFpFnTuqnTnTVOpFVOjFVOVOVOVOnTnTVOpFVOnTnTnTlGpFQVVLviviviYlxHxHacWpWpWp
 rdrdlGlGmylGlGlGnTpFVOVOnTlGpFVOVOpFzrVOVOpFpFnTnTlGlGlGVLVLpsviviYlNMxHOFWpWpWpDLRqYlgpgpgpgpOmhhhhhhhhLtQpQpQpYlLjLjqTplHSrhumyGnqQXmhigfbmhyGQRbQQRyGviviLjWlHyHyaFydydydmBWlLjLjVWFfWKWKVWsauEVWcFcFcFcFcFcFnJLjLjvPWlWlWlWlKTcWGecWGepslOGezecWUxXPLLplplHSlOpspsgdyJyJnTzJpFpFlGPClGpFlGlGlGrdrdrdrdrdrdrdrdrdrd
 rdrdnTlGnTlGnTnTpFVOVOjFpFlGVOVOVOjFlGVOVOVOnTnTlGlGnTnTVLQVpsviAVYlxHxHfNYHYHYHfNRqOmgpgpgpgpYlrvhhhhhhYlQpQpIiYlLjLjqTplHSLjumyGQsQXoYmhZMoYyGQRGPQRyGviviLjDUHyHyWlOvydydvvWlLjVsVWVWVWVWVWuExZVWcFmlmlzczcaqVWLjviviGeGeGewEcWzepsvPGecWlOGepsCXcWcWwEplplHSlOlOlOpsyJQVlGlGpFlGnTpFnTpFlGlGpFnTrdrdrdrdrdrdrdrdrd
 rdnTnTlGnTnTnTTjpFVOVOnTPCjFVOVOVOpFVOVOVOVOpFlGlGpFnTnTVLyJLTviviYlXqxHxHxHxHxHxHxHYlYlgpGfYlYlhhhhdFuaYlrXrXDQYlLjLjWyhKDALjTJyGyGyGqwyGyGyGyGyGpcyGyGviviLjDUHyKkWlAoAoAoAzWlLjLjuEuEuEuEuEuEuEZmZmZmZmZmZmZmZmvivivipsGevPwEcWGecWzepscWlOcWGecWKTGewEplplHSlOlOlOMrQVyJnTnTlGlGlGnTpFpFPCpFpFlGpFrdrdrdrdrdrdrdrd
-EnpFpFVOVOnTpFpFVOVOpFpFpFpFVOVOVOVOVOpFVOpFpFnTlGPCpFnTVLTHviviviYlYlyfHYxHZGTXkbYlYlYlYImfYlfehhxDPephYlJTrXNzYlLjLjwKLjGiLjLjyGSThWXRmryGdadansnsnsyGviviLjWljPjPWlwbinyOXYWlLjLjuEuEuEuEuEuEuELyTqTqzaTqTqaJZmGeviviGeGecWLLBplOlOlOlOlOuSlOlOlOlOsUwEplplHSlOlOpslOyJyJpFlGnTnTlGpFpFpFlGnTnTPCpFlGlGlGrdrdrdrdrd
+EnpFpFVOVOnTpFpFVOVOpFpFpFpFVOVOVOVOVOpFVOpFpFnTlGPCpFnTVLTHviviviYlYlyfHYxHZGTXkbYlYlYlYImfYlfehhxDPephYlJTrXiCYlLjLjwKLjGiLjLjyGSThWXRmryGdadansnsnsyGviviLjWljPjPWlwbinyOXYWlLjLjuEuEuEuEuEuEuELyTqTqzaTqTqaJZmGeviviGeGecWLLBplOlOlOlOlOuSlOlOlOlOsUwEplplHSlOlOpslOyJyJpFlGnTnTlGpFpFpFlGnTnTPCpFlGlGlGrdrdrdrdrd
 pbVOVOVOVOVOVOVOVOpFVOVOVOVOVOVOVOVOVOpFVOpFnTzrpFlGlGnTyJyJpsviviYlYlYlYlYlYlYlYlYlYlYlgpgpYlYlYlYlYlYlYlYlYlYlYlpgLjwKLjGiLjLjyGnsnsnsnsnsnsnsYTnsdayGviviIVWlWlWlWlWlWlWlPAWlLjVsVWVWVWfAfAVWVWZmTqTqTqTqTqZgZmPtvivipspsGeLLGeXPzeGeGepslOcWGeGepsGewEplplHSlOlOYOgdyJyJpFPCnTzrpFlGpFpFnTrdrdlGlGpFrdrdrdrdrdrdrd
 pbVOVOVOVOVOVOVOVOpFpFVOVOVOVOpFpFVOVOpFnTpFnTnTpFlGnTnTQVyJviviviviviviviviviUcviviviviviviviLjLjLjLjLjLjLjLjLjLjLjLjlMsRGQLjLjyGwInsnsnsyGnsnsnsnsdayGRQviviWlEtKdtSePKdKdKdWlLjLjVWmlcFcFcFcFcFZmTqEVVPDnTqfiZmcWviviGecWvPwEUxcWpsvPGepslOpsXPvPKTcWLLplplHSlOlOpsGeQVQVnTnTnTlGlGpFzJpFnTrdrdrdnTlGrdrdrdrdrdrdrd
 EnpFpFpFVOpFpFVOpFVOVOVOVOVOVOVOVOVOcwpFnTnTlGlGpFlGlGyJyJyJyJvivivivipsvivipsGevivivipsviviviLjLjLjLjLjLjLjLjLjLjLjLjqTplHSLjVsyGnsTcumumyGVznsnsnsnsyGviviviWlKdKdKdKdKdKdKdWlLjLjVWmlcFcFcFcFcFZmqjByByQETqTpZmcWviviGeGecWwEpscWGecWUxlOlOlOzecWcWGeLLplplHSpslOlOgdQVQVnTpFlGlGpFpFpFnTrdrdrdrdrdlGlGrdrdrdrdrdrd
@@ -2610,7 +2614,7 @@ WaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaplplplplplplplplplplplplplplplplplplplplpl
 WaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplcpydydydydcpcpcpcpcpcpcpcpcpcpcpcpKrKrKrKrwxKrKrKrwxKrKrKrwxKrKrKrwxKrKrKrKrcpcpcpcpcpcpcpcpcpcpcpcpMMydydydcpplplplpliNiNiNiNiNiNiNiNiNiNiNiNiNiNiNiNplplplplplplpliQENENENAFENENENENbTBYBYBYBYBYBYWaWaWaWaWaWaWa
 WaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplfBydydydydydydydyddZydydydydydydcpKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrcpydydydydydyddZydydydydydydydydfBplplplpliNiNiNiNiNiNiNiNiNiNiNiNiNiNiNiNplplplplplplplEHENENENENENENENDgbTujuZYdYdBYBYWaWaWaWaWaWaWa
 WaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplfBydydydydydydydydydydydydydydydcpKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrcpydydydydydydydydydydydydydydydfBplplplpliNiNiNiNiNiNiNiNiNiNiNiNiNiNiNiNplplplplplplplEHENENENENENENENENNItJuZYdYdBYBYWaWaWaWaWaWaWa
-WaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplcpMMydydydcpcpcpcpfBcpcpcpcpydydcpKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrcpydydcpcpcpcpfBcpcpcpcpydydydydcpplplplpliNiNiNiNiNiNiNiNiNiNiNiNiNiNiNiNplplplplplplplEHENSVSVAgSVSVENENbTtJLSYdYdBYBYWaWaWaWaWaWaWa
+WaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplcpMMydydydcpcpcpcpfBcpcpcpcpydydcpKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrcpydydcpcpcpcpfBcpcpcpcpydydydydcpplplplpliNiNiNiNiNiNiNiNiNiNiNiNiNiNiNiNplplplplplplplEHENtGSVAgSVtGENENbTtJLSYdYdBYBYWaWaWaWaWaWaWa
 WaWaWaWaWaWaWaWaWaWaWaWaWaWaWaWaplplplplplplplplplplplplhKhKYMplplplplplplplplplplplplplplplplplplplcpcpfBfBcpcpplplplplplplplcpydydcpKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrcpydydcpplplplplplplplcpcpcphIcpcpplplplplplplplplplplplplplplplplplplplplplplplplplplplIQgsgsgsgsgsgsgsgsIQtJLSYdYdBYBYWaWaWaWaWaWaWa
 WaWaWaWaWaWaWaWaWaWaWaWaWaWaWaplplplplplplplplplplplplVLvSLjVLplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplcpydydcpKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrKrcpydydcpplplplplplplplplHSAcDJDJqTplplplplplplplplplplplplplplplplplplplplplplplplpliNiNgsgsBYBYBYBYBYBYBYBYBYBYBYBYBYBYWaWaWaWaWaWaWa
 WaWaWaWaWaWaWaWaWaWaWaWaWaWaplplplplplplplplplplplplHSLjLjLjGiplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplplfBydTxcpKrKrKrKrKrKrKruhKrKrKrKrKruhKrKrKrKrKrKrKrcpIjydfBplplplplplplplplHSDJDJDJqTplplplplplplplplplplplplplplplplplplplplplplplplplplplLjLjBYBYBYBYBYBYBYBYBYBYBYBYBYBYWaWaWaWaWaWaWa

@@ -64,7 +64,7 @@
 "jv" = (/turf/open/floor/rogue/wood,/area/rogue/outdoors/rtfield)
 "jz" = (/turf/open/floor/rogue/rooftop{icon_state = "roof"; dir = 4},/area/rogue/outdoors/town/roofs)
 "jD" = (/obj/structure/fluff/statue/tdummy,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/rtfield)
-"jK" = (/obj/structure/mineral_door/wood/red{name = "Farmer's House"; lockid = "woodsm"; locked = 1},/turf/open/floor/rogue/ruinedwood/turned,/area/rogue/indoors)
+"jK" = (/obj/structure/mineral_door/wood/red{name = "Farmer's House"; lockid = "soilson"; locked = 1},/turf/open/floor/rogue/ruinedwood/turned,/area/rogue/indoors)
 "jV" = (/obj/structure/fluff/railing/border{dir = 8},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors)
 "kd" = (/obj/effect/landmark/start/combatlate{dir = 4},/turf/open/floor/rogue/grass,/area/rogue/outdoors/woods)
 "km" = (/obj/machinery/light/rogue/torchholder/c,/turf/open/floor/rogue/cobble,/area/rogue/indoors)
