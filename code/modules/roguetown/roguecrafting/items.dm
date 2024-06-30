@@ -274,6 +274,7 @@
 	skillcraft = /datum/skill/craft/traps
 	craftdiff = 1
 	verbage = "put together"
+	verbage_tp = "puts together"
 
 /datum/crafting_recipe/roguetown/stonearrow
 	name = "stone arrow"
@@ -330,7 +331,7 @@ datum/crafting_recipe/roguetown/poisonbolt
 	craftdiff = 0 // Something to practice engineering with.
 
 /datum/crafting_recipe/roguetown/paperscroll
-	name = "scroll of parchment (x5)"
+	name = "scroll of parchment x5"
 	result = list(/obj/item/paper/scroll,
 				/obj/item/paper/scroll,
 				/obj/item/paper/scroll,
