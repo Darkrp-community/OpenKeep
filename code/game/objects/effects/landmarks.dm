@@ -117,7 +117,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/combatlate
 	name = "Combatlate"
 	icon_state = "arrow"
-	jobspawn_override = list("Adventurer", "Pilgrim", "Mercenary", "skeleton")
+	jobspawn_override = list("Adventurer", "Pilgrim", "Mercenary", "skeleton", "Drifter")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/lord
