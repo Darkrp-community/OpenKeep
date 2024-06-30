@@ -85,7 +85,7 @@
 				if(W.amount == 1)
 					new W.stacktype(get_turf(user))
 					qdel(W)
-				user.visible_message("<span class='notice'>[user] hooks something to the line.</span>", "<span class='notice'>I hook [W.stacktype] to my line.</span>")
+				user.visible_message("<span class='notice'>[user] hooks something to the line.</span>", "<span class='notice'>I hook a worm to my line.</span>")
 				playsound(src.loc, 'sound/foley/pierce.ogg', 50, FALSE)
 		else
 			if(!baited)

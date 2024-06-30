@@ -2,7 +2,6 @@
 	req_table = TRUE
 
 /datum/crafting_recipe/roguetown/fishing/bait
-	verbage_simple = "roll"
 	verbage = "rolls"
 
 /datum/crafting_recipe/roguetown/fishing/bait/red
@@ -39,7 +38,6 @@
 					/obj/item/reagent_containers/powder/flour = 1)
 
 /datum/crafting_recipe/roguetown/fishing/reel
-	verbage_simple = "weave"
 	verbage = "weaves"
 
 /datum/crafting_recipe/roguetown/fishing/reel/twine
