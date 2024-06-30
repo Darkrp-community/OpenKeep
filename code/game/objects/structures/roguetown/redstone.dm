@@ -79,6 +79,23 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 
 /obj/structure/repeater/attack_hand(mob/user)
 	. = ..()
+	if(user.used_intent.type == INTENT_HARM)
+		playsound(loc, 'sound/combat/hits/punch/punch (1).ogg', 100, FALSE, -1)
+		sleep(1)
+		switch(mode)
+			if(0)
+				mode = 1
+				say("Mode: REPEATER")
+				playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
+			if(1)
+				mode = 2
+				say("Mode: REPEATER RANDOM")
+				playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
+			if(2)
+				mode = 0
+				say("Mode: INDEFINITE, DANGEROUS")
+				playsound(loc, 'sound/misc/machineno.ogg', 100, FALSE, -1)
+		return
 	playsound(loc, 'sound/misc/keyboard_enter.ogg', 100, FALSE, -1)
 	linked_thing = null
 	var/list/structures = list()
@@ -89,6 +106,12 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 	var/input = input("Choose structure to link", "ROGUETOWN") as null|anything in structures
 	if(input)
 		playsound(loc, 'sound/misc/keyboard_enter.ogg', 100, FALSE, -1)
+		if(istype(linked_thing, /obj/structure/repeater))
+			say("AAAAAAAGH!!!")
+			playsound(loc, 'sound/misc/machineno.ogg', 100, FALSE, -1)
+			sleep(10)
+			explosion(src, light_impact_range = 1, flame_range = 2, smoke = TRUE, soundin = pick('sound/misc/explode/bottlebomb (1).ogg','sound/misc/explode/bottlebomb (2).ogg'))
+			return
 		linked_thing = input
 
 /obj/structure/repeater/redstone_triggered()
@@ -98,10 +121,52 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 		if(1)
 			repeat_times = 5
 		if(2)
-			repeat_times = rand(3,5)
-	if(repeat_times != 0)
+			repeat_times = rand(2,10)
+	if(repeat_times)
 		for(var/i in 1 to repeat_times)
 			linked_thing.redstone_triggered()
+	else
+		if(mode == 3)
+			for(var/i in 1 to INFINITY)
+				sleep(5)
+				linked_thing.redstone_triggered()
+		else
+			for(var/i in 1 to INFINITY)
+				sleep(5)
+				if(prob(25))
+					explosion(src, light_impact_range = 1, flame_range = 2, smoke = TRUE, soundin = pick('sound/misc/explode/bottlebomb (1).ogg','sound/misc/explode/bottlebomb (2).ogg'))
+					qdel(src)
+					break
+				linked_thing.redstone_triggered()
+
+/obj/structure/pressure_plate
+	name = "pressure plate"
+	desc = "Be careful. Stepping on this could either mean a bomb exploding or a door closing on you."
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "pressureplate"
+	max_integrity = 45 // so it gets destroyed when used to explode a bomb
+	density = FALSE
+	anchored = TRUE
+
+/obj/structure/pressure_plate/Crossed(atom/movable/AM)
+	. = ..()
+	if(!anchored)
+		return
+	if(isliving(AM))
+		var/mob/living/L = AM
+		to_chat(L, "<span class='info'>I feel something click beneath me.</span>")
+		triggerplate()
+
+/obj/structure/pressure_plate/proc/triggerplate()
+	playsound(src, 'sound/foley/lever.ogg', 100, extrarange = 3)
+	for(var/obj/structure/O in redstone_attached)
+		spawn(0) O.redstone_triggered()
+
+/obj/structure/pressure_plate/attack_hand(mob/user)
+	. = ..()
+	if(user.used_intent.type == INTENT_HARM)
+		playsound(loc, 'sound/combat/hits/punch/punch (1).ogg', 100, FALSE, -1)
+		anchored = !anchored
 
 /obj/structure/activator
 	name = "activator"
@@ -200,6 +265,7 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 		if(ammo.ammo_list.len)
 			for(var/obj/item/ammo_casing/BT in ammo.ammo_list)
 				if(istype(BT, /obj/item/ammo_casing/caseless/rogue/bolt))
+					sleep(4)
 					ammo.ammo_list -= BT
 					BT.fire_casing(get_step(src, dir), src, null, null, null, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG), 0,  src)
 					break
