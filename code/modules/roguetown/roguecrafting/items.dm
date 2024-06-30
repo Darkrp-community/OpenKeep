@@ -331,7 +331,7 @@ datum/crafting_recipe/roguetown/poisonbolt
 	craftdiff = 0 // Something to practice engineering with.
 
 /datum/crafting_recipe/roguetown/paperscroll
-	name = "scroll of parchment x5"
+	name = "parchment scroll x5"
 	result = list(/obj/item/paper/scroll,
 				/obj/item/paper/scroll,
 				/obj/item/paper/scroll,
