@@ -86,6 +86,7 @@
 	name = "Cauterize wounds"
 	implements = list(
 		TOOL_CAUTERY = 100,
+		"cautery iron" = 90,
 		TOOL_WELDER = 70,
 		TOOL_HOT = 35,
 	)
