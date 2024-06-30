@@ -47,7 +47,162 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 	. = ..()
 	icon_state = "leverwall[toggled]"
 
+/obj/structure/repeater
+	name = "repeater"
+	desc = "Repeats a signal a set amount of times into an adjacently linked machine when activated by a signal. Looks suspiciously like a barrel."
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "repeater"
+	max_integrity = 5
+	density = TRUE
+	anchored = TRUE
+	var/mode = 1 // 1 means repeat 5 times, 2 means random, 0 means indefinite but has chance to explode, 3 means indefinite no chance to explode
+	var/obj/structure/linked_thing // because redstone code is weird
 
+/obj/structure/repeater/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE, CALLBACK(src, PROC_REF(can_user_rotate)),CALLBACK(src, PROC_REF(can_be_rotated)),null)
+
+/obj/structure/repeater/proc/can_be_rotated(mob/user)
+	return TRUE
+
+/obj/structure/repeater/proc/can_user_rotate(mob/user)
+	var/mob/living/L = user
+
+	if(istype(L))
+		if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+			return FALSE
+		else
+			return TRUE
+	else if(isobserver(user) && CONFIG_GET(flag/ghost_interaction))
+		return TRUE
+	return FALSE
+
+/obj/structure/repeater/attack_hand(mob/user)
+	. = ..()
+	playsound(loc, 'sound/misc/keyboard_enter.ogg', 100, FALSE, -1)
+	linked_thing = null
+	var/list/structures = list()
+	for(var/adjc in get_step(src, dir).contents)
+		if(!istype(adjc, /obj/structure))
+			continue
+		structures += adjc
+	var/input = input("Choose structure to link", "ROGUETOWN") as null|anything in structures
+	if(input)
+		playsound(loc, 'sound/misc/keyboard_enter.ogg', 100, FALSE, -1)
+		linked_thing = input
+
+/obj/structure/repeater/redstone_triggered()
+	. = ..()
+	var/repeat_times = 0
+	switch(mode)
+		if(1)
+			repeat_times = 5
+		if(2)
+			repeat_times = rand(3,5)
+	if(repeat_times != 0)
+		for(var/i in 1 to repeat_times)
+			linked_thing.redstone_triggered()
+
+/obj/structure/activator
+	name = "activator"
+	desc = "A strange structure with an opening for an item on the top with an arrow etched into it pointing to where it is possibly aiming."
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "activator"
+	max_integrity = 45 // so it gets destroyed when used to explode a bomb
+	density = TRUE
+	anchored = TRUE
+	var/obj/item/containment
+	var/obj/item/quiver/ammo // used if the contained item is a bow or crossbow
+
+/obj/structure/activator/Initialize()
+	. = ..()
+	update_icon()
+
+/obj/structure/activator/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE, CALLBACK(src, PROC_REF(can_user_rotate)),CALLBACK(src, PROC_REF(can_be_rotated)),null)
+
+/obj/structure/activator/proc/can_be_rotated(mob/user)
+	return TRUE
+
+/obj/structure/activator/proc/can_user_rotate(mob/user)
+	var/mob/living/L = user
+
+	if(istype(L))
+		if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+			return FALSE
+		else
+			return TRUE
+	else if(isobserver(user) && CONFIG_GET(flag/ghost_interaction))
+		return TRUE
+	return FALSE
+
+/obj/structure/activator/update_icon()
+	. = ..()
+	cut_overlays()
+	if(!containment)
+		add_overlay("activator-e")
+
+/obj/structure/activator/attack_hand(mob/user)
+	. = ..()
+	playsound(loc, 'sound/misc/keyboard_enter.ogg', 100, FALSE, -1)
+	sleep(7)
+	if(containment)
+		playsound(src, 'sound/misc/hiss.ogg', 100, FALSE, -1)
+		containment.forceMove(get_turf(src))
+		containment = null
+	if(ammo)
+		playsound(src, 'sound/misc/hiss.ogg', 100, FALSE, -1)
+		ammo.forceMove(get_turf(src))
+		ammo = null
+	update_icon()
+
+/obj/structure/activator/attackby(obj/item/I, mob/user, params)
+	if(!user.cmode)
+		if(!containment && !istype(I, /obj/item/quiver) && !istype(I, /obj/item/roguegear))
+			if(!user.transferItemToLoc(I, src))
+				return
+			containment = I
+			playsound(src, 'sound/misc/chestclose.ogg', 25)
+			update_icon()
+			return
+		if(!ammo && istype(I, /obj/item/quiver))
+			if(!user.transferItemToLoc(I, src))
+				return
+			playsound(src, 'sound/misc/chestclose.ogg', 25)
+			ammo = I
+			return
+	return ..()
+
+/obj/structure/activator/redstone_triggered()
+	if(!containment)
+		return
+	if(istype(containment, /obj/item/bomb))
+		var/obj/item/bomb/bomba = containment
+		bomba.light()
+	if(istype(containment, /obj/item/flint))
+		var/datum/effect_system/spark_spread/S = new()
+		var/turf/front = get_step(src, dir)
+		S.set_up(1, 1, front)
+		S.start()
+	if(istype(containment, /obj/item/gun/ballistic/revolver/grenadelauncher/bow))
+		if(!ammo)
+			return
+		if(ammo.ammo_list.len)
+			for(var/obj/item/ammo_casing/BT in ammo.ammo_list)
+				if(istype(BT, /obj/item/ammo_casing/caseless/rogue/arrow))
+					ammo.ammo_list -= BT
+					BT.fire_casing(get_step(src, dir), src, null, null, null, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG), 0,  src)
+					break
+	if(istype(containment, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow))
+		if(!ammo)
+			return
+		if(ammo.ammo_list.len)
+			for(var/obj/item/ammo_casing/BT in ammo.ammo_list)
+				if(istype(BT, /obj/item/ammo_casing/caseless/rogue/bolt))
+					ammo.ammo_list -= BT
+					BT.fire_casing(get_step(src, dir), src, null, null, null, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG), 0,  src)
+					break
 
 /obj/structure/floordoor
 	name = "floorhatch"
