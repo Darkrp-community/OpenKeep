@@ -243,6 +243,15 @@ GLOBAL_LIST_EMPTY(anonymize)
 //		to_chat(src, "<span class='warning'>Whitelisted players only.</span>")
 //		return
 	if(client.prefs.anonymize == TRUE)
+		if(alert(src, "Disable Anonymize? This will show your BYOND name to anyone \
+		while playing here.", "ROGUETOWN", "YES", "NO") == "YES")
+			if(GLOB.respawncounts[client.ckey])
+				to_chat(src, "<span class='warning'>You have already spawned.</span>")
+				return
+			client.prefs.anonymize = FALSE
+			client.prefs.save_preferences()
+			to_chat(src, "Anonymous... NO")
+			GLOB.anonymize &= ~client.ckey
 	else
 		if(alert(src, "Enable Anonymize? This will hide your BYOND name from anyone except \
 		Dungeon Masters while playing here, useful for dealing with negative OOC bias or \
