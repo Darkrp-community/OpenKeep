@@ -251,7 +251,7 @@ GLOBAL_LIST_EMPTY(anonymize)
 			client.prefs.anonymize = FALSE
 			client.prefs.save_preferences()
 			to_chat(src, "Anonymous... NO")
-			GLOB.anonymize &= ~client.ckey
+			GLOB.anonymize -= client.ckey
 	else
 		if(alert(src, "Enable Anonymize? This will hide your BYOND name from anyone except \
 		Dungeon Masters while playing here, useful for dealing with negative OOC bias or \
