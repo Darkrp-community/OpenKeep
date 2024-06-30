@@ -80,6 +80,11 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 /obj/structure/repeater/attack_hand(mob/user)
 	. = ..()
 	if(user.used_intent.type == INTENT_HARM)
+		if(user.cmode)
+			var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)
+			if(rotcomp)
+				rotcomp.HandRot(null,usr,ROTATION_CLOCKWISE)
+			return
 		playsound(loc, 'sound/combat/hits/punch/punch (1).ogg', 100, FALSE, -1)
 		sleep(1)
 		switch(mode)
@@ -166,6 +171,7 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 	. = ..()
 	if(user.used_intent.type == INTENT_HARM)
 		playsound(loc, 'sound/combat/hits/punch/punch (1).ogg', 100, FALSE, -1)
+		triggerplate()
 		anchored = !anchored
 
 /obj/structure/activator
@@ -210,6 +216,12 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 
 /obj/structure/activator/attack_hand(mob/user)
 	. = ..()
+	if(user.used_intent.type == INTENT_HARM)
+		if(user.cmode)
+			var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)
+			if(rotcomp)
+				rotcomp.HandRot(null,usr,ROTATION_CLOCKWISE)
+			return
 	playsound(loc, 'sound/misc/keyboard_enter.ogg', 100, FALSE, -1)
 	sleep(7)
 	if(containment)
