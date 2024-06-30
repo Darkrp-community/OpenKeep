@@ -52,6 +52,7 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/hammer/claw
 	backl = /obj/item/storage/backpack/rogue/backpack
+	id = /obj/item/clothing/ring/silver/makers_guild
 	backpack_contents = list(/obj/item/roguekey/mason = 1, /obj/item/flint = 1, /obj/item/flashlight/flare/torch/lantern)
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", 1)

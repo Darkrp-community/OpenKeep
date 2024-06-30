@@ -12,8 +12,9 @@
 	wlength = WLENGTH_NORMAL
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_HIP
+	resistance_flags = FIRE_PROOF|LAVA_PROOF // Nigh indestructible due to how important it is
 	associated_skill = /datum/skill/combat/axesmaces
-	smeltresult = /obj/item/ingot/iron
+	smeltresult = null // No
 	swingsound = BLUNTWOOSH_MED
 	minstr = 5
 	blade_dulling = DULLING_BASHCHOP

@@ -45,6 +45,10 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/item/rogueweapon/battle
 
+/mob/living/simple_animal/hostile/retaliate/rogue/trollbog/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
+
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/death(gibbed)
 	..()
 	update_icon()

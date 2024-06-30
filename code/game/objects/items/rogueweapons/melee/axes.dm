@@ -18,6 +18,7 @@
 	wdefense = 1
 	w_class = WEIGHT_CLASS_BULKY
 	wlength = WLENGTH_SHORT
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	pickup_sound = 'sound/foley/equip/rummaging-03.ogg'
 	gripped_intents = list(/datum/intent/axe/chop/stone)
 	smeltresult = /obj/item/ingot/copper
@@ -117,12 +118,13 @@
 	desc = "Tool, weapon, loyal iron companion."
 	icon_state = "axe"
 	icon = 'icons/roguetown/weapons/32.dmi'
-	max_blade_int = 130
-	max_integrity = 200
+	max_blade_int = 200
+	max_integrity = 300
 	smeltresult = /obj/item/ingot/iron
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	swingsound = BLADEWOOSH_MED
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	associated_skill = /datum/skill/combat/axesmaces
 	wdefense = 2
 	minstr = 6
@@ -147,9 +149,10 @@
 	force = 20
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
-	max_blade_int = 180
-	max_integrity = 300
+	max_blade_int = 300
+	max_integrity = 500
 	smeltresult = /obj/item/ingot/steel
+	resistance_flags = FIRE_PROOF
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	swingsound = BLADEWOOSH_MED

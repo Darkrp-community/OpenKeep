@@ -23,8 +23,9 @@
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	belt = /obj/item/storage/belt/rogue/leather/rope
-	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backr = /obj/item/rogueweapon/woodstaff
 
@@ -33,13 +34,17 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
 
 		H.change_stat("strength", 3)
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 2)
 		H.change_stat("perception", -1)
+		
+		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+		
 	if(H.patron != /datum/patron/divine/ravox)
 		H.patron = GLOB.patronlist[/datum/patron/divine/ravox]
 		to_chat(H, "<span class='warning'>My patron had not endorsed my practices in my younger years. I've since grown acustomed to [H.patron].")

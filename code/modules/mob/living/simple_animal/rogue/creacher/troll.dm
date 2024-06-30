@@ -45,6 +45,10 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/human // Placeholder until Troll remains are sprited.
 
+/mob/living/simple_animal/hostile/retaliate/rogue/troll/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
+
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/death(gibbed)
 	..()
 	update_icon()

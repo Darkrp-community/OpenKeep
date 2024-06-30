@@ -23,6 +23,7 @@
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	obj_flags = CAN_BE_HIT
 	blade_dulling = DULLING_BASH
+	resistance_flags = FIRE_PROOF
 	max_integrity = 200
 	wdefense = 3
 	experimental_onhip = TRUE

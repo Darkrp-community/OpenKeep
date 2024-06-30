@@ -68,6 +68,7 @@
 				playsound(loc, 'sound/foley/sewflesh.ogg', 100, TRUE, -2)
 				user.visible_message("<span class='info'>[user] repairs [I]!</span>")
 				I.obj_integrity = I.max_integrity
+				user.mind?.adjust_experience(/datum/skill/misc/sewing, user.STAINT, TRUE)
 				return
 		return
 	return ..()
