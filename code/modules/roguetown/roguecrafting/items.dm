@@ -33,24 +33,24 @@
 	result = /obj/item/natural/cloth
 	reqs = list(/obj/item/storage/belt/rogue/leather/cloth = 1)
 	craftdiff = 0
-	verbage_simple = "untie"
-	verbage = "unties"
+	verbage = "untie"
+	verbage_tp = "unties"
 
 /datum/crafting_recipe/roguetown/ropebelt
 	name = "rope belt"
 	result = /obj/item/storage/belt/rogue/leather/rope
 	reqs = list(/obj/item/rope = 1)
 	craftdiff = 0
-	verbage_simple = "untie"
-	verbage = "unties"
+	verbage = "untie"
+	verbage_tp  = "unties"
 
 /datum/crafting_recipe/roguetown/unropebelt
 	name = "untie rope belt"
 	result = /obj/item/rope
 	reqs = list(/obj/item/storage/belt/rogue/leather/rope = 1)
 	craftdiff = 0
-	verbage_simple = "untie"
-	verbage = "unties"
+	verbage = "untie"
+	verbage_tp  = "unties"
 
 /datum/crafting_recipe/roguetown/rope
 	name = "rope"
@@ -350,8 +350,8 @@ datum/crafting_recipe/roguetown/poisonbolt
 	req_table = TRUE
 	skillcraft = /datum/skill/misc/reading
 	craftdiff = 2
-	verbage_simple = "write"
-	verbage = "writes"
+	verbage = "write"
+	verbage_tp  = "writes"
 
 /datum/crafting_recipe/roguetown/readingscroll/apprentice
 	name = "apprentice's guide to literature"
