@@ -26,7 +26,7 @@
 	return FALSE
 
 /obj/effect/proc_holder/spell/invoked/eoracurse
-	name = "Eoras Curse"
+	name = "Eora's Curse"
 	overlay_state = "curse2"
 	releasedrain = 50
 	chargetime = 30
