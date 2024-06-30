@@ -20,12 +20,12 @@ body:
 - type: dropdown
   id: location
   attributes:
-    label: Map
+    label: Location
     multiple: true
     description: Where did the bug happen?
     options:
       - RogueTown
-      - DakkaTown
+      - RogueWorld
   validations:
     required: true
 
