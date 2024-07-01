@@ -123,7 +123,7 @@
 /obj/item/clothing/neck/roguetown/psicross
 	name = "psycross"
 	desc = ""
-	icon_state = "psicross"
+	icon_state = "psicrossw"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
@@ -157,7 +157,7 @@
 
 /obj/item/clothing/neck/roguetown/psicross/silver
 	name = "silver psycross"
-	icon_state = "psicrossiron"
+	icon_state = "psicrosssteel"
 	sellprice = 50
 
 /obj/item/clothing/neck/roguetown/psicross/silver/pickup(mob/user)
@@ -197,7 +197,7 @@
 /obj/item/clothing/neck/roguetown/psicross/g
 	name = "golden psycross"
 	desc = ""
-	icon_state = "psicrossg"
+	icon_state = "psicrossc"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
 	sellprice = 100

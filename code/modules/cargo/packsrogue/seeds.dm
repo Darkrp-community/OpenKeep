@@ -8,39 +8,39 @@
 /datum/supply_pack/rogue/seeds/spelt
 	name = "Spelt"
 	cost = 2
-	contains = list(/obj/item/seeds/wheat,)
+	contains = /obj/item/seeds/wheat
 
 /datum/supply_pack/rogue/seeds/apple
 	name = "Apple"
 	cost = 2
-	contains = list(/obj/item/seeds/apple,)
+	contains = /obj/item/seeds/apple
 
 /datum/supply_pack/rogue/seeds/weed
 	name = "Pipe Weed"
 	cost = 8
-	contains = list(/obj/item/seeds/pipeweed,)
+	contains = /obj/item/seeds/pipeweed
 
 /datum/supply_pack/rogue/seeds/sleaf
 	name = "Swamp Weed"
 	cost = 15
-	contains = list(/obj/item/seeds/swampweed,)
+	contains = /obj/item/seeds/swampweed
 
 /datum/supply_pack/rogue/seeds/berry
 	name = "Berry"
 	cost = 2
-	contains = list(/obj/item/seeds/berryrogue,)
+	contains = /obj/item/seeds/berryrogue
 
 /datum/supply_pack/rogue/seeds/onion
 	name = "Onion"
 	cost = 2
-	contains = list(/obj/item/seeds/onion,)
+	contains = /obj/item/seeds/onion
 
 /datum/supply_pack/rogue/seeds/cabbage
 	name = "Cabbage"
 	cost = 2
-	contains = list(/obj/item/seeds/cabbage,)
+	contains = /obj/item/seeds/cabbage
 
 /datum/supply_pack/rogue/seeds/potato
 	name = "Potato"
 	cost = 2
-	contains = list(/obj/item/seeds/potato,)
+	contains = /obj/item/seeds/potato
