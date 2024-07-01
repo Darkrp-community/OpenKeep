@@ -1,4 +1,3 @@
-
 /datum/supply_pack/rogue/weapons
 	group = "Weapons"
 	crate_name = "merchant guild's crate"
@@ -14,6 +13,10 @@
 	cost = 10
 	contains = list(/obj/item/rogueweapon/copperspear,)
 
+/datum/supply_pack/rogue/weapons/bomb
+	name = "Battle Bomb"
+	cost = 140
+	contains = list(/obj/item/bomb/homemade)
 
 /datum/supply_pack/rogue/weapons/maces
 	name = "Mace"
@@ -36,9 +39,19 @@
 	contains = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow)
 
 /datum/supply_pack/rogue/weapons/quivers
-	name = "Quiver"
+	name = "Empty Quiver"
 	cost = 15
 	contains = list(/obj/item/quiver,)
+
+/datum/supply_pack/rogue/weapons/arrowquiver
+	name = "Quiver of Arrows"
+	cost = 55
+	contains = list(/obj/item/quiver/arrows)
+
+/datum/supply_pack/rogue/weapons/boltquiver
+	name = "Quiver of Bolts"
+	cost = 95
+	contains = list(/obj/item/quiver/bolts)
 
 /datum/supply_pack/rogue/weapons/arrows
 	name = "Arrow"

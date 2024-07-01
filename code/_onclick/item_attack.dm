@@ -195,25 +195,41 @@
 /atom/movable/proc/attacked_by()
 	return FALSE
 
-
+/*
+* I didnt code this but this is what ive deciphered.
+* Complex damage is the final calculation of damage
+* and the source of dulling for weapons.
+* This proc is also not overridable due to having no root.
+* -IP
+*/
 /proc/get_complex_damage(obj/item/I, mob/living/user, blade_dulling, turf/closed/mineral/T)
 	var/dullfactor = 1
 	if(!I?.force)
 		return 0
+	// newforce starts here and is the default amount of damage the item does.
 	var/newforce = I.force
 	testing("startforce [newforce]")
+	// If this weapon has no user and is somehow attacking you just return default.
 	if(!istype(user))
 		return newforce
 	var/cont = FALSE
 	var/used_str = user.STASTR
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
+		/*
+		* If you have a dominant hand which is assigned at
+		* character creation. You suffer a -1 Str if your
+		* no using the item in your dominant hand.
+		* Check living/carbon/carbon.dm for more info.
+		*/
 		if(C.domhand)
 			used_str = C.get_str_arms(C.used_hand)
+	//STR is +1 from STRONG stance and -1 from WEAK stance
 	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 		used_str++
 	if(istype(user.rmb_intent, /datum/rmb_intent/weak))
 		used_str--
+	//Your max STR is 20.
 	used_str = CLAMP(used_str, 1, 20)
 	if(used_str >= 11)
 		newforce = newforce + (newforce * ((used_str - 10) * 0.1))
@@ -224,9 +240,11 @@
 		var/effective = I.minstr
 		if(I.wielded)
 			effective = max(I.minstr / 2, 1)
+		//Strength influence is reduced to 30%
 		if(effective > user.STASTR)
 			newforce = max(newforce*0.3, 1)
 
+	//Blade Dulling Starts here.
 	switch(blade_dulling)
 		if(DULLING_CUT) //wooden that can't be attacked by clubs (trees, bushes, grass)
 			switch(user.used_intent.blade_class)
@@ -237,6 +255,13 @@
 						dullfactor = 0.75
 					cont = TRUE
 				if(BCLASS_CHOP)
+					//Additional damage for axes against trees.
+					if(istype(I, /obj/item/rogueweapon))
+						var/obj/item/rogueweapon/R = I
+						if(R.axe_cut)
+							//Yes i know its cheap to just make it a flat plus.
+							newforce = newforce + R.axe_cut
+							testing("newforcewood+[R.axe_cut]")
 					if(!I.remove_bintegrity(1))
 						dullfactor = 0.2
 					else
@@ -284,14 +309,28 @@
 			if(user.used_intent.blade_class != BCLASS_PICK)
 				return 0
 			var/mob/living/miner = user
+			//Mining Skill force multiplier.
 			var/mineskill = miner.mind.get_skill_level(/datum/skill/labor/mining)
 			newforce = newforce * (8+(mineskill*1.5))
 			shake_camera(user, 1, 1)
 			miner.mind.adjust_experience(/datum/skill/labor/mining, (miner.STAINT*0.2))
+	/*
+	* Ill be honest this final thing is extremely confusing.
+	* Newforce after being altered by strength stat is then
+	* multiplied by the damage factor of used_intent datum
+	* for exsample /datum/intent/mace/smash has a damfactor
+	* of 1.1. This value is then multiplied again by the
+	* dullfactor which ranges from 0.2 to 1.6 and is 1 by
+	* default. Picks are not effected by dullfactor if hitting
+	* a rock wall or anything with DULLING_PICK blade_dulling
+	* flag. This is alot.
+	*/
 	newforce = (newforce * user.used_intent.damfactor) * dullfactor
 	if(user.used_intent.get_chargetime() && user.client?.chargedprog < 100)
 		newforce = newforce * 0.5
+	// newforce is rounded upto the nearest intiger.
 	newforce = round(newforce,1)
+	//This is returning the maximum of the arguments meaning this is to prevent negative values.
 	newforce = max(newforce, 1)
 	testing("endforce [newforce]")
 	return newforce
