@@ -178,3 +178,9 @@
 
 /obj/item/keyring/jester
 	keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/theatre)
+
+/obj/item/keyring/weaponsmith
+	keys = list(/obj/item/roguekey/weaponsmith, /obj/item/roguekey/blacksmith)
+
+/obj/item/keyring/armorsmith
+	keys = list(/obj/item/roguekey/armorsmith, /obj/item/roguekey/blacksmith)
