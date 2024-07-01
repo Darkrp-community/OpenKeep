@@ -16,7 +16,7 @@
 	var/listening = FALSE
 	var/recorded = "" //the activation message
 	var/mode = 1
-	var/static/list/modes = list("inclusive",
+	var/list/modes = list("inclusive",
 								 "exclusive",
 								 "recognizer",
 								 "voice sensor")

@@ -88,7 +88,7 @@ NO_INTERCEPT_REPORT
 ## Default probablity is 1, increase to make that mode more likely to be picked.
 ## Set to 0 to disable that mode.
 
-PROBABILITY CHAOSMODE 99
+PROBABILITY ROGUEMODE 100
 PROBABILITY TRAITOR 0
 PROBABILITY TRAITORBRO 0
 PROBABILITY TRAITORCHAN 0

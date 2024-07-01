@@ -792,7 +792,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	if(alert(src, "A Vampire Lord is summoning you from the Underworld.", "Be Risen?", "Yes", "No") == "Yes")
 		if(!C.deathknightspawn)
 			to_chat(src, "<span class='warning'>Another soul was chosen.</span>")
-		returntolobby()
+		SSjob.EquipRank(src, /datum/job/roguetown/deathknight, TRUE)
+		forceMove(pick(GLOB.vlord_starts))
 
 // DEATH KNIGHT ANTAG
 /datum/antagonist/skeleton/knight

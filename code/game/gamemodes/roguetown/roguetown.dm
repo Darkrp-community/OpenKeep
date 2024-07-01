@@ -152,7 +152,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 			pick_rebels()
 			log_game("Major Antagonist: Rebellion")
 		if(2)
-			log_game("Major Antagonist: Extended") //gotta put something here.
+			pick_werewolves()
+			log_game("Major Antagonist: Werewolf") //gotta put something here.
 		if(3)
 			pick_vampires()
 			log_game("Major Antagonist: Vampire Lord")
@@ -163,7 +164,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 				pick_bandits()
 				log_game("Minor Antagonist: Bandit")
 			if(2)
-				pick_bandits()
+				pick_aspirants()
 				log_game("Minor Antagonist: Aspirant")
 			if(3)
 				log_game("Minor Antagonist: Extended") // placeholder.
@@ -180,8 +181,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	"Merchant",
 	"Priest")
 	var/num_bandits = 0
-	if(num_players() >= 10)
-		num_bandits = CLAMP(round(num_players() / 2), 4, 6)
+	if(num_players() >= 7)
+		num_bandits = CLAMP(round(num_players() / 3), 1, 3)
 		banditgoal += (num_bandits * rand(200,400))
 
 	if(num_bandits)
@@ -259,8 +260,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 						pre_aspirants += couper
 						couper.special_role = "Supporter"
 						rolesneeded -= R
-						testing("[key_name(couper)] has been selected as an Aspirant")
-						log_game("[key_name(couper)] has been selected as a Aspirant")
+						testing("[key_name(couper)] has been selected as an Supporter")
+						log_game("[key_name(couper)] has been selected as a Supporter")
 					else continue
 				if("Loyalist")
 					if(couper.assigned_role in possible_jobs_helpers)
@@ -268,8 +269,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 						pre_aspirants += couper
 						couper.special_role = "Loyalist"
 						rolesneeded -= R
-						testing("[key_name(couper)] has been selected as an Aspirant")
-						log_game("[key_name(couper)] has been selected as a Aspirant")
+						testing("[key_name(couper)] has been selected as an Loyalist")
+						log_game("[key_name(couper)] has been selected as a Loyalist")
 					else continue
 
 /datum/game_mode/chaosmode/proc/pick_rebels()
@@ -371,6 +372,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 
 /datum/game_mode/chaosmode/proc/pick_werewolves()
 	restricted_jobs = list("Acolyte","Priest","Adventurer","Confessor","Garrison Guard","Veteran","Royal Guard","Captain")
+	var/werewolfsremaining = 1
 /*	var/num_werewolves = rand(1,3)
 #ifdef TESTSERVER
 	num_werewolves = 100
@@ -394,6 +396,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 		testing("[key_name(werewolf)] has been selected as a WEREWOLF")
 		log_game("[key_name(werewolf)] has been selected as a [werewolf.special_role]")
 		antag_candidates.Remove(werewolf)
+		werewolfsremaining -= 1
 	for(var/antag in pre_werewolves)
 		GLOB.pre_setup_antags |= antag
 	restricted_jobs = list()
