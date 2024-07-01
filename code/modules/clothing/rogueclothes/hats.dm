@@ -637,13 +637,19 @@
 	icon_state = "elfhead"
 	item_state = "elfhead"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
-	name = "elvish plate helmet"
+	name = "dark elf plate helmet"
 	desc = ""
 	body_parts_covered = HEAD|HAIR|NOSE
 	allowed_race = list("elf", "half-elf", "dark elf")
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	anvilrepair = /datum/skill/craft/armorsmithing
+
+/obj/item/clothing/head/roguetown/rare/elfplate/welfplate
+	name = "elvish plate helmet"
+	icon_state = "welfhead"
+	item_state = "welfhead"
+	body_parts_covered = HEAD|HAIR|NOSE|EYES
 
 /obj/item/clothing/head/roguetown/rare/dwarfplate
 	icon_state = "dwarfhead"
