@@ -5,17 +5,17 @@
 
 /datum/stressevent/vice1
 	timer = 5 MINUTES
-	stressadd = 3
+	stressadd = 8
 	desc = list("<span class='red'>I don't indulge my vice.</span>","<span class='red'>I need to sate my vice.</span>")
 
 /datum/stressevent/vice2
 	timer = 5 MINUTES
-	stressadd = 5
+	stressadd = 10
 	desc = list("<span class='red'>I don't need it. I don't need it. I don't need it.</span>","<span class='red'>I'm better than my vices.</span>")
 
 /datum/stressevent/vice3
 	timer = 5 MINUTES
-	stressadd = 7
+	stressadd = 20
 	desc = list("<span class='red'>If I don't sate my desire soon, I am going to kill myself..</span>","<span class='red'>I need it. I need it. I need it.</span>")
 
 /*
@@ -203,6 +203,16 @@
 	timer = 2 MINUTES
 	stressadd = 2
 	desc = "<span class='red'>They are plotting against me in evil tongues..</span>"
+
+/datum/stressevent/crowd
+	timer = 2 MINUTES
+	stressadd = 2
+	desc = "<span class='red'>Why is everyone here...? Are they trying to kill me?!</span>"
+
+/datum/stressevent/nopeople
+	timer = 2 MINUTES
+	stressadd = 2
+	desc = "<span class='red'>Where did everyone go? Did something happen?!</span>"
 
 /datum/stressevent/coldhead
 	timer = 60 SECONDS
