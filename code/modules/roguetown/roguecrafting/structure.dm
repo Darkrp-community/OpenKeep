@@ -356,11 +356,43 @@
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/engineering
 
+/datum/crafting_recipe/roguetown/structure/pressureplate
+	name = "pressure plate"
+	result = /obj/structure/pressure_plate
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+					/obj/item/roguegear = 1)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/engineering
+
+/datum/crafting_recipe/roguetown/structure/repeater
+	name = "repeater"
+	result = /obj/structure/repeater
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+					/obj/item/ingot/iron = 2,
+					/obj/item/roguegear = 1)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/engineering
+
+/datum/crafting_recipe/roguetown/structure/activator
+	name = "activator"
+	result = /obj/structure/activator
+	reqs = list(/obj/item/grown/log/tree/small = 2,
+					/obj/item/ingot/iron = 1,
+					/obj/item/roguegear = 2)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/engineering
+
 /datum/crafting_recipe/roguetown/structure/trapdoor/TurfCheck(mob/user, turf/T)
 	if(istype(T,/turf/open/transparent/openspace))
 		return TRUE
 	if(istype(T,/turf/open/lava))
-		return FALSE
+		return TRUE // its just too hilarious not to allow this
 	return ..()
 
 /datum/crafting_recipe/roguetown/structure/sign
