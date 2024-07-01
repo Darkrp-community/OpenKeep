@@ -13,6 +13,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/zybantine
 	category_tags = list(CTAG_MERCENARY)
+	maximum_possible_slots = 5
 
 
 /datum/outfit/job/roguetown/mercenary/zybantine/pre_equip(mob/living/carbon/human/H)
