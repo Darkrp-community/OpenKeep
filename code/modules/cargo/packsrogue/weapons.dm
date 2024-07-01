@@ -26,7 +26,7 @@
 /datum/supply_pack/rogue/weapons/axe
 	name = "Iron Axe"
 	cost = 20
-	contains = /obj/item/rogueweapon/stoneaxe/woodcut
+	contains = /obj/item/rogueweapon/woodcut
 
 /datum/supply_pack/rogue/weapons/spear
 	name = "Iron Spear"
