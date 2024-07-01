@@ -24,6 +24,11 @@
 	cost = 12
 	contains = /obj/item/rope/chain
 
+/datum/supply_pack/rogue/tools/sack
+	name = "Sack"
+	cost = 5
+	contains = /obj/item/storage/roguebag
+
 /datum/supply_pack/rogue/tools/paper
 	name = "Paper"
 	cost = 1
