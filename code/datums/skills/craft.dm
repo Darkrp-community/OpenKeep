@@ -22,7 +22,7 @@
 	name = "Masonry"
 
 /datum/skill/craft/traps
-	name = "Trapmaking"
+	name = "Trapping"
 
 /datum/skill/craft/cooking
 	name = "Cooking"

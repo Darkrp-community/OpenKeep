@@ -14,13 +14,13 @@
 	move_to_delay = 5
 	base_intents = list(/datum/intent/simple/claw)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
-						/obj/item/natural/hide = 1,
-						/obj/item/natural/fur = 1)
+						/obj/item/natural/hide = 2,
+						/obj/item/natural/fur = 2)
 	faction = list("orcs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 300
-	maxHealth = 300
-	melee_damage_lower = 30
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 20
 	melee_damage_upper = 40
 	vision_range = 7
 	aggro_vision_range = 9
@@ -31,10 +31,10 @@
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	pooptype = null
-	STACON = 9
-	STASTR = 13
-	STASPD = 5
-	STAEND = 12
+	STACON = 8
+	STASTR = 12
+	STASPD = 3
+	STAEND = 10
 	deaggroprob = 0
 	defprob = 30
 	defdrain = 10

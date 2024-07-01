@@ -274,13 +274,13 @@
 
 /datum/outfit/job/roguetown/npc/goblin/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.STASTR = 8
+	H.STASTR = 6
 	if(is_species(H, /datum/species/goblin/moon))
-		H.STASPD = 16
+		H.STASPD = 15
 	else
-		H.STASPD = 14
+		H.STASPD = 12
 	H.STACON = 6
-	H.STAEND = 15
+	H.STAEND = 10
 	if(is_species(H, /datum/species/goblin/moon))
 		H.STAINT = 8
 	else

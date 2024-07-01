@@ -1,4 +1,4 @@
-/datum/anvil_recipe/tools/keys
+/datum/anvil_recipe/tools/blankeys
 	name = "Blank Key x5"
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/customblank, 
@@ -6,6 +6,14 @@
 						/obj/item/customblank, 
 						/obj/item/customblank, 
 						/obj/item/customblank)
+
+/datum/anvil_recipe/tools/chains
+	name = "Chains x3"
+	req_bar = /obj/item/ingot/iron
+	appro_skill = /datum/skill/craft/traps // To train trapmaking
+	created_item = list(/obj/item/rope/chain,
+						/obj/item/rope/chain,
+						/obj/item/rope/chain,)
 
 /datum/anvil_recipe/tools/cogiron
 	name = "Cog x3"
@@ -29,31 +37,31 @@
 						/obj/item/reagent_containers/glass/cup,
 						/obj/item/reagent_containers/glass/cup)
 
-/datum/anvil_recipe/tools/pan
+/datum/anvil_recipe/tools/frypan
 	name = "Frypan"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/cooking/pan
 
-/datum/anvil_recipe/tools/cupssteel
+/datum/anvil_recipe/tools/gobletsteel
 	name = "Goblets x3"
 	req_bar = /obj/item/ingot/steel
 	created_item = list(/obj/item/reagent_containers/glass/cup/steel,
 						/obj/item/reagent_containers/glass/cup/steel,
 						/obj/item/reagent_containers/glass/cup/steel)
 
-/datum/anvil_recipe/tools/cupssil
-	name = "Goblets x3"
-	req_bar = /obj/item/ingot/silver
-	created_item = list(/obj/item/reagent_containers/glass/cup/silver,
-						/obj/item/reagent_containers/glass/cup/silver,
-						/obj/item/reagent_containers/glass/cup/silver)
-
-/datum/anvil_recipe/tools/cupsgold
+/datum/anvil_recipe/tools/gobletgold
 	name = "Goblets x3"
 	req_bar = /obj/item/ingot/gold
 	created_item = list(/obj/item/reagent_containers/glass/cup/golden,
 						/obj/item/reagent_containers/glass/cup/golden,
 						/obj/item/reagent_containers/glass/cup/golden)
+
+/datum/anvil_recipe/tools/gobletsilver
+	name = "Goblets x3"
+	req_bar = /obj/item/ingot/silver
+	created_item = list(/obj/item/reagent_containers/glass/cup/silver,
+						/obj/item/reagent_containers/glass/cup/silver,
+						/obj/item/reagent_containers/glass/cup/silver)
 
 /datum/anvil_recipe/tools/hammer
 	name = "Hammer (+s)"
@@ -100,7 +108,7 @@
 	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/pitchfork
 
-/datum/anvil_recipe/tools/needle
+/datum/anvil_recipe/tools/sewingneedle
 	name = "Sewing Needles x5"
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/needle,
