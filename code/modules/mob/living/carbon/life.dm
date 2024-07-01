@@ -167,16 +167,22 @@
 				for(var/A in X.reagents_on_breathe)
 					reagents.add_reagent(A, X.reagents_on_breathe[A])
 
-/mob/living/proc/handle_inwater()
+/mob/living/proc/handle_inwater(var/turf/open/water/W)
 	ExtinguishMob()
 
-/mob/living/carbon/handle_inwater()
+/mob/living/carbon/handle_inwater(var/turf/open/water/W)
 	..()
+	var/datum/reagents/reagentstouch = new()
+	reagentstouch.add_reagent(W.water_reagent, 4)
+	reagentstouch.trans_to(src, reagents.total_volume, transfered_by = src, method = TOUCH)
 	if(lying)
 		if(HAS_TRAIT(src, TRAIT_NOBREATH))
 			return TRUE
 		adjustOxyLoss(5)
 		emote("drown")
+		var/datum/reagents/reagents = new()
+		reagents.add_reagent(W.water_reagent, 2)
+		reagents.trans_to(src, reagents.total_volume, transfered_by = src, method = INGEST)
 
 /mob/living/carbon/human/handle_inwater()
 	. = ..()
