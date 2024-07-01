@@ -29,7 +29,7 @@
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
 
 /datum/supply_pack/rogue/food/grenzelbeer
-	name = "Grenzelhoft Bitter Beer"
+	name = "Grenzelhoftian Bitter Beer"
 	cost = 30
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter
 
