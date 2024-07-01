@@ -18,26 +18,20 @@
 "hw" = (/obj/structure/stairs/stone{dir = 1},/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/beach)
 "hH" = (/obj/machinery/light/rogue/torchholder/c,/turf/open/floor/rogue/ruinedwood,/area/rogue/outdoors/beach/boat)
 "hN" = (/obj/item/reagent_containers/glass/bottle/rogue/beer/spottedhen,/obj/structure/table/wood/plain/alt,/turf/open/floor/rogue/twig,/area/rogue/outdoors/beach)
-"ix" = (/obj/structure/closet/crate/chest/gold{locked = 1},/obj/item/roguecoin/gold/pile,/obj/item/roguecoin/gold/pile,/obj/item/roguegem,/turf/open/floor/carpet/royalblack,/area/rogue/outdoors/beach/boat/captain)
-"kt" = (/obj/structure/closet/crate/chest/gold{locked = 1},/obj/item/roguecoin/gold/pile,/obj/item/roguecoin/gold/pile,/obj/item/roguegem/blue,/turf/open/floor/carpet/royalblack,/area/rogue/outdoors/beach/boat/captain)
 "le" = (/obj/structure/fluff/walldeco/customflag{pixel_y = 32},/turf/open/floor/rogue/grass,/area/rogue/outdoors/beach)
 "lF" = (/turf/open/floor/rogue/ruinedwood,/area/rogue/outdoors/beach)
 "lH" = (/obj/effect/sunlight,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/beach/boat)
 "lK" = (/obj/structure/chair/wood/rogue/fancy{dir = 4},/turf/open/floor/carpet/royalblack,/area/rogue/outdoors/beach/boat/captain)
-"my" = (/obj/structure/mirror{pixel_y = 28},/turf/open/floor/rogue/tile,/area/rogue/outdoors/beach/boat/captain)
 "nf" = (/obj/machinery/light/rogue/campfire,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/beach)
 "nB" = (/obj/structure/fluff/railing/border{dir = 4},/turf/open/transparent/openspace,/area/rogue/outdoors/beach)
-"nO" = (/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/structure/closet/crate/roguecloset/dark,/turf/open/floor/rogue/tile,/area/rogue/outdoors/beach/boat/captain)
+"nO" = (/obj/structure/closet/crate/roguecloset/dark,/turf/open/floor/rogue/tile,/area/rogue/outdoors/beach/boat/captain)
 "nR" = (/obj/structure/fluff/railing/border{dir = 10},/turf/open/transparent/openspace,/area/rogue/outdoors/beach)
 "ph" = (/obj/structure/stairs{dir = 4},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/beach/boat)
 "qw" = (/turf/open/floor/rogue/woodturned/nosmooth,/area/rogue/outdoors/beach)
-"rD" = (/obj/structure/closet/crate/chest/gold{locked = 1},/obj/item/roguecoin/gold/pile,/obj/item/roguecoin/gold/pile,/obj/item/roguegem/green,/turf/open/floor/carpet/royalblack,/area/rogue/outdoors/beach/boat/captain)
 "rP" = (/turf/open/water/swamp/deep,/area/rogue/outdoors/beach)
 "su" = (/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/beach/boat)
 "sz" = (/turf/closed/mineral/random/rogue/med,/area/rogue/outdoors/caves)
 "ut" = (/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/beach)
-"uz" = (/obj/structure/closet/crate/chest/gold{locked = 1},/obj/item/roguecoin/gold/pile,/obj/item/roguecoin/gold/pile,/obj/item/roguegem/violet,/turf/open/floor/rogue/tile,/area/rogue/outdoors/beach/boat/captain)
-"uB" = (/obj/item/reagent_containers/glass/cup/golden,/obj/item/reagent_containers/glass/cup/golden,/obj/item/reagent_containers/glass/cup/golden,/obj/item/reagent_containers/glass/cup/golden,/obj/structure/table/wood/nice,/turf/open/floor/rogue/tile,/area/rogue/outdoors/beach/boat/captain)
 "vn" = (/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/beach)
 "vF" = (/turf/closed/wall/mineral/rogue/wooddark/end,/area/rogue/outdoors/beach)
 "vM" = (/turf/closed/wall/mineral/rogue/wooddark/end{dir = 8},/area/rogue/outdoors/beach)
@@ -45,10 +39,8 @@
 "wN" = (/obj/structure/mineral_door/wood/deadbolt{dir = 1; name = "Abandoned Hut"; locked = 1},/turf/open/floor/rogue/twig,/area/rogue/outdoors/beach)
 "xr" = (/obj/structure/fluff/railing/border{dir = 9},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/beach/boat)
 "xA" = (/obj/structure/fluff/railing/border{dir = 8},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/beach/boat)
-"xM" = (/obj/structure/globe,/obj/structure/table/wood/nice,/turf/open/floor/rogue/tile,/area/rogue/outdoors/beach/boat/captain)
+"xM" = (/obj/structure/table/wood/nice,/turf/open/floor/rogue/tile,/area/rogue/outdoors/beach/boat/captain)
 "xS" = (/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/ruinedwood,/area/rogue/outdoors/beach/boat)
-"xU" = (/obj/item/clothing/suit/pirate,/obj/item/clothing/head/pirate,/obj/structure/closet/crate/roguecloset/dark,/turf/open/floor/rogue/tile,/area/rogue/outdoors/beach/boat/captain)
-"yq" = (/obj/item/paper/scroll,/obj/item/natural/feather,/obj/structure/table/wood/nice,/turf/open/floor/carpet/royalblack,/area/rogue/outdoors/beach/boat/captain)
 "yH" = (/obj/machinery/light/rogue/wallfire/candle{pixel_y = -10},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/outdoors/beach/boat)
 "zV" = (/obj/structure/stairs{dir = 8},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/beach/boat)
 "AC" = (/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/caves)
@@ -56,7 +48,7 @@
 "AZ" = (/obj/structure/chair/stool/rogue,/obj/effect/landmark/start/grabber{dir = 4},/turf/open/floor/rogue/twig,/area/rogue/outdoors/beach)
 "BD" = (/obj/structure/stairs{dir = 8},/obj/structure/fluff/railing/border{dir = 1},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/beach/boat)
 "Cc" = (/obj/machinery/light/rogue/wallfire/candle/l,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/outdoors/beach/boat)
-"CG" = (/obj/item/reagent_containers/food/snacks/rogue/pieslice,/obj/item/reagent_containers/food/snacks/rogue/pieslice,/obj/item/reagent_containers/food/snacks/rogue/pieslice,/obj/item/reagent_containers/food/snacks/rogue/pieslice,/obj/structure/table/wood/nice,/turf/open/floor/carpet/royalblack,/area/rogue/outdoors/beach/boat/captain)
+"CG" = (/obj/structure/table/wood/nice,/turf/open/floor/carpet/royalblack,/area/rogue/outdoors/beach/boat/captain)
 "CM" = (/obj/structure/rack/rogue,/obj/item/rope,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/beach/boat)
 "CP" = (/turf/open/floor/rogue/tile,/area/rogue/outdoors/beach/boat/captain)
 "Db" = (/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/outdoors/beach/boat)
@@ -69,7 +61,6 @@
 "Fv" = (/obj/machinery/light/rogue/torchholder/c{pixel_y = -32},/turf/open/floor/rogue/ruinedwood,/area/rogue/outdoors/beach/boat)
 "FM" = (/obj/structure/rack/rogue,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/beach/boat)
 "Gn" = (/obj/structure/fermenting_barrel,/turf/open/floor/rogue/ruinedwood,/area/rogue/outdoors/beach/boat)
-"Hy" = (/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/structure/closet/crate/roguecloset/dark,/turf/open/floor/rogue/tile,/area/rogue/outdoors/beach/boat/captain)
 "Hz" = (/turf/closed/wall/mineral/rogue/wooddark/horizontal,/area/rogue/outdoors/beach)
 "HC" = (/obj/structure/stairs{dir = 8},/turf/open/floor/rogue/ruinedwood,/area/rogue/outdoors/beach/boat)
 "HQ" = (/obj/structure/chair/stool/rogue,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/beach)
@@ -90,7 +81,6 @@
 "Lr" = (/obj/structure/fluff/traveltile{aportalid = "coast"; aportalgoesto = "townsouth"},/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/beach)
 "Mi" = (/turf/open/floor/carpet/royalblack,/area/rogue/outdoors/beach/boat/captain)
 "Mn" = (/obj/structure/fluff/railing/border,/obj/structure/fluff/railing/border{dir = 4},/turf/open/transparent/openspace,/area/rogue/outdoors/beach)
-"Nr" = (/obj/structure/closet/crate/chest/gold{locked = 1},/obj/item/roguecoin/gold/pile,/obj/item/roguecoin/gold/pile,/obj/item/roguegem/yellow,/turf/open/floor/rogue/tile,/area/rogue/outdoors/beach/boat/captain)
 "NX" = (/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/beach)
 "Ot" = (/obj/structure/mineral_door/wood{name = "Passenger Room"},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/outdoors/beach/boat)
 "OJ" = (/obj/machinery/light/rogue/wallfire/candle,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/outdoors/beach/boat)
@@ -105,8 +95,7 @@
 "TB" = (/obj/structure/mineral_door/wood{name = "Cargo Hold"},/turf/open/floor/rogue/ruinedwood,/area/rogue/outdoors/beach/boat)
 "Uc" = (/obj/structure/fluff/railing/border{dir = 1},/obj/structure/fluff/railing/border{dir = 4},/turf/open/transparent/openspace,/area/rogue/outdoors/beach)
 "UH" = (/obj/structure/bed/rogue,/obj/effect/landmark/latejoin,/obj/machinery/light/rogue/wallfire/candle,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/outdoors/beach/boat)
-"Vd" = (/obj/structure/rack/rogue,/obj/item/rogueweapon/sword/rapier/dec,/turf/open/floor/rogue/tile,/area/rogue/outdoors/beach/boat/captain)
-"VU" = (/obj/item/reagent_containers/glass/cup/golden,/obj/structure/table/wood/nice,/turf/open/floor/carpet/royalblack,/area/rogue/outdoors/beach/boat/captain)
+"Vd" = (/obj/structure/rack/rogue,/turf/open/floor/rogue/tile,/area/rogue/outdoors/beach/boat/captain)
 "WA" = (/obj/structure/bed/rogue,/obj/effect/landmark/latejoin,/obj/machinery/light/rogue/wallfire/candle{pixel_y = -10},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/outdoors/beach/boat)
 "Xv" = (/obj/structure/fermenting_barrel,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/beach/boat)
 "XL" = (/obj/structure/fluff/walldeco/customflag{pixel_y = 32},/turf/open/transparent/openspace,/area/rogue/outdoors/beach)
@@ -192,15 +181,15 @@ PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNdDPNPN
 PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNJZJoJoJoJoJoJoJoJyJoJyJoJoJoJoJoJoJonRPNPNPNPNXLPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
 PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNdiJoJoJoMnsuXvXvsususususuEDsususususususuphHYHYHYHYHYHYPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
 PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNdiJoJoMnsususuJKcosususususususususususususususuphHYHYHYHYHYHYLjHYPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
-PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNdiJoMnsususususususuzVsususususususususususususususuphHYHYxMmyxUHyVdHYHYHYPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
+PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNdiJoMnsususususususuzVsususususususususususususususuphHYHYxMCPnOnOVdHYHYHYPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
 PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNnBsususususususususueqaFsusususususususususususususususuHYCPCPCPCPCPCPYULjPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
 PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNdiJoMnsusususususususususuxAPJsusususucococoaFsuPJsususususuLjMiMiMiMiMiMiMiHYHYPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
-PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNnBsususususususususususuFMElElElsususuHCQCQCxAElElElsususudGHYMiMilKVUMiMiMiixLjPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
-PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNsusususususususususususususususususuFMElElElsulHsuHCQCQCxAElElElsusususuIJMiMilKyqEMMiMiktLjPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
-PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNnBsususususususususususuCMElElElsususuHCQCQCxAElElElsususudGHYMiMilKCGMiMiMirDLjPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
+PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNnBsususususususususususuFMElElElsususuHCQCQCxAElElElsususudGHYMiMilKCGMiMiMiMiLjPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
+PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNsusususususususususususususususususuFMElElElsulHsuHCQCQCxAElElElsusususuIJMiMilKCGEMMiMiMiLjPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
+PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNnBsususususususususususuCMElElElsususuHCQCQCxAElElElsususudGHYMiMilKCGMiMiMiMiLjPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
 PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNZrKTUcsusususususususususuxAKrsusususuAFAFAFxrsuKrsususususuLjMiMiMiMiMiMiMiHYHYPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
 PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNnBsususususususususuBDxrsusususususususususususususususuHYCPCPCPCPCPCPYULjPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
-PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNZrKTUcsususususususuzVsususususususususususususususuphHYHYuBnONruzfTHYHYHYPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
+PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNZrKTUcsususususususuzVsususususususususususususususuphHYHYxMnOCPCPfTHYHYHYPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
 PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNZrKTKTUcsususuJKAFsususususususususususususususuphHYHYHYHYHYHYLjHYPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
 PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNZrKTKTKTUcsususuXvXvsusususususuXvXvsususuphHYHYHYHYHYHYPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
 PNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNZrKTKTKTKTKTKTKTKTKTKTKTKTKTKTKTKTKTwlPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPNPN
