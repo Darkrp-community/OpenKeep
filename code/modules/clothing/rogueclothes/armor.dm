@@ -523,7 +523,6 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 													'sound/foley/footsteps/armor/fullplate (3).ogg'), 100)
 
 /obj/item/clothing/suit/roguetown/armor/rare/elfplate/welfplate
-
 	name = "elvish plate"
 	desc = "A suit of steel interwoven, through honed elven technique, with hardened bark plates."
 	icon_state = "welfchest"
