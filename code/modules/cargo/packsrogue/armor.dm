@@ -83,8 +83,3 @@
 	name = "Munition Plate Armor"
 	cost = 75
 	contains = /obj/item/clothing/suit/roguetown/armor/plate
-
-/datum/supply_pack/rogue/armor/plate/full
-	name = "Full Plate Armor"
-	cost = 110
-	contains = /obj/item/clothing/suit/roguetown/armor/plate/full
