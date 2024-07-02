@@ -62,7 +62,22 @@
 /datum/supply_pack/rogue/tools/bait
 	name = "Fishing Grub"
 	cost = 3
-	contains = list(/obj/item/natural/worms/grubs,)
+	contains = list(/obj/item/natural/worms/grubs)
+
+/datum/supply_pack/rogue/tools/premiumbait
+	name = "Premium Fishing Bait"
+	cost = 15
+	contains = list(/obj/item/fishing/bait/deluxe)
+
+/datum/supply_pack/rogue/tools/fishingline
+	name = "Premium Fishing line"
+	cost = 45
+	contains = list(/obj/item/fishing/reel/deluxe)
+
+/datum/supply_pack/rogue/tools/fishinghook
+	name = "Premium Fishing hook"
+	cost = 45
+	contains = list(/obj/item/fishing/hook/deluxe)
 
 /datum/supply_pack/rogue/tools/prarml
 	name = "Proesthetic Arm (L)"

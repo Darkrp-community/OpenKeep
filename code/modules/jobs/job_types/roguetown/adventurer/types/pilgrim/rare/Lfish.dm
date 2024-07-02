@@ -22,7 +22,7 @@
 		backr = /obj/item/storage/backpack/rogue/satchel
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 		belt = /obj/item/storage/belt/rogue/leather/rope
-		backl = /obj/item/fishingrod
+		backl = /obj/item/fishingrod/fisher
 		beltr = /obj/item/cooking/pan
 		beltl = /obj/item/rogueweapon/huntingknife
 		backpack_contents = list(/obj/item/natural/worms = 2,/obj/item/rogueweapon/shovel/small=1)
@@ -45,7 +45,7 @@
 		backr = /obj/item/storage/backpack/rogue/satchel
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 		belt = /obj/item/storage/belt/rogue/leather/rope
-		beltr = /obj/item/fishingrod
+		beltr = /obj/item/fishingrod/fisher
 		beltl = /obj/item/rogueweapon/huntingknife
 		backpack_contents = list(/obj/item/natural/worms = 2,/obj/item/rogueweapon/shovel/small=1)
 		if(H.mind)

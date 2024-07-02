@@ -40,7 +40,7 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/workervest
 		backl = /obj/item/storage/backpack/rogue/satchel
 		belt = /obj/item/storage/belt/rogue/leather
-		backr = /obj/item/fishingrod
+		backr = /obj/item/fishingrod/fisher
 		beltr = /obj/item/cooking/pan
 		beltl = /obj/item/flint
 		backpack_contents = list(/obj/item/natural/worms = 2,/obj/item/rogueweapon/shovel/small=1)
@@ -52,6 +52,6 @@
 		head = /obj/item/clothing/head/roguetown/fisherhat
 		backr = /obj/item/storage/backpack/rogue/satchel
 		belt = /obj/item/storage/belt/rogue/leather/rope
-		beltr = /obj/item/fishingrod
+		beltr = /obj/item/fishingrod/fisher
 		beltl = /obj/item/rogueweapon/huntingknife
 		backpack_contents = list(/obj/item/natural/worms = 2,/obj/item/rogueweapon/shovel/small=1)
