@@ -568,6 +568,7 @@
 	name = "pigface helmet"
 	icon_state = "hounskull"
 	item_state = "hounskull"
+	adjustable = CAN_CADJUST
 	emote_environment = 3
 	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_RIGHT|FOV_LEFT
