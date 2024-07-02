@@ -152,7 +152,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 			pick_rebels()
 			log_game("Major Antagonist: Rebellion")
 		if(2)
-			log_game("Major Antagonist: Extended") //gotta put something here.
+			pick_cultist()
+			log_game("Major Antagonist: Cultists")
 		if(3)
 			pick_vampires()
 			log_game("Major Antagonist: Vampire Lord")
@@ -336,6 +337,31 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 		GLOB.pre_setup_antags |= antag
 	restricted_jobs = list()
 
+/datum/game_mode/chaosmode/proc/pick_cultist()
+	restricted_jobs = list("King",
+	"Queen",
+	"Merchant",
+	"Priest")
+	antag_candidates = get_players_for_role(ROLE_CULTIST)
+	var/datum/mind/villain = pick_n_take(antag_candidates)
+	if(villain)
+		var/blockme = FALSE
+		if(!(villain in allantags))
+			blockme = TRUE
+		if(villain.assigned_role in GLOB.apprentices_positions)
+			blockme = TRUE
+		if(blockme)
+			return
+		allantags -= villain
+		pre_cultists += villain
+		villain.special_role = "cultist"
+		villain.restricted_roles = restricted_jobs.Copy()
+		testing("[key_name(villain)] has been selected as the [villain.special_role]")
+		log_game("[key_name(villain)] has been selected as the [villain.special_role]")
+	for(var/antag in pre_cultists)
+		GLOB.pre_setup_antags |= antag
+	restricted_jobs = list()
+
 /datum/game_mode/chaosmode/proc/pick_vampires()
 	var/vampsremaining = 3
 	restricted_jobs = list("King",
@@ -406,6 +432,14 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 		addtimer(CALLBACK(traitor, TYPE_PROC_REF(/datum/mind, add_antag_datum), new_antag), rand(10,100))
 		GLOB.pre_setup_antags -= traitor
 		villains += traitor
+
+///////////////// CULTIST
+
+	for(var/datum/mind/cultist in pre_cultists)
+		var/datum/antagonist/new_antag = new /datum/antagonist/zizocultist/leader()
+		addtimer(CALLBACK(cultist, TYPE_PROC_REF(/datum/mind, add_antag_datum), new_antag), rand(10,100))
+		GLOB.pre_setup_antags -= cultist
+		cultists += cultist
 
 ///////////////// WWOLF
 	for(var/datum/mind/werewolf in pre_werewolves)

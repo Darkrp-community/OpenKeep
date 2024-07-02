@@ -58,7 +58,6 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_REV = /datum/game_mode/revolution,
 	ROLE_ALIEN,
 	ROLE_PAI,
-	ROLE_CULTIST = /datum/game_mode/cult,
 	ROLE_BLOB,
 	ROLE_NINJA,
 	ROLE_OBSESSED,
@@ -75,6 +74,7 @@ GLOBAL_LIST_INIT(special_roles_rogue, list(
 	ROLE_PREBEL = /datum/antagonist/prebel,
 	ROLE_BANDIT = /datum/antagonist/bandit,
 	ROLE_ASPIRANT = /datum/antagonist/aspirant,
+	ROLE_CULTIST = /datum/antagonist/zizocultist,
 //	ROLE_WEREWOLF = /datum/antagonist/werewolf,
 	ROLE_NBEAST = /datum/antagonist/vampirelord
 ))

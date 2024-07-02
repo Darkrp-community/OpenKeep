@@ -63,6 +63,7 @@
 	var/list/datum/mind/pre_bandits = list()
 	var/list/datum/mind/pre_delfs = list()
 	var/list/datum/mind/pre_rebels = list()
+	var/list/datum/mind/pre_cultists = list()
 	var/list/datum/mind/pre_aspirants = list()
 	var/list/datum/mind/aspirants = list()
 
