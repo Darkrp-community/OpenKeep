@@ -1130,6 +1130,7 @@
 #include "code\game\objects\items\rogueitems\gems.dm"
 #include "code\game\objects\items\rogueitems\keyrings.dm"
 #include "code\game\objects\items\rogueitems\keys.dm"
+#include "code\game\objects\items\rogueitems\literary.dm"
 #include "code\game\objects\items\rogueitems\magic.dm"
 #include "code\game\objects\items\rogueitems\natural.dm"
 #include "code\game\objects\items\rogueitems\needle.dm"
