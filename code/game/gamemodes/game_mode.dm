@@ -55,6 +55,7 @@
 	var/list/datum/mind/vampires = list()
 	var/list/datum/mind/werewolves = list()
 	var/list/datum/mind/bandits = list()
+	var/list/datum/mind/cultists = list()
 
 	var/list/datum/mind/pre_villains = list()
 	var/list/datum/mind/pre_werewolves = list()
