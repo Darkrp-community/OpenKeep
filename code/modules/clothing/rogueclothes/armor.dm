@@ -499,8 +499,8 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 
 /obj/item/clothing/suit/roguetown/armor/rare/elfplate
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "elvish plate"
-	desc = "A fine suit of sleek, moulded elvish metal. It's interlocking nature and light weight allow for increased maneuverability."
+	name = "dark elf plate"
+	desc = "A fine suit of sleek, moulded dark elf metal. It's interlocking nature and light weight allow for increased maneuverability."
 	body_parts_covered = CHEST|VITALS
 	icon_state = "elfchest"
 	item_state = "elfchest"
@@ -521,6 +521,12 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 		AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/fullplate (1).ogg',\
 													'sound/foley/footsteps/armor/fullplate (2).ogg',\
 													'sound/foley/footsteps/armor/fullplate (3).ogg'), 100)
+
+/obj/item/clothing/suit/roguetown/armor/rare/elfplate/welfplate
+	name = "elvish plate"
+	desc = "A suit of steel interwoven, through honed elven technique, with hardened bark plates."
+	icon_state = "welfchest"
+	item_state = "welfchest"
 
 /obj/item/clothing/suit/roguetown/armor/rare/dwarfplate
 	slot_flags = ITEM_SLOT_ARMOR

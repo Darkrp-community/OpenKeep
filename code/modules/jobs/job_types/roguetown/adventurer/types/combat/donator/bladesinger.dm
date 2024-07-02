@@ -31,15 +31,28 @@
 		H.underwear = "Femleotard"
 		H.underwear_color = CLOTHING_BLACK
 		H.update_body()
-	pants = /obj/item/clothing/under/roguetown/tights/black
-	backr = /obj/item/rogueweapon/greatsword/elfgsword
-	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
-	shoes = /obj/item/clothing/shoes/roguetown/boots/rare/elfplate
-	gloves = /obj/item/clothing/gloves/roguetown/rare/elfplate
-	belt = /obj/item/storage/belt/rogue/leather
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-	armor = /obj/item/clothing/suit/roguetown/armor/rare/elfplate
-	backl = /obj/item/storage/backpack/rogue/satchel
-	head = /obj/item/clothing/head/roguetown/rare/elfplate
-	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	if(H.dna.species.name == "Dark Elf")
+		pants = /obj/item/clothing/under/roguetown/tights/black
+		backr = /obj/item/rogueweapon/greatsword/elfgsword
+		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
+		shoes = /obj/item/clothing/shoes/roguetown/boots/rare/elfplate
+		gloves = /obj/item/clothing/gloves/roguetown/rare/elfplate
+		belt = /obj/item/storage/belt/rogue/leather
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+		armor = /obj/item/clothing/suit/roguetown/armor/rare/elfplate
+		backl = /obj/item/storage/backpack/rogue/satchel
+		head = /obj/item/clothing/head/roguetown/rare/elfplate
+		neck = /obj/item/clothing/neck/roguetown/chaincoif
+	if(H.dna.species.name == "Elf")
+		pants = /obj/item/clothing/under/roguetown/tights/black
+		backr = /obj/item/rogueweapon/greatsword/elfgsword
+		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
+		shoes = /obj/item/clothing/shoes/roguetown/boots/rare/elfplate/welfplate
+		gloves = /obj/item/clothing/gloves/roguetown/rare/elfplate/welfplate
+		belt = /obj/item/storage/belt/rogue/leather
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+		armor = /obj/item/clothing/suit/roguetown/armor/rare/elfplate/welfplate
+		backl = /obj/item/storage/backpack/rogue/satchel
+		head = /obj/item/clothing/head/roguetown/rare/elfplate/welfplate
+		neck = /obj/item/clothing/neck/roguetown/chaincoif
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
