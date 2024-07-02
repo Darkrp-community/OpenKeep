@@ -397,10 +397,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			if(use_skintones)
 
 //				dat += APPEARANCE_CATEGORY_COLUMN
-				var/origin_value = "Skin Tone"
-				if(pref_species.alt_origin)
-					origin_value = pref_species.alt_origin
-				dat += "<b>[origin_value]: </b><a href='?_src_=prefs;preference=s_tone;task=input'>Change </a>"
+				var/skin_tone_wording = pref_species.skin_tone_wording // Both the skintone names and the word swap here is useless fluff
+
+				dat += "<b>[skin_tone_wording]: </b><a href='?_src_=prefs;preference=s_tone;task=input'>Change </a>"
 //				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SKIN_TONE]'>[(randomise[RANDOM_SKIN_TONE]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br>"
 
@@ -410,7 +409,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 //				if(!use_skintones)
 //					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>MUtant color</h3>"
+				dat += "<h3>Mutant color</h3>"
 
 				dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
 

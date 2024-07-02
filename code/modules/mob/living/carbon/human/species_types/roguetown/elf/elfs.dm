@@ -5,16 +5,18 @@
 	name = "Elf"
 	id = "elf"
 	desc = "<b>Elf</b><br>\
-	Elves, or Wood-Elf by the Elder races, are a generic term for tall, pointy-eared \
-	humanoids that trace their original heritage to the ancient Snow Elves. \
-	Considering their diverse history, it is extremely difficult for other mortals \
-	to even concept the various intricacies found in elven society, and the hundreds \
-	if not thousands of tribes that exist within their culture! \
-	Elves tend to be looked poorly upon by humans, as historically the two races have \
-	been rivals in various conflicts and territorial disputes. This however does not stop \
-	many humans and elves from forming relationships, which are capable of producing child.\
-	Elves are known for their intelligence and sharp eyes, but their graceful nature does \
-	not lend itself to the concepts of strength or durability..."
+	Elves, the first race of Grimoria is characterized by lengthened age, \
+	low fertility, and magical aptitude originating from a vast array of tribal cultures and sub-races. \
+	Previously immortal, now mortal as punishment by the Forgotten God for their crimes \
+	against the other races in their pre-historic days: enslavement, \
+	hunting as a game, and other horrendous acts. \
+	Elves have since been in rapid decline due to their divine judgment, \
+	enclaves are few and scattered around the various realms of their ancestral homeland of Grimoria. \
+	Now, the Elves have integrated into the multiple races realms in the known world, \
+	some forming relationships and strong bonds."
+
+	skin_tone_wording = "Tribal Identity"
+
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
@@ -63,13 +65,13 @@
 
 /datum/species/elf/snow/get_skin_list()
 	return sortList(list(
-	"skin1" = "ffe0d1",
-	"skin2" = "fcccb3",
-	"skin3" = "edc6b3",
-	"skin4" = "e2b9a3",
-	"skin5" = "c9a893",
-	"skin6" = "ba9882",
-	"skin7" = "5d4c41"
+		"Snow Elf" = SKIN_COLOR_SNOW_ELF,
+		"Plain Elf" = SKIN_COLOR_PLAIN_ELF,
+		"Mountain Elf" = SKIN_COLOR_MOUNTAIN_ELF,
+		"Coastal Elf" = SKIN_COLOR_COASTAL_ELF,
+		"Wood Elf" = SKIN_COLOR_WOOD_ELF,
+		"Sea Elf" = SKIN_COLOR_SEA_ELF,
+		"Sand Elf" = SKIN_COLOR_SAND_ELF,
 	))
 
 /datum/species/elf/snow/get_hairc_list()
