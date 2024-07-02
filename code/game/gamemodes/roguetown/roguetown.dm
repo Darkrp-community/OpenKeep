@@ -342,7 +342,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	"Queen",
 	"Merchant",
 	"Priest")
-	antag_candidates = get_players_for_role(ROLE_CULTIST)
+	antag_candidates = get_players_for_role(ROLE_ZIZOIDCULTIST)
 	var/datum/mind/villain = pick_n_take(antag_candidates)
 	if(villain)
 		var/blockme = FALSE

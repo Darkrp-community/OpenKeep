@@ -2,7 +2,7 @@
 	name = "Zizoid Lackey"
 	roundend_category = "zizoid cultists"
 	antagpanel_category = "Zizoid Cult"
-	job_rank = ROLE_CULTIST
+	job_rank = ROLE_ZIZOIDCULTIST
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "cultist"
 	confess_lines = list(
@@ -30,7 +30,7 @@
 	C.cultists |= owner
 	H.patron = GLOB.patronlist[/datum/patron/inhumen/zizo]
 
-	owner.special_role = ROLE_CULTIST
+	owner.special_role = ROLE_ZIZOIDCULTIST
 	H.cmode_music = 'sound/music/combatcult.ogg'
 	add_objective(/datum/objective/zizoserve)
 	owner.current.verbs |= /mob/living/carbon/human/proc/praise
