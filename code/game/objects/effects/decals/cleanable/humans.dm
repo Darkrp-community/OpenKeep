@@ -30,6 +30,12 @@
 	nomouseover = TRUE
 	var/blood_timer
 
+/obj/effect/decal/cleanable/blood/attack_hand(mob/living/user)
+	. = ..()
+	to_chat(user, "<span class='notice'>I get my hands bloody.</span>")
+	bloody_hands++
+	update_inv_gloves()
+
 /obj/effect/decal/cleanable/blood/Initialize(mapload, list/datum/disease/diseases)
 	. = ..()
 	if(. == INITIALIZE_HINT_QDEL)

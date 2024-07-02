@@ -26,12 +26,12 @@
 /datum/antagonist/zizocultist/on_gain()
 	. = ..()
 	var/datum/game_mode/C = SSticker.mode
+	var/mob/living/carbon/human/H = owner.current
 	C.cultists |= owner
 	H.patron = GLOB.patronlist[/datum/patron/inhumen/zizo]
 
 	owner.special_role = ROLE_CULTIST
-	var/mob/living/carbon/human/H = owner.current
-	H.cmode_music = 'sound/music/combat_weird.ogg'
+	H.cmode_music = 'sound/music/combatcult.ogg'
 	add_objective(/datum/objective/zizoserve)
 	owner.current.verbs |= /mob/living/carbon/human/proc/praise
 	owner.current.verbs |= /mob/living/carbon/human/proc/communicate
@@ -57,12 +57,32 @@
 	if(.)
 		if(new_owner.assigned_role in GLOB.noble_positions)
 			return FALSE
-		if(new_owner.assigned_role in GLOB.garrison_positions)
+		if(new_owner.assigned_role in GLOB.church_positions)
 			return FALSE
 		if(new_owner.unconvertable)
 			return FALSE
 		if(new_owner.current && HAS_TRAIT(new_owner.current, TRAIT_MINDSHIELD))
 			return FALSE
+
+/datum/antagonist/zizocultist/proc/can_be_converted(mob/living/candidate)
+	if(!candidate.mind)
+		return FALSE
+	if(!can_be_owned(candidate.mind))
+		return FALSE
+	if(candidate.mind.assigned_role in GLOB.noble_positions)
+		return FALSE
+	if(candidate.mind.assigned_role in GLOB.church_positions)
+		return FALSE
+	var/mob/living/carbon/C = candidate //Check to see if the potential rev is implanted
+	if(!istype(C)) //Can't convert simple animals
+		return FALSE
+	return TRUE
+
+/datum/antagonist/zizocultist/proc/add_cultist(datum/mind/cult_mind)
+	if(!can_be_converted(cult_mind.current))
+		return FALSE
+	cult_mind.add_antag_datum(/datum/antagonist/zizocultist)
+	return TRUE
 
 /datum/objective/zizo
 	name = "ASCEND"
@@ -134,7 +154,7 @@
 	set category = "ZIZO"
 
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/speak = input("What do you speak?", "ROGUETOWN") as text|null
+	var/speak = input("What do you speak of?", "ROGUETOWN") as text|null
 	if(!speak)
 		return
 	playsound_local(src, 'sound/vo/cult/skvor.ogg', 100)
@@ -219,5 +239,7 @@
 	if(!input)
 		return
 	
+	bloody_hands--
+	update_inv_gloves()
 	var/turf/open/floor/T = get_turf(src.loc)
 	T.generateSigils(src, input)
