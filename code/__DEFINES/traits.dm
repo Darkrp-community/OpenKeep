@@ -20,6 +20,7 @@
 #define TRAIT_CRITICAL_WEAKNESS		"Critical Weakness"
 #define TRAIT_MANIAC_AWOKEN			"Awoken"
 #define TRAIT_NOROGSTAM				"Indefatigable" //for ai
+#define TRAIT_NOSLEEP				"Nite Creacher" //for thralls
 #define TRAIT_NUDIST					"Nudist" //you can't wear most clothes
 #define TRAIT_KNEESTINGER_IMMUNITY		"Blessing of Dendor"
 #define TRAIT_RETARD_ANATOMY			"Inhumen Anatomy" //can't wear hats and shoes

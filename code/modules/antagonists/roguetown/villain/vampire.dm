@@ -56,7 +56,6 @@
 		ADD_TRAIT(owner.current, TRAIT_NOBLE, TRAIT_GENERIC)
 	owner.special_role = name
 	ADD_TRAIT(owner.current, TRAIT_STRONGBITE, TRAIT_GENERIC)
-	ADD_TRAIT(owner.current, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_NOBREATH, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_NOPAIN, TRAIT_GENERIC)
@@ -116,7 +115,7 @@
 
 /datum/antagonist/vampire/proc/finalize_vampire()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
-	
+
 
 
 /datum/antagonist/vampire/on_life(mob/user)
@@ -361,7 +360,7 @@
 		to_chat(src, "<span class='warning'>My curse is hidden.</span>")
 		return
 	if(silver_curse_status)
-		to_chat(src, "<span class='warning'>My BANE is not letting me REGEN!.</span>")	
+		to_chat(src, "<span class='warning'>My BANE is not letting me REGEN!.</span>")
 		return
 	if(VD.vitae < 500)
 		to_chat(src, "<span class='warning'>Not enough vitae.</span>")
