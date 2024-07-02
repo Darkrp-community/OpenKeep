@@ -45,7 +45,7 @@
 
 /datum/supply_pack/rogue/food/stonebeard
 	name = "Stonebeards Reserve"
-	cost = 60
+	cost = 50
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve
 
 /datum/supply_pack/rogue/food/winezybantu
