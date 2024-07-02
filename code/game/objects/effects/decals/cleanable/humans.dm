@@ -25,7 +25,7 @@
 	bloodiness = BLOOD_AMOUNT_PER_DECAL
 	beauty = -100
 	alpha = 200
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	nomouseover = TRUE
 	appearance_flags = NO_CLIENT_COLOR
 	nomouseover = TRUE
 	var/blood_timer

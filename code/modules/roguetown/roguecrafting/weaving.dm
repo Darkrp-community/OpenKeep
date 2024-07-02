@@ -79,6 +79,30 @@
 	craftdiff = 3
 	sellprice = 20
 
+/datum/crafting_recipe/roguetown/weaving/eoramask
+	name = "eora mask"
+	result = list(/obj/item/clothing/head/roguetown/eoramask)
+	reqs = list(/obj/item/ingot/silver,
+				/obj/item/natural/silk = 4)
+	craftdiff = 3
+	sellprice = 20
+
+/datum/crafting_recipe/roguetown/weaving/eorarobes
+	name = "eora robes"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/eora)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/silk = 1)
+	craftdiff = 3
+	sellprice = 20
+
+/datum/crafting_recipe/roguetown/weaving/eorastraps
+	name = "eora straps"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/eora/alt)
+	reqs = list(/obj/item/ingot/gold,
+				/obj/item/natural/silk = 5)
+	craftdiff = 5
+	sellprice = 50
+
 /datum/crafting_recipe/roguetown/weaving/nunhood
 	name = "nun hood"
 	result = list(/obj/item/clothing/head/roguetown/nun)
