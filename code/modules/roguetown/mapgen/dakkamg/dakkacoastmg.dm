@@ -1,14 +1,14 @@
-/obj/effect/landmark/mapGenerator/rogue/beach
-	mapGeneratorType = /datum/mapGenerator/beach
-	endTurfX = 1
-	endTurfY = 1
+/obj/effect/landmark/mapGenerator/dakka/beach
+	mapGeneratorType = /datum/mapGenerator/dbeach
+	endTurfX = 155
+	endTurfY = 45
 	startTurfX = 1
 	startTurfY = 1
 
-/datum/mapGenerator/beach
-	modules = list(/datum/mapGeneratorModule/beach)
+/datum/mapGenerator/dbeach
+	modules = list(/datum/mapGeneratorModule/dbeach)
 
-/datum/mapGeneratorModule/beach
+/datum/mapGeneratorModule/dbeach
 	clusterCheckFlags = CLUSTER_CHECK_SAME_ATOMS|CLUSTER_CHECK_DIFFERENT_ATOMS
 	allowed_turfs = list(/turf/open/floor/rogue/dirt/road)
 	allowed_areas = list(/area/rogue/outdoors/beach)

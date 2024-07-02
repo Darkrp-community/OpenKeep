@@ -241,15 +241,11 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/otherZ = list()
 
-	#ifndef FASTLOAD
-	otherZ += load_map_config("_maps/map_files/roguetown/otherz/smallforest.json")
-	otherZ += load_map_config("_maps/map_files/roguetown/otherz/smalldecap.json")
-	otherZ += load_map_config("_maps/map_files/roguetown/otherz/smallswamp.json")
+	otherZ += load_map_config("_maps/map_files/dakkatown/otherz/dakkacoast.json")
+	otherZ += load_map_config("_maps/map_files/dakkatown/otherz/dakkaforest.json")
+	otherZ += load_map_config("_maps/map_files/dakkatown/otherz/dakkamountain.json")
+	otherZ += load_map_config("_maps/map_files/dakkatown/otherz/dakkaswamp.json")
 	otherZ += load_map_config("_maps/map_files/roguetown/otherz/underworld.json")
-	#endif
-	#ifdef ROGUEWORLD
-	otherZ += load_map_config("_maps/map_files/roguetown/otherz/rogueworld.json")
-	#endif
 //	otherZ += load_map_config("_maps/map_files/roguetown/otherz/special.json")
 	if(otherZ.len)
 		for(var/datum/map_config/OtherZ in otherZ)

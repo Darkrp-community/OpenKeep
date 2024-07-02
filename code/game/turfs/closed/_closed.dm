@@ -373,3 +373,17 @@
 	desc = ""
 	icon = 'icons/turf/walls/hierophant_wall.dmi'
 	icon_state = "wall"
+
+// Dakkatown Turfs
+/turf/closed/indestructible/wooddark
+	name = "wall"
+	desc = ""
+	icon = 'icons/turf/roguewall.dmi'
+	icon_state = "corner"
+
+/turf/closed/indestructible/roguewindow
+	name = "window"
+	desc = ""
+	opacity = 0
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "window-solid"

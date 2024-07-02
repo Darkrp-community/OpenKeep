@@ -230,6 +230,7 @@
 /*
  * Glass tables
  */
+
 /obj/structure/table/glass
 	name = "glass table"
 	desc = ""
@@ -504,6 +505,7 @@
 /*
  * Reinforced tables
  */
+
 /obj/structure/table/reinforced
 	name = "reinforced table"
 	desc = ""
@@ -597,6 +599,7 @@
 /*
  * Racks
  */
+
 /obj/structure/rack
 	name = "rack"
 	desc = ""
@@ -672,7 +675,7 @@
 	take_damage(rand(4,8), BRUTE, "melee", 1)*/
 
 /*
- * Rack destruction
+ * Rack Destruction
  */
 
 /obj/structure/rack/deconstruct(disassembled = TRUE)
@@ -700,7 +703,6 @@
 	pixel_y = 32
 
 /obj/structure/rack/rogue/shelf/big
-	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "shelf_big"
 	climbable = FALSE
 	dir = SOUTH
@@ -709,6 +711,9 @@
 /obj/structure/rack/rogue/shelf/biggest
 	icon_state = "shelf_biggest"
 	pixel_y = 0
+
+// temporary
+/obj/item/cooking/platter
 
 /*
  * Rack Parts
