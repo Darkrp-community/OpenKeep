@@ -204,29 +204,18 @@
 
 
 
-/*	.................   Crackers   ................... */
+/*	.................   Hardtack   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/crackers
-	name = "raw crackers"
+	name = "raw hardtack"
 	desc = "Doughy, soft, unacceptable."
 	icon_state = "crackercook"
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/crackerscooked
 	w_class = WEIGHT_CLASS_NORMAL
 	eat_effect = null
 
-/obj/item/reagent_containers/food/snacks/rogue/crackers /// temporary for conflicts phase out
-	name = "crackers"
-	desc = "A delicious crunch in every bite."
-	icon_state = "cracker6"
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_NUTRITIOUS)
-	w_class = WEIGHT_CLASS_NORMAL
-	tastes = list("spelt" = 1)
-	bitesize = 6
-	rotprocess = null
-
-
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked
-	name = "crackers"
-	desc = "A delicious crunch in every bite."
+	name = "hardtack"
+	desc = "Very, very hard and dry."
 	icon_state = "cracker6"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_NUTRITIOUS)
 	w_class = WEIGHT_CLASS_NORMAL
