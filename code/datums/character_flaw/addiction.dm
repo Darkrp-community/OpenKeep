@@ -81,6 +81,37 @@
 	time = 30 MINUTES
 	needsate_text = "Time for a drink."
 
+/// PYROMANIAC
+
+/datum/charflaw/addiction/pyromaniac // from tf2?
+	name = "Servant of Fire"
+	desc = "The warmth and just seeing something turn to ash is so much fun!"
+	time = 10 MINUTES
+	needsate_text = "I need to see something turn to ash, or be at fire. Anything!"
+
+/// KLEPTOMANIAC
+
+/datum/charflaw/addiction/kleptomaniac
+	name = "Thief-borne"
+	desc = "As a child I had to rely on theft to survive. Whether that changed or not, I just can't get over it."
+	time = 30 MINUTES
+	needsate_text = "I need to STEAL something! I'll die if I don't!"
+
+/// PAIN FREEK
+
+/datum/charflaw/addiction/masochist
+	name = "Pain Freek"
+	desc = "They call me a freek, but it just feels so good..."
+	time = 25 MINUTES
+	needsate_text = "I need to feel good... punch me in the face!"
+
+/// LOVES SEEING VISCERA OR SOME SHIT
+
+/datum/charflaw/addiction/maniac // this will probably NOT be used as an actual flaw
+	name = "Maniac"
+	desc = "The worms call me the maniac... I just like seeing limbs fly and blood drip, is there something so BAD about that?"
+	time = 40 MINUTES // we dont wanna contribute to fragging
+	needsate_text = "Where's all the blood?"
 
 /// JUNKIE
 
@@ -113,30 +144,34 @@
 	var/mob/living/carbon/human/H = user
 	if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) || H.mind.has_antag_datum(/datum/antagonist/vampirelord)) // dont stunlock
 		return
-	if(!H.wear_neck)
-		var/obj/item/clothing/neck/roguetown/psicross/crosstype
-		switch(H.patron)
-			if(/datum/patron/divine/astrata)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/astrata
-			if(/datum/patron/divine/noc)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/noc
-			if(/datum/patron/divine/dendor)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/dendor
-			if(/datum/patron/divine/necra)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/necra
-			if(/datum/patron/divine/ravox)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/ravox
+	var/obj/item/clothing/neck/roguetown/psicross/crosstype
+	switch(H.patron?.name)
+		if("Astrata")
+			crosstype = /obj/item/clothing/neck/roguetown/psicross/astrata
+		if("Noc")
+			crosstype = /obj/item/clothing/neck/roguetown/psicross/noc
+		if("Dendor")
+			crosstype = /obj/item/clothing/neck/roguetown/psicross/dendor
+		if("Necra")
+			crosstype = /obj/item/clothing/neck/roguetown/psicross/necra
+		if("Ravox")
+			crosstype = /obj/item/clothing/neck/roguetown/psicross/ravox
+		else
+			if(prob(1))
+				crosstype = /obj/item/clothing/neck/roguetown/psicross/g
 			else
-				if(prob(1))
-					crosstype = /obj/item/clothing/neck/roguetown/psicross/g
-				else
-					crosstype = /obj/item/clothing/neck/roguetown/psicross
+				crosstype = /obj/item/clothing/neck/roguetown/psicross
+	if(!H.wear_neck)
 		H.equip_to_slot_or_del(new crosstype(H), SLOT_NECK)
+		return
+	if(!H.wear_wrists)
+		H.equip_to_slot_or_del(new crosstype(H), SLOT_WRISTS)
+		return
 
 /// ALCOHOLIC
 
 /datum/charflaw/addiction/lovefiend
 	name = "Love-Fiend"
 	desc = "I must make love!"
-	time = 30 MINUTES
+	time = 50 MINUTES
 	needsate_text = "Time to get happy."

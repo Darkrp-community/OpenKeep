@@ -412,6 +412,8 @@
 								V.dropItemToGround(picked)
 								put_in_active_hand(picked)
 								to_chat(src, "<span class='green'>I stole [picked]!</span>")
+								if(has_flaw(/datum/charflaw/addiction/kleptomaniac))
+									sate_addiction()
 							else
 								to_chat(src, "<span class='warning'>I didn't find anything there. Perhaps I should look elsewhere.</span>")
 						else
