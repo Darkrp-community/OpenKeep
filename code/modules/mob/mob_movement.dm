@@ -613,6 +613,10 @@
 			rogue_sneaking = TRUE
 	return
 
+	if(world.time < mob_timers[MT_INVISIBILITY]) // Check if the mob is affected by the invisibility spell
+		alpha = 0
+		return
+
 /mob/proc/toggle_rogmove_intent(intent, silent = FALSE)
 	switch(intent)
 		if(MOVE_INTENT_SNEAK)
