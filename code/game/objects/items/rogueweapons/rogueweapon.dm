@@ -35,6 +35,7 @@
 	var/initial_sl
 	var/list/possible_enhancements
 	var/renamed_name
+	var/axe_cut = 0
 
 /obj/item/rogueweapon/Initialize()
 	. = ..()
