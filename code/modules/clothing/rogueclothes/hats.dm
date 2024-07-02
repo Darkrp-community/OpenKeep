@@ -579,10 +579,11 @@
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
 			icon_state = "[initial(icon_state)]_raised"
-			body_parts_covered = HEAD|EARS|HAIR
-			flags_inv = HIDEEARS
+			body_parts_covered = HEAD|HAIR|EARS
+			flags_inv = HIDEEARS|HIDEHAIR
 			flags_cover = null
-			prevent_crits -= list(BCLASS_STAB) // Vulnerable to eye stabbing while visor is open
+			prevent_crits -= list(BCLASS_STAB) // Vulnerable to eye stabs with the cover up
+			emote_environment = 0
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
 				H.update_inv_head()
@@ -590,6 +591,7 @@
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
 			prevent_crits += list(BCLASS_STAB)
+			emote_environment = 3
 			if(user)
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
