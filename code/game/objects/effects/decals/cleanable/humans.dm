@@ -32,9 +32,11 @@
 
 /obj/effect/decal/cleanable/blood/attack_hand(mob/living/user)
 	. = ..()
-	to_chat(user, "<span class='notice'>I get my hands bloody.</span>")
-	bloody_hands++
-	update_inv_gloves()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		to_chat(H, "<span class='notice'>I get my hands bloody.</span>")
+		H.bloody_hands++
+		H.update_inv_gloves()
 
 /obj/effect/decal/cleanable/blood/Initialize(mapload, list/datum/disease/diseases)
 	. = ..()
