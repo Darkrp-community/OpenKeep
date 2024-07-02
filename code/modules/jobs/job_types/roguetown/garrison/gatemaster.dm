@@ -44,10 +44,10 @@
 		head = /obj/item/clothing/head/roguetown/helmet/kettle
 	else
 		head = /obj/item/clothing/head/roguetown/roguehood/red
-	
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
@@ -59,6 +59,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, pick(1,1,2), TRUE)
 		H.change_stat("intelligence", 1)
+		H.change_stat("strength", -1)
 		H.change_stat("perception", 2)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", 2)

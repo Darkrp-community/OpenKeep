@@ -8,7 +8,7 @@
     )
     outfit = /datum/outfit/job/roguetown/mercenary/underdweller
     category_tags = list(CTAG_MERCENARY)
-    maximum_possible_slots = 5
+    maximum_possible_slots = 3
 
 /datum/outfit/job/roguetown/mercenary/underdweller/pre_equip(mob/living/carbon/human/H)
     ..()

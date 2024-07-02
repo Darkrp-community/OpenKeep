@@ -152,6 +152,9 @@
 /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	icon_state = "sdaggeralt"
 
+/obj/item/rogueweapon/huntingknife/idagger/steel/assassin
+	icon_state = "ass"
+
 /obj/item/rogueweapon/huntingknife/idagger/silver
 	name = "dagger"
 	desc = "A dagger made of fine silver."

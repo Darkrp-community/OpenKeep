@@ -8,7 +8,7 @@
 	obj_flags = CAN_BE_HIT
 	var/dead = TRUE
 	max_integrity = 50
-	sellprice = 10
+	sellprice = 4
 	dropshrink = 0.6
 	slices_num = 1
 	slice_bclass = BCLASS_CHOP

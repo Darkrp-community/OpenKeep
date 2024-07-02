@@ -6,11 +6,11 @@
 	clothes_req = FALSE
 	overlay_state = "lightning"
 	sound = 'sound/magic/lightning.ogg'
-	range = 8
+	range = 4
 	projectile_type = /obj/projectile/magic/lightning
 	releasedrain = 30
 	chargedrain = 1
-	chargetime = 15
+	chargetime = 30 SECONDS
 	charge_max = 20 SECONDS
 	warnie = "spellwarning"
 	no_early_release = TRUE
@@ -165,7 +165,7 @@
 	active = FALSE
 	releasedrain = 30
 	chargedrain = 1
-	chargetime = 15
+	chargetime = 40 SECONDS
 	charge_max = 10 SECONDS
 	warnie = "spellwarning"
 	no_early_release = TRUE

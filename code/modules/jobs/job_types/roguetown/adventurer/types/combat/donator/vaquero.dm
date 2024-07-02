@@ -8,7 +8,7 @@
 	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 1
-	pickprob = 50
+	pickprob = 11
 	maximum_possible_slots = 1
 
 /datum/advclass/combat/vaquero/equipme(mob/living/carbon/human/H)

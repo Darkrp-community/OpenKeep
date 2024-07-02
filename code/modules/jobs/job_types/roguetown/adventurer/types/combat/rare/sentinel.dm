@@ -13,7 +13,7 @@
 	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
 	outfit = /datum/outfit/job/roguetown/adventurer/sentinel
 	maximum_possible_slots = 1
-	pickprob = 50
+	pickprob = 11
 	category_tags = list(CTAG_ADVENTURER)
 
 /datum/advclass/combat/sentinel/equipme(mob/living/carbon/human/H)
@@ -26,14 +26,14 @@
 	..()
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.change_stat("strength", 1)
 		H.change_stat("constitution", 1)
 		H.change_stat("endurance", 1)

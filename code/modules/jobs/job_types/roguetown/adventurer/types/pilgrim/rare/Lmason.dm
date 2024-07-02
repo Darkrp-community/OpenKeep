@@ -14,14 +14,12 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/grandmastermason
 	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 1
-	pickprob = 15
+	pickprob = 5
 
 /datum/outfit/job/roguetown/adventurer/grandmastermason/pre_equip(mob/living/carbon/human/H)
 	..()
 
-	H.mind.adjust_skillrank(/datum/skill/combat/axes, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/lumberjacking, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
@@ -42,7 +40,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/pick
-	backr = /obj/item/rogueweapon/stoneaxe/woodcut
+	backr = /obj/item/rogueweapon/woodcut
 	backl = /obj/item/storage/backpack/rogue/backpack
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", 2)

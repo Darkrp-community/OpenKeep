@@ -54,13 +54,12 @@
 		head = /obj/item/clothing/head/roguetown/helmet/kettle
 	else
 		head = /obj/item/clothing/head/roguetown/helmet
-	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	if(H.mind) //townguard is a militia of unexperienced men
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(1,2), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, pick(1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)

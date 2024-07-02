@@ -23,7 +23,6 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/fishing, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)

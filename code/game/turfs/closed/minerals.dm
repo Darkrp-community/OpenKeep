@@ -614,7 +614,7 @@
 /turf/closed/mineral/random/rogue/high
 	icon_state = "minrandhigh"
 	mineralChance = 50
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/gold = 25 , /turf/closed/mineral/rogue/iron = 25,)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/gold = 5 , /turf/closed/mineral/rogue/iron = 25,)
 
 
 //begin actual mineral turfs
@@ -645,7 +645,7 @@
 	mineralType = /obj/item/rogueore/gold
 	rockType = /obj/item/natural/rock/gold
 	spreadChance = 2
-	spread = 3
+	spread = 2
 
 /turf/closed/mineral/rogue/salt
 	desc = "seems rich in salt"

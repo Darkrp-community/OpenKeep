@@ -1,7 +1,7 @@
 /datum/advclass/pilgrim/monk
 	name = "Monk"
 	allowed_sexes = list(MALE, FEMALE)
-	tutorial = "A traveling monk of the God Ravox, unmatched in unarmed combat and with an unwavering devotion to Justice."
+	tutorial = "A traveling monk serving the ten, helping the poor and serving justice to sinners."
 	allowed_races = list(
 		"Humen",
 		"Elf",
@@ -24,7 +24,7 @@
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe
 	belt = /obj/item/storage/belt/rogue/leather/rope
-	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backr = /obj/item/rogueweapon/woodstaff
 

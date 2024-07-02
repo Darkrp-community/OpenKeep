@@ -8,18 +8,18 @@
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/grenzelhoft
 	category_tags = list(CTAG_MERCENARY)
-	maximum_possible_slots = 5
+	maximum_possible_slots = 3
 
 /datum/outfit/job/roguetown/mercenary/grenzelhoft/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(1,2,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(1,2,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)	//Big sword user so - really helps them.
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(1,2,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(0,0,1), TRUE)

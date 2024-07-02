@@ -12,7 +12,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/templar
 	maximum_possible_slots = 1
 	min_pq = 2
-	pickprob = 15
+	pickprob = 11
 	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/templar/pre_equip(mob/living/carbon/human/H)
@@ -31,7 +31,6 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)

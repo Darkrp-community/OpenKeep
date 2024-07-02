@@ -21,7 +21,7 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 	var/ispilgrim = FALSE
 	display_order = JDO_ADVENTURER
 	show_in_credits = FALSE
-	min_pq = 0
+	min_pq = 4
 	always_show_on_latechoices = FALSE
 	job_reopens_slots_on_death = TRUE
 	same_job_respawn_delay = 5 MINUTES

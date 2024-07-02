@@ -13,7 +13,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/zybantine
 	category_tags = list(CTAG_MERCENARY)
-	maximum_possible_slots = 5
+	maximum_possible_slots = 3
 
 
 /datum/outfit/job/roguetown/mercenary/zybantine/pre_equip(mob/living/carbon/human/H)
@@ -39,7 +39,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(2,2,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)

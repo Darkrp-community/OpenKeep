@@ -14,7 +14,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/mage
 	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 2
-
+//needs a complete overhaul, stun lock meta
 /datum/outfit/job/roguetown/adventurer/mage
 	allowed_patrons = list(/datum/patron/divine/noc)
 
@@ -39,7 +39,7 @@
 			backl = /obj/item/storage/backpack/rogue/backpack
 			H.change_stat("intelligence", 1)
 			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
-		H.change_stat("strength", -2)
+		H.change_stat("strength", -1)
 		H.change_stat("intelligence", 3)
 		H.change_stat("constitution", -2)
 		H.change_stat("endurance", -1)

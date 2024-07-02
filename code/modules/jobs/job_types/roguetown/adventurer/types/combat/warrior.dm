@@ -17,21 +17,15 @@
 
 /datum/outfit/job/roguetown/adventurer/sfighter/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(2,3), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,3), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(1,1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, pick(1,1,2), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(2,3), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 
 	if(H.gender == FEMALE)
 		H.underwear = "Femleotard"
@@ -64,8 +58,6 @@
 		head = /obj/item/clothing/head/roguetown/helmet/skullcap
 		neck = /obj/item/clothing/neck/roguetown/gorget
 
-	H.change_stat("strength", 2)
 	H.change_stat("endurance", 1)
-	H.change_stat("speed", 1)
+	H.change_stat("speed", 2)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)

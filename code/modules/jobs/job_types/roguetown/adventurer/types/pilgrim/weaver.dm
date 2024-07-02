@@ -16,7 +16,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/weaving, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
@@ -28,12 +28,12 @@
 	pants = /obj/item/clothing/under/roguetown/tights/random
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	backl = /obj/item/storage/backpack/rogue/satchel
-	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
+	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	beltr = /obj/item/rogueweapon/huntingknife/idagger
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	beltl = /obj/item/needle
 	backpack_contents = list(/obj/item/natural/cloth = 1, /obj/item/natural/cloth = 1, /obj/item/natural/bundle/fibers = 1, /obj/item/needle = 1)
-	H.change_stat("intelligence", 2)
-	H.change_stat("speed", 2)
+	H.change_stat("intelligence", 1)
+	H.change_stat("speed", 1)
 	H.change_stat("perception", 1)

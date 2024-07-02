@@ -13,7 +13,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/blacksmith
-	pickprob = 20
+	pickprob = 50
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 
 /datum/outfit/job/roguetown/adventurer/blacksmith/pre_equip(mob/living/carbon/human/H)
@@ -33,11 +33,10 @@
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(1,1,2), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2,2,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(0,0,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(0,0,1), TRUE)

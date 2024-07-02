@@ -8,7 +8,7 @@
 	allowed_races = list("Dwarf")
 	outfit = /datum/outfit/job/roguetown/adventurer/minermaster
 	maximum_possible_slots = 1
-	pickprob = 15
+	pickprob = 5
 	category_tags = list(CTAG_PILGRIM)
 
 /datum/outfit/job/roguetown/adventurer/minermaster/pre_equip(mob/living/carbon/human/H)

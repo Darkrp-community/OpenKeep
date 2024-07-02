@@ -9,7 +9,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/crusader
-	maximum_possible_slots = 2
+	maximum_possible_slots = 1
 	tutorial = "The crusaders... Knights who have pledged \
 	their wealth and lands to the church, taking up the banner \
 	of one of the rival Orders dedicated to retaking the holy land. \

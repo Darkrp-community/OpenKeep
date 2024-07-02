@@ -17,13 +17,12 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/mastercarpenter
 	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 1
-	pickprob = 15
+	pickprob = 5
 
 /datum/outfit/job/roguetown/adventurer/mastercarpenter/pre_equip(mob/living/carbon/human/H)
 	..()
 
-	H.mind.adjust_skillrank(/datum/skill/combat/axes, 4, TRUE) // They use hammers, sawes and axes all day.
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE) // They use hammers, sawes and axes all day.
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
@@ -35,8 +34,6 @@
 	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/lumberjacking, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 
 	head = /obj/item/clothing/head/roguetown/hatblu
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor

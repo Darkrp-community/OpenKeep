@@ -33,7 +33,6 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
@@ -50,7 +49,7 @@
 		if(prob(23))
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 		H.change_stat("strength", 1)
-		H.change_stat("intelligence", 1)
+		H.change_stat("intelligence", -1)
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 2)
 	else
@@ -67,7 +66,7 @@
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
 		H.change_stat("strength", 1)
 		H.change_stat("perception", 2)
-		H.change_stat("intelligence", 1)
+		H.change_stat("intelligence", -1)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", 1)
 		H.change_stat("constitution", 1)

@@ -3,8 +3,8 @@
 	flag = JESTER
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 
 	allowed_races = list(
 		"Humen",
@@ -37,7 +37,7 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, pick(1,2,3,4), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE) //lol
 		H.mind.adjust_skillrank(/datum/skill/misc/music, pick(1,2), TRUE)
 	if(H.gender == MALE)
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather

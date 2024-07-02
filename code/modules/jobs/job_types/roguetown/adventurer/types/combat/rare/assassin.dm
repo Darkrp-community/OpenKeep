@@ -15,7 +15,7 @@
 	min_pq = 2
 	maximum_possible_slots = 1
 	category_tags = list(CTAG_ADVENTURER)
-	pickprob = 15
+	pickprob = 11
 
 /datum/outfit/job/roguetown/adventurer/assassin/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -33,7 +33,6 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
 
 	if(H.gender == FEMALE)
@@ -49,7 +48,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/leather
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltr = /obj/item/quiver/bolts
-	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special
+	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/assassin
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	neck = /obj/item/clothing/neck/roguetown/gorget
@@ -57,6 +56,6 @@
 
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-	H.change_stat("strength", 1)
+	H.change_stat("strength", -1)
 	H.change_stat("perception", 2)
 	H.change_stat("speed", 2)

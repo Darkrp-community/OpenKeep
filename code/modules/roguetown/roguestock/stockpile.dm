@@ -3,7 +3,7 @@
 	desc = "Wooden logs cut short for transport."
 	item_type = /obj/item/grown/log/tree/small
 	held_items = 3
-	payout_price = 2
+	payout_price = 1
 	withdraw_price = 6
 	export_price = 4
 	importexport_amt = 20
