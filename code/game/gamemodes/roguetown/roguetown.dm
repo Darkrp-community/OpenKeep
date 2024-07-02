@@ -182,7 +182,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	"Priest")
 	var/num_bandits = 0
 	if(num_players() >= 7)
-		num_bandits = CLAMP(round(num_players() / 3), 1, 3)
+		num_bandits = CLAMP(round(num_players() / 3), 1, 2)
 		banditgoal += (num_bandits * rand(200,400))
 
 	if(num_bandits)
@@ -276,8 +276,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 /datum/game_mode/chaosmode/proc/pick_rebels()
 	restricted_jobs = list() //handled after picking
 	var/num_rebels = 0
-	if(num_players() >= 10)
-		num_rebels = CLAMP(round(num_players() / 3), 3, 5)
+	if(num_players() >= 7)
+		num_rebels = CLAMP(round(num_players() / 3), 2, 3)
 	if(num_rebels)
 		antag_candidates = get_players_for_role(ROLE_PREBEL)
 		if(antag_candidates.len)
@@ -338,7 +338,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_vampires()
-	var/vampsremaining = 3
+	var/vampsremaining = 1
 	restricted_jobs = list("Lord",
 	"Lady",
 	"Merchant",
@@ -352,8 +352,10 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 		if(!(vampire in allantags))
 			blockme = TRUE
 		if(vampire.assigned_role in GLOB.noble_positions)
-			continue
+			blockme = TRUE
 		if(vampire.assigned_role in GLOB.apprentices_positions)
+			blockme = TRUE
+		if(vampire.assigned_role in restricted_jobs)
 			blockme = TRUE
 		if(blockme)
 			continue
@@ -373,13 +375,11 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 /datum/game_mode/chaosmode/proc/pick_werewolves()
 	restricted_jobs = list("Acolyte","Priest","Adventurer","Confessor","Garrison Guard","Veteran","Royal Guard","Captain")
 	var/werewolfsremaining = 1
-/*	var/num_werewolves = rand(1,3)
-#ifdef TESTSERVER
-	num_werewolves = 100
-#endif*/
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
-	if(antag_candidates.len)
-		var/datum/mind/werewolf = pick(antag_candidates)
+	antag_candidates = shuffle(antag_candidates)
+	for(var/datum/mind/werewolf in antag_candidates)
+		if(!werewolfsremaining)
+			break
 		var/blockme = FALSE
 		if(!(werewolf in allantags))
 			blockme = TRUE
@@ -387,8 +387,10 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 			blockme = TRUE
 		if(werewolf.assigned_role in GLOB.apprentices_positions)
 			blockme = TRUE
+		if(werewolf.assigned_role in restricted_jobs)
+			blockme = TRUE
 		if(blockme)
-			return
+			continue
 		allantags -= werewolf
 		pre_werewolves += werewolf
 		werewolf.special_role = "werewolf"

@@ -144,7 +144,7 @@
 	new_role = "Garrison Guard"
 	recruitment_faction = "Garrison Guard"
 	recruitment_message = "Serve the Garrison, %RECRUIT!"
-	accept_message = "FOR THE KING!"
+	accept_message = "FOR THE LORD!"
 	refuse_message = "I refuse."
 
 /obj/effect/proc_holder/spell/self/convertrole/guard/convert(mob/living/carbon/human/recruit, mob/living/carbon/human/recruiter)
