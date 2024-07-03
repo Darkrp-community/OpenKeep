@@ -155,3 +155,29 @@
 			user.apply_status_effect(/datum/status_effect/buff/ravox)
 		else
 			user.remove_status_effect(/datum/status_effect/buff/ravox)
+
+/obj/item/clothing/ring/silver/calm
+	name = "soothing ring"
+	desc = "A lightweight ring that feels entirely weightless, and easing to your mind as you place it upon a finger."
+	icon_state = "ring_calm"
+
+/obj/item/clothing/ring/silver/calm/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if (slot == SLOT_RING && istype(user))
+			user.apply_status_effect(/datum/status_effect/buff/calm)
+		else
+			user.remove_status_effect(/datum/status_effect/buff/calm)
+
+/obj/item/clothing/ring/silver/noc
+	name = "ring of noc"
+	desc = "Old ring, inscribed with arcane words. Just being near it imbues you with otherworldly knowledge."
+	icon_state = "ring_sapphire"
+
+/obj/item/clothing/ring/silver/noc/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if (slot == SLOT_RING && istype(user))
+			user.apply_status_effect(/datum/status_effect/buff/noc)
+		else
+			user.remove_status_effect(/datum/status_effect/buff/noc)
