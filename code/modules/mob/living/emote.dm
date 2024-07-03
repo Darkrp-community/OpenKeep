@@ -546,7 +546,7 @@
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_zape()
-	set name = "OOC: Ask Zape"
+	set name = "OOC: Rape"
 	set category = "Emotes"
 
 	emote("zape", intentional = TRUE, targetted = TRUE)
@@ -562,20 +562,13 @@
 	if(ishuman(user) && ishuman(target))
 		var/mob/living/carbon/human/zaper = user
 		var/mob/living/carbon/human/victim = target
-		var/do_change
-		if(victim.loc == zaper.loc)
-			do_change = TRUE
-		if(!do_change)
-			if(zaper.pulling == victim)
-				do_change = TRUE
-		if(do_change)
-			if (alert(victim,"Your character is gonna be zaped by [zaper.name]. Do you agree?","Zape","I want [victim.name] to be zaped!","No, I don't") == "No, I don't")
-				alert(zaper,"The player doesn't agree.")
-				log_game("The [victim.name] doesn't agree to be zaped.")
-			else
-				alert(zaper,"The player agrees.")
-				log_game("The [victim.name] agrees to be zaped.")
-			return
+		if (alert(victim,"Your character is gonna be raped by [zaper.name]. Do you agree?","Rape","I want [victim.name] to be raped!","No, I don't") == "No, I don't")
+			alert(zaper,"The player doesn't agree.")
+			log_game("The [victim.name] doesn't agree to be raped.")
+		else
+			alert(zaper,"The player agrees.")
+			log_game("The [victim.name] agrees to be raped.")
+		return
 
 /datum/emote/living/spit
 	key = "spit"
