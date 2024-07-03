@@ -17,6 +17,12 @@
 	name = "Zizoid Cultist"
 	islesser = FALSE
 
+/proc/iszizolackey(mob/living/M)
+	return istype(M) && M.mind && M.mind.has_antag_datum(/datum/antagonist/zizocultist)
+
+/proc/iszizocultist(mob/living/M)
+	return istype(M) && M.mind && M.mind.has_antag_datum(/datum/antagonist/zizocultist/leader)
+
 /datum/antagonist/zizocultist/examine_friendorfoe(datum/antagonist/examined_datum, mob/examiner, mob/examined)
 	if(istype(examined_datum, /datum/antagonist/zizocultist))
 		return "<span class='boldnotice'>A lackey for the future.</span>"
@@ -29,29 +35,28 @@
 	var/mob/living/carbon/human/H = owner.current
 	C.cultists |= owner
 	H.patron = GLOB.patronlist[/datum/patron/inhumen/zizo]
-	greet()
 
 	owner.special_role = ROLE_ZIZOIDCULTIST
 	H.cmode_music = 'sound/music/combatcult.ogg'
-	add_objective(/datum/objective/zizoserve)
 	owner.current.verbs |= /mob/living/carbon/human/proc/praise
 	owner.current.verbs |= /mob/living/carbon/human/proc/communicate
 	ADD_TRAIT(H, TRAIT_VILLAIN, TRAIT_GENERIC)
 
-/datum/antagonist/zizocultist/leader/on_gain()
-	add_objective(/datum/objective/zizo)
-	owner.current.verbs |= /mob/living/carbon/human/proc/draw_sigil
-	..()
+	if(islesser)
+		add_objective(/datum/objective/zizoserve)
+		greet()
+	else
+		add_objective(/datum/objective/zizo)
+		greet()
+		owner.current.verbs |= /mob/living/carbon/human/proc/draw_sigil
 
 /datum/antagonist/zizocultist/greet()
 	to_chat(owner, "<span class='danger'>I'm a lackey to the LEADER. A new future begins.</span>")
 	owner.announce_objectives()
-	..()
 
 /datum/antagonist/zizocultist/leader/greet()
 	to_chat(owner, "<span class='danger'>I'm a cultist to the ALMIGHTY. They call it the UNSPEAKABLE. I require LACKEYS to make my RITUALS easier. I SHALL ASCEND.</span>")
 	owner.announce_objectives()
-	..()
 
 /datum/antagonist/zizocultist/can_be_owned(datum/mind/new_owner)
 	. = ..()
@@ -89,11 +94,13 @@
 	name = "ASCEND"
 	explanation_text = "Ensure that I ascend."
 	team_explanation_text = "Ensure that I ascend."
+	triumph_count = 5
 
 /datum/objective/zizoserve
 	name = "Serve your Leader"
-	explanation_text = "Serve your leader."
-	team_explanation_text = "Serve your leader."
+	explanation_text = "Serve your leader and ensure that they ascend."
+	team_explanation_text = "Serve your leader and ensure that they ascend."
+	triumph_count = 3
 
 /datum/antagonist/zizocultist/proc/add_objective(datum/objective/O)
 	var/datum/objective/V = new O
@@ -172,6 +179,36 @@
 	icon = 'icons/obj/sigils.dmi'
 	var/sigil_type = "Servantry"
 
+/obj/effect/decal/cleanable/sigil/proc/CheckRequirements(var/turf/locc, var/datum/ritual/R)
+	var/list/L = list(
+		get_step(locc, NORTHEAST),
+		get_step(locc, EAST),
+		get_step(locc, SOUTHEAST),
+		get_step(locc, SOUTH),
+		get_step(locc, SOUTHWEST),
+		get_step(locc, WEST),
+		get_step(locc, NORTH),
+		get_step(locc, NORTHWEST),
+		locc,
+	)
+	
+
+/obj/effect/decal/cleanable/sigil/attack_hand(mob/living/user)
+	. = ..()
+	if(iszizocultist(user) || iszizolackey(user))
+		var/list/rituals = list()
+		for(var/path in subtypesof(/datum/ritual))
+			var/datum/ritual/G = path
+			if(G.circle == sigil_type)
+				rituals |= new path()
+			else
+				continue
+
+		var/pickritual = input(user, "Rituals", "ROGUETOWN") as anything in rituals|null
+
+		if(!pickritual)
+			return
+
 /obj/effect/decal/cleanable/sigil/N
 	icon_state = "N"
 
@@ -244,3 +281,35 @@
 	update_inv_gloves()
 	var/turf/open/floor/T = get_turf(src.loc)
 	T.generateSigils(src, input)
+
+// RITUAL DATUMS
+
+/datum/ritual
+	var/name = "DVRK AND EVIL RITVAL"
+	var/circle = null // Servantry, Transmutation, Fleshcrafting
+	var/requirements = list("A" = null, // NW
+							"B" = null, // N
+							"C" = null, // NE
+							"D" = null, // E
+							"E" = null, // center
+							"F" = null, // SE
+							"G" = null, // S
+							"H" = null, // SW
+							"I" = null // W
+						)
+	var/function // a proc
+
+/datum/ritual/convert
+	name = "Convert"
+	circle = "Servantry"
+	requirements = list("A" = null, // NW
+						"B" = null, // N
+						"C" = null, // NE
+						"D" = null, // E
+						"E" = /mob/living/carbon/human, // center
+						"F" = null, // SE
+						"G" = null, // S
+						"H" = null, // SW
+						"I" = null // W
+					)
+	//function = /proc/convert
