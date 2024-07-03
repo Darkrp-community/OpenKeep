@@ -392,30 +392,6 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	var/w_req = null
 	var/function // a proc
 
-/datum/ritual/transmutate
-	name = "Transmutate"
-	circle = "Transmutation"
-	center_requirement = /obj/item/organ/brain
-	
-	n_req = /obj/item/organ/brain
-	e_req = /obj/item/organ/brain
-	s_req = /obj/item/organ/brain
-	w_req = /obj/item/organ/brain
-
-	function = /proc/transmutate
-
-/datum/ritual/transmutate2
-	name = "Transmutate2"
-	circle = "Transmutation"
-	center_requirement = /obj/item/organ/brain
-	
-	n_req = /obj/item/organ/brain
-	e_req = /obj/item/organ/brain
-	s_req = /obj/item/organ/brain
-	w_req = /obj/item/organ/brain
-
-	function = /proc/transmutate
-
 /proc/transmutate(var/mob/user, var/turf/C)
 	testing("NOW TESTING TRANSMUTATE")
 	for(var/mob/living/carbon/human/H in C.contents)
