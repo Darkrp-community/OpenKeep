@@ -69,11 +69,6 @@
 	cost = 15
 	contains = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 
-/datum/supply_pack/rogue/armor/hauberk
-	name = "Hauberk"
-	cost = 60
-	contains = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-
 /datum/supply_pack/rogue/armor/halfplate
 	name = "Breastplate"
 	cost = 30
