@@ -10,6 +10,7 @@
 	drop_sound = 'sound/foley/dropsound/book_drop.ogg'
 	force = 5
 	associated_skill = /datum/skill/misc/reading
+	var/random_cover
 
 /obj/item/book/rogue/getonmobprop(tag)
 	. = ..()
@@ -67,6 +68,12 @@
 				if("onbelt")
 					return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+// ...... Book Cover Randomizer Code  (gives the book a radom cover when random_cover = TRUE)
+/obj/item/book/rogue/Initialize()
+	. = ..()
+	if(random_cover)
+		base_icon_state = "book[rand(1,8)]"
+		icon_state = "[base_icon_state]_0"
 
 /obj/item/book/rogue/attack_self(mob/user)
 	if(!open)
@@ -279,7 +286,6 @@
 	icon_state ="book2_0"
 	base_icon_state = "book2"
 	bookfile = "tales2.json"
-
 
 /obj/item/book/rogue/tales3
 	name = "Myths & Legends of Rockhill & Beyond Volume I"
@@ -576,46 +582,40 @@
 
 
 
-
-
-
 // ...... Books made by the Stonekeep community within #lore channel, approved & pushed by Guayo (current staff incharge of adding ingame books)
 
-// ...... Book Cover Randomizer Code
-/obj/item/book/rogue/random/Initialize()
-	. = ..()
-	if(icon_state == "book_random")
-		base_icon_state = "book[rand(1,8)]"
-		icon_state = "[base_icon_state]_0"
+/* ______Example of layout of added in book
 
-/* .....Example of layout of added in book.
-/obj/item/book/rogue/random/templatebooknamehere
+/obj/item/book/rogue/book_name_here
 	name = "Title of your book here"
 	desc = "Who wrote it or maybe some flavor here"
-	icon_state ="book_random"
-	base_icon_state = "book"
-	bookfile = "templatebooknamehere.json"
-*/ // .....End of Example
+	bookfile = "filenamehere.json"
+	random_cover = TRUE
 
+____________End of Example*/
 
-/obj/item/book/rogue/random/vownecrapage
+/obj/item/book/rogue/magicaltheory
+	name = "Arcane Foundations - A historie of Magicks"
+	desc = "Written by the rector of the Valerian College of Magick"
+	icon_state ="knowledge_0"
+	base_icon_state = "knowledge"
+	bookfile = "MagicalTheory.json"
+
+/obj/item/book/rogue/vownecrapage
 	name = "Necra's Vow of Silence"
 	desc = "A faded page, with seemingly no author."
 	icon_state = "book8_0"
 	base_icon_state = "book8"
 	bookfile = "VowOfNecraPage.json"
 
-
-/obj/item/book/rogue/random/godofdreamsandnightmares
+/obj/item/book/rogue/godofdreamsandnightmares
 	name = "God of Dreams & Nightmares"
 	desc = "An old decrepit book, with seemingly no author."
-	icon_state ="book_random"
-	base_icon_state = "book"
-	bookfile = "godofdreamsandnightmares.json"
+	bookfile = "GodDreams.json"
+	random_cover = TRUE
 
-/obj/item/book/rogue/random/psybibleplayerbook
+/obj/item/book/rogue/psybibleplayerbook
 	name = "Psybible"
 	desc = "An old tome, authored by Father Ambrose of Grenzelhoft."
-	icon_state ="book_random"
-	base_icon_state = "book"
-	bookfile = "psybibleplayerbook.json"
+	bookfile = "PsyBible.json"
+	random_cover = TRUE

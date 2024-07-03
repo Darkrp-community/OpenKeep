@@ -163,6 +163,11 @@
 	desc = "Struggle. Challenge. And rise to struggle again. That is the sword of he who yet lives to fight again."
 	icon_state = "ravox"
 
+/obj/item/clothing/neck/roguetown/psicross/eora
+	name = "amulet of Eora"
+	desc = ""
+	icon_state = "eora"
+
 /obj/item/clothing/neck/roguetown/psicross/silver
 	name = "silver psycross"
 	desc = "Let His name be naught but forgot'n. Let the wicked undead burn at my touch."
