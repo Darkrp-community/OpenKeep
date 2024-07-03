@@ -115,7 +115,7 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Grabber",
 	"Mercenary",
 	"Niteman",
-	"Nitebachelor
+	"Nitebachelor",
 	"Docker",
 	"Prisoner",
 	"Beggar",
