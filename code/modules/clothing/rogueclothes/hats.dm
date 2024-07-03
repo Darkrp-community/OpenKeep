@@ -81,6 +81,17 @@
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
 
+/obj/item/clothing/head/roguetown/eoramask
+	name = "eoran mask"
+	color = null
+	icon_state = "eoramask"
+	item_state = "eoramask"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
+	dynamic_hair_suffix = ""
+
 /obj/item/clothing/head/roguetown/priestmask
 	name = "solar visage"
 	desc = "The sanctified helm of the most devoted. Thiefs beware."
@@ -571,6 +582,7 @@
 /obj/item/clothing/head/roguetown/helmet/leather/minershelm/proc/turn_off(mob/user)
 	set_light(0)
 
+//............... Wizard Hat ........................... (unique effects for court mage)
 /obj/item/clothing/head/roguetown/wizhat
 	name = "wizard hat"
 	desc = "Used to distinguish dangerous wizards from senile old men."
@@ -583,6 +595,21 @@
 
 /obj/item/clothing/head/roguetown/wizhat/gen
 	icon_state = "wizardhatgen"
+
+/obj/item/clothing/head/roguetown/wizhat/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind && user.mind.assigned_role == "Court Magician")
+		if(slot == SLOT_HEAD && istype(user))
+			user.apply_status_effect(/datum/status_effect/buff/thinking_cap)
+		else
+			user.remove_status_effect(/datum/status_effect/buff/thinking_cap)
+	else return
+
+/obj/item/clothing/head/roguetown/wizhat/dropped(mob/living/user, slot)
+	. = ..()
+	user.remove_status_effect(/datum/status_effect/buff/thinking_cap)
+
+
 
 /obj/item/clothing/head/roguetown/nyle
 	name = "jewel of nyle"

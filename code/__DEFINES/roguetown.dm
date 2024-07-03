@@ -3,11 +3,12 @@
 
 #define ALL_RACES_LIST_NAMES		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Dwarf","Tiefling", "Aasimar")
 
-#define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra)
+#define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra)
 
 #define PLATEHIT "plate"
 #define CHAINHIT "chain"
 #define SOFTHIT "soft"
+#define SOFTUNDERHIT "softunder"
 
 /proc/get_armor_sound(blocksound, blade_dulling)
 	switch(blocksound)
@@ -24,6 +25,11 @@
 			else
 				return pick('sound/combat/hits/armor/chain_blunt (1).ogg','sound/combat/hits/armor/chain_blunt (2).ogg','sound/combat/hits/armor/chain_blunt (3).ogg')
 		if(SOFTHIT)
+			if(blade_dulling == BCLASS_BITE||blade_dulling == BCLASS_STAB||blade_dulling == BCLASS_PICK||blade_dulling == BCLASS_CUT||blade_dulling == BCLASS_CHOP)
+				return pick('sound/combat/hits/armor/light_stabbed (1).ogg','sound/combat/hits/armor/light_stabbed (2).ogg','sound/combat/hits/armor/light_stabbed (3).ogg')
+			else
+				return pick('sound/combat/hits/armor/light_blunt (1).ogg','sound/combat/hits/armor/light_blunt (2).ogg','sound/combat/hits/armor/light_blunt (3).ogg')
+		if(SOFTUNDERHIT)
 			if(blade_dulling == BCLASS_BITE||blade_dulling == BCLASS_STAB||blade_dulling == BCLASS_PICK||blade_dulling == BCLASS_CUT||blade_dulling == BCLASS_CHOP)
 				return pick('sound/combat/hits/armor/light_stabbed (1).ogg','sound/combat/hits/armor/light_stabbed (2).ogg','sound/combat/hits/armor/light_stabbed (3).ogg')
 			else
@@ -75,7 +81,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_ADVENTURER 	"CAT_ADVENTURER"  	// Adventurer classes
 #define CTAG_TOWNER 		"CAT_TOWNER"  		// Villager class - Villagers can use it
 #define CTAG_ANTAG 			"CAT_ANTAG"  		// Antag class - results in an antag
-#define CTAG_BANDIT			"CAT_BANDIT"		// Bandit class - Tied to the bandit antag really
+#define CTAG_BANDIT			"CAT_BANDIT"		// Bandit class - Tied to the bandit antag really	<- Disabled; bandits got stuck with class selection
 #define CTAG_CHALLENGE 		"CAT_CHALLENGE"  	// Challenge class - Meant to be free for everyone
 #define CTAG_MERCENARY		"CAT_MERCENARY"
 
@@ -87,7 +93,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define DTAG_DISABLED		"CAT_DISABLED"		// Disabled, do not use
 #define DTAG_FILLERS		"CAT_FILLER"		// If we have nothing better to do, time for filler
 #define DTAG_ANTAGS			"CAT_ANTAGS"		// A catchall for antag groups
-#define DTAG_BANDITS		"CAT_BANDITS"		// some bandits I guess
+#define DTAG_BANDITS		"CAT_BANDITS"		// some bandits I guess 	<- Disabled; issues with spawning bandits as drifters
 
 /*
 	Defines for the triumph buy datum categories

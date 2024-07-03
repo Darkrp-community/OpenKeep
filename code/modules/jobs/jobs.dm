@@ -66,6 +66,8 @@ GLOBAL_LIST_INIT(noble_positions, list(
 	"Captain",
 	"Steward",
 	"Court Magician",
+	"Archivist",
+	"Merchant",
 	"Feldsher"
 	))
 
@@ -87,9 +89,7 @@ GLOBAL_LIST_INIT(church_positions, list(
 	))
 
 GLOBAL_LIST_INIT(serf_positions, list(
-	"Merchant",
 	"Barkeep",
-	"Archivist",
 	"Armorer",
 	"Weaponsmith",
 	"Tailor",

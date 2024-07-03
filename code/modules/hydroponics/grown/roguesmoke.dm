@@ -112,5 +112,3 @@
 	verbage = "roll"
 	verbage_tp = "rolls"
 	craftdiff = 0
-
-

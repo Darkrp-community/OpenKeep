@@ -74,7 +74,7 @@
 	name = "Soilson Key"
 	desc = "This key is used by the soilsons."
 	icon_state = "rustkey"
-	lockid = "woodsm"
+	lockid = "soilson"
 
 /obj/item/roguekey/warehouse
 	name = "Warehouse Key"
