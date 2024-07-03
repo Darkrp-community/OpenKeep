@@ -15,6 +15,31 @@
 	obj_flags = CAN_BE_HIT
 	w_class = WEIGHT_CLASS_HUGE
 
+/*
+* Okay so the root of this proc defines dissasemble
+* but doesnt do anything with it. This means despite
+* burn() calling deconstruct(FALSE) it will still
+* spawn the debris.
+*/
+/obj/item/grown/log/tree/deconstruct(disassembled = TRUE)
+	if(disassembled)
+		return ..()
+	qdel(src)
+
+/obj/item/grown/log/tree/obj_destruction(damage_flag)
+	obj_destroyed = TRUE
+	if(damage_flag == "acid")
+		acid_melt()
+	else if(damage_flag == "fire")
+		burn()
+	else
+		if(destroy_sound)
+			playsound(src, destroy_sound, 100, TRUE)
+		if(destroy_message)
+			visible_message(destroy_message)
+		deconstruct(TRUE)
+	return TRUE
+
 /obj/item/grown/log/tree/small
 	name = "small log"
 	desc = "A smaller log that came from a larger log. Suitable for building."

@@ -22,6 +22,10 @@
 	flaws = "Resentful, Vindictive, Haughty"
 	worshippers = "Magic Practitioners, Scholars, Scribes"
 	sins = "Ignorance, Burning books, Carnal desire"
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
+	t1 = /obj/effect/proc_holder/spell/invoked/blindness
+	t2 = /obj/effect/proc_holder/spell/invoked/invisibility
+	t3 = null
 
 // ............ FORCES ..................
 /datum/patron/divine/dendor
@@ -95,3 +99,7 @@
 	flaws= "Naive, Compulsive, Ignorant"
 	worshippers = "Lovers, Harlots, Doting Grandparents"
 	sins = "Sadism, Celibacy, Ruining beauty"
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
+	t1 = /obj/effect/proc_holder/spell/invoked/bud
+	t2 = /obj/effect/proc_holder/spell/invoked/eoracurse
+	t3 = null
