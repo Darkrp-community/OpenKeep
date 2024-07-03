@@ -64,6 +64,21 @@
 	bar_material = WOOD
 	var/drop_amount = 3
 
+/obj/structure/barricade/wooden/rogue
+	name = "wooden barricade"
+	desc = ""
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "woodenbarricade_r"
+	max_integrity = 60
+	bar_material = WOOD
+	drop_amount = 0
+
+/obj/structure/barricade/wooden/rogue/crude
+	name = "crude plank barricade"
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "woodenbarricade_r2"
+	max_integrity = 40
+
 /obj/structure/barricade/wooden/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/sheet/mineral/wood/W = I

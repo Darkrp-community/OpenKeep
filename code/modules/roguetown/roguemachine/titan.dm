@@ -226,7 +226,6 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 		return
 
 	var/list/possible_positions = GLOB.noble_positions + GLOB.garrison_positions + GLOB.church_positions + GLOB.serf_positions + GLOB.peasant_positions + GLOB.apprentices_positions + GLOB.allmig_positions - "Lord"
-
 	var/new_pos = input(user, "Select their new position", src, null) as anything in possible_positions
 
 	if(isnull(new_pos) || !Adjacent(user))
