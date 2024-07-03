@@ -193,6 +193,28 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			testing("[G.name]")
 			GLOB.ritualslist[G.name] = G
 
+/obj/effect/decal/cleanable/sigil/proc/consume_ingredients(var/datum/ritual/R)
+
+	for(var/atom/A in get_step(src, NORTH))
+		if(istype(A, R.n_req) && !ishuman(R.n_req))
+			qdel(A)
+	
+	for(var/atom/A in get_step(src, SOUTH))
+		if(istype(A, R.s_req) && !ishuman(R.s_req))
+			qdel(A)
+
+	for(var/atom/A in get_step(src, EAST))
+		if(istype(A, R.e_req) && !ishuman(R.e_req))
+			qdel(A)
+	
+	for(var/atom/A in get_step(src, WEST))
+		if(istype(A, R.w_req) && !ishuman(R.w_req))
+			qdel(A)
+
+	for(var/atom/A in loc.contents)
+		if(istype(A, R.center_requirement) && !ishuman(R.center_requirement))
+			qdel(A)
+
 /obj/effect/decal/cleanable/sigil/attack_hand(mob/living/user)
 	. = ..()
 	testing("clicked by [user]")
@@ -215,35 +237,72 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		var/cardinal_success = FALSE
 		var/center_success = FALSE
 
-		var/needed = 0
-		var/resources = 0
-
 		if(!pickritual)
 			return
 		
+		var/dews = 0
+
+		if(pickritual.e_req)
+			for(var/atom/A in get_step(src, EAST))
+				if(istype(A, pickritual.e_req))
+					dews++
+					break
+				else
+					continue
+		else
+			dews++
+
+		if(pickritual.s_req)
+			for(var/atom/A in get_step(src, SOUTH))
+				if(istype(A, pickritual.s_req))
+					dews++
+					break
+				else
+					continue
+		else
+			dews++
+
+		if(pickritual.w_req)
+			for(var/atom/A in get_step(src, WEST))
+				if(istype(A, pickritual.w_req))
+					dews++
+					break
+				else
+					continue
+		else
+			dews++
+
+		if(pickritual.n_req)
+			for(var/atom/A in get_step(src, NORTH))
+				if(istype(A, pickritual.n_req))
+					dews++
+					break
+				else
+					continue
+		else
+			dews++
+
+		if(dews >= 4)
+			cardinal_success = TRUE
+			testing("CARDINAL SUCCESS!")
+
 		for(var/atom/A in loc.contents)
 			if(!istype(A, pickritual.center_requirement))
 				continue
 			else
 				center_success = TRUE
+				testing("CENTER SUCCESS!")
 				break
-		if(pickritual.cardinal_requirements)
-			needed = 0
-			resources = 0
-			for(var/i = 1, i <= pickritual.cardinal_requirements.len, i++)
-				if(!pickritual.cardinal_requirements[i] == null)
-					needed++
-					for(var/atom/A in get_step(src, cardinal[i]))
-						if(istype(A, pickritual.cardinal_requirements[i]))
-							resources++
-		else
-			cardinal_success = TRUE
+		
+		if(cardinal_success != TRUE)
+			return
 
-		if(resources >= needed)
-			cardinal_success = TRUE
+		if(center_success != TRUE)
+			return
 
-		if(cardinal_success && center_success)
-			call(pickritual.function)(user, loc)
+		testing("Now calling proc")
+		consume_ingredients(pickritual)
+		call(pickritual.function)(user, loc)
 
 /obj/effect/decal/cleanable/sigil/N
 	icon_state = "N"
@@ -324,12 +383,13 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	var/name = "DVRK AND EVIL RITVAL"
 	var/circle = null // Servantry, Transmutation, Fleshcrafting
 	var/center_requirement = /obj/item
-	var/list/cardinal_requirements = list(
-										NORTH = /obj/item,
-										EAST = null,
-										SOUTH = null,
-										WEST = null
-									)
+	// This is absolutely fucking terrible. I tried to do it with lists but it just didn't work and 
+	//kept runtiming. Something something, can't access list inside a datum.
+	//I couldn't find a more efficient solution to do this, I'm sorry. -7
+	var/n_req = null
+	var/e_req = null
+	var/s_req = null
+	var/w_req = null
 	var/function // a proc
 
 /datum/ritual/transmutate
@@ -337,11 +397,10 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	circle = "Transmutation"
 	center_requirement = /obj/item/organ/brain
 	
-	cardinal_requirements = list(NORTH = /obj/item/organ/brain,
-								EAST = /obj/item/organ/brain,
-								SOUTH = /obj/item/organ/brain,
-								WEST = /obj/item/organ/brain
-								)
+	n_req = /obj/item/organ/brain
+	e_req = /obj/item/organ/brain
+	s_req = /obj/item/organ/brain
+	w_req = /obj/item/organ/brain
 
 	function = /proc/transmutate
 
@@ -350,15 +409,15 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	circle = "Transmutation"
 	center_requirement = /obj/item/organ/brain
 	
-	cardinal_requirements = list(NORTH = /obj/item/organ/brain,
-								EAST = /obj/item/organ/brain,
-								SOUTH = /obj/item/organ/brain,
-								WEST = /obj/item/organ/brain
-								)
+	n_req = /obj/item/organ/brain
+	e_req = /obj/item/organ/brain
+	s_req = /obj/item/organ/brain
+	w_req = /obj/item/organ/brain
 
 	function = /proc/transmutate
 
 /proc/transmutate(var/mob/user, var/turf/C)
+	testing("NOW TESTING TRANSMUTATE")
 	for(var/mob/living/carbon/human/H in C.contents)
 		if(H != user)
 			if(iszizocultist(H) || iszizolackey(H))
@@ -370,16 +429,11 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	circle = "Servantry"
 	center_requirement = /mob/living/carbon/human
 
-	cardinal_requirements = list(NORTH = null,
-								EAST = null,
-								SOUTH = null,
-								WEST = null
-								)
-
 	function = /proc/convert
 
 /proc/convert(var/mob/user, var/turf/C)
 	var/datum/game_mode/chaosmode/M = SSticker.mode
+	testing("NOW TESTING CONVERT")
 
 	for(var/mob/living/carbon/human/H in C.contents)
 		if(H != user)
