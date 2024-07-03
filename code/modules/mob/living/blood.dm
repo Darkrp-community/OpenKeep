@@ -347,8 +347,10 @@
 
 	if(istype(T, /turf/open/water))
 		var/turf/open/water/W = T
-		W.water_reagent = /datum/reagent/water/gross
-		W.water_color = "#c43c3c"
+		W.water_reagent = /datum/reagent/blood // this is dumb, but it works for now
+		W.mapped = FALSE // no infinite vitae glitch
+		W.water_maximum = 10
+		W.water_volume = 10
 		W.update_icon()
 		return
 	new /obj/effect/decal/cleanable/blood/splatter(T, get_static_viruses())
@@ -365,8 +367,10 @@
 	if(amt > 3)
 		if(istype(T, /turf/open/water))
 			var/turf/open/water/W = T
-			W.water_reagent = /datum/reagent/water/gross
-			W.water_color = "#c43c3c"
+			W.water_reagent = /datum/reagent/blood // this is dumb, but it works for now
+			W.mapped = FALSE // no infinite vitae glitch
+			W.water_maximum = 10
+			W.water_volume = 10
 			W.update_icon()
 			return
 	var/obj/effect/decal/cleanable/blood/puddle/P = locate() in T

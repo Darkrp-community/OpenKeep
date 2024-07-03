@@ -112,7 +112,7 @@
 	sleevetype = null
 
 /obj/item/clothing/gloves/roguetown/rare/elfplate
-	name = "elvish plate gauntlets"
+	name = "dark elf plate gauntlets"
 	desc = ""
 	item_state = "elfhand"
 	icon_state = "elfhand"
@@ -127,6 +127,11 @@
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
+
+/obj/item/clothing/gloves/roguetown/rare/elfplate/welfplate
+	name = "elvish plate gauntlets"
+	item_state = "welfhand"
+	icon_state = "welfhand"
 
 /obj/item/clothing/gloves/roguetown/rare/dwarfplate
 	name = "dwarvish plate gauntlets"

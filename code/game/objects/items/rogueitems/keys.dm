@@ -277,6 +277,192 @@
 	icon_state = "eyekey"
 	lockid = "porta"
 
+// Dakkatown Keys
+/obj/item/roguekey/monastery
+	name = "monastery key"
+	icon_state = "greenkey"
+	lockid = "monastery"
+
+/obj/item/roguekey/houses
+	name = ""
+	icon_state = ""
+	lockid = ""
+
+/obj/item/roguekey/houses/house1
+	name = "house i key"
+	icon_state = "brownkey"
+	lockid = "house1"
+
+/obj/item/roguekey/houses/house2
+	name = "house ii key"
+	icon_state = "brownkey"
+	lockid = "house2"
+
+/obj/item/roguekey/houses/house3
+	name = "house iii key"
+	icon_state = "brownkey"
+	lockid = "house3"
+
+/obj/item/roguekey/houses/house4
+	name = "house iv key"
+	icon_state = "brownkey"
+	lockid = "house4"
+
+/obj/item/roguekey/houses/house5
+	name = "house v key"
+	icon_state = "brownkey"
+	lockid = "house5"
+
+/obj/item/roguekey/houses/house6
+	name = "house vi key"
+	icon_state = "brownkey"
+	lockid = "house6"
+
+/obj/item/roguekey/houses/house7
+	name = "house vii key"
+	icon_state = "brownkey"
+	lockid = "house7"
+
+/obj/item/roguekey/houses/house8
+	name = "house viii key"
+	icon_state = "brownkey"
+	lockid = "house8"
+
+/obj/item/roguekey/houses/house9
+	name = "house ix key"
+	icon_state = "brownkey"
+	lockid = "house9"
+
+/obj/item/roguekey/apartments
+	name = ""
+	icon_state = ""
+	lockid = ""
+
+/obj/item/roguekey/apartments/apartment1
+	name = "apartment i key"
+	icon_state = "brownkey"
+	lockid = "apartment1"
+
+/obj/item/roguekey/apartments/apartment2
+	name = "apartment ii key"
+	icon_state = "brownkey"
+	lockid = "apartment2"
+
+/obj/item/roguekey/apartments/apartment3
+	name = "apartment iii key"
+	icon_state = "brownkey"
+	lockid = "apartment3"
+
+/obj/item/roguekey/apartments/apartment4
+	name = "apartment iv key"
+	icon_state = "brownkey"
+	lockid = "apartment4"
+
+/obj/item/roguekey/apartments/apartment5
+	name = "apartment v key"
+	icon_state = "brownkey"
+	lockid = "apartment5"
+
+/obj/item/roguekey/apartments/apartment6
+	name = "apartment vi key"
+	icon_state = "brownkey"
+	lockid = "apartment6"
+
+/obj/item/roguekey/apartments/apartment7
+	name = "apartment vii key"
+	icon_state = "brownkey"
+	lockid = "apartment7"
+
+/obj/item/roguekey/apartments/apartment8
+	name = "apartment viii key"
+	icon_state = "brownkey"
+	lockid = "apartment8"
+
+/obj/item/roguekey/apartments/apartment9
+	name = "apartment ix key"
+	icon_state = "brownkey"
+	lockid = "apartment9"
+
+/obj/item/roguekey/shops
+	name = ""
+	icon_state = ""
+	lockid = ""
+
+/obj/item/roguekey/shops/shop1
+	name = "shop i key"
+	icon_state = "rustkey"
+	lockid = "shop1"
+
+/obj/item/roguekey/shops/shop2
+	name = "shop ii key"
+	icon_state = "rustkey"
+	lockid = "shop2"
+
+/obj/item/roguekey/shops/shop3
+	name = "shop iii key"
+	icon_state = "rustkey"
+	lockid = "shop3"
+
+/obj/item/roguekey/shops/shop4
+	name = "shop iv key"
+	icon_state = "rustkey"
+	lockid = "shop4"
+
+/obj/item/roguekey/shops/shop5
+	name = "shop v key"
+	icon_state = "rustkey"
+	lockid = "shop5"
+
+/obj/item/roguekey/shops/shop6
+	name = "shop vi key"
+	icon_state = "rustkey"
+	lockid = "shop6"
+
+/obj/item/roguekey/shops/shop7
+	name = "shop vii key"
+	icon_state = "rustkey"
+	lockid = "shop7"
+
+/obj/item/roguekey/shops/shop8
+	name = "shop viii key"
+	icon_state = "rustkey"
+	lockid = "shop8"
+
+/obj/item/roguekey/shops/shop9
+	name = "shop ix key"
+	icon_state = "rustkey"
+	lockid = "shop9"
+
+/obj/item/roguekey/theatre
+	name = "theatre key"
+	icon_state = "mazekey"
+	lockid = "theatre"
+
+/obj/item/roguekey/butcher
+	name = "butcher's key"
+	icon_state = "rustkey"
+	lockid = "butcher"
+
+obj/item/roguekey/elder
+	name = "elder's key"
+	icon_state = "rustkey"
+	lockid = "elder"
+
+obj/item/roguekey/apothecary
+	name = "apothecary's key"
+	icon_state = "rustkey"
+	lockid = "apothecary"
+
+obj/item/roguekey/weaponsmith
+	name = "weaponsmith's key"
+	icon_state = "rustkey"
+	lockid = "weaponsmith"
+
+obj/item/roguekey/armorsmith
+	name = "armorsmith's key"
+	icon_state = "rustkey"
+	lockid = "armorsmith"
+
 //custom key
 /obj/item/roguekey/custom
 	name = "custom key"
