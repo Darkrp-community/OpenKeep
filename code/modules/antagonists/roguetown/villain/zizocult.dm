@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(ritualslist)
+
 /datum/antagonist/zizocultist
 	name = "Zizoid Lackey"
 	roundend_category = "zizoid cultists"
@@ -169,7 +171,7 @@
 	whisper("O schlet'a ty'schkotot ty'skvoro...")
 	whisper("[speak]")
 
-	for(var/datum/mind/V in C.vampires)
+	for(var/datum/mind/V in C.cultists)
 		to_chat(V, "<span class='boldnotice'>A message from [src.real_name]: \"[speak]\"</span>")
 
 /obj/effect/decal/cleanable/sigil
@@ -177,37 +179,71 @@
 	desc = "Strange runics."
 	icon_state = "center"
 	icon = 'icons/obj/sigils.dmi'
-	var/sigil_type = "Servantry"
+	var/sigil_type
 
-/obj/effect/decal/cleanable/sigil/proc/CheckRequirements(var/turf/locc, var/datum/ritual/R)
-	var/list/L = list(
-		get_step(locc, NORTHEAST),
-		get_step(locc, EAST),
-		get_step(locc, SOUTHEAST),
-		get_step(locc, SOUTH),
-		get_step(locc, SOUTHWEST),
-		get_step(locc, WEST),
-		get_step(locc, NORTH),
-		get_step(locc, NORTHWEST),
-		locc,
-	)
-	
+/obj/effect/decal/cleanable/sigil/Initialize(mapload, list/datum/disease/diseases)
+	. = ..()
+	if(!LAZYLEN(GLOB.ritualslist))
+		testing("initializing ritualslist")
+		GLOB.ritualslist = list()
+		var/static/list/rituals = subtypesof(/datum/ritual)
+		for(var/path in rituals)
+			var/datum/ritual/G = path
+			testing("now initializing: [path]")
+			testing("[G.name]")
+			GLOB.ritualslist[G.name] = G
 
 /obj/effect/decal/cleanable/sigil/attack_hand(mob/living/user)
 	. = ..()
+	testing("clicked by [user]")
+	var/list/rituals = list()
+	if(icon_state != "center") // fucking awful but it has to be this way
+		return
 	if(iszizocultist(user) || iszizolackey(user))
-		var/list/rituals = list()
-		for(var/path in subtypesof(/datum/ritual))
-			var/datum/ritual/G = path
-			if(G.circle == sigil_type)
-				rituals |= new path()
-			else
-				continue
+		for(var/G in GLOB.ritualslist)
+			var/datum/ritual/path = GLOB.ritualslist[G]
+			if(path.circle == sigil_type)
+				rituals |= path.name
 
-		var/pickritual = input(user, "Rituals", "ROGUETOWN") as anything in rituals|null
+		var/ritualnameinput = input(user, "Rituals", "ROGUETOWN") as anything in rituals
+		testing("ritualnameinput [ritualnameinput]")
+		var/datum/ritual/pickritual
+		
+		pickritual = GLOB.ritualslist[ritualnameinput]
+		testing("pickritual [pickritual]")
+
+		var/cardinal_success = FALSE
+		var/center_success = FALSE
+
+		var/needed = 0
+		var/resources = 0
 
 		if(!pickritual)
 			return
+		
+		for(var/atom/A in loc.contents)
+			if(!istype(A, pickritual.center_requirement))
+				continue
+			else
+				center_success = TRUE
+				break
+		if(pickritual.cardinal_requirements)
+			needed = 0
+			resources = 0
+			for(var/i = 1, i <= pickritual.cardinal_requirements.len, i++)
+				if(!pickritual.cardinal_requirements[i] == null)
+					needed++
+					for(var/atom/A in get_step(src, cardinal[i]))
+						if(istype(A, pickritual.cardinal_requirements[i]))
+							resources++
+		else
+			cardinal_success = TRUE
+
+		if(resources >= needed)
+			cardinal_success = TRUE
+
+		if(cardinal_success && center_success)
+			call(pickritual.function)(user, loc)
 
 /obj/effect/decal/cleanable/sigil/N
 	icon_state = "N"
@@ -243,6 +279,8 @@
 			to_chat(M, "<span class='warning'>There is already something here!</span>")
 			return
 	if(do_after(M, 5 SECONDS))
+		M.bloody_hands--
+		M.update_inv_gloves()
 		var/obj/effect/decal/cleanable/sigil/C = new(src)
 		C.sigil_type = input
 		playsound(M, 'sound/items/write.ogg', 100)
@@ -277,8 +315,6 @@
 	if(!input)
 		return
 	
-	bloody_hands--
-	update_inv_gloves()
 	var/turf/open/floor/T = get_turf(src.loc)
 	T.generateSigils(src, input)
 
@@ -287,29 +323,73 @@
 /datum/ritual
 	var/name = "DVRK AND EVIL RITVAL"
 	var/circle = null // Servantry, Transmutation, Fleshcrafting
-	var/requirements = list("A" = null, // NW
-							"B" = null, // N
-							"C" = null, // NE
-							"D" = null, // E
-							"E" = null, // center
-							"F" = null, // SE
-							"G" = null, // S
-							"H" = null, // SW
-							"I" = null // W
-						)
+	var/center_requirement = /obj/item
+	var/list/cardinal_requirements = list(
+										NORTH = /obj/item,
+										EAST = null,
+										SOUTH = null,
+										WEST = null
+									)
 	var/function // a proc
+
+/datum/ritual/transmutate
+	name = "Transmutate"
+	circle = "Transmutation"
+	center_requirement = /obj/item/organ/brain
+	
+	cardinal_requirements = list(NORTH = /obj/item/organ/brain,
+								EAST = /obj/item/organ/brain,
+								SOUTH = /obj/item/organ/brain,
+								WEST = /obj/item/organ/brain
+								)
+
+	function = /proc/transmutate
+
+/datum/ritual/transmutate2
+	name = "Transmutate2"
+	circle = "Transmutation"
+	center_requirement = /obj/item/organ/brain
+	
+	cardinal_requirements = list(NORTH = /obj/item/organ/brain,
+								EAST = /obj/item/organ/brain,
+								SOUTH = /obj/item/organ/brain,
+								WEST = /obj/item/organ/brain
+								)
+
+	function = /proc/transmutate
+
+/proc/transmutate(var/mob/user, var/turf/C)
+	for(var/mob/living/carbon/human/H in C.contents)
+		if(H != user)
+			if(iszizocultist(H) || iszizolackey(H))
+				return
+			H.gib()
 
 /datum/ritual/convert
 	name = "Convert"
 	circle = "Servantry"
-	requirements = list("A" = null, // NW
-						"B" = null, // N
-						"C" = null, // NE
-						"D" = null, // E
-						"E" = /mob/living/carbon/human, // center
-						"F" = null, // SE
-						"G" = null, // S
-						"H" = null, // SW
-						"I" = null // W
-					)
-	//function = /proc/convert
+	center_requirement = /mob/living/carbon/human
+
+	cardinal_requirements = list(NORTH = null,
+								EAST = null,
+								SOUTH = null,
+								WEST = null
+								)
+
+	function = /proc/convert
+
+/proc/convert(var/mob/user, var/turf/C)
+	var/datum/game_mode/chaosmode/M = SSticker.mode
+
+	for(var/mob/living/carbon/human/H in C.contents)
+		if(H != user)
+			if(iszizocultist(H) || iszizolackey(H))
+				return
+			if(!H.client)
+				return
+			if(M.cultists.len >= 3)
+				to_chat(user, "<span class='danger'>\"The veil is too strong to support more than two lackeys.\"</span>")
+				return
+			var/datum/antagonist/zizocultist/PR = user.mind.has_antag_datum(/datum/antagonist/zizocultist)
+			to_chat(H, "<span class='notice'>I see the truth now! It all makes so much sense! They aren't HERETICS! They want the BEST FOR US!</span>")
+			PR.add_cultist(H.mind)
