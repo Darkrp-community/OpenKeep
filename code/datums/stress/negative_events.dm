@@ -212,6 +212,11 @@
 	stressadd = 2
 	desc = "<span class='red'>I can't see their face! Have they found me!?</span>"
 
+/datum/stressevent/profane // When a non-assassin touches a profane dagger
+	timer = 3 MINUTES
+	stressadd = 2
+	desc = "<span class='red'>I hear the voices of the damned from this cursed blade!</span>"
+
 /datum/stressevent/coldhead
 	timer = 60 SECONDS
 	stressadd = 1

@@ -245,6 +245,47 @@
 				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
 				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I AM THE ANCIENT!</span>")
 
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane
+	name = "profane dagger"
+	desc = "A dagger made of cursed black steel. Whispers eminate from the gem on its hilt."
+	force = 16
+	sellprice = 250
+	icon_state = "sdagger"
+	smeltresult = null
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/pickup(mob/living/M)
+	. = ..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if (!HAS_TRAIT(H, TRAIT_ASSASSIN)) // Non-assassins don't like holding the profane dagger.
+			H.add_stress(/datum/stressevent/profane)
+			var/message = pick(
+				"<span class='danger'>Help me...</span>",
+				"<span class='danger'>Save me...</span>",
+				"<span class='danger'>It's cold...</span>",
+				"<span class='danger'>Free us...please...</span>",
+				"<span class='danger'>Necra...deliver...us...</span>")
+			H.visible_message("profane dagger whispers, \"[message]\"")
+		else
+			var/message = pick(
+				"<span class='danger'>Why...</span>",
+				"<span class='danger'>...Who sent you?</span>",
+				"<span class='danger'>...You will burn for what you've done...</span>",
+				"<span class='danger'>I hate you...</span>",
+				"<span class='danger'>Someone stop them!</span>",
+				"<span class='danger'>Guards! Help!</span>",
+				"<span class='danger'>...What's that in your hand?</span>",
+				"<span class='danger'>...You love me...don't you?</span>",
+				"<span class='danger'>Wait...don't I know you?</span>",
+				"<span class='danger'>I thought you were...my friend...</span>",
+				"<span class='danger'>How long have I been in here...</span>")
+			H.visible_message("profane dagger whispers, \"[message]\"")
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
+	. = ..()
+	if(ishuman(target) && (target.stat == DEAD)) // Trigger soul steal if the target is human and is dead.
+		if(target.has_flaw(/datum/charflaw/hunted)) // The profane dagger only thirsts for those who are hunted.
+			
 
 /obj/item/rogueweapon/huntingknife/stoneknife
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)
