@@ -441,9 +441,22 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				return
 			if(!H.client)
 				return
+			if(H.anchored) // a way to bind the person to the rune if they choose to resist converting
+				return
 			if(M.cultists.len >= 3)
 				to_chat(user, "<span class='danger'>\"The veil is too strong to support more than two lackeys.\"</span>")
 				return
 			var/datum/antagonist/zizocultist/PR = user.mind.has_antag_datum(/datum/antagonist/zizocultist)
-			to_chat(H, "<span class='notice'>I see the truth now! It all makes so much sense! They aren't HERETICS! They want the BEST FOR US!</span>")
-			PR.add_cultist(H.mind)
+			var/alert = alert(user, "YOU WILL BE SHOWN THE TRUTH. DO YOU YIELD?", "ROGUETOWN", "Yield", "Resist")
+			anchored = TRUE
+			if(alert == "Yield")
+				to_chat(H, "<span class='notice'>I see the truth now! It all makes so much sense! They aren't HERETICS! They want the BEST FOR US!</span>")
+				PR.add_cultist(H.mind)
+				H.anchored = FALSE
+			else
+				H.visible_message("<span class='danger'>\The [H] thrashes around, unyielding!</span>")
+				to_chat(H, "<span class='danger'>\"Yield.\"</span>")
+				if(H.electrocute_act(10, src))
+					H.emote("painscream")
+				sleep(20)
+				H.anchored = FALSE
