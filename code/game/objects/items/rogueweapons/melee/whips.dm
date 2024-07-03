@@ -19,6 +19,7 @@
 	throwforce = 5
 	wdefense = 0
 	minstr = 4
+	sellprice = 30
 
 /obj/item/rogueweapon/whip/getonmobprop(tag)
 	. = ..()
@@ -38,6 +39,7 @@
 	icon_state = "gwhip"
 	resistance_flags = FIRE_PROOF
 	smeltresult = /obj/item/ingot/steel
+	sellprice = 50
 
 
 /datum/intent/whip/lash

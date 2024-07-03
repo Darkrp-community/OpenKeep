@@ -1,5 +1,6 @@
 /datum/anvil_recipe/valuables
 	appro_skill = /datum/skill/craft/blacksmithing
+	i_type = "Valuables"
 
 /datum/anvil_recipe/valuables/silver
 	name = "Argent Statue"

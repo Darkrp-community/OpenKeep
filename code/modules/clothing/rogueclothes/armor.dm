@@ -28,7 +28,7 @@
 /obj/item/clothing/suit/roguetown/armor/chainmail
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "haubergeon"
-	desc = "A maille shirt made out of interlocked steel rings. Offers superior resistance against arrows, stabs and cuts."
+	desc = "A maille shirt made out of interlocked steel rings. Offers superior resistance against arrows, stabs and cuts. \nUsually worn as padding for proper armor, it still is as serviceable as a hauberk."
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 	icon_state = "haubergeon"
 	armor = list("melee" = 80, "bullet" = 90, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -39,6 +39,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	armor_class = ARMOR_CLASS_MEDIUM
 	smeltresult = /obj/item/ingot/steel
+	sellprice = 30
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/Initialize()
 	. = ..()
@@ -56,11 +57,12 @@
 	armor_class = ARMOR_CLASS_LIGHT
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/skill/craft/armorsmithing
+	sellprice = 20
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "hauberk"
-	desc = "A full body maille suit made of interlocked steel rings. Usually worn as padding for proper armor, it still is as serviceable as a haubergeon."
+	desc = "A full body maille suit made of interlocked steel rings. Offers superior resistance against arrows, stabs and cuts throughout all of the body."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "hauberk"
 	item_state = "hauberk"
@@ -69,6 +71,7 @@
 	do_sound = TRUE
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
+	sellprice = 60
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
 	name = "amazon mail"
@@ -82,6 +85,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	armor_class = ARMOR_CLASS_LIGHT
 	smeltresult = /obj/item/ingot/iron
+	sellprice = 50
 
 /obj/item/clothing/suit/roguetown/armor/plate
 	slot_flags = ITEM_SLOT_ARMOR
@@ -100,6 +104,7 @@
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_MEDIUM
+	sellprice = 90
 
 /obj/item/clothing/suit/roguetown/armor/plate/Initialize()
 	. = ..()
@@ -124,6 +129,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
+	sellprice = 40
 
 /obj/item/clothing/suit/roguetown/armor/plate/full
 	name = "plate armor"
@@ -133,6 +139,7 @@
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	equip_delay_self = 80
 	armor_class = ARMOR_CLASS_HEAVY
+	sellprice = 120
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 	name = "iron breastplate"
@@ -141,6 +148,7 @@
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
+	sellprice = 20
 
 // Bladesinger armor, unique
 /obj/item/clothing/suit/roguetown/armor/plate/half/elven
@@ -148,6 +156,7 @@
 	desc = "A cuirass made of steel with a thin decorative gold plating. Lightweight and durable."
 	color = COLOR_ASSEMBLY_GOLD
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	sellprice = 200
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale
 	slot_flags = ITEM_SLOT_ARMOR
@@ -161,6 +170,7 @@
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_MEDIUM
+	sellprice = 35
 
 // Rare Heartfelt equipment
 /obj/item/clothing/suit/roguetown/armor/heartfelt/lord
@@ -178,6 +188,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
+	sellprice = 200
 
 /obj/item/clothing/suit/roguetown/armor/heartfelt/hand
 	slot_flags = ITEM_SLOT_ARMOR
@@ -194,6 +205,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
+	sellprice = 150
 
 /obj/item/clothing/suit/roguetown/armor/brigandine
 	slot_flags = ITEM_SLOT_ARMOR
@@ -210,6 +222,7 @@
 	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
 	smeltresult = /obj/item/ingot/steel
+	sellprice = 95
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/Initialize()
 	. = ..()
@@ -257,6 +270,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	max_integrity = 500
 	armor_class = ARMOR_CLASS_MEDIUM
+	sellprice = 200
 
 /obj/item/clothing/suit/roguetown/armor/armordress
 	slot_flags = ITEM_SLOT_ARMOR
@@ -277,6 +291,7 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	armor_class = ARMOR_CLASS_LIGHT
+	sellprice = 35
 
 /obj/item/clothing/suit/roguetown/armor/armordress/alt
 	icon_state = "armordressalt"
@@ -298,18 +313,21 @@
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
 	armor_class = ARMOR_CLASS_LIGHT
+	sellprice = 20
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	name = "light gambeson"
 	desc = "A barely padded gambeson, typically worn by the peasantry as cheap yet fashionable armor for the whole body."
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = null // It won't help, like, at all.
+	sellprice = 10
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	name = "padded gambeson"
 	desc = "A gambeson with additional padding layers, hardened to make it more durable. It still cannot compare to proper armor."
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	sellprice = 30
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/lord
 	name = "arming jacket"
@@ -317,6 +335,7 @@
 	allowed_sex = list(MALE)
 	body_parts_covered = CHEST|ARMS|VITALS|GROIN
 	allowed_race = list("human", "tiefling", "aasimar")
+	sellprice = 40
 
 /obj/item/clothing/suit/roguetown/armor/leather
 	slot_flags = ITEM_SLOT_ARMOR
@@ -335,7 +354,7 @@
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	sewrepair = TRUE
 	max_integrity = 200
-	sellprice = 20
+	sellprice = 30
 	armor_class = ARMOR_CLASS_LIGHT
 	smeltresult = /obj/item/ash
 
@@ -346,6 +365,7 @@
 	icon_state = "hidearmor"
 	max_integrity = 250
 	armor_class = ARMOR_CLASS_LIGHT
+	sellprice = 35
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded
 	name = "studded leather armor"
@@ -358,7 +378,7 @@
 	nodismemsleeves = TRUE
 	body_parts_covered = CHEST|GROIN|VITALS
 	max_integrity = 300
-	sellprice = 25
+	sellprice = 50
 	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest
@@ -415,6 +435,7 @@
 	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
 	allowed_sex = list(MALE)
 	allowed_race = list("human", "tiefling", "aasimar")
+	sellprice = 60
 
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/hand
@@ -425,6 +446,7 @@
 	body_parts_covered = CHEST|VITALS|LEGS
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = list("human", "tiefling", "dwarf", "elf", "aasimar")
+	sellprice = 60
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 	color = "#3c3a38"
@@ -445,6 +467,7 @@
 	sleeved = null
 	nodismemsleeves = TRUE
 	boobed = TRUE
+	sellprice = 10
 
 /obj/item/clothing/suit/roguetown/armor/workervest/Initialize()
 	color = pick("#94b4b6", "#ba8f9e", "#bd978c", "#92bd8c", "#c7c981")
@@ -593,6 +616,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
+	sellprice = 200
 
 /obj/item/clothing/suit/roguetown/armor/rare/dwarfplate/Initialize()
 	. = ..()
@@ -621,6 +645,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
+	sellprice = 200
 
 /obj/item/clothing/suit/roguetown/armor/rare/dwarfplate/Initialize()
 	. = ..()

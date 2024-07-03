@@ -28,6 +28,7 @@
 	wdefense = 3
 	wbalance = 1 // All knives are swift, bonus to SPD
 	smeltresult = /obj/item/ingot/steel
+	sellprice = 30
 
 
 
@@ -121,6 +122,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	smeltresult = /obj/item/ingot/iron
 	wbalance = 1
+	sellprice = 15
 
 /obj/item/rogueweapon/huntingknife/cleaver/getonmobprop(tag)
 	. = ..()
@@ -143,6 +145,7 @@
 	force = 10
 	icon_state = "idagger"
 	smeltresult = null
+	sellprice = 15
 
 /obj/item/rogueweapon/huntingknife/idagger/steel
 	name = "steel dagger"
@@ -260,6 +263,7 @@
 	max_blade_int = 15
 	wdefense = 1
 	smeltresult = /obj/item/ash
+	sellprice = 5
 
 /obj/item/rogueweapon/knife/copperdagger
 	force = 8
@@ -287,3 +291,4 @@
 	throwforce = 12
 	wdefense = 3
 	smeltresult = /obj/item/ingot/copper
+	sellprice = 10

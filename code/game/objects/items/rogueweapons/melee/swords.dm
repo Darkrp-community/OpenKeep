@@ -25,7 +25,7 @@
 	//dropshrink = 0.75
 	smeltresult = /obj/item/ingot/steel
 	minstr = 7
-	sellprice = 20
+	sellprice = 30
 	wdefense = 4
 
 /obj/item/rogueweapon/sword/Initialize()
@@ -105,6 +105,7 @@
 	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/steel
 	wbalance = -1
+	sellprice = 60
 
 /obj/item/rogueweapon/sword/long/death
 	color = CLOTHING_BLACK
@@ -148,6 +149,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/steel
+	sellprice = 45 // Old and chipped
 
 /obj/item/rogueweapon/sword/long/getonmobprop(tag)
 	. = ..()
@@ -268,6 +270,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/steel
+	sellprice = 80
 
 /obj/item/rogueweapon/sword/long/rider/getonmobprop(tag)
 	. = ..()
@@ -308,7 +311,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	dropshrink = 0.75
 	minstr = 6
-	sellprice = 42
+	sellprice = 80
 	wdefense = 5
 	smeltresult = /obj/item/ingot/steel
 
@@ -352,6 +355,7 @@
 	max_integrity = 500
 	wdefense = 3
 	wbalance = -1 // All long swords are heavy.
+	sellprice = 90
 
 /obj/item/rogueweapon/greatsword/getonmobprop(tag)
 	. = ..()
@@ -373,6 +377,7 @@
 	smeltresult = /obj/item/ingot/steel
 	max_blade_int = 200
 	max_integrity = 400
+	sellprice = 120
 
 /obj/item/rogueweapon/greatsword/zwei
 	name = "zweihander"
@@ -384,6 +389,7 @@
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 150 // Iron tier
 	max_integrity = 300
+	sellprice = 60
 
 /obj/item/rogueweapon/greatsword/elfgsword
 	force = 15
@@ -395,6 +401,7 @@
 	max_blade_int = 300
 	max_integrity = 300
 	minstr = 10
+	sellprice = 120
 
 // Attack Intents
 
@@ -514,7 +521,7 @@
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 200
 	max_integrity = 300
-	sellprice = 10
+	sellprice = 15
 
 /obj/item/rogueweapon/sword/iron/short
 	name = "short sword"
@@ -553,6 +560,7 @@
 	minstr = 8 // Heavy blade used by orcs
 	wdefense = 3
 	wbalance = -1 // Heavy, STR bonus
+	sellprice = 20
 
 /obj/item/rogueweapon/sword/short
 	name = "short sword"
@@ -617,6 +625,7 @@
 	minstr = 4
 	wdefense = 2
 	wbalance = -1 // Heavy
+	sellprice = 100
 
 //Rapiers
 /obj/item/rogueweapon/sword/rapier
@@ -708,6 +717,7 @@
 	dropshrink = 0.90
 	smeltresult = /obj/item/ingot/copper
 	wbalance = -1
+	sellprice = 10
 
 /obj/item/rogueweapon/sword/coppermesser/getonmobprop(tag)
 	. = ..()

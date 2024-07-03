@@ -46,18 +46,19 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	blade_dulling = DULLING_BASHCHOP
+	sharpness = IS_BLUNT
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	walking_stick = TRUE
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	max_blade_int = 120
 	max_integrity = 200
 	wdefense = 5
 	bigboy = TRUE
 	gripsprite = TRUE
 	associated_skill = /datum/skill/combat/polearms
+	sellprice = 5
 
 /obj/item/rogueweapon/woodstaff/getonmobprop(tag)
 	. = ..()
@@ -93,6 +94,7 @@
 	bigboy = TRUE
 	gripsprite = TRUE
 	associated_skill = /datum/skill/combat/polearms
+	sellprice = 100
 
 /obj/item/rogueweapon/woodstaff/aries/getonmobprop(tag)
 	. = ..()
@@ -134,6 +136,7 @@
 	wdefense = 4
 	thrown_bclass = BCLASS_STAB
 	throwforce = 25
+	sellprice = 20
 
 /obj/item/rogueweapon/spear/getonmobprop(tag)
 	. = ..()
@@ -171,6 +174,7 @@
 	walking_stick = TRUE
 	wdefense = 5
 	wbalance = -1
+	sellprice = 60
 
 
 /obj/item/rogueweapon/spear/stone
@@ -196,6 +200,7 @@
 	walking_stick = TRUE
 	wdefense = 4
 	max_integrity = 120
+	sellprice = 5
 
 // Halberd Class
 
@@ -252,6 +257,7 @@
 	walking_stick = TRUE
 	wdefense = 5
 	wbalance = -1
+	sellprice = 90
 
 /obj/item/rogueweapon/halberd/getonmobprop(tag)
 	. = ..()
@@ -274,6 +280,7 @@
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 200
 	max_integrity = 300
+	sellprice = 40
 
 /obj/item/rogueweapon/eaglebeak
 	force = 15
@@ -303,6 +310,7 @@
 	walking_stick = TRUE
 	wdefense = 5
 	wbalance = -1
+	sellprice = 60
 
 /obj/item/rogueweapon/eaglebeak/getonmobprop(tag)
 	. = ..()
@@ -325,6 +333,7 @@
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 300
 	max_integrity = 300
+	sellprice = 40
 
 // Copper Spear
 
@@ -358,6 +367,7 @@
 	wdefense = 4
 	thrown_bclass = BCLASS_STAB
 	throwforce = 20
+	sellprice = 15
 
 /obj/item/rogueweapon/copperspear/getonmobprop(tag)
 	. = ..()

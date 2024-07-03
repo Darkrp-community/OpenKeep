@@ -36,6 +36,7 @@
 	smeltresult = /obj/item/ingot/steel
 	blade_dulling = DULLING_BASH
 	wdefense = 3
+	sellprice = 100
 
 /obj/item/rogueweapon/mace/steel
 	name = "steel mace"
@@ -45,7 +46,7 @@
 	smeltresult = /obj/item/ingot/steel
 	blade_dulling = DULLING_BASH
 	wdefense = 3
-	sellprice = 30
+	sellprice = 60
 
 /obj/item/rogueweapon/mace/getonmobprop(tag)
 	if(tag)
@@ -95,6 +96,7 @@
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	smeltresult = /obj/item/ash
 	minstr = 0
+	sellprice = 5
 
 /obj/item/rogueweapon/mace/woodclub/New()
 	..()
@@ -139,6 +141,7 @@
 	wbalance = 1
 	minstr = 0
 	wdefense = 3
+	sellprice = 15
 
 /obj/item/rogueweapon/mace/cudgel/getonmobprop(tag)
 	. = ..()
@@ -165,6 +168,7 @@
 	wdefense = 5
 	wbalance = 0
 	associated_skill = /datum/skill/combat/swords
+	sellprice = 5
 
 
 /obj/item/rogueweapon/mace/wsword/getonmobprop(tag)
@@ -188,7 +192,6 @@
 	desc = "A two handed club, decorated with a spiked cap crown. A perfect way to say Good Morning to any would be noble-knight."
 	icon_state = "goedendag"
 	icon = 'icons/roguetown/weapons/64.dmi'
-	sharpness = IS_BLUNT
 	//dropshrink = 0.75
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
@@ -208,6 +211,7 @@
 	bigboy = TRUE
 	gripsprite = TRUE
 	wbalance = 0
+	sellprice = 35
 
 /obj/item/rogueweapon/mace/goden/getonmobprop(tag)
 	. = ..()
@@ -233,6 +237,7 @@
 	force_wielded = 35
 	slowdown = 1
 	wbalance = -1
+	sellprice = 60
 
 /obj/item/rogueweapon/mace/goden/steel/getonmobprop(tag)
 	. = ..()
@@ -312,6 +317,7 @@
 	smeltresult = /obj/item/ingot/copper
 	blade_dulling = DULLING_BASHCHOP
 	smeltresult = /obj/item/ingot/copper
+	sellprice = 10
 
 // Copper War-Mace
 /obj/item/rogueweapon/mace/coppermace
@@ -326,7 +332,6 @@
 	item_state = "mace_greyscale"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	sharpness = IS_BLUNT
 	//dropshrink = 0.75
 	wlength = WLENGTH_NORMAL
 	w_class = WEIGHT_CLASS_BULKY
@@ -341,6 +346,7 @@
 	wdefense = 2
 	blade_dulling = DULLING_BASHCHOP
 	smeltresult = /obj/item/ingot/copper
+	sellprice = 10
 
 /obj/item/rogueweapon/mace/coppermace/getonmobprop(tag)
 	. = ..()
@@ -366,7 +372,6 @@
 	desc = "A great dwarven warhammer made of stern steel, enscratched with oaths of battle and time."
 	icon_state = "warhammer"
 	icon = 'icons/roguetown/weapons/64.dmi'
-	sharpness = IS_BLUNT
 	//dropshrink = 0.75
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
@@ -383,6 +388,7 @@
 	inhand_y_dimension = 64
 	bigboy = TRUE
 	gripsprite = TRUE
+	sellprice = 100
 
 /obj/item/rogueweapon/mace/warhammer/getonmobprop(tag)
 	. = ..()

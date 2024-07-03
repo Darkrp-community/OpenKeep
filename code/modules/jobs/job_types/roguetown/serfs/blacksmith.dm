@@ -25,9 +25,11 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(3,4), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, pick(3,4), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/engineering, rand(2,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/engineering, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1,2), TRUE)
@@ -41,7 +43,7 @@
 		beltr = /obj/item/roguekey/blacksmith
 		cloak = /obj/item/clothing/cloak/apron/brown
 		H.change_stat("strength", 1)
-		H.change_stat("intelligence", -1)
+		H.change_stat("endurance", 1)
 		H.change_stat("speed", -1)
 	else
 		pants = /obj/item/clothing/under/roguetown/trou
@@ -52,7 +54,7 @@
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		beltr = /obj/item/roguekey/blacksmith
 		H.change_stat("strength", 1)
-		H.change_stat("intelligence", -1)
+		H.change_stat("endurance", 1)
 		H.change_stat("speed", -1)
 
 /datum/job/roguetown/weaponsmith
@@ -80,8 +82,10 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(3,4), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, pick(3,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		if(H.age == AGE_OLD)
@@ -96,7 +100,7 @@
 		beltr = /obj/item/roguekey/blacksmith
 		cloak = /obj/item/clothing/cloak/apron/brown
 		H.change_stat("strength", 1)
-		H.change_stat("intelligence", -1)
+		H.change_stat("endurance", 1)
 		H.change_stat("speed", -1)
 	else
 		pants = /obj/item/clothing/under/roguetown/trou
@@ -107,5 +111,5 @@
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		beltr = /obj/item/roguekey/blacksmith
 		H.change_stat("strength", 1)
-		H.change_stat("intelligence", -1)
+		H.change_stat("endurance", 1)
 		H.change_stat("speed", -1)
