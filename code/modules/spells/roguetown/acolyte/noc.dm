@@ -48,7 +48,7 @@
 			return FALSE
 		target.visible_message("<span class='warning'>[target] starts to fade into thin air!</span>", "<span class='notice'>You start to become invisible!</span>")
 		animate(target, alpha = 0, time = 1 SECONDS, easing = EASE_IN)
-		target.mob_timers[MT_INVISIBILITY] = world.time + 15 SECONDS
+		mob_timers[MT_INVISIBILITY] = world.time + 15 SECONDS
 		addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living, update_sneak_invis), TRUE), 15 SECONDS)
 		addtimer(CALLBACK(target, TYPE_PROC_REF(/atom/movable, visible_message), "<span class='warning'>[target] fades back into view.</span>", "<span class='notice'>You become visible again.</span>"), 15 SECONDS)
 	return FALSE
