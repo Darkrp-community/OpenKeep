@@ -36,10 +36,11 @@
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
 
-
+	wrists = /obj/item/clothing/neck/roguetown/psicross
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
 	belt = /obj/item/storage/belt/rogue/leather/hand
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	id = /obj/item/clothing/ring/silver
