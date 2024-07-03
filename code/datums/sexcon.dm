@@ -1272,7 +1272,6 @@
 					C.add_stress(/datum/stressevent/cummax)
 			else
 				C.add_stress(/datum/stressevent/cumok)
-				var/mob/living/M = owner
 			if(prob(88))
 				if(!fucking.mob_timers["preggo"])
 					fucking.mob_timers["preggo"] = world.time

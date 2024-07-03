@@ -42,13 +42,16 @@
 /datum/outfit/job/roguetown/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
 	var/datum/patron/ourpatron = H.patron
-	if(!ourpatron || !(ourpatron.type in allowed_patrons))
+	if(!ourpatron || (allowed_patrons && !(ourpatron.type in allowed_patrons)))
 		var/list/datum/patron/possiblegods = list()
 		for(var/god in GLOB.patronlist)
 			if(!(god in allowed_patrons))
 				continue
 			possiblegods |= god
-		H.patron = GLOB.patronlist[default_patron] || pick(possiblegods)
+		if(!possiblegods.len)
+			H.patron = GLOB.patronlist[default_patron]
+		else
+			H.patron = GLOB.patronlist[default_patron] || pick(possiblegods)
 		to_chat(H, "<span class='warning'>[ourpatron] had not endorsed my practices in my younger years. I've since grown acustomed to [H.patron].")
 	if(H.mind)
 		if(H.gender == FEMALE)

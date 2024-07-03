@@ -383,7 +383,7 @@
 	// Ultimate randomizing code right here
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/player = i
-		if(player.ready == PLAYER_READY_TO_PLAY && player.check_preferences())
+		if(player.ready == PLAYER_READY_TO_PLAY && role in player.client.prefs.be_special)
 //			if(player.client && player.client.whitelisted() && !player.client.blacklisted())
 			players += player
 			continue
