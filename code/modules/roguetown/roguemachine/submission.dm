@@ -41,6 +41,7 @@
 						if(!A)
 							say("Couldn't find where to send the submission.")
 							return
+						//This item is now listed as submitted to the stockpile.
 						P.submitted_to_stockpile = TRUE
 						var/list/turfs = list()
 						for(var/turf/T in A)

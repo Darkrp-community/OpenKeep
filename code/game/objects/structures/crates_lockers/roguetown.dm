@@ -168,10 +168,13 @@
 
 /obj/structure/closet/crate/drawer/random
 	icon_state = "drawer1"
-	base_icon_state = "drawer1"
 	pixel_y = 12
 
 /obj/structure/closet/crate/drawer/random/Initialize()
-	. = ..()
-	base_icon_state = "drawer[rand(1,4)]"
-	icon_state = "[base_icon_state]"
+    . = ..()
+    if(icon_state == "drawer1")
+        base_icon_state = "drawer[rand(1,4)]"
+        icon_state = "[base_icon_state]"
+    else
+        base_icon_state = "drawer1"
+        pixel_y = 12
