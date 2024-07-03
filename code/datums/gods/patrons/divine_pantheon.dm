@@ -24,7 +24,7 @@
 	sins = "Ignorance, Burning books, Carnal desire"
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/blindness
-	t2 = /obj/effect/proc_holder/spell/invoked/invisibility
+	t2 = null
 	t3 = null
 
 // ............ FORCES ..................
