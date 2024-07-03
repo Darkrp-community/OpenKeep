@@ -178,3 +178,14 @@
 	name = "Dazed"
 	desc = "<span class='nicegreen'>I am so high maaaaaaaaan</span>\n"
 	icon_state = "weed"
+
+/datum/status_effect/buff/ravox
+	id = "ravoxbuff"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/ravoxbuff
+	effectedstats = list("constitution" = 1,"endurance" = 1,"strength" = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/ravoxbuff
+	name = "Divine Power"
+	desc = "<span class='nicegreen'>The power of Ravox flows through me.</span>\n"
+	icon_state = "ravox"

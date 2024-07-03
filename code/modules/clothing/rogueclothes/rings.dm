@@ -143,4 +143,15 @@
 	REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
 	REMOVE_TRAIT(user, TRAIT_SHOCKIMMUNE, "Shock Immunity")
 	
+/obj/item/clothing/ring/gold/ravox
+	name = "ring of ravox"
+	desc = "Old ring, inscribed with arcane words. Just being near it imbues you with otherworldly strength."
+	icon_state = "ring_ravox"
 
+/obj/item/clothing/ring/gold/ravox/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if (slot == SLOT_RING && istype(user))
+			user.apply_status_effect(/datum/status_effect/buff/ravox)
+		else
+			user.remove_status_effect(/datum/status_effect/buff/ravox)

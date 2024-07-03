@@ -745,3 +745,26 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
+
+/obj/item/clothing/head/roguetown/crown/circlet
+	name = "golden circlet"
+	desc = ""
+	icon_state = "goldcirclet"
+	item_state = "goldcirclet"
+	dynamic_hair_suffix = null
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	sellprice = 50
+
+/obj/item/clothing/head/roguetown/crown/circlet/vision
+	name = "mystical circlet"
+	desc = "A shining gold circlet, with a mysterious purple insert."
+	icon_state = "visioncirclet"
+	item_state = "visioncirclet"
+	sellprice = 80
+
+/obj/item/clothing/head/roguetown/crown/circlet/vision/equipped(mob/user, slot)
+	. = ..()
+	if (slot == SLOT_HEAD && istype(user))
+		ADD_TRAIT(user, TRAIT_THERMAL_VISION,"thermal_vision")
+	else
+		REMOVE_TRAIT(user, TRAIT_THERMAL_VISION,"thermal_vision")
