@@ -15,6 +15,12 @@
 	mob_storage_capacity = 1
 	allow_dense = FALSE
 
+/obj/structure/closet/crate/chest/open(mob/living/user)
+	. = ..()
+	var/obj/structure/pressure_plate/AM = locate(/obj/structure/pressure_plate) in loc
+	if(AM)
+		AM.triggerplate()
+
 /obj/structure/closet/crate/chest/gold
 	icon_state = "chestweird1"
 	base_icon_state = "chestweird1"
@@ -137,6 +143,7 @@
 	desc = "Fibers interwoven to make a cheap storage bin."
 	base_icon_state = "wicker"
 	icon_state = "wicker"
+	open_sound = 'sound/items/book_open.ogg'
 	open_sound = 'sound/items/book_close.ogg'
 	close_sound = 'sound/items/book_close.ogg'
 
@@ -162,10 +169,13 @@
 
 /obj/structure/closet/crate/drawer/random
 	icon_state = "drawer1"
-	base_icon_state = "drawer1"
 	pixel_y = 12
 
 /obj/structure/closet/crate/drawer/random/Initialize()
-	. = ..()
-	base_icon_state = "drawer[rand(1,4)]"
-	icon_state = "[base_icon_state]"
+    . = ..()
+    if(icon_state == "drawer1")
+        base_icon_state = "drawer[rand(1,4)]"
+        icon_state = "[base_icon_state]"
+    else
+        base_icon_state = "drawer1"
+        pixel_y = 12

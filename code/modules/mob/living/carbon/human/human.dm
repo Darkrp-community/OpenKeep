@@ -7,6 +7,7 @@
 	if(held_item && (user.zone_selected == BODY_ZONE_PRECISE_MOUTH))
 		if(held_item.get_sharpness() && held_item.wlength == WLENGTH_SHORT)
 			if(has_stubble)
+				playsound(src, 'modular/Barding/sound/actions/shaving.ogg', 100, TRUE, -1)
 				if(user == src)
 					user.visible_message("<span class='danger'>[user] starts to shave [user.p_their()] stubble with [held_item].</span>")
 				else
@@ -17,6 +18,7 @@
 				else
 					held_item.melee_attack_chain(user, src, params)
 			else if(facial_hairstyle != "None")
+				playsound(src, 'modular/Barding/sound/actions/shaving.ogg', 100, TRUE, -1)
 				if(user == src)
 					user.visible_message("<span class='danger'>[user] starts to shave [user.p_their()] facehairs with [held_item].</span>")
 				else
@@ -28,6 +30,10 @@
 						if(dna.species.id == "dwarf")
 							var/mob/living/carbon/V = src
 							V.add_stress(/datum/stressevent/dwarfshaved)
+						if(user.mind && user.mind.assigned_role == "Court Magician")
+							var/mob/living/carbon/V = src
+							V.add_stress(/datum/stressevent/dwarfshaved)
+							V.mind.RemoveSpell(/obj/effect/proc_holder/spell/targeted/forcewall)
 				else
 					held_item.melee_attack_chain(user, src, params)
 		return

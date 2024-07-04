@@ -25,22 +25,26 @@
 	bloodiness = BLOOD_AMOUNT_PER_DECAL
 	beauty = -100
 	alpha = 200
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	nomouseover = TRUE
 	appearance_flags = NO_CLIENT_COLOR
+	nomouseover = TRUE
 	var/blood_timer
 
 /obj/effect/decal/cleanable/blood/Initialize(mapload, list/datum/disease/diseases)
 	. = ..()
 	if(. == INITIALIZE_HINT_QDEL)
 		return .
+	create_reagents(20)
+	reagents.add_reagent(/datum/reagent/blood, 20)
 	pixel_x = rand(-5,5)
 	pixel_y = rand(5,5)
-	blood_timer = addtimer(CALLBACK(src, PROC_REF(become_dry)), rand(5 MINUTES,8 MINUTES), TIMER_STOPPABLE)
+	blood_timer = addtimer(CALLBACK(src, PROC_REF(become_dry)), rand(5 MINUTES,15 MINUTES), TIMER_STOPPABLE)
 
 
 /obj/effect/decal/cleanable/blood/proc/become_dry()
 	if(QDELETED(src))
 		return
+	qdel(reagents)
 	name = "dry [initial(name)]"
 	color = "#967c69"
 	bloodiness = 0

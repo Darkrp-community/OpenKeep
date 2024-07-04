@@ -34,12 +34,12 @@
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/feld
 	neck = /obj/item/clothing/neck/roguetown/feld
 	r_hand = /obj/item/storage/backpack/rogue/satchel/surgbag
+	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/roguekey/doctor
 	if(prob(70))
 		head = /obj/item/clothing/head/roguetown/roguehood/feld
 		mask = /obj/item/clothing/mask/rogue/feld
-	else
-		head = /obj/item/clothing/head/roguetown/helmet/feld
+
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
