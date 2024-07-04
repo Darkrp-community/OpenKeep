@@ -38,7 +38,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	C.cultists |= owner
 	H.patron = GLOB.patronlist[/datum/patron/inhumen/zizo]
 
-	owner.special_role = ROLE_ZIZOIDCULTIST
+	owner.special_role = "Zizoid Lackey"
 	H.cmode_music = 'sound/music/combatcult.ogg'
 	owner.current.verbs |= /mob/living/carbon/human/proc/praise
 	owner.current.verbs |= /mob/living/carbon/human/proc/communicate
@@ -50,7 +50,9 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	else
 		add_objective(/datum/objective/zizo)
 		greet()
+		owner.special_role = ROLE_ZIZOIDCULTIST
 		owner.current.verbs |= /mob/living/carbon/human/proc/draw_sigil
+		owner.current.verbs |= /mob/living/carbon/human/proc/release_minion
 
 /datum/antagonist/zizocultist/greet()
 	to_chat(owner, "<span class='danger'>I'm a lackey to the LEADER. A new future begins.</span>")
@@ -63,7 +65,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 /datum/antagonist/zizocultist/can_be_owned(datum/mind/new_owner)
 	. = ..()
 	if(.)
-		if(new_owner.assigned_role in GLOB.noble_positions)
+		if(new_owner.current == SSticker.rulermob)
 			return FALSE
 		if(new_owner.assigned_role in GLOB.church_positions)
 			return FALSE
@@ -72,23 +74,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		if(new_owner.current && HAS_TRAIT(new_owner.current, TRAIT_MINDSHIELD))
 			return FALSE
 
-/datum/antagonist/zizocultist/proc/can_be_converted(mob/living/candidate)
-	if(!candidate.mind)
-		return FALSE
-	if(!can_be_owned(candidate.mind))
-		return FALSE
-	if(candidate.mind.assigned_role in GLOB.noble_positions)
-		return FALSE
-	if(candidate.mind.assigned_role in GLOB.church_positions)
-		return FALSE
-	var/mob/living/carbon/C = candidate //Check to see if the potential rev is implanted
-	if(!istype(C)) //Can't convert simple animals
-		return FALSE
-	return TRUE
-
 /datum/antagonist/zizocultist/proc/add_cultist(datum/mind/cult_mind)
-	if(!can_be_converted(cult_mind.current))
-		return FALSE
 	cult_mind.add_antag_datum(/datum/antagonist/zizocultist)
 	return TRUE
 
@@ -180,6 +166,14 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	icon_state = "center"
 	icon = 'icons/obj/sigils.dmi'
 	var/sigil_type
+
+/obj/effect/decal/cleanable/sigil/examine(mob/user)
+	. = ..()
+	if(!sigil_type)
+		return
+
+	if(iszizocultist(user) || iszizolackey(user))
+		to_chat(user, "It is of the [sigil_type] circle.")
 
 /obj/effect/decal/cleanable/sigil/Initialize(mapload, list/datum/disease/diseases)
 	. = ..()
@@ -299,10 +293,19 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				testing("CENTER SUCCESS!")
 				break
 		
+		var/badritualpunishment = FALSE
 		if(cardinal_success != TRUE)
+			if(badritualpunishment)
+				return
+			to_chat(user.mind, "<span class='danger'>\"That's not how you do it, fool.\"</span>")
+			user.electrocute_act(10, src)
 			return
 
 		if(center_success != TRUE)
+			if(badritualpunishment)
+				return
+			to_chat(user.mind, "<span class='danger'>\"That's not how you do it, fool.\"</span>")
+			user.electrocute_act(10, src)
 			return
 
 		testing("Now calling proc")
@@ -384,6 +387,26 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	var/turf/open/floor/T = get_turf(src.loc)
 	T.generateSigils(src, input)
 
+/mob/living/carbon/human/proc/release_minion()
+	set name = "Release Lackey"
+	set category = "ZIZO"
+
+	var/datum/game_mode/chaosmode/C = SSticker.mode
+	var/list/mob/living/carbon/human/possible = list()
+	for(var/datum/mind/V in C.cultists)
+		if(V.special_role == "Zizoid Lackey")
+			possible |= V.current
+
+	var/mob/living/carbon/human/choice = input(src, "Whom do you no longer have use for?", "ROGUETOWN") as anything in null|possible
+	if(choice)
+		var/alert = alert(src, "Are you sure?", "ROGUETOWN", "Yes", "Cancel")
+		if(alert == "Yes")
+			visible_message("<span class='danger'>[src] reaches out, ripping up [choice]'s soul!</span>")
+			to_chat(choice, "<span class='userdanger'>I HAVE FAILED MY LEADER! I HAVE FAILED ZIZO! NOTHING ELSE BUT DEATH REMAINS FOR ME NOW!</span>")
+			sleep(20)
+			gib(choice) // Cooler than dusting.
+			C.cultists -= choice.mind
+
 // RITUAL DATUMS
 
 /datum/ritual
@@ -421,20 +444,23 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				return
 			if(H.anchored) // a way to bind the person to the rune if they choose to resist converting
 				return
+			if(istype(H.wear_neck, /obj/item/clothing/neck/roguetown/psicross))
+				to_chat(user.mind, "<span class='danger'>\"They are wearing my bane...\"</span>")
+				return
 			if(M.cultists.len >= 3)
-				to_chat(user, "<span class='danger'>\"The veil is too strong to support more than two lackeys.\"</span>")
+				to_chat(user.mind, "<span class='danger'>\"The veil is too strong to support more than two lackeys.\"</span>")
 				return
 			var/datum/antagonist/zizocultist/PR = user.mind.has_antag_datum(/datum/antagonist/zizocultist)
 			var/alert = alert(user, "YOU WILL BE SHOWN THE TRUTH. DO YOU YIELD?", "ROGUETOWN", "Yield", "Resist")
 			H.anchored = TRUE
 			if(alert == "Yield")
-				to_chat(H, "<span class='notice'>I see the truth now! It all makes so much sense! They aren't HERETICS! They want the BEST FOR US!</span>")
+				to_chat(H.mind, "<span class='notice'>I see the truth now! It all makes so much sense! They aren't HERETICS! They want the BEST FOR US!</span>")
 				PR.add_cultist(H.mind)
 				H.praise()
 				H.anchored = FALSE
 			else
 				H.visible_message("<span class='danger'>\The [H] thrashes around, unyielding!</span>")
-				to_chat(H, "<span class='danger'>\"Yield.\"</span>")
+				to_chat(H.mind, "<span class='danger'>\"Yield.\"</span>")
 				if(H.electrocute_act(10, src))
 					H.emote("painscream")
 				sleep(20)
@@ -511,6 +537,41 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		to_chat(H, "<span class='userdanger'>My master is [user].</span>")
 		break
 
+/datum/ritual/thecall
+	name = "The Call"
+	circle = "Servantry"
+	center_requirement = /obj/item/bedsheet/rogue
+
+	w_req = /obj/item/bodypart/l_leg
+	e_req = /obj/item/bodypart/r_leg
+
+	function = /proc/thecall
+
+/proc/thecall(var/mob/user, var/turf/C)
+	var/datum
+	for(var/obj/item/paper/P in C.contents)
+		if(!user.mind || !user.mind.do_i_know(name=P.info))
+			to_chat(user.mind, "<span class='warning'>I don't know anyone by that name.</span>")
+			return
+		for(var/mob/living/carbon/human/HL in GLOB.human_list)
+			if(HL.real_name == P.info)
+				if(HL.IsSleeping())
+					if(HL.mind.assigned_role in GLOB.church_positions)
+						to_chat(HL.mind, "<span class='warning'>I sense an unholy presence loom near my soul.</span>")
+						return
+					if(HL == SSticker.rulermob)
+						return
+					if(istype(HL.wear_neck, /obj/item/clothing/neck/roguetown/psicross))
+						return
+					if(HAS_TRAIT(HL, TRAIT_NOROGSTAM))
+						return
+					apply_status_effect(/datum/status_effect/debuff/sleepytime)
+					to_chat(HL.mind, "<span class='warning'>This isn't my bed... Where am I?!</span>")
+					HL.playsound_local(src, pick('sound/misc/jumphumans (1).ogg','sound/misc/jumphumans (2).ogg','sound/misc/jumphumans (3).ogg'), 100)
+					HL.forceMove(C)
+					qdel(P)
+					
+
 // TRANSMUTATION
 
 /datum/ritual/allseeingeye
@@ -522,6 +583,30 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 /proc/allseeingeye(var/mob/user, var/turf/C)
 	new /obj/item/scrying/eye(C)
+
+/datum/ritual/criminalstool
+	name = "Criminal's Tool"
+	circle = "Transmutation"
+	center_requirement = /obj/item/natural/cloth
+
+	function = /proc/criminalstool
+
+/proc/criminalstool(var/mob/user, var/turf/C)
+	new /obj/item/soap/cult(C)
+	to_chat(user.mind, "<span class='notice'>The Criminal's Tool. Could be useful for hiding tracks or getting rid of sigils.</span>")
+
+/datum/ritual/propaganda
+	name = "Propaganda"
+	circle = "Transmutation"
+	center_requirement = /obj/item/natural/worms/leech
+	n_req = /obj/item/paper
+	s_req = /obj/item/natural/feather
+	
+	function = /proc/propaganda
+
+/proc/propaganda(var/mob/user, var/turf/C)
+	new /obj/item/natural/worms/leech/propaganda(C)
+	to_chat(user.mind, "<span class='notice'>A leech to make their minds wrangled. They'll be in bad spirits.</span>")
 
 // FLESH CRAFTING
 
@@ -539,5 +624,50 @@ GLOBAL_LIST_EMPTY(ritualslist)
 /proc/bunnylegs(var/mob/user, var/turf/C)
 	for(var/mob/living/carbon/human/H in C.contents)
 		ADD_TRAIT(H, TRAIT_ZJUMP, TRAIT_GENERIC)
-		to_chat(H, "<span class='notice'>I feel like my legs have become stronger.</span>")
+		to_chat(H.mind, "<span class='notice'>I feel like my legs have become stronger.</span>")
+		break
+
+/datum/ritual/darkeyes
+	name = "Darkened Eyes"
+	circle = "Fleshcrafting"
+	center_requirement = /mob/living/carbon/human
+
+	w_req = /obj/item/organ/eyes
+	e_req = /obj/item/organ/eyes
+	n_req = /obj/item/reagent_containers/food/snacks/rogue/meat/steak
+
+	function = /proc/darkeyes
+
+/proc/darkeyes(var/mob/user, var/turf/C)
+	for(var/mob/living/carbon/human/H in C.contents)
+		var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
+		if(eyes)
+			eyes.Remove(H,1)
+			QDEL_NULL(eyes)
+		eyes = new /obj/item/organ/eyes/night_vision/zombie
+		eyes.Insert(H)
+		to_chat(H.mind, "<span class='notice'>I no longer fear the dark.</span>")
+		break
+
+/datum/ritual/nopain
+	name = "Painless Battle"
+	circle = "Fleshcrafting"
+	center_requirement = /mob/living/carbon/human
+
+	w_req = /obj/item/organ/heart
+	e_req = /obj/item/organ/brain
+	n_req = /obj/item/reagent_containers/food/snacks/rogue/meat/steak
+
+	function = /proc/nopain
+
+/proc/nopain(var/mob/user, var/turf/C)
+	for(var/mob/living/carbon/human/H in C.contents)
+		ADD_TRAIT(user, TRAIT_NOPAIN, TRAIT_GENERIC)
+		to_chat(H.mind, "<span class='notice'>I no longer feel pain, but it has come at a terrible cost.</span>")
+		H.change_stat("strength", -2)
+		H.change_stat("constitution", -2)
+		if(H.gender == FEMALE)
+			H.change_stat("constitution", -1)
+		else
+			ADD_TRAIT(user, TRAIT_LIMPDICK, TRAIT_GENERIC)
 		break
