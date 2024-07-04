@@ -21,6 +21,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/bandit
 	category_tags = list(CTAG_ANTAG, CTAG_BANDIT)
+	maximum_possible_slots = 2
 
 /datum/outfit/job/roguetown/adventurer/bandit/pre_equip(mob/living/carbon/human/H)
 	..()

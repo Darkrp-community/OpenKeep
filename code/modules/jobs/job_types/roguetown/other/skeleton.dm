@@ -1,10 +1,10 @@
 /datum/job/roguetown/skeleton
-	title = "skeleton"
+	title = "Skeleton"
 	flag = GRAVEDIGGER
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 3
+	spawn_positions = 3
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -29,7 +29,7 @@
 		L.can_do_sex = FALSE
 		if(M.mind)
 			M.mind.special_role = "skeleton"
-			M.mind.assigned_role = "skeleton"
+			M.mind.assigned_role = "Skeleton"
 			M.mind.current.job = null
 		if(H.dna && H.dna.species)
 			H.dna.species.species_traits |= NOBLOOD
@@ -104,5 +104,12 @@
 	H.STASPD = rand(7,10)
 	H.STAINT = 1
 	H.STACON = 3
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	var/datum/antagonist/new_antag = new /datum/antagonist/skeleton()
 	H.mind.add_antag_datum(new_antag)

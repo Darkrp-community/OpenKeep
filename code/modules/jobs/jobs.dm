@@ -121,7 +121,9 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Beggar",
 	"Adventurer",
 	"Pilgrim",
-	"Drifter"
+	"Drifter",
+	"Skeleton",
+	"Death Knight"
 ))
 
 GLOBAL_LIST_INIT(apprentices_positions, list(

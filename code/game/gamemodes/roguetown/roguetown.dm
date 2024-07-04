@@ -64,6 +64,9 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 
 	if(ttime >= GLOB.round_timer)
 		if(roundvoteend)
+			var/datum/round_event/rogue/skellysiege/x = new /datum/round_event/rogue/skellysiege/
+			if(!(x in SSevents.running))
+				x.New()
 			if(ttime >= (GLOB.round_timer + 15 MINUTES) )
 				for(var/mob/living/carbon/human/H in GLOB.human_list)
 					if(H.stat != DEAD)
