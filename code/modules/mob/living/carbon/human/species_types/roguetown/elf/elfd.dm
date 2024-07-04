@@ -5,16 +5,18 @@
 	name = "Dark Elf"
 	id = "elf"
 	desc = "<b>Dark Elf</b><br>\
-	Descending from a perversion of necromancy, Dark Elves are a unique species \
+	Descending from a perversion of false immortality, Dark Elves are a unique and young species \
 	that have only recently found themselves a staple of daily life. \
-	They boast a proud, beauty-centric culture that demands only the finest \
-	out of its citizens, with anyone falling behind their cripplingly high standards \
-	refered to as a Homonculus, while less graceful terms such as \
-	Stitchface, Zombie or corpsewalker are most commonly thrown out by the elder races\
-	Dark Elves tend to be extremely arrogant of others plights, with selfishness\
-	being seen as a massive boon in their society. They are academic and usually well taught\
-	through are noted to suffer from their biology, which tends to be weak and falls apart\
-	without careful upkeep..."
+	They boast a proud, beauty-centric culture that compensates their cursed that ranges \
+	from skin tints to extreme deformations, with anyone falling behind their cripplingly high standards \
+	refered to as a Homonculus. While less graceful terms such as \
+	stitchface, zombie or corpsewalker are most commonly thrown out by the elder races \
+	Dark Elves tend to be extremely arrogant of others plights, with selfishness \
+	being seen as a massive boon in their societies, leading to storng rivalries among their enclaves. \
+	They are academic and usually well taught through are noted to suffer from their anatomy, which tends to be weak and brittle."
+
+	skin_tone_wording = "Curse Affliction"
+
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "ears" = "ElfW", "wings" = "None")
@@ -68,13 +70,13 @@
 
 /datum/species/elf/dark/get_skin_list()
 	return sortList(list(
-	"skin1" = "9796a9",
-	"skin2" = "897489",
-	"skin3" = "938f9c",
-	"skin4" = "737373",
-	"skin5" = "6a616d",
-	"skin6" = "5f5f70",
-	"skin7" = "2F2F38"
+		"Maggot" = SKIN_COLOR_MAGGOT,
+		"Cocoon" = SKIN_COLOR_COCOON,
+		"Ashen" = SKIN_COLOR_ASHEN,
+		"Spider Venom" = SKIN_COLOR_SPIDER_VENOM,
+		"Jackpoison" = SKIN_COLOR_JACKPOISON,
+		"Homunculus" = SKIN_COLOR_HOMUNCULUS,
+		"Arachnid Ichor" = SKIN_COLOR_ARACHNID_ICHOR,
 	))
 
 /datum/species/elf/dark/get_hairc_list()
