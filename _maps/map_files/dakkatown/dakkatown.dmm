@@ -17253,7 +17253,6 @@
 "ZX" = (/obj/structure/chair/wood/rogue{dir = 1},/obj/machinery/light/rogue/wallfire/candle/blue/l,/turf/open/floor/rogue/wood/nosmooth,/area/rogue/indoors/town/manor)
 "ZY" = (/obj/structure/closet/crate/chest/neu_iron,/turf/open/floor/rogue/ruinedwood{icon_state = "horzw"},/area/rogue/indoors/town/dwarfin)
 "ZZ" = (/obj/item/reagent_containers/food/snacks/crow,/turf/open/floor/rogue/rooftop{dir = 4},/area/rogue/outdoors/town/roofs)
->>>>>>> parent of 77703553 (Revert "Rotates a Deadbolt Door in the Merc Building")
 
 (1,1,1) = {"
 vY
