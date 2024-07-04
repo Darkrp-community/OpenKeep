@@ -226,10 +226,11 @@
 	desc = "A leech like none other."
 	drainage = 0
 	blood_sucking = 0
+	completely_silent = TRUE
 	embedding = list(
 		"embed_chance" = 100,
 		"embedded_unsafe_removal_time" = 0,
-		"embedded_pain_chance" = 25,
+		"embedded_pain_chance" = 0,
 		"embedded_fall_chance" = 0,
 		"embedded_bloodloss"= 0,
 	)
@@ -238,8 +239,10 @@
 	. = ..()
 	if(!user)
 		return
-	if(ishuman(user))
+	if(iscarbon(user))
 		var/mob/living/carbon/V = user
+		if(prob(5))
+			V.say(pick("PRAISE ZIZO!", "DEATH TO THE TEN..."))
 		V.add_stress(/datum/stressevent/leechcult)
 
 #undef MAX_LEECH_EVILNESS

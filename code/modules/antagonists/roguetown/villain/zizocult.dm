@@ -447,8 +447,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			if(istype(H.wear_neck, /obj/item/clothing/neck/roguetown/psicross))
 				to_chat(user.mind, "<span class='danger'>\"They are wearing my bane...\"</span>")
 				return
-			if(M.cultists.len >= 3)
-				to_chat(user.mind, "<span class='danger'>\"The veil is too strong to support more than two lackeys.\"</span>")
+			if(M.cultists.len >= 4)
+				to_chat(user.mind, "<span class='danger'>\"The veil is too strong to support more than three lackeys.\"</span>")
 				return
 			var/datum/antagonist/zizocultist/PR = user.mind.has_antag_datum(/datum/antagonist/zizocultist)
 			var/alert = alert(user, "YOU WILL BE SHOWN THE TRUTH. DO YOU YIELD?", "ROGUETOWN", "Yield", "Resist")
@@ -471,6 +471,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	circle = "Servantry"
 	center_requirement = /mob/living/carbon/human
 
+	n_req = /obj/item/organ/heart
+
 	function = /proc/skeletaljaunt
 
 /proc/skeletaljaunt(var/mob/user, var/turf/C)
@@ -478,6 +480,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		if(H == user)
 			return
 		if(iszizocultist(H) || iszizolackey(H))
+			to_chat(H.mind, "<span class='danger'>\"I'm not gonna let my follower become a mindless brute.\"</span>")
 			return
 		if(H.mind)
 			H.mind.special_role = "Cult Summon"
@@ -519,7 +522,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		H.STASPD = rand(7,10)
 		H.STAINT = 1
 		H.STACON = 3
-		H.STASTR = 6
+		H.STASTR = rand(8,17)
 
 		H.verbs |= /mob/living/carbon/human/proc/praise
 		H.verbs |= /mob/living/carbon/human/proc/communicate
@@ -548,7 +551,6 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	function = /proc/thecall
 
 /proc/thecall(var/mob/user, var/turf/C)
-	var/datum
 	for(var/obj/item/paper/P in C.contents)
 		if(!user.mind || !user.mind.do_i_know(name=P.info))
 			to_chat(user.mind, "<span class='warning'>I don't know anyone by that name.</span>")
@@ -565,13 +567,12 @@ GLOBAL_LIST_EMPTY(ritualslist)
 						return
 					if(HAS_TRAIT(HL, TRAIT_NOROGSTAM))
 						return
-					apply_status_effect(/datum/status_effect/debuff/sleepytime)
+					HL.apply_status_effect(/datum/status_effect/debuff/sleepytime)
 					to_chat(HL.mind, "<span class='warning'>This isn't my bed... Where am I?!</span>")
 					HL.playsound_local(src, pick('sound/misc/jumphumans (1).ogg','sound/misc/jumphumans (2).ogg','sound/misc/jumphumans (3).ogg'), 100)
 					HL.forceMove(C)
 					qdel(P)
 					
-
 // TRANSMUTATION
 
 /datum/ritual/allseeingeye
@@ -671,3 +672,34 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		else
 			ADD_TRAIT(user, TRAIT_LIMPDICK, TRAIT_GENERIC)
 		break
+
+/datum/ritual/fleshform
+	name = "Stronger Form"
+	circle = "Fleshcrafting"
+	center_requirement = /mob/living/carbon/human
+
+	w_req = /obj/item/organ/guts
+	e_req = /obj/item/organ/guts
+	n_req = /obj/item/reagent_containers/food/snacks/rogue/meat/steak
+	s_req = /obj/item/reagent_containers/food/snacks/rogue/meat/steak
+
+	function = /proc/fleshform
+
+/proc/fleshform(var/mob/user, var/turf/C)
+	for(var/mob/living/carbon/human/H in C.contents)
+		if(iszizocultist(H))
+			to_chat(H.mind, "<span class='danger'>\"I'm not letting my strongest follower become a mindless brute.\"</span>")
+			return
+		to_chat(user.mind, "<span class='danger'>SOON I WILL BECOME A HIGHER FORM!!!</span>")
+		sleep(5 SECONDS)
+		var/mob/living/trl = new /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood(H)
+		trl.forceMove(H)
+		trl.ckey = H.ckey
+		H.gib()
+		
+/datum/ritual/ascend
+	name = "ASCEND!"
+	circle = "Fleshcrafting"
+	center_requirement = /mob/living/carbon/human // cult leader
+
+	n_req = /mob/living/carbon/human // the ruler

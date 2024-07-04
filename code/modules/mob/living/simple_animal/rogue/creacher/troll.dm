@@ -45,6 +45,19 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/human // Placeholder until Troll remains are sprited.
 
+/mob/living/simple_animal/hostile/retaliate/rogue/troll/blood
+	name = "FLESH HOMUNCULUS"
+	icon_state = "Flesh"
+	icon_living = "Flesh"
+	STACON = 10
+	STASTR = 19
+	STASPD = 1
+	STAEND = 11
+
+/mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/death(gibbed)
+	. = ..()
+	gib()
+
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/death(gibbed)
 	..()
 	update_icon()
