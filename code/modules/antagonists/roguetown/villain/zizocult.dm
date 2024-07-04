@@ -196,23 +196,28 @@ GLOBAL_LIST_EMPTY(ritualslist)
 /obj/effect/decal/cleanable/sigil/proc/consume_ingredients(var/datum/ritual/R)
 
 	for(var/atom/A in get_step(src, NORTH))
-		if(istype(A, R.n_req) && !ishuman(R.n_req))
+		if(istype(A, R.n_req) && !ishuman(A))
+			playsound(src, 'sound/foley/flesh_rem2.ogg', 30)
 			qdel(A)
 	
 	for(var/atom/A in get_step(src, SOUTH))
-		if(istype(A, R.s_req) && !ishuman(R.s_req))
+		if(istype(A, R.s_req) && !ishuman(A))
+			playsound(src, 'sound/foley/flesh_rem2.ogg', 30)
 			qdel(A)
 
 	for(var/atom/A in get_step(src, EAST))
-		if(istype(A, R.e_req) && !ishuman(R.e_req))
+		if(istype(A, R.e_req) && !ishuman(A))
+			playsound(src, 'sound/foley/flesh_rem2.ogg', 30)
 			qdel(A)
 	
 	for(var/atom/A in get_step(src, WEST))
-		if(istype(A, R.w_req) && !ishuman(R.w_req))
+		if(istype(A, R.w_req) && !ishuman(A))
+			playsound(src, 'sound/foley/flesh_rem2.ogg', 30)
 			qdel(A)
 
 	for(var/atom/A in loc.contents)
-		if(istype(A, R.center_requirement) && !ishuman(R.center_requirement))
+		if(istype(A, R.center_requirement) && !ishuman(A))
+			playsound(src, 'sound/foley/flesh_rem2.ogg', 30)
 			qdel(A)
 
 /obj/effect/decal/cleanable/sigil/attack_hand(mob/living/user)
@@ -302,6 +307,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 		testing("Now calling proc")
 		consume_ingredients(pickritual)
+		user.playsound_local(user, 'sound/vo/cult/tesa.ogg', 25)
+		user.whisper("O'vena tesa...")
 		call(pickritual.function)(user, loc)
 
 /obj/effect/decal/cleanable/sigil/N
@@ -392,13 +399,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	var/w_req = null
 	var/function // a proc
 
-/proc/transmutate(var/mob/user, var/turf/C)
-	testing("NOW TESTING TRANSMUTATE")
-	for(var/mob/living/carbon/human/H in C.contents)
-		if(H != user)
-			if(iszizocultist(H) || iszizolackey(H))
-				return
-			H.gib()
+
+// SERVANTRY
 
 /datum/ritual/convert
 	name = "Convert"
@@ -424,10 +426,11 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				return
 			var/datum/antagonist/zizocultist/PR = user.mind.has_antag_datum(/datum/antagonist/zizocultist)
 			var/alert = alert(user, "YOU WILL BE SHOWN THE TRUTH. DO YOU YIELD?", "ROGUETOWN", "Yield", "Resist")
-			anchored = TRUE
+			H.anchored = TRUE
 			if(alert == "Yield")
 				to_chat(H, "<span class='notice'>I see the truth now! It all makes so much sense! They aren't HERETICS! They want the BEST FOR US!</span>")
 				PR.add_cultist(H.mind)
+				H.praise()
 				H.anchored = FALSE
 			else
 				H.visible_message("<span class='danger'>\The [H] thrashes around, unyielding!</span>")
@@ -436,3 +439,105 @@ GLOBAL_LIST_EMPTY(ritualslist)
 					H.emote("painscream")
 				sleep(20)
 				H.anchored = FALSE
+
+/datum/ritual/skeletaljaunt
+	name = "Skeletal Jaunt"
+	circle = "Servantry"
+	center_requirement = /mob/living/carbon/human
+
+	function = /proc/skeletaljaunt
+
+/proc/skeletaljaunt(var/mob/user, var/turf/C)
+	for(var/mob/living/carbon/human/H in C.contents)
+		if(H == user)
+			return
+		if(iszizocultist(H) || iszizolackey(H))
+			return
+		if(H.mind)
+			H.mind.special_role = "Cult Summon"
+			H.mind.assigned_role = "Cult Summon"
+			H.mind.current.job = null
+		H.dna.species.species_traits |= NOBLOOD
+		H.dna.species.soundpack_m = new /datum/voicepack/skeleton()
+		H.dna.species.soundpack_f = new /datum/voicepack/skeleton()
+		var/obj/item/bodypart/O = H.get_bodypart(BODY_ZONE_R_ARM)
+		if(O)
+			O.drop_limb()
+			qdel(O)
+		O = H.get_bodypart(BODY_ZONE_L_ARM)
+		if(O)
+			O.drop_limb()
+			qdel(O)
+		H.regenerate_limb(BODY_ZONE_R_ARM)
+		H.regenerate_limb(BODY_ZONE_L_ARM)
+		for(var/obj/item/bodypart/BP in H.bodyparts)
+			BP.skeletonize()
+		H.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/simple/claw)
+		H.update_a_intents()
+		H.cmode_music = 'sound/music/combatcult.ogg'
+		H.patron = GLOB.patronlist[/datum/patron/inhumen/zizo]
+		var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
+		if(eyes)
+			eyes.Remove(H,1)
+			QDEL_NULL(eyes)
+		eyes = new /obj/item/organ/eyes/night_vision/zombie
+		eyes.Insert(H)
+		H.ambushable = FALSE
+		H.underwear = "Nude"
+		if(H.charflaw)
+			QDEL_NULL(H.charflaw)
+		H.update_body()
+		H.mob_biotypes = MOB_UNDEAD
+		H.faction = list("undead")
+
+		H.STASPD = rand(7,10)
+		H.STAINT = 1
+		H.STACON = 3
+		H.STASTR = 6
+
+		H.verbs |= /mob/living/carbon/human/proc/praise
+		H.verbs |= /mob/living/carbon/human/proc/communicate
+
+		ADD_TRAIT(H, TRAIT_NOMOOD, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_NOLIMBDISABLE, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_NOHUNGER, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_NOBREATH, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_NOPAIN, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_NOSLEEP, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_SHOCKIMMUNE, TRAIT_GENERIC)
+		to_chat(H, "<span class='userdanger'>I am returned to serve. I will obey, so that I may return to rest.</span>")
+		to_chat(H, "<span class='userdanger'>My master is [user].</span>")
+		break
+
+// TRANSMUTATION
+
+/datum/ritual/allseeingeye
+	name = "All-seeing Eye"
+	circle = "Transmutation"
+	center_requirement = /obj/item/organ/eyes
+
+	function = /proc/allseeingeye
+
+/proc/allseeingeye(var/mob/user, var/turf/C)
+	new /obj/item/scrying/eye(C)
+
+// FLESH CRAFTING
+
+/datum/ritual/bunnylegs
+	name = "Saliendo Pedes"
+	circle = "Fleshcrafting"
+	center_requirement = /mob/living/carbon/human
+
+	w_req = /obj/item/bodypart/l_leg
+	e_req = /obj/item/bodypart/r_leg
+	n_req = /obj/item/reagent_containers/food/snacks/rogue/meat/steak
+
+	function = /proc/bunnylegs
+
+/proc/bunnylegs(var/mob/user, var/turf/C)
+	for(var/mob/living/carbon/human/H in C.contents)
+		ADD_TRAIT(H, TRAIT_ZJUMP, TRAIT_GENERIC)
+		to_chat(H, "<span class='notice'>I feel like my legs have become stronger.</span>")
+		break
