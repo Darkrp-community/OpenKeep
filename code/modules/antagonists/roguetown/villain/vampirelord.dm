@@ -335,12 +335,13 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				if(T.can_see_sky())
 					if(T.get_lumcount() > 0.15)
 						if(!isspawn)
-							to_chat(H, "<span class='warning'>Astrata spurns me! I must get out of her rays!</span>") // VLord is more punished for daylight excursions.
+							to_chat(H, "<span class='warning'>Astrata spurns me! I must get out of her rays NOW!</span>") // VLord is more punished for daylight excursions.
 							sleep(100)
 							var/turf/N = H.loc
 							if(N.can_see_sky())
 								if(N.get_lumcount() > 0.15)
-									H.dust()
+									H.fire_act(3)
+									handle_vitae(-50)
 							to_chat(H, "<span class='warning'>That was too close. I must avoid the sun.</span>")
 						else if (isspawn && !disguised)
 							H.fire_act(1,5)
