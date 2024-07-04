@@ -444,7 +444,7 @@
 	lockid = "butcher"
 
 obj/item/roguekey/elder
-	name = "elder's key"
+	name = "mayor's key"
 	icon_state = "rustkey"
 	lockid = "elder"
 
