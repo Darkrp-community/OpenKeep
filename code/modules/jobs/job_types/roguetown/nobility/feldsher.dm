@@ -34,6 +34,7 @@
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/feld
 	neck = /obj/item/clothing/neck/roguetown/feld
 	r_hand = /obj/item/storage/backpack/rogue/satchel/surgbag
+	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/roguekey/doctor
 	if(prob(70))
 		head = /obj/item/clothing/head/roguetown/roguehood/feld
