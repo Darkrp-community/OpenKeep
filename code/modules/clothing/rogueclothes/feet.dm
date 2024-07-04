@@ -158,8 +158,8 @@
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/boots/rare/elfplate
-	name = "elvish plated boots"
-	desc = "Bizzarrely shaped boots of exquisite elven craftsmanship, forged from steel alloyed in ways unbeknownst to every other race."
+	name = "dark elvish plated boots"
+	desc = "Bizzarrely shaped boots of exquisite dark elven craftsmanship, forged from steel alloyed in ways unbeknownst to every other race."
 	body_parts_covered = FEET
 	icon_state = "elfshoes"
 	item_state = "elfshoes"
@@ -167,6 +167,17 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	color = null
 	blocksound = PLATEHIT
+
+/obj/item/clothing/shoes/roguetown/boots/rare/elfplate/welfplate
+	name = "elvish plated boots"
+	desc = "Bizzarrely shaped boots of exquisite elven craftsmanship, forged from steel alloyed in ways unbeknownst to every other race."
+	icon_state = "welfshoes"
+	item_state = "welfshoes"
+
+/obj/item/clothing/shoes/roguetown/boots/rare/elfplate/welfplate
+	name = "elvish plated boots"
+	icon_state = "welfshoes"
+	item_state = "welfshoes"
 
 /obj/item/clothing/shoes/roguetown/boots/rare/dwarfplate
 	name = "decorated dwarven plate boots"

@@ -5,18 +5,23 @@
 	name = "Dwarf"
 	id = "dwarf"
 	desc = "<b>Dwarf</b><br>\
-	A proud and robust race of short mountain folk, \
+	A proud and robust race of stunted folk, \
 	the dwarves are known for their pride in martial strength \
-	and their tenacity towards their ancient traditions.\
+	and their tenacity towards their ancient customs. \
 	A Dwarf, much like the rock that they carve their fortress out of \
-	is stubborn and ancient, with their race being the longest lived of all \
-	of the weeping gods creation. They, like stone: also rarely change \
-	and tend to shun the modernization of the world around them. \
-	Instead, a Dwarf looks to his ancestorial heritage for guidance on \
-	the various challenges they face. Even if, in some irony: this behaviour \
-	leads the race towards technological advacement as they continue \
-	to improve their craft through powerful mechanization and forging \
-	Dwarves are hearty, but are not known for their speed or eyesight..."
+	is stubborn and ancient, much like their Patron founder the Saint Malum \
+	during the time of the weeping god. They, like stone: also rarely change \
+	and are stubborn to a fault. \
+	A Dwarf tends to his ancestorial heritage for posterity and guidance on \
+	the various challenges their people will face. Even if, in some irony: this behaviour \
+	leads the race towards technological innovation as they continue \
+	to improve their craft through powerful mechanization and forging. \
+	While also impeding their civilizational growth beyond Grimorias mountain ranges due to \
+	constant infighting regarding 'true' doctrines, traditions, customs. \
+	Dwarves are hearty, stout and prone to severe mood swings, but are not known for their speed or eyesight..."
+
+	skin_tone_wording = "Ore Attunement"
+
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,YOUNGBEARD,STUBBLE,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
@@ -64,14 +69,14 @@
 
 /datum/species/dwarf/mountain/get_skin_list()
 	return sortList(list(
-	"skin1" = "ffe0d1",
-	"skin2" = "fcccb3",
-	"skin3" = "edc6b3",
-	"skin4" = "e2b9a3",
-	"skin5" = "d9a284",
-	"skin6" = "c69b83",
-	"skin7" = "3b2e27",
-	"skin8" = "271f1a"
+		"Platinum" = SKIN_COLOR_PLATINUM,
+		"Aurum" = SKIN_COLOR_AURUM,
+		"Quicksilver" = SKIN_COLOR_QUICKSILVER,
+		"Brass" = SKIN_COLOR_BRASS,
+		"Iron" = SKIN_COLOR_IRON,
+		"Malachite" = SKIN_COLOR_MALACHITE,
+		"Obsidian" = SKIN_COLOR_OBSIDIAN,
+		"Brimstone" = SKIN_COLOR_BRIMSTONE,
 	))
 
 /datum/species/dwarf/mountain/get_hairc_list()

@@ -387,6 +387,9 @@
 	return !density
 	..()
 
+/obj/structure/bars/bent
+	icon_state = "barsbent"
+
 /obj/structure/bars/chainlink
 	icon_state = "chainlink"
 
@@ -410,7 +413,7 @@
 /obj/structure/bars/passage
 	icon_state = "passage0"
 	density = TRUE
-	max_integrity = 1500
+	max_integrity = 2000
 
 /obj/structure/bars/passage/redstone_triggered()
 	if(obj_broken)

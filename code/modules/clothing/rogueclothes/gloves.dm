@@ -127,14 +127,19 @@
 	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 
 /obj/item/clothing/gloves/roguetown/rare/elfplate
-	name = "elvish plate gauntlets"
-	desc = "Plate gauntlets of mystic elven alloy, lightweight yet incredibly protective. Typically worn by elite bladesingers."
+	name = "dark elf plate gauntlets"
+	desc = "Plate gauntlets of mystic dark elven alloy, lightweight yet incredibly protective. Typically worn by elite bladesingers."
 	item_state = "elfhand"
 	icon_state = "elfhand"
 	allowed_race = list("elf", "half-elf", "dark elf")
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
+
+/obj/item/clothing/gloves/roguetown/rare/elfplate/welfplate
+	name = "elvish plate gauntlets"
+	item_state = "welfhand"
+	icon_state = "welfhand"
 
 /obj/item/clothing/gloves/roguetown/rare/dwarfplate
 	name = "dwarvish plate gauntlets"
