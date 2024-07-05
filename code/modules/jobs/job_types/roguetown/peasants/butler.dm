@@ -20,7 +20,7 @@
 	tutorial = "Servitude unto death, your blade a charcuterie of artisanal cheeses and meat, your armor wit and classical training. You dont consider yourself a slave, if anything youre a part of the family now. You alone have raised Kings, Queens, Princesses and Princees; without you the royals would have all starved to death."
 	outfit = /datum/outfit/job/roguetown/butler
 	display_order = JDO_BUTLER
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 	give_bank_account = 5
 
 /datum/outfit/job/roguetown/butler/pre_equip(mob/living/carbon/human/H)

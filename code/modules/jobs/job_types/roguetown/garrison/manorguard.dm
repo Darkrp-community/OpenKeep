@@ -18,7 +18,7 @@
 	tutorial = "You're an elite member of the Garrison, awarded with knighthood for your prowess and loyalty. Be a stalwart guardian for the royal family, and serve them until your dying breath."
 	display_order = JDO_ROYALGUARD
 	whitelist_req = FALSE
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 
 	outfit = /datum/outfit/job/roguetown/royalguard
 	give_bank_account = 30

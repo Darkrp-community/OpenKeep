@@ -21,7 +21,7 @@
 
 	outfit = /datum/outfit/job/roguetown/mason
 	display_order = JDO_MASON
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 	give_bank_account = 8
 
 /datum/outfit/job/roguetown/mason/pre_equip(mob/living/carbon/human/H)

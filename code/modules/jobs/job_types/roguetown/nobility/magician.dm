@@ -22,7 +22,7 @@
 	only wisdom and arcane knowledge amassed during a long life will allow a mage to unlock their full potential."
 	outfit = /datum/outfit/job/roguetown/magician
 	whitelist_req = FALSE
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 	give_bank_account = 120
 	min_pq = 0
 

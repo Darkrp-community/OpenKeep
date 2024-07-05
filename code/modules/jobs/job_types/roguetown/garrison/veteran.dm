@@ -20,7 +20,7 @@
 	allowed_ages = list(AGE_OLD)
 	display_order = JDO_VET
 	whitelist_req = FALSE
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 	selection_color = "#920909"
 
 	outfit = /datum/outfit/job/roguetown/veteran

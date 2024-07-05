@@ -17,7 +17,7 @@
 	tutorial = "You are an Archer in the Kings garrison and are used as a scout, or to man the walls and shoot at invaders."
 	display_order = JDO_GARRISONARCHER
 	whitelist_req = FALSE
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 
 	outfit = /datum/outfit/job/roguetown/watchman
 	give_bank_account = 30

@@ -20,7 +20,7 @@
 	outfit = /datum/outfit/job/roguetown/undertaker
 	display_order = JDO_GRAVEMAN
 	give_bank_account = 34
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 
 /datum/outfit/job/roguetown/undertaker/pre_equip(mob/living/carbon/human/H)
 	..()

@@ -19,7 +19,7 @@
 	outfit = /datum/outfit/job/roguetown/alchemist
 	display_order = 6
 	give_bank_account = 12
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 
 /datum/outfit/job/roguetown/alchemist
 	name = "Alchemist"

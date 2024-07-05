@@ -23,7 +23,7 @@
 	display_order = JDO_PRISONER
 	give_bank_account = 173
 	can_random = FALSE
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 
 /datum/outfit/job/roguetown/prisoner/pre_equip(mob/living/carbon/human/H)
 	..()

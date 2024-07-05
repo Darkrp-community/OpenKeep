@@ -18,7 +18,7 @@
 	tutorial = "You are a soldier on guard duty in the kings Garrison, you have been trained in defensive tactics to deal with the horrors of the island and protect the town to the best of your ability."
 	display_order = JDO_GARRISONGUARD
 	whitelist_req = FALSE
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 
 	outfit = /datum/outfit/job/roguetown/guardsman
 	give_bank_account = 30

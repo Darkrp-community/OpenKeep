@@ -21,7 +21,7 @@
 	outfit = /datum/outfit/job/roguetown/wapprentice
 	display_order = JDO_WAPP
 	give_bank_account = 10
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 	min_pq = 0
 
 /datum/outfit/job/roguetown/wapprentice/pre_equip(mob/living/carbon/human/H)

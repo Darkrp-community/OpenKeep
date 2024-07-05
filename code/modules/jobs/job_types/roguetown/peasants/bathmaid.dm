@@ -22,7 +22,7 @@
 	display_order = JDO_NITEMAIDEN
 	give_bank_account = TRUE
 	can_random = FALSE
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 
 /datum/outfit/job/roguetown/nitemaiden/pre_equip(mob/living/carbon/human/H)
 	..()

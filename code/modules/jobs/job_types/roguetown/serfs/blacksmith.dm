@@ -12,7 +12,7 @@
 
 	outfit = /datum/outfit/job/roguetown/armorsmith
 	display_order = JDO_ARMORER
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 	give_bank_account = 11
 
 /datum/outfit/job/roguetown/armorsmith/pre_equip(mob/living/carbon/human/H)

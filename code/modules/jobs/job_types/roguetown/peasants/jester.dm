@@ -25,7 +25,7 @@
 	spells = list(/obj/effect/proc_holder/spell/self/telljoke,/obj/effect/proc_holder/spell/self/telltragedy)
 	outfit = /datum/outfit/job/roguetown/jester
 	display_order = JDO_JESTER
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 	give_bank_account = TRUE
 
 /datum/outfit/job/roguetown/jester/pre_equip(mob/living/carbon/human/H)

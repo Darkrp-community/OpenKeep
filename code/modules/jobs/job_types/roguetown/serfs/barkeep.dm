@@ -20,7 +20,7 @@
 
 	outfit = /datum/outfit/job/roguetown/barkeep
 	display_order = JDO_BARKEEP
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 	give_bank_account = 43
 
 /datum/outfit/job/roguetown/barkeep/pre_equip(mob/living/carbon/human/H)

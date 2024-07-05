@@ -18,7 +18,7 @@
 	outfit = /datum/outfit/job/roguetown/prince
 	display_order = JDO_PRINCE
 	give_bank_account = TRUE
-	bypass_lastclass = TRUE
+	bypass_lastclass = FALSE
 
 /datum/outfit/job/roguetown/prince/pre_equip(mob/living/carbon/human/H)
 	..()
