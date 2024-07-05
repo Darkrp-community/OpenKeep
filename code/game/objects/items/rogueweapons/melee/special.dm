@@ -55,6 +55,7 @@
 		return
 
 	user.changeNext_move(CLICK_CD_MELEE)
+	user.visible_message(span_warning("[user] points [src] at [target]."))
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/HU = user
