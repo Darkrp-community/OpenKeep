@@ -212,8 +212,32 @@
 
 //	if(user.pulling != src)
 //		return
+	var/wrestling_victim = 1
+	var/wrestling_attacker = 1
+	var/resist_chance = 50
 
-	var/probby =  20 - ((user.STACON - STACON) * 10)
+	wrestling_victim += (STACON - 10)
+
+	if(mind)
+		wrestling_victim += (mind.get_skill_level(/datum/skill/combat/wrestling))*2
+		
+	if(user.mind)
+		wrestling_attacker += (user.mind.get_skill_level(/datum/skill/combat/wrestling))*2
+		wrestling_attacker += (user.STACON - 10)
+
+
+	if(!(mobility_flags & MOBILITY_STAND))
+		wrestling_victim -= 2
+	
+	wrestling_attacker = max(wrestling_attacker,1)
+	wrestling_victim = max(wrestling_victim,1)
+
+	resist_chance = (wrestling_victim)/(wrestling_victim + wrestling_attacker)*100
+
+	if(resist_chance <= 0)
+		resist_chance = 5
+
+	var/probby =  resist_chance
 	if(src.pulling == user && !instant)
 		probby += 30
 
