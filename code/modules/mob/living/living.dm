@@ -1862,44 +1862,41 @@
 	I.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	flick_overlay(I, list(C), 30)
 
-/mob/proc/look_up()
+/mob/proc/look_up(var/step)
 	return
 
-/mob/living/look_up()
-	if(client.perspective != MOB_PERSPECTIVE) //We are already looking up.
-		stop_looking()
-		return
-	if(client.pixel_x || client.pixel_y)
-		stop_looking()
-		return
+/mob/living/look_up(var/step)
 	if(!can_look_up())
 		return
 	changeNext_move(CLICK_CD_MELEE)
 	if(m_intent != MOVE_INTENT_SNEAK)
 		visible_message("<span class='info'>[src] looks up.</span>")
-	var/turf/ceiling = get_step_multiz(src, UP)
 	var/turf/T = get_turf(src)
-	if(!ceiling) //We are at the highest z-level.
-		if(T.can_see_sky())
-			switch(GLOB.forecast)
-				if("prerain")
-					to_chat(src, "<span class='warning'>Dark clouds gather...</span>")
-					return
-				if("rain")
-					to_chat(src, "<span class='warning'>A wet wind blows.</span>")
-					return
-				if("rainbow")
-					to_chat(src, "<span class='notice'>A beautiful rainbow!</span>")
-					return
-				if("fog")
-					to_chat(src, "<span class='warning'>I can't see anything, the fog has set in.</span>")
-					return
-			to_chat(src, "<span class='warning'>There is nothing special to say about this weather.</span>")
-			do_time_change()
-		return
-	else if(!istransparentturf(ceiling)) //There is no turf we can look through above us
-		to_chat(src, "<span class='warning'>A ceiling above my head.</span>")
-		return
+	var/turf/ceiling = T
+	for(var/i=0,i<step, ++i)
+		ceiling = get_step_multiz(ceiling, UP)
+		
+		if(!ceiling) //We are at the highest z-level.
+			if(T.can_see_sky())
+				switch(GLOB.forecast)
+					if("prerain")
+						to_chat(src, "<span class='warning'>Dark clouds gather...</span>")
+						return
+					if("rain")
+						to_chat(src, "<span class='warning'>A wet wind blows.</span>")
+						return
+					if("rainbow")
+						to_chat(src, "<span class='notice'>A beautiful rainbow!</span>")
+						return
+					if("fog")
+						to_chat(src, "<span class='warning'>I can't see anything, the fog has set in.</span>")
+						return
+				to_chat(src, "<span class='warning'>There is nothing special to say about this weather.</span>")
+				do_time_change()
+			return
+		else if(!istransparentturf(ceiling)) //There is no turf we can look through above us
+			to_chat(src, "<span class='warning'>A ceiling above my head.</span>")
+			return
 
 	if(T.can_see_sky())
 		do_time_change()

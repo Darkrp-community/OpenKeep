@@ -831,7 +831,8 @@
 	if(modifiers["middle"])
 		if(isliving(hud.mymob))
 			var/mob/living/L = hud.mymob
-			L.look_up()
+			var/turf/temp = get_turf(hud.mymob.client.eye)
+			L.look_up((temp.z-hud.mymob.client.mob.z) + 1)
 	update_icon()
 
 	if(modifiers["right"])
@@ -928,7 +929,8 @@
 	if(isliving(usr))
 		var/mob/living/L = usr
 		if(paramslist["right"])
-			L.look_up()
+			var/turf/temp = get_turf(hud.mymob.client.eye)
+			L.look_up((temp.z-hud.mymob.z) + 1)
 		else
 			L.stand_up()
 

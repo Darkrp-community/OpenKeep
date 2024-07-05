@@ -249,7 +249,8 @@
 /datum/keybinding/living/lookup/down(client/user)
 	var/mob/living/L = user.mob
 	if(!lastrest || world.time > lastrest + 15)
-		L.look_up()
+		var/turf/temp = get_turf(user.eye)
+		L.look_up((temp.z-user.mob.z) + 1)
 		lastrest = world.time
 		return TRUE
 	else
