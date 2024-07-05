@@ -144,7 +144,10 @@ GLOBAL_LIST_INIT(chern_positions, list(
 	"Armorer",
 	"Weaponsmith",
 	"Tailor",
+	"Grabber",
 	"Mason",
+	"Niteman",
+	"Nitemaiden",
 	"Scribe"
 ))
 
