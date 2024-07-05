@@ -58,6 +58,8 @@
 							if(mind)
 								if(!mind.antag_datums || !mind.antag_datums.len)
 									allmig_reward++
+									if(mind.assigned_role in GLOB.chern_positions)
+										allmig_reward++
 									to_chat(src, "<span class='danger'>Nights Survived: \Roman[allmig_reward]</span>")
 									if(C.allmig)
 										if(allmig_reward > 3)

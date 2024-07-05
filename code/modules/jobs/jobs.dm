@@ -126,6 +126,28 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Death Knight"
 ))
 
+GLOBAL_LIST_INIT(chern_positions, list(
+	"Soilson",
+	"Butcher",
+	"Cook",
+	"Gravedigger",
+	"Jester",
+	"Miner",
+	"Hunter",
+	"Fisher",
+	"Lumberjack",
+	"Butler",
+	"Towner",
+	"Prisoner",
+	"Beggar",
+	"Barkeep",
+	"Armorer",
+	"Weaponsmith",
+	"Tailor",
+	"Mason",
+	"Scribe"
+))
+
 GLOBAL_LIST_INIT(apprentices_positions, list(
 	"Squire",
 	"Smithy Apprentice",
