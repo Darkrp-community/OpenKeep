@@ -583,7 +583,88 @@ GLOBAL_LIST_EMPTY(ritualslist)
 					HL.playsound_local(src, pick('sound/misc/jumphumans (1).ogg','sound/misc/jumphumans (2).ogg','sound/misc/jumphumans (3).ogg'), 100)
 					HL.forceMove(C)
 					qdel(P)
-					
+
+/datum/ritual/falseappearance
+	name = "Falsified Appearance"
+	circle = "Servantry"
+	center_requirement = /mob/living/carbon/human
+
+	n_req = /obj/item/bodypart/head
+	s_req = /obj/item/shard
+	e_req = /obj/item/shard
+	w_req = /obj/item/shard
+
+	function = /proc/falseappearance
+
+/proc/falseappearance(var/mob/user, var/turf/C)
+	for(var/mob/living/carbon/human/H in C.contents)
+		var/datum/preferences/A = new()//Randomize appearance for the guy
+		var/first_names = GLOB.first_names
+		if(H.gender == FEMALE)
+			first_names = GLOB.first_names_female
+		else
+			first_names = GLOB.first_names_male
+		A.real_name = "[pick(first_names)]"
+		A.copy_to(H)
+		H.dna.update_dna_identity()
+		break
+
+/datum/ritual/pactofunity
+	name = "Pact of Unity"
+	circle = "Servantry"
+	center_requirement = /obj/item/paper
+	
+	n_req = /obj/item/organ/eyes
+
+	function = /proc/pactofunity
+
+/obj/item/pactofunity // Not paper because I don't fuck with that.
+	name = "pact of unity"
+	desc = "Write down your name and about your fiendish ways."
+	icon = 'icons/roguetown/items/misc.dmi'
+	icon_state = "confession"
+	var/mob/living/carbon/human/signed
+
+/obj/item/pactofunity/examine(mob/user)
+	. = ..()
+	if(signed)
+		to_chat(user, "It is bound to [signed.real_name].")
+
+/obj/item/pactofunity/attack_self(mob/user)
+	. = ..()
+	var/alert = alert(user, "Rip up the pact of unity?", "ROGUETOWN", "RIP", "Cancel")
+	if(alert == "RIP")
+		user.playsound_local(user, 'sound/foley/cloth_rip.ogg', 50)
+		to_chat(signed.mind, "<span class='userdanger'>I FAILED! MY LIFE DWINDLES!</span>")
+		sleep(2 MINUTES)
+		if(istype(signed.wear_neck, /obj/item/clothing/neck/roguetown/psicross))
+			return
+		signed.dust(drop_items=TRUE)
+
+/obj/item/pactofunity/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+	if(signed)
+		return ..()
+	if(!H.get_bleed_rate())
+		to_chat(user, "<span class='warning'>No. They must be bleeding.</span>")
+		return
+	if(!H.stat)
+		to_chat(user, "<span class='info'>I courteously offer \the [src] to [H].</span>")
+		if(alert(H, "Sign the pact with your blood?", "ROGUETOWN", "Yes", "No") != "Yes")
+			return
+		if(H.stat)
+			return
+		if(signed)
+			return
+		to_chat(H, "<span class='info'>I signed the paper, hopefully I won't regret this.</span>")
+		signed = H
+
+/proc/pactofunity(var/mob/user, var/turf/C)
+	new /obj/item/pactofunity(C)
+	to_chat(user.mind, "<span class='notice'>The Pact of Unity. When a person willingly signs their name on this they become my pawn. When I rip up the paper their soul is good as dead.</span>")
+
 // TRANSMUTATION
 
 /datum/ritual/allseeingeye
@@ -619,6 +700,60 @@ GLOBAL_LIST_EMPTY(ritualslist)
 /proc/propaganda(var/mob/user, var/turf/C)
 	new /obj/item/natural/worms/leech/propaganda(C)
 	to_chat(user.mind, "<span class='notice'>A leech to make their minds wrangled. They'll be in bad spirits.</span>")
+
+/datum/ritual/falseidol
+	name = "False Idol"
+	circle = "Transmutation"
+	center_requirement = /mob/living/carbon/human
+	w_req = /obj/item/paper
+	s_req = /obj/item/natural/feather
+	
+	function = /proc/falseidol
+
+/obj/effect/dummy/falseidol
+	name = "false idol"
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "static"
+	desc = "Through lies interwine from blood into truth."
+
+/obj/effect/dummy/falseidol/Crossed(atom/movable/AM, oldloc)
+	. = ..()
+	qdel(src)
+
+/proc/falseidol(var/mob/user, var/turf/C)
+	for(var/mob/living/carbon/human/H in C.contents)
+		var/obj/effect/dummy/falseidol/idol = new(C)
+		var/datum/icon_snapshot/entry = new
+		entry.name = H.name
+		entry.icon = H.icon
+		entry.icon_state = H.icon_state
+		entry.overlays = H.get_overlays_copy(list(HANDS_LAYER))	//ugh
+		sleep(10)
+		idol.name = entry.name
+		idol.icon = entry.icon
+		idol.icon_state = entry.icon_state
+		idol.add_overlay(entry.overlays)
+		break
+
+/datum/ritual/invademind
+	name = "Invade Mind"
+	circle = "Transmutation"
+	center_requirement = /obj/item/natural/feather
+	
+	function = /proc/invademind
+
+/proc/invademind(var/mob/user, var/turf/C)
+	for(var/obj/item/paper/P in C.contents)
+		var/info = ""
+		info = sanitize(P.info)
+		var/input = stripped_input(user, "To whom do we send this message?", "ROGUETOWN")
+		if(!input)
+			return
+		for(var/mob/living/carbon/human/HL in GLOB.human_list)
+			if(HL.real_name == input)
+				qdel(P)
+				to_chat(M, "<i>You hear a voice in your head... <b>[info]</i></b>")
+	break
 
 // FLESH CRAFTING
 
