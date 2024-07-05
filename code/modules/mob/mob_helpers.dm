@@ -87,8 +87,8 @@
 	n = length(n)
 
 	for(var/p = 1 to min(n,MAX_BROADCAST_LEN))
-		if ((copytext(te, p, p + 1) == " " || prob(pr)))
-			t = text("[][]", t, copytext(te, p, p + 1))
+		if ((copytext_char(te, p, p + 1) == " " || prob(pr)))
+			t = text("[][]", t, copytext_char(te, p, p + 1))
 		else
 			t = text("[]*", t)
 	if(n > MAX_BROADCAST_LEN)

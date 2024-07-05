@@ -273,9 +273,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(eavesdropping_modes[message_mode])
 		eavesdrop_range = EAVESDROP_EXTRA_RANGE
 	if(message_mode != MODE_WHISPER)
+		Zs_too = TRUE
 		if(say_test(message) == "2")	//CIT CHANGE - ditto
 			message_range += 10
-			Zs_too = TRUE
 	var/list/listening = get_hearers_in_view(message_range+eavesdrop_range, source)
 	var/list/the_dead = list()
 //	var/list/yellareas	//CIT CHANGE - adds the ability for yelling to penetrate walls and echo throughout areas
