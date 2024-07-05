@@ -33,7 +33,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 /datum/antagonist/zizocultist/on_gain()
 	. = ..()
-	var/datum/game_mode/C = SSticker.mode
+	var/datum/game_mode/chaosmode/C = SSticker.mode
 	var/mob/living/carbon/human/H = owner.current
 	C.cultists |= owner
 	H.patron = GLOB.patronlist[/datum/patron/inhumen/zizo]
@@ -84,11 +84,21 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	team_explanation_text = "Ensure that I ascend."
 	triumph_count = 5
 
+/datum/objective/zizo/check_completion()
+	var/datum/game_mode/chaosmode/C = SSticker.mode
+	if(C.cultascended)
+		return TRUE
+
 /datum/objective/zizoserve
 	name = "Serve your Leader"
 	explanation_text = "Serve your leader and ensure that they ascend."
 	team_explanation_text = "Serve your leader and ensure that they ascend."
 	triumph_count = 3
+
+/datum/objective/zizoserve/check_completion()
+	var/datum/game_mode/chaosmode/C = SSticker.mode
+	if(C.cultascended)
+		return TRUE
 
 /datum/antagonist/zizocultist/proc/add_objective(datum/objective/O)
 	var/datum/objective/V = new O
@@ -451,7 +461,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				to_chat(user.mind, "<span class='danger'>\"The veil is too strong to support more than three lackeys.\"</span>")
 				return
 			var/datum/antagonist/zizocultist/PR = user.mind.has_antag_datum(/datum/antagonist/zizocultist)
-			var/alert = alert(user, "YOU WILL BE SHOWN THE TRUTH. DO YOU YIELD?", "ROGUETOWN", "Yield", "Resist")
+			var/alert = alert(user, "YOU WILL BE SHOWN THE TRUTH. DO YOU RESIST? (Resisting: 1 TRI)", "ROGUETOWN", "Yield", "Resist")
 			H.anchored = TRUE
 			if(alert == "Yield")
 				to_chat(H.mind, "<span class='notice'>I see the truth now! It all makes so much sense! They aren't HERETICS! They want the BEST FOR US!</span>")
@@ -459,6 +469,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				H.praise()
 				H.anchored = FALSE
 			else
+				H.adjust_triumphs(-1)
 				H.visible_message("<span class='danger'>\The [H] thrashes around, unyielding!</span>")
 				to_chat(H.mind, "<span class='danger'>\"Yield.\"</span>")
 				if(H.electrocute_act(10, src))
@@ -703,3 +714,30 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	center_requirement = /mob/living/carbon/human // cult leader
 
 	n_req = /mob/living/carbon/human // the ruler
+	s_req = /mob/living/carbon/human // virgin
+	
+	function = /proc/ascend
+
+/proc/ascend(var/mob/user, var/turf/C)
+	var/datum/game_mode/chaosmode/CM = SSticker.mode
+
+	for(var/mob/living/carbon/human/H in C.contents)
+		if(!iszizocultist(H))
+			return
+		for(var/mob/living/carbon/human/RULER in get_step(src, NORTH))
+			if(!RULER == SSticker.rulermob && RULER.stat == DEAD)
+				return
+			RULER.gib()
+		for(var/mob/living/carbon/human/VIRGIN in get_step(src, SOUTH))
+			if(!VIRGIN.virginity && VIRGIN.stat == DEAD)
+				return
+			VIRGIN.gib()
+		CM.cultascended = TRUE
+		addomen("ascend")
+		to_chat(user.mind, "<span class='userdanger'>I HAVE DONE IT! I HAVE REACHED A HIGHER FORM! SOON THERE WILL BE NO GODS. ONLY MASTERS!</span>")
+		var/mob/living/trl = new /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended(C)
+		trl.ckey = H.ckey
+		H.gib()
+		to_chat(world, "\n<font color='purple'>15 minutes remain.</font>")
+		CM.roundvoteend = TRUE
+		break

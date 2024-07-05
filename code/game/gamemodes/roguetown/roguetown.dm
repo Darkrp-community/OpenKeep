@@ -21,7 +21,6 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 
 	var/list/allantags = list()
 
-	var/datum/team/roguecultists
 // DEBUG
 	var/list/forcedmodes = list()
 	var/mob/living/carbon/human/vlord = null
@@ -45,6 +44,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	var/kingsubmit = FALSE
 	var/deathknightspawn = FALSE
 	var/ascended = FALSE
+	var/cultascended = FALSE
 	var/list/datum/mind/deathknights = list()
 
 /datum/game_mode/chaosmode/proc/reset_skeletons()

@@ -110,7 +110,7 @@
 		to_chat(src, "<span class='warning'>Too late...</span>")
 		return
 	if(responsey == "Yes")
-		adjust_triumphs(0)
+		adjust_triumphs(-1)
 		confess_sins(TRUE)
 	else
 		confess_sins()

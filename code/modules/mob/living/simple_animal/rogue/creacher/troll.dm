@@ -47,16 +47,42 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood
 	name = "FLESH HOMUNCULUS"
-	icon_state = "Flesh"
-	icon_living = "Flesh"
+	hud_type = /datum/hud/human
+	icon_state = "imp"
+	icon_living = "imp"
+	icon = 'icons/mob/mob.dmi'
 	STACON = 10
 	STASTR = 19
 	STASPD = 1
 	STAEND = 11
 
+/mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended
+	name = "???"
+	hud_type = /datum/hud/human
+	icon_state = "shadowling_ascended"
+	icon_living = "shadowling_ascended"
+	base_intents = list(/datum/intent/unarmed/ascendedclaw)
+	melee_damage_lower = 250
+	melee_damage_upper = 550
+	health = 1000
+	maxHealth = 1000
+	STACON = 66
+	STASTR = 66
+	STASPD = 66
+	STAEND = 66
+
+/mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/examine(mob/user)
+	. = ..()
+	. += "<span class='narsiesmall'>It is impossible to comprehend such a thing.</span>"
+
+/mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/Initialize()
+	. = ..()
+	set_light(5,5, LIGHT_COLOR_RED)
+
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/death(gibbed)
 	. = ..()
 	gib()
+	qdel(src)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/death(gibbed)
 	..()
