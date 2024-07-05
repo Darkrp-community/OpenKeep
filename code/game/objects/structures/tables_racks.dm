@@ -384,7 +384,7 @@
     icon_state = "tablewood"
 
 /obj/structure/table/wood/reinforced_alt
-    icon_state = "tablewood_alt2"
+    icon_state = "tablewood_alt"
 
 /obj/structure/table/wood/large
     icon_state = "largetable_mid"
