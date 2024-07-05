@@ -151,7 +151,7 @@
 	sleevetype = null
 
 /obj/item/clothing/shoes/roguetown/boots/rare/elfplate
-	name = "elvish plated boots"
+	name = "dark elf plated boots"
 	desc = ""
 	body_parts_covered = FEET
 	icon_state = "elfshoes"
@@ -161,6 +161,11 @@
 	color = null
 	blocksound = PLATEHIT
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/shoes/roguetown/boots/rare/elfplate/welfplate
+	name = "elvish plated boots"
+	icon_state = "welfshoes"
+	item_state = "welfshoes"
 
 /obj/item/clothing/shoes/roguetown/boots/rare/dwarfplate
 	name = "dwarvish plated boots"
