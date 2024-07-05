@@ -581,8 +581,8 @@
 		add_overlay(mutable_appearance(icon, "[over_state]", ABOVE_MOB_LAYER))
 	..()
 
-/obj/structure/mineral_door/wood/blue
-	icon_state = "wcb"
+/obj/structure/mineral_door/wood/green
+	icon_state = "wcg"
 /obj/structure/mineral_door/wood/red
 	icon_state = "wcr"
 /obj/structure/mineral_door/wood/violet
@@ -758,11 +758,6 @@
 	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
 	ridethrough = TRUE
 	swing_closed = FALSE
-
-/obj/structure/mineral_door/barsold
-	name = "iron door"
-	desc = ""
-	icon_state = "barsold"
 
 /obj/structure/mineral_door/bars/Initialize()
 	..()
