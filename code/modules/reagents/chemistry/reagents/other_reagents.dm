@@ -155,8 +155,9 @@
 	color = "#98934bc6"
 
 /datum/reagent/water/gross/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(1)
-	M.add_nausea(50)
+	if(!HAS_TRAIT(M, TRAIT_NOSTINK))
+		M.adjustToxLoss(1)
+		M.add_nausea(50)
 	..()
 
 /*

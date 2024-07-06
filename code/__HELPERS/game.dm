@@ -240,29 +240,23 @@
 
 /proc/get_hearers_in_view(R, atom/source)
 	// Returns a list of hearers in view(R) from source (ignoring luminosity). Used in saycode.
-	var/turf/here = get_turf(source)
-	var/turf/above = get_step_multiz(source, UP)
-	var/turf/below = get_step_multiz(source, DOWN)
+	var/turf/T = get_turf(source)
 	. = list()
-	var/list/processing_list = list()
-	var/list/turfs_list = list()
-	turfs_list |= here
-	turfs_list |= above
-	turfs_list |= below
-	for(var/turf/T in turfs_list)
-		if(!T)
-			continue
 
-		if (R == 0) // if the range is zero, we know exactly where to look for, we can skip view
-			processing_list += T.contents // We can shave off one iteration by assuming turfs cannot hear
-		else  // A variation of get_hear inlined here to take advantage of the compiler's fastpath for obj/mob in view
-			var/lum = T.luminosity
-			T.luminosity = 6 // This is the maximum luminosity
-			for(var/mob/M in view(R, T))
-				processing_list += M
-			for(var/obj/O in view(R, T))
-				processing_list += O
-			T.luminosity = lum	
+	if(!T)
+		return
+
+	var/list/processing_list = list()
+	if (R == 0) // if the range is zero, we know exactly where to look for, we can skip view
+		processing_list += T.contents // We can shave off one iteration by assuming turfs cannot hear
+	else  // A variation of get_hear inlined here to take advantage of the compiler's fastpath for obj/mob in view
+		var/lum = T.luminosity
+		T.luminosity = 6 // This is the maximum luminosity
+		for(var/mob/M in view(R, T))
+			processing_list += M
+		for(var/obj/O in view(R, T))
+			processing_list += O
+		T.luminosity = lum
 
 	while(processing_list.len) // recursive_hear_check inlined here
 		var/atom/A = processing_list[1]
