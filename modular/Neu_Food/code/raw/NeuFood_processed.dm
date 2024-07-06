@@ -224,13 +224,13 @@
 /obj/item/reagent_containers/food/snacks/fat/salo
 	name = "salo"
 	icon_state = "suet4"
-	eat_effect = null
 	list_reagents = list(/datum/reagent/consumable/nutriment = 12)
 	bitesize = 4
 	slice_path = /obj/item/reagent_containers/food/snacks/fat/salo/slice
 	slices_num = 4
 	slice_batch = FALSE
-	rotprocess = null
+	slice_sound = TRUE 
+	eat_effect = null
 
 /obj/item/reagent_containers/food/snacks/fat/salo/update_icon()
 	if(slices_num)
@@ -251,9 +251,9 @@
 /obj/item/reagent_containers/food/snacks/fat/salo/slice
 	name = "salo"
 	icon_state = "suetslice"
-	eat_effect = null
 	bitesize = 2
-	slice_path = /obj/item/reagent_containers/food/snacks/fat/salo/slice
+	slices_num = FALSE
+	slice_path = FALSE
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 
 
