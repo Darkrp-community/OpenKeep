@@ -69,7 +69,7 @@
 /datum/crafting_recipe/roguetown/candle
 	name = "candle"
 	result = /obj/item/candle/yellow
-	reqs = list(/obj/item/reagent_containers/food/snacks/fat = 2)
+	reqs = list(/obj/item/reagent_containers/food/snacks/fat = 1)
 
 /datum/crafting_recipe/roguetown/stoneaxe
 	name = "stone axe"
