@@ -385,9 +385,8 @@
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "leather vest"
 	desc = "A leather vest with no sleeves, won't really protect much but it's at least padded enough to be an armor."
-	icon_state = "vest"
-	item_state = "vest"
-	color = "#514339"
+	icon_state = "leathervest"
+	item_state = "leathervest"
 	prevent_crits = list(BCLASS_CUT)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
