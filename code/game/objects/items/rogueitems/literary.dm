@@ -35,7 +35,7 @@
 	icon_state = "book5_1"
 	minskill = 4
 	maxskill = 5
-	exppercycle = 30
+	exppercycle = 50
 
 /obj/item/literary/attack_self(mob/user)
 	. = ..()
