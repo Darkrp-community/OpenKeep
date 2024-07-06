@@ -28,16 +28,6 @@
 	cost = 20
 	contains = /obj/item/clothing/neck/roguetown/psicross
 
-/datum/supply_pack/rogue/apparel/cross/silver
-	name = "Silver Psycross"
-	cost = 60
-	contains = /obj/item/clothing/neck/roguetown/psicross/silver
-
-/datum/supply_pack/rogue/apparel/cross/gold
-	name = "Golden Psycross"
-	cost = 120
-	contains = /obj/item/clothing/neck/roguetown/psicross/g
-
 /datum/supply_pack/rogue/apparel/belt
 	name = "Leather Belt"
 	cost = 5
