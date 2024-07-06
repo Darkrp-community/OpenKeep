@@ -21,7 +21,7 @@
 	icon_state = "book3_1"
 	minskill = 2
 	maxskill = 3
-	exppercycle = 13
+	exppercycle = 25
 
 /obj/item/literary/expert
 	name = "expert's guide to literature"
