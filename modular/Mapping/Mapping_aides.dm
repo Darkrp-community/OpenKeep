@@ -12,7 +12,7 @@
 		/obj/item/rogueweapon/huntingknife/idagger/silver = 2,
 		/obj/item/rogueweapon/sword/iron = 3,
 		/obj/item/rogueweapon/woodcut = 10,
-		/datum/anvil_recipe/weapons/mace = 5,
+		/obj/item/rogueweapon/mace = 5,
 		/obj/item/quiver/arrows = 5,
 		/obj/item/rogueweapon/sword/iron/short = 5,
 		/obj/item/clothing/suit/roguetown/armor/leather = 10, 
