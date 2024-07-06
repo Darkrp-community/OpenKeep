@@ -59,8 +59,8 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended
 	name = "???"
 	hud_type = /datum/hud/human
-	icon_state = "shadowling_ascended"
-	icon_living = "shadowling_ascended"
+	icon_state = "daemon"
+	icon_living = "daemon"
 	base_intents = list(/datum/intent/unarmed/ascendedclaw)
 	melee_damage_lower = 250
 	melee_damage_upper = 550
