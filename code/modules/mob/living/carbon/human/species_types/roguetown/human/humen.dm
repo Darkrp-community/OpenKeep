@@ -5,13 +5,15 @@
 	name = "Humen"
 	id = "human"
 	desc = "<b>Humen</b><br>\
-	Humen (or Human) are the eldest of the weeping gods creation. Noted for their\
-	tenacity and overwhelming population, humans tend to outnumber the other races. \
-	at a rate of about ten to one in regions such as Grenzelhoft. Althrough to the west \
-	the opposite is true. Humen come from a vast swathe of cultures and ethnicity, most of which\
-	have historically been at odds with one another. Being the eldest of the weeping God, humen\
-	tend to find fortune easier than the other races, and are so diverse that no other racial trait\
+	Humenity is the 'perfected race' of the weeping god. Noted for their \
+	tenacity and overwhelming population, humens tend to outnumber the other races drastically. \
+	Humens come from a vast swathe of cultures and ethnicities all around Grimoria, most of which \
+	have historically been at odds with one another and other races. \
+	Humens tend to find fortune easier than the other races, and are so diverse that no other racial trait \
 	are dominant in their species..."
+
+	skin_tone_wording = "Ancestry"
+
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
@@ -48,17 +50,17 @@
 
 /datum/species/human/northern/get_skin_list()
 	return sortList(list(
-	"skin1" = "fff0e9",
-	"skin2" = "ffe0d1",
-	"skin3" = "fcccb3",
-	"skin3" = "edc6b3",
-	"skin4" = "e2b9a3",
-	"skin5" = "d9a284",
-	"skin6" = "c9a893",
-	"skin7" = "ba9882",
-	"skin8" = "ac8369",
-	"skin9" = "9c6f52",
-	"skin10" = "4e3729"
+		"Ice Cap" = SKIN_COLOR_ICECAP,
+		"Arctic" = SKIN_COLOR_ARCTIC,
+		"Tundra" = SKIN_COLOR_TUNDRA,
+		"Continental" = SKIN_COLOR_CONTINENTAL,
+		"Temperate" = SKIN_COLOR_TEMPERATE,
+		"Coastal" = SKIN_COLOR_COASTAL,
+		"Subtropical" = SKIN_COLOR_SUBTROPICAL,
+		"Tropical Dry" = SKIN_COLOR_TROPICALDRY,
+		"Tropical Wet" = SKIN_COLOR_TROPICALWET,
+		"Desert" = SKIN_COLOR_DESERT,
+		"Crimson Lands" = SKIN_COLOR_CRIMSONLANDS,
 	))
 
 /datum/species/human/northern/get_hairc_list()
