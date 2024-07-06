@@ -490,8 +490,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	for(var/mob/living/carbon/human/H in C.contents)
 		if(H == user)
 			return
-		if(iszizocultist(H) || iszizolackey(H))
-			to_chat(H.mind, "<span class='danger'>\"I'm not gonna let my follower become a mindless brute.\"</span>")
+		if(iszizocultist(H))
+			to_chat(H.mind, "<span class='danger'>\"I'm not gonna let my strongest follower become a mindless brute.\"</span>")
 			return
 		if(H.mind)
 			H.mind.special_role = "Cult Summon"
