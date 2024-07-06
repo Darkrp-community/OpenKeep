@@ -359,7 +359,7 @@
 	if(!reagents.has_reagent(/datum/reagent/consumable/milk, 5))
 		to_chat(user, "<span class='warning'>The udder is dry. Wait a bit longer...</span>")
 		return
-	playsound(O, pick('modular/Trufflepig/sound/milking1.ogg', 'modular/Trufflepig/sound/milking2.ogg'), 100, TRUE, -1)
+	playsound(O, pick('modular/Creechers/sound/milking1.ogg', 'modular/Creechers/sound/milking2.ogg'), 100, TRUE, -1)
 	if(do_after(user, 20, target = src))
 		reagents.trans_to(O, rand(5,10))
 		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>", "<span class='notice'>I milk [src] using \the [O].</span>")
