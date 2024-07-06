@@ -125,6 +125,11 @@
 	stressadd = 2
 	desc = "<span class='red'>IT'S FUCKING RAW!!</span>"
 
+/datum/stressevent/hatezizo
+	timer = 99999 MINUTES
+	stressadd = 666 // :)
+	desc = "<span class='red'>ZIZOZIZOZIZO</span>"
+
 /datum/stressevent/burntmeal
 	timer = 2 MINUTES
 	stressadd = 2

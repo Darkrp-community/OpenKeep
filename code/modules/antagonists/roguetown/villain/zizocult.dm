@@ -236,7 +236,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			if(path.circle == sigil_type)
 				rituals |= path.name
 
-		var/ritualnameinput = input(user, "Rituals", "ROGUETOWN") as anything in rituals
+		var/ritualnameinput = input(user, "Rituals", "ROGUETOWN") as null|anything in rituals
 		testing("ritualnameinput [ritualnameinput]")
 		var/datum/ritual/pickritual
 		
@@ -390,7 +390,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		to_chat(src, "<span class='danger'>My hands aren't bloody enough.</span>")
 		return
 
-	var/input = input("Sigil Type", "ROGUETOWN") as anything in runes|null
+	var/input = input("Sigil Type", "ROGUETOWN") as null|anything in runes
 	if(!input)
 		return
 	
@@ -407,7 +407,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		if(V.special_role == "Zizoid Lackey")
 			possible |= V.current
 
-	var/mob/living/carbon/human/choice = input(src, "Whom do you no longer have use for?", "ROGUETOWN") as anything in null|possible
+	var/mob/living/carbon/human/choice = input(src, "Whom do you no longer have use for?", "ROGUETOWN") as null|anything in possible
 	if(choice)
 		var/alert = alert(src, "Are you sure?", "ROGUETOWN", "Yes", "Cancel")
 		if(alert == "Yes")
@@ -643,8 +643,9 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 /obj/item/pactofunity/attack(mob/living/M, mob/living/user)
 	. = ..()
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
+	if(!ishuman(M))
+		return
+	var/mob/living/carbon/human/H = M
 	if(signed)
 		return ..()
 	if(!H.get_bleed_rate())
@@ -752,8 +753,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.real_name == input)
 				qdel(P)
-				to_chat(M, "<i>You hear a voice in your head... <b>[info]</i></b>")
-	break
+				to_chat(HL, "<i>You hear a voice in your head... <b>[info]</i></b>")
+		break
 
 // FLESH CRAFTING
 
@@ -860,12 +861,12 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		if(!iszizocultist(H))
 			return
 		for(var/mob/living/carbon/human/RULER in get_step(src, NORTH))
-			if(!RULER == SSticker.rulermob && RULER.stat == DEAD)
-				return
+			if(RULER != SSticker.rulermob && RULER.stat != DEAD)
+				break
 			RULER.gib()
 		for(var/mob/living/carbon/human/VIRGIN in get_step(src, SOUTH))
-			if(!VIRGIN.virginity && VIRGIN.stat == DEAD)
-				return
+			if(!VIRGIN.virginity && VIRGIN.stat != DEAD)
+				break
 			VIRGIN.gib()
 		CM.cultascended = TRUE
 		addomen("ascend")
@@ -874,5 +875,10 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		trl.ckey = H.ckey
 		H.gib()
 		to_chat(world, "\n<font color='purple'>15 minutes remain.</font>")
+		for(var/mob/living/carbon/V in GLOB.human_list)
+			if(V.mind in CM.cultists)
+				V.add_stress(/datum/stressevent/lovezizo)
+			else
+				V.add_stress(/datum/stressevent/hatezizo)
 		CM.roundvoteend = TRUE
 		break
