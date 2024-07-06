@@ -14,7 +14,7 @@
 	icon_state = "book2_1"
 	minskill = 1
 	maxskill = 2
-	exppercycle = 8
+	exppercycle = 10
 
 /obj/item/literary/journeyman
 	name = "journeyman's guide to literature"
