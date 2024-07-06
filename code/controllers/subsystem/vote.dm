@@ -147,7 +147,7 @@ SUBSYSTEM_DEF(vote)
 				if(. == "Continue Playing")
 					log_game("LOG VOTE: CONTINUE PLAYING AT [REALTIMEOFDAY]")
 					addomen("roundstart")
-					GLOB.round_timer = GLOB.round_timer + (32 MINUTES)
+					GLOB.round_timer = GLOB.round_timer + (60 MINUTES)
 				else
 					log_game("LOG VOTE: ELSE  [REALTIMEOFDAY]")
 					var/datum/game_mode/chaosmode/C = SSticker.mode
