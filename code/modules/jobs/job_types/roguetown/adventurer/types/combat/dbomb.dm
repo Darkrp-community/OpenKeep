@@ -10,18 +10,32 @@
 	..()
 	head = /obj/item/clothing/head/roguetown/helmet/horned
 	pants = /obj/item/clothing/under/roguetown/trou
-	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backpack_contents = list(/obj/item/bomb = 1, /obj/item/flint = 1)
-	if(prob(50))
-		beltl = /obj/item/rogueweapon/pick
-	else
-		beltl = /obj/item/rogueweapon/hammer
-	if(prob(50))
-		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	switch(pick(1,2))
+		if (1)
+			beltl = /obj/item/rogueweapon/pick		
+		if (2)
+			beltl = /obj/item/rogueweapon/hammer
+	switch(pick(1,2))
+		if (1)
+			shoes = /obj/item/clothing/shoes/roguetown/boots/leather	
+		if (2)
+			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
+
+/datum/outfit/job/roguetown/adventurer/dbomb/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+
+	H.change_stat("strength", 1)
+	H.change_stat("endurance", 1)
+
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
@@ -30,6 +44,3 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-	H.change_stat("strength", 1)
-	H.change_stat("endurance", 1)
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
