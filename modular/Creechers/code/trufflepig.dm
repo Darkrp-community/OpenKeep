@@ -42,7 +42,7 @@
 //	........   Truffles   ................
 /obj/item/reagent_containers/food/snacks/rogue/truffles
 	name = "truffles"
-	icon = 'modular/Trufflepig/icons/piggie.dmi'
+	icon = 'modular/Creechers/icons/piggie.dmi'
 	icon_state = "mushroom1_full"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/truffles/cooked
@@ -76,7 +76,7 @@
 
 //	........   Truffle Pig   ................
 /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig
-	icon = 'modular/Trufflepig/icons/piggie.dmi'
+	icon = 'modular/Creechers/icons/piggie.dmi'
 	name = "truffle pig"
 	desc = "A hairy pig, bred for finding truffles in the bog."
 	icon_state = "piggie_m"
@@ -144,10 +144,10 @@
 	hangry_meter += 1
 	if(hangry_meter > 9)
 		to_chat(M, "<span class='notice'>The pig squeals in anger. Its sulking and refusing to work until it gets delicious truffles.</span>")
-		playsound(get_turf(src), 'modular/Trufflepig/sound/pighangry.ogg', 150, TRUE, -1)
+		playsound(get_turf(src), 'modular/Creechers/sound/pighangry.ogg', 150, TRUE, -1)
 		return
 	if(M.used_intent.type == INTENT_HELP)
-		playsound(get_turf(src), pick('modular/Trufflepig/sound/pig1.ogg','modular/Trufflepig/sound/pig2.ogg'), 100, TRUE, -1)
+		playsound(get_turf(src), pick('modular/Creechers/sound/pig1.ogg','modular/Creechers/sound/pig2.ogg'), 100, TRUE, -1)
 		dir = pick(GLOB.cardinals)
 		step(src, dir)
 		playsound(src, 'sound/items/sniff.ogg', 60, FALSE)
@@ -157,7 +157,7 @@
 		playsound(src, 'sound/items/sniff.ogg', 60, FALSE)
 		sleep(10)
 		dir = pick(GLOB.cardinals)
-		playsound(get_turf(src), pick('modular/Trufflepig/sound/pig1.ogg','modular/Trufflepig/sound/pig2.ogg'), 100, TRUE, -1)
+		playsound(get_turf(src), pick('modular/Creechers/sound/pig1.ogg','modular/Creechers/sound/pig2.ogg'), 100, TRUE, -1)
 		var/turf/t = get_turf(src)
 		trufflesearch(t, 5)
 
@@ -171,9 +171,9 @@
 		visible_message("<span class='notice'>The pig munches the truffles reluctantly.</span>")
 		playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
 		qdel(O)
-		playsound(get_turf(src), 'modular/Trufflepig/sound/pighangry.ogg', 130, TRUE, -1)
+		playsound(get_turf(src), 'modular/Creechers/sound/pighangry.ogg', 130, TRUE, -1)
 		sleep(20)
-		playsound(get_turf(src), 'modular/Trufflepig/sound/pighangry.ogg', 130, TRUE, -1)
+		playsound(get_turf(src), 'modular/Creechers/sound/pighangry.ogg', 130, TRUE, -1)
 		visible_message("<span class='notice'>The pig shivers.</span>")
 		sleep(10)
 		death()
@@ -197,7 +197,7 @@
 /obj/effect/temp_visual/truffle_overlay
 	plane = FULLSCREEN_PLANE
 	layer = FLASH_LAYER
-	icon = 'modular/Trufflepig/icons/trufflesniff.dmi'
+	icon = 'modular/Creechers/icons/trufflesniff.dmi'
 	icon_state = "foundsome"
 	appearance_flags = 0 //to avoid having TILE_BOUND in the flags, so that the 480x480 icon states let you see it no matter where you are
 	duration = 35

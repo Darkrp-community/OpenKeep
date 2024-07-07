@@ -159,6 +159,11 @@
 	icon_state = "ravox"
 	resistance_flags = FIRE_PROOF
 
+/obj/item/clothing/neck/roguetown/psicross/eora
+	name = "amulet of Eora"
+	desc = ""
+	icon_state = "eora"
+
 /obj/item/clothing/neck/roguetown/psicross/silver
 	name = "silver psycross"
 	icon_state = "psicrosssteel"
