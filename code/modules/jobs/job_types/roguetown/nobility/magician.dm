@@ -41,6 +41,30 @@
 		if (2)
 			shoes = /obj/item/clothing/shoes/roguetown/shortboots
 
+	if(H.mind)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
+		if(H.age == AGE_OLD)
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/courtmage
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/ethereal_jaunt)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock)
+			H.change_stat("speed", -1)
+			H.change_stat("intelligence", 1)
+			if(H.dna.species.id == "human")
+				belt = /obj/item/storage/belt/rogue/leather/plaquegold
+				head = /obj/item/clothing/head/roguetown/wizhat
+				armor = /obj/item/clothing/suit/roguetown/shirt/robe/wizard
+				H.dna.species.soundpack_m = new /datum/voicepack/male/wizard()
+		if(H.age == AGE_MIDDLEAGED)
+			cloak = /obj/item/clothing/cloak/black_cloak
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock)
+		if((H.facial_hairstyle == "Wise Hermit") || (H.facial_hairstyle == "Knightly") || (H.facial_hairstyle == "Raider") || (H.facial_hairstyle == "Rumata") || (H.facial_hairstyle == "Choppe") || (H.facial_hairstyle == "Full Beard") || (H.facial_hairstyle == "Fullest Beard") || (H.facial_hairstyle == "Drinker") || (H.facial_hairstyle == "Knowledge") || (H.facial_hairstyle == "Brew") || (H.facial_hairstyle == "Ranger"))
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse)
+
 /datum/outfit/job/roguetown/magician/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -63,28 +87,6 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
-	if((H.facial_hairstyle == "Wise Hermit") || (H.facial_hairstyle == "Knightly") || (H.facial_hairstyle == "Raider") || (H.facial_hairstyle == "Rumata") || (H.facial_hairstyle == "Choppe") || (H.facial_hairstyle == "Full Beard") || (H.facial_hairstyle == "Fullest Beard") || (H.facial_hairstyle == "Drinker") || (H.facial_hairstyle == "Knowledge") || (H.facial_hairstyle == "Brew") || (H.facial_hairstyle == "Ranger"))
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
-	if(H.age == AGE_OLD)
-		armor = /obj/item/clothing/suit/roguetown/shirt/robe/courtmage
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/ethereal_jaunt)
-		H.change_stat("speed", -1)
-		H.change_stat("intelligence", 1)
-		if(H.dna.species.id == "human")
-			belt = /obj/item/storage/belt/rogue/leather/plaquegold
-			head = /obj/item/clothing/head/roguetown/wizhat
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe/wizard
-			H.dna.species.soundpack_m = new /datum/voicepack/male/wizard()
-	if(H.age == AGE_MIDDLEAGED)
-		cloak = /obj/item/clothing/cloak/black_cloak
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse)
 	if(H.patron != /datum/patron/divine/noc)
 		H.patron = GLOB.patronlist[/datum/patron/divine/noc]
 		to_chat(H, "<span class='warning'>My long studies of magicks has drawn me to [H.patron], no matter what other gods I might have preferred in the past.")
