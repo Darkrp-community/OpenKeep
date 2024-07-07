@@ -345,9 +345,8 @@
 /obj/item/clothing/suit/roguetown/armor/leather/vest
 	name = "leather vest"
 	desc = "A leather vest with no sleeves, won't really protect much."
-	icon_state = "vest"
-	item_state = "vest"
-	color = "#514339"
+	icon_state = "leathervest"
+	item_state = "leathervest"
 	armor = list("melee" = 60, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT)
 	blocksound = SOFTHIT
@@ -444,7 +443,7 @@
 	sellprice = 50
 	armor_class = ARMOR_CLASS_LIGHT
 	allowed_sex = list(FEMALE)
-	allowed_race = list("humen", "tiefling", "dwarfm","argonian", "elfd", "elfw", "helf", "aasimar")
+	allowed_race = ALL_RACES_LIST
 
 /obj/item/clothing/suit/roguetown/armor/silkcoat/Initialize()
 	color = pick(CLOTHING_PURPLE, null,CLOTHING_GREEN, CLOTHING_RED)

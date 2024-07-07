@@ -8,7 +8,7 @@
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/natural/poo/cow
-	name = "cow pie"
+	name = "moo-beast pie"
 	desc = "A pie that could not be described as delicious."
 	icon_state = "cowpoo"
 
