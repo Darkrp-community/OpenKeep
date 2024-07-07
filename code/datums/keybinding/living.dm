@@ -4,8 +4,8 @@
 
 
 /datum/keybinding/living/swap_left
-	hotkey_keys = list("Q")
-	classic_keys = list("Q") // PAGEUP
+//	hotkey_keys = list("Q")
+//	classic_keys = list("Q") // PAGEUP
 	name = "swap_left"
 	full_name = "Swap to left hand"
 	description = ""
@@ -25,8 +25,8 @@
 	return TRUE
 
 /datum/keybinding/living/swap_right
-	hotkey_keys = list("E")
-	classic_keys = list("E") // PAGEUP
+//	hotkey_keys = list("E")
+//	classic_keys = list("E") // PAGEUP
 	name = "swap_right"
 	full_name = "Swap to right hand"
 	description = ""
@@ -46,8 +46,8 @@
 	return TRUE
 
 /datum/keybinding/living/swap_hands
-	hotkey_keys = list()
-	classic_keys = list()
+	hotkey_keys = list("Q")
+	classic_keys = list("Q")
 	name = "swap_hands"
 	full_name = "Swap hands"
 	description = ""
@@ -62,8 +62,8 @@
 	return TRUE
 
 /datum/keybinding/living/activate_inhand
-	hotkey_keys = list()
-	classic_keys = list()
+	hotkey_keys = list("E")
+	classic_keys = list("E")
 	name = "activate_inhand"
 	full_name = "Activate in-hand"
 	description = "Uses whatever item you have inhand"
@@ -78,7 +78,7 @@
 
 
 /datum/keybinding/living/drop_item
-	hotkey_keys = list("Z")
+	hotkey_keys = list()
 	name = "drop_item"
 	full_name = "Drop Item"
 	description = ""
@@ -95,7 +95,7 @@
 	return TRUE
 
 /datum/keybinding/living/sprint
-	hotkey_keys = list()
+	hotkey_keys = list("Space")
 	name = "sprint"
 	full_name = "Sprint"
 	description = "Sprinting can be dangerous to your health if you aren't careful."
