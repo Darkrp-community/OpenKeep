@@ -14,7 +14,7 @@
 
 	//This uses the "IDs" as below -- they should not have spaces in them though since they're strings it won't matter much
 	//It needs at least 1 to do anything, no limit in max number of templates
-	templates = list( "bog_dungeon_1","bog_dungeon_2","bog_dungeon_3" )
+	templates = list( "bog_dungeon_1","bog_dungeon_2","labyrinth_of_xylix" )
 
 //The template path as directly below should be unique, though doesn't matter what it's actually named since we use the ID for everything.
 /datum/map_template/bog_dungeon_1
@@ -28,9 +28,9 @@
 /datum/map_template/bog_dungeon_2
 	name = "Bog Dungeon 2"
 	id = "bog_dungeon_2"
-	mappath = "_maps/map_files/templates/lil_bog_shack/bog_dungeon_2.dmm"
+	mappath = "_maps/map_files/templates/sk_dungeon/bog_dungeon_2.dmm"
 
 /datum/map_template/bog_dungeon_3
 	name = "Bog Dungeon 3"
-	id = "bog_dungeon_3"
-	mappath = "_maps/map_files/templates/lil_bog_shack/bog_dungeon_3.dmm"
+	id = "labyrinth_of_xylix""
+	mappath = "_maps/map_files/templates/sk_dungeon/labyrinth_of_xylix.dmm"

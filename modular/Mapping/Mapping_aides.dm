@@ -22,6 +22,53 @@
 		/obj/item/clothing/shoes/roguetown/gladiator = 5
 		)
 
+/obj/effect/spawner/roguemap/sewerencounter
+	icon_state = "srat"
+	icon = 'icons/roguetown/mob/monster/rat.dmi'
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/item/reagent_containers/food/snacks/smallrat = 30,		
+		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10, 
+		/obj/item/organ/guts = 5,
+		/obj/item/roguecoin/copper = 5,
+		/obj/effect/decal/cleanable/dirt/dust = 45,
+		/obj/effect/decal/remains/bigrat = 5,
+		)
+
+
+
+/*	..................   Hauntz randomizer   ................... */
+/obj/effect/spawner/roguemap/hauntz_random
+	icon_state = "generic_event"
+	probby = 50
+	spawned = list(	/obj/effect/landmark/events/haunts = 100	)
+
+/*	..................   Dungeon stuff   ................... */
+/obj/structure/fluff/statue/xylix
+	desc = "Some mad God no doubt."
+	icon = 'icons/roguetown/misc/ay.dmi'
+	icon_state = "xylix"
+	pixel_x = -32
+	pixel_y = -16
+
+/turf/open/floor/rogue/sandstone
+	icon_state = "sandstone"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	landsound = 'sound/foley/jumpland/grassland.wav'
+
+/obj/effect/spawner/roguemap/xylixlabyrinth
+	icon_state = "generic_event"
+	probby = 50
+	color = "#e44aff"
+	spawned = list(
+		/mob/living/simple_animal/hostile/retaliate/gaseousform = 30,		
+		/mob/living/simple_animal/hostile/rogue/demon = 10, 
+		/mob/living/simple_animal/hostile/rogue/haunt = 5,
+		)
 
 
 /*	..................   Spider stuff   ................... */
