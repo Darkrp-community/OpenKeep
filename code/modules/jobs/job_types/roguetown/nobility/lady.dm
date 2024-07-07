@@ -3,7 +3,7 @@
 	flag = LADY
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 0
+	total_positions = 1
 	spawn_positions = 1
 
 	allowed_sexes = list(FEMALE)
@@ -38,7 +38,6 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/armordress/alt
 		l_hand = /obj/item/rogueweapon/lordscepter
 		if(H.mind)
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/convertrole/guard)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
@@ -56,7 +55,6 @@
 	id = /obj/item/clothing/ring/silver
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	if(H.mind)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/convertrole/servant)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, pick(1,2,3), TRUE)
@@ -72,12 +70,3 @@
 		if(L)
 			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Queen of Rockhill.</span></span></b>")
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
-
-/obj/effect/proc_holder/spell/self/convertrole/servant
-	name = "Recruit Servant"
-	new_role = "Servant"
-	recruitment_faction = "Servants"
-	recruitment_message = "Serve the Crown, %RECRUIT!"
-	accept_message = "FOR THE CROWN!"
-	refuse_message = "I refuse."
-	charge_max = 100
