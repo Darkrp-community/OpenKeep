@@ -156,7 +156,7 @@
 				if(/datum/patron/divine/ravox)
 					crosstype = /obj/item/clothing/neck/roguetown/psicross/ravox
 					crosstype = /obj/item/clothing/neck/roguetown/psicross
-		H.equip_to_slot_or_del(new crosstype(H), SLOT_NECK)
+			H.equip_to_slot_or_del(new crosstype(H), SLOT_NECK)
 
 /// ALCOHOLIC
 
