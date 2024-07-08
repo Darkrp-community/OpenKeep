@@ -421,6 +421,43 @@
 					if(stealroll < targetperception)
 						to_chat(src, "<span class='danger'>I failed to pick the pocket!</span>")
 					changeNext_move(mmb_intent.clickcd)
+				if(istype(A,/obj/structure/mineral_door))
+					var/obj/structure/mineral_door/door = A
+					if(door.locked)
+						if(isliving(src))
+							var/mob/living/L = src
+							var/obj/item/I = L.get_inactive_held_item()
+							if(I)
+								var/foundstab = FALSE
+								for(var/X in I.possible_item_intents)
+									var/datum/intent/D = new X
+									if(D.blade_class == BCLASS_STAB)
+										foundstab = TRUE
+										break
+								if(foundstab)
+									if(L.mind.get_skill_level(/datum/skill/misc/stealing) >= initial(door.kickthresh) / 5)
+										door.kickthresh--
+									if((prob(L.mind.get_skill_level(/datum/skill/misc/stealing) * 5) || door.kickthresh == 0) && (L.mind.get_skill_level(/datum/skill/misc/stealing) >= initial(door.kickthresh) / 5))								
+										src.visible_message("<span class='warning'>[src] lockpicks [door.name] successfully!</span>", \
+											"<span class='notice'>I lockpick [door.name]!</span>")
+										door.locked = 0
+										door.force_open()
+									else								
+										src.visible_message("<span class='warning'>[src] messes around [door.name] suspiciously!</span>", \
+											"<span class='notice'>I fail to lockpick [door.name]!</span>")
+										playsound(src, door.rattlesound, 100)
+										var/oldx = pixel_x
+										animate(door, pixel_x = oldx+1, time = 0.5)
+										animate(pixel_x = oldx-1, time = 0.5)
+										animate(pixel_x = oldx, time = 0.5)
+							else
+								to_chat(src, "<span class='warning'>I can't do that with naked hands. I need sharp tool in the other hand!</span>")
+						//try to kick open, destroy lock
+					else						
+						src.visible_message("<span class='warning'>[src] opens [door.name]!</span>", \
+							"<span class='notice'>I open [door.name]! It wasn't closed.</span>")
+						door.force_open()
+					changeNext_move(CLICK_CD_EXHAUSTED)
 				return
 			if(INTENT_SPELL)
 				if(ranged_ability?.InterceptClickOn(src, params, A))

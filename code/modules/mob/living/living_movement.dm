@@ -34,13 +34,6 @@
 	. = ..()
 	update_move_intent_slowdown()
 
-/mob/living/update_sneak_invis()
-    if(m_intent == MOVE_INTENT_SNEAK)
-        return // Placeholder until further implementation
-        // Implementation of invisibility or other effects.
-        // For illustration:
-        // src.set_invisibility(INVISIBILITY_LEVEL_MINIMAL)
-
 /mob/living/def_intent_change()
 	. = ..()
 	update_move_intent_slowdown()
