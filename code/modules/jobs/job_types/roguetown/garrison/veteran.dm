@@ -12,6 +12,8 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
 		"Aasimar"
 	)
 	tutorial = "You've known combat your entire life. There isn't a way to kill a man you haven't practiced in the tapestries of war itself. \
