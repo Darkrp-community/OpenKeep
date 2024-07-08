@@ -1,0 +1,67 @@
+"a" = (/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
+"c" = (/obj/machinery/light/roguestreet/midlamp,/turf/closed/wall/mineral/rogue/stonebrick,/area/rogue/outdoors/caves)
+"k" = (/turf/open/floor/rogue/sandstone,/area/rogue/outdoors/caves)
+"v" = (/obj/machinery/light/roguestreet,/turf/open/floor/rogue/greenstone,/area/rogue/outdoors/caves)
+"w" = (/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/spidercave)
+"C" = (/turf/closed/wall/mineral/rogue/decostone/center,/area/rogue/outdoors/caves)
+"D" = (/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/spidercave)
+"E" = (/obj/effect/spawner/roguemap/xylixlabyrinth_lethal,/turf/open/transparent/openspace,/area/rogue/outdoors/caves)
+"G" = (/turf/closed/wall/mineral/rogue/stonebrick,/area/rogue/outdoors/caves)
+"H" = (/obj/machinery/light/roguestreet{dir = 1},/turf/open/floor/rogue/greenstone,/area/rogue/outdoors/caves)
+"K" = (/turf/open/floor/rogue/concrete,/area/rogue/outdoors/caves)
+"R" = (/turf/open/floor/rogue/greenstone,/area/rogue/outdoors/caves)
+"S" = (/obj/effect/spawner/roguemap/xylixlabyrinth,/turf/open/floor/rogue/sandstone,/area/rogue/outdoors/caves)
+"W" = (/obj/structure/fluff/statue/xylix,/turf/open/floor/rogue/greenstone,/area/rogue/outdoors/caves)
+
+(1,1,1) = {"
+GGGGGGGGGGGGGGGGGGGGGGGGCCCCCCCCCCCCCC
+GkkkkkGGGRkKkKkKkKkKkRGkkkkkkkkkkkkkkC
+GkkkkkGGGvKkKkKkKkKkKHGkkkkkkkkkkkkkkC
+GkkGkkGGGRkKkKkKkKkKkRGkkkkkkkkkkkkkkC
+GkkGkkGGGGEkEkRWRkEkEGGkkkkkkkkkkkkkkC
+GkkGkkGGGGkEkERRREkEkGGkkkkkkkkkkkkkkC
+GkkGGGGGGGEkEkRRRkEkEGGkkkkkkkkkkkkkkC
+GkkSkkGGGRkEkEkEkEkEkRGkkkkkkkkkkkkkkC
+GkkkkkGGGvEkEkEkEkEkEHGkkkkkkkkkkkkkkC
+GkkckkGGGRkEkEkEkEkEkRGkkkkkkkkkkkkkkC
+GkkGkkGGGGGGGkkkkGGGGGGkkkkkkkkkkkkkkC
+GkkGkkkkkkkkGkkkkGGGGGGkkkkkkkkkkkkkkC
+GkkGkkkkkkkkGGkkGGGGGGGkkkkkkkkkkkkkkC
+GkkGGGGGGGkkcGkkGGGGGGGGGGGGGGkkkkkkkC
+GkkkkkkkkGkkkkkkGGkkkkkkkkkkkGkkkkkkkC
+GkkkkkkkkGkkkkkkGGkkkkkkkkkkkGGGGGGGGC
+GGGGGGckkGGGGGGGGGkkckkGGGGkkGkkkkkGGC
+GkkkkkkkkGkkkkkkkkkkGkkGGGGGGGkkkkkGGC
+GkkkkkkkkGkkkkkkkkkkGkkkkkkkkkkkckkGGC
+GkkGkkGGGGkkcGGGGGGGGkkkkkkkkkkkGkkGGC
+GkkGSkkkkGkkkkGkkkkkGGGGkkGGGGGGGkkGGC
+GkkGkkkkkGkkkkGkkkkkGkkGkkGkkkkkGkkGGC
+GkkGkkckkGGGkkGGGGkkGkkGkkGkkkkkGkkGGC
+GGGGkkGkkkkGkkkkkkSkGkkGkkGkkckkGkkGGC
+GkkGkkGkkkkGkkkkkkkkGkkGkkGkkGkkGkkGGC
+GkkGkkGGGGGGGGGGGGkkGkkGkkGkkGkkGkkGGC
+GkkGkkGGGGGkkkkkkkkkGkkGkkGkkGkkGkkGGC
+GkkGkkGGGGGkkkkkkkkkGkkGkkckkGkkGGGGGC
+GkkkkkkkkkGkkGGGkkGGGkkkSkkkkGkkkkkkGC
+GkkkkkkkkkGkkGGGkkkkGkkkkkkkkGkkkkkkGC
+GGGGGGckkkGkkGGGkkkkGGGGGGGkkGGGGckkGC
+GkkkkkkkkkkSkkGGGckkGkkkkkGkkGkkkkkkGC
+GkkkkkkkkkkkkkGkkkkkGkkkkkGkkGkkkkkkGC
+GGGkkGGGGGGGkkGkkkkkGGGGkkckkGkkGGGGGC
+GkkkkGkkGkkkkkGkkGkkkkkGkkkkkGkkkkkGGC
+GkkkkGkkGkkkkkGkkGkkkkkGkkkkkGkkkkkGGC
+GkkGGGkkGkkGkkGkkGGGGGGGGGGGGakkckkGGC
+GkkGGGkkGkkGkkGkkGkkkkkGkkkkkGkkGkkGGC
+GkkkkGkkckkGkkGkkGkkkkkGkkkkkGkkGkkGGC
+GkkkkGkkkkkGkkGkkGkkckkGkkcGGGkkGkkGGG
+GGGkkGkkSkkGGGGkkGaaGkkGkkkkkkkkGkkkkG
+GGGkkGkkkkkGkkGkkkkkkkkGkkkkkkSkGkkkkG
+GGGkkGkkGkkGkkGkkkkkkkkGGGGGGGkkGGGGGG
+GGGkkGkkGkkGkkGGGGkkGGGGkkkkkGkkkkkkkG
+GkkkkGkkGkkGkkkkkGkkkkkGkkkkkGkkkkkkkG
+GkkkkGkkGkkGkkkkkGkkkkkGkkcGGGGGGGckkG
+GkkcGGkkGkkGGGckkGGGckkGkkkkkkkkkkkkkG
+GkkkkkkkGkkkkkkkkGkkkkkGkkkkkkkkkkkkkG
+GkkkkkkkGkkkkkkkkGkkkkkGGGGGGGGckkGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGDwwDGCC
+"}

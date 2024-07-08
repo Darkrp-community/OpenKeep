@@ -23,7 +23,7 @@
 	wander = FALSE
 
 
-mob/living/carbon/human/species/orc/ambush/after_creation()
+/mob/living/carbon/human/species/orc/ambush/after_creation()
 	..()
 	job = "Ambush Orc"
 	QDEL_NULL(sexcon)

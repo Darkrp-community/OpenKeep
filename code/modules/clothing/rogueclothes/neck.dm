@@ -123,9 +123,8 @@
 /obj/item/clothing/neck/roguetown/psicross
 	name = "psycross"
 	desc = ""
-	icon_state = "psicross"
+	icon_state = "psicrossw"
 	//dropshrink = 0.75
-	resistance_flags = FIRE_PROOF
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
 	sellprice = 10
 	experimental_onhip = TRUE
@@ -134,26 +133,31 @@
 	name = "amulet of Astrata"
 	desc = ""
 	icon_state = "astrata"
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/noc
 	name = "amulet of Noc"
 	desc = ""
 	icon_state = "noc"
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/dendor
 	name = "amulet of Dendor"
 	desc = ""
 	icon_state = "dendor"
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/necra
 	name = "amulet of Necra"
 	desc = ""
 	icon_state = "necra"
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/ravox
 	name = "amulet of Ravox"
 	desc = ""
 	icon_state = "ravox"
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/eora
 	name = "amulet of Eora"
@@ -162,7 +166,8 @@
 
 /obj/item/clothing/neck/roguetown/psicross/silver
 	name = "silver psycross"
-	icon_state = "psicrossiron"
+	icon_state = "psicrosssteel"
+	resistance_flags = FIRE_PROOF
 	sellprice = 50
 
 /obj/item/clothing/neck/roguetown/psicross/silver/pickup(mob/user)
@@ -202,7 +207,7 @@
 /obj/item/clothing/neck/roguetown/psicross/g
 	name = "golden psycross"
 	desc = ""
-	icon_state = "psicrossg"
+	icon_state = "psicrossc"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
 	sellprice = 100

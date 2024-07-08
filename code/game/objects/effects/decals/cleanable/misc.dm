@@ -95,10 +95,11 @@
 /obj/effect/decal/cleanable/cobweb
 	name = "cobweb"
 	desc = ""
-	gender = NEUTER
-	layer = 4.2
-	plane = -1
+	icon = 'modular/Mapping/icons/webbing.dmi'
 	icon_state = "cobweb1"
+	gender = NEUTER
+	layer = WALL_OBJ_LAYER
+	plane = -1
 	resistance_flags = FLAMMABLE
 	beauty = -100
 	alpha = 200
