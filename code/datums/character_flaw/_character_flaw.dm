@@ -190,7 +190,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 			continue
 		if(L.stat)
 			continue
-		if(L.dna?.species)
+		if(L.dna.species)
 			cnt++
 		if(cnt > 2)
 			break
@@ -216,7 +216,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 			continue
 		if(L.stat)
 			continue
-		if(L.dna?.species)
+		if(L.dna.species)
 			cnt++
 		if(cnt > 2)
 			break
