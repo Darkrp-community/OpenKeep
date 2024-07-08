@@ -32,15 +32,18 @@
 		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10, 
 		/obj/item/organ/guts = 5,
 		/obj/item/roguecoin/copper = 5,
-		/obj/effect/decal/cleanable/dirt/dust = 45,
+		/obj/effect/gibspawner/generic = 5,
 		/obj/effect/decal/remains/bigrat = 5,
+		/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 1,
 		)
 
 
 
 /*	..................   Hauntz randomizer   ................... */
 /obj/effect/spawner/roguemap/hauntz_random
-	icon_state = "generic_event"
+	icon = 'icons/mob/actions/roguespells.dmi'
+	icon_state = "raiseskele"
+	alpha = 150
 	probby = 50
 	spawned = list(	/obj/effect/landmark/events/haunts = 100	)
 
@@ -61,7 +64,9 @@
 	landsound = 'sound/foley/jumpland/grassland.wav'
 
 /obj/effect/spawner/roguemap/xylixlabyrinth
-	icon_state = "generic_event"
+	icon = 'icons/mob/actions/roguespells.dmi'
+	icon_state = "raiseskele"
+	alpha = 150
 	probby = 50
 	color = "#e44aff"
 	spawned = list(
@@ -69,6 +74,25 @@
 		/mob/living/simple_animal/hostile/rogue/demon = 10, 
 		/mob/living/simple_animal/hostile/rogue/haunt = 5,
 		)
+
+/obj/effect/spawner/roguemap/xylixlabyrinth_lethal
+	icon = 'icons/mob/actions/roguespells.dmi'
+	icon_state = "tragedy"
+	alpha = 150
+	probby = 100
+	spawned = list(	/turf/open/chasm/xylix = 10, /turf/open/floor/rogue/concrete = 90)
+
+/turf/open/chasm/xylix
+	name = ""
+	desc = ""
+//	baseturfs = /turf/open/chasm
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "concretefloor1"
+
+/turf/open/chasm/xylix/Initialize()
+	. = ..()
+	icon_state = "concretefloor[rand(1,2)]"
+	dir = pick(GLOB.cardinals)
 
 
 /*	..................   Spider stuff   ................... */
