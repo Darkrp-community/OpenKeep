@@ -78,6 +78,7 @@
 	if(!can_do_sex())
 //		to_chat(user, "<span class='warning'>I can't do this.</span>")
 		return
+	log_game("[user.name] tries to fuck [target.name]")
 	if(target == src && src == user) //drag us onto ourselves
 		var/obj/item/bodypart/chest = get_bodypart(BODY_ZONE_CHEST)
 		for(var/obj/item/grabbing/G in grabbedby)
@@ -1175,6 +1176,7 @@
 	blueballs = FALSE
 	adjust_horny(-350)
 	var/mob/living/carbon/C = owner
+	log_game("[owner.name] cums into [fucking.name]")
 	switch(source)
 		if("fapself")
 			if(owner.has_flaw(/datum/charflaw/addiction/lovefiend))
