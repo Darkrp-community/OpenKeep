@@ -50,14 +50,14 @@
 
 /datum/objective/werewolf
 	name = "conquer"
-	explanation_text = "Destroy all elder vampires in ROGUETOWN. I can sniff them in my true form."
+	explanation_text = "Spread my gift and build up my own tribe of 3 of the kine. Destroy all elder vampires. I can sniff them in my true form."
 	team_explanation_text = ""
 	triumph_count = 5
 
 /datum/objective/werewolf/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
 	if(istype(C))
-		if(C.vampire_werewolf() == "werewolf")
+		if(C.werewolves > 2)
 			return TRUE
 
 /datum/objective/vampire
