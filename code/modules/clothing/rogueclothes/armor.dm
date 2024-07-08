@@ -345,8 +345,8 @@
 /obj/item/clothing/suit/roguetown/armor/leather/vest
 	name = "leather vest"
 	desc = "A leather vest with no sleeves, won't really protect much."
-	icon_state = "leathervest"
-	item_state = "leathervest"
+	icon_state = "vest"
+	item_state = "vest"
 	armor = list("melee" = 60, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT)
 	blocksound = SOFTHIT
@@ -359,6 +359,11 @@
 	sleevetype = null
 	sleeved = null
 	armor_class = ARMOR_CLASS_LIGHT
+
+/obj/item/clothing/suit/roguetown/armor/leather/vest/butcher
+	name = "leather vest"
+	icon_state = "leathervest"
+	item_state = "leathervest"
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	name = "sea jacket"
