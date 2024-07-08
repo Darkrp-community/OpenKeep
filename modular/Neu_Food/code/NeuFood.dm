@@ -5,7 +5,7 @@
  *						*
  * * * * * * * * * * * **/
 
-
+/* For reference only
 /*	........   Nutrition defines   ................ */
 #define MEAL_FILLING 30
 #define MEAL_GOOD 24
@@ -21,11 +21,7 @@
 #define SHELFLIFE_DECENT 25 MINUTES
 #define SHELFLIFE_SHORT 15 MINUTES
 #define SHELFLIFE_TINY 10 MINUTES
-
-
-// CONTAINMENT ZONE - marked for death
-/obj/item/reagent_containers/powder/flour/salt // salt being subtype of flour is terrible for so many reasons repath to  /obj/item/reagent_containers/powder/salt
-
+*/
 
 
 /*	........   Templates / Base items   ................ */
@@ -118,6 +114,7 @@
 		icon_state = "bowl"
 
 /obj/item/reagent_containers/glass/cup
+	icon = 'modular/Neu_Food/icons/cooking.dmi'
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
