@@ -9,6 +9,7 @@
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
 #include "_maps\templates\bog_shack_small.dm"
+#include "_maps\templates\sk_dungeons.dm"
 #include "code\__byond_version_compat.dm"
 #include "code\_compile_options.dm"
 #include "code\rt.dm"
@@ -3234,6 +3235,7 @@
 #include "code\modules\spells\roguetown\acolyte\eora.dm"
 #include "code\modules\spells\roguetown\acolyte\general.dm"
 #include "code\modules\spells\roguetown\acolyte\necra.dm"
+#include "code\modules\spells\roguetown\acolyte\noc.dm"
 #include "code\modules\spells\roguetown\acolyte\pestra.dm"
 #include "code\modules\spells\spell_types\aimed.dm"
 #include "code\modules\spells\spell_types\area_teleport.dm"
@@ -3400,6 +3402,8 @@
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
 #include "modular\Barding\code\Barding_instruments.dm"
+#include "modular\Creechers\code\trufflepig.dm"
+#include "modular\Mapping\Mapping_aides.dm"
 #include "modular\Neu_Food\code\NeuFood.dm"
 #include "modular\Neu_Food\code\cooked\NeuFood_meals.dm"
 #include "modular\Neu_Food\code\cooked\NeuFood_pies.dm"
@@ -3408,5 +3412,4 @@
 #include "modular\Neu_Food\code\raw\NeuFood_meat.dm"
 #include "modular\Neu_Food\code\raw\NeuFood_processed.dm"
 #include "modular\Neu_Food\code\raw\NeuFood_veggies.dm"
-#include "modular\Trufflepig\code\trufflepig.dm"
 // END_INCLUDE

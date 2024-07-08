@@ -18,11 +18,27 @@
 /datum/outfit/job/roguetown/adventurer/templar/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE
-	wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
+
+	switch(H.patron?.name)
+		if("Astrata")
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
+			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
+		if("Dendor")
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
+			wrists = /obj/item/clothing/neck/roguetown/psicross/dendor
+		if("Necra")
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
+			wrists = /obj/item/clothing/neck/roguetown/psicross/necra
+		if("Eora")
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
+			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
+		if("Noc")
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
+			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
+
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
 	belt = /obj/item/storage/belt/rogue/leather/hand
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	id = /obj/item/clothing/ring/silver

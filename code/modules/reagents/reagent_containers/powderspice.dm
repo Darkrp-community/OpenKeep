@@ -157,7 +157,7 @@
 	..()
 	qdel(src)
 
-/obj/item/reagent_containers/powder/flour/salt
+/obj/item/reagent_containers/powder/salt
 	name = "coder salt remove"
 	desc = ""
 	gender = PLURAL

@@ -78,7 +78,7 @@
 /datum/charflaw/addiction/alcoholic
 	name = "Alcoholic"
 	desc = "Drinking alcohol is my favorite thing."
-	time = 30 MINUTES
+	time = 40 MINUTES
 	needsate_text = "Time for a drink."
 
 /// PYROMANIAC
@@ -118,7 +118,7 @@
 /datum/charflaw/addiction/junkie
 	name = "Junkie"
 	desc = "I need a real high to take the pain of this rotten world away."
-	time = 30 MINUTES
+	time = 50 MINUTES
 	needsate_text = "Time to reach a new high."
 
 /// Smoker
@@ -126,7 +126,7 @@
 /datum/charflaw/addiction/smoker
 	name = "Smoker"
 	desc = "I need to smoke something to take the edge off."
-	time = 30 MINUTES
+	time = 40 MINUTES
 	needsate_text = "Time for a flavorful smoke."
 
 /// GOD-FEARING
@@ -134,39 +134,35 @@
 /datum/charflaw/addiction/godfearing
 	name = "Devout Follower"
 	desc = "I need to pray to my Patron, their blessings are stronger."
-	time = 25 MINUTES
+	time = 35 MINUTES
 	needsate_text = "Time to pray."
 
-/datum/charflaw/addiction/godfearing/on_mob_creation(mob/user)
+/datum/outfit/job/roguetown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE) // added since the previous way it was implemented caused a bunch of runtimes
 	. = ..()
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
 	if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) || H.mind.has_antag_datum(/datum/antagonist/vampirelord)) // dont stunlock
 		return
-	var/obj/item/clothing/neck/roguetown/psicross/crosstype
-	switch(H.patron?.name)
-		if("Astrata")
-			crosstype = /obj/item/clothing/neck/roguetown/psicross/astrata
-		if("Noc")
-			crosstype = /obj/item/clothing/neck/roguetown/psicross/noc
-		if("Dendor")
-			crosstype = /obj/item/clothing/neck/roguetown/psicross/dendor
-		if("Necra")
-			crosstype = /obj/item/clothing/neck/roguetown/psicross/necra
-		if("Ravox")
-			crosstype = /obj/item/clothing/neck/roguetown/psicross/ravox
-		else
-			if(prob(1))
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/g
-			else
-				crosstype = /obj/item/clothing/neck/roguetown/psicross
 	if(!H.wear_neck)
+		var/obj/item/clothing/neck/roguetown/psicross/crosstype
+		switch(H.patron)
+			if(/datum/patron/divine/astrata)
+				crosstype = /obj/item/clothing/neck/roguetown/psicross/astrata
+			if(/datum/patron/divine/noc)
+				crosstype = /obj/item/clothing/neck/roguetown/psicross/noc
+			if(/datum/patron/divine/dendor)
+				crosstype = /obj/item/clothing/neck/roguetown/psicross/dendor
+			if(/datum/patron/divine/necra)
+				crosstype = /obj/item/clothing/neck/roguetown/psicross/necra
+			if(/datum/patron/divine/ravox)
+				crosstype = /obj/item/clothing/neck/roguetown/psicross/ravox
+			else
+				if(prob(1))
+					crosstype = /obj/item/clothing/neck/roguetown/psicross/g
+				else
+					crosstype = /obj/item/clothing/neck/roguetown/psicross
 		H.equip_to_slot_or_del(new crosstype(H), SLOT_NECK)
-		return
-	if(!H.wear_wrists)
-		H.equip_to_slot_or_del(new crosstype(H), SLOT_WRISTS)
-		return
 
 /// ALCOHOLIC
 

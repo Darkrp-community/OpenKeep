@@ -1,4 +1,10 @@
 
+/*
+* I think this is placed here because its
+* used to tell people what their income is
+* in a non fantasy tone. This is used here
+* and in the drugmachine.dm.
+*/
 /proc/send_ooc_note(msg, name, job)
 	var/list/names_to = list()
 	if(name)
@@ -19,6 +25,10 @@
 				if(!X.stat)
 					to_chat(X, "<span class='info'>[msg]</span>")
 
+/*
+* The Treasury system is the ocean
+* in which the steward sails.
+*/
 SUBSYSTEM_DEF(treasury)
 	name = "treasury"
 	wait = 1
@@ -33,9 +43,11 @@ SUBSYSTEM_DEF(treasury)
 
 
 /datum/controller/subsystem/treasury/Initialize()
+	//Randomizes the roundstart amount of money and the queens tax.
 	treasury_value = rand(800,1500)
 	queens_tax = pick(0.09, 0.15, 0.21, 0.30)
 
+	//For the merchants import and export.
 	for(var/path in subtypesof(/datum/roguestock/bounty))
 		var/datum/D = new path
 		stockpile_datums += D
@@ -49,24 +61,29 @@ SUBSYSTEM_DEF(treasury)
 
 /datum/controller/subsystem/treasury/fire(resumed = 0)
 	if(world.time > next_treasury_check)
+		//I dont know why the treasury check is randomized
 		next_treasury_check = world.time + rand(5 MINUTES, 8 MINUTES)
 		if(SSticker.current_state == GAME_STATE_PLAYING)
+			//Stock price updated based on demand variable.
 			for(var/datum/roguestock/X in stockpile_datums)
 				if(!X.stable_price && !X.transport_item)
 					if(X.demand < initial(X.demand))
 						X.demand += rand(5,15)
 					if(X.demand > initial(X.demand))
 						X.demand -= rand(5,15)
-		var/area/A = GLOB.areas_by_type[/area/rogue/indoors/town/vault]
-		var/amt_to_generate = 0
-		for(var/obj/item/I in A)
-			if(!isturf(I.loc))
-				return
-			if(I.get_real_price() <= 0)
-				return
-			if(!I.submitted_to_stockpile)
-				I.submitted_to_stockpile = TRUE
-			amt_to_generate += (I.get_real_price()*0.25)
+
+		//Checks all items in the vault.
+		var/amt_to_generate = CalcVaultIncome()
+
+		/*
+		* This is the final calculations of how
+		* much passive income the kingdom makes.
+		* exsample: 4 items worth 100 mammon
+		* individually will produce (productprice*0.25)
+		* before the total suffers from the queens tax
+		* which ranges from 9% to 30%. Some rounds
+		* will just be harder for the Steward than others.
+		*/
 		amt_to_generate = amt_to_generate - (amt_to_generate * queens_tax)
 		amt_to_generate = round(amt_to_generate)
 		give_money_treasury(amt_to_generate, "wealth horde")
@@ -75,6 +92,36 @@ SUBSYSTEM_DEF(treasury)
 				send_ooc_note("Income from wealth horde: +[amt_to_generate]", name = X.real_name)
 				return
 
+/*
+* Calculates Passive income based
+* on the items that are placed within
+* the vault.
+*/
+/datum/controller/subsystem/treasury/proc/CalcVaultIncome()
+	var/area/A = GLOB.areas_by_type[/area/rogue/indoors/town/vault]
+	var/passive_income = 0
+	for(var/obj/item/I in A)
+		if(!isturf(I.loc))
+			continue
+		if(I.get_real_price() <= 0)
+			continue
+		/*
+		* This seems to be a removed variable
+		* that occurs only in submission.dm and
+		* bounties.dm. Its original purpose
+		* seems to be preventing people from
+		* collecting the same bounty several times.
+		*/
+		if(!I.submitted_to_stockpile)
+			I.submitted_to_stockpile = TRUE
+		//Passive income is 25% of the items worth.
+		passive_income += (I.get_real_price()*0.25)
+	return passive_income
+
+/*
+* These procs are all called directly from
+* things outside of the system.
+*/
 /datum/controller/subsystem/treasury/proc/create_bank_account(name, initial_deposit)
 	if(!name)
 		return
@@ -142,11 +189,6 @@ SUBSYSTEM_DEF(treasury)
             log_to_steward("[name] was fined [amt]")
 
     return TRUE
-
-
-
-
-
 
 //increments the treasury and gives the money to the account (deposits)
 /datum/controller/subsystem/treasury/proc/generate_money_account(amt, name, source)

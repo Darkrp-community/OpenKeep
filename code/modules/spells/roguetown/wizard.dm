@@ -18,8 +18,8 @@
 	charging_slowdown = 3
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
-	sparks_spread = 2
-	sparks_amt = 4
+	sparks_spread = 3
+	sparks_amt = 5
 
 /obj/projectile/magic/lightning
 	name = "bolt of lightning"
@@ -184,7 +184,7 @@
 	nodamage = FALSE
 	flag = "magic"
 	hitsound = 'sound/fireball.ogg'
-
+	aoe_range = 0
 
 /obj/projectile/magic/aoe/fireball/rogue/on_hit(target)
 	. = ..()

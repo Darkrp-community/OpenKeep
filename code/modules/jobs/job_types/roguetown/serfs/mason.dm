@@ -26,6 +26,28 @@
 
 /datum/outfit/job/roguetown/mason/pre_equip(mob/living/carbon/human/H)
 	..()
+
+	head = /obj/item/clothing/head/roguetown/hatfur
+	if(prob(50))
+		head = /obj/item/clothing/head/roguetown/hatblu
+	armor = /obj/item/clothing/suit/roguetown/armor/workervest
+	cloak = /obj/item/clothing/cloak/apron/waist/brown
+	pants = /obj/item/clothing/under/roguetown/trou
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	belt = /obj/item/storage/belt/rogue/leather
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
+	beltl = /obj/item/rogueweapon/hammer/claw
+	backl = /obj/item/storage/backpack/rogue/backpack
+	id = /obj/item/clothing/ring/silver/guild_mason
+	backpack_contents = list(/obj/item/roguekey/mason = 1, /obj/item/flint = 1, /obj/item/flashlight/flare/torch/lantern)
+
+	H.change_stat("strength", 1)
+	H.change_stat("intelligence", 1)
+	H.change_stat("endurance", 1)
+	H.change_stat("constitution", 1)
+	H.change_stat("speed", -1)
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, rand(1,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, rand(1,3), TRUE)
@@ -40,21 +62,5 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/mining, 2, TRUE)
 
-	head = /obj/item/clothing/head/roguetown/hatfur
-	if(prob(50))
-		head = /obj/item/clothing/head/roguetown/hatblu
-	armor = /obj/item/clothing/suit/roguetown/armor/workervest
-	cloak = /obj/item/clothing/cloak/apron/waist/brown
-	pants = /obj/item/clothing/under/roguetown/trou
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
-	beltl = /obj/item/rogueweapon/hammer/claw
-	backl = /obj/item/storage/backpack/rogue/backpack
-	backpack_contents = list(/obj/item/roguekey/mason = 1, /obj/item/flint = 1, /obj/item/flashlight/flare/torch/lantern)
-	H.change_stat("strength", 1)
-	H.change_stat("intelligence", 1)
-	H.change_stat("endurance", 1)
-	H.change_stat("constitution", 1)
-	H.change_stat("speed", -1)
+
+

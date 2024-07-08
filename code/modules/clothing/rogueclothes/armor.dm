@@ -347,7 +347,6 @@
 	desc = "A leather vest with no sleeves, won't really protect much."
 	icon_state = "vest"
 	item_state = "vest"
-	color = "#514339"
 	armor = list("melee" = 60, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT)
 	blocksound = SOFTHIT
@@ -360,6 +359,11 @@
 	sleevetype = null
 	sleeved = null
 	armor_class = ARMOR_CLASS_LIGHT
+
+/obj/item/clothing/suit/roguetown/armor/leather/vest/butcher
+	name = "leather vest"
+	icon_state = "leathervest"
+	item_state = "leathervest"
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	name = "sea jacket"
@@ -444,7 +448,7 @@
 	sellprice = 50
 	armor_class = ARMOR_CLASS_LIGHT
 	allowed_sex = list(FEMALE)
-	allowed_race = list("humen", "tiefling", "dwarfm","argonian", "elfd", "elfw", "helf", "aasimar")
+	allowed_race = ALL_RACES_LIST
 
 /obj/item/clothing/suit/roguetown/armor/silkcoat/Initialize()
 	color = pick(CLOTHING_PURPLE, null,CLOTHING_GREEN, CLOTHING_RED)
@@ -499,8 +503,8 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 
 /obj/item/clothing/suit/roguetown/armor/rare/elfplate
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "elvish plate"
-	desc = "A fine suit of sleek, moulded elvish metal. It's interlocking nature and light weight allow for increased maneuverability."
+	name = "dark elf plate"
+	desc = "A fine suit of sleek, moulded dark elf metal. It's interlocking nature and light weight allow for increased maneuverability."
 	body_parts_covered = CHEST|VITALS
 	icon_state = "elfchest"
 	item_state = "elfchest"
@@ -521,6 +525,12 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 		AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/fullplate (1).ogg',\
 													'sound/foley/footsteps/armor/fullplate (2).ogg',\
 													'sound/foley/footsteps/armor/fullplate (3).ogg'), 100)
+
+/obj/item/clothing/suit/roguetown/armor/rare/elfplate/welfplate
+	name = "elvish plate"
+	desc = "A suit of steel interwoven, through honed elven technique, with hardened bark plates."
+	icon_state = "welfchest"
+	item_state = "welfchest"
 
 /obj/item/clothing/suit/roguetown/armor/rare/dwarfplate
 	slot_flags = ITEM_SLOT_ARMOR
