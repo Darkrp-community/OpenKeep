@@ -170,7 +170,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 				pick_aspirants()
 				log_game("Minor Antagonist: Aspirant")
 			if(3)
-				log_game("Minor Antagonist: Extended") // placeholder.
+				pick_bandits()
+				log_game("Minor Antagonist: Bandit")
 		if(prob(30))
 			continue
 		else
@@ -184,7 +185,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	"Merchant",
 	"Priest")
 	var/num_bandits = 0
-	if(num_players() >= 7)
+	if(num_players() >= 6)
 		num_bandits = CLAMP(round(num_players() / 3), 1, 2)
 		banditgoal += (num_bandits * rand(200,400))
 

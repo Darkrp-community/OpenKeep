@@ -20,8 +20,8 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/bandit
-	category_tags = list(CTAG_ANTAG, CTAG_BANDIT)
-	maximum_possible_slots = 2
+	category_tags = list(CTAG_ANTAG, CTAG_BANDIT, CTAG_ADVENTURER)
+	maximum_possible_slots = 1
 
 /datum/outfit/job/roguetown/adventurer/bandit/pre_equip(mob/living/carbon/human/H)
 	..()
