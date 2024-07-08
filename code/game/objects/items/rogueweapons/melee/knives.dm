@@ -283,9 +283,29 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
 	. = ..()
-	if(ishuman(target) && (target.stat == DEAD)) // Trigger soul steal if the target is human and is dead.
+	if(1 == 1)//if(ishuman(target) && (target.stat == DEAD || target.health > target.crit_threshold)) // Trigger soul steal if the target is human and is dead.
 		if(target.has_flaw(/datum/charflaw/hunted)) // The profane dagger only thirsts for those who are hunted.
-			
+			var/mob/living/carbon/spirit/underworld_spirit = target.get_spirit()
+			//GET OVER HERE!
+			if(underworld_spirit)
+				var/mob/dead/observer/ghost = underworld_spirit.ghostize()
+				qdel(underworld_spirit)
+				ghost.name_archive = usr.real_name
+				ghost.loc = src
+				ghost.real_name = src.name
+				ghost.name = src.name
+				ghost.reset_perspective(src)
+				ghost.control_object = src
+			else
+				target.name_archive = usr.real_name
+				target.loc = src
+				target.real_name = src.name
+				target.name = src.name
+				target.reset_perspective(src)
+				target.control_object = src
+			target.visible_message("<span class='danger'>[target]'s soul is pulled from their body and sucked into the profane dagger!</span>", "<span class='danger'>My soul is trapped within the profane dagger. Damnation!</span>")
+			target.adjust_triumphs(-1)
+			user.adjust_triumphs(1)
 
 /obj/item/rogueweapon/huntingknife/stoneknife
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)
