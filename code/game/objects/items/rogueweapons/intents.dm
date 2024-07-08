@@ -509,7 +509,7 @@
 	animname = "cut"
 	blade_class = BCLASS_CHOP
 	hitsound = "genslash"
-	penfactor = 40
+	penfactor = 230
 	damfactor = 40
 	candodge = TRUE
 	canparry = TRUE

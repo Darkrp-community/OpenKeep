@@ -48,8 +48,8 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood
 	name = "FLESH HOMUNCULUS"
 	hud_type = /datum/hud/human
-	icon_state = "imp"
-	icon_living = "imp"
+	icon_state = "FLESH"
+	icon_living = "FLESH"
 	icon = 'icons/mob/mob.dmi'
 	STACON = 10
 	STASTR = 19
@@ -59,8 +59,9 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended
 	name = "???"
 	hud_type = /datum/hud/human
-	icon_state = "daemon"
-	icon_living = "daemon"
+	icon_state = "ascend"
+	icon_living = "ascend"
+	icon = 'icons/mob/32x64.dmi'
 	base_intents = list(/datum/intent/unarmed/ascendedclaw)
 	melee_damage_lower = 250
 	melee_damage_upper = 550
@@ -78,6 +79,19 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/Initialize()
 	. = ..()
 	set_light(5,5, LIGHT_COLOR_RED)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/get_sound(input)
+	switch(input)
+		if("aggro")
+			return pick('sound/misc/HL (1).ogg','sound/misc/HL (2).ogg','sound/misc/HL (3).ogg','sound/misc/HL (4).ogg','sound/misc/HL (5).ogg','sound/misc/HL (6).ogg')
+		if("pain")
+			return pick('sound/misc/HL (1).ogg','sound/misc/HL (2).ogg','sound/misc/HL (3).ogg','sound/misc/HL (4).ogg','sound/misc/HL (5).ogg','sound/misc/HL (6).ogg')
+		if("death")
+			return pick('sound/misc/HL (1).ogg','sound/misc/HL (2).ogg','sound/misc/HL (3).ogg','sound/misc/HL (4).ogg','sound/misc/HL (5).ogg','sound/misc/HL (6).ogg')
+		if("idle")
+			return pick('sound/misc/HL (1).ogg','sound/misc/HL (2).ogg','sound/misc/HL (3).ogg','sound/misc/HL (4).ogg','sound/misc/HL (5).ogg','sound/misc/HL (6).ogg')
+		if("cidle")
+			return pick('sound/misc/HL (1).ogg','sound/misc/HL (2).ogg','sound/misc/HL (3).ogg','sound/misc/HL (4).ogg','sound/misc/HL (5).ogg','sound/misc/HL (6).ogg')
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/death(gibbed)
 	. = ..()
