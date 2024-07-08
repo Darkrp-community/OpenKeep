@@ -17,7 +17,7 @@
 "lZ" = (/turf/open/transparent/openspace,/area/rogue/outdoors/mountains/deception)
 "mb" = (/obj/effect/landmark/mapGenerator/rogue/cave{endTurfX = 155; endTurfY = 155},/turf/closed/mineral/rogue/bedrock,/area/rogue/under/cave)
 "nE" = (/obj/machinery/light/rogue/firebowl/stump,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/deception)
-"nH" = (/obj/item/reagent_containers/powder/flour/salt,/obj/structure/closet/crate/chest/wicker,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
+"nH" = (/obj/item/reagent_containers/powder/salt,/obj/structure/closet/crate/chest/wicker,/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)
 "od" = (/turf/open/floor/rogue/dirt,/area/rogue/under/cave)
 "oB" = (/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/deception)
 "oL" = (/turf/open/floor/rogue/grass,/area/rogue/outdoors/mountains/deception)

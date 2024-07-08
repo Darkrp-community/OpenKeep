@@ -131,9 +131,8 @@
 /obj/item/clothing/neck/roguetown/psicross
 	name = "psycross"
 	desc = "Let His name be naught but forgot'n."
-	icon_state = "psicross"
+	icon_state = "psicrossw"
 	//dropshrink = 0.75
-	resistance_flags = FIRE_PROOF
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
 	sellprice = 10
 	experimental_onhip = TRUE
@@ -142,26 +141,31 @@
 	name = "amulet of Astrata"
 	desc = "Blessed be everything the light of the sun touches, for it is blessed by Her grace."
 	icon_state = "astrata"
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/noc
 	name = "amulet of Noc"
 	desc = "Diligence, study, pursuit of truth and wisdom. Let nothing deterr you from it."
 	icon_state = "noc"
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/dendor
 	name = "amulet of Dendor"
 	desc = "Nature is a body of which we are but its entrails."
 	icon_state = "dendor"
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/necra
 	name = "amulet of Necra"
 	desc = "Where, grave, thy victory? I triumph still while the Veiled Lady abides by me."
 	icon_state = "necra"
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/ravox
 	name = "amulet of Ravox"
 	desc = "Struggle. Challenge. And rise to struggle again. That is the sword of he who yet lives to fight again."
 	icon_state = "ravox"
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/eora
 	name = "amulet of Eora"
@@ -171,7 +175,8 @@
 /obj/item/clothing/neck/roguetown/psicross/silver
 	name = "silver psycross"
 	desc = "Let His name be naught but forgot'n. Let the wicked undead burn at my touch."
-	icon_state = "psicrossiron"
+	icon_state = "psicrosssteel"
+	resistance_flags = FIRE_PROOF
 	sellprice = 50
 	smeltresult = /obj/item/ingot/silver
 
@@ -212,7 +217,7 @@
 /obj/item/clothing/neck/roguetown/psicross/g
 	name = "golden psycross"
 	desc = "Let His name be naught but forgot'n."
-	icon_state = "psicrossg"
+	icon_state = "psicrossc"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
 	sellprice = 100

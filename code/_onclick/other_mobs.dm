@@ -414,6 +414,8 @@
 								put_in_active_hand(picked)
 								to_chat(src, "<span class='green'>I stole [picked]!</span>")
 								exp_to_gain *= src.mind.get_learning_boon(thiefskill)
+								if(has_flaw(/datum/charflaw/addiction/kleptomaniac))
+									sate_addiction()
 							else
 								exp_to_gain /= 2
 								to_chat(src, "<span class='warning'>I didn't find anything there. Perhaps I should look elsewhere.</span>")

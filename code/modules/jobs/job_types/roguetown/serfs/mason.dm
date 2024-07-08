@@ -55,8 +55,26 @@
 	backl = /obj/item/storage/backpack/rogue/backpack
 	id = /obj/item/clothing/ring/silver/makers_guild
 	backpack_contents = list(/obj/item/roguekey/mason = 1, /obj/item/flint = 1, /obj/item/flashlight/flare/torch/lantern)
+
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", 1)
 	H.change_stat("endurance", 1)
 	H.change_stat("constitution", 1)
 	H.change_stat("speed", -1)
+
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, rand(1,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, rand(1,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, rand(1,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, rand(4,5), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, rand(4,5), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/masonry, rand(4,5), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/engineering, rand(2,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/labor/mining, 2, TRUE)
+
+
+
