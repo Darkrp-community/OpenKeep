@@ -117,12 +117,12 @@
 	if(copytext(message, 1, 2) == "+")
 		whisper(copytext(message, 2),sanitize = FALSE)//already sani'd
 		return 1
-
+/* commenting out subtler
 /mob/proc/check_subtler(message, forced)
 	if(copytext_char(message, 1, 2) == "@")
 		emote("subtle", message = copytext_char(message, 2), intentional = !forced)
 		return 1
-
+*/
 ///Check if the mob has a hivemind channel
 /mob/proc/hivecheck()
 	return 0

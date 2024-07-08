@@ -166,7 +166,7 @@
 
 /datum/emote/living/custom/replace_pronoun(mob/user, message)
 	return message
-
+/* A terrible idea, commenting out subtler
 // ............... Subtle ..................
 /datum/emote/living/subtle
 	key = "subtle"
@@ -211,6 +211,8 @@
 			M.show_message(message)
 
 	user.visible_message("<i>[message]</i>", vision_distance = 1)
+*/
+
 
 // ............... A ..................
 /datum/emote/living/attnwhistle

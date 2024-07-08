@@ -46,8 +46,8 @@
 	return TRUE
 
 /datum/keybinding/living/swap_hands
-	hotkey_keys = list("Q")
-	classic_keys = list("Q")
+	hotkey_keys = list("X")
+	classic_keys = list("X")
 	name = "swap_hands"
 	full_name = "Swap hands"
 	description = ""
@@ -78,7 +78,8 @@
 
 
 /datum/keybinding/living/drop_item
-	hotkey_keys = list()
+	hotkey_keys = list("Q")
+	classic_keys = list("Q")
 	name = "drop_item"
 	full_name = "Drop Item"
 	description = ""
@@ -144,7 +145,7 @@
 
 
 /datum/keybinding/living/resist
-	hotkey_keys = list("X")
+	hotkey_keys = list("B")
 	name = "cancelresist"
 	full_name = "Cancel/Resist"
 	description = "Stop an action such as a charged attack or spam this to resist against a grab."
