@@ -57,7 +57,7 @@
 /datum/supply_pack/rogue/tools/bait
 	name = "Fishing Grub"
 	cost = 3
-  	contains = /obj/item/natural/worms/grubs
+	contains = /obj/item/natural/worms/grubs
 
 /datum/supply_pack/rogue/tools/premiumbait
 	name = "Premium Fishing Bait"
