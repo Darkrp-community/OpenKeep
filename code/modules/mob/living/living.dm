@@ -1831,7 +1831,7 @@
 				continue
 			if(M.mob_timers[MT_INVISIBILITY] > world.time) // Check if the mob is affected by the invisibility spell
 				continue
-			var/probby = 3 * STAPER
+			var/probby = 6 * STAPER
 			if(M.mind)
 				probby -= (M.mind.get_skill_level(/datum/skill/misc/sneaking) * 10)
 			probby = (max(probby, 5))

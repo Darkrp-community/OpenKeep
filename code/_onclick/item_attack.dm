@@ -63,6 +63,16 @@
 	if(istype(user.rmb_intent, /datum/rmb_intent/swift))
 		adf = round(adf * 0.6)
 	user.changeNext_move(adf)
+	if(user.m_intent == MOVE_INTENT_SNEAK)
+		var/probby = 10 * STAPER
+		if(user.mind)
+			probby -= (user.mind.get_skill_level(/datum/skill/misc/sneaking) * 10)
+		probby = (max(probby, 5))
+		if(prob(probby))
+			found_ping(get_turf(user), client, "hidden")
+			emote("huh")
+			to_chat(user, "<span class='danger'>[src] sees me! I'm found!</span>")
+			user.mob_timers[MT_FOUNDSNEAK] = world.time
 	return I.attack(src, user)
 
 /mob/living
