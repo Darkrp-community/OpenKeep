@@ -33,7 +33,7 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/blackgoat = 45)
-	desc = "A bottle with the black goat kriek cork-seal. A fruit-sour beer brewed with volfberries for a tangy taste."
+	desc = "A bottle with the black goat kriek cork-seal. A fruit-sour beer brewed with jackberries for a tangy taste."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/hagwoodbitter = 45)
@@ -58,7 +58,7 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/sourwine = 45)
-	desc = "A bottle that contains a grenzelhoftian classic with a black ink cork-seal.. An extremely sour wine that is watered down with mineral water."
+	desc = "A bottle that contains a Grenzelhoftian classic with a black ink cork-seal.. An extremely sour wine that is watered down with mineral water."
 
 /obj/item/reagent_containers/glass/bottle/rogue/redwine
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/redwine = 45)
