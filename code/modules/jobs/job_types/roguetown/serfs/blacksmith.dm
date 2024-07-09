@@ -52,7 +52,7 @@
 		belt = /obj/item/storage/belt/rogue/leather
 		cloak = /obj/item/clothing/cloak/apron/brown
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		beltr = /obj/item/roguekey/blacksmith
+		beltr = /obj/item/keyring/armorsmith
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", -1)
@@ -109,7 +109,7 @@
 		belt = /obj/item/storage/belt/rogue/leather
 		cloak = /obj/item/clothing/cloak/apron/brown
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		beltr = /obj/item/roguekey/blacksmith
+		beltr = /obj/item/keyring/weaponsmith
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", -1)
