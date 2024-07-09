@@ -78,6 +78,7 @@
 		return FALSE
 	var/mob/living/doctor = user
 	var/mob/living/carbon/human/patient = target
+	var/boon = doctor?.mind?.get_learning_boon(/datum/skill/misc/medicine)
 	if(!get_location_accessible(patient, check_zone(doctor.zone_selected)))
 		to_chat(doctor, "<span class='warning'>Something in the way.</span>")
 		return FALSE
@@ -115,7 +116,8 @@
 		if(target_wound.sew_progress < target_wound.sew_threshold)
 			continue
 		if(doctor.mind)
-			doctor.mind.adjust_experience(/datum/skill/misc/medicine, doctor.STAINT * 5)
+			var/amt2raise = doctor.STAINT *5
+			doctor.mind.adjust_experience(/datum/skill/misc/medicine, amt2raise * boon)
 		use(1)
 		target_wound.sew_wound()
 		if(patient == doctor)

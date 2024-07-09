@@ -263,6 +263,7 @@
 	max_integrity = 100
 
 /obj/item/restraints/legcuffs/beartrap/attack_hand(mob/user)
+	var/boon = user?.mind?.get_learning_boon(/datum/skill/craft/traps)
 	if(iscarbon(user) && armed && isturf(loc))
 		var/mob/living/carbon/C = user
 		var/def_zone = "[(C.active_hand_index == 2) ? "r" : "l" ]_arm"
@@ -293,7 +294,7 @@
 				alpha = 255
 				C.visible_message("<span class='notice'>[C] disarms \the [src].</span>", \
 						"<span class='notice'>I disarm \the [src].</span>")
-				C.mind?.adjust_experience(/datum/skill/craft/traps, C.STAINT, FALSE)
+				C.mind?.adjust_experience(/datum/skill/craft/traps, C.STAINT * boon, FALSE)
 				return FALSE
 			else
 				add_mob_blood(C)
@@ -344,6 +345,7 @@
 
 /obj/item/restraints/legcuffs/beartrap/attack_self(mob/user)
 	..()
+	var/boon = user?.mind?.get_learning_boon(/datum/skill/craft/traps)
 	if(ishuman(user) && !user.stat && !user.restrained())
 		var/mob/living/L = user
 		if(do_after(user, 50 - (L.STASTR*2), target = user))
@@ -351,7 +353,7 @@
 				armed = !armed
 				update_icon()
 				to_chat(user, "<span class='notice'>[src] is now [armed ? "armed" : "disarmed"]</span>")
-				L.mind?.adjust_experience(/datum/skill/craft/traps, L.STAINT, FALSE) // We learn how to set them better, little by little.
+				L.mind?.adjust_experience(/datum/skill/craft/traps, L.STAINT * boon, FALSE) // We learn how to set them better, little by little.
 			else
 				if(rusty)
 					user.visible_message("<span class='warning'>The rusty [src.name] breaks under stress!</span>")
