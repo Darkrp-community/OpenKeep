@@ -23,6 +23,7 @@
 
 /obj/effect/proc_holder/spell/aoe_turf/knock/proc/open_door(obj/structure/mineral_door/door)
 	if(istype(door))
+		door.locked = 0
 		door.force_open()
 
 /* Assuming force_open is a correct method for both wooden and other doors.
