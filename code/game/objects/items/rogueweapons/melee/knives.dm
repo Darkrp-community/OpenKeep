@@ -281,31 +281,56 @@
 				"<span class='danger'>How long have I been in here...</span>")
 			H.visible_message("profane dagger whispers, \"[message]\"")
 
-/obj/item/rogueweapon/huntingknife/idagger/steel/profane/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/funny_attack_effects(mob/living/carbon/human/target, mob/living/user = usr, nodmg)
 	. = ..()
-	if(1 == 1)//if(ishuman(target) && (target.stat == DEAD || target.health > target.crit_threshold)) // Trigger soul steal if the target is human and is dead.
+	if(1 == 1)//if(target.stat == DEAD || target.health > target.crit_threshold) // Trigger soul steal if the target is either dead or in crit
 		if(target.has_flaw(/datum/charflaw/hunted)) // The profane dagger only thirsts for those who are hunted.
-			var/mob/living/carbon/spirit/underworld_spirit = target.get_spirit()
-			//GET OVER HERE!
-			if(underworld_spirit)
-				var/mob/dead/observer/ghost = underworld_spirit.ghostize()
-				qdel(underworld_spirit)
-				ghost.name_archive = usr.real_name
-				ghost.loc = src
-				ghost.real_name = src.name
-				ghost.name = src.name
-				ghost.reset_perspective(src)
-				ghost.control_object = src
+			if(target.client == null) //See if the target's soul has left their body
+				to_chat(user, "<span class='danger'>Your target's soul has already escaped its corpse...you try to call it back!</span>")
+				get_profane_ghost(target,user) //Proc to capture a soul that has left the body.
 			else
-				target.name_archive = usr.real_name
-				target.loc = src
-				target.real_name = src.name
-				target.name = src.name
-				target.reset_perspective(src)
-				target.control_object = src
-			target.visible_message("<span class='danger'>[target]'s soul is pulled from their body and sucked into the profane dagger!</span>", "<span class='danger'>My soul is trapped within the profane dagger. Damnation!</span>")
-			target.adjust_triumphs(-1)
-			user.adjust_triumphs(1)
+				target.adjust_triumphs(-1)
+				user.adjust_triumphs(1)
+				init_profane_soul(target, user) //If they are still in their body, send them to the dagger!
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/init_profane_soul(mob/living/carbon/human/target, mob/user)
+	target.stop_sound_channel(CHANNEL_HEARTBEAT)
+	target.invisibility = INVISIBILITY_ABSTRACT
+	target.dust_animation()
+	var/mob/living/simple_animal/shade/S = new /mob/living/simple_animal/shade(src)
+	S.AddComponent(/datum/component/soulstoned, src)
+	S.name = "soul of [target.real_name]"
+	S.real_name = "soul of [target.real_name]"
+	S.language_holder = user.language_holder.copy(S)
+	S.cancel_camera()
+	target.visible_message("<span class='danger'>[target]'s soul is pulled from their body and sucked into the profane dagger!</span>", "<span class='danger'>My soul is trapped within the profane dagger. Damnation!</span>")
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/get_profane_ghost(mob/living/carbon/human/target, mob/user)
+	var/mob/dead/observer/chosen_ghost
+	var/mob/living/carbon/spirit/underworld_spirit = target.get_spirit() //Check if a soul has already gone to the underworld
+	if(underworld_spirit) // If they are in the underworld, pull them back to the real world and make them a normal ghost. Necra can't save you now!
+		var/mob/dead/observer/ghost = underworld_spirit.ghostize()
+		chosen_ghost = ghost.get_ghost(TRUE,TRUE)
+	else //Otherwise, try to get a ghost from the real world
+		chosen_ghost = target.get_ghost(TRUE,TRUE)
+	if(!chosen_ghost || !chosen_ghost.client) // If there is no valid ghost or if that ghost has no active player
+		return FALSE
+	target.adjust_triumphs(-1)
+	user.adjust_triumphs(1)
+	init_profane_soul(target, user) // If we got the soul, store them in the dagger.
+	qdel(target) // Get rid of that ghost!
+	return TRUE
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/release_profane_souls(mob/user) // For ways to release the souls trapped within a profane dagger, such as a Necrite burial rite. Returns the number of freed souls.
+	var/freed_souls = 0
+	for(var/mob/living/simple_animal/shade/A in src) // for every trapped soul in the dagger, whether they have left the game or not
+		to_chat(A, "<b>I have been freed from my vile prison, I await Necra's cold grasp. Salvation!</b>")
+		A.returntolobby() //Send the trapped soul back to the lobby
+		user.visible_message("<span class='notice'>The [A.name] flows out from the profane dagger, finally free of its grasp.</span>")
+		freed_souls += 1
+	user.visible_message("<span class='warning'>The profane dagger shatters into putrid smoke!</span>")
+	qdel(src) // Delete the dagger. Forevermore.
+	return freed_souls
 
 /obj/item/rogueweapon/huntingknife/stoneknife
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)
