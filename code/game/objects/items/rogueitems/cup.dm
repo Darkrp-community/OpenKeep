@@ -2,7 +2,7 @@
 	name = "metal cup"
 	desc = "An iron cup, it's rim gnawed upon and grimey."
 	icon_state = "iron"
-	icon = 'icons/roguetown/items/cooking.dmi'
+//	icon = 'icons/roguetown/items/cooking.dmi'
 	force = 5
 	throwforce = 10
 	reagent_flags = OPENCONTAINER
@@ -15,6 +15,7 @@
 	sellprice = 1
 	drinksounds = list('sound/items/drink_cup (1).ogg','sound/items/drink_cup (2).ogg','sound/items/drink_cup (3).ogg','sound/items/drink_cup (4).ogg','sound/items/drink_cup (5).ogg')
 	fillsounds = list('sound/items/fillcup.ogg')
+	gripped_intents = list(INTENT_POUR)
 
 /obj/item/reagent_containers/glass/cup/update_icon(dont_fill=FALSE)
 	testing("cupupdate")
@@ -22,7 +23,7 @@
 	cut_overlays()
 
 	if(reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('icons/roguetown/items/cooking.dmi', "[icon_state]filling")
+		var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "[icon_state]filling")
 
 		filling.color = mix_color_from_reagents(reagents.reagent_list)
 		filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)

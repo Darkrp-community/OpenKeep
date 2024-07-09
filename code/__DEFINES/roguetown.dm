@@ -69,6 +69,12 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define SNACK_DECENT 6
 #define SNACK_POOR 3
 
+/*	........   Rotting defines   ................ */
+#define SHELFLIFE_EXTREME 60 MINUTES
+#define SHELFLIFE_LONG 40 MINUTES
+#define SHELFLIFE_DECENT 25 MINUTES
+#define SHELFLIFE_SHORT 15 MINUTES
+#define SHELFLIFE_TINY 10 MINUTES
 
 /*
 	Formerly bitflags, now we are strings
