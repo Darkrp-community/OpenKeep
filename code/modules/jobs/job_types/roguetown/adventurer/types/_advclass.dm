@@ -20,12 +20,16 @@
 
 	var/horse = FALSE
 	var/vampcompat = TRUE
+	var/whitelist_req = TRUE
 
 	/// This class is immune to species-based swapped gender locks
 	var/immune_to_genderswap = FALSE
 
 	//What categories we are going to sort it in
 	var/list/category_tags = list(CTAG_DISABLED)
+
+/datum/advclass/pilgrim
+	whitelist_req = FALSE
 
 /datum/advclass/proc/equipme(mob/living/carbon/human/H)
 	// input sleeps....
@@ -89,6 +93,8 @@
 	if(min_pq != -100) // If someone sets this we actually do the check.
 		if(!(get_playerquality(H.client.ckey) >= min_pq))
 			return FALSE
+	if(whitelist_req && (!H.client.whitelisted()))
+		return FALSE
 
 	if(prob(pickprob))
 		return TRUE

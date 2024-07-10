@@ -12,6 +12,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/monk
 	category_tags = list(CTAG_ADVENTURER)
 	vampcompat = FALSE
+	whitelist_req = TRUE
 
 /datum/outfit/job/roguetown/adventurer/monk
 	allowed_patrons = list(/datum/patron/divine/ravox)

@@ -156,9 +156,8 @@ SUBSYSTEM_DEF(job)
 		if(!job.special_job_check(player))
 			JobDebug("FOC player did not pass special check, Player: [player], Job:[job.title]")
 			continue
-		if(CONFIG_GET(flag/usewhitelist))
-			if(job.whitelist_req && (!player.client.whitelisted()))
-				continue
+		if(job.whitelist_req && (!player.client.whitelisted()))
+			continue
 		if(player.client.prefs.job_preferences[job.title] == level)
 			JobDebug("FOC pass, Player: [player], Level:[level]")
 			candidates += player
@@ -235,9 +234,8 @@ SUBSYSTEM_DEF(job)
 			JobDebug("GRJ player did not pass special check, Player: [player], Job:[job.title]")
 			continue
 
-		if(CONFIG_GET(flag/usewhitelist))
-			if(job.whitelist_req && (!player.client.whitelisted()))
-				continue
+		if(job.whitelist_req && (!player.client.whitelisted()))
+			continue
 
 //		if((player.client.prefs.lastclass == job.title) && (!job.bypass_lastclass))
 //			JobDebug("GRJ incompatible with lastclass, Player: [player], Job: [job.title]")
@@ -461,9 +459,8 @@ SUBSYSTEM_DEF(job)
 					JobDebug("DO incompatible with blacklist, Player: [player], Job: [job.title]")
 					continue
 
-				if(CONFIG_GET(flag/usewhitelist))
-					if(job.whitelist_req && (!player.client.whitelisted()))
-						continue
+				if(job.whitelist_req && (!player.client.whitelisted()))
+					continue
 
 				if(length(job.allowed_ages) && !(player.client.prefs.age in job.allowed_ages))
 					JobDebug("DO incompatible with age, Player: [player], Job: [job.title]")
@@ -545,9 +542,8 @@ SUBSYSTEM_DEF(job)
 			if(check_blacklist(player.client.ckey) && !job.bypass_jobban)
 				continue
 
-			if(CONFIG_GET(flag/usewhitelist))
-				if(job.whitelist_req && (!player.client.whitelisted()))
-					continue
+			if(job.whitelist_req && (!player.client.whitelisted()))
+				continue
 
 			if(length(job.allowed_ages) && !(player.client.prefs.age in job.allowed_ages))
 				continue
