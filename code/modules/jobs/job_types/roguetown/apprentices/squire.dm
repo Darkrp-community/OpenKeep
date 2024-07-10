@@ -23,56 +23,43 @@
 
 /datum/outfit/job/roguetown/squire/pre_equip(mob/living/carbon/human/H)
 	..()
-	if(H.gender == FEMALE)
-		H.virginity = TRUE
-		pants = /obj/item/clothing/under/roguetown/tights
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
-		armor = /obj/item/clothing/suit/roguetown/armor/chainmail
-		shoes = /obj/item/clothing/shoes/roguetown/boots
-		belt = /obj/item/storage/belt/rogue/leather
-		beltl = /obj/item/keyring/guard
-		beltr = pick(/obj/item/rogueweapon/mace/wsword, /obj/item/rogueweapon/mace/copperbludgeon, /obj/item/rogueweapon/knife/copperdagger,)
-		backr = /obj/item/storage/backpack/rogue/satchel
-		neck = /obj/item/storage/belt/rogue/pouch
-		if(H.mind)
-			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.change_stat("perception", 1)
-			H.change_stat("constitution", 1)
-			H.change_stat("speed", 1)
-	else
-		H.virginity = TRUE
-		pants = /obj/item/clothing/under/roguetown/tights
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
-		armor = /obj/item/clothing/suit/roguetown/armor/chainmail
-		shoes = /obj/item/clothing/shoes/roguetown/boots
-		belt = /obj/item/storage/belt/rogue/leather
-		beltl = /obj/item/keyring/guard
-		beltr = pick(/obj/item/rogueweapon/mace/wsword, /obj/item/rogueweapon/mace/copperbludgeon, /obj/item/rogueweapon/knife/copperdagger,)
-		backr = /obj/item/storage/backpack/rogue/satchel
-		neck = /obj/item/storage/belt/rogue/pouch
-		if(H.mind)
-			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.change_stat("perception", 1)
-			H.change_stat("constitution", 1)
-			H.change_stat("speed", 1)
+	neck = /obj/item/storage/belt/rogue/pouch
+	beltl = /obj/item/keyring/guard
+	backr = /obj/item/storage/backpack/rogue/satchel
+	pants = /obj/item/clothing/under/roguetown/tights
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+	belt = /obj/item/storage/belt/rogue/leather
+	switch(pick(1,2,3))
+		if (1)
+			beltr = /obj/item/rogueweapon/mace/wsword		
+		if (2)
+			beltr = /obj/item/rogueweapon/mace/copperbludgeon	
+		if (3)
+			beltr = /obj/item/rogueweapon/knife/copperdagger
+
+/datum/outfit/job/roguetown/squire/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+
+	H.virginity = TRUE
+
+	H.change_stat("perception", 1)
+	H.change_stat("constitution", 1)
+	H.change_stat("speed", 1)
+
+	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
