@@ -687,8 +687,6 @@
 	resting = rest
 	update_resting()
 	if(rest == resting)
-		if(sexcon)
-			sexcon.mob_moved()
 		if(resting)
 			if(m_intent == MOVE_INTENT_RUN)
 				toggle_rogmove_intent(MOVE_INTENT_WALK, TRUE)
@@ -907,8 +905,6 @@
 		stop_looking()
 		if(doing)
 			doing = 0
-		if(sexcon)
-			sexcon.mob_moved()
 		if(client)
 			update_vision_cone()
 
@@ -995,10 +991,6 @@
 
 	changeNext_move(CLICK_CD_RESIST)
 
-	if(sexcon)
-		if(sexcon.cancel_our_actions())
-			return
-
 	if(atkswinging)
 		stop_attack(FALSE)
 
@@ -1008,11 +1000,6 @@
 		log_combat(src, pulledby, "resisted grab")
 		resist_grab()
 		return
-
-	if(!restrained(ignore_grab = 1) && !pulledby)
-		if(sexcon)
-			if(sexcon.cancel_others_actions())
-				return
 
 	//unbuckling yourself
 	if(buckled && last_special <= world.time)

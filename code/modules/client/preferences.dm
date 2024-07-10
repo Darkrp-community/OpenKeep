@@ -122,6 +122,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	var/anonymize = TRUE
 
+	var/list/violated = list()
+
 	var/lastclass
 
 	var/uplink_spawn_loc = UPLINK_PDA

@@ -693,12 +693,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	return
 
 /mob/living/carbon/human/after_creation()
-#ifdef MATURESERVER
-	if(gender == MALE)
-		sexcon = new/datum/sex_controller/male(src)
-	else
-		sexcon = new/datum/sex_controller/female(src)
-#endif
 	if(dna?.species)
 		dna.species.after_creation(src)
 	roll_stats()
