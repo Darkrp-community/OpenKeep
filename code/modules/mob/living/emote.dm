@@ -673,10 +673,7 @@
 	message_param = "hugs %t."
 	emote_type = EMOTE_VISIBLE
 	restraint_check = TRUE
-/mob/living/carbon/human/verb/emote_hug()
-	set name = "Hug"
-	set category = "Emotes"
-	emote("hug", intentional = TRUE, targetted = TRUE)
+
 /datum/emote/living/hug/adjacentaction(mob/user, mob/target)
 	. = ..()
 	if(!user || !target)
@@ -781,12 +778,6 @@
 	message_param = "spits on %t."
 	emote_type = EMOTE_VISIBLE
 
-/mob/living/carbon/human/verb/emote_spit()
-	set name = "Spit"
-	set category = "Emotes"
-
-	emote("spit", intentional = TRUE, targetted = TRUE)
-
 
 /datum/emote/living/spit/run_emote(mob/user, params, type_override, intentional)
 	message_param = initial(message_param) // reset
@@ -848,11 +839,6 @@
 			message_param = "slaps %t on the ass!"
 	..()
 
-/mob/living/carbon/human/verb/emote_slap()
-	set name = "Slap"
-	set category = "Emotes"
-
-	emote("slap", intentional = TRUE, targetted = TRUE)
 
 /datum/emote/living/slap/adjacentaction(mob/user, mob/target)
 	. = ..()
@@ -880,11 +866,6 @@
 		var/mob/living/carbon/human/H = target
 		H.flash_fullscreen("redflash1")
 
-/mob/living/carbon/human/verb/emote_pinch()
-	set name = "Pinch"
-	set category = "Emotes"
-
-	emote("pinch", intentional = TRUE, targetted = TRUE)
 
 
 
