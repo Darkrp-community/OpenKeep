@@ -205,7 +205,7 @@
 	if(!giver || !key)
 		return
 	var/curcomm = 0
-	var/json_file = file("data/player_saves/[copytext(key,1,2)]/[key]/commends.json")
+	var/json_file = file("data/player_saves/[copytext_char(key,1,2)]/[key]/commends.json")
 	if(!fexists(json_file))
 		WRITE_FILE(json_file, "{}")
 	var/list/json = json_decode(file2text(json_file))
@@ -225,7 +225,7 @@
 	if(!key)
 		return
 	var/curcomm = 0
-	var/json_file = file("data/player_saves/[copytext(key,1,2)]/[key]/commends.json")
+	var/json_file = file("data/player_saves/[copytext_char(key,1,2)]/[key]/commends.json")
 	if(!fexists(json_file))
 		WRITE_FILE(json_file, "{}")
 	var/list/json = json_decode(file2text(json_file))
@@ -240,7 +240,7 @@
 	if(!key)
 		return
 	var/curcomm = 0
-	var/json_file = file("data/player_saves/[copytext(key,1,2)]/[key]/esl.json")
+	var/json_file = file("data/player_saves/[copytext_char(key,1,2)]/[key]/esl.json")
 	if(!fexists(json_file))
 		WRITE_FILE(json_file, "{}")
 	var/list/json = json_decode(file2text(json_file))
