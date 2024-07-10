@@ -1,4 +1,5 @@
 <!-- Most valid html will work in here, excluding images. -->
 RU STONEKEEP Discord Server: <a href="https://discord.gg/qZw267fFsX">discord.gg/Stonekeep</a>
 <center>* Welcome to our Kingdom! *</center>
+<center>Join the Whitelist to open all roles!</center>
 

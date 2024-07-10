@@ -333,6 +333,31 @@
 	icon_state = "brownkey"
 	lockid = "house9"
 
+/obj/item/roguekey/houses/waterfront1
+	name = "I Waterfront Street Ket"
+	icon_state = "brownkey"
+	lockid = "1waterfront"
+
+/obj/item/roguekey/houses/waterfront2
+	name = "II Waterfront Street Ket"
+	icon_state = "brownkey"
+	lockid = "2waterfront"
+
+/obj/item/roguekey/houses/waterfront3
+	name = "III Waterfront Street Ket"
+	icon_state = "brownkey"
+	lockid = "3waterfront"
+
+/obj/item/roguekey/houses/waterfront4
+	name = "IV Waterfront Street Ket"
+	icon_state = "brownkey"
+	lockid = "4waterfront"
+
+/obj/item/roguekey/houses/waterfront5
+	name = "V Waterfront Street Ket"
+	icon_state = "brownkey"
+	lockid = "5waterfront"
+
 /obj/item/roguekey/apartments
 	name = ""
 	icon_state = ""
@@ -444,7 +469,7 @@
 	lockid = "butcher"
 
 obj/item/roguekey/elder
-	name = "elder's key"
+	name = "mayor's key"
 	icon_state = "rustkey"
 	lockid = "elder"
 
@@ -471,7 +496,7 @@ obj/item/roguekey/armorsmith
 
 /obj/item/roguekey/custom/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/rogueweapon/hammer))
-		var/input = (input(user, "What would you name this key?", "", "") as text) 
+		var/input = (input(user, "What would you name this key?", "", "") as text)
 		if(input)
 			name = name + " key"
 			to_chat(user, "<span class='notice'>You rename the key to [name].</span>")
