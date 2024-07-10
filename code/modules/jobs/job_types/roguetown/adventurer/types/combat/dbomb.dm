@@ -17,9 +17,11 @@
 	backpack_contents = list(/obj/item/bomb = 1, /obj/item/flint = 1)
 	switch(pick(1,2))
 		if (1)
-			beltl = /obj/item/rogueweapon/pick		
+			beltl = /obj/item/rogueweapon/pick
+			H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
 		if (2)
 			beltl = /obj/item/rogueweapon/hammer
+			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 3, TRUE)
 	switch(pick(1,2))
 		if (1)
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather	
