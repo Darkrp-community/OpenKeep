@@ -396,7 +396,7 @@
 	players = shuffle(players)
 
 	for(var/mob/dead/new_player/player in players)
-		if(player.client && player.ready == PLAYER_READY_TO_PLAY) //|| player.client in SSrole_class_handler.drifter_wave_FULLY_entered_clients)
+		if(player.client && player.ready == PLAYER_READY_TO_PLAY && player.client.whitelisted() && !player.client.blacklisted()) //|| player.client in SSrole_class_handler.drifter_wave_FULLY_entered_clients)
 			if(check_pq)
 				if(get_playerquality(player.ckey) <= -10)
 					continue
