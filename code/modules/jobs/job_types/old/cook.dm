@@ -18,6 +18,7 @@
 	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_COOK
+	whitelist_req = FALSE
 
 /datum/outfit/job/cook
 	name = "Cook"

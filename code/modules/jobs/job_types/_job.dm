@@ -83,7 +83,7 @@
 
 	var/tutorial = null
 
-	var/whitelist_req = FALSE
+	var/whitelist_req = TRUE
 
 	var/bypass_jobban = FALSE
 	var/bypass_lastclass = FALSE

@@ -19,7 +19,7 @@
 				Trading adventure for stable pay was the only logical solution, and maybe someday you'll get to lay down the blade for good..."
 	allowed_ages = list(AGE_OLD)
 	display_order = JDO_VET
-	whitelist_req = FALSE
+	whitelist_req = TRUE
 	bypass_lastclass = FALSE
 	selection_color = "#920909"
 

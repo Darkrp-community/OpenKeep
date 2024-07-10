@@ -56,10 +56,10 @@
 		return FALSE
 	if(get_playerquality(client.ckey) <= -10)
 		return FALSE
-//	if(!client.whitelisted())
+	if(!client.whitelisted())
 //		if(!client.patreonlevel())
-//			can_do_sex = 0
-//			return can_do_sex
+		can_do_sex = 0
+		return can_do_sex
 	if(client.blacklisted())
 		can_do_sex = 0
 		return can_do_sex

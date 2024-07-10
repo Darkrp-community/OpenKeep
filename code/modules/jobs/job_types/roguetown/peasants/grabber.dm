@@ -22,6 +22,7 @@
 	give_bank_account = TRUE
 	display_order = JDO_GRABBER
 	bypass_lastclass = FALSE
+	whitelist_req = FALSE
 
 /datum/outfit/job/roguetown/grabber/pre_equip(mob/living/carbon/human/H)
 	..()

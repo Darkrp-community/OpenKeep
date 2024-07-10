@@ -25,6 +25,7 @@
 	display_order = 24
 	give_bank_account = 20
 	selection_color = "#553e01"
+	whitelist_req = FALSE
 
 /datum/outfit/job/roguetown/farmer/pre_equip(mob/living/carbon/human/H)
 	..()

@@ -40,7 +40,7 @@
 	if(user == src)
 		if(get_num_arms(FALSE) < 1)
 			return
-		if(!can_do_sex())
+		if(!can_do_sex() || !user.can_do_sex())
 			return
 		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 			if(get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))

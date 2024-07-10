@@ -21,7 +21,7 @@
 	Indebted to the ruler for funding yils of mystical studies in these dark times, \
 	only wisdom and arcane knowledge amassed during a long life will allow a mage to unlock their full potential."
 	outfit = /datum/outfit/job/roguetown/magician
-	whitelist_req = FALSE
+	whitelist_req = TRUE
 	bypass_lastclass = FALSE
 	give_bank_account = 120
 	min_pq = 0

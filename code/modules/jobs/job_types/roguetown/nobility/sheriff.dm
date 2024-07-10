@@ -13,7 +13,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_CAPTAIN
 	tutorial = "Law and Order, your divine reason for existence. You have been given command over the garrison to help keep order and peace within the city and defend it against the many dangers of the island."
-	whitelist_req = FALSE
+	whitelist_req = TRUE
 	bypass_lastclass = FALSE
 	outfit = /datum/outfit/job/roguetown/captain
 	give_bank_account = 120

@@ -22,6 +22,7 @@
 	display_order = JDO_COOK
 	bypass_lastclass = FALSE
 	give_bank_account = 8
+	whitelist_req = FALSE
 
 /datum/outfit/job/roguetown/cook/pre_equip(mob/living/carbon/human/H)
 	..()

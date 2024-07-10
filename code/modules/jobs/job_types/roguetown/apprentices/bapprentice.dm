@@ -15,6 +15,7 @@
 	display_order = JDO_BAPP
 	give_bank_account = TRUE
 	bypass_lastclass = FALSE
+	whitelist_req = FALSE
 
 /datum/outfit/job/roguetown/bapprentice/pre_equip(mob/living/carbon/human/H)
 	..()

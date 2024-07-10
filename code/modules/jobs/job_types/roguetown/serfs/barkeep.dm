@@ -22,6 +22,7 @@
 	display_order = JDO_BARKEEP
 	bypass_lastclass = FALSE
 	give_bank_account = 43
+	whitelist_req = FALSE
 
 /datum/outfit/job/roguetown/barkeep/pre_equip(mob/living/carbon/human/H)
 	..()

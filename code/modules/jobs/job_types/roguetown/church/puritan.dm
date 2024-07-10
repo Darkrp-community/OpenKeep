@@ -13,7 +13,7 @@
 	allowed_sexes = list(MALE)
 
 	tutorial = "The Priest is my shepard and I am their enforcer, I will do everything in my power to protect the church from evil and serve the priest at all costs. Should I capture evil they will confess their sins before the gods!"
-	whitelist_req = FALSE
+	whitelist_req = TRUE
 
 	outfit = /datum/outfit/job/roguetown/puritan
 	display_order = JDO_PURITAN

@@ -25,6 +25,7 @@
 	display_order = JDO_VAGRANT
 	show_in_credits = FALSE
 	can_random = FALSE
+	whitelist_req = FALSE
 
 /datum/job/roguetown/vagrant/New()
 	. = ..()

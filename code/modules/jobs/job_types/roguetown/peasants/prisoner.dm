@@ -24,6 +24,7 @@
 	give_bank_account = 173
 	can_random = FALSE
 	bypass_lastclass = FALSE
+	whitelist_req = FALSE
 
 /datum/outfit/job/roguetown/prisoner/pre_equip(mob/living/carbon/human/H)
 	..()
