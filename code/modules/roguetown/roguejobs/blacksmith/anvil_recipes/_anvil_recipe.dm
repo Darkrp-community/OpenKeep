@@ -13,6 +13,7 @@
 	var/quality_mod = 0
 	var/progress
 	var/i_type
+	var/recipe_name
 
 	var/datum/parent
 
@@ -108,8 +109,8 @@
 		
 	if(!modifier)
 		return
-	I.obj_integrity *= modifier
 	I.max_integrity  *= modifier
+	I.obj_integrity *= modifier
 	I.sellprice *= modifier
 	if(istype(I, /obj/item/rogueweapon))
 		var/obj/item/rogueweapon/W = I

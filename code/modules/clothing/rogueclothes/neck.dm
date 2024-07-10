@@ -5,6 +5,9 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/neck.dmi'
 	bloody_icon_state = "bodyblood"
 	resistance_flags = FIRE_PROOF
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/neck/roguetown/coif
 	name = "leather coif"
@@ -20,7 +23,8 @@
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	max_integrity = 150
-	anvilrepair = /datum/skill/craft/armorsmithing
+	sewrepair = TRUE
+	anvilrepair = null
 	resistance_flags = FLAMMABLE // Made of leather
 	smeltresult = /obj/item/ash
 
@@ -63,7 +67,6 @@
 	toggle_icon_state = TRUE
 	blocksound = CHAINHIT
 	smeltresult = /obj/item/ingot/steel
-	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/chaincoif/AdjustClothes(mob/user)
 	if(loc == user)
@@ -102,7 +105,6 @@
 	flags_inv = HIDEFACIALHAIR
 	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/steel
-	anvilrepair = /datum/skill/craft/armorsmithing
 	max_integrity = 300
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK|EARS|MOUTH|NOSE
@@ -125,8 +127,6 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
 	smeltresult = /obj/item/ingot/iron
-	anvilrepair = /datum/skill/craft/armorsmithing
-
 
 /obj/item/clothing/neck/roguetown/psicross
 	name = "psycross"

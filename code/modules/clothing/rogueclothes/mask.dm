@@ -5,6 +5,8 @@
 	body_parts_covered = FACE
 	slot_flags = ITEM_SLOT_MASK
 	resistance_flags = FIRE_PROOF
+	sewrepair = TRUE
+	anvilrepair = null
 
 /obj/item/clothing/mask/rogue/spectacles
 	name = "spectacles"
@@ -84,6 +86,8 @@
 	block2add = FOV_BEHIND
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing
 
 
 /obj/item/clothing/mask/rogue/facemask/prisoner/Initialize()

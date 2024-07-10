@@ -17,32 +17,40 @@
 	var/list/ore = list()
 	var/maxore = 1
 	var/cooking = 0
+	var/actively_smelting = FALSE // Are we currently smelting?
 	fueluse = 5 MINUTES
 	crossfire = FALSE
 
 /obj/machinery/light/rogue/smelter/attackby(obj/item/W, mob/living/user, params)
 	if(istype(W, /obj/item/rogueweapon/tongs))
-		var/obj/item/rogueweapon/tongs/T = W
-		if(ore.len && !T.hingot)
-			var/obj/item/I = ore[ore.len]
-			ore -= I
-			I.forceMove(T)
-			T.hingot = I
-			if(user.mind && isliving(user) && T.hingot?.smelted)
-				var/mob/living/L = user
-				var/boon = user.mind.get_learning_boon(/datum/skill/craft/smelting)
-				var/amt2raise = L.STAINT*2 // Smelting is already a timesink, this is justified to accelerate levelling
-				if(amt2raise > 0)
-					user.mind.adjust_experience(/datum/skill/craft/smelting, amt2raise * boon, FALSE)
-			user.visible_message("<span class='info'>[user] retrieves [I] from [src].</span>")
+		if(!actively_smelting) // Prevents an exp gain exploit. - Foxtrot
+			var/obj/item/rogueweapon/tongs/T = W
+			if(ore.len && !T.hingot)
+				var/obj/item/I = ore[ore.len]
+				ore -= I
+				I.forceMove(T)
+				T.hingot = I
+				if(user.mind && isliving(user) && T.hingot?.smeltresult) // Prevents an exploit with coal and runtimes with everything else
+					if(!istype(T.hingot, /obj/item/rogueore) && T.hingot?.smelted) // Burning items to ash won't level smelting.
+						var/mob/living/L = user
+						var/boon = user.mind.get_learning_boon(/datum/skill/craft/smelting)
+						var/amt2raise = L.STAINT*2 // Smelting is already a timesink, this is justified to accelerate levelling
+						if(amt2raise > 0)
+							user.mind.adjust_experience(/datum/skill/craft/smelting, amt2raise * boon, FALSE)
+				user.visible_message("<span class='info'>[user] retrieves [I] from [src].</span>")
+				if(on)
+					var/tyme = world.time
+					T.hott = tyme
+					addtimer(CALLBACK(T, TYPE_PROC_REF(/obj/item/rogueweapon/tongs, make_unhot), tyme), 50)
+				T.update_icon()
+				return
 			if(on)
-				var/tyme = world.time
-				T.hott = tyme
-				addtimer(CALLBACK(T, TYPE_PROC_REF(/obj/item/rogueweapon/tongs, make_unhot), tyme), 50)
-			T.update_icon()
+				to_chat(user, "<span class='info'>Nothing to retrieve from inside.</span>")
+				return // Safety for not smelting our tongs
+		else
+			to_chat(user, "<span class='warning'>\The [src] is currently smelting. Wait for it to finish, or douse it with water to retrieve items from it.</span>")
 			return
-		if(on)
-			return
+
 	if(istype(W, /obj/item/rogueore/coal) && fueluse <= 0)
 		return ..()
 	if(W.smeltresult)
@@ -53,19 +61,25 @@
 				ore[W] = SMELTERY_LEVEL_SPOIL
 			else
 				var/datum/mind/smelter_mind = user.mind // Who smelted the ore?
-				var/smelter_exp = smelter_mind.get_skill_level(/datum/skill/craft/smelting)
-				ore[W] = floor(rand(smelter_exp*15, max(63, smelter_exp*25))/25)
-				/*  0-25 spoil
-					25-50 poor
-					50-75 normal
-					75-onwards good
-					no skill = 0, 63
-					novice = 15, 63
-					apprentice = 30, 63
-					skilled = 45, 75
-					expert = 60, 100
-					master = 75, 125
-					legendary = 100, 150 */
+				var/smelter_exp = smelter_mind.get_skill_level(/datum/skill/craft/smelting) // 0 to 6
+				ore[W] = floor(rand(smelter_exp*15, max(63, smelter_exp*25))/25) // Math explained below
+				/*  
+				RANDOMLY PICKED NUMBER ACCORDING TO SMELTER SKILL:
+					NO SKILL: 		between 00 and 63
+					WEAK:	 		between 15 and 63
+					AVERAGE:	 	between 30 and 63
+					SKILLED: 		between 45 and 75
+					EXPERT: 		between 60 and 100
+					MASTER: 		between 75 and 125
+					LEGENDARY: 		between 90 and 150
+				
+				PICKED NUMBER GETS DIVIDED BY 25 AND ROUNDED DOWN TO CLOSEST INTEGER.
+				RESULT DETERMINES QUALITY OF BAR. SEE code/__DEFINES/skills.dm
+					0 = SPOILED
+					1 = POOR
+					2 = NORMAL
+					3 = GOOD
+				*/
 			user.visible_message("<span class='warning'>[user] puts something in \the [src].</span>")
 			cooking = 0
 			return
@@ -76,7 +90,7 @@
 			to_chat(user, "<span class='warning'>\The [W.name] cannot be smelted.</span>")
 	return ..()
 
-
+// Gaining experience from just retrieving bars with your hands would be a hard-to-patch exploit.
 /obj/machinery/light/rogue/smelter/attack_hand(mob/user, params)
 	if(on)
 		to_chat(user, "<span class='warning'>It's too hot to retrieve bars with your hands.</span>")
@@ -100,6 +114,7 @@
 			if(cooking < 20)
 				cooking++
 				playsound(src.loc,'sound/misc/smelter_sound.ogg', 50, FALSE)
+				actively_smelting = TRUE
 			else
 				if(cooking == 20)
 					for(var/obj/item/I in ore)
@@ -109,11 +124,13 @@
 							ore += R
 							qdel(I)
 					playsound(src,'sound/misc/smelter_fin.ogg', 100, FALSE)
-					visible_message("<span class='notice'>[src] finished smelting.</span>")
+					visible_message("<span class='notice'>\The [src] finished smelting.</span>")
 					cooking = 21
+					actively_smelting = FALSE
 
 /obj/machinery/light/rogue/smelter/burn_out()
 	cooking = 0
+	actively_smelting = FALSE
 	..()
 
 /obj/machinery/light/rogue/smelter/great
@@ -135,6 +152,7 @@
 			if(cooking < 30)
 				cooking++
 				playsound(src.loc,'sound/misc/smelter_sound.ogg', 50, FALSE)
+				actively_smelting = TRUE
 			else
 				if(cooking == 30)
 					var/alloy
@@ -169,5 +187,6 @@
 								ore += R
 								qdel(I)
 					playsound(src,'sound/misc/smelter_fin.ogg', 100, FALSE)
-					visible_message("<span class='notice'>[src] finished smelting.</span>")
+					visible_message("<span class='notice'>\The [src] finished smelting.</span>")
 					cooking = 31
+					actively_smelting = FALSE

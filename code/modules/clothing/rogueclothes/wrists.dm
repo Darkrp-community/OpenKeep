@@ -5,6 +5,8 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/wrists.dmi'
 	sleevetype = "shirt"
 	resistance_flags = FLAMMABLE
+	sewrepair = TRUE
+	anvilrepair = null
 
 /obj/item/clothing/wrists/roguetown/bracers
 	name = "plate vambraces"
@@ -17,6 +19,7 @@
 	blocksound = PLATEHIT
 	resistance_flags = FIRE_PROOF
 	anvilrepair = /datum/skill/craft/armorsmithing
+	sewrepair = FALSE
 
 /obj/item/clothing/wrists/roguetown/bracers/leather
 	name = "leather bracers"

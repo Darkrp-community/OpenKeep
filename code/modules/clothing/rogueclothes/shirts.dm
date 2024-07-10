@@ -13,6 +13,8 @@
 	bloody_icon_state = "bodyblood"
 	boobed = TRUE
 	sewrepair = TRUE
+	anvilrepair = null
+	smeltresult = /obj/item/ash
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt
 	name = "shirt"

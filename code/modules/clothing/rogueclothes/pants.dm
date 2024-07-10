@@ -14,6 +14,7 @@
 	equip_delay_self = 30
 	bloody_icon_state = "bodyblood"
 	sewrepair = TRUE
+	anvilrepair = null
 	r_sleeve_zone = BODY_ZONE_R_LEG
 	l_sleeve_zone = BODY_ZONE_L_LEG
 	r_sleeve_status = SLEEVE_NORMAL

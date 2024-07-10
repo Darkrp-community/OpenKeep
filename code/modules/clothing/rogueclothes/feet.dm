@@ -115,6 +115,7 @@
 	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 500
 	armor_class = ARMOR_CLASS_HEAVY
+	anvilrepair = /datum/skill/craft/armorsmithing
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/shoes/roguetown/boots/armor/light
@@ -155,6 +156,7 @@
 	sleeved = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleevetype = null
 	resistance_flags = FIRE_PROOF // All of these are plated
+	anvilrepair = /datum/skill/craft/armorsmithing
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/boots/rare/elfplate

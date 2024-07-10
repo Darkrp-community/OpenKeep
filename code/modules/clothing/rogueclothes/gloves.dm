@@ -9,6 +9,9 @@
 	sleevetype = "shirt"
 	max_heat_protection_temperature = 361
 	resistance_flags = FIRE_PROOF
+	sewrepair = TRUE
+	anvilrepair = null
+	smeltresult = /obj/item/ash
 
 /obj/item/clothing/gloves/roguetown/leather
 	name = "leather gloves"
@@ -22,8 +25,6 @@
 	resistance_flags = FLAMMABLE // Made of leather
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
-	anvilrepair = null
-	sewrepair = TRUE
 
 /obj/item/clothing/gloves/roguetown/leather/black
 	color = CLOTHING_BLACK
@@ -39,8 +40,6 @@
 	resistance_flags = FLAMMABLE // Made of leather
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
-	anvilrepair = null
-	sewrepair = TRUE
 
 
 /obj/item/clothing/gloves/roguetown/angle
@@ -55,8 +54,6 @@
 	blade_dulling = DULLING_BASHCHOP
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
-	anvilrepair = null
-	sewrepair = TRUE
 	resistance_flags = FLAMMABLE // Made of leather
 
 /obj/item/clothing/gloves/roguetown/chain
@@ -73,6 +70,8 @@
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = null
+	sewrepair = FALSE
 
 /obj/item/clothing/gloves/roguetown/chain/iron
 	name = "iron chain gauntlets"
@@ -95,6 +94,8 @@
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
+	sewrepair = FALSE
+	smeltresult = null
 
 /obj/item/clothing/gloves/roguetown/grenzelgloves
 	name = "grenzelhoft gloves"
@@ -109,8 +110,6 @@
 	blade_dulling = DULLING_BASHCHOP
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
-	anvilrepair = null
-	sewrepair = TRUE
 	resistance_flags = FLAMMABLE // Made of cloth
 
 /obj/item/clothing/gloves/roguetown/rare
@@ -123,6 +122,9 @@
 	blade_dulling = DULLING_BASH
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 400
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
 
 	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 
@@ -134,10 +136,10 @@
 	allowed_race = list("elf", "half-elf", "dark elf")
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
-	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/gloves/roguetown/rare/elfplate/welfplate
 	name = "elvish plate gauntlets"
+	desc = "Plate gauntlets of mystic elven alloy, lightweight yet incredibly protective. Typically worn by elite bladesingers."
 	item_state = "welfhand"
 	icon_state = "welfhand"
 
@@ -150,7 +152,6 @@
 	allowed_sex = list(MALE, FEMALE)
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
-	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/gloves/roguetown/rare/grenzelplate
 	name = "grenzelhoftian plate gauntlets"
@@ -161,7 +162,6 @@
 	allowed_sex = list(MALE)
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
-	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/gloves/roguetown/rare/zybanplate
 	name = "kataphractoe claw gauntlets"
@@ -172,7 +172,6 @@
 	allowed_sex = list(MALE)
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
-	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/gloves/roguetown/leather/feld
 	name = "feldsher's gloves"
