@@ -263,6 +263,7 @@
 	if(zFall(A, ++levels))
 		return FALSE
 	A.visible_message("<span class='danger'>[A] crashes into [src]!</span>")
+	SSticker.holefall++
 	A.onZImpact(src, levels)
 	return TRUE
 

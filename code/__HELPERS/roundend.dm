@@ -382,6 +382,7 @@
 	var/list/shit = list()
 	shit += "<br><span class='bold'>Δ--------------------Δ</span><br>"
 	shit += "<br><font color='#9b6937'><span class='bold'>Deaths:</span></font> [deaths]"
+	shit += "<br><font color='#700000'><span class='bold'>Holes fallen into:</span></font> [holefall]"
 	shit += "<br><font color='#af2323'><span class='bold'>Blood spilt:</span></font> [round(blood_lost / 100, 1)]L"
 	shit += "<br><font color='#36959c'><span class='bold'>TRIUMPH(s) Awarded:</span></font> [tri_gained]"
 	shit += "<br><font color='#a02fa4'><span class='bold'>TRIUMPH(s) Stolen:</span></font> [tri_lost * -1]"

@@ -76,6 +76,7 @@ SUBSYSTEM_DEF(ticker)
 	var/blood_lost = 0
 	var/tri_gained = 0
 	var/tri_lost = 0
+	var/holefall
 	var/list/cuckers = list()
 	var/cums = 0
 
