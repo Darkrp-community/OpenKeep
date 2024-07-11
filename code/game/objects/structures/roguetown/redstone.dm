@@ -52,6 +52,7 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 	desc = "Repeats a signal a set amount of times into an adjacently linked machine when activated by a signal. Looks suspiciously like a barrel."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "repeater"
+	w_class = WEIGHT_CLASS_HUGE // mechanical stuff is usually pretty heavy.
 	max_integrity = 5
 	density = TRUE
 	anchored = TRUE
@@ -180,6 +181,7 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "activator"
 	max_integrity = 45 // so it gets destroyed when used to explode a bomb
+	w_class = WEIGHT_CLASS_HUGE // mechanical stuff is usually pretty heavy.
 	density = TRUE
 	anchored = TRUE
 	var/obj/item/containment

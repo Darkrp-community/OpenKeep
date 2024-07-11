@@ -264,8 +264,32 @@
 		return FALSE
 	A.visible_message("<span class='danger'>[A] crashes into [src]!</span>")
 	SSticker.holefall++
+	if(A.fall_damage())
+		for(var/mob/living/M in contents)
+			visible_message("<span class='danger'>\The [src] falls on \the [M.name]!</span>")
+			M.Stun(1)
+			M.take_overall_damage(A.fall_damage()*2)
 	A.onZImpact(src, levels)
 	return TRUE
+
+/atom/movable/proc/fall_damage()
+	return 0
+
+/obj/item/fall_damage()
+	if(w_class == WEIGHT_CLASS_TINY)
+		return 0
+	if(w_class == WEIGHT_CLASS_GIGANTIC)
+		return 300
+	var/bsc = 3**(w_class-1)
+	return bsc
+
+/obj/structure/fall_damage()
+	if(w_class == WEIGHT_CLASS_TINY)
+		return 0
+	if(w_class == WEIGHT_CLASS_GIGANTIC)
+		return 300
+	var/bsc = 3**(w_class-1)
+	return bsc
 
 /turf/proc/can_zFall(atom/movable/A, levels = 1, turf/target)
 	return zPassOut(A, DOWN, target) && target.zPassIn(A, DOWN, src)

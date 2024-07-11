@@ -111,6 +111,11 @@
 			//absurd damage to guarantee a crit
 			affecting.try_crit(BCLASS_TWIST, 300)
 
+	for(var/mob/living/M in T.contents)
+		visible_message("\The [src] hits \the [M.name]!")
+		M.AdjustKnockdown(levels * 20)
+		M.take_overall_damage(dam * 3.5)
+
 	if(chat_message)
 		to_chat(src, chat_message)
 
