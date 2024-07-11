@@ -6,6 +6,11 @@
 	//Well, we basically need to fill out our options
 
 /*
+	This is basically a int, we add one extra slot per every x amount of PQ
+*/
+	var/PQ_boost_divider = 0
+
+/*
 	This list is organized like so
 	class_cat_alloc_attempts = list(CTAG_PILGRIM = 5, CTAG_ADVENTURER = 3, etc)
 	Wherein you will have this datum attempt to roll you up 5 pilgrim category classes, and 3 adventurer class categories
@@ -119,6 +124,10 @@
 				// We are plusboosting too
 				if(class_cat_plusboost_attempts && SORT_CAT_KEY in class_cat_plusboost_attempts)
 					if(class_cat_plusboost_attempts[SORT_CAT_KEY])
+						if(PQ_boost_divider)
+							var/slot_addition = ceil(get_playerquality(linked_client.ckey)/PQ_boost_divider)
+							class_cat_plusboost_attempts[SORT_CAT_KEY] += slot_addition
+							
 						for(var/i in 1 to class_cat_plusboost_attempts[SORT_CAT_KEY])
 							var/datum/advclass/boostclass = pick(local_insert_sortlist)
 							if(boostclass in rolled_classes)
