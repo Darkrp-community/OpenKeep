@@ -173,17 +173,17 @@
 	name = "stone mortar"
 	result = /obj/item/reagent_containers/glass/mortar
 	reqs = list(/obj/item/natural/stone = 1)
-	tools = list(/obj/item/rogueweapon/huntingknife) // Intended to be either stone knife or steel hunting knife
+	tools = list(/obj/item/rogueweapon/huntingknife)
 	craftdiff = 3
-	subtype_reqs = TRUE //Unsure if needed for stone knife to work, feel free to remove this if not.
+	subtype_reqs = TRUE
 
 /datum/crafting_recipe/roguetown/pestle
 	name = "stone pestle"
 	result = /obj/item/pestle
 	reqs = list(/obj/item/natural/stone = 1)
-	tools = list(/obj/item/rogueweapon/huntingknife) // Intended to be either stone knife or steel hunting knife
+	tools = list(/obj/item/rogueweapon/huntingknife)
 	craftdiff = 3
-	subtype_reqs = TRUE //Unsure if needed for stone knife to work, feel free to remove this if not.
+	subtype_reqs = TRUE
 
 /datum/crafting_recipe/roguetown/bag
 	name = "bag"
@@ -339,7 +339,7 @@ datum/crafting_recipe/roguetown/poisonbolt
 				/obj/item/paper/scroll)
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 	/datum/reagent/water = 50)
-	tools = list(/obj/item/rogueweapon/huntingknife = 1)
+	tools = list(/obj/item/rogueweapon/huntingknife)
 	structurecraft = /obj/structure/fluff/dryingrack
 	craftdiff = 1
 
