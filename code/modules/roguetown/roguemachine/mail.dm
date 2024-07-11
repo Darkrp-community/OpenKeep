@@ -42,7 +42,7 @@
 		sentfrom = "Anonymous"
 	var/t = stripped_multiline_input("Write Your Letter", "ROGUETOWN", no_trim=TRUE)
 	if(t)
-		if(length(t) > 2000)
+		if(length_char(t) > 2000)
 			to_chat(user, "<span class='warning'>Too long. Try again.</span>")
 			return
 	if(!coin_loaded)
@@ -54,8 +54,8 @@
 	P.mailer = sentfrom
 	P.mailedto = send2place
 	P.update_icon()
-	if(findtext(send2place, "#"))
-		var/box2find = text2num(copytext(send2place, findtext(send2place, "#")+1))
+	if(findtext_char(send2place, "#"))
+		var/box2find = text2num(copytext_char(send2place, findtext_char(send2place, "#")+1))
 		var/found = FALSE
 		for(var/obj/structure/roguemachine/mail/X in SSroguemachine.hermailers)
 			if(X.ournum == box2find)
@@ -129,8 +129,8 @@
 			var/sentfrom = input(user, "Who is this from?", "ROGUETOWN", null)
 			if(!sentfrom)
 				sentfrom = "Anonymous"
-			if(findtext(send2place, "#"))
-				var/box2find = text2num(copytext(send2place, findtext(send2place, "#")+1))
+			if(findtext_char(send2place, "#"))
+				var/box2find = text2num(copytext_char(send2place, findtext_char(send2place, "#")+1))
 				testing("box2find [box2find]")
 				var/found = FALSE
 				for(var/obj/structure/roguemachine/mail/X in SSroguemachine.hermailers)
