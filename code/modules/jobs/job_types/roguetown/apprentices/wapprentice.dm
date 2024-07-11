@@ -1,18 +1,12 @@
 /datum/job/roguetown/wapprentice
 	title = "Magician's Apprentice"
+	flag = APPRENTICE
 	department_flag = APPRENTICES
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Aasimar",
-		"Dwarf",
-	)
-	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = ALL_RACES_LIST_NAMES
 	allowed_patrons = list(/datum/patron/divine/noc)
 	allowed_ages = list(AGE_ADULT)
 
