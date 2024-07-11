@@ -174,3 +174,7 @@
 /datum/stressevent/moondust_purest
 	stressadd = -6
 	desc = "<span class='green'>PUREST moondust surges through me!</span>"
+
+/datum/stressevent/calm
+	stressadd = -3
+	desc = "<span class='green'>I feel soothed and calm.</span>"
