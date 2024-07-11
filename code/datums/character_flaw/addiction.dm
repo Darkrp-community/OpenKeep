@@ -78,16 +78,47 @@
 /datum/charflaw/addiction/alcoholic
 	name = "Alcoholic"
 	desc = "Drinking alcohol is my favorite thing."
-	time = 30 MINUTES
+	time = 40 MINUTES
 	needsate_text = "Time for a drink."
 
+/// PYROMANIAC
+
+/datum/charflaw/addiction/pyromaniac // from tf2?
+	name = "Servant of Fire"
+	desc = "The warmth and just seeing something turn to ash is so much fun!"
+	time = 10 MINUTES
+	needsate_text = "I need to see something turn to ash, or be at fire. Anything!"
+
+/// KLEPTOMANIAC
+
+/datum/charflaw/addiction/kleptomaniac
+	name = "Thief-borne"
+	desc = "As a child I had to rely on theft to survive. Whether that changed or not, I just can't get over it."
+	time = 30 MINUTES
+	needsate_text = "I need to STEAL something! I'll die if I don't!"
+
+/// PAIN FREEK
+
+/datum/charflaw/addiction/masochist
+	name = "Pain Freek"
+	desc = "They call me a freek, but it just feels so good..."
+	time = 25 MINUTES
+	needsate_text = "I need to feel good... punch me in the face!"
+
+/// LOVES SEEING VISCERA OR SOME SHIT
+
+/datum/charflaw/addiction/maniac // this will probably NOT be used as an actual flaw
+	name = "Maniac"
+	desc = "The worms call me the maniac... I just like seeing limbs fly and blood drip, is there something so BAD about that?"
+	time = 40 MINUTES // we dont wanna contribute to fragging
+	needsate_text = "Where's all the blood?"
 
 /// JUNKIE
 
 /datum/charflaw/addiction/junkie
 	name = "Junkie"
 	desc = "I need a real high to take the pain of this rotten world away."
-	time = 30 MINUTES
+	time = 50 MINUTES
 	needsate_text = "Time to reach a new high."
 
 /// Smoker
@@ -95,7 +126,7 @@
 /datum/charflaw/addiction/smoker
 	name = "Smoker"
 	desc = "I need to smoke something to take the edge off."
-	time = 30 MINUTES
+	time = 40 MINUTES
 	needsate_text = "Time for a flavorful smoke."
 
 /// GOD-FEARING
@@ -103,40 +134,38 @@
 /datum/charflaw/addiction/godfearing
 	name = "Devout Follower"
 	desc = "I need to pray to my Patron, their blessings are stronger."
-	time = 25 MINUTES
+	time = 40 MINUTES
 	needsate_text = "Time to pray."
 
-/datum/charflaw/addiction/godfearing/on_mob_creation(mob/user)
+/datum/outfit/job/roguetown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE) // added since the previous way it was implemented caused a bunch of runtimes
 	. = ..()
-	if(!ishuman(user))
-		return
-	var/mob/living/carbon/human/H = user
-	if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) || H.mind.has_antag_datum(/datum/antagonist/vampirelord)) // dont stunlock
-		return
-	if(!H.wear_neck)
-		var/obj/item/clothing/neck/roguetown/psicross/crosstype
-		switch(H.patron)
-			if(/datum/patron/divine/astrata)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/astrata
-			if(/datum/patron/divine/noc)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/noc
-			if(/datum/patron/divine/dendor)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/dendor
-			if(/datum/patron/divine/necra)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/necra
-			if(/datum/patron/divine/ravox)
-				crosstype = /obj/item/clothing/neck/roguetown/psicross/ravox
-			else
-				if(prob(1))
-					crosstype = /obj/item/clothing/neck/roguetown/psicross/g
+	if(H.mind && H.has_flaw(/datum/charflaw/addiction/godfearing))
+		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) || H.mind.has_antag_datum(/datum/antagonist/vampirelord)) // dont stunlock
+			return
+		if(!H.wear_neck)
+			var/obj/item/clothing/neck/roguetown/psicross/crosstype
+			switch(H.patron)
+				if(/datum/patron/divine/astrata)
+					crosstype = /obj/item/clothing/neck/roguetown/psicross/astrata
+				if(/datum/patron/divine/noc)
+					crosstype = /obj/item/clothing/neck/roguetown/psicross/noc
+				if(/datum/patron/divine/dendor)
+					crosstype = /obj/item/clothing/neck/roguetown/psicross/dendor
+				if(/datum/patron/divine/necra)
+					crosstype = /obj/item/clothing/neck/roguetown/psicross/necra
+				if(/datum/patron/divine/ravox)
+					crosstype = /obj/item/clothing/neck/roguetown/psicross/ravox
 				else
-					crosstype = /obj/item/clothing/neck/roguetown/psicross
-		H.equip_to_slot_or_del(new crosstype(H), SLOT_NECK)
+					if(prob(1))
+						crosstype = /obj/item/clothing/neck/roguetown/psicross/g
+					else
+						crosstype = /obj/item/clothing/neck/roguetown/psicross
+			H.equip_to_slot_or_del(new crosstype(H), SLOT_NECK)
 
 /// ALCOHOLIC
 
 /datum/charflaw/addiction/lovefiend
 	name = "Love-Fiend"
 	desc = "I must make love!"
-	time = 30 MINUTES
+	time = 50 MINUTES
 	needsate_text = "Time to get happy."
