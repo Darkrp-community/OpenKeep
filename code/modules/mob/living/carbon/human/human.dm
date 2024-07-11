@@ -67,7 +67,6 @@
 
 	//initialize limbs first
 	create_bodyparts()
-	add_teeth()
 
 	setup_human_dna()
 
@@ -358,15 +357,6 @@
 
 /mob/living/carbon/human/proc/canUseHUD()
 	return (mobility_flags & MOBILITY_USE)
-
-/mob/living/carbon/human/proc/add_teeth()
-	var/obj/item/bodypart/head/U = locate(/obj/item/bodypart/head) in bodyparts
-	if(istype(U))
-		U.teeth_list.Cut() //Clear out their mouth of teeth
-		var/obj/item/stack/teeth/T = new /obj/item/stack/teeth(U)
-		U.max_teeth = T.max_amount //Set max teeth for the head based on teeth spawntype
-		T.amount = T.max_amount
-		U.teeth_list += T
 
 /mob/living/carbon/human/can_inject(mob/user, error_msg, target_zone, penetrate_thick = 0)
 	. = 1 // Default to returning true.
@@ -735,7 +725,6 @@
 		regenerate_organs()
 	spill_embedded_objects()
 	set_heartattack(FALSE)
-	add_teeth()
 	drunkenness = 0
 	for(var/datum/mutation/human/HM in dna.mutations)
 		if(HM.quality != POSITIVE)

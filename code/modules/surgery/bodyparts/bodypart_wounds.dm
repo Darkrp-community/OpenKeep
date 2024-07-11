@@ -322,9 +322,6 @@
 		if(prob(used) && (damage_dividend >= necessary_damage))
 			if(dislocation_type)
 				attempted_wounds += dislocation_type
-			if(zone_precise == BODY_ZONE_PRECISE_MOUTH)
-				var/obj/item/bodypart/head/O = locate(/obj/item/bodypart/head) in owner.bodyparts
-				O.knock_out_teeth(get_dir(user, src), rand(1,3))
 			attempted_wounds += fracture_type
 	if(bclass in GLOB.artery_bclasses)
 		used = round(damage_dividend * 20 + (dam / 6), 1)

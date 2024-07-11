@@ -200,7 +200,7 @@
 		var/objective_count = 1
 		for(var/datum/objective/objective in objectives)
 			if(objective.check_completion())
-				to_chat(world, "<B>Goal #[objective_count]</B>: [objective.explanation_text] <span class='greentext'>TRIUMPH!</span>")
+				to_chat(world, "<B>Goal #[objective_count]</B>: [objective.explanation_text] <span class='greentext'>TRIUMPH!</span>")´
 				playsound(world, 'sound/misc/triumph.ogg', 100, FALSE, pressure_affected = FALSE)
 			else
 				to_chat(world, "<B>Goal #[objective_count]</B>: [objective.explanation_text] <span class='redtext'>FAIL.</span>")
