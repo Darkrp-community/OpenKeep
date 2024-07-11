@@ -178,3 +178,48 @@
 	name = "Dazed"
 	desc = "<span class='nicegreen'>I am so high maaaaaaaaan</span>\n"
 	icon_state = "weed"
+
+/datum/status_effect/buff/ravox
+	id = "ravoxbuff"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/ravoxbuff
+	effectedstats = list("constitution" = 1,"endurance" = 1,"strength" = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/ravoxbuff
+	name = "Divine Power"
+	desc = "<span class='nicegreen'>Divine power flows through me.</span>\n"
+	icon_state = "ravox"
+
+/datum/status_effect/buff/calm
+	id = "calm"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/calm
+	effectedstats = list("fortune" = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/calm
+	name = "Calmness"
+	desc = "<span class='nicegreen'>I feel a supernatural calm coming over me.</span>\n"
+	icon_state = "stressg"
+
+/datum/status_effect/buff/calm/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/stressevent/calm)
+
+/datum/status_effect/buff/calm/on_remove()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.remove_stress(/datum/stressevent/calm)
+
+/datum/status_effect/buff/noc
+	id = "nocbuff"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/nocbuff
+	effectedstats = list("intelligence" = 3)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/nocbuff
+	name = "Divine Knowledge"
+	desc = "<span class='nicegreen'>Divine knowledge flows through me.</span>\n"
+	icon_state = "intelligence"
