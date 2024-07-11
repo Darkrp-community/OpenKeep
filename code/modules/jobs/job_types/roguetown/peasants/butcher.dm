@@ -26,6 +26,27 @@
 
 /datum/outfit/job/roguetown/beastmaster/pre_equip(mob/living/carbon/human/H)
 	..()
+
+	belt = /obj/item/storage/belt/rogue/leather
+	beltr= /obj/item/rogueweapon/huntingknife
+	beltl= /obj/item/roguekey/butcher
+	backl = /obj/item/storage/backpack/rogue/satchel
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	backpack_contents = list(/obj/item/kitchen/spoon, /obj/item/reagent_containers/food/snacks/rogue/truffles)
+
+	if(H.gender == MALE)
+		pants = /obj/item/clothing/under/roguetown/trou
+		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	else
+		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
+
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Used to dismembering live stock, unsensitized to it.
+
+	H.change_stat("strength", 1)
+	H.change_stat("endurance", 1)
+	H.change_stat("intelligence", -1)
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
@@ -37,26 +58,4 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 5, TRUE)
-		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Used to dismembering live stock, unsensitized to it.
-		H.change_stat("strength", 1)
-		H.change_stat("endurance", 1)
-		H.change_stat("intelligence", -1)
-	if(H.gender == MALE)
-		pants = /obj/item/clothing/under/roguetown/trou
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
-		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-		belt = /obj/item/storage/belt/rogue/leather
-		beltr= /obj/item/rogueweapon/huntingknife
-		beltl= /obj/item/roguekey/butcher
-		backl = /obj/item/storage/backpack/rogue/satchel
-		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	else
-		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-		belt = /obj/item/storage/belt/rogue/leather
-		beltr= /obj/item/rogueweapon/huntingknife
-		beltl= /obj/item/roguekey/butcher
-		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
-		backl = /obj/item/storage/backpack/rogue/satchel
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
-	backpack_contents = list(/obj/item/kitchen/spoon, /obj/item/reagent_containers/food/snacks/rogue/truffles)
 
