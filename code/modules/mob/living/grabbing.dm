@@ -462,7 +462,7 @@
 			if(C.stat != DEAD)
 				zomwerewolf = C.mind.has_antag_datum(/datum/antagonist/zombie)
 		if(VDrinker)
-			if(zomwerewolf)
+			if(zomwerewolf || C.reagents.has_reagent(/datum/reagent/medicine/healthpot))
 				to_chat(user, "<span class='danger'>I'm going to puke...</span>")
 				addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon, vomit), 0, TRUE), rand(8 SECONDS, 15 SECONDS))
 			else
