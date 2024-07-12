@@ -74,7 +74,7 @@
 	name = "Soilson Key"
 	desc = "This key is used by the soilsons."
 	icon_state = "rustkey"
-	lockid = "woodsm"
+	lockid = "soilson"
 
 /obj/item/roguekey/warehouse
 	name = "Warehouse Key"
@@ -216,14 +216,14 @@
 	icon_state = "brownkey"
 	lockid = "mason"
 
-/obj/item/roguekey/nightman
-	name = "nightmaster's key"
+/obj/item/roguekey/niteman
+	name = "nitemaster's key"
 	desc = "The master key of Eora's House."
 	icon_state = "greenkey"
 	lockid = "nightman"
 
-/obj/item/roguekey/nightmaiden
-	name = "nightmaiden's key"
+/obj/item/roguekey/nitemaiden
+	name = "nitemaiden's key"
 	desc = "This brownish key opens a few doors within the pleasure house."
 	icon_state = "brownkey"
 	lockid = "nightmaiden"
@@ -277,6 +277,217 @@
 	icon_state = "eyekey"
 	lockid = "porta"
 
+// Dakkatown Keys
+/obj/item/roguekey/monastery
+	name = "monastery key"
+	icon_state = "greenkey"
+	lockid = "monastery"
+
+/obj/item/roguekey/houses
+	name = ""
+	icon_state = ""
+	lockid = ""
+
+/obj/item/roguekey/houses/house1
+	name = "house i key"
+	icon_state = "brownkey"
+	lockid = "house1"
+
+/obj/item/roguekey/houses/house2
+	name = "house ii key"
+	icon_state = "brownkey"
+	lockid = "house2"
+
+/obj/item/roguekey/houses/house3
+	name = "house iii key"
+	icon_state = "brownkey"
+	lockid = "house3"
+
+/obj/item/roguekey/houses/house4
+	name = "house iv key"
+	icon_state = "brownkey"
+	lockid = "house4"
+
+/obj/item/roguekey/houses/house5
+	name = "house v key"
+	icon_state = "brownkey"
+	lockid = "house5"
+
+/obj/item/roguekey/houses/house6
+	name = "house vi key"
+	icon_state = "brownkey"
+	lockid = "house6"
+
+/obj/item/roguekey/houses/house7
+	name = "house vii key"
+	icon_state = "brownkey"
+	lockid = "house7"
+
+/obj/item/roguekey/houses/house8
+	name = "house viii key"
+	icon_state = "brownkey"
+	lockid = "house8"
+
+/obj/item/roguekey/houses/house9
+	name = "house ix key"
+	icon_state = "brownkey"
+	lockid = "house9"
+
+/obj/item/roguekey/houses/waterfront1
+	name = "I Waterfront Street Ket"
+	icon_state = "brownkey"
+	lockid = "1waterfront"
+
+/obj/item/roguekey/houses/waterfront2
+	name = "II Waterfront Street Ket"
+	icon_state = "brownkey"
+	lockid = "2waterfront"
+
+/obj/item/roguekey/houses/waterfront3
+	name = "III Waterfront Street Ket"
+	icon_state = "brownkey"
+	lockid = "3waterfront"
+
+/obj/item/roguekey/houses/waterfront4
+	name = "IV Waterfront Street Ket"
+	icon_state = "brownkey"
+	lockid = "4waterfront"
+
+/obj/item/roguekey/houses/waterfront5
+	name = "V Waterfront Street Ket"
+	icon_state = "brownkey"
+	lockid = "5waterfront"
+
+/obj/item/roguekey/apartments
+	name = ""
+	icon_state = ""
+	lockid = ""
+
+/obj/item/roguekey/apartments/apartment1
+	name = "apartment i key"
+	icon_state = "brownkey"
+	lockid = "apartment1"
+
+/obj/item/roguekey/apartments/apartment2
+	name = "apartment ii key"
+	icon_state = "brownkey"
+	lockid = "apartment2"
+
+/obj/item/roguekey/apartments/apartment3
+	name = "apartment iii key"
+	icon_state = "brownkey"
+	lockid = "apartment3"
+
+/obj/item/roguekey/apartments/apartment4
+	name = "apartment iv key"
+	icon_state = "brownkey"
+	lockid = "apartment4"
+
+/obj/item/roguekey/apartments/apartment5
+	name = "apartment v key"
+	icon_state = "brownkey"
+	lockid = "apartment5"
+
+/obj/item/roguekey/apartments/apartment6
+	name = "apartment vi key"
+	icon_state = "brownkey"
+	lockid = "apartment6"
+
+/obj/item/roguekey/apartments/apartment7
+	name = "apartment vii key"
+	icon_state = "brownkey"
+	lockid = "apartment7"
+
+/obj/item/roguekey/apartments/apartment8
+	name = "apartment viii key"
+	icon_state = "brownkey"
+	lockid = "apartment8"
+
+/obj/item/roguekey/apartments/apartment9
+	name = "apartment ix key"
+	icon_state = "brownkey"
+	lockid = "apartment9"
+
+/obj/item/roguekey/shops
+	name = ""
+	icon_state = ""
+	lockid = ""
+
+/obj/item/roguekey/shops/shop1
+	name = "shop i key"
+	icon_state = "rustkey"
+	lockid = "shop1"
+
+/obj/item/roguekey/shops/shop2
+	name = "shop ii key"
+	icon_state = "rustkey"
+	lockid = "shop2"
+
+/obj/item/roguekey/shops/shop3
+	name = "shop iii key"
+	icon_state = "rustkey"
+	lockid = "shop3"
+
+/obj/item/roguekey/shops/shop4
+	name = "shop iv key"
+	icon_state = "rustkey"
+	lockid = "shop4"
+
+/obj/item/roguekey/shops/shop5
+	name = "shop v key"
+	icon_state = "rustkey"
+	lockid = "shop5"
+
+/obj/item/roguekey/shops/shop6
+	name = "shop vi key"
+	icon_state = "rustkey"
+	lockid = "shop6"
+
+/obj/item/roguekey/shops/shop7
+	name = "shop vii key"
+	icon_state = "rustkey"
+	lockid = "shop7"
+
+/obj/item/roguekey/shops/shop8
+	name = "shop viii key"
+	icon_state = "rustkey"
+	lockid = "shop8"
+
+/obj/item/roguekey/shops/shop9
+	name = "shop ix key"
+	icon_state = "rustkey"
+	lockid = "shop9"
+
+/obj/item/roguekey/theatre
+	name = "theatre key"
+	icon_state = "mazekey"
+	lockid = "theatre"
+
+/obj/item/roguekey/butcher
+	name = "butcher's key"
+	icon_state = "rustkey"
+	lockid = "butcher"
+
+obj/item/roguekey/elder
+	name = "mayor's key"
+	icon_state = "rustkey"
+	lockid = "elder"
+
+obj/item/roguekey/apothecary
+	name = "apothecary's key"
+	icon_state = "rustkey"
+	lockid = "apothecary"
+
+obj/item/roguekey/weaponsmith
+	name = "weaponsmith's key"
+	icon_state = "rustkey"
+	lockid = "weaponsmith"
+
+obj/item/roguekey/armorsmith
+	name = "armorsmith's key"
+	icon_state = "rustkey"
+	lockid = "armorsmith"
+
 //custom key
 /obj/item/roguekey/custom
 	name = "custom key"
@@ -285,7 +496,7 @@
 
 /obj/item/roguekey/custom/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/rogueweapon/hammer))
-		var/input = (input(user, "What would you name this key?", "", "") as text) 
+		var/input = (input(user, "What would you name this key?", "", "") as text)
 		if(input)
 			name = name + " key"
 			to_chat(user, "<span class='notice'>You rename the key to [name].</span>")

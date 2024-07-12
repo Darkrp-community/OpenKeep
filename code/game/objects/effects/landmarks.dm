@@ -114,6 +114,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = list("Towner")
 	delete_after_roundstart = FALSE
 
+/obj/effect/landmark/start/combatlate
+	name = "Combatlate"
+	icon_state = "arrow"
+	jobspawn_override = list("Skeleton", "Drifter", "Pilgrim", "Adventurer", "Mercenary")
+	delete_after_roundstart = FALSE
+
 /obj/effect/landmark/start/lord
 	name = "King"
 	icon_state = "arrow"
@@ -163,7 +169,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/woodsman
-	name = "Village Elder"
+	name = "Mayor"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/priest
@@ -187,11 +193,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/nightman
-	name = "Nightman"
+	name = "Niteman"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/nightmaiden
-	name = "Nightmaiden"
+	name = "Nitemaiden"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/merchant

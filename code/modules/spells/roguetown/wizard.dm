@@ -2,6 +2,7 @@
 /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt
 	name = "Bolt of Lightning"
 	desc = ""
+	action_icon_state = "lightning"
 	clothes_req = FALSE
 	overlay_state = "lightning"
 	sound = 'sound/magic/lightning.ogg'
@@ -17,6 +18,8 @@
 	charging_slowdown = 3
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
+	sparks_spread = 3
+	sparks_amt = 5
 
 /obj/projectile/magic/lightning
 	name = "bolt of lightning"
@@ -181,7 +184,7 @@
 	nodamage = FALSE
 	flag = "magic"
 	hitsound = 'sound/fireball.ogg'
-
+	aoe_range = 0
 
 /obj/projectile/magic/aoe/fireball/rogue/on_hit(target)
 	. = ..()
@@ -196,12 +199,12 @@
 
 
 /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater
-	name = "Greater Fireball"
+	name = "Fireball (Greater)"
 	desc = ""
 	clothes_req = FALSE
 	range = 8
 	projectile_type = /obj/projectile/magic/aoe/fireball/rogue/great
-	overlay_state = "fireball"
+	overlay_state = "fireball_greater"
 	sound = list('sound/magic/fireball.ogg')
 	active = FALSE
 	releasedrain = 50
@@ -224,10 +227,10 @@
 /obj/effect/proc_holder/spell/invoked/projectile/fetch
 	name = "Fetch"
 	desc = ""
+	overlay_state = "fetch"
 	clothes_req = FALSE
 	range = 15
 	projectile_type = /obj/projectile/magic/fetch
-	overlay_state = ""
 	sound = list('sound/magic/magnet.ogg')
 	active = FALSE
 	releasedrain = 5

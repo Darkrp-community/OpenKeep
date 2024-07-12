@@ -35,7 +35,7 @@
 /datum/crafting_recipe/roguetown/cooking/crackers
 	name = "crackers"
 	reqs = list(
-		/obj/item/reagent_containers/powder/flour/salt = 1,
+		/obj/item/reagent_containers/powder/salt = 1,
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice= 1)
 	result = /obj/item/reagent_containers/food/snacks/rogue/crackers
 	subtype_reqs = FALSE
@@ -507,8 +507,7 @@
 /datum/crafting_recipe/roguetown/cooking/handpie
 	name = "mince field pie"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1,
-		/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1,
+		/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 2,
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice = 1)
 	result = list(/obj/item/reagent_containers/food/snacks/rogue/handpie, 
 				/obj/item/reagent_containers/food/snacks/rogue/handpie)
@@ -534,8 +533,7 @@
 /datum/crafting_recipe/roguetown/cooking/chandpie
 	name = "cheese field pie"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/rogue/cheese = 1,
-		/obj/item/reagent_containers/food/snacks/rogue/cheese = 1,
+		/obj/item/reagent_containers/food/snacks/rogue/cheese = 2,
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice = 1)
 	result = list(/obj/item/reagent_containers/food/snacks/rogue/chandpie, 
 				/obj/item/reagent_containers/food/snacks/rogue/chandpie)
@@ -561,8 +559,7 @@
 /datum/crafting_recipe/roguetown/cooking/chhandpie
 	name = "chicken field pie"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet = 1,
-		/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet = 1,
+		/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet = 2,
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice = 1)
 	result = list(/obj/item/reagent_containers/food/snacks/rogue/chandpie, 
 					/obj/item/reagent_containers/food/snacks/rogue/chandpie)
@@ -588,8 +585,7 @@
 /datum/crafting_recipe/roguetown/cooking/ahandpie
 	name = "apple field pie"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/apple = 1,
-		/obj/item/reagent_containers/food/snacks/grown/apple = 1,
+		/obj/item/reagent_containers/food/snacks/grown/apple = 2,
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice = 1)
 	result = list(/obj/item/reagent_containers/food/snacks/rogue/ahandpie, 
 				/obj/item/reagent_containers/food/snacks/rogue/ahandpie)
@@ -615,8 +611,7 @@
 /datum/crafting_recipe/roguetown/cooking/bhandpie
 	name = "berry field pie"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 1,
-		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 1,
+		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 2,
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice = 1)
 	result = list(/obj/item/reagent_containers/food/snacks/rogue/bhandpie, 
 				/obj/item/reagent_containers/food/snacks/rogue/bhandpie)

@@ -1,5 +1,5 @@
-/datum/job/roguetown/nightmaiden
-	title = "Nightmaiden"
+/datum/job/roguetown/nitemaiden
+	title = "Nitemaiden"
 	flag = JESTER
 	department_flag = PEASANTS
 	faction = "Station"
@@ -18,20 +18,20 @@
 	tutorial = "Nobody would envy your lot in life, for the role of the bathwench is not something so idly taken. It comes from a place of desperation, least usually: for any with true compassion or skill would seek position with a nunnery or the medical trade. Launder clothes and soothe wounds, that is your loathsome creed."
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
-	outfit = /datum/outfit/job/roguetown/nightmaiden
-	display_order = JDO_NIGHTMAIDEN
+	outfit = /datum/outfit/job/roguetown/nitemaiden
+	display_order = JDO_NITEMAIDEN
 	give_bank_account = TRUE
 	can_random = FALSE
 	bypass_lastclass = TRUE
 
-/datum/outfit/job/roguetown/nightmaiden/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/nitemaiden/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy
 	neck = /obj/item/storage/belt/rogue/pouch
 	belt = /obj/item/storage/belt/rogue/leather/rope
-	beltr = /obj/item/roguekey/nightmaiden
+	beltr = /obj/item/roguekey/nitemaiden
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 
 	if(H.mind)
@@ -41,14 +41,14 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/music, pick(1,2), TRUE)
 	if(H.gender == MALE)
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-		shirt = /obj/item/clothing/suit/roguetown/shirt
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 
 // Washing Implements
 
 /obj/item/bath/soap
 	name = "herbal soap"
-	desc = "a soap made from various herbs"
+	desc = "A soap made from various herbs."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "soap"
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
@@ -92,7 +92,7 @@
 	if(istype(target, /mob/living/carbon/human))
 		visible_message("<span class='info'>[user] begins scrubbing [target] with the [src].</span>")
 		if(do_after(user, 50))
-			if(user.job == "Nightmaiden")
+			if(user.job == "Nitemaiden")
 				visible_message("<span class='info'>[user] expertly scrubs and soothes [target] with the [src].</span>")
 				to_chat(target, "<span class='love'>I feel so relaxed and clean!</span>")
 				SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "bathcleaned", /datum/mood_event/bathcleaned)

@@ -177,7 +177,7 @@
 				var/picked_desc = pickweight(possible_descs)
 				possible_descs -= picked_desc
 				descs += pickweight(possible_descs)
-	toxin_healing = max(round((MAX_LEECH_EVILNESS - evilness_rating)/MAX_LEECH_EVILNESS * 2 * initial(toxin_healing), 0.1), 1)
+	toxin_healing = min(round((MAX_LEECH_EVILNESS - evilness_rating)/MAX_LEECH_EVILNESS * 2 * initial(toxin_healing), 0.1), -1)
 	blood_sucking = max(round(evilness_rating/MAX_LEECH_EVILNESS * 2 * initial(blood_sucking), 0.1), 1)
 	if(evilness_rating < 10)
 		color = pickweight(all_colors)
@@ -203,7 +203,7 @@
 	drainage = 0
 	toxin_healing = -3
 	blood_storage = BLOOD_VOLUME_SURVIVE
-	blood_maximum = BLOOD_VOLUME_BAD
+	blood_maximum = BLOOD_VOLUME_BAD	
 
 /obj/item/natural/worms/leech/parasite/attack_self(mob/user)
 	. = ..()

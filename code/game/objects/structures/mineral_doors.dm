@@ -581,8 +581,8 @@
 		add_overlay(mutable_appearance(icon, "[over_state]", ABOVE_MOB_LAYER))
 	..()
 
-/obj/structure/mineral_door/wood/blue
-	icon_state = "wcb"
+/obj/structure/mineral_door/wood/green
+	icon_state = "wcg"
 /obj/structure/mineral_door/wood/red
 	icon_state = "wcr"
 /obj/structure/mineral_door/wood/violet
@@ -759,11 +759,6 @@
 	ridethrough = TRUE
 	swing_closed = FALSE
 
-/obj/structure/mineral_door/barsold
-	name = "iron door"
-	desc = ""
-	icon_state = "barsold"
-
 /obj/structure/mineral_door/bars/Initialize()
 	..()
 	add_overlay(mutable_appearance(icon, "barsopen", ABOVE_MOB_LAYER))
@@ -779,8 +774,9 @@
 	desc = "Can be locked from the inside."
 	icon_state = "serving"
 	base_state = "serving"
-	max_integrity = 100
+	max_integrity = 250
 	over_state = "servingopen"
-	openSound = 'sound/neu/blindsopen.ogg'
-	closeSound = 'sound/neu/blindsclose.ogg'
+	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
+	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
 	dir = NORTH
+	locked = TRUE

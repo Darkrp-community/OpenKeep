@@ -20,6 +20,12 @@
 	icon = 'icons/obj/stairs.dmi'
 	icon_state = "stonestairs"
 
+// original icon = 'icons/roguetown/topadd/cre/enigma_misc1.dmi'
+/obj/structure/stairs/stone/church
+	name = "stone stairs"
+	icon = 'icons/obj/stairs.dmi'
+	icon_state = "churchstairs"
+
 //	climb_offset = 10
 	//RTD animate climbing offset so this can be here
 
@@ -130,11 +136,11 @@
 		if(based)
 			if(isliving(AM))
 				var/mob/living/L = AM
-//				var/pulling = L.pulling
-//				if(pulling)
-//					L.pulling.forceMove(newtarg)
+				var/pulling = L.pulling
+				if(pulling)
+					L.pulling.forceMove(newtarg)
 				L.forceMove(newtarg)
-//				L.start_pulling(pulling)
+				L.start_pulling(pulling)
 			else
 				AM.forceMove(newtarg)
 			return TRUE

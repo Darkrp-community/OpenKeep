@@ -11,6 +11,17 @@
 	A thousand deaths stolen from the carriagemen, yet these people will still call you a charlatan. Prove them wrong, or right."
 	give_bank_account = 11
 
+	//Reason all races allowed is you are basically a very talented court physician; even 'lower races' would find this to be one of the only ways to obtain a sort of nobility.
+	allowed_races = list(
+		"Humen",
+		"Half-Elf",
+		"Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
+	)
+	allowed_sexes = list(MALE, FEMALE)
 
 /datum/outfit/job/roguetown/feldsher/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -23,12 +34,12 @@
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/feld
 	neck = /obj/item/clothing/neck/roguetown/feld
 	r_hand = /obj/item/storage/backpack/rogue/satchel/surgbag
+	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/roguekey/doctor
 	if(prob(70))
 		head = /obj/item/clothing/head/roguetown/roguehood/feld
 		mask = /obj/item/clothing/mask/rogue/feld
-	else
-		head = /obj/item/clothing/head/roguetown/helmet/feld
+
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)

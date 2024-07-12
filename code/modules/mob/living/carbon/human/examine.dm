@@ -1,16 +1,12 @@
 /mob/living/carbon/human/proc/on_examine_face(mob/living/carbon/human/user)
 	if(!istype(user))
 		return
-	if(user.dna?.species && dna?.species)
-		if(user.dna.species.name != "Dark Elf")
-			if(dna.species.name == "Dark Elf")
-				user.add_stress(/datum/stressevent/delf)
-		if(user.dna.species.name != "Tiefling")
-			if(dna.species.name == "Tiefling")
-				user.add_stress(/datum/stressevent/tieb)
-	if(user.has_flaw(/datum/charflaw/paranoid))
-		if((STASTR - user.STASTR) > 1)
-			user.add_stress(/datum/stressevent/parastr)
+	if(!isdarkelf(user) && isdarkelf(src))
+		user.add_stress(/datum/stressevent/delf)
+	if(!istiefling(user) && istiefling(src))
+		user.add_stress(/datum/stressevent/tieb)
+	if(user.has_flaw(/datum/charflaw/paranoid) && (STASTR - user.STASTR) > 1)
+		user.add_stress(/datum/stressevent/parastr)
 
 /mob/living/carbon/human/examine(mob/user)
 //this is very slightly better than it was because you can use it more places. still can't do \his[src] though.
@@ -63,6 +59,27 @@
 					. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [race_name] [used_title].")
 		else
 			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name].")
+
+		if(dna.species.use_skintones)
+			var/skin_tone_wording = dna.species.skin_tone_wording ? lowertext(dna.species.skin_tone_wording) : "skin tone"
+			var/list/skin_tones = dna.species.get_skin_list()
+			var/skin_tone_seen = "incomprehensible"
+			if(skin_tone)
+				//AGGHHHHH this is stupid
+				for(var/tone in skin_tones)
+					if(src.skin_tone == skin_tones[tone])
+						skin_tone_seen = lowertext(tone)
+						break
+			var/slop_lore_string = "."
+			if(ishumannorthern(user))
+				var/mob/living/carbon/human/racist = user
+				var/list/user_skin_tones = racist.dna.species.get_skin_list()
+//				var/user_skin_tone_seen = "incomprehensible"	gives unused warning now, sick of seeing it
+				for(var/tone in user_skin_tones)
+					if(racist.skin_tone == user_skin_tones[tone])
+//						user_skin_tone_seen = lowertext(tone)	gives unused warning now, sick of seeing it
+						break
+			. += "<span class='info'>[capitalize(m2)] [skin_tone_wording] is [skin_tone_seen][slop_lore_string]</span>"
 
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user

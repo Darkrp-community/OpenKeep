@@ -20,6 +20,7 @@
 #define TRAIT_CRITICAL_WEAKNESS		"Critical Weakness"
 #define TRAIT_MANIAC_AWOKEN			"Awoken"
 #define TRAIT_NOROGSTAM				"Indefatigable" //for ai
+#define TRAIT_NOSLEEP				"Nite Creacher" //for thralls
 #define TRAIT_NUDIST					"Nudist" //you can't wear most clothes
 #define TRAIT_KNEESTINGER_IMMUNITY		"Blessing of Dendor"
 #define TRAIT_RETARD_ANATOMY			"Inhumen Anatomy" //can't wear hats and shoes
@@ -29,6 +30,7 @@
 #define TRAIT_SOUL_EXAMINE				"Blessing of Necra" //can check bodies to see if they have departed
 #define TRAIT_CYCLOPS_LEFT				"Cyclops (Left)" //poked left eye
 #define TRAIT_CYCLOPS_RIGHT				"Cyclops (Right)" //poked right eye
+#define TRAIT_LEECHIMMUNE				"Unleechable" //leeches wont attach in bog squares
 #define TRAIT_ASSASSIN					"Assassin Training" //used for the assassin drifter's unique mechanics.
 
 #define TRAIT_MISSING_NOSE "Missing Nose" //halved stamina regeneration
@@ -69,6 +71,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_VILLAIN = "I am a devious, conniving villain!",
 	TRAIT_SOUL_EXAMINE = "<span class='deadsay'>I know when someone's soul has departed.</span>",
 	TRAIT_CYCLOPS_RIGHT = "<span class='warning'>My right eye has been poked out...</span>",
+	TRAIT_LEECHIMMUNE = "Leeches are reluctant to bite me.",
 	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes."
 	))
 

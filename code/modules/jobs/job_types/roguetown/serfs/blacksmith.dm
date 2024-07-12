@@ -37,7 +37,7 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
 		belt = /obj/item/storage/belt/rogue/leather
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		beltr = /obj/item/roguekey/blacksmith
+		beltr = /obj/item/keyring/armorsmith
 		cloak = /obj/item/clothing/cloak/apron/brown
 		H.change_stat("strength", 1)
 		H.change_stat("intelligence", -1)
@@ -49,7 +49,7 @@
 		belt = /obj/item/storage/belt/rogue/leather
 		cloak = /obj/item/clothing/cloak/apron/brown
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		beltr = /obj/item/roguekey/blacksmith
+		beltr = /obj/item/keyring/armorsmith
 		H.change_stat("strength", 1)
 		H.change_stat("intelligence", -1)
 		H.change_stat("speed", -1)
@@ -62,14 +62,7 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Dark Elf",
-		"Aasimar"
-	)
+	allowed_races = ALL_RACES_LIST_NAMES
 
 	tutorial = "You studied for many decades under your master with a few other apprentices to become a Weaponsmith, a trade that is as ancient as the secrets of steel itself! Youve repaired the blades of cooks, the cracked hoes of peasants and greased the spears of many soldiers into war."
 
@@ -87,6 +80,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(3,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, pick(3,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/engineering, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1,2), TRUE)
@@ -97,7 +91,7 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
 		belt = /obj/item/storage/belt/rogue/leather
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		beltr = /obj/item/roguekey/blacksmith
+		beltr = /obj/item/keyring/weaponsmith
 		cloak = /obj/item/clothing/cloak/apron/brown
 		H.change_stat("strength", 1)
 		H.change_stat("intelligence", -1)
@@ -109,7 +103,7 @@
 		belt = /obj/item/storage/belt/rogue/leather
 		cloak = /obj/item/clothing/cloak/apron/brown
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		beltr = /obj/item/roguekey/blacksmith
+		beltr = /obj/item/keyring/weaponsmith
 		H.change_stat("strength", 1)
 		H.change_stat("intelligence", -1)
 		H.change_stat("speed", -1)

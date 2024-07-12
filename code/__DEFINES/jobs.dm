@@ -97,10 +97,13 @@
 
 #define LORD		(1<<0)
 #define LADY		(1<<1)
-#define STEWARD		(1<<2)
-#define HAND		(1<<3)
+#define HAND		(1<<2)
+#define STEWARD		(1<<3)
 #define WIZARD		(1<<4)
 #define CAPTAIN		(1<<5)
+#define ARCHIVIST   (1<<6)
+#define MERCHANT	(1<<7)
+#define FELDSHER    (1<<8)
 
 #define GARRISON		(1<<1)
 
@@ -119,14 +122,11 @@
 #define SERFS			(1<<3)
 
 #define BARKEEP		(1<<0)
-#define ARCHIVIST	(1<<1)
 #define BLACKSMITH	(1<<2)
 #define ALCHEMIST	(1<<3)
 #define MASON		(1<<4)
 #define TAILOR		(1<<5)
-#define MERCHANT	(1<<6)
 #define SCRIBE		(1<<7)
-#define FELDSHER    (1<<8)
 
 #define PEASANTS		(1<<4)
 
@@ -208,8 +208,8 @@
 
 #define JDO_GRAVEMAN 28
 
-#define JDO_NIGHTMAN 28.1
-#define JDO_NIGHTMAIDEN 28.2
+#define JDO_NITEMAN 28.1
+#define JDO_NITEMAIDEN 28.2
 
 #define JDO_JESTER 29
 #define JDO_PRISONER 30

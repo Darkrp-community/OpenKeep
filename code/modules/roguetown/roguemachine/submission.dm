@@ -25,7 +25,7 @@
 				playsound(src, 'sound/misc/coininsert.ogg', 100, FALSE, -1)
 				return
 			else
-				say("No account found. Submit your fingers to a shylock for inspection.")
+				say("No account found. Submit your fingers to a meister for inspection.")
 		else
 			for(var/datum/roguestock/R in SStreasury.stockpile_datums)
 				if(istype(P,R.item_type))
@@ -41,6 +41,7 @@
 						if(!A)
 							say("Couldn't find where to send the submission.")
 							return
+						//This item is now listed as submitted to the stockpile.
 						P.submitted_to_stockpile = TRUE
 						var/list/turfs = list()
 						for(var/turf/T in A)
@@ -52,7 +53,7 @@
 					flick("submit_anim",src)
 					if(amt)
 						if(!SStreasury.give_money_account(amt, H, "+[amt] from [R.name] bounty"))
-							say("No account found. Submit your fingers to a shylock for inspection.")
+							say("No account found. Submit your fingers to a meister for inspection.")
 					return
 	return ..()
 

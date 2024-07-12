@@ -93,6 +93,7 @@ GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 #define isdwarfmountain(A) (is_species(A, /datum/species/dwarf/mountain))
 #define iself(A) (is_species(A, /datum/species/elf))
 #define isdarkelf(A) (is_species(A, /datum/species/elf/dark))
+#define issnowelf(A) (is_species(A, /datum/species/elf/snow))
 #define ishalfelf(A) (is_species(A, /datum/species/human/halfelf))
 #define istiefling(A) (is_species(A, /datum/species/tieberian))
 
@@ -234,3 +235,9 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 #define isblobmonster(O) (istype(O, /mob/living/simple_animal/hostile/blob))
 
 #define isshuttleturf(T) (length(T.baseturfs) && (/turf/baseturf_skipover/shuttle in T.baseturfs))
+
+GLOBAL_LIST_INIT(RATS_DONT_EAT, typecacheof(list(
+	/obj/item/reagent_containers/food/snacks/smallrat,
+	/obj/item/reagent_containers/food/snacks/grown/onion/rogue,
+	/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
+	)))
