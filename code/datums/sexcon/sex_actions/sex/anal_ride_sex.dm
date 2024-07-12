@@ -36,7 +36,6 @@
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message("<span class='notice'>[target] cums into [user]'s butt!</span>")
 		target.sexcon.cum_into()
-		target.try_impregnate(user)
 		target.virginity = FALSE
 
 /datum/sex_action/anal_ride_sex/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)

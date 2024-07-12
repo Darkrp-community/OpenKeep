@@ -336,7 +336,7 @@
 	dat += "<tr><td><hr></td></tr>"
 
 #ifdef MATURESERVER
-	if(get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE) && can_do_sex())
+	if(get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE) && can_do_sex() && user.can_do_sex())
 		dat += "<tr><td><BR><B>Underwear:</B> <A href='?src=[REF(src)];undiesthing=1'>[underwear == "Nude" ? "Nothing" : "Remove"]</A></td></tr>"
 #endif
 
