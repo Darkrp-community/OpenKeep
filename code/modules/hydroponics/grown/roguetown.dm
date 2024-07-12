@@ -133,7 +133,7 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	can_distill = TRUE
-	distill_reagent = /datum/reagent/consumable/ethanol/beer/onoog
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/onion
 	rotprocess = 30 MINUTES // Onions keep for a long time.
 	seed = /obj/item/seeds/onion
 
@@ -158,7 +158,7 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	bitesize = 10
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	can_distill = TRUE
-	distill_reagent = /datum/reagent/consumable/ethanol/beer/scrung
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/fireleaf
 	rotprocess = 15 MINUTES
 	seed = /obj/item/seeds/cabbage
 
