@@ -36,7 +36,7 @@
 	user.sexcon.perform_sex_action(target, 2, 7, TRUE)
 	user.sexcon.handle_passive_ejaculation()
 
-	user.sexcon.perform_sex_action(target, 2, 4, FALSE)
+	user.sexcon.perform_sex_action(user, 2, 4, FALSE)
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message("<span class='notice'>[target] cums into [user]'s cunt!</span>")
 		target.sexcon.cum_into()
