@@ -59,6 +59,7 @@
 		if(findtext(message2recognize, T))
 			V.add_stress(/datum/stressevent/psycurse)
 			L.adjust_fire_stacks(100)
+			SSticker.pplsmited++
 			L.IgniteMob()
 			return FALSE
 	if(length(message2recognize) > 15)

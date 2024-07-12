@@ -26,6 +26,7 @@
 				if(do_after(user, 50, needhand = 1, target = src))
 					facial_hairstyle = "None"
 					update_hair()
+					SSticker.beardshavers++
 					if(dna?.species)
 						if(dna.species.id == "dwarf")
 							var/mob/living/carbon/V = src
@@ -89,6 +90,7 @@
 	var/obj/item/bodypart/affecting
 	var/dam = levels * rand(10,50)
 	V.add_stress(/datum/stressevent/felldown)
+	SSticker.holefall++
 	var/chat_message
 	switch(rand(1,4))
 		if(1)

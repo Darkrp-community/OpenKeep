@@ -263,7 +263,6 @@
 	if(zFall(A, ++levels))
 		return FALSE
 	A.visible_message("<span class='danger'>[A] crashes into [src]!</span>")
-	SSticker.holefall++
 	if(A.fall_damage())
 		for(var/mob/living/M in contents)
 			visible_message("<span class='danger'>\The [src] falls on \the [M.name]!</span>")
