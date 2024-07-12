@@ -118,7 +118,13 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 /mob/dead/observer/screye/Move(n, direct)
 	return
 
+/mob/dead/observer/profane
+	see_invisible = SEE_INVISIBLE_LIVING
+	sight = 0
+	see_in_dark = 0
 
+/mob/dead/observer/profane/Move(n, direct)
+	return
 
 /mob/dead/observer/Initialize()
 	set_invisibility(GLOB.observer_default_invisibility)

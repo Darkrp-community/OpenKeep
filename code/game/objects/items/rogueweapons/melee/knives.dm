@@ -247,7 +247,7 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane
 	name = "profane dagger"
-	desc = "A dagger made of cursed black steel. Whispers eminate from the gem on its hilt."
+	desc = "A dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
 	force = 16
 	sellprice = 250
 	icon_state = "sdagger"
@@ -259,6 +259,7 @@
 		var/mob/living/carbon/human/H = M
 		if (!HAS_TRAIT(H, TRAIT_ASSASSIN)) // Non-assassins don't like holding the profane dagger.
 			H.add_stress(/datum/stressevent/profane)
+			to_chat(user, "<span class='danger'>Your breath chills as you pick up the dagger. You feel a sense of morbid wrongness!</span>")
 			var/message = pick(
 				"<span class='danger'>Help me...</span>",
 				"<span class='danger'>Save me...</span>",
@@ -294,15 +295,14 @@
 				init_profane_soul(target, user) //If they are still in their body, send them to the dagger!
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/init_profane_soul(mob/living/carbon/human/target, mob/user)
-	target.stop_sound_channel(CHANNEL_HEARTBEAT)
-	target.invisibility = INVISIBILITY_ABSTRACT
-	target.dust_animation()
-	var/mob/living/simple_animal/shade/S = new /mob/living/simple_animal/shade(src)
-	S.AddComponent(/datum/component/soulstoned, src)
+	var/mob/dead/observer/profane/S = new /mob/dead/observer/profane(src)
+	S.AddComponent(/datum/component/profaned, src)
 	S.name = "soul of [target.real_name]"
 	S.real_name = "soul of [target.real_name]"
-	S.language_holder = user.language_holder.copy(S)
-	S.cancel_camera()
+	S.deadchat_name = target.real_name
+	S.ManualFollow(src)
+	S.key = target.key
+	S.language_holder = target.language_holder.copy(S)
 	target.visible_message("<span class='danger'>[target]'s soul is pulled from their body and sucked into the profane dagger!</span>", "<span class='danger'>My soul is trapped within the profane dagger. Damnation!</span>")
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/get_profane_ghost(mob/living/carbon/human/target, mob/user)
@@ -323,14 +323,26 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/release_profane_souls(mob/user) // For ways to release the souls trapped within a profane dagger, such as a Necrite burial rite. Returns the number of freed souls.
 	var/freed_souls = 0
-	for(var/mob/living/simple_animal/shade/A in src) // for every trapped soul in the dagger, whether they have left the game or not
+	for(var/mob/dead/observer/profane/A in src) // for every trapped soul in the dagger, whether they have left the game or not
 		to_chat(A, "<b>I have been freed from my vile prison, I await Necra's cold grasp. Salvation!</b>")
 		A.returntolobby() //Send the trapped soul back to the lobby
-		user.visible_message("<span class='notice'>The [A.name] flows out from the profane dagger, finally free of its grasp.</span>")
+		user.visible_message("<span class='warning'>The [A.name] flows out from the profane dagger, finally free of its grasp.</span>")
 		freed_souls += 1
 	user.visible_message("<span class='warning'>The profane dagger shatters into putrid smoke!</span>")
 	qdel(src) // Delete the dagger. Forevermore.
 	return freed_souls
+
+/datum/component/profaned
+	var/atom/movable/container
+
+/datum/component/profaned/Initialize(atom/movable/container)
+	if(!istype(parent, /mob/dead/observer/profane))
+		return COMPONENT_INCOMPATIBLE
+	var/mob/dead/observer/profane/S = parent
+
+	src.container = container
+
+	S.forceMove(container)
 
 /obj/item/rogueweapon/huntingknife/stoneknife
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)
