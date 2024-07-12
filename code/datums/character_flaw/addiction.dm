@@ -157,8 +157,8 @@
 			else
 				if(prob(1))
 					crosstype = /obj/item/clothing/neck/roguetown/psicross/g
-					else
-						crosstype = /obj/item/clothing/neck/roguetown/psicross
+				else
+					crosstype = /obj/item/clothing/neck/roguetown/psicross
 			H.equip_to_slot_or_del(new crosstype(H), SLOT_NECK)
 
 /// ALCOHOLIC
