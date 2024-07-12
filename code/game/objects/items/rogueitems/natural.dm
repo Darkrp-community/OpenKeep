@@ -4,7 +4,7 @@
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	desc = ""
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	var/bundletype = null
 
 /obj/item/natural/attackby(obj/item/W, mob/living/user)
