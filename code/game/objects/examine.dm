@@ -11,7 +11,9 @@
 		if(obj_integrity < max_integrity)
 			var/meme = round(((obj_integrity / max_integrity) * 100), 1)
 			switch(meme)
-				if(0 to 10)
+				if(0)
+					. += "<span class='warning'>It's broken.</span>"
+				if(1 to 10)
 					. += "<span class='warning'>It's nearly broken.</span>"
 				if(10 to 30)
 					. += "<span class='warning'>It's severely damaged.</span>"
