@@ -2,7 +2,7 @@
 	name = "Tail breasts"
 
 /datum/sex_action/tailjob_breasts/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if(user.dna.species?.id != "Tiefling")
+	if(user.dna.species?.id != "tiefling")
 		return FALSE
 	if(user != target)
 		return FALSE
@@ -11,7 +11,7 @@
 	return TRUE
 
 /datum/sex_action/tailjob_breasts/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if(user.dna.species?.id != "Tiefling")
+	if(user.dna.species?.id != "tiefling")
 		return FALSE
 	if(user != target)
 		return FALSE
