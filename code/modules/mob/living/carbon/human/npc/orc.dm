@@ -558,7 +558,7 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
 			r_hand = /obj/item/rogueweapon/sword/sabre/messer
 			l_hand = /obj/item/rogueweapon/shield/tower
-			head = /obj/item/clothing/head/roguetown/helmet/orc
+			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(5) //Anti Knight STR Build
 			r_hand = /obj/item/rogueweapon/flail/sflail
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
