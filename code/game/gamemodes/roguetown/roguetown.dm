@@ -370,7 +370,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_werewolves()
-	restricted_jobs = list("Acolyte","Priest","Adventurer","Confessor","Garrison Guard","Veteran","Royal Guard","Captain")
+	restricted_jobs = list("Acolyte","Priest","Adventurer","Templar","Garrison Guard","Veteran","Royal Guard","Captain")
 /*	var/num_werewolves = rand(1,3)
 #ifdef TESTSERVER
 	num_werewolves = 100
