@@ -207,6 +207,8 @@
 	for(var/client/C in GLOB.clients)
 		if(C.mob)
 			SSdroning.kill_droning(C)
+			C.mob.playsound_local(C.mob, 'sound/misc/roundend.ogg', 100, FALSE)
+			sleep(15 SECONDS)
 			C.mob.playsound_local(C.mob, 'sound/music/credits.ogg', 100, FALSE)
 		if(isliving(C.mob) && C.ckey)
 			key_list += C.ckey
