@@ -250,7 +250,7 @@
 	desc = "A dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
 	force = 20 // Very powerful for a dagger, but still below a two-handed sword by a large margin. Fitting for an enchanted weapon.
 	sellprice = 250
-	icon_state = "sdagger"
+	icon_state = "pdagger"
 	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane/pickup(mob/living/M)
@@ -303,7 +303,9 @@
 	S.key = target.key
 	S.language_holder = target.language_holder.copy(S)
 	target.visible_message("<span class='danger'>[target]'s soul is pulled from their body and sucked into the profane dagger!</span>", "<span class='danger'>My soul is trapped within the profane dagger. Damnation!</span>")
+	playsound(src, 'sound/magic/soulsteal.ogg', 100, extrarange = 5)
 	src.blade_int = src.max_blade_int // Stealing a soul successfully sharpens the blade.
+	src.obj_integrity = src.max_integrity // And fixes the dagger. No blacksmith required!
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/get_profane_ghost(mob/living/carbon/human/target, mob/user)
 	var/mob/dead/observer/chosen_ghost
