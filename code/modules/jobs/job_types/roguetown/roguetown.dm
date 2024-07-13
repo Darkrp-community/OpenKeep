@@ -42,6 +42,14 @@
 /datum/outfit/job/roguetown/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
 	var/datum/patron/ourpatron = H.patron
+	if(!ourpatron || !(ourpatron.type in allowed_patrons))
+		var/list/datum/patron/possiblegods = list()
+		for(var/god in GLOB.patronlist)
+			if(!(god in allowed_patrons))
+				continue
+			possiblegods |= god
+		H.patron = GLOB.patronlist[default_patron] || pick(possiblegods)
+		to_chat(H, "<span class='warning'>[ourpatron] had not endorsed my practices in my younger years. I've since grown acustomed to [H.patron].")
 	if(H.mind)
 		if(H.gender == FEMALE)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
@@ -53,13 +61,6 @@
 					H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 				if(H.dna.species.id == "dwarf")
 					H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
-		if(!ourpatron || !(ourpatron.type in allowed_patrons))
-//			var/list/datum/patron/possiblegods = list()   // not actually used any more and just gives annoying error message? Lets silence it and see what happens.
-//				if(!(god in allowed_patrons))
-//					continue
-//				possiblegods |= god
-			H.patron = GLOB.patronlist[default_patron]  // || pick(possiblegods
-			to_chat(H, "<span class='warning'>[ourpatron] had not endorsed my practices in my younger years. I've since grown acustomed to [H.patron].")
 	H.underwear_color = null
 	H.update_body()
 
