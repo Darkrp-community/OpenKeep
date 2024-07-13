@@ -698,19 +698,27 @@
 /obj/structure/rack/rogue/shelf
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "shelf"
-	climbable = FALSE
+	name = "wooden shelf"
+	desc = "A singular wooden shelf typically hung on a wall. Good for storing various items in cramped spaces."
+	density = FALSE
 	dir = SOUTH
 	pixel_y = 32
 
 /obj/structure/rack/rogue/shelf/big
 	icon_state = "shelf_big"
-	climbable = FALSE
+	name = "wooden stand"
+	desc = "Stand made of wood that is no higher than a knee of a typical Humen. Good for storing and displaying merchandise."
+	density = TRUE
 	dir = SOUTH
 	pixel_y = 16
 
 /obj/structure/rack/rogue/shelf/biggest
 	icon_state = "shelf_biggest"
+	name = "wooden stellage"
+	desc = "A whole stellage made out of wood. Can fit a lot of items, but cannot be climbed over unlike its smaller cousin."
 	pixel_y = 0
+	density = TRUE
+	climbable = FALSE
 
 // temporary
 /obj/item/cooking/platter
