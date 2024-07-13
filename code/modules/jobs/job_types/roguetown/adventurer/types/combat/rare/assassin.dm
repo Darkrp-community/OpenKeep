@@ -1,6 +1,6 @@
 /datum/advclass/combat/assassin
 	name = "Assassin"
-	tutorial = "Enigma has always been ripe with business for your kind, even the old King had many of his undesirables sent to the Weeper's golden kingdom. You hope to rekindle old business partners and make a profit of mammons, exchanging blood for coin."
+	tutorial = "From a young age you have been drawn to blood, to hurting others. Eventually you found others like you, and a god who would bless your actions. Your cursed dagger has never led you astray, and with every stab you feel a little less empty."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -18,7 +18,7 @@
 	..()
 	H.verbs |= /mob/living/carbon/human/proc/who_targets
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 5, TRUE) // The best at using knives. It's their signature, after all.
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
@@ -71,6 +71,7 @@
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 			neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 			cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
+			head = /obj/item/clothing/head/roguetown/roguehood
 			backr = /obj/item/storage/backpack/rogue/satchel
 			backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 			belt = /obj/item/storage/belt/rogue/leather/assassin
@@ -137,6 +138,9 @@
 	H.change_stat("strength", 1)
 	H.change_stat("perception", 2)
 	H.change_stat("speed", 3)
+	if(H.patron != /datum/patron/inhumen/graggar)
+		H.patron = GLOB.patronlist[/datum/patron/inhumen/graggar] // Assassins are associated with the God of murder, Graggar
+		to_chat(H, "<span class='danger'>My worship of [H.patron] has led me to who I am tonight. Let the blood flow.")
 
 /mob/living/carbon/human/proc/who_targets()
 	set name = "Remember Targets"

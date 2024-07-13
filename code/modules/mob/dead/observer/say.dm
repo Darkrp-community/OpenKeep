@@ -54,7 +54,6 @@
 	//src.log_talk(message, LOG_SAY, tag="trapped profane soul")
 
 	src.visible_message(message = rendered, self_message = FALSE, blind_message = rendered, vision_distance = 0)
-	testing("profane soul says: [message]")
 	//to_chat(src, "[message]")
 
 /*

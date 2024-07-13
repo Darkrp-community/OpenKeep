@@ -72,6 +72,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SOUL_EXAMINE = "<span class='deadsay'>I know when someone's soul has departed.</span>",
 	TRAIT_CYCLOPS_RIGHT = "<span class='warning'>My right eye has been poked out...</span>",
 	TRAIT_LEECHIMMUNE = "Leeches are reluctant to bite me.",
+	TRAIT_ASSASSIN = "My soul has been tainted by the god of murder.",
 	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes."
 	))
 

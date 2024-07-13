@@ -248,7 +248,7 @@
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane
 	name = "profane dagger"
 	desc = "A dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
-	force = 16
+	force = 20 // Very powerful for a dagger, but still below a two-handed sword by a large margin. Fitting for an enchanted weapon.
 	sellprice = 250
 	icon_state = "sdagger"
 	smeltresult = null
@@ -259,7 +259,7 @@
 		var/mob/living/carbon/human/H = M
 		if (!HAS_TRAIT(H, TRAIT_ASSASSIN)) // Non-assassins don't like holding the profane dagger.
 			H.add_stress(/datum/stressevent/profane)
-			to_chat(user, "<span class='danger'>Your breath chills as you pick up the dagger. You feel a sense of morbid wrongness!</span>")
+			to_chat(M, "<span class='danger'>Your breath chills as you pick up the dagger. You feel a sense of morbid wrongness!</span>")
 			var/message = pick(
 				"<span class='danger'>Help me...</span>",
 				"<span class='danger'>Save me...</span>",
@@ -290,7 +290,6 @@
 				to_chat(user, "<span class='danger'>Your target's soul has already escaped its corpse...you try to call it back!</span>")
 				get_profane_ghost(target,user) //Proc to capture a soul that has left the body.
 			else
-				target.adjust_triumphs(-1)
 				user.adjust_triumphs(1)
 				init_profane_soul(target, user) //If they are still in their body, send them to the dagger!
 
@@ -304,6 +303,7 @@
 	S.key = target.key
 	S.language_holder = target.language_holder.copy(S)
 	target.visible_message("<span class='danger'>[target]'s soul is pulled from their body and sucked into the profane dagger!</span>", "<span class='danger'>My soul is trapped within the profane dagger. Damnation!</span>")
+	src.blade_int = src.max_blade_int // Stealing a soul successfully sharpens the blade.
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/get_profane_ghost(mob/living/carbon/human/target, mob/user)
 	var/mob/dead/observer/chosen_ghost
@@ -315,7 +315,6 @@
 		chosen_ghost = target.get_ghost(TRUE,TRUE)
 	if(!chosen_ghost || !chosen_ghost.client) // If there is no valid ghost or if that ghost has no active player
 		return FALSE
-	target.adjust_triumphs(-1)
 	user.adjust_triumphs(1)
 	init_profane_soul(target, user) // If we got the soul, store them in the dagger.
 	qdel(target) // Get rid of that ghost!
