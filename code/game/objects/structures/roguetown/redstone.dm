@@ -161,10 +161,17 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 	if(isliving(AM))
 		var/mob/living/L = AM
 		to_chat(L, "<span class='info'>I feel something click beneath me.</span>")
+		playsound(src, 'sound/misc/pressurepad_down.ogg', 65, extrarange = 2)
+
+/obj/structure/pressure_plate/Uncrossed(atom/movable/AM)
+	. = ..()
+	if(!anchored)
+		return
+	if(isliving(AM))
 		triggerplate()
 
 /obj/structure/pressure_plate/proc/triggerplate()
-	playsound(src, 'sound/foley/lever.ogg', 100, extrarange = 3)
+	playsound(src, 'sound/misc/pressurepad_up.ogg', 65, extrarange = 2)
 	for(var/obj/structure/O in redstone_attached)
 		spawn(0) O.redstone_triggered()
 

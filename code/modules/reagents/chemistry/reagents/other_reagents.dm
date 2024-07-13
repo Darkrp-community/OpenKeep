@@ -154,6 +154,10 @@
 	taste_description = "lead"
 	color = "#98934bc6"
 
+/datum/reagent/water/gross/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
+	if(method == INGEST) // Make sure you DRANK the toxic water before giving damage
+		..()
+
 /datum/reagent/water/gross/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(1)
 	M.add_nausea(50)
