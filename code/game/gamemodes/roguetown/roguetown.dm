@@ -64,7 +64,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 
 	if(ttime >= GLOB.round_timer)
 		if(roundvoteend)
-			var/datum/round_event/rogue/skellysiege/x = new /datum/round_event/rogue/skellysiege/
+			var/datum/round_event/rogue/skellysiege/x
 			if(!(x in SSevents.running))
 				x.New()
 			if(ttime >= (GLOB.round_timer + 15 MINUTES) )
@@ -79,11 +79,21 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 				SSvote.initiate_vote("endround", pick("Zlod", "Sun King", "Gaia", "Moon Queen", "Aeon", "Gemini", "Aries"))
 
 	if(headrebdecree)
+		for(var/mob/living/carbon/human/H in GLOB.human_list)
+			if(H.stat != DEAD)
+				if(H.allmig_reward)
+					H.adjust_triumphs(H.allmig_reward)
+					H.allmig_reward = 0
 		return TRUE
 
 	check_for_lord()
 
 	if(ttime > 280 MINUTES) //3 hour cutoff
+		for(var/mob/living/carbon/human/H in GLOB.human_list)
+			if(H.stat != DEAD)
+				if(H.allmig_reward)
+					H.adjust_triumphs(H.allmig_reward)
+					H.allmig_reward = 0
 		return TRUE
 
 /datum/game_mode/chaosmode/proc/check_for_lord()
@@ -482,6 +492,18 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	return TRUE
 
 /datum/game_mode/chaosmode/make_antag_chance(mob/living/carbon/human/character) //klatejoin
+	var/banditcap = 1 + GLOB.joined_player_list.len / 10
+	if(bandits.len >= 3) //Caps number of latejoin antagonists
+		return
+	if(bandits.len <= banditcap)
+		if(ROLE_BANDIT in character.client.prefs.be_special)
+			if(character.client.whitelisted())
+				if(age_check(character.client))
+					if(!(character.job in restricted_jobs))
+						var/datum/antagonist/villain/new_antag = new /datum/antagonist/bandit()
+						character.mind.add_antag_datum(new_antag)
+						bandits += character.mind
+						SSrole_class_handler.bandits_in_round = TRUE
 	return
 //******** VILLAINS
 	var/num_villains = round((num_players() * 0.30)+1, 1)

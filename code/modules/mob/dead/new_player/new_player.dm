@@ -457,10 +457,19 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	SSrole_class_handler.cleanup_drifter_queue(client)
 
 	testing("basedtest 1")
-
 	SSjob.AssignRole(src, rank, 1)
+
+	var/mob/living/character = create_character(TRUE)
+
+	var/mob/living/carbon/human/humanc
+	if(ishuman(character))
+		humanc = character	//Let's retypecast the var to be human,
+
+	SSticker.mode.make_antag_chance(humanc)
+	rank = humanc.mind.assigned_role
+	
 	testing("basedtest 2")
-	var/mob/living/character = create_character(TRUE)	//creates the human and transfers vars and mind
+	//creates the human and transfers vars and mind
 	testing("basedtest 3")
 	character.islatejoin = TRUE
 	var/equip = SSjob.EquipRank(character, rank, TRUE)
@@ -485,9 +494,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 
 	SSticker.minds += character.mind
 
-	var/mob/living/carbon/human/humanc
-	if(ishuman(character))
-		humanc = character	//Let's retypecast the var to be human,
+
 /*
 	if(humanc)	//These procs all expect humans
 		GLOB.data_core.manifest_inject(humanc)

@@ -4,7 +4,7 @@
 		return
 	var/old_name = real_name
 	if(!stat)
-		if(job)
+		if(job && job != "Bandit")
 			var/datum/job/j = SSjob.GetJob(job)
 			j.current_positions--
 		mob_timers["mirrortime"] = world.time

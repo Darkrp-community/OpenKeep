@@ -44,7 +44,7 @@
 		var/used_name = name
 		if(isobserver(user))
 			used_name = real_name
-		if(job)
+		if(job && job != "Bandit")
 			var/datum/job/J = SSjob.GetJob(job)
 			var/used_title = J.title
 			if(gender == FEMALE && J.f_title)
