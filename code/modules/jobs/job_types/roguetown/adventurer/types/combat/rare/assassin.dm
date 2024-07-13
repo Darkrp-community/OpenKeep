@@ -18,7 +18,7 @@
 	..()
 	H.verbs |= /mob/living/carbon/human/proc/who_targets
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 5, TRUE) // The best at using knives. It's their signature, after all.
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
