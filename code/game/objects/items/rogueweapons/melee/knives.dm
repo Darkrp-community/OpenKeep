@@ -284,7 +284,7 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane/funny_attack_effects(mob/living/carbon/human/target, mob/living/user = usr, nodmg)
 	. = ..()
-	if(1 == 1)//if(target.stat == DEAD || target.health > target.crit_threshold) // Trigger soul steal if the target is either dead or in crit
+	if(target.stat == DEAD || target.health > target.crit_threshold) // Trigger soul steal if the target is either dead or in crit
 		if(target.has_flaw(/datum/charflaw/hunted)) // The profane dagger only thirsts for those who are hunted.
 			if(target.client == null) //See if the target's soul has left their body
 				to_chat(user, "<span class='danger'>Your target's soul has already escaped its corpse...you try to call it back!</span>")

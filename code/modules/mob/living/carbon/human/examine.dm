@@ -466,7 +466,6 @@
 		for(var/obj/item/I in user)
 			if(istype(I, /obj/item/rogueweapon/huntingknife/idagger/steel/profane))
 				user.visible_message("profane dagger whispers, <span class='danger'>\"That's [real_name]! Strike their heart!\"</span>")
-					break
 
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))
