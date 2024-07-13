@@ -8,7 +8,10 @@
 
 	allowed_races = list(
 		"Humen",
-		"Aasimar"
+		"Aasimar",
+		"Elf",
+		"Dwarf",
+		"Half-Elf",
 	)
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_CAPTAIN

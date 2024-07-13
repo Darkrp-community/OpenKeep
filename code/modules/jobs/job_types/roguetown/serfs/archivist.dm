@@ -20,6 +20,7 @@
 
 	outfit = /datum/outfit/job/roguetown/archivist
 	display_order = 19
+	give_bank_account = 100
 
 /datum/outfit/job/roguetown/archivist/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -36,7 +37,9 @@
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/keyring/archivist
+	backl = /obj/item/storage/backpack/rogue/satchel
 	mask = /obj/item/clothing/mask/rogue/spectacles/golden
+	backpack_contents = list(/obj/item/literary/apprentice = 1)
 
 	if(H.mind)
 		H.grant_language(/datum/language/elvish)
