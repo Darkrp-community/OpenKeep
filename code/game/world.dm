@@ -326,7 +326,7 @@ GLOBAL_VAR(restart_counter)
 	s += "<center><a href=\"https://discord.gg/qZw267fFsX\">"
 #ifdef MATURESERVER
 	s += "<big><b>RU STONEKEEP (18+)</b></big></a><br>"
-	s += "<b>Dark Medieval Fantasy Roleplay, Whitelist https://discord.gg/qZw267fFsX</b></center><br>"
+	s += "<b>Dark Medieval Fantasy Roleplay https://discord.gg/qZw267fFsX</b></center><br>"
 	s += "<b>Hosted by SS13.RU Team</b></center><br>"
 #else
 	s += "<big><b>ROGUEWORLD</b></big></a><br>"
