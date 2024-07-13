@@ -64,15 +64,13 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.change_stat("strength", 2)
-		H.change_stat("perception", 2)
-		H.change_stat("intelligence", 2)
 		H.change_stat("constitution", 2)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", -1)
@@ -83,12 +81,5 @@
 		if(H.dna.species.id == "humen")
 			H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 
-
-//shield flail or longsword, tief can be this with red cross
-
-
-
-/datum/outfit/job/roguetown/templar
-	allowed_patrons = ALL_CLERIC_PATRONS
 
 
