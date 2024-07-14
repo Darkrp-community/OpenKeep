@@ -863,10 +863,22 @@
 		return
 
 	var/mob/living/carbon/human/H = user
-	var/random_message = pick("You can see Noc rotating.", "Looking at Astrata blinds you!", "The stars smile at you.", "Blessed yellow strife.", "You see a star!")
-	to_chat(H, "<span class='notice'>[random_message]</span>")
-
-	if(random_message == "Looking at Astrata blinds you!")
+	var/random_message = rand(1,5)
+	var/message2send = ""
+	switch(random_message)
+		if(1)
+			message2send = "You can see Noc rotating."
+		if(2)
+			message2send = "Looking at Astrata blinds you!
+		if(3)
+			message2send = "The stars smile at you.
+		if(4)
+			message2send = "Blessed yellow strife."
+		if(5)
+			message2send = "You see a star!"
+	to_chat(H, "<span class='notice'>[message2send]</span>")
+	
+	if(random_message == 2)
 		if(do_after(H, 25, target = src))
 			var/obj/item/bodypart/affecting = H.get_bodypart("head")
 			to_chat(H, "<span class='warning'>The blinding light causes you intense pain!</span>")
