@@ -21,7 +21,8 @@
 			H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
 		if (2)
 			beltl = /obj/item/rogueweapon/hammer
-			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 1, TRUE)
 	switch(pick(1,2))
 		if (1)
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather	
