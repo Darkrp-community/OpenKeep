@@ -871,7 +871,7 @@
 		if(2)
 			message2send = "Looking at Astrata blinds you!
 		if(3)
-			message2send = "The stars smile at you.
+			message2send = "The stars smile at you."
 		if(4)
 			message2send = "Blessed yellow strife."
 		if(5)
