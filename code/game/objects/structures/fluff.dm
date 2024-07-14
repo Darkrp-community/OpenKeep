@@ -869,7 +869,7 @@
 		if(1)
 			message2send = "You can see Noc rotating."
 		if(2)
-			message2send = "Looking at Astrata blinds you!
+			message2send = "Looking at Astrata blinds you!"
 		if(3)
 			message2send = "The stars smile at you."
 		if(4)
