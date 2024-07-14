@@ -44,15 +44,23 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/maniac.ogg', 80, FALSE, pressure_affected = FALSE)
 	owner.current.verbs |= /mob/living/carbon/human/proc/praise
 	owner.current.verbs |= /mob/living/carbon/human/proc/communicate
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_VILLAIN, TRAIT_GENERIC)
+
+	H.change_stat("strength", 2)
 
 	if(islesser)
 		add_objective(/datum/objective/zizoserve)
 		owner.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.change_stat("intelligence", -2)
 		greet()
 	else
 		add_objective(/datum/objective/zizo)
 		owner.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.change_stat("strength", 1)
+		H.change_stat("endurance", 2)
+		H.change_stat("constitution", 2)
+		H.change_stat("speed", 1)
 		greet()
 		owner.special_role = ROLE_ZIZOIDCULTIST
 		owner.current.verbs |= /mob/living/carbon/human/proc/draw_sigil
