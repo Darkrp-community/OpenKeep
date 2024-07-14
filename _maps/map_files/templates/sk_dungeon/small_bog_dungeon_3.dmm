@@ -1,67 +1,68 @@
-"a" = (/obj/structure/mineral_door/wood/violet,/turf/open/floor/rogue/blocks{icon_state = "paving-t"},/area/rogue/outdoors/bog)
-"c" = (/obj/structure/bookcase,/obj/item/book/rogue/nitebeast,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
-"d" = (/obj/structure/bookcase,/obj/item/book/rogue/beardling,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"b" = (/obj/structure/flora/roguegrass/water/reeds,/turf/open/water/swamp,/area/rogue/outdoors/bog)
+"d" = (/turf/open/water/swamp,/area/rogue/outdoors/bog)
 "e" = (/mob/living/carbon/human/species/skeleton/npc/warrior,/turf/open/floor/rogue/blocks{icon_state = "paving"},/area/rogue/outdoors/bog)
-"f" = (/obj/structure/bars/cemetery,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
-"g" = (/turf/open/floor/rogue/blocks{icon_state = "paving"},/area/rogue/outdoors/bog)
-"j" = (/obj/structure/mineral_door/bars,/turf/open/floor/rogue/blocks{icon_state = "paving-t"},/area/rogue/outdoors/bog)
-"l" = (/obj/structure/flora/roguetree,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
-"o" = (/obj/structure/bookcase,/obj/item/book/rogue/tales1,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
-"p" = (/obj/structure/bookcase,/obj/item/book/rogue/abyssor,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
-"r" = (/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
-"s" = (/obj/structure/flora/roguetree,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
-"u" = (/obj/structure/bookcase,/obj/item/book/rogue/law,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
-"B" = (/turf/closed/wall/mineral/rogue/craftstone,/area/rogue/outdoors/bog)
-"C" = (/obj/structure/flora/roguegrass/water/reeds,/turf/open/water/swamp,/area/rogue/outdoors/bog)
-"D" = (/turf/open/water/swamp,/area/rogue/outdoors/bog)
-"F" = (/obj/structure/closet/crate/coffin,/obj/item/clothing/ring/silver/noc,/obj/item/clothing/neck/roguetown/psicross/noc,/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/bog)
-"G" = (/obj/item/restraints/legcuffs/beartrap/armed/camouflage,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
-"H" = (/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
-"I" = (/obj/structure/bookcase,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
-"J" = (/obj/structure/bookcase,/obj/item/book/rogue/tales3,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
-"M" = (/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
-"N" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
-"P" = (/obj/structure/bookcase,/obj/item/book/rogue/knowledge1,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
-"Q" = (/turf/open/floor/rogue/blocks{icon_state = "paving-t"},/area/rogue/outdoors/bog)
-"T" = (/obj/structure/bookcase,/obj/item/book/rogue/godofdreamsandnightmares,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
-"V" = (/obj/structure/bookcase,/obj/item/book/rogue/blackmountain,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
-"W" = (/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/bog)
-"Z" = (/obj/structure/bookcase,/obj/item/book/rogue/arcyne,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"f" = (/obj/structure/bookcase,/obj/item/book/rogue/blackmountain,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"g" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"h" = (/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/bog)
+"j" = (/turf/closed/wall/mineral/rogue/craftstone,/area/rogue/outdoors/bog)
+"n" = (/obj/structure/bookcase,/obj/item/book/rogue/tales1,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"r" = (/obj/structure/bookcase,/obj/item/book/rogue/godofdreamsandnightmares,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"s" = (/obj/structure/bookcase,/obj/item/book/rogue/abyssor,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"t" = (/obj/structure/mineral_door/wood/violet,/turf/open/floor/rogue/blocks{icon_state = "paving-t"},/area/rogue/outdoors/bog)
+"u" = (/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"v" = (/obj/structure/bookcase,/obj/item/book/rogue/law,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"w" = (/obj/item/restraints/legcuffs/beartrap/armed/camouflage,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"x" = (/obj/structure/bookcase,/obj/item/book/rogue/tales3,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"z" = (/turf/open/floor/rogue/blocks{icon_state = "paving"},/area/rogue/outdoors/bog)
+"B" = (/obj/structure/flora/roguetree,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"C" = (/obj/structure/bars/cemetery,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"E" = (/obj/structure/closet/crate/coffin,/obj/item/clothing/ring/silver/noc,/obj/item/clothing/neck/roguetown/psicross/noc,/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/bog)
+"F" = (/turf/open/floor/rogue/blocks{icon_state = "paving-t"},/area/rogue/outdoors/bog)
+"H" = (/obj/structure/bookcase,/obj/item/book/rogue/arcyne,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"I" = (/obj/structure/bookcase,/obj/item/book/rogue/nitebeast,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"L" = (/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
+"Q" = (/mob/living/simple_animal/hostile/retaliate/rogue/spider,/turf/open/water/swamp,/area/rogue/outdoors/bog)
+"R" = (/obj/structure/bookcase,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"S" = (/obj/structure/bookcase,/obj/item/book/rogue/beardling,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"U" = (/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"V" = (/obj/structure/flora/roguetree,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
+"W" = (/obj/structure/bookcase,/obj/item/book/rogue/knowledge1,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
+"X" = (/obj/structure/mineral_door/bars,/turf/open/floor/rogue/blocks{icon_state = "paving-t"},/area/rogue/outdoors/bog)
 
 (1,1,1) = {"
-HHHHHHHHDDDDHHHHHssssHHHHHHHHH
-HHHHHHHHDDCHHHrHsDDDDsssHHHHHH
-HHHHHrDDDCHHHrssDDDDDDDDsHHrHH
-HHHHHrDDDrHHrsDDDDHHGDDDDHHCrH
-HHHHHHDDsrHHssDDDHHHHHGsDHDDHH
-HHrHHDDDrHHCDDDDHsHHDHHsDHCDrH
-HrHsDDssHHDCDDDrHHHDDHsDDHrDDH
-HrsDDDsrHHDCDsDHHHDCHHHDDHrCDH
-HrlDDssHHDCDsrHHHDDHHHHDGHHrDD
-HrlDDsrHHCDDsHHsDDCHHDCDHHHHHD
-HsDDssrHCDDHrGHsDCHHDDCHHHHDDD
-HsDCsrHCCDDsrHsDDCHDCDHHHHDDDs
-HHHCsHHCDDDsrHsDDHHCDHHsHDDDsH
-HHDDHHDDDDDsHHsDDsHCGHssDDDDsH
-HHDHHHHCDDDsHsCDDHHCrHllDDDDsH
-HHDHHsCDDDDCHCDCDHHCHHHHlsDssH
-HHDHHCDDDDBBaBBDDHDDDDDHHrsDDs
-HHsHsDDDDBBMQMBBCDHDlDDDHHrDDs
-HHHHsDDDDBMMQMMBDDHHHllDDHHsDD
-HHHHsDDDDBMMQMMBDDDDHHHsDDHGDD
-HHHHDDBBBBffjffBBBBDDHHsDDHHCD
-HHsDDBBNIIMMQMMuJNBBDDHHsDHHDD
-HsDDDBIMMMMMQMMMMMIBDDHHsDHHDC
-HsDDDBcMMMegggeMMMIBDDDHsDHCGD
-HHHDDBpMMMQWWWQMMMIBDDDHDDHDDC
-HsDDDBggggQWFWQggggBDCHHDDHCDD
-HsDDDBoMMMQWWWQMMMIBDCHHDDGDDD
-HDDDDBVMMMegggeMMMZBDCHHHDHHrD
-HHHDDBIMMMMMQMMMMMIBDDHrHDDHHC
-HHHDDBIMMMMMQMMMMMIBDDDDHHDHHC
-HHHDDBBBNMMMQMMMNBBBDDCrHHDDHD
-HHDDDCDBBdIIQTPIBBrrrDCDHHHHHC
-HHDDDDDDBBBBBBBBBBDDDDDCDrrHHD
-HHHHDDDDCDDDDDDCDDDrrrrHDDDHDD
-HHHHHHHHDDDCDrrrrrrHHHHHHHHHCD
+uuuuuuuudddduuuuuBBBBuuuuuuuuu
+uuuuuuuuddbuuuLuBddddBBBuuuuuu
+uuuuuLdddbuuuLBBddddddddBuuLuu
+uuuuuLdddLuuLBdddduuwdddduubLu
+uuuuuuddBLuuBBdbduuuuuwBdudduu
+uuLuudddLuubdQdbuBuuduuBdubdLu
+uLuBddBBuudbddbLuuudduBdduLddu
+uLBdddBLuudbdBduuudbuuudduLbdu
+uLVddBBuudbdBLuuudduuuudwuuLdd
+uLVddBLuubddBuuBddbuudbduuuuud
+uBddBBLubdduLwuBQbuuddbuuuuddd
+uBdbBLubbddBLuBddbudbduuuudddB
+uuubBuubdQdBLuBdduubduuBudddBu
+uudduudddddBuuBddBubwuBBddddBu
+uuduuuubdddBuBbdduubLuVVddddBu
+uuduuBbddddbubdbduubuuuuVBdBBu
+uuduubddddjjtjjdduddddduuLBddB
+uuBuBddddjjUFUjjbdudVddduuLddB
+uuuuBddddjUUFUUjdduuuVVdduuBdd
+uuuuBddddjUUFUUjdddduuuBdduwdd
+uuuuddjjjjCCXCCjjjjdduuBdduubd
+uuBddjjgRRUUFUUvxgjjdduuBduudd
+uBdddjRUUUUUFUUUUURjdduuBduudb
+uBdddjIUUUezzzeUUURjddduBdubwd
+uuuddjsUUUFhhhFUUURjdddudduddb
+uBdddjzzzzFhEhFzzzzjdbuuddubdd
+uBdddjnUUUFhhhFUUURjdbuuddwddd
+uddddjfUUUezzzeUUUHjdbuuuduuLd
+uuuddjRUUUUUFUUUUURjdduLudduub
+uuuddjRUUUUUFUUUUURjdddduuduub
+uuuddjjjgUUUFUUUgjjjddbLuuddud
+uudddbdjjSRRFrWRjjLLLdbduuuuub
+uuddddddjjjjjjjjjjdddddbdLLuud
+uuuuddddbddddddbdddLLLLudddudd
+uuuuuuuudddbdLLLLLLuuuuuuuuubd
 "}
