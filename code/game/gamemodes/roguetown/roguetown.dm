@@ -491,9 +491,26 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	addtimer(VARSET_CALLBACK(src, gamemode_ready, TRUE), 101)
 	return TRUE
 
+/datum/game_mode/chaosmode/proc/GetTownPower()
+	var/townpower = 1
+	for(var/mob/living/carbon/human/H in GLOB.human_list)
+		if(H.mind?.assigned_role)
+			if(H.mind.assigned_role in GLOB.garrison_positions)
+				townpower += 1
+			if(H.mind.assigned_role == "Captain" || H.mind.assigned_role == "Court Magician")
+				townpower += 2
+	return townpower
+
+/datum/game_mode/chaosmode/proc/GetAntagPower()
+	var/antagpower = 1
+	for(var/mob/living/carbon/human/H in GLOB.human_list)
+		if(H.mind?.special_role)
+			antagpower += 2
+	return antagpower
+
 /datum/game_mode/chaosmode/make_antag_chance(mob/living/carbon/human/character) //klatejoin
-	var/banditcap = 1 + GLOB.joined_player_list.len / 10
-	if(bandits.len >= 3) //Caps number of latejoin antagonists
+	var/banditcap = GetTownPower() - GetAntagPower() //GLOB.joined_player_list.len / 10
+	if(bandits.len >= 4) //Caps number of latejoin antagonists
 		return
 	if(bandits.len <= banditcap)
 		if(ROLE_BANDIT in character.client.prefs.be_special)

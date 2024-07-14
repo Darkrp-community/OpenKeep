@@ -153,7 +153,7 @@ GLOBAL_LIST_INIT(chern_positions, list(
 GLOBAL_LIST_INIT(apprentices_positions, list(
 	"Squire",
 	"Smithy Apprentice",
-	"Magician's Apprentice",
+	"Magicians Apprentice",
 	"Churchling",
 	"Servant",
 	"Orphan"
