@@ -92,13 +92,13 @@
 	worshippers = "Smiths, Miners, Artists."
 	sins = "Cheating, Shoddy work, Suicide"
 
-/datum/patron/divine/eora
+/datum/patron/divine/eora // should get some wine spell I guess
 	name = "Eora"
-	domain = "Saint of the Love, Life and Beauty"
-	desc = "Blind love for all, without a shred of hate in her heart"
-	flaws= "Naive, Compulsive, Ignorant"
-	worshippers = "Lovers, Harlots, Doting Grandparents"
-	sins = "Sadism, Celibacy, Ruining beauty"
+	domain = "Saint of Wine, Fertility and Beauty"
+	desc = "Wine and children warms the heart"
+	flaws= "Naive, Intoxicated, Vain"
+	worshippers = "Married couples, Drunkards, Vain people"
+	sins = "Wasting wine,  Ruining beauty, Violating marriage"
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/bud
 	t2 = /obj/effect/proc_holder/spell/invoked/eoracurse
