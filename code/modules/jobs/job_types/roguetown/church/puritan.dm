@@ -67,6 +67,9 @@
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
 	ADD_TRAIT(H, TRAIT_TORTURER, TRAIT_GENERIC)
+// The Puritan is the priest's right-hand man, and a fanatical zealot of the Church. Peasants rarely have the ambition to aspire to be this zealous, though it does happen, so he will occasionally spawn as one!
+	if(prob(80))  // 80% chance to add the noble trait
+		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 
