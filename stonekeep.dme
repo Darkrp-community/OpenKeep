@@ -1592,6 +1592,7 @@
 #include "code\modules\antagonists\roguetown\villain\vampire.dm"
 #include "code\modules\antagonists\roguetown\villain\vampirelord.dm"
 #include "code\modules\antagonists\roguetown\villain\werewolf.dm"
+#include "code\modules\antagonists\roguetown\villain\zizocult.dm"
 #include "code\modules\antagonists\roguetown\villain\zomble.dm"
 #include "code\modules\antagonists\santa\santa.dm"
 #include "code\modules\antagonists\separatist\separatist.dm"
