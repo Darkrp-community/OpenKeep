@@ -57,10 +57,6 @@
 	STASPD = 1
 	STAEND = 11
 
-/mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/Initialize()
-	. = ..()
-	REMOVE_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
-
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended
 	name = "???"
 	hud_type = /datum/hud/human
@@ -85,7 +81,6 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/Initialize()
 	. = ..()
 	set_light(5,5, LIGHT_COLOR_RED)
-	REMOVE_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/get_sound(input)
