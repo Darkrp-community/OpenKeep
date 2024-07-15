@@ -47,7 +47,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/gladiator
 
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
-	if(prob(20))  // 20% chance to add the noble trait
+	if(prob(50))  // 50% chance to add the noble trait
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 
 	H.change_stat("intelligence", 2)
