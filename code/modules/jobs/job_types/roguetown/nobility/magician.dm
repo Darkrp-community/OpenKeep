@@ -16,6 +16,7 @@
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_MAGICIAN
+	allowed_patrons = list(/datum/patron/divine/noc)
 	tutorial ="Dream interpreter, soothsayer, astrologer and valued courtier. \
 	Indebted to the ruler for funding yils of mystical studies in these dark times, \
 	only wisdom and arcane knowledge amassed during a long life will allow a mage to unlock their full potential."
@@ -24,9 +25,6 @@
 	bypass_lastclass = TRUE
 	give_bank_account = 120
 	min_pq = 0
-
-/datum/outfit/job/roguetown/magician
-	allowed_patrons = list(/datum/patron/divine/noc)
 
 /datum/outfit/job/roguetown/magician/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -78,22 +76,12 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse)
 
-/datum/outfit/job/roguetown/magician/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/arcane, pick(6,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
-
-	if(H.patron != /datum/patron/divine/noc)
-		H.patron = GLOB.patronlist[/datum/patron/divine/noc]
-		to_chat(H, "<span class='warning'>My long studies of magicks has drawn me to [H.patron], no matter what other gods I might have preferred in the past.")
 
 
 //............... Unique Court Mage Stuff ...........................
