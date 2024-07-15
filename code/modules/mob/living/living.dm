@@ -1065,32 +1065,25 @@
 /mob/living/resist_grab(moving_resist)
 	. = TRUE
 
-	var/wrestling_victim = 1
-	var/wrestling_attacker = 1
+	var/wrestling_diff = 0
 	var/resist_chance = 50
 	var/mob/living/L = pulledby
 
 	if(mind)
-		wrestling_victim += (mind.get_skill_level(/datum/skill/combat/wrestling))*2 //NPCs don't use this
-		wrestling_victim += (STACON - 10)
-		
+		wrestling_diff += (mind.get_skill_level(/datum/skill/combat/wrestling)) //NPCs don't use this
 	if(L.mind)
-		wrestling_attacker += (L.mind.get_skill_level(/datum/skill/combat/wrestling))*2
-		wrestling_attacker += (L.STACON - 10)
+		wrestling_diff -= (L.mind.get_skill_level(/datum/skill/combat/wrestling))
 
+	resist_chance += ((STACON - L.STACON) * 10)
 
 	if(!(mobility_flags & MOBILITY_STAND))
-		wrestling_victim -= 2
+		resist_chance += -20 + min((wrestling_diff * 5), -20) //Can improve resist chance at high skill difference     
 	if(pulledby.grab_state >= GRAB_AGGRESSIVE)
-		wrestling_victim -= 2
-	
-	wrestling_attacker = max(wrestling_attacker,1)
-	wrestling_victim = max(wrestling_victim,1)
+		resist_chance += -20 + max((wrestling_diff * 10), 0) 
+		resist_chance = max(resist_chance, 50 + min((wrestling_diff * 5), 0))
+	else
+		resist_chance = max(resist_chance, 70 + min((wrestling_diff * 5), 0))
 
-	resist_chance = (wrestling_victim)/(wrestling_victim + wrestling_attacker)*100
-
-	if(resist_chance <= 0)
-		resist_chance = 5
 
 	if(moving_resist && client) //we resisted by trying to move
 		client.move_delay = world.time + 20
