@@ -53,6 +53,9 @@
 	H.change_stat("strength", -1)
 	H.change_stat("intelligence", 4)
 	H.change_stat("constitution", -1)
-	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+// The Feldsher is a medical wonder-worker, however they are not expected to make a claim for the throne. 
+	if(prob(80))  // 80% chance to add the noble trait
+		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
