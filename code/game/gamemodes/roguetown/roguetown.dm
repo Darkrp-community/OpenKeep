@@ -105,7 +105,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	var/lord_dead = FALSE
 	for(var/mob/living/carbon/human/H in GLOB.human_list)
 		if(H.mind)
-			if(H.job == "Lord" || H.job == "Lady")
+			if(H.job == "Lord" || H.job == "Lady" || SSticker.forcedwithoutruler)
 				lord_found = TRUE
 				if(H.stat == DEAD)
 					lord_dead = TRUE

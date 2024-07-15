@@ -16,6 +16,7 @@ SUBSYSTEM_DEF(ticker)
 	// If true, there is no lobby phase, the game starts immediately.
 	var/start_immediately = FALSE
 	var/setup_done = FALSE //All game setup done including mode post setup and
+	var/forcedwithoutruler = FALSE
 
 	var/hide_mode = 0
 	var/datum/game_mode/mode = null
@@ -276,7 +277,7 @@ SUBSYSTEM_DEF(ticker)
 							continue
 					readied_jobs.Add(V)
 	if("Merchant" in readied_jobs)
-		if(("Lord" in readied_jobs) || ("Lady" in readied_jobs))
+		if(("Lord" in readied_jobs) || ("Lady" in readied_jobs) || forcedwithoutruler)
 			if("Lord" in readied_jobs)
 				rulertype = "Lord"
 			else
@@ -284,6 +285,9 @@ SUBSYSTEM_DEF(ticker)
 		else
 			var/list/stuffy = list("Set a Ruler to 'high' in your class preferences to start the game!", "PLAY Ruler NOW!", "A Ruler is required to start.", "Pray for a Ruler.", "One day, there will be a Ruler.", "Just try playing Ruler.", "If you don't play Ruler, the game will never start.", "We need at least one Ruler to start the game.", "We're waiting for you to pick Ruler to start.", "Still no Ruler is readied..", "I'm going to lose my mind if we don't get a Ruler readied up.","No. The game will not start because there is no Ruler.","What's the point of ROGUETOWN without a Ruler?")
 			to_chat(world, "<span class='purple'>[pick(stuffy)]</span>")
+			failedstarts++
+			if((failedstarts > 10 && GLOB.player_list.len < 10))
+				forcedwithoutruler = TRUE
 			return FALSE
 	else
 		var/list/stuffy = list("Set Merchant to 'high' in your class preferences to start the game!", "PLAY Merchant NOW!", "A Merchant is required to start.", "Pray for a Merchant.", "One day, there will be a Merchant.", "Just try playing Merchant.", "If you don't play Merchant, the game will never start.", "We need at least one Merchant to start the game.", "We're waiting for you to pick Merchant to start.", "Still no Merchant is readied..", "I'm going to lose my mind if we don't get a Merchant readied up.","No. The game will not start because there is no Merchant.","What's the point of ROGUETOWN without a Merchant?")
