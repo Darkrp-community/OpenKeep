@@ -13,7 +13,7 @@
 	name = "frysteak"
 	desc = "A slab of beastflesh, fried to a perfect medium-rare"
 	icon_state = "frysteak"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = SNACK_NUTRITIOUS)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = MEATSLAB_NUTRITION)
 	rotprocess = SHELFLIFE_DECENT
 	tastes = list("warm steak" = 1)
 
@@ -57,7 +57,7 @@
 
 /*	.............   Grenzelbun   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/bun_grenz
-	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
+	list_reagents = list(/datum/reagent/consumable/nutriment = SAUSAGE_NUTRITION+SMALLDOUGH_NUTRITION)
 	tastes = list("savory sausage" = 1, "bread" = 1)
 	name = "grenzelbun"
 	desc = "Originally an elven cuisine composed of mortal races flesh and bread, the classic wiener in a bun, now modified and staple food of Grenzelhoft cuisine."
@@ -238,3 +238,18 @@
 	bitesize = 3
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	tastes = list("warm potato" = 1)
+/obj/item/reagent_containers/food/snacks/rogue/preserved/potato_fried/attackby(obj/item/I, mob/user, params)
+	var/found_table = locate(/obj/structure/table) in (loc)
+	if(user.mind)
+		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
+		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked))
+		if(isturf(loc)&& (found_table))
+			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
+			if(do_after(user,short_cooktime, target = src))
+				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotato(loc)
+				qdel(I)
+				qdel(src)
+	else
+		return ..()
+

@@ -39,6 +39,10 @@
 	cooktime = 30 SECONDS
 	var/process_step
 
+/obj/item/reagent_containers/food/snacks/rogue/Initialize()
+	. = ..()
+	eatverb = pick("bite","chew","nibble","gobble","chomp")
+
 /obj/item/reagent_containers/food/snacks/rogue/foodbase
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
 	bitesize = 3
@@ -66,6 +70,13 @@
 		qdel(src)
 	var/obj/item/I = new path(T)
 	eater.put_in_active_hand(I)
+
+/obj/effect/decal/cleanable/food/mess
+	name = "mess"
+	desc = ""
+	color = "#ab9d9d"
+	icon_state = "tomato_floor1"
+	random_icon_states = list("tomato_floor1", "tomato_floor2", "tomato_floor3")
 
 /* added to proc
 /obj/item/reagent_containers/food/snacks/proc/slice(obj/item/W, mob/user)
@@ -345,6 +356,24 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienercabbage/plated(loc)
+				qdel(I)
+				qdel(src)
+		else
+			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/wienerpotato))
+		if(isturf(loc)&& (found_table))
+			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
+			if(do_after(user,2 SECONDS, target = src))
+				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotato/plated(loc)
+				qdel(I)
+				qdel(src)
+		else
+			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions))
+		if(isturf(loc)&& (found_table))
+			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
+			if(do_after(user,2 SECONDS, target = src))
+				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions/plated(loc)
 				qdel(I)
 				qdel(src)
 		else
