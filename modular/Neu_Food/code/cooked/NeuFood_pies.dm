@@ -296,13 +296,13 @@
 			qdel(I)
 			return
 		if(berrypie && process_step == 2 && do_after(user,short_cooktime, target = src))
-			to_chat(user, "<span class='notice'>Adding filling to the applepie. Needs more.</span>")
+			to_chat(user, "<span class='notice'>Adding filling to the berrypie. Needs more.</span>")
 			process_step += 1
 			update_icon()
 			qdel(I)
 			return
 		if(berrypie && process_step == 3 && do_after(user,short_cooktime, target = src))
-			to_chat(user, "<span class='notice'>Filling the applepie to the brim. Still lacks a pie roof.</span>")
+			to_chat(user, "<span class='notice'>Filling the berrypie to the brim. Still lacks a pie roof.</span>")
 			process_step += 1
 			update_icon()
 			qdel(I)
