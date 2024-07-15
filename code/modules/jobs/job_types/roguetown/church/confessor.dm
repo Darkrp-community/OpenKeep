@@ -24,10 +24,6 @@
 /datum/outfit/job/roguetown/shepherd
 	name = "Confessor"
 	jobtype = /datum/job/roguetown/shepherd
-// Nobles do not aspire to this station. They would rather be the Puritan, the man in charge.	
-if(prob(5))  // 5% chance to add the noble trait
-		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-
 /datum/outfit/job/roguetown/shepherd/pre_equip(mob/living/carbon/human/H)
 	..()
 	belt = /obj/item/storage/belt/rogue/leather
@@ -63,4 +59,7 @@ if(prob(5))  // 5% chance to add the noble trait
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
+// Nobles do not aspire to this station. They would rather be the Puritan, the man in charge.	
+if(prob(5))  // 5% chance to add the noble trait
+		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
