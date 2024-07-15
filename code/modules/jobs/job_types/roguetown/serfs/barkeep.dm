@@ -22,9 +22,6 @@
 	display_order = JDO_BARKEEP
 	bypass_lastclass = TRUE
 	give_bank_account = 43
-if(prob(20))  // 20% chance to add the noble trait
-		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-
 /datum/outfit/job/roguetown/barkeep/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
@@ -33,6 +30,8 @@ if(prob(20))  // 20% chance to add the noble trait
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(1,2,3), TRUE)
+	if(prob(20))  // 20% chance to add the noble trait
+		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/random
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
