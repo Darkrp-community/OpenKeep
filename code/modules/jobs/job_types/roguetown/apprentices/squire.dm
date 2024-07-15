@@ -38,6 +38,9 @@
 			beltr = /obj/item/rogueweapon/mace/copperbludgeon	
 		if (3)
 			beltr = /obj/item/rogueweapon/knife/copperdagger
+// Sometimes the sons of minor nobility are sent to be squires, as a reward for their parent's service. However, this is a rare privelige.
+if(prob(30))  // 30% chance to add the noble trait
+		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 
 /datum/outfit/job/roguetown/squire/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -63,6 +66,3 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-// Sometimes the sons of minor nobility are sent to be squires, as a reward for their parent's service. However, this is a rare privelige.
-if(prob(30))  // 30% chance to add the noble trait
-		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
