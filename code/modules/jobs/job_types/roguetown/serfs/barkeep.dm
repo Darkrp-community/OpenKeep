@@ -22,6 +22,8 @@
 	display_order = JDO_BARKEEP
 	bypass_lastclass = TRUE
 	give_bank_account = 43
+if(prob(20))  // 20% chance to add the noble trait
+		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 
 /datum/outfit/job/roguetown/barkeep/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -50,5 +52,3 @@
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)
 	
-if(prob(20))  // 20% chance to add the noble trait
-		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
