@@ -60,6 +60,7 @@
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
 // Nobles do not aspire to this station. They would rather be the Puritan, the man in charge.	
-if(prob(5))  // 5% chance to add the noble trait
+	if(prob(5))  // 5% chance to add the noble trait
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
