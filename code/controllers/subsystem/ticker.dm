@@ -243,13 +243,13 @@ SUBSYSTEM_DEF(ticker)
 				Master.SetRunLevel(RUNLEVEL_POSTGAME)
 			if(firstvote)
 				if(world.time > round_start_time + time_until_vote)
-					SSvote.initiate_vote("restart", "The Gods")
-					time_until_vote = 40 MINUTES
+					SSvote.initiate_vote("endround", "The Tenways")
+					time_until_vote = 45 MINUTES
 					last_vote_time = world.time
 					firstvote = FALSE
 			else
 				if(world.time > last_vote_time + time_until_vote)
-					SSvote.initiate_vote("restart", "The Gods")
+					SSvote.initiate_vote("endround", "The Tenways")
 
 /datum/controller/subsystem/ticker
 	var/last_bot_update = 0
