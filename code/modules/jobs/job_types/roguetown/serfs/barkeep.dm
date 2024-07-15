@@ -49,3 +49,6 @@
 		beltl = /obj/item/keyring/innkeep
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)
+	
+if(prob(20))  // 20% chance to add the noble trait
+		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
