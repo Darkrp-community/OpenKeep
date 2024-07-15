@@ -102,7 +102,7 @@
 	desc = "Old ring, inscribed with arcane words. Once held magical powers, perhaps it does still?"
 	icon_state = "ring_protection"
 	var/antileechy
-	var/antimagika
+//	var/antimagika	// turns out antimagic on court mage is silly
 	var/antishocky
 
 /obj/item/clothing/ring/gold/protection/Initialize()
@@ -111,7 +111,7 @@
 		if(1)
 			antileechy = TRUE
 		if(2)
-			antimagika = TRUE
+			antileechy = TRUE // replaced antimagika since courtmage
 		if(3)
 			antishocky = TRUE
 		if(4)
@@ -125,11 +125,11 @@
 		else
 			REMOVE_TRAIT(user, TRAIT_LEECHIMMUNE,"Unleechable")
 
-	if(antimagika)
-		if (slot == SLOT_RING && istype(user))
-			ADD_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
-		else
-			REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
+//	if(antimagika)
+//		if (slot == SLOT_RING && istype(user))
+//			ADD_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
+//		else
+//			REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
 
 	if(antishocky)
 		if (slot == SLOT_RING && istype(user))
