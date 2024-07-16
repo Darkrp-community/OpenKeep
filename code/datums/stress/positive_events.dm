@@ -38,6 +38,11 @@
 	stressadd = -1
 	desc = "<span class='green'>I came.</span>"
 
+/datum/stressevent/lovezizo
+	timer = 99999 MINUTES
+	stressadd = -666 // :)
+	desc = "<span class='green'>ZIZOZIZOZIZO</span>"
+
 /datum/stressevent/cummid
 	timer = 5 MINUTES
 	stressadd = -2
@@ -174,3 +179,7 @@
 /datum/stressevent/moondust_purest
 	stressadd = -6
 	desc = "<span class='green'>PUREST moondust surges through me!</span>"
+
+/datum/stressevent/calm
+	stressadd = -3
+	desc = "<span class='green'>I feel soothed and calm.</span>"
