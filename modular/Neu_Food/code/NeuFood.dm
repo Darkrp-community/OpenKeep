@@ -16,8 +16,8 @@
 #define SNACK_POOR 3
 
 /*	........   Rotting defines   ................ */
-#define SHELFLIFE_EXTREME 60 MINUTES
-#define SHELFLIFE_LONG 40 MINUTES
+#define SHELFLIFE_EXTREME 90 MINUTES
+#define SHELFLIFE_LONG 45 MINUTES
 #define SHELFLIFE_DECENT 25 MINUTES
 #define SHELFLIFE_SHORT 15 MINUTES
 #define SHELFLIFE_TINY 10 MINUTES
@@ -389,3 +389,57 @@
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
 	else
 		return ..()	
+
+
+
+/* * * * * * * * * * * **
+ *						*
+ *	 Food Rotting		*	- Just lists as it stands on 2024-07-16
+ *						*
+ * * * * * * * * * * * **/
+
+/*	.................   Never spoils   ................... *//*
+
+* Hardtack
+* Toast
+* Salted fish
+* Frybread
+* Unbitten handpies
+* Biscuit
+* Prezzel
+* Cheese wheel/wedges
+* Salo
+* Copiette
+* Salumoi
+* Uncut pie
+* Raw potato, onion, cabbage
+
+/*	.................   Long shelflife   ................... */
+
+* Uncut bread loaf
+* Uncut raisin bread
+* Uncut cake
+* Pastry
+* Bun
+* Most plated dishes
+* Most cooked veggies
+* Cooked sausage
+* Pie slice
+* Bread slice
+
+/*	.................   Decent shelflife   ................... */
+
+* Fresh cheese
+* Mixed dishes with meats 
+* Fried meats & eggs
+
+/*	.................   Short shelflife   ................... */
+
+* Raw meat
+* Berries
+
+/*	.................   Tiny shelflife   ................... */
+
+* Minced meat
+
+*/

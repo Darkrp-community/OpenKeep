@@ -16,7 +16,7 @@
 	icon_state = "peppersteak"
 	foodtype = MEAT
 	warming = 5 MINUTES
-	rotprocess = 30 MINUTES
+	rotprocess = SHELFLIFE_DECENT
 	eat_effect = /datum/status_effect/buff/foodbuff
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 /obj/item/reagent_containers/food/snacks/rogue/peppersteak/plated
@@ -28,7 +28,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_LONG
 
 
 /*	..................   Onion steak   ................... */
@@ -40,7 +40,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+3)
 	foodtype = MEAT
 	warming = 5 MINUTES
-	rotprocess = 30 MINUTES
+	rotprocess = SHELFLIFE_DECENT
 	eat_effect = /datum/status_effect/buff/foodbuff
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 /obj/item/reagent_containers/food/snacks/rogue/onionsteak/plated
@@ -52,7 +52,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess =  SHELFLIFE_LONG
 
 
 /*	.................   Wiener Cabbage   ................... */
@@ -64,7 +64,7 @@
 	icon_state = "wienercabbage"
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
-	rotprocess = 20 MINUTES
+	rotprocess = SHELFLIFE_LONG
 	eat_effect = /datum/status_effect/buff/foodbuff
 /obj/item/reagent_containers/food/snacks/rogue/wienercabbage/plated
 	icon_state = "wienercabbage_plated"
@@ -75,7 +75,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_EXTREME
 
 
 /*	.................   Wiener & Fried potato   ................... */
@@ -87,7 +87,7 @@
 	icon_state = "wienerpotato"
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
-	rotprocess = 20 MINUTES
+	rotprocess = SHELFLIFE_LONG
 	eat_effect = /datum/status_effect/buff/foodbuff
 /obj/item/reagent_containers/food/snacks/rogue/wienerpotato/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -111,7 +111,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_EXTREME
 /obj/item/reagent_containers/food/snacks/rogue/wienerpotato/plated/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(!experimental_inhand)
@@ -136,7 +136,7 @@
 	icon_state = "wpotonion"
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
-	rotprocess = 20 MINUTES
+	rotprocess = SHELFLIFE_DECENT
 	eat_effect = /datum/status_effect/buff/foodbuff
 /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions/plated
 	icon_state = "wpotonion_plated"
@@ -147,7 +147,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_LONG
 
 /*	.................   Frybird & Tato   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/frybirdtato
@@ -158,7 +158,7 @@
 	icon_state = "frybirdtato"
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
-	rotprocess = 20 MINUTES
+	rotprocess = SHELFLIFE_DECENT
 	eat_effect = /datum/status_effect/buff/foodbuff
 /obj/item/reagent_containers/food/snacks/rogue/frybirdtato/plated
 	icon_state = "frybirdtato_plated"
@@ -169,7 +169,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_LONG
 
 
 /*	.................   Valerian Omelette   ................... */
@@ -180,6 +180,7 @@
 	desc = "Fried cackleberries on a bed of half-melted cheese, a dish from distant lands."
 	icon_state = "omelette"
 	eat_effect = /datum/status_effect/buff/foodbuff
+	rotprocess = SHELFLIFE_DECENT
 /obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian/plated
 	icon_state = "omelette_plated"
 	item_state = "plate_food"
@@ -189,7 +190,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_LONG
 
 /*	.................   Plated fryfish   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/carp/plated
@@ -202,7 +203,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_LONG
 
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish/plated
 	desc = "Abyssor's bounty, make sure to eat the eyes!"
@@ -214,7 +215,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_LONG
 
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler/plated
 	desc = "Abyssor's bounty, make sure to eat the eyes!"
@@ -226,7 +227,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_LONG
 
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel/plated
 	desc = "Abyssor's bounty, make sure to eat the eyes!"
@@ -238,7 +239,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_LONG
 
 
 /*	.................   Chicken roast   ................... */
@@ -261,7 +262,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_LONG
 
 
 /*	.................   Cooked rat   ................... */
@@ -275,5 +276,5 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_LONG
 

@@ -189,7 +189,6 @@
 				to_chat(user, "<span class='notice'>Cutting the dough in strips and making a prezzel...</span>")
 				if(do_after(user,short_cooktime, target = src))
 					new /obj/item/reagent_containers/food/snacks/rogue/foodbase/prezzel_raw(loc)
-					qdel(I)
 					qdel(src)
 			else
 				to_chat(user, "<span class='warning'>You need to put [src] on a table to cut it!</span>")
@@ -288,7 +287,7 @@
 	tastes = list("bread" = 1)
 	slice_batch = FALSE
 	slice_sound = TRUE 
-	rotprocess = 60 MINUTES
+	rotprocess = SHELFLIFE_EXTREME
 
 /obj/item/reagent_containers/food/snacks/rogue/bread/update_icon()
 	if(slices_num)
@@ -315,11 +314,10 @@
 	name = "sliced bread"
 	desc = "A bit of comfort to start your dae."
 	icon_state = "loaf_slice"
-//	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
 	w_class = WEIGHT_CLASS_NORMAL
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/breadslice/toast
 	bitesize = 2
-	rotprocess = 45 MINUTES
+	rotprocess = SHELFLIFE_LONG
 	dropshrink = 0.8
 /obj/item/reagent_containers/food/snacks/rogue/breadslice/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
@@ -422,7 +420,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("bread" = 1)
 	bitesize = 2
-	rotprocess = 60 MINUTES
+	rotprocess = SHELFLIFE_EXTREME
 /obj/item/reagent_containers/food/snacks/rogue/bun/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
 		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
@@ -454,12 +452,12 @@
 	name = "fresh cheese bun"
 	desc = "A treat from the Grenzelhoft kitchen."
 	icon_state = "cheesebun"
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_NUTRITIOUS)
+	list_reagents = list(/datum/reagent/consumable/nutriment = SMALLDOUGH_NUTRITION+FRESHCHEESE_NUTRITION)
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("crispy bread and cream cheese" = 1)
 	foodtype = GRAIN | DAIRY
 	bitesize = 2
-	rotprocess = 45 MINUTES
+	rotprocess = SHELFLIFE_DECENT
 
 /obj/item/reagent_containers/food/snacks/rogue/frybread
 	name = "frybread"
@@ -480,6 +478,7 @@
 	tastes = list("crispy butterdough" = 1)
 	w_class = WEIGHT_CLASS_NORMAL
 	bitesize = 3
+	rotprocess = SHELFLIFE_EXTREME
 	eat_effect = /datum/status_effect/buff/foodbuff
 
 /*	.................   Biscuit   ................... */
@@ -496,7 +495,7 @@
 	desc = "A treat made for a wretched dog like you."
 	icon_state = "biscuit"
 	filling_color = "#F0E68C"
-	list_reagents = list(/datum/reagent/consumable/nutriment = (SNACK_DECENT+SNACK_POOR))
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+SNACK_POOR)
 	w_class = WEIGHT_CLASS_NORMAL
 	bitesize = 3
 	tastes = list("crispy butterdough" = 1, "raisins" = 1)
@@ -507,7 +506,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/prezzel_raw
 	name = "uncooked prezzel"
 	icon_state = "prezzel_raw"
-	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/biscuit
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/prezzel
 	w_class = WEIGHT_CLASS_NORMAL
 	eat_effect = null
 
@@ -568,7 +567,7 @@
 	tastes = list("bread" = 1,"dried fruit" = 1)
 	slice_batch = FALSE
 	slice_sound = TRUE 
-	rotprocess = 30 MINUTES
+	rotprocess = SHELFLIFE_EXTREME
 	eat_effect = /datum/status_effect/buff/foodbuff
 
 /obj/item/reagent_containers/food/snacks/rogue/raisinbread/update_icon()
@@ -599,7 +598,7 @@
 	cooked_type = null
 	tastes = list("spelt" = 1,"dried fruit" = 1)
 	bitesize = 2
-	rotprocess = 30 MINUTES
+	rotprocess = SHELFLIFE_LONG
 	eat_effect = /datum/status_effect/buff/foodbuff
 	dropshrink = 0.8
 
@@ -611,7 +610,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | DAIRY
-	rotprocess = 30 MINUTES
+	rotprocess = SHELFLIFE_LONG
 /obj/item/reagent_containers/food/snacks/rogue/cake_base/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
@@ -649,7 +648,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | DAIRY | SUGAR
-	rotprocess = 30 MINUTES
+	rotprocess = SHELFLIFE_DECENT
 
 /obj/item/reagent_containers/food/snacks/rogue/hcake
 	name = "zybantine cake"
@@ -663,7 +662,7 @@
 	foodtype = GRAIN | DAIRY | SUGAR
 	slice_batch = TRUE
 	slice_sound = TRUE 
-	rotprocess = 45 MINUTES
+	rotprocess = SHELFLIFE_LONG
 	eat_effect = /datum/status_effect/buff/foodbuff
 	bitesize = 16
 
@@ -677,10 +676,10 @@
 	foodtype = GRAIN | DAIRY | SUGAR
 	bitesize = 3
 	eat_effect = /datum/status_effect/buff/foodbuff
-	rotprocess = 30 MINUTES
+	rotprocess = SHELFLIFE_LONG
 /obj/item/reagent_containers/food/snacks/rogue/hcakeslice/plated
 	icon_state = "honeycakeslice_plated"
-	rotprocess = 60 MINUTES
+	rotprocess = SHELFLIFE_EXTREME
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	trash = /obj/item/cooking/platter
 
@@ -694,7 +693,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	foodtype = GRAIN | DAIRY | SUGAR
 	w_class = WEIGHT_CLASS_NORMAL
-	rotprocess = 30 MINUTES
+	rotprocess = SHELFLIFE_DECENT
 
 /obj/item/reagent_containers/food/snacks/rogue/ccake
 	name = "cheesecake"
@@ -708,7 +707,7 @@
 	foodtype = GRAIN | DAIRY | SUGAR
 	slice_batch = TRUE
 	slice_sound = TRUE 
-	rotprocess = 45 MINUTES
+	rotprocess = SHELFLIFE_LONG
 	eat_effect = /datum/status_effect/buff/foodbuff
 	bitesize = 16
 
@@ -722,10 +721,10 @@
 	foodtype = GRAIN | DAIRY | SUGAR
 	bitesize = 2
 	eat_effect = /datum/status_effect/buff/foodbuff
-	rotprocess = 30 MINUTES
+	rotprocess = SHELFLIFE_LONG
 /obj/item/reagent_containers/food/snacks/rogue/ccakeslice/plated
 	icon_state = "cheesecakeslice_plated"
-	rotprocess = 60 MINUTES
+	rotprocess = SHELFLIFE_EXTREME
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	trash = /obj/item/cooking/platter
 

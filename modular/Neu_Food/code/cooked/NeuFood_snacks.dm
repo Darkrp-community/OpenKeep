@@ -64,7 +64,7 @@
 	icon_state = "grenzbun"
 	foodtype = GRAIN | MEAT
 	warming = 5 MINUTES
-	rotprocess = 30 MINUTES
+	rotprocess = SHELFLIFE_LONG
 	eat_effect = /datum/status_effect/buff/foodbuff
 /obj/item/reagent_containers/food/snacks/rogue/bun_grenz/plated
 	icon_state = "grenzbun_plated"
@@ -75,7 +75,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_EXTREME
 
 
 /*	.............   Fried Cackleberry   ................ */
@@ -88,7 +88,7 @@
 	icon_state = "friedegg"
 	foodtype = MEAT
 	warming = 5 MINUTES
-	rotprocess = 30 MINUTES
+	rotprocess = SHELFLIFE_DECENT
 /obj/item/reagent_containers/food/snacks/rogue/friedegg/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
@@ -137,7 +137,7 @@
 	icon_state = "frybird"
 	fried_type = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
-
+	rotprocess = SHELFLIFE_DECENT
 
 /*	.............   Crispy bacon   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried
@@ -167,7 +167,7 @@
 	icon_state = "wiener"
 	fried_type = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
-	rotprocess = SHELFLIFE_DECENT
+	rotprocess = SHELFLIFE_EXTREME
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked/wiener // wiener meant to be made from beef or maybe mince + bacon, luxury sausage, not implemented yet
 	name = "wiener"
@@ -181,6 +181,7 @@
 	bitesize = 6
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	tastes = list("warm cabbage" = 1)
+	rotprocess = SHELFLIFE_LONG
 /obj/item/reagent_containers/food/snacks/rogue/preserved/cabbage_fried/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
@@ -204,6 +205,7 @@
 	icon_state = "potato_baked"
 	bitesize = 4
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
+	rotprocess = SHELFLIFE_LONG
 /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_baked/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
@@ -228,6 +230,7 @@
 	bitesize = 6
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	tastes = list("savoury morsel" = 1)
+	rotprocess = SHELFLIFE_DECENT
 
 
 /*	.............   Fried potato   ................ */
@@ -238,6 +241,7 @@
 	bitesize = 3
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	tastes = list("warm potato" = 1)
+	rotprocess = SHELFLIFE_LONG
 /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_fried/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
