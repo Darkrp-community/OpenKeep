@@ -49,6 +49,7 @@
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/truffles/cooked
 	color = "#ab7d6f"
 	tastes = list("mushroom" = 1)
+	sellprice = 5
 /obj/item/reagent_containers/food/snacks/rogue/truffles/cooked
 	eat_effect = /datum/status_effect/buff/foodbuff
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
