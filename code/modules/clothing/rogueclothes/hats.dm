@@ -673,7 +673,7 @@
 
 /obj/item/clothing/head/roguetown/wizhat/gen
 	icon_state = "wizardhatgen"
-
+/*
 /obj/item/clothing/head/roguetown/wizhat/equipped(mob/living/user, slot)
 	. = ..()
 	if(user.mind && user.mind.assigned_role == "Court Magician")
@@ -686,7 +686,7 @@
 /obj/item/clothing/head/roguetown/wizhat/dropped(mob/living/user, slot)
 	. = ..()
 	user.remove_status_effect(/datum/status_effect/buff/thinking_cap)
-
+*/
 
 
 /obj/item/clothing/head/roguetown/nyle
