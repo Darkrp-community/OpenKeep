@@ -167,7 +167,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 		major_modes |= 3
 	if(get_players_for_role(ROLE_ZIZOIDCULTIST).len > 0)		
 		major_modes |= 4
-
+	if(!major_modes.len)
+		major_modes |= 0
 	var/majorpicked = pick(major_modes)
 	if(playersready <= 10)
 		majorpicked = 0
@@ -434,7 +435,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 /datum/game_mode/chaosmode/proc/pick_werewolves()
 	restricted_jobs = list("Acolyte","Priest","Adventurer","Confessor","Garrison Guard","Veteran","Royal Guard","Captain")
 	var/werewolfsremaining = 1
-	antag_candidates = get_players_for_role(ROLE_NBEAST)
+	antag_candidates = get_players_for_role(ROLE_WEREWOLF)
 	antag_candidates = shuffle(antag_candidates)
 	for(var/datum/mind/werewolf in antag_candidates)
 		if(!werewolfsremaining)
@@ -575,10 +576,14 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 			if(character.client.whitelisted())
 				if(age_check(character.client))
 					if(!(character.job in restricted_jobs))
+						lesser_vampires = TRUE
+						character.mind.special_role = "vampire"
+						character.mind.assigned_role = "vampire"
+						testing("[key_name(character)] has been selected as a VAMPIRE")
+						log_game("[key_name(character)] has been selected as a [character.mind.special_role]")
 						var/datum/antagonist/new_antag = new /datum/antagonist/vampirelord/lesser()
 						character.mind.add_antag_datum(new_antag)
 						vampires += character.mind
-						lesser_vampires = TRUE
 						return
 	return
 //******** VILLAINS

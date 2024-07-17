@@ -63,7 +63,11 @@
 	return ..()
 
 /mob/living/proc/ZImpactDamage(turf/T, levels)
-	if(!density) //lets cats and similar avoid death by falling
+	var/probby = 0
+	if(mind)
+		probby += (mind.get_skill_level(/datum/skill/misc/athletics) - levels) * 30
+		probby = CLAMP(probby, 0, 100)
+	if(!density || prob(probby)) //lets cats and similar avoid death by falling
 		visible_message("<span class='notice'>The creature lands unharmed...</span>")
 		return
 	adjustBruteLoss((levels * 5) ** 1.5)

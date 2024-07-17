@@ -139,8 +139,9 @@
 
 /datum/outfit/job/roguetown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE) // added since the previous way it was implemented caused a bunch of runtimes
 	. = ..()
-	if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) || H.mind.has_antag_datum(/datum/antagonist/vampirelord)) // dont stunlock
-		return
+	if(H.mind)
+		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) || H.mind.has_antag_datum(/datum/antagonist/vampirelord)) // dont stunlock
+			return
 	if(!H.wear_neck)
 		var/obj/item/clothing/neck/roguetown/psicross/crosstype
 		switch(H.patron?.name)
