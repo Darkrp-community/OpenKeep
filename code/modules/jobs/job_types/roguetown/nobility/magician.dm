@@ -50,7 +50,7 @@
 	H.virginity = TRUE
 
 	H.change_stat("strength", -2)
-	H.change_stat("intelligence", 3)
+	H.change_stat("intelligence", 5)
 	H.change_stat("constitution", -2)
 	H.change_stat("speed", -2)
 
@@ -58,11 +58,13 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/ethereal_jaunt)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse)
 		if(H.age == AGE_OLD)
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/courtmage
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater)
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/ethereal_jaunt)
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock)
 			H.change_stat("speed", -1)
 			H.change_stat("intelligence", 1)
 			if(H.dna.species.id == "human")
@@ -73,10 +75,6 @@
 		if(H.age == AGE_MIDDLEAGED)
 			cloak = /obj/item/clothing/cloak/black_cloak
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock)
-		if((H.facial_hairstyle == "Wise Hermit") || (H.facial_hairstyle == "Knightly") || (H.facial_hairstyle == "Raider") || (H.facial_hairstyle == "Rumata") || (H.facial_hairstyle == "Choppe") || (H.facial_hairstyle == "Full Beard") || (H.facial_hairstyle == "Fullest Beard") || (H.facial_hairstyle == "Drinker") || (H.facial_hairstyle == "Knowledge") || (H.facial_hairstyle == "Brew") || (H.facial_hairstyle == "Ranger"))
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse)
 
 /datum/outfit/job/roguetown/magician/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -97,6 +95,7 @@
 
 
 //............... Unique Court Mage Stuff ...........................
+/*
 /obj/item/clothing/head/roguetown/wizhat/equipped(mob/living/user, slot)
 	. = ..()
 	if(user.mind && user.mind.assigned_role == "Court Magician")
@@ -139,3 +138,4 @@
 	desc = "<span class='nicegreen'>My hat deflects mind-clouding rays of Zizo...</span>\n"
 	icon = 'icons/mob/actions/roguespells.dmi'
 	icon_state = ""
+*/
