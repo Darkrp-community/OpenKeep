@@ -33,6 +33,8 @@ GLOBAL_LIST_INIT(badomens, list())
 			used = "The Monarch is dead! We need a new ruler."
 		if("sunsteal")
 			used = "The Sun, she is wounded!"
+		if("ascend")
+			used = "Zizo will rise once again."
 	if(eventreason && used)
 		priority_announce(used, "Bad Omen", 'sound/misc/evilevent.ogg')
 
