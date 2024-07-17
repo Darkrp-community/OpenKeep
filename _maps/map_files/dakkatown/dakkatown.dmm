@@ -849,7 +849,7 @@
 "rQ" = (/obj/structure/mineral_door/wood{lockid = "mason"; locked = 1; name = "Backdoor"},/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/dwarfin)
 "rR" = (/obj/structure/chair/wood/rogue{dir = 1},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town)
 "rS" = (/obj/item/roguebin/water,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/church)
-"rT" = (/obj/item/rope/chain,/obj/item/rope/chain,/obj/item/rope/chain,/obj/item/restraints/legcuffs/beartrap,/obj/structure/closet/crate/chest/old_crate,/obj/item/rogueweapon/surgery/cautery,/turf/open/floor/rogue/herringbone,/area/rogue/indoors/town/cell)
+"rT" = (/obj/item/rope/chain,/obj/item/rope/chain,/obj/item/rope/chain,/obj/item/restraints/legcuffs/beartrap,/obj/structure/closet/crate/chest/old_crate,/obj/item/rogueweapon/surgery/cautery{name = "branding iron"; desc = "A criminal record is well-writ on flesh."},/turf/open/floor/rogue/herringbone,/area/rogue/indoors/town/cell)
 "rU" = (/obj/structure/fluff/railing/border{dir = 9},/turf/open/floor/rogue/wood,/area/rogue/indoors/town)
 "rV" = (/obj/structure/bed/rogue/inn/wool,/turf/open/floor/rogue/wood/nosmooth,/area/rogue/indoors/town/manor)
 "rW" = (/obj/machinery/light/rogue/torchholder/c,/turf/open/floor/rogue/blocks,/area/rogue/under/town/basement)
