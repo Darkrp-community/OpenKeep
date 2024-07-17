@@ -713,7 +713,7 @@
 /obj/structure/chair/bench/couch/redleft
 	icon_state = "redcouch_alt"
 /obj/structure/chair/bench/couch/redright
-	icon_state = "redcouch2_alt
+	icon_state = "redcouch2_alt"
 
 /obj/structure/roguetent/preopen
 	density = FALSE
