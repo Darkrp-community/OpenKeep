@@ -502,6 +502,20 @@
 	miss_text = "slashes the air!"
 	miss_sound = "bluntwooshlarge"
 
+/datum/intent/unarmed/ascendedclaw
+	name = "claw"
+	icon_state = "inchop"
+	attack_verb = list("claws", "mauls", "eviscerates")
+	animname = "cut"
+	blade_class = BCLASS_CHOP
+	hitsound = "genslash"
+	penfactor = 230
+	damfactor = 40
+	candodge = TRUE
+	canparry = TRUE
+	miss_text = "slashes the air!"
+	miss_sound = "bluntwooshlarge"
+
 /datum/intent/simple/sting
 	name = "sting"
 	icon_state = "instrike"
