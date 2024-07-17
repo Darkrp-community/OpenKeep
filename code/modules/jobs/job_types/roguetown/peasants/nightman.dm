@@ -22,7 +22,7 @@
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/roguetown/niteman
 	display_order = JDO_NITEMAN
-	give_bank_account = TRUE
+	give_bank_account = 100
 	bypass_lastclass = TRUE
 
 /datum/outfit/job/roguetown/niteman/pre_equip(mob/living/carbon/human/H)
