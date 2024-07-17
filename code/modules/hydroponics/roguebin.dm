@@ -173,8 +173,8 @@
 			if(islist(R.created_item))
 				var/list/L = R.created_item
 				for(var/IT in L)
-					new IT(used_turf)
-					R.handle_creation(IT)
+					var/obj/item/O = new IT(used_turf)
+					R.handle_creation(O)
 			else
 				var/IT = new R.created_item(used_turf)
 				R.handle_creation(IT)
