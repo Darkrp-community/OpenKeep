@@ -1,19 +1,20 @@
 /obj/effect/proc_holder/spell/invoked/blindness
-    name = "Blindness"
-    overlay_state = "blindness"
-    releasedrain = 30
-    chargedrain = 0
-    chargetime = 0
-    range = 7
-    warnie = "sydwarning"
-    movement_interrupt = FALSE
-    sound = 'sound/magic/churn.ogg'
-    invocation = "Noc blinds thee of thy sins!"
-    invocation_type = "shout" //can be none, whisper, emote and shout
-    associated_skill = /datum/skill/magic/holy
-    antimagic_allowed = TRUE
-    charge_max = 15 SECONDS
-    devotion_cost = -30
+	name = "Blindness"
+	overlay_state = "blindness"
+	releasedrain = 30
+	chargedrain = 0
+	chargetime = 0
+	range = 7
+	warnie = "sydwarning"
+	movement_interrupt = FALSE
+	sound = 'sound/magic/churn.ogg'
+	invocation = "Noc blinds thee of thy sins!"
+	invocation_type = "shout" //can be none, whisper, emote and shout
+	associated_skill = /datum/skill/magic/holy
+	antimagic_allowed = TRUE
+	charge_max = 15 SECONDS
+	miracle = TRUE
+	devotion_cost = -30
 
 /obj/effect/proc_holder/spell/invoked/blindness/cast(list/targets, mob/user = usr)
 	if(isliving(targets[1]))
