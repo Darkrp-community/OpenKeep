@@ -4,7 +4,7 @@
 	icon = 'icons/roguetown/mob/monster/Orc.dmi'
 	icon_state = "orc"
 	race = /datum/species/orc
-	gender = MALE
+	gender = PLURAL
 	bodyparts = list(/obj/item/bodypart/chest/orc, /obj/item/bodypart/head/orc, /obj/item/bodypart/l_arm/orc,
 					 /obj/item/bodypart/r_arm/orc, /obj/item/bodypart/r_leg/orc, /obj/item/bodypart/l_leg/orc)
 	rot_type = /datum/component/rot/corpse/orc
@@ -109,11 +109,6 @@
 
 	apply_overlay(ARMOR_LAYER)
 
-/mob/living/carbon/human/species/orc/update_inv_head()
-	update_wearable()
-/mob/living/carbon/human/species/orc/update_inv_armor()
-	update_wearable()
-
 /mob/living/carbon/human/species/orc/Initialize()
 	. = ..()
 	spawn(10)
@@ -185,10 +180,9 @@
 	id = "orc"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE)
-	no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS, SLOT_S_STORE)
 	nojumpsuit = 1
 	sexes = 1
-	damage_overlay_type = ""
+	damage_overlay_type = "human"
 	var/raceicon = "orc"
 
 /datum/species/orc/update_damage_overlays(var/mob/living/carbon/human/H)

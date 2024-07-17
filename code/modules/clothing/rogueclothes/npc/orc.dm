@@ -77,7 +77,7 @@ obj/item/clothing/head/roguetown/helmet/leather/orc
 	name = "orc loincloth"
 	icon_state = "orc_leather_item"
 	item_state = "orc_leather"
-	icon = 'icons/roguetown/mob/monster/goblins.dmi'
+	icon = 'icons/roguetown/mob/monster/Orc.dmi'
 	allowed_race = list("orc")
 	armor = list("melee" = 30, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN
