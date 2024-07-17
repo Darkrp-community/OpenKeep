@@ -510,10 +510,10 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			possible |= V.current
 	for(var/datum/mind/D in C.deathknights)
 		possible |= D.current
-	var/mob/living/carbon/human/choice = input(src, "Who to punish?", "PUNISHMENT") as anything in possible|null
+	var/mob/living/carbon/human/choice = input(src, "Who to punish?", "PUNISHMENT") as null|anything in possible
 	if(choice)
 		var/punishmentlevels = list("Pause", "Pain", "Release")
-		switch(input(src, "Severity?", "PUNISHMENT") as anything in punishmentlevels|null)
+		switch(input(src, "Severity?", "PUNISHMENT") as anything in null|punishmentlevels)
 			if("Pain")
 				to_chat(choice, "<span class='boldnotice'>You are wracked with pain as your master punishes you!</span>")
 				choice.apply_damage(30, BRUTE)

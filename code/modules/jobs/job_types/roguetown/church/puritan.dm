@@ -46,7 +46,7 @@
 	head = /obj/item/clothing/head/roguetown/puritan
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	beltl = /obj/item/rogueweapon/sword/rapier
-	backpack_contents = list(/obj/item/roguekey/church = 1)
+	backpack_contents = list(/obj/item/keyring/puritan = 1)
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
@@ -110,7 +110,7 @@
 		to_chat(src, "<span class='warning'>Too late...</span>")
 		return
 	if(responsey == "Yes")
-		adjust_triumphs(0)
+		adjust_triumphs(-1)
 		confess_sins(TRUE)
 	else
 		confess_sins()

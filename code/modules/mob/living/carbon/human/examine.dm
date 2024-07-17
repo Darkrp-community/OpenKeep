@@ -74,10 +74,10 @@
 			if(ishumannorthern(user))
 				var/mob/living/carbon/human/racist = user
 				var/list/user_skin_tones = racist.dna.species.get_skin_list()
-				var/user_skin_tone_seen = "incomprehensible"
+//				var/user_skin_tone_seen = "incomprehensible"	gives unused warning now, sick of seeing it
 				for(var/tone in user_skin_tones)
 					if(racist.skin_tone == user_skin_tones[tone])
-						user_skin_tone_seen = lowertext(tone)
+//						user_skin_tone_seen = lowertext(tone)	gives unused warning now, sick of seeing it
 						break
 			. += "<span class='info'>[capitalize(m2)] [skin_tone_wording] is [skin_tone_seen][slop_lore_string]</span>"
 
@@ -88,6 +88,10 @@
 
 		if(real_name in GLOB.excommunicated_players)
 			. += "<span class='userdanger'>HERETIC! SHAME!</span>"
+
+		if(iszizocultist(user) || iszizolackey(user))
+			if(virginity)
+				. += "<span class='userdanger'>VIRGIN!</span>"
 
 		if(real_name in GLOB.outlawed_players)
 			. += "<span class='userdanger'>OUTLAW!</span>"

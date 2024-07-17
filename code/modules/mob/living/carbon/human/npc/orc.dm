@@ -23,7 +23,7 @@
 	wander = FALSE
 
 
-mob/living/carbon/human/species/orc/ambush/after_creation()
+/mob/living/carbon/human/species/orc/ambush/after_creation()
 	..()
 	job = "Ambush Orc"
 	QDEL_NULL(sexcon)
@@ -543,23 +543,23 @@ mob/living/carbon/human/species/orc/ambush/after_creation()
 	switch(loadout)
 		if(1) //Halberd Warlord
 			r_hand = /obj/item/rogueweapon/halberd
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-			head = /obj/item/clothing/head/roguetown/helmet/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(2) //Greatsword Warlord
 			r_hand = /obj/item/rogueweapon/greatsword
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-			head = /obj/item/clothing/head/roguetown/helmet/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(3) // WE DON'T WANNA GO TO WAR TODAY BUT THE LORD OF THE LASH SAYS "NAY NAY NAY!!" WE'RE GONNA MARCH ALL DAE, ALL DAE, ALL DAE! WHERE THERE'S A WHIP THERE'S A WAY!!
 			r_hand = /obj/item/rogueweapon/whip/antique
 			l_hand = /obj/item/rogueweapon/sword/short
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-			head = /obj/item/clothing/head/roguetown/helmet/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(4) // Big Sword and Big Shield
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
 			r_hand = /obj/item/rogueweapon/sword/sabre/messer
 			l_hand = /obj/item/rogueweapon/shield/tower
-			head = /obj/item/clothing/head/roguetown/helmet/orc
+			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(5) //Anti Knight STR Build
 			r_hand = /obj/item/rogueweapon/flail/sflail
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-			head = /obj/item/clothing/head/roguetown/helmet/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord

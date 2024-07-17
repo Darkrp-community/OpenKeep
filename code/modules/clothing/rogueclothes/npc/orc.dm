@@ -13,6 +13,16 @@
 	max_integrity = 100
 	sellprice = 10
 
+/obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+	name = "Orc Warlord Plate"
+	desc = "Fearsome armor which covers nearly the entire body."
+	icon_state = "warlord_armor_item"
+	item_state = "warlord_armor"
+	armor = list("melee" = 80, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	max_integrity = 150
+	sellprice = 15
+
 /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	name = "Orc Marauder Chain Vest"
 	icon_state = "orc_chainvest_item"
@@ -41,6 +51,15 @@
 	blocksound = PLATEHIT
 	max_integrity = 100
 	sellprice = 5
+
+/obj/item/clothing/head/roguetown/helmet/orc/warlord
+	name = "Orc Warlord Helmet"
+	icon_state = "warlord_helm_item"
+	item_state = "warlord_helm"
+	armor = list("melee" = 70, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	max_integrity = 150
+	sellprice = 10
 
 obj/item/clothing/head/roguetown/helmet/leather/orc
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
