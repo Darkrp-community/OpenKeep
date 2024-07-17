@@ -391,9 +391,9 @@
 		return
 	if(H.virginity)
 		playsound(get_turf(user), 'sound/magic/timestop.ogg', 100, TRUE, -1)
-		new wall_type(get_step(src, EAST),src)
-		new wall_type(get_step(src, WEST),src)
-		new wall_type(get_step(src, NORTH),src)
+		new wall_type(get_step(src, EAST),user)
+		new wall_type(get_step(src, WEST),user)
+		new wall_type(get_step(src, NORTH),user)
 		new wall_type(get_step(src, SOUTH),user)
 
 		new wall_type(get_step(src, NORTHEAST),user)
@@ -708,3 +708,26 @@
 	desc = "A literal gnome, turned to stone mid-step and put on a matching stone platform. Rather unsettling."
 	smeltresult = null
 	color = "#617163"
+
+
+/obj/structure/chair/bench/couch/redleft
+	icon_state = "redcouch_alt"
+/obj/structure/chair/bench/couch/redright
+	icon_state = "redcouch2_alt
+
+/obj/structure/roguetent/preopen
+	density = FALSE
+
+/obj/structure/fluff/walldeco/innsign/saiga
+	name = "The Drunken Saiga"
+	icon = 'modular/Mapping/icons/decoration.dmi'
+	icon_state = "bar_saiga"
+	plane = -1
+	pixel_x = 3
+	pixel_y = 16
+
+/obj/structure/fluff/walldeco/innsign/trophy
+	name = "saiga trophy"
+	icon = 'modular/Mapping/icons/decoration.dmi'
+	icon_state = "saiga_trophy"
+	pixel_y = 32
