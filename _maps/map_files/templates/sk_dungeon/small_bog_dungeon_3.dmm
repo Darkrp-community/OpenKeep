@@ -1,6 +1,5 @@
 "b" = (/obj/structure/flora/roguegrass/water/reeds,/turf/open/water/swamp,/area/rogue/outdoors/bog)
 "d" = (/turf/open/water/swamp,/area/rogue/outdoors/bog)
-"e" = (/mob/living/carbon/human/species/skeleton/npc/warrior,/turf/open/floor/rogue/blocks{icon_state = "paving"},/area/rogue/outdoors/bog)
 "f" = (/obj/structure/bookcase,/obj/item/book/rogue/blackmountain,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
 "g" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
 "h" = (/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/bog)
@@ -21,6 +20,7 @@
 "H" = (/obj/structure/bookcase,/obj/item/book/rogue/arcyne,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
 "I" = (/obj/structure/bookcase,/obj/item/book/rogue/nitebeast,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
 "L" = (/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
+"P" = (/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,/turf/open/floor/rogue/blocks{icon_state = "paving"},/area/rogue/outdoors/bog)
 "Q" = (/mob/living/simple_animal/hostile/retaliate/rogue/spider,/turf/open/water/swamp,/area/rogue/outdoors/bog)
 "R" = (/obj/structure/bookcase,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
 "S" = (/obj/structure/bookcase,/obj/item/book/rogue/beardling,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
@@ -53,11 +53,11 @@ uuuuBddddjUUFUUjdddduuuBdduwdd
 uuuuddjjjjCCXCCjjjjdduuBdduubd
 uuBddjjgRRUUFUUvxgjjdduuBduudd
 uBdddjRUUUUUFUUUUURjdduuBduudb
-uBdddjIUUUezzzeUUURjddduBdubwd
+uBdddjIUUUPzzzPUUURjddduBdubwd
 uuuddjsUUUFhhhFUUURjdddudduddb
 uBdddjzzzzFhEhFzzzzjdbuuddubdd
 uBdddjnUUUFhhhFUUURjdbuuddwddd
-uddddjfUUUezzzeUUUHjdbuuuduuLd
+uddddjfUUUPzzzPUUUHjdbuuuduuLd
 uuuddjRUUUUUFUUUUURjdduLudduub
 uuuddjRUUUUUFUUUUURjdddduuduub
 uuuddjjjgUUUFUUUgjjjddbLuuddud
