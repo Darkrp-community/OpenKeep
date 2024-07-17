@@ -11,6 +11,7 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/clothing/under/roguetown/chainlegs/iron,
 						/obj/item/clothing/under/roguetown/chainlegs/iron)
+	craftdiff = 0
 
 /datum/anvil_recipe/armor/ichaincoif
 	name = "Chain coif"
@@ -18,6 +19,7 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/clothing/neck/roguetown/chaincoif/iron, 
 						/obj/item/clothing/neck/roguetown/chaincoif/iron)
+	craftdiff = 0
 
 /datum/anvil_recipe/armor/ichainglove
 	name = "Chain gauntlets x2"
@@ -25,6 +27,7 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/clothing/gloves/roguetown/chain/iron,
 						/obj/item/clothing/gloves/roguetown/chain/iron)
+	craftdiff = 0
 
 /datum/anvil_recipe/armor/ichainmail
 	name = "Chainmail"
@@ -39,6 +42,7 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/clothing/mask/rogue/facemask,
 						/obj/item/clothing/mask/rogue/facemask)
+	craftdiff = 0
 
 /datum/anvil_recipe/armor/gorget
 	name = "Gorget"
@@ -46,6 +50,7 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/clothing/neck/roguetown/gorget,
 						/obj/item/clothing/neck/roguetown/gorget)
+	craftdiff = 0
 
 /datum/anvil_recipe/armor/platebootlight
 	name = "Light plate boots x2"

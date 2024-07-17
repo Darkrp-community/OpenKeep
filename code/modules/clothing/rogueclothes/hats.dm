@@ -433,6 +433,7 @@
 	will_cover = HEAD|HAIR
 
 /obj/item/clothing/head/roguetown/helmet/kettle
+	name = "kettle helmet"
 	desc = "A lightweight steel helmet generally worn by crossbowmen and garrison archers."
 	icon_state = "kettle"
 	will_cover = HEAD|HAIR

@@ -121,6 +121,7 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/rogueweapon/huntingknife/idagger,
 	/obj/item/rogueweapon/huntingknife/idagger)
+	craftdiff = 0 // To train with
 
 /datum/anvil_recipe/weapons/flail_iron
 	name = "Flail"

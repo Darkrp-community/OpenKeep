@@ -27,10 +27,11 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+		ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1,2), TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, pick(1,2), TRUE)
@@ -67,7 +68,7 @@
 
 	allowed_races = ALL_RACES_LIST_NAMES
 
-	tutorial = "You studied for many decades under your master with a few other apprentices to become a Weaponsmith, a trade that is as ancient as the secrets of steel itself! Youve repaired the blades of cooks, the cracked hoes of peasants and greased the spears of many soldiers into war."
+	tutorial = "You studied for many decades under your master with a few other apprentices to become a Weaponsmith, a trade that is as ancient as the secrets of steel itself! You've repaired the blades of cooks, the cracked hoes of peasants and greased the spears of many soldiers into war."
 
 	outfit = /datum/outfit/job/roguetown/weaponsmith
 	display_order = JDO_WSMITH
@@ -83,11 +84,12 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+		ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1,2), TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, pick(1,2), TRUE)

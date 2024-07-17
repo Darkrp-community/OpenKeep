@@ -83,6 +83,7 @@
 			S.set_up(1, 1, front)
 			S.start()
 			breakthrough = 1
+			hingot.currecipe.numberofbreakthroughs++
 		
 		if(!hingot.currecipe.advance(user, breakthrough))
 			shake_camera(user, 1, 1)

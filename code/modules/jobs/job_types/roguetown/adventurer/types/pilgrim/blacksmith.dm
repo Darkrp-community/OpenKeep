@@ -55,6 +55,7 @@
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)
 		H.change_stat("speed", -1)
+		ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
 
 	if(H.gender == MALE)
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather

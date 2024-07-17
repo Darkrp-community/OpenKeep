@@ -11,10 +11,12 @@
 	var/needed_item
 	var/needed_item_text
 	var/quality_mod = 0
-	var/progress
+	var/progress = 0
 	var/i_type
 	var/recipe_name
-
+	var/bar_health = 100 // Current material bar health, reduced by failures. At 0 HP it is deleted.
+	var/numberofhits = 0 // Increased every time you hit the bar, the more you have to hit the bar the less quality of the product.
+	var/numberofbreakthroughs = 0
 	var/datum/parent
 
 /datum/anvil_recipe/New(datum/P, ...)
@@ -22,6 +24,9 @@
 	. = ..()
 
 /datum/anvil_recipe/proc/advance(mob/user, breakthrough = FALSE)
+	var/moveup = 1
+	var/proab = 0 // Probability to not spoil the bar
+	var/skill_level	= user.mind.get_skill_level(appro_skill)
 	if(progress == 100)
 		to_chat(user, "<span class='info'>It's ready.</span>")
 		user.visible_message("<span class='warning'>[user] strikes the bar!</span>")
@@ -30,18 +35,25 @@
 		to_chat(user, "<span class='info'>Now it's time to add a [needed_item_text].</span>")
 		user.visible_message("<span class='warning'>[user] strikes the bar!</span>")
 		return FALSE
-	var/moveup = 1
-	var/proab = 3
-	var/skill_level
-	if(user.mind)
-		skill_level = user.mind.get_skill_level(appro_skill)
-		moveup += round((skill_level * 6) * (breakthrough == 1 ? 1.5 : 1))
-		moveup -= 3 * craftdiff
-		if(!user.mind.get_skill_level(appro_skill))
-			proab = 23
+	// Calculate probability of fucking up, based on smith's skill level
+	if(!skill_level)
+		proab = 25
+	else if(skill_level < 4)
+		proab = 33 * skill_level
+	else // No good smith start with skill levels lower than 3
+		proab = 100
+	proab -= craftdiff // Crafting difficulty substracts from your chance to advance
+	// Roll the dice to see if the hit actually causes to accumulate progress
 	if(prob(proab))
+		moveup += round((skill_level * 6) * (breakthrough == 1 ? 1.5 : 1))
+		moveup -= craftdiff
+		progress = min(progress + moveup, 100)
+		numberofhits++
+	else
 		moveup = 0
-	progress = min(progress + moveup, 100)
+		numberofhits++ // Increase regardless of success
+
+	// This step is finished, check if more items are needed and restart the process
 	if(progress == 100 && additional_items.len)
 		needed_item = pick(additional_items)
 		var/obj/item/I = new needed_item()
@@ -49,26 +61,55 @@
 		qdel(I)
 		additional_items -= needed_item
 		progress = 0
+	
 	if(!moveup)
-		if(prob(round(proab/2)))
+		if(!prob(proab)) // Roll again, this time negatively, for consequences.
 			user.visible_message("<span class='warning'>[user] ruins the bar!</span>")
+			skill_quality -= 1 // The more you fuck up, the less quality the end result will be.
+			bar_health -= craftdiff // Difficulty of the recipe adds to how critical the failure is
 			if(parent)
 				var/obj/item/P = parent
-				qdel(P)
+				switch(skill_level)
+					if(0)
+						bar_health -= 25 // 4 strikes and you're out, buddy.
+					if(1 to 3)
+						bar_health -= floor(20 / skill_level)
+					if(4)
+						bar_health -= 5
+					if(5 to 6)
+						var/mob/living/L = user
+						if(L.badluck(4)) // Unlucky, not unskilled.
+							bar_health -= craftdiff
+				if(bar_health <= 0)
+					user.visible_message("<span class='danger'>[user] destroys the bar!</span>")
+					qdel(P)
 			return FALSE
 		else
 			user.visible_message("<span class='warning'>[user] fumbles the bar!</span>")
 			return FALSE
+
 	else
 		if(user.mind && isliving(user))
-			skill_quality += (rand(skill_level*8, skill_level*17)*moveup)
 			var/mob/living/L = user
+			var/amt2raise = L.STAINT // It would be impossible to level up otherwise
 			var/boon = user.mind.get_learning_boon(appro_skill)
-			var/amt2raise = L.STAINT/2
 			if(amt2raise > 0)
-				user.mind.adjust_experience(appro_skill, amt2raise * boon, FALSE)
+				if(!HAS_TRAIT(user, TRAIT_MALUMFIRE))
+					skill_quality += (rand(skill_level*6, skill_level*15) * moveup) // Lesser quality for self-learned non-professional smiths by trade
+					if(skill_level < 3) // Non-blacksmith jobs can't level past 3. Ever.
+						user.mind.adjust_experience(appro_skill, floor(amt2raise * boon), FALSE)
+				else
+					skill_quality += (rand(skill_level*8, skill_level*17) * moveup)
+					if(skill_level < 3)
+						amt2raise /= 2 // Let's not get out of hand it's for lower levels with high chances of failure
+						user.mind.adjust_experience(appro_skill, amt2raise * boon, FALSE)
+					else // Sanity, no expert blacksmith has lower skill than 3, for if admins manually add the trait
+						user.mind.adjust_experience(appro_skill, amt2raise, FALSE)
+
 		if(breakthrough)
-			user.visible_message("<span class='warning'>[user] strikes the bar!</span>")
+			user.visible_message("<span class='deadsay'>[user] deftly strikes the bar!</span>")
+			if(bar_health < 100)
+				bar_health += 20 // Correcting the mistakes, ironing the kinks. Low chance, so rewarding.
 		else		
 			user.visible_message("<span class='info'>[user] strikes the bar!</span>")
 		return TRUE
@@ -79,8 +120,13 @@
 	needed_item_text = null
 
 /datum/anvil_recipe/proc/handle_creation(obj/item/I)
+	numberofhits = floor(numberofhits / num_of_materials) // Divide the hits equally among the number of bars required.
+	if(numberofbreakthroughs) // Hitting the bar the perfect way should be rewarding quality-wise
+		numberofhits -= numberofbreakthroughs
 	material_quality = floor(material_quality/num_of_materials)-2
 	skill_quality = floor((skill_quality/num_of_materials)/1500)+material_quality
+	// Finally, the more hits the thing required, the less quality it will be, to prevent low level smiths from dishing good stuff
+	skill_quality -= floor(numberofhits * 0.25)
 	var/modifier
 	switch(skill_quality)
 		if(BLACKSMITH_LEVEL_MIN to BLACKSMITH_LEVEL_SPOIL)
@@ -106,9 +152,10 @@
 		if(BLACKSMITH_LEVEL_LEGENDARY to BLACKSMITH_LEVEL_MAX)
 			I.name = "masterwork [I.name]"
 			modifier = 1.3
-		
+	
 	if(!modifier)
 		return
+	
 	I.max_integrity  *= modifier
 	I.obj_integrity *= modifier
 	I.sellprice *= modifier
