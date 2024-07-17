@@ -194,15 +194,9 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	if(rogues.len > 0)
 		minor_modes |= 1
 	
-	var/list/aspirants = get_players_for_role(ROLE_ASPIRANT)
-	if(aspirants.len > 1)
-		for(var/datum/mind/asp in aspirants)
-			if(asp.assigned_role in list("Prince", "Princess", "Captain", "Steward", "Hand"))
-				minor_modes |= 2
-	
 	var/list/licks = get_players_for_role(ROLE_NBEAST)
 	if(licks.len > 0 && majorpicked != 3)
-		minor_modes |= 3
+		minor_modes |= 2
 
 	minor_modes = shuffle(minor_modes)
 	for(var/m in minor_modes)
@@ -211,9 +205,6 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 				pick_bandits()
 				log_game("Minor Antagonist: Bandit")
 			if(2)
-				pick_aspirants()
-				log_game("Minor Antagonist: Aspirant")
-			if(3)
 				pick_lesser_vampires()
 				log_game("Minor Antagonist: Lesser vampire")
 		if(GetTownPower() - GetAntagPower() <= 1)
