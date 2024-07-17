@@ -155,6 +155,8 @@
 /datum/sex_controller/proc/ejaculate()
 	log_combat(user, user, "Ejaculated")
 	user.visible_message("<span class='notice'>[user] makes a mess!</span>")
+	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
+		user.sate_addiction()
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(user))
 	after_ejaculation()
