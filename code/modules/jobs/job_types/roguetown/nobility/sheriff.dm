@@ -46,7 +46,7 @@
 	beltl = /obj/item/rogueweapon/sword/sabre
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	cloak = /obj/item/clothing/cloak/cape/guard
-	backpack_contents = list(/obj/item/keyring/captain = 1)
+	backpack_contents = list(/obj/item/keyring/captain = 1, /obj/item/scomstone)
 	if(H.mind)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/convertrole/guard)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)

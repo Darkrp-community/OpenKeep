@@ -38,7 +38,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/boots
 		backr = /obj/item/storage/backpack/rogue/satchel
 		belt = /obj/item/storage/belt/rogue/leather/plaquegold
-		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
+		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/scomstone)
 		id = /obj/item/clothing/ring/active/nomag
 		l_hand = /obj/item/rogueweapon/lordscepter
 		if(H.mind)

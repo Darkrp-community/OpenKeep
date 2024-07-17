@@ -30,6 +30,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	armor = /obj/item/clothing/suit/roguetown/armor/armordress
 	backr = /obj/item/storage/backpack/rogue/satchel
+	r_hand = /obj/item/scomstone
 	if(SSticker.rulertype == "Lady")
 		head = /obj/item/clothing/head/roguetown/crown/serpcrown
 		SSroguemachine.crown = head

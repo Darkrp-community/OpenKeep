@@ -9,16 +9,15 @@
 	cost = 8
 	contains = /obj/item/rope
 
-/*
 /datum/supply_pack/rogue/tools/scomst
 	name = "Scomstones"
-	cost = 70
+	cost = 500
 	contains = list(/obj/item/scomstone,
 					/obj/item/scomstone,
 					/obj/item/scomstone/bad,
 					/obj/item/scomstone/bad,
 					/obj/item/scomstone/bad)
-*/
+
 /datum/supply_pack/rogue/tools/chain
 	name = "Chain"
 	cost = 12
