@@ -55,15 +55,14 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, pick(1,2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, pick(1,2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(1,2,3,4,5), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, pick(1,2,3), TRUE) // Street-fu
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2,3), TRUE)
 		H.STALUC = rand(1, 20)
 	if(prob(5))
 		r_hand = /obj/item/rogueweapon/mace/woodclub
-	if(prob(5))
-		l_hand = /obj/item/rogueweapon/mace/woodclub
-	H.change_stat("strength", -1)
-	H.change_stat("intelligence", -4)
-	H.change_stat("constitution", -3)
-	H.change_stat("endurance", -3)
+	H.change_stat("intelligence", -3)
+	H.change_stat("constitution", -2)
+	H.change_stat("endurance", -2)
 
 /datum/outfit/job/roguetown/vagrant
 	name = "Beggar"
