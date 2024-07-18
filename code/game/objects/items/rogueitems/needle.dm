@@ -14,7 +14,8 @@
 	anvilrepair = /datum/skill/craft/blacksmithing
 	tool_behaviour = TOOL_SUTURE
 	/// Amount of uses left
-	var/stringamt = 10
+	var/stringamt = 20
+	var/maxstring = 20
 	/// If this needle is infinite
 	var/infinite = FALSE
 	/// If this needle can be used to repair items
@@ -23,9 +24,12 @@
 /obj/item/needle/examine()
 	. = ..()
 	if(!infinite)
-		. += "<span class='bold'>It has [stringamt] uses left.</span>"
+		if(stringamt > 0)
+			. += "<span class='bold'>It has [stringamt] uses left.</span>"
+		else
+			. += "<span class='bold'>It has no uses left.</span>"
 	else
-		. += "Can be used indefinitely."
+		. += "<span class='bold'>Can be used indefinitely.</span>"
 
 /obj/item/needle/Initialize()
 	. = ..()
@@ -41,15 +45,34 @@
 	if(infinite)
 		return TRUE
 	stringamt = stringamt - used
-	if(stringamt <= 0)
-		qdel(src)
+//	if(stringamt <= 0)
+//		qdel(src)
 
 /obj/item/needle/attack(mob/living/M, mob/user)
 	sew(M, user)
 
+/obj/item/needle/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/natural/fibers))
+		if(maxstring - stringamt < 5)
+			to_chat(user, "<span class='warning'>Not enough room for more thread!</span>")
+			return
+		else
+			to_chat(user, "I begin threading the needle with additional fibers...")
+			if(do_after(user, 6 SECONDS - user.mind.get_skill_level(/datum/skill/misc/sewing), target = I))
+				stringamt += 5
+				to_chat(user, "I replenish the needle's thread!")
+				qdel(I)
+			return
+	return ..()
+
+
+
 /obj/item/needle/attack_obj(obj/O, mob/living/user)
-	if(can_repair && isitem(O))
-		var/obj/item/I = O
+	var/obj/item/I = O
+	if(can_repair)
+		if(stringamt < 1)
+			to_chat(user, "<span class='warning'>The needle has no thread left!</span>")
+			return
 		if(I.sewrepair && I.max_integrity && !I.obj_broken)
 			if(I.obj_integrity == I.max_integrity)
 				to_chat(user, "<span class='warning'>This is not broken.</span>")
@@ -64,11 +87,21 @@
 			var/sewtime = 70
 			if(user.mind)
 				sewtime = (70 - ((user.mind.get_skill_level(/datum/skill/misc/sewing)) * 10))
+			var/datum/component/storage/target_storage = I.GetComponent(/datum/component/storage) //Vrell - Part of storage item repair fix
 			if(do_after(user, sewtime, target = I))
 				playsound(loc, 'sound/foley/sewflesh.ogg', 100, TRUE, -2)
 				user.visible_message("<span class='info'>[user] repairs [I]!</span>")
 				I.obj_integrity = I.max_integrity
+				user.mind?.adjust_experience(/datum/skill/misc/sewing, user.STAINT, TRUE)
+
+				//Vrell - Part of storage item repair fix
+				if(target_storage)
+					target_storage.being_repaired = FALSE
 				return
+			else
+				//Vrell - Part of storage item repair fix
+				if(target_storage)
+					target_storage.being_repaired = FALSE
 		return
 	return ..()
 
@@ -77,6 +110,10 @@
 		return FALSE
 	var/mob/living/doctor = user
 	var/mob/living/carbon/human/patient = target
+	var/boon = doctor?.mind?.get_learning_boon(/datum/skill/misc/medicine)
+	if(stringamt < 1)
+		to_chat(user, "<span class='warning'>The needle has no thread left!</span>")
+		return
 	if(!get_location_accessible(patient, check_zone(doctor.zone_selected)))
 		to_chat(doctor, "<span class='warning'>Something in the way.</span>")
 		return FALSE
@@ -114,7 +151,8 @@
 		if(target_wound.sew_progress < target_wound.sew_threshold)
 			continue
 		if(doctor.mind)
-			doctor.mind.adjust_experience(/datum/skill/misc/medicine, doctor.STAINT * 5)
+			var/amt2raise = doctor.STAINT *5
+			doctor.mind.adjust_experience(/datum/skill/misc/medicine, amt2raise * boon)
 		use(1)
 		target_wound.sew_wound()
 		if(patient == doctor)
@@ -129,10 +167,12 @@
 	return FALSE
 
 /obj/item/needle/thorn
-	name = "wooden needle"
-	desc = "This rough needle can be used to sew cloth and wounds alike."
+	name = "needle"
 	icon_state = "thornneedle"
-	stringamt = 3
+	desc = "This rough needle can be used to sew cloth and wounds."
+	stringamt = 5
+	maxstring = 5
+	anvilrepair = null
 
 /obj/item/needle/blessed
 	name = "blessed needle"
