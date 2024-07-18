@@ -7,11 +7,9 @@
 	recipe_name = "five Blank Keys"
 	req_bar = /obj/item/ingot/iron
 	appro_skill = /datum/skill/craft/engineering // To train engineering
-	created_item = list(/obj/item/customblank, 
-						/obj/item/customblank, 
-						/obj/item/customblank, 
-						/obj/item/customblank, 
-						/obj/item/customblank)
+	created_item = /obj/item/customblank
+	createmultiple = TRUE
+	createditem_num = 4
 	craftdiff = 0
 
 /datum/anvil_recipe/tools/chains
@@ -19,9 +17,9 @@
 	recipe_name = "three lengths of Chain"
 	req_bar = /obj/item/ingot/iron
 	appro_skill = /datum/skill/craft/traps // To train trapmaking
-	created_item = list(/obj/item/rope/chain,
-						/obj/item/rope/chain,
-						/obj/item/rope/chain,)
+	created_item = /obj/item/rope/chain
+	createmultiple = TRUE
+	createditem_num = 2
 	craftdiff = 0
 
 /datum/anvil_recipe/tools/cogiron
@@ -29,9 +27,9 @@
 	recipe_name = "three Cogs"
 	req_bar = /obj/item/ingot/iron
 	appro_skill = /datum/skill/craft/engineering // To train engineering
-	created_item = list(/obj/item/roguegear,
-						/obj/item/roguegear,
-						/obj/item/roguegear)
+	created_item = /obj/item/roguegear
+	createmultiple = TRUE
+	createditem_num = 2
 	craftdiff = 0
 
 /datum/anvil_recipe/tools/cogstee
@@ -39,18 +37,17 @@
 	recipe_name = "four Cogs"
 	req_bar = /obj/item/ingot/steel
 	appro_skill = /datum/skill/craft/engineering // To train engineering
-	created_item = list(/obj/item/roguegear,
-						/obj/item/roguegear,
-						/obj/item/roguegear,
-						/obj/item/roguegear)
+	created_item = /obj/item/roguegear
+	createmultiple = TRUE
+	createditem_num = 3
 
 /datum/anvil_recipe/tools/cups
 	name = "Cups x3"
 	recipe_name = "three drinking Cups"
 	req_bar = /obj/item/ingot/iron
-	created_item = list(/obj/item/reagent_containers/glass/cup,
-						/obj/item/reagent_containers/glass/cup,
-						/obj/item/reagent_containers/glass/cup)
+	created_item = /obj/item/reagent_containers/glass/cup
+	createmultiple = TRUE
+	createditem_num = 1
 	craftdiff = 0
 
 /datum/anvil_recipe/tools/frypan
@@ -64,27 +61,27 @@
 	name = "Goblets x3"
 	recipe_name = "three Goblets"
 	req_bar = /obj/item/ingot/steel
-	created_item = list(/obj/item/reagent_containers/glass/cup/steel,
-						/obj/item/reagent_containers/glass/cup/steel,
-						/obj/item/reagent_containers/glass/cup/steel)
+	created_item = /obj/item/reagent_containers/glass/cup/steel
+	createmultiple = TRUE
+	createditem_num = 2
 	craftdiff = 0
 
 /datum/anvil_recipe/tools/gobletgold
 	name = "Goblets x3"
 	recipe_name = "three Goblets"
 	req_bar = /obj/item/ingot/gold
-	created_item = list(/obj/item/reagent_containers/glass/cup/golden,
-						/obj/item/reagent_containers/glass/cup/golden,
-						/obj/item/reagent_containers/glass/cup/golden)
+	created_item = /obj/item/reagent_containers/glass/cup/golden
+	createmultiple = TRUE
+	createditem_num = 2
 	craftdiff = 2
 
 /datum/anvil_recipe/tools/gobletsilver
 	name = "Goblets x3"
 	recipe_name = "three Goblets"
 	req_bar = /obj/item/ingot/silver
-	created_item = list(/obj/item/reagent_containers/glass/cup/silver,
-						/obj/item/reagent_containers/glass/cup/silver,
-						/obj/item/reagent_containers/glass/cup/silver)
+	created_item = /obj/item/reagent_containers/glass/cup/silver
+	createmultiple = TRUE
+	createditem_num = 2
 	craftdiff = 2
 
 /datum/anvil_recipe/tools/hammer
@@ -107,9 +104,10 @@
 	name = "Keyrings x3"
 	recipe_name = "three Keyrings"
 	req_bar = /obj/item/ingot/iron
-	created_item = list(/obj/item/keyring,
-						/obj/item/keyring,
-						/obj/item/keyring)
+	created_item = /obj/item/keyring
+	createmultiple = TRUE
+	createditem_num = 2
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/lamptern
 	name = "Lamptern"
@@ -122,11 +120,9 @@
 	recipe_name = "five Locks"
 	req_bar = /obj/item/ingot/iron
 	appro_skill = /datum/skill/craft/engineering // To train engineering
-	created_item = list(/obj/item/customlock, 
-						/obj/item/customlock, 
-						/obj/item/customlock, 
-						/obj/item/customlock, 
-						/obj/item/customlock)
+	created_item = /obj/item/customlock
+	createmultiple = TRUE
+	createditem_num = 4
 	craftdiff = 0
 
 /datum/anvil_recipe/tools/pick
@@ -146,14 +142,12 @@
 	i_type = "Tools"
 
 /datum/anvil_recipe/tools/sewingneedle
-	name = "Sewing Needles x5"
-	recipe_name = "five Sewing Needles"
+	name = "Sewing Needles x3"
+	recipe_name = "three Sewing Needles"
 	req_bar = /obj/item/ingot/iron
-	created_item = list(/obj/item/needle,
-						/obj/item/needle,
-						/obj/item/needle,
-						/obj/item/needle,
-						/obj/item/needle)
+	created_item = /obj/item/needle
+	createmultiple = TRUE
+	createditem_num = 2 // They can be refilled with fiber now
 	craftdiff = 0
 
 /datum/anvil_recipe/tools/shovel
@@ -184,9 +178,7 @@
 	recipe_name = "five Torches"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/rogueore/coal)
-	created_item = list(/obj/item/flashlight/flare/torch/metal,
-						/obj/item/flashlight/flare/torch/metal,
-						/obj/item/flashlight/flare/torch/metal,
-						/obj/item/flashlight/flare/torch/metal,
-						/obj/item/flashlight/flare/torch/metal)
+	created_item = /obj/item/flashlight/flare/torch/metal
+	createmultiple = TRUE
+	createditem_num = 4
 	craftdiff = 0

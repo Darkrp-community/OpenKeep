@@ -12,9 +12,9 @@
 	name = "Gold Rings x3"
 	recipe_name = "three Rings" // For the Elven kings under the sky...
 	req_bar = /obj/item/ingot/gold
-	created_item = list(/obj/item/clothing/ring/gold,
-						/obj/item/clothing/ring/gold,
-						/obj/item/clothing/ring/gold)
+	created_item = /obj/item/clothing/ring/gold
+	createmultiple = TRUE
+	createditem_num = 2
 
 /datum/anvil_recipe/valuables/gold
 	name = "Golden Statue"
@@ -32,9 +32,9 @@
 	name = "Silver Rings x3"
 	recipe_name = "three Rings"
 	req_bar = /obj/item/ingot/silver
-	created_item = list(/obj/item/clothing/ring/silver,
-						/obj/item/clothing/ring/silver,
-						/obj/item/clothing/ring/silver)
+	created_item = /obj/item/clothing/ring/silver
+	createmultiple = TRUE
+	createditem_num = 2
 
 /datum/anvil_recipe/valuables/steel
 	name = "Steel statue"

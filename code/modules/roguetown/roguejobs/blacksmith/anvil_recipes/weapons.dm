@@ -74,14 +74,14 @@
 // IRON GEAR - Middle Tier, what most disgusting Men at Arms have
 
 /datum/anvil_recipe/weapons/arrows
-	name = "Arrows x3 (+s)"
-	recipe_name = "three Arrows"
+	name = "Arrows x5 (+s)"
+	recipe_name = "five Arrows"
 	appro_skill = /datum/skill/craft/engineering
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = list(/obj/projectile/bullet/reusable/arrow, 
-						/obj/projectile/bullet/reusable/arrow, 
-						/obj/projectile/bullet/reusable/arrow)
+	created_item = /obj/projectile/bullet/reusable/arrow
+	createmultiple = TRUE
+	createditem_num = 4
 	i_type = "Ammo"
 	craftdiff = 0
 
@@ -103,24 +103,25 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/bolts
-	name = "Crossbow Bolt x3 (+s)"
-	recipe_name = "three Crossbow Bolts"
+	name = "Crossbow Bolt x5 (+s)"
+	recipe_name = "five Crossbow Bolts"
 	appro_skill = /datum/skill/craft/engineering
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = list(/obj/item/ammo_casing/caseless/rogue/bolt, 
-						/obj/item/ammo_casing/caseless/rogue/bolt, 
-						/obj/item/ammo_casing/caseless/rogue/bolt)
+	created_item = /obj/item/ammo_casing/caseless/rogue/bolt
+	createmultiple = TRUE
+	createditem_num = 4
 	i_type = "Ammo"
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/dagger_iron
-	name = "Dagger"
+	name = "Dagger x2"
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
-	created_item = list(/obj/item/rogueweapon/huntingknife/idagger,
-	/obj/item/rogueweapon/huntingknife/idagger)
+	created_item = /obj/item/rogueweapon/huntingknife/idagger
+	createmultiple = TRUE
+	createditem_num = 1
 	craftdiff = 0 // To train with
 
 /datum/anvil_recipe/weapons/flail_iron
@@ -158,8 +159,9 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = list(/obj/item/rogueweapon/spear,
-                        /obj/item/rogueweapon/spear)
+	created_item = /obj/item/rogueweapon/spear
+	createmultiple = TRUE
+	createditem_num = 1
 
 /datum/anvil_recipe/weapons/shortsword_iron
 	name = "Short sword"
@@ -248,12 +250,13 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/dagger_steel
-	name = "Dagger"
+	name = "Dagger x2"
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = list(/obj/item/rogueweapon/huntingknife/idagger/steel,
-	/obj/item/rogueweapon/huntingknife/idagger/steel)
+	created_item = /obj/item/rogueweapon/huntingknife/idagger/steel
+	createmultiple = TRUE
+	createditem_num = 1
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/decsaber

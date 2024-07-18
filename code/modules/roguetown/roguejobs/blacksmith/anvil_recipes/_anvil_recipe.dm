@@ -1,23 +1,24 @@
 /datum/anvil_recipe
 	var/name
-	var/list/additional_items = list()
-	var/material_quality = 0 // Accumulated per added ingot
-	var/num_of_materials = 1 // Materials used
-	var/skill_quality = 0 // Accumulated per hit on calculation, will decide final result
-	var/appro_skill = /datum/skill/craft/blacksmithing
-	var/req_bar
-	var/created_item
-	var/craftdiff = 0
-	var/needed_item
-	var/needed_item_text
-	var/quality_mod = 0
-	var/progress = 0
-	var/i_type
-	var/recipe_name
+	var/list/additional_items = list() // List of the object(s) we need to complete this recipe.
+	var/material_quality = 0 // Quality of the bar(s) used. Accumulated per added ingot.
+	var/num_of_materials = 1 // Total number of materials used. Quality divided among them.
+	var/skill_quality = 0 // Accumulated per hit based on calculations, will decide final result.
+	var/appro_skill = /datum/skill/craft/blacksmithing // The skill that will be taken into account when crafting.
+	var/req_bar // The material of the ingot we need to craft.
+	var/created_item // The item created when the recipe is fulfilled. Takes an object path as argument, NEVER USE A LIST.
+	var/createmultiple = FALSE // Boolean. Do we create more than one result when crafted?
+	var/createditem_num = 0 // How many EXTRA units this recipe will create. At 1, this creates 2 copies.
+	var/craftdiff = 0 // Difficulty of craft. Affects final item quality and chance to advance steps.
+	var/needed_item // What item(s) we need to add to proceed to the next step. Draws from the list on var/additional_items.
+	var/needed_item_text // Name of the object we need to slap on the anvil to proceed to the next step.
+	var/progress = 0 // 0 to 100%, percentage of completion on this step of crafting (or overall if no extra items required)
+	var/i_type // Category of crafted item. Will determine how it shows on the crafting menu window.
+	var/recipe_name // This is what will be shown when you 
 	var/bar_health = 100 // Current material bar health, reduced by failures. At 0 HP it is deleted.
 	var/numberofhits = 0 // Increased every time you hit the bar, the more you have to hit the bar the less quality of the product.
-	var/numberofbreakthroughs = 0
-	var/datum/parent
+	var/numberofbreakthroughs = 0 // How many good hits we got on the metal, advances recipes 50% faster, reduces number of hits total, and restores bar_health
+	var/datum/parent // The ingot we're currently working on.
 
 /datum/anvil_recipe/New(datum/P, ...)
 	parent = P
@@ -103,7 +104,7 @@
 					if(skill_level < 3)
 						amt2raise /= 2 // Let's not get out of hand it's for lower levels with high chances of failure
 						user.mind.adjust_experience(appro_skill, amt2raise * boon, FALSE)
-					else // Sanity, no expert blacksmith has lower skill than 3, for if admins manually add the trait
+					else // Sanity, no expert blacksmith has lower skill than 3, for if admins manually add the trait or blacksmith vampire thralls
 						user.mind.adjust_experience(appro_skill, amt2raise, FALSE)
 
 		if(breakthrough)
@@ -116,18 +117,18 @@
 
 /datum/anvil_recipe/proc/item_added(mob/user)
 	needed_item = null
-	user.visible_message("<span class='info'>[user] adds [needed_item_text]</span>")
+	user.visible_message("<span class='info'>[user] adds a [needed_item_text]</span>")
 	needed_item_text = null
 
 /datum/anvil_recipe/proc/handle_creation(obj/item/I)
-	numberofhits = floor(numberofhits / num_of_materials) // Divide the hits equally among the number of bars required.
+	numberofhits = ceil(numberofhits / num_of_materials) // Divide the hits equally among the number of bars required, rounded up.
 	if(numberofbreakthroughs) // Hitting the bar the perfect way should be rewarding quality-wise
 		numberofhits -= numberofbreakthroughs
 	material_quality = floor(material_quality/num_of_materials)-2
 	skill_quality = floor((skill_quality/num_of_materials)/1500)+material_quality
 	// Finally, the more hits the thing required, the less quality it will be, to prevent low level smiths from dishing good stuff
 	skill_quality -= floor(numberofhits * 0.25)
-	var/modifier
+	var/modifier // Multiplier which will determine quality of final product depending on final skill_quality calculation
 	switch(skill_quality)
 		if(BLACKSMITH_LEVEL_MIN to BLACKSMITH_LEVEL_SPOIL)
 			I.name = "ruined [I.name]"
@@ -153,7 +154,7 @@
 			I.name = "masterwork [I.name]"
 			modifier = 1.3
 	
-	if(!modifier)
+	if(!modifier) // Sanity.
 		return
 	
 	I.max_integrity  *= modifier
@@ -173,4 +174,3 @@
 		C.integrity_failure /= modifier
 		C.armor = C.armor.multiplymodifyAllRatings(modifier)
 		C.equip_delay_self *= modifier
-
