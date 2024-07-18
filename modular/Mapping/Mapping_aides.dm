@@ -611,32 +611,13 @@
 	icon_state = "candle1_lit"
 	anchored = TRUE
 
-/obj/item/candle/yellow/lit/infinite/candlebox
+/obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
 	name = "candle lamp"
 	icon = 'modular/Mapping/icons/decoration.dmi'
-	start_lit = FALSE
-	layer = WALL_OBJ_LAYER+0.1
-/obj/item/candle/yellow/lit/infinite/candlebox/Initialize()
-	. = ..()
-	if(name == "candlebox")
-		pixel_x = 0
-		pixel_y = 0
-
-/obj/machinery/light/rogue/wallfire/candle/lamp
-	name = "candle lamp"
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "candle1_lit"
+	icon_state = "candle"
 	base_state = "candle"
 	layer = WALL_OBJ_LAYER+0.1
-	crossfire = FALSE
-	cookonme = FALSE
-	pixel_y = 32
-	soundloop = null
-	on = FALSE
-/obj/machinery/light/rogue/wallfire/candle/lamp/Initialize()
-	. = ..()
-	if(name == "candle lamp")
-		icon_state = "candle"
+	bulb_power = 0.85
 
 
 
