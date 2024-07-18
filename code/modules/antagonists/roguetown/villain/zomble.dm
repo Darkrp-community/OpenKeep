@@ -21,7 +21,6 @@
 	var/list/base_intents
 	/// Whether or not we have been turned
 	var/has_turned = FALSE
-	/// Last time we bit someone - Zombies will try to bite after 10 seconds of not biting
 	/// Traits applied to the owner mob when we turn into a zombie
 	var/static/list/traits_zombie = list(
 		TRAIT_NOROGSTAM,
@@ -29,6 +28,7 @@
 		TRAIT_NOLIMBDISABLE,
 		TRAIT_NOHUNGER,
 		TRAIT_EASYDISMEMBER,
+		TRAIT_CRITICAL_WEAKNESS,
 		TRAIT_NOPAIN,
 		TRAIT_NOBREATH,
 		TRAIT_TOXIMMUNE,
@@ -46,6 +46,7 @@
 	/// Traits applied to the owner when we are cured and turn into just "rotmen"
 	var/static/list/traits_rotman = list(
 		TRAIT_EASYDISMEMBER,
+		TRAIT_CRITICAL_WEAKNESS,
 		TRAIT_NOPAIN,
 		TRAIT_NOPAINSTUN,
 		TRAIT_NOBREATH,

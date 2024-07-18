@@ -7,6 +7,9 @@
 
 /* For reference only
 /*	........   Nutrition defines   ................ */
+
+/*	ALREADY DEFINED, SEE code\__DEFINES\roguetown.dm
+
 #define MEAL_FILLING 30
 #define MEAL_GOOD 24
 #define MEAL_AVERAGE 18
@@ -14,6 +17,8 @@
 #define SNACK_NUTRITIOUS 9
 #define SNACK_DECENT 6
 #define SNACK_POOR 3
+
+*/
 
 /*	........   Rotting defines   ................ */
 #define SHELFLIFE_EXTREME 90 MINUTES

@@ -20,7 +20,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	health = 110
 	maxHealth = 110
-	melee_damage_lower = 16
+	melee_damage_lower = 15
 	melee_damage_upper = 20
 	vision_range = 9
 	aggro_vision_range = 9
@@ -31,8 +31,8 @@
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	pooptype = null
-	STACON = 7
-	STASTR = 7
+	STACON = 6
+	STASTR = 6
 	STASPD = 12
 	deaggroprob = 0
 	defprob = 35
@@ -57,6 +57,7 @@
 	gender = MALE
 	if(prob(33))
 		gender = FEMALE
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	update_icon()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/death(gibbed)

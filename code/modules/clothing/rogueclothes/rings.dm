@@ -18,9 +18,9 @@
 	icon_state = "ring_s"
 	sellprice = 33
 
-/obj/item/clothing/ring/silver/guild_mason
-	name = "Mason guild ring"
-	desc = "The wearer is a proud member of the Masons guild."
+/obj/item/clothing/ring/silver/makers_guild
+	name = "Makers guild ring"
+	desc = "The wearer is a proud member of the Makers' guild."
 	icon_state = "guild_mason"
 	sellprice = 0
 
