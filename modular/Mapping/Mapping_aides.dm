@@ -586,6 +586,9 @@
 	icon_state = "vinez"
 	pixel_y = 32
 
+/obj/structure/rack/rogue/shelf/notdense
+	density = FALSE
+	pixel_y = 24
 
 /*	..................   Red brick Walls   ................... */
 /turf/closed/wall/mineral/rogue/stonebrick/reddish
@@ -606,10 +609,17 @@
 	fueluse = 180 MINUTES
 
 /obj/item/candle/yellow/lit/infinite
+	light_power = 1
+	light_range = 4
 	start_lit = TRUE
 	infinite = TRUE
 	icon_state = "candle1_lit"
 	anchored = TRUE
+
+/obj/item/candle/yellow/lit/infinite/strong
+	light_power = 2
+	light_range = 4
+	pixel_x = 4
 
 /obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
 	name = "candle lamp"
@@ -617,8 +627,18 @@
 	icon_state = "candle"
 	base_state = "candle"
 	layer = WALL_OBJ_LAYER+0.1
-	bulb_power = 0.85
+	light_power = 0.9
+	light_range = 6
 
+/obj/machinery/light/rogue/wallfire/candle/weak
+	light_power = 0.9
+	light_range = 6
+/obj/machinery/light/rogue/wallfire/candle/weak/l
+	pixel_x = -32
+	pixel_y = 0
+/obj/machinery/light/rogue/wallfire/candle/weak/r
+	pixel_x = 32
+	pixel_y = 0
 
 
 
@@ -699,6 +719,11 @@
 /obj/structure/roguetent/preopen
 	density = FALSE
 
+
+/obj/structure/fluff/clock/dense
+	density = TRUE
+
+/*	..................   The Drunken Saiga   ................... */
 /obj/structure/fluff/walldeco/innsign/saiga
 	name = "The Drunken Saiga"
 	icon = 'modular/Mapping/icons/decoration.dmi'
@@ -712,3 +737,35 @@
 	icon = 'modular/Mapping/icons/decoration.dmi'
 	icon_state = "saiga_trophy"
 	pixel_y = 32
+
+/obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep
+	name = "padded vest"
+	desc = "Dyed green, belongs to the innkeeper."
+	icon_state = "workervest"
+	color = "#638b45"
+
+/turf/open/floor/rogue/tile/checker_green
+	icon_state = "tile"
+	color = "#94df5b"
+
+
+
+/*	..................   Areas to play with the music a bit   ................... */
+/area/rogue/indoors/town/bath/redhouse // lets try something different
+	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
+	converted_type = /area/rogue/outdoors/exposed/bath/redhouse
+
+/area/rogue/outdoors/exposed/bath/redhouse
+	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
+
+/area/rogue/indoors/town/tavern/saiga
+	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
+	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
+	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
+
+/area/rogue/outdoors/exposed/tavern/saiga
+	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
+	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
+
+
+
