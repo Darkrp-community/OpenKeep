@@ -635,7 +635,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	H.remove_overlay(HAIR_LAYER)
 	H.remove_overlay(HAIREXTRA_LAYER)
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
-	if(!HD) //Decapitated
+	if(!HD) // So, no head?
 		return
 
 	if(HD.skeletonized)

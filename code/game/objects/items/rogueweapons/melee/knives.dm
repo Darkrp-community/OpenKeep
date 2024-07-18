@@ -1,7 +1,7 @@
 
 
 /obj/item/rogueweapon/huntingknife
-	force = 10
+	force = 12
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	name = "hunting knife"
@@ -26,7 +26,9 @@
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
 	throwforce = 12
 	wdefense = 3
+	wbalance = 1 // All knives are swift, bonus to SPD
 	smeltresult = /obj/item/ingot/steel
+	sellprice = 30
 
 
 
@@ -89,7 +91,6 @@
 	clickcd = CLICK_CD_MELEE
 
 /obj/item/rogueweapon/huntingknife/cleaver
-	force = 10
 	name = "cleaver"
 	desc = "A chef's tool turned armament, cleave off cumbersome flesh with rudimentary ease."
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
@@ -102,13 +103,14 @@
 	slot_flags = ITEM_SLOT_HIP
 	thrown_bclass = BCLASS_CHOP
 	w_class = WEIGHT_CLASS_NORMAL
-	smeltresult = /obj/item/ingot/iron
+	smeltresult = /obj/item/ingot/steel
+	wbalance = 0 // Except this one, too huge and used to chop
 
 /obj/item/rogueweapon/huntingknife/cleaver/combat
-	force = 12
 	name = "knife"
 	desc = "A short blade that even the weakest of hands can aspire to do harm with."
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
+	force = 10
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	icon_state = "combatknife"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	parrysound = list('sound/combat/parry/bladed/bladedmedium (1).ogg','sound/combat/parry/bladed/bladedmedium (2).ogg','sound/combat/parry/bladed/bladedmedium (3).ogg')
@@ -119,6 +121,8 @@
 	thrown_bclass = BCLASS_CHOP
 	w_class = WEIGHT_CLASS_NORMAL
 	smeltresult = /obj/item/ingot/iron
+	wbalance = 1
+	sellprice = 15
 
 /obj/item/rogueweapon/huntingknife/cleaver/getonmobprop(tag)
 	. = ..()
@@ -136,14 +140,15 @@
 
 /obj/item/rogueweapon/huntingknife/idagger
 	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut)
-	name = "dagger"
+	name = "iron dagger"
 	desc = "Thin, sharp, pointed death."
-	force = 12
+	force = 10
 	icon_state = "idagger"
 	smeltresult = null
+	sellprice = 15
 
 /obj/item/rogueweapon/huntingknife/idagger/steel
-	name = "dagger"
+	name = "steel dagger"
 	desc = "A dagger made of refined steel."
 	force = 14
 	icon_state = "sdagger"
@@ -151,10 +156,11 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	icon_state = "sdaggeralt"
+	desc = "A dagger of refined steel, and even more refined appearance."
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
 	name = "dagger"
-	desc = "A dagger made of fine silver."
+	desc = "A dagger made of fine silver, the bane of the undead."
 	force = 12
 	icon_state = "sildagger"
 	smeltresult = null
@@ -243,7 +249,7 @@
 				s_user.Stun(10)
 				s_user.Paralyze(10)
 				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
-				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I AM THE ANCIENT!</span>")
+				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I HAVE TRANSCENDED!</span>")
 
 
 /obj/item/rogueweapon/huntingknife/stoneknife
@@ -251,11 +257,13 @@
 	name = "stone knife"
 	desc = "A tool favored by the wood-elves, easy to make, useful for skinning the flesh of beast and man alike."
 	icon_state = "stone_knife"
-	smeltresult = null
+	force = 8
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	max_integrity = 15
 	max_blade_int = 15
 	wdefense = 1
 	smeltresult = /obj/item/ash
+	sellprice = 5
 
 /obj/item/rogueweapon/knife/copperdagger
 	force = 8
@@ -283,3 +291,4 @@
 	throwforce = 12
 	wdefense = 3
 	smeltresult = /obj/item/ingot/copper
+	sellprice = 10

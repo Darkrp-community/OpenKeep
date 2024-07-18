@@ -31,7 +31,8 @@
 	if(HAS_TRAIT(src, TRAIT_NOROGSTAM))
 		return TRUE
 	if(m_intent == MOVE_INTENT_RUN)
-		mind.adjust_experience(/datum/skill/misc/athletics, (STAINT*0.02))
+		var/boon = mind.get_learning_boon(/datum/skill/misc/athletics)
+		mind.adjust_experience(/datum/skill/misc/athletics, (STAINT*0.02) * boon)
 	rogstam += added
 	if(rogstam > maxrogstam)
 		rogstam = maxrogstam
