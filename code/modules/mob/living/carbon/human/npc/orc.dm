@@ -563,3 +563,18 @@
 			r_hand = /obj/item/rogueweapon/flail/sflail
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
+
+/mob/living/carbon/human/species/orc/warlord/skilled/after_creation() //these ones dont parry, but still get good weapon skills
+	..()
+	QDEL_NULL(sexcon)
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/warlord)
+	aggressive=1
+	mode = AI_IDLE
+	dodgetime = 15
+	canparry = TRUE
+	flee_in_pain = FALSE
+	wander = TRUE
+	configure_mind()

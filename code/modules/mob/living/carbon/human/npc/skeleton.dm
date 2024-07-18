@@ -273,7 +273,7 @@
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/warrior)
 	aggressive=1
 	mode = AI_IDLE
-	dodgetime = 15
+	d_intent = INTENT_PARRY //these ones will parry instead of dodge, making them much more dangerous
 	canparry = TRUE
 	flee_in_pain = FALSE
 	wander = TRUE
@@ -289,3 +289,4 @@
     mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
     mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
     mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+    mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
