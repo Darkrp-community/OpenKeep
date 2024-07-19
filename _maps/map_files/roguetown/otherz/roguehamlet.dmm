@@ -173,7 +173,7 @@
 "aYc" = (/obj/item/reagent_containers/glass/bucket/wooden,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/rtfield)
 "aYz" = (/obj/structure/fluff/railing/border,/turf/open/transparent/openspace,/area/rogue/outdoors/town/roofs)
 "aYX" = (/obj/structure/closet/crate/chest{locked = 1; lockid = "hpriest"},/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/turf/open/floor/rogue/churchbrick,/area/rogue/indoors/town/church)
-"aZm" = (/obj/structure/guillotine{step_x = 0},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/town)
+"aZm" = (/obj/structure/pillory/reinforced,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/outdoors/town)
 "aZT" = (/turf/open/floor/rogue/concrete,/area/rogue/indoors/town/magician)
 "aZU" = (/obj/structure/flora/roguetree/burnt,/obj/structure/fluff/railing/border{icon_state = "border"; dir = 4},/turf/open/transparent/openspace,/area/rogue/outdoors/town/roofs)
 "bam" = (/turf/open/floor/rogue/dirt,/area/rogue/under/cave{ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30, /mob/living/carbon/human/species/skeleton/npc/ambush = 10); first_time_text = "CATACOMBS"})
