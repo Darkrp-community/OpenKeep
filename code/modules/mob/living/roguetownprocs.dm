@@ -381,13 +381,17 @@
 			if(I.wbalance < 0 && L.STASPD > U.STASPD) //nme weapon is slow, so its easier to dodge if we're faster
 				prob2defend = prob2defend + ( I.wbalance * ((U.STASPD - L.STASPD) * -10) )
 			if(UH?.mind)
-				prob2defend = prob2defend - (UH.mind.get_skill_level(I.associated_skill) * 10)
+				prob2defend = prob2defend - (UH.mind.get_skill_level(I.associated_skill) * 20)
 		if(H)
 			if(!H?.check_armor_skill())
 				H.Knockdown(1)
 				return FALSE
 			if(H?.check_dodge_skill())
 				drained = drained - 5
+			if(!(H.mobility_flags & MOBILITY_STAND))
+				prob2defend -= 20
+			if(H.handcuffed)
+				prob2defend -= 20			
 //			if(H.mind)
 //				drained = drained + max((H.checkwornweight() * 10)-(mind.get_skill_level(/datum/skill/misc/athletics) * 10),0)
 //			else
@@ -397,7 +401,7 @@
 					prob2defend = prob2defend + 10
 				else
 					if(H.mind)
-						prob2defend = prob2defend + (H.mind.get_skill_level(I.associated_skill) * 10)
+						prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/misc/athletics) * 15)
 //				var/thing = H.encumbrance
 //				if(thing > 0)
 //					drained = drained + (thing * 10)
