@@ -110,7 +110,7 @@
 #define GUARDSMAN	(1<<0)
 #define DUNGEONEER	(1<<1)
 #define WATCHMAN	(1<<2)
-#define WOODSMAN	(1<<3)
+#define MAYOR       (1<<3)
 
 #define CHURCHMEN		(1<<2)
 
