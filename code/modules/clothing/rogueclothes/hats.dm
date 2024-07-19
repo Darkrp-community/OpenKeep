@@ -702,7 +702,7 @@
 	name = "orc helmet"
 	icon_state = "marauder_helm_item"
 	item_state = "marauder_helm"
-	icon = 'icons/roguetown/mob/monster/orc.dmi'
+	icon = 'icons/roguetown/clothing/head.dmi'
 	allowed_race = list("orc")
 	smeltresult = /obj/item/ingot/iron
 	armor = list("melee" = 60, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -710,6 +710,17 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	max_integrity = 120
 	sellprice = 5
+
+/obj/item/clothing/head/roguetown/helmet/orc/warlord
+	name = "Orc Warlord Helmet"
+	icon_state = "warlord_helm_item"
+	item_state = "warlord_helm"
+	allowed_race = list("orc")
+	icon = 'icons/roguetown/clothing/head.dmi'
+	armor = list("melee" = 70, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	max_integrity = 150
+	sellprice = 10
 
 /obj/item/clothing/head/roguetown/grenzelhofthat
 	name = "grenzelhoft plume hat"

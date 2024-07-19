@@ -115,7 +115,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 
 /mob/living/carbon/human/species/zizombie/handle_combat()
 	if(mode == AI_HUNT)
-		if(prob(2))
+		if(prob(1))
 			emote("rage")
 	. = ..()
 
@@ -132,7 +132,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 
 /mob/living/carbon/human/species/zizombie/handle_combat()
 	if(mode == AI_HUNT)
-		if(prob(2))
+		if(prob(1))
 			emote("rage")
 	. = ..()
 
@@ -331,7 +331,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 		if(prob(50))
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 	if(prob(50))
-		pants = /obj/item/clothing/under/roguetown/tights/vagrant/bloody_icon_state
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant
 		if(prob(50))
 			pants = /obj/item/clothing/under/roguetown/tights/vagrant
 	if(prob(50))
@@ -512,5 +512,100 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			cloak = /obj/item/clothing/cloak/stabard/guard
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
+
+///////////////////////////////////////////////////////////// EVENTMIN ZOMBIE GRENZELHOFT MERCENARIES
+/mob/living/carbon/human/species/zizombie/npc/GRENZEL/after_creation()
+	..()
+	QDEL_NULL(sexcon)
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	equipOutfit(new /datum/outfit/job/roguetown/species/zizombie/npc/GRENZEL)
+	aggressive=1
+	mode = AI_IDLE
+	dodgetime = 15
+	canparry = TRUE
+	flee_in_pain = FALSE
+	wander = TRUE
+
+
+
+
+/datum/outfit/job/roguetown/species/zizombie/npc/GRENZEL/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.STASTR = 12
+	H.STASPD = 7
+	H.STACON = 10
+	H.STAEND = 20//the zizombies shouldn't get tired after all
+	var/loadout = rand(1,5)
+	switch(loadout)
+		if(1) //zizombie Warrior
+			r_hand = /obj/item/rogueweapon/greatsword/zwei
+			pants = /obj/item/clothing/under/roguetown/grenzelpants
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
+			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			belt = /obj/item/storage/belt/rogue/leather
+			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/pigface
+			neck = /obj/item/clothing/neck/roguetown/gorget
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+			backl = /obj/item/storage/backpack/rogue/satchel
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+			beltl = /obj/item/clothing/neck/roguetown/psicross
+		if(2) //zizombie Warrior
+			r_hand = /obj/item/rogueweapon/halberd
+			pants = /obj/item/clothing/under/roguetown/grenzelpants
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
+			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			belt = /obj/item/storage/belt/rogue/leather
+			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
+			head = /obj/item/clothing/head/roguetown/helmet/sallet/visored
+			neck = /obj/item/clothing/neck/roguetown/bervor
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+			backl = /obj/item/storage/backpack/rogue/satchel
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+			beltl = /obj/item/clothing/neck/roguetown/psicross
+		if(3) //zizombie Warrior
+			r_hand = /obj/item/rogueweapon/eaglebeak
+			pants = /obj/item/clothing/under/roguetown/grenzelpants
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
+			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			belt = /obj/item/storage/belt/rogue/leather
+			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
+			head = /obj/item/clothing/head/roguetown/helmet/sallet/visored
+			neck = /obj/item/clothing/neck/roguetown/bervor
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+			backl = /obj/item/storage/backpack/rogue/satchel
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+			beltl = /obj/item/clothing/neck/roguetown/psicross
+		if(4) //zizombie Warrior
+			r_hand = /obj/item/rogueweapon/sword/iron/short
+			l_hand = /obj/item/rogueweapon/huntingknife/cleaver/combat
+			pants = /obj/item/clothing/under/roguetown/grenzelpants
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
+			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			belt = /obj/item/storage/belt/rogue/leather
+			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
+			head = /obj/item/clothing/head/roguetown/helmet/sallet/visored
+			neck = /obj/item/clothing/neck/roguetown/bervor
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+			backl = /obj/item/storage/backpack/rogue/satchel
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+			beltl = /obj/item/clothing/neck/roguetown/psicross
+		if(5) //zizombie Warrior
+			r_hand = /obj/item/rogueweapon/battle
+			pants = /obj/item/clothing/under/roguetown/grenzelpants
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
+			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			belt = /obj/item/storage/belt/rogue/leather
+			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/knight
+			neck = /obj/item/clothing/neck/roguetown/bervor
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+			backl = /obj/item/storage/backpack/rogue/satchel
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+			beltl = /obj/item/clothing/neck/roguetown/psicross
+
 
 
