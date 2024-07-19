@@ -85,9 +85,11 @@
 		user.visible_message("<span class='warning'>[user] starts to climb [src].</span>", "<span class='warning'>I start to climb [src]...</span>")
 		if(do_after(L, used_time, target = src))
 			var/pulling = user.pulling
+			user.forceMove(target)
 			if(ismob(pulling))
 				user.pulling.forceMove(target)
-			user.forceMove(target)
+				if(pulling.buckled)
+					user.buckle_mob(pulling, TRUE, TRUE, 90, 0, 0)
 			user.start_pulling(pulling,supress_message = TRUE)
 			playsound(user, 'sound/foley/climb.ogg', 100, TRUE)
 			if(L.mind)

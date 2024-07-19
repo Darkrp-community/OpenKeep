@@ -112,9 +112,11 @@
 			if(isliving(AM))
 				var/mob/living/L = AM
 				var/pulling = L.pulling
+				L.forceMove(newtarg)
 				if(pulling)
 					L.pulling.forceMove(newtarg)
-				L.forceMove(newtarg)
+					if(pulling.buckled)
+						L.buckle_mob(pulling, TRUE, TRUE, 90, 0, 0)
 				L.start_pulling(pulling, supress_message = TRUE)
 			else
 				AM.forceMove(newtarg)
@@ -137,9 +139,11 @@
 			if(isliving(AM))
 				var/mob/living/L = AM
 				var/pulling = L.pulling
+				L.forceMove(newtarg)
 				if(pulling)
 					L.pulling.forceMove(newtarg)
-				L.forceMove(newtarg)
+					if(pulling.buckled)
+						L.buckle_mob(pulling, TRUE, TRUE, 90, 0, 0)
 				L.start_pulling(pulling)
 			else
 				AM.forceMove(newtarg)

@@ -1098,6 +1098,7 @@
 		to_chat(pulledby, "<span class='danger'>[src] breaks free of my grip!</span>")
 		log_combat(pulledby, src, "broke grab")
 		pulledby.stop_pulling()
+		pulledby.update_grab_intents()
 		return FALSE
 	else
 		rogfat_add(rand(5,15))

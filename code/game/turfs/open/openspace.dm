@@ -129,9 +129,11 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 			if(user.m_intent != MOVE_INTENT_SNEAK)
 				playsound(user, 'sound/foley/climb.ogg', 100, TRUE)
 			var/pulling = user.pulling
+			user.forceMove(target)
 			if(ismob(pulling))
 				user.pulling.forceMove(target)
-			user.forceMove(target)
+				if(pulling.buckled)
+					user.buckle_mob(pulling, TRUE, TRUE, 90, 0, 0)
 			user.start_pulling(pulling,supress_message = TRUE)
 
 /turf/open/transparent/openspace/attack_ghost(mob/dead/observer/user)
