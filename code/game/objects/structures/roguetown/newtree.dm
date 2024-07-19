@@ -85,13 +85,19 @@
 		user.visible_message("<span class='warning'>[user] starts to climb [src].</span>", "<span class='warning'>I start to climb [src]...</span>")
 		if(do_after(L, used_time, target = src))
 			var/pulling = user.pulling
+			var/wasbuckled = FALSE
+			if(pulling)
+				if(ismob(pulling))
+					var/mob/pullin = pulling
+					if(pullin.buckled)
+						wasbuckled = TRUE
 			user.forceMove(target)
 			if(ismob(pulling))
 				user.pulling.forceMove(target)
 				var/mob/pullin = pulling
-				if(pullin.buckled)
+				if(wasbuckled)
 					user.buckle_mob(pullin, TRUE, TRUE, 90, 0, 0)
-			user.start_pulling(pulling,supress_message = TRUE)
+				user.start_pulling(pulling,supress_message = TRUE)
 			playsound(user, 'sound/foley/climb.ogg', 100, TRUE)
 			if(L.mind)
 				L.mind.adjust_experience(/datum/skill/misc/climbing, exp_to_gain, FALSE)

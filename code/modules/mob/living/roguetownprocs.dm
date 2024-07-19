@@ -183,6 +183,8 @@
 				else
 					attacker_skill = U.mind.get_skill_level(/datum/skill/combat/unarmed)
 					prob2defend -= (attacker_skill * 20)
+			else
+				prob2defend -= U.STASTR * 3
 
 			prob2defend = clamp(prob2defend, 5, 95)
 			if(src.client?.prefs.showrolls)
