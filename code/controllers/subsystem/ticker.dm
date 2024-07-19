@@ -236,7 +236,7 @@ SUBSYSTEM_DEF(ticker)
 			check_queue()
 			check_maprotate()
 
-			if(!roundend_check_paused && mode.check_finished(force_ending) || force_ending)
+			if(!roundend_check_paused && mode.check_finished() || force_ending)
 				current_state = GAME_STATE_FINISHED
 				toggle_ooc(TRUE) // Turn it on
 				toggle_dooc(TRUE)
