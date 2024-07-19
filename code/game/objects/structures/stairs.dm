@@ -115,8 +115,10 @@
 				L.forceMove(newtarg)
 				if(pulling)
 					L.pulling.forceMove(newtarg)
-					if(pulling.buckled)
-						L.buckle_mob(pulling, TRUE, TRUE, 90, 0, 0)
+					if(ismob(pulling))
+						var/mob/pullin = pulling
+						if(pullin.buckled)
+							L.buckle_mob(pullin, TRUE, TRUE, 90, 0, 0)
 				L.start_pulling(pulling, supress_message = TRUE)
 			else
 				AM.forceMove(newtarg)
@@ -142,8 +144,10 @@
 				L.forceMove(newtarg)
 				if(pulling)
 					L.pulling.forceMove(newtarg)
-					if(pulling.buckled)
-						L.buckle_mob(pulling, TRUE, TRUE, 90, 0, 0)
+					if(ismob(pulling))
+						var/mob/pullin = pulling
+						if(pullin.buckled)
+							L.buckle_mob(pullin, TRUE, TRUE, 90, 0, 0)
 				L.start_pulling(pulling)
 			else
 				AM.forceMove(newtarg)

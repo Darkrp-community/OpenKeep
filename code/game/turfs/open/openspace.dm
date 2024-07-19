@@ -132,8 +132,9 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 			user.forceMove(target)
 			if(ismob(pulling))
 				user.pulling.forceMove(target)
-				if(pulling.buckled)
-					user.buckle_mob(pulling, TRUE, TRUE, 90, 0, 0)
+				var/mob/pullin = pulling
+				if(pullin.buckled)
+					user.buckle_mob(pullin, TRUE, TRUE, 90, 0, 0)
 			user.start_pulling(pulling,supress_message = TRUE)
 
 /turf/open/transparent/openspace/attack_ghost(mob/dead/observer/user)

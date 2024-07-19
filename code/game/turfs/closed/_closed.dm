@@ -174,8 +174,9 @@
 				user.forceMove(target)
 				if(ismob(pulling))
 					user.pulling.forceMove(target)
-					if(pulling.buckled)
-						user.buckle_mob(pulling, TRUE, TRUE, 90, 0, 0)
+					var/mob/pullin = pulling
+					if(pullin.buckled)
+						user.buckle_mob(pullin, TRUE, TRUE, 90, 0, 0)
 				user.start_pulling(pulling,supress_message = TRUE)
 				if(user.m_intent != MOVE_INTENT_SNEAK)
 					playsound(user, 'sound/foley/climb.ogg', 100, TRUE)
