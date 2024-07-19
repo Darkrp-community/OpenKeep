@@ -615,6 +615,18 @@
 	else if(all_objectives.len || memory)
 		to_chat(recipient, "<i>[output]</i>")
 
+/datum/mind/proc/recall_targets(mob/recipient, window=1)
+	var/output = "<B>[recipient.real_name]'s Hitlist:</B><br>"
+	for (var/mob/living/carbon in world) // Iterate through all mobs in the world
+		if ((carbon.real_name != recipient.real_name) && (carbon.has_flaw(/datum/charflaw/hunted)) && (!istype(carbon, /mob/living/carbon/human/dummy))) //To be on the list they must be hunted, not be the user and not be a dummy (There is a dummy that has all vices for some reason)
+			output += "<br>[carbon.real_name]"
+			if (carbon.job)
+				output += " - [carbon.job]"
+	output += "<br>Your creed is blood, your faith is steel. You will not rest until these souls are yours. Use the profane dagger."
+
+	if(window)
+		recipient << browse(output,"window=memory")
+
 /datum/mind/Topic(href, href_list)
 	if(!check_rights(R_ADMIN))
 		return
