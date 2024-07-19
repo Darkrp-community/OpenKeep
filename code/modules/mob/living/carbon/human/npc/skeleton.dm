@@ -268,3 +268,32 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap
+
+
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled/after_creation()
+	..()
+	QDEL_NULL(sexcon)
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/warrior)
+	aggressive=1
+	mode = AI_IDLE
+	d_intent = INTENT_PARRY //these ones will parry instead of dodge, making them much more dangerous
+	canparry = TRUE
+	flee_in_pain = FALSE
+	wander = TRUE
+	configure_mind()
+
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled/proc/configure_mind()
+    if(!mind)
+        mind = new /datum/mind(src)
+
+    mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+    mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+    mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+    mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+    mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+    mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+    mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
