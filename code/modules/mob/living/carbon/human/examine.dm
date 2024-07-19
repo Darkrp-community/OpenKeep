@@ -460,6 +460,17 @@
 			if(!(mobility_flags & MOBILITY_STAND) && user != src && (user.zone_selected == BODY_ZONE_CHEST))
 				. += "<a href='?src=[REF(src)];check_hb=1'>Listen to Heartbeat</a>"
 
+	// Characters with the hunted flaw will freak out if they can't see someone's face.
+	if(!appears_dead)
+		if(skipface && user.has_flaw(/datum/charflaw/hunted))
+			user.add_stress(/datum/stressevent/hunted)
+	
+	// The Assassin's profane dagger can sniff out their targets, even masked.
+	if(HAS_TRAIT(user, TRAIT_ASSASSIN) && has_flaw(/datum/charflaw/hunted)) 
+		for(var/obj/item/I in user)
+			if(istype(I, /obj/item/rogueweapon/huntingknife/idagger/steel/profane))
+				user.visible_message("profane dagger whispers, <span class='danger'>\"That's [real_name]! Strike their heart!\"</span>")
+
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))
 		. += trait_exam
