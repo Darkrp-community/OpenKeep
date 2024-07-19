@@ -16,10 +16,10 @@
 						/obj/item/natural/hide = 2)
 	faction = list("orcs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 800
-	maxHealth = 800
-	melee_damage_lower = 55
-	melee_damage_upper = 70
+	health = 600
+	maxHealth = 600
+	melee_damage_lower = 40
+	melee_damage_upper = 60
 	vision_range = 6
 	aggro_vision_range = 6
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
@@ -29,10 +29,10 @@
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	pooptype = null
-	STACON = 16
-	STASTR = 19
+	STACON = 15
+	STASTR = 16
 	STASPD = 2
-	STAEND = 19
+	STAEND = 16
 	deaggroprob = 0
 	defprob = 20
 	defdrain = 15
@@ -43,7 +43,11 @@
 	dodgetime = 20
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
-	remains_type = /obj/effect/decal/remains/human // Placeholder until Troll remains are sprited.
+	remains_type = /obj/effect/decal/remains/xeno/troll // Placeholder until Troll remains are sprited.
+
+/mob/living/simple_animal/hostile/retaliate/rogue/troll/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood
 	name = "FLESH HOMUNCULUS"

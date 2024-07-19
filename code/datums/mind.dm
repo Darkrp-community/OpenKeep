@@ -988,3 +988,10 @@
 	..()
 	mind.assigned_role = ROLE_PAI
 	mind.special_role = ""
+
+// Get a bonus multiplier dependant on age to apply to exp gains. Arg is a skill path.
+/datum/mind/proc/get_learning_boon(skill)
+	var/mob/living/carbon/human/H = current
+	var/boon = H.age == AGE_OLD ? 0.8 : 1 // Can't teach an old dog new tricks. Most old jobs start with higher skill too.
+	boon += get_skill_level(skill) / 10
+	return boon

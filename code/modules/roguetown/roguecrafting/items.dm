@@ -90,7 +90,6 @@
 	result = /obj/item/rogueweapon/spear/stone
 	reqs = list(/obj/item/rogueweapon/woodstaff = 1,
 				/obj/item/natural/stone = 1)
-	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/woodclub
 	name = "wood club"

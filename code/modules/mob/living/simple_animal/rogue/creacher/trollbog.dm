@@ -16,9 +16,9 @@
 						/obj/item/natural/hide = 2)
 	faction = list("orcs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 400
-	maxHealth = 400
-	melee_damage_lower = 35
+	health = 300
+	maxHealth = 300
+	melee_damage_lower = 30
 	melee_damage_upper = 50
 	vision_range = 6
 	aggro_vision_range = 6
@@ -29,9 +29,9 @@
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	pooptype = null
-	STACON = 14
-	STASTR = 16
-	STASPD = 9
+	STACON = 12
+	STASTR = 14
+	STASPD = 5
 	STAEND = 14
 	deaggroprob = 0
 	defprob = 30
@@ -43,7 +43,11 @@
 	dodgetime = 15
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
-	remains_type = /obj/item/rogueweapon/battle
+	remains_type = /obj/effect/decal/remains/xeno/troll // Placeholder until Troll remains are sprited.
+
+/mob/living/simple_animal/hostile/retaliate/rogue/trollbog/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/death(gibbed)
 	..()

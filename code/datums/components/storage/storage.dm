@@ -69,6 +69,9 @@
 
 	var/not_while_equipped = FALSE
 
+	//Vrell - Used for repair bypass clicks
+	var/being_repaired = FALSE
+
 /datum/component/storage/Initialize(datum/component/storage/concrete/master)
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
