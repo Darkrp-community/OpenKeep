@@ -62,18 +62,18 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	if(allmig)
 		return FALSE
 
-	if(ttime >= GLOB.round_timer)
-		if(roundvoteend)
-			if(ttime >= (GLOB.round_timer + 30 MINUTES) )
-				for(var/mob/living/carbon/human/H in GLOB.human_list)
-					if(H.stat != DEAD)
-						if(H.allmig_reward)
-							H.adjust_triumphs(H.allmig_reward)
-							H.allmig_reward = 0
-				return TRUE
-		else
-			if(!SSvote.mode)
-				SSvote.initiate_vote("endround", pick("Zlod", "Sun King", "Gaia", "Moon Queen", "Aeon", "Gemini", "Aries"))
+	//if(ttime >= GLOB.round_timer) //deprecates the overlapping vote timer system, requires live testing
+	//	if(roundvoteend)
+	//		if(ttime >= (GLOB.round_timer + 30 MINUTES) )
+	//			for(var/mob/living/carbon/human/H in GLOB.human_list)
+	//				if(H.stat != DEAD)
+	//					if(H.allmig_reward)
+	//						H.adjust_triumphs(H.allmig_reward)
+	//						H.allmig_reward = 0
+	//			return TRUE
+	//	else
+	//		if(!SSvote.mode)
+	//			SSvote.initiate_vote("endround", pick("Zlod", "Sun King", "Gaia", "Moon Queen", "Aeon", "Gemini", "Aries"))
 
 	if(headrebdecree)
 		return TRUE
