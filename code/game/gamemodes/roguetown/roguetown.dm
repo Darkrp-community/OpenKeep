@@ -65,9 +65,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 
 	if(ttime >= GLOB.round_timer)
 		if(roundvoteend)
-			var/datum/round_event/rogue/skellysiege/x
-			if(!(x in SSevents.running))
-				x.New()
+			if(!(SSevents.running.len))
+				new /datum/round_event/rogue/skellysiege/
 			if(ttime >= (GLOB.round_timer + 15 MINUTES) )
 				for(var/mob/living/carbon/human/H in GLOB.human_list)
 					if(H.stat != DEAD)
@@ -557,6 +556,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 		possibleroles |= ROLE_BANDIT
 	if(ROLE_NBEAST in character.client.prefs.be_special)
 		possibleroles |= ROLE_NBEAST
+	if(possibleroles.len == 0)
+		possibleroles |= "Nothing"
 	var/pickedantag = pick(possibleroles)
 	if((bandits.len + vampires.len) >= 4) //Caps number of latejoin antagonists
 		return
