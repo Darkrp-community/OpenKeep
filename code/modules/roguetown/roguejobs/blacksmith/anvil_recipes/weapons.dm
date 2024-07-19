@@ -21,7 +21,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/ingot/copper)
-	created_item = (/obj/item/rogueweapon/copperaxe)
+	created_item = /obj/item/rogueweapon/copperaxe
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cbludgeon
@@ -30,7 +30,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = list(/obj/item/rogueweapon/mace/copperbludgeon)
+	created_item = /obj/item/rogueweapon/mace/copperbludgeon
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cdagger
@@ -38,8 +38,9 @@
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
-	created_item = list(/obj/item/rogueweapon/knife/copperdagger, 
-						/obj/item/rogueweapon/knife/copperdagger)
+	created_item = /obj/item/rogueweapon/knife/copperdagger
+	createmultiple = TRUE
+	createditem_num = 1
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cmace
@@ -62,12 +63,13 @@
 
 /datum/anvil_recipe/weapons/cspears
 	name = "Spear x2 (+4s)"
-	recipe_name = "four Spears"
+	recipe_name = "two Spears"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
-	created_item = list(/obj/item/rogueweapon/copperspear, 
-						/obj/item/rogueweapon/copperspear)
+	created_item = /obj/item/rogueweapon/copperspear
+	createmultiple = TRUE
+	createditem_num = 1
 	craftdiff = 0
 
 
