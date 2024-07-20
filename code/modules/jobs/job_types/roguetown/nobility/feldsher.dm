@@ -9,7 +9,7 @@
 	display_order = JDO_FELDSHER
 	tutorial = "You have seen countless wounds over your time. Stitched the sores of blades, sealed honey over the bubous of plague. \
 	A thousand deaths stolen from the carriagemen, yet these people will still call you a charlatan. Prove them wrong, or right."
-	give_bank_account = 11
+	give_bank_account = 100
 
 	//Reason all races allowed is you are basically a very talented court physician; even 'lower races' would find this to be one of the only ways to obtain a sort of nobility.
 	allowed_races = list(
