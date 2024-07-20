@@ -885,16 +885,6 @@
 	name = "TiebHorns"
 	icon_state = "tiebhorns"
 	specuse = list("tiefling")
-	gender = MALE
-	color_src = SKINCOLOR
-	offsetti = TRUE
-
-/datum/sprite_accessory/horns/tiebf
-	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
-	name = "TiebHornsF"
-	icon_state = "tiebhornsf"
-	specuse = list("tiefling")
-	gender = FEMALE
 	color_src = SKINCOLOR
 	offsetti = TRUE
 

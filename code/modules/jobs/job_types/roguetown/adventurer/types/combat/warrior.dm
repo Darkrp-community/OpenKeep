@@ -25,13 +25,11 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(2,3), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,3), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(1,1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, pick(1,1,2), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,1,2), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(1,2,2), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(2,3), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(1,1,2), TRUE)
 
 	if(H.gender == FEMALE)
 		H.underwear = "Femleotard"
@@ -41,31 +39,34 @@
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
-	if(prob(25))
-		armor = /obj/item/clothing/suit/roguetown/armor/chainmail
-		pants = /obj/item/clothing/under/roguetown/tights/black
-	else if(prob(50))
-		armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
-		pants = /obj/item/clothing/under/roguetown/tights/black
-	else
-		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-		pants = /obj/item/clothing/under/roguetown/chainlegs/iron
+	pants = /obj/item/clothing/under/roguetown/tights/black
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/shield/wood
-	if(prob(33))
-		beltl = /obj/item/rogueweapon/sword/iron
-	else if(prob(50))
-		beltl = /obj/item/rogueweapon/sword/iron/messer
-	else
-		beltl = /obj/item/rogueweapon/sword/short
+	var/armortype = pickweight(list("Chainmail" = 6, "Plate" = 3, "Steel" = 1))
+	var/weapontype = pickweight(list("Messer" = 3, "Sword" = 5, "Shortsword" = 2))
+	switch(armortype)
+		if("Chainmail")
+			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+		if("Plate")
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
+		if("Steel") // Big roller gets chainlegs as well
+			armor = /obj/item/clothing/suit/roguetown/armor/chainmail
+			pants = /obj/item/clothing/under/roguetown/chainlegs/iron
+	switch(weapontype)
+		if("Messer")
+			beltl = /obj/item/rogueweapon/sword/iron/messer
+		if("Sword")
+			beltl = /obj/item/rogueweapon/sword/iron
+		if("Shortsword") // Big roller gets steel sword.
+			beltl = /obj/item/rogueweapon/sword/short
 	if(prob(66))
-		neck = /obj/item/clothing/neck/roguetown/chaincoif
-	else
-		head = /obj/item/clothing/head/roguetown/helmet/skullcap
 		neck = /obj/item/clothing/neck/roguetown/gorget
+		head = /obj/item/clothing/head/roguetown/helmet/skullcap
+	else // High roller gets steel chain coif
+		neck = /obj/item/clothing/neck/roguetown/chaincoif
 
 	H.change_stat("strength", 2)
 	H.change_stat("endurance", 1)
 	H.change_stat("speed", 1)
+	H.change_stat("intelligence", -1) // Muscle brains
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)

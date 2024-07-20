@@ -7,6 +7,9 @@
 	edelay_type = 1
 	equip_delay_self = 10
 	bloody_icon_state = "bodyblood"
+	sewrepair = TRUE
+	anvilrepair = null
+	smeltresult = /obj/item/ash
 
 
 //////////////////////////

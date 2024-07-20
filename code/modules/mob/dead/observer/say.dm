@@ -37,6 +37,25 @@
 /mob/dead/observer/screye/say_dead(message)
 	return
 
+/mob/dead/observer/profane/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
+	if (!message)
+		return
+
+	if (src.client)
+		if(client.prefs.muted & MUTE_IC)
+			to_chat(src, "<span class='boldwarning'>I cannot send IC messages (muted).</span>")
+			return
+		if (!(ignore_spam || forced) && src.client.handle_spam_prevention(message,MUTE_IC))
+			return
+
+	message = capitalize(trim(copytext(sanitize(message), 1, MAX_MESSAGE_LEN)))
+	var/rendered = "<span class='say'><span class='name'>[name]</span> <span class='message'>[say_quote(message)]</span></span>"
+
+	//src.log_talk(message, LOG_SAY, tag="trapped profane soul")
+
+	src.visible_message(message = rendered, self_message = FALSE, blind_message = rendered, vision_distance = 0)
+	//to_chat(src, "[message]")
+
 /*
 /mob/dead/observer/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode)
 	. = ..()
