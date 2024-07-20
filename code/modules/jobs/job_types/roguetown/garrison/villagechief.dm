@@ -1,6 +1,6 @@
-/datum/job/roguetown/woodsman
+/datum/job/roguetown/mayor
 	title = "Mayor"
-	flag = WOODSMAN
+	flag = MAYOR
 	department_flag = GARRISON
 	faction = "Station"
 	total_positions = 1
@@ -14,19 +14,19 @@
 		"Dwarf",
 		"Aasimar"
 	)
-	allowed_ages = list(AGE_OLD)
+	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = "You are as venerable and ancient as the trees themselves, wise even for your years. The King may lead officially, but people look to you as the Mayor to solve lesser issues. Remember the old ways of the law, not everything must end in bloodshed: no matter how much the Guards wish it were the case."
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
-	outfit = /datum/outfit/job/roguetown/woodsman
+	outfit = /datum/outfit/job/roguetown/mayor
 	display_order = JDO_CHIEF
 	give_bank_account = 50
 
-/datum/outfit/job/roguetown/woodsman
+/datum/outfit/job/roguetown/mayor
 	name = "Mayor"
-	jobtype = /datum/job/roguetown/woodsman
+	jobtype = /datum/job/roguetown/mayor
 
-/datum/outfit/job/roguetown/woodsman/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/mayor/pre_equip(mob/living/carbon/human/H)
 	..()
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic

@@ -13,7 +13,6 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/blacksmith
-	pickprob = 20
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 
 /datum/outfit/job/roguetown/adventurer/blacksmith/pre_equip(mob/living/carbon/human/H)
@@ -32,18 +31,15 @@
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueore/coal=1, /obj/item/rogueore/iron=1)
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(1,1,2), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2,2,3), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(0,0,1), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(0,0,1), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(1,1,2), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(0,1,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(1,2,2), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/masonry, pick(0,0,1), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/masonry, pick(0,1,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, pick(0,1,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
@@ -52,12 +48,14 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 3, TRUE)
 		if(prob(50))
 			H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
 		H.change_stat("strength", 1)
-		H.change_stat("endurance", 3)
-		H.change_stat("constitution", 2)
+		H.change_stat("endurance", 1)
+		H.change_stat("constitution", 1)
 		H.change_stat("speed", -1)
+		ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
 
 	if(H.gender == MALE)
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather

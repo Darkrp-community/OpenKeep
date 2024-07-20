@@ -20,6 +20,9 @@
 	desc = ""
 	icon_state = "remainsxeno"
 
+/obj/effect/decal/remains/xeno/troll
+	desc = "The skull and bones of a troll that decomposed long ago."
+
 /obj/effect/decal/remains/xeno/larva
 	icon_state = "remainslarva"
 

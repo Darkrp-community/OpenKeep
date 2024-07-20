@@ -60,11 +60,34 @@
 
 /obj/item/ingot
 	name = "ingot"
+	desc = "A parent bar of metal. If you see this, report it on github."
 	icon = 'icons/roguetown/items/ore.dmi'
 	icon_state = "ingot"
 	w_class = WEIGHT_CLASS_NORMAL
 	smeltresult = null
 	var/datum/anvil_recipe/currecipe
+	var/quality = SMELTERY_LEVEL_NORMAL
+
+/obj/item/ingot/examine()
+	. += ..()
+	if(currecipe)
+		. += "<span class='warning'>It is currently being worked on to become [currecipe.recipe_name].</span>"
+
+/obj/item/ingot/Initialize(mapload, smelt_quality)
+	. = ..()
+	if(smelt_quality)
+		quality = smelt_quality
+		smelted = TRUE
+		switch(quality)
+			if(SMELTERY_LEVEL_SPOIL)
+				name = "spoilt [name]"
+				desc += " It is practically scrap."
+			if(SMELTERY_LEVEL_POOR)
+				name = "poor-quality [name]"
+				desc += " It is of dubious quality." // EA NASSIR, WHEN I GET YOU...
+			if(SMELTERY_LEVEL_GOOD)
+				name = "good-quality [name]"
+				desc += " It is of exquisite quality."
 
 /obj/item/ingot/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/rogueweapon/tongs))
@@ -88,27 +111,32 @@
 
 /obj/item/ingot/gold
 	name = "gold bar"
+	desc = "A bar of glittering gold."
 	icon_state = "ingotgold"
 	smeltresult = /obj/item/ingot/gold
 	sellprice = 100
 
 /obj/item/ingot/iron
 	name = "iron bar"
+	desc = "A bar of wrought iron."
 	icon_state = "ingotiron"
 	smeltresult = /obj/item/ingot/iron
 	sellprice = 25
 /obj/item/ingot/copper
 	name = "copper bar"
+	desc = "A bar of copper."
 	icon_state = "ingotcop"
 	smeltresult = /obj/item/ingot/copper
 	sellprice = 10
 /obj/item/ingot/silver
 	name = "silver bar"
+	desc = "A bar of glistening silver. The bane of nitewalkers."
 	icon_state = "ingotsilv"
 	smeltresult = /obj/item/ingot/silver
 	sellprice = 60
 /obj/item/ingot/steel
 	name = "steel bar"
+	desc = "A bar of alloyed steel."
 	icon_state = "ingotsteel"
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 40

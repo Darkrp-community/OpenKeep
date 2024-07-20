@@ -4,7 +4,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
 	name = "iron mace"
-	desc = "An iron mace, prefered by those with a grudge against knightly whoresons."
+	desc = "A heavy iron mace, prefered by those with a grudge against knightly whoresons."
 	icon_state = "mace"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "mace_greyscale"
@@ -33,10 +33,10 @@
 	name = "bell ringer"
 	desc = "Faith is sometimes best administered with steel and blood."
 	icon_state = "churchmace"
-	wbalance = -1
 	smeltresult = /obj/item/ingot/steel
 	blade_dulling = DULLING_BASH
 	wdefense = 3
+	sellprice = 100
 
 /obj/item/rogueweapon/mace/steel
 	name = "steel mace"
@@ -46,7 +46,7 @@
 	smeltresult = /obj/item/ingot/steel
 	blade_dulling = DULLING_BASH
 	wdefense = 3
-	sellprice = 30
+	sellprice = 60
 
 /obj/item/rogueweapon/mace/getonmobprop(tag)
 	if(tag)
@@ -89,13 +89,14 @@
 	desc = "A weapon older than recorded time itself."
 	icon_state = "club1"
 	//dropshrink = 0.75
-	wbalance = 0
 	wdefense = 1
 	max_integrity = 120
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	smeltresult = /obj/item/ash
 	minstr = 0
+	sellprice = 5
 
 /obj/item/rogueweapon/mace/woodclub/New()
 	..()
@@ -132,13 +133,15 @@
 	icon_state = "cudgel"
 	desc = "A stubby little club favored for thwacking thieves and smart-mouthed peasant folk."
 	gripped_intents = null
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	smeltresult = /obj/item/ash
 	wlength = WLENGTH_SHORT
 	w_class = WEIGHT_CLASS_NORMAL
 	max_integrity = 180
-	wbalance = 0
+	wbalance = 1
 	minstr = 0
 	wdefense = 3
+	sellprice = 15
 
 /obj/item/rogueweapon/mace/cudgel/getonmobprop(tag)
 	. = ..()
@@ -159,11 +162,13 @@
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	smeltresult = /obj/item/ash
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	max_integrity = 100
 	minstr = 0
 	wdefense = 5
 	wbalance = 0
 	associated_skill = /datum/skill/combat/swords
+	sellprice = 5
 
 
 /obj/item/rogueweapon/mace/wsword/getonmobprop(tag)
@@ -187,13 +192,13 @@
 	desc = "A two handed club, decorated with a spiked cap crown. A perfect way to say Good Morning to any would be noble-knight."
 	icon_state = "goedendag"
 	icon = 'icons/roguetown/weapons/64.dmi'
-	sharpness = IS_BLUNT
 	//dropshrink = 0.75
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	associated_skill = /datum/skill/combat/axesmaces
 	smeltresult = /obj/item/ash
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	parrysound = "parrywood"
 	swingsound = BLUNTWOOSH_MED
 	max_integrity = 400
@@ -205,7 +210,8 @@
 	inhand_y_dimension = 64
 	bigboy = TRUE
 	gripsprite = TRUE
-	slowdown = 1
+	wbalance = 0
+	sellprice = 35
 
 /obj/item/rogueweapon/mace/goden/getonmobprop(tag)
 	. = ..()
@@ -224,9 +230,14 @@
 	desc = "A casted polearm, rumored to be the weapon-design used by the Forgotten God himself."
 	gripped_intents = list(/datum/intent/mace/heavy/smash) // It's a 2h flanged mace, not a goedendag.
 	icon_state = "polemace"
+	resistance_flags = FIRE_PROOF
+	smeltresult = /obj/item/ingot/steel
 	max_integrity = 500
 	force = 15
 	force_wielded = 35
+	slowdown = 1
+	wbalance = -1
+	sellprice = 60
 
 /obj/item/rogueweapon/mace/goden/steel/getonmobprop(tag)
 	. = ..()
@@ -306,6 +317,7 @@
 	smeltresult = /obj/item/ingot/copper
 	blade_dulling = DULLING_BASHCHOP
 	smeltresult = /obj/item/ingot/copper
+	sellprice = 10
 
 // Copper War-Mace
 /obj/item/rogueweapon/mace/coppermace
@@ -320,7 +332,6 @@
 	item_state = "mace_greyscale"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	sharpness = IS_BLUNT
 	//dropshrink = 0.75
 	wlength = WLENGTH_NORMAL
 	w_class = WEIGHT_CLASS_BULKY
@@ -333,9 +344,9 @@
 	smeltresult = /obj/item/ingot/copper
 	minstr = 6
 	wdefense = 2
-	wbalance = -1
 	blade_dulling = DULLING_BASHCHOP
 	smeltresult = /obj/item/ingot/copper
+	sellprice = 10
 
 /obj/item/rogueweapon/mace/coppermace/getonmobprop(tag)
 	. = ..()
@@ -351,16 +362,16 @@
 /datum/intent/mace/smash/warhamm
 	reach = 2
 
+// Unique longbeard hammer.
 /obj/item/rogueweapon/mace/warhammer
 	force = 10
 	force_wielded = 20
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
 	name = "warhammer"
-	desc = "A great warhammer made of stern steel, enscratched with oaths of battle and time."
+	desc = "A great dwarven warhammer made of stern steel, enscratched with oaths of battle and time."
 	icon_state = "warhammer"
 	icon = 'icons/roguetown/weapons/64.dmi'
-	sharpness = IS_BLUNT
 	//dropshrink = 0.75
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
@@ -377,6 +388,7 @@
 	inhand_y_dimension = 64
 	bigboy = TRUE
 	gripsprite = TRUE
+	sellprice = 100
 
 /obj/item/rogueweapon/mace/warhammer/getonmobprop(tag)
 	. = ..()

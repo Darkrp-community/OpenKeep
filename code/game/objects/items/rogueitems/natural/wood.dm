@@ -14,6 +14,7 @@
 	possible_item_intents = list(/datum/intent/hit)
 	obj_flags = CAN_BE_HIT
 	w_class = WEIGHT_CLASS_HUGE
+	var/quality = SMELTERY_LEVEL_NORMAL // For it not to ruin recipes that need it
 
 /*
 * Okay so the root of this proc defines dissasemble
