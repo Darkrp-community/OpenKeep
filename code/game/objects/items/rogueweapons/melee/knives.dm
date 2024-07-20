@@ -258,6 +258,7 @@
 	sellprice = 250
 	icon_state = "pdagger"
 	smeltresult = null
+	embedding = list("embed_chance" = 0) // Embedding the cursed dagger has the potential to cause duping issues. Keep it like this unless you want to do a lot of bug hunting.
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane/pickup(mob/living/M)
 	. = ..()
@@ -290,8 +291,8 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane/funny_attack_effects(mob/living/carbon/human/target, mob/living/user = usr, nodmg)
 	. = ..()
-	if(target.stat == DEAD || target.health > target.crit_threshold) // Trigger soul steal if the target is either dead or in crit
-		if(target.has_flaw(/datum/charflaw/hunted)) // The profane dagger only thirsts for those who are hunted.
+	if(target.stat == DEAD || (target.health < target.crit_threshold)) // Trigger soul steal if the target is either dead or in crit
+		if(target.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(target, TRAIT_ZIZOID_HUNTED)) // The profane dagger only thirsts for those who are hunted, by flaw or by zizoid curse.
 			if(target.client == null) //See if the target's soul has left their body
 				to_chat(user, "<span class='danger'>Your target's soul has already escaped its corpse...you try to call it back!</span>")
 				get_profane_ghost(target,user) //Proc to capture a soul that has left the body.
