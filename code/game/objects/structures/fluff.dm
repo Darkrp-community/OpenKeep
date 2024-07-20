@@ -867,9 +867,9 @@
 
 /obj/structure/fluff/statue/tdummy/attackby(obj/item/W, mob/user, params)
 	if(!user.cmode)
-		if(W.associated_skill)
-			if(user.mind)
-				if(isliving(user))
+		if(W.istrainable) // Prevents using dumb shit to train with. With temporary exceptions...
+			if(W.associated_skill)
+				if(user.mind && isliving(user))
 					var/mob/living/L = user
 					var/probby = (L.STALUC / 10) * 100
 					probby = min(probby, 99)
@@ -903,6 +903,17 @@
 						playsound(loc, 'sound/combat/hits/kick/stomp.ogg', 100, TRUE, -1)
 					flick(pick("p_dummy_smashed","p_dummy_smashedalt"),src)
 					return
+			else //sanity
+				to_chat(user, "<span class='warning'>This thing doesn't have a skill associated with it.</span>")
+				return
+		else // u dun goofed
+			var/mob/living/goof = user
+			user.visible_message("<span class='danger'>[user] awkwardly tries to hit \the [src] with \the [W], but \the [src] ripostes!</span>")
+			goof.AdjustKnockdown(1)
+			goof.throw_at(get_step(goof, get_dir(src,goof)), 2, 2, goof, spin = FALSE)
+			playsound(loc, 'sound/combat/hits/kick/stomp.ogg', 100, TRUE, -1)
+			flick(pick("p_dummy_smashed","p_dummy_smashedalt"),src)
+			return
 	..()
 
 /obj/structure/fluff/statue/spider

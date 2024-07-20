@@ -251,6 +251,106 @@
 				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
 				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I HAVE TRANSCENDED!</span>")
 
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane
+	name = "profane dagger"
+	desc = "A dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
+	force = 20 // Very powerful for a dagger, but still below a two-handed sword by a large margin. Fitting for an enchanted weapon.
+	sellprice = 250
+	icon_state = "pdagger"
+	smeltresult = null
+	embedding = list("embed_chance" = 0) // Embedding the cursed dagger has the potential to cause duping issues. Keep it like this unless you want to do a lot of bug hunting.
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/pickup(mob/living/M)
+	. = ..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if (!HAS_TRAIT(H, TRAIT_ASSASSIN)) // Non-assassins don't like holding the profane dagger.
+			H.add_stress(/datum/stressevent/profane)
+			to_chat(M, "<span class='danger'>Your breath chills as you pick up the dagger. You feel a sense of morbid wrongness!</span>")
+			var/message = pick(
+				"<span class='danger'>Help me...</span>",
+				"<span class='danger'>Save me...</span>",
+				"<span class='danger'>It's cold...</span>",
+				"<span class='danger'>Free us...please...</span>",
+				"<span class='danger'>Necra...deliver...us...</span>")
+			H.visible_message("profane dagger whispers, \"[message]\"")
+		else
+			var/message = pick(
+				"<span class='danger'>Why...</span>",
+				"<span class='danger'>...Who sent you?</span>",
+				"<span class='danger'>...You will burn for what you've done...</span>",
+				"<span class='danger'>I hate you...</span>",
+				"<span class='danger'>Someone stop them!</span>",
+				"<span class='danger'>Guards! Help!</span>",
+				"<span class='danger'>...What's that in your hand?</span>",
+				"<span class='danger'>...You love me...don't you?</span>",
+				"<span class='danger'>Wait...don't I know you?</span>",
+				"<span class='danger'>I thought you were...my friend...</span>",
+				"<span class='danger'>How long have I been in here...</span>")
+			H.visible_message("profane dagger whispers, \"[message]\"")
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/funny_attack_effects(mob/living/carbon/human/target, mob/living/user = usr, nodmg)
+	. = ..()
+	if(target.stat == DEAD || (target.health < target.crit_threshold)) // Trigger soul steal if the target is either dead or in crit
+		if(target.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(target, TRAIT_ZIZOID_HUNTED)) // The profane dagger only thirsts for those who are hunted, by flaw or by zizoid curse.
+			if(target.client == null) //See if the target's soul has left their body
+				to_chat(user, "<span class='danger'>Your target's soul has already escaped its corpse...you try to call it back!</span>")
+				get_profane_ghost(target,user) //Proc to capture a soul that has left the body.
+			else
+				user.adjust_triumphs(1)
+				init_profane_soul(target, user) //If they are still in their body, send them to the dagger!
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/init_profane_soul(mob/living/carbon/human/target, mob/user)
+	var/mob/dead/observer/profane/S = new /mob/dead/observer/profane(src)
+	S.AddComponent(/datum/component/profaned, src)
+	S.name = "soul of [target.real_name]"
+	S.real_name = "soul of [target.real_name]"
+	S.deadchat_name = target.real_name
+	S.ManualFollow(src)
+	S.key = target.key
+	S.language_holder = target.language_holder.copy(S)
+	target.visible_message("<span class='danger'>[target]'s soul is pulled from their body and sucked into the profane dagger!</span>", "<span class='danger'>My soul is trapped within the profane dagger. Damnation!</span>")
+	playsound(src, 'sound/magic/soulsteal.ogg', 100, extrarange = 5)
+	src.blade_int = src.max_blade_int // Stealing a soul successfully sharpens the blade.
+	src.obj_integrity = src.max_integrity // And fixes the dagger. No blacksmith required!
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/get_profane_ghost(mob/living/carbon/human/target, mob/user)
+	var/mob/dead/observer/chosen_ghost
+	var/mob/living/carbon/spirit/underworld_spirit = target.get_spirit() //Check if a soul has already gone to the underworld
+	if(underworld_spirit) // If they are in the underworld, pull them back to the real world and make them a normal ghost. Necra can't save you now!
+		var/mob/dead/observer/ghost = underworld_spirit.ghostize()
+		chosen_ghost = ghost.get_ghost(TRUE,TRUE)
+	else //Otherwise, try to get a ghost from the real world
+		chosen_ghost = target.get_ghost(TRUE,TRUE)
+	if(!chosen_ghost || !chosen_ghost.client) // If there is no valid ghost or if that ghost has no active player
+		return FALSE
+	user.adjust_triumphs(1)
+	init_profane_soul(target, user) // If we got the soul, store them in the dagger.
+	qdel(target) // Get rid of that ghost!
+	return TRUE
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/release_profane_souls(mob/user) // For ways to release the souls trapped within a profane dagger, such as a Necrite burial rite. Returns the number of freed souls.
+	var/freed_souls = 0
+	for(var/mob/dead/observer/profane/A in src) // for every trapped soul in the dagger, whether they have left the game or not
+		to_chat(A, "<b>I have been freed from my vile prison, I await Necra's cold grasp. Salvation!</b>")
+		A.returntolobby() //Send the trapped soul back to the lobby
+		user.visible_message("<span class='warning'>The [A.name] flows out from the profane dagger, finally free of its grasp.</span>")
+		freed_souls += 1
+	user.visible_message("<span class='warning'>The profane dagger shatters into putrid smoke!</span>")
+	qdel(src) // Delete the dagger. Forevermore.
+	return freed_souls
+
+/datum/component/profaned
+	var/atom/movable/container
+
+/datum/component/profaned/Initialize(atom/movable/container)
+	if(!istype(parent, /mob/dead/observer/profane))
+		return COMPONENT_INCOMPATIBLE
+	var/mob/dead/observer/profane/S = parent
+
+	src.container = container
+
+	S.forceMove(container)
 
 /obj/item/rogueweapon/huntingknife/stoneknife
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)

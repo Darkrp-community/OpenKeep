@@ -1,0 +1,89 @@
+"a" = (/obj/structure/roguetent,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"b" = (/turf/open/floor/rogue/twig,/area/rogue/outdoors/bog)
+"c" = (/obj/structure/bed/rogue/shit,/turf/open/floor/rogue/twig,/area/rogue/outdoors/bog)
+"d" = (/turf/open/water/swamp,/area/rogue/outdoors/bog)
+"e" = (/obj/structure/fluff/railing/fence{dir = 1},/obj/structure/fluff/railing/fence{dir = 8},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"f" = (/obj/machinery/light/rogue/campfire/densefire,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"g" = (/obj/effect/spawner/roguemap/grass_low,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"h" = (/obj/structure/fluff/railing/fence{dir = 4},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"i" = (/mob/living/carbon/human/species/orc/marauder,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"j" = (/obj/structure/flora/roguetree/stump/log,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"k" = (/obj/structure/fluff/railing/fence{dir = 1},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"l" = (/obj/item/restraints/legcuffs/beartrap/armed/camouflage,/obj/structure/flora/roguegrass,/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/bog)
+"m" = (/obj/structure/flora/roguetree/stump,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
+"n" = (/obj/machinery/light/rogue/firebowl/stump,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"o" = (/mob/living/carbon/human/species/orc/tribal,/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/bog)
+"p" = (/mob/living/carbon/human/species/orc/warlord/skilled,/turf/open/floor/rogue/twig,/area/rogue/outdoors/bog)
+"q" = (/obj/structure/flora/roguetree/evil,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"r" = (/obj/machinery/light/rogue/firebowl/stump,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
+"s" = (/obj/structure/flora/roguegrass,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
+"t" = (/obj/item/reagent_containers/food/snacks/rogue/meat/steak,/turf/open/floor/rogue/twig,/area/rogue/outdoors/bog)
+"u" = (/mob/living/carbon/human/species/goblin/npc/ambush,/turf/open/floor/rogue/twig,/area/rogue/outdoors/bog)
+"v" = (/obj/structure/fluff/railing/fence{dir = 1},/obj/structure/fluff/railing/fence{dir = 4},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"w" = (/obj/structure/closet/crate/chest/wicker,/obj/item/reagent_containers/food/snacks/rogue/meat/steak,/obj/item/reagent_containers/food/snacks/rogue/meat/steak,/turf/open/floor/rogue/twig,/area/rogue/outdoors/bog)
+"x" = (/obj/structure/table/wood/plain,/obj/item/clothing/head/roguetown/crown/circlet,/turf/open/floor/rogue/twig,/area/rogue/outdoors/bog)
+"y" = (/turf/closed/wall/mineral/rogue/tent,/area/rogue/outdoors/bog)
+"z" = (/obj/structure/fluff/railing/fence{dir = 8},/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/bog)
+"A" = (/obj/structure/flora/roguetree/evil,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
+"B" = (/obj/effect/decal/cleanable/blood/gibs/up,/obj/item/natural/hide,/obj/item/rope/chain,/turf/open/floor/rogue/twig,/area/rogue/outdoors/bog)
+"C" = (/obj/item/reagent_containers/food/snacks/rogue/meat/steak,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"D" = (/obj/structure/flora/roguetree/stump,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"E" = (/obj/item/natural/poo/horse,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"F" = (/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
+"G" = (/obj/structure/roguetent,/turf/open/floor/rogue/twig,/area/rogue/outdoors/bog)
+"H" = (/obj/structure/fluff/railing/fence,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
+"I" = (/mob/living/carbon/human/species/goblin/npc/ambush,/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/bog)
+"J" = (/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/bog)
+"L" = (/obj/structure/fluff/dryingrack,/obj/item/reagent_containers/food/snacks/rogue/meat/steak,/obj/effect/decal/cleanable/blood/gibs/core,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"M" = (/obj/structure/fluff/railing/fence{dir = 8},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"N" = (/obj/structure/table/wood/plain,/obj/item/reagent_containers/glass/cup/steel,/turf/open/floor/rogue/twig,/area/rogue/outdoors/bog)
+"O" = (/obj/structure/fluff/dryingrack,/obj/effect/decal/cleanable/blood/gibs/core,/obj/item/natural/hide,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"P" = (/obj/structure/closet/crate/chest/wicker,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/turf/open/floor/rogue/twig,/area/rogue/outdoors/bog)
+"Q" = (/obj/machinery/light/rogue/firebowl/standing,/turf/open/floor/rogue/twig,/area/rogue/outdoors/bog)
+"R" = (/turf/closed/wall/mineral/rogue/wood,/area/rogue/outdoors/bog)
+"S" = (/obj/item/needle/thorn,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"T" = (/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"U" = (/obj/item/restraints/legcuffs/beartrap/armed/camouflage,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"V" = (/mob/living/carbon/human/species/goblin/npc/ambush,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"W" = (/obj/structure/closet/crate/chest/wicker,/obj/item/ingot/steel,/obj/item/ingot/steel,/turf/open/floor/rogue/twig,/area/rogue/outdoors/bog)
+"X" = (/obj/item/restraints/legcuffs/beartrap/armed/camouflage,/obj/structure/flora/roguegrass,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"Y" = (/obj/structure/fluff/railing/fence{dir = 4},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
+"Z" = (/obj/structure/flora/roguegrass,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+
+(1,1,1) = {"
+TTTTFTTTTTFTJZTTTTTTTTTTTTTTTT
+FFTTFFFFFFFXTFdFTTddFTTTTTTTTT
+dFddddFFFFTZJFddddddFFFFdFdTTT
+ddddddddddrJJndddddddddddddFTT
+kkkkkkkkkkFJJXkkkkkkkkkkvddFFT
+TTTTddTTTTsJJFFTTTTTTTZThFddFT
+TTdddddTTFFTlFFTTTTTDTTThFFdFT
+TFdddZTTgFFTJgTTTjTZTTTDhFFdFT
+TFdTqTTFFFmJTTsFZTTTgFFZhFFdFT
+FFTZTTFFFTZJTTTFFFFFFFFTYFddFF
+FTDTFFFFekkJTTTTTTFFFFFFYddddF
+FFTTTTTTMLTTJTkkkkvTTFTFYTdddF
+TFFTRyyyRTVTJJJsFrhTTTTqhTddFF
+TTTUycbbGTToJiJFFFTkTTDThdddFF
+TZTTycucyJJTTTJJFFFFFTTUhdddFT
+TTTTRyyyRJgTfTTJVFFFFTTThdddFT
+TTZTZTTZMTIJTTJTTTTFFTZThFFdFT
+TgTTTTTTzTTJJJIOTZFFhZTThFFdFT
+ZTTFFFTTJZTTJCTTSFFFFTkvhFFFFT
+TTZFFFFJRyyyGyyyRFFFTTThhdFFTT
+TTFFFFFJycbbbbbcyFTRyayRhdFTTT
+TTTZFFFFycbbbbbcyTgycbcyhdFTTT
+TRyybRFFycQbbbQcyTTyubtyhddFdT
+TTTTTbJTycbbpbbcyTTycbcyhTdddT
+TbcTTbJTybbbbbbPyHHRyyyRhddddT
+TycbbTJTyWbNcxbwyFFFTTTThddddF
+FRybTRgTRyyyyyyyRFFFTTTThddddF
+dFFTTTTJJTTTZFFFFFFAFTDThFdFdF
+ddFTRGyRTFJZFFFFAFFFFTTThTFTdF
+ddFTybByFFJJFTFFFFAFFZTZhTTddF
+dddFRyyRFFTTJTAFFAFTTTZThFdddT
+ddddFFFFddFTTTFFFFZTETTZhFddFT
+ddddFddFddFFTTJJJTTTJTTThddFTT
+ddddddddddFFUTDTTZJJTZTEhdddFF
+ddddddddddddFTTTZZTETTTThddddF
+"}

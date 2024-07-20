@@ -34,6 +34,7 @@
 	race = /datum/species/goblin/hell
 /datum/species/goblin/hell
 	name = "hell goblin"
+	id = "goblin_hell"
 	raceicon = "goblin_hell"
 
 /mob/living/carbon/human/species/goblin/cave
@@ -44,6 +45,7 @@
 /mob/living/carbon/human/species/goblin/npc/ambush/cave
 	race = /datum/species/goblin/cave
 /datum/species/goblin/cave
+	id = "goblin_cave"
 	raceicon = "goblin_cave"
 
 /mob/living/carbon/human/species/goblin/sea
@@ -55,6 +57,7 @@
 	race = /datum/species/goblin/sea
 /datum/species/goblin/sea
 	raceicon = "goblin_sea"
+	id = "goblin_sea"
 
 /mob/living/carbon/human/species/goblin/moon
 	name = "moon goblin"
