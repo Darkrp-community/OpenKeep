@@ -1,51 +1,43 @@
 /datum/anvil_recipe/valuables
 	appro_skill = /datum/skill/craft/blacksmithing
-
-/datum/anvil_recipe/valuables/gold
-	name = "gold statue"
-	req_bar = /obj/item/ingot/gold
-	created_item = /obj/item/roguestatue/gold
+	i_type = "Valuables"
 
 /datum/anvil_recipe/valuables/silver
-	name = "silver statue"
+	name = "Argent Statue"
+	recipe_name = "a Statue"
 	req_bar = /obj/item/ingot/silver
 	created_item = /obj/item/roguestatue/silver
 
+/datum/anvil_recipe/valuables/ringg
+	name = "Gold Rings x3"
+	recipe_name = "three Rings" // For the Elven kings under the sky...
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/ring/gold
+	createmultiple = TRUE
+	createditem_num = 2
+
+/datum/anvil_recipe/valuables/gold
+	name = "Golden Statue"
+	recipe_name = "a Statue"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/roguestatue/gold
+
 /datum/anvil_recipe/valuables/iron
-	name = "iron statue"
+	name = "Iron statue"
+	recipe_name = "a Statue"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/roguestatue/iron
 
+/datum/anvil_recipe/valuables/rings
+	name = "Silver Rings x3"
+	recipe_name = "three Rings"
+	req_bar = /obj/item/ingot/silver
+	created_item = /obj/item/clothing/ring/silver
+	createmultiple = TRUE
+	createditem_num = 2
+
 /datum/anvil_recipe/valuables/steel
-	name = "steel statue"
+	name = "Steel statue"
+	recipe_name = "a Statue"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/roguestatue/steel
-
-/*
-/datum/anvil_recipe/valuables/eargol
-	name = "gold earrings"
-	req_bar = /obj/item/ingot/gold
-	created_item = list(/obj/item/rogueacc/eargold,
-						/obj/item/rogueacc/eargold,
-						/obj/item/rogueacc/eargold)
-
-/datum/anvil_recipe/valuables/earsil
-	name = "silver earrings"
-	req_bar = /obj/item/ingot/silver
-	created_item = list(/obj/item/rogueacc/earsilver,
-						/obj/item/rogueacc/earsilver,
-						/obj/item/rogueacc/earsilver)*/
-
-/datum/anvil_recipe/valuables/ringg
-	name = "gold rings"
-	req_bar = /obj/item/ingot/gold
-	created_item = list(/obj/item/clothing/ring/gold,
-						/obj/item/clothing/ring/gold,
-						/obj/item/clothing/ring/gold)
-
-/datum/anvil_recipe/valuables/rings
-	name = "silver rings"
-	req_bar = /obj/item/ingot/silver
-	created_item = list(/obj/item/clothing/ring/silver,
-						/obj/item/clothing/ring/silver,
-						/obj/item/clothing/ring/silver)

@@ -61,7 +61,7 @@
 					C.visible_message("<span class='warning'>[user] ties [C] with [src.name].</span>", \
 										"<span class='danger'>[user] ties me up with [src.name].</span>")
 					SSblackbox.record_feedback("tally", "handcuffs", 1, type)
-
+					user.mind?.adjust_experience(/datum/skill/craft/traps, C.STAINT, FALSE)
 					log_combat(user, C, "handcuffed")
 				else
 					to_chat(user, "<span class='warning'>I fail to tie up [C]!</span>")
@@ -80,7 +80,7 @@
 					C.visible_message("<span class='warning'>[user] ties [C]'s legs with [src.name].</span>", \
 										"<span class='danger'>[user] ties my legs with [src.name].</span>")
 					SSblackbox.record_feedback("tally", "legcuffs", 1, type)
-
+					user.mind?.adjust_experience(/datum/skill/craft/traps, C.STAINT, FALSE)
 					log_combat(user, C, "legcuffed", TRUE)
 				else
 					to_chat(user, "<span class='warning'>I fail to tie up [C]!</span>")
@@ -131,6 +131,7 @@
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "chain"
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
+	force = 10
 	throwforce = 5
 	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 1

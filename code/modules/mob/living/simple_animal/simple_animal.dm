@@ -411,6 +411,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 /mob/living/simple_animal/MiddleClick(mob/living/user, params)
 	if(stat == DEAD)
 		var/obj/item/held_item = user.get_active_held_item()
+		var/boon = user.mind.get_learning_boon(/datum/skill/labor/butchering)
 		if(held_item)
 			if((butcher_results || guaranteed_butcher_results) && held_item.get_sharpness() && held_item.wlength == WLENGTH_SHORT)
 				var/used_time = 210
@@ -418,9 +419,9 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 					used_time -= (user.mind.get_skill_level(/datum/skill/labor/butchering) * 30)
 				visible_message("[user] begins to butcher [src].")
 				playsound(src, 'sound/foley/gross.ogg', 100, FALSE)
-				var/amt2raise = user.STAINT/1.5 // this is due to the fact that butchering is not as spammable as training a sword because you cant just spam click
+				var/amt2raise = user.STAINT // this is due to the fact that butchering is not as spammable as training a sword because you cant just spam click
 				if(do_after(user, used_time, target = src))
-					user.mind.adjust_experience(/datum/skill/labor/butchering, amt2raise, FALSE)
+					user.mind.adjust_experience(/datum/skill/labor/butchering, amt2raise * boon, FALSE)
 					butcher(user)
 	..()
 

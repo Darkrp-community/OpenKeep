@@ -1,7 +1,7 @@
 
 
 /obj/item/rogueweapon/huntingknife
-	force = 10
+	force = 12
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	name = "hunting knife"
@@ -26,7 +26,9 @@
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
 	throwforce = 12
 	wdefense = 3
+	wbalance = 1 // All knives are swift, bonus to SPD
 	smeltresult = /obj/item/ingot/steel
+	sellprice = 30
 
 
 
@@ -89,7 +91,6 @@
 	clickcd = CLICK_CD_MELEE
 
 /obj/item/rogueweapon/huntingknife/cleaver
-	force = 10
 	name = "cleaver"
 	desc = "A chef's tool turned armament, cleave off cumbersome flesh with rudimentary ease."
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
@@ -102,13 +103,14 @@
 	slot_flags = ITEM_SLOT_HIP
 	thrown_bclass = BCLASS_CHOP
 	w_class = WEIGHT_CLASS_NORMAL
-	smeltresult = /obj/item/ingot/iron
+	smeltresult = /obj/item/ingot/steel
+	wbalance = 0 // Except this one, too huge and used to chop
 
 /obj/item/rogueweapon/huntingknife/cleaver/combat
-	force = 12
 	name = "knife"
 	desc = "A short blade that even the weakest of hands can aspire to do harm with."
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
+	force = 10
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	icon_state = "combatknife"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	parrysound = list('sound/combat/parry/bladed/bladedmedium (1).ogg','sound/combat/parry/bladed/bladedmedium (2).ogg','sound/combat/parry/bladed/bladedmedium (3).ogg')
@@ -119,6 +121,8 @@
 	thrown_bclass = BCLASS_CHOP
 	w_class = WEIGHT_CLASS_NORMAL
 	smeltresult = /obj/item/ingot/iron
+	wbalance = 1
+	sellprice = 15
 
 /obj/item/rogueweapon/huntingknife/cleaver/getonmobprop(tag)
 	. = ..()
@@ -136,14 +140,15 @@
 
 /obj/item/rogueweapon/huntingknife/idagger
 	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut)
-	name = "dagger"
+	name = "iron dagger"
 	desc = "Thin, sharp, pointed death."
-	force = 12
+	force = 10
 	icon_state = "idagger"
 	smeltresult = null
+	sellprice = 15
 
 /obj/item/rogueweapon/huntingknife/idagger/steel
-	name = "dagger"
+	name = "steel dagger"
 	desc = "A dagger made of refined steel."
 	force = 14
 	icon_state = "sdagger"
@@ -151,10 +156,11 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	icon_state = "sdaggeralt"
+	desc = "A dagger of refined steel, and even more refined appearance."
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
 	name = "dagger"
-	desc = "A dagger made of fine silver."
+	desc = "A dagger made of fine silver, the bane of the undead."
 	force = 12
 	icon_state = "sildagger"
 	smeltresult = null
@@ -243,19 +249,120 @@
 				s_user.Stun(10)
 				s_user.Paralyze(10)
 				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
-				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I AM THE ANCIENT!</span>")
+				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I HAVE TRANSCENDED!</span>")
 
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane
+	name = "profane dagger"
+	desc = "A dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
+	force = 20 // Very powerful for a dagger, but still below a two-handed sword by a large margin. Fitting for an enchanted weapon.
+	sellprice = 250
+	icon_state = "pdagger"
+	smeltresult = null
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/pickup(mob/living/M)
+	. = ..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if (!HAS_TRAIT(H, TRAIT_ASSASSIN)) // Non-assassins don't like holding the profane dagger.
+			H.add_stress(/datum/stressevent/profane)
+			to_chat(M, "<span class='danger'>Your breath chills as you pick up the dagger. You feel a sense of morbid wrongness!</span>")
+			var/message = pick(
+				"<span class='danger'>Help me...</span>",
+				"<span class='danger'>Save me...</span>",
+				"<span class='danger'>It's cold...</span>",
+				"<span class='danger'>Free us...please...</span>",
+				"<span class='danger'>Necra...deliver...us...</span>")
+			H.visible_message("profane dagger whispers, \"[message]\"")
+		else
+			var/message = pick(
+				"<span class='danger'>Why...</span>",
+				"<span class='danger'>...Who sent you?</span>",
+				"<span class='danger'>...You will burn for what you've done...</span>",
+				"<span class='danger'>I hate you...</span>",
+				"<span class='danger'>Someone stop them!</span>",
+				"<span class='danger'>Guards! Help!</span>",
+				"<span class='danger'>...What's that in your hand?</span>",
+				"<span class='danger'>...You love me...don't you?</span>",
+				"<span class='danger'>Wait...don't I know you?</span>",
+				"<span class='danger'>I thought you were...my friend...</span>",
+				"<span class='danger'>How long have I been in here...</span>")
+			H.visible_message("profane dagger whispers, \"[message]\"")
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/funny_attack_effects(mob/living/carbon/human/target, mob/living/user = usr, nodmg)
+	. = ..()
+	if(target.stat == DEAD || target.health > target.crit_threshold) // Trigger soul steal if the target is either dead or in crit
+		if(target.has_flaw(/datum/charflaw/hunted)) // The profane dagger only thirsts for those who are hunted.
+			if(target.client == null) //See if the target's soul has left their body
+				to_chat(user, "<span class='danger'>Your target's soul has already escaped its corpse...you try to call it back!</span>")
+				get_profane_ghost(target,user) //Proc to capture a soul that has left the body.
+			else
+				user.adjust_triumphs(1)
+				init_profane_soul(target, user) //If they are still in their body, send them to the dagger!
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/init_profane_soul(mob/living/carbon/human/target, mob/user)
+	var/mob/dead/observer/profane/S = new /mob/dead/observer/profane(src)
+	S.AddComponent(/datum/component/profaned, src)
+	S.name = "soul of [target.real_name]"
+	S.real_name = "soul of [target.real_name]"
+	S.deadchat_name = target.real_name
+	S.ManualFollow(src)
+	S.key = target.key
+	S.language_holder = target.language_holder.copy(S)
+	target.visible_message("<span class='danger'>[target]'s soul is pulled from their body and sucked into the profane dagger!</span>", "<span class='danger'>My soul is trapped within the profane dagger. Damnation!</span>")
+	playsound(src, 'sound/magic/soulsteal.ogg', 100, extrarange = 5)
+	src.blade_int = src.max_blade_int // Stealing a soul successfully sharpens the blade.
+	src.obj_integrity = src.max_integrity // And fixes the dagger. No blacksmith required!
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/get_profane_ghost(mob/living/carbon/human/target, mob/user)
+	var/mob/dead/observer/chosen_ghost
+	var/mob/living/carbon/spirit/underworld_spirit = target.get_spirit() //Check if a soul has already gone to the underworld
+	if(underworld_spirit) // If they are in the underworld, pull them back to the real world and make them a normal ghost. Necra can't save you now!
+		var/mob/dead/observer/ghost = underworld_spirit.ghostize()
+		chosen_ghost = ghost.get_ghost(TRUE,TRUE)
+	else //Otherwise, try to get a ghost from the real world
+		chosen_ghost = target.get_ghost(TRUE,TRUE)
+	if(!chosen_ghost || !chosen_ghost.client) // If there is no valid ghost or if that ghost has no active player
+		return FALSE
+	user.adjust_triumphs(1)
+	init_profane_soul(target, user) // If we got the soul, store them in the dagger.
+	qdel(target) // Get rid of that ghost!
+	return TRUE
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/release_profane_souls(mob/user) // For ways to release the souls trapped within a profane dagger, such as a Necrite burial rite. Returns the number of freed souls.
+	var/freed_souls = 0
+	for(var/mob/dead/observer/profane/A in src) // for every trapped soul in the dagger, whether they have left the game or not
+		to_chat(A, "<b>I have been freed from my vile prison, I await Necra's cold grasp. Salvation!</b>")
+		A.returntolobby() //Send the trapped soul back to the lobby
+		user.visible_message("<span class='warning'>The [A.name] flows out from the profane dagger, finally free of its grasp.</span>")
+		freed_souls += 1
+	user.visible_message("<span class='warning'>The profane dagger shatters into putrid smoke!</span>")
+	qdel(src) // Delete the dagger. Forevermore.
+	return freed_souls
+
+/datum/component/profaned
+	var/atom/movable/container
+
+/datum/component/profaned/Initialize(atom/movable/container)
+	if(!istype(parent, /mob/dead/observer/profane))
+		return COMPONENT_INCOMPATIBLE
+	var/mob/dead/observer/profane/S = parent
+
+	src.container = container
+
+	S.forceMove(container)
 
 /obj/item/rogueweapon/huntingknife/stoneknife
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)
 	name = "stone knife"
 	desc = "A tool favored by the wood-elves, easy to make, useful for skinning the flesh of beast and man alike."
 	icon_state = "stone_knife"
-	smeltresult = null
+	force = 8
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	max_integrity = 15
 	max_blade_int = 15
 	wdefense = 1
 	smeltresult = /obj/item/ash
+	sellprice = 5
 
 /obj/item/rogueweapon/knife/copperdagger
 	force = 8
@@ -283,3 +390,4 @@
 	throwforce = 12
 	wdefense = 3
 	smeltresult = /obj/item/ingot/copper
+	sellprice = 10

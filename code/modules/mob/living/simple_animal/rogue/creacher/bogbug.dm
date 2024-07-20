@@ -45,6 +45,7 @@
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/bogbug
+	body_eater = TRUE
 
 /obj/effect/decal/remains/bogbug
 	name = "remains"
@@ -89,11 +90,6 @@
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
-
-/mob/living/simple_animal/hostile/retaliate/rogue/bogbug/find_food()
-	. = ..()
-	if(!.)
-		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bogbug/simple_limb_hit(zone)
 	if(!zone)
