@@ -55,7 +55,7 @@
 	backl = /obj/item/rogueweapon/spear
 	head = /obj/item/clothing/head/roguetown/helmet/leather
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	if(prob(23))
+	if(prob(33))
 		if(!H.has_language(/datum/language/elvish))
 			H.grant_language(/datum/language/elvish)
 			to_chat(H, "<span class='info'>I can speak Elfish with ,e before my speech.</span>")

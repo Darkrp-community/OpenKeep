@@ -2,7 +2,7 @@
 	name = "Severe Anxiety"
 	form = "Infection"
 	max_stages = 4
-	spread_text = "On contact"
+	spread_text = "Fluids"
 	spread_flags = DISEASE_SPREAD_BLOOD | DISEASE_SPREAD_CONTACT_SKIN | DISEASE_SPREAD_CONTACT_FLUIDS
 	cure_text = "Ethanol"
 	cures = list(/datum/reagent/consumable/ethanol)

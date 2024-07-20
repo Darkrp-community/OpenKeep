@@ -205,7 +205,8 @@
 						// No duping exp gains by attacking with a shield on active hand
 						if(used_weapon == offhand && istype(used_weapon, /obj/item/rogueweapon/shield))
 							// Most shield users aren't bright, let's not make it near impossible to learn
-							H.mind?.adjust_experience(/datum/skill/combat/shields, max(round(H.STAINT - 3), 0), FALSE)
+							var/boon = H.mind?.get_learning_boon(/obj/item/rogueweapon/shield)
+							H.mind?.adjust_experience(/datum/skill/combat/shields, max(round(H.STAINT * boon), 0), FALSE)
 						else
 							H.mind?.adjust_experience(used_weapon.associated_skill, max(round(H.STAINT/2), 0), FALSE)
 
