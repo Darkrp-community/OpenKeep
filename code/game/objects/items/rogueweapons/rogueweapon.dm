@@ -37,6 +37,7 @@
 	var/list/possible_enhancements
 	var/renamed_name
 	var/axe_cut = 0
+	istrainable = TRUE // You can train weapon skills on a dummy with these.
 
 /obj/item/rogueweapon/Initialize()
 	. = ..()
