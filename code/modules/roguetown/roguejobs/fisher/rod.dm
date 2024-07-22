@@ -98,7 +98,8 @@
 							playsound(src.loc, 'sound/items/fishing_plouf.ogg', 100, TRUE)
 							if(!do_after(user,ow, target = target))
 								var/mob/living/fisherman = user
-								if(ismob(A)) // TODO: Baits with mobs on their fishloot lists
+								var/boon = user.mind.get_learning_boon(/datum/skill/labor/fishing)
+								if(ismob(A)) // TODO: Baits with mobs on their fishloot lists OR water tiles with their own fish loot pools
 									var/mob/M = A
 									if(M.type in subtypesof(/mob/living/simple_animal/hostile))
 										new M(target)
@@ -108,7 +109,7 @@
 								else
 									new A(user.loc)
 									to_chat(user, "<span class='warning'>Reel 'em in!</span>")
-									user.mind.adjust_experience(/datum/skill/labor/fishing, round(fisherman.STAINT + (sl * 5), 1), FALSE) // Level up!
+									user.mind.adjust_experience(/datum/skill/labor/fishing, round(fisherman.STAINT * boon, 1), FALSE) // Level up!
 								playsound(src.loc, 'sound/items/Fish_out.ogg', 100, TRUE)
 								if(prob(80 - (sl * 10))) // Higher skill levels make you less likely to lose your bait
 									to_chat(user, "<span class='warning'>Damn, it ate my bait.</span>")

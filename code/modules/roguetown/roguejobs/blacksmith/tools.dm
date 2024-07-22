@@ -44,15 +44,26 @@
 						repair_percent = 0
 				else
 					repair_percent = max(user.mind.get_skill_level(I.anvilrepair) * 0.03, 0.01)
-			playsound(src,'sound/items/bsmithfail.ogg', 100, FALSE)
-			if(repair_percent)
-				repair_percent = repair_percent * I.max_integrity
-				I.obj_integrity = min(I.obj_integrity+repair_percent, I.max_integrity)
-				user.visible_message("<span class='info'>[user] repairs [I]!</span>")
-			else
-				user.visible_message("<span class='warning'>[user] damages [I]!</span>")
-				I.take_damage(5, BRUTE, "melee")
-			return
+			
+			if(I.obj_integrity < I.max_integrity) // Gain experience only if you effectively repair the item
+				if(repair_percent)
+					repair_percent = repair_percent * I.max_integrity
+					I.obj_integrity = min(I.obj_integrity+repair_percent, I.max_integrity)
+					var/mob/living/L = user
+					var/amt2raise = floor(L.STAINT * 0.25)
+					user.mind.adjust_experience(I.anvilrepair, amt2raise, FALSE) // Some exp from repairs
+					user.visible_message("<span class='info'>[user] repairs [I]!</span>")
+					playsound(src,pick('sound/items/bsmith1.ogg','sound/items/bsmith2.ogg','sound/items/bsmith3.ogg','sound/items/bsmith4.ogg'), 100, FALSE)
+				else
+					user.visible_message("<span class='warning'>[user] damages [I]!</span>")
+					playsound(src,'sound/items/bsmithfail.ogg', 100, FALSE)
+					I.take_damage(5, BRUTE, "melee")
+				return
+			else // Stop iiit, he's already... fixed?
+				to_chat(user, "\The [I] is already fully repaired!")
+				playsound(src,'sound/items/bsmithfail.ogg', 100, FALSE)
+				return
+
 	if(isstructure(O))
 		var/obj/structure/I = O
 		if(I.hammer_repair && I.max_integrity && !I.obj_broken)

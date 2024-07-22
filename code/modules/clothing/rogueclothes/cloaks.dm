@@ -7,6 +7,9 @@
 	edelay_type = 1
 	equip_delay_self = 10
 	bloody_icon_state = "bodyblood"
+	sewrepair = TRUE
+	anvilrepair = null
+	smeltresult = /obj/item/ash
 
 
 //////////////////////////
@@ -726,7 +729,7 @@
 
 /obj/item/clothing/cloak/chasuble
 	name = "chasuble"
-	desc = ""
+	desc = "Pristine white liturgical vestments with a golden psycross adornment."
 	icon_state = "chasuble"
 	body_parts_covered = CHEST|GROIN|ARMS
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
@@ -764,6 +767,20 @@
 	sellprice = 50
 	nodismemsleeves = TRUE
 
+/obj/item/clothing/cloak/tribal
+	name = "tribal pelt"
+	desc = "A haphazardly cured pelt of a creecher, thrown on top of one's body or armor, to serve as additional protection against the cold. Itchy."
+	icon_state = "tribal"
+	alternate_worn_layer = CLOAK_BEHIND_LAYER
+	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
+	body_parts_covered = CHEST|GROIN|VITALS
+	allowed_sex = list(MALE, FEMALE)
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "dwarf")
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	nodismemsleeves = TRUE
+	boobed = FALSE
+	sellprice = 10
+
 /obj/item/clothing/cloak/heartfelt
 	name = "red cloak"
 	desc = "A typical cloak, this one is in red colours."
@@ -778,7 +795,7 @@
 	nodismemsleeves = TRUE
 
 /obj/item/clothing/cloak/half
-	name = "halfcloak"
+	name = "half cloak"
 	desc = "A cloak that covers only half of the body."
 	color = null
 	icon_state = "halfcloak"
