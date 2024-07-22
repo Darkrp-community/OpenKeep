@@ -183,6 +183,8 @@
 				else
 					attacker_skill = U.mind.get_skill_level(/datum/skill/combat/unarmed)
 					prob2defend -= (attacker_skill * 20)
+			else
+				prob2defend -= U.STASTR * 3
 
 			prob2defend = clamp(prob2defend, 5, 95)
 			if(src.client?.prefs.showrolls)
@@ -399,6 +401,8 @@
 			if(I) //the enemy attacked us with a weapon
 				if(!I.associated_skill) //the enemy weapon doesn't have a skill because its improvised, so penalty to attack
 					prob2defend = prob2defend + 10
+					if(H.mind)
+						prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/misc/athletics) * 15)
 				else
 					if(H.mind)
 						prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/misc/athletics) * 10)
@@ -409,7 +413,7 @@
 				if(UH)
 					if(UH.used_intent.unarmed)
 						if(UH.mind)
-							prob2defend = prob2defend - (UH.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
+							prob2defend = prob2defend - (UH.mind.get_skill_level(/datum/skill/combat/unarmed) * 20)
 						if(H.mind)
 							prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
 			prob2defend = clamp(prob2defend, 5, 95)

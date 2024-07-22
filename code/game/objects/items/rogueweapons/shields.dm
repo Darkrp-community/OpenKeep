@@ -21,7 +21,7 @@
 	resistance_flags = FLAMMABLE
 	can_parry = TRUE
 	associated_skill = /datum/skill/combat/shields
-	wdefense = 5
+	wdefense = 8
 	var/coverage = 90
 	parrysound = "parrywood"
 	attacked_sound = "parrywood"
@@ -112,7 +112,7 @@
 	wlength = WLENGTH_NORMAL
 	wbalance = -1 // Heavy, big shield
 	resistance_flags = FLAMMABLE
-	wdefense = 6
+	wdefense = 10
 	coverage = 65
 	parrysound = list('sound/combat/parry/shield/towershield (1).ogg','sound/combat/parry/shield/towershield (2).ogg','sound/combat/parry/shield/towershield (3).ogg')
 	max_integrity = 300
@@ -138,7 +138,7 @@
 	wlength = WLENGTH_NORMAL
 	resistance_flags = null
 	flags_1 = CONDUCT_1
-	wdefense = 8
+	wdefense = 12
 	coverage = 70
 	attacked_sound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
 	parrysound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')

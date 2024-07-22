@@ -3,6 +3,9 @@
 	icon_state = "loot"
 	probby = 50
 
+/obj/effect/spawner/roguemap/loot/process()
+	. = ..()
+
 /obj/effect/spawner/roguemap/loot/common
 	spawned = list(
 		/obj/item/roguecoin/copper/pile = 15,		
@@ -21,6 +24,9 @@
 		/obj/item/clothing/neck/roguetown/coif = 3,
 		/obj/item/clothing/shoes/roguetown/gladiator = 5
 		)
+
+/obj/effect/spawner/roguemap/loot/common/process()
+	. = ..()
 
 /obj/effect/spawner/roguemap/sewerencounter
 	icon_state = "srat"

@@ -45,11 +45,20 @@
 		for(var/obj/item/I in things)
 			STR.remove_from_storage(I, get_turf(src))
 
-// Until ninja stars are fixed (able to be removed from embedding), replacing them with poison berries for arrow crafting.
+/obj/item/storage/belt/rogue/leather/assassin // Assassin's super edgy and cool belt can carry normal items (for poison vial), but can only carry 2 items
+	heldz_items = 2
+
+/obj/item/storage/belt/rogue/leather/assassin/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		STR.max_combined_w_class = 6
+		STR.max_w_class = WEIGHT_CLASS_NORMAL
+		STR.max_items = heldz_items
+//Assassin's belt starts with their unique dagger and a vial of highly-deadly poison.
 /obj/item/storage/belt/rogue/leather/assassin/PopulateContents()
-	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
-	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
-	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
+	new /obj/item/reagent_containers/glass/bottle/rogue/poison(src)
+	new /obj/item/rogueweapon/huntingknife/idagger/steel/profane(src)
 
 /obj/item/storage/belt/rogue/leather/plaquegold
 	name = "plaque belt"
