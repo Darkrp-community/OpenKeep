@@ -129,13 +129,19 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 			if(user.m_intent != MOVE_INTENT_SNEAK)
 				playsound(user, 'sound/foley/climb.ogg', 100, TRUE)
 			var/pulling = user.pulling
+			var/wasbuckled = FALSE
+			if(pulling)
+				if(ismob(pulling))
+					var/mob/pullin = pulling
+					if(pullin.buckled)
+						wasbuckled = TRUE
 			user.forceMove(target)
 			if(ismob(pulling))
 				user.pulling.forceMove(target)
 				var/mob/pullin = pulling
-				if(pullin.buckled)
+				if(wasbuckled)
 					user.buckle_mob(pullin, TRUE, TRUE, 90, 0, 0)
-			user.start_pulling(pulling,supress_message = TRUE)
+				user.start_pulling(pulling,supress_message = TRUE)
 
 /turf/open/transparent/openspace/attack_ghost(mob/dead/observer/user)
 	var/turf/target = get_step_multiz(src, DOWN)

@@ -97,9 +97,13 @@
 /datum/species/tieberian/get_skin_list()
 	return sortList(list(
 		"Crimson Land" = SKIN_COLOR_CRIMSON_LAND,
-		"Halfling" = SKIN_COLOR_HALFLING,
-		"Roza" = SKIN_COLOR_ROZA,
 		"Zanguine" = SKIN_COLOR_ZANGUINE,
+		"Sun Stained" = SKIN_COLOR_SUNSTAINED,
+		"Sundered" = SKIN_COLOR_SUNDERED,
+		"Zarkana" = SKIN_COLOUR_ARCANA,
+		"Zarconum" = SKIN_COLOUR_ZARCONUM,
+		"Abyssium" = SKIN_COLOUR_ABYSS,
+		"Ash" = SKIN_COLOUR_ASH,
 	))
 
 /datum/species/tieberian/get_hairc_list()

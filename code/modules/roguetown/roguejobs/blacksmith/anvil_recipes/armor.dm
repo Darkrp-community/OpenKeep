@@ -86,7 +86,7 @@
 	name = "Bevor"
 	recipe_name = "a Bevor"
 	req_bar = /obj/item/ingot/steel
-	created_item = list(/obj/item/clothing/neck/roguetown/bevor)
+	created_item = /obj/item/clothing/neck/roguetown/bevor
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/brigadine
@@ -232,21 +232,21 @@
 	name = "Plate gauntlets"
 	recipe_name = "some Plate Gauntlets"
 	req_bar = /obj/item/ingot/steel
-	created_item = list(/obj/item/clothing/gloves/roguetown/plate)
+	created_item = /obj/item/clothing/gloves/roguetown/plate
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/plateboot
 	name = "Plated boots"
 	recipe_name = "some Plated Boots"
 	req_bar = /obj/item/ingot/steel
-	created_item = list(/obj/item/clothing/shoes/roguetown/boots/armor)
+	created_item = /obj/item/clothing/shoes/roguetown/boots/armor
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/helmetsall
 	name = "Sallet"
 	recipe_name = "a Sallet"
 	req_bar = /obj/item/ingot/steel
-	created_item = list(/obj/item/clothing/head/roguetown/helmet/sallet)
+	created_item = /obj/item/clothing/head/roguetown/helmet/sallet
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/scalemail

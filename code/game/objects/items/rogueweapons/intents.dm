@@ -401,7 +401,7 @@
 	releasedrain = 10
 	misscost = 5
 	candodge = TRUE
-	canparry = FALSE
+	canparry = TRUE
 
 /datum/intent/unarmed/grab/rmb_ranged(atom/target, mob/user)
 	if(ismob(target))
