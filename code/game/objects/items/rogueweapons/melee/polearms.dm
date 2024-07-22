@@ -46,17 +46,19 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	blade_dulling = DULLING_BASHCHOP
+	sharpness = IS_BLUNT
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	walking_stick = TRUE
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	max_blade_int = 120
 	max_integrity = 200
 	wdefense = 5
 	bigboy = TRUE
 	gripsprite = TRUE
 	associated_skill = /datum/skill/combat/polearms
+	sellprice = 5
 
 /obj/item/rogueweapon/woodstaff/getonmobprop(tag)
 	. = ..()
@@ -82,6 +84,7 @@
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
 	blade_dulling = DULLING_BASHCHOP
+	resistance_flags = FIRE_PROOF // Leniency for unique items
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
@@ -91,6 +94,7 @@
 	bigboy = TRUE
 	gripsprite = TRUE
 	associated_skill = /datum/skill/combat/polearms
+	sellprice = 100
 
 /obj/item/rogueweapon/woodstaff/aries/getonmobprop(tag)
 	. = ..()
@@ -120,6 +124,7 @@
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	max_blade_int = 100
 	max_integrity = 300
 	minstr = 8
@@ -131,6 +136,7 @@
 	wdefense = 4
 	thrown_bclass = BCLASS_STAB
 	throwforce = 25
+	sellprice = 20
 
 /obj/item/rogueweapon/spear/getonmobprop(tag)
 	. = ..()
@@ -155,6 +161,7 @@
 	inhand_y_dimension = 64
 	bigboy = TRUE
 	gripsprite = TRUE
+	resistance_flags = FIRE_PROOF
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
 	minstr = 8
@@ -166,6 +173,8 @@
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 5
+	wbalance = -1
+	sellprice = 60
 
 
 /obj/item/rogueweapon/spear/stone
@@ -191,6 +200,7 @@
 	walking_stick = TRUE
 	wdefense = 4
 	max_integrity = 120
+	sellprice = 5
 
 // Halberd Class
 
@@ -238,7 +248,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	minstr = 8
-	max_blade_int = 100
+	max_blade_int = 300
 	max_integrity = 500
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/polearms
@@ -246,6 +256,8 @@
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 5
+	wbalance = -1
+	sellprice = 90
 
 /obj/item/rogueweapon/halberd/getonmobprop(tag)
 	. = ..()
@@ -260,21 +272,15 @@
 
 /obj/item/rogueweapon/halberd/bardiche
 	name = "bardiche"
-	desc = "A grand ax of northernly design, renown for decisive and delimbing as well as stunning bashes."
+	desc = "A grand axe of northernly design, renowned for easily chopping off limbs clean with brutal strength."
 	icon_state = "bardiche"
-	smeltresult = /obj/item/ingot/iron
-	max_blade_int = 300
-
-/obj/item/rogueweapon/halberd/iron
-	name = "iron halberd"
-	desc = ""
 	force = 12
-	force_wielded = 30
-	icon_state = "ihalberd"
+	force_wielded = 25
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	smeltresult = /obj/item/ingot/iron
-	max_blade_int = 300
+	max_blade_int = 200
 	max_integrity = 300
-	
+	sellprice = 40
 
 /obj/item/rogueweapon/eaglebeak
 	force = 15
@@ -303,6 +309,8 @@
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 5
+	wbalance = -1
+	sellprice = 60
 
 /obj/item/rogueweapon/eaglebeak/getonmobprop(tag)
 	. = ..()
@@ -325,6 +333,7 @@
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 300
 	max_integrity = 300
+	sellprice = 40
 
 // Copper Spear
 
@@ -345,6 +354,7 @@
 	gripsprite = TRUE
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	slot_flags = null
 	max_blade_int = 70
 	max_integrity = 130
@@ -357,6 +367,7 @@
 	wdefense = 4
 	thrown_bclass = BCLASS_STAB
 	throwforce = 20
+	sellprice = 15
 
 /obj/item/rogueweapon/copperspear/getonmobprop(tag)
 	. = ..()

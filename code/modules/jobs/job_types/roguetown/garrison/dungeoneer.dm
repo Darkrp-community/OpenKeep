@@ -52,7 +52,7 @@
 		H.change_stat("strength", 2)
 		H.change_stat("intelligence", -2)
 		H.change_stat("endurance", 2)
-		H.change_stat("constituion", 1)
+		H.change_stat("constitution", 1)
 		H.change_stat("speed", -1)
 		H.change_stat("perception", -1)
 	if(H.dna?.species)
