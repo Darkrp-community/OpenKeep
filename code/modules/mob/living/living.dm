@@ -1091,7 +1091,7 @@
 
 	if(moving_resist && client) //we resisted by trying to move
 		client.move_delay = world.time + 20
-	if(prob(resist_chance))
+	if(prob(resist_chance) && !IsImmobilized())
 		rogfat_add(rand(5,15))
 		visible_message("<span class='warning'>[src] breaks free of [pulledby]'s grip!</span>", \
 						"<span class='notice'>I break free of [pulledby]'s grip!</span>", null, null, pulledby)
@@ -1099,15 +1099,13 @@
 		log_combat(pulledby, src, "broke grab")
 		if(L.grab_state >= GRAB_AGGRESSIVE)
 			L.setGrabState(GRAB_PASSIVE)
-			if(L.active_hand_index == 1)
-				if(L.r_grab)
-					L.r_grab.grab_state = GRAB_PASSIVE
-			if(L.active_hand_index == 2)
-				if(L.l_grab)
-					L.l_grab.grab_state = GRAB_PASSIVE
+			if(L.r_grab)
+				L.r_grab.grab_state = GRAB_PASSIVE
+			if(L.l_grab)
+				L.l_grab.grab_state = GRAB_PASSIVE
 			L.update_grab_intents()
 		else
-			L.stop_pulling()
+			L.stop_pulling(TRUE)
 			L.update_grab_intents()
 		return FALSE
 	else

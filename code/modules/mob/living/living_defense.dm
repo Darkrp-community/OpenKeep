@@ -265,26 +265,29 @@
 	return
 
 /mob/living/carbon/update_grab_intents()
-	var/obj/item/grabbing/G = get_active_held_item()
-	if(!istype(G))
-		return
-	if(ismob(G.grabbed))
-		if(isitem(G.sublimb_grabbed))
-			var/obj/item/I = G.sublimb_grabbed
-			G.possible_item_intents = I.grabbedintents(src, G.sublimb_grabbed)
-		else
-			if(iscarbon(G.grabbed) && G.limb_grabbed)
-				var/obj/item/I = G.limb_grabbed
+	var/obj/item/grabbing/A = get_active_held_item()
+	var/obj/item/grabbing/B = get_inactive_held_item()
+	var/list/grabs = list(A, B)
+	for(var/obj/item/grabbing/G in grabs)
+		if(!istype(G))
+			continue
+		if(ismob(G.grabbed))
+			if(isitem(G.sublimb_grabbed))
+				var/obj/item/I = G.sublimb_grabbed
 				G.possible_item_intents = I.grabbedintents(src, G.sublimb_grabbed)
 			else
-				var/mob/M = G.grabbed
-				G.possible_item_intents = M.grabbedintents(src, G.sublimb_grabbed)
-	if(isobj(G.grabbed))
-		var/obj/I = G.grabbed
-		G.possible_item_intents = I.grabbedintents(src, G.sublimb_grabbed)
-	if(isturf(G.grabbed))
-		var/turf/T = G.grabbed
-		G.possible_item_intents = T.grabbedintents(src)
+				if(iscarbon(G.grabbed) && G.limb_grabbed)
+					var/obj/item/I = G.limb_grabbed
+					G.possible_item_intents = I.grabbedintents(src, G.sublimb_grabbed)
+				else
+					var/mob/M = G.grabbed
+					G.possible_item_intents = M.grabbedintents(src, G.sublimb_grabbed)
+		if(isobj(G.grabbed))
+			var/obj/I = G.grabbed
+			G.possible_item_intents = I.grabbedintents(src, G.sublimb_grabbed)
+		if(isturf(G.grabbed))
+			var/turf/T = G.grabbed
+			G.possible_item_intents = T.grabbedintents(src)
 	update_a_intents()
 
 /turf/proc/grabbedintents(mob/living/user)
