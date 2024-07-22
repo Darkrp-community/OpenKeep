@@ -92,7 +92,9 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/CanAttack(atom/the_target)
 	//If is foodtype and food is less than 50 or you eat forever.
 	if(is_type_in_list(the_target, food_type) && (food < food_max || eat_forever))
-		return TRUE
+		//To prevent limb eaters from eating inorganic limbs
+		if(PickyEater(the_target))
+			return TRUE
 	//Return root code
 	. = ..()
 	//Am i a body eater?
@@ -300,6 +302,16 @@
 			return 1
 	else
 		return ..()
+
+//Prevents certain items from being targeted as food.
+/mob/living/simple_animal/hostile/retaliate/rogue/proc/PickyEater(atom/thing_to_eat)
+	//Yes we eats this.
+	. = TRUE
+	if(istype(thing_to_eat, /obj/item/bodypart))
+		var/obj/item/bodypart/B = thing_to_eat
+		//Oh yuck ew dont eat that.
+		if(B.status != BODYPART_ORGANIC)
+			return FALSE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/return_action()
 	stop_automated_movement = FALSE
