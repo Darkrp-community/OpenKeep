@@ -387,6 +387,8 @@
 	desc = "A leather vest with no sleeves, won't really protect much but it's at least padded enough to be an armor."
 	icon_state = "vest"
 	item_state = "vest"
+	color = "#514339"
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
