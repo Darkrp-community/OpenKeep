@@ -57,13 +57,11 @@
 /obj/structure/pillory/proc/togglelock(mob/living/user, silent)
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(locked)
-		user.visible_message("<span class='warning'>[user] unlocks [src].</span>")
-			to_chat(usr, "<span class='notice'>I unlock [src].</span>")
+		user.visible_message("<span class='warning'>[user] unlocks [src].</span>", "<span class='notice'>I unlock [src].</span>")
 		playsound(src, 'sound/foley/doors/lock.ogg', 100)
 		locked = 0
 	else
-		user.visible_message("<span class='warning'>[user] locks [src].</span>")
-			to_chat(usr, "<span class='notice'>I lock [src].</span>")
+		user.visible_message("<span class='warning'>[user] locks [src].</span>", "<span class='notice'>I lock [src].</span>")
 		playsound(src, 'sound/foley/doors/lock.ogg', 100)
 		locked = 1
 
