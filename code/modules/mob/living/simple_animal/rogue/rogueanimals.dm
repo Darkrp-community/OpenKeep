@@ -169,22 +169,19 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/DismemberBody(mob/living/L)
 	//Lets keep track of this to see if we start getting wounded while eating.
-	var/start_hp = src.health
-	var/interrupted = FALSE
 	testing("[src]_eating_[L]")
+	//I dont know why but the do_after for health needs this to be defined like this.
+	var/list/check_health = list("health" = src.health)
+
 	if(L.stat != CONSCIOUS)
-		if(iscarbon(L))
-			var/mob/living/carbon/C = L
-			if(attack_sound)
-				playsound(src, pick(attack_sound), 100, TRUE, -1)
-			src.visible_message("<span class='danger'>[src] starts to rip apart [C]!</span>")
-			//Run the do after twice if either of the checks fail
-			for(var/i = 1 to 2)
-				if(!do_after(src,5 SECONDS, target = L) || start_hp > health)
-					interrupted = TRUE
-					LoseTarget()
-					break
-			if(!interrupted)
+		src.visible_message("<span class='danger'>[src] starts to rip apart [L]!</span>")
+		if(attack_sound)
+			playsound(src, pick(attack_sound), 100, TRUE, -1)
+		//If their health is decreased at all during the 10 seconds the dismemberment will fail and they will lose target.
+		if(do_mob(user = src, target = L, time = 10 SECONDS, extra_checks = CALLBACK(src, TYPE_PROC_REF(/mob, break_do_after_checks), check_health, FALSE)))
+			//If its carbon remove a limb, if its some animal just gib it.
+			if(iscarbon(L))
+				var/mob/living/carbon/C = L
 				var/obj/item/bodypart/limb
 				var/list/limb_list = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 				for(var/zone in limb_list)
@@ -201,19 +198,10 @@
 					if(!limb.dismember())
 						C.gib()
 					return TRUE
-		else
-			if(attack_sound)
-				playsound(src, pick(attack_sound), 100, TRUE, -1)
-			src.visible_message("<span class='danger'>[src] starts to rip apart [L]!</span>")
-			//Run the do after twice if either of the checks fail
-			for(var/i = 1 to 2)
-				if(!do_after(src,5 SECONDS, target = L) || start_hp > health)
-					interrupted = TRUE
-					LoseTarget()
-					break
-			if(!interrupted)
+			else
 				L.gib()
 				return TRUE
+		LoseTarget()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Initialize()
 	..()
