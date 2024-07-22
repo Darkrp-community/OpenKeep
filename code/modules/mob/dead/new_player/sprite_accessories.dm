@@ -366,7 +366,7 @@
 	specuse = list("human", "dwarf", "tiefling")
 
 /datum/sprite_accessory/hair/ffelfhair_hime
-	name = "Mystery"
+	name = "Mysterious Elf"
 	icon_state = "felfhair_hime"
 	gender = FEMALE
 	specuse = list("elf")
