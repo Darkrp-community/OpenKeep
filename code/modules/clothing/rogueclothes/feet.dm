@@ -12,6 +12,7 @@
 	equip_delay_self = 30
 	smeltresult = /obj/item/ash
 	resistance_flags = FLAMMABLE
+	sellprice = 5
 
 /obj/item/clothing/shoes/roguetown/boots
 	name = "dark boots"
@@ -22,6 +23,7 @@
 	icon_state = "blackboots"
 	item_state = "blackboots"
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	sellprice = 10
 
 /obj/item/clothing/shoes/roguetown/nobleboot
 	name = "noble boots"
@@ -32,6 +34,7 @@
 	icon_state = "nobleboots"
 	item_state = "nobleboots"
 	armor = list("melee" = 20, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	sellprice = 10
 
 /obj/item/clothing/shoes/roguetown/shortboots
 	name = "shortboots"
@@ -50,6 +53,7 @@
 	gender = PLURAL
 	icon_state = "ridingboots"
 	item_state = "ridingboots"
+	sellprice = 10
 
 ///obj/item/clothing/shoes/roguetown/ridingboots/Initialize()
 //	. = ..()
@@ -81,6 +85,7 @@
 	item_state = "simpleshoe"
 	resistance_flags = null
 	color = "#cbcac9"
+	sellprice = 20
 
 /obj/item/clothing/shoes/roguetown/gladiator
 	name = "leather sandals"
@@ -91,17 +96,25 @@
 
 /obj/item/clothing/shoes/roguetown/sandals
 	name = "sandals"
-	desc = "A standard sandals."
+	desc = "Standard sandals."
 	gender = PLURAL
 	icon_state = "sandals"
 	item_state = "sandals"
 
 /obj/item/clothing/shoes/roguetown/shalal
 	name = "babouche"
-	desc = ""
+	desc = "Leather slippers of zybantean origin."
 	gender = PLURAL
 	icon_state = "shalal"
 	item_state = "shalal"
+	sellprice = 15
+
+/obj/item/clothing/shoes/roguetown/tribal
+	name = "tribal shoes"
+	desc = "Haphazardly-made slippers of creecher leather worn by primitives, or those who don't care about fashion and just want to protect their feet."
+	icon_state = "tribalshoes"
+	item_state = "tribalshoes"
+	sellprice = 3
 
 /obj/item/clothing/shoes/roguetown/boots/armor
 	name = "plated boots"
@@ -117,6 +130,7 @@
 	armor_class = ARMOR_CLASS_HEAVY
 	anvilrepair = /datum/skill/craft/armorsmithing
 	resistance_flags = FIRE_PROOF
+	sellprice = 25
 
 /obj/item/clothing/shoes/roguetown/boots/armor/light
 	name = "light plate boots"
@@ -126,6 +140,7 @@
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 250
 	armor_class = ARMOR_CLASS_MEDIUM
+	sellprice = 20
 
 /obj/item/clothing/shoes/roguetown/boots/leather
 	name = "leather boots"
@@ -136,12 +151,14 @@
 	item_state = "leatherboots"
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FLAMMABLE
+	sellprice = 10
 
 /obj/item/clothing/shoes/roguetown/jester
 	name = "funny shoes"
 	desc = "Shoes typically worn by a Jester."
 	icon_state = "jestershoes"
 	resistance_flags = null
+	sellprice = 10
 
 /obj/item/clothing/shoes/roguetown/grenzelhoft
 	name = "grenzelhoft boots"
@@ -149,6 +166,7 @@
 	item_state = "grenzelboots"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	sellprice = 20
 
 /obj/item/clothing/shoes/roguetown/boots/rare
 	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
@@ -158,6 +176,7 @@
 	resistance_flags = FIRE_PROOF // All of these are plated
 	anvilrepair = /datum/skill/craft/armorsmithing
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	sellprice = 30
 
 /obj/item/clothing/shoes/roguetown/boots/rare/elfplate
 	name = "dark elvish plated boots"
