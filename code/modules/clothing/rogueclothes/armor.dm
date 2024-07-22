@@ -397,11 +397,13 @@
 	sleevetype = null
 	sleeved = null
 	armor_class = ARMOR_CLASS_LIGHT
+	color = "#584742"
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher
 	name = "leather vest"
 	icon_state = "leathervest"
 	item_state = "leathervest"
+	color = null
 
 // Unique swashbuckler vest. Notice it doesn't cover arms.
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
