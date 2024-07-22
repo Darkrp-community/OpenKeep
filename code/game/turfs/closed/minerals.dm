@@ -645,7 +645,7 @@
 	icon_state = "mingold"
 	mineralType = /obj/item/rogueore/copper
 	rockType = /obj/item/natural/rock/copper
-	spreadChance = 6
+	spreadChance = 4
 	spread = 3
 
 /turf/closed/mineral/rogue/silver
