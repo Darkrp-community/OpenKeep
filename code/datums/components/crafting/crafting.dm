@@ -280,10 +280,11 @@
 						if(isliving(user))
 							var/mob/living/L = user
 							var/amt2raise = L.STAINT
+							var/boon = user.mind.get_learning_boon(R.skillcraft)
 							if(R.craftdiff > 0) //difficult recipe
 								amt2raise += (R.craftdiff * 6)
 							if(amt2raise > 0)
-								user.mind.adjust_experience(R.skillcraft, amt2raise, FALSE)
+								user.mind.adjust_experience(R.skillcraft, amt2raise * boon, FALSE)
 					return
 //				if(isitem(I))
 //					user.put_in_hands(I)

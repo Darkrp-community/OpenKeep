@@ -10,7 +10,8 @@
 	sleevetype = "leg"
 	bloody_icon_state = "shoeblood"
 	equip_delay_self = 30
-	resistance_flags = FIRE_PROOF
+	smeltresult = /obj/item/ash
+	resistance_flags = FLAMMABLE
 
 /obj/item/clothing/shoes/roguetown/boots
 	name = "dark boots"
@@ -20,7 +21,7 @@
 	gender = PLURAL
 	icon_state = "blackboots"
 	item_state = "blackboots"
-	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/nobleboot
 	name = "noble boots"
@@ -30,7 +31,7 @@
 	gender = PLURAL
 	icon_state = "nobleboots"
 	item_state = "nobleboots"
-	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 20, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/shortboots
 	name = "shortboots"
@@ -39,11 +40,13 @@
 	gender = PLURAL
 	icon_state = "shortboots"
 	item_state = "shortboots"
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/ridingboots
 	name = "riding boots"
 	color = "#d5c2aa"
 	desc = "Boots designed for riding a mount."
+	armor = list("melee" = 20, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	gender = PLURAL
 	icon_state = "ridingboots"
 	item_state = "ridingboots"
@@ -109,16 +112,18 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	color = null
 	blocksound = PLATEHIT
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 500
 	armor_class = ARMOR_CLASS_HEAVY
+	anvilrepair = /datum/skill/craft/armorsmithing
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/shoes/roguetown/boots/armor/light
 	name = "light plate boots"
 	icon_state = "vboots"
 	item_state = "vboots"
 	desc = "Lightly armored boots made from iron offering protection against both melee and ranged attacks."
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 250
 	armor_class = ARMOR_CLASS_MEDIUM
 
@@ -129,7 +134,8 @@
 	gender = PLURAL
 	icon_state = "leatherboots"
 	item_state = "leatherboots"
-	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 20, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	resistance_flags = FLAMMABLE
 
 /obj/item/clothing/shoes/roguetown/jester
 	name = "funny shoes"
@@ -142,17 +148,20 @@
 	icon_state = "grenzelboots"
 	item_state = "grenzelboots"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
-	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/boots/rare
 	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleeved = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleevetype = null
+	resistance_flags = FIRE_PROOF // All of these are plated
+	anvilrepair = /datum/skill/craft/armorsmithing
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/boots/rare/elfplate
-	name = "dark elf plated boots"
-	desc = ""
+	name = "dark elvish plated boots"
+	desc = "Bizzarrely shaped boots of exquisite dark elven craftsmanship, forged from steel alloyed in ways unbeknownst to every other race."
 	body_parts_covered = FEET
 	icon_state = "elfshoes"
 	item_state = "elfshoes"
@@ -160,7 +169,12 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	color = null
 	blocksound = PLATEHIT
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/shoes/roguetown/boots/rare/elfplate/welfplate
+	name = "elvish plated boots"
+	desc = "Bizzarrely shaped boots of exquisite elven craftsmanship, forged from steel alloyed in ways unbeknownst to every other race."
+	icon_state = "welfshoes"
+	item_state = "welfshoes"
 
 /obj/item/clothing/shoes/roguetown/boots/rare/elfplate/welfplate
 	name = "elvish plated boots"
@@ -168,40 +182,41 @@
 	item_state = "welfshoes"
 
 /obj/item/clothing/shoes/roguetown/boots/rare/dwarfplate
-	name = "dwarvish plated boots"
+	name = "decorated dwarven plate boots"
 	allowed_race = list("dwarf")
 	allowed_sex = list(MALE, FEMALE)
-	desc = ""
+	desc = "Laced with golden bands, these dwarven plated boots glitter with glory as they are used to kick enemy's shins."
 	body_parts_covered = FEET|LEGS
 	icon_state = "dwarfshoe"
 	item_state = "dwarfshoe"
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	color = null
 	blocksound = PLATEHIT
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/shoes/roguetown/boots/rare/humanswplate
-	name = "northern plate boots"
+/obj/item/clothing/shoes/roguetown/boots/rare/grenzelplate
+	name = "grenzelhoft \"Elvenbane\" sabatons"
 	allowed_race = list("human")
 	allowed_sex = list(MALE)
-	desc = ""
+	desc = "The sabatons that march to the tune of a glorious nation. It is said that the boots \
+			are gilded with the tears of once native elves of the Grenzeholft lands, \
+			eradicated via humen conquest."
 	body_parts_covered = FEET|LEGS
 	icon_state = "human_swordshoes"
 	item_state = "human_swordshoes"
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	color = null
 	blocksound = PLATEHIT
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/shoes/roguetown/boots/rare/humanspplate
-	name = "southern plate boots"
+/obj/item/clothing/shoes/roguetown/boots/rare/zybanplate
+	name = "zybantean segmented plate boots"
 	allowed_race = list("human")
 	allowed_sex = list(MALE)
-	desc = ""
+	desc = "The segmented plate boots are a recent alteration to the Zybantu Elite, \
+			many old warriors decorate their own by tieing ribbons and other knick-knacks \
+			as a homage to the colorful socks they wore in simpler times."
 	body_parts_covered = FEET|LEGS
 	icon_state = "human_spearshoe"
 	item_state = "human_spearshoe"
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	color = null
 	blocksound = PLATEHIT
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
