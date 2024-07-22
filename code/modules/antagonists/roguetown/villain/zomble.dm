@@ -181,8 +181,7 @@
 		zombie_part.update_disabled()
 	zombie.update_body()
 
-	if(prob(8))
-		zombie.STASPD = rand(5, 7)
+	zombie.STASPD = rand(3, 5)
 
 	zombie.STAINT = 1
 
