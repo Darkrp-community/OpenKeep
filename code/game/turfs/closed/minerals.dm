@@ -609,7 +609,7 @@
 /turf/closed/mineral/random/rogue/med
 	icon_state = "minrandmed"
 	mineralChance = 50
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 25, /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/coal = 25, /turf/closed/mineral/rogue/copper = 25)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 20, /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/coal = 20, /turf/closed/mineral/rogue/copper = 10)
 
 /turf/closed/mineral/random/rogue/high
 	icon_state = "minrandhigh"
