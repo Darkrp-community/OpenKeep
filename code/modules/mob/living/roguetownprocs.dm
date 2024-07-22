@@ -383,7 +383,7 @@
 			if(I.wbalance < 0 && L.STASPD > U.STASPD) //nme weapon is slow, so its easier to dodge if we're faster
 				prob2defend = prob2defend + ( I.wbalance * ((U.STASPD - L.STASPD) * -10) )
 			if(UH?.mind)
-				prob2defend = prob2defend - (UH.mind.get_skill_level(I.associated_skill) * 20)
+				prob2defend = prob2defend - (UH.mind.get_skill_level(I.associated_skill) * 10)
 		if(H)
 			if(!H?.check_armor_skill())
 				H.Knockdown(1)
@@ -405,7 +405,7 @@
 						prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/misc/athletics) * 15)
 				else
 					if(H.mind)
-						prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/misc/athletics) * 15)
+						prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/misc/athletics) * 10)
 //				var/thing = H.encumbrance
 //				if(thing > 0)
 //					drained = drained + (thing * 10)
@@ -415,7 +415,7 @@
 						if(UH.mind)
 							prob2defend = prob2defend - (UH.mind.get_skill_level(/datum/skill/combat/unarmed) * 20)
 						if(H.mind)
-							prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/misc/athletics) * 15)
+							prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
 			prob2defend = clamp(prob2defend, 5, 95)
 			if(client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")

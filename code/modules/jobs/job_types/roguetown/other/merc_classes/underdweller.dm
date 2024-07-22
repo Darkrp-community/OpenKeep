@@ -27,6 +27,7 @@
     if(H.mind)
         H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)
+        H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
         H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)

@@ -1097,8 +1097,18 @@
 						"<span class='notice'>I break free of [pulledby]'s grip!</span>", null, null, pulledby)
 		to_chat(pulledby, "<span class='danger'>[src] breaks free of my grip!</span>")
 		log_combat(pulledby, src, "broke grab")
-		pulledby.stop_pulling()
-		L.update_grab_intents()
+		if(L.grab_state >= GRAB_AGGRESSIVE)
+			L.setGrabState(GRAB_PASSIVE)
+			if(L.active_hand_index == 1)
+				if(L.r_grab)
+					L.r_grab.grab_state = GRAB_PASSIVE
+			if(L.active_hand_index == 2)
+				if(L.l_grab)
+					L.l_grab.grab_state = GRAB_PASSIVE
+			L.update_grab_intents()
+		else
+			L.stop_pulling()
+			L.update_grab_intents()
 		return FALSE
 	else
 		rogfat_add(rand(5,15))

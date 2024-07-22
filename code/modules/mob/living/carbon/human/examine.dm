@@ -95,11 +95,10 @@
 
 		if(real_name in GLOB.outlawed_players)
 			. += "<span class='userdanger'>OUTLAW!</span>"
-		if(mind && mind.special_role)
-		else
-			if(mind && mind.special_role == "Bandit")
+		if(mind)
+			if(mind.special_role == "Bandit")
 				. += "<span class='userdanger'>BANDIT!</span>"
-			if(mind && mind.special_role == "Vampire Lord")
+			if(mind.special_role == "Vampire Lord")
 				. += "<span class='userdanger'>A MONSTER!</span>"
 
 	if(leprosy == 1)
@@ -437,6 +436,20 @@
 				. += "<span class='warning'>[t_He] look[p_s()] weaker than I.</span>"
 			if(-INFINITY to -5)
 				. += "<span class='warning'><B>[t_He] look[p_s()] much weaker than I.</B></span>"
+
+		var/final_spd = STASPD
+		var/speed_diff = final_spd - L.STASPD
+		switch(speed_diff)
+			if(5 to INFINITY)
+				. += "<span class='warning'><B>[t_He] look[p_s()] much faster than I.</B></span>"
+			if(1 to 5)
+				. += "<span class='warning'>[t_He] look[p_s()] faster than I.</span>"
+			if(0)
+				. += "[t_He] look[p_s()] about as fast as I."
+			if(-5 to -1)
+				. += "<span class='warning'>[t_He] look[p_s()] slower than I.</span>"
+			if(-INFINITY to -5)
+				. += "<span class='warning'><B>[t_He] look[p_s()] much slower than I.</B></span>"
 
 	if(Adjacent(user))
 		if(isobserver(user))
