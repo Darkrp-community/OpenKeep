@@ -8,13 +8,6 @@
 	..()
 	GLOB.farm_animals = max(GLOB.farm_animals - 1, 0)
 
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/find_food()
-	..()
-	var/obj/structure/spacevine/SV = locate(/obj/structure/spacevine) in loc
-	if(SV)
-		SV.eat(src)
-		food = max(food + 30, 100)
-
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/tamed()
 	..()
 	deaggroprob = 50
@@ -52,6 +45,14 @@
 					if(locate(/obj/structure/spacevine) in step || locate(/obj/structure/glowshroom) in step)
 						Move(step, get_dir(src, step))
 
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/UniqueAttack()
+	if(istype(target, /obj/structure/spacevine))
+		var/obj/structure/spacevine/SV = target
+		SV.eat(src)
+		food = max(food + 30, food_max + 50)
+		return
+	return ..()
+
 /mob/living/simple_animal/hostile/retaliate/rogue/goat
 	icon = 'icons/roguetown/mob/monster/gote.dmi'
 	name = "gote"
@@ -75,7 +76,7 @@
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 80
 	maxHealth = 80
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat,/obj/item/reagent_containers/food/snacks/grown/oat,/obj/item/reagent_containers/food/snacks/grown/apple)
+	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat,/obj/item/reagent_containers/food/snacks/grown/oat,/obj/item/reagent_containers/food/snacks/grown/apple, /obj/structure/spacevine)
 	tame_chance = 25
 	bonus_tame_chance = 15
 	footstep_type = FOOTSTEP_MOB_SHOE

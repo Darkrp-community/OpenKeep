@@ -93,11 +93,6 @@
 	start_lit = TRUE
 	icon_state = "candle1_lit"
 
-/obj/item/candle/yellow/lit/infinite
-	start_lit = TRUE
-	icon_state = "candle1_lit"
-	anchored = TRUE
-
 /obj/item/candle/infinite
 	infinite = TRUE
 	start_lit = TRUE

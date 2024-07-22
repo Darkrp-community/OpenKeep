@@ -2,6 +2,8 @@
 	var/list/onprop = list()
 //#ifdef TESTSERVER
 	var/force_reupdate_inhand = TRUE
+	var/smelted = FALSE // Sanity for smelteries to avoid runtimes, if this is a bar smelted through ore for exp gain
+	var/istrainable = FALSE // Can this be used against a training dummy to learn skills? Prevents dumb exploits.
 //#else
 //	var/force_reupdate_inhand = FALSE
 //#endif

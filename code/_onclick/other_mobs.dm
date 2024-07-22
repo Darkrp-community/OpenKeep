@@ -380,6 +380,7 @@
 					var/thiefskill = src.mind.get_skill_level(/datum/skill/misc/stealing)
 					var/stealroll = roll("[thiefskill]d6")
 					var/targetperception = (V.STAPER)
+					var/exp_to_gain = STAINT
 					var/list/stealablezones = list("chest", "neck", "groin", "r_hand", "l_hand")
 					var/list/stealpos = list()
 					if(stealroll > targetperception)
@@ -412,16 +413,20 @@
 								V.dropItemToGround(picked)
 								put_in_active_hand(picked)
 								to_chat(src, "<span class='green'>I stole [picked]!</span>")
+								exp_to_gain *= src.mind.get_learning_boon(thiefskill)
 								if(has_flaw(/datum/charflaw/addiction/kleptomaniac))
 									sate_addiction()
 							else
+								exp_to_gain /= 2
 								to_chat(src, "<span class='warning'>I didn't find anything there. Perhaps I should look elsewhere.</span>")
 						else
 							to_chat(src, "<span class='warning'>I fumbled it!")
 					if(stealroll <= 4)
 						to_chat(V, "<span class='danger'>Someone tried pickpocketing me!</span>")
 					if(stealroll < targetperception)
+						exp_to_gain /= 5
 						to_chat(src, "<span class='danger'>I failed to pick the pocket!</span>")
+					src.mind.adjust_experience(/datum/skill/misc/stealing, exp_to_gain, FALSE)
 					changeNext_move(mmb_intent.clickcd)
 				return
 			if(INTENT_SPELL)
