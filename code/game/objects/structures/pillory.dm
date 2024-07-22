@@ -44,7 +44,7 @@
 			togglelock(user)
 			return attack_hand(user)
 		else
-			to_chat(user, "Wrong key."))
+			to_chat(user, "Wrong key.")
 			playsound(src, 'sound/foley/doors/lockrattle.ogg', 100)
 			return
 	if(istype(P, /obj/item/keyring))
