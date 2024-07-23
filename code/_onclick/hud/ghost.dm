@@ -41,6 +41,10 @@
 			if(G.client.holder)
 				if(istype(G, /mob/dead/observer/rogue/arcaneeye))
 					return
+				if(istype(G, /mob/dead/observer/profane)) // Souls trapped by a dagger can return to lobby if they want, at the cost of a triumph.
+					if(alert("Return to the lobby? This will cost a triumph!", "", "Yes", "No") == "Yes")
+						G.returntolobby()
+						G.adjust_triumphs(-1)
 				if(alert("Travel with the boatman?", "", "Yes", "No") == "Yes")
 
 					// Check if the player's job is hiv+

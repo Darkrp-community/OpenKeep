@@ -11,7 +11,7 @@
 	name = "fat"
 	desc = ""
 	icon_state = "fat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 8)
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 /obj/item/reagent_containers/food/snacks/fat/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -137,7 +137,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/salami
 	name = "salumoi"
 	desc = "Traveling food invented by dwarves. Said to last for ten yils before spoiling"
-	icon_state = "salamistick5"
+	icon_state = "salumoi5"
 	eat_effect = null
 	fried_type = null
 	slices_num = 4
@@ -147,12 +147,13 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/salami/slice
 	tastes = list("salted meat" = 1)
 	rotprocess = null
+	slice_sound = TRUE 
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/salami/update_icon()
 	if(slices_num)
-		icon_state = "salamistick[slices_num]"
+		icon_state = "salumoi[slices_num]"
 	else
-		icon_state = "salami_slice"
+		icon_state = "salumoi_slice"
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/salami/On_Consume(mob/living/eater)
 	..()
@@ -170,7 +171,7 @@
 	eat_effect = null
 	slices_num = 0
 	name = "salumoi"
-	icon_state = "salami_slice"
+	icon_state = "salumoi_slice"
 	fried_type = null
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
 	bitesize = 1
@@ -223,7 +224,7 @@
 // -------------- SALO (salted fat) -----------------
 /obj/item/reagent_containers/food/snacks/fat/salo
 	name = "salo"
-	icon_state = "suet4"
+	icon_state = "salo4"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 12)
 	bitesize = 4
 	slice_path = /obj/item/reagent_containers/food/snacks/fat/salo/slice
@@ -234,9 +235,9 @@
 
 /obj/item/reagent_containers/food/snacks/fat/salo/update_icon()
 	if(slices_num)
-		icon_state = "suet[slices_num]"
+		icon_state = "salo[slices_num]"
 	else
-		icon_state = "suetslice"
+		icon_state = "saloslice"
 
 /obj/item/reagent_containers/food/snacks/fat/salo/On_Consume(mob/living/eater)
 	..()
@@ -250,7 +251,7 @@
 
 /obj/item/reagent_containers/food/snacks/fat/salo/slice
 	name = "salo"
-	icon_state = "suetslice"
+	icon_state = "saloslice"
 	bitesize = 2
 	slices_num = FALSE
 	slice_path = FALSE
@@ -308,12 +309,13 @@
 	name = "stick of butter"
 	desc = ""
 	icon_state = "butter6"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 8)
+	list_reagents = list(/datum/reagent/consumable/nutriment = BUTTER_NUTRITION)
 	foodtype = DAIRY
 	slice_path = /obj/item/reagent_containers/food/snacks/butterslice
 	slices_num = 6
 	slice_batch = FALSE
 	bitesize = 6
+	slice_sound = TRUE 
 
 /obj/item/reagent_containers/food/snacks/butter/update_icon()
 	if(slices_num)
@@ -473,12 +475,12 @@
 	name = "fresh cheese"
 	icon_state = "freshcheese"
 	bitesize = 1
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
+	list_reagents = list(/datum/reagent/consumable/nutriment = FRESHCHEESE_NUTRITION)
 	w_class = WEIGHT_CLASS_TINY
 	tastes = list("cheese" = 1)
 	foodtype = GRAIN
 	eat_effect = null
-	rotprocess = 20 MINUTES
+	rotprocess = SHELFLIFE_DECENT
 	become_rot_type = null
 	slice_path = null
 
@@ -486,11 +488,11 @@
 	name = "wheel of cheese"
 	icon_state = "cheesewheel"
 	bitesize = 6
-	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_GOOD)
+	list_reagents = list(/datum/reagent/consumable/nutriment = FRESHCHEESE_NUTRITION*4)
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("cheese" = 1)
 	eat_effect = null
-	rotprocess = 45 MINUTES
+	rotprocess = SHELFLIFE_LONG
 	slices_num = 6
 	slice_batch = TRUE
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/cheddarwedge
@@ -512,7 +514,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	tastes = list("cheese" = 1)
 	eat_effect = null
-	rotprocess = 30 MINUTES
+	rotprocess = SHELFLIFE_LONG
 	slices_num = 3
 	slice_batch = TRUE
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/cheddarslice

@@ -44,6 +44,7 @@
 	name = "pepper mill"
 	icon = 'icons/roguetown/items/cooking.dmi'
 	icon_state = "peppermill"
+ 	layer = OBJ_LAYER+0.05 // small items generally should go on top of larger ones
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	list_reagents = list(/datum/reagent/consumable/blackpepper = 5)
 	reagent_flags = TRANSPARENT
