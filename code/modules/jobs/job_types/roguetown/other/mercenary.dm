@@ -3,8 +3,8 @@
 	flag = GRAVEDIGGER
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 2
+	spawn_positions = 2
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -20,7 +20,7 @@
 	display_order = JDO_MERCENARY
 	bypass_lastclass = FALSE
 	give_bank_account = 3
-	min_pq = 0
+	min_pq = 2
 	outfit = null
 	outfit_female = null
 	advclass_cat_rolls = list(CTAG_MERCENARY = 20)
