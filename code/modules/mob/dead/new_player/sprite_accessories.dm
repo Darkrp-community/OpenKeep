@@ -223,7 +223,7 @@
 /datum/sprite_accessory/hair/skinhead
 	name = "Shaved"
 	icon_state = "hair_skinhead"
-	specuse = list("human", "dwarf", "elf")
+	specuse = list("human", "dwarf", "elf", "aasimar")
 	gender = MALE
 	under_layer = TRUE
 
@@ -285,6 +285,13 @@
 /////////////////////////////
 // GIRLY Hair Definitions  //
 /////////////////////////////
+
+/datum/sprite_accessory/hair/skinhead_fem
+	name = "Close Fade"
+	icon_state = "hair_skinhead"
+	specuse = list("aasimar")
+	gender = FEMALE
+	under_layer = TRUE
 
 /datum/sprite_accessory/hair/famazon
 	name = "Barbarian"
@@ -359,7 +366,7 @@
 	specuse = list("human", "dwarf", "tiefling")
 
 /datum/sprite_accessory/hair/ffelfhair_hime
-	name = "Mystery"
+	name = "Mysterious Elf"
 	icon_state = "felfhair_hime"
 	gender = FEMALE
 	specuse = list("elf")
