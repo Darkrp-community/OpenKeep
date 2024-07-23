@@ -867,9 +867,9 @@
 
 /obj/structure/fluff/statue/tdummy/attackby(obj/item/W, mob/user, params)
 	if(!user.cmode)
-		if(W.istrainable) // Prevents using dumb shit to train with. With temporary exceptions...
-			if(W.associated_skill)
-				if(user.mind && isliving(user))
+		if(W.associated_skill)
+			if(user.mind)
+				if(isliving(user))
 					var/mob/living/L = user
 					var/probby = (L.STALUC / 10) * 100
 					probby = min(probby, 99)
@@ -888,13 +888,12 @@
 						probby = 0
 					if(prob(probby) && !L.has_status_effect(/datum/status_effect/debuff/trainsleep) && !user.buckled)
 						user.visible_message("<span class='info'>[user] trains on [src]!</span>")
-						var/boon = user.mind.get_learning_boon(W.associated_skill)
 						var/amt2raise = L.STAINT/2
 						if(user.mind.get_skill_level(W.associated_skill) >= 3)
 							to_chat(user, "<span class='warning'>I've learned all I can from doing this, it's time for the real thing.</span>")
 							amt2raise = 0
 						if(amt2raise > 0)
-							user.mind.adjust_experience(W.associated_skill, amt2raise * boon, FALSE)
+							user.mind.adjust_experience(W.associated_skill, amt2raise, FALSE)
 						playsound(loc,pick('sound/combat/hits/onwood/education1.ogg','sound/combat/hits/onwood/education2.ogg','sound/combat/hits/onwood/education3.ogg'), rand(50,100), FALSE)
 					else
 						user.visible_message("<span class='danger'>[user] trains on [src], but [src] ripostes!</span>")
@@ -903,17 +902,6 @@
 						playsound(loc, 'sound/combat/hits/kick/stomp.ogg', 100, TRUE, -1)
 					flick(pick("p_dummy_smashed","p_dummy_smashedalt"),src)
 					return
-			else //sanity
-				to_chat(user, "<span class='warning'>This thing doesn't have a skill associated with it.</span>")
-				return
-		else // u dun goofed
-			var/mob/living/goof = user
-			user.visible_message("<span class='danger'>[user] awkwardly tries to hit \the [src] with \the [W], but \the [src] ripostes!</span>")
-			goof.AdjustKnockdown(1)
-			goof.throw_at(get_step(goof, get_dir(src,goof)), 2, 2, goof, spin = FALSE)
-			playsound(loc, 'sound/combat/hits/kick/stomp.ogg', 100, TRUE, -1)
-			flick(pick("p_dummy_smashed","p_dummy_smashedalt"),src)
-			return
 	..()
 
 /obj/structure/fluff/statue/spider

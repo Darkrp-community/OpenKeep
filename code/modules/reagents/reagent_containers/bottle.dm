@@ -97,10 +97,10 @@
 	list_reagents = list(/datum/reagent/medicine/morphine = 30)
 
 /obj/item/reagent_containers/glass/bottle/chloralhydrate
-	name = "poppy milk vial"
+	name = "chloral hydrate bottle"
 	desc = ""
 	icon_state = "bottle20"
-	list_reagents = list(/datum/reagent/toxin/chloralhydrate = 20)
+	list_reagents = list(/datum/reagent/toxin/chloralhydrate = 15)
 
 /obj/item/reagent_containers/glass/bottle/mannitol
 	name = "mannitol bottle"
@@ -123,7 +123,7 @@
 	list_reagents = list(/datum/reagent/toxin/mutagen = 30)
 
 /obj/item/reagent_containers/glass/bottle/plasma
-	name = "purple aetherium bottle"
+	name = "liquid plasma bottle"
 	desc = ""
 	list_reagents = list(/datum/reagent/toxin/plasma = 30)
 
@@ -304,8 +304,8 @@
 	spawned_disease = /datum/disease/brainrot
 
 /obj/item/reagent_containers/glass/bottle/magnitis
-	name = "curse of Ferrum potion"
-	desc = "Dangerous magical potion that has something to do with iron being the opposite of lightning, or was it the rust remover?"
+	name = "Magnitis culture bottle"
+	desc = ""
 	spawned_disease = /datum/disease/magnitis
 
 /obj/item/reagent_containers/glass/bottle/wizarditis
@@ -314,8 +314,8 @@
 	spawned_disease = /datum/disease/wizarditis
 
 /obj/item/reagent_containers/glass/bottle/anxiety
-	name = "horrifica mentata extract"
-	desc = "Buds from exotic flowers, distilled and left to settle for a decade. This is the result. The unpleasant effects on the drinker are best countered with alcohol the label says."
+	name = "Severe Anxiety culture bottle"
+	desc = ""
 	spawned_disease = /datum/disease/anxiety
 
 /obj/item/reagent_containers/glass/bottle/beesease
@@ -425,7 +425,7 @@
 	list_reagents = list(/datum/reagent/toxin/acid = 30)
 
 /obj/item/reagent_containers/glass/bottle/welding_fuel
-	name = "naphta bottle"
+	name = "welding fuel bottle"
 	list_reagents = list(/datum/reagent/fuel = 30)
 
 /obj/item/reagent_containers/glass/bottle/silver

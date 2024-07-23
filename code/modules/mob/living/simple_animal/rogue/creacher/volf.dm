@@ -20,7 +20,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	health = 110
 	maxHealth = 110
-	melee_damage_lower = 15
+	melee_damage_lower = 16
 	melee_damage_upper = 20
 	vision_range = 9
 	aggro_vision_range = 9
@@ -31,8 +31,8 @@
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	pooptype = null
-	STACON = 6
-	STASTR = 6
+	STACON = 7
+	STASTR = 7
 	STASPD = 12
 	deaggroprob = 0
 	defprob = 35
@@ -45,7 +45,6 @@
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/wolf
-	body_eater = TRUE
 
 /obj/effect/decal/remains/wolf
 	name = "remains"
@@ -58,7 +57,6 @@
 	gender = MALE
 	if(prob(33))
 		gender = FEMALE
-	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	update_icon()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/death(gibbed)
@@ -99,6 +97,11 @@
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf/find_food()
+	. = ..()
+	if(!.)
+		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/simple_limb_hit(zone)
 	if(!zone)

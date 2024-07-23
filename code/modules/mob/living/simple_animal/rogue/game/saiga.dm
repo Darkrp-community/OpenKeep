@@ -1,4 +1,12 @@
 
+
+/mob/living/simple_animal/hostile/retaliate/rogue/saiga/find_food()
+	..()
+	var/obj/structure/spacevine/SV = locate(/obj/structure/spacevine) in loc
+	if(SV)
+		SV.eat(src)
+		food = max(food + 30, 100)
+
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/update_icon()
 	cut_overlays()
 	..()
@@ -23,14 +31,6 @@
 		D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
 		D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
 
-/mob/living/simple_animal/hostile/retaliate/rogue/saiga/UniqueAttack()
-	if(istype(target, /obj/structure/spacevine))
-		var/obj/structure/spacevine/SV = target
-		SV.eat(src)
-		food = max(food + 30, food_max + 50)
-		return
-	return ..()
-
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga
 	icon = 'icons/roguetown/mob/monster/saiga.dmi'
 	name = "saiga"
@@ -53,7 +53,7 @@
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 100
 	maxHealth = 100
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat,/obj/item/reagent_containers/food/snacks/grown/oat,/obj/item/reagent_containers/food/snacks/grown/apple, /obj/structure/spacevine)
+	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat,/obj/item/reagent_containers/food/snacks/grown/oat,/obj/item/reagent_containers/food/snacks/grown/apple)
 	tame_chance = 25
 	bonus_tame_chance = 15
 	footstep_type = FOOTSTEP_MOB_SHOE

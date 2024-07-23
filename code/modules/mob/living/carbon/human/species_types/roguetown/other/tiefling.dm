@@ -46,8 +46,8 @@
 	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,-1), OFFSET_BACK_F = list(0,-1), \
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
-	specstats = list("strength" = 0, "perception" = 2, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = -1)
-	specstats_f = list("strength" = 0, "perception" = 2, "intelligence" = 2, "constitution" = -2, "endurance" = -1, "speed" = 2, "fortune" = -1)
+	specstats = list("strength" = 0, "perception" = 1, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = -1)
+	specstats_f = list("strength" = 0, "perception" = 1, "intelligence" = 2, "constitution" = -2, "endurance" = -1, "speed" = 2, "fortune" = -1)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
@@ -97,13 +97,9 @@
 /datum/species/tieberian/get_skin_list()
 	return sortList(list(
 		"Crimson Land" = SKIN_COLOR_CRIMSON_LAND,
+		"Halfling" = SKIN_COLOR_HALFLING,
+		"Roza" = SKIN_COLOR_ROZA,
 		"Zanguine" = SKIN_COLOR_ZANGUINE,
-		"Sun Stained" = SKIN_COLOR_SUNSTAINED,
-		"Sundered" = SKIN_COLOR_SUNDERED,
-		"Zarkana" = SKIN_COLOUR_ARCANA,
-		"Zarconum" = SKIN_COLOUR_ZARCONUM,
-		"Abyssium" = SKIN_COLOUR_ABYSS,
-		"Ash" = SKIN_COLOUR_ASH,
 	))
 
 /datum/species/tieberian/get_hairc_list()

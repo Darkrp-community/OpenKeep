@@ -34,30 +34,3 @@
 	name = "Bog Dungeon 3"
 	id = "labyrinth_of_xylix"
 	mappath = "_maps/map_files/templates/sk_dungeon/labyrinth_of_xylix.dmm"
-
-/obj/effect/landmark/map_load_mark/stonekeep_dungeon/roguetown_bog
-
-	//Name can be anything, it doesn't matter
-	name = "The Small Bog Dungeon"
-
-	templates = list( "small_bog_dungeon_1","small_bog_dungeon_2","small_bog_dungeon_3","small_bog_dungeon_4" )
-
-/datum/map_template/small_bog_dungeon_1
-	name = "Small Bog Dungeon 1"
-	id = "small_bog_dungeon_1"
-	mappath = "_maps/map_files/templates/sk_dungeon/small_bog_dungeon_1.dmm"
-
-/datum/map_template/small_bog_dungeon_2
-	name = "Small Bog Dungeon 2"
-	id = "small_bog_dungeon_2"
-	mappath = "_maps/map_files/templates/sk_dungeon/small_bog_dungeon_2.dmm"
-
-/datum/map_template/small_bog_dungeon_3
-	name = "Small Bog Dungeon 3"
-	id = "small_bog_dungeon_3"
-	mappath = "_maps/map_files/templates/sk_dungeon/small_bog_dungeon_3.dmm"
-
-/datum/map_template/small_bog_dungeon_4
-	name = "Small Bog Dungeon 4"
-	id = "small_bog_dungeon_4"
-	mappath = "_maps/map_files/templates/sk_dungeon/small_bog_dungeon_4.dmm"

@@ -280,9 +280,6 @@
 	slowdown = 1
 	wash_in = FALSE
 	water_reagent = /datum/reagent/water/gross/sewer
-	footstep = FOOTSTEP_MUD
-	barefootstep = FOOTSTEP_MUD
-	heavyfootstep = FOOTSTEP_MUD
 
 /datum/reagent/water/gross/sewer
 	color = "#705a43"

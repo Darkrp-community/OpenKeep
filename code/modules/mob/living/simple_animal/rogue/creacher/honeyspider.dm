@@ -38,7 +38,6 @@
 	attack_sound = list('sound/vo/mobs/spider/attack (1).ogg','sound/vo/mobs/spider/attack (2).ogg','sound/vo/mobs/spider/attack (3).ogg','sound/vo/mobs/spider/attack (4).ogg')
 	aggressive = 1
 	stat_attack = UNCONSCIOUS
-	body_eater = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated
 	icon = 'icons/roguetown/mob/monster/spider.dmi'
@@ -57,6 +56,11 @@
 	if(prob(33))
 		gender = FEMALE
 	update_icon()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/spider/find_food()
+	. = ..()
+	if(!.)
+		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/AttackingTarget()
 	. = ..()

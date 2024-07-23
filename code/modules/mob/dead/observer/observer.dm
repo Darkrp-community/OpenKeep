@@ -118,12 +118,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 /mob/dead/observer/screye/Move(n, direct)
 	return
 
-/mob/dead/observer/profane // Ghost type for souls trapped by the profane dagger. They can't move, but can talk to the dagger's wielder and other trapped souls.
-	sight = 0
-	see_invisible = SEE_INVISIBLE_OBSERVER
 
-/mob/dead/observer/profane/Move(n, direct)
-	return
 
 /mob/dead/observer/Initialize()
 	set_invisibility(GLOB.observer_default_invisibility)

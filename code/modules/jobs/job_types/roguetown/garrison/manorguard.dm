@@ -60,7 +60,7 @@
 	beltr = /obj/item/rogueweapon/sword
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/rogueweapon/shield/tower/metal
-	r_hand = /obj/item/rogueweapon/halberd
+	r_hand = /obj/item/rogueweapon/halberd/iron //TODO: Royal Guard armory with actual good polearms.
 	if(prob(30))
 		head = /obj/item/clothing/head/roguetown/helmet/heavy/knight
 	else

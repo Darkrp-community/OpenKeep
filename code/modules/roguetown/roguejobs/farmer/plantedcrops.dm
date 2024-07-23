@@ -155,7 +155,6 @@
 	water = 100
 
 /obj/machinery/crop/attackby(obj/item/I, mob/living/user, params)
-	var/boon = user.mind?.get_learning_boon(/datum/skill/labor/farming)
 	if(istype(I, /obj/item/seeds))
 		to_chat(user, "<span class='warning'>Something is already growing here.</span>")
 		return
@@ -177,7 +176,7 @@
 						myseed.yield -= 1
 						playsound(src,"plantcross", 100, FALSE)
 						user.visible_message("<span class='notice'>[user] harvests [src] with [I].</span>")
-						user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT * boon)
+						user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT)
 					else
 						break
 				if(myseed?.yield <= 0)
@@ -199,14 +198,14 @@
 				playsound(src,'sound/items/seed.ogg', 100, FALSE)
 				new /obj/item/natural/fibers(src.loc)
 				user.visible_message("<span class='notice'>[user] rips out [src] with [I].</span>")
-				user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT * boon)
+				user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT)
 				qdel(src)
 				return
 			else if(weeds > 0)
 				playsound(src,'sound/items/seed.ogg', 100, FALSE)
 				user.visible_message("<span class='notice'>[user] rips out some weeds with [I].</span>")
 				weeds = max(weeds - rand(1,50), 0)
-				user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT * boon)
+				user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT)
 				update_seed_icon()
 		return
 
@@ -237,7 +236,6 @@
 	..()
 
 /obj/machinery/crop/attack_hand(mob/living/M)
-	var/boon = M.mind?.get_learning_boon(/datum/skill/labor/farming)
 	if(!myseed)
 		qdel(src)
 	var/harvtime = 60
@@ -276,7 +274,7 @@
 				if(prob(success_chance))
 					new myseed.product(src.loc)
 					M.visible_message("<span class='info'>[M] harvests something from [src].</span>")
-					M?.mind?.adjust_experience(/datum/skill/labor/farming, M.STAINT * boon)
+					M?.mind?.adjust_experience(/datum/skill/labor/farming, M.STAINT)
 				else
 					M.visible_message("<span class='warning'>[M] spoils something from [src]!</span>")
 			else
@@ -295,7 +293,6 @@
 				update_seed_icon()
 
 /obj/machinery/crop/attack_right(mob/living/user)
-	var/boon = user?.mind?.get_learning_boon(/datum/skill/labor/farming)
 	if(weeds > 0)
 		var/deweed_time = max((50 - user?.mind?.get_skill_level(/datum/skill/labor/farming) * 5), 2)
 		var/obj/item/offhand = user.get_inactive_held_item()//ghetto farming code starts here
@@ -311,6 +308,6 @@
 			playsound(src,"plantcross", 100, FALSE)
 			user.visible_message("<span class='notice'>[user] rips out some weeds.</span>")
 			weeds = max(weeds - rand(1,30), 0)
-			user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT * boon)
+			user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT)
 			update_seed_icon()
 		return

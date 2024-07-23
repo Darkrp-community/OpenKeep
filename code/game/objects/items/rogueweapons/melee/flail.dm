@@ -19,7 +19,6 @@
 	throwforce = 5
 	wdefense = 0
 	minstr = 4
-	sellprice = 20
 
 /datum/intent/flail/strike
 	name = "strike"
@@ -61,4 +60,3 @@
 	icon_state = "flail"
 	smeltresult = /obj/item/ingot/steel
 	minstr = 5
-	sellprice = 35

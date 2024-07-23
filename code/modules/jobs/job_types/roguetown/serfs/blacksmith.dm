@@ -17,7 +17,6 @@
 
 /datum/outfit/job/roguetown/armorsmith/pre_equip(mob/living/carbon/human/H)
 	..()
-	id = /obj/item/clothing/ring/silver/makers_guild
 	head = /obj/item/clothing/head/roguetown/hatfur
 	if(prob(50))
 		head = /obj/item/clothing/head/roguetown/hatblu
@@ -25,13 +24,10 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/engineering, pick(1,1,2), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(3,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, pick(3,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/engineering, rand(2,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-		ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1,2), TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, pick(1,2), TRUE)
@@ -44,7 +40,7 @@
 		beltr = /obj/item/keyring/armorsmith
 		cloak = /obj/item/clothing/cloak/apron/brown
 		H.change_stat("strength", 1)
-		H.change_stat("endurance", 1)
+		H.change_stat("intelligence", -1)
 		H.change_stat("speed", -1)
 	else
 		pants = /obj/item/clothing/under/roguetown/trou
@@ -55,7 +51,7 @@
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		beltr = /obj/item/keyring/armorsmith
 		H.change_stat("strength", 1)
-		H.change_stat("endurance", 1)
+		H.change_stat("intelligence", -1)
 		H.change_stat("speed", -1)
 
 /datum/job/roguetown/weaponsmith
@@ -68,14 +64,13 @@
 
 	allowed_races = ALL_RACES_LIST_NAMES
 
-	tutorial = "You studied for many decades under your master with a few other apprentices to become a Weaponsmith, a trade that is as ancient as the secrets of steel itself! You've repaired the blades of cooks, the cracked hoes of peasants and greased the spears of many soldiers into war."
+	tutorial = "You studied for many decades under your master with a few other apprentices to become a Weaponsmith, a trade that is as ancient as the secrets of steel itself! Youve repaired the blades of cooks, the cracked hoes of peasants and greased the spears of many soldiers into war."
 
 	outfit = /datum/outfit/job/roguetown/weaponsmith
 	display_order = JDO_WSMITH
 
 /datum/outfit/job/roguetown/weaponsmith/pre_equip(mob/living/carbon/human/H)
 	..()
-	id = /obj/item/clothing/ring/silver/makers_guild
 	head = /obj/item/clothing/head/roguetown/hatfur
 	if(prob(50))
 		head = /obj/item/clothing/head/roguetown/hatblu
@@ -83,13 +78,10 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(3,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, pick(3,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-		ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1,2), TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, pick(1,2), TRUE)
@@ -102,7 +94,7 @@
 		beltr = /obj/item/keyring/weaponsmith
 		cloak = /obj/item/clothing/cloak/apron/brown
 		H.change_stat("strength", 1)
-		H.change_stat("endurance", 1)
+		H.change_stat("intelligence", -1)
 		H.change_stat("speed", -1)
 	else
 		pants = /obj/item/clothing/under/roguetown/trou
@@ -113,5 +105,5 @@
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		beltr = /obj/item/keyring/weaponsmith
 		H.change_stat("strength", 1)
-		H.change_stat("endurance", 1)
+		H.change_stat("intelligence", -1)
 		H.change_stat("speed", -1)

@@ -35,7 +35,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/custom_clothes = FALSE //append species id to clothing sprite name
 	var/use_f = FALSE //males use female clothes. for elves
-	var/use_m = FALSE //females use male clothes. for aasimar women
 
 	var/datum/voicepack/soundpack_m = /datum/voicepack/male
 	var/datum/voicepack/soundpack_f = /datum/voicepack/female
@@ -636,7 +635,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	H.remove_overlay(HAIR_LAYER)
 	H.remove_overlay(HAIREXTRA_LAYER)
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
-	if(!HD) // So, no head?
+	if(!HD) //Decapitated
 		return
 
 	if(HD.skeletonized)
