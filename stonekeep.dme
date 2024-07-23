@@ -630,7 +630,6 @@
 #include "code\datums\mutations\touch.dm"
 #include "code\datums\ruins\lavaland.dm"
 #include "code\datums\ruins\space.dm"
-#include "code\datums\sexcon\pillory.dm"
 #include "code\datums\sexcon\sex_action.dm"
 #include "code\datums\sexcon\sexcon.dm"
 #include "code\datums\sexcon\sexcon_helpers.dm"
