@@ -742,7 +742,7 @@
 
 /obj/item/clothing/cloak/stole
 	name = "stole"
-	desc = "A gold weaved fabric."
+	desc = "Garments of a priest, usually worn when giving mass to the people."
 	icon_state = "stole_gold"
 	sleeved = null
 	sleevetype = null
