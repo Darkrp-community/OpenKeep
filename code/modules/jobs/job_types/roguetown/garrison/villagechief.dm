@@ -20,7 +20,7 @@
 	bypass_lastclass = TRUE
 	outfit = /datum/outfit/job/roguetown/mayor
 	display_order = JDO_CHIEF
-	give_bank_account = 50
+	give_bank_account = 80
 
 /datum/outfit/job/roguetown/mayor
 	name = "Mayor"
@@ -38,8 +38,8 @@
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	r_hand = /obj/item/rogueweapon/woodstaff
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
@@ -49,9 +49,14 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
-		H.change_stat("strength", 4)
-		H.change_stat("perception", 4)
-		H.change_stat("endurance", 4)
-		H.change_stat("speed", 3)
-		H.change_stat("intelligence", 5)
+		if(H.age == AGE_OLD)
+			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+			H.change_stat("strength", 1)
+			H.change_stat("endurance", 1)
+			H.change_stat("intelligence", 1)
+		else
+			H.change_stat("strength", 2)
+			H.change_stat("perception", 1)
+			H.change_stat("intelligence", 2)			
 	H.verbs |= /mob/proc/haltyell

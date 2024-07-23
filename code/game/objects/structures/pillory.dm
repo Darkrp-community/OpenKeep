@@ -1,7 +1,7 @@
 #define PILLORY_HEAD_OFFSET      2 // How much we need to move the player to center their head
 
 /obj/structure/pillory
-	name = "Pillory"
+	name = "pillory"
 	desc = "To keep the criminals locked!"
 	icon_state = "pillory_single"
 	icon = 'icons/obj/pillory.dmi'
@@ -36,7 +36,7 @@
 
 /obj/structure/pillory/attackby(obj/item/P, mob/user, params)
 	if(user in src)
-		to_chat(user, "<span class='danger'>I can't reach the lock!</span>")
+		to_chat(user, "<span class='warning'>I can't reach the lock!</span>")
 		return
 	if(istype(P, /obj/item/roguekey))
 		var/obj/item/roguekey/K = P
@@ -44,7 +44,7 @@
 			togglelock(user)
 			return attack_hand(user)
 		else
-			to_chat(user, "<span class='danger'>Wrong key.</span>")
+			to_chat(user, "Wrong key.")
 			playsound(src, 'sound/foley/doors/lockrattle.ogg', 100)
 			return
 	if(istype(P, /obj/item/keyring))
@@ -57,13 +57,11 @@
 /obj/structure/pillory/proc/togglelock(mob/living/user, silent)
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(locked)
-		user.visible_message("<span class='danger'>[user] unlocks [src].</span>", \
-			"<span class='notice'>I unlock [src].</span>")
+		user.visible_message("<span class='warning'>[user] unlocks [src].</span>", "<span class='notice'>I unlock [src].</span>")
 		playsound(src, 'sound/foley/doors/lock.ogg', 100)
 		locked = 0
 	else
-		user.visible_message("<span class='danger'>[user] locks [src].</span>", \
-			"<span class='notice'>I lock [src].</span>")
+		user.visible_message("<span class='warning'>[user] locks [src].</span>", "<span class='notice'>I lock [src].</span>")
 		playsound(src, 'sound/foley/doors/lock.ogg', 100)
 		locked = 1
 
@@ -72,12 +70,12 @@
 		return FALSE
 
 	if(locked)
-		to_chat(usr, "<span class='danger'>Unlock it first!</span>")
+		to_chat(usr, "<span class='warning'>Unlock it first!</span>")
 		return FALSE
 
 	if (!istype(M, /mob/living/carbon/human))
-		to_chat(usr, "<span class='danger'>It doesn't look like [M.p_they()] can fit into this properly!</span>")
-		return FALSE // Can't decapitate non-humans
+		to_chat(usr, "<span class='warning'>It doesn't look like [M.p_they()] can fit into this properly!</span>")
+		return FALSE // Can't hold non-humanoids
 
 	return ..(M, force, FALSE)
 
@@ -95,7 +93,7 @@
 				//H.cut_overlays()
 				H.update_body_parts_head_only()
 				switch(H.dna.species.name)
-					if ("Dwarf", "Goblin")
+					if ("Dwarf","Goblin")
 						H.set_mob_offsets("bed_buckle", _x = 0, _y = PILLORY_HEAD_OFFSET)
 				icon_state = "[base_icon]-over"
 				update_icon()
@@ -119,11 +117,11 @@
 	if(locked)
 		if(user.STASTR >= 18)
 			if(do_after(user, 25))
-				user.visible_message("<span class='danger'>[user] breaks [src] open!</span>")
+				user.visible_message("<span class='warning'>[user] breaks [src] open!</span>")
 				locked = 0
 				..()
 		else
-			to_chat(usr, "<span class='danger'>Unlock it first!</span>")
+			to_chat(usr, "<span class='warning'>Unlock it first!</span>")
 			return FALSE
 	else
 		..()
