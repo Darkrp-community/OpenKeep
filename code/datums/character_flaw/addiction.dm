@@ -142,7 +142,7 @@
 	if(H.mind)
 		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) || H.mind.has_antag_datum(/datum/antagonist/vampirelord)) // dont stunlock
 			return
-		if(!H.wear_neck)
+		if(!H.wear_wrists)
 			var/obj/item/clothing/neck/roguetown/psicross/crosstype
 			switch(H.patron?.name)
 				if("Astrata")
@@ -162,9 +162,9 @@
 						crosstype = /obj/item/clothing/neck/roguetown/psicross/g
 					else
 						crosstype = /obj/item/clothing/neck/roguetown/psicross
-			H.equip_to_slot_or_del(new crosstype(H), SLOT_NECK)
+			H.equip_to_slot_or_del(new crosstype(H), SLOT_WRISTS)
 
-/// ALCOHOLIC
+/// LOVE-FIEND
 
 /datum/charflaw/addiction/lovefiend
 	name = "Love-Fiend"
