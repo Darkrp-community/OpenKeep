@@ -78,7 +78,7 @@
 				return
 
 			if(istype(user.used_intent, /datum/intent/lord_electrocute))
-				HU.visible_message("<span class='warning'>[HU] electrocutes [H] with [src].</span>")
+				HU.visible_message("<span class='warning'>[HU] electrocutes [H] with \the [src].</span>")
 				H.electrocute_act(5, src)
 				to_chat(H, "<span class='danger'>I'm electrocuted by the scepter!</span>")
 				return
