@@ -64,7 +64,7 @@
 /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "briar robe"
-	desc = "Robes worn by Druid's in service to Dendor."
+	desc = "Robes worn by druids in service to Dendor."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "dendorrobe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
