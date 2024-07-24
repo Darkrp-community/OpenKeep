@@ -6,12 +6,13 @@
 //GLASS
 
 /datum/crafting_recipe/roguetown/engineering/glass
-	name = "glass"
+	name = "glass bottle"
 	reqs = list(
 		/obj/item/natural/dirtclod = 2
-        )
+		)
 	result = /obj/item/reagent_containers/glass/bottle/rogue
-	tools = list(/obj/machinery/light/rogue/forge, /obj/item/rogueweapon/tongs)
+	tools = list(/obj/item/rogueweapon/tongs)
+	structurecraft = /obj/machinery/light/rogue/forge
 
 //STRENGTH
 
