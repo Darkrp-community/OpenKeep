@@ -2366,7 +2366,7 @@
 "pCm" = (/obj/effect/landmark/start/guardsman{dir = 1; icon_state = "arrow"},/turf/open/floor/rogue/carpet/lord/center,/area/rogue/indoors/town/manor{first_time_text = "Blackwine Manor"})
 "pCp" = (/obj/effect/decal/cobbleedge{dir = 10},/obj/effect/decal/cobbleedge{dir = 5},/obj/structure/flora/roguegrass,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/town)
 "pCG" = (/obj/structure/fluff/walldeco/bath/gents,/obj/effect/decal/shadow_floor,/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/indoors/town/bath/redhouse)
-"pCU" = (/obj/structure/table/wood/nice/decorated,/obj/structure/globe{pixel_y = 13},/turf/open/floor/carpet/red,/area/rogue/outdoors/exposed/under/basement)
+"pCU" = (/obj/structure/table/wood/nice/decorated,/obj/structure/fluff/globe{pixel_y = 13},/turf/open/floor/carpet/red,/area/rogue/outdoors/exposed/under/basement)
 "pCW" = (/obj/structure/fluff/statue/knight/r,/turf/open/floor/rogue/hexstone,/area/rogue/indoors/town/manor{first_time_text = "Blackwine Manor"})
 "pDj" = (/obj/effect/spawner/roguemap/tree,/obj/effect/decal/remains/saiga,/turf/open/floor/rogue/grass,/area/rogue/outdoors/rtfield{ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)})
 "pEe" = (/obj/effect/decal/cobbleedge{dir = 1; icon_state = "borderfall"},/turf/open/water/swamp/deep,/area/rogue/outdoors/bog)
