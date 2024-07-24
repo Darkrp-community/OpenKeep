@@ -42,7 +42,7 @@
 	backl = /obj/item/rogueweapon/woodstaff
 	switch(pick(1,2))
 		if (1)
-			shoes = /obj/item/clothing/shoes/roguetown/shalal	
+			shoes = /obj/item/clothing/shoes/roguetown/sandals	
 		if (2)
 			shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	backpack_contents = list(/obj/item/scrying = 1)

@@ -116,11 +116,12 @@
 
 /obj/item/clothing/under/roguetown/trou/leather
 	name = "leather trousers"
-	icon_state = "leathertrou"
 	desc = "Standard leather pants for hardy workers."
+	icon_state = "leathertrou"
 
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
+	desc = "Dark trousers worn by morticians while performing burial rites."
 	icon_state = "leathertrou"
 	color = "#151615"
 
