@@ -78,13 +78,13 @@
 				return
 
 			if(istype(user.used_intent, /datum/intent/lord_electrocute))
-				HU.visible_message("<span class='warning'>[HU] electrocutes [H] with the [src].</span>")
+				HU.visible_message("<span class='warning'>[HU] electrocutes [H] with \the [src].</span>")
 				H.electrocute_act(5, src)
 				to_chat(H, "<span class='danger'>I'm electrocuted by the scepter!</span>")
 				return
 
 			if(istype(user.used_intent, /datum/intent/lord_silence))
-				HU.visible_message("<span class='warning'>[HU] silences [H] with the [src].</span>")
+				HU.visible_message("<span class='warning'>[HU] silences [H] with \the [src].</span>")
 				H.dna.add_mutation(/datum/mutation/human/mute)
 				addtimer(CALLBACK(H.dna, TYPE_PROC_REF(/datum/dna/, remove_mutation), /datum/mutation/human/mute), 20 SECONDS)
 				to_chat(H, "<span class='danger'>I'm silenced by the scepter!</span>")

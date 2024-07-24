@@ -602,19 +602,19 @@
 	turf_type = /turf/open/floor/rogue/naturalstone
 	above_floor = /turf/open/floor/rogue/naturalstone
 	baseturfs = list(/turf/open/floor/rogue/naturalstone)
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 15)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 20, /turf/closed/mineral/rogue/copper = 15, /turf/closed/mineral/rogue/iron = 5)
 	mineralChance = 30
 	max_integrity = 400
 
 /turf/closed/mineral/random/rogue/med
 	icon_state = "minrandmed"
 	mineralChance = 50
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 25, /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/coal = 25)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 20, /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/coal = 20, /turf/closed/mineral/rogue/copper = 10)
 
 /turf/closed/mineral/random/rogue/high
 	icon_state = "minrandhigh"
 	mineralChance = 50
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/gold = 15 , /turf/closed/mineral/rogue/iron = 25,)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/gold = 10 , /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/silver = 10)
 
 
 //begin actual mineral turfs
@@ -639,13 +639,30 @@
 	spreadChance = 0
 	spread = 0
 
+
+/turf/closed/mineral/rogue/copper
+	desc = "seems rich in copper"
+	icon_state = "mingold"
+	mineralType = /obj/item/rogueore/copper
+	rockType = /obj/item/natural/rock/copper
+	spreadChance = 4
+	spread = 3
+
+/turf/closed/mineral/rogue/silver
+	desc = "seems rich in silver"
+	icon_state = "mingold"
+	mineralType = /obj/item/rogueore/silver
+	rockType = /obj/item/natural/rock/silver
+	spreadChance = 2
+	spread = 2
+
 /turf/closed/mineral/rogue/gold
 	desc = "seems rich in gold"
 	icon_state = "mingold"
 	mineralType = /obj/item/rogueore/gold
 	rockType = /obj/item/natural/rock/gold
 	spreadChance = 2
-	spread = 3
+	spread = 2
 
 /turf/closed/mineral/rogue/salt
 	desc = "seems rich in salt"

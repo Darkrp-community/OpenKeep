@@ -1,6 +1,6 @@
 /datum/advclass/combat/assassin
 	name = "Assassin"
-	tutorial = "From a young age you have been drawn to blood, to hurting others. Eventually you found others like you, and a god who would bless your actions. Your cursed dagger has never led you astray, and with every stab you feel a little less empty."
+	tutorial = "From a young age you have been drawn to blood, to hurting others. Eventually you found others like you, money to be made, and a god who would bless your actions. Your cursed dagger has never led you astray, and with every stab you feel a little less empty."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -33,6 +33,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE) // Used for leaving notes after your evil work.
 
 	if(H.gender == FEMALE)
 		H.underwear = "Femleotard"
@@ -140,7 +141,7 @@
 	H.change_stat("speed", 3)
 	if(H.patron != /datum/patron/inhumen/graggar)
 		H.patron = GLOB.patronlist[/datum/patron/inhumen/graggar] // Assassins are associated with the God of murder, Graggar
-		to_chat(H, "<span class='danger'>My worship of [H.patron] has led me to who I am tonight. Let the blood flow.")
+		to_chat(H, "<span class='danger'>I've memorized my list of targets, time to get to work. For [H.patron] has led me to who I am tonight..")
 
 /mob/living/carbon/human/proc/who_targets()
 	set name = "Remember Targets"

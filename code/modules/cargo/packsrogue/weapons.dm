@@ -40,7 +40,7 @@
 
 /datum/supply_pack/rogue/weapons/bomb
 	name = "Battle Bomb"
-	cost = 140
+	cost = 72
 	contains = /obj/item/bomb/homemade
 
 /datum/supply_pack/rogue/weapons/shield
