@@ -156,7 +156,6 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 				if("Extended")
 					log_game("Major Antagonist: Extended")
 		return TRUE
-	var/townpower = GetTownPower()
 	var/playersready = num_players()
 	if(get_players_for_role(ROLE_PREBEL).len > 1)
 		major_modes |= 1
@@ -171,8 +170,6 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	var/majorpicked = pick(major_modes)
 	if(playersready <= 10)
 		majorpicked = 0
-	if(townpower <= 2)
-		majorpicked = 0	
 
 	switch(majorpicked)
 		if(0)
