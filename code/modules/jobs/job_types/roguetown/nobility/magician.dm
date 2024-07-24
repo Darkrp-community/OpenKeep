@@ -16,8 +16,7 @@
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_MAGICIAN
-	allowed_patrons = list(/datum/patron/divine/noc)
-	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fireball, /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt, /obj/effect/proc_holder/spell/aoe_turf/repulse, /obj/effect/proc_holder/spell/invoked/projectile/fetch, /obj/effect/proc_holder/spell/targeted/projectile/magic_missile, /obj/effect/proc_holder/spell/aoe_turf/knock)
+	allowed_patrons = list(/datum/patron/divine/noc)	
 	tutorial ="Dream interpreter, soothsayer, astrologer and valued courtier, blessed by Noc. \
 	Indebted to the ruler for funding yils of mystical studies in these dark times, \
 	only wisdom and arcane knowledge amassed during a long life will allow a mage to unlock their full potential."

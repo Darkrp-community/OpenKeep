@@ -1,17 +1,17 @@
 /datum/crafting_recipe/roguetown/alchemy
 	req_table = TRUE
-	subtype_reqs = FALSE
+	subtype_reqs = TRUE
 	skillcraft = /datum/skill/craft/alchemy
 
 //GLASS
 
-/datum/crafting_recipe/roguetown/engineering
+/datum/crafting_recipe/roguetown/engineering/glass
 	name = "glass"
 	reqs = list(
 		/obj/item/natural/dirtclod = 2
         )
 	result = /obj/item/reagent_containers/glass/bottle/rogue
-	tools = list(/obj/machinery/light/rogue/forge)
+	tools = list(/obj/machinery/light/rogue/forge, /obj/item/rogueweapon/tongs)
 
 //STRENGTH
 
@@ -19,8 +19,8 @@
 	name = "potion of strength"
 	reqs = list(
 		/datum/reagent/medicine/healthpot = 30,
-		/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue,
-        /obj/item/reagent_containers/glass/bottle
+		/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue = 1,
+		/obj/item/reagent_containers/glass/bottle/rogue = 1
         )
 	result = /obj/item/reagent_containers/glass/bottle/rogue/strengthpotion
 	craftdiff = 3
@@ -35,7 +35,7 @@
 	color = "#ffff00"
 	taste_description = "yellow"
 	overdose_threshold = 0
-	metabolization_rate = 2 * REAGENTS_METABOLISM
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	alpha = 173
 
 /datum/reagent/medicine/strengthpot/on_mob_life(mob/living/carbon/M)
@@ -48,12 +48,12 @@
 	id = "strengthbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/strengthbuff
 	effectedstats = list("strength" = 3)
-	duration = 2 MINUTES
+	duration = 10 SECONDS
 
 /atom/movable/screen/alert/status_effect/buff/strengthbuff
 	name = "Potion of Bull Strength"
 	desc = "<span class='nicegreen'>I am strong like a bull!</span>\n"
-	icon_state = "ravoxbuff"
+	icon_state = "buff"
 
 //SPEED
 
@@ -61,8 +61,8 @@
 	name = "potion of speed"
 	reqs = list(
 		/datum/reagent/medicine/manapot = 30,
-		/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue,
-        /obj/item/reagent_containers/glass/bottle
+		/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue = 1,
+		/obj/item/reagent_containers/glass/bottle/rogue = 1
         )
 	result = /obj/item/reagent_containers/glass/bottle/rogue/speedpotion
 	craftdiff = 3
@@ -77,7 +77,7 @@
 	color = "#00ff00"
 	taste_description = "green"
 	overdose_threshold = 0
-	metabolization_rate = 2 * REAGENTS_METABOLISM
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	alpha = 173
 
 /datum/reagent/medicine/speedpot/on_mob_life(mob/living/carbon/M)
@@ -90,12 +90,12 @@
 	id = "speedbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/speedbuff
 	effectedstats = list("speed" = 3)
-	duration = 2 MINUTES
+	duration = 10 SECONDS
 
 /atom/movable/screen/alert/status_effect/buff/speedbuff
 	name = "Potion of Cat Grace"
 	desc = "<span class='nicegreen'>I am fast like a cat!</span>\n"
-	icon_state = "ravoxbuff"
+	icon_state = "buff"
 
 //ENDURANCE
 
@@ -103,8 +103,8 @@
 	name = "potion of endurance"
 	reqs = list(
 		/datum/reagent/medicine/healthpot = 30,
-		/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed,
-        /obj/item/reagent_containers/glass/bottle
+		/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed = 1,
+		/obj/item/reagent_containers/glass/bottle/rogue = 1
         )
 	result = /obj/item/reagent_containers/glass/bottle/rogue/endurancepotion
 	craftdiff = 3
@@ -119,7 +119,7 @@
 	color = "#964b00"
 	taste_description = "brown"
 	overdose_threshold = 0
-	metabolization_rate = 2 * REAGENTS_METABOLISM
+	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 	alpha = 173
 
 /datum/reagent/medicine/endurancepot/on_mob_life(mob/living/carbon/M)
@@ -132,12 +132,12 @@
 	id = "endurancebuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/endurancebuff
 	effectedstats = list("endurance" = 3, "constitution" = 3)
-	duration = 4 MINUTES
+	duration = 2 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/endurancebuff
 	name = "Potion of Bear Endurance"
 	desc = "<span class='nicegreen'>I am strudy like a bear!</span>\n"
-	icon_state = "ravoxbuff"
+	icon_state = "buff"
 
 //INTELLIGENCE
 
@@ -145,8 +145,8 @@
 	name = "potion of wisdom"
 	reqs = list(
 		/datum/reagent/medicine/manapot = 30,
-		/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed,
-        /obj/item/reagent_containers/glass/bottle
+		/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed = 1,
+		/obj/item/reagent_containers/glass/bottle/rogue = 1
         )
 	result = /obj/item/reagent_containers/glass/bottle/rogue/wisdompotion
 	craftdiff = 3
@@ -161,7 +161,7 @@
 	color = "#add8e6"
 	taste_description = "light blue"
 	overdose_threshold = 0
-	metabolization_rate = 2 * REAGENTS_METABOLISM
+	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 	alpha = 173
 
 /datum/reagent/medicine/wisdompot/on_mob_life(mob/living/carbon/M)
@@ -174,12 +174,12 @@
 	id = "wisdombuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/wisdombuff
 	effectedstats = list("intelligence" = 3, "perception" = 3)
-	duration = 4 MINUTES
+	duration = 2 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/wisdombuff
 	name = "Potion of Owl Wisdom"
 	desc = "<span class='nicegreen'>I am wise like an owl!</span>\n"
-	icon_state = "ravoxbuff"
+	icon_state = "buff"
 
 //LUCK
 
@@ -188,9 +188,9 @@
 	reqs = list(
 		/datum/reagent/medicine/manapot = 30,
 		/datum/reagent/medicine/healthpot = 30,
-		/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed,
-		/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue,
-        /obj/item/reagent_containers/glass/bottle
+		/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed = 1,
+		/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue = 1,
+		/obj/item/reagent_containers/glass/bottle/rogue = 1
         )
 	result = /obj/item/reagent_containers/glass/bottle/rogue/luckpotion
 	craftdiff = 4
@@ -205,7 +205,7 @@
 	color = "#ffd700"
 	taste_description = "golden"
 	overdose_threshold = 0
-	metabolization_rate = 2 * REAGENTS_METABOLISM
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	alpha = 173
 
 /datum/reagent/medicine/luckpot/on_mob_life(mob/living/carbon/M)
@@ -218,9 +218,9 @@
 	id = "luckbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/luckbuff
 	effectedstats = list("luck" = 5)
-	duration = 2 MINUTES
+	duration = 10 SECONDS
 
 /atom/movable/screen/alert/status_effect/buff/luckbuff
 	name = "Felix Felicis"
 	desc = "<span class='nicegreen'>I am just damn lucky!</span>\n"
-	icon_state = "ravoxbuff"
+	icon_state = "buff"
