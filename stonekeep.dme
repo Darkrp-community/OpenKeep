@@ -1320,7 +1320,6 @@
 #include "code\game\objects\structures\roguetown\portal.dm"
 #include "code\game\objects\structures\roguetown\redstone.dm"
 #include "code\game\objects\structures\roguetown\rogueflora.dm"
-#include "code\game\objects\structures\roguetown\telescope.dm"
 #include "code\game\objects\structures\signs\_signs.dm"
 #include "code\game\objects\structures\signs\signs_departments.dm"
 #include "code\game\objects\structures\signs\signs_maps.dm"

@@ -9,6 +9,7 @@
 	var/climb_stun = 0
 	var/climb_sound = 'sound/foley/woodclimb.ogg'
 	var/climbable = FALSE
+	var/w_class = WEIGHT_CLASS_NORMAL
 	var/climb_offset = 0 //offset up when climbed
 	var/mob/living/structureclimber
 	var/broken = 0 //similar to machinery's stat BROKEN
