@@ -53,10 +53,13 @@
 	var/message2recognize = sanitize_hear_message(message)
 	var/mob/living/carbon/human/M = L
 	var/mob/living/carbon/V = L
+	if(M.patron?.name == "Zizo")
+		bannedwords = list() // :)
 	for(var/T in bannedwords)
 		if(findtext(message2recognize, T))
 			V.add_stress(/datum/stressevent/psycurse)
 			L.adjust_fire_stacks(100)
+			SSticker.pplsmited++
 			L.IgniteMob()
 			return FALSE
 	if(length(message2recognize) > 15)
