@@ -3178,6 +3178,7 @@
 #include "code\modules\roguetown\roguejobs\alchemist\container.dm"
 #include "code\modules\roguetown\roguejobs\alchemist\reagents.dm"
 #include "code\modules\roguetown\roguejobs\alchemist\recipe\reagents.dm"
+#include "code\modules\roguetown\roguejobs\alchemist\recipe\alchemy.dm"
 #include "code\modules\roguetown\roguejobs\blacksmith\anvil.dm"
 #include "code\modules\roguetown\roguejobs\blacksmith\forge.dm"
 #include "code\modules\roguetown\roguejobs\blacksmith\grindwheel.dm"

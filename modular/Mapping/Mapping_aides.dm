@@ -380,6 +380,18 @@
 
 /*	..................   Wizard Shenanigans   ................... */
 
+/obj/effect/forcefield/wizard/circle
+	timeleft = 1200
+
+/datum/crafting_recipe/roguetown/structure/circle_protection
+	name = "circle of protection"
+	result = /obj/structure/circle_protection
+	reqs = list(/obj/item/reagent_containers/powder/salt = 2)
+	verbage = "create"
+	verbage_tp = "creates"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/alchemy
+
 /obj/structure/circle_protection
 	name = "circle of protection"
 	icon = 'modular/Mapping/icons/96x96.dmi'
@@ -387,7 +399,7 @@
 	alpha = 180
 	pixel_y = -32
 	pixel_x = -32
-	var/wall_type = /obj/effect/forcefield/wizard
+	var/wall_type = /obj/effect/forcefield/wizard/circle
 	var/depleted
 /obj/structure/circle_protection/attack_hand(mob/user)
 	. = ..()
@@ -395,7 +407,7 @@
 	if(depleted)
 		to_chat(user, "<span class='notice'>The salt circle has been damaged...</span>")
 		return
-	if(H.virginity)
+	if(H.virginity || H.mind?.get_skill_level(/datum/skill/craft/alchemy))
 		playsound(get_turf(user), 'sound/magic/timestop.ogg', 100, TRUE, -1)
 		new wall_type(get_step(src, EAST),user)
 		new wall_type(get_step(src, WEST),user)
