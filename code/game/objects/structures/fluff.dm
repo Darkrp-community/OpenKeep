@@ -850,6 +850,57 @@
 	pixel_x = -32
 	pixel_y = -16
 
+/obj/structure/fluff/telescope
+	name = "telescope"
+	desc = "A mysterious telescope pointing towards the stars."
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "telescope"
+	density = TRUE
+	anchored = FALSE
+
+/obj/structure/fluff/telescope/attack_hand(mob/user)
+	if(!ishuman(user))
+		return
+
+	var/mob/living/carbon/human/H = user
+	var/random_message = rand(1,5)
+	var/message2send = ""
+	switch(random_message)
+		if(1)
+			message2send = "You can see Noc rotating."
+		if(2)
+			message2send = "Looking at Astrata blinds you!"
+		if(3)
+			message2send = "The stars smile at you."
+		if(4)
+			message2send = "Blessed yellow strife."
+		if(5)
+			message2send = "You see a star!"
+	to_chat(H, "<span class='notice'>[message2send]</span>")
+	
+	if(random_message == 2)
+		if(do_after(H, 25, target = src))
+			var/obj/item/bodypart/affecting = H.get_bodypart("head")
+			to_chat(H, "<span class='warning'>The blinding light causes you intense pain!</span>")
+			if(affecting && affecting.receive_damage(0, 5))
+				H.update_damage_overlays()
+
+/obj/structure/fluff/globe
+	name = "globe"
+	desc = "A mysterious globe representing the world."
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "globe"
+	density = TRUE
+	anchored = FALSE
+
+/obj/structure/fluff/globe/attack_hand(mob/user)
+	if(!ishuman(user))
+		return
+
+	var/mob/living/carbon/human/H = user
+	var/random_message = pick("you spin the globe!", "You land on Rockhill!", "You land on Zybantine!", "You land on port Ice cube!.", "You land on port Thornvale!", "You land on Grenzelhoft!")
+	to_chat(H, "<span class='notice'>[random_message]</span>")
+
 /obj/structure/fluff/statue/femalestatue/Initialize()
 	. = ..()
 	var/matrix/M = new

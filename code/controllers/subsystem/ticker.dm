@@ -76,6 +76,12 @@ SUBSYSTEM_DEF(ticker)
 	var/blood_lost = 0
 	var/tri_gained = 0
 	var/tri_lost = 0
+	var/holefall = 0 // ankles broken
+	var/pplsmited = 0 // people sm
+	var/moatfallers = 0 // moat fall
+	var/gibbs = 0 // gibs been
+	var/snort = 0 // drugs snorted
+	var/beardshavers = 0 // beards shaven, includes  more than dwarves
 	var/list/cuckers = list()
 	var/cums = 0
 

@@ -57,8 +57,10 @@
 		if(H.dna)
 			H.dna.species.random_underwear(H.gender)
 			if(H.dna.species)
-				if(H.dna.species.name in list("Elf"))
+				if(H.dna.species.id == "elf")
 					H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+				if(H.dna.species.id == "dwarf")
+					H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
 	H.underwear_color = null
 	H.update_body()
 
