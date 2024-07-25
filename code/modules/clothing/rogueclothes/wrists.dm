@@ -53,7 +53,7 @@
 //Aasimar hoplite bracers
 /obj/item/clothing/wrists/roguetown/bracers/hoplite
 	name = "ancient bracers"
-	desc = "Stalwart bracers fashioned made from bronze, from an age long past."
+	desc = "Stalwart bronze bracers, from an age long past."
 	icon_state = "aasimarwrist"
 	item_state = "aasimarwrist"
 	armor = list("melee" = 70, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) // Less protection than steel
