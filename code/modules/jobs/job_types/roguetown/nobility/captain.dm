@@ -16,8 +16,8 @@
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_CAPTAIN
 	tutorial = "Law and Order, your divine reason for existence. You have been given command over the garrison to help keep order and peace within the city and defend it against the many dangers of the island."
-	whitelist_req = FALSE
-	bypass_lastclass = TRUE
+	whitelist_req = TRUE
+	bypass_lastclass = FALSE
 	outfit = /datum/outfit/job/roguetown/captain
 	give_bank_account = 120
 	min_pq = -4
@@ -48,7 +48,7 @@
 	beltl = /obj/item/rogueweapon/sword/sabre
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	cloak = /obj/item/clothing/cloak/cape/guard
-	backpack_contents = list(/obj/item/keyring/captain = 1)
+	backpack_contents = list(/obj/item/keyring/captain = 1, /obj/item/scomstone)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
