@@ -163,7 +163,7 @@
 "dg" = (/obj/machinery/light/rogue/smelter,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors)
 "dh" = (/obj/structure/table/wood{icon_state = "tablewood1"},/obj/item/rope/chain,/obj/item/rope/chain,/obj/item/rope/chain,/obj/item/rope,/obj/item/rope,/turf/open/floor/rogue/blocks,/area/rogue/indoors)
 "di" = (/obj/structure/mineral_door/wood/donjon{dir = 1; icon_state = "donjondir"; locked = 1; lockid = "mansionvampire"},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors)
-"dj" = (/obj/structure/globe,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors)
+"dj" = (/obj/structure/fluff/globe,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors)
 "dk" = (/obj/structure/fluff/statue/gargoyle/moss,/obj/effect/decal/cleanable/cobweb,/turf/open/floor/rogue/blocks,/area/rogue/indoors)
 "dl" = (/obj/structure/table/wood{icon_state = "largetable"; dir = 6},/obj/item/paper,/turf/open/floor/rogue/hexstone,/area/rogue/indoors)
 "dm" = (/turf/open/floor/rogue/blocks/stonered,/area/rogue/indoors)

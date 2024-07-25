@@ -201,15 +201,17 @@
 		for(var/datum/objective/objective in objectives)
 			if(objective.check_completion())
 				to_chat(world, "<B>Goal #[objective_count]</B>: [objective.explanation_text] <span class='greentext'>TRIUMPH!</span>")
+				playsound(world, 'sound/misc/triumph.ogg', 100, FALSE, pressure_affected = FALSE)
 			else
 				to_chat(world, "<B>Goal #[objective_count]</B>: [objective.explanation_text] <span class='redtext'>FAIL.</span>")
+				playsound(world, 'sound/misc/fail.ogg', 100, FALSE, pressure_affected = FALSE)
 				win = FALSE
 			objective_count++
 		if(win)
 			for(var/datum/mind/M in members)
 				if(considered_alive(M))
 					M.adjust_triumphs(5)
-			to_chat(world, "<span class='greentext'>The Peasant Rebellion has triumphed!</span>")
+			to_chat(world, "<span class='greentext'>The Peasant Rebellion has TRIUMPHED!</span>")
 		else
 			to_chat(world, "<span class='redtext'>The Peasant Rebellion has FAILED!</span>")
 		for(var/X in offers2join)
