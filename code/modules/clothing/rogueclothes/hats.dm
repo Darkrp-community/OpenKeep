@@ -963,3 +963,18 @@
 		ADD_TRAIT(user, TRAIT_NOSTINK,"Dead Nose")
 	else
 		REMOVE_TRAIT(user, TRAIT_NOSTINK,"Dead Nose")
+
+// Aasimar hoplite helmet
+/obj/item/clothing/head/roguetown/rare/hoplite
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	name = "ancient helmet"
+	desc = "A weathered bronze helmet topped with a symbol of Astrata's sun."
+	icon_state = "aasimarhead"
+	item_state = "aasimarhead"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	body_parts_covered = HEAD|EARS|HAIR
+	flags_inv = HIDEEARS
+	allowed_race = list("aasimar")

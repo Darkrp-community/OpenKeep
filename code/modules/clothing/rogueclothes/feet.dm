@@ -101,6 +101,13 @@
 	icon_state = "sandals"
 	item_state = "sandals"
 
+/obj/item/clothing/shoes/roguetown/hoplite
+	name = "ancient sandals"
+	desc = "Worn sandals lined with bronze, ready to march ever onwards."
+	icon_state = "aasimarfeet"
+	item_state = "aasimarfeet"
+	sellprice = 20
+
 /obj/item/clothing/shoes/roguetown/shalal
 	name = "babouche"
 	desc = "Leather slippers of zybantean origin."
