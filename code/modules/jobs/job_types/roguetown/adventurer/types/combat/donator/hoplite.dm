@@ -16,7 +16,6 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/shields, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
@@ -26,7 +25,7 @@
 		H.change_stat("endurance", 2)
 		H.change_stat("constitution", 2)
 		H.change_stat("intelligence", -2) // No thinking, good soldiers follow orders
-		H.change_stat("speed", -2) // In for the long march... not a sprinter
+		H.change_stat("speed", -1) // In for the long march... not a sprinter
 
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	beltl = /obj/item/rogueweapon/sword/khopesh
