@@ -542,7 +542,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "Grenzelhoft cuirass"
+	name = "grenzelhoft cuirass"
 	desc = "A basic cuirass built from black-steel. It's somewhat more durable and lightweight than regular steel."
 	icon_state = "grenzelcuirass"
 	item_state = "grenzelcuirass"
