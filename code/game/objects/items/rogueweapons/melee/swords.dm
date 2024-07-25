@@ -731,3 +731,21 @@
 				return list("shrink" = 0.6,"sx" = 3,"sy" = 4,"nx" = -1,"ny" = 4,"wx" = -8,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+// Hoplite Kophesh
+/obj/item/rogueweapon/sword/khopesh
+	name = "ancient khopesh"
+	desc = "A bronze weapon of war from the era of Apotheosis, this blade is older than a few elven generations, but has been very well-maintained and still keeps a good edge."
+	force = 20
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
+	gripped_intents = null
+	icon = 'icons/roguetown/weapons/64.dmi'
+	icon_state = "khopesh"
+	item_state = "khopesh"
+	smeltresult = null // No bronze ingots yet
+	max_blade_int = 300
+	max_integrity = 300
+	minstr = 9 // Even though it's technically one-handed, you gotta have some muscle to wield this thing
+	wdefense = 3
+	wbalance = -1 // Beeg aasimar choppa
+	sellprice = 200 // A noble collector would love to get his/her hands on one of these blades
