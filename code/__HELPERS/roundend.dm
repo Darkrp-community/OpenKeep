@@ -208,8 +208,6 @@
 		if(C.mob)
 			SSdroning.kill_droning(C)
 			C.mob.playsound_local(C.mob, 'sound/misc/roundend.ogg', 100, FALSE)
-			sleep(15 SECONDS)
-			C.mob.playsound_local(C.mob, 'sound/music/credits.ogg', 100, FALSE)
 		if(isliving(C.mob) && C.ckey)
 			key_list += C.ckey
 //	if(key_list.len)
@@ -224,6 +222,7 @@
 
 	for(var/mob/M in GLOB.mob_list)
 		M.do_game_over()
+		M.playsound_local(C.mob, 'sound/music/credits.ogg', 100, FALSE)
 
 	for(var/I in round_end_events)
 		var/datum/callback/cb = I
