@@ -436,6 +436,9 @@
 	name = "kettle helmet"
 	desc = "A lightweight steel helmet generally worn by crossbowmen and garrison archers."
 	icon_state = "kettle"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
 	will_cover = HEAD|HAIR
 	will_hide = HIDEEARS
 	max_integrity = 250 // Covers less, so less overall integrity
@@ -539,6 +542,9 @@
 	desc = "A lightweight armet that protects dreams of chivalrous friendship, fair maidens to rescue, and glorious deeds of combat. Its visor can be flipped over for higher visibility at the cost of eye protection."
 	icon_state = "knight"
 	item_state = "knight"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
 	adjustable = CAN_CADJUST
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	emote_environment = 3
