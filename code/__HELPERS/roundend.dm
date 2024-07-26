@@ -222,7 +222,7 @@
 
 	for(var/mob/M in GLOB.mob_list)
 		M.do_game_over()
-		M.playsound_local(C.mob, 'sound/music/credits.ogg', 100, FALSE)
+		M.playsound_local(M, 'sound/music/credits.ogg', 100, FALSE)
 
 	for(var/I in round_end_events)
 		var/datum/callback/cb = I
