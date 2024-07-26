@@ -11,8 +11,7 @@
 	"Humen",
 	"Elf",
 	"Half-Elf",
-	"Dark Elf",
-	"Argonian",
+	"Dark Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/mastercarpenter
 	category_tags = list(CTAG_PILGRIM)
