@@ -254,7 +254,7 @@
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane
 	name = "profane dagger"
 	desc = "A dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
-	force = 20 // Very powerful for a dagger, but still below a two-handed sword by a large margin. Fitting for an enchanted weapon.
+	force = 14 // Now does 14 damage to non-hunted victims, but 20 to hunted victims. Sic Semper Gragganis.
 	sellprice = 250
 	icon_state = "pdagger"
 	smeltresult = null
@@ -289,7 +289,14 @@
 				"<span class='danger'>How long have I been in here...</span>")
 			H.visible_message("profane dagger whispers, \"[message]\"")
 
-/obj/item/rogueweapon/huntingknife/idagger/steel/profane/funny_attack_effects(mob/living/carbon/human/target, mob/living/user = usr, nodmg)
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/pre_attack(mob/living/carbon/human/target, mob/living/user = usr, params)
+	if(target.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(target, TRAIT_ZIZOID_HUNTED)) // Check to see if the dagger will do 20 damage or 14
+		force = 20
+	else
+		force = 14
+	return FALSE
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/profane/afterattack(mob/living/carbon/human/target, mob/living/user = usr, proximity)
 	. = ..()
 	if(target.stat == DEAD || (target.health < target.crit_threshold)) // Trigger soul steal if the target is either dead or in crit
 		if(target.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(target, TRAIT_ZIZOID_HUNTED)) // The profane dagger only thirsts for those who are hunted, by flaw or by zizoid curse.
