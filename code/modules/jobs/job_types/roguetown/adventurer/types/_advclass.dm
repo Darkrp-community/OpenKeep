@@ -3,13 +3,14 @@
 	var/outfit
 	var/tutorial = "Choose me!"
 	var/list/allowed_sexes
-	var/list/allowed_races = list("Humen",
+	var/list/allowed_races = list(
 	"Humen",
 	"Elf",
-	"Elf",
-	"Dark Elf",
+	"Half-Elf",
 	"Dwarf",
-	"Dwarf"
+	"Tiefling",
+	"Dark Elf",
+	"Aasimar"
 	)
 	var/list/allowed_patrons
 	var/list/allowed_ages

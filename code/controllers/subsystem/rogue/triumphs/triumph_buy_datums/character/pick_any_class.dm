@@ -30,17 +30,15 @@
 /datum/advclass/pick_everything
 	name = "Pick-Classes"
 	tutorial = "This will open up another menu when you spawn allowing you to pick from any class as long as its not disabled."
-	allowed_sexes = list("male", "female")
+	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 	"Humen",
 	"Elf",
-	"Dark Elf",
 	"Half-Elf",
-	"Tiefling",
 	"Dwarf",
-	"Aasimar",
-	"Half Orc",
-	"Argonian"
+	"Tiefling",
+	"Dark Elf",
+	"Aasimar"
 	)
 	maximum_possible_slots = 0
 
