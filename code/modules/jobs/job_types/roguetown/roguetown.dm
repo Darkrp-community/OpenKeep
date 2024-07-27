@@ -37,7 +37,7 @@
 	/// List of patrons we are allowed to use
 	var/list/allowed_patrons
 	/// Default patron in case the patron is not allowed
-	var/datum/patron/default_patron
+	var/datum/patron/default_patron = /datum/patron/divine/astrata
 
 /datum/outfit/job/roguetown/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
@@ -48,7 +48,10 @@
 			if(!(god in allowed_patrons))
 				continue
 			possiblegods |= god
-		H.patron = GLOB.patronlist[default_patron] || pick(possiblegods)
+			if(possiblegods)
+				H.patron = pick(possiblegods)
+			else
+				H.patron = GLOB.patronlist[default_patron]
 		to_chat(H, "<span class='warning'>[ourpatron] had not endorsed my practices in my younger years. I've since grown acustomed to [H.patron].")
 	if(H.mind)
 		if(H.gender == FEMALE)
@@ -57,8 +60,10 @@
 		if(H.dna)
 			H.dna.species.random_underwear(H.gender)
 			if(H.dna.species)
-				if(H.dna.species.name in list("Elf"))
+				if(H.dna.species.id == "elf")
 					H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+				if(H.dna.species.id == "dwarf")
+					H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
 	H.underwear_color = null
 	H.update_body()
 

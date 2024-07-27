@@ -24,6 +24,7 @@
 	if(L)
 		SSticker.select_ruler()
 		to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is King of Rockhill.</span></span></b>")
+		to_chat(world, "<br>")
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
 
 
@@ -42,7 +43,6 @@
 		id = /obj/item/clothing/ring/active/nomag
 		l_hand = /obj/item/rogueweapon/lordscepter
 		if(H.mind)
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/convertrole/guard)
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)

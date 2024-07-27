@@ -4,8 +4,8 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Half-Elf",
 		"Elf",
+		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",

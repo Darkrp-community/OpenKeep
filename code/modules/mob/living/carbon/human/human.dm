@@ -26,6 +26,7 @@
 				if(do_after(user, 50, needhand = 1, target = src))
 					facial_hairstyle = "None"
 					update_hair()
+					SSticker.beardshavers++
 					if(dna?.species)
 						if(dna.species.id == "dwarf")
 							var/mob/living/carbon/V = src
@@ -85,6 +86,8 @@
 	var/obj/item/bodypart/affecting
 	var/dam = levels * rand(10,50)
 	V.add_stress(/datum/stressevent/felldown)
+	SSticker.moatfallers-- // If you get your ankles broken you fall. This makes sure only those that DIDN'T get damage get counted.
+	SSticker.holefall++
 	var/chat_message
 	switch(rand(1,4))
 		if(1)
@@ -106,6 +109,11 @@
 		if(levels >= 1)
 			//absurd damage to guarantee a crit
 			affecting.try_crit(BCLASS_TWIST, 300)
+
+	for(var/mob/living/M in T.contents)
+		visible_message("\The [src] hits \the [M.name]!")
+		M.AdjustKnockdown(levels * 20)
+		M.take_overall_damage(dam * 3.5)
 
 	if(chat_message)
 		to_chat(src, chat_message)
