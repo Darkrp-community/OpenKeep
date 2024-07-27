@@ -84,7 +84,7 @@
 					W.water_volume = clamp(master_reagent.volume, 1, 100)
 					W.update_icon()
 					playsound(W, 'sound/foley/waterenter.ogg', 100, FALSE)
-					qdel(src)
+					QDEL_NULL(src) // Somehow this actually makes it disappear. Hilarious.
 	testing("proc ended")
 
 /obj/structure/closet/dirthole/attackby(obj/item/attacking_item, mob/user, params)

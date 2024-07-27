@@ -58,6 +58,7 @@
 	visible_message("<span class='danger'>[src] falls down[points]</span>", \
 					"<span class='danger'>I fall down[points]</span>")
 	playsound(src.loc, 'sound/foley/zfall.ogg', 100, FALSE)
+	SSticker.moatfallers++
 	if(!isgroundlessturf(T))
 		ZImpactDamage(T, levels)
 	return ..()
