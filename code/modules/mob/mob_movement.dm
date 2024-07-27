@@ -611,7 +611,7 @@
 			return
 
 	else //not currently sneaking, check if we can sneak
-		if(light_amount < light_treshhold && m_intent == MOVE_INTENT_SNEAK && (world.time > mob_timers[MT_FOUNDSNEAK] + 30 SECONDS))
+		if(light_amount < light_treshhold && m_intent == MOVE_INTENT_SNEAK && (world.time > mob_timers[MT_FOUNDSNEAK] + 30 SECONDS) && !pulling && !pulledby)
 			animate(src, alpha = 0, time = used_time)
 			spawn(used_time + 5) regenerate_icons()
 			rogue_sneaking = TRUE
