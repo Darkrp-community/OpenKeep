@@ -100,7 +100,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/blkknight/death
 	gloves = /obj/item/clothing/gloves/roguetown/plate/blk/death
 	backl = /obj/item/rogueweapon/sword/long/death
-	head = /obj/item/clothing/head/roguetown/helmet/heavy/knight/black
+	head = /obj/item/clothing/head/roguetown/helmet/visored/knight/black
 
 	H.change_stat("intelligence", 3)
 	H.change_stat("strength", 2)

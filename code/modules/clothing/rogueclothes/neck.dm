@@ -139,7 +139,7 @@
 
 /obj/item/clothing/neck/roguetown/psicross/astrata
 	name = "amulet of Astrata"
-	desc = "Blessed be everything the light of the sun touches, for it is blessed by Her grace."
+	desc = "Blessed be everything the light of the sun touches, for it is protected by Her grace."
 	icon_state = "astrata"
 	resistance_flags = FIRE_PROOF
 
@@ -169,7 +169,7 @@
 
 /obj/item/clothing/neck/roguetown/psicross/eora
 	name = "amulet of Eora"
-	desc = ""
+	desc = "And I love thee because thou art love."
 	icon_state = "eora"
 
 /obj/item/clothing/neck/roguetown/psicross/silver
