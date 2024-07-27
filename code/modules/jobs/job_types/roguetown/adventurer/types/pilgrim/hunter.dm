@@ -15,6 +15,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/hunter
 
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
+	whitelist_req = TRUE
 
 /datum/outfit/job/roguetown/adventurer/hunter/pre_equip(mob/living/carbon/human/H)
 	..()
