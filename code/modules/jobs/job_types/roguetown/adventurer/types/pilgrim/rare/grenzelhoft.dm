@@ -10,6 +10,7 @@
 	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 1
 	min_pq = 1
+	whitelist_req = TRUE
 
 
 /datum/outfit/job/roguetown/adventurer/grenzelhoft/pre_equip(mob/living/carbon/human/H)
