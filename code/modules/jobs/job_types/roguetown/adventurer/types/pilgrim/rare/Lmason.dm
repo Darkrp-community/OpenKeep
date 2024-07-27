@@ -7,9 +7,8 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 	"Humen",
-	"Dwarf",
 	"Half-Elf",
-	"Half Orc"
+	"Dwarf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/grandmastermason
 	category_tags = list(CTAG_PILGRIM)
