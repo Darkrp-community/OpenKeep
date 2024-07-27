@@ -29,7 +29,6 @@
 
 /datum/outfit/job/roguetown/magician/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.virginity = TRUE
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
 	head = /obj/item/clothing/head/roguetown/wizhat/gen
 	backr = /obj/item/storage/backpack/rogue/satchel
