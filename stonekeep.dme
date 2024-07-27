@@ -2193,7 +2193,6 @@
 #include "code\modules\jobs\job_types\roguetown\garrison\veteran.dm"
 #include "code\modules\jobs\job_types\roguetown\nobility\archivist.dm"
 #include "code\modules\jobs\job_types\roguetown\nobility\captain.dm"
-#include "code\modules\jobs\job_types\roguetown\nobility\captain.dm"
 #include "code\modules\jobs\job_types\roguetown\nobility\feldsher.dm"
 #include "code\modules\jobs\job_types\roguetown\nobility\hand.dm"
 #include "code\modules\jobs\job_types\roguetown\nobility\lady.dm"
