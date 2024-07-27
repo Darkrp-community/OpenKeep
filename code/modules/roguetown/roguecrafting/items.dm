@@ -297,13 +297,22 @@
 	craftdiff = 1
 	skillcraft = /datum/skill/craft/engineering
 
-datum/crafting_recipe/roguetown/poisonbolt
+/datum/crafting_recipe/roguetown/poisonbolt
 	name = "poison bolt"
 	result = /obj/item/ammo_casing/caseless/rogue/bolt/poison
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/bolt = 1,
 				/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 1)
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/bomb
+	name = "bomb"
+	result = /obj/item/bomb/homemade
+	reqs = list(/obj/item/natural/cloth = 1,
+				/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue = 1,
+				/obj/item/reagent_containers/glass/bottle = 1)
+	craftdiff = 1
+	skillcraft = /datum/skill/craft/engineering
+	
 /datum/crafting_recipe/roguetown/pyrobolt
 	name = "pyroclastic bolt"
 	result = /obj/item/ammo_casing/caseless/rogue/bolt/pyro
