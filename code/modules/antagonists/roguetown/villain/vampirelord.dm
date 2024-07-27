@@ -1249,6 +1249,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	charge_max = 5 SECONDS
 	include_user = 0
 	max_targets = 1
+	cooldown_min = 100
 
 /obj/effect/proc_holder/spell/targeted/transfix/cast(list/targets, mob/user = usr)
 	var/bloodskill = user.mind.get_skill_level(/datum/skill/magic/blood)
@@ -1267,14 +1268,20 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			break
 
 		if(bloodroll >= willroll)
-			if(found_psycross == TRUE)
-				to_chat(L, "<font color='white'>The silver psycross shines and protect me from the unholy magic.</font>")
-				to_chat(user, "<span class='userdanger'>[L] has my BANE!It causes me to fail to ensnare their mind!</span>")
-			else
+			if(bloodroll - willroll >= 10)
 				to_chat(L, "You feel like a curtain is coming over your mind.")
 				to_chat(user, "Their mind gives way, they will soon be asleep.")
 				sleep(50)
-				L.Sleeping(300)
+				L.Paralyze(bloodroll*10)
+			else
+				if(found_psycross == TRUE)
+					to_chat(L, "<font color='white'>The silver psycross shines and protect me from the unholy magic.</font>")
+					to_chat(user, "<span class='userdanger'>[L] has my BANE!It causes me to fail to ensnare their mind!</span>")
+				else
+					to_chat(L, "You feel like a curtain is coming over your mind.")
+					to_chat(user, "Their mind gives way, they will soon be asleep.")
+					sleep(50)
+					L.Paralyze(bloodroll*10)
 		if(willroll >= bloodroll)
 			if(found_psycross == TRUE)
 				to_chat(L, "<font color='white'>The silver psycross shines and protect me from the unholy magic.</font>")
