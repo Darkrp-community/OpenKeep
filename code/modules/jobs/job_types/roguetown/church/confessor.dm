@@ -11,10 +11,9 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
-		"Aasimar"
 	)
 	allowed_sexes = list(MALE)
-	tutorial = "The Adepts are Non-Noble Warriors Who are accepted by the puritan to learn under his wing, they are competent fighters ready to face the darkness of the world with their martial skills."
+	tutorial = "The Adepts are Non-Noble warriors who are accepted by the puritan to learn under his wing, they are competent fighters ready to face the darkness of the world with their martial skills and faith in the pantheon."
 
 	outfit = /datum/outfit/job/roguetown/shepherd
 	spells = list(/obj/effect/proc_holder/spell/invoked/heal, /obj/effect/proc_holder/spell/invoked/shepherd)
@@ -33,6 +32,7 @@
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	mask = /obj/item/clothing/mask/rogue/facemask
+	neck = /obj/item/clothing/neck/roguetown/gorget
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	beltl = /obj/item/rogueweapon/mace/cudgel
@@ -59,6 +59,7 @@
 		H.change_stat("strength", 1)
 		H.change_stat("speed", 2)
 		H.change_stat("perception", 1)
+		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		if(H.mind.has_antag_datum(/datum/antagonist))
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
