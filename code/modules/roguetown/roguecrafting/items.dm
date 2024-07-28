@@ -310,7 +310,7 @@
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue = 1,
 				/obj/item/reagent_containers/glass/bottle = 1)
-	craftdiff = 1
+	craftdiff = 2
 	skillcraft = /datum/skill/craft/engineering
 	
 /datum/crafting_recipe/roguetown/pyrobolt
