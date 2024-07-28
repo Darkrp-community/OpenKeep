@@ -13,8 +13,8 @@
 	)
 	allowed_patrons = ALL_TEMPLAR_PATRONS
 	outfit = /datum/outfit/job/roguetown/templar
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	display_order = JDO_SHEPHERD
 	give_bank_account = FALSE
 
@@ -31,22 +31,22 @@
 		if("Astrata")
 			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
-			cloak = /obj/item/clothing/cloak/tabard/crusader/astrata
+			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
 		if("Dendor")
 			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
-			cloak = /obj/item/clothing/cloak/tabard/crusader/dendor
+			cloak = /obj/item/clothing/cloak/stabard/templar/dendor
 		if("Necra")
 			neck = /obj/item/clothing/neck/roguetown/psicross/necra
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
-			cloak = /obj/item/clothing/cloak/tabard/crusader/necra
+			cloak = /obj/item/clothing/cloak/stabard/templar/necra
 		if("Pestra")
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
-			cloak = /obj/item/clothing/cloak/tabard/crusader/pestra
+			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
 		if("Noc")
 			neck = /obj/item/clothing/neck/roguetown/psicross/noc
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
-			cloak = /obj/item/clothing/cloak/tabard/crusader/noc
+			cloak = /obj/item/clothing/cloak/stabard/templar/noc
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	pants = /obj/item/clothing/under/roguetown/chainlegs
@@ -55,13 +55,11 @@
 	backpack_contents = list(/obj/item/roguekey/church = 1)
 	backr = /obj/item/rogueweapon/shield/tower/metal
 	belt = /obj/item/storage/belt/rogue/leather/black
-	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
+	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltr = /obj/item/rogueweapon/sword/long
 	id = /obj/item/clothing/ring/silver
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
@@ -75,7 +73,6 @@
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", -1)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	if(H.dna?.species)
 		if(H.dna.species.id == "humen")

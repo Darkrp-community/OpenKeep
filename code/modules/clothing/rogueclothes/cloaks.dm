@@ -137,27 +137,6 @@
 	color = CLOTHING_RED
 	detail_color = CLOTHING_WHITE
 
-/obj/item/clothing/cloak/tabard/crusader/astrata
-	color = "#9B7538"
-	detail_color = CLOTHING_WHITE
-
-/obj/item/clothing/cloak/tabard/crusader/dendor
-	color = "#4B5637"
-	detail_color = "#3D1D1C"
-
-/obj/item/clothing/cloak/tabard/crusader/necra
-	color = "#222223"
-	detail_color = "#CACBC5"
-
-/obj/item/clothing/cloak/tabard/crusader/pestra
-	color = CLOTHING_WHITE
-	detail_color = CLOTHING_GREEN
-
-/obj/item/clothing/cloak/tabard/crusader/noc
-	color = "#2C2231"
-	detail_color = "#9AB0B0"
-
-
 /obj/item/clothing/cloak/tabard/crusader/tief/attack_right(mob/user)
 	if(picked)
 		return
@@ -366,6 +345,70 @@
 	if(ismob(loc))
 		var/mob/L = loc
 		L.update_inv_cloak()
+
+//////////////////////////
+/// CRUSADER
+////////////////////////
+
+/obj/item/clothing/cloak/stabard/templar
+	name = "surcoat of the golden order"
+	icon_state = "tabard_weeping"
+	item_state = "tabard_weeping"
+	icon = 'icons/roguetown/clothing/special/templar.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/templar.dmi'
+	sleeved = 'icons/roguetown/clothing/special/onmob/templar.dmi'
+
+/obj/item/clothing/cloak/stabard/templar/astrata
+	name = "surcoat of the astratan order"
+	icon_state = "tabard_astrata"
+	item_state = "tabard_astrata"
+
+/obj/item/clothing/cloak/stabard/templar/astrata/alt
+	icon_state = "tabard_astrata_alt"
+	item_state = "tabard_astrata_alt"
+
+/obj/item/clothing/cloak/stabard/templar/necra
+	name = "surcoat of the necran order"
+	icon_state = "tabard_necra"
+	item_state = "tabard_necra"
+
+/obj/item/clothing/cloak/stabard/templar/necra/alt
+	icon_state = "tabard_necra_alt"
+	item_state = "tabard_necra_alt"
+
+/obj/item/clothing/cloak/stabard/templar/dendor
+	name = "surcoat of the dendorian order"
+	icon_state = "tabard_dendor"
+	item_state = "tabard_dendor"
+
+/obj/item/clothing/cloak/stabard/templar/noc
+	name = "surcoat of the lunar order"
+	icon_state = "tabard_noc"
+	item_state = "tabard_noc"
+
+/obj/item/clothing/cloak/stabard/templar/noc/alt
+	icon_state = "tabard_noc_alt"
+	item_state = "tabard_noc_alt"
+
+/obj/item/clothing/cloak/stabard/templar/abyssor
+	name = "surcoat of the abyssal order"
+	icon_state = "tabard_abyssor"
+	item_state = "tabard_abyssor"
+
+/obj/item/clothing/cloak/stabard/templar/malum
+	name = "surcoat of the malumite order"
+	icon_state = "tabard_malum"
+	item_state = "tabard_malum"
+
+/obj/item/clothing/cloak/stabard/templar/eora
+	name = "surcoat of the eoran order" //This SHOULDNT be used, Eorites dont have templars since they are all pansy pacifists
+	icon_state = "tabard_eora"
+	item_state = "tabard_eora"
+
+/obj/item/clothing/cloak/stabard/templar/pestra
+	name = "surcoat of the pestran order"
+	icon_state = "tabard_pestra"
+	item_state = "tabard_pestra"
 
 //////////////////////////
 /// SURCOATS
