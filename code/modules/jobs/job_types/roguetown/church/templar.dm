@@ -1,4 +1,4 @@
-/datum/job/roguetown/shepherd
+/datum/job/roguetown/templar
 	title = "Templar"
 	department_flag = CHURCHMEN
 	faction = "Station"
@@ -15,12 +15,12 @@
 	outfit = /datum/outfit/job/roguetown/templar
 	total_positions = 1
 	spawn_positions = 1
-	display_order = JDO_SHEPHERD
+	display_order = JDO_TEMPLAR
 	give_bank_account = FALSE
 
 /datum/outfit/job/roguetown/templar
 	name = "Templar"
-	jobtype = /datum/job/roguetown/shepherd
+	jobtype = /datum/job/roguetown/templar
 
 /datum/outfit/job/roguetown/templar/pre_equip(mob/living/carbon/human/H)
 	..()
