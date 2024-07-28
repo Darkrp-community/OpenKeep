@@ -135,15 +135,6 @@
 	result = /obj/item/reagent_containers/food/snacks/stewedsoymeat
 	subcategory = CAT_NONE
 
-/datum/crafting_recipe/food/sausage
-	name = "Sausage"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/faggot = 1,
-		/obj/item/reagent_containers/food/snacks/meat/cutlet = 2
-	)
-	result = /obj/item/reagent_containers/food/snacks/sausage
-	subcategory = CAT_NONE
-
 /datum/crafting_recipe/food/nugget
 	name = "Chicken nugget"
 	reqs = list(

@@ -64,8 +64,6 @@
 	var/list/datum/mind/pre_delfs = list()
 	var/list/datum/mind/pre_rebels = list()
 	var/list/datum/mind/pre_cultists = list()
-	var/list/datum/mind/pre_aspirants = list()
-	var/list/datum/mind/aspirants = list()
 
 /datum/game_mode/proc/announce() //Shows the gamemode's name and a fast description.
 	to_chat(world, "<b>The gamemode is: <span class='[announce_span]'>[name]</span>!</b>")

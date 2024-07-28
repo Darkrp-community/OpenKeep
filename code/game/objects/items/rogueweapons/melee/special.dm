@@ -12,8 +12,9 @@
 	wlength = WLENGTH_NORMAL
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_HIP
+	resistance_flags = FIRE_PROOF|LAVA_PROOF // Nigh indestructible due to how important it is
 	associated_skill = /datum/skill/combat/axesmaces
-	smeltresult = /obj/item/ingot/iron
+	smeltresult = null // No
 	swingsound = BLUNTWOOSH_MED
 	minstr = 5
 	blade_dulling = DULLING_BASHCHOP
@@ -77,13 +78,13 @@
 				return
 
 			if(istype(user.used_intent, /datum/intent/lord_electrocute))
-				HU.visible_message("<span class='warning'>[HU] electrocutes [H] with the [src].</span>")
+				HU.visible_message("<span class='warning'>[HU] electrocutes [H] with \the [src].</span>")
 				H.electrocute_act(5, src)
 				to_chat(H, "<span class='danger'>I'm electrocuted by the scepter!</span>")
 				return
 
 			if(istype(user.used_intent, /datum/intent/lord_silence))
-				HU.visible_message("<span class='warning'>[HU] silences [H] with the [src].</span>")
+				HU.visible_message("<span class='warning'>[HU] silences [H] with \the [src].</span>")
 				H.dna.add_mutation(/datum/mutation/human/mute)
 				addtimer(CALLBACK(H.dna, TYPE_PROC_REF(/datum/dna/, remove_mutation), /datum/mutation/human/mute), 20 SECONDS)
 				to_chat(H, "<span class='danger'>I'm silenced by the scepter!</span>")

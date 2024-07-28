@@ -1,5 +1,3 @@
-
-
 //these mobs run away when attacked
 /mob/living/simple_animal/hostile/retaliate/rogue
 	turns_per_move = 5
@@ -27,19 +25,31 @@
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	blood_volume = BLOOD_VOLUME_NORMAL
 	food_type = list(/obj/item/reagent_containers/food/snacks/grown)
-	var/obj/item/udder/udder = null
 	footstep_type = FOOTSTEP_MOB_SHOE
-	var/milkies = FALSE
 	stop_automated_movement_when_pulled = 0
 	tame_chance = 0
 	retreat_distance = 10
 	minimum_distance = 10
+	candodge = TRUE
 	dodge_sound = 'sound/combat/dodge.ogg'
 	dodge_prob = 0
+	search_objects = TRUE
+	//Should turn this into a flag thing but i dont want to touch too many things
+	var/body_eater = FALSE
+	//If the creature is doing something they should STOP MOVING.
+	var/can_act = TRUE
+	//Trolls eat more than wolves
+	var/food_max = 50
 	var/deaggroprob = 10
 	var/eat_forever
-	candodge = TRUE
+	var/obj/item/udder/udder = null
+	var/milkies = FALSE
 
+/mob/living/simple_animal/hostile/retaliate/rogue/Move()
+	//If you cant act and dont have a player stop moving.
+	if(!can_act && !client)
+		return FALSE
+	..()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE)
 	..()
@@ -74,82 +84,136 @@
 	set waitfor = FALSE
 	if(!stop_automated_movement && wander && !doing)
 		if(ssaddle && has_buckled_mobs())
-			return 0
-		if(find_food())
-			return
+			return FALSE
 		else
 			..()
 
-/mob/living/simple_animal/hostile/retaliate/rogue/proc/find_food()
-	if(food > 50 && !eat_forever)
-		return
-	var/list/around = view(1, src)
-	var/list/foundfood = list()
-	if(stat)
-		return
-	for(var/obj/item/F in around)
-		if(is_type_in_list(F, food_type))
-			foundfood += F
-			if(src.Adjacent(F))
-				face_atom(F)
-				playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
-				qdel(F)
-				food = max(food + 30, 100)
-				return TRUE
-	for(var/obj/item/F in foundfood)
-		if(is_type_in_list(F, food_type))
-			var/turf/T = get_turf(F)
-			Goto(T,move_to_delay,0)
-			return TRUE
-	return FALSE
-
-/mob/living/simple_animal/hostile/retaliate/rogue/proc/eat_bodies()
-	var/mob/living/L
-//	var/list/around = view(aggro_vision_range, src)
-	var/list/around = hearers(1, src)
-	var/list/foundfood = list()
-	if(stat)
-		return
-	for(var/mob/living/eattarg in around)
-		if(eattarg.stat != CONSCIOUS)
-			foundfood += eattarg
-			L = eattarg
-			if(src.Adjacent(L))
-				if(iscarbon(L))
-					var/mob/living/carbon/C = L
-					if(attack_sound)
-						playsound(src, pick(attack_sound), 100, TRUE, -1)
-					face_atom(C)
-					src.visible_message("<span class='danger'>[src] starts to rip apart [C]!</span>")
-					if(do_after(src,100, target = L))
-						var/obj/item/bodypart/limb
-						var/list/limb_list = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-						for(var/zone in limb_list)
-							limb = C.get_bodypart(zone)
-							if(limb)
-								limb.dismember()
-								return TRUE
-						limb = C.get_bodypart(BODY_ZONE_HEAD)
-						if(limb)
-							limb.dismember()
-							return TRUE
-						limb = C.get_bodypart(BODY_ZONE_CHEST)
-						if(limb)
-							if(!limb.dismember())
-								C.gib()
-							return TRUE
-				else
-					if(attack_sound)
-						playsound(src, pick(attack_sound), 100, TRUE, -1)
-					src.visible_message("<span class='danger'>[src] starts to rip apart [L]!</span>")
-					if(do_after(src,100, target = L))
-						L.gib()
-						return TRUE
-	for(var/mob/living/eattarg in foundfood)
-		var/turf/T = get_turf(eattarg)
-		Goto(T,move_to_delay,0)
+//What can we attack?
+/mob/living/simple_animal/hostile/retaliate/rogue/CanAttack(atom/the_target)
+	//If is foodtype and food is less than 50 or you eat forever.
+	if(is_type_in_list(the_target, food_type) && (food < food_max || eat_forever))
 		return TRUE
-	return FALSE
+	//Return root code
+	. = ..()
+	//Am i a body eater?
+	if(body_eater)
+		if(isliving(the_target))
+			var/mob/living/stuff = the_target
+			if(stuff.stat != CONSCIOUS && !faction_check_mob(stuff))
+				return TRUE
+
+//Im coding this because im curious if your server will work better with it -IP
+/mob/living/simple_animal/hostile/retaliate/rogue/PickTarget(list/Targets)
+	/*
+	* Here let me explain how this works
+	* We are going to skim through the
+	* Targets list and seperate it into
+	* two groups, food and living.
+	* If there is any items in the living
+	* list then the AI will use the root code
+	* to select the nearest of those targets.
+	* If that list is empty we instead scan
+	* the food list. This prioritizes living
+	* targets over food.
+	* <3 IP
+	*/
+	var/list/foodtargets = list()
+	var/list/enemytargets = list()
+	for(var/atom/A in Targets)
+		if(isliving(A))
+			//Dead creatures are to be considered food.
+			var/mob/living/L = A
+			if(L.stat != CONSCIOUS)
+				foodtargets += L
+			else
+				enemytargets += A
+		else
+			foodtargets += A
+	if(LAZYLEN(enemytargets))
+		return ..(enemytargets)
+	return ..(foodtargets)
+
+//What happens when we attack something
+/mob/living/simple_animal/hostile/retaliate/rogue/AttackingTarget()
+	//If you cant act and dont have a player stop moving.
+	if(!can_act && !client)
+		return FALSE
+	//If the unique attack returns true then we dont attack normally
+	if(UniqueAttack())
+		return FALSE
+
+	return ..()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/proc/UniqueAttack()
+	if(body_eater)
+		if(isliving(target))
+			var/mob/living/body = target
+			if(body.stat != CONSCIOUS)
+				can_act = FALSE
+				/*
+				* Dodge is divided by 10 so
+				* hits while eating are easier.
+				*/
+				dodge_prob /= 10
+				DismemberBody(body)
+				dodge_prob *= 10
+				can_act = TRUE
+				return TRUE
+
+	//Now this is eating!
+	if(is_type_in_list(target, food_type))
+		playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
+		qdel(target)
+		food = max(food + 30, food_max + 50)
+		return TRUE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/proc/DismemberBody(mob/living/L)
+	//Lets keep track of this to see if we start getting wounded while eating.
+	var/start_hp = src.health
+	var/interrupted = FALSE
+	testing("[src]_eating_[L]")
+	if(L.stat != CONSCIOUS)
+		if(iscarbon(L))
+			var/mob/living/carbon/C = L
+			if(attack_sound)
+				playsound(src, pick(attack_sound), 100, TRUE, -1)
+			src.visible_message("<span class='danger'>[src] starts to rip apart [C]!</span>")
+			//Run the do after twice if either of the checks fail
+			for(var/i = 1 to 2)
+				if(!do_after(src,5 SECONDS, target = L) || start_hp > health)
+					interrupted = TRUE
+					LoseTarget()
+					break
+			if(!interrupted)
+				var/obj/item/bodypart/limb
+				var/list/limb_list = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+				for(var/zone in limb_list)
+					limb = C.get_bodypart(zone)
+					if(limb)
+						limb.dismember()
+						return TRUE
+				limb = C.get_bodypart(BODY_ZONE_HEAD)
+				if(limb)
+					limb.dismember()
+					return TRUE
+				limb = C.get_bodypart(BODY_ZONE_CHEST)
+				if(limb)
+					if(!limb.dismember())
+						C.gib()
+					return TRUE
+		else
+			if(attack_sound)
+				playsound(src, pick(attack_sound), 100, TRUE, -1)
+			src.visible_message("<span class='danger'>[src] starts to rip apart [L]!</span>")
+			//Run the do after twice if either of the checks fail
+			for(var/i = 1 to 2)
+				if(!do_after(src,5 SECONDS, target = L) || start_hp > health)
+					interrupted = TRUE
+					LoseTarget()
+					break
+			if(!interrupted)
+				L.gib()
+				return TRUE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Initialize()
 	..()
@@ -158,6 +222,17 @@
 	if(tame)
 		tamed()
 	ADD_TRAIT(src, TRAIT_SIMPLE_WOUNDS, TRAIT_GENERIC)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/GiveTarget(new_target)
+	..()
+	/*
+	* I considered making a true/false proc for
+	* this since for some structures it may be
+	* better for cowardly creatures to run.
+	*/
+	if(isitem(new_target) || isstructure(new_target))
+		retreat_distance = 0
+		minimum_distance = 1
 
 /mob/living/simple_animal/hostile/retaliate/rogue/LoseTarget()
 	..()

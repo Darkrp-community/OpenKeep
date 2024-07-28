@@ -16,10 +16,10 @@
 						/obj/item/natural/hide = 2)
 	faction = list("orcs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 800
-	maxHealth = 800
-	melee_damage_lower = 55
-	melee_damage_upper = 70
+	health = 600
+	maxHealth = 600
+	melee_damage_lower = 40
+	melee_damage_upper = 60
 	vision_range = 6
 	aggro_vision_range = 6
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
@@ -29,21 +29,27 @@
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	pooptype = null
-	STACON = 16
-	STASTR = 19
+	STACON = 15
+	STASTR = 16
 	STASPD = 2
-	STAEND = 19
+	STAEND = 16
 	deaggroprob = 0
 	defprob = 20
 	defdrain = 15
 	del_on_deaggro = 99 SECONDS
 	retreat_health = 0
+	food_max = 250
 	food = 0
 	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
 	dodgetime = 20
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
-	remains_type = /obj/effect/decal/remains/human // Placeholder until Troll remains are sprited.
+	remains_type = /obj/effect/decal/remains/xeno/troll // Placeholder until Troll remains are sprited.
+	body_eater = TRUE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/troll/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood
 	name = "FLESH HOMUNCULUS"
@@ -51,6 +57,7 @@
 	icon_state = "FLESH"
 	icon_living = "FLESH"
 	icon = 'icons/mob/mob.dmi'
+	mob_biotypes = MOB_EPIC
 	STACON = 10
 	STASTR = 19
 	STASPD = 1
@@ -62,11 +69,12 @@
 	icon_state = "ascend"
 	icon_living = "ascend"
 	icon = 'icons/mob/32x64.dmi'
+	move_to_delay = 0
 	base_intents = list(/datum/intent/unarmed/ascendedclaw)
 	melee_damage_lower = 250
 	melee_damage_upper = 550
-	health = 1000
-	maxHealth = 1000
+	health = 666666
+	maxHealth = 666666
 	STACON = 66
 	STASTR = 66
 	STASPD = 66
@@ -79,6 +87,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/Initialize()
 	. = ..()
 	set_light(5,5, LIGHT_COLOR_RED)
+	ADD_TRAIT(src, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/get_sound(input)
 	switch(input)
@@ -126,11 +135,6 @@
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
-
-/mob/living/simple_animal/hostile/retaliate/rogue/troll/find_food()
-	. = ..()
-	if(!.)
-		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/simple_limb_hit(zone)
 	if(!zone)

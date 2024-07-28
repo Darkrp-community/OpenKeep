@@ -31,7 +31,7 @@
 
 /obj/item/storage/belt/rogue/leather
 	name = "belt"
-	desc = ""
+	desc = "A leather belt."
 	icon_state = "leather"
 	item_state = "leather"
 	equip_sound = 'sound/blank.ogg'
@@ -45,14 +45,24 @@
 		for(var/obj/item/I in things)
 			STR.remove_from_storage(I, get_turf(src))
 
-// Until ninja stars are fixed (able to be removed from embedding), replacing them with poison berries for arrow crafting.
+/obj/item/storage/belt/rogue/leather/assassin // Assassin's super edgy and cool belt can carry normal items (for poison vial), but can only carry 2 items
+	heldz_items = 2
+
+/obj/item/storage/belt/rogue/leather/assassin/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		STR.max_combined_w_class = 6
+		STR.max_w_class = WEIGHT_CLASS_NORMAL
+		STR.max_items = heldz_items
+//Assassin's belt starts with their unique dagger and a vial of highly-deadly poison.
 /obj/item/storage/belt/rogue/leather/assassin/PopulateContents()
-	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
-	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
-	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
+	new /obj/item/reagent_containers/glass/bottle/rogue/poison(src)
+	new /obj/item/rogueweapon/huntingknife/idagger/steel/profane(src)
 
 /obj/item/storage/belt/rogue/leather/plaquegold
 	name = "plaque belt"
+	desc = "A belt with a golden plaque on its front."
 	icon_state = "goldplaque"
 	sellprice = 50
 
@@ -68,17 +78,19 @@
 
 /obj/item/storage/belt/rogue/leather/plaquesilver
 	name = "plaque belt"
+	desc = "A belt with a silver plaque on its front."
 	icon_state = "silverplaque"
 	sellprice = 30
 
 /obj/item/storage/belt/rogue/leather/hand
 	name = "steel belt"
+	desc = "A belt with a steel plate on its front."
 	icon_state = "steelplaque"
 	sellprice = 30
 
 /obj/item/storage/belt/rogue/leather/rope
 	name = "rope belt"
-	desc = ""
+	desc = "A simple belt made of rope."
 	icon_state = "rope"
 	item_state = "rope"
 	color = "#b9a286"
@@ -86,7 +98,7 @@
 
 /obj/item/storage/belt/rogue/leather/cloth
 	name = "cloth sash"
-	desc = ""
+	desc = "A simple cloth sash."
 	icon_state = "cloth"
 	heldz_items = 1
 
@@ -98,7 +110,7 @@
 
 /obj/item/storage/belt/rogue/pouch
 	name = "pouch"
-	desc = ""
+	desc = "Usually used for holding coins."
 	icon = 'icons/roguetown/clothing/storage.dmi'
 	mob_overlay_icon = null
 	icon_state = "pouch"
@@ -179,7 +191,7 @@
 
 /obj/item/storage/backpack/rogue/satchel
 	name = "satchel"
-	desc = ""
+	desc = "A bulky bag worn over the shoulder which can be used to hold many things."
 	icon_state = "satchel"
 	item_state = "satchel"
 	icon = 'icons/roguetown/clothing/storage.dmi'
@@ -218,7 +230,7 @@
 
 /obj/item/storage/backpack/rogue/backpack
 	name = "backpack"
-	desc = ""
+	desc = "A bulky backpack worn on the back which can store many items."
 	icon_state = "backpack"
 	item_state = "backpack"
 	icon = 'icons/roguetown/clothing/storage.dmi'
