@@ -22,22 +22,25 @@
     ..()
     mask = /obj/item/clothing/mask/rogue/phys
     head = /obj/item/clothing/head/roguetown/roguehood/phys
-    shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+    shoes = /obj/item/clothing/shoes/roguetown/boots
     shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
     backr = /obj/item/storage/backpack/rogue/satchel
-    pants = /obj/item/clothing/under/roguetown/tights/random
+    backl = /obj/item/storage/backpack/rogue/satchel/surgbag
+    pants = /obj/item/clothing/under/roguetown/tights/black
+    belt = /obj/item/storage/belt/rogue/leather/black
     gloves = /obj/item/clothing/gloves/roguetown/leather/phys
     armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
     neck = /obj/item/clothing/neck/roguetown/phys
-    r_hand = /obj/item/storage/backpack/rogue/satchel/surgbag
 
     H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
     H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-    H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+    H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
     H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
     H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+    H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
     if(H.age == AGE_OLD)
         H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+        H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
     H.change_stat("intelligence", 2)
     H.change_stat("speed", 1)
     ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
