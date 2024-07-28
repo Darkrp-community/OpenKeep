@@ -142,3 +142,88 @@
 	possible_item_intents = list(/datum/intent/tie, /datum/intent/whip)
 	firefuel = null
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+
+/obj/structure/noose
+	name = "noose"
+	desc = "Abandon all hope."
+	icon = 'icons/roguetown/misc/tallstructure.dmi'
+	pixel_y = 10
+	icon_state = "noose"
+	can_buckle = 1
+	layer = 4.26
+	max_integrity = 10
+	buckle_lying = 0
+	static_debris = list(/obj/item/rope = 1)
+	breakoutextra = 10 MINUTES
+	buckleverb = "tie"
+
+/obj/structure/noose/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	if(has_buckled_mobs())
+		for(var/m in buckled_mobs)
+			var/mob/living/buckled_mob = m
+			if(buckled_mob.has_gravity())
+				buckled_mob.visible_message("<span class='danger'>[buckled_mob] falls over and hits the ground!</span>")
+				to_chat(buckled_mob, "<span class='userdanger'>You fall over and hit the ground!</span>")
+				buckled_mob.adjustBruteLoss(10)
+				buckled_mob.Knockdown(60)
+	return ..()
+
+/obj/structure/noose/user_buckle_mob(mob/living/M, mob/user, check_loc)
+	if(!in_range(user, src) || user.stat != CONSCIOUS || !iscarbon(M))
+		return FALSE
+
+	if (!M.get_bodypart("head"))
+		to_chat(user, "<span class='warning'>[M] has no head!</span>")
+		return FALSE
+
+	if(M.loc != src.loc)
+		return FALSE //Can only noose someone if they're on the same tile as noose
+
+	M.visible_message("<span class='danger'>[user] attempts to tie \the [src] over [M]'s neck!</span>")
+	if(do_after(user, user == M ? 0:5 SECONDS, M))
+		if(buckle_mob(M))
+			user.visible_message("<span class='warning'>[user] ties \the [src] over [M]'s neck!</span>")
+			if(user == M)
+				to_chat(M, "<span class='userdanger'>You tie \the [src] over your neck!</span>")
+			else
+				to_chat(M, "<span class='userdanger'>[user] ties \the [src] over your neck!</span>")
+			playsound(user.loc, 'sound/foley/noosed.ogg', 50, 1, -1)
+			return TRUE
+	user.visible_message("<span class='warning'>[user] fails to tie \the [src] over [M]'s neck!</span>")
+	to_chat(user, "<span class='warning'>You fail to tie \the [src] over [M]'s neck!</span>")
+	return FALSE
+
+/obj/structure/noose/post_buckle_mob(mob/living/M)
+	if(has_buckled_mobs())
+		START_PROCESSING(SSobj, src)
+		M.pixel_y = 10
+	else
+		STOP_PROCESSING(SSobj, src)
+		M.pixel_x = initial(M.pixel_x)
+
+/obj/structure/noose/process()
+	if(!has_buckled_mobs())
+		STOP_PROCESSING(SSobj, src)
+		return
+	for(var/m in buckled_mobs)
+		var/mob/living/buckled_mob = m
+		if(buckled_mob.has_gravity())
+			if(buckled_mob.get_bodypart("head"))
+				if(buckled_mob.stat != DEAD)
+					if(!HAS_TRAIT(buckled_mob, TRAIT_NOBREATH))
+						buckled_mob.adjustOxyLoss(10)
+						if(prob(20))
+							buckled_mob.emote("gasp")
+					if(prob(25))
+						var/flavor_text = list("<span class='danger'>[buckled_mob]'s legs flail for anything to stand on.</span>",\
+												"<span class='danger'>[buckled_mob]'s hands are desperately clutching the noose.</span>",\
+												"<span class='danger'>[buckled_mob]'s limbs sway back and forth with diminishing strength.</span>")
+						buckled_mob.visible_message(pick(flavor_text))
+				playsound(buckled_mob.loc, 'sound/foley/noose_idle.ogg', 30, 1, -3)
+			else
+				buckled_mob.visible_message("<span class='danger'>[buckled_mob] drops from the noose!</span>")
+				buckled_mob.Knockdown(60)
+				buckled_mob.pixel_y = initial(buckled_mob.pixel_y)
+				buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
+				unbuckle_all_mobs(force=1)
