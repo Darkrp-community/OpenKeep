@@ -326,6 +326,124 @@
 			if("onbelt")
 				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+/obj/item/rogueweapon/sword/long/forgotten
+	force = 15
+	force_wielded = 25 // Less than a steel sword
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/thrust, /datum/intent/sword/strike, /datum/intent/longsword/chop)
+	icon_state = "forgotten"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	item_state = "forgotten"
+	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
+	name = "forgotten blade"
+	desc = "A large silver sword made in a revisionist style, honoring the Forgotten God. Best known as the prefered weapon of Inquisitorial Lodges"
+	parrysound = "bladedmedium"
+	swingsound = BLADEWOOSH_LARGE
+	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
+	bigboy = 1
+	max_blade_int = 200 // Integrity and blade retention less than a steel sword
+	max_integrity = 400
+	wlength = WLENGTH_LONG
+	gripsprite = TRUE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	associated_skill = /datum/skill/combat/swords
+	throwforce = 15
+	thrown_bclass = BCLASS_CUT
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
+	dropshrink = 0.75
+	smeltresult = /obj/item/ingot/silver
+	wbalance = -1
+	wdefense = 5 // Defense bonus equal to the Marlin blade. One of two benefits of the sword over a normal longsword, due to its unique guard.
+	sellprice = 100
+	var/last_used = 0
+
+/obj/item/rogueweapon/sword/long/forgotten/pickup(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(ishuman(H))
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
+			H.Knockdown(20)
+			H.adjustFireLoss(60)
+			H.Paralyze(20)
+			H.fire_act(1,5)
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
+			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
+				H.Knockdown(10)
+				H.Paralyze(10)
+
+/obj/item/rogueweapon/sword/long/forgotten/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
+	. = ..()
+	if(ishuman(M))
+		var/datum/antagonist/vampirelord/V_lord = FALSE
+		var/mob/living/carbon/human/H = M
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord))
+			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			H.Knockdown(20)
+			H.adjustFireLoss(60)
+			H.Paralyze(20)
+			H.fire_act(1,5)
+		if(V_lord)
+			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+				H.Knockdown(10)
+				H.Paralyze(10)
+
+/obj/item/rogueweapon/sword/long/forgotten/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
+	if(world.time < src.last_used + 100)
+		to_chat(user, "<span class='notice'>The silver effect is on cooldown.</span>")
+		return
+
+
+
+	. = ..()
+	if(ishuman(target))
+		var/mob/living/carbon/human/s_user = user
+		var/mob/living/carbon/human/H = target
+		var/datum/antagonist/vampirelord/lesser/V = FALSE
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			V =  H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+		var/datum/antagonist/vampirelord/V_lord = FALSE
+		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/))
+			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(V)
+			if(V.disguised)
+				H.Stun(20)
+				H.visible_message("<font color='white'>The silver weapon manifests the [H] curse!</font>")
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(30)
+				H.Paralyze(20)
+				H.fire_act(1,4)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+				src.last_used = world.time
+			else
+				H.Stun(20)
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(30)
+				H.Paralyze(20)
+				H.fire_act(1,4)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+				src.last_used = world.time
+		if(V_lord)
+			if(V_lord.vamplevel < 4 && !V)
+				H.Stun(10)
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(25)
+				H.Paralyze(10)
+				H.fire_act(1,4)
+				src.last_used = world.time
+			if(V_lord.vamplevel == 4 && !V)
+				s_user.Stun(10)
+				s_user.Paralyze(10)
+				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
+				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I HAVE TRANSCENDED!</span>")
+
 /obj/item/rogueweapon/greatsword
 	force = 15
 	force_wielded = 35

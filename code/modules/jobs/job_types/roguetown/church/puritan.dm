@@ -1,5 +1,5 @@
 /datum/job/roguetown/puritan
-	title = "Puritan"
+	title = "Inquisitor"
 	flag = PURITAN
 	department_flag = CHURCHMEN
 	faction = "Station"
@@ -7,8 +7,7 @@
 	spawn_positions = 1
 
 	allowed_races = list(
-		"Humen",
-		"Aasimar"
+		"Humen"
 	)
 	allowed_sexes = list(MALE)
 
@@ -17,7 +16,7 @@
 
 	outfit = /datum/outfit/job/roguetown/puritan
 	display_order = JDO_PURITAN
-	give_bank_account = 36
+//	give_bank_account = 36 // Inquisitors are recent arrivals to Rockhill and do not have a bank account.
 	min_pq = -4
 	bypass_lastclass = TRUE
 
@@ -36,16 +35,18 @@
 
 /datum/outfit/job/roguetown/puritan/pre_equip(mob/living/carbon/human/H)
 	..()
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
-	belt = /obj/item/storage/belt/rogue/leather
-	neck = /obj/item/clothing/neck/roguetown/psicross/silver
-	shoes = /obj/item/clothing/shoes/roguetown/boots
-	pants = /obj/item/clothing/under/roguetown/tights/black
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+	belt = /obj/item/storage/belt/rogue/leather/black
+	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
+	pants = /obj/item/clothing/under/roguetown/trou/leather
 	cloak = /obj/item/clothing/cloak/cape/puritan
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	head = /obj/item/clothing/head/roguetown/puritan
-	gloves = /obj/item/clothing/gloves/roguetown/leather
-	beltl = /obj/item/rogueweapon/sword/rapier
+	gloves = /obj/item/clothing/gloves/roguetown/angle
+	beltl = /obj/item/rogueweapon/sword/long/forgotten
+	wrists = /obj/item/clothing/neck/roguetown/psicross/silver
+	backl = /obj/item/storage/backpack/rogue/satchel
+	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/keyring/puritan = 1)
 
 	if(H.mind)
@@ -59,14 +60,17 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		H.change_stat("intelligence", 3)
+		H.change_stat("intelligence", 2)
 		H.change_stat("strength", 2)
 		H.change_stat("perception", 3)
+		H.change_stat("speed", 2)
 		if(H.mind.has_antag_datum(/datum/antagonist))
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
 	ADD_TRAIT(H, TRAIT_TORTURER, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 
