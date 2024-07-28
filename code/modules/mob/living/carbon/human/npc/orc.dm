@@ -4,7 +4,7 @@
 	icon = 'icons/roguetown/mob/monster/Orc.dmi'
 	icon_state = "orc"
 	race = /datum/species/orc
-	gender = MALE
+	gender = PLURAL
 	bodyparts = list(/obj/item/bodypart/chest/orc, /obj/item/bodypart/head/orc, /obj/item/bodypart/l_arm/orc,
 					 /obj/item/bodypart/r_arm/orc, /obj/item/bodypart/r_leg/orc, /obj/item/bodypart/l_leg/orc)
 	rot_type = /datum/component/rot/corpse/orc
@@ -109,11 +109,6 @@
 
 	apply_overlay(ARMOR_LAYER)
 
-/mob/living/carbon/human/species/orc/update_inv_head()
-	update_wearable()
-/mob/living/carbon/human/species/orc/update_inv_armor()
-	update_wearable()
-
 /mob/living/carbon/human/species/orc/Initialize()
 	. = ..()
 	spawn(10)
@@ -122,7 +117,7 @@
 
 /mob/living/carbon/human/species/orc/handle_combat()
 	if(mode == AI_HUNT)
-		if(prob(2))
+		if(prob(1))
 			emote("aggro")
 	. = ..()
 
@@ -139,7 +134,7 @@
 
 /mob/living/carbon/human/species/orc/handle_combat()
 	if(mode == AI_HUNT)
-		if(prob(2))
+		if(prob(1))
 			emote("aggro")
 	. = ..()
 
@@ -185,7 +180,6 @@
 	id = "orc"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE)
-	no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS, SLOT_S_STORE)
 	nojumpsuit = 1
 	sexes = 1
 	damage_overlay_type = ""
@@ -362,21 +356,26 @@
 			l_hand = /obj/item/rogueweapon/stoneaxe
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
+			shoes = /obj/item/clothing/shoes/roguetown/gladiator
 		if(2) //Long Club Caveman
 			r_hand = /obj/item/rogueweapon/woodstaff
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
+			shoes = /obj/item/clothing/shoes/roguetown/gladiator
 		if(3) //Club Caveman
 			r_hand = /obj/item/rogueweapon/mace/woodclub
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
+			shoes = /obj/item/clothing/shoes/roguetown/gladiator
 		if(4) //dagger fighter
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+			shoes = /obj/item/clothing/shoes/roguetown/gladiator
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			r_hand = /obj/item/rogueweapon/huntingknife/stoneknife
 			l_hand = /obj/item/rogueweapon/huntingknife/stoneknife
 		if(5) //Spear hunter
 			r_hand = /obj/item/rogueweapon/spear/stone
+			shoes = /obj/item/clothing/shoes/roguetown/gladiator
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 
@@ -413,17 +412,20 @@
 		if(1) //Marauder with Sword and Shield
 			r_hand = /obj/item/rogueweapon/sword/iron
 			l_hand = /obj/item/rogueweapon/shield/wood
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/leather
 		if(2) //Marauder with Axe and Shield
 			r_hand = /obj/item/rogueweapon/woodcut
 			l_hand = /obj/item/rogueweapon/shield/wood
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/leather
 		if(3) //Club Caveman
 			r_hand = /obj/item/rogueweapon/flail
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 			l_hand = /obj/item/rogueweapon/sword/iron/messer
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
@@ -432,24 +434,28 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			r_hand = /obj/item/rogueweapon/sword/iron
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 			l_hand = /obj/item/rogueweapon/sword/iron/short
 			head = /obj/item/clothing/head/roguetown/helmet/leather
 		if(5) //Marauder Ironblade
 			if(prob(50))
 				r_hand = /obj/item/rogueweapon/mace/spiked
 				l_hand = /obj/item/rogueweapon/shield/wood
+				shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-				head = /obj/item/clothing/head/roguetown/helmet/orc
+				head = /obj/item/clothing/head/roguetown/helmet/leather
 			else
 				r_hand = /obj/item/rogueweapon/mace/spiked
 				l_hand = /obj/item/rogueweapon/sword/iron/messer
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-				head = /obj/item/clothing/head/roguetown/helmet/orc
+				head = /obj/item/clothing/head/roguetown/helmet/leather
+				shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 				cloak = /obj/item/clothing/cloak/raincloak/brown
 			if(prob(30))
 				r_hand = /obj/item/rogueweapon/woodcut
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-				head = /obj/item/clothing/head/roguetown/helmet/orc
+				head = /obj/item/clothing/head/roguetown/helmet/leather
+				shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 				cloak = /obj/item/clothing/cloak/raincloak/brown
 
 
@@ -487,27 +493,36 @@
 		if(1) //Marauder with Sword and Shield
 			r_hand = /obj/item/rogueweapon/sword/iron
 			l_hand = /obj/item/rogueweapon/woodcut
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
+			wrists = /obj/item/clothing/wrists/roguetown/bracers
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 		if(2) //Marauder with Axe and Shield
 			r_hand = /obj/item/rogueweapon/battle
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+			wrists = /obj/item/clothing/wrists/roguetown/bracers
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 		if(3) //Warhammer Caveman
 			r_hand = /obj/item/rogueweapon/mace/warhammer
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
+			wrists = /obj/item/clothing/wrists/roguetown/bracers
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 		if(4) //dagger fighter
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			r_hand = /obj/item/rogueweapon/mace/steel
 			l_hand = /obj/item/rogueweapon/shield/tower
+			wrists = /obj/item/clothing/wrists/roguetown/bracers
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 		if(5) //Marauder Ironblade
 			r_hand = /obj/item/rogueweapon/halberd/bardiche
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+			wrists = /obj/item/clothing/wrists/roguetown/bracers
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/orc
@@ -543,23 +558,33 @@
 	switch(loadout)
 		if(1) //Halberd Warlord
 			r_hand = /obj/item/rogueweapon/halberd
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+			wrists = /obj/item/clothing/wrists/roguetown/bracers
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(2) //Greatsword Warlord
 			r_hand = /obj/item/rogueweapon/greatsword
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+			wrists = /obj/item/clothing/wrists/roguetown/bracers
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(3) // WE DON'T WANNA GO TO WAR TODAY BUT THE LORD OF THE LASH SAYS "NAY NAY NAY!!" WE'RE GONNA MARCH ALL DAE, ALL DAE, ALL DAE! WHERE THERE'S A WHIP THERE'S A WAY!!
 			r_hand = /obj/item/rogueweapon/whip/antique
 			l_hand = /obj/item/rogueweapon/sword/short
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+			wrists = /obj/item/clothing/wrists/roguetown/bracers
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(4) // Big Sword and Big Shield
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 			r_hand = /obj/item/rogueweapon/sword/sabre/messer
 			l_hand = /obj/item/rogueweapon/shield/tower
+			wrists = /obj/item/clothing/wrists/roguetown/bracers
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(5) //Anti Knight STR Build
 			r_hand = /obj/item/rogueweapon/flail/sflail
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+			wrists = /obj/item/clothing/wrists/roguetown/bracers
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord

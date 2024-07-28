@@ -120,7 +120,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	smeltresult = /obj/item/ingot/iron
 
-/obj/item/rogueweapon/huntingknife/cleaver/getonmobprop(tag)
+/obj/item/rogueweapon/huntingknife/cleaver/combat/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)
