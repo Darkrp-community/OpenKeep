@@ -12,11 +12,14 @@
 	slot_flags = ITEM_SLOT_HIP | ITEM_SLOT_BELT
 	associated_skill = /datum/skill/combat/whipsflails
 	anvilrepair = /datum/skill/craft/tanning
+	resistance_flags = FLAMMABLE // Fully made of leather
+	smeltresult = /obj/item/ash
 	can_parry = FALSE
 	swingsound = WHIPWOOSH
 	throwforce = 5
 	wdefense = 0
 	minstr = 4
+	sellprice = 30
 
 /obj/item/rogueweapon/whip/getonmobprop(tag)
 	. = ..()
@@ -34,6 +37,9 @@
 	desc = "An extremely well maintained whip, with a polished steel tip and gilded handle"
 	minstr = 7
 	icon_state = "gwhip"
+	resistance_flags = FIRE_PROOF
+	smeltresult = /obj/item/ingot/steel
+	sellprice = 50
 
 
 /datum/intent/whip/lash

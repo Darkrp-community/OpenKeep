@@ -110,6 +110,7 @@
 
 	if(reagents.total_volume)
 		reagents.trans_to(M, reagents.total_volume, transfered_by = user, method = "swallow")
+		SSticker.snort++
 	qdel(src)
 	return TRUE
 

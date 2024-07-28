@@ -34,6 +34,7 @@
 	race = /datum/species/goblin/hell
 /datum/species/goblin/hell
 	name = "hell goblin"
+	id = "goblin_hell"
 	raceicon = "goblin_hell"
 
 /mob/living/carbon/human/species/goblin/cave
@@ -44,6 +45,7 @@
 /mob/living/carbon/human/species/goblin/npc/ambush/cave
 	race = /datum/species/goblin/cave
 /datum/species/goblin/cave
+	id = "goblin_cave"
 	raceicon = "goblin_cave"
 
 /mob/living/carbon/human/species/goblin/sea
@@ -55,6 +57,7 @@
 	race = /datum/species/goblin/sea
 /datum/species/goblin/sea
 	raceicon = "goblin_sea"
+	id = "goblin_sea"
 
 /mob/living/carbon/human/species/goblin/moon
 	name = "moon goblin"
@@ -100,7 +103,7 @@
 	name = "goblin"
 	id = "goblin"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
-	inherent_traits = list(TRAIT_NOROGSTAM,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE, TRAIT_EASYDISMEMBER, TRAIT_NOROGSTAM)
+	inherent_traits = list(TRAIT_NOROGSTAM,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE, TRAIT_EASYDISMEMBER, TRAIT_CRITICAL_WEAKNESS)
 	no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS, SLOT_S_STORE)
 	nojumpsuit = 1
 	sexes = 1
@@ -220,6 +223,7 @@
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 //	ADD_TRAIT(src, TRAIT_NOBREATH, TRAIT_GENERIC)
 //	blue breathes underwater, need a new specific one for this maybe organ cheque
 //	ADD_TRAIT(src, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
@@ -273,13 +277,13 @@
 
 /datum/outfit/job/roguetown/npc/goblin/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.STASTR = 8
+	H.STASTR = 6
 	if(is_species(H, /datum/species/goblin/moon))
-		H.STASPD = 16
+		H.STASPD = 15
 	else
-		H.STASPD = 14
+		H.STASPD = 12
 	H.STACON = 6
-	H.STAEND = 15
+	H.STAEND = 10
 	if(is_species(H, /datum/species/goblin/moon))
 		H.STAINT = 8
 	else

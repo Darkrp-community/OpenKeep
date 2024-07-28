@@ -50,7 +50,7 @@
 /datum/outfit/job/roguetown/royalguard/pre_equip(mob/living/carbon/human/H)
 	..()
 	pants = /obj/item/clothing/under/roguetown/chainlegs
-	cloak = /obj/item/clothing/cloak/stabard/surcoat/guard
+	cloak = /obj/item/clothing/cloak/tabard/knight/guard
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine // Wear the King's colors.
@@ -60,7 +60,7 @@
 	beltr = /obj/item/rogueweapon/sword
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/rogueweapon/shield/tower/metal
-	r_hand = /obj/item/rogueweapon/halberd/iron //TODO: Royal Guard armory with actual good polearms.
+	r_hand = /obj/item/rogueweapon/halberd
 	if(prob(30))
 		head = /obj/item/clothing/head/roguetown/helmet/heavy/knight
 	else

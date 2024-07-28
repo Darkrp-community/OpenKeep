@@ -61,6 +61,7 @@
 	ADD_TRAIT(src, TRAIT_NOLIMBDISABLE, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOBREATH, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOPAIN, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
@@ -75,8 +76,8 @@
 
 	H.STASTR = 6
 	H.STASPD = 10
-	H.STACON = 12
-	H.STAEND = 10
+	H.STACON = 8
+	H.STAEND = 8
 	H.STAINT = 1
 
 
@@ -88,6 +89,8 @@
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/peasant)
 	aggressive=1
 	mode = AI_IDLE
@@ -98,10 +101,10 @@
 
 /datum/outfit/job/roguetown/species/skeleton/npc/peasant/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.STASTR = 9
-	H.STASPD = 7
-	H.STACON = 10
-	H.STAEND = 16//the skeletons shouldn't get tired after all
+	H.STASTR = 6
+	H.STASPD = 8
+	H.STACON = 8
+	H.STAEND = 8
 	var/loadout = rand(1,6)
 	switch(loadout)
 		if(1) //Axe Warrior
@@ -149,6 +152,8 @@
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/random)
 	aggressive=1
 	mode = AI_IDLE
@@ -189,6 +194,8 @@
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/warrior)
 	aggressive=1
 	mode = AI_IDLE
@@ -202,7 +209,7 @@
 	H.STASTR = 10
 	H.STASPD = 7
 	H.STACON = 10
-	H.STAEND = 16//the skeletons shouldn't get tired after all
+	H.STAEND = 10
 	var/loadout = rand(1,6)
 	switch(loadout)
 		if(1) //Skeleton Warrior
@@ -261,3 +268,32 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap
+
+
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled/after_creation()
+	..()
+	QDEL_NULL(sexcon)
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/warrior)
+	aggressive=1
+	mode = AI_IDLE
+	d_intent = INTENT_PARRY //these ones will parry instead of dodge, making them much more dangerous
+	canparry = TRUE
+	flee_in_pain = FALSE
+	wander = TRUE
+	configure_mind()
+
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled/proc/configure_mind()
+    if(!mind)
+        mind = new /datum/mind(src)
+
+    mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+    mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+    mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+    mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+    mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+    mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+    mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)

@@ -115,7 +115,7 @@
 	reqs = list(/obj/item/natural/hide = 2,
 				/obj/item/natural/fur = 1)
 	craftdiff = 2
-	sellprice = 30
+	sellprice = 35
 
 /datum/crafting_recipe/roguetown/leather/cloak
 	name = "leather cloak"
@@ -123,7 +123,7 @@
 	reqs = list(/obj/item/natural/hide = 2)
 
 /obj/item/clothing/cloak/raincloak/brown
-	sellprice = 20
+	sellprice = 30
 
 /datum/crafting_recipe/roguetown/leather/cloakfur
 	name = "fur cloak"
@@ -131,7 +131,7 @@
 	reqs = list(/obj/item/natural/hide = 2, /obj/item/natural/fur = 1)
 
 /obj/item/clothing/cloak/raincloak/furcloak/crafted
-	sellprice = 55
+	sellprice = 35
 
 /datum/crafting_recipe/roguetown/leather/papakha
 	name = "papakha hat"
@@ -155,7 +155,6 @@
 	name = "leather whip"
 	result = /obj/item/rogueweapon/whip
 	reqs = list(/obj/item/natural/hide = 2)
-	sellprice = 39	
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/coif
@@ -163,4 +162,16 @@
 	result = /obj/item/clothing/neck/roguetown/coif
 	reqs = list(/obj/item/natural/hide = 1)
 	craftdiff = 2
-	sellprice = 10
+
+/datum/crafting_recipe/roguetown/leather/tribal_cloak
+	name = "tribal pelt"
+	result = /obj/item/clothing/cloak/tribal
+	reqs = list(/obj/item/natural/hide = 1)
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/leather/tribal_shoes
+	name = "tribal shoes x2"
+	result = list(/obj/item/clothing/shoes/roguetown/tribal, /obj/item/clothing/shoes/roguetown/tribal)
+	reqs = list(/obj/item/natural/hide = 1)
+	craftdiff = 0
+

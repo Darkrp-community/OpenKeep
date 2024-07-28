@@ -18,13 +18,12 @@
 /datum/outfit/job/roguetown/adventurer/noble/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 	H.change_stat("intelligence", 1)
 	H.change_stat("strength", -1)
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel)
 	neck = /obj/item/storage/belt/rogue/pouch/coins/veryrich
 	belt = /obj/item/storage/belt/rogue/leather
 	id = /obj/item/clothing/ring/silver
@@ -40,15 +39,15 @@
 		cloak = /obj/item/clothing/cloak/raincloak/purple
 		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 		beltl = /obj/item/quiver/arrows
+		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver)
 	if(H.gender == MALE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		pants = /obj/item/clothing/under/roguetown/tights/purple
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/purple
 		cloak = /obj/item/clothing/cloak/half
 		head = /obj/item/clothing/head/roguetown/fancyhat
-		beltl = /obj/item/rogueweapon/sword/iron
+		beltl = /obj/item/rogueweapon/sword/rapier/dec
+		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special)
 	if(H.age == AGE_OLD)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		r_hand = /obj/item/rogueweapon/woodstaff
