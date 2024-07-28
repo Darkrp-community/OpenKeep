@@ -14,7 +14,7 @@
 	vampcompat = FALSE
 	outfit = /datum/outfit/job/roguetown/adventurer/cleric
 	category_tags = list(CTAG_ADVENTURER)
-	maximum_possible_slots = 5
+	maximum_possible_slots = 2
 
 /datum/outfit/job/roguetown/adventurer/cleric
 	allowed_patrons = ALL_CLERIC_PATRONS
