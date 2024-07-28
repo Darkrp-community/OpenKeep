@@ -138,6 +138,7 @@
 	ADD_TRAIT(H, TRAIT_ASSASSIN, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_VILLAIN, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	H.change_stat("perception", 2)
 	H.change_stat("speed", 2)
 	if(H.patron != /datum/patron/inhumen/graggar)

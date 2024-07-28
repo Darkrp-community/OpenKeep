@@ -254,7 +254,6 @@
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane
 	name = "profane dagger"
 	desc = "A dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
-	force = 14 // Now does 14 damage to non-hunted victims, but 20 to hunted victims. Sic Semper Gragganis.
 	sellprice = 250
 	icon_state = "pdagger"
 	smeltresult = null

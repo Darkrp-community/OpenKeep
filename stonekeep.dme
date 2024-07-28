@@ -1587,7 +1587,7 @@
 #include "code\modules\antagonists\roguetown\villain\assassin.dm"
 #include "code\modules\antagonists\roguetown\villain\bandit.dm"
 #include "code\modules\antagonists\roguetown\villain\choosename.dm"
-#include "code\modules\antagonists\roguetown\villain\gassassin.dm"
+#include "code\modules\antagonists\roguetown\villain\maniac.dm"
 #include "code\modules\antagonists\roguetown\villain\peasantrebel.dm"
 #include "code\modules\antagonists\roguetown\villain\vampire.dm"
 #include "code\modules\antagonists\roguetown\villain\vampirelord.dm"
