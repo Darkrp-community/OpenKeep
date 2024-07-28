@@ -547,7 +547,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/pigface
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/hounskull
 			neck = /obj/item/clothing/neck/roguetown/gorget
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
@@ -561,7 +561,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet/visored
-			neck = /obj/item/clothing/neck/roguetown/bervor
+			neck = /obj/item/clothing/neck/roguetown/bevor
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
@@ -574,7 +574,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet/visored
-			neck = /obj/item/clothing/neck/roguetown/bervor
+			neck = /obj/item/clothing/neck/roguetown/bevor
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
@@ -588,7 +588,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet/visored
-			neck = /obj/item/clothing/neck/roguetown/bervor
+			neck = /obj/item/clothing/neck/roguetown/bevor
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
@@ -601,7 +601,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/knight
-			neck = /obj/item/clothing/neck/roguetown/bervor
+			neck = /obj/item/clothing/neck/roguetown/bevor
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
