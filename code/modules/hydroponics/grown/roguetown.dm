@@ -86,7 +86,7 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/fyritiusnectar = 5)
 	can_distill = TRUE // no distill reagent but fyritius nectar could be used as a poison to set people on fire, which is too funny to prevent
 	distill_reagent = null
-	rotprocess = 10 MINUTES
+	//rotprocess = 10 MINUTES // too rare to rot
 	seed = /obj/item/seeds/fyritius
 
 /obj/item/seeds/fyritius
