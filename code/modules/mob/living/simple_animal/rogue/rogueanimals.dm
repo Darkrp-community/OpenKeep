@@ -138,7 +138,9 @@
 	//If you cant act and dont have a player stop moving.
 	if(!can_act && !client)
 		return FALSE
-	UniqueAttack()
+	//If the unique attack returns true then we dont attack normally
+	if(UniqueAttack())
+		return FALSE
 
 	return ..()
 
@@ -156,14 +158,14 @@
 				DismemberBody(body)
 				dodge_prob *= 10
 				can_act = TRUE
-				return
+				return TRUE
 
 	//Now this is eating!
 	if(is_type_in_list(target, food_type))
 		playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
 		qdel(target)
 		food = max(food + 30, food_max + 50)
-		return
+		return TRUE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/DismemberBody(mob/living/L)
 	//Lets keep track of this to see if we start getting wounded while eating.

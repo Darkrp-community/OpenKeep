@@ -148,6 +148,7 @@
 	return mind.add_antag_datum(/datum/antagonist/zombie)
 
 /mob/living/carbon/human/gib(no_brain, no_organs, no_bodyparts, safe_gib = FALSE)
+	SSticker.gibbs++
 	for(var/mob/living/carbon/human/CA in viewers(7, src))
 		if(CA != src && !HAS_TRAIT(CA, TRAIT_BLIND))
 			if(HAS_TRAIT(CA, TRAIT_STEELHEARTED))

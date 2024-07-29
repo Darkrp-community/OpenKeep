@@ -57,6 +57,7 @@
 	icon_state = "FLESH"
 	icon_living = "FLESH"
 	icon = 'icons/mob/mob.dmi'
+	mob_biotypes = MOB_EPIC
 	STACON = 10
 	STASTR = 19
 	STASPD = 1
@@ -68,11 +69,12 @@
 	icon_state = "ascend"
 	icon_living = "ascend"
 	icon = 'icons/mob/32x64.dmi'
+	move_to_delay = 0
 	base_intents = list(/datum/intent/unarmed/ascendedclaw)
 	melee_damage_lower = 250
 	melee_damage_upper = 550
-	health = 1000
-	maxHealth = 1000
+	health = 666666
+	maxHealth = 666666
 	STACON = 66
 	STASTR = 66
 	STASPD = 66
@@ -85,6 +87,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/Initialize()
 	. = ..()
 	set_light(5,5, LIGHT_COLOR_RED)
+	ADD_TRAIT(src, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/get_sound(input)
 	switch(input)

@@ -42,6 +42,7 @@
 	var/swim_skill = FALSE
 	nomouseover = FALSE
 	var/swimdir = FALSE
+	var/notake = FALSE // cant pick up with reagent containers
 
 /turf/open/water/proc/dryup()
 	if(water_volume <= 0)
@@ -57,6 +58,9 @@
 	.  = ..()
 	if(!mapped)
 		START_PROCESSING(SSobj, src)
+	else
+		if(prob(rand(0,1)))
+			new /obj/item/bottlemessage/ancient(src.loc)
 	water_overlay = new(src)
 	water_top_overlay = new(src)
 	update_icon()
@@ -155,6 +159,8 @@
 		if(C.reagents)
 			if(C.reagents.holder_full())
 				to_chat(user, "<span class='warning'>[C] is full.</span>")
+				return
+			if(notake)
 				return
 			if(do_after(user, 8, target = src))
 				user.changeNext_move(CLICK_CD_MELEE)
@@ -411,3 +417,12 @@
 	for(var/atom/movable/A in contents)
 		if((A.loc == src) && A.has_gravity())
 			A.ConveyorMove(dir)
+
+/turf/open/water/acid // holy SHIT
+	name = "acid pool"
+	desc = "Well... how did THIS get here?"
+	water_reagent = /datum/reagent/rogueacid
+
+/turf/open/water/acid/mapped
+	desc = "You know how this got here. You think."
+	notake = TRUE

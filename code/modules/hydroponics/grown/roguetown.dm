@@ -84,8 +84,9 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	tastes = list("tastes like regret and fire" = 1)
 	bitesize = 1
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/fyritiusnectar = 5)
-	can_distill = FALSE
-	rotprocess = 10 MINUTES
+	can_distill = TRUE // no distill reagent but fyritius nectar could be used as a poison to set people on fire, which is too funny to prevent
+	distill_reagent = null
+	//rotprocess = 10 MINUTES // too rare to rot
 	seed = /obj/item/seeds/fyritius
 
 /obj/item/seeds/fyritius
@@ -131,7 +132,8 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	tastes = list("spicy sweetness" = 1)
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
-	can_distill = FALSE
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/onion
 	rotprocess = 30 MINUTES // Onions keep for a long time.
 	seed = /obj/item/seeds/onion
 
@@ -155,7 +157,8 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	tastes = list("blandness" = 1)
 	bitesize = 10
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	can_distill = FALSE
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/fireleaf
 	rotprocess = 15 MINUTES
 	seed = /obj/item/seeds/cabbage
 
@@ -184,6 +187,7 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	tastes = list("starchy dirt" = 1)
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
-	can_distill = FALSE
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/voddena
 	rotprocess = 60 MINUTES // Effectively immortal. But worthless until processed
 	seed = /obj/item/seeds/potato

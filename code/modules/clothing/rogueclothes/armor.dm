@@ -143,6 +143,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 	name = "iron breastplate"
+	desc = "Solid iron to protect the torso."
 	icon_state = "ibreastplate"
 	max_integrity = 200
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -335,6 +336,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/lord
 	name = "arming jacket"
+	desc = "Similar to a gambeson, it is meant to be used under heavier armor."
 	icon_state = "dgamb"
 	allowed_sex = list(MALE)
 	body_parts_covered = CHEST|ARMS|VITALS|GROIN
@@ -391,6 +393,8 @@
 	desc = "A leather vest with no sleeves, won't really protect much but it's at least padded enough to be an armor."
 	icon_state = "vest"
 	item_state = "vest"
+	color = "#514339"
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
@@ -401,11 +405,13 @@
 	sleevetype = null
 	sleeved = null
 	armor_class = ARMOR_CLASS_LIGHT
+	color = "#584742"
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher
 	name = "leather vest"
 	icon_state = "leathervest"
 	item_state = "leathervest"
+	color = null
 
 // Unique swashbuckler vest. Notice it doesn't cover arms.
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
@@ -540,7 +546,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "Grenzelhoft cuirass"
+	name = "grenzelhoft cuirass"
 	desc = "A basic cuirass built from black-steel. It's somewhat more durable and lightweight than regular steel."
 	icon_state = "grenzelcuirass"
 	item_state = "grenzelcuirass"

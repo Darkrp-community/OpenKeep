@@ -77,6 +77,7 @@
 #define ADMIN_PUNISHMENT_MAZING "Puzzle"
 #define ADMIN_PUNISHMENT_CBT "CBT"
 #define ADMIN_PUNISHMENT_NECKSNAP "Snap Neck"
+#define ADMIN_PUNISHMENT_HUNTED "Mark for Assassins"
 
 #define AHELP_ACTIVE 1
 #define AHELP_CLOSED 2

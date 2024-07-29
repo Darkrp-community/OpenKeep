@@ -26,7 +26,6 @@
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	beltl = /obj/item/rogueweapon/sword/long/marlin
 	if(H.mind)
-		H.virginity = TRUE
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
