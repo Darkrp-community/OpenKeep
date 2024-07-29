@@ -188,8 +188,9 @@
 /obj/item/paper/confession
 	name = "confession"
 	icon_state = "confession"
-	info = "THE GUILTY PARTY ADMITS THEIR SIN AND THE WEAKENING OF PSYDON'S HOLY FLOCK. THEY WILL REPENT AND SUBMIT TO ANY PUNISHMENT THE CLERGY DEEMS APPROPRIATE, OR BE RELEASED IMMEDIATELY. LET THIS RECORD OF THEIR SIN WEIGH ON THE ANGEL GABRIEL'S JUDGEMENT AT THE MANY-SPIKED GATES OF HEAVEN.<br/><br/>SIGNED,"
+	info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS  . THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE HOLY PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,"
 	var/signed = FALSE
+	var/bad_type = null
 	textper = 150
 
 /obj/item/paper/confession/update_icon_state()
@@ -214,15 +215,10 @@
 		return
 	if(!M.stat)
 		to_chat(user, "<span class='info'>I courteously offer the confession to [M].</span>")
-		if(alert(M, "Sign the confession with your blood?", "CONFESSION OF SIN", "Yes", "No") != "Yes")
+		if(alert(M, "Sign the confession of your true nature?", "CONFESSION OF SIN", "Yes", "No") != "Yes")
 			return
 		if(M.stat)
 			return
 		if(signed)
 			return
-		if(M.has_flaw(/datum/charflaw/addiction/godfearing))
-			V.add_stress(/datum/stressevent/confessedgood)
-		else
-			V.add_stress(/datum/stressevent/confessed)
-		signed = M.real_name
-		info = "THE GUILTY PARTY ADMITS THEIR SIN AND THE WEAKENING OF PSYDON'S HOLY FLOCK. THEY WILL REPENT AND SUBMIT TO ANY PUNISHMENT THE CLERGY DEEMS APPROPRIATE, OR BE RELEASED IMMEDIATELY. LET THIS RECORD OF THEIR SIN WEIGH ON THE ANGEL GABRIEL'S JUDGEMENT AT THE MANY-SPIKED GATES OF HEAVEN.<br/><br/>SIGNED,<br/><font color='red'>[signed]</font>"
+		M.confess_sins(resist, mob/user, torture=FALSE)
