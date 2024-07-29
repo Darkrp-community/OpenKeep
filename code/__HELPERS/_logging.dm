@@ -191,6 +191,9 @@
 /proc/log_character(text)
 	WRITE_LOG(GLOB.character_list_log, text)
 
+/proc/log_hunted(text)
+	WRITE_LOG(GLOB.hunted_log, text)
+
 /* ui logging */
 
 /proc/log_tgui(text)

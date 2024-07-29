@@ -129,4 +129,3 @@
 	..()
 
 #undef PILLORY_HEAD_OFFSET
-#undef PILLORY_LAYER_DIFF
