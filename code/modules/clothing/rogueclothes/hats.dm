@@ -593,6 +593,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
 	name = "astrata helmet"
+	desc = "An immovable bulkwark of protection for the head of the faithful. Antiquated and impractical, but offering incredible defense."
 	icon_state = "astratahelm"
 	item_state = "astratahelm"
 	emote_environment = 3
@@ -602,6 +603,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 	name = "noc helmet"
+	desc = "An immovable bulkwark of protection for the head of the faithful. Antiquated and impractical, but offering incredible defense."
 	icon_state = "nochelm"
 	item_state = "nochelm"
 	emote_environment = 3
@@ -611,6 +613,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
 	name = "necra helmet"
+	desc = "An immovable bulkwark of protection for the head of the faithful. Antiquated and impractical, but offering incredible defense."
 	icon_state = "necrahelm"
 	item_state = "necrahelm"
 	emote_environment = 3
@@ -620,6 +623,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 	name = "dendor helmet"
+	22desc = "An immovable bulkwark of protection for the head of the faithful. Antiquated and impractical, but offering incredible defense."
 	icon_state = "dendorhelm"
 	item_state = "dendorhelm"
 	emote_environment = 3

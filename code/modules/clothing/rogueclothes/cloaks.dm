@@ -359,7 +359,7 @@
 	sleeved = 'icons/roguetown/clothing/special/onmob/templar.dmi'
 
 /obj/item/clothing/cloak/stabard/templar/astrata
-	name = "surcoat of the astratan order"
+	name = "surcoat of the solar order"
 	icon_state = "tabard_astrata"
 	item_state = "tabard_astrata"
 
