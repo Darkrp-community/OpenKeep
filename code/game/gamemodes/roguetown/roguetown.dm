@@ -51,7 +51,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 /datum/game_mode/chaosmode/proc/reset_skeletons()
 	skeletons = FALSE
 
-/datum/game_mode/chaosmode/check_finished()
+/datum/game_mode/chaosmode/check_finished(force_ending)
 	ttime = world.time - SSticker.round_start_time
 	if(roguefight)
 		if(ttime >= 30 MINUTES)
@@ -62,22 +62,33 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 
 	if(allmig)
 		return FALSE
+	
+	if(force_ending)
+		for(var/mob/living/carbon/human/H in GLOB.human_list)
+			if(H.stat != DEAD)
+				if(H.allmig_reward)
+					H.adjust_triumphs(H.allmig_reward)
+					H.allmig_reward = 0
+		return TRUE
 
 	if(ttime >= GLOB.round_timer)
+		if(!roundvoteend)
+			if(!SSvote.mode)
+				SSvote.initiate_vote("endround", pick("Zlod", "Sun King", "Gaia", "Moon Queen", "Aeon", "Gemini", "Aries"))
+	
+	if(SSticker.roundendtime)
 		if(roundvoteend)
+			ttime =  world.time - SSticker.roundendtime
 			if(!(SSevents.running.len))
 				var/datum/round_event/rogue/skellysiege/E = new /datum/round_event/rogue/skellysiege/
 				E.New()
-			if(ttime >= (GLOB.round_timer + 15 MINUTES) )
+			if(ttime >= 15 MINUTES )
 				for(var/mob/living/carbon/human/H in GLOB.human_list)
 					if(H.stat != DEAD)
 						if(H.allmig_reward)
 							H.adjust_triumphs(H.allmig_reward)
 							H.allmig_reward = 0
 				return TRUE
-		else
-			if(!SSvote.mode)
-				SSvote.initiate_vote("endround", pick("Zlod", "Sun King", "Gaia", "Moon Queen", "Aeon", "Gemini", "Aries"))
 
 	if(headrebdecree)
 		for(var/mob/living/carbon/human/H in GLOB.human_list)

@@ -155,6 +155,7 @@ SUBSYSTEM_DEF(vote)
 						log_game("LOG VOTE: ROUNDVOTEEND [REALTIMEOFDAY]")
 						to_chat(world, "\n<font color='purple'>15 minutes remain.</font>")
 						C.roundvoteend = TRUE
+						SSticker.roundendtime = world.time
 	if(restart)
 		var/active_admins = 0
 		for(var/client/C in GLOB.admins)

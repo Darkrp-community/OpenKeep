@@ -44,6 +44,7 @@ SUBSYSTEM_DEF(ticker)
 	var/time_until_vote = 240 MINUTES
 	var/last_vote_time = null
 	var/firstvote = TRUE
+	var/roundendtime = null
 
 	var/totalPlayers = 0					//used for pregame stats on statpanel
 	var/totalPlayersReady = 0				//used for pregame stats on statpanel
