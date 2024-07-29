@@ -180,7 +180,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	if(!major_modes.len)
 		major_modes |= 0
 	var/majorpicked = pick(major_modes)
-	if(playersready <= 10)
+	log_game("playersready: [playersready], majorpicked: [majorpicked]")
+	if(playersready <= 5)	
 		majorpicked = 0
 
 	switch(majorpicked)
