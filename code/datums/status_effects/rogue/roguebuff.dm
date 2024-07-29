@@ -5,7 +5,7 @@
 /datum/status_effect/buff/drunk
 	id = "drunk"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/drunk
-	effectedstats = list("intelligence" = -1, "speed" = -1, "endurance" = 1)
+	effectedstats = list("intelligence" = -1, "constitution" = 1, "endurance" = 1, "strength" = 1, "speed" = -1)
 	duration = 12 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/drunk
@@ -27,7 +27,7 @@
 /datum/status_effect/buff/foodbuff
 	id = "foodbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/foodbuff
-	effectedstats = list("constitution" = 1,"endurance" = 1)
+	effectedstats = list("speed" = 1, "strength" = 1, "constitution" = 1,"endurance" = 1)
 	duration = 10 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/foodbuff
