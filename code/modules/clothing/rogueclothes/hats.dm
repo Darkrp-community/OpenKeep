@@ -623,7 +623,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 	name = "dendor helmet"
-	22desc = "An immovable bulkwark of protection for the head of the faithful. Antiquated and impractical, but offering incredible defense."
+	desc = "An immovable bulkwark of protection for the head of the faithful. Antiquated and impractical, but offering incredible defense."
 	icon_state = "dendorhelm"
 	item_state = "dendorhelm"
 	emote_environment = 3
