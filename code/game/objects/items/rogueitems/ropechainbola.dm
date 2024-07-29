@@ -152,7 +152,11 @@
 	can_buckle = 1
 	layer = 4.26
 	max_integrity = 10
-	buckle_lying = 0
+	buckle_lying = FALSE
+	buckle_prevents_pull = TRUE
+	max_buckled_mobs = 1
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
 	static_debris = list(/obj/item/rope = 1)
 	breakoutextra = 10 MINUTES
 	buckleverb = "tie"
@@ -197,10 +201,11 @@
 /obj/structure/noose/post_buckle_mob(mob/living/M)
 	if(has_buckled_mobs())
 		START_PROCESSING(SSobj, src)
-		M.pixel_y = 10
-	else
-		STOP_PROCESSING(SSobj, src)
-		M.pixel_x = initial(M.pixel_x)
+		M.set_mob_offsets("bed_buckle", _x = 0, _y = 10)
+
+/obj/structure/noose/post_unbuckle_mob(mob/living/M)
+	STOP_PROCESSING(SSobj, src)
+	M.reset_offsets("bed_buckle")
 
 /obj/structure/noose/process()
 	if(!has_buckled_mobs())
@@ -222,7 +227,13 @@
 												"<span class='danger'>[buckled_mob]'s hands are desperately clutching the noose.</span>",\
 												"<span class='danger'>[buckled_mob]'s limbs sway back and forth with diminishing strength.</span>")
 						buckled_mob.visible_message(pick(flavor_text))
-				playsound(buckled_mob.loc, 'sound/foley/noose_idle.ogg', 30, 1, -3)
+					playsound(buckled_mob.loc, 'sound/foley/noose_idle.ogg', 30, 1, -3)
+				else
+					if(prob(1))
+						var/obj/item/bodypart/head/head = buckled_mob.get_bodypart("head")
+						if(head.brute_dam >= 50)
+							if(head.dismemberable)
+								head.dismember()
 			else
 				buckled_mob.visible_message("<span class='danger'>[buckled_mob] drops from the noose!</span>")
 				buckled_mob.Knockdown(60)
