@@ -26,7 +26,8 @@
 							/obj/structure/flora/roguetree/stump = 4,
 							/obj/structure/closet/dirthole/closed/loot=6,
 							/obj/item/restraints/legcuffs/beartrap/armed/camouflage=0,
-							/obj/structure/flora/roguegrass/maneater/real=0)
+							/obj/structure/flora/roguegrass/maneater/real=1,
+							/mob/living/carbon/human/species/goblin/npc/ambush/hell=1)
 	spawnableTurfs = list(/turf/open/floor/rogue/dirt/road=80,
 						/turf/open/water/swamp=25)
 	allowed_areas = list(/area/rogue/outdoors/woods)
