@@ -120,7 +120,7 @@ window "outputwindow"
 		is-default = true
 		saved-params = "max-lines"
 		enable-http-images = true
-		max-lines = 100
+		max-lines = 400
 	elem "input"
 		type = INPUT
 		pos = 0,445
