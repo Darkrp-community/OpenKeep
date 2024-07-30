@@ -42,6 +42,8 @@ GLOBAL_VAR(tgui_log)
 GLOBAL_PROTECT(tgui_log)
 GLOBAL_VAR(character_list_log)
 GLOBAL_PROTECT(character_list_log)
+GLOBAL_VAR(hunted_log)
+GLOBAL_PROTECT(hunted_log)
 
 GLOBAL_LIST_EMPTY(character_list)
 GLOBAL_LIST_EMPTY(character_ckey_list)

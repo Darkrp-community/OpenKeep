@@ -34,3 +34,8 @@
 		H.advsetup = 1
 		H.invisibility = INVISIBILITY_MAXIMUM
 		H.become_blind("advsetup")
+		if(!H.mind)
+			if(HAS_TRAIT(H, TRAIT_ASSASSIN)) // If the mob is an assassin, they will be given the assassin antag.
+				var/datum/antagonist/new_antag = new /datum/antagonist/assassin()
+				H.mind.add_antag_datum(new_antag)
+

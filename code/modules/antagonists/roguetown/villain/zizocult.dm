@@ -701,6 +701,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 								carbon.visible_message("profane dagger whispers, <span class='danger'>\"The terrible Zizo has called for our aid. Hunt and strike down our common foe, [HL.real_name]!\"</span>")
 				if(found_assassin == TRUE)
 					ADD_TRAIT(HL, TRAIT_ZIZOID_HUNTED, TRAIT_GENERIC) // Gives the victim a trait to track that they are wanted dead.
+					log_hunted("[key_name(HL)] playing as [HL] had the hunted flaw by Zizoid curse.")
 					to_chat(HL.mind, "<span class='danger'>My hair stands on end. Has someone just said my name? I should watch my back.</span>")
 					to_chat(user.mind, "<span class='warning'>Your target has been marked, your profane call answered. [HL.real_name] will surely perish!</span>")
 					for(var/obj/item/rogueweapon/huntingknife/idagger/D in C.contents) // Get rid of the dagger used as a sacrifice.
