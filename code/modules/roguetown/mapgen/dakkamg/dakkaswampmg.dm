@@ -13,7 +13,7 @@
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	spawnableAtoms = list(/obj/structure/flora/roguetree = 1,
 							/obj/structure/flora/roguegrass/bush = 12,
-							/obj/structure/flora/roguegrass/pyroclasticflowers = 2,
+							/obj/structure/flora/roguegrass/pyroclasticflowers = 1,
 							/obj/structure/flora/roguegrass/maneater = 0,
 							/obj/structure/flora/roguegrass = 23,
 							/obj/structure/flora/roguetree/stump/log = 20,
