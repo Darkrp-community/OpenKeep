@@ -155,11 +155,20 @@
 	buckle_lying = FALSE
 	buckle_prevents_pull = TRUE
 	max_buckled_mobs = 1
+	anchored = TRUE
+	density = FALSE
 	layer = ABOVE_MOB_LAYER
 	plane = GAME_PLANE_UPPER
 	static_debris = list(/obj/item/rope = 1)
 	breakoutextra = 10 MINUTES
 	buckleverb = "tie"
+
+/obj/structure/noose/gallows
+	name = "gallows"
+	desc = "Stranded and hanging, limp and dead."
+	icon_state = "gallows"
+	pixel_y = 0
+	max_integrity = 9999
 
 /obj/structure/noose/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -180,9 +189,6 @@
 	if (!M.get_bodypart("head"))
 		to_chat(user, "<span class='warning'>[M] has no head!</span>")
 		return FALSE
-
-	if(M.loc != src.loc)
-		return FALSE //Can only noose someone if they're on the same tile as noose
 
 	M.visible_message("<span class='danger'>[user] attempts to tie \the [src] over [M]'s neck!</span>")
 	if(do_after(user, user == M ? 0:5 SECONDS, M))
