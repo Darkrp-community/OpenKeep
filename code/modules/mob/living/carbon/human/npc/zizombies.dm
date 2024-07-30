@@ -547,12 +547,11 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/hounskull
-			neck = /obj/item/clothing/neck/roguetown/gorget
+			head = /obj/item/clothing/head/roguetown/helmet/kettle
+			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			beltl = /obj/item/clothing/neck/roguetown/psicross
 		if(2) //zizombie Warrior
 			r_hand = /obj/item/rogueweapon/halberd
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
@@ -560,12 +559,11 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
-			head = /obj/item/clothing/head/roguetown/helmet/sallet/visored
-			neck = /obj/item/clothing/neck/roguetown/bevor
+			head = /obj/item/clothing/head/roguetown/helmet/sallet
+			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			beltl = /obj/item/clothing/neck/roguetown/psicross
 		if(3) //zizombie Warrior
 			r_hand = /obj/item/rogueweapon/eaglebeak
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
@@ -573,12 +571,11 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
-			head = /obj/item/clothing/head/roguetown/helmet/sallet/visored
-			neck = /obj/item/clothing/neck/roguetown/bevor
+			head = /obj/item/clothing/head/roguetown/helmet/sallet
+			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			beltl = /obj/item/clothing/neck/roguetown/psicross
 		if(4) //zizombie Warrior
 			r_hand = /obj/item/rogueweapon/sword/iron/short
 			l_hand = /obj/item/rogueweapon/huntingknife/idagger
@@ -588,11 +585,10 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet/visored
-			neck = /obj/item/clothing/neck/roguetown/bevor
+			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			beltl = /obj/item/clothing/neck/roguetown/psicross
 		if(5) //zizombie Warrior
 			r_hand = /obj/item/rogueweapon/battle
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
@@ -600,12 +596,11 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/knight
-			neck = /obj/item/clothing/neck/roguetown/bevor
+			head = /obj/item/clothing/head/roguetown/helmet/sallet
+			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			beltl = /obj/item/clothing/neck/roguetown/psicross
 
 
 
