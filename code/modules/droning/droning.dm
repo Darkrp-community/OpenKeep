@@ -76,6 +76,8 @@ SUBSYSTEM_DEF(droning)
 /datum/controller/subsystem/droning/proc/play_combat_music(music = null, client/dreamer)
 	if(!music || !dreamer)
 		return
+
+	var/frenq = 1
 /*
 	if(HAS_TRAIT(dreamer.mob, TRAIT_LEAN))
 		return
@@ -84,11 +86,21 @@ SUBSYSTEM_DEF(droning)
 */
 
 	if(HAS_TRAIT(dreamer.mob, TRAIT_DRUQK))
-		return
+		frenq = -1
+
+	if(ishuman(dreamer.mob))
+		var/mob/living/carbon/human/H = dreamer.mob
+		if(H.has_status_effect(/datum/status_effect/buff/moondust))
+			frenq = 2
+		if(H.has_status_effect(/datum/status_effect/buff/weed))
+			frenq = 0.5
 
 	//kill the previous droning sound
 	kill_droning(dreamer)
 	var/sound/combat_music = sound(pick(music), repeat = TRUE, wait = 0, channel = CHANNEL_BUZZ, volume = dreamer?.prefs.musicvol)
+	combat_music.frequency = frenq
+	if(!HAS_TRAIT(dreamer.mob, TRAIT_DRUQK))
+		combat_music.pitch = 1 / combat_music.frequency
 	SEND_SOUND(dreamer, combat_music)
 	dreamer.droning_sound = combat_music
 	dreamer.last_droning_sound = combat_music.file
