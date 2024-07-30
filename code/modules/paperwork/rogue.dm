@@ -189,11 +189,11 @@
 	name = "confession"
 	icon_state = "confession"
 	info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS  . THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE HOLY PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,"
-	var/signed = FALSE
+	var/signed = null
 	var/bad_type = null
 	textper = 150
 
-/obj/item/paper/confession/update_icon_state()
+/obj/item/paper/confession/update_icon_state() 
 	if(mailer)
 		icon_state = "paper_prep"
 		name = "letter"
@@ -207,12 +207,8 @@
 	icon_state = "confession"
 
 /obj/item/paper/confession/attack(mob/living/carbon/human/M, mob/user)
-	var/mob/living/carbon/V = M
 	if(signed)
 		return ..()
-	if(!M.get_bleed_rate())
-		to_chat(user, "<span class='warning'>No. The sinner must be bleeding.</span>")
-		return
 	if(!M.stat)
 		to_chat(user, "<span class='info'>I courteously offer the confession to [M].</span>")
 		if(alert(M, "Sign the confession of your true nature?", "CONFESSION OF SIN", "Yes", "No") != "Yes")
@@ -221,4 +217,4 @@
 			return
 		if(signed)
 			return
-		M.confess_sins(resist, mob/user, torture=FALSE)
+		M.confess_sins(resist=FALSE, user, torture=FALSE)

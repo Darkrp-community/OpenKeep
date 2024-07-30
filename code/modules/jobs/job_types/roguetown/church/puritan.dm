@@ -60,6 +60,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/firearms, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
@@ -89,9 +90,10 @@
 	if(istype(I))
 		if(ishuman(I.grabbed))
 			H = I.grabbed
-			if(H == src)
+			/*if(H == src)
 				to_chat(src, "<span class='warning'>I already torture myself.</span>")
 				return
+			*/
 			var/painpercent = H.get_complex_pain() / (H.STAEND * 10)
 			painpercent = painpercent * 100
 			var/mob/living/carbon/C = H
@@ -105,7 +107,7 @@
 								"THE PAIN HAS ONLY BEGUN, CONFESS!"), spans = list("torture"))
 					if((painpercent > 90) || (!H.cmode))
 						H.emote("painscream")
-						H.confession_time(mob/living/carbon/human/user)
+						H.confession_time(src)
 						return
 			to_chat(src, "<span class='warning'>Not ready to speak yet.</span>")
 
@@ -121,9 +123,9 @@
 		return
 	if(responsey == "Yes")
 		adjust_triumphs(-1)
-		confess_sins(TRUE, mob/living/carbon/human/user)
+		confess_sins(TRUE, user)
 	else
-		confess_sins(mob/living/carbon/human/user)
+		confess_sins(user)
 
 /mob/living/carbon/human/proc/confess_sins(resist, mob/living/carbon/human/user, torture=TRUE)
 	var/static/list/innocent_lines = list(
@@ -136,42 +138,54 @@
 	)
 	if(!resist)
 		var/list/confessions = list()
+		var/antag_type = null
 		for(var/datum/antagonist/antag in mind?.antag_datums)
 			if(length(antag.confess_lines))
-				confessions += antag.confess_lines
+				confessions = antag.confess_lines
+				antag_type = antag.name
 				break // Only need one antag type
 		if(length(patron.confess_lines) && !length(confessions)) // The antag confession lines take precedence over the heretic lines. If there are antag lines, the heretic ones will not show.
-			confessions += patron.confess_lines
+			confessions = patron.confess_lines
+			antag_type = patron.name
 		if(length(confessions))
 			if(torture == TRUE) // Only scream your confession if it's due to torture.
 				say(pick(confessions), spans = list("torture"))
 			if(user.is_holding_item_of_type(/obj/item/paper/confession)) // This code is to process gettin a signed confession through torture.
 				var/obj/item/paper/confession/held_confession = user.is_holding_item_of_type(/obj/item/paper/confession)
-					if held_confession.signed = FALSE // Check to see if the confession is already signed.
-						held_confession.signed = M.real_name
-						held_confession.bad_type = "AN EVILDOER" // In case new antags are added with confession lines but have yet to be added here.
-						switch(confessions)
-							if(/datum/antagonist/bandit.confess_lines || /datum/patron/inhumen/matthios.confess_lines)
-								held_confession.bad_type = "AN OUTLAW OF THE THIEF-LORD"
-							if(/datum/antagonist/villain.confess_lines)
-								held_confession.bad_type = "A MANIAC IMMUNE TO PAIN"
-							if(/datum/antagonist/assassin.confess_lines)
-								held_confession.bad_type = "A DEATH CULTIST"
-							if(/datum/antagonist/zizocultist.confess_lines || /datum/patron/inhumen/zizo.confess_lines)
-								held_confession.bad_type = "A SERVANT OF THE FORBIDDEN ONE"
-							if(/datum/antagonist/werewolf.confess_lines)
-								held_confession.bad_type = "A BEARER OF DENDOR'S CURSE"
-							if(/datum/antagonist/vampire.confess_lines)
-								held_confession.bad_type = "A SCION OF KAINE"
-							if(/datum/antagonist/vampirelord.confess_lines)
-								held_confession.bad_type = "THE BLOOD-LORD OF ENIGMA
-							if(/datum/patron/inhumen/graggar.confess_lines)
-								held_confession.bad_type = "A FOLLOWER OF THE DARK SUN"
-							if(/datum/antagonist/prebel.confess_lines)
-								held_confession.bad_type = null // Inquisitors don't care about peasant revolts targeting the King of Rockhill'
-						held_confession.info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS [bad_type]. THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE HOLY PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,<br/><font color='red'>[held_confession.signed]</font>"
-			say(pick(innocent_lines), spans = list("torture"))
-			return
+				if(!held_confession.signed) // Check to see if the confession is already signed.
+					held_confession.signed = real_name
+					held_confession.bad_type = "AN EVILDOER" // In case new antags are added with confession lines but have yet to be added here.
+					switch(antag_type)
+						if("Bandit")
+							held_confession.bad_type = "AN OUTLAW OF THE THIEF-LORD"
+						if("Matthios")
+							held_confession.bad_type = "AN OUTLAW OF THE THIEF-LORD"
+						if("Maniac")
+							held_confession.bad_type = "A MANIAC IMMUNE TO PAIN"
+						if("Assassin")
+							held_confession.bad_type = "A DEATH CULTIST"
+						if("Zizoid Lackey")
+							held_confession.bad_type = "A SERVANT OF THE FORBIDDEN ONE"
+						if("Zizoid Cultist")
+							held_confession.bad_type = "A SERVANT OF THE FORBIDDEN ONE"
+						if("Zizo")
+							held_confession.bad_type = "A SERVANT OF THE FORBIDDEN ONE"
+						if("Werewolf")
+							held_confession.bad_type = "A BEARER OF DENDOR'S CURSE"
+						if("Vampire")
+							held_confession.bad_type = "A SCION OF KAINE"
+						if("Vampire Lord")
+							held_confession.bad_type = "THE BLOOD-LORD OF ENIGMA"
+						if("Graggar")
+							held_confession.bad_type = "A FOLLOWER OF THE DARK SUN"
+						if("Peasant Rebel")
+							return // Inquisitors don't care about peasant revolts targeting the King of Rockhill'
+						if("Science")
+							held_confession.bad_type = "DAMNED ANTI-THEIST"
+					held_confession.info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS [held_confession.bad_type]. THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE HOLY PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,<br/><font color='red'>[held_confession.signed]</font>"
+					return
+	say(pick(innocent_lines), spans = list("torture"))
+	return
 
 /mob/living/carbon/human/proc/faith_test()
 	set name = "FaithTest"
