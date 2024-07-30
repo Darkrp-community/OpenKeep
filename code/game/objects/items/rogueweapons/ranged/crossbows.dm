@@ -19,6 +19,7 @@
 	load_sound = 'sound/foley/nockarrow.ogg'
 	fire_sound = 'sound/combat/Ranged/crossbow-small-shot-02.ogg'
 	associated_skill = /datum/skill/combat/crossbows
+	var/damfactor = 1
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/getonmobprop(tag)
 	. = ..()
@@ -105,7 +106,7 @@
 	for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
 		var/obj/projectile/BB = CB.BB
 		if(user.STAPER > 10)
-			BB.damage = BB.damage * (user.STAPER / 10)
+			BB.damage = BB.damage * (user.STAPER / 10) * damfactor
 	cocked = FALSE
 	..()
 
