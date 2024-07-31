@@ -1,6 +1,6 @@
 /mob/dead/new_player/Login()
 //	winset(client, "outputwindow.output", "max-lines=1")
-//	winset(client, "outputwindow.output", "max-lines=100")
+	winset(client, "outputwindow.output", "max-lines=1000")
 
 	if(CONFIG_GET(flag/use_exp_tracking))
 		client.set_exp_from_db()

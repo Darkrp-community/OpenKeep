@@ -303,7 +303,7 @@
 			owner.Unconscious(5 SECONDS + (from_behind * 10 SECONDS))
 			if(owner.client)
 				winset(owner.client, "outputwindow.output", "max-lines=1")
-				winset(owner.client, "outputwindow.output", "max-lines=100")
+				winset(owner.client, "outputwindow.output", "max-lines=1000")
 		var/dislocation_type
 		var/fracture_type = /datum/wound/fracture/head
 		var/necessary_damage = 0.9

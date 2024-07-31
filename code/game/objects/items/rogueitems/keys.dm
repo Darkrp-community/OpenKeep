@@ -488,6 +488,11 @@ obj/item/roguekey/armorsmith
 	icon_state = "rustkey"
 	lockid = "armorsmith"
 
+obj/item/roguekey/tailor
+	name = "tailor's key"
+	icon_state = "ekey"
+	lockid = "tailor"
+
 //custom key
 /obj/item/roguekey/custom
 	name = "custom key"
