@@ -6,6 +6,7 @@
 	allowed_races = list("Tiefling")
 	outfit = /datum/outfit/job/roguetown/adventurer/vaquero
 	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
+	cmode_music = 'sound/music/combat_vaquero.ogg'
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 1
 	pickprob = 50
@@ -41,4 +42,3 @@
 	beltl = /obj/item/rogueweapon/sword/rapier
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	H.change_stat("speed", 3)
-	H.cmode_music = 'sound/music/combat_vaquero.ogg'

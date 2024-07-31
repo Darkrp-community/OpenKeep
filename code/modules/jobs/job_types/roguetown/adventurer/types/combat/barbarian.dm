@@ -7,7 +7,7 @@
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/barbarian
 	category_tags = list(CTAG_ADVENTURER)
-	cmode_music = 'sound/music/combat_gronn.ogg'
+	cmode_music = 'sound/music/combat_barbarian.ogg'
 
 /datum/outfit/job/roguetown/adventurer/barbarian
 	allowed_patrons = list(/datum/patron/divine/ravox, /datum/patron/inhumen/graggar)
