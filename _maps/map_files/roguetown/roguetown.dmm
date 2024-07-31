@@ -1034,7 +1034,7 @@
 "ise" = (/obj/structure/mineral_door/bars{locked = 1; lockid = "nightmaiden"},/turf/open/floor/rogue/cobble,/area/rogue/outdoors/town)
 "isf" = (/obj/structure/closet/crate/roguecloset,/obj/item/candle/yellow,/turf/open/floor/rogue/wood,/area/rogue/under/town/basement)
 "isy" = (/obj/structure/fluff/railing/fence{dir = 1; icon_state = "fence"},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/town)
-"isO" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/rogue/tile/masonic/spiral,/area/rogue/indoors/town/church)
+"isO" = (/obj/effect/decal/cleanable/blood/old,/obj/effect/landmark/start/templar,/turf/open/floor/rogue/tile/masonic/spiral,/area/rogue/indoors/town/church)
 "itr" = (/obj/machinery/light/rogue/wallfire{pixel_y = 32},/turf/open/floor/rogue/wood,/area/rogue/indoors/town/tavern)
 "itP" = (/obj/structure/bookcase,/obj/item/book/rogue/cardgame,/obj/item/book/rogue/festus,/obj/item/book/rogue/fishing,/turf/open/floor/rogue/ruinedwood{icon_state = "horzw"},/area/rogue/under/town/basement)
 "iuJ" = (/obj/machinery/light/rogue/wallfire/candle,/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/town/dwarfin)
