@@ -859,6 +859,15 @@
 	reset_offsets("wall_press")
 	update_wallpress_slowdown()
 
+/mob/living/proc/update_pixelshift(turf/T, atom/newloc, direct)
+	if(!pixelshifted)
+		reset_offsets("pixel_shift")
+		return FALSE
+	pixelshifted = FALSE
+	pixelshift_x = 0
+	pixelshift_y = 0
+	reset_offsets("pixel_shift")
+
 /mob/living/Move(atom/newloc, direct, glide_size_override)
 
 	var/old_direction = dir
@@ -866,6 +875,9 @@
 
 	if(wallpressed)
 		update_wallpress(T, newloc, direct)
+
+	if(pixelshifted)
+		update_pixelshift(T, newloc, direct)
 
 	if(lying)
 		if(direct & EAST)
