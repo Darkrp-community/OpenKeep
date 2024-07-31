@@ -20,7 +20,7 @@
 							/obj/structure/flora/roguegrass = 100,
 							/obj/item/natural/stone = 5,
 							/obj/item/natural/rock = 6,
-							/obj/structure/flora/roguegrass/pyroclasticflowers = 2,
+							/obj/structure/flora/roguegrass/pyroclasticflowers = 1,
 							/obj/item/grown/log/tree/stick = 5,
 							/obj/structure/flora/roguetree/stump/log = 3,
 							/obj/structure/flora/roguetree/stump = 4,
@@ -51,7 +51,6 @@
 	allowed_areas = list(/area/rogue/outdoors/woods)
 	spawnableAtoms = list(/obj/structure/flora/roguetree = 0,
 							/obj/structure/flora/roguegrass/bush = 6,
-							/obj/structure/flora/roguegrass/pyroclasticflowers = 2,
 							/obj/structure/flora/roguegrass = 120,
 							/obj/structure/flora/roguegrass/maneater = 0,
 							/obj/structure/flora/roguegrass/maneater/real = 0,
