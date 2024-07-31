@@ -187,6 +187,7 @@
 
 #define JDO_PURITAN 16
 #define JDO_SHEPHERD 17
+#define JDO_TEMPLAR 17.1
 
 #define JDO_MERCHANT 18
 #define JDO_TAILOR 18.1
