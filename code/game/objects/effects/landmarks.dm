@@ -133,7 +133,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/barkeep
-	name = "Barkeep"
+	name = "Innkeep"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/steward
@@ -302,7 +302,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/barkeeper
-	name = "Barkeeper"
+	name = "Innkeeper"
 	icon_state = "arrow"
 
 
