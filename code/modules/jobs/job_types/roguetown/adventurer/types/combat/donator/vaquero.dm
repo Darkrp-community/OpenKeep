@@ -41,3 +41,4 @@
 	beltl = /obj/item/rogueweapon/sword/rapier
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	H.change_stat("speed", 3)
+	H.cmode_music = 'sound/music/combat_vaquero.ogg'

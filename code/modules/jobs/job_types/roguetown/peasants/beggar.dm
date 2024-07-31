@@ -26,6 +26,8 @@
 	show_in_credits = FALSE
 	can_random = FALSE
 
+	cmode_music = 'sound/music/combat_bum.ogg'
+
 /datum/job/roguetown/vagrant/New()
 	. = ..()
 	peopleknowme = list()

@@ -26,6 +26,8 @@
 	outfit = /datum/outfit/job/roguetown/veteran
 	give_bank_account = 50
 
+	cmode_music = 'sound/music/combat_guard.ogg'
+
 /datum/outfit/job/roguetown/veteran/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/helmet
