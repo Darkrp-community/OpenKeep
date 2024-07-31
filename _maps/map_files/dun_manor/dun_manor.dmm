@@ -839,7 +839,7 @@
 "hra" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/rack/rogue,/obj/machinery/light/rogue/torchholder/c,/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/dwarfin)
 "hrr" = (/obj/structure/bookcase,/obj/item/book/rogue/nitebeast,/obj/item/book/rogue/noc,/obj/item/book/rogue/robber,/turf/open/floor/rogue/wood,/area/rogue/indoors/town/magician)
 "hru" = (/obj/machinery/light/rogue/wallfire/candle/r,/obj/effect/decal/cobbleedge{dir = 1},/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/town/church/chapel)
-"hrv" = (/obj/structure/bars{icon_state = "barsbent"; layer = 2.81},/obj/structure/table/wood{dir = 1; icon_state = "tablewood1"},/obj/structure/bars/passage/shutter{redstone_id = "stewardshutter"},/turf/open/floor/rogue/cobble,/area/rogue/indoors/town)
+"hrv" = (/obj/structure/bars{icon_state = "barsbent"; layer = 2.81},/obj/structure/table/wood{dir = 1; icon_state = "tablewood1"},/turf/open/floor/rogue/cobble,/area/rogue/indoors/town)
 "hrK" = (/obj/effect/decal/cobbleedge{dir = 6},/turf/open/floor/rogue/grass,/area/rogue/outdoors/town)
 "hsb" = (/obj/effect/decal/cleanable/cobweb,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/rogue/cobble,/area/rogue/under/town/basement)
 "hsv" = (/turf/open/floor/carpet/royalblack,/area/rogue/indoors/town/magician)
