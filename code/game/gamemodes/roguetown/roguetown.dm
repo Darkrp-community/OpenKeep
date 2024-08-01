@@ -442,7 +442,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_werewolves()
-	restricted_jobs = list("Acolyte","Priest","Adventurer","Confessor","Garrison Guard","Veteran","Royal Guard","Captain")
+	restricted_jobs = list("Acolyte","Priest","Adventurer","Confessor","Templar","Garrison Guard","Veteran","Royal Guard","Captain")
 	var/werewolfsremaining = 1
 	antag_candidates = get_players_for_role(ROLE_WEREWOLF)
 	antag_candidates = shuffle(antag_candidates)
