@@ -99,7 +99,8 @@
 	"red - berry" = "b23434",
 	"red - wine" = "b87f77",
 	"red - sunset" = "bf6821",
-	"red - blood" = "822b2b"
+	"red - blood" = "822b2b",
+	"red - maroon" = "612929"
 	))
 
 /datum/species/dwarf/mountain/random_name(gender,unique,lastname)

@@ -2237,6 +2237,7 @@
 #include "code\modules\jobs\job_types\roguetown\church\monk.dm"
 #include "code\modules\jobs\job_types\roguetown\church\priest.dm"
 #include "code\modules\jobs\job_types\roguetown\church\puritan.dm"
+#include "code\modules\jobs\job_types\roguetown\church\templar.dm"
 #include "code\modules\jobs\job_types\roguetown\garrison\dungeoneer.dm"
 #include "code\modules\jobs\job_types\roguetown\garrison\garrisonarcher.dm"
 #include "code\modules\jobs\job_types\roguetown\garrison\garrisonguard.dm"
