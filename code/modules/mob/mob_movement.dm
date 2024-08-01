@@ -668,7 +668,6 @@
 
 /mob/living/proc/check_armor_weight()
 	return "Light"
-	testing("Wearing light armor")
 
 /mob/living/carbon/human/check_armor_weight() // Get the heaviest shirt/armor the mob is wearing.
 	var/heaviest = "Light"
@@ -684,7 +683,6 @@
 			heaviest = "Heavy"
 		if(CL.armor_class == ARMOR_CLASS_MEDIUM && heaviest == "Light")
 			heaviest = "Medium"
-	testing("Wearing " + heaviest + " armor")
 	return heaviest
 
 /mob/living/proc/check_dodge_skill()
