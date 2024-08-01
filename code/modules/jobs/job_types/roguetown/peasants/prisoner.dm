@@ -21,7 +21,7 @@
 	outfit = /datum/outfit/job/roguetown/prisoner
 	bypass_jobban = TRUE
 	display_order = JDO_PRISONER
-	give_bank_account = 173
+	give_bank_account = 50
 	can_random = FALSE
 	bypass_lastclass = FALSE
 	whitelist_req = FALSE

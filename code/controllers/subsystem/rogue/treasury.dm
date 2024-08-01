@@ -44,7 +44,7 @@ SUBSYSTEM_DEF(treasury)
 
 /datum/controller/subsystem/treasury/Initialize()
 	//Randomizes the roundstart amount of money and the queens tax.
-	treasury_value = rand(800,1500)
+	treasury_value = rand(200,600)
 	queens_tax = pick(0.09, 0.15, 0.21, 0.30)
 
 	//For the merchants import and export.
@@ -115,7 +115,7 @@ SUBSYSTEM_DEF(treasury)
 		if(!I.submitted_to_stockpile)
 			I.submitted_to_stockpile = TRUE
 		//Passive income is 25% of the items worth.
-		passive_income += (I.get_real_price()*0.25)
+		passive_income += (I.get_real_price()*0.05)
 	return passive_income
 
 /*
