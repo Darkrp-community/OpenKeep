@@ -117,9 +117,10 @@
 	. = ..()
 	if(href_list["join_queue"])
 		//if(!SSrole_class_handler.drifter_queue_delayed)
-		SSrole_class_handler.attempt_to_add_client_to_drifter_queue(linked_client)
-		show_drifter_queue_menu()
-		linked_client.adjust_triumphs(-1)
+		if(SStriumphs.get_triumphs(linked_client.ckey) > 0)
+			SSrole_class_handler.attempt_to_add_client_to_drifter_queue(linked_client)
+			show_drifter_queue_menu()
+			linked_client.adjust_triumphs(-1)
 
 	if(href_list["leave_queue"])
 		SSrole_class_handler.remove_client_from_drifter_queue(linked_client)
