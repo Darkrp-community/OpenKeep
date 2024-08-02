@@ -43,7 +43,6 @@
 	..()
 	visible_message("<FONT COLOR='green'>[usr] soothes the beastblood with Dendor's whisper.</FONT><BR>")
 	for(var/mob/living/simple_animal/hostile/retaliate/B in oview(4))
-		B.aggressive = 0
 		B.tamed(user)
 
 /obj/effect/proc_holder/spell/targeted/conjure_glowshroom

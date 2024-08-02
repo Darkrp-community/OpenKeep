@@ -72,6 +72,7 @@
 	timestop_duration = 100
 	miracle = TRUE
 	devotion_cost = -45
+	clothes_req = FALSE
 
 /obj/effect/proc_holder/spell/aoe_turf/timestop/rogue/cast(list/targets, mob/user = usr)
 	new /obj/effect/timestop/magic(get_turf(user), timestop_range, timestop_duration, list(user))

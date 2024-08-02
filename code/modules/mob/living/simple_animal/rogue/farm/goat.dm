@@ -2,7 +2,7 @@
 	..()
 	GLOB.farm_animals++
 	if(tame)
-		tamed()
+		tamed(owner)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/Destroy()
 	..()
