@@ -67,7 +67,7 @@
 	if(H.mobid in GLOB.character_list)
 		GLOB.character_list[H.mobid] = null
 	GLOB.chosen_names -= H.real_name
-	if((H.dna.species?.id != "human" && H.dna.species?.id != "aasimar"))
+	if((H.dna.species?.id != "human"))
 		H.age = AGE_ADULT
 		H.set_species(/datum/species/human/northern) //setspecies randomizes body
 		H.after_creation()
