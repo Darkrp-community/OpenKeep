@@ -98,6 +98,7 @@
 	"red - wine" = "82534c",
 	"red - sunset" = "82462b",
 	"red - blood" = "822b2b",
+	"red - maroon" = "612929",
 
 	"green - grass" = "2a482c",
 	"green - swamp" = "3b482a",
