@@ -454,6 +454,11 @@
 	return
 
 /mob/proc/taunted(mob/user)
+	for(var/mob/living/simple_animal/hostile/retaliate/A in view(7,src))
+		if(A.owner == user)
+			A.emote("aggro")
+			A.Retaliate()
+			A.GiveTarget(src)
 	return
 
 /mob/proc/shood(mob/user)

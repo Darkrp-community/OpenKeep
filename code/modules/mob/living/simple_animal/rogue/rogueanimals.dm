@@ -210,7 +210,7 @@
 	if(milkies)
 		udder = new()
 	if(tame)
-		tamed()
+		tamed(owner)
 	ADD_TRAIT(src, TRAIT_SIMPLE_WOUNDS, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/GiveTarget(new_target)
