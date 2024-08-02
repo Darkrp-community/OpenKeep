@@ -52,3 +52,18 @@
 		target.blur_eyes(10)
 		return TRUE
 	return FALSE
+
+/obj/effect/proc_holder/spell/targeted/mind_transfer/rogue
+	name = "Mind Transfer"
+	desc = ""
+	charge_max = 60 SECONDS
+	clothes_req = FALSE
+	invocation = "Let Eoar show you the world differently!"
+	invocation_type = "whisper"
+	range = 1
+	cooldown_min = 200 //100 deciseconds reduction per rank
+	unconscious_amount_caster = 200 //how much the caster is stunned for after the spell
+	unconscious_amount_victim = 200 //how much the victim is stunned for after the spell
+	miracle = TRUE
+	devotion_cost = -100
+	action_icon_state = "mindswap"

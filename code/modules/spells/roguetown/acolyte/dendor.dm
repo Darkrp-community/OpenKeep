@@ -59,6 +59,8 @@
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	invocation = "Treefather light the way."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
+	miracle = TRUE
+	devotion_cost = -60
 
 /obj/effect/proc_holder/spell/targeted/conjure_glowshroom/cast(list/targets,mob/user = usr)
 	..()
