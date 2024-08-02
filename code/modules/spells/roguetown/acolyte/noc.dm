@@ -43,8 +43,7 @@
 	miracle = TRUE
 	devotion_cost = -45
 
-/obj/effect/proc_holder/spell/invoked/invisibility/cast(list/targets, mob/living/user)
-	..()
+/obj/effect/proc_holder/spell/invoked/invisibility/cast(list/targets, mob/living/user)	
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
 		if(target.anti_magic_check(TRUE, TRUE))
@@ -54,6 +53,7 @@
 		target.mob_timers[MT_INVISIBILITY] = world.time + 15 SECONDS
 		addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living, update_sneak_invis), TRUE), 15 SECONDS)
 		addtimer(CALLBACK(target, TYPE_PROC_REF(/atom/movable, visible_message), "<span class='warning'>[target] fades back into view.</span>", "<span class='notice'>You become visible again.</span>"), 15 SECONDS)
+		..()
 	return FALSE
 
 /obj/effect/proc_holder/spell/aoe_turf/timestop/rogue
@@ -73,6 +73,8 @@
 	miracle = TRUE
 	devotion_cost = -45
 	clothes_req = FALSE
+	associated_skill = /datum/skill/magic/holy
 
 /obj/effect/proc_holder/spell/aoe_turf/timestop/rogue/cast(list/targets, mob/user = usr)
+	..()
 	new /obj/effect/timestop/magic(get_turf(user), timestop_range, timestop_duration, list(user))

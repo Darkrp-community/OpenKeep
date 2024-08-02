@@ -18,8 +18,7 @@
 	miracle = TRUE
 	devotion_cost = -45
 
-/obj/effect/proc_holder/spell/invoked/sacred_flame_rogue/cast(list/targets, mob/user = usr)
-	..()
+/obj/effect/proc_holder/spell/invoked/sacred_flame_rogue/cast(list/targets, mob/user = usr)	
 	if(isliving(targets[1]))
 		var/mob/living/L = targets[1]
 		user.visible_message("<font color='yellow'>[user] points at [L]!</font>")
@@ -28,6 +27,7 @@
 		L.adjust_fire_stacks(5)
 		L.IgniteMob()
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, ExtinguishMob)), 5 SECONDS)
+		..()
 		return TRUE
 
 	// Spell interaction with ignitable objects (burn wooden things, light torches up)
@@ -35,6 +35,7 @@
 		var/obj/O = targets[1]
 		if(O.fire_act())
 			user.visible_message("<font color='yellow'>[user] points at [O], igniting it with sacred flames!</font>")
+			..()
 			return TRUE
 		else
 			to_chat(user, "<span class='warning'>You point at [O], but it fails to catch fire.</span>")
@@ -62,8 +63,7 @@
 	/// Amount of PQ gained for reviving people
 	var/revive_pq = 0.25
 
-/obj/effect/proc_holder/spell/invoked/revive/cast(list/targets, mob/living/user)
-	..()
+/obj/effect/proc_holder/spell/invoked/revive/cast(list/targets, mob/living/user)	
 	if(isliving(targets[1]))
 		testing("revived1")
 		var/mob/living/target = targets[1]
@@ -79,6 +79,7 @@
 		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
 			target.visible_message("<span class='danger'>[target] is unmade by holy light!</span>", "<span class='userdanger'>I'm unmade by holy light!</span>")
 			target.gib()
+			..()
 			return TRUE
 		if(!target.revive(full_heal = FALSE))
 			to_chat(user, "<span class='warning'>Nothing happens.</span>")
@@ -98,6 +99,7 @@
 		if(target.mind && revive_pq && !HAS_TRAIT(target, TRAIT_IWASREVIVED) && user?.ckey)
 			adjust_playerquality(revive_pq, user.ckey)
 			ADD_TRAIT(target, TRAIT_IWASREVIVED, "[type]")
+		..()
 		return TRUE
 	return FALSE
 
