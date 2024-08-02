@@ -56,7 +56,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.change_stat("intelligence", -1)
 		H.change_stat("endurance", 1)
-		H.change_stat("strength", 1)
+		H.change_stat("strength", 2)
 		H.change_stat("speed", 2)
 		H.change_stat("perception", 1)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
