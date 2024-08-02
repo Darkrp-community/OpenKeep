@@ -14,9 +14,10 @@
 	antimagic_allowed = TRUE
 	charge_max = 5 SECONDS //very stupidly simple spell
 	miracle = TRUE
-	devotion_cost = 5 //come on, this is very basic
+	devotion_cost = -5 //come on, this is very basic
 
 /obj/effect/proc_holder/spell/invoked/diagnose/cast(list/targets, mob/living/user)
+	..()
 	if(ishuman(targets[1]))
 		var/mob/living/carbon/human/human_target = targets[1]
 		human_target.check_for_injuries(user)
@@ -101,6 +102,7 @@
 
 // consider adding functionality to regrow one entire organ or limb per casting?
 /obj/effect/proc_holder/spell/invoked/attach_bodypart/cast(list/targets, mob/living/user)
+	..()
 	if(ishuman(targets[1]))
 		var/mob/living/carbon/human/human_target = targets[1]
 		for(var/obj/item/bodypart/limb as anything in get_limbs(human_target, user))
@@ -144,6 +146,7 @@
 	var/unzombification_pq = 0.4
 
 /obj/effect/proc_holder/spell/invoked/cure_rot/cast(list/targets, mob/living/user)
+	..()
 	if(isliving(targets[1]))
 		testing("curerot1")
 		var/mob/living/target = targets[1]

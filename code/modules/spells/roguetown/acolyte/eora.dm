@@ -18,6 +18,7 @@
 	charge_max = 60 SECONDS
 
 /obj/effect/proc_holder/spell/invoked/bud/cast(list/targets, mob/living/user)
+	..()
 	var/turf/T = get_turf(targets[1])
 	if(!isclosedturf(T))
 		new /obj/item/clothing/head/peaceflower(T)
@@ -42,6 +43,7 @@
 	miracle = FALSE
 
 /obj/effect/proc_holder/spell/invoked/eoracurse/cast(list/targets, mob/living/user)
+	..()
 	if(isliving(targets[1]))
 		var/mob/living/carbon/target = targets[1]
 		target.apply_status_effect(/datum/status_effect/buff/druqks)

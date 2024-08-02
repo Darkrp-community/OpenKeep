@@ -19,6 +19,7 @@
 	devotion_cost = -45
 
 /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue/cast(list/targets, mob/user = usr)
+	..()
 	if(isliving(targets[1]))
 		var/mob/living/L = targets[1]
 		user.visible_message("<font color='yellow'>[user] points at [L]!</font>")
@@ -62,6 +63,7 @@
 	var/revive_pq = 0.25
 
 /obj/effect/proc_holder/spell/invoked/revive/cast(list/targets, mob/living/user)
+	..()
 	if(isliving(targets[1]))
 		testing("revived1")
 		var/mob/living/target = targets[1]
