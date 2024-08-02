@@ -5,7 +5,7 @@
 #define CLERIC_T3 3
 
 #define CLERIC_REQ_1 2
-#define CLERIC_REQ_2 4
+#define CLERIC_REQ_2 3
 #define CLERIC_REQ_3 5
 
 // Cleric Holder Datums
