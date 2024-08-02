@@ -49,5 +49,6 @@
 		H.change_stat("perception", 2)
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 2)
+		H.change_stat("speed", 2)
 		ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
