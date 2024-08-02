@@ -46,19 +46,19 @@
 			if(skill >= CLERIC_REQ_1)
 				level = CLERIC_T1
 				usr.mind.AddSpell(new P.t1)
-				max_devotion += 30
+				max_devotion += 50
 				return
 		if(CLERIC_T1)
 			if(skill >= CLERIC_REQ_2)
 				level = CLERIC_T2
 				usr.mind.AddSpell(new P.t2)
-				max_devotion += 30
+				max_devotion += 50
 				return
 		if(CLERIC_T2)
 			if(skill >= CLERIC_REQ_3)
 				level = CLERIC_T3
 				usr.mind.AddSpell(new P.t3)
-				max_devotion += 30
+				max_devotion += 50
 				return
 		if(CLERIC_T3) // already maxed out
 			return
@@ -76,7 +76,7 @@
 		H.mind.AddSpell(new spell_type)
 	level = CLERIC_T3
 	update_devotion(100, 900)
-	max_devotion += 90
+	max_devotion += 150
 
 /datum/devotion/cleric_holder/proc/grant_spells(mob/living/carbon/human/H)
 	if(!H || !H.mind)
@@ -89,6 +89,7 @@
 			continue
 		H.mind.AddSpell(new spell_type)
 	level = CLERIC_T1
+	max_devotion += 50
 
 /datum/devotion/cleric_holder/proc/grant_spells_templar(mob/living/carbon/human/H)
 	if(!H || !H.mind)
