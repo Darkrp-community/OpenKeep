@@ -77,6 +77,7 @@
 	"red - wine" = "82534c",
 	"red - sunset" = "82462b",
 	"red - blood" = "822b2b",
+	"red - maroon" = "612929",
 
 	"blond - pale" = "9d8d6e",
 	"blond - dirty" = "88754f",
