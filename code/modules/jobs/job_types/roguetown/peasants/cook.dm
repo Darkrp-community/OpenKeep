@@ -3,8 +3,8 @@
 	flag = COOK
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 
 	allowed_races = list(
 		"Humen",
