@@ -37,6 +37,17 @@
 	..()
 	. = 1
 
+/*----------\
+|Ingredients|
+\----------*/
+/datum/reagent/undeadash
+	name = "Spectral Powder"
+	description = ""
+	reagent_state = SOLID
+	color = "#330066"
+	taste_description = "tombstones"
+	metabolization_rate = 0.1
+
 /datum/reagent/berrypoison
 	name = "Berry Poison"
 	description = "f"
