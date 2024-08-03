@@ -28,6 +28,11 @@
 	cost = 20
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
 
+/datum/supply_pack/rogue/food/onin
+	name = "Ratkept Onin Cognac"
+	cost = 5
+	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/ratkept
+
 /datum/supply_pack/rogue/food/grenzelbeer
 	name = "Grenzelhoftian Bitter Beer"
 	cost = 30
@@ -38,6 +43,11 @@
 	cost = 40
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian
 
+/datum/supply_pack/rogue/food/elfcab
+	name = "Elvish Fireleaf"
+	cost = 40
+	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/fireleaf
+
 /datum/supply_pack/rogue/food/butterhair
 	name = "Dwarvish Butterhairs"
 	cost = 50
@@ -47,6 +57,11 @@
 	name = "Stonebeards Reserve"
 	cost = 50
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve
+
+/datum/supply_pack/rogue/food/voddena
+	name = "Dwarven Voddena"
+	cost = 50
+	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/voddena
 
 /datum/supply_pack/rogue/food/winezybantu
 	name = "Zybantu Wine"

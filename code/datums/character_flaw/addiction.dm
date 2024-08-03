@@ -139,30 +139,32 @@
 
 /datum/outfit/job/roguetown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE) // added since the previous way it was implemented caused a bunch of runtimes
 	. = ..()
-	if(H.mind && H.has_flaw(/datum/charflaw/addiction/godfearing))
+	if(H.mind)
 		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) || H.mind.has_antag_datum(/datum/antagonist/vampirelord)) // dont stunlock
 			return
-		if(!H.wear_neck)
+		if(!H.wear_wrists)
 			var/obj/item/clothing/neck/roguetown/psicross/crosstype
-			switch(H.patron)
-				if(/datum/patron/divine/astrata)
+			switch(H.patron?.name)
+				if("Astrata")
 					crosstype = /obj/item/clothing/neck/roguetown/psicross/astrata
-				if(/datum/patron/divine/noc)
+				if("Noc")
 					crosstype = /obj/item/clothing/neck/roguetown/psicross/noc
-				if(/datum/patron/divine/dendor)
+				if("Dendor")
 					crosstype = /obj/item/clothing/neck/roguetown/psicross/dendor
-				if(/datum/patron/divine/necra)
+				if("Necra")
 					crosstype = /obj/item/clothing/neck/roguetown/psicross/necra
-				if(/datum/patron/divine/ravox)
+				if("Ravox")
 					crosstype = /obj/item/clothing/neck/roguetown/psicross/ravox
+				if("Eora")
+					crosstype = /obj/item/clothing/neck/roguetown/psicross/eora
 				else
 					if(prob(1))
 						crosstype = /obj/item/clothing/neck/roguetown/psicross/g
 					else
 						crosstype = /obj/item/clothing/neck/roguetown/psicross
-			H.equip_to_slot_or_del(new crosstype(H), SLOT_NECK)
+			H.equip_to_slot_or_del(new crosstype(H), SLOT_WRISTS)
 
-/// ALCOHOLIC
+/// LOVE-FIEND
 
 /datum/charflaw/addiction/lovefiend
 	name = "Love-Fiend"

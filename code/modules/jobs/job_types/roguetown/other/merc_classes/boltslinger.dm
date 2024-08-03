@@ -4,8 +4,8 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Half-Elf",
 		"Elf",
+		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
@@ -52,4 +52,5 @@
 		H.change_stat("perception", 3)
 		H.change_stat("endurance", 1)
 		H.change_stat("strength", 1)
+	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)

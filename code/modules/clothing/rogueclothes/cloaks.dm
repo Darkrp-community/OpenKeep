@@ -7,6 +7,9 @@
 	edelay_type = 1
 	equip_delay_self = 10
 	bloody_icon_state = "bodyblood"
+	sewrepair = TRUE
+	anvilrepair = null
+	smeltresult = /obj/item/ash
 
 
 //////////////////////////
@@ -99,7 +102,6 @@
 
 /obj/item/clothing/cloak/tabard/crusader
 	detail_tag = "_psy"
-	detail_color = CLOTHING_RED
 
 /obj/item/clothing/cloak/tabard/crusader/Initialize()
 	..()
@@ -132,7 +134,6 @@
 	picked = TRUE
 
 /obj/item/clothing/cloak/tabard/crusader/tief
-	detail_tag = "_psy"
 	color = CLOTHING_RED
 	detail_color = CLOTHING_WHITE
 
@@ -344,6 +345,70 @@
 	if(ismob(loc))
 		var/mob/L = loc
 		L.update_inv_cloak()
+
+//////////////////////////
+/// CRUSADER
+////////////////////////
+
+/obj/item/clothing/cloak/stabard/templar
+	name = "surcoat of the golden order"
+	icon_state = "tabard_weeping"
+	item_state = "tabard_weeping"
+	icon = 'icons/roguetown/clothing/special/templar.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/templar.dmi'
+	sleeved = 'icons/roguetown/clothing/special/onmob/templar.dmi'
+
+/obj/item/clothing/cloak/stabard/templar/astrata
+	name = "surcoat of the solar order"
+	icon_state = "tabard_astrata"
+	item_state = "tabard_astrata"
+
+/obj/item/clothing/cloak/stabard/templar/astrata/alt
+	icon_state = "tabard_astrata_alt"
+	item_state = "tabard_astrata_alt"
+
+/obj/item/clothing/cloak/stabard/templar/necra
+	name = "surcoat of the necran order"
+	icon_state = "tabard_necra"
+	item_state = "tabard_necra"
+
+/obj/item/clothing/cloak/stabard/templar/necra/alt
+	icon_state = "tabard_necra_alt"
+	item_state = "tabard_necra_alt"
+
+/obj/item/clothing/cloak/stabard/templar/dendor
+	name = "surcoat of the dendorian order"
+	icon_state = "tabard_dendor"
+	item_state = "tabard_dendor"
+
+/obj/item/clothing/cloak/stabard/templar/noc
+	name = "surcoat of the lunar order"
+	icon_state = "tabard_noc"
+	item_state = "tabard_noc"
+
+/obj/item/clothing/cloak/stabard/templar/noc/alt
+	icon_state = "tabard_noc_alt"
+	item_state = "tabard_noc_alt"
+
+/obj/item/clothing/cloak/stabard/templar/abyssor
+	name = "surcoat of the abyssal order"
+	icon_state = "tabard_abyssor"
+	item_state = "tabard_abyssor"
+
+/obj/item/clothing/cloak/stabard/templar/malum
+	name = "surcoat of the malumite order"
+	icon_state = "tabard_malum"
+	item_state = "tabard_malum"
+
+/obj/item/clothing/cloak/stabard/templar/eora
+	name = "surcoat of the eoran order" //This SHOULDNT be used, Eorites dont have templars since they are all pansy pacifists
+	icon_state = "tabard_eora"
+	item_state = "tabard_eora"
+
+/obj/item/clothing/cloak/stabard/templar/pestra
+	name = "surcoat of the pestran order"
+	icon_state = "tabard_pestra"
+	item_state = "tabard_pestra"
 
 //////////////////////////
 /// SURCOATS
@@ -726,7 +791,7 @@
 
 /obj/item/clothing/cloak/chasuble
 	name = "chasuble"
-	desc = ""
+	desc = "Pristine white liturgical vestments with a golden psycross adornment."
 	icon_state = "chasuble"
 	body_parts_covered = CHEST|GROIN|ARMS
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
@@ -739,7 +804,7 @@
 
 /obj/item/clothing/cloak/stole
 	name = "stole"
-	desc = "A gold weaved fabric."
+	desc = "Garments of a priest, usually worn when giving mass to the people."
 	icon_state = "stole_gold"
 	sleeved = null
 	sleevetype = null
@@ -764,6 +829,20 @@
 	sellprice = 50
 	nodismemsleeves = TRUE
 
+/obj/item/clothing/cloak/tribal
+	name = "tribal pelt"
+	desc = "A haphazardly cured pelt of a creecher, thrown on top of one's body or armor, to serve as additional protection against the cold. Itchy."
+	icon_state = "tribal"
+	alternate_worn_layer = CLOAK_BEHIND_LAYER
+	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
+	body_parts_covered = CHEST|GROIN|VITALS
+	allowed_sex = list(MALE, FEMALE)
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "dwarf")
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	nodismemsleeves = TRUE
+	boobed = FALSE
+	sellprice = 10
+
 /obj/item/clothing/cloak/heartfelt
 	name = "red cloak"
 	desc = "A typical cloak, this one is in red colours."
@@ -778,7 +857,7 @@
 	nodismemsleeves = TRUE
 
 /obj/item/clothing/cloak/half
-	name = "halfcloak"
+	name = "half cloak"
 	desc = "A cloak that covers only half of the body."
 	color = null
 	icon_state = "halfcloak"

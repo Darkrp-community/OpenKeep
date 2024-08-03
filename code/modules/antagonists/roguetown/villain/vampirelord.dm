@@ -128,7 +128,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	owner.current.ambushable = FALSE
 
 /mob/living/carbon/human/proc/spawn_pick_class()
-	var/list/classoptions = list("Bard", "Fisher", "Hunter", "Miner", "Peasant", "Woodcutter", "Cheesemaker", "Blacksmith", "Carpenter", "Rogue", "Treasure Hunter", "Mage", "Sorceress")
+	var/list/classoptions = list("Bard", "Fisher", "Hunter", "Miner", "Peasant", "Woodcutter", "Carpenter", "Rogue", "Warrior")
 	var/list/visoptions = list()
 
 	for(var/T in 1 to 5)
@@ -212,7 +212,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	body_parts_covered = CHEST|GROIN|VITALS
 	icon_state = "vplate"
 	item_state = "vplate"
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	nodismemsleeves = TRUE
 	max_integrity = 500
@@ -232,7 +232,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	color = null
 	blocksound = PLATEHIT
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard
 	name = "ancient ceremonial helm"
@@ -510,10 +510,10 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			possible |= V.current
 	for(var/datum/mind/D in C.deathknights)
 		possible |= D.current
-	var/mob/living/carbon/human/choice = input(src, "Who to punish?", "PUNISHMENT") as anything in possible|null
+	var/mob/living/carbon/human/choice = input(src, "Who to punish?", "PUNISHMENT") as null|anything in possible
 	if(choice)
 		var/punishmentlevels = list("Pause", "Pain", "Release")
-		switch(input(src, "Severity?", "PUNISHMENT") as anything in punishmentlevels|null)
+		switch(input(src, "Severity?", "PUNISHMENT") as anything in null|punishmentlevels)
 			if("Pain")
 				to_chat(choice, "<span class='boldnotice'>You are wracked with pain as your master punishes you!</span>")
 				choice.apply_damage(30, BRUTE)

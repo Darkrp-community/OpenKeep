@@ -37,8 +37,12 @@
 	ingredient_size = 2
 	slice_path = null
 	filling_color = "#8a0000"
-	rotprocess = 12 MINUTES
+	rotprocess = SHELFLIFE_TINY
 	cooked_type = null
+/obj/item/reagent_containers/food/snacks/rogue/meat/mince/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
+	new /obj/effect/decal/cleanable/food/mess(get_turf(src))
+	..()
+	qdel(src)
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)

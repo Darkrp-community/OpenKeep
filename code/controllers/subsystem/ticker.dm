@@ -39,7 +39,7 @@ SUBSYSTEM_DEF(ticker)
 	//576000 dusk
 	//376000 day
 	var/gametime_offset = 288001		//Deciseconds to add to world.time for station time.
-	var/station_time_rate_multiplier = 50		//factor of station time progressal vs real time.
+	var/station_time_rate_multiplier = 40		//factor of station time progressal vs real time.
 	var/time_until_vote = 120 MINUTES
 	var/last_vote_time = null
 	var/firstvote = TRUE
@@ -76,6 +76,12 @@ SUBSYSTEM_DEF(ticker)
 	var/blood_lost = 0
 	var/tri_gained = 0
 	var/tri_lost = 0
+	var/holefall = 0 // ankles broken
+	var/pplsmited = 0 // people sm
+	var/moatfallers = 0 // moat fall
+	var/gibbs = 0 // gibs been
+	var/snort = 0 // drugs snorted
+	var/beardshavers = 0 // beards shaven, includes  more than dwarves
 	var/list/cuckers = list()
 	var/cums = 0
 

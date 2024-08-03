@@ -21,6 +21,8 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.change_stat("strength", 2)
+		H.change_stat("endurance", 2)
+		H.change_stat("constitution", 2)
 		H.change_stat("speed", -1)
 
 	var/randy = rand(1,5)
@@ -35,13 +37,15 @@
 
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
-	shoes = /obj/item/clothing/shoes/roguetown/boots/rare/humanspplate
-	gloves = /obj/item/clothing/gloves/roguetown/rare/humanspplate
+	shoes = /obj/item/clothing/shoes/roguetown/boots/rare/zybanplate
+	gloves = /obj/item/clothing/gloves/roguetown/rare/zybanplate
 	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
-	armor = /obj/item/clothing/suit/roguetown/armor/rare/humanspplate
+	armor = /obj/item/clothing/suit/roguetown/armor/rare/zybanplate
 	backl = /obj/item/storage/backpack/rogue/satchel
-	head = /obj/item/clothing/head/roguetown/rare/humanspplate
+	head = /obj/item/clothing/head/roguetown/rare/zybanplate
+	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 
+	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

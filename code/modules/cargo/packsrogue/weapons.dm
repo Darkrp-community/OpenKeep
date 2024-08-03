@@ -40,7 +40,7 @@
 
 /datum/supply_pack/rogue/weapons/bomb
 	name = "Battle Bomb"
-	cost = 140
+	cost = 72
 	contains = /obj/item/bomb/homemade
 
 /datum/supply_pack/rogue/weapons/shield
@@ -57,6 +57,11 @@
 	name = "Bow"
 	cost = 40
 	contains = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+
+/datum/supply_pack/rogue/weapons/rbow
+	name = "Imported Recurve Bow"
+	cost = 60
+	contains = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve)
 
 /datum/supply_pack/rogue/weapons/quivers
 	name = "Empty Quiver"

@@ -933,8 +933,10 @@
 				severity = 2
 			if(40 to 60)
 				severity = 3
+				overlay_fullscreen("painflash", /atom/movable/screen/fullscreen/painflash)
 			if(60 to 80)
 				severity = 4
+				overlay_fullscreen("painflash", /atom/movable/screen/fullscreen/painflash)
 			if(80 to 99)
 				severity = 5
 				overlay_fullscreen("painflash", /atom/movable/screen/fullscreen/painflash)

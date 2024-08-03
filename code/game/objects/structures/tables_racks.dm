@@ -712,6 +712,20 @@
 	icon_state = "shelf_biggest"
 	pixel_y = 0
 
+// Necessary to avoid a critical bug with disappearing weapons.
+/obj/structure/rack/rogue/attackby(obj/item/W, mob/user, params)
+	if(!user.cmode)
+		if(!(W.item_flags & ABSTRACT))
+			if(user.transferItemToLoc(W, drop_location(), silent = FALSE))
+				var/list/click_params = params2list(params)
+				if(!click_params || !click_params["icon-x"] || !click_params["icon-y"])
+					return
+				W.pixel_x = initial(W.pixel_x) += CLAMP(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
+				W.pixel_y = initial(W.pixel_y) += CLAMP(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
+				return 1
+	else
+		. = ..()
+
 // temporary
 /obj/item/cooking/platter
 

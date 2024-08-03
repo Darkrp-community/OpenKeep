@@ -3,6 +3,7 @@
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	body_parts_covered = GROIN|LEGS
+	resistance_flags = FLAMMABLE // Most made of cloth
 	icon = 'icons/roguetown/clothing/pants.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/pants.dmi'
 	equip_sound = 'sound/blank.ogg'
@@ -13,6 +14,7 @@
 	equip_delay_self = 30
 	bloody_icon_state = "bodyblood"
 	sewrepair = TRUE
+	anvilrepair = null
 	r_sleeve_zone = BODY_ZONE_R_LEG
 	l_sleeve_zone = BODY_ZONE_L_LEG
 	r_sleeve_status = SLEEVE_NORMAL
@@ -114,11 +116,12 @@
 
 /obj/item/clothing/under/roguetown/trou/leather
 	name = "leather trousers"
-	icon_state = "leathertrou"
 	desc = "Standard leather pants for hardy workers."
+	icon_state = "leathertrou"
 
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
+	desc = "Dark trousers worn by morticians while performing burial rites."
 	icon_state = "leathertrou"
 	color = "#151615"
 
@@ -134,6 +137,7 @@
 	max_integrity = 300
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
 	armor_class = ARMOR_CLASS_MEDIUM
+	resistance_flags = FIRE_PROOF
 	blocksound = CHAINHIT
 	var/do_sound = FALSE
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
@@ -145,7 +149,7 @@
 	icon_state = "ichain_legs"
 	name = "iron chain chausses"
 	desc = "Chain maille chausses made of iron rings woven together, offering protection against cuts and stabs."
-	max_integrity = 180
+	max_integrity = 200
 	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/under/roguetown/platelegs
@@ -161,6 +165,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	armor_class = ARMOR_CLASS_HEAVY
 	blocksound = PLATEHIT
+	resistance_flags = FIRE_PROOF
 	var/do_sound = FALSE
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing

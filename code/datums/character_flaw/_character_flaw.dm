@@ -8,6 +8,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	"Cyclops (L)"=/datum/charflaw/noeyel,
 	"Wooden Arm (R)"=/datum/charflaw/limbloss/arm_r,
 	"Wooden Arm (L)"=/datum/charflaw/limbloss/arm_l,
+	"Bad Sight"=/datum/charflaw/badsight,
 	"Paranoid"=/datum/charflaw/paranoid,
 	"Clingy"=/datum/charflaw/clingy,
 	"Isolationist"=/datum/charflaw/isolationist,
@@ -15,7 +16,8 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	"Thief-Borne"=/datum/charflaw/addiction/kleptomaniac,
 	"Pain Freek"=/datum/charflaw/addiction/masochist,
 	"Random Flaw or No Flaw"=/datum/charflaw/randflaw,
-	"Guaranteed No Flaw (3 TRI)"=/datum/charflaw/noflaw))
+	"Guaranteed No Flaw (3 TRI)"=/datum/charflaw/noflaw,
+	"Hunted"=/datum/charflaw/hunted))
 
 /datum/charflaw
 	var/name
@@ -253,3 +255,17 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
 	head?.add_wound(/datum/wound/facial/eyes/left/permanent)
 	H.update_fov_angles()
+
+/datum/charflaw/hunted
+	name = "Hunted"
+	desc = "Something in my past has made me a target. I'm always looking over my shoulder."
+	var/logged = FALSE
+
+/datum/charflaw/hunted/flaw_on_life(mob/user)
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	if(logged == FALSE)
+		if(H.name) // If you don't check this, the log entry wont have a name as flaw_on_life is checked at least once before the name is set.
+			log_hunted("[H.ckey] playing as [H.name] had the hunted flaw by vice.")
+			logged = TRUE

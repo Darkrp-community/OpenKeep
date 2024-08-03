@@ -172,6 +172,7 @@
 	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 //	ADD_TRAIT(src, TRAIT_NOBREATH, TRAIT_GENERIC)
 //	blue breathes underwater, need a new specific one for this maybe organ cheque
 //	ADD_TRAIT(src, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
@@ -184,7 +185,7 @@
 	name = "orc"
 	id = "orc"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE)
+	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_CRITICAL_WEAKNESS)
 	no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS, SLOT_S_STORE)
 	nojumpsuit = 1
 	sexes = 1
@@ -543,23 +544,38 @@
 	switch(loadout)
 		if(1) //Halberd Warlord
 			r_hand = /obj/item/rogueweapon/halberd
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-			head = /obj/item/clothing/head/roguetown/helmet/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(2) //Greatsword Warlord
 			r_hand = /obj/item/rogueweapon/greatsword
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-			head = /obj/item/clothing/head/roguetown/helmet/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(3) // WE DON'T WANNA GO TO WAR TODAY BUT THE LORD OF THE LASH SAYS "NAY NAY NAY!!" WE'RE GONNA MARCH ALL DAE, ALL DAE, ALL DAE! WHERE THERE'S A WHIP THERE'S A WAY!!
 			r_hand = /obj/item/rogueweapon/whip/antique
 			l_hand = /obj/item/rogueweapon/sword/short
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-			head = /obj/item/clothing/head/roguetown/helmet/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(4) // Big Sword and Big Shield
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
 			r_hand = /obj/item/rogueweapon/sword/sabre/messer
 			l_hand = /obj/item/rogueweapon/shield/tower
-			head = /obj/item/clothing/head/roguetown/helmet/orc
+			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(5) //Anti Knight STR Build
 			r_hand = /obj/item/rogueweapon/flail/sflail
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
-			head = /obj/item/clothing/head/roguetown/helmet/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
+
+/mob/living/carbon/human/species/orc/warlord/skilled/after_creation() //these ones dont parry, but still get good weapon skills
+	..()
+	QDEL_NULL(sexcon)
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/warlord)
+	aggressive=1
+	mode = AI_IDLE
+	dodgetime = 15
+	canparry = TRUE
+	flee_in_pain = FALSE
+	wander = TRUE
+	configure_mind()

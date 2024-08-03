@@ -22,6 +22,7 @@
 
 /datum/outfit/job/roguetown/prince/pre_equip(mob/living/carbon/human/H)
 	..()
+	H.virginity = TRUE
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard

@@ -7,6 +7,9 @@
 
 /* For reference only
 /*	........   Nutrition defines   ................ */
+
+/*	ALREADY DEFINED, SEE code\__DEFINES\roguetown.dm
+
 #define MEAL_FILLING 30
 #define MEAL_GOOD 24
 #define MEAL_AVERAGE 18
@@ -15,9 +18,11 @@
 #define SNACK_DECENT 6
 #define SNACK_POOR 3
 
+*/
+
 /*	........   Rotting defines   ................ */
-#define SHELFLIFE_EXTREME 60 MINUTES
-#define SHELFLIFE_LONG 40 MINUTES
+#define SHELFLIFE_EXTREME 90 MINUTES
+#define SHELFLIFE_LONG 45 MINUTES
 #define SHELFLIFE_DECENT 25 MINUTES
 #define SHELFLIFE_SHORT 15 MINUTES
 #define SHELFLIFE_TINY 10 MINUTES
@@ -38,6 +43,10 @@
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	cooktime = 30 SECONDS
 	var/process_step
+
+/obj/item/reagent_containers/food/snacks/rogue/Initialize()
+	. = ..()
+	eatverb = pick("bite","chew","nibble","gobble","chomp")
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
@@ -66,6 +75,13 @@
 		qdel(src)
 	var/obj/item/I = new path(T)
 	eater.put_in_active_hand(I)
+
+/obj/effect/decal/cleanable/food/mess
+	name = "mess"
+	desc = ""
+	color = "#ab9d9d"
+	icon_state = "tomato_floor1"
+	random_icon_states = list("tomato_floor1", "tomato_floor2", "tomato_floor3")
 
 /* added to proc
 /obj/item/reagent_containers/food/snacks/proc/slice(obj/item/W, mob/user)
@@ -349,6 +365,24 @@
 				qdel(src)
 		else
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/wienerpotato))
+		if(isturf(loc)&& (found_table))
+			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
+			if(do_after(user,2 SECONDS, target = src))
+				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotato/plated(loc)
+				qdel(I)
+				qdel(src)
+		else
+			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions))
+		if(isturf(loc)&& (found_table))
+			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
+			if(do_after(user,2 SECONDS, target = src))
+				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions/plated(loc)
+				qdel(I)
+				qdel(src)
+		else
+			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/frybirdtato))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
@@ -360,3 +394,57 @@
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
 	else
 		return ..()	
+
+
+
+/* * * * * * * * * * * **
+ *						*
+ *	 Food Rotting		*	- Just lists as it stands on 2024-07-16
+ *						*
+ * * * * * * * * * * * **/
+
+/*	.................   Never spoils   ................... *//*
+
+* Hardtack
+* Toast
+* Salted fish
+* Frybread
+* Unbitten handpies
+* Biscuit
+* Prezzel
+* Cheese wheel/wedges
+* Salo
+* Copiette
+* Salumoi
+* Uncut pie
+* Raw potato, onion, cabbage
+
+/*	.................   Long shelflife   ................... */
+
+* Uncut bread loaf
+* Uncut raisin bread
+* Uncut cake
+* Pastry
+* Bun
+* Most plated dishes
+* Most cooked veggies
+* Cooked sausage
+* Pie slice
+* Bread slice
+
+/*	.................   Decent shelflife   ................... */
+
+* Fresh cheese
+* Mixed dishes with meats 
+* Fried meats & eggs
+
+/*	.................   Short shelflife   ................... */
+
+* Raw meat
+* Berries
+
+/*	.................   Tiny shelflife   ................... */
+
+* Minced meat
+
+*/

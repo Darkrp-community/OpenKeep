@@ -62,6 +62,7 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 GLOBAL_LIST_INIT(noble_positions, list(
 	"King",
 	"Queen",
+	"Hand",
 	"Prince",
 	"Captain",
 	"Steward",
@@ -77,14 +78,15 @@ GLOBAL_LIST_INIT(garrison_positions, list(
 	"Veteran",
 	"Dungeoneer",
 	"Garrison Archer",
-	"Village Elder"
+	"Mayor"
 	))
 
 GLOBAL_LIST_INIT(church_positions, list(
 	"Priest",
 	"Acolyte",
-	"Witch Hunter",
-	"Confessor"
+	"Puritan",
+	"Confessor",
+	"Templar"
 	))
 
 GLOBAL_LIST_INIT(serf_positions, list(

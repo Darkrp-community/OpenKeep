@@ -110,7 +110,7 @@
 #define GUARDSMAN	(1<<0)
 #define DUNGEONEER	(1<<1)
 #define WATCHMAN	(1<<2)
-#define WOODSMAN	(1<<3)
+#define MAYOR       (1<<3)
 
 #define CHURCHMEN		(1<<2)
 
@@ -187,8 +187,10 @@
 
 #define JDO_PURITAN 16
 #define JDO_SHEPHERD 17
+#define JDO_TEMPLAR 17.1
 
 #define JDO_MERCHANT 18
+#define JDO_TAILOR 18.1
 #define JDO_GRABBER 19
 
 #define JDO_ARMORER 20

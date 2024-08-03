@@ -122,6 +122,11 @@
 	stressadd = 2
 	desc = "<span class='red'>IT'S FUCKING RAW!!</span>"
 
+/datum/stressevent/hatezizo
+	timer = 99999 MINUTES
+	stressadd = 666 // :)
+	desc = "<span class='red'>ZIZOZIZOZIZO</span>"
+
 /datum/stressevent/burntmeal
 	timer = 2 MINUTES
 	stressadd = 2
@@ -174,6 +179,11 @@
 	stressadd = 2
 	desc = "<span class='red'>My loins ache!</span>"
 
+/datum/stressevent/leechcult
+	timer = 1 MINUTES
+	stressadd = 3
+	desc = list("<span class='red'>There's a little goblin in my head telling me to do things and I don't like it!</span>","<span class='red'>\"Kill your friends.\"</span>","<span class='red'>\"Make them bleed.\"</span>","<span class='red'>\"Give them no time to squeal.\"</span>","<span class='red'>\"Praise Zizo.\"</span>","<span class='red'>\"Death to the Ten.\"</span>","<span class='red'>\"The Weeper weeps his last.\"</span>")
+
 /datum/stressevent/delf
 	timer = 1 MINUTES
 	stressadd = 1
@@ -213,6 +223,16 @@
 	timer = 2 MINUTES
 	stressadd = 2
 	desc = "<span class='red'>Where did everyone go? Did something happen?!</span>"
+
+/datum/stressevent/hunted // When a hunted character sees someone in a mask
+	timer = 2 MINUTES
+	stressadd = 2
+	desc = "<span class='red'>I can't see their face! Have they found me!?</span>"
+
+/datum/stressevent/profane // When a non-assassin touches a profane dagger
+	timer = 3 MINUTES
+	stressadd = 2
+	desc = "<span class='red'>I hear the voices of the damned from this cursed blade!</span>"
 
 /datum/stressevent/coldhead
 	timer = 60 SECONDS
