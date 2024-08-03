@@ -734,7 +734,8 @@
 		return
 	health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss()
 	health = min(health, maxHealth)
-	if(HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
+	if(HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS) && !HAS_TRAIT(src, TRAIT_BLOODLOSS_IMMUNE))
+		// You dont have any blood and your not bloodloss immune? Dead.
 		if(blood_volume <= 0)
 			health = 0
 	staminaloss = getStaminaLoss()
@@ -1091,9 +1092,9 @@
 	resist_chance += ((STACON - L.STACON) * 10)
 
 	if(!(mobility_flags & MOBILITY_STAND))
-		resist_chance += -20 + min((wrestling_diff * 5), -20) //Can improve resist chance at high skill difference     
+		resist_chance += -20 + min((wrestling_diff * 5), -20) //Can improve resist chance at high skill difference
 	if(pulledby.grab_state >= GRAB_AGGRESSIVE)
-		resist_chance += -20 + max((wrestling_diff * 10), 0) 
+		resist_chance += -20 + max((wrestling_diff * 10), 0)
 		resist_chance = max(resist_chance, 50 + min((wrestling_diff * 5), 0))
 	else
 		resist_chance = max(resist_chance, 70 + min((wrestling_diff * 5), 0))

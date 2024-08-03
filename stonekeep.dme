@@ -2696,6 +2696,7 @@
 #include "code\modules\mob\living\simple_animal\rogue\creacher\bogbug.dm"
 #include "code\modules\mob\living\simple_animal\rogue\creacher\honeyspider.dm"
 #include "code\modules\mob\living\simple_animal\rogue\creacher\mole.dm"
+#include "code\modules\mob\living\simple_animal\rogue\creacher\shade.dm"
 #include "code\modules\mob\living\simple_animal\rogue\creacher\troll.dm"
 #include "code\modules\mob\living\simple_animal\rogue\creacher\trollbog.dm"
 #include "code\modules\mob\living\simple_animal\rogue\creacher\volf.dm"
