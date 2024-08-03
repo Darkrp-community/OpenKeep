@@ -41,6 +41,8 @@
 /obj/effect/proc_holder/spell/targeted/beasttame/cast(list/targets,mob/user = usr)
 	visible_message("<FONT COLOR='green'>[usr] soothes the beastblood with Dendor's whisper.</FONT><BR>")
 	for(var/mob/living/simple_animal/hostile/retaliate/B in oview(2))
+		if((B.mob_biotypes & MOB_UNDEAD))
+			continue
 		B.aggressive = 0
 
 /obj/effect/proc_holder/spell/targeted/conjure_glowshroom
