@@ -2175,7 +2175,7 @@
 "sHo" = (/obj/machinery/light/rogue/firebowl/standing,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/rogue/tile{icon_state = "chess"},/area/rogue/indoors/town/church)
 "sHU" = (/obj/structure/chair/wood/rogue,/turf/open/floor/rogue/cobble,/area/rogue/under/town/basement)
 "sIm" = (/obj/structure/closet/crate/chest{base_icon_state = "woodchestalt"; icon_state = "woodchestalt"},/turf/open/floor/rogue/cobble,/area/rogue/indoors/town/tavern)
-"sIT" = (/obj/structure/table/wood{icon_state = "longtable"},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/tavern)
+"sIT" = (/obj/structure/table/wood{icon_state = "longtable"},/obj/item/candle/yellow/lit{pixel_y = 5},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/tavern)
 "sJg" = (/obj/structure/table/wood{icon_state = "tablewood1"},/obj/machinery/light/rogue/wallfire/candle/l,/obj/item/paper/scroll,/obj/item/natural/feather,/turf/open/floor/rogue/carpet,/area/rogue/under/town/basement)
 "sJK" = (/obj/machinery/light/rogue/firebowl/standing,/obj/structure/fluff/railing/border{dir = 6; icon_state = "border"},/turf/open/floor/rogue/hexstone,/area/rogue/indoors/town/church)
 "sKe" = (/obj/structure/table/wood{dir = 1; icon_state = "longtable"},/obj/item/clothing/mask/cigarette/rollie/nicotine,/obj/item/clothing/mask/cigarette/rollie/nicotine,/obj/item/clothing/mask/cigarette/rollie/nicotine,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/rogue/cobble,/area/rogue/under/town/basement)
