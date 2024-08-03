@@ -124,7 +124,7 @@
 	wbalance = 1
 	sellprice = 15
 
-/obj/item/rogueweapon/huntingknife/cleaver/getonmobprop(tag)
+/obj/item/rogueweapon/huntingknife/cleaver/combat/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)

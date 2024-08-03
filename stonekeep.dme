@@ -2453,6 +2453,7 @@
 #include "code\modules\mob\living\carbon\human\npc\goblin.dm"
 #include "code\modules\mob\living\carbon\human\npc\orc.dm"
 #include "code\modules\mob\living\carbon\human\npc\skeleton.dm"
+#include "code\modules\mob\living\carbon\human\npc\zizombies.dm"
 #include "code\modules\mob\living\carbon\human\species_types\abductors.dm"
 #include "code\modules\mob\living\carbon\human\species_types\android.dm"
 #include "code\modules\mob\living\carbon\human\species_types\corporate.dm"
