@@ -357,7 +357,7 @@
 	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/silver
 	wbalance = -1
-	wdefense = 5 // Defense bonus equal to the Marlin blade. One of two benefits of the sword over a normal longsword, due to its unique guard.
+	wdefense = 4
 	sellprice = 100
 	var/last_used = 0
 

@@ -1,4 +1,4 @@
-/datum/job/roguetown/puritan
+/datum/job/roguetown/inquisitor
 	title = "Inquisitor"
 	flag = PURITAN
 	department_flag = CHURCHMEN
@@ -11,16 +11,15 @@
 	)
 	allowed_sexes = list(MALE)
 
-	tutorial = "A recent arrival to Rockhill, the Inquisitor is a member the secretive lodges that have held to the service of the Forgotten God since the Apotheosis War. They have formed a fragile alliance with the local Priest against the increasing number of heretics and monsters infiltrating the town."
+	tutorial = "A recent arrival to Rockhill, the Inquisitor is a member of the secretive lodges that have held to the service of the Forgotten God since the Apotheosis War. They have formed an alliance with the local Priest against the increasing number of heretics and monsters infiltrating the town."
 	whitelist_req = FALSE
 
-	outfit = /datum/outfit/job/roguetown/puritan
+	outfit = /datum/outfit/job/roguetown/inquisitor
 	display_order = JDO_PURITAN
-//	give_bank_account = 36 // Inquisitors are recent arrivals to Rockhill and do not have a bank account.
 	min_pq = 0
 	bypass_lastclass = TRUE
 
-/datum/job/roguetown/puritan/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+/datum/job/roguetown/inquisitor/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
 	if(!L.mind)
 		return
@@ -29,11 +28,11 @@
 	var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 	L.mind.add_antag_datum(new_antag)
 
-/datum/outfit/job/roguetown/puritan
-	name = "Puritan"
-	jobtype = /datum/job/roguetown/puritan
+/datum/outfit/job/roguetown/inquisitor
+	name = "Inquisitor"
+	jobtype = /datum/job/roguetown/inquisitor
 
-/datum/outfit/job/roguetown/puritan/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/inquisitor/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dark
 	belt = /obj/item/storage/belt/rogue/leather/black
@@ -60,7 +59,10 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/firearms, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
@@ -69,16 +71,14 @@
 		H.change_stat("perception", 2)
 		H.change_stat("speed", 2)
 		H.change_stat("endurance", 1)
-		H.change_stat("constitution", 1)
+		H.patron = GLOB.patronlist[/datum/patron/inhumen/graggar]
 		if(H.mind.has_antag_datum(/datum/antagonist))
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-	ADD_TRAIT(H, TRAIT_TORTURER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-	H.verbs |= /mob/living/carbon/human/proc/faith_test
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 
 /mob/living/carbon/human/proc/torture_victim()
@@ -105,27 +105,32 @@
 								"YOU WILL SPEAK!",
 								"TELL ME!",
 								"THE PAIN HAS ONLY BEGUN, CONFESS!"), spans = list("torture"))
-					if((painpercent > 90) || (!H.cmode))
+					testing(painpercent)
+					if((painpercent > 40) || (!H.cmode))
 						H.emote("painscream")
+						testing("Confession time, [painpercent] pain.")
 						H.confession_time(src)
 						return
 			to_chat(src, "<span class='warning'>Not ready to speak yet.</span>")
 
 /mob/living/carbon/human/proc/confession_time(mob/living/carbon/human/user)
-	var/timerid = addtimer(CALLBACK(src, PROC_REF(confess_sins)), 6 SECONDS, TIMER_STOPPABLE)
-	var/responsey = alert("Resist torture? (1 TRI)","Yes","No")
-	if(!responsey)
-		responsey = "No"
+	var/timerid = addtimer(CALLBACK(src, PROC_REF(confess_sins), FALSE, user), 6 SECONDS, TIMER_STOPPABLE)
+	var/responsey = alert(src, "Resist torture? (1 TRI)","Time for Pain","Yes","No")
+	testing("Sent resist request to [src].")
+	testing(" User is [user]. confession_time")
 	if(SStimer.timer_id_dict[timerid])
 		deltimer(timerid)
 	else
 		to_chat(src, "<span class='warning'>Too late...</span>")
+		testing("Torture timer ran out.")
 		return
+	if(responsey == "No")
+		testing("[src] gave into torture.")
+		confess_sins(resist=FALSE, user=user)
 	if(responsey == "Yes")
 		adjust_triumphs(-1)
-		confess_sins(TRUE, user)
-	else
-		confess_sins(user)
+		testing("[src] resisted torture.")
+		confess_sins(resist=TRUE, user=user)
 
 /mob/living/carbon/human/proc/confess_sins(resist, mob/living/carbon/human/user, torture=TRUE)
 	var/static/list/innocent_lines = list(
@@ -139,18 +144,22 @@
 	if(!resist)
 		var/list/confessions = list()
 		var/antag_type = null
+		testing(" User is [user]. confess_sins")
 		for(var/datum/antagonist/antag in mind?.antag_datums)
 			if(length(antag.confess_lines))
 				confessions = antag.confess_lines
 				antag_type = antag.name
+				testing("Antag type: [antag_type]")
 				break // Only need one antag type
 		if(length(patron.confess_lines) && !length(confessions)) // The antag confession lines take precedence over the heretic lines. If there are antag lines, the heretic ones will not show.
 			confessions = patron.confess_lines
+			testing("Patron type: [patron.name]")
 			antag_type = patron.name
 		if(length(confessions))
 			if(torture == TRUE) // Only scream your confession if it's due to torture.
 				say(pick(confessions), spans = list("torture"))
 			if(user.is_holding_item_of_type(/obj/item/paper/confession)) // This code is to process gettin a signed confession through torture.
+				testing("User is holding a confession.")
 				var/obj/item/paper/confession/held_confession = user.is_holding_item_of_type(/obj/item/paper/confession)
 				if(!held_confession.signed) // Check to see if the confession is already signed.
 					held_confession.signed = real_name
@@ -179,16 +188,11 @@
 						if("Graggar")
 							held_confession.bad_type = "A FOLLOWER OF THE DARK SUN"
 						if("Peasant Rebel")
-							return // Inquisitors don't care about peasant revolts targeting the King of Rockhill'
+							return // Inquisitors don't care about peasant revolts targeting the King of Rockhill.
 						if("Science")
-							held_confession.bad_type = "DAMNED ANTI-THEIST"
-					held_confession.info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS [held_confession.bad_type]. THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE HOLY PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,<br/><font color='red'>[held_confession.signed]</font>"
+							held_confession.bad_type = "A DAMNED ANTI-THEIST"
+					held_confession.info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS <font color='red'>[held_confession.bad_type]</font>. THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,<br/><font color='red'><i>[held_confession.signed]</i></font>"
+					held_confession.update_icon_state()
 					return
 	say(pick(innocent_lines), spans = list("torture"))
 	return
-
-/mob/living/carbon/human/proc/faith_test()
-	set name = "FaithTest"
-	set category = "Inquisition"
-	set hidden = 1
-	//same as above, but CRY TO YOUR GOD! BEG TO YOUR CREATOR! WHO DO YOU WORSHIP? WHO IS YOUR MASTER?

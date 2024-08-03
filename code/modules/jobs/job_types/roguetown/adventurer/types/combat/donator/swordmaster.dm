@@ -5,7 +5,7 @@
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/swordmaster
 	maximum_possible_slots = 1
-	pickprob = 15
+	pickprob = 100
 	category_tags = list(CTAG_ADVENTURER)
 
 
@@ -22,6 +22,13 @@
 		H.change_stat("endurance", 2)
 		H.change_stat("constitution", 2)
 		H.change_stat("speed", -1)
+		var/prev_real_name = H.real_name
+		var/prev_name = H.name
+		var/honorary = "Retter"
+		if(H.gender == FEMALE)
+			honorary = "Retterin"
+		H.real_name = "[honorary] [prev_real_name]"
+		H.name = "[honorary] [prev_name]"
 
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	backr = /obj/item/rogueweapon/greatsword/flamberge
