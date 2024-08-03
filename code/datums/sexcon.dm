@@ -1200,10 +1200,6 @@
 				if(!wuzantag)
 					adjust_playerquality(-2, M.ckey, reason="Raped as a non villain.")
 					to_chat(GLOB.admins, "<span class='adminnotice'> [fucking] resisted [owner] during sex")
-			if(prob(88))
-				if(!fucking.mob_timers["preggo"])
-					fucking.mob_timers["preggo"] = world.time
-					addtimer(CALLBACK(fucking, /mob/living/carbon/human/.proc/become_pregnant, husbando), rand(3 MINUTES, 13 MINUTES))
 			playsound(fucking, 'sound/misc/mat/endin.ogg', 100, TRUE, ignore_walls = FALSE)
 			owner.visible_message("<span class='adminnotice'>[owner] tightens in ecstasy!</span>")
 			add_cum_floor(get_turf(fucking))
@@ -1291,15 +1287,6 @@
 		curplaying = null
 		if(femmoans)
 			femmoans.stop()
-
-/mob/living/carbon/human/proc/become_pregnant(husband)
-	if(QDELETED(src))
-		return
-	if(gender != FEMALE)
-		return
-	if(stat == DEAD)
-		return
-	add_nausea(101)
 
 /datum/sex_controller/proc/add_cum_floor(turfu)
 	if(!turfu || !isturf(turfu))
