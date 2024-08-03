@@ -1292,15 +1292,6 @@
 		if(femmoans)
 			femmoans.stop()
 
-/mob/living/carbon/human/proc/become_pregnant(husband)
-	if(QDELETED(src))
-		return
-	if(gender != FEMALE)
-		return
-	if(stat == DEAD)
-		return
-	add_nausea(101)
-
 /datum/sex_controller/proc/add_cum_floor(turfu)
 	if(!turfu || !isturf(turfu))
 		return
