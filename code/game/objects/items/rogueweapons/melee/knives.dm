@@ -124,7 +124,7 @@
 	wbalance = 1
 	sellprice = 15
 
-/obj/item/rogueweapon/huntingknife/cleaver/getonmobprop(tag)
+/obj/item/rogueweapon/huntingknife/cleaver/combat/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)
@@ -250,6 +250,12 @@
 				s_user.Paralyze(10)
 				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
 				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I HAVE TRANSCENDED!</span>")
+		return
+	//I hate that i have to add a unique line of this code to EVERY silver weapon because they dont share a universal unique damage. -IP
+	//if is non carbon undead burn the fuck.
+	if((target.mob_biotypes & MOB_UNDEAD))
+		target.adjustFireLoss(25)
+		return
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/profane
 	name = "profane dagger"
