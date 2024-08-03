@@ -83,6 +83,7 @@
 // I hope to god you have a client before you call this, cause the checks on the SS
 /datum/class_select_handler/proc/assemble_the_CLASSES()
 	var/mob/living/carbon/human/H = linked_client.mob
+	linked_client.adjust_triumphs(-1)
 
 	// Time to sort and find our viable classes depending on what conditions we gotta deal w
 	if(class_cat_alloc_attempts && class_cat_alloc_attempts.len)

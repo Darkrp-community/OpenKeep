@@ -147,7 +147,7 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/UniqueAttack()
-	if(body_eater && !tamed)
+	if(body_eater && !tame)
 		if(isliving(target))
 			var/mob/living/body = target
 			if(body.stat != CONSCIOUS)
