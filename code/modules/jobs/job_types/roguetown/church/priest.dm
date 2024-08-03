@@ -15,7 +15,7 @@
 		"Dwarf",
 		"Aasimar"
 	)
-	allowed_patrons = list(/datum/patron/divine/astrata)
+	allowed_patrons = ALL_CLERIC_PATRONS
 	tutorial = "The Divine is all that matters in a world of the immoral. The Weeping god left his children to rule over us mortals and you will preach their wisdom to any who still heed their will. The faithless are growing in number, it is up to you to shepard them to a God-Fearing future."
 	whitelist_req = TRUE
 	bypass_lastclass = FALSE
