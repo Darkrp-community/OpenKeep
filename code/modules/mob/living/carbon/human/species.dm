@@ -594,6 +594,19 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	C.add_movespeed_modifier(MOVESPEED_ID_SPECIES, TRUE, 100, override=TRUE, multiplicative_slowdown=speedmod, movetypes=(~FLYING))
 
+	C.remove_all_bodypart_features()
+	for(var/bodypart_feature_type in bodypart_features)
+		var/datum/bodypart_feature/feature = new bodypart_feature_type()
+		if(!is_bodypart_feature_slot_allowed(C, feature.feature_slot))
+			continue
+		C.add_bodypart_feature(feature)
+	if(pref_load)
+		pref_load.apply_customizers_to_character(C)
+		pref_load.apply_descriptors(C)
+	
+	for(var/language_type in languages)
+		C.grant_language(language_type)
+
 	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src, old_species)
 
 

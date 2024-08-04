@@ -2,8 +2,6 @@
 	var/hair_color = "#FFFFFF"
 	var/natural_gradient = /datum/hair_gradient/none
 	var/natural_color = "#FFFFFF"
-	var/hair_dye_gradient = /datum/hair_gradient/none
-	var/hair_dye_color = "#FFFFFF"
 
 /datum/bodypart_feature/hair/bodypart_overlays(mutable_appearance/standing)
 	add_gradient_overlay(standing, natural_gradient, natural_color)
