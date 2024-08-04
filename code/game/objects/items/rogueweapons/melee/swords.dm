@@ -433,7 +433,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "forgotten blade"
-	desc = "A large silver sword made in a revisionist style, honoring the Forgotten God. Best known as the prefered weapon of Inquisitorial Lodges"
+	desc = "A large silver-alloy sword made in a revisionist style, honoring the Forgotten God. Best known as the prefered weapon of Inquisitorial Lodges"
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
