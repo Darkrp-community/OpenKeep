@@ -191,7 +191,8 @@
 	desc = "A drab piece of parchment stained with the magical ink of the Order lodges. Looking at it fills you with profound guilt."
 	info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS  . THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE HOLY PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,"
 	var/signed = null
-	var/bad_type = null
+	var/antag = null // The literal name of the antag, like 'Bandit' or 'worshiper of Zizo'
+	var/bad_type = null // The type of the antag, like 'OUTLAW OF THE THIEF-LORD'
 	textper = 108
 	maxlen = 2000
 

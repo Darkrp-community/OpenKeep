@@ -552,8 +552,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	item_state = "grenzelcuirass"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	boobed = TRUE
-	max_integrity = 600
-	armor_class = ARMOR_CLASS_LIGHT // There is a good reason for this.
+	max_integrity = 500
 
 
 /obj/item/clothing/suit/roguetown/armor/rare

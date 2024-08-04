@@ -44,3 +44,4 @@
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	H.patron = GLOB.patronlist[/datum/patron/forgotten] // SCREAM IF YOU LOVE THE FORGOTTEN GOD

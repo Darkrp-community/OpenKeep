@@ -20,7 +20,7 @@
 	..()
 
 /datum/objective/purishep
-	explanation_text = "Serve the priest first, protect the church and the acolytes from evil. Make those that wrong the church confess their sins."
+	explanation_text = "Hunt down and bring to heel all evils that infest Rockhill. Deliver their confessions."
 
 /datum/objective/purishep/check_completion()
 	if(GLOB.confessors)

@@ -49,6 +49,13 @@
 	neck = /obj/item/clothing/neck/roguetown/bevor
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	backpack_contents = list(/obj/item/keyring/puritan = 1, /obj/item/needle = 1)
+	var/prev_real_name = H.real_name
+	var/prev_name = H.name
+	var/honorary = "Retter"
+	if(H.gender == FEMALE)
+		honorary = "Retterin"
+	H.real_name = "[honorary] [prev_real_name]"
+	H.name = "[honorary] [prev_name]"
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
@@ -71,11 +78,11 @@
 		H.change_stat("perception", 2)
 		H.change_stat("speed", 2)
 		H.change_stat("endurance", 1)
-		H.patron = GLOB.patronlist[/datum/patron/inhumen/graggar]
 		if(H.mind.has_antag_datum(/datum/antagonist))
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
+		H.patron = GLOB.patronlist[/datum/patron/forgotten]
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
@@ -167,30 +174,41 @@
 					switch(antag_type)
 						if("Bandit")
 							held_confession.bad_type = "AN OUTLAW OF THE THIEF-LORD"
+							held_confession.antag = antag_type
 						if("Matthios")
 							held_confession.bad_type = "AN OUTLAW OF THE THIEF-LORD"
+							held_confession.antag = "worshiper of" + antag_type
 						if("Maniac")
 							held_confession.bad_type = "A MANIAC IMMUNE TO PAIN"
+							held_confession.antag = antag_type
 						if("Assassin")
 							held_confession.bad_type = "A DEATH CULTIST"
+							held_confession.antag = antag_type
 						if("Zizoid Lackey")
 							held_confession.bad_type = "A SERVANT OF THE FORBIDDEN ONE"
+							held_confession.antag = antag_type
 						if("Zizoid Cultist")
 							held_confession.bad_type = "A SERVANT OF THE FORBIDDEN ONE"
+							held_confession.antag = antag_type
 						if("Zizo")
 							held_confession.bad_type = "A SERVANT OF THE FORBIDDEN ONE"
+							held_confession.antag = "worshiper of" + antag_type
 						if("Werewolf")
 							held_confession.bad_type = "A BEARER OF DENDOR'S CURSE"
+							held_confession.antag = antag_type
 						if("Vampire")
 							held_confession.bad_type = "A SCION OF KAINE"
+							held_confession.antag = antag_type
 						if("Vampire Lord")
 							held_confession.bad_type = "THE BLOOD-LORD OF ENIGMA"
 						if("Graggar")
 							held_confession.bad_type = "A FOLLOWER OF THE DARK SUN"
+							held_confession.antag = "worshiper of" + antag_type
 						if("Peasant Rebel")
 							return // Inquisitors don't care about peasant revolts targeting the King of Rockhill.
 						if("Science")
 							held_confession.bad_type = "A DAMNED ANTI-THEIST"
+							held_confession.antag = "worshiper of nothing"
 					held_confession.info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS <font color='red'>[held_confession.bad_type]</font>. THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,<br/><font color='red'><i>[held_confession.signed]</i></font>"
 					held_confession.update_icon_state()
 					return

@@ -49,4 +49,4 @@
 	H.change_stat("endurance", 1)
 	H.change_stat("constitution", 1)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC) // The armor is now light, therefore if they prefer dodging than parrying, they can adapt.
+	H.patron = GLOB.patronlist[/datum/patron/forgotten] // SCREAM IF YOU LOVE THE FORGOTTEN GOD
