@@ -231,24 +231,6 @@
 	/datum/mob_descriptor/prominent/custom/one,\
 	/datum/mob_descriptor/prominent/custom/two
 
-#define  \
-	/datum/mob_descriptor/prominent/canine_features,\
-	/datum/mob_descriptor/prominent/feline_features,\
-	/datum/mob_descriptor/prominent/hyaenidae_features,\
-	/datum/mob_descriptor/prominent/equine_features,\
-	/datum/mob_descriptor/prominent/bovine_features,\
-	/datum/mob_descriptor/prominent/cervine_features,\
-	/datum/mob_descriptor/prominent/lapine_features,\
-	/datum/mob_descriptor/prominent/rodent_features,\
-	/datum/mob_descriptor/prominent/primate_features,\
-	/datum/mob_descriptor/prominent/marsupial_features,\
-	/datum/mob_descriptor/prominent/lizard_features,\
-	/datum/mob_descriptor/prominent/avian_features,\
-	/datum/mob_descriptor/prominent/amphibian_features,\
-	/datum/mob_descriptor/prominent/insectoid_features,\
-	/datum/mob_descriptor/prominent/marine_features,\
-	/datum/mob_descriptor/prominent/vulpine_features
-
 /datum/descriptor_choice/prominent_one
 	name = "Prominent #1"
 	default_descriptor = /datum/mob_descriptor/prominent/unkempt
@@ -290,4 +272,3 @@
 	descriptors = list(/datum/mob_descriptor/prominent/none, PROMINENT_DESCRIPTORS)
 
 #undef PROMINENT_DESCRIPTORS
-#undef 
