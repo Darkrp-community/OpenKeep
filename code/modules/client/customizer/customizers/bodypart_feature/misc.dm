@@ -35,6 +35,4 @@
 		/datum/sprite_accessory/accessory/earrings/em,
 		/datum/sprite_accessory/accessory/eyepierce,
 		/datum/sprite_accessory/accessory/eyepierce/alt,
-		/datum/sprite_accessory/accessory/choker,
-		/datum/sprite_accessory/accessory/chokere,
 		)
