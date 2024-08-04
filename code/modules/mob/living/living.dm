@@ -541,15 +541,18 @@
 			M.reset_offsets("pulledby")
 
 		if(forced) //if false, called by the grab item itself, no reason to drop it again
+			var/list/grabs = list()
 			if(istype(get_active_held_item(), /obj/item/grabbing))
 				var/obj/item/grabbing/I = get_active_held_item()
 				if(I.grabbed == pulling)
-					dropItemToGround(I, silent = FALSE)
+					grabs |= I					
 			if(istype(get_inactive_held_item(), /obj/item/grabbing))
 				var/obj/item/grabbing/I = get_inactive_held_item()
 				if(I.grabbed == pulling)
+					grabs |= I
+			if(grabs.len)
+				for(var/obj/item/grabbing/I in grabs)
 					dropItemToGround(I, silent = FALSE)
-
 	. = ..()
 
 	update_pull_movespeed()

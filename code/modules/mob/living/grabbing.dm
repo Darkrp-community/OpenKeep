@@ -87,7 +87,7 @@
 
 /obj/item/grabbing/dropped(mob/living/user, show_message = TRUE)
 	SHOULD_CALL_PARENT(FALSE)
-	if(grabbed == user.pulling)
+	if(grabbed == user.pulling && !istype(user.get_inactive_held_item(), /obj/item/grabbing))
 		user.stop_pulling(FALSE)
 	if(!user.pulling)
 		user.stop_pulling(FALSE)
