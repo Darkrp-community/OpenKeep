@@ -47,6 +47,7 @@
 	* add_timer() returns the truthy value of -1 when not stoppable, and else a truthy numeric index
 	*/
 	var/list/cooldowns
+	var/abstract_type = /datum
 
 #ifdef TESTING
 	var/running_find_references

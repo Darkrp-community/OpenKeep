@@ -45,7 +45,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(current_version < 29)
 		key_bindings = (hotkeys) ? deepCopyList(GLOB.hotkey_keybinding_list_by_key) : deepCopyList(GLOB.classic_keybinding_list_by_key)
 		parent.update_movement_keys()
-		to_chat(parent, "<span class='danger'>Empty keybindings, setting default to [hotkeys ? "Hotkey" : "Classic"] mode</span>")
+		to_chat(parent, span_danger("Empty keybindings, setting default to [hotkeys ? "Hotkey" : "Classic"] mode"))
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
 	if(current_version < 19)
@@ -112,11 +112,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			all_quirks -= "Physically Obstructive"
 			all_quirks -= "Neat"
 			all_quirks -= "NEET"
-	if(current_version < 24)
-		if (!(underwear in GLOB.underwear_list))
-			underwear = "Nude"
 	if(current_version < 25)
-		randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = FALSE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
+		randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = FALSE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 		if(S["name_is_always_random"] == 1)
 			randomise[RANDOM_NAME] = TRUE
 		if(S["body_is_always_random"] == 1)
@@ -220,7 +217,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	buttons_locked	= sanitize_integer(buttons_locked, 0, 1, initial(buttons_locked))
 	windowflashing	= sanitize_integer(windowflashing, 0, 1, initial(windowflashing))
 	default_slot	= sanitize_integer(default_slot, 1, max_save_slots, initial(default_slot))
-	toggles			= sanitize_integer(toggles, 0, 65535, initial(toggles))
+	toggles			= sanitize_integer(toggles, 0, INFINITY, initial(toggles))
 	clientfps		= sanitize_integer(clientfps, 0, 1000, 0)
 	parallax		= sanitize_integer(parallax, PARALLAX_INSANE, PARALLAX_DISABLE, null)
 	ambientocclusion	= sanitize_integer(ambientocclusion, 0, 1, initial(ambientocclusion))
@@ -299,13 +296,25 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	return TRUE
 
+
 /datum/preferences/proc/_load_species(S)
 	var/species_name
+	testing("begin _load_species()")
 	S["species"] >> species_name
 	if(species_name)
 		var/newtype = GLOB.species_list[species_name]
 		if(newtype)
 			pref_species = new newtype
+			if(!spec_check())
+				testing("spec_check() failed on type [newtype] and name [species_name], defaulting to [default_species].")
+				pref_species = new default_species.type()
+			else
+				testing("spec_check() succeeded on type [newtype] and name [species_name].")
+		else
+			testing("GLOB.species_list failed on name [species_name], defaulting to [default_species].")
+			pref_species = new default_species.type()
+	else
+		pref_species = new default_species.type()
 
 /datum/preferences/proc/_load_flaw(S)
 	var/charflaw_type
@@ -341,18 +350,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["uplink_loc"]			>> uplink_spawn_loc
 	S["randomise"]	>>  randomise
 	S["feature_mcolor"]					>> features["mcolor"]
+	S["feature_mcolor2"]					>> features["mcolor2"]
+	S["feature_mcolor3"]					>> features["mcolor3"]
 	S["feature_ethcolor"]					>> features["ethcolor"]
-	S["feature_lizard_tail"]			>> features["tail_lizard"]
-	S["feature_lizard_snout"]			>> features["snout"]
-	S["feature_lizard_horns"]			>> features["horns"]
-	S["feature_lizard_frills"]			>> features["frills"]
-	S["feature_lizard_spines"]			>> features["spines"]
-	S["feature_lizard_body_markings"]	>> features["body_markings"]
-	S["feature_lizard_legs"]			>> features["legs"]
-	S["feature_moth_wings"]				>> features["moth_wings"]
-	S["feature_moth_markings"]			>> features["moth_markings"]
-	S["feature_human_tail"]				>> features["tail_human"]
-	S["feature_human_ears"]				>> features["ears"]
 
 /datum/preferences/proc/load_character(slot)
 	if(!path)
@@ -382,9 +382,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	if(!S["features["mcolor"]"] || S["features["mcolor"]"] == "#000")
 		WRITE_FILE(S["features["mcolor"]"]	, "#FFF")
+	if(!S["features["mcolor2"]"] || S["features["mcolor2"]"] == "#000")
+		WRITE_FILE(S["features["mcolor2"]"]	, "#FFF")
+	if(!S["features["mcolor3"]"] || S["features["mcolor3"]"] == "#000")
+		WRITE_FILE(S["features["mcolor3"]"]	, "#FFF")
 
 	if(!S["feature_ethcolor"] || S["feature_ethcolor"] == "#000")
-		WRITE_FILE(S["feature_ethcolor"]	, "9c3030")
+		WRITE_FILE(S["feature_ethcolor"], "9c3030")
 
 	//Character
 	_load_appearence(S)
@@ -396,8 +400,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(!selected_patron) //failsafe
 			selected_patron = GLOB.patronlist[default_patron]
 
-//	S["selected_patron"]				>> selected_patron
-
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		var/savefile_slot_name = custom_name_id + "_name" //TODO remove this
@@ -407,12 +409,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["prefered_security_department"] >> prefered_security_department
 
 	//Jobs
-	S["joblessrole"]		>> joblessrole
+	S["joblessrole"] >> joblessrole
 	//Load prefs
 	S["job_preferences"] >> job_preferences
 
 	//Quirks
-	S["all_quirks"]			>> all_quirks
+	S["all_quirks"] >> all_quirks
+
+	S["update_mutant_colors"]			>> update_mutant_colors
+	update_mutant_colors = sanitize_integer(update_mutant_colors, FALSE, TRUE, initial(update_mutant_colors))
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -433,36 +438,18 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	if(!features["mcolor"] || features["mcolor"] == "#000")
 		features["mcolor"] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
+	if(!features["mcolor2"] || features["mcolor2"] == "#000")
+		features["mcolor2"] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
+	if(!features["mcolor3"] || features["mcolor3"] == "#000")
+		features["mcolor3"] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
 
 	if(!features["ethcolor"] || features["ethcolor"] == "#000")
 		features["ethcolor"] = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)]
 
 	randomise = SANITIZE_LIST(randomise)
 
-	if(gender == MALE)
-		hairstyle			= sanitize_inlist(hairstyle, GLOB.hairstyles_male_list)
-		facial_hairstyle			= sanitize_inlist(facial_hairstyle, GLOB.facial_hairstyles_male_list)
-		underwear		= sanitize_inlist(underwear, GLOB.underwear_m)
-		undershirt 		= sanitize_inlist(undershirt, GLOB.undershirt_m)
-		accessory		= sanitize_inlist(accessory, GLOB.accessories_m)
-		detail		= sanitize_inlist(detail, GLOB.detail_m)
-	else if(gender == FEMALE)
-		hairstyle			= sanitize_inlist(hairstyle, GLOB.hairstyles_female_list)
-		facial_hairstyle			= sanitize_inlist(facial_hairstyle, GLOB.facial_hairstyles_female_list)
-		underwear		= sanitize_inlist(underwear, GLOB.underwear_f)
-		undershirt		= sanitize_inlist(undershirt, GLOB.undershirt_f)
-		accessory		= sanitize_inlist(accessory, GLOB.accessories_f)
-		detail		= sanitize_inlist(detail, GLOB.detail_f)
-	else
-		hairstyle			= sanitize_inlist(hairstyle, GLOB.hairstyles_list)
-		facial_hairstyle			= sanitize_inlist(facial_hairstyle, GLOB.facial_hairstyles_list)
-		underwear		= sanitize_inlist(underwear, GLOB.underwear_list)
-		undershirt 		= sanitize_inlist(undershirt, GLOB.undershirt_list)
-
 	socks			= sanitize_inlist(socks, GLOB.socks_list)
-	age = sanitize_inlist(age, pref_species.possible_ages)
-	hair_color			= sanitize_hexcolor(hair_color, 3, 0)
-	facial_hair_color			= sanitize_hexcolor(facial_hair_color, 3, 0)
+	age				= sanitize_inlist(age, pref_species.possible_ages)
 	underwear_color			= sanitize_hexcolor(underwear_color, 3, 0)
 	eye_color		= sanitize_hexcolor(eye_color, 3, 0)
 	voice_color		= voice_color
@@ -470,19 +457,26 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	backpack			= sanitize_inlist(backpack, GLOB.backpacklist, initial(backpack))
 	jumpsuit_style	= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
-	features["mcolor"]	= sanitize_hexcolor(features["mcolor"], 3, 0)
+	features["mcolor"]	= sanitize_hexcolor(features["mcolor"], 6, 0)
+	features["mcolor2"]	= sanitize_hexcolor(features["mcolor2"], 6, 0)
+	features["mcolor3"]	= sanitize_hexcolor(features["mcolor3"], 6, 0)
 	features["ethcolor"]	= copytext(features["ethcolor"],1,7)
-	features["tail_lizard"]	= sanitize_inlist(features["tail_lizard"], GLOB.tails_list_lizard)
-	features["tail_human"] 	= sanitize_inlist(features["tail_human"], GLOB.tails_list_human, "None")
-	features["snout"]	= sanitize_inlist(features["snout"], GLOB.snouts_list)
-	features["horns"] 	= sanitize_inlist(features["horns"], GLOB.horns_list)
-	features["ears"]	= sanitize_inlist(features["ears"], GLOB.ears_list, "None")
-	features["frills"] 	= sanitize_inlist(features["frills"], GLOB.frills_list)
-	features["spines"] 	= sanitize_inlist(features["spines"], GLOB.spines_list)
-	features["body_markings"] 	= sanitize_inlist(features["body_markings"], GLOB.body_markings_list)
 	features["feature_lizard_legs"]	= sanitize_inlist(features["legs"], GLOB.legs_list, "Normal Legs")
-	features["moth_wings"] 	= sanitize_inlist(features["moth_wings"], GLOB.moth_wings_list, "Plain")
-	features["moth_markings"] 	= sanitize_inlist(features["moth_markings"], GLOB.moth_markings_list, "None")
+	S["body_markings"] >> body_markings
+	body_markings = SANITIZE_LIST(body_markings)
+	validate_body_markings()
+
+	S["descriptor_entries"] >> descriptor_entries
+	descriptor_entries = SANITIZE_LIST(descriptor_entries)
+	S["custom_descriptors"] >> custom_descriptors
+	custom_descriptors = SANITIZE_LIST(custom_descriptors)
+	validate_descriptors()
+
+	var/list/valid_skin_tones = pref_species.get_skin_list()
+	var/list/valid_skin_colors = list()
+	for(var/skin_tone in pref_species.get_skin_list())
+		valid_skin_colors += valid_skin_tones[skin_tone]
+	skin_tone = sanitize_inlist(skin_tone, valid_skin_colors, valid_skin_colors[1])
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
 	//Validate job prefs
@@ -491,6 +485,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			job_preferences -= j
 
 	all_quirks = SANITIZE_LIST(all_quirks)
+
+	S["customizer_entries"] >> customizer_entries
+	validate_customizer_entries()
 
 	return TRUE
 
@@ -530,19 +527,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["species"]			, pref_species.name)
 	WRITE_FILE(S["charflaw"]			, charflaw.type)
 	WRITE_FILE(S["feature_mcolor"]					, features["mcolor"])
+	WRITE_FILE(S["feature_mcolor2"]					, features["mcolor2"])
+	WRITE_FILE(S["feature_mcolor3"]					, features["mcolor3"])
 	WRITE_FILE(S["feature_ethcolor"]					, features["ethcolor"])
-	WRITE_FILE(S["feature_lizard_tail"]			, features["tail_lizard"])
-	WRITE_FILE(S["feature_human_tail"]				, features["tail_human"])
-	WRITE_FILE(S["feature_lizard_snout"]			, features["snout"])
-	WRITE_FILE(S["feature_lizard_horns"]			, features["horns"])
-	WRITE_FILE(S["feature_human_ears"]				, features["ears"])
-	WRITE_FILE(S["feature_lizard_frills"]			, features["frills"])
-	WRITE_FILE(S["feature_lizard_spines"]			, features["spines"])
-	WRITE_FILE(S["feature_lizard_body_markings"]	, features["body_markings"])
-	WRITE_FILE(S["feature_lizard_legs"]			, features["legs"])
-	WRITE_FILE(S["feature_moth_wings"]			, features["moth_wings"])
-	WRITE_FILE(S["feature_moth_markings"]		, features["moth_markings"])
-
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
@@ -562,6 +549,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Patron
 	WRITE_FILE(S["selected_patron"]		, selected_patron.type)
+
+	// Organs
+	WRITE_FILE(S["customizer_entries"] , customizer_entries)
+	// Body markings
+	WRITE_FILE(S["body_markings"] , body_markings)
+	// Descriptor entries
+	WRITE_FILE(S["descriptor_entries"] , descriptor_entries)
+	WRITE_FILE(S["custom_descriptors"] , custom_descriptors)
+	
+	WRITE_FILE(S["update_mutant_colors"] , update_mutant_colors)
 
 	return TRUE
 

@@ -139,6 +139,13 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	var/crt = FALSE
 
+	var/list/customizer_entries = list()
+	var/list/list/body_markings = list()
+	var/update_mutant_colors = TRUE
+	
+	var/list/descriptor_entries = list()
+	var/list/custom_descriptors = list()
+
 
 /datum/preferences/New(client/C)
 	parent = C
