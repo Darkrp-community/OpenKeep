@@ -73,6 +73,102 @@
 	penfactor = 20
 	misscost = 5
 
+//Basic silver sword
+/obj/item/rogueweapon/sword/silver
+	name = "silver sword"
+	desc = "A simple silver sword with an edge that gleams in moonlight."
+	icon_state = "sword_s"
+	minstr = 6
+	force = 23 // .9 of steel
+	force_wielded = 20
+	smeltresult = /obj/item/ingot/silver
+	max_blade_int = 240 // .8 of steel
+	max_integrity = 300 // .8 of steel
+	sellprice = 45
+	var/last_used = 0
+
+/obj/item/rogueweapon/sword/silver/pickup(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(ishuman(H))
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
+			H.Knockdown(20)
+			H.adjustFireLoss(60)
+			H.Paralyze(20)
+			H.fire_act(1,5)
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
+			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
+				H.Knockdown(10)
+				H.Paralyze(10)
+
+/obj/item/rogueweapon/sword/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
+	. = ..()
+	if(ishuman(M))
+		var/datum/antagonist/vampirelord/V_lord = FALSE
+		var/mob/living/carbon/human/H = M
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord))
+			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			H.Knockdown(20)
+			H.adjustFireLoss(60)
+			H.Paralyze(20)
+			H.fire_act(1,5)
+		if(V_lord)
+			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+				H.Knockdown(10)
+				H.Paralyze(10)
+
+/obj/item/rogueweapon/sword/silver/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
+	if(world.time < src.last_used + 100)
+		to_chat(user, "<span class='notice'>The silver effect is on cooldown.</span>")
+		return
+
+
+
+	. = ..()
+	if(ishuman(target))
+		var/mob/living/carbon/human/s_user = user
+		var/mob/living/carbon/human/H = target
+		var/datum/antagonist/vampirelord/lesser/V = FALSE
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			V =  H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+		var/datum/antagonist/vampirelord/V_lord = FALSE
+		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/))
+			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(V)
+			if(V.disguised)
+				H.Stun(20)
+				H.visible_message("<font color='white'>The silver weapon manifests the [H] curse!</font>")
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(30)
+				H.Paralyze(20)
+				H.fire_act(1,4)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+				src.last_used = world.time
+			else
+				H.Stun(20)
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(30)
+				H.Paralyze(20)
+				H.fire_act(1,4)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+				src.last_used = world.time
+		if(V_lord)
+			if(V_lord.vamplevel < 4 && !V)
+				H.Stun(10)
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(25)
+				H.Paralyze(10)
+				H.fire_act(1,4)
+				src.last_used = world.time
+			if(V_lord.vamplevel == 4 && !V)
+				s_user.Stun(10)
+				s_user.Paralyze(10)
+				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
+				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I HAVE TRANSCENDED!</span>")
 // Long Swords
 /obj/item/rogueweapon/sword/long
 	force = 18
@@ -358,7 +454,7 @@
 	smeltresult = /obj/item/ingot/silver
 	wbalance = -1
 	wdefense = 4
-	sellprice = 100
+	sellprice = 90
 	var/last_used = 0
 
 /obj/item/rogueweapon/sword/long/forgotten/pickup(mob/user)
@@ -693,6 +789,104 @@
 	wbalance = 1
 	smeltresult = /obj/item/ingot/steel
 
+/obj/item/rogueweapon/sword/short/silver
+	name = "silver short sword"
+	desc = "A single-edged sword made of silver. Can cut through the undead like butter."
+	force = 18 // .9 of normal steel sword's damage
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
+	icon_state = "swordshort_s"
+	gripped_intents = null
+	minstr = 4
+	wdefense = 4
+	max_blade_int = 200 // Blade int and durability is .8 steel
+	max_integrity = 280
+	wbalance = 1
+	smeltresult = /obj/item/ingot/silver
+	sellprice = 45
+	var/last_used = 0
+
+/obj/item/rogueweapon/sword/short/silver/pickup(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(ishuman(H))
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
+			H.Knockdown(20)
+			H.adjustFireLoss(60)
+			H.Paralyze(20)
+			H.fire_act(1,5)
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
+			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
+				H.Knockdown(10)
+				H.Paralyze(10)
+
+/obj/item/rogueweapon/sword/short/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
+	. = ..()
+	if(ishuman(M))
+		var/datum/antagonist/vampirelord/V_lord = FALSE
+		var/mob/living/carbon/human/H = M
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord))
+			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			H.Knockdown(20)
+			H.adjustFireLoss(60)
+			H.Paralyze(20)
+			H.fire_act(1,5)
+		if(V_lord)
+			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+				H.Knockdown(10)
+				H.Paralyze(10)
+
+/obj/item/rogueweapon/sword/short/silver/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
+	if(world.time < src.last_used + 100)
+		to_chat(user, "<span class='notice'>The silver effect is on cooldown.</span>")
+		return
+
+
+
+	. = ..()
+	if(ishuman(target))
+		var/mob/living/carbon/human/s_user = user
+		var/mob/living/carbon/human/H = target
+		var/datum/antagonist/vampirelord/lesser/V = FALSE
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			V =  H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+		var/datum/antagonist/vampirelord/V_lord = FALSE
+		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/))
+			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(V)
+			if(V.disguised)
+				H.Stun(20)
+				H.visible_message("<font color='white'>The silver weapon manifests the [H] curse!</font>")
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(30)
+				H.Paralyze(20)
+				H.fire_act(1,4)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+				src.last_used = world.time
+			else
+				H.Stun(20)
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(30)
+				H.Paralyze(20)
+				H.fire_act(1,4)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+				src.last_used = world.time
+		if(V_lord)
+			if(V_lord.vamplevel < 4 && !V)
+				H.Stun(10)
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(25)
+				H.Paralyze(10)
+				H.fire_act(1,4)
+				src.last_used = world.time
+			if(V_lord.vamplevel == 4 && !V)
+				s_user.Stun(10)
+				s_user.Paralyze(10)
+				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
+				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I HAVE TRANSCENDED!</span>")
 
 // Sabres
 /obj/item/rogueweapon/sword/sabre
@@ -795,6 +989,120 @@
 	max_integrity = 600
 	max_blade_int = 400
 	wdefense = 7
+
+/obj/item/rogueweapon/sword/rapier/silver
+	name = "silver rapier"
+	desc = "An elegant silver rapier. Popular with lords and ladies in Valoria."
+	force = 18 // .9 of base steel
+	icon_state = "rapier_s"
+	smeltresult = /obj/item/ingot/silver
+	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
+	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
+	swingsound = BLADEWOOSH_SMALL
+	minstr = 6
+	wdefense = 5
+	wbalance = 1
+	max_blade_int = 240 // .8 of base steel
+	max_integrity = 400 // .8 of base steel
+	sellprice = 45
+	var/last_used = 0
+
+/obj/item/rogueweapon/sword/rapier/silver
+	name = "silver short sword"
+	desc = "A single-edged sword made of silver. Can cut through the undead like butter."
+	force = 18 // .9 of normal steel sword's damage
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
+	icon_state = "swordshort_s"
+	gripped_intents = null
+	minstr = 4
+	wdefense = 4
+	max_blade_int = 200 // Blade int and durability is .8 steel
+	max_integrity = 280
+	wbalance = 1
+	smeltresult = /obj/item/ingot/silver
+
+/obj/item/rogueweapon/sword/rapier/silver/pickup(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(ishuman(H))
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
+			H.Knockdown(20)
+			H.adjustFireLoss(60)
+			H.Paralyze(20)
+			H.fire_act(1,5)
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
+			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
+				H.Knockdown(10)
+				H.Paralyze(10)
+
+/obj/item/rogueweapon/sword/rapier/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
+	. = ..()
+	if(ishuman(M))
+		var/datum/antagonist/vampirelord/V_lord = FALSE
+		var/mob/living/carbon/human/H = M
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord))
+			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			H.Knockdown(20)
+			H.adjustFireLoss(60)
+			H.Paralyze(20)
+			H.fire_act(1,5)
+		if(V_lord)
+			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+				H.Knockdown(10)
+				H.Paralyze(10)
+
+/obj/item/rogueweapon/sword/rapier/silver/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
+	if(world.time < src.last_used + 100)
+		to_chat(user, "<span class='notice'>The silver effect is on cooldown.</span>")
+		return
+
+
+
+	. = ..()
+	if(ishuman(target))
+		var/mob/living/carbon/human/s_user = user
+		var/mob/living/carbon/human/H = target
+		var/datum/antagonist/vampirelord/lesser/V = FALSE
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			V =  H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+		var/datum/antagonist/vampirelord/V_lord = FALSE
+		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/))
+			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(V)
+			if(V.disguised)
+				H.Stun(20)
+				H.visible_message("<font color='white'>The silver weapon manifests the [H] curse!</font>")
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(30)
+				H.Paralyze(20)
+				H.fire_act(1,4)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+				src.last_used = world.time
+			else
+				H.Stun(20)
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(30)
+				H.Paralyze(20)
+				H.fire_act(1,4)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+				src.last_used = world.time
+		if(V_lord)
+			if(V_lord.vamplevel < 4 && !V)
+				H.Stun(10)
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(25)
+				H.Paralyze(10)
+				H.fire_act(1,4)
+				src.last_used = world.time
+			if(V_lord.vamplevel == 4 && !V)
+				s_user.Stun(10)
+				s_user.Paralyze(10)
+				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
+				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I HAVE TRANSCENDED!</span>")
 
 // Cutless
 /obj/item/rogueweapon/sword/cutlass
