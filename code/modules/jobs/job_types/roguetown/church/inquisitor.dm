@@ -11,7 +11,7 @@
 	)
 	allowed_sexes = list(MALE)
 
-	tutorial = "A recent arrival to Rockhill, the Inquisitor is a member of the secretive lodges that have held to the service of the Forgotten God since the Apotheosis War. They have formed an alliance with the local Priest against the increasing number of heretics and monsters infiltrating the town."
+	tutorial = "A recent arrival from Grenzelhoft, the Inquisitor is a member of the secretive lodges that have held to the service of the Forgotten God since the Apotheosis War. They have formed an alliance with the local Priest against the increasing number of heretics and monsters infiltrating the town."
 	whitelist_req = FALSE
 
 	outfit = /datum/outfit/job/roguetown/inquisitor
