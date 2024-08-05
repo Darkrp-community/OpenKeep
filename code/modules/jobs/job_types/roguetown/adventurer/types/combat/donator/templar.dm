@@ -71,8 +71,12 @@
 		if(H.dna.species.id == "tiefling")
 			cloak = /obj/item/clothing/cloak/tabard/crusader/tief
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
+	//Paladins, while devout warriors spent WAY too much time studying the blade. No more acolyte+
+	C.max_devotion = 250
+	C.max_progression = CLERIC_REQ_1
+	C.update_devotion(50, 50)
 	C.holder_mob = H
+	C.grant_spells_templar(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/lesser_heal/)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/churn)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
