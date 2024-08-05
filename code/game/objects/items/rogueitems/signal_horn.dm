@@ -2,7 +2,7 @@
 	name = "signal horn"
 	desc = "Used to sound the alarm."
 	icon = 'icons/roguetown/items/misc.dmi'
-	icon_state = "horn"
+	icon_state = "signal_horn"
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_NECK
 	w_class = WEIGHT_CLASS_NORMAL
 
