@@ -32,7 +32,6 @@
 	H.verbs |= /mob/living/carbon/human/proc/coronate_lord
 	H.verbs |= /mob/living/carbon/human/proc/churchexcommunicate
 	H.verbs |= /mob/living/carbon/human/proc/churchannouncement
-	neck = /obj/item/clothing/neck/roguetown/psicross/astrata
 	head = /obj/item/clothing/head/roguetown/priestmask
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 	pants = /obj/item/clothing/under/roguetown/tights/black
@@ -41,8 +40,32 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	id = /obj/item/clothing/ring/active/nomag
-	armor = /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	backl = /obj/item/storage/backpack/rogue/satchel
+	var/datum/patron/A = H.patron
+	switch(A.name)
+		if("Astrata")
+			head = /obj/item/clothing/head/roguetown/roguehood/astrata
+			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
+			wrists = /obj/item/clothing/wrists/roguetown/wrappings
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
+		if("Dendor")
+			head = /obj/item/clothing/head/roguetown/dendormask
+			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
+		if("Necra")
+			head = /obj/item/clothing/head/roguetown/necrahood
+			neck = /obj/item/clothing/neck/roguetown/psicross/necra
+			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
+		if("Eora")
+			head = /obj/item/clothing/head/roguetown/eoramask
+			neck = /obj/item/clothing/neck/roguetown/psicross/eora
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
+		if("Noc")
+			head = /obj/item/clothing/head/roguetown/roguehood/nochood
+			neck = /obj/item/clothing/neck/roguetown/psicross/noc
+			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 5, TRUE)
