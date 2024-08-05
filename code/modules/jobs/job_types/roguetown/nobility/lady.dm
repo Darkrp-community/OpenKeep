@@ -69,5 +69,5 @@
 	if(SSticker.rulertype == "Lady")
 		SSticker.select_ruler()
 		if(L)
-			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Lady of Rockhill.</span></span></b>")
+			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Lady of Blackwine.</span></span></b>")
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)

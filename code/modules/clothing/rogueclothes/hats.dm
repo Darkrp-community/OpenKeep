@@ -306,7 +306,7 @@
 	color = CLOTHING_RED
 
 /obj/item/clothing/head/roguetown/crown/serpcrown
-	name = "crown of Rockhill"
+	name = "crown of Blackwine"
 	desc = "Heavy is the weight of the crown, and even heavier the responsability it infers to its wearer."
 	icon_state = "serpcrown"
 	//dropshrink = 0
@@ -321,7 +321,7 @@
 
 /obj/item/clothing/head/roguetown/crown/serpcrown/surplus
 	name = "crown"
-	desc = "A replacement for the Crown of Rockhill, every bit as valid as proof of sovereignity as the original."
+	desc = "A replacement for the Crown of Blackwine, every bit as valid as proof of sovereignity as the original."
 	icon_state = "serpcrowno"
 	sellprice = 100
 

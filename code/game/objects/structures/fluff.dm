@@ -676,7 +676,7 @@
 		user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
 		. += "I have no idea what it says."
 	else
-		. += "It says \"TOWN ON ROCKHILL\""
+		. += "It says \"TOWN OF BLACKWINE\""
 
 /obj/structure/fluff/buysign
 	icon_state = "signwrote"
@@ -898,7 +898,7 @@
 		return
 
 	var/mob/living/carbon/human/H = user
-	var/random_message = pick("you spin the globe!", "You land on Rockhill!", "You land on Zybantine!", "You land on port Ice cube!.", "You land on port Thornvale!", "You land on Grenzelhoft!")
+	var/random_message = pick("you spin the globe!", "You land on Blackwine!", "You land on Zybantine!", "You land on port Ice cube!.", "You land on port Thornvale!", "You land on Grenzelhoft!")
 	to_chat(H, "<span class='notice'>[random_message]</span>")
 
 /obj/structure/fluff/statue/femalestatue/Initialize()

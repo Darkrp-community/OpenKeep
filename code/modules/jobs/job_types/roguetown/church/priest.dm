@@ -131,8 +131,8 @@
 		SSticker.rulermob = HU
 		var/dispjob = mind.assigned_role
 		GLOB.badomens -= "nolord"
-		say("By the authority of the gods, I pronounce you Ruler of all Rockhill!")
-		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of Rockhill!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
+		say("By the authority of the gods, I pronounce you Ruler of all Blackwine!")
+		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of Blackwine!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
 		return
 
 /mob/living/carbon/human/proc/churchexcommunicate()
