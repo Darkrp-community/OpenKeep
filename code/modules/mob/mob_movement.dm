@@ -670,6 +670,25 @@
 					return FALSE
 	return TRUE
 
+/mob/living/proc/check_armor_weight()
+	return "Light"
+
+/mob/living/carbon/human/check_armor_weight() // Get the heaviest shirt/armor the mob is wearing.
+	var/heaviest = "Light"
+	if(istype(src.wear_armor, /obj/item/clothing))
+		var/obj/item/clothing/CL = src.wear_armor
+		if(CL.armor_class == ARMOR_CLASS_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
+			heaviest = "Heavy"
+		if(CL.armor_class == ARMOR_CLASS_MEDIUM && heaviest == "Light")
+			heaviest = "Medium"
+	if(istype(src.wear_shirt, /obj/item/clothing))
+		var/obj/item/clothing/CL = src.wear_shirt
+		if(CL.armor_class == ARMOR_CLASS_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
+			heaviest = "Heavy"
+		if(CL.armor_class == ARMOR_CLASS_MEDIUM && heaviest == "Light")
+			heaviest = "Medium"
+	return heaviest
+
 /mob/living/proc/check_dodge_skill()
 	return TRUE
 
