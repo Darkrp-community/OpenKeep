@@ -15,7 +15,7 @@
 	name = "Swimming"
 
 /datum/skill/misc/stealing
-	name = "Pickpocketing"
+	name = "Legerdemain"
 
 /datum/skill/misc/sneaking
 	name = "Sneaking"

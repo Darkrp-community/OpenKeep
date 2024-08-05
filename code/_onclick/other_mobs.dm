@@ -452,6 +452,7 @@
 									else								
 										src.visible_message("<span class='warning'>[src] messes around [door.name] suspiciously!</span>", \
 											"<span class='notice'>I fail to lockpick [door.name]!</span>")
+										src.mind.adjust_experience(/datum/skill/misc/stealing, src.STAINT*src.mind.get_learning_boon(/datum/skill/misc/stealing), FALSE)
 										playsound(src, door.rattlesound, 100)
 										var/oldx = pixel_x
 										animate(door, pixel_x = oldx+1, time = 0.5)
