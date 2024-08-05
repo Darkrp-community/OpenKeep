@@ -61,5 +61,5 @@
 				disttext = " very far"
 
 		//sound played for other players
-		player.playsound_local(get_turf(player), 'modular_hearthstone/sound/items/signalhorn.ogg', 35, FALSE, pressure_affected = FALSE)
+		player.playsound_local(get_turf(player), 'sound/items/signalhorn.ogg', 35, FALSE, pressure_affected = FALSE)
 		to_chat(player, "<span class='warning'>I hear the horn alarm somewhere[disttext][dirtext]!</span>")
