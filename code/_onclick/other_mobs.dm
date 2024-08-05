@@ -75,7 +75,7 @@
 		to_chat(src, "<span class='warning'>I can't move this hand.</span>")
 		return
 
-	if(check_arm_grabbed())
+	if(check_arm_grabbed(used_hand))
 		to_chat(src, "<span class='warning'>[pulledby] is restraining my arm!</span>")
 		return
 
