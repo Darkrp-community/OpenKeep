@@ -55,7 +55,7 @@
 		return FALSE
 	if(user.client)
 		if(user.client.chargedprog >= 100)
-			spread = 0
+			spread = max(0, 15*(3 - user.mind?.get_skill_level(/datum/skill/combat/bows)))
 		else
 			spread = 150 - (150 * (user.client.chargedprog / 100))
 	else

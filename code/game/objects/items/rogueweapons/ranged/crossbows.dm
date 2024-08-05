@@ -98,7 +98,7 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(user.client)
 		if(user.client.chargedprog >= 100)
-			spread = 0
+			spread = max(0, 10*(3 - user.mind?.get_skill_level(/datum/skill/combat/crossbows)))
 		else
 			spread = 150 - (150 * (user.client.chargedprog / 100))
 	else
