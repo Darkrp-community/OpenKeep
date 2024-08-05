@@ -8,12 +8,12 @@
 
 /obj/item/signal_horn/attack_self(mob/living/user)
 	. = ..()
-	user.visible_message(span_warning("[user] is about to sound the [src]!"))
+	user.visible_message("<span class='warning'>[user] is about to sound the [src]!</span>")
 	if(do_after(user, 15))
 		sound_horn(user)
 
 /obj/item/signal_horn/proc/sound_horn(mob/living/user)
-	user.visible_message(span_warning("[user] sounds the alarm!"))
+	user.visible_message("<span class='warning'>[user] sounds the alarm!</span>")
 	playsound(src, 'sound/items/signalhorn.ogg', 100, TRUE)
 
 	for(var/mob/player in GLOB.player_list)
