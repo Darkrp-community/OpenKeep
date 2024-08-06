@@ -145,7 +145,7 @@
 	else
 		return ..()
 
-/mob/living/simple_animal/cow/tamed()
+/mob/living/simple_animal/cow/tamed(mob/user)
 	. = ..()
 	can_buckle = TRUE
 	buckle_lying = FALSE
