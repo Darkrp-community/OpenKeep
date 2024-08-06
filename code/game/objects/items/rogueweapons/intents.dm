@@ -352,22 +352,6 @@
 			M.taunted(user)
 	return
 
-/datum/intent/unarmed/claw
-	name = "claw"
-	icon_state = "inpunch"
-	attack_verb = list("claws", "scratches", "rends", "rips at")
-	chargetime = 0
-	animname = "blank22"
-	hitsound = "smallslash"
-	misscost = 5
-	releasedrain = 5
-	swingdelay = 0
-	rmb_ranged = TRUE
-	candodge = TRUE
-	canparry = TRUE
-	blade_class = BCLASS_CUT
-	miss_text = "claws at thin air!"
-	miss_sound = "punchwoosh"
 
 /datum/intent/unarmed/shove
 	name = "shove"
@@ -488,19 +472,6 @@
 	canparry = TRUE
 	miss_text = "claws the air!"
 	miss_sound = "bluntwooshmed"
-
-/datum/intent/unarmed/wwolf
-	name = "claw"
-	icon_state = "inchop"
-	attack_verb = list("claws", "mauls", "eviscerates")
-	animname = "cut"
-	blade_class = BCLASS_CHOP
-	hitsound = "genslash"
-	penfactor = 40
-	candodge = TRUE
-	canparry = TRUE
-	miss_text = "slashes the air!"
-	miss_sound = "bluntwooshlarge"
 
 /datum/intent/unarmed/ascendedclaw
 	name = "claw"
