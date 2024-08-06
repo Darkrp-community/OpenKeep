@@ -25,6 +25,7 @@
 			target.adjustFireLoss(50)
 			target.Paralyze(30)
 			target.fire_act(1,5)
+			..()
 			return TRUE
 		//this if chain is stupid, replace with variables on /datum/patron when possible?
 		target.visible_message("<span class='info'>A wreath of gentle light passes over [target]!</span>", "<span class='notice'>I'm bathed in holy light!</span>")
@@ -34,7 +35,7 @@
 			if(affecting)
 				if(affecting.heal_damage(20, 20))
 					C.update_damage_overlays()
-				if(affecting.heal_wounds(20))
+				if(affecting.heal_wounds(50))
 					C.update_damage_overlays()
 		else
 			target.adjustBruteLoss(-20)
@@ -42,6 +43,7 @@
 		target.adjustToxLoss(-20)
 		target.adjustOxyLoss(-20)
 		target.blood_volume += BLOOD_VOLUME_SURVIVE/4
+		..()
 		return TRUE
 	return FALSE
 
@@ -74,6 +76,7 @@
 			target.adjustFireLoss(100)
 			target.Paralyze(50)
 			target.fire_act(1,5)
+			..()
 			return TRUE
 		target.visible_message("<span class='info'>A wreath of gentle light passes over [target]!</span>", "<span class='notice'>I'm bathed in holy light!</span>")
 		if(iscarbon(target))
@@ -82,7 +85,7 @@
 			if(affecting)
 				if(affecting.heal_damage(50, 50))
 					C.update_damage_overlays()
-				if(affecting.heal_wounds(50))
+				if(affecting.heal_wounds(100))
 					C.update_damage_overlays()
 		else
 			target.adjustBruteLoss(-50)
@@ -90,5 +93,6 @@
 		target.adjustToxLoss(-50)
 		target.adjustOxyLoss(-50)
 		target.blood_volume += BLOOD_VOLUME_SURVIVE
+		..()
 		return TRUE
 	return FALSE

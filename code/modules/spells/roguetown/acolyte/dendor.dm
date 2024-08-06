@@ -16,6 +16,7 @@
 	devotion_cost = -15
 
 /obj/effect/proc_holder/spell/targeted/blesscrop/cast(list/targets,mob/user = usr)
+	..()
 	visible_message("<FONT COLOR='green'>[usr] blesses the crop with Dendor's Favour!</FONT><BR>")
 	for(var/obj/machinery/crop/C in view(5))
 		C.growth += 40
@@ -39,8 +40,9 @@
 	devotion_cost = -60
 
 /obj/effect/proc_holder/spell/targeted/beasttame/cast(list/targets,mob/user = usr)
+	..()
 	visible_message("<FONT COLOR='green'>[usr] soothes the beastblood with Dendor's whisper.</FONT><BR>")
-	for(var/mob/living/simple_animal/hostile/retaliate/B in oview(2))
+	for(var/mob/living/simple_animal/hostile/retaliate/B in oview(4))
 		if((B.mob_biotypes & MOB_UNDEAD))
 			continue
 		B.aggressive = 0
@@ -59,8 +61,11 @@
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	invocation = "Treefather light the way."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
+	miracle = TRUE
+	devotion_cost = -60
 
 /obj/effect/proc_holder/spell/targeted/conjure_glowshroom/cast(list/targets,mob/user = usr)
+	..()
 	var/turf/T = user.loc
 	for(var/X in GLOB.cardinals)
 		var/turf/TT = get_step(T, X)

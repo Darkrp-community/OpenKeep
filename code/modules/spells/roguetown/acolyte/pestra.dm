@@ -14,9 +14,10 @@
 	antimagic_allowed = TRUE
 	charge_max = 5 SECONDS //very stupidly simple spell
 	miracle = TRUE
-	devotion_cost = 5 //come on, this is very basic
+	devotion_cost = -5 //come on, this is very basic
 
 /obj/effect/proc_holder/spell/invoked/diagnose/cast(list/targets, mob/living/user)
+	..()
 	if(ishuman(targets[1]))
 		var/mob/living/carbon/human/human_target = targets[1]
 		human_target.check_for_injuries(user)
@@ -118,6 +119,7 @@
 				limb.rotted = FALSE
 				limb.skeletonized = FALSE
 		human_target.update_body()
+		..()
 		return TRUE
 	return FALSE
 
@@ -190,6 +192,7 @@
 			target.visible_message("<span class='notice'>The rot leaves [target]'s body!</span>", "<span class='green'>I feel the rot leave my body!</span>")
 		else
 			target.visible_message("<span class='warning'>The rot fails to leave [target]'s body!</span>", "<span class='warning'>I feel no different...</span>")
+		..()
 		return TRUE
 	return FALSE
 

@@ -16,6 +16,7 @@
     devotion_cost = -30
 
 /obj/effect/proc_holder/spell/invoked/blindness/cast(list/targets, mob/user = usr)
+	..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
 		if(target.anti_magic_check(TRUE, TRUE))
@@ -42,6 +43,7 @@
 	devotion_cost = -45
 
 /obj/effect/proc_holder/spell/invoked/invisibility/cast(list/targets, mob/living/user)
+	..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
 		if(target.anti_magic_check(TRUE, TRUE))
@@ -52,3 +54,25 @@
 		addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living, update_sneak_invis), TRUE), 15 SECONDS)
 		addtimer(CALLBACK(target, TYPE_PROC_REF(/atom/movable, visible_message), "<span class='warning'>[target] fades back into view.</span>", "<span class='notice'>You become visible again.</span>"), 15 SECONDS)
 	return FALSE
+
+/obj/effect/proc_holder/spell/aoe_turf/timestop/rogue
+	name = "Stop Time"
+	desc = ""
+	releasedrain = 30
+	chargedrain = 0
+	chargetime = 0
+	charge_max = 50 SECONDS
+	invocation = "Noc prohibits you to act!"
+	invocation_type = "shout"
+	range = 0
+	cooldown_min = 100
+	action_icon_state = "time"
+	timestop_range = 4
+	timestop_duration = 100
+	miracle = TRUE
+	devotion_cost = -45
+	clothes_req = FALSE
+	associated_skill = /datum/skill/magic/holy
+
+/obj/effect/proc_holder/spell/aoe_turf/timestop/rogue/cast(list/targets, mob/user = usr)
+	new /obj/effect/timestop/magic(get_turf(user), timestop_range, timestop_duration, list(user))
