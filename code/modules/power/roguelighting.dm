@@ -832,3 +832,31 @@
 	if(locate(/obj/machinery/light/rogue/firebowl) in get_turf(mover))
 		return 1
 	return !density
+
+
+/obj/machinery/light/rogue/campfire/pyre
+	name = "Pyre"
+	icon = 'icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "pyre1"
+	base_state = "pyre"
+	brightness = 10
+	fueluse = 30 MINUTES
+	layer = BELOW_MOB_LAYER
+	buckleverb = "crucifie"
+	can_buckle = 1
+	buckle_lying = 0
+	dir = NORTH
+	buckle_requires_restraints = 1
+	buckle_prevents_pull = 1
+
+
+/obj/machinery/light/rogue/campfire/pyre/post_buckle_mob(mob/living/M)
+	..()
+	M.set_mob_offsets("bed_buckle", _x = 0, _y = 10)
+	M.adjust_fire_stacks(20)
+	M.IgniteMob()  //any heathen put on this aint living long
+	M.setDir(SOUTH)
+
+/obj/machinery/light/rogue/campfire/pyre/post_unbuckle_mob(mob/living/M)
+	..()
+	M.reset_offsets("bed_buckle")

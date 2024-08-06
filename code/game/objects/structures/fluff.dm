@@ -1234,41 +1234,6 @@
 		var/diff = power - M.confused
 		M.confused += min(power, diff)
 
-/obj/structure/fluff/pyre
-	name = "Pyre"
-	icon_state = "pyre1"
-	icon = 'icons/roguetown/misc/tallstructure.dmi'
-	break_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
-	attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
-	density = FALSE
-	anchored = TRUE
-	blade_dulling = DULLING_BASHCHOP
-	layer = BELOW_MOB_LAYER
-	buckleverb = "crucifie"
-	can_buckle = 1
-	buckle_lying = 0
-	breakoutextra = 10 MINUTES
-	dir = NORTH
-	buckle_requires_restraints = 1
-	buckle_prevents_pull = 1
-
-/obj/structure/fluff/pyre/post_buckle_mob(mob/living/M)
-	..()
-	M.set_mob_offsets("bed_buckle", _x = 0, _y = 10)
-	M.adjust_fire_stacks(20)
-	M.IgniteMob()  //any heathen put on this aint living long
-	M.setDir(SOUTH)
-
-/obj/structure/fluff/pyre/post_unbuckle_mob(mob/living/M)
-	..()
-	M.reset_offsets("bed_buckle")
-
-/obj/structure/fluff/pyre/Crossed(atom/movable/AM)
-	if(isliving(AM))
-		var/mob/living/L = AM
-		L.adjust_fire_stacks(3)
-		L.IgniteMob()
-
 /obj/structure/fluff/beach_towel
 	name = "beach towel"
 	desc = ""

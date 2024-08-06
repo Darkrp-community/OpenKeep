@@ -47,7 +47,7 @@
 
 /datum/crafting_recipe/roguetown/structure/pyre
 	name = "wooden pyre"
-	result = /obj/structure/fluff/pyre
+	result = /obj/machinery/light/rogue/campfire/pyre
 	reqs = list(/obj/item/grown/log/tree/small = 2,
 				/obj/item/grown/log/tree/stake = 3)
 	verbage = "carpent"
