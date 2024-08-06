@@ -137,32 +137,33 @@
 	time = 40 MINUTES
 	needsate_text = "Time to pray."
 
-/datum/outfit/job/roguetown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE) // added since the previous way it was implemented caused a bunch of runtimes
-	. = ..()
-	if(H.mind)
-		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) || H.mind.has_antag_datum(/datum/antagonist/vampirelord)) // dont stunlock
-			return
-		if(!H.wear_wrists)
-			var/obj/item/clothing/neck/roguetown/psicross/crosstype
-			switch(H.patron?.name)
-				if("Astrata")
-					crosstype = /obj/item/clothing/neck/roguetown/psicross/astrata
-				if("Noc")
-					crosstype = /obj/item/clothing/neck/roguetown/psicross/noc
-				if("Dendor")
-					crosstype = /obj/item/clothing/neck/roguetown/psicross/dendor
-				if("Necra")
-					crosstype = /obj/item/clothing/neck/roguetown/psicross/necra
-				if("Ravox")
-					crosstype = /obj/item/clothing/neck/roguetown/psicross/ravox
-				if("Eora")
-					crosstype = /obj/item/clothing/neck/roguetown/psicross/eora
-				else
-					if(prob(1))
-						crosstype = /obj/item/clothing/neck/roguetown/psicross/g
-					else
-						crosstype = /obj/item/clothing/neck/roguetown/psicross
-			H.equip_to_slot_or_del(new crosstype(H), SLOT_WRISTS)
+//datum/outfit/job/roguetown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE) // added since the previous way it was implemented caused a bunch of runtimes
+//	. = ..()
+	//if(H.mind)
+	//	if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) || H.mind.has_antag_datum(/datum/antagonist/vampirelord)) // dont stunlock
+		//	return
+	//	if(!H.wear_wrists)
+	//		var/obj/item/clothing/neck/roguetown/psicross/crosstype
+	//		switch(H.patron?.name)
+	//			if("Astrata")
+	//				crosstype = /obj/item/clothing/neck/roguetown/psicross/astrata
+	//			if("Noc")
+	//				crosstype = /obj/item/clothing/neck/roguetown/psicross/noc
+	//			if("Dendor")
+	//				crosstype = /obj/item/clothing/neck/roguetown/psicross/dendor
+	//			if("Necra")
+	//				crosstype = /obj/item/clothing/neck/roguetown/psicross/necra
+	//			if("Ravox")
+	//				crosstype = /obj/item/clothing/neck/roguetown/psicross/ravox
+	//			if("Eora")
+	//				crosstype = /obj/item/clothing/neck/roguetown/psicross/eora
+	//			else
+	//				if(prob(1))
+	//					crosstype = /obj/item/clothing/neck/roguetown/psicross/g
+	//				else
+	//					crosstype = /obj/item/clothing/neck/roguetown/psicross
+	//		H.equip_to_slot_or_del(new crosstype(H), SLOT_WRISTS)
+//this doesnt actually give crosses to people with addictions, it gives them to EVERYONE. Which is rather problematic.
 
 /// LOVE-FIEND
 
