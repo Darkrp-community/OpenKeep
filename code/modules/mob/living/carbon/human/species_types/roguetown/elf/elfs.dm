@@ -51,6 +51,18 @@
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
+	bodypart_features = list(
+		/datum/bodypart_feature/hair/head,
+		/datum/bodypart_feature/hair/facial,
+	)
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+		/datum/customizer/bodypart_feature/face_detail,
+	)
+
 /datum/species/elf/snow/check_roundstart_eligible()
 	return TRUE
 

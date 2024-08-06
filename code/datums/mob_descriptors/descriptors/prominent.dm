@@ -183,10 +183,6 @@
 	verbage = "%HAVE%"
 	prefix = "an"
 
-/datum/mob_descriptor/prominent/promiscuous_mannerisms
-	name = "Sensual Manners"
-	verbage = "%HAVE%"
-
 /datum/mob_descriptor/prominent/intimidating_presence
 	name = "Intimidating Presence"
 	verbage = "%HAVE%"
@@ -278,67 +274,3 @@
 	name = "Dim Look"
 	verbage = "%HAVE%"
 	prefix = "a"
-
-/datum/mob_descriptor/prominent/canine_features
-	name = "Canine Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/feline_features
-	name = "Feline Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/hyaenidae_features
-	name = "Hyaenidae Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/equine_features
-	name = "Equine Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/bovine_features
-	name = "Bovine Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/cervine_features
-	name = "Cervine Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/lapine_features
-	name = "Lapine Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/rodent_features
-	name = "Rodent Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/primate_features
-	name = "Primate Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/marsupial_features
-	name = "Marsupial Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/lizard_features
-	name = "Lizard Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/avian_features
-	name = "Avian Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/amphibian_features
-	name = "Amphibian Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/insectoid_features
-	name = "Instectoid Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/marine_features
-	name = "Marine Features"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/vulpine_features
-	name = "Vulpine Features"
-	verbage = "%HAVE%"

@@ -122,6 +122,29 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	// value for replacing skin tone/origin term
 	var/alt_origin
 
+	/// List of bodypart features of this species
+	var/list/bodypart_features
+
+	/// List of descriptor choices this species gets in preferences customization
+	var/list/descriptor_choices = list(
+		/datum/descriptor_choice/height,
+		/datum/descriptor_choice/body,
+		/datum/descriptor_choice/stature,
+		/datum/descriptor_choice/face,
+		/datum/descriptor_choice/face_exp,
+		/datum/descriptor_choice/skin,
+		/datum/descriptor_choice/voice,
+		/datum/descriptor_choice/prominent_one,
+		/datum/descriptor_choice/prominent_two,
+		/datum/descriptor_choice/prominent_three,
+		/datum/descriptor_choice/prominent_four,
+	)
+
+	var/list/languages = list(/datum/language/common)
+
+	/// List of organ customizers for preferences to customize organs.
+	var/list/customizers
+
 ///////////
 // PROCS //
 ///////////

@@ -207,7 +207,6 @@
 	/datum/mob_descriptor/prominent/cold_gaze,\
 	/datum/mob_descriptor/prominent/piercing_gaze,\
 	/datum/mob_descriptor/prominent/innocent_gaze,\
-	/datum/mob_descriptor/prominent/promiscuous_mannerisms,\
 	/datum/mob_descriptor/prominent/intimidating_presence,\
 	/datum/mob_descriptor/prominent/meek_presence,\
 	/datum/mob_descriptor/prominent/adorable_presence,\

@@ -45,7 +45,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(current_version < 29)
 		key_bindings = (hotkeys) ? deepCopyList(GLOB.hotkey_keybinding_list_by_key) : deepCopyList(GLOB.classic_keybinding_list_by_key)
 		parent.update_movement_keys()
-		to_chat(parent, span_danger("Empty keybindings, setting default to [hotkeys ? "Hotkey" : "Classic"] mode"))
+		to_chat(parent, ("Empty keybindings, setting default to [hotkeys ? "Hotkey" : "Classic"] mode"))
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
 	if(current_version < 19)
@@ -462,9 +462,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["mcolor3"]	= sanitize_hexcolor(features["mcolor3"], 6, 0)
 	features["ethcolor"]	= copytext(features["ethcolor"],1,7)
 	features["feature_lizard_legs"]	= sanitize_inlist(features["legs"], GLOB.legs_list, "Normal Legs")
-	S["body_markings"] >> body_markings
-	body_markings = SANITIZE_LIST(body_markings)
-	validate_body_markings()
 
 	S["descriptor_entries"] >> descriptor_entries
 	descriptor_entries = SANITIZE_LIST(descriptor_entries)
