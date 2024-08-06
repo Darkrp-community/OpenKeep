@@ -9,7 +9,7 @@
 	used as soldiers to fight in the Apotheosis God-War. \
 	They quickly earned scorn and fear from the mortal races they fought alongside \
 	for their indifference to the suffering of their allies and unquestioning brutality. \
-	The aasimar who survived the war were abandoned by Astrata, \
+	The aasimar who survived the war have been abandoned by Astrata, \
 	left to face an uncertain fate alongside the other races of Grimoria. \
 	It has been long since the Apotheosis and memories of their violent legacy have faded, \
 	but many still view these aasimar survivors as emotionally dull, stubborn, and simple-minded brutes... \
