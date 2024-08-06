@@ -230,6 +230,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	emote("smile", forced = TRUE)
 	tame = TRUE
 	stop_automated_movement_when_pulled = TRUE
+	if(user)
+		owner = user
 	return
 
 //mob/living/simple_animal/examine(mob/user)
