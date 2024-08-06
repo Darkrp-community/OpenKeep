@@ -1277,7 +1277,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				to_chat(user, "I fail to ensnare their mind.")
 			if(willroll - bloodroll >= 3)
 				if(found_psycross == TRUE)
-					to_chat(L, "<font color='white'> The silver psycross shines and protect me from the blood magic, the one who used bllod magic was [user]!</font>")
+					to_chat(L, "<font color='white'> The silver psycross shines and protect me from the blood magic, the one who used blood magic was [user]!</font>")
 				else
 					to_chat(user, "I fail to ensnare their mind.")
 					to_chat(L, "I feel like someone or something unholy is messing with my head. I should get out of here!")
