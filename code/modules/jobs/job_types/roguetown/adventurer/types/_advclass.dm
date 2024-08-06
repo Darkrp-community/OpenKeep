@@ -18,6 +18,7 @@
 	var/maximum_possible_slots = 999
 	var/total_slots_occupied = 0
 	var/min_pq = -100
+	var/triumphs_cost = 0
 
 	var/horse = FALSE
 	var/vampcompat = TRUE
@@ -40,6 +41,7 @@
 
 	if(outfit)
 		H.equipOutfit(outfit)
+		H.adjust_triumphs(-triumphs_cost)
 
 	post_equip(H)
 
