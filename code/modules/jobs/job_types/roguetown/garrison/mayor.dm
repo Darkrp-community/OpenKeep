@@ -22,6 +22,8 @@
 	display_order = JDO_CHIEF
 	give_bank_account = 80
 
+	cmode_music = 'sound/music/combat_bog.ogg'
+
 /datum/outfit/job/roguetown/mayor
 	name = "Mayor"
 	jobtype = /datum/job/roguetown/mayor

@@ -132,10 +132,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Captain"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/barkeep
-	name = "Innkeep"
-	icon_state = "arrow"
-
 /obj/effect/landmark/start/steward
 	name = "Steward"
 	icon_state = "arrow"
@@ -212,6 +208,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Grabber"
 	icon_state = "arrow"
 
+/obj/effect/landmark/start/barkeep //Go figure someone breaks something
+	name = "Innkeep"
+	icon_state = "arrow"
 
 /obj/effect/landmark/start/innkeep
 	name = "Innkeep"
@@ -304,11 +303,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/butler
 	name = "Butler"
 	icon_state = "arrow"
-
-/obj/effect/landmark/start/barkeeper
-	name = "Innkeeper"
-	icon_state = "arrow"
-
 
 /obj/effect/landmark/start/adventurer
 	name = "Adventurer"
