@@ -24,6 +24,7 @@
 	give_bank_account = 50	// Bought loyalty was previously the same as any guardsman, now in line with village elder, etc. N.
 	min_pq = -4
 
+	cmode_music = 'sound/music/combat_weird.ogg'
 
 /datum/outfit/job/roguetown/dungeoneer/pre_equip(mob/living/carbon/human/H)
 	..()

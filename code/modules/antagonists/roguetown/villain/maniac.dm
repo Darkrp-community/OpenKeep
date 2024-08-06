@@ -24,7 +24,7 @@
 		H.change_stat("intelligence", 2)
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)
-		H.cmode_music = 'sound/music/combat_weird.ogg'
+		H.cmode_music = 'sound/music/combat_maniac2.ogg'
 		owner.adjust_skillrank(/datum/skill/combat/knives, 6, TRUE)
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
