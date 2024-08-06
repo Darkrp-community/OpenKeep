@@ -117,7 +117,7 @@
 	craftdiff = 3
 	sellprice = 20
 
-/datum/crafting_recipe/roguetown/weaving/barkeep
+/datum/crafting_recipe/roguetown/weaving/barmaid
 	name = "bar dress"
 	result = list (/obj/item/clothing/suit/roguetown/shirt/dress)
 	reqs = list(/obj/item/natural/cloth = 2,
