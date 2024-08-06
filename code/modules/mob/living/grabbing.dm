@@ -380,7 +380,7 @@
 		qdel(src)
 		return
 
-/obj/item/grabbing/bite/proc/bitelimb(mob/living/user) //implies limb_grabbed and sublimb are things
+/obj/item/grabbing/bite/proc/bitelimb(mob/living/carbon/human/user) //implies limb_grabbed and sublimb are things
 	if(!user.Adjacent(grabbed))
 		qdel(src)
 		return
@@ -399,10 +399,11 @@
 		if(user.mind)
 			if(user.mind.has_antag_datum(/datum/antagonist/werewolf))
 				var/mob/living/carbon/human/H = C
-				if(prob(25) && H)
-					spawn(3 MINUTES)
-						H.werewolf_infect()
-					//addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_infect)), 3 MINUTES)
+				if(prob(10))
+					//H.werewolf_infect()
+					addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human/, werewolf_infect)), 30 SECONDS)
+				if(prob(30))
+					user.werewolf_feed(H)
 			if(user.mind.has_antag_datum(/datum/antagonist/zombie))
 				var/mob/living/carbon/human/H = C
 				INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human, zombie_infect_attempt))
