@@ -12,7 +12,8 @@
 		"Half-Elf",	// Half-elves are often the unwanted dregs of society. N.
 		"Dwarf",
 		"Tiefling",
-		"Dark Elf"
+		"Dark Elf",
+		"Aasimar"
 	)
 	allowed_sexes = list(MALE, FEMALE)
 
