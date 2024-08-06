@@ -1,6 +1,6 @@
-/datum/job/roguetown/barkeep
+/datum/job/roguetown/innkeep
 	title = "Innkeep"
-	flag = BARKEEP
+	flag = INNKEEP
 	department_flag = SERFS
 	faction = "Station"
 	total_positions = 1
@@ -18,12 +18,12 @@
 
 	tutorial = "Liquor Lodging and Lavish Baths, youre the life of the party and a rich bastard because of it. Well before that pesky merchant came around and convinced people to take up the bottle instead of the tankred, you were the reason the hardworking men and women of this town could rest."
 
-	outfit = /datum/outfit/job/roguetown/barkeep
-	display_order = JDO_BARKEEP
+	outfit = /datum/outfit/job/roguetown/innkeep
+	display_order = JDO_INNKEEP
 	bypass_lastclass = TRUE
 	give_bank_account = 43
 
-/datum/outfit/job/roguetown/barkeep/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/innkeep/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
