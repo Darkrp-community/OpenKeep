@@ -58,7 +58,7 @@
 	desc = ""
 	charge_max = 60 SECONDS
 	clothes_req = FALSE
-	invocation = "Let Eoar show you the world differently!"
+	invocation = "Let Eora show you the world differently!"
 	invocation_type = "whisper"
 	range = 1
 	cooldown_min = 200 //100 deciseconds reduction per rank
