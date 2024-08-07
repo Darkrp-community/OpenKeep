@@ -56,7 +56,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	ADD_TRAIT(owner.current, TRAIT_NOSLEEP, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_LIMPDICK, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_VAMPMANSION, "[type]")
-	owner.current.cmode_music = 'sound/music/combatvamp.ogg'
+	owner.current.cmode_music = 'sound/music/combat_vamp.ogg'
 	var/obj/item/organ/eyes/eyes = owner.current.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
 		eyes.Remove(owner.current,1)
@@ -1262,7 +1262,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 		if(bloodroll >= willroll)
 			if(found_psycross == TRUE)
-				to_chat(L, "<font color='white'>The silver psycross shines and protect me from the unholy magic.</font>")
+				to_chat(L, "<font color='white'>The silver psycross shines and protects me from the unholy magic.</font>")
 				to_chat(user, "<span class='userdanger'>[L] has my BANE!It causes me to fail to ensnare their mind!</span>")
 			else
 				to_chat(L, "You feel like a curtain is coming over your mind.")
@@ -1271,13 +1271,13 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				L.Sleeping(300)
 		if(willroll >= bloodroll)
 			if(found_psycross == TRUE)
-				to_chat(L, "<font color='white'>The silver psycross shines and protect me from the unholy magic.</font>")
+				to_chat(L, "<font color='white'>The silver psycross shines and protects me from the unholy magic.</font>")
 				to_chat(user, "<span class='userdanger'>[L] has my BANE!It causes me to fail to ensnare their mind!</span>")
 			else
 				to_chat(user, "I fail to ensnare their mind.")
 			if(willroll - bloodroll >= 3)
 				if(found_psycross == TRUE)
-					to_chat(L, "<font color='white'> The silver psycross shines and protect me from the blood magic, the one who used bllod magic was [user]!</font>")
+					to_chat(L, "<font color='white'> The silver psycross shines and protects me from the blood magic, the one who used blood magic was [user]!</font>")
 				else
 					to_chat(user, "I fail to ensnare their mind.")
 					to_chat(L, "I feel like someone or something unholy is messing with my head. I should get out of here!")

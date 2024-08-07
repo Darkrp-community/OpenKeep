@@ -12,7 +12,8 @@
 		"Half-Elf",	// Half-elves are often the unwanted dregs of society. N.
 		"Dwarf",
 		"Tiefling",
-		"Dark Elf"
+		"Dark Elf",
+		"Aasimar"
 	)
 	allowed_sexes = list(MALE, FEMALE)
 
@@ -24,6 +25,7 @@
 	give_bank_account = 50	// Bought loyalty was previously the same as any guardsman, now in line with village elder, etc. N.
 	min_pq = -4
 
+	cmode_music = 'sound/music/combat_weird.ogg'
 
 /datum/outfit/job/roguetown/dungeoneer/pre_equip(mob/living/carbon/human/H)
 	..()
