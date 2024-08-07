@@ -94,7 +94,7 @@
 	"brown - grain" = "58433b",
 	"brown - soil" = "48322a",
 
-	"red - berry" = "48322a",
+	"red - berry" = "b23434",
 	"red - wine" = "82534c",
 	"red - sunset" = "82462b",
 	"red - blood" = "822b2b",
