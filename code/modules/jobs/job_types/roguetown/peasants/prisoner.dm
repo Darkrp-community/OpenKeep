@@ -26,6 +26,8 @@
 	bypass_lastclass = FALSE
 	whitelist_req = FALSE
 
+	cmode_music = 'sound/music/combat_bum.ogg'
+
 /datum/outfit/job/roguetown/prisoner/pre_equip(mob/living/carbon/human/H)
 	..()
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown

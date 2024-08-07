@@ -48,7 +48,7 @@
 	beltl = /obj/item/rogueweapon/sword/sabre
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	cloak = /obj/item/clothing/cloak/cape/guard
-	backpack_contents = list(/obj/item/keyring/captain = 1, /obj/item/scomstone)
+	backpack_contents = list(/obj/item/keyring/captain = 1, /obj/item/signal_horn = 1, /obj/item/scomstone)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)

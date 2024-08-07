@@ -26,6 +26,8 @@
 	give_bank_account = 30
 	min_pq = -4
 
+	cmode_music = 'sound/music/combat_guard.ogg'
+
 /datum/job/roguetown/guardsman/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
 	if(ishuman(L))

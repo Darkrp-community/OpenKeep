@@ -18,6 +18,7 @@
 	var/maximum_possible_slots = 999
 	var/total_slots_occupied = 0
 	var/min_pq = -100
+	var/cmode_music
 	var/triumphs_cost = 0
 
 	var/horse = FALSE
@@ -68,7 +69,8 @@
 
 /datum/advclass/proc/post_equip(mob/living/carbon/human/H)
 	addtimer(CALLBACK(H,TYPE_PROC_REF(/mob/living/carbon/human, add_credit)), 20)
-	return
+	if(cmode_music)
+		H.cmode_music = cmode_music
 
 /*
 	Whoa! we are checking requirements here!

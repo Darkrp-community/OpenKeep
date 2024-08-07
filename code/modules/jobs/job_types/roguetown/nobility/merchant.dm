@@ -25,6 +25,8 @@
 	give_bank_account = 22
 	selection_color = "#192bc2"
 
+	cmode_music = 'sound/music/combat_merchant.ogg'
+
 /datum/outfit/job/roguetown/merchant/pre_equip(mob/living/carbon/human/H)
 	..()
 

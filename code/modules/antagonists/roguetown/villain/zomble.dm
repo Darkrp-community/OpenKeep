@@ -106,6 +106,7 @@
 		zombie.STASTR = STASTR
 		zombie.STASPD = STASPD
 		zombie.STAINT = STAINT
+		zombie.cmode_music = cmode_music
 		for(var/trait in traits_zombie)
 			REMOVE_TRAIT(zombie, trait, "[type]")
 		zombie.remove_client_colour(/datum/client_colour/monochrome)
@@ -180,6 +181,7 @@
 			zombie_part.rotted = TRUE
 		zombie_part.update_disabled()
 	zombie.update_body()
+	zombie.cmode_music = 'sound/music/combat_weird.ogg'
 
 	zombie.STASPD = rand(3, 5)
 
