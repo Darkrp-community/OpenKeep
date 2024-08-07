@@ -15,7 +15,7 @@
 	Due to their heritage, Half-Elves tend to gain racial traits depending on how strong their fathers, or mothers, genes were. \
 	Half-Elves also typically try to find identity, in a world that sees them primarly as perversions."
 
-	skin_tone_wording = "Identifies As"
+	skin_tone_wording = "Halfling Identity"
 
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
@@ -23,7 +23,7 @@
 	default_features = list("mcolor" = "FFF", "ears" = "ElfH", "wings" = "None")
 	mutant_bodyparts = list("ears")
 	use_skintones = 1
-	possible_ages = ALL_AGES_LIST
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
@@ -77,6 +77,7 @@
 	"red - wine" = "82534c",
 	"red - sunset" = "82462b",
 	"red - blood" = "822b2b",
+	"red - maroon" = "612929",
 
 	"blond - pale" = "9d8d6e",
 	"blond - dirty" = "88754f",

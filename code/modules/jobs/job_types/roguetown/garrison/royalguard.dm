@@ -14,7 +14,7 @@
 		"Dwarf",
 		"Aasimar"
 	)
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
 	tutorial = "You're an elite member of the Garrison, awarded with knighthood for your prowess and loyalty. Be a stalwart guardian for the royal family, and serve them until your dying breath."
 	display_order = JDO_ROYALGUARD
 	whitelist_req = FALSE
@@ -25,6 +25,7 @@
 	min_pq = -4
 	selection_color = "#920909"
 
+	cmode_music = 'sound/music/combat_guard.ogg'
 
 /datum/job/roguetown/royalguard/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

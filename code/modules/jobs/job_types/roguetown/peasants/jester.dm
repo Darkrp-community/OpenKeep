@@ -21,7 +21,6 @@
 		Your cheap tricks and illusions of intelligence will only work for so long, \
 		and someday you'll find yourself at the end of something sharper than you."
 
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	spells = list(/obj/effect/proc_holder/spell/self/telljoke,/obj/effect/proc_holder/spell/self/telltragedy)
 	outfit = /datum/outfit/job/roguetown/jester
 	display_order = JDO_JESTER
@@ -48,6 +47,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
 		H.STAINT = rand(1, 20)
 		H.STALUC = rand(1, 20)
+		H.cmode_music = 'sound/music/combat_jester.ogg'
 /*		if(H.gender == MALE)
 			if(H.dna?.species)
 				if(H.dna.species.id == "human")

@@ -3,8 +3,8 @@
 	flag = COOK
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 
 	allowed_races = list(
 		"Humen",
@@ -15,8 +15,7 @@
 		"Dark Elf",
 		"Aasimar"
 	)
-	allowed_ages = ALL_AGES_LIST
-	tutorial = "Working closely with the barkeep who owns Skull Crack Inn, the cook should focus on cooking food for all the hungry mouths of Roguetown."
+	tutorial = "Working closely with the Innkeep who owns Skull Crack Inn, the cook should focus on cooking food for all the hungry mouths of Roguetown."
 
 	outfit = /datum/outfit/job/roguetown/cook
 	display_order = JDO_COOK

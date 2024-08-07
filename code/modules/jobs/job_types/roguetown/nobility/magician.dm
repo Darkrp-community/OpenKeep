@@ -10,8 +10,7 @@
 		"Humen",
 		"Elf",
 		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
+		"Dwarf"
 	)
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	allowed_sexes = list(MALE, FEMALE)
