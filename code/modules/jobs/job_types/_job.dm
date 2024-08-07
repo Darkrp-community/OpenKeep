@@ -100,6 +100,9 @@
 
 	var/can_random = TRUE
 
+	/// Some jobs have unique combat mode music, because why not?
+	var/cmode_music
+
 	/// This job always shows on latechoices
 	var/always_show_on_latechoices = FALSE
 
@@ -182,6 +185,9 @@
 
 	if(show_in_credits)
 		SScrediticons.processing += H
+
+	if(cmode_music)
+		H.cmode_music = cmode_music
 
 /mob/living/carbon/human/proc/add_credit()
 	if(!mind || !client)

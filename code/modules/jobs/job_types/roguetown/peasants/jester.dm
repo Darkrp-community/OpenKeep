@@ -47,6 +47,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
 		H.STAINT = rand(1, 20)
 		H.STALUC = rand(1, 20)
+		H.cmode_music = 'sound/music/combat_jester.ogg'
 /*		if(H.gender == MALE)
 			if(H.dna?.species)
 				if(H.dna.species.id == "human")

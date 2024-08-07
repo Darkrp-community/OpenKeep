@@ -12,6 +12,7 @@
 	min_pq = 1
 	whitelist_req = TRUE
 
+	cmode_music = 'sound/music/combat_grenzelhoft.ogg'
 
 /datum/outfit/job/roguetown/adventurer/grenzelhoft/pre_equip(mob/living/carbon/human/H)
 	..()

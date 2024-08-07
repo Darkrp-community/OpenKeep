@@ -26,6 +26,8 @@
 	can_random = FALSE
 	whitelist_req = FALSE
 
+	cmode_music = 'sound/music/combat_bum.ogg'
+
 /datum/job/roguetown/vagrant/New()
 	. = ..()
 	peopleknowme = list()
