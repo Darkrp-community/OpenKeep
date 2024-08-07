@@ -1,7 +1,7 @@
 /datum/hair_gradient
 	abstract_type = /datum/hair_gradient
 	var/name
-	var/icon = 'icons/mob/sprite_accessory/hair/hair_gradients.dmi'
+	var/icon = 'icons/roguetown/mob/hair_gradients.dmi'
 	var/icon_state
 
 /datum/hair_gradient/none
