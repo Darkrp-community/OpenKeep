@@ -853,8 +853,6 @@
 /obj/machinery/light/rogue/campfire/pyre/post_buckle_mob(mob/living/M)
 	..()
 	M.set_mob_offsets("bed_buckle", _x = 0, _y = 10)
-	M.adjust_fire_stacks(20)
-	M.IgniteMob()  //any heathen put on this aint living long
 	M.setDir(SOUTH)
 
 /obj/machinery/light/rogue/campfire/pyre/post_unbuckle_mob(mob/living/M)
