@@ -72,8 +72,6 @@
 			cloak = /obj/item/clothing/cloak/tabard/crusader/tief
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	//Paladins, while devout warriors spent WAY too much time studying the blade. No more acolyte+
-	C.max_devotion = 250
-	C.max_progression = CLERIC_REQ_1
 	C.update_devotion(50, 50)
 	C.holder_mob = H
 	C.grant_spells_templar(H)
