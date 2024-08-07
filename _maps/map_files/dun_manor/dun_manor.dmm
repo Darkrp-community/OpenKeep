@@ -408,7 +408,7 @@
 "dvK" = (/obj/structure/table/wood{dir = 10; icon_state = "tablewood2"},/obj/item/book/rogue/bibble,/obj/machinery/light/rogue/wallfire/candle,/turf/open/floor/rogue/carpet,/area/rogue/indoors/town)
 "dxs" = (/obj/structure/closet/crate/chest{name = "spare house keys"},/obj/item/roguekey/houses/house1,/obj/item/roguekey/houses/house2,/obj/item/roguekey/houses/house3,/obj/item/roguekey/houses/house4,/obj/item/roguekey/houses/house5,/obj/item/roguekey/houses/house6,/turf/open/floor/carpet/royalblack,/area/rogue/indoors/town)
 "dxE" = (/obj/machinery/light/rogue/torchholder{dir = 8; icon_state = "torchwall1"},/turf/open/floor/rogue/grass,/area/rogue/outdoors/town)
-"dxQ" = (/obj/structure/table/wood{dir = 10; icon_state = "tablewood2"},/turf/open/floor/rogue/cobblerock,/area/rogue/indoors/town)
+"dxQ" = (/obj/structure/table/wood{dir = 10; icon_state = "tablewood2"},/obj/item/rogueweapon/shovel,/turf/open/floor/rogue/cobblerock,/area/rogue/indoors/town)
 "dyb" = (/obj/structure/fluff/railing/fence,/obj/effect/decal/cobbleedge{dir = 10},/turf/open/floor/rogue/woodturned,/area/rogue/outdoors/town/roofs)
 "dyo" = (/obj/effect/decal/cobbleedge,/obj/structure/roguemachine/mail,/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/town)
 "dyu" = (/obj/effect/decal/cobbleedge{dir = 4},/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/town/magician)
