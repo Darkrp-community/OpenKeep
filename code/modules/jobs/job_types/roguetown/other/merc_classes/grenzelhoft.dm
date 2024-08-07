@@ -46,6 +46,9 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/greatsword/zwei
 	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)
+	if(!H.has_language(/datum/language/highimperial))
+		H.grant_language(/datum/language/highimperial)
+		to_chat(H, "<span class='info'>I can speak High Imperial with ,m before my speech.</span>")
 
 	H.change_stat("strength", 2) // They need this to roll at least min STR for the Zwei.
 	H.change_stat("endurance", 1)

@@ -66,6 +66,10 @@
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
+
+	if(!H.has_language(/datum/language/highimperial))
+		H.grant_language(/datum/language/highimperial)
+		to_chat(H, "<span class='info'>I can speak High Imperial with ,m before my speech.</span>")
 	ADD_TRAIT(H, TRAIT_TORTURER, TRAIT_GENERIC)
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
