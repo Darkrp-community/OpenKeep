@@ -29,6 +29,8 @@
 	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/labor/taming, 2, TRUE)
+
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	pants = /obj/item/clothing/under/roguetown/trou
