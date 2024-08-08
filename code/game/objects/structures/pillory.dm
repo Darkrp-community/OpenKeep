@@ -13,7 +13,8 @@
 	density = TRUE
 	layer = ABOVE_ALL_MOB_LAYER
 	plane = GAME_PLANE_UPPER
-	var/locked = 0
+	var/latched = FALSE
+	var/locked = FALSE
 	var/base_icon = "pillory_single"
 
 /obj/structure/pillory/double
