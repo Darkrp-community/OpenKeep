@@ -1007,20 +1007,6 @@
 	sellprice = 45
 	var/last_used = 0
 
-/obj/item/rogueweapon/sword/rapier/silver
-	name = "silver short sword"
-	desc = "A single-edged sword made of silver. Can cut through the undead like butter."
-	force = 18 // .9 of normal steel sword's damage
-	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
-	icon_state = "swordshort_s"
-	gripped_intents = null
-	minstr = 4
-	wdefense = 4
-	max_blade_int = 200 // Blade int and durability is .8 steel
-	max_integrity = 280
-	wbalance = 1
-	smeltresult = /obj/item/ingot/silver
-
 /obj/item/rogueweapon/sword/rapier/silver/pickup(mob/user)
 	. = ..()
 	var/mob/living/carbon/human/H = user
