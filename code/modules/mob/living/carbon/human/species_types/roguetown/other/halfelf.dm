@@ -22,6 +22,7 @@
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "ears" = "ElfH", "wings" = "None")
 	mutant_bodyparts = list("ears")
+	mutanteyes = /obj/item/organ/eyes/elf/less
 	use_skintones = 1
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	skinned_type = /obj/item/stack/sheet/animalhide/human
@@ -73,7 +74,7 @@
 	"brown - grain" = "58433b",
 	"brown - soil" = "48322a",
 
-	"red - berry" = "48322a",
+	"red - berry" = "b23434",
 	"red - wine" = "82534c",
 	"red - sunset" = "82462b",
 	"red - blood" = "822b2b",
