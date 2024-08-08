@@ -15,7 +15,7 @@
 		"Dwarf",
 		"Aasimar"
 	)
-	allowed_patrons = list(/datum/patron/divine/astrata)
+	allowed_patrons = ALL_CLERIC_PATRONS
 	tutorial = "The Divine is all that matters in a world of the immoral. The Weeping god left his children to rule over us mortals and you will preach their wisdom to any who still heed their will. The faithless are growing in number, it is up to you to shepard them to a God-Fearing future."
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
@@ -28,12 +28,11 @@
 
 /datum/outfit/job/roguetown/priest/pre_equip(mob/living/carbon/human/H)
 	..()
+	var/datum/patron/A = H.patron
 	H.virginity = TRUE
 	H.verbs |= /mob/living/carbon/human/proc/coronate_lord
 	H.verbs |= /mob/living/carbon/human/proc/churchexcommunicate
 	H.verbs |= /mob/living/carbon/human/proc/churchannouncement
-	neck = /obj/item/clothing/neck/roguetown/psicross/astrata
-	head = /obj/item/clothing/head/roguetown/priestmask
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
@@ -41,8 +40,32 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	id = /obj/item/clothing/ring/active/nomag
-	armor = /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	backl = /obj/item/storage/backpack/rogue/satchel
+	switch(A.name)
+		if("Astrata")
+			head = /obj/item/clothing/head/roguetown/roguehood/astrata
+			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
+			wrists = /obj/item/clothing/wrists/roguetown/wrappings
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
+		if("Dendor")
+			head = /obj/item/clothing/head/roguetown/dendormask
+			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
+		if("Necra")
+			head = /obj/item/clothing/head/roguetown/necrahood
+			neck = /obj/item/clothing/neck/roguetown/psicross/necra
+			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
+		if("Eora")
+			H.virginity = FALSE
+			head = /obj/item/clothing/head/roguetown/eoramask
+			neck = /obj/item/clothing/neck/roguetown/psicross/eora
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
+		if("Noc")
+			head = /obj/item/clothing/head/roguetown/roguehood/nochood
+			neck = /obj/item/clothing/neck/roguetown/psicross/noc
+			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 5, TRUE)

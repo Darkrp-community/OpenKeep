@@ -95,4 +95,5 @@ Also, you never added distance checking after target is selected. I've went ahea
 	victim.Unconscious(unconscious_amount_victim)
 	SEND_SOUND(caster, sound('sound/blank.ogg'))
 	SEND_SOUND(victim, sound('sound/blank.ogg'))// only the caster and victim hear the sounds, that way no one knows for sure if the swap happened
+	..()
 	return TRUE

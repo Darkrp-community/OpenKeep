@@ -24,8 +24,8 @@
 	sins = "Ignorance, Burning books, Carnal desire"
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/blindness
-	t2 = null
-	t3 = null
+	t2 = /obj/effect/proc_holder/spell/invoked/invisibility
+	t3 = /obj/effect/proc_holder/spell/aoe_turf/timestop/rogue
 
 // ............ FORCES ..................
 /datum/patron/divine/dendor
@@ -38,7 +38,7 @@
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/blesscrop
 	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
-	t3 = null
+	t3 = /obj/effect/proc_holder/spell/targeted/conjure_glowshroom
 
 /datum/patron/divine/abyssor
 	name = "Abyssor"
@@ -58,6 +58,7 @@
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/churn
+	t3 = /obj/effect/proc_holder/spell/invoked/cure_rot
 
 // ............ SAINTS ..................
 /datum/patron/divine/ravox
@@ -102,4 +103,4 @@
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/bud
 	t2 = /obj/effect/proc_holder/spell/invoked/eoracurse
-	t3 = null
+	t3 = /obj/effect/proc_holder/spell/targeted/mind_transfer/rogue
