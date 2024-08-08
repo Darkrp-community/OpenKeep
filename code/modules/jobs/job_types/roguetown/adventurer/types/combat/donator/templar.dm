@@ -11,7 +11,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/templar
 	maximum_possible_slots = 1
-	min_pq = 2
+	min_pq = 30
 	pickprob = 15
 	category_tags = list(CTAG_ADVENTURER)
 

@@ -1,12 +1,12 @@
 /datum/advclass/combat/heartfelthand
 	name = "Hand of Heartfelt"
-	tutorial = "You serve your lord as the royal hand, taking care of all diplomatic actions in your relm. \
-	maybe one day you will become lord too."
+	tutorial = "You serve your lord as hand, taking care of diplomatic actions within your realm, \
+	but why have you come to Rockhill?"
 	allowed_sexes = list(MALE)
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/heartfelthand
 	maximum_possible_slots = 1
-	min_pq = 1
+	min_pq = 40
 	pickprob = 50
 	category_tags = list(CTAG_ADVENTURER)
 

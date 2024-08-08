@@ -15,6 +15,7 @@
 	of one of the rival Orders dedicated to retaking the holy land. \
 	The 451st crusade is sure to be the last."
 
+	min_pq = 15
 	category_tags = list(CTAG_DISABLED)
 
 /datum/outfit/job/roguetown/adventurer/crusader
