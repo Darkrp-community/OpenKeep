@@ -153,6 +153,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	///Added success chance after every failed tame attempt.
 	var/bonus_tame_chance
 
+	var/mob/owner = null
+
 	///I don't want to confuse this with client registered_z.
 	var/my_z
 	///What kind of footstep this mob should have. Null if it shouldn't have any.
@@ -212,22 +214,24 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			playsound(loc,'sound/misc/eat.ogg', rand(30,60), TRUE)
 			qdel(O)
 			food = min(food + 30, 100)
-			if(tame)
+			if(tame && owner == user)
 				return
 			var/realchance = tame_chance
 			if(realchance)
 				if(user.mind)
 					realchance += (user.mind.get_skill_level(/datum/skill/labor/taming) * 20)
 				if(prob(realchance))
-					tamed()
+					tamed(user)
 				else
 					tame_chance += bonus_tame_chance
 
 ///Extra effects to add when the mob is tamed, such as adding a riding component
-/mob/living/simple_animal/proc/tamed()
+/mob/living/simple_animal/proc/tamed(mob/user)
 	emote("smile", forced = TRUE)
 	tame = TRUE
 	stop_automated_movement_when_pulled = TRUE
+	if(user)
+		owner = user
 	return
 
 //mob/living/simple_animal/examine(mob/user)
