@@ -35,5 +35,8 @@
 	head = /obj/item/clothing/head/roguetown/rare/grenzelplate
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	if(!H.has_language(/datum/language/oldpsydonic))
+		H.grant_language(/datum/language/oldpsydonic)
+		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
