@@ -130,13 +130,35 @@
 	minstr = 8
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
-	dropshrink = 0.6
+	dropshrink = 0.75//making it bigger so the sprite can be appreciated and clicked better smh
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 4
 	thrown_bclass = BCLASS_STAB
 	throwforce = 25
 	sellprice = 20
+
+/obj/item/rogueweapon/spear/steel
+	force = 15
+	force_wielded = 25
+	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
+	name = "Steel Lance"
+	desc = "A scourge of beasts, savages and monsters, this weapon is the base of every civilized army."
+	icon_state = "lance"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
+	wlength = WLENGTH_GREAT
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
+	max_blade_int = 100
+	max_integrity = 450//is steel quality
 
 /obj/item/rogueweapon/spear/getonmobprop(tag)
 	. = ..()
@@ -169,7 +191,7 @@
 	max_integrity = 450
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/polearms
-	dropshrink = 0.6
+	dropshrink = 0.75
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 5
@@ -252,7 +274,7 @@
 	max_integrity = 500
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/polearms
-	dropshrink = 0.6
+	dropshrink = 0.75
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 5
@@ -305,7 +327,7 @@
 	associated_skill = /datum/skill/combat/polearms
 	max_blade_int = 300
 	max_integrity = 500
-	dropshrink = 0.6
+	dropshrink = 0.9
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 5
@@ -343,7 +365,7 @@
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
 	name = "copper spear"
-	desc = "A spear of Aasimar design, outdated but still serves it's purpose."
+	desc = "A spear of simple design, outdated and cheaply made but still serves it's purpose."
 	icon_state = "cspear"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -361,7 +383,7 @@
 	minstr = 7
 	smeltresult = /obj/item/ingot/copper
 	associated_skill = /datum/skill/combat/polearms
-	dropshrink = 0.9
+	dropshrink = 0.75
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 4
@@ -377,3 +399,119 @@
 				return list("shrink" = 0.7,"sx" = -7,"sy" = 2,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
 				return list("shrink" = 0.7,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+
+//Bronze Spears
+/obj/item/rogueweapon/spear/bronze
+	force = 15
+	force_wielded = 25
+	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
+	name = "spear"
+	desc = "The Bronze Spears Were used by Antique Aasimar Warriors, this one doesn't have such quality but does the work, use the pointy end for better results."
+	icon_state = "brospear"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
+	wlength = WLENGTH_GREAT
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
+	max_blade_int = 100
+	max_integrity = 380
+	minstr = 8
+	smeltresult = /obj/item/ingot/bronze
+	associated_skill = /datum/skill/combat/polearms
+	dropshrink = 0.6
+	blade_dulling = DULLING_BASHCHOP
+	walking_stick = TRUE
+	wdefense = 4
+	thrown_bclass = BCLASS_STAB
+	throwforce = 25
+	sellprice = 20
+
+/obj/item/rogueweapon/halberd/bardiche/woodcutter
+	slot_flags = ITEM_SLOT_BACK
+	force = 15
+	force_wielded = 20
+	possible_item_intents = list(/datum/intent/axe/cut)
+	name = "iron Woodcutter Axe"
+	desc = "Tool, weapon, loyal iron companion of Woodcutters, able to chop mighty trees and fight back threats of the forest."
+	icon_state = "woodcutter"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	max_blade_int = 200
+	max_integrity = 300
+	smeltresult = /obj/item/ingot/iron
+	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
+	swingsound = BLADEWOOSH_MED
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
+	associated_skill = /datum/skill/combat/axesmaces
+	wdefense = 2
+	dropshrink = 0.95
+	minstr = 8
+	axe_cut = 15
+	sellprice = 20
+/obj/item/rogueweapon/woodchopper/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -7,"sy" = 2,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+//attempting to fix transformation issues//it worked wohoo, don't touch it.
+/obj/item/rogueweapon/halberd/bardiche/warcutter
+	slot_flags = ITEM_SLOT_BACK
+	force = 16
+	force_wielded = 25
+	possible_item_intents = list(/datum/intent/axe/cut)
+	name = "Footman War Axe"
+	desc = "A big Axe with guard, Spike and Pick ideal for any militiaman who wants to have chances against a fancy noble whoreson."
+	icon_state = "warcutter"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	max_blade_int = 200
+	max_integrity = 300
+	smeltresult = /obj/item/ingot/iron
+	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop, /datum/intent/axe/thrust, /datum/intent/pick)
+	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
+	swingsound = BLADEWOOSH_MED
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
+	associated_skill = /datum/skill/combat/axesmaces
+	dropshrink = 0.95
+	minstr = 10
+	wdefense = 5
+	axe_cut = 15
+	sellprice = 20
+
+/datum/intent/axe/thrust
+	name = "Spike"
+	blade_class = BCLASS_STAB
+	attack_verb = list("stabs")
+	animname = "stab"
+	icon_state = "instab"
+	reach = 2
+	chargetime = 1
+	warnie = "mobwarning"
+	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
+	penfactor = 35//isn't the same point and weapon type like a spear 
+	swingdelay = 1
+	misscost = 10
+
+/obj/item/rogueweapon/halberd/bardiche/warcutter/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -7,"sy" = 2,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+

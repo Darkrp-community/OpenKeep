@@ -415,6 +415,37 @@
 	max_integrity = 150
 	sellprice = 20
 
+/obj/item/clothing/head/roguetown/helmet/skullcap/copper
+	name = "Copper skull cap"//used by undead npc's and poor guys
+	desc = "A poor copper helmet. used by barbarians or by militia trainees as a way to keep their skulls protected."
+	icon_state = "coppercap"
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	will_cover = HEAD|HAIR|EARS
+	max_integrity = 100//max for copper armor
+	sellprice = 10
+
+/obj/item/clothing/head/roguetown/helmet/copper
+	name = "Copper Warrior Helmet"//used by undead npc's and antique warriors
+	desc = "An antique design copper helmet. used by ancient warriors before the ages of iron."
+	icon_state = "copperhelmet"
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	will_cover = HEAD|HAIR|EARS
+	max_integrity = 100//max for copper armor
+	sellprice = 10
+
+/obj/item/clothing/head/roguetown/helmet/heavy/bucket/bronze
+	name = "Bronze Warrior helmet"
+	desc = "A simple and effective design. the warriors who used gear like this can only be remembered by the Aasimar."
+	icon_state = "bronzebucket"
+	item_state = "bronzebucket"
+	emote_environment = 3
+	armor = list("melee" = 70, "bullet" = 90, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)//bronze is almost the same as iron but not steel
+	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // Stab immunity as a treat for low FOV
+	block2add = FOV_RIGHT|FOV_LEFT
+	smeltresult = /obj/item/ingot/bronze
+	sellprice = 50
+
 /obj/item/clothing/head/roguetown/helmet/horned
 	name = "horned cap"
 	desc = "A crude horned cap usually worn by brute barbarians to invoke fear unto their enemies."
@@ -437,6 +468,7 @@
 	desc = "A lightweight steel helmet generally worn by crossbowmen and garrison archers."
 	icon_state = "kettle"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	bloody_icon_state = "helmetblood_large"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	will_cover = HEAD|HAIR
@@ -543,6 +575,7 @@
 	icon_state = "knight"
 	item_state = "knight"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	bloody_icon_state = "helmetblood_large"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	adjustable = CAN_CADJUST
@@ -826,6 +859,7 @@
 	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleevetype = null
+	bloody_icon_state = "helmetblood_large"
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	armor_class = ARMOR_CLASS_HEAVY
 	resistance_flags = FIRE_PROOF // These are all metallic
@@ -887,11 +921,12 @@
 	flags_inv = HIDEEARS
 	allowed_race = list("human")
 
-/obj/item/clothing/head/roguetown/helmet/sallet/zybantine
+/obj/item/clothing/head/roguetown/helmet/rare/zybantine
 	name = "zybantine kulah khud"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	icon_state = "iranian"
 	desc = "Known as devil masks amongst the Western Kingdoms, these serve part decorative headpiece, part protective helmet."
+	bloody_icon_state = "helmetblood"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 

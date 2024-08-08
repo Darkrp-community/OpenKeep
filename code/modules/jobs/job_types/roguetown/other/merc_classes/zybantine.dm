@@ -19,7 +19,7 @@
 /datum/outfit/job/roguetown/mercenary/zybantine/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/shalal
-	head = /obj/item/clothing/head/roguetown/helmet/sallet/zybantine
+	head = /obj/item/clothing/head/roguetown/helmet/rare/zybantine
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	belt = /obj/item/storage/belt/rogue/leather/shalal
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates

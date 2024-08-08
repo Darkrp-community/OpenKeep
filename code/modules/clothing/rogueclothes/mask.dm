@@ -161,3 +161,51 @@
 	body_parts_covered = FACE|EARS|EYES|MOUTH|NECK
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	sewrepair = TRUE
+
+/obj/item/clothing/mask/rogue/shepherd/clothmask
+	name = "Cloth mask"
+	icon_state = "clothm"
+	desc = "a simple cloth mask designed to aid in the concealing of bad odors or used in dirty works like mining or gravedigging."
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	body_parts_covered = NECK|MOUTH
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	adjustable = CAN_CADJUST
+	resistance_flags = FLAMMABLE
+	toggle_icon_state = TRUE
+	experimental_onhip = TRUE
+
+/obj/item/clothing/mask/rogue/facemask/copper
+	name = "Copper mask"
+	icon_state = "cmask"
+	desc = "A heavy copper mask that both conceals and protects the face in a poor way."
+	max_integrity = 100
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing
+
+/obj/item/clothing/mask/rogue/facemask/bronze
+	name = "Bronze mask"
+	icon_state = "bmask"
+	desc = "A heavy Bronze mask that both conceals and protects the face."
+	max_integrity = 100
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	armor = list("melee" = 100, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing

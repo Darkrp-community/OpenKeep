@@ -134,8 +134,8 @@
 
 /obj/item/clothing/shoes/roguetown/boots/armor/light
 	name = "light plate boots"
-	icon_state = "vboots"
-	item_state = "vboots"
+	icon_state = "soldierboots"
+	item_state = "soldierboots"
 	desc = "Lightly armored boots made from iron offering protection against both melee and ranged attacks."
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 250

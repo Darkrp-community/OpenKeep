@@ -134,6 +134,18 @@
 	axe_cut = 10
 	sellprice = 20
 
+
+
+/obj/item/rogueweapon/woodcut/war
+	slot_flags = ITEM_SLOT_HIP
+	force = 20
+	force_wielded = 25
+	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	name = "Dwarf axe"
+	desc = "A Dwarf Axe Designed and used by Dwarfs, decorated with runes of Malum and ready to take action against any threat. or tree."
+	icon_state = "dwarfaxe"
+	icon = 'icons/roguetown/weapons/32.dmi'
+
 // Pickaxe-axe ; Technically both a tool and weapon, but it goes here due to weapon function. Subtype of steel axe.
 /obj/item/rogueweapon/woodcut/pick
 	name = "axe"
@@ -178,13 +190,13 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
 
 // Copper Hatchet
-/obj/item/rogueweapon/copperaxe
+/obj/item/rogueweapon/woodcut/copperaxe
 	slot_flags = ITEM_SLOT_HIP
-	force = 15
-	force_wielded = 20
+	force = 12
+	force_wielded = 18
 	possible_item_intents = list(/datum/intent/axe/chop)
 	name = "copper axe"
-	desc = "An Aasimarian designed handaxe, an outdated weaponry from simpler times."
+	desc = "An simple yet effectively designed handaxe, an outdated tool with simple materials."
 	icon_state = "chatchet"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "axe"

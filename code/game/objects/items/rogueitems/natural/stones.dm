@@ -126,3 +126,5 @@
 /obj/item/natural/rock/copper
 	mineralType = /obj/item/rogueore/copper
 
+/obj/item/natural/rock/tin
+	mineralType = /obj/item/rogueore/tin

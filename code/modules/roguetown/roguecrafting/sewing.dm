@@ -81,6 +81,13 @@
 
 /* craftdiff of 1 */
 
+/datum/crafting_recipe/roguetown/sewing/cmask
+	name = "cloth mask"
+	result = list(/obj/item/clothing/mask/rogue/shepherd/clothmask)
+	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 1)
+	craftdiff = 1
+
+
 /datum/crafting_recipe/roguetown/sewing/strawhat
 	name = "straw hat"
 	result = list(/obj/item/clothing/head/roguetown/strawhat)

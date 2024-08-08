@@ -43,6 +43,12 @@
 	smeltresult = /obj/item/ingot/copper
 	sellprice = 2
 
+/obj/item/rogueore/tin
+	name = "raw tin"
+	icon_state = "oretin"
+	smeltresult = /obj/item/ingot/tin
+	sellprice = 2
+
 /obj/item/rogueore/copper/Initialize()
 	icon_state = "orecop[rand(1,3)]"
 	..()
@@ -140,3 +146,17 @@
 	icon_state = "ingotsteel"
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 40
+
+/obj/item/ingot/bronze
+	name = "bronze bar"
+	desc = "A bar of alloyed Bronze."
+	icon_state = "ingotbronze"
+	smeltresult = /obj/item/ingot/bronze
+	sellprice = 20
+
+/obj/item/ingot/tin
+	name = "tin bar"
+	desc = "A bar of tin."
+	icon_state = "ingottin"
+	smeltresult = /obj/item/ingot/tin
+	sellprice = 10

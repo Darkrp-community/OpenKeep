@@ -44,7 +44,7 @@
 						repair_percent = 0
 				else
 					repair_percent = max(user.mind.get_skill_level(I.anvilrepair) * 0.03, 0.01)
-			
+
 			if(I.obj_integrity < I.max_integrity) // Gain experience only if you effectively repair the item
 				if(repair_percent)
 					repair_percent = repair_percent * I.max_integrity
@@ -182,3 +182,19 @@
 				return list("shrink" = 0.6,"sx" = -9,"sy" = 1,"nx" = 12,"ny" = 1,"wx" = -8,"wy" = 1,"ex" = 6,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+
+/obj/item/rogueweapon/hammer/copper
+	force = 8
+	possible_item_intents = list(/datum/intent/mace/strike,/datum/intent/mace/smash)
+	name = "copper hammer"
+	desc = "a simple and rough copper hammer"
+	icon_state = "cammer"
+	icon = 'icons/roguetown/weapons/tools.dmi'
+	sharpness = IS_BLUNT
+	//dropshrink = 0.8
+	wlength = 10
+	slot_flags = ITEM_SLOT_HIP
+	w_class = WEIGHT_CLASS_NORMAL
+	associated_skill = /datum/skill/combat/axesmaces
+	smeltresult = /obj/item/ingot/copper

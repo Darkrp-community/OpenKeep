@@ -2,6 +2,7 @@
 	force = 10
 	force_wielded = 15
 	possible_item_intents = list(MACE_STRIKE)
+	slot_flags = ITEM_SLOT_BACK
 	gripped_intents = list(MACE_STRIKE,/datum/intent/flailthresh)
 	name = "thresher"
 	desc = ""
@@ -83,7 +84,7 @@
 	max_blade_int = 50
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/knives
-	
+
 
 /obj/item/rogueweapon/sickle/attack_turf(turf/T, mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -109,6 +110,7 @@
 	force_wielded = 15
 	possible_item_intents = list(/datum/intent/pick)
 	gripped_intents = list(/datum/intent/pick,SPEAR_BASH,TILL_INTENT)
+	slot_flags = ITEM_SLOT_BACK
 	name = "hoe"
 	desc = ""
 	icon_state = "hoe"
@@ -193,6 +195,7 @@
 	force_wielded = 20
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH)
 	gripped_intents = list(SPEAR_BASH,SPEAR_THRUST,DUMP_INTENT)
+	slot_flags = ITEM_SLOT_BACK
 	name = "pitchfork"
 	desc = ""
 	icon_state = "pitchfork"
@@ -265,6 +268,91 @@
 /obj/item/rogueweapon/pitchfork/update_icon()
 	if(forked.len)
 		icon_state = "pitchforkstuff"
+	else
+		icon_state = initial(icon_state)
+	..()
+
+
+//COPPER AND BRONZE
+/obj/item/rogueweapon/pitchfork/copper
+
+	force = 7
+	force_wielded = 14
+	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH)
+	gripped_intents = list(SPEAR_BASH,SPEAR_THRUST,DUMP_INTENT)
+	slot_flags = ITEM_SLOT_BACK
+	name = "Copper Fork"
+	desc = "A simple and Rustic copper tool to work on the fields, a poor weapon in emergency too..."
+	icon_state = "cfork"
+	item_state = "cfork"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	wlength = WLENGTH_LONG
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = null
+	blade_dulling = DULLING_BASHCHOP
+	walking_stick = TRUE
+	minstr = 6
+	wdefense = 2
+	dropshrink = 0.8
+	wlength = 66
+	var/list/forked/copper = list()
+	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
+	smeltresult = /obj/item/ingot/copper
+	associated_skill = /datum/skill/combat/polearms
+	thrown_bclass = BCLASS_STAB
+	throwforce = 25
+
+/obj/item/rogueweapon/pitchfork/copper/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -7,"sy" = 0,"nx" = 8,"ny" = 0,"wx" = -5,"wy" = 0,"ex" = 0,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 3,"sy" = -4,"nx" = 3,"ny" = -3,"wx" = -4,"wy" = -4,"ex" = 2,"ey" = -4,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 45,"sturn" = 135,"wturn" = -45,"eturn" = 45,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/datum/intent/pforkdump
+	name = "scoop"
+	icon_state = "inscoop"
+	chargetime = 0
+	noaa = TRUE
+	candodge = FALSE
+	misscost = 0
+	no_attack = TRUE
+
+/obj/item/rogueweapon/pitchfork/afterattack(obj/target, mob/user, proximity)
+	if((!proximity) || (!wielded))
+		return ..()
+	testing("fuck")
+	if(isopenturf(target))
+		if(forked.len)
+			for(var/obj/item/I in forked)
+				I.forceMove(target)
+				forked -= I
+			to_chat(user, "<span class='warning'>I dump the stalks.</span>")
+		update_icon()
+		return
+	..()
+
+/obj/item/rogueweapon/pitchfork/ungrip(mob/living/carbon/user, show_message = TRUE)
+	if(forked.len)
+		var/turf/T = get_turf(user)
+		for(var/obj/item/I in forked)
+			I.forceMove(T)
+			forked -= I
+		update_icon()
+	..()
+
+/obj/item/rogueweapon/pitchfork/update_icon()
+	if(forked.len)
+		icon_state = "cfork1"
 	else
 		icon_state = initial(icon_state)
 	..()

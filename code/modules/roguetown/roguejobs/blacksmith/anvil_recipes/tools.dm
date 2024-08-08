@@ -2,6 +2,12 @@
 	i_type = "Utilities"
 	craftdiff = 1
 
+/datum/anvil_recipe/tools/lampterncopper
+	name = "Copper Lamptern"
+	recipe_name = "a Lamptern"
+	req_bar = /obj/item/ingot/copper
+	created_item = /obj/item/flashlight/flare/torch/lantern/copper
+
 /datum/anvil_recipe/tools/blankeys
 	name = "Blank Key x5"
 	recipe_name = "five Blank Keys"
@@ -92,6 +98,14 @@
 	created_item = /obj/item/rogueweapon/hammer
 	i_type = "Tools"
 
+/datum/anvil_recipe/tools/hammer/copper
+	name = "Copper Hammer (+s)"
+	recipe_name = "a Copper Work Hammer"
+	req_bar = /obj/item/ingot/copper
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/hammer/copper
+	i_type = "Tools"
+
 /datum/anvil_recipe/tools/hoe
 	name = "Hoe (+2s)"
 	recipe_name = "a gardening Hoe"
@@ -133,6 +147,31 @@
 	created_item = /obj/item/rogueweapon/pick
 	i_type = "Tools"
 
+/datum/anvil_recipe/tools/pick/copper
+	name = "Copper Pick (+s)"
+	recipe_name = "a digging Pick"
+	req_bar = /obj/item/ingot/copper
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/pick/copper
+	i_type = "Tools"
+
+/datum/anvil_recipe/tools/pick/steel
+	name = "Steel Pick (+s)"
+	recipe_name = "a steel digging Pick"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/pick/steel
+	i_type = "Tools"
+
+/datum/anvil_recipe/tools/pick/bronze
+	name = "Bronze Pick (+s)"
+	recipe_name = "a bronze digging Pick"
+	req_bar = /obj/item/ingot/bronze
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/pick/bronze
+	i_type = "Tools"
+
+
 /datum/anvil_recipe/tools/pitchfork
 	name = "Pitchfork (+2s)"
 	recipe_name = "a Pitchfork"
@@ -140,6 +179,15 @@
 	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/pitchfork
 	i_type = "Tools"
+
+/datum/anvil_recipe/tools/pitchfork/copper
+	name = "Copper Fork (+2s)"
+	recipe_name = "a copper fork"
+	req_bar = /obj/item/ingot/copper
+	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/pitchfork/copper
+	i_type = "Tools"
+
 
 /datum/anvil_recipe/tools/sewingneedle
 	name = "Sewing Needles x3"

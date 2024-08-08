@@ -691,7 +691,7 @@
 	wdefense = 5
 	wbalance = 1
 
-// Copper Messer
+// COPPER AND BRONZE WEAPONS
 
 /obj/item/rogueweapon/sword/coppermesser
 	force = 15 // Messers are heavy weapons, crude and STR based.
@@ -731,3 +731,91 @@
 				return list("shrink" = 0.6,"sx" = 3,"sy" = 4,"nx" = -1,"ny" = 4,"wx" = -8,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/sword/copper
+	name = "Copper sword"
+	desc = "A simple Copper sword, rustic design with a tested edge, sharp and lethal."
+	icon_state = "csword"
+	minstr = 6
+	force = 12 // shitty copper tier. lower than steel daggers and ready to be used by very poor people and skeletons or undead zombies
+	force_wielded = 16
+	smeltresult = /obj/item/ingot/copper
+	max_blade_int = 100
+	max_integrity = 220
+	sellprice = 10
+
+/obj/item/rogueweapon/sword/bronze
+	name = "Bronze sword"
+	desc = "A simple Bronze sword, Ancient design with a tested edge, sharp and lethal on the God-War era, if it were an Aasimar design, this one still does the job."
+	icon_state = "bsword"
+	minstr = 6
+	force = 14 // bronze tier. same as steel daggers and ready to be used by very poor warriors and skeletons or undead zombies
+	force_wielded = 20
+	smeltresult = /obj/item/ingot/bronze
+	max_blade_int = 190
+	max_integrity = 290
+	sellprice = 20
+
+/obj/item/rogueweapon/sword/long/rider/copper
+	force = 11
+	force_wielded = 23 // Shitty Design, Shitty materials, SHITTY WEAPON 
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
+	icon_state = "copperfalx"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	item_state = "copperfalx"
+	name = "Copper Falx"
+	desc = "An Special 'sword' Of copper, the material isn't the best but is good enough to slash and kill. "
+	parrysound = "bladedmedium"
+	swingsound = BLADEWOOSH_LARGE
+	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
+	bigboy = 1
+	max_blade_int = 150 // Shitty Weapon
+	max_integrity = 230//this is fair to be fair
+	wlength = WLENGTH_LONG
+	gripsprite = TRUE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	associated_skill = /datum/skill/combat/swords
+	throwforce = 15
+	thrown_bclass = BCLASS_CUT
+	slot_flags = ITEM_SLOT_BACK//how the fuck you could put this thing on your hip?
+	dropshrink = 0.75
+	smeltresult = /obj/item/ingot/copper
+	sellprice = 25//lets make the two bars worth it 
+	
+
+
+
+
+/obj/item/rogueweapon/sword/long/marlin/bronze
+	force = 15
+	force_wielded = 25 // this one is actually fair since is 2 bars, same as iron zwei
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/thrust, /datum/intent/sword/strike, /datum/intent/longsword/chop)
+	icon_state = "bgreatsor"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	item_state = "bgreatsor"
+	name = "Bronze Long Sword"
+	desc = "An Elaborated Long Sword of Bronze, a rarity on this era except for The Aasimars who are too familiar with them."
+	parrysound = "bladedmedium"
+	swingsound = BLADEWOOSH_LARGE
+	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
+	bigboy = 1
+	max_blade_int = 140 // not a bad Weapon
+	max_integrity = 200//this is fair to be fair in this fair code
+	wlength = WLENGTH_LONG
+	gripsprite = TRUE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	associated_skill = /datum/skill/combat/swords
+	throwforce = 15
+	thrown_bclass = BCLASS_CUT
+	slot_flags = ITEM_SLOT_BACK//how the fuck you could put this thing on your hip?
+	dropshrink = 0.75
+	smeltresult = /obj/item/ingot/bronze
+	sellprice = 35//lets make the two bars worth it 

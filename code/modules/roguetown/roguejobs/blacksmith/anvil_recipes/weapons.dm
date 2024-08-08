@@ -16,16 +16,16 @@
 // COPPER TIER - TODO: Move these to redsmithing in future
 
 /datum/anvil_recipe/weapons/caxe
-	name = "Axe (2)"
+	name = "Copper Axe (+s)"
 	recipe_name = "an Axe"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
-	additional_items = list(/obj/item/ingot/copper)
-	created_item = /obj/item/rogueweapon/copperaxe
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/woodcut/copperaxe
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cbludgeon
-	name = "Bludgeon (+s)"
+	name = "Copper Bludgeon (+s)"
 	recipe_name = "a Bludgeon"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
@@ -34,8 +34,8 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cdagger
-	name = "Dagger x2"
-	recipe_name = "a couple Daggers"
+	name = "Copper Dagger x2"
+	recipe_name = "a couple Copper Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/rogueweapon/knife/copperdagger
@@ -43,18 +43,18 @@
 	createditem_num = 1
 	craftdiff = 0
 
-/datum/anvil_recipe/weapons/cmace
-	name = "Mace (2)"
-	recipe_name = "a Mace"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/copper
-	additional_items = list(/obj/item/ingot/copper)
-	created_item = (/obj/item/rogueweapon/mace/coppermace)
-	craftdiff = 0
+///datum/anvil_recipe/weapons/cmace removing this one for balance reasons, is hard to balance 2 maces so the copper bludgeon is the one that keeps on the world
+//	name = "Copper Mace (2)"
+//	recipe_name = "a Mace"
+//	appro_skill = /datum/skill/craft/weaponsmithing
+//	req_bar = /obj/item/ingot/copper
+//	additional_items = list(/obj/item/ingot/copper)
+//	created_item = (/obj/item/rogueweapon/mace/coppermace)
+//	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cmesser
-	name = "Messer (+1s)"
-	recipe_name = "a Messer"
+	name = "Copper Messer (+1s)"
+	recipe_name = "a rustic Messer"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/stick)
@@ -62,15 +62,44 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cspears
-	name = "Spear x2 (+4s)"
+	name = "Copper Spear x2 (+1w)"
 	recipe_name = "two Spears"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
-	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
+	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/copperspear
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 0
+
+/datum/anvil_recipe/weapons/gcopper
+	name = "Copper Warclub (2) + (1w)"
+	recipe_name = "A Copper Warclub"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/copper
+	additional_items = list(/obj/item/ingot/copper,/obj/item/grown/log/tree/small)
+	created_item = (/obj/item/rogueweapon/mace/goden/copper)
+	craftdiff = 2
+
+/datum/anvil_recipe/weapons/swordcopper
+	name = "Copper Sword"
+	recipe_name = "a Sword"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/copper
+	created_item = /obj/item/rogueweapon/sword/copper
+
+/datum/anvil_recipe/weapons/falxcopper
+	name = "Copper Falx (2)"
+	recipe_name = "a rustic Falx"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/copper
+	additional_items = list(/obj/item/ingot/copper)
+	created_item = /obj/item/rogueweapon/sword/long/rider/copper
+
+// BRONZE GEAR - middle tier, what the ancient enemies, Aasimar roles, what poor Smiths with lack of iron and steel may use 
+
+
+
 
 
 // IRON GEAR - Middle Tier, what most disgusting Men at Arms have
@@ -94,6 +123,30 @@
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/woodcut
+
+/datum/anvil_recipe/weapons/ironhammer
+	name = "iron sledgehammer (+s)"
+	recipe_name = "an sledgehammer"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/mace/smithy
+
+/datum/anvil_recipe/weapons/woodcutter_iron
+	name = "Woodcutter Axe (+w)"
+	recipe_name = "an big Axe"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/small)
+	created_item = /obj/item/rogueweapon/halberd/bardiche/woodcutter
+
+/datum/anvil_recipe/weapons/footmancutter
+	name = "Warchopper Axe (2) (+w)"
+	recipe_name = "an big war Axe"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
+	created_item = /obj/item/rogueweapon/halberd/bardiche/warcutter
 
 /datum/anvil_recipe/weapons/bardiche
 	name = "Bardiche (2) (+w)"
@@ -199,6 +252,16 @@
 
 // STEEL GEAR - Fancy shit for Knights
 
+/datum/anvil_recipe/weapons/spear_steel
+	name = "Steel Lance x2 (+w)"
+	recipe_name = "a couple Lances"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/grown/log/tree/small)
+	created_item = /obj/item/rogueweapon/spear/steel
+	createmultiple = TRUE
+	createditem_num = 1
+
 /datum/anvil_recipe/weapons/axe_steel
 	name = "Axe (+s)"
 	recipe_name = "an Axe"
@@ -215,6 +278,15 @@
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/rogueweapon/battle
+	craftdiff = 3
+
+/datum/anvil_recipe/weapons/steelwarhammer
+	name = "Steel Warhammer (2)"
+	recipe_name = "a Warhammer"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/rogueweapon/mace/smithywar
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/billhook
