@@ -1,4 +1,4 @@
-/datum/advclass/noble
+/datum/advclass/pilgrim/noble
 	name = "Noble"
 	tutorial = "You are a noble, from some place far away, trying to visit the nobility of the area \
 	you are encouraged to make your own story. But with wealth, come the poor, ready to pilfer you \
