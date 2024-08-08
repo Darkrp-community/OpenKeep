@@ -978,3 +978,5 @@
 	body_parts_covered = HEAD|EARS|HAIR
 	flags_inv = HIDEEARS
 	allowed_race = list("aasimar")
+	blocksound = PLATEHIT
+	bloody_icon_state = null

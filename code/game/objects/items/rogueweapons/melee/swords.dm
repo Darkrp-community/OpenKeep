@@ -747,6 +747,7 @@
 	pixel_y = -16
 	pixel_x = -16
 	dropshrink = 0.75
+	bigboy = 1 // WHY DOES THIS FUCKING VARIABLE CONTROL WHETHER THE BLOOD OVERLAY WORKS ON 64x64 WEAPONS
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	smeltresult = null // No bronze ingots yet
 	max_blade_int = 300

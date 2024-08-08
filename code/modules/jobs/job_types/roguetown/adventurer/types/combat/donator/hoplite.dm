@@ -5,9 +5,9 @@
 	allowed_races = list("Aasimar")
 	outfit = /datum/outfit/job/roguetown/adventurer/hoplite
 	maximum_possible_slots = 1
-	pickprob = 10 // Very, very rare and limited to one
+	pickprob = 100 // Very, very rare and limited to one
 	category_tags = list(CTAG_ADVENTURER)
-	min_pq = 5 // It's a pretty powerful class. Given bladesinger requires pq of 2, this seems reasonable
+	min_pq = 0 // It's a pretty powerful class. Given bladesinger requires pq of 2, this seems reasonable
 
 
 /datum/outfit/job/roguetown/adventurer/hoplite/pre_equip(mob/living/carbon/human/H)
