@@ -59,4 +59,4 @@
 		H.change_stat("intelligence", 3)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	H.verbs |= /mob/living/carbon/human/proc/faith_test
+	H.verbs |= /mob/living/carbon/human/proc/torture_victim

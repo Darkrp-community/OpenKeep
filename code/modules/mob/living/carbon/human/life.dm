@@ -56,12 +56,11 @@
 						var/datum/game_mode/chaosmode/C = SSticker.mode
 						if(istype(C))
 							if(mind)
-								if(!mind.antag_datums || !mind.antag_datums.len)
-									allmig_reward++
-									to_chat(src, "<span class='danger'>Nights Survived: \Roman[allmig_reward]</span>")
-									if(C.allmig)
-										if(allmig_reward > 3)
-											adjust_triumphs(1)
+								allmig_reward++
+								to_chat(src, "<span class='danger'>Nights Survived: \Roman[allmig_reward]</span>")
+								if(C.allmig)
+									if(allmig_reward > 3)
+										adjust_triumphs(1)
 					if(has_status_effect(/datum/status_effect/debuff/trainsleep))
 						remove_status_effect(/datum/status_effect/debuff/trainsleep)
 			if(leprosy == 1)
