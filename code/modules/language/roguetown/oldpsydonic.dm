@@ -1,5 +1,5 @@
-/datum/language/highimperial
-	name = "High Imperial"
+/datum/language/oldpsydonic
+	name = "Old Psydonic"
 	desc = ""
 	speech_verb = "states"
 	ask_verb = "questions"
@@ -9,7 +9,7 @@
 	space_chance = 55
 	default_priority = 80
 	icon_state = "asse"
-	spans = list(SPAN_HIGHIMPERIAL)
+	spans = list(SPAN_OLDPSYDONIC)
 	syllables = list(
 "ja",
 "ne",
