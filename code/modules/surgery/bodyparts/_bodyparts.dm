@@ -86,6 +86,9 @@
 	var/fingers = TRUE
 	var/is_prosthetic = FALSE
 
+	/// Visual features of the bodypart, such as hair and accessories
+	var/list/bodypart_features
+
 	resistance_flags = FLAMMABLE
 
 /obj/item/bodypart/grabbedintents(mob/living/user, precise)

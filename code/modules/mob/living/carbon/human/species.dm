@@ -122,6 +122,29 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	// value for replacing skin tone/origin term
 	var/alt_origin
 
+	/// List of bodypart features of this species
+	var/list/bodypart_features
+
+	/// List of descriptor choices this species gets in preferences customization
+	var/list/descriptor_choices = list(
+		/datum/descriptor_choice/height,
+		/datum/descriptor_choice/body,
+		/datum/descriptor_choice/stature,
+		/datum/descriptor_choice/face,
+		/datum/descriptor_choice/face_exp,
+		/datum/descriptor_choice/skin,
+		/datum/descriptor_choice/voice,
+		/datum/descriptor_choice/prominent_one,
+		/datum/descriptor_choice/prominent_two,
+		/datum/descriptor_choice/prominent_three,
+		/datum/descriptor_choice/prominent_four,
+	)
+
+	var/list/languages = list(/datum/language/common)
+
+	/// List of organ customizers for preferences to customize organs.
+	var/list/customizers
+
 ///////////
 // PROCS //
 ///////////
@@ -593,6 +616,19 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	soundpack_f = new soundpack_f()
 
 	C.add_movespeed_modifier(MOVESPEED_ID_SPECIES, TRUE, 100, override=TRUE, multiplicative_slowdown=speedmod, movetypes=(~FLYING))
+
+	C.remove_all_bodypart_features()
+	for(var/bodypart_feature_type in bodypart_features)
+		var/datum/bodypart_feature/feature = new bodypart_feature_type()
+		if(!is_bodypart_feature_slot_allowed(C, feature.feature_slot))
+			continue
+		C.add_bodypart_feature(feature)
+	if(pref_load)
+		pref_load.apply_customizers_to_character(C)
+		pref_load.apply_descriptors(C)
+	
+	for(var/language_type in languages)
+		C.grant_language(language_type)
 
 	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src, old_species)
 

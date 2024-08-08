@@ -13,12 +13,13 @@
 
 
 //Human Overlays Indexes/////////
-#define MUTATIONS_LAYER			47		//mutations. Tk headglows, cold resistance glow, etc
-#define CLOAK_BEHIND_LAYER		46
-#define HANDS_BEHIND_LAYER		45
-#define BELT_BEHIND_LAYER		44
-#define BACK_BEHIND_LAYER		43
-#define BODY_BEHIND_LAYER		42		//certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define MUTATIONS_LAYER			48		//mutations. Tk headglows, cold resistance glow, etc
+#define CLOAK_BEHIND_LAYER		47
+#define HANDS_BEHIND_LAYER		46
+#define BELT_BEHIND_LAYER		45
+#define BACK_BEHIND_LAYER		44
+#define BODY_BEHIND_LAYER		43		//certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define BODY_UNDER_LAYER		42		// Things under the bodyparts but above the "behind body" layer
 #define BODYPARTS_LAYER			41		//Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
 #define BODY_ADJ_LAYER			40		//certain mutantrace features (snout, body markings) that must appear above the body parts
 #define BODY_LAYER				39		//underwear, undershirts, socks, eyes, lips(makeup)
