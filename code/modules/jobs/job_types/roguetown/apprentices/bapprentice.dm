@@ -19,9 +19,14 @@
 /datum/outfit/job/roguetown/bapprentice/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1,2), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, pick(1,2), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, pick(1,2), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 	if(H.gender == MALE)
@@ -33,6 +38,8 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
 		backr = /obj/item/storage/backpack/rogue/satchel
 		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+		H.change_stat("endurance", 2)
+		H.change_stat("speed", 1)
 	else
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
@@ -41,3 +48,5 @@
 		beltr = /obj/item/roguekey/blacksmith
 		cloak = /obj/item/clothing/cloak/apron/brown
 		backr = /obj/item/storage/backpack/rogue/satchel
+		H.change_stat("endurance", 2)
+		H.change_stat("speed", 1)
