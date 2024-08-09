@@ -25,6 +25,7 @@
 	min_pq = -4
 	selection_color = "#920909"
 
+	cmode_music = 'sound/music/combat_guard.ogg'
 
 /datum/job/roguetown/royalguard/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

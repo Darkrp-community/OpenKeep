@@ -12,7 +12,7 @@
 			var/mutable_appearance/mounted = mutable_appearance(icon, "saiga_mounted", 4.3)
 			add_overlay(mounted)
 
-/mob/living/simple_animal/hostile/retaliate/rogue/saiga/tamed()
+/mob/living/simple_animal/hostile/retaliate/rogue/saiga/tamed(mob/user)
 	..()
 	deaggroprob = 30
 	if(can_buckle)
@@ -241,7 +241,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/Initialize()
 	..()
 	if(tame)
-		tamed()
+		tamed(owner)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/taunted(mob/user)
 	emote("aggro")
@@ -250,7 +250,7 @@
 	return
 
 
-/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tamed()
+/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tamed(mob/user)
 	..()
 	deaggroprob = 20
 	if(can_buckle)

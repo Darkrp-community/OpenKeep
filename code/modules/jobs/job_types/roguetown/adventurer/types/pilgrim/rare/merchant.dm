@@ -10,7 +10,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/merchant
-	category_tags = (CTAG_PILGRIM)
+	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 2
 
 

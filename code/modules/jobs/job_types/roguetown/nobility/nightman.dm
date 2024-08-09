@@ -16,7 +16,7 @@
 		"Aasimar"
 	)
 
-	tutorial = "You are renting out the bath-house in a joint operation with the barkeep. Providing security for the bathwenches and helping them find work, or a troublemaking rake that the others hate to tolerate."
+	tutorial = "You are renting out the bath-house in a joint operation with the Innkeep. Providing security for the bathwenches and helping them find work, or a troublemaking rake that the others hate to tolerate."
 
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/niteman

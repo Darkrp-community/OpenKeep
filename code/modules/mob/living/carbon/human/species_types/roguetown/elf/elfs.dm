@@ -33,6 +33,7 @@
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	hairyness = "t1"
 	mutant_bodyparts = list("ears")
+	mutanteyes = /obj/item/organ/eyes/elf/less
 	use_f = TRUE
 	soundpack_m = /datum/voicepack/male/elf
 	soundpack_f = /datum/voicepack/female/elf
@@ -94,7 +95,7 @@
 	"brown - grain" = "58433b",
 	"brown - soil" = "48322a",
 
-	"red - berry" = "48322a",
+	"red - berry" = "b23434",
 	"red - wine" = "82534c",
 	"red - sunset" = "82462b",
 	"red - blood" = "822b2b",
