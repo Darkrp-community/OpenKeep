@@ -1157,7 +1157,6 @@
 				var/mob/living/carbon/human/H = owner
 				if(H.virginity)
 					H.on_virgin_loss()
-			var/husbando
 			if(fucking && !fucking.cmode)
 				var/yee
 				if(ishuman(owner) && ishuman(fucking))
@@ -1177,7 +1176,6 @@
 								SSticker.cuckers += "[H.real_name] (with [F.real_name])"
 					if(H.marriedto == F.real_name)
 						yee = 1
-						husbando = 1
 						C.add_stress(/datum/stressevent/cumlove)
 					if(HAS_TRAIT(F, TRAIT_GOODLOVER))
 						if(!H.mob_timers["cumtri"])
