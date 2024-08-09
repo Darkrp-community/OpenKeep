@@ -8,7 +8,7 @@
 	maximum_possible_slots = 1
 	pickprob = 15
 	category_tags = list(CTAG_ADVENTURER)
-	min_pq = 30
+	min_pq = 15
 
 /datum/outfit/job/roguetown/adventurer/puritan
 	allowed_patrons = ALL_CLERIC_PATRONS		//Placeholder; decide what Gods they should really be worshiping.

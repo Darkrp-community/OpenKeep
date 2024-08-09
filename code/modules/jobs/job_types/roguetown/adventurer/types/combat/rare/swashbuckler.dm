@@ -14,7 +14,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/swashbuckler
 	maximum_possible_slots = 1
-	min_pq = 30
+	min_pq = 15
 	category_tags = list(CTAG_ADVENTURER)
 
 	/datum/outfit/job/roguetown/adventurer/swashbuckler/pre_equip((mob/living/carbon/human/H))
