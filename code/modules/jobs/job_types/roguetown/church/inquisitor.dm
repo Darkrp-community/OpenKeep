@@ -78,6 +78,9 @@
 		H.change_stat("perception", 2)
 		H.change_stat("speed", 2)
 		H.change_stat("endurance", 1)
+		if(!H.has_language(/datum/language/oldpsydonic))
+			H.grant_language(/datum/language/oldpsydonic)
+			to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 		if(H.mind.has_antag_datum(/datum/antagonist))
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
