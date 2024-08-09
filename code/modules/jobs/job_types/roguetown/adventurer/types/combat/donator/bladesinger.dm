@@ -7,11 +7,10 @@
 		"Dark Elf"
 	)
 	maximum_possible_slots = 1
-	min_pq = 0
 	pickprob = 15
 	outfit = /datum/outfit/job/roguetown/adventurer/bladesinger
 	category_tags = list(CTAG_ADVENTURER)
-
+	min_pq = 2
 
 /datum/outfit/job/roguetown/adventurer/bladesinger/pre_equip(mob/living/carbon/human/H)
 	..()
