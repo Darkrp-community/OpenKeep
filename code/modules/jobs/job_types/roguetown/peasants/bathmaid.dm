@@ -39,6 +39,9 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, pick(1,2,3,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/music, pick(1,2), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(1,2), TRUE)
 	if(H.gender == MALE)
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
