@@ -270,11 +270,11 @@
 	. = 1
 
 /datum/reagent/consumable/tea
-	name = "Tea"
-	description = "Tasty black tea, it has antioxidants, it's good for you!"
+	name = "Westleach Tea"
+	description = "Tart westleach tea, a drink best served to snooty nobles!"
 	color = "#101000" // rgb: 16, 16, 0
 	nutriment_factor = 0
-	taste_description = "tart black tea"
+	taste_description = "earthy tea"
 	glass_icon_state = "teaglass"
 	glass_name = "glass of tea"
 	glass_desc = ""
