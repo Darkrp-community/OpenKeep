@@ -462,13 +462,16 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	will_cover = HEAD|HAIR
-
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	
 /obj/item/clothing/head/roguetown/helmet/kettle
 	name = "kettle helmet"
 	desc = "A lightweight steel helmet generally worn by crossbowmen and garrison archers."
 	icon_state = "kettle"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
-	bloody_icon_state = "helmetblood_large"
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	will_cover = HEAD|HAIR
@@ -575,7 +578,8 @@
 	icon_state = "knight"
 	item_state = "knight"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
-	bloody_icon_state = "helmetblood_large"
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	adjustable = CAN_CADJUST
@@ -863,7 +867,6 @@
 	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleevetype = null
-	bloody_icon_state = "helmetblood_large"
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	armor_class = ARMOR_CLASS_HEAVY
 	resistance_flags = FIRE_PROOF // These are all metallic
@@ -903,6 +906,8 @@
 /obj/item/clothing/head/roguetown/rare/grenzelplate
 	icon_state = "human_swordhead"
 	item_state = "human_swordhead"
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "grenzelhoftian chicklet sallet"
 	desc = "A Grenzelhoftian chicklet sallet, decorated with a plume of valor. \
@@ -920,6 +925,8 @@
 	desc = "The Zybantu Kataphractoe are the ancestral guardians of the first Despot, \
 			their helms designed in the fashion of the capital's majestic sky-piercing tower \
 			where the old God-King resided."
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 	allowed_sex = list(MALE)
 	body_parts_covered = HEAD|EARS|HAIR
 	flags_inv = HIDEEARS
@@ -929,8 +936,9 @@
 	name = "zybantine kulah khud"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	icon_state = "iranian"
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 	desc = "Known as devil masks amongst the Western Kingdoms, these serve part decorative headpiece, part protective helmet."
-	bloody_icon_state = "helmetblood"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 
@@ -954,6 +962,8 @@
 	desc = "To protect me from the maggets and creechers I treat."
 	icon_state = "headcage"
 	icon_state = "headcage"
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES

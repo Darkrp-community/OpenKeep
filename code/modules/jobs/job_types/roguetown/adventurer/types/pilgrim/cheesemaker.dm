@@ -37,6 +37,7 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	beltr = /obj/item/cooking/pan
 	beltl = /obj/item/flint
+	mouth = /obj/item/rogueweapon/huntingknife/villager
 	backpack_contents = list(/obj/item/reagent_containers/powder/salt = 1,/obj/item/reagent_containers/food/snacks/rogue/cheese=1,/obj/item/reagent_containers/food/snacks/rogue/cheddar=1)
 	H.change_stat("intelligence", 1)
 	H.change_stat("constitution", 4) // Cheese diet.

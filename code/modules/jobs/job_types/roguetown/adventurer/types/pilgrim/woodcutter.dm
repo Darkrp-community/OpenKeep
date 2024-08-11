@@ -30,12 +30,13 @@
 	pants = /obj/item/clothing/under/roguetown/trou
 	head = /obj/item/clothing/head/roguetown/roguehood
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	backr = /obj/item/storage/backpack/rogue/satchel
+	backr = /obj/item/storage/backpack/rogue/
+	backl =/obj/item/rogueweapon/halberd/bardiche/woodcutter//they get a new two handed axe with bonus against trees now! (1 hit less to chop)
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/workervest
-	beltr = /obj/item/rogueweapon/woodcut
-	beltl = /obj/item/rogueweapon/huntingknife
+	beltr = /obj/item/rogueweapon/woodcut//good woodcutters carry a replacement, but not totally sure, balance guys will have fun discussing this
+	beltl = /obj/item/rogueweapon/huntingknife/villager
 	backpack_contents = list(/obj/item/flint = 1)
 	H.change_stat("strength", 2)
 	H.change_stat("constitution", 1)

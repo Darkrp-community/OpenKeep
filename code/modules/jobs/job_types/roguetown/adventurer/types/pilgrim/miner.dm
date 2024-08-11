@@ -25,7 +25,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/rogueweapon/pick
-	beltr = /obj/item/rogueweapon/huntingknife
+	beltr = /obj/item/rogueweapon/huntingknife/villager
 	backr = /obj/item/rogueweapon/shovel
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/flashlight/flare/torch/lantern)

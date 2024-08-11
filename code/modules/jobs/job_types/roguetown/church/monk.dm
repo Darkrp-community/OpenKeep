@@ -33,6 +33,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/roguekey/church
+	mouth = /obj/item/rogueweapon/huntingknife/villager
 	switch(A.name)
 		if("Astrata")
 			head = /obj/item/clothing/head/roguetown/roguehood/astrata

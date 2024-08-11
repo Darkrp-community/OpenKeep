@@ -26,7 +26,7 @@
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	cloak = /obj/item/clothing/cloak/apron/brown
 	pants = /obj/item/clothing/under/roguetown/trou
-
+	mouth = /obj/item/rogueweapon/huntingknife/villager//somewhere it has to go and the peasant code gave me the perfect place.
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueore/coal=1, /obj/item/rogueore/iron=1)
 

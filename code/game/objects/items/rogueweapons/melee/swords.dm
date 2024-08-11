@@ -819,3 +819,28 @@
 	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/bronze
 	sellprice = 35//lets make the two bars worth it 
+
+// Hoplite Kophesh
+/obj/item/rogueweapon/sword/khopesh
+	name = "ancient khopesh"
+	desc = "A bronze weapon of war from the era of Apotheosis. This blade is older than a few elven generations, but has been very well-maintained and still keeps a good edge."
+	force = 22 // Unique weapon from rare job, slightly more force than most one-handers
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop, /datum/intent/sword/strike)
+	gripped_intents = null
+	icon = 'icons/roguetown/weapons/64.dmi'
+	icon_state = "khopesh"
+	item_state = "khopesh"
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	pixel_y = -16
+	pixel_x = -16
+	dropshrink = 0.75
+	bigboy = 1 // WHY DOES THIS FUCKING VARIABLE CONTROL WHETHER THE BLOOD OVERLAY WORKS ON 64x64 WEAPONS
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
+	smeltresult = /obj/item/ingot/bronze // No bronze ingots yet//added
+	max_blade_int = 300
+	max_integrity = 300
+	minstr = 10 // Even though it's technically one-handed, you gotta have some muscle to wield this thing
+	wdefense = 3 // Lower than average sword defense (meant to pair with a shield)
+	wbalance = -1 // Likely weighted towards the blade, for deep cuts and chops
+	sellprice = 200 // A noble collector would love to get his/her hands on one of these blades
