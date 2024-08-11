@@ -122,6 +122,7 @@ h1.alert, h2.alert	{color: #c9c1ba;font-family: Pterra, TrueType;}
 
 .human					{font-family: "Honoka Mincho", Pterra;}
 .elf					{font-family: "Dauphin", cursive, Pterra;}
+.oldpsydonic			{font-family: "Breitkopf Fraktur", Pterra; font-size: 120%;}
 .dwarf					{font-family: "MasonAlternate", Pterra;}
 .sandspeak				{font-family: "Arabolical", Pterra;}
 .delf					{font-family: "Dauphin", Pterra;}
