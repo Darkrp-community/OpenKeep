@@ -44,6 +44,7 @@
 		if((B.mob_biotypes & MOB_UNDEAD))
 			continue
 		B.aggressive = 0
+		B.tamed(user)
 
 /obj/effect/proc_holder/spell/targeted/conjure_glowshroom
 	name = "Fungal Illumination"
