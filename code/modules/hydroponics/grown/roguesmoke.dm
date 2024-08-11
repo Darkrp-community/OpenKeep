@@ -69,6 +69,8 @@
 	list_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = 15 MINUTES
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/tea
 
 /obj/item/seeds/pipeweed
 	name = "seeds"
