@@ -10,6 +10,8 @@
 	category_tags = list(CTAG_MERCENARY)
 	maximum_possible_slots = 5
 
+	cmode_music = 'sound/music/combat_grenzelhoft.ogg'
+
 /datum/outfit/job/roguetown/mercenary/grenzelhoft/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
@@ -44,6 +46,9 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/greatsword/zwei
 	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)
+	if(!H.has_language(/datum/language/oldpsydonic))
+		H.grant_language(/datum/language/oldpsydonic)
+		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 
 	H.change_stat("strength", 2) // They need this to roll at least min STR for the Zwei.
 	H.change_stat("endurance", 1)

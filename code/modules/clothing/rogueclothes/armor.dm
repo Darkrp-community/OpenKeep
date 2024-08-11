@@ -530,9 +530,9 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
 	name = "orc mail"
-	icon_state = "marauder_armor_item"
+	icon_state = "marauder_armor"
 	item_state = "marauder_armor"
-	icon = 'icons/roguetown/mob/monster/orc.dmi'
+	icon = 'icons/roguetown/clothing/armor.dmi'
 	smeltresult = /obj/item/ingot/iron
 	allowed_race = list("orc")
 	armor = list("melee" = 70, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -545,8 +545,8 @@
 obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	name = "Orc Marauder Chain Vest"
 	icon_state = "orc_chainvest"
-	item_state = "orc_chainvest_item"
-	icon = 'icons/roguetown/mob/monster/Orc.dmi'
+	item_state = "orc_chainvest"
+	icon = 'icons/roguetown/clothing/armor.dmi'
 	smeltresult = /obj/item/ingot/iron
 	allowed_race = list("orc")
 	armor = list("melee" = 25, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)

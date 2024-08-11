@@ -23,6 +23,8 @@
 	)
 	allowed_sexes = list(MALE, FEMALE)
 
+	cmode_music = 'sound/music/combat_physician.ogg'
+
 /datum/outfit/job/roguetown/feldsher/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE

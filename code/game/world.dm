@@ -154,6 +154,7 @@ GLOBAL_VAR(restart_counter)
 	GLOB.world_qdel_log = "[GLOB.log_directory]/qdel.log"
 	GLOB.world_map_error_log = "[GLOB.log_directory]/map_errors.log"
 	GLOB.character_list_log = "[GLOB.log_directory]/character_list.log"
+	GLOB.hunted_log = "[GLOB.log_directory]/hunted.log"
 	GLOB.world_runtime_log = "[GLOB.log_directory]/runtime.log"
 	GLOB.query_debug_log = "[GLOB.log_directory]/query_debug.log"
 	GLOB.world_job_debug_log = "[GLOB.log_directory]/job_debug.log"
@@ -175,6 +176,7 @@ GLOBAL_VAR(restart_counter)
 	start_log(GLOB.world_job_debug_log)
 	start_log(GLOB.tgui_log)
 	start_log(GLOB.character_list_log)
+	start_log(GLOB.hunted_log)
 
 	GLOB.changelog_hash = md5('html/changelog.html') //for telling if the changelog has changed recently
 	if(fexists(GLOB.config_error_log))
@@ -307,8 +309,9 @@ GLOBAL_VAR(restart_counter)
 	var/s = ""
 	s += "<center><a href=\"https://discord.gg/stonekeep\">"
 #ifdef MATURESERVER
-	s += "<big><b>STONEKEEP (18+) (MRP-HRP)</b></big></a><br>"
-	s += "<b>Immersive Dark Medieval Fantasy Roleplay<b><br>"
+	s += "<big><b>STONEKEEP (18+) (Immersive RP)</b></big></a><br>"
+	s += "<b>Dark Medieval Fantasy Roleplay<b><br>"
+	s += "<b>New Map: Dun Manor<b><br>"
 	s += "<b>Whitelist Enabled: discord.gg/stonekeep</b></center><br>"
 	//s += "<b>Powerbottoms Welcome</b><br>"
 #else

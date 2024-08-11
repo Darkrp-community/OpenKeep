@@ -58,6 +58,9 @@
 	.  = ..()
 	if(!mapped)
 		START_PROCESSING(SSobj, src)
+	else
+		if(prob(rand(0,1)))
+			new /obj/item/bottlemessage/ancient(src.loc)
 	water_overlay = new(src)
 	water_top_overlay = new(src)
 	update_icon()
@@ -137,11 +140,10 @@
 			if(water_level == 2)
 				L.SoakMob(BELOW_CHEST)
 		if(water_overlay)
-			if(water_level > 1)
-				if(istype(oldLoc, type))
-					playsound(AM, pick('sound/foley/watermove (1).ogg','sound/foley/watermove (2).ogg'), 100, FALSE)
-				else
-					playsound(AM, 'sound/foley/waterenter.ogg', 100, FALSE)
+			if(water_level > 1 && !istype(oldLoc, type))
+				playsound(AM, 'sound/foley/waterenter.ogg', 100, FALSE)
+			else
+				playsound(AM, pick('sound/foley/watermove (1).ogg','sound/foley/watermove (2).ogg'), 100, FALSE)
 			if(istype(oldLoc, type) && (get_dir(src, oldLoc) != SOUTH))
 				water_overlay.layer = ABOVE_MOB_LAYER
 				water_overlay.plane = GAME_PLANE_UPPER
