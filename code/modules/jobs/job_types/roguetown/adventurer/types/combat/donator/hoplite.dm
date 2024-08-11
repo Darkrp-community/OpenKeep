@@ -5,9 +5,9 @@
 	allowed_races = list("Aasimar")
 	outfit = /datum/outfit/job/roguetown/adventurer/hoplite
 	maximum_possible_slots = 1
-	pickprob = 100 // Very, very rare and limited to one
+	pickprob = 10 // Very, very rare and limited to one
 	category_tags = list(CTAG_ADVENTURER)
-	min_pq = 0
+	min_pq = 2 // Same as Bladesinger
 
 
 /datum/outfit/job/roguetown/adventurer/hoplite/pre_equip(mob/living/carbon/human/H)
