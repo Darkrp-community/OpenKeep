@@ -32,8 +32,8 @@
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
-	name = "iron Sledgehammer"
-	desc = "A heavy iron Hammer, a tool used by workers."
+	name = "iron sledgehammer"
+	desc = "A heavy iron hammer, a tool used by workers."
 	icon_state = "sledge"
 	smeltresult = /obj/item/ingot/iron
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -60,8 +60,8 @@
 	force_wielded = 30
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/mace/thrust)
-	name = "Steel Warhammer"
-	desc = "A heavy Steel warhammer, a weapon designed to make knights run in fear, the best option for a common soldier against a knight."
+	name = "steel warhammer"
+	desc = "A heavy steel warhammer, a weapon designed to make knights run in fear, the best option for a common soldier against a knight."
 	icon_state = "bonkhammer"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "bonkhammer"
@@ -463,8 +463,8 @@
 	force_wielded = 20
 	possible_item_intents = list(/datum/intent/mace/heavy/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/mace/thrust)
-	name = "Copper warclub"
-	desc = "A two handed club, decorated with a crown of spikes. A Barbaric Design good enough to be used as weapon."
+	name = "copper warclub"
+	desc = "A two handed club, decorated with a crown of spikes. A Barbaric Design. good enough to be used as weapon."
 	icon_state = "coppergoden"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	//dropshrink = 0.75
@@ -494,7 +494,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
 	name = "bronze mace"
-	desc = "An extremely crude bronze weapon for crude battles, this isn't an Aasimar Weapon Design, yet does the work of killing armored opponents easier."
+	desc = "An extremely crude bronze weapon for crude battles, this isn't an Aasimar weapon design. yet does the work of killing armored opponents easier."
 	icon_state = "bmace"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "mace_greyscale"

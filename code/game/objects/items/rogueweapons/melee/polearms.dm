@@ -143,7 +143,7 @@
 	force_wielded = 25
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
-	name = "Steel Lance"
+	name = "steel lance"
 	desc = "A scourge of beasts, savages and monsters, this weapon is the base of every civilized army."
 	icon_state = "lance"
 	icon = 'icons/roguetown/weapons/64.dmi'
@@ -407,7 +407,7 @@
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
 	name = "spear"
-	desc = "The Bronze Spears Were used by Antique Aasimar Warriors, this one doesn't have such quality but does the work, use the pointy end for better results."
+	desc = "The bronze Spears Were used by antique Aasimar warriors, this one doesn't have such quality but does the work, use the pointy end for better results."
 	icon_state = "brospear"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -438,8 +438,8 @@
 	force = 15
 	force_wielded = 20
 	possible_item_intents = list(/datum/intent/axe/cut)
-	name = "iron Woodcutter Axe"
-	desc = "Tool, weapon, loyal iron companion of Woodcutters, able to chop mighty trees and fight back threats of the forest."
+	name = "woodcutter axe"
+	desc = "Tool, weapon, loyal iron companion of Woodcutters. able to chop mighty trees and fight back threats of the forest."
 	icon_state = "woodcutter"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	max_blade_int = 200
@@ -472,8 +472,8 @@
 	force = 16
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut)
-	name = "Footman War Axe"
-	desc = "A big Axe with guard, Spike and Pick ideal for any militiaman who wants to have chances against a fancy noble whoreson."
+	name = "Footman War Axe."
+	desc = "A big armored Axe, Spike and Pick ideal for any militiaman who wants to have a chance against a fancy noble whoreson."
 	icon_state = "warcutter"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	max_blade_int = 200

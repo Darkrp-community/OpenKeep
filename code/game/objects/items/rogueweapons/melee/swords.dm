@@ -733,8 +733,8 @@
 				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogueweapon/sword/copper
-	name = "Copper sword"
-	desc = "A simple Copper sword, rustic design with a tested edge, sharp and lethal."
+	name = "copper sword"
+	desc = "A simple copper sword, rustic design with a tested edge, sharp and lethal."
 	icon_state = "csword"
 	minstr = 6
 	force = 12 // shitty copper tier. lower than steel daggers and ready to be used by very poor people and skeletons or undead zombies
@@ -745,8 +745,8 @@
 	sellprice = 10
 
 /obj/item/rogueweapon/sword/bronze
-	name = "Bronze sword"
-	desc = "A simple Bronze sword, Ancient design with a tested edge, sharp and lethal on the God-War era, if it were an Aasimar design, this one still does the job."
+	name = "bronze sword"
+	desc = "A simple bronze sword, ancient design with a tested edge, sharp and lethal on the God-War era, if it were an Aasimar design, this one still does the job."
 	icon_state = "bsword"
 	minstr = 6
 	force = 14 // bronze tier. same as steel daggers and ready to be used by very poor warriors and skeletons or undead zombies
@@ -764,8 +764,8 @@
 	icon_state = "copperfalx"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "copperfalx"
-	name = "Copper Falx"
-	desc = "An Special 'sword' Of copper, the material isn't the best but is good enough to slash and kill. "
+	name = "Copper Falx."
+	desc = "A special 'sword' Of copper, the material isn't the best but is good enough to slash and kill. "
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -798,8 +798,8 @@
 	icon_state = "bgreatsor"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "bgreatsor"
-	name = "Bronze Long Sword"
-	desc = "An Elaborated Long Sword of Bronze, a rarity on this era except for The Aasimars who are too familiar with them."
+	name = "Bronze Long Sword."
+	desc = "An elaborated long Sword of bronze, a rarity on this era except for the Aasimars who are too familiar with them."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
