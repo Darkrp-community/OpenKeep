@@ -41,11 +41,11 @@
 	backr = /obj/item/storage/backpack/rogue/satchel	// lack of satchel requires dealing with the merchant to correct, which requires entering town; not ideal. N.
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 5, TRUE) // for torture
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE) // for executions w/ an axe
+		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE) // for torture
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE) // for executions w/ an axe
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE) // for executions w/ the big sword
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE) // for executions w/ the big sword
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE) // Allow reading notes passed to the literate noble prisoner, or writing reports. N. See peasants\prisoner.dm.
