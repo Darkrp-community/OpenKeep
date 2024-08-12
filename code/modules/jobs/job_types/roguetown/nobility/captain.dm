@@ -41,14 +41,14 @@
 	pants = /obj/item/clothing/under/roguetown/platelegs
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/captain
 	neck = /obj/item/clothing/neck/roguetown/gorget
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
-	shoes = /obj/item/clothing/shoes/roguetown/boots
+	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 	backr = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/rogueweapon/sword/sabre
-	beltr = /obj/item/rogueweapon/mace/cudgel
+	beltr = /obj/item/keyring/captain = 1
 	cloak = /obj/item/clothing/cloak/cape/guard
-	backpack_contents = list(/obj/item/keyring/captain = 1, /obj/item/signal_horn = 1)
+	backpack_contents = list(/obj/item/signal_horn = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
