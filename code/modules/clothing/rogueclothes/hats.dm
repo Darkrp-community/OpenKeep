@@ -118,6 +118,8 @@
 	flags_inv = HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
 	dynamic_hair_suffix = ""
 	resistance_flags = FIRE_PROOF // Made of metal
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/priestmask
 	name = "solar visage"
@@ -345,6 +347,8 @@
 	sellprice = 77
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/reqhat
 	name = "serpent crown"
@@ -431,6 +435,8 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	will_cover = HEAD|HAIR
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/helmet/kettle
 	name = "kettle helmet"
@@ -751,6 +757,8 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	resistance_flags = FLAMMABLE
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/wizhat/gen
 	icon_state = "wizardhatgen"
@@ -829,6 +837,7 @@
 	resistance_flags = FIRE_PROOF // These are all metallic
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST, BCLASS_BITE)
 	anvilrepair = /datum/skill/craft/armorsmithing
+	blocksound = PLATEHIT
 
 /obj/item/clothing/head/roguetown/rare/elfplate
 	icon_state = "elfhead"
@@ -839,6 +848,8 @@
 	body_parts_covered = HEAD|HAIR|NOSE
 	allowed_race = list("elf", "half-elf", "dark elf")
 	armor_class = ARMOR_CLASS_MEDIUM
+	bloody_icon = 'icons/effects/blood32x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/rare/elfplate/welfplate
 	name = "elvish plate helmet"
@@ -859,6 +870,8 @@
 	flags_inv = HIDEEARS
 	experimental_onhip = FALSE
 	allowed_race = list("dwarf")
+	bloody_icon = 'icons/effects/blood32x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/rare/grenzelplate
 	icon_state = "human_swordhead"
@@ -871,6 +884,8 @@
 	body_parts_covered = HEAD|EARS|HAIR
 	flags_inv = HIDEEARS
 	allowed_race = list("human")
+	bloody_icon = 'icons/effects/blood32x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/rare/zybanplate
 	icon_state = "human_spearhead"
@@ -884,6 +899,8 @@
 	body_parts_covered = HEAD|EARS|HAIR
 	flags_inv = HIDEEARS
 	allowed_race = list("human")
+	bloody_icon = 'icons/effects/blood32x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/helmet/sallet/zybantine
 	name = "zybantine kulah khud"
@@ -892,6 +909,8 @@
 	desc = "Known as devil masks amongst the Western Kingdoms, these serve part decorative headpiece, part protective helmet."
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/roguehood/feld
 	name = "feldsher's hood"
@@ -916,6 +935,8 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/crown/circlet
 	name = "golden circlet"
@@ -982,6 +1003,5 @@
 	body_parts_covered = HEAD|EARS|HAIR
 	flags_inv = HIDEEARS
 	allowed_race = list("aasimar")
-	blocksound = PLATEHIT
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
