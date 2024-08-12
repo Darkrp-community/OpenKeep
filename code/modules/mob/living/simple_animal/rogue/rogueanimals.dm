@@ -229,7 +229,7 @@
 	retreat_distance = initial(retreat_distance)
 	minimum_distance = initial(minimum_distance)
 
-/mob/living/simple_animal/hostile/retaliate/rogue/tamed()
+/mob/living/simple_animal/hostile/retaliate/rogue/tamed(mob/user)
 	del_on_deaggro = 0
 	aggressive = 0
 	if(enemies.len)
