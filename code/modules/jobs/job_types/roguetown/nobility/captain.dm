@@ -46,7 +46,7 @@
 	backr = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/rogueweapon/sword/sabre
-	beltr = /obj/item/keyring/captain = 1
+	beltr = /obj/item/keyring/captain
 	cloak = /obj/item/clothing/cloak/cape/guard
 	backpack_contents = list(/obj/item/signal_horn = 1)
 	if(H.mind)
