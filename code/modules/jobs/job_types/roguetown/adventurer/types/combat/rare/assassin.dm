@@ -27,7 +27,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 5)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
