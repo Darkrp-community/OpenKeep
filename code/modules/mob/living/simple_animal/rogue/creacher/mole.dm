@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/mole
 	icon = 'icons/roguetown/mob/monster/mole.dmi'
 	name = "lesser brown mole"
-	desc = "Usually lurking underground, these creachers can rarely grow to impossible sizes and come to the surface to satiate a strange, newfound hunger for flesh."
+	desc = "Usually lurking underground, they sometimes grow to impossible sizes and come to the surface to satiate a strange, newfound hunger for flesh."
 	icon_state = "mole"
 	icon_living = "mole"
 	icon_dead = "mole_dead"

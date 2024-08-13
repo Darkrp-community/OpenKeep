@@ -34,7 +34,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga
 	icon = 'icons/roguetown/mob/monster/saiga.dmi'
 	name = "saiga"
-	desc = "A hooved beast, ubiquitous among humen and elven history. Used for working, warmounts, and symbols of status. Especially sacred to the steppe people of the Northeast Regions."
+	desc = "Proud beasts of burden, warmounts, and symbols of luxury alike. Especially sacred to the steppe people of the Northeast Regions."
 	icon_state = "saiga"
 	icon_living = "saiga"
 	icon_dead = "saiga_dead"

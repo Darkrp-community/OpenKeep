@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf
 	icon = 'icons/roguetown/mob/monster/vol.dmi'
 	name = "volf"
-	desc = "A fur-covered beast known to prey on livestock. Though usually content to avoid settlements unless hungry, something in the wilds of Engima turns volves into vicious, men-eating beasts."
+	desc = "Usually content to leave menfolk alone if well-fed, but something in the wilds of Enigma turns them hungry, persistent, and vicious."
 	icon_state = "vv"
 	icon_living = "vv"
 	icon_dead = "vvd"

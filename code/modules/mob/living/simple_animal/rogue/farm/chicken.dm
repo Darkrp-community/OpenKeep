@@ -1,7 +1,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/chicken
 	name = "\improper chicken"
-	desc = "A domesticated bird known for its ability to produce eggs, or 'cackleberries'."
+	desc = "A fat and mostly flightless bird. They produce eggs, or 'cackleberries'."
 	gender = FEMALE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	icon_state = "chicken_brown"
