@@ -306,6 +306,7 @@
 
 obj/structure/closet/proc/trypicklock(obj/item/I, mob/user)
 	if(opened)
+		to_chat(user, "<span class='warning'>This cannot be picked while it is open.</span>")
 		return
 	if(!keylock)
 		to_chat(user, "<span class='warning'>There's no lock on this.</span>")
