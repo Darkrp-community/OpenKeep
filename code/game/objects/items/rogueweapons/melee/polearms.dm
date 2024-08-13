@@ -377,3 +377,21 @@
 				return list("shrink" = 0.7,"sx" = -7,"sy" = 2,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
 				return list("shrink" = 0.7,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+
+/obj/item/rogueweapon/spear/hoplite
+	force = 20 // Unique weapon from rare job, less unwieldy if used with one hand
+	force_wielded = 25
+	name = "ancient spear"
+	desc = "A humble spear with a bronze head, a rare survivor from the battles long past that nearly destroyed Grimoria."
+	icon_state = "bronzespear"
+	max_blade_int = 300
+	max_integrity = 300
+	smeltresult = null // No bronze ingots yet, unfortunately
+	sellprice = 120 // A noble collector would love to get his/her hands on one of these spears
+
+/obj/item/rogueweapon/spear/hoplite/winged // Winged version has +1 weapon defence and sells for a bit more, but is identical otherwise
+	name = "ancient winged spear"
+	desc = "A spear with a winged bronze head, a rare survivor from the battles long past that nearly destroyed Grimoria."
+	icon_state = "bronzespear_winged"
+	wdefense = 5
+	sellprice = 150 // A noble collector would love to get his/her hands on one of these spears
