@@ -149,6 +149,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 // PROCS //
 ///////////
 
+/datum/species/proc/is_bodypart_feature_slot_allowed(mob/living/carbon/human/human, feature_slot)
+	switch(feature_slot)
+		if(BODYPART_FEATURE_FACIAL_HAIR)
+			return (human.gender == MALE)
+	return TRUE
 
 /datum/species/New()
 
