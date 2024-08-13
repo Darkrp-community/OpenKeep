@@ -38,7 +38,7 @@
 			continue
 		if(isliving(A))
 			var/mob/living/M = A
-			if(faction_check_mob(M) && attack_same || !faction_check_mob(M))
+			if(faction_check_mob(M) && attack_same || !faction_check_mob(M) && owner != M)
 				enemies |= M
 
 	for(var/mob/living/simple_animal/hostile/retaliate/H in around)

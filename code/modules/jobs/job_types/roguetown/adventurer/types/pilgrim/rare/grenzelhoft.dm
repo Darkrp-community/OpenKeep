@@ -10,6 +10,7 @@
 	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 1
 
+	cmode_music = 'sound/music/combat_grenzelhoft.ogg'
 
 /datum/outfit/job/roguetown/adventurer/grenzelhoft/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -43,6 +44,9 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		if(!H.has_language(/datum/language/oldpsydonic))
+			H.grant_language(/datum/language/oldpsydonic)
+			to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 2)
 		ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
