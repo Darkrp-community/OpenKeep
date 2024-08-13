@@ -1,6 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/troll
 	icon = 'icons/roguetown/mob/monster/trolls.dmi'
-	name = "Troll"
+	name = "troll"
+	desc = "A hulking monster, known to lurk in deep forests. Elven legends say they were servants of Dendor tasked to guard his realm, but nowadays are sometimes found in the company of orcs."
 	icon_state = "Troll2"
 	icon_living = "Troll2"
 	icon_dead = "Troll2d"
