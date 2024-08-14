@@ -446,6 +446,12 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<br>"
 				dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
 				dat += "<br>"
+				dat += "<br><b>Features:</b> <a href='?_src_=prefs;preference=customizers;task=menu'>Change</a>"
+				dat += "<br>"
+				dat += "<br><b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
+				dat += "<br>"
+				dat += "<br><b>Descriptors:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
+				dat += "<br>"
 				if(HAIR in pref_species.species_traits)
 					dat += "<b>Hairstyle:</b> <a href='?_src_=prefs;preference=hairstyle;task=input'>[hairstyle]</a>"
 					dat += "<br>"
@@ -1535,6 +1541,16 @@ Slots: [job.spawn_positions]</span>
 	else if(href_list["preference"] == "playerquality")
 		check_pq_menu(user.ckey)
 
+	else if(href_list["preference"] == "markings")
+		ShowMarkings(user)
+		return
+	else if(href_list["preference"] == "descriptors")
+		show_descriptors_ui(user)
+		return
+
+	else if(href_list["preference"] == "customizers")
+		ShowCustomizers(user)
+		return
 	else if(href_list["preference"] == "triumph_buy_menu")
 		SStriumphs.startup_triumphs_menu(user.client)
 
@@ -1616,6 +1632,20 @@ Slots: [job.spawn_positions]</span>
 		return TRUE
 
 	switch(href_list["task"])
+		if("change_customizer")
+			handle_customizer_topic(user, href_list)
+			ShowChoices(user)
+			ShowCustomizers(user)
+			return
+		if("change_marking")
+			handle_body_markings_topic(user, href_list)
+			ShowChoices(user)
+			ShowMarkings(user)
+			return
+		if("change_descriptor")
+			handle_descriptors_topic(user, href_list)
+			show_descriptors_ui(user)
+			return
 		if("random")
 			switch(href_list["preference"])
 				if("name")

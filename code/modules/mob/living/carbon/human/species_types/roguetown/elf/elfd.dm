@@ -51,6 +51,16 @@
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
+
 /datum/species/elf/dark/get_span_language(datum/language/message_language)
 	if(!message_language)
 		return
