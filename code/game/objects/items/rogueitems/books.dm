@@ -619,3 +619,10 @@ ____________End of Example*/
 	desc = "An old tome, authored by Father Ambrose of Grenzelhoft."
 	bookfile = "PsyBible.json"
 	random_cover = TRUE
+
+/obj/item/book/rogue/manners
+	name = "Manners of Gentlemen"
+	desc = "A popular guide for young people of genteel birth."
+	icon_state ="basic_book_0"
+	base_icon_state = "basic_book"
+	bookfile = "manners.json"
