@@ -275,14 +275,13 @@
 
 //COPPER AND BRONZE
 /obj/item/rogueweapon/pitchfork/copper
-
 	force = 7
 	force_wielded = 14
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH)
 	gripped_intents = list(SPEAR_BASH,SPEAR_THRUST,DUMP_INTENT)
 	slot_flags = ITEM_SLOT_BACK
-	name = "Copper Fork"
-	desc = "A simple and Rustic copper tool to work on the fields, a poor weapon in emergency too..."
+	name = "copper fork"
+	desc = "A simple and rustic copper tool to work on the fields, a poor weapon in emergency too..."
 	icon_state = "cfork"
 	item_state = "cfork"
 	icon = 'icons/roguetown/weapons/64.dmi'

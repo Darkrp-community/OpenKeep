@@ -22,7 +22,7 @@
 	sewrepair = FALSE
 
 /obj/item/clothing/wrists/roguetown/bracers/copper
-	name = "Copper Bracers"
+	name = "copper bracers"
 	desc = "Copper forearm guards that offer some protection while they look stylish."
 	body_parts_covered = ARMS
 	icon_state = "copperarm"
@@ -35,7 +35,7 @@
 	sewrepair = FALSE
 
 /obj/item/clothing/wrists/roguetown/bracers/bronze
-	name = "Bronze Armbraces"
+	name = "bronze armbraces"
 	desc = "Bronze forearm guards, simple yet effective and used since ancient times."
 	body_parts_covered = ARMS
 	icon_state = "bronzearm"

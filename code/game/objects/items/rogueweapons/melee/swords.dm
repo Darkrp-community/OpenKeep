@@ -764,8 +764,8 @@
 	icon_state = "copperfalx"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "copperfalx"
-	name = "Copper Falx."
-	desc = "A special 'sword' Of copper, the material isn't the best but is good enough to slash and kill. "
+	name = "copper falx."
+	desc = "A special 'sword' of copper, the material isn't the best but is good enough to slash and kill. "
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -798,8 +798,8 @@
 	icon_state = "bgreatsor"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "bgreatsor"
-	name = "Bronze Long Sword."
-	desc = "An elaborated long Sword of bronze, a rarity on this era except for the Aasimars who are too familiar with them."
+	name = "bronze long sword."
+	desc = "An elaborated long sword of bronze, a rarity on this era except for the Aasimars who are too familiar with them."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'

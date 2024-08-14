@@ -149,7 +149,7 @@
 
 /obj/item/ingot/bronze
 	name = "bronze bar"
-	desc = "A bar of alloyed Bronze."
+	desc = "A bar of alloyed bronze."
 	icon_state = "ingotbronze"
 	smeltresult = /obj/item/ingot/bronze
 	sellprice = 20

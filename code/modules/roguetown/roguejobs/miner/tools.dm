@@ -26,7 +26,7 @@
 	force = 7
 	possible_item_intents = list(/datum/intent/pick)
 	name = "copper pick"
-	desc = "a primitive and rustic pickaxe, good enough to work the stone"
+	desc = "A primitive and rustic pickaxe, good enough to work the stone."
 	icon_state = "cpick"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT
@@ -49,8 +49,8 @@
 /obj/item/rogueweapon/pick/steel
 	force = 15
 	possible_item_intents = list(/datum/intent/pick)
-	name = "Steel pick"
-	desc = "An Elaborated Pickaxe of quality, its a great tool to obtain ores and break stones, including break metal armors"
+	name = "steel pick"
+	desc = "An elaborated Pickaxe of quality, it's a great tool to obtain ores and break stones, including break metal armors."
 	icon_state = "steelpick"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT
@@ -73,8 +73,8 @@
 /obj/item/rogueweapon/pick/bronze
 	force = 10
 	possible_item_intents = list(/datum/intent/pick)
-	name = "Bronze pick"
-	desc = "An Elaborated Pickaxe, its a tool to obtain ores and break stones"
+	name = "bronze pick"
+	desc = "An elaborated Pickaxe, it's a tool to obtain ores and break stones."
 	icon_state = "bropick"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT

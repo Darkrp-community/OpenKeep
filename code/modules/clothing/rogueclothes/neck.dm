@@ -30,7 +30,7 @@
 
 /obj/item/clothing/neck/roguetown/coif/cloth
 	name = "Padded coif"
-	desc = "A simple coif made of Cloth, not that good as armor itself but mostly useful to Soften a blow or to keep your head and neck warm."
+	desc = "A simple coif made of cloth, not that good as armor itself but mostly useful to soften a blow or to keep your head and neck warm."
 	icon_state = "ccoif"
 	item_state = "ccoif"
 	flags_inv = HIDEEARS|HIDEHAIR
@@ -143,16 +143,16 @@
 	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/neck/roguetown/gorget/copper
-	name = "Copper Gorget"
+	name = "copper gorget"
 	icon_state = "copperneck"
-	desc = "An Antique and Simple Protection for the neck, is used more as an accesory by the peasant folk, yet is a poor protection is better than nothing."
+	desc = "An antique and simple Protection for the neck, is used more as an accessory by the peasant folk, a poor protection is better than nothing."
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 100
 
 /obj/item/clothing/neck/roguetown/gorget/bronze
-	name = "Bronze Gorget"
+	name = "bronze gorget"
 	icon_state = "bronzeneck"
-	desc = "An Ancient Neck protection, simple and solid for ancient warriors, now is used as an luxury accesory while keeps his protection."
+	desc = "An ancient Neck protection, simple and solid for ancient warriors, now is used as an luxury accesory while keeps his protection."
 	flags_inv = HIDEFACIALHAIR
 	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 150

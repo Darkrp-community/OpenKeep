@@ -464,7 +464,7 @@
 	possible_item_intents = list(/datum/intent/mace/heavy/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/mace/thrust)
 	name = "copper warclub"
-	desc = "A two handed club, decorated with a crown of spikes. A Barbaric Design. good enough to be used as weapon."
+	desc = "A two handed club, decorated with a crown of spikes. a barbaric besign, good enough to be used as weapon."
 	icon_state = "coppergoden"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	//dropshrink = 0.75
@@ -494,7 +494,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
 	name = "bronze mace"
-	desc = "An extremely crude bronze weapon for crude battles, this isn't an Aasimar weapon design. yet does the work of killing armored opponents easier."
+	desc = "An extremely crude bronze weapon for crude battles, this isn't an Aasimar weapon design, yet does the work of killing armored opponents easier."
 	icon_state = "bmace"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "mace_greyscale"
@@ -521,8 +521,8 @@
 	force_wielded = 28
 	possible_item_intents = list(/datum/intent/mace/heavy/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/mace/thrust)
-	name = "Bronze warclub"
-	desc = "A two handed club, decorated with a Spiked sharpened flange head. An Antique Design good enough to continue being used as a weapon against armored enemies."
+	name = "bronze warclub"
+	desc = "A two handed club, decorated with a spiked sharpened flange head. an antique design good enough to continue being used as a weapon against armored enemies."
 	icon_state = "bigbronze"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	//dropshrink = 0.75

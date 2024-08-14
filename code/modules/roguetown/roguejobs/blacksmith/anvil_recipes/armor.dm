@@ -24,8 +24,8 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/skullcopper
-	name = "Copper Skullcap x2"
-	recipe_name = "a pair of Copper Skullcaps"
+	name = "Copper skullcap x2"
+	recipe_name = "a pair of Copper skullcaps"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/clothing/head/roguetown/helmet/skullcap/copper
 	createmultiple = TRUE
@@ -42,7 +42,7 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/copperchest
-	name = "Copper Heart Protector (2)"
+	name = "Copper heart protector (2)"
 	recipe_name = "a very simple armor piece for the chest"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/clothing/suit/roguetown/armor/plate/half/copperchest

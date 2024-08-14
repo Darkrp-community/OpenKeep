@@ -4,7 +4,7 @@
 
 /datum/anvil_recipe/tools/lampterncopper
 	name = "Copper Lamptern"
-	recipe_name = "a Lamptern"
+	recipe_name = "A Lamptern"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/flashlight/flare/torch/lantern/copper
 
@@ -100,7 +100,7 @@
 
 /datum/anvil_recipe/tools/hammer/copper
 	name = "Copper Hammer (+s)"
-	recipe_name = "a Copper Work Hammer"
+	recipe_name = "A copper Work Hammer"
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/hammer/copper

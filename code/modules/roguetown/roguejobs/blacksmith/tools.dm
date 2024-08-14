@@ -188,7 +188,7 @@
 	force = 8
 	possible_item_intents = list(/datum/intent/mace/strike,/datum/intent/mace/smash)
 	name = "copper hammer"
-	desc = "a simple and rough copper hammer"
+	desc = "A simple and rough copper hammer."
 	icon_state = "cammer"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT
