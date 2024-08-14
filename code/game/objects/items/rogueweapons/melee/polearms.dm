@@ -439,7 +439,7 @@
 	force_wielded = 20
 	possible_item_intents = list(/datum/intent/axe/cut)
 	name = "woodcutter axe"
-	desc = "Tool, weapon, loyal iron companion of woodcutters. able to chop mighty trees and fight back threats of the forest."
+	desc = "The tool, weapon, and loyal companion of woodcutters. Able to chop mighty trees and repel the threats of the forest."
 	icon_state = "woodcutter"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	max_blade_int = 200
@@ -473,7 +473,7 @@
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut)
 	name = "footman war axe."
-	desc = "A big armored axe, spike and pick ideal for any militiaman who wants to have a chance against a fancy noble whoreson."
+	desc = "An enormous spiked axe. The ideal choice for a militiaman wanting to cut a fancy noble whoreson down to size."
 	icon_state = "warcutter"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	max_blade_int = 200
