@@ -23,6 +23,13 @@
 		H.change_stat("endurance", 2)
 		H.change_stat("constitution", 2)
 		H.change_stat("speed", -1)
+		var/prev_real_name = H.real_name
+		var/prev_name = H.name
+		var/honorary = "Retter"
+		if(H.gender == FEMALE)
+			honorary = "Retterin"
+		H.real_name = "[honorary] [prev_real_name]"
+		H.name = "[honorary] [prev_name]"
 
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	backr = /obj/item/rogueweapon/greatsword/flamberge
@@ -41,3 +48,4 @@
 		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	H.patron = GLOB.patronlist[/datum/patron/forgotten] // SCREAM IF YOU LOVE THE FORGOTTEN GOD
