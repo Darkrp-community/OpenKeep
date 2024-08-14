@@ -132,6 +132,7 @@
 	created_item = /obj/item/lockpick
 	createmultiple = TRUE
 	createditem_num = 2
+	craftdiff = 2
 
 /datum/anvil_recipe/tools/lockpickring
 	name = "Lockpickrings x3"
