@@ -3,15 +3,48 @@
 	craftdiff = 1
 	i_type = "Weapons"
 
-// SILVER - Just the dagger
+// SILVER - Harder to craft, does less damage and has less durability than steel, but banes undead.
 
 /datum/anvil_recipe/weapons/daggersil
-	name = "Dagger"
-	recipe_name = "a Dagger"
+	name = "Silver Dagger"
+	recipe_name = "a Silver Dagger"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/silver
 	created_item = /obj/item/rogueweapon/huntingknife/idagger/silver
+	craftdiff = 2
+
+/datum/anvil_recipe/weapons/sword_silver
+	name = "Silver Sword"
+	recipe_name = "a Silver Sword"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/silver
+	created_item = /obj/item/rogueweapon/sword/silver
 	craftdiff = 3
+
+/datum/anvil_recipe/weapons/shortsword_silver
+	name = "Silver Shortsword"
+	recipe_name = "a Silver Short Sword"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/silver
+	created_item = /obj/item/rogueweapon/sword/short/silver
+	craftdiff = 2
+
+/datum/anvil_recipe/weapons/rapier_silver
+	name = "Silver Rapier"
+	recipe_name = "a Silver Rapier"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/silver
+	created_item = /obj/item/rogueweapon/sword/rapier/silver
+	craftdiff = 3
+
+/datum/anvil_recipe/weapons/forgotten
+	name = "Forgotten Blade (2)"
+	recipe_name = "a Forgotten Blade"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/silver
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/rogueweapon/sword/long/forgotten
+	craftdiff = 4
 
 // COPPER TIER - TODO: Move these to redsmithing in future
 
