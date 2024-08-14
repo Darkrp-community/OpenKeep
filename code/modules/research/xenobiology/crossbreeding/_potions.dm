@@ -66,6 +66,40 @@ Slimecrossing Potions
 		C.gain_trauma(/datum/brain_trauma/severe/pacifism, TRAUMA_RESILIENCE_SURGERY)
 	qdel(src)
 
+//Love potion - Charged Pink
+/obj/item/slimepotion/lovepotion
+	name = "love potion"
+	desc = ""
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "potpink"
+
+/obj/item/slimepotion/lovepotion/attack(mob/living/M, mob/user)
+	if(!isliving(M) || M.stat == DEAD)
+		to_chat(user, "<span class='warning'>The love potion only works on living things, sicko!</span>")
+		return ..()
+	if(istype(M, /mob/living/simple_animal/hostile/megafauna))
+		to_chat(user, "<span class='warning'>The love potion does not work on beings of pure evil!</span>")
+		return ..()
+	if(user == M)
+		to_chat(user, "<span class='warning'>I can't drink the love potion. What are you, a narcissist?</span>")
+		return ..()
+	if(M.has_status_effect(STATUS_EFFECT_INLOVE))
+		to_chat(user, "<span class='warning'>[M] is already lovestruck!</span>")
+		return ..()
+
+	M.visible_message("<span class='danger'>[user] starts to feed [M] a love potion!</span>",
+		"<span class='danger'>[user] starts to feed you a love potion!</span>")
+
+	if(!do_after(user, 50, target = M))
+		return
+	to_chat(user, "<span class='notice'>I feed [M] the love potion!</span>")
+	to_chat(M, "<span class='notice'>I develop feelings for [user], and anyone [user.p_they()] like.</span>")
+	if(M.mind)
+		M.mind.store_memory("You are in love with [user].")
+	M.faction |= "[REF(user)]"
+	M.apply_status_effect(STATUS_EFFECT_INLOVE, user)
+	qdel(src)
+
 //Pressure potion - Charged Dark Blue
 /obj/item/slimepotion/spaceproof
 	name = "slime pressurization potion"

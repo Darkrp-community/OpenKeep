@@ -1,7 +1,6 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/bogbug
 	icon = 'icons/roguetown/mob/monster/bogbug.dmi'
-	name = "bog bug"
-	desc = "A vile insect, skittering forward on spindly, hairy legs. Enjoys the flesh of sapients as much as it enjoys its fellow swamp-dwellers."
+	name = "Bog Bug"
 	icon_state = "bogbug"
 	icon_living = "bogbug"
 	icon_dead = "bogbugdead"

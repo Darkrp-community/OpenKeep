@@ -13,7 +13,7 @@
 	outfit = /datum/outfit/job/roguetown/armorsmith
 	display_order = JDO_ARMORER
 	bypass_lastclass = TRUE
-	give_bank_account = 30
+	give_bank_account = 11
 
 /datum/outfit/job/roguetown/armorsmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -23,8 +23,6 @@
 		head = /obj/item/clothing/head/roguetown/hatblu
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 4, TRUE)
@@ -46,7 +44,7 @@
 		beltr = /obj/item/keyring/armorsmith
 		cloak = /obj/item/clothing/cloak/apron/brown
 		H.change_stat("strength", 1)
-		H.change_stat("endurance", 2)
+		H.change_stat("endurance", 1)
 		H.change_stat("speed", -1)
 	else
 		pants = /obj/item/clothing/under/roguetown/trou
@@ -57,7 +55,7 @@
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		beltr = /obj/item/keyring/armorsmith
 		H.change_stat("strength", 1)
-		H.change_stat("endurance", 2)
+		H.change_stat("endurance", 1)
 		H.change_stat("speed", -1)
 
 /datum/job/roguetown/weaponsmith
@@ -74,7 +72,6 @@
 
 	outfit = /datum/outfit/job/roguetown/weaponsmith
 	display_order = JDO_WSMITH
-	give_bank_account = 30
 
 /datum/outfit/job/roguetown/weaponsmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -84,8 +81,6 @@
 		head = /obj/item/clothing/head/roguetown/hatblu
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 4, TRUE)
@@ -107,7 +102,7 @@
 		beltr = /obj/item/keyring/weaponsmith
 		cloak = /obj/item/clothing/cloak/apron/brown
 		H.change_stat("strength", 1)
-		H.change_stat("endurance", 2)
+		H.change_stat("endurance", 1)
 		H.change_stat("speed", -1)
 	else
 		pants = /obj/item/clothing/under/roguetown/trou
@@ -118,5 +113,5 @@
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		beltr = /obj/item/keyring/weaponsmith
 		H.change_stat("strength", 1)
-		H.change_stat("endurance", 2)
+		H.change_stat("endurance", 1)
 		H.change_stat("speed", -1)

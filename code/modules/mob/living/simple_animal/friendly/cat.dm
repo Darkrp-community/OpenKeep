@@ -1,7 +1,7 @@
 //Cat
 /mob/living/simple_animal/pet/cat
-	name = "cat"
-	desc = "A nuisance and a valued, pest-killing companion. Also symbols of the benevolent side of Saint Pestra for their enmity with vermin."
+	name = "Inn cat"
+	desc = "Pest control."
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "cat2"
 	icon_living = "cat2"
@@ -80,13 +80,12 @@
 
 
 /mob/living/simple_animal/pet/cat/inn
-	name = "inn cat"
-	desc = "This old, fat cat keeps the inn free of rats... allegedly. It seems like he mostly lazes about in the sun and asks for treats."
+	name = "Inn cat"
+	desc = "Pest control, even if he was better at it when younger and less fat."
 
 /mob/living/simple_animal/pet/cat/black
 	name = "black cat"
-	desc = "Possessed of lamplike eyes and a meow that sounds like the rattle of bones. Black cats are sacred to Necra, said to bring wandering spirits to the Carriageman."
-	gender = FEMALE
+	desc = ""
 	icon = 'icons/roguetown/topadd/takyon/Cat.dmi'
 	icon_state = "cat"
 	icon_living = "cat"

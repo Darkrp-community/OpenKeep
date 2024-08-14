@@ -330,10 +330,6 @@
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	sellprice = 30
 
-/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dark
-	desc = "A gambeson with additional padding layers, hardened to make it more durable. It still cannot compare to proper armor. This one is black."
-	color = "#383838"
-
 /obj/item/clothing/suit/roguetown/armor/gambeson/lord
 	name = "arming jacket"
 	desc = "Similar to a gambeson, it is meant to be used under heavier armor."
@@ -552,7 +548,8 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	item_state = "grenzelcuirass"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	boobed = TRUE
-	max_integrity = 500
+	max_integrity = 600
+	armor_class = ARMOR_CLASS_LIGHT // There is a good reason for this.
 
 
 /obj/item/clothing/suit/roguetown/armor/rare

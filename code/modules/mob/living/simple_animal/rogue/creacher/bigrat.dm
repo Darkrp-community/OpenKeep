@@ -1,7 +1,6 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat
 	icon = 'icons/roguetown/mob/monster/bigrat.dmi'
 	name = "rous"
-	desc = "A Rodent Of Unusual Size. Some suspect the malice of the Cursed Star causes them to mutate."
 	icon_state = "rat"
 	icon_living = "rat"
 	icon_dead = "rat1"

@@ -34,7 +34,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga
 	icon = 'icons/roguetown/mob/monster/saiga.dmi'
 	name = "saiga"
-	desc = "Proud beasts of burden, warmounts, and symbols of luxury alike. Especially sacred to the steppe people of the Northeast Regions."
+	desc = ""
 	icon_state = "saiga"
 	icon_living = "saiga"
 	icon_dead = "saiga_dead"
@@ -98,6 +98,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid
 	icon = 'icons/roguetown/mob/monster/saiga.dmi'
 	name = "saiga"
+	desc = ""
 	icon_state = "saigakid"
 	icon_living = "saigakid"
 	icon_dead = "saigakid_dead"

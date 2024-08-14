@@ -397,7 +397,7 @@
 "BX" = (/obj/structure/mineral_door/wood/window,/turf/open/floor/rogue/cobble,/area/rogue)
 "BY" = (/obj/effect/landmark/mapGenerator/rogue/forest{endTurfX = 128; endTurfY = 128},/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/woods)
 "Cf" = (/obj/structure/table/wood{icon_state = "longtable"},/obj/item/clothing/head/roguetown/hatblu,/obj/item/clothing/head/roguetown/hatfur,/obj/item/clothing/head/roguetown/hatfur,/obj/item/clothing/head/roguetown/hatblu,/turf/open/floor/rogue/wood,/area/rogue)
-"Co" = (/obj/structure/table/wood{icon_state = "longtable"; dir = 1},/obj/item/clothing/head/roguetown/helmet/leather/inquisitor,/turf/open/floor/rogue/wood,/area/rogue)
+"Co" = (/obj/structure/table/wood{icon_state = "longtable"; dir = 1},/obj/item/clothing/head/roguetown/puritan,/turf/open/floor/rogue/wood,/area/rogue)
 "Cv" = (/obj/item/paper{name = "dusty parchment"; info = "I left for the old continent, wont be back for couple centuries. I leave you my tools and my forge for whoever will be working it. Remember the basics, get some ore, a piece of coal and throw em into furnace and wait, then use the tongs to remove the resulting bars, heat the bars with the pit and start hammering, you'll figure it out from there.         -Melonius, Redhammer"},/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors)
 "CD" = (/obj/machinery/light/rogue/wallfire/candle,/turf/open/floor/rogue/cobble,/area/rogue/indoors)
 "CK" = (/obj/structure/chair/bench/couchablack,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)

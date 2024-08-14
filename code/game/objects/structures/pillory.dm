@@ -13,8 +13,7 @@
 	density = TRUE
 	layer = ABOVE_ALL_MOB_LAYER
 	plane = GAME_PLANE_UPPER
-	var/latched = FALSE
-	var/locked = FALSE
+	var/locked = 0
 	var/base_icon = "pillory_single"
 
 /obj/structure/pillory/double
@@ -32,28 +31,12 @@
 /obj/structure/pillory/examine(mob/user)
 	. = ..()
 
-	var/msg = "It is [latched ? "latched" : "unlatched"] and [locked ? "locked." : "unlocked."]<br/>"
+	var/msg = "It is [locked ? "locked." : "unlocked."]<br/>"
 	. += msg
 
-/obj/structure/pillory/attack_right(mob/living/user)
-	. = ..()
-	if(!buckled_mobs.len)
-		to_chat(user, span_warning("What's the point of latching it with nobody inside?"))
-		return
-	if(user in buckled_mobs)
-		to_chat(user, span_warning("I can't reach the latch!"))
-		return
-	if(locked)
-		to_chat(usr, span_warning("Unlock it first!"))
-		return
-	togglelatch(user)
-
 /obj/structure/pillory/attackby(obj/item/P, mob/user, params)
-	if(user in buckled_mobs)
-		to_chat(user, span_warning("I can't reach the lock!"))
-		return
-	if(!latched)
-		to_chat(user, span_warning("It's not latched shut!"))
+	if(user in src)
+		to_chat(user, "<span class='warning'>I can't reach the lock!</span>")
 		return
 	if(istype(P, /obj/item/roguekey))
 		var/obj/item/roguekey/K = P
@@ -71,44 +54,27 @@
 				togglelock(user)
 				return attack_hand(user)
 
-/obj/structure/pillory/proc/togglelatch(mob/living/user, silent)
-	user.changeNext_move(CLICK_CD_MELEE)
-	if(latched)
-		user.visible_message(span_warning("[user] unlatches [src]."), \
-			span_notice("I unlatch [src]."))
-		playsound(src, 'sound/foley/doors/lock.ogg', 100)
-		latched = FALSE
-	else
-		user.visible_message(span_warning("[user] latches [src]."), \
-			span_notice("I latch [src]."))
-		playsound(src, 'sound/foley/doors/lock.ogg', 100)
-		latched = TRUE
-
 /obj/structure/pillory/proc/togglelock(mob/living/user, silent)
 	user.changeNext_move(CLICK_CD_MELEE)
-	if (!latched)
-		to_chat(user, span_warning("\The [src] is not latched shut."))
 	if(locked)
-		user.visible_message(span_warning("[user] unlocks [src]."), \
-			span_notice("I unlock [src]."))
+		user.visible_message("<span class='warning'>[user] unlocks [src].</span>", "<span class='notice'>I unlock [src].</span>")
 		playsound(src, 'sound/foley/doors/lock.ogg', 100)
-		locked = FALSE
+		locked = 0
 	else
-		user.visible_message(span_warning("[user] locks [src]."), \
-			span_notice("I lock [src]."))
+		user.visible_message("<span class='warning'>[user] locks [src].</span>", "<span class='notice'>I lock [src].</span>")
 		playsound(src, 'sound/foley/doors/lock.ogg', 100)
-		locked = TRUE
+		locked = 1
 
 /obj/structure/pillory/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)
 	if (!anchored)
 		return FALSE
 
 	if(locked)
-		to_chat(usr, span_warning("Unlock it first!"))
+		to_chat(usr, "<span class='warning'>Unlock it first!</span>")
 		return FALSE
 
 	if (!istype(M, /mob/living/carbon/human))
-		to_chat(usr, span_warning("It doesn't look like [M.p_they()] can fit into this properly!"))
+		to_chat(usr, "<span class='warning'>It doesn't look like [M.p_they()] can fit into this properly!</span>")
 		return FALSE // Can't hold non-humanoids
 
 	return ..(M, force, FALSE)
@@ -126,7 +92,6 @@
 			if (istype(S))
 				//H.cut_overlays()
 				H.update_body_parts_head_only()
-				density = FALSE
 				switch(H.dna.species.name)
 					if ("Dwarf","Goblin")
 						H.set_mob_offsets("bed_buckle", _x = 0, _y = PILLORY_HEAD_OFFSET)
@@ -149,20 +114,18 @@
 	..()
 
 /obj/structure/pillory/unbuckle_mob(mob/living/user)
-	if(latched)
+	if(locked)
 		if(user.STASTR >= 18)
 			if(do_after(user, 25))
-				user.visible_message(span_warning("[user] breaks [src] open!"))
-				locked = FALSE
-				latched = FALSE
+				user.visible_message("<span class='warning'>[user] breaks [src] open!</span>")
+				locked = 0
 				..()
 		else
-			to_chat(usr, span_warning("Unlock it first!"))
+			to_chat(usr, "<span class='warning'>Unlock it first!</span>")
 			return FALSE
 	else
 		..()
-		density = TRUE
+
 	..()
-	density = TRUE
 
 #undef PILLORY_HEAD_OFFSET

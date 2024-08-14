@@ -7,10 +7,10 @@
 	antag_hud_name = "assassin"
 	show_name_in_check_antagonists = TRUE
 	confess_lines = list(
-		"MY CREED IS BLOOD!",
-		"THE DAGGER TOLD ME WHO TO CUT!",
-		"DEATH IS MY DEVOTION!",
-		"THE DARK SUN GUIDES MY HAND!",
+		"My creed is blood!",
+		"The dagger told me who to cut!",
+		"Death is my devotion!",
+		"The Dark Sun guides my hand!",
 	)
 
 /datum/antagonist/assassin/on_gain()

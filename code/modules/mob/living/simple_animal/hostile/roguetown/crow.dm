@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/crow
 	name = "zad"
-	desc = "A pesky bird, beloved by Necrites. They cluster around graveyards and are said to carry the souls of the dead on their wings."
+	desc = "Pesky bird."
 	icon_state = "crow"
 	icon = 'icons/roguetown/mob/monster/crow.dmi'
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
@@ -20,7 +20,7 @@
 
 /obj/item/reagent_containers/food/snacks/rogue/friedcrow
 	name = "fried zad"
-	desc = "A pesky, fried bird. The Grenzelhoftians say one 'eats zad' if they are mistaken or outdone."
+	desc = ""
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "fcrow"
 	bitesize = 2
