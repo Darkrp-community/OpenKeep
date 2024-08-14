@@ -315,17 +315,6 @@
 			dna.body_markings = deepCopyList(pref_load.body_markings)
 		dna.species.on_species_gain(src, old_species, pref_load)
 
-/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
-	if(pref_load)
-		skin_tone = pref_load.skin_tone
-	..()
-	if(icon_update)
-		update_body()
-		update_hair()
-		update_body_parts(TRUE)
-		update_mutations_overlay()// no lizard with human hulk overlay please.
-
-
 /mob/proc/has_dna()
 	return
 
