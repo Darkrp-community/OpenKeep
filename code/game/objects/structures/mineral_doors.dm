@@ -324,7 +324,7 @@
 
 /obj/structure/mineral_door/proc/trypicklock(obj/item/I, mob/user)
 	if(door_opened || isSwitchingStates)
-	to_chat(user, "<span class='warning'>This cannot be picked while it is open.</span>")
+		to_chat(user, "<span class='warning'>This cannot be picked while it is open.</span>")
 		return
 	if(!keylock)
 		return
