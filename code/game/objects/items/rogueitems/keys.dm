@@ -250,7 +250,7 @@
 	lockid = "mercenary"
 
 /obj/item/roguekey/puritan
-	name = "puritan's key"
+	name = "inquisitor's key"
 	desc = "This is an intricate key."
 	icon_state = "mazekey"
 	lockid = "puritan"
