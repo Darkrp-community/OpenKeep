@@ -141,7 +141,7 @@
 	force = 20
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
-	name = "dwarf axe"
+	name = "dwarven axe"
 	desc = "A Dwarf axe designed and used by Dwarves, decorated with runes of Malum and ready to take action against any threat. or tree."
 	icon_state = "dwarfaxe"
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -196,7 +196,7 @@
 	force_wielded = 18
 	possible_item_intents = list(/datum/intent/axe/chop)
 	name = "copper axe"
-	desc = "An simple yet effectively designed handaxe, an outdated tool with simple materials."
+	desc = "An simple yet effectively designed handaxe, an outdated tool made with simple materials."
 	icon_state = "chatchet"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "axe"

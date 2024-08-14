@@ -36,7 +36,7 @@
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	name = "small knife"
-	desc = "Loyal companion of simple peasants, able to cut hard bread and carve some wood, kitchen utensil and tool."
+	desc = "The loyal companion of simple peasants, able to cut hard bread and carve wood. A versatile kitchen utensil and tool."
 	icon_state = "villagernife"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)//no chop since is a tiny aah knife

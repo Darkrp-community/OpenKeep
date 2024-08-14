@@ -494,7 +494,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
 	name = "bronze mace"
-	desc = "An extremely crude bronze weapon for crude battles, this isn't an Aasimar weapon design, yet does the work of killing armored opponents easier."
+	desc ="An extremely crude bronze weapon, most effective at killing enemies clad in equally crude armor."
 	icon_state = "bmace"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "mace_greyscale"

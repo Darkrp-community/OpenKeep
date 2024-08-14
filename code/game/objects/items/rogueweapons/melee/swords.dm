@@ -1158,7 +1158,7 @@
 
 /obj/item/rogueweapon/sword/bronze
 	name = "bronze sword"
-	desc = "A simple bronze sword, ancient design with a tested edge, sharp and lethal on the God-War era, if it were an Aasimar design, this one still does the job."
+	desc = "A simple bronze sword, an ancient design with a tested edge. While this one is far inferior in quality to those forged in the God-War era, it still does the job."
 	icon_state = "bsword"
 	minstr = 6
 	force = 14 // bronze tier. same as steel daggers and ready to be used by very poor warriors and skeletons or undead zombies
@@ -1211,7 +1211,7 @@
 	icon = 'icons/roguetown/weapons/64.dmi'
 	item_state = "bgreatsor"
 	name = "bronze long sword."
-	desc = "An elaborated long sword of bronze, a rarity on this era except for the Aasimars who are too familiar with them."
+	desc = "An elaborate long sword made of bronze. A rare weapon, unfamiliar to most, but all too familiar to the aasimar who still recall the God-War."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
