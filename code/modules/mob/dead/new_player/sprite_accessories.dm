@@ -691,7 +691,7 @@
 	name = "Undies"
 	icon_state = "male_reg"
 	gender = MALE
-	specuse = list("human")
+	specuse = list("human", "aasimar", "tiefling")
 
 /datum/sprite_accessory/underwear/regme
 	name = "Undiese"
