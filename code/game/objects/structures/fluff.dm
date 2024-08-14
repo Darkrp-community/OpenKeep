@@ -898,7 +898,7 @@
 		return
 
 	var/mob/living/carbon/human/H = user
-	var/random_message = pick("you spin the globe!", "You land on Blackwine!", "You land on Zybantine!", "You land on port Ice cube!.", "You land on port Thornvale!", "You land on Grenzelhoft!")
+	var/random_message = pick("You spin the globe!", "You land on Blackwine!", "You land on Zybantine!", "You land on port Ice cube!.", "You land on port Thornvale!", "You land on Grenzelhoft!")
 	to_chat(H, "<span class='notice'>[random_message]</span>")
 
 /obj/structure/fluff/statue/femalestatue/Initialize()

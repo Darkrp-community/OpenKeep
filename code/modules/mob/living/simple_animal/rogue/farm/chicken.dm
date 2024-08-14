@@ -1,7 +1,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/chicken
 	name = "\improper chicken"
-	desc = ""
+	desc = "A fat and mostly flightless bird. They produce eggs, or 'cackleberries'."
 	gender = FEMALE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	icon_state = "chicken_brown"
@@ -156,7 +156,7 @@
 
 /obj/structure/fluff/nest
 	name = "nest"
-	desc = ""
+	desc = "a chicken's nest."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "nest"
 	density = FALSE

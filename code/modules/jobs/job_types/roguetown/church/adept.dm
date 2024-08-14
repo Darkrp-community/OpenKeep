@@ -1,4 +1,4 @@
-/datum/job/roguetown/shepherd
+/datum/job/roguetown/adept
 	title = "Adept"
 	flag = MONK
 	department_flag = CHURCHMEN
@@ -13,18 +13,17 @@
 		"Dwarf",
 	)
 	allowed_sexes = list(MALE)
-	tutorial = "The Adepts are Non-Noble warriors who are accepted by the puritan to learn under his wing, they are competent fighters ready to face the darkness of the world with their martial skills and faith in the pantheon."
+	tutorial = "The Adepts are Non-Noble warriors who are accepted by the Inquisitor to learn under his wing, they are competent fighters ready to face the darkness of the world with their martial skills and faith."
 
-	outfit = /datum/outfit/job/roguetown/shepherd
+	outfit = /datum/outfit/job/roguetown/adept
 	display_order = JDO_SHEPHERD
-	give_bank_account = 3
-	min_pq = -4
+	min_pq = -2
 
-/datum/outfit/job/roguetown/shepherd
+/datum/outfit/job/roguetown/adept
 	name = "Adept"
-	jobtype = /datum/job/roguetown/shepherd
+	jobtype = /datum/job/roguetown/adept
 
-/datum/outfit/job/roguetown/shepherd/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/adept/pre_equip(mob/living/carbon/human/H)
 	..()
 	belt = /obj/item/storage/belt/rogue/leather
 	cloak = /obj/item/clothing/cloak/raincloak/brown
@@ -38,7 +37,7 @@
 	beltl = /obj/item/rogueweapon/mace/cudgel
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless
-	backpack_contents = list(/obj/item/keyring/shepherd = 1)
+	backpack_contents = list(/obj/item/keyring/shepherd = 1, /obj/item/needle = 1, /obj/item/rogueweapon/huntingknife/idagger/silver = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
@@ -47,13 +46,11 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		if(!H.has_language(/datum/language/oldpsydonic))
 			H.grant_language(/datum/language/oldpsydonic)
