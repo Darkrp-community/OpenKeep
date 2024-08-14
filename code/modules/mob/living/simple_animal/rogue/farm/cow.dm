@@ -2,7 +2,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/cow
 	icon = 'icons/roguetown/mob/monster/cow.dmi'
 	name = "moo-beast"
-	desc = ""
+	desc = "The grail of many farmers. Commonfolk associate the motherly sow with Eora, and the raging bull with Ravox."
 	icon_state = "cow"
 	icon_living = "cow"
 	icon_dead = "cow_dead"
@@ -59,7 +59,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet
 	name = "calf"
-	desc = ""
+	desc = "So cute!"
 	icon_state = "cowlet"
 	icon_living = "cowlet"
 	icon_dead = "cowlet_dead"
@@ -140,6 +140,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/bull
 	icon = 'icons/roguetown/mob/monster/cow.dmi'
 	name = "moo-beast bull"
+	desc = "Rambunctious as the war-saint himself, a depiction of the moo-beast bull looms on the standard of the Valorian city-state called Andalvia."
 	icon_state = "bull"
 	icon_living = "bull"
 	icon_dead = "bull_dead"
@@ -238,7 +239,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/bullet
 	name = "calf"
-	desc = ""
+	desc = "So cute! Be careful of those horns, though."
 	gender = MALE
 	icon_state = "bullet"
 	icon_living = "bullet"
