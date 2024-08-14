@@ -637,7 +637,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 200
 
-/obj/item/clothing/suit/roguetown/armor/rare/dwarfplate/Initialize()
+/obj/item/clothing/suit/roguetown/armor/rare/grenzelplate/Initialize()
 	. = ..()
 	if(do_sound)
 		AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/fullplate (1).ogg',\
@@ -666,7 +666,36 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 200
 
-/obj/item/clothing/suit/roguetown/armor/rare/dwarfplate/Initialize()
+/obj/item/clothing/suit/roguetown/armor/rare/zybanplate/Initialize()
+	. = ..()
+	if(do_sound)
+		AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/fullplate (1).ogg',\
+													'sound/foley/footsteps/armor/fullplate (2).ogg',\
+													'sound/foley/footsteps/armor/fullplate (3).ogg'), 100)
+
+// Aasimar hoplite armor, a very rare armor indeed
+/obj/item/clothing/suit/roguetown/armor/rare/hoplite
+	icon = 'icons/roguetown/clothing/armor.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "ancient plate armor"
+	desc = "A battered set of bronze plate armor. Intricate runes and carvings once adorned the pieces, but most have faded with age."
+	body_parts_covered = CHEST|GROIN|VITALS|LEGS
+	icon_state = "aasimarplate"
+	item_state = "aasimarplate"
+	allowed_race = list("aasimar")
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	nodismemsleeves = TRUE
+	max_integrity = 500
+	var/do_sound = TRUE
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = null // No bronze ingots yet, unfortunately
+	equip_delay_self = 40
+	armor_class = ARMOR_CLASS_HEAVY
+	sellprice = 300 // It has great value to historical collectors
+
+/obj/item/clothing/suit/roguetown/armor/rare/hoplite/Initialize()
 	. = ..()
 	if(do_sound)
 		AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/fullplate (1).ogg',\
