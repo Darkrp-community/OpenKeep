@@ -140,6 +140,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		/datum/descriptor_choice/prominent_four,
 	)
 
+	/// List of organ customizers for preferences to customize organs.
+	var/list/customizers
+	/// List of possible body marking sets that the player can choose from in customization
+	var/list/body_marking_sets = list(
+		/datum/body_marking_set/none,
+	)
+	/// List all of body markings that the player can choose from in customization. Body markings from sets get added to here
+	var/list/body_markings
+
 ///////////
 // PROCS //
 ///////////
