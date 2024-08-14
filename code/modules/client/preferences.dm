@@ -184,6 +184,23 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	menuoptions = list()
 	return
 
+/datum/preferences/proc/set_new_race(datum/species/new_race, user)
+	pref_species = new_race
+	real_name = pref_species.random_name(gender,1)
+	ResetJobs()
+	if(user)
+		if(pref_species.desc)
+			to_chat(user, "[pref_species.desc]")
+		to_chat(user, "<font color='red'>Classes reset.</font>")
+	random_character(gender)
+	accessory = "Nothing"
+
+	customizer_entries = list()
+	validate_customizer_entries()
+	reset_all_customizer_accessory_colors()
+	randomize_all_customizer_accessories()
+	reset_descriptors()
+
 #define APPEARANCE_CATEGORY_COLUMN "<td valign='top' width='14%'>"
 #define MAX_MUTANT_ROWS 4
 
@@ -447,6 +464,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<br>"
 				dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
 				dat += "<br>"
+				dat += "<br><b>Features:</b> <a href='?_src_=prefs;preference=customizers;task=menu'>Change</a>"
+				dat += "<br><b>Descriptors:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
 				if(HAIR in pref_species.species_traits)
 					dat += "<b>Hairstyle:</b> <a href='?_src_=prefs;preference=hairstyle;task=input'>[hairstyle]</a>"
 					dat += "<br>"
@@ -1535,6 +1554,14 @@ Slots: [job.spawn_positions]</span>
 
 	else if(href_list["preference"] == "playerquality")
 		check_pq_menu(user.ckey)
+
+	else if(href_list["preference"] == "descriptors")
+		show_descriptors_ui(user)
+		return
+
+	else if(href_list["preference"] == "customizers")
+		ShowCustomizers(user)
+		return
 
 	else if(href_list["preference"] == "triumph_buy_menu")
 		SStriumphs.startup_triumphs_menu(user.client)
