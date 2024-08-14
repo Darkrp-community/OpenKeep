@@ -6,7 +6,6 @@
 #define TRAIT_NUTCRACKER 				"Nutcracker"
 #define TRAIT_SEEPRICES				"Golden Blood"
 #define TRAIT_STRONGBITE				"Strong Bite"
-#define TRAIT_TORTURER					"Torturer"
 #define TRAIT_HATEWOMEN				"Ladykiller"
 #define TRAIT_GOODLOVER				"Fabled Lover"
 #define TRAIT_NOBLE					"Noble Blooded"
@@ -63,7 +62,6 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NUTCRACKER = "I love kicking idiots on the nuts!",
 	TRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
 	TRAIT_STRONGBITE = "Stronger bites, critical bite attacks.",
-	TRAIT_TORTURER = "I've learned the art of drawing confessions out of sinners.",
 	TRAIT_HATEWOMEN = "Double damage against female mobs.",
 	TRAIT_GOODLOVER = "It's a blessing to share a bed with me.",
 	TRAIT_NOBLE = "<span class='blue'>I'm of noble blood.</span>",
