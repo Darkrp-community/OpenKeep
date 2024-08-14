@@ -101,9 +101,11 @@
 
 /obj/structure/roguemachine/mail/attackby(obj/item/P, mob/user, params)
 	if(istype(P, /obj/item/paper/confession))
-		if((user.mind.assigned_role == "Confessor") || (user.mind.assigned_role == "Witch Hunter"))
+		if(user.mind.assigned_role == "Inquisitor")
 			var/obj/item/paper/confession/C = P
 			if(C.signed)
+				if(C.signed == user.real_name) // If the Inquisitor is the one who signed the confession, they can't use it.
+					return
 				if(GLOB.confessors)
 					var/no
 					if(", [C.signed]" in GLOB.confessors)
@@ -112,14 +114,17 @@
 						no = TRUE
 					if(!no)
 						if(GLOB.confessors.len)
-							GLOB.confessors += ", [C.signed]"
+							GLOB.confessors += ", [C.signed] - a [C.antag]"
 						else
-							GLOB.confessors += "[C.signed]"
+							GLOB.confessors += "[C.signed] - a [C.antag]"
 				qdel(C)
 				visible_message("<span class='warning'>[user] sends something.</span>")
-				send_ooc_note("Confessions: [GLOB.confessors.len]/5", job = list("confessor", "puritan", "priest"))
-				playsound(loc, 'sound/magic/hallelujah.ogg', 100, FALSE, -1)
+				playsound(loc, 'sound/magic/forgotten_bell.ogg', 80, FALSE, -1)
 				playsound(loc, 'sound/misc/disposalflush.ogg', 100, FALSE, -1)
+				for(var/mob/living/carbon/I in world) // Find all the living Inquisitors and Adepts and give them a triumph for the confession.
+					if(I.mind && (I.mind.assigned_role == "Inquisitor" || I.mind.assigned_role == "Adept") && !(I.stat == DEAD))
+						I.visible_message("<span class='warning'>A sense of grim satisfaction fills your heart. One down, a million remain.</span>")
+						I.adjust_triumphs(1)
 		return
 	if(istype(P, /obj/item/paper) || istype(P, /obj/item/smallDelivery))
 		if(P.w_class >= WEIGHT_CLASS_BULKY)
