@@ -200,6 +200,7 @@
 	update_body()
 	update_hair()
 	update_body_parts(redraw = TRUE)
+	to_chat(src, span_notice("My true form is hidden."))
 
 /mob/living/carbon/human/proc/vampire_undisguise(datum/antagonist/vampirelord/VD)
 	if(!VD)
@@ -216,6 +217,7 @@
 	update_body()
 	update_hair()
 	update_body_parts(redraw = TRUE)
+	to_chat(src, span_notice("My true form is revealed."))
 
 
 /mob/living/carbon/human/proc/blood_strength()
