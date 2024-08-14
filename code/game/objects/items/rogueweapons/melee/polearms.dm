@@ -407,7 +407,7 @@
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
 	name = "spear"
-	desc = "The bronze Spears were used by antique Aasimar warriors, this one doesn't have such quality but does the work, use the pointy end for better results."
+	desc = "The bronze spears were used by antique Aasimar warriors, this one doesn't have such quality but does the work, use the pointy end for better results."
 	icon_state = "brospear"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16

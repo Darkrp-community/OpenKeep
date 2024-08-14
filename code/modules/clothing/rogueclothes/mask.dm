@@ -163,7 +163,7 @@
 	sewrepair = TRUE
 
 /obj/item/clothing/mask/rogue/shepherd/clothmask
-	name = "Cloth mask"
+	name = "cloth mask"
 	icon_state = "clothm"
 	desc = "a simple cloth mask designed to aid in the concealing of bad odors or used in dirty works like mining or gravedigging."
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
@@ -175,7 +175,7 @@
 	experimental_onhip = TRUE
 
 /obj/item/clothing/mask/rogue/facemask/copper
-	name = "Copper mask"
+	name = "copper mask"
 	icon_state = "cmask"
 	desc = "A heavy copper mask that both conceals and protects the face in a poor way."
 	max_integrity = 100
@@ -193,9 +193,9 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/mask/rogue/facemask/bronze
-	name = "Bronze mask"
+	name = "bronze mask"
 	icon_state = "bmask"
-	desc = "A heavy Bronze mask that both conceals and protects the face."
+	desc = "A heavy bronze mask that both conceals and protects the face."
 	max_integrity = 100
 	blocksound = PLATEHIT
 	break_sound = 'sound/foley/breaksound.ogg'

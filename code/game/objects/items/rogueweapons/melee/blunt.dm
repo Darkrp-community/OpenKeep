@@ -464,7 +464,7 @@
 	possible_item_intents = list(/datum/intent/mace/heavy/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/mace/thrust)
 	name = "copper warclub"
-	desc = "A two handed club, decorated with a crown of spikes. a barbaric besign, good enough to be used as weapon."
+	desc = "A two handed club, decorated with a crown of spikes. A barbaric besign, good enough to be used as weapon."
 	icon_state = "coppergoden"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	//dropshrink = 0.75
@@ -522,7 +522,7 @@
 	possible_item_intents = list(/datum/intent/mace/heavy/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/mace/thrust)
 	name = "bronze warclub"
-	desc = "A two handed club, decorated with a spiked sharpened flange head. an antique design good enough to continue being used as a weapon against armored enemies."
+	desc = "A two handed club, decorated with a spiked sharpened flange head. An antique design good enough to continue being used as a weapon against armored enemies."
 	icon_state = "bigbronze"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	//dropshrink = 0.75
