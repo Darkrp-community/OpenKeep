@@ -159,13 +159,14 @@
 	desc = "A dagger of refined steel, and even more refined appearance."
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
-	name = "dagger"
+	name = "silver dagger"
 	desc = "A dagger made of fine silver, the bane of the undead."
-	force = 12
+	force = 13 // .9 of steel
 	icon_state = "sildagger"
 	smeltresult = null
-	sellprice = 50
-	smeltresult = /obj/item/ingot/silver
+	max_blade_int = 112 // .8 of steel
+	max_integrity = 240 // .8 of steel
+	sellprice = 45
 	var/last_used = 0
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/pickup(mob/user)

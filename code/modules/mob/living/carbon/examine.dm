@@ -4,7 +4,7 @@
 	var/t_has = p_have()
 	var/t_is = p_are()
 
-	. = list("<span class='info'>✠ ------------ ✠\nThis is \a <EM>[src]</EM>!")
+	. = list("<span class='info'>ᛉ ------------ ᛉ\nThis is \a <EM>[src]</EM>!")
 	var/list/obscured = check_obscured_slots()
 
 	var/m1 = "[t_He] [t_is]"
@@ -124,4 +124,4 @@
 				. += "[t_He] look[p_s()] very happy."
 			if(MOOD_LEVEL_HAPPY4 to INFINITY)
 				. += "[t_He] look[p_s()] ecstatic."
-	. += "✠ ------------ ✠</span>"
+	. += "ᛉ ------------ ᛉ</span>"
