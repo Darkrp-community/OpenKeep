@@ -1,6 +1,6 @@
 /datum/advclass/combat/barbarian
-	name = "Outlander"
-	tutorial = "Wildmen and warriors all, Outlanders forego the intricacies of modern warfare in favour of raw strength and brutal cunning. Few of them can truly adjust to the civilized, docile lands of lords and ladies."
+	name = "Barbarian"
+	tutorial = "Wildmen and warriors all, Barbarians forego the intricacies of modern warfare in favour of raw strength and brutal cunning. Few of them can truly adjust to the civilized, docile lands of lords and ladies."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -37,51 +37,29 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	if(prob(50))
 		backr = /obj/item/storage/backpack/rogue/satchel
-	H.change_stat("strength", 2)
-	H.change_stat("endurance", 1)
+	H.change_stat("strength", 3)
+	H.change_stat("endurance", 2)
 	H.change_stat("constitution", 2)
 	H.change_stat("intelligence", -2)
-	if(H.gender == MALE)
-		H.change_stat("strength", 1)
-		var/armortype = pickweight(list("Cloak" = 5, "Hide" = 3, "Helmet" = 2))
-		var/weapontype = pickweight(list("Sword" = 4, "Club" = 3, "Axe" = 2)) //clubs and axes share a weapon type
-		switch(armortype)
-			if("Cloak")
-				cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
-			if("Hide")
-				armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
-			if("Helmet")
-				head = /obj/item/clothing/head/roguetown/helmet/horned
-		switch(weapontype)
-			if("Sword")
-				beltr = /obj/item/rogueweapon/sword/iron
-				H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-			if("Club")
-				beltr = /obj/item/rogueweapon/mace/woodclub
-				H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-			if("Axe")
-				beltr = /obj/item/rogueweapon/woodcut
-				H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-	if(H.gender == FEMALE)
-		var/armortype = pickweight(list("Chainkini" = 5, "Leather" = 3, "Hide" = 2))
-		var/weapontype = pickweight(list("Sword" = 7, "Spear" = 3))
-		H.change_stat("endurance", 1)
-		H.change_stat("speed", 1)
-		switch(armortype)
-			if("Chainkini")
-				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
-			if("Leather")
-				armor = /obj/item/clothing/suit/roguetown/armor/leather
-			if("Hide")
-				armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
-		switch(weapontype)
-			if("Sword")
-				beltr = /obj/item/rogueweapon/sword/iron
-				H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-			if("Spear")
-				r_hand = /obj/item/rogueweapon/spear
-				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
-
+	var/armortype = pickweight(list("Cloak" = 5, "Hide" = 3, "Helmet" = 2))
+	var/weapontype = pickweight(list("Sword" = 4, "Club" = 3, "Axe" = 2)) //clubs and axes share a weapon type
+	switch(armortype)
+		if("Cloak")
+			cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
+		if("Hide")
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
+		if("Helmet")
+			head = /obj/item/clothing/head/roguetown/helmet/horned
+	switch(weapontype)
+		if("Sword")
+			beltr = /obj/item/rogueweapon/sword/iron
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		if("Club")
+			beltr = /obj/item/rogueweapon/mace/woodclub
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+		if("Axe")
+			beltr = /obj/item/rogueweapon/woodcut
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	if(H.dna?.species)
