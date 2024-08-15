@@ -1,5 +1,5 @@
 /datum/language/zybantine
-	name = "Zybantine"
+	name = "Zybean"
 	desc = ""
 	speech_verb = "states"
 	ask_verb = "questions"
