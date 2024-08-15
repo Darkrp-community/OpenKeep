@@ -16,10 +16,39 @@
 	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
 
+/datum/crafting_recipe/roguetown/structure/noose
+	name = "noose"
+	result = /obj/structure/noose
+	reqs = list(/obj/item/rope = 1)
+	verbage = "tie"
+	verbage_tp = "ties"
+	craftsound = 'sound/foley/noose_idle.ogg'
+	ontile = TRUE
+
+/datum/crafting_recipe/roguetown/structure/noose/TurfCheck(mob/user, turf/T)
+	var/turf/checking = get_step_multiz(T, UP)
+	if(!checking)
+		return FALSE
+	if(!isopenturf(checking))
+		return FALSE
+	if(istype(checking,/turf/open/transparent/openspace))
+		return FALSE
+	return TRUE
+
 /datum/crafting_recipe/roguetown/structure/psycrss
 	name = "wooden cross"
 	result = /obj/structure/fluff/psycross/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/grown/log/tree/stake = 3)
+	verbage = "carpent"
+	verbage_tp = "carpents"
+	craftsound = 'sound/foley/Building-01.ogg'
+
+
+/datum/crafting_recipe/roguetown/structure/pyre
+	name = "wooden pyre"
+	result = /obj/machinery/light/rogue/campfire/pyre
+	reqs = list(/obj/item/grown/log/tree/small = 2,
 				/obj/item/grown/log/tree/stake = 3)
 	verbage = "carpent"
 	verbage_tp = "carpents"

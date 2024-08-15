@@ -118,6 +118,8 @@
 	flags_inv = HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
 	dynamic_hair_suffix = ""
 	resistance_flags = FIRE_PROOF // Made of metal
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/priestmask
 	name = "solar visage"
@@ -345,6 +347,8 @@
 	sellprice = 77
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/reqhat
 	name = "serpent crown"
@@ -431,6 +435,8 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	will_cover = HEAD|HAIR
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/helmet/kettle
 	name = "kettle helmet"
@@ -592,7 +598,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
 	name = "astrata helmet"
-	desc = "A helmet of the faithful Paladins of Astrata."
+	desc = "A great helmet decorated with a golden sigil of the solar order. The dependable companion of many holy warriors of Astrata."
 	icon_state = "astratahelm"
 	item_state = "astratahelm"
 	emote_environment = 3
@@ -603,7 +609,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 	name = "noc helmet"
-	desc = "A helmet of the faithful Paladins of Noc." // What
+	desc = "A sleek and rounded heavy helmet. Its unique craft is said to allow holy warriors of Noc additional insight before battle."
 	icon_state = "nochelm"
 	item_state = "nochelm"
 	emote_environment = 3
@@ -614,7 +620,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
 	name = "necra helmet"
-	desc = "A helmet of the faithful Paladins of Necra."
+	desc = "A reinforced helmet shaped into the visage of a skull. A symbol of authority for the battle servants of the Undermaiden."
 	icon_state = "necrahelm"
 	item_state = "necrahelm"
 	emote_environment = 3
@@ -625,7 +631,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 	name = "dendor helmet"
-	desc = "A helmet of the faithful Paladins of Dendor." // What
+	desc = "A great helmet with twisted metalwork that imitates the twisting of bark, or the horns of a beast." 
 	icon_state = "dendorhelm"
 	item_state = "dendorhelm"
 	emote_environment = 3
@@ -713,6 +719,8 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	resistance_flags = FLAMMABLE
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/wizhat/gen
 	icon_state = "wizardhatgen"
@@ -791,6 +799,7 @@
 	resistance_flags = FIRE_PROOF // These are all metallic
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST, BCLASS_BITE)
 	anvilrepair = /datum/skill/craft/armorsmithing
+	blocksound = PLATEHIT
 
 /obj/item/clothing/head/roguetown/rare/elfplate
 	icon_state = "elfhead"
@@ -801,6 +810,8 @@
 	body_parts_covered = HEAD|HAIR|NOSE
 	allowed_race = list("elf", "half-elf", "dark elf")
 	armor_class = ARMOR_CLASS_MEDIUM
+	bloody_icon = 'icons/effects/blood32x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/rare/elfplate/welfplate
 	name = "elvish plate helmet"
@@ -821,6 +832,8 @@
 	flags_inv = HIDEEARS
 	experimental_onhip = FALSE
 	allowed_race = list("dwarf")
+	bloody_icon = 'icons/effects/blood32x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/rare/grenzelplate
 	icon_state = "human_swordhead"
@@ -833,6 +846,8 @@
 	body_parts_covered = HEAD|EARS|HAIR
 	flags_inv = HIDEEARS
 	allowed_race = list("human")
+	bloody_icon = 'icons/effects/blood32x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/rare/zybanplate
 	icon_state = "human_spearhead"
@@ -846,6 +861,8 @@
 	body_parts_covered = HEAD|EARS|HAIR
 	flags_inv = HIDEEARS
 	allowed_race = list("human")
+	bloody_icon = 'icons/effects/blood32x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/helmet/sallet/zybantine
 	name = "zybantine kulah khud"
@@ -854,6 +871,8 @@
 	desc = "Known as devil masks amongst the Western Kingdoms, these serve part decorative headpiece, part protective helmet."
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/roguehood/feld
 	name = "feldsher's hood"
@@ -878,6 +897,8 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 
 /obj/item/clothing/head/roguetown/crown/circlet
 	name = "golden circlet"
@@ -929,3 +950,20 @@
 		ADD_TRAIT(user, TRAIT_NOSTINK,"Dead Nose")
 	else
 		REMOVE_TRAIT(user, TRAIT_NOSTINK,"Dead Nose")
+
+// Aasimar hoplite helmet
+/obj/item/clothing/head/roguetown/rare/hoplite
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	name = "ancient helmet"
+	desc = "A weathered bronze helmet topped with a symbol of Astrata's sun."
+	icon_state = "aasimarhead"
+	item_state = "aasimarhead"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	body_parts_covered = HEAD|EARS|HAIR
+	flags_inv = HIDEEARS
+	allowed_race = list("aasimar")
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"

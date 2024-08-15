@@ -17,7 +17,7 @@
 
 	tutorial = "Nobody would envy your lot in life, for the role of the bathwench is not something so idly taken. It comes from a place of desperation, least usually: for any with true compassion or skill would seek position with a nunnery or the medical trade. Launder clothes and soothe wounds, that is your loathsome creed."
 
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
 	outfit = /datum/outfit/job/roguetown/nitemaiden
 	display_order = JDO_NITEMAIDEN
 	give_bank_account = TRUE
@@ -39,6 +39,9 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, pick(1,2,3,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/music, pick(1,2), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(1,2), TRUE)
 	if(H.gender == MALE)
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan

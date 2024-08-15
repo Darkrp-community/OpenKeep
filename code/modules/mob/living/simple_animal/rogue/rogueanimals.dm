@@ -92,7 +92,9 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/CanAttack(atom/the_target)
 	//If is foodtype and food is less than 50 or you eat forever.
 	if(is_type_in_list(the_target, food_type) && (food < food_max || eat_forever))
-		return TRUE
+		//To prevent limb eaters from eating inorganic limbs
+		if(PickyEater(the_target))
+			return TRUE
 	//Return root code
 	. = ..()
 	//Am i a body eater?
@@ -145,7 +147,7 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/UniqueAttack()
-	if(body_eater)
+	if(body_eater && !tame)
 		if(isliving(target))
 			var/mob/living/body = target
 			if(body.stat != CONSCIOUS)
@@ -169,22 +171,19 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/DismemberBody(mob/living/L)
 	//Lets keep track of this to see if we start getting wounded while eating.
-	var/start_hp = src.health
-	var/interrupted = FALSE
 	testing("[src]_eating_[L]")
+	//I dont know why but the do_after for health needs this to be defined like this.
+	var/list/check_health = list("health" = src.health)
+
 	if(L.stat != CONSCIOUS)
-		if(iscarbon(L))
-			var/mob/living/carbon/C = L
-			if(attack_sound)
-				playsound(src, pick(attack_sound), 100, TRUE, -1)
-			src.visible_message("<span class='danger'>[src] starts to rip apart [C]!</span>")
-			//Run the do after twice if either of the checks fail
-			for(var/i = 1 to 2)
-				if(!do_after(src,5 SECONDS, target = L) || start_hp > health)
-					interrupted = TRUE
-					LoseTarget()
-					break
-			if(!interrupted)
+		src.visible_message("<span class='danger'>[src] starts to rip apart [L]!</span>")
+		if(attack_sound)
+			playsound(src, pick(attack_sound), 100, TRUE, -1)
+		//If their health is decreased at all during the 10 seconds the dismemberment will fail and they will lose target.
+		if(do_mob(user = src, target = L, time = 10 SECONDS, extra_checks = CALLBACK(src, TYPE_PROC_REF(/mob, break_do_after_checks), check_health, FALSE)))
+			//If its carbon remove a limb, if its some animal just gib it.
+			if(iscarbon(L))
+				var/mob/living/carbon/C = L
 				var/obj/item/bodypart/limb
 				var/list/limb_list = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 				for(var/zone in limb_list)
@@ -201,26 +200,17 @@
 					if(!limb.dismember())
 						C.gib()
 					return TRUE
-		else
-			if(attack_sound)
-				playsound(src, pick(attack_sound), 100, TRUE, -1)
-			src.visible_message("<span class='danger'>[src] starts to rip apart [L]!</span>")
-			//Run the do after twice if either of the checks fail
-			for(var/i = 1 to 2)
-				if(!do_after(src,5 SECONDS, target = L) || start_hp > health)
-					interrupted = TRUE
-					LoseTarget()
-					break
-			if(!interrupted)
+			else
 				L.gib()
 				return TRUE
+		LoseTarget()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Initialize()
 	..()
 	if(milkies)
 		udder = new()
 	if(tame)
-		tamed()
+		tamed(owner)
 	ADD_TRAIT(src, TRAIT_SIMPLE_WOUNDS, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/GiveTarget(new_target)
@@ -239,7 +229,7 @@
 	retreat_distance = initial(retreat_distance)
 	minimum_distance = initial(minimum_distance)
 
-/mob/living/simple_animal/hostile/retaliate/rogue/tamed()
+/mob/living/simple_animal/hostile/retaliate/rogue/tamed(mob/user)
 	del_on_deaggro = 0
 	aggressive = 0
 	if(enemies.len)
@@ -312,6 +302,16 @@
 			return 1
 	else
 		return ..()
+
+//Prevents certain items from being targeted as food.
+/mob/living/simple_animal/hostile/retaliate/rogue/proc/PickyEater(atom/thing_to_eat)
+	//Yes we eats this.
+	. = TRUE
+	if(istype(thing_to_eat, /obj/item/bodypart))
+		var/obj/item/bodypart/B = thing_to_eat
+		//Oh yuck ew dont eat that.
+		if(B.status != BODYPART_ORGANIC)
+			return FALSE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/return_action()
 	stop_automated_movement = FALSE

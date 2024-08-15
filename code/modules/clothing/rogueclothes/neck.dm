@@ -128,6 +128,15 @@
 	blocksound = PLATEHIT
 	smeltresult = /obj/item/ingot/iron
 
+/obj/item/clothing/neck/roguetown/gorget/hoplite // Better than an iron gorget, not quite as good as a steel bervor
+	name = "ancient gorget"
+	desc = "A heavy collar of bronze alloy, meant to protect the neck."
+	icon_state = "aasimarneck"
+	item_state = "aasimarneck"
+	armor = list("melee" = 90, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 250
+	smeltresult = null // No bronze ingots yet
+
 /obj/item/clothing/neck/roguetown/psicross
 	name = "psycross"
 	desc = "Let His name be naught but forgot'n."

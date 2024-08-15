@@ -14,13 +14,15 @@
 		"Dwarf",
 		"Aasimar"
 	)
-	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
+	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	tutorial = "You are as venerable and ancient as the trees themselves, wise even for your years. The King may lead officially, but people look to you as the Mayor to solve lesser issues. Remember the old ways of the law, not everything must end in bloodshed: no matter how much the Guards wish it were the case."
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
 	outfit = /datum/outfit/job/roguetown/mayor
 	display_order = JDO_CHIEF
 	give_bank_account = 80
+
+	cmode_music = 'sound/music/combat_bog.ogg'
 
 /datum/outfit/job/roguetown/mayor
 	name = "Mayor"

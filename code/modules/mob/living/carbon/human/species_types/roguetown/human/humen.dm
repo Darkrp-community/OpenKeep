@@ -19,7 +19,7 @@
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "wings" = "None")
 	use_skintones = 1
-	possible_ages = ALL_AGES_LIST
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
@@ -80,10 +80,11 @@
 	"black - rogue" = "2b201b",
 	"black - midnight" = "1d1b2b",
 
-	"red - berry" = "48322a",
+	"red - berry" = "b23434",
 	"red - wine" = "82534c",
 	"red - sunset" = "82462b",
-	"red - blood" = "822b2b"
+	"red - blood" = "822b2b",
+	"red - maroon" = "612929"
 
 	))
 

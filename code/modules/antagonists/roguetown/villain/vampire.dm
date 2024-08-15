@@ -63,7 +63,7 @@
 	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_LIMPDICK, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_VILLAIN, TRAIT_GENERIC)
-	owner.current.cmode_music = 'sound/music/combatvamp.ogg'
+	owner.current.cmode_music = 'sound/music/combat_vamp2.ogg'
 	var/obj/item/organ/eyes/eyes = owner.current.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
 		eyes.Remove(owner.current,1)

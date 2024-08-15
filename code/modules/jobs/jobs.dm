@@ -85,11 +85,12 @@ GLOBAL_LIST_INIT(church_positions, list(
 	"Priest",
 	"Acolyte",
 	"Puritan",
-	"Confessor"
+	"Confessor",
+	"Templar"
 	))
 
 GLOBAL_LIST_INIT(serf_positions, list(
-	"Barkeep",
+	"Innkeep",
 	"Armorer",
 	"Weaponsmith",
 	"Tailor",

@@ -1,4 +1,5 @@
 //Not to be confused with /obj/item/reagent_containers/food/drinks/bottle
+GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 
 /obj/item/reagent_containers/glass/bottle
 	name = "bottle"
@@ -20,6 +21,25 @@
 	fillsounds = list('sound/items/fillcup.ogg')
 	poursounds = list('sound/items/fillbottle.ogg')
 	experimental_onhip = TRUE
+
+/obj/item/reagent_containers/glass/bottle/attackby(obj/item/I, mob/user, params)
+	if(reagents.total_volume)
+		return
+	if(closed)
+		return
+	if(istype(I, /obj/item/paper/scroll))
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			var/obj/item/paper/scroll/P = I
+			var/obj/item/bottlemessage/BM = new
+
+			P.forceMove(BM)
+			BM.contained = P
+			H.put_in_active_hand(BM)
+			playsound(src, 'sound/items/scroll_open.ogg', 100, FALSE)
+			qdel(src)
+	else
+		return ..()
 
 /obj/item/reagent_containers/glass/bottle/update_icon(dont_fill=FALSE)
 	if(!fill_icon_thresholds || dont_fill)
@@ -440,3 +460,35 @@
 	name = "bromine bottle"
 	list_reagents = list(/datum/reagent/bromine = 30)
 
+// message in a bootl
+
+/obj/item/bottlemessage
+	name = "message bottle"
+	desc = "Inside is a scroll, pop it open and read the ancient wisdoms."
+	icon = 'icons/roguetown/items/cooking.dmi'
+	dropshrink = 0.5
+	icon_state = "bottle_message"
+	w_class = WEIGHT_CLASS_NORMAL
+	var/obj/item/paper/contained
+
+/obj/item/bottlemessage/ancient/Initialize()
+	. = ..()
+	var/obj/item/paper/scroll/pp = new(src)
+	contained = pp
+	pp.info = pick(GLOB.wisdoms)
+
+/obj/item/bottlemessage/rmb_self(mob/user)
+	. = ..()
+	playsound(user.loc,'sound/items/uncork.ogg', 100, TRUE)
+	if(!contained)
+		return
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/obj/item/reagent_containers/glass/bottle/bootl = new
+		bootl.icon_state = "clear_bottle1"
+		bootl.closed = FALSE
+		H.dropItemToGround(src, silent=TRUE)
+		H.put_in_active_hand(bootl)
+		H.put_in_hands(contained)
+		contained = null
+		qdel(src)

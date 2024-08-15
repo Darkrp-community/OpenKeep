@@ -21,7 +21,6 @@
 		Your cheap tricks and illusions of intelligence will only work for so long, \
 		and someday you'll find yourself at the end of something sharper than you."
 
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	spells = list(/obj/effect/proc_holder/spell/self/telljoke,/obj/effect/proc_holder/spell/self/telltragedy)
 	outfit = /datum/outfit/job/roguetown/jester
 	display_order = JDO_JESTER
@@ -49,6 +48,7 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/mockery) // Mock people to your heart's content!
 		H.STAINT = rand(1, 20)
 		H.STALUC = rand(1, 20)
+		H.cmode_music = 'sound/music/combat_jester.ogg'
 /*		if(H.gender == MALE)
 			if(H.dna?.species)
 				if(H.dna.species.id == "human")
@@ -60,5 +60,67 @@
 //		H.hair_color = "cd65cb"
 //		H.facial_hair_color = "cd65cb"
 //		H.update_body_parts_head_only()
+	H.verbs |= /mob/living/carbon/human/proc/ventriloquate
+	H.verbs |= /mob/living/carbon/human/proc/ear_trick
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
+
+//Ventriloquism! Make things speak!
+
+/mob/living/carbon/human/proc/ventriloquate()
+	set name = "Ventriloquism"
+	set category = "Japes"
+
+	var/obj/item/grabbing/I = get_active_held_item()
+	if(!I)
+		to_chat(src, "<span class='warning'>I need to be holding or grabbing something!</span>")
+		return
+	var/message = input(usr, "What do you want to ventriloquate?", "Ventriloquism!") as text | null
+	if(!message)
+		return
+	I.say(message)
+	log_admin("[key_name(usr)] ventriloquated [I] at [AREACOORD(I)] to say \"[message]\"")
+
+// Ear Trick! Pull objects from behind someone's ear by the will of Xylix!
+
+/mob/living/carbon/human/proc/ear_trick()
+	set name = "Ear Trick"
+	set category = "Japes"
+
+	var/obj/item/grabbing/I = get_active_held_item()
+	var/mob/living/carbon/human/H
+	var/obj/item/japery_obj
+	japery_obj = get_japery()
+	var/obj/item/J = new japery_obj(get_turf(H))
+
+
+	if(!istype(I) || !ishuman(I.grabbed))
+		return
+	H = I.grabbed
+	if(H == src)
+		to_chat(src, "<span class='warning'>I know what's behind my own ears!</span>")
+		return
+	if(mob_timers["lasttrick"])
+		if(world.time < mob_timers["lasttrick"] + 20 SECONDS)
+			to_chat(src, "<span class='warning'>I need a moment before I can do another trick!</span>")
+			return
+	qdel(I)
+	src.put_in_hands(J)
+	src.visible_message("<span class='notice'>[src] reaches behind [H]'s ear with a grin, shaking their closed hand for a moment before revealing [J] held in it!</span>")
+	mob_timers["lasttrick"] = world.time
+
+/mob/living/carbon/human/proc/get_japery()
+	var/japery_list = list(
+		/obj/item/roguecoin/copper,
+		/obj/item/natural/dirtclod,
+		/obj/item/natural/worms,
+		/obj/item/natural/worms/leech,
+		/obj/item/natural/thorn,
+		/obj/item/natural/stone,
+		/obj/item/natural/poo,
+		/obj/item/natural/feather,
+		/obj/item/reagent_containers/food/snacks/rogue/crackerscooked
+		)
+
+	var/japery = pick(japery_list)
+	return japery

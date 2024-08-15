@@ -17,7 +17,7 @@
 	tutorial = "You've known combat your entire life. There isn't a way to kill a man you haven't practiced in the tapestries of war itself. \
 				You wouldn't call yourself a hero, those belong to the men left rotting in the fields of where you practiced your ancient trade. \
 				Trading adventure for stable pay was the only logical solution, and maybe someday you'll get to lay down the blade for good..."
-	allowed_ages = list(AGE_OLD)
+	allowed_ages = list(AGE_OLD, AGE_IMMORTAL)
 	display_order = JDO_VET
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
@@ -25,6 +25,8 @@
 
 	outfit = /datum/outfit/job/roguetown/veteran
 	give_bank_account = 50
+
+	cmode_music = 'sound/music/combat_guard.ogg'
 
 /datum/outfit/job/roguetown/veteran/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -38,7 +40,7 @@
 	beltl = /obj/item/keyring/guardcastle
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/sword
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/signal_horn = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
@@ -55,11 +57,18 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
-		H.change_stat("strength", 3)
-		H.change_stat("perception", 1)
-		H.change_stat("intelligence", 2)
-		H.change_stat("endurance", 2)
-		H.change_stat("speed", 1)
+		if(H.age == AGE_OLD)
+			H.change_stat("strength", 3)
+			H.change_stat("perception", 1)
+			H.change_stat("intelligence", 2)
+			H.change_stat("endurance", 2)
+			H.change_stat("speed", 1)
+		else
+			H.change_stat("strength", 2)
+			H.change_stat("intelligence", 1)
+			H.change_stat("endurance", 2)
+			H.change_stat("speed", -1)	
+			// Aasimar veterans have higher strength overall but lower mental bonuses, and a small negative to speed instead of a bonus. Took too many stabs to the knee or some such
 
 	if(H.charflaw)
 		if(H.charflaw.type != /datum/charflaw/noeyer)
