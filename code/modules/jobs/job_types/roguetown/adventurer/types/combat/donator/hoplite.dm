@@ -28,7 +28,7 @@
 	// Despite extensive combat experience, this class is exceptionally destitute. The only luxury besides combat gear that it possesses is a lantern for a source of light
 	// Beneath the arms and armor is a simple loincloth, and it doesn't start with any money. This should encourage them to find someone to serve or work alongside with very quickly
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
-	beltr = /obj/item/flashlight/flare/torch/lantern
+	beltr = /obj/item/flashlight/flare/torch/lantern/bronze//they get a cool unique lamptern now
 	shoes = /obj/item/clothing/shoes/roguetown/hoplite
 	cloak = /obj/item/clothing/cloak/half/red
 	belt = /obj/item/storage/belt/rogue/leather/rope

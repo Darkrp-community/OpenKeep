@@ -165,7 +165,7 @@
 /obj/item/clothing/mask/rogue/shepherd/clothmask
 	name = "cloth mask"
 	icon_state = "clothm"
-	desc = "a simple cloth mask designed to aid in the concealing of bad odors or used in dirty works like mining or gravedigging."
+	desc = "A simple cloth mask that suppresses bad odors, or offers minor protection when doing dirty work such as mining or gravedigging."
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	body_parts_covered = NECK|MOUTH
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
@@ -177,7 +177,7 @@
 /obj/item/clothing/mask/rogue/facemask/copper
 	name = "copper mask"
 	icon_state = "cmask"
-	desc = "A heavy copper mask that both conceals and protects the face in a poor way."
+	desc = "A heavy copper mask that conceals and protects the face, though not very effectively."
 	max_integrity = 100
 	blocksound = PLATEHIT
 	break_sound = 'sound/foley/breaksound.ogg'

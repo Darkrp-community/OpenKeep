@@ -133,8 +133,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/copperchest
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "Copper Heart Protector"//SHITTY ARMOR SHITTY ARMOR!!
-	desc = "A very simple and rustic protection for the chest, ancient fighters used similar gear, with more quality than this..."
+	name = "copper heart protector"//SHITTY ARMOR SHITTY ARMOR!!
+	desc = "Very simple and crude protection for the chest. Ancient fighters once used similar gear, with better quality..."
 	body_parts_covered = CHEST|VITALS
 	icon_state = "copperchest"
 	item_state = "copperchest"

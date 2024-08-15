@@ -281,7 +281,7 @@
 	gripped_intents = list(SPEAR_BASH,SPEAR_THRUST,DUMP_INTENT)
 	slot_flags = ITEM_SLOT_BACK
 	name = "copper fork"
-	desc = "A simple and rustic copper tool to work on the fields, a poor weapon in emergency too..."
+	desc = "A simple and rustic tool for working the fields, not a very effective weapon."
 	icon_state = "cfork"
 	item_state = "cfork"
 	icon = 'icons/roguetown/weapons/64.dmi'

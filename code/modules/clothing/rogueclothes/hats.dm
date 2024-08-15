@@ -425,7 +425,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/copper
 	name = "copper warrior helmet"//used by undead npc's and antique warriors
-	desc = "An antique design copper helmet, used by ancient warriors before the ages of iron."
+	desc = "A humble copper helmet, used by ancient warriors before the age of iron."
 	icon_state = "copperhelmet"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	will_cover = HEAD|HAIR|EARS
@@ -434,7 +434,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket/bronze
 	name = "bronze warrior helmet"
-	desc = "A simple and effective design, the warriors who used gear like this can only be remembered by the Aasimar."
+	desc = "A simple and effective design, entire armies once wore helmets like these."
 	icon_state = "bronzebucket"
 	item_state = "bronzebucket"
 	emote_environment = 3

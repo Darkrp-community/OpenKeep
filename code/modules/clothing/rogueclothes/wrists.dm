@@ -23,7 +23,7 @@
 
 /obj/item/clothing/wrists/roguetown/bracers/copper
 	name = "copper bracers"
-	desc = "Copper forearm guards that offer some protection while they look stylish."
+	desc = "Copper forearm guards that offer some protection while looking rather stylish."
 	body_parts_covered = ARMS
 	icon_state = "copperarm"
 	item_state = "copperarm"
