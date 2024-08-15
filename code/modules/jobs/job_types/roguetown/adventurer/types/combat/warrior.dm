@@ -42,14 +42,14 @@
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/shield/wood
-	var/armortype = pickweight(list("Ironmail" = 6, "Ironplate" = 3, "Ironplate&Gambeson" = 1)) // At best they can get an iron breastplate over gambeson
+	var/armortype = pickweight(list("Ironmail" = 6, "Ironplate" = 3, "Ironplate&Mail" = 1)) // At best they can get an iron breastplate over mail
 	var/weapontype = pickweight(list("Axe" = 2, "Mace" = 3, "Messer" = 3, "Sword" = 2)) // Rolls for various weapons, all of these are iron tier
 	switch(armortype)
 		if("Ironmail")
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 		if("Ironplate")
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
-		if("Ironplate&Gambeson") // Big roller gets iron chainlegs and an iron breastplate over chainmail. Lucky them
+		if("Ironplate&Mail") // Big roller gets iron chainlegs and an iron breastplate over chainmail. Lucky them
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 			pants = /obj/item/clothing/under/roguetown/chainlegs/iron
