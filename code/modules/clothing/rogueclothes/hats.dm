@@ -199,11 +199,6 @@
 	desc = "Welcome to the grain fields, thou plowerer of the fertile."
 	icon_state = "strawhat"
 
-/obj/item/clothing/head/roguetown/helmet/leather/inquisitor
-	name = "buckled hat"
-	desc = "A black top hat with a buckle on top, favored by Witch Hunters and Inquisitors."
-	icon_state = "puritan_hat"
-
 /obj/item/clothing/head/roguetown/niteman
 	name = "teller's hat"
 	icon_state = "tophat"
