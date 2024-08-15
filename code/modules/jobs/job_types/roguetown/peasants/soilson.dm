@@ -30,11 +30,10 @@
 /datum/outfit/job/roguetown/farmer/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(2,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/farming, pick(3,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/taming, 2, TRUE)
@@ -43,6 +42,11 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
+
+		H.change_stat("strength", 1)
+		H.change_stat("constitution", 1)
+		H.change_stat("endurance", 1)
+		H.change_stat("intelligence", -1)
 		ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 
 	if(H.gender == MALE)
@@ -56,10 +60,6 @@
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/roguekey/soilson
 		beltl = /obj/item/rogueweapon/huntingknife
-		H.change_stat("strength", 2)
-		H.change_stat("constitution", 1)
-		H.change_stat("intelligence", 1)
-		H.change_stat("speed", 1)
 	else
 		head = /obj/item/clothing/head/roguetown/armingcap
 //		pants = /obj/item/clothing/under/roguetown/trou
@@ -69,7 +69,3 @@
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/roguekey/soilson
 		beltl = /obj/item/rogueweapon/huntingknife
-		H.change_stat("strength", 1)
-		H.change_stat("constitution", 1)
-		H.change_stat("intelligence", 2)
-		H.change_stat("speed", 1)
