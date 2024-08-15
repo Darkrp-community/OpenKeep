@@ -2,6 +2,7 @@
 /datum/antagonist/purishep
 	name = "purishep"
 	increase_votepwr = FALSE
+	isgoodguy = TRUE
 
 /datum/antagonist/purishep/on_gain()
 	if(!(locate(/datum/objective/purishep) in objectives))

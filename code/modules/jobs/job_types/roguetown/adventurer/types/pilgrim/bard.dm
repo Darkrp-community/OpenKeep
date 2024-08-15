@@ -33,6 +33,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/music, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/mockery)
 	head = /obj/item/clothing/head/roguetown/bardhat
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	pants = /obj/item/clothing/under/roguetown/tights/random
@@ -59,6 +60,7 @@
 			backr = /obj/item/rogue/instrument/guitar
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC) // Bardic rizz
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_BARDIC_TRAINING, TRAIT_GENERIC)
 	H.change_stat("perception", 1)
 	H.change_stat("speed", 2)
 	H.change_stat("strength", -1)

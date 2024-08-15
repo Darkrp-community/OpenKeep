@@ -309,3 +309,14 @@
 	name = "Muscle Soreness"
 	desc = "<span class='warning'>Gaaaah, So sooooooore.</span>\n"
 	icon_state = "muscles"
+
+/datum/status_effect/debuff/viciousmockery
+	id = "viciousmockery"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/viciousmockery
+	duration = 600 // One minute
+	effectedstats = list("strength" = -2, "speed" = -2,"endurance" = -2)
+
+/atom/movable/screen/alert/status_effect/debuff/viciousmockery
+	name = "Vicious Mockery"
+	desc = "<span class='warning'>THAT SPOONY BARD! ARGH!</span>\n"
+	icon_state = "muscles"

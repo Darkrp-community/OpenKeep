@@ -223,3 +223,92 @@
 	name = "Divine Knowledge"
 	desc = "<span class='nicegreen'>Divine knowledge flows through me.</span>\n"
 	icon_state = "intelligence"
+
+// BARDIC BUFFS BELOW
+
+/datum/status_effect/bardicbuff
+	var/name
+	id = "bardbuff"
+	tick_interval = 1 SECONDS
+	status_type = STATUS_EFFECT_REFRESH
+	alert_type = /atom/movable/screen/alert/status_effect/bardbuff
+
+/datum/status_effect/bardicbuff/on_apply()
+	if(owner.mind?.has_antag_datum(/datum/antagonist)) // Check if antag datum present
+		if(owner.mind.isactuallygood()) // Then check if they're actually a "good" antag (purishep, prisoner)
+			for(var/S in effectedstats)
+				owner.change_stat(S, effectedstats[S])
+			return TRUE
+		else // Otherwise, no buff
+			return FALSE
+	else // All non antags get the buffs
+		for(var/S in effectedstats)
+			owner.change_stat(S, effectedstats[S])
+		return TRUE
+
+// SKELETON BARD BUFF ALERT
+/atom/movable/screen/alert/status_effect/bardbuff
+	name = "Musical buff"
+	desc = "My stats have been buffed by music!"
+	icon_state = "intelligence"
+
+// TIER 1 - WEAK
+/datum/status_effect/bardicbuff/intelligence
+	name = "Enlightening (+1 INT)"
+	id = "bardbuff_int"
+	effectedstats = list("intelligence" = 1)
+
+// TIER 2 - AVERAGE
+/datum/status_effect/bardicbuff/endurance
+	name = "Invigorating (+1 END)"
+	id = "bardbuff_end"
+	effectedstats = list("endurance" = 1)
+
+// TIER 3 - SKILLED
+/datum/status_effect/bardicbuff/constitution
+	name = "Fortitude (+1 CON)"
+	id = "bardbuff_con"
+	effectedstats = list("constitution" = 1)
+
+// TIER 4 - EXPERT
+/datum/status_effect/bardicbuff/speed
+	name = "Inspiring (+1 SPD)"
+	id = "bardbuff_spd"
+	effectedstats = list("speed" = 1)
+
+// TIER 5 - MASTER
+/datum/status_effect/bardicbuff/ravox
+	name = "Empowering (+1 STR, +1 PER)"
+	id = "bardbuff_str"
+	effectedstats = list("strength" = 1, "perception" = 1)
+
+// TIER 6 - LEGENDARY
+/datum/status_effect/bardicbuff/awaken
+	name = "Awaken! (purges sleep)"
+	id = "bardbuff_awaken"
+	effectedstats = list("fortune" = 1)
+
+/datum/status_effect/bardicbuff/awaken/on_apply()
+	if(iscarbon(owner))
+		var/mob/living/carbon/O = owner
+		if(owner.mind?.has_antag_datum(/datum/antagonist))
+			if(owner.mind.isactuallygood()) // Check for "good antags"
+				for(var/S in effectedstats)
+					owner.change_stat(S, effectedstats[S])
+				if(O.has_status_effect(/datum/status_effect/debuff/sleepytime))
+					O.remove_status_effect(/datum/status_effect/debuff/sleepytime)
+					O.tiredness = 0
+					to_chat(O, "<span class='nicegreen'>Astrata's blessed light cleanses away your tiredness!</span>")
+					O.adjust_triumphs(1) // Before people start crying about muh triumph lost
+			else
+				return
+		else
+			for(var/S in effectedstats)
+				owner.change_stat(S, effectedstats[S])
+			if(O.has_status_effect(/datum/status_effect/debuff/sleepytime))
+				O.remove_status_effect(/datum/status_effect/debuff/sleepytime)
+				O.tiredness = 0
+				to_chat(O, "<span class='nicegreen'>Astrata's blessed light cleanses away your tiredness!</span>")
+				O.adjust_triumphs(1) // Before people start crying about muh triumph lost
+			else
+				return	
