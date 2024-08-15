@@ -1,0 +1,14 @@
+// This is the file that defines chemical reactions. So far, there's only recipes for the health and mana potions.
+// It should be noted that unless you do some code magic (probably not hard if you're a better coder than me or Zeth), you can only create chemical reactions with "reagents" and not solid objects.
+
+/datum/chemical_reaction/healthpot
+	name = "Health Potion"
+	id = /datum/reagent/medicine/healthpot
+	results = list(/datum/reagent/medicine/healthpot = 3)
+	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/applejuice = 1)
+
+/datum/chemical_reaction/manapot
+	name = "Manna Potion"
+	id = /datum/reagent/medicine/manapot
+	results = list(/datum/reagent/medicine/manapot = 3)
+	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/berryjuice = 1)

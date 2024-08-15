@@ -24,11 +24,11 @@ GLOBAL_LIST_EMPTY(berrycolors)
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue
 	seed = /obj/item/seeds/berryrogue
 	name = "jacksberries"
-	desc = ""
+	desc = "A bunch of nutritious wildberries."
 	icon_state = "berries"
 	tastes = list("berry" = 1)
 	bitesize = 5
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/berryjuice = 3)
 	dropshrink = 0.75
 	var/color_index = "good"
 	can_distill = TRUE
@@ -69,6 +69,7 @@ GLOBAL_LIST_EMPTY(berrycolors)
 
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
 	seed = /obj/item/seeds/berryrogue/poison
+	desc = "A bunch of nutritious wildberries. They smell a bit odd."
 	icon_state = "berries"
 	tastes = list("berry" = 1)
 	list_reagents = list(/datum/reagent/berrypoison = 5, /datum/reagent/consumable/nutriment = 3)

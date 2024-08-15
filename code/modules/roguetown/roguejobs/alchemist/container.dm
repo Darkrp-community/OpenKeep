@@ -7,15 +7,27 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot
 	list_reagents = list(/datum/reagent/medicine/healthpot = 45)
+	desc = "A bottle that smells strongly of apples."
 
 /obj/item/reagent_containers/glass/bottle/rogue/manapot
 	list_reagents = list(/datum/reagent/medicine/manapot = 45)
+	desc = "A bottle with the ozone scent of magic."
+
+/obj/item/reagent_containers/glass/bottle/rogue/burnpot
+	list_reagents = list(/datum/reagent/medicine/burnpot = 45)
+	desc = "A bottle smelling of strong pine and medicine."
+
+/obj/item/reagent_containers/glass/bottle/rogue/bloodpot
+	list_reagents = list(/datum/reagent/medicine/bloodpot = 45)
+	desc = "A bottle with an iron scent."
 
 /obj/item/reagent_containers/glass/bottle/rogue/poison
 	list_reagents = list(/datum/reagent/toxin/killersice = 1)
+	desc = "A little bottle that smells like almonds."
 
 /obj/item/reagent_containers/glass/bottle/rogue/water
 	list_reagents = list(/datum/reagent/water = 45) // Fuck you water is a alch-thing.
+	desc = "A bottle filled with water."
 
 
 //////////////////////////
@@ -87,3 +99,15 @@
 /obj/item/reagent_containers/glass/bottle/rogue/elfblue
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/elfblue = 45)
 	desc = "A bottle gilded with a golden cork-seal. This is the legendary Valmora Blue from the Vineyard of Valmora, headed by a sainted Dark-Elf swordsmaster. This bottle would swoon Gods over!"
+
+/////////////
+/// JUICE ///
+/////////////
+
+/obj/item/reagent_containers/glass/bottle/rogue/applebottle
+	list_reagents = list(/datum/reagent/consumable/applejuice = 45)
+	desc = "A bottle of apple juice, from the orchards of Bad Rumsfeld in Grenzelhoft."
+
+/obj/item/reagent_containers/glass/bottle/rogue/berrybottle
+	list_reagents = list(/datum/reagent/consumable/berryjuice = 45)
+	desc = "A bottle with a red-striped cork seal, indicating origins from the fruit orchards of Catalidel in Valoria. Filled with sweet jacksberry juice."

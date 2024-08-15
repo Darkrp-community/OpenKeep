@@ -13,6 +13,16 @@
 	cost = 24
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/manapot
 
+/datum/supply_pack/rogue/food/burnpot
+	name = "Burn Potion"
+	cost = 14
+	contains = /obj/item/reagent_containers/glass/bottle/rogue/burnpot
+
+/datum/supply_pack/rogue/food/bloodpot
+	name = "Blood Replenishment Potion"
+	cost = 20
+	contains = /obj/item/reagent_containers/glass/bottle/rogue/bloodpot
+
 /datum/supply_pack/rogue/food/beer
 	name = "Beer-In-A-Bottle"
 	cost = 5
@@ -92,6 +102,16 @@
 	name = "Valmora Blue Wine"
 	cost = 730
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/elfblue
+
+/datum/supply_pack/rogue/food/applej
+	name = "Bad Rumsfeld Apple Juice"
+	cost = 15
+	contains = /obj/item/reagent_containers/glass/bottle/rogue/applebottle
+
+/datum/supply_pack/rogue/food/berryj
+	name = "Catalidelian Berry Juice"
+	cost = 13
+	contains = /obj/item/reagent_containers/glass/bottle/rogue/berrybottle
 
 /datum/supply_pack/rogue/food/meat
 	name = "Dry Meat"
