@@ -49,9 +49,9 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 		if("Ironplate")
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
-		if("Ironplate&Gambeson") // Big roller gets iron chainlegs and an iron breastplate over a gambeson. Lucky them
+		if("Ironplate&Gambeson") // Big roller gets iron chainlegs and an iron breastplate over chainmail. Lucky them
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
-			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 			pants = /obj/item/clothing/under/roguetown/chainlegs/iron
 	switch(weapontype) // We get +1 weapon skill in either axes/maces or swords, depending on our starting weapon
 		if("Axe")
@@ -73,7 +73,7 @@
 	else // High roller gets steel chain coif
 		neck = /obj/item/clothing/neck/roguetown/chaincoif
 
-	H.change_stat("strength", 1) // Same bonus as a garrison guard
+	H.change_stat("strength", 2)
 	H.change_stat("endurance", 1)
 	H.change_stat("constitution", 1)
 	H.change_stat("intelligence", -1) // Muscle brains
