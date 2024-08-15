@@ -6,7 +6,6 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Tiefling",
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/templar
