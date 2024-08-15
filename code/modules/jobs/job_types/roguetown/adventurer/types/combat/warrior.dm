@@ -1,7 +1,7 @@
 //shield sword
 /datum/advclass/combat/sfighter
 	name = "Warrior"
-	tutorial = "Warriors are the heart of any party, hidden behind a large shield with the courage to take on any foe."
+	tutorial = "Wandering sellswords, foolhardy gloryhounds, deserters... many and varied folk turn to the path of the warrior. Very few meet anything greater than the bottom of a tankard or the wrong end of a noose."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -23,10 +23,10 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(1,2), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(2,3), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(1,2,2), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(2,3), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(1,1,2), TRUE)
@@ -42,31 +42,39 @@
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/shield/wood
-	var/armortype = pickweight(list("Chainmail" = 6, "Plate" = 3, "Steel" = 1))
-	var/weapontype = pickweight(list("Messer" = 3, "Sword" = 5, "Shortsword" = 2))
+	var/armortype = pickweight(list("Ironmail" = 6, "Ironplate" = 3, "Ironplate&Gambeson" = 1)) // At best they can get an iron breastplate over gambeson
+	var/weapontype = pickweight(list("Axe" = 2, "Mace" = 3, "Messer" = 3, "Sword" = 2)) // Rolls for various weapons, all of these are iron tier
 	switch(armortype)
-		if("Chainmail")
+		if("Ironmail")
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-		if("Plate")
+		if("Ironplate")
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
-		if("Steel") // Big roller gets chainlegs as well
-			armor = /obj/item/clothing/suit/roguetown/armor/chainmail
+		if("Ironplate&Gambeson") // Big roller gets iron chainlegs and an iron breastplate over a gambeson. Lucky them
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
+			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 			pants = /obj/item/clothing/under/roguetown/chainlegs/iron
-	switch(weapontype)
+	switch(weapontype) // We get +1 weapon skill in either axes/maces or swords, depending on our starting weapon
+		if("Axe")
+			beltl = /obj/item/rogueweapon/woodcut
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+		if("Mace")
+			beltl = /obj/item/rogueweapon/mace
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		if("Messer")
 			beltl = /obj/item/rogueweapon/sword/iron/messer
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		if("Sword")
 			beltl = /obj/item/rogueweapon/sword/iron
-		if("Shortsword") // Big roller gets steel sword.
-			beltl = /obj/item/rogueweapon/sword/short
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+
 	if(prob(66))
 		neck = /obj/item/clothing/neck/roguetown/gorget
 		head = /obj/item/clothing/head/roguetown/helmet/skullcap
 	else // High roller gets steel chain coif
 		neck = /obj/item/clothing/neck/roguetown/chaincoif
 
-	H.change_stat("strength", 2)
+	H.change_stat("strength", 1) // Same bonus as a garrison guard
 	H.change_stat("endurance", 1)
-	H.change_stat("speed", 1)
+	H.change_stat("constitution", 1)
 	H.change_stat("intelligence", -1) // Muscle brains
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) // MEDIUM armor training only, this is not a rare drifter, they shouldn't have more armor training than a garrison guard
