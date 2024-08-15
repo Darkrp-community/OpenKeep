@@ -37,6 +37,10 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	if(prob(50))
 		backr = /obj/item/storage/backpack/rogue/satchel
+	H.change_stat("strength", 2)
+	H.change_stat("endurance", 1)
+	H.change_stat("constitution", 2)
+	H.change_stat("intelligence", -2)
 	if(H.gender == MALE)
 		H.change_stat("strength", 1)
 		var/armortype = pickweight(list("Cloak" = 5, "Hide" = 3, "Helmet" = 2))
@@ -78,10 +82,6 @@
 				r_hand = /obj/item/rogueweapon/spear
 				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 
-		H.change_stat("strength", 1)
-		H.change_stat("endurance", 1)
-		H.change_stat("constitution", 2)
-		H.change_stat("intelligence", -2)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	if(H.dna?.species)
