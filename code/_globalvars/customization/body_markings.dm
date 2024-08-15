@@ -32,3 +32,13 @@ GLOBAL_LIST_INIT(body_marking_sets, build_body_marking_set_references())
 						GLOB.body_markings_per_limb[marking_zone] = list()
 					GLOB.body_markings_per_limb[marking_zone] += BM.name
 
+/proc/build_body_marking_set_references()
+	// Here we build the global list for all body markings sets
+	. = list()
+	for(var/path in subtypesof(/datum/body_marking_set))
+		var/datum/body_marking_set/BM = path
+		if(initial(BM.name))
+			BM = new path()
+			.[BM.name] = BM
+			GLOB.body_marking_sets_by_type[path] = BM
+
