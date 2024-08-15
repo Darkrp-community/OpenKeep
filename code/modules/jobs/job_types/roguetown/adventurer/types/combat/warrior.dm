@@ -54,7 +54,7 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 			pants = /obj/item/clothing/under/roguetown/chainlegs/iron
-	switch(weapontype) // We get +1 weapon skill in either axes/maces or swords, depending on our starting weapon
+	switch(weapontype) // We get +1 weapon skill in either axes/maces, swords, or flails depending on our starting weapon
 		if("Axe")
 			beltl = /obj/item/rogueweapon/woodcut
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
