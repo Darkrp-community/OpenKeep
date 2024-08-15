@@ -18,10 +18,10 @@
 /datum/outfit/job/roguetown/adventurer/sfighter/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
@@ -42,8 +42,9 @@
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/shield/wood
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	var/armortype = pickweight(list("Ironmail" = 6, "Ironplate" = 3, "Ironplate&Mail" = 1)) // At best they can get an iron breastplate over mail
-	var/weapontype = pickweight(list("Axe" = 2, "Mace" = 3, "Messer" = 3, "Sword" = 2)) // Rolls for various weapons, all of these are iron tier
+	var/weapontype = pickweight(list("Axe" = 2, "Mace" = 2, "Messer" = 2, "Sword" = 3, "Flail" = 1)) // Rolls for various weapons, all of these are iron tier
 	switch(armortype)
 		if("Ironmail")
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
@@ -66,6 +67,9 @@
 		if("Sword")
 			beltl = /obj/item/rogueweapon/sword/iron
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		if("Flail") // Big roller gets one of the best weapons to pair with a shield, even if it is only iron tier. Lucky bastard
+			beltl = /obj/item/rogueweapon/flail
+			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 
 	if(prob(66))
 		neck = /obj/item/clothing/neck/roguetown/gorget
