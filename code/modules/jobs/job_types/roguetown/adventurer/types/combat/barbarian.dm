@@ -61,9 +61,9 @@
 	if(H.gender == FEMALE)
 		var/armortype = pickweight(list("Chainkini" = 5, "Leather" = 3, "Hide" = 2))
 		var/weapontype = pickweight(list("Sword" = 7, "Spear" = 3))
-		switch(armortype)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", 1)
+		switch(armortype)
 			if("Chainkini")
 				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
 			if("Leather")
@@ -78,10 +78,10 @@
 				r_hand = /obj/item/rogueweapon/spear
 				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 
-	H.change_stat("strength", 2)
-	H.change_stat("endurance", 1)
-	H.change_stat("constitution", 2)
-	H.change_stat("intelligence", -2)
+		H.change_stat("strength", 1)
+		H.change_stat("endurance", 1)
+		H.change_stat("constitution", 2)
+		H.change_stat("intelligence", -2)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	if(H.dna?.species)
