@@ -1,6 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/troll
 	icon = 'icons/roguetown/mob/monster/trolls.dmi'
-	name = "Troll"
+	name = "troll"
+	desc = "Elven legends say these monsters were servants of Dendor tasked to guard his realm; nowadays they are sometimes found in the company of orcs."
 	icon_state = "Troll2"
 	icon_living = "Troll2"
 	icon_dead = "Troll2d"
