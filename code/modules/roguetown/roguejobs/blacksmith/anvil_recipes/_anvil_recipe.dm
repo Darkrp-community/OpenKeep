@@ -160,6 +160,9 @@
 	I.max_integrity  *= modifier
 	I.obj_integrity *= modifier
 	I.sellprice *= modifier
+	if(istype(I, /obj/item/lockpick))
+		var/obj/item/lockpick/L = I
+		L.picklvl = modifier
 	if(istype(I, /obj/item/rogueweapon))
 		var/obj/item/rogueweapon/W = I
 		W.force *= modifier
