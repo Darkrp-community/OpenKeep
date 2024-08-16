@@ -24,17 +24,23 @@ GLOBAL_LIST_EMPTY(berrycolors)
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue
 	seed = /obj/item/seeds/berryrogue
 	name = "jacksberries"
-	desc = "A bunch of nutritious wildberries."
+	desc = "Common berries found throughout Rockhill. A traveler's repast, or Dendor's wrath."
 	icon_state = "berries"
 	tastes = list("berry" = 1)
 	bitesize = 5
-	juice_results = list(/datum/reagent/consumable/berryjuice = 3)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	dropshrink = 0.75
 	var/color_index = "good"
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/jackberrywine
 	rotprocess = SHELFLIFE_SHORT
+	var/poisonous = FALSE
+
+/obj/item/reagent_containers/food/snacks/grown/berries/rogue/examine(var/mob/user)
+	var/farminglvl = user.mind?.get_skill_level(/datum/skill/labor/farming)
+	. += ..()
+	if(farminglvl >= 3 && poisonous == TRUE)
+		. += "These berries appear to be poisonous."
 
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue/Initialize()
 	if(GLOB.berrycolors[color_index])
@@ -70,11 +76,11 @@ GLOBAL_LIST_EMPTY(berrycolors)
 
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
 	seed = /obj/item/seeds/berryrogue/poison
-	desc = "A bunch of nutritious wildberries. They smell a bit odd."
 	icon_state = "berries"
 	tastes = list("berry" = 1)
 	list_reagents = list(/datum/reagent/berrypoison = 5, /datum/reagent/consumable/nutriment = 3)
 	color_index = "bad"
+	poisonous = TRUE
 
 /obj/item/seeds/berryrogue/poison
 	product = /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
