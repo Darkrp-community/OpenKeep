@@ -442,9 +442,9 @@
 										foundstab = TRUE
 										break
 								if(foundstab)
-									if(L.mind.get_skill_level(/datum/skill/misc/stealing) >= initial(door.kickthresh) / 5)
+									if(L.mind.get_skill_level(/datum/skill/misc/lockpicking) >= initial(door.kickthresh) / 5)
 										door.kickthresh--
-									if((prob(L.mind.get_skill_level(/datum/skill/misc/stealing) * 5) || door.kickthresh == 0) && (L.mind.get_skill_level(/datum/skill/misc/stealing) >= initial(door.kickthresh) / 5))								
+									if((prob(L.mind.get_skill_level(/datum/skill/misc/lockpicking) * 5) || door.kickthresh == 0) && (L.mind.get_skill_level(/datum/skill/misc/lockpicking) >= initial(door.kickthresh) / 5))								
 										src.visible_message("<span class='warning'>[src] lockpicks [door.name] successfully!</span>", \
 											"<span class='notice'>I lockpick [door.name]!</span>")
 										door.locked = 0
@@ -452,7 +452,7 @@
 									else								
 										src.visible_message("<span class='warning'>[src] messes around [door.name] suspiciously!</span>", \
 											"<span class='notice'>I fail to lockpick [door.name]!</span>")
-										src.mind.adjust_experience(/datum/skill/misc/stealing, src.STAINT*src.mind.get_learning_boon(/datum/skill/misc/stealing), FALSE)
+										src.mind.adjust_experience(/datum/skill/misc/lockpicking, src.STAINT*src.mind.get_learning_boon(/datum/skill/misc/lockpicking), FALSE)
 										playsound(src, door.rattlesound, 100)
 										var/oldx = pixel_x
 										animate(door, pixel_x = oldx+1, time = 0.5)

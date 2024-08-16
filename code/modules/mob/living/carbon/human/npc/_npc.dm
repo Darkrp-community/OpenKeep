@@ -69,10 +69,8 @@
 		return TRUE
 
 /mob/living/carbon/human/proc/npc_stand()
-	if(stand_up())
-		stand_attempts = 0
-	else
-		stand_attempts += rand(1,3)
+	stand_up()
+	stand_attempts += 1
 
 /mob/living/carbon/human/proc/npc_idle()
 	if(m_intent == MOVE_INTENT_SNEAK)
@@ -256,7 +254,7 @@
 	switch(mode)
 		if(AI_IDLE)		// idle
 			if(world.time >= next_seek)
-				next_seek = world.time + 3 SECONDS
+				next_seek = world.time + 1 SECONDS
 				var/list/around = hearers(7, src) // scan for enemies
 				for(var/mob/living/L in around)
 					if(should_target(L))
