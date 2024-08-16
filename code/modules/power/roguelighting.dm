@@ -634,7 +634,7 @@
 
 /obj/machinery/light/rogue/hearth/attackby(obj/item/W, mob/living/user, params)
 	if(!attachment)
-		if(istype(W, /obj/item/cooking/pan) || istype(W, /obj/item/cooking/pot))
+		if(istype(W, /obj/item/cooking/pan) || istype(W, /obj/item/reagent_containers/glass/bucket/pot))
 			playsound(get_turf(user), 'sound/foley/dropsound/shovel_drop.ogg', 40, TRUE, -1)
 			attachment = W
 			W.forceMove(src)
@@ -648,15 +648,32 @@
 					playsound(get_turf(user), 'modular/Neu_Food/sound/eggbreak.ogg', 100, TRUE, -1)
 					sleep(25) // to get egg crack before frying hiss
 					W.icon_state = "rawegg" // added
+					mouse_opacity = 0 // so you cannot scoop up raw egg in the pan. Returned to 1 in process proc below
 				if(!food)
 					S.forceMove(src)
 					food = S
 					update_icon()
 					playsound(src.loc, 'sound/misc/frying.ogg', 80, FALSE, extrarange = 5)
 					return
-/* from Blackstone, made for their cooking pot. Retained for consistency.
-		else if(istype(attachment, /obj/item/cooking/pot))
-			var/obj/item/cooking/pot = attachment
+// from Blackstone, made for their cooking pot. Retained for consistency. New concept = boil at least 50 water, add item, it turns into food reagent volume 50 of the appropriate type
+		else if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot))
+			var/obj/item/reagent_containers/glass/bucket/pot = attachment
+			if(istype(W, /obj/item/reagent_containers/food/snacks/grown/oat))
+				if(!pot.reagents.has_reagent(/datum/reagent/water, 33))
+					to_chat(user, "<span class='notice'>Not enough water.</span>")
+					return TRUE
+				if(pot.reagents.chem_temp < 374)
+					to_chat(user, "<span class='warning'>[pot] isn't boiling!</span>")
+					return
+				user.visible_message("<span class='info'>[user] places [W] into the pot.</span>")
+				qdel(W)
+				sleep(200)
+				pot.reagents.remove_reagent(/datum/reagent/water, 33)
+				playsound(src, "bubbles", 20, TRUE)
+				pot.reagents.add_reagent(/datum/reagent/consumable/oatmeal, 33)
+				return
+/*
+
 			if(W.type in subtypesof(/obj/item/reagent_containers/food/snacks) || W.type == /obj/item/reagent_containers/powder/flour) 
 				if(pot.reagents.chem_temp < 374)
 					to_chat(user, "<span class='warning'>[pot] isn't boiling!</span>")
@@ -679,11 +696,24 @@
 */
 	. = ..()
 
+
+/datum/reagent/consumable/oatmeal
+	name = "oatmeal"
+	description = "Fitting for a peasant."
+	reagent_state = LIQUID
+	color = "#8f896c"
+	nutriment_factor = 0.2
+	metabolization_rate = 0.1
+	taste_description = "oatmeal"
+	taste_mult = 8
+
+//////////////////////////////////
+
 /obj/machinery/light/rogue/hearth/update_icon()
 	cut_overlays()
 	icon_state = "[base_state][on]"
 	if(attachment)
-		if(istype(attachment, /obj/item/cooking/pan) || istype(attachment, /obj/item/cooking/pot))
+		if(istype(attachment, /obj/item/cooking/pan) || istype(attachment, /obj/item/reagent_containers/glass/bucket/pot))
 			var/obj/item/I = attachment
 			I.pixel_x = 0
 			I.pixel_y = 0
@@ -711,7 +741,7 @@
 					attachment.forceMove(user.loc)
 				attachment = null
 				update_icon()
-		if(istype(attachment, /obj/item/cooking/pot))
+		if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot))
 			if(!user.put_in_active_hand(attachment))
 				attachment.forceMove(user.loc)
 			attachment = null
@@ -746,9 +776,10 @@
 				if(food)
 					var/obj/item/C = food.cooking(20, src)
 					if(C)
+						mouse_opacity = 1
 						qdel(food)
 						food = C
-			if(istype(attachment, /obj/item/cooking/pot))
+			if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot))
 				if(attachment.reagents)
 					attachment.reagents.expose_temperature(400, 0.033)
 					if(attachment.reagents.chem_temp > 374)

@@ -115,10 +115,21 @@
 
 /obj/item/reagent_containers/glass/bowl
 	name = "wooden bowl"
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	experimental_inhand = FALSE
+	desc = "It is the empty space that makes the bowl useful."
+	icon = 'icons/roguetown/items/cooking.dmi'
+	icon_state = "bowl"
+	force = 5
+	throwforce = 10
+	reagent_flags = OPENCONTAINER
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
+	dropshrink = 0.8
+	w_class = WEIGHT_CLASS_NORMAL
+	volume = 33
+	obj_flags = CAN_BE_HIT
+	sellprice = 1
+	drinksounds = list('sound/items/drink_cup (1).ogg','sound/items/drink_cup (2).ogg','sound/items/drink_cup (3).ogg','sound/items/drink_cup (4).ogg','sound/items/drink_cup (5).ogg')
+	fillsounds = list('sound/items/fillcup.ogg')
 
 /obj/item/reagent_containers/glass/bowl/update_icon()
 	cut_overlays()
@@ -129,13 +140,18 @@
 	else
 		icon_state = "bowl"
 
+/obj/item/reagent_containers/glass/bowl/on_reagent_change(changetype)
+	..()
+	update_icon()
+
+
 /obj/item/reagent_containers/glass/cup
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
 
-/obj/item/cooking/pot
+/obj/item/reagent_containers/glass/bucket/pot
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
@@ -173,6 +189,7 @@
 	icon_state ="book8_0"
 	base_icon_state = "book8"
 	bookfile = "Neu_cooking.json"
+
 
 
 
@@ -370,6 +387,15 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotato/plated(loc)
+				qdel(I)
+				qdel(src)
+		else
+			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/wieneronions))
+		if(isturf(loc)&& (found_table))
+			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
+			if(do_after(user,2 SECONDS, target = src))
+				new /obj/item/reagent_containers/food/snacks/rogue/wieneronions/plated(loc)
 				qdel(I)
 				qdel(src)
 		else

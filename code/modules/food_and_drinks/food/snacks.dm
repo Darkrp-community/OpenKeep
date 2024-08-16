@@ -403,11 +403,6 @@ All foods are distributed among various categories. Use common sense.
 	if((slices_num <= 0 || !slices_num) || !slice_path) //is the food sliceable?
 		return FALSE
 
-	if(slice_sound)
-		playsound(get_turf(user), 'sound/neu/slicing.ogg', 60, TRUE, -1) // added some choppy sound
-	if(chopping_sound)
-		playsound(get_turf(user), 'sound/neu/chopping_block.ogg', 60, TRUE, -1) // added some choppy sound
-
 	if ( \
 			!isturf(src.loc) || \
 			!(locate(/obj/structure/table) in src.loc) && \
@@ -416,6 +411,11 @@ All foods are distributed among various categories. Use common sense.
 		)
 		to_chat(user, "<span class='warning'>I need to use a table.</span>")
 		return FALSE
+
+	if(slice_sound)
+		playsound(get_turf(user), 'sound/neu/slicing.ogg', 60, TRUE, -1) // added some choppy sound
+	if(chopping_sound)
+		playsound(get_turf(user), 'sound/neu/chopping_block.ogg', 60, TRUE, -1) // added some choppy sound
 
 	if(slice_batch)
 		if(!do_after(user, 30, target = src))

@@ -116,6 +116,7 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked
 	fried_type = null
 	slices_num = 2
+	slice_sound = TRUE
 	ingredient_size = 4
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet
