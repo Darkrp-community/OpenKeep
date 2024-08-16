@@ -116,7 +116,7 @@
 
 /datum/anvil_recipe/weapons/swordcopper
 	name = "Copper Sword"
-	recipe_name = "a Sword"
+	recipe_name = "a Copper Sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/rogueweapon/sword/copper
