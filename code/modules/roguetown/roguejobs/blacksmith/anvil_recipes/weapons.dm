@@ -159,7 +159,7 @@
 
 /datum/anvil_recipe/weapons/ironhammer
 	name = "iron sledgehammer (+s)"
-	recipe_name = "an sledgehammer"
+	recipe_name = "a sledgehammer"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
