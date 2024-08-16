@@ -12,7 +12,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/necromancer
 	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 1
-	pickprob = 50
+	pickprob = 100
 	allowed_patrons = list(/datum/patron/inhumen/zizo)
 
 /datum/outfit/job/roguetown/adventurer/necromancer/pre_equip(mob/living/carbon/human/H)
