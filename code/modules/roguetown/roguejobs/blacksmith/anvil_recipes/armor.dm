@@ -185,6 +185,39 @@
 	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/knight)
 	craftdiff = 3
 
+/datum/anvil_recipe/armor/helmetastrata
+	name = "Astratan Helm (2)"
+	recipe_name = "Astratan Crusader Helm"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/astratahelm)
+	craftdiff = 4
+
+/datum/anvil_recipe/armor/helmetnoc
+	name = "Nocian Helm (2)"
+	recipe_name = "Nocian Crusader Helm"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/nochelm)
+	craftdiff = 4
+
+/datum/anvil_recipe/armor/helmetnecra
+	name = "Necratic Helm (2)"
+	recipe_name = "Necratic Crusader Helm"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/necrahelm)
+	craftdiff = 4
+
+/datum/anvil_recipe/armor/helmetdendor
+	name = "Dendorite Helm (2)"
+	recipe_name = "Dendorite Crusader Helm"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm)
+	craftdiff = 4
+
+
 /datum/anvil_recipe/armor/helmetnasal
 	name = "Nasal helmet x2"
 	recipe_name = "a pair of Nasal Helmets"
