@@ -439,7 +439,7 @@
 	force_wielded = 20
 	possible_item_intents = list(/datum/intent/axe/cut)
 	name = "woodcutter axe"
-	desc = "The tool, weapon, and loyal companion of woodcutters. Able to chop mighty trees and repel the threats of the forest."
+	desc = "The tool, weapon, and loyal companion of woodcutters. Able to chop mighty trees and repel the threats of the forest with."
 	icon_state = "woodcutter"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	max_blade_int = 200
