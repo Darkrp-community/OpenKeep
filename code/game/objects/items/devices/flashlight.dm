@@ -510,7 +510,7 @@
 /obj/item/flashlight/flare/torch/lantern/bronze
 	name = "bronze lamptern"
 	icon_state = "blamp"
-	desc = "An elaborated lamptern"
+	desc = "An elaborated lamptern."
 	brightness_on = 7
 	on = FALSE
 	flags_1 = CONDUCT_1
