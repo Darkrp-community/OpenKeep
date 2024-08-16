@@ -468,7 +468,7 @@
 /obj/item/flashlight/flare/torch/lantern/copper
 	name = "copper lamptern"
 	icon_state = "clamp"
-	desc = "A simple and cheap lamptern"
+	desc = "A simple and cheap lamptern."
 	brightness_on = 7
 	on = FALSE
 	flags_1 = CONDUCT_1
