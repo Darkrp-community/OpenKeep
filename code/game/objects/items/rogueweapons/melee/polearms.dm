@@ -486,7 +486,7 @@
 	associated_skill = /datum/skill/combat/axesmaces
 	dropshrink = 0.95
 	minstr = 10
-	wdefense = 5
+	wdefense = 3
 	axe_cut = 15
 	sellprice = 20
 
