@@ -142,7 +142,7 @@
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "dwarven axe"
-	desc = "A Dwarf axe designed and used by Dwarves, decorated with runes of Malum and ready to take action against any threat. or tree."
+	desc = "A Dwarf axe designed and used by Dwarves, decorated with runes of Malum and ready to take action against any threat. Or tree."
 	icon_state = "dwarfaxe"
 	icon = 'icons/roguetown/weapons/32.dmi'
 
