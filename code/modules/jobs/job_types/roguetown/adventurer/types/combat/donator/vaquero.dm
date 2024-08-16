@@ -29,6 +29,7 @@
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/music, rand(1,2), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	head = /obj/item/clothing/head/roguetown/bardhat
