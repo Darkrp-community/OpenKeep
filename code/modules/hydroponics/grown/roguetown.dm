@@ -28,7 +28,8 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	icon_state = "berries"
 	tastes = list("berry" = 1)
 	bitesize = 5
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/berryjuice = 3)
+	juice_results = list(/datum/reagent/consumable/berryjuice = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	dropshrink = 0.75
 	var/color_index = "good"
 	can_distill = TRUE
