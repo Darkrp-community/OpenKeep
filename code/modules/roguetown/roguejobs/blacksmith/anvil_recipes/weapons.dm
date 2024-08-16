@@ -175,7 +175,7 @@
 
 /datum/anvil_recipe/weapons/footmancutter
 	name = "Warchopper Axe (2) (+w)"
-	recipe_name = "an big war Axe"
+	recipe_name = "a big war axe"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
