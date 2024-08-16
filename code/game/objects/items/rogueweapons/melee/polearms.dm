@@ -386,7 +386,7 @@
 	dropshrink = 0.75
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
-	wdefense = 4
+	wdefense = 3
 	thrown_bclass = BCLASS_STAB
 	throwforce = 20
 	sellprice = 15
