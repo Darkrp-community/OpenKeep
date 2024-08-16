@@ -38,4 +38,8 @@
 			if(HAS_TRAIT(H, TRAIT_ASSASSIN)) // If the mob is an assassin, they will be given the assassin antag.
 				var/datum/antagonist/new_antag = new /datum/antagonist/assassin()
 				H.mind.add_antag_datum(new_antag)
+		if(!H.mind)
+			if(HAS_TRAIT(H, TRAIT_NECROMANCER)) // if the mob is a necromancer, they will be given the necromancer antag (i want to enact pain on this antag)
+				var/datum/antagonist/new_antag = new /datum/antagonist/necromancer()
+				H.mind.add_antag_datum(new_antag)
 
