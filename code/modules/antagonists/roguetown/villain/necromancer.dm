@@ -16,7 +16,7 @@
 	owner.current.cmode_music = 'sound/music/combat_necromancer.ogg'
 
 
-/datum/antagonist/assassin/roundend_report()
+/datum/antagonist/necromancer/roundend_report()
 	var/traitorwin = FALSE
 
 	if(!considered_alive(owner))
