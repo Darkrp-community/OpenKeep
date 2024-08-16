@@ -139,6 +139,24 @@
 	createditem_num = 4
 	craftdiff = 0
 
+/datum/anvil_recipe/tools/lockpicks
+	name = "Lockpicks x3"
+	recipe_name = "three Lockpicks"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/lockpick
+	createmultiple = TRUE
+	createditem_num = 2
+	craftdiff = 2
+
+/datum/anvil_recipe/tools/lockpickring
+	name = "Lockpickrings x3"
+	recipe_name = "three Lockpickrings"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/lockpickring
+	createmultiple = TRUE
+	createditem_num = 2
+	craftdiff = 0
+
 /datum/anvil_recipe/tools/pick
 	name = "Pick (+s)"
 	recipe_name = "a digging Pick"

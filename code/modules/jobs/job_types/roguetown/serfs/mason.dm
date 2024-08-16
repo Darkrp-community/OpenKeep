@@ -34,6 +34,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, pick(2,2,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
