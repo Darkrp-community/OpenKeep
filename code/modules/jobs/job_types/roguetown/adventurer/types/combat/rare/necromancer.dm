@@ -38,7 +38,7 @@
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/raise_undead)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/sickness)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/eyebite)
-	ADD_TRAIT(H, TRAIT_NECROMANCER)
+	ADD_TRAIT(H, TRAIT_NECROMANCER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_ZOMBIE_IMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_VILLAIN, TRAIT_GENERIC)
