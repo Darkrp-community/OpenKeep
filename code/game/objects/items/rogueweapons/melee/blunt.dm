@@ -464,7 +464,7 @@
 	possible_item_intents = list(/datum/intent/mace/heavy/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/mace/thrust)
 	name = "copper warclub"
-	desc = "A two handed club, decorated with a crown of spikes. A barbaric besign, good enough to be used as weapon."
+	desc = "A two handed club, decorated with a crown of spikes. A barbaric besign, good enough to be used as a weapon."
 	icon_state = "coppergoden"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	//dropshrink = 0.75
