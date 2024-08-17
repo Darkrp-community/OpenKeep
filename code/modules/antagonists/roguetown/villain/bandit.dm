@@ -83,7 +83,6 @@
 
 /datum/outfit/job/roguetown/bandit/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.adjust_blindness(-3)
 	var/classes = list("Deserter","Poacher","Brigand")
 	var/classchoice = input("Choose your background", "Available backgrounds") as anything in classes
 
