@@ -24,6 +24,7 @@
     backr = /obj/item/rogueweapon/shield/wood
     backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)
     if(H.mind)
+        H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(2,2,3), TRUE)
         H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
