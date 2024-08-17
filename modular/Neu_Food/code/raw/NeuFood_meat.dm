@@ -41,6 +41,7 @@
 	cooked_type = null
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
 	new /obj/effect/decal/cleanable/food/mess(get_turf(src))
+	playsound(get_turf(src), 'modular/Neu_Food/sound/meatslap.ogg', 100, TRUE, -1)
 	..()
 	qdel(src)
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/attackby(obj/item/I, mob/user, params)

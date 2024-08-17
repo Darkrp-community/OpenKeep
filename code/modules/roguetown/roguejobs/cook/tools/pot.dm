@@ -14,6 +14,29 @@
 	item_state = "pot"
 	drop_sound = 'sound/foley/dropsound/shovel_drop.ogg'
 	w_class = WEIGHT_CLASS_BULKY
-
+	reagent_flags = OPENCONTAINER
 	throwforce = 10
 	volume = 99
+
+/obj/item/reagent_containers/glass/bucket/pot/update_icon()
+	cut_overlays()
+	if(reagents.total_volume)
+		var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "potefull")
+		filling.color = mix_color_from_reagents(reagents.reagent_list)
+		filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
+		add_overlay(filling)
+
+/obj/item/reagent_containers/glass/bucket/pot/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/reagent_containers/glass/bowl))
+		to_chat(user, "<span class='notice'>Filling the bowl...</span>")
+		playsound(user, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 70, FALSE)
+		if(do_after(user,2 SECONDS, target = src))
+			reagents.trans_to(I, reagents.total_volume)
+	return TRUE
+
+/datum/anvil_recipe/tools/pote
+	name = "Iron pot"
+	recipe_name = "a cooking pot"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/reagent_containers/glass/bucket/pot
+	craftdiff = 0

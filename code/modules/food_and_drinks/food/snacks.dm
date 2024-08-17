@@ -413,10 +413,9 @@ All foods are distributed among various categories. Use common sense.
 		return FALSE
 
 	if(slice_sound)
-		playsound(get_turf(user), 'sound/neu/slicing.ogg', 60, TRUE, -1) // added some choppy sound
+		playsound(get_turf(user), 'modular/Neu_Food/sound/slicing.ogg', 60, TRUE, -1) // added some choppy sound
 	if(chopping_sound)
-		playsound(get_turf(user), 'sound/neu/chopping_block.ogg', 60, TRUE, -1) // added some choppy sound
-
+		playsound(get_turf(user), 'modular/Neu_Food/sound/chopping_block.ogg', 60, TRUE, -1) // added some choppy sound
 	if(slice_batch)
 		if(!do_after(user, 30, target = src))
 			return FALSE

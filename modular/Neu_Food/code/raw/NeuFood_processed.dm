@@ -461,11 +461,10 @@
 		return ..()
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/cheesewheel_three/proc/maturing_done()
-	playsound(src.loc, 'sound/neu/rustle2.ogg', 100, TRUE, -1)
+	playsound(src.loc, 'modular/Neu_Food/sound/rustle2.ogg', 100, TRUE, -1)
 	new /obj/item/reagent_containers/food/snacks/rogue/cheddar(loc)
 	new /obj/item/natural/cloth(loc)
 	qdel(src)
-
 
 
 

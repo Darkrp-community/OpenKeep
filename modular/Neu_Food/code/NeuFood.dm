@@ -116,10 +116,12 @@
 /obj/item/reagent_containers/glass/bowl
 	name = "wooden bowl"
 	desc = "It is the empty space that makes the bowl useful."
-	icon = 'icons/roguetown/items/cooking.dmi'
+	icon = 'modular/Neu_Food/icons/cooking.dmi'
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	icon_state = "bowl"
 	force = 5
-	throwforce = 10
+	throwforce = 5
 	reagent_flags = OPENCONTAINER
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
@@ -133,10 +135,36 @@
 
 /obj/item/reagent_containers/glass/bowl/update_icon()
 	cut_overlays()
-	if(reagents && reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "fullbowl")
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
-		add_overlay(filling)
+	if(reagents)
+		if(reagents.total_volume > 0) 
+			if(reagents.total_volume <= 11) 
+				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_low")
+				filling.color = mix_color_from_reagents(reagents.reagent_list)
+				add_overlay(filling)
+		if(reagents.total_volume > 11) 
+			if(reagents.total_volume <= 22) 
+				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_half")
+				filling.color = mix_color_from_reagents(reagents.reagent_list)
+				add_overlay(filling)
+		if(reagents.total_volume > 22) 
+			if(reagents.has_reagent(/datum/reagent/consumable/soup/oatmeal, 10)) 
+				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_oatmeal")
+				filling.color = mix_color_from_reagents(reagents.reagent_list)
+				add_overlay(filling)
+			if(reagents.has_reagent(/datum/reagent/consumable/soup/veggie/cabbage, 17) || reagents.has_reagent(/datum/reagent/consumable/soup/veggie/onion, 17) || reagents.has_reagent(/datum/reagent/consumable/soup/veggie/onion, 17))
+				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_full")
+				filling.color = mix_color_from_reagents(reagents.reagent_list)
+				icon_state = "bowl_steam"
+				add_overlay(filling)
+			if(reagents.has_reagent(/datum/reagent/consumable/soup/stew/chicken, 17) || reagents.has_reagent(/datum/reagent/consumable/soup/stew/meat, 17) || reagents.has_reagent(/datum/reagent/consumable/soup/stew/fish, 17))
+				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_stew")
+				filling.color = mix_color_from_reagents(reagents.reagent_list)
+				icon_state = "bowl_steam"
+				add_overlay(filling)
+			else 
+				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_full")
+				filling.color = mix_color_from_reagents(reagents.reagent_list)
+				add_overlay(filling)
 	else
 		icon_state = "bowl"
 
@@ -144,6 +172,14 @@
 	..()
 	update_icon()
 
+/obj/item/reagent_containers/glass/bowl/attackby(obj/item/I, mob/user, params) // lets you eat with a spoon from a bowl
+	if(reagents)
+		playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
+		visible_message("<span class='info'>[user] eats from [src].</span>")
+		if(do_after(user,1 SECONDS, target = src))
+			addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), user, min(amount_per_transfer_from_this,5), TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
+	return TRUE
+				
 
 /obj/item/reagent_containers/glass/cup
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
@@ -190,7 +226,73 @@
 	base_icon_state = "book8"
 	bookfile = "Neu_cooking.json"
 
+/*	........   Reagents   ................ */// These are for the pot, if more vegetables are added and need to be integrated into the pot brewing you need to add them here
+/datum/reagent/consumable/soup // so you get hydrated without the flavor system messing it up. Works like water with less hydration
+	var/hydration = 6
+/datum/reagent/consumable/soup/on_mob_life(mob/living/carbon/M)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
+			H.adjust_hydration(hydration)
+		if(M.blood_volume < BLOOD_VOLUME_NORMAL)
+			M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_NORMAL)
+	..()
 
+/datum/reagent/consumable/soup/oatmeal
+	name = "oatmeal"
+	description = "Fitting for a peasant."
+	reagent_state = LIQUID
+	color = "#c38553"
+	nutriment_factor = 0.2
+	metabolization_rate = 0.1
+	taste_description = "oatmeal"
+	taste_mult = 3
+	hydration = 2
+
+/datum/reagent/consumable/soup/veggie
+	name = "vegetable soup"
+	description = ""
+	reagent_state = LIQUID
+	nutriment_factor = 0.3
+	metabolization_rate = 0.1
+	taste_mult = 4
+	hydration = 8
+
+/datum/reagent/consumable/soup/veggie/potato
+	color = "#869256"
+	taste_description = "potato broth"
+
+/datum/reagent/consumable/soup/veggie/onion
+	color = "#a6b457"
+	taste_description = "boiled onions"
+
+/datum/reagent/consumable/soup/veggie/cabbage
+	color = "#859e56"
+	taste_description = "watery cabbage"
+
+/datum/reagent/consumable/soup/stew
+	name = "thick stew"
+	description = "All manners of edible bits went into this."
+	reagent_state = LIQUID
+	nutriment_factor = 0.4
+	metabolization_rate = 0.1
+	taste_mult = 4
+
+/datum/reagent/consumable/soup/stew/chicken
+	color = "#baa21c"
+	taste_description = "chicken"
+
+/datum/reagent/consumable/soup/stew/meat
+	color = "#80432a"
+	taste_description = "meat stew"
+
+/datum/reagent/consumable/soup/stew/fish
+	color = "#c7816e"
+	taste_description = "fish"
+
+/datum/reagent/consumable/soup/stew/yucky
+	color = "#9e559c"
+	taste_description = "something rancid"
 
 
 /* * * * * * * * * * * * * * *	*
