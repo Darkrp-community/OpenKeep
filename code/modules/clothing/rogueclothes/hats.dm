@@ -481,9 +481,10 @@
 				H.update_inv_head()
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
-			prevent_crits = initial(prevent_crits)
-			will_cover = initial(will_cover)
-			will_hide = initial(will_hide)
+			prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+			will_cover = FULL_HEAD
+			will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
+			flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 			if(user)
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
@@ -492,6 +493,15 @@
 	else // Failsafe.
 		to_chat(user, "<span class='warning'>Wear the helmet on your head to open and close the visor.</span>")
 		return
+
+// Prevents coverage error when unequipping.
+/obj/item/clothing/head/roguetown/helmet/visored/dropped(mob/user)
+	. = ..()
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	will_cover = FULL_HEAD
+	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	user.update_fov_angles()
 
 /obj/item/clothing/head/roguetown/helmet/visored/sallet
 	name = "visored sallet"
