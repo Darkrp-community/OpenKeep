@@ -25,7 +25,7 @@
 /datum/outfit/job/roguetown/cook/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
@@ -34,7 +34,6 @@
 		H.mind.adjust_skillrank(/datum/skill/labor/taming, 1, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/roguekey/tavern
 	if(H.gender == MALE)

@@ -26,6 +26,7 @@
 /datum/outfit/job/roguetown/innkeep/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
