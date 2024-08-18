@@ -97,7 +97,8 @@ GLOBAL_LIST_INIT(serf_positions, list(
 	"Tailor",
 	"Alchemist",
 	"Mason",
-	"Scribe"
+	"Scribe",
+	"Steveador"
 	))
 
 GLOBAL_LIST_INIT(peasant_positions, list(
@@ -114,7 +115,6 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Adventurer",
 	"Towner",
 	"Pilgrim",
-	"Grabber",
 	"Mercenary",
 	"Niteman",
 	"Nitemaiden",
