@@ -12,7 +12,8 @@
 		"Humen",
 		"Elf",
 		"Half-Elf",
-		"Dwarf"
+		"Dwarf",
+		"Aasimar"
 	)
 	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fetch)
 	allowed_patrons = list(/datum/patron/divine/noc)
