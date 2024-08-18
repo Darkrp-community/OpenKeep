@@ -166,7 +166,7 @@ Design philosphy:
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE) // For rapier use
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE) // For rapier use
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 	H.change_stat("intelligence", 1)
