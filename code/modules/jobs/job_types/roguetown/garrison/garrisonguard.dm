@@ -207,7 +207,7 @@ Design philosphy:
 	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-	H.change_stat("strength", -2)	//Basically similar stats to that of court sorceress/wandering mage, but tiny tad bit better. (No speed penalty due to less spells.)
+	H.change_stat("strength", -2)	//Basically similar stats to that of sorceress/wandering mage, but tiny tad bit better. (No speed penalty due to less spells.)
 	H.change_stat("intelligence", 3)
 	H.change_stat("endurance", -1)
 	H.change_stat("constitution", -1)

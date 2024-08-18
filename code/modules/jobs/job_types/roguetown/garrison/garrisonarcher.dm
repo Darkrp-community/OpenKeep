@@ -3,7 +3,7 @@
 	flag = WATCHMAN
 	department_flag = GARRISON
 	faction = "Station"
-	total_positions = 0		//Disabled, handles via garrisonguard now.
+	total_positions = 0		//Disabled, handles via garrisonguard class choice options now.
 	spawn_positions = 0
 
 	allowed_sexes = list(MALE, FEMALE)
