@@ -24,6 +24,11 @@
 	cost = 12
 	contains = /obj/item/rope/chain
 
+/datum/supply_pack/rogue/tools/lockpicks
+	name = "Lockpicks"
+	cost = 20
+	contains = /obj/item/lockpickring/mundane
+
 /datum/supply_pack/rogue/tools/sack
 	name = "Sack"
 	cost = 5

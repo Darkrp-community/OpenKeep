@@ -43,6 +43,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, pick(1,1,2), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, pick(0,1,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, pick(0,1,1), TRUE) // 66% over 50% of normal smith
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 6, TRUE)

@@ -31,6 +31,7 @@
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/music, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/mockery)
