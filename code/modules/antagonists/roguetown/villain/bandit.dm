@@ -83,6 +83,7 @@
 
 /datum/outfit/job/roguetown/bandit/pre_equip(mob/living/carbon/human/H)
 	..()
+	H.become_blind("TRAIT_GENERIC")
 	var/classes = list("Deserter","Poacher","Brigand")
 	var/classchoice = input("Choose your background", "Available backgrounds") as anything in classes
 
@@ -180,6 +181,7 @@
 			pants = /obj/item/clothing/under/roguetown/trou/leather
 			beltr = /obj/item/rogueweapon/sword/iron
 
+	H.cure_blind("TRAIT_GENERIC")
 	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	shoes = /obj/item/clothing/shoes/roguetown/boots
