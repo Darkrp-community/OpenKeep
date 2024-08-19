@@ -317,7 +317,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 		villain.restricted_roles = restricted_jobs.Copy()
 		testing("[key_name(villain)] has been selected as the [villain.special_role]")
 		log_game("[key_name(villain)] has been selected as the [villain.special_role]")
-		antag_candidates.Remove(vampire)
+		antag_candidates.Remove(villain)
 		remaining -= 1
 	for(var/antag in pre_cultists)
 		GLOB.pre_setup_antags |= antag
