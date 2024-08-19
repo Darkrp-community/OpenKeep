@@ -32,6 +32,29 @@
 	createditem_num = 1
 	craftdiff = 0
 
+/datum/anvil_recipe/armor/iplate
+	name = "Iron plate armor (3)"
+	recipe_name = "a set of iron armor"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/ingot/iron,/obj/item/ingot/iron)
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/scale/iron 
+	craftdiff = 1
+
+/datum/anvil_recipe/armor/iplatehelmet
+	name = "Iron plate helmet (2)"
+	recipe_name = "a face guarded iron helmet"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/ingot/iron)
+	created_item = /obj/item/clothing/head/roguetown/helmet/ironplate
+	craftdiff = 1
+
+/datum/anvil_recipe/armor/ipothelmet
+	name = "Iron pot helmet"
+	recipe_name = "a heavy iron helmet"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/head/roguetown/helmet/ironpot
+	craftdiff = 1
+
 /datum/anvil_recipe/armor/ichainmail
 	name = "Chainmail"
 	recipe_name = "a Chainmail"

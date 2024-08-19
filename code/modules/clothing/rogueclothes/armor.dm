@@ -173,6 +173,21 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 35
 
+//full iron armor for robbers/warriors
+/obj/item/clothing/suit/roguetown/armor/plate/scale/iron
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "iron plate armor"
+	desc = "A rough set of iron armor, chainmail and pauldrons who cover the whole chest, arms and legs is a simple and cheap design."
+	body_parts_covered = CHEST|VITALS|GROIN|LEGS
+	allowed_sex = list(MALE, FEMALE)
+	icon_state = "ironplate"
+	max_integrity = 150//a bit less than steel armors 
+	armor = list("melee" = 90, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	smeltresult = /obj/item/ingot/iron
+	equip_delay_self = 40
+	armor_class = ARMOR_CLASS_MEDIUM
+	sellprice = 25
+
 // Rare Heartfelt equipment
 /obj/item/clothing/suit/roguetown/armor/heartfelt/lord
 	slot_flags = ITEM_SLOT_ARMOR

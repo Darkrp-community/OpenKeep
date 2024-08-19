@@ -1005,3 +1005,28 @@
 	allowed_race = list("aasimar")
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
+
+/obj/item/clothing/head/roguetown/helmet/ironplate
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	name = "iron plate helmet"
+	max_integrity = 350//isn't the same as a steel helmet but is better than a skullcap, costs 2 bars and protects the mouth
+	icon_state = "ironplate"
+	item_state = "ironplate"
+	desc = "A iron masked helmet usually worn by armed men, is a solid design yet antiquated and cheap."
+	will_cover = HEAD|HAIR|NOSE|MOUTH|EARS
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/roguetown/helmet/ironpot
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	name = "iron plate helmet"
+	max_integrity = 250//isn't the same as a steel helmet but is better than a skullcap
+	icon_state = "ironpot"
+	item_state = "ironpot"
+	desc = "A iron pot style helmet designed to protect the skull and the nose, designs like those are outdated but they are simple to make in big numbers."
+	will_cover = HEAD|HAIR|NOSE|EARS
+	flags_inv = HIDEEARS
+
