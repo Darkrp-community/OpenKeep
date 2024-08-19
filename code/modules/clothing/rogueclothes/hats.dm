@@ -713,7 +713,7 @@
 	max_integrity = 180 //crude bandit craftsmenship
 	sellprice = 30
 
-/obj/item/clothing/head/roguetown/helmet/leather/bandit
+/obj/item/clothing/head/roguetown/helmet/leather/headscarf
 	name = "headscarf"
 	desc = "Rolled cloth. Gives some protection at least."
 	icon_state = "headscarf"
