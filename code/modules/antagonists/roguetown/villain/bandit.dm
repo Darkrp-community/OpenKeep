@@ -121,6 +121,7 @@
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/rust
 			mask = /obj/item/clothing/mask/rogue/shepherd/rag
 			backl = /obj/item/storage/backpack/rogue/satchel
+			beltl = /obj/item/clothing/head/roguetown/menacing/bandit
 
 		if("Poacher") //good perception, speed, bow skill, and knife skill. Also some cooking and skincrafting since they are poachers. The speedy ranged class.
 			H.set_blindness(0)
@@ -188,6 +189,7 @@
 			beltr = /obj/item/rogueweapon/sword/iron
 			head = /obj/item/clothing/head/roguetown/menacing/bandit
 			backl = /obj/item/storage/backpack/rogue/satchel
+			beltl = /obj/item/clothing/mask/rogue/shepherd/rag
 
 	H.cure_blind("TRAIT_GENERIC")
 	belt = /obj/item/storage/belt/rogue/leather
