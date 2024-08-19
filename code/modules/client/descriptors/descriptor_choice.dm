@@ -160,6 +160,7 @@
 		/datum/mob_descriptor/skin/diseased,
 		/datum/mob_descriptor/skin/dry,
 		/datum/mob_descriptor/skin/fine,
+		/datum/mob_descriptor/skin/fair,
 		/datum/mob_descriptor/skin/wrinkled,
 		/datum/mob_descriptor/skin/sunkissed,
 		/datum/mob_descriptor/skin/aged,
@@ -191,7 +192,6 @@
 	/datum/mob_descriptor/prominent/unkempt,\
 	/datum/mob_descriptor/prominent/tidy,\
 	/datum/mob_descriptor/prominent/eloquent,\
-	/datum/mob_descriptor/prominent/thick_tail,\
 	/datum/mob_descriptor/prominent/cleft_lip,\
 	/datum/mob_descriptor/prominent/physically_deformed,\
 	/datum/mob_descriptor/prominent/extensive_scars,\
@@ -226,6 +226,7 @@
 	/datum/mob_descriptor/prominent/chaste_mannerism,\
 	/datum/mob_descriptor/prominent/whimsy,\
 	/datum/mob_descriptor/prominent/dim_look,\
+	/datum/mob_descriptor/prominent/keen_look,\
 	/datum/mob_descriptor/prominent/custom/one,\
 	/datum/mob_descriptor/prominent/custom/two
 

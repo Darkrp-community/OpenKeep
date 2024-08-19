@@ -106,11 +106,6 @@
 	name = "Eloquent"
 	verbage = "is"
 
-/datum/mob_descriptor/prominent/thick_tail
-	name = "Thick Tail"
-	verbage = "%HAVE%"
-	prefix = "a"
-
 /datum/mob_descriptor/prominent/thick_tail/can_describe(mob/living/described)
 	if(!ishuman(described))
 		return TRUE
@@ -272,5 +267,10 @@
 
 /datum/mob_descriptor/prominent/dim_look
 	name = "Dim Look"
+	verbage = "%HAVE%"
+	prefix = "a"
+
+/datum/mob_descriptor/prominent/keen_look
+	name = "Keen Look"
 	verbage = "%HAVE%"
 	prefix = "a"

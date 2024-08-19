@@ -24,6 +24,9 @@
 /datum/mob_descriptor/skin/fine
 	name = "Fine Skin"
 
+/datum/mob_descriptor/skin/fair
+	name = "Fair Skin"
+
 /datum/mob_descriptor/skin/wrinkled
 	name = "Wrinkled Skin"
 
