@@ -1,5 +1,5 @@
 /datum/job/roguetown/grabber
-	title = "Steveador"
+	title = "Stevedore"
 	flag = GRABBER
 	department_flag = PEASANTS
 	faction = "Station"
