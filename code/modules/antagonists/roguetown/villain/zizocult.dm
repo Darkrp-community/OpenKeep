@@ -30,6 +30,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		return "<span class='boldnotice'>A lackey for the future.</span>"
 	if(istype(examined_datum, /datum/antagonist/zizocultist/leader))
 		return "<span class='boldnotice'>OUR LEADER!</span>"
+	if(istype(examined_datum, /obj/antagonist/assassin))
+		return "<span class='boldnotice'>A GRAGGAROID! A CULTIST OF GRAGGAR!</span>"
 
 /datum/antagonist/zizocultist/on_gain()
 	. = ..()
@@ -57,6 +59,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	else
 		add_objective(/datum/objective/zizo)
 		owner.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		owner.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 2)
 		H.change_stat("constitution", 2)
@@ -473,7 +476,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				to_chat(user.mind, "<span class='danger'>\"The veil is too strong to support more than three lackeys.\"</span>")
 				return
 			var/datum/antagonist/zizocultist/PR = user.mind.has_antag_datum(/datum/antagonist/zizocultist)
-			var/alert = alert(user, "YOU WILL BE SHOWN THE TRUTH. DO YOU RESIST? (Resisting: 1 TRI)", "ROGUETOWN", "Yield", "Resist")
+			var/alert = alert(H, "YOU WILL BE SHOWN THE TRUTH. DO YOU RESIST? (Resisting: 1 TRI)", "ROGUETOWN", "Yield", "Resist")
 			H.anchored = TRUE
 			if(alert == "Yield")
 				to_chat(H.mind, "<span class='notice'>I see the truth now! It all makes so much sense! They aren't HERETICS! They want the BEST FOR US!</span>")
@@ -801,6 +804,27 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				to_chat(HL, "<i>You hear a voice in your head... <b>[info]</i></b>")
 		break
 
+/datum/ritual/summonweapons
+	name = "Summon Weaponry"
+	circle = "Transmutation"
+	center_requirement = /obj/item/ingot/steel
+
+	function = /proc/summonweapons
+
+/proc/summonweapons(var/mob/user, var/turf/C)
+	var/datum/effect_system/spark_spread/S = new(C)
+	S.set_up(1, 1, C)
+	S.start()
+
+	new /obj/item/rogueweapon/sword(C)
+	new /obj/item/rogueweapon/huntingknife(C)
+	new /obj/item/rogueweapon/huntingknife(C)
+
+	new /obj/item/rope/chain(C)
+	new /obj/item/rope/chain(C)
+
+	playsound(C,pick('sound/items/bsmith1.ogg','sound/items/bsmith2.ogg','sound/items/bsmith3.ogg','sound/items/bsmith4.ogg'), 100, FALSE)
+
 // FLESH CRAFTING
 
 /datum/ritual/bunnylegs
@@ -889,6 +913,28 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		trl.ckey = H.ckey
 		H.gib()
 		
+/datum/ritual/gutted
+	name = "Gutted Fish"
+	circle = "Fleshcrafting"
+	center_requirement = /mob/living/carbon/human // One to be gutted.human
+
+	function = /proc/guttedlikeafish
+
+/proc/guttedlikeafish(var/mob/user, var/turf/C)
+	for(var/mob/living/carbon/human/H in C.contents)
+		if(H.stat == DEAD)
+			H.take_overall_damage(500)
+			C.visible_message("<span class='danger'>[H.real_name] is lifted up into the air and multiple scratches, incisions and deep cuts start etching themselves into their skin as all of their internal organs spill on the floor below!</span>")
+
+			var/atom/drop_location = H.drop_location()
+			for(var/obj/item/organ/organ as anything in H.internal_organs)
+				organ.Remove(H)
+				organ.forceMove(drop_location)
+			var/obj/item/bodypart/chest/cavity = H.get_bodypart(BODY_ZONE_CHEST)
+			if(cavity.cavity_item)
+				cavity.cavity_item.forceMove(drop_location)
+				cavity.cavity_item = null
+
 /datum/ritual/ascend
 	name = "ASCEND!"
 	circle = "Fleshcrafting"

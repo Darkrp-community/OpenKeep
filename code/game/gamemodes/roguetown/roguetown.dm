@@ -294,13 +294,16 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_cultist()
+	var/remaining = 2 // 1 leader, 1 lackey :)
 	restricted_jobs = list("King",
 	"Queen",
 	"Merchant",
 	"Priest")
 	antag_candidates = get_players_for_role(ROLE_ZIZOIDCULTIST)
-	var/datum/mind/villain = pick_n_take(antag_candidates)
-	if(villain)
+	antag_candidates = shuffle(antag_candidates)
+	for(var/datum/mind/villain in antag_candidates)
+		if(!remaining)
+			break
 		var/blockme = FALSE
 		if(!(villain in allantags))
 			blockme = TRUE
@@ -314,6 +317,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 		villain.restricted_roles = restricted_jobs.Copy()
 		testing("[key_name(villain)] has been selected as the [villain.special_role]")
 		log_game("[key_name(villain)] has been selected as the [villain.special_role]")
+		antag_candidates.Remove(vampire)
+		remaining -= 1
 	for(var/antag in pre_cultists)
 		GLOB.pre_setup_antags |= antag
 	restricted_jobs = list()
@@ -391,11 +396,20 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 
 ///////////////// CULTIST
 
+	pre_cultists = shuffle(pre_cultists)
+	var/cultlordpicked = FALSE
 	for(var/datum/mind/cultist in pre_cultists)
-		var/datum/antagonist/new_antag = new /datum/antagonist/zizocultist/leader()
-		addtimer(CALLBACK(cultist, TYPE_PROC_REF(/datum/mind, add_antag_datum), new_antag), rand(10,100))
-		GLOB.pre_setup_antags -= cultist
-		cultists += cultist
+		if(!cultlordpicked)
+			var/datum/antagonist/new_antag = new /datum/antagonist/zizocultist/leader()
+			addtimer(CALLBACK(cultist, TYPE_PROC_REF(/datum/mind, add_antag_datum), new_antag), rand(10,100))
+			GLOB.pre_setup_antags -= cultist
+			cultists += cultist
+			cultlordpicked = TRUE
+		else
+			var/datum/antagonist/new_antag = new /datum/antagonist/zizocultist()
+			addtimer(CALLBACK(cultist, TYPE_PROC_REF(/datum/mind, add_antag_datum), new_antag), rand(10,100))
+			GLOB.pre_setup_antags -= cultist
+			cultists += cultist
 
 ///////////////// WWOLF
 	for(var/datum/mind/werewolf in pre_werewolves)
