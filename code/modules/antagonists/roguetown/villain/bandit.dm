@@ -103,7 +103,7 @@
 			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
@@ -112,12 +112,15 @@
 			H.change_stat("endurance", 1)
 			H.change_stat("constitution", 1)
 
-			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/rust
 			pants = /obj/item/clothing/under/roguetown/chainlegs/iron
 			neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			gloves = /obj/item/clothing/gloves/roguetown/leather
 			backr = /obj/item/rogueweapon/spear
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/rust
+			mask = /obj/item/clothing/mask/rogue/shepherd/rag
+			backl = /obj/item/storage/backpack/rogue/satchel
 
 		if("Poacher") //good perception, speed, bow skill, and knife skill. Also some cooking and skincrafting since they are poachers. The speedy ranged class.
 			H.set_blindness(0)
@@ -149,6 +152,9 @@
 			beltr = /obj/item/rogueweapon/huntingknife/cleaver
 			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 			beltl = /obj/item/quiver/arrows
+			head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
+			mask = /obj/item/clothing/mask/rogue/shepherd/rag
+			backl = /obj/item/storage/backpack/rogue/satchel
 
 		if("Brigand") //good sword skill, shield skill, flail skill, mace skill, slightly speedy. Kind of an all rounder.
 			H.set_blindness(0)
@@ -180,13 +186,13 @@
 			gloves = /obj/item/clothing/gloves/roguetown/leather
 			pants = /obj/item/clothing/under/roguetown/trou/leather
 			beltr = /obj/item/rogueweapon/sword/iron
+			head = /obj/item/clothing/head/roguetown/menacing/bandit
+			backl = /obj/item/storage/backpack/rogue/satchel
 
 	H.cure_blind("TRAIT_GENERIC")
 	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	shoes = /obj/item/clothing/shoes/roguetown/boots
-	backl = /obj/item/storage/backpack/rogue/satchel
-	head = /obj/item/clothing/head/roguetown/menacing/bandit
 	H.change_stat("intelligence", -2)
 	var/obj/item/bodypart/B = H.get_bodypart("head")
 	if(B)
