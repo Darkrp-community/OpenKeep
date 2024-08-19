@@ -51,6 +51,9 @@
 		escape_objective.owner = owner
 		objectives += escape_objective*/
 
+/proc/isbandit(mob/living/M)
+	return istype(M) && M.mind && M.mind.has_antag_datum(/datum/antagonist/bandit)
+
 /datum/antagonist/bandit/proc/move_to_spawnpoint()
 	owner.current.forceMove(pick(GLOB.bandit_starts))
 
