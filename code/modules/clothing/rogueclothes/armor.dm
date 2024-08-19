@@ -151,6 +151,13 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 20
 
+/obj/item/clothing/suit/roguetown/armor/plate/half/iron/rust
+	name = "rusted half-plate armor"
+	desc = "Old but still useful to keep sharp objects from your innards."
+	icon_state = "rustplate"
+	item_state = "rustplate"
+
+
 // Bladesinger armor, unique
 /obj/item/clothing/suit/roguetown/armor/plate/half/elven
 	name = "elven guardian cuirass"

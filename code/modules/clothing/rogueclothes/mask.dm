@@ -140,6 +140,9 @@
 					var/mob/living/carbon/H = user
 					H.update_inv_wear_mask()
 
+/obj/item/clothing/mask/rogue/shepherd/rag
+	icon_state = "ragmask"
+
 /obj/item/clothing/mask/rogue/feld
 	name = "feldsher's mask"
 	desc = "Three times the beaks means three times the doctor."

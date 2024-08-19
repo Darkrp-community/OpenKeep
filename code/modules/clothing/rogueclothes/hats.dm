@@ -673,6 +673,16 @@
 					H.update_inv_head()
 		user.update_fov_angles()
 
+/obj/item/clothing/head/roguetown/helmet/heavy/rust
+	name = "rusted barbute"
+	desc = "A rusted barbute. Relatively fragile, and might turn your hair brown, but offers good protection."
+	icon_state = "rustbarbuta"
+	emote_environment = 3
+	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
+	block2add = FOV_RIGHT|FOV_LEFT
+	smeltresult = /obj/item/ingot/iron
+	max_integrity = 200 // shitty rusted iron
+
 /obj/item/clothing/head/roguetown/helmet/leather
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "leather helmet"
@@ -695,19 +705,21 @@
 	icon_state = "puritan_hat"
 
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "volf helmet"
-	desc = "Bandit initiation rites involve the slaying of a volf. This such helmet is produced after the hunt, as proof of having passed the test."
+	desc = "Bandit initiation rites often involve the slaying of a volf. This such helmet is produced after the hunt, as proof of having passed the test."
 	will_cover = HEAD|HAIR|EARS
 	icon_state = "volfhead"
 	item_state = "volfhead"
-	armor = list("melee" = 40, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
-	resistance_flags = FLAMMABLE
-	smeltresult = /obj/item/ash
-	anvilrepair = null
-	blocksound = SOFTHIT
+	max_integrity = 180 //crude bandit craftsmenship
 	sellprice = 30
+
+/obj/item/clothing/head/roguetown/helmet/leather/bandit
+	name = "headscarf"
+	desc = "Rolled cloth. Gives some protection at least."
+	icon_state = "headscarf"
+	armor = list("melee" = 20, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 150
+	color = "#745a4d"
 
 /obj/item/clothing/head/roguetown/helmet/leather/minershelm
 	name = "leather miners helmet"
