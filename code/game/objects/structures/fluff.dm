@@ -302,7 +302,7 @@
 
 /obj/structure/fluff/railing/fence
 	name = "palisade"
-	desc = ""
+	desc = "A sturdy fence of wooden stakes."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "fence"
 	density = TRUE
@@ -362,7 +362,7 @@
 
 /obj/structure/bars
 	name = "bars"
-	desc = ""
+	desc = "Iron bars made to keep things in or out."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "bars"
 	density = TRUE
@@ -513,7 +513,7 @@
 
 /obj/structure/fluff/clock
 	name = "clock"
-	desc = ""
+	desc = "An intricately-carved grandfather clock. On its pendulum is engraved the sigil of clan Kharzarad, a sickle behind an hourglass."
 	icon = 'icons/roguetown/misc/tallstructure.dmi'
 	icon_state = "clock"
 	density = FALSE
@@ -584,7 +584,7 @@
 
 /obj/structure/fluff/wallclock
 	name = "clock"
-	desc = ""
+	desc = "A wall clock with the sickle and hourglass sigil of clan Kharzarad on its crown."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "wallclock"
 	density = FALSE
@@ -638,7 +638,7 @@
 //vampire
 /obj/structure/fluff/wallclock/vampire
 	name = "ancient clock"
-	desc = ""
+	desc = "This appears to be a clock, but a pair of red lights blink in a recess where the face ought be."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "wallclockvampire"
 	density = FALSE
@@ -741,7 +741,7 @@
 
 /obj/structure/fluff/dryingrack
 	name = "drying rack"
-	desc = ""
+	desc = "A rack of sticks, made to dry produce and smokeleaves in the sun."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "dryrack"
 	density = TRUE
@@ -806,8 +806,8 @@
 	icon_state = "knightstatue_l"
 
 /obj/structure/fluff/statue/astrata
-	name = "Astrata Statue"
-	desc = "A stone statue of the sun Goddess Astrata. Bless."
+	name = "statue of Astrata"
+	desc = "Astrata, the Sun Queen, reigns over light, order, and conquest. She is worshipped and feared in equal measure."
 	icon_state = "astrata"
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 
@@ -887,7 +887,7 @@
 
 /obj/structure/fluff/globe
 	name = "globe"
-	desc = "A mysterious globe representing the world."
+	desc = "A model representing the known world of Grimoria."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "globe"
 	density = TRUE
@@ -898,7 +898,7 @@
 		return
 
 	var/mob/living/carbon/human/H = user
-	var/random_message = pick("You spin the globe!", "You land on Rockhill!", "You land on Zybantine!", "You land on port Ice cube!.", "You land on port Thornvale!", "You land on Grenzelhoft!")
+	var/random_message = pick("You spin the globe!", "You land on Rockhill!", "You land on Zybantu!", "You land on Port Thornvale!", "You land on Grenzelhoft!", "You land on Valoria!", "You land on Kaizoku!")
 	to_chat(H, "<span class='notice'>[random_message]</span>")
 
 /obj/structure/fluff/statue/femalestatue/Initialize()
@@ -909,10 +909,12 @@
 
 /obj/structure/fluff/statue/scare
 	name = "scarecrow"
+	desc = "An effigy made to drive away zad and other pesky birds from a farm."
 	icon_state = "td"
 
 /obj/structure/fluff/statue/tdummy
 	name = "practice dummy"
+	desc = "A wood and cloth dummy, made for squires to train with their armaments."
 	icon_state = "p_dummy"
 	icon = 'icons/roguetown/misc/structure.dmi'
 
@@ -968,7 +970,8 @@
 	..()
 
 /obj/structure/fluff/statue/spider
-	name = "mother"
+	name = "arachnid idol"
+	desc = "A stone idol of a spider with the head of a smirking elven woman. Her eyes seem to follow you."
 	icon_state = "spidercore"
 
 /obj/structure/fluff/statue/spider/attackby(obj/item/W, mob/user, params)
@@ -980,9 +983,9 @@
 					var/datum/game_mode/chaosmode/C = SSticker.mode
 					C.delfcontrib += 1
 					if(C.delfcontrib >= C.delfgoal)
-						say("Well done, the brood will grow...",language = /datum/language/elvish)
+						say("YOU HAVE DONE WELL, MY CHILD.",language = /datum/language/elvish)
 					else
-						say("Please bring me [C.delfgoal-C.delfcontrib] more honeys, children!",language = /datum/language/elvish)
+						say("BRING ME [C.delfgoal-C.delfcontrib] MORE. I HUNGER.",language = /datum/language/elvish)
 				qdel(W)
 				return TRUE
 	..()
@@ -1026,6 +1029,7 @@
 
 /obj/structure/fluff/psycross
 	name = "pantheon cross"
+	desc = "A towering monument to the Ten. Marriages are performed under its shadow."
 	icon_state = "psycross"
 	icon = 'icons/roguetown/misc/tallstructure.dmi'
 	break_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
