@@ -16,7 +16,7 @@
 		"Aasimar"
 	)
 
-	tutorial = "Be an Steveador is one of the lowest, yet most needed positions in town, they are expected to aid the Merchant, steward, masons, and blacksmiths in hauling goods and deliveries while they keep an eye on the goods and the warehouses of the town."
+	tutorial = "Being a stevedore is one of the lowest yet most needed positions in town, as they are expected to aid the Merchant, Steward, Masons, and Blacksmiths in hauling materials and goods while keeping a guarding eye on the town's warehouses for the safety of the items stashed within."
 
 	outfit = /datum/outfit/job/roguetown/grabber
 	give_bank_account = TRUE
