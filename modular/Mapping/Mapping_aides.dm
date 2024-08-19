@@ -768,4 +768,34 @@
 	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
 
 
+/obj/item/clothing/head/roguetown/helmet/leather/bandit
+	name = "headscarf"
+	desc = "Rolled cloth. Gives some protection at least."
+	icon_state = "headscarf"
+	armor = list("melee" = 20, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 170
+	color = "#72e4fa"
+
+/obj/item/clothing/head/roguetown/helmet/heavy/bandit
+	name = "barbute"
+	desc = "Worn out by time and rough weather, it endures, much like its wearer."
+	icon_state = "rustbarbute"
+	armor = list("melee" = 80, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	smeltresult = /obj/item/ingot/iron
+	max_integrity = 200
+	sellprice = 40
+
+/obj/item/clothing/suit/roguetown/armor/plate/half/iron/bandit
+	name = "rusty half-plate"
+	desc = "Old but still useful to keep sharp objects from your innards."
+	icon_state = "rustplate"
+
+/obj/item/clothing/mask/rogue/shepherd/bandit
+	icon_state = "ragmask"
+
+
+/turf/open/floor/rogue/ruinedwood/darker
+	color = "#d9c9b0"
+/turf/open/floor/rogue/ruinedwood/turned/darker
+	color = "#d9c9b0"
 
