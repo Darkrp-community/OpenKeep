@@ -254,7 +254,7 @@
 /obj/item/keyring/merchant
 	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/merchant)
 
-/obj/item/keyring/steveador
+/obj/item/keyring/stevedore
 	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/warehouse)
 
 /obj/item/keyring/mguard
