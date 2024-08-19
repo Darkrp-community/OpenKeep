@@ -562,7 +562,7 @@
 "WE" = (/obj/structure/toilet,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/woods)
 "WF" = (/obj/structure/bars/passage{redstone_id = "banditforge"},/turf/open/floor/rogue/cobble,/area/rogue/indoors/town/dwarfin)
 "WL" = (/obj/structure/flora/roguetree,/turf/open/floor/rogue/grass,/area/rogue/outdoors/woods)
-"WO" = (/obj/structure/table/wood/plain,/obj/item/reagent_containers/glass/bucket/pot,/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/tile/checker_green,/area/rogue)
+"WO" = (/obj/structure/table/wood/plain,/obj/item/cooking/pot,/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/tile/checker_green,/area/rogue)
 "Xj" = (/obj/structure/table/wood/fancy/red,/obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc,/obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc,/obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc,/obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc,/turf/open/floor/rogue/carpet,/area/rogue)
 "Xk" = (/obj/structure/roguewindow,/turf/closed,/area/rogue/indoors/town/dwarfin)
 "Xp" = (/obj/structure/table/wood{icon_state = "largetable"; dir = 5},/obj/item/candle/skull/lit,/turf/open/floor/rogue/hexstone,/area/rogue/indoors)
