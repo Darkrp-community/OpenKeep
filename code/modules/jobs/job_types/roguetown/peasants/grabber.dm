@@ -43,7 +43,7 @@
 		head = /obj/item/clothing/head/roguetown/headband/red
 		beltr = /obj/item/rogueweapon/mace/cudgel
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		wrists = /obj/item/keyring/steveador
+		wrists = /obj/item/keyring/stevedore
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
