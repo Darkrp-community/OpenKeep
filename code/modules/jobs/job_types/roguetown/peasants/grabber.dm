@@ -24,7 +24,7 @@
 	bypass_lastclass = TRUE
 
 /datum/job/roguetown/grabber/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
-
+	..()
 /datum/outfit/job/roguetown/grabber/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
