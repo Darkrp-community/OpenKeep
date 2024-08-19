@@ -30,7 +30,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		return "<span class='boldnotice'>A lackey for the future.</span>"
 	if(istype(examined_datum, /datum/antagonist/zizocultist/leader))
 		return "<span class='boldnotice'>OUR LEADER!</span>"
-	if(istype(examined_datum, /obj/antagonist/assassin))
+	if(istype(examined_datum, /datum/antagonist/assassin))
 		return "<span class='boldnotice'>A GRAGGAROID! A CULTIST OF GRAGGAR!</span>"
 
 /datum/antagonist/zizocultist/on_gain()
