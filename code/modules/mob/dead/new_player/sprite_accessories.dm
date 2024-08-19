@@ -181,7 +181,7 @@
 	name = "Nomadic"
 	icon_state = "nomadic"
 	gender = MALE
-	specuse = list("human", "dwarf", "tiefling")
+	specuse = list("human", "tiefling")
 	
 /datum/sprite_accessory/hair/pirate
 	name = "Pirate"
