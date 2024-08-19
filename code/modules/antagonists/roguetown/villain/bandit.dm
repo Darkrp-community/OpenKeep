@@ -98,52 +98,47 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			H.change_stat("strength", 2)
 			H.change_stat("endurance", 1)
 			H.change_stat("constitution", 1)
 
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/rust
-			pants = /obj/item/clothing/under/roguetown/chainlegs/iron
-			neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			gloves = /obj/item/clothing/gloves/roguetown/leather
-			backr = /obj/item/rogueweapon/spear
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/rust
-			mask = /obj/item/clothing/mask/rogue/shepherd/rag
-			backl = /obj/item/storage/backpack/rogue/satchel
 			beltl = /obj/item/clothing/head/roguetown/menacing/bandit
+
+			switch(pick(1,3))
+				if (1 to 2)
+					backr = /obj/item/rogueweapon/spear
+				if (3)
+					backr = /obj/item/rogueweapon/halberd/bardiche
+
+			switch(pick(1,2))
+				if (1) //worse leg protection, better neck protection, and a face mask
+					pants = /obj/item/clothing/under/roguetown/trou/leather
+					neck = /obj/item/clothing/neck/roguetown/chaincoif
+					mask = /obj/item/clothing/mask/rogue/facemask
+				if (2) //better leg protection, worse neck protection
+					pants = /obj/item/clothing/under/roguetown/chainlegs/iron
+					neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+					mask = /obj/item/clothing/mask/rogue/shepherd/rag
 
 		if("Poacher") //good perception, speed, bow skill, and knife skill. Also some cooking and skincrafting since they are poachers. The speedy ranged class.
 			H.set_blindness(0)
 			to_chat(H, span_warning("You illegally hunt within the lands of others, and are quite good at it."))
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			H.change_stat("strength", 1)
 			H.change_stat("endurance", 1)
@@ -152,52 +147,84 @@
 
 			armor = /obj/item/clothing/suit/roguetown/armor/gambeson
 			pants = /obj/item/clothing/under/roguetown/trou/leather
-			gloves = /obj/item/clothing/gloves/roguetown/leather
-			beltr = /obj/item/rogueweapon/huntingknife/cleaver
+			beltr = /obj/item/rogueweapon/huntingknife
 			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 			beltl = /obj/item/quiver/arrows
 			head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 			mask = /obj/item/clothing/mask/rogue/shepherd/rag
-			backl = /obj/item/storage/backpack/rogue/satchel
+
+			switch(pick(1,3))
+				if (1)
+					beltr = /obj/item/rogueweapon/huntingknife
+				if (2)
+					beltr = /obj/item/rogueweapon/huntingknife/cleaver
+				if (3)
+					beltr = /obj/item/rogueweapon/huntingknife/idagger
 
 		if("Brigand") //good sword skill, shield skill, flail skill, mace skill, slightly speedy. Kind of an all rounder.
 			H.set_blindness(0)
 			to_chat(H, span_warning("You are experienced with using swords and clubs to threaten and rob others."))
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 			H.change_stat("strength", 2)
 			H.change_stat("endurance", 2)
 			H.change_stat("constitution", 1)
 			H.change_stat("speed", 1)
 
-			armor = /obj/item/clothing/suit/roguetown/armor/leather
 			neck = /obj/item/clothing/neck/roguetown/coif
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			gloves = /obj/item/clothing/gloves/roguetown/leather
 			pants = /obj/item/clothing/under/roguetown/trou/leather
-			beltr = /obj/item/rogueweapon/sword/iron
 			head = /obj/item/clothing/head/roguetown/menacing/bandit
-			backl = /obj/item/storage/backpack/rogue/satchel
 			beltl = /obj/item/clothing/mask/rogue/shepherd/rag
 
+			switch(pick(1,2))
+				if (1)
+					armor = /obj/item/clothing/suit/roguetown/armor/leather
+				if (2)
+					armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
+
+			switch(pick(1,4))
+				if (1)
+					beltr = /obj/item/rogueweapon/sword/iron
+				if (2)
+					beltr = /obj/item/rogueweapon/flail
+				if (3)
+					beltr = /obj/item/rogueweapon/mace
+				if (4)
+					beltr = /obj/item/rogueweapon/sword/iron/messer
+
 	H.cure_blind("TRAIT_GENERIC")
+
+	// The commmon skills shared between all bandits
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+ 
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
+
+	// The commmon gear shared between all bandits
 	belt = /obj/item/storage/belt/rogue/leather
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	shoes = /obj/item/clothing/shoes/roguetown/boots
+	backl = /obj/item/storage/backpack/rogue/satchel
+
+	switch(pick(1,3))
+		if (1 to 2)
+			gloves = /obj/item/clothing/gloves/roguetown/leather
+			shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
+		if (3)
+			gloves = /obj/item/clothing/gloves/roguetown/angle
+			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+
 	H.change_stat("intelligence", -2)
 	var/obj/item/bodypart/B = H.get_bodypart("head")
 	if(B)
