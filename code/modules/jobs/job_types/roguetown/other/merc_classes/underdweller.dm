@@ -22,8 +22,9 @@
     backl = /obj/item/storage/backpack/rogue/backpack
     backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)
     if(H.mind)
-        H.change_stat("fortune", 1)
-        H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+        H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(2,2,3), TRUE)
+        H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
+        H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
         H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
         H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
@@ -33,22 +34,17 @@
         H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
         H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
         H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-        if(H.dna.species.name == "Dark Elf")
-            beltl = /obj/item/flashlight/flare/torch/lantern
-            H.change_stat("speed", 1)
-            H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-            H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
-            H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-            H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-        if(H.dna.species.name == "Dwarf")
-            head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
-            beltl = /obj/item/rogueweapon/woodcut/pick
-            backr = /obj/item/rogueweapon/shield/wood
-            H.change_stat("strength", 1)
-            H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-            H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
-            H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
-            H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
-            H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
+        H.change_stat("fortune", 1)
+        H.change_stat("endurance", 1)
+        H.change_stat("strength", 1)
+
+    if(H.dna.species.id == "dwarf")
+        H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+        H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+        beltl = /obj/item/rogueweapon/woodcut/pick // Dorfs get a pick as their primary weapon and axes/maces to use it
+    else       
+        H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+        H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+        beltl = /obj/item/rogueweapon/sword/sabre // Dark elves get a sabre as their primary weapon and swords skill, who woulda thought
 
     ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
