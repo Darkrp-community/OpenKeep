@@ -12,14 +12,14 @@
 		"thought": "zhoght",
 		"with": "weef",
 		"those": "zose",
-		"they": "zey",
-		"another": "anozer",
+		"хорошо": "бон",
+		"добрый": "бон",
 		"other": "ozer",
 		"brother": "brozer",
 		"Mother" : "Mozer",
 		"Father" : "Fazer",
-		" yes ": " yis ",
-        	" and ": " et ", 
+		" да ": " си ",
+        	" и ": " э ", 
 		"the ": "l' ",
 		"I ": "j' ",
 		"I'm ": "j' ",
@@ -29,16 +29,16 @@
        		 ], 
 		"cake": "gateau",
       		  "captain": "capitaine", 
-     		   "dad": "papa", 
-        "hello": [
-            "'allo", 
-            "bonjour",
-			"salut"
+     		   "отец": "папа", 
+        "привет": [
+            "алло", 
+            "бонжур",
+			"салют"
         ], 
         "mom ": "mama ", 
-	"shit": "merde",
+	"черт": "мерде",
         "spaghetti": "macaroni", 
-        "thanks": "merci",  
+        "спасибо": "мерси",  
         "thank you": "merci",   
         "wine": "vine"
 		}
