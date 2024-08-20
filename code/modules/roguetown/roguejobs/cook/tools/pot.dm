@@ -20,11 +20,19 @@
 
 /obj/item/reagent_containers/glass/bucket/pot/update_icon()
 	cut_overlays()
-	if(reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "potefull")
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
-		filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
-		add_overlay(filling)
+	if(reagents.total_volume > 0) 
+		if(reagents.total_volume <= 50) 
+			var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "pote_half")
+			filling.color = mix_color_from_reagents(reagents.reagent_list)
+			filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
+			add_overlay(filling)
+
+		if(reagents.total_volume > 50) 
+			var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "pote_full")
+			filling.color = mix_color_from_reagents(reagents.reagent_list)
+			filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
+			add_overlay(filling)
+
 
 /obj/item/reagent_containers/glass/bucket/pot/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/reagent_containers/glass/bowl))

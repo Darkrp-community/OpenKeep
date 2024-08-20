@@ -203,6 +203,7 @@
 	name = "pepper mill"
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
 	icon_state = "peppermill"
+	layer = CLOSED_BLASTDOOR_LAYER // obj layer + a little, small obj layering above convenient
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	list_reagents = list(/datum/reagent/consumable/blackpepper = 5)
 	reagent_flags = TRANSPARENT

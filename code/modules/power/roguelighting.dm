@@ -658,7 +658,7 @@
 					update_icon()
 					playsound(src.loc, 'sound/misc/frying.ogg', 80, FALSE, extrarange = 5)
 					return
-// from Blackstone, made for their cooking pot. Retained for consistency. New concept = boil at least 33 water, add item, it turns into food reagent volume 33 of the appropriate type
+// New concept = boil at least 33 water, add item, it turns into food reagent volume 33 of the appropriate type
 		else if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot))
 			var/obj/item/reagent_containers/glass/bucket/pot = attachment
 			if(istype(W, /obj/item/reagent_containers/food/snacks/grown/oat))
@@ -678,6 +678,7 @@
 					pot.reagents.add_reagent(/datum/reagent/consumable/soup/oatmeal, 32)
 					pot.reagents.remove_reagent(/datum/reagent/water, 1)
 				return
+
 			if(W.type in subtypesof(/obj/item/reagent_containers/food/snacks/rogue/veg))
 				if(!pot.reagents.has_reagent(/datum/reagent/water, 33))
 					to_chat(user, "<span class='notice'>Not enough water.</span>")
@@ -708,6 +709,7 @@
 						pot.reagents.add_reagent(/datum/reagent/consumable/soup/veggie/cabbage, 32)
 						pot.reagents.remove_reagent(/datum/reagent/water, 1)
 				return
+
 			if(W.type in subtypesof(/obj/item/reagent_containers/food/snacks/rogue/meat))
 				if(!pot.reagents.has_reagent(/datum/reagent/water, 33))
 					to_chat(user, "<span class='notice'>Not enough water.</span>")
