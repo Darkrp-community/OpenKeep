@@ -175,7 +175,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = HEAR_1
 	muteinmouth = TRUE
-	var/listening = TRUE
+	var/listening = FALSE
 	var/speaking = TRUE
 	sellprice = 35
 //wip
@@ -193,7 +193,6 @@
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
-	listening = !listening
 	speaking = !speaking
 	to_chat(user, "<span class='info'>I [speaking ? "unmute" : "mute"] the scomstone.</span>")
 	update_icon()
@@ -260,4 +259,9 @@
 	sellprice = 2
 
 /obj/item/scomstone/bad/Hear()
+	return
+
+/obj/item/scomstone/bad/attack_right(mob/user)
+	user.changeNext_move(CLICK_CD_MELEE)
+	to_chat(user, "<span class='info'>This scomstone is only for receiving.</span>")
 	return
