@@ -112,6 +112,9 @@
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/rust
 			beltl = /obj/item/clothing/head/roguetown/menacing/bandit
 
+			if(H.age == AGE_OLD) //old deserters are experts with polearms
+				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+
 			switch(pick(1,3))
 				if (1 to 2)
 					backr = /obj/item/rogueweapon/spear
@@ -153,6 +156,11 @@
 			head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 			mask = /obj/item/clothing/mask/rogue/shepherd/rag
 
+			if(H.age == AGE_OLD) //old poachers are better at their jobs
+				H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
+
 			switch(pick(1,3))
 				if (1)
 					beltr = /obj/item/rogueweapon/huntingknife
@@ -189,6 +197,10 @@
 				if (2)
 					armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 
+			if(H.age == AGE_OLD) //old brigands have been in the business for so long that they have managed to pick up some better gear along the way
+				armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+				mask = /obj/item/clothing/mask/rogue/facemask
+
 			switch(pick(1,4))
 				if (1)
 					beltr = /obj/item/rogueweapon/sword/iron
@@ -211,6 +223,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 
 	// The commmon gear shared between all bandits
 	belt = /obj/item/storage/belt/rogue/leather
