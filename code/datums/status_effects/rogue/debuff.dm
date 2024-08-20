@@ -292,6 +292,17 @@
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/sleepytime
 	effectedstats = list("speed" = -2, "endurance" = -2)
 
+/atom/movable/screen/alert/status_effect/debuff/netted
+	name = "Net"
+	desc = "<span class='boldwarning'>A net was thrown on me.. how can I move?</span>\n"
+	icon_state = "bleed3"
+	duration = 100
+
+/datum/status_effect/debuff/netted
+	id = "net"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/netted
+	effectedstats = list("speed" = -3, "endurance" = -4)
+	
 /atom/movable/screen/alert/status_effect/debuff/sleepytime
 	name = "Tired"
 	desc = "<span class='warning'>I am feeling tired.</span>\n"
