@@ -98,11 +98,11 @@ GLOBAL_LIST_INIT(serf_positions, list(
 	"Alchemist",
 	"Mason",
 	"Scribe",
-	"Stevedore"
 	))
 
 GLOBAL_LIST_INIT(peasant_positions, list(
 	"Soilson",
+	"Stevedore",
 	"Butcher",
 	"Cook",
 	"Gravedigger",
