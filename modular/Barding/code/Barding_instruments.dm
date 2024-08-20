@@ -173,13 +173,19 @@
 					if(L.can_hear()) // Only good people who can hear music will get buffed
 						if(L.mind?.has_antag_datum(/datum/antagonist))
 							if(L.mind?.isactuallygood())
-								L.apply_status_effect(buff2use)
 								L.add_stress(bardbonus)
+								// Apply the buff every second to refresh its duration since it's timed
+								while(playing)
+									L.apply_status_effect(buff2use)
+									sleep(10) // Sanity to avoid infinite loop
 							else
 								return
 						else
-							L.apply_status_effect(buff2use)
 							L.add_stress(bardbonus) // Additional mood increase
+							// Apply the buff every second to refresh its duration since it's timed
+							while(playing)
+								L.apply_status_effect(buff2use)
+								sleep(10) // Sanity to avoid infinite loop
 					else
 						return
 			else
@@ -188,11 +194,11 @@
 			
 		// BARDIC BUFFS CODE END //
 
-			while(playing)
-				var/boon = user?.mind?.get_learning_boon(/datum/skill/misc/music)
-				user?.mind?.adjust_experience(/datum/skill/misc/music, ceil((user.STAINT*0.2) * boon))
-				sleep(10) // Gain exp every 1 second delay of playing
-			
+		while(playing)
+			var/boon = user?.mind?.get_learning_boon(/datum/skill/misc/music)
+			user?.mind?.adjust_experience(/datum/skill/misc/music, ceil((user.STAINT*0.2) * boon))
+			sleep(10 * world.tick_lag) // Gain exp every 1 second delay of playing
+	
 	else
 		playing = FALSE
 		soundloop.stop()

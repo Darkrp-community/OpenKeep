@@ -232,10 +232,11 @@
 	tick_interval = 1 SECONDS
 	status_type = STATUS_EFFECT_REFRESH
 	alert_type = /atom/movable/screen/alert/status_effect/bardbuff
+	duration = 50 // Sanity, so that people outside the bard buff listening area lose the buff after a few seconds
 
 /datum/status_effect/bardicbuff/on_apply()
 	if(owner.mind?.has_antag_datum(/datum/antagonist)) // Check if antag datum present
-		if(owner.mind.isactuallygood()) // Then check if they're actually a "good" antag (purishep, prisoner)
+		if(owner.mind?.isactuallygood()) // Then check if they're actually a "good" antag (purishep, prisoner)
 			for(var/S in effectedstats)
 				owner.change_stat(S, effectedstats[S])
 			return TRUE
@@ -298,8 +299,10 @@
 				if(O.has_status_effect(/datum/status_effect/debuff/sleepytime))
 					O.remove_status_effect(/datum/status_effect/debuff/sleepytime)
 					O.tiredness = 0
-					to_chat(O, "<span class='nicegreen'>Astrata's blessed light cleanses away your tiredness!</span>")
+					if(O.IsSleeping())
+						O.SetSleeping(0) // WAKE UP!
 					O.adjust_triumphs(1) // Before people start crying about muh triumph lost
+					to_chat(O, "<span class='nicegreen'>Astrata's blessed light cleanses away your tiredness!</span>")
 			else
 				return
 		else
@@ -308,7 +311,9 @@
 			if(O.has_status_effect(/datum/status_effect/debuff/sleepytime))
 				O.remove_status_effect(/datum/status_effect/debuff/sleepytime)
 				O.tiredness = 0
-				to_chat(O, "<span class='nicegreen'>Astrata's blessed light cleanses away your tiredness!</span>")
+				if(O.IsSleeping())
+					O.SetSleeping(0) // GRAB A BRUSH AND PUT A LITTLE MAKEUP
 				O.adjust_triumphs(1) // Before people start crying about muh triumph lost
+				to_chat(O, "<span class='nicegreen'>Astrata's blessed light cleanses away your tiredness!</span>")
 			else
 				return	
