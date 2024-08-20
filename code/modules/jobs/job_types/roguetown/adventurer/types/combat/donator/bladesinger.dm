@@ -19,14 +19,16 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-		H.change_stat("strength", 2)
-		H.change_stat("speed", -1)
+		H.change_stat("strength", 2) // Same stat spread as lancer/swordmaster, but gets a small bonus to speed instead of a malus, at the cost of getting no constitution bonus
+		H.change_stat("endurance", 2)
+		H.change_stat("speed", 1)
 	if(H.gender == FEMALE)
 		H.underwear = "Femleotard"
 		H.underwear_color = CLOTHING_BLACK
