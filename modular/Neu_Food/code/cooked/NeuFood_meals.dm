@@ -126,6 +126,54 @@
 	else
 		return ..()
 
+/*	.................   Wiener & Fried onions   ................... */
+/obj/item/reagent_containers/food/snacks/rogue/wieneronions
+	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
+	tastes = list("savory sausage" = 1, "fried onions" = 1)
+	name = "wiener and onions"
+	desc = "Stout and flavourful."
+	icon_state = "wieneronion"
+	foodtype = VEGETABLES | MEAT
+	warming = 3 MINUTES
+	rotprocess = SHELFLIFE_LONG
+	eat_effect = /datum/status_effect/buff/foodbuff
+/obj/item/reagent_containers/food/snacks/rogue/wieneronions/attackby(obj/item/I, mob/user, params)
+	var/found_table = locate(/obj/structure/table) in (loc)
+	if(!experimental_inhand)
+		return
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_baked))
+		if(isturf(loc)&& (found_table))
+			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
+			if(do_after(user,3 SECONDS, target = src))
+				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions(loc)
+				qdel(I)
+				qdel(src)
+	else
+		return ..()
+/obj/item/reagent_containers/food/snacks/rogue/wieneronions/plated
+	icon_state = "wieneronion_plated"
+	item_state = "plate_food"
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
+	experimental_inhand = FALSE
+	w_class = WEIGHT_CLASS_BULKY
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	trash = /obj/item/cooking/platter
+	rotprocess = SHELFLIFE_EXTREME
+/obj/item/reagent_containers/food/snacks/rogue/wieneronions/plated/attackby(obj/item/I, mob/user, params)
+	var/found_table = locate(/obj/structure/table) in (loc)
+	if(!experimental_inhand)
+		return
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_baked))
+		if(isturf(loc)&& (found_table))
+			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
+			if(do_after(user,3 SECONDS, target = src))
+				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions/plated(loc)
+				qdel(I)
+				qdel(src)
+	else
+		return ..()
+
 
 /*	.................   Wiener & potato & onions   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions
@@ -253,6 +301,37 @@
 	cooked_type = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
 	rotprocess = SHELFLIFE_DECENT
+/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/attackby(obj/item/I, mob/user, params)
+	var/obj/item/reagent_containers/peppermill/mill = I
+	if (!isturf(src.loc) || \
+		!(locate(/obj/structure/table) in src.loc) && \
+		!(locate(/obj/structure/table/optable) in src.loc) && \
+		!(locate(/obj/item/storage/bag/tray) in src.loc))
+		to_chat(user, "<span class='warning'>I need to use a table.</span>")
+		return FALSE
+	if(istype(mill))
+		if(!mill.reagents.has_reagent(/datum/reagent/consumable/blackpepper, 1))
+			to_chat(user, "There's not enough black pepper to make anything with.")
+			return TRUE
+		mill.icon_state = "peppermill_grind"
+		to_chat(user, "You start rubbing the bird roast with black pepper.")
+		playsound(get_turf(user), 'modular/Neu_Food/sound/peppermill.ogg', 100, TRUE, -1)
+		if(do_after(user,3 SECONDS, target = src))
+			if(!mill.reagents.has_reagent(/datum/reagent/consumable/blackpepper, 1))
+				to_chat(user, "There's not enough black pepper to make anything with.")
+				return TRUE
+			mill.reagents.remove_reagent(/datum/reagent/consumable/blackpepper, 1)
+			new /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/spiced(loc)
+			qdel(src)
+
+	else
+		to_chat(user, "<span class='warning'>You need to put [src] on a table to knead in the spice.</span>")
+/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/spiced
+	desc = "A plump bird, roasted perfection, spiced to taste divine."
+	eat_effect = /datum/status_effect/buff/foodbuff
+	name = "spiced bird-roast"
+	color = "#ffc0c0"
+	tastes = list("spicy birdmeat" = 1)
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/plated
 	icon_state = "roastchicken_plated"
 	item_state = "plate_food"
