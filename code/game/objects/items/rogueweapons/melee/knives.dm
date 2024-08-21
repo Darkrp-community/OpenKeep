@@ -394,7 +394,6 @@
 	desc = "A dagger of an older design, the copper serves decent enough."
 	icon_state = "cdagger"
 	icon = 'icons/roguetown/weapons/32.dmi'
-	item_state = "cdagger"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	gripsprite = FALSE

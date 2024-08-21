@@ -264,6 +264,7 @@
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	slowdown = 1
 	bigboy = TRUE
 	gripsprite = TRUE
 	wlength = WLENGTH_GREAT
@@ -317,6 +318,7 @@
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	slowdown = 1
 	bigboy = TRUE
 	gripsprite = TRUE
 	wlength = WLENGTH_GREAT
@@ -376,6 +378,7 @@
 	gripsprite = TRUE
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	slot_flags = null
 	max_blade_int = 70

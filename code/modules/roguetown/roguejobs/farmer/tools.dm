@@ -17,15 +17,15 @@
 	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
 	walking_stick = TRUE
 	wdefense = 2
 	minstr = 6
-	slot_flags = null
 	wlength = 66
 	gripsprite = TRUE
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
-	associated_skill = /datum/skill/combat/axesmaces
+	associated_skill = /datum/skill/combat/polearms
 
 /datum/intent/flailthresh
 	name = "thresh"
@@ -110,7 +110,6 @@
 	force_wielded = 15
 	possible_item_intents = list(/datum/intent/pick)
 	gripped_intents = list(/datum/intent/pick,SPEAR_BASH,TILL_INTENT)
-	slot_flags = ITEM_SLOT_BACK
 	name = "hoe"
 	desc = ""
 	icon_state = "hoe"
@@ -122,7 +121,7 @@
 	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = null
+	slot_flags = ITEM_SLOT_BACK
 	minstr = 6
 	item_state = "hoe"
 	sharpness = IS_BLUNT
@@ -195,7 +194,6 @@
 	force_wielded = 20
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH)
 	gripped_intents = list(SPEAR_BASH,SPEAR_THRUST,DUMP_INTENT)
-	slot_flags = ITEM_SLOT_BACK
 	name = "pitchfork"
 	desc = ""
 	icon_state = "pitchfork"
@@ -208,7 +206,7 @@
 	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = null
+	slot_flags = ITEM_SLOT_BACK
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	minstr = 6
@@ -292,7 +290,6 @@
 	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = null
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	minstr = 6
