@@ -97,7 +97,7 @@ GLOBAL_LIST_INIT(serf_positions, list(
 	"Tailor",
 	"Alchemist",
 	"Mason",
-	"Scribe",
+	"Scribe"
 	))
 
 GLOBAL_LIST_INIT(peasant_positions, list(
