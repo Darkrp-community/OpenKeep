@@ -1024,6 +1024,7 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "iron plate helmet"
 	max_integrity = 250//isn't the same as a steel helmet but is better than a skullcap
+	armor = list("melee" = 50, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	icon_state = "ironpot"
 	item_state = "ironpot"
 	desc = "A iron pot style helmet designed to protect the skull and the nose, designs like those are outdated but they are simple to make in big numbers."
