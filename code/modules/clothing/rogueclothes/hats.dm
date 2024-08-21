@@ -451,42 +451,76 @@
 	max_integrity = 300
 	sellprice = 35
 
-/obj/item/clothing/head/roguetown/helmet/sallet/visored
-	name = "visored sallet"
-	desc = "A steel helmet offering good overall protection. Its visor can be flipped over for higher visibility at the cost of eye protection."
-	icon_state = "sallet_visor"
+/obj/item/clothing/head/roguetown/helmet/visored
+	name = "parent visored helmet"
+	desc = "If you're reading this, someone forgot to set an item description or spawned the wrong item. Yell at them."
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // All visored helmets protect against everything
 	adjustable = CAN_CADJUST
-	will_hide = HIDEEARS|HIDEFACE
-	flags_cover = HEADCOVERSEYES
-	armor = list("melee" = 90, "bullet" = 75, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
-	will_cover = HEAD|EARS|HAIR|NOSE|EYES
+	will_cover = FULL_HEAD
+	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel // All visored helmets are made of steel
 	max_integrity = 350
 	sellprice = 60
 
-/obj/item/clothing/head/roguetown/helmet/sallet/visored/AdjustClothes(mob/user)
+// Proc shared by all visored helmets, therefore modular
+/obj/item/clothing/head/roguetown/helmet/visored/AdjustClothes(mob/user)
 	if(loc == user)
 		playsound(user, "sound/items/visor.ogg", 100, TRUE, -1)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
 			icon_state = "[initial(icon_state)]_raised"
-			body_parts_covered = HEAD|EARS|HAIR
-			flags_inv = HIDEEARS
+			will_cover = HEAD|EARS|HAIR
+			will_hide = HIDEEARS
 			flags_cover = null
-			prevent_crits -= list(BCLASS_STAB) // Vulnerable to eye stabbing while visor is open
+			prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT) // Vulnerable to eye stabbing while visor is open
+			block2add = null
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
 				H.update_inv_head()
-			block2add = null
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
-			prevent_crits += list(BCLASS_STAB)
+			prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+			will_cover = FULL_HEAD
+			will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
+			flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 			if(user)
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
 					H.update_inv_head()
 		user.update_fov_angles()
+	else // Failsafe.
+		to_chat(user, "<span class='warning'>Wear the helmet on your head to open and close the visor.</span>")
+		return
+
+// Prevents coverage error when unequipping.
+/obj/item/clothing/head/roguetown/helmet/visored/dropped(mob/user)
+	. = ..()
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	will_cover = FULL_HEAD
+	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	user.update_fov_angles()
+
+/obj/item/clothing/head/roguetown/helmet/visored/sallet
+	name = "visored sallet"
+	desc = "A steel helmet offering good overall protection. Its visor can be flipped over for higher visibility at the cost of eye protection."
+	icon_state = "sallet_visor"
+	armor = list("melee" = 90, "bullet" = 75, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	sellprice = 60
+
+/obj/item/clothing/head/roguetown/helmet/visored/hounskull
+	name = "hounskull helmet" // "Pigface" is a modern term, hounskull is a c.1400 term.
+	desc = "A bascinet with a mounted pivot to protect the face by deflecting blows on its conical surface, \
+			highly favored by knights of great renown. Its visor can be flipped over for higher visibility \
+			at the cost of eye protection."
+	icon_state = "hounskull"
+	item_state = "hounskull"
+	emote_environment = 3
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	block2add = FOV_RIGHT|FOV_LEFT
+	sellprice = 90
 
 // Unique, therefore superb.
 /obj/item/clothing/head/roguetown/helmet/sallet/elven
@@ -499,7 +533,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy
 	name = "barbute"
-	desc = "This is the parent heavy helmet. If you're seeing this, something went terribly wrong."
+	desc = "This is the parent heavy helmet. If you're seeing this, someone forgot to add item descriptions. Shame them."
 	will_cover = FULL_HEAD
 	icon_state = "barbute"
 	item_state = "barbute"
@@ -535,7 +569,7 @@
 	smeltresult = /obj/item/ingot/iron
 
 // Entering big boy steel territory, high end gear
-/obj/item/clothing/head/roguetown/helmet/heavy/knight
+/obj/item/clothing/head/roguetown/helmet/visored/knight
 	name = "knight's helmet"
 	desc = "A lightweight armet that protects dreams of chivalrous friendship, fair maidens to rescue, and glorious deeds of combat. Its visor can be flipped over for higher visibility at the cost of eye protection."
 	icon_state = "knight"
@@ -551,33 +585,8 @@
 	max_integrity = 350
 	sellprice = 65
 
-/obj/item/clothing/head/roguetown/helmet/heavy/knight/black
+/obj/item/clothing/head/roguetown/helmet/visored/knight/black
 	color = CLOTHING_BLACK
-
-/obj/item/clothing/head/roguetown/helmet/heavy/knight/AdjustClothes(mob/user)
-	if(loc == user)
-		playsound(user, "sound/items/visor.ogg", 100, TRUE, -1)
-		if(adjustable == CAN_CADJUST)
-			adjustable = CADJUSTED
-			icon_state = "knightum"
-			body_parts_covered = HEAD|HAIR|EARS
-			flags_inv = HIDEEARS|HIDEHAIR
-			flags_cover = null
-			prevent_crits -= list(BCLASS_STAB) // Vulnerable to eye stabs with the cover up
-			emote_environment = 0
-			if(ishuman(user))
-				var/mob/living/carbon/H = user
-				H.update_inv_head()
-			block2add = null
-		else if(adjustable == CADJUSTED)
-			ResetAdjust(user)
-			prevent_crits += list(BCLASS_STAB)
-			emote_environment = 3
-			if(user)
-				if(ishuman(user))
-					var/mob/living/carbon/H = user
-					H.update_inv_head()
-		user.update_fov_angles()
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket
 	name = "great helmet"
@@ -598,6 +607,7 @@
 	icon_state = "astratahelm"
 	item_state = "astratahelm"
 	emote_environment = 3
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
@@ -608,6 +618,7 @@
 	icon_state = "nochelm"
 	item_state = "nochelm"
 	emote_environment = 3
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
@@ -618,6 +629,7 @@
 	icon_state = "necrahelm"
 	item_state = "necrahelm"
 	emote_environment = 3
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
@@ -628,50 +640,10 @@
 	icon_state = "dendorhelm"
 	item_state = "dendorhelm"
 	emote_environment = 3
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
-
-/obj/item/clothing/head/roguetown/helmet/heavy/hounskull
-	name = "hounskull helmet" // "Pigface" is a modern term, hounskull is a c.1400 term.
-	desc = "A bascinet with a mounted pivot to protect the face by deflecting blows on its conical surface, \
-			highly favored by knights of great renown. Its visor can be flipped over for higher visibility \
-			at the cost of eye protection."
-	icon_state = "hounskull"
-	item_state = "hounskull"
-	adjustable = CAN_CADJUST // Hew d'y'knuw suh much 'bout swulluws?
-	emote_environment = 3
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // Deflects about everything by design. THE helmet.
-	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
-	smeltresult = /obj/item/ingot/steel
-	sellprice = 90
-
-/obj/item/clothing/head/roguetown/helmet/heavy/hounskull/AdjustClothes(mob/user)
-	if(loc == user)
-		playsound(user, "sound/items/visor.ogg", 100, TRUE, -1)
-		if(adjustable == CAN_CADJUST)
-			adjustable = CADJUSTED
-			icon_state = "hounskull_raised"
-			body_parts_covered = HEAD|HAIR|EARS
-			flags_inv = HIDEEARS|HIDEHAIR
-			flags_cover = null
-			prevent_crits -= list(BCLASS_STAB) // Vulnerable to eye stabs with the cover up
-			emote_environment = 0
-			if(ishuman(user))
-				var/mob/living/carbon/H = user
-				H.update_inv_head()
-			block2add = null
-		else if(adjustable == CADJUSTED)
-			ResetAdjust(user)
-			prevent_crits += list(BCLASS_STAB)
-			emote_environment = 3
-			if(user)
-				if(ishuman(user))
-					var/mob/living/carbon/H = user
-					H.update_inv_head()
-		user.update_fov_angles()
 
 /obj/item/clothing/head/roguetown/helmet/heavy/rust
 	name = "rusted barbute"
@@ -823,7 +795,7 @@
 	item_state = "grenzelhat"
 	icon = 'icons/roguetown/clothing/head.dmi'
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
-	slot_flags = ITEM_SLOT_HEAD
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	detail_tag = "_detail"
 	dynamic_hair_suffix = ""
 	max_integrity = 150

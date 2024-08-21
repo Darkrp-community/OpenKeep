@@ -30,6 +30,18 @@
 	if(playing && user.get_active_held_item() != src)
 		playing = FALSE
 		soundloop.stop()
+	// Prevents an exploit
+	for(var/mob/living/carbon/L in viewers(7))
+		var/mob/living/carbon/buffed = L
+		if(buffed.mind?.has_antag_datum(/datum/antagonist))
+			if(buffed.mind?.isactuallygood())
+				for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+					buffed.remove_status_effect(b)
+			else
+				return
+		else
+			for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+				buffed.remove_status_effect(b)
 
 /obj/item/rogue/instrument/getonmobprop(tag)
 	. = ..()
@@ -48,15 +60,28 @@
 	..()
 	if(soundloop)
 		soundloop.stop()
+	// Prevents an exploit
+	for(var/mob/living/carbon/L in viewers(7))
+		var/mob/living/carbon/buffed = L
+		if(buffed.mind?.has_antag_datum(/datum/antagonist))
+			if(buffed.mind?.isactuallygood())
+				for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+					buffed.remove_status_effect(b)
+			else
+				return
+		else
+			for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+				buffed.remove_status_effect(b)
 
 /obj/item/rogue/instrument/attack_self(mob/living/user)
 	var/stressevent = /datum/stressevent/music
+	var/bardbonus = /datum/stressevent/bardicbuff
 	. = ..()
 	if(.)
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(!playing)
-		var/curfile = input(user, "Which song?", "Roguetown", name) as null|anything in song_list
+		var/curfile = input(user, "Which song do you want to play?", "Pick a song", name) as null|anything in song_list
 		if(!user)
 			return
 		if(user.mind)
@@ -74,22 +99,10 @@
 					stressevent = /datum/stressevent/music/five
 				if(6)
 					stressevent = /datum/stressevent/music/six
-			for(var/obj/item/reagent_containers/food/snacks/smallrat/I in view(6, user))
-				if(I.loc != user)
-					step_towards(I, user)
-					sleep(2)
-					step_towards(I, user)
-					sleep(2)
-					step_towards(I, user)
-		if(playing)
-			playing = FALSE
-			soundloop.stop()
-			if(dynamic_icon)
-				lower_from_mouth()
-				update_icon()
-			return
+
 		if(!(src in user.held_items))
 			return
+		
 		if(user.get_inactive_held_item())
 			playing = FALSE
 			soundloop.stop()
@@ -97,6 +110,7 @@
 				lower_from_mouth()
 				update_icon()
 			return
+		
 		if(curfile)
 			curfile = song_list[curfile]
 			playing = TRUE
@@ -113,14 +127,95 @@
 						step_towards(I, user)
 						sleep(2)
 						step_towards(I, user)
-		for(var/mob/living/carbon/L in viewers(7))
-			L.add_stress(stressevent)
+			for(var/mob/living/carbon/L in viewers(7)) // Fix: Apply the music buff only if you didn't cancel song selection.
+				if(L.can_hear()) // Only people who can hear music will get buffed
+					L.add_stress(stressevent)
+
+		// BARDIC BUFFS CODE START //
+
+		if(playing && HAS_TRAIT(user, TRAIT_BARDIC_TRAINING)) // Non-bards will never get this prompt. Prompt doesn't show if you cancel song selection either.
+			var/list/buffs2pick = list()
+			var/musiclevel = user.mind.get_skill_level(/datum/skill/misc/music)
+			switch(musiclevel) // There has to be a better way to do this, but so far all I've tried doesn't work as intended.
+				if(1) // T1
+					buffs2pick += list("Noc's Brilliance (+1 INT)" = /datum/status_effect/bardicbuff/intelligence)
+				if(1 to 2) // T2
+					buffs2pick += list("Noc's Brilliance (+1 INT)" = /datum/status_effect/bardicbuff/intelligence,
+									"Malum's Resilience (+1 END)" = /datum/status_effect/bardicbuff/endurance)
+				if(1 to 3) // T3
+					buffs2pick += list("Noc's Brilliance (+1 INT)" = /datum/status_effect/bardicbuff/intelligence,
+									"Malum's Resilience (+1 END)" = /datum/status_effect/bardicbuff/endurance,
+									"Pestra's Blessing (+1 CON)" = /datum/status_effect/bardicbuff/constitution)
+				if(1 to 4) // T4
+					buffs2pick += list("Noc's Brilliance (+1 INT)" = /datum/status_effect/bardicbuff/intelligence,
+									"Malum's Perseverance (+1 END)" = /datum/status_effect/bardicbuff/endurance,
+									"Pestra's Blessing (+1 CON)" = /datum/status_effect/bardicbuff/constitution,
+									"Xylix's Alacrity (+1 SPD)" = /datum/status_effect/bardicbuff/speed)
+				if(1 to 5) // T5
+					buffs2pick += list("Noc's Brilliance (+1 INT)" = /datum/status_effect/bardicbuff/intelligence,
+									"Malum's Perseverance (+1 END)" = /datum/status_effect/bardicbuff/endurance,
+									"Pestra's Blessing (+1 CON)" = /datum/status_effect/bardicbuff/constitution,
+									"Xylix's Alacrity (+1 SPD)" = /datum/status_effect/bardicbuff/speed,
+									"Ravox's Righteous Fury (+1 STR, +1 PER)" = /datum/status_effect/bardicbuff/ravox)
+				if(6 to INFINITY) // Legendary onwards
+					buffs2pick += list("Noc's Brilliance (+1 INT)" = /datum/status_effect/bardicbuff/intelligence,
+									"Malum's Perseverance (+1 END)" = /datum/status_effect/bardicbuff/endurance,
+									"Pestra's Blessing (+1 CON)" = /datum/status_effect/bardicbuff/constitution,
+									"Xylix's Alacrity (+1 SPD)" = /datum/status_effect/bardicbuff/speed,
+									"Ravox's Righteous Fury (+1 STR, +1 PER)" = /datum/status_effect/bardicbuff/ravox,
+									"Astrata's Awakening (Purges sleep, +1 FOR)" = /datum/status_effect/bardicbuff/awaken) // TAKE THE LAND THAT MUST BE TAKEN
+				else // debug
+					message_admins("<span class='warning'>[key_name(usr)] is a bard with zero music skill and couldn't choose a buff.</span>")
+			var/buff2use = input(user, "Which buff to add to your song?", "Bardic Buffs", name) as null|anything in buffs2pick
+			if(buff2use) // Prevents runtime
+				buff2use = buffs2pick[buff2use] // This is to pick the buff and disregard the name defined at list level.
+				for(var/mob/living/carbon/L in viewers(7))
+					if(L.can_hear()) // Only good people who can hear music will get buffed
+						if(L.mind?.has_antag_datum(/datum/antagonist))
+							if(L.mind?.isactuallygood())
+								L.add_stress(bardbonus)
+								// Apply the buff every second to refresh its duration since it's timed
+								while(playing)
+									L.apply_status_effect(buff2use)
+									sleep(10) // Sanity to avoid infinite loop
+							else
+								return
+						else
+							L.add_stress(bardbonus) // Additional mood increase
+							// Apply the buff every second to refresh its duration since it's timed
+							while(playing)
+								L.apply_status_effect(buff2use)
+								sleep(10) // Sanity to avoid infinite loop
+					else
+						return
+			else
+				to_chat(user, "I decided not to bestow any boons to my music.")
+				return
+			
+		// BARDIC BUFFS CODE END //
+
+		while(playing)
+			var/boon = user?.mind?.get_learning_boon(/datum/skill/misc/music)
+			user?.mind?.adjust_experience(/datum/skill/misc/music, ceil((user.STAINT*0.2) * boon))
+			sleep(10 * world.tick_lag) // Gain exp every 1 second delay of playing
+	
 	else
 		playing = FALSE
 		soundloop.stop()
 		if(dynamic_icon)
 			lower_from_mouth()
 			update_icon()
+		for(var/mob/living/carbon/L in viewers(7))
+			var/mob/living/carbon/buffed = L
+			if(buffed.mind?.has_antag_datum(/datum/antagonist))
+				if(buffed.mind?.isactuallygood())
+					for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+						buffed.remove_status_effect(b) // All applicable bard buffs stopped
+				else
+					return
+			else
+				for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+					buffed.remove_status_effect(b) // All applicable bard buffs stopped
 
 /obj/item/rogue/instrument/dropped(mob/user)
 	. = ..()
