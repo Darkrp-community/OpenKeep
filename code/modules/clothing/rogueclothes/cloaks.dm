@@ -133,10 +133,6 @@
 		L.update_inv_cloak()
 	picked = TRUE
 
-/obj/item/clothing/cloak/tabard/crusader/tief
-	color = CLOTHING_RED
-	detail_color = CLOTHING_WHITE
-
 /obj/item/clothing/cloak/tabard/crusader/tief/attack_right(mob/user)
 	if(picked)
 		return

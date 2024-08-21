@@ -182,7 +182,7 @@
 	recipe_name = "a Knight's Helmet"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/knight)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/knight)
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/helmetnasal
@@ -199,7 +199,7 @@
 	recipe_name = "a Hounskull Helmet"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
-	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/hounskull)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/hounskull)
 	craftdiff = 4
 
 /datum/anvil_recipe/armor/platefull
@@ -261,5 +261,5 @@
 	recipe_name = "a Visored Sallet"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = (/obj/item/clothing/head/roguetown/helmet/sallet/visored)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/sallet)
 	craftdiff = 3
