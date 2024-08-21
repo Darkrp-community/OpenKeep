@@ -16,7 +16,7 @@
 		"Aasimar"
 	)
 	allowed_patrons = list(/datum/patron/divine/astrata)
-	tutorial = "The divine is all that matters in an immoral world. The Sun Queen and her pantheon rule over all, and you will preach their wisdom to Rockhill. It is up to you to shepard the flock into to a god-fearing future."
+	tutorial = "The divine is all that matters in an immoral world. The Sun Queen and her pantheon rule over all, and you will preach their wisdom to Rockhill. It is up to you to shepard the flock into a god-fearing future."
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
 	outfit = /datum/outfit/job/roguetown/priest
