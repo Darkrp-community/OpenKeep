@@ -19,11 +19,10 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-		H.change_stat("strength", 3)
+		H.change_stat("strength", 2)
 		H.change_stat("endurance", 2)
 		H.change_stat("constitution", 2)
-		H.change_stat("intelligence", -2) // No thinking, good soldiers follow orders
-		H.change_stat("speed", -1) // In for the long march... not a sprinter
+		H.change_stat("speed", -1)
 
 	// Despite extensive combat experience, this class is exceptionally destitute. The only luxury besides combat gear that it possesses is a lantern for a source of light
 	// Beneath the arms and armor is a simple loincloth, and it doesn't start with any money. This should encourage them to find someone to serve or work alongside with very quickly
