@@ -277,7 +277,7 @@
 
 
 
-
+/*
 // Bowl ////////////////////////////////////////////////
 
 /obj/item/reagent_containers/glass/bowl
@@ -310,7 +310,7 @@
 /obj/item/reagent_containers/glass/bowl/on_reagent_change(changetype)
 	..()
 	update_icon()
-
+*/
 
 #undef INGREDIENTS_FILL
 #undef INGREDIENTS_SCATTER

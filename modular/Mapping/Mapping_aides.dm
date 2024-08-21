@@ -767,5 +767,5 @@
 	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
 	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
 
-/*	..................   TEMP to avoid conflicts, delete when food module last part in   ................... */
-/obj/item/reagent_containers/glass/bucket/pot
+// TEMP to avoid conflicts and atomize, needs replacing with /obj/item/reagent_containers/glass/bucket/pot to work
+/obj/item/cooking/pot
