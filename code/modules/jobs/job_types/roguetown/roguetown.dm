@@ -54,9 +54,6 @@
 				H.patron = GLOB.patronlist[default_patron]
 		to_chat(H, "<span class='warning'>[ourpatron] had not endorsed my practices in my younger years. I've since grown acustomed to [H.patron].")
 	if(H.mind)
-		if(H.gender == FEMALE)
-			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		if(H.dna)
 			H.dna.species.random_underwear(H.gender)
 			if(H.dna.species)
