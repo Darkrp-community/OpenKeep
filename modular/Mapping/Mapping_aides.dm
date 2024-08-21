@@ -767,5 +767,20 @@
 	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
 	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
 
-// TEMP to avoid conflicts and atomize, needs replacing with /obj/item/reagent_containers/glass/bucket/pot to work
+
+/area/rogue/indoors/bandit_lair
+	name = "lair (Bandits)"
+
+/area/rogue/indoors/vampire_manor
+	name = "lair (Vampire Lord)"
+
+/*	..................   Floors   ................... */
+/turf/open/floor/rogue/ruinedwood/darker
+	color = "#d9c9b0"
+/turf/open/floor/rogue/ruinedwood/turned/darker
+	color = "#d9c9b0"
+
+
+// Temp to avoid conflicts
 /obj/item/cooking/pot
+
