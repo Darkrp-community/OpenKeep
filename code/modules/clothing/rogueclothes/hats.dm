@@ -1014,7 +1014,7 @@
 	max_integrity = 350//isn't the same as a steel helmet but is better than a skullcap, costs 2 bars and protects the mouth
 	icon_state = "ironplate"
 	item_state = "ironplate"
-	desc = "A iron masked helmet usually worn by armed men, is a solid design yet antiquated and cheap."
+	desc = "An iron masked helmet usually worn by armed men, it is a solid design yet antiquated and cheap."
 	will_cover = HEAD|HAIR|NOSE|MOUTH|EARS
 	flags_inv = HIDEEARS
 
