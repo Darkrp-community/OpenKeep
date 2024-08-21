@@ -193,7 +193,7 @@
 /obj/item/clothing/suit/roguetown/armor/plate/scale/iron
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "iron plate armor"
-	desc = "A rough set of iron armor, chainmail and pauldrons who cover the whole chest, arms and legs is a simple and cheap design."
+	desc = "A rough set of iron armor, complete with chainmail joints and pauldrons. A simple and cheap design to protect vital zones, but not the arms."
 	body_parts_covered = CHEST|VITALS|GROIN|LEGS
 	allowed_sex = list(MALE, FEMALE)
 	icon_state = "ironplate"
