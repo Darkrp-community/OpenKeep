@@ -1,11 +1,7 @@
-/*
-	It'd prob be a good idea to fill out a entire roster of bandits
-	For now tho you got this cause I don't feel like reworking the shit ass gamemode yet
-	The antag would also have to be touched as it loads out all the gear attached to the datum lol
-	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-	yeah it's unused it broke lol haha oooooooooo haha
-*/
-/datum/advclass/bandit
+///uhhh temporarily makes bandits into a drifter class for now
+///this just exists for giving them the status of bandit, they will pick their actual bandit class in a bit.
+
+/datum/advclass/combat/bandit
 	name = "Bandit"
 	tutorial = "A person living in service of the god Matthios, through theft and social woes can ones suffering be alleviated."
 	allowed_sexes = list(MALE, FEMALE)
@@ -19,7 +15,9 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/bandit
-	category_tags = list(CTAG_ANTAG, CTAG_BANDIT)
+	maximum_possible_slots = 5
+	category_tags = list(CTAG_ADVENTURER)
+	pickprob = 100
 
 /datum/outfit/job/roguetown/adventurer/bandit/pre_equip(mob/living/carbon/human/H)
 	..()

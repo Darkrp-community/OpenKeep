@@ -43,6 +43,7 @@
 #define TRAIT_NOMOOD "no_mood"
 #define TRAIT_SIMPLE_WOUNDS "simple_wounds"
 #define TRAIT_BANDITCAMP "banditcamp"
+#define TRAIT_KNOWBANDITS "knowbandits"
 #define TRAIT_VAMPMANSION "vampiremansion"
 #define TRAIT_LIMPDICK "limp_dick"
 #define TRAIT_SEXPASS "sexpass"
