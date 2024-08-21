@@ -31,6 +31,9 @@
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/clothing/head/roguetown/roguehood/shalal)
+	if(!H.has_language(/datum/language/zybantine))
+		H.grant_language(/datum/language/zybantine)
+		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)

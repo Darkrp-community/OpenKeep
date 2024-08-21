@@ -705,21 +705,15 @@
 	icon_state = "puritan_hat"
 
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "volf helmet"
 	desc = "Bandit initiation rites often involve the slaying of a volf. This such helmet is produced after the hunt, as proof of having passed the test."
 	will_cover = HEAD|HAIR|EARS
 	icon_state = "volfhead"
 	item_state = "volfhead"
-	max_integrity = 180 //crude bandit craftsmenship
+	max_integrity = 100 //crude bandit craftsmenship
+	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
 	sellprice = 30
-
-/obj/item/clothing/head/roguetown/helmet/leather/headscarf
-	name = "headscarf"
-	desc = "Rolled cloth. Gives some protection at least."
-	icon_state = "headscarf"
-	armor = list("melee" = 20, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	max_integrity = 150
-	color = "#745a4d"
 
 /obj/item/clothing/head/roguetown/helmet/leather/minershelm
 	name = "leather miners helmet"

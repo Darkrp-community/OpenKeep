@@ -141,6 +141,7 @@
 					H.update_inv_wear_mask()
 
 /obj/item/clothing/mask/rogue/shepherd/rag
+	name = "rag halfmask"
 	icon_state = "ragmask"
 
 /obj/item/clothing/mask/rogue/feld

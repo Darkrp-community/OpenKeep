@@ -113,6 +113,15 @@
 													'sound/foley/footsteps/armor/plate (2).ogg',\
 													'sound/foley/footsteps/armor/plate (3).ogg'), 100)
 
+/obj/item/clothing/suit/roguetown/armor/plate/rust
+	name = "rusted half-plate armor"
+	desc = "Old and rusted half-plate. Less durable than it used to be, but still quite protective."
+	icon_state = "rustplate"
+	item_state = "rustplate"
+	max_integrity = 250
+	smeltresult = /obj/item/ingot/iron
+	sellprice = 40
+
 /obj/item/clothing/suit/roguetown/armor/plate/half
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "steel cuirass"
