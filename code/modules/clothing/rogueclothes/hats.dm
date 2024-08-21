@@ -1034,6 +1034,7 @@
 	desc = "An iron masked helmet usually worn by armed men, it is a solid design yet antiquated and cheap."
 	will_cover = HEAD|HAIR|NOSE|MOUTH|EARS
 	flags_inv = HIDEEARS
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/head/roguetown/helmet/ironpot
 	icon = 'icons/roguetown/clothing/head.dmi'
@@ -1047,4 +1048,4 @@
 	desc = "A iron pot style helmet designed to protect the skull and the nose, designs like those are outdated but they are simple to make in big numbers."
 	will_cover = HEAD|HAIR|NOSE|EARS
 	flags_inv = HIDEEARS
-
+	smeltresult = /obj/item/ingot/iron
