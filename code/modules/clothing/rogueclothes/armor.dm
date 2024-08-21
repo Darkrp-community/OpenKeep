@@ -197,7 +197,7 @@
 	body_parts_covered = CHEST|VITALS|GROIN|LEGS
 	allowed_sex = list(MALE, FEMALE)
 	icon_state = "ironplate"
-	max_integrity = 150//a bit less than steel armors 
+	max_integrity = 350 // Three iron bars, extra durability
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/iron
 	equip_delay_self = 40
