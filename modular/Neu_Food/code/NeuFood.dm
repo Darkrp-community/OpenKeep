@@ -34,7 +34,7 @@
 	var/short_cooktime = FALSE  // based on cooking skill
 	var/long_cooktime = FALSE
 
-/obj/item/reagent_containers/food/snacks/rogue
+/obj/item/reagent_containers/food/snacks/rogue // base food type, for icons and cooktime, and to make it work with processes like pie making
 	icon = 'modular/Neu_Food/icons/food.dmi'
 	desc = ""
 	slices_num = 0
@@ -42,13 +42,13 @@
 	foodtype = GRAIN
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	cooktime = 30 SECONDS
-	var/process_step
+	var/process_step // used for pie making and other similar modular foods
 
 /obj/item/reagent_containers/food/snacks/rogue/Initialize()
 	. = ..()
 	eatverb = pick("bite","chew","nibble","gobble","chomp")
 
-/obj/item/reagent_containers/food/snacks/rogue/foodbase
+/obj/item/reagent_containers/food/snacks/rogue/foodbase // root item for uncooked food thats disgusting when raw
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
 	bitesize = 3
 	eat_effect = /datum/status_effect/debuff/uncookedfood
@@ -76,12 +76,22 @@
 	var/obj/item/I = new path(T)
 	eater.put_in_active_hand(I)
 
-/obj/effect/decal/cleanable/food/mess
+/obj/effect/decal/cleanable/food/mess // decal applied when throwing minced meat for example
 	name = "mess"
 	desc = ""
 	color = "#ab9d9d"
 	icon_state = "tomato_floor1"
 	random_icon_states = list("tomato_floor1", "tomato_floor2", "tomato_floor3")
+
+/obj/item/reagent_containers/food/snacks/attackby(obj/item/W, mob/user, params)
+	if(user.used_intent.blade_class == slice_bclass && W.wlength == WLENGTH_SHORT)
+		if(slice_bclass == BCLASS_CHOP)
+			user.visible_message("<span class='notice'>[user] chops [src]!</span>")
+			slice(W, user)
+			return 1
+		else if(slice(W, user))
+			return 1
+	..()
 
 /* added to proc
 /obj/item/reagent_containers/food/snacks/proc/slice(obj/item/W, mob/user)
