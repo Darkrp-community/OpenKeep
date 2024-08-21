@@ -186,7 +186,7 @@
 	smeltresult = /obj/item/ingot/iron
 	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
-	sellprice = 25
+	sellprice = 30
 
 // Rare Heartfelt equipment
 /obj/item/clothing/suit/roguetown/armor/heartfelt/lord
