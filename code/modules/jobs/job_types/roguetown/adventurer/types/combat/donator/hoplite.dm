@@ -36,15 +36,15 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/hoplite
 	neck = /obj/item/clothing/neck/roguetown/gorget/hoplite
 	backl = /obj/item/rogueweapon/shield/tower/hoplite
-	var/randy = rand(1,5)
-	switch(randy) // Weapon we get is randomized! Either a spear (winged or regular), or a khopesh sword. The weapon we get is what we get our training in
-		if(1 to 3)
+	var/weapontype = pickweight(list("Khopesh" = 5, "Spear" = 3, "WingedSpear" = 2)) // Rolls for various weapon options based on weighted list
+	switch(weapontype) // We either get a spear (winged or regular), or a khopesh sword. The weapon we get is what we get our training in
+		if("Khopesh")
 			beltl = /obj/item/rogueweapon/sword/khopesh
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-		if(4)
+		if("Spear")
 			backr = /obj/item/rogueweapon/spear/hoplite
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
-		if(5)
+		if("WingedSpear")
 			backr = /obj/item/rogueweapon/spear/hoplite/winged
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
 

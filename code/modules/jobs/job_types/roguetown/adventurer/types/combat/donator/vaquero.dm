@@ -20,9 +20,8 @@
 /datum/outfit/job/roguetown/adventurer/vaquero/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE) // Makes sense enough for an animal tamer
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
@@ -43,6 +42,7 @@
 	cloak = /obj/item/clothing/cloak/half/red
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/rogueweapon/sword/rapier
+	beltr = /obj/item/rogueweapon/whip
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	H.change_stat("strength", 1)
 	H.change_stat("speed", 2)
