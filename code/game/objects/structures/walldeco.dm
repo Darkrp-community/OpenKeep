@@ -35,8 +35,12 @@
 	if(user.Adjacent(src))
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
-			to_chat(H, "<b>I now know the faces of the local bandits.</b>")
-			H.playsound_local(H, 'sound/misc/notice (2).ogg', 100, FALSE)
+			if(!isbandit(user))
+				to_chat(H, "<b>I now know the faces of the local bandits.</b>")
+				ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
+				H.playsound_local(H, 'sound/misc/notice (2).ogg', 100, FALSE)
+			else
+				to_chat(H, "<b>Yup. My face is on there.</b>")
 
 /obj/structure/fluff/walldeco/innsign
 	name = "sign"

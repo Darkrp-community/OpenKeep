@@ -73,13 +73,15 @@
 		H.change_stat("constitution", 2)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", -1)
-	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron) // This creates the cleric holder used for devotion spells
-	C.holder_mob = H
-	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-	C.grant_spells_templar(H)
 	
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+		
+	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
+	//Max devotion limit - Templars are stronger but cannot pray to gain more abilities beyond t1
+	C.holder_mob = H
+	C.grant_spells_templar(H)
+	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	if(H.dna?.species)
 		if(H.dna.species.id == "humen")
 			H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
