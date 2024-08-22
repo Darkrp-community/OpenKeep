@@ -115,6 +115,9 @@
 
 	var/cleric = null // Used for cleric_holder for priests
 
+	var/confession_points = 0 // Used to track how many confessions the Inquisitor has gotten signed. Used to buy items at mailboxes.
+	var/purchase_history = null // Used to track what the Inquisitor has bought from the mailbox.
+
 	possible_rmb_intents = list(/datum/rmb_intent/feint,\
 	/datum/rmb_intent/aimed,\
 	/datum/rmb_intent/strong,\
