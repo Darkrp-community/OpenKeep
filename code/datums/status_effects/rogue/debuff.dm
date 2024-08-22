@@ -330,3 +330,4 @@
 /atom/movable/screen/alert/status_effect/debuff/viciousmockery
 	name = "Vicious Mockery"
 	desc = "<span class='warning'>THAT SPOONY BARD! ARGH!</span>\n"
+	icon_state = "muscles"
