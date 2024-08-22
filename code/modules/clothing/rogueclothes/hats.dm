@@ -87,6 +87,48 @@
 	toggle_icon_state = TRUE
 	max_integrity = 100
 
+/obj/item/clothing/head/roguetown/roguehood/maghood
+	name = "magus hood"
+	desc = "Worn by the magi of Zybantu."
+	color = null
+	icon_state = "warlockhood"
+	item_state = "warlockhood"
+	icon = 'icons/roguetown/clothing/head.dmi'
+	body_parts_covered = NECK
+	armor = list("melee" = 40, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
+	resistance_flags = FLAMMABLE
+	blocksound = SOFTHIT
+	slot_flags = ITEM_SLOT_HEAD
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	dynamic_hair_suffix = ""
+	edelay_type = 1
+	adjustable = CAN_CADJUST
+	blade_dulling = DULLING_BASHCHOP
+	armor_class = ARMOR_CLASS_LIGHT
+	toggle_icon_state = TRUE
+	max_integrity = 150
+
+/obj/item/clothing/head/roguetown/roguehood/maghood/AdjustClothes(mob/user)
+	if(loc == user)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			body_parts_covered = HEAD|EARS|HAIR|NECK
+			flags_inv = HIDEEARS
+			flags_cover = null
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_head()
+			block2add = null
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			body_parts_covered = NECK
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_head()
+		user.update_fov_angles()
+
 /obj/item/clothing/head/roguetown/necrahood
 	name = "death shroud"
 	desc = "Worn by the faithful of Necra, or less savory individuals."
