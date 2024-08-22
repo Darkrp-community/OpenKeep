@@ -48,7 +48,7 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/armor/iplatehelmet
-	name = "Iron plate helmet (2)"
+	name = "Plate helmet (2)"
 	recipe_name = "a face guarded iron helmet"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron)
