@@ -40,7 +40,7 @@
 
 
 /datum/anvil_recipe/armor/iplate
-	name = "Iron plate armor (3)"
+	name = "Plate armor (3)"
 	recipe_name = "a set of iron armor"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/ingot/iron)
