@@ -51,7 +51,7 @@
 /datum/reagent/druqks/on_mob_metabolize(mob/living/M)
 	M.overlay_fullscreen("druqk", /atom/movable/screen/fullscreen/druqks)
 	M.set_drugginess(30)
-	M.update_body_parts_head_only()
+//	M.update_body_parts_head_only()
 	if(M.client)
 		ADD_TRAIT(M, TRAIT_DRUQK, "based")
 		SSdroning.area_entered(get_area(M), M.client)
@@ -61,7 +61,7 @@
 
 /datum/reagent/druqks/on_mob_end_metabolize(mob/living/M)
 	M.clear_fullscreen("druqk")
-	M.update_body_parts_head_only()
+//	M.update_body_parts_head_only()
 	if(M.client)
 		REMOVE_TRAIT(M, TRAIT_DRUQK, "based")
 		SSdroning.play_area_sound(get_area(M), M.client)
