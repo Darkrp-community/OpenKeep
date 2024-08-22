@@ -56,7 +56,7 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/armor/ipothelmet
-	name = "Iron pot helmet"
+	name = "Pot helmet"
 	recipe_name = "a heavy iron helmet"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/head/roguetown/helmet/ironpot
