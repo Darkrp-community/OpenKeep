@@ -20,6 +20,26 @@
 	give_bank_account = TRUE
 	bypass_lastclass = TRUE
 
+/datum/job/roguetown/prince/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+	..()
+	var/mob/living/carbon/human/R = SSticker.rulermob
+	var/rulertype
+	switch(R.gender)
+		if(MALE)
+			rulertype = FAMILY_FATHER
+		if(FEMALE)
+			rulertype = FAMILY_MOTHER
+		else
+			return
+	var/mob/living/carbon/human/P = L
+	var/relation_valid = FALSE
+	if(P.familytree_pref != FAMILY_NONE)
+		relation_valid = TRUE
+	if(rulertype)
+		SSfamilytree.AssumeFamily(L, R, relation_valid)
+		//If spouse isnt assigned as mother calculate species defaults to father.
+		SSfamilytree.CalculateSpecies(L)
+
 /datum/outfit/job/roguetown/prince/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE

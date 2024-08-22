@@ -101,7 +101,7 @@
 
 		if(!gibbed && yeae)
 			for(var/mob/living/carbon/human/HU in viewers(7, src))
-				if(HU.marriedto == src)
+				if(HU.family[FAMILY_SPOUSE] == src)
 					HU.adjust_triumphs(-1)
 				if(HU != src && !HAS_TRAIT(HU, TRAIT_BLIND))
 					if(!HAS_TRAIT(HU, TRAIT_VILLAIN))
@@ -153,7 +153,7 @@
 		if(CA != src && !HAS_TRAIT(CA, TRAIT_BLIND))
 			if(HAS_TRAIT(CA, TRAIT_STEELHEARTED))
 				continue
-			if(CA.marriedto == src)
+			if(CA.family[FAMILY_SPOUSE] == src)
 				CA.adjust_triumphs(-1)
 			var/mob/living/carbon/V = CA
 			if(V.has_flaw(/datum/charflaw/addiction/maniac))

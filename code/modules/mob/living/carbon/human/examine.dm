@@ -82,9 +82,30 @@
 			. += "<span class='info'>[capitalize(m2)] [skin_tone_wording] is [skin_tone_seen][slop_lore_string]</span>"
 
 		if(ishuman(user))
+			/*
+			* Familytree Subsystem Recognition
+			* H is who examines us so the
+			* perspective is H looking at src.
+			* This all could honestly be
+			* turned into its own proc.
+			*/
 			var/mob/living/carbon/human/H = user
-			if(H.marriedto == real_name)
+			//Relation of examiner to them H --> src
+			if(H.family[FAMILY_SPOUSE] == src)
 				. += "<span class='love'>It's my spouse.</span>"
+			if(H.family[FAMILY_MOTHER] == src)
+				. += "<span class='info'>It's my mother.</span>"
+			if(H.family[FAMILY_FATHER] == src)
+				. += "<span class='info'>It's my father.</span>"
+			//Parent src --> H
+			if(family[FAMILY_FATHER] == H || family[FAMILY_MOTHER] == H)
+				. += "<span class='info'>It's my progeny.</span>"
+			if(src != H)
+				//Sibling, if both are true you are full blooded siblings, otherwise half blooded.
+				if(family[FAMILY_MOTHER] == H.family[FAMILY_MOTHER] && family[FAMILY_MOTHER] != FALSE)
+					. += "<span class='info'>We share the same mother.</span>"
+				if(family[FAMILY_FATHER] == H.family[FAMILY_FATHER] && family[FAMILY_FATHER] != FALSE)
+					. += "<span class='info'>We share the same father.</span>"
 
 		if(real_name in GLOB.excommunicated_players)
 			. += "<span class='userdanger'>HERETIC! SHAME!</span>"
@@ -464,7 +485,7 @@
 	if(!appears_dead)
 		if(skipface && user.has_flaw(/datum/charflaw/hunted))
 			user.add_stress(/datum/stressevent/hunted)
-	
+
 	// The Assassin's profane dagger can sniff out their targets, even masked.
 	if(HAS_TRAIT(user, TRAIT_ASSASSIN) && (has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(src, TRAIT_ZIZOID_HUNTED)))
 		for(var/obj/item/I in user)

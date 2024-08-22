@@ -881,7 +881,7 @@
 		if(5)
 			message2send = "You see a star!"
 	to_chat(H, "<span class='notice'>[message2send]</span>")
-	
+
 	if(random_message == 2)
 		if(do_after(H, 25, target = src))
 			var/obj/item/bodypart/affecting = H.get_bodypart("head")
@@ -1146,7 +1146,7 @@
 								if(!C.client)
 									continue
 								//Gotta get a divorce first
-								if(C.marriedto)
+								if(C.family[FAMILY_SPOUSE] != FALSE)
 									continue
 								if(C.real_name == X)
 									//I know this is very sloppy but its alot less code.
@@ -1193,8 +1193,8 @@
 						bridefirst = thebride.real_name
 						thegroom.change_name(thegroom.real_name + surname2use)
 						thebride.change_name(thebride.real_name + surname2use)
-						thegroom.marriedto = thebride.real_name
-						thebride.marriedto = thegroom.real_name
+						thegroom.family[FAMILY_SPOUSE] = thebride
+						thebride.family[FAMILY_SPOUSE] = thegroom
 						thegroom.adjust_triumphs(1)
 						thebride.adjust_triumphs(1)
 						//Bite the apple first if you want to be the groom.

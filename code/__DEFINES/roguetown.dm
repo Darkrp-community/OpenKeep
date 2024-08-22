@@ -43,11 +43,14 @@ GLOBAL_LIST_EMPTY(confessors)
 
 GLOBAL_LIST_INIT(wolf_prefixes, list("Red", "Moon", "Bloody", "Hairy", "Eager", "Sharp"))
 GLOBAL_LIST_INIT(wolf_suffixes, list("Fang", "Claw", "Stalker", "Prowler", "Roar", "Ripper"))
-
 //preference stuff
-#define FAMILY_NONE 1
-#define FAMILY_PARTIAL 2
-#define FAMILY_FULL 3
+#define FAMILY_NONE "None"
+#define FAMILY_PARTIAL "Siblings"
+#define FAMILY_FULL "Local"
+
+#define FAMILY_SPOUSE "Spouse"
+#define FAMILY_FATHER "Father"
+#define FAMILY_MOTHER "Mother"
 
 GLOBAL_LIST_EMPTY(sunlights)
 GLOBAL_LIST_EMPTY(job_respawn_delays)

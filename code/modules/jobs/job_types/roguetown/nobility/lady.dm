@@ -72,3 +72,9 @@
 			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Queen of Rockhill.</span></span></b>")
 			to_chat(world, "<br>")
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
+	var/mob/living/carbon/human/R = SSticker.rulermob
+	var/mob/living/carbon/human/H = L
+	//If the ruler isnt you and it isnt nothing and you lack a spouse this is now your spouse.
+	if(R != H && R != null && R.family[FAMILY_SPOUSE] == FALSE)
+		R.family[FAMILY_SPOUSE] = H
+		H.family[FAMILY_SPOUSE] = R
