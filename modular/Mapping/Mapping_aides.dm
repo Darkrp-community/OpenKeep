@@ -786,4 +786,19 @@
 	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
 
 
+/area/rogue/indoors/bandit_lair
+	name = "lair (Bandits)"
+
+/area/rogue/indoors/vampire_manor
+	name = "lair (Vampire Lord)"
+
+/*	..................   Floors   ................... */
+/turf/open/floor/rogue/ruinedwood/darker
+	color = "#d9c9b0"
+/turf/open/floor/rogue/ruinedwood/turned/darker
+	color = "#d9c9b0"
+
+
+// Temp to avoid conflicts
+/obj/item/cooking/pot
 

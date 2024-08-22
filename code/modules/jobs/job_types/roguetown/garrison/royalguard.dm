@@ -64,7 +64,7 @@
 	r_hand = /obj/item/rogueweapon/halberd
 	l_hand = /obj/item/scomstone
 	if(prob(30))
-		head = /obj/item/clothing/head/roguetown/helmet/heavy/knight
+		head = /obj/item/clothing/head/roguetown/helmet/visored/knight
 	else
 		head = /obj/item/clothing/head/roguetown/helmet/sallet
 

@@ -276,8 +276,8 @@
 /obj/item/reagent_containers/attackby(obj/item/I, mob/user, params) // add cook time to containers & salted milk for butter churning
 	..()
 	if(user.mind)
-		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
+		short_cooktime = (70 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
+		long_cooktime = (120 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/powder/salt))
 		if(!reagents.has_reagent(/datum/reagent/consumable/milk, 15))
 			to_chat(user, "<span class='warning'>Not enough milk.</span>")
@@ -326,8 +326,7 @@
 /*	............   Churning butter   ................ */
 /obj/item/reagent_containers/glass/bucket/wooden/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
-		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (200 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*20))	
 	if(istype(I, /obj/item/kitchen/spoon))
 		if(!reagents.has_reagent(/datum/reagent/consumable/milk/salted, 15))
 			to_chat(user, "<span class='warning'>Not enough salted milk.</span>")
@@ -336,7 +335,7 @@
 		playsound(get_turf(user), 'modular/Neu_Food/sound/churn.ogg', 100, TRUE, -1)
 		if(do_after(user,long_cooktime, target = src))
 			reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 15)
-			new /obj/item/reagent_containers/food/snacks/butter(loc)
+			new /obj/item/reagent_containers/food/snacks/butter(drop_location())
 		return
 	..()
 
@@ -386,7 +385,6 @@
 /*	............   Making fresh cheese   ................ */
 /obj/item/reagent_containers/glass/bucket/wooden/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
-		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
 		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
 	if(istype(I, /obj/item/natural/cloth))
 		if(reagents.has_reagent(/datum/reagent/consumable/milk/salted, 5))
@@ -394,22 +392,23 @@
 			playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
 			if(do_after(user,long_cooktime, target = src))
 				reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 5)
-				new /obj/item/reagent_containers/food/snacks/rogue/cheese(loc)
+				new /obj/item/reagent_containers/food/snacks/rogue/cheese(drop_location())
 
 		var/obj/item/natural/cloth/T = I
 		if(T.wet && !T.return_blood_DNA())
 			return
-		var/removereg = /datum/reagent/water
-		if(!reagents.has_reagent(/datum/reagent/water, 5))
-			removereg = /datum/reagent/water/gross
-			if(!reagents.has_reagent(/datum/reagent/water/gross, 5))
-				to_chat(user, "<span class='warning'>No water to soak in.</span>")
-				return
-		wash_atom(T)
-		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
-		reagents.remove_reagent(removereg, 5)
-		user.visible_message("<span class='info'>[user] soaks [T] in [src].</span>")
-		return
+		else 
+			var/removereg = /datum/reagent/water
+			if(!reagents.has_reagent(/datum/reagent/water, 5))
+				removereg = /datum/reagent/water/gross
+				if(!reagents.has_reagent(/datum/reagent/water/gross, 5))
+					to_chat(user, "<span class='warning'>No water to soak in.</span>")
+					return
+			wash_atom(T)
+			playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
+			reagents.remove_reagent(removereg, 5)
+			user.visible_message("<span class='info'>[user] soaks [T] in [src].</span>")
+			return
 	..()
 
 
@@ -498,11 +497,10 @@
 		return ..()
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/cheesewheel_three/proc/maturing_done()
-	playsound(src.loc, 'sound/neu/rustle2.ogg', 100, TRUE, -1)
+	playsound(src.loc, 'modular/Neu_Food/sound/rustle2.ogg', 100, TRUE, -1)
 	new /obj/item/reagent_containers/food/snacks/rogue/cheddar(loc)
 	new /obj/item/natural/cloth(loc)
 	qdel(src)
-
 
 
 

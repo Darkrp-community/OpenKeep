@@ -95,10 +95,10 @@
 
 		if(real_name in GLOB.outlawed_players)
 			. += "<span class='userdanger'>OUTLAW!</span>"
-		if(mind)
-			if(mind.special_role == "Bandit")
+		if(mind && mind.special_role)
+			if(mind && mind.special_role == "Bandit" && HAS_TRAIT(user, TRAIT_KNOWBANDITS))
 				. += "<span class='userdanger'>BANDIT!</span>"
-			if(mind.special_role == "Vampire Lord")
+			if(mind && mind.special_role == "Vampire Lord")
 				. += "<span class='userdanger'>A MONSTER!</span>"
 
 	if(leprosy == 1)
