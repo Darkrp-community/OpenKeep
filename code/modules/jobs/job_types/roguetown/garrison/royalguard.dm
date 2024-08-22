@@ -63,7 +63,7 @@
 	backl = /obj/item/rogueweapon/shield/tower/metal
 	r_hand = /obj/item/rogueweapon/halberd
 	if(prob(30))
-		head = /obj/item/clothing/head/roguetown/helmet/heavy/knight
+		head = /obj/item/clothing/head/roguetown/helmet/visored/knight
 	else
 		head = /obj/item/clothing/head/roguetown/helmet/sallet
 
