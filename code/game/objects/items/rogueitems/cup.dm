@@ -2,7 +2,6 @@
 	name = "metal cup"
 	desc = "An iron cup, it's rim gnawed upon and grimey."
 	icon_state = "iron"
-//	icon = 'icons/roguetown/items/cooking.dmi'
 	force = 5
 	throwforce = 10
 	reagent_flags = OPENCONTAINER

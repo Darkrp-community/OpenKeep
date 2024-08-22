@@ -256,6 +256,7 @@
 			if("wielded") return list("shrink" = 0.6,"sx" = 6,"sy" = -2,"nx" = -4,"ny" = 2,"wx" = -8,"wy" = -1,"ex" = 8,"ey" = 3,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 15,"sturn" = -200,"wturn" = -160,"eturn" = -25,"nflip" = 8,"sflip" = 8,"wflip" = 0,"eflip" = 0)
 			if("onbelt") return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+// Repurposing this unused sword for the Paladin job as a heavy counter against vampires.
 /obj/item/rogueweapon/sword/long/judgement
 	force = 15
 	force_wielded = 30
@@ -286,6 +287,7 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 363
 	static_price = TRUE
+	var/last_used = 0
 
 /obj/item/rogueweapon/sword/long/judgement/getonmobprop(tag)
 	. = ..()
@@ -295,6 +297,93 @@
 			if("onback") return list("shrink" = 0.5,"sx" = -1,"sy" = 2,"nx" = 0,"ny" = 2,"wx" = 2,"wy" = 1,"ex" = 0,"ey" = 1,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 15,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 			if("wielded") return list("shrink" = 0.4,"sx" = 3,"sy" = 4,"nx" = -1,"ny" = 4,"wx" = -8,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt") return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/sword/long/judgement/pickup(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(ishuman(H))
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
+			H.Knockdown(30)
+			H.adjustFireLoss(60)
+			H.Paralyze(30)
+			H.fire_act(1,5)
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
+			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
+				H.Knockdown(10)
+				H.Paralyze(10)
+
+/obj/item/rogueweapon/sword/long/judgement/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
+	. = ..()
+	if(ishuman(M))
+		var/datum/antagonist/vampirelord/V_lord = FALSE
+		var/mob/living/carbon/human/H = M
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord))
+			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			to_chat(H, "<span class='userdanger'>I cannot equip this, it is made of my BANE!</span>")
+			H.Knockdown(20)
+			H.adjustFireLoss(60)
+			H.Paralyze(20)
+			H.fire_act(1,5)
+		if(V_lord)
+			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+				to_chat(H, "<span class='userdanger'>I cannot equip this, it is made of my BANE!</span>")
+				H.Knockdown(10)
+				H.Paralyze(10)
+			else
+				if(prob(25))
+					H.fire_act(1,3)
+
+/obj/item/rogueweapon/sword/long/judgement/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
+	if(world.time < src.last_used + 120)
+		to_chat(user, "<span class='notice'>The silver effect is on cooldown.</span>")
+		return
+
+	. = ..()
+	if(ishuman(target))
+		var/mob/living/carbon/human/s_user = user
+		var/mob/living/carbon/human/H = target
+		var/datum/antagonist/vampirelord/lesser/V = FALSE
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			V = H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+		var/datum/antagonist/vampirelord/V_lord = FALSE
+		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/))
+			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(V)
+			if(V.disguised)
+				H.Stun(30)
+				H.visible_message("<font color='white'>The silver weapon undoes [H]'s wicked disguise!</font>")
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(60)
+				H.Paralyze(30)
+				H.fire_act(1,5)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse/greater)
+				src.last_used = world.time
+			else
+				H.Stun(30)
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(60)
+				H.Paralyze(30)
+				H.fire_act(1,5)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse/greater)
+				src.last_used = world.time
+		if(V_lord)
+			if(V_lord.vamplevel < 4 && !V)
+				H.Stun(20)
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(30)
+				H.Paralyze(20)
+				H.fire_act(1,4)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse) // Lesser curse applied still
+				src.last_used = world.time
+			if(V_lord.vamplevel == 4 && !V)
+				if(prob(25))
+					H.fire_act(1,3)
+				to_chat(s_user, "<font color='red'> The silver weapon barely works against such an abomination!</font>")
+				H.visible_message(H, "<span class='userdanger'>This feeble metal can't stop me, I HAVE TRANSCENDED!</span>")
 
 /obj/item/rogueweapon/sword/long/vlord
 	force = 18

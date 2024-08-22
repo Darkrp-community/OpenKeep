@@ -468,7 +468,7 @@
 /obj/item/flashlight/flare/torch/lantern
 	name = "lamptern"
 	icon_state = "lamp"
-	desc = ""
+	desc = "A light to guide the way."
 	brightness_on = 7
 	on = FALSE
 	flags_1 = CONDUCT_1

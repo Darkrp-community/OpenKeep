@@ -113,6 +113,15 @@
 													'sound/foley/footsteps/armor/plate (2).ogg',\
 													'sound/foley/footsteps/armor/plate (3).ogg'), 100)
 
+/obj/item/clothing/suit/roguetown/armor/plate/rust
+	name = "rusted half-plate armor"
+	desc = "Old and rusted half-plate. Less durable than it used to be, but still quite protective."
+	icon_state = "rustplate"
+	item_state = "rustplate"
+	max_integrity = 250
+	smeltresult = /obj/item/ingot/iron
+	sellprice = 40
+
 /obj/item/clothing/suit/roguetown/armor/plate/half
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "steel cuirass"
@@ -150,6 +159,13 @@
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 20
+
+/obj/item/clothing/suit/roguetown/armor/plate/half/iron/rust
+	name = "rusted half-plate armor"
+	desc = "Old but still useful to keep sharp objects from your innards."
+	icon_state = "rustplate"
+	item_state = "rustplate"
+
 
 // Bladesinger armor, unique
 /obj/item/clothing/suit/roguetown/armor/plate/half/elven
