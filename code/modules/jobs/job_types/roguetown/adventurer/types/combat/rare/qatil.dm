@@ -1,4 +1,4 @@
-/datum/advclass/mercenary/qatil
+/datum/advclass/adventurer/qatil
 	name = "Qatil"
 	tutorial = "Hailing from Zybantine lands, you are a killer for hire that is trained both in murdering unseen and seen with your trusty knife."
 	allowed_sexes = list(MALE, FEMALE)
@@ -9,13 +9,14 @@
 		"Tiefling",
 		"Dark Elf",
 	)
-	outfit = /datum/outfit/job/roguetown/mercenary/qatil
-	maximum_possible_slots = 5
-	category_tags = list(CTAG_MERCENARY)
+	outfit = /datum/outfit/job/roguetown/adventurer/qatil
+	maximum_possible_slots = 1
+	pickprob = 25
+	category_tags = list(CTAG_ADVENTURER)
 
 	cmode_music = 'sound/music/combat_desertrider.ogg'
 
-/datum/outfit/job/roguetown/mercenary/qatil/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/adventurer/qatil/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
@@ -32,6 +33,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
+		H.change_stat("strength", 1)
 		H.change_stat("speed", 2)
 		H.change_stat("endurance", 1)
 
@@ -45,7 +47,10 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	head = /obj/item/clothing/head/roguetown/roguehood/shalal
 	neck = /obj/item/clothing/neck/roguetown/coif
-	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)
+	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/lockpick)
+	if(!H.has_language(/datum/language/zybantine))
+		H.grant_language(/datum/language/zybantine)
+		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
 
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
