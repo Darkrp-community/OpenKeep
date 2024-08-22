@@ -103,6 +103,7 @@
 			H.change_stat("constitution", 1)
 
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+			beltr = /obj/item/clothing/mask/rogue/shepherd/rag
 
 			if(H.age == AGE_OLD) //old deserters are experts with polearms
 				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
@@ -124,9 +125,9 @@
 
 			switch(pick(1,3))
 				if (1 to 2)
-					backr = /obj/item/rogueweapon/spear
+					r_hand = /obj/item/rogueweapon/spear
 				if (3)
-					backr = /obj/item/rogueweapon/halberd/bardiche
+					r_hand = /obj/item/rogueweapon/halberd/bardiche
 
 			switch(pick(1,2))
 				if (1) //worse leg protection, better neck protection, and a face mask
@@ -136,7 +137,6 @@
 				if (2) //better leg protection, worse neck protection
 					pants = /obj/item/clothing/under/roguetown/chainlegs/iron
 					neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
-					mask = /obj/item/clothing/mask/rogue/shepherd/rag
 
 		if("Poacher") //good perception, speed, bow skill, and knife skill. Also some cooking and skincrafting since they are poachers. The speedy ranged class.
 			H.set_blindness(0)
