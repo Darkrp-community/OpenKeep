@@ -53,13 +53,13 @@
 	switch(weapontype)
 		if("Sword")
 			beltr = /obj/item/rogueweapon/sword/iron
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		if("Club")
 			beltr = /obj/item/rogueweapon/mace/woodclub
-			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		if("Axe")
 			beltr = /obj/item/rogueweapon/woodcut
-			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	if(H.dna?.species)
