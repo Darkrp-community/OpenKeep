@@ -41,7 +41,7 @@
 
 /datum/anvil_recipe/armor/iplate
 	name = "Plate armor (3)"
-	recipe_name = "a set of iron armor"
+	recipe_name = "a heavy plate armor"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/ingot/iron)
 	created_item = /obj/item/clothing/suit/roguetown/armor/plate/scale/iron 
