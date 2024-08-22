@@ -12,7 +12,6 @@
 
 /datum/outfit/job/roguetown/mercenary/underdweller/pre_equip(mob/living/carbon/human/H)
     ..()
-    head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
     pants = /obj/item/clothing/under/roguetown/trou/leather
     armor = /obj/item/clothing/suit/roguetown/armor/plate/half
     shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
@@ -21,14 +20,12 @@
     neck = /obj/item/clothing/neck/roguetown/chaincoif
     beltr = /obj/item/rogueweapon/huntingknife
     backl = /obj/item/storage/backpack/rogue/backpack
-    backr = /obj/item/rogueweapon/shield/wood
     backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)
     if(H.mind)
         H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(2,2,3), TRUE)
         H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-        H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
         H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
         H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
         H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
