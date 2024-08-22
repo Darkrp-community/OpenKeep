@@ -106,3 +106,93 @@
 	user.emote("rage", forced = TRUE)
 	playsound(get_turf(user), 'sound/magic/barbroar.ogg', 50, TRUE)
 	user.apply_status_effect(/datum/status_effect/buff/barbrage)
+
+// XYLIX
+
+/obj/effect/proc_holder/spell/invoked/mockery
+	name = "Vicious Mockery"
+	releasedrain = 50
+	associated_skill = /datum/skill/misc/music
+	charge_max = 10 MINUTES
+	range = 7
+	
+/obj/effect/proc_holder/spell/invoked/mockery/cast(list/targets, mob/living/user)
+	playsound(get_turf(user), 'sound/magic/mockery.ogg', 40, FALSE)
+	for(var/mob/living/listener in hearers(7))
+		if(listener.can_hear()) // Vicious mockery requires people to be able to hear you.
+			if(listener?.mind?.has_antag_datum(/datum/antagonist))
+				if(!listener?.mind?.isactuallygood())
+					listener.apply_status_effect(/datum/status_effect/debuff/viciousmockery)
+				else
+					return // No debuff for good guys
+			else 
+				return // No debuff for good guys
+
+/obj/effect/proc_holder/spell/invoked/mockery/invocation(mob/user = usr)
+	if(ishuman(user))
+		var/mob/living/carbon/human/B = user
+		switch(B.dna.species.id)
+			if("human") // Half elves too
+				switch(pick(1,2,3,4,5))
+					if(1)
+						user.say("Your mother was a Rous, and your father smelled of jacksberries!", forced = "spell")
+					if(2)
+						user.say("What are you going to do for a face when the monkey wants his arse back?!", forced = "spell")
+					if(3)
+						user.say("Wandought thine blades stand, much like thine loving parts!", forced = "spell")
+					if(4)
+						user.say("That's a face not even Graggar could love!", forced = "spell")
+					if(5)
+						user.say("I shall ne'er desist from thee, nor shall I ever disappoint thee much~", forced = "spell")
+			
+			if("elf")
+				switch(pick(1,2,3,4,5))
+					if(1)
+						user.say("As graceful as a drunken mole, I see!", forced = "spell")
+					if(2)
+						user.say("I've fought zads more fiercer than you!", forced = "spell")
+					if(3)
+						user.say("You're making this so easy, I'm losing confidence in myself... barely!", forced = "spell")
+					if(4)
+						user.say("OHH-HOH-HOH-HOH-HOH!", forced = "spell")
+					if(5)
+						user.say("Uncultured churls, barely worth my words!", forced = "spell")
+
+			if("dwarf")
+				switch(pick(1,2,3,4,5))
+					if(1)
+						user.say("If yer mind was as sharp as yer ears, we wouldn't be in this mess!", forced = "spell")
+					if(2)
+						user.say("Ye kick softer than a newborn saiga!", forced = "spell")
+					if(3)
+						user.say("Make it quick, dullards! T'is happy hour in the tavern!", forced = "spell")
+					if(4)
+						user.say("Ohh, is the milk drinker gonna cry?", forced = "spell")
+					if(5)
+						user.say("I will drink from yer skull!", forced = "spell")
+
+			if("tiefling")
+				switch(pick(1,2,3,4,5))
+					if(1)
+						user.say("Ay caramba, que mal baila la bamba!", forced = "spell")
+					if(2)
+						user.say("Aserejé, ja, deje, dejebetudejebe de seibi noua!", forced = "spell")
+					if(3)
+						user.say("Good job Slowpoke Rodriguez, you almost had me! Almost!", forced = "spell")
+					if(4)
+						user.say("Come on, entertain me a little longer!", forced = "spell")
+					if(5)
+						user.say("Dance with the devil and win a prize!", forced = "spell")
+
+			if("aasimar")
+				switch(pick(1,2,3,4,5))
+					if(1)
+						user.say("Your imperfect body could never match the fires I was forged on.", forced = "spell")
+					if(2)
+						user.say("You're in for a world of hurt, impudent one.", forced = "spell")
+					if(3)
+						user.say("Your name shall be stricken down from the annals of history.", forced = "spell")
+					if(4)
+						user.say("I wouldn't sing your praises even if you forged me to!", forced = "spell")
+					if(5)
+						user.say("What manner of blabbering creecher art thou?", forced = "spell")
