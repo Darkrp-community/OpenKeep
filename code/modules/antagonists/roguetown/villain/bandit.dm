@@ -31,6 +31,7 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_VILLAIN, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC) // lets them recognize their buddies
 	H.patron = GLOB.patronlist[/datum/patron/inhumen/matthios]
 
 /datum/antagonist/bandit/greet()
