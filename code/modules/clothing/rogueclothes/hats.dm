@@ -184,9 +184,6 @@
 	dynamic_hair_suffix = ""
 	//dropshrink = 0.75
 
-/obj/item/clothing/head/roguetown/menacing/bandit
-	icon_state = "bandithood"
-
 /obj/item/clothing/head/roguetown/jester
 	name = "jester's hat"
 	desc = "Just remember that the last laugh is on you."
@@ -684,8 +681,17 @@
 	max_integrity = 120
 	color = "#745a4d"
 
+/obj/item/clothing/head/roguetown/helmet/leather/bandithood
+	name = "padded hood"
+	desc = "Some outlaws wear these hoods over a padded coif, rumored to protect you from vengeful ghosts by concealing your face."
+	icon_state = "bandithood"
+	max_integrity = 120 //crude bandit craftsmenship
+	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
+	sellprice = 5
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	dynamic_hair_suffix = ""
+
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "volf helmet"
 	desc = "Bandit initiation rites often involve the slaying of a volf. This such helmet is produced after the hunt, as proof of having passed the test."
 	will_cover = HEAD|HAIR|EARS

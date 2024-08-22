@@ -102,13 +102,25 @@
 			H.change_stat("endurance", 1)
 			H.change_stat("constitution", 1)
 
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/rust
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/rust
-			beltl = /obj/item/clothing/head/roguetown/menacing/bandit
 
 			if(H.age == AGE_OLD) //old deserters are experts with polearms
 				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+
+			switch(pick(1,3))
+				if (1)
+					head = /obj/item/clothing/head/roguetown/helmet/heavy/rust
+					beltl = /obj/item/clothing/head/roguetown/helmet/leather/bandithood
+				if (2)
+					head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
+				if (3)
+					head = /obj/item/clothing/head/roguetown/helmet/skullcap
+
+			switch(pick(1,2))
+				if (1)
+					armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/rust
+				if (2)
+					armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 
 			switch(pick(1,3))
 				if (1 to 2)
@@ -131,6 +143,7 @@
 			to_chat(H, span_warning("You illegally hunt within the lands of others, and are quite good at it."))
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
@@ -183,8 +196,13 @@
 			neck = /obj/item/clothing/neck/roguetown/coif
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			pants = /obj/item/clothing/under/roguetown/trou/leather
-			head = /obj/item/clothing/head/roguetown/menacing/bandit
 			beltl = /obj/item/clothing/mask/rogue/shepherd/rag
+
+			switch(pick(1,2))
+				if (1)
+					head = /obj/item/clothing/head/roguetown/helmet/leather/bandithood
+				if (2)
+					head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 
 			switch(pick(1,2))
 				if (1)
@@ -220,8 +238,11 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/bandit_volfhelm)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/bandit_hood)
+
 	// The commmon gear shared between all bandits
-	belt = /obj/item/storage/belt/rogue/leather
+	belt = /obj/item/storage/belt/rogue/leather/bandit
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel
 
@@ -275,4 +296,20 @@
 		to_chat(owner.current, "<span class='redtext'>I've failed to satisfy my greed.</span>")
 		if(owner.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/fail.ogg', 100, FALSE, pressure_affected = FALSE)
+
+/*	.................   Unique Bandit recipes   ................... */
+/datum/crafting_recipe/bandit_volfhelm
+	name = "(Bandit) Volfhelm"
+	time = 4 SECONDS
+	reqs = list(/obj/item/natural/fur = 1)
+	result = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
+	category = CAT_NONE
+
+/datum/crafting_recipe/bandit_hood
+	name = "(Bandit) Padded Hood"
+	time = 4 SECONDS
+	reqs = list(/obj/item/natural/hide = 1)
+	result = /obj/item/clothing/head/roguetown/helmet/leather/bandithood
+	category = CAT_NONE
+	reqs = list(/obj/item/natural/hide = 2)
 
