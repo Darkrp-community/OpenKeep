@@ -1025,7 +1025,7 @@
 							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2) 
 								I = new /obj/item/rogueweapon/spear/billhook(user.loc)
 							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2) 
-								I = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
+								I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
 							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2) 
 								I = new /obj/item/rogueweapon/sword/long(user.loc)
 							else
