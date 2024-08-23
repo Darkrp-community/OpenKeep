@@ -5,7 +5,7 @@
 	var/uni_identity
 	var/blood_type
 	var/datum/species/species = new /datum/species/human //The type of mutant race the player is if applicable (i.e. potato-man)
-	var/list/features = list("FFF") //first value is mutant color
+	var/list/features = MANDATORY_FEATURE_LIST
 	var/real_name //Stores the real name of the person who originally got this dna datum. Used primarely for changelings,
 	var/list/mutations = list()   //All mutations are from now on here
 	var/list/temporary_mutations = list() //Temporary changes to the UE
@@ -15,6 +15,9 @@
 	var/mutation_index[DNA_MUTATION_BLOCKS] //List of which mutations this carbon has and its assigned block
 	var/stability = 100
 	var/scrambled = FALSE //Did we take something like mutagen? In that case we cant get our genes scanned to instantly cheese all the powers.
+	var/list/organ_dna = list()
+	///Body markings of the DNA's owner. This is for storing their original state for re-creating the character. They'll get changed on species mutation
+	var/list/list/body_markings = list()
 
 /datum/dna/New(mob/living/new_holder)
 	if(istype(new_holder))
@@ -43,6 +46,7 @@
 	destination.dna.uni_identity = uni_identity
 	destination.dna.blood_type = blood_type
 	destination.set_species(species.type, icon_update=0)
+	destination.dna.body_markings = deepCopyList(body_markings)
 	destination.dna.features = features.Copy()
 	destination.dna.real_name = real_name
 	destination.dna.temporary_mutations = temporary_mutations.Copy()
@@ -54,6 +58,7 @@
 	new_dna.mutation_index = mutation_index
 	new_dna.uni_identity = uni_identity
 	new_dna.blood_type = blood_type
+	new_dna.body_markings = deepCopyList(body_markings)
 	new_dna.features = features.Copy()
 	new_dna.species = new species.type
 	new_dna.real_name = real_name
@@ -230,17 +235,17 @@
 		if(alert)
 			switch(stability)
 				if(70 to 90)
-					message = "<span class='warning'>I shiver.</span>"
+					message = span_warning("I shiver.")
 				if(60 to 69)
-					message = "<span class='warning'>I feel cold.</span>"
+					message = span_warning("I feel cold.")
 				if(40 to 59)
-					message = "<span class='warning'>I feel sick.</span>"
+					message = span_warning("I feel sick.")
 				if(20 to 39)
-					message = "<span class='warning'>It feels like my skin is moving.</span>"
+					message = span_warning("It feels like my skin is moving.")
 				if(1 to 19)
-					message = "<span class='warning'>I can feel my cells burning.</span>"
+					message = span_warning("I can feel my cells burning.")
 				if(-INFINITY to 0)
-					message = "<span class='boldwarning'>I can feel my DNA exploding, we need to do something fast!</span>"
+					message = span_boldwarning("I can feel my DNA exploding, we need to do something fast!")
 		if(stability <= 0)
 			holder.apply_status_effect(STATUS_EFFECT_DNA_MELT)
 		if(message)
@@ -291,7 +296,7 @@
 			stored_dna.species = mrace //not calling any species update procs since we're a brain, not a monkey/human
 
 
-/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
+/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, datum/preferences/pref_load = null)
 	if(mrace && has_dna())
 		var/datum/species/new_race
 		if(ispath(mrace))
@@ -304,16 +309,21 @@
 		dna.species.on_species_loss(src, new_race, pref_load)
 		var/datum/species/old_species = dna.species
 		dna.species = new_race
+		//BODYPARTS AND FEATURES
+		if(pref_load)
+			dna.features = pref_load.features.Copy()
+			dna.body_markings = deepCopyList(pref_load.body_markings)
 		dna.species.on_species_gain(src, old_species, pref_load)
 
-/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
+/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, datum/preferences/pref_load = null)
+	if(pref_load)
+		skin_tone = pref_load.skin_tone
 	..()
 	if(icon_update)
 		update_body()
 		update_hair()
-		update_body_parts()
+		update_body_parts(TRUE)
 		update_mutations_overlay()// no lizard with human hulk overlay please.
-
 
 /mob/proc/has_dna()
 	return
@@ -580,21 +590,21 @@
 			if(1)
 				gain_trauma(/datum/brain_trauma/severe/paralysis/paraplegic)
 				new/obj/vehicle/ridden/wheelchair(get_turf(src)) //don't buckle, because I can't imagine to plethora of things to go through that could otherwise break
-				to_chat(src, "<span class='warning'>My flesh turned into a wheelchair and I can't feel my legs.</span>")
+				to_chat(src, span_warning("My flesh turned into a wheelchair and I can't feel my legs."))
 			if(2)
 				corgize()
 			if(3)
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
+				to_chat(src, span_notice("Oh, I actually feel quite alright!"))
 			if(4)
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>") //you thought
+				to_chat(src, span_notice("Oh, I actually feel quite alright!")) //you thought
 				physiology.damage_resistance = -20000
 			if(5)
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
+				to_chat(src, span_notice("Oh, I actually feel quite alright!"))
 				reagents.add_reagent(/datum/reagent/aslimetoxin, 10)
 			if(6)
 				apply_status_effect(STATUS_EFFECT_GO_AWAY)
 			if(7)
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
+				to_chat(src, span_notice("Oh, I actually feel quite alright!"))
 				ForceContractDisease(new/datum/disease/decloning()) //slow acting, non-viral clone damage based GBS
 			if(8)
 				var/list/elligible_organs = list()
@@ -604,13 +614,13 @@
 				if(elligible_organs.len)
 					var/obj/item/organ/O = pick(elligible_organs)
 					O.Remove(src)
-					visible_message("<span class='danger'>[src] vomits up their [O.name]!</span>", "<span class='danger'>I vomit up my [O.name]") //no "vomit up my the heart"
+					visible_message(span_danger("[src] vomits up their [O.name]!"), "<span class='danger'>I vomit up my [O.name]") //no "vomit up my the heart"
 					O.forceMove(drop_location())
 					if(prob(20))
 						O.animate_atom_living()
 			if(9 to 10)
 				ForceContractDisease(new/datum/disease/gastrolosis())
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
+				to_chat(src, span_notice("Oh, I actually feel quite alright!"))
 	else
 		switch(rand(0,5))
 			if(0)
@@ -631,7 +641,7 @@
 				else
 					set_species(/datum/species/dullahan)
 			if(4)
-				visible_message("<span class='warning'>[src]'s skin melts off!</span>", "<span class='boldwarning'>My skin melts off!</span>")
+				visible_message(span_warning("[src]'s skin melts off!"), span_boldwarning("My skin melts off!"))
 				spawn_gibs()
 				set_species(/datum/species/skeleton)
 				if(prob(90))
@@ -639,7 +649,7 @@
 					if(mind)
 						mind.hasSoul = FALSE
 			if(5)
-				to_chat(src, "<span class='phobia'>LOOK UP!</span>")
+				to_chat(src, span_phobia("LOOK UP!"))
 				addtimer(CALLBACK(src, PROC_REF(something_horrible_mindmelt)), 30)
 
 
@@ -650,5 +660,5 @@
 			return
 		eyes.Remove(src)
 		qdel(eyes)
-		visible_message("<span class='notice'>[src] looks up and their eyes melt away!</span>", "<span class>='danger'>I understand now.</span>")
+		visible_message(span_notice("[src] looks up and their eyes melt away!"), "<span class>='danger'>I understand now.</span>")
 		addtimer(CALLBACK(src, PROC_REF(adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 20)
