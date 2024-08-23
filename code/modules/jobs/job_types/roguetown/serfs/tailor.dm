@@ -28,7 +28,6 @@
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, pick(3,4), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/weaving, pick(3,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, pick(3,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
