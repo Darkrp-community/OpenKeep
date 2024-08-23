@@ -116,7 +116,7 @@
 
 	var/arcshot = FALSE
 
-	var/accuracy = 75 //How likely the project will hit it's intended target area. Decreases over distance moved, increased from perception.
+	var/accuracy = 80 //How likely the project will hit it's intended target area. Decreases over distance moved, increased from perception.
 
 /obj/projectile/proc/handle_drop()
 	return
