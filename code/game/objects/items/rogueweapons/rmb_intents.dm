@@ -33,8 +33,6 @@
 				perc += (ourskill - theirskill)*10
 	if(user.STAINT < L.STAINT)
 		perc -= 15
-	if(L.d_intent == INTENT_DODGE)
-		perc = 0
 	if(!L.cmode)
 		perc = 0
 	if(L.has_status_effect(/datum/status_effect/debuff/feinted))
