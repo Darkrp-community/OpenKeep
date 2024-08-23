@@ -1000,11 +1000,14 @@
 	if(user.mind)
 		var/datum/antagonist/bandit/B = user.mind.has_antag_datum(/datum/antagonist/bandit)
 		if(B)
-			if(istype(W, /obj/item/roguecoin) || istype(W, /obj/item/roguegem))
+			if(istype(W, /obj/item/roguecoin) || istype(W, /obj/item/roguegem) || istype(W, /obj/item/reagent_containers/glass/cup/silver) || istype(W, /obj/item/reagent_containers/glass/cup/golden) || istype(W, /obj/item/clothing/ring) || istype(W, /obj/item/clothing/head/roguetown/crown/circlet) || istype(W, /obj/item/roguestatue))
 				if(B.tri_amt >= 10)
 					to_chat(user, "<span class='warning'>The mouth doesn't open.</span>")
 					return
-				B.contrib += W.get_real_price()
+				if(!istype(W, /obj/item/roguecoin))
+					B.contrib += (W.get_real_price() / 2) //sell jewerly and other fineries, though at a lesser price compared to fencing them first
+				else
+					B.contrib += W.get_real_price()
 				if(B.contrib >= 100)
 					B.tri_amt++
 					user.mind.adjust_triumphs(1)
@@ -1012,11 +1015,23 @@
 					var/obj/item/I
 					switch(B.tri_amt)
 						if(2)
-							I = new /obj/item/clothing/suit/roguetown/armor/plate/scale(user.loc)
+							if(HAS_TRAIT(user, TRAIT_MEDIUMARMOR))
+								I = new /obj/item/clothing/suit/roguetown/armor/plate/scale(user.loc)
+							else
+								I = new /obj/item/clothing/suit/roguetown/armor/chainmail/iron(user.loc)
 						if(4)
 							I = new /obj/item/clothing/head/roguetown/helmet/horned(user.loc)
 						if(6)
-							I = new /obj/item/rogueweapon/spear/billhook(user.loc)
+							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2) 
+								I = new /obj/item/rogueweapon/spear/billhook(user.loc)
+							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2) 
+								I = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
+							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2) 
+								I = new /obj/item/rogueweapon/sword/long(user.loc)
+							else
+								I = new /obj/item/rogueweapon/mace/steel(user.loc)
+						if(8)
+							I = new /obj/item/clothing/under/roguetown/chainlegs(user.loc)
 					if(I)
 						I.sellprice = 0
 					playsound(loc,'sound/items/carvgood.ogg', 50, TRUE)
