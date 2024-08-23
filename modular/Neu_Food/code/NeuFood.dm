@@ -142,6 +142,7 @@
 	sellprice = 1
 	drinksounds = list('sound/items/drink_cup (1).ogg','sound/items/drink_cup (2).ogg','sound/items/drink_cup (3).ogg','sound/items/drink_cup (4).ogg','sound/items/drink_cup (5).ogg')
 	fillsounds = list('sound/items/fillcup.ogg')
+	var/in_use // so you can't spam eating with spoon
 
 /obj/item/reagent_containers/glass/bowl/update_icon()
 	cut_overlays()
@@ -183,26 +184,32 @@
 	update_icon()
 
 /obj/item/reagent_containers/glass/bowl/attackby(obj/item/I, mob/user, params) // lets you eat with a spoon from a bowl
-	if(reagents)
-		playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
-		visible_message("<span class='info'>[user] eats from [src].</span>")
-		if(do_after(user,1 SECONDS, target = src))
-			addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), user, min(amount_per_transfer_from_this,5), TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
-	return TRUE
+	if(istype(I, /obj/item/kitchen/spoon))
+		if(reagents.total_volume > 0)
+			beingeaten()
+			playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
+			visible_message("<span class='info'>[user] eats from [src].</span>")
+			if(do_after(user,1 SECONDS, target = src))
+				addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), user, min(amount_per_transfer_from_this,5), TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
+		return TRUE
 				
+/obj/item/reagent_containers/glass/bowl/proc/beingeaten()
+	in_use = TRUE
+	sleep(10)
+	in_use = FALSE
 
 /obj/item/reagent_containers/glass/cup
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-
+/* added to main
 /obj/item/reagent_containers/glass/bucket/pot
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-
+*/
 /obj/item/cooking/pan
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
@@ -254,8 +261,8 @@
 	description = "Fitting for a peasant."
 	reagent_state = LIQUID
 	color = "#c38553"
-	nutriment_factor = 0.2
-	metabolization_rate = 0.1
+	nutriment_factor = 15
+	metabolization_rate = 0.5 // half as fast as normal, last twice as long
 	taste_description = "oatmeal"
 	taste_mult = 3
 	hydration = 2
@@ -264,8 +271,7 @@
 	name = "vegetable soup"
 	description = ""
 	reagent_state = LIQUID
-	nutriment_factor = 0.3
-	metabolization_rate = 0.1
+	nutriment_factor = 10
 	taste_mult = 4
 	hydration = 8
 
@@ -285,8 +291,7 @@
 	name = "thick stew"
 	description = "All manners of edible bits went into this."
 	reagent_state = LIQUID
-	nutriment_factor = 0.4
-	metabolization_rate = 0.1
+	nutriment_factor = 20
 	taste_mult = 4
 
 /datum/reagent/consumable/soup/stew/chicken

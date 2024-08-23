@@ -1244,7 +1244,7 @@
 "iyb" = (/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/magiciantower)
 "iyr" = (/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors)
 "iyB" = (/obj/structure/stairs/stone,/obj/structure/flora/roguegrass,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/exposed/under/sewer)
-"izd" = (/obj/structure/bed/rogue/shit,/obj/item/clothing/head/roguetown/puritan,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/shelter/rtfield)
+"izd" = (/obj/structure/bed/rogue/shit,/obj/item/clothing/head/roguetown/helmet/leather/inquisitor,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/shelter/rtfield)
 "izo" = (/obj/structure/chair/wood/rogue/fancy{dir = 1},/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/under/town/basement)
 "iAL" = (/obj/item/seeds/wheat,/obj/item/seeds/wheat/oat,/obj/item/seeds/wheat,/obj/structure/closet/crate/roguecloset/inn/chest,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors)
 "iAT" = (/obj/structure/flora/roguetree/burnt,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/rtfield{ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)})
