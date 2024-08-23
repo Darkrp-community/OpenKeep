@@ -105,6 +105,9 @@
 		spread = 0
 	for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
 		var/obj/projectile/BB = CB.BB
+		if(user.client)
+			if(user.client.chargedprog >= 100)
+				BB.accuracy += 20 //better accuracy for fully aiming
 		if(user.STAPER > 8)
 			BB.accuracy += (user.STAPER - 8) * 5 //each point of perception above 8 increases accuracy by 5.
 		if(user.STAPER > 10)
