@@ -21,8 +21,11 @@
 			H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
 		if (2)
 			beltl = /obj/item/rogueweapon/hammer
+			beltr = /obj/item/rogueweapon/tongs
 			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/smelting, 1, TRUE)
 	switch(pick(1,2))
 		if (1)
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather	
@@ -34,16 +37,15 @@
 	if(visualsOnly)
 		return
 
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	// ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC) Iron chainmail is light armor now, no.
 
 	H.change_stat("strength", 1)
 	H.change_stat("endurance", 1)
 
-	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)

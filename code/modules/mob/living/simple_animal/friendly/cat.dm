@@ -358,7 +358,7 @@
 		icon_state = "[icon_living]"
 		set_resting(FALSE)
 		update_mobility()
-		playsound(get_turf(src), 'sound/neu/cathiss.ogg', 80, TRUE, -1)
+		playsound(get_turf(src), 'modular/Creechers/sound/cathiss.ogg', 80, TRUE, -1)
 		dir = pick(GLOB.alldirs)
 		step(src, dir)
 		personal_space()
@@ -368,7 +368,7 @@
 		icon_state = "[icon_living]"
 		set_resting(FALSE)
 		update_mobility()
-		playsound(get_turf(src), 'sound/neu/cathiss.ogg', 80, TRUE, -1)
+		playsound(get_turf(src), 'modular/Creechers/sound/cathiss.ogg', 80, TRUE, -1)
 		dir = pick(GLOB.alldirs)
 		step(src, dir)
 		personal_space()
