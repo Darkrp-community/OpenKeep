@@ -181,7 +181,7 @@
 	name = "Nomadic"
 	icon_state = "nomadic"
 	gender = MALE
-	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
+	specuse = list("human", "dwarf", "tiefling")
 	
 /datum/sprite_accessory/hair/pirate
 	name = "Pirate"
@@ -322,7 +322,7 @@
 	name = "Fancy"
 	icon_state = "felfhair_fancy"
 	gender = NEUTER
-	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
+	specuse = list("elf")
 	
 /datum/sprite_accessory/hair/fhomely
 	name = "Homely"
