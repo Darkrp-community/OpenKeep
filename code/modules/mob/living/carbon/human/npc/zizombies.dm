@@ -584,7 +584,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
-			head = /obj/item/clothing/head/roguetown/helmet/sallet/visored
+			head = /obj/item/clothing/head/roguetown/helmet/sallet
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
