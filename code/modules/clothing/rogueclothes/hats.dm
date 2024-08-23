@@ -366,6 +366,7 @@
 	desc = "Habits worn by nuns of the pantheon's faith."
 	icon_state = "nun"
 	sellprice = 5
+	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
 
 /obj/item/clothing/head/roguetown/hennin
 	name = "hennin"
