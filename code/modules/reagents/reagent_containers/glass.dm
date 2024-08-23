@@ -314,7 +314,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	amount_per_transfer_from_this = 9
 	possible_transfer_amounts = list(9)
-	volume = 70
+	volume = 99
 	flags_inv = HIDEHAIR
 	reagent_flags = OPENCONTAINER
 	obj_flags = CAN_BE_HIT
@@ -332,44 +332,46 @@
 		SLOT_GENERC_DEXTROUS_STORAGE
 	)
 
+/obj/item/reagent_containers/glass/bucket/equipped(mob/user, slot)
+	..()
+	if (slot == SLOT_HEAD)
+		if(reagents.total_volume)
+			to_chat(user, "<span class='danger'>[src]'s contents spill all over you!</span>")
+			reagents.reaction(user, TOUCH)
+			reagents.clear_reagents()
+		reagents.flags = NONE
+
+/obj/item/reagent_containers/glass/bucket/dropped(mob/user)
+	. = ..()
+	reagents.flags = initial(reagent_flags)
+
+/obj/item/reagent_containers/glass/bucket/equip_to_best_slot(mob/M)
+	if(reagents.total_volume) //If there is water in a bucket, don't quick equip it to the head
+		var/index = slot_equipment_priority.Find(SLOT_HEAD)
+		slot_equipment_priority.Remove(SLOT_HEAD)
+		. = ..()
+		slot_equipment_priority.Insert(index, SLOT_HEAD)
+		return
+	return ..()
+
 /obj/item/reagent_containers/glass/bucket/wooden
 	name = "bucket"
 	icon_state = "woodbucket"
 	item_state = "woodbucket"
 	icon = 'icons/roguetown/items/misc.dmi'
+
 	custom_materials = null
 	force = 5
 	throwforce = 10
-	amount_per_transfer_from_this = 9
-	volume = 99
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
 	resistance_flags = FLAMMABLE
-	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	dropshrink = 0.8
 	slot_flags = null
+	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 
-/obj/item/reagent_containers/glass/bucket/wooden/alter
+/obj/item/reagent_containers/glass/bucket/wooden/alter // just new look, trying it on for size
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
 
-/* using the version in Neu_Food instead
-/obj/item/reagent_containers/glass/bucket/wooden/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/natural/cloth))
-		var/obj/item/natural/cloth/T = I
-		if(T.wet && !T.return_blood_DNA())
-			return
-		var/removereg = /datum/reagent/water
-		if(!reagents.has_reagent(/datum/reagent/water, 5))
-			removereg = /datum/reagent/water/gross
-			if(!reagents.has_reagent(/datum/reagent/water/gross, 5))
-				to_chat(user, "<span class='warning'>No water to soak in.</span>")
-				return
-		wash_atom(T)
-		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
-		reagents.remove_reagent(removereg, 5)
-		user.visible_message("<span class='info'>[user] soaks [T] in [src].</span>")
-		return
-	..()
-*/
 /obj/item/reagent_containers/glass/bucket/wooden/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -398,27 +400,7 @@
 			add_overlay(filling)
 
 
-/obj/item/reagent_containers/glass/bucket/equipped(mob/user, slot)
-	..()
-	if (slot == SLOT_HEAD)
-		if(reagents.total_volume)
-			to_chat(user, "<span class='danger'>[src]'s contents spill all over you!</span>")
-			reagents.reaction(user, TOUCH)
-			reagents.clear_reagents()
-		reagents.flags = NONE
 
-/obj/item/reagent_containers/glass/bucket/dropped(mob/user)
-	. = ..()
-	reagents.flags = initial(reagent_flags)
-
-/obj/item/reagent_containers/glass/bucket/equip_to_best_slot(mob/M)
-	if(reagents.total_volume) //If there is water in a bucket, don't quick equip it to the head
-		var/index = slot_equipment_priority.Find(SLOT_HEAD)
-		slot_equipment_priority.Remove(SLOT_HEAD)
-		. = ..()
-		slot_equipment_priority.Insert(index, SLOT_HEAD)
-		return
-	return ..()
 
 /obj/item/reagent_containers/glass/waterbottle
 	name = "bottle of water"

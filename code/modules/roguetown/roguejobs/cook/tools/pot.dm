@@ -1,22 +1,20 @@
 /obj/item/reagent_containers/glass/bucket/pot
 	force = 10
 	name = "pot"
-	desc = ""
+	desc = "The peasants friend, when filled with boiling water it will turn the driest oats to filling oatmeal."
 
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-
 	icon_state = "pote"
+	item_state = "pot"
+
 	sharpness = IS_BLUNT
 	slot_flags = null
-	item_state = "pot"
-	drop_sound = 'sound/foley/dropsound/shovel_drop.ogg'
 	w_class = WEIGHT_CLASS_BULKY
-	reagent_flags = OPENCONTAINER
-	throwforce = 10
-	volume = 99
+	drop_sound = 'sound/foley/dropsound/shovel_drop.ogg'
+
 
 /obj/item/reagent_containers/glass/bucket/pot/update_icon()
 	cut_overlays()

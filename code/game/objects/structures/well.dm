@@ -4,7 +4,7 @@
 	name = "well"
 	desc = "A well of stone. Has a hook which a bucket can be attached to, to draw water from beneath."
 	icon = 'icons/roguetown/misc/structure.dmi'
-	icon_state = "well"
+	icon_state = "welly"
 	anchored = TRUE
 	density = TRUE
 	opacity = 0

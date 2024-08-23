@@ -34,6 +34,3 @@
 
 /datum/skill/misc/sewing
 	name = "Sewing"
-
-/datum/skill/misc/weaving
-	name = "Weaving"

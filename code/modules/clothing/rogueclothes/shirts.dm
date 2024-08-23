@@ -366,6 +366,7 @@
 	icon_state = "nun"
 	item_state = "nun"
 	allowed_sex = list(FEMALE)
+	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
 
 /obj/item/clothing/suit/roguetown/shirt/robe/wizard
 	name = "wizard's robe"
