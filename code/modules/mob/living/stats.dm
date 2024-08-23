@@ -35,7 +35,7 @@
 	STASPD = 10
 	STALUC = 10
 	for(var/S in MOBSTATS)
-		if(prob(50))
+		if(prob(33))
 			switch(pick(1,2))
 				if(1)
 					change_stat(S, 1)
