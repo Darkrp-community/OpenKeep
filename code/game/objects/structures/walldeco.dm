@@ -40,7 +40,8 @@
 				ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 				H.playsound_local(H, 'sound/misc/notice (2).ogg', 100, FALSE)
 			else
-				to_chat(H, "<b>Yup. My face is on there.</b>")
+				var/list/funny = list("Yup. My face is on there.", "Wait a minute... That's me!", "Look at that handsome devil...", "At least I am wanted by someone...", "My chin can't be that big... right?")
+				to_chat(H, "<b>[pick(funny)]</b>") 
 
 /obj/structure/fluff/walldeco/innsign
 	name = "sign"
