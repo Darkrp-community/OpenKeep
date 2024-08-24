@@ -24,7 +24,6 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/tailor, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/weaving, 1, TRUE)
 	H.change_stat("intelligence", 2)
 	H.change_stat("speed", 1)
 	shoes = /obj/item/clothing/shoes/roguetown/boots
@@ -55,7 +54,7 @@
 			H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
 		if("SILK")		// Travelling silk trader
 			backpack_contents = list(/obj/item/natural/bundle/silk = 2, /obj/item/natural/fur = 1, /obj/item/natural/bundle/fibers = 2, /obj/item/clothing/suit/roguetown/shirt/dress/silkdress, /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan)
-			H.mind.adjust_skillrank(/datum/skill/misc/weaving, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 		if("GEMS")		// Travelling high-end merchant
 			backpack_contents = list(/obj/item/roguegem/yellow, /obj/item/roguegem/yellow, /obj/item/roguegem/green, /obj/item/roguegem/green, /obj/item/roguegem/violet)
 			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 1, TRUE)
