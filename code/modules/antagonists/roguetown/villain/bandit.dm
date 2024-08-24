@@ -31,7 +31,6 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_VILLAIN, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC) // lets them recognize their buddies
 	H.patron = GLOB.patronlist[/datum/patron/inhumen/matthios]
 
 /datum/antagonist/bandit/greet()
@@ -126,9 +125,9 @@
 
 			switch(pick(1,3))
 				if (1 to 2)
-					r_hand = /obj/item/rogueweapon/spear
+					backr = /obj/item/rogueweapon/spear
 				if (3)
-					r_hand = /obj/item/rogueweapon/halberd/bardiche
+					backr = /obj/item/rogueweapon/halberd/bardiche
 
 			switch(pick(1,2))
 				if (1) //worse leg protection, better neck protection, and a face mask
@@ -246,6 +245,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/bandit
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel
+	backpack_contents = list(/obj/item/flashlight/flare/torch/metal)
 
 	switch(pick(1,3))
 		if (1 to 2)
@@ -258,7 +258,7 @@
 	H.change_stat("intelligence", -2)
 	var/obj/item/bodypart/B = H.get_bodypart("head")
 	if(B)
-		B.sellprice = rand(66, 123)
+		B.sellprice = rand(44, 88)
 
 	H.ambushable = FALSE
 
@@ -302,7 +302,7 @@
 /datum/crafting_recipe/bandit_volfhelm
 	name = "(Bandit) Volfhelm"
 	time = 4 SECONDS
-	reqs = list(/obj/item/natural/fur = 1)
+	reqs = list(/obj/item/natural/fur/volf = 2)
 	result = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	category = CAT_NONE
 
@@ -312,5 +312,4 @@
 	reqs = list(/obj/item/natural/hide = 1)
 	result = /obj/item/clothing/head/roguetown/helmet/leather/bandithood
 	category = CAT_NONE
-	reqs = list(/obj/item/natural/hide = 2)
 

@@ -98,6 +98,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,3 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions(loc)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -121,6 +122,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,3 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions/plated(loc)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -146,6 +148,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,3 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions(loc)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -322,12 +325,13 @@
 				return TRUE
 			mill.reagents.remove_reagent(/datum/reagent/consumable/blackpepper, 1)
 			new /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/spiced(loc)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
 			qdel(src)
 
 	else
 		to_chat(user, "<span class='warning'>You need to put [src] on a table to knead in the spice.</span>")
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/spiced
-	desc = "A plump bird, roasted perfection, spiced to taste divine."
+	desc = "A plump bird, roasted to perfection, spiced to taste divine."
 	eat_effect = /datum/status_effect/buff/foodbuff
 	name = "spiced bird-roast"
 	color = "#ffc0c0"
@@ -342,7 +346,8 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
-
+/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/plated/spiced
+	desc = "A plump bird, roasted to perfection, spiced to taste divine."
 
 /*	.................   Cooked rat   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/friedrat/plated

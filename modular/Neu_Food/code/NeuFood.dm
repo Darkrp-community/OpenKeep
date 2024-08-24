@@ -361,6 +361,7 @@
 		playsound(get_turf(user), 'modular/Neu_Food/sound/kneading_alt.ogg', 90, TRUE, -1)
 		if(do_after(user,3 SECONDS, target = src))
 			new /obj/item/reagent_containers/food/snacks/rogue/dough_base(loc)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
 			qdel(src)
 	else ..()
 
@@ -388,6 +389,15 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/plated(loc)
+				qdel(I)
+				qdel(src)
+		else
+			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/spiced))
+		if(isturf(loc)&& (found_table))
+			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
+			if(do_after(user,2 SECONDS, target = src))
+				new /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/plated/spiced(loc)
 				qdel(I)
 				qdel(src)
 		else
@@ -561,7 +571,11 @@
 * Copiette
 * Salumoi
 * Uncut pie
-* Raw potato, onion, cabbage
+* Raw potato, onion
+
+/*	.................   Extreme shelflife   ................... */
+
+* Raw cabbage
 
 /*	.................   Long shelflife   ................... */
 

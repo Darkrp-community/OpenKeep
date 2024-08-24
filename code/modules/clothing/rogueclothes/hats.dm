@@ -681,15 +681,16 @@
 	max_integrity = 120
 	color = "#745a4d"
 
-/obj/item/clothing/head/roguetown/helmet/leather/bandithood
-	name = "padded hood"
-	desc = "Some outlaws wear these hoods over a padded coif, rumored to protect you from vengeful ghosts by concealing your face."
+/obj/item/clothing/head/roguetown/helmet/leather/bandithood // a leather coif locked to headslot since you cannot pull it back. Crit prevent between armor items a little weird, this is leather coif, compare to helmet
+	name = "ominous hood"
+	desc = "Some outlaws wear these hoods over a leather coif, rumored to protect you from vengeful ghosts by concealing your face."
 	icon_state = "bandithood"
-	max_integrity = 120 //crude bandit craftsmenship
-	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
-	sellprice = 5
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
+	body_parts_covered = NECK|HAIR|EARS|HEAD
+	sellprice = 5
 
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	name = "volf helmet"
@@ -697,7 +698,6 @@
 	will_cover = HEAD|HAIR|EARS
 	icon_state = "volfhead"
 	item_state = "volfhead"
-	max_integrity = 150 //crude bandit craftsmenship
 	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
 	sellprice = 30
 
