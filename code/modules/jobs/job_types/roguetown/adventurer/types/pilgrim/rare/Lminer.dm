@@ -27,7 +27,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
