@@ -71,7 +71,7 @@
 			BB.accuracy += 15 //fully aiming bow makes your accuracy better.
 		BB.damage = BB.damage * (user.STAPER / 10) * damfactor
 		if(user.STAPER > 8)
-			BB.accuracy += (user.STAPER - 8) * 4 //each point of perception above 8 increases accuracy by 4.
+			BB.accuracy += (user.STAPER - 8) * 5 //each point of perception above 8 increases accuracy by 5.
 		BB.accuracy += (user.mind.get_skill_level(/datum/skill/combat/bows) * 5) //+5 accuracy per level in bows
 	. = ..()
 
