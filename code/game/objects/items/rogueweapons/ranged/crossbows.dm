@@ -107,11 +107,12 @@
 		var/obj/projectile/BB = CB.BB
 		if(user.client)
 			if(user.client.chargedprog >= 100)
-				BB.accuracy += 20 //better accuracy for fully aiming
+				BB.accuracy += 15 //better accuracy for fully aiming
 		if(user.STAPER > 8)
-			BB.accuracy += (user.STAPER - 8) * 5 //each point of perception above 8 increases accuracy by 5.
+			BB.accuracy += (user.STAPER - 8) * 4 //each point of perception above 8 increases accuracy by 4.
 		if(user.STAPER > 10)
 			BB.damage = BB.damage * (user.STAPER / 10) * damfactor
+		BB.accuracy += (user.mind.get_skill_level(/datum/skill/combat/crossbows) * 3) //+3 accuracy per level in crossbows
 	cocked = FALSE
 	..()
 
