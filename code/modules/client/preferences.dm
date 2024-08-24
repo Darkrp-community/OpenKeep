@@ -170,7 +170,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	if(!selected_patron)
 		selected_patron = GLOB.patronlist[default_patron]
 	key_bindings = deepCopyList(GLOB.hotkey_keybinding_list_by_key) // give them default keybinds and update their movement keys
-	C.update_movement_keys()
+	if(C)
+		C.update_movement_keys()
 	real_name = pref_species.random_name(gender,1)
 	if(!loaded_preferences_successfully)
 		save_preferences()

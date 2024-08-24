@@ -35,7 +35,7 @@
 	dummy_prefs.randomise[RANDOM_BODY] = TRUE
 	var/datum/job/J = SSjob.GetJob(zombiejob)
 	var/datum/outfit/O
-	if(J.outfit)
+	if(J?.outfit)
 		O = new J.outfit
 		//They have claws now.
 		O.r_hand = null
