@@ -238,7 +238,7 @@
 /datum/crafting_recipe/roguetown/pipe
 	name = "wood pipe"
 	result = /obj/item/clothing/mask/cigarette/pipe/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/grown/log/tree/stick = 2)
 
 /obj/item/clothing/mask/cigarette/pipe/crafted
 	sellprice = 6
