@@ -84,7 +84,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/datum/species/pref_species = new /datum/species/human/northern()	//Mutant race
 	var/datum/patron/selected_patron
 	var/static/datum/patron/default_patron = /datum/patron/divine/astrata
-	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth", "tail_human" = "None", "snout" = "Round", "horns" = "None", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "moth_wings" = "Plain", "moth_markings" = "None")
+	var/list/features = MANDATORY_FEATURE_LIST
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = FALSE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female")
 	var/phobia = "spiders"
@@ -138,6 +138,13 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/family = FAMILY_NONE
 
 	var/crt = FALSE
+
+	var/list/customizer_entries = list()
+	var/list/list/body_markings = list()
+	var/update_mutant_colors = TRUE
+
+	var/list/descriptor_entries = list()
+	var/list/custom_descriptors = list()
 
 
 /datum/preferences/New(client/C)
@@ -438,6 +445,12 @@ GLOBAL_LIST_EMPTY(chosen_names)
 //				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_EYE_COLOR]'>[(randomise[RANDOM_EYE_COLOR]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br>"
 				dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
+				dat += "<br>"
+//				dat += "<br><b>Features:</b> <a href='?_src_=prefs;preference=customizers;task=menu'>Change</a>"
+//				dat += "<br>"
+//				dat += "<br><b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
+//				dat += "<br>" // These can be commented back in whenever someone figures out how to add markings to the menu. I'm a bad coder, so someone who's really smart and good at coding should take up my sword.
+				dat += "<br><b>Descriptors:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
 				dat += "<br>"
 				if(HAIR in pref_species.species_traits)
 					dat += "<b>Hairstyle:</b> <a href='?_src_=prefs;preference=hairstyle;task=input'>[hairstyle]</a>"
@@ -1528,6 +1541,16 @@ Slots: [job.spawn_positions]</span>
 	else if(href_list["preference"] == "playerquality")
 		check_pq_menu(user.ckey)
 
+	else if(href_list["preference"] == "markings")
+		ShowMarkings(user)
+		return
+	else if(href_list["preference"] == "descriptors")
+		show_descriptors_ui(user)
+		return
+
+	else if(href_list["preference"] == "customizers")
+		ShowCustomizers(user)
+		return
 	else if(href_list["preference"] == "triumph_buy_menu")
 		SStriumphs.startup_triumphs_menu(user.client)
 
@@ -1609,6 +1632,20 @@ Slots: [job.spawn_positions]</span>
 		return TRUE
 
 	switch(href_list["task"])
+		if("change_customizer")
+			handle_customizer_topic(user, href_list)
+			ShowChoices(user)
+			ShowCustomizers(user)
+			return
+		if("change_marking")
+			handle_body_markings_topic(user, href_list)
+			ShowChoices(user)
+			ShowMarkings(user)
+			return
+		if("change_descriptor")
+			handle_descriptors_topic(user, href_list)
+			show_descriptors_ui(user)
+			return
 		if("random")
 			switch(href_list["preference"])
 				if("name")
@@ -2400,9 +2437,9 @@ Slots: [job.spawn_positions]</span>
 			random_character(gender)
 
 	character.age = age
-
 	character.dna.features = features.Copy()
-	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+	character.gender = gender
+	character.set_species(chosen_species, icon_update = FALSE, pref_load = src)
 
 	if((randomise[RANDOM_NAME] || randomise[RANDOM_NAME_ANTAG] && antagonist) && !character_setup)
 		slot_randomized = TRUE

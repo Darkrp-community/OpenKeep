@@ -305,18 +305,20 @@
 /obj/item/reagent_containers/glass/bucket
 	name = "bucket"
 	desc = ""
-	icon = 'icons/obj/janitor.dmi'
-	icon_state = "bucket"
-	item_state = "bucket"
-	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
+	icon = 'icons/roguetown/items/misc.dmi'
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
+	icon_state = "woodbucket"
+	item_state = "woodbucket"
 	custom_materials = list(/datum/material/iron=200)
 	w_class = WEIGHT_CLASS_BULKY
 	amount_per_transfer_from_this = 9
 	possible_transfer_amounts = list(9)
-	volume = 70
+	volume = 99
 	flags_inv = HIDEHAIR
-//	slot_flags = ITEM_SLOT_HEAD
+	reagent_flags = OPENCONTAINER
+	obj_flags = CAN_BE_HIT
+	gripped_intents = list(INTENT_POUR)
 	resistance_flags = NONE
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 50) //Weak melee protection, because you can wear it on your head
 	slot_equipment_priority = list( \
@@ -329,62 +331,6 @@
 		SLOT_L_STORE, SLOT_R_STORE,\
 		SLOT_GENERC_DEXTROUS_STORAGE
 	)
-
-/obj/item/reagent_containers/glass/bucket/wooden
-	name = "bucket"
-	icon_state = "woodbucket"
-	item_state = "woodbucket"
-	icon = 'icons/roguetown/items/misc.dmi'
-	custom_materials = null
-	force = 5
-	throwforce = 10
-	amount_per_transfer_from_this = 9
-	volume = 99
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
-	resistance_flags = FLAMMABLE
-	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
-	dropshrink = 0.8
-	slot_flags = null
-/* using the version in Neu_Food instead
-/obj/item/reagent_containers/glass/bucket/wooden/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/natural/cloth))
-		var/obj/item/natural/cloth/T = I
-		if(T.wet && !T.return_blood_DNA())
-			return
-		var/removereg = /datum/reagent/water
-		if(!reagents.has_reagent(/datum/reagent/water, 5))
-			removereg = /datum/reagent/water/gross
-			if(!reagents.has_reagent(/datum/reagent/water/gross, 5))
-				to_chat(user, "<span class='warning'>No water to soak in.</span>")
-				return
-		wash_atom(T)
-		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
-		reagents.remove_reagent(removereg, 5)
-		user.visible_message("<span class='info'>[user] soaks [T] in [src].</span>")
-		return
-	..()
-*/
-/obj/item/reagent_containers/glass/bucket/wooden/getonmobprop(tag)
-	. = ..()
-	if(tag)
-		switch(tag)
-			if("gen")
-				return list("shrink" = 0.5,"sx" = -5,"sy" = -8,"nx" = 7,"ny" = -9,"wx" = -1,"wy" = -8,"ex" = -1,"ey" = -8,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
-
-/obj/item/reagent_containers/glass/bucket/wooden/update_icon(dont_fill=FALSE)
-	if(dont_fill)
-		testing("dontfull")
-		return ..()
-
-	cut_overlays()
-
-	if(reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('icons/roguetown/items/misc.dmi', "woodbucketfilling")
-
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
-		filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
-		add_overlay(filling)
-
 
 /obj/item/reagent_containers/glass/bucket/equipped(mob/user, slot)
 	..()
@@ -407,6 +353,54 @@
 		slot_equipment_priority.Insert(index, SLOT_HEAD)
 		return
 	return ..()
+
+/obj/item/reagent_containers/glass/bucket/wooden
+	name = "bucket"
+	icon_state = "woodbucket"
+	item_state = "woodbucket"
+	icon = 'icons/roguetown/items/misc.dmi'
+
+	custom_materials = null
+	force = 5
+	throwforce = 10
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
+	resistance_flags = FLAMMABLE
+	dropshrink = 0.8
+	slot_flags = null
+	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
+
+/obj/item/reagent_containers/glass/bucket/wooden/alter // just new look, trying it on for size
+	icon = 'modular/Neu_Food/icons/cooking.dmi'
+
+/obj/item/reagent_containers/glass/bucket/wooden/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.5,"sx" = -5,"sy" = -8,"nx" = 7,"ny" = -9,"wx" = -1,"wy" = -8,"ex" = -1,"ey" = -8,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
+
+/obj/item/reagent_containers/glass/bucket/wooden/update_icon(dont_fill=FALSE)
+	if(dont_fill)
+		testing("dontfull")
+		return ..()
+
+	cut_overlays()
+
+	if(reagents.total_volume > 0) 
+		if(reagents.total_volume <= 50) 
+			var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bucket_half")
+			filling.color = mix_color_from_reagents(reagents.reagent_list)
+			filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
+			add_overlay(filling)
+
+		if(reagents.total_volume > 50) 
+			var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bucket_full")
+			filling.color = mix_color_from_reagents(reagents.reagent_list)
+			filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
+			add_overlay(filling)
+
+
+
 
 /obj/item/reagent_containers/glass/waterbottle
 	name = "bottle of water"
