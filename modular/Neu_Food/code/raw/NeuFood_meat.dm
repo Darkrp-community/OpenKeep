@@ -6,6 +6,10 @@
  * * * * * * * * * * * **/
 
 
+/*-------------------\
+| Raw meats and cuts |
+\-------------------*/
+
 /*	.............   Raw meat   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/meat
 	eat_effect = /datum/status_effect/debuff/uncookedfood
@@ -18,6 +22,7 @@
 	chopping_sound = TRUE
 	foodtype = MEAT
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/meat
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak
 	ingredient_size = 2
@@ -29,6 +34,62 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef
 	slice_bclass = BCLASS_CHOP
 
+/*	.............   Pork, spidermeat, birdmeat   ................ */
+/obj/item/reagent_containers/food/snacks/rogue/meat/fatty //pork
+	slices_num = 4
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/bacon
+	chopping_sound = TRUE
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/bacon
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/bacon
+	name = "raw bacon"
+	icon_state = "bacon"
+	slice_path = null
+	slices_num = 0
+	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried
+	filling_color = "#8a0000"
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/bacon
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/spider // Low-nutrient, kind of gross. Survival food.
+	name = "spidermeat"
+	icon_state = "spidermeat"
+	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/spider/fried
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/spider/fried
+	slice_path = null
+	slices_num = 0
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/poultry
+	name = "plucked bird"
+	icon_state = "halfchicken"
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked
+	fried_type = null
+	slices_num = 2
+	slice_sound = TRUE
+	ingredient_size = 4
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/poultry
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet
+	name = "bird meat"
+	icon_state = "chickencutlet"
+	ingredient_size = 2
+	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried
+	slices_num = 1
+	slice_bclass = BCLASS_CHOP
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/mince/poultry
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/chickenleg
+
+/*	........   Fish sounds   ................ */
+/obj/item/reagent_containers/food/snacks/fish
+	chopping_sound = TRUE
+
+
+
+/*-----------------------\
+| Mince & Sausage making |
+\-----------------------*/
 
 /*	.............   Minced meat & stuffing sausages   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince
@@ -39,6 +100,7 @@
 	filling_color = "#8a0000"
 	rotprocess = SHELFLIFE_TINY
 	cooked_type = null
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/mince
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
 	new /obj/effect/decal/cleanable/food/mess(get_turf(src))
 	playsound(get_turf(src), 'modular/Neu_Food/sound/meatslap.ogg', 100, TRUE, -1)
@@ -86,53 +148,6 @@
 	name = "mince"
 	icon_state = "meatmince"
 
-
-/*	.............   Pork, spidermeat, birdmeat   ................ */
-/obj/item/reagent_containers/food/snacks/rogue/meat/fatty //pork
-	slices_num = 4
-	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/bacon
-	chopping_sound = TRUE
-
-/obj/item/reagent_containers/food/snacks/rogue/meat/bacon
-	name = "raw bacon"
-	icon_state = "bacon"
-	slice_path = null
-	slices_num = 0
-	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried
-	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried
-	filling_color = "#8a0000"
-
-
-/obj/item/reagent_containers/food/snacks/rogue/meat/spider // Low-nutrient, kind of gross. Survival food.
-	name = "spidermeat"
-	icon_state = "spidermeat"
-	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/spider/fried
-	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/spider/fried
-	slice_path = null
-	slices_num = 0
-
-
-/obj/item/reagent_containers/food/snacks/rogue/meat/poultry
-	name = "plucked bird"
-	icon_state = "halfchicken"
-	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet
-	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked
-	fried_type = null
-	slices_num = 2
-	slice_sound = TRUE
-	ingredient_size = 4
-
-/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet
-	name = "bird meat"
-	icon_state = "chickencutlet"
-	ingredient_size = 2
-	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried
-	slices_num = 1
-	slice_bclass = BCLASS_CHOP
-	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/mince/poultry
-	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried
-
-
 /*	..................   Sausage & Wiener   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/meat/sausage
 	name = "raw sausage"
@@ -140,6 +155,7 @@
 	ingredient_size = 1
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/sausage
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/wiener
 	name = "raw wiener"
@@ -147,10 +163,6 @@
 	ingredient_size = 1
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked/wiener
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked/wiener
-
-
-/*	........   Fish sounds   ................ */
-/obj/item/reagent_containers/food/snacks/fish
-	chopping_sound = TRUE
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/sausage
 
 

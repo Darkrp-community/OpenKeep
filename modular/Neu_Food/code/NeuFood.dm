@@ -22,14 +22,18 @@
 
 /*	........   Rotting defines   ................ */
 #define SHELFLIFE_EXTREME 90 MINUTES
-#define SHELFLIFE_LONG 45 MINUTES
-#define SHELFLIFE_DECENT 25 MINUTES
-#define SHELFLIFE_SHORT 15 MINUTES
-#define SHELFLIFE_TINY 10 MINUTES
+#define SHELFLIFE_LONG 50 MINUTES
+#define SHELFLIFE_DECENT 30 MINUTES
+#define SHELFLIFE_SHORT 20 MINUTES
+#define SHELFLIFE_TINY 12 MINUTES
 */
 
 
-/*	........   Templates / Base items   ................ */
+
+/*---------------\
+| Food templates |
+\---------------*/
+
 /obj/item/reagent_containers // added vars used in neu cooking, might be used for other things too in the future. How it works is in each items attackby code.
 	var/short_cooktime = FALSE  // based on cooking skill
 	var/long_cooktime = FALSE
@@ -93,6 +97,74 @@
 			return 1
 	..()
 
+/obj/effect/decal/cleanable/food/mess/soup
+	color = "#496538"
+	alpha = 200
+
+/obj/effect/decal/cleanable/food/mess/rotting
+	color = "#708364"
+	alpha = 220
+/obj/effect/decal/cleanable/food/mess/rotting/Initialize()
+	var/mutable_appearance/rotflies = mutable_appearance('icons/roguetown/mob/rotten.dmi', "rotten")
+	add_overlay(rotflies)
+	. = ..()
+
+
+/*-------------\
+| Rotting food |
+\-------------*/	// needed so you can prevent cooking combos with rotted food and add gross effects etc. Food not combinable/processable don't need this type.
+
+/obj/item/reagent_containers/food/snacks/rotten
+	name = "rotten food"
+	icon = 'modular/Neu_Food/icons/food.dmi'
+	color = "#6c6897"
+	eat_effect = /datum/status_effect/debuff/rotfood
+	slices_num = 0
+	slice_path = null
+	cooktime = 0
+/obj/item/reagent_containers/food/snacks/rotten/Initialize()
+	var/mutable_appearance/rotflies = mutable_appearance('icons/roguetown/mob/rotten.dmi', "rotten")
+	add_overlay(rotflies)
+	. = ..()
+
+/obj/item/reagent_containers/food/snacks/rotten/meat
+	name = "rotten meat"
+	icon_state = "meatslab"
+/obj/item/reagent_containers/food/snacks/rotten/bacon
+	name = "rotten meat"
+	icon_state = "bacon"
+/obj/item/reagent_containers/food/snacks/rotten/sausage
+	icon_state = "raw_wiener"
+/obj/item/reagent_containers/food/snacks/rotten/poultry
+	icon_state = "halfchicken"
+/obj/item/reagent_containers/food/snacks/rotten/chickenleg
+	icon_state = "chickencutlet"
+/obj/item/reagent_containers/food/snacks/rotten/breadslice
+	name = "moldy bread"
+	icon_state = "loaf_slice"
+/obj/item/reagent_containers/food/snacks/rotten/bun
+	name = "moldy bun"
+	icon_state = "bun"
+/obj/item/reagent_containers/food/snacks/rotten/egg
+	name = "rotted cackleberry"
+	icon_state = "egg"
+/obj/item/reagent_containers/food/snacks/rotten/egg/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
+	if(!..()) //was it caught by a mob?
+		var/turf/T = get_turf(hit_atom)
+		var/obj/O = new /obj/effect/decal/cleanable/food/egg_smudge(T)
+		O.pixel_x = rand(-8,8)
+		O.pixel_y = rand(-8,8)
+		O.color = "#9794be"
+		qdel(src)
+/obj/item/reagent_containers/food/snacks/rotten/mince
+	name = "rotten meat"
+	icon_state = "meatmince"
+/obj/item/reagent_containers/food/snacks/rotten/mince/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
+	new /obj/effect/decal/cleanable/food/mess/rotting/get_turf(src))
+	playsound(get_turf(src), 'modular/Neu_Food/sound/meatslap.ogg', 100, TRUE, -1)
+	..()
+	qdel(src)
+
 /* added to proc
 /obj/item/reagent_containers/food/snacks/proc/slice(obj/item/W, mob/user)
 	if(slice_sound)
@@ -100,7 +172,13 @@
 	if(chopping_sound)
 		playsound(get_turf(user), 'modular/Neu_Food/sound/chopping_block.ogg', 60, TRUE, -1) // added some choppy sound
 */
-/*	........   Kitchen tools / items   ................ */
+
+
+
+/*--------------\
+| Kitchen tools |
+\--------------*/
+
 /obj/item/kitchen/spoon
 	name = "wooden spoon"
 	desc = "Traditional utensil for shoveling soup into your mouth, or to churn butter with."
@@ -192,7 +270,12 @@
 			if(do_after(user,1 SECONDS, target = src))
 				addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), user, min(amount_per_transfer_from_this,5), TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
 		return TRUE
-				
+
+/obj/item/reagent_containers/glass/bowl/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
+	if(reagents.total_volume > 5) 
+		new /obj/effect/decal/cleanable/food/mess/soup(get_turf(src))
+	..()
+
 /obj/item/reagent_containers/glass/bowl/proc/beingeaten()
 	in_use = TRUE
 	sleep(10)
@@ -206,9 +289,11 @@
 /* added to main
 /obj/item/reagent_containers/glass/bucket/pot
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	experimental_inhand = FALSE
+/obj/item/reagent_containers/glass/bucket/pot/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
+	if(reagents.total_volume > 5) 
+		new /obj/effect/decal/cleanable/food/mess(get_turf(src))
+	..()
+
 */
 /obj/item/cooking/pan
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
@@ -236,7 +321,6 @@
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	experimental_inhand = FALSE
 
-
 /obj/item/book/rogue/yeoldecookingmanual // new book with some tips to learn
 	name = "Ye olde ways of cookinge"
 	desc = "Penned by Svend Fatbeard, butler in the fourth generation"
@@ -244,7 +328,12 @@
 	base_icon_state = "book8"
 	bookfile = "Neu_cooking.json"
 
-/*	........   Reagents   ................ */// These are for the pot, if more vegetables are added and need to be integrated into the pot brewing you need to add them here
+
+
+/*-------------\
+| Pot reagents |
+\-------------*/	// These are for the pot, if more vegetables are added and need to be integrated into the pot brewing you need to add them here
+
 /datum/reagent/consumable/soup // so you get hydrated without the flavor system messing it up. Works like water with less hydration
 	var/hydration = 6
 /datum/reagent/consumable/soup/on_mob_life(mob/living/carbon/M)
@@ -287,6 +376,14 @@
 	color = "#859e56"
 	taste_description = "watery cabbage"
 
+/datum/reagent/consumable/soup/egg
+	color = "#dedbaf"
+	taste_description = "egg soup"
+
+/datum/reagent/consumable/soup/cheese
+	color = "#c4be70"
+	taste_description = "cheese soup"
+
 /datum/reagent/consumable/soup/stew
 	name = "thick stew"
 	description = "All manners of edible bits went into this."
@@ -304,19 +401,56 @@
 
 /datum/reagent/consumable/soup/stew/fish
 	color = "#c7816e"
-	taste_description = "fish"
+	taste_description = "fish stew"
 
-/datum/reagent/consumable/soup/stew/yucky
-	color = "#9e559c"
-	taste_description = "something rancid"
+/datum/reagent/consumable/soup/stew/truffle
+	color = "#5f4a0e"
+	taste_description = "rich truffles"
+
+/datum/reagent/consumable/soup/stew/yucky // barely edible, but beggars eat it without issue
+	color = "#453744"
+	nutriment_factor = 10
+	taste_description = "something gross"
+	metabolization_rate = 0.4
+/datum/reagent/consumable/soup/stew/yucky/on_mob_life(mob/living/carbon/M)
+	if(M.mind.assigned_role == "Beggar")
+		return ..()
+	else
+		if(prob(6))
+			switch(pick(1,4))
+				if (1)
+					to_chat(M, "<span class='danger'>I feel bile rising...</span>")
+				if (2)
+					to_chat(M, "<span class='danger'>I feel nauseous...</span>")
+				if (2)
+					to_chat(M, "<span class='danger'>My breath smells terrible...</span>")
+				if (2)
+					to_chat(M, "<span class='danger'>My stomach churns...</span>")
+		if(prob(6))
+			M.emote("gag")
+	..()
+	. = TRUE
+
+/datum/reagent/yuck/soup	// toxic sludge, but beggars are less affected
+	name = "vile fluid"
+	description = "Vile smell."
+	color = "#2e1e13"
+	taste_description = "raw sewage"
+	metabolization_rate = 0.3
+/datum/reagent/consumable/soup/stew/yucky/soup/on_mob_life(mob/living/carbon/M)
+	if(prob(10))
+		if(M.mind.assigned_role == "Beggar")
+			to_chat(M, "<span class='danger'>I feel nauseous...</span>")
+		else
+			M.emote("gag")
+	..()
+	. = TRUE
 
 
-/* * * * * * * * * * * * * * *	*
- *								*
- *		Powder & Salt			*
- *					 			*
- *								*
- * * * * * * * * * * * * * * * 	*/
+
+/*--------------\
+| Powder & Salt |
+\--------------*/
 
 // -------------- POWDER (flour) -----------------
 /obj/item/reagent_containers/powder/flour
@@ -365,7 +499,6 @@
 			qdel(src)
 	else ..()
 
-
 // -------------- SALT -----------------
 /obj/item/reagent_containers/powder/salt
 	name = "salt"
@@ -381,7 +514,11 @@
 	qdel(src)
 
 
-/*	..................   Food platter   ................... */
+
+/*------------------\
+| Meals on platters |
+\------------------*/
+
 /obj/item/cooking/platter/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked))
@@ -553,7 +690,7 @@
 
 /* * * * * * * * * * * **
  *						*
- *	 Food Rotting		*	- Just lists as it stands on 2024-07-16
+ *	 Food Rot Timers	*	- Just lists as it stands on 2024-08-24
  *						*
  * * * * * * * * * * * **/
 
@@ -576,12 +713,13 @@
 /*	.................   Extreme shelflife   ................... */
 
 * Raw cabbage
+* Uncut bread loaf
+* Uncut raisin bread
 
 /*	.................   Long shelflife   ................... */
 
-* Uncut bread loaf
-* Uncut raisin bread
 * Uncut cake
+* Dough
 * Pastry
 * Bun
 * Most plated dishes

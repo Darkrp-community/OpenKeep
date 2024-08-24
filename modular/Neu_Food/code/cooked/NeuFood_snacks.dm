@@ -57,29 +57,6 @@
 		to_chat(user, "<span class='warning'>You need to put [src] on a table to knead in the spice.</span>")
 
 
-/*	.............   Grenzelbun   ................ */
-/obj/item/reagent_containers/food/snacks/rogue/bun_grenz
-	list_reagents = list(/datum/reagent/consumable/nutriment = SAUSAGE_NUTRITION+SMALLDOUGH_NUTRITION)
-	tastes = list("savory sausage" = 1, "bread" = 1)
-	name = "grenzelbun"
-	desc = "Originally an elven cuisine composed of mortal races flesh and bread, the classic wiener in a bun, now modified and staple food of Grenzelhoft cuisine."
-	icon_state = "grenzbun"
-	foodtype = GRAIN | MEAT
-	warming = 5 MINUTES
-	rotprocess = SHELFLIFE_LONG
-	eat_effect = /datum/status_effect/buff/foodbuff
-/obj/item/reagent_containers/food/snacks/rogue/bun_grenz/plated
-	icon_state = "grenzbun_plated"
-	item_state = "plate_food"
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
-	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_EXTREME
-
-
 /*	.............   Fried Cackleberry   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/friedegg
 	trash = null
@@ -187,6 +164,11 @@
 	rotprocess = SHELFLIFE_DECENT
 
 
+
+/*---------------\
+| Sausage snacks |
+\---------------*/
+
 /*	.............   Sausage & Wiener   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked
 	eat_effect = null
@@ -200,6 +182,32 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked/wiener // wiener meant to be made from beef or maybe mince + bacon, luxury sausage, not implemented yet
 	name = "wiener"
 
+/*	.............   Grenzelbun   ................ */
+/obj/item/reagent_containers/food/snacks/rogue/bun_grenz
+	list_reagents = list(/datum/reagent/consumable/nutriment = SAUSAGE_NUTRITION+SMALLDOUGH_NUTRITION)
+	tastes = list("savory sausage" = 1, "bread" = 1)
+	name = "grenzelbun"
+	desc = "Originally an elven cuisine composed of mortal races flesh and bread, the classic wiener in a bun, now modified and staple food of Grenzelhoft cuisine."
+	icon_state = "grenzbun"
+	foodtype = GRAIN | MEAT
+	warming = 5 MINUTES
+	rotprocess = SHELFLIFE_LONG
+	eat_effect = /datum/status_effect/buff/foodbuff
+/obj/item/reagent_containers/food/snacks/rogue/bun_grenz/plated
+	icon_state = "grenzbun_plated"
+	item_state = "plate_food"
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
+	experimental_inhand = FALSE
+	w_class = WEIGHT_CLASS_BULKY
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	trash = /obj/item/cooking/platter
+	rotprocess = SHELFLIFE_EXTREME
+
+
+/*---------------\
+| Cooked veggies |
+\---------------*/
 
 /*	.............   Cooked cabbage   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/preserved/cabbage_fried

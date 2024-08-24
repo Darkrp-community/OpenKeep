@@ -55,6 +55,11 @@
 	rotprocess =  SHELFLIFE_LONG
 
 
+
+/*---------------\
+| Sausage meals |
+\---------------*/
+
 /*	.................   Wiener Cabbage   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/wienercabbage
 	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
@@ -177,13 +182,12 @@
 	else
 		return ..()
 
-
 /*	.................   Wiener & potato & onions   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions
 	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
 	tastes = list("savory sausage" = 1, "potato" = 1)
 	name = "wiener meal"
-	desc = "Stout and nourishing."
+	desc = "Stout and nourishing. Potatos and onions allied with a fatty sausage"
 	icon_state = "wpotonion"
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
@@ -200,28 +204,11 @@
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
 
-/*	.................   Frybird & Tato   ................... */
-/obj/item/reagent_containers/food/snacks/rogue/frybirdtato
-	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
-	tastes = list("frybird" = 1, "tato" = 1)
-	name = "frybird with a tato"
-	desc = "Hearty, comforting and rich - Alleged favorite dish of Ravox."
-	icon_state = "frybirdtato"
-	foodtype = VEGETABLES | MEAT
-	warming = 3 MINUTES
-	rotprocess = SHELFLIFE_DECENT
-	eat_effect = /datum/status_effect/buff/foodbuff
-/obj/item/reagent_containers/food/snacks/rogue/frybirdtato/plated
-	icon_state = "frybirdtato_plated"
-	item_state = "plate_food"
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
-	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_LONG
 
+
+/*------------------\
+| Cackleberry meals |
+\------------------*/
 
 /*	.................   Valerian Omelette   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian
@@ -293,6 +280,11 @@
 	rotprocess = SHELFLIFE_LONG
 
 
+
+/*---------------\
+| Chicken meals |
+\---------------*/
+
 /*	.................   Chicken roast   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked
 	desc = "A plump bird, roasted to a perfect temperature and bears a crispy skin."
@@ -349,6 +341,30 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/plated/spiced
 	desc = "A plump bird, roasted to perfection, spiced to taste divine."
 
+/*	.................   Frybird & Tato   ................... */
+/obj/item/reagent_containers/food/snacks/rogue/frybirdtato
+	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
+	tastes = list("frybird" = 1, "tato" = 1)
+	name = "frybird with a tato"
+	desc = "Hearty, comforting and rich - Alleged favorite dish of Ravox."
+	icon_state = "frybirdtato"
+	foodtype = VEGETABLES | MEAT
+	warming = 3 MINUTES
+	rotprocess = SHELFLIFE_DECENT
+	eat_effect = /datum/status_effect/buff/foodbuff
+/obj/item/reagent_containers/food/snacks/rogue/frybirdtato/plated
+	icon_state = "frybirdtato_plated"
+	item_state = "plate_food"
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
+	experimental_inhand = FALSE
+	w_class = WEIGHT_CLASS_BULKY
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	trash = /obj/item/cooking/platter
+	rotprocess = SHELFLIFE_LONG
+
+
+
 /*	.................   Cooked rat   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/friedrat/plated
 	desc = "The beggar's feast."
@@ -361,4 +377,3 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
-

@@ -32,39 +32,6 @@
 	else
 		return ..()
 
-// -------------- RAISINS -----------------
-/obj/item/reagent_containers/food/snacks/rogue/raisins
-	name = "raisins"
-	icon = 'icons/roguetown/items/produce.dmi'
-	icon_state = "raisins5"
-	bitesize = 5
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
-	w_class = WEIGHT_CLASS_TINY
-	tastes = list("dried fruit" = 1)
-	foodtype = GRAIN
-	eat_effect = null
-	rotprocess = null
-
-/obj/item/reagent_containers/food/snacks/rogue/raisins/On_Consume(mob/living/eater)
-	..()
-	if(bitecount == 1)
-		icon_state = "raisins4"
-	if(bitecount == 2)
-		icon_state = "raisins3"
-	if(bitecount == 3)
-		icon_state = "raisins2"
-	if(bitecount == 4)
-		icon_state = "raisins1"
-
-/obj/item/reagent_containers/food/snacks/rogue/raisins/CheckParts(list/parts_list, datum/crafting_recipe/R)
-	..()
-	for(var/obj/item/reagent_containers/food/snacks/M in parts_list)
-		color = M.filling_color
-		if(M.reagents)
-			M.reagents.remove_reagent(/datum/reagent/consumable/nutriment, M.reagents.total_volume)
-			M.reagents.trans_to(src, M.reagents.total_volume)
-		qdel(M)
-
 // -------------- SPIDER HONEY -----------------
 /obj/item/reagent_containers/food/snacks/rogue/honey
 	name = "spider honey"
@@ -77,6 +44,10 @@
 	eat_effect = null
 	rotprocess = null
 
+
+/*------------------\
+| Drying Rack foods |
+\------------------*/
 
 /*	........   Drying Rack recipes   ................ */
 /datum/crafting_recipe/roguetown/cooking/salami
@@ -127,11 +98,60 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 1)
 	parts = list(
 		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 1)
+	blacklist = list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison)
 	result = /obj/item/reagent_containers/food/snacks/rogue/raisins
 	structurecraft = /obj/structure/fluff/dryingrack
 	req_table = FALSE
 	craftdiff = 0
 	subtype_reqs = TRUE
+
+/datum/crafting_recipe/roguetown/cooking/raisins_poison
+	name = "raisins"
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 1)
+	parts = list(
+		/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 1)
+	result = /obj/item/reagent_containers/food/snacks/rogue/raisins/poison
+	structurecraft = /obj/structure/fluff/dryingrack
+	req_table = FALSE
+	craftdiff = 0
+	subtype_reqs = TRUE
+
+// -------------- RAISINS -----------------
+/obj/item/reagent_containers/food/snacks/rogue/raisins
+	name = "raisins"
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "raisins5"
+	bitesize = 5
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
+	w_class = WEIGHT_CLASS_TINY
+	tastes = list("dried fruit" = 1)
+	foodtype = GRAIN
+	eat_effect = null
+	rotprocess = null
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/On_Consume(mob/living/eater)
+	..()
+	if(bitecount == 1)
+		icon_state = "raisins4"
+	if(bitecount == 2)
+		icon_state = "raisins3"
+	if(bitecount == 3)
+		icon_state = "raisins2"
+	if(bitecount == 4)
+		icon_state = "raisins1"
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/CheckParts(list/parts_list, datum/crafting_recipe/R)
+	..()
+	for(var/obj/item/reagent_containers/food/snacks/M in parts_list)
+		color = M.filling_color
+		if(M.reagents)
+			M.reagents.remove_reagent(/datum/reagent/consumable/nutriment, M.reagents.total_volume)
+			M.reagents.trans_to(src, M.reagents.total_volume)
+		qdel(M)
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/poison
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR, /datum/reagent/berrypoison = 4)
+	tastes = list("bitter dried fruit" = 1)
 
 
 // -------------- SALUMOI (dwarven smoked sausage) -----------------
@@ -260,14 +280,10 @@
 
 
 
-/* * * * * * * * * * * * * * *	*
- *								*
- *		Butter & Cheese			*
- *					 			*
- *								*
- * * * * * * * * * * * * * * * 	*/
+/*------------\
+| Salted milk |
+\------------*/		// The base for making butter and cheese
 
-/*	........   Salting milk (for butter & cheesemaking)   ................ */
 /datum/reagent/consumable/milk/salted
 	taste_description = "salty milk"
 
@@ -286,6 +302,12 @@
 			reagents.remove_reagent(/datum/reagent/consumable/milk, 15)
 			reagents.add_reagent(/datum/reagent/consumable/milk/salted, 15)		
 			qdel(I)
+
+
+
+/*-------\
+| Butter |
+\-------*/
 
 /*	............   Churning butter   ................ */
 /obj/item/reagent_containers/glass/bucket/wooden/attackby(obj/item/I, mob/user, params)
@@ -349,6 +371,11 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 
 
+
+/*-------\
+| Cheese |
+\-------*/
+
 /*	............   Making fresh cheese   ................ */
 /obj/item/reagent_containers/glass/bucket/wooden/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
@@ -378,9 +405,6 @@
 			user.visible_message("<span class='info'>[user] soaks [T] in [src].</span>")
 			return
 	..()
-
-
-
 
 /*	............   Making cheese wheel   ................ */
 /obj/item/natural/cloth/attackby(obj/item/I, mob/user, params)
@@ -470,8 +494,6 @@
 	new /obj/item/reagent_containers/food/snacks/rogue/cheddar(loc)
 	new /obj/item/natural/cloth(loc)
 	qdel(src)
-
-
 
 
 // -------------- CHEESE -----------------

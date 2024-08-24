@@ -363,7 +363,11 @@
 	return ..()
 
 
-/*	........   Pie templates   ................ */
+
+/*--------------\
+| Pie templates |
+\--------------*/
+
 /obj/item/reagent_containers/food/snacks/rogue/pie
 	name = "pie"
 	desc = ""
@@ -486,7 +490,10 @@
 	tastes = list("baked apples and crispy butterdough" = 1)
 
 
-// -------------- HANDPIE (dwarven pie on the go, good shelflife until bitten, made from pie dough and mince, truffles or jacksberries) -----------------
+/*--------\
+| Handpie |
+\--------*/		// dwarven pie on the go, good shelflife until bitten, made from pie dough and mince, truffles or jacksberries
+
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw
 	name = "raw handpie"
 	desc = "The dwarven take on pies, called pierogi in their dialect. A fistfull of food to stand the test of time."
@@ -500,7 +507,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | VEGETABLES
-	tastes = list("truffles" = 1)
+	tastes = list("delicious truffles" = 1)
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/mince
 	w_class = WEIGHT_CLASS_NORMAL
