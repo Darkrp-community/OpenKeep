@@ -160,7 +160,7 @@
 	name = "rotten meat"
 	icon_state = "meatmince"
 /obj/item/reagent_containers/food/snacks/rotten/mince/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
-	new /obj/effect/decal/cleanable/food/mess/rotting/get_turf(src))
+	new /obj/effect/decal/cleanable/food/mess/rotting/get_turf(src)
 	playsound(get_turf(src), 'modular/Neu_Food/sound/meatslap.ogg', 100, TRUE, -1)
 	..()
 	qdel(src)
