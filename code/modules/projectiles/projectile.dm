@@ -117,6 +117,7 @@
 	var/arcshot = FALSE
 
 	var/accuracy = 65 //How likely the project will hit it's intended target area. Decreases over distance moved, increased from perception.
+	var/bonus_accuracy = 0 //bonus accuracy that cannot be affected by range drop off.
 
 /obj/projectile/proc/handle_drop()
 	return
