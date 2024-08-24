@@ -1014,6 +1014,8 @@
 					B.contrib -= 100
 					var/obj/item/I
 					switch(B.tri_amt)
+						if(1)
+							I = new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(user.loc)
 						if(2)
 							if(HAS_TRAIT(user, TRAIT_MEDIUMARMOR))
 								I = new /obj/item/clothing/suit/roguetown/armor/plate/scale(user.loc)
