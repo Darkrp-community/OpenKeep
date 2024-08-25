@@ -108,25 +108,29 @@
 			if(H.age == AGE_OLD) //old deserters are experts with polearms
 				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 
-			switch(pick(1,3))
-				if (1)
+			var/helmet2choose = pickweight(list("Volfhelm" = 5, "Skullcap" = 2, "Barbute" = 1))
+			switch(helmet2choose)
+				if("Volfhelm")
+					head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
+				if("Skullcap")
+					head = /obj/item/clothing/head/roguetown/helmet/skullcap
+					beltl = /obj/item/clothing/head/roguetown/helmet/leather/bandithood
+				if("Barbute") // big roller
 					head = /obj/item/clothing/head/roguetown/helmet/heavy/rust
 					beltl = /obj/item/clothing/head/roguetown/helmet/leather/bandithood
-				if (2)
-					head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
-				if (3)
-					head = /obj/item/clothing/head/roguetown/helmet/skullcap
 
-			switch(pick(1,2))
-				if (1)
+			var/armor2choose = pickweight(list("Rusty halfplate" = 2, "Chainmail" = 1))
+			switch(armor2choose)
+				if("Rusty halfplate")
 					armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/rust
-				if (2)
+				if("Chainmail")
 					armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 
-			switch(pick(1,3))
-				if (1 to 2)
+			var/weapon2choose = pickweight(list("Spear" = 2, "Bardiche" = 1))
+			switch(weapon2choose)
+				if("Spear")
 					backr = /obj/item/rogueweapon/spear
-				if (3)
+				if("Bardiche")
 					backr = /obj/item/rogueweapon/halberd/bardiche
 
 			switch(pick(1,2))

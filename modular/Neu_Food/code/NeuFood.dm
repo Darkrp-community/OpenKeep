@@ -213,7 +213,7 @@
 	reagent_flags = OPENCONTAINER
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
-	dropshrink = 0.8
+	dropshrink = 0.9
 	w_class = WEIGHT_CLASS_NORMAL
 	volume = 33
 	obj_flags = CAN_BE_HIT
@@ -286,6 +286,7 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
+//	dropshrink = 0.8
 /* added to main
 /obj/item/reagent_containers/glass/bucket/pot
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
