@@ -22,7 +22,6 @@
     backl = /obj/item/storage/backpack/rogue/backpack
     backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)
     if(H.mind)
-        H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(2,2,3), TRUE)
         H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
@@ -41,8 +40,10 @@
     if(H.dna.species.id == "dwarf")
         H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+        H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(1,2,2), TRUE)
+        head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
         beltl = /obj/item/rogueweapon/woodcut/pick // Dorfs get a pick as their primary weapon and axes/maces to use it
-    else       
+    else // No miner's helm for Delves as they haven nitevision now.       
         H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
         beltl = /obj/item/rogueweapon/sword/sabre // Dark elves get a sabre as their primary weapon and swords skill, who woulda thought
