@@ -28,8 +28,8 @@
 #define SHELFLIFE_TINY 12 MINUTES
 */
 
-#define SIMPLE_COOKING_XPGAIN 6
-#define COMPLEX_COOKING_XPGAIN 18
+#define SIMPLE_COOKING_XPGAIN 10
+#define COMPLEX_COOKING_XPGAIN 25
 
 /*---------------\
 | Food templates |
