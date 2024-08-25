@@ -316,7 +316,7 @@ SUBSYSTEM_DEF(ticker)
 			continue
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			amt_ready++
-	if(amt_ready < 2)
+/*	if(amt_ready < 2)
 		to_chat(world, "<span class='purple'>[amt_ready]/2 players ready.</span>")
 /*		failedstarts++
 		if(failedstarts > 7)
@@ -331,7 +331,7 @@ SUBSYSTEM_DEF(ticker)
 				SStitle.splash_turf.icon = ikon
 			for(var/mob/dead/new_player/player in GLOB.player_list)
 				player.playsound_local(player, 'sound/music/wartitle.ogg', 100, TRUE)*/
-		return FALSE
+		return FALSE*/
 	job_change_locked = TRUE
 	return TRUE
 
