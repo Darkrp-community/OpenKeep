@@ -50,6 +50,16 @@
 	specstats_f = list("strength" = 0, "perception" = 1, "intelligence" = 2, "constitution" = -1, "endurance" = -1, "speed" = 2, "fortune" = -1)
 	enflamed_icon = "widefire"
 
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
+
 /datum/species/human/halfelf/check_roundstart_eligible()
 	return TRUE
 

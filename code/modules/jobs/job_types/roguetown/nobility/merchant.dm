@@ -31,7 +31,9 @@
 	..()
 
 	neck = /obj/item/clothing/neck/roguetown/horus
-	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
+	backr = /obj/item/storage/backpack/rogue/satchel
+	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich)
+	beltr = /obj/item/rogueweapon/sword/rapier
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/keyring/merchant
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/merchant
@@ -56,7 +58,7 @@
 	H.change_stat("strength", -2)
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)

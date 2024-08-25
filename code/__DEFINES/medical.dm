@@ -48,6 +48,11 @@
 #define ORGAN_SLOT_PARASITE_EGG "parasite_egg"
 #define ORGAN_SLOT_REGENERATIVE_CORE "regen_core"
 
+#define BODYPART_FEATURE_HAIR "hair"
+#define BODYPART_FEATURE_FACIAL_HAIR "facehair"
+#define BODYPART_FEATURE_ACCESSORY "accessory"
+#define BODYPART_FEATURE_FACE_DETAIL "facedetail"
+
 //flags for requirements for a surgery step
 #define SURGERY_BLOODY (1<<0)
 #define SURGERY_INCISED (1<<1)
