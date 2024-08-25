@@ -227,7 +227,7 @@
 /datum/status_effect/buff/barbrage
 	id = "barbrage"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/barbrage
-	effectedstats = list("strength" = 1, "endurance" = 2, "constitution" = -2, "perception" = -2, "intelligence" = -2) //endurance to boost pain treshold, not powerful enough to warrant total painkilling
+	effectedstats = list("strength" = 1, "endurance" = 2, "perception" = -2, "intelligence" = -2) //endurance to boost pain treshold, not powerful enough to warrant total painkilling
 	duration = 15 SECONDS
 
 /atom/movable/screen/alert/status_effect/buff/barbrage
