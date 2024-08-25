@@ -24,7 +24,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,long_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/meat/sausage(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
@@ -324,7 +324,7 @@
 			user.rogfat_add(60)
 			reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 15)
 			new /obj/item/reagent_containers/food/snacks/butter(drop_location())
-			user.mind.adjust_experience(/datum/skill/craft/cooking, 2, FALSE)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, COMPLEX_COOKING_XPGAIN, FALSE)
 		return
 	..()
 
@@ -386,7 +386,7 @@
 			playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
 			if(do_after(user,long_cooktime, target = src))
 				reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 5)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 2, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, COMPLEX_COOKING_XPGAIN, FALSE)
 				new /obj/item/reagent_containers/food/snacks/rogue/cheese(drop_location())
 
 		var/obj/item/natural/cloth/T = I
@@ -415,7 +415,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,3 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/foodbase/cheesewheel_start(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 			return

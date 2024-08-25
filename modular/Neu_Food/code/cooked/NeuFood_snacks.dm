@@ -41,7 +41,7 @@
 				return TRUE
 			mill.reagents.remove_reagent(/datum/reagent/consumable/blackpepper, 1)
 			new /obj/item/reagent_containers/food/snacks/rogue/peppersteak(loc)
-			user.mind.adjust_experience(/datum/skill/craft/cooking, 2, FALSE)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, COMPLEX_COOKING_XPGAIN, FALSE)
 			qdel(src)
 
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/preserved/onion_fried))
@@ -49,7 +49,7 @@
 		to_chat(user, "<span class='notice'>Adding onions...</span>")
 		if(do_after(user,short_cooktime, target = src))
 			new /obj/item/reagent_containers/food/snacks/rogue/onionsteak(loc)
-			user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			qdel(I)
 			qdel(src)
 
@@ -78,7 +78,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/friedegg/two(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -102,7 +102,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,long_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -129,7 +129,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/frybirdtato(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_fried))
@@ -137,7 +137,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/frybirdtato(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -228,7 +228,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienercabbage(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -254,7 +254,7 @@
 			to_chat(user, "Preparing a serving of wiener and tatos...")
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotato(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried))
@@ -263,7 +263,7 @@
 			to_chat(user, "Preparing a serving of frybird and tatos...")
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/frybirdtato(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -290,7 +290,7 @@
 			to_chat(user, "Preparing a serving of wiener and onions...")
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wieneronions(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -316,7 +316,7 @@
 			to_chat(user, "Preparing a serving of wiener and tatos...")
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotato(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried))
@@ -325,7 +325,7 @@
 			to_chat(user, "Preparing a serving of frybird and tatos...")
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/frybirdtato(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	else

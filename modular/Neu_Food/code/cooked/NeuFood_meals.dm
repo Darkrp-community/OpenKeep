@@ -103,7 +103,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,3 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -127,7 +127,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,3 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions/plated(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -153,7 +153,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,3 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -317,7 +317,7 @@
 				return TRUE
 			mill.reagents.remove_reagent(/datum/reagent/consumable/blackpepper, 1)
 			new /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/spiced(loc)
-			user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			qdel(src)
 
 	else

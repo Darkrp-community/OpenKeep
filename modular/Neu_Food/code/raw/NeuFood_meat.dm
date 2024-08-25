@@ -117,7 +117,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,long_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/meat/sausage(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
@@ -128,7 +128,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,long_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/meat/sausage(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else

@@ -28,7 +28,8 @@
 #define SHELFLIFE_TINY 12 MINUTES
 */
 
-
+#define SIMPLE_COOKING_XPGAIN 6
+#define COMPLEX_COOKING_XPGAIN 18
 
 /*---------------\
 | Food templates |
@@ -496,7 +497,7 @@
 		playsound(get_turf(user), 'modular/Neu_Food/sound/kneading_alt.ogg', 90, TRUE, -1)
 		if(do_after(user,3 SECONDS, target = src))
 			new /obj/item/reagent_containers/food/snacks/rogue/dough_base(loc)
-			user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			qdel(src)
 	else ..()
 

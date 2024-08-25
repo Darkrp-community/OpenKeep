@@ -30,7 +30,7 @@
 				new /obj/item/reagent_containers/food/snacks/rogue/dough(loc)
 				qdel(I)
 				qdel(src)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 		else
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to work it.</span>")
 	else
@@ -58,7 +58,7 @@
 			to_chat(user, "<span class='notice'>Kneading butter into the dough...</span>")
 			if(do_after(user,long_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/butterdough(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
@@ -69,7 +69,7 @@
 			to_chat(user, "<span class='notice'>Rolling [src] into cracker dough.</span>")
 			if(do_after(user,long_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/foodbase/hardtack_raw(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(src)
 		else
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to roll it out!</span>")
@@ -89,7 +89,7 @@
 			to_chat(user, "<span class='notice'>Kneading the dough and adding raisins...</span>")
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/rbread_half(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
@@ -117,7 +117,7 @@
 			to_chat(user, "<span class='notice'>Adding fresh cheese...</span>")
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/foodbase/cheesebun_raw(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
@@ -165,7 +165,7 @@
 			playsound(get_turf(user), 'modular/Neu_Food/sound/eggbreak.ogg', 100, TRUE, -1)
 			if(do_after(user,long_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/cake_base(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 2, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, COMPLEX_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
@@ -197,7 +197,7 @@
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/piedough(loc)
 				qdel(src)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 		else
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to roll it out!</span>")
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/raisins/poison))
@@ -208,7 +208,7 @@
 				new /obj/item/reagent_containers/food/snacks/rogue/foodbase/biscuitpoison_raw(loc)
 				qdel(I)
 				qdel(src)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 		else
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to work it.</span>")
 	if(I.get_sharpness())
@@ -222,7 +222,7 @@
 				if(do_after(user,short_cooktime, target = src))
 					new /obj/item/reagent_containers/food/snacks/rogue/foodbase/prezzel_raw(loc)
 					qdel(src)
-					user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+					user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			else
 				to_chat(user, "<span class='warning'>You need to put [src] on a table to cut it!</span>")
 	else if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/raisins))
@@ -233,7 +233,7 @@
 				new /obj/item/reagent_containers/food/snacks/rogue/foodbase/biscuit_raw(loc)
 				qdel(I)
 				qdel(src)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 		else
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to work it.</span>")
 	else
@@ -257,7 +257,7 @@
 		if(do_after(user,short_cooktime, target = src))
 			var/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/mushroom/handpie= new(get_turf(user))
 			user.put_in_hands(handpie)
-			user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			qdel(I)
 			qdel(src)
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/mince))
@@ -266,7 +266,7 @@
 		if(do_after(user,short_cooktime, target = src))
 			var/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/mince/handpie= new(get_turf(user))
 			user.put_in_hands(handpie)
-			user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			qdel(I)
 			qdel(src)
 	if(istype(I, /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison))
@@ -275,7 +275,7 @@
 		if(do_after(user,short_cooktime, target = src))
 			var/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/poison/handpie= new(get_turf(user))
 			user.put_in_hands(handpie)
-			user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			qdel(I)
 			qdel(src)
 	else if(istype(I, /obj/item/reagent_containers/food/snacks/grown/berries/rogue))
@@ -284,7 +284,7 @@
 		if(do_after(user,short_cooktime, target = src))
 			var/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/berry/handpie= new(get_turf(user))
 			user.put_in_hands(handpie)
-			user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			qdel(I)
 			qdel(src)
 	else
@@ -485,7 +485,7 @@
 			to_chat(user, "<span class='notice'>Adding the last of the raisins, puffing up the dough for baking.</span>")
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/rbreaduncooked(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
@@ -566,7 +566,7 @@
 			to_chat(user, "<span class='notice'>Adding the last of the raisins, puffing up the dough for baking.</span>")
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/rbreaduncooked_poison(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
@@ -654,7 +654,7 @@
 		if(do_after(user,short_cooktime, target = src))
 			var/obj/item/reagent_containers/food/snacks/rogue/bun_grenz/hotdog= new(get_turf(user))
 			user.put_in_hands(hotdog)
-			user.mind.adjust_experience(/datum/skill/craft/cooking, 1, FALSE)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			qdel(I)
 			qdel(src)
 	else
@@ -798,7 +798,7 @@
 			to_chat(user, "<span class='notice'>Spreading fresh cheese on the cake...</span>")
 			if(do_after(user,long_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/ccakeuncooked(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 2, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, COMPLEX_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
@@ -809,7 +809,7 @@
 			to_chat(user, "<span class='notice'>Slathering the cake with delicious spider honey...</span>")
 			if(do_after(user,long_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/hcakeuncooked(loc)
-				user.mind.adjust_experience(/datum/skill/craft/cooking, 2, FALSE)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, COMPLEX_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
