@@ -30,3 +30,10 @@
 	M.adjustFireLoss(35, 0)
 	..()
 	return TRUE
+
+/datum.reagent/blastpowder
+	name = "blastpowder"
+	description = "."
+	color = "#6b0000"
+	taste_description = "spicy"
+	self_consuming = TRUE

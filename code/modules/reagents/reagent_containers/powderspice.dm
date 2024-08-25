@@ -299,3 +299,13 @@
 
 /datum/reagent/moondust_purest/overdose_process(mob/living/M)
 	M.adjustToxLoss(10, 0)
+
+/obj/item/reagent_containers/powder/blastpowder
+	name = "blastpowder"
+	desc = "explosive powder known to be produced by the dwarves. It's used in many explosives."
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "blastpowder"
+	possible_transfer_amounts = list()
+	volume = 15
+	list_reagents = list(/datum/reagent/blastpowder = 15)
+	sellprice = 15

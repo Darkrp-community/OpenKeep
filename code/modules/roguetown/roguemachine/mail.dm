@@ -167,10 +167,13 @@
 		playsound(src, 'sound/misc/coininsert.ogg', 100, FALSE, -1)
 		update_icon()
 		return
-	if(user.mind.assigned_role == "Inquisitor")
-		show_inquisitor_shop(user, P)
-		return
 	..()
+
+/obj/structure/roguemachine/mail/attack_hand(mob/user)
+	if(user.mind.assigned_role == "Inquisitor")
+		testing("Clicked, opening inquisitor shop")
+		show_inquisitor_shop(user)
+	return
 
 /obj/structure/roguemachine/mail/Initialize()
 	. = ..()
@@ -298,6 +301,8 @@
 				I.adjust_triumphs(1)
 
 /obj/structure/roguemachine/mail/proc/show_inquisitor_shop(mob/living/carbon/human/user)
+	testing("Src is [src]")
+	testing("User is [user]")
 	var/list/options = list()
 
 	// Ensure the user is an Inquisitor
@@ -315,8 +320,8 @@
 	// Define the available items, their costs, and max purchases
 	var/list/items = list(
 		"Puffer Pistol" = list(
-			list(type = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow, count = 1),
-			list(type = /obj/item/quiver/bolts, count = 1),
+			list(type = /obj/item/gun/ballistic/revolver/grenadelauncher/flintlock/pistol, count = 1),
+			list(type = /obj/item/storage/belt/rogue/pouch/bullets, count = 1),
 			cost = 1,
 			max_purchases = 1
 		),
@@ -387,15 +392,16 @@
 	// Loop through the sub-list to generate multiple items
 	for(var/item in item_data)
 		if(islist(item)) // Ensure this is an item list and not the cost/max_purchase entry
-			if(item["type"] && item["count"]) // Ensure the item list has both type and count defined
-				for(var/i = 1 to item["count"])
-					testing("Creating item: [item["type"]] x[item["count"]]")
-					var/obj/item/I = new item["type"] // Create the item at the location of the mailbox
+			var/item_type = item["type"]
+			var/item_count = item["count"]
+			if(item_type && item_count) // Ensure the item list has both type and count defined
+				for(var/i = 1 to item_count)
+					testing("Creating item: [item_type] x[item_count]")
+					var/obj/item/I = new item_type(get_turf(user)) // Create the item at the user's location
 					if(!user.put_in_hands(I)) // Try to put the item in the user's hands
-						testing("Failed to place item in hands, dropping at mailbox location")
+						testing("Failed to place item in hands, dropping at user's location")
 						I.forceMove(get_turf(user)) // If not, drop it at the user's location
 
 	visible_message("<span class='warning'>The mailbox spits out its contents.</span>")
 	testing("Finished processing user selection and item dispensing")
 	return
-

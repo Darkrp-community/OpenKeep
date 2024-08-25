@@ -189,6 +189,12 @@
 			if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, H, null, TRUE, TRUE))
 				qdel(H)
 
+/obj/item/storage/belt/rogue/pouch/bullets/Initialize()
+	. = ..()
+	new /obj/projectile/bullet/reusable/bullet
+	new /obj/projectile/bullet/reusable/bullet
+	new /obj/projectile/bullet/reusable/bullet
+
 /obj/item/storage/backpack/rogue/satchel
 	name = "satchel"
 	desc = "A bulky bag worn over the shoulder which can be used to hold many things."
