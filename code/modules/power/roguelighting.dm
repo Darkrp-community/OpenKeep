@@ -627,6 +627,7 @@
 	var/obj/item/attachment = null
 	var/obj/item/reagent_containers/food/snacks/food = null
 	var/datum/looping_sound/boilloop/boilloop
+	var/rawegg = FALSE
 
 /obj/machinery/light/rogue/hearth/Initialize()
 	boilloop = new(list(src), FALSE)
@@ -648,15 +649,16 @@
 			if(W.type in subtypesof(/obj/item/reagent_containers/food/snacks))
 				var/obj/item/reagent_containers/food/snacks/S = W
 				if(istype(W, /obj/item/reagent_containers/food/snacks/egg)) // added
-					playsound(get_turf(user), 'modular/Neu_Food/sound/eggbreak.ogg', 100, TRUE, -1)
+					playsound(get_turf(user), 'modular/Neu_Food/sound/eggbreak.ogg', 100, TRUE, 0)
 					sleep(25) // to get egg crack before frying hiss
 					W.icon_state = "rawegg" // added
-					mouse_opacity = 0 // so you cannot scoop up raw egg in the pan. Returned to 1 in process proc below
+					rawegg = TRUE
 				if(!food)
 					S.forceMove(src)
 					food = S
 					update_icon()
-					playsound(src.loc, 'sound/misc/frying.ogg', 80, FALSE, extrarange = 5)
+					if(on)
+						playsound(src.loc, 'sound/misc/frying.ogg', 80, FALSE, extrarange = 5)
 					return
 // New concept = boil at least 33 water, add item, it turns into food reagent volume 33 of the appropriate type
 		else if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot))
@@ -815,15 +817,14 @@
 					playsound(src, "bubbles", 30, TRUE)
 					pot.reagents.add_reagent(/datum/reagent/consumable/soup/stew/yucky, 32)
 					pot.reagents.remove_reagent(/datum/reagent/water, 1)
-
-
-
-	//		return
 	. = ..()
 
-
-
 //////////////////////////////////
+
+/obj/machinery/light/rogue/hearth/fire_act(added, maxstacks)
+	. = ..()
+	if(food)
+		playsound(src.loc, 'sound/misc/frying.ogg', 80, FALSE, extrarange = 2)
 
 /obj/machinery/light/rogue/hearth/update_icon()
 	cut_overlays()
@@ -848,6 +849,11 @@
 	if(attachment)
 		if(istype(attachment, /obj/item/cooking/pan))
 			if(food)
+				if(rawegg)	
+					to_chat(user, "<span class='notice'>Throws away the raw egg.</span>")
+					rawegg = FALSE
+					qdel(food)
+					update_icon()			
 				if(!user.put_in_active_hand(food))
 					food.forceMove(user.loc)
 				food = null
@@ -892,7 +898,8 @@
 				if(food)
 					var/obj/item/C = food.cooking(20, src)
 					if(C)
-						mouse_opacity = 1
+						if(rawegg)
+							rawegg = FALSE
 						qdel(food)
 						food = C
 			if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot))
