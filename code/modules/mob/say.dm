@@ -54,7 +54,7 @@
 	if(!length(message))
 		return
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, span_danger("Speech is currently admin-disabled."))
+		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
 	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
 	usr.emote("me",1,message,TRUE, custom_me = TRUE)
