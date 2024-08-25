@@ -172,6 +172,12 @@
 				/obj/item/reagent_containers/glass/cup/wooden/crafted)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
+/datum/crafting_recipe/roguetown/woodplatter
+	name = "wooden platters (x2)"
+	result = list(/obj/item/cooking/platter,
+				/obj/item/cooking/platter
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+
 /obj/item/reagent_containers/glass/cup/wooden/crafted
 	sellprice = 3
 

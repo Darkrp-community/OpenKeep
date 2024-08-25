@@ -48,10 +48,3 @@
 			if("gen")
 				return list("shrink" = 0.5,"sx" = -5,"sy" = -8,"nx" = 7,"ny" = -9,"wx" = -1,"wy" = -8,"ex" = -1,"ey" = -8,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
 
-
-/datum/anvil_recipe/tools/pote
-	name = "Iron pot"
-	recipe_name = "a cooking pot"
-	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/reagent_containers/glass/bucket/pot
-	craftdiff = 0

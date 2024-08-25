@@ -25,7 +25,7 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
@@ -49,7 +49,7 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess =  SHELFLIFE_LONG
@@ -77,7 +77,7 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_EXTREME
@@ -114,7 +114,7 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_EXTREME
@@ -199,7 +199,7 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
@@ -225,7 +225,7 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
@@ -233,48 +233,48 @@
 /*	.................   Plated fryfish   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/carp/plated
 	desc = "Abyssor's bounty, make sure to eat the eyes!"
-	icon_state = "carpcooked_plated"
+	icon_state = "carp_plated"
 	item_state = "plate_food"
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
 
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish/plated
 	desc = "Abyssor's bounty, make sure to eat the eyes!"
-	icon_state = "clownfishcooked_plated"
+	icon_state = "clown_plated"
 	item_state = "plate_food"
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
 
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler/plated
 	desc = "Abyssor's bounty, make sure to eat the eyes!"
-	icon_state = "anglercooked_plated"
+	icon_state = "carp_plated"
 	item_state = "plate_food"
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
 
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel/plated
 	desc = "Abyssor's bounty, make sure to eat the eyes!"
-	icon_state = "eelcooked_plated"
+	icon_state = "eel_plated"
 	item_state = "plate_food"
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
@@ -373,7 +373,7 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG

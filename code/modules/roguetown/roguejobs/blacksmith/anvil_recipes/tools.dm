@@ -200,3 +200,10 @@
 	createmultiple = TRUE
 	createditem_num = 4
 	craftdiff = 0
+
+/datum/anvil_recipe/tools/pote
+	name = "Iron pot"
+	recipe_name = "a cooking pot"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/reagent_containers/glass/bucket/pot
+	craftdiff = 0

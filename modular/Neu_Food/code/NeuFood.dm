@@ -313,7 +313,7 @@
 
 /obj/item/cooking/platter
 	name = "platter"
-	desc = "Made from fired clay."
+	desc = "Made from fired clay or wood."
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
@@ -716,6 +716,7 @@
 * Raw cabbage
 * Uncut bread loaf
 * Uncut raisin bread
+* Most plated dishes
 
 /*	.................   Long shelflife   ................... */
 
@@ -723,7 +724,6 @@
 * Dough
 * Pastry
 * Bun
-* Most plated dishes
 * Most cooked veggies
 * Cooked sausage
 * Pie slice
