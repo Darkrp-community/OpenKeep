@@ -1,7 +1,7 @@
 // Apple
 /obj/item/seeds/apple
-	name = "seeds"
-	desc = ""
+	name = "apple seeds"
+	desc = "The seeds of the apple tree."
 	icon_state = "seed"
 	species = "apple"
 	plantname = "apple tree"
@@ -24,7 +24,7 @@
 /obj/item/reagent_containers/food/snacks/grown/apple
 	seed = /obj/item/seeds/apple
 	name = "apple"
-	desc = ""
+	desc = "The humble apple. A sweet and nutritious fruit."
 	icon_state = "apple"
 	filling_color = "#FF4500"
 	bitesize = 3
@@ -38,7 +38,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	worn_y_dimension = 64
 	var/equippedloc = null
-	rotprocess = 12 MINUTES
+	rotprocess = 20 MINUTES
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/cider
 	var/list/bitten_names = list()
