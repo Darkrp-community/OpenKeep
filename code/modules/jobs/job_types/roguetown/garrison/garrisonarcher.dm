@@ -51,19 +51,17 @@
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(0,1,1), TRUE) // For rapier use
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(1,1,2), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/tanning, pick(1,1,2), TRUE)
-		H.change_stat("intelligence", 1)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE) // For rapier use
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.change_stat("perception", 2)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", 2)
