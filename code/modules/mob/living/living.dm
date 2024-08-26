@@ -790,6 +790,7 @@
 		if(L.m_intent == MOVE_INTENT_RUN && lying && !buckle_lying)
 			L.visible_message("<span class='warning'>[L] trips over [src]!</span>","<span class='warning'>I trip over [src]!</span>")
 			L.Knockdown(10)
+			L.Immobilize(20)
 
 
 
