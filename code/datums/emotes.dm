@@ -112,7 +112,7 @@
 	if(STASTR > 10)
 		pitch_modifier -= (STASTR - 10) * 0.05
 	else if(STASTR < 10)
-		pitch_modifier += (10 - STASTR) * 0.1
+		pitch_modifier += (10 - STASTR) * 0.05
 	return clamp(final_pitch + pitch_modifier, 0.5, 2)
 
 	
