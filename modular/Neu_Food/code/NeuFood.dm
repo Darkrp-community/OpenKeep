@@ -409,16 +409,19 @@
 	color = "#5f4a0e"
 	taste_description = "rich truffles"
 
-/datum/reagent/consumable/soup/stew/yucky // barely edible, but beggars eat it without issue
-	color = "#453744"
-	nutriment_factor = 10
+/datum/reagent/consumable/soup/stew/gross // barely edible, but beggars eat it without issue
+	name = "beggars stew"
+	color = "#3b4537"
+	nutriment_factor = 8
 	taste_description = "something gross"
-	metabolization_rate = 0.4
-/datum/reagent/consumable/soup/stew/yucky/on_mob_life(mob/living/carbon/M)
+	metabolization_rate = 0.3
+/datum/reagent/consumable/soup/stew/gross/on_mob_life(mob/living/carbon/M)
 	if(M.mind.assigned_role == "Beggar")
-		return ..()
+		return
+	if(HAS_TRAIT(M, TRAIT_NASTY_EATER ))
+		return
 	else
-		if(prob(6))
+		if(prob(8))
 			switch(pick(1,4))
 				if (1)
 					to_chat(M, "<span class='danger'>I feel bile rising...</span>")
@@ -428,25 +431,35 @@
 					to_chat(M, "<span class='danger'>My breath smells terrible...</span>")
 				if (2)
 					to_chat(M, "<span class='danger'>My stomach churns...</span>")
-		if(prob(6))
+		if(prob(8))
 			M.emote("gag")
+			M.add_nausea(9)
 	..()
 	. = TRUE
 
-/datum/reagent/yuck/soup	// toxic sludge, but beggars are less affected
-	name = "vile fluid"
+/datum/reagent/yuck/cursed_soup	// toxic sludge, though its edible for NASTY_EATERS like orcs, healing them slightly
+	name = "cursed soup"
 	description = "Vile smell."
-	color = "#2e1e13"
-	taste_description = "raw sewage"
-	metabolization_rate = 0.3
-/datum/reagent/consumable/soup/stew/yucky/soup/on_mob_life(mob/living/carbon/M)
-	if(prob(10))
-		if(M.mind.assigned_role == "Beggar")
-			to_chat(M, "<span class='danger'>I feel nauseous...</span>")
-		else
+	color = "#5b2b44"
+	nutriment_factor = 5
+	taste_description = "something truly vile"
+	metabolization_rate = 0.2
+/datum/reagent/yuck/cursed_soup/on_mob_life(mob/living/carbon/M)
+	if(HAS_TRAIT(M, TRAIT_NASTY_EATER ))
+		if(M.blood_volume < BLOOD_VOLUME_NORMAL)
+			M.blood_volume = min(M.blood_volume+2, BLOOD_VOLUME_MAXIMUM)
+		M.adjustBruteLoss(-0.2*REM, 0)
+		M.adjustFireLoss(-0.2*REM, 0)
+		M.rogstam_add(5)
+		return
+	else
+		if(prob(12))
 			M.emote("gag")
+			M.add_nausea(9)
+			M.adjustToxLoss(5, 0)
 	..()
 	. = TRUE
+
 
 
 

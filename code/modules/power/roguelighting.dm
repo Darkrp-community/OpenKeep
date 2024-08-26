@@ -727,7 +727,7 @@
 						qdel(W)
 						sleep(1000)
 						playsound(src, "bubbles", 30, TRUE)
-						pot.reagents.add_reagent(/datum/reagent/consumable/soup/stew/yucky, 32)
+						pot.reagents.add_reagent(/datum/reagent/consumable/soup/stew/gross, 32)
 						pot.reagents.remove_reagent(/datum/reagent/water, 1)
 					else
 						qdel(W)
@@ -769,8 +769,8 @@
 					pot.reagents.add_reagent(/datum/reagent/consumable/soup/cheese, 32)
 					pot.reagents.remove_reagent(/datum/reagent/water, 1)
 
-				// Bad and rotten and toxic stuff below. Less lethal due to boiling, but really disgusting
-			if(istype(W, /obj/item/reagent_containers/food/snacks/badrecipe) || istype(W, /obj/item/reagent_containers/food/snacks/grown/berries/poison) || istype(W, /obj/item/natural/poo)|| istype(W, /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms))
+			// Bad and rotten and toxic stuff below. Less lethal due to boiling, but really disgusting. Graggars inhumen followers love this stuff, get some healing from it too.
+			if(istype(W, /obj/item/reagent_containers/food/snacks/grown/berries/poison) || istype(W, /obj/item/natural/poo)|| istype(W, /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms))
 				if(do_after(user,2 SECONDS, target = src))
 					user.visible_message("<span class='info'>[user] places [W] into the pot.</span>")
 					playsound(src.loc, 'sound/items/Fish_out.ogg', 20, TRUE)
@@ -778,11 +778,10 @@
 					qdel(W)
 					sleep(800)
 					playsound(src, "bubbles", 30, TRUE)
-					pot.reagents.add_reagent(/datum/reagent/yuck/soup, 30)
-					pot.reagents.add_reagent(/datum/reagent/berrypoison, 2)
+					pot.reagents.add_reagent(/datum/reagent/yuck/cursed_soup, 32)
 					pot.reagents.remove_reagent(/datum/reagent/water, 1)
 
-			if(W.type in subtypesof(/obj/item/reagent_containers/food/snacks/rotten))
+			if(W.type in subtypesof(/obj/item/reagent_containers/food/snacks/rotten)|| istype(W, /obj/item/natural/worms)) // Graggar likes rotten food and worms I guess?
 				if(do_after(user,2 SECONDS, target = src))
 					user.visible_message("<span class='info'>[user] places [W] into the pot.</span>")
 					playsound(src.loc, 'sound/items/Fish_out.ogg', 20, TRUE)
@@ -790,11 +789,21 @@
 					qdel(W)
 					sleep(800)
 					playsound(src, "bubbles", 30, TRUE)
-					pot.reagents.add_reagent(/datum/reagent/yuck/soup, 30)
-					pot.reagents.add_reagent(/datum/reagent/berrypoison, 2)
+					pot.reagents.add_reagent(/datum/reagent/yuck/cursed_soup, 32)
 					pot.reagents.remove_reagent(/datum/reagent/water, 1)
 
-			if(istype(W, /obj/item/reagent_containers/food/snacks/smallrat/dead))  // every beggar loves ratsoup
+			if(W.type in subtypesof(/obj/item/natural/worms)) // ....and leeches and such
+				if(do_after(user,2 SECONDS, target = src))
+					user.visible_message("<span class='info'>[user] places [W] into the pot.</span>")
+					playsound(src.loc, 'sound/items/Fish_out.ogg', 20, TRUE)
+					pot.reagents.remove_reagent(/datum/reagent/water, 32)
+					qdel(W)
+					sleep(800)
+					playsound(src, "bubbles", 30, TRUE)
+					pot.reagents.add_reagent(/datum/reagent/yuck/cursed_soup, 32)
+					pot.reagents.remove_reagent(/datum/reagent/water, 1)
+
+			if(istype(W, /obj/item/reagent_containers/food/snacks/smallrat/dead) || istype(W, /obj/item/reagent_containers/food/snacks/badrecipe))  // every beggar loves ratsoup
 				if(do_after(user,2 SECONDS, target = src))
 					user.visible_message("<span class='info'>[user] places the [W] into the pot.</span>")
 					playsound(src.loc, 'sound/items/Fish_out.ogg', 20, TRUE)
@@ -802,10 +811,10 @@
 					qdel(W)
 					sleep(800)
 					playsound(src, "bubbles", 30, TRUE)
-					pot.reagents.add_reagent(/datum/reagent/consumable/soup/stew/yucky, 32)
+					pot.reagents.add_reagent(/datum/reagent/consumable/soup/stew/gross, 32)
 					pot.reagents.remove_reagent(/datum/reagent/water, 1)
 	
-			else if(istype(W, /obj/item/reagent_containers/food/snacks/smallrat))  // every beggar loves ratsoup
+			else if(istype(W, /obj/item/reagent_containers/food/snacks/smallrat))  // a step to far for most beggars, paying tribute to Graggar
 				if(do_after(user,2 SECONDS, target = src))
 					user.visible_message("<span class='info'>[user] throws [W] into the boiling water.</span>")
 					playsound(src.loc, 'sound/items/Fish_out.ogg', 60, TRUE)
@@ -815,7 +824,7 @@
 					qdel(W)
 					sleep(800)
 					playsound(src, "bubbles", 30, TRUE)
-					pot.reagents.add_reagent(/datum/reagent/consumable/soup/stew/yucky, 32)
+					pot.reagents.add_reagent(/datum/reagent/yuck/cursed_soup, 32)
 					pot.reagents.remove_reagent(/datum/reagent/water, 1)
 	. = ..()
 
