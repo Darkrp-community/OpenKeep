@@ -184,15 +184,18 @@
 	if(m_intent == MOVE_INTENT_RUN && dir == get_dir(src, M))
 		if(isliving(M))
 			var/mob/living/L = M
-			if(STACON > L.STACON)
-				if(STASTR > L.STASTR)
-					L.Knockdown(1)
-				else
-					Knockdown(1)
-			if(STACON < L.STACON)
-				Knockdown(30)
-			if(STACON == L.STACON)
-				L.Knockdown(1)
+			var/attacker_skill = STACON * 10
+			var/defense_skill = L.STAEND * 10
+			var/tacklechance = 30 - (defense_skill - attacker_skill)
+			if(mind)
+				attacker_skill += mind.get_skill_level(/datum/skill/misc/athletics) * 10
+			if(L.mind)
+				defense_skill += (L.mind.get_skill_level(/datum/skill/misc/athletics) + mind.get_skill_level(/datum/skill/combat/unarmed)) * 10
+
+			tacklechance = clamp(tacklechance, 10, 90)
+			if(prob(tacklechance))
+				L.Knockdown(30)
+			else
 				Knockdown(30)
 			Immobilize(30)
 			var/playsound = FALSE
@@ -782,6 +785,11 @@
 	for(var/i in get_equipped_items())
 		var/obj/item/item = i
 		SEND_SIGNAL(item, COMSIG_ITEM_WEARERCROSSED, AM, src)
+	if(isliving(AM))
+		var/mob/living/L = AM
+		if(L.m_intent == MOVE_INTENT_RUN && lying && !buckle_lying)
+			L.visible_message("<span class='warning'>[L] trips over [src]!</span>","<span class='warning'>I trip over [src]!</span>")
+			L.Knockdown(10)
 
 
 
@@ -1594,7 +1602,7 @@
 		unset_machine()
 	density = !lying
 	if(lying)
-		if(!lying_prev)
+		if(!lying_prev && !cmode)
 			fall(!canstand_involuntary)
 		layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
 	else
@@ -1753,6 +1761,8 @@
 	. = ..()
 	switch(var_name)
 		if("knockdown")
+			SetKnockdown(var_value)
+		if("paralyzed")
 			SetParalyzed(var_value)
 		if("stun")
 			SetStun(var_value)
