@@ -687,7 +687,7 @@
 	desc = "Some outlaws wear these hoods over a leather coif, rumored to protect you from vengeful ghosts by concealing your face."
 	icon_state = "bandithood"
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
 	body_parts_covered = NECK|HAIR|EARS|HEAD
