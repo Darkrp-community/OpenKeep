@@ -110,9 +110,9 @@
 	var/final_pitch = ..()
 	var/pitch_modifier = 0
 	if(STASTR > 10)
-		pitch_modifier -= (STASTR - 10) * 0.05
+		pitch_modifier -= (STASTR - 10) * 0.03
 	else if(STASTR < 10)
-		pitch_modifier += (10 - STASTR) * 0.05
+		pitch_modifier += (10 - STASTR) * 0.03
 	return clamp(final_pitch + pitch_modifier, 0.5, 2)
 
 	
