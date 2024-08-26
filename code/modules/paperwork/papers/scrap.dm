@@ -2,7 +2,7 @@
 	info = "It's easy to smith. Put ores in the smelter. Put ingots on the anvil. Use your tongs to handle ingots. Hit them with the hammer. Quench hot ingots in the barrel (there must be water in it). Steel is an alloy from iron and coal, find the golden ratio"
 
 /obj/item/paper/heartfelt/goal3
-	info = "Establish a diplomatic alliance with the King of Rockhill to strengthen the relationship between Heartfelt and Rockhill."
+	info = "Establish a diplomatic alliance with the Lord of Rockhill to strengthen the relationship between Heartfelt and Rockhill."
 
 /obj/item/paper/heartfelt/goal2
 	info = "Explore the mysteries of isle of Enigma, uncovering its secrets and hidden treasures."

@@ -207,7 +207,7 @@
 							held_confession.bad_type = "A FOLLOWER OF THE DARK SUN"
 							held_confession.antag = "worshiper of" + antag_type
 						if("Peasant Rebel")
-							return // Inquisitors don't care about peasant revolts targeting the King of Rockhill.
+							return // Inquisitors don't care about peasant revolts targeting the Lord of Rockhill.
 						if("Science")
 							held_confession.bad_type = "A DAMNED ANTI-THEIST"
 							held_confession.antag = "worshiper of nothing"

@@ -225,7 +225,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	if(isnull(victim) || !Adjacent(user))
 		return
 
-	var/list/possible_positions = GLOB.noble_positions + GLOB.garrison_positions + GLOB.church_positions + GLOB.serf_positions + GLOB.peasant_positions + GLOB.apprentices_positions + GLOB.allmig_positions - "King"
+	var/list/possible_positions = GLOB.noble_positions + GLOB.garrison_positions + GLOB.church_positions + GLOB.serf_positions + GLOB.peasant_positions + GLOB.apprentices_positions + GLOB.allmig_positions - "Lord"
 	var/new_pos = input(user, "Select their new position", src, null) as anything in possible_positions
 
 	if(isnull(new_pos) || !Adjacent(user))
@@ -236,7 +236,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	if(!SScommunications.can_announce(user))
 		return
 
-	priority_announce("Henceforth, the vassal known as [victim.real_name] shall have the title of [new_pos].", "The King Decrees", 'sound/misc/alert.ogg', "Captain")
+	priority_announce("Henceforth, the vassal known as [victim.real_name] shall have the title of [new_pos].", "The Lord Decrees", 'sound/misc/alert.ogg', "Captain")
 
 /obj/structure/roguemachine/titan/proc/make_announcement(mob/living/user, raw_message)
 	if(!SScommunications.can_announce(user))
@@ -284,13 +284,13 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 		var/used_title = J.title
 		if(user.gender == FEMALE && J.f_title)
 			used_title = J.f_title
-		if(used_title != "King")
+		if(used_title != "Lord")
 			return
 	else
 		return
 	if(raw_message in GLOB.outlawed_players)
 		GLOB.outlawed_players -= raw_message
-		priority_announce("[raw_message] is no longer an outlaw in Rockhill lands.", "The King Decrees", 'sound/misc/alert.ogg', "Captain")
+		priority_announce("[raw_message] is no longer an outlaw in Rockhill lands.", "The Lord Decrees", 'sound/misc/alert.ogg', "Captain")
 		return FALSE
 	var/found = FALSE
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
@@ -299,7 +299,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	if(!found)
 		return FALSE
 	GLOB.outlawed_players += raw_message
-	priority_announce("[raw_message] has been declared an outlaw and must be captured or slain.", "The King Decrees", 'sound/misc/alert.ogg', "Captain")
+	priority_announce("[raw_message] has been declared an outlaw and must be captured or slain.", "The Lord Decrees", 'sound/misc/alert.ogg', "Captain")
 
 /obj/structure/roguemachine/titan/proc/make_law(mob/living/user, raw_message)
 	if(!SScommunications.can_announce(user))

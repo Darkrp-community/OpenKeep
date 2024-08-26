@@ -1,5 +1,5 @@
 /datum/job/roguetown/lady
-	title = "Queen"
+	title = "Lady"
 	flag = LADY
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -12,7 +12,7 @@
 		"Elf",
 		"Half-Elf"
 	)
-	tutorial = "Picked out of your political value rather than likely any form of love, you have become the King's most trusted confidant and likely friend throughout your marriage. Your loyalty and, perhaps, love; will be tested this day. For the daggers that threaten your beloved are as equally pointed at your own throat."
+	tutorial = "Picked out of your political value rather than likely any form of love, you have become the Lord's most trusted confidant and likely friend throughout your marriage. Your loyalty and, perhaps, love; will be tested this day. For the daggers that threaten your beloved are as equally pointed at your own throat."
 
 	outfit = /datum/outfit/job/roguetown/lady
 
@@ -25,12 +25,12 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
-	beltl = /obj/item/keyring/queen
+	beltl = /obj/item/keyring/lady
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	armor = /obj/item/clothing/suit/roguetown/armor/armordress
 	backr = /obj/item/storage/backpack/rogue/satchel
-	if(SSticker.rulertype == "Queen")
+	if(SSticker.rulertype == "Lady")
 		head = /obj/item/clothing/head/roguetown/crown/serpcrown
 		SSroguemachine.crown = head
 		cloak = /obj/item/clothing/cloak/lordcloak
@@ -65,9 +65,9 @@
 
 /datum/job/roguetown/lady/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
-	if(SSticker.rulertype == "Queen")
+	if(SSticker.rulertype == "Lady")
 		SSticker.select_ruler()
 		if(L)
-			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Queen of Rockhill.</span></span></b>")
+			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Lady of Rockhill.</span></span></b>")
 			to_chat(world, "<br>")
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)

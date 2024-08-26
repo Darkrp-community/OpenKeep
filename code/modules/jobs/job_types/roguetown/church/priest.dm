@@ -84,7 +84,7 @@
 	for(var/mob/living/carbon/human/HU in get_step(src, src.dir))
 		if(!HU.mind)
 			continue
-		if(HU.mind.assigned_role == "King")
+		if(HU.mind.assigned_role == "Lord")
 			continue
 		if(!HU.head)
 			continue
@@ -92,22 +92,22 @@
 			continue
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.mind)
-				if(HL.mind.assigned_role == "King")
-					HL.mind.assigned_role = "Ex-King"
-			if(HL.job == "King")
-				HL.job = "Ex-King"
+				if(HL.mind.assigned_role == "Lord")
+					HL.mind.assigned_role = "Ex-Lord"
+			if(HL.job == "Lord")
+				HL.job = "Ex-Lord"
 			if(HL.mind)
-				if(HL.mind.assigned_role == "Queen")
-					HL.mind.assigned_role = "Ex-Queen"
-			if(HL.job == "Queen")
-				HL.job = "Ex-Queen"
+				if(HL.mind.assigned_role == "Lady")
+					HL.mind.assigned_role = "Ex-Lady"
+			if(HL.job == "Lady")
+				HL.job = "Ex-Lady"
 		switch(HU.gender)
 			if("male")
-				HU.mind.assigned_role = "King"
-				HU.job = "King"
+				HU.mind.assigned_role = "Lord"
+				HU.job = "Lord"
 			if("female")
-				HU.mind.assigned_role = "Queen"
-				HU.job = "Queen"
+				HU.mind.assigned_role = "Lady"
+				HU.job = "Lady"
 		SSticker.rulermob = HU
 		var/dispjob = mind.assigned_role
 		GLOB.badomens -= "nolord"

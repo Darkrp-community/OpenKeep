@@ -72,7 +72,7 @@
 	icon_state = "mazekey"
 	lockid = "banditcamp"
 
-/obj/item/roguekey/queen
+/obj/item/roguekey/lady
 	name = "lady key"
 	desc = "The Lady's key."
 	icon_state = "mazekey"

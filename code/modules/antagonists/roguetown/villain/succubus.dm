@@ -52,7 +52,7 @@
 	.=1
 	var/datum/objective/assassinate/kill_objective = new
 	kill_objective.owner = owner
-	var/list/atypes = list("King", "Queen", "Captain", "Priest", "Royal Guard", "Hand", "Prince")
+	var/list/atypes = list("Lord", "Lady", "Captain", "Priest", "Royal Guard", "Hand", "Prince")
 	for(var/X in shuffle(atypes))
 		if(kill_objective.find_target_by_role(X))
 			break
