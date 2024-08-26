@@ -441,7 +441,6 @@
 	name = "cursed soup"
 	description = "Vile smell."
 	color = "#5b2b44"
-	nutriment_factor = 5
 	taste_description = "something truly vile"
 	metabolization_rate = 0.2
 /datum/reagent/yuck/cursed_soup/on_mob_life(mob/living/carbon/M)
