@@ -29,6 +29,18 @@
 	list_reagents = list(/datum/reagent/water = 45) // Fuck you water is a alch-thing.
 	desc = "A bottle filled with water."
 
+/obj/item/reagent_containers/glass/bottle/rogue/strongpoison
+	list_reagents = list(/datum/reagent/strongpoison = 15)
+	desc = "A bottle with a caustic smell."
+
+/obj/item/reagent_containers/glass/bottle/rogue/antidote
+	list_reagents = list(/datum/reagent/medicine/antidote = 45)
+	desc = "A bottle smelling of rotting fruit."
+
+/obj/item/reagent_containers/glass/bottle/rogue/diseasecure
+	list_reagents = list(/datum/reagent/medicine/diseasecure = 45)
+	desc = "A bottle with an earthy scent."
+
 
 //////////////////////////
 /// ALCOHOLIC BOTTLES ///

@@ -29,7 +29,7 @@
 	filling_color = "#FF4500"
 	bitesize = 3
 	foodtype = FRUIT
-	juice_results = list(/datum/reagent/consumable/applejuice = 3)
+	juice_results = list(/datum/reagent/consumable/applejuice = 0)
 	tastes = list("apple" = 1)
 	trash = /obj/item/trash/applecore
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
