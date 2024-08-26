@@ -309,8 +309,8 @@
 //	while (do_after(M, dump_time, TRUE, T, FALSE, CALLBACK(src, PROC_REF(mass_remove_from_storage), T, things, progress)))
 //		stoplag(1)
 //	qdel(progress)
-	var/turf/T = get_step(user, user.dir) // Is there a structure in the way that isn't a chest or table? Can't dump the sack into that
-	for(var/obj/structure/S in T)
+	var/turf/T = get_step(user, user.dir)
+	for(var/obj/structure/S in T) // Is there a structure in the way that isn't a chest or table? Can't dump the sack into that
 		if(S.density && !istype(S, /obj/structure/table) && !istype(S, /obj/structure/closet/crate))
 			to_chat(user, "<span class='warning'>Something in the way.</span>")
 			return
