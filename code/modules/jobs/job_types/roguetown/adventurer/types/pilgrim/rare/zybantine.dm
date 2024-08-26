@@ -21,8 +21,8 @@
 /datum/outfit/job/roguetown/adventurer/zybantine/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/shalal
-	gloves = /obj/item/clothing/gloves/roguetown/fingerless
-	head = /obj/item/clothing/head/roguetown/roguehood/shalal
+	gloves = /obj/item/clothing/gloves/roguetown/leather
+	head = /obj/item/clothing/head/roguetown/crown/circlet
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates
 	belt = /obj/item/storage/belt/rogue/leather/shalal
 	beltl = /obj/item/rogueweapon/sword/long/marlin
@@ -30,12 +30,12 @@
 	backr = /obj/item/storage/backpack/rogue/satchel
 	id = /obj/item/clothing/ring/gold/guild_mercator
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/red
-	pants = /obj/item/clothing/under/roguetown/tights/sailor
+	pants = /obj/item/clothing/under/roguetown/trou/leather
 	neck = /obj/item/clothing/neck/roguetown/shalal
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/veryrich)
 	if(H.gender == FEMALE)
-		armor = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/black
-		shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dark
+		armor = /obj/item/clothing/suit/roguetown/armor/silkcoat
+		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/black
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
