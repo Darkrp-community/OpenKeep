@@ -190,7 +190,7 @@
 			if(mind)
 				attacker_skill += mind.get_skill_level(/datum/skill/misc/athletics) * 10
 			if(L.mind)
-				defense_skill += (L.mind.get_skill_level(/datum/skill/misc/athletics) + mind.get_skill_level(/datum/skill/combat/unarmed)) * 10
+				defense_skill += L.mind.get_skill_level(/datum/skill/misc/athletics) * 10
 
 			tacklechance = clamp(tacklechance, 10, 90)
 			if(prob(tacklechance))
