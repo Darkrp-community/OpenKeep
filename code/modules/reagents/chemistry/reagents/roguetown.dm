@@ -31,7 +31,7 @@
 	..()
 	return TRUE
 
-/datum.reagent/blastpowder
+/datum/reagent/blastpowder
 	name = "blastpowder"
 	description = "."
 	color = "#6b0000"

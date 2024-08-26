@@ -320,7 +320,7 @@
 	// Define the available items, their costs, and max purchases
 	var/list/items = list(
 		"Puffer Pistol" = list(
-			list(type = /obj/item/gun/ballistic/revolver/grenadelauncher/flintlock/pistol, count = 1),
+			list(type = /obj/item/gun/ballistic/revolver/grenadelauncher/pistol, count = 1),
 			list(type = /obj/item/storage/belt/rogue/pouch/bullets, count = 1),
 			cost = 1,
 			max_purchases = 1

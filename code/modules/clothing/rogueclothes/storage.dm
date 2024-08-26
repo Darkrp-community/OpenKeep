@@ -191,9 +191,9 @@
 
 /obj/item/storage/belt/rogue/pouch/bullets/Initialize()
 	. = ..()
-	new /obj/projectile/bullet/reusable/bullet
-	new /obj/projectile/bullet/reusable/bullet
-	new /obj/projectile/bullet/reusable/bullet
+	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
+	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
+	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
 
 /obj/item/storage/backpack/rogue/satchel
 	name = "satchel"
