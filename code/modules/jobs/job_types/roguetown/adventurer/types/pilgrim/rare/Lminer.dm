@@ -13,7 +13,7 @@
 
 /datum/outfit/job/roguetown/adventurer/minermaster/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/armingcap
+	head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
 	pants = /obj/item/clothing/under/roguetown/trou
 	armor = /obj/item/clothing/suit/roguetown/armor/workervest
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
@@ -27,7 +27,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
