@@ -492,3 +492,27 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 		H.put_in_hands(contained)
 		contained = null
 		qdel(src)
+
+//flasks
+
+///obj/item/reagent_containers/glass/bottle/flask
+// 	name = "copper flask"
+//	desc = "A simple copper flask with a tap."
+//	icon = 'icons/roguetown/items/cooking.dmi'
+//	icon_state = "cflask"
+//	amount_per_transfer_from_this = 6
+//	possible_transfer_amounts = list(6)
+//	volume = 45
+//	fill_icon_thresholds = list(0, 25, 50, 75, 100)
+//	dropshrink = 0.5
+//	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
+//	obj_flags = CAN_BE_HIT
+//	spillable = FALSE
+//	var/closed = TRUE
+//	w_class = WEIGHT_CLASS_NORMAL
+//	drinksounds = list('sound/items/drink_bottle (1).ogg','sound/items/drink_bottle (2).ogg')
+//	fillsounds = list('sound/items/fillcup.ogg')
+//	poursounds = list('sound/items/fillbottle.ogg')
+//	experimental_onhip = TRUE
+//	if(closed)
+//		add_overlay("[icon_state]tap")
