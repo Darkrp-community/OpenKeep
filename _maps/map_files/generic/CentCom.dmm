@@ -490,7 +490,7 @@
 "Mc" = (/obj/structure/rack/rogue,/obj/item/clothing/head/roguetown/helmet/leather/volfhelm,/obj/item/clothing/head/roguetown/helmet/leather/volfhelm,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue/indoors/bandit_lair)
 "Mk" = (/obj/structure/rack/rogue,/obj/item/rogueweapon/mace,/turf/open/floor/rogue/herringbone,/area/rogue/indoors/vampire_manor)
 "Mm" = (/obj/structure/table/wood/plain/alt,/turf/open/floor/rogue/woodturned,/area/rogue)
-"Mn" = (/obj/structure/mineral_door/wood/window,/turf/closed/wall/mineral/rogue/decowood,/area/rogue)
+"Mn" = (/obj/structure/mineral_door/wood/window,/turf/open/floor/rogue/tile,/area/rogue)
 "Ms" = (/obj/structure/mineral_door/swing_door,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue)
 "MF" = (/obj/structure/giantfur{pixel_y = -16},/turf/open/floor/rogue/ruinedwood/turned/darker,/area/rogue/indoors/bandit_lair)
 "MM" = (/obj/structure/mineral_door/wood{lockid = "mansionvampire"},/turf/open/floor/rogue/herringbone,/area/rogue/indoors/vampire_manor)
