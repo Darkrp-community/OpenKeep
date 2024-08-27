@@ -509,7 +509,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 2,
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice = 1)
-	result = list(/obj/item/reagent_containers/food/snacks/rogue/handpie, 
+	result = list(/obj/item/reagent_containers/food/snacks/rogue/handpie,
 				/obj/item/reagent_containers/food/snacks/rogue/handpie)
 
 /obj/item/reagent_containers/food/snacks/rogue/handpie
@@ -535,7 +535,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/cheese = 2,
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice = 1)
-	result = list(/obj/item/reagent_containers/food/snacks/rogue/chandpie, 
+	result = list(/obj/item/reagent_containers/food/snacks/rogue/chandpie,
 				/obj/item/reagent_containers/food/snacks/rogue/chandpie)
 
 /obj/item/reagent_containers/food/snacks/rogue/chandpie
@@ -561,7 +561,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet = 2,
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice = 1)
-	result = list(/obj/item/reagent_containers/food/snacks/rogue/chandpie, 
+	result = list(/obj/item/reagent_containers/food/snacks/rogue/chandpie,
 					/obj/item/reagent_containers/food/snacks/rogue/chandpie)
 
 /obj/item/reagent_containers/food/snacks/rogue/chhandpie
@@ -587,7 +587,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/apple = 2,
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice = 1)
-	result = list(/obj/item/reagent_containers/food/snacks/rogue/ahandpie, 
+	result = list(/obj/item/reagent_containers/food/snacks/rogue/ahandpie,
 				/obj/item/reagent_containers/food/snacks/rogue/ahandpie)
 
 /obj/item/reagent_containers/food/snacks/rogue/ahandpie
@@ -613,7 +613,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 2,
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice = 1)
-	result = list(/obj/item/reagent_containers/food/snacks/rogue/bhandpie, 
+	result = list(/obj/item/reagent_containers/food/snacks/rogue/bhandpie,
 				/obj/item/reagent_containers/food/snacks/rogue/bhandpie)
 
 /obj/item/reagent_containers/food/snacks/rogue/bhandpie
@@ -632,3 +632,4 @@
 	foodtype = GRAIN | SUGAR
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	tastes = list("baked dough with tart berries" = 1)
+

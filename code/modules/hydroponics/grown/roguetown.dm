@@ -187,3 +187,4 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/voddena
 	rotprocess = null
 	seed = /obj/item/seeds/potato
+
