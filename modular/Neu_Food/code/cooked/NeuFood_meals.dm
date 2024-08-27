@@ -36,7 +36,7 @@
 	name = "onion steak"
 	desc = "Roasted flesh garnished with tender fried onions. Fragrant and slathered with juices of both ingredients to a perfect mouth-watering sauce."
 	icon_state = "onionsteak"
-	tastes = list("steak" = 1, "onions" = 1)
+	tastes = list("roasted meat" = 1, "caramelized onions" = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+3)
 	foodtype = MEAT
 	warming = 5 MINUTES
@@ -185,7 +185,7 @@
 /*	.................   Wiener & potato & onions   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions
 	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
-	tastes = list("savory sausage" = 1, "potato" = 1)
+	tastes = list("savory sausage" = 2, "potato" = 1, "caramelized onion" = 1)
 	name = "wiener meal"
 	desc = "Stout and nourishing. Potatos and onions allied with a fatty sausage"
 	icon_state = "wpotonion"
@@ -344,7 +344,7 @@
 /*	.................   Frybird & Tato   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/frybirdtato
 	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
-	tastes = list("frybird" = 1, "tato" = 1)
+	tastes = list("frybird" = 1, "warm tato" = 1)
 	name = "frybird with a tato"
 	desc = "Hearty, comforting and rich - Alleged favorite dish of Ravox."
 	icon_state = "frybirdtato"
@@ -364,6 +364,59 @@
 	rotprocess = SHELFLIFE_LONG
 
 
+
+/*-----------\
+| Royal meal |
+\-----------*/
+
+/*	.................   Royal Truffles   ................... */
+/obj/item/reagent_containers/food/snacks/rogue/royaltruffles
+	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_FILLING+SNACK_DECENT)
+	tastes = list("salty bacon" = 1, "divine truffles" = 1)
+	name = "royal truffles"
+	desc = "The height of decadence, a precious truffle pig, turned into a amusing meal, served on a bed of its beloved golden truffles."
+	icon_state = "royaltruffles"
+	foodtype = VEGETABLES | MEAT
+	warming = 3 MINUTES
+	rotprocess = SHELFLIFE_LONG
+	eat_effect = /datum/status_effect/buff/foodbuff
+/obj/item/reagent_containers/food/snacks/rogue/royaltruffles/plated
+	icon_state = "royaltruffles_plated"
+	item_state = "plate_food"
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
+	experimental_inhand = FALSE
+	w_class = WEIGHT_CLASS_NORMAL
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	trash = /obj/item/cooking/platter
+	rotprocess = SHELFLIFE_EXTREME
+
+/*	.................   Royal Truffles (Poisoned) ............ */
+/obj/item/reagent_containers/food/snacks/rogue/royaltruffles_poisoned
+	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_FILLING,  /datum/reagent/berrypoison = 10)
+	tastes = list("salty bacon" = 1, "mushrooms" = 1)
+	name = "royal truffles"
+	desc = "The height of decadence, a precious truffle pig, turned into a amusing meal, served on a bed of its beloved golden truffles."
+	icon_state = "royaltruffles"
+	foodtype = VEGETABLES | MEAT
+	warming = 3 MINUTES
+	rotprocess = SHELFLIFE_LONG
+	eat_effect = /datum/status_effect/buff/foodbuff
+/obj/item/reagent_containers/food/snacks/rogue/royaltruffles_poisoned/plated
+	icon_state = "royaltruffles_plated"
+	item_state = "plate_food"
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
+	experimental_inhand = FALSE
+	w_class = WEIGHT_CLASS_NORMAL
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	trash = /obj/item/cooking/platter
+	rotprocess = SHELFLIFE_EXTREME
+
+
+/*------------\
+| Beggar meal |
+\------------*/
 
 /*	.................   Cooked rat   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/friedrat/plated

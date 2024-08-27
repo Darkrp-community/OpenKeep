@@ -409,14 +409,17 @@
 	color = "#5f4a0e"
 	taste_description = "rich truffles"
 
-/datum/reagent/consumable/soup/stew/gross // barely edible, but beggars eat it without issue
+/datum/reagent/consumable/soup/stew/gross // barely edible, but beggars eat it without issue, even getting a little relief
 	name = "beggars stew"
 	color = "#3b4537"
 	nutriment_factor = 8
 	taste_description = "something gross"
 	metabolization_rate = 0.3
 /datum/reagent/consumable/soup/stew/gross/on_mob_life(mob/living/carbon/M)
-	if(M.mind.assigned_role == "Beggar")
+	if(M.mind.assigned_role == "Beggar") // beggars gets revitalized, a little
+		M.adjustBruteLoss(-0.1*REM, 0)
+		M.adjustFireLoss(-0.1*REM, 0)
+		M.rogstam_add(2)
 		return
 	if(HAS_TRAIT(M, TRAIT_NASTY_EATER ))
 		return
@@ -484,8 +487,8 @@
 	var/found_table = locate(/obj/structure/table) in (loc)
 	var/obj/item/reagent_containers/R = I
 	if(user.mind)
-		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
+		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(!istype(R) || (water_added))
 		return ..()
 	if(isturf(loc)&& (!found_table))
@@ -697,6 +700,25 @@
 				qdel(src)
 		else
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/royaltruffles))
+		if(isturf(loc)&& (found_table))
+			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
+			if(do_after(user,2 SECONDS, target = src))
+				new /obj/item/reagent_containers/food/snacks/rogue/royaltruffles/plated(loc)
+				qdel(I)
+				qdel(src)
+		else
+			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/royaltruffles_poisoned))
+		if(isturf(loc)&& (found_table))
+			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
+			if(do_after(user,2 SECONDS, target = src))
+				new /obj/item/reagent_containers/food/snacks/rogue/royaltruffles_poisoned/plated(loc)
+				qdel(I)
+				qdel(src)
+		else
+			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
+
 	else
 		return ..()	
 
