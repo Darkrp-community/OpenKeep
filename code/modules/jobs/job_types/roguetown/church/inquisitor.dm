@@ -88,6 +88,7 @@
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_ARCANE_KNOWLEDGE, TRAIT_GENERIC)
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 
 /mob/living/carbon/human/proc/torture_victim()

@@ -27,7 +27,6 @@
 
 /datum/outfit/job/roguetown/magician/pre_equip(mob/living/carbon/human/H)
 	..()
-	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
 	head = /obj/item/clothing/head/roguetown/wizhat/gen
 	backr = /obj/item/storage/backpack/rogue/satchel
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/black
@@ -47,6 +46,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
+	ADD_TRAIT(H, TRAIT_ARCANE_KNOWLEDGE, type)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	H.virginity = TRUE
 	H.change_stat("strength", -2)

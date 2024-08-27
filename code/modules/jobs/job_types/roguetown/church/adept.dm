@@ -61,6 +61,7 @@
 		H.change_stat("speed", 2)
 		H.change_stat("perception", 1)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_ARCANE_KNOWLEDGE, TRAIT_GENERIC)
 		if(H.mind.has_antag_datum(/datum/antagonist))
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()

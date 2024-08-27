@@ -32,6 +32,7 @@
 #define TRAIT_LEECHIMMUNE				"Unleechable" //leeches wont attach in bog squares
 #define TRAIT_ASSASSIN					"Assassin Training" //used for the assassin drifter's unique mechanics.
 #define TRAIT_BARDIC_TRAINING			"Bardic Training"
+#define TRAIT_ARCANE_KNOWLEDGE			"Arcane Knowledge"
 
 #define TRAIT_MISSING_NOSE "Missing Nose" //halved stamina regeneration
 #define TRAIT_DISFIGURED "Disfigured"
@@ -79,7 +80,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_ASSASSIN = "My soul has been tainted by the god of murder.",
 	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
 	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
-	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments."
+	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments.",
+	TRAIT_ARCANE_KNOWLEDGE = "I can accurately identify creachers and items of the occult."
 	))
 
 // trait accessor defines
