@@ -774,6 +774,14 @@
 /area/rogue/indoors/vampire_manor
 	name = "lair (Vampire Lord)"
 
+/area/rogue/indoors/inhumen_camp
+	name = "lair (Inhumen)"
+/area/rogue/outdoors/bog/inhumen_camp
+	name = "dangerous area (inhumen camp)"
+	droning_sound = 'sound/music/area/decap.ogg'
+	first_time_text = "THE DEEP BOG"
+
+
 /*	..................   Floors   ................... */
 /turf/open/floor/rogue/ruinedwood/darker
 	color = "#d9c9b0"

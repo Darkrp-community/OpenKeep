@@ -62,7 +62,7 @@
 
 /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms
 	name = "truffles"
-	icon = 'icons/obj/hydroponics/harvest.dmi'
+	icon = 'modular/Creechers/icons/piggie.dmi'
 	icon_state = "mushroom1_full"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms/cooked
