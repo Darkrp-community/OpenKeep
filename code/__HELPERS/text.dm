@@ -14,6 +14,15 @@
 	return CONFIG_GET(string/feedback_tableprefix) + table
 
 /*
+ * SQL sanitization
+ */
+
+// Run all strings to be used in an SQL query through this proc first to properly escape out injection attempts.
+/proc/sanitizeSQL(var/t as text)
+	var/sqltext = GLOB.dbcon.Quote(t);
+	return copytext_char(sqltext, 2, length(sqltext));//Quote() adds quotes around input, we already do that
+
+/*
  * Text sanitization
  */
 
