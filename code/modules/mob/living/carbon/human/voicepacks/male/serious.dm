@@ -1,0 +1,36 @@
+/datum/voicepack/male/serious/get_sound(soundin, modifiers)
+	var/used
+	switch(modifiers)
+		if("old")
+			used = getmold(soundin)
+		if("silenced")
+			used = getmsilenced(soundin)
+	if(!used)
+		switch(soundin)
+			if("chuckle")
+				used = 'sound/vo/male/serious/chuckle.ogg'
+			if("groan")
+				used = 'sound/vo/male/serious/groan.ogg'
+			if("huh")
+				used = 'sound/vo/male/serious/huh.ogg'
+			if("laugh")
+				used = list('sound/vo/male/serious/laugh.ogg','sound/vo/male/serious/laugh (2).ogg','sound/vo/male/serious/laugh (3).ogg')
+			if("leap")
+				used = 'sound/vo/male/serious/leap.ogg'
+			if("pain")
+				used = list('sound/vo/male/serious/pain.ogg','sound/vo/male/serious/pain (2).ogg','sound/vo/male/serious/pain (3).ogg','sound/vo/male/serious/pain (4).ogg')
+			if("paincrit")
+				used = list('sound/vo/male/serious/paincrit.ogg','sound/vo/male/serious/paincrit (2).ogg')
+			if("painscream")
+				used = list('sound/vo/male/serious/painscream.ogg','sound/vo/male/serious/painscream (2).ogg')
+			if("rage")
+				used = list('sound/vo/male/serious/rage.ogg','sound/vo/male/serious/rage (2).ogg','sound/vo/male/serious/rage (3).ogg')
+			if("scream")
+				used = list('sound/vo/male/serious/scream.ogg','sound/vo/male/serious/scream (2).ogg')
+			if("sigh")
+				used = list('sound/vo/male/serious/sigh.ogg','sound/vo/male/serious/sigh (2).ogg')
+			if("whistle")
+				used = list('sound/vo/male/serious/whistle.ogg','sound/vo/male/serious/whistle (2).ogg')
+	if(!used)
+		used = ..(soundin)
+	return used
