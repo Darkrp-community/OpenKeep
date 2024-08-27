@@ -564,7 +564,7 @@
 	result = /obj/item/reagent_containers/food/snacks/grown/roguewort
 
 /obj/item/reagent_containers/food/snacks/grown/roguehops
-	name = "swamp bitters"
+	name = "bog bitters"
 	desc = ""
 	icon_state = "swampweedd" //placeholder
 	eat_effect = /datum/status_effect/debuff/uncookedfood
