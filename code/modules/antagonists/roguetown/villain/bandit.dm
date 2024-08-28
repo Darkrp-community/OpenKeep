@@ -114,10 +114,8 @@
 					head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 				if("Skullcap")
 					head = /obj/item/clothing/head/roguetown/helmet/skullcap
-					beltl = /obj/item/clothing/head/roguetown/helmet/leather/bandithood
 				if("Barbute") // big roller
 					head = /obj/item/clothing/head/roguetown/helmet/heavy/rust
-					beltl = /obj/item/clothing/head/roguetown/helmet/leather/bandithood
 
 			var/armor2choose = pickweight(list("Rusty halfplate" = 2, "Chainmail" = 1))
 			switch(armor2choose)
@@ -165,15 +163,21 @@
 			beltr = /obj/item/rogueweapon/huntingknife
 			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 			beltl = /obj/item/quiver/arrows
-			head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 			mask = /obj/item/clothing/mask/rogue/shepherd/rag
+
+			switch(pick(1,2))
+				if (1)
+					head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
+				if (2)
+					head = /obj/item/clothing/head/roguetown/roguehood
+					neck = /obj/item/clothing/neck/roguetown/coif
 
 			if(H.age == AGE_OLD) //old poachers are better at their jobs
 				H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
 
-			switch(pick(1,3))
+			switch(pick(1,2,3))
 				if (1)
 					beltr = /obj/item/rogueweapon/huntingknife
 				if (2)
@@ -201,12 +205,15 @@
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			pants = /obj/item/clothing/under/roguetown/trou/leather
 			beltl = /obj/item/clothing/mask/rogue/shepherd/rag
+			neck = /obj/item/clothing/neck/roguetown/coif
 
-			switch(pick(1,2))
+			switch(pick(1,2,3))
 				if (1)
-					head = /obj/item/clothing/head/roguetown/helmet/leather/bandithood
+					head = /obj/item/clothing/head/roguetown/helmet/leather/conical
 				if (2)
 					head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
+				if (3)
+					head = /obj/item/clothing/neck/roguetown/chaincoif/iron
 
 			switch(pick(1,2))
 				if (1)
@@ -218,7 +225,7 @@
 				armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 				mask = /obj/item/clothing/mask/rogue/facemask
 
-			switch(pick(1,4))
+			switch(pick(1,2,3,4))
 				if (1)
 					beltr = /obj/item/rogueweapon/sword/iron
 				if (2)
@@ -243,7 +250,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/bandit_volfhelm)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/bandit_hood)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cult_hood)
 
 	// The commmon gear shared between all bandits
 	belt = /obj/item/storage/belt/rogue/leather/bandit
@@ -310,10 +317,10 @@
 	result = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	category = CAT_NONE
 
-/datum/crafting_recipe/bandit_hood
-	name = "(Bandit) Padded Hood"
+/datum/crafting_recipe/cult_hood
+	name = "(Cult) Ominous Hood"
 	time = 4 SECONDS
 	reqs = list(/obj/item/natural/hide = 1)
-	result = /obj/item/clothing/head/roguetown/helmet/leather/bandithood
+	result = /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous
 	category = CAT_NONE
 

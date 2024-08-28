@@ -590,6 +590,14 @@
 	density = FALSE
 	pixel_y = 24
 
+/obj/structure/fluff/walldeco/skullspike // for ground really
+	icon = 'modular/Mapping/icons/decoration.dmi'
+	icon_state = "skullspike"
+	plane = -1
+	layer = ABOVE_MOB_LAYER
+	pixel_x = 8
+	pixel_y = 24
+
 /*	..................   Red brick Walls   ................... */
 /turf/closed/wall/mineral/rogue/stonebrick/reddish
 	color = "#e0b7af"
@@ -774,10 +782,8 @@
 /area/rogue/indoors/vampire_manor
 	name = "lair (Vampire Lord)"
 
-/area/rogue/indoors/inhumen_camp
-	name = "lair (Inhumen)"
 /area/rogue/outdoors/bog/inhumen_camp
-	name = "dangerous area (inhumen camp)"
+	name = "lair (Inhumen)"
 	droning_sound = 'sound/music/area/decap.ogg'
 	first_time_text = "THE DEEP BOG"
 
