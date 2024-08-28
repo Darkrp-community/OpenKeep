@@ -1040,6 +1040,14 @@
 	if(stat)
 		return
 	surrendering = 1
+	var/am_abyssariad = FALSE
+	if(ishuman(src))
+		var/mob/living/carbon/human/C = src
+		if(C.dna.species?.id == "abyssariad")
+			am_abyssariad = TRUE
+	if(am_abyssariad == TRUE)
+		to_chat(src, "<span class='warning'>It is of absolute dishonor to submit in non-spar battles. I'd rather disembowel myself than bring dishonor to my identity.</span>")
+		return
 	if(alert(src, "Yield in surrender?",,"YES","NO") == "YES")
 		changeNext_move(CLICK_CD_EXHAUSTED)
 		var/image/flaggy = image('icons/effects/effects.dmi',src,"surrender",ABOVE_MOB_LAYER)
@@ -1052,7 +1060,6 @@
 		playsound(src, 'sound/misc/surrender.ogg', 100, FALSE, -1)
 		sleep(150)
 	surrendering = 0
-
 
 /mob/proc/stop_attack(message = FALSE)
 	if(atkswinging)

@@ -338,3 +338,22 @@
 	smoke.effect_type = smoke_type
 	smoke.set_up(range, location)
 	smoke.start()
+
+/////////////////////////////////////////////
+// kaizoku stupid smoke
+/////////////////////////////////////////////
+
+/obj/effect/particle_effect/smoke/bad/stupid
+	lifetime = 20
+	color = "#1b802c"
+	opaque = FALSE
+
+/obj/effect/particle_effect/smoke/bad/stupid/smoke_mob(mob/living/carbon/M)
+	if(..())
+		M.add_nausea(4)
+		M.adjustToxLoss(5, 0)
+		M.emote("cough")
+		return 1
+
+/datum/effect_system/smoke_spread/bad/stupid
+	effect_type = /obj/effect/particle_effect/smoke/bad/stupid

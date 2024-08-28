@@ -1,9 +1,9 @@
 /datum/advclass/combat/heartfelthand
 	name = "Hand of Heartfelt"
 	tutorial = "You serve your lord as the royal hand, taking care of all diplomatic actions in your relm. \
-	maybe one day you will become lord too."
-	allowed_sexes = list(MALE)
-	allowed_races = list("Humen")
+	maybe one day you will become lord too, if you and your people manage to recover what is lost."
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list("Humen, Kitsune, Oni, Tengu")
 	outfit = /datum/outfit/job/roguetown/adventurer/heartfelthand
 	maximum_possible_slots = 1
 	min_pq = 1
@@ -41,3 +41,4 @@
 		H.change_stat("intelligence", 3)
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)  //Cultural Trait. Must not be considered a 'buff' or 'debuff'.

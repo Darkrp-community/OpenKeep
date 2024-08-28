@@ -24,6 +24,8 @@
 	var/craftdiff = 1
 	var/sellprice = 0
 	//crafting diff, every diff removes 25% chance to craft
+	var/req_kaizoku = FALSE
+	var/req_antikaizoku = FALSE
 
 /datum/crafting_recipe/pin_removal
 	name = "Pin Removal"

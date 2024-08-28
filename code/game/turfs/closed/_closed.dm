@@ -150,6 +150,10 @@
 			if(L.mind)
 				var/myskill = L.mind.get_skill_level(/datum/skill/misc/climbing)
 				var/obj/structure/table/TA = locate() in L.loc
+				var/obj/item/offhand = user.get_inactive_held_item()
+				if(offhand)
+					if(istype(offhand, /obj/item/rogueweapon/huntingknife/idagger/kunai))
+						myskill += 3
 				if(TA)
 					myskill += 1
 				else

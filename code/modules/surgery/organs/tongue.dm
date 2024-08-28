@@ -17,7 +17,8 @@
 		/datum/language/zybantine,
 		/datum/language/celestial,
 		/datum/language/hellspeak,
-		/datum/language/beast
+		/datum/language/beast,
+		/datum/language/abyssal
 	))
 
 /obj/item/organ/tongue/Initialize(mapload)
@@ -236,3 +237,28 @@
 		else
 			new_message += message[i]
 	speech_args[SPEECH_MESSAGE] = new_message
+
+/obj/item/organ/tongue/kitsune
+	name = "kitsune tongue"
+	desc = "The tongue that inwardly bends the moldable kitsune skull into a Glasgow smile, or other shapes depending on their branch."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "kitsune_tongue"
+	slot = ORGAN_SLOT_TONGUE  // Assuming there's a slot for this
+	var/tongue_type = "None"  // Variable for tracking tongue type
+
+/obj/item/organ/tongue/kitsune/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(istype(H))
+		// Add the tongue mutation to the body parts
+		if(!("kitsune_tongue" in H.dna.species.mutant_bodyparts))
+			H.dna.species.mutant_bodyparts |= "kitsune_tongue"
+			H.dna.features["kitsune_tongue"] = tongue_type
+			H.update_body()
+
+/obj/item/organ/tongue/kitsune/Remove(mob/living/carbon/human/H, special = 0)
+	..()
+	if(istype(H))
+		// Remove the tongue mutation from the body parts
+		H.dna.features["kitsune_tongue"] = "None"
+		H.dna.species.mutant_bodyparts -= "kitsune_tongue"
+		H.update_body()

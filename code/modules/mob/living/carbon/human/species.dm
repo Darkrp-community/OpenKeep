@@ -1053,10 +1053,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else if ("tail_lizard" in mutant_bodyparts)
 			bodyparts_to_add -= "waggingtail_lizard"
 
+	if("animatedkitsune_tongue" in mutant_bodyparts)
+		if(H.wear_armor && (H.wear_armor.flags_inv & HIDEJUMPSUIT))
+			bodyparts_to_add -= "animatedkitsune_tongue"
+		else if ("kitsune_tongue" in mutant_bodyparts)
+			bodyparts_to_add -= "animatedkitsune_tongue"
+
+		if(H.wear_armor && (H.wear_armor.flags_inv & HIDEJUMPSUIT))
+			bodyparts_to_add -= "snout_open"
+
 	if("tail_human" in mutant_bodyparts)
 		if(H.wear_armor && (H.wear_armor.flags_inv & HIDEJUMPSUIT))
 			bodyparts_to_add -= "tail_human"
-
 
 	if("waggingtail_human" in mutant_bodyparts)
 		if(H.wear_armor && (H.wear_armor.flags_inv & HIDEJUMPSUIT))
@@ -1159,6 +1167,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.tails_list_lizard[H.dna.features["tail_lizard"]]
 				if("waggingtail_lizard")
 					S = GLOB.animated_tails_list_lizard[H.dna.features["tail_lizard"]]
+				if("kitsune_tongue")
+					S = GLOB.tails_list_lizard[H.dna.features["kitsue_tongue"]]
+				if("animatedkitsune_tongue")
+					S = GLOB.animated_tails_list_lizard[H.dna.features["animatedkitsune_tongue"]]
 				if("tail_human")
 					S = GLOB.tails_list_human[H.dna.features["tail_human"]]
 				if("waggingtail_human")
@@ -1199,6 +1211,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				bodypart = "tail"
 			else if(bodypart == "waggingtail_lizard" || bodypart == "waggingtail_human")
 				bodypart = "waggingtail"
+
+			if(bodypart == "kitsune_tongue" || bodypart == "tongue")
+				bodypart = "tongue"
+			else if(bodypart == "animatedkitsune_tongue" || bodypart == "animatedkitsune_tongue")
+				bodypart = "animatedkitsune"
 
 			if(S.gender_specific)
 				accessory_overlay.icon_state = "[g]_[bodypart]_[S.icon_state]_[layertext]"
@@ -2867,3 +2884,17 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/modifier = -distance
 	if(!prob(STASPD+skill_modifier+modifier))
 		Paralyze(15)
+
+////////////////
+//Abyssariad: Kitsune Jaw//
+////////////////
+
+/datum/species/proc/can_open_eldritch(mob/living/carbon/human/H)
+	return FALSE
+
+/datum/species/proc/is_eldritch_open(mob/living/carbon/human/H)
+	return FALSE
+
+/datum/species/proc/start_eldritch(mob/living/carbon/human/H)
+
+/datum/species/proc/stop_eldritch(mob/living/carbon/human/H)

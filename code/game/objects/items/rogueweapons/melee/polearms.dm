@@ -395,3 +395,142 @@
 	icon_state = "bronzespear_winged"
 	wdefense = 5
 	sellprice = 150 // A noble collector would love to get his/her hands on one of these spears
+
+///////////////////////////////////////////////////////////////////
+// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
+// If the usage is desired, ask monochrome9090 for permission.   //
+// Respect the artists's will, COMMISSION them instead.          //
+// This is solely for SPRITES. The code is free for the taking.	 //
+///////////////////////////////////////////////////////////////////
+
+/obj/item/rogueweapon/mancatcher
+	force = 10
+	force_wielded = 20
+	possible_item_intents = list(SPEAR_BASH)
+	gripped_intents = list(SPEAR_BASH,/datum/intent/spear/thrust/mancatcher)
+	name = "sasumata"
+	desc = "A unique polearm featuring a spring-action pincer on the end, lined with spikes designed to cause extreme pain, rather than extreme injury. Referred to as a man-catcher in the Humen tongue, it is a favored tool of slavers and bounty-hunters."
+	icon_state = "sasumata"
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
+	wlength = WLENGTH_GREAT
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	blade_dulling = DULLING_BASHCHOP
+	walking_stick = TRUE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	max_blade_int = 120
+	max_integrity = 200
+	wdefense = 5
+	bigboy = TRUE
+	gripsprite = TRUE
+	associated_skill = /datum/skill/combat/polearms
+	embedding = list(
+		"embed_chance" = 75,
+		"embedded_pain_multiplier" = 10,
+		"embedded_fall_chance" = 0,
+	)
+
+/datum/intent/spear/thrust/mancatcher
+	name = "grabbing thrust"
+	blade_class = BCLASS_STAB
+	attack_verb = list("stabs")
+	animname = "grab"
+	icon_state = "ingrab"
+	reach = 2
+	chargetime = 10
+	warnie = "mobwarning"
+	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
+	damfactor = 0.5
+	candodge = FALSE
+	penfactor = 100
+	swingdelay = 1
+	misscost = 10
+
+/obj/item/rogueweapon/spear/yari
+	name = "su yari"
+	desc = "A long, straight-headed spear of Abyssariad design, often used by sea raiders to fend off light cavalry on in-land offensives."
+	icon_state = "suyari"
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
+	force = 10
+	force_wielded = 30
+	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, /datum/intent/axe/chop, SPEAR_BASH)
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
+	wlength = WLENGTH_GREAT
+	w_class = WEIGHT_CLASS_BULKY
+	minstr = 8
+	max_blade_int = 100
+	max_integrity = 450
+	smeltresult = /obj/item/ingot/steel
+	associated_skill = /datum/skill/combat/polearms
+	dropshrink = 0.8
+	blade_dulling = DULLING_BASHCHOP
+	walking_stick = TRUE
+	wdefense = 4
+
+/obj/item/rogueweapon/spear/yari/katakama
+	name = "katakama yari"
+	desc = "An evolution of the su yari, recognizable for a single scythe-like tang perpendicular to the main point that allows for better defense against the likes of naginata."
+	icon_state = "katakamayari"
+	wdefense = 6
+
+/obj/item/rogueweapon/spear/yari/jumonji
+	name = "jumonji yari"
+	desc = "The design of the katakama yari taken to its logical conclusion, the jumonji yari features an elongated tang on each side that is the same length as the forward point. There is no polearm that offers better defense."
+	icon_state = "jumonjiyari"
+	wdefense = 8
+
+/obj/item/rogueweapon/halberd/bardiche/naginata
+	name = "naginata"
+	desc = "Its earliest form being a tachi blade mounted upon a long wooden pole, the naginata was the first polearm to come into widespread use by the Abyssariad, who developed the weapon in order to better combat Humen and Elven cavalry."
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
+	icon_state = "naginata"
+	smeltresult = /obj/item/ingot/iron
+	dropshrink = 0.8
+
+
+/obj/item/rogueweapon/halberd/bardiche/naginata/tsukushi //When smithed, make two instead of one.
+	name = "tsukushi naginata"
+	desc = "A cheaper, easier to construct Iron Naginata with a blade held by its guard instead of its tang. Likely developed from a scythe, the blade is easily found on poor, wandering monks."
+	force = 15
+	force_wielded = 25
+	icon_state = "surplusnaginata"
+	smeltresult = /obj/item/ingot/iron
+	dropshrink = 0.8
+	wdefense = 4
+
+/obj/item/rogueweapon/halberd/bardiche/naginata/bisento
+	name = "bisento"
+	desc = "The Bisento is the direct evolution of the old, outdated Champion Guandao. Akin to a large cleaver or a broad axe."
+	force = 10
+	force_wielded = 40
+	icon_state = "bisento"
+	smeltresult = /obj/item/ingot/steel
+	dropshrink = 0.8
+	wdefense = 4
+
+/obj/item/rogueweapon/spear/obsidian
+	force = 15
+	force_wielded = 25
+	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
+	name = "obsidian spear"
+	desc = "A spear with a surprisingly sharp edge from vulcanic glass. Used by Kappa tribes."
+	icon_state = "obsidian_spear"
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	max_blade_int = 100
+	max_integrity = 240
+	minstr = 6
+	smeltresult = /obj/item/ash

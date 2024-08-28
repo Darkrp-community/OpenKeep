@@ -405,3 +405,44 @@
 	wdefense = 3
 	smeltresult = /obj/item/ingot/copper
 	sellprice = 10
+
+
+///////////////////////////////////////////////////////////////////
+// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
+// If the usage is desired, ask monochrome9090 for permission.   //
+// Respect the artists's will, COMMISSION them instead.          //
+// This is solely for SPRITES. The code is free for the taking.	 //
+///////////////////////////////////////////////////////////////////
+
+/obj/item/rogueweapon/huntingknife/idagger/kunai
+	name = "kunai"
+	desc = "A simple stabbing weapon made of iron which originated as a masonry or gardening tool, useful for climbing walls in similar ways to pitons."
+	force = 12
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	icon_state = "kunai"
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/tanto
+	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut,/datum/intent/dagger/thrust/pick)
+	force = 14
+	name = "tanto"
+	icon_state = "tanto"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	desc = "Initially a companion blade to the tachi in a zamurai's daisho, the tanto was later replaced by the wakizashi with the shift to infantry tactics after the Bloody Apotheosis."
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/kaiken
+	name = "kaiken"
+	desc = "As weapon laws were put into place in colonized Abyssariad islands in which had high humen or elven population, many outside of the warrior caste were forbidden of carrying blades in public. This resulted in the creation of easily concealed blade such as this - for self defense... and assassinations."
+	icon_state = "kaiken"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut,/datum/intent/dagger/thrust/pick)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/rogueweapon/huntingknife/idagger/sai
+	name = "sai"
+	desc = "Typically carried in pairs, the sai is recognizable for its unique design, with the central shaft consisting of a sharply-tapered rod and two prongs protecting the cross-guard. Although effective enough at damaging with jabbing attacks, it lacks a blade and cannot cut. What it excels at, however is defending against other weapons."
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	icon_state = "sai"
+	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/thrust/pick)
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	wdefense = 8

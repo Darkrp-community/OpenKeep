@@ -57,3 +57,31 @@
 	icon_state = "aasimarwrist"
 	item_state = "aasimarwrist"
 	armor = list("melee" = 70, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) // Less protection than steel
+
+///////////////////////////////////////////////////////////////////
+// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
+// If the usage is desired, ask monochrome9090 for permission.   //
+// Respect the artists's will, COMMISSION them instead.          //
+// This is solely for SPRITES. The code is free for the taking.	 //
+///////////////////////////////////////////////////////////////////
+
+/obj/item/clothing/wrists/roguetown/bracers/kote
+	name = "kote"
+	desc = "a sashinuki kote, the armored sleeves and gloves knitted into a jacket layer. It belongs as one of the armor component of Sangu, together with Suneate and Haidate."
+	icon = 'icons/roguetown/kaizoku/clothingicon/wrists.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/wrists.dmi'
+	icon_state = "kote"
+	item_state = "kote"
+
+/obj/item/clothing/wrists/roguetown/kaizoku/dragonwrap
+	name = "dragon wrappings"
+	desc = "fireproof cloth wrappings to cover the arms and hands. It is completely made of asbestos and resin keeping its toxicity in place. For now."
+	slot_flags = ITEM_SLOT_WRISTS
+	icon_state = "dragonwrap"
+	item_state = "dragonwrap"
+	icon = 'icons/roguetown/kaizoku/clothingicon/wrists.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/wrists.dmi'
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 0)
+	heat_protection = ARMS|HANDS
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF

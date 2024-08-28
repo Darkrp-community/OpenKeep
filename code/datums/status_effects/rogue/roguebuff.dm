@@ -79,6 +79,11 @@
 	desc = "<span class='nicegreen'>I am tripping balls.</span>\n"
 	icon_state = "acid"
 
+/atom/movable/screen/alert/status_effect/debuff/fleshmerge
+	name = "Corruption"
+	desc = "<span class='nicegreen'>Something... is not right...</span>\n"
+	icon_state = "acid"
+
 /datum/status_effect/buff/ozium
 	id = "ozium"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/druqks
@@ -98,6 +103,23 @@
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stressevent/ozium)
+
+/datum/status_effect/buff/bliss
+	id = "corruption bliss"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/fleshmerge
+	duration = 2 MINUTES
+
+/datum/status_effect/buff/bliss/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/stressevent/bliss)
+
+/datum/status_effect/buff/bliss/on_remove()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.remove_stress(/datum/stressevent/bliss)
 
 /datum/status_effect/buff/moondust
 	id = "moondust"

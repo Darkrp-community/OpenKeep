@@ -432,3 +432,8 @@
 	eye_icon_state = "snail_eyes"
 	icon_state = "snail_eyeballs"
 
+/obj/item/organ/eyes/rogue/tengu
+	name = "tengu eyes"
+	desc = ""
+	eye_icon_state = "eyes_tengu"
+	icon_state = "eyes_tengu"

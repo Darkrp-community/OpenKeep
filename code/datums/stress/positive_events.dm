@@ -179,6 +179,11 @@
 	desc = "<span class='blue'>I've taken a hit and entered a painless world.</span>"
 	timer = 999 MINUTES
 
+/datum/stressevent/bliss
+	stressadd = 0
+	desc = "<span class='blue'>It feels like... nothing. I should take more of this.</span>"
+	timer = 5 MINUTES
+
 /datum/stressevent/moondust
 	stressadd = -5
 	desc = "<span class='green'>Moondust surges through me.</span>"

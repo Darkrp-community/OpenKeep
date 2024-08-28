@@ -851,6 +851,14 @@
 	clickcd = 10
 	penfactor = 30
 
+/datum/intent/sword/cut/sorii //sorii is the curvature of a Japanese sword, make it better for cutting - worse at thrusting.
+	clickcd = 10
+	damfactor = 1.15
+
+/datum/intent/sword/thrust/sorii //sorii is the curvature of a Japanese sword, make it better for cutting - worse at thrusting.
+	clickcd = 10
+	damfactor = 0.85
+
 /obj/item/rogueweapon/sword/iron/messer
 	name = "iron messer"
 	desc = "A single edged blade fashioned in the Grenzelhoft messer style."
@@ -1257,3 +1265,105 @@
 	wdefense = 3 // Lower than average sword defense (meant to pair with a shield)
 	wbalance = -1 // Likely weighted towards the blade, for deep cuts and chops
 	sellprice = 200 // A noble collector would love to get his/her hands on one of these blades
+
+///////////////////////////////////////////////////////////////////
+// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
+// If the usage is desired, ask monochrome9090 for permission.   //
+// Respect the artists's will, COMMISSION them instead.          //
+// This is solely for SPRITES. The code is free for the taking.	 //
+///////////////////////////////////////////////////////////////////
+
+/obj/item/rogueweapon/sword/uchigatana
+	name = "uchigatana"
+	desc = "Slightly shorter and simpler in design than the tachi, the uchigatana is the main sword of Abyssariad and Islander footsoldiers. Unlike continental swords of similar length, this design lends itself well to brutal chopping strikes alongside skillful swordplay, but lacks a long crossguard for safely parrying other blades."
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	icon_state = "uchigatana"
+	force_wielded = 30
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/chop)
+	wdefense = 3
+	bloody_icon_state = null
+	bigboy = 1
+
+/obj/item/rogueweapon/sword/uchigatana/fire //Experimental weapon. Not to be found ingame.
+	name = "fire uchigatana"
+	desc = "Slightly shorter and simpler in design than the tachi, the uchigatana is the main sword of Abyssariad and Islander footsoldiers. Unlike other uchigatanas, this sword in specifically seems curiously improved with 'frigus' runes."
+
+/obj/item/rogueweapon/sword/uchigatana/fire/attack(mob/M, mob/living/carbon/human/user)
+	if(ismob(M))
+		fire_effect(M, user)
+		..()
+
+/obj/item/rogueweapon/sword/uchigatana/fire/proc/fire_effect(mob/living/L, mob/user)
+	L.adjust_fire_stacks(1)
+	L.IgniteMob()
+	addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, ExtinguishMob)), 5 SECONDS)
+	if(user)
+		L.lastattacker = user.real_name
+		L.lastattackerckey = user.ckey
+		L.visible_message("<span class='danger'>[user] has ignited [L] with [src]!</span>", \
+								"<span class='danger'>[user] has ignited you with [src]!</span>")
+	playsound(loc, 'sound/blank.ogg', 50, TRUE, -1)
+	return
+
+/obj/item/rogueweapon/sword/long/rider/tachi
+	name = "tachi"
+	desc = "A long, curved blade of Abyssariad make, introduced when sea raiders returned to the Fog Isles with captured horses and began developing their own cavalry tactics, years before the Blood Apotheosis. Nowadays, it is mostly family heirlooms by high-ranking zamurai."
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/longsword/chop, /datum/intent/longsword/thrust)
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
+	icon_state = "tachi"
+	item_state = "tachi"
+	wbalance = 1
+
+/obj/item/rogueweapon/greatsword/odachi
+	force = 15
+	force_wielded = 40 // easier to break, more expensive version of flamberge that can't bash - but can be crafted. No one spawns with it.
+	possible_item_intents = list(/datum/intent/sword/cut)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/chop, /datum/intent/sword/thrust)
+	name = "odachi"
+	desc = "A large and extraordinarily expensive sword forged by a masterful swordsmith. Of all the weapons that have emerged in Abyssariad and Hearthfelt culture, none warrior spirit more than this MASSIVE sword."
+	icon_state = "odachi"
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
+	parrysound = "bladedlarge"
+	smeltresult = /obj/item/ingot/steel
+	max_blade_int = 150
+	max_integrity = 300
+	sellprice = 120
+
+/obj/item/rogueweapon/sword/iron/jian
+	name = "iron jian"
+	desc = "a simple, iron double-edged straight sword of abyssariad design used in martial arts."
+	icon_state = "jian"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+
+/obj/item/rogueweapon/sword/iron/messer/dao
+	name = "iron dao"
+	desc = "A single edged iron saber of Abyssariad making for horseback use. Suitable for chopping."
+	icon_state = "dao"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+
+/obj/item/rogueweapon/sword/yuntoudao
+	name = "Yuntoudao"
+	desc = "A expensive Abyssariad saber with wide middle and tapered ends in a 'willow-leaf' shape, it concentrates the force of a strike in an axe-like blow, while retaining the swiftness of a saber."
+	icon_state = "yuntoudao"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	force = 25
+	smeltresult = /obj/item/ingot/steel
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/axe/chop)
+	gripped_intents = null
+	minstr = 12
+	wdefense = 4
+	wbalance = -1
+	sellprice = 40
+
+/obj/item/rogueweapon/sword/short/wakizashi
+	force = 25
+	name = "wakizashi"
+	desc = "A shorter design of katana designed to replace the tanto as a zamurai's sidearm. Cuts like no other weapon - but is not efficient at thrusting, and can't handle much stress."
+	icon_state = "wakizashi"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	possible_item_intents = list(/datum/intent/sword/cut/sorii, /datum/intent/sword/thrust/sorii, /datum/intent/sword/chop)
+	smeltresult = /obj/item/ingot/steel
+	minstr = 6
+	max_blade_int = 180
+	max_integrity = 260

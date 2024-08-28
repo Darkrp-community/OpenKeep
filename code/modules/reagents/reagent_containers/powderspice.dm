@@ -299,3 +299,91 @@
 
 /datum/reagent/moondust_purest/overdose_process(mob/living/M)
 	M.adjustToxLoss(10, 0)
+
+/obj/item/reagent_containers/powder/bliss
+	name = "bliss"
+	desc = "The drug the Abyssariads were fighting against. However, the amount is too low - you better take two for the effect to properly hit."
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "bliss"
+	possible_transfer_amounts = list()
+	volume = 19
+	list_reagents = list(/datum/reagent/bliss = 19)
+	sellprice = 15
+
+#define DEMON_MSG_IMMEDIATE 1
+#define DEMON_MSG_EXTENDED 2
+#define DEMON_MSG_ABOUT2TURN 3
+
+
+/datum/reagent/bliss
+	name = "corruption bliss"
+	description = "The drug the Abyssariads were fighting against. However, the amount is too low - you better take two for the effect to properly hit."
+	color = "#a01d8a"
+	volume = 19 //just a little more of a sniff... and you're gone.
+	overdose_threshold = 20
+	metabolization_rate = 0.1
+	var/race = /datum/species/envy
+	var/list/mutationtexts = list( "Your skin is twitching, there is something under it." = DEMON_MSG_IMMEDIATE,
+									"You need salvation. Something from within is clearly impure - filled of sin." = DEMON_MSG_IMMEDIATE,
+									"You don't like the way your skin feels on your body. Peel it off." = DEMON_MSG_IMMEDIATE,
+									"Womanly voices reaches your ears - it invites you to pleasures of adultery." = DEMON_MSG_IMMEDIATE,
+									"Manly voices reaches your ears - it invites you to pleasure of zodomy." = DEMON_MSG_IMMEDIATE,
+									"There's something growing from within your chest. You feel it twitching." = DEMON_MSG_EXTENDED,
+									"You feel the need of purification, as grains of corruption flows into your veins." = DEMON_MSG_EXTENDED,
+									"Your muscles bends against itself - you feel no pain, only bliss." = DEMON_MSG_EXTENDED,
+									"The pleasure is too much! The mortal coil is no longer your limit!" = DEMON_MSG_ABOUT2TURN)
+	var/cycles_to_turn = 120 //the current_cycle threshold / iterations needed before one can transform
+
+/datum/reagent/bliss/on_mob_life(mob/living/carbon/M)
+	if(M.has_flaw(/datum/charflaw/addiction/junkie))
+		M.sate_addiction()
+	M.apply_status_effect(/datum/status_effect/buff/bliss)
+	..()
+
+/datum/reagent/bliss/overdose_start(mob/living/M)
+	M.playsound_local(M, 'sound/misc/heroin_rush.ogg', 100, FALSE) //user fucked up. They'd better find an Abyssanctum now to survive.
+	M.visible_message("<span class='warning'>[M]'s flesh intertwines with itself, the inner muscular layer exposed.</span>")
+
+/datum/reagent/bliss/overdose_process(mob/living/M)
+	if(!istype(M))
+		return
+	if(current_cycle >= 1 && current_cycle <= 80)
+		M.jitteriness = min(M.jitteriness + 1, 10)
+		M.stuttering = min(M.stuttering + 1, 10)
+		M.Dizzy(5)
+		if(prob(30))
+			M.losebreath++
+	else if(current_cycle >= 81 && current_cycle <= 119)
+		M.adjustOxyLoss(0.1 * REM, 0)
+		M.adjustStaminaLoss(0.1 * REM, 0)
+		M.jitteriness = min(M.jitteriness + 1, 20)
+		M.stuttering = min(M.stuttering + 1, 20)
+		M.Dizzy(10)
+		if(prob(10))
+			M.emote("scream")
+			M.Stun(15)
+	else if(current_cycle >= 120)
+		M.Sleeping(40, 0)
+	if(prob(20))
+		var/list/pick_ur_fav = list()
+		var/filter = NONE
+
+		if(current_cycle <= (cycles_to_turn * 0.3))
+			filter = DEMON_MSG_IMMEDIATE
+		else if(current_cycle <= (cycles_to_turn * 0.8))
+			filter = DEMON_MSG_EXTENDED
+		else
+			filter = DEMON_MSG_ABOUT2TURN
+		for(var/i in mutationtexts)
+			if(mutationtexts[i] == filter)
+				pick_ur_fav += i
+		if(pick_ur_fav.len)
+			to_chat(M, "<span class='warning'>[pick(pick_ur_fav)]</span>")
+	if(current_cycle >= cycles_to_turn)
+		var/datum/species/species_type = race
+		M.set_species(species_type)
+		M.reagents.del_reagent(type)
+		to_chat(M, "<span class='warning'>There is no turning back. You've become a [lowertext(initial(species_type.name))]!</span>")
+
+	..()
+

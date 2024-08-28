@@ -16,6 +16,8 @@
 	smeltresult = /obj/item/ash // Helmets have pre-defined smeltresults, this is for hats
 	var/will_cover // used for avoiding issues when worn on hip, currently only helmets
 	var/will_hide
+	var/picked
+	var/colorable_var = FALSE
 
 /obj/item/clothing/head/roguetown/equipped(mob/user, slot)
 	. = ..()
@@ -1022,3 +1024,420 @@
 	will_cover = HEAD|HAIR|NOSE|EARS
 	flags_inv = HIDEEARS
 	smeltresult = /obj/item/ingot/iron
+
+///////////////////////////////////////////////////////////////////
+// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
+// If the usage is desired, ask monochrome9090 for permission.   //
+// Respect the artists's will, COMMISSION them instead.          //
+// This is solely for SPRITES. The code is free for the taking.	 //
+///////////////////////////////////////////////////////////////////
+
+/obj/item/clothing/head/roguetown/takuhatsugasa
+	name = "takuhatsugasa"
+	icon_state = "takuhatsugasa"
+	desc = "A type of hat worn by monks during their begging rounds - or when punching demons into submission."
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head.dmi'
+
+/obj/item/clothing/head/roguetown/tengai
+	name = "tengai"
+	icon_state = "tengai"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	desc = "A wide-brimmed hat traditionally worn by wandering monks of the Abyssanctum fold."
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
+
+/obj/item/clothing/head/roguetown/tengai/yamabushi
+	name = "yamabushi tengai"
+	icon_state = "stengai"
+	desc = "A tengai painted in black tar traditionally worn by Abyssanctum yamabushis."
+	bloody_icon_state = "helmetblood"
+
+/obj/item/clothing/head/roguetown/tengai/gasa
+	name = "gasa"
+	icon_state = "gasa"
+	desc = "A conical straw hat used to protect from the sun and rain."
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/roguetown/lilly/small
+	name = "small lilypad gasa"
+	icon_state = "lilypad_small"
+	desc = "a small lilypad used by Kappas to protect from sun and rain. This comes as a intercultural exchange mimicking Abyssariad's gasas."
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head.dmi'
+
+/obj/item/clothing/head/roguetown/lilly/medium
+	name = "medium lilypad gasa"
+	icon_state = "lilypad_medium"
+	desc = "a medium lilypad used by Kappas to protect from sun and rain. This comes as a intercultural exchange mimicking Abyssariad's gasas."
+
+/obj/item/clothing/head/roguetown/lilly/big
+	name = "big lilypad gasa"
+	icon_state = "lilypad_big"
+	desc = "a big lilypad used by Kappas to protect from sun and rain. This comes as a intercultural exchange mimicking Abyssariad's gasas."
+
+/obj/item/clothing/head/roguetown/tengai/roningasa
+	name = "roningasa"
+	icon_state = "roningasa"
+	flags_inv = HIDEEARS|HIDEFACE
+	desc = "A hat typically worn by the masterless zamurais - the ronins."
+	bloody_icon_state = null
+
+/obj/item/clothing/head/roguetown/tengai/torioigasa
+	name = "torioigasa"
+	icon_state = "torioigasa"
+	desc = "A traditional Abyssariad hat designed for long travels on the murklands. Most used by commoners."
+	bloody_icon_state = null
+
+/obj/item/clothing/head/roguetown/tengai/sandogasa
+	name = "sandogasa"
+	icon_state = "sandogasa"
+	flags_inv = HIDEEARS
+	desc = "A large hat providing ample shade and protection from the elements, including rain."
+	bloody_icon_state = null
+
+/obj/item/clothing/head/roguetown/tengai/sandogasa/yamabushi
+	name = "yamabushi sandogasa"
+	icon_state = "ssandogasa"
+	desc = "A sandogasa painted in black tar traditionally worn by Abyssanctum yamabushis."
+	bloody_icon_state = null
+
+/obj/item/clothing/head/roguetown/soheicloth
+	name = "sohei coverings"
+	desc = "Blessed fabric bathed in holy water, keeping a sohei protected from corruptive gases - and providing anonymity. Their symbol of devotion that manifests their humbleness."
+	icon_state = "soheicloth"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head.dmi'
+
+/obj/item/clothing/head/roguetown/soheicloth/thunder
+	name = "thunder sohei coverings"
+	color = "#be8b48"
+
+/obj/item/clothing/head/roguetown/soheicloth/storm
+	name = "storm sohei coverings"
+	color = "#1a2677"
+
+/obj/item/clothing/head/roguetown/soheicloth/ocean
+	name = "ocean sohei coverings"
+	color = "#56928a"
+
+/obj/item/clothing/head/roguetown/soheicloth/island
+	name = "island sohei coverings"
+	color = "#bd3541"
+
+/obj/item/clothing/head/roguetown/shinobi_zukin
+	name = "shinobi hood"
+	icon_state = "shinobi_zukin"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	desc = "A hood worn by members of Shinobi clans to conceal their identity and blend into the shadows. Unsuitable for espionage for being too obvious."
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/skullcap/hachigane
+	name = "hachi-gane"
+	desc = "Simple, lamellar head protection made for humble monks, ronins and the poor - with the material often gathered from iron panning."
+	icon_state = "hachi-gane"
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/thunder
+	name = "thunder hachi-gane"
+	desc = "Simple, lamellar head protection. Marked in yellow for the mountainous monks who praises Abyssor's thunders."
+	color = "#be8b48"
+
+/obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/storm
+	name = "storm hachi-gane"
+	desc = "Simple, lamellar head protection. Marked in dark blue for the lighthouse keepers of Abyssanctum's faith, who keeps the eternal fire going."
+	color = "#1a2677"
+
+/obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/ocean
+	name = "ocean hachi-gane"
+	desc = "Simple, lamellar head protection. Marked in light blue for the expeditionary monks of Abyssanctum's faith, long married to the ocean."
+	color = "#56928a"
+
+/obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/island
+	name = "island hachi-gane"
+	desc = "Simple, lamellar head protection. Marked in red for the soilgazers of Abyssanctum's faith, those bent in ensuring no plague shall reach their blessed islands. "
+	color = "#bd3541"
+
+/obj/item/clothing/head/roguetown/helmet/zijinguan
+	name = "zijinguan"
+	desc = "A relatively cheap helmet that dates back centuries. The design is often used in colonies overseas but is considered absurdly obsolete on the fog islands."
+	icon_state = "zijinguan"
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	detail_tag = "_detail"
+	dynamic_hair_suffix = ""
+
+/obj/item/clothing/head/roguetown/helmet/zijinguan/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+/obj/item/clothing/head/roguetown/helmet/kettle/jingasa
+	name = "jingasa"
+	desc = "A metal gasa in conical shape. Mainly worn by Ashigarus, it protects against arrows and direct blow. Most efficient together with padding underneath due to the large space for the helmet to move after hit."
+	icon_state = "jingasa"
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/sallet/tosei_kabuto
+	name = "tosei kabuto"
+	desc = "Made from multiple steel plates riveted together, arranged in a radial pattern, having great balance and weight distribution - protecting even against firearms."
+	icon_state = "tosei_kabuto"
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+
+/obj/item/clothing/head/roguetown/helmet/sallet/tosei_kabuto/visored
+	name = "masked tosei kabuto"
+	desc = "Made from multiple steel plates riveted together, arranged in a radial pattern. This one has a mask to protect the face of whoever uses it."
+	icon_state = "toseikabuto_visor"
+
+/obj/item/clothing/head/roguetown/helmet/sallet/tosei_kabuto/visored/AdjustClothes(mob/user)
+	if(loc == user)
+		playsound(user, "sound/items/visor.ogg", 100, TRUE, -1)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			icon_state = "[initial(icon_state)]_raised"
+			body_parts_covered = HEAD|EARS|HAIR
+			flags_inv = HIDEEARS
+			flags_cover = null
+			prevent_crits -= list(BCLASS_STAB) // Vulnerable to eye stabbing while visor is open
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_head()
+			block2add = null
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			prevent_crits += list(BCLASS_STAB)
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_head()
+		user.update_fov_angles()
+
+/obj/item/clothing/head/roguetown/helmet/sallet/tosei_kabuto/visored/dropped(mob/user) //Same deal as the sallet. Avoiding errors.
+	. = ..()
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	will_cover = FULL_HEAD
+	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	user.update_fov_angles()
+
+/obj/item/clothing/head/roguetown/helmet/sallet/dragonslayer
+	name = "dragonslayer"
+	icon_state = "dragonslayer"
+	desc = "The asbestos-layered headgear of the heroic Dragonslayers, steadfast on feasting upon the sons of magma. Less protective, fire-proof."
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 75,"energy" = 0, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 0)
+	heat_protection = HEAD|EARS|HAIR|NOSE|EYES|FACE
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	sellprice = 120 //dragonhunting faction unique helmet.
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	block2add = FOV_RIGHT|FOV_LEFT
+	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
+
+/obj/item/clothing/head/roguetown/helmet/visored/knight/zunari
+	name = "zunari kabuto"
+	desc = "An Etchu Zunari Kabuto with the front end of its longitudinal plate overlapping the brows, over the eyes, rather than being riveted beneath it to efficiently reflect blows and arrows - and protect against the sun."
+	icon_state = "zunari_kabuto"
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/visored/knight/zunari/AdjustClothes(mob/user)
+	if(loc == user)
+		playsound(user, "sound/items/visor.ogg", 100, TRUE, -1)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			icon_state = "[initial(icon_state)]_raised"
+			body_parts_covered = HEAD|HAIR|EARS
+			flags_inv = HIDEEARS|HIDEHAIR
+			flags_cover = null
+			prevent_crits -= list(BCLASS_STAB) // Vulnerable to eye stabs with the cover up
+			emote_environment = 0
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_head()
+			block2add = null
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			prevent_crits += list(BCLASS_STAB)
+			emote_environment = 3
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_head()
+		user.update_fov_angles()
+
+/obj/item/clothing/head/roguetown/helmet/visored/knight/zunari/dropped(mob/user) //Same deal as the sallet. Avoiding errors.
+	. = ..()
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	will_cover = FULL_HEAD
+	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	user.update_fov_angles()
+
+/obj/item/clothing/head/roguetown/helmet/visored/knight/zunari/heartfelt
+	name = "heartfelt zunari kabuto"
+	desc = "An Etchu Zunari kabuto with Heartfelt markings. It lacks a demonic mask for intimidation purposes - yet remains just as effective."
+	icon_state = "heartfelt_kabuto"
+	will_cover = HEAD|HAIR|EARS //maskless, protects less of the face.
+	will_hide = HIDEEARS
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	block2add = null //since it does not protect the face, it has less blockage. Idk if I did it right.
+
+/obj/item/clothing/head/roguetown/helmet/leather/malgai
+	name = "leather malgai"
+	desc = "A conical leather helmet. It's comfortable and won't protect much, but it's better than nothing."
+	icon_state = "malgai"
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head.dmi'
+ 
+/obj/item/clothing/head/roguetown/helmet/leather/malgai/duulga //same changes of 'leather' to 'hide' has been brought over to this hat + mouth protection, because Mongol hat go brrtt
+	name = "arisan duulga"
+	desc = "The thick, oil-boiled layered leather helmet used by Abyssariads Dustriders from the arid, steppelands on the heart of the Fog Islands."
+	icon_state = "arisan_duulga"
+	armor = list("melee" = 40, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
+	will_cover = HEAD|HAIR|EARS|NOSE|MOUTH
+	resistance_flags = FLAMMABLE // Made of leather
+	smeltresult = /obj/item/ash
+	anvilrepair = null
+	max_integrity = 250
+	sewrepair = TRUE
+	blocksound = SOFTHIT
+	sellprice = 25
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/skullcap/rattan
+	name = "rattan helmet"
+	icon_state = "rattan_helmet"
+	desc = "A cheap abyssariad helmet made from stripped, oil boiled rattan and iron. Used only by militia and the humble LinYou raiders. Less protective, but can be easily repaired."
+	flags_inv = HIDEEARS
+	armor = list("melee" = 60, "bullet" = 40, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	will_cover = HEAD|HAIR|EARS
+	max_integrity = 125
+	sellprice = 20
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	sewrepair = TRUE
+
+/obj/item/clothing/head/roguetown/helmet/heavy/bronzepot
+	name = "relic of urn"
+	icon_state = "bronzeb"
+	desc = "The puzzling bronze urn used by the legendary Eidolon champions, the farseers and demon killers of Abyssor's realm. Magic-infussed to be lighter - but cannot be removed until broken."
+	smeltresult = /obj/item/ingot/steel
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+
+/obj/item/clothing/head/roguetown/helmet/heavy/bronzepot/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
+/obj/item/clothing/head/roguetown/helmet/heavy/bronzepot/dropped(mob/living/carbon/human/user)
+	. = ..()
+	if(QDELETED(src))
+		return
+	qdel(src)
+
+//Still unsure how to balance these following ones.
+/*
+/obj/item/clothing/head/roguetown/kaizoku/ceramic
+	name = "bone helmet"
+	icon_state = "ivory_head"
+	desc = "a simple, protective bone helmet made from the creatures of the land."
+	smeltresult = null
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	body_parts_covered = HEAD|HAIR|EARS
+	flags_inv = HIDEEARS
+	max_integrity = 150
+
+/obj/item/clothing/head/roguetown/kaizoku/big/ceramic
+	name = "ivory ravanger helmet"
+	icon_state = "ravager_head"
+	desc = "The helmets commonly used by Kappa warriors or common riverdwellers who took upon themselves to protect their heads against goblin attacks."
+	smeltresult = null
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_STAB)
+	body_parts_covered = HEAD|HAIR|EARS
+	flags_inv = HIDEEARS
+	max_integrity = 200
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	smeltresult = /obj/item/ingot/steel
+	bloody_icon_state = null
+
+/obj/item/clothing/head/roguetown/kaizoku/big/ceramic/heavy
+	name = "marauder heavy helmet"
+	icon_state = "marauder_head"
+	desc = "The well-protective helmets used by Kappa warriors under the banner of the Abyssariads. Technology granted by mutual cooperation."
+	smeltresult = null
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|FACE
+	flags_inv = HIDEEARS
+	max_integrity = 200
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	block2add = FOV_RIGHT|FOV_LEFT
+	smeltresult = /obj/item/ingot/steel
+	bloody_icon_state = null
+
+*/
+
+/obj/item/clothing/head/roguetown/attack_right(mob/user)
+	if(colorable_var == TRUE)
+		if(picked)
+			return
+		var/the_time = world.time
+		if(world.time > (the_time + 30 SECONDS))
+			return
+		var/colorone = input(user, "Your emotions spreads your will.","Abyssor allows you to flush emotions within the threads.") as null|anything in CLOTHING_COLOR_NAMES
+		if(!colorone)
+			return
+		picked = TRUE
+		color = clothing_color2hex(colorone)
+		update_icon()
+		if(ismob(loc))
+			var/mob/L = loc
+			L.update_inv_head()
+		return
+	else 
+		return

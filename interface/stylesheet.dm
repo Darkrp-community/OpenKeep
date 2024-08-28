@@ -131,6 +131,8 @@ h1.alert, h2.alert	{color: #c9c1ba;font-family: Pterra, TrueType;}
 .undead					{font-family: "FriskyVampire", Pterra;}
 .orc					{font-family: "Thief by The Riddler", Pterra;}
 .beast					{font-family: "Thief by The Riddler", Pterra;}
+.abyssal				{font-family: "Shinkansen", Pterra;}
+
 
 .torture				{color: #42ff20}
 

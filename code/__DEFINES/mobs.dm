@@ -464,3 +464,5 @@
 
 //SPECIAL SKIN TONES
 #define SKIN_COLOR_ROT "878f79"
+
+#define SKIN_COLOUR_NOTHING "ffffff"

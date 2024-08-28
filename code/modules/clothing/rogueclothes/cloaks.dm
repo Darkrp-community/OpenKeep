@@ -522,7 +522,7 @@
 	nodismemsleeves = TRUE
 	inhand_mod = TRUE
 //	allowed_sex = list("male")
-	allowed_race = list("human", "tiefling", "elf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "abyssariad")
 	detail_tag = "_det"
 	detail_color = CLOTHING_PURPLE
 
@@ -762,12 +762,12 @@
 
 /obj/item/clothing/cloak/cape/puritan
 	icon_state = "puritan_cape"
-	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar", "abyssariad")
 
 /obj/item/clothing/cloak/cape/archivist
 	icon_state = "puritan_cape"
 	color = CLOTHING_BLACK
-	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar", "abyssariad")
 
 /obj/item/clothing/cloak/cape/rogue
 	name = "cape"
@@ -794,7 +794,7 @@
 	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	nodismemsleeves = TRUE
 
 
@@ -821,7 +821,7 @@
 	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	sellprice = 50
 	nodismemsleeves = TRUE
 
@@ -833,7 +833,7 @@
 	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
 	body_parts_covered = CHEST|GROIN|VITALS
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = list("human", "tiefling", "elf", "aasimar", "dwarf")
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "dwarf", "abyssariad")
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
 	nodismemsleeves = TRUE
 	boobed = FALSE
@@ -848,7 +848,7 @@
 	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	sellprice = 50
 	nodismemsleeves = TRUE
 
@@ -869,7 +869,7 @@
 	toggle_icon_state = FALSE
 	color = CLOTHING_BLACK
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = list("human", "tiefling", "elf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "abyssariad")
 
 /obj/item/clothing/cloak/half/brown
 	color = CLOTHING_BROWN
@@ -882,7 +882,7 @@
 	icon_state = "guardcloak"
 	color = CLOTHING_RED
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	inhand_mod = FALSE
 
 /obj/item/clothing/cloak/half/vet/Initialize()
@@ -958,3 +958,15 @@
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
+
+
+/obj/item/clothing/cloak/raincloak/mino
+	name = "mino cloak"
+	desc = "An abyssariad raincoat made out of straw that covers the entire body."
+	icon_state = "mino"
+	inhand_mod = FALSE
+	hoodtype = null
+	icon = 'icons/roguetown/kaizoku/clothingicon/cloak.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/cloak.dmi'
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS
+	sleeved = 'icons/roguetown/kaizoku/clothing/cloak.dmi'

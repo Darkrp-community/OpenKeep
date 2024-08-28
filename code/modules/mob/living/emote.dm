@@ -1303,3 +1303,31 @@
 	else
 		to_chat(user, "<span class='warning'>You're incapable of slapping in your current state.</span>")
 */
+
+ //what to do next: Make it have a 'acting time' instead of instadeath.
+/mob/living/verb/seppuku()
+	var/am_abyssariad = FALSE
+	if(ishuman(src))
+		var/mob/living/carbon/human/C = src
+		if(C.dna.species?.id == "abyssariad")
+			am_abyssariad = TRUE
+	if(am_abyssariad == TRUE)
+		var/mob/living/carbon/C = src
+		if(C.stat != CONSCIOUS && !C.handcuffed)
+			to_chat(src, "<span class='warning'>You cannot do this ritual while unable to reach your chest.</span>")
+			return
+		else
+			if(alert(src, "Commit ritualistic disembowelment?",,"YES","NO") == "YES")
+				say("Hesitation is DEFEAT!")
+				visible_message("<span class='warning'>'s claws carves their own guts before splitting themselves open in a goreful show!</span>", \
+				"<span class='notice'>You voluntarily sever your boundaries to this consciousness for the next life as vitae spills out in waves.</span>", null, null, pulledby)
+				to_chat(src, "<span class='warning'>Your ancestors honors your sacrifice. You shall be reborn.</span>")
+				apply_damage(250, BRUTE, "chest", run_armor_check("chest", "melee", damage = 50))
+				spill_organs(FALSE, FALSE, TRUE)
+				spawn_gibs()
+				adjust_triumphs(1) //paying off your death's triumph removal. Not going to give more - people will totally game that.
+		return
+	else
+		to_chat(src, "<span class='warning'>You have no idea what this ritual is even about.</span>")
+		return
+
