@@ -104,6 +104,7 @@
 
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			beltr = /obj/item/clothing/mask/rogue/shepherd/rag
+			beltl = /obj/item/rogueweapon/huntingknife
 
 			if(H.age == AGE_OLD) //old deserters are experts with polearms
 				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
@@ -165,12 +166,15 @@
 			beltl = /obj/item/quiver/arrows
 			mask = /obj/item/clothing/mask/rogue/shepherd/rag
 
-			switch(pick(1,2))
-				if (1)
-					head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
-				if (2)
+			var/helmet2choose = pickweight(list("Hood" = 1, "Volfhelm" = 1))
+			switch(helmet2choose)
+				if("Hood")
 					head = /obj/item/clothing/head/roguetown/roguehood
 					neck = /obj/item/clothing/neck/roguetown/coif
+					if(H.age == AGE_OLD) //old poachers also saved up for a better coif
+						head = /obj/item/clothing/neck/roguetown/chaincoif/iron
+				if("Volfhelm")
+					head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 
 			if(H.age == AGE_OLD) //old poachers are better at their jobs
 				H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
@@ -207,12 +211,13 @@
 			beltl = /obj/item/clothing/mask/rogue/shepherd/rag
 			neck = /obj/item/clothing/neck/roguetown/coif
 
-			switch(pick(1,2,3))
-				if (1)
+			var/helmet2choose = pickweight(list("Leather helmet" = 2, "Volfhelm" = 2, "Coif" = 1))
+			switch(helmet2choose)
+				if("Leather helmet")
 					head = /obj/item/clothing/head/roguetown/helmet/leather/conical
-				if (2)
+				if("Volfhelm")
 					head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
-				if (3)
+				if("Coif")
 					head = /obj/item/clothing/neck/roguetown/chaincoif/iron
 
 			switch(pick(1,2))
