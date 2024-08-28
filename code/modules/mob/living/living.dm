@@ -188,16 +188,16 @@
 			
 			var/mob/living/L = M
 
-			var/self_points = FLOOR((STACON + STASTR)/2, 1)
-			var/target_points = FLOOR((L.STACON + L.STASTR)/2, 1)
+			var/self_points = FLOOR((STACON + STASTR + mind.get_skill_level(/datum/skill/misc/athletics))/2, 1)
+			var/target_points = FLOOR((L.STAEND + L.STASTR + L.mind.get_skill_level(/datum/skill/misc/athletics))/2, 1)
 
 			switch(sprint_distance)
 				// Point blank
 				if(0 to 1)
-					self_points -= 4
+					self_points -= 6
 				// One to two tile between the people
 				if(2 to 3)
-					self_points -= 2
+					self_points -= 3
 				// Five or above tiles between people
 				if(6 to INFINITY)
 					self_points += 1
@@ -206,8 +206,13 @@
 			if(L.dir == get_dir(src, L))
 				self_points += 2
 
-			// Randomize con roll from -1 to +1 to make it less consistent
-			self_points += rand(-1, 1)
+			// Random 1 in 10 crit chance of 20 virtual stat points to make it less consistent.
+			if(prob(10))
+				switch(rand(1,2))
+					if(1)
+						self_points += 10
+					if(2)
+						self+points -= 10
 
 			if(self_points > target_points)
 				L.Knockdown(1)
