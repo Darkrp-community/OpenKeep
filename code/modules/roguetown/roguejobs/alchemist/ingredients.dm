@@ -34,7 +34,7 @@
 /obj/item/seeds
 	dust_result = /obj/item/alch/seeddust
 	..()
-	
+
 /obj/item/reagent_containers/food/snacks/grown/rogue/sweetleaf
 	dust_result = /obj/item/alch/sweetdust
 	..()
