@@ -212,7 +212,7 @@
 					if(1)
 						self_points += 10
 					if(2)
-						self+points -= 10
+						self_points -= 10
 
 			if(self_points > target_points)
 				L.Knockdown(1)
