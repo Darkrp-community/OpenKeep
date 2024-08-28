@@ -2,13 +2,13 @@
 	..()
 	GLOB.farm_animals++
 	if(tame)
-		tamed()
+		tamed(owner)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/Destroy()
 	..()
 	GLOB.farm_animals = max(GLOB.farm_animals - 1, 0)
 
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/tamed()
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/tamed(mob/user)
 	..()
 	deaggroprob = 50
 	if(can_buckle)
@@ -136,8 +136,6 @@
 	buckle_lying = 0
 	can_saddle = FALSE
 
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet/get_emote_frequency()
-	return 55100
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/simple_limb_hit(zone)
 	if(!zone)
@@ -236,7 +234,7 @@
 			var/mutable_appearance/mounted = mutable_appearance(icon, "goatmale_mounted", 4.3)
 			add_overlay(mounted)
 
-/mob/living/simple_animal/hostile/retaliate/rogue/goatmale/tamed()
+/mob/living/simple_animal/hostile/retaliate/rogue/goatmale/tamed(mob/user)
 	..()
 	deaggroprob = 20
 	if(can_buckle)
@@ -251,7 +249,7 @@
 	..()
 	GLOB.farm_animals++
 	if(tame)
-		tamed()
+		tamed(owner)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goatmale/Destroy()
 	..()
@@ -358,6 +356,3 @@
 	can_buckle = FALSE
 	buckle_lying = 0
 	can_saddle = FALSE
-
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatletboy/get_emote_frequency()
-	return 55100

@@ -22,9 +22,9 @@
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	cloak = /obj/item/clothing/cloak/cape/puritan
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
-	head = /obj/item/clothing/head/roguetown/puritan
+	head = /obj/item/clothing/head/roguetown/helmet/leather/inquisitor
 	gloves = /obj/item/clothing/gloves/roguetown/leather
-	beltl = /obj/item/rogueweapon/sword/rapier
+	beltl = /obj/item/rogueweapon/sword/rapier/silver
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 
 	if(H.mind)

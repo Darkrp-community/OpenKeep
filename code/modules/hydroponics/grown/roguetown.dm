@@ -86,7 +86,7 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/fyritiusnectar = 5)
 	can_distill = TRUE // no distill reagent but fyritius nectar could be used as a poison to set people on fire, which is too funny to prevent
 	distill_reagent = null
-	rotprocess = 10 MINUTES
+	//rotprocess = 10 MINUTES // too rare to rot
 	seed = /obj/item/seeds/fyritius
 
 /obj/item/seeds/fyritius
@@ -128,13 +128,12 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	desc = ""
 	icon_state = "onion"
 	slices_num = 1
-//	slice_path = /obj/item/reagent_containers/food/snacks/rogue/skinnedonion
 	tastes = list("spicy sweetness" = 1)
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/onion
-	rotprocess = 30 MINUTES // Onions keep for a long time.
+	rotprocess = null
 	seed = /obj/item/seeds/onion
 
 /obj/item/seeds/cabbage
@@ -159,7 +158,7 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/fireleaf
-	rotprocess = 15 MINUTES
+	rotprocess = SHELFLIFE_LONG
 	seed = /obj/item/seeds/cabbage
 
 // PO-TAET-OHS
@@ -181,13 +180,10 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	desc = ""
 	icon_state = "potato"
 	eat_effect = /datum/status_effect/debuff/uncookedfood
-//	slices_num = 1
-//	slice_path = /obj/item/reagent_containers/food/snacks/rogue/skinnedpotato
-//	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/cooked/bakedpotato
 	tastes = list("starchy dirt" = 1)
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/voddena
-	rotprocess = 60 MINUTES // Effectively immortal. But worthless until processed
+	rotprocess = null
 	seed = /obj/item/seeds/potato

@@ -1,4 +1,4 @@
-/datum/advclass/noble
+/datum/advclass/pilgrim/noble
 	name = "Noble"
 	tutorial = "You are a noble, from some place far away, trying to visit the nobility of the area \
 	you are encouraged to make your own story. But with wealth, come the poor, ready to pilfer you \
@@ -11,7 +11,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/noble
-	category_tags = (CTAG_PILGRIM)
+	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 2
 
 
@@ -33,7 +33,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
 		head = /obj/item/clothing/head/roguetown/hatblu
 		cloak = /obj/item/clothing/cloak/raincloak/purple
@@ -41,7 +41,7 @@
 		beltl = /obj/item/quiver/arrows
 		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver)
 	if(H.gender == MALE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		pants = /obj/item/clothing/under/roguetown/tights/purple
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/purple
 		cloak = /obj/item/clothing/cloak/half

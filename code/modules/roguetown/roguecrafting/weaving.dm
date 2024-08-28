@@ -1,6 +1,6 @@
 /datum/crafting_recipe/roguetown/weaving
 	structurecraft = /obj/machinery/loom
-	skillcraft = /datum/skill/misc/weaving
+	skillcraft = /datum/skill/misc/sewing
 
 /datum/crafting_recipe/roguetown/weaving/rags
 	name = "webbed shirt"
@@ -117,7 +117,7 @@
 	craftdiff = 3
 	sellprice = 20
 
-/datum/crafting_recipe/roguetown/weaving/barkeep
+/datum/crafting_recipe/roguetown/weaving/barmaid
 	name = "bar dress"
 	result = list (/obj/item/clothing/suit/roguetown/shirt/dress)
 	reqs = list(/obj/item/natural/cloth = 2,

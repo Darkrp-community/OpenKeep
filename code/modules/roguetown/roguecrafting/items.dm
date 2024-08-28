@@ -158,6 +158,13 @@
 	result = /obj/item/reagent_containers/glass/bucket/wooden
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
+/datum/crafting_recipe/roguetown/woodbowl
+	name = "wooden bowl"
+	result = list(/obj/item/reagent_containers/glass/bowl,
+				/obj/item/reagent_containers/glass/bowl)
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+
+
 /datum/crafting_recipe/roguetown/woodcup
 	name = "wooden cups"
 	result = list(/obj/item/reagent_containers/glass/cup/wooden/crafted,
@@ -297,13 +304,22 @@
 	craftdiff = 1
 	skillcraft = /datum/skill/craft/engineering
 
-datum/crafting_recipe/roguetown/poisonbolt
+/datum/crafting_recipe/roguetown/poisonbolt
 	name = "poison bolt"
 	result = /obj/item/ammo_casing/caseless/rogue/bolt/poison
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/bolt = 1,
 				/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 1)
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/bomb
+	name = "bomb"
+	result = /obj/item/bomb/homemade
+	reqs = list(/obj/item/natural/cloth = 1,
+				/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue = 1,
+				/obj/item/reagent_containers/glass/bottle = 1)
+	craftdiff = 2
+	skillcraft = /datum/skill/craft/engineering
+	
 /datum/crafting_recipe/roguetown/pyrobolt
 	name = "pyroclastic bolt"
 	result = /obj/item/ammo_casing/caseless/rogue/bolt/pyro

@@ -182,6 +182,8 @@
 				var/newmaxinteg = IT.max_integrity
 				var/newinteg = IT.obj_integrity
 				var/newprice = IT.sellprice
+				var/obj/item/lockpick/L = IT
+				var/newpicklvl = L.picklvl
 				var/obj/item/rogueweapon/W = IT
 				var/newforce = W.force
 				var/newthrow = W.throwforce
@@ -201,6 +203,8 @@
 					editme.max_integrity = newmaxinteg
 					editme.obj_integrity = newinteg
 					editme.sellprice = newprice
+					if(istype(editme, /obj/item/lockpick))
+						editme.picklvl = newpicklvl
 					if(istype(editme, /obj/item/rogueweapon))
 						editme.force = newforce
 						editme.throwforce = newthrow
@@ -218,7 +222,7 @@
 				R.handle_creation(IT)
 			playsound(src,pick('sound/items/quench_barrel1.ogg','sound/items/quench_barrel2.ogg'), 100, FALSE)
 			user.visible_message("<span class='info'>[user] tempers \the [T.hingot.name] in \the [src], hot metal sizzling.</span>")
-			QDEL_NULL(T.hingot)
+			T.hingot = null
 			T.update_icon()
 			reagents.remove_reagent(removereg, 5)
 			var/datum/reagent/water_to_dirty = reagents.has_reagent(/datum/reagent/water, 5)

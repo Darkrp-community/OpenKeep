@@ -55,6 +55,16 @@
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
+
 /datum/species/dwarf/mountain/check_roundstart_eligible()
 	return TRUE
 
@@ -99,7 +109,8 @@
 	"red - berry" = "b23434",
 	"red - wine" = "b87f77",
 	"red - sunset" = "bf6821",
-	"red - blood" = "822b2b"
+	"red - blood" = "822b2b",
+	"red - maroon" = "612929"
 	))
 
 /datum/species/dwarf/mountain/random_name(gender,unique,lastname)

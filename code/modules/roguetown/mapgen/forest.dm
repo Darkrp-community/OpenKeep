@@ -20,6 +20,7 @@
 							/obj/structure/flora/roguegrass = 100,
 							/obj/item/natural/stone = 5,
 							/obj/item/natural/rock = 6,
+							/obj/structure/flora/roguegrass/pyroclasticflowers = 1,
 							/obj/item/grown/log/tree/stick = 5,
 							/obj/structure/flora/roguetree/stump/log = 3,
 							/obj/structure/flora/roguetree/stump = 4,

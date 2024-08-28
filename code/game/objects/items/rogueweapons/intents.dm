@@ -346,6 +346,7 @@
 		user.visible_message("<span class='warning'>[user] taunts [M]!</span>", "<span class='warning'>I taunt [M]!</span>", ignored_mobs = targetl)
 		user.emote("taunt")
 		if(M.client)
+			M.taunted(user)
 			if(M.can_see_cone(user))
 				to_chat(M, "<span class='danger'>[user] taunts me!</span>")
 		else
@@ -475,6 +476,19 @@
 	candodge = TRUE
 	canparry = TRUE
 
+//Applies no wounds.
+/datum/intent/simple/touch
+	name = "touch"
+	icon_state = "instrike"
+	attack_verb = list("grasps", "touches", "taps")
+	animname = "blank22"
+	blade_class = null
+	hitsound = "punch_hard"
+	chargetime = 0
+	penfactor = 25
+	swingdelay = 1
+	candodge = TRUE
+	canparry = TRUE
 
 /datum/intent/unarmed/claw
 	name = "claw"

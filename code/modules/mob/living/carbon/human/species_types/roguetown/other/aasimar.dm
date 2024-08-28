@@ -5,27 +5,29 @@
 	name = "Aasimar"
 	id = "aasimar"
 	desc = "<b>Aasimar</b><br>\
-	Offspring created using mysterious means by the Pantheon by command of Goddess Astrata, \
-	to serve as soldiers in the Apotheosis God-War. \
-	They quickly earned the scorn of the mortal races they fought alongside with \
-	for their insensitive and reckless decisions, leading to many deaths of those they were assigned to protect. \
-	They were abandoned by Astrata after the war concluded, \
-	now characterized as ignorant, innocent, and stubborn. \
-	Even long after the Apotheosis, \
-	surviving Aasimar still tend to be shunned for their \
-	dullness to the world, headstrong personalities, and violent legacy. \
-	The Aasimar are 'casted' from various influences of the Pantheon's divine host of Gods, Forces and Saints."
+	Immortal offspring created through unknown means by command of the goddess Astrata, \
+	used as soldiers to fight in the Apotheosis God-War. \
+	They quickly earned scorn and fear from the mortal races they fought alongside \
+	for their indifference to the suffering of their allies and unquestioning brutality. \
+	The aasimar who survived the war have been abandoned by Astrata, \
+	left to face an uncertain fate alongside the other races of Grimoria. \
+	It has been long since the Apotheosis and memories of their violent legacy have faded, \
+	but many still view these aasimar survivors as emotionally dull, stubborn, and simple-minded brutes... \
+	though this is not always the case. \
+	Aasimar are known for their incredible strength and resilience, and are a prized addition to any shield wall. \
+	However, they possess less capacity for independent thought due to their wartime construction."
 
 	skin_tone_wording = "Crafted With"
 
-	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
+	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "wings" = "None")
 	use_skintones = 1
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
-	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	possible_ages = list(AGE_IMMORTAL)
+	max_age = "Unknown"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt_muscular.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/ft_muscular.dmi'
@@ -33,8 +35,8 @@
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	use_m = TRUE
 	hairyness = "t1"
-	soundpack_m = /datum/voicepack/male/elf
-	soundpack_f = /datum/voicepack/female/elf
+	soundpack_m = /datum/voicepack/male/serious
+	soundpack_f = /datum/voicepack/female
 	offset_features = list(OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
 	OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
 	OFFSET_FACE = list(0,1), OFFSET_BELT = list(0,1), OFFSET_BACK = list(0,1), \
@@ -49,6 +51,16 @@
 	specstats_f = list("strength" = 1, "perception" = 0, "intelligence" = -1, "constitution" = 1, "endurance" = 0, "speed" = 1, "fortune" = -1)
 	enflamed_icon = "widefire"
 	patreon_req = 0
+
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
 
 /datum/species/aasimar/check_roundstart_eligible()
 	return TRUE
@@ -106,11 +118,23 @@
 
 /datum/species/aasimar/get_hairc_list()
 	return sortList(list(
+	"black - oil" = "181a1d",
+	"black - cave" = "201616",
+	"black - rogue" = "2b201b",
+	"black - midnight" = "1d1b2b",	
+	
 	"white - silver" = "d3d9e3",
 	"white - alabaster" = "fffffc",
 	"white - skies" = "a1b4d4",
+	
 	"yellow - sunlight" = "f3f797",
-	"red - flame" = "ab4637"
+	"blond - strawberry" = "c69b71",
+	"blond - pale" = "9d8d6e",
+
+	"red - flame" = "ab4637",
+	"red - sunset" = "bf6821",
+	"red - blood" = "822b2b",
+	"red - maroon" = "612929"
 	))
 
 /datum/species/aasimar/random_name(gender,unique,lastname)

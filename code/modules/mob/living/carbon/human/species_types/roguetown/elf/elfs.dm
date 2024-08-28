@@ -33,6 +33,7 @@
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	hairyness = "t1"
 	mutant_bodyparts = list("ears")
+	mutanteyes = /obj/item/organ/eyes/elf/less
 	use_f = TRUE
 	soundpack_m = /datum/voicepack/male/elf
 	soundpack_f = /datum/voicepack/female/elf
@@ -50,6 +51,16 @@
 	specstats_f = list("strength" = -1, "perception" = 1, "intelligence" = 2, "constitution" = -1, "endurance" = -1, "speed" = 3, "fortune" = 0)
 	enflamed_icon = "widefire"
 	patreon_req = 0
+
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
 
 /datum/species/elf/snow/check_roundstart_eligible()
 	return TRUE
@@ -94,10 +105,11 @@
 	"brown - grain" = "58433b",
 	"brown - soil" = "48322a",
 
-	"red - berry" = "48322a",
+	"red - berry" = "b23434",
 	"red - wine" = "82534c",
 	"red - sunset" = "82462b",
 	"red - blood" = "822b2b",
+	"red - maroon" = "612929",
 
 	"green - grass" = "2a482c",
 	"green - swamp" = "3b482a",

@@ -121,7 +121,7 @@
 
 #define SERFS			(1<<3)
 
-#define BARKEEP		(1<<0)
+#define INNKEEP		(1<<0)
 #define BLACKSMITH	(1<<2)
 #define ALCHEMIST	(1<<3)
 #define MASON		(1<<4)
@@ -187,6 +187,7 @@
 
 #define JDO_PURITAN 16
 #define JDO_SHEPHERD 17
+#define JDO_TEMPLAR 17.1
 
 #define JDO_MERCHANT 18
 #define JDO_TAILOR 18.1
@@ -201,7 +202,7 @@
 #define JDO_BUTLER 24
 #define JDO_SERVANT 25
 
-#define JDO_BARKEEP 26
+#define JDO_INNKEEP 26
 #define JDO_COOK 27
 
 #define JDO_BUTCHER 27.1

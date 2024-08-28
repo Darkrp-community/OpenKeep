@@ -10,15 +10,13 @@
 		"Humen",
 		"Elf",
 		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
+		"Dwarf"
 	)
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_MAGICIAN
 	allowed_patrons = list(/datum/patron/divine/noc)
-	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fireball, /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt, /obj/effect/proc_holder/spell/aoe_turf/repulse, /obj/effect/proc_holder/spell/invoked/projectile/fetch, /obj/effect/proc_holder/spell/targeted/projectile/magic_missile, /obj/effect/proc_holder/spell/aoe_turf/knock)
-	tutorial ="Dream interpreter, soothsayer, astrologer and valued courtier, blessed by Noc. \
+	tutorial = "Dream interpreter, soothsayer, astrologer and valued courtier, blessed by Noc. \
 	Indebted to the ruler for funding yils of mystical studies in these dark times, \
 	only wisdom and arcane knowledge amassed during a long life will allow a mage to unlock their full potential."
 	outfit = /datum/outfit/job/roguetown/magician
@@ -29,7 +27,6 @@
 
 /datum/outfit/job/roguetown/magician/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.virginity = TRUE
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
 	head = /obj/item/clothing/head/roguetown/wizhat/gen
 	backr = /obj/item/storage/backpack/rogue/satchel
@@ -40,11 +37,7 @@
 	beltr = /obj/item/keyring/mage
 	id = /obj/item/clothing/ring/gold/protection
 	backl = /obj/item/rogueweapon/woodstaff
-	switch(pick(1,2))
-		if (1)
-			shoes = /obj/item/clothing/shoes/roguetown/sandals	
-		if (2)
-			shoes = /obj/item/clothing/shoes/roguetown/shortboots
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	backpack_contents = list(/obj/item/scrying = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)

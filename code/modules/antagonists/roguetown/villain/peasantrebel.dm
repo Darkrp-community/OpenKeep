@@ -9,6 +9,7 @@
 	antag_hud_type = ANTAG_HUD_REV
 	antag_hud_name = "rev"
 	show_in_roundend = FALSE
+	isgoodguy = TRUE // Previous townies, still should get buffs, make chaos.
 	confess_lines = list(
 		"VIVA!", 
 		"DEATH TO THE NOBLES!",
@@ -29,7 +30,7 @@
 	. = ..()
 	owner.special_role = ROLE_PREBEL
 	var/mob/living/carbon/human/H = owner.current
-	H.cmode_music = 'sound/music/combatbandit.ogg'
+	H.cmode_music = 'sound/music/combat_bandit.ogg'
 	H.add_stress(/datum/stressevent/prebel)
 	ADD_TRAIT(H, TRAIT_VILLAIN, TRAIT_GENERIC)
 

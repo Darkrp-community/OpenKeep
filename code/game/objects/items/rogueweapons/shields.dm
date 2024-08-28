@@ -33,7 +33,7 @@
 
 // Shield banging
 /obj/item/rogueweapon/shield/attackby(obj/item/attackby_item, mob/user, params)
-	if(istype(attackby_item, /obj/item/rogueweapon))
+	if(istype(attackby_item, /obj/item/rogueweapon) && !istype(attackby_item, /obj/item/rogueweapon/hammer))
 		if(!COOLDOWN_FINISHED(src, shield_bang))
 			return
 		user.visible_message("<span class='danger'>[user] bangs [src] with [attackby_item]!</span>")
@@ -119,6 +119,36 @@
 	smeltresult = /obj/item/ingot/iron // Made with an iron ingot, let us recover it
 
 /obj/item/rogueweapon/shield/tower/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -5,"sy" = -1,"nx" = 6,"ny" = -1,"wx" = 0,"wy" = -2,"ex" = 0,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 1,"eflip" = 0)
+			if("onback")
+				return list("shrink" = 0.6,"sx" = 1,"sy" = 4,"nx" = 1,"ny" = 2,"wx" = 3,"wy" = 3,"ex" = 0,"ey" = 2,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 8,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
+
+/obj/item/rogueweapon/shield/tower/hoplite
+	name = "ancient shield"
+	desc = "A gigantic, bronze reinforced shield that covers the entire body. An aasimar relic from an era long past."
+	icon_state = "boeotian"
+	force = 20
+	throwforce = 10
+	throw_speed = 1
+	throw_range = 3
+	wlength = WLENGTH_NORMAL
+	wbalance = -1 // Heavy, big shield
+	resistance_flags = null
+	flags_1 = CONDUCT_1
+	wdefense = 8
+	coverage = 75 // Rare shield from unique job, gets a tiny bit of additional coverage
+	attacked_sound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
+	parrysound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
+	max_integrity = 500
+	blade_dulling = DULLING_BASH
+	sellprice = 150 // A noble collector would love to get their hands on one of these
+	smeltresult = null // No bronze ingots yet
+
+/obj/item/rogueweapon/shield/tower/hoplite/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)

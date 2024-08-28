@@ -32,6 +32,18 @@
 	. = ..()
 	reagents.add_reagent(/datum/reagent/ash, 30) //double the amount of ash.
 
+// For Stonekeep Undead Alchemy
+/obj/effect/decal/cleanable/undeadash
+	name = "glimmering ashes"
+	desc = ""
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "special_ash"
+	mergeable_decal = FALSE
+
+/obj/effect/decal/cleanable/undeadash/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/undeadash, 20)
+
 /obj/effect/decal/cleanable/glass
 	name = "tiny shards"
 	desc = ""
