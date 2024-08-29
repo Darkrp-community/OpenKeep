@@ -35,6 +35,7 @@
 	var/cocked = FALSE
 	var/ramrod_inserted = TRUE
 	var/powdered = FALSE
+	var/wound = FALSE
 
 	/obj/item/gun/ballistic/revolver/grenadelauncher/pistol/update_icon()
 		// Update the icon based on the cocked state and whether the ramrod is inserted
@@ -81,6 +82,18 @@
 		cocked = TRUE
 	update_icon() // Update the icon state after cocking or de-cocking
 
+/obj/item/gun/ballistic/revolver/grenadelauncher/pistol/rmb_self(mob/user)
+	. = ..()
+	user.changeNext_move(CLICK_CD_RAPID)
+	var/windtime = 3.5
+	windtime = windtime - (user.mind.get_skill_level(/datum/skill/combat/firearms) / 2)
+	if(do_after(user, windtime SECONDS, TRUE, src) && !wound)
+		to_chat(user, "<span class='info'>I wind \the [src]'s mechanism.</span>")
+		playsound(src.loc, 'sound/foley/winding.ogg', 100, FALSE)
+		wound = TRUE
+	else
+		to_chat(user, "<span class='info'>\The [src]'s mechanism is already wound!</span>")
+
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/MiddleClick(mob/user, params)
 	. = ..()
 	if(ishuman(user))
@@ -118,10 +131,13 @@
 		return
 	if(!powdered)
 		return
+	if(!wound)
+		return
 	playsound(src.loc, 'sound/combat/Ranged/muskclick.ogg', 100, FALSE)
 	cocked = FALSE
 	rammed = FALSE
 	powdered = FALSE
+	wound = FALSE
 	sleep(click_delay)
 	update_icon()
 	..()
@@ -165,7 +181,7 @@
 				// Set the 'powdered' flag on the pistol
 				powdered = TRUE
 				to_chat(user, "<span class='info'>I add blastpowder to \the [src], making it ready for a powerful shot.</span>")
-				playsound(src.loc, 'sound/items/gunpowder_fill.ogg', 100, FALSE)
+				playsound(src.loc, 'sound/foley/gunpowder_fill.ogg', 100, FALSE)
 				return 1
 			else
 				to_chat(user, "<span class='warning'>Not enough blastpowder in [I] to powder the [src].</span>")
