@@ -694,7 +694,7 @@
 "Zt" = (/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog/inhumen_camp)
 "ZA" = (/obj/item/rope/chain,/obj/item/rope/chain,/obj/item/rope/chain,/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog/inhumen_camp)
 "ZP" = (/turf/open/water/swamp/deep,/area/rogue/outdoors/bog/inhumen_camp)
-"ZV" = (/obj/structure/closet/crate/chest/neu,/obj/item/reagent_containers/powder,/turf/open/floor/rogue/ruinedwood/turned/darker,/area/rogue/indoors/bandit_lair)
+"ZV" = (/obj/structure/closet/crate/chest/neu,/obj/item/reagent_containers/powder/spice,/turf/open/floor/rogue/ruinedwood/turned/darker,/area/rogue/indoors/bandit_lair)
 "ZY" = (/obj/structure/rack/rogue/shelf/biggest,/obj/item/clothing/under/roguetown/tights/sailor,/turf/open/floor/rogue/wood,/area/rogue)
 
 (1,1,1) = {"

@@ -409,6 +409,10 @@
 	color = "#5f4a0e"
 	taste_description = "rich truffles"
 
+/datum/reagent/water/spicy // filler, not important 
+	taste_description = "something spicy"
+	color = "#ea9f9fc6"
+
 /datum/reagent/consumable/soup/stew/gross // barely edible, but beggars eat it without issue, even getting a little relief
 	name = "beggars stew"
 	color = "#3b4537"
