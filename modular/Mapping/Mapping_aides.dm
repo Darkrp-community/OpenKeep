@@ -817,3 +817,14 @@
 	aportalid = "inhumenexit"
 	aportalgoesto = "inhumenin"
 
+// temp
+/obj/item/reagent_containers/powder/spice
+	name = "spice"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "spice"
+	item_state = "spice"
+	possible_transfer_amounts = list()
+	volume = 15
+	list_reagents = list(/datum/reagent/druqks = 15)
+	sellprice = 10
