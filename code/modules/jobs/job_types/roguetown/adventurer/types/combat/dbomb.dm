@@ -1,6 +1,6 @@
 /datum/advclass/comatb/dbomb
-	name = "Dwarf"
-	tutorial = "Dwarves like to blow things up."
+	name = "Dwarven Bombardier"
+	tutorial = "Tinkering Dwarves that like to blow things up."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list("Dwarf")
 	outfit = /datum/outfit/job/roguetown/adventurer/dbomb
@@ -14,36 +14,23 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	backl = /obj/item/storage/backpack/rogue/backpack
+	beltl = /obj/item/rogueweapon/pick
+	beltr = /obj/item/rogueweapon/hammer
 	backpack_contents = list(/obj/item/bomb = 1, /obj/item/flint = 1)
-	switch(pick(1,2))
-		if (1)
-			beltl = /obj/item/rogueweapon/pick
-			H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
-		if (2)
-			beltl = /obj/item/rogueweapon/hammer
-			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/smelting, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
+	H.change_stat("strength", 1)
+	H.change_stat("endurance", 1)
 	switch(pick(1,2))
 		if (1)
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather	
 		if (2)
 			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-
-/datum/outfit/job/roguetown/adventurer/dbomb/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-
-	H.change_stat("strength", 1)
-	H.change_stat("endurance", 1)
-
-	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)

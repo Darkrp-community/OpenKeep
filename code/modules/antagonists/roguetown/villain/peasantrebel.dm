@@ -9,6 +9,7 @@
 	antag_hud_type = ANTAG_HUD_REV
 	antag_hud_name = "rev"
 	show_in_roundend = FALSE
+	isgoodguy = TRUE // Previous townies, still should get buffs, make chaos.
 	confess_lines = list(
 		"VIVA!", 
 		"DEATH TO THE NOBLES!",
