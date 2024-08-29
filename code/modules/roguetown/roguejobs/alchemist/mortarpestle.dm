@@ -3,7 +3,7 @@
 
 /obj/item/pestle
 	name = "pestle"
-	desc = ""
+	desc = "Used to grind up ingredients in a mortar."
 	icon = 'icons/roguetown/misc/alchemy.dmi'
 	icon_state = "pestle"
 	force = 7
@@ -11,7 +11,7 @@
 
 /obj/item/mortar
 	name = "mortar"
-	desc = ""
+	desc = "A stone bowl used to grind ingredients."
 	icon = 'icons/roguetown/misc/alchemy.dmi'
 	icon_state = "mortar"
 	dropshrink = 0.5

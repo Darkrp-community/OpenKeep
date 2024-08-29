@@ -531,13 +531,6 @@
 	. = ..()
 	desc +=  "<span class='notice'>The writing reads '[random_reagent.name]'.</span>"
 
-/obj/item/pestle
-	name = "pestle"
-	desc = ""
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "pestle"
-	force = 7
-
 /obj/item/reagent_containers/glass/mortar
 	name = "mortar"
 	desc = ""
