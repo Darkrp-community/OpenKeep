@@ -1,6 +1,5 @@
 /datum/advclass/pilgrim/rare/zybantine
 	name = "Zybantine Emir"
-	f_title = "Zybantine Emira"
 	tutorial = "An Emir hailing from the Zybantu Ziggurat, here on business for the Mercator's Guild to the Isle of the Enigma."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
