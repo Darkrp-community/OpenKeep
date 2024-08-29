@@ -2,7 +2,6 @@
 /datum/antagonist/prisoner
 	name = "Prisoner"
 	increase_votepwr = FALSE
-	isgoodguy = TRUE
 
 /datum/antagonist/prisoner/on_gain()
 	if(!(locate(/datum/objective/escape) in objectives))

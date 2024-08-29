@@ -2,9 +2,9 @@
 
 /obj/structure/well
 	name = "well"
-	desc = "A well of stone. Has a hook which a bucket can be attached to, to draw water from beneath."
+	desc = ""
 	icon = 'icons/roguetown/misc/structure.dmi'
-	icon_state = "welly"
+	icon_state = "well"
 	anchored = TRUE
 	density = TRUE
 	opacity = 0
@@ -15,15 +15,15 @@
 
 /obj/structure/well/fountain
 	name = "water fountain"
-	desc = "An elegant fountain fit for royalty."
+	desc = ""
 	icon = 'icons/roguetown/misc/64x64.dmi'
 	icon_state = "fountain"
 	layer = BELOW_MOB_LAYER
 	layer = -0.1
 
 /obj/structure/well/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/reagent_containers/glass/bucket))
-		var/obj/item/reagent_containers/glass/bucket/W = I
+	if(istype(I, /obj/item/reagent_containers/glass/bucket/wooden))
+		var/obj/item/reagent_containers/glass/bucket/wooden/W = I
 		if(W.reagents.holder_full())
 			to_chat(user, "<span class='warning'>[W] is full.</span>")
 			return
@@ -31,6 +31,5 @@
 			var/list/waterl = list(/datum/reagent/water = 100)
 			W.reagents.add_reagent_list(waterl)
 			to_chat(user, "<span class='notice'>I fill [W] from [src].</span>")
-			playsound(user, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 80, FALSE)
 			return
 	else ..()

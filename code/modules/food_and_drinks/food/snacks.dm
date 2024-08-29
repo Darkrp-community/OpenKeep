@@ -362,19 +362,19 @@ All foods are distributed among various categories. Use common sense.
 				return 0
 			var/obj/item/reagent_containers/food/snacks/customizable/C = new custom_food_type(get_turf(src))
 			C.initialize_custom_food(src, S, user)
-			return 0
+			return 0*/
 	if(user.used_intent.blade_class == slice_bclass && W.wlength == WLENGTH_SHORT)
 		if(slice_bclass == BCLASS_CHOP)
-			//	RTD meat chopping noise  The 66% random bit is just annoying
+			//	RTD meat chopping noise
 			if(prob(66))
 				user.visible_message("<span class='warning'>[user] chops [src]!</span>")
 				return 0
-		else
+			else
 				user.visible_message("<span class='notice'>[user] chops [src]!</span>")
 				slice(W, user)
-			return 1
+				return 1
 		else if(slice(W, user))
-			return 1*/
+			return 1
 	..()
 //Called when you finish tablecrafting a snack.
 /obj/item/reagent_containers/food/snacks/CheckParts(list/parts_list, datum/crafting_recipe/food/R)
@@ -403,6 +403,11 @@ All foods are distributed among various categories. Use common sense.
 	if((slices_num <= 0 || !slices_num) || !slice_path) //is the food sliceable?
 		return FALSE
 
+	if(slice_sound)
+		playsound(get_turf(user), 'sound/neu/slicing.ogg', 60, TRUE, -1) // added some choppy sound
+	if(chopping_sound)
+		playsound(get_turf(user), 'sound/neu/chopping_block.ogg', 60, TRUE, -1) // added some choppy sound
+
 	if ( \
 			!isturf(src.loc) || \
 			!(locate(/obj/structure/table) in src.loc) && \
@@ -412,10 +417,6 @@ All foods are distributed among various categories. Use common sense.
 		to_chat(user, "<span class='warning'>I need to use a table.</span>")
 		return FALSE
 
-	if(slice_sound)
-		playsound(get_turf(user), 'modular/Neu_Food/sound/slicing.ogg', 60, TRUE, -1) // added some choppy sound
-	if(chopping_sound)
-		playsound(get_turf(user), 'modular/Neu_Food/sound/chopping_block.ogg', 60, TRUE, -1) // added some choppy sound
 	if(slice_batch)
 		if(!do_after(user, 30, target = src))
 			return FALSE

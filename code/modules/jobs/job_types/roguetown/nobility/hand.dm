@@ -10,7 +10,8 @@
 		"Humen",
 		"Elf",
 		"Half-Elf",
-		"Dwarf"
+		"Dwarf",
+		"Aasimar"
 	)
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/hand

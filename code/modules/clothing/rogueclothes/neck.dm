@@ -80,7 +80,7 @@
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	blocksound = CHAINHIT
-	smeltresult = null
+	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/neck/roguetown/chaincoif/AdjustClothes(mob/user)
 	if(loc == user)
@@ -110,7 +110,7 @@
 	desc = "A chain coif made of interwoven iron rings. Affordable protection against arrows and blades, \
 			but should be used as padding rather than relied upon as armor."
 	armor = list("melee" = 60, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	smeltresult = null
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/neck/roguetown/bevor
 	name = "bevor"
@@ -168,7 +168,7 @@
 
 /obj/item/clothing/neck/roguetown/psicross/astrata
 	name = "amulet of Astrata"
-	desc = "Blessed be everything the light of the sun touches, for it is protected by Her grace."
+	desc = "Blessed be everything the light of the sun touches, for it is blessed by Her grace."
 	icon_state = "astrata"
 	resistance_flags = FIRE_PROOF
 
@@ -198,7 +198,7 @@
 
 /obj/item/clothing/neck/roguetown/psicross/eora
 	name = "amulet of Eora"
-	desc = "And I love thee because thou art love."
+	desc = ""
 	icon_state = "eora"
 
 /obj/item/clothing/neck/roguetown/psicross/silver

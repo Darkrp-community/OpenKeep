@@ -40,11 +40,10 @@
 	adjustable = initial(adjustable)
 	icon_state = "[initial(icon_state)]"
 	slowdown = initial(slowdown)
+	body_parts_covered = initial(body_parts_covered)
 	flags_inv = initial(flags_inv)
 	flags_cover = initial(flags_cover)
 	block2add = initial(block2add)
-	if(!slot_flags == ITEM_SLOT_HEAD|ITEM_SLOT_HIP) // Prevents people right clicking visored helmets on their hip and exploiting coverage
-		body_parts_covered = initial(body_parts_covered)
 
 /*
 /obj/item/clothing/ui_action_click()

@@ -31,7 +31,6 @@
 #define TRAIT_CYCLOPS_RIGHT				"Cyclops (Right)" //poked right eye
 #define TRAIT_LEECHIMMUNE				"Unleechable" //leeches wont attach in bog squares
 #define TRAIT_ASSASSIN					"Assassin Training" //used for the assassin drifter's unique mechanics.
-#define TRAIT_BARDIC_TRAINING			"Bardic Training"
 
 #define TRAIT_MISSING_NOSE "Missing Nose" //halved stamina regeneration
 #define TRAIT_DISFIGURED "Disfigured"
@@ -43,7 +42,6 @@
 #define TRAIT_NOMOOD "no_mood"
 #define TRAIT_SIMPLE_WOUNDS "simple_wounds"
 #define TRAIT_BANDITCAMP "banditcamp"
-#define TRAIT_KNOWBANDITS "knowbandits"
 #define TRAIT_VAMPMANSION "vampiremansion"
 #define TRAIT_LIMPDICK "limp_dick"
 #define TRAIT_SEXPASS "sexpass"
@@ -78,8 +76,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEECHIMMUNE = "Leeches are reluctant to bite me.",
 	TRAIT_ASSASSIN = "My soul has been tainted by the god of murder.",
 	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
-	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
-	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments."
+	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality."
 	))
 
 // trait accessor defines

@@ -33,7 +33,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
 		head = /obj/item/clothing/head/roguetown/hatblu
 		cloak = /obj/item/clothing/cloak/raincloak/purple
@@ -41,7 +41,7 @@
 		beltl = /obj/item/quiver/arrows
 		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver)
 	if(H.gender == MALE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		pants = /obj/item/clothing/under/roguetown/tights/purple
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/purple
 		cloak = /obj/item/clothing/cloak/half

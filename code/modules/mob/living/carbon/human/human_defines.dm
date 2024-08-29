@@ -15,8 +15,6 @@
 
 	ambushable = 1
 
-	voice_pitch = 1
-
 	var/footstep_type = FOOTSTEP_MOB_HUMAN
 
 	var/last_sound //last emote so we have no doubles

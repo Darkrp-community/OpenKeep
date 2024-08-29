@@ -33,7 +33,7 @@
 
 // Shield banging
 /obj/item/rogueweapon/shield/attackby(obj/item/attackby_item, mob/user, params)
-	if(istype(attackby_item, /obj/item/rogueweapon) && !istype(attackby_item, /obj/item/rogueweapon/hammer))
+	if(istype(attackby_item, /obj/item/rogueweapon))
 		if(!COOLDOWN_FINISHED(src, shield_bang))
 			return
 		user.visible_message("<span class='danger'>[user] bangs [src] with [attackby_item]!</span>")

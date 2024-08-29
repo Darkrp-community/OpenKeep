@@ -34,7 +34,7 @@
 			return TRUE
 		mill.icon_state = "peppermill_grind"
 		to_chat(user, "You start rubbing the steak with black pepper.")
-		playsound(get_turf(user), 'modular/Neu_Food/sound/peppermill.ogg', 100, TRUE, -1)
+		playsound(get_turf(user), 'sound/neu/peppermill.ogg', 100, TRUE, -1)
 		if(do_after(user,long_cooktime, target = src))
 			if(!mill.reagents.has_reagent(/datum/reagent/consumable/blackpepper, 1))
 				to_chat(user, "There's not enough black pepper to make anything with.")
@@ -138,28 +138,6 @@
 	fried_type = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	rotprocess = SHELFLIFE_DECENT
-/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried/attackby(obj/item/I, mob/user, params)
-	var/found_table = locate(/obj/structure/table) in (loc)
-	if(user.mind)
-		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
-	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_baked))
-		if(isturf(loc)&& (found_table))
-			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
-			if(do_after(user,short_cooktime, target = src))
-				new /obj/item/reagent_containers/food/snacks/rogue/frybirdtato(loc)
-				qdel(I)
-				qdel(src)
-	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_fried))
-		if(isturf(loc)&& (found_table))
-			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
-			if(do_after(user,short_cooktime, target = src))
-				new /obj/item/reagent_containers/food/snacks/rogue/frybirdtato(loc)
-				qdel(I)
-				qdel(src)
-	else
-		return ..()
-
 
 /*	.............   Crispy bacon   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried
@@ -233,18 +211,9 @@
 	if(user.mind)
 		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
 		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
-	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked))
-		if(isturf(loc)&& (found_table))
-			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
-			to_chat(user, "Preparing a serving of wiener and tatos...")
-			if(do_after(user,short_cooktime, target = src))
-				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotato(loc)
-				qdel(I)
-				qdel(src)
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
-			to_chat(user, "Preparing a serving of frybird and tatos...")
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/frybirdtato(loc)
 				qdel(I)
@@ -262,21 +231,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	tastes = list("savoury morsel" = 1)
 	rotprocess = SHELFLIFE_DECENT
-/obj/item/reagent_containers/food/snacks/rogue/preserved/onion_fried/attackby(obj/item/I, mob/user, params)
-	var/found_table = locate(/obj/structure/table) in (loc)
-	if(user.mind)
-		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
-	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked))
-		if(isturf(loc)&& (found_table))
-			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
-			to_chat(user, "Preparing a serving of wiener and onions...")
-			if(do_after(user,short_cooktime, target = src))
-				new /obj/item/reagent_containers/food/snacks/rogue/wieneronions(loc)
-				qdel(I)
-				qdel(src)
-	else
-		return ..()
+
 
 /*	.............   Fried potato   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_fried
@@ -295,17 +250,8 @@
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
-			to_chat(user, "Preparing a serving of wiener and tatos...")
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotato(loc)
-				qdel(I)
-				qdel(src)
-	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried))
-		if(isturf(loc)&& (found_table))
-			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
-			to_chat(user, "Preparing a serving of frybird and tatos...")
-			if(do_after(user,short_cooktime, target = src))
-				new /obj/item/reagent_containers/food/snacks/rogue/frybirdtato(loc)
 				qdel(I)
 				qdel(src)
 	else

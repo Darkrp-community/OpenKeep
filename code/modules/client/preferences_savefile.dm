@@ -471,8 +471,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	jumpsuit_style	= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
 	features["mcolor"]	= sanitize_hexcolor(features["mcolor"], 3, 0)
-	features["mcolor2"]	= sanitize_hexcolor(features["mcolor2"], 6, 0)
-	features["mcolor3"]	= sanitize_hexcolor(features["mcolor3"], 6, 0)
 	features["ethcolor"]	= copytext(features["ethcolor"],1,7)
 	features["tail_lizard"]	= sanitize_inlist(features["tail_lizard"], GLOB.tails_list_lizard)
 	features["tail_human"] 	= sanitize_inlist(features["tail_human"], GLOB.tails_list_human, "None")
@@ -483,15 +481,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["spines"] 	= sanitize_inlist(features["spines"], GLOB.spines_list)
 	features["body_markings"] 	= sanitize_inlist(features["body_markings"], GLOB.body_markings_list)
 	features["feature_lizard_legs"]	= sanitize_inlist(features["legs"], GLOB.legs_list, "Normal Legs")
-	S["body_markings"] >> body_markings
-	body_markings = SANITIZE_LIST(body_markings)
-	validate_body_markings()
-
-	S["descriptor_entries"] >> descriptor_entries
-	descriptor_entries = SANITIZE_LIST(descriptor_entries)
-	S["custom_descriptors"] >> custom_descriptors
-	custom_descriptors = SANITIZE_LIST(custom_descriptors)
-	validate_descriptors()
+	features["moth_wings"] 	= sanitize_inlist(features["moth_wings"], GLOB.moth_wings_list, "Plain")
+	features["moth_markings"] 	= sanitize_inlist(features["moth_markings"], GLOB.moth_markings_list, "None")
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
 	//Validate job prefs
@@ -571,14 +562,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Patron
 	WRITE_FILE(S["selected_patron"]		, selected_patron.type)
-
-	// Organs
-	WRITE_FILE(S["customizer_entries"] , customizer_entries)
-	// Body markings
-	WRITE_FILE(S["body_markings"] , body_markings)
-	// Descriptor entries
-	WRITE_FILE(S["descriptor_entries"] , descriptor_entries)
-	WRITE_FILE(S["custom_descriptors"] , custom_descriptors)
 
 	return TRUE
 

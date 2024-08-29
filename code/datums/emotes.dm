@@ -78,19 +78,17 @@
 		user.log_message(msg, LOG_EMOTE)
 		msg = "<b>[user]</b> " + msg
 
-	var/pitch = 1 //bespoke vary system so deep voice/high voiced humans
+	var/freq = get_rand_frequency() //bespoke vary system so deep voice/high voiced humans
+
 	if(isliving(user))
 		var/mob/living/L = user
 		for(var/obj/item/implant/I in L.implants)
 			I.trigger(key, L)
-		pitch = L.get_emote_pitch()
+		freq = L.get_emote_frequency()
 
-	var/sound/tmp_sound = get_sound(user)
-	if(!istype(tmp_sound))
-		tmp_sound = sound(get_sfx(tmp_sound))
-	tmp_sound.frequency = pitch
+	var/tmp_sound = get_sound(user)
 	if(tmp_sound && (!only_forced_audio || !intentional))
-		playsound(user, tmp_sound, snd_vol, FALSE, snd_range, soundping = soundping)
+		playsound(user, tmp_sound, snd_vol, FALSE, snd_range, frequency = freq, soundping = soundping)
 	if(!nomsg)
 		for(var/mob/M in GLOB.dead_mob_list)
 			if(!M.client || isnewplayer(M))
@@ -103,19 +101,26 @@
 		else
 			user.visible_message(msg)
 
-/mob/living/proc/get_emote_pitch()
-	return clamp(voice_pitch, 0.5, 2)
+/mob/living/proc/get_emote_frequency()
+	return get_rand_frequency()
 
-/mob/living/carbon/human/get_emote_pitch()
-	var/final_pitch = ..()
-	var/pitch_modifier = 0
-	if(STASTR > 10)
-		pitch_modifier -= (STASTR - 10) * 0.03
-	else if(STASTR < 10)
-		pitch_modifier += (10 - STASTR) * 0.03
-	return clamp(final_pitch + pitch_modifier, 0.5, 2)
-
-	
+/mob/living/carbon/human/get_emote_frequency()
+	var/cont = 44100
+	if(gender == MALE)
+		if(STASTR > 10)
+			for(var/i in 1 to STASTR)
+				cont -= 200
+		if(STASTR < 10)
+			for(var/i in 1 to STASTR)
+				cont += 100
+	else
+		if(STASTR > 10)
+			for(var/i in 1 to STASTR)
+				cont -= 200
+		if(STASTR < 5)
+			for(var/i in 1 to STASTR)
+				cont += 100
+	return cont
 
 
 /datum/emote/proc/get_env(mob/living/user)

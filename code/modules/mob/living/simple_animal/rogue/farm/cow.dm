@@ -80,6 +80,8 @@
 	defprob = 50
 	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/cow
 
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet/get_emote_frequency()
+	return 55100
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/simple_limb_hit(zone)
 	if(!zone)
@@ -257,3 +259,6 @@
 	STASTR = 5
 	STASPD = 5
 	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/bull
+
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/bullet/get_emote_frequency()
+	return 55100

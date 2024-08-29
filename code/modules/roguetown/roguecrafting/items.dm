@@ -158,13 +158,6 @@
 	result = /obj/item/reagent_containers/glass/bucket/wooden
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
-/datum/crafting_recipe/roguetown/woodbowl
-	name = "wooden bowl"
-	result = list(/obj/item/reagent_containers/glass/bowl,
-				/obj/item/reagent_containers/glass/bowl)
-	reqs = list(/obj/item/grown/log/tree/small = 1)
-
-
 /datum/crafting_recipe/roguetown/woodcup
 	name = "wooden cups"
 	result = list(/obj/item/reagent_containers/glass/cup/wooden/crafted,

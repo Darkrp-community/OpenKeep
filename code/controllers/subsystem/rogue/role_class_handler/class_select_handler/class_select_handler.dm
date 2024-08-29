@@ -213,8 +213,6 @@
 		for(var/datum/advclass/datums in rolled_classes)
 			if(!(CTAG_ADVENTURER in datums.category_tags))
 				continue
-			if((CTAG_BANDIT in datums.category_tags) && HAS_TRAIT(H, TRAIT_VILLAIN)) //so VLs and stuff cant pick bandit
-				continue
 			var/plus_str = ""
 /*			if(rolled_classes[datums] > 0)
 				var/plus_factor = rolled_classes[datums]

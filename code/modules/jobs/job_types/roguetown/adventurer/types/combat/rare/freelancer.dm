@@ -46,9 +46,6 @@
 	head = /obj/item/clothing/head/roguetown/rare/zybanplate
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	if(!H.has_language(/datum/language/zybantine))
-		H.grant_language(/datum/language/zybantine)
-		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
 
 	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

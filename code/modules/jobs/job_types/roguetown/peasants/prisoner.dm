@@ -38,7 +38,7 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE) // given Noble trait. N.
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE) // given Noble trait. N.
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE) // given Noble trait. N.
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE) // per suggestion. N.

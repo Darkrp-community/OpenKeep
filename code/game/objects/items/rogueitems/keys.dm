@@ -67,11 +67,6 @@
 	icon_state = "mazekey"
 	lockid = "manor"
 
-/obj/item/roguekey/bandit // use the old key name for various old keys for dungeons etc, less dumb than bandit keys having a label on it saying bandit key
-	name = "old key"
-	icon_state = "mazekey"
-	lockid = "banditcamp"
-
 /obj/item/roguekey/queen
 	name = "lady key"
 	desc = "The Lady's key."
