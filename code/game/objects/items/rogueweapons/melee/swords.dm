@@ -1245,7 +1245,7 @@
 	max_integrity = 220
 	sellprice = 10
 
-/obj/item/rogueweapon/sword/bronze
+///obj/item/rogueweapon/sword/bronze
 	name = "bronze sword"
 	desc = "A simple bronze sword, an ancient design with a tested edge. While this one is far inferior in quality to those forged in the God-War era, it still does the job."
 	icon_state = "bsword"
@@ -1291,7 +1291,7 @@
 
 
 
-/obj/item/rogueweapon/sword/long/marlin/bronze
+///obj/item/rogueweapon/sword/long/marlin/bronze
 	force = 15
 	force_wielded = 25 // this one is actually fair since is 2 bars, same as iron zwei
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
