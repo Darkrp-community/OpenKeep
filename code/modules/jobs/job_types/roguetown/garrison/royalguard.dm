@@ -63,7 +63,7 @@
 	backl = /obj/item/rogueweapon/shield/tower/metal
 	r_hand = /obj/item/rogueweapon/halberd
 	if(prob(30))
-		head = /obj/item/clothing/head/roguetown/helmet/heavy/knight
+		head = /obj/item/clothing/head/roguetown/helmet/visored/knight
 	else
 		head = /obj/item/clothing/head/roguetown/helmet/sallet
 
@@ -75,10 +75,10 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.change_stat("strength", 2)

@@ -30,7 +30,7 @@
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/tongs=1, /obj/item/rogueore/coal=1, /obj/item/rogueore/iron=1)
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(0,1,1), TRUE)
@@ -51,7 +51,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 6, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 6, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, pick(1,2,2), TRUE)
-		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
 		if(H.age == AGE_OLD) // Wise still on every field, but gimped stats from age.
 			H.change_stat("endurance", -1)
 			H.change_stat("constitution", -1)
