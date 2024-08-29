@@ -62,10 +62,7 @@
 			else
 				var/datum/mind/smelter_mind = user.mind // Who smelted the ore?
 				var/smelter_exp = smelter_mind.get_skill_level(/datum/skill/craft/smelting) // 0 to 6
-				if(smelter_exp < 6)
-					ore[W] = floor(rand(smelter_exp*15, max(63, smelter_exp*25))/25) // Math explained below
-				else
-					ore[W] = floor(min(3, smelter_exp)) // Guarantees a return of 3 no matter how extra experience past 3000 you have. 
+				ore[W] = floor(rand(smelter_exp*15, max(63, smelter_exp*25))/25) // Math explained below
 				/*  
 				RANDOMLY PICKED NUMBER ACCORDING TO SMELTER SKILL:
 					NO SKILL: 		between 00 and 63

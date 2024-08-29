@@ -35,13 +35,8 @@
 	if(user.Adjacent(src))
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
-			if(!isbandit(user))
-				to_chat(H, "<b>I now know the faces of the local bandits.</b>")
-				ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
-				H.playsound_local(H, 'sound/misc/notice (2).ogg', 100, FALSE)
-			else
-				var/list/funny = list("Yup. My face is on there.", "Wait a minute... That's me!", "Look at that handsome devil...", "At least I am wanted by someone...", "My chin can't be that big... right?")
-				to_chat(H, "<b>[pick(funny)]</b>") 
+			to_chat(H, "<b>I now know the faces of the local bandits.</b>")
+			H.playsound_local(H, 'sound/misc/notice (2).ogg', 100, FALSE)
 
 /obj/structure/fluff/walldeco/innsign
 	name = "sign"

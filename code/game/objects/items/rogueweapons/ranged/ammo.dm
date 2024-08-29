@@ -25,7 +25,6 @@
 	woundclass = BCLASS_STAB
 	flag = "bullet"
 	speed = 0.3
-	accuracy = 85 //Crossbows have higher accuracy
 
 /obj/item/ammo_casing/caseless/rogue/bolt/poison
 	name = "poison bolt"

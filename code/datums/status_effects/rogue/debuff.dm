@@ -79,9 +79,6 @@
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/silver_curse
 	duration = 5 SECONDS
 
-/datum/status_effect/debuff/silver_curse/greater
-	duration = 10 SECONDS
-
 /atom/movable/screen/alert/status_effect/debuff/silver_curse
 	name = "Silver Curse"
 	desc = "My BANE!"
@@ -308,15 +305,4 @@
 /atom/movable/screen/alert/status_effect/debuff/trainsleep
 	name = "Muscle Soreness"
 	desc = "<span class='warning'>Gaaaah, So sooooooore.</span>\n"
-	icon_state = "muscles"
-
-/datum/status_effect/debuff/viciousmockery
-	id = "viciousmockery"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/viciousmockery
-	duration = 600 // One minute
-	effectedstats = list("strength" = -2, "speed" = -2,"endurance" = -2)
-
-/atom/movable/screen/alert/status_effect/debuff/viciousmockery
-	name = "Vicious Mockery"
-	desc = "<span class='warning'>THAT SPOONY BARD! ARGH!</span>\n"
 	icon_state = "muscles"

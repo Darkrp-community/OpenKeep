@@ -154,15 +154,7 @@
 /datum/stressevent/music/six
 	stressadd = -6
 	timer = 10 MINUTES
-	desc = "<span class='green'>The music is a blessing from Xylix.</span>"
-
-// Bard buffs below
-
-/datum/stressevent/bardicbuff
-	timer = 1 MINUTES
-	desc = "<span class='nicegreen'>Bardic inspiration moves mine soul even more!</span>\n"
-	stressadd = -2
-	timer = 10 MINUTES
+	desc = "<span class='green'>The music is a blessing from Eora.</span>"
 
 /datum/stressevent/vblood
 	stressadd = -5

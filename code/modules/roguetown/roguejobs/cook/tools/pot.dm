@@ -1,48 +1,27 @@
-/obj/item/reagent_containers/glass/bucket/pot
+/obj/item/cooking/pot
 	force = 10
+	possible_item_intents = list(INTENT_GENERIC)
 	name = "pot"
-	desc = "The peasants friend, when filled with boiling water it will turn the driest oats to filling oatmeal."
-
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	experimental_inhand = FALSE
+	desc = ""
 	icon_state = "pote"
-	item_state = "pot"
-
 	sharpness = IS_BLUNT
+	//dropshrink = 0.8
 	slot_flags = null
-	w_class = WEIGHT_CLASS_BULKY
+	ingsize = 6
+	item_state = "pot"
 	drop_sound = 'sound/foley/dropsound/shovel_drop.ogg'
+	w_class = WEIGHT_CLASS_BULKY
 
 
-/obj/item/reagent_containers/glass/bucket/pot/update_icon()
-	cut_overlays()
-	if(reagents.total_volume > 0) 
-		if(reagents.total_volume <= 50) 
-			var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "pote_half")
-			filling.color = mix_color_from_reagents(reagents.reagent_list)
-			filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
-			add_overlay(filling)
-
-		if(reagents.total_volume > 50) 
-			var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "pote_full")
-			filling.color = mix_color_from_reagents(reagents.reagent_list)
-			filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
-			add_overlay(filling)
+// THE SOUP UPDATE IS BEING WORKED ON HERE (But it is on hold for now while I figure this fucking shit out)
 
 
-/obj/item/reagent_containers/glass/bucket/pot/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/reagent_containers/glass/bowl))
-		to_chat(user, "<span class='notice'>Filling the bowl...</span>")
-		playsound(user, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 70, FALSE)
-		if(do_after(user,2 SECONDS, target = src))
-			reagents.trans_to(I, reagents.total_volume)
-	return TRUE
+// The Pot path is /obj/item/cooking/pot - This is the kettle of which soup is cooked. Stored in another file in TOOLS.
+// Soup bowl icon stored in 'icons/roguetown/items/food.dmi'
+/*
+	var/list/acceptedfoods/list() // Describes what foods are allowed to go into soup, which is all food-path (/obj/item/reagent_containers/food/snacks/rogue)
+	var/cookingtime = 2 MINUTES  // It takes 2 minutes to stew up a pot of the good stuff.
+	var/maximumingredient = 5  // You can only add up to 5 ingredients
+	var/nutrimentlevel // Detects how much nutriment UU's is within the food to determine if its a BROTH (5uu), GRUEL (10uu), SOUP(15uu) or STEW (20uu).
 
-/datum/anvil_recipe/tools/pote
-	name = "Iron pot"
-	recipe_name = "a cooking pot"
-	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/reagent_containers/glass/bucket/pot
-	craftdiff = 0
+*/

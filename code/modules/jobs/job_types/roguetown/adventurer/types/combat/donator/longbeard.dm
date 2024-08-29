@@ -3,7 +3,7 @@
 
 /datum/advclass/combat/longbeard
 	name = "Longbeard"
-	tutorial = "You've earned your place as one of the old grumblers, a pinnacle of tradition, justice, and willpower. You've come to establish order in these lands, and with your hammer of grudges you'll see it through."
+	tutorial = "An old dwarf is a pinnacle of tradition, justice and willpower. You've come to establish order and with your hammer of grudges you'll see it through."
 	allowed_ages = list( AGE_MIDDLEAGED, AGE_OLD)
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list("Dwarf")
@@ -23,13 +23,12 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
-		H.change_stat("strength", 2) // Same stat spread as lancer/swordmaster, but no -1 speed at the cost of 1 point of endurance. A very powerful dwarf indeed
-		H.change_stat("constitution", 2)
-		H.change_stat("endurance", 1)
 
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	backr = /obj/item/rogueweapon/mace/warhammer
@@ -43,4 +42,3 @@
 	head = /obj/item/clothing/head/roguetown/rare/dwarfplate
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Nothing fazes a longbeard

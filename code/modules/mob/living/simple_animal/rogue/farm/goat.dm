@@ -136,6 +136,8 @@
 	buckle_lying = 0
 	can_saddle = FALSE
 
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet/get_emote_frequency()
+	return 55100
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/simple_limb_hit(zone)
 	if(!zone)
@@ -356,3 +358,6 @@
 	can_buckle = FALSE
 	buckle_lying = 0
 	can_saddle = FALSE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatletboy/get_emote_frequency()
+	return 55100

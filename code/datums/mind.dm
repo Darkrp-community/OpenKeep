@@ -431,12 +431,6 @@
 				if(A.type == datum_type)
 					return A
 
-// Boolean. Returns true if the antag is actually "good", false otherwise.
-/datum/mind/proc/isactuallygood()
-	for(var/GG in antag_datums)
-		var/datum/antagonist/antaggy = GG
-		return antaggy.isgoodguy
-
 /*
 	Removes antag type's references from a mind.
 	objectives, uplinks, powers etc are all handled.

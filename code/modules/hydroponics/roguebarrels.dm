@@ -5,9 +5,6 @@
 	. = ..()
 	reagents.add_reagent(/datum/reagent/water, rand(0,300))
 
-
-/obj/structure/fermenting_barrel/random/beer
-	icon_state = "barrel_alt"
 /obj/structure/fermenting_barrel/random/beer/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/consumable/ethanol/beer, rand(0,300))

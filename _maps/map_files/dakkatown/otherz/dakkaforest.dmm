@@ -129,7 +129,7 @@
 "sm" = (/obj/machinery/light/rogue/torchholder/c,/turf/open/floor/rogue/woodturned,/area/rogue/indoors)
 "sp" = (/obj/structure/chair/stool/rogue,/turf/open/floor/rogue/grass,/area/rogue/outdoors/rtfield)
 "sD" = (/mob/living/simple_animal/hostile/retaliate/rogue/wolf,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/woods)
-"sN" = (/obj/machinery/light/rogue/hearth,/obj/item/reagent_containers/glass/bucket/pot,/turf/open/floor/rogue/tile/checker,/area/rogue/indoors)
+"sN" = (/obj/machinery/light/rogue/hearth,/obj/item/cooking/pot,/turf/open/floor/rogue/tile/checker,/area/rogue/indoors)
 "sQ" = (/turf/closed/wall/mineral/rogue/roofwall/middle{dir = 1},/area/rogue/outdoors/woods)
 "ta" = (/obj/structure/rack/rogue,/obj/item/rogueweapon/pitchfork,/obj/item/rogueweapon/pitchfork,/turf/open/floor/rogue/cobble,/area/rogue/indoors)
 "tm" = (/turf/open/floor/rogue/tile,/area/rogue/indoors)

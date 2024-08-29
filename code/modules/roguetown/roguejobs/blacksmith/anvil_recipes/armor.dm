@@ -86,30 +86,6 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 
-
-/datum/anvil_recipe/armor/iplate
-	name = "Plate armor (3)"
-	recipe_name = "a heavy plate armor"
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/ingot/iron,/obj/item/ingot/iron)
-	created_item = /obj/item/clothing/suit/roguetown/armor/plate/scale/iron 
-	craftdiff = 1
-
-/datum/anvil_recipe/armor/iplatehelmet
-	name = "Plate helmet (2)"
-	recipe_name = "a face guarded iron helmet"
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/ingot/iron)
-	created_item = /obj/item/clothing/head/roguetown/helmet/ironplate
-	craftdiff = 1
-
-/datum/anvil_recipe/armor/ipothelmet
-	name = "Pot helmet"
-	recipe_name = "a heavy iron helmet"
-	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/clothing/head/roguetown/helmet/ironpot
-	craftdiff = 1
-
 /datum/anvil_recipe/armor/platemask
 	name = "Face mask x2"
 	recipe_name = "a pair of Face Masks"
@@ -254,7 +230,7 @@
 	recipe_name = "a Knight's Helmet"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/knight)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/knight)
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/helmetnasal
@@ -271,7 +247,7 @@
 	recipe_name = "a Hounskull Helmet"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
-	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/hounskull)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/hounskull)
 	craftdiff = 4
 
 /datum/anvil_recipe/armor/platefull
@@ -333,5 +309,5 @@
 	recipe_name = "a Visored Sallet"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/sallet)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/sallet/visored)
 	craftdiff = 3
