@@ -34,6 +34,7 @@
 	sellprice = 200 // This kind of equipment is very hard to come by in Rockhill.
 	var/cocked = FALSE
 	var/ramrod_inserted = TRUE
+	var/powdered = FALSE
 
 	/obj/item/gun/ballistic/revolver/grenadelauncher/pistol/update_icon()
 		// Update the icon based on the cocked state and whether the ramrod is inserted
@@ -115,9 +116,12 @@
 		return
 	if(!rammed)
 		return
+	if(!powdered)
+		return
 	playsound(src.loc, 'sound/combat/Ranged/muskclick.ogg', 100, FALSE)
 	cocked = FALSE
 	rammed = FALSE
+	powdered = FALSE
 	sleep(click_delay)
 	update_icon()
 	..()
@@ -133,21 +137,41 @@
 	var/obj/item/ramrod/rrod = new(src)
 	rod = rrod
 
-/obj/item/gun/ballistic/revolver/grenadelauncher/pistol/attackby(obj/item/A, mob/user, params)
+/obj/item/gun/ballistic/revolver/grenadelauncher/pistol/attackby(obj/item/I, mob/user, params)
 	var/ramtime = 5.5
 	ramtime = ramtime - (user.mind.get_skill_level(/datum/skill/combat/firearms) / 2)
-	if(istype(A, /obj/item/ramrod))
+	
+	// Check if the item used is a ramrod
+	if(istype(I, /obj/item/ramrod))
 		if(!user.is_holding(src))
 			to_chat(user, "<span class='warning'>I need to hold \the [src] to ram it!</span>")
 			return
 		if(chambered)
+			if(!powdered)
+				to_chat(user, "<span class='warning'>I need to powder the [src] before I can ram it.</span>")
+				return
 			if(!rammed)
 				if(do_after(user, ramtime SECONDS, TRUE, src))
 					to_chat(user, "<span class='info'>I ram \the [src].</span>")
 					playsound(src.loc, 'sound/foley/nockarrow.ogg', 100, FALSE)
 					rammed = TRUE
 	else
-		return ..()
+		// Check if the item used is a reagent container
+		if(istype(I, /obj/item/reagent_containers))
+			// Check if the reagent container contains at least 5u of blastpowder
+			if(I.reagents.get_reagent_amount(/datum/reagent/blastpowder) >= 5)
+				// Subtract 5u of blastpowder from the reagent container
+				I.reagents.remove_reagent(/datum/reagent/blastpowder, 5)
+				// Set the 'powdered' flag on the pistol
+				powdered = TRUE
+				to_chat(user, "<span class='info'>I add blastpowder to \the [src], making it ready for a powerful shot.</span>")
+				playsound(src.loc, 'sound/items/gunpowder_fill.ogg', 100, FALSE)
+				return 1
+			else
+				to_chat(user, "<span class='warning'>Not enough blastpowder in [I] to powder the [src].</span>")
+				return 0
+
+	return ..()
 
 /obj/item/ammo_box/magazine/internal/shot/musk
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/bullet
@@ -159,6 +183,4 @@
 	name = "alchemical flask"
 	desc = "A small metal flask used for the secure storing of alchemical powders."
 	list_reagents = list(/datum/reagent/blastpowder = 45)
-	volume = 45
-	amount_per_transfer_from_this = 5
 	icon_state = "aflask"
