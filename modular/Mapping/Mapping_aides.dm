@@ -798,3 +798,22 @@
 // Temp to avoid conflicts
 /obj/item/cooking/pot
 
+/*	..................   Traveltiles   ................... */ // these are the ones on centcomm, where the actual lair is
+/obj/structure/fluff/traveltile/bandit_lair
+	aportalid = "banditin"
+	aportalgoesto = "banditexit"
+
+/obj/structure/fluff/traveltile/vampire_lair
+	aportalid = "vampin"
+	aportalgoesto = "vampexit"
+
+/obj/structure/fluff/traveltile/inhumen_lair
+	aportalid = "inhumenin"
+	aportalgoesto = "inhumenexit"
+
+
+/obj/structure/fluff/traveltile/to_inhumen_tribe
+	name = "to the Deep Bog"
+	aportalid = "inhumenexit"
+	aportalgoesto = "inhumenin"
+
