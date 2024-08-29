@@ -34,6 +34,13 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/jackberrywine
 	rotprocess = SHELFLIFE_SHORT
+	var/poisonous = FALSE
+
+/obj/item/reagent_containers/food/snacks/grown/berries/rogue/examine(var/mob/user)
+	var/farminglvl = user.mind?.get_skill_level(/datum/skill/labor/farming)
+	. += ..()
+	if(farminglvl >= 3 && poisonous == TRUE)
+		. += "These berries appear to be poisonous."
 
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue/Initialize()
 	if(GLOB.berrycolors[color_index])
@@ -73,6 +80,7 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	tastes = list("berry" = 1)
 	list_reagents = list(/datum/reagent/berrypoison = 5, /datum/reagent/consumable/nutriment = 3)
 	color_index = "bad"
+	poisonous = TRUE
 
 /obj/item/seeds/berryrogue/poison
 	product = /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
