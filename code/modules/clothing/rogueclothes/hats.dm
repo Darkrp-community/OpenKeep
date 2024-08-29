@@ -1379,6 +1379,11 @@
 		return
 	qdel(src)
 
+/obj/item/clothing/head/roguetown/helmet/leather/kaizoku
+	name = "kaizoku hat"
+	desc = "A distinguished hat with three sides of the brim turned up and laced, forming a triangle."
+	icon_state = "tricorn"
+
 //Still unsure how to balance these following ones.
 /*
 /obj/item/clothing/head/roguetown/kaizoku/ceramic

@@ -451,7 +451,13 @@
 		if(get_detail_color())
 			pic.color = get_detail_color()
 		add_overlay(pic)
-////Kaizoku Shirt Content////
+
+///////////////////////////////////////////////////////////////////
+// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
+// If the usage is desired, ask monochrome9090 for permission.   //
+// Respect the artists's will, COMMISSION them instead.          //
+// This is solely for SPRITES. The code is free for the taking.	 //
+///////////////////////////////////////////////////////////////////
 
 /obj/item/clothing/suit/roguetown/shirt/kaizoku
 	icon = 'icons/roguetown/kaizoku/clothingicon/shirt.dmi'
@@ -498,6 +504,10 @@
 	body_parts_covered = CHEST|VITALS
 	colorable_var = TRUE
 
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/ronin
+	color = "#526652"
+	colorable_var = FALSE
+
 /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt
 	name = "kimono jinbei"
 	desc = "A summer shirt that goes along with a tobi, used during the hot summers on Fog islands."
@@ -509,6 +519,11 @@
 	l_sleeve_status = SLEEVE_NORMAL
 	body_parts_covered = CHEST|ARMS|VITALS
 	colorable_var = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random/Initialize()
+	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	..()
+
 
 /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/shinobi
 	color = "#372161"

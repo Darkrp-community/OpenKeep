@@ -258,6 +258,7 @@
 	item_state = "tobi"
 	icon = 'icons/roguetown/kaizoku/clothingicon/pants.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
 	sewrepair = TRUE
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT)
@@ -266,6 +267,10 @@
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
 	colorable_var = TRUE
+
+/obj/item/clothing/under/roguetown/tobi/random/Initialize()
+	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	..()
 
 /obj/item/clothing/under/roguetown/kaizoku/tobi/thunder
 	name = "thunder tobi pants"
@@ -306,6 +311,9 @@
 	name = "shinobi zubon"
 	desc = "Traditional flexible pants with loose fit around the legs with hardened leather tied under the cloth and ankles to prevent snagging and noise."
 	gender = PLURAL
+	icon = 'icons/roguetown/kaizoku/clothingicon/pants.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
 	icon_state = "shinobizubon"
 	item_state = "shinobizubon"
 	sewrepair = TRUE
@@ -320,6 +328,9 @@
 	name = "marauder chausses"
 	desc = "Chausses used by marauders under the banner of the Abyssariads."
 	gender = PLURAL
+	icon = 'icons/roguetown/kaizoku/clothingicon/pants.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
 	icon_state = "marauder_leg"
 	item_state = "marauder_leg"
 	sewrepair = FALSE
@@ -338,6 +349,9 @@
 /obj/item/clothing/under/roguetown/kaizoku/ceramic/light
 	name = "ivory leg plates"
 	desc = "The leg protection proper for Kappa warriors."
+	icon = 'icons/roguetown/kaizoku/clothingicon/pants.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
 	max_integrity = 200
 	prevent_crits = list(BCLASS_CHOP, BCLASS_BLUNT)
 
@@ -365,5 +379,8 @@
 
 /obj/item/clothing/under/roguetown/kaizoku/tribal
 	name = "tribal lowerhalf"
-	icon_state = "tribalcloth"
 	desc = "piece of clothings usually used by Kappa tribesmen of all genders."
+	icon_state = "tribalcloth"
+	icon = 'icons/roguetown/kaizoku/clothingicon/pants.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'

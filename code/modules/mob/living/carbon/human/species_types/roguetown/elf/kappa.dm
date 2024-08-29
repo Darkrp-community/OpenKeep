@@ -22,17 +22,13 @@
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
+	custom_clothes = TRUE //They use the same clothes as dwarves. Just copypaste the female dwarf icon and rename.
+	use_f = TRUE
 	mutant_bodyparts = list("ears","tail_human")
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-/* experimenting - origional
-	limbs_icon_m = 'icons/roguetown/mob/bodies/m/ms_kappa.dmi'
-	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fs_kappa.dmi'
-	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
-	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
-*/
-	limbs_icon_m = 'icons/roguetown/kaizoku/abyssariad_bodies/male/mss_test.dmi'
-	limbs_icon_f = 'icons/roguetown/kaizoku/abyssariad_bodies/female/fss_test.dmi'
+	limbs_icon_m = 'icons/roguetown/kaizoku/abyssariad_bodies/male/ms_kappa.dmi'
+	limbs_icon_f = 'icons/roguetown/kaizoku/abyssariad_bodies/female/fs_kappa.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 

@@ -80,7 +80,7 @@
 	swingdelay = 1
 	misscost = 5
 
-/datum/intent/axe/battleaxe/chop/ono
+/datum/intent/axe/battleaxe/chop/ono //because actual battle axes don't have stupid large blades.
 	name = "chop"
 	icon_state = "inchop"
 	blade_class = BCLASS_CHOP
@@ -274,3 +274,13 @@
 	max_integrity = 300
 	wdefense = 3
 	throwforce = 40
+	axe_cut = 5 //You'd be surprised to know that the axe head design for throwing is the same one for cutting wood, but lighter.
+	embedding = list("embedded_pain_multiplier" = 3, "embed_chance" = 20, "embedded_fall_chance" = 60)
+
+/obj/item/rogueweapon/woodcut/changfu
+	name = "iron axe"
+	desc = "Tool, weapon, loyal iron companion."
+	icon_state = "changfu"
+	icon = 'icons/roguetown/weapons/32.dmi'
+	wdefense = 4 //Battle designed.
+	axe_cut = 3 //Not as viable for cutting as the other one, less than a hatchet in fact.

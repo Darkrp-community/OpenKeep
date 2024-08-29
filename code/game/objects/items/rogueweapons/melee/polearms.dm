@@ -534,3 +534,9 @@
 	max_integrity = 240
 	minstr = 6
 	smeltresult = /obj/item/ash
+
+/obj/item/rogueweapon/woodstaff/bostaff
+	name = "bo staff"
+	desc = "the bo, or 'abyssariad quarterstaff', is a simple weapon used in martial arts to entrap, strike and sweep the enemy."
+	icon_state = "bostaff"
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'

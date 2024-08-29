@@ -256,11 +256,17 @@
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 250
 	armor_class = ARMOR_CLASS_MEDIUM
+	icon = 'icons/roguetown/kaizoku/clothingicon/feet.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/feet.dmi'
+	sleeved = 'icons/roguetown/kaizoku/clothing/feet.dmi'
 
 /obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/suneate
 	name = "suneate boots"
 	desc = "Armored suneate made from steel offering heavy protection against both melee and ranged attacks."
 	body_parts_covered = FEET
+	icon = 'icons/roguetown/kaizoku/clothingicon/feet.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/feet.dmi'
+	sleeved = 'icons/roguetown/kaizoku/clothing/feet.dmi'
 	icon_state = "suneate"
 	item_state = "suneate"
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
@@ -272,8 +278,11 @@
 
 /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi
 	name = "jikatabi"
-	desc = "A standard tabi."
+	desc = "A standard tabi that keeps the toes flexible and healthy, avoiding calluses of long expeditions. However, it looks rather goofy for the non-islanders."
 	gender = PLURAL
+	icon = 'icons/roguetown/kaizoku/clothingicon/feet.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/feet.dmi'
+	sleeved = 'icons/roguetown/kaizoku/clothing/feet.dmi'
 	icon_state = "jikatabi"
 	item_state = "jikatabi"
 	body_parts_covered = FEET
@@ -285,6 +294,9 @@
 	name = "dragontabi"
 	icon_state = "dragontabi"
 	item_state = "dragontabi"
+	icon = 'icons/roguetown/kaizoku/clothingicon/feet.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/feet.dmi'
+	sleeved = 'icons/roguetown/kaizoku/clothing/feet.dmi'
 	desc = "A tabi reinforced in dragon bones and asbestos, making it fire immune. Not very protective against physical damage, but still fairly durable."
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 250
@@ -298,11 +310,9 @@
 	name = "geta"
 	desc = "A normal wooden geta most suitable for those who need to wander where the mud absorbs pressure."
 	gender = PLURAL
+	icon = 'icons/roguetown/kaizoku/clothingicon/feet.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/feet.dmi'
+	sleeved = 'icons/roguetown/kaizoku/clothing/feet.dmi'
 	icon_state = "geta"
 	item_state = "geta"
 	body_parts_covered = FEET
-
-
-
-	worn_x_dimension = 64
-	worn_y_dimension = 64

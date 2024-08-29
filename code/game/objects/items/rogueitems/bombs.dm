@@ -83,7 +83,7 @@
 /obj/item/grenade/smoke_bomb
 	name = "abyssariad smokebomb"
 	desc = "The stealth operation bomb made out of guano, sugar and nahcolite for shinobi usage."
-	icon = 'icons/roguetown/weapons/32.dmi'
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	icon_state = "smoke_bomb"
 	item_state = "smoke_bomb"
 	slot_flags = ITEM_SLOT_BELT
@@ -108,7 +108,7 @@
 /obj/item/grenade/smoke_bomb/poison
 	name = "abyssariad poisonbomb"
 	desc = "Ceramic sphere containing toxic composts from within, awaiting to be released."
-	icon = 'icons/roguetown/weapons/32.dmi'
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	icon_state = "poison_bomb"
 	item_state = "poison_bomb"
 	slot_flags = ITEM_SLOT_BELT
@@ -134,7 +134,7 @@
 	name = "thunder crash bomb"
 	desc = "a bomb made out of cast iron and ceramic, now filled with gunpowder to the brim. Usually, it takes five second before the fire on the fuse reaches the gunpowder."
 	icon_state = "zhentianlei"
-	icon = 'icons/roguetown/weapons/32.dmi'
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	throwforce = 0
 	throw_speed = 0.5

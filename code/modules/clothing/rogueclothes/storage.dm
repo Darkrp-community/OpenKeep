@@ -277,3 +277,37 @@
 	new /obj/item/rogueweapon/surgery/cautery(src)
 	new /obj/item/natural/worms/leech/parasite(src)
 	new /obj/item/rogueweapon/surgery/hammer(src)
+
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho
+	name = "daisho belt"
+	desc = "A oil-boiled reinforced silk or leather belt used by Abyssariads for practicing Daisho."
+	icon_state = "daisho"
+	sellprice = 5
+	icon = 'icons/roguetown/kaizoku/clothingicon/belts.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/belts.dmi'
+
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho/ninja/PopulateContents()
+	new /obj/item/reagent_containers/food/snacks/fogdart(src)
+	new /obj/item/reagent_containers/food/snacks/fogdart(src)
+	new /obj/item/rogueweapon/tetsubishi(src)
+
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho/thunder
+	name = "thunder daisho belt"
+	color = "#be8b48"
+
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho/storm
+	name = "storm daisho belt"
+	color = "#1a2677"
+
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho/ocean
+	name = "ocean daisho belt"
+	color = "#56928a"
+
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho/island
+	name = "island daisho belt"
+	color = "#bd3541"
+
+/obj/item/storage/backpack/rogue/satchel/ninja/PopulateContents()
+	new /obj/item/grenade/smoke_bomb(src)
+	new /obj/item/grenade/smoke_bomb/poison(src)
+	new /obj/item/throwing_star/ninja(src)

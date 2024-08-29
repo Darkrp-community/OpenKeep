@@ -151,3 +151,25 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 		rs += "[R.name], [R.volume]"
 
 	return rs.Join(" | ")
+
+/datum/reagent/fogblight
+	name = "fogblight"
+	description = "liquid concentrate from fog island's frogs. Used by shinobis."
+	taste_description = ""
+	reagent_state = LIQUID
+	color = "#1f434d"
+	metabolization_rate = 0.2
+
+/datum/reagent/fogblight/on_mob_life(mob/living/carbon/M)
+	switch(current_cycle)
+		if(1 to 10)
+			M.confused += 2
+			M.drowsyness += 2
+		if(10 to 50)
+			M.Sleeping(40, 0)
+			. = 1
+		if(51 to INFINITY)
+			M.Sleeping(40, 0)
+			M.adjustToxLoss((current_cycle - 50)*REM, 0)
+			. = 1
+	..()

@@ -148,10 +148,7 @@
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
 	misscost = 5
 
-/obj/item/rogueweapon/flail/kusarifundo
-	force = 30
-	possible_item_intents = list(/datum/intent/flail/strike/ranged, /datum/intent/flail/strike/ranged/smash)
-	w_class = WEIGHT_CLASS_NORMAL
+/obj/item/rogueweapon/flail/sflail/kusarifundo
 	name = "kusari fundo"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	desc = "A pair of heavy steel weights connected by a long chain. Originally a self-defense weapon during the Blood Apotheosis when iron was running low - so lead balls were used as weight."

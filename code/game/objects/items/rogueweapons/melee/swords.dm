@@ -1276,7 +1276,7 @@
 /obj/item/rogueweapon/sword/uchigatana
 	name = "uchigatana"
 	desc = "Slightly shorter and simpler in design than the tachi, the uchigatana is the main sword of Abyssariad and Islander footsoldiers. Unlike continental swords of similar length, this design lends itself well to brutal chopping strikes alongside skillful swordplay, but lacks a long crossguard for safely parrying other blades."
-	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 	icon_state = "uchigatana"
 	force_wielded = 30
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/chop)
@@ -1314,6 +1314,8 @@
 	icon_state = "tachi"
 	item_state = "tachi"
 	wbalance = 1
+	pixel_y = -14
+	pixel_x = -16
 
 /obj/item/rogueweapon/greatsword/odachi
 	force = 15
@@ -1342,28 +1344,21 @@
 	icon_state = "dao"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 
-/obj/item/rogueweapon/sword/yuntoudao
+/obj/item/rogueweapon/sword/sabre/messer/yuntoudao
 	name = "Yuntoudao"
 	desc = "A expensive Abyssariad saber with wide middle and tapered ends in a 'willow-leaf' shape, it concentrates the force of a strike in an axe-like blow, while retaining the swiftness of a saber."
 	icon_state = "yuntoudao"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
-	force = 25
-	smeltresult = /obj/item/ingot/steel
-	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/axe/chop)
-	gripped_intents = null
-	minstr = 12
+	minstr = 8 //Did you saw the size and handguard of this beast?
 	wdefense = 4
-	wbalance = -1
-	sellprice = 40
 
 /obj/item/rogueweapon/sword/short/wakizashi
-	force = 25
 	name = "wakizashi"
-	desc = "A shorter design of katana designed to replace the tanto as a zamurai's sidearm. Cuts like no other weapon - but is not efficient at thrusting, and can't handle much stress."
+	desc = "A shorter design of katana designed to replace the tanto as a zamurai's sidearm. The sorii makes it cut deeper - but is not efficient at thrusting, and can't handle much stress."
 	icon_state = "wakizashi"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	possible_item_intents = list(/datum/intent/sword/cut/sorii, /datum/intent/sword/thrust/sorii, /datum/intent/sword/chop)
 	smeltresult = /obj/item/ingot/steel
-	minstr = 6
+	minstr = 5 //Katanas are not as light as these redditors implies.
 	max_blade_int = 180
 	max_integrity = 260

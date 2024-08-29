@@ -819,7 +819,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 
 /obj/item/clothing/suit/roguetown/armor/plate/mirror/iron
 	name = "iron mirror armor"
-	desc = "Polished iron plates defines the design of this armor with a metal disk at its center. It is designed to deflect incoming strikes, and have a gleaming presence on any battlefield. This is the armor design is used by the army of Fog Island together with a kusari katabira."
+	desc = "Polished iron plates defines the design of this armor with a metal disk at its center. It is designed to deflect incoming strikes, and have a gleaming presence on any battlefield. This is the armor design used by the Imperial army together with a kusari katabira."
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
@@ -833,7 +833,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 /obj/item/clothing/suit/roguetown/armor/plate/mirror
 	name = "steel mirror armor"
 	icon_state = "mirrorarmor"
-	desc = "Polished steel plates defines the design of this armor with a metal disk at its center. It is designed to deflect incoming strikes, and have a gleaming presence on any battlefield. This is the armor design is used by the army of Fog Island together with a kusari katabira."
+	desc = "Polished steel plates defines the design of this armor with a metal disk at its center. It is designed to deflect incoming strikes, and have a gleaming presence on any battlefield. This is the armor design used by the Imperial army together with a kusari katabira."
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
@@ -865,9 +865,10 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
 	icon_state = "tiejia"
 
-/obj/item/clothing/suit/roguetown/armor/leather/hide/abyssal
+/obj/item/clothing/suit/roguetown/armor/leather/hide/dustwalker
 	name = "leather cavalry armor"
-	desc = "The Khatag Teghelgah designed to be used by abyssariad light cavalry and horse archers, specifically so they can remain light while showering the enemies of arrows before feinting withdrawal. Usually made of Horse leather and fur."
+	desc = "The Khatag Teghelgah designed to be used by abyssariad light cavalry and horse archers on the heart of Fog Island, \
+	specifically so they can remain light while showering the enemies of arrows before feinting withdrawal."
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
@@ -875,7 +876,8 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/kikko
 	name = "kikko jacket"
-	desc = "A cheaper and lighter version of Kikko Tatami, a leather jacket with small metal hexagon plates that has been sew on the material, in a turtle-like pattern."
+	desc = "A cheaper and lighter version of Kikko Tatami, a leather jacket with small metal hexagon plates that has been \
+	sew on the material in a turtle shell-like pattern."
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
@@ -902,7 +904,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide/shozoku
 	name = "shozoku"
-	desc = "The main garment used by Ninjas and Kunoichis to blend into the night. Not viable during daylight, but it is easy to store anywhere."
+	desc = "The main garment used by Ninjas and Kunoichis to blend into the night. Not viable during daylight, but it is easy to store anywhere, and any time."
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
@@ -1053,6 +1055,16 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	desc = "A dress of armor typicially worn by distinguished retainers of Heartfeltian nobles, with with layers of Steel Kikko inside."
 	icon_state = "heartfelt_kikkodress"
 	item_state = "heartfelt_kikkodress"
+
+/obj/item/clothing/suit/roguetown/armor/leather/vest/kaizoku
+	name = "Kaizoku's vest"
+	icon_state = "waitao_coat"
+	desc = "A silken coat used by the Abyssariad Kaizoku, those who brought the name of Fog Islands to the outsiders by accident."
+	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
+	body_parts_covered = CHEST|VITALS|LEGS
+	sellprice = 60
 
 /obj/item/clothing/suit/roguetown/armor/attack_right(mob/user)
 	if(colorable_var == TRUE)

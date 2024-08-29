@@ -14,5 +14,9 @@
 
 /obj/item/throwing_star/ninja
 	name = "ninja throwing star"
+	desc = "or simply named 'Shurikens', is a supplementary weapon for any battle tactic to distract or misdirect a enemy - or deeply wound them if it embeds."
 	throwforce = 30
 	embedding = list("embedded_pain_multiplier" = 6, "embed_chance" = 100, "embedded_fall_chance" = 0)
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	icon_state = "shuriken"
+	item_state = "shuriken"
