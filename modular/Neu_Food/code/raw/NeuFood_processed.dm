@@ -584,6 +584,7 @@
 	bitesize = 1
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	can_distill = TRUE
+	distill_amt = 36 //net increase over ingredients
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/real
 	rotprocess = null
 	seed = null
