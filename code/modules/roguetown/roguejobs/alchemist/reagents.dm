@@ -1,3 +1,8 @@
+//Basic
+/datum/reagent/additive
+	name = "additive"
+	reagent_state = LIQUID
+
 /datum/reagent/medicine/healthpot
 	name = "Health Potion"
 	description = "Gradually regenerates brute and brain damage."
@@ -77,7 +82,7 @@
 	name = "Strong Burn Potion"
 	description = "Quickly regenerates burns."
 	reagent_state = LIQUID
-	color = "#ff8000"
+	color = "#7c4b1a"
 	taste_description = "disgusting bitter medicine"
 	overdose_threshold = 0
 	metabolization_rate = 20 * REAGENTS_METABOLISM
@@ -106,7 +111,7 @@
 
 /datum/reagent/medicine/antidote
 	name = "Poison Antidote"
-	description = ""
+	description = "An antidote to most poisons."
 	reagent_state = LIQUID
 	color = "#00ff00"
 	taste_description = "sickly sweet"
@@ -119,14 +124,13 @@
 
 /datum/reagent/medicine/diseasecure
 	name = "Disease Cure"
-	description = ""
+	description = "Cures diseases and helps purge toxins from the body."
 	reagent_state = LIQUID
 	color = "#004200"
 	taste_description = "dirt"
 	metabolization_rate = 30 * REAGENTS_METABOLISM
 
 /datum/reagent/medicine/diseasecure/on_mob_life(mob/living/carbon/M)
-	M.cure_disease()
 	M.adjustToxLoss(-6, 0)
 	..()
 	. = 1
