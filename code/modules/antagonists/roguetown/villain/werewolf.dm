@@ -40,7 +40,7 @@
 		if(istype(examined_datum, /datum/antagonist/vampirelord/vspawn))
 			if(transformed)
 				return "<span class='boldwarning'>A fledgling Vampire. Easy prey.</span>"
-		if(istype(examined_datum, /datum/antagonist/vampirelord/bloodedv))
+		if(istype(examined_datum, /datum/antagonist/vampirelord/vblooded))
 			if(transformed)
 				return "<span class='boldwarning'>An old Vampire. This one smells of old loyalty.</span>"
 		if(istype(examined_datum, /datum/antagonist/vampirelord))
