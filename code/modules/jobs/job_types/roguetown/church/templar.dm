@@ -17,6 +17,7 @@
 	spawn_positions = 1
 	display_order = JDO_TEMPLAR
 	give_bank_account = 0
+	min_pq = 0
 
 /datum/outfit/job/roguetown/templar
 	name = "Templar"
@@ -75,6 +76,13 @@
 		H.change_stat("speed", -1)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+		
+	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
+	//Max devotion limit - Templars are stronger but cannot pray to gain more abilities beyond t1
+	C.update_devotion(50, 50)
+	C.holder_mob = H
+	C.grant_spells_templar(H)
+	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	if(H.dna?.species)
 		if(H.dna.species.id == "humen")
 			H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
