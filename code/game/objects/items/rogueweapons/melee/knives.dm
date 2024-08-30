@@ -179,7 +179,7 @@
 			H.adjustFireLoss(60)
 			H.Paralyze(20)
 			H.fire_act(2,10)
-		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/bloodedv))
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/vblooded))
 			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
 			H.Knockdown(15)
 			H.adjustFireLoss(30)
@@ -202,11 +202,11 @@
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/vspawn))
 			H.adjustFireLoss(60)
 			H.fire_act(2,10)
-		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/bloodedv))
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/vblooded))
 			H.adjustFireLoss(30)
 			H.fire_act(1,5)
 		if(V_lord)
-			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/bloodedv))
+			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/vblooded))
 				H.adjustFireLoss(15)
 				H.fire_act(1,5)
 
@@ -221,9 +221,9 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/s_user = user
 		var/mob/living/carbon/human/H = target
-		var/datum/antagonist/vampirelord/bloodedv/V = FALSE
-		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/bloodedv))
-			V =  H.mind.has_antag_datum(/datum/antagonist/vampirelord/bloodedv)
+		var/datum/antagonist/vampirelord/vblooded/V = FALSE
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/vblooded))
+			V =  H.mind.has_antag_datum(/datum/antagonist/vampirelord/vblooded)
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/vspawn))
 			V =  H.mind.has_antag_datum(/datum/antagonist/vampirelord/vspawn)
 		var/datum/antagonist/vampirelord/V_lord = FALSE
