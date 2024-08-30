@@ -31,10 +31,12 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/gaseousform/gas
 
 /datum/antagonist/vampirelord/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
-	if(istype(examined_datum, /datum/antagonist/vampirelord/lesser))
-		return "<span class='boldnotice'>A vampire spawn.</span>"
+	if(istype(examined_datum, /datum/antagonist/vampirelord/vspawn))
+		return "<span class='boldnotice'>A Vampire Fledgling, they are new and naive to the Bloodcall.</span>"
+	if(istype(examined_datum, /datum/antagonist/vampirelord/vblooded))
+		return "<span class='boldnotice'>A Blooded Vampire, a trusted servant of the Nite.</span>"
 	if(istype(examined_datum, /datum/antagonist/vampirelord))
-		return "<span class='boldnotice'>A Vampire Lord!.</span>"
+		return "<span class='boldnotice'>An ancient Vampire Nitelord!</span>"
 	if(istype(examined_datum, /datum/antagonist/zombie))
 		return "<span class='boldnotice'>Another deadite.</span>"
 	if(istype(examined_datum, /datum/antagonist/skeleton))
@@ -45,9 +47,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	C.vampires |= owner
 	. = ..()
 	owner.special_role = name
-	ADD_TRAIT(owner.current, TRAIT_CRITICAL_WEAKNESS, "[type]") //half assed but necessary otherwise these guys be invincible
 	ADD_TRAIT(owner.current, TRAIT_STRONGBITE, "[type]")
-	ADD_TRAIT(owner.current, TRAIT_NOROGSTAM, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOHUNGER, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOBREATH, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOPAIN, "[type]")
@@ -67,15 +67,15 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	owner.current.verbs |= /mob/living/carbon/human/proc/vamp_regenerate
 	owner.current.verbs |= /mob/living/carbon/human/proc/vampire_telepathy
 	vamp_look()
+	owner.current.verbs |= /mob/living/carbon/human/proc/disguise_button
 	if(isspawn)
-		owner.current.verbs |= /mob/living/carbon/human/proc/disguise_button
 		add_objective(/datum/objective/vlordserve)
-		finalize_vampire_lesser()
+		finalize_vampire_bloodedv()
 		for(var/obj/structure/vampire/bloodpool/mansion in GLOB.vampire_objects)
 			mypool = mansion
 		equip_spawn()
 		greet()
-		addtimer(CALLBACK(owner.current, TYPE_PROC_REF(/mob/living/carbon/human, spawn_pick_class), "VAMPIRE SPAWN"), 5 SECONDS)
+		addtimer(CALLBACK(owner.current, TYPE_PROC_REF(/mob/living/carbon/human, spawn_pick_class), "BLOODED VAMPIRE"), 5 SECONDS)
 	else
 		forge_vampirelord_objectives()
 		finalize_vampire()
@@ -92,7 +92,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	owner.unknow_all_people()
 	for(var/datum/mind/MF in get_minds())
 		owner.become_unknown_to(MF)
-	for(var/datum/mind/MF in get_minds("Vampire Spawn"))
+	for(var/datum/mind/MF in get_minds("Blooded Vampire"))
 		owner.i_know_person(MF)
 		owner.person_knows_me(MF)
 
@@ -112,11 +112,11 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 	return TRUE
 
-/datum/antagonist/vampirelord/proc/equip_spawn()
+/datum/antagonist/vampirelord/proc/equip_bloodedv()
 	owner.unknow_all_people()
 	for(var/datum/mind/MF in get_minds())
 		owner.become_unknown_to(MF)
-	for(var/datum/mind/MF in get_minds("Vampire Spawn"))
+	for(var/datum/mind/MF in get_minds("Blooded Vampire"))
 		owner.i_know_person(MF)
 		owner.person_knows_me(MF)
 
@@ -127,7 +127,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	owner.adjust_skillrank(/datum/skill/magic/blood, 2, TRUE)
 	owner.current.ambushable = FALSE
 
-/mob/living/carbon/human/proc/spawn_pick_class()
+/mob/living/carbon/human/proc/bloodedv_pick_class()
 	var/list/classoptions = list("Bard", "Fisher", "Hunter", "Miner", "Peasant", "Woodcutter", "Carpenter", "Rogue", "Warrior")
 	var/list/visoptions = list()
 
@@ -135,7 +135,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		var/picked = pick(classoptions)
 		visoptions |= picked
 
-	var/selected = input(src, "Which class was I?", "VAMPIRE SPAWN") as anything in visoptions
+	var/selected = input(src, "Which class was I?", "BLOODED VAMPIRE") as anything in visoptions
 
 	for(var/datum/advclass/A in SSrole_class_handler.sorted_class_categories[CTAG_ALLCLASS])
 		if(A.name == selected)
@@ -285,18 +285,24 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	owner.announce_objectives()
 	..()
 
-/datum/antagonist/vampirelord/lesser/greet()
-	to_chat(owner.current, "<span class='userdanger'>We are awakened from our slumber, Spawn of the feared Vampire Lord.</span>")
+/datum/antagonist/vampirelord/bloodedv/greet()
+	to_chat(owner.current, "<span class='userdanger'>We are awakened from our slumber, Blooded of the feared Vampire Nitelord.</span>")
+	owner.announce_objectives()
+
+/datum/antagonist/vampirelord/vspawn/greet()
+	to_chat(owner.current, "<span class='userdanger'>I am risen as a Fledgling Spawn of the Vampire Nitelord. I must serve them and their goals eternally.</span>")
 	owner.announce_objectives()
 
 /datum/antagonist/vampirelord/proc/finalize_vampire()
 	owner.current.forceMove(pick(GLOB.vlord_starts))
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
 
+/datum/antagonist/vampirelord/proc/finalize_vspawn()
+	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
 
-/datum/antagonist/vampirelord/proc/finalize_vampire_lesser()
+/datum/antagonist/vampirelord/proc/finalize_bloodedv()
 	if(!sired)
-		owner.current.forceMove(pick(GLOB.vspawn_starts))
+		owner.current.forceMove(pick(GLOB.bloodedv_starts))
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
 
 
@@ -334,17 +340,9 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				var/turf/T = H.loc
 				if(T.can_see_sky())
 					if(T.get_lumcount() > 0.15)
-						if(!isspawn)
-							to_chat(H, "<span class='warning'>Astrata spurns me! I must get out of her rays!</span>") // VLord is more punished for daylight excursions.
-							sleep(100)
-							var/turf/N = H.loc
-							if(N.can_see_sky())
-								if(N.get_lumcount() > 0.15)
-									H.dust()
-							to_chat(H, "<span class='warning'>That was too close. I must avoid the sun.</span>")
-						else if (isspawn && !disguised)
-							H.fire_act(1,5)
-							handle_vitae(-10)
+						if (!disguised)
+							H.fire_act(2,10)
+							handle_vitae(-20)
 
 	if(H.on_fire)
 		if(disguised)
@@ -450,12 +448,12 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	return
 
 // SPAWN
-/datum/antagonist/vampirelord/lesser
-	name = "Vampire Spawn"
+/datum/antagonist/vampirelord/bloodedv
+	name = "Blooded Vampire"
 	confess_lines = list("THE CRIMSON CALLS!", "MY MASTER COMMANDS", "THE SUN IS ENEMY!")
 	isspawn = TRUE
 
-/datum/antagonist/vampirelord/lesser/move_to_spawnpoint()
+/datum/antagonist/vampirelord/bloodedv/move_to_spawnpoint()
 	owner.current.forceMove(pick(GLOB.vlordspawn_starts))
 
 // NEW VERBS
@@ -506,7 +504,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/datum/game_mode/chaosmode/C = SSticker.mode
 	var/list/mob/living/carbon/human/possible = list()
 	for(var/datum/mind/V in C.vampires)
-		if(V.special_role == "Vampire Spawn")
+		if(V.special_role == "Vampire Spawn" && "Blooded Vampire")
 			possible |= V.current
 	for(var/datum/mind/D in C.deathknights)
 		possible |= D.current
@@ -731,7 +729,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		user.visible_message("<font color='red'>[user]'s eyes turn dark red, as they channel the [src]</font>", "<font color='red'>I begin to channel my consciousness into a Predator's Eye.</font>")
 		if(do_after(user, 60))
 			user.scry(can_reenter_corpse = 1, force_respawn = FALSE)
-	if(user.mind.special_role == "Vampire Spawn")
+	if(user.mind.special_role == "Vampire Spawn" && "Blooded Vampire")
 		to_chat(user, "I don't have the power to use this!")
 
 /obj/structure/vampire/necromanticbook/attack_hand(mob/living/carbon/human/user)
@@ -783,7 +781,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 							astrater.emote_scream()
 
 
-	if(user.mind.special_role == "Vampire Spawn")
+	if(user.mind.special_role == "Vampire Spawn" && "Blooded Vampire")
 		to_chat(user, "I don't have the power to use this!")
 
 /mob/proc/death_knight_spawn()
@@ -1045,7 +1043,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	GLOB.vlord_starts += loc
 
 /obj/effect/landmark/start/vampirespawn
-	name = "Vampire Spawn"
+	name = "Blooded Vampire"
 	icon_state = "arrow"
 	delete_after_roundstart = FALSE
 
@@ -1057,7 +1055,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /obj/effect/landmark/start/vampirespawn/Initialize()
 	..()
-	GLOB.vspawn_starts += loc
+	GLOB.bloodedv_starts += loc
 
 /obj/effect/landmark/vteleport
 	name = "Teleport Destination"
