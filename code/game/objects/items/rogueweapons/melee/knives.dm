@@ -187,7 +187,7 @@
 			H.fire_act(1,5)
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
 			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
-			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			if(V_lord.vamplevel < 4)
 				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
 				H.Knockdown(10)
 				H.Paralyze(10)
