@@ -70,7 +70,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	owner.current.verbs |= /mob/living/carbon/human/proc/disguise_button
 	if(isspawn)
 		add_objective(/datum/objective/vlordserve)
-		finalize_vampire_bloodedv()
+		finalize_vampire_vblooded()
 		for(var/obj/structure/vampire/bloodpool/mansion in GLOB.vampire_objects)
 			mypool = mansion
 		equip_spawn()
@@ -112,7 +112,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 	return TRUE
 
-/datum/antagonist/vampirelord/proc/equip_bloodedv()
+/datum/antagonist/vampirelord/proc/equip_vblooded()
 	owner.unknow_all_people()
 	for(var/datum/mind/MF in get_minds())
 		owner.become_unknown_to(MF)
@@ -127,7 +127,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	owner.adjust_skillrank(/datum/skill/magic/blood, 2, TRUE)
 	owner.current.ambushable = FALSE
 
-/mob/living/carbon/human/proc/bloodedv_pick_class()
+/mob/living/carbon/human/proc/vblooded_pick_class()
 	var/list/classoptions = list("Bard", "Fisher", "Hunter", "Miner", "Peasant", "Woodcutter", "Carpenter", "Rogue", "Warrior")
 	var/list/visoptions = list()
 
@@ -285,8 +285,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	owner.announce_objectives()
 	..()
 
-/datum/antagonist/vampirelord/bloodedv/greet()
-	to_chat(owner.current, "<span class='userdanger'>We are awakened from our slumber, Blooded of the feared Vampire Nitelord.</span>")
+/datum/antagonist/vampirelord/vblooded/greet()
+	to_chat(owner.current, "<span class='userdanger'>We are awakened from our slumber, Blooded of the feared Vampire Nitelord's line.</span>")
 	owner.announce_objectives()
 
 /datum/antagonist/vampirelord/vspawn/greet()
@@ -300,9 +300,9 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 /datum/antagonist/vampirelord/proc/finalize_vspawn()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
 
-/datum/antagonist/vampirelord/proc/finalize_bloodedv()
+/datum/antagonist/vampirelord/proc/finalize_vblooded()
 	if(!sired)
-		owner.current.forceMove(pick(GLOB.bloodedv_starts))
+		owner.current.forceMove(pick(GLOB.vblooded_starts))
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
 
 
@@ -447,12 +447,12 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	return
 
 // Roundstart vampires. They're always stronger than sired vampires later in the game.
-/datum/antagonist/vampirelord/bloodedv
+/datum/antagonist/vampirelord/vblooded
 	name = "Blooded Vampire"
 	confess_lines = list("THE CRIMSON CALLS!", "MY MASTER COMMANDS!", "THE SUN IS MY ENEMY!")
 	isspawn = TRUE
 
-/datum/antagonist/vampirelord/bloodedv/move_to_spawnpoint()
+/datum/antagonist/vampirelord/vblooded/move_to_spawnpoint()
 	owner.current.forceMove(pick(GLOB.vlordspawn_starts))
 
 /datum/antagonist/vampirelord/vspawn
@@ -1059,7 +1059,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /obj/effect/landmark/start/vampirespawn/Initialize()
 	..()
-	GLOB.bloodedv_starts += loc
+	GLOB.vblooded_starts += loc
 
 /obj/effect/landmark/vteleport
 	name = "Teleport Destination"
