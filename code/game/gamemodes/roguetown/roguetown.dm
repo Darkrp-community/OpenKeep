@@ -430,7 +430,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 			vampires += vampire
 			vamplordpicked = TRUE
 		else
-			var/datum/antagonist/new_antag = new /datum/antagonist/vampirelord/bloodedv()
+			var/datum/antagonist/new_antag = new /datum/antagonist/vampirelord/vblooded()
 			addtimer(CALLBACK(vampire, TYPE_PROC_REF(/datum/mind, add_antag_datum), new_antag), rand(10,100))
 			GLOB.pre_setup_antags -= vampire
 			vampires += vampire
