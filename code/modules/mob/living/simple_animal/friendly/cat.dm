@@ -1,7 +1,7 @@
 //Cat
 /mob/living/simple_animal/pet/cat
-	name = "Inn cat"
-	desc = "Pest control."
+	name = "cat"
+	desc = "A nuisance and a valued, pest-killing companion. Also symbols of the benevolent side of Saint Pestra for their enmity with vermin."
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "cat2"
 	icon_living = "cat2"
@@ -80,12 +80,13 @@
 
 
 /mob/living/simple_animal/pet/cat/inn
-	name = "Inn cat"
-	desc = "Pest control, even if he was better at it when younger and less fat."
+	name = "inn cat"
+	desc = "This old, fat cat keeps the inn free of rats... allegedly. It seems like he mostly lazes about in the sun and asks for treats."
 
 /mob/living/simple_animal/pet/cat/black
 	name = "black cat"
-	desc = ""
+	desc = "Possessed of lamplike eyes and a meow that sounds like the rattle of bones. Black cats are sacred to Necra, said to bring wandering spirits to the Carriageman."
+	gender = FEMALE
 	icon = 'icons/roguetown/topadd/takyon/Cat.dmi'
 	icon_state = "cat"
 	icon_living = "cat"
@@ -357,7 +358,7 @@
 		icon_state = "[icon_living]"
 		set_resting(FALSE)
 		update_mobility()
-		playsound(get_turf(src), 'sound/neu/cathiss.ogg', 80, TRUE, -1)
+		playsound(get_turf(src), 'modular/Creechers/sound/cathiss.ogg', 80, TRUE, -1)
 		dir = pick(GLOB.alldirs)
 		step(src, dir)
 		personal_space()
@@ -367,7 +368,7 @@
 		icon_state = "[icon_living]"
 		set_resting(FALSE)
 		update_mobility()
-		playsound(get_turf(src), 'sound/neu/cathiss.ogg', 80, TRUE, -1)
+		playsound(get_turf(src), 'modular/Creechers/sound/cathiss.ogg', 80, TRUE, -1)
 		dir = pick(GLOB.alldirs)
 		step(src, dir)
 		personal_space()

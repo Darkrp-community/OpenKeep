@@ -73,7 +73,7 @@
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.4,"sx" = -10,"sy" = 0,"nx" = 11,"ny" = 0,"wx" = -4,"wy" = 0,"ex" = 2,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.4,"sx" = -8,"sy" = 0,"nx" = 9,"ny" = 0,"wx" = -4,"wy" = 0,"ex" = 2,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
@@ -159,13 +159,14 @@
 	desc = "A dagger of refined steel, and even more refined appearance."
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
-	name = "dagger"
+	name = "silver dagger"
 	desc = "A dagger made of fine silver, the bane of the undead."
-	force = 12
+	force = 13 // .9 of steel
 	icon_state = "sildagger"
 	smeltresult = null
-	sellprice = 50
-	smeltresult = /obj/item/ingot/silver
+	max_blade_int = 112 // .8 of steel
+	max_integrity = 240 // .8 of steel
+	sellprice = 45
 	var/last_used = 0
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/pickup(mob/user)

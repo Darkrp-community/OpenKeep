@@ -113,6 +113,15 @@
 													'sound/foley/footsteps/armor/plate (2).ogg',\
 													'sound/foley/footsteps/armor/plate (3).ogg'), 100)
 
+/obj/item/clothing/suit/roguetown/armor/plate/rust
+	name = "rusted half-plate armor"
+	desc = "Old and rusted half-plate. Less durable than it used to be, but still quite protective."
+	icon_state = "rustplate"
+	item_state = "rustplate"
+	max_integrity = 250
+	smeltresult = /obj/item/ingot/iron
+	sellprice = 40
+
 /obj/item/clothing/suit/roguetown/armor/plate/half
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "steel cuirass"
@@ -151,6 +160,13 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 20
 
+/obj/item/clothing/suit/roguetown/armor/plate/half/iron/rust
+	name = "rusted half-plate armor"
+	desc = "Old but still useful to keep sharp objects from your innards."
+	icon_state = "rustplate"
+	item_state = "rustplate"
+
+
 // Bladesinger armor, unique
 /obj/item/clothing/suit/roguetown/armor/plate/half/elven
 	name = "elven guardian cuirass"
@@ -172,6 +188,21 @@
 	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 35
+
+//full iron armor for robbers/warriors
+/obj/item/clothing/suit/roguetown/armor/plate/scale/iron
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "iron plate armor"
+	desc = "A rough set of iron armor, complete with chainmail joints and pauldrons. A simple and cheap design to protect vital zones, but not the arms."
+	body_parts_covered = CHEST|VITALS|GROIN|LEGS
+	allowed_sex = list(MALE, FEMALE)
+	icon_state = "ironplate"
+	max_integrity = 350 // Three iron bars, extra durability
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	smeltresult = /obj/item/ingot/iron
+	equip_delay_self = 40
+	armor_class = ARMOR_CLASS_MEDIUM
+	sellprice = 45
 
 // Rare Heartfelt equipment
 /obj/item/clothing/suit/roguetown/armor/heartfelt/lord
@@ -329,6 +360,10 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	sellprice = 30
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dark
+	desc = "A gambeson with additional padding layers, hardened to make it more durable. It still cannot compare to proper armor. This one is black."
+	color = "#383838"
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/lord
 	name = "arming jacket"
@@ -548,8 +583,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	item_state = "grenzelcuirass"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	boobed = TRUE
-	max_integrity = 600
-	armor_class = ARMOR_CLASS_LIGHT // There is a good reason for this.
+	max_integrity = 500
 
 
 /obj/item/clothing/suit/roguetown/armor/rare
@@ -634,7 +668,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 200
 
-/obj/item/clothing/suit/roguetown/armor/rare/dwarfplate/Initialize()
+/obj/item/clothing/suit/roguetown/armor/rare/grenzelplate/Initialize()
 	. = ..()
 	if(do_sound)
 		AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/fullplate (1).ogg',\
@@ -663,7 +697,36 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 200
 
-/obj/item/clothing/suit/roguetown/armor/rare/dwarfplate/Initialize()
+/obj/item/clothing/suit/roguetown/armor/rare/zybanplate/Initialize()
+	. = ..()
+	if(do_sound)
+		AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/fullplate (1).ogg',\
+													'sound/foley/footsteps/armor/fullplate (2).ogg',\
+													'sound/foley/footsteps/armor/fullplate (3).ogg'), 100)
+
+// Aasimar hoplite armor, a very rare armor indeed
+/obj/item/clothing/suit/roguetown/armor/rare/hoplite
+	icon = 'icons/roguetown/clothing/armor.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "ancient plate armor"
+	desc = "A battered set of bronze plate armor. Intricate runes and carvings once adorned the pieces, but most have faded with age."
+	body_parts_covered = CHEST|GROIN|VITALS|LEGS
+	icon_state = "aasimarplate"
+	item_state = "aasimarplate"
+	allowed_race = list("aasimar")
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	nodismemsleeves = TRUE
+	max_integrity = 500
+	var/do_sound = TRUE
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = null // No bronze ingots yet, unfortunately
+	equip_delay_self = 40
+	armor_class = ARMOR_CLASS_HEAVY
+	sellprice = 300 // It has great value to historical collectors
+
+/obj/item/clothing/suit/roguetown/armor/rare/hoplite/Initialize()
 	. = ..()
 	if(do_sound)
 		AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/fullplate (1).ogg',\

@@ -32,10 +32,11 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, pick(0,1,1), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	if(prob(30))
 		gloves = /obj/item/clothing/gloves/roguetown/fingerless
@@ -46,6 +47,7 @@
 	beltr = /obj/item/rogueweapon/huntingknife/idagger/steel
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	beltl = /obj/item/quiver/bolts
+	backpack_contents = list(/obj/item/lockpick = 1)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)		//Rogues are known for commonly lacking standard morals, as well as seeing fucked-shit, so - this tracks.
 	H.change_stat("strength", -1)

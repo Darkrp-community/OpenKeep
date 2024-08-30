@@ -6,7 +6,6 @@
 #define TRAIT_NUTCRACKER 				"Nutcracker"
 #define TRAIT_SEEPRICES				"Golden Blood"
 #define TRAIT_STRONGBITE				"Strong Bite"
-#define TRAIT_TORTURER					"Torturer"
 #define TRAIT_HATEWOMEN				"Ladykiller"
 #define TRAIT_GOODLOVER				"Fabled Lover"
 #define TRAIT_NOBLE					"Noble Blooded"
@@ -32,6 +31,7 @@
 #define TRAIT_CYCLOPS_RIGHT				"Cyclops (Right)" //poked right eye
 #define TRAIT_LEECHIMMUNE				"Unleechable" //leeches wont attach in bog squares
 #define TRAIT_ASSASSIN					"Assassin Training" //used for the assassin drifter's unique mechanics.
+#define TRAIT_BARDIC_TRAINING			"Bardic Training"
 
 #define TRAIT_MISSING_NOSE "Missing Nose" //halved stamina regeneration
 #define TRAIT_DISFIGURED "Disfigured"
@@ -43,6 +43,7 @@
 #define TRAIT_NOMOOD "no_mood"
 #define TRAIT_SIMPLE_WOUNDS "simple_wounds"
 #define TRAIT_BANDITCAMP "banditcamp"
+#define TRAIT_KNOWBANDITS "knowbandits"
 #define TRAIT_VAMPMANSION "vampiremansion"
 #define TRAIT_LIMPDICK "limp_dick"
 #define TRAIT_SEXPASS "sexpass"
@@ -63,7 +64,6 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NUTCRACKER = "I love kicking idiots on the nuts!",
 	TRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
 	TRAIT_STRONGBITE = "Stronger bites, critical bite attacks.",
-	TRAIT_TORTURER = "I've learned the art of drawing confessions out of sinners.",
 	TRAIT_HATEWOMEN = "Double damage against female mobs.",
 	TRAIT_GOODLOVER = "It's a blessing to share a bed with me.",
 	TRAIT_NOBLE = "<span class='blue'>I'm of noble blood.</span>",
@@ -78,7 +78,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEECHIMMUNE = "Leeches are reluctant to bite me.",
 	TRAIT_ASSASSIN = "My soul has been tainted by the god of murder.",
 	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
-	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality."
+	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
+	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments."
 	))
 
 // trait accessor defines
