@@ -315,7 +315,7 @@
 			to_chat(user, "<span class='warning'>Something in the way.</span>")
 			return
 
-	if(istype(T, /turf/closed/wall/mineral/rogue)) // Is there a rogue wall in the way? Don't dump the sack out on that
+	if(istype(T, /turf/closed/wall/mineral/rogue) || istype(T, /turf/closed/mineral/rogue)) // Is there a rogue wall in the way? Don't dump the sack out on that
 		to_chat(user, "<span class='warning'>Something in the way.</span>")
 		return		
 
