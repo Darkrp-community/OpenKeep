@@ -83,7 +83,7 @@
 	var/droning_vary = 0
 	var/droning_repeat = TRUE
 	var/droning_wait = 0
-	var/droning_volume = 90 // From 100, part of soundscape polishing
+	var/droning_volume = 85 // From 100, part of soundscape polishing. Ok so this doesnt even work
 	var/droning_channel = CHANNEL_BUZZ
 	var/droning_frequency = 0
 
