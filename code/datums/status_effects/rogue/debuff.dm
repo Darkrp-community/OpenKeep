@@ -300,12 +300,23 @@
 	desc = "<span class='boldwarning'>A net was thrown on me.. how can I move?</span>\n"
 	icon_state = "bleed3"
 	duration = 100
+	icon_state = "muscles"
 
 /datum/status_effect/debuff/netted
 	id = "net"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/netted
-	effectedstats = list("speed" = -3, "endurance" = -4)
+	effectedstats = list("speed" = -7, "endurance" = -5)
+	duration = 3 MINUTES
 	
+/datum/status_effect/debuff/netted/on_remove()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.legcuffed = null
+		C.update_inv_legcuffed()
+
+
+
 /atom/movable/screen/alert/status_effect/debuff/sleepytime
 	name = "Tired"
 	desc = "<span class='warning'>I am feeling tired.</span>\n"

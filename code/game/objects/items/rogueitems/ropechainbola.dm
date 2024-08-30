@@ -147,7 +147,7 @@
 	name = "net"
 	desc = ""
 	icon = 'icons/roguetown/items/misc.dmi'
-	icon_state = "chain"
+	icon_state = "net"
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
 	force = 10
 	throwforce = 5
