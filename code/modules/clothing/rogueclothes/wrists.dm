@@ -34,7 +34,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	sewrepair = FALSE
 
-/obj/item/clothing/wrists/roguetown/bracers/bronze
+///obj/item/clothing/wrists/roguetown/bracers/bronze
 	name = "bronze armbraces"
 	desc = "Bronze forearm guards, simple yet effective and used since ancient times."
 	body_parts_covered = ARMS

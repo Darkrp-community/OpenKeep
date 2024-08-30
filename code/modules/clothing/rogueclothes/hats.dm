@@ -432,7 +432,7 @@
 	max_integrity = 100//max for copper armor
 	sellprice = 10
 
-/obj/item/clothing/head/roguetown/helmet/heavy/bucket/bronze
+//obj/item/clothing/head/roguetown/helmet/heavy/bucket/bronze
 	name = "bronze warrior helmet"
 	desc = "A simple and effective design, entire armies once wore helmets like these."
 	icon_state = "bronzebucket"

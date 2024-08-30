@@ -149,7 +149,7 @@
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 100
 
-/obj/item/clothing/neck/roguetown/gorget/bronze
+///obj/item/clothing/neck/roguetown/gorget/bronze
 	name = "bronze gorget"
 	icon_state = "bronzeneck"
 	desc = "An ancient form of neck protection, now used as a luxury accessory."

@@ -192,7 +192,7 @@
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
 
-/obj/item/clothing/mask/rogue/facemask/bronze
+///obj/item/clothing/mask/rogue/facemask/bronze
 	name = "bronze mask"
 	icon_state = "bmask"
 	desc = "A heavy bronze mask that both conceals and protects the face."
