@@ -37,12 +37,15 @@
 	if(istype(examined_datum, /datum/antagonist/werewolf))
 		return "<span class='boldnotice'>An elder lupine kin.</span>"
 	if(examiner.Adjacent(examined))
-		if(istype(examined_datum, /datum/antagonist/vampirelord/lesser))
+		if(istype(examined_datum, /datum/antagonist/vampirelord/vspawn))
 			if(transformed)
-				return "<span class='boldwarning'>A lesser Vampire.</span>"
+				return "<span class='boldwarning'>A fledgling Vampire. Easy prey.</span>"
+		if(istype(examined_datum, /datum/antagonist/vampirelord/bloodedv))
+			if(transformed)
+				return "<span class='boldwarning'>An old Vampire. This one smells of old loyalty.</span>"
 		if(istype(examined_datum, /datum/antagonist/vampirelord))
 			if(transformed)
-				return "<span class='boldwarning'>An Ancient Vampire. I must be careful!</span>"
+				return "<span class='boldwarning'>An Ancient Vampire. It stinks of danger and many corpses.</span>"
 
 /datum/antagonist/werewolf/on_gain()
 	transform_cooldown = SSticker.round_start_time
