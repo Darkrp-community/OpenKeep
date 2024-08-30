@@ -61,8 +61,8 @@
 		if(L.stat == DEAD)
 			continue
 		if(L.mind)
-			var/datum/antagonist/vampirelord/vblooded/V = L.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
-			var/datum/antagonist/vampirelord/vspawn/V = L.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+			var/datum/antagonist/vampirelord/vblooded/V = L.mind.has_antag_datum(/datum/antagonist/vampirelord/vblooded)
+			var/datum/antagonist/vampirelord/vspawn/V = L.mind.has_antag_datum(/datum/antagonist/vampirelord/vspawn)
 			if(V)
 				if(!V.disguised)
 					isvampire = TRUE
