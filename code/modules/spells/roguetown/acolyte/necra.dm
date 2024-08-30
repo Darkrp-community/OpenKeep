@@ -52,16 +52,17 @@
 /obj/effect/proc_holder/spell/targeted/churn/cast(list/targets,mob/living/user = usr)
 	var/prob2explode = 100
 	if(user && user.mind)
-		prob2explode = 0
+		prob2explode = 50
 		for(var/i in 1 to user.mind.get_skill_level(/datum/skill/magic/holy))
-			prob2explode += 30
+			prob2explode += 25
 	for(var/mob/living/L in targets)
 		var/isvampire = FALSE
 		var/iszombie = FALSE
 		if(L.stat == DEAD)
 			continue
 		if(L.mind)
-			var/datum/antagonist/vampirelord/lesser/V = L.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+			var/datum/antagonist/vampirelord/bloodedv/V = L.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+			var/datum/antagonist/vampirelord/vspawn/V = L.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
 			if(V)
 				if(!V.disguised)
 					isvampire = TRUE
