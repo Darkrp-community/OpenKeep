@@ -111,7 +111,7 @@
 
 /datum/sprite_accessory/hair/boss_dwarf
 	name = "Boss"
-	icon_state = "boss"
+	icon_state = "boss" // original name bodicker
 	gender = MALE
 	specuse = list("dwarf")
 	under_layer = TRUE
@@ -130,7 +130,7 @@
 
 /datum/sprite_accessory/hair/cavehead
 	name = "Cavehead"
-	icon_state = "cavehead"
+	icon_state = "cavehead" // original name thinning?
 	gender = MALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 	under_layer = TRUE
@@ -163,7 +163,7 @@
 
 /datum/sprite_accessory/hair/druid
 	name = "Druid"
-	icon_state = "druid"
+	icon_state = "druid"  // original name elf_scout?
 	gender = MALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 
@@ -329,7 +329,7 @@
 
 /datum/sprite_accessory/hair/squire_human
 	name = "Squire"
-	icon_state = "squire"
+	icon_state = "squire" // original name shaved_european
 	gender = MALE
 	specuse = list("human")
 
@@ -395,7 +395,7 @@
 
 /datum/sprite_accessory/hair/zybantu
 	name = "Zybantu"
-	icon_state = "zybantu"
+	icon_state = "zybantu" // orginal name gelled
 	gender = MALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 
@@ -442,7 +442,7 @@
 
 /datum/sprite_accessory/hair/archivist
 	name = "Archivist"
-	icon_state = "archivist_f"
+	icon_state = "archivist_f" // original name bob_scully
 	gender = FEMALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 
@@ -454,14 +454,14 @@
 
 /datum/sprite_accessory/hair/beartails
 	name = "Beartails"
-	icon_state = "beartails_f"
+	icon_state = "beartails_f" // modified cotton
 	gender = FEMALE
 	under_layer = TRUE
 	specuse = list("human")
 
 /datum/sprite_accessory/hair/buns
 	name = "Buns"
-	icon_state = "buns_f"
+	icon_state = "buns_f" // original name twinbuns
 	gender = FEMALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 	
@@ -497,13 +497,13 @@
 
 /datum/sprite_accessory/hair/gnomish_f
 	name = "Gnomish"
-	icon_state = "gnomish_f"
+	icon_state = "gnomish_f" // original name bun_grandma
 	gender = FEMALE
 	specuse = list("dwarf")
 
 /datum/sprite_accessory/hair/hearth_f
 	name = "Hearth"
-	icon_state = "hearth_f"
+	icon_state = "hearth_f" // original name ponytail_fox
 	gender = FEMALE
 	specuse = list("dwarf")
 
@@ -515,13 +515,13 @@
 
 /datum/sprite_accessory/hair/junia
 	name = "Junia"
-	icon_state = "junia_tief_f"
+	icon_state = "junia_tief_f" // modified hime_updo
 	gender = FEMALE
 	specuse = list("tiefling")
 
 /datum/sprite_accessory/hair/lady
 	name = "Lady"
-	icon_state = "lady_f"
+	icon_state = "lady_f" // original name newyou
 	gender = FEMALE
 	specuse = list("human", "elf", "tiefling")
 
@@ -557,31 +557,31 @@
 	
 /datum/sprite_accessory/hair/mysterious_elf
 	name = "Mysterious"
-	icon_state = "mysterious_elf"
+	icon_state = "mysterious_elf" // modified hime_long
 	gender = FEMALE
 	specuse = list("elf")
 	
 /datum/sprite_accessory/hair/mystery
 	name = "Mystery"
-	icon_state = "mystery_f"
+	icon_state = "mystery_f" // modified hime_long
 	gender = FEMALE
 	specuse = list("human", "dwarf", "aasimar", "tiefling")
 
 /datum/sprite_accessory/hair/noblesse
 	name = "Noblesse"
-	icon_state = "noblesse_f"
+	icon_state = "noblesse_f" // modified sidetail
 	gender = FEMALE
 	specuse = list("human")
 
 /datum/sprite_accessory/hair/orc
 	name = "Orc"
-	icon_state = "orc_f"
+	icon_state = "orc_f" // modified african_pigtails
 	gender = FEMALE
 	specuse = list("orc")
 
 /datum/sprite_accessory/hair/performer
 	name = "Performer"
-	icon_state = "performer_tief_f"
+	icon_state = "performer_tief_f" // modified drillruru_long
 	gender = FEMALE
 	specuse = list("tiefling")
 
@@ -617,7 +617,7 @@
 
 /datum/sprite_accessory/hair/squire_f
 	name = "Squire"
-	icon_state = "squire_f"
+	icon_state = "squire_f" // original name ponytail_rynn
 	gender = FEMALE
 	specuse = list("human")
 
