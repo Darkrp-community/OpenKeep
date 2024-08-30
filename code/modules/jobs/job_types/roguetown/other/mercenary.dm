@@ -37,10 +37,7 @@
 		H.become_blind("advsetup")
 
 /datum/outfit/job/roguetown/mercenary // when turned to adventurerclass, tutorial was broken. This fixes that.
-	var/tutorial = "<br>Blood stained hands, do you even see it when they line your palms with golden treasures?  <br><br>\
-	You are a paid killer, redeemable only by fact that your loyalty can be bought,  \
-	gold is the great hypocritical lubricant in life, founding empires, driving brothers to kill one another.  <br><br>\
-	You care not. Another day, another mammon - your sponsor, the Merchant of the MGE guild should have work for you todae.<br>"
+	var/tutorial = "<br>Another day, another mammon - your sponsor, the Merchant, representing the MGE guild, should have work for you todae, go find out.<br>"
 
 /datum/outfit/job/roguetown/mercenary/post_equip(mob/living/carbon/human/H)
 	..()
@@ -57,3 +54,6 @@
 	volume = 15
 	list_reagents = list(/datum/reagent/druqks = 15)
 	sellprice = 10
+
+/area/rogue/indoors/soilsons
+	name = "soilsons"
