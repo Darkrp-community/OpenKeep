@@ -34,18 +34,18 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	sewrepair = FALSE
 
-///obj/item/clothing/wrists/roguetown/bracers/bronze
-	name = "bronze armbraces"
-	desc = "Bronze forearm guards, simple yet effective and used since ancient times."
-	body_parts_covered = ARMS
-	icon_state = "bronzearm"
-	item_state = "bronzebracers"
-	armor = list("melee" = 70, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
-	blocksound = PLATEHIT
-	resistance_flags = FIRE_PROOF
-	anvilrepair = /datum/skill/craft/armorsmithing
-	sewrepair = FALSE
+//obj/item/clothing/wrists/roguetown/bracers/bronze
+//	name = "bronze armbraces"
+//	desc = "Bronze forearm guards, simple yet effective and used since ancient times."
+//	body_parts_covered = ARMS
+//	icon_state = "bronzearm"
+//	item_state = "bronzebracers"
+//	armor = list("melee" = 70, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+//	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+//	blocksound = PLATEHIT
+//	resistance_flags = FIRE_PROOF
+//	anvilrepair = /datum/skill/craft/armorsmithing
+//	sewrepair = FALSE
 
 /obj/item/clothing/wrists/roguetown/bracers/leather
 	name = "leather bracers"

@@ -120,6 +120,10 @@
 	toggle_icon_state = TRUE
 	experimental_onhip = TRUE
 
+/obj/item/clothing/mask/rogue/shepherd/rag
+	name = "rag halfmask"
+	icon_state = "ragmask"
+
 /obj/item/clothing/mask/rogue/shepherd/AdjustClothes(mob/user)
 	if(loc == user)
 		if(adjustable == CAN_CADJUST)
@@ -193,19 +197,19 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 ///obj/item/clothing/mask/rogue/facemask/bronze
-	name = "bronze mask"
-	icon_state = "bmask"
-	desc = "A heavy bronze mask that both conceals and protects the face."
-	max_integrity = 100
-	blocksound = PLATEHIT
-	break_sound = 'sound/foley/breaksound.ogg'
-	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
-	armor = list("melee" = 100, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
-	flags_inv = HIDEFACE
-	body_parts_covered = FACE
-	block2add = FOV_BEHIND
-	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
-	experimental_onhip = TRUE
-	sewrepair = FALSE
-	anvilrepair = /datum/skill/craft/armorsmithing
+//	name = "bronze mask"
+//	icon_state = "bmask"
+//	desc = "A heavy bronze mask that both conceals and protects the face."
+//	max_integrity = 100
+//	blocksound = PLATEHIT
+//	break_sound = 'sound/foley/breaksound.ogg'
+//	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+//	armor = list("melee" = 100, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+//	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+//	flags_inv = HIDEFACE
+//	body_parts_covered = FACE
+//	block2add = FOV_BEHIND
+//	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+//	experimental_onhip = TRUE
+//	sewrepair = FALSE
+//	anvilrepair = /datum/skill/craft/armorsmithing

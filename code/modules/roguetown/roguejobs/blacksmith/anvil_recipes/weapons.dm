@@ -304,6 +304,14 @@
 	created_item = /obj/item/rogueweapon/woodcut/steel
 	craftdiff = 2
 
+/datum/anvil_recipe/weapons/messer_steel
+	name = "Falchion"
+	recipe_name = "an Falchion"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/rogueweapon/sword/sabre/messer
+	craftdiff = 2
+
 /datum/anvil_recipe/weapons/battleaxe
 	name = "Battle Axe (2)"
 	recipe_name = "a Battle Axe"

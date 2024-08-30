@@ -433,17 +433,17 @@
 	sellprice = 10
 
 //obj/item/clothing/head/roguetown/helmet/heavy/bucket/bronze
-	name = "bronze warrior helmet"
-	desc = "A simple and effective design, entire armies once wore helmets like these."
-	icon_state = "bronzebucket"
-	item_state = "bronzebucket"
-	emote_environment = 3
-	armor = list("melee" = 70, "bullet" = 90, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)//bronze is almost the same as iron but not steel
-	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // Stab immunity as a treat for low FOV
-	block2add = FOV_RIGHT|FOV_LEFT
-	smeltresult = /obj/item/ingot/bronze
-	sellprice = 50
+//	name = "bronze warrior helmet"
+//	desc = "A simple and effective design, entire armies once wore helmets like these."
+//	icon_state = "bronzebucket"
+//	item_state = "bronzebucket"
+//	emote_environment = 3
+//	armor = list("melee" = 70, "bullet" = 90, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)//bronze is almost the same as iron but not steel
+//	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
+//	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // Stab immunity as a treat for low FOV
+//	block2add = FOV_RIGHT|FOV_LEFT
+//	smeltresult = /obj/item/ingot/bronze
+//	sellprice = 50
 
 /obj/item/clothing/head/roguetown/helmet/horned
 	name = "horned cap"
@@ -828,7 +828,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/orc
 	name = "orc helmet"
-	icon_state = "marauder_helm_item"
+	icon_state = "marauder_helm"
 	item_state = "marauder_helm"
 	icon = 'icons/roguetown/mob/monster/orc.dmi'
 	allowed_race = list("orc")
