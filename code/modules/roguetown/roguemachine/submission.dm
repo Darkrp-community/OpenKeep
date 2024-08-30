@@ -88,6 +88,13 @@
 	var/datum/browser/popup = new(user, "VENDORTHING", "", 370, 220)
 	popup.set_content(contents)
 	popup.open()
+
+/obj/structure/roguemachine/submission/attack_right(mob/living/user) // Allows a way to sell piles without clicking 40 times. Simply dump out a pile, stand on top, and right click
+	var/turf/T = get_turf(user)
+	for(var/obj/item/P in get_turf(T))
+		if(move_after(user, 1 SECONDS, target = src))
+			src.attackby(P, user)
+
 /*				//Var for keeping track of timer
 var/global/feeding_hole_wheat_count = 0
 var/global/feeding_hole_reset_timer
