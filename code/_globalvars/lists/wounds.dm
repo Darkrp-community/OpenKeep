@@ -34,6 +34,7 @@ GLOBAL_LIST_INIT(cbt_classes, list(
 
 GLOBAL_LIST_INIT(stab_bclasses, list(
 	BCLASS_STAB,
+	BCLASS_SHOT,
 	BCLASS_PICK,
 ))
 

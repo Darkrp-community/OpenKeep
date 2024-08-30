@@ -174,6 +174,9 @@
 	else
 		// Check if the item used is a reagent container
 		if(istype(I, /obj/item/reagent_containers))
+			if(powdered)
+				to_chat(user, "<span class='warning'>\The [src] is already powdered!</span>")
+				return
 			// Check if the reagent container contains at least 5u of blastpowder
 			if(I.reagents.get_reagent_amount(/datum/reagent/blastpowder) >= 5)
 				// Subtract 5u of blastpowder from the reagent container

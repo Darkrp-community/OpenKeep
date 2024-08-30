@@ -81,7 +81,19 @@
 	return chargetime
 
 /datum/intent/shoot/musket/pistol/get_chargetime()
-	return 4
+	if(mastermob && chargetime)
+		var/newtime = chargetime
+		//skill block
+		newtime = newtime + 18
+		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/firearms) * 3)
+		//per block
+		newtime = newtime + 20
+		newtime = newtime - (mastermob.STAPER)
+		if(newtime > 0)
+			return newtime
+		else
+			return 1
+	return chargetime
 
 /datum/intent/arc/crossbow
 	chargetime = 1
