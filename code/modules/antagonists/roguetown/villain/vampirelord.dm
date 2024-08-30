@@ -319,8 +319,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	V.update_hair()
 	V.update_body_parts(redraw = TRUE)
 	V.mob_biotypes = MOB_UNDEAD
-	if(isspawn)
-		V.vampire_disguise()
+	V.vampire_disguise()
 
 /datum/antagonist/vampirelord/on_life(mob/user)
 	if(!user)
@@ -447,14 +446,19 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 						thrall.current.change_stat(S, 2)
 	return
 
-// SPAWN
+// Roundstart vampires. They're always stronger than sired vampires later in the game.
 /datum/antagonist/vampirelord/bloodedv
 	name = "Blooded Vampire"
-	confess_lines = list("THE CRIMSON CALLS!", "MY MASTER COMMANDS", "THE SUN IS ENEMY!")
+	confess_lines = list("THE CRIMSON CALLS!", "MY MASTER COMMANDS!", "THE SUN IS MY ENEMY!")
 	isspawn = TRUE
 
 /datum/antagonist/vampirelord/bloodedv/move_to_spawnpoint()
 	owner.current.forceMove(pick(GLOB.vlordspawn_starts))
+
+/datum/antagonist/vampirelord/vspawn
+	name = "Blooded Vampire"
+	confess_lines = list("THE CRIMSON CALLS!", "MY MASTER COMMANDS!", "THE SUN IS MY ENEMY!")
+	isspawn = TRUE
 
 // NEW VERBS
 /mob/living/carbon/human/proc/demand_submission()
