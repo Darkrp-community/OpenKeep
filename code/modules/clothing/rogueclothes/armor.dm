@@ -493,6 +493,20 @@
 	allowed_race = list("human", "tiefling", "dwarf", "elf", "aasimar")
 	sellprice = 60
 
+/obj/item/clothing/suit/roguetown/armor/leather/vest/butler
+	color = COLOR_GRAY
+
+/obj/item/clothing/suit/roguetown/armor/leather/vest/butler/Initialize()
+	..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+	else
+		GLOB.lordcolor += src
+
+/obj/item/clothing/suit/roguetown/armor/leather/vest/butler/Destroy()
+	GLOB.lordcolor -= src
+	return ..()
+
 /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 	color = "#3c3a38"
 
