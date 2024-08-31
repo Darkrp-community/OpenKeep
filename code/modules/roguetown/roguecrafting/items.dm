@@ -59,6 +59,15 @@
 	verbage = "braid"
 	verbage_tp = "braids"
 
+/datum/crafting_recipe/roguetown/net
+	name = "net"
+	result = /obj/item/net
+	craftdiff = 2
+	reqs = list(/obj/item/rope = 2)
+	verbage = "braid"
+	verbage_tp = "braids"
+
+
 /datum/crafting_recipe/roguetown/torch
 	name = "torch"
 	result = /obj/item/flashlight/flare/torch
