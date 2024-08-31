@@ -494,7 +494,7 @@
 	sellprice = 60
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butler
-	color = COLOR_GRAY
+	color = CLOTHING_RED
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butler/Initialize()
 	..()

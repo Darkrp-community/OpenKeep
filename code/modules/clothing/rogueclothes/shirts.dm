@@ -207,7 +207,7 @@
 	color = CLOTHING_PURPLE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/maid
-	color = COLOR_GRAY
+	color = COLOR_RED
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/maid/Initialize()
 	..()
