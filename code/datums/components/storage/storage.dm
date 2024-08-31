@@ -310,8 +310,8 @@
 //		stoplag(1)
 //	qdel(progress)
 	var/turf/T = get_step(user, user.dir)
-	for(var/obj/structure/S in T) // Is there a structure in the way that isn't a chest, table, or rack? Can't dump the sack out on that
-		if(S.density && !istype(S, /obj/structure/table) && !istype(S, /obj/structure/closet/crate) && !istype(S, /obj/structure/rack) && !istype(S, /obj/structure/bars))
+	for(var/obj/structure/S in T) // Is there a structure in the way that isn't a chest, table, rack, or handcart? Can't dump the sack out on that
+		if(S.density && !istype(S, /obj/structure/table) && !istype(S, /obj/structure/closet/crate) && !istype(S, /obj/structure/rack) && !istype(S, /obj/structure/bars) && !istype(S, /obj/structure/handcart))
 			to_chat(user, "<span class='warning'>Something in the way.</span>")
 			return
 
