@@ -11,10 +11,9 @@
 		"Humen",
 		"Elf",
 		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
+		"Dwarf"
 	)
-	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
+	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = "Servitude unto death, your blade a charcuterie of artisanal cheeses and meat, your armor wit and classical training. Youre a part of the family now, the head of the Royal household staff and wear their colors. You alone have raised Kings, Queens, Princesses and Princees; without you the royals would have all starved to death."
 	outfit = /datum/outfit/job/roguetown/butler
 	display_order = JDO_BUTLER
@@ -30,7 +29,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
