@@ -8,6 +8,7 @@
 		"Tiefling"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/barbarian
+	min_pq = 0
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/combat_barbarian.ogg'
 
