@@ -14,7 +14,7 @@
 		"Dwarf"
 	)
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
-	tutorial = "Servitude unto death, your blade a charcuterie of artisanal cheeses and meat, your armor wit and classical training. Youre a part of the family now, the head of the Royal household staff and wear their colors. You alone have raised Kings, Queens, Princesses and Princees; without you the royals would have all starved to death."
+	tutorial = "Servitude unto death, your blade a charcuterie of artisanal cheeses and meat, your armor wit and classical training. You're a part of the family now, the head of the Royal household staff and wear their colors. You alone have raised Kings, Queens, Princesses and Princes; without you the royals would have all starved to death."
 	outfit = /datum/outfit/job/roguetown/butler
 	display_order = JDO_BUTLER
 	bypass_lastclass = TRUE
