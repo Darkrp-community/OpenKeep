@@ -101,7 +101,11 @@
 		return
 	log_prayer("[src.key]/([src.name]): [msg]")
 
-	msg = "<span class='info'>[real_name] prays: [msg]</span>"
+	if(ishuman(src))
+		var/mob/living/carbon/human/H = src
+		msg = "<span class='info'>[H.real_name] ([H.patron.name]) prays: \"[msg]\"</span>"
+	else
+		msg = "<span class='info'>[real_name] prays: \"[msg]\"</span>"
 
 //	for(var/client/C in GLOB.admins)
 //		if(C.prefs.chat_toggles & CHAT_PRAYER)
