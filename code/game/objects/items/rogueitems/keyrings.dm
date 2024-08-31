@@ -287,8 +287,8 @@
 /obj/item/keyring/dungeoneer
 	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/walls)
 
-/obj/item/keyring/servant
-	keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison)
+/obj/item/keyring/butler
+	keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/butler)
 
 /obj/item/keyring/jester
 	keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/theatre)
