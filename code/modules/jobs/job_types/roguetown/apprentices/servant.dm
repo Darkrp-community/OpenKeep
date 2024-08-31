@@ -8,7 +8,12 @@
 
 	allowed_races = list(
 		"Humen",
-		"Half-Elf"
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
 	)
 	allowed_ages = list(AGE_ADULT)
 
@@ -24,11 +29,11 @@
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/music, pick(0,0,1), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/music, pick(0,1,1), TRUE)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
@@ -38,6 +43,8 @@
 		beltr = /obj/item/roguekey/manor
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 		H.change_stat("perception", 1)
+		H.change_stat("speed", 1)
+		H.change_stat("endurance", 1)
 	else
 		armor = /obj/item/clothing/suit/roguetown/shirt/rags
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
@@ -46,3 +53,5 @@
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/roguekey/manor
 		H.change_stat("perception", 1)
+		H.change_stat("speed", 1)
+		H.change_stat("endurance", 1)
