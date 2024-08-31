@@ -100,7 +100,7 @@
 	releasedrain = 30
 	antimagic_allowed = TRUE
 	invocation_type = "shout"
-	charge_max = 1 MINUTES
+	charge_max = 90 SECONDS
 
 /obj/effect/proc_holder/spell/self/barbrage/cast(list/targets,mob/living/user = usr)
 	user.emote("rage", forced = TRUE)
