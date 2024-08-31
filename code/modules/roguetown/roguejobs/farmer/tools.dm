@@ -1,16 +1,14 @@
 /obj/item/rogueweapon/thresher
 	force = 10
-	force_wielded = 15
+	force_wielded = 14
 	possible_item_intents = list(MACE_STRIKE)
-	gripped_intents = list(MACE_STRIKE,/datum/intent/flailthresh)
+	gripped_intents = list(/datum/intent/flailthresh,MACE_STRIKE)
 	name = "thresher"
-	desc = ""
+	desc = "Crushes grain, or skulls."
 	icon_state = "thresher"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	sharpness = IS_BLUNT
-	dropshrink = 0.8
-	pixel_y = -16
-	pixel_x = -16
+	dropshrink = 0.9
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	bigboy = TRUE
@@ -23,7 +21,7 @@
 	wlength = 66
 	gripsprite = TRUE
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
-	smeltresult = /obj/item/ingot/iron
+	smeltresult = null
 	associated_skill = /datum/skill/combat/axesmaces
 
 /datum/intent/flailthresh
@@ -40,11 +38,23 @@
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.7,"sx" = -7,"sy" = 0,"nx" = 8,"ny" = 0,"wx" = -5,"wy" = 0,"ex" = 0,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.7,"sx" = -7,"sy" = 0,"nx" = 8,"ny" = 0,"wx" = -5,"wy" = 0,"ex" = 2,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
-				return list("shrink" = 0.7,"sx" = 5,"sy" = -2,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -2,"ex" = 5,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.7,"sx" = 5,"sy" = -2,"nx" = -5,"ny" = -2,"wx" = -4,"wy" = -2,"ex" = 5,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/thresher/Initialize()
+	pixel_y = -16
+	pixel_x = -16
+
+/obj/item/rogueweapon/thresher/dropped()
+	pixel_y = -16
+	pixel_x = -16
+
+/obj/item/rogueweapon/thresher/equipped()
+	pixel_y = 0
+	pixel_x = 0
 
 /obj/item/rogueweapon/thresher/afterattack(obj/target, mob/user, proximity)
 	if(user.used_intent.type == /datum/intent/flailthresh)
@@ -61,6 +71,16 @@
 									"<span class='notice'>I thresh the stalks.</span>")
 			return
 	..()
+
+/obj/item/rogueweapon/thresher/military
+	force = 12
+	force_wielded = 21 
+	name = "military flail"
+	desc = "Crushes skulls, or grain."
+	icon_state = "military"
+	minstr = 7
+	smeltresult = /obj/item/ingot/iron
+
 
 /obj/item/rogueweapon/sickle
 	force = 10
@@ -99,22 +119,21 @@
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.6,"sx" = -9,"sy" = 1,"nx" = 12,"ny" = 1,"wx" = -8,"wy" = 1,"ex" = 6,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.6,"sx" = -9,"sy" = 1,"nx" = 12,"ny" = 1,"wx" = -7,"wy" = 1,"ex" = 6,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 
 /obj/item/rogueweapon/hoe
-	force = 10
-	force_wielded = 15
+	force = 8
+	force_wielded = 14
 	possible_item_intents = list(/datum/intent/pick)
-	gripped_intents = list(/datum/intent/pick,SPEAR_BASH,TILL_INTENT)
+	gripped_intents = list(TILL_INTENT,/datum/intent/pick,SPEAR_BASH)
 	name = "hoe"
 	desc = ""
 	icon_state = "hoe"
+	item_state = "hoe"
 	icon = 'icons/roguetown/weapons/64.dmi'
-	pixel_y = -16
-	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	bigboy = TRUE
@@ -122,26 +141,38 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = null
 	minstr = 6
-	item_state = "hoe"
 	sharpness = IS_BLUNT
 	walking_stick = TRUE
 	wdefense = 2
-	dropshrink = 0.8
+	dropshrink = 0.9
 	wlength = 66
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
+	gripsprite = TRUE
 
 /obj/item/rogueweapon/hoe/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.7,"sx" = -7,"sy" = 0,"nx" = 8,"ny" = 0,"wx" = -5,"wy" = 0,"ex" = 0,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.7,"sx" = -8,"sy" = 1,"nx" = 8,"ny" = 1,"wx" = -7,"wy" = 1,"ex" = -1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
-				return list("shrink" = 0.7,"sx" = 3,"sy" = -4,"nx" = 3,"ny" = -3,"wx" = -4,"wy" = -4,"ex" = 2,"ey" = -4,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 45,"sturn" = 135,"wturn" = -45,"eturn" = 45,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.7,"sx" = 5,"sy" = -2,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -2,"ex" = 5,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/hoe/Initialize()
+	pixel_y = -16
+	pixel_x = -16
+
+/obj/item/rogueweapon/hoe/dropped()
+	pixel_y = -16
+	pixel_x = -16
+
+/obj/item/rogueweapon/hoe/equipped()
+	pixel_y = 0
+	pixel_x = 0
 
 /obj/item/rogueweapon/hoe/attack_turf(turf/T, mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
