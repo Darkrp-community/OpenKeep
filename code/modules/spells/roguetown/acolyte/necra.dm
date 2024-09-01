@@ -76,7 +76,7 @@
 			L.visible_message("<span class='warning'>[L] is being churned by Necra's grip...</span>", "<span class='danger'>I'm being churned by Necra's grip...</span>")
 			var/undead_prob = prob2explode
 			if(isvampire)
-				undead_prob -= 25
+				undead_prob -= 20
 			if(prob(undead_prob))
 				L.visible_message("<span class='warning'>[L] HAS BEEN CHURNED BY NECRA'S GRIP!</span>", "<span class='danger'>I'VE BEEN CHURNED BY NECRA'S GRIP!</span>")
 				explosion(get_turf(L), light_impact_range = 1, flame_range = 1, smoke = FALSE)
