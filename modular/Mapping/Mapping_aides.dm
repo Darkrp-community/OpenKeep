@@ -817,6 +817,14 @@
 	aportalid = "inhumenexit"
 	aportalgoesto = "inhumenin"
 
+// Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
+/obj/structure/bed/rogue/bear
+	desc = "A hide of a slain bear. It looks like someone sleeps on it often."
+	icon = 'icons/turf/floors/bear.dmi'
+	icon_state = "bear"
+	pixel_x = -16
+	pixel_y = -27
+
 // temp
 /obj/item/reagent_containers/powder/spice
 	name = "spice"
