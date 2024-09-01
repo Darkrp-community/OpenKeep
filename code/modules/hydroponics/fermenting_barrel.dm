@@ -56,6 +56,13 @@
 		return TRUE
 	..()
 
+/obj/structure/fermenting_barrel/attack_right(mob/user)
+	var/turf/T = get_turf(user)
+	for(var/obj/item/reagent_containers/food/snacks/grown/fruit in get_turf(T))
+		if(fruit.can_distill)
+			if(move_after(user, 1 SECONDS, target = src))
+				src.attackby(fruit, user)
+
 //obj/structure/fermenting_barrel/attack_hand(mob/user)
 //	open = !open
 //	if(open)
