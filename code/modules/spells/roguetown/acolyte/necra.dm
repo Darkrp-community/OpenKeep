@@ -54,7 +54,7 @@
 	if(user && user.mind)
 		prob2explode = 0
 		for(var/i in 1 to user.mind.get_skill_level(/datum/skill/magic/holy))
-			prob2explode += 30
+			prob2explode += 35
 	for(var/mob/living/L in targets)
 		var/isvampire = FALSE
 		var/iszombie = FALSE
@@ -73,14 +73,11 @@
 				user.throw_at(get_ranged_target_turf(user, get_dir(user,L), 7), 7, 1, L, spin = FALSE)
 				return
 		if((L.mob_biotypes & MOB_UNDEAD) || isvampire || iszombie)
-//			L.visible_message("<span class='warning'>[L] is unmade by PSYDON!</span>", "<span class='danger'>I'm unmade by PSYDON!</span>")
-			var/vamp_prob = prob2explode
-			if(isvampire)
-				vamp_prob -= 59
-			if(prob(vamp_prob))
+			L.visible_message("<span class='warning'>[L] is CHURNED by Necra's grip!</span>", "<span class='danger'>I'm CHURNED by Necra's GRIP!</span>")
+			var/undead_prob = prob2explode
+			if(prob(undead_prob))
 				explosion(get_turf(L), light_impact_range = 1, flame_range = 1, smoke = FALSE)
 				L.Stun(50)
-//				L.throw_at(get_ranged_target_turf(L, get_dir(user,L), 7), 7, 1, L, spin = FALSE)
 			else
 				L.visible_message("<span class='warning'>[L] resists being churned!</span>", "<span class='userdanger'>I resist being churned!</span>")
 	..()
