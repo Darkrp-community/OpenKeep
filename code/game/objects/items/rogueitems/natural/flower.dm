@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/food/snacks/grown/poppy
-	seed = /obj/item/seeds/poppy
+//	seed = /obj/item/seeds/poppy
 	name = "poppy"
 	desc = "This beautiful flower managed to survive this oppressive world."
 	icon_state = "poppy"

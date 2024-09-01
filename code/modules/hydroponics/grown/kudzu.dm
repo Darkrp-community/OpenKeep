@@ -7,7 +7,7 @@
 	species = "kudzu"
 	plantname = "Kudzu"
 	product = /obj/item/reagent_containers/food/snacks/grown/kudzupod
-	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/plant_type/weed_hardy)
+//	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/plant_type/weed_hardy)
 	lifespan = 20
 	endurance = 10
 	yield = 4
@@ -47,13 +47,7 @@
 		plant(user)
 		to_chat(user, "<span class='notice'>I plant the kudzu. You monster.</span>")
 
-/obj/item/seeds/kudzu/get_analyzer_text()
-	var/text = ..()
-	var/text_string = ""
-	for(var/datum/spacevine_mutation/SM in mutations)
-		text_string += "[(text_string == "") ? "" : ", "][SM.name]"
-	text += "\n- Plant Mutations: [(text_string == "") ? "None" : text_string]"
-	return text
+
 
 /obj/item/seeds/kudzu/on_chem_reaction(datum/reagents/S)
 	var/list/temp_mut_list = list()
@@ -96,7 +90,7 @@
 
 
 /obj/item/reagent_containers/food/snacks/grown/kudzupod
-	seed = /obj/item/seeds/kudzu
+//	seed = /obj/item/seeds/kudzu
 	name = "kudzu pod"
 	desc = ""
 	icon_state = "kudzupod"
@@ -104,4 +98,4 @@
 	bitesize_mod = 2
 	foodtype = VEGETABLES | GROSS
 	tastes = list("kudzu" = 1)
-	wine_power = 20
+	//wine_power = 20

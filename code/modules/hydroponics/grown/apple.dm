@@ -1,3 +1,4 @@
+/*
 // Apple
 /obj/item/seeds/apple
 	name = "seeds"
@@ -13,7 +14,7 @@
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_grow = "apple-grow"
 	icon_dead = "apple-dead"
-//	genes = list(/datum/plant_gene/trait/repeated_harvest)
+////	genes = list(/datum/plant_gene/trait/repeated_harvest)
 //	mutatelist = list(/obj/item/seeds/apple/gold)
 	delonharvest = FALSE
 
@@ -22,7 +23,7 @@
 	yield = rand(3,5)
 
 /obj/item/reagent_containers/food/snacks/grown/apple
-	seed = /obj/item/seeds/apple
+//	seed = /obj/item/seeds/apple
 	name = "apple"
 	desc = ""
 	icon_state = "apple"
@@ -103,10 +104,11 @@
 	rarity = 40 // Alchemy!
 
 /obj/item/reagent_containers/food/snacks/grown/apple/gold
-	seed = /obj/item/seeds/apple/gold
+//	seed = /obj/item/seeds/apple/gold
 	name = "golden apple"
 	desc = ""
 	icon_state = "goldapple"
 	filling_color = "#FFD700"
 	distill_reagent = null
-	wine_power = 50
+	//wine_power = 50
+*/

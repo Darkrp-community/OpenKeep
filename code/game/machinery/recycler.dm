@@ -128,13 +128,13 @@
 	I.forceMove(loc)
 	var/obj/item/grown/log/L = I
 	if(istype(L))
-		var/seed_modifier = 0
-		if(L.seed)
-			seed_modifier = round(L.seed.potency / 25)
-		new L.plank_type(src.loc, 1 + seed_modifier)
-		qdel(L)
-		return
-	else
+//		var/seed_modifier = 0
+//		if(L.seed)
+//			seed_modifier = round(L.seed.potency / 25)
+//		new L.plank_type(src.loc, 1 + seed_modifier)
+//		qdel(L)
+//		return
+//	else
 		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 		var/material_amount = materials.get_item_material_amount(I)
 		if(!material_amount)

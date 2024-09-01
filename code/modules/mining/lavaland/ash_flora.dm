@@ -156,8 +156,8 @@
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 	max_integrity = 100
-	seed = /obj/item/seeds/lavaland/polypore
-	wine_power = 20
+//	seed = /obj/item/seeds/lavaland/polypore
+	//wine_power = 20
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/Initialize()
 	. = ..()
@@ -170,29 +170,29 @@
 	name = "mushroom leaf"
 	desc = ""
 	icon_state = "mushroom_leaf"
-	seed = /obj/item/seeds/lavaland/porcini
-	wine_power = 40
+//	seed = /obj/item/seeds/lavaland/porcini
+	//wine_power = 40
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap
 	name = "mushroom cap"
 	desc = ""
 	icon_state = "mushroom_cap"
-	seed = /obj/item/seeds/lavaland/inocybe
-	wine_power = 70
+//	seed = /obj/item/seeds/lavaland/inocybe
+	//wine_power = 70
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem
 	name = "mushroom stem"
 	desc = ""
 	icon_state = "mushroom_stem"
-	seed = /obj/item/seeds/lavaland/ember
-	wine_power = 60
+//	seed = /obj/item/seeds/lavaland/ember
+	//wine_power = 60
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit
 	name = "cactus fruit"
 	desc = ""
 	icon_state = "cactus_fruit"
-	seed = /obj/item/seeds/lavaland/cactus
-	wine_power = 50
+//	seed = /obj/item/seeds/lavaland/cactus
+	//wine_power = 50
 
 //SEEDS
 
@@ -217,7 +217,7 @@
 	species = "cactus"
 	plantname = "Fruiting Cactus"
 	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit
-	genes = list(/datum/plant_gene/trait/fire_resistance)
+//	genes = list(/datum/plant_gene/trait/fire_resistance)
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	growthstages = 2
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.04, /datum/reagent/consumable/vitfro = 0.08)
@@ -229,7 +229,7 @@
 	species = "polypore"
 	plantname = "Polypore Mushrooms"
 	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings
-	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/fire_resistance)
+//	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/fire_resistance)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	reagents_add = list(/datum/reagent/consumable/sugar = 0.06, /datum/reagent/consumable/ethanol = 0.04, /datum/reagent/stabilizing_agent = 0.06, /datum/reagent/toxin/minttoxin = 0.02)
 
@@ -240,7 +240,7 @@
 	species = "porcini"
 	plantname = "Porcini Mushrooms"
 	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf
-	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/fire_resistance)
+//	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/fire_resistance)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.06, /datum/reagent/consumable/vitfro = 0.04, /datum/reagent/drug/nicotine = 0.04)
 
@@ -252,7 +252,7 @@
 	species = "inocybe"
 	plantname = "Inocybe Mushrooms"
 	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap
-	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/fire_resistance)
+//	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/fire_resistance)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	reagents_add = list(/datum/reagent/toxin/mindbreaker = 0.04, /datum/reagent/consumable/entpoly = 0.08, /datum/reagent/drug/mushroomhallucinogen = 0.04)
 
@@ -263,7 +263,7 @@
 	species = "ember"
 	plantname = "Embershroom Mushrooms"
 	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem
-	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/glow, /datum/plant_gene/trait/fire_resistance)
+//	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/glow, /datum/plant_gene/trait/fire_resistance)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	reagents_add = list(/datum/reagent/consumable/tinlux = 0.04, /datum/reagent/consumable/nutriment/vitamin = 0.02, /datum/reagent/drug/space_drugs = 0.02)
 

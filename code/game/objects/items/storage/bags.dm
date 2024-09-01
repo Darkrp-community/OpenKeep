@@ -215,8 +215,8 @@
 	set desc = ""
 	if(usr.incapacitated())
 		return
-	for(var/obj/item/O in contents)
-		seedify(O, 1)
+//	for(var/obj/item/O in contents)
+//		seedify(O, 1)
 
 // -----------------------------
 //        Sheet Snatcher

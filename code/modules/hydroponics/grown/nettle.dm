@@ -9,7 +9,7 @@
 	endurance = 40 // tuff like a toiger
 	yield = 4
 	growthstages = 5
-	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/plant_type/weed_hardy)
+//	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/plant_type/weed_hardy)
 	mutatelist = list(/obj/item/seeds/nettle/death)
 	reagents_add = list(/datum/reagent/toxin/acid = 0.5)
 
@@ -23,13 +23,13 @@
 	endurance = 25
 	maturation = 8
 	yield = 2
-	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/plant_type/weed_hardy, /datum/plant_gene/trait/stinging)
+//	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/plant_type/weed_hardy, /datum/plant_gene/trait/stinging)
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/toxin/acid/fluacid = 0.5, /datum/reagent/toxin/acid = 0.5)
 	rarity = 20
 
 /obj/item/reagent_containers/food/snacks/grown/nettle // "snack"
-	seed = /obj/item/seeds/nettle
+//	seed = /obj/item/seeds/nettle
 	name = "nettle"
 	desc = ""
 	icon = 'icons/obj/items_and_weapons.dmi'
@@ -77,23 +77,17 @@
 		qdel(src)
 
 /obj/item/reagent_containers/food/snacks/grown/nettle/basic
-	seed = /obj/item/seeds/nettle
+//	seed = /obj/item/seeds/nettle
 
-/obj/item/reagent_containers/food/snacks/grown/nettle/basic/add_juice()
-	..()
-	force = round((5 + seed.potency / 5), 1)
 
 /obj/item/reagent_containers/food/snacks/grown/nettle/death
-	seed = /obj/item/seeds/nettle/death
+//	seed = /obj/item/seeds/nettle/death
 	name = "deathnettle"
 	desc = ""
 	icon_state = "deathnettle"
 	force = 30
 	throwforce = 15
 
-/obj/item/reagent_containers/food/snacks/grown/nettle/death/add_juice()
-	..()
-	force = round((5 + seed.potency / 2.5), 1)
 
 /obj/item/reagent_containers/food/snacks/grown/nettle/death/pickup(mob/living/carbon/user)
 	if(..())

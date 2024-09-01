@@ -58,13 +58,6 @@
 		factions = null
 		contains_sample = FALSE
 
-/obj/item/seeds/replicapod/get_analyzer_text()
-	var/text = ..()
-	if(contains_sample)
-		text += "\n It contains a blood sample!"
-	return text
-
-
 /obj/item/seeds/replicapod/harvest(mob/user) //now that one is fun -- Urist
 	var/obj/machinery/hydroponics/parent = loc
 	var/make_podman = 0

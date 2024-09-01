@@ -14,19 +14,19 @@
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	icon_grow = "chili-grow" // Uses one growth icons set for all the subtypes
 	icon_dead = "chili-dead" // Same for the dead icon
-	genes = list(/datum/plant_gene/trait/repeated_harvest)
+//	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = list(/obj/item/seeds/chili/ice, /obj/item/seeds/chili/ghost)
 	reagents_add = list(/datum/reagent/consumable/capsaicin = 0.25, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/chili
-	seed = /obj/item/seeds/chili
+//	seed = /obj/item/seeds/chili
 	name = "chili"
 	desc = ""
 	icon_state = "chilipepper"
 	filling_color = "#FF0000"
 	bitesize_mod = 2
 	foodtype = FRUIT
-	wine_power = 20
+	//wine_power = 20
 
 // Ice Chili
 /obj/item/seeds/chili/ice
@@ -44,14 +44,14 @@
 	reagents_add = list(/datum/reagent/consumable/frostoil = 0.25, /datum/reagent/consumable/nutriment/vitamin = 0.02, /datum/reagent/consumable/nutriment = 0.02)
 
 /obj/item/reagent_containers/food/snacks/grown/icepepper
-	seed = /obj/item/seeds/chili/ice
+//	seed = /obj/item/seeds/chili/ice
 	name = "ice pepper"
 	desc = ""
 	icon_state = "icepepper"
 	filling_color = "#0000CD"
 	bitesize_mod = 2
 	foodtype = FRUIT
-	wine_power = 30
+	//wine_power = 30
 
 // Ghost Chili
 /obj/item/seeds/chili/ghost
@@ -70,7 +70,7 @@
 	reagents_add = list(/datum/reagent/consumable/condensedcapsaicin = 0.3, /datum/reagent/consumable/capsaicin = 0.55, /datum/reagent/consumable/nutriment = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/ghost_chili
-	seed = /obj/item/seeds/chili/ghost
+//	seed = /obj/item/seeds/chili/ghost
 	name = "ghost chili"
 	desc = ""
 	icon_state = "ghostchilipepper"
@@ -78,7 +78,7 @@
 	filling_color = "#F8F8FF"
 	bitesize_mod = 4
 	foodtype = FRUIT
-	wine_power = 50
+	//wine_power = 50
 
 /obj/item/reagent_containers/food/snacks/grown/ghost_chili/attack_hand(mob/user)
 	. = ..()

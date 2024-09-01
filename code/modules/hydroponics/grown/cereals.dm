@@ -22,7 +22,7 @@
 	foodextracted = /obj/item/reagent_containers/food/snacks/grown/wheat
 
 /obj/item/reagent_containers/food/snacks/grown/wheat
-	seed = /obj/item/seeds/wheat
+//	seed = /obj/item/seeds/wheat
 	name = "grain"
 	desc = ""
 	gender = PLURAL
@@ -48,11 +48,11 @@
 /obj/item/natural/chaff/oat
 	name = "oat stalks"
 	icon_state = "oatchaff"
-	chafftype = 2
+//	chafftype = 2
 	foodextracted = /obj/item/reagent_containers/food/snacks/grown/oat
 
 /obj/item/reagent_containers/food/snacks/grown/oat
-	seed = /obj/item/seeds/wheat/oat
+//	seed = /obj/item/seeds/wheat/oat
 	name = "grain"
 	desc = ""
 	gender = PLURAL
@@ -66,23 +66,8 @@
 	tastes = list("oat" = 1)
 	distill_reagent = /datum/reagent/consumable/ethanol/ale
 
-// Rice
-/obj/item/seeds/wheat/rice
-	desc = ""
-	species = "rice"
-	plantname = "rice stalks"
-	product = /obj/item/natural/chaff/rice
-	mutatelist = list()
-	growthstages = 3
-
-/obj/item/natural/chaff/rice
-	icon_state = "ricechaff"
-	name = "rice stalks"
-	chafftype = 2
-	foodextracted = /obj/item/reagent_containers/food/snacks/grown/rice
-
 /obj/item/reagent_containers/food/snacks/grown/rice
-	seed = /obj/item/seeds/wheat/rice
+//	seed = /obj/item/seeds/wheat/rice
 	name = "rice"
 	desc = ""
 	gender = PLURAL
@@ -96,15 +81,6 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/sake
 
 //Meatwheat - grows into synthetic meat
-/obj/item/seeds/wheat/meat
-	name = "pack of meatwheat seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "meatwheat"
-	plantname = "Meatwheat"
-	product = /obj/item/reagent_containers/food/snacks/grown/meatwheat
-	mutatelist = list()
-
 /obj/item/reagent_containers/food/snacks/grown/meatwheat
 	name = "meatwheat"
 	desc = ""
@@ -112,7 +88,7 @@
 	gender = PLURAL
 	filling_color = rgb(150, 0, 0)
 	bitesize_mod = 2
-	seed = /obj/item/seeds/wheat/meat
+//	seed = /obj/item/seeds/wheat/meat
 	foodtype = MEAT | GRAIN
 	grind_results = list(/datum/reagent/consumable/flour = 0, /datum/reagent/blood = 0)
 	tastes = list("meatwheat" = 1)

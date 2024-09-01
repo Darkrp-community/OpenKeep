@@ -14,12 +14,12 @@
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	icon_grow = "potato-grow"
 	icon_dead = "potato-dead"
-	genes = list(/datum/plant_gene/trait/battery)
+//	genes = list(/datum/plant_gene/trait/battery)
 	mutatelist = list(/obj/item/seeds/potato/sweet)
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/potato
-	seed = /obj/item/seeds/potato
+//	seed = /obj/item/seeds/potato
 	name = "potato"
 	desc = ""
 	icon_state = "potato"
@@ -60,7 +60,7 @@
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.1, /datum/reagent/consumable/sugar = 0.1, /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/potato/sweet
-	seed = /obj/item/seeds/potato/sweet
+//	seed = /obj/item/seeds/potato/sweet
 	name = "sweet potato"
 	desc = ""
 	icon_state = "sweetpotato"

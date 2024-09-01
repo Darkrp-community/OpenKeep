@@ -1853,20 +1853,7 @@
 	name = "Seeds Crate"
 	desc = ""
 	cost = 1000
-	contains = list(/obj/item/seeds/chili,
-					/obj/item/seeds/cotton,
-					/obj/item/seeds/berry,
-					/obj/item/seeds/corn,
-					/obj/item/seeds/eggplant,
-					/obj/item/seeds/tomato,
-					/obj/item/seeds/soya,
-					/obj/item/seeds/wheat,
-					/obj/item/seeds/wheat/rice,
-					/obj/item/seeds/carrot,
-					/obj/item/seeds/sunflower,
-					/obj/item/seeds/chanter,
-					/obj/item/seeds/potato,
-					/obj/item/seeds/sugarcane)
+	contains = list(/obj/item/seeds/potato)
 	crate_name = "seeds crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 

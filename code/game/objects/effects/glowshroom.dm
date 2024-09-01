@@ -92,32 +92,12 @@
 
 /obj/structure/glowshroom/New(loc, obj/item/seeds/newseed, mutate_stats)
 	..()
-	if(newseed)
-		myseed = newseed.Copy()
-		myseed.forceMove(src)
-	else
-		myseed = new myseed(src)
-	if(mutate_stats) //baby mushrooms have different stats :3
-		myseed.adjust_potency(rand(-3,6))
-		myseed.adjust_yield(rand(-1,2))
-		myseed.adjust_production(rand(-3,6))
-		myseed.adjust_endurance(rand(-3,6))
-	delay = delay - myseed.production * 100 //So the delay goes DOWN with better stats instead of up. :I
-	obj_integrity = myseed.endurance
-	max_integrity = myseed.endurance
-	var/datum/plant_gene/trait/glow/G = myseed.get_gene(/datum/plant_gene/trait/glow)
-	if(ispath(G)) // Seeds were ported to initialize so their genes are still typepaths here, luckily their initializer is smart enough to handle us doing this
-		myseed.genes -= G
-		G = new G
-		myseed.genes += G
-	set_light(G.glow_range(myseed), G.glow_power(myseed), G.glow_color)
-//	setDir(CalcDir())
+	set_light(1.5, 1.5, "#d4fcac")
 
 	icon_state = "glowshroom[rand(1,3)]"
 
 	pixel_x = rand(-4, 4)
 	pixel_y = rand(0,5)
-
 /*
 	var/base_icon_state = initial(icon_state)
 	if(!floor)

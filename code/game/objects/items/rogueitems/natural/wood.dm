@@ -1,6 +1,6 @@
 /obj/item/grown/log/tree
 	icon = 'icons/roguetown/items/natural.dmi'
-	seed = null
+//	seed = null
 	name = "log"
 	desc = "Refined lumber, ready for use or processing."
 	icon_state = "log"
@@ -54,7 +54,7 @@
 	smeltresult = /obj/item/rogueore/coal
 
 /obj/item/grown/log/tree/stick
-	seed = null
+//	seed = null
 	name = "stick"
 	desc = "A wooden stick, a mighty weapon to the imaginative."
 	icon_state = "stick1"
@@ -138,7 +138,7 @@
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP
 
 /obj/item/grown/log/tree/lumber
-	seed = null
+//	seed = null
 	name = "lumber"
 	desc = "This is some lumber."
 	icon_state = "lumber"

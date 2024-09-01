@@ -8,6 +8,7 @@
 #define TRAIT_STRONGBITE				"Strong Bite"
 #define TRAIT_HATEWOMEN				"Ladykiller"
 #define TRAIT_GOODLOVER				"Fabled Lover"
+#define TRAIT_SEEDKNOW 			"Seed Knower"
 #define TRAIT_NOBLE					"Noble Blooded"
 #define TRAIT_EMPATH					"Empath"
 #define TRAIT_BREADY					"Battleready"
@@ -66,6 +67,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_STRONGBITE = "Stronger bites, critical bite attacks.",
 	TRAIT_HATEWOMEN = "Double damage against female mobs.",
 	TRAIT_GOODLOVER = "It's a blessing to share a bed with me.",
+	TRAIT_SEEDKNOW = "I know which seeds grow which crops.",
 	TRAIT_NOBLE = "<span class='blue'>I'm of noble blood.</span>",
 	TRAIT_EMPATH = "I can notice when people are in pain.",
 	TRAIT_BREADY = "Defensive stance does not passively fatigue me.",

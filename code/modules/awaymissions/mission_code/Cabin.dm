@@ -96,10 +96,10 @@
 /obj/machinery/recycler/lumbermill/recycle_item(obj/item/grown/log/L)
 	if(!istype(L))
 		return
-	else
-		var/potency = L.seed.potency
-		..()
-		new L.plank_type(src.loc, 1 + round(potency / 25))
+//	else
+//		var/potency = L.seed.potency
+//		..()
+//		new L.plank_type(src.loc, 1 + round(potency / 25))
 
 /mob/living/simple_animal/chicken/rabbit/normal
 	icon_state = "b_rabbit"

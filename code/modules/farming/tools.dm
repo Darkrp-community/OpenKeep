@@ -1,3 +1,7 @@
+/*-----------\
+|  Thresher  |
+\-----------*/
+
 /obj/item/rogueweapon/thresher
 	force = 10
 	force_wielded = 14
@@ -6,7 +10,7 @@
 	name = "thresher"
 	desc = "Crushes grain, or skulls."
 	icon_state = "thresher"
-	icon = 'icons/roguetown/weapons/64.dmi'
+	icon = 'icons/roguetown/farming/64_tools.dmi'
 	sharpness = IS_BLUNT
 	dropshrink = 0.9
 	inhand_x_dimension = 64
@@ -23,6 +27,15 @@
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = null
 	associated_skill = /datum/skill/combat/axesmaces
+
+/obj/item/rogueweapon/thresher/military
+	force = 12
+	force_wielded = 21 
+	name = "military flail"
+	desc = "Crushes skulls, or grain."
+	icon_state = "military"
+	minstr = 7
+	smeltresult = /obj/item/ingot/iron
 
 /datum/intent/flailthresh
 	name = "thresh"
@@ -45,14 +58,17 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogueweapon/thresher/Initialize()
+	. = ..()
 	pixel_y = -16
 	pixel_x = -16
 
 /obj/item/rogueweapon/thresher/dropped()
+	. = ..()
 	pixel_y = -16
 	pixel_x = -16
 
 /obj/item/rogueweapon/thresher/equipped()
+	. = ..()
 	pixel_y = 0
 	pixel_x = 0
 
@@ -67,34 +83,25 @@
 			if(found)
 				playsound(loc,"plantcross", 100, FALSE)
 				playsound(loc,"smashlimb", 50, FALSE)
-				user.visible_message("<span class='notice'>[user] threshes the stalks!</span>", \
-									"<span class='notice'>I thresh the stalks.</span>")
+				user.visible_message(span_notice("[user] threshes the stalks!"), \
+									span_notice("I thresh the stalks."))
 			return
 	..()
 
-/obj/item/rogueweapon/thresher/military
-	force = 12
-	force_wielded = 21 
-	name = "military flail"
-	desc = "Crushes skulls, or grain."
-	icon_state = "military"
-	minstr = 7
-	smeltresult = /obj/item/ingot/iron
-
+/*---------\
+|  Sickle  |
+\---------*/
 
 /obj/item/rogueweapon/sickle
 	force = 10
 	possible_item_intents = list(DAGGER_CUT)
 	name = "sickle"
-	desc = ""
+	desc = "Rusted blade, worn handle, symbol of toil."
 	icon_state = "sickle"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	item_state = "crysknife"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	wlength = WLENGTH_SHORT
-	w_class = WEIGHT_CLASS_SMALL
-	wdefense = 1
 	sharpness = IS_SHARP
 	//dropshrink = 0.8
 	wlength = 10
@@ -103,16 +110,6 @@
 	max_blade_int = 50
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/knives
-	
-
-/obj/item/rogueweapon/sickle/attack_turf(turf/T, mob/living/user)
-	user.changeNext_move(CLICK_CD_MELEE)
-	if(istype(T, /turf/open/floor/rogue/dirt))
-		var/turf/open/floor/rogue/dirt/D = T
-		if(D.planted_crop)
-			D.planted_crop.attackby(src, user)
-			return
-	. = ..()
 
 /obj/item/rogueweapon/sickle/getonmobprop(tag)
 	. = ..()
@@ -123,6 +120,9 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+/*------\
+|  Hoe  |
+\------*/
 
 /obj/item/rogueweapon/hoe
 	force = 8
@@ -133,7 +133,7 @@
 	desc = ""
 	icon_state = "hoe"
 	item_state = "hoe"
-	icon = 'icons/roguetown/weapons/64.dmi'
+	icon = 'icons/roguetown/farming/64_tools.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	bigboy = TRUE
@@ -151,6 +151,7 @@
 	associated_skill = /datum/skill/combat/polearms
 	gripsprite = TRUE
 
+
 /obj/item/rogueweapon/hoe/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -163,30 +164,41 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogueweapon/hoe/Initialize()
+	. = ..()
 	pixel_y = -16
 	pixel_x = -16
 
 /obj/item/rogueweapon/hoe/dropped()
+	. = ..()
 	pixel_y = -16
 	pixel_x = -16
 
 /obj/item/rogueweapon/hoe/equipped()
+	. = ..()
 	pixel_y = 0
 	pixel_x = 0
 
+
 /obj/item/rogueweapon/hoe/attack_turf(turf/T, mob/living/user)
-	user.changeNext_move(CLICK_CD_MELEE)
-	if(istype(T, /turf/open/floor/rogue/dirt))
-		var/turf/open/floor/rogue/dirt/D = T
-		if(D.planted_crop)
-			D.planted_crop.attackby(src, user)
-			return
-	if(istype(T, /turf/open/floor/rogue/grass))
-		if(user.used_intent.type == /datum/intent/till)
+	if(user.used_intent.type == /datum/intent/till)
+		user.changeNext_move(CLICK_CD_MELEE)
+		if(istype(T, /turf/open/floor/rogue/grass))
 			playsound(T,'sound/items/dig_shovel.ogg', 100, TRUE)
-			if (do_after(user,30, target = src))
+			if (do_after(user, 3 SECONDS, target = src))
+				apply_farming_fatigue(user, 10)
 				T.ChangeTurf(/turf/open/floor/rogue/dirt, flags = CHANGETURF_INHERIT_AIR)
 				playsound(T,'sound/items/dig_shovel.ogg', 100, TRUE)
+			return
+		if(istype(T, /turf/open/floor/rogue/dirt))
+			playsound(T,'sound/items/dig_shovel.ogg', 100, TRUE)
+			if(do_after(user, 3 SECONDS, target = src))	
+				playsound(T,'sound/items/dig_shovel.ogg', 100, TRUE)
+				var/obj/structure/soil/soil = get_soil_on_turf(T)
+				if(soil)
+					soil.user_till_soil(user)
+				else
+					apply_farming_fatigue(user, 10)
+					new /obj/structure/soil(T)
 			return
 	. = ..()
 
@@ -198,26 +210,10 @@
 	candodge = FALSE
 	misscost = 0
 
-/*
-//make this attack_turf instead
-/obj/item/rogueweapon/hoe/afterattack(obj/target, mob/user, proximity)
-	if((!proximity) || (!wielded))
-		return ..()
+/*------------\
+|  Pitchfork  |
+\------------*/
 
-	if(istype(target, /turf/open/floor/rogue/dirt))
-		var/obj/machinery/crop/R = locate() in target
-		if(R)
-			to_chat(user,"<span class='warning'>There's already a mound here.</span>")
-			return
-		if(prob(10)) //ROGTODO make this farming skill based maybe a stat too
-			user.visible_message("<span class='notice'>[user] tills the soil!</span>", \
-								"<span class='notice'>I till the soil.</span>")
-			new /obj/machinery/crop(target)
-		else
-			to_chat(user,"<span class='warning'>I till the soil.</span>")
-		return
-	..()
-*/
 /obj/item/rogueweapon/pitchfork
 
 	force = 10
@@ -279,7 +275,7 @@
 			for(var/obj/item/I in forked)
 				I.forceMove(target)
 				forked -= I
-			to_chat(user, "<span class='warning'>I dump the stalks.</span>")
+			to_chat(user, span_warning("I dump the stalks."))
 		update_icon()
 		return
 	..()
@@ -299,3 +295,44 @@
 	else
 		icon_state = initial(icon_state)
 	..()
+
+
+/*-------------\
+|  Egg basket  |
+\-------------*/
+
+/obj/item/storage/bag/egg_basket
+	name = "egg basket"
+	icon = 'icons/fallout/farming/farming_tools.dmi'
+	icon_state = "eggbasket"
+	w_class = WEIGHT_CLASS_TINY
+	resistance_flags = FLAMMABLE
+
+/obj/item/storage/bag/egg_basket/Initialize(mapload) // JET FIEND additions
+	. = ..()
+	if(!mapload)
+		return
+	for(var/obj/item/I in loc)
+		if(istype(I, /obj/item/reagent_containers/food/snacks/egg))
+			I.forceMove(src)
+		if(istype(I, /obj/item/reagent_containers/food/snacks/f13/egg))
+			I.forceMove(src)
+	update_icon()
+/obj/item/storage/bag/egg_basket/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = 12
+	STR.max_items = 12
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/structure/spider/eggcluster, /obj/item/reagent_containers/food/snacks/egg, /obj/item/reagent_containers/food/snacks/f13/egg/deathclaw, /obj/item/reagent_containers/food/snacks/chocolateegg, /obj/item/reagent_containers/food/snacks/egg/gland, /obj/item/reagent_containers/food/snacks/egg/blue, /obj/item/reagent_containers/food/snacks/egg/green, /obj/item/reagent_containers/food/snacks/egg/orange, /obj/item/reagent_containers/food/snacks/egg/purple, /obj/item/reagent_containers/food/snacks/egg/rainbow, /obj/item/reagent_containers/food/snacks/egg/red, /obj/item/reagent_containers/food/snacks/egg/yellow)))
+/obj/item/storage/bag/egg_basket/update_icon_state()
+	switch(contents.len)
+		if(0)
+			icon_state = "[initial(icon_state)]"
+		if(1 to 3)
+			icon_state = "[initial(icon_state)]1"
+		if(4 to 7)
+			icon_state = "[initial(icon_state)]2"
+		else
+			icon_state = "[initial(icon_state)]3"
+

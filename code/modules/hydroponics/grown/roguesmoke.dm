@@ -1,6 +1,6 @@
 //swarmpweed
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweed
-	seed = /obj/item/seeds/swampweed
+//	seed = /obj/item/seeds/swampweed
 	name = "swampweed"
 	desc = "A 'foggy' pipe weed."
 	icon_state = "swampweed"
@@ -24,7 +24,7 @@
 	color = "#455838"
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry
-	seed = null
+//	seed = null
 	name = "swampweed"
 	desc = ""
 	icon_state = "swampweedd"
@@ -58,7 +58,7 @@
 
 //westleach leaf
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
-	seed = /obj/item/seeds/pipeweed
+//	seed = /obj/item/seeds/pipeweed
 	name = "westleach leaf"
 	desc = "A generic kind of pipe weed."
 	icon_state = "westleach"
@@ -82,7 +82,7 @@
 	color = "#6d915d"
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry
-	seed = null
+//	seed = null
 	name = "westleach leaf"
 	desc = "A dried leaf."
 	icon_state = "westleachd"

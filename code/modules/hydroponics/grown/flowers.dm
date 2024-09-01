@@ -18,7 +18,7 @@
 	reagents_add = list(/datum/reagent/medicine/C2/libital = 0.2, /datum/reagent/consumable/nutriment = 0.05)
 
 /obj/item/reagent_containers/food/snacks/grown/poppy
-	seed = /obj/item/seeds/poppy
+//	seed = /obj/item/seeds/poppy
 	name = "poppy"
 	desc = ""
 	icon_state = "poppy"
@@ -39,7 +39,7 @@
 	mutatelist = list(/obj/item/seeds/poppy/lily/trumpet)
 
 /obj/item/reagent_containers/food/snacks/grown/poppy/lily
-	seed = /obj/item/seeds/poppy/lily
+//	seed = /obj/item/seeds/poppy/lily
 	name = "lily"
 	desc = ""
 	icon_state = "lily"
@@ -66,7 +66,7 @@
 	icon_grow = "spacemanstrumpet-grow"
 	icon_dead = "spacemanstrumpet-dead"
 	mutatelist = list()
-	genes = list(/datum/plant_gene/reagent/polypyr)
+//	genes = list(/datum/plant_gene/reagent/polypyr)
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.05)
 	rarity = 30
 
@@ -76,7 +76,7 @@
 		unset_mutability(/datum/plant_gene/reagent/polypyr, PLANT_GENE_EXTRACTABLE)
 
 /obj/item/reagent_containers/food/snacks/grown/trumpet
-	seed = /obj/item/seeds/poppy/lily/trumpet
+//	seed = /obj/item/seeds/poppy/lily/trumpet
 	name = "spaceman's trumpet"
 	desc = ""
 	icon_state = "spacemanstrumpet"
@@ -95,7 +95,7 @@
 	mutatelist = list()
 
 /obj/item/reagent_containers/food/snacks/grown/poppy/geranium
-	seed = /obj/item/seeds/poppy/geranium
+//	seed = /obj/item/seeds/poppy/geranium
 	name = "geranium"
 	desc = ""
 	icon_state = "geranium"
@@ -116,12 +116,12 @@
 	yield = 2
 	potency = 30
 	growthstages = 4
-	genes = list(/datum/plant_gene/trait/plant_type/weed_hardy)
+//	genes = list(/datum/plant_gene/trait/plant_type/weed_hardy)
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/harebell
-	seed = /obj/item/seeds/harebell
+//	seed = /obj/item/seeds/harebell
 	name = "harebell"
 	desc = ""
 	icon_state = "harebell"
@@ -149,7 +149,7 @@
 	reagents_add = list(/datum/reagent/consumable/cornoil = 0.08, /datum/reagent/consumable/nutriment = 0.04)
 
 /obj/item/grown/sunflower // FLOWER POWER!
-	seed = /obj/item/seeds/sunflower
+//	seed = /obj/item/seeds/sunflower
 	name = "sunflower"
 	desc = ""
 	icon_state = "sunflower"
@@ -179,13 +179,13 @@
 	icon_grow = "moonflower-grow"
 	icon_dead = "sunflower-dead"
 	product = /obj/item/reagent_containers/food/snacks/grown/moonflower
-	genes = list(/datum/plant_gene/trait/glow/purple)
+//	genes = list(/datum/plant_gene/trait/glow/purple)
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/ethanol/moonshine = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.02, /datum/reagent/consumable/nutriment = 0.02)
 	rarity = 15
 
 /obj/item/reagent_containers/food/snacks/grown/moonflower
-	seed = /obj/item/seeds/sunflower/moonflower
+//	seed = /obj/item/seeds/sunflower/moonflower
 	name = "moonflower"
 	desc = ""
 	icon_state = "moonflower"
@@ -209,7 +209,7 @@
 	rarity = 20
 
 /obj/item/grown/novaflower
-	seed = /obj/item/seeds/sunflower/novaflower
+//	seed = /obj/item/seeds/sunflower/novaflower
 	name = "novaflower"
 	desc = ""
 	icon_state = "novaflower"
@@ -225,16 +225,13 @@
 	attack_verb = list("roasted", "scorched", "burned")
 	grind_results = list(/datum/reagent/consumable/capsaicin = 0, /datum/reagent/consumable/condensedcapsaicin = 0)
 
-/obj/item/grown/novaflower/add_juice()
-	..()
-	force = round((5 + seed.potency / 5), 1)
 
 /obj/item/grown/novaflower/attack(mob/living/carbon/M, mob/user)
 	if(!..())
 		return
 	if(isliving(M))
 		to_chat(M, "<span class='danger'>I are lit on fire from the intense heat of the [name]!</span>")
-		M.adjust_fire_stacks(seed.potency / 20)
+	//	M.adjust_fire_stacks(seed.potency / 20)
 		if(M.IgniteMob())
 			message_admins("[ADMIN_LOOKUPFLW(user)] set [ADMIN_LOOKUPFLW(M)] on fire with [src] at [AREACOORD(user)]")
 			log_game("[key_name(user)] set [key_name(M)] on fire with [src] at [AREACOORD(user)]")

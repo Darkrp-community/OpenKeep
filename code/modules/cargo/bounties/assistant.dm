@@ -194,8 +194,6 @@
 /datum/bounty/item/assistant/bonfire/applies_to(obj/O)
 	if(!..())
 		return FALSE
-	var/obj/structure/bonfire/B = O
-	return !!B.burning
 
 /datum/bounty/item/assistant/corgimeat
 	name = "Raw Corgi Meat"

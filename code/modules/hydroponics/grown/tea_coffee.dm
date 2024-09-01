@@ -12,11 +12,11 @@
 	yield = 5
 	growthstages = 5
 	icon_dead = "tea-dead"
-	genes = list(/datum/plant_gene/trait/repeated_harvest)
+//	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = list(/obj/item/seeds/tea/astra)
 
 /obj/item/reagent_containers/food/snacks/grown/tea
-	seed = /obj/item/seeds/tea
+//	seed = /obj/item/seeds/tea
 	name = "Tea Aspera tips"
 	desc = ""
 	icon_state = "tea_aspera_leaves"
@@ -37,7 +37,7 @@
 	rarity = 20
 
 /obj/item/reagent_containers/food/snacks/grown/tea/astra
-	seed = /obj/item/seeds/tea/astra
+//	seed = /obj/item/seeds/tea/astra
 	name = "Tea Astra tips"
 	icon_state = "tea_astra_leaves"
 	filling_color = "#4582B4"
@@ -59,12 +59,12 @@
 	yield = 5
 	growthstages = 5
 	icon_dead = "coffee-dead"
-	genes = list(/datum/plant_gene/trait/repeated_harvest)
+//	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = list(/obj/item/seeds/coffee/robusta)
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/toxin/coffeepowder = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/coffee
-	seed = /obj/item/seeds/coffee
+//	seed = /obj/item/seeds/coffee
 	name = "coffee arabica beans"
 	desc = ""
 	icon_state = "coffee_arabica"
@@ -87,7 +87,7 @@
 	rarity = 20
 
 /obj/item/reagent_containers/food/snacks/grown/coffee/robusta
-	seed = /obj/item/seeds/coffee/robusta
+//	seed = /obj/item/seeds/coffee/robusta
 	name = "coffee robusta beans"
 	desc = ""
 	icon_state = "coffee_robusta"

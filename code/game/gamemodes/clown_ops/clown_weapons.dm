@@ -164,13 +164,13 @@
 	trash = /obj/item/grown/bananapeel/bombanana
 	bitesize = 1
 	customfoodfilling = FALSE
-	seed = null
+//	seed = null
 	tastes = list("explosives" = 10)
 	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
 
 /obj/item/grown/bananapeel/bombanana
 	desc = ""
-	seed = null
+//	seed = null
 	var/det_time = 50
 	var/obj/item/grenade/syndieminibomb/bomb
 

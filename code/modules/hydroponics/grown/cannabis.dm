@@ -12,7 +12,7 @@
 	growing_icon = 'goon/icons/obj/hydroponics.dmi'
 	icon_grow = "cannabis-grow" // Uses one growth icons set for all the subtypes
 	icon_dead = "cannabis-dead" // Same for the dead icon
-	genes = list(/datum/plant_gene/trait/repeated_harvest)
+//	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = list(/obj/item/seeds/cannabis/rainbow,
 						/obj/item/seeds/cannabis/death,
 						/obj/item/seeds/cannabis/white,
@@ -61,7 +61,7 @@
 	species = "ocannabis"
 	plantname = "Omega Weed"
 	product = /obj/item/reagent_containers/food/snacks/grown/cannabis/ultimate
-	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/glow/green)
+//	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/glow/green)
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/drug/space_drugs = 0.3,
 						/datum/reagent/toxin/mindbreaker = 0.3,
@@ -80,7 +80,7 @@
 // ---------------------------------------------------------------
 
 /obj/item/reagent_containers/food/snacks/grown/cannabis
-	seed = /obj/item/seeds/cannabis
+//	seed = /obj/item/seeds/cannabis
 	icon = 'goon/icons/obj/hydroponics.dmi'
 	name = "cannabis leaf"
 	desc = ""
@@ -89,33 +89,33 @@
 	bitesize_mod = 2
 	foodtype = VEGETABLES //i dont really know what else weed could be to be honest
 	tastes = list("cannabis" = 1)
-	wine_power = 20
+	//wine_power = 20
 
 /obj/item/reagent_containers/food/snacks/grown/cannabis/rainbow
-	seed = /obj/item/seeds/cannabis/rainbow
+//	seed = /obj/item/seeds/cannabis/rainbow
 	name = "rainbow cannabis leaf"
 	desc = ""
 	icon_state = "megacannabis"
-	wine_power = 60
+	//wine_power = 60
 
 /obj/item/reagent_containers/food/snacks/grown/cannabis/death
-	seed = /obj/item/seeds/cannabis/death
+//	seed = /obj/item/seeds/cannabis/death
 	name = "death cannabis leaf"
 	desc = ""
 	icon_state = "blackcannabis"
-	wine_power = 40
+	//wine_power = 40
 
 /obj/item/reagent_containers/food/snacks/grown/cannabis/white
-	seed = /obj/item/seeds/cannabis/white
+//	seed = /obj/item/seeds/cannabis/white
 	name = "white cannabis leaf"
 	desc = ""
 	icon_state = "whitecannabis"
-	wine_power = 10
+	//wine_power = 10
 
 /obj/item/reagent_containers/food/snacks/grown/cannabis/ultimate
-	seed = /obj/item/seeds/cannabis/ultimate
+//	seed = /obj/item/seeds/cannabis/ultimate
 	name = "omega cannabis leaf"
 	desc = ""
 	icon_state = "ocannabis"
 	volume = 420
-	wine_power = 90
+	//wine_power = 90

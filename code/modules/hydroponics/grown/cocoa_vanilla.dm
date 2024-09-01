@@ -14,12 +14,12 @@
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_grow = "cocoapod-grow"
 	icon_dead = "cocoapod-dead"
-	genes = list(/datum/plant_gene/trait/repeated_harvest)
+//	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = list(/obj/item/seeds/cocoapod/vanillapod, /obj/item/seeds/cocoapod/bungotree)
 	reagents_add = list(/datum/reagent/consumable/coco = 0.25, /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/cocoapod
-	seed = /obj/item/seeds/cocoapod
+//	seed = /obj/item/seeds/cocoapod
 	name = "cocoa pod"
 	desc = ""
 	icon_state = "cocoapod"
@@ -37,12 +37,12 @@
 	species = "vanillapod"
 	plantname = "Vanilla Tree"
 	product = /obj/item/reagent_containers/food/snacks/grown/vanillapod
-	genes = list(/datum/plant_gene/trait/repeated_harvest)
+//	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/vanilla = 0.25, /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/vanillapod
-	seed = /obj/item/seeds/cocoapod/vanillapod
+//	seed = /obj/item/seeds/cocoapod/vanillapod
 	name = "vanilla pod"
 	desc = ""
 	icon_state = "vanillapod"
@@ -62,7 +62,7 @@
 	maturation = 4
 	yield = 3
 	production = 7
-	genes = list(/datum/plant_gene/trait/repeated_harvest)
+//	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/enzyme = 0.1, /datum/reagent/consumable/nutriment = 0.1)
 	growthstages = 4
@@ -72,7 +72,7 @@
 	rarity = 15
 
 /obj/item/reagent_containers/food/snacks/grown/bungofruit
-	seed = /obj/item/seeds/cocoapod/bungotree
+//	seed = /obj/item/seeds/cocoapod/bungotree
 	name = "bungo fruit"
 	desc = ""
 	icon_state = "bungo"
@@ -84,7 +84,7 @@
 	distill_reagent = null
 
 /obj/item/reagent_containers/food/snacks/grown/bungopit
-	seed = /obj/item/seeds/cocoapod/bungotree
+//	seed = /obj/item/seeds/cocoapod/bungotree
 	name = "bungo pit"
 	icon_state = "bungopit"
 	desc = ""
@@ -98,5 +98,5 @@
 /obj/item/reagent_containers/food/snacks/grown/bungopit/Initialize()
 	. =..()
 	reagents.clear_reagents()
-	reagents.add_reagent(/datum/reagent/toxin/bungotoxin, seed.potency * 0.10) //More than this will kill at too low potency
-	reagents.add_reagent(/datum/reagent/consumable/nutriment, seed.potency * 0.04)
+//	reagents.add_reagent(/datum/reagent/toxin/bungotoxin, seed.potency * 0.10) //More than this will kill at too low potency
+//	reagents.add_reagent(/datum/reagent/consumable/nutriment, seed.potency * 0.04)

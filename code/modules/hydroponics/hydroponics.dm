@@ -237,11 +237,7 @@
 		if (needs_update)
 			update_icon()
 
-		if(myseed && prob(5 * (11-myseed.production)))
-			for(var/g in myseed.genes)
-				if(istype(g, /datum/plant_gene/trait))
-					var/datum/plant_gene/trait/selectedtrait = g
-					selectedtrait.on_grow(src)
+
 	return
 
 /obj/machinery/hydroponics/proc/nutrimentMutation()
@@ -281,11 +277,7 @@
 		update_icon_lights()
 
 	if(!self_sustaining)
-		if(myseed && myseed.get_gene(/datum/plant_gene/trait/glow))
-			var/datum/plant_gene/trait/glow/G = myseed.get_gene(/datum/plant_gene/trait/glow)
-			set_light(G.glow_range(myseed), G.glow_power(myseed), G.glow_color)
-		else
-			set_light(0)
+		set_light(0)
 
 	return
 
@@ -317,8 +309,6 @@
 		add_overlay(mutable_appearance('icons/obj/hydroponics/equipment.dmi', "over_lowwater3"))
 	if(nutrilevel <= 2)
 		add_overlay(mutable_appearance('icons/obj/hydroponics/equipment.dmi', "over_lownutri3"))
-	if(plant_health <= (myseed.endurance / 2))
-		add_overlay(mutable_appearance('icons/obj/hydroponics/equipment.dmi', "over_lowhealth3"))
 	if(weedlevel >= 5 || pestlevel >= 5 || toxic >= 40)
 		add_overlay(mutable_appearance('icons/obj/hydroponics/equipment.dmi', "over_alert3"))
 	if(harvest)
@@ -333,8 +323,6 @@
 			. += "<span class='warning'>It's dead!</span>"
 		else if (harvest)
 			. += "<span class='info'>It's ready to harvest.</span>"
-		else if (plant_health <= (myseed.endurance / 2))
-			. += "<span class='warning'>It looks unhealthy.</span>"
 	else
 		. += "<span class='info'>It's empty.</span>"
 
@@ -381,7 +369,7 @@
 		else
 			myseed = new /obj/item/seeds/starthistle(src)
 	age = 0
-	plant_health = myseed.endurance
+//	plant_health = myseed.endurance
 	lastcycle = world.time
 	harvest = 0
 	weedlevel = 0 // Reset
@@ -419,7 +407,7 @@
 
 	hardmutate()
 	age = 0
-	plant_health = myseed.endurance
+//	plant_health = myseed.endurance
 	lastcycle = world.time
 	harvest = 0
 	weedlevel = 0 // Reset
@@ -444,7 +432,7 @@
 		dead = 0
 		hardmutate()
 		age = 0
-		plant_health = myseed.endurance
+//		plant_health = myseed.endurance
 		lastcycle = world.time
 		harvest = 0
 		weedlevel = 0 // Reset
@@ -807,27 +795,14 @@
 					myseed.productdesc = ""
 			desc = myseed.productdesc
 			age = 1
-			plant_health = myseed.endurance
+//			plant_health = myseed.endurance
 			lastcycle = world.time
 			update_icon()
 		else
 			to_chat(user, "<span class='warning'>[src] already has seeds in it!</span>")
 
 	else if(istype(O, /obj/item/plant_analyzer))
-		if(myseed)
-			to_chat(user, "*** <B>[myseed.plantname]</B> ***" )
-			to_chat(user, "- Plant Age: <span class='notice'>[age]</span>")
-			var/list/text_string = myseed.get_analyzer_text()
-			if(text_string)
-				to_chat(user, text_string)
-		else
-			to_chat(user, "<B>No plant found.</B>")
-		to_chat(user, "- Weed level: <span class='notice'>[weedlevel] / 10</span>")
-		to_chat(user, "- Pest level: <span class='notice'>[pestlevel] / 10</span>")
-		to_chat(user, "- Toxicity level: <span class='notice'>[toxic] / 100</span>")
-		to_chat(user, "- Water level: <span class='notice'>[waterlevel] / [maxwater]</span>")
-		to_chat(user, "- Nutrition level: <span class='notice'>[nutrilevel] / [maxnutri]</span>")
-		to_chat(user, "")
+		return
 
 	else if(istype(O, /obj/item/cultivator))
 		if(weedlevel > 0)
@@ -941,8 +916,7 @@
 		adjustToxic(-round(adjustamt/4))//Toxicity dilutation code. The more water you put in, the lesser the toxin concentration.
 
 /obj/machinery/hydroponics/proc/adjustHealth(adjustamt)
-	if(myseed && !dead)
-		plant_health = CLAMP(plant_health + adjustamt, 0, myseed.endurance)
+	return
 
 /obj/machinery/hydroponics/proc/adjustToxic(adjustamt)
 	toxic = CLAMP(toxic + adjustamt, 0, 100)

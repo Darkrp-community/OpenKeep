@@ -12,11 +12,11 @@
 	reagents_add = list(/datum/reagent/consumable/garlic = 0.15, /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/garlic
-	seed = /obj/item/seeds/garlic
+//	seed = /obj/item/seeds/garlic
 	name = "garlic"
 	desc = ""
 	icon_state = "garlic"
 	filling_color = "#C0C9A0"
 	bitesize_mod = 2
 	tastes = list("garlic" = 1)
-	wine_power = 10
+	//wine_power = 10

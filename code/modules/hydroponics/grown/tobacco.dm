@@ -16,7 +16,7 @@
 	reagents_add = list(/datum/reagent/drug/nicotine = 0.03, /datum/reagent/consumable/nutriment = 0.03)
 
 /obj/item/reagent_containers/food/snacks/grown/tobacco
-	seed = /obj/item/seeds/tobacco
+//	seed = /obj/item/seeds/tobacco
 	name = "tobacco leaves"
 	desc = ""
 	icon_state = "tobacco_leaves"
@@ -36,9 +36,9 @@
 	rarity = 20
 
 /obj/item/reagent_containers/food/snacks/grown/tobacco/space
-	seed = /obj/item/seeds/tobacco/space
+//	seed = /obj/item/seeds/tobacco/space
 	name = "space tobacco leaves"
 	desc = ""
 	icon_state = "stobacco_leaves"
 	distill_reagent = null
-	wine_power = 50
+	//wine_power = 50
