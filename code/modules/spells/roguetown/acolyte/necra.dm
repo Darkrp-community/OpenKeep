@@ -73,9 +73,10 @@
 				user.throw_at(get_ranged_target_turf(user, get_dir(user,L), 7), 7, 1, L, spin = FALSE)
 				return
 		if((L.mob_biotypes & MOB_UNDEAD) || isvampire || iszombie)
-			L.visible_message("<span class='warning'>[L] is CHURNED by Necra's grip!</span>", "<span class='danger'>I'm CHURNED by Necra's GRIP!</span>")
+			L.visible_message("<span class='warning'>[L] is being churned by Necra's grip...</span>", "<span class='danger'>I'm being churned by Necra's grip...</span>")
 			var/undead_prob = prob2explode
 			if(prob(undead_prob))
+				L.visible_message("<span class='warning'>[L] HAS BEEN CHURNED BY NECRA'S GRIP!</span>", "<span class='danger'>I'VE BEEN CHURNED BY NECRA'S GRIP!</span>")
 				explosion(get_turf(L), light_impact_range = 1, flame_range = 1, smoke = FALSE)
 				L.Stun(50)
 			else
