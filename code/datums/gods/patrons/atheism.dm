@@ -1,7 +1,7 @@
 /datum/patron/godless
 	name = "Godless"
 	domain = "Abandonment of the Gods"
-	desc = "No gods should be worshipped, only man! Gods exist but you refuse to worship them due to your own hubris."
+	desc = "Worship of the gods is foolish! Gods exist but you refuse to worship them due to your own hubris."
 	flaws = "Stubborn, Unrelenting, Misguided"
 	worshippers = "Egomaniacs, Heretics, the Ignorant"
 	sins = "Idolatry, Worship, Blind Faith"
