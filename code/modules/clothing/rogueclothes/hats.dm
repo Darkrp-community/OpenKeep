@@ -184,9 +184,6 @@
 	dynamic_hair_suffix = ""
 	//dropshrink = 0.75
 
-/obj/item/clothing/head/roguetown/menacing/bandit
-	icon_state = "bandithood"
-
 /obj/item/clothing/head/roguetown/jester
 	name = "jester's hat"
 	desc = "Just remember that the last laugh is on you."
@@ -685,14 +682,31 @@
 	max_integrity = 120
 	color = "#745a4d"
 
+/obj/item/clothing/head/roguetown/menacing/bandit // TO DO kill it
+
+/obj/item/clothing/head/roguetown/helmet/leather/hood_ominous // a leather coif locked to headslot since you cannot pull it back. Crit prevent between armor items a little weird, this is leather coif, compare to helmet
+	name = "ominous hood"
+	desc = "Madmen. Cursed dogs. Beware."
+	icon_state = "ominous"
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	dynamic_hair_suffix = ""
+	body_parts_covered = NECK|HAIR|EARS|HEAD
+	sellprice = 5
+
+/obj/item/clothing/head/roguetown/helmet/leather/conical // old helmet
+	name = "hardened helmet"
+	desc = "A conical helmet made from boiled leather and metal fittings."
+	icon_state = "leatherhelm_old"
+	item_state = "leatherhelm_old"
+
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "volf helmet"
 	desc = "Bandit initiation rites often involve the slaying of a volf. This such helmet is produced after the hunt, as proof of having passed the test."
 	will_cover = HEAD|HAIR|EARS
 	icon_state = "volfhead"
 	item_state = "volfhead"
-	max_integrity = 150 //crude bandit craftsmenship
 	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
 	sellprice = 30
 
