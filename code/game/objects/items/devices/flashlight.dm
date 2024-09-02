@@ -507,6 +507,48 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+/obj/item/flashlight/flare/torch/lantern/copper
+	name = "copper lamptern"
+	icon_state = "clamp"
+	desc = "A simple and cheap lamptern."
+	brightness_on = 7
+	on = FALSE
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_HIP
+	force = 1
+	on_damage = 5
+	fuel = 120 MINUTES
+	should_self_destruct = FALSE
+
+/obj/item/flashlight/flare/torch/lantern/copper/afterattack(atom/movable/A, mob/user, proximity)
+    . = ..()
+    if(!proximity)
+        return
+    if(on && (prob(50) || (user.used_intent.type == /datum/intent/use)))
+        if(ismob(A))
+            A.spark_act()
+        else
+            A.fire_act(3,3)
+
+/obj/item/flashlight/flare/torch/lantern/copper/process()
+	open_flame(heat)
+	fuel = max(fuel - 1, 0)
+	if(!fuel || !on)
+		turn_off()
+		STOP_PROCESSING(SSobj, src)
+
+/obj/item/flashlight/flare/torch/lantern/copper/extinguish()
+	return
+
+/obj/item/flashlight/flare/torch/lantern/copper/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.4,"sx" = -2,"sy" = -4,"nx" = 9,"ny" = -4,"wx" = -3,"wy" = -4,"ex" = 2,"ey" = -4,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
 
 /obj/item/flashlight/lantern
 	name = "lantern"
