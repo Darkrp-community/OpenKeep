@@ -38,7 +38,7 @@
 /obj/structure/closet/crate/chest/lootbox/PopulateContents()
 	var/list/loot = list(
 		/obj/item/storage/fancy/cigarettes/zig/empty=40,
-		/obj/item/reagent_containers/powder=20,
+		/obj/item/reagent_containers/powder/spice=20,
 		/obj/item/bomb=6,
 		/obj/item/rogueweapon/huntingknife/idagger=33,
 		/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue=10,
