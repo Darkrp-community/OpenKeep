@@ -400,35 +400,6 @@
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 
 
-///////////(//////////////////
-// UNISEX Hair Definitions  //
-//////////(///////////////////
-
-/datum/sprite_accessory/hair/martial
-	name = "Martial"
-	icon_state = "martial"
-	gender = NEUTER
-	specuse = list("aasimar")
-
-/datum/sprite_accessory/hair/shaved
-	name = "Shaved"
-	icon_state = "shaved"
-	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
-	gender = NEUTER
-	under_layer = TRUE
-
-/datum/sprite_accessory/hair/runt
-	name = "Runt"
-	icon_state = "runt"
-	gender = NEUTER
-	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
-
-/datum/sprite_accessory/hair/majestic_elf
-	name = "Majestic"
-	icon_state = "majestic_elf"
-	gender = NEUTER
-	specuse = list("elf")
-
 
 /////////////////////////////
 // GIRLY Hair Definitions  //
@@ -650,6 +621,36 @@
 	icon_state = "wisp_f"
 	gender = FEMALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
+
+
+//////////////////////////////
+// UNISEX Hair Definitions  //
+//////////////////////////////
+
+/datum/sprite_accessory/hair/martial
+	name = "Martial"
+	icon_state = "martial"
+	gender = NEUTER
+	specuse = list("aasimar")
+
+/datum/sprite_accessory/hair/shaved
+	name = "Shaved"
+	icon_state = "shaved"
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
+	gender = NEUTER
+	under_layer = TRUE
+
+/datum/sprite_accessory/hair/runt
+	name = "Runt"
+	icon_state = "runt"
+	gender = NEUTER
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
+
+/datum/sprite_accessory/hair/majestic_elf
+	name = "Majestic"
+	icon_state = "majestic_elf"
+	gender = NEUTER
+	specuse = list("elf")
 
 
 /*
