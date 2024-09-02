@@ -453,7 +453,7 @@
 "Ih" = (/obj/structure/fermenting_barrel/random/beer,/turf/open/floor/rogue/ruinedwood/turned/darker,/area/rogue/indoors/bandit_lair)
 "Il" = (/obj/structure/table/wood/counter{dir = 1},/obj/structure/table/wood{icon_state = "longtable"},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue)
 "In" = (/obj/structure/rack/rogue,/obj/item/rogueweapon/woodcut,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue/indoors/bandit_lair)
-"Iq" = (/obj/structure/table/wood{dir = 1; icon_state = "largetable"},/obj/item/rogueweapon/knife/copperdagger,/obj/item/rogueweapon/knife/copperdagger,/obj/item/rogueweapon/knife/copperdagger,/obj/item/rogueweapon/knife/copperdagger,/obj/item/rogueweapon/knife/copperdagger,/turf/open/floor/rogue/cobble,/area/rogue)
+"Iq" = (/obj/structure/table/wood{dir = 1; icon_state = "largetable"},/obj/item/rogueweapon/copperdagger,/obj/item/rogueweapon/copperdagger,/obj/item/rogueweapon/copperdagger,/obj/item/rogueweapon/copperdagger,/obj/item/rogueweapon/copperdagger,/turf/open/floor/rogue/cobble,/area/rogue)
 "Ir" = (/turf/closed/wall/mineral/rogue/stone/moss,/area/rogue)
 "Is" = (/obj/structure/table/wood/plain,/obj/item/kitchen/rollingpin,/turf/open/floor/rogue/tile/checker_green,/area/rogue)
 "Iu" = (/obj/structure/table/wood{dir = 1; icon_state = "longtable"},/obj/item/clothing/head/roguetown/grenzelhofthat,/obj/item/clothing/head/roguetown/grenzelhofthat,/obj/item/clothing/head/roguetown/grenzelhofthat,/turf/open/floor/rogue/wood,/area/rogue)

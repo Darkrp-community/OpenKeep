@@ -71,7 +71,7 @@
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
-	created_item = /obj/item/rogueweapon/knife/copperdagger
+	created_item = /obj/item/rogueweapon/copperdagger
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 0
