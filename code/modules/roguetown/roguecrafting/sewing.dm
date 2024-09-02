@@ -168,6 +168,13 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
 
+/datum/crafting_recipe/roguetown/sewing/zybantuhat
+	name = "tarbpil"
+	result = list(/obj/item/clothing/head/roguetown/zybantuhat)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 4
+
 /datum/crafting_recipe/roguetown/sewing/Bladress
 	name = "black dress"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/dress/gen/black)

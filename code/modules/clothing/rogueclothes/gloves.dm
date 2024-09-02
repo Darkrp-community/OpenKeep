@@ -186,3 +186,21 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	icon_state = "surggloves"
 	item_state = "surggloves"
+
+/obj/item/clothing/gloves/roguetown/bloodbarogloves
+	name = "blood baro gauntlets"
+	desc = "Plated gauntlets made out of steel. Offers the best protection against melee attacks."
+	icon_state = "bloodbarogauntlets"
+	item_state = "bloodbarogauntlets"
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	armor_class = ARMOR_CLASS_HEAVY
+	blocksound = PLATEHIT
+	body_parts_covered = ARMS|HANDS
+	max_integrity = 350
+	blade_dulling = DULLING_BASH
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	anvilrepair = /datum/skill/craft/armorsmithing
+	sewrepair = FALSE
+	smeltresult = null

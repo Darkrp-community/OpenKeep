@@ -124,6 +124,21 @@
 	/obj/item/rogueweapon/woodstaff)
 	reqs = list(/obj/item/grown/log/tree = 1)
 
+/datum/crafting_recipe/roguetown/bogcowl
+	name = "bog cowl"
+	result = list(/obj/item/clothing/neck/roguetown/bogcowl)
+	reqs = list(/obj/item/natural/dirtclod = 1,
+	/obj/item/natural/fibers = 1,
+	/obj/item/grown/log/tree/stick = 1)
+
+/datum/crafting_recipe/roguetown/bogmail
+	name = "boggard's hauberk"
+	result = list(/obj/item/clothing/suit/roguetown/armor/chainmail/bogarmor)
+	reqs = list(/obj/item/natural/dirtclod = 1,
+	/obj/item/natural/fibers = 1,
+	/obj/item/grown/log/tree/stick = 1,
+	/obj/item/clothing/suit/roguetown/armor/chainmail/iron = 1)
+
 /datum/crafting_recipe/roguetown/woodsword
 	name = "wood sword"
 	result = list(/obj/item/rogueweapon/mace/wsword,
