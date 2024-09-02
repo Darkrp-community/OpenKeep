@@ -1,7 +1,7 @@
 /obj/item/seeds
 	name = "seeds"
-	icon = 'icons/obj/hydroponics/seeds.dmi'
-	icon_state = "seed"
+	icon = 'icons/roguetown/farming/soil.dmi'
+	icon_state = "seeds"
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 	possible_item_intents = list(/datum/intent/use)

@@ -51,7 +51,7 @@
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.7,"sx" = -7,"sy" = 0,"nx" = 8,"ny" = 0,"wx" = -5,"wy" = 0,"ex" = 2,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.7,"sx" = -7,"sy" = 1,"nx" = 8,"ny" = 1,"wx" = -5,"wy" = 0,"ex" = 2,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
 				return list("shrink" = 0.7,"sx" = 5,"sy" = -2,"nx" = -5,"ny" = -2,"wx" = -4,"wy" = -2,"ex" = 5,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
@@ -103,7 +103,6 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	sharpness = IS_SHARP
-	//dropshrink = 0.8
 	wlength = 10
 	slot_flags = ITEM_SLOT_HIP
 	thrown_bclass = BCLASS_CUT
@@ -116,7 +115,7 @@
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.6,"sx" = -9,"sy" = 1,"nx" = 12,"ny" = 1,"wx" = -7,"wy" = 1,"ex" = 6,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.6,"sx" = -10,"sy" = 1,"nx" = 12,"ny" = 1,"wx" = -7,"wy" = 1,"ex" = 6,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
@@ -157,9 +156,9 @@
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.7,"sx" = -8,"sy" = 1,"nx" = 8,"ny" = 1,"wx" = -7,"wy" = 1,"ex" = -1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.7,"sx" = -9,"sy" = 1,"nx" = 9,"ny" = 1,"wx" = -5,"wy" = 1,"ex" = -2,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
-				return list("shrink" = 0.7,"sx" = 5,"sy" = -2,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -2,"ex" = 5,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -2,"nx" = -7,"ny" = -2,"wx" = -4,"wy" = -3,"ex" = 5,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
@@ -219,12 +218,12 @@
 	force = 10
 	force_wielded = 20
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH)
-	gripped_intents = list(SPEAR_BASH,SPEAR_THRUST,DUMP_INTENT)
+	gripped_intents = list(DUMP_INTENT,SPEAR_BASH,SPEAR_THRUST)
 	name = "pitchfork"
-	desc = ""
+	desc = "Compost, chaff, hay, it matters not."
 	icon_state = "pitchfork"
 	item_state = "pitchfork"
-	icon = 'icons/roguetown/weapons/64.dmi'
+	icon = 'icons/roguetown/farming/64_tools.dmi'
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
@@ -301,38 +300,104 @@
 |  Egg basket  |
 \-------------*/
 
-/obj/item/storage/bag/egg_basket
+/obj/item/storage/eggbasket
 	name = "egg basket"
-	icon = 'icons/fallout/farming/farming_tools.dmi'
+	icon = 'icons/roguetown/farming/eggbasket.dmi'
 	icon_state = "eggbasket"
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	dropshrink = 0.8
 
-/obj/item/storage/bag/egg_basket/Initialize(mapload) // JET FIEND additions
+/obj/item/storage/eggbasket/Initialize(mapload)
 	. = ..()
 	if(!mapload)
 		return
 	for(var/obj/item/I in loc)
 		if(istype(I, /obj/item/reagent_containers/food/snacks/egg))
 			I.forceMove(src)
-		if(istype(I, /obj/item/reagent_containers/food/snacks/f13/egg))
-			I.forceMove(src)
 	update_icon()
-/obj/item/storage/bag/egg_basket/ComponentInitialize()
+
+/obj/item/storage/eggbasket/attack_right(mob/user)
+	. = ..()
+	if(.)
+		return
+	user.changeNext_move(CLICK_CD_MELEE)
+	testing("yea144")
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	var/list/things = STR.contents()
+	if(things.len)
+		testing("yea64")
+		var/obj/item/reagent_containers/food/snacks/egg/I = pick(things)
+		STR.remove_from_storage(I, get_turf(user))
+		user.put_in_hands(I)
+
+/obj/item/storage/eggbasket/update_icon()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	var/list/things = STR.contents()
+	if(things.len)
+		icon_state = "fbag"
+		w_class = WEIGHT_CLASS_BULKY
+	else
+		icon_state = "cbag"
+		w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/eggbasket/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 20
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = 12
-	STR.max_items = 12
-	CANHOLD_STATIC(STR, typecacheof(list(/obj/structure/spider/eggcluster, /obj/item/reagent_containers/food/snacks/egg, /obj/item/reagent_containers/food/snacks/f13/egg/deathclaw, /obj/item/reagent_containers/food/snacks/chocolateegg, /obj/item/reagent_containers/food/snacks/egg/gland, /obj/item/reagent_containers/food/snacks/egg/blue, /obj/item/reagent_containers/food/snacks/egg/green, /obj/item/reagent_containers/food/snacks/egg/orange, /obj/item/reagent_containers/food/snacks/egg/purple, /obj/item/reagent_containers/food/snacks/egg/rainbow, /obj/item/reagent_containers/food/snacks/egg/red, /obj/item/reagent_containers/food/snacks/egg/yellow)))
-/obj/item/storage/bag/egg_basket/update_icon_state()
+	STR.max_items = 9
+	STR.click_gather = TRUE
+	STR.attack_hand_interact = FALSE
+	STR.collection_mode = COLLECT_EVERYTHING
+	STR.dump_time = 0
+	STR.allow_quick_gather = FALSE
+	STR.allow_quick_empty = TRUE
+	STR.allow_look_inside = TRUE
+	STR.display_numerical_stacking = TRUE
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/egg)))
+
+/obj/item/storage/eggbasket/update_icon()
 	switch(contents.len)
 		if(0)
 			icon_state = "[initial(icon_state)]"
+			w_class = WEIGHT_CLASS_NORMAL
 		if(1 to 3)
 			icon_state = "[initial(icon_state)]1"
-		if(4 to 7)
+			w_class = WEIGHT_CLASS_BULKY
+		if(4 to 6)
 			icon_state = "[initial(icon_state)]2"
 		else
 			icon_state = "[initial(icon_state)]3"
+
+/obj/item/storage/eggbasket/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.4,
+"sx" = -4,
+"sy" = -7,
+"nx" = 6,
+"ny" = -6,
+"wx" = -2,
+"wy" = -7,
+"ex" = -1,
+"ey" = -7,
+"northabove" = 0,
+"southabove" = 1,
+"eastabove" = 1,
+"westabove" = 0,
+"nturn" = 0,
+"sturn" = 0,
+"wturn" = 0,
+"eturn" = 0,
+"nflip" = 8,
+"sflip" = 0,
+"wflip" = 0,
+"eflip" = 8)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
 

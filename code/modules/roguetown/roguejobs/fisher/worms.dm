@@ -5,7 +5,7 @@
 
 /obj/item/natural/worms
 	name = "worm"
-	desc = ""
+	desc = "Wriggly blessings from Dendor, to feed the bird and the fish. Can be bundled and put in your pocket for luck."
 	icon_state = "worm"
 	throwforce = 10
 	baitpenalty = 10

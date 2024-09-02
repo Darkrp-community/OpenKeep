@@ -493,3 +493,13 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 #define FALL_INTERCEPTED		(1<<0) //Stops the movable from falling further and crashing on the ground
 #define FALL_NO_MESSAGE			(1<<1) //Used to suppress the "[A] falls through [old_turf]" messages where it'd make little sense at all, like going downstairs.
 #define FALL_STOP_INTERCEPTING	(1<<2) //Used in situations where halting the whole "intercept" loop would be better, like supermatter dusting (and thus deleting) the atom.
+
+// Use this instead of directly setting STR.can_hold to reduce unnecessary typecacheof calls.
+#define CANHOLD_STATIC(comp, L) \
+	var/static/list/canhold_typecache = L; \
+	comp.can_hold = canhold_typecache
+
+// Ditto, for cant_hold.
+#define CANTHOLD_STATIC(comp, L) \
+	var/static/list/canthold_typecache = L; \
+	comp.cant_hold = canthold_typecache

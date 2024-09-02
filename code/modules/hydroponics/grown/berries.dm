@@ -18,7 +18,6 @@
 	species = "poisonberry"
 	plantname = "Poison-Berry Bush"
 	product = /obj/item/reagent_containers/food/snacks/grown/berries/poison
-	mutatelist = list(/obj/item/seeds/berry/death)
 	reagents_add = list(/datum/reagent/toxin/cyanide = 0.15, /datum/reagent/toxin/staminatoxin = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 	rarity = 10 // Mildly poisonous berries are common in reality
 
@@ -127,7 +126,6 @@
 	icon_grow = "grape-grow"
 	icon_dead = "grape-dead"
 //	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	mutatelist = list(/obj/item/seeds/grape/green)
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1, /datum/reagent/consumable/sugar = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/grapes

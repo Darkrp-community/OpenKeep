@@ -8,11 +8,12 @@
 	anchored = FALSE
 	climbable = FALSE
 	facepull = FALSE
-	drag_slowdown = 2
+	drag_slowdown = 6
 
 /obj/structure/plough/Moved(oldLoc, movement_dir)
 	. = ..()
-	if(pulledby && pulledby.m_intent == MOVE_INTENT_SNEAK)
+//	if(pulledby && pulledby.m_intent == MOVE_INTENT_SNEAK)
+	if(pulledby)
 		user_tries_tilling(pulledby, get_turf(src))
 
 /obj/structure/plough/proc/user_tries_tilling(mob/living/user, turf/location)
