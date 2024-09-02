@@ -61,12 +61,14 @@
 			to_chat(user, span_notice("I start flipping the compost..."))
 	else
 		to_chat(user, span_notice("I start flipping the compost by hand..."))
-	var/do_time = using_tool ? 4 SECONDS : 9 SECONDS
+		playsound(user, "rustle", 50, TRUE)
+	var/do_time = using_tool ? 2 SECONDS : 9 SECONDS
 	var/fatigue = using_tool ? 10 : 30
 	if(do_after(user, get_farming_do_time(user, do_time), target = src))
 		apply_farming_fatigue(user, fatigue)
 		if(using_tool)
 			playsound(src,'sound/items/dig_shovel.ogg', 100, TRUE)
+		sleep(10)
 		flip_compost()
 	return TRUE
 

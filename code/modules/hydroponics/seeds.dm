@@ -134,11 +134,8 @@
 	// Stronger reagents must always come first to avoid being displaced by weaker ones.
 	// Total amount of any reagent in plant is calculated by formula: 1 + round(potency * multiplier)
 
-
-
 	var/weed_rate = 20 //If the chance below passes, then this many weeds sprout during growth
 	var/weed_chance = 5 //Percentage chance per tray update to grow weeds
-
 
 
 /obj/item/seeds/proc/Copy()
@@ -151,11 +148,9 @@
 /obj/item/seeds/proc/reagents_from_genes()
 	return
 
-
 ///This proc adds a mutability_flag to a gene
 /obj/item/seeds/proc/set_mutability(typepath, mutability)
 	return
-
 
 ///This proc removes a mutability_flag from a gene
 /obj/item/seeds/proc/unset_mutability(typepath, mutability)
@@ -170,22 +165,15 @@
 /obj/item/seeds/proc/getYield()
 	return
 
-
-
 /obj/item/seeds/proc/harvest(mob/user)
 	return
-
-
 
 /obj/item/seeds/proc/prepare_result(obj/item/T)
 	return
 
-
-
 /// Setters procs ///
 /obj/item/seeds/proc/adjust_yield(adjustamt)
 	return
-
 
 /obj/item/seeds/proc/adjust_lifespan(adjustamt)
 	return
@@ -228,13 +216,11 @@
 /obj/item/seeds/proc/set_weed_chance(adjustamt)
 	return
 
-
 /obj/item/seeds/proc/get_analyzer_text()  //in case seeds have something special to tell to the analyzer
 	return
 
 /obj/item/seeds/proc/on_chem_reaction(datum/reagents/S)  //in case seeds have some special interaction with special chems
 	return
-			
 
 // Checks plants for broken tray icons. Use Advanced Proc Call to activate.
 // Maybe some day it would be used as unit test.

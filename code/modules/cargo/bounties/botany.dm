@@ -91,8 +91,6 @@
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat)
 
 /datum/bounty/item/botany/rice
-	name = "Rice Grains"
-	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/rice)
 
 /datum/bounty/item/botany/chili
 	name = "Chili Peppers"
@@ -125,9 +123,6 @@
 	foodtype = "sorbet"
 
 /datum/bounty/item/botany/eggplant
-	name = "Eggplants"
-	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/eggplant)
-	bonus_desc = ""
 
 /datum/bounty/item/botany/eggplant_eggy
 	name = "Egg-plants"

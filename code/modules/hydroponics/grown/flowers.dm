@@ -1,22 +1,3 @@
-// Poppy
-/obj/item/seeds/poppy
-	name = "pack of poppy seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "poppy"
-	plantname = "Poppy Plants"
-	product = /obj/item/reagent_containers/food/snacks/grown/poppy
-	endurance = 10
-	maturation = 8
-	yield = 6
-	potency = 20
-	growthstages = 3
-	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
-	icon_grow = "poppy-grow"
-	icon_dead = "poppy-dead"
-	mutatelist = list(/obj/item/seeds/poppy/geranium, /obj/item/seeds/poppy/lily)
-	reagents_add = list(/datum/reagent/medicine/C2/libital = 0.2, /datum/reagent/consumable/nutriment = 0.05)
-
 /obj/item/reagent_containers/food/snacks/grown/poppy
 //	seed = /obj/item/seeds/poppy
 	name = "poppy"
@@ -28,52 +9,12 @@
 	foodtype = VEGETABLES | GROSS
 	distill_reagent = /datum/reagent/consumable/ethanol/vermouth
 
-// Lily
-/obj/item/seeds/poppy/lily
-	name = "pack of lily seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "lily"
-	plantname = "Lily Plants"
-	product = /obj/item/reagent_containers/food/snacks/grown/poppy/lily
-	mutatelist = list(/obj/item/seeds/poppy/lily/trumpet)
-
 /obj/item/reagent_containers/food/snacks/grown/poppy/lily
 //	seed = /obj/item/seeds/poppy/lily
 	name = "lily"
 	desc = ""
 	icon_state = "lily"
 	filling_color = "#FFA500"
-
-	//Spacemans's Trumpet
-/obj/item/seeds/poppy/lily/trumpet
-	name = "pack of spaceman's trumpet seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "spacemanstrumpet"
-	plantname = "Spaceman's Trumpet Plant"
-	product = /obj/item/reagent_containers/food/snacks/grown/trumpet
-	lifespan = 80
-	production = 5
-	endurance = 10
-	maturation = 12
-	yield = 4
-	potency = 20
-	growthstages = 4
-	weed_rate = 2
-	weed_chance = 10
-	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
-	icon_grow = "spacemanstrumpet-grow"
-	icon_dead = "spacemanstrumpet-dead"
-	mutatelist = list()
-//	genes = list(/datum/plant_gene/reagent/polypyr)
-	reagents_add = list(/datum/reagent/consumable/nutriment = 0.05)
-	rarity = 30
-
-/obj/item/seeds/poppy/lily/trumpet/Initialize(mapload,nogenes)
-	. = ..()
-	if(!nogenes)
-		unset_mutability(/datum/plant_gene/reagent/polypyr, PLANT_GENE_EXTRACTABLE)
 
 /obj/item/reagent_containers/food/snacks/grown/trumpet
 //	seed = /obj/item/seeds/poppy/lily/trumpet
@@ -83,16 +24,6 @@
 	filling_color = "#FF6347"
 	bitesize_mod = 3
 	foodtype = VEGETABLES
-
-// Geranium
-/obj/item/seeds/poppy/geranium
-	name = "pack of geranium seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "geranium"
-	plantname = "Geranium Plants"
-	product = /obj/item/reagent_containers/food/snacks/grown/poppy/geranium
-	mutatelist = list()
 
 /obj/item/reagent_containers/food/snacks/grown/poppy/geranium
 //	seed = /obj/item/seeds/poppy/geranium
@@ -130,60 +61,6 @@
 	bitesize_mod = 3
 	distill_reagent = /datum/reagent/consumable/ethanol/vermouth
 
-// Sunflower
-/obj/item/seeds/sunflower
-	name = "pack of sunflower seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "sunflower"
-	plantname = "Sunflowers"
-	product = /obj/item/grown/sunflower
-	endurance = 20
-	production = 2
-	yield = 2
-	growthstages = 3
-	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
-	icon_grow = "sunflower-grow"
-	icon_dead = "sunflower-dead"
-	mutatelist = list(/obj/item/seeds/sunflower/moonflower, /obj/item/seeds/sunflower/novaflower)
-	reagents_add = list(/datum/reagent/consumable/cornoil = 0.08, /datum/reagent/consumable/nutriment = 0.04)
-
-/obj/item/grown/sunflower // FLOWER POWER!
-//	seed = /obj/item/seeds/sunflower
-	name = "sunflower"
-	desc = ""
-	icon_state = "sunflower"
-	lefthand_file = 'icons/mob/inhands/weapons/plants_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/plants_righthand.dmi'
-	damtype = "fire"
-	force = 0
-	slot_flags = ITEM_SLOT_HEAD
-	throwforce = 0
-	w_class = WEIGHT_CLASS_TINY
-	throw_speed = 1
-	throw_range = 3
-
-/obj/item/grown/sunflower/attack(mob/M, mob/user)
-	to_chat(M, "<font color='green'>[user] smacks you with a sunflower!<font color='orange'><b>FLOWER POWER!</b></font></font>")
-	to_chat(user, "<font color='green'>My sunflower's <font color='orange'><b>FLOWER POWER</b></font> strikes [M]!</font>")
-
-// Moonflower
-/obj/item/seeds/sunflower/moonflower
-	name = "pack of moonflower seeds"
-	desc = ""
-	icon_state = "seed"
-	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
-	species = "moonflower"
-	plantname = "Moonflowers"
-	icon_grow = "moonflower-grow"
-	icon_dead = "sunflower-dead"
-	product = /obj/item/reagent_containers/food/snacks/grown/moonflower
-//	genes = list(/datum/plant_gene/trait/glow/purple)
-	mutatelist = list()
-	reagents_add = list(/datum/reagent/consumable/ethanol/moonshine = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.02, /datum/reagent/consumable/nutriment = 0.02)
-	rarity = 15
-
 /obj/item/reagent_containers/food/snacks/grown/moonflower
 //	seed = /obj/item/seeds/sunflower/moonflower
 	name = "moonflower"
@@ -194,19 +71,6 @@
 	bitesize_mod = 2
 	distill_reagent = /datum/reagent/consumable/ethanol/absinthe //It's made from flowers.
 
-// Novaflower
-/obj/item/seeds/sunflower/novaflower
-	name = "pack of novaflower seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "novaflower"
-	plantname = "Novaflowers"
-	icon_grow = "novaflower-grow"
-	icon_dead = "sunflower-dead"
-	product = /obj/item/grown/novaflower
-	mutatelist = list()
-	reagents_add = list(/datum/reagent/consumable/condensedcapsaicin = 0.25, /datum/reagent/consumable/capsaicin = 0.3, /datum/reagent/consumable/nutriment = 0)
-	rarity = 20
 
 /obj/item/grown/novaflower
 //	seed = /obj/item/seeds/sunflower/novaflower

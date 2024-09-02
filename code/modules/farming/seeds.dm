@@ -95,10 +95,15 @@
 
 /obj/item/seeds/onion
 	seed_identity = "onion seeds"
+	color = "#ffeeb9"
 	plant_def_type = /datum/plant_def/onion
 /obj/item/seeds/potato
 	seed_identity = "potato seedlings"
 	plant_def_type = /datum/plant_def/potato
+/obj/item/seeds/sunflower
+	seed_identity = "sunflower seeds"
+	plant_def_type = /datum/plant_def/sunflower
+
 
 /*
 /obj/item/seeds/pear

@@ -44,3 +44,8 @@
 	name = "Potato"
 	cost = 2
 	contains = /obj/item/seeds/potato
+
+/datum/supply_pack/rogue/seeds/sunflowers
+	name = "Sunflowers"
+	cost = 2
+	contains = /obj/item/seeds/sunflower

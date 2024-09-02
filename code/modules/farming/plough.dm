@@ -12,7 +12,7 @@
 
 /obj/structure/plough/Moved(oldLoc, movement_dir)
 	. = ..()
-//	if(pulledby && pulledby.m_intent == MOVE_INTENT_SNEAK)
+//	if(pulledby && pulledby.m_intent == MOVE_INTENT_SNEAK) replaced with bigger drag slowdown
 	if(pulledby)
 		user_tries_tilling(pulledby, get_turf(src))
 

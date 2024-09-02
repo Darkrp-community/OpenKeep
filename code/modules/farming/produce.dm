@@ -46,8 +46,8 @@
 	return ..()
 
 /obj/item/reagent_containers/food/snacks/grown/wheat
-//	seed = /obj/item/seeds/wheat
-	name = "wheat grain"
+	seed = /obj/item/seeds/wheat
+	name = "grain"
 	desc = ""
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "wheat"
@@ -60,10 +60,16 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/beer
 	distill_amt = 24
 	grind_results = list(/datum/reagent/floure = 10)
+	dropshrink = 0.9
+/obj/item/reagent_containers/food/snacks/grown/wheat/examine(var/mob/user)
+	var/farminglvl = user.mind?.get_skill_level(/datum/skill/labor/farming)
+	. += ..()
+	if(farminglvl >= 0)
+		. += "I can easily tell that these are wheat grains."
 
 /obj/item/reagent_containers/food/snacks/grown/oat
-//	seed = /obj/item/seeds/wheat/oat
-	name = "oat grain"
+	seed = /obj/item/seeds/wheat/oat
+	name = "grain"
 	desc = ""
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "oat"
@@ -76,29 +82,19 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/ale
 	distill_amt = 12
 	grind_results = list(/datum/reagent/floure = 10)
+/obj/item/reagent_containers/food/snacks/grown/oat/examine(var/mob/user)
+	var/farminglvl = user.mind?.get_skill_level(/datum/skill/labor/farming)
+	. += ..()
+	if(farminglvl >= 0)
+		. += "I can easily tell that these are oat groats."
 
-/obj/item/reagent_containers/food/snacks/grown/rice
-//	seed = /obj/item/seeds/rice
-	name = "rice grain"
-	desc = ""
-	icon = 'icons/roguetown/items/produce.dmi'
-	icon_state = "rice"
-	gender = PLURAL
-	filling_color = "#f0f0f0"
-	bitesize_mod = 2
-	foodtype = GRAIN
-	tastes = list("rice" = 1)
-	can_distill = TRUE
-	distill_reagent = /datum/reagent/consumable/ethanol/sake
-	distill_amt = 12
-	grind_results = list(/datum/reagent/floure = 10)
 
 /obj/item/reagent_containers/food/snacks/grown/apple
-//	seed = /obj/item/seeds/apple
+	seed = /obj/item/seeds/apple
 	name = "apple"
 	desc = ""
 	icon_state = "apple"
-	filling_color = "#FF4500"
+	filling_color = "#e37047"
 	bitesize = 3
 	foodtype = FRUIT
 	tastes = list("apple" = 1)
@@ -149,7 +145,7 @@
 				H.dropItemToGround(H.head)
 
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue
-//	seed = /obj/item/seeds/berryrogue
+	seed = /obj/item/seeds/berryrogue
 	name = "jacksberries"
 	desc = ""
 	icon_state = "berries"
@@ -202,7 +198,7 @@
 	add_overlay(item_overlay)
 
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
-//	seed = /obj/item/seeds/berryrogue/poison
+	seed = /obj/item/seeds/berryrogue/poison
 	icon_state = "berries"
 	tastes = list("berry" = 1)
 	list_reagents = list(/datum/reagent/berrypoison = 5, /datum/reagent/consumable/nutriment = 3)
@@ -211,7 +207,7 @@
 	poisonous = TRUE
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/sweetleaf
-//	seed = /obj/item/seeds/sweetleaf
+	seed = /obj/item/seeds/sweetleaf
 	name = "swampweed"
 	desc = "A 'foggy' pipe weed."
 	icon_state = "sweetleaf"
@@ -224,7 +220,7 @@
 	rotprocess = 15 MINUTES
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
-//	seed = /obj/item/seeds/pipeweed
+	seed = /obj/item/seeds/pipeweed
 	name = "westleach leaf"
 	desc = "A generic kind of pipe weed."
 	icon_state = "pipeweed"
@@ -238,7 +234,7 @@
 	rotprocess = 15 MINUTES
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry
-//	seed = null
+	seed = null
 	name = "westleach leaf"
 	desc = "A dried leaf."
 	icon_state = "pipeweedd"
@@ -249,7 +245,7 @@
 	grind_results = list(/datum/reagent/drug/nicotine = 10)
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/sweetleafdry
-//	seed = null
+	seed = null
 	name = "swampweed"
 	desc = ""
 	icon_state = "sweetleafd"
@@ -261,44 +257,114 @@
 
 /obj/item/reagent_containers/food/snacks/grown/cabbage
 	name = "cabbage"
-//	seed = /obj/item/seeds/cabbage
+	desc = "A dense leafed vegetable, crunchy and ripe. A symbol of prosperity for elves"
+	seed = /obj/item/seeds/cabbage
 	icon_state = "cabbage"
 	tastes = list("cabbage" = 1)
 	filling_color = "#88c8a0"
 	bitesize = 3
 	foodtype = VEGETABLES
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/fireleaf
+	rotprocess = SHELFLIFE_LONG
+	dropshrink = 0.8
+	slices_num = 3
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/cabbage_sliced
+	chopping_sound = TRUE
+
+/obj/item/reagent_containers/food/snacks/grown/cabbage/rogue// obsolete TO DO
 
 /obj/item/reagent_containers/food/snacks/grown/onion
 	name = "onion"
-//	seed = /obj/item/seeds/onion
+	desc = "A wonderful vegetable with many layers and broad flavor profile."
+	seed = /obj/item/seeds/onion
 	icon_state = "onion"
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/onion_sliced
 	tastes = list("onion" = 1)
 	filling_color = "#fdfaca"
 	bitesize = 3
 	foodtype = VEGETABLES
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/tearjuice = 3)
 	grind_results = list(/datum/reagent/consumable/tearjuice = 6)
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/onion
+	chopping_sound = TRUE
+	dropshrink = 0.9
 
+/obj/item/reagent_containers/food/snacks/grown/onion/slice(accuracy, obj/item/W, mob/user)
+	var/datum/effect_system/smoke_spread/transparent/S = new	//Since the onion is destroyed when it's sliced,
+	var/splat_location = get_turf(src)	//we need to set up the smoke beforehand
+	S.attach(splat_location)
+	S.set_up(reagents, 0, splat_location, 0)
+	if(..())
+		S.start()
+		return TRUE
+	qdel(S)
+
+/obj/item/reagent_containers/food/snacks/grown/onion/rogue // obsolete TO DO
 
 /obj/item/reagent_containers/food/snacks/grown/potato
 	name = "potato"
-//	seed = /obj/item/seeds/potato
+	desc = "A spud, dwarven icon of growth."
+	seed = /obj/item/seeds/potato
 	icon_state = "potato"
-	tastes = list("potato" = 1)
+	tastes = list("starchy dirt" = 1)
 	filling_color = "#d8d8b6"
-	bitesize = 3
+	slices_num = 1
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/potato_sliced
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_baked
+	eat_effect = null
 	foodtype = VEGETABLES
-	rotprocess = 50 MINUTES
+	chopping_sound = TRUE
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	bitesize = 2
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/voddena
+	rotprocess = null
 
+/obj/item/reagent_containers/food/snacks/grown/potato/rogue // obsolete TO DO
+
+/obj/item/reagent_containers/food/snacks/grown/sunflower
+	seed = /obj/item/seeds/sunflower
+	name = "sunflower"
+	desc = ""
+	icon_state = "sunflower"
+	icon = 'icons/roguetown/items/produce.dmi'
+	seed = /obj/item/seeds/sunflower
+	slot_flags = ITEM_SLOT_HEAD
+	throwforce = 0
+	w_class = WEIGHT_CLASS_TINY
+	throw_speed = 1
+	throw_range = 3
+	list_reagents = list(/datum/reagent/consumable/nutriment = 0)
+	dropshrink = 0.8
+	rotprocess = SHELFLIFE_EXTREME
+/*
+/obj/item/reagent_containers/food/snacks/grown/rice
+//	seed = /obj/item/seeds/rice
+	name = "rice grain"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "rice"
+	gender = PLURAL
+	filling_color = "#f0f0f0"
+	bitesize_mod = 2
+	foodtype = GRAIN
+	tastes = list("rice" = 1)
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/ethanol/sake
+	distill_amt = 12
+	grind_results = list(/datum/reagent/floure = 10)
+*/
+
+/*
 /obj/item/reagent_containers/food/snacks/grown/pear
 	name = "pear"
-//	seed = /obj/item/seeds/pear
+	seed = /obj/item/seeds/pear
 
 /obj/item/reagent_containers/food/snacks/grown/cherry
 	name = "cherries"
-//	seed = /obj/item/seeds/cherry
+	seed = /obj/item/seeds/cherry
 
 /obj/item/reagent_containers/food/snacks/grown/tomato
 	name = "tomato"
@@ -381,3 +447,4 @@
 	bitesize = 3
 	foodtype = FRUIT
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+*/

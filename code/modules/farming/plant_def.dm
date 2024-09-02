@@ -64,19 +64,6 @@
 	maturation_time = 5 MINUTES
 	produce_time = 2 MINUTES
 
-/datum/plant_def/rice
-	name = "rice stalks"
-	icon = 'icons/roguetown/misc/crops.dmi'
-	icon_state = "rice"
-	produce_type = /obj/item/natural/chaff/rice
-	produce_amount_min = 3
-	produce_amount_max = 4
-	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
-	maturation_nutrition = 30
-	produce_nutrition = 20
-	maturation_time = 5 MINUTES
-	produce_time = 2 MINUTES
-
 /datum/plant_def/apple
 	name = "apple tree"
 	icon = 'icons/roguetown/misc/crops.dmi'
@@ -136,6 +123,67 @@
 	maturation_nutrition = 25
 	produce_nutrition =  15
 	maturation_time = 4 MINUTES
+	produce_time = 2 MINUTES
+
+/datum/plant_def/potato
+	name = "potato plant"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "potato"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/potato
+	produce_amount_min = 2
+	produce_amount_max = 4
+	maturation_nutrition = 25
+	produce_nutrition =  15
+	maturation_time = 4 MINUTES
+	produce_time = 2 MINUTES
+
+/datum/plant_def/onion
+	name = "onion patch"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "onion"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/onion
+	produce_amount_min = 2
+	produce_amount_max = 4
+	maturation_nutrition = 25
+	produce_nutrition =  15
+	maturation_time = 4 MINUTES
+	produce_time = 2 MINUTES
+
+/datum/plant_def/sunflower
+	name = "sunflowers"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "sunflower"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/potato
+	produce_amount_min = 2
+	produce_amount_max = 4
+	maturation_nutrition = 25
+	produce_nutrition =  15
+	maturation_time = 4 MINUTES
+	produce_time = 2 MINUTES
+
+// Temp to do move to foods
+/obj/item/reagent_containers/food/snacks/rogue/roastseeds
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	tastes = list("toasted sunflower seeds" = 1)
+	name = "roasted seeds"
+	desc = "Food for birds, treats for humens."
+	icon_state = "cabbage_fried"
+	color = "#e5b175"
+	foodtype = VEGETABLES
+	rotprocess = null
+	eat_effect = /datum/status_effect/buff/foodbuff
+/*
+/datum/plant_def/rice
+	name = "rice stalks"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "rice"
+	produce_type = /obj/item/natural/chaff/rice
+	produce_amount_min = 3
+	produce_amount_max = 4
+	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
+	maturation_nutrition = 30
+	produce_nutrition = 20
+	maturation_time = 5 MINUTES
 	produce_time = 2 MINUTES
 
 /datum/plant_def/pear
@@ -199,18 +247,6 @@
 	maturation_time = 6 MINUTES
 	produce_time = 3 MINUTES
 
-/datum/plant_def/onion
-	name = "onion patch"
-	icon = 'icons/roguetown/misc/crops.dmi'
-	icon_state = "onion"
-	produce_type = /obj/item/reagent_containers/food/snacks/grown/onion
-	produce_amount_min = 2
-	produce_amount_max = 4
-	maturation_nutrition = 25
-	produce_nutrition =  15
-	maturation_time = 4 MINUTES
-	produce_time = 2 MINUTES
-
 /datum/plant_def/garlic
 	name = "garlic patch"
 	icon = 'icons/roguetown/misc/crops.dmi'
@@ -226,18 +262,6 @@
 	icon = 'icons/roguetown/misc/crops.dmi'
 	icon_state = "carrot"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/carrot
-	produce_amount_min = 2
-	produce_amount_max = 4
-	maturation_nutrition = 25
-	produce_nutrition =  15
-	maturation_time = 4 MINUTES
-	produce_time = 2 MINUTES
-
-/datum/plant_def/potato
-	name = "potato plant"
-	icon = 'icons/roguetown/misc/crops.dmi'
-	icon_state = "potato"
-	produce_type = /obj/item/reagent_containers/food/snacks/grown/potato
 	produce_amount_min = 2
 	produce_amount_max = 4
 	maturation_nutrition = 25
@@ -374,3 +398,4 @@
 	produce_time = 2 MINUTES
 	weed_immune = TRUE
 	can_grow_underground = TRUE
+*/

@@ -332,16 +332,6 @@
 		STR.remove_from_storage(I, get_turf(user))
 		user.put_in_hands(I)
 
-/obj/item/storage/eggbasket/update_icon()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	var/list/things = STR.contents()
-	if(things.len)
-		icon_state = "fbag"
-		w_class = WEIGHT_CLASS_BULKY
-	else
-		icon_state = "cbag"
-		w_class = WEIGHT_CLASS_NORMAL
-
 /obj/item/storage/eggbasket/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -359,6 +349,8 @@
 	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/egg)))
 
 /obj/item/storage/eggbasket/update_icon()
+//	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+//	var/list/things = STR.contents()
 	switch(contents.len)
 		if(0)
 			icon_state = "[initial(icon_state)]"
@@ -378,13 +370,13 @@
 			if("gen")
 				return list("shrink" = 0.4,
 "sx" = -4,
-"sy" = -7,
+"sy" = -3,
 "nx" = 6,
-"ny" = -6,
+"ny" = -3,
 "wx" = -2,
-"wy" = -7,
+"wy" = -3,
 "ex" = -1,
-"ey" = -7,
+"ey" = -3,
 "northabove" = 0,
 "southabove" = 1,
 "eastabove" = 1,
