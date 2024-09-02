@@ -368,7 +368,7 @@
 	name = "butter"
 	desc = ""
 	foodtype = DAIRY
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 
 
 
