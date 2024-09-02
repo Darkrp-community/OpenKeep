@@ -439,6 +439,14 @@
 	will_hide = HIDEEARS
 	max_integrity = 250 // Covers less, so less overall integrity
 
+/obj/item/clothing/head/roguetown/helmet/grenzelhoftkettle
+	name = "kettle helm"
+	desc = "A helmet with slits for peeping, a good choice for the paranoid."
+	icon_state = "grenzkettle"
+	will_cover = HEAD|HAIR
+	will_hide = HIDEEARS
+	max_integrity = 250
+
 /obj/item/clothing/head/roguetown/helmet/sallet
 	name = "sallet"
 	icon_state = "sallet"
@@ -609,6 +617,21 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/heavy/sunhelmet
+	name = "sun helmet"
+	desc = "A helmet designed in such a way to depict the burning sun at its zenith."
+	icon_state = "sunhelm"
+	item_state = "sunhelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	block2add = FOV_RIGHT|FOV_LEFT
+	smeltresult = /obj/item/ingot/steel
+	//dropshrink = 0.75	
 
 /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 	name = "noc helmet"
@@ -1022,6 +1045,23 @@
 	will_cover = HEAD|HAIR|NOSE|MOUTH|EARS
 	flags_inv = HIDEEARS
 	smeltresult = /obj/item/ingot/iron
+
+/obj/item/clothing/head/roguetown/helmet/totodhelm
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	name = "totod helmet"
+	desc = "An ornamentally styled steel helm, bearing the infamous wretched wings of the Totod Order. The curtain call for abominations and innocents alike."
+	max_integrity = 400
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_STAB) // Stab protection out of having faceplate
+	block2add = FOV_RIGHT|FOV_LEFT // Unremovable visor.
+	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	icon_state = "winghornhelm"
+	item_state = "winghornhelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	will_cover = HEAD|HAIR|NOSE|MOUTH|EARS
+	flags_inv = HIDEEARS|HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
+	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/head/roguetown/helmet/ironpot
 	icon = 'icons/roguetown/clothing/head.dmi'

@@ -164,3 +164,22 @@
 	body_parts_covered = FACE|EARS|EYES|MOUTH|NECK
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	sewrepair = TRUE
+
+/obj/item/clothing/mask/rogue/bogmask
+	name = "iron dogmask"
+	icon_state = "bogmask"
+	item_state = "bogmask"
+	desc = "A heavy iron mask constructed with an easier time breathing in mind. Nicknamed the 'dogmask' for its snoutlike design."
+	max_integrity = 100
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing	
