@@ -1013,7 +1013,7 @@
 	icon = 'icons/roguetown/clothing/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
-	name = "iron plate helmet"
+	name = "iron pot helmet"
 	max_integrity = 250//isn't the same as a steel helmet but is better than a skullcap
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	icon_state = "ironpot"
@@ -1022,3 +1022,17 @@
 	will_cover = HEAD|HAIR|NOSE|EARS
 	flags_inv = HIDEEARS
 	smeltresult = /obj/item/ingot/iron
+
+/obj/item/clothing/head/roguetown/helmet/coppercap
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	name = "lamellar cap"
+	max_integrity = 150 //lowest possible for copper
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	icon_state = "lamellar"
+	item_state = "lamellar"
+	desc = "A heavy lamellar cap made out of copper, a primitive material with an effective design to keep the head safe"
+	will_cover = HEAD|HAIR|EARS
+	flags_inv = HIDEEARS
+	smeltresult = /obj/item/ingot/copper

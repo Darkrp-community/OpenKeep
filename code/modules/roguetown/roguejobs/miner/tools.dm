@@ -27,7 +27,7 @@
 	possible_item_intents = list(/datum/intent/pick)
 	name = "copper pick"
 	desc = ""
-	icon_state = "pick"
+	icon_state = "cpick"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT
 	//dropshrink = 0.8
