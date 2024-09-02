@@ -533,19 +533,19 @@
 /datum/species/golem/bananium/spec_attack_hand(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style)
 	..()
 	if(world.time > last_banana + banana_cooldown && M != H &&  M.used_intent.type != INTENT_HELP)
-		new/obj/item/grown/bananapeel/specialpeel(get_turf(H))
+//		new/obj/item/grown/bananapeel/specialpeel(get_turf(H))
 		last_banana = world.time
 
 /datum/species/golem/bananium/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
 	..()
 	if(world.time > last_banana + banana_cooldown && user != H)
-		new/obj/item/grown/bananapeel/specialpeel(get_turf(H))
+//		new/obj/item/grown/bananapeel/specialpeel(get_turf(H))
 		last_banana = world.time
 
 /datum/species/golem/bananium/on_hit(obj/projectile/P, mob/living/carbon/human/H)
 	..()
 	if(world.time > last_banana + banana_cooldown)
-		new/obj/item/grown/bananapeel/specialpeel(get_turf(H))
+//		new/obj/item/grown/bananapeel/specialpeel(get_turf(H))
 		last_banana = world.time
 
 /datum/species/golem/bananium/spec_hitby(atom/movable/AM, mob/living/carbon/human/H)
@@ -556,7 +556,7 @@
 		if(I.thrownby == H) //No throwing stuff at myself to make bananas
 			return 0
 		else
-			new/obj/item/grown/bananapeel/specialpeel(get_turf(H))
+//			new/obj/item/grown/bananapeel/specialpeel(get_turf(H))
 			last_banana = world.time
 
 /datum/species/golem/bananium/spec_life(mob/living/carbon/human/H)

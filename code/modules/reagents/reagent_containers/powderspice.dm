@@ -1,7 +1,7 @@
 /obj/item/reagent_containers/powder
 	name = "spice"
 	desc = ""
-	icon = 'icons/roguetown/items/produce.dmi'
+	icon = 'icons/roguetown/farming/produce.dmi'
 	icon_state = "spice"
 	item_state = "spice"
 	possible_transfer_amounts = list()
@@ -169,7 +169,6 @@
 /obj/item/reagent_containers/powder/ozium
 	name = "ozium"
 	desc = ""
-	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "ozium"
 	possible_transfer_amounts = list()
 	volume = 15
@@ -213,7 +212,6 @@
 /obj/item/reagent_containers/powder/moondust
 	name = "moondust"
 	desc = ""
-	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust"
 	possible_transfer_amounts = list()
 	volume = 15
@@ -253,7 +251,6 @@
 /obj/item/reagent_containers/powder/moondust_purest
 	name = "moondust"
 	desc = ""
-	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust_purest"
 	possible_transfer_amounts = list()
 	volume = 18

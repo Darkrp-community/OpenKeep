@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/food/snacks/grown
-	icon = 'icons/roguetown/items/produce.dmi'
+	icon = 'icons/roguetown/farming/produce.dmi'
 	dried_type = null
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_SMALL
@@ -49,7 +49,6 @@
 	seed = /obj/item/seeds/wheat
 	name = "grain"
 	desc = ""
-	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "wheat"
 	gender = PLURAL
 	filling_color = "#F0E68C"
@@ -71,7 +70,6 @@
 	seed = /obj/item/seeds/wheat/oat
 	name = "grain"
 	desc = ""
-	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "oat"
 	gender = PLURAL
 	filling_color = "#556B2F"
@@ -265,7 +263,6 @@
 	bitesize = 3
 	foodtype = VEGETABLES
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
-	distill_reagent = /datum/reagent/consumable/ethanol/beer/fireleaf
 	rotprocess = SHELFLIFE_LONG
 	dropshrink = 0.8
 	slices_num = 3
@@ -329,7 +326,6 @@
 	name = "sunflower"
 	desc = ""
 	icon_state = "sunflower"
-	icon = 'icons/roguetown/items/produce.dmi'
 	seed = /obj/item/seeds/sunflower
 	slot_flags = ITEM_SLOT_HEAD
 	throwforce = 0
@@ -344,7 +340,6 @@
 //	seed = /obj/item/seeds/rice
 	name = "rice grain"
 	desc = ""
-	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "rice"
 	gender = PLURAL
 	filling_color = "#f0f0f0"

@@ -2163,7 +2163,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "subtle herbacious undertones"
 	color = "#5D8A8A"
 
-/datum/reagent/consumable/ethanol/beer/fireleaf // cabbbage
+/datum/reagent/consumable/ethanol/beer/fireleaf // cabbbage CABBAGE LIQUOR?? Fermenting cabbage gets you sauerkraut, this gotta be made some other way.
 	name = "Fireleaf"
 	boozepwr = 2
 	taste_description = "bland liquor"

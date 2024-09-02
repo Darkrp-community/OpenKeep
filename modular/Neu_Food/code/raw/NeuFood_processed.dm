@@ -34,7 +34,7 @@
 // -------------- RAISINS -----------------
 /obj/item/reagent_containers/food/snacks/rogue/raisins
 	name = "raisins"
-	icon = 'icons/roguetown/items/produce.dmi'
+	icon = 'icons/roguetown/farming/produce.dmi'
 	icon_state = "raisins5"
 	bitesize = 5
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
@@ -63,6 +63,7 @@
 			M.reagents.remove_reagent(/datum/reagent/consumable/nutriment, M.reagents.total_volume)
 			M.reagents.trans_to(src, M.reagents.total_volume)
 		qdel(M)
+
 
 // -------------- SPIDER HONEY -----------------
 /obj/item/reagent_containers/food/snacks/rogue/honey
@@ -176,6 +177,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
 	bitesize = 1
 	tastes = list("salted meat" = 1)
+
 
 // -------------- COPPIETTE (dried meat) -----------------
 /obj/item/reagent_containers/food/snacks/rogue/meat/coppiette
@@ -467,7 +469,6 @@
 
 
 
-
 // -------------- CHEESE -----------------
 /obj/item/reagent_containers/food/snacks/rogue/cheese
 	name = "fresh cheese"
@@ -522,6 +523,7 @@
 	fishloot = list(/obj/item/reagent_containers/food/snacks/fish/carp = 10,
 					/obj/item/reagent_containers/food/snacks/fish/eel = 5,
 					/obj/item/reagent_containers/food/snacks/fish/angler = 1)
+
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddarwedge/aged
 	name = "wedge of aged cheese"

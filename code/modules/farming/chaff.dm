@@ -1,11 +1,10 @@
 /obj/item/natural/chaff
-	icon = 'icons/roguetown/items/produce.dmi'
+	icon = 'icons/roguetown/farming/produce.dmi'
 	var/foodextracted = null
 	name = "chaff"
 	icon_state = "chaff1"
 	desc = "A farmer's chaff." //english is not my native language, upon searching "chaff" i didn't even get what this is.
 	var/canthresh = TRUE
-	//dropshrink = 0.75
 
 /obj/item/natural/chaff/attack_right(mob/user)
 	if(foodextracted && !user.get_active_held_item())
@@ -66,6 +65,7 @@
 	icon_state = "wheatchaff"
 	name = "wheat stalks"
 	foodextracted = /obj/item/reagent_containers/food/snacks/grown/wheat
+	dropshrink = 0.8
 
 /obj/item/natural/chaff/oat
 	name = "oat stalks"

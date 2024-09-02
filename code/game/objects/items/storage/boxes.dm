@@ -940,8 +940,6 @@
 /obj/item/storage/box/ingredients/american/PopulateContents()
 	for(var/i in 1 to 2)
 		new /obj/item/reagent_containers/food/snacks/grown/potato(src)
-		new /obj/item/reagent_containers/food/snacks/grown/tomato(src)
-		new /obj/item/reagent_containers/food/snacks/grown/corn(src)
 	new /obj/item/reagent_containers/food/snacks/faggot(src)
 
 /obj/item/storage/box/ingredients/fruity
@@ -979,13 +977,6 @@
 
 /obj/item/storage/box/ingredients/exotic
 	theme_name = "exotic"
-
-/obj/item/storage/box/ingredients/exotic/PopulateContents()
-	for(var/i in 1 to 2)
-		new /obj/item/reagent_containers/food/snacks/carpmeat(src)
-		new /obj/item/reagent_containers/food/snacks/grown/soybeans(src)
-		new /obj/item/reagent_containers/food/snacks/grown/cabbage(src)
-	new /obj/item/reagent_containers/food/snacks/grown/chili(src)
 
 /obj/item/storage/box/emptysandbags
 	name = "box of empty sandbags"

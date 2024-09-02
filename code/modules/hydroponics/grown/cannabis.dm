@@ -55,14 +55,7 @@
 
 
 /obj/item/seeds/cannabis/ultimate
-	name = "pack of omega weed seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "ocannabis"
-	plantname = "Omega Weed"
-	product = /obj/item/reagent_containers/food/snacks/grown/cannabis/ultimate
 //	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/glow/green)
-	mutatelist = list()
 	reagents_add = list(/datum/reagent/drug/space_drugs = 0.3,
 						/datum/reagent/toxin/mindbreaker = 0.3,
 						/datum/reagent/mercury = 0.15,
@@ -111,11 +104,3 @@
 	desc = ""
 	icon_state = "whitecannabis"
 	//wine_power = 10
-
-/obj/item/reagent_containers/food/snacks/grown/cannabis/ultimate
-//	seed = /obj/item/seeds/cannabis/ultimate
-	name = "omega cannabis leaf"
-	desc = ""
-	icon_state = "ocannabis"
-	volume = 420
-	//wine_power = 90

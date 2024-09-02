@@ -1740,31 +1740,15 @@
 	name = "Food Crate"
 	desc = ""
 	cost = 1000
-	contains = list(/obj/item/reagent_containers/food/condiment/flour,
-					/obj/item/reagent_containers/food/condiment/rice,
-					/obj/item/reagent_containers/food/condiment/milk,
-					/obj/item/reagent_containers/food/condiment/soymilk,
-					/obj/item/reagent_containers/food/condiment/saltshaker,
-					/obj/item/reagent_containers/food/condiment/peppermill,
-					/obj/item/storage/fancy/egg_box,
-					/obj/item/reagent_containers/food/condiment/enzyme,
-					/obj/item/reagent_containers/food/condiment/sugar,
-					/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-					/obj/item/reagent_containers/food/snacks/grown/banana,
-					/obj/item/reagent_containers/food/snacks/grown/banana,
-					/obj/item/reagent_containers/food/snacks/grown/banana)
+	contains = list(/obj/item/storage/fancy/egg_box)
 	crate_name = "food crate"
 
 /datum/supply_pack/organic/randomized/chef/fruits
 	name = "Fruit Crate"
 	desc = ""
 	cost = 1500
-	contains = list(/obj/item/reagent_containers/food/snacks/grown/citrus/lime,
-					/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
-					/obj/item/reagent_containers/food/snacks/grown/watermelon,
-					/obj/item/reagent_containers/food/snacks/grown/apple,
-					/obj/item/reagent_containers/food/snacks/grown/berries,
-					/obj/item/reagent_containers/food/snacks/grown/citrus/lemon)
+	contains = list(
+					/obj/item/reagent_containers/food/snacks/grown/apple)
 	crate_name = "food crate"
 
 /datum/supply_pack/organic/cream_piee
@@ -1861,13 +1845,9 @@
 	name = "Vegetables Crate"
 	desc = ""
 	cost = 1300
-	contains = list(/obj/item/reagent_containers/food/snacks/grown/chili,
-					/obj/item/reagent_containers/food/snacks/grown/corn,
-					/obj/item/reagent_containers/food/snacks/grown/tomato,
+	contains = list(
 					/obj/item/reagent_containers/food/snacks/grown/potato,
-					/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle,
-					/obj/item/reagent_containers/food/snacks/grown/onion,
-					/obj/item/reagent_containers/food/snacks/grown/pumpkin)
+)
 	crate_name = "food crate"
 
 /datum/supply_pack/organic/vending/hydro_refills

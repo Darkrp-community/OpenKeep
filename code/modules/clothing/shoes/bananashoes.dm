@@ -26,7 +26,7 @@
 			update_icon()
 			to_chat(loc, "<span class='warning'>I ran out of bananium!</span>")
 		else
-			new /obj/item/grown/bananapeel/specialpeel(get_step(src,turn(usr.dir, 180))) //honk
+//			new /obj/item/grown/bananapeel/specialpeel(get_step(src,turn(usr.dir, 180))) //honk
 			bananium.use_amount_mat(100, /datum/material/bananium)
 
 /obj/item/clothing/shoes/clown_shoes/banana_shoes/attack_self(mob/user)

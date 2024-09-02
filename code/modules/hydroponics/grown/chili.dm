@@ -28,47 +28,9 @@
 	foodtype = FRUIT
 	//wine_power = 20
 
-// Ice Chili
-/obj/item/seeds/chili/ice
-	name = "pack of ice pepper seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "chiliice"
-	plantname = "Ice Pepper Plants"
-	product = /obj/item/reagent_containers/food/snacks/grown/icepepper
-	lifespan = 25
-	maturation = 4
-	production = 4
-	rarity = 20
-	mutatelist = list()
-	reagents_add = list(/datum/reagent/consumable/frostoil = 0.25, /datum/reagent/consumable/nutriment/vitamin = 0.02, /datum/reagent/consumable/nutriment = 0.02)
 
-/obj/item/reagent_containers/food/snacks/grown/icepepper
-//	seed = /obj/item/seeds/chili/ice
-	name = "ice pepper"
-	desc = ""
-	icon_state = "icepepper"
-	filling_color = "#0000CD"
-	bitesize_mod = 2
-	foodtype = FRUIT
-	//wine_power = 30
 
-// Ghost Chili
-/obj/item/seeds/chili/ghost
-	name = "pack of ghost chili seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "chilighost"
-	plantname = "Ghost Chili Plants"
-	product = /obj/item/reagent_containers/food/snacks/grown/ghost_chili
-	endurance = 10
-	maturation = 10
-	production = 10
-	yield = 3
-	rarity = 20
-	mutatelist = list()
-	reagents_add = list(/datum/reagent/consumable/condensedcapsaicin = 0.3, /datum/reagent/consumable/capsaicin = 0.55, /datum/reagent/consumable/nutriment = 0.04)
-
+/*
 /obj/item/reagent_containers/food/snacks/grown/ghost_chili
 //	seed = /obj/item/seeds/chili/ghost
 	name = "ghost chili"
@@ -99,3 +61,4 @@
 	else
 		held_mob = null
 		..()
+*/

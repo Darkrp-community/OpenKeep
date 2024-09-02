@@ -112,7 +112,7 @@
 	switch(randomnum)
 		if(1)
 			visible_message("<span class='danger'>[user] presses one of the colorful buttons on [src], and a special banana peel drops out of it.</span>")
-			new /obj/item/grown/bananapeel/specialpeel(loc)
+//			new /obj/item/grown/bananapeel/specialpeel(loc)
 		if(2)
 			visible_message("<span class='danger'>[user] presses one of the colorful buttons on [src], and unknown chemicals flood out of it.</span>")
 			var/datum/reagents/R = new/datum/reagents(300)
