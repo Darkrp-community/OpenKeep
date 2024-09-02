@@ -24,6 +24,7 @@
 	color = "#5c5243"
 	sellprice = 5
 
+/obj/item/natural/fur/volf
 
 //RTD make this a storage item and make clickign on animals with things put it in storage
 /obj/item/natural/saddle
