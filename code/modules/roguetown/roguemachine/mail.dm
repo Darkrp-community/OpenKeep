@@ -191,6 +191,44 @@
 		return
 	..()
 
+/obj/structure/roguemachine/mail/attackby(obj/item/P, mob/living/carbon/human/user, params)
+	if(istype(P, /obj/item/merctoken))
+		if(user.mind.assigned_role == "Mercenary")
+			if(user.tokenclaimed == TRUE)
+				to_chat(user, "<span class='warning'>I have already received my commendation. There's always next month to look forward to.</span>")
+				return
+			var/obj/item/merctoken/C = P
+			if(C.signed == 1)
+				qdel(C)
+				visible_message("<span class='warning'>[user] sends something.</span>")
+				playsound(loc, 'sound/misc/disposalflush.ogg', 100, FALSE, -1)
+				sleep(20)
+				playsound(loc, 'sound/misc/mercsuccess.ogg', 100, FALSE, -1)
+				playsound(src.loc, 'sound/misc/hiss.ogg', 100, FALSE, -1)
+				user.visible_message("<span class='warning'>A trinket comes tumbling down from the machine. Proof of your distinction.</span>")
+				user.adjust_triumphs(3)
+				user.tokenclaimed = TRUE
+				switch(user.merctype)
+					if(0)
+						new /obj/item/clothing/neck/roguetown/shalal(src.loc)
+					if(1)
+						new /obj/item/clothing/neck/roguetown/mercmedal/zybatine(src.loc)
+					if(2)
+						new /obj/item/clothing/neck/roguetown/mercmedal/grenzelhoft(src.loc)
+					if(3)
+						new /obj/item/clothing/neck/roguetown/mercmedal/underdweller(src.loc)
+					if(4)
+						new /obj/item/clothing/neck/roguetown/mercmedal/blackoak(src.loc)
+					if(5)
+						new /obj/item/clothing/neck/roguetown/mercmedal/steppesman(src.loc)
+					if(6)
+						new /obj/item/clothing/neck/roguetown/mercmedal/boltslinger(src.loc)
+			if(C.signed == 0)
+				to_chat(user, "<span class='warning'>I cannot send an unsigned token.</span>")
+				return
+			else
+				return
+
 /obj/structure/roguemachine/mail/Initialize()
 	. = ..()
 	SSroguemachine.hermailers += src
