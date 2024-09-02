@@ -246,3 +246,18 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	color = null
 	blocksound = PLATEHIT
+
+/obj/item/clothing/shoes/roguetown/boots/bloodbaroboots
+	name = "blood baro greaves"
+	desc = "Armored boots made from steel offering heavy protection against both melee and ranged attacks."
+	body_parts_covered = FEET
+	icon_state = "bloodbarogreaves"
+	item_state = "bloodbarogreaves"
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 500
+	armor_class = ARMOR_CLASS_HEAVY
+	anvilrepair = /datum/skill/craft/armorsmithing
+	resistance_flags = FIRE_PROOF

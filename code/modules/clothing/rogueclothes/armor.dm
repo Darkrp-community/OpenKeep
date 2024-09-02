@@ -732,3 +732,26 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 		AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/fullplate (1).ogg',\
 													'sound/foley/footsteps/armor/fullplate (2).ogg',\
 													'sound/foley/footsteps/armor/fullplate (3).ogg'), 100)
+
+/obj/item/clothing/suit/roguetown/armor/plate/bloodbaroarmor
+	name = "blood baro armor"
+	desc = "Full plate. Leg protecting tassets, groin cup, armored vambraces."
+	icon_state = "bloodbaroarmor"
+	item_state = "bloodbaroarmor"
+	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS|LEGS
+	equip_delay_self = 80
+	armor_class = ARMOR_CLASS_HEAVY
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/bogarmor
+	name = "boggard's hauberk"
+	icon_state = "bogarmor"
+	item_state = "bogarmor"
+	desc = "Chain mail mixed with plant fibres, swampweed, mud and other found flora - a favorite among bandits and ambushers alike, if you can stand the occasional crawling on your skin."
+	body_parts_covered = CHEST|GROIN|VITALS
+	armor = list("melee" = 60, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor_class = ARMOR_CLASS_LIGHT
+	smeltresult = /obj/item/ingot/iron
+	anvilrepair = /datum/skill/craft/armorsmithing
+	sellprice = 20	

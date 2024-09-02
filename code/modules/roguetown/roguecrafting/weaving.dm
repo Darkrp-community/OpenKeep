@@ -103,6 +103,21 @@
 	craftdiff = 5
 	sellprice = 50
 
+/datum/crafting_recipe/roguetown/weaving/xylixhood
+	name = "xylixean sack"
+	result = list(/obj/item/clothing/head/roguetown/xylixhood)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/silk = 1)
+	craftdiff = 3
+	sellprice = 20
+
+/datum/crafting_recipe/roguetown/weaving/fanatichood
+	name = "psydonic hood"
+	result = list(/obj/item/clothing/head/roguetown/fanatichood)
+	reqs = list(/obj/item/natural/cloth = 2)
+	craftdiff = 2
+	sellprice = 15
+
 /datum/crafting_recipe/roguetown/weaving/nunhood
 	name = "nun hood"
 	result = list(/obj/item/clothing/head/roguetown/nun)
