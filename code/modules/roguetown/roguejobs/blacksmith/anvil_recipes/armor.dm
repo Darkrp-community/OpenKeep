@@ -266,7 +266,7 @@
 	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/hounskull)
 	craftdiff = 4
 
-/datum/anvil_recipe/armor/hounskull
+/datum/anvil_recipe/armor/ghounskull
 	name = "Plumed Grenzelhoft Helm (3)"
 	recipe_name = "a Plumed Grenzelhoft Helmet"
 	req_bar = /obj/item/ingot/steel
