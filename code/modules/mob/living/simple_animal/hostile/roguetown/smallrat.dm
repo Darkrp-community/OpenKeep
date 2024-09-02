@@ -39,7 +39,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/friedrat
 	name = "fried rat"
 	desc = ""
-	icon = 'modular/Neu_Food/icons/food.dmi'
+	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "cookedrat"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
@@ -70,7 +70,6 @@
 
 
 /obj/item/reagent_containers/food/snacks/smallrat/dead
-	icon_state = "srat1"
 	dead = TRUE
 	rotprocess = 15 MINUTES
 
@@ -78,7 +77,7 @@
 	. = ..()
 	START_PROCESSING(SSobj, src)
 	if(dead)
-		icon_state = "srat1"
+		icon_state = "sratl"
 		rotprocess = 15 MINUTES
 
 /obj/item/reagent_containers/food/snacks/smallrat/attack_hand(mob/user)
@@ -134,9 +133,10 @@
 /obj/item/reagent_containers/food/snacks/smallrat/obj_destruction(damage_flag)
 	//..()
 	if(!dead)
-		new /obj/item/reagent_containers/food/snacks/smallrat/dead(src)
+		dead = TRUE
+		rotprocess = 15 MINUTES
 		playsound(src, 'sound/vo/mobs/rat/rat_death.ogg', 100, FALSE, -1)
-		qdel(src)
+		icon_state = "[icon_state]1"
 		return 1
 	. = ..()
 
