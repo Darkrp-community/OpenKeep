@@ -49,20 +49,19 @@
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/truffles/cooked
 	color = "#ab7d6f"
 	tastes = list("mushroom" = 1)
-	sellprice = 30
-	rotprocess = null
+	sellprice = 5
 /obj/item/reagent_containers/food/snacks/rogue/truffles/cooked
 	eat_effect = /datum/status_effect/buff/foodbuff
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	color = "#835b4f"
-	tastes = list("delicious truffles" = 1)
+	tastes = list("succulent truffles" = 1)
 /obj/item/reagent_containers/food/snacks/rogue/truffles/Initialize()
 	icon_state = pick("mushroom1_full","mushroom1_full","mushroom1_full")
 	. = ..()
 
 /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms
 	name = "truffles"
-	icon = 'modular/Creechers/icons/piggie.dmi'
+	icon = 'icons/obj/hydroponics/harvest.dmi'
 	icon_state = "mushroom1_full"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms/cooked
