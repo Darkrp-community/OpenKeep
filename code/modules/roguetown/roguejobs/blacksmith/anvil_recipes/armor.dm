@@ -102,6 +102,14 @@
 	created_item = /obj/item/clothing/head/roguetown/helmet/ironplate
 	craftdiff = 1
 
+/datum/anvil_recipe/armor/totodhelmet
+	name = "Totod helmet (2)"
+	recipe_name = "a winged totod helmet"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/head/roguetown/helmet/totodhelm
+	craftdiff = 1
+
 /datum/anvil_recipe/armor/ipothelmet
 	name = "Pot helmet"
 	recipe_name = "a heavy iron helmet"
@@ -109,11 +117,34 @@
 	created_item = /obj/item/clothing/head/roguetown/helmet/ironpot
 	craftdiff = 1
 
+/datum/anvil_recipe/armor/narvalihelm
+	name = "Narvali pothelmet"
+	recipe_name = "a Narvali pothelmet"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/head/roguetown/helmet/northernhelm
+	craftdiff = 1
+
+/datum/anvil_recipe/armor/boghelmet
+	name = "Trimmed iron helmet"
+	recipe_name = "a trimmed iron helmet"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/head/roguetown/helmet/boghelm
+	craftdiff = 1
+
 /datum/anvil_recipe/armor/platemask
 	name = "Face mask x2"
 	recipe_name = "a pair of Face Masks"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/mask/rogue/facemask
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 0
+
+/datum/anvil_recipe/armor/dogmask
+	name = "Iron dogmask x2"
+	recipe_name = "a pair of Iron Dogmasks"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/mask/rogue/bogmask
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 0
@@ -244,6 +275,15 @@
 	recipe_name = "a pair of Kettle Helmets"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/roguetown/helmet/kettle
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 2
+
+/datum/anvil_recipe/armor/helmetslitkettle
+	name = "Slitted Kettle helmet x2"
+	recipe_name = "a pair of Slitted Kettle Helmets"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/grenzelhoftkettle
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 2

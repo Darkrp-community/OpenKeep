@@ -278,6 +278,12 @@
 	item_state = "surgcollar"
 	sellprice = 15
 
+/obj/item/clothing/neck/roguetown/bogcowl
+	name = "bog cowl"
+	desc = "A cowl made with mud, fibres and sticks. Doesn't smell too great, but then again neither do you."
+	icon_state = "bogcowl"
+	item_state = "bogcowl"
+
 /obj/item/clothing/neck/roguetown/gorget/copper
 	name = "copper gorget"
 	icon_state = "copperneck"

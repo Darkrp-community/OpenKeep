@@ -767,3 +767,44 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	smeltresult = /obj/item/ingot/copper
 	armor_class = ARMOR_CLASS_LIGHT
 	sellprice = 15
+
+/obj/item/clothing/suit/roguetown/armor/plate/half/copperchest
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "copper heart protector"//SHITTY ARMOR SHITTY ARMOR!!
+	desc = "Very simple and crude protection for the chest. Ancient fighters once used similar gear, with better quality..."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "copperchest"
+	item_state = "copperchest"
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = ALL_RACES_LIST
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 150
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/copper
+	armor_class = ARMOR_CLASS_LIGHT
+	sellprice = 15
+
+/obj/item/clothing/suit/roguetown/armor/plate/bloodbaroarmor
+	name = "blood baro armor"
+	desc = "Full plate. Leg protecting tassets, groin cup, armored vambraces."
+	icon_state = "bloodbaroarmor"
+	item_state = "bloodbaroarmor"
+	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS|LEGS
+	equip_delay_self = 80
+	armor_class = ARMOR_CLASS_HEAVY
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/bogarmor
+	name = "boggard's hauberk"
+	icon_state = "bogarmor"
+	item_state = "bogarmor"
+	desc = "Chain mail mixed with plant fibres, swampweed, mud and other found flora - a favorite among bandits and ambushers alike, if you can stand the occasional crawling on your skin."
+	body_parts_covered = CHEST|GROIN|VITALS
+	armor = list("melee" = 60, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor_class = ARMOR_CLASS_LIGHT
+	smeltresult = /obj/item/ingot/iron
+	anvilrepair = /datum/skill/craft/armorsmithing
+	sellprice = 20	
