@@ -180,6 +180,13 @@
 	name = "amulet of Eora"
 	desc = "And I love thee because thou art love."
 	icon_state = "eora"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psicross/pestra
+	name = "amulet of Pestra"
+	desc = "A Pestran amulet depicting her fabled walking staff, encrusted in this trinket is a venomous serpent. Believed to ward off disease and lessen poisons to devoted worshippers of the wise hag."
+	icon_state = "pestra"
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/silver
 	name = "silver psycross"
