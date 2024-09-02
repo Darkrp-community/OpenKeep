@@ -63,7 +63,8 @@
 	name = "net"
 	result = /obj/item/net
 	craftdiff = 2
-	reqs = list(/obj/item/rope = 2)
+	reqs = list(/obj/item/rope = 2,
+				/obj/item/natural/stone = 3)
 	verbage = "braid"
 	verbage_tp = "braids"
 
