@@ -49,7 +49,7 @@
 			if(H.dna?.species)
 				H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
 	else
-		head = /obj/item/clothing/head/roguetown/hennin
+		head = /obj/item/clothing/head/roguetown/crown/circlet
 		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 		armor = /obj/item/clothing/suit/roguetown/armor/silkcoat
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess
