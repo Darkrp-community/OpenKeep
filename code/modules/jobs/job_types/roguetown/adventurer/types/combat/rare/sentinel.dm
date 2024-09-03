@@ -13,6 +13,7 @@
 	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
 	outfit = /datum/outfit/job/roguetown/adventurer/sentinel
 	maximum_possible_slots = 1
+	min_pq = 0
 	pickprob = 30
 	category_tags = list(CTAG_ADVENTURER)
 
