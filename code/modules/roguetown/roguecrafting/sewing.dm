@@ -168,12 +168,12 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
 
-/datum/crafting_recipe/roguetown/sewing/zybantuhat
+/datum/crafting_recipe/roguetown/sewing/tarbpil
 	name = "tarbpil"
-	result = list(/obj/item/clothing/head/roguetown/zybantuhat)
+	result = list(/obj/item/clothing/head/roguetown/tarbpil)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
-	craftdiff = 4
+	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/sewing/Bladress
 	name = "black dress"

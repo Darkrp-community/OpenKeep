@@ -801,6 +801,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	name = "boggard's hauberk"
 	icon_state = "bogarmor"
 	item_state = "bogarmor"
+	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
 	desc = "Chain mail mixed with plant fibres, swampweed, mud and other found flora - a favorite among bandits and ambushers alike, if you can stand the occasional crawling on your skin."
 	body_parts_covered = CHEST|GROIN|VITALS
 	armor = list("melee" = 60, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
