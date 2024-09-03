@@ -83,8 +83,8 @@
 	remarks = list("To understand these archaic things...", "Just catching them on fire won't do...", "Accounting for crosswinds... really?", "I think I just burned my hand...")
 
 /obj/item/rune/spell/water_rune
-	spell = /obj/effect/proc_holder/spell/invoked/arcaneheal
-	spellname = "arcaneheal"
+	spell = /obj/effect/proc_holder/spell/targeted/ethereal_jaunt
+	spellname = "ethereal jaunt"
 	icon_state = "water_rune"
 	name = "water rune"
 	desc = "A bit moist."

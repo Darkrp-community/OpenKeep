@@ -92,7 +92,6 @@
 	metabolization_rate = 30 * REAGENTS_METABOLISM
 
 /datum/reagent/medicine/diseasecure/on_mob_life(mob/living/carbon/M)
-	M.cure_disease()
 	M.adjustToxLoss(-6, 0)
 	..()
 	. = 1
