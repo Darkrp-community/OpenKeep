@@ -126,11 +126,30 @@
 		return
 	qdel(src)
 
+/mob/living/carbon/human
+	var/mob/living/carbon/human/hostagetaker //Stores the person that took us hostage in a var, allows us to force them to attack the mob and such
+	var/mob/living/carbon/human/hostage //What hostage we have
+
+/mob/living/carbon/human/proc/attackhostage()
+	if(!istype(hostagetaker.get_active_held_item(), /obj/item/rogueweapon))
+		return
+	var/obj/item/rogueweapon/WP = hostagetaker.get_active_held_item()
+	WP.attack(src, hostagetaker)
+	hostagetaker.visible_message("<span class='danger'>\The [hostagetaker] attacks \the [src] reflexively!</span>")
+	hostagetaker.hostage = null
+	hostagetaker = null
+
 /obj/item/grabbing/attack(mob/living/M, mob/living/user)
-	if(M != grabbed)
-		return FALSE
 	if(!valid_check())
 		return FALSE
+	if(M != grabbed)
+		if(!istype(limb_grabbed, /obj/item/bodypart/head))
+			return FALSE
+		if(M != user)
+			return FALSE
+		user.changeNext_move(CLICK_CD_RESIST)
+		headbutt(user)
+		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	switch(user.used_intent.type)
 		if(/datum/intent/grab/upgrade)
@@ -149,6 +168,22 @@
 					C.visible_message("<span class='danger'>[user] [pick("chokes", "strangles")] [C]!</span>", \
 									"<span class='userdanger'>[user] [pick("chokes", "strangles")] me!</span>", "<span class='hear'>I hear a sickening sound of pugilism!</span>", COMBAT_MESSAGE_RANGE, user)
 					to_chat(user, "<span class='danger'>I [pick("choke", "strangle")] [C]!</span>")
+		if(/datum/intent/grab/hostage)
+			if(limb_grabbed && grab_state > 0) //this implies a carbon victim
+				if(ishuman(M) && M != user)
+					var/mob/living/carbon/human/H = M
+					var/mob/living/carbon/human/U = user
+					if(U.cmode)
+						if(H.cmode)
+							to_chat(U, "<span class='warning'>[H] is too prepared for combat to be taken hostage.</span>")
+							return
+						to_chat(U, "<span class='warning'>We take [H] hostage.</span>")
+						to_chat(H, "<span class='danger'>[U] takes us hostage!</span>")
+
+						U.swap_hand() // Swaps hand to weapon so you can attack instantly if hostage decides to resist
+
+						U.hostage = H
+						H.hostagetaker = U
 		if(/datum/intent/grab/twist)
 			if(limb_grabbed && grab_state > 0) //this implies a carbon victim
 				if(iscarbon(M))
@@ -221,6 +256,30 @@
 	to_chat(user, "<span class='warning'>I twist [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]</span>")
 	C.next_attack_msg.Cut()
 	log_combat(user, C, "limbtwisted [sublimb_grabbed] ")
+
+/obj/item/grabbing/proc/headbutt(mob/living/carbon/human/H)
+	var/mob/living/carbon/C = grabbed
+	var/obj/item/bodypart/Chead = C.get_bodypart(BODY_ZONE_HEAD)
+	var/obj/item/bodypart/Hhead = H.get_bodypart(BODY_ZONE_HEAD)
+	var/armor_block = C.run_armor_check(Chead, "melee")
+	var/armor_block_user = H.run_armor_check(Hhead, "melee")
+	var/damage = H.get_punch_dmg()
+	C.next_attack_msg.Cut()
+	playsound(C.loc, "genblunt", 100, FALSE, -1)
+	C.apply_damage(damage*1.5, , Chead, armor_block)
+	Chead.bodypart_attacked_by(BCLASS_SMASH, damage*1.5, H, crit_message=TRUE)
+	H.apply_damage(damage, BRUTE, Hhead, armor_block_user)
+	Hhead.bodypart_attacked_by(BCLASS_SMASH, damage/1.2, H, crit_message=TRUE)
+	C.stop_pulling(TRUE)
+	C.Immobilize(10)
+	C.OffBalance(10)
+	H.Immobilize(5)
+
+	C.visible_message("<span class='danger'>[H] headbutts [C]'s [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]</span>", \
+					"<span class='userdanger'>[H] headbutts my [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]</span>", "<span class='hear'>I hear a sickening sound of pugilism!</span>", COMBAT_MESSAGE_RANGE, H)
+	to_chat(H, "<span class='warning'>I headbutt [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]</span>")
+	C.next_attack_msg.Cut()
+	log_combat(H, C, "headbutted ")
 
 /obj/item/grabbing/proc/twistitemlimb(mob/living/user) //implies limb_grabbed and sublimb are things
 	var/mob/living/M = grabbed
@@ -367,6 +426,11 @@
 	name = "choke"
 	desc = ""
 	icon_state = "inchoke"
+
+/datum/intent/grab/hostage
+	name = "hostage"
+	desc = ""
+	icon_state = "inhostage"
 
 /datum/intent/grab/shove
 	name = "shove"

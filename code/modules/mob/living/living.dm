@@ -1099,7 +1099,6 @@
 	else
 		resist_chance = max(resist_chance, 70 + min((wrestling_diff * 5), 0))
 
-
 	if(moving_resist && client) //we resisted by trying to move
 		client.move_delay = world.time + 20
 	if(prob(resist_chance))
@@ -1123,6 +1122,8 @@
 
 /mob/living/carbon/human/resist_grab(moving_resist)
 	var/mob/living/L = pulledby
+	if(hostagetaker)
+		attackhostage()
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
 		if(HAS_TRAIT(H, TRAIT_NOSEGRAB) && !HAS_TRAIT(src, TRAIT_MISSING_NOSE))
