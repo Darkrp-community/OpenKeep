@@ -338,7 +338,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			var/datum/faith/selected_faith = GLOB.faithlist[selected_patron?.associated_faith]
 			dat += "<b>Faith:</b> <a href='?_src_=prefs;preference=faith;task=input'>[selected_faith?.name || "FUCK!"]</a><BR>"
 			dat += "<b>Patron:</b> <a href='?_src_=prefs;preference=patron;task=input'>[selected_patron?.name || "FUCK!"]</a><BR>"
-			dat += "<b>Family:</b> <a href='?_src_=prefs;preference=family'>[family]</a><BR>"
+			dat += "<b>Family:</b> <a href='?_src_=prefs;preference=family'>[family ? family : "None"]</a><BR>"
 			dat += "<b>Dominance:</b> <a href='?_src_=prefs;preference=domhand'>[domhand == 1 ? "Left-handed" : "Right-handed"]</a><BR>"
 
 /*
@@ -1968,7 +1968,7 @@ Slots: [job.spawn_positions]</span>
 						ResetJobs()
 						if(pref_species.desc)
 							to_chat(user, "[pref_species.desc]")
-						age = pick(pref_species.possible_ages)			
+						age = pick(pref_species.possible_ages)
 						to_chat(user, "<font color='red'>Classes reset.</font>")
 						random_character(gender)
 						accessory = "Nothing"
@@ -2189,11 +2189,10 @@ Slots: [job.spawn_positions]</span>
 					else
 						domhand = 1
 				if("family")
-					var/new_family = input(user, "Do you have relatives in rockhill? [FAMILY_NONE] will disable \
-						this feature and prevent the species of your parents determining your species as prince. \
-						[FAMILY_PARTIAL] will assign a random player as your parent based on your species. \
-						[FAMILY_FULL] will assign you as a single parent to a random player if possible. \
-						NOTE: Jobs such as prince and grand mage will be excluded from being a parent.", "Life is Rough in Rockhill") as null|anything in list(FAMILY_NONE, FAMILY_PARTIAL, FAMILY_FULL)
+					var/new_family = input(user, "Do you have relatives in rockhill? [FAMILY_NONE] will disable this feature. \
+						[FAMILY_PARTIAL] will assign you as a progeny of a local house based on your species. This feature is disabled if your older than ADULT. \
+						[FAMILY_FULL] will attempt to assign you as matriarch or patriarch of one of the local houses of rockhill. \
+						If all houses are full then you will not be assigned to any house.", "The Major Houses of Rockhill") as null|anything in list(FAMILY_NONE, FAMILY_PARTIAL, FAMILY_FULL)
 					if(new_family)
 						family = new_family
 				if("alignment")

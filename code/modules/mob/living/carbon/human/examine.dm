@@ -82,30 +82,11 @@
 			. += "<span class='info'>[capitalize(m2)] [skin_tone_wording] is [skin_tone_seen][slop_lore_string]</span>"
 
 		if(ishuman(user))
-			/*
-			* Familytree Subsystem Recognition
-			* H is who examines us so the
-			* perspective is H looking at src.
-			* This all could honestly be
-			* turned into its own proc.
-			*/
-			var/mob/living/carbon/human/H = user
-			//Relation of examiner to them H --> src
-			if(H.family[FAMILY_SPOUSE] == src)
+			var/mob/living/carbon/human/stranger = user
+			if(RomanticPartner(stranger))
 				. += "<span class='love'>It's my spouse.</span>"
-			if(H.family[FAMILY_MOTHER] == src)
-				. += "<span class='info'>It's my mother.</span>"
-			if(H.family[FAMILY_FATHER] == src)
-				. += "<span class='info'>It's my father.</span>"
-			//Parent src --> H
-			if(family[FAMILY_FATHER] == H || family[FAMILY_MOTHER] == H)
-				. += "<span class='info'>It's my progeny.</span>"
-			if(src != H)
-				//Sibling, if both are true you are full blooded siblings, otherwise half blooded.
-				if(family[FAMILY_MOTHER] == H.family[FAMILY_MOTHER] && family[FAMILY_MOTHER] != FALSE)
-					. += "<span class='info'>We share the same mother.</span>"
-				if(family[FAMILY_FATHER] == H.family[FAMILY_FATHER] && family[FAMILY_FATHER] != FALSE)
-					. += "<span class='info'>We share the same father.</span>"
+			if(family_datum == stranger.family_datum)
+				. += ReturnRelation(user)
 
 		if(real_name in GLOB.excommunicated_players)
 			. += "<span class='userdanger'>HERETIC! SHAME!</span>"
@@ -495,7 +476,7 @@
 	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
 	for(var/line in lines)
 		. += span_info(line)
-	
+
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))
 		. += trait_exam

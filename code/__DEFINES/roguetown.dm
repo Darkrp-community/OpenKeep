@@ -48,9 +48,10 @@ GLOBAL_LIST_INIT(wolf_suffixes, list("Fang", "Claw", "Stalker", "Prowler", "Roar
 #define FAMILY_PARTIAL "Siblings"
 #define FAMILY_FULL "Local"
 
-#define FAMILY_SPOUSE "Spouse"
 #define FAMILY_FATHER "Father"
 #define FAMILY_MOTHER "Mother"
+#define FAMILY_PROGENY "Progeny"
+#define FAMILY_ADOPTED "Adoptive Progeny"
 
 GLOBAL_LIST_EMPTY(sunlights)
 GLOBAL_LIST_EMPTY(job_respawn_delays)

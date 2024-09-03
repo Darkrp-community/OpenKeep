@@ -1162,12 +1162,12 @@
 				if(ishuman(owner) && ishuman(fucking))
 					var/mob/living/carbon/human/H = owner
 					var/mob/living/carbon/human/F = fucking
-					if(F?.family[FAMILY_SPOUSE] != H || H?.family[FAMILY_SPOUSE] != F)
+					if((F.IsWedded() && !F.RomanticPartner(H)) || (H.IsWedded() && !H.RomanticPartner(F)))
 						if(SSticker.cuckers)
 							SSticker.cuckers += ", [F.real_name] (with [H.real_name])"
 						else
 							SSticker.cuckers += "[F.real_name] (with [H.real_name])"
-					if(H.family[FAMILY_SPOUSE] == F)
+					if(H.RomanticPartner(F))
 						yee = 1
 						C.add_stress(/datum/stressevent/cumlove)
 					if(HAS_TRAIT(F, TRAIT_GOODLOVER))
@@ -1261,7 +1261,7 @@
 					if(ishuman(owner) && ishuman(inpussy))
 						var/mob/living/carbon/human/H = inpussy
 						var/mob/living/carbon/human/F = owner
-						if(H.family[FAMILY_SPOUSE] == F)
+						if(H.RomanticPartner(F))
 							yee = 1
 							C.add_stress(/datum/stressevent/cumlove)
 					if(!yee)

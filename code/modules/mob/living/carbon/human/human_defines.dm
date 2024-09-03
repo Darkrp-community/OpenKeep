@@ -106,13 +106,10 @@
 	var/advjob = null
 	var/canseebandits = FALSE
 
-	//Simplified Family List not indepth but its enough.
+	//Familytree datum
+	var/spouse_name
 	var/familytree_pref = FAMILY_NONE
-	var/list/family = list(
-		FAMILY_SPOUSE = FALSE,
-		FAMILY_FATHER = FALSE,
-		FAMILY_MOTHER = FALSE,
-		)
+	var/datum/heritage/family_datum
 
 	var/has_stubble = TRUE
 

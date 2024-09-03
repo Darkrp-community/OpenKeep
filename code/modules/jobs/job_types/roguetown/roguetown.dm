@@ -67,7 +67,7 @@
 /datum/outfit/job/roguetown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
 	if(H.mind)
-		if(H.family != FAMILY_NONE && !visualsOnly)
+		if(H.familytree_pref != FAMILY_NONE && !visualsOnly && !H.family_datum)
 			SSfamilytree.AddLocal(H, H.familytree_pref)
 		if(H.ckey)
 			if(check_crownlist(H.ckey))

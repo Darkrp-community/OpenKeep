@@ -4,20 +4,60 @@
 * This relation can be based on role (IE king and prince
 * being father and son) or random chance.
 */
+/*
+* NOTES: There is some areas of this
+* subsystem that can be more fleshed out
+* such as how right now a house is just
+* a bunch of names. Potentially this system
+* can be used to create family curses/boons that
+* effect all family members.
+* There is also a additional variable i placed
+* in human.dna called parent_mix that could be
+* used for intrigue but currently it has
+* no use and is only changed by the
+* heritage datum BloodTies() proc.
+*/
 SUBSYSTEM_DEF(familytree)
 	name = "familytree"
 	flags = SS_NO_FIRE
 
-	//People who have chosen to be first generation
-	var/list/first_gen = list()
 	/*
-	* People who have chosen to be parents.
-	* I am not 100% sure how to make lists
-	* of lists so this will have to do for now.
+	* The family that kings, queens, and princes
+	* are automatically placed into. Has no other
+	* real function.
 	*/
-	var/list/human_parents = list()
-	var/list/elf_parents = list()
-	var/list/dwarf_parents = list()
+	var/datum/heritage/ruling_family
+	/*
+	* The other major houses of Rockhill.
+	* Id say think Shrouded Isle families but
+	* smaller.
+	*/
+	var/list/families = list()
+	//These jobs are excluded from AddLocal()
+	var/excluded_jobs = list(
+		"Prince",
+		"Princess",
+		"Queen",
+		"King",
+		"Inquisitor",
+		)
+
+/datum/controller/subsystem/familytree/Initialize()
+
+	ruling_family = new /datum/heritage(null, null, "human")
+	//Blank starter families that we can customize for players.
+	families = list(
+		new /datum/heritage(null, null, "human"),
+		new /datum/heritage(null, null, "human"),
+		new /datum/heritage(null, null, "elf"),
+		new /datum/heritage(null, null, "elf"),
+		new /datum/heritage(null, null, "dwarf"),
+		new /datum/heritage(null, null, "dwarf"),
+		new /datum/heritage(null, null, "tiefling"),
+		new /datum/heritage(null, null, "tiefling"),
+		)
+
+	return ..()
 
 /*
 * In order for us to use age in sorting of generations we would need to
@@ -27,152 +67,100 @@ SUBSYSTEM_DEF(familytree)
 	if(!H || !status || istype(H, /mob/living/carbon/human/dummy))
 		return
 	//Exclude princes and princesses from having their parentage calculated.
-	if(H.job == "Prince" || H.job == "Princess")
+	if(H.job in excluded_jobs)
 		return
 	switch(status)
 		if(FAMILY_PARTIAL)
-			first_gen.Add(H)
-			AssignParents(H)
+			AssignToHouse(H)
 
 		if(FAMILY_FULL)
 			if(H.virginity)
-				//Failsafe for cleric since on spawn they are *technically* an adventurer.
-				RemoveParentage(H)
 				return
-		/*
-		* If your a server that doesnt use the virginity var
-		* just do (H.job in exclude_parentage) and fill a list
-		*/
-			switch(H.dna.species.id)
-				if("human")
-					human_parents.Add(H)
-				if("elf")
-					elf_parents.Add(H)
-				if("dwarf")
-					dwarf_parents.Add(H)
+			AssignToFamily(H)
 
 /*
-* Assigns a parent to a first gen.
+* Assigns lord and lady to the royal family.
+* If they are father or mother they claim the house in their name.
 */
-/datum/controller/subsystem/familytree/proc/AssignParents(mob/living/carbon/human/H)
-	if(H.family[FAMILY_FATHER] || H.family[FAMILY_MOTHER])
+/datum/controller/subsystem/familytree/proc/AddRoyal(mob/living/carbon/human/H, status)
+	if(status == FAMILY_FATHER || status == FAMILY_MOTHER)
+		if(!ruling_family.housename)
+			ruling_family.ClaimHouse(H)
+			return
+		//If king has already married another, the queen is not added to the royal family by default. Get angry!
+		if(ruling_family.matriarch && ruling_family.patriarch)
+			return
+	ruling_family.addToHouse(H, status)
+
+/*
+* Assigns people randomly to one of the major
+* famlies of Rockhill based on their species.
+*/
+/datum/controller/subsystem/familytree/proc/AssignToHouse(mob/living/carbon/human/H)
+	//If no human and they are older than adult age.
+	if(!H || H.age > AGE_ADULT)
 		return
-	var/list/eligable_parents = list()
-	/*
-	* We can make this more in depth by changing it to species name
-	* restricting dark elves to dark elf parents but for now lets
-	* keep it simple.
-	*/
-	switch(H.dna.species.id)
-		if("human")
-			eligable_parents = human_parents.Copy()
-		if("elf")
-			eligable_parents = elf_parents.Copy()
-		if("dwarf")
-			eligable_parents = dwarf_parents.Copy()
-	//If no eligable parents then just assign them some default family of their type.
-	if(!eligable_parents.len)
-		H.family[FAMILY_FATHER] = "Unknown_[H.dna.species.id]_[rand(1,3)]"
-	else
-		//Select a parent from the eligable parents.
-		eligable_parents = shuffle(eligable_parents)
-		var/mob/living/carbon/human/parent
-		for(var/mob/living/carbon/human/P in eligable_parents)
-			if(P.stat != DEAD && P.age >= H.age)
-				parent = P
+	var/species = H.dna.species.id
+	var/adopted = FALSE
+	var/datum/heritage/chosen_house
+	var/list/low_priority_houses = list()
+	var/list/high_priority_houses = list()
+	for(var/datum/heritage/I in families)
+		if(I.housename)
+			high_priority_houses.Add(I)
+		else
+			low_priority_houses.Add(I)
+
+	//Extremely sloppy but shorter code than writing the same code twice. -IP
+	for(var/i = 1 to 2)
+		var/list/what_we_checkin = high_priority_houses
+		//If second run then check the other houses.
+		if(i == 2)
+			what_we_checkin = low_priority_houses
+		for(var/datum/heritage/I in what_we_checkin)
+			if(I.dominant_species == species)
+				chosen_house = I
 				break
+			if(prob(7))
+				chosen_house = I
+				adopted = TRUE
+				break
+		if(chosen_house)
+			break
 
-		AssumeFamily(H, parent)
-
-/*
-* Extremly quick assignment proc for
-* making a offspring assume the relations
-* of their parent.
-*/
-/datum/controller/subsystem/familytree/proc/AssumeFamily(mob/living/carbon/human/person, mob/living/carbon/human/parent, assume_spouse = FALSE)
-	if(!ishuman(parent))
-		return
-	var/family_placement
-	var/parent_male = FALSE
-	if(parent.gender == MALE)
-		parent_male = TRUE
-	family_placement = parent_male ? FAMILY_FATHER : FAMILY_MOTHER
-	person.family[family_placement] = parent
-	//IF assume spouse and the parent is human and not a text variable.
-	if(assume_spouse && ishuman(parent))
-		var/mob/living/carbon/human/other_parent = parent.family[FAMILY_SPOUSE]
-		if(!other_parent)
-			return
-		family_placement = parent_male ? FAMILY_MOTHER : FAMILY_FATHER
-		if(person.family[family_placement])
-			return
-		person.family[family_placement] = other_parent
+	if(chosen_house)
+		chosen_house.addToHouse(H, adopted ? FAMILY_ADOPTED : FAMILY_PROGENY)
 
 /*
-* For removing someone from
-* the parent lists. Sort of sloppy.
+* Allows players to claim a
+* house as patriarch or matriarch.
 */
-/datum/controller/subsystem/familytree/proc/RemoveParentage(mob/living/carbon/human/person)
-	if(!ishuman(person))
+/datum/controller/subsystem/familytree/proc/AssignToFamily(mob/living/carbon/human/H)
+	if(!H)
 		return
-	switch(person.dna.species.id)
-		if("human")
-			human_parents.Remove(person)
-		if("elf")
-			elf_parents.Remove(person)
-		if("dwarf")
-			dwarf_parents.Remove(person)
+	var/species = H.dna.species.id
+	var/list/low_priority_houses = list()
+	var/list/high_priority_houses = list()
+	for(var/datum/heritage/I in families)
+		if((I.matriarch && I.patriarch) || I.dominant_species != species)
+			continue
+		if(I.family.len >= 1 && I.family.len < 5)
+			high_priority_houses.Add(I)
+		else
+			low_priority_houses.Add(I)
 
-/*
-* For altering the species of the
-* offspring based on their parentage.
-* Used mostly for princes.
-* Its 3:16 AM when i coded this
-* but its no excuse for it being
-* a mess.
-*/
-/datum/controller/subsystem/familytree/proc/CalculateSpecies(mob/living/carbon/human/H)
-	var/datum/species/new_species
-	var/mob/living/carbon/human/dad = H.family[FAMILY_FATHER]
-	var/mob/living/carbon/human/mom = H.family[FAMILY_MOTHER]
-	if(dad == FALSE || mom == FALSE)
-		return
-	var/datum/species/offspring_species = H.dna.species
-	var/datum/species/father_species = dad.dna.species
-	var/datum/species/mother_species = mom.dna.species
-	//If mother and father arnt present
-	if(!father_species && !mother_species)
-		return
-	if(offspring_species != father_species)
-		// If fathers species is null then switch to mothers species.
-		new_species = father_species ? father_species : mother_species
-	if(father_species && mother_species)
-		new_species = CalculateMix(offspring_species, "[father_species.id] [mother_species.id]")
-	if(!new_species)
-		//If all of this returns null DO NOT CHANGE SPECIES.
-		return
-	H.set_species(new_species)
-
-//Calculate mixture.
-/datum/controller/subsystem/familytree/proc/CalculateMix(offspring, mixture)
-	var/heritagehuman = findtext(mixture, "human")
-	var/heritageelf = findtext(mixture, "elf")
-	var/heritagedwarf = findtext(mixture, "dwarf")
-	var/heritagetiefling = findtext(mixture, "tiefling")
-	/*
-	* Teifling blood is infused with
-	* otherworldly energy so their
-	* offspring are always born with
-	* horns.
-	*/
-	if(heritagetiefling)
-		return /datum/species/tieberian
-	/*
-	* So far humans are the only race that can
-	* produce viable offspring with elves and dwarves.
-	*/
-	if(heritagehuman)
-		if(heritageelf)
-			return /datum/species/human/halfelf
-		if(heritagedwarf)
-			return pick(/datum/species/human/northern, /datum/species/dwarf/mountain)
+	for(var/i = 1 to 2)
+		var/list/what_we_checkin = high_priority_houses
+		//If second run then check the other houses.
+		if(i == 2)
+			what_we_checkin = low_priority_houses
+		for(var/datum/heritage/I in what_we_checkin)
+			if(!I.housename)
+				I.ClaimHouse(H)
+				return
+			if(!I.matriarch && H.gender == FEMALE)
+				I.addToHouse(H, FAMILY_MOTHER)
+				return
+			if(!I.patriarch && H.gender == MALE)
+				I.addToHouse(H, FAMILY_FATHER)
+				return

@@ -1033,11 +1033,11 @@
 						if(4)
 							I = new /obj/item/clothing/head/roguetown/helmet/horned(user.loc)
 						if(6)
-							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2) 
+							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2)
 								I = new /obj/item/rogueweapon/spear/billhook(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2) 
+							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2)
 								I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2) 
+							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2)
 								I = new /obj/item/rogueweapon/sword/long(user.loc)
 							else
 								I = new /obj/item/rogueweapon/mace/steel(user.loc)
@@ -1146,7 +1146,7 @@
 								if(!C.client)
 									continue
 								//Gotta get a divorce first
-								if(C.family[FAMILY_SPOUSE] != FALSE)
+								if(C.IsWedded())
 									continue
 								if(C.real_name == X)
 									//I know this is very sloppy but its alot less code.
@@ -1193,8 +1193,7 @@
 						bridefirst = thebride.real_name
 						thegroom.change_name(thegroom.real_name + surname2use)
 						thebride.change_name(thebride.real_name + surname2use)
-						thegroom.family[FAMILY_SPOUSE] = thebride
-						thebride.family[FAMILY_SPOUSE] = thegroom
+						thegroom.MarryTo(thebride)
 						thegroom.adjust_triumphs(1)
 						thebride.adjust_triumphs(1)
 						//Bite the apple first if you want to be the groom.
