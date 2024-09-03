@@ -28,7 +28,7 @@
 	return
 
 /client/verb/rules()
-	set name = "rules"
+	set name = "Rules"
 	set desc = ""
 	set category = "Memory"
 	var/rulesurl = CONFIG_GET(string/rulesurl)
@@ -41,7 +41,7 @@
 	return
 
 /client/verb/github()
-	set name = "github"
+	set name = "Github"
 	set desc = ""
 	set category = "Memory"
 	var/githuburl = CONFIG_GET(string/githuburl)
