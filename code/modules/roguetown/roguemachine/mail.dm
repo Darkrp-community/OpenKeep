@@ -322,6 +322,7 @@
 		"Puffer Pistol" = list(
 			list(type = /obj/item/gun/ballistic/revolver/grenadelauncher/pistol, count = 1),
 			list(type = /obj/item/storage/belt/rogue/pouch/bullets, count = 1),
+			list(type = /obj/item/reagent_containers/glass/bottle/rogue/aflask, count = 1),
 			cost = 1,
 			max_purchases = 1
 		),
@@ -330,8 +331,13 @@
 			cost = 1,
 			max_purchases = 1
 		),
+		"Lockpick Ring" = list(
+			list(type = /obj/item/lockpickring/mundane, count = 1),
+			cost = 1,
+			max_purchases = 5
+		),
 		"Bag of Coins" = list(
-			list(type = /obj/item/storage/belt/rogue/pouch/coins/rich, count = 1),
+			list(type = /obj/item/storage/belt/rogue/pouch/coins/mid, count = 1),
 			cost = 1,
 			max_purchases = 5
 		)

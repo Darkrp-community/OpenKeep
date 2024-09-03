@@ -60,11 +60,11 @@
 	new /obj/effect/particle_effect/smoke(get_turf(user))
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/shoot_with_empty_chamber(mob/living/user)
-	if(!cocked)
+	if(!cocked || !wound)
 		return
 	playsound(src.loc, 'sound/combat/Ranged/muskclick.ogg', 100, FALSE)
 	cocked = FALSE
-	ramrod_inserted = FALSE // Just in case
+	wound = FALSE
 	update_icon() // Update the icon state after shooting an empty chamber
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/attack_right(mob/user)
@@ -84,15 +84,15 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/rmb_self(mob/user)
 	. = ..()
-	user.changeNext_move(CLICK_CD_RAPID)
+	if(wound)
+		to_chat(user, "<span class='info'>\The [src]'s mechanism is already wound!</span>")
 	var/windtime = 3.5
 	windtime = windtime - (user.mind.get_skill_level(/datum/skill/combat/firearms) / 2)
 	if(do_after(user, windtime SECONDS, TRUE, src) && !wound)
 		to_chat(user, "<span class='info'>I wind \the [src]'s mechanism.</span>")
 		playsound(src.loc, 'sound/foley/winding.ogg', 100, FALSE)
 		wound = TRUE
-	else
-		to_chat(user, "<span class='info'>\The [src]'s mechanism is already wound!</span>")
+		
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/MiddleClick(mob/user, params)
 	. = ..()
@@ -201,5 +201,5 @@
 /obj/item/reagent_containers/glass/bottle/rogue/aflask
 	name = "alchemical flask"
 	desc = "A small metal flask used for the secure storing of alchemical powders."
-	list_reagents = list(/datum/reagent/blastpowder = 45)
+	list_reagents = list(/datum/reagent/blastpowder = 30)
 	icon_state = "aflask"
