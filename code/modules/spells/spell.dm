@@ -680,6 +680,9 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 /obj/effect/proc_holder/spell/self/basic_heal/cast(mob/living/carbon/human/user) //Note the lack of "list/targets" here. Instead, use a "user" var depending on mob requirements.
 	//Also, notice the lack of a "for()" statement that looks through the targets. This is, again, because the spell can only have a single target.
 	var/mob/living/carbon/C = user
+	if(C.patron == /datum/patron/godless)
+		user.visible_message("<span class='warning'>No Gods answer these prayers.</span>", "<span class='notice'>No Gods answer these prayers.</span>")
+		return
 	if(C.real_name in GLOB.excommunicated_players)
 		user.visible_message("<span class='warning'>The angry Gods sears [user]s flesh, blasphemer, heretic!</span>", "<span class='notice'>I am despised by the Gods, rejected, and they remind me with a wave of pain just how unlovable I am!</span>")
 		user.emote("scream")
