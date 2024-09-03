@@ -6,9 +6,8 @@
 	name = "shovel"
 	desc = ""
 	icon_state = "shovel"
-	icon = 'icons/roguetown/weapons/tools.dmi'
+	icon = 'icons/roguetown/farming/farmtools.dmi'
 	sharpness = IS_BLUNT
-//	dropshrink = 0.9
 	wdefense = 1
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
@@ -21,6 +20,7 @@
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
 	max_blade_int = 50
+	dropshrink = 0.9
 
 /obj/item/rogueweapon/shovel/Destroy()
 	if(heldclod)
@@ -183,15 +183,14 @@
 	possible_item_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel)
 	name = "spade"
 	icon_state = "spade"
-	icon = 'icons/roguetown/weapons/tools.dmi'
 	bigboy = FALSE
 	sharpness = IS_BLUNT
-//	dropshrink = 0.8
 	gripped_intents = null
 	wlength = WLENGTH_SHORT
 	slot_flags = ITEM_SLOT_HIP
 	w_class = WEIGHT_CLASS_NORMAL
 	max_blade_int = 0
+	dropshrink = 1
 
 /obj/item/rogueweapon/shovel/small/getonmobprop(tag)
 	. = ..()

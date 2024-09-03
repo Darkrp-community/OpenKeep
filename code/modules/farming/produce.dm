@@ -102,7 +102,7 @@
 	worn_x_dimension = 64
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	worn_y_dimension = 64
-	rotprocess = 20 MINUTES
+	rotprocess = SHELFLIFE_DECENT
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/cider
 	var/equippedloc = null
@@ -215,7 +215,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
 	tastes = list("sweet" = 1,"bitterness" = 1)
 	eat_effect = /datum/status_effect/debuff/badmeal
-	rotprocess = 15 MINUTES
+	rotprocess = SHELFLIFE_LONG
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
 	seed = /obj/item/seeds/pipeweed
@@ -229,7 +229,7 @@
 	list_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
 	grind_results = list(/datum/reagent/drug/nicotine = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
-	rotprocess = 15 MINUTES
+	rotprocess = SHELFLIFE_LONG
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry
 	seed = null
@@ -287,6 +287,7 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/onion
 	chopping_sound = TRUE
 	dropshrink = 0.9
+	rotprocess = SHELFLIFE_LONG
 
 /obj/item/reagent_containers/food/snacks/grown/onion/slice(accuracy, obj/item/W, mob/user)
 	var/datum/effect_system/smoke_spread/transparent/S = new	//Since the onion is destroyed when it's sliced,

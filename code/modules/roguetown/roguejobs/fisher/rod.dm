@@ -4,7 +4,7 @@
 	name = "fishing rod"
 	desc = ""
 	icon_state = "rod"
-	icon = 'icons/roguetown/weapons/tools.dmi'
+	icon = 'icons/roguetown/farming/farmtools.dmi'
 	sharpness = IS_BLUNT
 	wlength = 33
 	var/obj/item/baited = null
