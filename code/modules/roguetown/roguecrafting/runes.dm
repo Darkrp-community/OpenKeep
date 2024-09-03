@@ -50,7 +50,6 @@
 //Spells
 /obj/item/rune/spell
 	name = "rune"
-	dropshrink = 0.3
 	pages_to_mastery = 3
 	var/spell
 	var/spellname = "no spell"
