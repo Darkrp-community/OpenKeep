@@ -152,8 +152,11 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 			pick_cultist()
 			log_game("Major Antagonist: Cultists")
 		if(3)
-			pick_vampires()
-			log_game("Major Antagonist: Vampire Lord")
+			if(num_players() >= 14) //as in 14 roundstart-ready players 
+				pick_vampires()
+				log_game("Major Antagonist: Vampire Lord")
+			else
+				log_game("Major Antagonist: Extended")
 	minor_modes = shuffle(minor_modes)
 	for(var/m in minor_modes)
 		switch(m)

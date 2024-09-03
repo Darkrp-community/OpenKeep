@@ -23,7 +23,7 @@
 
 	display_order = JDO_PRIEST
 	give_bank_account = 115
-	min_pq = -4
+	min_pq = 0
 	selection_color = "#c2a45d"
 
 /datum/outfit/job/roguetown/priest/pre_equip(mob/living/carbon/human/H)
@@ -45,7 +45,7 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/holy, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) // Privilege of being the SECOND biggest target in the game, and arguably the worse of the two targets to lose

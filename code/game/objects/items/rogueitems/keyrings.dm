@@ -252,7 +252,7 @@
 	keys = list(/obj/item/roguekey/archive, /obj/item/roguekey/manor)
 
 /obj/item/keyring/merchant
-	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/merchant)
+	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/merchant, /obj/item/roguekey/mercenary)
 
 /obj/item/keyring/stevedore
 	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/warehouse)
