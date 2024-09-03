@@ -1719,20 +1719,6 @@
 	name = "Exotic Seeds Crate"
 	desc = ""
 	cost = 1500
-	contains = list(/obj/item/seeds/nettle,
-					/obj/item/seeds/replicapod,
-					/obj/item/seeds/replicapod,
-					/obj/item/seeds/replicapod,
-					/obj/item/seeds/plump,
-					/obj/item/seeds/liberty,
-					/obj/item/seeds/amanita,
-					/obj/item/seeds/reishi,
-					/obj/item/seeds/bamboo,
-					/obj/item/seeds/eggplant/eggy,
-					/obj/item/seeds/rainbow_bunch,
-					/obj/item/seeds/rainbow_bunch,
-					/obj/item/seeds/random,
-					/obj/item/seeds/random)
 	crate_name = "exotic seeds crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 

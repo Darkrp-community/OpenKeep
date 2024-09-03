@@ -45,7 +45,7 @@
 			new /obj/item/vending_refill/sovietsoda(src)
 			new /obj/item/circuitboard/machine/vending(src)
 		if(31 to 35)
-			new /obj/item/seeds/firelemon(src)
+			new /obj/item/poster/random_contraband(src)
 		if(36 to 40)
 			new /obj/item/toy/snappop/phoenix(src)
 			new /obj/item/toy/snappop/phoenix(src)
@@ -55,7 +55,7 @@
 		if(41 to 45)
 			new /obj/item/pda/clear(src)
 		if(46 to 50)
-			new /obj/item/storage/box/syndie_kit/chameleon/broken
+			new /obj/item/pda/clear(src)
 		if(51 to 52) // 2% chance
 			new /obj/item/melee/classic_baton(src)
 		if(53 to 54)

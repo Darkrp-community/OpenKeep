@@ -18,12 +18,6 @@
 	name = "seed vault seeds"
 	lootcount = 1
 
-	loot = list(/obj/item/seeds/gatfruit = 10,
-				/obj/item/seeds/cherry/bomb = 10,
-				/obj/item/seeds/berry/glow = 10,
-//				/obj/item/seeds/sunflower/moonflower = 8
-				)
-
 //Free Golems
 
 /obj/item/disk/design_disk/golem_shell

@@ -2,19 +2,13 @@
 // Here's all the seeds (plants) that can be used in hydro
 // ********************************************************
 
-/obj/item/reagent_containers/food/snacks/grown/citrus
-
-/obj/item/reagent_containers/food/snacks/grown/chili
-
 /obj/item/reagent_containers/food/snacks/grown/nettle
 /obj/item/reagent_containers/food/snacks/grown/nettle/death
-/obj/item/reagent_containers/food/snacks/grown/kudzupod
 
 /obj/item/reagent_containers/food/snacks/grown/tomato
 /obj/item/reagent_containers/food/snacks/grown/tomato/blue
 /obj/item/reagent_containers/food/snacks/grown/tomato/blue/bluespace
 
-/obj/item/reagent_containers/food/snacks/grown/koibeans
 /obj/item/reagent_containers/food/snacks/grown/banana
 /obj/item/reagent_containers/food/snacks/grown/banana/bluespace
 
@@ -28,47 +22,22 @@
 /obj/item/reagent_containers/food/snacks/grown/cannabis/white
 /obj/item/reagent_containers/food/snacks/grown/cannabis/death
 
-/obj/item/reagent_containers/food/snacks/grown/watermelon
+/obj/item/seeds/random
 
-/obj/item/seeds/nettle
-/obj/item/seeds/replicapod
-/obj/item/seeds/replicapod
-/obj/item/seeds/replicapod
-/obj/item/seeds/bamboo
-/obj/item/seeds/eggplant/eggy
-/obj/item/seeds/rainbow_bunch
-/obj/item/seeds/rainbow_bunch
-/obj/item/seeds/random
-/obj/item/seeds/random
-/obj/item/seeds/chili
-/obj/item/seeds/cotton
-/obj/item/seeds/corn
-/obj/item/seeds/soya
-/obj/item/seeds/sugarcane
 /obj/item/vending_refill/hydroseeds
-/obj/item/reagent_containers/food/snacks/grown/cannabis
 /obj/item/reagent_containers/food/snacks/grown/cannabis/rainbow
 /obj/item/reagent_containers/food/snacks/grown/cannabis/white
 
 /obj/machinery/crop
-/obj/item/seeds/banana/bluespace
-/obj/item/seeds/banana
 /obj/item/seeds/tower
-/obj/item/seeds/starthistle
-/obj/item/seeds/nettle/death
-/obj/item/seeds/kudzu
+
 /datum/plant_gene/reagent/polypyr
 /datum/plant_gene/reagent/liquidelectricity
 /datum/plant_gene/trait/plant_type/carnivory
-/obj/item/seeds/gatfruit
-/obj/item/seeds/cherry/bomb
-/obj/item/reagent_containers/food/snacks/grown/cherry_bomb
-/obj/item/reagent_containers/food/snacks/grown/firelemon
+
 /obj/item/disk/plantgene
 /obj/item/reagent_containers/food/snacks/grown/cocoapod
 /obj/item/reagent_containers/food/snacks/grown/vanillapod
-/obj/item/reagent_containers/food/snacks/grown/cocoapod
-/obj/item/reagent_containers/food/snacks/grown/cocoapod
 /obj/machinery/plantgenes
 /obj/machinery/seed_extractor
 /obj/item/grown/corncob
@@ -80,7 +49,6 @@
 /datum/crafting_recipe/food/vanillacake
 /datum/plant_gene/trait/plant_type/fungal_metabolism
 /datum/plant_gene/core/yield
-/obj/item/seeds/firelemon
 /datum/plant_gene/trait/plant_type/weed_hardy
 /datum/plant_gene/trait/repeated_harvest
 /obj/structure/punji_sticks

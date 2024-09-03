@@ -77,7 +77,7 @@
 
 /datum/plant_def/pipeweed
 	name = "westleach leaf"
-	icon_state = "tobacco"
+	icon_state = "westleach"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
 
 /datum/plant_def/sweetleaf
@@ -141,7 +141,7 @@
 /datum/plant_def/sunflower
 	name = "sunflowers"
 	icon_state = "sunflower"
-	produce_type = /obj/item/reagent_containers/food/snacks/grown/potato
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/sunflower
 	produce_amount_min = 2
 	produce_amount_max = 4
 	maturation_nutrition = 25

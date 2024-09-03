@@ -10,17 +10,6 @@
 	juice_results = list(/datum/reagent/consumable/berryjuice = 0)
 	tastes = list("berry" = 1)
 
-// Poison Berries
-/obj/item/seeds/berry/poison
-	name = "pack of poison-berry seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "poisonberry"
-	plantname = "Poison-Berry Bush"
-	product = /obj/item/reagent_containers/food/snacks/grown/berries/poison
-	reagents_add = list(/datum/reagent/toxin/cyanide = 0.15, /datum/reagent/toxin/staminatoxin = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
-	rarity = 10 // Mildly poisonous berries are common in reality
-
 /obj/item/reagent_containers/food/snacks/grown/berries/poison
 //	seed = /obj/item/seeds/berry/poison
 	name = "bunch of poison-berries"
@@ -43,21 +32,6 @@
 	tastes = list("death-berry" = 1)
 	distill_reagent = null
 	//wine_power = 50
-
-// Glow Berries
-/obj/item/seeds/berry/glow
-	name = "pack of glow-berry seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "glowberry"
-	plantname = "Glow-Berry Bush"
-	product = /obj/item/reagent_containers/food/snacks/grown/berries/glow
-	lifespan = 30
-	endurance = 25
-	mutatelist = list()
-//	genes = list(/datum/plant_gene/trait/glow/white, /datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list(/datum/reagent/uranium = 0.25, /datum/reagent/iodine = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
-	rarity = 20
 
 /obj/item/reagent_containers/food/snacks/grown/berries/glow
 //	seed = /obj/item/seeds/berry/glow
@@ -107,26 +81,6 @@
 	grind_results = list(/datum/reagent/consumable/cherryjelly = 0)
 	tastes = list("cherry" = 1)
 	//wine_power = 50
-
-// Grapes
-/obj/item/seeds/grape
-	name = "pack of grape seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "grape"
-	plantname = "Grape Vine"
-	product = /obj/item/reagent_containers/food/snacks/grown/grapes
-	lifespan = 50
-	endurance = 25
-	maturation = 3
-	production = 5
-	yield = 4
-	growthstages = 2
-	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
-	icon_grow = "grape-grow"
-	icon_dead = "grape-dead"
-//	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1, /datum/reagent/consumable/sugar = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/grapes
 //	seed = /obj/item/seeds/grape

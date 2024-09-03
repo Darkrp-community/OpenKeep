@@ -1,14 +1,3 @@
-// Citrus - base type
-/obj/item/reagent_containers/food/snacks/grown/citrus
-//	seed = /obj/item/seeds/lime
-	name = "citrus"
-	desc = ""
-	icon_state = "lime"
-	bitesize_mod = 2
-	foodtype = FRUIT
-	//wine_power = 30
-
-
 
 /obj/item/reagent_containers/food/snacks/grown/firelemon
 //	seed = /obj/item/seeds/firelemon

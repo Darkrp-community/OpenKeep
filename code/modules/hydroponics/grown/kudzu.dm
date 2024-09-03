@@ -99,3 +99,4 @@
 	foodtype = VEGETABLES | GROSS
 	tastes = list("kudzu" = 1)
 	//wine_power = 20
+

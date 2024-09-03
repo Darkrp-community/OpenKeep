@@ -351,7 +351,7 @@
 		myseed = null
 	else
 		oldPlantName = "empty tray"
-	switch(rand(1,18))		// randomly pick predominative weed
+/*	switch(rand(1,18))		// randomly pick predominative weed
 		if(16 to 18)
 			myseed = new /obj/item/seeds/reishi(src)
 		if(14 to 15)
@@ -367,7 +367,7 @@
 		if(4 to 5)
 			myseed = new /obj/item/seeds/plump(src)
 		else
-			myseed = new /obj/item/seeds/starthistle(src)
+			myseed = new /obj/item/seeds/starthistle(src) */
 	age = 0
 //	plant_health = myseed.endurance
 	lastcycle = world.time
@@ -427,8 +427,8 @@
 		if(myseed)
 			qdel(myseed)
 			myseed = null
-		var/newWeed = pick(/obj/item/seeds/liberty, /obj/item/seeds/angel, /obj/item/seeds/nettle/death, /obj/item/seeds/kudzu)
-		myseed = new newWeed
+//		var/newWeed = pick(/obj/item/seeds/liberty, /obj/item/seeds/angel, /obj/item/seeds/nettle/death, /obj/item/seeds/kudzu)
+//		myseed = new newWeed
 		dead = 0
 		hardmutate()
 		age = 0
@@ -778,8 +778,8 @@
 
 	else if(istype(O, /obj/item/seeds) && !istype(O, /obj/item/seeds/sample))
 		if(!myseed)
-			if(istype(O, /obj/item/seeds/kudzu))
-				investigate_log("had Kudzu planted in it by [key_name(user)] at [AREACOORD(src)]","kudzu")
+//			if(istype(O, /obj/item/seeds/kudzu))
+//				investigate_log("had Kudzu planted in it by [key_name(user)] at [AREACOORD(src)]","kudzu")
 			if(!user.transferItemToLoc(O, src))
 				return
 			to_chat(user, "<span class='notice'>I plant [O].</span>")
@@ -891,12 +891,12 @@
 /obj/machinery/hydroponics/proc/update_tray(mob/user)
 	harvest = 0
 	lastproduce = age
-	if(istype(myseed, /obj/item/seeds/replicapod))
-		to_chat(user, "<span class='notice'>I harvest from the [myseed.plantname].</span>")
-	else if(myseed.getYield() <= 0)
-		to_chat(user, "<span class='warning'>I fail to harvest anything useful!</span>")
-	else
-		to_chat(user, "<span class='notice'>I harvest [myseed.getYield()] items from the [myseed.plantname].</span>")
+//	if(istype(myseed, /obj/item/seeds/replicapod))
+//		to_chat(user, "<span class='notice'>I harvest from the [myseed.plantname].</span>")
+//	else if(myseed.getYield() <= 0)
+//		to_chat(user, "<span class='warning'>I fail to harvest anything useful!</span>")
+//	else
+//		to_chat(user, "<span class='notice'>I harvest [myseed.getYield()] items from the [myseed.plantname].</span>")
 	if(!myseed.get_gene(/datum/plant_gene/trait/repeated_harvest))
 		qdel(myseed)
 		myseed = null

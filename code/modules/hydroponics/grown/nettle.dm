@@ -1,32 +1,3 @@
-/obj/item/seeds/nettle
-	name = "pack of nettle seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "nettle"
-	plantname = "Nettles"
-	product = /obj/item/reagent_containers/food/snacks/grown/nettle
-	lifespan = 30
-	endurance = 40 // tuff like a toiger
-	yield = 4
-	growthstages = 5
-//	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/plant_type/weed_hardy)
-	mutatelist = list(/obj/item/seeds/nettle/death)
-	reagents_add = list(/datum/reagent/toxin/acid = 0.5)
-
-/obj/item/seeds/nettle/death
-	name = "pack of death-nettle seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "deathnettle"
-	plantname = "Death Nettles"
-	product = /obj/item/reagent_containers/food/snacks/grown/nettle/death
-	endurance = 25
-	maturation = 8
-	yield = 2
-//	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/plant_type/weed_hardy, /datum/plant_gene/trait/stinging)
-	mutatelist = list()
-	reagents_add = list(/datum/reagent/toxin/acid/fluacid = 0.5, /datum/reagent/toxin/acid = 0.5)
-	rarity = 20
 
 /obj/item/reagent_containers/food/snacks/grown/nettle // "snack"
 //	seed = /obj/item/seeds/nettle
