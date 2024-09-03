@@ -30,7 +30,7 @@
 /client/verb/rules()
 	set name = "rules"
 	set desc = ""
-	set hidden = 1
+	set category = "Memory"
 	var/rulesurl = CONFIG_GET(string/rulesurl)
 	if(rulesurl)
 		if(alert("This will open the rules in your browser. Are you sure?",,"Yes","No")!="Yes")
