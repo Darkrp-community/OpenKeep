@@ -143,13 +143,13 @@
 	sellprice = 6
 
 /datum/crafting_recipe/roguetown/spoon
-	name = "spoon"
+	name = "wooden spoon"
 	result = list(/obj/item/kitchen/spoon,
 				/obj/item/kitchen/spoon)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
 /datum/crafting_recipe/roguetown/rollingpin
-	name = "rollingpin"
+	name = "wooden rollingpin"
 	result = /obj/item/kitchen/rollingpin
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
