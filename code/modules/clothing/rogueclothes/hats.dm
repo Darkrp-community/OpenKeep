@@ -442,10 +442,10 @@
 	will_hide = HIDEEARS
 	max_integrity = 250 // Covers less, so less overall integrity
 
-/obj/item/clothing/head/roguetown/helmet/grenzelhoftkettle
+/obj/item/clothing/head/roguetown/helmet/slitkettle
 	name = "kettle helm"
 	desc = "A helmet with slits for peeping, a good choice for the paranoid."
-	icon_state = "grenzkettle"
+	icon_state = "slitkettle"
 	will_cover = HEAD|HAIR
 	will_hide = HIDEEARS
 	max_integrity = 250
@@ -633,7 +633,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	block2add = FOV_RIGHT|FOV_LEFT
-	smeltresult = /obj/item/ingot/steel
+	smeltresult = /obj/item/ingot/gold
 	//dropshrink = 0.75	
 
 /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
@@ -1040,8 +1040,8 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_STAB) // Stab protection out of having faceplate
 	block2add = FOV_RIGHT|FOV_LEFT // Unremovable visor.
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	icon_state = "winghornhelm"
-	item_state = "winghornhelm"
+	icon_state = "totodhelm"
+	item_state = "totodhelm"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_x_dimension = 64
 	worn_y_dimension = 64
@@ -1062,3 +1062,123 @@
 	will_cover = HEAD|HAIR|NOSE|EARS
 	flags_inv = HIDEEARS
 	smeltresult = /obj/item/ingot/iron
+
+/obj/item/clothing/head/roguetown/helmet/heavy/bloodbarohelm
+	name = "blood baro helmet"
+	desc = "An immovable bulkwark of protection for the head of the faithful. Antiquated and impractical, but offering incredible defense."
+	icon_state = "bloodbarohelm"
+	item_state = "bloodbarohelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	armor = list("melee" = 90, "bullet" = 90, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // Stab immunity as a treat for low FOV
+	block2add = FOV_RIGHT|FOV_LEFT
+	smeltresult = /obj/item/ingot/steel
+	sellprice = 60
+
+/obj/item/clothing/head/roguetown/tarbpil
+	name = "tarbpil"
+	desc = "A brimless cap usually made of felt or hide, favored among the working class of the Zybantu peoples. Hatters tend to compete with one another to sow the tallest tarbpil with varying designs and qualities."
+	icon_state = "tarbpil"
+	item_state = "tarbpil"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	//dropshrink = 0.75	
+
+/obj/item/clothing/head/roguetown/xylixhood
+	name = "xylixean sack"
+	desc = "It smells of spit, sweat and anguish, you can't ever seem to find the eyeholes on this thing."
+	icon_state = "tricksterhood"
+	item_state = "tricksterhood"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	dynamic_hair_suffix = ""
+	//dropshrink = 0.75	
+
+/obj/item/clothing/head/roguetown/helmet/trimmedhelm
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	name = "trimmed iron helmet"
+	max_integrity = 250//isn't the same as a steel helmet but is better than a skullcap
+	armor = list("melee" = 50, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	icon_state = "boghelm"
+	item_state = "boghelm"
+	desc = "A simple iron helmet with a decorative trim."
+	will_cover = HEAD|EARS
+	flags_inv = HIDEEARS
+	smeltresult = /obj/item/ingot/iron
+
+/obj/item/clothing/head/roguetown/helmet/northernhelm
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	name = "narvali pothelm"
+	max_integrity = 250
+	armor = list("melee" = 50, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	icon_state = "northhelm"
+	item_state = "northhelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	desc = "A standard pothelm of the Narvali lands, a standard among experienced and novice warriors - a crude yet effective helmet for a crude yet effective people."
+	will_cover = HEAD|EARS|NOSE
+	smeltresult = /obj/item/ingot/iron
+
+/obj/item/clothing/head/roguetown/helmet/heavy/grenzelhounskull
+	name = "grenzelhoft plumed helm"
+	desc = "A stained plume helm, styled in typical Grenzelhoftian black."
+	icon_state = "grenzkhelm"
+	item_state = "grenzkhelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	block2add = FOV_RIGHT|FOV_LEFT
+	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/head/roguetown/helmet/heavy/sinistarhelm
+	name = "sinistar's helm"
+	desc = "Rusty, stained, jagged, ominous. It bears a sinister smile."
+	icon_state = "sinistarhelm"
+	item_state = "sinistarhelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	block2add = FOV_RIGHT|FOV_LEFT
+	smeltresult = /obj/item/ingot/steel
+	//dropshrink = 0.75	
+
+/obj/item/clothing/head/roguetown/helmet/heavy/beakhelm
+	name = "beak helm"
+	desc = "A curious helmet in the shape of an eagle's head - there seems to be a lock on it."
+	icon_state = "beakhelm"
+	item_state = "beakhelm"
+	emote_environment = 3
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	flags_inv = HIDEEARS|HIDEHAIR
+	block2add = FOV_RIGHT|FOV_LEFT
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/fanatichood
+	name = "psydonic hood"
+	desc = "A favored headdress among particularly zealous Grenzelhoftians, from torturers to lamenters."
+	icon_state = "fanatichood"
+	item_state = "fanatichood"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	dynamic_hair_suffix = ""
+	//dropshrink = 0.75		

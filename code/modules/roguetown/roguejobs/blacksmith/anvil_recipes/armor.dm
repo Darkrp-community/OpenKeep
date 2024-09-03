@@ -77,11 +77,11 @@
 	created_item = /obj/item/clothing/head/roguetown/helmet/northernhelm
 	craftdiff = 1
 
-/datum/anvil_recipe/armor/boghelmet
+/datum/anvil_recipe/armor/trimmedhelm
 	name = "Trimmed iron helmet"
 	recipe_name = "a trimmed iron helmet"
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/clothing/head/roguetown/helmet/boghelm
+	created_item = /obj/item/clothing/head/roguetown/helmet/trimmedhelm
 	craftdiff = 1
 
 /datum/anvil_recipe/armor/platemask
@@ -236,7 +236,7 @@
 	name = "Slitted Kettle helmet x2"
 	recipe_name = "a pair of Slitted Kettle Helmets"
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/clothing/head/roguetown/helmet/grenzelhoftkettle
+	created_item = /obj/item/clothing/head/roguetown/helmet/slitkettle
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 2
@@ -264,6 +264,14 @@
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
 	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/hounskull)
+	craftdiff = 4
+
+/datum/anvil_recipe/armor/ghounskull
+	name = "Plumed Grenzelhoft Helm (3)"
+	recipe_name = "a Plumed Grenzelhoft Helmet"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/grenzelhounskull)
 	craftdiff = 4
 
 /datum/anvil_recipe/armor/platefull
@@ -327,3 +335,18 @@
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/sallet)
 	craftdiff = 3
+
+/datum/anvil_recipe/armor/sunhelm
+	name = "Sun helmet (2)"
+	recipe_name = "a Sallet"
+	req_bar = /obj/item/ingot/gold
+	additional_items = list(/obj/item/ingot/gold)
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/sunhelmet
+	craftdiff = 4
+
+/datum/anvil_recipe/armor/beakhelm
+	name = "Beak helmet (2)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/beakhelm)
+	craftdiff = 3	
