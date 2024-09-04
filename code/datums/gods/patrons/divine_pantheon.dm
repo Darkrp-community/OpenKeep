@@ -104,6 +104,6 @@
 	worshippers = "Lovers, Harlots, Doting Grandparents"
 	sins = "Sadism, Celibacy, Ruining beauty"
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/invoked/projectile/eoracurse
-	t2 = /obj/effect/proc_holder/spell/invoked/bud
-	t3 = null
+	t1 = /obj/effect/proc_holder/spell/invoked/bud
+	t2 = /obj/effect/proc_holder/spell/invoked/projectile/eoracurse
+	t3 = /obj/effect/proc_holder/spell/invoked/heal
