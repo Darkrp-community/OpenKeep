@@ -736,17 +736,9 @@
 	name = "Warpaint (Green)"
 	icon_state = "warpaint_green"
 
-/datum/sprite_accessory/detail/warpaint_white
-	name = "Warpaint (White)"
-	icon_state = "warpaint_white"
-
 /datum/sprite_accessory/detail/warpaint_black
 	name = "Warpaint (Black)"
 	icon_state = "warpaint_black"
-
-/datum/sprite_accessory/detail/tattoo_stripe
-	name = "Tattoo (Stripe)"
-	icon_state = "tattoo_stripe"
 
 /datum/sprite_accessory/detail/tattoo_lips
 	name = "Tattoo (Lips)"
