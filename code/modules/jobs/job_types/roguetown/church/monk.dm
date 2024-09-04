@@ -90,7 +90,7 @@
 			neck = /obj/item/clothing/neck/roguetown/psicross/ravox
 			shoes = /obj/item/clothing/shoes/roguetown/shortboots
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe
-			H.change_stat("strength", 3)
+			H.change_stat("strength", 2)
 			H.change_stat("constitution", 2)
 			H.change_stat("speed", 1)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
