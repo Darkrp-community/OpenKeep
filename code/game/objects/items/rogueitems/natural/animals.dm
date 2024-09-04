@@ -21,8 +21,12 @@
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
-	color = "#5c5243"
+	color = "#605c55"
 	sellprice = 5
+
+/obj/item/natural/fur/volf
+	desc = "Fur from a volf."
+	color = "#4b4742"
 
 //RTD make this a storage item and make clickign on animals with things put it in storage
 /obj/item/natural/saddle
