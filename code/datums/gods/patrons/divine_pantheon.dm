@@ -25,7 +25,7 @@
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/blindness
 	t2 = null
-	t3 = null
+	t3 = /obj/effect/proc_holder/spell/invoked/heal
 
 // ............ FORCES ..................
 /datum/patron/divine/dendor
@@ -38,7 +38,7 @@
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/blesscrop
 	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
-	t3 = null
+	t3 = /obj/effect/proc_holder/spell/invoked/heal
 
 /datum/patron/divine/abyssor
 	name = "Abyssor"
@@ -58,6 +58,7 @@
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/churn
+	t3 = /obj/effect/proc_holder/spell/invoked/heal
 
 // ............ SAINTS ..................
 /datum/patron/divine/ravox
@@ -84,7 +85,7 @@
 	worshippers = "Warlocks, The Sick and Alchemists"
 	sins = "´Curing´ abnormalities, Refusing to help the misfortunates, Groveling"
 	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
-	t1 = /obj/effect/proc_holder/spell/invoked/lesser_heal
+	t1 = /obj/effect/proc_holder/spell/invoked/heal
 	t2 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
 	t3 = /obj/effect/proc_holder/spell/invoked/cure_rot
 
