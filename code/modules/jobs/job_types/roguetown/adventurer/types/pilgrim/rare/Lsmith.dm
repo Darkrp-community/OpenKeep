@@ -1,4 +1,4 @@
-//dwarf master smith
+//master smith
 
 /datum/advclass/pilgrim/rare/masterblacksmith
 	name = "Master Blacksmith"
@@ -30,7 +30,7 @@
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/tongs=1, /obj/item/rogueore/coal=1, /obj/item/rogueore/iron=1)
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(0,1,1), TRUE)

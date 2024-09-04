@@ -1,4 +1,4 @@
-//human master fisher
+//human, master fisher
 
 /datum/advclass/pilgrim/rare/fishermaster
 	name = "Master Fisher"
@@ -27,7 +27,7 @@
 		beltl = /obj/item/rogueweapon/huntingknife
 		backpack_contents = list(/obj/item/natural/worms = 2,/obj/item/rogueweapon/shovel/small=1)
 		if(H.mind)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 5, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
@@ -49,7 +49,7 @@
 		beltl = /obj/item/rogueweapon/huntingknife
 		backpack_contents = list(/obj/item/natural/worms = 2,/obj/item/rogueweapon/shovel/small=1)
 		if(H.mind)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 5, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)

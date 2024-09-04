@@ -461,7 +461,7 @@
 	var/togg = FALSE
 
 /obj/structure/bars/grille/Initialize()
-	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/FTMET_A1.ogg','sound/foley/footsteps/FTMET_A2.ogg','sound/foley/footsteps/FTMET_A3.ogg','sound/foley/footsteps/FTMET_A4.ogg'), 100)
+	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/FTMET_A1.ogg','sound/foley/footsteps/FTMET_A2.ogg','sound/foley/footsteps/FTMET_A3.ogg','sound/foley/footsteps/FTMET_A4.ogg'), 40)
 	dir = pick(GLOB.cardinals)
 	return ..()
 
@@ -581,6 +581,10 @@
 	if(get_dir(O.loc, target) == dir)
 		return 0
 	return 1
+
+// Version thats dense. Should honestly be standard?
+/obj/structure/fluff/clock/dense
+	density = TRUE
 
 /obj/structure/fluff/wallclock
 	name = "clock"
@@ -943,7 +947,7 @@
 						user.visible_message("<span class='info'>[user] trains on [src]!</span>")
 						var/boon = user.mind.get_learning_boon(W.associated_skill)
 						var/amt2raise = L.STAINT/2
-						if(user.mind.get_skill_level(W.associated_skill) >= 3)
+						if(user.mind.get_skill_level(W.associated_skill) >= 2)
 							to_chat(user, "<span class='warning'>I've learned all I can from doing this, it's time for the real thing.</span>")
 							amt2raise = 0
 						if(amt2raise > 0)
@@ -1000,23 +1004,40 @@
 	if(user.mind)
 		var/datum/antagonist/bandit/B = user.mind.has_antag_datum(/datum/antagonist/bandit)
 		if(B)
-			if(istype(W, /obj/item/roguecoin) || istype(W, /obj/item/roguegem))
+			if(istype(W, /obj/item/roguecoin) || istype(W, /obj/item/roguegem) || istype(W, /obj/item/reagent_containers/glass/cup/silver) || istype(W, /obj/item/reagent_containers/glass/cup/golden) || istype(W, /obj/item/clothing/ring) || istype(W, /obj/item/clothing/head/roguetown/crown/circlet) || istype(W, /obj/item/roguestatue))
 				if(B.tri_amt >= 10)
 					to_chat(user, "<span class='warning'>The mouth doesn't open.</span>")
 					return
-				B.contrib += W.get_real_price()
+				if(!istype(W, /obj/item/roguecoin))
+					B.contrib += (W.get_real_price() / 2) //sell jewerly and other fineries, though at a lesser price compared to fencing them first
+				else
+					B.contrib += W.get_real_price()
 				if(B.contrib >= 100)
 					B.tri_amt++
 					user.mind.adjust_triumphs(1)
 					B.contrib -= 100
 					var/obj/item/I
 					switch(B.tri_amt)
+						if(1)
+							I = new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(user.loc)
 						if(2)
-							I = new /obj/item/clothing/suit/roguetown/armor/plate/scale(user.loc)
+							if(HAS_TRAIT(user, TRAIT_MEDIUMARMOR))
+								I = new /obj/item/clothing/suit/roguetown/armor/plate/scale(user.loc)
+							else
+								I = new /obj/item/clothing/suit/roguetown/armor/chainmail/iron(user.loc)
 						if(4)
 							I = new /obj/item/clothing/head/roguetown/helmet/horned(user.loc)
 						if(6)
-							I = new /obj/item/rogueweapon/spear/billhook(user.loc)
+							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2) 
+								I = new /obj/item/rogueweapon/spear/billhook(user.loc)
+							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2) 
+								I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
+							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2) 
+								I = new /obj/item/rogueweapon/sword/long(user.loc)
+							else
+								I = new /obj/item/rogueweapon/mace/steel(user.loc)
+						if(8)
+							I = new /obj/item/clothing/under/roguetown/chainlegs(user.loc)
 					if(I)
 						I.sellprice = 0
 					playsound(loc,'sound/items/carvgood.ogg', 50, TRUE)
@@ -1307,6 +1328,7 @@
 	name = "clockwork golem scrap"
 	desc = ""
 	icon_state = "clockgolem_dead"
+
 
 /obj/structure/fluff/statue/shisha
 	name = "shisha pipe"

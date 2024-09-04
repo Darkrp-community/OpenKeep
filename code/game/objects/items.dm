@@ -1159,7 +1159,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		wielded = FALSE
 		if(force_wielded)
 			force = initial(force)
-		wdefense = initial(wdefense)
+		wdefense = wdefense - 1
 		var/obj/item/twohanded/offhand/O = user.get_inactive_held_item()
 		if(O && istype(O))
 			O.unwield()
@@ -1198,7 +1198,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	wielded = TRUE
 	if(force_wielded)
 		force = force_wielded
-	wdefense = wdefense + 3
+	wdefense = wdefense + 1
 	update_transform()
 	to_chat(user, "<span class='notice'>I wield [src] with both hands.</span>")
 	playsound(loc, pick('sound/combat/weaponr1.ogg','sound/combat/weaponr2.ogg'), 100, TRUE)

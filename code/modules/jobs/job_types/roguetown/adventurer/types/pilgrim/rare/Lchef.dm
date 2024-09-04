@@ -1,15 +1,16 @@
-//human master chef
+//master chef
 
-/datum/advclass/masterchef
+/datum/advclass/pilgrim/rare/masterchef
 	name = "Master Chef"
 	tutorial = "A master chef, one of the best cooks to ever live. \
-	With noble origins, you were taught by cooking masters in the secretive League of Fine Dining in exotic meals from all around the world \
-	Now you wander, free to experiment, cook exotic dishes and gourmet meals, worthy for a king"
+	With noble origins, you were taught by cooking masters in the secretive League of Fine Dining in exotic meals from all around the world. \
+	Now you wander, free to experiment, cook exotic dishes and gourmet meals, worthy for a King."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list("Humen",
+	allowed_races = list(
+	"Humen",
+	"Elf",
 	"Dwarf",
-	"Aasimar",
-	"Elf"
+	"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/masterchef
 
@@ -20,7 +21,7 @@
 /datum/outfit/job/roguetown/adventurer/masterchef/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)

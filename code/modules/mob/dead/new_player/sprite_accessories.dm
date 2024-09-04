@@ -82,6 +82,12 @@
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 	gender = MALE
 
+/datum/sprite_accessory/hair/adventurer
+	name = "Adventurer"
+	icon_state = "adventurer"
+	gender = MALE
+	specuse = list("human")
+
 /datum/sprite_accessory/hair/mohawk
 	name = "Berserker"
 	icon_state = "hair_shavedmohawk"
@@ -115,6 +121,12 @@
 	under_layer = TRUE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 
+/datum/sprite_accessory/hair/dark_knight
+	name = "Dark Knight"
+	icon_state = "dark_knight"
+	gender = MALE
+	specuse = list("human")
+
 /datum/sprite_accessory/hair/thinningrear
 	name = "Dome"
 	icon_state = "hair_thinningrear"
@@ -134,6 +146,12 @@
 	gender = MALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 	under_layer = TRUE
+
+/datum/sprite_accessory/hair/graceful
+	name = "Graceful"
+	icon_state = "graceful"
+	gender = MALE
+	specuse = list("human")
 
 /datum/sprite_accessory/hair/bedhead
 	name = "Helmet Hair"
@@ -170,7 +188,13 @@
 	icon_state = "hair_forelock"
 	gender = MALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
-	
+
+/datum/sprite_accessory/hair/nobility
+	name = "Nobility"
+	icon_state = "noble"
+	gender = MALE
+	specuse = list("human")
+
 /datum/sprite_accessory/hair/noble
 	name = "Noble"
 	icon_state = "hair_business"
@@ -233,7 +257,13 @@
 	icon_state = "hair_gelled"
 	gender = MALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
-	
+
+/datum/sprite_accessory/hair/southern
+	name = "Southern"
+	icon_state = "southern"
+	gender = MALE
+	specuse = list("human")
+
 /datum/sprite_accessory/hair/hair_son
 	name = "Sun"
 	icon_state = "hair_son"
@@ -632,7 +662,7 @@
 	gender = NEUTER
 	icon = 'icons/roguetown/mob/detail.dmi'
 	use_static = TRUE
-	specuse = list("human", "dwarf", "elf")
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 
 /datum/sprite_accessory/detail/nothing
 	name = "Nothing"
