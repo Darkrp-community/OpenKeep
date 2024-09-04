@@ -1,198 +1,193 @@
 /datum/stressevent/viewsinpunish
 	timer = 5 MINUTES
 	stressadd = -2
-	desc = span_green("I saw a sinner get punished!")
+	desc = "<span class='green'>I saw a sinner get punished!</span>"
 
 /datum/stressevent/miasmagasmaniac
 	timer = 10 SECONDS
 	stressadd = -1
-	desc = span_green("It smells like death in here.")
+	desc = "<span class='green'>It smells like death in here.</span>"
 
 /datum/stressevent/viewdeathmaniac
 	timer = 30 SECONDS
 	stressadd = -1
-	desc = span_green("Death. Hehe...")
+	desc = "<span class='green'>Death. Hehe...</span>"
 	
 /datum/stressevent/viewdismembermaniac
 	timer = 2 MINUTES
 	stressadd = -1
-	desc = span_green("I've limbs fly. Hehe...")
+	desc = "<span class='green'>I've limbs fly. Hehe...</span>"
 
 /datum/stressevent/viewgibmaniac
 	timer = 2 MINUTES
 	stressadd = -2
-	desc = span_green("That was amazing! Can someone do it again? I wanna see it again.")
+	desc = "<span class='green'>That was amazing! Can someone do it again? I wanna see it again.</span>"
 
 /datum/stressevent/viewexecution
 	timer = 5 MINUTES
 	stressadd = -2
-	desc = span_green("I saw a lawbreaker get punished!")
+	desc = "<span class='green'>I saw a lawbreaker get punished!</span>"
 
 /datum/stressevent/psyprayer
 	timer = 30 MINUTES
 	stressadd = -2
-	desc = span_green("The Gods smiles upon me.")
+	desc = "<span class='green'>The Gods smiles upon me.</span>"
 
 /datum/stressevent/cumok
 	timer = 5 MINUTES
 	stressadd = -1
-	desc = span_green("I came.")
+	desc = "<span class='green'>I came.</span>"
 
 /datum/stressevent/lovezizo
 	timer = 99999 MINUTES
 	stressadd = -666 // :)
-	desc = span_green("ZIZOZIZOZIZO")
+	desc = "<span class='green'>ZIZOZIZOZIZO</span>"
 
 /datum/stressevent/cummid
 	timer = 5 MINUTES
 	stressadd = -2
-	desc = span_green("I came, and it was great.")
+	desc = "<span class='green'>I came, and it was great.</span>"
 
 /datum/stressevent/cumgood
 	timer = 5 MINUTES
 	stressadd = -3
-	desc = span_green("I came, and it was wonderful.")
+	desc = "<span class='green'>I came, and it was wonderful.</span>"
 
 /datum/stressevent/cummax
 	timer = 5 MINUTES
 	stressadd = -4
-	desc = span_green("I came, and it was incredible.")
+	desc = "<span class='green'>I came, and it was incredible.</span>"
 
 /datum/stressevent/cumlove
 	timer = 5 MINUTES
 	stressadd = -5
-	desc = span_green("I made love.")
+	desc = "<span class='green'>I made love.</span>"
 
 /datum/stressevent/cumpaingood
 	timer = 5 MINUTES
 	stressadd = -5
-	desc = span_green("Pain makes it better.")
+	desc = "<span class='green'>Pain makes it better.</span>"
 
 /datum/stressevent/joke
 	timer = 30 MINUTES
 	stressadd = -5
-	desc = span_green("I heard a good joke.")
+	desc = "<span class='green'>I heard a good joke.</span>"
 
 /datum/stressevent/tragedy
 	timer = 30 MINUTES
 	stressadd = -5
-	desc = span_green("Life isn't so bad after all.")
+	desc = "<span class='green'>Life isn't so bad after all.</span>"
 
 /datum/stressevent/blessed
 	timer = 60 MINUTES
 	stressadd = -5
-	desc = span_green("I feel a soothing.")
+	desc = "<span class='green'>I feel a soothing.</span>"
 
 /datum/stressevent/triumph
 	timer = 60 MINUTES
 	stressadd = -10
-	desc = span_green("I remember a TRIUMPH.")
+	desc = "<span class='green'>I remember a TRIUMPH.</span>"
 
 /datum/stressevent/drunk
 	timer = 999 MINUTES
 	stressadd = -1
-	desc = list(span_green("Alcohol eases the pain."),span_green("Alcohol, my true friend."))
+	desc = list("<span class='green'>Alcohol eases the pain.</span>","<span class='green'>Alcohol, my true friend.</span>")
 
 /datum/stressevent/pweed
 	timer = 1 MINUTES
 	stressadd = -1
-	desc = list(span_green("A relaxing smoke."),span_green("A flavorful smoke."))
+	desc = list("<span class='green'>A relaxing smoke.</span>","<span class='green'>A flavorful smoke.</span>")
 
 /datum/stressevent/weed
 	timer = 999 MINUTES
 	stressadd = -4
-	desc = span_blue("I love you sweet leaf.")
+	desc = "<span class='blue'>I love you sweet leaf.</span>"
 
 /datum/stressevent/high
 	timer = 999 MINUTES
 	stressadd = -4
-	desc = span_blue("I'm so high, don't take away my sky.")
+	desc = "<span class='blue'>I'm so high, don't take away my sky.</span>"
 
 /datum/stressevent/hug
 	timer = 30 MINUTES
 	stressadd = -1
-	desc = span_green("Somebody gave me a nice hug.")
+	desc = "<span class='green'>Somebody gave me a nice hug.</span>"
 
 /datum/stressevent/stuffed
 	timer = 20 MINUTES
 	stressadd = -3
-	desc = span_green("I'm stuffed! Feels good.")
+	desc = "<span class='green'>I'm stuffed! Feels good.</span>"
 
 /datum/stressevent/goodfood
 	timer = 10 MINUTES
 	stressadd = -2
-	desc = list(span_green("A meal fit for a god!"),span_green("Delicious!"))
+	desc = list("<span class='green'>A meal fit for a god!</span>","<span class='green'>Delicious!</span>")
 
 /datum/stressevent/prebel
 	timer = 5 MINUTES
 	stressadd = -5
-	desc = span_green("Down with the tyranny!")
+	desc = "<span class='green'>Down with the tyranny!</span>"
 
 /datum/stressevent/music
 	timer = 1 MINUTES
 	stressadd = -1
-	desc = span_green("The music is relaxing.")
+	desc = "<span class='green'>The music is relaxing.</span>"
 
 /datum/stressevent/music/two
 	stressadd = -2
-	desc = span_green("The music is very relaxing.")
+	desc = "<span class='green'>The music is very relaxing.</span>"
 
 /datum/stressevent/music/three
 	stressadd = -3
-	desc = span_green("The music saps my stress.")
+	desc = "<span class='green'>The music saps my stress.</span>"
 
 /datum/stressevent/music/four
 	stressadd = -4
-	desc = span_green("The music is heavenly.")
+	desc = "<span class='green'>The music is heavenly.</span>"
 	timer = 10 MINUTES
 
 /datum/stressevent/music/five
 	stressadd = -5
 	timer = 10 MINUTES
-	desc = span_green("The music is strummed by an angel.")
+	desc = "<span class='green'>The music is strummed by an angel.</span>"
 
 /datum/stressevent/music/six
 	stressadd = -6
 	timer = 10 MINUTES
-	desc = span_green("The music is a blessing from Xylix.")
+	desc = "<span class='green'>The music is a blessing from Xylix.</span>"
 
 // Bard buffs below
 
 /datum/stressevent/bardicbuff
 	timer = 1 MINUTES
-	desc = span_nicegreen("Bardic inspiration moves mine soul even more!\n")
+	desc = "<span class='nicegreen'>Bardic inspiration moves mine soul even more!</span>\n"
 	stressadd = -2
 	timer = 10 MINUTES
 
 /datum/stressevent/vblood
 	stressadd = -5
-	desc = span_bold("Virgin blood!")
+	desc = "<span class='boldred'>Virgin blood!</span>"
 	timer = 5 MINUTES
 
 /datum/stressevent/bathwater
 	stressadd = -1
-	desc = span_blue("Relaxing.")
+	desc = "<span class='blue'>Relaxing.</span>"
 	timer = 1 MINUTES
 
 /datum/stressevent/ozium
 	stressadd = -99
-	desc = span_blue("I've taken a hit and entered a painless world.")
+	desc = "<span class='blue'>I've taken a hit and entered a painless world.</span>"
 	timer = 999 MINUTES
 
 /datum/stressevent/moondust
 	stressadd = -5
-	desc = span_green("Moondust surges through me.")
+	desc = "<span class='green'>Moondust surges through me.</span>"
 	timer = 2 MINUTES
 
 /datum/stressevent/moondust_purest
 	stressadd = -6
-	desc = span_green("PUREST moondust surges through me!")
+	desc = "<span class='green'>PUREST moondust surges through me!</span>"
 
 /datum/stressevent/calm
 	stressadd = -3
-	desc = span_green("I feel soothed and calm.")
-
-/datum/stressevent/perfume
-	stressadd = -1
-	desc = span_green("A soothing fragrance envelops me.")
-	timer = 10 MINUTES
+	desc = "<span class='green'>I feel soothed and calm.</span>"

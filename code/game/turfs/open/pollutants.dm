@@ -100,7 +100,7 @@
 
 /datum/pollutant
 	var/reagents_on_breathe = list() //list(/datum/reagent/water = 3)
-	color = "#ffffff"
+	var/color = "#ffffff"
 	var/amt = 0
 
 /datum/pollutant/rot
