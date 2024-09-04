@@ -149,12 +149,12 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
 /datum/crafting_recipe/roguetown/rollingpin
-	name = "wood rollingpin"
+	name = "wooden rollingpin"
 	result = /obj/item/kitchen/rollingpin
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
 /datum/crafting_recipe/roguetown/woodbucket
-	name = "wood bucket"
+	name = "wooden bucket"
 	result = /obj/item/reagent_containers/glass/bucket/wooden
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
@@ -164,6 +164,7 @@
 				/obj/item/reagent_containers/glass/bowl)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
+
 /datum/crafting_recipe/roguetown/woodcup
 	name = "wooden cups"
 	result = list(/obj/item/reagent_containers/glass/cup/wooden/crafted,
@@ -171,30 +172,8 @@
 				/obj/item/reagent_containers/glass/cup/wooden/crafted)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
-/datum/crafting_recipe/roguetown/woodplatter
-	name = "wood platters (x2)"
-	result = list(/obj/item/cooking/platter,
-				/obj/item/cooking/platter)
-	reqs = list(/obj/item/grown/log/tree/small = 1)
-
 /obj/item/reagent_containers/glass/cup/wooden/crafted
 	sellprice = 3
-
-/datum/crafting_recipe/roguetown/pipe
-	name = "wood pipe"
-	result = /obj/item/clothing/mask/cigarette/pipe/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1)
-
-/obj/item/clothing/mask/cigarette/pipe/crafted
-	sellprice = 6
-
-/datum/crafting_recipe/roguetown/woodspade
-	name = "wood spade"
-	result = /obj/item/rogueweapon/shovel/small
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-			/obj/item/grown/log/tree/stick = 1)
-/obj/item/rogueweapon/shovel/small/crafted
-	sellprice = 5
 
 /datum/crafting_recipe/roguetown/mortar
 	name = "stone mortar"
@@ -223,12 +202,6 @@
 
 /obj/item/storage/roguebag/crafted
 	sellprice = 4
-
-/datum/crafting_recipe/roguetown/basket_wicker
-	name = "basket (wicker)"
-	result = /obj/structure/closet/crate/chest/wicker
-	reqs = list(/obj/item/natural/fibers = 4)
-	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/bait
 	name = "bait"
@@ -262,6 +235,20 @@
 	req_table = FALSE
 	subtype_reqs = TRUE
 
+/datum/crafting_recipe/roguetown/woodplatter
+	name = "wood platters (x2)"
+	result = list(/obj/item/cooking/platter,
+				/obj/item/cooking/platter)
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+
+/datum/crafting_recipe/roguetown/pipe
+	name = "wood pipe"
+	result = /obj/item/clothing/mask/cigarette/pipe/crafted
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+
+/obj/item/clothing/mask/cigarette/pipe/crafted
+	sellprice = 6
+
 /datum/crafting_recipe/roguetown/rod
 	name = "fishing rod"
 	result = /obj/item/fishingrod/crafted
@@ -270,6 +257,20 @@
 
 /obj/item/fishingrod/crafted
 	sellprice = 8
+
+/datum/crafting_recipe/roguetown/woodspade
+	name = "wood spade"
+	result = /obj/item/rogueweapon/shovel/small
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+			/obj/item/grown/log/tree/stick = 1)
+/obj/item/rogueweapon/shovel/small/crafted
+	sellprice = 5
+
+/datum/crafting_recipe/roguetown/basket_wicker
+	name = "basket (wicker)"
+	result = /obj/structure/closet/crate/chest/wicker
+	reqs = list(/obj/item/natural/fibers = 4)
+	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/book_crafting_kit
 	name = "book crafting kit"

@@ -206,4 +206,4 @@
 	recipe_name = "a cooking pot"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/reagent_containers/glass/bucket/pot
-	craftdiff = 0
+	craftdiff = 1
