@@ -287,8 +287,8 @@
 
 	contents += "</center><BR>"
 
-/*
 	var/list/unlocked_cats = list("Apparel","Armor","Consumable","Luxury","Tools","Seeds","Weapons")
+/*
 	if(upgrade_flags & UPGRADE_ARMOR)
 		unlocked_cats+="Armor"
 	if(upgrade_flags & UPGRADE_WEAPONS)
