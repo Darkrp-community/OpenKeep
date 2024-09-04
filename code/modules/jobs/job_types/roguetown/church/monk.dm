@@ -34,6 +34,22 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/roguekey/church
 	backl = /obj/item/rogueweapon/woodstaff
+
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE) // They get this and a wooden staff to defend themselves
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
+		if(H.age == AGE_OLD)
+			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
+		H.change_stat("intelligence", 1)
+		H.change_stat("endurance", 2) // For casting lots of spells, and working long hours without sleep at the church
+		H.change_stat("perception", -1)
+
 	switch(A.name)
 		if("Astrata")
 			head = /obj/item/clothing/head/roguetown/roguehood/astrata
@@ -45,6 +61,7 @@
 			head = /obj/item/clothing/head/roguetown/dendormask
 			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
+			H.ambushable = FALSE
 		if("Necra")
 			head = /obj/item/clothing/head/roguetown/necrahood
 			neck = /obj/item/clothing/neck/roguetown/psicross/necra
@@ -62,20 +79,30 @@
 			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
-	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE) // They get this and a wooden staff to defend themselves
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
-		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-		H.change_stat("intelligence", 1)
-		H.change_stat("endurance", 2) // For casting lots of spells, and working long hours without sleep at the church
-		H.change_stat("perception", -1)
+		if("Pestra")
+			head = /obj/item/clothing/head/roguetown/roguehood
+			neck = /obj/item/clothing/neck/roguetown/psicross/pestra
+			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/green
+			shoes = /obj/item/clothing/shoes/roguetown/sandals
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
+		if("Ravox") //rockhill's weakest asskicker
+			head = /obj/item/clothing/head/roguetown/roguehood
+			neck = /obj/item/clothing/neck/roguetown/psicross/ravox
+			shoes = /obj/item/clothing/shoes/roguetown/shortboots
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe
+			H.change_stat("strength", 3)
+			H.change_stat("constitution", 2)
+			H.change_stat("speed", 1)
+			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
+			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+		if("Xylix") //its not playable yet, leaving this on the backburner for now, framework is just here until spritework for xylix acolytes is acquired, 9/4/2024
+			head = /obj/item/clothing/head/roguetown/menacing
+			neck = null
+			shoes = /obj/item/clothing/shoes/roguetown/shortboots
+			armor = null
+			mask = /obj/item/clothing/mask/rogue/facemask
 
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	C.holder_mob = H
