@@ -15,8 +15,8 @@
 		"Dwarf",
 		"Aasimar"
 	)
-	allowed_patrons = list(/datum/patron/divine/astrata)
-	tutorial = "The divine is all that matters in an immoral world. The Sun Queen and her pantheon rule over all, and you will preach their wisdom to Rockhill. It is up to you to shepard the flock into a god-fearing future."
+	allowed_patrons = ALL_CLERIC_PATRONS
+	tutorial = "The divine is all that matters in an immoral world. You are a highly respected representative of the Tenways Church - and you represent your patron with legendary fervor known by all. Your word is at least regarded as holy declaration, and all are obliged to respect you. It is up to you to shepard the flock into a Divine-fearing future."
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
 	outfit = /datum/outfit/job/roguetown/priest
@@ -29,11 +29,10 @@
 /datum/outfit/job/roguetown/priest/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/revive)
 	H.verbs |= /mob/living/carbon/human/proc/coronate_lord
 	H.verbs |= /mob/living/carbon/human/proc/churchexcommunicate
 	H.verbs |= /mob/living/carbon/human/proc/churchannouncement
-	neck = /obj/item/clothing/neck/roguetown/psicross/astrata
-	head = /obj/item/clothing/head/roguetown/priestmask
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
@@ -48,20 +47,52 @@
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) // Privilege of being the SECOND biggest target in the game, and arguably the worse of the two targets to lose
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) 
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-		H.change_stat("strength", 1) // One slot and a VERY important role, it deserves a half-decent statline
+		H.change_stat("strength", 1) 
 		H.change_stat("intelligence", 2)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", 1)
-	if(H.patron != /datum/patron/divine/ravox)
-		H.patron = GLOB.patronlist[/datum/patron/divine/astrata]
-		to_chat(H, "<span class='warning'>I've always given myself to [H.patron].")
+	switch(A.name)
+		if("Astrata")
+			head = /obj/item/clothing/head/roguetown/priestmask
+			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
+			wrists = /obj/item/clothing/wrists/roguetown/wrappings
+		if("Dendor")
+			head = /obj/item/clothing/head/roguetown/dendormask
+			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
+			H.ambushable = FALSE
+		if("Necra")
+			head = /obj/item/clothing/head/roguetown/necrahood
+			neck = /obj/item/clothing/neck/roguetown/psicross/necra
+			shoes = /obj/item/clothing/shoes/roguetown/boots
+			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
+		if("Eora")
+			head = /obj/item/clothing/head/roguetown/eoramask
+			neck = /obj/item/clothing/neck/roguetown/psicross/eora
+		if("Noc")
+			head = /obj/item/clothing/head/roguetown/roguehood/nochood
+			neck = /obj/item/clothing/neck/roguetown/psicross/noc
+			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
+		if("Pestra")
+			head = /obj/item/clothing/head/roguetown/roguehood
+			neck = /obj/item/clothing/neck/roguetown/psicross/pestra
+		if("Ravox") //ROCKHILL'S STRONGEST ASSKICKER
+			head = /obj/item/clothing/head/roguetown/roguehood
+			neck = /obj/item/clothing/neck/roguetown/psicross/ravox
+			H.change_stat("strength", 2)
+			H.change_stat("constitution", 2)
+			H.change_stat("speed", 1)
+			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron) // This creates the cleric holder used for devotion spells
 	C.holder_mob = H
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
