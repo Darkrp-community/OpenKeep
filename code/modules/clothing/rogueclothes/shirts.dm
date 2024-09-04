@@ -249,6 +249,7 @@
 	desc = ""
 	body_parts_covered = null
 	icon_state = "sexydress"
+	item_state = "sexydress"
 	sleevetype = null
 	sleeved = null
 	color = "#a90707"
