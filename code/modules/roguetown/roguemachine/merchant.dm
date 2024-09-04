@@ -28,7 +28,7 @@
 
 	contents += "<center>MERCHANT'S GUILD<BR>"
 	contents += "--------------<BR>"
-	contents += "Guild's Tax: [SStreasury.queens_tax*100]%<BR>"
+	//contents += "Guild's Tax: [SStreasury.queens_tax*100]%<BR>"
 	contents += "Next Balloon: [time2text((next_airlift - world.time), "mm:ss")]</center><BR>"
 
 	if(!user.can_read(src, TRUE))
@@ -83,7 +83,7 @@
 					continue
 				if(!isturf(I.loc))
 					continue
-				var/prize = I.get_real_price() - (I.get_real_price() * SStreasury.queens_tax)
+				var/prize = I.get_real_price()// - (I.get_real_price() * SStreasury.queens_tax)
 				if(prize >= 1)
 					play_sound=TRUE
 					budgie += prize
@@ -104,9 +104,11 @@
 /////////////////////////////////////////////////////////////////
 
 #define UPGRADE_NOTAX		(1<<0)
+/*
 #define UPGRADE_ARMOR		(1<<1)
 #define UPGRADE_WEAPONS		(1<<2)
 #define UPGRADE_FOOD		(1<<3)
+*/
 
 /obj/structure/roguemachine/merchantvend
 	name = "GOLDFACE"
@@ -206,12 +208,14 @@
 			options += "Enable Paying Taxes"
 		else
 			options += "Stop Paying Taxes"
+		/*
 		if(!(upgrade_flags & UPGRADE_ARMOR))
 			options += "Purchase Armors License (50)"
 		if(!(upgrade_flags & UPGRADE_WEAPONS))
 			options += "Purchase Weapons License (35)"
 		if(!(upgrade_flags & UPGRADE_FOOD))
 			options += "Purchase Pantry License (10)"
+		*/
 		var/select = input(usr, "Please select an option.", "", null) as null|anything in options
 		if(!select)
 			return
@@ -224,6 +228,7 @@
 			if("Stop Paying Taxes")
 				upgrade_flags |= UPGRADE_NOTAX
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
+			/*
 			if("Purchase Armors License (50)")
 				if(upgrade_flags & UPGRADE_ARMOR)
 					return
@@ -254,6 +259,7 @@
 				budget -= 10
 				upgrade_flags |= UPGRADE_FOOD
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
+			*/
 	return attack_hand(usr)
 
 /obj/structure/roguemachine/merchantvend/attack_hand(mob/living/user)
@@ -281,13 +287,13 @@
 
 	contents += "</center><BR>"
 
-	var/list/unlocked_cats = list("Apparel","Tools","Seeds","Luxury")
-	if(upgrade_flags & UPGRADE_ARMOR)
-		unlocked_cats+="Armor"
-	if(upgrade_flags & UPGRADE_WEAPONS)
-		unlocked_cats+="Weapons"
-	if(upgrade_flags & UPGRADE_FOOD)
-		unlocked_cats+="Consumable"
+	var/list/unlocked_cats = list("Apparel","Armor","Consumable","Luxury","Tools","Seeds","Weapons")
+	//if(upgrade_flags & UPGRADE_ARMOR)
+	//	unlocked_cats+="Armor"
+	//if(upgrade_flags & UPGRADE_WEAPONS)
+	//	unlocked_cats+="Weapons"
+	//if(upgrade_flags & UPGRADE_FOOD)
+	//	unlocked_cats+="Consumable"
 
 	if(current_cat == "1")
 		contents += "<center>"
