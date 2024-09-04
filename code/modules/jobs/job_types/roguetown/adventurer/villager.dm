@@ -15,6 +15,7 @@
 	give_bank_account = TRUE
 	min_pq = -15
 	same_job_respawn_delay = 0
+	bypass_lastclass = TRUE
 
 
 
