@@ -113,6 +113,14 @@
 													'sound/foley/footsteps/armor/plate (2).ogg',\
 													'sound/foley/footsteps/armor/plate (3).ogg'), 100)
 
+/obj/item/clothing/suit/roguetown/armor/plate/rust
+	name = "rusted half-plate armor"
+	desc = "Old and rusted half-plate. Less durable than it used to be, but still quite protective."
+	icon_state = "rustplate"
+	item_state = "rustplate"
+	max_integrity = 250
+	smeltresult = /obj/item/ingot/iron
+	sellprice = 40
 
 /obj/item/clothing/suit/roguetown/armor/plate/half
 	slot_flags = ITEM_SLOT_ARMOR
@@ -136,27 +144,16 @@
 	name = "plate armor"
 	desc = "Full plate. Leg protecting tassets, groin cup, armored vambraces."
 	icon_state = "plate"
-	item_state = "plate"
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	equip_delay_self = 80
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 120
 
-/obj/item/clothing/suit/roguetown/armor/plate/rust
-	name = "rusted plate armor"
-	desc = "Old and rusted plate armor. Less durable than it used to be, but still quite protective."
-	icon_state = "rustplate"
-	item_state = "rustplate"
-	max_integrity = 250
-	smeltresult = /obj/item/ingot/iron
-	sellprice = 40
-
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 	name = "iron breastplate"
 	desc = "Solid iron to protect the torso."
 	icon_state = "ibreastplate"
-	item_state = "ibreastplate"
 	max_integrity = 200
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/iron
@@ -164,10 +161,10 @@
 	sellprice = 20
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron/rust
-	name = "rusted breastplate"
+	name = "rusted half-plate armor"
 	desc = "Old but still useful to keep sharp objects from your innards."
-	icon_state = "rusthalf"
-	item_state = "rusthalf"
+	icon_state = "rustplate"
+	item_state = "rustplate"
 
 
 // Bladesinger armor, unique
@@ -440,6 +437,10 @@
 	sleeved = null
 	armor_class = ARMOR_CLASS_LIGHT
 	color = "#584742"
+
+/obj/item/clothing/suit/roguetown/armor/leather/vest/random/Initialize()
+	color = pick(CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN)
+	..()
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher
 	name = "leather vest"
