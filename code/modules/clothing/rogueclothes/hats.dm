@@ -682,8 +682,6 @@
 	max_integrity = 120
 	color = "#745a4d"
 
-/obj/item/clothing/head/roguetown/menacing/bandit // TO DO kill it
-
 /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous // a leather coif locked to headslot since you cannot pull it back. Crit prevent between armor items a little weird, this is leather coif, compare to helmet
 	name = "ominous hood"
 	desc = "Madmen. Cursed dogs. Beware."
