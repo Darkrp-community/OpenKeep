@@ -13,7 +13,7 @@
 	cost = 18
 	contains = /obj/item/rogueweapon/sword/iron
 
-/datum/supply_pack/rogue/weapons/greatswordsword
+/datum/supply_pack/rogue/weapons/greatsword
 	name = "Iron Greatsword"
 	cost = 54
 	contains = /obj/item/rogueweapon/greatsword/zwei
