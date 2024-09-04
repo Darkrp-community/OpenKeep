@@ -12,3 +12,16 @@
 	skillcraft = /datum/skill/craft/carpentry
 	time = 4 SECONDS
 
+/datum/crafting_recipe/roguetown/woodthresher
+	name = "thresher"
+	result = list(/obj/item/rogueweapon/thresher)
+	reqs = list(/obj/item/grown/log/tree/small = 2,
+				/obj/item/rope = 1)
+
+/datum/crafting_recipe/roguetown/militarythresher
+	name = "military thresher"
+	result = list(/obj/item/rogueweapon/thresher/military)
+	reqs = list(/obj/item/rogueweapon/thresher = 2,
+				/obj/item/ingot/iron = 1)
+
+

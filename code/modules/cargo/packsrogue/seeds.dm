@@ -23,7 +23,7 @@
 /datum/supply_pack/rogue/seeds/sleaf
 	name = "Swamp Weed"
 	cost = 15
-	contains = /obj/item/seeds/swampweed
+	contains = /obj/item/seeds/sweetleaf
 
 /datum/supply_pack/rogue/seeds/berry
 	name = "Berry"

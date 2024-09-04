@@ -9,8 +9,8 @@
 	icon = 'icons/roguetown/farming/farmtools.dmi'
 	sharpness = IS_BLUNT
 	wdefense = 1
-	inhand_x_dimension = 32
-	inhand_y_dimension = 32
+//	inhand_x_dimension = 32
+//	inhand_y_dimension = 32
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
@@ -124,58 +124,6 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-/*
-/obj/item/rogueweapon/shovel/getonmobprop(tag)
-	. = ..()
-	if(tag)
-		switch(tag)
-			if("gen")
-				return list("shrink" = 0.6,
-"sx" = -21,
-"sy" = -20,
-"nx" = -7,
-"ny" = -20,
-"wx" = -13,
-"wy" = -19,
-"ex" = -9,
-"ey" = -20,
-"northabove" = 0,
-"southabove" = 1,
-"eastabove" = 1,
-"westabove" = 0,
-"nturn" = 50,
-"sturn" = -55,
-"wturn" = 0,
-"eturn" = 120,
-"nflip" = 0,
-"sflip" = 8,
-"wflip" = 8,
-"eflip" = 1)
-			if("wielded")
-				return list("shrink" = 0.8,
-"sx" = 3,
-"sy" = -5,
-"nx" = -8,
-"ny" = -5,
-"wx" = 0,
-"wy" = -5,
-"ex" = 5,
-"ey" = -5,
-"northabove" = 0,
-"southabove" = 1,
-"eastabove" = 1,
-"westabove" = 1,
-"nturn" = 135,
-"sturn" = -135,
-"wturn" = 240,
-"eturn" = 30,
-"nflip" = 0,
-"sflip" = 8,
-"wflip" = 8,
-"eflip" = 1)
-			if("onbelt")
-				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-*/
 
 /obj/item/rogueweapon/shovel/small
 	force = 2
@@ -196,10 +144,20 @@
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.6,"sx" = -20,"sy" = -8,"nx" = -8,"ny" = -8,"wx" = -18,"wy" = -10,"ex" = -4,"ey" = -10,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.6,"sx" = -10,"sy" = 1,"nx" = 12,"ny" = 1,"wx" = -7,"wy" = 1,"ex" = 6,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+/*
+/obj/item/rogueweapon/shovel/small/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -20,"sy" = -8,"nx" = -8,"ny" = -8,"wx" = -18,"wy" = -10,"ex" = -4,"ey" = -10,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+*/
 /obj/item/burial_shroud
 	name = "winding sheet"
 	desc = ""

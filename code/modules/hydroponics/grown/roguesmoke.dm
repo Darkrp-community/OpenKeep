@@ -12,17 +12,6 @@
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = 15 MINUTES
 
-/obj/item/seeds/swampweed
-	name = "seeds"
-	desc = ""
-	species = "swampweed"
-	plantname = "swampweed plant"
-	product = /obj/item/reagent_containers/food/snacks/grown/rogue/swampweed
-	production = 1
-	yield = 3
-	potency = 1
-	color = "#455838"
-
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry
 //	seed = null
 	name = "swampweed"
@@ -70,16 +59,6 @@
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = 15 MINUTES
 
-/obj/item/seeds/pipeweed
-	name = "seeds"
-	desc = ""
-	species = "westleach"
-	plantname = "westleach plant"
-	product = /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
-	production = 1
-	yield = 3
-	potency = 1
-	color = "#6d915d"
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry
 //	seed = null

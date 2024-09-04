@@ -1,9 +1,8 @@
 /obj/item/reagent_containers/powder // TO DO Remember this is now obsolete by /obj/item/reagent_containers/powder/spice
 	name = "powder parent item. You should not be seeing this."
 	desc = ""
-	icon = 'icons/roguetown/items/produce.dmi'
+	icon = 'icons/roguetown/farming/produce.dmi'
 	icon_state = "spice"
-	item_state = "spice"
 	possible_transfer_amounts = list()
 	volume = 15
 	list_reagents = list(/datum/reagent/druqks = 15)
@@ -12,9 +11,7 @@
 /obj/item/reagent_containers/powder/spice
 	name = "spice"
 	desc = ""
-	icon = 'icons/roguetown/farming/produce.dmi'
 	icon_state = "spice"
-	item_state = "spice"
 	possible_transfer_amounts = list()
 	volume = 15
 	list_reagents = list(/datum/reagent/druqks = 15)

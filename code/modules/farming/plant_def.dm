@@ -82,7 +82,7 @@
 
 /datum/plant_def/sweetleaf
 	name = "swampweed"
-	icon_state = "weed"
+	icon_state = "swampweed"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/rogue/sweetleaf
 
 /datum/plant_def/berry
