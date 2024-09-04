@@ -23,40 +23,6 @@
 /datum/outfit/job/roguetown/adventurer/cleric/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE
-
-	cloak = /obj/item/clothing/cloak/tabard/crusader // Give us a generic crusade tabard, or one based on our chosen diety...
-	wrists = /obj/item/clothing/neck/roguetown/psicross/astrata // Give us an Astrata psicross, or one based on our chosen diety...
-	switch(H.patron?.name)
-		if("Astrata")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
-			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
-		if("Dendor")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/dendor
-			cloak = /obj/item/clothing/cloak/stabard/templar/dendor
-		if("Necra")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/necra
-			cloak = /obj/item/clothing/cloak/stabard/templar/necra
-		if("Eora")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
-		if("Ravox")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/ravox
-		if("Noc")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
-			cloak = /obj/item/clothing/cloak/stabard/templar/noc
-		if("Pestra")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/pestra
-			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
-
-	armor = /obj/item/clothing/suit/roguetown/armor/plate
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
-	pants = /obj/item/clothing/under/roguetown/trou/leather
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	backl = /obj/item/storage/backpack/rogue/satchel
-	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/rogueweapon/mace
-	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
-	neck = /obj/item/clothing/neck/roguetown/gorget
-
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
@@ -75,6 +41,45 @@
 		H.change_stat("constitution", 1)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", -1)
+
+	cloak = /obj/item/clothing/cloak/tabard/crusader // Give us a generic crusade tabard, or one based on our chosen diety...
+	wrists = /obj/item/clothing/neck/roguetown/psicross/astrata // Give us an Astrata psicross, or one based on our chosen diety...
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
+	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
+	pants = /obj/item/clothing/under/roguetown/trou/leather
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	backl = /obj/item/storage/backpack/rogue/satchel
+	belt = /obj/item/storage/belt/rogue/leather
+	beltl = /obj/item/rogueweapon/mace
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
+	neck = /obj/item/clothing/neck/roguetown/gorget
+	switch(H.patron?.name)
+		if("Astrata")
+			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
+			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
+		if("Dendor")
+			wrists = /obj/item/clothing/neck/roguetown/psicross/dendor
+			cloak = /obj/item/clothing/cloak/stabard/templar/dendor
+		if("Necra")
+			wrists = /obj/item/clothing/neck/roguetown/psicross/necra
+			cloak = /obj/item/clothing/cloak/stabard/templar/necra
+		if("Eora")
+			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
+			H.virginity = FALSE // he/she/they fuck
+		if("Ravox")
+			wrists = /obj/item/clothing/neck/roguetown/psicross/ravox
+			H.change_stat("strength", 1)
+			H.change_stat("constitution", 1)
+			H.change_stat("endurance", 1)
+			H.change_stat("speed", 1)
+			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+		if("Noc")
+			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
+			cloak = /obj/item/clothing/cloak/stabard/templar/noc
+		if("Pestra")
+			wrists = /obj/item/clothing/neck/roguetown/psicross/pestra
+			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
+
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) // Even if it has limited slots, it is a common drifter role available to anyone. Their armor also is not heavy, so medium armor training is enough
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	C.holder_mob = H
