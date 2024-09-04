@@ -28,6 +28,7 @@
 
 /datum/outfit/job/roguetown/priest/pre_equip(mob/living/carbon/human/H)
 	..()
+	var/datum/patron/A = H.patron
 	H.virginity = TRUE
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/revive)
 	H.verbs |= /mob/living/carbon/human/proc/coronate_lord
