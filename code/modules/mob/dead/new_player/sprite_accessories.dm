@@ -676,9 +676,21 @@
 	name = "Burns (l)"
 	icon_state = "burnface_l"
 
+/datum/sprite_accessory/detail/burneye_r
+	name = "Burned Eye (r)"
+	icon_state = "burneye_r"
+
+/datum/sprite_accessory/detail/burneye_l
+	name = "Burned Eye (l)"
+	icon_state = "burneye_l"
+
 /datum/sprite_accessory/detail/brows/dark
 	name = "Dark Eyebrows"
 	icon_state = "darkbrows"
+
+/datum/sprite_accessory/detail/unibrow/dark
+	name = "Dark Unibrow"
+	icon_state = "darkunibrow"
 
 /datum/sprite_accessory/detail/deadeye_r
 	name = "Dead Eye (r)"
@@ -696,9 +708,59 @@
 	name = "Scar2"
 	icon_state = "scar2"
 
+/datum/sprite_accessory/detail/slashedeye_r
+	name = "Slashed Eye (r)"
+	icon_state = "slashedeye_r"
+
+/datum/sprite_accessory/detail/slashedeye_r
+	name = "Slashed Eye (r)"
+	icon_state = "slashedeye_r"
+
+/datum/sprite_accessory/detail/slashedeye_l
+	name = "Slashed Eye (l)"
+	icon_state = "slashedeye_l"
+
+/datum/sprite_accessory/detail/mangled
+	name = "Mangled Jaw"
+	icon_state = "mangled"
+
+/datum/sprite_accessory/detail/warpaint_blue
+	name = "Warpaint (Blue)"
+	icon_state = "warpaint_blue"
+
+/datum/sprite_accessory/detail/warpaint_red
+	name = "Warpaint (Red)"
+	icon_state = "warpaint_red"
+
+/datum/sprite_accessory/detail/warpaint_green
+	name = "Warpaint (Green)"
+	icon_state = "warpaint_green"
+
+/datum/sprite_accessory/detail/warpaint_white
+	name = "Warpaint (White)"
+	icon_state = "warpaint_white"
+
+/datum/sprite_accessory/detail/warpaint_black
+	name = "Warpaint (Black)"
+	icon_state = "warpaint_black"
+
+/datum/sprite_accessory/detail/tattoo_stripe
+	name = "Tattoo (Stripe)"
+	icon_state = "tattoo_stripe"
+
+/datum/sprite_accessory/detail/tattoo_lips
+	name = "Tattoo (lips)"
+	icon_state = "tattoo_lips"
+
 /datum/sprite_accessory/detail/brows
 	name = "Thick Eyebrows"
 	icon_state = "brows"
+	color_src = HAIR
+	use_static = FALSE
+
+/datum/sprite_accessory/detail/unibrow
+	name = "Unibrow"
+	icon_state = "unibrow"
 	color_src = HAIR
 	use_static = FALSE
 
