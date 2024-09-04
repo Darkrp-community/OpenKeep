@@ -700,6 +700,10 @@
 	name = "Dead Eye (l)"
 	icon_state = "deadeye_l"
 
+/datum/sprite_accessory/detail/scarhead
+	name = "Scarred Head"
+	icon_state = "scarhead"
+
 /datum/sprite_accessory/detail/scar
 	name = "Scar"
 	icon_state = "scar"
@@ -736,13 +740,29 @@
 	name = "Warpaint (Green)"
 	icon_state = "warpaint_green"
 
+/datum/sprite_accessory/detail/warpaint_purple
+	name = "Warpaint (Purple)"
+	icon_state = "warpaint_purple"
+
 /datum/sprite_accessory/detail/warpaint_black
 	name = "Warpaint (Black)"
 	icon_state = "warpaint_black"
 
+/datum/sprite_accessory/detail/harlequin
+	name = "Harlequin"
+	icon_state = "harlequin"
+
 /datum/sprite_accessory/detail/tattoo_lips
 	name = "Tattoo (Lips)"
 	icon_state = "tattoo_lips"
+
+/datum/sprite_accessory/detail/tattoo_eye_r
+	name = "Tattoo (r Eye)"
+	icon_state = "tattoo_eye_r"
+
+/datum/sprite_accessory/detail/tattoo_eye_l
+	name = "Tattoo (l Eye)"
+	icon_state = "tattoo_eye_l"
 
 /datum/sprite_accessory/detail/brows
 	name = "Thick Eyebrows"
