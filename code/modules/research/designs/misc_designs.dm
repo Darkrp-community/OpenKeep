@@ -192,10 +192,7 @@
 	desc = ""
 	id = "diskplantgene"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron=200, /datum/material/glass = 100)
-	build_path = /obj/item/disk/plantgene
-	category = list("Electronics")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
+
 
 /datum/design/roastingstick
 	name = "Advanced Roasting Stick"

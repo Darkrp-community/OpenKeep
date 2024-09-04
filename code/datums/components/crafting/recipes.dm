@@ -610,13 +610,6 @@
 				 /obj/item/stack/sheet/sinew = 3)
 	category = CAT_NONE
 
-/datum/crafting_recipe/bonfire
-	name = "Bonfire"
-	time = 60
-	reqs = list(/obj/item/grown/log = 5)
-	result = /obj/structure/bonfire
-	category = CAT_NONE
-
 /datum/crafting_recipe/rake //Category resorting incoming
 	name = "Rake"
 	time = 30

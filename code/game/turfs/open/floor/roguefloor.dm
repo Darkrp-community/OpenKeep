@@ -165,7 +165,6 @@
 	var/muddy = FALSE
 	var/bloodiness = 20
 	var/obj/structure/closet/dirthole/holie
-	var/obj/machinery/crop/planted_crop
 	var/dirt_amt = 3
 /*
 /turf/open/floor/rogue/dirt/get_slowdown(mob/user)

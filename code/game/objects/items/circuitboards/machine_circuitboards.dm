@@ -521,7 +521,7 @@
 		/obj/machinery/vending/assist  = "Vendomat",
 		/obj/machinery/vending/engivend = "Engi-Vend",
 		/obj/machinery/vending/hydronutrients = "NutriMax",
-		/obj/machinery/vending/hydroseeds = "MegaSeed Servitor",
+//		/obj/machinery/vending/hydroseeds = "MegaSeed Servitor",
 		/obj/machinery/vending/sustenance = "Sustenance Vendor",
 		/obj/machinery/vending/dinnerware = "Plasteel Chef's Dinnerware Vendor",
 		/obj/machinery/vending/cart = "PTech",
@@ -1019,13 +1019,7 @@
 
 /obj/item/circuitboard/machine/plantgenes
 	name = "Plant DNA Manipulator (Machine Board)"
-	icon_state = "service"
-	build_path = /obj/machinery/plantgenes
-	req_components = list(
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/micro_laser = 1,
-		/obj/item/stack/sheet/glass = 1,
-		/obj/item/stock_parts/scanning_module = 1)
+
 
 /obj/item/circuitboard/machine/processor
 	name = "Food Processor (Machine Board)"
@@ -1066,11 +1060,6 @@
 /obj/item/circuitboard/machine/seed_extractor
 	name = "Seed Extractor (Machine Board)"
 	icon_state = "service"
-	build_path = /obj/machinery/seed_extractor
-	req_components = list(
-		/obj/item/stock_parts/matter_bin = 1,
-		/obj/item/stock_parts/manipulator = 1)
-	needs_anchored = FALSE
 
 /obj/item/circuitboard/machine/techfab/department/service
 	name = "\improper Departmental Techfab - Service (Machine Board)"

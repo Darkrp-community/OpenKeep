@@ -128,7 +128,6 @@
 	name = "hoe"
 	desc = ""
 	icon_state = "hoe"
-	item_state = "hoe"
 	icon = 'icons/roguetown/farming/farmtools_big.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
@@ -153,7 +152,7 @@
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.7,"sx" = -9,"sy" = 1,"nx" = 9,"ny" = 1,"wx" = -5,"wy" = 1,"ex" = -2,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.7,"sx" = -10,"sy" = 1,"nx" = 9,"ny" = 1,"wx" = -5,"wy" = 1,"ex" = -2,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
 				return list("shrink" = 0.6,"sx" = 5,"sy" = -2,"nx" = -7,"ny" = -2,"wx" = -4,"wy" = -3,"ex" = 5,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
@@ -219,7 +218,6 @@
 	name = "pitchfork"
 	desc = "Compost, chaff, hay, it matters not."
 	icon_state = "pitchfork"
-	item_state = "pitchfork"
 	icon = 'icons/roguetown/farming/farmtools_big.dmi'
 	pixel_y = -16
 	pixel_x = -16
@@ -390,3 +388,9 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 
+
+/obj/item/rogueweapon/hoe/alt
+	icon_state = "hoe_alt"
+
+/obj/item/rogueweapon/thresher/alt
+	icon_state = "thresher_alt"

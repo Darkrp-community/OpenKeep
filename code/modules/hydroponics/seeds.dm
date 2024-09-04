@@ -2,57 +2,7 @@
 // Here's all the seeds (plants) that can be used in hydro
 // ********************************************************
 
-/obj/item/reagent_containers/food/snacks/grown/nettle
-/obj/item/reagent_containers/food/snacks/grown/nettle/death
-
-/obj/item/reagent_containers/food/snacks/grown/tomato
-/obj/item/reagent_containers/food/snacks/grown/tomato/blue
-/obj/item/reagent_containers/food/snacks/grown/tomato/blue/bluespace
-
-/obj/item/reagent_containers/food/snacks/grown/banana
-/obj/item/reagent_containers/food/snacks/grown/banana/bluespace
-
-/obj/item/reagent_containers/food/snacks/grown/ambrosia
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia
-/obj/item/reagent_containers/food/snacks/grown/anbrosioa/vulgaris
-/obj/machinery/vending/hydroseeds
-/obj/structure/bonfire
-
-/obj/item/reagent_containers/food/snacks/grown/cannabis
-/obj/item/reagent_containers/food/snacks/grown/cannabis/white
-/obj/item/reagent_containers/food/snacks/grown/cannabis/death
-
-/obj/item/seeds/random
-
-/obj/item/vending_refill/hydroseeds
-/obj/item/reagent_containers/food/snacks/grown/cannabis/rainbow
-/obj/item/reagent_containers/food/snacks/grown/cannabis/white
-
-/obj/machinery/crop
-/obj/item/seeds/tower
-
-/datum/plant_gene/reagent/polypyr
-/datum/plant_gene/reagent/liquidelectricity
-/datum/plant_gene/trait/plant_type/carnivory
-
-/obj/item/disk/plantgene
-/obj/item/reagent_containers/food/snacks/grown/cocoapod
-/obj/item/reagent_containers/food/snacks/grown/vanillapod
-/obj/machinery/plantgenes
-/obj/machinery/seed_extractor
-/obj/item/grown/corncob
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus
-/datum/crafting_recipe/food/mimetart
-/datum/crafting_recipe/food/berrytart
-/datum/crafting_recipe/food/cocolavatart
-/datum/crafting_recipe/food/clowncake
-/datum/crafting_recipe/food/vanillacake
-/datum/plant_gene/trait/plant_type/fungal_metabolism
-/datum/plant_gene/core/yield
-/datum/plant_gene/trait/plant_type/weed_hardy
-/datum/plant_gene/trait/repeated_harvest
-/obj/structure/punji_sticks
-/datum/plant_gene/trait/glow
+/obj/item/grown/bananapeel
 
 /obj/item/seeds
 	var/plantname = "Plants"		// Name of plant when planted.

@@ -136,22 +136,22 @@
 
 //Photosynthesis/////////////////////////////////////////////////////////
 			// Lack of light hurts non-mushrooms
-			if(isturf(loc))
-				var/turf/currentTurf = loc
-				var/lightAmt = currentTurf.get_lumcount()
-				if(myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism))
-					if(lightAmt < 0.2)
-						adjustHealth(-1 / rating)
-				else // Non-mushroom
-					if(lightAmt < 0.4)
-						adjustHealth(-2 / rating)
+//			if(isturf(loc))
+//				var/turf/currentTurf = loc
+//				var/lightAmt = currentTurf.get_lumcount()
+//				if(myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism))
+//					if(lightAmt < 0.2)
+//						adjustHealth(-1 / rating)
+//				else // Non-mushroom
+//					if(lightAmt < 0.4)
+//						adjustHealth(-2 / rating)
 
 //Water//////////////////////////////////////////////////////////////////
 			// Drink random amount of water
 			adjustWater(-rand(1,6) / rating)
 
 			// If the plant is dry, it loses health pretty fast, unless mushroom
-			if(waterlevel <= 10 && !myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism))
+			if(waterlevel <= 10)
 				adjustHealth(-rand(0,1) / rating)
 				if(waterlevel <= 0)
 					adjustHealth(-rand(0,2) / rating)
@@ -177,8 +177,8 @@
 //Pests & Weeds//////////////////////////////////////////////////////////
 
 			if(pestlevel >= 8)
-				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
-					adjustHealth(-2 / rating)
+//				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
+				adjustHealth(-2 / rating)
 
 				else
 					adjustHealth(2 / rating)
@@ -229,8 +229,8 @@
 		// Weeeeeeeeeeeeeeedddssss
 		if(weedlevel >= 10 && prob(50) && !self_sustaining) // At this point the plant is kind of fucked. Weeds can overtake the plant spot.
 			if(myseed)
-				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/weed_hardy) && !myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism)) // If a normal plant
-					weedinvasion()
+//				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/weed_hardy) && !myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism)) // If a normal plant
+				weedinvasion()
 			else
 				weedinvasion() // Weed invasion into empty tray
 			needs_update = 1
@@ -897,12 +897,12 @@
 //		to_chat(user, "<span class='warning'>I fail to harvest anything useful!</span>")
 //	else
 //		to_chat(user, "<span class='notice'>I harvest [myseed.getYield()] items from the [myseed.plantname].</span>")
-	if(!myseed.get_gene(/datum/plant_gene/trait/repeated_harvest))
-		qdel(myseed)
-		myseed = null
-		dead = 0
-		name = initial(name)
-		desc = initial(desc)
+//	if(!myseed.get_gene(/datum/plant_gene/trait/repeated_harvest))
+//		qdel(myseed)
+//		myseed = null
+//		dead = 0
+//		name = initial(name)
+//		desc = initial(desc)
 	update_icon()
 
 /// Tray Setters - The following procs adjust the tray or plants variables, and make sure that the stat doesn't go out of bounds.///

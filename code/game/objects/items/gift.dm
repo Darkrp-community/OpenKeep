@@ -63,7 +63,6 @@ GLOBAL_LIST_EMPTY(possible_gifts)
 		/obj/item/pen/invisible,
 		/obj/item/lipstick/random,
 		/obj/item/grenade/smokebomb,
-		/obj/item/grown/corncob,
 		/obj/item/poster/random_contraband,
 		/obj/item/poster/random_official,
 		/obj/item/book/manual/wiki/barman_recipes,

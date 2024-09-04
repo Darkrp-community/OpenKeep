@@ -32,24 +32,6 @@
 	icon_state = "geranium"
 	filling_color = "#008B8B"
 
-// Harebell
-/obj/item/seeds/harebell
-	name = "pack of harebell seeds"
-	desc = ""
-	icon_state = "seed"
-	species = "harebell"
-	plantname = "Harebells"
-	product = /obj/item/reagent_containers/food/snacks/grown/harebell
-	lifespan = 100
-	endurance = 20
-	maturation = 7
-	production = 1
-	yield = 2
-	potency = 30
-	growthstages = 4
-//	genes = list(/datum/plant_gene/trait/plant_type/weed_hardy)
-	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
-	reagents_add = list(/datum/reagent/consumable/nutriment = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/harebell
 //	seed = /obj/item/seeds/harebell

@@ -189,7 +189,7 @@
 	name = "Lit Bonfire"
 	description = "Space heaters are malfunctioning and the cargo crew of Central Command is starting to feel cold. Ship a lit bonfire to warm them up."
 	reward = 5000
-	wanted_types = list(/obj/structure/bonfire)
+
 
 /datum/bounty/item/assistant/bonfire/applies_to(obj/O)
 	if(!..())

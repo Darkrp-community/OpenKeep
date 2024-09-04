@@ -13,8 +13,11 @@
 /obj/structure/plough/Moved(oldLoc, movement_dir)
 	. = ..()
 //	if(pulledby && pulledby.m_intent == MOVE_INTENT_SNEAK) replaced with bigger drag slowdown
-	if(pulledby)
-		user_tries_tilling(pulledby, get_turf(src))
+	if((dir == WEST) || (dir == EAST))
+		if(pulledby)
+			user_tries_tilling(pulledby, get_turf(src))
+
+
 
 /obj/structure/plough/proc/user_tries_tilling(mob/living/user, turf/location)
 	if(istype(location, /turf/open/floor/rogue/grass))

@@ -159,7 +159,7 @@
 
 
 //BOMBANANA
-
+/*
 /obj/item/reagent_containers/food/snacks/grown/banana/bombanana
 	trash = /obj/item/grown/bananapeel/bombanana
 	bitesize = 1
@@ -197,7 +197,7 @@
 	playsound(loc, 'sound/blank.ogg', 50, TRUE, -1)
 	bomb.preprime(user, 0, FALSE)
 	return (BRUTELOSS)
-
+*/
 //TEARSTACHE GRENADE
 
 /obj/item/grenade/chem_grenade/teargas/moustache

@@ -82,8 +82,10 @@
 
 /obj/structure/soil/proc/try_handle_seed_planting(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/seeds))
-		var/obj/item/seeds/seeds = attacking_item
-		seeds.try_plant_seed(user, src)
+		playsound(src, pick('modular/Mapping/sound/touch1.ogg','modular/Mapping/sound/touch2.ogg','modular/Mapping/sound/touch3.ogg'), 150, TRUE)
+		if(do_after(user, get_farming_do_time(user, 2 SECONDS), target = src))
+			var/obj/item/seeds/seeds = attacking_item
+			seeds.try_plant_seed(user, src)
 		return TRUE
 	return FALSE
 

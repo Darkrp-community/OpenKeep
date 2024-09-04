@@ -76,7 +76,7 @@
 	name = "shadowshroom"
 	desc = ""
 	icon_state = "shadowshroom"
-	myseed = /obj/item/seeds/glowshroom/shadowshroom
+//	myseed = /obj/item/seeds/glowshroom/shadowshroom
 
 /obj/structure/glowshroom/single/Spread()
 	return
