@@ -6,7 +6,7 @@
 /datum/patron/divine/astrata
 	name = "Astrata"
 	domain = "Goddess of Order, the Sun Queen"
-	desc = "The Firstborn of Psydon, twin of Noc, gifted man the Sun as her divine gift."
+	desc = "The Firstborn of the Weeping God, twin of Noc, gifted man the Sun as her divine gift."
 	flaws = "Tyrannical, Fury, Uncompromising"
 	worshippers = "Nobles, Zealots, Commoners"
 	sins = "Betrayal, Sloth, Witchcraft"
@@ -18,7 +18,7 @@
 /datum/patron/divine/noc
 	name = "Noc"
 	domain = "God of Knowledge, the Moon Prince"
-	desc = "The Firstborn of Psydon, twin of Astrata, gifted man divine knowledge."
+	desc = "The Firstborn of the Weeping God, twin of Astrata, gifted man divine knowledge."
 	flaws = "Resentful, Vindictive, Haughty"
 	worshippers = "Magic Practitioners, Scholars, Scribes"
 	sins = "Ignorance, Burning books, Carnal desire"
@@ -31,7 +31,7 @@
 /datum/patron/divine/dendor
 	name = "Dendor"
 	domain = "Force of Nature and Beasts"
-	desc = "The Primordial Son of Psydon, patron of beasts and the wood. Gone mad with time."
+	desc = "The primordial father of nature and chaos, patron of beasts and the wood. Responsible for all the little forest creachers, especially verevolves. Gone mad with time."
 	flaws = "Madness, Rebellious, Disorderly"
 	worshippers = "Druids, Beasts, Madmen"
 	sins = "Deforestation, Overhunting, Disrespecting nature"
@@ -83,6 +83,10 @@
 	flaws = "Disrespectful, Irresponsible, Drunkard"
 	worshippers = "Warlocks, The Sick and Alchemists"
 	sins = "´Curing´ abnormalities, Refusing to help the misfortunates, Groveling"
+	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
+	t1 = /obj/effect/proc_holder/spell/invoked/lesser_heal
+	t2 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
+	t3 = /obj/effect/proc_holder/spell/invoked/cure_rot
 
 /datum/patron/divine/malum
 	name = "Malum"
