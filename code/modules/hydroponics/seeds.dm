@@ -2,7 +2,11 @@
 // Here's all the seeds (plants) that can be used in hydro
 // ********************************************************
 
+// TO DO
+/obj/item/seeds/glowshroom/glowcap
 /obj/item/grown/bananapeel
+/obj/item/reagent_containers/food/snacks/grown/banana
+/obj/item/grown/bananapeel/bombanana
 
 /obj/item/seeds
 	var/plantname = "Plants"		// Name of plant when planted.

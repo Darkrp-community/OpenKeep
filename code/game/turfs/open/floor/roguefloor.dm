@@ -166,6 +166,7 @@
 	var/bloodiness = 20
 	var/obj/structure/closet/dirthole/holie
 	var/dirt_amt = 3
+
 /*
 /turf/open/floor/rogue/dirt/get_slowdown(mob/user)
 	var/returned = slowdown
@@ -196,8 +197,6 @@
 /turf/open/floor/rogue/dirt/Destroy()
 	if(holie)
 		QDEL_NULL(holie)
-	if(planted_crop)
-		QDEL_NULL(planted_crop)
 	return ..()
 
 

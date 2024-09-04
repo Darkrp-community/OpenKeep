@@ -131,8 +131,8 @@
 				adjustNutri(-1 / rating)
 
 			// Lack of nutrients hurts non-weeds
-			if(nutrilevel <= 0 && !myseed.get_gene(/datum/plant_gene/trait/plant_type/weed_hardy))
-				adjustHealth(-rand(1,3))
+//			if(nutrilevel <= 0 && !myseed.get_gene(/datum/plant_gene/trait/plant_type/weed_hardy))
+//				adjustHealth(-rand(1,3))
 
 //Photosynthesis/////////////////////////////////////////////////////////
 			// Lack of light hurts non-mushrooms
@@ -180,27 +180,23 @@
 //				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
 				adjustHealth(-2 / rating)
 
-				else
-					adjustHealth(2 / rating)
-					adjustPests(-1 / rating)
+//			else if(pestlevel >= 4)
+//				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
+//					adjustHealth(-1 / rating)
 
-			else if(pestlevel >= 4)
-				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
-					adjustHealth(-1 / rating)
+//				else
+//					adjustHealth(1 / rating)
+//					if(prob(50))
+//						adjustPests(-1 / rating)
 
-				else
-					adjustHealth(1 / rating)
-					if(prob(50))
-						adjustPests(-1 / rating)
-
-			else if(pestlevel < 4 && myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
+			else if(pestlevel < 4)
 				adjustHealth(-2 / rating)
 				if(prob(5))
 					adjustPests(-1 / rating)
 
 			// If it's a weed, it doesn't stunt the growth
-			if(weedlevel >= 5 && !myseed.get_gene(/datum/plant_gene/trait/plant_type/weed_hardy))
-				adjustHealth(-1 / rating)
+//			if(weedlevel >= 5 && !myseed.get_gene(/datum/plant_gene/trait/plant_type/weed_hardy))
+//				adjustHealth(-1 / rating)
 
 //Health & Age///////////////////////////////////////////////////////////
 
