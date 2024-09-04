@@ -206,6 +206,20 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
 	color = CLOTHING_PURPLE
 
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/maid
+	color = COLOR_RED
+
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/maid/Initialize()
+	..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+	else
+		GLOB.lordcolor += src
+
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/maid/Destroy()
+	GLOB.lordcolor -= src
+	return ..()
+
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/random/Initialize()
 	color = pick("#6b5445", "#435436", "#704542", "#79763f", CLOTHING_BLUE)
 	..()

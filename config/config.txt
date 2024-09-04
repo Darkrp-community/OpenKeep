@@ -235,13 +235,13 @@ USEBLACKLIST
 # FORUMURL http://tgstation13.org/phpBB/index.php
 
 ## Wiki address
-# WIKIURL http://www.tgstation13.org/wiki
+WIKIURL https://wiki.stonekeep.xyz/
 
 ## Rules address
-# RULESURL http://www.tgstation13.org/wiki/Rules
+RULESURL https://wiki.stonekeep.xyz/index.php/Rules
 
 ## Github address
-# GITHUBURL https://www.github.com/tgstation/tgstation
+GITHUBURL https://github.com/Darkrp-community/OpenKeep
 
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
