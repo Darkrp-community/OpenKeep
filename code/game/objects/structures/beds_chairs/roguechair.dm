@@ -409,3 +409,4 @@
 	icon_state = "bear"
 	pixel_x = -16
 	pixel_y = -27
+	sleepy = 1
