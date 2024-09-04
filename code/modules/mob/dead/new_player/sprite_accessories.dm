@@ -749,7 +749,7 @@
 	icon_state = "tattoo_stripe"
 
 /datum/sprite_accessory/detail/tattoo_lips
-	name = "Tattoo (lips)"
+	name = "Tattoo (Lips)"
 	icon_state = "tattoo_lips"
 
 /datum/sprite_accessory/detail/brows
