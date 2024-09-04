@@ -1334,7 +1334,7 @@
 "Co" = (/obj/machinery/light/rogue/firebowl/stump,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/town)
 "Cp" = (/obj/item/reagent_containers/food/snacks/rogue/meat/steak,/obj/item/reagent_containers/food/snacks/rogue/meat/steak,/obj/item/reagent_containers/food/snacks/egg,/obj/item/reagent_containers/food/snacks/egg,/obj/item/reagent_containers/food/snacks/egg,/obj/item/reagent_containers/food/snacks/egg,/obj/structure/closet/crate/chest/old_crate,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/tavern)
 "Cq" = (/obj/structure/roguemachine/stockpile{pixel_y = 0; pixel_x = -32},/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/indoors/town/dwarfin)
-"Cr" = (/obj/structure/closet/crate/roguecloset,/obj/item/rogueweapon/huntingknife/idagger/silver,/obj/item/reagent_containers/powder,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/shop)
+"Cr" = (/obj/structure/closet/crate/roguecloset,/obj/item/rogueweapon/huntingknife/idagger/silver,/obj/item/reagent_containers/powder/spice,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town/shop)
 "Cs" = (/obj/structure/rack/rogue/shelf/biggest,/obj/item/reagent_containers/glass/cup/silver{pixel_y = 18; pixel_x = -6},/obj/item/reagent_containers/glass/cup/silver{pixel_y = 7; pixel_x = 7},/obj/item/reagent_containers/glass/cup/wooden{pixel_x = -5; pixel_y = -5},/turf/open/floor/rogue/wood,/area/rogue/indoors/town/manor)
 "Ct" = (/obj/structure/roguemachine/mail,/turf/open/floor/carpet/royalblack,/area/rogue/indoors/town/shop)
 "Cu" = (/obj/structure/chair/wood/rogue,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town/dwarfin)

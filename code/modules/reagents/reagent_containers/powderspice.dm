@@ -1,4 +1,4 @@
-/obj/item/reagent_containers/powder // TO DO remember to scour maps for this and change to /obj/item/reagent_containers/powder/spice
+/obj/item/reagent_containers/powder // TO DO Remember this is now obsolete by /obj/item/reagent_containers/powder/spice
 	name = "powder parent item. You should not be seeing this."
 	desc = ""
 	icon = 'icons/roguetown/items/produce.dmi'
