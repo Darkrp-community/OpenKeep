@@ -1,3 +1,5 @@
+//master farmer
+
 /datum/advclass/pilgrim/rare/farmermaster
 	name = "Master Farmer"
 	tutorial = "A veteran among the serfs that tend to cattle and fields of produce, \
