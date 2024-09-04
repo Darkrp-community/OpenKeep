@@ -139,6 +139,26 @@
 	/obj/item/grown/log/tree/stick = 1,
 	/obj/item/clothing/suit/roguetown/armor/chainmail/iron = 1)
 
+/datum/crafting_recipe/roguetown/wickerrobe
+	name = "wicker robes"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/wickerrobe)
+	reqs = list(/obj/item/natural/dirtclod = 1,
+	/obj/item/natural/fibers = 3,
+	/obj/item/grown/log/tree/stick = 2)
+
+/datum/crafting_recipe/roguetown/wickerhat
+	name = "wicker hat"
+	result = list(/obj/item/clothing/head/roguetown/wickerhat)
+	reqs = list(/obj/item/natural/dirtclod = 1,
+	/obj/item/natural/fibers = 2,
+	/obj/item/grown/log/tree/stick = 1)
+
+/datum/crafting_recipe/roguetown/wickermask
+	name = "wicker mask"
+	result = list(/obj/item/clothing/mask/rogue/wickermask)
+	reqs = list(/obj/item/natural/dirtclod = 1,
+	/obj/item/natural/fibers = 1)
+
 /datum/crafting_recipe/roguetown/woodsword
 	name = "wood sword"
 	result = list(/obj/item/rogueweapon/mace/wsword,

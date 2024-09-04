@@ -183,4 +183,15 @@
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	experimental_onhip = TRUE
 	sewrepair = FALSE
-	anvilrepair = /datum/skill/craft/armorsmithing	
+	anvilrepair = /datum/skill/craft/armorsmithing
+
+/obj/item/clothing/mask/rogue/wickermask
+	name = "wicker mask"
+	desc = "A mask made using fibers and foliage."
+	icon_state = "wickermask"
+	item_state = "wickermask"
+	resistance_flags = FLAMMABLE
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	body_parts_covered = EARS|MOUTH|NECK
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	sewrepair = TRUE	

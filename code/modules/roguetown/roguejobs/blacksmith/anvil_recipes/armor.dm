@@ -77,6 +77,13 @@
 	created_item = /obj/item/clothing/head/roguetown/helmet/northernhelm
 	craftdiff = 1
 
+/datum/anvil_recipe/armor/narvalichainhelm
+	name = "Narvali Goldhelmet"
+	recipe_name = "a Narvali Goldhelmet"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/head/roguetown/helmet/northernchainhelm
+	craftdiff = 1
+
 /datum/anvil_recipe/armor/trimmedhelm
 	name = "Trimmed iron helmet"
 	recipe_name = "a trimmed iron helmet"
@@ -349,4 +356,12 @@
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/beakhelm)
-	craftdiff = 3	
+	craftdiff = 3
+
+/datum/anvil_recipe/armor/astratasunhelm
+	name = "Gilded Helm (3)"
+	recipe_name = "a Gilded Helmet"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/astratasunhelm)
+	craftdiff = 4	

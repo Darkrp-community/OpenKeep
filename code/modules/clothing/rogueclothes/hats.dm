@@ -1131,6 +1131,18 @@
 	will_cover = HEAD|EARS|NOSE
 	smeltresult = /obj/item/ingot/iron
 
+/obj/item/clothing/head/roguetown/helmet/northernchainhelm
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	name = "gold pothelm"
+	max_integrity = 250
+	armor = list("melee" = 65, "bullet" = 45, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	icon_state = "northernchainhelm"
+	item_state = "northernchainhelm"
+	desc = "A golden pothelm from the Narvali lands, this one protects the face with a mask of chainmail."
+	will_cover = HEAD|EARS|NOSE|FACE|MOUTH|NECK
+	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS|HIDEFACIALHAIR
+	smeltresult = /obj/item/ingot/gold
+
 /obj/item/clothing/head/roguetown/helmet/heavy/grenzelhounskull
 	name = "grenzelhoft plumed helm"
 	desc = "A stained plume helm, styled in typical Grenzelhoftian black."
@@ -1181,4 +1193,29 @@
 	worn_y_dimension = 64
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
-	//dropshrink = 0.75		
+	//dropshrink = 0.75	
+
+/obj/item/clothing/head/roguetown/wickerhat
+	name = "wicker hat"
+	desc = "A wide brimmed hat made using fibers and foliage."
+	icon_state = "wickerhat"
+	item_state = "wickerhat"
+	dynamic_hair_suffix = "+generic"
+	sellprice = 5
+	resistance_flags = FLAMMABLE
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+
+/obj/item/clothing/head/roguetown/helmet/heavy/astratasunhelm
+	name = "gilded helmet"
+	desc = "A bucket helmet topped with a decorative crest representing the sun."
+	icon_state = "astratasunhelmet"
+	item_state = "astratasunhelmet"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	block2add = FOV_RIGHT|FOV_LEFT
+	smeltresult = /obj/item/ingot/steel	

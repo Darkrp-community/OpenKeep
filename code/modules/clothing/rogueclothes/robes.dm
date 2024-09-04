@@ -194,3 +194,19 @@
 	slot_flags = ITEM_SLOT_ARMOR
 	boobed = TRUE
 	color = null
+
+/obj/item/clothing/suit/roguetown/shirt/robe/wickerrobe
+	name = "wicker robes"
+	desc = "A set of robes made using fibers and foliage."
+	icon_state = "wickerrobe"
+	icon = 'icons/roguetown/clothing/shirts.dmi'
+	item_state = "wickerrobe"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/shirts.dmi'
+	boobed = TRUE
+	flags_inv = HIDEBOOB
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	resistance_flags = FLAMMABLE
+	color = null
+	sellprice = 10
