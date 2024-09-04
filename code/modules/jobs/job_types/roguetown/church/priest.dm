@@ -59,6 +59,9 @@
 		H.change_stat("intelligence", 2)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", 1)
+	if(H.patron != /datum/patron/divine/ravox)
+		H.patron = GLOB.patronlist[/datum/patron/divine/astrata]
+		to_chat(H, "<span class='warning'>I've always given myself to [H.patron].")
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron) // This creates the cleric holder used for devotion spells
 	C.holder_mob = H
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
