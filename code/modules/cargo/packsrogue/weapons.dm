@@ -69,7 +69,7 @@
 	contains = /obj/item/rogueweapon/shield/tower
 
 /datum/supply_pack/rogue/weapons/bomb
-	name = "Battle Bomb"
+	name = "Bottle Bomb"
 	cost = 40
 	contains = /obj/item/bomb/homemade
 
