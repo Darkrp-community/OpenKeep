@@ -174,6 +174,37 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		log_admin("COMMEND: [ckey] commends [theykey].")
 	return
 
+if(href_list["schizohelp"])
+		answer_schizohelp(locate(href_list["schizohelp"]))
+		return
+
+	switch(href_list["_src_"])
+		if("holder")
+			hsrc = holder
+		if("usr")
+			hsrc = mob
+		if("prefs")
+			if (inprefs)
+				return
+			inprefs = TRUE
+			. = prefs.process_link(usr,href_list)
+			inprefs = FALSE
+			return
+		if("vars")
+			return view_var_Topic(href,href_list,hsrc)
+		if("chat")
+			return chatOutput.Topic(href, href_list)
+
+	switch(href_list["action"])
+		if("openLink")
+			src << link(href_list["link"])
+	if (hsrc)
+		var/datum/real_src = hsrc
+		if(QDELETED(real_src))
+			return
+
+	..()	//redirect to hsrc.Topic()
+
 /client/proc/is_content_unlocked()
 	if(!prefs.unlock_content)
 		to_chat(src, "Become a BYOND member to access member-perks and features, as well as support the engine that makes this game possible. Only 10 bucks for 3 months! <a href=\"https://secure.byond.com/membership\">Click Here to find out more</a>.")
