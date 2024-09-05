@@ -48,7 +48,7 @@
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	neck = /obj/item/clothing/neck/roguetown/bevor
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
-	backpack_contents = list(/obj/item/keyring/puritan = 1, /obj/item/needle = 1)
+	backpack_contents = list(/obj/item/keyring/puritan = 1)
 	var/prev_real_name = H.real_name
 	var/prev_name = H.name
 	var/honorary = "Retter"

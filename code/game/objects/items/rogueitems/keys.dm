@@ -254,8 +254,8 @@
 	icon_state = "greenkey"
 	lockid = "mercenary"
 
-/obj/item/roguekey/puritan
-	name = "inquisitor's key"
+/obj/item/roguekey/inquisition
+	name = "inquisition key"
 	desc = "This is an intricate key."
 	icon_state = "mazekey"
 	lockid = "puritan"
