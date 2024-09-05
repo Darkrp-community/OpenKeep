@@ -1,4 +1,4 @@
-//human master fisher
+//human, master fisher
 
 /datum/advclass/pilgrim/rare/fishermaster
 	name = "Master Fisher"
