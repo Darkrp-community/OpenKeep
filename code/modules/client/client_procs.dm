@@ -174,7 +174,8 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		log_admin("COMMEND: [ckey] commends [theykey].")
 	return
 
-if(href_list["schizohelp"])
+/client/Topic(href, href_list, hsrc)
+	if(href_list["schizohelp"])
 		answer_schizohelp(locate(href_list["schizohelp"]))
 		return
 
