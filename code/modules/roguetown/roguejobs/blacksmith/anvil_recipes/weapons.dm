@@ -114,7 +114,7 @@
 	appro_skill = /datum/skill/craft/engineering
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/projectile/bullet/reusable/arrow
+	created_item = /obj/item/ammo_casing/caseless/rogue/arrow
 	createmultiple = TRUE
 	createditem_num = 4
 	i_type = "Ammo"

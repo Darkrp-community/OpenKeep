@@ -62,6 +62,12 @@
 			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
+		if("Pestra")
+			head = /obj/item/clothing/head/roguetown/roguehood
+			neck = /obj/item/clothing/neck/roguetown/psicross/pestra
+			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/green
+			shoes = /obj/item/clothing/shoes/roguetown/sandals
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
