@@ -13,10 +13,10 @@
 	cost = 25
 	contains = /obj/item/clothing/head/roguetown/helmet/sallet
 
-/datum/supply_pack/rogue/armor/heavy_helmet
-	name = "Barred Heavy Helmet"
+/datum/supply_pack/rogue/armor/buckethelm
+	name = "Great Helm"
 	cost = 70
-	contains = /obj/item/clothing/head/roguetown/helmet/heavy/captain
+	contains = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
 
 /datum/supply_pack/rogue/armor/imask
 	name = "Iron Facemask"
@@ -47,11 +47,6 @@
 	name = "Iron Chainmail"
 	cost = 22
 	contains = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-
-/datum/supply_pack/rogue/armor/chainmail_hauberk
-	name = "Steel Hauberk"
-	cost = 40
-	contains = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 
 /datum/supply_pack/rogue/armor/plate_half
 	name = "Steel Cuirass"
