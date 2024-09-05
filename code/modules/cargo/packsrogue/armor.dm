@@ -55,7 +55,7 @@
 
 /datum/supply_pack/rogue/armor/brigandine
 	name = "Brigandine"
-	cost = 80
+	cost = 100
 	contains = /obj/item/clothing/suit/roguetown/armor/brigandine
 
 /datum/supply_pack/rogue/armor/leather_bracers
