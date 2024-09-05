@@ -111,7 +111,7 @@
 	/// The current intent of the mob
 	var/datum/intent/a_intent = INTENT_HELP//Living
 	var/datum/intent/o_intent = INTENT_HELP
-	var/datum/rmb_intent/rmb_intent//Living
+	var/datum/rmb_intent/rmb_intent //Living
 	var/datum/intent/used_intent
 	var/datum/intent/mmb_intent
 	var/datum/intent/used_rmb_intent
@@ -270,6 +270,7 @@
 	var/last_dodge = 0
 	var/last_parry = 0
 	var/next_emote = 0
+	var/next_me_emote = 0
 	var/lastpoint = 0
 
 	var/mobid = 0 //incremented on spawn

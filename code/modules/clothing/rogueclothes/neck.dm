@@ -66,7 +66,7 @@
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	blocksound = CHAINHIT
-	smeltresult = /obj/item/ingot/steel
+	smeltresult = null
 
 /obj/item/clothing/neck/roguetown/chaincoif/AdjustClothes(mob/user)
 	if(loc == user)
@@ -96,7 +96,7 @@
 	desc = "A chain coif made of interwoven iron rings. Affordable protection against arrows and blades, \
 			but should be used as padding rather than relied upon as armor."
 	armor = list("melee" = 60, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	smeltresult = /obj/item/ingot/iron
+	smeltresult = null
 
 /obj/item/clothing/neck/roguetown/bevor
 	name = "bevor"
@@ -180,6 +180,13 @@
 	name = "amulet of Eora"
 	desc = "And I love thee because thou art love."
 	icon_state = "eora"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psicross/pestra
+	name = "amulet of Pestra"
+	desc = "A Pestran amulet depicting her fabled walking staff, encrusted in this trinket is a venomous serpent. Believed to ward off disease and lessen poisons to devoted worshippers of the wise hag."
+	icon_state = "pestra"
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/silver
 	name = "silver psycross"
