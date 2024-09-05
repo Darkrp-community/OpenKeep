@@ -53,7 +53,7 @@
 
 	H.change_stat("intelligence", 2)
 	H.change_stat("perception", 1)
-	H.change_stat("strength", -2)
+	H.change_stat("strength", -1)
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
