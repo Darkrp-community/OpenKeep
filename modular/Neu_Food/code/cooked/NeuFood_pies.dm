@@ -30,9 +30,6 @@
 	if (process_step == 2 && applepie)
 		var/mutable_appearance/apple1 = mutable_appearance(icon, "fill_apple1")
 		add_overlay(apple1)
-//	if (process_step == 2 && potpie)  TESTING DOING POTPIE ANOTHER WAY
-//		var/mutable_appearance/pot1 = mutable_appearance(icon, "fill_egg1")
-//		add_overlay(pot1)
 	if (process_step == 2 && meaty)
 		var/mutable_appearance/meat1 = mutable_appearance(icon, "fill_meat1")
 		add_overlay(meat1)
@@ -45,9 +42,6 @@
 	if (process_step == 3 && applepie)
 		var/mutable_appearance/apple2 = mutable_appearance(icon, "fill_apple2")
 		add_overlay(apple2)
-//	if (process_step == 3 && potpie)
-//		var/mutable_appearance/pot2 = mutable_appearance(icon, "fill_egg2")
-//		add_overlay(pot2)
 	if (process_step == 3 && meaty)
 		var/mutable_appearance/meat2 = mutable_appearance(icon, "fill_meat2")
 		add_overlay(meat2)
@@ -60,9 +54,6 @@
 	if (process_step == 4 && applepie)
 		var/mutable_appearance/apple3 = mutable_appearance(icon, "fill_apple3")
 		add_overlay(apple3)
-//	if (process_step == 4 && potpie)
-//		var/mutable_appearance/pot3 = mutable_appearance(icon, "fill_egg3")
-//		add_overlay(pot3)
 	if (process_step == 4 && meaty)
 		var/mutable_appearance/meat3 = mutable_appearance(icon, "fill_meat3")
 		add_overlay(meat3)
@@ -87,8 +78,8 @@
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
-		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/mince/fish))
 		if (process_step > 4)
 			return
@@ -98,6 +89,7 @@
 			name = "unfinished fish pie"
 			process_step += 1
 			fishy = TRUE
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
 			qdel(I)
 			return
@@ -123,6 +115,7 @@
 			name = "unfinished meat pie"
 			process_step += 1
 			meaty = TRUE
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
 			qdel(I)
 			return
@@ -149,6 +142,7 @@
 			process_step += 1
 			potpie = TRUE
 			var/mutable_appearance/pot1 = mutable_appearance(icon, "fill_pot1")
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			add_overlay(pot1)
 			qdel(I)
 			return
@@ -177,6 +171,7 @@
 			process_step += 1
 			potpie = TRUE
 			var/mutable_appearance/egg1 = mutable_appearance(icon, "fill_egg1")
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			add_overlay(egg1)
 			qdel(I)
 			return
@@ -205,6 +200,7 @@
 			process_step += 1
 			potpie = TRUE
 			var/mutable_appearance/animal1 = mutable_appearance(icon, "fill_fish1")
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			add_overlay(animal1)
 			qdel(I)
 			return
@@ -239,6 +235,7 @@
 			name = "unfinished applepie"
 			process_step += 1
 			applepie = TRUE
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
 			qdel(I)
 			return
@@ -265,6 +262,7 @@
 			process_step += 1
 			berrypie = TRUE
 			poisoning = TRUE	
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
 			qdel(I)
 			return
@@ -292,6 +290,7 @@
 			name = "unfinished berrypie"
 			process_step += 1
 			berrypie = TRUE
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
 			qdel(I)
 			return
@@ -316,6 +315,7 @@
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/fish
 			filling_color = "#d44197"
 			process_step += 1
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
 			qdel(I)
 		if(meaty && process_step == 4 && do_after(user,short_cooktime, target = src))
@@ -324,6 +324,7 @@
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/meat
 			filling_color = "#b43628"
 			process_step += 1
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
 			qdel(I)
 		if(potpie && process_step == 4 && do_after(user,short_cooktime, target = src))
@@ -331,12 +332,14 @@
 			filling_color = "#755430"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/pot
 			process_step += 1
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
 			qdel(I)
 		if(applepie && process_step == 4 && do_after(user,short_cooktime, target = src))
 			name = "uncooked applepie"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/apple
 			process_step += 1
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
 			qdel(I)
 		if(berrypie && process_step == 4 && do_after(user,short_cooktime, target = src))
@@ -344,6 +347,7 @@
 			filling_color = "#4a62cf"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/berry
 			process_step += 1
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
 			qdel(I)
 		if(poisoning && process_step == 4 && do_after(user,short_cooktime, target = src))
@@ -351,6 +355,7 @@
 			filling_color = "#4a62cf"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/poison
 			process_step += 1
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
 			qdel(I)
 	else
@@ -358,7 +363,11 @@
 	return ..()
 
 
-/*	........   Pie templates   ................ */
+
+/*--------------\
+| Pie templates |
+\--------------*/
+
 /obj/item/reagent_containers/food/snacks/rogue/pie
 	name = "pie"
 	desc = ""
@@ -481,7 +490,10 @@
 	tastes = list("baked apples and crispy butterdough" = 1)
 
 
-// -------------- HANDPIE (dwarven pie on the go, good shelflife until bitten, made from pie dough and mince, truffles or jacksberries) -----------------
+/*--------\
+| Handpie |
+\--------*/		// dwarven pie on the go, good shelflife until bitten, made from pie dough and mince, truffles or jacksberries
+
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw
 	name = "raw handpie"
 	desc = "The dwarven take on pies, called pierogi in their dialect. A fistfull of food to stand the test of time."
@@ -495,17 +507,17 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | VEGETABLES
-	tastes = list("meat" = 1)
+	tastes = list("delicious truffles" = 1)
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/mince
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | MEAT
-	tastes = list("mushrooms" = 1)
+	tastes = list("succulent meat" = 1)
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/berry
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | FRUIT
-	tastes = list("berry" = 1)
+	tastes = list("sweet berry" = 1)
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/poison
 	list_reagents = list(/datum/reagent/berrypoison = 5)
