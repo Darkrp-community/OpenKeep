@@ -35,6 +35,7 @@
 		if("rare")
 			sellprice = sellprice * 2
 			name = "rare [initial(name)]"
+			dust_result = /obj/item/alch/waterdust
 		if("com")
 			name = "common [initial(name)]"
 	if(!dead)

@@ -1,69 +1,76 @@
-/obj/screen/alert/status_effect/buff/alch
+/atom/movable/screen/alert/status_effect/buff/alch
 	desc = "Power rushes through your veins."
-	icon_state = "fortifystat"
+	icon_state = "buff"
 
 /datum/status_effect/buff/alch/strengthpot
 	id = "strpot"
-	alert_type = /obj/screen/alert/status_effect/buff/alch/strengthpot
+	alert_type = /atom/movable/screen/alert/status_effect/buff/alch/strengthpot
 	effectedstats = list("strength" = 3)
-	duration = 30 SECONDS
+	duration = 300
 
-/obj/screen/alert/status_effect/buff/alch/strengthpot
+/atom/movable/screen/alert/status_effect/buff/alch/strengthpot
 	name = "Strength"
+	icon_state = "buff"
 
 /datum/status_effect/buff/alch/perceptionpot
 	id = "perpot"
-	alert_type = /obj/screen/alert/status_effect/buff/alch/perceptionpot
+	alert_type = /atom/movable/screen/alert/status_effect/buff/alch/perceptionpot
 	effectedstats = list("perception" = 3)
-	duration = 30 SECONDS
+	duration = 300
 
-/obj/screen/alert/status_effect/buff/alch/perceptionpot
+/atom/movable/screen/alert/status_effect/buff/alch/perceptionpot
 	name = "Perception"
+	icon_state = "buff"
 
 /datum/status_effect/buff/alch/intelligencepot
 	id = "intpot"
-	alert_type = /obj/screen/alert/status_effect/buff/alch/intelligencepot
+	alert_type = /atom/movable/screen/alert/status_effect/buff/alch/intelligencepot
 	effectedstats = list("intelligence" = 3)
-	duration = 30 SECONDS
+	duration = 3000
 
-/obj/screen/alert/status_effect/buff/alch/intelligencepot
+/atom/movable/screen/alert/status_effect/buff/alch/intelligencepot
 	name = "Intelligence"
+	icon_state = "buff"
 
 /datum/status_effect/buff/alch/constitutionpot
 	id = "conpot"
-	alert_type = /obj/screen/alert/status_effect/buff/alch/constitutionpot
+	alert_type = /atom/movable/screen/alert/status_effect/buff/alch/constitutionpot
 	effectedstats = list("constitution" = 3)
-	duration = 30 SECONDS
+	duration = 300
 
-/obj/screen/alert/status_effect/buff/alch/constitutionpot
+/atom/movable/screen/alert/status_effect/buff/alch/constitutionpot
 	name = "Constitution"
+	icon_state = "buff"
 
 /datum/status_effect/buff/alch/endurancepot
 	id = "endpot"
-	alert_type = /obj/screen/alert/status_effect/buff/alch/endurancepot
+	alert_type = /atom/movable/screen/alert/status_effect/buff/alch/endurancepot
 	effectedstats = list("endurance" = 3)
-	duration = 30 SECONDS
+	duration = 300
 
-/obj/screen/alert/status_effect/buff/alch/endurancepot
+/atom/movable/screen/alert/status_effect/buff/alch/endurancepot
 	name = "Endurance"
+	icon_state = "buff"
 
 /datum/status_effect/buff/alch/speedpot
 	id = "spdpot"
-	alert_type = /obj/screen/alert/status_effect/buff/alch/speedpot
+	alert_type = /atom/movable/screen/alert/status_effect/buff/alch/speedpot
 	effectedstats = list("speed" = 3)
-	duration = 30 SECONDS
+	duration = 300
 
-/obj/screen/alert/status_effect/buff/alch/speedpot
+/atom/movable/screen/alert/status_effect/buff/alch/speedpot
 	name = "Speed"
+	icon_state = "buff"
 
 /datum/status_effect/buff/alch/fortunepot
 	id = "forpot"
-	alert_type = /obj/screen/alert/status_effect/buff/alch/fortunepot
+	alert_type = /atom/movable/screen/alert/status_effect/buff/alch/fortunepot
 	effectedstats = list("fortune" = 3)
-	duration = 30 SECONDS
+	duration = 300
 
-/obj/screen/alert/status_effect/buff/alch/fortunepot
+/atom/movable/screen/alert/status_effect/buff/alch/fortunepot
 	name = "Fortune"
+	icon_state = "buff"
 
 
 
