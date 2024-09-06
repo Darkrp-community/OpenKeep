@@ -52,9 +52,6 @@
 		update_icon_state()
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/shoot_live_shot(mob/living/user, pointblank, mob/pbtarget, message)
-	if(user.mind.get_skill_level(/datum/skill/combat/firearms) <= 0)
-		to_chat(user, "<span class='danger'>I do not know how to use this.</span>")
-		return
 	..()
 	user.playsound_local(get_turf(user), 'sound/foley/tinnitus.ogg', 60, FALSE) // muh realism or something
 	new /obj/effect/particle_effect/smoke(get_turf(user))
@@ -84,6 +81,9 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/rmb_self(mob/user)
 	. = ..()
+	if(user.mind.get_skill_level(/datum/skill/combat/firearms) <= 0)
+		to_chat(user, "<span class='warning'>I don't know how to do this!</span>")
+		return
 	if(wound)
 		to_chat(user, "<span class='info'>\The [src]'s mechanism is already wound!</span>")
 	var/windtime = 3.5
@@ -159,6 +159,9 @@
 	
 	// Check if the item used is a ramrod
 	if(istype(I, /obj/item/ramrod))
+		if(user.mind.get_skill_level(/datum/skill/combat/firearms) <= 0)
+			to_chat(user, "<span class='warning'>I don't know how to do this!</span>")
+			return
 		if(!user.is_holding(src))
 			to_chat(user, "<span class='warning'>I need to hold \the [src] to ram it!</span>")
 			return
@@ -174,6 +177,9 @@
 	else
 		// Check if the item used is a reagent container
 		if(istype(I, /obj/item/reagent_containers))
+			if(user.mind.get_skill_level(/datum/skill/combat/firearms) <= 0)
+				to_chat(user, "<span class='warning'>I don't know how to do this!</span>")
+				return
 			if(powdered)
 				to_chat(user, "<span class='warning'>\The [src] is already powdered!</span>")
 				return

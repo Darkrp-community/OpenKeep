@@ -285,7 +285,7 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
 	flag = "bullet"
 	armor_penetration = 100
-	speed = 0.1
+	speed = 0.3
 
 /obj/projectile/bullet/fragment
 	name = "smaller lead ball"
