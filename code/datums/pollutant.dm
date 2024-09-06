@@ -22,7 +22,8 @@
 			continue
 
 		H.add_stress(/datum/stressevent/perfume)
-		H.visible_message(span_green("The [descriptor] of [scent] bombards my nostrils."))
+		if(prob(5))
+			H.visible_message(span_green("The [descriptor] of [scent] bombards my nostrils."))
 
 /datum/pollutant/fragrance
 	name = "debug fragrance"
