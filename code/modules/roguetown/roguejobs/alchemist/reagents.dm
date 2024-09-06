@@ -107,14 +107,10 @@
 	color = "#ff9000"
 	taste_description = "old meat"
 
-/datum/reagent/buff/strength/on_mob_life(mob/living/carbon/M)
+/datum/reagent/buff/strength/on_mob_add(mob/living/carbon/M)
 	testing("str pot in system")
-	if(M.has_status_effect(/datum/status_effect/buff/alch/strengthpot))
-		return ..()
-	if(M.reagents.has_reagent((/datum/reagent/buff/strength),4))
-		M.apply_status_effect(/datum/status_effect/buff/alch/strengthpot)
-		M.reagents.remove_reagent(/datum/reagent/buff/strength, M.reagents.get_reagent_amount(/datum/reagent/buff/strength))
-	return ..()
+	M.apply_status_effect(/datum/status_effect/buff/alch/strengthpot)
+	..()
 
 /datum/reagent/buff/perception
 	name = "Perception"

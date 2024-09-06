@@ -96,6 +96,7 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	distill_reagent = null
 	//rotprocess = 10 MINUTES // too rare to rot
 	seed = /obj/item/seeds/fyritius
+	dust_result = /obj/item/alch/firedust
 
 /obj/item/seeds/fyritius
 	name = "odd seeds"
@@ -116,6 +117,7 @@ GLOBAL_LIST_EMPTY(berrycolors)
 	color = "#e2b22e"
 	yield = 3
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
+	dust_result = /obj/item/alch/firedust
 	delonharvest = FALSE
 
 /obj/item/seeds/onion

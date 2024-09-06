@@ -1,6 +1,3 @@
-/obj/item
-	var/possible_potion // check if it can be used in the cauldron, and what potion.
-
 /obj/machinery/light/rogue/cauldron
 	name = "cauldron"
 	desc = ""
@@ -16,6 +13,7 @@
 	var/brewing = 0
 	var/potion_result = "bland"
 	var/brew_amount = 60
+	var/mob/living/carbon/human/lastuser
 	fueluse = 5 MINUTES
 	crossfire = FALSE
 
@@ -94,7 +92,7 @@
 							speed_weight++
 						if("mindcomp")
 							perception_weight++
-							speed_weight++
+							intelligence_weight++
 						if("spiritcomp")
 							constitution_weight++
 							endurance_weight++
@@ -155,7 +153,7 @@
 					potion_result = "dirt"
 				//buff potions
 				if(strength_weight >= 3)
-					reagents.add_reagent(/datum/reagent/buff/strength, (brew_amount/10))
+					reagents.add_reagent(/datum/reagent/buff/strength, 15)
 					potion_result = "stew"
 				if(perception_weight >= 3)
 					reagents.add_reagent(/datum/reagent/buff/perception, (brew_amount/10))
@@ -174,7 +172,7 @@
 					potion_result = "acidic"
 				if(fortune_weight >= 3)
 					reagents.add_reagent(/datum/reagent/buff/fortune, (brew_amount/10))
-					potion_result = "fortune!"
+					potion_result = "fortuitous"
 				//poisons
 				if(poison_weight >= 2)
 					reagents.add_reagent(/datum/reagent/berrypoison, (brew_amount/6))
@@ -182,10 +180,12 @@
 				//handle player perception and reset for next time
 				src.visible_message("<span class='info'>The cauldron finishes boiling with a faint [potion_result] smell.</span>")
 //give xp for /datum/skill/craft/alchemy
+				var/boon = lastuser.mind?.get_learning_boon(/datum/skill/craft/alchemy)
+				var/amt2raise = lastuser.STAINT*2
+				lastuser?.mind?.adjust_experience(/datum/skill/craft/alchemy, amt2raise * boon, FALSE)
 				playsound(src, "bubbles", 100, TRUE)
 				playsound(src,'sound/misc/smelter_fin.ogg', 30, FALSE)
 				ingredients = list()
-				brew_amount = 45
 				brewing = 21
 
 /obj/machinery/light/rogue/cauldron/attackby(obj/item/I, mob/user, params)
@@ -205,6 +205,7 @@
 		ingredients += I
 		brewing = 0
 		playsound(src, "bubbles", 100, TRUE)
+		lastuser = user
 		return TRUE
 	..()
 

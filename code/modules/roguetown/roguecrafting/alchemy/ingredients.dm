@@ -71,7 +71,7 @@
 /obj/item/alch/waterdust
 	name = "water rune dust"
 	icon_state = "runedust"
-	possible_potion = "stronghealth"
+	possible_potion = "mindcomp"
 
 /obj/item/alch/bonemeal
 	name = "bone meal"
@@ -135,7 +135,7 @@
 /obj/item/alch/airdust
 	name = "air rune dust"
 	icon_state = "runedust"
-	possible_potion = "mindcomp"
+	possible_potion = "stronghealth"
 
 /obj/item/alch/sweetdust
 	name = "sweet leaf dust"
@@ -167,6 +167,15 @@
 	w_class = WEIGHT_CLASS_SMALL
 	dust_result = /obj/item/alch/bonemeal
 	possible_potion = "conpot"
+
+/obj/item/alch/horn
+	name = "troll horn"
+	icon_state = "horn"
+	desc = "The horn of a bog troll."
+	force = 7
+	throwforce = 5
+	w_class = WEIGHT_CLASS_NORMAL
+	dust_result = /obj/item/alch/earthdust
 
 /obj/item/reagent_containers/food/snacks/fish
 	possible_potion = "conpot"

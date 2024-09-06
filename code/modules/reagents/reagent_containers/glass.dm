@@ -596,9 +596,9 @@
 	desc = "A vial with a cork."
 	icon = 'icons/roguetown/items/cooking.dmi'
 	icon_state = "clear_vial1"
-	amount_per_transfer_from_this = 15
-	possible_transfer_amounts = list(15)
-	volume = 15
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5)
+	volume = 5
 	fill_icon_thresholds = list(0, 25, 50, 75, 100)
 	dropshrink = 0.5
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
@@ -613,7 +613,6 @@
 	experimental_onhip = TRUE
 
 /obj/item/reagent_containers/glass/bottle/vial/rmb_self(mob/user)
-	. = ..()
 	closed = !closed
 	user.changeNext_move(CLICK_CD_RAPID)
 	if(closed)
