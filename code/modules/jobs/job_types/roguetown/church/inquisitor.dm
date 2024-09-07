@@ -48,7 +48,7 @@
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	neck = /obj/item/clothing/neck/roguetown/bevor
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
-	backpack_contents = list(/obj/item/keyring/puritan = 1)
+	backpack_contents = list(/obj/item/keyring/inquisitor = 1)
 	var/prev_real_name = H.real_name
 	var/prev_name = H.name
 	var/honorary = "Retter"
@@ -126,6 +126,9 @@
 			to_chat(src, "<span class='warning'>Not ready to speak yet.</span>")
 
 /mob/living/carbon/human/proc/confession_time(mob/living/carbon/human/user)
+	if(istype(src.buckled, /obj/structure/fluff/walldeco/chains)) // If the victim is on hanging chains, they cannot resist.
+		confess_sins(resist=FALSE, user=user)
+		return
 	var/timerid = addtimer(CALLBACK(src, PROC_REF(confess_sins), FALSE, user), 6 SECONDS, TIMER_STOPPABLE)
 	var/responsey = alert(src, "Resist torture? (1 TRI)","Time for Pain","Yes","No")
 	testing("Sent resist request to [src].")

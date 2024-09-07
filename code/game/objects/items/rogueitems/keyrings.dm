@@ -269,7 +269,7 @@
 /obj/item/keyring/priest
 	keys = list(/obj/item/roguekey/priest, /obj/item/roguekey/confession, /obj/item/roguekey/church, /obj/item/roguekey/monastery, /obj/item/roguekey/inquisition)
 
-/obj/item/keyring/puritan
+/obj/item/keyring/inquisitor
 	keys = list(/obj/item/roguekey/inquisition, /obj/item/roguekey/manor, /obj/item/roguekey/church)
 
 /obj/item/keyring/shepherd

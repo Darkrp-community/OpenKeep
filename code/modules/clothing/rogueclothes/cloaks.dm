@@ -406,6 +406,11 @@
 	icon_state = "tabard_pestra"
 	item_state = "tabard_pestra"
 
+/obj/item/clothing/cloak/stabard/templar/weeping
+	name = "surcoat of the order of the psycross"
+	icon_state = "tabard_weeping"
+	item_state = "tabard_weeping"
+
 //////////////////////////
 /// SURCOATS
 ////////////////////////
