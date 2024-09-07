@@ -34,9 +34,9 @@
 	if(already_known(user))
 		to_chat(user, "<span class='notice'>I already know this spell.</span>")
 		return FALSE
-	/* if(!user.mind?.get_skill_level(/datum/skill/magic/arcane))
+	if(!user.mind?.get_skill_level(/datum/skill/magic/arcane))
 		to_chat(user, "<span class='warning'>I don't have the knowledge to learn this spell.</span>")
-		return FALSE */
+		return FALSE
 	on_start(user)
 	reading = TRUE
 	if(remarks.len)
