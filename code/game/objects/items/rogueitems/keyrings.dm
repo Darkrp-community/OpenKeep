@@ -252,7 +252,7 @@
 	keys = list(/obj/item/roguekey/archive, /obj/item/roguekey/manor)
 
 /obj/item/keyring/merchant
-	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/merchant)
+	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/merchant, /obj/item/roguekey/mercenary)
 
 /obj/item/keyring/stevedore
 	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/warehouse)
@@ -287,8 +287,8 @@
 /obj/item/keyring/dungeoneer
 	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/walls)
 
-/obj/item/keyring/servant
-	keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison)
+/obj/item/keyring/butler
+	keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/butler)
 
 /obj/item/keyring/jester
 	keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/theatre)

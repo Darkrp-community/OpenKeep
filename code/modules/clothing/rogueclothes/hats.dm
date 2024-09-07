@@ -87,48 +87,6 @@
 	toggle_icon_state = TRUE
 	max_integrity = 100
 
-/obj/item/clothing/head/roguetown/roguehood/maghood
-	name = "magus hood"
-	desc = "Worn by the magi of Zybantu."
-	color = null
-	icon_state = "warlockhood"
-	item_state = "warlockhood"
-	icon = 'icons/roguetown/clothing/head.dmi'
-	body_parts_covered = NECK
-	armor = list("melee" = 40, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
-	resistance_flags = FLAMMABLE
-	blocksound = SOFTHIT
-	slot_flags = ITEM_SLOT_HEAD
-	flags_inv = HIDEFACE|HIDEFACIALHAIR
-	dynamic_hair_suffix = ""
-	edelay_type = 1
-	adjustable = CAN_CADJUST
-	blade_dulling = DULLING_BASHCHOP
-	armor_class = ARMOR_CLASS_LIGHT
-	toggle_icon_state = TRUE
-	max_integrity = 150
-
-/obj/item/clothing/head/roguetown/roguehood/maghood/AdjustClothes(mob/user)
-	if(loc == user)
-		if(adjustable == CAN_CADJUST)
-			adjustable = CADJUSTED
-			body_parts_covered = HEAD|EARS|HAIR|NECK
-			flags_inv = HIDEEARS
-			flags_cover = null
-			if(ishuman(user))
-				var/mob/living/carbon/H = user
-				H.update_inv_head()
-			block2add = null
-		else if(adjustable == CADJUSTED)
-			ResetAdjust(user)
-			body_parts_covered = NECK
-			if(user)
-				if(ishuman(user))
-					var/mob/living/carbon/H = user
-					H.update_inv_head()
-		user.update_fov_angles()
-
 /obj/item/clothing/head/roguetown/necrahood
 	name = "death shroud"
 	desc = "Worn by the faithful of Necra, or less savory individuals."
@@ -225,9 +183,6 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
 	//dropshrink = 0.75
-
-/obj/item/clothing/head/roguetown/menacing/bandit
-	icon_state = "bandithood"
 
 /obj/item/clothing/head/roguetown/jester
 	name = "jester's hat"
@@ -727,14 +682,29 @@
 	max_integrity = 120
 	color = "#745a4d"
 
+/obj/item/clothing/head/roguetown/helmet/leather/hood_ominous // a leather coif locked to headslot since you cannot pull it back. Crit prevent between armor items a little weird, this is leather coif, compare to helmet
+	name = "ominous hood"
+	desc = "Madmen. Cursed dogs. Beware."
+	icon_state = "ominous"
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	dynamic_hair_suffix = ""
+	body_parts_covered = NECK|HAIR|EARS|HEAD
+	sellprice = 5
+
+/obj/item/clothing/head/roguetown/helmet/leather/conical // old helmet
+	name = "hardened helmet"
+	desc = "A conical helmet made from boiled leather and metal fittings."
+	icon_state = "leatherhelm_old"
+	item_state = "leatherhelm_old"
+
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "volf helmet"
 	desc = "Bandit initiation rites often involve the slaying of a volf. This such helmet is produced after the hunt, as proof of having passed the test."
 	will_cover = HEAD|HAIR|EARS
 	icon_state = "volfhead"
 	item_state = "volfhead"
-	max_integrity = 150 //crude bandit craftsmenship
 	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
 	sellprice = 30
 
@@ -1065,34 +1035,218 @@
 	flags_inv = HIDEEARS
 	smeltresult = /obj/item/ingot/iron
 
-/obj/item/clothing/head/roguetown/sack
-	icon = 'icons/roguetown/clothing/head.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
-	name = "black bag"
-	desc = "An eyeless sack, used to blindfold prisoners or hostages."
-	will_cover = HEAD|HAIR|NOSE|EARS
-	flags_inv = HIDEEARS
-	icon_state = "sacked"
-	item_state = "sacked"
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	tint = TINT_BLIND
+/obj/item/clothing/head/roguetown/helmet/decoratedknighthelm
+	name = "decorated knight helmet"
+	desc = "A lavish knight's helmet which allows a crest to be mounted on top."
+	block2add = FOV_BEHIND
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	icon_state = "decorated_knight"
+	item_state = "decorated_knight"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	var/picked = FALSE
+	smeltresult = /obj/item/ingot/steel
 
-/obj/item/clothing/head/roguetown/sack/equipped(mob/living/carbon/human/user, slot)
-	. = ..()
-	if(slot == ITEM_SLOT_HEAD)
-		user.become_blind("blindfold[REF(src)]")
-
-/obj/item/clothing/head/roguetown/sack/dropped(mob/living/carbon/human/user)
+/obj/item/clothing/head/roguetown/helmet/decoratedknighthelm/attack_right(mob/user)
 	..()
-	user.cure_blind("blindfold_[REF(src)]")
+	if(!picked)
+		var/list/icons = list(
+		"Basic"="basic_decoration",
+		"Blue"="blue_decoration",
+		"Stripes"="stripes_decoration",
+		"Red Castle"="castle_red_decoration",
+		"White Castle"="castle_white_decoration",
+		"Graggar"="graggar_decoration",
+		"Efreet"="efreet_decoration",
+		"Sun"="sun_decoration",
+		"Feathers"="feathers_decoration",
+		"Lion"="lion_decoration",
+		"Red Dragon"="dragon_red_decoration",
+		"Green Dragon"="dragon_green_decoration",
+		"Horns"="horns_decoration",
+		"Swan"="swan_decoration",
+		"Fish"="fish_decoration",
+		"Oathtaker"="oathtaker_decoration",
+		"Skull"="skull_decoration")
 
-/obj/item/clothing/head/roguetown/sack/attack(mob/living/target, mob/living/user)
-	if(target.get_item_by_slot(SLOT_HEAD))
-		to_chat(user, "<span class='warning'>Remove [target.p_their()] headgear first!</span>")
-		return
-	target.visible_message("<span class='warning'>[user] forces [src] onto [target]'s head!</span>", \
-	"<span class='danger'>[target] forces [src] onto your head!</span>", "<i>I cant see anything.</i>")
-	target.emote("whimper", intentional = FALSE)
-	user.dropItemToGround(src)
-	target.equip_to_slot_if_possible(src, SLOT_HEAD)
+		var/choice = input(user, "Choose a crest.", "Knightly crests") as anything in icons
+		var/playerchoice = icons[choice]
+		picked = TRUE
+		icon_state = playerchoice
+		item_state = playerchoice
+		update_icon()
+		if(loc == user && ishuman(user))
+			var/mob/living/carbon/H = user
+			H.update_inv_head()
+
+/obj/item/clothing/head/roguetown/helmet/decoratedknighthelm/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)		
+
+/obj/item/clothing/head/roguetown/helmet/decoratedhounskull
+	name = "decorated hounskull"
+	desc = "A lavish hounskull which allows a crest to be mounted on top."
+	block2add = FOV_BEHIND
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	icon_state = "decorated_hounskull"
+	item_state = "decorated_hounskull"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	var/picked = FALSE
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/decoratedhounskull/attack_right(mob/user)
+	..()
+	if(!picked)
+		var/list/icons = list(
+		"Basic"="basic_houndecoration",
+		"Blue"="blue_houndecoration",
+		"Stripes"="stripes_houndecoration",
+		"Red Castle"="castle_red_houndecoration",
+		"White Castle"="castle_white_houndecoration",
+		"Graggar"="graggar_houndecoration",
+		"Efreet"="efreet_houndecoration",
+		"Sun"="sun_houndecoration",
+		"Feathers"="feathers_houndecoration",
+		"Lion"="lion_houndecoration",
+		"Red Dragon"="dragon_red_houndecoration",
+		"Green Dragon"="dragon_green_houndecoration",
+		"Horns"="horns_houndecoration",
+		"Swan"="swan_houndecoration",
+		"Fish"="fish_houndecoration",
+		"Oathtaker"="oathtaker_houndecoration",
+		"Skull"="skull_houndecoration")
+
+		var/choice = input(user, "Choose a crest.", "Knightly crests") as anything in icons
+		var/playerchoice = icons[choice]
+		picked = TRUE
+		icon_state = playerchoice
+		item_state = playerchoice
+		update_icon()
+		if(loc == user && ishuman(user))
+			var/mob/living/carbon/H = user
+			H.update_inv_head()
+
+/obj/item/clothing/head/roguetown/helmet/decoratedhounskull/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)		
+
+/obj/item/clothing/head/roguetown/helmet/heavy/decoratedbucket
+	name = "decorated greathelm"
+	desc = "A lavish greathelm which allows a crest to be mounted on top."
+	block2add = FOV_BEHIND
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	icon_state = "decorated_bucket"
+	item_state = "decorated_bucket"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	var/picked = FALSE
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/heavy/decoratedbucket/attack_right(mob/user)
+	..()
+	if(!picked)
+		var/list/icons = list(
+		"Basic"="basic_bucket",
+		"Blue"="blue_bucket",
+		"Stripes"="stripes_bucket",
+		"Red Castle"="castle_red_bucket",
+		"White Castle"="castle_white_bucket",
+		"Graggar"="graggar_bucket",
+		"Efreet"="efreet_bucket",
+		"Sun"="sun_bucket",
+		"Feathers"="feathers_bucket",
+		"Lion"="lion_bucket",
+		"Red Dragon"="dragon_red_bucket",
+		"Green Dragon"="dragon_green_bucket",
+		"Horns"="horns_bucket",
+		"Swan"="swan_bucket",
+		"Fish"="fish_bucket",
+		"Oathtaker"="oathtaker_bucket",
+		"Skull"="skull_bucket")
+
+		var/choice = input(user, "Choose a crest.", "Knightly crests") as anything in icons
+		var/playerchoice = icons[choice]
+		picked = TRUE
+		icon_state = playerchoice
+		item_state = playerchoice
+		update_icon()
+		if(loc == user && ishuman(user))
+			var/mob/living/carbon/H = user
+			H.update_inv_head()
+
+/obj/item/clothing/head/roguetown/helmet/heavy/decoratedbucket/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)		
+
+/obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket
+	name = "decorated goldhelm"
+	desc = "A lavish gold-trimmed greathelm which allows a crest to be mounted on top."
+	block2add = FOV_BEHIND
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	icon_state = "decorated_gbucket"
+	item_state = "decorated_gbucket"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	var/picked = FALSE
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket/attack_right(mob/user)
+	..()
+	if(!picked)
+		var/list/icons = list(
+		"Basic"="basic_gbucket",
+		"Blue"="blue_gbucket",
+		"Stripes"="stripes_gbucket",
+		"Red Castle"="castle_red_gbucket",
+		"White Castle"="castle_white_gbucket",
+		"Graggar"="graggar_gbucket",
+		"Efreet"="efreet_gbucket",
+		"Sun"="sun_gbucket",
+		"Feathers"="feathers_gbucket",
+		"Lion"="lion_gbucket",
+		"Red Dragon"="dragon_red_gbucket",
+		"Green Dragon"="dragon_green_gbucket",
+		"Horns"="horns_gbucket",
+		"Swan"="swan_gbucket",
+		"Fish"="fish_gbucket",
+		"Oathtaker"="oathtaker_gbucket",
+		"Skull"="skull_gbucket")
+
+		var/choice = input(user, "Choose a crest.", "Knightly crests") as anything in icons
+		var/playerchoice = icons[choice]
+		picked = TRUE
+		icon_state = playerchoice
+		item_state = playerchoice
+		update_icon()
+		if(loc == user && ishuman(user))
+			var/mob/living/carbon/H = user
+			H.update_inv_head()
+
+/obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)	

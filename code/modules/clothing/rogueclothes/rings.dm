@@ -19,7 +19,7 @@
 	sellprice = 33
 
 /obj/item/clothing/ring/silver/makers_guild
-	name = "Makers guild ring"
+	name = "Makers ring"
 	desc = "The wearer is a proud member of the Makers' guild."
 	icon_state = "guild_mason"
 	sellprice = 0
@@ -30,7 +30,7 @@
 	sellprice = 70
 
 /obj/item/clothing/ring/gold/guild_mercator
-	name = "Mercator guild ring"
+	name = "Mercator ring"
 	desc = "The wearer is a proud member of the Mercator guild."
 	icon_state = "guild_mercator"
 	sellprice = 0
@@ -102,7 +102,7 @@
 	desc = "Old ring, inscribed with arcane words. Once held magical powers, perhaps it does still?"
 	icon_state = "ring_protection"
 	var/antileechy
-//	var/antimagika	// turns out antimagic on court mage is silly
+	var/antimagika	// will cause bugs if equipped roundstart to wizards
 	var/antishocky
 
 /obj/item/clothing/ring/gold/protection/Initialize()
@@ -111,7 +111,7 @@
 		if(1)
 			antileechy = TRUE
 		if(2)
-			antileechy = TRUE // replaced antimagika since courtmage
+			antileechy = TRUE
 		if(3)
 			antishocky = TRUE
 		if(4)
@@ -125,11 +125,11 @@
 		else
 			REMOVE_TRAIT(user, TRAIT_LEECHIMMUNE,"Unleechable")
 
-//	if(antimagika)
-//		if (slot == SLOT_RING && istype(user))
-//			ADD_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
-//		else
-//			REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
+	if(antimagika)
+		if (slot == SLOT_RING && istype(user))
+			ADD_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
+		else
+			REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
 
 	if(antishocky)
 		if (slot == SLOT_RING && istype(user))

@@ -381,7 +381,7 @@
 "cFs" = (/obj/structure/closet/crate/chest/neu_iron,/obj/item/reagent_containers/powder/ozium,/obj/item/natural/cloth,/obj/item/needle,/turf/open/floor/rogue/blocks,/area/rogue/under/town/basement)
 "cGj" = (/obj/item/reagent_containers/glass/bucket/wooden,/turf/open/floor/rogue/dirt/road,/area/rogue/under/town/basement)
 "cGK" = (/obj/structure/mineral_door/wood/donjon/stone{name = "hospital"},/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/church)
-"cGL" = (/obj/structure/closet/crate/roguecloset,/obj/item/reagent_containers/powder,/obj/effect/decal/cleanable/cobweb{icon_state = "cobweb2"},/obj/item/roguekey/merchant,/turf/open/floor/rogue/carpet,/area/rogue/indoors/town/shop)
+"cGL" = (/obj/structure/closet/crate/roguecloset,/obj/item/reagent_containers/powder/spice,/obj/effect/decal/cleanable/cobweb{icon_state = "cobweb2"},/obj/item/roguekey/merchant,/turf/open/floor/rogue/carpet,/area/rogue/indoors/town/shop)
 "cHm" = (/obj/structure/fluff/walldeco/customflag{pixel_y = 32},/obj/machinery/light/rogue/wallfire/candle,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/garrison)
 "cHB" = (/obj/effect/decal/cleanable/blood/splatter,/turf/open/floor/rogue/naturalstone,/area/rogue/under/town/sewer)
 "cHD" = (/obj/effect/decal/cobbleedge{dir = 10},/obj/effect/decal/cobbleedge{dir = 9},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/exposed/under/basement)

@@ -42,6 +42,7 @@
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
 		if("Pestra")
+			neck = /obj/item/clothing/neck/roguetown/psicross/noc
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
 		if("Noc")
