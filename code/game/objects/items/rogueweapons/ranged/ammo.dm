@@ -13,7 +13,7 @@
 /obj/projectile/bullet/reusable/bolt
 	name = "bolt"
 	desc = "A small and sturdy bolt, with simple plume and metal tip, alongside a groove to load onto a crossbow."
-	damage = 50
+	damage = 40
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "bolt_proj"
@@ -42,7 +42,7 @@
 /obj/projectile/bullet/reusable/bolt/poison
 	name = "poison bolt"
 	desc = "A bolt dipped with a potent poison."
-	damage = 35
+	damage = 30
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "boltpoison_proj"
@@ -139,7 +139,7 @@
 /obj/projectile/bullet/reusable/arrow
 	name = "arrow"
 	desc = "A fletched projectile, with simple plumes and metal tip."
-	damage = 40
+	damage = 30
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "arrow_proj"
@@ -157,7 +157,7 @@
 	damage = 30
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/stone
 	embedchance = 80
-	armor_penetration = 40
+	armor_penetration = 10
 
 /obj/projectile/bullet/reusable/arrow/poison
 	name = "poison arrow"
