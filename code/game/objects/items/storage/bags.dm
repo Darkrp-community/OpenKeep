@@ -310,6 +310,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.insert_preposition = "on"
+	STR.max_w_class = WEIGHT_CLASS_NORMAL // changed to fit platters, take care if its abused
 	update_icon()
 
 /obj/item/storage/bag/tray/Moved()

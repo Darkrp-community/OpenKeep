@@ -82,7 +82,11 @@
 	desc = "A mortal turned saint by her own brew."
 	flaws = "Disrespectful, Irresponsible, Drunkard"
 	worshippers = "Warlocks, The Sick and Alchemists"
-	sins = "´Curing´ abnormalities, Refusing to help the misfortunates, Groveling"
+	sins = "´Curing´ abnormalities, Refusing to help the misfortunates, Groveling"	
+	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
+	t1 = /obj/effect/proc_holder/spell/invoked/heal
+	t2 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
+	t3 = /obj/effect/proc_holder/spell/invoked/cure_rot
 
 /datum/patron/divine/malum
 	name = "Malum"
