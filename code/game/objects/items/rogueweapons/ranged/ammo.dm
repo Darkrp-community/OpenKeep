@@ -161,7 +161,7 @@
 
 /obj/projectile/bullet/reusable/arrow/poison
 	name = "poison arrow"
-	desc = "An arrow with it's tip drenched in a powerful poison."
+	desc = "An arrow with its tip drenched in a powerful poison."
 	damage = 20
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -216,7 +216,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/arrow/pyro
 	name = "pyroclastic arrow"
-	desc = "An arrow with it's tip drenched in a flammable tincture."
+	desc = "An arrow with its tip drenched in a flammable tincture."
 	projectile_type = /obj/projectile/bullet/arrow/pyro
 	possible_item_intents = list(/datum/intent/mace/strike)
 	caliber = "arrow"
@@ -228,7 +228,7 @@
 
 /obj/projectile/bullet/arrow/pyro
 	name = "pyroclatic arrow"
-	desc = "An arrow with it's tip drenched in a flammable tincture."
+	desc = "An arrow with its tip drenched in a flammable tincture."
 	damage = 15
 	damage_type = BURN
 	icon = 'icons/roguetown/weapons/ammo.dmi'
