@@ -441,6 +441,10 @@
 		return FIRE_MINIMUM_TEMPERATURE_TO_SPREAD
 	return ..()
 
+/obj/item/flashlight/flare/torch/prelit/Initialize() //Prelit version, testing to see if it causes less issues with pre_equip dropping stuff in your hands
+	. = ..()
+	spark_act()
+
 /obj/item/flashlight/flare/torch/metal
 	name = "torch"
 	force = 1
