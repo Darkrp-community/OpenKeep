@@ -582,6 +582,10 @@
 		return 0
 	return 1
 
+// Version thats dense. Should honestly be standard?
+/obj/structure/fluff/clock/dense
+	density = TRUE
+
 /obj/structure/fluff/wallclock
 	name = "clock"
 	desc = "A wall clock with the sickle and hourglass sigil of clan Kharzarad on its crown."
@@ -1324,6 +1328,7 @@
 	name = "clockwork golem scrap"
 	desc = ""
 	icon_state = "clockgolem_dead"
+
 
 /obj/structure/fluff/statue/shisha
 	name = "shisha pipe"
