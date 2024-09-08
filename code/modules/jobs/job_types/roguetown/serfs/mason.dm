@@ -63,5 +63,5 @@
 	H.change_stat("constitution", 1)
 	H.change_stat("speed", -1)
 
-if(H.dna.species.id == "dwarf")
-	head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
+	if(H.dna.species.id == "dwarf")
+		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
