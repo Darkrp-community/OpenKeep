@@ -44,4 +44,4 @@
 	H.change_stat("constitution", 2)
 
 	if(H.dna.species.name == "Dwarf")
- 		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
+		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
