@@ -42,6 +42,9 @@
 		H.mind.adjust_skillrank(/datum/skill/labor/mining, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 4, TRUE)
 
+if(H.dna.species.id == "dwarf")
+	head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
+else
 	head = /obj/item/clothing/head/roguetown/hatfur
 	if(prob(50))
 		head = /obj/item/clothing/head/roguetown/hatblu
