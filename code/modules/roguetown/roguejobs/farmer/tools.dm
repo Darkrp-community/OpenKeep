@@ -332,38 +332,6 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-/datum/intent/pforkdump
-	name = "scoop"
-	icon_state = "inscoop"
-	chargetime = 0
-	noaa = TRUE
-	candodge = FALSE
-	misscost = 0
-	no_attack = TRUE
-
-/obj/item/rogueweapon/pitchfork/afterattack(obj/target, mob/user, proximity)
-	if((!proximity) || (!wielded))
-		return ..()
-	testing("fuck")
-	if(isopenturf(target))
-		if(forked.len)
-			for(var/obj/item/I in forked)
-				I.forceMove(target)
-				forked -= I
-			to_chat(user, "<span class='warning'>I dump the stalks.</span>")
-		update_icon()
-		return
-	..()
-
-/obj/item/rogueweapon/pitchfork/ungrip(mob/living/carbon/user, show_message = TRUE)
-	if(forked.len)
-		var/turf/T = get_turf(user)
-		for(var/obj/item/I in forked)
-			I.forceMove(T)
-			forked -= I
-		update_icon()
-	..()
-
 /obj/item/rogueweapon/pitchfork/update_icon()
 	if(forked.len)
 		icon_state = "cfork1"

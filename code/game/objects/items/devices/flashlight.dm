@@ -524,26 +524,6 @@
 	fuel = 120 MINUTES
 	should_self_destruct = FALSE
 
-/obj/item/flashlight/flare/torch/lantern/copper/afterattack(atom/movable/A, mob/user, proximity)
-    . = ..()
-    if(!proximity)
-        return
-    if(on && (prob(50) || (user.used_intent.type == /datum/intent/use)))
-        if(ismob(A))
-            A.spark_act()
-        else
-            A.fire_act(3,3)
-
-/obj/item/flashlight/flare/torch/lantern/copper/process()
-	open_flame(heat)
-	fuel = max(fuel - 1, 0)
-	if(!fuel || !on)
-		turn_off()
-		STOP_PROCESSING(SSobj, src)
-
-/obj/item/flashlight/flare/torch/lantern/copper/extinguish()
-	return
-
 /obj/item/flashlight/flare/torch/lantern/copper/getonmobprop(tag)
 	. = ..()
 	if(tag)
