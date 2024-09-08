@@ -240,6 +240,19 @@
 							if(STACON > 15)
 								liver.sellprice += STACON*5
 
+			var/obj/item/organ/stomach = getorganslot(ORGAN_SLOT_STOMACH)
+			if(stomach)
+				if(STACON >= 10)
+					stomach.sellprice = STACON
+				if(STACON < 10)
+					stomach.sellprice = STACON*2
+					if(STACON > 11)
+						stomach.sellprice = STACON*3
+						if(STACON > 13)
+							stomach.sellprice = STACON*4
+							if(STACON > 15)
+								stomach.sellprice += STACON*5
+
 			var/obj/item/organ/guts/guts = getorganslot(ORGAN_SLOT_STOMACH_AID)
 			if(guts)
 				if(STACON >= 10)
