@@ -15,7 +15,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/bandit
-	maximum_possible_slots = 5
+	maximum_possible_slots = 4
 	category_tags = list(CTAG_ADVENTURER, CTAG_BANDIT)
 	pickprob = 100
 
