@@ -177,7 +177,7 @@
 						if(H.cmode)
 							to_chat(U, "<span class='warning'>[H] is too prepared for combat to be taken hostage.</span>")
 							return
-						to_chat(U, "<span class='warning'>We take [H] hostage.</span>")
+						to_chat(U, "<span class='warning'>I take [H] hostage.</span>")
 						to_chat(H, "<span class='danger'>[U] takes us hostage!</span>")
 
 						U.swap_hand() // Swaps hand to weapon so you can attack instantly if hostage decides to resist
