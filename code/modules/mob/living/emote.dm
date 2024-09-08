@@ -30,6 +30,7 @@
 				found = TRUE
 		if(found)
 			return TRUE
+		to_chat(src, "<span class='danger'>I need a nearby psycross for my prayers to be heard...</span>")
 		return FALSE
 	
 	if(istype(src.patron, /datum/patron/inhumen))
@@ -39,12 +40,15 @@
 				found = TRUE
 		if(!found) // Cant pray to ZIZO if you're in the sight of the gods, stupid!
 			return TRUE
+		to_chat(src, "<span class='danger'>That accursed cross won't let me commune with the Forbidden One!</span>")
 		return FALSE
 
 	if(istype(src.patron, /datum/patron/forgotten))
 		var/area/C = get_area(src)
 		if(istype(C, /area/rogue/indoors/town/church/chapel))
 			return TRUE
+		to_chat(src, "<span class='danger'>I can only pray within the confines of a holy place.</span>")
+		return FALSE
 	
 	return TRUE // If you have any different god then I guess just pray whereever
 
@@ -54,7 +58,6 @@
 		var/area/C = get_area(user)
 		if(!L.canpray())
 			if(!istype(C, /area/rogue/underworld))
-				to_chat(user, "<span class='danger'>I can not pray here...</span>")
 				return
 		var/msg = input("Whisper your prayer:", "Prayer") as text|null
 		if(msg)
