@@ -46,3 +46,6 @@
 		H.change_stat("intelligence", -2)
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)
+
+if(H.dna.species.id == "dwarf")
+	 head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
