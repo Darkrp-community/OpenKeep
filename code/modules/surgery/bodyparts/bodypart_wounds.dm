@@ -315,7 +315,6 @@
 			used += 5
 		else if(zone_precise == BODY_ZONE_PRECISE_EARS)
 			fracture_type = /datum/wound/fracture/head/ears
-			necessary_damage = 0.9
 		else if(zone_precise == BODY_ZONE_PRECISE_R_EYE || zone_precise == BODY_ZONE_PRECISE_L_EYE)
 			fracture_type = /datum/wound/fracture/head/eyes
 			necessary_damage = 0.6
