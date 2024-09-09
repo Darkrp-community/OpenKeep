@@ -117,8 +117,9 @@
 
 /datum/supply_pack/rogue/food/cutlery
 	name = "Set of Cutlery"
-	cost = 15
+	cost = 10
 	contains = list(/obj/item/cooking/platter,
+	/obj/item/reagent_containers/glass/bowl,
 	/obj/item/reagent_containers/glass/cup,
 	/obj/item/kitchen/fork,
 	/obj/item/kitchen/spoon)
