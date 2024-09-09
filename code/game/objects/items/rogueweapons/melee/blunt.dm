@@ -291,6 +291,37 @@
 
 // Copper Bludgeon
 
+obj/item/rogueweapon/mace/goden/copper
+	force = 10
+	force_wielded = 20
+	slowdown = 1
+	possible_item_intents = list(/datum/intent/mace/heavy/strike)
+	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/mace/thrust)
+	name = "copper warclub"
+	desc = "A two handed club, decorated with a crown of spikes. A barbaric besign, good enough to be used as a weapon."
+	icon_state = "cwarclub"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	//dropshrink = 0.75
+	wlength = WLENGTH_LONG
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	associated_skill = /datum/skill/combat/axesmaces
+	smeltresult = /obj/item/ash
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
+	parrysound = "parrywood"
+	swingsound = BLUNTWOOSH_MED
+	max_integrity = 150
+	minstr = 10
+	wdefense = 3
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
+	wbalance = 0
+	sellprice = 35
+
 /obj/item/rogueweapon/mace/copperbludgeon
 	force = 12
 	force_wielded = 18

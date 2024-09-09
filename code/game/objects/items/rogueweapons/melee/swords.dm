@@ -1233,6 +1233,36 @@
 			if("onbelt")
 				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+/obj/item/rogueweapon/sword/long/rider/copper
+	force = 10
+	force_wielded = 20 // Shitty Design, Shitty materials, SHITTY WEAPON
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
+	icon_state = "copperfalx"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	item_state = "copperfalx"
+	name = "copper falx"
+	desc = "A special 'sword' of copper, the material isn't the best but is good enough to slash and kill. "
+	parrysound = "bladedmedium"
+	swingsound = BLADEWOOSH_LARGE
+	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
+	bigboy = 1
+	max_blade_int = 150 // Shitty Weapon
+	max_integrity = 230//this is fair to be fair
+	wlength = WLENGTH_LONG
+	gripsprite = TRUE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	associated_skill = /datum/skill/combat/swords
+	throwforce = 15
+	thrown_bclass = BCLASS_CUT
+	slot_flags = ITEM_SLOT_BACK//how the fuck you could put this thing on your hip?
+	dropshrink = 0.75
+	smeltresult = /obj/item/ingot/copper
+	sellprice = 25//lets make the two bars worth it 
+
 // Hoplite Kophesh
 /obj/item/rogueweapon/sword/khopesh
 	name = "ancient khopesh"
