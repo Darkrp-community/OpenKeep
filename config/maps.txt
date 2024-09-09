@@ -17,7 +17,3 @@ map roguetown
 	default
 	votable
 endmap
-
-map dun_manor
-	votable
-endmap
