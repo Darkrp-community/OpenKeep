@@ -125,7 +125,7 @@
 						if(STASTR > 14)
 							armr.sellprice = STASTR*6
 							if(STASTR > 16) //VL
-								armr.sellprice = STAINT*10.
+								armr.sellprice = STASTR*10.
 
 			var/obj/item/bodypart/arml = get_bodypart(BODY_ZONE_L_ARM)
 			if(arml)
@@ -138,7 +138,7 @@
 						if(STASTR > 14)
 							arml.sellprice = STASTR*6
 							if(STASTR > 16)
-								arml.sellprice = STAINT*10
+								arml.sellprice = STASTR*10
 
 		if("perception")
 			newamt = STAPER + amt
