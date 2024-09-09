@@ -61,8 +61,8 @@
 				apply_status_effect(/datum/status_effect/debuff/bleedingworst)
 		if(blood_volume <= BLOOD_VOLUME_BAD)
 			adjustOxyLoss(1)
-			if(blood_volume <= BLOOD_VOLUME_SURVIVE)
-				adjustOxyLoss(2)
+			//if(blood_volume <= BLOOD_VOLUME_SURVIVE)
+				//adjustOxyLoss(2)
 	else
 		remove_status_effect(/datum/status_effect/debuff/bleeding)
 		remove_status_effect(/datum/status_effect/debuff/bleedingworse)
@@ -135,8 +135,8 @@
 				apply_status_effect(/datum/status_effect/debuff/bleedingworst)
 		if(blood_volume <= BLOOD_VOLUME_BAD)
 			adjustOxyLoss(1)
-			if(blood_volume <= BLOOD_VOLUME_SURVIVE)
-				adjustOxyLoss(2)
+			//if(blood_volume <= BLOOD_VOLUME_SURVIVE)
+				//adjustOxyLoss(2)
 	else
 		remove_status_effect(/datum/status_effect/debuff/bleeding)
 		remove_status_effect(/datum/status_effect/debuff/bleedingworse)

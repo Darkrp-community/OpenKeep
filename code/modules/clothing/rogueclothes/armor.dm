@@ -496,6 +496,20 @@
 	allowed_race = list("human", "tiefling", "dwarf", "elf", "aasimar")
 	sellprice = 60
 
+/obj/item/clothing/suit/roguetown/armor/leather/vest/butler
+	color = CLOTHING_RED
+
+/obj/item/clothing/suit/roguetown/armor/leather/vest/butler/Initialize()
+	..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+	else
+		GLOB.lordcolor += src
+
+/obj/item/clothing/suit/roguetown/armor/leather/vest/butler/Destroy()
+	GLOB.lordcolor -= src
+	return ..()
+
 /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 	color = "#3c3a38"
 
@@ -735,3 +749,21 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 		AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/fullplate (1).ogg',\
 													'sound/foley/footsteps/armor/fullplate (2).ogg',\
 													'sound/foley/footsteps/armor/fullplate (3).ogg'), 100)
+
+/obj/item/clothing/suit/roguetown/armor/plate/half/copperchest
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "copper heart protector"//SHITTY ARMOR SHITTY ARMOR!!
+	desc = "Very simple and crude protection for the chest. Ancient fighters once used similar gear, with better quality..."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "copperchest"
+	item_state = "copperchest"
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = ALL_RACES_LIST
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 150
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/copper
+	armor_class = ARMOR_CLASS_LIGHT
+	sellprice = 15
