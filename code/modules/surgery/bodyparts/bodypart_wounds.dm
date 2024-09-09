@@ -311,7 +311,7 @@
 			fracture_type = /datum/wound/fracture
 		else if(zone_precise == BODY_ZONE_PRECISE_SKULL)
 			fracture_type = /datum/wound/fracture/head/brain
-			necessary_damage = 0.9
+			necessary_damage = 0.95
 			used += 5
 		else if(zone_precise == BODY_ZONE_PRECISE_EARS)
 			fracture_type = /datum/wound/fracture/head/ears
@@ -328,7 +328,7 @@
 		else if(zone_precise == BODY_ZONE_PRECISE_NECK)
 			fracture_type = /datum/wound/fracture/neck
 			dislocation_type = /datum/wound/dislocation/neck
-			necessary_damage = 0.9
+			necessary_damage = 0.95
 		if(prob(used) && (damage_dividend >= necessary_damage))
 			if(dislocation_type)
 				attempted_wounds += dislocation_type
