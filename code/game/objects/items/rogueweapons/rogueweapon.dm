@@ -88,5 +88,5 @@
 	if(hard_dismember)
 		return min(probability, 5)
 	else if(easy_dismember)
-		return probability * 3
+		return probability * 1.5
 	return probability

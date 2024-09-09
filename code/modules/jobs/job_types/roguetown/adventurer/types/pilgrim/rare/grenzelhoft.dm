@@ -1,6 +1,6 @@
-/datum/advclass/pilgrim/grenzelhoft
+/datum/advclass/pilgrim/rare/grenzelhoft
 	name = "Grenzelhoft Count"
-	tutorial = "A Count hailing from the Grenzelhoft Emperiate, here on an official visit to the Isle of the Enigma."
+	tutorial = "A Count hailing from the Grenzelhoft Imperiate, here on an official visit to the Isle of the Enigma."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -11,6 +11,7 @@
 	maximum_possible_slots = 1
 	min_pq = 1
 	whitelist_req = TRUE
+	pickprob = 30
 
 	cmode_music = 'sound/music/combat_grenzelhoft.ogg'
 

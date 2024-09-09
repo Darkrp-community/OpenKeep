@@ -16,7 +16,7 @@
 	min_pq = -15
 	same_job_respawn_delay = 0
 	whitelist_req = FALSE
-
+	bypass_lastclass = TRUE
 
 
 /datum/job/roguetown/villager/after_spawn(mob/living/L, mob/M, latejoin = TRUE)

@@ -1963,6 +1963,7 @@ Slots: [job.spawn_positions]</span>
 						ResetJobs()
 						if(pref_species.desc)
 							to_chat(user, "[pref_species.desc]")
+						age = pick(pref_species.possible_ages)			
 						to_chat(user, "<font color='red'>Classes reset.</font>")
 						random_character(gender)
 						accessory = "Nothing"

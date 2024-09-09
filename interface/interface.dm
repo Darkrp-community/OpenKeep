@@ -1,8 +1,8 @@
 //Please use mob or src (not usr) in these procs. This way they can be called in the same fashion as procs.
 /client/verb/wiki(query as text)
-	set name = "wiki"
+	set name = "Wiki"
 	set desc = ""
-	set hidden = 1
+	set category = "Memory"
 	var/wikiurl = CONFIG_GET(string/wikiurl)
 	if(wikiurl)
 		if(query)
@@ -28,9 +28,9 @@
 	return
 
 /client/verb/rules()
-	set name = "rules"
+	set name = "Rules"
 	set desc = ""
-	set hidden = 1
+	set category = "Memory"
 	var/rulesurl = CONFIG_GET(string/rulesurl)
 	if(rulesurl)
 		if(alert("This will open the rules in your browser. Are you sure?",,"Yes","No")!="Yes")
@@ -41,9 +41,9 @@
 	return
 
 /client/verb/github()
-	set name = "github"
+	set name = "Github"
 	set desc = ""
-	set hidden = 1
+	set category = "Memory"
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(githuburl)
 		if(alert("This will open the Github repository in your browser. Are you sure?",,"Yes","No")!="Yes")

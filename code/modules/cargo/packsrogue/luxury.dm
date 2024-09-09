@@ -18,10 +18,15 @@
 	cost = 1
 	contains = /obj/item/storage/fancy/cigarettes/zig/empty
 
+/datum/supply_pack/rogue/luxury/perfume
+	name = "Perfume"
+	cost = 15
+	contains = list(/obj/item/perfume/random)
+
 /datum/supply_pack/rogue/luxury/spice
 	name = "Spice"
 	cost = 10
-	contains = /obj/item/reagent_containers/powder
+	contains = /obj/item/reagent_containers/powder/spice
 
 /datum/supply_pack/rogue/luxury/ozium
 	name = "Ozium"

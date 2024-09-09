@@ -1,15 +1,11 @@
-//dwarf master mason
+//dwarf, master mason
 
-/datum/advclass/grandmastermason
+/datum/advclass/pilgrim/rare/grandmastermason
 	name = "Grandmaster Mason"
 	tutorial = "A Grandmaster mason, you built castles and entire cities with your own hands. \
 	There is nothing in this world that you can't build, your creed and hardwork has revealed all the secrets of the stone."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-	"Humen",
-	"Half-Elf",
-	"Dwarf"
-	)
+	allowed_races = list("Dwarf")
 	outfit = /datum/outfit/job/roguetown/adventurer/grandmastermason
 	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 1
@@ -40,10 +36,12 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/pick
-	backr = /obj/item/rogueweapon/woodcut
+	backr = /obj/item/rogueweapon/woodcut/steel
 	backl = /obj/item/storage/backpack/rogue/backpack
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", 2)
 	H.change_stat("endurance", 2)
 	H.change_stat("constitution", 2)
 
+	if(H.dna.species.name == "Dwarf")
+		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
