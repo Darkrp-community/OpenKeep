@@ -54,7 +54,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	ADD_TRAIT(owner.current, TRAIT_TOXIMMUNE, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOSLEEP, "[type]")
-	ADD_TRAIT(owner.current, TRAIT_LIMPDICK, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_VAMPMANSION, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_VILLAIN, "[type]")
 	owner.current.cmode_music = 'sound/music/combat_vamp.ogg'
@@ -113,7 +112,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			H.set_species(/datum/species/elf/snow) //setspecies randomizes body
 		H.after_creation()
 	H.equipOutfit(/datum/outfit/job/roguetown/vamplord)
-	H.patron = GLOB.patronlist[/datum/patron/inhumen/zizo]
+	H.patron = GLOB.patronlist[/datum/patron/forgotten] //Servant forever of he who is forgotten.
 
 	return TRUE
 

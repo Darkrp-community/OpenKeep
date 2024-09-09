@@ -60,6 +60,12 @@
 	new /obj/item/reagent_containers/glass/bottle/rogue/poison(src)
 	new /obj/item/rogueweapon/huntingknife/idagger/steel/profane(src)
 
+//Assassin's belt starts with a simple needle and a key to their hideout.
+/obj/item/storage/belt/rogue/leather/bandit/PopulateContents()
+	new /obj/item/needle/thorn(src)
+	new /obj/item/roguekey/bandit(src)
+
+
 /obj/item/storage/belt/rogue/leather/plaquegold
 	name = "plaque belt"
 	desc = "A belt with a golden plaque on its front."
