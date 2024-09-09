@@ -197,6 +197,9 @@
 			to_chat(user, "<span class='warning'>This is of no use to me - I may give this to a mercenary so they may send it themselves.</span>")
 			return
 		if(user.mind.assigned_role == "Mercenary")
+			if(C.signed == 0)
+				to_chat(user, "<span class='warning'>My commendation has not been signed! I must see the Merchant.</span>")
+				return
 			if(user.tokenclaimed == TRUE)
 				to_chat(user, "<span class='warning'>I have already received my commendation. There's always next month to look forward to.</span>")
 				return
