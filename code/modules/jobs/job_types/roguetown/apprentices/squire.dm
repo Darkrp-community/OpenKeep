@@ -8,12 +8,14 @@
 
 	allowed_races = list(
 		"Humen",
-		"Half-Elf"
+		"Elf",
+		"Half-Elf",
+		"Dwarf"
 	)
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT)
 
-	tutorial = "Mom n Da said you were going to be something, they had better aspirations for you than the life of a peasant. Your friends and you practiced the basics in the field, swordfighting with sticks, chasing rabbits with grain flail and helping around the house lifting heavy bags of grain. The Captain took notice of your potential and brought you on as his personal ward. Youre going to be something someday. "
+	tutorial = "You've always had greater aspirations than the simple life of a peasant. You and your friends practiced the basics, swordfighting with sticks and loosing arrows into hay bale targets. The Captain took notice of your potential, and recruited you as a personal ward. Learn from the garrison and train hard... maybe one day you will be honored with knighthood."
 
 	outfit = /datum/outfit/job/roguetown/squire
 	display_order = JDO_SQUIRE
@@ -44,6 +46,7 @@
 	if(visualsOnly)
 		return
 
+	ADD_TRAIT(H, TRAIT_INTRAINING, TRAIT_GENERIC) // An exception to the average combat skill cap on training dummies, since we are a combat role in training... we can get up to skilled! Hooray!
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
 	H.virginity = TRUE
