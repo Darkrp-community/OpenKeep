@@ -278,6 +278,14 @@
 	item_state = "surgcollar"
 	sellprice = 15
 
+/obj/item/clothing/neck/roguetown/gorget/copper
+	name = "copper gorget"
+	icon_state = "copperneck"
+	desc = "An antique and simple protection for the neck, used more as an accessory by the common folk. But poor protection is still better than nothing."
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 100
+	smeltresult = /obj/item/ingot/copper
+
 /obj/item/clothing/neck/roguetown/mercmedal
 	name = "mercenary medal"
 	desc = "A medal commemorating one's diligent work under the MGE."
