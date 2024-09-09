@@ -193,6 +193,9 @@
 
 /obj/structure/roguemachine/mail/attackby(obj/item/P, mob/living/carbon/human/user, params)
 	if(istype(P, /obj/item/merctoken))
+		if(user.mind.assigned_role == "Merchant")
+			to_chat(user, "<span class='warning'>This is of no use to me - I may give this to a mercenary so they may send it themselves.</span>")
+			return
 		if(user.mind.assigned_role == "Mercenary")
 			if(user.tokenclaimed == TRUE)
 				to_chat(user, "<span class='warning'>I have already received my commendation. There's always next month to look forward to.</span>")
