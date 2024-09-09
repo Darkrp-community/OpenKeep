@@ -756,6 +756,69 @@
 	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
 	attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
 
+/obj/structure/fluff/paperpress
+	name = "mechanical press"
+	desc = "A machine used to press wood with water into parchment. Strange."
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "paperpress"
+	density = TRUE
+	anchored = TRUE
+	layer = BELOW_OBJ_LAYER
+	blade_dulling = DULLING_BASHCHOP
+	max_integrity = 150
+	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
+	attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
+
+/obj/structure/fluff/inkpress
+	name = "inking press"
+	desc = "A machine used to press engravings covered with ink onto parchment to quickly produce written works. An amazing piece of technology."
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "newspress"
+	density = TRUE
+	anchored = TRUE
+	layer = BELOW_OBJ_LAYER
+	blade_dulling = DULLING_BASHCHOP
+	max_integrity = 500 // I havent yet decided if this should be craftable so I'll just make it hard to destroy, but theoretically you could censor the whole town with destroying this if you want to.
+	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
+	attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
+	var/obj/item/paper/P = null // paper to ink
+	var/info = "" // what to put on paper
+
+/obj/structure/fluff/inkpress/attackby(obj/item/I, mob/living/user, params)
+	if(istype(I, /obj/item/paper))
+		playsound(loc, 'sound/foley/dropsound/paper_drop.ogg', 100, FALSE, -1)
+		var/obj/item/paper/PA = I
+		PA.forceMove(src)
+		P = I
+		return
+	return ..()
+
+/obj/structure/fluff/inkpress/attack_hand(mob/user)
+	. = ..()
+	var/inputty = stripped_multiline_input(user, "Enter the verba you wish to mass-produce.", "ROGUETOWN", no_trim=TRUE)
+	if(inputty)
+		src.visible_message("<span class='info'>[user] replaces the letters in \the [src].</span>")
+		playsound(loc, 'sound/foley/cartadd.ogg', 100, FALSE, -1)
+		info = inputty
+
+/obj/structure/fluff/inkpress/rmb_self(mob/user)
+	attack_right(user)
+	return
+
+/obj/structure/fluff/inkpress/attack_right(mob/user)
+	. = ..()
+	if(!P)
+		visible_message("<span class='info'>[user] stamps \the [src] even though there is nothing inside.</span>")
+		playsound(loc, 'sound/foley/chairfall.ogg', 100, FALSE)
+		return
+	to_chat(user, "<span class='notice'>I begin stamping the parchment with the ink.</span>")
+	if(do_after(user, 3 SECONDS, TRUE, src))
+		playsound(loc, 'sound/foley/chairfall.ogg', 100, FALSE)
+		info = P.parsepencode(info, /obj/item/pen, usr, FALSE) // Encode everything from pencode to html
+		P.info = info
+		P.update_icon()
+		P.forceMove(loc)
+		P = null
 
 /obj/structure/fluff/statue
 	name = "statue"

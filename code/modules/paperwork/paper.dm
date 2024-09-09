@@ -289,11 +289,9 @@
 	update_icon_state()
 
 
-/obj/item/paper/proc/parsepencode(t, obj/item/P, mob/user, iscrayon = 0)
+/obj/item/paper/proc/parsepencode(t, obj/item/pen/P, mob/user, iscrayon)
 	if(length(t) < 1)		//No input means nothing needs to be parsed
 		return
-
-	t = parsemarkdown(t, user, iscrayon)
 
 	if(!iscrayon)
 		if(istype(P, /obj/item/pen))
@@ -308,7 +306,10 @@
 		var/obj/item/toy/crayon/C = P
 		t = "<font face=\"[CRAYON_FONT]\" color=[C.paint_color]><b>[t]</b></font>"
 
-	// Count the fields
+	t = parsemarkdown(t, user, iscrayon) // lets try and use both, TG and bay markdown (pencode). i hope nothing will go wrong..? technically they cant overlap
+	t = pencode2html(t)
+
+	//Count the fields
 	var/laststart = 1
 	while(fields < 15)
 		var/i = findtext(t, "<span class=\"paper_field\">", laststart)

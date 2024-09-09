@@ -370,6 +370,36 @@
 	structurecraft = /obj/structure/fluff/dryingrack
 	craftdiff = 1
 
+/datum/crafting_recipe/roguetown/paperscrollpressed
+	name = "parchment scroll x5 (pressed)"
+	result = list(/obj/item/paper/scroll,
+				/obj/item/paper/scroll,
+				/obj/item/paper/scroll,
+				/obj/item/paper/scroll,
+				/obj/item/paper/scroll)
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+	/datum/reagent/water = 50)
+	verbage = "press"
+	verbage_tp = "presses"
+	skillcraft = /datum/skill/craft/engineering
+	structurecraft = /obj/structure/fluff/paperpress
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/paperpressed
+	name = "parchment x5 (pressed)"
+	result = list(/obj/item/paper,
+				/obj/item/paper,
+				/obj/item/paper,
+				/obj/item/paper,
+				/obj/item/paper)
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+	/datum/reagent/water = 50)
+	verbage = "press"
+	verbage_tp = "presses"
+	skillcraft = /datum/skill/craft/engineering
+	structurecraft = /obj/structure/fluff/paperpress
+	craftdiff = 1
+
 /datum/crafting_recipe/roguetown/readingscroll
 	name = "novice's guide to literature"
 	result = list(/obj/item/literary)
