@@ -200,9 +200,9 @@
 				if(STAINT > 10)
 					brain.sellprice = STAINT*2
 					if(STAINT > 11)
-						brain.sellprice = STAINT*3
+						brain.sellprice = STAINT*4
 						if(STAINT > 13)
-							brain.sellprice = STAINT*4
+							brain.sellprice = STAINT*6
 							if(STAINT > 15) //15+ needs a special job - baseline old age elf is 14. 
 								brain.sellprice += STAINT*10 //"smartest" human npcs rn are zizombies and orcs at 10 INT - galaxy brains are player-exclusive.
 
@@ -295,9 +295,9 @@
 					heart.sellprice = STAEND*2
 					if(STAEND > 12)
 						heart.sellprice = STAEND*3
-						if(STAEND > 15)
+						if(STAEND > 14)
 							heart.sellprice = STAEND*5
-							if(STAEND > 17)
+							if(STAEND > 16)
 								heart.sellprice += STAEND*7
 
 			var/obj/item/organ/lungs/lungs = getorganslot(ORGAN_SLOT_LUNGS)
@@ -308,9 +308,9 @@
 					lungs.sellprice = STAEND*2
 					if(STAEND > 12)
 						lungs.sellprice = STAEND*3
-						if(STAEND > 15)
+						if(STAEND > 14)
 							lungs.sellprice = STAEND*5
-							if(STAEND > 17)
+							if(STAEND > 16)
 								lungs.sellprice += STAEND*7
 
 		if("speed")
