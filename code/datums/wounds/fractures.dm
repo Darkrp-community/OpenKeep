@@ -116,7 +116,7 @@
 		"The orbital bone is cracked!",
 	)
 	paralysis = FALSE
-	mortal = FALSE
+	mortal = TRUE
 	dents_brain = FALSE
 
 /datum/wound/fracture/head/ears
