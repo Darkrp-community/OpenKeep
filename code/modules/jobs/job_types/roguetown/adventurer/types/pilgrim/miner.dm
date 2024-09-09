@@ -25,7 +25,6 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/rogueweapon/pick
-	beltr = /obj/item/flashlight/flare/torch/lantern
 	backr = /obj/item/rogueweapon/shovel
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/huntingknife = 1)
@@ -46,3 +45,8 @@
 		H.change_stat("intelligence", -2)
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)
+
+	if(H.dna.species.id == "dwarf")
+		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
+	else
+		beltr = /obj/item/flashlight/flare/torch/lantern

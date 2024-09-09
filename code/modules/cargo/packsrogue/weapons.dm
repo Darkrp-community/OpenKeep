@@ -92,3 +92,8 @@
 	name = "Leather Whip"
 	cost = 65
 	contains = /obj/item/rogueweapon/whip
+
+/datum/supply_pack/rogue/weapons/nets
+	name = "Throwing Net"
+	cost = 10
+	contains = /obj/item/net
