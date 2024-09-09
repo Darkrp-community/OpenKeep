@@ -73,6 +73,11 @@
 	cost = 40
 	contains = /obj/item/bomb/homemade
 
+/datum/supply_pack/rogue/weapons/nets
+	name = "Throwing Net"
+	cost = 10
+	contains = /obj/item/net
+
 /datum/supply_pack/rogue/weapons/crossbow
 	name = "Crossbow"
 	cost = 36
