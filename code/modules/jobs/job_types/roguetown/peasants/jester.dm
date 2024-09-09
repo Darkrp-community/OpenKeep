@@ -47,7 +47,11 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/music, pick(1,2), TRUE)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/mockery) // Mock people to your heart's content!
+		H.STASTR = rand(1, 20)
+		H.STAPER = rand(1, 20)
 		H.STAINT = rand(1, 20)
+		H.STACON = rand(1, 20)
+		H.STAEND = rand(1, 20)
 		H.STALUC = rand(1, 20)
 		H.cmode_music = 'sound/music/combat_jester.ogg'
 /*		if(H.gender == MALE)
