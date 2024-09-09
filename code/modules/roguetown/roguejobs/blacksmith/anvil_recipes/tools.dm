@@ -207,3 +207,49 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/reagent_containers/glass/bucket/pot
 	craftdiff = 1
+
+/datum/anvil_recipe/tools/hoe/copper
+	name = "Hoe (+2s)"
+	recipe_name = "a gardening Hoe"
+	req_bar = /obj/item/ingot/copper
+	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/hoe/copper
+	i_type = "Tools"
+
+/datum/anvil_recipe/tools/sickle/copper
+	name = "Sickle (+s)"
+	recipe_name = "a Sickle"
+	req_bar = /obj/item/ingot/copper
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/sickle/copper
+	i_type = "Tools"
+
+/datum/anvil_recipe/tools/pitchfork/copper
+	name = "Pitchfork (+2s)"
+	recipe_name = "a Pitchfork"
+	req_bar = /obj/item/ingot/copper
+	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/pitchfork/copper
+	i_type = "Tools"
+
+/datum/anvil_recipe/tools/pick/copper
+	name = "Pick (+s)"
+	recipe_name = "a digging Pick"
+	req_bar = /obj/item/ingot/copper
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/pick/copper
+	i_type = "Tools"
+
+/datum/anvil_recipe/tools/lamptern/copper
+	name = "Lamptern"
+	recipe_name = "a Lamptern"
+	req_bar = /obj/item/ingot/copper
+	created_item = /obj/item/flashlight/flare/torch/lantern/copper
+
+/datum/anvil_recipe/tools/hammer/copper
+	name = "Hammer (+s)"
+	req_bar = /obj/item/ingot/copper
+	recipe_name = "a blacksmithing Hammer"
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/hammer/copper
+	i_type = "Tools"

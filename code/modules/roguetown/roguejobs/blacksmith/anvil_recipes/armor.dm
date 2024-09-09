@@ -3,6 +3,53 @@
 	i_type = "Armor"
 	craftdiff = 1
 
+// --------- COPPER -----------
+
+/datum/anvil_recipe/armor/cmask
+	name = "Copper mask"
+	recipe_name = "a mask of copper"
+	req_bar = /obj/item/ingot/copper
+	created_item = /obj/item/clothing/mask/rogue/facemask/copper
+	createmultiple = TRUE
+	createditem_num = 0
+	craftdiff = 0
+
+/datum/anvil_recipe/armor/copperbracers
+	name = "Copper armbraces"
+	recipe_name = "a couple of copper Vambraces"
+	req_bar = /obj/item/ingot/copper
+	created_item = /obj/item/clothing/wrists/roguetown/bracers/copper
+	createmultiple = TRUE
+	createditem_num = 0
+	craftdiff = 0
+
+/datum/anvil_recipe/armor/coppercap
+	name = "Copper cap"
+	recipe_name = "a copper cap"
+	req_bar = /obj/item/ingot/copper
+	created_item = /obj/item/clothing/head/roguetown/helmet/coppercap
+	createmultiple = TRUE
+	createditem_num = 0
+	craftdiff = 0
+
+/datum/anvil_recipe/armor/gorgetcopper
+	name = "Gorget"
+	recipe_name = "a Gorget made out of copper"
+	req_bar = /obj/item/ingot/copper
+	created_item = /obj/item/clothing/neck/roguetown/gorget/copper
+	createmultiple = TRUE
+	createditem_num = 0
+	craftdiff = 0
+
+/datum/anvil_recipe/armor/copperchest
+	name = "Copper heart protector (2)"
+	recipe_name = "a very simple armor piece for the chest"
+	req_bar = /obj/item/ingot/copper
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/half/copperchest
+	additional_items = list(/obj/item/ingot/copper)
+	createditem_num = 0
+	craftdiff = 0
+
 // --------- IRON -----------
 
 /datum/anvil_recipe/armor/ichainleg
