@@ -104,7 +104,7 @@
 		"The cranium is cracked!",
 		"The cranium is torn!",
 	)
-	whp = 100
+	whp = 150
 	paralysis = TRUE
 	mortal = TRUE
 	dents_brain = TRUE
@@ -170,7 +170,7 @@
 		"The spine cracks!",
 		"The spine is broken!",
 	)
-	whp = 100
+	whp = 150
 	sleep_healing = 0
 
 /datum/wound/fracture/neck/on_mob_gain(mob/living/affected)
