@@ -271,7 +271,7 @@
 	var/static/list/tonguestab_zones = list(BODY_ZONE_PRECISE_MOUTH)
 	var/static/list/nosestab_zones = list(BODY_ZONE_PRECISE_NOSE)
 	var/static/list/earstab_zones = list(BODY_ZONE_PRECISE_EARS)
-	var/static/list/knockout_zones = list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_SKULL)
+	var/static/list/knockout_zones = list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_SKULL, BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_MOUTH)
 	var/list/attempted_wounds = list()
 	var/used
 	var/total_dam = get_damage()
@@ -300,7 +300,7 @@
 		if(!owner.stat && (zone_precise in knockout_zones) && (bclass != BCLASS_CHOP) && prob(used))
 			owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> [owner] is knocked out[from_behind ? " FROM BEHIND" : ""]!</span>"
 			owner.flash_fullscreen("whiteflash3")
-			owner.Unconscious(5 SECONDS + (from_behind * 10 SECONDS))
+			owner.Unconscious(30 SECONDS + (from_behind * 60 SECONDS))
 			if(owner.client)
 				winset(owner.client, "outputwindow.output", "max-lines=1")
 				winset(owner.client, "outputwindow.output", "max-lines=100")
@@ -310,11 +310,21 @@
 		if(resistance)
 			fracture_type = /datum/wound/fracture
 		else if(zone_precise == BODY_ZONE_PRECISE_SKULL)
-			necessary_damage = 0.8
+			fracture_type = /datum/wound/fracture/head/brain
+			necessary_damage = 0.9
 			used += 5
+		else if(zone_precise == BODY_ZONE_PRECISE_EARS)
+			fracture_type = /datum/wound/fracture/head/ears
+			necessary_damage = 0.9
+		else if(zone_precise == BODY_ZONE_PRECISE_R_EYE || zone_precise == BODY_ZONE_PRECISE_L_EYE)
+			fracture_type = /datum/wound/fracture/head/eyes
+			necessary_damage = 0.6
+		else if(zone_precise == BODY_ZONE_PRECISE_NOSE)
+			fracture_type = /datum/wound/fracture/head/nose
+			necessary_damage = 0.6
 		else if(zone_precise == BODY_ZONE_PRECISE_MOUTH)
 			fracture_type = /datum/wound/fracture/mouth
-			necessary_damage = 0.6
+			necessary_damage = 0.7
 		else if(zone_precise == BODY_ZONE_PRECISE_NECK)
 			fracture_type = /datum/wound/fracture/neck
 			dislocation_type = /datum/wound/dislocation/neck
