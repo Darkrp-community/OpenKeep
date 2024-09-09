@@ -180,6 +180,13 @@
 	name = "amulet of Eora"
 	desc = "And I love thee because thou art love."
 	icon_state = "eora"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psicross/pestra
+	name = "amulet of Pestra"
+	desc = "A Pestran amulet depicting her fabled walking staff, encrusted in this trinket is a venomous serpent. Believed to ward off disease and lessen poisons to devoted worshippers of the wise hag."
+	icon_state = "pestra"
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/silver
 	name = "silver psycross"
@@ -270,3 +277,11 @@
 	icon_state = "surgcollar"
 	item_state = "surgcollar"
 	sellprice = 15
+
+/obj/item/clothing/neck/roguetown/gorget/copper
+	name = "copper gorget"
+	icon_state = "copperneck"
+	desc = "An antique and simple protection for the neck, used more as an accessory by the common folk. But poor protection is still better than nothing."
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 100
+	smeltresult = /obj/item/ingot/copper

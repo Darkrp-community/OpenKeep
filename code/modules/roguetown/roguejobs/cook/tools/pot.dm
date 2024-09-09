@@ -4,11 +4,7 @@
 	desc = "The peasants friend, when filled with boiling water it will turn the driest oats to filling oatmeal."
 
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	experimental_inhand = FALSE
 	icon_state = "pote"
-	item_state = "pot"
 
 	sharpness = IS_BLUNT
 	slot_flags = null
@@ -40,9 +36,15 @@
 			reagents.trans_to(I, reagents.total_volume)
 	return TRUE
 
-/datum/anvil_recipe/tools/pote
-	name = "Iron pot"
-	recipe_name = "a cooking pot"
-	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/reagent_containers/glass/bucket/pot
-	craftdiff = 0
+/obj/item/reagent_containers/glass/bucket/pot/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
+	if(reagents.total_volume > 5) 
+		new /obj/effect/decal/cleanable/food/mess/soup(get_turf(src))
+	..()
+
+/obj/item/reagent_containers/glass/bucket/pot/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.5,"sx" = -5,"sy" = -8,"nx" = 7,"ny" = -9,"wx" = -1,"wy" = -8,"ex" = -1,"ey" = -8,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
+
