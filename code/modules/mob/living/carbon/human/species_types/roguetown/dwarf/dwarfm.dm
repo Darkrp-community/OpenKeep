@@ -87,6 +87,7 @@
 		"Malachite" = SKIN_COLOR_MALACHITE,
 		"Obsidian" = SKIN_COLOR_OBSIDIAN,
 		"Brimstone" = SKIN_COLOR_BRIMSTONE,
+		"Cerargyrite" =	SKIN_COLOR_CERARGYRITE,
 	))
 
 /datum/species/dwarf/mountain/get_hairc_list()
@@ -110,7 +111,10 @@
 	"red - wine" = "b87f77",
 	"red - sunset" = "bf6821",
 	"red - blood" = "822b2b",
-	"red - maroon" = "612929"
+	"red - maroon" = "612929",
+
+	"white - withered" = "#7c828a"
+
 	))
 
 /datum/species/dwarf/mountain/random_name(gender,unique,lastname)
