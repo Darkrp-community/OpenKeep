@@ -172,6 +172,11 @@
 	base_icon_state = "woodchestalt"
 	icon_state = "woodchestalt"
 
+/obj/structure/closet/crate/chest/crate
+	name = "crate"
+	base_icon_state = "woodchest"
+	icon_state = "woodchest"
+
 /obj/structure/closet/crate/drawer/random
 	icon_state = "drawer1"
 	base_icon_state = "drawer1"
