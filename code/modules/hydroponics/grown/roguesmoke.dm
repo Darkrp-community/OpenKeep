@@ -83,7 +83,7 @@
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry
 	seed = null
 	name = "westleach leaf"
-	desc = "A common, strong-smelling leaf that is often dried and smoked."
+	desc = "A common, strong-smelling dried leaf that is often smoked recreationally."
 	icon_state = "westleachd"
 	dry = 1
 	pipe_reagents = list(/datum/reagent/drug/nicotine = 30)
