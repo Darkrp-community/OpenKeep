@@ -26,7 +26,7 @@
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry
 	seed = null
 	name = "swampweed"
-	desc = "A noxious-smelling weed that can be dried and smoked to induce relaxation."
+	desc = "A noxious-smelling dried weed that can be smoked to induce relaxation."
 	icon_state = "swampweedd"
 	dry = 1
 	pipe_reagents = list(/datum/reagent/drug/space_drugs = 30)
