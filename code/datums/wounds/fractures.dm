@@ -56,7 +56,7 @@
 		"The skull caves in!",
 	)
 	sound_effect = "headcrush"
-	whp = 60
+	whp = 80
 	sleep_healing = 0
 	/// Most head fractures are serious enough to cause paralysis
 	var/paralysis = FALSE
