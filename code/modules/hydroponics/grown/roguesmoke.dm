@@ -2,7 +2,7 @@
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweed
 	seed = /obj/item/seeds/swampweed
 	name = "swampweed"
-	desc = "A 'foggy' pipe weed."
+	desc = "A noxious-smelling weed that can be dried and smoked to induce relaxation."
 	icon_state = "swampweed"
 	filling_color = "#008000"
 	bitesize_mod = 1
@@ -14,7 +14,7 @@
 
 /obj/item/seeds/swampweed
 	name = "seeds"
-	desc = ""
+	desc = "Seeds of the swampweed plant."
 	species = "swampweed"
 	plantname = "swampweed plant"
 	product = /obj/item/reagent_containers/food/snacks/grown/rogue/swampweed
@@ -26,7 +26,7 @@
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry
 	seed = null
 	name = "swampweed"
-	desc = ""
+	desc = "A noxious-smelling weed that can be dried and smoked to induce relaxation."
 	icon_state = "swampweedd"
 	dry = 1
 	pipe_reagents = list(/datum/reagent/drug/space_drugs = 30)
@@ -49,8 +49,7 @@
 	name = "swampweed zig"
 	result = /obj/item/clothing/mask/cigarette/rollie/cannabis
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry = 1,
-				/obj/item/paper/scroll = 1)
-	req_table = TRUE
+				/obj/item/paper = 1)
 	time = 10 SECONDS
 	verbage = "roll"
 	verbage_tp = "rolls"
@@ -60,7 +59,7 @@
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
 	seed = /obj/item/seeds/pipeweed
 	name = "westleach leaf"
-	desc = "A generic kind of pipe weed."
+	desc = "A common, strong-smelling leaf that is often dried and smoked."
 	icon_state = "westleach"
 	filling_color = "#008000"
 	bitesize_mod = 1
@@ -72,7 +71,7 @@
 
 /obj/item/seeds/pipeweed
 	name = "seeds"
-	desc = ""
+	desc = "Seeds of the westleach plant."
 	species = "westleach"
 	plantname = "westleach plant"
 	product = /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
@@ -84,7 +83,7 @@
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry
 	seed = null
 	name = "westleach leaf"
-	desc = "A dried leaf."
+	desc = "A common, strong-smelling leaf that is often dried and smoked."
 	icon_state = "westleachd"
 	dry = 1
 	pipe_reagents = list(/datum/reagent/drug/nicotine = 30)
@@ -106,8 +105,7 @@
 	name = "westleach zig"
 	result = /obj/item/clothing/mask/cigarette/rollie/nicotine
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry = 1,
-				/obj/item/paper/scroll = 1)
-	req_table = TRUE
+				/obj/item/paper = 1)
 	time = 10 SECONDS
 	verbage = "roll"
 	verbage_tp = "rolls"
