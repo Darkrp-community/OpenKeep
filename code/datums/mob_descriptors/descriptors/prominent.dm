@@ -136,12 +136,12 @@
 	prefix = "a"
 
 /datum/mob_descriptor/prominent/prominent_chest
-	name = "Generous Bosom"
+	name = "Prominent Chest"
 	verbage = "%HAVE%"
 	prefix = "a"
 
 /datum/mob_descriptor/prominent/prominent_bottom
-	name = "Phenomenal Posterior" // I just dont know Prominent Afterdeck ?? Why do I have to do this somehow this sounds worse than prominent posterior Jesus help me
+	name = "Prominent Posterior"
 	verbage = "%HAVE%"
 	prefix = "a"
 
@@ -238,7 +238,7 @@
 	prefix = "a"
 
 /datum/mob_descriptor/prominent/haughty_atmosphere
-	name = "Haughty mannerisms"
+	name = "Haughty Mannerisms"
 	verbage = "%HAVE%"
 
 /datum/mob_descriptor/prominent/untrustworthy
@@ -356,11 +356,11 @@
 	verbage = "%HAVE%"
 
 /datum/mob_descriptor/prominent/hair_coarse
-	name = "Coarse bair"
+	name = "Coarse Hair"
 	verbage = "%HAVE%"
 
 /datum/mob_descriptor/prominent/hair_thin
-	name = "Thin hair"
+	name = "Thin Hair"
 	verbage = "%HAVE%"
 
 /datum/mob_descriptor/prominent/ears_large
