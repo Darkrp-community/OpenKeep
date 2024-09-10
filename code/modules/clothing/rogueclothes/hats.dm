@@ -1025,7 +1025,7 @@
 	icon = 'icons/roguetown/clothing/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
-	name = "iron plate helmet"
+	name = "iron pot helmet"
 	max_integrity = 250//isn't the same as a steel helmet but is better than a skullcap
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	icon_state = "ironpot"
@@ -1035,10 +1035,24 @@
 	flags_inv = HIDEEARS
 	smeltresult = /obj/item/ingot/iron
 
+/obj/item/clothing/head/roguetown/helmet/coppercap
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	name = "lamellar cap"
+	max_integrity = 150 //lowest possible for copper
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	icon_state = "lamellar"
+	item_state = "lamellar"
+	desc = "A heavy lamellar cap made out of copper, a primitive material with an effective design to keep the head safe"
+	will_cover = HEAD|HAIR|EARS
+	flags_inv = HIDEEARS
+	smeltresult = /obj/item/ingot/copper
+
 /obj/item/clothing/head/roguetown/helmet/decoratedknighthelm
 	name = "decorated knight helmet"
 	desc = "A lavish knight's helmet which allows a crest to be mounted on top."
-	block2add = FOV_BEHIND
+	block2add = FOV_RIGHT|FOV_LEFT
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	icon_state = "decorated_knight"
 	item_state = "decorated_knight"
@@ -1092,7 +1106,7 @@
 /obj/item/clothing/head/roguetown/helmet/decoratedhounskull
 	name = "decorated hounskull"
 	desc = "A lavish hounskull which allows a crest to be mounted on top."
-	block2add = FOV_BEHIND
+	block2add = FOV_RIGHT|FOV_LEFT
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	icon_state = "decorated_hounskull"
 	item_state = "decorated_hounskull"
@@ -1146,7 +1160,7 @@
 /obj/item/clothing/head/roguetown/helmet/heavy/decoratedbucket
 	name = "decorated greathelm"
 	desc = "A lavish greathelm which allows a crest to be mounted on top."
-	block2add = FOV_BEHIND
+	block2add = FOV_RIGHT|FOV_LEFT
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	icon_state = "decorated_bucket"
 	item_state = "decorated_bucket"
@@ -1200,7 +1214,7 @@
 /obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket
 	name = "decorated goldhelm"
 	desc = "A lavish gold-trimmed greathelm which allows a crest to be mounted on top."
-	block2add = FOV_BEHIND
+	block2add = FOV_RIGHT|FOV_LEFT
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	icon_state = "decorated_gbucket"
 	item_state = "decorated_gbucket"
