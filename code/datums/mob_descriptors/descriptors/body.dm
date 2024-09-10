@@ -33,7 +33,7 @@
 	name = "Decrepit"
 
 /datum/mob_descriptor/body/skeletal
-	name = "Emanciated"
+	name = "Emaciated"
 
 /datum/mob_descriptor/body/dainty
 	name = "Dainty"
@@ -87,7 +87,7 @@
 	name = "Slender"
 
 /datum/mob_descriptor/body/topheavy
-	name = "Top heavy"
+	name = "Top-Heavy"
 
 /datum/mob_descriptor/body/thin
 	name = "Thin"
