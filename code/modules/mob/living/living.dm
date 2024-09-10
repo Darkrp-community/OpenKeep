@@ -782,7 +782,13 @@
 	for(var/i in get_equipped_items())
 		var/obj/item/item = i
 		SEND_SIGNAL(item, COMSIG_ITEM_WEARERCROSSED, AM, src)
-
+	if(isliving(AM))
+		var/mob/living/L = AM
+		if(L.m_intent == MOVE_INTENT_RUN && lying && !buckle_lying)
+			L.visible_message("<span class='warning'>[L] trips over [src]!</span>","<span class='warning'>I trip over [src]!</span>")
+			L.Knockdown(10)
+			L.Immobilize(20)
+			
 
 
 //proc used to completely heal a mob.
@@ -1594,7 +1600,7 @@
 		unset_machine()
 	density = !lying
 	if(lying)
-		if(!lying_prev)
+		if(!lying_prev && !cmode)
 			fall(!canstand_involuntary)
 		layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
 	else
@@ -1753,6 +1759,8 @@
 	. = ..()
 	switch(var_name)
 		if("knockdown")
+			SetKnockdown(var_value)
+		if("paralyzed")
 			SetParalyzed(var_value)
 		if("stun")
 			SetStun(var_value)
