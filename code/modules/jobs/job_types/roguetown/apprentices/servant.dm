@@ -15,7 +15,7 @@
 		"Dark Elf",
 		"Aasimar"
 	)
-	allowed_ages = list(AGE_ADULT)
+	allowed_ages = list(AGE_ADULT, AGE_IMMORTAL)
 
 	tutorial = "Granted a comfortable life in the Lord's manor as one of his servants! You will appreciate it more and more every day as you clean the floors and are beaten for nothing."
 
