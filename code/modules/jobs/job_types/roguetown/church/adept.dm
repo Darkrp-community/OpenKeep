@@ -48,10 +48,10 @@
 	..()
 	//Armor for class
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
+	cloak = /obj/item/clothing/cloak/tabard/adept
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	beltl = /obj/item/rogueweapon/mace/spiked
-	backr = /obj/item/rogueweapon/shield/wood
-	cloak = /obj/item/clothing/cloak/stabard/templar/weeping
+	backr = /obj/item/rogueweapon/shield/wood/adept
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	backpack_contents = list(/obj/item/keyring/shepherd = 1, /obj/item/rogueweapon/huntingknife/idagger/silver = 1)
 

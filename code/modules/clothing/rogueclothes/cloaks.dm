@@ -212,6 +212,17 @@
 	GLOB.lordcolor -= src
 	return ..()
 
+/obj/item/clothing/cloak/tabard/adept
+	detail_tag = "_psy"
+	color = CLOTHING_BLACK
+	detail_color = CLOTHING_WHITE
+
+/obj/item/clothing/cloak/tabard/adept/Initialize()
+	..()
+	update_icon()
+
+/obj/item/clothing/cloak/tabard/adept/attack_right(mob/user)
+	return
 
 //////////////////////////
 /// SOLDIER TABARD
@@ -405,11 +416,6 @@
 	name = "surcoat of the pestran order"
 	icon_state = "tabard_pestra"
 	item_state = "tabard_pestra"
-
-/obj/item/clothing/cloak/stabard/templar/weeping
-	name = "surcoat of the order of the psycross"
-	icon_state = "tabard_weeping"
-	item_state = "tabard_weeping"
 
 //////////////////////////
 /// SURCOATS

@@ -106,6 +106,25 @@
 			if("onback")
 				return list("shrink" = 0.6,"sx" = 1,"sy" = 4,"nx" = 1,"ny" = 2,"wx" = 3,"wy" = 3,"ex" = 0,"ey" = 2,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 8,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
+/obj/item/rogueweapon/shield/wood/adept
+
+/obj/item/rogueweapon/shield/wood/adept/Initialize()
+	..()
+	if(!overlays.len)
+		var/icon/J = new('icons/roguetown/weapons/wood_heraldry.dmi')
+		var/list/istates = J.IconStates()
+		if("Psydon" in istates)
+			var/picked_name = "Psydon"
+			var/mutable_appearance/M = mutable_appearance('icons/roguetown/weapons/wood_heraldry.dmi', picked_name)
+			M.alpha = 178
+			add_overlay(M)
+			var/mutable_appearance/MU = mutable_appearance(icon, "woodsh_detail")
+			MU.alpha = 114
+			add_overlay(MU)
+			update_icon()
+		else
+			return
+	
 /obj/item/rogueweapon/shield/tower
 	name = "tower shield"
 	desc = "A gigantic, iron reinforced shield that covers the entire body, a design-copy of the Aasimar shields of an era gone by."
