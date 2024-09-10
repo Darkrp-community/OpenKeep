@@ -337,6 +337,14 @@
 	verbage_tp = "constructs"
 	craftsound = 'sound/foley/Building-01.ogg'
 
+/datum/crafting_recipe/roguetown/structure/inkpress
+	name = "inking press"
+	result = /obj/structure/fluff/inkpress
+	reqs = list(/obj/item/roguegear = 2, /obj/item/grown/log/tree/small = 2)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+
 /datum/crafting_recipe/roguetown/structure/bed
 	name = "bed"
 	result = /obj/structure/bed/rogue/shit

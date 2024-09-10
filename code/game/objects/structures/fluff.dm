@@ -786,8 +786,11 @@
 
 /obj/structure/fluff/inkpress/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/paper))
-		playsound(loc, 'sound/foley/dropsound/paper_drop.ogg', 100, FALSE, -1)
 		var/obj/item/paper/PA = I
+		if(PA.info)
+			to_chat(user, "<span class='notice'>I can't put it there, that thing still has verba on it. That will just muddy it all up.</span>")
+			return
+		playsound(loc, 'sound/foley/dropsound/paper_drop.ogg', 100, FALSE, -1)
 		PA.forceMove(src)
 		P = I
 		return
@@ -795,7 +798,7 @@
 
 /obj/structure/fluff/inkpress/attack_hand(mob/user)
 	. = ..()
-	var/inputty = stripped_multiline_input(user, "Enter the verba you wish to mass-produce.", "ROGUETOWN", no_trim=TRUE)
+	var/inputty = stripped_multiline_input(user, "Enter the verba you wish to mass-produce.", "ROGUETOWN", info, no_trim=TRUE)
 	if(inputty)
 		src.visible_message("<span class='info'>[user] replaces the letters in \the [src].</span>")
 		playsound(loc, 'sound/foley/cartadd.ogg', 100, FALSE, -1)
@@ -814,10 +817,14 @@
 	to_chat(user, "<span class='notice'>I begin stamping the parchment with the ink.</span>")
 	if(do_after(user, 3 SECONDS, TRUE, src))
 		playsound(loc, 'sound/foley/chairfall.ogg', 100, FALSE)
-		info = P.parsepencode(info, /obj/item/pen, usr, FALSE) // Encode everything from pencode to html
-		P.info = info
+		flick("newspress-anim",src)
+		sleep(13) // length of animation
+		var/buffer
+		buffer = P.parsepencode(info, /obj/item/pen, usr, FALSE) // Encode everything from pencode to html
+		P.info = buffer
 		P.update_icon()
 		P.forceMove(loc)
+		P.dropped(user, TRUE)
 		P = null
 
 /obj/structure/fluff/statue

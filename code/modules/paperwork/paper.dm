@@ -421,6 +421,18 @@
 	dat += "</body></html>"
 	user << browse(dat, "window=reading;size=500x400;can_close=1;can_minimize=0;can_maximize=0;can_resize=1;titlebar=0;border=0")
 
+/obj/item/paper/attack_right(mob/user)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/obj/item/I = H.get_active_held_item()
+		if(istype(I, /obj/item/natural/feather) || istype(I, /obj/item/natural/thorn))
+			var/n_name = stripped_input(usr, "What would you like to label this?", "ROGUETOWN", null, MAX_NAME_LEN)
+			if(n_name)
+				name = n_name
+				playsound(src, 'sound/items/write.ogg', 100, FALSE)
+		return
+	return ..()
+
 /obj/item/paper/attackby(obj/item/P, mob/living/carbon/human/user, params)
 	if(resistance_flags & ON_FIRE)
 		return ..()
