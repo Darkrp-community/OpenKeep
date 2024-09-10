@@ -52,7 +52,7 @@
 	name = "Calloused hands"
 
 /datum/mob_descriptor/skin/warts
-	name = "Several warts"
+	name = "Several Warts"
 
 /datum/mob_descriptor/skin/inked
 	name = "Ink-stained hands"
