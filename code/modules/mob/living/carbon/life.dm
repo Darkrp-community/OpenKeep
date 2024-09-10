@@ -208,7 +208,7 @@
 				BPinteg += WO.woundpain
 //		BPinteg = min(((totwound / BP.max_damage) * 100) + BPinteg, initial(BP.max_damage))
 //		if(BPinteg > amt) //this is here to ensure that pain doesn't add up, but is rather picked from the worst limb
-		amt += BPinteg
+		amt += ((BPinteg) * dna.species.pain_mod)
 	return amt
 
 
