@@ -1,6 +1,6 @@
 /datum/job/roguetown/archivist
 	title = "Archivist"
-	tutorial = "The Archivist meticulously preserves and organizes ancient scrolls and tomes, safeguarding the collective knowledge of the realm for generations to come. Nobles and Peasants alike often seek the Archivists expertise on matters of history and fact."
+	tutorial = "The Archivist is a master of recollecting infomation, archiving olden works and scrolls preserving them for yils to come. He is also the master of the mystical ink press, giving the less fortunate the blessing of knowledge."
 	flag = ARCHIVIST
 	department_flag = NOBLEMEN
 	faction = "Station"
