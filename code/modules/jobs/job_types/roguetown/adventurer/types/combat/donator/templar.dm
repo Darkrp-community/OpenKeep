@@ -31,6 +31,7 @@
 		if("Eora")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket // Placeholder?
 			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
+			H.virginity = FALSE
 		if("Noc")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
