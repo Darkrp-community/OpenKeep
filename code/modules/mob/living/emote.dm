@@ -791,7 +791,6 @@
 
 /mob/living/carbon/human/verb/emote_meditate()
 	set name = "Meditate"
-	set category = "Emotes"
 
 	emote("meditate", intentional = TRUE)
 
