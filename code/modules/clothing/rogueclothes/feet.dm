@@ -249,7 +249,7 @@
 
 /obj/item/clothing/shoes/roguetown/boots/bloodbaroboots
 	name = "blood baro greaves"
-	desc = "Armored boots made from steel offering heavy protection against both melee and ranged attacks."
+	desc = "Blood baro greaves."
 	body_parts_covered = FEET
 	icon_state = "bloodbarogreaves"
 	item_state = "bloodbarogreaves"

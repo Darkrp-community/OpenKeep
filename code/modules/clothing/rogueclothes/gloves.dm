@@ -189,7 +189,7 @@
 
 /obj/item/clothing/gloves/roguetown/bloodbarogloves
 	name = "blood baro gauntlets"
-	desc = "Plated gauntlets made out of steel. Offers the best protection against melee attacks."
+	desc = "Blood baro gauntlets."
 	icon_state = "bloodbarogauntlets"
 	item_state = "bloodbarogauntlets"
 	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)

@@ -788,7 +788,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 
 /obj/item/clothing/suit/roguetown/armor/plate/bloodbaroarmor
 	name = "blood baro armor"
-	desc = "Full plate. Leg protecting tassets, groin cup, armored vambraces."
+	desc = "Blood baro armor."
 	icon_state = "bloodbaroarmor"
 	item_state = "bloodbaroarmor"
 	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'

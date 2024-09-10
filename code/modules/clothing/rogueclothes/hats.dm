@@ -1307,7 +1307,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bloodbarohelm
 	name = "blood baro helmet"
-	desc = "An immovable bulkwark of protection for the head of the faithful. Antiquated and impractical, but offering incredible defense."
+	desc = "A blood baro helmet."
 	icon_state = "bloodbarohelm"
 	item_state = "bloodbarohelm"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
