@@ -2758,6 +2758,7 @@
 #include "code\modules\mob\living\simple_animal\rogue\creacher\troll.dm"
 #include "code\modules\mob\living\simple_animal\rogue\creacher\trollbog.dm"
 #include "code\modules\mob\living\simple_animal\rogue\creacher\volf.dm"
+#include "code\modules\mob\living\simple_animal\rogue\creacher\zizoid.dm"
 #include "code\modules\mob\living\simple_animal\rogue\farm\chicken.dm"
 #include "code\modules\mob\living\simple_animal\rogue\farm\cow.dm"
 #include "code\modules\mob\living\simple_animal\rogue\farm\goat.dm"

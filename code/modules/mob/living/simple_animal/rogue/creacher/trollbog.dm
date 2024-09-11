@@ -12,6 +12,10 @@
 	turns_per_move = 4
 	see_in_dark = 10
 	move_to_delay = 2
+	verb_say = "groans"
+	verb_ask = "grunts"
+	verb_exclaim = "roars"
+	verb_yell = "roars"
 	base_intents = list(/datum/intent/simple/headbutt, /datum/intent/simple/bigbite)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/xeno = 1,
 						/obj/item/natural/hide = 2)
@@ -30,9 +34,9 @@
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	pooptype = null
-	STACON = 12
-	STASTR = 14
-	STASPD = 5
+	STACON = 15
+	STASTR = 16
+	STASPD = 3
 	STAEND = 14
 	deaggroprob = 0
 	defprob = 30
@@ -80,7 +84,17 @@
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
+	if(fire_stacks <= 0)
+		adjustHealth(-rand(5,10))
 
+
+/mob/living/simple_animal/hostile/retaliate/rogue/trollbog/LoseTarget()
+	..()
+	icon_state = "Trolls"
+
+/mob/living/simple_animal/hostile/retaliate/rogue/trollbog/GiveTarget()
+	..()
+	icon_state = "Troll"
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/simple_limb_hit(zone)
 	if(!zone)
