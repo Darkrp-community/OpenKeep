@@ -59,61 +59,88 @@
 /datum/mob_descriptor/face/full
 	name = "Full"
 
+/datum/mob_descriptor/face/cat
+	name = "Cat-like"
+
+/datum/mob_descriptor/face/pig
+	name = "Piggish"
+
+/datum/mob_descriptor/face/rat
+	name = "Rat-like"
+
+/datum/mob_descriptor/face/hollow
+	name = "Hollow-cheeked"
+
+/datum/mob_descriptor/face/weatherbitten
+	name = "Weather-bitten"
+
+/datum/mob_descriptor/face/wrinkled
+	name = "Wrinkled"
+
+/datum/mob_descriptor/face/malformed
+	name = "Malformed"
+
 /datum/mob_descriptor/face_exp
 	abstract_type = /datum/mob_descriptor/face_exp
 	suffix = "face"
 	slot = MOB_DESCRIPTOR_SLOT_FACE_EXPRESSION
 
-/datum/mob_descriptor/face_exp/refined
-	name = "Refined"
-
-/datum/mob_descriptor/face_exp/disinterested
-	name = "Disinterested"
-
-/datum/mob_descriptor/face_exp/sour
-	name = "Sour"
-
 /datum/mob_descriptor/face_exp/bright
 	name = "Bright"
-
-/datum/mob_descriptor/face_exp/starry_eyed
-	name = "Starry-eyed"
-
-/datum/mob_descriptor/face_exp/cold
-	name = "Cold"
-
-/datum/mob_descriptor/face_exp/haggard
-	name = "Haggard"
-
-/datum/mob_descriptor/face_exp/fake
-	name = "Fake"
 
 /datum/mob_descriptor/face_exp/bitchy
 	name = "Bitchy"
 
-/datum/mob_descriptor/face_exp/spiteful
-	name = "Spiteful"
-
-/datum/mob_descriptor/face_exp/warm
-	name = "Warm"
-
-/datum/mob_descriptor/face_exp/salacious
-	name = "Salacious"
-
-/datum/mob_descriptor/face_exp/contemptous
-	name = "Contemptous"
-
-/datum/mob_descriptor/face_exp/mocking
-	name = "Mocking"
-
-/datum/mob_descriptor/face_exp/knowing
-	name = "Knowing"
 
 /datum/mob_descriptor/face_exp/cocky
 	name = "Cocky"
 
 /datum/mob_descriptor/face_exp/coy
 	name = "Coy"
+
+
+/datum/mob_descriptor/face_exp/contemptous
+	name = "Contemptous"
+
+/datum/mob_descriptor/face_exp/cold
+	name = "Cold"
+
+/datum/mob_descriptor/face_exp/dreamy
+	name = "Dreamy"
+
+/datum/mob_descriptor/face_exp/disinterested
+	name = "Disinterested"
+
+/datum/mob_descriptor/face_exp/fake
+	name = "Fake"
+
+/datum/mob_descriptor/face_exp/haggard
+	name = "Haggard"
+
+/datum/mob_descriptor/face_exp/knowing
+	name = "Knowing"
+
+/datum/mob_descriptor/face_exp/mocking
+	name = "Mocking"
+
+
+/datum/mob_descriptor/face_exp/refined
+	name = "Refined"
+
+/datum/mob_descriptor/face_exp/salacious
+	name = "Salacious"
+
+/datum/mob_descriptor/face_exp/sour
+	name = "Sour"
+
+/datum/mob_descriptor/face_exp/starry_eyed
+	name = "Starry-eyed"
+
+/datum/mob_descriptor/face_exp/spiteful
+	name = "Spiteful"
+
+/datum/mob_descriptor/face_exp/warm
+	name = "Warm"
 
 /datum/mob_descriptor/face_exp/frustrated
 	name = "Frustrated"
@@ -156,3 +183,19 @@
 
 /datum/mob_descriptor/face_exp/curious
 	name = "Curious"
+
+
+/datum/mob_descriptor/face_exp/mild
+	name = "Mild"
+
+/datum/mob_descriptor/face_exp/glowering
+	name = "Glowering"
+
+/datum/mob_descriptor/face_exp/miserable
+	name = "Miserable"
+
+/datum/mob_descriptor/face_exp/puzzled
+	name = "Puzzled"
+
+/datum/mob_descriptor/face_exp/shy
+	name = "Shy"
