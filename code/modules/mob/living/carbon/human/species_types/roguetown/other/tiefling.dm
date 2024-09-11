@@ -121,7 +121,7 @@
 	"black - oil" = "181a1d",
 	"black - cave" = "201616",
 	"black - rogue" = "2b201b",
-	"black - midnight" = "1d1b2b"
+	"black - midnight" = "1d1b2b",
 
 	"purple - arcane" = "3f2f42",
 
