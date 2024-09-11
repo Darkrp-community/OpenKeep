@@ -271,6 +271,7 @@
 			gloves = /obj/item/clothing/gloves/roguetown/angle
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 
+	H.change_stat("intelligence", -1)
 	var/obj/item/bodypart/B = H.get_bodypart("head")
 	if(B)
 		B.sellprice = rand(44, 88)
