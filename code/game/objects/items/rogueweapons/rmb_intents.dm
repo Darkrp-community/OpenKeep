@@ -83,11 +83,22 @@
 
 /datum/status_effect/debuff/feinted
 	id = "nofeint"
-	duration = 50
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/feinted
+	duration = 5 SECONDS
+
+/atom/movable/screen/alert/status_effect/debuff/feinted
+	name = "Feinted"
+	desc = "<span class='boldwarning'>I have been tricked, and cannot defend myself!</span>\n"
+	icon_state = "muscles"
 
 /datum/status_effect/debuff/feintcd
 	id = "feintcd"
-	duration = 100
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/feintcd
+	duration = 10 SECONDS
+
+/atom/movable/screen/alert/status_effect/debuff/feintcd
+	name = "Feint Cooldown"
+	desc = "<span class='warning'>I have feinted recently, my opponents will be wary.</span>\n"
 
 /datum/status_effect/debuff/riposted
 	id = "riposted"
