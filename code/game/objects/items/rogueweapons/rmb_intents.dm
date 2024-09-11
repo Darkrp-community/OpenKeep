@@ -84,7 +84,7 @@
 /datum/status_effect/debuff/feinted
 	id = "nofeint"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/feinted
-	duration = 5 SECONDS
+	duration = 50
 
 /atom/movable/screen/alert/status_effect/debuff/feinted
 	name = "Feinted"
@@ -94,7 +94,7 @@
 /datum/status_effect/debuff/feintcd
 	id = "feintcd"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/feintcd
-	duration = 10 SECONDS
+	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/feintcd
 	name = "Feint Cooldown"
