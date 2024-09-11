@@ -32,10 +32,10 @@ SUBSYSTEM_DEF(communications)
 			if(user.gender == FEMALE && J.f_title)
 				used_title = J.f_title
 			priority_announce(html_decode(user.treat_message(input)), "The [used_title] Speaks", 'sound/misc/bell.ogg', "Captain")
-			nonsilicon_message_cooldown = world.time + 5 SECONDS
+			nonsilicon_message_cooldown = world.time + 10 MINUTES
 		else
 			priority_announce(html_decode(user.treat_message(input)), "Someone Speaks", 'sound/misc/bell.ogg', "Captain")
-			nonsilicon_message_cooldown = world.time + 5 SECONDS
+			nonsilicon_message_cooldown = world.time + 10 MINUTES
 	user.log_talk(input, LOG_SAY, tag="priority announcement")
 	message_admins("[ADMIN_LOOKUPFLW(user)] has made a priority announcement.")
 

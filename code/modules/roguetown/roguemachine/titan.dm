@@ -73,8 +73,20 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	switch(mode)
 		if(0)
 			if(findtext(message2recognize, "help"))
-				say("My commands are: Make Decree, Make Law, Remove Law, Purge Laws, Declare Outlaw, Set Taxes, Change Position, Summon Crown, Nevermind")
+				say("My commands are: Make Announcement, Make Decree, Make Law, Remove Law, Purge Laws, Declare Outlaw, Set Taxes, Change Position, Summon Crown, Nevermind")
 				playsound(src, 'sound/misc/machinelong.ogg', 100, FALSE, -1)
+			if(findtext(message2recognize, "make announcement"))
+				if(nocrown)
+					say("You need the crown.")
+					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
+					return
+				if(!SScommunications.can_announce(H))
+					say("I must gather my strength!")
+					return
+				say("Speak and they will listen.")
+				playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
+				mode = 1
+				return
 			if(findtext(message2recognize, "make decree"))
 				if(!SScommunications.can_announce(H))
 					say("I must gather my strength!")
@@ -178,6 +190,9 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 					say("The crown is summoned!")
 					playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 					playsound(src, 'sound/misc/hiss.ogg', 100, FALSE, -1)
+		if(1)
+			make_announcement(H, raw_message)
+			mode = 0
 		if(2)
 			make_decree(H, raw_message)
 			mode = 0
