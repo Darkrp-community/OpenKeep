@@ -143,6 +143,43 @@
 	firefuel = null
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
 
+/obj/item/net
+	name = "net"
+	desc = ""
+	icon = 'icons/roguetown/items/misc.dmi'
+	icon_state = "net"
+	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
+	force = 10
+	throwforce = 5
+	w_class = WEIGHT_CLASS_SMALL
+	icon_state = "net"
+	breakouttime = 35//easy to apply, easy to break out of
+	gender = NEUTER
+	var/knockdown = 0
+
+/obj/item/net/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback)
+	if(!..())
+		return
+	playsound(src.loc,'sound/blank.ogg', 75, TRUE)
+
+/obj/item/net/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	if(..() || !iscarbon(hit_atom))//if it gets caught or the target can't be cuffed,
+		return//abort
+	ensnare(hit_atom)
+
+/obj/item/net/proc/ensnare(mob/living/carbon/C)
+	if(!C.legcuffed && C.get_num_legs(FALSE) >= 2)
+		visible_message("<span class='danger'>\The [src] ensnares [C]!</span>")
+		C.legcuffed = src
+		forceMove(C)
+		C.update_inv_legcuffed()
+		SSblackbox.record_feedback("tally", "handcuffs", 1, type)
+		to_chat(C, "<span class='danger'>\The [src] entraps you!</span>")
+		C.Knockdown(knockdown)
+		C.apply_status_effect(/datum/status_effect/debuff/netted)
+		playsound(src, 'sound/blank.ogg', 50, TRUE)
+	
+
 /obj/structure/noose
 	name = "noose"
 	desc = "Abandon all hope."

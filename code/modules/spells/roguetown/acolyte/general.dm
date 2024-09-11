@@ -91,6 +91,22 @@
 		return TRUE
 	return FALSE
 
+// RAVOX
+
+/obj/effect/proc_holder/spell/self/barbrage
+	name = "Rage"
+	desc = "Enter a state of martial fervour, increasing offensive capabilities at the cost of making yourself vulnerable."
+	overlay_state = "bcry"
+	releasedrain = 30
+	antimagic_allowed = TRUE
+	invocation_type = "shout"
+	charge_max = 1 MINUTES
+
+/obj/effect/proc_holder/spell/self/barbrage/cast(list/targets,mob/living/user = usr)
+	user.emote("rage", forced = TRUE)
+	playsound(get_turf(user), 'sound/magic/barbroar.ogg', 50, TRUE)
+	user.apply_status_effect(/datum/status_effect/buff/barbrage)
+
 // XYLIX
 
 /obj/effect/proc_holder/spell/invoked/mockery
