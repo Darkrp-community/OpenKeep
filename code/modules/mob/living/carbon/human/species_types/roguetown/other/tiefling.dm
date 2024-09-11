@@ -122,6 +122,15 @@
 	"black - cave" = "201616",
 	"black - rogue" = "2b201b",
 	"black - midnight" = "1d1b2b"
+
+	"purple - arcane" = "3f2f42",
+
+	"blue - abyss" = "09282d",
+
+	"red - demonic" = "480808",
+	"red - impish" = "641010",
+	"red - rubescent" = "8d5858"
+
 	))
 
 /datum/species/tieberian/random_name(gender,unique,lastname)
