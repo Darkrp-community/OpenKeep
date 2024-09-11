@@ -193,9 +193,6 @@
 
 /obj/structure/roguemachine/mail/attackby(obj/item/P, mob/living/carbon/human/user, params)
 	if(istype(P, /obj/item/merctoken))
-		if(user.mind.assigned_role != "Merchant" || user.mind.assigned_role != "Mercenary")
-			to_chat(user, "<span class='warning'>I can't make use of this - I do not belong to the Guild.</span>")
-			return
 		if(user.mind.assigned_role == "Merchant")
 			to_chat(user, "<span class='warning'>This is of no use to me - I may give this to a mercenary so they may send it themselves.</span>")
 			return
@@ -232,8 +229,9 @@
 			if(C.signed == 0)
 				to_chat(user, "<span class='warning'>I cannot send an unsigned token.</span>")
 				return
-			else
-				return
+		else
+			to_chat(user, "<span class='warning'>I can't make use of this - I do not belong to the Guild.</span>")
+			return
 
 /obj/structure/roguemachine/mail/Initialize()
 	. = ..()
