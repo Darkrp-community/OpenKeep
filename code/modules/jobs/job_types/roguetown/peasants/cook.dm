@@ -15,7 +15,7 @@
 		"Dark Elf",
 		"Aasimar"
 	)
-	tutorial = "You work closely with the innkeep, preparing meals for all the hungry mouths of Rockhill."
+	tutorial = "Slice, chop, and into the pot... you work closely with the innkeep, to prepare meals for all the hungry mouths of Rockhill. You've spent more nites than you can count cutting meat and vegetables until your fingers are bloody and raw, but it's honest work."
 
 	outfit = /datum/outfit/job/roguetown/cook
 	display_order = JDO_COOK
