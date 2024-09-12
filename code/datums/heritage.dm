@@ -120,21 +120,31 @@
 		return
 	if(!family.len)
 		return
-	var/household = uppertext(housename)
-	var/house_title = "THE [household] HOUSE"
-	var/contents = "<center>[household ? house_title : "Nameless House"]:</center><BR>"
-	contents += "-----<br>"
-	if(patriarch)
-		contents += "<B>[household] PATRIARCH: [patriarch]</B><BR>"
-	if(matriarch)
-		contents += "<B>[household] MATRIARCH: [matriarch]</B><BR>"
-	for(var/P in family)
-		contents += "<B><font color=#[COLOR_RED];text-shadow:0 0 10px #8d5958, 0 0 20px #8d5958, 0 0 30px #8d5958, 0 0 40px #8d5958, 0 0 50px #e60073, 0 0 60px #8d5958, 0 0 70px #8d5958;>\
-			[P]</font></B> [capitalize(family[P])]<BR>"
-
+	var/contents = FormatFamilyList()
 	var/datum/browser/popup = new(checker, "FAMILYDISPLAY", "", 260, 400)
 	popup.set_content(contents)
 	popup.open()
+
+/*
+* This proc returns text of each family house.
+* You may be wondering why i seperated this
+* from ListFamily and it was to mass return
+* information from every family for the admin
+* ListAllFamlies verb.
+*/
+/datum/heritage/proc/FormatFamilyList()
+	var/household = uppertext(housename)
+	var/house_title = "THE [household] HOUSE"
+	. = "<center>[household ? house_title : "Nameless House"]:</center><BR>"
+	. += "-----<br>"
+	if(patriarch)
+		. += "<B>[household] PATRIARCH: [patriarch]</B><BR>"
+	if(matriarch)
+		. += "<B>[household] MATRIARCH: [matriarch]</B><BR>"
+	for(var/P in family)
+		. += "<B><font color=#[COLOR_RED];text-shadow:0 0 10px #8d5958, 0 0 20px #8d5958, 0 0 30px #8d5958, 0 0 40px #8d5958, 0 0 50px #e60073, 0 0 60px #8d5958, 0 0 70px #8d5958;>\
+			[P]</font></B> [capitalize(family[P])]<BR>"
+	. += "----------<br>"
 
 /*
 * This proc goes through the family

@@ -137,6 +137,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	//Family system
 	var/family = FAMILY_NONE
+	var/setspouse = ""
 
 	var/crt = FALSE
 
@@ -339,6 +340,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<b>Faith:</b> <a href='?_src_=prefs;preference=faith;task=input'>[selected_faith?.name || "FUCK!"]</a><BR>"
 			dat += "<b>Patron:</b> <a href='?_src_=prefs;preference=patron;task=input'>[selected_patron?.name || "FUCK!"]</a><BR>"
 			dat += "<b>Family:</b> <a href='?_src_=prefs;preference=family'>[family ? family : "None"]</a><BR>"
+			if(family == FAMILY_FULL)
+				dat += "<b>Preferred Spouse:</b> <a href='?_src_=prefs;preference=setspouse'>[setspouse ? setspouse : "None"]</a><BR>"
 			dat += "<b>Dominance:</b> <a href='?_src_=prefs;preference=domhand'>[domhand == 1 ? "Left-handed" : "Right-handed"]</a><BR>"
 
 /*
@@ -2195,6 +2198,13 @@ Slots: [job.spawn_positions]</span>
 						If all houses are full then you will not be assigned to any house.", "The Major Houses of Rockhill") as null|anything in list(FAMILY_NONE, FAMILY_PARTIAL, FAMILY_FULL)
 					if(new_family)
 						family = new_family
+				//Setspouse is part of the family subsystem. It will check existing families for this character and attempt to place you in this family.
+				if("setspouse")
+					var/newspouse = input(user, "Input the name of another player:","Rememberin your spouse") as text|null
+					if(newspouse)
+						setspouse = newspouse
+					else
+						setspouse = null
 				if("alignment")
 ///					to_chat(user, "<font color='puple'>Alignment is how you communicate to the Game Masters if your character follows a certain set of behavior restrictions. This allows you to </font>")
 					var/new_alignment = input(user, "Alignment is how you communicate to the Game Masters and other players the intent of your character. Your character will be under less administrative scrutiny for evil actions if you choose evil alignments, but you will experience subtle disadvantages. Alignment is overwritten for antagonists.", "Alignment") as null|anything in ALL_ALIGNMENTS_LIST
@@ -2542,6 +2552,7 @@ Slots: [job.spawn_positions]</span>
 		character.update_body_parts(redraw = TRUE)
 
 	character.familytree_pref = family
+	character.setspouse = setspouse
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)

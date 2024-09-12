@@ -108,6 +108,7 @@
 
 	//Familytree datum
 	var/spouse_name
+	var/setspouse
 	var/familytree_pref = FAMILY_NONE
 	var/datum/heritage/family_datum
 

@@ -134,26 +134,43 @@ SUBSYSTEM_DEF(familytree)
 /*
 * Allows players to claim a
 * house as patriarch or matriarch.
+* Currently roundstart families are
+* male and female since it makes
+* species calulcation easier on me.
 */
 /datum/controller/subsystem/familytree/proc/AssignToFamily(mob/living/carbon/human/H)
 	if(!H)
 		return
 	var/species = H.dna.species.id
 	var/list/low_priority_houses = list()
+	var/list/medium_priority_houses = list()
 	var/list/high_priority_houses = list()
 	for(var/datum/heritage/I in families)
 		if((I.matriarch && I.patriarch) || I.dominant_species != species)
 			continue
+		//The accursed setspouse code so people can preset their spouses
+		if(H.setspouse)
+			var/mob/living/carbon/human/spouse_to_be
+			if(ishuman(I.matriarch))
+				spouse_to_be = I.matriarch
+			if(ishuman(I.patriarch))
+				spouse_to_be = I.patriarch
+			if(spouse_to_be.real_name == H.setspouse)
+				high_priority_houses.Add(I)
+				continue
 		if(I.family.len >= 1 && I.family.len < 5)
-			high_priority_houses.Add(I)
+			medium_priority_houses.Add(I)
 		else
 			low_priority_houses.Add(I)
 
-	for(var/i = 1 to 2)
+	for(var/i = 1 to 3)
 		var/list/what_we_checkin = high_priority_houses
 		//If second run then check the other houses.
-		if(i == 2)
-			what_we_checkin = low_priority_houses
+		switch(i)
+			if(2)
+				what_we_checkin = medium_priority_houses
+			if(3)
+				what_we_checkin = low_priority_houses
 		for(var/datum/heritage/I in what_we_checkin)
 			if(!I.housename)
 				I.ClaimHouse(H)
@@ -164,3 +181,16 @@ SUBSYSTEM_DEF(familytree)
 			if(!I.patriarch && H.gender == MALE)
 				I.addToHouse(H, FAMILY_FATHER)
 				return
+
+/*
+* For admins to view EVERY FAMILY and see all the
+* akward and convoluted coding.
+*/
+/datum/controller/subsystem/familytree/proc/ReturnAllFamilies()
+	. = ""
+	if(ruling_family)
+		. += ruling_family.FormatFamilyList()
+	for(var/datum/heritage/I in families)
+		if(!I.housename && !I.family.len)
+			continue
+		. += I.FormatFamilyList()
