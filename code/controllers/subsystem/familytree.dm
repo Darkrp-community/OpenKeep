@@ -146,7 +146,7 @@ SUBSYSTEM_DEF(familytree)
 	var/list/medium_priority_houses = list()
 	var/list/high_priority_houses = list()
 	for(var/datum/heritage/I in families)
-		if((I.matriarch && I.patriarch) || I.dominant_species != species)
+		if(I.matriarch && I.patriarch)
 			continue
 		//The accursed setspouse code so people can preset their spouses
 		if(H.setspouse)
@@ -158,11 +158,20 @@ SUBSYSTEM_DEF(familytree)
 			if(spouse_to_be.real_name == H.setspouse)
 				high_priority_houses.Add(I)
 				continue
-		if(I.family.len >= 1 && I.family.len < 5)
+		//Normal Code
+		if(I.dominant_species != species)
+			continue
+		if(I.family.len >= 1 && I.family.len < 5 && !I.matriarch && !I.patriarch)
 			medium_priority_houses.Add(I)
 		else
 			low_priority_houses.Add(I)
 
+	/*
+	* Checks 3 lists.
+	* 1 High Priority: Houses that have the setspouse player.
+	* 2 Medium Priority: Houses without spouses
+	* 3 Low Priority: Everything else that applies
+	*/
 	for(var/i = 1 to 3)
 		var/list/what_we_checkin = high_priority_houses
 		//If second run then check the other houses.
