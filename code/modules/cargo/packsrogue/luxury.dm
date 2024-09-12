@@ -33,7 +33,7 @@
 	cost = 5
 	contains = /obj/item/reagent_containers/powder/moondust
 
-/datum/supply_pack/rogue/luxury/moondust
+/datum/supply_pack/rogue/luxury/soap
 	name = "Herbal Soap"
 	cost = 12
 	contains = /obj/item/bath/soap
