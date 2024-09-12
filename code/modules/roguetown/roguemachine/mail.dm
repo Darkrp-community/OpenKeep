@@ -234,7 +234,6 @@
 		return
 	..()
 
-
 /obj/structure/roguemachine/mail/Initialize()
 	. = ..()
 	SSroguemachine.hermailers += src
