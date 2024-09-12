@@ -1,5 +1,3 @@
-//shield flail or longsword, tief can be this with red cross
-
 /datum/advclass/combat/templar
 	name = "Paladin"
 	tutorial = "Paladins are former noblemen and clerics who have dedicated themselves to great combat prowess. Often, they were promised redemption for past sins if they crusaded in the name of the gods."
@@ -35,6 +33,12 @@
 		if("Noc")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
+		if("Pestra")
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket // Placeholder?
+			wrists = /obj/item/clothing/neck/roguetown/psicross/pestra
+		if("Ravox")
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket // Placeholder?
+			wrists = /obj/item/clothing/neck/roguetown/psicross/ravox	
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
 			wrists = /obj/item/clothing/neck/roguetown/psicross/silver
