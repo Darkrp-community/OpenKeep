@@ -7,3 +7,4 @@ GLOBAL_LIST_INIT(plant_defs, build_plant_defs())
 	. = list()
 	for(var/path in subtypesof(/datum/plant_def))
 		.[path] = new path()
+

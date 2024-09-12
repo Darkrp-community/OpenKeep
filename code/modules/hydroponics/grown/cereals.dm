@@ -19,7 +19,7 @@
 /obj/item/natural/chaff/wheat
 	icon_state = "wheatchaff"
 	name = "wheat stalks"
-	foodextracted = /obj/item/reagent_containers/food/snacks/grown/wheat
+//	foodextracted = /obj/item/reagent_containers/food/snacks/grown/wheat
 
 /obj/item/reagent_containers/food/snacks/grown/wheat
 	seed = /obj/item/seeds/wheat
@@ -48,8 +48,8 @@
 /obj/item/natural/chaff/oat
 	name = "oat stalks"
 	icon_state = "oatchaff"
-	chafftype = 2
-	foodextracted = /obj/item/reagent_containers/food/snacks/grown/oat
+//	chafftype = 2
+//	foodextracted = /obj/item/reagent_containers/food/snacks/grown/oat
 
 /obj/item/reagent_containers/food/snacks/grown/oat
 	seed = /obj/item/seeds/wheat/oat
@@ -78,8 +78,8 @@
 /obj/item/natural/chaff/rice
 	icon_state = "ricechaff"
 	name = "rice stalks"
-	chafftype = 2
-	foodextracted = /obj/item/reagent_containers/food/snacks/grown/rice
+//	chafftype = 2
+//	foodextracted = /obj/item/reagent_containers/food/snacks/grown/rice
 
 /obj/item/reagent_containers/food/snacks/grown/rice
 	seed = /obj/item/seeds/wheat/rice

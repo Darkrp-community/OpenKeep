@@ -110,33 +110,14 @@
 	seed_identity = "pear seeds"
 	plant_def_type = /datum/plant_def/pear
 
-/obj/item/neuFarm/seed/cherry
-	seed_identity = "cherry seeds"
-	plant_def_type = /datum/plant_def/cherry
-
-/obj/item/neuFarm/seed/olive
-	seed_identity = "olive seeds"
-	plant_def_type = /datum/plant_def/olive
-
 /obj/item/neuFarm/seed/nut
 	seed_identity = "rocknut seeds"
 	plant_def_type = /datum/plant_def/nut
-
-/obj/item/neuFarm/seed/tomato
-	seed_identity = "tomato seeds"
-	plant_def_type = /datum/plant_def/tomato
 
 /obj/item/neuFarm/seed/garlic
 	seed_identity = "garlic seeds"
 	plant_def_type = /datum/plant_def/garlic
 
-/obj/item/neuFarm/seed/carrot
-	seed_identity = "carrot seeds"
-	plant_def_type = /datum/plant_def/carrot
-
-/obj/item/neuFarm/seed/eggplant
-	seed_identity = "eggplant seeds"
-	plant_def_type = /datum/plant_def/eggplant
 
 /obj/item/neuFarm/seed/bean
 	seed_identity = "bean seeds"
@@ -146,13 +127,6 @@
 	seed_identity = "radish seeds"
 	plant_def_type = /datum/plant_def/radish
 
-/obj/item/neuFarm/seed/beet
-	seed_identity = "sugarbeet seeds"
-	plant_def_type = /datum/plant_def/beet
-
-/obj/item/neuFarm/seed/bellpepper
-	seed_identity = "little tiefling eggs"
-	plant_def_type = /datum/plant_def/bellpepper
 
 /obj/item/neuFarm/seed/peas
 	seed_identity = "pea seeds"
@@ -161,10 +135,6 @@
 /obj/item/neuFarm/seed/rice
 	seed_identity = "rice seeds"
 	plant_def_type = /datum/plant_def/rice
-
-/obj/item/neuFarm/seed/cucumber
-	seed_identity = "cucumber seeds"
-	plant_def_type = /datum/plant_def/cucumber
 
 /obj/item/neuFarm/seed/tea
 	seed_identity = "tea seeds"

@@ -253,6 +253,7 @@
 	grind_results = list(/datum/reagent/drug/space_drugs = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 
+/*	..................   Cabbage   ................... */
 /obj/item/reagent_containers/food/snacks/produce/cabbage
 	name = "cabbage"
 	desc = "A dense leafed vegetable, crunchy and ripe. A symbol of prosperity for elves"
@@ -271,6 +272,9 @@
 
 /obj/item/reagent_containers/food/snacks/produce/cabbage/rogue// obsolete TO DO
 
+
+
+/*	..................   Onions   ................... */
 /obj/item/reagent_containers/food/snacks/produce/onion
 	name = "onion"
 	desc = "A wonderful vegetable with many layers and broad flavor profile."
@@ -301,12 +305,14 @@
 
 /obj/item/reagent_containers/food/snacks/produce/onion/rogue // obsolete TO DO
 
+
+/*	..................   Potato   ................... */
 /obj/item/reagent_containers/food/snacks/produce/potato
 	name = "potato"
 	desc = "A spud, dwarven icon of growth."
 	seed = /obj/item/neuFarm/seed/potato
 	icon_state = "potato"
-	tastes = list("starchy dirt" = 1)
+	tastes = list("potato" = 1)
 	filling_color = "#d8d8b6"
 	slices_num = 1
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/potato_sliced
@@ -322,6 +328,8 @@
 
 /obj/item/reagent_containers/food/snacks/produce/potato/rogue // obsolete TO DO
 
+
+
 /obj/item/reagent_containers/food/snacks/produce/sunflower
 	seed = /obj/item/neuFarm/seed/sunflower
 	name = "sunflower"
@@ -336,6 +344,9 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 0)
 	dropshrink = 0.8
 	rotprocess = SHELFLIFE_EXTREME
+
+
+
 /*
 /obj/item/reagent_containers/food/snacks/produce/rice
 //	seed = /obj/item/neuFarm/seed/rice

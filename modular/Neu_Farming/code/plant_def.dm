@@ -149,17 +149,7 @@
 	maturation_time = 4 MINUTES
 	produce_time = 2 MINUTES
 
-// Temp to do move to foods
-/obj/item/reagent_containers/food/snacks/rogue/roastseeds
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
-	tastes = list("toasted sunflower seeds" = 1)
-	name = "roasted seeds"
-	desc = "Food for birds, treats for humens."
-	icon_state = "cabbage_fried"
-	color = "#e5b175"
-	foodtype = VEGETABLES
-	rotprocess = null
-	eat_effect = /datum/status_effect/buff/foodbuff
+
 /*
 /datum/plant_def/rice
 	name = "rice stalks"
@@ -225,18 +215,6 @@
 	icon = 'icons/roguetown/misc/crops.dmi'
 	icon_state = "radish"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/radish
-	produce_amount_min = 2
-	produce_amount_max = 4
-	maturation_nutrition = 25
-	produce_nutrition =  15
-	maturation_time = 4 MINUTES
-	produce_time = 2 MINUTES
-
-/datum/plant_def/beet
-	name = "sugarbeet patch"
-	icon = 'icons/roguetown/misc/crops.dmi'
-	icon_state = "beet"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/beet
 	produce_amount_min = 2
 	produce_amount_max = 4
 	maturation_nutrition = 25

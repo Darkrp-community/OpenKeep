@@ -18,8 +18,8 @@
 /obj/item/natural/chaff/corn
 	icon_state = "cornchaff"
 	name = "ear of corn"
-	foodextracted = /obj/item/reagent_containers/food/snacks/grown/corn
-	canthresh = FALSE //gotta shuck these manually
+//	foodextracted = /obj/item/reagent_containers/food/snacks/grown/corn
+//	canthresh = FALSE //gotta shuck these manually
 
 /obj/item/reagent_containers/food/snacks/grown/corn
 	seed = /obj/item/seeds/corn
