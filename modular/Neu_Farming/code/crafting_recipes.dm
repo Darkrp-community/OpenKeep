@@ -1,0 +1,27 @@
+/datum/crafting_recipe/roguetown/structure/composter
+	name = "composter"
+	result = /obj/structure/composter
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	craftdiff = 0
+	time = 2 SECONDS
+
+/datum/crafting_recipe/roguetown/structure/plough
+	name = "plough"
+	result = /obj/structure/plough
+	reqs = list(/obj/item/grown/log/tree/small = 2, /obj/item/ingot/iron = 1)
+	skillcraft = /datum/skill/craft/carpentry
+	time = 4 SECONDS
+
+/datum/crafting_recipe/roguetown/woodthresher
+	name = "thresher"
+	result = list(/obj/item/rogueweapon/thresher)
+	reqs = list(/obj/item/grown/log/tree/small = 2,
+				/obj/item/rope = 1)
+
+/datum/crafting_recipe/roguetown/militarythresher
+	name = "military thresher"
+	result = list(/obj/item/rogueweapon/thresher/military)
+	reqs = list(/obj/item/rogueweapon/thresher = 2,
+				/obj/item/ingot/iron = 1)
+
+
