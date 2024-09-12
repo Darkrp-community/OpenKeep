@@ -3,7 +3,7 @@
 /datum/advclass/pilgrim/rare/masterchef
 	name = "Master Chef"
 	tutorial = "A master chef is one of the best cooks to ever live. \
-	You received an early education from the guild of cooking masters and traveled across Grimoria, cooking exotic masterpieces for wealthy merchants and nobility alike. \
+	You received an early education from the guild of culinary arts and have traveled across Grimoria, cooking exotic masterpieces for wealthy merchants and nobility alike. \
 	Now you find yourself approaching Rockhill... perhaps this will be a perfect location to prepare your next great feast?"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -23,8 +23,8 @@
 
 /datum/outfit/job/roguetown/adventurer/masterchef/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/farming, 3, TRUE)
