@@ -1,3 +1,4 @@
+/*
 /obj/item/rogueweapon/thresher
 	force = 10
 	force_wielded = 15
@@ -268,7 +269,7 @@
 	else
 		icon_state = initial(icon_state)
 	..()
-
+*/
 //copper tools 
 
 /obj/item/rogueweapon/hoe/copper
