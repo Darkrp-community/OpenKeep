@@ -48,7 +48,7 @@
 	/obj/item/natural/cloth,
 	/obj/item/natural/cloth)
 
-/datum/supply_pack/rogue/rawmats/feater
+/datum/supply_pack/rogue/rawmats/feather
 	name = "Feathers"
 	cost = 15
 	contains = list(/obj/item/natural/feather,
