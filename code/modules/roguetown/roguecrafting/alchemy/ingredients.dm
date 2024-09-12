@@ -10,11 +10,11 @@
 /obj/item/seeds
 	dust_result = /obj/item/alch/seeddust
 	
-/obj/item/reagent_containers/food/snacks/grown/rogue/sweetleaf
-	dust_result = /obj/item/alch/sweetdust
+/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed
+	dust_result = /obj/item/alch/swampdust
 
-/obj/item/reagent_containers/food/snacks/grown/rogue/sweetleafdry
-	dust_result = /obj/item/alch/sweetdust
+/obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry
+	dust_result = /obj/item/alch/swampdust
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
 	dust_result = /obj/item/alch/tobaccodust
