@@ -267,7 +267,7 @@
 
 /datum/sprite_accessory/hair/nobility_human
 	name = "Nobility"
-	icon_state = "noble"
+	icon_state = "nobility"
 	gender = MALE
 	specuse = list("human")
 	
@@ -578,7 +578,7 @@
 	name = "Shrinekeeper"
 	icon_state = "shrine_f"
 	gender = FEMALE
-	specuse = list("elf", "tiefling")
+	specuse = list("elf", "tiefling", "human")
 
 /datum/sprite_accessory/hair/soilbride
 	name = "Soilbride"
