@@ -28,7 +28,8 @@
 /datum/reagent/medicine/stronghealth
 	name = "Strong Health Potion"
 	description = "Quickly regenerates all types of damage."
-	color = "#420000"
+	color = "#820000be"
+	taste_description = "rich lifeblood"
 	metabolization_rate = REAGENTS_METABOLISM * 10
 
 /datum/reagent/medicine/stronghealth/on_mob_life(mob/living/carbon/M)

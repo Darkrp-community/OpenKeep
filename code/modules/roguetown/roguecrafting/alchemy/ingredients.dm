@@ -129,7 +129,7 @@
 /obj/item/reagent_containers/powder/moondust_purest
 	possible_potion = "spdpot"
 
-/obj/item/reagent_containers/powder/flour/salt
+/obj/item/reagent_containers/powder/salt
 	possible_potion = "spdpot"
 
 /obj/item/alch/airdust
@@ -137,8 +137,8 @@
 	icon_state = "runedust"
 	possible_potion = "stronghealth"
 
-/obj/item/alch/sweetdust
-	name = "sweet leaf dust"
+/obj/item/alch/swampdust
+	name = "swampweed dust"
 	icon_state = "tobaccodust"
 	possible_potion = "intpot"
 
@@ -195,7 +195,7 @@
 /obj/item/seeds/berry/poison
 	possible_potion = "poison"
 
-/obj/item/reagent_containers/food/snacks/grown/rogue/sweetleaf
+/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed
 	possible_potion = "poison"
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed

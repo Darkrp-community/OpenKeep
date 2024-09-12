@@ -1,6 +1,6 @@
 /obj/machinery/light/rogue/cauldron
 	name = "cauldron"
-	desc = ""
+	desc = "Double, double toil and trouble. A great iron cauldron for brewing potions."
 	icon = 'icons/roguetown/misc/alchemy.dmi'
 	icon_state = "cauldron1"
 	base_state = "cauldron"
@@ -9,12 +9,12 @@
 	anchored = TRUE
 	max_integrity = 300
 	var/list/ingredients = list()
-	var/maxingredients = 3
+	var/maxingredients = 4
 	var/brewing = 0
 	var/potion_result = "bland"
 	var/brew_amount = 60
 	var/mob/living/carbon/human/lastuser
-	fueluse = 5 MINUTES
+	fueluse = 20 MINUTES
 	crossfire = FALSE
 
 /obj/machinery/light/rogue/cauldron/Initialize()
