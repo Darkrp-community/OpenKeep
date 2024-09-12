@@ -931,6 +931,12 @@ GLOBAL_LIST_EMPTY(chosen_names)
 //	dat += "<a href='?_src_=prefs;preference=reset_all'>Reset Setup</a>"
 		dat += "</center>"
 
+	dat += "</td>"
+	dat += "<td width='33%' align='right'>"
+	dat += "<b>Be Voice:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Enabled":"Disabled"]</a>"
+	dat += "</td>"
+	dat += "</tr>"
+	dat += "</table>"
 
 	if(user.client.is_new_player())
 		dat = list("<center>REGISTER!</center>")
@@ -1961,6 +1967,7 @@ Slots: [job.spawn_positions]</span>
 						ResetJobs()
 						if(pref_species.desc)
 							to_chat(user, "[pref_species.desc]")
+						age = pick(pref_species.possible_ages)			
 						to_chat(user, "<font color='red'>Classes reset.</font>")
 						random_character(gender)
 						accessory = "Nothing"
@@ -2376,6 +2383,15 @@ Slots: [job.spawn_positions]</span>
 				if("widescreenpref")
 					widescreenpref = !widescreenpref
 					user.client.change_view(CONFIG_GET(string/default_view))
+
+				if("schizo_voice")
+					toggles ^= SCHIZO_VOICE
+					if(toggles & SCHIZO_VOICE)
+						to_chat(user, "<span class='warning'>You are now a voice.\n\
+										As a voice, you will receive meditations from players asking about game mechanics!\n\
+										Good voices could be rewarded with PQ by staff for answering meditations, while bad ones are punished.</span>")
+					else
+						to_chat(user, span_warning("You are no longer a voice."))
 
 				if("save")
 					save_preferences()

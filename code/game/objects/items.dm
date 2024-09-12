@@ -1159,7 +1159,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		wielded = FALSE
 		if(force_wielded)
 			force = initial(force)
-		wdefense = initial(wdefense)
+		wdefense = wdefense - 1
 		var/obj/item/twohanded/offhand/O = user.get_inactive_held_item()
 		if(O && istype(O))
 			O.unwield()

@@ -14,6 +14,7 @@
 	vampcompat = FALSE
 	outfit = /datum/outfit/job/roguetown/adventurer/cleric
 	category_tags = list(CTAG_ADVENTURER)
+	min_pq = 0
 	maximum_possible_slots = 4
 
 /datum/outfit/job/roguetown/adventurer/cleric
@@ -37,12 +38,14 @@
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
 		if("Eora")
 			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
+			H.virginity = FALSE
 		if("Ravox")
 			wrists = /obj/item/clothing/neck/roguetown/psicross/ravox
 		if("Noc")
 			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
 			cloak = /obj/item/clothing/cloak/stabard/templar/noc
 		if("Pestra")
+			wrists = /obj/item/clothing/neck/roguetown/psicross/pestra
 			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
 
 	armor = /obj/item/clothing/suit/roguetown/armor/plate

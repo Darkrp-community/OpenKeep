@@ -17,6 +17,7 @@
 	spawn_positions = 1
 	display_order = JDO_TEMPLAR
 	give_bank_account = 0
+	min_pq = 0
 
 /datum/outfit/job/roguetown/templar
 	name = "Templar"
@@ -40,7 +41,11 @@
 			neck = /obj/item/clothing/neck/roguetown/psicross/necra
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
+		if("Eora")
+			neck = /obj/item/clothing/neck/roguetown/psicross/eora
+			H.virginity = FALSE
 		if("Pestra")
+			neck = /obj/item/clothing/neck/roguetown/psicross/pestra
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
 		if("Noc")
