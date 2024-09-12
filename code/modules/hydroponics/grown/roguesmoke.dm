@@ -11,6 +11,7 @@
 	tastes = list("sweet" = 1,"bitterness" = 1)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = 15 MINUTES
+	dust_result = /obj/item/alch/swampdust
 
 /obj/item/seeds/swampweed
 	name = "seeds"
@@ -22,6 +23,7 @@
 	yield = 3
 	potency = 1
 	color = "#455838"
+	dust_result = /obj/item/alch/seeddust
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry
 	seed = null
