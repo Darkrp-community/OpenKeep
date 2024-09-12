@@ -837,7 +837,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	w_req = /obj/item/bodypart/l_leg
 	e_req = /obj/item/bodypart/r_leg
-	n_req = /obj/item/reagent_containers/food/snacks/rogue/meat/steak
+	n_req = /obj/item/reagent_containers/food/snacks/rogue/meat
 
 	function = /proc/bunnylegs
 
@@ -854,7 +854,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	w_req = /obj/item/organ/eyes
 	e_req = /obj/item/organ/eyes
-	n_req = /obj/item/reagent_containers/food/snacks/rogue/meat/steak
+	n_req = /obj/item/reagent_containers/food/snacks/rogue/meat
 
 	function = /proc/darkeyes
 
@@ -876,7 +876,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	w_req = /obj/item/organ/heart
 	e_req = /obj/item/organ/brain
-	n_req = /obj/item/reagent_containers/food/snacks/rogue/meat/steak
+	n_req = /obj/item/reagent_containers/food/snacks/rogue/meat
 
 	function = /proc/nopain
 
@@ -899,8 +899,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	w_req = /obj/item/organ/guts
 	e_req = /obj/item/organ/guts
-	n_req = /obj/item/reagent_containers/food/snacks/rogue/meat/steak
-	s_req = /obj/item/reagent_containers/food/snacks/rogue/meat/steak
+	n_req = /obj/item/reagent_containers/food/snacks/rogue/meat
+	s_req = /obj/item/reagent_containers/food/snacks/rogue/meat
 
 	function = /proc/fleshform
 

@@ -183,26 +183,53 @@
 
 	if(m_intent == MOVE_INTENT_RUN && dir == get_dir(src, M))
 		if(isliving(M))
+			var/sprint_distance = sprinted_tiles
+			toggle_rogmove_intent(MOVE_INTENT_WALK, TRUE)
+			
 			var/mob/living/L = M
-			if(STACON > L.STACON)
-				if(STASTR > L.STASTR)
-					L.Knockdown(1)
-				else
-					Knockdown(1)
-			if(STACON < L.STACON)
+
+			var/self_points = FLOOR((STACON + STASTR + mind.get_skill_level(/datum/skill/misc/athletics))/2, 1)
+			var/target_points = FLOOR((L.STAEND + L.STASTR + L.mind.get_skill_level(/datum/skill/misc/athletics))/2, 1)
+
+			switch(sprint_distance)
+				// Point blank
+				if(0 to 1)
+					self_points -= 6
+				// One to two tile between the people
+				if(2 to 3)
+					self_points -= 3
+				// Five or above tiles between people
+				if(6 to INFINITY)
+					self_points += 1
+
+			// If charging into the BACK of the enemy (facing away)
+			if(L.dir == get_dir(src, L))
+				self_points += 2
+
+			// Random 1 in 10 crit chance of 20 virtual stat points to make it less consistent.
+			if(prob(10))
+				switch(rand(1,2))
+					if(1)
+						self_points += 10
+					if(2)
+						self_points -= 10
+
+			if(self_points > target_points)
+				L.Knockdown(1)
+			if(self_points < target_points)
 				Knockdown(30)
-			if(STACON == L.STACON)
+			if(self_points == target_points)
 				L.Knockdown(1)
 				Knockdown(30)
 			Immobilize(30)
 			var/playsound = FALSE
-			if(apply_damage(15, BRUTE, "head", run_armor_check("head", "melee", damage = 20)))
+			if(apply_damage(15, BRUTE, "head", run_armor_check("head", "blunt", damage = 20)))
 				playsound = TRUE
-			if(L.apply_damage(15, BRUTE, "chest", L.run_armor_check("chest", "melee", damage = 10)))
+			if(L.apply_damage(15, BRUTE, "chest", L.run_armor_check("chest", "blunt", damage = 10)))
 				playsound = TRUE
 			if(playsound)
 				playsound(src, "genblunt", 100, TRUE)
-			visible_message("<span class='warning'>[src] charges into [L]!</span>", "<span class='warning'>I charge into [L]!</span>")
+			visible_message(span_warning("[src] charges into [L]!"), span_warning("I charge into [L]!"))
 			return TRUE
 
 	//okay, so we didn't switch. but should we push?
@@ -870,6 +897,9 @@
 
 	var/old_direction = dir
 	var/turf/T = loc
+
+	if(m_intent == MOVE_INTENT_RUN)
+		sprinted_tiles++
 
 	if(wallpressed)
 		update_wallpress(T, newloc, direct)
