@@ -36,7 +36,10 @@
 
 /*	.............   Pork, spidermeat, birdmeat   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/meat/fatty //pork
-	slices_num = 4
+	name = "raw pigflesh"
+	icon_state = "meatcutlet"
+	color = "#f093c3"
+	slices_num = 2
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/bacon
 	chopping_sound = TRUE
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/bacon
