@@ -25,7 +25,7 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
@@ -36,7 +36,7 @@
 	name = "onion steak"
 	desc = "Roasted flesh garnished with tender fried onions. Fragrant and slathered with juices of both ingredients to a perfect mouth-watering sauce."
 	icon_state = "onionsteak"
-	tastes = list("steak" = 1, "onions" = 1)
+	tastes = list("roasted meat" = 1, "caramelized onions" = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+3)
 	foodtype = MEAT
 	warming = 5 MINUTES
@@ -49,11 +49,16 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess =  SHELFLIFE_LONG
 
+
+
+/*---------------\
+| Sausage meals |
+\---------------*/
 
 /*	.................   Wiener Cabbage   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/wienercabbage
@@ -72,7 +77,7 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_EXTREME
@@ -98,6 +103,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,3 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions(loc)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -108,7 +114,7 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_EXTREME
@@ -121,6 +127,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,3 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions/plated(loc)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -146,6 +153,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,3 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions(loc)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 	else
@@ -174,13 +182,12 @@
 	else
 		return ..()
 
-
 /*	.................   Wiener & potato & onions   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions
 	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
-	tastes = list("savory sausage" = 1, "potato" = 1)
+	tastes = list("savory sausage" = 2, "potato" = 1, "caramelized onion" = 1)
 	name = "wiener meal"
-	desc = "Stout and nourishing."
+	desc = "Stout and nourishing. Potatos and onions allied with a fatty sausage"
 	icon_state = "wpotonion"
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
@@ -192,33 +199,16 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
 
-/*	.................   Frybird & Tato   ................... */
-/obj/item/reagent_containers/food/snacks/rogue/frybirdtato
-	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
-	tastes = list("frybird" = 1, "tato" = 1)
-	name = "frybird with a tato"
-	desc = "Hearty, comforting and rich - Alleged favorite dish of Ravox."
-	icon_state = "frybirdtato"
-	foodtype = VEGETABLES | MEAT
-	warming = 3 MINUTES
-	rotprocess = SHELFLIFE_DECENT
-	eat_effect = /datum/status_effect/buff/foodbuff
-/obj/item/reagent_containers/food/snacks/rogue/frybirdtato/plated
-	icon_state = "frybirdtato_plated"
-	item_state = "plate_food"
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
-	trash = /obj/item/cooking/platter
-	rotprocess = SHELFLIFE_LONG
 
+
+/*------------------\
+| Cackleberry meals |
+\------------------*/
 
 /*	.................   Valerian Omelette   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian
@@ -235,7 +225,7 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
@@ -243,52 +233,57 @@
 /*	.................   Plated fryfish   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/carp/plated
 	desc = "Abyssor's bounty, make sure to eat the eyes!"
-	icon_state = "carpcooked_plated"
+	icon_state = "carp_plated"
 	item_state = "plate_food"
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
 
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish/plated
 	desc = "Abyssor's bounty, make sure to eat the eyes!"
-	icon_state = "clownfishcooked_plated"
+	icon_state = "clown_plated"
 	item_state = "plate_food"
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
 
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler/plated
 	desc = "Abyssor's bounty, make sure to eat the eyes!"
-	icon_state = "anglercooked_plated"
+	icon_state = "carp_plated"
 	item_state = "plate_food"
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
 
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel/plated
 	desc = "Abyssor's bounty, make sure to eat the eyes!"
-	icon_state = "eelcooked_plated"
+	icon_state = "eel_plated"
 	item_state = "plate_food"
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
 
+
+
+/*---------------\
+| Chicken meals |
+\---------------*/
 
 /*	.................   Chicken roast   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked
@@ -322,12 +317,13 @@
 				return TRUE
 			mill.reagents.remove_reagent(/datum/reagent/consumable/blackpepper, 1)
 			new /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/spiced(loc)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			qdel(src)
 
 	else
 		to_chat(user, "<span class='warning'>You need to put [src] on a table to knead in the spice.</span>")
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/spiced
-	desc = "A plump bird, roasted perfection, spiced to taste divine."
+	desc = "A plump bird, roasted to perfection, spiced to taste divine."
 	eat_effect = /datum/status_effect/buff/foodbuff
 	name = "spiced bird-roast"
 	color = "#ffc0c0"
@@ -342,12 +338,22 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
+/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/plated/spiced
+	desc = "A plump bird, roasted to perfection, spiced to taste divine."
 
-
-/*	.................   Cooked rat   ................... */
-/obj/item/reagent_containers/food/snacks/rogue/friedrat/plated
-	desc = "The beggar's feast."
-	icon_state = "cookedrat_plated"
+/*	.................   Frybird & Tato   ................... */
+/obj/item/reagent_containers/food/snacks/rogue/frybirdtato
+	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
+	tastes = list("frybird" = 1, "warm tato" = 1)
+	name = "frybird with a tato"
+	desc = "Hearty, comforting and rich - Alleged favorite dish of Ravox."
+	icon_state = "frybirdtato"
+	foodtype = VEGETABLES | MEAT
+	warming = 3 MINUTES
+	rotprocess = SHELFLIFE_DECENT
+	eat_effect = /datum/status_effect/buff/foodbuff
+/obj/item/reagent_containers/food/snacks/rogue/frybirdtato/plated
+	icon_state = "frybirdtato_plated"
 	item_state = "plate_food"
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
@@ -357,3 +363,70 @@
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_LONG
 
+
+
+/*-----------\
+| Royal meal |
+\-----------*/
+
+/*	.................   Royal Truffles   ................... */
+/obj/item/reagent_containers/food/snacks/rogue/royaltruffles
+	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_FILLING+SNACK_DECENT)
+	tastes = list("salty bacon" = 1, "divine truffles" = 1)
+	name = "royal truffles"
+	desc = "The height of decadence, a precious truffle pig, turned into a amusing meal, served on a bed of its beloved golden truffles."
+	icon_state = "royaltruffles"
+	foodtype = VEGETABLES | MEAT
+	warming = 3 MINUTES
+	rotprocess = SHELFLIFE_LONG
+	eat_effect = /datum/status_effect/buff/foodbuff
+/obj/item/reagent_containers/food/snacks/rogue/royaltruffles/plated
+	icon_state = "royaltruffles_plated"
+	item_state = "plate_food"
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
+	experimental_inhand = FALSE
+	w_class = WEIGHT_CLASS_NORMAL
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	trash = /obj/item/cooking/platter
+	rotprocess = SHELFLIFE_EXTREME
+
+/*	.................   Royal Truffles (Poisoned) ............ */
+/obj/item/reagent_containers/food/snacks/rogue/royaltruffles_poisoned
+	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_FILLING,  /datum/reagent/berrypoison = 10)
+	tastes = list("salty bacon" = 1, "mushrooms" = 1)
+	name = "royal truffles"
+	desc = "The height of decadence, a precious truffle pig, turned into a amusing meal, served on a bed of its beloved golden truffles."
+	icon_state = "royaltruffles"
+	foodtype = VEGETABLES | MEAT
+	warming = 3 MINUTES
+	rotprocess = SHELFLIFE_LONG
+	eat_effect = /datum/status_effect/buff/foodbuff
+/obj/item/reagent_containers/food/snacks/rogue/royaltruffles_poisoned/plated
+	icon_state = "royaltruffles_plated"
+	item_state = "plate_food"
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
+	experimental_inhand = FALSE
+	w_class = WEIGHT_CLASS_NORMAL
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	trash = /obj/item/cooking/platter
+	rotprocess = SHELFLIFE_EXTREME
+
+
+/*------------\
+| Beggar meal |
+\------------*/
+
+/*	.................   Cooked rat   ................... */
+/obj/item/reagent_containers/food/snacks/rogue/friedrat/plated
+	desc = "The beggar's feast."
+	icon_state = "cookedrat_plated"
+	item_state = "plate_food"
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
+	experimental_inhand = FALSE
+	w_class = WEIGHT_CLASS_NORMAL
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	trash = /obj/item/cooking/platter
+	rotprocess = SHELFLIFE_LONG
