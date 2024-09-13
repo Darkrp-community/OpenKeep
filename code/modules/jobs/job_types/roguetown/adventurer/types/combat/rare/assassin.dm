@@ -38,7 +38,6 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE) // Used for leaving notes after your evil work.
 		var/datum/antagonist/new_antag = new /datum/antagonist/assassin() // Adds the assassin antag label.
 		H.mind.add_antag_datum(new_antag)
-		H.mind.assigned_role = "Pilgrim"
 
 	H.become_blind("TRAIT_GENERIC")
 	// Assassin now spawns disguised as one of the non-combat drifters. You never know who will stab you in the back.
