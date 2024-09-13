@@ -26,7 +26,7 @@
 	gripsprite = TRUE
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = null
-	associated_skill = /datum/skill/combat/axesmaces
+	associated_skill = /datum/skill/combat/whipsflails
 
 /obj/item/rogueweapon/thresher/military
 	force = 12
@@ -72,21 +72,25 @@
 	pixel_y = 0
 	pixel_x = 0
 
-/obj/item/rogueweapon/thresher/afterattack(obj/target, mob/user, proximity)
+/obj/item/rogueweapon/thresher/afterattack(obj/target, mob/living/user = usr, proximity)
 	if(user.used_intent.type == /datum/intent/flailthresh)
 		if(isturf(target.loc))
 			var/turf/T = target.loc
 			var/found = FALSE
-			for(var/obj/item/natural/neu_chaff/C in T)
+			for(var/obj/item/natural/chaff/C in T)
+				user.Immobilize(12)
 				found = TRUE
 				C.thresh()
-			if(found)
 				playsound(loc,"plantcross", 100, FALSE)
 				playsound(loc,"smashlimb", 50, FALSE)
+				user.rogfat_add(12)
+				sleep(10)
+			if(found)
 				user.visible_message(span_notice("[user] threshes the stalks!"), \
-									span_notice("I thresh the stalks."))
-			return
+						span_notice("I thresh the stalks."))
+		return
 	..()
+
 
 /*---------\
 |  Sickle  |
@@ -128,51 +132,69 @@
 	name = "hoe"
 	desc = ""
 	icon_state = "hoe"
-	icon = 'modular/Neu_Farming/icons/farmtools_big.dmi'
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
-	bigboy = TRUE
+	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = null
+	slot_flags = ITEM_SLOT_BACK
 	minstr = 5
 	sharpness = IS_BLUNT
 	walking_stick = TRUE
 	wdefense = 2
-	dropshrink = 0.9
 	wlength = 66
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
-	gripsprite = TRUE
-
 
 /obj/item/rogueweapon/hoe/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.7,"sx" = -9,"sy" = 1,"nx" = 8,"ny" = 1,"wx" = -5,"wy" = 1,"ex" = 0,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.7,
+"sx" = -11,
+"sy" = 1,
+"nx" = 12,
+"ny" = 0,
+"wx" = -7,
+"wy" = -0,
+"ex" = 6,
+"ey" = 3,
+"northabove" = 0,
+"southabove" = 1,
+"eastabove" = 1,
+"westabove" = 0,
+"nturn" = -15,
+"sturn" = 12,
+"wturn" = 0,
+"eturn" = 354,
+"nflip" = 0,
+"sflip" = 8,
+"wflip" = 8,
+"eflip" = 0)
 			if("wielded")
-				return list("shrink" = 0.6,"sx" = 5,"sy" = -2,"nx" = -7,"ny" = -2,"wx" = -4,"wy" = -3,"ex" = 5,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.8,
+"sx" = 5,
+"sy" = -6,
+"nx" = -7,
+"ny" = -6,
+"wx" = 2,
+"wy" = -6,
+"ex" = 5,
+"ey" = -4,
+"northabove" = 0,
+"southabove" = 1,
+"eastabove" = 1,
+"westabove" = 1,
+"nturn" = -40,
+"sturn" = 40,
+"wturn" = 60,
+"eturn" = 25,
+"nflip" = 8,
+"sflip" = 0,
+"wflip" = 0,
+"eflip" = 0)
 			if("onbelt")
-				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-
-/obj/item/rogueweapon/hoe/Initialize()
-	. = ..()
-	pixel_y = -16
-	pixel_x = -16
-
-/obj/item/rogueweapon/hoe/dropped()
-	. = ..()
-	pixel_y = -16
-	pixel_x = -16
-
-/obj/item/rogueweapon/hoe/equipped()
-	. = ..()
-	pixel_y = 0
-	pixel_x = 0
-
+				return list("shrink" = 0.4,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogueweapon/hoe/attack_turf(turf/T, mob/living/user)
 	if(user.used_intent.type == /datum/intent/till)
@@ -212,44 +234,78 @@
 /obj/item/rogueweapon/pitchfork
 
 	force = 10
-	force_wielded = 20
+	force_wielded = 18
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH)
 	gripped_intents = list(DUMP_INTENT,SPEAR_BASH,SPEAR_THRUST)
 	name = "pitchfork"
 	desc = "Compost, chaff, hay, it matters not."
 	icon_state = "pitchfork"
-	icon = 'modular/Neu_Farming/icons/farmtools_big.dmi'
-	pixel_y = -16
-	pixel_x = -16
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
-	bigboy = TRUE
+	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = null
+	slot_flags = ITEM_SLOT_BACK
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	minstr = 6
 	wdefense = 2
-	dropshrink = 0.8
-	wlength = 66
 	var/list/forked = list()
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
 	thrown_bclass = BCLASS_STAB
-	throwforce = 25
+	throwforce = 15
 
 /obj/item/rogueweapon/pitchfork/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.7,"sx" = -7,"sy" = 0,"nx" = 8,"ny" = 0,"wx" = -5,"wy" = 0,"ex" = 0,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.7,
+"sx" = -6,
+"sy" = -2,
+"nx" = 8,
+"ny" = -2,
+"wx" = -7,
+"wy" = -3,
+"ex" = 2,
+"ey" = -3,
+"northabove" = 0,
+"southabove" = 1,
+"eastabove" = 1,
+"westabove" = 0,
+"nturn" = -15,
+"sturn" = 12,
+"wturn" = 0,
+"eturn" = 354,
+"nflip" = 0,
+"sflip" = 8,
+"wflip" = 8,
+"eflip" = 0)
 			if("wielded")
-				return list("shrink" = 0.7,"sx" = 3,"sy" = -4,"nx" = 3,"ny" = -3,"wx" = -4,"wy" = -4,"ex" = 2,"ey" = -4,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 45,"sturn" = 135,"wturn" = -45,"eturn" = 45,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.7,
+"sx" = 4,
+"sy" = -4,
+"nx" = -7,
+"ny" = -4,
+"wx" = 2,
+"wy" = -5,
+"ex" = 5,
+"ey" = -5,
+"northabove" = 0,
+"southabove" = 1,
+"eastabove" = 1,
+"westabove" = 1,
+"nturn" = -135,
+"sturn" = 135,
+"wturn" = -240,
+"eturn" = -30,
+"nflip" = 0,
+"sflip" = 8,
+"wflip" = 8,
+"eflip" = 1)
 			if("onbelt")
-				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+				return list("shrink" = 0.4,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
 
 /datum/intent/pforkdump
 	name = "scoop"

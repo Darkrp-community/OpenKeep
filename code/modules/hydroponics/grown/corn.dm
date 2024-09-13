@@ -3,7 +3,6 @@
 	desc = ""
 	species = "corn"
 	plantname = "corn stalks"
-	product = /obj/item/natural/chaff/corn
 	maturation = 8
 	production = 1
 	yield = 1
@@ -14,12 +13,6 @@
 	icon_dead = "corn-dead" // Same for the dead icon
 	mutatelist = list(/obj/item/seeds/corn/snapcorn)
 	reagents_add = list(/datum/reagent/consumable/cornoil = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
-
-/obj/item/natural/chaff/corn
-	icon_state = "cornchaff"
-	name = "ear of corn"
-//	foodextracted = /obj/item/reagent_containers/food/snacks/grown/corn
-//	canthresh = FALSE //gotta shuck these manually
 
 /obj/item/reagent_containers/food/snacks/grown/corn
 	seed = /obj/item/seeds/corn

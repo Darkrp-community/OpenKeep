@@ -17,7 +17,8 @@
 /obj/item/neuFarm/seed/Crossed(mob/living/L)
 	. = ..()
 	// Chance to destroy the seed as it's being stepped on
-	if(prob(35) && istype(L))
+	if(prob(20) && istype(L))
+		playsound(loc,"plantcross", 20, FALSE)
 		qdel(src)
 
 /obj/item/neuFarm/seed/examine(mob/user)
@@ -68,6 +69,7 @@
 /obj/item/neuFarm/seed/wheat/oat
 	seed_identity = "oat seeds"
 	plant_def_type = /datum/plant_def/oat
+	color = "#a3eca3"
 
 /obj/item/neuFarm/seed/apple
 	seed_identity = "apple seeds"
@@ -95,7 +97,7 @@
 
 /obj/item/neuFarm/seed/onion
 	seed_identity = "onion seeds"
-	color = "#ffeeb9"
+	color = "#fff2ca"
 	plant_def_type = /datum/plant_def/onion
 /obj/item/neuFarm/seed/potato
 	seed_identity = "potato seedlings"

@@ -41,7 +41,7 @@
 /datum/plant_def/wheat
 	name = "wheat stalks"
 	icon_state = "wheat"
-	produce_type = /obj/item/natural/neu_chaff/wheat
+	produce_type = /obj/item/natural/chaff/wheat
 	produce_amount_min = 3
 	produce_amount_max = 4
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
@@ -53,7 +53,7 @@
 /datum/plant_def/oat
 	name = "oat stalks"
 	icon_state = "oat"
-	produce_type = /obj/item/natural/neu_chaff/oat
+	produce_type = /obj/item/natural/chaff/oat
 	produce_amount_min = 3
 	produce_amount_max = 4
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
@@ -155,7 +155,7 @@
 	name = "rice stalks"
 	icon = 'icons/roguetown/misc/crops.dmi'
 	icon_state = "rice"
-	produce_type = /obj/item/natural/neu_chaff/rice
+	produce_type = /obj/item/natural/chaff/rice
 	produce_amount_min = 3
 	produce_amount_max = 4
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
@@ -195,28 +195,6 @@
 	icon = 'icons/roguetown/misc/crops.dmi'
 	icon_state = "garlic"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/garlic
-	maturation_nutrition = 25
-	produce_nutrition =  15
-	maturation_time = 4 MINUTES
-	produce_time = 2 MINUTES
-
-/datum/plant_def/bean
-	name = "bean bush"
-	icon = 'icons/roguetown/misc/crops.dmi'
-	icon_state = "bean"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/bean
-	maturation_nutrition = 40
-	produce_nutrition =  20
-	maturation_time = 5 MINUTES
-	produce_time = 2.5 MINUTES
-
-/datum/plant_def/radish
-	name = "radish patch"
-	icon = 'icons/roguetown/misc/crops.dmi'
-	icon_state = "radish"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/radish
-	produce_amount_min = 2
-	produce_amount_max = 4
 	maturation_nutrition = 25
 	produce_nutrition =  15
 	maturation_time = 4 MINUTES

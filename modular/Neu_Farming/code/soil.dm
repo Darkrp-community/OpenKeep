@@ -3,6 +3,7 @@
 #define MAX_PLANT_NUTRITION 300
 #define MAX_PLANT_WEEDS 100
 #define SOIL_DECAY_TIME 10 MINUTES
+#define FARMING_XPGAIN 10
 
 /obj/structure/soil
 	name = "soil"
@@ -48,7 +49,7 @@
 	if(!produce_ready)
 		return
 	apply_farming_fatigue(user, 5)
-//	add_sleep_experience(user, /datum/skill/labor/farming, user.STAINT * 2)  not implemented
+//	add_sleep_experience(user, /datum/skill/labor/farming, user.STAINT * 2)  sleepxp not a thing, get regular
 
 	var/farming_skill = user.mind.get_skill_level(/datum/skill/labor/farming)
 	var/chance_to_ruin = 50 - (farming_skill * 25)
@@ -69,6 +70,7 @@
 
 	to_chat(user, span_notice(feedback))
 	yield_produce(modifier)
+	user.mind.adjust_experience(/datum/skill/labor/farming, FARMING_XPGAIN, FALSE)
 
 /obj/structure/soil/proc/try_handle_harvest(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/rogueweapon/sickle))
@@ -82,7 +84,7 @@
 
 /obj/structure/soil/proc/try_handle_seed_planting(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/neuFarm/seed))
-		playsound(src, pick('modular/Neu_Farming/sound/touch1.ogg','modular/Neu_Farming/sound/touch2.ogg','modular/Neu_Farming/sound/touch3.ogg'), 150, TRUE)
+		playsound(src, pick('modular/Neu_Farming/sound/touch1.ogg','modular/Neu_Farming/sound/touch2.ogg','modular/Neu_Farming/sound/touch3.ogg'), 170, TRUE)
 		if(do_after(user, get_farming_do_time(user, 2 SECONDS), target = src))
 			var/obj/item/neuFarm/seed/seeds = attacking_item
 			seeds.try_plant_seed(user, src)
@@ -192,6 +194,7 @@
 		if(do_after(user, get_farming_do_time(user, 4 SECONDS), target = src))
 			playsound(src,'sound/items/seed.ogg', 100, FALSE)
 			user_harvests(user)
+			user.mind.adjust_experience(/datum/skill/labor/farming, FARMING_XPGAIN, FALSE)
 		return
 	if(plant && plant_dead)
 		to_chat(user, span_notice("I begin to remove the dead crop..."))
@@ -202,6 +205,7 @@
 			to_chat(user, span_notice("I remove the crop."))
 			playsound(src,'sound/items/seed.ogg', 100, FALSE)
 			uproot()
+			user.mind.adjust_experience(/datum/skill/labor/farming, FARMING_XPGAIN, FALSE)
 		return
 	. = ..()
 

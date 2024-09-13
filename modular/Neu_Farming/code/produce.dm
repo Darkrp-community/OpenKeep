@@ -72,7 +72,7 @@
 	desc = ""
 	icon_state = "oat"
 	gender = PLURAL
-	filling_color = "#556B2F"
+	filling_color = "#b1d179"
 	bitesize_mod = 2
 	foodtype = GRAIN
 	tastes = list("oat" = 1)
@@ -204,11 +204,12 @@
 	color_index = "bad"
 	poisonous = TRUE
 
+/*	..................   Swamp weed   ................... */
 /obj/item/reagent_containers/food/snacks/produce/rogue/sweetleaf
 	seed = /obj/item/neuFarm/seed/swampleaf
 	name = "swampweed"
 	desc = "A 'foggy' pipe weed."
-	icon_state = "sweetleaf"
+	icon_state = "swampweed"
 	filling_color = "#008000"
 	bitesize_mod = 1
 	foodtype = VEGETABLES
@@ -217,11 +218,24 @@
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
 
+/obj/item/reagent_containers/food/snacks/produce/rogue/sweetleafdry
+	seed = null
+	name = "swampweed"
+	desc = ""
+	icon_state = "swampweedd"
+	dry = TRUE
+	pipe_reagents = list(/datum/reagent/drug/space_drugs = 30)
+	list_reagents = list(/datum/reagent/drug/space_drugs = 2,/datum/reagent/consumable/nutriment = 1)
+	grind_results = list(/datum/reagent/drug/space_drugs = 5)
+	eat_effect = /datum/status_effect/debuff/badmeal
+
+
+/*	..................   Pipe weed   ................... */
 /obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed
 	seed = /obj/item/neuFarm/seed/pipeweed
 	name = "westleach leaf"
 	desc = "A generic kind of pipe weed."
-	icon_state = "pipeweed"
+	icon_state = "westleach"
 	filling_color = "#008000"
 	bitesize_mod = 1
 	foodtype = VEGETABLES
@@ -235,23 +249,14 @@
 	seed = null
 	name = "westleach leaf"
 	desc = "A dried leaf."
-	icon_state = "pipeweedd"
+	icon_state = "westleachd"
 	dry = TRUE
 	pipe_reagents = list(/datum/reagent/drug/nicotine = 30)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	list_reagents = list(/datum/reagent/drug/nicotine = 5, /datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/drug/nicotine = 10)
 
-/obj/item/reagent_containers/food/snacks/produce/rogue/sweetleafdry
-	seed = null
-	name = "swampweed"
-	desc = ""
-	icon_state = "sweetleafd"
-	dry = TRUE
-	pipe_reagents = list(/datum/reagent/drug/space_drugs = 30)
-	list_reagents = list(/datum/reagent/drug/space_drugs = 2,/datum/reagent/consumable/nutriment = 1)
-	grind_results = list(/datum/reagent/drug/space_drugs = 5)
-	eat_effect = /datum/status_effect/debuff/badmeal
+
 
 /*	..................   Cabbage   ................... */
 /obj/item/reagent_containers/food/snacks/produce/cabbage
@@ -269,10 +274,6 @@
 	slices_num = 3
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/cabbage_sliced
 	chopping_sound = TRUE
-
-/obj/item/reagent_containers/food/snacks/produce/cabbage/rogue// obsolete TO DO
-
-
 
 /*	..................   Onions   ................... */
 /obj/item/reagent_containers/food/snacks/produce/onion
@@ -303,9 +304,6 @@
 		return TRUE
 	qdel(S)
 
-/obj/item/reagent_containers/food/snacks/produce/onion/rogue // obsolete TO DO
-
-
 /*	..................   Potato   ................... */
 /obj/item/reagent_containers/food/snacks/produce/potato
 	name = "potato"
@@ -326,10 +324,7 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/voddena
 	rotprocess = null
 
-/obj/item/reagent_containers/food/snacks/produce/potato/rogue // obsolete TO DO
-
-
-
+/*	..................   Sunflower   ................... */
 /obj/item/reagent_containers/food/snacks/produce/sunflower
 	seed = /obj/item/neuFarm/seed/sunflower
 	name = "sunflower"
@@ -344,25 +339,10 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 0)
 	dropshrink = 0.8
 	rotprocess = SHELFLIFE_EXTREME
+	fried_type = /obj/item/reagent_containers/food/snacks/rogue/roastseeds
 
 
 
-/*
-/obj/item/reagent_containers/food/snacks/produce/rice
-//	seed = /obj/item/neuFarm/seed/rice
-	name = "rice grain"
-	desc = ""
-	icon_state = "rice"
-	gender = PLURAL
-	filling_color = "#f0f0f0"
-	bitesize_mod = 2
-	foodtype = GRAIN
-	tastes = list("rice" = 1)
-	can_distill = TRUE
-	distill_reagent = /datum/reagent/consumable/ethanol/sake
-	distill_amt = 12
-	grind_results = list(/datum/reagent/floure = 10)
-*/
 
 /*
 /obj/item/reagent_containers/food/snacks/produce/pear
@@ -373,17 +353,6 @@
 	name = "garlic"
 	desc = "Your last line of defense against the vampiric horde."
 //	seed = /obj/item/neuFarm/seed/garlic
-
-/obj/item/reagent_containers/food/snacks/produce/bean
-	name = "beans"
-//	seed = /obj/item/neuFarm/seed/bean
-
-/obj/item/reagent_containers/food/snacks/produce/radish
-//	seed = /obj/item/neuFarm/seed/radish
-	name = "radish"
-
-/obj/item/reagent_containers/food/snacks/produce/beet
-//	seed = /obj/item/neuFarm/seed/beet
 
 /obj/item/reagent_containers/food/snacks/produce/peas
 //	seed = /obj/item/neuFarm/seed/peas
@@ -420,4 +389,21 @@
 	bitesize = 3
 	foodtype = FRUIT
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+*/
+
+/*
+/obj/item/reagent_containers/food/snacks/produce/rice
+//	seed = /obj/item/neuFarm/seed/rice
+	name = "rice grain"
+	desc = ""
+	icon_state = "rice"
+	gender = PLURAL
+	filling_color = "#f0f0f0"
+	bitesize_mod = 2
+	foodtype = GRAIN
+	tastes = list("rice" = 1)
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/ethanol/sake
+	distill_amt = 12
+	grind_results = list(/datum/reagent/floure = 10)
 */

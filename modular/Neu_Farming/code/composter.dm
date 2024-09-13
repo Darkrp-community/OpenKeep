@@ -82,7 +82,7 @@
 	var/compost_value = 0
 	if(istype(attacking_item, /obj/item/reagent_containers/food/snacks))
 		compost_value = 150
-	if(istype(attacking_item, /obj/item/natural/neu_chaff))
+	if(istype(attacking_item, /obj/item/natural/chaff))
 		compost_value = 150
 	if(istype(attacking_item, /obj/item/trash))
 		compost_value = 50
