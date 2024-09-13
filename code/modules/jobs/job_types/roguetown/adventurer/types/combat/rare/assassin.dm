@@ -42,7 +42,7 @@
 
 	H.become_blind("TRAIT_GENERIC")
 	// Assassin now spawns disguised as one of the non-combat drifters. You never know who will stab you in the back.
-	var/disguises = pick("Bard", "Beggar", "Fisher", "Hunter", "Miner", "Monk", "Noble", "Peasant", "Warrior", "Woodcutter")
+	var/disguises = list("Bard", "Beggar", "Fisher", "Hunter", "Miner", "Monk", "Noble", "Peasant", "Warrior", "Woodcutter")
 	var/disguisechoice = input("Choose your cover", "Available disguises") as anything in disguises
 
 	switch(disguisechoice)
