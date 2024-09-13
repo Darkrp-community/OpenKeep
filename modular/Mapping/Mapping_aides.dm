@@ -314,6 +314,7 @@
 	icon = 'icons/roguetown/misc/fireplace64.dmi'
 	fueluse = 9999999999
 	pixel_x = -16
+	climb_offset = 4
 
 
 /*	..................   Wizard Shenanigans   ................... */
@@ -572,35 +573,6 @@
 	pixel_y = 0
 
 
-/*	..................   More chairs   ................... */
-/obj/structure/chair/wood/rogue/chair_noble
-	name = "fine chair"
-	icon_state = "chair_green"
-	icon = 'icons/roguetown/misc/structure.dmi'
-	item_chair = /obj/item/chair/rogue/chair_nobles
-	blade_dulling = DULLING_BASHCHOP
-	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
-	attacked_sound = "woodimpact"
-/obj/item/chair/rogue/chair_nobles
-	icon_state = "chair_green"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble
-
-/obj/structure/chair/wood/rogue/chair_noble/purple
-	icon_state = "chair_purple"
-	item_chair = /obj/item/chair/rogue/chair_nobles/purple
-/obj/item/chair/rogue/chair_nobles/purple
-	icon_state = "chair_purple"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble/purple
-
-/obj/structure/chair/wood/rogue/chair_noble/red
-	icon_state = "chair_red"
-	item_chair = /obj/item/chair/rogue/chair_nobles/red
-/obj/item/chair/rogue/chair_nobles/red
-	icon_state = "chair_purple"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble/red
-
-
-
 /*	..................   Misc   ................... */
 /obj/structure/bars/alt
 	icon_state = "bars_alt"
@@ -691,6 +663,33 @@
 	aportalgoesto = "inhumenin"
 
 /* moved to main. leave this be for now, I want to be able to find the additions I make easily for tweaking
+/*	..................   More chairs   ................... */
+/obj/structure/chair/wood/rogue/chair_noble
+	name = "fine chair"
+	icon_state = "chair_green"
+	icon = 'icons/roguetown/misc/structure.dmi'
+	item_chair = /obj/item/chair/rogue/chair_nobles
+	blade_dulling = DULLING_BASHCHOP
+	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
+	attacked_sound = "woodimpact"
+/obj/item/chair/rogue/chair_nobles
+	icon_state = "chair_green"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble
+
+/obj/structure/chair/wood/rogue/chair_noble/purple
+	icon_state = "chair_purple"
+	item_chair = /obj/item/chair/rogue/chair_nobles/purple
+/obj/item/chair/rogue/chair_nobles/purple
+	icon_state = "chair_purple"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble/purple
+
+/obj/structure/chair/wood/rogue/chair_noble/red
+	icon_state = "chair_red"
+	item_chair = /obj/item/chair/rogue/chair_nobles/red
+/obj/item/chair/rogue/chair_nobles/red
+	icon_state = "chair_purple"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble/red
+
 /*	..................   Lights   ................... */
 /obj/item/candle/yellow/lit/infinite
 	light_power = 1

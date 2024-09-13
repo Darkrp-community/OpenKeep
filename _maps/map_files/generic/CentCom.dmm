@@ -93,8 +93,8 @@
 "bO" = (/turf/open/floor/carpet/inn,/area/rogue/indoors/vampire_manor)
 "bP" = (/obj/item/rogueweapon/pick,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/vampire_manor)
 "bQ" = (/obj/structure/bookcase,/obj/item/book/rogue/magicaltheory,/obj/item/book/rogue/arcyne,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/vampire_manor)
-"bR" = (/obj/structure/table/vtable,/obj/item/clothing/mask/cigarette/pipe/westman{pixel_y = 10},/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/vampire_manor)
-"bS" = (/obj/structure/table/vtable/v2,/obj/structure/fluff/walldeco/mona{pixel_x = -14},/obj/item/candle/yellow/lit/infinite/strong/skull{pixel_x = 7; pixel_y = 12},/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/vampire_manor)
+"bR" = (/obj/structure/table/vtable,/obj/item/clothing/mask/cigarette/pipe/westman{pixel_y = 10},/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry{pixel_x = -2; pixel_y = 12},/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry{pixel_y = 11},/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry{pixel_x = 2; pixel_y = 7},/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/vampire_manor)
+"bS" = (/obj/structure/table/vtable/v2,/obj/structure/fluff/walldeco/mona{pixel_x = -14},/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/vampire_manor)
 "bT" = (/obj/structure/closet/crate/roguecloset/inn,/obj/item/rogueweapon/sword/long/vlord,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/vampire_manor)
 "bU" = (/obj/structure/well,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/woods)
 "bV" = (/obj/structure/table/wood{dir = 1; icon_state = "largetable_mid"},/obj/item/candle/yellow/lit/infinite/strong/skull,/turf/open/floor/carpet/inn,/area/rogue/indoors/vampire_manor)
@@ -121,7 +121,7 @@
 "cq" = (/obj/structure/table/wood{dir = 8; icon_state = "largetable"},/turf/open/floor/carpet/inn,/area/rogue/indoors/vampire_manor)
 "cr" = (/obj/structure/table/wood{dir = 4; icon_state = "largetable"},/obj/item/reagent_containers/glass/cup/skull,/turf/open/floor/carpet/inn,/area/rogue/indoors/vampire_manor)
 "cs" = (/obj/structure/vampire/scryingorb{pixel_x = -16},/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/vampire_manor)
-"ct" = (/obj/structure/roguewindow,/turf/open/floor/rogue/herringbone,/area/rogue/indoors/vampire_manor)
+"ct" = (/obj/structure/roguewindow,/obj/structure/fluff/walldeco/maidendrape{pixel_y = 0},/turf/open/floor/rogue/herringbone,/area/rogue/indoors/vampire_manor)
 "cu" = (/obj/structure/mineral_door/wood,/turf/open/floor/rogue/herringbone,/area/rogue/indoors/vampire_manor)
 "cv" = (/obj/structure/table/wood{dir = 10; icon_state = "largetable"},/obj/item/reagent_containers/glass/cup/silver{pixel_y = 11},/turf/open/floor/carpet/inn,/area/rogue/indoors/vampire_manor)
 "cw" = (/turf/closed/wall/mineral/rogue/wooddark,/area/rogue/indoors/bandit_lair)
@@ -138,7 +138,7 @@
 "cH" = (/obj/structure/table/church{dir = 1; icon_state = "churchtable"},/obj/structure/fluff/walldeco/bigpainting/lake,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/vampire_manor)
 "cI" = (/obj/structure/chair/bench/coucha,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/vampire_manor)
 "cJ" = (/obj/structure/chair/bench/coucha/r,/obj/structure/fluff/wallclock/vampire,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/vampire_manor)
-"cK" = (/obj/structure/table/wood,/obj/item/candle/skull/lit,/obj/effect/decal/cleanable/cobweb,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/vampire_manor)
+"cK" = (/obj/structure/table/wood,/obj/effect/decal/cleanable/cobweb,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/vampire_manor)
 "cL" = (/turf/closed/mineral/random/rogue/high,/area/rogue/indoors)
 "cM" = (/obj/structure/fluff/statue/knightalt,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/vampire_manor)
 "cN" = (/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/vampire_manor)
@@ -147,7 +147,7 @@
 "cQ" = (/obj/structure/fluff/walldeco/chains,/obj/structure/closet/crate/roguecloset/inn/chest,/obj/item/clothing/suit/roguetown/shirt/rags,/obj/item/clothing/suit/roguetown/shirt/rags,/obj/item/clothing/suit/roguetown/shirt/rags,/obj/item/clothing/suit/roguetown/shirt/rags,/turf/open/floor/rogue/blocks/paving,/area/rogue/indoors/vampire_manor)
 "cS" = (/obj/structure/mineral_door/wood/donjon{dir = 4; icon_state = "donjondir"; lockid = "mansionvampire"},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/vampire_manor)
 "cT" = (/turf/open/floor/carpet/red,/area/rogue/indoors/vampire_manor)
-"cU" = (/obj/machinery/light/rogue/wallfire/candle/l,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/vampire_manor)
+"cU" = (/obj/machinery/light/rogue/wallfire/candle/weak{pixel_y = -28},/turf/open/floor/carpet/inn,/area/rogue/indoors/vampire_manor)
 "cV" = (/obj/machinery/light/rogue/wallfire/candle/r,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/vampire_manor)
 "cW" = (/obj/structure/chair/wood/rogue/fancy,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/vampire_manor)
 "cX" = (/obj/structure/mineral_door/wood{lockid = "mansionvampire"},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/vampire_manor)
@@ -155,7 +155,7 @@
 "cZ" = (/turf/open/floor/rogue/blocks,/area/rogue/indoors/vampire_manor)
 "da" = (/obj/structure/bars,/turf/open/floor/rogue/blocks,/area/rogue/indoors)
 "db" = (/obj/structure/table/vtable,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/vampire_manor)
-"dc" = (/obj/structure/table/vtable/v2,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/vampire_manor)
+"dc" = (/obj/structure/table/vtable/v2,/obj/item/candle/yellow/lit/infinite/strong/skull{pixel_y = 13},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/vampire_manor)
 "dd" = (/obj/structure/stairs{dir = 1; icon_state = "stairs"},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/vampire_manor)
 "de" = (/obj/machinery/light/rogue/torchholder/c,/obj/effect/landmark/start/vampireknight,/turf/open/floor/rogue/blocks,/area/rogue/indoors/vampire_manor)
 "df" = (/obj/structure/table/wood{dir = 1; icon_state = "longtable"},/obj/item/roguekey/vampire,/obj/item/roguekey/vampire,/obj/item/roguekey/vampire,/turf/open/floor/rogue/woodturned,/area/rogue/indoors/vampire_manor)
@@ -220,7 +220,7 @@
 "fm" = (/obj/structure/table/wood/counter{dir = 1},/obj/item/reagent_containers/glass/cup/silver,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue)
 "fn" = (/obj/structure/flora/roguetree,/turf/closed/wall/mineral/rogue/craftstone,/area/rogue/outdoors/woods)
 "fp" = (/obj/machinery/light/rogue/hearth,/obj/item/cooking/pan,/turf/open/floor/rogue/tile/checker_green,/area/rogue)
-"ft" = (/obj/item/candle/skull,/turf/open/floor/rogue/herringbone,/area/rogue/indoors/vampire_manor)
+"ft" = (/obj/machinery/light/rogue/firebowl/standing,/turf/open/floor/rogue/herringbone,/area/rogue/indoors/vampire_manor)
 "fy" = (/obj/structure/chair/bench/couchablack/r,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
 "fC" = (/obj/structure/closet/crate/chest/old_crate,/obj/item/reagent_containers/food/snacks/butter,/obj/item/reagent_containers/food/snacks/butter,/obj/item/reagent_containers/food/snacks/rogue/cheddar,/turf/open/floor/rogue/tile,/area/rogue)
 "fL" = (/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/ruinedwood/turned/darker,/area/rogue/indoors/bandit_lair)
@@ -309,7 +309,6 @@
 "oI" = (/turf/open/floor/rogue/ruinedwood/darker,/area/rogue/indoors/bandit_lair)
 "oV" = (/obj/structure/fluff/railing/wood,/turf/open/floor/rogue/cobble,/area/rogue/indoors/town/dwarfin)
 "pa" = (/obj/item/rogueweapon/flail,/obj/item/rogueweapon/flail,/obj/structure/table/wood/large/corner_alt{dir = 6},/turf/open/floor/rogue/cobble,/area/rogue)
-"pc" = (/obj/machinery/light/rogue/firebowl/standing,/turf/open/floor/rogue/herringbone,/area/rogue/indoors/vampire_manor)
 "pf" = (/turf/open/floor/rogue/concrete,/area/rogue/outdoors/woods)
 "pg" = (/obj/structure/closet/crate/chest/neu,/obj/item/rogueweapon/tongs,/turf/open/floor/rogue/ruinedwood/turned/darker,/area/rogue/indoors)
 "ph" = (/obj/structure/table/wood/reinforced,/obj/item/clothing/cloak/raincloak/green,/obj/item/clothing/cloak/raincloak/green,/obj/item/clothing/cloak/raincloak/mortus,/obj/item/clothing/cloak/raincloak/mortus,/obj/item/clothing/cloak/raincloak/purple,/obj/item/clothing/cloak/raincloak/purple,/obj/item/clothing/cloak/raincloak/red,/obj/item/clothing/cloak/raincloak/red,/obj/item/clothing/cloak/half,/obj/item/clothing/cloak/half,/obj/item/clothing/cloak/half/red,/obj/item/clothing/cloak/half/red,/obj/item/clothing/cloak/half/brown,/obj/item/clothing/cloak/half/brown,/turf/open/floor/rogue/carpet,/area/rogue)
@@ -357,7 +356,6 @@
 "sD" = (/obj/machinery/light/rogue/torchholder,/turf/closed/wall/mineral/rogue/decowood,/area/rogue)
 "sI" = (/obj/structure/chair/wood/rogue{dir = 1},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
 "sN" = (/obj/structure/table/wood{dir = 1; icon_state = "largetable"},/obj/item/reagent_containers/glass/bowl{pixel_y = -6},/obj/item/kitchen/spoon{pixel_x = 7; pixel_y = -6},/turf/open/floor/rogue/ruinedwood/darker,/area/rogue/indoors/bandit_lair)
-"sR" = (/obj/machinery/light/rogue/firebowl/standing,/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/vampire_manor)
 "sZ" = (/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
 "ti" = (/obj/structure/table/wood{dir = 1; icon_state = "longtable"},/obj/item/clothing/suit/roguetown/shirt/dress,/obj/item/clothing/suit/roguetown/shirt/dress,/obj/item/clothing/suit/roguetown/shirt/dress,/obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,/obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,/obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,/obj/item/clothing/suit/roguetown/shirt/robe/nun,/obj/item/clothing/head/roguetown/nun,/turf/open/floor/rogue/wood,/area/rogue)
 "tj" = (/obj/structure/closet/crate/chest/old_crate,/obj/item/reagent_containers/powder/salt,/obj/item/reagent_containers/powder/salt,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/woods)
@@ -788,14 +786,14 @@ IwbzbzTeSqmvmvmvFljWSqqPXeoIHHSqvQvQvQvQTeTeyRGNKsyRKsGNyRTeTevQvQvQbzIwbDbDbDbD
 IwbzbzTecwSqSqSqSqSqcwNGXeoIHsSqvQvQvQLgTeTePfDAEvSeEvDAXkTevQRtHQHQbzIwbzTeTeTeTebITeyEbJZlbKAsyEpAbLjZCMyEZlcfcgchcicjZlyEdjbQyEbRbSbTyEbzIwbXeUbXbXbXeUeUeUeUeUeUeUeUeUeUeUeUbXeUbXbXeUbXnHeUbXeUbXeUbXbXeUbXbXeUbXbXbXnHbXbXeUeUbXbXbXrQrQrQrQrQrQrQrQrQrQrQ
 IwbzbzTeTebzbzvLTeTeSqyoXeoInhSqvQvQvQvQTeTeDADAEvEvEvDADAvQvQWFWEECbzIwbzTebBTeTevQbUyEMkZlZlxIyEjZjZjZjZyEZlcfcgePcicjZlyEcscbcccdbObOyEbzIwbXeUbXnHbXbXbXbXbXbXbXbXeUeUbXeUeUbXbXbXbXeUbXbXbXbXeUbXbXbXbXeUbXeUeUbXnHbXbXbXbXeUeUeUeUbXrQrQrQrQrQrQrQrQrQrQrQ
 IwbzTeTeTebzbzTeUWEkSqyqXeoIMcSqvQvQvQvQvQvQDADADADADADADAvQvQRtHQHQbzIwbzTeTeTevQvQcAyEVQZlZlZlyEyEyEceyEyEZlcfcqbVcrcjZlyEckcbcbbOYmclyEbzIwbXeUbXeUeUbXeUeUeUeUnHbXbXbXbXeUeUbXnHeUbXeUbXbXnHbXeUbXnHeUeUeUbXbXeUbXeUbXbXnHbXeUeUbXeUbXrQrQrQrQrQrQrQrQrQrQrQ
-IwbzTebzTebzbCcmTedGcwSqSqRwSqcwvQvQvQvQvQvQpuDADAEwhtnNhhTevQTeTeTebzIwbzTecmTevQTeTeyETKZlZlZlyEcncococpyEZlcfcvcyczcjZlyEqjcbcbbObObOyEbzIwtGeUbXbXeUbXeUbXbXeUbXeUbXeUbXbXeUbXbXeUbXeUbXbXeUbXeUbXbXbXbXeUeUbXeUbXeUbXbXeUbXeUeUbXeUbXrQrQrQrQrQrQrQrQrQrQrQ
-IwbzTeTeTebzbzTeTeTevQvQvQvQvQvQvQvQvQvQLUvQyRWIWIyRoVoVyRTeTeTeTeTebzIwbzTeTeTevQTeTectpcZlZlZlcucocococoyEZlZlbObObOZlZlyEcCcbcbyEyEyEyEbzIwbXeUbXbXeUeUeUeUeUeUeUeUeUeUeUbXeUbXbXeUbXeUbXeUeUeUeUeUeUeUeUeUbXbXeUbXeUbXbXeUbXeUbXbXeUbXrQrQrQrQrQrQrQrQrQrQrQ
+IwbzTebzTebzbCcmTedGcwSqSqRwSqcwvQvQvQvQvQvQpuDADAEwhtnNhhTevQTeTeTebzIwbzTecmTevQTeTeyETKZlZlZlyEcncococpyEZlcfcvcyczcjZlyEqjcbcbcUbObOyEbzIwtGeUbXbXeUbXeUbXbXeUbXeUbXeUbXbXeUbXbXeUbXeUbXbXeUbXeUbXbXbXbXeUeUbXeUbXeUbXbXeUbXeUeUbXeUbXrQrQrQrQrQrQrQrQrQrQrQ
+IwbzTeTeTebzbzTeTeTevQvQvQvQvQvQvQvQvQvQLUvQyRWIWIyRoVoVyRTeTeTeTeTebzIwbzTeTeTevQTeTectZlZlZlZlcucocococoyEZlZlbObObOZlZlyEcCcbcbyEyEyEyEbzIwbXeUbXbXeUeUeUeUeUeUeUeUeUeUeUbXeUbXbXeUbXeUbXeUeUeUeUeUeUeUeUeUbXbXeUbXeUbXbXeUbXeUbXbXeUbXrQrQrQrQrQrQrQrQrQrQrQ
 IwbzbzTeTebzbzSnSnSnSnSnvQYvvQvQvQvQvQvQvQvQYvTeTeTeTeTeTeTeTeTeTebzbzIwbzTeTeTevQTedGyEftZlZlCVyEcBdfcococuYkYkZlYkYkYkYkcDcDcbcbyEyEbCbCbzIwbXeUeUbXbXeUbXbXbXeUbXeUbXeUbXbXeUeUeUeUbXeUbXbXbXbXeUbXbXbXbXbXbXeUeUeUeUbXbXeUeUeUbXbXeUbXrQrQrQrQrQrQrQrQrQrQrQ
 IwbzTeTeTebzbzbzTeTeTeTeJovQvQvQvQvQvQvQTeTeTeTeTeTeTeTeTeTeTeTeTeTebzIwbzTedGTevQTecmyEyEZlZlyEyEyEyEyEyEyEyEyEMMyEyEyEyEyEyEyEyEyEyEbBbBbzIwbXbXbXbXbXbXbXeUbXbXbXbXbXeUbXbXeUbXbXbXbXeUeUeUeUeUeUbXbXeUbXbXbXbXbXbXbXbXbXbXbXeUbXeUeUbXrQrQrQrQrQrQrQrQrQrQrQ
 IwbzbzbzTebzbzbzbzbzTeTeOcSnSnSnXVSnSnSnSnSnSnNUNUNUNUNUAINUNUNUNUNUbzIwbzTeTeTevQTeTeyEcEBaBaBacFBacGcHcIcJyEcKcbcMyEGzGzGsGzcPcPcQyEbBbBbzIwbXbXeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUbXbXbXbXeUbXbXbXbXeUbXeUeUeUeUeUeUeUeUeUeUeUbXbXeUbXbXnHbXrQrQrQrQrQrQrQrQrQrQrQ
-IwbzbzbzTeTeTebzbzbzbzTevQvQvQvQvQvQvQTeTeTeTeTeTeTeTeTeTeTeTeTebzTebzIwbzTecmTevQvQvQcSBacTcTcTcTcTcTcTcTBayEcUcbcVyETfTfTfTfcOcNcNyEbBbBbzIwbXbXbXbXbXbXbXeUbXbXeUbXbXeUbXeUeUbXnHeUeUeUbXeUbXbXbXbXeUbXbXbXbXeUbXeUbXbXeUbXeUeUeUbXbXbXrQrQrQrQrQrQrQrQrQrQrQ
+IwbzbzbzTeTeTebzbzbzbzTevQvQvQvQvQvQvQTeTeTeTeTeTeTeTeTeTeTeTeTebzTebzIwbzTecmTevQvQvQcSBacTcTcTcTcTcTcTcTBayEcbcbcVyETfTfTfTfcOcNcNyEbBbBbzIwbXbXbXbXbXbXbXeUbXbXeUbXbXeUbXeUeUbXnHeUeUeUbXeUbXbXbXbXeUbXbXbXbXeUbXeUbXbXeUbXeUeUeUbXbXbXrQrQrQrQrQrQrQrQrQrQrQ
 IwbzbzbzbzbzTeTebzbzbzbzvQvQvQvQvQvQvQTeTeTeTeTebzbzbzbzbzbzbzbzbzTebzIwbzTedGTevQcmTeyEcWcTcTcTcTcTcTcTcTBacXcbcbcbcYcZcZyEhGhGyEcNyEbBbBbzIwbXbXeUeUnHbXbXbXbXbXeUbXbXeUbXbXeUbXbXbXbXeUeUeUeUbXeUeUeUeUeUeUbXeUbXeUbXbXeUbXeUeUeUeUeUbXrQrQrQrQrQrQrQrQrQrQrQ
-IwbzbzbzTeTeTeTeTebzbzbzTeTeTevQvQvQYvTeTeTeTeTebzbzbzbzbzbzsososoTebzIwbzTeTeTevQTeTeyEdbdcBaBaBaBasRBadNYtyEddddddyEcZdOdecZdQdecZyEbBbBbzIwbXbXbXbXbXbXeUeUeUeUeUeUbXeUbXbXeUbXbXbXbXeUbXbXnHbXeUbXeUbXbXbXbXeUbXnHbXeUeUbXbXbXeUbXeUbXrQrQrQrQrQrQrQrQrQrQrQ
+IwbzbzbzTeTeTeTeTebzbzbzTeTeTevQvQvQYvTeTeTeTeTebzbzbzbzbzbzsososoTebzIwbzTeTeTevQTeTeyEdbdcBaBaBaBaBaBadNYtyEddddddyEcZdOdecZdQdecZyEbBbBbzIwbXbXbXbXbXbXeUeUeUeUeUeUbXeUbXbXeUbXbXbXbXeUbXbXnHbXeUbXeUbXbXbXbXeUbXnHbXeUeUbXbXbXeUbXeUbXrQrQrQrQrQrQrQrQrQrQrQ
 IwbzbzbzbzbzTeTeTeTeTebzbzTeTevQvQvQvQTeTebzbzbzbzbzbzbzsosososososobzIwbzTeTevQvQvQTeyEyEyEyEyEdRyEyEyEyEyEyEBaBaBayEdhcZcZcZcZcZcZyEbBbBbzIwbXbXeUeUeUbXeUbXbXbXbXeUbXeUeUbXeUeUeUeUeUeUbXbXbXbXeUbXeUbXbXnHeUeUbXbXbXeUeUbXeUeUeUbXeUbXrQrQrQrQrQrQrQrQrQrQrQ
 IwbzbzbzbzbzbzbzbzTeTeTeTebzTevQvQvQvQTeTebzbzbzbzbzbzsovQvQTebzsosobzIwbzdGvQvQvQvQTeyEUVnininininiNDninZyEyEyEdiyEyEyEhGhGdShGhGyEyEbBbBbzIwbXbXbXbXeUbXeUbXnHeUeUeUbXeUeUeUeUbXbXbXbXeUbXbXeUbXeUbXnHbXbXbXbXbXbXbXbXeUbXbXeUbXbXbXeUbXrQrQrQrQrQrQrQrQrQrQrQ
 IwbzbzbzbzbzbzbzbzbzbzTebzbzTevQvQvQvQTeTebzbzbzbzbzsoTeTebAbATevQsobzIwbzTevQvQvQvQTeyEFoniHqYSninidVniupyEdkdmdmdmdnyEdTrwrwrwrwdqyEbBbBbzIwbXbXeUeUeUeUeUbXbXbXbXbXbXbXbXbXbXbXnHbXbXeUbXbXeUbXeUbXbXbXbXbXeUeUeUeUeUeUeUeUeUeUeUbXeUbXrQrQrQrQrQrQrQrQrQrQrQ
