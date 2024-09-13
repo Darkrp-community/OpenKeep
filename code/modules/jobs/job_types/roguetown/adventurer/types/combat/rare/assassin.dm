@@ -202,8 +202,6 @@
 			beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron //Loadout is the equivalent of the worst warrior rolls.
 			beltl = /obj/item/rogueweapon/sword/iron
-			neck = /obj/item/clothing/neck/roguetown/gorget
-			head = /obj/item/clothing/head/roguetown/helmet/skullcap
 		if("Woodcutter")
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE) //Use the axe...
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, -2, TRUE)
