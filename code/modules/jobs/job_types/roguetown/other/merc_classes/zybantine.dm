@@ -23,11 +23,11 @@
 	head = /obj/item/clothing/head/roguetown/helmet/sallet/zybantine
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	belt = /obj/item/storage/belt/rogue/leather/shalal
-	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/scale
 	beltr = /obj/item/rogueweapon/sword/long/rider
 	beltl= /obj/item/flashlight/flare/torch/lantern
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-	pants = /obj/item/clothing/under/roguetown/tights/red
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/purple
+	pants = /obj/item/clothing/under/roguetown/tights/black
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/clothing/head/roguetown/roguehood/shalal)
@@ -40,13 +40,12 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(0,1,1), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.change_stat("strength", 1)
