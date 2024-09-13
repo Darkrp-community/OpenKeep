@@ -279,6 +279,7 @@
 	gripped_intents = list(/datum/intent/pick,SPEAR_BASH,TILL_INTENT)
 	name = "copper hoe"
 	desc = ""
+	icon = 'icons/roguetown/weapons/tools.dmi'
 	icon_state = "choe"
 	smeltresult = /obj/item/ingot/copper
 
@@ -287,6 +288,7 @@
 	possible_item_intents = list(DAGGER_CUT)
 	name = "copper sickle"
 	desc = ""
+	icon = 'icons/roguetown/weapons/tools.dmi'
 	icon_state = "csickle"
 	smeltresult = /obj/item/ingot/copper
 
