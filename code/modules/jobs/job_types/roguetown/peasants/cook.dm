@@ -15,7 +15,7 @@
 		"Dark Elf",
 		"Aasimar"
 	)
-	tutorial = "Working closely with the Innkeep who owns Skull Crack Inn, the cook should focus on cooking food for all the hungry mouths of Roguetown."
+	tutorial = "Slice, chop, and into the pot... you work closely with the innkeep to prepare meals for all the hungry mouths of Rockhill. You've spent more nites than you can count cutting meat and vegetables until your fingers are bloody and raw, but it's honest work."
 
 	outfit = /datum/outfit/job/roguetown/cook
 	display_order = JDO_COOK
@@ -30,8 +30,9 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/taming, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather/rope
@@ -50,4 +51,4 @@
 		head = /obj/item/clothing/head/roguetown/cookhat
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-		H.change_stat("constitution", 1)
+		H.change_stat("constitution", 2)
