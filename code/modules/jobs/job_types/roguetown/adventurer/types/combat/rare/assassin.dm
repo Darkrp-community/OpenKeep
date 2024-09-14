@@ -121,7 +121,7 @@
 		if("Miner")
 			H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE) //Use the pickaxe...
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, -2, TRUE)	
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, -2, TRUE)
 			head = /obj/item/clothing/head/roguetown/armingcap
 			pants = /obj/item/clothing/under/roguetown/trou
 			armor = /obj/item/clothing/suit/roguetown/armor/workervest
