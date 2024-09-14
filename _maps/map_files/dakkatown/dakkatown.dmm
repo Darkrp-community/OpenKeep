@@ -2197,7 +2197,7 @@
 "Uh" = (/obj/machinery/light/rogue/wallfire/candle{pixel_y = -10},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/manor)
 "Ui" = (/obj/structure/fluff/walldeco/church/line{dir = 4},/obj/structure/fluff/walldeco/church/line{dir = 1},/turf/open/floor/rogue/churchmarble,/area/rogue/indoors/town/church/chapel)
 "Uj" = (/obj/structure/fluff/railing/border{dir = 9},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors/town)
-"Uk" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/closet/crate/chest,/obj/item/rogueweapon/mace/warhammer,/turf/open/floor/rogue/cobble/mossy,/area/rogue/under/town/ruin)
+"Uk" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/closet/crate/chest,/obj/item/rogueweapon/mace/goden/steel/warhammer,/turf/open/floor/rogue/cobble/mossy,/area/rogue/under/town/ruin)
 "Ul" = (/obj/structure/bars/bent,/obj/structure/table/wood/counter,/turf/open/floor/rogue/blocks,/area/rogue/indoors/town/shop)
 "Um" = (/obj/structure/fluff/walldeco/chains{pixel_x = 6; pixel_y = 9},/obj/structure/bed/rogue/shit,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/cell)
 "Un" = (/obj/structure/table/wood/fine,/turf/open/floor/rogue/wood/nosmooth,/area/rogue/indoors/town/manor)
