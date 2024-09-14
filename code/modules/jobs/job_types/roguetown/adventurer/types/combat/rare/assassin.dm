@@ -41,7 +41,7 @@
 
 	H.become_blind("TRAIT_GENERIC")
 	// Assassin now spawns disguised as one of the non-combat drifters. You never know who will stab you in the back.
-	var/disguises = list("Bard", "Beggar", "Fisher", "Hunter", "Miner", "Monk", "Noble", "Peasant", "Warrior", "Woodcutter")
+	var/disguises = list("Bard", "Beggar", "Fisher", "Hunter", "Miner", "Noble", "Peasant", "Woodcutter")
 	var/disguisechoice = input("Choose your cover", "Available disguises") as anything in disguises
 
 	switch(disguisechoice)
@@ -133,17 +133,6 @@
 			backr = /obj/item/rogueweapon/shovel
 			backl = /obj/item/storage/backpack/rogue/backpack
 			backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/huntingknife = 1)
-		if("Monk") //Peak AC reference.
-			head = /obj/item/clothing/head/roguetown/roguehood
-			neck = /obj/item/clothing/neck/roguetown/psicross/ravox
-			shoes = /obj/item/clothing/shoes/roguetown/shortboots
-			cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			belt = /obj/item/storage/belt/rogue/leather/assassin
-			beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
-			backl = /obj/item/storage/backpack/rogue/backpack
-			backr = /obj/item/rogueweapon/woodstaff
 		if("Noble")
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			beltr = /obj/item/flashlight/flare/torch/lantern
@@ -189,21 +178,6 @@
 			backpack_contents = list(/obj/item/seeds/wheat=1,/obj/item/seeds/apple=1,/obj/item/ash=1)
 			beltl = /obj/item/rogueweapon/sickle
 			backr = /obj/item/rogueweapon/pitchfork
-		if("Warrior")
-			if(H.gender == FEMALE)
-				H.underwear = "Femleotard"
-				H.underwear_color = CLOTHING_BLACK
-				H.update_body()
-			shoes = /obj/item/clothing/shoes/roguetown/boots
-			gloves = /obj/item/clothing/gloves/roguetown/leather
-			belt = /obj/item/storage/belt/rogue/leather/assassin
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
-			pants = /obj/item/clothing/under/roguetown/tights/black
-			backl = /obj/item/storage/backpack/rogue/satchel
-			backr = /obj/item/rogueweapon/shield/wood
-			beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
-			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron //Loadout is the equivalent of the worst warrior rolls.
-			beltl = /obj/item/rogueweapon/sword/iron
 		if("Woodcutter")
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE) //Use the axe...
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, -2, TRUE)
