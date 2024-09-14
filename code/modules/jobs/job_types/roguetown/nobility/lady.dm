@@ -26,9 +26,10 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
-	beltl = /obj/item/keyring/queen
+	head = /obj/item/clothing/head/roguetown/crown/circlet
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
+	beltl = /obj/item/keyring/queen
 	armor = /obj/item/clothing/suit/roguetown/armor/armordress
 	backr = /obj/item/storage/backpack/rogue/satchel
 	if(SSticker.rulertype == "Queen")
