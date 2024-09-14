@@ -32,7 +32,7 @@
 
 	neck = /obj/item/clothing/neck/roguetown/horus
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/veryrich)
+	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/veryrich = 1, /obj/item/merctoken = 1)
 	beltr = /obj/item/rogueweapon/sword/rapier
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/keyring/merchant

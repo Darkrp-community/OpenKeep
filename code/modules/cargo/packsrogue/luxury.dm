@@ -3,6 +3,11 @@
 	crate_name = "merchant guild's crate"
 	crate_type = /obj/structure/closet/crate/chest/merchant
 
+/datum/supply_pack/rogue/luxury/merctoken
+	name = "Mercenary Commendation Writ"
+	cost = 80
+	contains = /obj/item/merctoken
+
 /datum/supply_pack/rogue/luxury/sigs
 	name = "Pipe Weed Zig"
 	cost = 2
