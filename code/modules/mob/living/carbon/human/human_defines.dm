@@ -117,6 +117,9 @@
 
 	var/cleric = null // Used for cleric_holder for priests
 
+	var/merctype = 0 // Used for mercenary backgrounds - check mail.dm
+	var/tokenclaimed = FALSE // Check for one-time tri reward.
+
 	possible_rmb_intents = list(/datum/rmb_intent/feint,\
 	/datum/rmb_intent/aimed,\
 	/datum/rmb_intent/strong,\
