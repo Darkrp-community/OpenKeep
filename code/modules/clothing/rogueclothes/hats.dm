@@ -1265,7 +1265,6 @@
 			pic.color = get_detail_color()
 		add_overlay(pic)	
 
-
 /obj/item/clothing/head/roguetown/sack
 	icon = 'icons/roguetown/clothing/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
@@ -1295,5 +1294,10 @@
 	target.visible_message("<span class='warning'>[user] forces [src] onto [target]'s head!</span>", \
 	"<span class='danger'>[target] forces [src] onto your head!</span>", "<i>I cant see anything.</i>")
 	target.emote("whimper", intentional = FALSE)
+	if(ishuman(target)) // If the target is human and not in combat mode, stun them the same way a feint would.
+		var/mob/living/carbon/human/T = target
+		if(!T.cmode)
+			T.changeNext_move(4)
+			T.Immobilize(5)
 	user.dropItemToGround(src)
 	target.equip_to_slot_if_possible(src, SLOT_HEAD)

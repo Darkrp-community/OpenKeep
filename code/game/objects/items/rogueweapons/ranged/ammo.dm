@@ -292,6 +292,7 @@
 	flag = "bullet"
 	armor_penetration = 100
 	speed = 0.3
+	accuracy = 50 //Lower accuracy than an arrow.
 
 /obj/projectile/bullet/fragment
 	name = "smaller lead ball"
