@@ -12,7 +12,7 @@
 
 /datum/supply_pack/rogue/seeds/apple
 	name = "Apple"
-	cost = 2
+	cost = 4
 	contains = /obj/item/neuFarm/seed/apple
 
 /datum/supply_pack/rogue/seeds/weed
@@ -27,12 +27,12 @@
 
 /datum/supply_pack/rogue/seeds/berry
 	name = "Berry"
-	cost = 2
+	cost = 5
 	contains = /obj/item/neuFarm/seed/berryrogue
 
 /datum/supply_pack/rogue/seeds/onion
 	name = "Onion"
-	cost = 2
+	cost = 3
 	contains = /obj/item/neuFarm/seed/onion
 
 /datum/supply_pack/rogue/seeds/cabbage
@@ -44,3 +44,18 @@
 	name = "Potato"
 	cost = 2
 	contains = /obj/item/neuFarm/seed/potato
+
+/datum/supply_pack/rogue/seeds/sunflowers
+	name = "Sunflowers"
+	cost = 15
+	contains = /obj/item/neuFarm/seed/sunflower
+
+/datum/supply_pack/rogue/seeds/turnip
+	name = "Turnip"
+	cost = 2
+	contains = /obj/item/neuFarm/seed/turnip
+
+/datum/supply_pack/rogue/seeds/pear
+	name = "Pear"
+	cost = 40
+	contains = /obj/item/neuFarm/seed/pear

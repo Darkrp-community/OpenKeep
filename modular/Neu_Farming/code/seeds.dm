@@ -13,6 +13,8 @@
 	if(plant_def_type)
 		var/datum/plant_def/def = GLOB.plant_defs[plant_def_type]
 		color = def.seed_color
+	if(icon_state == "seeds")
+		icon_state = "seeds[rand(1,3)]"
 
 /obj/item/neuFarm/seed/Crossed(mob/living/L)
 	. = ..()
@@ -106,12 +108,15 @@
 	seed_identity = "sunflower seeds"
 	plant_def_type = /datum/plant_def/sunflower
 
-
-/*
 /obj/item/neuFarm/seed/pear
 	seed_identity = "pear seeds"
 	plant_def_type = /datum/plant_def/pear
 
+/obj/item/neuFarm/seed/turnip
+	seed_identity = "turnip seedlings"
+	plant_def_type = /datum/plant_def/turnip
+
+/*
 /obj/item/neuFarm/seed/nut
 	seed_identity = "rocknut seeds"
 	plant_def_type = /datum/plant_def/nut
@@ -120,20 +125,6 @@
 	seed_identity = "garlic seeds"
 	plant_def_type = /datum/plant_def/garlic
 
-
-/obj/item/neuFarm/seed/bean
-	seed_identity = "bean seeds"
-	plant_def_type = /datum/plant_def/bean
-
-/obj/item/neuFarm/seed/radish
-	seed_identity = "radish seeds"
-	plant_def_type = /datum/plant_def/radish
-
-
-/obj/item/neuFarm/seed/peas
-	seed_identity = "pea seeds"
-	plant_def_type = /datum/plant_def/peas
-
 /obj/item/neuFarm/seed/rice
 	seed_identity = "rice seeds"
 	plant_def_type = /datum/plant_def/rice
@@ -141,18 +132,6 @@
 /obj/item/neuFarm/seed/tea
 	seed_identity = "tea seeds"
 	plant_def_type = /datum/plant_def/tea
-
-/obj/item/neuFarm/seed/mycelium
-	name = "spores"
-	icon_state = "mycelium"
-
-/obj/item/neuFarm/seed/mycelium/plumphelmet
-	seed_identity = "plump helmet spores"
-	plant_def_type = /datum/plant_def/plumphelmet
-
-/obj/item/neuFarm/seed/mycelium/trippy
-	seed_identity = "blue mushroom spores"
-	plant_def_type = /datum/plant_def/trippy
 
 /obj/item/neuFarm/seed/mycelium/amanita
 	seed_identity = "red mushroom spores"

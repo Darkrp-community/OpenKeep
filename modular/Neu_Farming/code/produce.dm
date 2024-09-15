@@ -43,7 +43,8 @@
 			return
 		else
 			return ..()
-	return ..()
+	..()
+//	return ..() fucked with slicing
 
 /obj/item/reagent_containers/food/snacks/produce/wheat
 	seed = /obj/item/neuFarm/seed/wheat
@@ -92,7 +93,6 @@
 	name = "apple"
 	desc = ""
 	icon_state = "apple"
-	filling_color = "#e37047"
 	bitesize = 3
 	foodtype = FRUIT
 	tastes = list("apple" = 1)
@@ -266,7 +266,7 @@
 	icon_state = "cabbage"
 	tastes = list("cabbage" = 1)
 	filling_color = "#88c8a0"
-	bitesize = 3
+	bitesize = 1
 	foodtype = VEGETABLES
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	rotprocess = SHELFLIFE_LONG
@@ -284,10 +284,9 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/onion_sliced
 	tastes = list("onion" = 1)
 	filling_color = "#fdfaca"
-	bitesize = 3
+	bitesize = 1
 	foodtype = VEGETABLES
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/tearjuice = 3)
-	grind_results = list(/datum/reagent/consumable/tearjuice = 6)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/onion
 	chopping_sound = TRUE
@@ -319,10 +318,11 @@
 	foodtype = VEGETABLES
 	chopping_sound = TRUE
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-	bitesize = 2
+	bitesize = 1
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/voddena
 	rotprocess = null
+	dropshrink = 0.9
 
 /*	..................   Sunflower   ................... */
 /obj/item/reagent_containers/food/snacks/produce/sunflower
@@ -341,14 +341,36 @@
 	rotprocess = SHELFLIFE_EXTREME
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/roastseeds
 
-
-
-
-/*
+/*	..................  Pear   ................... */ // for cider or eating raw
 /obj/item/reagent_containers/food/snacks/produce/pear
 	name = "pear"
 	seed = /obj/item/neuFarm/seed/pear
+	desc = "Too sweet for many, a favored treat for little ones. Dwarves do love them."
+	icon_state = "pear"
+	bitesize = 2
+	foodtype = FRUIT
+	tastes = list("pear" = 1)
+	rotprocess = SHELFLIFE_DECENT
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/cider
 
+/*	..................   Turnip   ................... */ // only for veggie soup
+/obj/item/reagent_containers/food/snacks/produce/turnip
+	name = "turnip"
+	desc = "A shield against hunger, naught else."
+	seed = /obj/item/neuFarm/seed/turnip
+	icon_state = "turnip"
+	tastes = list("dirt" = 1)
+	bitesize = 1
+	slices_num = 1
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/turnip_sliced
+	foodtype = VEGETABLES
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	chopping_sound = TRUE
+	dropshrink = 0.9
+	rotprocess = SHELFLIFE_EXTREME
+
+/*
 /obj/item/reagent_containers/food/snacks/produce/garlic
 	name = "garlic"
 	desc = "Your last line of defense against the vampiric horde."

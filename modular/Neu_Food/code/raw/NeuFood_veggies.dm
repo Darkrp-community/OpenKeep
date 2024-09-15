@@ -11,7 +11,8 @@
 	icon_state = "onion_sliced"
 	slices_num = 0
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/preserved/onion_fried
-
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/onion
 
 /*	..................   Cabbage   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/veg/cabbage_sliced
@@ -27,6 +28,13 @@
 	icon_state = "potato_sliced"
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_fried
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_fried
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/voddena
+
+/*	..................   Turnip   ................... */
+/obj/item/reagent_containers/food/snacks/rogue/veg/turnip_sliced
+	name = "cleaned turnip"
+	icon_state = "turnip_sliced"
 
 
 /*	..................   Sunflower seeds   ................... */
