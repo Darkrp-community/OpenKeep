@@ -90,7 +90,7 @@
 
 /datum/supply_pack/rogue/weapons/rbow
 	name = "Imported Recurve Bow"
-	cost = 30
+	cost = 20
 	contains = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve)
 
 /datum/supply_pack/rogue/weapons/quivers
