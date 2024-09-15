@@ -65,7 +65,7 @@
 
 /datum/supply_pack/rogue/armor/bracers
 	name = "Steel Bracers"
-	cost = 18
+	cost = 25
 	contains = /obj/item/clothing/wrists/roguetown/bracers
 
 /datum/supply_pack/rogue/armor/angle_gloves
