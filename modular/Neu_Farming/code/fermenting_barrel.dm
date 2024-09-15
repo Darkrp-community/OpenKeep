@@ -32,7 +32,7 @@
 	. = ..()
 //	. += "<span class='notice'>It is currently [open?"open, letting you pour liquids in.":"closed, letting you draw liquids."]</span>"
 
-/obj/structure/fermenting_barrel/proc/makeWine(obj/item/reagent_containers/food/snacks/grown/fruit)
+/obj/structure/fermenting_barrel/proc/makeWine(obj/item/reagent_containers/food/snacks/produce/fruit)
 	if(fruit.reagents)
 		fruit.reagents.remove_reagent(/datum/reagent/consumable/nutriment, fruit.reagents.total_volume)
 		fruit.reagents.trans_to(src, fruit.reagents.total_volume)

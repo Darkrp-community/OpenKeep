@@ -263,8 +263,8 @@
 
 /obj/structure/flora/roguegrass/bush/Initialize()
 	if(prob(88))
-		bushtype = pickweight(list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue=5,
-					/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison=3,
+		bushtype = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue=5,
+					/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison=3,
 					/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed=2))
 	loot_replenish()
 	pixel_x += rand(-3,3)
