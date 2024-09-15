@@ -59,6 +59,16 @@
 	verbage = "braid"
 	verbage_tp = "braids"
 
+/datum/crafting_recipe/roguetown/net
+	name = "net"
+	result = /obj/item/net
+	craftdiff = 2
+	reqs = list(/obj/item/rope = 2,
+				/obj/item/natural/stone = 3)
+	verbage = "braid"
+	verbage_tp = "braids"
+
+
 /datum/crafting_recipe/roguetown/torch
 	name = "torch"
 	result = /obj/item/flashlight/flare/torch
@@ -198,7 +208,6 @@
 				/obj/item/natural/cloth = 1)
 	tools = list(/obj/item/needle)
 	skillcraft = /datum/skill/misc/sewing
-	req_table = TRUE
 
 /obj/item/storage/roguebag/crafted
 	sellprice = 4
@@ -244,7 +253,7 @@
 /datum/crafting_recipe/roguetown/pipe
 	name = "wood pipe"
 	result = /obj/item/clothing/mask/cigarette/pipe/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/grown/log/tree/stick = 2)
 
 /obj/item/clothing/mask/cigarette/pipe/crafted
 	sellprice = 6
