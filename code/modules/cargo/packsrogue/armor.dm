@@ -41,7 +41,7 @@
 /datum/supply_pack/rogue/armor/studleather
 	name = "Studded Leather Armor"
 	cost = 18
-	contains = /datum/supply_pack/rogue/armor/studleather
+	contains = /obj/item/clothing/suit/roguetown/armor/leather/studded
 
 /datum/supply_pack/rogue/armor/chainmail_iron
 	name = "Iron Chainmail"
