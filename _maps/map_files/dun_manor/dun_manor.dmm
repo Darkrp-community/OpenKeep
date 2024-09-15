@@ -1150,7 +1150,7 @@
 "iMW" = (/obj/structure/feedinghole,/turf/open/floor/rogue/hexstone,/area/rogue/indoors/town)
 "iNg" = (/obj/structure/roguethrone{pixel_x = -32},/obj/structure/roguemachine/titan{density = 0; pixel_y = 32},/turf/open/floor/rogue/carpet/lord/center,/area/rogue/indoors/town/manor)
 "iNh" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/bed/rogue/inn/wool,/obj/item/bedsheet/rogue/fabric,/obj/effect/landmark/start/jester{dir = 8},/turf/open/floor/rogue/blocks,/area/rogue/under/town/basement)
-"iNv" = (/obj/structure/composter/halffull,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/town)
+"iNv" = (/obj/structure/composter/full,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/town)
 "iNE" = (/obj/structure/fluff/railing/border{dir = 10; icon_state = "border"},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/rogue/cobble,/area/rogue/indoors/town/church/chapel)
 "iNR" = (/obj/item/roguecoin/gold/pile,/turf/open/floor/rogue/tile{icon_state = "linoleum"},/area/rogue/indoors/town/vault)
 "iOy" = (/turf/open/floor/carpet/inn,/area/rogue/indoors/town)

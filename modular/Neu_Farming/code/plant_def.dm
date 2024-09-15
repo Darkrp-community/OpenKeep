@@ -23,9 +23,9 @@
 	/// Amount of maximum produce to make on harvest
 	var/produce_amount_max = 3
 	/// How much nutrition will the plant require to mature fully
-	var/maturation_nutrition = 30
+	var/maturation_nutrition = 20
 	/// How much nutrition will the plant require to make produce
-	var/produce_nutrition = 20
+	var/produce_nutrition = 10
 	/// If not perennial, the plant will uproot itself upon harvesting first produce
 	var/perennial = FALSE
 	/// Whether the plant is immune to weeds and will naturally deal with them
@@ -67,8 +67,8 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/apple
 	uproot_loot = list(/obj/item/grown/log/tree/small)
 	perennial = TRUE
-	maturation_nutrition = 60
-	produce_nutrition =  30
+	maturation_nutrition = 30
+	produce_nutrition =  15
 
 /datum/plant_def/pear
 	name = "pear tree"
@@ -76,8 +76,8 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/pear
 	uproot_loot = list(/obj/item/grown/log/tree/small)
 	perennial = TRUE
-	maturation_nutrition = 60
-	produce_nutrition =  30
+	maturation_nutrition = 30
+	produce_nutrition =  15
 
 /datum/plant_def/pipeweed
 	name = "westleach leaf"
@@ -97,8 +97,8 @@
 	perennial = TRUE
 	produce_amount_min = 2
 	produce_amount_max = 3
-	maturation_nutrition = 60
-	produce_nutrition =  30
+	maturation_nutrition = 30
+	produce_nutrition =  15
 
 /datum/plant_def/berry_poison
 	name = "berry bush"
@@ -122,7 +122,7 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/potato
 	produce_amount_min = 2
 	produce_amount_max = 4
-	produce_nutrition =  10
+	produce_nutrition =  5
 	maturation_time = VERY_FAST_GROWING
 	produce_time = QUICK_MATURING
 
@@ -132,8 +132,8 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/onion
 	produce_amount_min = 2
 	produce_amount_max = 4
-	maturation_nutrition = 30
-	produce_nutrition =  30
+	maturation_nutrition = 15
+	produce_nutrition =  15
 
 /datum/plant_def/sunflower
 	name = "sunflowers"
@@ -141,7 +141,7 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/sunflower
 	produce_amount_min = 2
 	produce_amount_max = 4
-	maturation_nutrition = 20
+	maturation_nutrition = 10
 	maturation_time = VERY_FAST_GROWING
 	produce_time = QUICK_MATURING
 
@@ -149,7 +149,7 @@
 	name = "turnip patch"
 	icon_state = "turnip"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/turnip
-	produce_nutrition =  15
+	produce_nutrition =  5
 	maturation_time = FAST_GROWING
 	produce_time = QUICK_MATURING
 

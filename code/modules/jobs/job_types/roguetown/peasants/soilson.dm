@@ -49,6 +49,7 @@
 		H.change_stat("intelligence", -1)
 		ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 
+	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	if(H.gender == MALE)
 		head = /obj/item/clothing/head/roguetown/roguehood/random
 		if(prob(50))
