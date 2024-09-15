@@ -1,80 +1,89 @@
-
 /datum/supply_pack/rogue/armor
 	group = "Armor"
 	crate_name = "merchant guild's crate"
 	crate_type = /obj/structure/closet/crate/chest/merchant
 
-/datum/supply_pack/rogue/armor/bracers
-	name = "Leather Bracers"
-	cost = 5
-	contains = /obj/item/clothing/wrists/roguetown/bracers/leather
-
-/datum/supply_pack/rogue/armor/bracers/steel
-	name = "Steel Bracers"
+/datum/supply_pack/rogue/armor/skullcap
+	name = "Skullcap Helmet"
 	cost = 25
-	contains = /obj/item/clothing/wrists/roguetown/bracers
+	contains = /obj/item/clothing/head/roguetown/helmet/skullcap
 
-/datum/supply_pack/rogue/armor/chaingloves
-	name = "Chainmail Gloves"
-	cost = 10
-	contains = /obj/item/clothing/gloves/roguetown/chain/iron
+/datum/supply_pack/rogue/armor/sallet
+	name = "Sallet Helmet"
+	cost = 30
+	contains = /obj/item/clothing/head/roguetown/helmet/sallet
 
-/datum/supply_pack/rogue/armor/coif
-	name = "Cloth Coif"
-	cost = 10
-	contains = /obj/item/clothing/neck/roguetown/coif
+/datum/supply_pack/rogue/armor/buckethelm
+	name = "Great Helm"
+	cost = 70
+	contains = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
 
-/datum/supply_pack/rogue/armor/coif/steel
-	name = "Steel Coif"
-	cost = 25
-	contains = /obj/item/clothing/neck/roguetown/chaincoif
+/datum/supply_pack/rogue/armor/imask
+	name = "Iron Facemask"
+	cost = 20
+	contains = /obj/item/clothing/mask/rogue/facemask
 
-/datum/supply_pack/rogue/armor/mask/steel
-	name = "Steel Mask"
-	cost = 25
-	contains = /obj/item/clothing/mask/rogue/facemask/steel
-
-/datum/supply_pack/rogue/armor/kettlehelmet
-	name = "Kettle Helmet"
-	cost = 25
-	contains = /obj/item/clothing/head/roguetown/helmet/kettle
-
-/datum/supply_pack/rogue/armor/skullhelmet
-	name = "Simple Helmet"
-	cost = 12
-	contains = /obj/item/clothing/head/roguetown/helmet
+/datum/supply_pack/rogue/armor/chaincoif_iron
+	name = "Iron Chain Coif"
+	cost = 20
+	contains = /obj/item/clothing/neck/roguetown/chaincoif/iron
 
 /datum/supply_pack/rogue/armor/gambeson
-	name = "Gambeson"
-	cost = 10
+	name = "Cloth Gambeson"
+	cost = 14
 	contains = /obj/item/clothing/suit/roguetown/armor/gambeson
 
-/datum/supply_pack/rogue/armor/leather
+/datum/supply_pack/rogue/armor/leather_armor
 	name = "Leather Armor"
-	cost = 15
+	cost = 16
 	contains = /obj/item/clothing/suit/roguetown/armor/leather
 
 /datum/supply_pack/rogue/armor/studleather
 	name = "Studded Leather Armor"
-	cost = 35
-	contains = /obj/item/clothing/suit/roguetown/armor/leather/studded
+	cost = 18
+	contains = /datum/supply_pack/rogue/armor/studleather
 
-/datum/supply_pack/rogue/armor/haubergeon
-	name = "Haubergeon"
-	cost = 25
-	contains = /obj/item/clothing/suit/roguetown/armor/chainmail
-
-/datum/supply_pack/rogue/armor/chainmalle
-	name = "Chainmalle Shirt"
-	cost = 15
+/datum/supply_pack/rogue/armor/chainmail_iron
+	name = "Iron Chainmail"
+	cost = 22
 	contains = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 
-/datum/supply_pack/rogue/armor/halfplate
-	name = "Breastplate"
-	cost = 30
+/datum/supply_pack/rogue/armor/plate_half
+	name = "Steel Cuirass"
+	cost = 35
 	contains = /obj/item/clothing/suit/roguetown/armor/plate/half
 
-/datum/supply_pack/rogue/armor/munition
-	name = "Munition Plate Armor"
-	cost = 75
-	contains = /obj/item/clothing/suit/roguetown/armor/plate
+/datum/supply_pack/rogue/armor/brigandine
+	name = "Brigandine"
+	cost = 100
+	contains = /obj/item/clothing/suit/roguetown/armor/brigandine
+
+/datum/supply_pack/rogue/armor/leather_bracers
+	name = "Leather Bracers"
+	cost = 6
+	contains = /obj/item/clothing/wrists/roguetown/bracers/leather
+
+/datum/supply_pack/rogue/armor/bracers
+	name = "Steel Bracers"
+	cost = 25
+	contains = /obj/item/clothing/wrists/roguetown/bracers
+
+/datum/supply_pack/rogue/armor/angle_gloves
+	name = "Heavy Leather Gloves"
+	cost = 15
+	contains = /obj/item/clothing/gloves/roguetown/angle
+
+/datum/supply_pack/rogue/armor/chain_gloves_iron
+	name = "Iron Chain Gloves"
+	cost = 20
+	contains = /obj/item/clothing/gloves/roguetown/chain/iron
+
+/datum/supply_pack/rogue/armor/chainlegs_iron
+	name = "Iron Chain Chausses"
+	cost = 20
+	contains = /obj/item/clothing/under/roguetown/chainlegs/iron
+
+/datum/supply_pack/rogue/armor/light_armor_boots
+	name = "Iron Boots"
+	cost = 20
+	contains = /obj/item/clothing/shoes/roguetown/boots/armor/light
