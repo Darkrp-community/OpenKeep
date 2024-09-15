@@ -20,7 +20,7 @@
 
 /datum/supply_pack/rogue/weapons/mace
 	name = "Iron Mace"
-	cost = 18
+	cost = 20
 	contains = /obj/item/rogueweapon/mace
 
 /datum/supply_pack/rogue/weapons/greatmace
@@ -30,17 +30,17 @@
 
 /datum/supply_pack/rogue/weapons/axe
 	name = "Iron Axe"
-	cost = 18
+	cost = 20
 	contains = /obj/item/rogueweapon/woodcut
 
 /datum/supply_pack/rogue/weapons/huntingknife
 	name = "Iron Hunting Knife"
-	cost = 10
+	cost = 12
 	contains = /obj/item/rogueweapon/huntingknife
 
 /datum/supply_pack/rogue/weapons/dagger
 	name = "Iron Dagger"
-	cost = 12
+	cost = 10
 	contains = /obj/item/rogueweapon/huntingknife/idagger
 
 /datum/supply_pack/rogue/weapons/spear
@@ -65,7 +65,7 @@
 
 /datum/supply_pack/rogue/weapons/towershield
 	name = "Tower Shield"
-	cost = 22
+	cost = 30
 	contains = /obj/item/rogueweapon/shield/tower
 
 /datum/supply_pack/rogue/weapons/bomb

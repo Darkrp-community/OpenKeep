@@ -15,12 +15,12 @@
 
 /datum/supply_pack/rogue/tools/lockpicks
 	name = "Lockpicks"
-	cost = 18
+	cost = 20
 	contains = /obj/item/lockpickring/mundane
 
 /datum/supply_pack/rogue/tools/needle
 	name = "Sewing Needle"
-	cost = 6
+	cost = 10
 	contains = /obj/item/needle
 
 /datum/supply_pack/rogue/tools/sack
@@ -45,7 +45,7 @@
 
 /datum/supply_pack/rogue/tools/flint
 	name = "Flint"
-	cost = 6
+	cost = 20
 	contains = /obj/item/flint
 
 /datum/supply_pack/rogue/tools/candles
@@ -62,37 +62,37 @@
 
 /datum/supply_pack/rogue/tools/pick
 	name = "Pickaxe"
-	cost = 13
+	cost = 15
 	contains = /obj/item/rogueweapon/pick
 
 /datum/supply_pack/rogue/tools/tongs
 	name = "Tongs"
-	cost = 10
+	cost = 20
 	contains = /obj/item/rogueweapon/tongs
 
 /datum/supply_pack/rogue/tools/hammer
 	name = "Hammer"
-	cost = 10
+	cost = 20
 	contains = /obj/item/rogueweapon/hammer
 
 /datum/supply_pack/rogue/tools/shovel
 	name = "Shovel"
-	cost = 8
+	cost = 15
 	contains = /obj/item/rogueweapon/shovel
 
 /datum/supply_pack/rogue/tools/Sickle
 	name = "Sickle"
-	cost = 8
+	cost = 15
 	contains = /obj/item/rogueweapon/sickle
 
 /datum/supply_pack/rogue/tools/pitchfork
 	name = "Pitchfork"
-	cost = 8
+	cost = 15
 	contains = /obj/item/rogueweapon/pitchfork
 
 /datum/supply_pack/rogue/tools/hoe
 	name = "Hoe"
-	cost = 8
+	cost = 15
 	contains = /obj/item/rogueweapon/hoe
 
 /datum/supply_pack/rogue/tools/bottle
