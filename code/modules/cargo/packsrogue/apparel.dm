@@ -50,7 +50,7 @@
 
 /datum/supply_pack/rogue/apparel/hennin
 	name = "Hennin"
-	cost = 15
+	cost = 25
 	contains = /obj/item/clothing/head/roguetown/hennin
 
 /datum/supply_pack/rogue/apparel/spectacles
