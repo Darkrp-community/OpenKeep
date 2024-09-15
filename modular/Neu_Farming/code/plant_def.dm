@@ -1,3 +1,7 @@
+#define FAST_GROWING 5 MINUTES
+#define VERY_FAST_GROWING 4 MINUTES
+#define QUICK_MATURING 2 MINUTES
+
 /datum/plant_def
 	abstract_type = /datum/plant_def
 	/// Name of the plant
@@ -45,8 +49,7 @@
 	produce_amount_min = 3
 	produce_amount_max = 4
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
-	maturation_time = 5 MINUTES
-	produce_time = 2 MINUTES
+	maturation_time = FAST_GROWING
 
 /datum/plant_def/oat
 	name = "oat stalks"
@@ -55,8 +58,8 @@
 	produce_amount_min = 3
 	produce_amount_max = 4
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
-	maturation_time = 5 MINUTES
-	produce_time = 2 MINUTES
+	maturation_time = FAST_GROWING
+	produce_time = QUICK_MATURING
 
 /datum/plant_def/apple
 	name = "apple tree"
@@ -64,8 +67,15 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/apple
 	uproot_loot = list(/obj/item/grown/log/tree/small)
 	perennial = TRUE
-	produce_amount_min = 2
-	produce_amount_max = 3
+	maturation_nutrition = 60
+	produce_nutrition =  30
+
+/datum/plant_def/pear
+	name = "pear tree"
+	icon_state = "pear"
+	produce_type = /obj/item/reagent_containers/food/snacks/produce/pear
+	uproot_loot = list(/obj/item/grown/log/tree/small)
+	perennial = TRUE
 	maturation_nutrition = 60
 	produce_nutrition =  30
 
@@ -103,8 +113,8 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/cabbage
 	produce_amount_min = 1
 	produce_amount_max = 3
-	maturation_time = 4 MINUTES
-	produce_time = 2 MINUTES
+	maturation_time = FAST_GROWING
+	produce_time = QUICK_MATURING
 
 /datum/plant_def/potato
 	name = "potato plant"
@@ -113,8 +123,8 @@
 	produce_amount_min = 2
 	produce_amount_max = 4
 	produce_nutrition =  10
-	maturation_time = 4 MINUTES
-	produce_time = 2 MINUTES
+	maturation_time = VERY_FAST_GROWING
+	produce_time = QUICK_MATURING
 
 /datum/plant_def/onion
 	name = "onion patch"
@@ -132,25 +142,16 @@
 	produce_amount_min = 2
 	produce_amount_max = 4
 	maturation_nutrition = 20
-	maturation_time = 4 MINUTES
-	produce_time = 2 MINUTES
-
-/datum/plant_def/pear
-	name = "pear tree"
-	icon_state = "pear"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/pear
-	uproot_loot = list(/obj/item/grown/log/tree/small)
-	perennial = TRUE
-	maturation_nutrition = 60
-	produce_nutrition =  30
+	maturation_time = VERY_FAST_GROWING
+	produce_time = QUICK_MATURING
 
 /datum/plant_def/turnip
 	name = "turnip patch"
 	icon_state = "turnip"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/turnip
 	produce_nutrition =  15
-	maturation_time = 5 MINUTES
-	produce_time = 2.5 MINUTES
+	maturation_time = FAST_GROWING
+	produce_time = QUICK_MATURING
 
 
 /*
@@ -191,3 +192,7 @@
 	weed_immune = TRUE
 	can_grow_underground = TRUE
 */
+
+#undef FAST_GROWING
+#undef VERY_FAST_GROWING
+#undef QUICK_MATURING
