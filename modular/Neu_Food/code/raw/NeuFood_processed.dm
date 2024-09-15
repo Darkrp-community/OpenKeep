@@ -287,6 +287,9 @@
 /datum/reagent/consumable/milk/salted
 	taste_description = "salty milk"
 
+/datum/reagent/consumable/milk/gote
+	taste_description = "gote milk"
+
 /obj/item/reagent_containers/attackby(obj/item/I, mob/user, params) // add cook time to containers & salted milk for butter churning
 	..()
 	if(user.mind)
