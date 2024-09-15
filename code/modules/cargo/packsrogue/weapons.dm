@@ -80,7 +80,7 @@
 
 /datum/supply_pack/rogue/weapons/crossbow
 	name = "Crossbow"
-	cost = 36
+	cost = 40
 	contains = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 
 /datum/supply_pack/rogue/weapons/bow
