@@ -123,6 +123,33 @@
 	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
 	attacked_sound = "woodimpact"
 
+/*	..................   "Noble" chairs   ................... */
+/obj/structure/chair/wood/rogue/chair_noble
+	name = "fine chair"
+	icon_state = "chair_green"
+	icon = 'icons/roguetown/misc/structure.dmi'
+	item_chair = /obj/item/chair/rogue/chair_nobles
+	blade_dulling = DULLING_BASHCHOP
+	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
+	attacked_sound = "woodimpact"
+/obj/item/chair/rogue/chair_nobles
+	icon_state = "chair_green"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble
+
+/obj/structure/chair/wood/rogue/chair_noble/purple
+	icon_state = "chair_purple"
+	item_chair = /obj/item/chair/rogue/chair_nobles/purple
+/obj/item/chair/rogue/chair_nobles/purple
+	icon_state = "chair_purple"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble/purple
+
+/obj/structure/chair/wood/rogue/chair_noble/red
+	icon_state = "chair_red"
+	item_chair = /obj/item/chair/rogue/chair_nobles/red
+/obj/item/chair/rogue/chair_nobles/red
+	icon_state = "chair_purple"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble/red
+
 /obj/item/chair/rogue/
 	name = "chair"
 	icon = 'icons/roguetown/items/chairs.dmi'
