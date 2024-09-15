@@ -80,25 +80,25 @@
 	* Familytree Subsystem Recognition
 	* H is who examines us so the
 	* perspective is looker looking at lookee.
-	* This all could honestly be
-	* turned into its own proc.
 	*/
+	var/txt = ""
 	if(familialrole_a == FAMILY_FATHER || familialrole_a == FAMILY_MOTHER)
 		if(familialrole_b == FAMILY_PROGENY)
-			. += "<span class='info'>It's my progeny.</span>"
+			txt += "It's my progeny."
 		if(familialrole_b == FAMILY_ADOPTED)
 			if(looker.dna.species == lookee.dna.species && familialrole_a == FAMILY_FATHER)
-				. += "<span class='info'>It's my bastard.</span>"
+				txt += "It's my bastard."
 			else
-				. += "<span class='info'>It's the adopted one.</span>"
+				txt += "It's the adopted one."
 
 	if(familialrole_a == FAMILY_PROGENY || familialrole_a == FAMILY_ADOPTED)
 		if(familialrole_b == FAMILY_FATHER)
-			. += "<span class='info'>It's my father.</span>"
+			txt += "It's my father."
 		if(familialrole_b == FAMILY_MOTHER)
-			. += "<span class='info'>It's my mother.</span>"
+			txt += "It's my mother."
 		if(familialrole_b == FAMILY_PROGENY || familialrole_b == FAMILY_ADOPTED)
-			. += "<span class='info'>It's my sibling.</span>"
+			txt += "It's my sibling."
+	return span_nicegreen("<B>[txt]</B>")
 
 /*
 * Transfers someone from another family to
@@ -137,10 +137,6 @@
 	var/house_title = "THE [household] HOUSE"
 	. = "<center>[household ? house_title : "Nameless House"]:</center><BR>"
 	. += "-----<br>"
-	if(patriarch)
-		. += "<B>[household] PATRIARCH: [patriarch]</B><BR>"
-	if(matriarch)
-		. += "<B>[household] MATRIARCH: [matriarch]</B><BR>"
 	for(var/P in family)
 		. += "<B><font color=#[COLOR_RED];text-shadow:0 0 10px #8d5958, 0 0 20px #8d5958, 0 0 30px #8d5958, 0 0 40px #8d5958, 0 0 50px #e60073, 0 0 60px #8d5958, 0 0 70px #8d5958;>\
 			[P]</font></B> [capitalize(family[P])]<BR>"
