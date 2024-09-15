@@ -75,7 +75,7 @@
 
 /datum/supply_pack/rogue/armor/chain_gloves_iron
 	name = "Iron Chain Gloves"
-	cost = 17
+	cost = 20
 	contains = /obj/item/clothing/gloves/roguetown/chain/iron
 
 /datum/supply_pack/rogue/armor/chainlegs_iron
