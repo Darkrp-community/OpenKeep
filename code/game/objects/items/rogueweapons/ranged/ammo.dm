@@ -98,7 +98,7 @@
 	name = "pyroclastic bolt"
 	desc = "A bolt smeared with a flammable tincture."
 	damage = 20
-	damage_type = BURN
+	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "boltpyro_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/bolt
@@ -121,8 +121,14 @@
 	. = ..()
 	if(ismob(target))
 		var/mob/living/M = target
-		M.adjust_fire_stacks(3)
+		M.adjust_fire_stacks(6)
 //		M.take_overall_damage(0,10) //between this 10 burn, the 10 brute, the explosion brute, and the onfire burn, my at about 65 damage if you stop drop and roll immediately
+	var/turf/T
+	if(isturf(target))
+		T = target
+	else
+		T = get_turf(target)
+	explosion(T, -1, exp_heavy, exp_light, exp_flash, 0, flame_range = exp_fire, soundin = explode_sound)
 
 /obj/item/ammo_casing/caseless/rogue/arrow
 	name = "arrow"
@@ -230,7 +236,7 @@
 	name = "pyroclatic arrow"
 	desc = "An arrow with its tip drenched in a flammable tincture."
 	damage = 15
-	damage_type = BURN
+	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "arrowpyro_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow

@@ -71,19 +71,19 @@
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
-	created_item = /obj/item/rogueweapon/knife/copperdagger
+	created_item = /obj/item/rogueweapon/copperdagger
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 0
 
-/datum/anvil_recipe/weapons/cmace
-	name = "Mace (2)"
-	recipe_name = "a Mace"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/copper
-	additional_items = list(/obj/item/ingot/copper)
-	created_item = (/obj/item/rogueweapon/mace/coppermace)
-	craftdiff = 0
+//datum/anvil_recipe/weapons/cmace
+//	name = "Mace (2)"
+//	recipe_name = "a Mace"
+//	appro_skill = /datum/skill/craft/weaponsmithing
+//	req_bar = /obj/item/ingot/copper
+//	additional_items = list(/obj/item/ingot/copper)
+//	created_item = (/obj/item/rogueweapon/mace/coppermace)
+//	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cmesser
 	name = "Messer (+1s)"
@@ -95,16 +95,24 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cspears
-	name = "Spear x2 (+4s)"
+	name = "Spear x2 (+w)"
 	recipe_name = "two Spears"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
-	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
+	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/copperspear
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 0
 
+/datum/anvil_recipe/weapons/cfalx
+	name = "Copper Falx (2)"
+	recipe_name = "a great copper sword"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/copper
+	additional_items = list(/obj/item/ingot/copper)
+	created_item = /obj/item/rogueweapon/sword/long/rider/copper
+	craftdiff = 0
 
 // IRON GEAR - Middle Tier, what most disgusting Men at Arms have
 

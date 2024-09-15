@@ -694,6 +694,10 @@
 /obj/item/clothing/cloak/raincloak/blue
 	color = CLOTHING_BLUE
 
+/obj/item/clothing/cloak/raincloak/random/Initialize()
+	color = pick(CLOTHING_RED, CLOTHING_PURPLE, CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_BLUE)
+	..()
+
 /obj/item/clothing/head/hooded/rainhood
 	name = "hood"
 	desc = "A hood that's attached to the raincoat."
@@ -906,6 +910,10 @@
 /obj/item/clothing/cloak/half/vet/Destroy()
 	GLOB.lordcolor -= src
 	return ..()
+
+/obj/item/clothing/cloak/half/random/Initialize()
+	color = pick(CLOTHING_RED, CLOTHING_PURPLE, CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_BLUE)
+	..()
 
 // Dumping old black knight stuff here
 /obj/item/clothing/cloak/cape/blkknight
