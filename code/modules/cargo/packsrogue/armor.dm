@@ -5,7 +5,7 @@
 
 /datum/supply_pack/rogue/armor/skullcap
 	name = "Skullcap Helmet"
-	cost = 15
+	cost = 25
 	contains = /obj/item/clothing/head/roguetown/helmet/skullcap
 
 /datum/supply_pack/rogue/armor/sallet
