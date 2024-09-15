@@ -1,6 +1,10 @@
 #define FAST_GROWING 5 MINUTES
 #define VERY_FAST_GROWING 4 MINUTES
 #define QUICK_MATURING 2 MINUTES
+#define HUNGRINESS_DEMANDING 30
+#define HUNGRINESS_NORMAL 20
+#define HUNGRINESS_SMALL 15
+#define HUNGRINESS_TINY 10
 
 /datum/plant_def
 	abstract_type = /datum/plant_def
@@ -23,9 +27,9 @@
 	/// Amount of maximum produce to make on harvest
 	var/produce_amount_max = 3
 	/// How much nutrition will the plant require to mature fully
-	var/maturation_nutrition = 20
+	var/maturation_nutrition = HUNGRINESS_NORMAL
 	/// How much nutrition will the plant require to make produce
-	var/produce_nutrition = 10
+	var/produce_nutrition = HUNGRINESS_TINY
 	/// If not perennial, the plant will uproot itself upon harvesting first produce
 	var/perennial = FALSE
 	/// Whether the plant is immune to weeds and will naturally deal with them
@@ -67,8 +71,8 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/apple
 	uproot_loot = list(/obj/item/grown/log/tree/small)
 	perennial = TRUE
-	maturation_nutrition = 30
-	produce_nutrition =  15
+	maturation_nutrition = HUNGRINESS_DEMANDING
+	produce_nutrition =  HUNGRINESS_SMALL
 
 /datum/plant_def/pear
 	name = "pear tree"
@@ -76,8 +80,8 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/pear
 	uproot_loot = list(/obj/item/grown/log/tree/small)
 	perennial = TRUE
-	maturation_nutrition = 30
-	produce_nutrition =  15
+	maturation_nutrition = HUNGRINESS_DEMANDING
+	produce_nutrition =  HUNGRINESS_SMALL
 
 /datum/plant_def/pipeweed
 	name = "westleach leaf"
@@ -97,8 +101,8 @@
 	perennial = TRUE
 	produce_amount_min = 2
 	produce_amount_max = 3
-	maturation_nutrition = 30
-	produce_nutrition =  15
+	maturation_nutrition = HUNGRINESS_DEMANDING
+	produce_nutrition =  HUNGRINESS_SMALL
 
 /datum/plant_def/berry_poison
 	name = "berry bush"
@@ -113,16 +117,19 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/cabbage
 	produce_amount_min = 1
 	produce_amount_max = 3
+	maturation_nutrition = HUNGRINESS_SMALL
+	produce_nutrition =  HUNGRINESS_SMALL
 	maturation_time = FAST_GROWING
 	produce_time = QUICK_MATURING
 
-/datum/plant_def/potato
+/datum/plant_def/potato// cheap to grow
 	name = "potato plant"
 	icon_state = "potato"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/potato
 	produce_amount_min = 2
 	produce_amount_max = 4
-	produce_nutrition =  5
+	maturation_nutrition = HUNGRINESS_SMALL
+	produce_nutrition =  HUNGRINESS_TINY
 	maturation_time = VERY_FAST_GROWING
 	produce_time = QUICK_MATURING
 
@@ -132,24 +139,26 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/onion
 	produce_amount_min = 2
 	produce_amount_max = 4
-	maturation_nutrition = 15
-	produce_nutrition =  15
+	produce_nutrition =  HUNGRINESS_TINY
+	produce_nutrition =  HUNGRINESS_SMALL
 
-/datum/plant_def/sunflower
+/datum/plant_def/sunflower// cheap to grow
 	name = "sunflowers"
 	icon_state = "sunflower"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/sunflower
 	produce_amount_min = 2
 	produce_amount_max = 4
-	maturation_nutrition = 10
+	maturation_nutrition = HUNGRINESS_SMALL
+	produce_nutrition =  HUNGRINESS_TINY
 	maturation_time = VERY_FAST_GROWING
 	produce_time = QUICK_MATURING
 
-/datum/plant_def/turnip
+/datum/plant_def/turnip // cheap to grow
 	name = "turnip patch"
 	icon_state = "turnip"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/turnip
-	produce_nutrition =  5
+	maturation_nutrition = HUNGRINESS_SMALL
+	produce_nutrition =  HUNGRINESS_TINY
 	maturation_time = FAST_GROWING
 	produce_time = QUICK_MATURING
 
@@ -196,3 +205,8 @@
 #undef FAST_GROWING
 #undef VERY_FAST_GROWING
 #undef QUICK_MATURING
+
+#undef HUNGRINESS_DEMANDING
+#undef HUNGRINESS_NORMAL
+#undef HUNGRINESS_SMALL
+#undef HUNGRINESS_TINY

@@ -48,7 +48,7 @@
 /obj/structure/soil/proc/user_harvests(mob/living/user)
 	if(!produce_ready)
 		return
-	apply_farming_fatigue(user, 5)
+	apply_farming_fatigue(user, 4)
 //	add_sleep_experience(user, /datum/skill/labor/farming, user.STAINT * 2)  sleepxp not a thing, get regular
 
 	var/farming_skill = user.mind.get_skill_level(/datum/skill/labor/farming)
@@ -254,7 +254,7 @@
 	apply_farming_fatigue(user, 10)
 	till_soil(15 MINUTES * get_farming_effort_multiplier(user))
 
-/obj/structure/soil/proc/till_soil(time = 15 MINUTES)
+/obj/structure/soil/proc/till_soil(time = 30 MINUTES)
 	tilled_time = time
 	adjust_plant_health(-20)
 	adjust_weeds(-30)
