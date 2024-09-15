@@ -30,7 +30,7 @@
 
 /obj/item/rogueweapon/thresher/military
 	force = 12
-	force_wielded = 21 
+	force_wielded = 24 
 	name = "military flail"
 	desc = "Crushes skulls, or grain."
 	icon_state = "military"
@@ -234,7 +234,7 @@
 /obj/item/rogueweapon/pitchfork
 
 	force = 10
-	force_wielded = 18
+	force_wielded = 22
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH)
 	gripped_intents = list(DUMP_INTENT,SPEAR_BASH,SPEAR_THRUST)
 	name = "pitchfork"
