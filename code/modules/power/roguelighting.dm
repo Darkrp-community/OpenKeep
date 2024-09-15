@@ -669,7 +669,7 @@
 			if(pot.reagents.chem_temp < 374)
 				to_chat(user, "<span class='warning'>[pot] isn't boiling!</span>")
 				return
-			if(istype(W, /obj/item/reagent_containers/food/snacks/grown/oat))
+			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/oat))
 				if(do_after(user,2 SECONDS, target = src))
 					user.visible_message("<span class='info'>[user] places [W] into the pot.</span>")
 					qdel(W)
