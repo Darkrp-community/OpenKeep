@@ -87,16 +87,8 @@
 		Retaliate()
 		GiveTarget(pulledby)
 	if(fire_stacks <= 0)
-		adjustHealth(-rand(5,7))
+		adjustHealth(-rand(20,35))
 
-
-/mob/living/simple_animal/hostile/retaliate/rogue/troll/LoseTarget()
-	..()
-	icon_state = "Troll2s"
-
-/mob/living/simple_animal/hostile/retaliate/rogue/troll/GiveTarget()
-	..()
-	icon_state = "Troll2"
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/simple_limb_hit(zone)
 	if(!zone)

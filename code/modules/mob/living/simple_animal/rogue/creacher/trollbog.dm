@@ -85,7 +85,7 @@
 		Retaliate()
 		GiveTarget(pulledby)
 	if(fire_stacks <= 0)
-		adjustHealth(-rand(5,10))
+		adjustHealth(-rand(40,50))
 
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/LoseTarget()
