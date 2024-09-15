@@ -76,7 +76,9 @@
 /datum/supply_pack/rogue/weapons/nets
 	name = "Throwing Net"
 	cost = 10
-	contains = /obj/item/net
+	contains = list(/obj/item/net,
+			/obj/item/net,
+			/obj/item/net)
 
 /datum/supply_pack/rogue/weapons/crossbow
 	name = "Crossbow"
