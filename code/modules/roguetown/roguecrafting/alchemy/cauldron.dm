@@ -17,6 +17,22 @@
 	fueluse = 20 MINUTES
 	crossfire = FALSE
 
+/obj/machinery/light/rogue/cauldron/update_icon()
+	..()
+	cut_overlays()
+	if(reagents.total_volume > 0) 
+		if(!brewing)
+			var/mutable_appearance/filling = mutable_appearance('icons/roguetown/misc/alchemy.dmi', "cauldron_full")
+			filling.color = mix_color_from_reagents(reagents.reagent_list)
+			filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
+			add_overlay(filling)
+		if(brewing > 0)
+			var/mutable_appearance/filling = mutable_appearance('icons/roguetown/misc/alchemy.dmi', "cauldron_boiling")
+			filling.color = mix_color_from_reagents(reagents.reagent_list)
+			filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
+			add_overlay(filling)
+	return
+
 /obj/machinery/light/rogue/cauldron/Initialize()
 	create_reagents(500, DRAINABLE | AMOUNT_VISIBLE | REFILLABLE)
 	. = ..()
@@ -41,6 +57,7 @@
 
 /obj/machinery/light/rogue/cauldron/process()
 	..()
+	update_icon()
 	if(on)
 		
 		if(ingredients.len)
@@ -204,8 +221,15 @@
 		to_chat(user, "<span class='info'>I add [I] to [src].</span>")
 		ingredients += I
 		brewing = 0
-		playsound(src, "bubbles", 100, TRUE)
 		lastuser = user
+		playsound(src, "bubbles", 100, TRUE)
+		cut_overlays()
+		var/mutable_appearance/filling = mutable_appearance('icons/roguetown/misc/alchemy.dmi', "cauldron_boiling")
+		filling.color = mix_color_from_reagents(reagents.reagent_list)
+		filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
+		add_overlay(filling)
+		sleep(30)
+		update_icon()
 		return TRUE
 	..()
 
