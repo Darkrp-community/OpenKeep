@@ -20,7 +20,7 @@
 
 /datum/supply_pack/rogue/armor/imask
 	name = "Iron Facemask"
-	cost = 15
+	cost = 20
 	contains = /obj/item/clothing/mask/rogue/facemask
 
 /datum/supply_pack/rogue/armor/chaincoif_iron
