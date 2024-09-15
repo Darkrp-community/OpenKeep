@@ -35,7 +35,7 @@
 	/// Whether the plant is immune to weeds and will naturally deal with them
 	var/weed_immune = FALSE
 	/// The rate at which the plant drains water, if zero then it'll be able to live without water
-	var/water_drain_rate = 2 / (1 MINUTES)
+	var/water_drain_rate = 1 / (2 MINUTES)
 	/// Color all seeds of this plant def will have, randomised on init
 	var/seed_color
 	/// Whether the plant can grow underground
@@ -54,7 +54,7 @@
 	produce_amount_max = 5
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
 	maturation_time = FAST_GROWING
-	water_drain_rate = 1 / (2 MINUTES)
+	water_drain_rate = 0
 
 /datum/plant_def/oat
 	name = "oat stalks"
@@ -65,7 +65,7 @@
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
 	maturation_time = FAST_GROWING
 	produce_time = QUICK_MATURING
-	water_drain_rate = 1 / (2 MINUTES)
+	water_drain_rate = 0
 
 /datum/plant_def/apple
 	name = "apple tree"
@@ -89,11 +89,13 @@
 	name = "westleach leaf"
 	icon_state = "westleach"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed
+	water_drain_rate = 0
 
 /datum/plant_def/sweetleaf
 	name = "swampweed"
 	icon_state = "swampweed"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/rogue/sweetleaf
+	water_drain_rate = 0
 
 /datum/plant_def/berry
 	name = "berry bush"
@@ -134,7 +136,6 @@
 	produce_nutrition =  HUNGRINESS_TINY
 	maturation_time = VERY_FAST_GROWING
 	produce_time = QUICK_MATURING
-	water_drain_rate = 1 / (2 MINUTES)
 
 /datum/plant_def/onion
 	name = "onion patch"
@@ -155,7 +156,7 @@
 	produce_nutrition =  HUNGRINESS_TINY
 	maturation_time = VERY_FAST_GROWING
 	produce_time = QUICK_MATURING
-	water_drain_rate = 1 / (2 MINUTES)
+	water_drain_rate = 0
 
 /datum/plant_def/turnip // cheap to grow
 	name = "turnip patch"
@@ -165,7 +166,6 @@
 	produce_nutrition =  HUNGRINESS_TINY
 	maturation_time = FAST_GROWING
 	produce_time = QUICK_MATURING
-	water_drain_rate = 1 / (2 MINUTES)
 
 /*
 /datum/plant_def/rice
