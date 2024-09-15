@@ -51,7 +51,7 @@
 	icon_state = "wheat"
 	produce_type = /obj/item/natural/chaff/wheat
 	produce_amount_min = 3
-	produce_amount_max = 4
+	produce_amount_max = 5
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
 	maturation_time = FAST_GROWING
 
@@ -60,7 +60,7 @@
 	icon_state = "oat"
 	produce_type = /obj/item/natural/chaff/oat
 	produce_amount_min = 3
-	produce_amount_max = 4
+	produce_amount_max = 5
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
 	maturation_time = FAST_GROWING
 	produce_time = QUICK_MATURING
