@@ -59,6 +59,32 @@
 	)
 	body_markings = list(
 		/datum/body_marking/tonage,
+		/datum/body_marking/burnface_r,
+		/datum/body_marking/burnface_l,
+		/datum/body_marking/burneye_r,
+		/datum/body_marking/burneye_l,
+		/datum/body_marking/brows/dark,
+		/datum/body_marking/unibrow/dark,
+		/datum/body_marking/deadeye_r,
+		/datum/body_marking/deadeye_l,
+		/datum/body_marking/scarhead,
+		/datum/body_marking/scar,
+		/datum/body_marking/scart,
+		/datum/body_marking/slashedeye_r,
+		/datum/body_marking/slashedeye_r,
+		/datum/body_marking/slashedeye_l,
+		/datum/body_marking/mangled,
+		/datum/body_marking/warpaint_blue,
+		/datum/body_marking/warpaint_red,
+		/datum/body_marking/warpaint_green,
+		/datum/body_marking/warpaint_purple,
+		/datum/body_marking/warpaint_black,
+		/datum/body_marking/harlequin,
+		/datum/body_marking/tattoo_lips,
+		/datum/body_marking/tattoo_eye_r,
+		/datum/body_marking/tattoo_eye_l,
+		/datum/body_marking/brows,
+		/datum/body_marking/unibrow,
 	)
 
 /datum/species/elf/dark/get_span_language(datum/language/message_language)
