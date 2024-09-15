@@ -10,7 +10,7 @@
 
 /datum/supply_pack/rogue/armor/sallet
 	name = "Sallet Helmet"
-	cost = 25
+	cost = 30
 	contains = /obj/item/clothing/head/roguetown/helmet/sallet
 
 /datum/supply_pack/rogue/armor/buckethelm
