@@ -48,4 +48,6 @@
         H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
         beltl = /obj/item/rogueweapon/sword/sabre // Dark elves get a sabre as their primary weapon and swords skill, who woulda thought
 
+    H.merctype = 3
+
     ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
