@@ -78,13 +78,13 @@
 			var/turf/T = target.loc
 			var/found = FALSE
 			for(var/obj/item/natural/chaff/C in T)
-				user.Immobilize(10)
+				user.Immobilize(8)
 				found = TRUE
 				C.thresh()
-				playsound(loc,"plantcross", 100, FALSE)
-				playsound(loc,"smashlimb", 50, FALSE)
-				user.rogfat_add(2)
-				sleep(10)
+				playsound(loc,"plantcross", 85, FALSE)
+				playsound(loc,"smashlimb", 30, FALSE)
+				apply_farming_fatigue(user, 2)
+				sleep(8)
 			if(found)
 				user.visible_message(span_notice("[user] threshes the stalks!"), \
 						span_notice("I thresh the stalks."))

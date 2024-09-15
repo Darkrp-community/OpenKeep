@@ -54,6 +54,7 @@
 	produce_amount_max = 5
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
 	maturation_time = FAST_GROWING
+	water_drain_rate = 1 / (2 MINUTES)
 
 /datum/plant_def/oat
 	name = "oat stalks"
@@ -64,6 +65,7 @@
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
 	maturation_time = FAST_GROWING
 	produce_time = QUICK_MATURING
+	water_drain_rate = 1 / (2 MINUTES)
 
 /datum/plant_def/apple
 	name = "apple tree"
@@ -132,6 +134,7 @@
 	produce_nutrition =  HUNGRINESS_TINY
 	maturation_time = VERY_FAST_GROWING
 	produce_time = QUICK_MATURING
+	water_drain_rate = 1 / (2 MINUTES)
 
 /datum/plant_def/onion
 	name = "onion patch"
@@ -152,6 +155,7 @@
 	produce_nutrition =  HUNGRINESS_TINY
 	maturation_time = VERY_FAST_GROWING
 	produce_time = QUICK_MATURING
+	water_drain_rate = 1 / (2 MINUTES)
 
 /datum/plant_def/turnip // cheap to grow
 	name = "turnip patch"
@@ -161,7 +165,7 @@
 	produce_nutrition =  HUNGRINESS_TINY
 	maturation_time = FAST_GROWING
 	produce_time = QUICK_MATURING
-
+	water_drain_rate = 1 / (2 MINUTES)
 
 /*
 /datum/plant_def/rice
