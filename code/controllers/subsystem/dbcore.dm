@@ -202,6 +202,8 @@ SUBSYSTEM_DEF(dbcore)
 		if (qdel)
 			qdel(query)
 
+/datum/controller/subsystem/dbcore/proc/Quote(string)
+	return (string && "'" + (string) + "'") || "NULL"
 
 
 /*
