@@ -101,7 +101,7 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD
 	worn_x_dimension = 64
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	worn_y_dimension = 64
 	rotprocess = SHELFLIFE_DECENT
 	can_distill = TRUE
@@ -150,7 +150,7 @@
 	icon_state = "berries"
 	tastes = list("berry" = 1)
 	bitesize = 5
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	dropshrink = 0.75
 	var/color_index = "good"
 	can_distill = TRUE
@@ -377,21 +377,6 @@
 	desc = "Your last line of defense against the vampiric horde."
 //	seed = /obj/item/neuFarm/seed/garlic
 
-/obj/item/reagent_containers/food/snacks/produce/peas
-//	seed = /obj/item/neuFarm/seed/peas
-	name = "peas"
-
-/obj/item/reagent_containers/food/snacks/produce/tea
-//	seed = /obj/item/neuFarm/seed/tea
-	name = "tea"
-
-/obj/item/reagent_containers/food/snacks/produce/plumphelmet
-//	seed = /obj/item/neuFarm/seed/mycelium/plumphelmet
-	name = "plump helmet mushroom"
-
-/obj/item/reagent_containers/food/snacks/produce/trippy
-//	seed = /obj/item/neuFarm/seed/mycelium/trippy
-
 /obj/item/reagent_containers/food/snacks/produce/amanita
 //	seed = /obj/item/neuFarm/seed/mycelium/amanita
 	name = "strange red mushroom"
@@ -403,18 +388,6 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/toxin/amanitin = 3)
 	grind_results = list(/datum/reagent/toxin/amanitin = 6)
 
-/obj/item/reagent_containers/food/snacks/produce/nut
-	name = "rocknut"
-//	seed = /obj/item/neuFarm/seed/nut
-	icon_state = "nut"
-	tastes = list("nutty" = 1)
-	filling_color = "#6b4d18"
-	bitesize = 3
-	foodtype = FRUIT
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
-*/
-
-/*
 /obj/item/reagent_containers/food/snacks/produce/rice
 //	seed = /obj/item/neuFarm/seed/rice
 	name = "rice grain"

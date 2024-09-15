@@ -45,8 +45,6 @@
 	produce_amount_min = 3
 	produce_amount_max = 4
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
-	maturation_nutrition = 30
-	produce_nutrition = 20
 	maturation_time = 5 MINUTES
 	produce_time = 2 MINUTES
 
@@ -57,8 +55,6 @@
 	produce_amount_min = 3
 	produce_amount_max = 4
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
-	maturation_nutrition = 30
-	produce_nutrition = 20
 	maturation_time = 5 MINUTES
 	produce_time = 2 MINUTES
 
@@ -72,8 +68,6 @@
 	produce_amount_max = 3
 	maturation_nutrition = 60
 	produce_nutrition =  30
-	maturation_time = 6 MINUTES
-	produce_time = 3 MINUTES
 
 /datum/plant_def/pipeweed
 	name = "westleach leaf"
@@ -95,8 +89,6 @@
 	produce_amount_max = 3
 	maturation_nutrition = 60
 	produce_nutrition =  30
-	maturation_time = 6 MINUTES
-	produce_time = 3 MINUTES
 
 /datum/plant_def/berry_poison
 	name = "berry bush"
@@ -111,8 +103,6 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/cabbage
 	produce_amount_min = 1
 	produce_amount_max = 3
-	maturation_nutrition = 25
-	produce_nutrition =  15
 	maturation_time = 4 MINUTES
 	produce_time = 2 MINUTES
 
@@ -122,8 +112,7 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/potato
 	produce_amount_min = 2
 	produce_amount_max = 4
-	maturation_nutrition = 25
-	produce_nutrition =  15
+	produce_nutrition =  10
 	maturation_time = 4 MINUTES
 	produce_time = 2 MINUTES
 
@@ -133,10 +122,8 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/onion
 	produce_amount_min = 2
 	produce_amount_max = 4
-	maturation_nutrition = 25
-	produce_nutrition =  15
-	maturation_time = 4 MINUTES
-	produce_time = 2 MINUTES
+	maturation_nutrition = 30
+	produce_nutrition =  30
 
 /datum/plant_def/sunflower
 	name = "sunflowers"
@@ -144,8 +131,7 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/sunflower
 	produce_amount_min = 2
 	produce_amount_max = 4
-	maturation_nutrition = 5
-	produce_nutrition =  5
+	maturation_nutrition = 20
 	maturation_time = 4 MINUTES
 	produce_time = 2 MINUTES
 
@@ -155,16 +141,13 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/pear
 	uproot_loot = list(/obj/item/grown/log/tree/small)
 	perennial = TRUE
-	maturation_nutrition = 40
-	produce_nutrition =  25
-	maturation_time = 6 MINUTES
-	produce_time = 3 MINUTES
+	maturation_nutrition = 60
+	produce_nutrition =  30
 
 /datum/plant_def/turnip
 	name = "turnip patch"
 	icon_state = "turnip"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/turnip
-	maturation_nutrition = 25
 	produce_nutrition =  15
 	maturation_time = 5 MINUTES
 	produce_time = 2.5 MINUTES
@@ -184,20 +167,6 @@
 	maturation_time = 5 MINUTES
 	produce_time = 2 MINUTES
 
-/datum/plant_def/nut
-	name = "rocknut tree"
-	icon = 'icons/roguetown/misc/crops.dmi'
-	icon_state = "nuts"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/nut
-	uproot_loot = list(/obj/item/grown/log/tree/small)
-	perennial = TRUE
-	produce_amount_max = 3
-	maturation_nutrition = 60
-	produce_nutrition =  35
-	maturation_time = 6 MINUTES
-	produce_time = 3 MINUTES
-	water_drain_rate = 1 / (2 MINUTES)
-
 /datum/plant_def/garlic
 	name = "garlic patch"
 	icon = 'icons/roguetown/misc/crops.dmi'
@@ -207,17 +176,6 @@
 	produce_nutrition =  15
 	maturation_time = 4 MINUTES
 	produce_time = 2 MINUTES
-
-/datum/plant_def/tea
-	name = "tea shrub"
-	icon = 'icons/roguetown/misc/crops.dmi'
-	icon_state = "tea"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/tea
-	perennial = TRUE
-	maturation_nutrition = 60
-	produce_nutrition =  30
-	maturation_time = 6 MINUTES
-	produce_time = 3 MINUTES
 
 /datum/plant_def/amanita
 	name = "strange red mushroom patch"
