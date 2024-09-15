@@ -33,7 +33,7 @@
 		H.change_stat("endurance", 1)
 
 	pants = /obj/item/clothing/under/roguetown/tights/black
-	backr = /obj/item/rogueweapon/mace/warhammer
+	backr = /obj/item/rogueweapon/mace/goden/steel/warhammer
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	shoes = /obj/item/clothing/shoes/roguetown/boots/rare/dwarfplate
 	gloves = /obj/item/clothing/gloves/roguetown/rare/dwarfplate
