@@ -61,6 +61,7 @@
 	distill_amt = 24
 	grind_results = list(/datum/reagent/floure = 10)
 	dropshrink = 0.9
+	mill_result = /obj/item/reagent_containers/powder/flour
 /obj/item/reagent_containers/food/snacks/produce/wheat/examine(var/mob/user)
 	var/farminglvl = user.mind?.get_skill_level(/datum/skill/labor/farming)
 	. += ..()
