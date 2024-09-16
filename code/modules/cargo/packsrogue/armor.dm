@@ -11,7 +11,7 @@
 
 /datum/supply_pack/rogue/armor/bracers/steel
 	name = "Steel Bracers"
-	cost = 25
+	cost = 30
 	contains = /obj/item/clothing/wrists/roguetown/bracers
 
 /datum/supply_pack/rogue/armor/chaingloves
@@ -36,7 +36,7 @@
 
 /datum/supply_pack/rogue/armor/kettlehelmet
 	name = "Kettle Helmet"
-	cost = 25
+	cost = 30
 	contains = /obj/item/clothing/head/roguetown/helmet/kettle
 
 /datum/supply_pack/rogue/armor/skullhelmet
@@ -51,30 +51,30 @@
 
 /datum/supply_pack/rogue/armor/leather
 	name = "Leather Armor"
-	cost = 15
+	cost = 20
 	contains = /obj/item/clothing/suit/roguetown/armor/leather
 
 /datum/supply_pack/rogue/armor/studleather
 	name = "Studded Leather Armor"
-	cost = 35
+	cost = 30
 	contains = /obj/item/clothing/suit/roguetown/armor/leather/studded
 
 /datum/supply_pack/rogue/armor/haubergeon
 	name = "Haubergeon"
-	cost = 25
+	cost = 40
 	contains = /obj/item/clothing/suit/roguetown/armor/chainmail
 
 /datum/supply_pack/rogue/armor/chainmalle
 	name = "Chainmalle Shirt"
-	cost = 15
+	cost = 25
 	contains = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 
-/datum/supply_pack/rogue/armor/halfplate
+/datum/supply_pack/rogue/armor/cuirass
 	name = "Breastplate"
-	cost = 30
-	contains = /obj/item/clothing/suit/roguetown/armor/plate/half
+	cost = 50
+	contains = /obj/item/clothing/suit/roguetown/armor/cuirass
 
 /datum/supply_pack/rogue/armor/munition
 	name = "Munition Plate Armor"
-	cost = 75
+	cost = 100 // Costly, making smiths preferred
 	contains = /obj/item/clothing/suit/roguetown/armor/plate

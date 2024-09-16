@@ -229,6 +229,15 @@
 	created_item = /obj/item/rogueweapon/shield/tower
 	craftdiff = 2
 
+/datum/anvil_recipe/weapons/warclub
+	name = "Warclub (+w)"
+	recipe_name = "a Warclub"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/small)
+	created_item = /obj/item/rogueweapon/mace/goden
+	craftdiff = 2
+
 /datum/anvil_recipe/weapons/zweihander
 	name = "Zweihander (3)"
 	recipe_name = "a Zweihander"
@@ -407,6 +416,15 @@
 	created_item = /obj/item/rogueweapon/mace/steel
 	craftdiff = 2
 
+/datum/anvil_recipe/weapons/paxe
+	name = "Pick-Axe (2) (+s)"
+	recipe_name = "a Pick that is also an Axe"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel, /obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/pick/paxe
+	craftdiff = 3
+
 /datum/anvil_recipe/weapons/rapier_steel
 	name = "Rapier"
 	recipe_name = "a Rapier"
@@ -437,14 +455,5 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/sword
-	craftdiff = 2
-
-/datum/anvil_recipe/weapons/warclub
-	name = "Warclub (+w)"
-	recipe_name = "a Warclub"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/mace/goden
 	craftdiff = 2
 

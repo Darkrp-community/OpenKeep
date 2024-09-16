@@ -947,6 +947,7 @@
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
+	armor_class = ARMOR_CLASS_MEDIUM
 	icon_state = "bkarmor"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'

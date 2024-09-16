@@ -156,13 +156,15 @@
 	
 	if(!modifier) // Sanity.
 		return
-	
+	// Finally, modify the smithed item's stats based on modifier multiplier
 	I.max_integrity  *= modifier
 	I.obj_integrity *= modifier
 	I.sellprice *= modifier
+	// Make lockpicks better at their job
 	if(istype(I, /obj/item/lockpick))
 		var/obj/item/lockpick/L = I
 		L.picklvl = modifier
+	// Apply inherent weapon modifiers
 	if(istype(I, /obj/item/rogueweapon))
 		var/obj/item/rogueweapon/W = I
 		W.force *= modifier
@@ -171,9 +173,22 @@
 		W.max_blade_int *= modifier
 		W.armor_penetration *= modifier
 		W.wdefense *= modifier
+		// Make (ONLY) axes (and the Pick-axe) better at woodcutting too
+		if(istype(I, /obj/item/rogueweapon/woodcut) || istype(I, /obj/item/rogueweapon/pick/paxe))
+			var/obj/item/rogueweapon/A = I
+			A.axe_cut += (A.force * modifier) * 0.5 // Multiply the axe's damage by the modifier, and add half of this as axe_cut
+		// If it's a pick, make it better at its job
+		if(istype(I, /obj/item/rogueweapon/pick))
+			var/obj/item/rogueweapon/pick/P = I
+			P.pickmult *= modifier
+	// Apply inherent armor modifiers
 	if(istype(I, /obj/item/clothing))
 		var/obj/item/clothing/C = I
 		C.damage_deflection *= modifier
 		C.integrity_failure /= modifier
 		C.armor = C.armor.multiplymodifyAllRatings(modifier)
 		C.equip_delay_self *= modifier
+	// If it's a crossbow, up its damage multiplier
+	if(istype(I,/obj/item/gun/ballistic/revolver/grenadelauncher))
+		var/obj/item/gun/ballistic/revolver/grenadelauncher/R = I
+		R.damfactor = modifier

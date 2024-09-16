@@ -12,6 +12,7 @@
 	ambushable = FALSE
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw, /datum/intent/simple/bite, /datum/intent/kick)
 	possible_rmb_intents = list()
+	vitae_bank = 1000 // Not as much vitae from them as humans to avoid vampires cheesing mobs
 
 /mob/living/carbon/human/species/orc/npc
 	aggressive=1
@@ -299,35 +300,35 @@
 			if(prob(20))
 				r_hand = /obj/item/rogueweapon/mace//readded the blunt weapon, this time with an very rare "slavist" orc
 				l_hand = /obj/item/rogueweapon/whip
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			else
 				r_hand = /obj/item/rogueweapon/sword/iron/short
 				l_hand = /obj/item/rogueweapon/sword/iron/short
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			if(prob(80))
 				head = /obj/item/clothing/head/roguetown/helmet/orc
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 				r_hand = /obj/item/rogueweapon/flail
 			else
 				head = /obj/item/clothing/head/roguetown/helmet/orc
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 				r_hand = /obj/item/rogueweapon/battle
 			if(prob(50))
 				r_hand = /obj/item/rogueweapon/sword/iron
 				l_hand = /obj/item/rogueweapon/shield/wood
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			else
 				r_hand = /obj/item/rogueweapon/mace/spiked
 				l_hand = /obj/item/rogueweapon/shield/wood
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			if(prob(30))
 				r_hand = /obj/item/rogueweapon/sword/iron/messer
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 
 //NEW ORCS WITH DIFFERENT GEAR AND SHIT
@@ -439,17 +440,17 @@
 			if(prob(50))
 				r_hand = /obj/item/rogueweapon/mace/spiked
 				l_hand = /obj/item/rogueweapon/shield/wood
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			else
 				r_hand = /obj/item/rogueweapon/mace/spiked
 				l_hand = /obj/item/rogueweapon/sword/iron/messer
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				cloak = /obj/item/clothing/cloak/raincloak/brown
 			if(prob(30))
 				r_hand = /obj/item/rogueweapon/woodcut
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+				armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				cloak = /obj/item/clothing/cloak/raincloak/brown
 
@@ -488,28 +489,28 @@
 		if(1) //Marauder with Sword and Shield
 			r_hand = /obj/item/rogueweapon/sword/iron
 			l_hand = /obj/item/rogueweapon/woodcut
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 		if(2) //Marauder with Axe and Shield
 			r_hand = /obj/item/rogueweapon/battle
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 		if(3) //Warhammer Caveman
 			r_hand = /obj/item/rogueweapon/mace/warhammer
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 		if(4) //dagger fighter
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			r_hand = /obj/item/rogueweapon/mace/steel
 			l_hand = /obj/item/rogueweapon/shield/tower
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 		if(5) //Marauder Ironblade
 			r_hand = /obj/item/rogueweapon/halberd/bardiche
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 
@@ -544,25 +545,25 @@
 	switch(loadout)
 		if(1) //Halberd Warlord
 			r_hand = /obj/item/rogueweapon/halberd
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(2) //Greatsword Warlord
 			r_hand = /obj/item/rogueweapon/greatsword
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(3) // WE DON'T WANNA GO TO WAR TODAY BUT THE LORD OF THE LASH SAYS "NAY NAY NAY!!" WE'RE GONNA MARCH ALL DAE, ALL DAE, ALL DAE! WHERE THERE'S A WHIP THERE'S A WAY!!
 			r_hand = /obj/item/rogueweapon/whip/antique
 			l_hand = /obj/item/rogueweapon/sword/short
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(4) // Big Sword and Big Shield
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord
 			r_hand = /obj/item/rogueweapon/sword/sabre/messer
 			l_hand = /obj/item/rogueweapon/shield/tower
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(5) //Anti Knight STR Build
 			r_hand = /obj/item/rogueweapon/flail/sflail
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 
 /mob/living/carbon/human/species/orc/warlord/skilled/after_creation() //these ones dont parry, but still get good weapon skills

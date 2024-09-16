@@ -427,6 +427,9 @@
 		changeNext_move(0)
 	if (legcuffed)
 		var/obj/item/W = legcuffed
+		if(istype(W, /obj/item/net))
+			if(has_status_effect(/datum/status_effect/debuff/netted))
+				remove_status_effect(/datum/status_effect/debuff/netted)
 		legcuffed = null
 		update_inv_legcuffed()
 		if (client)

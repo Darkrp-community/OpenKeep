@@ -20,7 +20,7 @@
 	gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
 	wrists = /obj/item/clothing/neck/roguetown/psicross/g
 	head = /obj/item/clothing/head/roguetown/grenzelhofthat
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
+	armor = /obj/item/clothing/suit/roguetown/armor/brigandine
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/rogueweapon/sword/sabre/dec
 	beltr = /obj/item/flashlight/flare/torch/lantern

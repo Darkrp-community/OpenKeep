@@ -1946,7 +1946,7 @@
 		return
 	if(_y > 7 || _y < -7)
 		return
-	hide_cone()
+
 	var/ttime = 10
 	if(STAPER > 5)
 		ttime = 10 - (STAPER - 5)
@@ -1956,7 +1956,6 @@
 		visible_message("<span class='info'>[src] looks into the distance.</span>")
 	animate(client, pixel_x = world.icon_size*_x, pixel_y = world.icon_size*_y, ttime)
 //	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_looking))
-	update_cone_show()
 
 /mob/proc/look_down(turf/T)
 	return

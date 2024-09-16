@@ -91,10 +91,10 @@
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "steel half-plate armor"
 	desc = "\'Adventurer-fit\' plate armor with pauldrons."
-	body_parts_covered = CHEST|GROIN|VITALS
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS
 	icon_state = "halfplate"
 	item_state = "halfplate"
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	nodismemsleeves = TRUE
 	max_integrity = 500
@@ -103,7 +103,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
-	armor_class = ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 90
 
 /obj/item/clothing/suit/roguetown/armor/plate/Initialize()
@@ -114,23 +114,22 @@
 													'sound/foley/footsteps/armor/plate (3).ogg'), 100)
 
 
-/obj/item/clothing/suit/roguetown/armor/plate/half
+/obj/item/clothing/suit/roguetown/armor/cuirass
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "steel cuirass"
 	desc = "A cuirass of steel. Lightweight and highly durable."
-	body_parts_covered = CHEST|VITALS
+	body_parts_covered = CHEST|VITALS|GROIN
 	icon_state = "cuirass"
 	item_state = "cuirass"
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 80, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	allowed_race = ALL_RACES_LIST
 	nodismemsleeves = TRUE
-	do_sound = FALSE
 	blocking_behavior = null
-	max_integrity = 300
+	max_integrity = 500
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
-	sellprice = 40
+	sellprice = 30
 
 /obj/item/clothing/suit/roguetown/armor/plate/full
 	name = "plate armor"
@@ -140,6 +139,7 @@
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	equip_delay_self = 80
+	max_integrity = 500
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 120
 
@@ -148,34 +148,37 @@
 	desc = "Old and rusted plate armor. Less durable than it used to be, but still quite protective."
 	icon_state = "rustplate"
 	item_state = "rustplate"
-	max_integrity = 250
+	max_integrity = 300
 	smeltresult = /obj/item/ingot/iron
+	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 40
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/iron
+/obj/item/clothing/suit/roguetown/armor/cuirass/iron
 	name = "iron breastplate"
 	desc = "Solid iron to protect the torso."
 	icon_state = "ibreastplate"
 	item_state = "ibreastplate"
-	max_integrity = 200
-	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 300
+	armor = list("melee" = 70, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 20
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/iron/rust
+/obj/item/clothing/suit/roguetown/armor/cuirass/iron/rust
 	name = "rusted breastplate"
 	desc = "Old but still useful to keep sharp objects from your innards."
 	icon_state = "rusthalf"
 	item_state = "rusthalf"
+	max_integrity = 200 // Rusty
 
 
 // Bladesinger armor, unique
-/obj/item/clothing/suit/roguetown/armor/plate/half/elven
+/obj/item/clothing/suit/roguetown/armor/plate/elven
 	name = "elven guardian cuirass"
 	desc = "A cuirass made of steel with a thin decorative gold plating. Lightweight and durable."
 	color = COLOR_ASSEMBLY_GOLD
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 200
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale
@@ -183,14 +186,16 @@
 	name = "scalemail"
 	desc = "A scale shirt typically padded with various interlocked steel plates. Offers decent protection."
 	body_parts_covered = CHEST|VITALS|GROIN|LEGS
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST) // Best medium armor now that halfplate is heavy.
 	allowed_sex = list(MALE, FEMALE)
 	icon_state = "lamellar"
-	max_integrity = 200
-	armor = list("melee" = 90, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 500
+	do_sound = FALSE
+	armor = list("melee" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_MEDIUM
-	sellprice = 35
+	sellprice = 50
 
 //full iron armor for robbers/warriors
 /obj/item/clothing/suit/roguetown/armor/plate/scale/iron
@@ -204,8 +209,7 @@
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/iron
 	equip_delay_self = 40
-	armor_class = ARMOR_CLASS_MEDIUM
-	sellprice = 45
+	sellprice = 30
 
 // Rare Heartfelt equipment
 /obj/item/clothing/suit/roguetown/armor/heartfelt/lord
@@ -562,7 +566,7 @@
 	color = pick(CLOTHING_PURPLE, null,CLOTHING_GREEN, CLOTHING_RED)
 	..()
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 	name = "orc mail"
 	icon_state = "marauder_armor"
 	item_state = "marauder_armor"
@@ -592,12 +596,17 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	sellprice = 10
 
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+/obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "grenzelhoft cuirass"
 	desc = "A basic cuirass built from black-steel. It's somewhat more durable and lightweight than regular steel."
 	icon_state = "grenzelcuirass"
 	item_state = "grenzelcuirass"
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	body_parts_covered = CHEST|GROIN|VITALS
+	nodismemsleeves = TRUE
+	allowed_sex = list(MALE, FEMALE)
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	boobed = TRUE
 	max_integrity = 500
@@ -750,7 +759,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 													'sound/foley/footsteps/armor/fullplate (2).ogg',\
 													'sound/foley/footsteps/armor/fullplate (3).ogg'), 100)
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/copperchest
+/obj/item/clothing/suit/roguetown/armor/cuirass/copperchest
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "copper heart protector"//SHITTY ARMOR SHITTY ARMOR!!
 	desc = "Very simple and crude protection for the chest. Ancient fighters once used similar gear, with better quality..."
@@ -760,10 +769,88 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	allowed_race = ALL_RACES_LIST
 	nodismemsleeves = TRUE
-	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 150
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/copper
 	armor_class = ARMOR_CLASS_LIGHT
 	sellprice = 15
+
+// VAMPIRE ARMORS BELOW
+
+/obj/item/clothing/under/roguetown/platelegs/vampire
+	name = "ancient plate greaves"
+	desc = ""
+	gender = PLURAL
+	icon_state = "vpants"
+	item_state = "vpants"
+	sewrepair = FALSE
+	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	blocksound = PLATEHIT
+	do_sound = FALSE
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	r_sleeve_status = SLEEVE_NOMOD
+	l_sleeve_status = SLEEVE_NOMOD
+
+/obj/item/clothing/suit/roguetown/shirt/vampire
+	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
+	name = "regal silks"
+	desc = ""
+	body_parts_covered = CHEST|GROIN|LEGS|VITALS
+	icon_state = "vrobe"
+	item_state = "vrobe"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+
+/obj/item/clothing/head/roguetown/vampire
+	name = "crown of darkness"
+	icon_state = "vcrown"
+	body_parts_covered = null
+	slot_flags = ITEM_SLOT_HEAD
+	dynamic_hair_suffix = null
+	sellprice = 1000
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire
+	name = "ancient chain shirt"
+	desc = "An ancient iron chainmail."
+	body_parts_covered = CHEST|GROIN|VITALS
+	smeltresult = /obj/item/ingot/iron
+
+/obj/item/clothing/suit/roguetown/armor/plate/vampire
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "ancient ceremonial plate"
+	desc = "An ornate, ancient plate armor worn by the masters of the nite."
+	body_parts_covered = CHEST|GROIN|VITALS
+	icon_state = "vplate"
+	item_state = "vplate"
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	nodismemsleeves = TRUE
+	max_integrity = 500
+	allowed_sex = list(MALE, FEMALE)
+	do_sound = TRUE
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	equip_delay_self = 40
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/shoes/roguetown/boots/armor/vampire
+	name = "ancient ceremonial plated boots"
+	desc = "Antediluvian boots with ceremonial ornamets from ages past."
+	body_parts_covered = FEET
+	icon_state = "vboots"
+	item_state = "vboots"
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	smeltresult = /obj/item/ingot/steel
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/gloves/roguetown/chain/vampire
+	name = "ancient ceremonial gloves"
+	icon_state = "vgloves"
+	smeltresult = /obj/item/ingot/steel

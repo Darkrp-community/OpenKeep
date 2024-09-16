@@ -551,10 +551,11 @@
 	icon_state = "guardhelm"
 	emote_environment = 3
 	armor = list("melee" = 90, "bullet" = 70, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST) // Regardless, to protect from facestabs, this costs quite the vitae to make
 	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/iron
-	max_integrity = 200 // Still made of iron.
+	max_integrity = 300 // Still made of iron.
 
 // Unused
 /obj/item/clothing/head/roguetown/helmet/heavy/captain

@@ -121,7 +121,7 @@
 			var/armor2choose = pickweight(list("Rusty halfplate" = 2, "Chainmail" = 1))
 			switch(armor2choose)
 				if("Rusty halfplate")
-					armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/rust
+					armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/rust
 				if("Chainmail")
 					armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 

@@ -496,7 +496,8 @@
 	toxpwr = 0
 
 /datum/reagent/toxin/killersice/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(10, 0)
+	if(volume > 0.95)
+		M.adjustToxLoss(10, 0)
 	return ..()
 
 /datum/reagent/toxin/bad_food

@@ -3109,7 +3109,7 @@
 "xMY" = (/obj/item/roguebin,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/indoors/town/bath)
 "xNK" = (/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/town)
 "xOa" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/chair/wood/rogue{dir = 4; icon_state = "chair2"},/turf/open/floor/rogue/herringbone,/area/rogue/indoors/town/church)
-"xOb" = (/obj/structure/table/wood{dir = 1; icon_state = "tablewood1"},/obj/structure/rogue/trophy/deer,/obj/item/rogueweapon/sword/iron/short{pixel_x = 6; pixel_y = 5},/obj/item/clothing/suit/roguetown/armor/plate/half/iron{pixel_y = 15},/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/town)
+"xOb" = (/obj/structure/table/wood{dir = 1; icon_state = "tablewood1"},/obj/structure/rogue/trophy/deer,/obj/item/rogueweapon/sword/iron/short{pixel_x = 6; pixel_y = 5},/obj/item/clothing/suit/roguetown/armor/cuirass/iron{pixel_y = 15},/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/town)
 "xOg" = (/obj/structure/toilet,/turf/open/floor/rogue/tile{icon_state = "chess"},/area/rogue/indoors/town/garrison)
 "xOq" = (/obj/structure/mineral_door/swing_door,/turf/open/floor/rogue/wood,/area/rogue/indoors/town/tavern)
 "xOt" = (/obj/structure/chair/bench/couchablack/r,/turf/open/floor/carpet/inn,/area/rogue/indoors/town/bath)
