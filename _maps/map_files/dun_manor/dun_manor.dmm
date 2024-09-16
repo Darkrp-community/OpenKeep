@@ -2255,7 +2255,7 @@
 "raU" = (/obj/structure/fluff/railing/border{dir = 4},/turf/open/transparent/openspace,/area/rogue/outdoors/rtfield)
 "raW" = (/obj/structure/chair/wood/rogue{dir = 4; icon_state = "chair2"},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/carpet/red,/area/rogue/indoors/town/tavern)
 "rbA" = (/obj/structure/fermenting_barrel,/turf/open/floor/rogue/ruinedwood,/area/rogue/outdoors/river)
-"rbH" = (/obj/structure/bookcase,/obj/item/book/rogue/fishing,/obj/item/book/rogue/festus,/obj/item/book/rogue/cardgame,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/rogue/carpet,/area/rogue/indoors/town/manor)
+"rbH" = (/obj/structure/bookcase,/obj/item/book/rogue/fishing,/obj/item/book/rogue/festus,/obj/item/book/rogue/cardgame,/obj/item/book/rogue/advice_soup,/obj/item/book/rogue/advice_farming,/turf/open/floor/rogue/carpet,/area/rogue/indoors/town/manor)
 "rcd" = (/obj/effect/decal/cobbleedge{dir = 1},/obj/item/roguebin/water,/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/town)
 "rcn" = (/obj/structure/fluff/walldeco/customflag{pixel_y = 32},/obj/structure/fluff/railing/wood{dir = 4; icon_state = "woodrailing"},/turf/open/floor/rogue/wood,/area/rogue/outdoors/town/roofs)
 "rcv" = (/obj/effect/spawner/roguemap/grass_low,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/town)
