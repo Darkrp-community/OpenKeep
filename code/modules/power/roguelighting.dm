@@ -473,6 +473,16 @@
 	pixel_y = 0
 	pixel_x = -32
 
+/obj/machinery/light/rogue/wallfire/candle/weak
+	light_power = 0.9
+	light_range = 6
+/obj/machinery/light/rogue/wallfire/candle/weak/l
+	pixel_x = -32
+	pixel_y = 0
+/obj/machinery/light/rogue/wallfire/candle/weak/r
+	pixel_x = 32
+	pixel_y = 0
+
 /obj/machinery/light/rogue/torchholder
 	name = "sconce"
 	icon_state = "torchwall1"
@@ -1051,3 +1061,6 @@
 /obj/machinery/light/rogue/campfire/pyre/post_unbuckle_mob(mob/living/M)
 	..()
 	M.reset_offsets("bed_buckle")
+
+/obj/machinery/light/rogue/campfire/longlived
+	fueluse = 180 MINUTES

@@ -549,10 +549,6 @@
 	color = "#ffddd7"
 
 
-
-/obj/machinery/light/rogue/campfire/longlived
-	fueluse = 180 MINUTES
-
 /obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
 	name = "candle lamp"
 	icon = 'modular/Mapping/icons/decoration.dmi'
@@ -562,15 +558,6 @@
 	light_power = 0.9
 	light_range = 6
 
-/obj/machinery/light/rogue/wallfire/candle/weak
-	light_power = 0.9
-	light_range = 6
-/obj/machinery/light/rogue/wallfire/candle/weak/l
-	pixel_x = -32
-	pixel_y = 0
-/obj/machinery/light/rogue/wallfire/candle/weak/r
-	pixel_x = 32
-	pixel_y = 0
 
 
 /*	..................   Misc   ................... */
@@ -590,7 +577,6 @@
 	desc = "A literal gnome, turned to stone mid-step and put on a matching stone platform. Rather unsettling."
 	smeltresult = null
 	color = "#617163"
-
 
 /obj/structure/chair/bench/couch/redleft
 	icon_state = "redcouch_alt"
@@ -703,6 +689,19 @@
 	light_power = 2
 	light_range = 4
 	pixel_x = 4
+
+/obj/machinery/light/rogue/campfire/longlived
+	fueluse = 180 MINUTES
+
+/obj/machinery/light/rogue/wallfire/candle/weak
+	light_power = 0.9
+	light_range = 6
+/obj/machinery/light/rogue/wallfire/candle/weak/l
+	pixel_x = -32
+	pixel_y = 0
+/obj/machinery/light/rogue/wallfire/candle/weak/r
+	pixel_x = 32
+	pixel_y = 0
 
 /*	..................   More tables   ................... */
 /obj/structure/table/wood/reinf_long
