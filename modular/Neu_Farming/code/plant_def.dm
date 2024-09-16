@@ -51,7 +51,7 @@
 	icon_state = "wheat"
 	produce_type = /obj/item/natural/chaff/wheat
 	produce_amount_min = 3
-	produce_amount_max = 5
+	produce_amount_max = 6
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
 	maturation_time = FAST_GROWING
 	water_drain_rate = 0
@@ -61,7 +61,7 @@
 	icon_state = "oat"
 	produce_type = /obj/item/natural/chaff/oat
 	produce_amount_min = 3
-	produce_amount_max = 5
+	produce_amount_max = 6
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
 	maturation_time = FAST_GROWING
 	produce_time = QUICK_MATURING
@@ -89,12 +89,16 @@
 	name = "westleach leaf"
 	icon_state = "westleach"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed
+	produce_amount_min = 3
+	produce_amount_max = 5
 	water_drain_rate = 0
 
 /datum/plant_def/sweetleaf
 	name = "swampweed"
 	icon_state = "swampweed"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/rogue/sweetleaf
+	produce_amount_min = 3
+	produce_amount_max = 5
 	water_drain_rate = 0
 
 /datum/plant_def/berry
@@ -119,7 +123,7 @@
 	name = "cabbage patch"
 	icon_state = "cabbage"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/cabbage
-	produce_amount_min = 1
+	produce_amount_min = 2
 	produce_amount_max = 3
 	maturation_nutrition = HUNGRINESS_SMALL
 	produce_nutrition =  HUNGRINESS_SMALL
@@ -130,8 +134,8 @@
 	name = "potato plant"
 	icon_state = "potato"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/potato
-	produce_amount_min = 2
-	produce_amount_max = 4
+	produce_amount_min = 3
+	produce_amount_max = 5
 	maturation_nutrition = HUNGRINESS_SMALL
 	produce_nutrition =  HUNGRINESS_TINY
 	maturation_time = VERY_FAST_GROWING
@@ -141,7 +145,7 @@
 	name = "onion patch"
 	icon_state = "onion"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/onion
-	produce_amount_min = 2
+	produce_amount_min = 3
 	produce_amount_max = 4
 	produce_nutrition =  HUNGRINESS_TINY
 	produce_nutrition =  HUNGRINESS_SMALL
@@ -150,7 +154,7 @@
 	name = "sunflowers"
 	icon_state = "sunflower"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/sunflower
-	produce_amount_min = 2
+	produce_amount_min = 3
 	produce_amount_max = 4
 	maturation_nutrition = HUNGRINESS_SMALL
 	produce_nutrition =  HUNGRINESS_TINY
@@ -162,6 +166,8 @@
 	name = "turnip patch"
 	icon_state = "turnip"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/turnip
+	produce_amount_min = 3
+	produce_amount_max = 5
 	maturation_nutrition = HUNGRINESS_SMALL
 	produce_nutrition =  HUNGRINESS_TINY
 	maturation_time = FAST_GROWING
