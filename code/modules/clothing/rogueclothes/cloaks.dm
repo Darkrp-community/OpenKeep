@@ -809,6 +809,7 @@
 	sleeved = null
 	sleevetype = null
 	body_parts_covered = null
+	flags_inv = null
 
 /obj/item/clothing/cloak/stole/red
 	icon_state = "stole_red"
