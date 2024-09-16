@@ -307,7 +307,14 @@
 	base_state = "fireplace"
 	icon = 'icons/roguetown/misc/fireplace64.dmi'
 
-
+/obj/machinery/light/rogue/hearth/big_fireplace
+	name = "fireplace"
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+	fueluse = 9999999999
+	pixel_x = -16
+	climb_offset = 4
 
 
 /*	..................   Wizard Shenanigans   ................... */
@@ -542,22 +549,9 @@
 	color = "#ffddd7"
 
 
-/*	..................   Lights   ................... */
+
 /obj/machinery/light/rogue/campfire/longlived
 	fueluse = 180 MINUTES
-
-/obj/item/candle/yellow/lit/infinite
-	light_power = 1
-	light_range = 4
-	start_lit = TRUE
-	infinite = TRUE
-	icon_state = "candle1_lit"
-	anchored = TRUE
-
-/obj/item/candle/yellow/lit/infinite/strong
-	light_power = 2
-	light_range = 4
-	pixel_x = 4
 
 /obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
 	name = "candle lamp"
@@ -577,57 +571,6 @@
 /obj/machinery/light/rogue/wallfire/candle/weak/r
 	pixel_x = 32
 	pixel_y = 0
-
-
-
-/*	..................   More chairs   ................... */
-/obj/structure/chair/wood/rogue/chair_noble
-	name = "fine chair"
-	icon_state = "chair_green"
-	icon = 'icons/roguetown/misc/structure.dmi'
-	item_chair = /obj/item/chair/rogue/chair_nobles
-	blade_dulling = DULLING_BASHCHOP
-	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
-	attacked_sound = "woodimpact"
-/obj/item/chair/rogue/chair_nobles
-	icon_state = "chair_green"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble
-
-/obj/structure/chair/wood/rogue/chair_noble/purple
-	icon_state = "chair_purple"
-	item_chair = /obj/item/chair/rogue/chair_nobles/purple
-/obj/item/chair/rogue/chair_nobles/purple
-	icon_state = "chair_purple"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble/purple
-
-/obj/structure/chair/wood/rogue/chair_noble/red
-	icon_state = "chair_red"
-	item_chair = /obj/item/chair/rogue/chair_nobles/red
-/obj/item/chair/rogue/chair_nobles/red
-	icon_state = "chair_purple"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble/red
-
-/*	..................   More tables   ................... */
-/obj/structure/table/wood/reinf_long
-    icon_state = "tablewood_reinf"
-
-/obj/structure/table/wood/plain_alt
-    icon_state = "tablewood_plain"
-
-/obj/structure/table/wood/large_new
-    icon_state = "alt_largetable_mid"
-/obj/structure/table/wood/large/corner_new
-    icon_state = "alt_largetable"
-
-/obj/structure/table/wood/reinforced_alter
-    icon_state = "tablewood_alt"
-
-/obj/structure/table/wood/nice/decorated
-	icon_state = "tablefine_alt"
-
-/obj/structure/table/wood/nice/decorated_alt
-	icon_state = "tablefine_alt2"
-
 
 
 /*	..................   Misc   ................... */
@@ -720,6 +663,69 @@
 	aportalgoesto = "inhumenin"
 
 /* moved to main. leave this be for now, I want to be able to find the additions I make easily for tweaking
+/*	..................   More chairs   ................... */
+/obj/structure/chair/wood/rogue/chair_noble
+	name = "fine chair"
+	icon_state = "chair_green"
+	icon = 'icons/roguetown/misc/structure.dmi'
+	item_chair = /obj/item/chair/rogue/chair_nobles
+	blade_dulling = DULLING_BASHCHOP
+	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
+	attacked_sound = "woodimpact"
+/obj/item/chair/rogue/chair_nobles
+	icon_state = "chair_green"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble
+
+/obj/structure/chair/wood/rogue/chair_noble/purple
+	icon_state = "chair_purple"
+	item_chair = /obj/item/chair/rogue/chair_nobles/purple
+/obj/item/chair/rogue/chair_nobles/purple
+	icon_state = "chair_purple"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble/purple
+
+/obj/structure/chair/wood/rogue/chair_noble/red
+	icon_state = "chair_red"
+	item_chair = /obj/item/chair/rogue/chair_nobles/red
+/obj/item/chair/rogue/chair_nobles/red
+	icon_state = "chair_purple"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble/red
+
+/*	..................   Lights   ................... */
+/obj/item/candle/yellow/lit/infinite
+	light_power = 1
+	light_range = 4
+	start_lit = TRUE
+	infinite = TRUE
+	icon_state = "candle1_lit"
+	anchored = TRUE
+
+/obj/item/candle/yellow/lit/infinite/strong
+	light_power = 2
+	light_range = 4
+	pixel_x = 4
+
+/*	..................   More tables   ................... */
+/obj/structure/table/wood/reinf_long
+    icon_state = "tablewood_reinf"
+
+/obj/structure/table/wood/plain_alt
+    icon_state = "tablewood_plain"
+
+/obj/structure/table/wood/large_new
+    icon_state = "alt_largetable_mid"
+/obj/structure/table/wood/large/corner_new
+    icon_state = "alt_largetable"
+
+/obj/structure/table/wood/reinforced_alter
+    icon_state = "tablewood_alt"
+
+/obj/structure/table/wood/nice/decorated
+	icon_state = "tablefine_alt"
+
+/obj/structure/table/wood/nice/decorated_alt
+	icon_state = "tablefine_alt2"
+
+
 /area/rogue/indoors/bandit_lair
 	name = "lair (Bandits)"
 
