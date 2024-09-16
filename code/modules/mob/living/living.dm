@@ -1127,7 +1127,7 @@
 		var/wrestling_cooldown_reduction = 0
 		if(pulledby?.mind?.get_skill_level("wrestling"))
 			wrestling_cooldown_reduction = 0.2 SECONDS * pulledby.mind.get_skill_level("wrestling")
-		TIMER_COOLDOWN_START(src, "broke_free", max(0, 1.6 SECONDS - wrestling_cooldown_reduction))
+		TIMER_COOLDOWN_START(src, "broke_free", max(0, 0.8 SECONDS - wrestling_cooldown_reduction))
 
 		return FALSE
 	else
