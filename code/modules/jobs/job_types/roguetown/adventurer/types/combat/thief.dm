@@ -1,6 +1,6 @@
-/datum/advclass/combat/rogue
-	name = "Rogue"
-	tutorial = "Where is the gold?"
+/datum/advclass/combat/thief
+	name = "Thief"
+	tutorial = "If there’s one thing the city’s taught you, you can put a price on anything. Secrets, reputations… a life. And trust? If you have to ask, you can't afford it. But then you suppose none of that matters when you're you. After all... when did you ever pay for anything?"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -11,11 +11,11 @@
 		"Dark Elf",
 		"Aasimar"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/rogue
+	outfit = /datum/outfit/job/roguetown/adventurer/thief
 	min_pq = 0
 	category_tags = list(CTAG_ADVENTURER)
 
-/datum/outfit/job/roguetown/adventurer/rogue/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/adventurer/thief/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
@@ -32,7 +32,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, pick(0,1,1), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
@@ -49,7 +49,6 @@
 	beltl = /obj/item/quiver/bolts
 	backpack_contents = list(/obj/item/lockpick = 1)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)		//Rogues are known for commonly lacking standard morals, as well as seeing fucked-shit, so - this tracks.
 	H.change_stat("strength", -1)
 	H.change_stat("perception", 2)
 	H.change_stat("speed", 2)
