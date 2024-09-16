@@ -22,9 +22,9 @@
 		playsound(location,'sound/items/dig_shovel.ogg', 100, TRUE)
 		location.ChangeTurf(/turf/open/floor/rogue/dirt, flags = CHANGETURF_INHERIT_AIR)
 		if(user.buckled)
-			apply_farming_fatigue(user, 1)
+			apply_farming_fatigue(user, 4)
 		else
-			apply_farming_fatigue(user, 10)
+			apply_farming_fatigue(user, 8)
 		return
 	if(istype(location, /turf/open/floor/rogue/dirt))
 		playsound(location,'sound/items/dig_shovel.ogg', 100, TRUE)
@@ -34,8 +34,8 @@
 		else
 			new /obj/structure/soil(location)
 			if(user.buckled)
-				apply_farming_fatigue(user, 1)
+				apply_farming_fatigue(user, 4)
 			else
-				apply_farming_fatigue(user, 10)
+				apply_farming_fatigue(user, 8)
 
 		return
