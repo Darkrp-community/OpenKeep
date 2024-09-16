@@ -80,6 +80,8 @@
 	if(zombie.dna?.species)
 		soundpack_m = zombie.dna.species.soundpack_m
 		soundpack_f = zombie.dna.species.soundpack_f
+		var/mutable_appearance/rotflies = mutable_appearance('icons/roguetown/mob/rotten.dmi', "deadite")
+		zombie.add_overlay(rotflies)
 	base_intents = zombie.base_intents
 	STASTR = zombie.STASTR
 	STASPD = zombie.STASPD
@@ -111,8 +113,8 @@
 			REMOVE_TRAIT(zombie, trait, "[type]")
 		zombie.remove_client_colour(/datum/client_colour/monochrome)
 		if(has_turned && become_rotman)
-			zombie.STACON = max(zombie.STACON - 3, 1) //ur rotting bro
-			zombie.STASPD = max(zombie.STASPD - 4, 1)
+			zombie.STACON = max(zombie.STACON - 5, 1) //ur rotting bro
+			zombie.STASPD = max(zombie.STASPD - 5, 1)
 			zombie.STAINT = max(zombie.STAINT - 3, 1)
 			for(var/trait in traits_rotman)
 				ADD_TRAIT(zombie, trait, "[type]")
@@ -298,4 +300,5 @@
 	emote("scream") // heres your warning to others bro
 	Knockdown(1)
 	zombie_antag.wake_zombie(TRUE)
+
 	return TRUE
