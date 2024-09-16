@@ -498,7 +498,7 @@
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 		if(3) //Warhammer Caveman
-			r_hand = /obj/item/rogueweapon/mace/warhammer
+			r_hand = /obj/item/rogueweapon/mace/goden/steel/warhammer
 			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/orc

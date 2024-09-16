@@ -445,6 +445,10 @@
 	armor_class = ARMOR_CLASS_LIGHT
 	color = "#584742"
 
+/obj/item/clothing/suit/roguetown/armor/leather/vest/random/Initialize()
+	color = pick(CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN)
+	..()
+
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher
 	name = "leather vest"
 	icon_state = "leathervest"
