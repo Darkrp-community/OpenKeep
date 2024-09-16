@@ -37,6 +37,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE) // Used for leaving notes after your evil work.
 		var/datum/antagonist/new_antag = new /datum/antagonist/assassin() // Adds the assassin antag label.
+		H.ambushable = FALSE
 		H.mind.add_antag_datum(new_antag)
 
 	H.become_blind("TRAIT_GENERIC")
