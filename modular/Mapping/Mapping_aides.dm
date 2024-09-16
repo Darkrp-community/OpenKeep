@@ -299,9 +299,6 @@
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
 
-/turf/open/floor/rogue/tile/kitchen
-	icon_state = "tavern"
-
 /obj/machinery/light/rogue/wallfire/big_fireplace
 	icon_state = "fireplace1"
 	base_state = "fireplace"
@@ -531,9 +528,6 @@
 	icon_state = "vinez"
 	pixel_y = 32
 
-/obj/structure/rack/rogue/shelf/notdense
-	density = FALSE
-	pixel_y = 24
 
 /*	..................   Red brick Walls   ................... */
 /turf/closed/wall/mineral/rogue/stonebrick/reddish
@@ -559,7 +553,6 @@
 	light_range = 6
 
 
-
 /*	..................   Misc   ................... */
 /obj/structure/bars/alt
 	icon_state = "bars_alt"
@@ -578,10 +571,6 @@
 	smeltresult = null
 	color = "#617163"
 
-/obj/structure/chair/bench/couch/redleft
-	icon_state = "redcouch_alt"
-/obj/structure/chair/bench/couch/redright
-	icon_state = "redcouch2_alt"
 
 
 /*	..................   The Drunken Saiga   ................... */
@@ -676,6 +665,12 @@
 	icon_state = "chair_purple"
 	origin_type = /obj/structure/chair/wood/rogue/chair_noble/red
 
+/obj/structure/chair/bench/couch/redleft
+	icon_state = "redcouch_alt"
+/obj/structure/chair/bench/couch/redright
+	icon_state = "redcouch2_alt"
+
+
 /*	..................   Lights   ................... */
 /obj/item/candle/yellow/lit/infinite
 	light_power = 1
@@ -757,6 +752,9 @@
 	color = "#d9c9b0"
 /turf/open/floor/rogue/ruinedwood/turned/darker
 	color = "#d9c9b0"
+
+/turf/open/floor/rogue/tile/kitchen
+	icon_state = "tavern"
 
 
 /obj/structure/roguetent/preopen

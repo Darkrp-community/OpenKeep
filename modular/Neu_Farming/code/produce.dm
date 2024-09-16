@@ -219,7 +219,7 @@
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
 
-/obj/item/reagent_containers/food/snacks/produce/rogue/sweetleafdry
+/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried
 	seed = null
 	name = "swampweed"
 	desc = ""
@@ -229,6 +229,7 @@
 	list_reagents = list(/datum/reagent/drug/space_drugs = 2,/datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/drug/space_drugs = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
+
 
 
 /*	..................   Pipe weed   ................... */
@@ -246,7 +247,7 @@
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
 
-/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweeddry
+/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed_dried
 	seed = null
 	name = "westleach leaf"
 	desc = "A dried leaf."
