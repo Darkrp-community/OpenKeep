@@ -1297,7 +1297,7 @@
 	if(ishuman(target)) // If the target is human and not in combat mode, stun them the same way a feint would.
 		var/mob/living/carbon/human/T = target
 		if(!T.cmode)
-			T.changeNext_move(4)
-			T.Immobilize(5)
+			T.changeNext_move(8)
+			T.Immobilize(10)
 	user.dropItemToGround(src)
 	target.equip_to_slot_if_possible(src, SLOT_HEAD)
