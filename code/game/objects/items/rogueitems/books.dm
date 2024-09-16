@@ -626,16 +626,3 @@ ____________End of Example*/
 	icon_state ="basic_book_0"
 	base_icon_state = "basic_book"
 	bookfile = "manners.json"
-
-/obj/item/book/rogue/soupadvice
-	name = "Soup de Rattus"
-	desc = "Weathered book containing advice on surviving a famine."
-	bookfile = "SoupAdvice.json"
-	random_cover = TRUE
-
-/obj/item/book/rogue/farmingadvice
-	name = "The Secrets of the Agronome"
-	desc = "Soilson bible."
-	bookfile = "FarmingAdvice.json"
-	random_cover = TRUE
-
