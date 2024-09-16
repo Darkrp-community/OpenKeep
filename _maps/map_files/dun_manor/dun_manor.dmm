@@ -1214,7 +1214,7 @@
 "jjr" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/roguemachine/scomm,/turf/open/floor/rogue/cobble,/area/rogue/indoors/town/garrison)
 "jjX" = (/obj/structure/chair/bench,/turf/open/floor/rogue/grass,/area/rogue/outdoors/town)
 "jkn" = (/obj/structure/fluff/railing/fence{dir = 4; icon_state = "fence"},/obj/item/roguebin/water,/turf/open/floor/rogue/grass,/area/rogue/outdoors/rtfield)
-"jkU" = (/obj/structure/closet/crate/roguecloset/inn{locked = 1; lockid = "doctor"},/obj/item/roguekey/doctor{pixel_y = 9},/obj/machinery/light/rogue/wallfire/candle/l,/obj/item/storage/backpack/rogue/satchel/surgbag,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/town)
+"jkU" = (/obj/structure/closet/crate/roguecloset/inn,/obj/item/roguekey/doctor{pixel_y = 9},/obj/machinery/light/rogue/wallfire/candle/l,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/town)
 "jkZ" = (/obj/structure/bed/rogue/inn/wool,/obj/item/bedsheet/rogue/cloth,/obj/effect/landmark/start/mercenary{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/carpet/red,/area/rogue/indoors/town/tavern)
 "jla" = (/obj/structure/mineral_door/wood,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/town/church/chapel)
 "jmw" = (/obj/structure/fluff/statue/gargoyle,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/town/manor)
