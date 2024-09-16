@@ -3107,7 +3107,7 @@
 "xJs" = (/obj/structure/mineral_door/wood/donjon{dir = 8; icon_state = "donjondir"; locked = 1; lockid = "nightmaiden"},/turf/open/floor/rogue/herringbone,/area/rogue/indoors/town/bath)
 "xJG" = (/obj/structure/mineral_door/wood{icon_state = "wcv"; locked = 1; lockid = "tower"},/turf/open/floor/rogue/cobble,/area/rogue/indoors/town/magician)
 "xJI" = (/turf/open/water/bath,/area/rogue/under/town/basement)
-"xKf" = (/obj/structure/closet/crate/chest/wicker,/obj/item/clothing/mask/cigarette/pipe/westman,/obj/item/neuFarm/seed/pipeweed,/obj/item/neuFarm/seed/pipeweed,/obj/item/seeds/apple,/obj/item/seeds/wheat/oat,/obj/item/neuFarm/seed/sunflower,/turf/open/floor/rogue/ruinedwood{icon_state = "horzw"},/area/rogue/indoors/soilsons)
+"xKf" = (/obj/structure/closet/crate/chest/wicker,/obj/item/clothing/mask/cigarette/pipe/westman,/obj/item/neuFarm/seed/pipeweed,/obj/item/neuFarm/seed/pipeweed,/obj/item/neuFarm/seed/apple,/obj/item/seeds/wheat/oat,/obj/item/neuFarm/seed/sunflower,/turf/open/floor/rogue/ruinedwood{icon_state = "horzw"},/area/rogue/indoors/soilsons)
 "xKj" = (/obj/structure/roguewindow,/turf/open/floor/rogue/ruinedwood{icon_state = "horzw"},/area/rogue/indoors/town/tavern)
 "xLe" = (/obj/structure/roguewindow,/turf/open/floor/rogue/cobble,/area/rogue/indoors/town/dwarfin)
 "xLi" = (/obj/machinery/light/rogue/campfire/densefire,/turf/open/floor/rogue/dirt/ambush,/area/rogue/under/cave)
