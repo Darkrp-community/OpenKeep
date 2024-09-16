@@ -201,7 +201,7 @@
 		return
 	var/mob/living/carbon/human/zombie = user
 	if(world.time > next_idle_sound)
-		zombie.emote("idle")
+		zombie.emote("zmoan")
 		next_idle_sound = world.time + rand(5 SECONDS, 10 SECONDS)
 
 //Infected wake param is just a transition from living to zombie, via zombie_infect()
