@@ -282,6 +282,7 @@
 	desc = "A wonderful vegetable with many layers and broad flavor profile."
 	seed = /obj/item/neuFarm/seed/onion
 	icon_state = "onion"
+	slices_num = 1
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/onion_sliced
 	tastes = list("onion" = 1)
 	filling_color = "#fdfaca"

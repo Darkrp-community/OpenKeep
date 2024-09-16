@@ -355,7 +355,7 @@
 	description = "Fitting for a peasant."
 	reagent_state = LIQUID
 	color = "#c38553"
-	nutriment_factor = 15
+	nutriment_factor = 12
 	metabolization_rate = 0.5 // half as fast as normal, last twice as long
 	taste_description = "oatmeal"
 	taste_mult = 3
@@ -380,6 +380,10 @@
 /datum/reagent/consumable/soup/veggie/cabbage
 	color = "#859e56"
 	taste_description = "watery cabbage"
+
+/datum/reagent/consumable/soup/veggie/turnip
+	color = "#becf9d"
+	taste_description = "boilled turnip"
 
 /datum/reagent/consumable/soup/egg
 	color = "#dedbaf"
