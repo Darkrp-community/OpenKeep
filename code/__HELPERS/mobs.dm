@@ -156,10 +156,10 @@ GLOBAL_LIST_INIT(haircolor, sortList(list(
 	return GLOB.haircolor[pick(GLOB.haircolor)]
 
 GLOBAL_LIST_INIT(oldhc, sortList(list(
-	"pale - golden" = "c8c391",
-	"pale - dust" = "99907a",
+	"pale - golden" = "f0eab6",
+	"pale - dust" = "ded0af",
 	"gray - decay" = "6a6a6a",
-	"gray - silvered" = "#9aa1a0",
+	"gray - silvered" = "687371",
 	"gray - elderly" = "9e9e9e",
 	"gray - ashen" = "404040",
 	"white - ancient" = "c9c9c9",
