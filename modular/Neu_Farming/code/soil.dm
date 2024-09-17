@@ -1,5 +1,5 @@
 #define MAX_PLANT_HEALTH 100
-#define MAX_PLANT_WATER 300
+#define MAX_PLANT_WATER 200
 #define MAX_PLANT_NUTRITION 300
 #define MAX_PLANT_WEEDS 100
 #define SOIL_DECAY_TIME 10 MINUTES
@@ -120,11 +120,11 @@
 			to_chat(user, span_warning("The soil is already wet!"))
 			return TRUE
 		var/obj/item/reagent_containers/container = attacking_item
-		if(container.reagents.has_reagent(/datum/reagent/water, 15))
-			container.reagents.remove_reagent(/datum/reagent/water, 15)
+		if(container.reagents.has_reagent(/datum/reagent/water, 10))
+			container.reagents.remove_reagent(/datum/reagent/water, 10)
 			water_amount = 150
-		else if(container.reagents.has_reagent(/datum/reagent/water/gross, 30))
-			container.reagents.remove_reagent(/datum/reagent/water/gross, 30)
+		else if(container.reagents.has_reagent(/datum/reagent/water/gross, 20))
+			container.reagents.remove_reagent(/datum/reagent/water/gross, 20)
 			water_amount = 150
 		else
 			to_chat(user, span_warning("There's no water in \the [container]!"))
