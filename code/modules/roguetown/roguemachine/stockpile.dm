@@ -21,6 +21,10 @@
 	return ..()
 
 /obj/structure/roguemachine/stockpile/attackby(obj/item/P, mob/user, params)
+	if(user.mind.assigned_role == "Mercenary")
+		playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
+		user.visible_message("<span class='notice'>These cursed local contraptions confound me.")
+		return
 	if(istype(P, /obj/item/roguecoin))
 		budget += P.get_real_price()
 		qdel(P)
@@ -65,6 +69,10 @@
 /obj/structure/roguemachine/stockpile/attack_hand(mob/living/user)
 	. = ..()
 	if(.)
+		return
+	if(user.mind.assigned_role == "Mercenary")
+		playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
+		user.visible_message("<span class='notice'>These cursed local contraptions confound me.")
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, 'sound/misc/keyboard_enter.ogg', 100, FALSE, -1)
