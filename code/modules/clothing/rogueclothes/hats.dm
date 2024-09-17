@@ -541,9 +541,9 @@
 	smeltresult = /obj/item/ingot/copper
 
 //............... Battle Nun ........................... (unique kit for the role, iron coif mechanically. The slim base model)
-/obj/item/clothing/head/roguetown/helmet/veil_over_coif
+/obj/item/clothing/head/roguetown/helmet/battlenun
 	name = "veil over coif"
-	desc = "A gleaming coif of metal can be seen under this veil."
+	desc = "A gleaming coif of metal half-hidden by a black veil."
 	icon_state = "battlenun"
 	item_state = "battlenun"
 	dynamic_hair_suffix = "+concealed"
