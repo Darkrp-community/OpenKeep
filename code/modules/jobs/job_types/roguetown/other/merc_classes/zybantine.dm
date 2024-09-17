@@ -22,7 +22,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/shalal
 	head = /obj/item/clothing/head/roguetown/helmet/sallet/zybantine
 	gloves = /obj/item/clothing/gloves/roguetown/angle
-	belt = /obj/item/storage/belt/rogue/leather/shalal
+	belt = /obj/item/storage/belt/rogue/leather/mercenary/shalal
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates
 	beltr = /obj/item/rogueweapon/sword/long/rider
 	beltl= /obj/item/flashlight/flare/torch/lantern
@@ -30,7 +30,7 @@
 	pants = /obj/item/clothing/under/roguetown/tights/red
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/clothing/head/roguetown/roguehood/shalal)
+	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/clothing/head/roguetown/roguehood/shalal)
 	if(!H.has_language(/datum/language/zybantine))
 		H.grant_language(/datum/language/zybantine)
 		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")

@@ -16,11 +16,11 @@
     armor = /obj/item/clothing/suit/roguetown/armor/plate/half
     shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
     shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-    belt = /obj/item/storage/belt/rogue/leather
+    belt = /obj/item/storage/belt/rogue/leather/mercenary
     neck = /obj/item/clothing/neck/roguetown/chaincoif
     beltr = /obj/item/rogueweapon/huntingknife
     backl = /obj/item/storage/backpack/rogue/backpack
-    backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)
+    backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor=1)
     if(H.mind)
         H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
         H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
