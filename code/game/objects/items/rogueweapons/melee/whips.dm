@@ -7,7 +7,7 @@
 	icon = 'icons/roguetown/weapons/32.dmi'
 	sharpness = IS_BLUNT
 	//dropshrink = 0.75
-	wlength = WLENGTH_NORMAL
+	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_HIP | ITEM_SLOT_BELT
 	associated_skill = /datum/skill/combat/whipsflails
@@ -45,14 +45,15 @@
 /datum/intent/whip/lash
 	name = "lash"
 	blade_class = BCLASS_BLUNT
-	attack_verb = list("lashes", "cracks")
+	attack_verb = list("lashes", "whips")
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
-	chargetime = 0
+	chargetime = 1
 	recovery = 5
 	penfactor = 10
 	reach = 2
+	misscost = 7
 	icon_state = "inlash"
-	canparry = FALSE
+	canparry = FALSE //Has reach and can't be parried, but needs to be charged and punishes misses.
 
 /datum/intent/whip/crack
 	name = "crack"
@@ -60,8 +61,14 @@
 	attack_verb = list("cracks", "strikes") //something something dwarf fotresss
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
 	chargetime = 5
-	canparry = FALSE
 	recovery = 5
 	penfactor = 20
-	reach = 2
+	reach = 1
 	icon_state = "incrack"
+	canparry = TRUE
+
+/obj/item/rogueweapon/whip/spiderwhip
+	force = 20
+	name = "lashkiss whip"
+	desc = "A dark whip with segmented, ashen spines for a base. Claimed to be hewn from dendrified prisoners of terror."
+	minstr = 6
