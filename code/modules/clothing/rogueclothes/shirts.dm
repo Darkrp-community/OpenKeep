@@ -132,8 +132,8 @@
 	body_parts_covered = CHEST|VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/shadowshirt
-	name = "shirt"
-	desc = ""
+	name = "silk shirt"
+	desc = "A sleeveless shirt woven of glossy material."
 	icon_state = "shadowshirt"
 	item_state = "shadowshirt"
 	r_sleeve_status = SLEEVE_TORN
