@@ -325,7 +325,7 @@
 	desc = "Proof of veterancy among the dread Dog-Men sharpshooters. Pilfered, and returned into circulation on the wearer's inevitable passing. Funeral rites are foreign to these scavenger hounds."
 	icon_state = "dogmedal"
 
-/obj/item/clothing/neck/roguetown/mercmedal/strangler
-	name = "dried spider charm"
-	desc = "The husk of a desiccated insect, passed down within the ranks of those whose names have been struck from dark elven history. The old tyranny's uprooting would be their last act of true valor."
+/obj/item/clothing/neck/roguetown/mercmedal/anthrax
+	name = "petrified larvae charm"
+	desc = "The husk of a desiccated beespider larva, passed down within the ranks of those whose names have been struck from dark elven history. The old tyranny's uprooting would be their last act of true valor."
 	icon_state = "spider"
