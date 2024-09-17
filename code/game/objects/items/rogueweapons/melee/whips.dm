@@ -47,7 +47,7 @@
 	blade_class = BCLASS_BLUNT
 	attack_verb = list("lashes", "whips")
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
-	chargetime = 1
+	chargetime = 5
 	recovery = 5
 	penfactor = 10
 	reach = 2
@@ -60,7 +60,7 @@
 	blade_class = BCLASS_LASHING
 	attack_verb = list("cracks", "strikes") //something something dwarf fotresss
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
-	chargetime = 5
+	chargetime = 0
 	recovery = 5
 	penfactor = 20
 	reach = 1
