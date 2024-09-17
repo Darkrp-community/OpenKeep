@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/anthrax
 	name = "Anthrax"
-	tutorial = "With the brutal dismantlement of drow society, the Anthraxi talents were no longer needed. Yet where one door closes, another opens - the decadent mortals of the overworld clamber over each other to bid for your blade. Show them your craft."
+	tutorial = "With the brutal dismantlement of drow society, the talents of the redeemed Anthraxi were no longer needed. Yet where one door closes, another opens - the decadent mortals of the overworld clamber over each other to bid for your blade. Show them your craft."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list("Dark Elf")
 	outfit = /datum/outfit/job/roguetown/mercenary/anthrax
