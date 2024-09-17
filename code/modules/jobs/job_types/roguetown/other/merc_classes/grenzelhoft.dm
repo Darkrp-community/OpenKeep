@@ -51,6 +51,8 @@
 		H.grant_language(/datum/language/oldpsydonic)
 		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 
+	H.merctype = 2
+
 	H.change_stat("strength", 2) // They need this to roll at least min STR for the Zwei.
 	H.change_stat("endurance", 1)
 	H.change_stat("constitution", 2)

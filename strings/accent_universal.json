@@ -41,6 +41,9 @@
 		"saturday": "satursdae",
 		"sunday": "sunsdae",
 		"monday": "moonsdae",
+		"tuesday": "tiwsdae",
+		"wednesday ": "weddingsdae",
+		"thursday ": "thulesdae",
 		"jesus": "divine",
 		"christ": "gods",
 		"colour": "color",
@@ -58,6 +61,7 @@
 		"gmyza": "OINK OINK",
 		"copetti": "OINK OINK",
 		"day": "dae",
+		"today": "todae",
 		"night": "nite",
 		"goodnight": "goodnite",
 		"years": "yils",
@@ -81,6 +85,8 @@
 		"adonai": "psydon",
 		"praise psydon": "Mourn the Weeper",
 		"cuck": "wittol",
+		"poop": "nitesoil",
+		"goat": "gote",
 		"shylock": "Miester"
 		}
 	

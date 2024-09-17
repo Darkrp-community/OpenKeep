@@ -502,6 +502,27 @@
 	buildstack = /obj/item/stack/tile/carpet/royalblue
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_royalblue.dmi'
 
+/*	..................   More tables   ................... */
+/obj/structure/table/wood/reinf_long
+    icon_state = "tablewood_reinf"
+
+/obj/structure/table/wood/plain_alt
+    icon_state = "tablewood_plain"
+
+/obj/structure/table/wood/large_new
+    icon_state = "alt_largetable_mid"
+/obj/structure/table/wood/large/corner_new
+    icon_state = "alt_largetable"
+
+/obj/structure/table/wood/reinforced_alter
+    icon_state = "tablewood_alt"
+
+/obj/structure/table/wood/nice/decorated
+	icon_state = "tablefine_alt"
+
+/obj/structure/table/wood/nice/decorated_alt
+	icon_state = "tablefine_alt2"
+
 /*
  * Reinforced tables
  */

@@ -55,7 +55,7 @@
 	if(user && user.mind)
 		prob2explode = 0
 		for(var/i in 1 to user.mind.get_skill_level(/datum/skill/magic/holy))
-			prob2explode += 40
+			prob2explode += 80
 	for(var/mob/living/L in targets)
 		var/isvampire = FALSE
 		var/iszombie = FALSE
