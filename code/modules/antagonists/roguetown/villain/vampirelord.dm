@@ -130,6 +130,12 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	GLOB.chosen_names -= H.real_name
 	owner.adjust_skillrank(/datum/skill/magic/blood, 2, TRUE)
 	owner.current.ambushable = FALSE
+	H.swap_rmb_intent(num=1)
+	owner.current.possible_rmb_intents = list(/datum/rmb_intent/feint,\
+	/datum/rmb_intent/aimed,\
+	/datum/rmb_intent/strong,\
+	/datum/rmb_intent/riposte,\
+	/datum/rmb_intent/weak)
 
 /mob/living/carbon/human/proc/spawn_pick_class()
 	var/list/classoptions = list("Bard", "Fisher", "Hunter", "Miner", "Peasant", "Woodcutter", "Carpenter", "Rogue", "Warrior")
@@ -163,6 +169,13 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel/black
 	H.ambushable = FALSE
+
+	H.swap_rmb_intent(num=1)
+	H.possible_rmb_intents = list(/datum/rmb_intent/feint,\
+	/datum/rmb_intent/aimed,\
+	/datum/rmb_intent/strong,\
+	/datum/rmb_intent/riposte,\
+	/datum/rmb_intent/weak)
 
 ////////Outfits////////
 /obj/item/clothing/under/roguetown/platelegs/vampire

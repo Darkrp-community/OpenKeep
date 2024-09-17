@@ -15,16 +15,6 @@
 	cost = 2
 	contains = /obj/item/seeds/apple
 
-/datum/supply_pack/rogue/seeds/weed
-	name = "Pipe Weed"
-	cost = 8
-	contains = /obj/item/seeds/pipeweed
-
-/datum/supply_pack/rogue/seeds/sleaf
-	name = "Swamp Weed"
-	cost = 15
-	contains = /obj/item/seeds/swampweed
-
 /datum/supply_pack/rogue/seeds/berry
 	name = "Berry"
 	cost = 2
@@ -44,3 +34,23 @@
 	name = "Potato"
 	cost = 2
 	contains = /obj/item/seeds/potato
+
+/datum/supply_pack/rogue/seeds/weed
+	name = "Pipe Weed"
+	cost = 8
+	contains = /obj/item/seeds/pipeweed
+
+/datum/supply_pack/rogue/seeds/sleaf
+	name = "Swamp Weed"
+	cost = 15
+	contains = /obj/item/seeds/swampweed
+
+/datum/supply_pack/rogue/seeds/berrypoison
+	name = "Poison Berry"
+	cost = 10
+	contains = /obj/item/seeds/berryrogue/poison
+
+/datum/supply_pack/rogue/seeds/fireflower
+	name = "Fyritius"
+	cost = 30
+	contains = /obj/item/seeds/fyritius

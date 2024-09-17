@@ -22,7 +22,7 @@
 
 	outfit = /datum/outfit/job/roguetown/merchant
 	bypass_lastclass = FALSE
-	give_bank_account = 22
+	give_bank_account = 100
 	selection_color = "#192bc2"
 
 	cmode_music = 'sound/music/combat_merchant.ogg'
@@ -32,22 +32,20 @@
 
 	neck = /obj/item/clothing/neck/roguetown/horus
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich)
+	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/veryrich = 1, /obj/item/merctoken = 1)
 	beltr = /obj/item/rogueweapon/sword/rapier
-	belt = /obj/item/storage/belt/rogue/leather/rope
+	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/keyring/merchant
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/merchant
 	head = /obj/item/clothing/head/roguetown/chaperon
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor
-	pants = /obj/item/clothing/under/roguetown/tights/sailor
 	id = /obj/item/clothing/ring/gold/guild_mercator
 
 	if(H.gender == MALE)
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor
+		pants = /obj/item/clothing/under/roguetown/tights/sailor
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-		if(H.dna?.species)
-			if(H.dna.species.id == "human")
-				H.dna.species.soundpack_m = new /datum/voicepack/male/wizard()
 	else
+		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/blue
 		shoes = /obj/item/clothing/shoes/roguetown/gladiator
 
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
@@ -55,7 +53,7 @@
 
 	H.change_stat("intelligence", 2)
 	H.change_stat("perception", 1)
-	H.change_stat("strength", -2)
+	H.change_stat("strength", -1)
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
@@ -66,4 +64,3 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/mathematics, 4, TRUE) // Literally unused skill
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
-

@@ -90,3 +90,6 @@
 
 /datum/mob_descriptor/voice/venomous
 	name = "Venomous"
+
+/datum/mob_descriptor/voice/stuttering
+	name = "Stuttering"

@@ -224,6 +224,23 @@
 	desc = "<span class='nicegreen'>Divine knowledge flows through me.</span>\n"
 	icon_state = "intelligence"
 
+/datum/status_effect/buff/barbrage
+	id = "barbrage"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/barbrage
+	effectedstats = list("strength" = 1, "endurance" = 2, "perception" = -2, "intelligence" = -2) //endurance to boost pain treshold, not powerful enough to warrant total painkilling
+	duration = 15 SECONDS
+
+/atom/movable/screen/alert/status_effect/buff/barbrage
+	name = "Barbaric Rage"
+	desc = "<span class='nicegreen'>WITNESS ME!</span>\n"
+	icon_state = "ravox"
+
+/datum/status_effect/buff/barbrage/on_remove()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.apply_status_effect(/datum/status_effect/debuff/barbfalter)
+    
 // BARDIC BUFFS BELOW
 
 /datum/status_effect/bardicbuff
