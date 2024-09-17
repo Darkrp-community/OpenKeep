@@ -28,15 +28,8 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	shoes = /obj/item/clothing/shoes/roguetown/gladiator
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	var/armortype = pickweight(list("Chainkini" = 5, "Leather" = 2, "Hide" = 1))
-	var/weapontype = pickweight(list("Sword" = 7, "Spear" = 3))
-	switch(armortype)
-		if("Chainkini")
-			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
-		if("Leather")
-			armor = /obj/item/clothing/suit/roguetown/armor/leather
-		if("Hide")
-			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
+	var/weapontype = pickweight(list("Sword" = 3, "Spear" = 7))
 	switch(weapontype)
 		if("Sword")
 			beltr = /obj/item/rogueweapon/sword/iron
