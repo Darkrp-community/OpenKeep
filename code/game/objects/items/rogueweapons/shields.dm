@@ -118,6 +118,11 @@
 	max_integrity = 300
 	smeltresult = /obj/item/ingot/iron // Made with an iron ingot, let us recover it
 
+/obj/item/rogueweapon/shield/tower/spidershield
+	name = "spider shield"
+	desc = "A bulky shield of spike-like lengths molten together. The motifs evoke anything but safety and protection."
+	coverage = 55
+
 /obj/item/rogueweapon/shield/tower/getonmobprop(tag)
 	. = ..()
 	if(tag)
