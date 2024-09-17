@@ -157,38 +157,38 @@
 				//select the result
 				//potions
 				if(healthpot_weight >= 2)
-					reagents.add_reagent(/datum/reagent/medicine/healthpot, 30)
+					reagents.add_reagent(/datum/reagent/medicine/healthpot, brew_amount)
 					potion_result = "metallic"
 				if(manapot_weight >= 2)
-					reagents.add_reagent(/datum/reagent/medicine/manapot, 30)
+					reagents.add_reagent(/datum/reagent/medicine/manapot, brew_amount)
 					potion_result = "sweet"
 				if(antidote_weight >= 2)
-					reagents.add_reagent(/datum/reagent/medicine/antidote, 30)
+					reagents.add_reagent(/datum/reagent/medicine/antidote, brew_amount)
 					potion_result = "sickly sweet"
 				if(diseasecure_weight >= 2)
-					reagents.add_reagent(/datum/reagent/medicine/diseasecure, 30)
+					reagents.add_reagent(/datum/reagent/medicine/diseasecure, brew_amount)
 					potion_result = "dirt"
 				//buff potions
 				if(strength_weight >= 3)
-					reagents.add_reagent(/datum/reagent/buff/strength, 15)
+					reagents.add_reagent(/datum/reagent/buff/strength, brew_amount/2)
 					potion_result = "stew"
 				if(perception_weight >= 3)
-					reagents.add_reagent(/datum/reagent/buff/perception, 15)
+					reagents.add_reagent(/datum/reagent/buff/perception, brew_amount/2)
 					potion_result = "burnt"
 				if(intelligence_weight >= 3)
-					reagents.add_reagent(/datum/reagent/buff/intelligence, 15)
+					reagents.add_reagent(/datum/reagent/buff/intelligence, brew_amount/2)
 					potion_result = "energy"
 				if(constitution_weight >= 3)
-					reagents.add_reagent(/datum/reagent/buff/constitution, 15)
+					reagents.add_reagent(/datum/reagent/buff/constitution, brew_amount/2)
 					potion_result = "sour"
 				if(endurance_weight >= 3)
-					reagents.add_reagent(/datum/reagent/buff/endurance, 15)
+					reagents.add_reagent(/datum/reagent/buff/endurance, brew_amount/2)
 					potion_result = "vinegar"
 				if(speed_weight >= 3)
-					reagents.add_reagent(/datum/reagent/buff/speed, 15)
+					reagents.add_reagent(/datum/reagent/buff/speed, brew_amount/2)
 					potion_result = "acidic"
 				if(fortune_weight >= 3)
-					reagents.add_reagent(/datum/reagent/buff/fortune, 15)
+					reagents.add_reagent(/datum/reagent/buff/fortune, brew_amount/2)
 					potion_result = "fortuitous"
 				//poisons
 				if(poison_weight >= 2)
