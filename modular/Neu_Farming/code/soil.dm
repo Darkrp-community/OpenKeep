@@ -1,8 +1,8 @@
 #define MAX_PLANT_HEALTH 100
-#define MAX_PLANT_WATER 200
+#define MAX_PLANT_WATER 150
 #define MAX_PLANT_NUTRITION 300
 #define MAX_PLANT_WEEDS 100
-#define SOIL_DECAY_TIME 10 MINUTES
+#define SOIL_DECAY_TIME 20 MINUTES
 #define FARMING_XPGAIN 10
 
 /obj/structure/soil
@@ -106,7 +106,7 @@
 	if(istype(attacking_item, /obj/item/rogueweapon/hoe))
 		to_chat(user, span_notice("I begin to till the soil..."))
 		playsound(src,'sound/items/dig_shovel.ogg', 100, TRUE)
-		if(do_after(user, get_farming_do_time(user, 4 SECONDS), target = src))
+		if(do_after(user, get_farming_do_time(user, 3 SECONDS), target = src))
 			to_chat(user, span_notice("I till the soil."))
 			playsound(src,'sound/items/dig_shovel.ogg', 100, TRUE)
 			user_till_soil(user)
@@ -120,11 +120,11 @@
 			to_chat(user, span_warning("The soil is already wet!"))
 			return TRUE
 		var/obj/item/reagent_containers/container = attacking_item
-		if(container.reagents.has_reagent(/datum/reagent/water, 10))
-			container.reagents.remove_reagent(/datum/reagent/water, 10)
+		if(container.reagents.has_reagent(/datum/reagent/water, 15))
+			container.reagents.remove_reagent(/datum/reagent/water, 15)
 			water_amount = 150
-		else if(container.reagents.has_reagent(/datum/reagent/water/gross, 20))
-			container.reagents.remove_reagent(/datum/reagent/water/gross, 20)
+		else if(container.reagents.has_reagent(/datum/reagent/water/gross, 30))
+			container.reagents.remove_reagent(/datum/reagent/water/gross, 30)
 			water_amount = 150
 		else
 			to_chat(user, span_warning("There's no water in \the [container]!"))
