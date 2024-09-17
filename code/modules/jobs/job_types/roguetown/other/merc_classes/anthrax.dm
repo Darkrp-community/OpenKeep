@@ -39,7 +39,6 @@
 			backr = /obj/item/rogueweapon/shield/tower/spidershield
 			beltr = /obj/item/rogueweapon/whip/spiderwhip
 
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
@@ -68,6 +67,7 @@
 			beltl = /obj/item/rogueweapon/sword/iron/short
 
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
