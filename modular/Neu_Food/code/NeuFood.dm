@@ -383,7 +383,7 @@
 
 /datum/reagent/consumable/soup/veggie/turnip
 	color = "#becf9d"
-	taste_description = "boilled turnip"
+	taste_description = "boiled turnip"
 
 /datum/reagent/consumable/soup/egg
 	color = "#dedbaf"
