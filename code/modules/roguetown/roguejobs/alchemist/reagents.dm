@@ -56,8 +56,12 @@
 	metabolization_rate = 0.1
 
 /datum/reagent/berrypoison/on_mob_life(mob/living/carbon/M)
-	M.add_nausea(9)
-	M.adjustToxLoss(3, 0)
+	if(isdwarf(M))
+		M.add_nausea(5)
+		M.adjustToxLoss(1, 0)
+	else
+		M.add_nausea(9)
+		M.adjustToxLoss(3, 0)
 	return ..()
 
 /datum/reagent/toxin/fyritiusnectar
