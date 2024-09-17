@@ -156,10 +156,14 @@ GLOBAL_LIST_INIT(haircolor, sortList(list(
 	return GLOB.haircolor[pick(GLOB.haircolor)]
 
 GLOBAL_LIST_INIT(oldhc, sortList(list(
-	"decay" = "6a6a6a",
-	"elderly" = "9e9e9e",
-	"ancient" = "c9c9c9",
-	"mythic" = "f4f4f4"
+	"pale - golden" = "c8c391",
+	"pale - dust" = "99907a",
+	"gray - decay" = "6a6a6a",
+	"gray - silvered" = "#9aa1a0",
+	"gray - elderly" = "9e9e9e",
+	"gray - ashen" = "404040",
+	"white - ancient" = "c9c9c9",
+	"white - mythic" = "f4f4f4"
 	)))
 
 /proc/skintone2hex(skin_tone)
