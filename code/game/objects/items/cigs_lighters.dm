@@ -552,7 +552,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 
 /obj/item/clothing/mask/cigarette/pipe/attackby(obj/item/O, mob/user, params)
-	if(istype(O, /obj/item/reagent_containers/food/snacks/grown))
+	if(istype(O, /obj/item/reagent_containers/food/snacks/produce))
 		var/obj/item/reagent_containers/food/snacks/grown/G = O
 		if(!packeditem)
 			if(G.dry == 1)

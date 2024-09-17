@@ -206,7 +206,7 @@
 	poisonous = TRUE
 
 /*	..................   Swamp weed   ................... */
-/obj/item/reagent_containers/food/snacks/produce/rogue/sweetleaf
+/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed
 	seed = /obj/item/neuFarm/seed/swampleaf
 	name = "swampweed"
 	desc = "A 'foggy' pipe weed."

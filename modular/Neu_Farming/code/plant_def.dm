@@ -96,7 +96,7 @@
 /datum/plant_def/sweetleaf
 	name = "swampweed"
 	icon_state = "swampweed"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/rogue/sweetleaf
+	produce_type = /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed
 	produce_amount_min = 3
 	produce_amount_max = 5
 	water_drain_rate = 0

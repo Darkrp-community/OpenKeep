@@ -320,7 +320,7 @@
 
 /obj/structure/flora/roguegrass/swampweed/Initialize()
 	if(prob(88))
-		bushtype3 = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/rogue/sweetleaf = 1))
+		bushtype3 = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed = 1))
 	loot_replenish3()
 	pixel_x += rand(-3,3)
 	return ..()
@@ -329,7 +329,7 @@
 	if(bushtype3)
 		looty3 += bushtype3
 	if(prob(66))
-		looty3 += /obj/item/reagent_containers/food/snacks/produce/rogue/sweetleaf
+		looty3 += /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed
 
 // bush crossing
 /obj/structure/flora/roguegrass/bush/Crossed(atom/movable/AM)

@@ -52,7 +52,7 @@
 /datum/crafting_recipe/roguetown/dryleaf
 	name = "dry swampweed"
 	result = /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried
-	reqs = list(/obj/item/reagent_containers/food/snacks/produce/rogue/sweetleaf = 1)
+	reqs = list(/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed = 1)
 	structurecraft = /obj/structure/fluff/dryingrack
 	time = 2 SECONDS
 	verbage = "dry"
