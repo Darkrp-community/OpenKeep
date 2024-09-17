@@ -131,6 +131,15 @@
 	l_sleeve_status = SLEEVE_TORN
 	body_parts_covered = CHEST|VITALS
 
+/obj/item/clothing/suit/roguetown/shirt/shadowshirt
+	name = "shirt"
+	desc = ""
+	icon_state = "shadowshirt"
+	item_state = "shadowshirt"
+	r_sleeve_status = SLEEVE_TORN
+	l_sleeve_status = SLEEVE_TORN
+	body_parts_covered = CHEST|VITALS
+	allowed_race = list("elf", "dark elf")
 
 /obj/item/clothing/suit/roguetown/shirt/rags
 	slot_flags = ITEM_SLOT_ARMOR
