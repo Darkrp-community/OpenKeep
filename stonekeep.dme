@@ -2257,7 +2257,7 @@
 #include "code\modules\jobs\job_types\roguetown\other\merc_classes\boltslinger.dm"
 #include "code\modules\jobs\job_types\roguetown\other\merc_classes\grenzelhoft.dm"
 #include "code\modules\jobs\job_types\roguetown\other\merc_classes\steppesman.dm"
-#include "code\modules\jobs\job_types\roguetown\other\merc_classes\strangler.dm"
+#include "code\modules\jobs\job_types\roguetown\other\merc_classes\anthrax.dm"
 #include "code\modules\jobs\job_types\roguetown\other\merc_classes\underdweller.dm"
 #include "code\modules\jobs\job_types\roguetown\other\merc_classes\zybantine.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\bathmaid.dm"
