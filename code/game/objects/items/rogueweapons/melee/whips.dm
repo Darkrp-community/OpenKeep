@@ -71,4 +71,5 @@
 	force = 20
 	name = "lashkiss whip"
 	desc = "A dark whip with segmented, ashen spines for a base. Claimed to be hewn from dendrified prisoners of terror."
+	icon_state = "spiderwhip"
 	minstr = 6
