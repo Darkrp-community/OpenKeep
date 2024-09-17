@@ -169,6 +169,13 @@
 	icon_state = "rusthalf"
 	item_state = "rusthalf"
 
+/obj/item/clothing/suit/roguetown/armor/plate/half/iron/shadowplate
+	name = "scourge breastplate"
+	desc = "More form over function, this armor is fit for demonstration of might rather than open combat. The aged gilding slowly tarnishes away."
+	icon_state = "shadowplate"
+	item_state = "shadowplate"
+	body_parts_covered = CHEST|GROIN
+	allowed_race = list("elf", "dark elf")
 
 // Bladesinger armor, unique
 /obj/item/clothing/suit/roguetown/armor/plate/half/elven
@@ -377,6 +384,12 @@
 	allowed_race = list("human", "tiefling", "aasimar")
 	sellprice = 40
 
+/obj/item/clothing/suit/roguetown/armor/gambeson/shadowrobe
+	name = "stalker robe"
+	desc = "A robe-like gambeson of moth-eaten cloth and cheap purple dye. No self-respecting elf would be seen wearing this."
+	allowed_race = list("elf", "dark elf")
+	icon_state = "shadowrobe"
+
 /obj/item/clothing/suit/roguetown/armor/leather
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "leather armor"
@@ -440,10 +453,6 @@
 	sleeved = null
 	armor_class = ARMOR_CLASS_LIGHT
 	color = "#584742"
-
-/obj/item/clothing/suit/roguetown/armor/leather/vest/random/Initialize()
-	color = pick(CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN)
-	..()
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher
 	name = "leather vest"
