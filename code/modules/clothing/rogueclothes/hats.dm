@@ -191,6 +191,21 @@
 					H.update_inv_head()
 		user.update_fov_angles()
 
+/obj/item/clothing/head/roguetown/roguehood/shalal
+	name = "keffiyeh"
+	desc = "An eastern scarf usually worn around the head and neck."
+	color = null
+	icon_state = "shalal"
+	item_state = "shalal"
+	icon = 'icons/roguetown/clothing/head.dmi'
+	body_parts_covered = NECK
+	slot_flags = ITEM_SLOT_HEAD
+	dynamic_hair_suffix = ""
+	edelay_type = 1
+	adjustable = CAN_CADJUST
+	toggle_icon_state = TRUE
+	max_integrity = 100
+
 /obj/item/clothing/head/roguetown/roguehood/astrata
 	name = "sun hood"
 	desc = "Worn by the faithful of Astrata."
@@ -361,21 +376,6 @@
 	desc = "A replacement for the Crown of Rockhill, every bit as valid as proof of sovereignity as the original."
 	icon_state = "serpcrowno"
 	sellprice = 100
-
-/obj/item/clothing/head/roguetown/roguehood/shalal
-	name = "keffiyeh"
-	desc = "An eastern scarf usually worn around the head and neck."
-	color = null
-	icon_state = "shalal"
-	item_state = "shalal"
-	icon = 'icons/roguetown/clothing/head.dmi'
-	body_parts_covered = NECK
-	slot_flags = ITEM_SLOT_HEAD
-	dynamic_hair_suffix = ""
-	edelay_type = 1
-	adjustable = CAN_CADJUST
-	toggle_icon_state = TRUE
-	max_integrity = 100
 
 /obj/item/clothing/head/roguetown/crown/sparrowcrown
 	name = "champion's circlet"
@@ -693,7 +693,6 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 //	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // Stab immunity as a treat for low FOV
-	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 60
 
@@ -706,7 +705,6 @@
 	armor = list("melee" = 90, "bullet" = 70, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 //	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/iron
 	max_integrity = 200 // Still made of iron.
 
@@ -728,7 +726,6 @@
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 //	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/iron
 	max_integrity = 200 // shitty rusted iron
 
@@ -741,7 +738,6 @@
 	emote_environment = 3
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
@@ -752,7 +748,6 @@
 	emote_environment = 3
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
@@ -763,7 +758,6 @@
 	emote_environment = 3
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
@@ -774,8 +768,17 @@
 	emote_environment = 3
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/heavy/sinistar
+	name = "sinistar helmet"
+	desc = "Glorious star, smeared in guts and greeted with a chorus of howls."
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	icon_state = "sinistar"
+	item_state = "sinistar"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 
 
 
