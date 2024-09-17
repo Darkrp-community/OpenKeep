@@ -1,6 +1,3 @@
-/obj/item
-	var/dust_result//  check if it can be used by the mortar/pestle.
-
 /obj/item/pestle
 	name = "pestle"
 	desc = ""
@@ -10,8 +7,8 @@
 	dropshrink = 0.5
 
 /obj/item/mortar
-	name = "mortar"
-	desc = ""
+	name = "alchemical mortar"
+	desc = "An industrial mortar used to grind alchemical ingredients."
 	icon = 'icons/roguetown/misc/alchemy.dmi'
 	icon_state = "mortar"
 	dropshrink = 0.5
@@ -58,19 +55,3 @@
 		to_grind = I
 		return
 	..()
-
-/datum/crafting_recipe/roguetown/mortar
-	name = "mortar"
-	result = /obj/item/mortar
-	reqs = list(/obj/item/natural/stone = 3)
-	verbage = "crafts"
-	time = 20
-	skillcraft = /datum/skill/craft/masonry
-
-/datum/crafting_recipe/roguetown/pestle
-	name = "pestle"
-	result = /obj/item/pestle
-	reqs = list(/obj/item/natural/stone = 2)
-	verbage = "crafts"
-	time = 20
-	skillcraft = /datum/skill/craft/masonry
