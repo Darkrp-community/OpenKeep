@@ -683,10 +683,6 @@
 /obj/item/clothing/cloak/raincloak/blue
 	color = CLOTHING_BLUE
 
-/obj/item/clothing/cloak/raincloak/random/Initialize()
-	color = pick(CLOTHING_RED, CLOTHING_PURPLE, CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_BLUE)
-	..()
-
 /obj/item/clothing/head/hooded/rainhood
 	name = "hood"
 	desc = "A hood that's attached to the raincoat."
@@ -809,7 +805,6 @@
 	sleeved = null
 	sleevetype = null
 	body_parts_covered = null
-	flags_inv = null
 
 /obj/item/clothing/cloak/stole/red
 	icon_state = "stole_red"
@@ -876,6 +871,13 @@
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = list("human", "tiefling", "elf", "aasimar")
 
+/obj/item/clothing/cloak/half/shadowcloak
+	name = "stalker cloak"
+	desc = "A heavy leather cloak held together by a gilded pin. The pin depicts a spider with disconnected legs."
+	icon_state = "shadowcloak"
+	color = null
+	allowed_race = list("elf", "dark elf")
+
 /obj/item/clothing/cloak/half/brown
 	color = CLOTHING_BROWN
 
@@ -900,10 +902,6 @@
 /obj/item/clothing/cloak/half/vet/Destroy()
 	GLOB.lordcolor -= src
 	return ..()
-
-/obj/item/clothing/cloak/half/random/Initialize()
-	color = pick(CLOTHING_RED, CLOTHING_PURPLE, CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_BLUE)
-	..()
 
 // Dumping old black knight stuff here
 /obj/item/clothing/cloak/cape/blkknight
