@@ -137,7 +137,7 @@
 						if(6)
 							new /obj/item/clothing/neck/roguetown/mercmedal/boltslinger(src.loc)
 						if(7)
-							new /obj/item/clothing/neck/roguetown/mercmedal/strangler(src.loc)
+							new /obj/item/clothing/neck/roguetown/mercmedal/anthrax(src.loc)
 				if(C.signed == 0)
 					to_chat(H, "<span class='warning'>I cannot send an unsigned token.</span>")
 					return
