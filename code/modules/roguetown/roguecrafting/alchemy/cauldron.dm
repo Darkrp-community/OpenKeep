@@ -251,14 +251,3 @@
 			return
 		to_chat(user, "<span class='info'>It's empty.</span>")
 		return ..()
-
-/datum/crafting_recipe/roguetown/cauldron
-	name = "cauldron"
-	result = /obj/machinery/light/rogue/cauldron
-	reqs = list(/obj/item/ingot/iron = 2,
-				/obj/item/natural/stone = 4,
-				/obj/item/grown/log/tree/small = 1)
-	verbage = "crafts"
-	time = 50
-	craftsound = 'sound/foley/Building-01.ogg'
-	skillcraft = /datum/skill/craft/masonry
