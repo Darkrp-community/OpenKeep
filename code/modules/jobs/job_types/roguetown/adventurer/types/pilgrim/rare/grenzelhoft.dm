@@ -18,7 +18,7 @@
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/grenzelhoft
 	gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
-	wrists = /obj/item/clothing/neck/roguetown/psicross/g
+	wrists = /obj/item/clothing/neck/roguetown/psycross/g
 	head = /obj/item/clothing/head/roguetown/grenzelhofthat
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver

@@ -821,7 +821,9 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 /obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire
 	name = "ancient chain shirt"
 	desc = "An ancient iron chainmail."
-	body_parts_covered = CHEST|GROIN|VITALS
+	icon_state = "vunder"
+	item_state = "vunder"
+	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/suit/roguetown/armor/plate/vampire

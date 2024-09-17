@@ -42,7 +42,7 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	head = /obj/item/clothing/head/roguetown/helmet/leather/inquisitor
 	gloves = /obj/item/clothing/gloves/roguetown/angle
-	wrists = /obj/item/clothing/neck/roguetown/psicross/silver
+	wrists = /obj/item/clothing/neck/roguetown/psycross/silver
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/rogueweapon/sword/long/forgotten
 	beltl = /obj/item/flashlight/flare/torch/lantern

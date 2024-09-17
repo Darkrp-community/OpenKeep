@@ -35,7 +35,7 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltr = /obj/item/rogueweapon/sword/decorated
 	beltl = /obj/item/clothing/head/roguetown/helmet/heavy/crusader
-	neck = /obj/item/clothing/neck/roguetown/psicross/astrata
+	neck = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich=1)
 
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
@@ -63,7 +63,7 @@
 				armor = /obj/item/clothing/cloak/stabard/crusader/t
 				cloak = /obj/item/clothing/cloak/raincloak/furcloak
 				beltl = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
-				neck = /obj/item/clothing/neck/roguetown/psicross
+				neck = /obj/item/clothing/neck/roguetown/psycross
 				beltr = /obj/item/rogueweapon/sword/sabre
 				belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 

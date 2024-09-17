@@ -157,7 +157,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shirt = /obj/item/clothing/suit/roguetown/shirt/vampire
 	belt = /obj/item/storage/belt/rogue/leather/plaquegold
@@ -571,7 +571,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 						new /obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire (src.loc)
 						new /obj/item/clothing/suit/roguetown/armor/plate/vampire (src.loc)
 						new /obj/item/clothing/shoes/roguetown/boots/armor/vampire (src.loc)
-						new /obj/item/clothing/head/roguetown/helmet/heavy/guard (src.loc)
+						new /obj/item/clothing/head/roguetown/helmet/heavy/savoyard (src.loc)
 						one_time_armor = FALSE
 			else
 				to_chat(user, "I already summoned my ancestral armor.")
@@ -1211,7 +1211,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		if(L.cmode)
 			willroll += 10
 		var/found_psycross = FALSE
-		for(var/obj/item/clothing/neck/roguetown/psicross/silver in L.contents)
+		for(var/obj/item/clothing/neck/roguetown/psycross/silver in L.contents)
 			found_psycross = TRUE
 			break
 

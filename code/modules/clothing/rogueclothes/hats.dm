@@ -545,10 +545,10 @@
 	sellprice = 100
 
 // VL's are already OP and the helm is made of iron, let's not give them too good of a helm
-/obj/item/clothing/head/roguetown/helmet/heavy/guard
+/obj/item/clothing/head/roguetown/helmet/heavy/savoyard
 	name = "savoyard"
 	desc = "A terrifying yet crude iron helmet shaped like a humen skull. Commands the inspiring terror of inhumen tyrants from yils past."
-	icon_state = "guardhelm"
+	icon_state = "savoyard"
 	emote_environment = 3
 	armor = list("melee" = 90, "bullet" = 70, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST) // Regardless, to protect from facestabs, this costs quite the vitae to make
@@ -599,6 +599,10 @@
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 60
+
+/obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
+	icon_state = "topfhelm_gold"
+	item_state = "topfhelm_gold"
 
 /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
 	name = "astrata helmet"

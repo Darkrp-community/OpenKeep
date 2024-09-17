@@ -262,7 +262,13 @@
 		return
 	if(zFall(A, ++levels))
 		return FALSE
-	A.visible_message("<span class='danger'>[A] crashes into [src]!</span>")
+	var/mob/living/O = A
+	var/dex_save = O.mind?.get_skill_level(/datum/skill/misc/climbing)
+	if(dex_save >= 5)
+		if(O.m_intent != MOVE_INTENT_SNEAK) // If we're sneaking, don't show a message to anybody, shhh!
+			O.visible_message("<span class='danger'>[A] gracefully lands on top of [src]!</span>")
+	else
+		A.visible_message("<span class='danger'>[A] crashes into [src]!</span>")
 	if(A.fall_damage())
 		for(var/mob/living/M in contents)
 			visible_message("<span class='danger'>\The [src] falls on \the [M.name]!</span>")

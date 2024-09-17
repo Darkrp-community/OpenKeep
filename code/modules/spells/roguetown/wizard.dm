@@ -52,7 +52,7 @@
 			// Experience gain!
 			var/boon = sender.mind?.get_learning_boon(/datum/skill/magic/arcane)
 			var/amt2raise = sender.STAINT*2
-			sender.mind.adjust_experience(/datum/skill/magic/arcane, floor(amt2raise * boon), FALSE)
+			sender.mind?.adjust_experience(/datum/skill/magic/arcane, floor(amt2raise * boon), FALSE)
 	qdel(src)
 
 /obj/effect/proc_holder/spell/invoked/projectile/bloodlightning
@@ -104,7 +104,7 @@
 			// Experience gain!
 			var/boon = sender.mind?.get_learning_boon(/datum/skill/magic/blood)
 			var/amt2raise = sender.STAINT*2
-			sender.mind.adjust_experience(/datum/skill/magic/blood, floor(amt2raise * boon), FALSE)
+			sender.mind?.adjust_experience(/datum/skill/magic/blood, floor(amt2raise * boon), FALSE)
 	qdel(src)
 
 /obj/effect/proc_holder/spell/invoked/projectile/bloodsteal
@@ -154,12 +154,12 @@
 			var/mob/living/carbon/human/H = target
 			var/datum/antagonist/vampirelord/VDrinker = sender.mind.has_antag_datum(/datum/antagonist/vampirelord)
 			H.blood_volume = max(H.blood_volume-45, 0)
-			if(H.vitae_bank >= 500) // You'll only get vitae IF they have vitae.
-				H.vitae_bank -= 500
+			if(H.vitae_pool >= 500) // You'll only get vitae IF they have vitae.
+				H.vitae_pool -= 500
 				VDrinker.handle_vitae(500)
 			var/boon = sender.mind?.get_learning_boon(/datum/skill/magic/blood)
 			var/amt2raise = sender.STAINT*2
-			sender.mind.adjust_experience(/datum/skill/magic/blood, floor(amt2raise * boon), FALSE)
+			sender.mind?.adjust_experience(/datum/skill/magic/blood, floor(amt2raise * boon), FALSE)
 			H.handle_blood()
 			H.visible_message("<span class='danger'>[target] has their blood ripped from their body!!</span>", \
 					"<span class='userdanger'>My blood erupts from my body!", "<span class='hear'>...</span>", COMBAT_MESSAGE_RANGE, target)
@@ -211,7 +211,7 @@
 			// Experience gain!
 			var/boon = sender.mind?.get_learning_boon(/datum/skill/magic/arcane)
 			var/amt2raise = sender.STAINT*2
-			sender.mind.adjust_experience(/datum/skill/magic/arcane, floor(amt2raise * boon), FALSE)
+			sender.mind?.adjust_experience(/datum/skill/magic/arcane, floor(amt2raise * boon), FALSE)
 
 
 
@@ -271,5 +271,5 @@
 			// Experience gain!
 			var/boon = sender.mind?.get_learning_boon(/datum/skill/magic/arcane)
 			var/amt2raise = sender.STAINT
-			sender.mind.adjust_experience(/datum/skill/magic/arcane, floor(amt2raise * boon), FALSE)
+			sender.mind?.adjust_experience(/datum/skill/magic/arcane, floor(amt2raise * boon), FALSE)
 

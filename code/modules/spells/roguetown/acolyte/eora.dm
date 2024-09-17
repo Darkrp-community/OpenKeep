@@ -7,7 +7,7 @@
 	range = 7
 	overlay_state = "love"
 	sound = list('sound/magic/magnet.ogg')
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross/eora)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/eora)
 	releasedrain = 40
 	chargetime = 60
 	warnie = "spellwarning"
@@ -35,7 +35,7 @@
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	chargedloop = null
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross/eora)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/eora)
 	sound = 'sound/magic/whiteflame.ogg'
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE

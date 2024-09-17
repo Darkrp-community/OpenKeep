@@ -137,7 +137,9 @@
 	max_integrity = 250
 	smeltresult = null // No bronze ingots yet
 
-/obj/item/clothing/neck/roguetown/psicross
+// PSYCROSSES
+
+/obj/item/clothing/neck/roguetown/psycross
 	name = "psycross"
 	desc = "Let His name be naught but forgot'n."
 	icon_state = "psicrossw"
@@ -146,49 +148,9 @@
 	sellprice = 10
 	experimental_onhip = TRUE
 
-/obj/item/clothing/neck/roguetown/psicross/astrata
-	name = "amulet of Astrata"
-	desc = "Blessed be everything the light of the sun touches, for it is protected by Her grace."
-	icon_state = "astrata"
-	resistance_flags = FIRE_PROOF
+// SILVER PSICROSS START
 
-/obj/item/clothing/neck/roguetown/psicross/noc
-	name = "amulet of Noc"
-	desc = "Diligence, study, pursuit of truth and wisdom. Let nothing deterr you from it."
-	icon_state = "noc"
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/neck/roguetown/psicross/dendor
-	name = "amulet of Dendor"
-	desc = "Nature is a body of which we are but its entrails."
-	icon_state = "dendor"
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/neck/roguetown/psicross/necra
-	name = "amulet of Necra"
-	desc = "Where, grave, thy victory? I triumph still while the Veiled Lady abides by me."
-	icon_state = "necra"
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/neck/roguetown/psicross/ravox
-	name = "amulet of Ravox"
-	desc = "Struggle. Challenge. And rise to struggle again. That is the sword of he who yet lives to fight again."
-	icon_state = "ravox"
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/neck/roguetown/psicross/eora
-	name = "amulet of Eora"
-	desc = "And I love thee because thou art love."
-	icon_state = "eora"
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/neck/roguetown/psicross/pestra
-	name = "amulet of Pestra"
-	desc = "A Pestran amulet depicting her fabled walking staff, encrusted in this trinket is a venomous serpent. Believed to ward off disease and lessen poisons to devoted worshippers of the wise hag."
-	icon_state = "pestra"
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/neck/roguetown/psicross/silver
+/obj/item/clothing/neck/roguetown/psycross/silver
 	name = "silver psycross"
 	desc = "Let His name be naught but forgot'n. Let the wicked undead burn at my touch."
 	icon_state = "psicrosssteel"
@@ -196,7 +158,7 @@
 	sellprice = 50
 	smeltresult = /obj/item/ingot/silver
 
-/obj/item/clothing/neck/roguetown/psicross/silver/pickup(mob/user)
+/obj/item/clothing/neck/roguetown/psycross/silver/pickup(mob/user)
 	. = ..()
 	var/mob/living/carbon/human/H = user
 	var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
@@ -213,7 +175,7 @@
 				H.Knockdown(10)
 				H.Paralyze(10)
 
-/obj/item/clothing/neck/roguetown/psicross/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
+/obj/item/clothing/neck/roguetown/psycross/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	. = ..()
 	var/mob/living/carbon/human/H = M
 	var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
@@ -230,7 +192,52 @@
 				H.Knockdown(10)
 				H.Paralyze(10)
 
-/obj/item/clothing/neck/roguetown/psicross/g
+// PANTHEON SILVER PSYCROSSES START
+
+/obj/item/clothing/neck/roguetown/psycross/silver/astrata 
+	name = "amulet of Astrata"
+	desc = "Blessed be everything the light of the sun touches, for it is protected by Her grace."
+	icon_state = "astrata"
+	resistance_flags = FIRE_PROOF
+
+// Only non-refactored psicross because Noc likes vamps. Neeeerd!
+/obj/item/clothing/neck/roguetown/psycross/noc
+	name = "amulet of Noc"
+	desc = "Diligence, study, pursuit of truth and wisdom. Let nothing deterr you from it."
+	icon_state = "noc"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/silver/dendor
+	name = "amulet of Dendor"
+	desc = "Nature is a body of which we are but its entrails."
+	icon_state = "dendor"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/silver/necra
+	name = "amulet of Necra"
+	desc = "Where, grave, thy victory? I triumph still while the Veiled Lady abides by me."
+	icon_state = "necra"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/silver/ravox
+	name = "amulet of Ravox"
+	desc = "Struggle. Challenge. And rise to struggle again. That is the sword of he who yet lives to fight again."
+	icon_state = "ravox"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/silver/eora
+	name = "amulet of Eora"
+	desc = "And I love thee because thou art love."
+	icon_state = "eora"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/silver/pestra
+	name = "amulet of Pestra"
+	desc = "A Pestran amulet depicting her fabled walking staff, encrusted in this trinket is a venomous serpent. Believed to ward off disease and lessen poisons to devoted worshippers of the wise hag."
+	icon_state = "pestra"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/g
 	name = "golden psycross"
 	desc = "Let His name be naught but forgot'n."
 	icon_state = "psicrossc"
