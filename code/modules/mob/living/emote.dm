@@ -1242,9 +1242,9 @@
 /datum/emote/living/zombiemoan/can_run_emote(mob/living/user, status_check = TRUE , intentional)
 	. = ..()
 	if(user.gender == MALE)
-		playsound(user.loc, pick('sound/vo/mobs/zombie/idle (1).ogg','sound/vo/mobs/zombie/idle (2).ogg','sound/vo/mobs/zombie/idle (3).ogg'), 90, FALSE, -1)
+		playsound(user.loc, pick('sound/vo/mobs/zombie/idle (1).ogg','sound/vo/mobs/zombie/idle (2).ogg','sound/vo/mobs/zombie/idle (3).ogg'), 80, FALSE, -1)
 	else
-		playsound(user.loc, pick('sound/vo/mobs/zombie/f/idle (1).ogg','sound/vo/mobs/zombie/f/idle (2).ogg','sound/vo/mobs/zombie/f/idle (3).ogg'), 90, FALSE, -1)
+		playsound(user.loc, pick('sound/vo/mobs/zombie/f/idle (1).ogg','sound/vo/mobs/zombie/f/idle (2).ogg','sound/vo/mobs/zombie/f/idle (3).ogg'), 80, FALSE, -1)
 
 
 // ............... Y ..................
