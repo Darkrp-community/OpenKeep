@@ -9,7 +9,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/grenzelhoft
 	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 1
-	pickprob = 30
+	pickprob = 100
 	min_pq = 0
 
 	cmode_music = 'sound/music/combat_grenzelhoft.ogg'
@@ -46,6 +46,13 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		var/prev_real_name = H.real_name
+		var/prev_name = H.name
+		var/honorary = "Count"
+		if(H.gender == FEMALE)
+			honorary = "Countess"
+		H.real_name = "[honorary] [prev_real_name]"
+		H.name = "[honorary] [prev_name]"
 		if(!H.has_language(/datum/language/oldpsydonic))
 			H.grant_language(/datum/language/oldpsydonic)
 			to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
