@@ -266,7 +266,6 @@
 /obj/item/storage/backpack/rogue/satchel/surgbag
 	name = "surgery bag"
 	desc = "Contains all the phreakish devices one needs to cut a person up."
-	slot_flags = null
 	item_state = "doctorbag"
 	icon_state = "doctorbag"
 	attack_verb = list("beats", "bludgeons")
