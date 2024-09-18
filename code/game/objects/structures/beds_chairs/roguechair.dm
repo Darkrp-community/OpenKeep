@@ -100,6 +100,12 @@
 	add_overlay(M)
 	GLOB.lordcolor -= src
 
+// dirtier sofa
+/obj/structure/chair/bench/couch/redleft
+	icon_state = "redcouch_alt"
+/obj/structure/chair/bench/couch/redright
+	icon_state = "redcouch2_alt"
+
 /obj/structure/chair/wood/rogue
 	icon_state = "chair2"
 	icon = 'icons/roguetown/misc/structure.dmi'
