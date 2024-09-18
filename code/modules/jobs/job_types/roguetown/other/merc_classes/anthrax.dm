@@ -44,7 +44,7 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
 
 			H.change_stat("strength", 2) //Grenz merc statline but with maluses.
-			H.change_stat("constitution", 2)
+			H.change_stat("constitution", 1)
 			H.change_stat("endurance", 1)
 			H.change_stat("intelligence", -1) //Brutebrain, relies on archer for healing, lockpicking and crafting.
 			H.change_stat("speed", -1)
