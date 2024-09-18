@@ -741,6 +741,10 @@
 	density = TRUE
 	climbable = FALSE
 
+/obj/structure/rack/rogue/shelf/notdense // makes the wall mounted one less weird in a way, got downside of offset when loaded again tho
+	density = FALSE
+	pixel_y = 24
+
 // Necessary to avoid a critical bug with disappearing weapons.
 /obj/structure/rack/rogue/attackby(obj/item/W, mob/user, params)
 	if(!user.cmode)
