@@ -189,7 +189,7 @@
 /obj/item/natural/dirtclod
 	possible_potion = "poison"
 
-/obj/item/reagent_containers/food/snacks/grown/berries/poison
+/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
 	possible_potion = "poison"
 
 /obj/item/seeds/berry/poison
