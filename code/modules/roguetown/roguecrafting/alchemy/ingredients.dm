@@ -19,7 +19,7 @@
 /obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed
 	dust_result = /obj/item/alch/tobaccodust
 
-/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry
+/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweeddry
 	dust_result = /obj/item/alch/tobaccodust
 
 /obj/item/rogueore/gold
