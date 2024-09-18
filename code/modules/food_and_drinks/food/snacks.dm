@@ -81,7 +81,11 @@ All foods are distributed among various categories. Use common sense.
 	smeltresult = /obj/item/ash
 	//Placeholder for effect that trigger on eating that aren't tied to reagents.
 
-
+	var/chopping_sound = FALSE // does it play a choppy sound when batch sliced?
+	var/slice_sound = FALSE // does it play the slice sound when sliced?
+	var/can_distill = FALSE //If FALSE, this object cannot be distilled into an alcohol.
+	var/distill_reagent //If NULL and this object can be distilled, it uses a generic fruit_wine reagent and adjusts its variables.
+	var/distill_amt = 12
 
 /datum/intent/food
 	name = "feed"
