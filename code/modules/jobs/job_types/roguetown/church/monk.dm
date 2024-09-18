@@ -20,6 +20,7 @@
 
 	display_order = JDO_MONK
 	give_bank_account = TRUE
+	min_pq = -10
 	bypass_lastclass = TRUE
 
 /datum/outfit/job/roguetown/monk
