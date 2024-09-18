@@ -19,7 +19,7 @@
 	bypass_lastclass = TRUE
 	outfit = /datum/outfit/job/roguetown/captain
 	give_bank_account = 120
-	min_pq = 0
+	min_pq = 4
 
 /datum/job/roguetown/captain/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
