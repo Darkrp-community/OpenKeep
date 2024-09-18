@@ -36,7 +36,7 @@
 
 	if(H.gender == FEMALE)
 		backl = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-		backr = /obj/item/storage/backpack/rogue/satchel
+		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 		beltr = /obj/item/quiver/bolts
 		gloves = /obj/item/clothing/gloves/roguetown/chain
 		shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
