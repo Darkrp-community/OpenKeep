@@ -50,4 +50,4 @@
 		
 	if(H.patron != /datum/patron/divine/ravox)
 		H.patron = GLOB.patronlist[/datum/patron/divine/ravox]
-		to_chat(H, "<span class='warning'>My patron had not endorsed my practices in my younger years. I've since grown acustomed to [H.patron].")
+		to_chat(H, "<span class='warning'>My patron had not endorsed my practices in my younger years. I've since grown accustomed to [H.patron].")

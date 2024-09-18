@@ -172,7 +172,7 @@
 	max_integrity = 200 // Rusty
 
 
-// Bladesinger armor, unique
+// Blackoak armor, unique
 /obj/item/clothing/suit/roguetown/armor/plate/elven
 	name = "elven guardian cuirass"
 	desc = "A cuirass made of steel with a thin decorative gold plating. Lightweight and durable."
@@ -622,6 +622,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	sleeved = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleevetype = null
 
+// Bladesinger armor, unique
 /obj/item/clothing/suit/roguetown/armor/rare/elfplate
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "dark elf plate"
