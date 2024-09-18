@@ -85,7 +85,7 @@
 			var/mob/living/carbon/human/stranger = user
 			if(RomanticPartner(stranger))
 				. += "<span class='love'>It's my spouse.</span>"
-			if(family_datum == stranger.family_datum)
+			if(family_datum == stranger.family_datum && family_datum)
 				. += ReturnRelation(user)
 
 		if(real_name in GLOB.excommunicated_players)
