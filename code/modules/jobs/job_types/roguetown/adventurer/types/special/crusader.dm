@@ -9,6 +9,7 @@
 		"Humen",
 		"Dwarf"
 	)
+	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/forgotten)
 	outfit = /datum/outfit/job/roguetown/adventurer/crusader
 	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 1
@@ -17,18 +18,30 @@
 
 /datum/outfit/job/roguetown/adventurer/crusader/pre_equip(mob/living/carbon/human/H)
 	..()
+
+	switch(H.patron?.name)
+		if("Astrata")
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader
+			armor = /obj/item/clothing/cloak/stabard/crusader
+			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
+		if("Noc")
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
+			armor = /obj/item/clothing/cloak/stabard/crusader/t
+			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
+		if("Forgotten God")
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
+			armor = /obj/item/clothing/cloak/stabard/crusader/t
+			wrists = /obj/item/clothing/neck/roguetown/psicross/silver
+
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-	armor = /obj/item/clothing/cloak/stabard/crusader/t
 	cloak = /obj/item/clothing/cloak/cape/crusader
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	backr = /obj/item/rogueweapon/shield/tower/metal
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/rogueweapon/sword/silver
-	beltl = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
-	neck = /obj/item/clothing/neck/roguetown/psicross/silver
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1)
 	if(!H.has_language(/datum/language/oldpsydonic))
 		H.grant_language(/datum/language/oldpsydonic)
@@ -37,8 +50,6 @@
 	if(H.gender == FEMALE)
 		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 		beltr = /obj/item/quiver/bolts
-		gloves = /obj/item/clothing/gloves/roguetown/chain
-		shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1, /obj/item/storage/belt/rogue/pouch/coins/rich = 1)
 
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
@@ -58,7 +69,6 @@
 	H.change_stat("constitution", 2)
 	H.change_stat("intelligence", -1)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-	H.patron = GLOB.patronlist[/datum/patron/forgotten]
 
 /obj/item/clothing/cloak/stabard/crusader
 	name = "surcoat of the golden order"
