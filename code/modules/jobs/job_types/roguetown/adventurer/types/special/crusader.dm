@@ -26,7 +26,7 @@
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	backr = /obj/item/rogueweapon/shield/tower/metal
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltr = /obj/item/rogueweapon/sword/decorated
+	beltl = /obj/item/rogueweapon/sword/silver
 	beltl = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
 	neck = /obj/item/clothing/neck/roguetown/psicross/silver
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1)
