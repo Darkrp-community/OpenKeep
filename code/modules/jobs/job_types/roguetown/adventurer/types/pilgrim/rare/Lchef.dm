@@ -37,7 +37,7 @@
 	pants = /obj/item/clothing/under/roguetown/tights/random
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	cloak = /obj/item/clothing/cloak/apron
-	head = /obj/item/clothing/head/roguetown/chef
+	head = /obj/item/clothing/head/roguetown/cookhat/chef
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	backl = /obj/item/storage/backpack/rogue/backpack
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
