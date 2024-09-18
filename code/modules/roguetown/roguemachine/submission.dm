@@ -118,7 +118,7 @@ var/global/feeding_hole_reset_timer
 	pixel_y = 32
 
 /obj/structure/feedinghole/attackby(obj/item/P, mob/user, params)
-	if(istype(P, /obj/item/reagent_containers/food/snacks/grown/wheat))
+	if(istype(P, /obj/item/reagent_containers/food/snacks/produce/wheat))
 		qdel(P)
 /*		if(!feeding_hole_reset_timer || world.time > feeding_hole_reset_timer)
 			feeding_hole_wheat_count = 0

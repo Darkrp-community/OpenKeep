@@ -299,9 +299,6 @@
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
 
-/turf/open/floor/rogue/tile/kitchen
-	icon_state = "tavern"
-
 /obj/machinery/light/rogue/wallfire/big_fireplace
 	icon_state = "fireplace1"
 	base_state = "fireplace"
@@ -531,9 +528,6 @@
 	icon_state = "vinez"
 	pixel_y = 32
 
-/obj/structure/rack/rogue/shelf/notdense
-	density = FALSE
-	pixel_y = 24
 
 /*	..................   Red brick Walls   ................... */
 /turf/closed/wall/mineral/rogue/stonebrick/reddish
@@ -549,10 +543,6 @@
 	color = "#ffddd7"
 
 
-
-/obj/machinery/light/rogue/campfire/longlived
-	fueluse = 180 MINUTES
-
 /obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
 	name = "candle lamp"
 	icon = 'modular/Mapping/icons/decoration.dmi'
@@ -561,16 +551,6 @@
 	layer = WALL_OBJ_LAYER+0.1
 	light_power = 0.9
 	light_range = 6
-
-/obj/machinery/light/rogue/wallfire/candle/weak
-	light_power = 0.9
-	light_range = 6
-/obj/machinery/light/rogue/wallfire/candle/weak/l
-	pixel_x = -32
-	pixel_y = 0
-/obj/machinery/light/rogue/wallfire/candle/weak/r
-	pixel_x = 32
-	pixel_y = 0
 
 
 /*	..................   Misc   ................... */
@@ -591,11 +571,6 @@
 	smeltresult = null
 	color = "#617163"
 
-
-/obj/structure/chair/bench/couch/redleft
-	icon_state = "redcouch_alt"
-/obj/structure/chair/bench/couch/redright
-	icon_state = "redcouch2_alt"
 
 
 /*	..................   The Drunken Saiga   ................... */
@@ -690,6 +665,12 @@
 	icon_state = "chair_purple"
 	origin_type = /obj/structure/chair/wood/rogue/chair_noble/red
 
+/obj/structure/chair/bench/couch/redleft
+	icon_state = "redcouch_alt"
+/obj/structure/chair/bench/couch/redright
+	icon_state = "redcouch2_alt"
+
+
 /*	..................   Lights   ................... */
 /obj/item/candle/yellow/lit/infinite
 	light_power = 1
@@ -703,6 +684,19 @@
 	light_power = 2
 	light_range = 4
 	pixel_x = 4
+
+/obj/machinery/light/rogue/campfire/longlived
+	fueluse = 180 MINUTES
+
+/obj/machinery/light/rogue/wallfire/candle/weak
+	light_power = 0.9
+	light_range = 6
+/obj/machinery/light/rogue/wallfire/candle/weak/l
+	pixel_x = -32
+	pixel_y = 0
+/obj/machinery/light/rogue/wallfire/candle/weak/r
+	pixel_x = 32
+	pixel_y = 0
 
 /*	..................   More tables   ................... */
 /obj/structure/table/wood/reinf_long
@@ -758,6 +752,9 @@
 	color = "#d9c9b0"
 /turf/open/floor/rogue/ruinedwood/turned/darker
 	color = "#d9c9b0"
+
+/turf/open/floor/rogue/tile/kitchen
+	icon_state = "tavern"
 
 
 /obj/structure/roguetent/preopen
