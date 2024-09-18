@@ -35,7 +35,6 @@
 		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 
 	if(H.gender == FEMALE)
-		backl = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 		beltr = /obj/item/quiver/bolts
 		gloves = /obj/item/clothing/gloves/roguetown/chain
