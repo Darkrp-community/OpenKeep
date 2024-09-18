@@ -11,6 +11,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/qatil
 	maximum_possible_slots = 1
+	min_pq = 1
 	pickprob = 25
 	category_tags = list(CTAG_ADVENTURER)
 
