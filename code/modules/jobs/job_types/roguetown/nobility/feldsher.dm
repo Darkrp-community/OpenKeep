@@ -31,16 +31,15 @@
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
 	backr = /obj/item/storage/backpack/rogue/satchel
+	backl = /obj/item/storage/backpack/rogue/satchel/surgbag
 	pants = /obj/item/clothing/under/roguetown/tights/random
 	gloves = /obj/item/clothing/gloves/roguetown/leather/feld
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/feld
 	neck = /obj/item/clothing/neck/roguetown/feld
-	r_hand = /obj/item/storage/backpack/rogue/satchel/surgbag
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/roguekey/doctor
-	if(prob(70))
-		head = /obj/item/clothing/head/roguetown/roguehood/feld
-		mask = /obj/item/clothing/mask/rogue/feld
+	head = /obj/item/clothing/head/roguetown/roguehood/feld
+	mask = /obj/item/clothing/mask/rogue/feld
 
 
 	if(H.mind)

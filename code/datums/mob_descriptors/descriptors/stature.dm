@@ -49,3 +49,33 @@
 
 /datum/mob_descriptor/stature/dignitary
 	name = "Dignitary"
+
+/datum/mob_descriptor/stature/trickster
+	name = "Trickster"
+
+/datum/mob_descriptor/stature/vagabond
+	name = "Vagabond"
+
+/datum/mob_descriptor/stature/foreigner
+	name = "Foreigner"
+
+/datum/mob_descriptor/stature/scoundrel
+	name = "Scoundrel"
+
+/datum/mob_descriptor/stature/scoundrel/get_description(mob/living/described)
+	if(described.gender == MALE)
+		return "scoundrel"
+	else
+		return "wench"
+
+/datum/mob_descriptor/stature/commoner
+	name = "Commoner"
+
+/datum/mob_descriptor/stature/simpleton
+	name = "Simpleton"
+
+/datum/mob_descriptor/stature/cavalier
+	name = "Cavalier"
+
+/datum/mob_descriptor/stature/swashbuckler
+	name = "Swashbuckler"

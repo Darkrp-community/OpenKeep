@@ -1,5 +1,4 @@
-#define BERRYCOLORS		list("#6a6699", "#9b6464", "#58a75c", "#5658a9", "#669799")
-GLOBAL_LIST_EMPTY(berrycolors)
+
 
 // Apple
 /obj/item/seeds/berryrogue

@@ -216,7 +216,6 @@
 				/obj/item/natural/cloth = 1)
 	tools = list(/obj/item/needle)
 	skillcraft = /datum/skill/misc/sewing
-	req_table = TRUE
 
 /obj/item/storage/roguebag/crafted
 	sellprice = 4
@@ -225,7 +224,7 @@
 	name = "bait"
 	result = /obj/item/bait
 	reqs = list(/obj/item/storage/roguebag = 1,
-				/obj/item/reagent_containers/food/snacks/grown/wheat = 2)
+				/obj/item/reagent_containers/food/snacks/produce/wheat = 2)
 	req_table = FALSE
 	subtype_reqs = TRUE
 
@@ -233,7 +232,7 @@
 	name = "sweetbait (a)"
 	result = /obj/item/bait/sweet
 	reqs = list(/obj/item/storage/roguebag = 1,
-				/obj/item/reagent_containers/food/snacks/grown/apple = 2)
+				/obj/item/reagent_containers/food/snacks/produce/apple = 2)
 	req_table = FALSE
 	subtype_reqs = TRUE
 
@@ -241,7 +240,7 @@
 	name = "sweetbait (b)"
 	result = /obj/item/bait/sweet
 	reqs = list(/obj/item/storage/roguebag = 1,
-				/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 2)
+				/obj/item/reagent_containers/food/snacks/produce/berries/rogue = 2)
 	req_table = FALSE
 	subtype_reqs = TRUE
 
@@ -262,7 +261,7 @@
 /datum/crafting_recipe/roguetown/pipe
 	name = "wood pipe"
 	result = /obj/item/clothing/mask/cigarette/pipe/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/grown/log/tree/stick = 2)
 
 /obj/item/clothing/mask/cigarette/pipe/crafted
 	sellprice = 6
@@ -323,7 +322,7 @@
 	name = "poison arrow"
 	result = /obj/item/ammo_casing/caseless/rogue/arrow/poison
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/arrow = 1,
-				/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 1)
+				/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison = 1)
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/pyroarrow
@@ -338,7 +337,7 @@
 	name = "poison bolt"
 	result = /obj/item/ammo_casing/caseless/rogue/bolt/poison
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/bolt = 1,
-				/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 1)
+				/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison = 1)
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/bomb

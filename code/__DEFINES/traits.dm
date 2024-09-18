@@ -8,6 +8,7 @@
 #define TRAIT_STRONGBITE				"Strong Bite"
 #define TRAIT_HATEWOMEN				"Ladykiller"
 #define TRAIT_GOODLOVER				"Fabled Lover"
+#define TRAIT_SEEDKNOW 			"Seed Knower"
 #define TRAIT_NOBLE					"Noble Blooded"
 #define TRAIT_EMPATH					"Empath"
 #define TRAIT_BREADY					"Battleready"
@@ -47,6 +48,7 @@
 #define TRAIT_VAMPMANSION "vampiremansion"
 #define TRAIT_LIMPDICK "limp_dick"
 #define TRAIT_SEXPASS "sexpass"
+#define TRAIT_INTRAINING "intraining" //allows certain roles to bypass the average skill limitation of training dummies
 #define TRAIT_STEELHEARTED "steelhearted" //no bad mood from dismembering or seeing this
 #define TRAIT_IWASREVIVED "iwasrevived" //prevents PQ gain from reviving the same person twice
 #define TRAIT_IWASUNZOMBIFIED "iwasunzombified" //prevents PQ gain from curing a zombie twice
@@ -66,6 +68,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_STRONGBITE = "Stronger bites, critical bite attacks.",
 	TRAIT_HATEWOMEN = "Double damage against female mobs.",
 	TRAIT_GOODLOVER = "It's a blessing to share a bed with me.",
+	TRAIT_SEEDKNOW = "I know which seeds grow which crops.",
 	TRAIT_NOBLE = "<span class='blue'>I'm of noble blood.</span>",
 	TRAIT_EMPATH = "I can notice when people are in pain.",
 	TRAIT_BREADY = "Defensive stance does not passively fatigue me.",
@@ -79,7 +82,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_ASSASSIN = "My soul has been tainted by the god of murder.",
 	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
 	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
-	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments."
+	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments.",
+	TRAIT_INTRAINING = "I'm going to be a knight someday!"
 	))
 
 // trait accessor defines

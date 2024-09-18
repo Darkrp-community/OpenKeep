@@ -782,6 +782,28 @@
 	only_forced_audio = TRUE
 
 // ............... M ..................
+/datum/emote/living/meditate
+	key = "meditate"
+	key_third_person = "meditate"
+	message = "meditates."
+	restraint_check = FALSE
+	emote_type = EMOTE_VISIBLE
+
+/mob/living/carbon/human/verb/emote_meditate()
+	set name = "Meditate"
+	set hidden = 1
+
+	emote("meditate", intentional = TRUE)
+
+/datum/emote/living/meditate/run_emote(mob/user, params, type_override, intentional)
+	if(isliving(user))
+		if(!COOLDOWN_FINISHED(user, schizohelp_cooldown))
+			to_chat(user, span_warning("I need to wait before meditating again."))
+			return
+		var/msg = input("Say your meditation:", "Voices in your head") as text|null
+		if(msg)
+			user.schizohelp(msg)
+
 /datum/emote/living/moan
 	key = "moan"
 	key_third_person = "moans"
