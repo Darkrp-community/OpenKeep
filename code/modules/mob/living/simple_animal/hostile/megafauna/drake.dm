@@ -503,7 +503,7 @@ Difficulty: Medium
 
 /obj/effect/temp_visual/dragon_flight
 	icon = 'icons/roguetown/mob/monster/wyvern.dmi'
-	icon_state = "shadow"
+	icon_state = "dragon_shadow"
 	layer = ABOVE_ALL_MOB_LAYER
 	pixel_x = -16
 	duration = 10
