@@ -16,8 +16,6 @@
 
 /datum/antagonist/bandit/on_gain()
 	owner.special_role = "Bandit"
-	owner.assigned_role = "Bandit"
-	owner.current.job = null
 	forge_objectives()
 	. = ..()
 	move_to_spawnpoint()
@@ -271,7 +269,7 @@
 			gloves = /obj/item/clothing/gloves/roguetown/angle
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 
-	H.change_stat("intelligence", -2)
+	H.change_stat("intelligence", -1)
 	var/obj/item/bodypart/B = H.get_bodypart("head")
 	if(B)
 		B.sellprice = rand(44, 88)
