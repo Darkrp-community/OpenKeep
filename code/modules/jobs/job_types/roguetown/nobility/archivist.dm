@@ -21,6 +21,7 @@
 	outfit = /datum/outfit/job/roguetown/archivist
 	display_order = 19
 	give_bank_account = 100
+	min_pq = 1
 
 /datum/outfit/job/roguetown/archivist/pre_equip(mob/living/carbon/human/H)
 	..()
