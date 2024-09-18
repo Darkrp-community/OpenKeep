@@ -16,7 +16,7 @@
 /obj/item/reagent_containers/food/snacks/produce/rogue/swampweeddry
 	dust_result = /obj/item/alch/swampdust
 
-/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
+/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed
 	dust_result = /obj/item/alch/tobaccodust
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry
