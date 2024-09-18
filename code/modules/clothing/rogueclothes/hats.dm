@@ -696,7 +696,11 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 60
 
-// VL's are already OP and the helm is made of iron, let's not give them too good of a helm. Funny enough the item in VLORD has same path but different sprites so that one should be repathed
+/obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
+	icon_state = "topfhelm_gold"
+	item_state = "topfhelm_gold"
+
+// VL's are already OP and the helm is made of iron, let's not give them too good of a helm.
 /obj/item/clothing/head/roguetown/helmet/heavy/savoyard
 	name = "savoyard"
 	desc = "A terrifying yet crude iron helmet shaped like a humen skull. Commands the inspiring terror of inhumen tyrants from yils past."

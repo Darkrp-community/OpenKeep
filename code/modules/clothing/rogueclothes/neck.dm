@@ -142,18 +142,18 @@
 /obj/item/clothing/neck/roguetown/psycross
 	name = "psycross"
 	desc = "Let His name be naught but forgot'n."
-	icon_state = "psicrossw"
+	icon_state = "psycross_w"
 	//dropshrink = 0.75
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
 	sellprice = 10
 	experimental_onhip = TRUE
 
-// SILVER PSICROSS START
+// SILVER PSYCROSS START
 
 /obj/item/clothing/neck/roguetown/psycross/silver
 	name = "silver psycross"
 	desc = "Let His name be naught but forgot'n. Let the wicked undead burn at my touch."
-	icon_state = "psicrosssteel"
+	icon_state = "psycross_steel"
 	resistance_flags = FIRE_PROOF
 	sellprice = 50
 	smeltresult = /obj/item/ingot/silver
@@ -200,7 +200,7 @@
 	icon_state = "astrata"
 	resistance_flags = FIRE_PROOF
 
-// Only non-refactored psicross because Noc likes vamps. Neeeerd!
+// Only non-refactored psycross because Noc likes vamps. Neeeerd!
 /obj/item/clothing/neck/roguetown/psycross/noc
 	name = "amulet of Noc"
 	desc = "Diligence, study, pursuit of truth and wisdom. Let nothing deterr you from it."
@@ -240,7 +240,7 @@
 /obj/item/clothing/neck/roguetown/psycross/g
 	name = "golden psycross"
 	desc = "Let His name be naught but forgot'n."
-	icon_state = "psicrossc"
+	icon_state = "psycross_c"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
 	sellprice = 100
