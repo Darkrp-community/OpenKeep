@@ -183,7 +183,7 @@
 /obj/item/natural/worms/leeches
 	possible_potion = "endpot"
 
-/obj/item/reagent_containers/food/snacks/grown/apple
+/obj/item/reagent_containers/food/snacks/produce/apple
 	possible_potion = "endpot"
 
 /obj/item/natural/dirtclod
