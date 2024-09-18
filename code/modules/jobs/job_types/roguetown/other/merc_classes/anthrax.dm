@@ -25,6 +25,10 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+
+		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+		H.verbs |= /mob/living/carbon/human/proc/torture_victim //Secret police training owing to their origins.
+
 		if(H.gender == FEMALE) //Melee defense-oriented brute, heavy lean towards non-lethal takedowns and capture.
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/shadowplate
 			gloves = /obj/item/clothing/gloves/roguetown/chain/iron/shadowgauntlets
@@ -47,8 +51,6 @@
 			H.change_stat("speed", -1)
 
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-			ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) //Torture mastery.
-			H.verbs |= /mob/living/carbon/human/proc/torture_victim
 
 		if(H.gender == MALE) //Squishy hit-and-runner assassin.
 			shirt = /obj/item/clothing/suit/roguetown/shirt/shadowshirt
@@ -76,6 +78,5 @@
 			H.change_stat("endurance", 1)
 
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC) //Can sit in ambush in unlikeliest places.
 
 		H.merctype = 7
