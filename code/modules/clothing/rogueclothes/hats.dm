@@ -1399,13 +1399,15 @@
 /obj/item/clothing/head/roguetown/armingcap/dwarf // gnome hat I guess?
 	color = "#cb3434"
 
+
+//Blackbag, spawns in Inquisition.
 /obj/item/clothing/head/roguetown/sack
 	icon = 'icons/roguetown/clothing/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "black bag"
 	desc = "An eyeless sack, used to blindfold prisoners or hostages."
-	will_cover = HEAD|HAIR|NOSE|EARS
+	//will_cover = HEAD|HAIR|NOSE|EARS
 	flags_inv = HIDEEARS
 	icon_state = "sacked"
 	item_state = "sacked"
@@ -1427,10 +1429,10 @@
 		return
 	target.visible_message("<span class='warning'>[user] forces [src] onto [target]'s head!</span>", \
 	"<span class='danger'>[target] forces [src] onto your head!</span>", "<i>I cant see anything.</i>")
-	target.emote("whimper", intentional = FALSE)
 	if(ishuman(target)) // If the target is human and not in combat mode, stun them the same way a feint would.
 		var/mob/living/carbon/human/T = target
 		if(!T.cmode)
+			T.emote("whimper", intentional = FALSE)
 			T.changeNext_move(8)
 			T.Immobilize(10)
 	user.dropItemToGround(src)
