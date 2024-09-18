@@ -9,7 +9,7 @@
 		"Humen",
 		"Dwarf"
 	)
-	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/forgotten)
+	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/necra, /datum/patron/forgotten)
 	outfit = /datum/outfit/job/roguetown/adventurer/crusader
 	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 1
@@ -19,21 +19,23 @@
 /datum/outfit/job/roguetown/adventurer/crusader/pre_equip(mob/living/carbon/human/H)
 	..()
 
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
+	armor = /obj/item/clothing/cloak/stabard/crusader/t
+	wrists = /obj/item/clothing/neck/roguetown/psicross/silver
 	switch(H.patron?.name)
 		if("Astrata")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader
 			armor = /obj/item/clothing/cloak/stabard/crusader
 			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
-		if("Noc")
+		if("Necra")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
 			armor = /obj/item/clothing/cloak/stabard/crusader/t
-			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
+			wrists = /obj/item/clothing/neck/roguetown/psicross/necra
 		if("Forgotten God")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
 			armor = /obj/item/clothing/cloak/stabard/crusader/t
 			wrists = /obj/item/clothing/neck/roguetown/psicross/silver
 
-	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
@@ -41,6 +43,7 @@
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	backr = /obj/item/rogueweapon/shield/tower/metal
 	backl = /obj/item/storage/backpack/rogue/satchel
+	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/rogueweapon/sword/silver
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1)
 	if(!H.has_language(/datum/language/oldpsydonic))
@@ -69,6 +72,12 @@
 	H.change_stat("constitution", 2)
 	H.change_stat("intelligence", -1)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+
+	if(H.patron != /datum/patron/divine/astrata)
+		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+
+	if(H.patron != /datum/patron/divine/necra)
+		H.patron = GLOB.patronlist[/datum/patron/forgotten]
 
 /obj/item/clothing/cloak/stabard/crusader
 	name = "surcoat of the golden order"
