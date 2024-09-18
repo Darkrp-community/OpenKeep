@@ -3,7 +3,7 @@
 	var/output
 	var/time = 40
 	var/required_machine = /obj/machinery/processor
-
+/*
 /datum/food_processor_process/meat
 	input = /obj/item/reagent_containers/food/snacks/meat/slab
 	output = /obj/item/reagent_containers/food/snacks/faggot
@@ -43,8 +43,9 @@
 /datum/food_processor_process/parsnip
 	input = /obj/item/reagent_containers/food/snacks/grown/parsnip
 	output = /obj/item/reagent_containers/food/snacks/roastparsnip
-
+*/
 /datum/food_processor_process/mob/slime
 	input = /mob/living/simple_animal/slime
 	output = null
 	required_machine = /obj/machinery/processor/slime
+
