@@ -21,10 +21,11 @@
 	return ..()
 
 /obj/structure/roguemachine/stockpile/attackby(obj/item/P, mob/user, params)
-	if(user.mind.assigned_role == "Mercenary")
+/*	if(user.mind.assigned_role == "Mercenary")
 		playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 		user.visible_message("<span class='notice'>These cursed local contraptions confound me.")
 		return
+This is a filter that blocks use of the machine for that role. Could be expanded, made more complex, made for races or whatever.*/
 	if(istype(P, /obj/item/roguecoin))
 		budget += P.get_real_price()
 		qdel(P)
@@ -70,10 +71,11 @@
 	. = ..()
 	if(.)
 		return
-	if(user.mind.assigned_role == "Mercenary")
+/*	if(user.mind.assigned_role == "Mercenary")
 		playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 		user.visible_message("<span class='notice'>These cursed local contraptions confound me.")
 		return
+This is a filter that blocks use of the machine for that role. Could be expanded, made more complex, made for races or whatever.*/
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, 'sound/misc/keyboard_enter.ogg', 100, FALSE, -1)
 	var/canread = user.can_read(src, TRUE)
