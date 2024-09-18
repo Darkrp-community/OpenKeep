@@ -16,11 +16,19 @@
 	devotion_cost = -15
 
 /obj/effect/proc_holder/spell/targeted/blesscrop/cast(list/targets,mob/user = usr)
-	..()
-	visible_message("<FONT COLOR='green'>[usr] blesses the crop with Dendor's Favour!</FONT><BR>")
-	for(var/obj/machinery/crop/C in view(5))
-		C.growth += 40
-		C.update_seed_icon()
+	. = ..()
+	var/growed = FALSE
+	var/amount_blessed = 0
+	for(var/obj/structure/soil/soil in view(4))
+		soil.bless_soil()
+		growed = TRUE
+		amount_blessed++
+		// Blessed only up to 5 crops
+		if(amount_blessed >= 5)
+			break
+	if(growed)
+		visible_message("<FONT COLOR='green'>[usr] blesses the crop with Dendor's Favour!</FONT><BR>")
+	return growed
 
 //At some point, this spell should Awaken beasts, allowing a ghost to possess them. Not for this PR though.
 /obj/effect/proc_holder/spell/targeted/beasttame
