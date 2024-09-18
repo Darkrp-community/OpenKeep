@@ -10,7 +10,7 @@
 /obj/item/seeds
 	dust_result = /obj/item/alch/seeddust
 	
-/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed
+/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed
 	dust_result = /obj/item/alch/swampdust
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry
