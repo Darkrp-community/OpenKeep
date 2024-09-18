@@ -44,7 +44,7 @@
 
 /datum/intent/whip/lash
 	name = "lash"
-	blade_class = BCLASS_BLUNT
+	blade_class = BCLASS_LASHING
 	attack_verb = list("lashes", "whips")
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
 	chargetime = 5
@@ -57,7 +57,7 @@
 
 /datum/intent/whip/crack
 	name = "crack"
-	blade_class = BCLASS_LASHING
+	blade_class = BCLASS_BLUNT
 	attack_verb = list("cracks", "strikes") //something something dwarf fotresss
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
 	chargetime = 0
