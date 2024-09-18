@@ -16,6 +16,8 @@
 
 /datum/antagonist/bandit/on_gain()
 	owner.special_role = "Bandit"
+	owner.assigned_role = "Bandit"
+	owner.current.job = null
 	forge_objectives()
 	. = ..()
 	move_to_spawnpoint()
@@ -81,7 +83,7 @@
 	..()
 	H.become_blind("TRAIT_GENERIC")
 	var/classes = list("Deserter","Poacher","Brigand")
-	var/classchoice = input("Choose your background", "Available backgrounds") as anything in classes
+	var/classchoice = input(H.client, "Choose your background", "Available backgrounds") as anything in classes
 
 	switch(classchoice)
 	
