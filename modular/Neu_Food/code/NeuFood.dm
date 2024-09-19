@@ -389,9 +389,15 @@
 	color = "#dedbaf"
 	taste_description = "egg soup"
 
-/datum/reagent/consumable/soup/cheese
+/datum/reagent/consumable/soup/cheese // A thicker soup, almost on the level of old oatmeal. But less hydration than other soups
+	name = "cheese soup"
+	description = "A thick cheese soup. Creamy and comforting."
 	color = "#c4be70"
-	taste_description = "cheese soup"
+	reagent_state = LIQUID
+	nutriment_factor = 14
+	taste_description = "creamy cheese"
+	taste_mult = 4
+	hydration = 4
 
 /datum/reagent/consumable/soup/stew
 	name = "thick stew"
