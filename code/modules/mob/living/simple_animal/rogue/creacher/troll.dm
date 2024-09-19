@@ -11,7 +11,7 @@
 	speak_chance = 1
 	turns_per_move = 2
 	see_in_dark = 10
-	move_to_delay = 3
+	move_to_delay = 7
 	base_intents = list(/datum/intent/unarmed/wwolf, /datum/intent/simple/bigbite)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/xeno = 1,
 						/obj/item/natural/hide = 2)
@@ -51,7 +51,7 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/xeno/troll // Placeholder until Troll remains are sprited.
 	body_eater = TRUE
-	var/critvuln = TRUE
+	var/critvuln = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/Initialize()
 	. = ..()

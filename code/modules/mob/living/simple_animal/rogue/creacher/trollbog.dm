@@ -11,7 +11,7 @@
 	speak_chance = 1
 	turns_per_move = 4
 	see_in_dark = 10
-	move_to_delay = 2
+	move_to_delay = 7
 	verb_say = "groans"
 	verb_ask = "grunts"
 	verb_exclaim = "roars"
@@ -51,10 +51,13 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/xeno/troll // Placeholder until Troll remains are sprited.
 	body_eater = TRUE
+	var/critvuln = FALSE
+
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/Initialize()
 	. = ..()
-	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
+	if(critvuln)
+		ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/death(gibbed)
 	..()
@@ -90,7 +93,8 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/LoseTarget()
 	..()
-	icon_state = "Trolls"
+	if(health > 0)
+		icon_state = "Trolls"
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/GiveTarget()
 	..()
