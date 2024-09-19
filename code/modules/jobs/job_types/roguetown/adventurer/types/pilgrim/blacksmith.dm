@@ -42,7 +42,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/masonry, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, pick(1,1,2), TRUE) // For the bin
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/traps, pick(1,1,2), TRUE) // For craftable beartraps
+		H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE) // For craftable beartraps
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 3, TRUE)
