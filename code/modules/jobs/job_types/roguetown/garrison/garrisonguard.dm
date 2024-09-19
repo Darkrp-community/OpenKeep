@@ -53,23 +53,34 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
-	if(prob(30))
-		head = /obj/item/clothing/head/roguetown/helmet/kettle
-	else
-		head = /obj/item/clothing/head/roguetown/helmet
+	var/armortype = pickweight(list("Ironmail" = 3, "Steelmail" = 3, "Gambison" = 1, "Leather" = 2)) // At best they can get an iron breastplate over mail
+	var/weapontype = pickweight(list("Axe" = 1, "Mace" = 2, "Messer" = 1, "Spear" = 2, "Flail" = 2)) // Rolls for various weapons, all of these are iron tier
+	switch(armortype)
+		if("Ironmail")
+			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+		if("Ironplate")
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
+		if("Ironplate&Mail") // Big roller gets iron chainlegs and an iron breastplate over chainmail. Lucky them
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
+			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
+			pants = /obj/item/clothing/under/roguetown/chainlegs/iron
+	switch(weapontype) // We get +1 weapon skill in either axes/maces, spears, or flails depending on our starting weapon
+		if("Axe")
+			beltl = /obj/item/rogueweapon/woodcut
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+		if("Mace")
+			beltl = /obj/item/rogueweapon/mace
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+		if("Messer")
+			beltl = /obj/item/rogueweapon/sword/iron/messer
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		if("Spear")
+			beltl = /obj/item/rogueweapon/sword/iron
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		if("Flail") // Big roller gets one of the best weapons to pair with a shield, even if it is only iron tier. Lucky bastard
+			beltl = /obj/item/rogueweapon/flail
+			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)
