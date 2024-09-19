@@ -31,17 +31,15 @@
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
 	backr = /obj/item/storage/backpack/rogue/satchel
+	backl = /obj/item/storage/backpack/rogue/satchel/surgbag
 	pants = /obj/item/clothing/under/roguetown/tights/random
 	gloves = /obj/item/clothing/gloves/roguetown/leather/feld
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/feld
+	head = /obj/item/clothing/head/roguetown/roguehood/feld
+	mask = /obj/item/clothing/mask/rogue/feld
 	neck = /obj/item/clothing/neck/roguetown/feld
-	r_hand = /obj/item/storage/backpack/rogue/satchel/surgbag
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/roguekey/doctor
-	if(prob(70))
-		head = /obj/item/clothing/head/roguetown/roguehood/feld
-		mask = /obj/item/clothing/mask/rogue/feld
-
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
@@ -57,4 +55,5 @@
 	H.change_stat("constitution", -1)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)

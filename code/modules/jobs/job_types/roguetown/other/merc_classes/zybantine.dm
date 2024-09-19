@@ -49,6 +49,9 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(0,1,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+
+		H.merctype = 1
+
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 2)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)

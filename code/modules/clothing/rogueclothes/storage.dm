@@ -45,22 +45,23 @@
 		for(var/obj/item/I in things)
 			STR.remove_from_storage(I, get_turf(src))
 
-/obj/item/storage/belt/rogue/leather/assassin // Assassin's super edgy and cool belt can carry normal items (for poison vial), but can only carry 2 items
-	heldz_items = 2
+/obj/item/storage/belt/rogue/leather/assassin // Assassin's super edgy and cool belt can carry normal items (for poison vial, lockpick).
+	heldz_items = 3
 
 /obj/item/storage/belt/rogue/leather/assassin/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
-		STR.max_combined_w_class = 6
+		STR.max_combined_w_class = 8
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
 		STR.max_items = heldz_items
-//Assassin's belt starts with their unique dagger and a vial of highly-deadly poison.
+//Assassin's belt starts with their unique dagger, a vial of highly-deadly poison, and a lockpick.
 /obj/item/storage/belt/rogue/leather/assassin/PopulateContents()
 	new /obj/item/reagent_containers/glass/bottle/rogue/poison(src)
 	new /obj/item/rogueweapon/huntingknife/idagger/steel/profane(src)
+	new /obj/item/lockpick(src)
 
-//Assassin's belt starts with a simple needle and a key to their hideout.
+//Bandit's belt starts with a simple needle and a key to their hideout.
 /obj/item/storage/belt/rogue/leather/bandit/PopulateContents()
 	new /obj/item/needle/thorn(src)
 	new /obj/item/roguekey/bandit(src)
@@ -259,7 +260,6 @@
 /obj/item/storage/backpack/rogue/satchel/surgbag
 	name = "surgery bag"
 	desc = "Contains all the phreakish devices one needs to cut a person up."
-	slot_flags = null
 	item_state = "doctorbag"
 	icon_state = "doctorbag"
 	attack_verb = list("beats", "bludgeons")

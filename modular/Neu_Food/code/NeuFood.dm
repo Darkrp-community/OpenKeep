@@ -67,11 +67,14 @@
 	bitesize = 3
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	rotprocess = SHELFLIFE_EXTREME
-
+/*
 /obj/item/reagent_containers/food/snacks
 	var/chopping_sound = FALSE // does it play a choppy sound when batch sliced?
 	var/slice_sound = FALSE // does it play the slice sound when sliced?
-
+	var/can_distill = FALSE //If FALSE, this object cannot be distilled into an alcohol.
+	var/distill_reagent //If NULL and this object can be distilled, it uses a generic fruit_wine reagent and adjusts its variables.
+	var/distill_amt = 12
+*/
 /obj/item/reagent_containers/food/snacks/proc/changefood(path, mob/living/eater)
 	if(!path || !eater)
 		return
@@ -352,7 +355,7 @@
 	description = "Fitting for a peasant."
 	reagent_state = LIQUID
 	color = "#c38553"
-	nutriment_factor = 15
+	nutriment_factor = 12
 	metabolization_rate = 0.5 // half as fast as normal, last twice as long
 	taste_description = "oatmeal"
 	taste_mult = 3
@@ -377,6 +380,10 @@
 /datum/reagent/consumable/soup/veggie/cabbage
 	color = "#859e56"
 	taste_description = "watery cabbage"
+
+/datum/reagent/consumable/soup/veggie/turnip
+	color = "#becf9d"
+	taste_description = "boiled turnip"
 
 /datum/reagent/consumable/soup/egg
 	color = "#dedbaf"
