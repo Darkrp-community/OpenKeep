@@ -296,7 +296,10 @@
 	dropshrink = 0.9
 	rotprocess = SHELFLIFE_LONG
 
-/obj/item/reagent_containers/food/snacks/produce/onion/slice(accuracy, obj/item/W, mob/user)
+/obj/item/reagent_containers/food/snacks/produce/onion/slice(obj/item/W, mob/user)
+	. = ..()
+	to_chat(user, "<span class='notice'>My eyes sting a little...</span>")
+/*/obj/item/reagent_containers/food/snacks/produce/onion/slice(accuracy, obj/item/W, mob/user) This has the visual effect and I like it but it runtimes due to something with atmos. Until such time this stops being an issue we will have to use the gimped version above.
 	var/datum/effect_system/smoke_spread/transparent/S = new	//Since the onion is destroyed when it's sliced,
 	var/splat_location = get_turf(src)	//we need to set up the smoke beforehand
 	S.attach(splat_location)
@@ -304,7 +307,8 @@
 	if(..())
 		S.start()
 		return TRUE
-	qdel(S)
+	qdel(S)*/
+
 
 /*	..................   Potato   ................... */
 /obj/item/reagent_containers/food/snacks/produce/potato
