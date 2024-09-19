@@ -2173,7 +2173,7 @@
 "qyk" = (/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/town)
 "qyy" = (/obj/structure/curtain/bounty,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors/town/tavern)
 "qyY" = (/turf/open/floor/rogue/ruinedwood{icon_state = "horzw"},/area/rogue/indoors/town)
-"qzg" = (/obj/structure/closet/crate/chest/neu,/obj/machinery/light/rogue/wallfire/candle/l,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/town/church/chapel)
+"qzg" = (/obj/structure/closet/crate/chest/neu,/obj/machinery/light/rogue/wallfire/candle/l,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/natural/feather,/obj/item/natural/feather,/turf/open/floor/rogue/ruinedwood{icon_state = "weird1"},/area/rogue/indoors/town/church/chapel)
 "qzq" = (/obj/structure/fluff/railing/border,/obj/structure/fluff/railing/border{dir = 1; icon_state = "border"},/obj/machinery/light/rogue/torchholder/l,/turf/open/transparent/openspace,/area/rogue/indoors/town/church/chapel)
 "qzC" = (/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/cobblerock,/area/rogue/indoors/town)
 "qzM" = (/obj/structure/fluff/railing/border{dir = 4; icon_state = "border"},/turf/open/floor/rogue/ruinedwood{dir = 1; icon_state = "vertw"},/area/rogue/outdoors/rtfield)
