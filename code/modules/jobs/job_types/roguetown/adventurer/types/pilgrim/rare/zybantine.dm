@@ -54,7 +54,7 @@
 		var/prev_name = H.name
 		var/honorary = "Emir"
 		if(H.gender == FEMALE)
-			honorary = "Emira"
+			honorary = "Amirah"
 		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
 		if(!H.has_language(/datum/language/zybantine))
