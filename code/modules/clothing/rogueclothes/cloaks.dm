@@ -683,6 +683,10 @@
 /obj/item/clothing/cloak/raincloak/blue
 	color = CLOTHING_BLUE
 
+/obj/item/clothing/cloak/raincloak/random/Initialize()
+	color = pick(CLOTHING_RED, CLOTHING_PURPLE, CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_BLUE)
+	..()
+
 /obj/item/clothing/head/hooded/rainhood
 	name = "hood"
 	desc = "A hood that's attached to the raincoat."
@@ -805,6 +809,7 @@
 	sleeved = null
 	sleevetype = null
 	body_parts_covered = null
+	flags_inv = null
 
 /obj/item/clothing/cloak/stole/red
 	icon_state = "stole_red"
@@ -895,6 +900,22 @@
 /obj/item/clothing/cloak/half/vet/Destroy()
 	GLOB.lordcolor -= src
 	return ..()
+
+/obj/item/clothing/cloak/half/random/Initialize()
+	color = pick(CLOTHING_RED, CLOTHING_PURPLE, CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_BLUE)
+	..()
+
+//............... Battle Nun ........................... (unique kit for the role, tabard for aesthetics)
+/obj/item/clothing/cloak/battlenun
+	name = "nun vestments"
+	desc = "Chaste, righteous, merciless to the wicked."
+	color = null
+	icon_state = "battlenun"
+	item_state = "battlenun"
+	allowed_sex = list(FEMALE)
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
 
 // Dumping old black knight stuff here
 /obj/item/clothing/cloak/cape/blkknight

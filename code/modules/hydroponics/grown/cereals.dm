@@ -15,12 +15,6 @@
 	. = ..()
 	yield = rand(1,4)
 
-
-/obj/item/natural/chaff/wheat
-	icon_state = "wheatchaff"
-	name = "wheat stalks"
-	foodextracted = /obj/item/reagent_containers/food/snacks/grown/wheat
-
 /obj/item/reagent_containers/food/snacks/grown/wheat
 	seed = /obj/item/seeds/wheat
 	name = "grain"
@@ -45,12 +39,6 @@
 	product = /obj/item/natural/chaff/oat
 	mutatelist = list()
 
-/obj/item/natural/chaff/oat
-	name = "oat stalks"
-	icon_state = "oatchaff"
-	chafftype = 2
-	foodextracted = /obj/item/reagent_containers/food/snacks/grown/oat
-
 /obj/item/reagent_containers/food/snacks/grown/oat
 	seed = /obj/item/seeds/wheat/oat
 	name = "grain"
@@ -71,15 +59,8 @@
 	desc = ""
 	species = "rice"
 	plantname = "rice stalks"
-	product = /obj/item/natural/chaff/rice
 	mutatelist = list()
 	growthstages = 3
-
-/obj/item/natural/chaff/rice
-	icon_state = "ricechaff"
-	name = "rice stalks"
-	chafftype = 2
-	foodextracted = /obj/item/reagent_containers/food/snacks/grown/rice
 
 /obj/item/reagent_containers/food/snacks/grown/rice
 	seed = /obj/item/seeds/wheat/rice
