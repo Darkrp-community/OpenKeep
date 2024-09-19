@@ -340,7 +340,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<b>Faith:</b> <a href='?_src_=prefs;preference=faith;task=input'>[selected_faith?.name || "FUCK!"]</a><BR>"
 			dat += "<b>Patron:</b> <a href='?_src_=prefs;preference=patron;task=input'>[selected_patron?.name || "FUCK!"]</a><BR>"
 			dat += "<b>Family:</b> <a href='?_src_=prefs;preference=family'>[family ? family : "None"]</a><BR>"
-			if(family == FAMILY_FULL)
+			if(family == FAMILY_FULL || family == FAMILY_NEWLYWED)
 				dat += "<b>Preferred Spouse:</b> <a href='?_src_=prefs;preference=setspouse'>[setspouse ? setspouse : "None"]</a><BR>"
 			dat += "<b>Dominance:</b> <a href='?_src_=prefs;preference=domhand'>[domhand == 1 ? "Left-handed" : "Right-handed"]</a><BR>"
 
@@ -2192,10 +2192,12 @@ Slots: [job.spawn_positions]</span>
 					else
 						domhand = 1
 				if("family")
-					var/new_family = input(user, "Do you have relatives in rockhill? [FAMILY_NONE] will disable this feature. \
+					var/new_family = input(user, "Do you have relatives in rockhill? \
+						[FAMILY_NONE] will disable this feature. \
 						[FAMILY_PARTIAL] will assign you as a progeny of a local house based on your species. This feature is disabled if your older than ADULT. \
+						[FAMILY_NEWLYWED] assigns you a spouse without adding you to a family. Setspouse will try to assign you as a certain persons spouse.\
 						[FAMILY_FULL] will attempt to assign you as matriarch or patriarch of one of the local houses of rockhill. \
-						If all houses are full then you will not be assigned to any house.", "The Major Houses of Rockhill") as null|anything in list(FAMILY_NONE, FAMILY_PARTIAL, FAMILY_FULL)
+						If all houses are full then you will not be assigned to any house.", "The Major Houses of Rockhill") as null|anything in list(FAMILY_NONE, FAMILY_PARTIAL, FAMILY_NEWLYWED, FAMILY_FULL)
 					if(new_family)
 						family = new_family
 				//Setspouse is part of the family subsystem. It will check existing families for this character and attempt to place you in this family.

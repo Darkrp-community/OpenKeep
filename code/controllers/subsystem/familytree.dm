@@ -33,6 +33,10 @@ SUBSYSTEM_DEF(familytree)
 	* smaller.
 	*/
 	var/list/families = list()
+	/*
+	* Bachalors and Bachalorettes
+	*/
+	var/list/viable_spouses = list()
 	//These jobs are excluded from AddLocal()
 	var/excluded_jobs = list(
 		"Prince",
@@ -72,6 +76,11 @@ SUBSYSTEM_DEF(familytree)
 	switch(status)
 		if(FAMILY_PARTIAL)
 			AssignToHouse(H)
+
+		if(FAMILY_NEWLYWED)
+			viable_spouses.Add(H)
+			if(viable_spouses.len >= 2)
+				AssignNewlyWed(H)
 
 		if(FAMILY_FULL)
 			if(H.virginity)
@@ -203,3 +212,39 @@ SUBSYSTEM_DEF(familytree)
 		if(!I.housename && !I.family.len)
 			continue
 		. += I.FormatFamilyList()
+
+/*
+* For marrying two people together based on spousename.
+*/
+/datum/controller/subsystem/familytree/proc/AssignNewlyWed(mob/living/carbon/human/H)
+	var/list/high_priority_lover = list()
+	var/list/mid_priority_lover = list()
+	var/list/low_priority_lover = list()
+	for(var/mob/living/carbon/human/L in viable_spouses)
+		if(!L)
+			continue
+		if(L == H)
+			continue
+		if(L.spouse_name)
+			continue
+		if(H.setspouse == L.real_name && L.setspouse == H.real_name)
+			high_priority_lover.Add(L)
+			break
+		if(H.setspouse == L.real_name)
+			high_priority_lover.Add(L)
+			continue
+		if(L.setspouse == H.real_name)
+			mid_priority_lover.Add(L)
+			continue
+		low_priority_lover.Add(L)
+	var/lover = pick_n_take(high_priority_lover)
+	if(!lover)
+		if(H.setspouse)
+			lover = pick_n_take(mid_priority_lover)
+		else
+			lover = pick_n_take(low_priority_lover)
+	//Success YOUR MARRIED!!!
+	if(ishuman(lover))
+		viable_spouses -= lover
+		viable_spouses -= H
+		H.MarryTo(lover)
