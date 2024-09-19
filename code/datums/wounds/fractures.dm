@@ -56,10 +56,10 @@
 		"The skull caves in!",
 	)
 	sound_effect = "headcrush"
-	whp = 150
+	whp = 80
 	sleep_healing = 0
 	/// Most head fractures are serious enough to cause paralysis
-	var/paralysis = TRUE
+	var/paralysis = FALSE
 	/// Some head fractures are so serious they cause instant death
 	var/mortal = FALSE
 	/// Funny easter egg
@@ -100,48 +100,41 @@
 /datum/wound/fracture/head/brain
 	name = "depressed cranial fracture"
 	crit_message = list(
-		"The cranium is punctured!",
-		"The cranium is pierced!",
+		"The cranium is fractured!",
+		"The cranium is cracked!",
 		"The cranium is torn!",
 	)
-	embed_chance = 100
+	whp = 150
 	paralysis = TRUE
-	mortal = FALSE
+	mortal = TRUE
 	dents_brain = TRUE
 
 /datum/wound/fracture/head/eyes
 	name = "orbital fracture"
 	crit_message = list(
-		"The orbital bone is punctured!",
-		"The orbital bone is pierced!",
-		"The eye socket is punctured!",
-		"The eye socket is pierced!",
+		"The orbital bone is fractured!",
+		"The orbital bone is cracked!",
 	)
-	embed_chance = 100
-	paralysis = TRUE
+	paralysis = FALSE
 	mortal = TRUE
 	dents_brain = FALSE
 
 /datum/wound/fracture/head/ears
 	name = "temporal fracture"
 	crit_message = list(
-		"The orbital bone is punctured!",
-		"The temporal bone is pierced!",
-		"The ear canal is punctured!",
-		"The ear canal is pierced!",
+		"The temporal bone is fractured!",
+		"The temporal bone is cracked!",
 	)
-	embed_chance = 100
-	paralysis = TRUE
+	paralysis = FALSE
 	mortal = TRUE
 	dents_brain = FALSE
 
 /datum/wound/fracture/head/nose
 	name = "nasal fracture"
 	crit_message = list(
-		"The nasal bone is punctured!",
-		"The nasal bone is pierced!",
+		"The nasal bone is fractured!",
+		"The nasal bone is shattered!",
 	)
-	embed_chance = 100
 	paralysis = FALSE
 	mortal = FALSE
 	dents_brain = FALSE
@@ -155,7 +148,7 @@
 		"The jaw is shattered!", 
 		"The jaw caves in!",
 	)
-	whp = 80
+	whp = 50
 	sleep_healing = 0
 
 /datum/wound/fracture/mouth/on_mob_gain(mob/living/affected)
@@ -177,7 +170,7 @@
 		"The spine cracks!",
 		"The spine is broken!",
 	)
-	whp = 100
+	whp = 150
 	sleep_healing = 0
 
 /datum/wound/fracture/neck/on_mob_gain(mob/living/affected)
