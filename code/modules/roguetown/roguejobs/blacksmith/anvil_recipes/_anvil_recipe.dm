@@ -192,3 +192,7 @@
 	if(istype(I,/obj/item/gun/ballistic/revolver/grenadelauncher))
 		var/obj/item/gun/ballistic/revolver/grenadelauncher/R = I
 		R.damfactor = modifier
+	// Modify beartrap's damage.
+	if(istype(I, /obj/item/restraints/legcuffs/beartrap))
+		var/obj/item/restraints/legcuffs/beartrap/B
+		B.trap_damage *= modifier
