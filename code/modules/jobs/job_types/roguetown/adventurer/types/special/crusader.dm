@@ -56,7 +56,7 @@
 		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1, /obj/item/storage/belt/rogue/pouch/coins/rich = 1)
 
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
@@ -73,10 +73,7 @@
 	H.change_stat("intelligence", -1)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
-	if(H.patron != /datum/patron/divine/astrata)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
-
-	if(H.patron != /datum/patron/divine/necra)
+	if(H.patron != /datum/patron/divine/astrata || H.patron != /datum/patron/divine/necra)
 		H.patron = GLOB.patronlist[/datum/patron/forgotten]
 
 /obj/item/clothing/cloak/stabard/crusader
