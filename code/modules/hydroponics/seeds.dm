@@ -9,6 +9,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 	possible_item_intents = list(/datum/intent/use)
+	dust_result = /obj/item/alch/seeddust
 	var/plantname = "Plants"		// Name of plant when planted.
 	var/obj/item/product						// A type path. The thing that is created when the plant is harvested.
 	var/productdesc

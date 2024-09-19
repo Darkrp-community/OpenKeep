@@ -6,42 +6,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	dust_result = null
 
-//pestle recipes
-/obj/item/seeds
-	dust_result = /obj/item/alch/seeddust
-	
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed
-	dust_result = /obj/item/alch/swampdust
-
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweeddry
-	dust_result = /obj/item/alch/swampdust
-
-/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed
-	dust_result = /obj/item/alch/tobaccodust
-
-/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweeddry
-	dust_result = /obj/item/alch/tobaccodust
-
-/obj/item/rogueore/gold
-	dust_result = /obj/item/alch/golddust
-
-/obj/item/ingot/gold
-	dust_result = /obj/item/alch/golddust
-
-/obj/item/rogueore/silver
-	dust_result = /obj/item/alch/silverdust
-
-/obj/item/ingot/silver
-	dust_result = /obj/item/alch/silverdust
-
-/obj/item/rogueore/iron
-	dust_result = /obj/item/alch/irondust
-
-/obj/item/ingot/iron
-	dust_result = /obj/item/alch/irondust
-
-/obj/item/rogueore/coal
-	dust_result = /obj/item/alch/coaldust
+// rune dust results
 
 /obj/item/rune/spell/fire_rune
 	dust_result = /obj/item/alch/firedust
@@ -65,9 +30,6 @@
 	icon_state = "viscera"
 	possible_potion = "healthpot"
 
-/obj/item/natural/chaff/wheat
-	possible_potion = "healthpot"
-
 /obj/item/alch/waterdust
 	name = "water rune dust"
 	icon_state = "runedust"
@@ -88,16 +50,10 @@
 	icon_state = "runedust"
 	possible_potion = "strongmana"
 
-/obj/item/reagent_containers/food/snacks/grown/berries
-	possible_potion = "antidote"
-
 /obj/item/alch/coaldust
 	name = "coal dust"
 	icon_state = "coaldust"
 	possible_potion = "antidote"
-
-/obj/item/ash
-	possible_potion = "diseasecure"
 
 /obj/item/alch/silverdust
 	name = "silver dust"
@@ -126,12 +82,6 @@
 	icon_state = "irondust"
 	possible_potion = "strpot"
 
-/obj/item/reagent_containers/powder/moondust_purest
-	possible_potion = "spdpot"
-
-/obj/item/reagent_containers/powder/salt
-	possible_potion = "spdpot"
-
 /obj/item/alch/airdust
 	name = "air rune dust"
 	icon_state = "runedust"
@@ -141,12 +91,6 @@
 	name = "swampweed dust"
 	icon_state = "tobaccodust"
 	possible_potion = "intpot"
-
-/obj/item/reagent_containers/moondust
-	possible_potion = "intpot"
-
-/obj/item/reagent_containers/powder/ozium
-	possible_potion = "perpot"
 
 /obj/item/alch/tobaccodust
 	name = "tobacco dust"
@@ -176,30 +120,6 @@
 	throwforce = 5
 	w_class = WEIGHT_CLASS_NORMAL
 	dust_result = /obj/item/alch/earthdust
-
-/obj/item/reagent_containers/food/snacks/fish
-	possible_potion = "conpot"
-
-/obj/item/natural/worms/leeches
-	possible_potion = "endpot"
-
-/obj/item/reagent_containers/food/snacks/produce/apple
-	possible_potion = "endpot"
-
-/obj/item/natural/dirtclod
-	possible_potion = "poison"
-
-/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
-	possible_potion = "poison"
-
-/obj/item/seeds/berry/poison
-	possible_potion = "poison"
-
-/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed
-	possible_potion = "poison"
-
-/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
-	possible_potion = "poison"
 
 //Modifier ingredients
 /obj/item/alch/golddust

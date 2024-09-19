@@ -9,7 +9,6 @@
 	tastes = list("sweet" = 1,"bitterness" = 1)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = 15 MINUTES
-	dust_result = /obj/item/alch/swampdust
 
 /obj/item/seeds/swampweed
 	name = "seeds"
