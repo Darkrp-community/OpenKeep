@@ -24,6 +24,7 @@
 	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
 	associated_skill = /datum/skill/combat/knives
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
+	equip_sound = 'sound/foley/dropsound/holster_sword.ogg'
 	throwforce = 12
 	wdefense = 3
 	wbalance = 1 // All knives are swift, bonus to SPD
