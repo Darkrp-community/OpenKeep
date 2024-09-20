@@ -32,7 +32,6 @@
 	item_state = "menacing"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
-	//dropshrink = 0.75
 
 /obj/item/clothing/head/roguetown/strawhat
 	name = "crude straw hat"
@@ -74,7 +73,6 @@
 	icon_state = "fisherhat"
 	item_state = "fisherhat"
 //	color = "#fbc588"
-	//dropshrink = 0.75
 
 /obj/item/clothing/head/roguetown/flathat
 	name = "flat hat"
@@ -149,7 +147,6 @@
 	item_state = "basichood"
 	icon = 'icons/roguetown/clothing/head.dmi'
 	body_parts_covered = NECK
-	slot_flags = ITEM_SLOT_HEAD
 	dynamic_hair_suffix = ""
 	edelay_type = 1
 	adjustable = CAN_CADJUST
@@ -199,7 +196,6 @@
 	item_state = "shalal"
 	icon = 'icons/roguetown/clothing/head.dmi'
 	body_parts_covered = NECK
-	slot_flags = ITEM_SLOT_HEAD
 	dynamic_hair_suffix = ""
 	edelay_type = 1
 	adjustable = CAN_CADJUST
@@ -214,7 +210,6 @@
 	item_state = "astratahood"
 	icon = 'icons/roguetown/clothing/head.dmi'
 	body_parts_covered = NECK
-	slot_flags = ITEM_SLOT_HEAD
 	resistance_flags = FIRE_PROOF // Not the sun hat!
 	dynamic_hair_suffix = ""
 	edelay_type = 1
@@ -230,7 +225,6 @@
 	item_state = "nochood"
 	icon = 'icons/roguetown/clothing/head.dmi'
 	body_parts_covered = NECK
-	slot_flags = ITEM_SLOT_HEAD
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
 	edelay_type = 1
@@ -250,7 +244,6 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	body_parts_covered = NECK
-	slot_flags = ITEM_SLOT_HEAD
 	dynamic_hair_suffix = ""
 	edelay_type = 1
 	adjustable = CAN_CADJUST
@@ -337,7 +330,6 @@
 	name = "jewel of nyle"
 	icon_state = "nile"
 	body_parts_covered = null
-	slot_flags = ITEM_SLOT_HEAD
 	dynamic_hair_suffix = null
 	sellprice = 100
 	resistance_flags = FIRE_PROOF
@@ -411,11 +403,9 @@
 /obj/item/clothing/head/roguetown/helmet
 	icon = 'icons/roguetown/clothing/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "nasal helmet"
 	desc = "A steel nasal helmet, usually worn by the guards of any respectable fief."
 	body_parts_covered = HEAD|HAIR|NOSE
-//	will_cover = HEAD|HAIR|NOSE
 	resistance_flags = FIRE_PROOF
 	icon_state = "nasal"
 	sleevetype = null
@@ -446,7 +436,6 @@
 	icon_state = "skullcap"
 	armor = list("melee" = 70, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|HAIR|EARS
-//	will_cover = HEAD|HAIR|EARS
 	max_integrity = 150
 	sellprice = 20
 
@@ -456,7 +445,6 @@
 	icon_state = "hornedcap"
 	max_integrity = 150
 	body_parts_covered = HEAD|HAIR|EARS
-//	will_cover = HEAD|HAIR|EARS
 	sellprice = 20
 
 /obj/item/clothing/head/roguetown/helmet/winged
@@ -467,7 +455,6 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	body_parts_covered = HEAD|HAIR
-//	will_cover = HEAD|HAIR
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
 
@@ -476,9 +463,7 @@
 	desc = "A lightweight steel helmet generally worn by crossbowmen and garrison archers."
 	icon_state = "kettle"
 	body_parts_covered = HEAD|HAIR
-//	will_cover = HEAD|HAIR
 	flags_inv = HIDEEARS
-//	will_hide = HIDEEARS
 	max_integrity = 250 // Covers less, so less overall integrity
 
 /obj/item/clothing/head/roguetown/helmet/sallet
@@ -487,9 +472,7 @@
 	desc = "A simple steel helmet with no attachments. Helps protect the ears."
 	smeltresult = /obj/item/ingot/steel
 	body_parts_covered = HEAD|HAIR|EARS
-//	will_cover = HEAD|HAIR|EARS
 	flags_inv = HIDEEARS
-//	will_hide = HIDEEARS
 	max_integrity = 300
 	sellprice = 35
 
@@ -512,7 +495,6 @@
 	item_state = "ironplate"
 	desc = "An iron masked helmet usually worn by armed men, it is a solid design yet antiquated and cheap."
 	body_parts_covered = HEAD|HAIR|NOSE|MOUTH|EARS
-//	will_cover = HEAD|HAIR|NOSE|MOUTH|EARS
 	flags_inv = HIDEEARS
 	smeltresult = /obj/item/ingot/iron
 
@@ -524,7 +506,6 @@
 	item_state = "ironpot"
 	desc = "A iron pot style helmet designed to protect the skull and the nose, designs like those are outdated but they are simple to make in big numbers."
 	body_parts_covered = HEAD|HAIR|NOSE|EARS
-//	will_cover = HEAD|HAIR|NOSE|EARS
 	flags_inv = HIDEEARS
 	smeltresult = /obj/item/ingot/iron
 
@@ -536,7 +517,6 @@
 	item_state = "lamellar"
 	desc = "A heavy lamellar cap made out of copper, a primitive material with an effective design to keep the head safe"
 	body_parts_covered = HEAD|HAIR|EARS
-//	will_cover = HEAD|HAIR|EARS
 	flags_inv = HIDEEARS
 	smeltresult = /obj/item/ingot/copper
 
@@ -550,7 +530,6 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	armor = list("melee" = 60, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FIRE_PROOF
-	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = NECK|HAIR|EARS|HEAD
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
 	blocksound = CHAINHIT
@@ -649,10 +628,8 @@
 	emote_environment = 3
 	block2add = FOV_RIGHT|FOV_LEFT
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-//	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
-//	will_cover = HEAD|EARS|HAIR|NOSE|EYES
 	smeltresult = /obj/item/ingot/steel
 	max_integrity = 350
 	sellprice = 65
@@ -670,11 +647,9 @@
 	name = "barbute"
 	desc = "This is the parent heavy helmet. If you're seeing this, someone forgot to add item descriptions. Shame them."
 	body_parts_covered = FULL_HEAD
-//	will_cover = FULL_HEAD
 	icon_state = "barbute"
 	item_state = "barbute"
 	flags_inv = HIDEEARS|HIDEFACE
-//	will_hide = HIDEEARS|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
@@ -691,7 +666,6 @@
 	emote_environment = 3
 	armor = list("melee" = 90, "bullet" = 90, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-//	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // Stab immunity as a treat for low FOV
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 60
@@ -704,7 +678,6 @@
 	emote_environment = 3
 	armor = list("melee" = 90, "bullet" = 70, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-//	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
 	smeltresult = /obj/item/ingot/iron
 	max_integrity = 200 // Still made of iron.
 
@@ -715,7 +688,6 @@
 	icon_state = "gatehelm"
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-//	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/iron
 
@@ -725,7 +697,6 @@
 	icon_state = "rustbarbuta"
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-//	will_hide = HIDEEARS|HIDEFACE|HIDEHAIR
 	smeltresult = /obj/item/ingot/iron
 	max_integrity = 200 // shitty rusted iron
 
@@ -787,11 +758,9 @@
 \----------------*/
 
 /obj/item/clothing/head/roguetown/helmet/leather
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "leather helmet"
 	desc = "A conical leather helmet. It's comfortable and won't protect much, but it's better than nothing."
 	body_parts_covered = HEAD|HAIR|EARS|NOSE
-//	will_cover = HEAD|HAIR|EARS|NOSE
 	icon_state = "leatherhelm"
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
@@ -837,7 +806,6 @@
 	name = "volf helmet"
 	desc = "Bandit initiation rites often involve the slaying of a volf. This such helmet is produced after the hunt, as proof of having passed the test."
 	body_parts_covered = HEAD|HAIR|EARS
-//	will_cover = HEAD|HAIR|EARS
 	icon_state = "volfhead"
 	item_state = "volfhead"
 	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
@@ -1160,7 +1128,6 @@
 	item_state = "grenzelhat"
 	icon = 'icons/roguetown/clothing/head.dmi'
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	detail_tag = "_detail"
 	dynamic_hair_suffix = ""
 	max_integrity = 150
@@ -1193,7 +1160,6 @@
 /obj/item/clothing/head/roguetown/rare/elfplate // Unique Bladesinger kit
 	icon_state = "elfhead"
 	item_state = "elfhead"
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "dark elf plate helmet"
 	desc = "A bizarrely lightweight helmet of alloyed dark elven steel, offering unparalleled protection for elite bladesingers."
 	body_parts_covered = HEAD|HAIR|NOSE
@@ -1212,7 +1178,6 @@
 /obj/item/clothing/head/roguetown/rare/dwarfplate // Unique Longbeard kit
 	icon_state = "dwarfhead"
 	item_state = "dwarfhead"
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "langobard pot helm"
 	desc = "The Langobards are a cult of personality that are tasked by the Dwarven Kings to issue judgement, \
 			justice and order around the realms for dwarvenkind. This helmet is a respected symbol of authority."
@@ -1227,7 +1192,6 @@
 /obj/item/clothing/head/roguetown/rare/grenzelplate // Unique Swordmaster kit
 	icon_state = "human_swordhead"
 	item_state = "human_swordhead"
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "grenzelhoftian chicklet sallet"
 	desc = "A Grenzelhoftian chicklet sallet, decorated with a plume of valor. \
 			It has been proven with severe battle-testing that a wearer's head would crack before the helmet chips."
@@ -1241,7 +1205,6 @@
 /obj/item/clothing/head/roguetown/rare/zybanplate // Unique Freelancer kit
 	icon_state = "human_spearhead"
 	item_state = "human_spearplate"
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "zybantean bastion helm"
 	desc = "The Zybantu Kataphractoe are the ancestral guardians of the first Despot, \
 			their helms designed in the fashion of the capital's majestic sky-piercing tower \
@@ -1273,7 +1236,6 @@
 	item_state = "aasimarhead"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	body_parts_covered = HEAD|EARS|HAIR
 	flags_inv = HIDEEARS
 	allowed_race = list("aasimar")
@@ -1377,7 +1339,6 @@
 	name = "priest's hat"
 	desc = "The sacred headpiece of a priest."
 	icon_state = "priest"
-	//dropshrink = 0
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	dynamic_hair_suffix = "+generic"
 	sellprice = 77
