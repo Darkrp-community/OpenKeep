@@ -114,6 +114,32 @@
 				BUFSTR++
 			STASTR = newamt
 
+			var/obj/item/bodypart/armr = get_bodypart(BODY_ZONE_R_ARM)
+			if(armr)
+				if(STASTR <= 10)
+					armr.sellprice = STASTR
+				if(STASTR > 10)
+					armr.sellprice = STASTR*2
+					if(STASTR > 12)
+						armr.sellprice = STASTR*4 //generally going to be harder to sell limbs off dead bodies, since prior bloodloss will tank stat and price
+						if(STASTR > 14)
+							armr.sellprice = STASTR*6
+							if(STASTR > 16) //VL
+								armr.sellprice = STASTR*10.
+
+			var/obj/item/bodypart/arml = get_bodypart(BODY_ZONE_L_ARM)
+			if(arml)
+				if(STASTR <= 10)
+					arml.sellprice = STASTR
+				if(STASTR > 10)
+					arml.sellprice = STASTR*2
+					if(STASTR > 12)
+						arml.sellprice = STASTR*4
+						if(STASTR > 14)
+							arml.sellprice = STASTR*6
+							if(STASTR > 16)
+								arml.sellprice = STASTR*10
+
 		if("perception")
 			newamt = STAPER + amt
 			if(BUFPER < 0)
@@ -133,6 +159,17 @@
 				newamt--
 				BUFPER++
 			STAPER = newamt
+
+			var/obj/item/organ/eyes/eyes = getorganslot(ORGAN_SLOT_EYES)
+			if(eyes)
+				if(STAPER <= 10)
+					eyes.sellprice = STAPER
+				if(STAPER > 10)
+					eyes.sellprice = STAPER*2
+					if(STAPER > 12) //PER is harder to max out and buff
+						eyes.sellprice = STAPER*4
+						if(STAPER > 14) //tiefling boltslinger basically
+							eyes.sellprice = STAPER*6
 
 			update_fov_angles()
 
@@ -156,6 +193,20 @@
 				BUFINT++
 			STAINT = newamt
 
+			var/obj/item/organ/brain/brain = getorganslot(ORGAN_SLOT_BRAIN)
+			if(brain)
+				if(STAINT <= 10)
+					brain.sellprice = STAINT
+				if(STAINT > 10)
+					brain.sellprice = STAINT*2
+					if(STAINT > 11)
+						brain.sellprice = STAINT*4
+						if(STAINT > 13)
+							brain.sellprice = STAINT*6
+							if(STAINT > 15) //15+ needs a special job - baseline old age elf is 14. 
+								brain.sellprice += STAINT*10 //"smartest" human npcs rn are zizombies and orcs at 10 INT - galaxy brains are player-exclusive.
+
+
 		if("constitution")
 			newamt = STACON + amt
 			if(BUFCON < 0)
@@ -175,6 +226,46 @@
 				newamt--
 				BUFCON++
 			STACON = newamt
+
+			var/obj/item/organ/liver/liver = getorganslot(ORGAN_SLOT_LIVER)
+			if(liver)
+				if(STACON >= 10)
+					liver.sellprice = STACON
+				if(STACON < 10)
+					liver.sellprice = STACON*2
+					if(STACON > 11)
+						liver.sellprice = STACON*3
+						if(STACON > 13)
+							liver.sellprice = STACON*4
+							if(STACON > 15)
+								liver.sellprice += STACON*5
+
+			var/obj/item/organ/stomach = getorganslot(ORGAN_SLOT_STOMACH)
+			if(stomach)
+				if(STACON >= 10)
+					stomach.sellprice = STACON
+				if(STACON < 10)
+					stomach.sellprice = STACON*2
+					if(STACON > 11)
+						stomach.sellprice = STACON*3
+						if(STACON > 13)
+							stomach.sellprice = STACON*4
+							if(STACON > 15)
+								stomach.sellprice += STACON*5
+
+			var/obj/item/organ/guts/guts = getorganslot(ORGAN_SLOT_STOMACH_AID)
+			if(guts)
+				if(STACON >= 10)
+					guts.sellprice = STACON
+				if(STACON < 10)
+					guts.sellprice = STACON*2
+					if(STACON > 11)
+						guts.sellprice = STACON*3
+						if(STACON > 13)
+							guts.sellprice = STACON*4
+							if(STACON > 15)
+								guts.sellprice += STACON*5
+
 
 		if("endurance")
 			newamt = STAEND + amt
@@ -196,6 +287,32 @@
 				BUFEND++
 			STAEND = newamt
 
+			var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
+			if(heart)
+				if(STAEND <= 10)
+					heart.sellprice = STAEND
+				if(STAEND > 10)
+					heart.sellprice = STAEND*2
+					if(STAEND > 12)
+						heart.sellprice = STAEND*3
+						if(STAEND > 14)
+							heart.sellprice = STAEND*5
+							if(STAEND > 16)
+								heart.sellprice += STAEND*7
+
+			var/obj/item/organ/lungs/lungs = getorganslot(ORGAN_SLOT_LUNGS)
+			if(lungs)
+				if(STAEND <= 10)
+					lungs.sellprice = STAEND
+				if(STAEND > 10)
+					lungs.sellprice = STAEND*2
+					if(STAEND > 12)
+						lungs.sellprice = STAEND*3
+						if(STAEND > 14)
+							lungs.sellprice = STAEND*5
+							if(STAEND > 16)
+								lungs.sellprice += STAEND*7
+
 		if("speed")
 			newamt = STASPD + amt
 			if(BUFSPE < 0)
@@ -215,6 +332,32 @@
 				newamt--
 				BUFSPE++
 			STASPD = newamt
+
+			var/obj/item/bodypart/legr = get_bodypart(BODY_ZONE_R_LEG)
+			if(legr)
+				if(STASPD <= 10)
+					legr.sellprice = STASPD
+				if(STASPD > 10)
+					legr.sellprice = STASPD*2
+					if(STASPD > 12)
+						legr.sellprice = STASPD*4
+						if(STASPD > 15)
+							legr.sellprice = STASPD*6
+							if(STASPD > 17)
+								legr.sellprice += STASPD*8
+
+			var/obj/item/bodypart/legl = get_bodypart(BODY_ZONE_L_LEG)
+			if(legl)
+				if(STASPD <= 10)
+					legl.sellprice = STASPD
+				if(STASPD > 10)
+					legl.sellprice = STASPD*2
+					if(STASPD > 12)
+						legl.sellprice = STASPD*4
+						if(STASPD > 15)
+							legl.sellprice = STASPD*6
+							if(STASPD > 17)
+								legl.sellprice += STASPD*8
 
 			update_move_intent_slowdown()
 
@@ -237,6 +380,17 @@
 				newamt--
 				BUFLUC++
 			STALUC = newamt
+
+			var/obj/item/organ/tongue/tongue = getorganslot(ORGAN_SLOT_TONGUE) //Superstition? also only really beggars and jesters can be farmed for this
+			if(tongue)
+				if(STALUC <= 10)
+					tongue.sellprice = STALUC
+				if(STALUC > 10)
+					tongue.sellprice = STALUC*2
+					if(STALUC > 12)
+						tongue.sellprice = STALUC*4
+						if(STALUC > 14)
+							tongue.sellprice = STALUC*6
 
 /proc/generic_stat_comparison(userstat as num, targetstat as num)
 	var/difference = userstat - targetstat
