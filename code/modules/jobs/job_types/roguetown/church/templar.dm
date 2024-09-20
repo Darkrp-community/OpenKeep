@@ -41,10 +41,12 @@
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
 		if("Eora")
-			neck = /obj/item/clothing/neck/roguetown/psycross/silver/eora
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
+			neck = /obj/item/clothing/neck/roguetown/chaincoif
+			cloak = /obj/item/clothing/cloak/stabard/templar/eora
 			H.virginity = FALSE
 		if("Pestra")
-			neck = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
 		if("Noc")

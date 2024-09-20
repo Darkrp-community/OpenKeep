@@ -36,6 +36,7 @@
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
 		if("Eora")
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
+			cloak = /obj/item/clothing/cloak/stabard/templar/eora
 			H.virginity = FALSE
 		if("Ravox")
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
