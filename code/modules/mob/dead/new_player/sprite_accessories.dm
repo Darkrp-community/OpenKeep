@@ -49,7 +49,7 @@
 /datum/sprite_accessory
 	var/icon			//the icon file the accessory is located in
 	var/icon_state		//the icon_state of the accessory
-	var/name			//the preview name of the accessory
+	var/name			//the preview name of the accessory. Even if they have different paths and say gender requirements the MUST BE UNIQUE or they wont show
 	var/gender = NEUTER	//Determines if the accessory will be skipped or included in random hair generations
 	var/gender_specific //Something that can be worn by either gender, but looks different on each
 	var/use_static		//determines if the accessory will be skipped by color preferences
@@ -248,7 +248,7 @@
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 
 /datum/sprite_accessory/hair/majestic_human
-	name = "Majestic"
+	name = "Majesty"
 	icon_state = "majestic"
 	gender = MALE
 	specuse = list("human")
@@ -322,13 +322,13 @@
 	specuse = list("human", "dwarf", "aasimar", "tiefling")
 	
 /datum/sprite_accessory/hair/son_elf
-	name = "Son"
+	name = "Sonne"
 	icon_state = "son_elf"
 	gender = MALE
 	specuse = list("elf")
 
 /datum/sprite_accessory/hair/squire_human
-	name = "Squire"
+	name = "Squired"
 	icon_state = "squire" // original name shaved_european
 	gender = MALE
 	specuse = list("human")
@@ -509,7 +509,7 @@
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 	
 /datum/sprite_accessory/hair/majestic_dwarf_F
-	name = "Majestic"
+	name = "Majestiq"
 	icon_state = "majestic_dwarf_f"
 	gender = FEMALE
 	specuse = list("dwarf")
@@ -647,7 +647,7 @@
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 
 /datum/sprite_accessory/hair/majestic_elf
-	name = "Majestic"
+	name = "Majestie"
 	icon_state = "majestic_elf"
 	gender = NEUTER
 	specuse = list("elf")
