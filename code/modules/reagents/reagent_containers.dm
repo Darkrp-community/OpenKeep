@@ -17,6 +17,8 @@
 	var/drinksounds = list('sound/items/drink_gen (1).ogg','sound/items/drink_gen (2).ogg','sound/items/drink_gen (3).ogg')
 	var/fillsounds
 	var/poursounds
+	var/short_cooktime = FALSE  // based on cooking skill
+	var/long_cooktime = FALSE  // based on cooking skill
 
 /obj/item/reagent_containers/weather_trigger(W)
 	if(W==/datum/weather/rain)
