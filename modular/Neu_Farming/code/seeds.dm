@@ -5,6 +5,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 	possible_item_intents = list(/datum/intent/use)
+	dust_result = /obj/item/alch/seeddust
 	var/plant_def_type
 	var/seed_identity = "some seed"
 
