@@ -25,13 +25,13 @@
 	var/sellprice = 0
 	//crafting diff, every diff removes 25% chance to craft
 /*
-/datum/crafting_recipe/pin_removal
-	name = "Pin Removal"
-	result = /obj/item/gun
+/datum/crafting_recipe/example
+	name = ""
+	result = /obj/item/stuff
 	reqs = list(/obj/item/gun = 1)
 	parts = list(/obj/item/gun = 1)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	time = 50
+	time = 5 SECONDS
 	category = CAT_NONE
 	subcategory = CAT_NONE
 */
