@@ -87,7 +87,7 @@
 //	STASTR = zombie.STASTR-1
 //	STASPD = zombie.STASPD-5
 //	STAINT = zombie.STAINT-5
-	zombie.STACON = 5
+//	zombie.STACON = 5
 	zombie.STASPD = 5
 	zombie.STAINT = 2
 	cmode_music = zombie.cmode_music
