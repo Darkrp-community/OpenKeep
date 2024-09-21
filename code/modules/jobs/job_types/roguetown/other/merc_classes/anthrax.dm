@@ -22,7 +22,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
@@ -39,13 +39,12 @@
 			backr = /obj/item/rogueweapon/shield/tower/spidershield
 			beltr = /obj/item/rogueweapon/whip/spiderwhip
 
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
 
 			H.change_stat("strength", 2) //Grenz merc statline but with maluses.
-			H.change_stat("constitution", 2)
+			H.change_stat("constitution", 1)
 			H.change_stat("endurance", 1)
 			H.change_stat("intelligence", -1) //Brutebrain, relies on archer for healing, lockpicking and crafting.
 			H.change_stat("speed", -1)
@@ -58,6 +57,7 @@
 			cloak = /obj/item/clothing/cloak/half/shadowcloak
 			gloves = /obj/item/clothing/gloves/roguetown/fingerless/shadowgloves
 			mask = /obj/item/clothing/mask/rogue/shepherd/shadowmask
+			neck =/obj/item/clothing/neck/roguetown/chaincoif/iron
 			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve //Coupled with the racial PER malus, abysmal damage, but good for poison arrows.
 			beltr = /obj/item/quiver/arrows
 			beltl = /obj/item/rogueweapon/sword/iron/short
