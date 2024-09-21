@@ -193,13 +193,21 @@
 	craftdiff = 3
 	subtype_reqs = TRUE
 
-/datum/crafting_recipe/roguetown/pestle
-	name = "stone pestle"
-	result = /obj/item/pestle
-	reqs = list(/obj/item/natural/stone = 1)
+/datum/crafting_recipe/roguetown/alchmortar
+	name = "alchemical mortar"
+	result = /obj/item/mortar
+	reqs = list(/obj/item/natural/stone = 3)
 	tools = list(/obj/item/rogueweapon/huntingknife)
-	craftdiff = 3
-	subtype_reqs = TRUE
+	verbage = "crafts"
+	skillcraft = /datum/skill/craft/masonry
+
+/datum/crafting_recipe/roguetown/pestle
+	name = "pestle"
+	result = /obj/item/pestle
+	reqs = list(/obj/item/natural/stone = 2)
+	tools = list(/obj/item/rogueweapon/huntingknife)
+	verbage = "crafts"
+	skillcraft = /datum/skill/craft/masonry
 
 /datum/crafting_recipe/roguetown/bag
 	name = "bag"
