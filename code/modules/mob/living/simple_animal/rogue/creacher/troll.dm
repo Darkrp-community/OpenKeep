@@ -14,7 +14,8 @@
 	move_to_delay = 7
 	base_intents = list(/datum/intent/unarmed/wwolf, /datum/intent/simple/bigbite)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/xeno = 1,
-						/obj/item/natural/hide = 2)
+						/obj/item/natural/hide = 2,
+						/obj/item/alch/horn = 2)
 	faction = list("orcs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	health = 600
