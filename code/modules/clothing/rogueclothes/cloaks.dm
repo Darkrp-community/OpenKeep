@@ -212,6 +212,17 @@
 	GLOB.lordcolor -= src
 	return ..()
 
+/obj/item/clothing/cloak/tabard/adept
+	detail_tag = "_psy"
+	color = CLOTHING_BLACK
+	detail_color = CLOTHING_WHITE
+
+/obj/item/clothing/cloak/tabard/adept/Initialize()
+	..()
+	update_icon()
+
+/obj/item/clothing/cloak/tabard/adept/attack_right(mob/user)
+	return
 
 //////////////////////////
 /// SOLDIER TABARD
@@ -904,6 +915,18 @@
 /obj/item/clothing/cloak/half/random/Initialize()
 	color = pick(CLOTHING_RED, CLOTHING_PURPLE, CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_BLUE)
 	..()
+
+//............... Battle Nun ........................... (unique kit for the role, tabard for aesthetics)
+/obj/item/clothing/cloak/battlenun
+	name = "nun vestments"
+	desc = "Chaste, righteous, merciless to the wicked."
+	color = null
+	icon_state = "battlenun"
+	item_state = "battlenun"
+	allowed_sex = list(FEMALE)
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
 
 // Dumping old black knight stuff here
 /obj/item/clothing/cloak/cape/blkknight

@@ -17,7 +17,9 @@
 	move_to_delay = 8
 	animal_species = /mob/living/simple_animal/hostile/retaliate/rogue/bull
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 6,
-						/obj/item/natural/hide=2)
+						/obj/item/natural/hide = 2,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 80
 	maxHealth = 80
@@ -177,7 +179,9 @@
 	see_in_dark = 6
 	move_to_delay = 8
 	base_intents = list(/datum/intent/simple/headbutt)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 6)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 6,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
 	faction = list("cows")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_same = 0
