@@ -27,7 +27,6 @@
 	minstr = 7
 	sellprice = 30
 	wdefense = 4
-	sheathe_sound = 'sound/items/wood_sharpen.ogg'
 
 /obj/item/rogueweapon/sword/Initialize()
 	. = ..()
