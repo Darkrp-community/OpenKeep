@@ -88,7 +88,8 @@
 	if(farminglvl >= 0)
 		. += "I can easily tell that these are oat groats."
 
-
+// oldpath for map fix TO DO /obj/item/reagent_containers/food/snacks/produce/apple
+// obj/item/seeds/apple
 /obj/item/reagent_containers/food/snacks/produce/apple
 	seed = /obj/item/neuFarm/seed/apple
 	name = "apple"
