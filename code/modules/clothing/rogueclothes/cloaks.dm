@@ -212,6 +212,17 @@
 	GLOB.lordcolor -= src
 	return ..()
 
+/obj/item/clothing/cloak/tabard/adept
+	detail_tag = "_psy"
+	color = CLOTHING_BLACK
+	detail_color = CLOTHING_WHITE
+
+/obj/item/clothing/cloak/tabard/adept/Initialize()
+	..()
+	update_icon()
+
+/obj/item/clothing/cloak/tabard/adept/attack_right(mob/user)
+	return
 
 //////////////////////////
 /// SOLDIER TABARD
