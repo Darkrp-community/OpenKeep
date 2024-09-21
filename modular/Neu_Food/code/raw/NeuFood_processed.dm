@@ -431,7 +431,7 @@
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
@@ -452,7 +452,7 @@
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
@@ -474,7 +474,7 @@
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
@@ -582,37 +582,4 @@
 	rotprocess = null
 
 
-// -------------- BEER WORT-----------------
 
-/datum/crafting_recipe/roguetown/cooking/beerstarter
-	name = "Beer starter"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/roguehops = 1,
-		/obj/item/reagent_containers/food/snacks/grown/wheat = 1)
-	result = /obj/item/reagent_containers/food/snacks/grown/roguewort
-
-/obj/item/reagent_containers/food/snacks/grown/roguehops
-	name = "bog bitters"
-	desc = ""
-	icon_state = "swampweedd" //placeholder
-	eat_effect = /datum/status_effect/debuff/uncookedfood
-	tastes = list("exteme bitterness" = 1)
-	bitesize = 1
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
-	can_distill = FALSE
-	rotprocess = null
-	seed = null
-
-/obj/item/reagent_containers/food/snacks/grown/roguewort
-	name = "wort"
-	desc = "disgusting mash of leaves and grain, brew this into a strong stout"
-	icon_state = "flour"
-	eat_effect = /datum/status_effect/debuff/uncookedfood
-	tastes = list("exteme bitterness" = 1)
-	bitesize = 1
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
-	can_distill = TRUE
-	distill_amt = 36 //net increase over ingredients
-	distill_reagent = /datum/reagent/consumable/ethanol/beer/real
-	rotprocess = null
-	seed = null
