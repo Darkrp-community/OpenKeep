@@ -134,29 +134,39 @@
 			backl = /obj/item/storage/backpack/rogue/backpack
 			backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/huntingknife = 1)
 		if("Noble")
+			var/prev_real_name = H.real_name
+			var/prev_name = H.name
+			var/honorary = "Lord"
+			if(H.gender == FEMALE)
+				honorary = "Lady"
+			H.real_name = "[honorary] [prev_real_name]"
+			H.name = "[honorary] [prev_name]"
+
 			shoes = /obj/item/clothing/shoes/roguetown/boots
-			beltr = /obj/item/flashlight/flare/torch/lantern
 			backl = /obj/item/storage/backpack/rogue/satchel
 			neck = /obj/item/storage/belt/rogue/pouch/coins/poor //Spent all their money on expensive clothing.
 			belt = /obj/item/storage/belt/rogue/leather/assassin
 			id = /obj/item/clothing/ring/silver
 			if(H.gender == MALE)
 				H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE) //The male noble's sword is less useful than the female noble's bow, so no downside.
-				pants = /obj/item/clothing/under/roguetown/tights/purple
-				shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/purple
-				cloak = /obj/item/clothing/cloak/half
+				pants = /obj/item/clothing/under/roguetown/tights/black
+				shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/random
+				cloak = /obj/item/clothing/cloak/raincloak/furcloak
 				head = /obj/item/clothing/head/roguetown/fancyhat
-				beltl = /obj/item/rogueweapon/sword/rapier/dec
-				backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special)
+				backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+				beltr = /obj/item/rogueweapon/sword/rapier/dec
+				beltl = /obj/item/quiver/arrows
+				backpack_contents = list(/obj/item/reagent_containers/glass/bottle/rogue/wine = 1, /obj/item/reagent_containers/glass/cup/silver = 1)
 			else
 				H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE) //Female nobles get the male noble's bow, but are less trained than an Assassin disguising as a Hunter. Balance.
 				H.mind.adjust_skillrank(/datum/skill/combat/crossbows, -1, TRUE)
-				armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
-				head = /obj/item/clothing/head/roguetown/hatblu
-				cloak = /obj/item/clothing/cloak/raincloak/purple
+				shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random
+				head = /obj/item/clothing/head/roguetown/hatfur
+				cloak = /obj/item/clothing/cloak/raincloak/furcloak
 				backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+				beltr = /obj/item/rogueweapon/huntingknife/idagger/steel/special
 				beltl = /obj/item/quiver/arrows
-				backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver)
+				backpack_contents = list(/obj/item/reagent_containers/glass/bottle/rogue/wine = 1, /obj/item/reagent_containers/glass/cup/silver = 1)
 		if("Peasant")
 			H.mind.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
 			belt = /obj/item/storage/belt/rogue/leather/assassin
@@ -175,7 +185,7 @@
 				armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 				shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 				pants = null
-			backpack_contents = list(/obj/item/seeds/wheat=1,/obj/item/seeds/apple=1,/obj/item/ash=1)
+			backpack_contents = list(/obj/item/neuFarm/seed/wheat=1,/obj/item/neuFarm/seed/apple=1,/obj/item/ash=1)
 			beltl = /obj/item/rogueweapon/sickle
 			backr = /obj/item/rogueweapon/pitchfork
 		if("Woodcutter")
