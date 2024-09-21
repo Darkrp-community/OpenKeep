@@ -277,7 +277,7 @@
 /obj/projectile/bullet/reusable/bullet
 	name = "lead ball"
 	desc = "A round lead shot, simple and spherical."
-	damage = 60
+	damage = 80
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "musketball_proj"
