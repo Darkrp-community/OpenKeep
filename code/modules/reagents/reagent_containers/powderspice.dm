@@ -179,13 +179,14 @@
 
 /obj/item/reagent_containers/powder/ozium
 	name = "ozium"
-	desc = ""
+	desc = "A potent drug that causes a state of euphoria, but can also arrest breathing."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "ozium"
 	possible_transfer_amounts = list()
 	volume = 15
 	list_reagents = list(/datum/reagent/ozium = 15)
 	sellprice = 5
+	possible_potion = "perpot"
 
 /datum/reagent/ozium
 	name = "Ozium"
@@ -223,13 +224,14 @@
 
 /obj/item/reagent_containers/powder/moondust
 	name = "moondust"
-	desc = ""
+	desc = "Derived from the skins of certain pallid goblins. Makes folk quick to act and anger."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust"
 	possible_transfer_amounts = list()
 	volume = 15
 	list_reagents = list(/datum/reagent/moondust = 15)
 	sellprice = 5
+	possible_potion = "intpot"
 
 /datum/reagent/moondust/overdose_process(mob/living/M)
 	M.adjustToxLoss(0.25*REM, 0)
@@ -262,14 +264,15 @@
 	M.adjustToxLoss(10, 0)
 
 /obj/item/reagent_containers/powder/moondust_purest
-	name = "moondust"
-	desc = ""
+	name = "pure moondust"
+	desc = "This moondust glitters even in the dark. It seems to have certain pure properties."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust_purest"
 	possible_transfer_amounts = list()
 	volume = 18
 	list_reagents = list(/datum/reagent/moondust_purest = 18)
 	sellprice = 30
+	possible_potion = "spdpot"
 
 /datum/reagent/moondust_purest
 	name = "Purest Moondust"
