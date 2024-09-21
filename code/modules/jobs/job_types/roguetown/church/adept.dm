@@ -99,13 +99,14 @@
 	backpack_contents = list(/obj/item/lockpick = 1, /obj/item/keyring/shepherd = 1, /obj/item/rogueweapon/huntingknife/idagger/silver = 1)
 
 	//Stats for class
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
