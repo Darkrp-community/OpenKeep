@@ -197,8 +197,6 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	var/list/blocksound //played when an item that is equipped blocks a hit
 
-	var/sheathe_sound // played when item is placed on hip_r or hip_l, the belt side slots
-
 /obj/item/Initialize()
 	. = ..()
 	if(!pixel_x && !pixel_y && !bigboy)
@@ -634,9 +632,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 // called after an item is placed in an equipment slot
 // user is mob that equipped it
-// slot uses the slot_X defines found in setup.dm.
+// slot uses the slot_X defines found in setup.dm
 // for items that can be placed in multiple slots
-// The slot == refers to the new location of the item
 // Initial is used to indicate whether or not this is the initial equipment (job datums etc) or just a player doing it
 /obj/item/proc/equipped(mob/user, slot, initial = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
@@ -647,14 +644,10 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 			A.Grant(user)
 	item_flags |= IN_INVENTORY
 	if(!initial)
-		var/slotbit = slotdefine2slotbit(slot)
-		if(slot == SLOT_HANDS) // for some reason doesnt work. Replace with any other slot it does. Im stumped.
-			playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)	
-		if(slot == SLOT_BELT_R || slot == SLOT_BELT_L)
-			playsound(src, sheathe_sound, SHEATHE_SOUND_VOLUME, ignore_walls = FALSE)
-		else if(equip_sound &&(slot_flags & slotbit))
+		if(equip_sound &&(slot_flags & slotdefine2slotbit(slot)))
 			playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
-
+		else if(slot == SLOT_HANDS)
+			playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
 	user.update_equipment_speed_mods()
 
 	if(!user.is_holding(src))
