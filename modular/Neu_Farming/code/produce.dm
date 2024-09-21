@@ -93,7 +93,7 @@
 /obj/item/reagent_containers/food/snacks/produce/apple
 	seed = /obj/item/neuFarm/seed/apple
 	name = "apple"
-	desc = ""
+	desc = "The humble apple. A sweet and nutritious fruit."
 	icon_state = "apple"
 	bitesize = 3
 	foodtype = FRUIT
@@ -109,6 +109,7 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/cider
 	var/equippedloc = null
 	var/list/bitten_names = list()
+	possible_potion = "endpot"
 
 /obj/item/reagent_containers/food/snacks/produce/apple/On_Consume(mob/living/eater)
 	..()
@@ -147,7 +148,7 @@
 /obj/item/reagent_containers/food/snacks/produce/berries/rogue
 	seed = /obj/item/neuFarm/seed/berryrogue
 	name = "jacksberries"
-	desc = ""
+	desc = "Common berries found throughout Rockhill. A traveler's repast, or Dendor's wrath."
 	icon_state = "berries"
 	tastes = list("berry" = 1)
 	bitesize = 5
@@ -158,6 +159,7 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/jackberrywine
 	rotprocess = SHELFLIFE_SHORT
 	var/poisonous = FALSE
+	possible_potion = "antidote"
 
 /obj/item/reagent_containers/food/snacks/produce/berries/rogue/Initialize()
 	if(GLOB.berrycolors[color_index])
@@ -205,12 +207,13 @@
 	grind_results = list(/datum/reagent/berrypoison = 5)
 	color_index = "bad"
 	poisonous = TRUE
+	possible_potion = "poison"
 
 /*	..................   Swamp weed   ................... */
 /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed
 	seed = /obj/item/neuFarm/seed/swampleaf
 	name = "swampweed"
-	desc = "A 'foggy' pipe weed."
+	desc = "A weed that can be dried and smoked to induce a relaxed state."
 	icon_state = "swampweed"
 	filling_color = "#008000"
 	bitesize_mod = 1
@@ -219,25 +222,28 @@
 	tastes = list("sweet" = 1,"bitterness" = 1)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
+	possible_potion = "poison"
+	dust_result = /obj/item/alch/swampdust
 
 /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried
 	seed = null
 	name = "swampweed"
-	desc = ""
+	desc = "A dried weed that can be smoked to induce a relaxed state."
 	icon_state = "swampweedd"
 	dry = TRUE
 	pipe_reagents = list(/datum/reagent/drug/space_drugs = 30)
 	list_reagents = list(/datum/reagent/drug/space_drugs = 2,/datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/drug/space_drugs = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
-
+	possible_potion = "poison"
+	dust_result = /obj/item/alch/swampdust
 
 
 /*	..................   Pipe weed   ................... */
 /obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed
 	seed = /obj/item/neuFarm/seed/pipeweed
 	name = "westleach leaf"
-	desc = "A generic kind of pipe weed."
+	desc = "A common, strong-smelling leaf that is often dried and smoked."
 	icon_state = "westleach"
 	filling_color = "#008000"
 	bitesize_mod = 1
@@ -247,24 +253,27 @@
 	grind_results = list(/datum/reagent/drug/nicotine = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
+	possible_potion = "poison"
+	dust_result = /obj/item/alch/tobaccodust
 
 /obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed_dried
 	seed = null
 	name = "westleach leaf"
-	desc = "A dried leaf."
+	desc = "A common, strong-smelling leaf dried for smoking."
 	icon_state = "westleachd"
 	dry = TRUE
 	pipe_reagents = list(/datum/reagent/drug/nicotine = 30)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	list_reagents = list(/datum/reagent/drug/nicotine = 5, /datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/drug/nicotine = 10)
-
+	possible_potion = "poison"
+	dust_result = /obj/item/alch/tobaccodust
 
 
 /*	..................   Cabbage   ................... */
 /obj/item/reagent_containers/food/snacks/produce/cabbage
 	name = "cabbage"
-	desc = "A dense leafed vegetable, crunchy and ripe. A symbol of prosperity for elves"
+	desc = "A vegetable with thick leaves, seen as a symbol of prosperity by some elves."
 	seed = /obj/item/neuFarm/seed/cabbage
 	icon_state = "cabbage"
 	tastes = list("cabbage" = 1)
@@ -281,7 +290,7 @@
 /*	..................   Onions   ................... */
 /obj/item/reagent_containers/food/snacks/produce/onion
 	name = "onion"
-	desc = "A wonderful vegetable with many layers and broad flavor profile."
+	desc = "A wonderful vegetable with many layers and a broad flavor profile."
 	seed = /obj/item/neuFarm/seed/onion
 	icon_state = "onion"
 	slices_num = 1
@@ -297,6 +306,9 @@
 	dropshrink = 0.9
 	rotprocess = SHELFLIFE_LONG
 
+/*/obj/item/reagent_containers/food/snacks/produce/onion/slice(obj/item/W, mob/user) I cant do it. Below causes a runtime its true but its so tiny! And this new one is so damn boring.
+	. = ..()
+	to_chat(user, "<span class='notice'>My eyes sting a little...</span>") */
 /obj/item/reagent_containers/food/snacks/produce/onion/slice(accuracy, obj/item/W, mob/user)
 	var/datum/effect_system/smoke_spread/transparent/S = new	//Since the onion is destroyed when it's sliced,
 	var/splat_location = get_turf(src)	//we need to set up the smoke beforehand
@@ -306,6 +318,7 @@
 		S.start()
 		return TRUE
 	qdel(S)
+
 
 /*	..................   Potato   ................... */
 /obj/item/reagent_containers/food/snacks/produce/potato
