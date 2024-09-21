@@ -202,6 +202,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/force_reupdate_inhand = TRUE
 	var/smelted = FALSE // Sanity for smelteries to avoid runtimes, if this is a bar smelted through ore for exp gain
 	var/istrainable = FALSE // Can this be used against a training dummy to learn skills? Prevents dumb exploits.
+	var/dust_result // Takes an item path. What it turns into after being grinded by a mortar and pestle.
 
 /obj/item/Initialize()
 	. = ..()
