@@ -58,7 +58,7 @@
 			to_chat(src, "<span class='info'>My dexterity allowed me to land on my feet unscathed!</span>")
 			if(src.m_intent != MOVE_INTENT_SNEAK) // If we're sneaking, don't make a sound
 				sneak_fall = TRUE
-				playsound(src.loc, 'sound/items/book_close.ogg', 100, FALSE)
+				playsound(src.loc, 'sound/foley/bodyfall (1).ogg', 100, FALSE)
 			return
 	var/points
 	for(var/i in 2 to levels)

@@ -20,6 +20,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	pickup_sound = 'sound/foley/equip/swordlarge1.ogg'
 	equip_sound = 'sound/foley/dropsound/holster_sword.ogg'
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
 	flags_1 = CONDUCT_1
 	throwforce = 10
 	thrown_bclass = BCLASS_CUT
@@ -186,7 +187,7 @@
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
+	bigboy = TRUE
 	max_blade_int = 300
 	max_integrity = 500
 	wlength = WLENGTH_LONG
@@ -231,7 +232,7 @@
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
+	bigboy = TRUE
 	max_blade_int = 180 // Neglected, unused
 	max_integrity = 300
 	wlength = WLENGTH_LONG
@@ -273,7 +274,7 @@
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
+	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	gripsprite = TRUE
 	pixel_y = -16
@@ -401,7 +402,7 @@
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
+	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	gripsprite = TRUE
 	pixel_y = -16
@@ -443,7 +444,7 @@
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
+	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	gripsprite = TRUE
 	pixel_y = -16
@@ -527,7 +528,7 @@
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
+	bigboy = TRUE
 	max_blade_int = 240 // Integrity and blade retention is .8 of a steel sword
 	max_integrity = 400
 	wlength = WLENGTH_LONG
@@ -1247,7 +1248,7 @@
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
+	bigboy = TRUE
 	max_blade_int = 150 // Shitty Weapon
 	max_integrity = 230//this is fair to be fair
 	wlength = WLENGTH_LONG
@@ -1279,7 +1280,7 @@
 	pixel_y = -16
 	pixel_x = -16
 	dropshrink = 0.75
-	bigboy = 1 // WHY DOES THIS FUCKING VARIABLE CONTROL WHETHER THE BLOOD OVERLAY WORKS ON 64x64 WEAPONS
+	bigboy = TRUE // WHY DOES THIS FUCKING VARIABLE CONTROL WHETHER THE BLOOD OVERLAY WORKS ON 64x64 WEAPONS
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	smeltresult = null // No bronze ingots yet
 	max_blade_int = 300

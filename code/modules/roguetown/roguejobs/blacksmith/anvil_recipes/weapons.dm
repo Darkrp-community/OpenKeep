@@ -168,9 +168,10 @@
 	craftdiff = 0 // To train with
 
 /datum/anvil_recipe/weapons/flail_iron
-	name = "Flail"
+	name = "Flail (+c) (+s)"
 	recipe_name = "a Flail"
 	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/flail
 
 /datum/anvil_recipe/weapons/lucerne
@@ -348,9 +349,10 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/flail_steel
-	name = "Flail"
+	name = "Flail (+c) (+s)"
 	recipe_name = "a Flail"
 	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/flail/sflail
 	craftdiff = 2
 
@@ -415,6 +417,15 @@
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/rogueweapon/mace/steel
 	craftdiff = 2
+
+/datum/anvil_recipe/weapons/peasant_flail
+	name = "Peasant Flail (+c) (+w)"
+	recipe_name = "a two-handed flail"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/small)
+	created_item = /obj/item/rogueweapon/flail/peasant
+	craftdiff = 3
 
 /datum/anvil_recipe/weapons/paxe
 	name = "Pick-Axe (2) (+s)"

@@ -17,6 +17,7 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
 	blocksound = SOFTHIT
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	body_parts_covered = NECK|HAIR|EARS|HEAD
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
@@ -63,6 +64,8 @@
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
 	body_parts_covered = NECK|HAIR|EARS|HEAD
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
+	pickup_sound = 'sound/foley/equip/equip_armor_chain.ogg'
+	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	blocksound = CHAINHIT
@@ -105,6 +108,7 @@
 	flags_inv = HIDEFACIALHAIR
 	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/steel
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	max_integrity = 300
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK|EARS|MOUTH|NOSE
@@ -119,13 +123,13 @@
 			Fits comfortably beneath chest armor, despite its weight."
 	flags_inv = HIDEFACIALHAIR
 	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
 	max_integrity = 150
 	resistance_flags = FIRE_PROOF
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/neck/roguetown/gorget/hoplite // Better than an iron gorget, not quite as good as a steel bervor

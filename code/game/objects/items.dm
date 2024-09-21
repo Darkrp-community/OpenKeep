@@ -8,7 +8,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 /obj/item
 	name = "item"
 	icon = 'icons/obj/items_and_weapons.dmi'
-	///icon state name for inhanf overlays
+	///icon state name for inhand overlays
 	var/item_state = null
 	///Icon file for left hand inhand overlays
 	var/lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
@@ -42,7 +42,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	///Used when yate into a mob
 	var/mob_throw_hit_sound
 	///Sound used when equipping the item into a valid slot
-	var/equip_sound
+	var/equip_sound = null
 	///Sound uses when picking the item up (into my hands)
 	var/pickup_sound = "rustle"
 	///Sound uses when dropping the item, or when its thrown.
@@ -79,6 +79,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/armor_penetration = 0 //percentage of armour effectiveness to remove
 	var/list/allowed = null //suit storage stuff.
 	var/equip_delay_self = 1 //In deciseconds, how long an item takes to equip; counts only for normal clothing slots, not pockets etc.
+	var/unequip_delay_self = 1 // In deciseconds, how long does it take for us to take off a piece of clothing or equipment.
 	var/edelay_type = 1 //if 1, can be moving while equipping (for helmets etc)
 	var/equip_delay_other = 20 //In deciseconds, how long an item takes to put on another person
 	var/strip_delay = 40 //In deciseconds, how long an item takes to remove from another person
@@ -197,13 +198,23 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	var/list/blocksound //played when an item that is equipped blocks a hit
 
+	var/list/onprop = list()
+	var/force_reupdate_inhand = TRUE
+	var/smelted = FALSE // Sanity for smelteries to avoid runtimes, if this is a bar smelted through ore for exp gain
+	var/istrainable = FALSE // Can this be used against a training dummy to learn skills? Prevents dumb exploits.
+
 /obj/item/Initialize()
 	. = ..()
 	if(!pixel_x && !pixel_y && !bigboy)
 		pixel_x = rand(-5,5)
 		pixel_y = rand(-5,5)
+	
 	if(twohands_required)
 		has_inspect_verb = TRUE
+	// Initalize addon for the var for custom inhands 32x32.
+	if(!experimental_inhand)
+		inhand_x_dimension = 32
+		inhand_y_dimension = 32
 	update_transform()
 
 
@@ -540,6 +551,18 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	return FALSE
 
 /obj/item/proc/allow_attack_hand_drop(mob/user)
+	if(ishuman(user))
+		var/mob/living/carbon/human/C = user
+		if(!(src in C.held_items) && unequip_delay_self)
+			if(unequip_delay_self >= 10)
+				C.visible_message(span_smallnotice("[C] starts taking off [src]..."), span_smallnotice("I start taking off [src]..."))
+			if(edelay_type)
+				if(move_after(C, minone(unequip_delay_self-C.STASPD), target = C))
+					return TRUE
+			else
+				if(do_after(C, minone(unequip_delay_self-C.STASPD), target = C))
+					return TRUE
+
 	return TRUE
 
 /obj/item/attack_paw(mob/user)
@@ -646,10 +669,12 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if(!initial)
 		if(equip_sound)
 			if(slot_flags & slotdefine2slotbit(slot))
-				playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
+				if(user.m_intent != MOVE_INTENT_SNEAK) // Sneaky sheathing/equipping
+					playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
 		if(pickup_sound)
 			if(user.is_holding(src))
-				playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
+				if(user.m_intent != MOVE_INTENT_SNEAK) // Don't play a sound if we're sneaking, for assassination purposes.
+					playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
 	user.update_equipment_speed_mods()
 
 	if(!user.is_holding(src))

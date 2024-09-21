@@ -7,7 +7,7 @@
 	icon = 'icons/roguetown/clothing/pants.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/pants.dmi'
 	equip_sound = 'sound/blank.ogg'
-	drop_sound = 'sound/blank.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	pickup_sound =  'sound/blank.ogg'
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	sleevetype = "leg"
@@ -139,6 +139,8 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 	resistance_flags = FIRE_PROOF
 	blocksound = CHAINHIT
+	equip_delay_self = 25
+	unequip_delay_self = 25
 	var/do_sound = FALSE
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
@@ -165,6 +167,8 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	armor_class = ARMOR_CLASS_HEAVY
 	blocksound = PLATEHIT
+	equip_delay_self = 30
+	unequip_delay_self = 30
 	resistance_flags = FIRE_PROOF
 	var/do_sound = FALSE
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'

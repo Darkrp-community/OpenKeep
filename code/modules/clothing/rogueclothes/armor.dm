@@ -14,6 +14,7 @@
 	sleevetype = "shirt"
 	edelay_type = 1
 	equip_delay_self = 25
+	unequip_delay_self = 25
 	bloody_icon_state = "bodyblood"
 	boobed = TRUE
 	resistance_flags = FIRE_PROOF
@@ -21,6 +22,7 @@
 	sellprice = 1
 	blade_dulling = DULLING_BASHCHOP
 	break_sound = 'sound/foley/breaksound.ogg'
+	equip_sound = 'sound/foley/equip/equip_armor.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	experimental_onhip = TRUE
 	nodismemsleeves = TRUE
@@ -36,6 +38,8 @@
 	blocksound = CHAINHIT
 	var/do_sound = FALSE
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+	pickup_sound = 'sound/foley/equip/equip_armor_chain.ogg'
+	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 	armor_class = ARMOR_CLASS_MEDIUM
 	smeltresult = /obj/item/ingot/steel
@@ -90,8 +94,8 @@
 /obj/item/clothing/suit/roguetown/armor/plate
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "steel half-plate armor"
-	desc = "\'Adventurer-fit\' plate armor with pauldrons."
-	body_parts_covered = CHEST|GROIN|VITALS|ARMS
+	desc = "Plate armor with shoulder guards. An incomplete, bulky set of excellent armor."
+	body_parts_covered = CHEST|GROIN|VITALS
 	icon_state = "halfplate"
 	item_state = "halfplate"
 	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -102,7 +106,9 @@
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
+	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
 	equip_delay_self = 40
+	unequip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 90
 
@@ -139,6 +145,7 @@
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	equip_delay_self = 80
+	unequip_delay_self = 80
 	max_integrity = 500
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 120
@@ -179,6 +186,8 @@
 	color = COLOR_ASSEMBLY_GOLD
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	armor_class = ARMOR_CLASS_MEDIUM
+	equip_delay_self = 25 // Light elven craft
+	unequip_delay_self = 25
 	sellprice = 200
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale
@@ -194,6 +203,7 @@
 	armor = list("melee" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
+	unequip_delay_self = 40
 	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 50
 
@@ -208,7 +218,6 @@
 	max_integrity = 350 // Three iron bars, extra durability
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/iron
-	equip_delay_self = 40
 	sellprice = 30
 
 // Rare Heartfelt equipment
@@ -259,6 +268,7 @@
 	allowed_sex = list(MALE, FEMALE)
 	anvilrepair = /datum/skill/craft/armorsmithing
 	equip_delay_self = 40
+	unequip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 95
@@ -617,10 +627,14 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 
 
 /obj/item/clothing/suit/roguetown/armor/rare
+	name = "Parent rare armor"
+	desc = "You shouldn't be seeing this. Did you forget to add a description?"
 	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleeved = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleevetype = null
+	equip_delay_self = 40
+	unequip_delay_self = 40
 
 // Bladesinger armor, unique
 /obj/item/clothing/suit/roguetown/armor/rare/elfplate
@@ -638,7 +652,8 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
-	equip_delay_self = 40
+	equip_delay_self = 25
+	unequip_delay_self = 25
 	armor_class = ARMOR_CLASS_MEDIUM // Elven craft
 
 /obj/item/clothing/suit/roguetown/armor/rare/elfplate/Initialize()
@@ -669,7 +684,6 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
-	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
 
 /obj/item/clothing/suit/roguetown/armor/rare/dwarfplate/Initialize()
@@ -695,7 +709,6 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
-	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 200
 
@@ -724,7 +737,6 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
-	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 200
 
@@ -753,7 +765,6 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = null // No bronze ingots yet, unfortunately
-	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 300 // It has great value to historical collectors
 
@@ -843,6 +854,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
+	unequip_delay_self = 40
 	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/shoes/roguetown/boots/armor/vampire

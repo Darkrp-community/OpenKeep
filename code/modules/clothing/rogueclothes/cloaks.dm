@@ -6,6 +6,8 @@
 	desc = "A simple cloak covering the body."
 	edelay_type = 1
 	equip_delay_self = 10
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
 	bloody_icon_state = "bodyblood"
 	sewrepair = TRUE
 	anvilrepair = null
@@ -694,7 +696,7 @@
 	item_state = "rain_hood"
 	slot_flags = ITEM_SLOT_HEAD
 	dynamic_hair_suffix = ""
-	edelay_type = 1
+	edelay_type = 1 // Leaving as 1 so you get that small do_after for dramatic purposes
 	body_parts_covered = HEAD
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	block2add = FOV_BEHIND

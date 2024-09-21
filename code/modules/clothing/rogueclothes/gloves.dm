@@ -88,6 +88,8 @@
 	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	armor_class = ARMOR_CLASS_HEAVY
 	blocksound = PLATEHIT
+	equip_delay_self = 25
+	unequip_delay_self = 25
 	body_parts_covered = ARMS|HANDS
 	max_integrity = 350
 	blade_dulling = DULLING_BASH
@@ -150,6 +152,8 @@
 	icon_state = "dwarfhand"
 	allowed_race = list("dwarf")
 	allowed_sex = list(MALE, FEMALE)
+	equip_delay_self = 25
+	unequip_delay_self = 25
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 

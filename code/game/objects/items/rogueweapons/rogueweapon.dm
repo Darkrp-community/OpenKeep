@@ -20,6 +20,7 @@
 	sellprice = 1
 	has_inspect_verb = TRUE
 	parrysound = list('sound/combat/parry/parrygen.ogg')
+	drop_sound = 'sound/foley/dropsound/mace_drop.ogg'
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	obj_flags = CAN_BE_HIT
 	blade_dulling = DULLING_BASH

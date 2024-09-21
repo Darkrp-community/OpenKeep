@@ -197,7 +197,6 @@
 	icon = 'icons/roguetown/clothing/head.dmi'
 	body_parts_covered = NECK
 	dynamic_hair_suffix = ""
-	edelay_type = 1
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	max_integrity = 100
@@ -212,7 +211,6 @@
 	body_parts_covered = NECK
 	resistance_flags = FIRE_PROOF // Not the sun hat!
 	dynamic_hair_suffix = ""
-	edelay_type = 1
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	max_integrity = 100
@@ -227,7 +225,6 @@
 	body_parts_covered = NECK
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
-	edelay_type = 1
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	max_integrity = 100
@@ -245,7 +242,6 @@
 	worn_y_dimension = 64
 	body_parts_covered = NECK
 	dynamic_hair_suffix = ""
-	edelay_type = 1
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	max_integrity = 100
@@ -412,6 +408,9 @@
 	sleeved = null
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	equip_sound = 'sound/foley/equip/equip_armor.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	pickup_sound = null
 	dynamic_hair_suffix = "+generic"
 	bloody_icon_state = "helmetblood"
 	anvilrepair = /datum/skill/craft/armorsmithing
@@ -496,6 +495,8 @@
 	desc = "An iron masked helmet usually worn by armed men, it is a solid design yet antiquated and cheap."
 	body_parts_covered = HEAD|HAIR|NOSE|MOUTH|EARS
 	flags_inv = HIDEEARS
+	equip_delay_self = 25
+	unequip_delay_self = 25
 	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/head/roguetown/helmet/ironpot
@@ -526,6 +527,8 @@
 	desc = "A gleaming coif of metal half-hidden by a black veil."
 	icon_state = "battlenun"
 	item_state = "battlenun"
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
 	dynamic_hair_suffix = "+concealed"
 	flags_inv = HIDEEARS|HIDEHAIR
 	armor = list("melee" = 60, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -554,6 +557,9 @@
 	smeltresult = /obj/item/ingot/steel // All visored helmets are made of steel
 	max_integrity = 350
 	sellprice = 60
+	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
+	equip_delay_self = 30
+	unequip_delay_self = 30
 
 // Proc shared by all visored helmets, therefore modular
 /obj/item/clothing/head/roguetown/helmet/visored/AdjustClothes(mob/user)
@@ -654,6 +660,9 @@
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	block2add = FOV_RIGHT|FOV_LEFT
+	equip_delay_self = 30
+	unequip_delay_self = 30
+	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
 	smeltresult = /obj/item/ingot/steel
 	max_integrity = 250
 	sellprice = 100
@@ -901,6 +910,8 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+	equip_delay_self = 30
+	unequip_delay_self = 30
 	var/picked = FALSE
 	smeltresult = /obj/item/ingot/steel
 
@@ -955,6 +966,8 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+	equip_delay_self = 30
+	unequip_delay_self = 30
 	var/picked = FALSE
 	smeltresult = /obj/item/ingot/steel
 
@@ -1009,6 +1022,8 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+	equip_delay_self = 30
+	unequip_delay_self = 30
 	var/picked = FALSE
 	smeltresult = /obj/item/ingot/steel
 
@@ -1063,6 +1078,8 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+	equip_delay_self = 30
+	unequip_delay_self = 30
 	var/picked = FALSE
 	smeltresult = /obj/item/ingot/steel
 
@@ -1161,6 +1178,8 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST, BCLASS_BITE)
 	anvilrepair = /datum/skill/craft/armorsmithing
 	blocksound = PLATEHIT
+	equip_delay_self = 30
+	unequip_delay_self = 30
 
 /obj/item/clothing/head/roguetown/rare/elfplate // Unique Bladesinger kit
 	icon_state = "elfhead"
