@@ -17,6 +17,7 @@
 	var/STASTR
 	var/STASPD
 	var/STAINT
+	var/STACON
 	var/cmode_music
 	var/list/base_intents
 	/// Whether or not we have been turned
@@ -80,10 +81,15 @@
 	if(zombie.dna?.species)
 		soundpack_m = zombie.dna.species.soundpack_m
 		soundpack_f = zombie.dna.species.soundpack_f
+		var/mutable_appearance/rotflies = mutable_appearance('icons/roguetown/mob/rotten.dmi', "deadite")
+		zombie.add_overlay(rotflies)
 	base_intents = zombie.base_intents
-	STASTR = zombie.STASTR
-	STASPD = zombie.STASPD
-	STAINT = zombie.STAINT
+//	STASTR = zombie.STASTR-1
+//	STASPD = zombie.STASPD-5
+//	STAINT = zombie.STAINT-5
+//	zombie.STACON = 5
+	zombie.STASPD = 5
+	zombie.STAINT = 2
 	cmode_music = zombie.cmode_music
 	return ..()
 
@@ -111,8 +117,8 @@
 			REMOVE_TRAIT(zombie, trait, "[type]")
 		zombie.remove_client_colour(/datum/client_colour/monochrome)
 		if(has_turned && become_rotman)
-			zombie.STACON = max(zombie.STACON - 3, 1) //ur rotting bro
-			zombie.STASPD = max(zombie.STASPD - 4, 1)
+			zombie.STACON = max(zombie.STACON - 5, 1) //ur rotting bro
+			zombie.STASPD = max(zombie.STASPD - 5, 1)
 			zombie.STAINT = max(zombie.STAINT - 3, 1)
 			for(var/trait in traits_rotman)
 				ADD_TRAIT(zombie, trait, "[type]")
@@ -199,8 +205,8 @@
 		return
 	var/mob/living/carbon/human/zombie = user
 	if(world.time > next_idle_sound)
-		zombie.emote("idle")
-		next_idle_sound = world.time + rand(5 SECONDS, 10 SECONDS)
+		zombie.emote("zmoan")
+		next_idle_sound = world.time + rand(12 SECONDS, 32 SECONDS)
 
 //Infected wake param is just a transition from living to zombie, via zombie_infect()
 //Previously you just died without warning in 3 minutes, now you just become an antag
@@ -298,4 +304,5 @@
 	emote("scream") // heres your warning to others bro
 	Knockdown(1)
 	zombie_antag.wake_zombie(TRUE)
+
 	return TRUE
