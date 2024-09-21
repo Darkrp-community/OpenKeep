@@ -15,12 +15,12 @@
 //not an error or a warning, but worth to mention on the world log, just in case.
 #define NOTICE(MSG) notice(MSG)
 /proc/notice(msg)
-	msg = "## NOTICE: [msg]"
+	msg = "[TIMETOTEXT4LOGS] ## NOTICE: [msg]"
 	log_world(msg)
 
 //print a testing-mode debug message to world.log and world
 #ifdef TESTING
-#define testing(msg) log_world("[TIMETOTEXT4LOGS]## TESTING: [msg]"); to_chat(world, "## TESTING: [msg]")
+#define testing(msg) log_world("[TIMETOTEXT4LOGS] ## TESTING: [msg]"); to_chat(world, "## TESTING: [msg]")
 #else
 #define testing(msg)
 #endif

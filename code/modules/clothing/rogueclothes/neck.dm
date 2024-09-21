@@ -182,7 +182,7 @@
 /obj/item/clothing/neck/roguetown/psycross/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	. = ..()
 	var/mob/living/carbon/human/H = M
-	var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+	var/datum/antagonist/vampirelord/V_lord = H.mind?.has_antag_datum(/datum/antagonist/vampirelord/)
 	if(H.mind)
 		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
