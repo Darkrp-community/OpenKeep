@@ -887,6 +887,13 @@
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = list("human", "tiefling", "elf", "aasimar")
 
+/obj/item/clothing/cloak/half/shadowcloak
+	name = "stalker cloak"
+	desc = "A heavy leather cloak held together by a gilded pin. The pin depicts a spider with disconnected legs."
+	icon_state = "shadowcloak"
+	color = null
+	allowed_race = list("elf", "dark elf")
+
 /obj/item/clothing/cloak/half/brown
 	color = CLOTHING_BROWN
 
