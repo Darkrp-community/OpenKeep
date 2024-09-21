@@ -11,7 +11,7 @@
 	speak_chance = 1
 	turns_per_move = 2
 	see_in_dark = 10
-	move_to_delay = 3
+	move_to_delay = 7
 	base_intents = list(/datum/intent/unarmed/wwolf, /datum/intent/simple/bigbite)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/xeno = 1,
 						/obj/item/natural/hide = 2,
@@ -27,6 +27,10 @@
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 	retreat_distance = 0
 	minimum_distance = 0
+	verb_say = "groans"
+	verb_ask = "grunts"
+	verb_exclaim = "roars"
+	verb_yell = "roars"
 	milkies = FALSE
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -48,72 +52,12 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/xeno/troll // Placeholder until Troll remains are sprited.
 	body_eater = TRUE
-	var/critvuln = TRUE
+	var/critvuln = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/Initialize()
 	. = ..()
 	if(critvuln)
 		ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
-
-/mob/living/simple_animal/hostile/retaliate/rogue/troll/blood
-	name = "FLESH HOMUNCULUS"
-	desc = null
-	hud_type = /datum/hud/human
-	icon_state = "FLESH"
-	icon_living = "FLESH"
-	icon = 'icons/mob/mob.dmi'
-	mob_biotypes = MOB_EPIC
-	critvuln = FALSE
-	STACON = 10
-	STASTR = 19
-	STASPD = 1
-	STAEND = 11
-
-/mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended
-	name = "???"
-	desc = null
-	hud_type = /datum/hud/human
-	icon_state = "ascend"
-	icon_living = "ascend"
-	icon = 'icons/mob/32x64.dmi'
-	move_to_delay = 0
-	base_intents = list(/datum/intent/unarmed/ascendedclaw)
-	melee_damage_lower = 250
-	melee_damage_upper = 550
-	health = 666666
-	maxHealth = 666666
-	critvuln = FALSE
-	STACON = 66
-	STASTR = 66
-	STASPD = 66
-	STAEND = 66
-
-/mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/examine(mob/user)
-	. = ..()
-	. += "<span class='narsiesmall'>It is impossible to comprehend such a thing.</span>"
-
-/mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/Initialize()
-	. = ..()
-	set_light(5,5, LIGHT_COLOR_RED)
-	ADD_TRAIT(src, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
-
-/mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/get_sound(input)
-	switch(input)
-		if("aggro")
-			return pick('sound/misc/HL (1).ogg','sound/misc/HL (2).ogg','sound/misc/HL (3).ogg','sound/misc/HL (4).ogg','sound/misc/HL (5).ogg','sound/misc/HL (6).ogg')
-		if("pain")
-			return pick('sound/misc/HL (1).ogg','sound/misc/HL (2).ogg','sound/misc/HL (3).ogg','sound/misc/HL (4).ogg','sound/misc/HL (5).ogg','sound/misc/HL (6).ogg')
-		if("death")
-			return pick('sound/misc/HL (1).ogg','sound/misc/HL (2).ogg','sound/misc/HL (3).ogg','sound/misc/HL (4).ogg','sound/misc/HL (5).ogg','sound/misc/HL (6).ogg')
-		if("idle")
-			return pick('sound/misc/HL (1).ogg','sound/misc/HL (2).ogg','sound/misc/HL (3).ogg','sound/misc/HL (4).ogg','sound/misc/HL (5).ogg','sound/misc/HL (6).ogg')
-		if("cidle")
-			return pick('sound/misc/HL (1).ogg','sound/misc/HL (2).ogg','sound/misc/HL (3).ogg','sound/misc/HL (4).ogg','sound/misc/HL (5).ogg','sound/misc/HL (6).ogg')
-
-/mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/death(gibbed)
-	. = ..()
-	gib()
-	qdel(src)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/death(gibbed)
 	..()
@@ -143,6 +87,9 @@
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
+	if(fire_stacks <= 0)
+		adjustHealth(-rand(20,35))
+
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/simple_limb_hit(zone)
 	if(!zone)

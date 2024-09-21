@@ -53,11 +53,6 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
-	if(prob(30))
-		head = /obj/item/clothing/head/roguetown/helmet/kettle
-	else
-		head = /obj/item/clothing/head/roguetown/helmet
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
