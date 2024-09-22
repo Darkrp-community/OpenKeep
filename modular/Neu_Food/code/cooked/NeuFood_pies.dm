@@ -226,7 +226,7 @@
 
 
 
-	if(istype(I, /obj/item/reagent_containers/food/snacks/grown/apple))
+	if(istype(I, /obj/item/reagent_containers/food/snacks/produce/apple))
 		if (process_step > 4)
 			return
 		playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
@@ -252,7 +252,7 @@
 			qdel(I)
 			return
 
-	if(istype(I, /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison))
+	if(istype(I, /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison))
 		if (process_step > 4)
 			return
 		playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
@@ -281,7 +281,7 @@
 			qdel(I)
 			return	
 	
-	else if(istype(I, /obj/item/reagent_containers/food/snacks/grown/berries/rogue))
+	else if(istype(I, /obj/item/reagent_containers/food/snacks/produce/berries/rogue))
 		if (process_step > 4)
 			return
 		playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
@@ -513,6 +513,16 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | MEAT
 	tastes = list("succulent meat" = 1)
+
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/cheese
+	w_class = WEIGHT_CLASS_NORMAL
+	foodtype = GRAIN | DAIRY
+	tastes = list("hot cheese" = 1)
+
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/apple
+	w_class = WEIGHT_CLASS_NORMAL
+	foodtype = GRAIN | FRUIT
+	tastes = list("sweet apple" = 1)
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/berry
 	w_class = WEIGHT_CLASS_NORMAL
