@@ -212,7 +212,7 @@
 	config_entry_value = ""
 
 /datum/config_entry/string/githuburl
-	config_entry_value = ""
+	config_entry_value = "https://github.com/Darkrp-community/OpenKeep"
 
 /datum/config_entry/string/roundstatsurl
 
