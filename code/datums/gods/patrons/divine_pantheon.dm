@@ -21,7 +21,7 @@
 	desc = "The Firstborn of the Forgotten God, twin of Astrata, gifted mankind divine wisdom."
 	flaws = "Resentful, Vindictive, Haughty"
 	worshippers = "Magic Practitioners, Scholars, Scribes"
-	sins = "Ignorance, Burning books, Carnal desire"
+	sins = "Ignorance, Burning Books, Indulgence of Lust"
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/blindness
 	t2 = null
