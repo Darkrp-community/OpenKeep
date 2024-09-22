@@ -32,19 +32,19 @@
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, pick(1,1,2), TRUE) // Wood staff
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) // Wood staff
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 
-		H.change_stat("strength", 3)
-		H.change_stat("constitution", 2)
-		H.change_stat("endurance", 2)
-		H.change_stat("perception", -1)
-		H.change_stat("speed", 1)
+		H.change_stat("strength", 2)
+		H.change_stat("constitution", 1)
+		H.change_stat("endurance", 1)
+		H.change_stat("perception", -2)
+		H.change_stat("speed", 2)
 		
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 		
