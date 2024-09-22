@@ -178,12 +178,12 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	var/speak = input("What do you speak of?", "ROGUETOWN") as text|null
 	if(!speak)
 		return
-	playsound_local(src, 'sound/vo/cult/skvor.ogg', 100)
 	whisper("O schlet'a ty'schkotot ty'skvoro...")
 	whisper("[speak]")
 
 	for(var/datum/mind/V in C.cultists)
 		to_chat(V, "<span class='boldnotice'>A message from [src.real_name]: \"[speak]\"</span>")
+		playsound_local(V.current, 'sound/vo/cult/skvor.ogg', 100)
 
 /obj/effect/decal/cleanable/sigil
 	name = "sigils"
