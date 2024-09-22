@@ -178,7 +178,8 @@
 	item_state = "rusthalf"
 	max_integrity = 200 // Rusty
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/iron/shadowplate
+// Anthrax merc plate, unique
+/obj/item/clothing/suit/roguetown/armor/cuirass/iron/shadowplate
 	name = "scourge breastplate"
 	desc = "More form over function, this armor is fit for demonstration of might rather than open combat. The aged gilding slowly tarnishes away."
 	icon_state = "shadowplate"
