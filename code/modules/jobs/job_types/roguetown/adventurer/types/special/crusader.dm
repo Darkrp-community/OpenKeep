@@ -37,10 +37,10 @@
 	switch(H.patron?.name)
 		if("Astrata")
 			armor = /obj/item/clothing/cloak/stabard/crusader // Gold for Astrata regardless of gender
-			wrists = /obj/item/clothing/neck/roguetown/psycross/astrata
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
 		if("Necra")
 			armor = /obj/item/clothing/cloak/stabard/templar/necra
-			wrists = /obj/item/clothing/neck/roguetown/psycross/necra
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 		if("Forgotten God")
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver
 			if(H.gender == FEMALE) // Silver for female, gold for male
