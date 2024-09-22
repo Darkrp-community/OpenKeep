@@ -82,7 +82,7 @@
 	desc = "The finest alchemist to ever live, made saint by her own brew."
 	flaws = "Drunkenness, Crudeness, Irresponsibility"
 	worshippers = "The Ill and Infirm, Alchemists, Necromancers"
-	sins = "´Curing´ abnormalities, Refusing to help the misfortunates, Groveling"	
+	sins = "´Curing´ Abnormalities, Refusing to Help Unfortunates, Groveling"	
 	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
 	t1 = /obj/effect/proc_holder/spell/invoked/heal
 	t2 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
