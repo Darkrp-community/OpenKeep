@@ -80,7 +80,7 @@
 	result = /obj/machinery/gear_painter
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "construct"
-	verbage_tp = "makes"
+	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 0
