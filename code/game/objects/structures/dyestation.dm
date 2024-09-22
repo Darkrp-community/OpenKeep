@@ -1,17 +1,14 @@
-/obj/structure/dye_bin
-	name = "dye bin"
-	desc = "A bin with water."
+/obj/machinery/gear_painter
+	name = "Dye bin"
+	desc = "A station to give your apparel a fresh new color! Recommended to use with white items for best results."
 	icon = 'icons/roguetown/misc/structure.dmi'
-	icon_state = "dye_bin"
+	icon_state = "dye_bin_full"
 	density = TRUE
-	anchored = FALSE
-	max_integrity = 150
-	drag_slowdown = 2
-	throw_speed = 1
-	throw_range = 1
-	var/berry_charges = 0
+	anchored = TRUE
 	var/atom/movable/inserted
 	var/activecolor = "#FFFFFF"
+	/// Allow holder'd mobs
+	var/allow_mobs = TRUE
 	var/list/allowed_types = list(
 			/obj/item/clothing/suit/roguetown/shirt/robe,
 			/obj/item/clothing/suit/roguetown/shirt/dress,
@@ -30,10 +27,8 @@
 			/obj/item/clothing/shoes/roguetown/simpleshoes,
 			/obj/item/clothing/suit/roguetown/armor/gambeson,
 			/obj/item/clothing/suit/roguetown/armor/gambeson/light,
-			/obj/item/clothing/suit/roguetown/armor/gambeson/heavy,
-			/obj/item/clothing/suit/roguetown/armor/armordress,
+			/obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 			)
-
 	var/static/list/selectable_colors = list(
   		"White" = "#ffffff",
 		"Black" = "#414143",
@@ -69,69 +64,55 @@
 		"Chestnut" = "#613613",
 		"Russet" = "#7f461b"
 		)
-
-/obj/structure/dye_bin/examine(mob/user)
-	. = ..()
-	if(berry_charges > 0)
-		. += span_info("There's some colorful dyes floating inside")
-	else
-		. += span_info("There's no dyes inside")
-
-/obj/structure/dye_bin/update_icon()
-	. = ..()
-	if(berry_charges > 0)
-		icon_state = "dye_bin_full"
-	else
-		icon_state = "dye_bin"
-
-/obj/structure/dye_bin/Destroy()
+/obj/machinery/gear_painter/Destroy()
 	inserted.forceMove(drop_location())
 	return ..()
 
-/obj/structure/dye_bin/attackby(obj/item/I, mob/living/user)
-	if(istype(I, /obj/item/reagent_containers/food/snacks/grown/berries/rogue))
-		to_chat(user, span_notice("I squeeze \the berries into some colorful dye"))
-		berry_charges += 3
-		update_icon()
-		qdel(I)
-		return
-	if(is_type_in_list(I, allowed_types))
+/obj/machinery/gear_painter/attackby(obj/item/I, mob/living/user)
+	if(allow_mobs && istype(I, /obj/item/clothing/head/mob_holder))
+		var/obj/item/clothing/head/mob_holder/H = I
 		if(!user.transferItemToLoc(I, src))
 			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
 			return
-		user.visible_message("<span class='notice'>[user] inserts [I] into the [src].</span>")
+		if(!QDELETED(H))
+			H.release()
+
+	if(is_type_in_list(I, allowed_types) && is_operational())
+		if(!user.transferItemToLoc(I, src))
+			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
+			return
+		user.visible_message("<span class='notice'>[user] inserts [I] into [src]'s receptable.</span>")
 
 		inserted = I
 	else
 		return ..()
 
-/obj/structure/dye_bin/AllowDrop()
+/obj/machinery/gear_painter/AllowDrop()
 	return FALSE
 
-/obj/structure/dye_bin/ui_interact(mob/user)
-	var/list/dat = list("<TITLE>dye bucket</TITLE><BR>")
+/obj/machinery/gear_painter/ui_interact(mob/user)
+	if(!is_operational())
+		return
+	user.set_machine(src)
+	var/list/dat = list("<TITLE>Dye Station Control Panel</TITLE><BR>")
 	if(!inserted)
-		dat += "Nothing inside."
+		dat += "No item inserted."
 	else
-		dat += "Item inserted: [inserted]<BR>"
-		dat += "<A href='?src=\ref[src];eject=1'>Take [inserted] out.</A><BR><BR>"
-		if(berry_charges <= 0)
-			dat += "No dye inside."
-		else
-			dat += "<A href='?src=\ref[src];select=1'>Mix a color.</A><BR>"
-			dat += "Color: <font color='[activecolor]'>&#9899;</font>"
-			dat += "<A href='?src=\ref[src];paint=1'>Rub the dyes in.</A><BR><BR>"
-			dat += "<A href='?src=\ref[src];clear=1'>Bleach it.</A><BR><BR>"
+		dat += "Item inserted: [inserted]<HR>"
+		dat += "<A href='?src=\ref[src];select=1'>Select new color.</A><BR>"
+		dat += "Color: <font color='[activecolor]'>&#9899;</font>"
+		dat += "<A href='?src=\ref[src];paint=1'>Apply new dye.</A><BR><BR>"
+		dat += "<A href='?src=\ref[src];clear=1'>Bleach out the color.</A><BR><BR>"
+		dat += "<A href='?src=\ref[src];eject=1'>Remove item.</A><BR><BR>"
 
-	var/datum/browser/menu = new(user, "colormate","dye bucket", 400, 400, src)
+	var/datum/browser/menu = new(user, "colormate","Dye Station", 400, 400, src)
 	menu.set_content(dat.Join(""))
 	menu.open()
 
-/obj/structure/dye_bin/Topic(href, href_list)
+/obj/machinery/gear_painter/Topic(href, href_list)
 	if((. = ..()))
 		return
 
-	var/mob/user = usr
 	add_fingerprint(usr)
 
 	if(href_list["close"])
@@ -139,49 +120,29 @@
 		return
 
 	if(href_list["select"])
-		var/choice = input(usr,"Mix a color:","Dyes",null) as null|anything in selectable_colors
+		var/choice = input(usr,"Choose your dye:","Dyes",null) as null|anything in selectable_colors
 		if(!choice)
 			return
 		activecolor = selectable_colors[choice]
-		ui_interact(user)
+		updateUsrDialog()
 
 	if(href_list["paint"])
 		if(!inserted)
 			return
-		if(berry_charges <= 0)
-			ui_interact(user)
-			return
-		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 50, FALSE)
-		if(!do_after(user, 3 SECONDS, target = src))
-			return
-		if(berry_charges <= 0)
-			return
 		inserted.add_atom_colour(activecolor, FIXED_COLOUR_PRIORITY)
-		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 50, FALSE)
-		berry_charges--
-		update_icon()
-		ui_interact(user)
+		playsound(src, "bubbles", 50, 1)
+		updateUsrDialog()
 
 	if(href_list["clear"])
 		if(!inserted)
 			return
-		if(berry_charges <= 0)
-			ui_interact(user)
-			return
-		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 50, FALSE)
-		if(!do_after(user, 3 SECONDS, target = src))
-			return
-		if(berry_charges <= 0)
-			return
 		inserted.remove_atom_colour(FIXED_COLOUR_PRIORITY)
-		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 50, FALSE)
-		berry_charges--
-		update_icon()
-		ui_interact(user)
+		playsound(src, "bubbles", 50, 1)
+		updateUsrDialog()
 
 	if(href_list["eject"])
 		if(!inserted)
 			return
 		inserted.forceMove(drop_location())
 		inserted = null
-		ui_interact(user)
+		updateUsrDialog()

@@ -77,12 +77,13 @@
 
 /datum/crafting_recipe/roguetown/structure/dye_bin
 	name = "dye bin"
-	result = /obj/structure/dye_bin
+	result = /obj/machinery/gear_painter
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "construct"
 	verbage_tp = "makes"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/roguebin
 	name = "wooden bin"
