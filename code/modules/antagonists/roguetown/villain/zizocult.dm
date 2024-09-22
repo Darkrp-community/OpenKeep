@@ -429,7 +429,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			visible_message("<span class='danger'>[src] reaches out, ripping up [choice]'s soul!</span>")
 			to_chat(choice, "<span class='userdanger'>I HAVE FAILED MY LEADER! I HAVE FAILED ZIZO! NOTHING ELSE BUT DEATH REMAINS FOR ME NOW!</span>")
 			sleep(20)
-			gib(choice) // Cooler than dusting.
+			choice.gib() // Cooler than dusting.
 			C.cultists -= choice.mind
 
 // RITUAL DATUMS
