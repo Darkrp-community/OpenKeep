@@ -178,6 +178,13 @@
 	item_state = "rusthalf"
 	max_integrity = 200 // Rusty
 
+/obj/item/clothing/suit/roguetown/armor/plate/half/iron/shadowplate
+	name = "scourge breastplate"
+	desc = "More form over function, this armor is fit for demonstration of might rather than open combat. The aged gilding slowly tarnishes away."
+	icon_state = "shadowplate"
+	item_state = "shadowplate"
+	body_parts_covered = CHEST|GROIN
+	allowed_race = list("elf", "dark elf")
 
 // Blackoak armor, unique
 /obj/item/clothing/suit/roguetown/armor/plate/elven
@@ -390,6 +397,12 @@
 	body_parts_covered = CHEST|ARMS|VITALS|GROIN
 	allowed_race = list("human", "tiefling", "aasimar")
 	sellprice = 40
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/shadowrobe
+	name = "stalker robe"
+	desc = "A robe-like gambeson of moth-eaten cloth and cheap purple dye. No self-respecting elf would be seen wearing this."
+	allowed_race = list("elf", "dark elf")
+	icon_state = "shadowrobe"
 
 /obj/item/clothing/suit/roguetown/armor/leather
 	slot_flags = ITEM_SLOT_ARMOR

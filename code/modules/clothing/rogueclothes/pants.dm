@@ -125,6 +125,12 @@
 	icon_state = "leathertrou"
 	color = "#151615"
 
+/obj/item/clothing/under/roguetown/trou/shadowpants
+	name = "silk tights"
+	desc = "Form-fitting legwear. Almost too form-fitting."
+	icon_state = "shadowpants"
+	allowed_race = list("elf", "dark elf")
+
 /obj/item/clothing/under/roguetown/chainlegs
 	name = "chain chausses"
 	desc = "Chain maille chausses made of exquisite steel rings boasting superior protection."

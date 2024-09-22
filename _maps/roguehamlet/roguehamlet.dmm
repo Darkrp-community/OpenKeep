@@ -734,7 +734,7 @@
 "eRB" = (/turf/open/floor/rogue/ruinedwood/turned,/area/rogue/indoors/town/manor{first_time_text = "Blackwine Manor"})
 "eRH" = (/obj/machinery/light/rogue/oven/south,/turf/open/floor/rogue/tile{icon_state = "greenstone"},/area/rogue/indoors)
 "eRP" = (/obj/item/reagent_containers/food/snacks/rogue/meat/poultry,/obj/item/reagent_containers/food/snacks/rogue/meat/poultry,/obj/structure/closet/crate/chest/crate,/turf/open/floor/rogue/metal/barograte,/area/rogue/outdoors/exposed/under/basement)
-"eRR" = (/obj/item/paper/confession,/obj/item/paper/confession,/obj/item/paper/confession,/obj/item/paper/confession,/obj/item/paper/confession,/obj/structure/closet/crate/chest/neu_iron,/obj/item/keyring/puritan,/turf/open/floor/rogue/blocks,/area/rogue/under/town/basement)
+"eRR" = (/obj/item/paper/confession,/obj/item/paper/confession,/obj/item/paper/confession,/obj/item/paper/confession,/obj/item/paper/confession,/obj/structure/closet/crate/chest/neu_iron,/obj/item/keyring/inquisitor,/turf/open/floor/rogue/blocks,/area/rogue/under/town/basement)
 "eRY" = (/turf/open/transparent/openspace,/area/rogue/outdoors/exposed/manorgarri)
 "eSc" = (/obj/structure/fluff/nest,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/town)
 "eSn" = (/obj/structure/closet/crate/roguecloset/inn/chest,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/turf/open/floor/rogue/tile{icon_state = "chess"},/area/rogue/indoors/town)

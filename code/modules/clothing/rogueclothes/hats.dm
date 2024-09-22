@@ -1383,3 +1383,42 @@
 
 /obj/item/clothing/head/roguetown/armingcap/dwarf // gnome hat I guess?
 	color = "#cb3434"
+
+
+//Blackbag, spawns in Inquisition.
+/obj/item/clothing/head/roguetown/sack
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	name = "black bag"
+	desc = "An eyeless sack, used to blindfold prisoners or hostages."
+	//will_cover = HEAD|HAIR|NOSE|EARS
+	flags_inv = HIDEEARS
+	icon_state = "sacked"
+	item_state = "sacked"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	tint = TINT_BLIND
+
+/obj/item/clothing/head/roguetown/sack/equipped(mob/living/carbon/human/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_HEAD)
+		user.become_blind("blindfold[REF(src)]")
+
+/obj/item/clothing/head/roguetown/sack/dropped(mob/living/carbon/human/user)
+	..()
+	user.cure_blind("blindfold_[REF(src)]")
+
+/obj/item/clothing/head/roguetown/sack/attack(mob/living/target, mob/living/user)
+	if(target.get_item_by_slot(SLOT_HEAD))
+		to_chat(user, "<span class='warning'>Remove [target.p_their()] headgear first!</span>")
+		return
+	target.visible_message("<span class='warning'>[user] forces [src] onto [target]'s head!</span>", \
+	"<span class='danger'>[target] forces [src] onto your head!</span>", "<i>I cant see anything.</i>")
+	if(ishuman(target)) // If the target is human and not in combat mode, stun them the same way a feint would.
+		var/mob/living/carbon/human/T = target
+		if(!T.cmode)
+			T.emote("whimper", intentional = FALSE)
+			T.changeNext_move(8)
+			T.Immobilize(10)
+	user.dropItemToGround(src)
+	target.equip_to_slot_if_possible(src, SLOT_HEAD)

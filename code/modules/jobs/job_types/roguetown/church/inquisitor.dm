@@ -17,7 +17,6 @@
 	outfit = /datum/outfit/job/roguetown/inquisitor
 	display_order = JDO_PURITAN
 	min_pq = 0
-	bypass_lastclass = TRUE
 
 /datum/job/roguetown/inquisitor/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -48,7 +47,7 @@
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	neck = /obj/item/clothing/neck/roguetown/bevor
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
-	backpack_contents = list(/obj/item/keyring/puritan = 1, /obj/item/needle = 1)
+	backpack_contents = list(/obj/item/keyring/inquisitor = 1)
 	var/prev_real_name = H.real_name
 	var/prev_name = H.name
 	var/honorary = "Ritter"
@@ -56,6 +55,8 @@
 		honorary = "Ritterin"
 	H.real_name = "[honorary] [prev_real_name]"
 	H.name = "[honorary] [prev_name]"
+	H.confession_points = 1 // Starting with 1 point
+	H.purchase_history = list() // Initialize as an empty list to track purchases
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
@@ -67,7 +68,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/firearms, 3, TRUE)
@@ -88,6 +89,7 @@
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 
 /mob/living/carbon/human/proc/torture_victim()
@@ -123,6 +125,9 @@
 			to_chat(src, "<span class='warning'>Not ready to speak yet.</span>")
 
 /mob/living/carbon/human/proc/confession_time(mob/living/carbon/human/user)
+	if(istype(src.buckled, /obj/structure/fluff/walldeco/chains)) // If the victim is on hanging chains, they cannot resist.
+		confess_sins(resist=FALSE, user=user)
+		return
 	var/timerid = addtimer(CALLBACK(src, PROC_REF(confess_sins), FALSE, user), 6 SECONDS, TIMER_STOPPABLE)
 	var/responsey = alert(src, "Resist torture? (1 TRI)","Time for Pain","Yes","No")
 	testing("Sent resist request to [src].")

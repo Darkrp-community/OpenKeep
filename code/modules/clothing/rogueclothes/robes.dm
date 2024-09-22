@@ -194,3 +194,28 @@
 	slot_flags = ITEM_SLOT_ARMOR
 	boobed = TRUE
 	color = null
+
+/obj/item/clothing/suit/roguetown/shirt/robe/magus
+	name = "magus's robe"
+	desc = "A dark padded robe worn by only the most mysterious of mages, the magi."
+	icon_state = "warlock"
+	icon = 'icons/roguetown/clothing/armor.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
+	boobed = TRUE
+	flags_inv = HIDEBOOB
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
+	armor = list("melee" = 40, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
+	resistance_flags = FLAMMABLE
+	blocksound = SOFTHIT
+	slot_flags = ITEM_SLOT_ARMOR
+	blade_dulling = DULLING_BASHCHOP
+	armor_class = ARMOR_CLASS_LIGHT
+	max_integrity = 200
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	allowed_sex = list(MALE)
+	allowed_race = list("human", "tiefling", "aasimar")
+	color = null
+	sellprice = 150

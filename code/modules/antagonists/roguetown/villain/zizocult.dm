@@ -911,7 +911,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			return
 		to_chat(user.mind, "<span class='danger'>SOON I WILL BECOME A HIGHER FORM!!!</span>")
 		sleep(5 SECONDS)
-		var/mob/living/trl = new /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood(H)
+		var/mob/living/trl = new /mob/living/simple_animal/hostile/retaliate/rogue/blood(H)
 		trl.forceMove(H)
 		trl.ckey = H.ckey
 		H.gib()
@@ -965,7 +965,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		CM.cultascended = TRUE
 		addomen("ascend")
 		to_chat(user.mind, "<span class='userdanger'>I HAVE DONE IT! I HAVE REACHED A HIGHER FORM! SOON THERE WILL BE NO GODS. ONLY MASTERS!</span>")
-		var/mob/living/trl = new /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended(C)
+		var/mob/living/trl = new /mob/living/simple_animal/hostile/retaliate/rogue/blood/ascended(C)
 		trl.ckey = H.ckey
 		H.gib()
 		to_chat(world, "\n<font color='purple'>15 minutes remain.</font>")

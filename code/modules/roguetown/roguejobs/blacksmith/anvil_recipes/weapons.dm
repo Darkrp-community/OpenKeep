@@ -157,6 +157,17 @@
 	i_type = "Ammo"
 	craftdiff = 1
 
+/datum/anvil_recipe/weapons/bullets
+	name = "Lead Bullets x5 (+s)"
+	recipe_name = "five Lead Bullets"
+	appro_skill = /datum/skill/craft/engineering
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/ammo_casing/caseless/rogue/bullet
+	createmultiple = TRUE
+	createditem_num = 4
+	i_type = "Ammo"
+	craftdiff = 0
+
 /datum/anvil_recipe/weapons/dagger_iron
 	name = "Dagger x2"
 	recipe_name = "a couple Daggers"
