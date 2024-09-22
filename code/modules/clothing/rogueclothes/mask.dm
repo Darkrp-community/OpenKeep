@@ -109,6 +109,11 @@
 	desc = "A knightly steel mask that both conceals and protects the face. Usually paired with a bascinet."
 	max_integrity = 300
 
+/obj/item/clothing/mask/rogue/facemask/shadowfacemask
+	name = "anthraxi war mask"
+	desc = "A metal mask resembling a spider's face. Such a visage haunts many an older dark elf's nitemares - while the younger generation simply scoffs at such relics."
+	icon_state = "shadowfacemask"
+
 /obj/item/clothing/mask/rogue/shepherd
 	name = "halfmask"
 	icon_state = "shepherd"
@@ -142,6 +147,11 @@
 
 /obj/item/clothing/mask/rogue/shepherd/rag
 	icon_state = "ragmask"
+
+/obj/item/clothing/mask/rogue/shepherd/shadowmask
+	name = "purple halfmask"
+	icon_state = "shadowmask"
+	desc = "Tiny drops of white dye mark its front, not unlike teeth. A smile that leers from shadow."
 
 /obj/item/clothing/mask/rogue/feld
 	name = "feldsher's mask"

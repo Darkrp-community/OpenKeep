@@ -193,13 +193,21 @@
 	craftdiff = 3
 	subtype_reqs = TRUE
 
-/datum/crafting_recipe/roguetown/pestle
-	name = "stone pestle"
-	result = /obj/item/pestle
-	reqs = list(/obj/item/natural/stone = 1)
+/datum/crafting_recipe/roguetown/alchmortar
+	name = "alchemical mortar"
+	result = /obj/item/mortar
+	reqs = list(/obj/item/natural/stone = 3)
 	tools = list(/obj/item/rogueweapon/huntingknife)
-	craftdiff = 3
-	subtype_reqs = TRUE
+	verbage = "crafts"
+	skillcraft = /datum/skill/craft/masonry
+
+/datum/crafting_recipe/roguetown/pestle
+	name = "pestle"
+	result = /obj/item/pestle
+	reqs = list(/obj/item/natural/stone = 2)
+	tools = list(/obj/item/rogueweapon/huntingknife)
+	verbage = "crafts"
+	skillcraft = /datum/skill/craft/masonry
 
 /datum/crafting_recipe/roguetown/bag
 	name = "bag"
@@ -216,7 +224,7 @@
 	name = "bait"
 	result = /obj/item/bait
 	reqs = list(/obj/item/storage/roguebag = 1,
-				/obj/item/reagent_containers/food/snacks/grown/wheat = 2)
+				/obj/item/reagent_containers/food/snacks/produce/wheat = 2)
 	req_table = FALSE
 	subtype_reqs = TRUE
 
@@ -224,7 +232,7 @@
 	name = "sweetbait (a)"
 	result = /obj/item/bait/sweet
 	reqs = list(/obj/item/storage/roguebag = 1,
-				/obj/item/reagent_containers/food/snacks/grown/apple = 2)
+				/obj/item/reagent_containers/food/snacks/produce/apple = 2)
 	req_table = FALSE
 	subtype_reqs = TRUE
 
@@ -232,7 +240,7 @@
 	name = "sweetbait (b)"
 	result = /obj/item/bait/sweet
 	reqs = list(/obj/item/storage/roguebag = 1,
-				/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 2)
+				/obj/item/reagent_containers/food/snacks/produce/berries/rogue = 2)
 	req_table = FALSE
 	subtype_reqs = TRUE
 
@@ -314,7 +322,7 @@
 	name = "poison arrow"
 	result = /obj/item/ammo_casing/caseless/rogue/arrow/poison
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/arrow = 1,
-				/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 1)
+				/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison = 1)
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/pyroarrow
@@ -329,7 +337,7 @@
 	name = "poison bolt"
 	result = /obj/item/ammo_casing/caseless/rogue/bolt/poison
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/bolt = 1,
-				/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 1)
+				/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison = 1)
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/bomb

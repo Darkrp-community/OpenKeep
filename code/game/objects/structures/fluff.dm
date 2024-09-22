@@ -1180,12 +1180,12 @@
 /obj/structure/fluff/psycross/attackby(obj/item/W, mob/user, params)
 	if(user.mind)
 		if(user.mind.assigned_role == "Priest")
-			if(istype(W, /obj/item/reagent_containers/food/snacks/grown/apple))
+			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/apple))
 				if(!istype(get_area(user), /area/rogue/indoors/town/church/chapel))
 					to_chat(user, "<span class='warning'>I need to do this in the chapel.</span>")
 					return FALSE
 				var/marriage
-				var/obj/item/reagent_containers/food/snacks/grown/apple/A = W
+				var/obj/item/reagent_containers/food/snacks/produce/apple/A = W
 
 				//The MARRIAGE TEST BEGINS
 				if(A.bitten_names.len)
@@ -1276,32 +1276,6 @@
 					A.burn()
 					return
 	return ..()
-
-/obj/structure/fluff/psycross/proc/check_prayer(mob/living/L,message)
-	if(!L || !message)
-		return FALSE
-	var/message2recognize = sanitize_hear_message(message)
-	var/mob/living/carbon/C = L
-	if(findtext(message2recognize, "zizo"))
-		C.add_stress(/datum/stressevent/psycurse)
-		L.adjust_fire_stacks(100)
-		L.IgniteMob()
-		return FALSE
-	if(length(message2recognize) > 15)
-		if(L.has_flaw(/datum/charflaw/addiction/godfearing))
-			L.sate_addiction()
-		if(L.mob_timers[MT_PSYPRAY])
-			if(world.time < L.mob_timers[MT_PSYPRAY] + 1 MINUTES)
-				L.mob_timers[MT_PSYPRAY] = world.time
-				return FALSE
-		else
-			L.mob_timers[MT_PSYPRAY] = world.time
-		if(!prob(chance2hear))
-			return FALSE
-		else
-			L.playsound_local(L, 'sound/misc/notice (2).ogg', 100, FALSE)
-			C.add_stress(/datum/stressevent/psyprayer)
-			return TRUE
 
 /obj/structure/fluff/psycross/copper/Destroy()
 	addomen("psycross")
