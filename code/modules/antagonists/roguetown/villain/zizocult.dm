@@ -26,10 +26,10 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	return istype(M) && M.mind && M.mind.has_antag_datum(/datum/antagonist/zizocultist/leader)
 
 /datum/antagonist/zizocultist/examine_friendorfoe(datum/antagonist/examined_datum, mob/examiner, mob/examined)
-	if(istype(examined_datum, /datum/antagonist/zizocultist))
-		return "<span class='boldnotice'>A lackey for the future.</span>"
 	if(istype(examined_datum, /datum/antagonist/zizocultist/leader))
 		return "<span class='boldnotice'>OUR LEADER!</span>"
+	if(istype(examined_datum, /datum/antagonist/zizocultist))
+		return "<span class='boldnotice'>A lackey for the future.</span>"
 	if(istype(examined_datum, /datum/antagonist/assassin))
 		return "<span class='boldnotice'>A GRAGGAROID! A CULTIST OF GRAGGAR!</span>"
 
