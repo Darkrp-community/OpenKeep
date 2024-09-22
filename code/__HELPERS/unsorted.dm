@@ -1616,3 +1616,8 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return input
 	else
 		return 1
+
+// -------- ECONOMY RELATED GLOBAL LISTS
+GLOBAL_LIST_INIT(ITEM_DOES_NOT_GENERATE_VAULT_RENT, typecacheof(list(
+	/obj/item/roguecoin
+	)))

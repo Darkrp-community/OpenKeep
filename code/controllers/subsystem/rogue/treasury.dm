@@ -114,8 +114,10 @@ SUBSYSTEM_DEF(treasury)
 		*/
 		if(!I.submitted_to_stockpile)
 			I.submitted_to_stockpile = TRUE
-		//Passive income is 25% of the items worth.
-		passive_income += (I.get_real_price()*0.25)
+		//Passive income is 10% of the items worth.
+		if(is_type_in_typecache(I, GLOB.ITEM_DOES_NOT_GENERATE_VAULT_RENT) )
+			passive_income += (I.get_real_price()*0) // coin gives no interest, need to have rare items or refined products
+		else	passive_income += (I.get_real_price()*0.1)
 	return passive_income
 
 /*
