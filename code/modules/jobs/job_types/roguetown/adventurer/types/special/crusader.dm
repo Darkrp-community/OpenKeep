@@ -19,23 +19,6 @@
 /datum/outfit/job/roguetown/adventurer/crusader/pre_equip(mob/living/carbon/human/H)
 	..()
 
-	head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
-	armor = /obj/item/clothing/cloak/stabard/crusader/t
-	wrists = /obj/item/clothing/neck/roguetown/psicross/silver
-	switch(H.patron?.name)
-		if("Astrata")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader
-			armor = /obj/item/clothing/cloak/stabard/crusader
-			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
-		if("Necra")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
-			armor = /obj/item/clothing/cloak/stabard/crusader/t
-			wrists = /obj/item/clothing/neck/roguetown/psicross/necra
-		if("Forgotten God")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
-			armor = /obj/item/clothing/cloak/stabard/crusader/t
-			wrists = /obj/item/clothing/neck/roguetown/psicross/silver
-
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
@@ -45,20 +28,33 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/rogueweapon/sword/silver
-	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1)
-	if(!H.has_language(/datum/language/oldpsydonic))
-		H.grant_language(/datum/language/oldpsydonic)
-		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 
-	if(H.gender == FEMALE)
-		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-		beltr = /obj/item/quiver/bolts
-		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1, /obj/item/storage/belt/rogue/pouch/coins/rich = 1)
+	// Run this first so that patron gets changed before assigning gear.
+	if(H.patron != /datum/patron/divine/astrata || H.patron != /datum/patron/divine/necra)
+		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+	
+	// Now we equip according to patron.
+	switch(H.patron?.name)
+		if("Astrata")
+			armor = /obj/item/clothing/cloak/stabard/crusader // Gold for Astrata regardless of gender
+			wrists = /obj/item/clothing/neck/roguetown/psycross/astrata
+		if("Necra")
+			armor = /obj/item/clothing/cloak/stabard/templar/necra
+			wrists = /obj/item/clothing/neck/roguetown/psycross/necra
+		if("Forgotten God")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver
+			if(H.gender == FEMALE) // Silver for female, gold for male
+				armor = /obj/item/clothing/cloak/stabard/crusader/t
+			else
+				armor = /obj/item/clothing/cloak/stabard/crusader
+		else // Failsafe
+			armor = /obj/item/clothing/cloak/stabard/crusader // Gold version regardless of gender or patron
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver
 
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
@@ -70,11 +66,28 @@
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.change_stat("endurance", 2)
 	H.change_stat("constitution", 2)
-	H.change_stat("intelligence", -1)
+	H.change_stat("strength", 1)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
-	if(H.patron != /datum/patron/divine/astrata || H.patron != /datum/patron/divine/necra)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+	// Females are crossbow and dagger based
+	if(H.gender == FEMALE)
+		head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
+		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
+		beltr = /obj/item/quiver/bolts
+		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1, /obj/item/storage/belt/rogue/pouch/coins/rich = 1)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+	// Males are sword and shield based
+	else
+		head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader
+		backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
+	// Finally, grant us the language
+
+	if(!H.has_language(/datum/language/oldpsydonic))
+		H.grant_language(/datum/language/oldpsydonic)
+		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 
 /obj/item/clothing/cloak/stabard/crusader
 	name = "surcoat of the golden order"
