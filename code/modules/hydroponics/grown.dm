@@ -206,3 +206,169 @@
 		//put trash obj in hands or drop to ground
 		user.put_in_hands(T, user.active_hand_index, TRUE)
 		to_chat(user, "<span class='notice'>I open [src]\'s shell, revealing \a [T].</span>")
+
+/* Example of how to crush a item in hand to make it into another, could be a useful reference
+
+/obj/item/reagent_containers/food/snacks/grown/meatwheat/attack_self(mob/living/user)
+	user.visible_message("<span class='notice'>[user] crushes [src] into meat.</span>", "<span class='notice'>I crush [src] into something that resembles meat.</span>")
+	playsound(user, 'sound/blank.ogg', 50, TRUE)
+	var/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat/M = new
+	qdel(src)
+	user.put_in_hands(M)
+	return 1
+
+/obj/item/grown/cotton/attack_self(mob/user)
+	user.show_message("<span class='notice'>I pull some [cotton_name] out of the [name]!</span>", MSG_VISUAL)
+	var/seed_modifier = 0
+	if(seed)
+		seed_modifier = round(seed.potency / 25)
+	var/obj/item/stack/cotton = new cotton_type(user.loc, 1 + seed_modifier)
+	var/old_cotton_amount = cotton.amount
+	for(var/obj/item/stack/ST in user.loc)
+		if(ST != cotton && istype(ST, cotton_type) && ST.amount < ST.max_amount)
+			ST.attackby(cotton, user)
+	if(cotton.amount > old_cotton_amount)
+		to_chat(user, "<span class='notice'>I add the newly-formed [cotton_name] to the stack. It now contains [cotton.amount] [cotton_name].</span>")
+	qdel(src)
+	
+
+/obj/item/grown/novaflower Could be rerolled to fyrtius flowers I suppose, could be useful inspiration
+	name = "novaflower"
+	desc = ""
+	icon_state = "novaflower"
+	lefthand_file = 'icons/mob/inhands/weapons/plants_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/plants_righthand.dmi'
+	damtype = "fire"
+	force = 0
+	slot_flags = ITEM_SLOT_HEAD
+	throwforce = 0
+	w_class = WEIGHT_CLASS_TINY
+	throw_speed = 1
+	throw_range = 3
+	attack_verb = list("roasted", "scorched", "burned")
+	grind_results = list(/datum/reagent/consumable/capsaicin = 0, /datum/reagent/consumable/condensedcapsaicin = 0)
+
+/obj/item/grown/novaflower/add_juice()
+	..()
+	force = round((5 + seed.potency / 5), 1)
+
+/obj/item/grown/novaflower/attack(mob/living/carbon/M, mob/user)
+	if(!..())
+		return
+	if(isliving(M))
+		to_chat(M, "<span class='danger'>I are lit on fire from the intense heat of the [name]!</span>")
+		M.adjust_fire_stacks(seed.potency / 20)
+		if(M.IgniteMob())
+			message_admins("[ADMIN_LOOKUPFLW(user)] set [ADMIN_LOOKUPFLW(M)] on fire with [src] at [AREACOORD(user)]")
+			log_game("[key_name(user)] set [key_name(M)] on fire with [src] at [AREACOORD(user)]")
+
+/obj/item/grown/novaflower/afterattack(atom/A as mob|obj, mob/user,proximity)
+	. = ..()
+	if(!proximity)
+		return
+	if(force > 0)
+		force -= rand(1, (force / 3) + 1)
+	else
+		to_chat(usr, "<span class='warning'>All the petals have fallen off the [name] from violent whacking!</span>")
+		qdel(src)
+
+/obj/item/grown/novaflower/pickup(mob/living/carbon/human/user)
+	..()
+	if(!user.gloves)
+		to_chat(user, "<span class='danger'>The [name] burns my bare hand!</span>")
+		user.adjustFireLoss(rand(1, 5))	
+
+// corpse flower effect, another worth saving
+/obj/item/seeds/starthistle/corpse_flower/process()
+	var/obj/machinery/hydroponics/parent = loc
+	if(parent.age < maturation) // Start a little before it blooms
+		return
+
+	var/turf/open/T = get_turf(parent)
+	if(abs(ONE_ATMOSPHERE - T.return_air().return_pressure()) > (potency/10 + 10)) // clouds can begin showing at around 50-60 potency in standard atmos
+		return
+
+	var/datum/gas_mixture/stank = new
+	ADD_GAS(/datum/gas/miasma, stank.gases)
+	stank.gases[/datum/gas/miasma][MOLES] = (yield + 6)*7*MIASMA_CORPSE_MOLES // this process is only being called about 2/7 as much as corpses so this is 12-32 times a corpses
+	stank.temperature = T20C // without this the room would eventually freeze and miasma mining would be easier
+	T.assume_air(stank)
+	T.air_update_turf()
+
+// explosive produce code, also save-worthy
+/obj/item/reagent_containers/food/snacks/grown/cherry_bomb/attack_self(mob/living/user)
+	user.visible_message("<span class='warning'>[user] plucks the stem from [src]!</span>", "<span class='danger'>I pluck the stem from [src], which begins to hiss loudly!</span>")
+	log_bomber(user, "primed a", src, "for detonation")
+	prime()
+
+/obj/item/reagent_containers/food/snacks/grown/cherry_bomb/deconstruct(disassembled = TRUE)
+	if(!disassembled)
+		prime()
+	if(!QDELETED(src))
+		qdel(src)
+
+/obj/item/reagent_containers/food/snacks/grown/cherry_bomb/ex_act(severity)
+	qdel(src) //Ensuring that it's deleted by its own explosion. Also prevents mass chain reaction with piles of cherry bombs
+
+/obj/item/reagent_containers/food/snacks/grown/cherry_bomb/proc/prime()
+	icon_state = "cherry_bomb_lit"
+	playsound(src, 'sound/blank.ogg', seed.potency, FALSE)
+	reagents.chem_temp = 1000 //Sets off the gunpowder
+	reagents.handle_reactions()
+
+// reminder how to do variable icons when pickup and dropped
+/obj/item/reagent_containers/food/snacks/grown/citrus/orange_3d/pickup(mob/user)
+	. = ..()
+	icon_state = "orange"
+
+/obj/item/reagent_containers/food/snacks/grown/citrus/orange_3d/dropped(mob/user)
+	. = ..()
+	icon_state = "orang"
+
+// fire lemon code saved
+/obj/item/reagent_containers/food/snacks/grown/firelemon/attack_self(mob/living/user)
+	user.visible_message("<span class='warning'>[user] primes [src]!</span>", "<span class='danger'>I prime [src]!</span>")
+	log_bomber(user, "primed a", src, "for detonation")
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
+		C.throw_mode_on()
+	icon_state = "firelemon_active"
+	playsound(loc, 'sound/blank.ogg', 75, TRUE, -3)
+	addtimer(CALLBACK(src, PROC_REF(prime)), rand(10, 60))
+
+/obj/item/reagent_containers/food/snacks/grown/firelemon/burn()
+	prime()
+	..()
+
+/obj/item/reagent_containers/food/snacks/grown/firelemon/proc/update_mob()
+	if(ismob(loc))
+		var/mob/M = loc
+		M.dropItemToGround(src)
+
+/obj/item/reagent_containers/food/snacks/grown/firelemon/ex_act(severity)
+	qdel(src) //Ensuring that it's deleted by its own explosion
+
+/obj/item/reagent_containers/food/snacks/grown/firelemon/proc/prime()
+	switch(seed.potency) //Combustible lemons are alot like IEDs, lots of flame, very little bang.
+		if(0 to 30)
+			update_mob()
+			explosion(src.loc,-1,-1,2, flame_range = 1)
+			qdel(src)
+		if(31 to 50)
+			update_mob()
+			explosion(src.loc,-1,-1,2, flame_range = 2)
+			qdel(src)
+		if(51 to 70)
+			update_mob()
+			explosion(src.loc,-1,-1,2, flame_range = 3)
+			qdel(src)
+		if(71 to 90)
+			update_mob()
+			explosion(src.loc,-1,-1,2, flame_range = 4)
+			qdel(src)
+		else
+			update_mob()
+			explosion(src.loc,-1,-1,2, flame_range = 5)
+			qdel(src)
+
+*/

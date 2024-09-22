@@ -2376,9 +2376,7 @@
 	name = "Funeral Supply crate"
 	desc = ""
 	cost = 600
-	contains = list(/obj/item/clothing/under/misc/burial,
-					/obj/item/reagent_containers/food/snacks/grown/harebell,
-					/obj/item/reagent_containers/food/snacks/grown/poppy/geranium)
+
 	crate_name = "coffin"
 	crate_type = /obj/structure/closet/crate/coffin
 

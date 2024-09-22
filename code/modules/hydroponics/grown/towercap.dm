@@ -47,7 +47,7 @@
 	/obj/item/reagent_containers/food/snacks/grown/tea,
 	/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
 	/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus,
-	/obj/item/reagent_containers/food/snacks/grown/wheat*/))
+	/obj/item/reagent_containers/food/snacks/produce/wheat*/))
 
 ///obj/item/grown/log/attackby(obj/item/W, mob/user, params)
 //	if(W.get_sharpness())
