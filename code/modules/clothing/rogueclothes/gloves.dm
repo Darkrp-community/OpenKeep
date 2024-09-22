@@ -41,6 +41,11 @@
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 
+/obj/item/clothing/gloves/roguetown/fingerless/shadowgloves
+	name = "fingerless gloves"
+	desc = "Cloth gloves to absorb palm sweat while leaving the fingers free for fine manipulation."
+	icon_state = "shadowgloves"
+	allowed_race = list("elf", "dark elf")
 
 /obj/item/clothing/gloves/roguetown/angle
 	name = "heavy leather gloves"
@@ -96,6 +101,12 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	sewrepair = FALSE
 	smeltresult = null
+
+/obj/item/clothing/gloves/roguetown/chain/iron/shadowgauntlets
+	name = "darkplate gauntlets"
+	desc = "Gauntlets with gilded fingers fashioned into talons. The tips are all too dull to be of harm."
+	icon_state = "shadowgauntlets"
+	allowed_race = list("elf", "dark elf")
 
 /obj/item/clothing/gloves/roguetown/grenzelgloves
 	name = "grenzelhoft gloves"
