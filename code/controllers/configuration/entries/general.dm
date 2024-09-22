@@ -203,13 +203,13 @@
 /datum/config_entry/string/banappeals
 
 /datum/config_entry/string/wikiurl
-	config_entry_value = ""
+	config_entry_value = "https://wiki.stonekeep.xyz/index.php"
 
 /datum/config_entry/string/forumurl
 	config_entry_value = ""
 
 /datum/config_entry/string/rulesurl
-	config_entry_value = ""
+	config_entry_value = "https://wiki.stonekeep.xyz/index.php/Rules"
 
 /datum/config_entry/string/githuburl
 	config_entry_value = "https://github.com/Darkrp-community/OpenKeep"
