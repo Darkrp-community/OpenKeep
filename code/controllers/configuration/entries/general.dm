@@ -45,6 +45,8 @@
 
 /datum/config_entry/flag/log_say	// log client say
 
+/datum/config_entry/flag/log_telepathy // log telepathic messages
+
 /datum/config_entry/flag/log_admin	// log admin actions
 	protection = CONFIG_ENTRY_LOCKED
 

@@ -180,10 +180,14 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		return
 	playsound_local(src, 'sound/vo/cult/skvor.ogg', 100)
 	whisper("O schlet'a ty'schkotot ty'skvoro...")
+	sleep(10)
 	whisper("[speak]")
 
 	for(var/datum/mind/V in C.cultists)
 		to_chat(V, "<span class='boldnotice'>A message from [src.real_name]: \"[speak]\"</span>")
+
+	testing("[key_name(src)] used cultist telepathy to say: [speak]")
+	log_telepathy("[key_name(src)] used cultist telepathy to say: [speak]")
 
 /obj/effect/decal/cleanable/sigil
 	name = "sigils"

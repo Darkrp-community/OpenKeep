@@ -148,6 +148,9 @@
 	if (CONFIG_GET(flag/log_vote))
 		WRITE_LOG(GLOB.world_game_log, "([TIMETOTEXT4LOGS]) VOTE: [text]")
 
+/proc/log_telepathy(text)
+	if (CONFIG_GET(flag/log_telepathy))
+		WRITE_LOG(GLOB.world_game_log, "([TIMETOTEXT4LOGS]) ANTAG TELEPATHY: [text]")
 
 /proc/log_topic(text)
 	WRITE_LOG(GLOB.world_game_log, "([TIMETOTEXT4LOGS]) TOPIC: [text]")

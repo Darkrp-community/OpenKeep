@@ -438,6 +438,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		to_chat(D, "<span class='boldnotice'>A message from [src.real_name]:[msg]</span>")
 	for(var/mob/dead/observer/rogue/arcaneeye/A in GLOB.mob_list)
 		to_chat(A, "<span class='boldnotice'>A message from [src.real_name]:[msg]</span>")
+	testing("[key_name(src)] used telepathy to say: [msg]")
+	log_telepathy("[key_name(src)] used telepathy to say: [msg]")
 
 /mob/living/carbon/human/proc/punish_spawn()
 	set name = "Punish Minion"
@@ -1138,6 +1140,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		to_chat(D, "<span class='boldnotice'>A message from [src.real_name]:[msg]</span>")
 	for(var/mob/dead/observer/rogue/arcaneeye/A in GLOB.mob_list)
 		to_chat(A, "<span class='boldnotice'>A message from [src.real_name]:[msg]</span>")
+	testing("[src.real_name] ([key_name(src)]) used ghost telepathy to say: [msg]")
+	log_telepathy("[src.real_name] ([key_name(src)]) used ghost telepathy to say: [msg]")
 
 /mob/dead/observer/rogue/arcaneeye/proc/eye_up()
 	set category = "Arcane Eye"
