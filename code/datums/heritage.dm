@@ -14,6 +14,7 @@
 	var/mob/living/carbon/human/matriarch
 	var/mob/living/carbon/human/patriarch
 	var/list/family = list()
+	var/list/family_icons = list()
 
 /datum/heritage/New(mob/living/carbon/human/progenator, new_name, majority_species)
 	if(progenator)
@@ -38,9 +39,11 @@
 * Adds someone to the family using a mob and a status.
 */
 /datum/heritage/proc/addToHouse(mob/living/carbon/human/person, status)
+	//You are not a human. Get outta ere.
 	if(!ishuman(person))
 		testing("FAMTREE_ERROR:add1")
 		return
+	//Your already in the family. We dont have the system for more than one role.
 	if(family[person])
 		testing("FAMTREE_ERROR:add2")
 		return
@@ -50,10 +53,13 @@
 		if(person.dna.species.id != dominant_species)
 			status = FAMILY_ADOPTED
 		else
+			//This has no purpose other than to add their TRUE PARENTS to their DNA/blood
 			person.MixDNA(patriarch, matriarch, override = TRUE)
+	//Add the human as a key then assign its value as its familial role.
 	temp_list += person
 	temp_list[person] = status
 	family.Add(temp_list)
+	//Your now part of the family. Hold onto this datum so we can always call upon the old blood!
 	person.family_datum = src
 	var/checkmarriage = FALSE
 	//Spagetti code.
@@ -65,8 +71,16 @@
 		checkmarriage = TRUE
 	if(patriarch && matriarch && checkmarriage)
 		patriarch.MarryTo(matriarch)
+	//Adds a preset hud icon to the heritage datum. Helps with rapidly adding the icon to family members UI.
+	AddFamilyIcon(person)
+	//This goes through the family and "logically" sorts out true heirs to bastards.
 	BloodTies()
 
+/*
+* Returns text to human examine
+* based on their familial relation to
+* The Looker.
+*/
 /datum/heritage/proc/ReturnRelation(mob/living/carbon/human/lookee, mob/living/carbon/human/looker)
 	if(lookee == looker)
 		return
@@ -111,10 +125,21 @@
 	addToHouse(outsider, status)
 	to_chat(outsider, "Youve been accepted into the [housename] household.")
 
+/*
+* Currently unused except in TransferFamilies.
+* Expels a family member from the family.
+* What this means is upto the expeller.
+*/
 /datum/heritage/proc/ExpelFromHouse(mob/living/carbon/human/shunned)
 	family.Remove(shunned)
 	to_chat(src, "Your no longer part of the [housename] household.")
 
+/*
+* Mechanical proc for listing families.
+* This is seperate from Formate Family List
+* so that admins can click a verb and see
+* all families.
+*/
 /datum/heritage/proc/ListFamily(mob/living/carbon/human/checker)
 	if(!checker)
 		return
@@ -189,6 +214,10 @@
 	if(istype(fledgling_species, mixes[mix_text]))
 		return TRUE
 
+/*
+* Taken from marriage alter. This formats a name into its surname
+* if there is one.
+*/
 /datum/heritage/proc/SurnameFormatting(mob/living/carbon/human/person)
 	//Alright now for the boring surname formatting.
 	var/surname2use
@@ -209,6 +238,12 @@
 			surname2use = copytext(person.real_name, index)
 	return surname2use
 
+/*
+* Currently unused. Replaces the surname of someone with
+* their houses surname. Essentially if Dan Jobbers became
+* Prince and his household name was "Glimmals" then he would
+* become Dan Glimmals.
+*/
 /datum/heritage/proc/ForceSurname(mob/living/carbon/human/person, surname2use = housename)
 	if(findtext(person.real_name, surname2use))
 		return
@@ -222,11 +257,61 @@
 		person.change_name(copytext(firstname, 1,index))
 	return person.change_name(firstname + surname2use)
 
+/*
+* ISSUE: This applies a prexisting list of icons to a human hud.
+* If the human ghosts then all the icons will dissapear.
+* If a human is removed from the family while these icons are up
+* there is a chance that the icon will remain and be unremovable.
+*/
+/datum/heritage/proc/ApplyUI(mob/living/carbon/human/iconer, toggle_true = FALSE)
+	if(!iconer.client)
+		return FALSE
+	for(var/mob/living/carbon/human/H in family_icons)
+		if(toggle_true)
+			iconer.family_UI = FALSE
+			iconer.client.images.Remove(family_icons[H])
+			continue
+		if(!H || H == iconer)
+			continue
+		iconer.family_UI = TRUE
+		iconer.client.images.Add(family_icons[H])
+
+//Adds family icon to the list.
+/datum/heritage/proc/AddFamilyIcon(mob/living/carbon/human/famicon)
+	var/family_role = family[famicon]
+	var/newfamly_icon = CalcFamilyIcon(family_role)
+	if(!family_role)
+		return FALSE
+	var/image/I = new('icons/relations.dmi', loc = famicon, icon_state = newfamly_icon)
+	if(famicon in family_icons)
+		family_icons.Remove(famicon)
+	family_icons.Add(famicon)
+	family_icons[famicon] = I
+	return list(famicon = I)
+
+/*
+* Returns what UI icon this person should have.
+*/
+/datum/heritage/proc/CalcFamilyIcon(famrole)
+	. = "related"
+	if(famrole == FAMILY_ADOPTED)
+		return "adopted"
+
 //Lists the users family. Unsure where to put this other than here.
 /mob/living/carbon/human/verb/ReturnFamilyList()
 	set name = "List Family"
 	set category = "Memory"
 	if(family_datum)
 		family_datum.ListFamily(src)
+	else
+		to_chat(src, "Your not part of any notable family.")
+
+//Applies UI indicators for family members.
+/mob/living/carbon/human/verb/ToggleFamilyUI()
+	set name = "Toggle Family UI"
+	set category = "Memory"
+	if(family_datum)
+		family_datum.ApplyUI(src, family_UI)
+		to_chat(src, "FamilyUI Toggled [family_UI ? "On" : "Off"]")
 	else
 		to_chat(src, "Your not part of any notable family.")
