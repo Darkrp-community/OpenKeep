@@ -10,7 +10,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/rogue_righthand.dmi'
 	//dropshrink = 0.75
-	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
+	parrysound = "parrywood"
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
 	max_blade_int = 50
@@ -18,8 +18,7 @@
 	wdefense = 1
 	w_class = WEIGHT_CLASS_BULKY
 	wlength = WLENGTH_SHORT
-	resistance_flags = FLAMMABLE // Weapon made mostly of wood
-	pickup_sound = 'sound/foley/equip/rummaging-03.ogg'
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood	
 	gripped_intents = list(/datum/intent/axe/chop/stone)
 	smeltresult = /obj/item/ingot/copper
 	axe_cut = 7
@@ -91,7 +90,8 @@
 	max_blade_int = 500
 	smeltresult = /obj/item/ingot/steel
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/battleaxe/chop)
-	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
+	parrysound = "sword"
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/axesmaces
 	minstr = 10 //meant to be a orc weapon or barbarian weapon
@@ -125,7 +125,8 @@
 	max_integrity = 300
 	smeltresult = /obj/item/ingot/iron
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
-	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
+	parrysound = "sword"
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	swingsound = BLADEWOOSH_MED
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	associated_skill = /datum/skill/combat/axesmaces

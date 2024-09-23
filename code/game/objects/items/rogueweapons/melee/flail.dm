@@ -12,11 +12,11 @@
 	slot_flags = ITEM_SLOT_HIP
 	associated_skill = /datum/skill/combat/whipsflails
 	smeltresult = /obj/item/ingot/iron
-	parrysound = list('sound/combat/parry/parrygen.ogg')
 	pickup_sound = 'sound/foley/equip/equip_armor_chain.ogg'
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
 	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
 	swingsound = BLUNTWOOSH_MED
+	can_parry = FALSE // You can't parry with this, it'd be awkward to tangle chains, use a shield
 	max_integrity = 500
 	throwforce = 5
 	wdefense = 0

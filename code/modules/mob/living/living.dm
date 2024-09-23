@@ -1987,7 +1987,7 @@
 		return
 	if(_y > 7 || _y < -7)
 		return
-
+	hide_cone()
 	var/ttime = 10
 	if(STAPER > 5)
 		ttime = 10 - (STAPER - 5)
@@ -1996,6 +1996,8 @@
 	if(m_intent != MOVE_INTENT_SNEAK)
 		visible_message("<span class='info'>[src] looks into the distance.</span>")
 	animate(client, pixel_x = world.icon_size*_x, pixel_y = world.icon_size*_y, ttime)
+	sleep(5)
+	update_fov_angles()
 //	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_looking))
 
 /mob/proc/look_down(turf/T)

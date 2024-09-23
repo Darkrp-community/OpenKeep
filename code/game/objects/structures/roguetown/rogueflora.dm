@@ -14,7 +14,7 @@
 	layer = 4.81
 	plane = GAME_PLANE_UPPER
 	attacked_sound = 'sound/misc/woodhit.ogg'
-	destroy_sound = 'sound/misc/woodhit.ogg'
+	destroy_sound = 'sound/misc/treefall.ogg'
 	debris = list(/obj/item/grown/log/tree/stick = 2)
 	static_debris = list(/obj/item/grown/log/tree = 1)
 	alpha = 200
@@ -73,7 +73,6 @@
 /obj/structure/flora/roguetree/obj_destruction(damage_flag)
 	if(stump_type)
 		new stump_type(loc)
-	playsound(src, 'sound/misc/treefall.ogg', 100, FALSE)
 	. = ..()
 
 
@@ -128,6 +127,8 @@
 /obj/structure/flora/roguetree/stump/burnt
 	name = "tree stump"
 	desc = "This stump is burnt. Maybe someone is trying to get coal the easy way."
+	static_debris = list(/obj/item/rogueore/coal = 1)
+	isunburnt = FALSE
 	icon_state = "st1"
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	stump_type = null
@@ -159,17 +160,34 @@
 	climb_time = 0
 	layer = TABLE_LAYER
 	plane = GAME_PLANE
-	blade_dulling = DULLING_PICK
-	static_debris = null
+	blade_dulling = DULLING_CUT
+	static_debris = list()
 	debris = null
 	alpha = 255
 	pixel_x = -16
 	climb_offset = 14
 	stump_type = FALSE
+	var/isunburnt = TRUE // Var needed for the burnt stump
+	var/isactuallyastump = TRUE // Var needed for the stupid ancient log below
 
 /obj/structure/flora/roguetree/stump/Initialize()
 	. = ..()
 	icon_state = "t[rand(1,4)]stump"
+
+/obj/structure/flora/roguetree/stump/attackby(obj/item/I, mob/user, params)
+	if(isactuallyastump)
+		if(istype(I, /obj/item/rogueweapon/shovel))
+			to_chat(user, "I start unearthing the stump...")
+			if(do_after(user, 50))
+				user.visible_message("<span class='notice'>[user] unearths \the [src].</span>", \
+									"<span class='notice'>I unearth \the [src].</span>")
+				if(isunburnt)
+					new /obj/item/grown/log/tree/small(loc) // Rewarded with an extra small log if done the right way.return
+				obj_destruction("brute")
+		else
+			..()
+	else
+		. = ..()
 
 /obj/structure/flora/roguetree/stump/log
 	name = "ancient log"
@@ -181,6 +199,7 @@
 	static_debris = list(/obj/item/grown/log/tree = 1)
 	climb_offset = 14
 	stump_type = FALSE
+	isactuallyastump = FALSE
 
 /obj/structure/flora/roguetree/stump/log/Initialize()
 	. = ..()
