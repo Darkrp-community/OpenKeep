@@ -172,6 +172,9 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 	var/remains_type
 
+	var/botched_butcher_results
+	var/bonus_butcher_results
+
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	GLOB.simple_animals[AIStatus] += src
@@ -437,9 +440,16 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		var/list/butcher = list()
 
 		if(butcher_results)
-			butcher += butcher_results
-			if(user.mind.get_skill_level(/datum/skill/labor/butchering) >= 5)
-				butcher += butcher_results // double the yield of the stuff you get
+			if(user.mind.get_skill_level(/datum/skill/labor/butchering) <= 1)
+				if(prob(50))
+					butcher += botched_butcher_results // chance to get shit result
+				else
+					butcher += butcher_results
+			else 
+				butcher += butcher_results
+				if(user.mind.get_skill_level(/datum/skill/labor/butchering) >= 5)
+					butcher += bonus_butcher_results // double the yield of the stuff you get
+
 		if(guaranteed_butcher_results)
 			butcher += guaranteed_butcher_results
 		var/rotstuff = FALSE

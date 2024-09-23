@@ -12,21 +12,32 @@
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	sellprice = 5
 
-/obj/item/natural/fur
+/obj/item/natural/fur // a piece of skin with animal hair on it is called a pelt, at least before a tanner gets to it. From it you can make fur lined cloaks and so on.
 	name = "fur"
 	icon_state = "wool1"
-	desc = "Fur from one of Dendor's creachers."
+	desc = "pelt from one of Dendor's creachers."
 	force = 0
 	throwforce = 0
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
-	color = "#605c55"
 	sellprice = 5
 
+/obj/item/natural/fur/gote
+	desc = "from a gote."
+	icon_state = "pelt_gote"
+
 /obj/item/natural/fur/volf
-	desc = "Fur from a volf."
-	color = "#4b4742"
+	desc = "from a volf."
+	icon_state = "pelt_volf"
+
+/obj/item/natural/fur/mole
+	desc = "from a mole."
+	icon_state = "pelt_mole"
+
+/obj/item/natural/fur/rous
+	desc = "from a rous."
+	icon_state = "pelt_rous"
 
 //RTD make this a storage item and make clickign on animals with things put it in storage
 /obj/item/natural/saddle

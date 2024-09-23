@@ -9,11 +9,13 @@
 	icon_dead = "chicken_brown_dead"
 	emote_see = list("pecks at the ground.","flaps its wings viciously.")
 	density = FALSE
-	base_intents = list(/datum/intent/simple/claw)
+	base_intents = list(/datum/intent/simple/peck)
 	speak_chance = 2
 	turns_per_move = 5
 	faction = list("chickens")
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/fat = 1, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry = 1)
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/fat = 1, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry = 1, /obj/item/natural/feather = 1)
+	bonus_butcher_results = list(/obj/item/reagent_containers/food/snacks/fat = 1, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet = 1)
 	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
 	food_type = list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue,/obj/item/natural/worms,/obj/item/reagent_containers/food/snacks/produce/wheat,/obj/item/reagent_containers/food/snacks/produce/oat)
 	response_help_continuous = "pets"
@@ -23,7 +25,7 @@
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
 	melee_damage_lower = 1
-	melee_damage_upper = 8
+	melee_damage_upper = 5
 	pooptype = /obj/item/natural/poo/horse
 	health = 15
 	maxHealth = 15

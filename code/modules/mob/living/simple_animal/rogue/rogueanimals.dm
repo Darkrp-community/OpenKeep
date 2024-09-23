@@ -34,6 +34,8 @@
 	dodge_sound = 'sound/combat/dodge.ogg'
 	dodge_prob = 0
 	search_objects = TRUE
+	botched_butcher_results = list(/obj/item/alch/bone = 1) // 50% chance to get if skill 0 in butchery
+	bonus_butcher_results = list(/obj/item/natural/hide = 1) // level 5 butchery bonus
 	//Should turn this into a flag thing but i dont want to touch too many things
 	var/body_eater = FALSE
 	//If the creature is doing something they should STOP MOVING.

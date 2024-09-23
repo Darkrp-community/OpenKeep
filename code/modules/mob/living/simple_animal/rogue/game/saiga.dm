@@ -52,6 +52,7 @@
 						/obj/item/natural/hide = 1,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
+	bonus_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/natural/hide = 1)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 100
 	maxHealth = 100
@@ -106,6 +107,7 @@
 	icon_gib = "saigakid_gib"
 	animal_species = null
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1)
+	bonus_butcher_results = list(/obj/item/natural/hide = 1)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 20
 	pass_flags = PASSTABLE | PASSMOB
@@ -180,9 +182,12 @@
 	see_in_dark = 6
 	move_to_delay = 8
 	base_intents = list(/datum/intent/simple/headbutt)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
+						/obj/item/natural/hide = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
 						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 2)
+	bonus_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/natural/hide = 1)
 	faction = list("saiga")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_verb_continuous = "headbutts"
@@ -320,7 +325,12 @@
 	icon_dead = "saigaboy_dead"
 	icon_gib = "saigaboy_gib"
 	animal_species = null
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
+						/obj/item/natural/hide = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
+						/obj/item/reagent_containers/food/snacks/fat = 1,
+						/obj/item/natural/hide = 2)
+	bonus_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/natural/hide = 1)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 20
 	maxHealth = 20

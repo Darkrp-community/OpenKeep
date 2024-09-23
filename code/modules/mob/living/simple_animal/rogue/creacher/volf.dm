@@ -13,12 +13,16 @@
 	see_in_dark = 9
 	move_to_delay = 2
 	base_intents = list(/datum/intent/simple/bite)
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
+						/obj/item/natural/fur/volf = 1,
+						/obj/item/alch/bone = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 1,
 						/obj/item/natural/fur/volf = 2,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
+	bonus_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, /obj/item/natural/fur/volf = 1)
 	faction = list("orcs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	health = 110
