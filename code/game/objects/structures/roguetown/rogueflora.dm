@@ -178,6 +178,7 @@
 	if(isactuallyastump)
 		if(istype(I, /obj/item/rogueweapon/shovel))
 			to_chat(user, "I start unearthing the stump...")
+			playsound(loc,'sound/items/dig_shovel.ogg', 100, TRUE)
 			if(do_after(user, 50))
 				user.visible_message("<span class='notice'>[user] unearths \the [src].</span>", \
 									"<span class='notice'>I unearth \the [src].</span>")
