@@ -284,6 +284,9 @@
 | Salted milk |
 \------------*/		// The base for making butter and cheese
 
+/datum/reagent/consumable/milk/gote
+	taste_description = "gote milk"
+
 /datum/reagent/consumable/milk/salted
 	taste_description = "salty milk"
 

@@ -61,14 +61,13 @@
 	icon_living = "goat"
 	icon_dead = "goat_dead"
 	icon_gib = "goat_gib"
-	gender = FEMALE
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	emote_see = list("shakes her head.", "chews her cud.")
-	speak_chance = 1
-	turns_per_move = 5
-	see_in_dark = 6
-	move_to_delay = 8
+
 	animal_species = /mob/living/simple_animal/hostile/retaliate/rogue/goatmale
+	faction = list("goats")
+	gender = FEMALE
+	footstep_type = FOOTSTEP_MOB_SHOE
+	emote_see = list("shakes her head.", "chews her cud.")
+
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
 						/obj/item/natural/hide = 1,
 						/obj/item/alch/sinew = 1,
@@ -79,19 +78,27 @@
 						/obj/item/natural/fur/gote = 1,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
-						/obj/item/natural/hide = 1,
-						/obj/item/natural/fur/gote = 1)
-	base_intents = list(/datum/intent/simple/headbutt)
-	health = 80
-	maxHealth = 80
-	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,/obj/item/reagent_containers/food/snacks/produce/oat,/obj/item/reagent_containers/food/snacks/produce/apple,/obj/item/reagent_containers/food/snacks/produce/berries/rogue)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 6,
+						/obj/item/reagent_containers/food/snacks/fat = 2,
+						/obj/item/natural/hide = 2,
+						/obj/item/natural/fur/gote = 2,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
+
+	health = FEMALE_GOTE_HEALTH
+	maxHealth = FEMALE_GOTE_HEALTH
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,
+					/obj/item/reagent_containers/food/snacks/produce/oat,
+					/obj/item/reagent_containers/food/snacks/produce/apple,
+					/obj/item/reagent_containers/food/snacks/produce/turnip,
+					/obj/item/reagent_containers/food/snacks/produce/cabbage,
+					/obj/item/reagent_containers/food/snacks/produce/berries/rogue)
 	tame_chance = 25
 	bonus_tame_chance = 15
-	footstep_type = FOOTSTEP_MOB_SHOE
 	pooptype = /obj/item/natural/poo/horse
-	milkies = TRUE
-	faction = list("goats")
+	var/milkies = TRUE
+
+	base_intents = list(/datum/intent/simple/headbutt)
 	attack_verb_continuous = "headbutts"
 	attack_verb_simple = "headbutt"
 	melee_damage_lower = 8
@@ -99,11 +106,38 @@
 	STASPD = 4
 	STACON = 4
 	STASTR = 4
-	childtype = list(/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet = 90, /mob/living/simple_animal/hostile/retaliate/rogue/goat/goatletboy = 10)
+	buckle_lying = FALSE
+	childtype = list(/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet = 90, /mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet/boy = 10)
 	can_buckle = TRUE
-	buckle_lying = 0
-	can_saddle = FALSE
 	remains_type = /obj/effect/decal/remains/cow
+	var/obj/item/gudder/gudder = null
+
+
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/Initialize()
+	..()
+	if(milkies)
+		gudder = new()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/Destroy()
+	qdel(gudder)
+	gudder = null
+	..()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/attackby(obj/item/O, mob/user, params)
+	if(!stat && istype(O, /obj/item/reagent_containers/glass))
+		if(gudder)
+			gudder.milkAnimal(O, user)
+			return 1
+	else
+		return ..()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/Life()
+	. = ..()
+	if(.)
+		if(gudder)
+			if(production > 0)
+				production--
+				gudder.generateMilk()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/get_sound(input)
 	switch(input)
@@ -115,38 +149,6 @@
 			return pick('sound/vo/mobs/goat/death (1).ogg','sound/vo/mobs/goat/death (2).ogg')
 		if("idle")
 			return pick('sound/vo/mobs/goat/idle (1).ogg','sound/vo/mobs/goat/idle (2).ogg','sound/vo/mobs/goat/idle (3).ogg')
-
-
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet
-	icon = 'icons/roguetown/mob/monster/gote.dmi'
-	name = "goatlet"
-	desc = ""
-	icon_state = "goatlet"
-	icon_living = "goatlet"
-	icon_dead = "goatlet_dead"
-	icon_gib = "goatlet_gib"
-	animal_species = null
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	perfect_butcher_results = list(/obj/item/natural/hide = 1)
-	base_intents = list(/datum/intent/simple/headbutt)
-	health = 20
-	pass_flags = PASSTABLE | PASSMOB
-	mob_size = MOB_SIZE_SMALL
-	maxHealth = 20
-	milkies = FALSE
-	gender = FEMALE
-	melee_damage_lower = 1
-	melee_damage_upper = 6
-	STACON = 5
-	STASTR = 5
-	STASPD = 5
-	defprob = 50
-	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/goat
-	can_buckle = FALSE
-	buckle_lying = 0
-	can_saddle = FALSE
-
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/simple_limb_hit(zone)
 	if(!zone)
@@ -196,13 +198,12 @@
 	icon_living = "goatmale"
 	icon_dead = "goatmale_dead"
 	icon_gib = "goatmale_gib"
-	gender = MALE
+
+	faction = list("goats")
+	footstep_type = FOOTSTEP_MOB_SHOE
 	emote_see = list("shakes his head.", "chews his cud.")
-	speak_chance = 1
 	turns_per_move = 3
-	see_in_dark = 6
-	move_to_delay = 8
-	base_intents = list(/datum/intent/simple/headbutt)
+
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
 						/obj/item/natural/hide = 1,
 						/obj/item/alch/sinew = 1,
@@ -213,30 +214,36 @@
 						/obj/item/natural/fur/gote = 1,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
-						/obj/item/natural/hide = 1,
-						/obj/item/natural/fur/gote = 1)
-	faction = list("goats")
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 6,
+						/obj/item/reagent_containers/food/snacks/fat = 2,
+						/obj/item/natural/hide = 2,
+						/obj/item/natural/fur/gote = 2,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
+
+	health = MALE_GOTE_HEALTH
+	maxHealth = MALE_GOTE_HEALTH
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,
+					/obj/item/reagent_containers/food/snacks/produce/oat,
+					/obj/item/reagent_containers/food/snacks/produce/apple,
+					/obj/item/reagent_containers/food/snacks/produce/turnip,
+					/obj/item/reagent_containers/food/snacks/produce/cabbage,
+					/obj/item/reagent_containers/food/snacks/produce/berries/rogue)
+	pooptype = /obj/item/natural/poo/horse
+
+	base_intents = list(/datum/intent/simple/headbutt)
 	attack_verb_continuous = "headbutts"
 	attack_verb_simple = "headbutt"
-	health = 150
-	maxHealth = 150
 	melee_damage_lower = 14
 	melee_damage_upper = 22
-	environment_smash = ENVIRONMENT_SMASH_NONE
 	retreat_distance = 0
 	minimum_distance = 0
-	milkies = FALSE
-	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,/obj/item/reagent_containers/food/snacks/produce/oat,/obj/item/reagent_containers/food/snacks/produce/apple,/obj/item/reagent_containers/food/snacks/produce/berries/rogue)
-	footstep_type = FOOTSTEP_MOB_SHOE
-	pooptype = /obj/item/natural/poo/horse
 	STACON = 7
 	STASTR = 12
 	STASPD = 2
+
 	can_buckle = TRUE
-	buckle_lying = 0
-	can_saddle = FALSE
+	buckle_lying = FALSE
 	tame_chance = 25
 	bonus_tame_chance = 15
 	remains_type = /obj/effect/decal/remains/cow
@@ -349,32 +356,49 @@
 			return "foreleg"
 	return ..()
 
-
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatletboy
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet
 	icon = 'icons/roguetown/mob/monster/gote.dmi'
-	name = "goatlet"
+	name = "gotelet"
 	desc = ""
-	gender = MALE
-	icon_state = "goatletboy"
-	icon_living = "goatletboy"
-	icon_dead = "goatletboy_dead"
-	icon_gib = "goatletboyt_gib"
+	icon_state = "goatlet"
+	icon_living = "goatlet"
+	icon_dead = "goatlet_dead"
+	icon_gib = "goatlet_gib"
+
 	animal_species = null
+	gender = FEMALE
+	mob_size = MOB_SIZE_SMALL
+	pass_flags = PASSTABLE | PASSMOB
+
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	perfect_butcher_results = list(/obj/item/natural/hide = 1)
-	base_intents = list(/datum/intent/simple/headbutt)
-	health = 20
-	maxHealth = 20
-	pass_flags = PASSTABLE | PASSMOB
-	mob_size = MOB_SIZE_SMALL
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
+							/obj/item/natural/hide = 1)
+
+	health = CALF_HEALTH
+	maxHealth = CALF_HEALTH
 	milkies = FALSE
+
+	base_intents = list(/datum/intent/simple/headbutt)
 	melee_damage_lower = 1
 	melee_damage_upper = 6
 	STACON = 5
 	STASTR = 5
 	STASPD = 5
-	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/goatmale
+	defprob = 50
+
+	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/goat
 	can_buckle = FALSE
-	buckle_lying = 0
-	can_saddle = FALSE
+
+
+
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet/boy
+	icon_state = "goatletboy"
+	icon_living = "goatletboy"
+	icon_dead = "goatletboy_dead"
+	icon_gib = "goatletboyt_gib"
+
+	gender = MALE
+
+	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/goatmale
+

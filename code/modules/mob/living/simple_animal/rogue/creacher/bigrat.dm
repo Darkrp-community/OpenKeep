@@ -5,46 +5,47 @@
 	icon_state = "rat"
 	icon_living = "rat"
 	icon_dead = "rat1"
-	gender = MALE
-	emote_hear = list("squeaks.")
-	emote_see = list("cleans its nose.")
-	speak_chance = 1
-	turns_per_move = 3
-	see_in_dark = 6
-	move_to_delay = 5
 	pixel_x = -16
 	pixel_y = -8
+
+	faction = list("rats")
+	emote_hear = list("squeaks.")
+	emote_see = list("cleans its nose.")
+	turns_per_move = 3
+	move_to_delay = 5
 	vision_range = 2
 	aggro_vision_range = 2
-	base_intents = list(/datum/intent/simple/bite)
+
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1,
 						/obj/item/natural/fur/rous = 1)
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
-						/obj/item/alch/sinew = 1)
-	faction = list("rats")
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+						/obj/item/alch/sinew = 1,
+						/obj/item/natural/fur/rous = 1)
+
+	health = ROUS_HEALTH
+	maxHealth = ROUS_HEALTH
+	food_type = list(/obj/item/reagent_containers/food/snacks, 
+					/obj/item/bodypart,
+					/obj/item/organ)
+
+	base_intents = list(/datum/intent/simple/bite)
 	attack_sound = 'sound/combat/wooshes/punch/punchwoosh (2).ogg'
-	health = 35
-	maxHealth = 35
 	melee_damage_lower = 12
 	melee_damage_upper = 14
-	environment_smash = ENVIRONMENT_SMASH_NONE
-	retreat_distance = 0
-	minimum_distance = 0
-	milkies = FALSE
-	food_type = list(/obj/item/reagent_containers/food/snacks, /obj/item/bodypart, /obj/item/organ)
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	pooptype = null
+
 	STACON = 3
 	STASTR = 3
 	STASPD = 6
+
+	retreat_distance = 0
+	minimum_distance = 0
 	deaggroprob = 0
 	defprob = 40
 	defdrain = 5
 	attack_same = FALSE // Lets two share a room.
 	retreat_health = 0.3
-	aggressive = 1
+	aggressive = TRUE
 	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/bigrat
 	body_eater = TRUE

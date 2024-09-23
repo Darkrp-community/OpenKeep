@@ -54,7 +54,7 @@
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/bacon
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/spider // Low-nutrient, kind of gross. Survival food.
-	name = "spidermeat"
+	name = "strange meat"
 	icon_state = "spidermeat"
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/spider/fried
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/spider/fried

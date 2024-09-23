@@ -2,46 +2,57 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/chicken
 	name = "\improper chicken"
 	desc = "A fat and mostly flightless bird. They produce eggs, or 'cackleberries'."
-	gender = FEMALE
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	icon_state = "chicken_brown"
 	icon_living = "chicken_brown"
 	icon_dead = "chicken_brown_dead"
-	emote_see = list("pecks at the ground.","flaps its wings viciously.")
+
 	density = FALSE
-	base_intents = list(/datum/intent/simple/peck)
+	gender = FEMALE
+	pass_flags = PASSTABLE | PASSMOB
+	mob_size = MOB_SIZE_SMALL
+	ventcrawler = VENTCRAWLER_ALWAYS
+	emote_see = list("pecks at the ground.","flaps its wings viciously.")
 	speak_chance = 2
-	turns_per_move = 5
 	faction = list("chickens")
+
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/reagent_containers/food/snacks/rogue/meat/poultry = 1,
 						/obj/item/natural/feather = 1)
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/fat = 1,
-						/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet = 1)
+						/obj/item/reagent_containers/food/snacks/rogue/meat/poultry = 1,
+						/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet = 1,
+						/obj/item/natural/feather = 1)
+
 	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
-	food_type = list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue,/obj/item/natural/worms,/obj/item/reagent_containers/food/snacks/produce/wheat,/obj/item/reagent_containers/food/snacks/produce/oat)
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue,
+					/obj/item/natural/worms, // well this works for domesticating but to actually eat it has to be a reagen_container/food object. Leaving it for now.
+					/obj/item/reagent_containers/food/snacks/produce/wheat,
+					/obj/item/reagent_containers/food/snacks/produce/oat)
+
+	health = CHICKEN_HEALTH
+	maxHealth = CHICKEN_HEALTH
+
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
 	response_disarm_simple = "gently push aside"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
+
+	base_intents = list(/datum/intent/simple/peck)
 	melee_damage_lower = 1
 	melee_damage_upper = 5
+
 	pooptype = /obj/item/natural/poo/horse
-	health = 15
-	maxHealth = 15
-	ventcrawler = VENTCRAWLER_ALWAYS
+
 	var/eggsFertile = TRUE
 	var/body_color
 	var/icon_prefix = "chicken"
-	pass_flags = PASSTABLE | PASSMOB
-	mob_size = MOB_SIZE_SMALL
 	var/list/layMessage = EGG_LAYING_MESSAGES
 	var/list/validColors = list("brown","black","white")
 	var/static/chicken_count = 0
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
+
 	STACON = 1
 	STASTR = 1
 	STASPD = 5

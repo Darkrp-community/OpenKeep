@@ -5,43 +5,47 @@
 	icon_state = "bogbug"
 	icon_living = "bogbug"
 	icon_dead = "bogbugdead"
-	gender = MALE
+
+	faction = list("bugs")
 	emote_hear = null
 	emote_see = null
-	speak_chance = 1
 	turns_per_move = 6
 	see_in_dark = 9
 	move_to_delay = 1
-	base_intents = list(/datum/intent/simple/claw, /datum/intent/simple/stab)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/xeno = 1,
-						/obj/item/natural/hide = 1)
-
-	faction = list("bugs")
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 160
-	maxHealth = 160
-	melee_damage_lower = 25
-	melee_damage_upper = 35
 	vision_range = 9
 	aggro_vision_range = 9
-	environment_smash = ENVIRONMENT_SMASH_NONE
-	retreat_distance = 2
-	minimum_distance = 1
-	milkies = FALSE
-	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	pooptype = null
+
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider= 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/xeno = 1,
+						/obj/item/natural/hide = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+						/obj/item/natural/hide = 2)
+
+	health = BOGBUG_HEALTH
+	maxHealth = BOGBUG_HEALTH
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat,
+					/obj/item/bodypart,
+					/obj/item/organ)
+
+	base_intents = list(/datum/intent/simple/claw, /datum/intent/simple/stab)
+	attack_sound = list('sound/vo/mobs/bogbug/bogbugattack1.ogg','sound/vo/mobs/bogbug/bogbugattack2.ogg','sound/vo/mobs/bogbug/bogbugattack3.ogg')
+	melee_damage_lower = 25
+	melee_damage_upper = 35
+
 	STACON = 13
 	STASTR = 10
 	STASPD = 15
 	STAEND = 15
+
+	retreat_distance = 2
+	minimum_distance = 1
 	deaggroprob = 0
 	defprob = 30
 	defdrain = 8
 	del_on_deaggro = 999 SECONDS
 	retreat_health = 0
 	food = 0
-	attack_sound = list('sound/vo/mobs/bogbug/bogbugattack1.ogg','sound/vo/mobs/bogbug/bogbugattack2.ogg','sound/vo/mobs/bogbug/bogbugattack3.ogg')
+
 	dodgetime = 20
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS

@@ -187,10 +187,10 @@
 		return ..()
 
 
-/*	.............   Fryspider   ................ */
+/*	.............   Frything   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/meat/spider/fried
-	name = "fried spidermeat"
-	desc = "Spiderflesh, shaved and roasted."
+	name = "fried strange meat"
+	desc = "Whatever it was, its roasted."
 	icon_state = "friedspider"
 	eat_effect = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)

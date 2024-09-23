@@ -5,14 +5,15 @@
 	icon_state = "mole"
 	icon_living = "mole"
 	icon_dead = "mole_dead"
-	gender = MALE
+
+	faction = list("orcs")
 	emote_hear = null
 	emote_see = null
-	speak_chance = 1
 	turns_per_move = 2
-	see_in_dark = 6
 	move_to_delay = 5
-	base_intents = list(/datum/intent/simple/claw)
+	vision_range = 7
+	aggro_vision_range = 9
+
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 						/obj/item/natural/hide = 1,
 						/obj/item/natural/fur/mole = 1,
@@ -23,37 +24,39 @@
 						/obj/item/natural/fur/mole = 2,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
 						/obj/item/natural/hide = 2,
-						/obj/item/natural/fur/mole = 2)
-	faction = list("orcs")
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 200
-	maxHealth = 200
+						/obj/item/natural/fur/mole = 3,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
+
+	health = MOLE_HEALTH
+	maxHealth = MOLE_HEALTH
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat,
+					/obj/item/bodypart,
+					/obj/item/organ)
+
+	base_intents = list(/datum/intent/simple/claw)
+	attack_sound = list('sound/vo/mobs/saiga/attack (1).ogg','sound/vo/mobs/saiga/attack (2).ogg')
 	melee_damage_lower = 20
 	melee_damage_upper = 40
-	vision_range = 7
-	aggro_vision_range = 9
-	environment_smash = ENVIRONMENT_SMASH_NONE
-	retreat_distance = 0
-	minimum_distance = 0
-	milkies = FALSE
-	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	pooptype = null
+
 	STACON = 8
 	STASTR = 12
 	STASPD = 3
 	STAEND = 10
+
+	retreat_distance = 0
+	minimum_distance = 0
 	deaggroprob = 0
 	defprob = 30
 	defdrain = 10
 	del_on_deaggro = 99 SECONDS
 	retreat_health = 0.4
 	food = 0
-	attack_sound = list('sound/vo/mobs/saiga/attack (1).ogg','sound/vo/mobs/saiga/attack (2).ogg')
+
 	dodgetime = 20
-	aggressive = 1
+	aggressive = TRUE
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/mole
 	body_eater = TRUE

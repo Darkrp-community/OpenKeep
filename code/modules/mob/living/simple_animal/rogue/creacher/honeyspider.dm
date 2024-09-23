@@ -5,46 +5,46 @@
 	icon_state = "honeys"
 	icon_living = "honeys"
 	icon_dead = "honeys-dead"
-	gender = MALE
-	speak_chance = 1
+
+	faction = list("bugs")
 	turns_per_move = 4
-	see_in_dark = 6
 	move_to_delay = 2
 	vision_range = 5
 	aggro_vision_range = 5
-	base_intents = list(/datum/intent/simple/bite)
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/spider = 1,
-							/obj/item/reagent_containers/food/snacks/spiderleg = 4,
+
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
 							/obj/item/natural/silk = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/spider = 1,
-							/obj/item/reagent_containers/food/snacks/spiderleg = 8,
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
 							/obj/item/reagent_containers/food/snacks/rogue/honey = 1,
 							/obj/item/natural/silk = 2)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/honey = 1)
-	faction = list("bugs")
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	attack_sound = 'sound/combat/wooshes/punch/punchwoosh (2).ogg'
-	health = 120
-	maxHealth = 120
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+							/obj/item/reagent_containers/food/snacks/rogue/honey = 2,
+							/obj/item/natural/silk = 3)
+
+	health = SPIDER_HEALTH
+	maxHealth = SPIDER_HEALTH
+	food_type = list(/obj/item/bodypart,
+					/obj/item/organ,
+					/obj/item/reagent_containers/food/snacks/rogue/meat)
+
+	base_intents = list(/datum/intent/simple/bite)
+	attack_sound = list('sound/vo/mobs/spider/attack (1).ogg','sound/vo/mobs/spider/attack (2).ogg','sound/vo/mobs/spider/attack (3).ogg','sound/vo/mobs/spider/attack (4).ogg')
 	melee_damage_lower = 20
 	melee_damage_upper = 25
-	environment_smash = ENVIRONMENT_SMASH_NONE
-	retreat_distance = 0
-	minimum_distance = 0
-	milkies = FALSE
-	food_type = list(/obj/item/bodypart, /obj/item/organ, /obj/item/reagent_containers/food/snacks/rogue/meat)
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	pooptype = null
+
 	STACON = 6
 	STASTR = 10
 	STASPD = 10
+
+	retreat_distance = 0
+	minimum_distance = 0
 	deaggroprob = 0
 	defprob = 35
 	defdrain = 5
-	attack_same = 0
+	attack_same = FALSE
 	retreat_health = 0.2
-	attack_sound = list('sound/vo/mobs/spider/attack (1).ogg','sound/vo/mobs/spider/attack (2).ogg','sound/vo/mobs/spider/attack (3).ogg','sound/vo/mobs/spider/attack (4).ogg')
-	aggressive = 1
+
+	aggressive = TRUE
 	stat_attack = UNCONSCIOUS
 	body_eater = TRUE
 
@@ -54,10 +54,11 @@
 	icon_state = "skallax"
 	icon_living = "skallax"
 	icon_dead = "skallax-dead"
+
+	health = SPIDER_HEALTH+10
+	maxHealth = SPIDER_HEALTH+10
+
 	base_intents = list(/datum/intent/simple/bite)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/spider = 1, /obj/item/reagent_containers/food/snacks/spiderleg = 8)
-	health = 130
-	maxHealth = 130
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/Initialize()
 	..()

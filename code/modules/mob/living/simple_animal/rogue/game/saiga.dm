@@ -39,30 +39,41 @@
 	icon_living = "saiga"
 	icon_dead = "saiga_dead"
 	icon_gib = "saiga_gib"
-	gender = FEMALE
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	emote_see = list("looks around.", "chews some leaves.")
-	speak_chance = 1
-	turns_per_move = 5
-	see_in_dark = 6
-	move_to_delay = 8
+	pixel_x = -8
+
 	animal_species = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
+	faction = list("saiga")
+	gender = FEMALE
+	footstep_type = FOOTSTEP_MOB_SHOE
+	emote_see = list("looks around.", "chews some leaves.")
+
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 1,
+						/obj/item/alch/bone = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
+						/obj/item/reagent_containers/food/snacks/fat = 1,
+						/obj/item/natural/hide = 2,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
-						/obj/item/natural/hide = 1)
-	base_intents = list(/datum/intent/simple/headbutt)
-	health = 100
-	maxHealth = 100
-	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,/obj/item/reagent_containers/food/snacks/produce/oat,/obj/item/reagent_containers/food/snacks/produce/apple, /obj/structure/spacevine)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
+						/obj/item/reagent_containers/food/snacks/fat = 1,
+						/obj/item/natural/hide = 4,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
+
+	health = FEMALE_MOOBEAST_HEALTH
+	maxHealth = FEMALE_MOOBEAST_HEALTH
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,
+					/obj/item/reagent_containers/food/snacks/produce/oat,
+					/obj/item/reagent_containers/food/snacks/produce/berries/rogue,
+					/obj/item/reagent_containers/food/snacks/produce/apple)
 	tame_chance = 25
 	bonus_tame_chance = 15
-	footstep_type = FOOTSTEP_MOB_SHOE
 	pooptype = /obj/item/natural/poo/horse
-	faction = list("saiga")
+
+	base_intents = list(/datum/intent/simple/headbutt)
+	attack_sound = list('sound/vo/mobs/saiga/attack (1).ogg','sound/vo/mobs/saiga/attack (2).ogg')
 	attack_verb_continuous = "headbutts"
 	attack_verb_simple = "headbutt"
 	melee_damage_lower = 10
@@ -72,13 +83,12 @@
 	STASPD = 15
 	STACON = 8
 	STASTR = 9
-	childtype = list(/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid = 70, /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigaboy = 30)
-	pixel_x = -8
-	attack_sound = list('sound/vo/mobs/saiga/attack (1).ogg','sound/vo/mobs/saiga/attack (2).ogg')
+	childtype = list(/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid = 70, 
+					/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid/boy = 30)
 	can_buckle = TRUE
-	buckle_lying = 0
+	buckle_lying = FALSE
 	can_saddle = TRUE
-	aggressive = 1
+	aggressive = TRUE
 	remains_type = /obj/effect/decal/remains/saiga
 
 /obj/effect/decal/remains/saiga
@@ -97,35 +107,6 @@
 			return pick('sound/vo/mobs/saiga/death (1).ogg','sound/vo/mobs/saiga/death (2).ogg')
 		if("idle")
 			return pick('sound/vo/mobs/saiga/idle (1).ogg','sound/vo/mobs/saiga/idle (2).ogg','sound/vo/mobs/saiga/idle (3).ogg','sound/vo/mobs/saiga/idle (4).ogg','sound/vo/mobs/saiga/idle (5).ogg','sound/vo/mobs/saiga/idle (6).ogg','sound/vo/mobs/saiga/idle (7).ogg')
-
-
-/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid
-	icon = 'icons/roguetown/mob/monster/saiga.dmi'
-	name = "saiga"
-	icon_state = "saigakid"
-	icon_living = "saigakid"
-	icon_dead = "saigakid_dead"
-	icon_gib = "saigakid_gib"
-	animal_species = null
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1)
-	perfect_butcher_results = list(/obj/item/natural/hide = 1)
-	base_intents = list(/datum/intent/simple/headbutt)
-	health = 20
-	pass_flags = PASSTABLE | PASSMOB
-	mob_size = MOB_SIZE_SMALL
-	maxHealth = 20
-	melee_damage_lower = 1
-	melee_damage_upper = 6
-	gender = FEMALE
-	STACON = 5
-	STASTR = 5
-	STASPD = 5
-	defprob = 50
-	pixel_x = -16
-	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/saiga
-	tame = TRUE
-	can_buckle = FALSE
-	aggressive = 1
 
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/simple_limb_hit(zone)
@@ -176,47 +157,56 @@
 	icon_living = "buck"
 	icon_dead = "buck_dead"
 	icon_gib = "buck_gib"
-	gender = MALE
-	emote_see = list("stares.")
-	speak_chance = 1
-	turns_per_move = 3
-	see_in_dark = 6
-	move_to_delay = 8
-	base_intents = list(/datum/intent/simple/headbutt)
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
-						/obj/item/natural/hide = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
-						/obj/item/reagent_containers/food/snacks/fat = 1,
-						/obj/item/natural/hide = 2)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
-						/obj/item/natural/hide = 1)
+	pixel_x = -8
+
 	faction = list("saiga")
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	footstep_type = FOOTSTEP_MOB_SHOE
+	emote_see = list("stares.")
+	turns_per_move = 3
+
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
+						/obj/item/reagent_containers/food/snacks/fat = 1,
+						/obj/item/natural/hide = 1,
+						/obj/item/alch/bone = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
+						/obj/item/reagent_containers/food/snacks/fat = 1,
+						/obj/item/natural/hide = 3,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
+						/obj/item/reagent_containers/food/snacks/fat = 1,
+						/obj/item/natural/hide = 5,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
+
+	health = MALE_MOOBEAST_HEALTH
+	maxHealth = MALE_MOOBEAST_HEALTH
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,
+					/obj/item/reagent_containers/food/snacks/produce/oat,
+					/obj/item/reagent_containers/food/snacks/produce/berries/rogue,
+					/obj/item/reagent_containers/food/snacks/produce/apple)
+	pooptype = /obj/item/natural/poo/horse
+
+	base_intents = list(/datum/intent/simple/headbutt)
+	attack_sound = list('sound/vo/mobs/saiga/attack (1).ogg','sound/vo/mobs/saiga/attack (2).ogg')
 	attack_verb_continuous = "headbutts"
 	attack_verb_simple = "headbutt"
-	health = 200
-	maxHealth = 200
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	retreat_distance = 0
 	minimum_distance = 0
 	retreat_health = 0.3
-	milkies = FALSE
-	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,/obj/item/reagent_containers/food/snacks/produce/oat,/obj/item/reagent_containers/food/snacks/produce/apple)
-	footstep_type = FOOTSTEP_MOB_SHOE
-	pooptype = /obj/item/natural/poo/horse
 	STACON = 15
 	STASTR = 11
 	STASPD = 12
-	pixel_x = -8
-	attack_sound = list('sound/vo/mobs/saiga/attack (1).ogg','sound/vo/mobs/saiga/attack (2).ogg')
+
 	can_buckle = TRUE
 	buckle_lying = 0
 	can_saddle = TRUE
 	tame_chance = 25
 	bonus_tame_chance = 15
-	aggressive = 1
+	aggressive = TRUE
 	remains_type = /obj/effect/decal/remains/saiga
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/update_icon()
@@ -317,38 +307,53 @@
 	return ..()
 
 
-/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigaboy
+/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid
 	icon = 'icons/roguetown/mob/monster/saiga.dmi'
 	name = "saiga"
-	desc = ""
-	gender = MALE
+	icon_state = "saigakid"
+	icon_living = "saigakid"
+	icon_dead = "saigakid_dead"
+	icon_gib = "saigakid_gib"
+
+	animal_species = null
+	gender = FEMALE
+	pass_flags = PASSTABLE | PASSMOB
+	mob_size = MOB_SIZE_SMALL
+
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
+								/obj/item/natural/hide = 1)
+
+	health = CALF_HEALTH
+	maxHealth = CALF_HEALTH
+
+	base_intents = list(/datum/intent/simple/headbutt)
+	melee_damage_lower = 1
+	melee_damage_upper = 6
+
+	STACON = 5
+	STASTR = 5
+	STASPD = 5
+	defprob = 50
+	pixel_x = -16
+	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/saiga
+	tame = TRUE
+	can_buckle = FALSE
+	aggressive = TRUE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid/boy
 	icon_state = "saigaboy"
 	icon_living = "saigaboy"
 	icon_dead = "saigaboy_dead"
 	icon_gib = "saigaboy_gib"
-	animal_species = null
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
-						/obj/item/natural/hide = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
-						/obj/item/reagent_containers/food/snacks/fat = 1,
-						/obj/item/natural/hide = 2)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
-						/obj/item/natural/hide = 1)
-	base_intents = list(/datum/intent/simple/headbutt)
-	health = 20
-	maxHealth = 20
-	pass_flags = PASSTABLE | PASSMOB
-	mob_size = MOB_SIZE_SMALL
-	milkies = FALSE
-	melee_damage_lower = 1
-	melee_damage_upper = 6
-	STACON = 5
-	STASTR = 5
-	STASPD = 5
+
+	gender = MALE
+
+	health = CALF_HEALTH
+	maxHealth = CALF_HEALTH
+
 	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck
-	tame = TRUE
-	can_buckle = FALSE
-	aggressive = 1
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/tame
 	tame = TRUE

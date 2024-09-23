@@ -7,19 +7,24 @@
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "FLESH"
 	icon_living = "FLESH"
-	health = 600
-	maxHealth = 600
-	melee_damage_lower = 40
-	melee_damage_upper = 60
+
+	mob_biotypes = MOB_EPIC
+	footstep_type = FOOTSTEP_MOB_HEAVY
 	vision_range = 6
 	aggro_vision_range = 6
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 	retreat_distance = 0
 	minimum_distance = 0
-	milkies = FALSE
-	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
-	footstep_type = FOOTSTEP_MOB_HEAVY
-	pooptype = null
+
+	health = TROLL_HEALTH
+	maxHealth = TROLL_HEALTH
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat,
+					/obj/item/bodypart,
+					/obj/item/organ)
+
+	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
+	melee_damage_lower = 40
+	melee_damage_upper = 60
 	STACON = 15
 	STASTR = 16
 	STASPD = 2
@@ -31,14 +36,12 @@
 	retreat_health = 0
 	food_max = 250
 	food = 0
-	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
 	dodgetime = 20
-	aggressive = 1
+	aggressive = TRUE
 //	stat_attack = UNCONSCIOUS
-	remains_type = /obj/effect/decal/remains/xeno/troll // Placeholder until Troll remains are sprited.
+	remains_type = /obj/effect/decal/remains/troll // Placeholder until Troll remains are sprited.
 	body_eater = TRUE
 	var/critvuln = TRUE
-	mob_biotypes = MOB_EPIC
 	critvuln = FALSE
 	STACON = 10
 	STASTR = 19
