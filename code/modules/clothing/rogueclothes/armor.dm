@@ -186,7 +186,7 @@
 	desc = "More form over function, this armor is fit for demonstration of might rather than open combat. The aged gilding slowly tarnishes away."
 	icon_state = "shadowplate"
 	item_state = "shadowplate"
-	body_parts_covered = CHEST|GROIN
+	body_parts_covered = CHEST|GROIN|VITALS
 	allowed_race = list("elf", "dark elf")
 
 // Blackoak armor, unique
