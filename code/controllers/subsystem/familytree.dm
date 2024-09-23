@@ -79,8 +79,7 @@ SUBSYSTEM_DEF(familytree)
 
 		if(FAMILY_NEWLYWED)
 			viable_spouses.Add(H)
-			if(viable_spouses.len >= 2)
-				AssignNewlyWed(H)
+			AssignNewlyWed(H)
 
 		if(FAMILY_FULL)
 			if(H.virginity)
@@ -221,30 +220,42 @@ SUBSYSTEM_DEF(familytree)
 	var/list/mid_priority_lover = list()
 	var/list/low_priority_lover = list()
 	for(var/mob/living/carbon/human/L in viable_spouses)
+		//Thats no one.
 		if(!L)
 			continue
+		//Thats you dude.
 		if(L == H)
 			continue
+		//They already have a spouse so skip this one.
 		if(L.spouse_name)
 			continue
+		//True love! They chose you and chose love them!
 		if(H.setspouse == L.real_name && L.setspouse == H.real_name)
 			high_priority_lover.Add(L)
 			break
-		if(H.setspouse == L.real_name)
+		/*
+		* This person has the name of the
+		* spouse you want. But their setspouse is none.
+		*/
+		if(H.setspouse == L.real_name && !L.setspouse)
 			high_priority_lover.Add(L)
 			continue
+		// This person wants you but you didnt choose them.
 		if(L.setspouse == H.real_name)
 			mid_priority_lover.Add(L)
 			continue
+		//Everyone else is placed in the loser pile.
 		low_priority_lover.Add(L)
-	var/lover = pick_n_take(high_priority_lover)
-	if(!lover)
-		if(H.setspouse)
-			lover = pick_n_take(mid_priority_lover)
-		else
-			lover = pick_n_take(low_priority_lover)
+	var/lover = pick(high_priority_lover)
+	//High priority lover failed and we still await our true spouse.
+	if(!lover && !H.setspouse)
+		//High priority lover was empty so check the mid priority.
+		lover = pick(mid_priority_lover)
+		if(!lover)
+			//Lets just check everyone else.
+			lover = pick(low_priority_lover)
 	//Success YOUR MARRIED!!!
-	if(ishuman(lover))
+	if(ishuman(lover) && lover)
 		viable_spouses -= lover
 		viable_spouses -= H
 		H.MarryTo(lover)
