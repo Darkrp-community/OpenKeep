@@ -45,21 +45,22 @@ SUBSYSTEM_DEF(familytree)
 		"King",
 		"Inquisitor",
 		)
+	//This creates 2 families for each race roundstart so that siblings dont fail to be added to a family.
+	var/list/preset_family_species = list(
+		/datum/species/human/northern,
+		/datum/species/elf,
+		/datum/species/elf/dark,
+		/datum/species/elf/snow/wood,
+		/datum/species/dwarf/mountain,
+		/datum/species/tieberian,
+		)
 
 /datum/controller/subsystem/familytree/Initialize()
-
-	ruling_family = new /datum/heritage(null, null, "human")
+	ruling_family = new /datum/heritage(null, null, /datum/species/human/northern)
 	//Blank starter families that we can customize for players.
-	families = list(
-		new /datum/heritage(null, null, "human"),
-		new /datum/heritage(null, null, "human"),
-		new /datum/heritage(null, null, "elf"),
-		new /datum/heritage(null, null, "elf"),
-		new /datum/heritage(null, null, "dwarf"),
-		new /datum/heritage(null, null, "dwarf"),
-		new /datum/heritage(null, null, "tiefling"),
-		new /datum/heritage(null, null, "tiefling"),
-		)
+	for(var/pioneer_household in preset_family_species)
+		for(var/I = 1 to 2)
+			families += new /datum/heritage(null, null, pioneer_household)
 
 	return ..()
 
@@ -78,7 +79,6 @@ SUBSYSTEM_DEF(familytree)
 			AssignToHouse(H)
 
 		if(FAMILY_NEWLYWED)
-			viable_spouses.Add(H)
 			AssignNewlyWed(H)
 
 		if(FAMILY_FULL)
@@ -108,7 +108,7 @@ SUBSYSTEM_DEF(familytree)
 	//If no human and they are older than adult age.
 	if(!H || H.age > AGE_ADULT)
 		return
-	var/species = H.dna.species.id
+	var/species = H.dna.species
 	var/adopted = FALSE
 	var/datum/heritage/chosen_house
 	var/list/low_priority_houses = list()
@@ -169,7 +169,8 @@ SUBSYSTEM_DEF(familytree)
 		//Normal Code
 		if(I.dominant_species != species)
 			continue
-		if(I.family.len >= 1 && I.family.len < 5 && !I.matriarch && !I.patriarch)
+		//Might be redundant criteria for mid priority.
+		if(I.family.len >= 1 && !I.matriarch && !I.patriarch)
 			medium_priority_houses.Add(I)
 		else
 			low_priority_houses.Add(I)
@@ -188,34 +189,26 @@ SUBSYSTEM_DEF(familytree)
 				what_we_checkin = medium_priority_houses
 			if(3)
 				what_we_checkin = low_priority_houses
-		for(var/datum/heritage/I in what_we_checkin)
-			if(!I.housename)
-				I.ClaimHouse(H)
+		for(var/datum/heritage/eligable_house in what_we_checkin)
+			if(!eligable_house.housename)
+				eligable_house.ClaimHouse(H)
 				return
-			if(!I.matriarch && H.gender == FEMALE)
-				I.addToHouse(H, FAMILY_MOTHER)
+			if(!eligable_house.matriarch && H.gender == FEMALE)
+				eligable_house.addToHouse(H, FAMILY_MOTHER)
 				return
-			if(!I.patriarch && H.gender == MALE)
-				I.addToHouse(H, FAMILY_FATHER)
+			if(!eligable_house.patriarch && H.gender == MALE)
+				eligable_house.addToHouse(H, FAMILY_FATHER)
 				return
-
-/*
-* For admins to view EVERY FAMILY and see all the
-* akward and convoluted coding.
-*/
-/datum/controller/subsystem/familytree/proc/ReturnAllFamilies()
-	. = ""
-	if(ruling_family)
-		. += ruling_family.FormatFamilyList()
-	for(var/datum/heritage/I in families)
-		if(!I.housename && !I.family.len)
-			continue
-		. += I.FormatFamilyList()
+	//None of the above added the person to a family. This means we must add them to a entirely new house.
+	if(species == /datum/species/aasimar)
+		return
+	families += new /datum/heritage(H)
 
 /*
 * For marrying two people together based on spousename.
 */
 /datum/controller/subsystem/familytree/proc/AssignNewlyWed(mob/living/carbon/human/H)
+	viable_spouses.Add(H)
 	var/list/high_priority_lover = list()
 	var/list/mid_priority_lover = list()
 	var/list/low_priority_lover = list()
@@ -259,3 +252,16 @@ SUBSYSTEM_DEF(familytree)
 		viable_spouses -= lover
 		viable_spouses -= H
 		H.MarryTo(lover)
+
+/*
+* For admins to view EVERY FAMILY and see all the
+* akward and convoluted coding.
+*/
+/datum/controller/subsystem/familytree/proc/ReturnAllFamilies()
+	. = ""
+	if(ruling_family)
+		. += ruling_family.FormatFamilyList()
+	for(var/datum/heritage/I in families)
+		if(!I.housename && !I.family.len)
+			continue
+		. += I.FormatFamilyList()

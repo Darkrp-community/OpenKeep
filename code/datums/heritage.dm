@@ -18,11 +18,15 @@
 
 /datum/heritage/New(mob/living/carbon/human/progenator, new_name, majority_species)
 	if(progenator)
+		if(!new_name)
+			ClaimHouse(progenator)
+			return
 		addToHouse(progenator)
-	housename = new_name
+	if(new_name)
+		housename = new_name
 	dominant_species = majority_species
-	if(!majority_species)
-		dominant_species = progenator.dna.species.id
+	if(!majority_species && progenator)
+		dominant_species = progenator.dna.species
 
 /*
 * Renames entire house. Useful for default houses.
@@ -33,7 +37,7 @@
 		gender_male = TRUE
 	addToHouse(person, gender_male ? FAMILY_FATHER : FAMILY_MOTHER)
 	housename = SurnameFormatting(person)
-	dominant_species = person.dna.species.id
+	dominant_species = person.dna.species
 
 /*
 * Adds someone to the family using a mob and a status.
