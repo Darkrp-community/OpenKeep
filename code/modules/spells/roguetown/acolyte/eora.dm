@@ -58,7 +58,7 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/C = target
 		C.visible_message("<span class='info'>A purple haze shrouds [target]!</span>", "<span class='notice'>I feel much calmer.</span>")
-		C.reagents.add_reagent(/datum/reagent/berrypoison, 1)
+		C.reagents.add_reagent(/datum/reagent/berrypoison, 3)
 		C.reagents.add_reagent(/datum/reagent/moondust, 3)
 		C.reagents.add_reagent(/datum/reagent/consumable/ethanol/beer/wine, 3)
 		return

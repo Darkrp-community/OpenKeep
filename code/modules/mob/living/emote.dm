@@ -1067,12 +1067,6 @@
 	nomsg = TRUE
 	only_forced_audio = TRUE
 
-/datum/emote/living/idle
-	key = "idle"
-	emote_type = EMOTE_AUDIBLE
-	nomsg = TRUE
-	only_forced_audio = TRUE
-
 /datum/emote/living/death
 	key = "death"
 	emote_type = EMOTE_AUDIBLE
@@ -1391,6 +1385,20 @@
 	key_third_person = "wsmiles"
 	message = "smiles weakly."
 
+// ............... Z ..................
+/datum/emote/living/zombiemoan // sort of bandaid since zombie voicepacks got issues, maybe related to new pitch or who knows
+	key = "zmoan"
+	key_third_person = "moans"
+	message = "moans."
+	emote_type = EMOTE_AUDIBLE
+/datum/emote/living/zombiemoan/can_run_emote(mob/living/user, status_check = TRUE , intentional)
+	. = ..()
+	if(user.gender == MALE)
+		playsound(user.loc, pick('sound/vo/mobs/zombie/idle (1).ogg','sound/vo/mobs/zombie/idle (2).ogg','sound/vo/mobs/zombie/idle (3).ogg'), 80, FALSE, -1)
+	else
+		playsound(user.loc, pick('sound/vo/mobs/zombie/f/idle (1).ogg','sound/vo/mobs/zombie/f/idle (2).ogg','sound/vo/mobs/zombie/f/idle (3).ogg'), 80, FALSE, -1)
+
+
 // ............... Y ..................
 /datum/emote/living/yawn
 	key = "yawn"
@@ -1407,6 +1415,7 @@
 		var/mob/living/carbon/C = user
 		if(C.silent || !C.can_speak_vocal())
 			message = "makes a muffled yawn."
+
 
 
 
