@@ -23,7 +23,7 @@
 						/obj/item/natural/fur/mole = 2,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	bonus_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
 						/obj/item/natural/hide = 2,
 						/obj/item/natural/fur/mole = 2)
 	faction = list("orcs")

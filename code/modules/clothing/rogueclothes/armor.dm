@@ -462,7 +462,8 @@
 	name = "leather vest"
 	icon_state = "leathervest"
 	item_state = "leathervest"
-	color = null
+//	color = null
+	color = "#f5c0ac"
 
 // Unique swashbuckler vest. Notice it doesn't cover arms.
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor

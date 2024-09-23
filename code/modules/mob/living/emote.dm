@@ -794,18 +794,26 @@
 		if(C.silent || !C.can_speak_vocal())
 			message = "makes a muffled laugh."
 
-/datum/emote/living/look
-	key = "look"
-	key_third_person = "looks"
-	message = "stares blankly."
-	message_param = "looks at %t."
-
 /datum/emote/living/leap
 	key = "leap"
 	key_third_person = "leaps"
 	message = "leaps!"
 	restraint_check = TRUE
 	only_forced_audio = TRUE
+
+/datum/emote/living/look
+	key = "look"
+	key_third_person = "looks"
+	message = "stares blankly."
+	message_param = "looks at %t."
+
+/datum/emote/living/lower	// the emote that signals an animal is tamed. Previously smile was used. The chicken smiles. The pig smiles. Wut.
+	key = "lower_head"
+	key_third_person = "lowers_head"
+	message = "lowers its head."
+	message_param = "lowers its head."
+	emote_type = EMOTE_VISIBLE
+
 
 // ............... M ..................
 /datum/emote/living/meditate

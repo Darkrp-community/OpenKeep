@@ -173,7 +173,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	var/remains_type
 
 	var/botched_butcher_results
-	var/bonus_butcher_results
+	var/perfect_butcher_results
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -230,7 +230,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 ///Extra effects to add when the mob is tamed, such as adding a riding component
 /mob/living/simple_animal/proc/tamed(mob/user)
-	emote("smile", forced = TRUE)
+	emote("lower_head", forced = TRUE)
 	tame = TRUE
 	stop_automated_movement_when_pulled = TRUE
 	if(user)
@@ -442,16 +442,21 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		if(butcher_results)
 			if(user.mind.get_skill_level(/datum/skill/labor/butchering) <= 1)
 				if(prob(50))
-					butcher += botched_butcher_results // chance to get shit result
+					butcher = botched_butcher_results // chance to get shit result
 				else
-					butcher += butcher_results
+					butcher = butcher_results
 			else 
-				butcher += butcher_results
+//				butcher += butcher_results chicken works but not cow and gote uhhh wut
 				if(user.mind.get_skill_level(/datum/skill/labor/butchering) >= 5)
-					butcher += bonus_butcher_results // double the yield of the stuff you get
+					butcher = perfect_butcher_results
+				else
+					butcher = butcher_results
 
-		if(guaranteed_butcher_results)
-			butcher += guaranteed_butcher_results
+//		if(perfect_butcher_results)
+//			if(user.mind.get_skill_level(/datum/skill/labor/butchering) >= 5)
+//				butcher = perfect_butcher_results
+//		if(guaranteed_butcher_results)
+//			butcher += guaranteed_butcher_results
 		var/rotstuff = FALSE
 		var/datum/component/rot/simple/CR = GetComponent(/datum/component/rot/simple)
 		if(CR)

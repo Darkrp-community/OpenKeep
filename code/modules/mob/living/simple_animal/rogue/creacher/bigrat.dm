@@ -18,8 +18,10 @@
 	aggro_vision_range = 2
 	base_intents = list(/datum/intent/simple/bite)
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1, /obj/item/natural/fur/rous = 1)
-	bonus_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, /obj/item/alch/sinew = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1,
+						/obj/item/natural/fur/rous = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
+						/obj/item/alch/sinew = 1)
 	faction = list("rats")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_sound = 'sound/combat/wooshes/punch/punchwoosh (2).ogg'

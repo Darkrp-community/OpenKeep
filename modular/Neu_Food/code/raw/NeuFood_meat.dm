@@ -42,7 +42,6 @@
 	slices_num = 2
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/bacon
 	chopping_sound = TRUE
-	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/bacon
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/bacon
 	name = "raw bacon"

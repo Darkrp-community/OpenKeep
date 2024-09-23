@@ -94,9 +94,15 @@
 	see_in_dark = 6
 	move_to_delay = 7
 	animal_species = /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/fatty = 3,
+									/obj/item/reagent_containers/food/snacks/fat = 1,
+									/obj/item/natural/hide = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/fatty = 4,
-						/obj/item/reagent_containers/food/snacks/fat = 2,
-						/obj/item/natural/hide = 2)
+							/obj/item/reagent_containers/food/snacks/fat = 2,
+							/obj/item/natural/hide = 2)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/fatty = 5,
+							/obj/item/reagent_containers/food/snacks/fat = 3,
+							/obj/item/natural/hide = 3)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 80
 	maxHealth = 80

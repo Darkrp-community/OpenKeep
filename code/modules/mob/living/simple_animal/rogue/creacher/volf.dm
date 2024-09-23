@@ -22,7 +22,8 @@
 						/obj/item/natural/fur/volf = 2,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	bonus_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, /obj/item/natural/fur/volf = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
+						/obj/item/natural/fur/volf = 1)
 	faction = list("orcs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	health = 110

@@ -24,7 +24,8 @@
 						/obj/item/natural/hide = 2,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	bonus_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3, /obj/item/natural/hide = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
+						/obj/item/natural/hide = 1)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 80
 	maxHealth = 80
@@ -74,7 +75,7 @@
 	animal_species = null
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	bonus_butcher_results = list(/obj/item/natural/hide = 1)
+	perfect_butcher_results = list(/obj/item/natural/hide = 1)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 20
 	pass_flags = PASSTABLE | PASSMOB
@@ -166,7 +167,8 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 6,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	bonus_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3, /obj/item/natural/hide = 2)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
+						/obj/item/natural/hide = 2)
 	faction = list("cows")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_same = 0
@@ -261,7 +263,7 @@
 	animal_species = null
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	bonus_butcher_results = list(/obj/item/natural/hide = 1)
+	perfect_butcher_results = list(/obj/item/natural/hide = 1)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 20
 	maxHealth = 20

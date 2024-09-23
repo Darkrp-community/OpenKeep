@@ -79,7 +79,9 @@
 						/obj/item/natural/fur/gote = 1,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	bonus_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/natural/hide = 1,	/obj/item/natural/fur/gote = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
+						/obj/item/natural/hide = 1,
+						/obj/item/natural/fur/gote = 1)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 80
 	maxHealth = 80
@@ -126,7 +128,7 @@
 	animal_species = null
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	bonus_butcher_results = list(/obj/item/natural/hide = 1)
+	perfect_butcher_results = list(/obj/item/natural/hide = 1)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 20
 	pass_flags = PASSTABLE | PASSMOB
@@ -211,7 +213,9 @@
 						/obj/item/natural/fur/gote = 1,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	bonus_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/natural/hide = 1,	/obj/item/natural/fur/gote = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
+						/obj/item/natural/hide = 1,
+						/obj/item/natural/fur/gote = 1)
 	faction = list("goats")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_verb_continuous = "headbutts"
@@ -358,7 +362,7 @@
 	animal_species = null
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	bonus_butcher_results = list(/obj/item/natural/hide = 1)
+	perfect_butcher_results = list(/obj/item/natural/hide = 1)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 20
 	maxHealth = 20

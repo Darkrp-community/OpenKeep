@@ -14,8 +14,11 @@
 	turns_per_move = 5
 	faction = list("chickens")
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/fat = 1, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry = 1, /obj/item/natural/feather = 1)
-	bonus_butcher_results = list(/obj/item/reagent_containers/food/snacks/fat = 1, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/fat = 1,
+						/obj/item/reagent_containers/food/snacks/rogue/meat/poultry = 1,
+						/obj/item/natural/feather = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/fat = 1,
+						/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet = 1)
 	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
 	food_type = list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue,/obj/item/natural/worms,/obj/item/reagent_containers/food/snacks/produce/wheat,/obj/item/reagent_containers/food/snacks/produce/oat)
 	response_help_continuous = "pets"
