@@ -15,19 +15,34 @@
 	alpha = 173
 
 /datum/reagent/medicine/healthpot/on_mob_life(mob/living/carbon/M)
-	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
-		M.blood_volume = min(M.blood_volume+50, BLOOD_VOLUME_MAXIMUM)
-	else
-		//can overfill you with blood, but at a slower rate
-		M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_MAXIMUM)
-	M.adjustBruteLoss(-25*REM, 0)
-	M.adjustFireLoss(-25*REM, 0)
+	M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
+	M.adjustBruteLoss(-2*REM, 0)
+	M.adjustFireLoss(-2*REM, 0)
 	M.adjustOxyLoss(-1, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -25*REM)
-	M.adjustCloneLoss(-1*REM, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
+	M.adjustCloneLoss(-2*REM, 0)
 	..()
 	. = 1
 
+
+/datum/reagent/medicine/stronghealth
+	name = "Strong Health Potion"
+	description = "Quickly regenerates all types of damage."
+	color = "#820000be"
+	taste_description = "rich lifeblood"
+	metabolization_rate = REAGENTS_METABOLISM * 10
+
+/datum/reagent/medicine/stronghealth/on_mob_life(mob/living/carbon/M)
+	M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
+	M.adjustBruteLoss(-8*REM, 0)
+	M.adjustFireLoss(-8*REM, 0)
+	M.adjustOxyLoss(-5, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
+	M.adjustCloneLoss(-5*REM, 0)
+	..()
+	. = 1
+
+//
 /datum/reagent/medicine/manapot
 	name = "Mana Potion"
 	description = "Gradually regenerates stamina."
