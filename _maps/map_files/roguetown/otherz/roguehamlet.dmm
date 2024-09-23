@@ -4699,7 +4699,7 @@
 "xwq" = (/obj/item/natural/thorn,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/rtfield)
 "xwu" = (/obj/item/roguebin,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/town)
 "xww" = (/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town/manor{first_time_text = "Blackwine Manor"})
-"xwy" = (/obj/item/neuFarm/seeds/pipeweed,/obj/item/neuFarm/seeds/potato,/obj/structure/closet/crate/chest/wicker,/obj/item/neuFarm/seeds/wheat/rice,/obj/item/neuFarm/seeds/chanterelle,/obj/effect/spawner/roguemap/loot/common,/turf/open/floor/rogue/dirt/road,/area/rogue/under/cave{ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30, /mob/living/carbon/human/species/skeleton/npc/ambush = 10); first_time_text = "CATACOMBS"})
+"xwy" = (/obj/item/neuFarm/seeds/pipeweed,/obj/item/neuFarm/seeds/potato,/obj/structure/closet/crate/chest/wicker,/obj/item/neuFarm/seeds/wheat/rice,/obj/item/seeds/chanterelle,/obj/effect/spawner/roguemap/loot/common,/turf/open/floor/rogue/dirt/road,/area/rogue/under/cave{ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30, /mob/living/carbon/human/species/skeleton/npc/ambush = 10); first_time_text = "CATACOMBS"})
 "xwK" = (/obj/structure/chair/wood/rogue{icon_state = "chair2"; dir = 4},/obj/structure/fluff/walldeco/psybanner{pixel_y = 32},/turf/open/floor/rogue/churchmarble,/area/rogue/under/town/basement)
 "xwT" = (/obj/structure/fluff/statue/spider,/turf/open/floor/rogue/blocks,/area/rogue/under/town/basement)
 "xxz" = (/turf/open/floor/bronze,/area/rogue/outdoors/mountains)
