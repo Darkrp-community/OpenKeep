@@ -1223,6 +1223,7 @@
 "jNf" = (/turf/closed/wall/mineral/rogue/wooddark/horizontal,/area/rogue/indoors/town/dwarfin)
 "jNv" = (/obj/structure/roguewindow,/turf/closed/wall/mineral/rogue/wooddark/window,/area/rogue/indoors)
 "jOl" = (/obj/structure/table/church,/obj/item/candle/yellow,/turf/open/floor/rogue/churchmarble,/area/rogue/indoors/town/church/chapel)
+"jOB" = (/obj/effect/decal/cleanable/cobweb,/obj/structure/table/wood/plain,/obj/item/keyring/inquisitor,/turf/open/floor/rogue/herringbone,/area/rogue/indoors/town/church)
 "jPn" = (/obj/structure/fluff/railing/wood{dir = 1; pixel_y = -1},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/town)
 "jPS" = (/turf/open/floor/rogue/church,/area/rogue/indoors/town/church)
 "jQo" = (/obj/structure/stairs{dir = 1; icon_state = "stairs"},/turf/open/floor/rogue/wood,/area/rogue/indoors/town/manor)

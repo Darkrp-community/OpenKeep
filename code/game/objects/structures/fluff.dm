@@ -1110,12 +1110,12 @@
 /obj/structure/fluff/psycross/attackby(obj/item/W, mob/user, params)
 	if(user.mind)
 		if(user.mind.assigned_role == "Priest")
-			if(istype(W, /obj/item/reagent_containers/food/snacks/grown/apple))
+			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/apple))
 				if(!istype(get_area(user), /area/rogue/indoors/town/church/chapel))
 					to_chat(user, "<span class='warning'>I need to do this in the chapel.</span>")
 					return FALSE
 				var/marriage
-				var/obj/item/reagent_containers/food/snacks/grown/apple/A = W
+				var/obj/item/reagent_containers/food/snacks/produce/apple/A = W
 
 				//The MARRIAGE TEST BEGINS
 				if(A.bitten_names.len)
