@@ -12,7 +12,7 @@
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	sellprice = 5
 
-/obj/item/natural/fur // a piece of skin with animal hair on it is called a pelt, at least before a tanner gets to it. From it you can make fur lined cloaks and so on.
+/obj/item/natural/fur // a piece of skin with animal hair on it. Could be called a fur but its untanned and also encompasses rat skins and goat skins so pelt is more suitable at least to my ears.
 	name = "fur"
 	icon_state = "wool1"
 	desc = "pelt from one of Dendor's creachers."
