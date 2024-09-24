@@ -9,6 +9,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/barbarian
 	min_pq = 0
+	maximum_possible_slots = 2
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/combat_barbarian.ogg'
 
