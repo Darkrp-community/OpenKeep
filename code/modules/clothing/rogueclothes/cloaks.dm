@@ -533,7 +533,7 @@
 	nodismemsleeves = TRUE
 	inhand_mod = TRUE
 //	allowed_sex = list("male")
-	allowed_race = list("human", "tiefling", "elf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "dwarf")
 	detail_tag = "_det"
 	detail_color = CLOTHING_PURPLE
 
