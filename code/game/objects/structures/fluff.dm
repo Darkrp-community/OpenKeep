@@ -812,6 +812,10 @@
 /obj/structure/fluff/statue/astrata
 	name = "statue of Astrata"
 	desc = "Astrata, the Sun Queen, reigns over light, order, and conquest. She is worshipped and feared in equal measure."
+	max_integrity = 5000
+	deconstructible = FALSE
+	density = TRUE
+	blade_dulling = DULLING_PICK
 	icon_state = "astrata"
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 
@@ -837,6 +841,10 @@
 
 /obj/structure/fluff/statue/psy
 	icon_state = "psy"
+	max_integrity = 5000
+	deconstructible = FALSE
+	density = TRUE
+	blade_dulling = DULLING_PICK
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	pixel_x = -32
 

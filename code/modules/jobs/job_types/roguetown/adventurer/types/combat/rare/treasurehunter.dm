@@ -52,5 +52,7 @@
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", 1)
+		H.change_stat("fortune", -1) // Tradeoff for never being cursed when graverobbing.
 		ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC)
