@@ -7,10 +7,7 @@
 	spawn_positions = 1
 
 	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf"
+		"Humen"
 	)
 	allowed_sexes = list(MALE)
 	outfit = /datum/outfit/job/roguetown/lord
