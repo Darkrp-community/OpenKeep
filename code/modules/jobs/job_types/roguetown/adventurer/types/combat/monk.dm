@@ -11,6 +11,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/monk
 	min_pq = 0
+	maximum_possible_slots = 2
 	category_tags = list(CTAG_ADVENTURER)
 	vampcompat = FALSE
 
