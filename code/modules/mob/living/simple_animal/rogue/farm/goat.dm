@@ -97,34 +97,6 @@
 	buckle_lying = 0
 	can_saddle = FALSE
 	remains_type = /obj/effect/decal/remains/cow
-	var/obj/item/gudder/gudder = null
-
-
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/Initialize()
-	..()
-	if(milkies)
-		gudder = new()
-
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/Destroy()
-	qdel(gudder)
-	gudder = null
-	..()
-
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/attackby(obj/item/O, mob/user, params)
-	if(!stat && istype(O, /obj/item/reagent_containers/glass))
-		if(gudder)
-			gudder.milkAnimal(O, user)
-			return 1
-	else
-		return ..()
-
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/Life()
-	. = ..()
-	if(.)
-		if(gudder)
-			if(production > 0)
-				production--
-				gudder.generateMilk()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/get_sound(input)
 	switch(input)

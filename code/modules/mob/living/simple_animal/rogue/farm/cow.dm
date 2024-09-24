@@ -39,33 +39,7 @@
 	STASTR = 4
 	childtype = list(/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet = 95, /mob/living/simple_animal/hostile/retaliate/rogue/cow/bullet = 5)
 	remains_type = /obj/effect/decal/remains/cow
-	var/obj/item/udder/udder = null
 
-/mob/living/simple_animal/hostile/retaliate/rogue/cow/Initialize()
-	..()
-	if(milkies)
-		udder = new()
-
-/mob/living/simple_animal/hostile/retaliate/rogue/cow/Destroy()
-	qdel(udder)
-	udder = null
-	..()
-
-/mob/living/simple_animal/hostile/retaliate/rogue/cow/attackby(obj/item/O, mob/user, params)
-	if(!stat && istype(O, /obj/item/reagent_containers/glass))
-		if(udder)
-			udder.milkAnimal(O, user)
-			return 1
-	else
-		return ..()
-
-/mob/living/simple_animal/hostile/retaliate/rogue/cow/Life()
-	. = ..()
-	if(.)
-		if(udder)
-			if(production > 0)
-				production--
-				udder.generateMilk()
 
 /obj/effect/decal/remains/cow
 	name = "remains"

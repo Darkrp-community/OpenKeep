@@ -372,40 +372,6 @@
 	sleep(20)
 	in_use = FALSE
 
-
-/obj/item/gudder
-	name = "udder"
-	var/in_use // so you can't spam milking sounds
-
-/obj/item/gudder/Initialize()
-	create_reagents(100)
-	reagents.add_reagent(/datum/reagent/consumable/milk/gote, rand(0,20))
-	. = ..()
-
-/obj/item/gudder/proc/generateMilk()
-	reagents.add_reagent(/datum/reagent/consumable/milk/gote, 1)
-
-/obj/item/gudder/proc/milkAnimal(obj/O, mob/user)
-	var/obj/item/reagent_containers/glass/G = O
-	if(in_use)
-		return
-	if(G.reagents.total_volume >= G.volume)
-		to_chat(user, "<span class='warning'>[O] is full.</span>")
-		return
-	if(!reagents.has_reagent(/datum/reagent/consumable/milk/gote, 5))
-		to_chat(user, "<span class='warning'>The udder is dry. Wait a bit longer...</span>")
-		return
-	beingmilked()
-	playsound(O, pick('modular/Creechers/sound/milking1.ogg', 'modular/Creechers/sound/milking2.ogg'), 100, TRUE, -1)
-	if(do_after(user, 20, target = src))
-		reagents.trans_to(O, rand(5,10))
-		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>", "<span class='notice'>I milk [src] using \the [O].</span>")
-
-/obj/item/gudder/proc/beingmilked()
-	in_use = TRUE
-	sleep(20)
-	in_use = FALSE
-
 //grenchensnacker
 
 /mob/living/simple_animal/grenchensnacker

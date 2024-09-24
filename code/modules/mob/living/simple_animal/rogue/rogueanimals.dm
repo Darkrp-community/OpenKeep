@@ -42,6 +42,7 @@
 	var/food_max = 50
 	var/deaggroprob = 10
 	var/eat_forever
+	var/obj/item/udder/udder = null
 	var/milkies = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Move()
@@ -206,6 +207,8 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Initialize()
 	..()
+	if(milkies)
+		udder = new()
 	if(tame)
 		tamed(owner)
 	ADD_TRAIT(src, TRAIT_SIMPLE_WOUNDS, TRAIT_GENERIC)
@@ -236,6 +239,11 @@
 			LoseTarget()
 		else
 			return
+	..()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/Destroy()
+	qdel(udder)
+	udder = null
 	..()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Life()
@@ -273,6 +281,10 @@
 			else
 				if(childtype)
 					make_babies()
+		if(udder)
+			if(production > 0)
+				production--
+				udder.generateMilk()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Retaliate()
 //	if(!enemies.len && message)
@@ -282,6 +294,14 @@
 //		minimum_distance = 10
 	mob_timers["aggro_time"] = world.time
 	..()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/attackby(obj/item/O, mob/user, params)
+	if(!stat && istype(O, /obj/item/reagent_containers/glass))
+		if(udder)
+			udder.milkAnimal(O, user)
+			return 1
+	else
+		return ..()
 
 //Prevents certain items from being targeted as food.
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/PickyEater(atom/thing_to_eat)
