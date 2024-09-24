@@ -8,7 +8,6 @@
 	f_title = "Princess"
 	allowed_races = list(
 		"Humen",
-		"Elf",
 		"Half-Elf",
 		"Dwarf"
 	)
