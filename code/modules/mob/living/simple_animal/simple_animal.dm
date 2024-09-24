@@ -446,17 +446,11 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 				else
 					butcher = butcher_results
 			else 
-//				butcher += butcher_results chicken works but not cow and gote uhhh wut
-				if(user.mind.get_skill_level(/datum/skill/labor/butchering) >= 5)
+				if(user.mind.get_skill_level(/datum/skill/labor/butchering) >= 5) // binary, butcher gets this bonus, no one else pretty much. Others just get the speed increase and avoid botches on lvl 1 and above.
 					butcher = perfect_butcher_results
 				else
 					butcher = butcher_results
 
-//		if(perfect_butcher_results)
-//			if(user.mind.get_skill_level(/datum/skill/labor/butchering) >= 5)
-//				butcher = perfect_butcher_results
-//		if(guaranteed_butcher_results)
-//			butcher += guaranteed_butcher_results
 		var/rotstuff = FALSE
 		var/datum/component/rot/simple/CR = GetComponent(/datum/component/rot/simple)
 		if(CR)
