@@ -47,9 +47,22 @@
 /datum/crafting_recipe/roguetown/leather/heavygloves
 	name = "heavy leather gloves"
 	result = /obj/item/clothing/gloves/roguetown/angle
-	reqs = list(/obj/item/natural/hide = 1, /obj/item/natural/fur = 1)
+	reqs = list(/obj/item/natural/hide = 1,
+				/obj/item/natural/fur/gote = 1)
 	sellprice = 20
 	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/leather/heavygloves/two
+	reqs = list(/obj/item/natural/hide = 1,
+				/obj/item/natural/fur/volf = 1)
+
+/datum/crafting_recipe/roguetown/leather/heavygloves/three
+	reqs = list(/obj/item/natural/hide = 1,
+				/obj/item/natural/fur/mole = 1)
+
+/datum/crafting_recipe/roguetown/leather/heavygloves/four
+	reqs = list(/obj/item/natural/hide = 1,
+				/obj/item/natural/fur/rous = 1)
 
 /datum/crafting_recipe/roguetown/leather/bracers
 	name = "leather bracers (x2)"
@@ -113,9 +126,21 @@
 	name = "hide armor"
 	result = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	reqs = list(/obj/item/natural/hide = 2,
-				/obj/item/natural/fur = 1)
+				/obj/item/natural/fur/gote = 1)
 	craftdiff = 2
 	sellprice = 35
+
+/datum/crafting_recipe/roguetown/leather/hidearmor/two
+	reqs = list(/obj/item/natural/hide = 2,
+				/obj/item/natural/fur/volf = 1)
+
+/datum/crafting_recipe/roguetown/leather/hidearmor/three
+	reqs = list(/obj/item/natural/hide = 2,
+				/obj/item/natural/fur/mole = 1)
+
+/datum/crafting_recipe/roguetown/leather/hidearmor/four
+	reqs = list(/obj/item/natural/hide = 2,
+				/obj/item/natural/fur/rous = 1)
 
 /datum/crafting_recipe/roguetown/leather/cloak
 	name = "leather cloak"
@@ -128,7 +153,20 @@
 /datum/crafting_recipe/roguetown/leather/cloakfur
 	name = "fur cloak"
 	result = /obj/item/clothing/cloak/raincloak/furcloak/crafted
-	reqs = list(/obj/item/natural/hide = 2, /obj/item/natural/fur = 1)
+	reqs = list(/obj/item/natural/hide = 2,
+				/obj/item/natural/fur/gote = 1)
+
+/datum/crafting_recipe/roguetown/leather/cloakfur/two
+	reqs = list(/obj/item/natural/hide = 2,
+				/obj/item/natural/fur/volf = 1)
+
+/datum/crafting_recipe/roguetown/leather/cloakfur/three
+	reqs = list(/obj/item/natural/hide = 2,
+				/obj/item/natural/fur/mole = 1)
+
+/datum/crafting_recipe/roguetown/leather/cloakfur/four
+	reqs = list(/obj/item/natural/hide = 2,
+				/obj/item/natural/fur/rous = 1)
 
 /obj/item/clothing/cloak/raincloak/furcloak/crafted
 	sellprice = 35
@@ -136,7 +174,20 @@
 /datum/crafting_recipe/roguetown/leather/papakha
 	name = "papakha hat"
 	result = /obj/item/clothing/head/roguetown/papakha/crafted
-	reqs = list(/obj/item/natural/fur = 1, /obj/item/natural/fibers = 2)
+	reqs = list(/obj/item/natural/fur/gote = 1,
+				/obj/item/natural/fibers = 2)
+
+/datum/crafting_recipe/roguetown/leather/papakha/two
+	reqs = list(/obj/item/natural/fur/volf = 1,
+			/obj/item/natural/fibers = 2)
+
+/datum/crafting_recipe/roguetown/leather/papakha/three
+	reqs = list(/obj/item/natural/fur/mole = 1,
+			/obj/item/natural/fibers = 2)
+
+/datum/crafting_recipe/roguetown/leather/papakha/four
+	reqs = list(/obj/item/natural/fur/rous = 1,
+			/obj/item/natural/fibers = 2)
 
 /obj/item/clothing/head/roguetown/papakha/crafted
 	sellprice = 10

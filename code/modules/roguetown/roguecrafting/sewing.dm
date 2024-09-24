@@ -217,9 +217,24 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
 
+// could utilize the different types of fur better but will do for now
 /datum/crafting_recipe/roguetown/sewing/lordcloak
 	name = "lordly cloak"
 	result = list(/obj/item/clothing/cloak/lordcloak)
-	reqs = list(/obj/item/natural/fur = 2,
+	reqs = list(/obj/item/natural/fur/gote = 2,
 				/obj/item/natural/hide = 4)
 	craftdiff = 5
+
+/datum/crafting_recipe/roguetown/sewing/lordcloak/two
+	reqs = list(/obj/item/natural/fur/volf = 2,
+				/obj/item/natural/hide = 4)
+
+/datum/crafting_recipe/roguetown/sewing/lordcloak/three
+	reqs = list(/obj/item/natural/fur/mole = 2,
+				/obj/item/natural/hide = 4)
+
+/datum/crafting_recipe/roguetown/sewing/lordcloak/four
+	reqs = list(/obj/item/natural/fur/rous = 2,
+				/obj/item/natural/hide = 4)
+
+
