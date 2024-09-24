@@ -196,6 +196,12 @@
 			if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, H, null, TRUE, TRUE))
 				qdel(H)
 
+/obj/item/storage/belt/rogue/pouch/bullets/Initialize()
+	. = ..()
+	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
+	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
+	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
+
 /obj/item/storage/backpack/rogue/satchel
 	name = "satchel"
 	desc = "A bulky bag worn over the shoulder which can be used to hold many things."
@@ -260,7 +266,6 @@
 /obj/item/storage/backpack/rogue/satchel/surgbag
 	name = "surgery bag"
 	desc = "Contains all the phreakish devices one needs to cut a person up."
-	slot_flags = null
 	item_state = "doctorbag"
 	icon_state = "doctorbag"
 	attack_verb = list("beats", "bludgeons")

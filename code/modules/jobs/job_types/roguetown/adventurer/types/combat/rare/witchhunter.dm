@@ -1,23 +1,27 @@
 
 /datum/advclass/combat/puritan
 	name = "Witch Hunter"
-	tutorial = "Witch Hunters know all too well the evils that lurk on this island and have trained for years at identfying and hunting vampires and werewolves and make it their soul duty to rid the land of their filth"
-	allowed_sexes = list(MALE)
-	allowed_races = list("Humen")
+	tutorial = "Witch Hunters dedicate their lives to the eradication of the varied evils infesting Grimoria. They know the vile sorcery of the necromancer, the insidious nature of the cultist and monstrousness of vampires and werevolfs. They also know how best to end them."
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
+	)
 	outfit = /datum/outfit/job/roguetown/adventurer/puritan
 	maximum_possible_slots = 1
 	pickprob = 15
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 2
 
-/datum/outfit/job/roguetown/adventurer/puritan
-	allowed_patrons = ALL_CLERIC_PATRONS		//Placeholder; decide what Gods they should really be worshiping.
-
 /datum/outfit/job/roguetown/adventurer/puritan/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 	belt = /obj/item/storage/belt/rogue/leather
-	neck = /obj/item/clothing/neck/roguetown/psicross/silver
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	cloak = /obj/item/clothing/cloak/cape/puritan
