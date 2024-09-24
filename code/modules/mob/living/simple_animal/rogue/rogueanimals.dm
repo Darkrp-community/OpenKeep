@@ -385,6 +385,6 @@
 
 /obj/item/gudder/proc/beingmilked()
 	in_use = TRUE
-	sleep(20)
+	sleep(15)
 	in_use = FALSE
 
