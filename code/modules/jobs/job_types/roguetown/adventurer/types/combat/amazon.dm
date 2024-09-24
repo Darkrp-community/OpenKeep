@@ -6,6 +6,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/amazon
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	min_pq = 0
+	maximum_possible_slots = 2
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/combat_barbarian.ogg'
 
