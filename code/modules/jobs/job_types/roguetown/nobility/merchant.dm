@@ -23,6 +23,7 @@
 	outfit = /datum/outfit/job/roguetown/merchant
 	bypass_lastclass = TRUE
 	give_bank_account = 100
+	min_pq = 1
 	selection_color = "#192bc2"
 
 	cmode_music = 'sound/music/combat_merchant.ogg'
