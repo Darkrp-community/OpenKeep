@@ -20,6 +20,10 @@
 	give_bank_account = TRUE
 	bypass_lastclass = TRUE
 
+/datum/job/roguetown/prince/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+	..()
+	SSfamilytree.AddRoyal(L, FAMILY_PROGENY)
+
 /datum/outfit/job/roguetown/prince/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE

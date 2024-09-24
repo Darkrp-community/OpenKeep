@@ -27,6 +27,7 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/deadmin,				/*destroys our own admin datum so we can play as a regular player*/
 	/client/proc/set_context_menu_enabled,
 	/client/proc/delete_player_book,
+	/client/proc/ShowAllFamilies,
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
 GLOBAL_PROTECT(admin_verbs_admin)
@@ -103,7 +104,8 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/toggleadminhelpsound,
 	/client/proc/respawn_character,
 	/client/proc/discord_id_manipulation,
-	/datum/admins/proc/open_borgopanel
+	/datum/admins/proc/open_borgopanel,
+	/client/proc/ShowAllFamilies,
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/ban_panel, /client/proc/stickybanpanel, /client/proc/check_pq, /client/proc/adjust_pq, /client/proc/getcurrentlogs, /client/proc/getserverlogs))
 GLOBAL_PROTECT(admin_verbs_ban)
@@ -803,3 +805,16 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		to_chat(src, "<span class='notice'>Book has been successfully deleted</span>")
 	else
 		to_chat(src, "<span class='notice'> Either the book file doesn't exist or you have failed to type it in properly (remember characters have been url encoded for the file name)</span>")
+
+//Family Tree Subsystem
+/client/proc/ShowAllFamilies()
+	set category = "GameMaster"
+	set name = "Show All Families"
+	var/dat = SSfamilytree.ReturnAllFamilies()
+	if(!dat)
+		to_chat(src, "<span class='interface'>Family List was Empty.</span>")
+		return
+	var/datum/browser/popup = new(usr, "ALLFAMILIES", "", 260, 400)
+	popup.set_content(dat)
+	popup.open()
+
