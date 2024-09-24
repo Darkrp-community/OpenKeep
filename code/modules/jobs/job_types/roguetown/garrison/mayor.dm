@@ -21,7 +21,7 @@
 	outfit = /datum/outfit/job/roguetown/mayor
 	display_order = JDO_CHIEF
 	give_bank_account = 80
-	min_pq = 0
+	min_pq = 1
 
 	cmode_music = 'sound/music/combat_bog.ogg'
 
