@@ -19,6 +19,7 @@
 	display_order = JDO_PRINCE
 	give_bank_account = TRUE
 	bypass_lastclass = TRUE
+	min_pq = 2
 
 /datum/job/roguetown/prince/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

@@ -14,6 +14,7 @@
 	display_order = JDO_ARMORER
 	bypass_lastclass = TRUE
 	give_bank_account = 30
+	min_pq = 0
 
 /datum/outfit/job/roguetown/armorsmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -75,6 +76,7 @@
 	outfit = /datum/outfit/job/roguetown/weaponsmith
 	display_order = JDO_WSMITH
 	give_bank_account = 30
+	min_pq = 0
 
 /datum/outfit/job/roguetown/weaponsmith/pre_equip(mob/living/carbon/human/H)
 	..()

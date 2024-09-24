@@ -22,6 +22,7 @@
 	display_order = JDO_INNKEEP
 	bypass_lastclass = TRUE
 	give_bank_account = 43
+	min_pq = -10
 
 /datum/outfit/job/roguetown/innkeep/pre_equip(mob/living/carbon/human/H)
 	..()
