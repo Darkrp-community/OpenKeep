@@ -93,7 +93,12 @@
 	"blond - pale" = "9d8d6e",
 	"blond - dirty" = "88754f",
 	"blond - drywheat" = "8f8766",
-	"blond - strawberry" = "977033"
+	"blond - strawberry" = "977033",
+
+	"green - leaf" = "2f3c2e",
+	"green - moss" = "3b3c2a",
+
+	"white - ice" = "f4f4f4"
 
 	))
 

@@ -19,7 +19,7 @@
 	display_order = JDO_LADY
 	bypass_lastclass = TRUE
 	give_bank_account = 500
-	min_pq = 0
+	min_pq = 4
 
 /datum/outfit/job/roguetown/lady/pre_equip(mob/living/carbon/human/H)
 	. = ..()
@@ -72,3 +72,4 @@
 			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Queen of Rockhill.</span></span></b>")
 			to_chat(world, "<br>")
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
+	SSfamilytree.AddRoyal(L, FAMILY_MOTHER)

@@ -20,27 +20,53 @@
 
 	emote("pray", intentional = TRUE)
 
+/mob/living/carbon/human/proc/canpray()
+	var/turf/L = get_turf(src)
+
+	if(istype(src.patron, /datum/patron/divine))
+		var/area/A = get_area(L)
+		var/found = FALSE
+		for(var/obj/structure/fluff/psycross/P in view(4, get_turf(L)) )
+			if(!P.obj_broken)
+				found = TRUE
+		if(found)
+			return TRUE
+		if(istype(A, /area/rogue/indoors/town/church))
+			return TRUE
+		to_chat(src, "<span class='danger'>I need a nearby Pantheon Cross for my prayers to be heard...</span>")
+		return FALSE
+	
+	if(istype(src.patron, /datum/patron/inhumen))
+		var/found = FALSE
+		for(var/obj/structure/fluff/psycross/P in view(7, get_turf(L)) )
+			if(!P.obj_broken)
+				found = TRUE
+		if(!found) // Cant pray to ZIZO if you're in the sight of the gods, stupid!
+			return TRUE
+		to_chat(src, "<span class='danger'>That accursed cross won't let me commune with the Forbidden One!</span>")
+		return FALSE
+
+	if(istype(src.patron, /datum/patron/forgotten))
+		if(istype(wear_neck, /obj/item/clothing/neck/roguetown/psicross))
+			return TRUE
+		to_chat(src, "<span class='danger'>I can not talk to Him... I need His cross on my neck!</span>")
+		return FALSE
+	
+	return TRUE // If you have any different god then I guess just pray whereever
+
 /datum/emote/living/pray/run_emote(mob/user, params, type_override, intentional)
-	if(isliving(user))
-		var/mob/living/L = user
+	if(ishuman(user))
+		var/mob/living/carbon/human/L = user
 		var/area/C = get_area(user)
-		if(!(istype(C, /area/rogue/indoors/town/church/chapel)))
-			if(!(istype(C, /area/rogue/underworld)))
-				to_chat(user, "<span class='danger'>I should go to the Chapel!</span>")
-				return		
+		if(!L.canpray())
+			if(!istype(C, /area/rogue/underworld))
+				return
 		var/msg = input("Whisper your prayer:", "Prayer") as text|null
 		if(msg)
 			L.whisper(msg)
 			L.roguepray(msg)
-//			for(var/obj/structure/fluff/psycross/P in view(7, get_turf(L)) ) // We'll reenable this later when the patron statues are more fleshed out.
-//				if(P.obj_broken)
-//					continue
-//				P.check_prayer(L,msg)
-//				break
 			if(istype(C, /area/rogue/underworld))
 				L.check_prayer_underworld(L,msg)
-				L.whisper(msg)
-				L.roguepray(msg)
 				return
 			L.check_prayer(L,msg)
 			for(var/mob/living/LICKMYBALLS in hearers(2,src))
@@ -53,8 +79,8 @@
 	var/message2recognize = sanitize_hear_message(message)
 	var/mob/living/carbon/human/M = L
 	var/mob/living/carbon/V = L
-	if(M.patron?.name == "Zizo")
-		bannedwords = list() // :)
+	if(istype(M.patron, /datum/patron/inhumen))
+		bannedwords = list()
 	for(var/T in bannedwords)
 		if(findtext(message2recognize, T))
 			V.add_stress(/datum/stressevent/psycurse)
@@ -791,6 +817,7 @@
 
 /mob/living/carbon/human/verb/emote_meditate()
 	set name = "Meditate"
+	set hidden = 1
 
 	emote("meditate", intentional = TRUE)
 
@@ -910,12 +937,6 @@
 
 /datum/emote/living/aggro
 	key = "aggro"
-	emote_type = EMOTE_AUDIBLE
-	nomsg = TRUE
-	only_forced_audio = TRUE
-
-/datum/emote/living/idle
-	key = "idle"
 	emote_type = EMOTE_AUDIBLE
 	nomsg = TRUE
 	only_forced_audio = TRUE
@@ -1238,6 +1259,20 @@
 	key_third_person = "wsmiles"
 	message = "smiles weakly."
 
+// ............... Z ..................
+/datum/emote/living/zombiemoan // sort of bandaid since zombie voicepacks got issues, maybe related to new pitch or who knows
+	key = "zmoan"
+	key_third_person = "moans"
+	message = "moans."
+	emote_type = EMOTE_AUDIBLE
+/datum/emote/living/zombiemoan/can_run_emote(mob/living/user, status_check = TRUE , intentional)
+	. = ..()
+	if(user.gender == MALE)
+		playsound(user.loc, pick('sound/vo/mobs/zombie/idle (1).ogg','sound/vo/mobs/zombie/idle (2).ogg','sound/vo/mobs/zombie/idle (3).ogg'), 80, FALSE, -1)
+	else
+		playsound(user.loc, pick('sound/vo/mobs/zombie/f/idle (1).ogg','sound/vo/mobs/zombie/f/idle (2).ogg','sound/vo/mobs/zombie/f/idle (3).ogg'), 80, FALSE, -1)
+
+
 // ............... Y ..................
 /datum/emote/living/yawn
 	key = "yawn"
@@ -1254,6 +1289,7 @@
 		var/mob/living/carbon/C = user
 		if(C.silent || !C.can_speak_vocal())
 			message = "makes a muffled yawn."
+
 
 
 

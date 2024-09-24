@@ -22,7 +22,7 @@
 
 	outfit = /datum/outfit/job/roguetown/royalguard
 	give_bank_account = 30
-	min_pq = -4
+	min_pq = 2
 	selection_color = "#920909"
 
 	cmode_music = 'sound/music/combat_guard.ogg'
@@ -87,3 +87,4 @@
 		H.change_stat("constitution", 1)
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
