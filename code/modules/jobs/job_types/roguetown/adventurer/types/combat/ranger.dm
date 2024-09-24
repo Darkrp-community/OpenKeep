@@ -13,6 +13,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/ranger
 	min_pq = 0
+	maximum_possible_slots = 2
 	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/ranger/pre_equip(mob/living/carbon/human/H)
