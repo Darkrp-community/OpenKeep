@@ -106,7 +106,14 @@
 	var/advjob = null
 	var/canseebandits = FALSE
 
-	var/marriedto
+	//Familytree datum
+	//I dont know how to do UI huds so this will have to do for now.
+	var/family_UI = FALSE
+	var/spouse_name
+	var/setspouse
+	var/familytree_pref = FAMILY_NONE
+	var/datum/heritage/family_datum
+	var/list/temp_ui_list = list()
 
 	var/has_stubble = TRUE
 
