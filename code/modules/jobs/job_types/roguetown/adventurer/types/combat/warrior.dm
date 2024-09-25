@@ -14,6 +14,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/sfighter
 	category_tags = list(CTAG_ADVENTURER)
+	min_pq = 0
 
 
 /datum/outfit/job/roguetown/adventurer/sfighter/pre_equip(mob/living/carbon/human/H)

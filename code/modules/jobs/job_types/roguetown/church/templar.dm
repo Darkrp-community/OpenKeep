@@ -17,7 +17,7 @@
 	spawn_positions = 1
 	display_order = JDO_TEMPLAR
 	give_bank_account = 0
-	min_pq = 0
+	min_pq = 2
 
 /datum/outfit/job/roguetown/templar
 	name = "Templar"
@@ -43,10 +43,10 @@
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
 		if("Eora")
 			neck = /obj/item/clothing/neck/roguetown/psicross/eora
+			cloak = /obj/item/clothing/cloak/stabard/templar/eora
 			H.virginity = FALSE
 		if("Pestra")
 			neck = /obj/item/clothing/neck/roguetown/psicross/pestra
-			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
 		if("Noc")
 			neck = /obj/item/clothing/neck/roguetown/psicross/noc
@@ -57,7 +57,7 @@
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/roguekey/church = 1, /obj/item/clothing/neck/roguetown/chaincoif = 1)
+	backpack_contents = list(/obj/item/keyring/priest = 1, /obj/item/clothing/neck/roguetown/chaincoif = 1)
 	backr = /obj/item/rogueweapon/shield/tower/metal
 	belt = /obj/item/storage/belt/rogue/leather/black
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
@@ -80,6 +80,7 @@
 		H.change_stat("speed", -1)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 		
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	//Max devotion limit - Templars are stronger but cannot pray to gain more abilities beyond t1

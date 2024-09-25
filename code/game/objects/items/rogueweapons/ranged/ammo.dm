@@ -222,7 +222,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/arrow/pyro
 	name = "pyroclastic arrow"
-	desc = "An arrow with it's tip drenched in a flammable tincture."
+	desc = "An arrow with its tip drenched in a flammable tincture."
 	projectile_type = /obj/projectile/bullet/arrow/pyro
 	possible_item_intents = list(/datum/intent/mace/strike)
 	caliber = "arrow"
@@ -234,7 +234,7 @@
 
 /obj/projectile/bullet/arrow/pyro
 	name = "pyroclatic arrow"
-	desc = "An arrow with it's tip drenched in a flammable tincture."
+	desc = "An arrow with its tip drenched in a flammable tincture."
 	damage = 15
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -277,18 +277,40 @@
 /obj/projectile/bullet/reusable/bullet
 	name = "lead ball"
 	desc = "A round lead shot, simple and spherical."
-	damage = 50
+	damage = 80
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "musketball_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/bullet
-	range = 30
-	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
+	range = 15
+	jitter = 5
+	eyeblur = 3
+	hitsound = 'sound/combat/hits/hi_bolt (2).ogg'
 	embedchance = 100
-	woundclass = BCLASS_STAB
+	woundclass = BCLASS_SHOT
+	impact_effect_type = /obj/effect/temp_visual/impact_effect
 	flag = "bullet"
-	armor_penetration = 200
-	speed = 0.1
+	armor_penetration = 100
+	speed = 0.3
+	accuracy = 50 //Lower accuracy than an arrow.
+
+/obj/projectile/bullet/fragment
+	name = "smaller lead ball"
+	desc = "Haha. You're not able to see this!"
+	damage = 25
+	damage_type = BRUTE
+	woundclass = BCLASS_SHOT
+	range = 30
+	jitter = 5
+	eyeblur = 3
+	stun = 1
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_proj"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/cball/grapeshot
+	impact_effect_type = /obj/effect/temp_visual/impact_effect
+	flag = "bullet"
+	armor_penetration = 100
+	speed = 0.5
 
 /obj/item/ammo_casing/caseless/rogue/bullet
 	name = "lead ball"
@@ -300,3 +322,55 @@
 	dropshrink = 0.5
 	possible_item_intents = list(/datum/intent/use)
 	max_integrity = 0
+	force = 20
+
+/obj/projectile/bullet/reusable/cannonball
+	name = "large lead ball"
+	desc = "A round lead ball. Complex and still spherical."
+	damage = 300
+	damage_type = BRUTE
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_proj" // No one sees it anyway. I think.
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/cball
+	range = 999
+	jitter = 5
+	stun = 1
+	hitsound = 'sound/combat/hits/hi_bolt (2).ogg'
+	embedchance = 0
+	dismemberment = 300
+	spread = 0
+	woundclass = BCLASS_SMASH
+	impact_effect_type = /obj/effect/temp_visual/impact_effect
+	flag = "bullet"
+	hitscan = FALSE
+	armor_penetration = 100
+	speed = 0.8
+
+/obj/projectile/bullet/reusable/cannonball/on_hit(atom/target,blocked = FALSE)
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.visible_message("<span class='danger'>[M] explodes into a shower of gibs!</span>")
+		M.gib()
+	explosion(get_turf(target), heavy_impact_range = 2, light_impact_range = 4, flame_range = 0, smoke = TRUE, soundin = pick('sound/misc/explode/bottlebomb (1).ogg','sound/misc/explode/bottlebomb (2).ogg'))
+	..(target, blocked)
+
+/obj/item/ammo_casing/caseless/rogue/cball
+	name = "large lead ball"
+	desc = "A round lead ball. Complex and still spherical."
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	projectile_type = /obj/projectile/bullet/reusable/cannonball
+	dropshrink = 0.5
+	icon_state = "cball"
+	caliber = "cannoball"
+	possible_item_intents = list(/datum/intent/use)
+	max_integrity = 1
+	randomspread = 0
+	variance = 0
+	force = 20
+
+/obj/item/ammo_casing/caseless/rogue/cball/grapeshot
+	name = "berryshot"
+	desc = "A large pouch of smaller lead balls. Not as complex and not as spherical."
+	icon_state = "grapeshot" // NEEDS SPRITE
+	dropshrink = 0.5
+	projectile_type = /obj/projectile/bullet/fragment
