@@ -1996,9 +1996,8 @@
 	if(m_intent != MOVE_INTENT_SNEAK)
 		visible_message("<span class='info'>[src] looks into the distance.</span>")
 	animate(client, pixel_x = world.icon_size*_x, pixel_y = world.icon_size*_y, ttime)
-	sleep(5)
-	update_fov_angles()
 //	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_looking))
+	update_cone_show()
 
 /mob/proc/look_down(turf/T)
 	return
