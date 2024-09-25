@@ -491,7 +491,7 @@
 		M.adjustToxLoss(3, 0)
 	return ..()
 
-/datum/reagent/toxin/killersice
+/datum/reagent/toxin/killersice// kills a human in one swig in seconds
 	name = "killersice"
 	description = "killersice"
 	reagent_state = LIQUID
