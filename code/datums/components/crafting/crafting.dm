@@ -248,16 +248,20 @@
 							prob2fail += (10-L.STALUC)
 						if(L.STAINT > 10)
 							prob2craft += ((10-L.STAINT)*-1)*2
-					prob2craft = CLAMP(prob2craft, 0, 99)
-					if(prob(prob2fail))
-						to_chat(user, "<span class='danger'>MISTAKE! I've failed to craft [R.name]!</span>")
-						continue
-					if(!prob(prob2craft))
-						if(user.client?.prefs.showrolls)
-							to_chat(user, "<span class='danger'>I've failed to craft [R.name]... [prob2craft]%</span>")
+					if(prob2craft < 1)
+						to_chat(user, "<span class='danger'>I lack the skills for this...</span>")
+						return
+					else
+						prob2craft = CLAMP(prob2craft, 5, 99)
+						if(prob(prob2fail))
+							to_chat(user, "<span class='danger'>MISTAKE! I've failed to craft [R.name]!</span>")
 							continue
-							to_chat(user, "<span class='danger'>I've failed to craft [R.name].</span>")
-						continue
+						if(!prob(prob2craft))
+							if(user.client?.prefs.showrolls)
+								to_chat(user, "<span class='danger'>I've failed to craft [R.name]... [prob2craft]%</span>")
+								continue
+								to_chat(user, "<span class='danger'>I've failed to craft [R.name].</span>")
+							continue
 					var/list/parts = del_reqs(R, user)
 					if(islist(R.result))
 						var/list/L = R.result

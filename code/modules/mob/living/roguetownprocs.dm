@@ -184,7 +184,9 @@
 					attacker_skill = U.mind.get_skill_level(/datum/skill/combat/unarmed)
 					prob2defend -= (attacker_skill * 20)
 
-			prob2defend = clamp(prob2defend, 5, 99)
+			if(!(mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 50% defense malus if so
+				prob2defend *= 0.5
+			prob2defend = clamp(prob2defend, 5, 95)
 			if(src.client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to parry... [prob2defend]%</span>")
 
@@ -408,7 +410,9 @@
 							prob2defend = prob2defend - (UH.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
 						if(H.mind)
 							prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
-			prob2defend = clamp(prob2defend, 5, 99)
+			if(!(L.mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 50% defense malus if so
+				prob2defend *= 0.5
+			prob2defend = clamp(prob2defend, 5, 95)
 			if(client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")
 			if(!prob(prob2defend))
@@ -419,7 +423,7 @@
 		else //we are a non human
 			if(client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")
-			prob2defend = clamp(prob2defend, 5, 99)
+			prob2defend = clamp(prob2defend, 5, 95)
 			if(!prob(prob2defend))
 				return FALSE
 		dodgecd = TRUE
