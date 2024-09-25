@@ -366,3 +366,50 @@
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket
 	craftdiff = 3
 	i_type = "Armor"
+
+/datum/anvil_recipe/armor/klappvisor
+	name = "Klappvisor helmet (3)"
+	recipe_name = "a Klappvisor Helmet"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/klappvisor)
+	craftdiff = 4
+
+/datum/anvil_recipe/armor/halfvisor
+	name = "Halfvisor"
+	recipe_name = "a Halfvisor"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/halfvisor
+	craftdiff = 2
+
+/datum/anvil_recipe/armor/astratasunhelm
+	name = "Gilded Helm (3)"
+	recipe_name = "a gilded Helmet"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/astratasunhelm)
+	craftdiff = 4
+
+/datum/anvil_recipe/armor/beakhelm
+	name = "Beak helmet (2)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/beakhelm)
+	craftdiff = 3
+
+/datum/anvil_recipe/armor/sunhelm
+	name = "Sun helmet (2)"
+	recipe_name = "a Sun Helmet"
+	req_bar = /obj/item/ingot/gold
+	additional_items = list(/obj/item/ingot/gold)
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/sunhelmet
+	craftdiff = 4	
+
+/datum/anvil_recipe/armor/helmetslitkettle
+	name = "Slitted Kettle helmet x2"
+	recipe_name = "a pair of Slitted Kettle Helmets"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/slitkettle
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 2	

@@ -466,12 +466,35 @@
 	flags_inv = HIDEEARS
 	max_integrity = 250 // Covers less, so less overall integrity
 
+/obj/item/clothing/head/roguetown/helmet/slitkettle
+	name = "kettle helm"
+	desc = "A helmet with slits for peeping, a good choice for the paranoid."
+	icon_state = "slitkettle"
+	body_parts_covered = HEAD|HAIR
+	flags_inv = HIDEEARS
+	max_integrity = 250
+
 /obj/item/clothing/head/roguetown/helmet/sallet
 	name = "sallet"
 	icon_state = "sallet"
 	desc = "A simple steel helmet with no attachments. Helps protect the ears."
 	smeltresult = /obj/item/ingot/steel
 	body_parts_covered = HEAD|HAIR|EARS
+	flags_inv = HIDEEARS
+	max_integrity = 300
+	sellprice = 35
+
+//Reskinned Sallet
+/obj/item/clothing/head/roguetown/helmet/halfvisor
+	name = "halfvisor helmet"
+	icon_state = "halfvisor"
+	item_state = "halfvisor"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	desc = "A pointed helmet which protcts the sides and top of the head as well as the nose."
+	smeltresult = /obj/item/ingot/steel
+	body_parts_covered = HEAD|HAIR|EARS|NOSE
 	flags_inv = HIDEEARS
 	max_integrity = 300
 	sellprice = 35
@@ -617,6 +640,22 @@
 	block2add = FOV_RIGHT|FOV_LEFT
 	sellprice = 90
 
+//Just a Hounskull reskin
+/obj/item/clothing/head/roguetown/helmet/visored/klappvisor
+	name = "klappvisor helmet"
+	desc = "A bascinet with a mounted pivot to protect the face by deflecting blows on its conical surface, \
+			highly favored by knights of great renown. Its visor can be flipped over for higher visibility \
+			at the cost of eye protection."
+	icon_state = "klappvisor"
+	item_state = "klappvisor"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	block2add = FOV_RIGHT|FOV_LEFT
+	sellprice = 90
+
 // Entering big boy steel territory, high end gear
 /obj/item/clothing/head/roguetown/helmet/visored/knight
 	name = "knight's helmet"
@@ -699,6 +738,45 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	smeltresult = /obj/item/ingot/iron
 	max_integrity = 200 // shitty rusted iron
+
+/obj/item/clothing/head/roguetown/helmet/heavy/astratasunhelm
+	name = "gilded helmet"
+	desc = "A bucket helmet topped with a decorative crest representing the sun."
+	icon_state = "astratasunhelmet"
+	item_state = "astratasunhelmet"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	block2add = FOV_RIGHT|FOV_LEFT
+	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/head/roguetown/helmet/heavy/sunhelmet
+	name = "sun helmet"
+	desc = "A helmet depicting the sun at its highest point."
+	icon_state = "sunhelm"
+	item_state = "sunhelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	block2add = FOV_RIGHT|FOV_LEFT
+	smeltresult = /obj/item/ingot/gold
+
+/obj/item/clothing/head/roguetown/helmet/heavy/beakhelm
+	name = "beak helm"
+	desc = "A curious helmet in the shape of an eagle's head - there seems to be a lock on it."
+	icon_state = "beakhelm"
+	item_state = "beakhelm"
+	emote_environment = 3
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	flags_inv = HIDEEARS|HIDEHAIR
+	block2add = FOV_RIGHT|FOV_LEFT
+	smeltresult = /obj/item/ingot/steel	
 
 //............... Temple heavy helmets ......................// 
 /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
@@ -1398,3 +1476,58 @@
 			T.Immobilize(10)
 	user.dropItemToGround(src)
 	target.equip_to_slot_if_possible(src, SLOT_HEAD)
+
+/obj/item/clothing/head/roguetown/helmet/totodhelm
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	name = "totod helmet"
+	desc = "An ornamentally styled steel helm, bearing the infamous wretched wings of the Totod Order. The curtain call for abominations and innocents alike."
+	max_integrity = 400
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_STAB) // Stab protection out of having faceplate
+	block2add = FOV_RIGHT|FOV_LEFT // Unremovable visor.
+	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	icon_state = "totodhelm"
+	item_state = "totodhelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	body_parts_covered = HEAD|HAIR|NOSE|MOUTH|EARS
+	flags_inv = HIDEEARS|HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/xylixhood
+	name = "xylixean sack"
+	desc = "It smells of spit, sweat and anguish, you can't ever seem to find the eyeholes on this thing."
+	icon_state = "tricksterhood"
+	item_state = "tricksterhood"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	dynamic_hair_suffix = ""
+	//dropshrink = 0.75	
+
+/obj/item/clothing/head/roguetown/helmet/heavy/grenzelhounskull
+	name = "grenzelhoft plumed helm"
+	desc = "A stained plume helm, styled in typical Grenzelhoftian black."
+	icon_state = "grenzkhelm"
+	item_state = "grenzkhelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	block2add = FOV_RIGHT|FOV_LEFT
+	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/head/roguetown/fanatichood
+	name = "psydonic hood"
+	desc = "A favored headdress among particularly zealous Grenzelhoftians, from torturers to lamenters."
+	icon_state = "fanatichood"
+	item_state = "fanatichood"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	dynamic_hair_suffix = ""
+	//dropshrink = 0.75

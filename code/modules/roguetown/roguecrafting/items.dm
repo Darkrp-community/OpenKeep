@@ -417,3 +417,18 @@
 	name = "master's guide to literature"
 	result = list(/obj/item/literary/master)
 	craftdiff = 6
+
+/datum/crafting_recipe/roguetown/bogcowl
+	name = "bog cowl"
+	result = list(/obj/item/clothing/neck/roguetown/bogcowl)
+	reqs = list(/obj/item/natural/dirtclod = 1,
+	/obj/item/natural/fibers = 1,
+	/obj/item/grown/log/tree/stick = 1)
+
+/datum/crafting_recipe/roguetown/bogmail
+	name = "boggard's hauberk"
+	result = list(/obj/item/clothing/suit/roguetown/armor/chainmail/bogarmor)
+	reqs = list(/obj/item/natural/dirtclod = 1,
+	/obj/item/natural/fibers = 1,
+	/obj/item/grown/log/tree/stick = 1,
+	/obj/item/clothing/suit/roguetown/armor/chainmail/iron = 1)

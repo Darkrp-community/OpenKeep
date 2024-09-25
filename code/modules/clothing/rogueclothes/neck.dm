@@ -329,3 +329,9 @@
 	name = "petrified larvae charm"
 	desc = "The husk of a desiccated beespider larva, passed down within the ranks of those whose names have been struck from dark elven history. The old tyranny's uprooting would be their last act of true valor."
 	icon_state = "spider"
+
+/obj/item/clothing/neck/roguetown/bogcowl
+	name = "bog cowl"
+	desc = "A cowl made with mud, fibres and sticks. Doesn't smell too great, but then again neither do you."
+	icon_state = "bogcowl"
+	item_state = "bogcowl"
