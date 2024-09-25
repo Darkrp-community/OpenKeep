@@ -20,6 +20,7 @@
 	yield = 3
 	potency = 1
 	color = "#455838"
+	dust_result = /obj/item/alch/seeddust
 
 
 
