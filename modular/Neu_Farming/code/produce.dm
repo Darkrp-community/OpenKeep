@@ -265,7 +265,7 @@
 	eat_effect = /datum/status_effect/debuff/badmeal
 	list_reagents = list(/datum/reagent/drug/nicotine = 5, /datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/drug/nicotine = 10)
-  possible_potion = "poison"
+ 	possible_potion = "poison"
 	dust_result = /obj/item/alch/tobaccodust
 
 // -------------- HOPS and BEER WORT -----------------
