@@ -17,7 +17,7 @@
 	spawn_positions = 1
 	display_order = JDO_TEMPLAR
 	give_bank_account = 0
-	min_pq = 0
+	min_pq = 2
 
 /datum/outfit/job/roguetown/templar
 	name = "Templar"
