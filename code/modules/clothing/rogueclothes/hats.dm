@@ -218,7 +218,6 @@
 	icon = 'icons/roguetown/clothing/head.dmi'
 	icon_state = "nochood"
 	item_state = "nochood"
-//	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	dropshrink = 0.8
 	color = null
 
@@ -385,7 +384,7 @@
 	icon_state = "vcrown"
 	body_parts_covered = null
 	dynamic_hair_suffix = null
-	sellprice = 1000
+	sellprice = VALUE_EXTREME
 	resistance_flags = FIRE_PROOF
 
 
@@ -650,9 +649,9 @@
 
 
 
-/*----------------\
-| Heavy helmets |
-\----------------*/
+/*--------------\
+| Heavy helmets |	- limited FOV
+\--------------*/
 
 /obj/item/clothing/head/roguetown/helmet/heavy
 	name = "barbute"
