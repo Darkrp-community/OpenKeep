@@ -1,7 +1,7 @@
 /datum/job/roguetown/niteman
 	title = "Niteman"
-	flag = JESTER
-	department_flag = PEASANTS
+	flag = NIGHTMAN
+	department_flag = NOBLEMEN
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
@@ -28,16 +28,16 @@
 
 /datum/outfit/job/roguetown/niteman/pre_equip(mob/living/carbon/human/H)
 	..()
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/keyring/niteman
-	beltl = /obj/item/rogueweapon/huntingknife
+	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE) // Need the strongarm to wrestle people out of the baths
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)	// Don't make me regret these levels.
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
@@ -58,4 +58,3 @@
 				armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	else
 		pants = /obj/item/clothing/under/roguetown/tights
-		armor = /obj/item/clothing/suit/roguetown/armor/armordress/alt
