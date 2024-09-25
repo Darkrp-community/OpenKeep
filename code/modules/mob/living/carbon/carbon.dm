@@ -427,9 +427,6 @@
 		changeNext_move(0)
 	if (legcuffed)
 		var/obj/item/W = legcuffed
-		if(istype(W, /obj/item/net))
-			if(has_status_effect(/datum/status_effect/debuff/netted))
-				remove_status_effect(/datum/status_effect/debuff/netted)
 		legcuffed = null
 		update_inv_legcuffed()
 		if (client)
@@ -449,6 +446,10 @@
 		return FALSE
 	visible_message("[cuff_break ? "<span class='danger'>" : "<span class='warning'>"][src] manages to [cuff_break ? "break" : "slip"] out of [I]!</span>")
 	to_chat(src, "<span class='notice'>I [cuff_break ? "break" : "slip"] out of [I]!</span>")
+
+	if(istype(I, /obj/item/net))
+		if(has_status_effect(/datum/status_effect/debuff/netted))
+			remove_status_effect(/datum/status_effect/debuff/netted)
 
 	if(cuff_break)
 		. = !((I == handcuffed) || (I == legcuffed))
