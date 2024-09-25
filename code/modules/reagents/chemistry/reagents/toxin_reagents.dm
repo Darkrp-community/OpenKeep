@@ -473,7 +473,7 @@
 	..()
 	return TRUE
 
-/datum/reagent/toxin/cyanide
+/datum/reagent/toxin/cyanide// not balanced for RT
 	name = "Cyanide"
 	description = "An infamous poison known for its use in assassination. Causes small amounts of toxin damage with a small chance of oxygen damage or a stun."
 	reagent_state = LIQUID
@@ -491,7 +491,7 @@
 		M.adjustToxLoss(3, 0)
 	return ..()
 
-/datum/reagent/toxin/killersice// kills a human in one swig in seconds
+/datum/reagent/toxin/killersice// not balanced for RT
 	name = "killersice"
 	description = "killersice"
 	reagent_state = LIQUID

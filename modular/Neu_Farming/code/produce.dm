@@ -203,7 +203,7 @@
 	seed = /obj/item/neuFarm/seed/berryrogue/poison
 	icon_state = "berries"
 	tastes = list("berry" = 1)
-	list_reagents = list(/datum/reagent/berrypoison = 5, /datum/reagent/consumable/nutriment = 3)
+	list_reagents = list(/datum/reagent/berrypoison = 5, /datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/berrypoison = 5)
 	color_index = "bad"
 	poisonous = TRUE

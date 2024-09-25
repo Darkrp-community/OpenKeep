@@ -1,3 +1,5 @@
+//................ Bolts ............... //
+
 /obj/item/ammo_casing/caseless/rogue/bolt
 	name = "bolt"
 	desc = "A small and sturdy bolt, with simple plume and metal tip, alongside a groove to load onto a crossbow."
@@ -29,7 +31,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/bolt/poison
 	name = "poison bolt"
-	desc = "A bolt dipped with a potent poison."
+	desc = "A bolt dipped with a weak poison."
 	projectile_type = /obj/projectile/bullet/reusable/bolt/poison
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	caliber = "regbolt"
@@ -41,7 +43,7 @@
 
 /obj/projectile/bullet/reusable/bolt/poison
 	name = "poison bolt"
-	desc = "A bolt dipped with a potent poison."
+	desc = "A bolt dipped with a weak poison."
 	damage = 30
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -80,7 +82,19 @@
 
 /obj/projectile/bullet/reusable/bolt/poison/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/berrypoison, 3)
+	reagents.add_reagent(/datum/reagent/berrypoison, 2)
+
+/obj/item/ammo_casing/caseless/rogue/bolt/poison/potent
+	desc = "A bolt dipped with a potent poison."
+	projectile_type = /obj/projectile/bullet/reusable/bolt/poison/potent
+
+/obj/projectile/bullet/reusable/bolt/poison/potent
+	desc = "A bolt dipped with a potent poison."
+
+/obj/projectile/bullet/reusable/bolt/poison/potent/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/strongpoison, 2)
+
 
 /obj/item/ammo_casing/caseless/rogue/bolt/pyro
 	name = "pyroclastic bolt"
@@ -130,6 +144,9 @@
 		T = get_turf(target)
 	explosion(T, -1, exp_heavy, exp_light, exp_flash, 0, flame_range = exp_fire, soundin = explode_sound)
 
+
+//................ Arrows ............... //
+
 /obj/item/ammo_casing/caseless/rogue/arrow
 	name = "arrow"
 	desc = "A fletched projectile, with simple plumes and metal tip."
@@ -165,6 +182,19 @@
 	embedchance = 80
 	armor_penetration = 10
 
+
+/obj/item/ammo_casing/caseless/rogue/arrow/poison
+	name = "poison arrow"
+	desc = "An arrow with it's tip drenched in a weak poison."
+	projectile_type = /obj/projectile/bullet/reusable/arrow/poison
+	caliber = "arrow"
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "arrow_poison"
+	force = 20
+	dropshrink = 0.8
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
+	max_integrity = 20
+
 /obj/projectile/bullet/reusable/arrow/poison
 	name = "poison arrow"
 	desc = "An arrow with its tip drenched in a powerful poison."
@@ -181,17 +211,6 @@
 	speed = 0.4
 	var/piercing = FALSE
 
-/obj/item/ammo_casing/caseless/rogue/arrow/poison
-	name = "poison arrow"
-	desc = "An arrow with it's tip drenched in a powerful poison."
-	projectile_type = /obj/projectile/bullet/reusable/arrow/poison
-	caliber = "arrow"
-	icon = 'icons/roguetown/weapons/ammo.dmi'
-	icon_state = "arrow_poison"
-	force = 20
-	dropshrink = 0.8
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
-	max_integrity = 20
 
 /obj/projectile/bullet/reusable/arrow/poison/Initialize()
 	. = ..()
@@ -218,7 +237,18 @@
 
 /obj/projectile/bullet/reusable/arrow/poison/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/berrypoison, 3)
+	reagents.add_reagent(/datum/reagent/berrypoison, 2)
+
+/obj/item/ammo_casing/caseless/rogue/arrow/poison/potent
+	desc = "An arrow with it's tip drenched in a potent poison."
+	projectile_type = /obj/projectile/bullet/reusable/arrow/poison/potent
+
+/obj/item/ammo_casing/caseless/rogue/arrow/poison/potent
+	desc = "An arrow with it's tip drenched in a powerful poison."
+
+/obj/projectile/bullet/reusable/arrow/poison/potent/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/strongpoison, 2)
 
 /obj/item/ammo_casing/caseless/rogue/arrow/pyro
 	name = "pyroclastic arrow"
@@ -273,6 +303,9 @@
 	icon_state = "stonearrow"
 	projectile_type = /obj/projectile/bullet/reusable/arrow/stone //weaker projectile
 	max_integrity = 5
+
+
+//................ Bullets ............... //
 
 /obj/projectile/bullet/reusable/bullet
 	name = "lead ball"
