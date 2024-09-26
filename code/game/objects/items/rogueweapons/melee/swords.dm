@@ -1053,8 +1053,8 @@
 	wbalance = -1 // Heavy
 	sellprice = 100
 
-/obj/item/rogueweapon/sword/sabre/elven
-	name = "glaive"
+/obj/item/rogueweapon/sword/sabre/glaive
+	name = "stalker glaive"
 	desc = "A once elegant blade of mythril, diminishing under the suns gaze"
 	icon_state = "spidersaber"
 	max_integrity = 350
