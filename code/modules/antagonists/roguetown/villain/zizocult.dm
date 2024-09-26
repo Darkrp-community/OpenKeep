@@ -179,11 +179,15 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	if(!speak)
 		return
 	whisper("O schlet'a ty'schkotot ty'skvoro...")
+	sleep(10)
 	whisper("[speak]")
 
 	for(var/datum/mind/V in C.cultists)
 		to_chat(V, "<span class='boldnotice'>A message from [src.real_name]: \"[speak]\"</span>")
 		playsound_local(V.current, 'sound/vo/cult/skvor.ogg', 100)
+
+	testing("[key_name(src)] used cultist telepathy to say: [speak]")
+	log_telepathy("[key_name(src)] used cultist telepathy to say: [speak]")
 
 /obj/effect/decal/cleanable/sigil
 	name = "sigils"
@@ -469,7 +473,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				return
 			if(H.anchored) // a way to bind the person to the rune if they choose to resist converting
 				return
-			if(istype(H.wear_neck, /obj/item/clothing/neck/roguetown/psicross))
+			if(istype(H.wear_neck, /obj/item/clothing/neck/roguetown/psycross))
 				to_chat(user.mind, "<span class='danger'>\"They are wearing my bane...\"</span>")
 				return
 			if(M.cultists.len >= 4)
@@ -589,7 +593,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 						return
 					if(HL == SSticker.rulermob)
 						return
-					if(istype(HL.wear_neck, /obj/item/clothing/neck/roguetown/psicross))
+					if(istype(HL.wear_neck, /obj/item/clothing/neck/roguetown/psycross))
 						return
 					if(HAS_TRAIT(HL, TRAIT_NOROGSTAM))
 						return
@@ -652,7 +656,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		user.playsound_local(user, 'sound/foley/cloth_rip.ogg', 50)
 		to_chat(signed.mind, "<span class='userdanger'>I FAILED! MY LIFE DWINDLES!</span>")
 		sleep(2 MINUTES)
-		if(istype(signed.wear_neck, /obj/item/clothing/neck/roguetown/psicross))
+		if(istype(signed.wear_neck, /obj/item/clothing/neck/roguetown/psycross))
 			return
 		signed.dust(drop_items=TRUE)
 

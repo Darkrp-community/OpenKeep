@@ -8,7 +8,7 @@
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	chargedloop = null
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross)
 	sound = 'sound/magic/heal.ogg'
 	invocation = "Cleansing flames, kindle!"
 	invocation_type = "shout"
@@ -51,7 +51,7 @@
 	no_early_release = TRUE
 	movement_interrupt = TRUE
 	chargedloop = /datum/looping_sound/invokeholy
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross)
 	sound = 'sound/magic/revive.ogg'
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE

@@ -45,7 +45,7 @@
 	name = "Copper heart protector (2)"
 	recipe_name = "a very simple armor piece for the chest"
 	req_bar = /obj/item/ingot/copper
-	created_item = /obj/item/clothing/suit/roguetown/armor/plate/half/copperchest
+	created_item = /obj/item/clothing/suit/roguetown/armor/cuirass/copperchest
 	additional_items = list(/obj/item/ingot/copper)
 	createditem_num = 0
 	craftdiff = 0
@@ -202,12 +202,12 @@
 	createditem_num = 1
 	craftdiff = 2
 
-/datum/anvil_recipe/armor/hplate
+/datum/anvil_recipe/armor/cuirass
 	name = "Cuirass"
 	recipe_name = "a Cuirass"
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/clothing/suit/roguetown/armor/plate/half
-	craftdiff = 3
+	created_item = /obj/item/clothing/suit/roguetown/armor/cuirass
+	craftdiff = 2
 
 /datum/anvil_recipe/armor/platemask/steel
 	name = "Face mask"
@@ -216,7 +216,7 @@
 	created_item = (/obj/item/clothing/mask/rogue/facemask/steel)
 	craftdiff = 2
 
-/datum/anvil_recipe/armor/plate
+/datum/anvil_recipe/armor/halfplate
 	name = "Half-plate armor (3)"
 	recipe_name = "a Half-Plate Armor"
 	req_bar = /obj/item/ingot/steel
@@ -324,6 +324,7 @@
 	name = "Scalemail"
 	recipe_name = "a Scalemail"
 	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/suit/roguetown/armor/plate/scale
 	craftdiff = 3
 

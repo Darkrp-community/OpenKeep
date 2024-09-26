@@ -125,6 +125,7 @@
 	wlength = 10
 	slot_flags = ITEM_SLOT_HIP
 	thrown_bclass = BCLASS_CUT
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
 	max_blade_int = 50
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/knives
@@ -374,6 +375,7 @@
 	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
 	icon_state = "eggbasket"
 	w_class = WEIGHT_CLASS_NORMAL
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
 	dropshrink = 0.8

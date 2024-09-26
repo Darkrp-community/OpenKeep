@@ -774,7 +774,7 @@
 "oT" = (/obj/structure/roguewindow/openclose{icon_state = "woodwindowdir"; dir = 1},/turf/open/floor/rogue/wood,/area/rogue)
 "oU" = (/obj/structure/stairs{icon_state = "stairs"; dir = 1},/turf/open/floor/rogue/ruinedwood,/area/rogue/indoors)
 "oV" = (/turf/open/floor/rogue/blocks{icon_state = "paving"},/area/rogue/indoors)
-"oW" = (/obj/structure/table/wood,/obj/item/clothing/neck/roguetown/psicross,/turf/open/floor/rogue/tile,/area/rogue/indoors/town/church)
+"oW" = (/obj/structure/table/wood,/obj/item/clothing/neck/roguetown/psycross,/turf/open/floor/rogue/tile,/area/rogue/indoors/town/church)
 "oX" = (/obj/structure/mineral_door/wood/red{locked = 1; lockid = "woodsm"},/turf/open/floor/rogue/dirt/road,/area/rogue/indoors)
 "oY" = (/obj/structure/closet/crate/chest,/obj/item/rope/chain,/obj/item/rope/chain,/obj/item/rope/chain,/turf/open/floor/rogue/blocks{icon_state = "paving"},/area/rogue/indoors)
 "oZ" = (/obj/machinery/light/rogue/wallfire/candle,/turf/open/floor/rogue/wood,/area/rogue/indoors/town/manor)

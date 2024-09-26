@@ -3,6 +3,10 @@
 	desc = ""
 	icon = 'icons/roguetown/clothing/neck.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/neck.dmi'
+	equip_sound = "rustle"
+	pickup_sound = "rustle"
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	bloody_icon_state = "bodyblood"
 	resistance_flags = FIRE_PROOF
 	sewrepair = FALSE
@@ -17,9 +21,13 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
 	blocksound = SOFTHIT
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	body_parts_covered = NECK|HAIR|EARS|HEAD
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT)
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	max_integrity = 150
@@ -62,7 +70,10 @@
 	resistance_flags = FIRE_PROOF
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
 	body_parts_covered = NECK|HAIR|EARS|HEAD
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
+	pickup_sound = 'sound/foley/equip/equip_armor_chain.ogg'
+	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+	break_sound = 'sound/foley/breaksound.ogg'
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	blocksound = CHAINHIT
@@ -105,11 +116,14 @@
 	flags_inv = HIDEFACIALHAIR
 	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/steel
+	equip_sound = 'sound/foley/equip/equip_armor.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	break_sound = 'sound/foley/breaksound.ogg'
 	max_integrity = 300
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK|EARS|MOUTH|NOSE
 	// Realistically, it should also prevent stab crits. But for balance purposes let's not powercreep chainmail coifs for that purpose.
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
 
 /obj/item/clothing/neck/roguetown/gorget
@@ -119,13 +133,15 @@
 			Fits comfortably beneath chest armor, despite its weight."
 	flags_inv = HIDEFACIALHAIR
 	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
 	max_integrity = 150
 	resistance_flags = FIRE_PROOF
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
+	equip_sound = 'sound/foley/equip/equip_armor.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	break_sound = 'sound/foley/breaksound.ogg'
 	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/neck/roguetown/gorget/hoplite // Better than an iron gorget, not quite as good as a steel bervor
@@ -137,66 +153,28 @@
 	max_integrity = 250
 	smeltresult = null // No bronze ingots yet
 
-/obj/item/clothing/neck/roguetown/psicross
+// PSYCROSSES
+
+/obj/item/clothing/neck/roguetown/psycross
 	name = "psycross"
 	desc = "Let His name be naught but forgot'n."
-	icon_state = "psicrossw"
+	icon_state = "psycross_wood"
 	//dropshrink = 0.75
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
 	sellprice = 10
 	experimental_onhip = TRUE
 
-/obj/item/clothing/neck/roguetown/psicross/astrata
-	name = "amulet of Astrata"
-	desc = "Blessed be everything the light of the sun touches, for it is protected by Her grace."
-	icon_state = "astrata"
-	resistance_flags = FIRE_PROOF
+// SILVER PSYCROSS START
 
-/obj/item/clothing/neck/roguetown/psicross/noc
-	name = "amulet of Noc"
-	desc = "Diligence, study, pursuit of truth and wisdom. Let nothing deterr you from it."
-	icon_state = "noc"
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/neck/roguetown/psicross/dendor
-	name = "amulet of Dendor"
-	desc = "Nature is a body of which we are but its entrails."
-	icon_state = "dendor"
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/neck/roguetown/psicross/necra
-	name = "amulet of Necra"
-	desc = "Where, grave, thy victory? I triumph still while the Veiled Lady abides by me."
-	icon_state = "necra"
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/neck/roguetown/psicross/ravox
-	name = "amulet of Ravox"
-	desc = "Struggle. Challenge. And rise to struggle again. That is the sword of he who yet lives to fight again."
-	icon_state = "ravox"
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/neck/roguetown/psicross/eora
-	name = "amulet of Eora"
-	desc = "And I love thee because thou art love."
-	icon_state = "eora"
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/neck/roguetown/psicross/pestra
-	name = "amulet of Pestra"
-	desc = "A Pestran amulet depicting her fabled walking staff, encrusted in this trinket is a venomous serpent. Believed to ward off disease and lessen poisons to devoted worshippers of the wise hag."
-	icon_state = "pestra"
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/neck/roguetown/psicross/silver
+/obj/item/clothing/neck/roguetown/psycross/silver
 	name = "silver psycross"
 	desc = "Let His name be naught but forgot'n. Let the wicked undead burn at my touch."
-	icon_state = "psicrosssteel"
+	icon_state = "psycross_silver"
 	resistance_flags = FIRE_PROOF
 	sellprice = 50
 	smeltresult = /obj/item/ingot/silver
 
-/obj/item/clothing/neck/roguetown/psicross/silver/pickup(mob/user)
+/obj/item/clothing/neck/roguetown/psycross/silver/pickup(mob/user)
 	. = ..()
 	var/mob/living/carbon/human/H = user
 	var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
@@ -213,10 +191,10 @@
 				H.Knockdown(10)
 				H.Paralyze(10)
 
-/obj/item/clothing/neck/roguetown/psicross/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
+/obj/item/clothing/neck/roguetown/psycross/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	. = ..()
 	var/mob/living/carbon/human/H = M
-	var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+	var/datum/antagonist/vampirelord/V_lord = H.mind?.has_antag_datum(/datum/antagonist/vampirelord/)
 	if(H.mind)
 		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
@@ -230,10 +208,55 @@
 				H.Knockdown(10)
 				H.Paralyze(10)
 
-/obj/item/clothing/neck/roguetown/psicross/g
+// PANTHEON SILVER PSYCROSSES START
+
+/obj/item/clothing/neck/roguetown/psycross/silver/astrata 
+	name = "amulet of Astrata"
+	desc = "Blessed be everything the light of the sun touches, for it is protected by Her grace."
+	icon_state = "astrata"
+	resistance_flags = FIRE_PROOF
+
+// Only non-refactored psycross because Noc likes vamps. Neeeerd!
+/obj/item/clothing/neck/roguetown/psycross/noc
+	name = "amulet of Noc"
+	desc = "Diligence, study, pursuit of truth and wisdom. Let nothing deterr you from it."
+	icon_state = "noc"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/silver/dendor
+	name = "amulet of Dendor"
+	desc = "Nature is a body of which we are but its entrails."
+	icon_state = "dendor"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/silver/necra
+	name = "amulet of Necra"
+	desc = "Where, grave, thy victory? I triumph still while the Veiled Lady abides by me."
+	icon_state = "necra"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/silver/ravox
+	name = "amulet of Ravox"
+	desc = "Struggle. Challenge. And rise to struggle again. That is the sword of he who yet lives to fight again."
+	icon_state = "ravox"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/silver/eora
+	name = "amulet of Eora"
+	desc = "And I love thee because thou art love."
+	icon_state = "eora"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/silver/pestra
+	name = "amulet of Pestra"
+	desc = "A Pestran amulet depicting her fabled walking staff, encrusted in this trinket is a venomous serpent. Believed to ward off disease and lessen poisons to devoted worshippers of the wise hag."
+	icon_state = "pestra"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/g
 	name = "golden psycross"
 	desc = "Let His name be naught but forgot'n."
-	icon_state = "psicrossc"
+	icon_state = "psycross_gold"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
 	sellprice = 100
