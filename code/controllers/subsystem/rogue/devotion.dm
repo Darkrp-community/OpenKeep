@@ -150,7 +150,7 @@
 				to_chat(src, "<font color='red'>I have reached the limit of my devotion...</font>")
 				break
 			var/devotiongain = 2
-			for(var/obj/item/clothing/neck/roguetown/psicross/D in oview(5, src))
+			for(var/obj/item/clothing/neck/roguetown/psycross/D in oview(5, src))
 				devotiongain = 4
 			for(var/obj/structure/fluff/psycross/S in oview(5, src))
 				devotiongain = 8
