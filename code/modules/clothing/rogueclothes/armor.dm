@@ -325,7 +325,7 @@
 	blocksound = SOFTHIT
 	resistance_flags = FLAMMABLE
 	allowed_sex = list(FEMALE)
-	allowed_race = list("human", "tiefling", "elf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "aasimar","dwarf")
 	blade_dulling = DULLING_BASHCHOP
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
