@@ -649,6 +649,7 @@
 	icon_state = "kriegsmesser"
 	max_blade_int = 300
 	max_integrity = 300
+	wbalance = 0
 	minstr = 10
 	sellprice = 120
 
