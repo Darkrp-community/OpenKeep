@@ -39,38 +39,45 @@
 	switch(A.name)
 		if("Astrata")
 			head = /obj/item/clothing/head/roguetown/roguehood/astrata
-			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
 		if("Dendor")
 			head = /obj/item/clothing/head/roguetown/dendormask
-			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 		if("Necra")
 			head = /obj/item/clothing/head/roguetown/necrahood
-			neck = /obj/item/clothing/neck/roguetown/psicross/necra
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
 		if("Eora")
 			head = /obj/item/clothing/head/roguetown/roguehood/eora
-			neck = /obj/item/clothing/neck/roguetown/psicross/eora
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/eora
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
 			H.virginity = FALSE
 		if("Noc")
 			head = /obj/item/clothing/head/roguetown/roguehood/nochood
-			neck = /obj/item/clothing/neck/roguetown/psicross/noc
+			neck = /obj/item/clothing/neck/roguetown/psycross/noc
 			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 		if("Pestra")
 			head = /obj/item/clothing/head/roguetown/roguehood
-			neck = /obj/item/clothing/neck/roguetown/psicross/pestra
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/green
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
+		else // Failsafe
+			head = /obj/item/clothing/head/roguetown/roguehood
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver
+			shoes = /obj/item/clothing/shoes/roguetown/boots
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe
+
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)

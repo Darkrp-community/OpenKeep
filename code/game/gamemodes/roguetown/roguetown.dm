@@ -45,7 +45,6 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	var/deathknightspawn = FALSE
 	var/ascended = FALSE
 	var/cultascended = FALSE
-	var/list/datum/mind/deathknights = list()
 
 /datum/game_mode/chaosmode/proc/reset_skeletons()
 	skeletons = FALSE

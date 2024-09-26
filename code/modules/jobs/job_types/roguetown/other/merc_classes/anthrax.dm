@@ -31,7 +31,7 @@
 		H.verbs |= /mob/living/carbon/human/proc/torture_victim //Secret police training owing to their origins.
 
 		if(H.gender == FEMALE) //Melee defense-oriented brute, heavy lean towards non-lethal takedowns and capture.
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/shadowplate
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/shadowplate
 			gloves = /obj/item/clothing/gloves/roguetown/chain/iron/shadowgauntlets
 			wrists = /obj/item/net //Only chance against dodgers. Males getting this would be busted.
 			mask = /obj/item/clothing/mask/rogue/facemask/shadowfacemask
