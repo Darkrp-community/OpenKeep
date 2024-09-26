@@ -43,7 +43,7 @@
 /datum/patron/divine/abyssor
 	name = "Abyssor"
 	domain = "Force of Seas and Storms"
-	desc = "The World-Whale, the steward of the seas and storms."
+	desc = "The World-Whale, the sovereign of the seas and storms."
 	flaws= "Reckless, Stubborn, Destructive"
 	worshippers = "Sailors of the Sea and Sky, Horrid Sea-Creachers, Fog Islanders"
 	sins = "Fear, Hubris, Trying to Tame the Seas"
