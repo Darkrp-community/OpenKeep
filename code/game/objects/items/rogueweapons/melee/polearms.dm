@@ -58,6 +58,7 @@
 	bigboy = TRUE
 	gripsprite = TRUE
 	associated_skill = /datum/skill/combat/polearms
+	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	sellprice = 5
 
 /obj/item/rogueweapon/woodstaff/getonmobprop(tag)
@@ -130,6 +131,7 @@
 	minstr = 8
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
 	dropshrink = 0.75
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
@@ -251,6 +253,7 @@
 	minstr = 8
 	max_blade_int = 300
 	max_integrity = 500
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/polearms
 	dropshrink = 0.75
@@ -365,6 +368,7 @@
 	minstr = 7
 	smeltresult = /obj/item/ingot/copper
 	associated_skill = /datum/skill/combat/polearms
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
 	dropshrink = 0.9
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE

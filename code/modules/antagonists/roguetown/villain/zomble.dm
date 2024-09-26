@@ -61,11 +61,11 @@
 	if(istype(examined_datum, /datum/antagonist/vampirelord))
 		var/datum/antagonist/vampirelord/V = examined_datum
 		if(!V.disguised)
-			return "<span class='boldnotice'>Another deadite.</span>"
+			return "<span class='boldnotice'>Another kind of deadite.</span>"
 	if(istype(examined_datum, /datum/antagonist/zombie))
 		return "<span class='boldnotice'>Another deadite. My ally.</span>"
 	if(istype(examined_datum, /datum/antagonist/skeleton))
-		return "<span class='boldnotice'>Another deadite.</span>"
+		return "<span class='boldnotice'>Another kind of deadite.</span>"
 
 /datum/antagonist/zombie/on_gain()
 	var/mob/living/carbon/human/zombie = owner?.current
@@ -91,6 +91,7 @@
 	zombie.STASPD = 5
 	zombie.STAINT = 2
 	cmode_music = zombie.cmode_music
+	zombie.vitae_pool = 0 // Deadites have no vitae to drain from.
 	return ..()
 
 /datum/antagonist/zombie/on_removal()
@@ -193,6 +194,8 @@
 		zombie.STASPD = rand(5, 7)
 
 	zombie.STAINT = 1
+
+	zombie.vitae_pool = 0 // Again, just in case.
 
 /datum/antagonist/zombie/greet()
 	to_chat(owner.current, "<span class='userdanger'>Death is not the end...</span>")
