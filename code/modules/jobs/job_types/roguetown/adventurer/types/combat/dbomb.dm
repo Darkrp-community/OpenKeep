@@ -20,7 +20,7 @@
 	backpack_contents = list(/obj/item/bomb = 1, /obj/item/flint = 1)
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/smelting, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)

@@ -25,7 +25,7 @@
 "I" = (/obj/structure/bookcase,/obj/item/book/rogue/nitebeast,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
 "L" = (/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
 "M" = (/obj/effect/decal/cleanable/cobweb{dir = 1},/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
-"O" = (/obj/structure/closet/crate/coffin,/obj/item/clothing/head/roguetown/helmet/heavy/nochelm,/obj/item/clothing/ring/silver/noc,/obj/item/clothing/neck/roguetown/psicross/noc,/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/bog)
+"O" = (/obj/structure/closet/crate/coffin,/obj/item/clothing/head/roguetown/helmet/heavy/nochelm,/obj/item/clothing/ring/silver/noc,/obj/item/clothing/neck/roguetown/psycross/noc,/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/bog)
 "Q" = (/mob/living/simple_animal/hostile/retaliate/rogue/spider,/turf/open/water/swamp,/area/rogue/outdoors/bog)
 "R" = (/obj/structure/bookcase,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)
 "S" = (/obj/structure/bookcase,/obj/item/book/rogue/beardling,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/bog)

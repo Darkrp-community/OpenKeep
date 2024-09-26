@@ -17,7 +17,7 @@
 	spawn_positions = 1
 	display_order = JDO_TEMPLAR
 	give_bank_account = 0
-	min_pq = 0
+	min_pq = 2
 
 /datum/outfit/job/roguetown/templar
 	name = "Templar"
@@ -26,30 +26,31 @@
 /datum/outfit/job/roguetown/templar/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
-	neck = /obj/item/clothing/neck/roguetown/psicross/astrata
 	cloak = /obj/item/clothing/cloak/tabard/crusader/tief
 	switch(H.patron.name)
 		if("Astrata")
-			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
 		if("Dendor")
-			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/dendor
 		if("Necra")
-			neck = /obj/item/clothing/neck/roguetown/psicross/necra
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
 		if("Eora")
-			neck = /obj/item/clothing/neck/roguetown/psicross/eora
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
+			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			cloak = /obj/item/clothing/cloak/stabard/templar/eora
 			H.virginity = FALSE
 		if("Pestra")
-			neck = /obj/item/clothing/neck/roguetown/psicross/pestra
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
+			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
 		if("Noc")
-			neck = /obj/item/clothing/neck/roguetown/psicross/noc
+			neck = /obj/item/clothing/neck/roguetown/psycross/noc
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/noc
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk

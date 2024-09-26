@@ -812,6 +812,10 @@
 /obj/structure/fluff/statue/astrata
 	name = "statue of Astrata"
 	desc = "Astrata, the Sun Queen, reigns over light, order, and conquest. She is worshipped and feared in equal measure."
+	max_integrity = 100 // You wanted descructible statues, you'll get them.
+	deconstructible = FALSE
+	density = TRUE
+	blade_dulling = DULLING_BASH
 	icon_state = "astrata"
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 
@@ -881,7 +885,7 @@
 		if(5)
 			message2send = "You see a star!"
 	to_chat(H, "<span class='notice'>[message2send]</span>")
-	
+
 	if(random_message == 2)
 		if(do_after(H, 25, target = src))
 			var/obj/item/bodypart/affecting = H.get_bodypart("head")
@@ -1033,11 +1037,11 @@
 						if(4)
 							I = new /obj/item/clothing/head/roguetown/helmet/horned(user.loc)
 						if(6)
-							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2) 
+							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2)
 								I = new /obj/item/rogueweapon/spear/billhook(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2) 
+							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2)
 								I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2) 
+							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2)
 								I = new /obj/item/rogueweapon/sword/long(user.loc)
 							else
 								I = new /obj/item/rogueweapon/mace/steel(user.loc)
@@ -1146,7 +1150,7 @@
 								if(!C.client)
 									continue
 								//Gotta get a divorce first
-								if(C.marriedto)
+								if(C.IsWedded())
 									continue
 								if(C.real_name == X)
 									//I know this is very sloppy but its alot less code.
@@ -1193,8 +1197,7 @@
 						bridefirst = thebride.real_name
 						thegroom.change_name(thegroom.real_name + surname2use)
 						thebride.change_name(thebride.real_name + surname2use)
-						thegroom.marriedto = thebride.real_name
-						thebride.marriedto = thegroom.real_name
+						thegroom.MarryTo(thebride)
 						thegroom.adjust_triumphs(1)
 						thebride.adjust_triumphs(1)
 						//Bite the apple first if you want to be the groom.

@@ -47,7 +47,7 @@
 		return FALSE
 
 	if(istype(src.patron, /datum/patron/forgotten))
-		if(istype(wear_neck, /obj/item/clothing/neck/roguetown/psicross))
+		if(istype(wear_neck, /obj/item/clothing/neck/roguetown/psycross))
 			return TRUE
 		to_chat(src, "<span class='danger'>I can not talk to Him... I need His cross on my neck!</span>")
 		return FALSE

@@ -147,8 +147,12 @@
 					to_chat(user, "<span class='warning'>I can't climb here.</span>")
 					return
 			var/used_time = 0
+			var/amt2raise = 0
+			var/boon = 0
 			if(L.mind)
 				var/myskill = L.mind.get_skill_level(/datum/skill/misc/climbing)
+				amt2raise = floor(L.STAINT/2)
+				boon = L.mind?.get_learning_boon(/datum/skill/misc/climbing)
 				var/obj/structure/table/TA = locate() in L.loc
 				if(TA)
 					myskill += 1
@@ -177,6 +181,8 @@
 				user.start_pulling(pulling,supress_message = TRUE)
 				if(user.m_intent != MOVE_INTENT_SNEAK)
 					playsound(user, 'sound/foley/climb.ogg', 100, TRUE)
+				if(L.mind)
+					L.mind?.adjust_experience(/datum/skill/misc/climbing, floor(amt2raise * boon), FALSE)
 	else
 		..()
 

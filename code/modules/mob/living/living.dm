@@ -51,16 +51,26 @@
 	med_hud_set_status()
 
 /mob/living/onZImpact(turf/T, levels)
+	var/dex_save = src.mind?.get_skill_level(/datum/skill/misc/climbing)
+	var/sneak_fall = FALSE // If we're sneaking, don't announce it to our surroundings
+	if(dex_save >= 5) // Master climbers can fall down 2 levels without hurting themselves
+		if(levels <= 2)
+			to_chat(src, "<span class='info'>My dexterity allowed me to land on my feet unscathed!</span>")
+			if(src.m_intent != MOVE_INTENT_SNEAK) // If we're sneaking, don't make a sound
+				sneak_fall = TRUE
+				playsound(src.loc, 'sound/foley/bodyfall (1).ogg', 100, FALSE)
+			return
 	var/points
 	for(var/i in 2 to levels)
 		i++
 		points += "!"
-	visible_message("<span class='danger'>[src] falls down[points]</span>", \
-					"<span class='danger'>I fall down[points]</span>")
-	playsound(src.loc, 'sound/foley/zfall.ogg', 100, FALSE)
-	SSticker.moatfallers++
+	if(!sneak_fall)
+		visible_message("<span class='danger'>[src] falls down[points]</span>", \
+						"<span class='danger'>I fall down[points]</span>")
+		playsound(src.loc, 'sound/foley/zfall.ogg', 100, FALSE)
 	if(!isgroundlessturf(T))
 		ZImpactDamage(T, levels)
+		SSticker.moatfallers++
 	return ..()
 
 /mob/living/proc/ZImpactDamage(turf/T, levels)
@@ -413,7 +423,6 @@
 
 	if(isliving(AM))
 		var/mob/living/M = AM
-		log_combat(src, M, "grabbed", addition="passive grab")
 		if(!iscarbon(src))
 			M.LAssailant = null
 		else
@@ -429,6 +438,15 @@
 			var/datum/disease/D = thing
 			if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
 				ContactContractDisease(D)
+
+		// Makes it so people who recently broke out of grabs cannot be grabbed again
+		if(TIMER_COOLDOWN_RUNNING(M, "broke_free") && M.stat == CONSCIOUS)
+			M.visible_message(span_warning("[M] slips from [src]'s grip."), \
+					span_warning("I slip from [src]'s grab."))
+			log_combat(src, M, "tried grabbing", addition="passive grab")
+			return
+
+		log_combat(src, M, "grabbed", addition="passive grab")
 		playsound(src.loc, 'sound/combat/shove.ogg', 50, TRUE, -1)
 		if(iscarbon(M))
 			var/mob/living/carbon/C = M
@@ -1144,6 +1162,12 @@
 		to_chat(pulledby, "<span class='danger'>[src] breaks free of my grip!</span>")
 		log_combat(pulledby, src, "broke grab")
 		pulledby.stop_pulling()
+
+		var/wrestling_cooldown_reduction = 0
+		if(pulledby?.mind?.get_skill_level("wrestling"))
+			wrestling_cooldown_reduction = 0.2 SECONDS * pulledby.mind.get_skill_level("wrestling")
+		TIMER_COOLDOWN_START(src, "broke_free", max(0, 0.8 SECONDS - wrestling_cooldown_reduction))
+
 		return FALSE
 	else
 		rogfat_add(rand(5,15))

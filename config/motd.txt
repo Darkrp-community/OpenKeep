@@ -1,3 +1,4 @@
 <!-- Most valid html will work in here, excluding images. -->
-STONEKEEP Discord Server: <a href="https://discord.gg/stonekeep">discord.gg/Stonekeep</a>
-<center>* Unstable Playtest - Expect Restarts *</center>
+<center>STONEKEEP Discord Server: <a href="https://discord.gg/stonekeep">discord.gg/Stonekeep</a></center>
+<center>* Now with even more fixes! *</center>
+<!-- We're no longer so unstable, also it's shit advertising. -->
