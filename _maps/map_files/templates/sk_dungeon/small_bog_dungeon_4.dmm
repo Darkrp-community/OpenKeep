@@ -41,7 +41,7 @@
 "U" = (/turf/open/water/swamp,/area/rogue)
 "V" = (/turf/closed/mineral/random/rogue/high,/area/rogue/outdoors/caves)
 "W" = (/obj/structure/spider/stickyweb/solo,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"X" = (/obj/structure/table/wood,/obj/item/clothing/neck/roguetown/psicross/silver,/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/caves)
+"X" = (/obj/structure/table/wood,/obj/item/clothing/neck/roguetown/psycross/silver,/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/caves)
 "Y" = (/obj/effect/decal/cleanable/blood/tracks{dir = 8},/obj/item/flint,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/caves)
 "Z" = (/obj/structure/fluff/railing/fence{dir = 1},/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
 

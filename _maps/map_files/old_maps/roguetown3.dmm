@@ -982,7 +982,7 @@
 "asT" = (/obj/structure/fluff/statue/gargoyle,/obj/machinery/light/rogue/torchholder,/turf/open/floor/rogue/wood,/area/rogue)
 "asU" = (/obj/structure/fluff/railing/border{icon_state = "border"; dir = 8},/turf/open/transparent/openspace,/area/rogue)
 "asV" = (/obj/structure/bookcase,/obj/item/book/random,/obj/item/book/random,/obj/item/book/random,/obj/item/book/random,/obj/item/book/random,/obj/item/book/random,/turf/open/floor/rogue/wood,/area/rogue)
-"asW" = (/obj/structure/rack/rogue,/obj/item/clothing/suit/roguetown/armor/plate/half,/turf/open/floor/rogue/wood,/area/rogue)
+"asW" = (/obj/structure/rack/rogue,/obj/item/clothing/suit/roguetown/armor/plate,/turf/open/floor/rogue/wood,/area/rogue)
 "asX" = (/obj/structure/table/wood{icon_state = "largetable"; dir = 10},/obj/structure/mirror{icon_state = "fancymirror"; pixel_x = 16; pixel_y = 32},/turf/open/floor/rogue/wood,/area/rogue)
 "asY" = (/obj/structure/table/wood{icon_state = "largetable"; dir = 6},/turf/open/floor/rogue/wood,/area/rogue)
 "asZ" = (/obj/structure/closet/crate/roguecloset/lord,/obj/item/clothing/suit/roguetown/armor/gambeson/lord,/turf/open/floor/rogue/wood,/area/rogue)

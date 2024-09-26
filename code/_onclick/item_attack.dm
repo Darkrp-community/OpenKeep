@@ -312,6 +312,10 @@
 			//Mining Skill force multiplier.
 			var/mineskill = miner.mind.get_skill_level(/datum/skill/labor/mining)
 			newforce = newforce * (8+(mineskill*1.5))
+			// Pick quality multiplier. Affected by smithing, or material of the pick.
+			if(istype(I, /obj/item/rogueweapon/pick))
+				var/obj/item/rogueweapon/pick/P = I
+				newforce *= P.pickmult
 			shake_camera(user, 1, 1)
 			miner.mind.adjust_experience(/datum/skill/labor/mining, (miner.STAINT*0.2))
 	/*
