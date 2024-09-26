@@ -7,7 +7,7 @@
 // Due to BYOND v515.1643, having this uncommented makes code not compile.
 // It literally does nothing as plane = FLOAT_PLANE is defined on the proc below anyways.
 
-/mutable_appearance/New()
+/mutable_appearance/proc/New()
 	..()
 	plane = FLOAT_PLANE // No clue why this is 0 by default yet images are on FLOAT_PLANE
 						// And yes this does have to be in the constructor, BYOND ignores it if you set it as a normal var
