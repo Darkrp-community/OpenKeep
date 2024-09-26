@@ -10,10 +10,12 @@
 	equip_sound = 'sound/blank.ogg'
 	drop_sound = 'sound/blank.ogg'
 	pickup_sound =  'sound/blank.ogg'
+	break_sound = 'sound/foley/breaksound.ogg'
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	sleevetype = "shirt"
 	edelay_type = 1
 	equip_delay_self = 25
+	unequip_delay_self = 25
 	bloody_icon_state = "bodyblood"
 	boobed = TRUE
 	resistance_flags = FIRE_PROOF
@@ -21,6 +23,7 @@
 	sellprice = 1
 	blade_dulling = DULLING_BASHCHOP
 	break_sound = 'sound/foley/breaksound.ogg'
+	equip_sound = 'sound/foley/equip/equip_armor.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	experimental_onhip = TRUE
 	nodismemsleeves = TRUE
@@ -32,10 +35,12 @@
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 	icon_state = "haubergeon"
 	armor = list("melee" = 80, "bullet" = 90, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
 	blocksound = CHAINHIT
 	var/do_sound = FALSE
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+	pickup_sound = 'sound/foley/equip/equip_armor_chain.ogg'
+	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 	armor_class = ARMOR_CLASS_MEDIUM
 	smeltresult = /obj/item/ingot/steel
@@ -90,20 +95,22 @@
 /obj/item/clothing/suit/roguetown/armor/plate
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "steel half-plate armor"
-	desc = "\'Adventurer-fit\' plate armor with pauldrons."
+	desc = "Plate armor with shoulder guards. An incomplete, bulky set of excellent armor."
 	body_parts_covered = CHEST|GROIN|VITALS
 	icon_state = "halfplate"
 	item_state = "halfplate"
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	nodismemsleeves = TRUE
 	max_integrity = 500
 	allowed_sex = list(MALE, FEMALE)
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
+	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
 	equip_delay_self = 40
-	armor_class = ARMOR_CLASS_MEDIUM
+	unequip_delay_self = 40
+	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 90
 
 /obj/item/clothing/suit/roguetown/armor/plate/Initialize()
@@ -114,23 +121,23 @@
 													'sound/foley/footsteps/armor/plate (3).ogg'), 100)
 
 
-/obj/item/clothing/suit/roguetown/armor/plate/half
+/obj/item/clothing/suit/roguetown/armor/cuirass
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "steel cuirass"
 	desc = "A cuirass of steel. Lightweight and highly durable."
-	body_parts_covered = CHEST|VITALS
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	body_parts_covered = CHEST|VITALS|GROIN
 	icon_state = "cuirass"
 	item_state = "cuirass"
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 80, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	allowed_race = ALL_RACES_LIST
 	nodismemsleeves = TRUE
-	do_sound = FALSE
 	blocking_behavior = null
-	max_integrity = 300
+	max_integrity = 500
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
-	sellprice = 40
+	sellprice = 30
 
 /obj/item/clothing/suit/roguetown/armor/plate/full
 	name = "plate armor"
@@ -140,6 +147,8 @@
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	equip_delay_self = 80
+	unequip_delay_self = 80
+	max_integrity = 500
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 120
 
@@ -148,41 +157,47 @@
 	desc = "Old and rusted plate armor. Less durable than it used to be, but still quite protective."
 	icon_state = "rustplate"
 	item_state = "rustplate"
-	max_integrity = 250
+	max_integrity = 300
 	smeltresult = /obj/item/ingot/iron
+	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 40
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/iron
+/obj/item/clothing/suit/roguetown/armor/cuirass/iron
 	name = "iron breastplate"
 	desc = "Solid iron to protect the torso."
 	icon_state = "ibreastplate"
 	item_state = "ibreastplate"
-	max_integrity = 200
-	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 300
+	armor = list("melee" = 70, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 20
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/iron/rust
+/obj/item/clothing/suit/roguetown/armor/cuirass/iron/rust
 	name = "rusted breastplate"
 	desc = "Old but still useful to keep sharp objects from your innards."
 	icon_state = "rusthalf"
 	item_state = "rusthalf"
+	max_integrity = 200 // Rusty
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/iron/shadowplate
+// Anthrax merc plate, unique
+/obj/item/clothing/suit/roguetown/armor/cuirass/iron/shadowplate
 	name = "scourge breastplate"
 	desc = "More form over function, this armor is fit for demonstration of might rather than open combat. The aged gilding slowly tarnishes away."
 	icon_state = "shadowplate"
 	item_state = "shadowplate"
-	body_parts_covered = CHEST|GROIN
+	body_parts_covered = CHEST|GROIN|VITALS
 	allowed_race = list("elf", "dark elf")
 
-// Bladesinger armor, unique
-/obj/item/clothing/suit/roguetown/armor/plate/half/elven
+// Blackoak armor, unique
+/obj/item/clothing/suit/roguetown/armor/plate/elven
 	name = "elven guardian cuirass"
 	desc = "A cuirass made of steel with a thin decorative gold plating. Lightweight and durable."
 	color = COLOR_ASSEMBLY_GOLD
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor_class = ARMOR_CLASS_MEDIUM
+	equip_delay_self = 25 // Light elven craft
+	unequip_delay_self = 25
 	sellprice = 200
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale
@@ -190,14 +205,17 @@
 	name = "scalemail"
 	desc = "A scale shirt typically padded with various interlocked steel plates. Offers decent protection."
 	body_parts_covered = CHEST|VITALS|GROIN|LEGS
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST) // Best medium armor now that halfplate is heavy.
 	allowed_sex = list(MALE, FEMALE)
 	icon_state = "lamellar"
-	max_integrity = 200
-	armor = list("melee" = 90, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 500
+	do_sound = FALSE
+	armor = list("melee" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
+	unequip_delay_self = 40
 	armor_class = ARMOR_CLASS_MEDIUM
-	sellprice = 35
+	sellprice = 50
 
 //full iron armor for robbers/warriors
 /obj/item/clothing/suit/roguetown/armor/plate/scale/iron
@@ -210,9 +228,7 @@
 	max_integrity = 350 // Three iron bars, extra durability
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/iron
-	equip_delay_self = 40
-	armor_class = ARMOR_CLASS_MEDIUM
-	sellprice = 45
+	sellprice = 30
 
 // Rare Heartfelt equipment
 /obj/item/clothing/suit/roguetown/armor/heartfelt/lord
@@ -258,10 +274,11 @@
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 500
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	allowed_sex = list(MALE, FEMALE)
 	anvilrepair = /datum/skill/craft/armorsmithing
 	equip_delay_self = 40
+	unequip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 95
@@ -309,7 +326,7 @@
 	blocksound = PLATEHIT
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
 	armor = list("melee" = 90, "bullet" = 90, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	max_integrity = 500
 	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 200
@@ -321,7 +338,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|VITALS
 	icon_state = "armordress"
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_BLUNT)
 	blocksound = SOFTHIT
 	resistance_flags = FLAMMABLE
 	allowed_sex = list(FEMALE)
@@ -345,10 +362,12 @@
 	icon_state = "gambeson"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT)
 	resistance_flags = FLAMMABLE
 	blocksound = SOFTUNDERHIT
 	blade_dulling = DULLING_BASHCHOP
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	sewrepair = TRUE
@@ -361,13 +380,12 @@
 	name = "light gambeson"
 	desc = "A barely padded gambeson, typically worn by the peasantry as cheap yet fashionable armor for the whole body."
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = null // It won't help, like, at all.
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE)
 	sellprice = 10
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	name = "padded gambeson"
 	desc = "A gambeson with additional padding layers, hardened to make it more durable. It still cannot compare to proper armor."
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	sellprice = 30
 
@@ -399,10 +417,12 @@
 	body_parts_covered = CHEST|GROIN|VITALS
 	allowed_sex = list(MALE, FEMALE)
 	armor = list("melee" = 40, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = SOFTHIT
 	resistance_flags = FLAMMABLE
 	blade_dulling = DULLING_BASHCHOP
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	sewrepair = TRUE
@@ -426,7 +446,7 @@
 	icon_state = "studleather"
 	item_state = "studleather"
 	blocksound = SOFTHIT
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_CHOP)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_BLUNT, BCLASS_CHOP)
 	armor = list("melee" = 60, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	nodismemsleeves = TRUE
 	body_parts_covered = CHEST|GROIN|VITALS
@@ -442,7 +462,7 @@
 	item_state = "vest"
 	color = "#514339"
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
 	body_parts_covered = CHEST|VITALS
@@ -539,6 +559,8 @@
 	blade_dulling = DULLING_BASHCHOP
 	resistance_flags = FLAMMABLE
 	body_parts_covered = CHEST|VITALS
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	sewrepair = TRUE
@@ -558,12 +580,14 @@
 	icon_state = "bliaut"
 	color = null
 	armor = list("melee" = 40, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT)
 	resistance_flags = FLAMMABLE
 	blocksound = SOFTHIT
 	slot_flags = ITEM_SLOT_ARMOR
 	blade_dulling = DULLING_BASHCHOP
 	body_parts_covered = CHEST|LEGS|VITALS|GROIN
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	sewrepair = TRUE
@@ -579,7 +603,7 @@
 	color = pick(CLOTHING_PURPLE, null,CLOTHING_GREEN, CLOTHING_RED)
 	..()
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 	name = "orc mail"
 	icon_state = "marauder_armor"
 	item_state = "marauder_armor"
@@ -588,7 +612,7 @@
 	allowed_race = list("orc")
 	armor = list("melee" = 70, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	armor_class = ARMOR_CLASS_MEDIUM
 	max_integrity = 120
 	sellprice = 10
@@ -602,30 +626,41 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	allowed_race = list("orc")
 	armor = list("melee" = 25, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB)
 	armor_class = ARMOR_CLASS_MEDIUM
 	blocksound = PLATEHIT
 	max_integrity = 100
 	sellprice = 10
 
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+/obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "grenzelhoft cuirass"
 	desc = "A basic cuirass built from black-steel. It's somewhat more durable and lightweight than regular steel."
 	icon_state = "grenzelcuirass"
 	item_state = "grenzelcuirass"
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	body_parts_covered = CHEST|GROIN|VITALS
+	nodismemsleeves = TRUE
+	allowed_sex = list(MALE, FEMALE)
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	boobed = TRUE
 	max_integrity = 500
 
 
 /obj/item/clothing/suit/roguetown/armor/rare
+	name = "Parent rare armor"
+	desc = "You shouldn't be seeing this. Did you forget to add a description?"
 	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleeved = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	sleevetype = null
+	equip_delay_self = 40
+	unequip_delay_self = 40
 
+// Bladesinger armor, unique
 /obj/item/clothing/suit/roguetown/armor/rare/elfplate
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "dark elf plate"
@@ -635,13 +670,13 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	item_state = "elfchest"
 	allowed_race = list("elf", "half-elf", "dark elf")
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	nodismemsleeves = TRUE
 	max_integrity = 500
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
-	equip_delay_self = 40
+	equip_delay_self = 25
+	unequip_delay_self = 25
 	armor_class = ARMOR_CLASS_MEDIUM // Elven craft
 
 /obj/item/clothing/suit/roguetown/armor/rare/elfplate/Initialize()
@@ -666,13 +701,11 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	item_state = "dwarfchest"
 	allowed_race = list("dwarf")
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	nodismemsleeves = TRUE
 	max_integrity = 600
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
-	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
 
 /obj/item/clothing/suit/roguetown/armor/rare/dwarfplate/Initialize()
@@ -691,14 +724,12 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	item_state = "human_swordchest"
 	allowed_race = list("human")
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	nodismemsleeves = TRUE
 	max_integrity = 600
 	allowed_sex = list(MALE)
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
-	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 200
 
@@ -720,14 +751,12 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	item_state = "human_spearchest"
 	allowed_race = list("human")
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	nodismemsleeves = TRUE
 	max_integrity = 500
 	allowed_sex = list(MALE)
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
-	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 200
 
@@ -750,13 +779,11 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	item_state = "aasimarplate"
 	allowed_race = list("aasimar")
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	nodismemsleeves = TRUE
 	max_integrity = 500
 	var/do_sound = TRUE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = null // No bronze ingots yet, unfortunately
-	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
 	sellprice = 300 // It has great value to historical collectors
 
@@ -767,7 +794,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 													'sound/foley/footsteps/armor/fullplate (2).ogg',\
 													'sound/foley/footsteps/armor/fullplate (3).ogg'), 100)
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/copperchest
+/obj/item/clothing/suit/roguetown/armor/cuirass/copperchest
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "copper heart protector"//SHITTY ARMOR SHITTY ARMOR!!
 	desc = "Very simple and crude protection for the chest. Ancient fighters once used similar gear, with better quality..."
@@ -777,10 +804,91 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	allowed_race = ALL_RACES_LIST
 	nodismemsleeves = TRUE
-	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 150
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/copper
 	armor_class = ARMOR_CLASS_LIGHT
 	sellprice = 15
+
+// VAMPIRE ARMORS BELOW
+
+/obj/item/clothing/under/roguetown/platelegs/vampire
+	name = "ancient plate greaves"
+	desc = ""
+	gender = PLURAL
+	icon_state = "vpants"
+	item_state = "vpants"
+	sewrepair = FALSE
+	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST) // Vampire armors don't protect against lashing, Castlevania reference
+	blocksound = PLATEHIT
+	do_sound = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	r_sleeve_status = SLEEVE_NOMOD
+	l_sleeve_status = SLEEVE_NOMOD
+
+/obj/item/clothing/suit/roguetown/shirt/vampire
+	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
+	name = "regal silks"
+	desc = ""
+	body_parts_covered = CHEST|GROIN|LEGS|VITALS
+	prevent_crits = list(BCLASS_BITE, BCLASS_TWIST)
+	icon_state = "vrobe"
+	item_state = "vrobe"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+
+/obj/item/clothing/head/roguetown/vampire
+	name = "crown of darkness"
+	icon_state = "vcrown"
+	body_parts_covered = null
+	slot_flags = ITEM_SLOT_HEAD
+	dynamic_hair_suffix = null
+	sellprice = 1000
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire
+	name = "ancient chain shirt"
+	desc = "An ancient iron chainmail."
+	icon_state = "vunder"
+	item_state = "vunder"
+	body_parts_covered = CHEST|GROIN|ARMS|VITALS
+	smeltresult = /obj/item/ingot/iron
+
+/obj/item/clothing/suit/roguetown/armor/plate/vampire
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "ancient ceremonial plate"
+	desc = "An ornate, ancient plate armor worn by the masters of the nite."
+	body_parts_covered = CHEST|GROIN|VITALS
+	icon_state = "vplate"
+	item_state = "vplate"
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB, BCLASS_BLUNT) // Stab protection otherwise why even bother summoning it? No lash protection because Belmonts
+	nodismemsleeves = TRUE
+	max_integrity = 500
+	allowed_sex = list(MALE, FEMALE)
+	do_sound = TRUE
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	equip_delay_self = 40
+	unequip_delay_self = 40
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/shoes/roguetown/boots/armor/vampire
+	name = "ancient ceremonial plated boots"
+	desc = "Antediluvian boots with ceremonial ornamets from ages past."
+	body_parts_covered = FEET
+	icon_state = "vboots"
+	item_state = "vboots"
+	prevent_crits = list(BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	smeltresult = /obj/item/ingot/steel
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/gloves/roguetown/chain/vampire
+	name = "ancient ceremonial gloves"
+	icon_state = "vgloves"
+	smeltresult = /obj/item/ingot/steel

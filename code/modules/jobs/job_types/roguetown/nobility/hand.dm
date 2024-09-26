@@ -19,7 +19,7 @@
 	bypass_lastclass = FALSE
 	whitelist_req = TRUE
 	give_bank_account = 120
-	min_pq = 0
+	min_pq = 2
 
 /*
 /datum/job/roguetown/hand/special_job_check(mob/dead/new_player/player)

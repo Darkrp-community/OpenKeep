@@ -23,7 +23,7 @@
 	whitelist_req = TRUE
 	bypass_lastclass = FALSE
 	give_bank_account = 120
-	min_pq = 0
+	min_pq = 4
 
 /datum/outfit/job/roguetown/magician/pre_equip(mob/living/carbon/human/H)
 	..()

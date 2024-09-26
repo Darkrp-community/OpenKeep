@@ -2,6 +2,10 @@
 	name = "hat"
 	desc = ""
 	icon = 'icons/roguetown/clothing/head.dmi'
+	equip_sound = "rustle"
+	pickup_sound = "rustle"
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	icon_state = "top_hat"
 	item_state = "that"
 	body_parts_covered = HEAD|HAIR
@@ -146,6 +150,10 @@
 	icon_state = "basichood"
 	item_state = "basichood"
 	icon = 'icons/roguetown/clothing/head.dmi'
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	body_parts_covered = NECK
 	dynamic_hair_suffix = ""
 	edelay_type = 1
@@ -197,7 +205,6 @@
 	icon = 'icons/roguetown/clothing/head.dmi'
 	body_parts_covered = NECK
 	dynamic_hair_suffix = ""
-	edelay_type = 1
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	max_integrity = 100
@@ -212,7 +219,6 @@
 	body_parts_covered = NECK
 	resistance_flags = FIRE_PROOF // Not the sun hat!
 	dynamic_hair_suffix = ""
-	edelay_type = 1
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	max_integrity = 100
@@ -227,7 +233,6 @@
 	body_parts_covered = NECK
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
-	edelay_type = 1
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	max_integrity = 100
@@ -245,7 +250,6 @@
 	worn_y_dimension = 64
 	body_parts_covered = NECK
 	dynamic_hair_suffix = ""
-	edelay_type = 1
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	max_integrity = 100
@@ -322,6 +326,7 @@
 	desc = ""
 	icon_state = "goldcirclet"
 	item_state = "goldcirclet"
+	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	dynamic_hair_suffix = null
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	sellprice = 50
@@ -329,6 +334,7 @@
 /obj/item/clothing/head/roguetown/nyle
 	name = "jewel of nyle"
 	icon_state = "nile"
+	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	body_parts_covered = null
 	dynamic_hair_suffix = null
 	sellprice = 100
@@ -354,6 +360,7 @@
 	desc = "Heavy is the weight of the crown, and even heavier the responsability it infers to its wearer."
 	icon_state = "serpcrown"
 	//dropshrink = 0
+	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	dynamic_hair_suffix = null
 	sellprice = 200
 	sewrepair = FALSE
@@ -373,6 +380,7 @@
 	name = "champion's circlet"
 	desc = "Winner of tournaments, bask in Ravox's glory."
 	icon_state = "sparrowcrown"
+	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	//dropshrink = 0
 	dynamic_hair_suffix = null
 	sewrepair = FALSE
@@ -411,7 +419,11 @@
 	sleevetype = null
 	sleeved = null
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	equip_sound = 'sound/foley/equip/equip_armor.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	break_sound = 'sound/foley/breaksound.ogg'
+	pickup_sound = null
 	dynamic_hair_suffix = "+generic"
 	bloody_icon_state = "helmetblood"
 	anvilrepair = /datum/skill/craft/armorsmithing
@@ -488,7 +500,7 @@
 /obj/item/clothing/head/roguetown/helmet/ironplate
 	name = "iron plate helmet"
 	max_integrity = 350//isn't the same as a steel helmet but is better than a skullcap, costs 2 bars and protects the mouth
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_STAB) // Stab protection out of having faceplate
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_STAB) // Stab protection out of having faceplate
 	block2add = FOV_RIGHT|FOV_LEFT // Unremovable visor.
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	icon_state = "ironplate"
@@ -496,6 +508,8 @@
 	desc = "An iron masked helmet usually worn by armed men, it is a solid design yet antiquated and cheap."
 	body_parts_covered = HEAD|HAIR|NOSE|MOUTH|EARS
 	flags_inv = HIDEEARS
+	equip_delay_self = 25
+	unequip_delay_self = 25
 	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/head/roguetown/helmet/ironpot
@@ -526,12 +540,15 @@
 	desc = "A gleaming coif of metal half-hidden by a black veil."
 	icon_state = "battlenun"
 	item_state = "battlenun"
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
+	break_sound = 'sound/foley/cloth_rip.ogg'
 	dynamic_hair_suffix = "+concealed"
 	flags_inv = HIDEEARS|HIDEHAIR
 	armor = list("melee" = 60, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FIRE_PROOF
 	body_parts_covered = NECK|HAIR|EARS|HEAD
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
 	blocksound = CHAINHIT
 	smeltresult = null
 
@@ -543,7 +560,7 @@
 /obj/item/clothing/head/roguetown/helmet/visored
 	name = "parent visored helmet"
 	desc = "If you're reading this, someone forgot to set an item description or spawned the wrong item. Yell at them."
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // All visored helmets protect against everything
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // All visored helmets protect against everything
 	adjustable = CAN_CADJUST
 	body_parts_covered = FULL_HEAD
 //	will_cover = FULL_HEAD
@@ -554,6 +571,9 @@
 	smeltresult = /obj/item/ingot/steel // All visored helmets are made of steel
 	max_integrity = 350
 	sellprice = 60
+	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
+	equip_delay_self = 30
+	unequip_delay_self = 30
 
 // Proc shared by all visored helmets, therefore modular
 /obj/item/clothing/head/roguetown/helmet/visored/AdjustClothes(mob/user)
@@ -574,7 +594,7 @@
 				H.update_inv_head()
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
-			prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+			prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
 			body_parts_covered = FULL_HEAD
 //			will_cover = FULL_HEAD
 			flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
@@ -628,7 +648,6 @@
 	emote_environment = 3
 	block2add = FOV_RIGHT|FOV_LEFT
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
 	smeltresult = /obj/item/ingot/steel
 	max_integrity = 350
@@ -652,8 +671,11 @@
 	flags_inv = HIDEEARS|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	block2add = FOV_RIGHT|FOV_LEFT
+	equip_delay_self = 30
+	unequip_delay_self = 30
+	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
 	smeltresult = /obj/item/ingot/steel
 	max_integrity = 250
 	sellprice = 100
@@ -666,20 +688,25 @@
 	emote_environment = 3
 	armor = list("melee" = 90, "bullet" = 90, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // Stab immunity as a treat for low FOV
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // Stab immunity as a treat for low FOV
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 60
 
-// VL's are already OP and the helm is made of iron, let's not give them too good of a helm. Funny enough the item in VLORD has same path but different sprites so that one should be repathed
-/obj/item/clothing/head/roguetown/helmet/heavy/guard
+/obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
+	icon_state = "topfhelm_gold"
+	item_state = "topfhelm_gold"
+
+// Vampire Lord is no longer as OP, but the armor should protect against dreaded stabs or it makes the vitae spent on it pointless.
+/obj/item/clothing/head/roguetown/helmet/heavy/savoyard
 	name = "savoyard"
 	desc = "A terrifying yet crude iron helmet shaped like a humen skull. Commands the inspiring terror of inhumen tyrants from yils past."
-	icon_state = "guardhelm"
+	icon_state = "savoyard"
 	emote_environment = 3
 	armor = list("melee" = 90, "bullet" = 70, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST) // Again no lashing protection!
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	smeltresult = /obj/item/ingot/iron
-	max_integrity = 200 // Still made of iron.
+	max_integrity = 300 // Still made of iron.
 
 // Unused
 /obj/item/clothing/head/roguetown/helmet/heavy/captain
@@ -707,7 +734,6 @@
 	icon_state = "astratahelm"
 	item_state = "astratahelm"
 	emote_environment = 3
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 
@@ -717,7 +743,6 @@
 	icon_state = "nochelm"
 	item_state = "nochelm"
 	emote_environment = 3
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 
@@ -727,7 +752,6 @@
 	icon_state = "necrahelm"
 	item_state = "necrahelm"
 	emote_environment = 3
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 
@@ -737,7 +761,6 @@
 	icon_state = "dendorhelm"
 	item_state = "dendorhelm"
 	emote_environment = 3
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 
@@ -763,7 +786,11 @@
 	body_parts_covered = HEAD|HAIR|EARS|NOSE
 	icon_state = "leatherhelm"
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT)
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	resistance_flags = FLAMMABLE // Made of leather
 	smeltresult = /obj/item/ash
 	anvilrepair = null
@@ -790,7 +817,6 @@
 	desc = "Madmen. Cursed dogs. Beware."
 	icon_state = "ominous"
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
 	body_parts_covered = NECK|HAIR|EARS|HEAD
@@ -808,13 +834,13 @@
 	body_parts_covered = HEAD|HAIR|EARS
 	icon_state = "volfhead"
 	item_state = "volfhead"
-	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
 	sellprice = 30
 
 /obj/item/clothing/head/roguetown/helmet/leather/minershelm
 	name = "leather miners helmet"
 	desc = "A leather kettle-like helmet with a headlamp, fueled by magiks."
 	icon_state = "minerslamp"
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_BLUNT)
 	var/brightness_on = 4 //less than a torch; basically good for one person.
 	var/on = FALSE
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
@@ -857,6 +883,7 @@
 /obj/item/clothing/head/roguetown/roguehood/feld
 	name = "feldsher's hood"
 	desc = "My cure is most effective."
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST)
 	icon_state = "feldhood"
 	item_state = "feldhood"
 	color = null
@@ -864,6 +891,7 @@
 /obj/item/clothing/head/roguetown/roguehood/phys
 	name = "physicker's hood"
 	desc = "My cure is mostly effective."
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST)
 	icon_state = "surghood"
 	item_state = "surghood"
 	color = null
@@ -872,6 +900,7 @@
 	name = "feldsher's cage"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	desc = "To protect me from the maggets and creechers I treat."
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_BLUNT)
 	icon_state = "headcage"
 	icon_state = "headcage"
 	worn_x_dimension = 64
@@ -893,9 +922,12 @@
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	icon_state = "decorated_knight"
 	item_state = "decorated_knight"
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+	equip_delay_self = 30
+	unequip_delay_self = 30
 	var/picked = FALSE
 	smeltresult = /obj/item/ingot/steel
 
@@ -943,6 +975,7 @@
 /obj/item/clothing/head/roguetown/helmet/decoratedhounskull
 	name = "decorated hounskull"
 	desc = "A lavish hounskull which allows a crest to be mounted on top."
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	block2add = FOV_RIGHT|FOV_LEFT
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	icon_state = "decorated_hounskull"
@@ -950,6 +983,8 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+	equip_delay_self = 30
+	unequip_delay_self = 30
 	var/picked = FALSE
 	smeltresult = /obj/item/ingot/steel
 
@@ -997,6 +1032,7 @@
 /obj/item/clothing/head/roguetown/helmet/heavy/decoratedbucket
 	name = "decorated greathelm"
 	desc = "A lavish greathelm which allows a crest to be mounted on top."
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	block2add = FOV_RIGHT|FOV_LEFT
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	icon_state = "decorated_bucket"
@@ -1004,6 +1040,8 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+	equip_delay_self = 30
+	unequip_delay_self = 30
 	var/picked = FALSE
 	smeltresult = /obj/item/ingot/steel
 
@@ -1051,6 +1089,7 @@
 /obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket
 	name = "decorated goldhelm"
 	desc = "A lavish gold-trimmed greathelm which allows a crest to be mounted on top."
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 	block2add = FOV_RIGHT|FOV_LEFT
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	icon_state = "decorated_gbucket"
@@ -1058,6 +1097,8 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+	equip_delay_self = 30
+	unequip_delay_self = 30
 	var/picked = FALSE
 	smeltresult = /obj/item/ingot/steel
 
@@ -1124,6 +1165,7 @@
 /obj/item/clothing/head/roguetown/grenzelhofthat
 	name = "grenzelhoft plume hat"
 	desc = "Slaying monsters or fair maidens: Grenzelhoft stands."
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST)
 	icon_state = "grenzelhat"
 	item_state = "grenzelhat"
 	icon = 'icons/roguetown/clothing/head.dmi'
@@ -1153,9 +1195,11 @@
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	armor_class = ARMOR_CLASS_HEAVY
 	resistance_flags = FIRE_PROOF // These are all metallic
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST, BCLASS_BITE)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST, BCLASS_BITE, BCLASS_LASHING)
 	anvilrepair = /datum/skill/craft/armorsmithing
 	blocksound = PLATEHIT
+	equip_delay_self = 30
+	unequip_delay_self = 30
 
 /obj/item/clothing/head/roguetown/rare/elfplate // Unique Bladesinger kit
 	icon_state = "elfhead"
@@ -1253,6 +1297,7 @@
 /obj/item/clothing/head/roguetown/wizhat
 	name = "wizard hat"
 	desc = "Used to distinguish dangerous wizards from senile old men."
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST)
 	icon_state = "wizardhat"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	dynamic_hair_suffix = "+generic"
@@ -1338,6 +1383,7 @@
 /obj/item/clothing/head/roguetown/priesthat // bishops mitre really
 	name = "priest's hat"
 	desc = "The sacred headpiece of a priest."
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST)
 	icon_state = "priest"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	dynamic_hair_suffix = "+generic"
