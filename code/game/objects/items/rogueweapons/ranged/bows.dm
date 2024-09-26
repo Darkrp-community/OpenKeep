@@ -19,7 +19,6 @@
 	cartridge_wording = "arrow"
 	load_sound = 'sound/foley/nockarrow.ogg'
 	associated_skill = /datum/skill/combat/bows
-	var/damfactor = 1
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/getonmobprop(tag)
 	. = ..()
@@ -69,10 +68,13 @@
 			BB.damage = BB.damage
 			BB.embedchance = 100
 			BB.accuracy += 15 //fully aiming bow makes your accuracy better.
-		BB.damage = BB.damage * (user.STAPER / 10) * damfactor
+		
 		if(user.STAPER > 8)
 			BB.accuracy += (user.STAPER - 8) * 4 //each point of perception above 8 increases standard accuracy by 4.
 			BB.bonus_accuracy += (user.STAPER - 8) //Also, increases bonus accuracy by 1, which cannot fall off due to distance.
+			if(user.STAPER > 10) // Every point over 10 PER adds 10% damage
+				BB.damage = BB.damage * (user.STAPER / 10)
+		BB.damage *= damfactor // Apply bow's inherent damage multiplier regardless of PER
 		BB.bonus_accuracy += (user.mind.get_skill_level(/datum/skill/combat/bows) * 5) //+5 accuracy per level in bows. Bonus accuracy will not drop-off.
 	. = ..()
 
