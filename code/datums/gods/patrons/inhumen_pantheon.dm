@@ -36,7 +36,7 @@
 /datum/patron/inhumen/matthios 
 	name = "Matthios"
 	domain = "God of Thievery, Ill-Gotten Gains, and Wealth"
-	desc = "Man who stole a spark of the divine, becoming a powerful yet shunned Saint. Gifted his lessons of thievery and subversion to his devoted followers."
+	desc = "Once a man who stole a spark of the divine, becoming a powerful yet shunned Saint. Gifted his lessons of thievery and subversion to his devoted followers."
 	flaws = "Pride, Greed, Orneryness"
 	worshippers = "Outlaws, Robbers, Downtrodden Peasantry"
 	sins = "Clumsiness, Stupidity, Humility"
