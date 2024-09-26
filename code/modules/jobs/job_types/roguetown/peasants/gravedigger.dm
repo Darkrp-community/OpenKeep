@@ -48,5 +48,8 @@
 		H.change_stat("strength", 1)
 		H.change_stat("intelligence", -2)
 		H.change_stat("speed", 1)
+		H.change_stat("fortune", -1) // Tradeoff for never being cursed when unearthing graves.
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Operating with corpses every day.
+	ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC) // In case they need to move tombs or anything.
+

@@ -4,11 +4,13 @@
 	can_adjust = FALSE
 	body_parts_covered = GROIN|LEGS
 	resistance_flags = FLAMMABLE // Most made of cloth
+	prevent_crits = list(BCLASS_LASHING)
 	icon = 'icons/roguetown/clothing/pants.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/pants.dmi'
-	equip_sound = 'sound/blank.ogg'
-	drop_sound = 'sound/blank.ogg'
-	pickup_sound =  'sound/blank.ogg'
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	sleevetype = "leg"
 	equip_delay_self = 30
@@ -108,7 +110,7 @@
 //	adjustable = CAN_CADJUST
 	sewrepair = TRUE
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_LASHING, BCLASS_BITE)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
 	r_sleeve_status = SLEEVE_NORMAL
@@ -141,12 +143,17 @@
 	sewrepair = FALSE
 	armor = list("melee" = 100, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 300
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
 	armor_class = ARMOR_CLASS_MEDIUM
 	resistance_flags = FIRE_PROOF
 	blocksound = CHAINHIT
+	equip_delay_self = 25
+	unequip_delay_self = 25
 	var/do_sound = FALSE
+	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+	pickup_sound = "rustle"
+	break_sound = 'sound/foley/breaksound.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
@@ -168,12 +175,17 @@
 	sewrepair = FALSE
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 500
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	armor_class = ARMOR_CLASS_HEAVY
 	blocksound = PLATEHIT
+	equip_delay_self = 30
+	unequip_delay_self = 30
 	resistance_flags = FIRE_PROOF
 	var/do_sound = FALSE
+	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	pickup_sound = "rustle"
+	break_sound = 'sound/foley/breaksound.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
@@ -201,7 +213,7 @@
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	detail_tag = "_detail"
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_BITE, BCLASS_LASHING, BCLASS_TWIST)
 	colorgrenz = TRUE
 
 /obj/item/clothing/under/roguetown/grenzelpants/update_icon()
