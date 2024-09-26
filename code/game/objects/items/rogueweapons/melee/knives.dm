@@ -172,7 +172,6 @@
 /obj/item/rogueweapon/huntingknife/idagger/steel/dirk
 	name = "fanged dagger"
 	desc = "A dagger modeled after the fang of an anthrax spider."
-	force = 14
 	experimental_inhand = TRUE
 	experimental_onhip = TRUE
 	experimental_onback = TRUE
