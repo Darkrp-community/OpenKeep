@@ -41,7 +41,7 @@
 	charge_max = 30 SECONDS
 	max_targets = 0
 	cast_without_targets = TRUE
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross)
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/holy
 	invocation = "The Undermaiden rebukes!"

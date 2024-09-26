@@ -56,7 +56,6 @@
 #define SPAN_CLOWN "clown"
 
 #define SPAN_SINGING "singing"
-#define span_singing(str) ("<span class='singing'>" + str + "</span>")
 #define MODE_SING "%"
 
 #define SPAN_GEN "say"

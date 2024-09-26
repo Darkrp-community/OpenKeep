@@ -1,4 +1,4 @@
-//Basic
+// Catalyst. This reagent combined with normal potion reagent makes the strong potion reagent. Reactions defined by the end of this doccument
 /datum/reagent/additive
 	name = "additive"
 	reagent_state = LIQUID
@@ -15,12 +15,13 @@
 	alpha = 173
 
 /datum/reagent/medicine/healthpot/on_mob_life(mob/living/carbon/M)
-	M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
-	M.adjustBruteLoss(-2*REM, 0)
-	M.adjustFireLoss(-2*REM, 0)
-	M.adjustOxyLoss(-1, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
-	M.adjustCloneLoss(-2*REM, 0)
+	if(volume > 0.99)
+		M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
+		M.adjustBruteLoss(-2*REM, 0)
+		M.adjustFireLoss(-2*REM, 0)
+		M.adjustOxyLoss(-1, 0)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
+		M.adjustCloneLoss(-2*REM, 0)
 	..()
 	. = 1
 
@@ -33,12 +34,13 @@
 	metabolization_rate = REAGENTS_METABOLISM * 10
 
 /datum/reagent/medicine/stronghealth/on_mob_life(mob/living/carbon/M)
-	M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
-	M.adjustBruteLoss(-8*REM, 0)
-	M.adjustFireLoss(-8*REM, 0)
-	M.adjustOxyLoss(-5, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
-	M.adjustCloneLoss(-5*REM, 0)
+	if(volume > 0.99)
+		M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
+		M.adjustBruteLoss(-8*REM, 0)
+		M.adjustFireLoss(-8*REM, 0)
+		M.adjustOxyLoss(-5, 0)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
+		M.adjustCloneLoss(-5*REM, 0)
 	..()
 	. = 1
 
@@ -54,7 +56,8 @@
 	alpha = 173
 
 /datum/reagent/medicine/manapot/on_mob_life(mob/living/carbon/M)
-	M.rogstam_add(100)
+	if(volume > 0.99)
+		M.rogstam_add(100)
 	..()
 	. = 1
 
@@ -66,7 +69,8 @@
 	metabolization_rate = REAGENTS_METABOLISM * 10
 
 /datum/reagent/medicine/strongmana/on_mob_life(mob/living/carbon/M)
-	M.rogstam_add(200)
+	if(volume > 0.99)
+		M.rogstam_add(200)
 	..()
 	. = 1
 
@@ -80,7 +84,8 @@
 	metabolization_rate = REAGENTS_METABOLISM
 
 /datum/reagent/medicine/antidote/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-4, 0)
+	if(volume > 0.99)
+		M.adjustToxLoss(-4, 0)
 	..()
 	. = 1
 
@@ -93,7 +98,8 @@
 	metabolization_rate = 30 * REAGENTS_METABOLISM
 
 /datum/reagent/medicine/diseasecure/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-6, 0)
+	if(volume > 0.99)
+		M.adjustToxLoss(-8, 0)
 	..()
 	. = 1
 
@@ -219,6 +225,9 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	else
 		M.add_nausea(3) // so one berry or one dose (one clunk of extracted poison, 5u) will make you really sick and a hair away from crit.
 		M.adjustToxLoss(2)
+	if(volume > 0.99)
+		M.add_nausea(9)
+		M.adjustToxLoss(3, 0)
 	return ..()
 
 
@@ -237,6 +246,9 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	else
 		M.add_nausea(2)
 		M.adjustToxLoss(4.5) // just enough so 5u will kill you dead with no help
+	if(volume > 0.99)
+		M.add_nausea(20)
+		M.adjustToxLoss(12, 0)
 	return ..()
 
 
@@ -281,8 +293,9 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	metabolization_rate = 0.5
 
 /datum/reagent/toxin/fyritiusnectar/on_mob_life(mob/living/carbon/M)
-	M.add_nausea(9)
-	M.adjustFireLoss(2, 0)
-	M.adjust_fire_stacks(1)
-	M.IgniteMob()
+	if(volume > 0.99)
+		M.add_nausea(9)
+		M.adjustFireLoss(2, 0)
+		M.adjust_fire_stacks(1)
+		M.IgniteMob()
 	return ..()

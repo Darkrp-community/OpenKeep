@@ -377,13 +377,31 @@
 	craftdiff = 1
 	skillcraft = /datum/skill/craft/engineering
 
+/datum/crafting_recipe/roguetown/recurve
+	name = "recurve bow"
+	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve)
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+	/obj/item/natural/fibers = 4)
+	craftdiff = 1
+	skillcraft = /datum/skill/craft/carpentry
+
 /datum/crafting_recipe/roguetown/handmadebow
 	name = "wooden bow"
 	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow)
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 	/obj/item/natural/fibers = 6)
-	craftdiff = 3
+	craftdiff = 2
 	skillcraft = /datum/skill/craft/carpentry
+
+/datum/crafting_recipe/roguetown/longbow
+	name = "longbow"
+	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long)
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+	/obj/item/natural/fibers = 8,
+	/obj/item/reagent_containers/food/snacks/fat)
+	skillcraft = /datum/skill/craft/carpentry
+	structurecraft = /obj/machinery/light/rogue/campfire
+	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/flint
 	name = "flint"

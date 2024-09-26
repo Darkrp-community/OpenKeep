@@ -45,6 +45,8 @@
 
 /datum/config_entry/flag/log_say	// log client say
 
+/datum/config_entry/flag/log_telepathy // log telepathic messages
+
 /datum/config_entry/flag/log_admin	// log admin actions
 	protection = CONFIG_ENTRY_LOCKED
 
@@ -201,16 +203,16 @@
 /datum/config_entry/string/banappeals
 
 /datum/config_entry/string/wikiurl
-	config_entry_value = ""
+	config_entry_value = "https://wiki.stonekeep.xyz/index.php"
 
 /datum/config_entry/string/forumurl
 	config_entry_value = ""
 
 /datum/config_entry/string/rulesurl
-	config_entry_value = ""
+	config_entry_value = "https://wiki.stonekeep.xyz/index.php/Rules"
 
 /datum/config_entry/string/githuburl
-	config_entry_value = ""
+	config_entry_value = "https://github.com/Darkrp-community/OpenKeep"
 
 /datum/config_entry/string/roundstatsurl
 

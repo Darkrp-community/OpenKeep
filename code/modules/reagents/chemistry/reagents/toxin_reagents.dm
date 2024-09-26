@@ -482,13 +482,22 @@
 	toxpwr = 0
 
 /datum/reagent/toxin/cyanide/on_mob_life(mob/living/carbon/M)
-	testing("toxin OML")
-	if(isdwarf(M))
-		M.add_nausea(10)
-		M.adjustToxLoss(1, 0)
-	else
-		M.add_nausea(20)
-		M.adjustToxLoss(3, 0)
+	M.add_nausea(20)
+	M.adjustToxLoss(3, 0)
+	return ..()
+
+/datum/reagent/toxin/killersice
+	name = "killersice"
+	description = "killersice"
+	reagent_state = LIQUID
+	color = "#FFFFFF"
+	metabolization_rate = 0.01
+	toxpwr = 0
+
+/datum/reagent/toxin/killersice/on_mob_life(mob/living/carbon/M)
+	testing("Someone was poisoned")
+	if(volume > 0.95)
+		M.adjustToxLoss(10, 0)
 	return ..()
 
 /datum/reagent/toxin/bad_food

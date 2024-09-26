@@ -43,7 +43,7 @@
 	beltl = /obj/item/rogueweapon/mace/cudgel
 	shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 	head = /obj/item/clothing/head/roguetown/grenzelhofthat
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/greatsword/zwei
 	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)

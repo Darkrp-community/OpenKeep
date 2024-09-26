@@ -304,7 +304,6 @@
 	id = "net"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/netted
 	effectedstats = list("speed" = -5, "endurance" = -2)
-	duration = 3 MINUTES
 	
 /datum/status_effect/debuff/netted/on_apply()
 		. = ..()
@@ -315,9 +314,11 @@
 	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
-		C.legcuffed = null
-		C.update_inv_legcuffed()
 		C.remove_movespeed_modifier(MOVESPEED_ID_NET_SLOWDOWN)
+		// Already handled in uncuff()
+		/*
+		C.legcuffed = null
+		C.update_inv_legcuffed()*/
 
 
 

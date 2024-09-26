@@ -549,7 +549,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 		if(2) //zizombie Warrior
@@ -561,7 +561,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 		if(3) //zizombie Warrior
@@ -573,7 +573,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 		if(4) //zizombie Warrior
@@ -586,7 +586,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 		if(5) //zizombie Warrior
@@ -598,7 +598,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 

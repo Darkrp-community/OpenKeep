@@ -143,6 +143,14 @@
 	createditem_num = 2
 	craftdiff = 0
 
+/datum/anvil_recipe/tools/mantrap
+	name = "mantrap"
+	recipe_name = "a mantrap"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/restraints/legcuffs/beartrap/crafted
+	appro_skill = /datum/skill/craft/traps
+	craftdiff = 0
+
 /datum/anvil_recipe/tools/pick
 	name = "Pick (+s)"
 	recipe_name = "a digging Pick"
