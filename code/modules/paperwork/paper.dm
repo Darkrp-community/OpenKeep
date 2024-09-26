@@ -289,11 +289,9 @@
 	update_icon_state()
 
 
-/obj/item/paper/proc/parsepencode(t, obj/item/P, mob/user, iscrayon = 0)
+/obj/item/paper/proc/parsepencode(t, obj/item/pen/P, mob/user, iscrayon)
 	if(length(t) < 1)		//No input means nothing needs to be parsed
 		return
-
-	t = parsemarkdown(t, user, iscrayon)
 
 	if(!iscrayon)
 		if(istype(P, /obj/item/pen))
@@ -308,7 +306,10 @@
 		var/obj/item/toy/crayon/C = P
 		t = "<font face=\"[CRAYON_FONT]\" color=[C.paint_color]><b>[t]</b></font>"
 
-	// Count the fields
+	t = parsemarkdown(t, user, iscrayon) // lets try and use both, TG and bay markdown (pencode). i hope nothing will go wrong..? technically they cant overlap
+	t = pencode2html(t)
+
+	//Count the fields
 	var/laststart = 1
 	while(fields < 15)
 		var/i = findtext(t, "<span class=\"paper_field\">", laststart)
@@ -419,6 +420,18 @@
 	dat += "<a href='?src=[REF(src)];close=1' style='position:absolute;right:50px'>Close</a>"
 	dat += "</body></html>"
 	user << browse(dat, "window=reading;size=500x400;can_close=1;can_minimize=0;can_maximize=0;can_resize=1;titlebar=0;border=0")
+
+/obj/item/paper/attack_right(mob/user)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/obj/item/I = H.get_active_held_item()
+		if(istype(I, /obj/item/natural/feather) || istype(I, /obj/item/natural/thorn))
+			var/n_name = stripped_input(usr, "What would you like to label this?", "ROGUETOWN", null, MAX_NAME_LEN)
+			if(n_name)
+				name = n_name
+				playsound(src, 'sound/items/write.ogg', 100, FALSE)
+		return
+	return ..()
 
 /obj/item/paper/attackby(obj/item/P, mob/living/carbon/human/user, params)
 	if(resistance_flags & ON_FIRE)

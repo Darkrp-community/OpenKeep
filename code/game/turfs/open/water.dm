@@ -184,6 +184,20 @@
 					water_volume = clamp(water_volume + C.reagents.total_volume, 1, water_maximum)
 				to_chat(user, "<span class='notice'>I pour the contents of [C] into [src].</span>")
 			return
+	if(istype(C, /obj/item/paper))
+		var/obj/item/paper/PA = C
+		if(!PA.info)
+			return
+		to_chat(user, "<span class='notice'>I begin trying to wash the ink off of \the [PA].</span>")
+		if(do_after(user, 8, target = src))
+			if(prob(25))
+				to_chat(user, "<span class='notice'>The parchment is ruined.</span>")
+				qdel(PA)
+				return
+			PA.info = null
+			PA.update_icon()
+			to_chat(user, "<span class='notice'>I succeed.</span>")
+		return
 	. = ..()
 
 /turf/open/water/attack_right(mob/user)
