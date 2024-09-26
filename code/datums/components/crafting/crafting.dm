@@ -258,7 +258,7 @@
 							continue
 						if(!prob(prob2craft))
 							if(user.client?.prefs.showrolls)
-								to_chat(user, "<span class='danger'>I've failed to craft [R.name]... [prob2craft]%</span>")
+								to_chat(user, "<span class='danger'>I've failed to craft [R.name]. (Success chance: [prob2craft]%)</span>")
 								continue
 								to_chat(user, "<span class='danger'>I've failed to craft [R.name].</span>")
 							continue
