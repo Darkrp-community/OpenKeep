@@ -22,7 +22,8 @@
 	outfit = /datum/outfit/job/roguetown/servant
 	display_order = JDO_SERVANT
 	give_bank_account = TRUE
-	bypass_lastclass = FALSE
+	min_pq = -20
+	bypass_lastclass = TRUE
 
 /datum/outfit/job/roguetown/servant/pre_equip(mob/living/carbon/human/H)
 	..()

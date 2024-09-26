@@ -299,7 +299,7 @@
 "fZ" = (/turf/closed/wall/mineral/rogue/stone,/area/rogue/indoors/town/church)
 "ga" = (/obj/machinery/light/rogue/firebowl/standing,/turf/open/floor/rogue/tile,/area/rogue/indoors/town/church)
 "gb" = (/obj/structure/closet/crate/chest,/obj/item/reagent_containers/food/snacks/egg,/obj/item/reagent_containers/food/snacks/egg,/obj/item/reagent_containers/food/snacks/egg,/obj/item/reagent_containers/food/snacks/grown/wheat,/obj/item/reagent_containers/food/snacks/grown/wheat,/obj/item/reagent_containers/food/snacks/butter,/obj/item/reagent_containers/food/snacks/rogue/meat/sausage,/obj/item/reagent_containers/food/snacks/rogue/meat/steak,/turf/open/floor/rogue/tile{icon_state = "chess"},/area/rogue/indoors/town/church)
-"gc" = (/obj/structure/table/wood,/obj/item/clothing/neck/roguetown/psicross,/turf/open/floor/rogue/tile,/area/rogue/indoors/town/church)
+"gc" = (/obj/structure/table/wood,/obj/item/clothing/neck/roguetown/psycross,/turf/open/floor/rogue/tile,/area/rogue/indoors/town/church)
 "gd" = (/obj/structure/closet/crate/roguecloset,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/turf/open/floor/rogue/tile/tilerg,/area/rogue/indoors/town)
 "ge" = (/obj/structure/rack/rogue,/obj/item/rogueweapon/tongs,/turf/open/floor/rogue/ruinedwood{icon_state = "horzw"},/area/rogue/indoors/town/dwarfin)
 "gf" = (/obj/structure/table/wood{icon_state = "map2"},/turf/open/floor/rogue/carpet/lord/center,/area/rogue/indoors/town/manor)

@@ -36,7 +36,7 @@
 
 /mob/
 	var/can_do_sex = TRUE
-	var/virginity = FALSE
+	//var/virginity = FALSE
 	var/deviant = FALSE
 
 /mob/living/carbon/human/MiddleMouseDrop_T(mob/living/target, mob/living/user)

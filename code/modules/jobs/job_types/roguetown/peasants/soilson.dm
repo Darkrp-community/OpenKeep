@@ -24,6 +24,7 @@
 	outfit = /datum/outfit/job/roguetown/farmer
 	display_order = 24
 	give_bank_account = 20
+	min_pq = -100
 	selection_color = "#553e01"
 	whitelist_req = FALSE
 

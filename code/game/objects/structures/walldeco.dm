@@ -85,8 +85,8 @@
 	icon_state = "serpent"
 
 /obj/structure/fluff/walldeco/masonflag
-	name = "mason's guild"
-	desc = ""
+	name = "Maker's Guild flag"
+	desc = "A flag bearing the logo of the Maker's Guild."
 	icon_state = "mason"
 
 /obj/structure/fluff/walldeco/maidendrape

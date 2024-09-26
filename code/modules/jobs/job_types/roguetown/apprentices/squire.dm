@@ -20,7 +20,8 @@
 	outfit = /datum/outfit/job/roguetown/squire
 	display_order = JDO_SQUIRE
 	give_bank_account = TRUE
-	bypass_lastclass = FALSE
+	min_pq = 0
+	bypass_lastclass = TRUE
 	selection_color = "#304529"
 
 /datum/outfit/job/roguetown/squire/pre_equip(mob/living/carbon/human/H)

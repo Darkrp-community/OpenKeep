@@ -247,7 +247,7 @@
 	var/bulb_emergency_pow_mul = 0.75	// the multiplier for determining the light's power in emergency mode
 	var/bulb_emergency_pow_min = 0.5	// the minimum value for the light's power in emergency mode
 
-	var/fueluse = -1
+	var/fueluse = -1 // How much fuel the machinery starts with. At -1, it is never turned off with the passing of time.
 
 /obj/machinery/light/broken
 	status = LIGHT_BROKEN

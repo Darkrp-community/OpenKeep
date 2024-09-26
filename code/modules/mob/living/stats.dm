@@ -22,6 +22,16 @@
 /mob/living/proc/init_faith()
 	patron = GLOB.patronlist[/datum/patron/godless]
 
+/mob/living/proc/set_patron(datum/patron/new_patron)
+	if(!new_patron)
+		return TRUE
+	if(ispath(new_patron))
+		new_patron = GLOB.patronlist[new_patron]
+	if(!istype(new_patron))
+		return TRUE
+	patron = new_patron
+	return TRUE
+
 /datum/species
 	var/list/specstats = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 0, "endurance" = 0, "speed" = 0, "fortune" = 0)
 	var/list/specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 0, "endurance" = 0, "speed" = 0, "fortune" = 0)

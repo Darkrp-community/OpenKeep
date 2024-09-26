@@ -2,7 +2,7 @@
 
 /obj/structure/roguemachine/mail
 	name = "HERMES"
-	desc = ""
+	desc = "The left side has a slot for incoming letters, the right for sending them." // left hand to get incoming mail, right to send
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "mail"
 	density = FALSE

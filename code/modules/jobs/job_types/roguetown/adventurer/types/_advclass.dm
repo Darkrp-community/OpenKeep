@@ -44,15 +44,7 @@
 		H.equipOutfit(outfit)
 		H.adjust_triumphs(-triumphs_cost)
 
-	post_equip(H)
-
 	H.advjob = name
-
-	//sleep(1)
-	//testing("[H] spawn troch")
-	var/obj/item/flashlight/flare/torch/T = new()
-	T.spark_act()
-	H.put_in_hands(T, forced = TRUE)
 
 	var/turf/TU = get_turf(H)
 	if(TU)
@@ -67,10 +59,20 @@
 			to_chat(M, "<span class='info'>[H.real_name] is the [name].</span>")
 		GLOB.billagerspawns -= H
 
+	// Remove the stun first, then grant us the torch.
+	for(var/datum/status_effect/incapacitating/stun/S in H.status_effects)
+		H.remove_status_effect(S)
+
+	post_equip(H)
+
 /datum/advclass/proc/post_equip(mob/living/carbon/human/H)
 	addtimer(CALLBACK(H,TYPE_PROC_REF(/mob/living/carbon/human, add_credit)), 20)
 	if(cmode_music)
 		H.cmode_music = cmode_music
+	sleep(5)
+	var/obj/item/flashlight/flare/torch/T = new()
+	T.spark_act()
+	H.put_in_hands(T, forced = TRUE)
 
 /*
 	Whoa! we are checking requirements here!

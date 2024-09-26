@@ -21,7 +21,7 @@
 
 	display_order = JDO_DRIFTER
 	show_in_credits = TRUE
-	min_pq = -999
+	min_pq = -20
 
 	total_positions = 0
 	spawn_positions = 0
