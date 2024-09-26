@@ -1053,6 +1053,21 @@
 	wbalance = -1 // Heavy
 	sellprice = 100
 
+/obj/item/rogueweapon/sword/sabre/elven
+	name = "glaive"
+	desc = "A once elegant blade of mythril, diminishing under the suns gaze"
+	icon_state = "spidersaber"
+	max_integrity = 350
+	smeltresult = /obj/item/ingot/steel
+	gripped_intents = null
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/short)
+	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
+	swingsound = BLADEWOOSH_SMALL
+	minstr = 4
+	wdefense = 5
+	wbalance = 1
+
+
 //Rapiers
 /obj/item/rogueweapon/sword/rapier
 	name = "rapier"
