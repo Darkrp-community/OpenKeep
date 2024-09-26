@@ -209,3 +209,44 @@
 			return 30
 
 	return damage
+
+/*
+* Family Tree subsystem helpers
+* I was tired of editing indvidual values
+* across fluff.dm and death.dm so im simplifying
+* the process. They check with these procs that
+* i can edit from here. -IP
+*/
+/mob/living/carbon/human/proc/RomanticPartner(mob/living/carbon/human/H)
+	if(!ishuman(H))
+		return
+	if(spouse_name == H.real_name)
+		return TRUE
+
+/mob/living/carbon/human/proc/IsWedded(mob/living/carbon/human/wedder)
+	if(spouse_name)
+		return TRUE
+
+/mob/living/carbon/human/proc/MarryTo(mob/living/carbon/human/spouse)
+	if(!ishuman(spouse))
+		return
+	var/datum/heritage/brides_family = spouse.family_datum
+	var/groommale = FALSE
+	var/bridemale = FALSE
+	if(gender == MALE)
+		groommale = TRUE
+	if(spouse.gender == MALE)
+		bridemale = TRUE
+	spouse_name = spouse.real_name
+	spouse.spouse_name = real_name
+	//If the bride is male then we assign her status in the family as father.
+	if(family_datum && (family_datum.patriarch == src || family_datum.matriarch == src))
+		family_datum.TransferFamilies(spouse, bridemale ? FAMILY_FATHER : FAMILY_MOTHER)
+		return
+	if(brides_family && (brides_family.patriarch == spouse || brides_family.matriarch == spouse))
+		brides_family.TransferFamilies(spouse, groommale ? FAMILY_FATHER : FAMILY_MOTHER)
+		return
+
+//Perspective stranger looks at --> src
+/mob/living/carbon/human/proc/ReturnRelation(mob/living/carbon/human/stranger)
+	return family_datum.ReturnRelation(src, stranger)

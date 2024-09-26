@@ -1,7 +1,7 @@
 /datum/getrev
 	var/commit  // git rev-parse HEAD
 	var/date
-	var/originmastercommit  // git rev-parse origin/master
+	var/originmastercommit  // git rev-parse origin/main
 	var/list/testmerge = list()
 
 /datum/getrev/New()
@@ -19,6 +19,7 @@
 	// goes to DD log and config_error.txt
 	log_world(get_log_message())
 
+
 /datum/getrev/proc/get_log_message()
 	var/list/msg = list()
 	msg += "Running /tg/ revision: [date]"
@@ -27,8 +28,8 @@
 
 	for(var/line in testmerge)
 		var/datum/tgs_revision_information/test_merge/tm = line
-		msg += "Test merge active of PR #[tm.number] commit [tm.commit]"
-		SSblackbox.record_feedback("associative", "testmerged_prs", 1, list("number" = "[tm.number]", "commit" = "[tm.commit]", "title" = "[tm.title]", "author" = "[tm.author]"))
+		msg += "Test merge active of PR #[tm.number] commit [tm.head_commit]"
+		SSblackbox.record_feedback("associative", "testmerged_prs", 1, list("number" = "[tm.number]", "commit" = "[tm.head_commit]", "title" = "[tm.title]", "author" = "[tm.author]"))
 
 	if(commit && commit != originmastercommit)
 		msg += "HEAD: [commit]"

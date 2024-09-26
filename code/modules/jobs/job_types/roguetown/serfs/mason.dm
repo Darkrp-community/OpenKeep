@@ -23,6 +23,7 @@
 	display_order = JDO_MASON
 	bypass_lastclass = TRUE
 	give_bank_account = 8
+	min_pq = -50
 
 /datum/outfit/job/roguetown/mason/pre_equip(mob/living/carbon/human/H)
 	..()
