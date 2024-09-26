@@ -106,7 +106,14 @@
 	var/advjob = null
 	var/canseebandits = FALSE
 
-	var/marriedto
+	//Familytree datum
+	//I dont know how to do UI huds so this will have to do for now.
+	var/family_UI = FALSE
+	var/spouse_name
+	var/setspouse
+	var/familytree_pref = FAMILY_NONE
+	var/datum/heritage/family_datum
+	var/list/temp_ui_list = list()
 
 	var/has_stubble = TRUE
 
@@ -122,6 +129,9 @@
 
 	var/merctype = 0 // Used for mercenary backgrounds - check mail.dm
 	var/tokenclaimed = FALSE // Check for one-time tri reward.
+
+	// Boolean. Usually set only to TRUE for non-Eoran church roles.
+	var/virginity = FALSE
 
 	possible_rmb_intents = list(/datum/rmb_intent/feint,\
 	/datum/rmb_intent/aimed,\

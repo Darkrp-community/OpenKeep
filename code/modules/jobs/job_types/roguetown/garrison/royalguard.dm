@@ -22,7 +22,7 @@
 
 	outfit = /datum/outfit/job/roguetown/royalguard
 	give_bank_account = 30
-	min_pq = -4
+	min_pq = 2
 	selection_color = "#920909"
 
 	cmode_music = 'sound/music/combat_guard.ogg'
@@ -41,7 +41,7 @@
 			S.name = "knight's tabard ([index])"
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
-		var/honorary = "Ser"
+		var/honorary = "Sir"
 		if(H.gender == FEMALE)
 			honorary = "Dame"
 		H.real_name = "[honorary] [prev_real_name]"

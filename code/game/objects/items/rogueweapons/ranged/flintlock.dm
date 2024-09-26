@@ -37,19 +37,21 @@
 	var/powdered = FALSE
 	var/wound = FALSE
 
-	/obj/item/gun/ballistic/revolver/grenadelauncher/pistol/update_icon()
-		// Update the icon based on the cocked state and whether the ramrod is inserted
-		if(cocked && ramrod_inserted)
+/obj/item/gun/ballistic/revolver/grenadelauncher/pistol/update_icon()
+	// Update the icon based on the cocked state and whether the ramrod is inserted
+	if(cocked)
+		if(ramrod_inserted)
 			icon_state = "puffer_cocked_ramrod"
-		else if(cocked && !ramrod_inserted)
+		else
 			icon_state = "puffer_cocked"
-		else if(!cocked && ramrod_inserted)
+	else
+		if(ramrod_inserted)
 			icon_state = "puffer_uncocked_ramrod"
 		else
 			icon_state = "puffer_uncocked"
 
-		// Update the visual icon
-		update_icon_state()
+	// Update the visual icon
+	update_icon_state()
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/shoot_live_shot(mob/living/user, pointblank, mob/pbtarget, message)
 	..()

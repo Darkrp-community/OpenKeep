@@ -39,7 +39,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 4, TRUE)
 		H.change_stat("strength", 1)
 		H.change_stat("intelligence", -2)

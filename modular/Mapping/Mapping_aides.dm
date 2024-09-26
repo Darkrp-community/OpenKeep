@@ -309,7 +309,7 @@
 	icon_state = "fireplace1"
 	base_state = "fireplace"
 	icon = 'icons/roguetown/misc/fireplace64.dmi'
-	fueluse = 9999999999
+	fueluse = -1
 	pixel_x = -16
 	climb_offset = 4
 
