@@ -2155,18 +2155,29 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "spicy sweet malty overtones"
 	color = "#f1b5ff"
 
+/datum/reagent/consumable/ethanol/beer/real
+	name = "Stout"
+	nutriment_factor = 0.1
+	boozepwr = 30
+	quality = DRINK_VERYGOOD
+	taste_description = "hopped beer"
+	glass_name = "glass of beer"
+	hydration_factor = 15
+
 // Elf Production - LEAF-LOVERS MOTHERFUCKER
 
 /datum/reagent/consumable/ethanol/beer/aurorian
 	name = "Aurorian"
 	boozepwr = 5
 	taste_description = "subtle herbacious undertones"
+	quality = DRINK_NICE
 	color = "#5D8A8A"
 
 /datum/reagent/consumable/ethanol/beer/fireleaf // cabbbage
 	name = "Fireleaf"
 	boozepwr = 2
 	taste_description = "bland liquor"
+	quality = DRINK_NICE
 	color = "#475e45"
 
 // Dwarven Production - Best in the Realms
@@ -2175,18 +2186,21 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	name = "Butterhairs"
 	boozepwr = 30
 	taste_description = "buttery richness"
+	quality = DRINK_NICE
 	color = "#5D8A8A"
 
 /datum/reagent/consumable/ethanol/beer/stonebeards
 	name = "Stonebeard Reserve"
 	boozepwr = 40
 	taste_description = "potent oatlike liquor"
+	quality = DRINK_NICE
 	color = "#5D8A8A"
 
 /datum/reagent/consumable/ethanol/beer/voddena // Not vodka. Trust me.
 	name = "Voddena"
 	boozepwr = 55  // holy shit
 	taste_description = "burning starchy wet dirt"
+	quality = DRINK_NICE
 	color = "#4b443c"
 
 // WINE - Fancy.. And yes: all drinks are beer, technically. Cope. Seethe. I didnt code it like this.
@@ -2224,10 +2238,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	name = "Elven Red"
 	boozepwr = 15
 	taste_description = "delectable fruity notes"
+	quality = DRINK_FANTASTIC
 	color = "#6C0000"
 
 /datum/reagent/consumable/ethanol/beer/elfblue
 	name = "Valmora Blue"
 	boozepwr = 50
 	taste_description = "saintly sweetness"
+	quality = DRINK_FANTASTIC
 	color = "#2C9DAF"

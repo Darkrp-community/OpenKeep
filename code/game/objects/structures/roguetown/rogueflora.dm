@@ -225,6 +225,9 @@
 	max_integrity = 10
 	layer = 4.1
 
+/obj/structure/flora/roguegrass/water/reeds/hops
+	debris = list(/obj/item/reagent_containers/food/snacks/grown/roguehops = 1)
+
 /obj/structure/flora/roguegrass/water/update_icon()
 	dir = pick(GLOB.cardinals)
 
