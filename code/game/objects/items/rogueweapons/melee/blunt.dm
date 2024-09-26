@@ -10,6 +10,7 @@
 	item_state = "mace_greyscale"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	equip_sound = "rustle"
 	sharpness = IS_BLUNT
 	//dropshrink = 0.75
 	wlength = WLENGTH_NORMAL

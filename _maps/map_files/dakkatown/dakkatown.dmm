@@ -788,7 +788,7 @@
 "qD" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light/rogue/firebowl/church,/turf/open/floor/rogue/greenstone,/area/rogue/under/town/ruin)
 "qF" = (/obj/machinery/light/rogue/wallfire/candle/blue,/turf/open/floor/rogue/blocks/newstone/alt,/area/rogue/indoors/town)
 "qG" = (/obj/structure/rack/rogue,/obj/item/rogueweapon/mace/wsword,/obj/item/rogueweapon/mace/wsword,/turf/open/floor/rogue/rooftop/green{dir = 1},/area/rogue/outdoors/town/roofs)
-"qH" = (/obj/structure/closet/crate/roguecloset/dark,/obj/item/clothing/cloak/raincloak/mortus,/obj/item/clothing/cloak/raincloak/mortus,/obj/item/clothing/neck/roguetown/psicross/necra,/turf/open/floor/rogue/blocks/newstone/alt,/area/rogue/under/town/basement)
+"qH" = (/obj/structure/closet/crate/roguecloset/dark,/obj/item/clothing/cloak/raincloak/mortus,/obj/item/clothing/cloak/raincloak/mortus,/obj/item/clothing/neck/roguetown/psycross/silver/necra,/turf/open/floor/rogue/blocks/newstone/alt,/area/rogue/under/town/basement)
 "qI" = (/turf/closed/wall/mineral/rogue/decostone/long{dir = 1},/area/rogue/outdoors/town)
 "qJ" = (/obj/structure/mineral_door/wood/deadbolt{dir = 8; name = "Storage"},/turf/open/floor/rogue/cobble,/area/rogue/indoors/town/manor)
 "qK" = (/obj/item/roguebin/water,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue/indoors/town/church)

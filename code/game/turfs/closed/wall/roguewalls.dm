@@ -46,6 +46,8 @@
 	damage_deflection = 10
 
 /turf/closed/wall/mineral/rogue/stone/window
+	name = "stone murder hole"
+	desc = "A wall of stone with convenient small indents on it, perfect to let loose arrows against invaders."
 	opacity = FALSE
 	max_integrity = 800
 

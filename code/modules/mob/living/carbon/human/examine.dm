@@ -82,9 +82,13 @@
 			. += "<span class='info'>[capitalize(m2)] [skin_tone_wording] is [skin_tone_seen][slop_lore_string]</span>"
 
 		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
-			if(H.marriedto == real_name)
+			var/mob/living/carbon/human/stranger = user
+			if(RomanticPartner(stranger))
 				. += "<span class='love'>It's my spouse.</span>"
+			if(family_datum == stranger.family_datum && family_datum)
+				var/family_text = ReturnRelation(user)
+				if(family_text)
+					. += family_text
 
 		if(real_name in GLOB.excommunicated_players)
 			. += "<span class='userdanger'>HERETIC! SHAME!</span>"
@@ -464,7 +468,7 @@
 	if(!appears_dead)
 		if(skipface && user.has_flaw(/datum/charflaw/hunted))
 			user.add_stress(/datum/stressevent/hunted)
-	
+
 	// The Assassin's profane dagger can sniff out their targets, even masked.
 	if(HAS_TRAIT(user, TRAIT_ASSASSIN) && (has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(src, TRAIT_ZIZOID_HUNTED)))
 		for(var/obj/item/I in user)
@@ -474,7 +478,7 @@
 	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
 	for(var/line in lines)
 		. += span_info(line)
-	
+
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))
 		. += trait_exam
