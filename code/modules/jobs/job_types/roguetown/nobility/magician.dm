@@ -61,7 +61,6 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/ethereal_jaunt)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse)
 		if(H.age == AGE_OLD)
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/courtmage
 			H.change_stat("speed", -1)
