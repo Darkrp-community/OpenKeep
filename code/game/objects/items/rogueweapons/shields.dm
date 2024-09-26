@@ -21,6 +21,7 @@
 	resistance_flags = FLAMMABLE
 	can_parry = TRUE
 	associated_skill = /datum/skill/combat/shields
+	destroy_sound = 'sound/foley/shielddestroy.ogg'
 	wdefense = 5
 	var/coverage = 90
 	parrysound = "parrywood"
@@ -63,15 +64,23 @@
 /datum/intent/shield/bash
 	name = "bash"
 	icon_state = "inbash"
+	hitsound = list('sound/combat/shieldbash_wood.ogg')
 	chargetime = 0
+
+/datum/intent/shield/bash/metal
+	hitsound = list('sound/combat/shieldbash_metal.ogg')
 
 /datum/intent/shield/block
 	name = "block"
 	icon_state = "inblock"
 	tranged = 1 //we can't attack directly with this intent, but we can charge it
 	tshield = 1
-	chargetime = 0
+	chargetime = 5
+	hitsound = list('sound/combat/shieldbash_wood.ogg')
 	warnie = "shieldwarn"
+
+/datum/intent/shield/block/metal
+	hitsound = list('sound/combat/shieldbash_metal.ogg')
 
 /obj/item/rogueweapon/shield/wood
 	name = "wooden shield"
@@ -161,6 +170,7 @@
 	name = "ancient shield"
 	desc = "A gigantic, bronze reinforced shield that covers the entire body. An aasimar relic from an era long past."
 	icon_state = "boeotian"
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block/metal)
 	force = 20
 	throwforce = 10
 	throw_speed = 1
@@ -191,6 +201,7 @@
 	name = "kite shield"
 	desc = "A knightly, kite shaped steel shield, emblazoned with heraldry. \nBoasts superior coverage and durability, owed to its exquisite craftsmanship."
 	icon_state = "ironsh"
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block/metal)
 	force = 20
 	throwforce = 10
 	throw_speed = 1

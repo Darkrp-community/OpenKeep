@@ -170,7 +170,7 @@
 /obj/item/net/proc/ensnare(mob/living/carbon/C)
 	if(!C.legcuffed && C.get_num_legs(FALSE) >= 2)
 		visible_message("<span class='danger'>\The [src] ensnares [C]!</span>")
-		C.legcuffed = src
+		C.legcuffed = src 
 		forceMove(C)
 		C.update_inv_legcuffed()
 		SSblackbox.record_feedback("tally", "handcuffs", 1, type)
@@ -178,7 +178,17 @@
 		C.Knockdown(knockdown)
 		C.apply_status_effect(/datum/status_effect/debuff/netted)
 		playsound(src, 'sound/blank.ogg', 50, TRUE)
-	
+
+// Failsafe in case the item somehow ends up being destroyed
+/obj/item/net/Destroy()
+	if(iscarbon(loc))
+		var/mob/living/carbon/M = loc
+		if(M.legcuffed == src)
+			M.legcuffed = null
+			M.update_inv_legcuffed()
+			if(M.has_status_effect(/datum/status_effect/debuff/netted))
+				M.remove_status_effect(/datum/status_effect/debuff/netted)
+	return ..()	
 
 /obj/structure/noose
 	name = "noose"

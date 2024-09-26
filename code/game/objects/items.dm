@@ -8,7 +8,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 /obj/item
 	name = "item"
 	icon = 'icons/obj/items_and_weapons.dmi'
-	///icon state name for inhanf overlays
+	///icon state name for inhand overlays
 	var/item_state = null
 	///Icon file for left hand inhand overlays
 	var/lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
@@ -38,16 +38,17 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/item_flags = NONE
 
 	var/list/hitsound
+	// Boolean. Does this item play a sound?
 	var/usesound
-	///Used when yate into a mob
+	// Sound used when this item, when thrown, hits a mob.
 	var/mob_throw_hit_sound
 	///Sound used when equipping the item into a valid slot
-	var/equip_sound
-	///Sound uses when picking the item up (into my hands)
+	var/equip_sound = null
+	///Sound used when picking the item up (putting it on your hands)
 	var/pickup_sound = "rustle"
-	///Sound uses when dropping the item, or when its thrown.
+	///Sound used when dropping the item, or when it's thrown.
 	var/drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
-	//when being placed on a table play this instead
+	// Sound used when being placed on a table
 	var/place_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	var/list/swingsound = PUNCHWOOSH
 	var/list/parrysound = "parrywood"
@@ -62,26 +63,39 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/max_heat_protection_temperature //Set this variable to determine up to which temperature (IN KELVIN) the item protects against heat damage. Keep at null to disable protection. Only protects areas set by heat_protection flags
 	var/min_cold_protection_temperature //Set this variable to determine down to which temperature (IN KELVIN) the item protects against cold damage. 0 is NOT an acceptable number due to if(varname) tests!! Keep at null to disable protection. Only protects areas set by cold_protection flags
 
-	var/list/actions //list of /datum/action's that this item has.
-	var/list/actions_types //list of paths of action datums to give to the item on New().
+	// List of /datum/action's that this item has.
+	var/list/actions
+	// List of paths of action datums to give to the item on New().
+	var/list/actions_types
 
 	//Since any item can now be a piece of clothing, this has to be put here so all items share it.
-	var/flags_inv //This flag is used to determine when items in someone's inventory cover others. IE helmets making it so you can't see glasses, etc.
-	var/transparent_protection = NONE //you can see someone's mask through their transparent visor, but you can't reach it
+	//These flags are used to determine when items in someone's inventory cover others. IE helmets making it so you can't see glasses, etc.
+	var/flags_inv
+	// You can see someone's mask through their transparent visor, but you can't reach it
+	var/transparent_protection = NONE
 
 	var/interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_PICKUP
 
-	var/body_parts_covered = 0 //see setup.dm for appropriate bit flags
+	// Takes bitflags. See setup.dm for appropriate bit flags
+	var/body_parts_covered = 0
 	var/gas_transfer_coefficient = 1 // for leaking gas from turf to mask and vice-versa (for masks right now, but at some point, i'd like to include space helmets)
 	var/permeability_coefficient = 1 // for chemicals/diseases
 	var/siemens_coefficient = 1 // for electrical admittance/conductance (electrocution checks and shit)
-	var/slowdown = 0 // How much clothing is slowing you down. Negative values speeds you up
-	var/armor_penetration = 0 //percentage of armour effectiveness to remove
+	// How much clothing is slowing you down. Negative values speeds you up
+	var/slowdown = 0
+	// Value of armour effectiveness to remove. Since armor values can go over 100, this is no longer a percentage.
+	var/armor_penetration = 0
 	var/list/allowed = null //suit storage stuff.
-	var/equip_delay_self = 1 //In deciseconds, how long an item takes to equip; counts only for normal clothing slots, not pockets etc.
-	var/edelay_type = 1 //if 1, can be moving while equipping (for helmets etc)
-	var/equip_delay_other = 20 //In deciseconds, how long an item takes to put on another person
-	var/strip_delay = 40 //In deciseconds, how long an item takes to remove from another person
+	// In deciseconds, how long an item takes to equip; counts only for normal clothing slots, not pockets etc.
+	var/equip_delay_self = 1
+	// In deciseconds, how long does it take for us to take off a piece of clothing or equipment. Normally will have same value as equip_delay_self
+	var/unequip_delay_self = 1
+	// Boolean. If true, can be moving while equipping (for helmets etc)
+	var/edelay_type = 1
+	// In deciseconds, how long an item takes to be put on another person via the undressing menu.
+	var/equip_delay_other = 20
+	//In deciseconds, how long an item takes to remove from another person via the undressing menu.
+	var/strip_delay = 40
 	var/breakouttime = 0 // greater than 15 str get this isnstead
 	var/slipouttime = 0
 
@@ -97,15 +111,17 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	var/flags_cover = 0 //for flags such as GLASSESCOVERSEYES
 	var/heat = 0
-	///All items with sharpness of IS_SHARP or higher will automatically get the butchering component.
+	// All items with sharpness of IS_SHARP (1) or higher will automatically get the butchering component. See combat.dm for defines.
 	var/sharpness = IS_BLUNT
 
 	var/tool_behaviour = NONE
 	var/toolspeed = 1
 
 	var/block_chance = 0
-	var/hit_reaction_chance = 0 //If you want to have something unrelated to blocking/armour piercing etc. Maybe not needed, but trying to think ahead/allow more freedom
-	var/reach = 1 //In tiles, how far this weapon can reach; 1 for adjacent, which is default
+	//If you want to have something unrelated to blocking/armour piercing etc. Maybe not needed, but trying to think ahead/allow more freedom
+	var/hit_reaction_chance = 0
+	// Number of tiles for how far this weapon can reach. 1 is adjacent (default)
+	var/reach = 1 
 
 	//The list of slots by priority. equip_to_appropriate_slot() uses this list. Doesn't matter if a mob type doesn't have a slot.
 	var/list/slot_equipment_priority = null // for default list, see /mob/proc/equip_to_appropriate_slot()
@@ -121,16 +137,18 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	var/trigger_guard = TRIGGER_GUARD_NONE
 
-	///Used as the dye color source in the washing machine only (at the moment). Can be a hex color or a key corresponding to a registry entry, see washing_machine.dm
+	// Used as the dye color source in the washing machine only (at the moment). Can be a hex color or a key corresponding to a registry entry, see washing_machine.dm
 	var/dye_color
-	///Whether the item is unaffected by standard dying.
+	// Whether the item is unaffected by standard dyeing.
 	var/undyeable = FALSE
-	///What dye registry should be looked at when dying this item; see washing_machine.dm
+	// What dye registry should be looked at when dying this item; see washing_machine.dm
 	var/dying_key
 
 	//Grinder vars
-	var/list/grind_results //A reagent list containing the reagents this item produces when ground up in a grinder - this can be an empty list to allow for reagent transferring only
-	var/list/juice_results //A reagent list containing blah blah... but when JUICED in a grinder!
+	//A reagent list containing the reagents this item produces when ground up in a grinder - this can be an empty list to allow for reagent transferring only
+	var/list/grind_results
+	//A list of reagents produced when choosing to juice this item on a grinder
+	var/list/juice_results
 
 	var/canMouseDown = FALSE
 	var/can_parry = FALSE
@@ -138,7 +156,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	var/list/possible_item_intents = list(/datum/intent/use)
 
-	var/bigboy = FALSE //used to center screen_loc when in hand
+	// Used to center screen_loc when in hand
+	var/bigboy = FALSE
 	var/wielded = FALSE
 	var/altgripped = FALSE
 	var/list/alt_intents //these replace main intents
@@ -168,6 +187,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/bloody_icon_state = "itemblood"
 	var/boobed = FALSE
 
+	// Time in deciseconds this item adds to var/fueluse for a /obj/machinery/light/rogue type when fed to it.
 	var/firefuel = 0 //add this idiot
 
 	var/thrown_bclass = BCLASS_BLUNT
@@ -176,13 +196,17 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/icon/experimental_onhip = FALSE
 	var/icon/experimental_onback = FALSE
 
-	var/muteinmouth = TRUE //trying to emote or talk with this in our mouth makes us muffled
-	var/spitoutmouth = TRUE //using spit emote spits the item out of our mouth and falls out after some time
+	// Trying to emote or talk with this in our mouth makes us muffled
+	var/muteinmouth = TRUE
+	// Using spit emote spits the item out of our mouth and falls out after some time
+	var/spitoutmouth = TRUE
 
 	var/has_inspect_verb = FALSE
 
-	var/anvilrepair //this should be a skill path
-	var/sewrepair //this should be true or false
+	// Takes a skill path. Which skill we use to repair this item when hitting it with a blacksmith hammer?
+	var/anvilrepair
+	// Boolean. If TRUE, this item can be repaired using a needle.
+	var/sewrepair
 
 	var/breakpath
 
@@ -197,13 +221,30 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	var/list/blocksound //played when an item that is equipped blocks a hit
 
+	var/list/onprop = list()
+	var/force_reupdate_inhand = TRUE
+	
+	// Boolean sanity var for smelteries to avoid runtimes. Is this is a bar smelted through ore for exp gain?
+	var/smelted = FALSE
+	// Can this be used against a training dummy to learn skills? Prevents dumb exploits.
+	var/istrainable = FALSE
+	// Takes an item path. What it turns into after being grinded by a mortar and pestle.
+	var/dust_result
+	// Takes a text string. What weight will this item give towards a given potion result when used on an alchemy cauldron
+	var/possible_potion
+
 /obj/item/Initialize()
 	. = ..()
 	if(!pixel_x && !pixel_y && !bigboy)
 		pixel_x = rand(-5,5)
 		pixel_y = rand(-5,5)
+	
 	if(twohands_required)
 		has_inspect_verb = TRUE
+	// Initalize addon for the var for custom inhands 32x32.
+	if(!experimental_inhand)
+		inhand_x_dimension = 32
+		inhand_y_dimension = 32
 	update_transform()
 
 
@@ -540,6 +581,18 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	return FALSE
 
 /obj/item/proc/allow_attack_hand_drop(mob/user)
+	if(ishuman(user))
+		var/mob/living/carbon/human/C = user
+		if(!(src in C.held_items) && unequip_delay_self)
+			if(unequip_delay_self >= 10)
+				C.visible_message(span_smallnotice("[C] starts taking off [src]..."), span_smallnotice("I start taking off [src]..."))
+			if(edelay_type)
+				if(move_after(C, minone(unequip_delay_self-C.STASPD), target = C))
+					return TRUE
+			else
+				if(do_after(C, minone(unequip_delay_self-C.STASPD), target = C))
+					return TRUE
+
 	return TRUE
 
 /obj/item/attack_paw(mob/user)
@@ -644,10 +697,14 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 			A.Grant(user)
 	item_flags |= IN_INVENTORY
 	if(!initial)
-		if(equip_sound &&(slot_flags & slotdefine2slotbit(slot)))
-			playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
-		else if(slot == SLOT_HANDS)
-			playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
+		if(equip_sound)
+			if(slot_flags & slotdefine2slotbit(slot))
+				if(user.m_intent != MOVE_INTENT_SNEAK) // Sneaky sheathing/equipping
+					playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
+		if(pickup_sound)
+			if(user.is_holding(src))
+				if(user.m_intent != MOVE_INTENT_SNEAK) // Don't play a sound if we're sneaking, for assassination purposes.
+					playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
 	user.update_equipment_speed_mods()
 
 	if(!user.is_holding(src))

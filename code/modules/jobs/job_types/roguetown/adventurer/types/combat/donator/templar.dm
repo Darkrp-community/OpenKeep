@@ -19,29 +19,29 @@
 	switch(H.patron?.name)
 		if("Astrata")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
-			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
 		if("Dendor")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
-			wrists = /obj/item/clothing/neck/roguetown/psicross/dendor
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 		if("Necra")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
-			wrists = /obj/item/clothing/neck/roguetown/psicross/necra
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 		if("Eora")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket // Placeholder?
-			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
 			H.virginity = FALSE
 		if("Noc")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
-			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
+			wrists = /obj/item/clothing/neck/roguetown/psycross/noc
 		if("Pestra")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket // Placeholder?
-			wrists = /obj/item/clothing/neck/roguetown/psicross/pestra
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 		if("Ravox")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket // Placeholder?
-			wrists = /obj/item/clothing/neck/roguetown/psicross/ravox	
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/ravox	
 		else // Failsafe
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
-			wrists = /obj/item/clothing/neck/roguetown/psicross/silver
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver
 
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	pants = /obj/item/clothing/under/roguetown/chainlegs

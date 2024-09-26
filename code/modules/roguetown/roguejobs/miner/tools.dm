@@ -12,6 +12,7 @@
 	toolspeed = 2
 	associated_skill = /datum/skill/labor/mining
 	smeltresult = /obj/item/ingot/iron
+	var/pickmult = 1 // Multiplier of how much extra picking force we do to rocks. 
 
 /obj/item/rogueweapon/pick/getonmobprop(tag)
 	. = ..()
@@ -34,6 +35,7 @@
 	wlength = 10
 	slot_flags = ITEM_SLOT_HIP
 	toolspeed = 3
+	pickmult = 0.8 // Worse pick
 	associated_skill = /datum/skill/combat/axesmaces
 	smeltresult = /obj/item/ingot/copper
 
