@@ -485,7 +485,7 @@
 "cCk" = (/obj/structure/ladder,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/indoors)
 "cCn" = (/turf/closed/wall/mineral/rogue/stone/window,/area/rogue/indoors/town/manor{first_time_text = "Blackwine Manor"})
 "cCq" = (/obj/structure/bars/pipe{icon_state = "pipe"; dir = 5},/turf/open/floor/rogue/naturalstone,/area/rogue/under/town/sewer)
-"cCw" = (/obj/structure/fluff/walldeco/painting{pixel_y = 32},/obj/item/clothing/neck/roguetown/psicross/astrata,/obj/structure/closet/crate/chest/gold,/obj/item/clothing/neck/roguetown/psicross/g,/turf/open/floor/rogue/tile{icon_state = "chess"},/area/rogue/indoors/town/vault)
+"cCw" = (/obj/structure/fluff/walldeco/painting{pixel_y = 32},/obj/item/clothing/neck/roguetown/psycross/silver/astrata,/obj/structure/closet/crate/chest/gold,/obj/item/clothing/neck/roguetown/psicross/g,/turf/open/floor/rogue/tile{icon_state = "chess"},/area/rogue/indoors/town/vault)
 "cCz" = (/obj/structure/table/wood/plain/alt,/obj/item/rogueweapon/stoneaxe,/turf/open/floor/rogue/concrete,/area/rogue/under/cave{ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30, /mob/living/carbon/human/species/skeleton/npc/ambush = 10); first_time_text = "CATACOMBS"})
 "cCE" = (/obj/structure/mineral_door/wood/donjon{dir = 4; icon_state = "donjondir"; locked = 1; lockid = "dungeon"},/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/basement)
 "cCJ" = (/turf/closed/wall/mineral/rogue/stone/window/moss,/area/rogue/outdoors/exposed/manorgarri)

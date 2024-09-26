@@ -46,25 +46,25 @@
 	switch(A.name)
 		if("Astrata")
 			head = /obj/item/clothing/head/roguetown/roguehood/astrata
-			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
 		if("Dendor")
 			head = /obj/item/clothing/head/roguetown/dendormask
-			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 		if("Necra")
 			head = /obj/item/clothing/head/roguetown/necrahood
-			neck = /obj/item/clothing/neck/roguetown/psicross/necra
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
 		if("Eora")
 			head = /obj/item/clothing/head/roguetown/eoramask
-			neck = /obj/item/clothing/neck/roguetown/psicross/eora
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/eora
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
 		if("Noc")
 			head = /obj/item/clothing/head/roguetown/roguehood/nochood
-			neck = /obj/item/clothing/neck/roguetown/psicross/noc
+			neck = /obj/item/clothing/neck/roguetown/psycross/noc
 			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 	if(H.mind)
