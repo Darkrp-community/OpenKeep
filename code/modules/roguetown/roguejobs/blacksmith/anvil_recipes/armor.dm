@@ -397,14 +397,6 @@
 	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/beakhelm)
 	craftdiff = 3
 
-/datum/anvil_recipe/armor/sunhelm
-	name = "Sun helmet (2)"
-	recipe_name = "a Sun Helmet"
-	req_bar = /obj/item/ingot/gold
-	additional_items = list(/obj/item/ingot/gold)
-	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/sunhelmet
-	craftdiff = 4	
-
 /datum/anvil_recipe/armor/helmetslitkettle
 	name = "Slitted Kettle helmet x2"
 	recipe_name = "a pair of Slitted Kettle Helmets"

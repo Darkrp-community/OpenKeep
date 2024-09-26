@@ -753,20 +753,6 @@
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/steel	
 
-/obj/item/clothing/head/roguetown/helmet/heavy/sunhelmet
-	name = "sun helmet"
-	desc = "A helmet depicting the sun at its highest point."
-	icon_state = "sunhelm"
-	item_state = "sunhelm"
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
-	worn_x_dimension = 64
-	worn_y_dimension = 64
-	emote_environment = 3
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
-	smeltresult = /obj/item/ingot/gold
-
 /obj/item/clothing/head/roguetown/helmet/heavy/beakhelm
 	name = "beak helm"
 	desc = "A curious helmet in the shape of an eagle's head - there seems to be a lock on it."
