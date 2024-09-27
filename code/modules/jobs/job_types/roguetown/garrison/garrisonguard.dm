@@ -139,14 +139,12 @@ Design philosphy:
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 
-	var/weapontype = pickweight(list("Spear" = 6, "Bardiche" = 3, "Billhook" = 1)) // Rolls for various weapons, high roller gets a billhook
+	var/weapontype = pickweight(list("Spear" = 6, "Bardiche" = 4)) // Rolls for a spear or a bardiche
 	switch(weapontype)
 		if("Spear")
 			backr = /obj/item/rogueweapon/spear
 		if("Bardiche")
 			backr = /obj/item/rogueweapon/halberd/bardiche
-		if("Billhook")
-			backr = /obj/item/rogueweapon/spear/billhook
 
 /datum/advclass/garrison/archer
 	name = "Garrison Archer"
