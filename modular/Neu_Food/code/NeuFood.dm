@@ -5,28 +5,6 @@
  *						*
  * * * * * * * * * * * **/
 
-/* For reference only
-/*	........   Nutrition defines   ................ */
-
-/*	ALREADY DEFINED, SEE code\__DEFINES\roguetown.dm
-
-#define MEAL_FILLING 30
-#define MEAL_GOOD 24
-#define MEAL_AVERAGE 18
-#define MEAL_MEAGRE 15
-#define SNACK_NUTRITIOUS 9
-#define SNACK_DECENT 6
-#define SNACK_POOR 3
-
-*/
-
-/*	........   Rotting defines   ................ */
-#define SHELFLIFE_EXTREME 90 MINUTES
-#define SHELFLIFE_LONG 50 MINUTES
-#define SHELFLIFE_DECENT 30 MINUTES
-#define SHELFLIFE_SHORT 20 MINUTES
-#define SHELFLIFE_TINY 12 MINUTES
-*/
 
 #define SIMPLE_COOKING_XPGAIN 10
 #define COMPLEX_COOKING_XPGAIN 25
@@ -796,58 +774,4 @@
 
 * Minced meat
 
-
-// Moved to main, copy kept for keeping the modular design here. Don't touch.
-
-/obj/item/reagent_containers // added vars used in neu cooking, might be used for other things too in the future. How it works is in each items attackby code.
-	var/short_cooktime = FALSE  // based on cooking skill
-	var/long_cooktime = FALSE
-
-/obj/item/rogueweapon/huntingknife/cleaver
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	item_state = "cleav"
-	experimental_inhand = FALSE
-	experimental_onhip = FALSE
-	experimental_onback = FALSE
-
-/obj/item/reagent_containers/glass/bucket/pot
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
-/obj/item/reagent_containers/glass/bucket/pot/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
-	if(reagents.total_volume > 5) 
-		new /obj/effect/decal/cleanable/food/mess(get_turf(src))
-	..()
-
-/obj/item/cooking/pan
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	experimental_inhand = FALSE
-
-/obj/item/reagent_containers/glass/cup
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	experimental_inhand = FALSE
-
-/obj/item/book/rogue/yeoldecookingmanual // new book with some tips to learn
-	name = "Ye olde ways of cookinge"
-	desc = "Penned by Svend Fatbeard, butler in the fourth generation"
-	icon_state ="book8_0"
-	base_icon_state = "book8"
-	bookfile = "Neu_cooking.json"
-
-added to proc
-/obj/item/reagent_containers/food/snacks/proc/slice(obj/item/W, mob/user)
-	if(slice_sound)
-		playsound(get_turf(user), 'modular/Neu_Food/sound/slicing.ogg', 60, TRUE, -1) // added some choppy sound
-	if(chopping_sound)
-		playsound(get_turf(user), 'modular/Neu_Food/sound/chopping_block.ogg', 60, TRUE, -1) // added some choppy sound
-
-/obj/item/reagent_containers/food/snacks
-	var/chopping_sound = FALSE // does it play a choppy sound when batch sliced?
-	var/slice_sound = FALSE // does it play the slice sound when sliced?
-	var/can_distill = FALSE //If FALSE, this object cannot be distilled into an alcohol.
-	var/distill_reagent //If NULL and this object can be distilled, it uses a generic fruit_wine reagent and adjusts its variables.
-	var/distill_amt = 12
 */
