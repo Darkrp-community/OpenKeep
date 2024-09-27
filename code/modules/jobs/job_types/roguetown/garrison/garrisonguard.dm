@@ -190,7 +190,7 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/fencer/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets an iron chain shirt and a gorget
+	//Gets an iron chain shirt, a gorget, and bracers
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	beltr = /obj/item/rogueweapon/sword/rapier
