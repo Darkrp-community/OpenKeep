@@ -70,9 +70,9 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/footman/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets an iron cuirass over iron chain, a gorget, and a simple nasal helmet
+	//Gets an iron cuirass over chain, a gorget, and a simple nasal helmet
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
-	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/helmet
 	backr = /obj/item/rogueweapon/shield/wood
@@ -115,8 +115,8 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/pikeman/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets iron chain over a gambeson, a gorget, and a kettle helmet
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+	//Gets chain over a gambeson, a gorget, and a kettle helmet
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/helmet/kettle
