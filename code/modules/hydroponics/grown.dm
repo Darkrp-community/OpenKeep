@@ -16,9 +16,6 @@
 	// If you don't want a plant to be driable (watermelons) set this to null in the time definition.
 	resistance_flags = FLAMMABLE
 	var/dry_grind = FALSE //If TRUE, this object needs to be dry to be ground up
-	var/can_distill = FALSE //If FALSE, this object cannot be distilled into an alcohol.
-	var/distill_reagent //If NULL and this object can be distilled, it uses a generic fruit_wine reagent and adjusts its variables.
-	var/distill_amt = 12
 	var/wine_flavor //If NULL, this is automatically set to the fruit's flavor. Determines the flavor of the wine if distill_reagent is NULL.
 	var/wine_power = 10 //Determines the boozepwr of the wine if distill_reagent is NULL.
 	w_class = WEIGHT_CLASS_SMALL

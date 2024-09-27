@@ -5,7 +5,7 @@
 	overlay_state = "blesscrop"
 	releasedrain = 30
 	charge_max = 30 SECONDS
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross)
 	max_targets = 0
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
@@ -16,10 +16,19 @@
 	devotion_cost = -15
 
 /obj/effect/proc_holder/spell/targeted/blesscrop/cast(list/targets,mob/user = usr)
-	visible_message("<FONT COLOR='green'>[usr] blesses the crop with Dendor's Favour!</FONT><BR>")
-	for(var/obj/machinery/crop/C in view(5))
-		C.growth += 40
-		C.update_seed_icon()
+	. = ..()
+	var/growed = FALSE
+	var/amount_blessed = 0
+	for(var/obj/structure/soil/soil in view(4))
+		soil.bless_soil()
+		growed = TRUE
+		amount_blessed++
+		// Blessed only up to 5 crops
+		if(amount_blessed >= 5)
+			break
+	if(growed)
+		visible_message("<FONT COLOR='green'>[usr] blesses the crop with Dendor's Favour!</FONT><BR>")
+	return growed
 
 //At some point, this spell should Awaken beasts, allowing a ghost to possess them. Not for this PR though.
 /obj/effect/proc_holder/spell/targeted/beasttame
@@ -28,7 +37,7 @@
 	overlay_state = "tamebeast"
 	releasedrain = 30
 	charge_max = 30 SECONDS
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross)
 	max_targets = 0
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
@@ -52,12 +61,12 @@
 	overlay_state = "blesscrop"
 	releasedrain = 30
 	charge_max = 30 SECONDS
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross)
 	max_targets = 0
 	cast_without_targets = TRUE
 	sound = 'sound/items/dig_shovel.ogg'
 	associated_skill = /datum/skill/magic/holy
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross)
 	invocation = "Treefather light the way."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 

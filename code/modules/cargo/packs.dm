@@ -1698,16 +1698,7 @@
 	name = "Excellent Meat Crate"
 	desc = ""
 	cost = 2000
-	contains = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime,
-					/obj/item/reagent_containers/food/snacks/meat/slab/killertomato,
-					/obj/item/reagent_containers/food/snacks/meat/slab/bear,
-					/obj/item/reagent_containers/food/snacks/meat/slab/xeno,
-					/obj/item/reagent_containers/food/snacks/meat/slab/spider,
-					/obj/item/reagent_containers/food/snacks/meat/rawbacon,
-					/obj/item/reagent_containers/food/snacks/meat/slab/penguin,
-					/obj/item/reagent_containers/food/snacks/spiderleg,
-					/obj/item/reagent_containers/food/snacks/carpmeat,
-					/obj/item/reagent_containers/food/snacks/meat/slab/human)
+
 	crate_name = "food crate"
 
 /datum/supply_pack/organic/randomized/chef/fill(obj/structure/closet/crate/C)
@@ -1719,20 +1710,7 @@
 	name = "Exotic Seeds Crate"
 	desc = ""
 	cost = 1500
-	contains = list(/obj/item/seeds/nettle,
-					/obj/item/seeds/replicapod,
-					/obj/item/seeds/replicapod,
-					/obj/item/seeds/replicapod,
-					/obj/item/seeds/plump,
-					/obj/item/seeds/liberty,
-					/obj/item/seeds/amanita,
-					/obj/item/seeds/reishi,
-					/obj/item/seeds/bamboo,
-					/obj/item/seeds/eggplant/eggy,
-					/obj/item/seeds/rainbow_bunch,
-					/obj/item/seeds/rainbow_bunch,
-					/obj/item/seeds/random,
-					/obj/item/seeds/random)
+
 	crate_name = "exotic seeds crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 
@@ -1740,31 +1718,12 @@
 	name = "Food Crate"
 	desc = ""
 	cost = 1000
-	contains = list(/obj/item/reagent_containers/food/condiment/flour,
-					/obj/item/reagent_containers/food/condiment/rice,
-					/obj/item/reagent_containers/food/condiment/milk,
-					/obj/item/reagent_containers/food/condiment/soymilk,
-					/obj/item/reagent_containers/food/condiment/saltshaker,
-					/obj/item/reagent_containers/food/condiment/peppermill,
-					/obj/item/storage/fancy/egg_box,
-					/obj/item/reagent_containers/food/condiment/enzyme,
-					/obj/item/reagent_containers/food/condiment/sugar,
-					/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-					/obj/item/reagent_containers/food/snacks/grown/banana,
-					/obj/item/reagent_containers/food/snacks/grown/banana,
-					/obj/item/reagent_containers/food/snacks/grown/banana)
 	crate_name = "food crate"
 
 /datum/supply_pack/organic/randomized/chef/fruits
 	name = "Fruit Crate"
 	desc = ""
 	cost = 1500
-	contains = list(/obj/item/reagent_containers/food/snacks/grown/citrus/lime,
-					/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
-					/obj/item/reagent_containers/food/snacks/grown/watermelon,
-					/obj/item/reagent_containers/food/snacks/grown/apple,
-					/obj/item/reagent_containers/food/snacks/grown/berries,
-					/obj/item/reagent_containers/food/snacks/grown/citrus/lemon)
 	crate_name = "food crate"
 
 /datum/supply_pack/organic/cream_piee
@@ -1781,16 +1740,6 @@
 	name = "Hydroponics Crate"
 	desc = ""
 	cost = 1500
-	contains = list(/obj/item/reagent_containers/spray/plantbgone,
-					/obj/item/reagent_containers/spray/plantbgone,
-					/obj/item/reagent_containers/glass/bottle/ammonia,
-					/obj/item/reagent_containers/glass/bottle/ammonia,
-					/obj/item/hatchet,
-					/obj/item/cultivator,
-					/obj/item/plant_analyzer,
-					/obj/item/clothing/gloves/botanic_leather,
-					/obj/item/clothing/suit/apron,
-					/obj/item/storage/box/disks_plantgene)
 	crate_name = "hydroponics crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 
@@ -1807,11 +1756,7 @@
 	name = "Pizza Crate"
 	desc = ""
 	cost = 6000 // Best prices this side of the galaxy.
-	contains = list(/obj/item/pizzabox/margherita,
-					/obj/item/pizzabox/mushroom,
-					/obj/item/pizzabox/meat,
-					/obj/item/pizzabox/vegetable,
-					/obj/item/pizzabox/pineapple)
+
 	crate_name = "pizza crate"
 	var/static/anomalous_box_provided = FALSE
 
@@ -1852,21 +1797,6 @@
 /datum/supply_pack/organic/seeds
 	name = "Seeds Crate"
 	desc = ""
-	cost = 1000
-	contains = list(/obj/item/seeds/chili,
-					/obj/item/seeds/cotton,
-					/obj/item/seeds/berry,
-					/obj/item/seeds/corn,
-					/obj/item/seeds/eggplant,
-					/obj/item/seeds/tomato,
-					/obj/item/seeds/soya,
-					/obj/item/seeds/wheat,
-					/obj/item/seeds/wheat/rice,
-					/obj/item/seeds/carrot,
-					/obj/item/seeds/sunflower,
-					/obj/item/seeds/chanter,
-					/obj/item/seeds/potato,
-					/obj/item/seeds/sugarcane)
 	crate_name = "seeds crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 
@@ -1874,14 +1804,7 @@
 	name = "Vegetables Crate"
 	desc = ""
 	cost = 1300
-	contains = list(/obj/item/reagent_containers/food/snacks/grown/chili,
-					/obj/item/reagent_containers/food/snacks/grown/corn,
-					/obj/item/reagent_containers/food/snacks/grown/tomato,
-					/obj/item/reagent_containers/food/snacks/grown/potato,
-					/obj/item/reagent_containers/food/snacks/grown/carrot,
-					/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle,
-					/obj/item/reagent_containers/food/snacks/grown/onion,
-					/obj/item/reagent_containers/food/snacks/grown/pumpkin)
+
 	crate_name = "food crate"
 
 /datum/supply_pack/organic/vending/hydro_refills
@@ -1889,8 +1812,6 @@
 	desc = ""
 	cost = 2000
 	crate_type = /obj/structure/closet/crate
-	contains = list(/obj/item/vending_refill/hydroseeds,
-					/obj/item/vending_refill/hydronutrients)
 	crate_name = "hydroponics supply crate"
 
 /datum/supply_pack/organic/grill
@@ -2096,24 +2017,6 @@
 	contraband = TRUE
 	cost = 3000
 	num_contained = 7
-	contains = list(/obj/item/poster/random_contraband,
-					/obj/item/poster/random_contraband,
-					/obj/item/reagent_containers/food/snacks/grown/cannabis,
-					/obj/item/reagent_containers/food/snacks/grown/cannabis/rainbow,
-					/obj/item/reagent_containers/food/snacks/grown/cannabis/white,
-					/obj/item/storage/pill_bottle/zoom,
-					/obj/item/storage/pill_bottle/happy,
-					/obj/item/storage/pill_bottle/lsd,
-					/obj/item/storage/pill_bottle/aranesp,
-					/obj/item/storage/pill_bottle/stimulant,
-					/obj/item/toy/cards/deck/syndicate,
-					/obj/item/reagent_containers/food/drinks/bottle/absinthe,
-					/obj/item/clothing/under/syndicate/tacticool,
-					/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
-					/obj/item/storage/fancy/cigarettes/cigpack_shadyjims,
-					/obj/item/clothing/mask/gas/syndicate,
-					/obj/item/clothing/neck/necklace/dope,
-					/obj/item/vending_refill/donksoft)
 	crate_name = "crate"
 
 /datum/supply_pack/costumes_toys/foamforce

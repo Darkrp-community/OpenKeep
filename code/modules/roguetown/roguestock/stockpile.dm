@@ -81,7 +81,7 @@
 /datum/roguestock/stockpile/grain
 	name = "Grain"
 	desc = "Spelt grain."
-	item_type = /obj/item/reagent_containers/food/snacks/grown/wheat
+	item_type = /obj/item/reagent_containers/food/snacks/produce/wheat
 	payout_price = 2
 	export_price = 5
 	withdraw_price = 5

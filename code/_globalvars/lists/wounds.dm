@@ -12,11 +12,13 @@ GLOBAL_LIST_INIT(artery_bclasses, list(
 	BCLASS_STAB,
 	BCLASS_PICK,
 	BCLASS_BITE,
+	BCLASS_SHOT,
 ))
 
 GLOBAL_LIST_INIT(artery_strong_bclasses, list(
 	BCLASS_CHOP,
 	BCLASS_PICK,
+	BCLASS_SHOT,
 ))
 
 GLOBAL_LIST_INIT(dislocation_bclasses, list(
@@ -34,6 +36,7 @@ GLOBAL_LIST_INIT(cbt_classes, list(
 
 GLOBAL_LIST_INIT(stab_bclasses, list(
 	BCLASS_STAB,
+	BCLASS_SHOT,
 	BCLASS_PICK,
 ))
 

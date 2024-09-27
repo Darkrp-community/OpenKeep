@@ -24,7 +24,7 @@
 
 	outfit = /datum/outfit/job/roguetown/guardsman
 	give_bank_account = 30
-	min_pq = -4
+	min_pq = 0
 
 	cmode_music = 'sound/music/combat_guard.ogg'
 
@@ -53,11 +53,6 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
-	if(prob(30))
-		head = /obj/item/clothing/head/roguetown/helmet/kettle
-	else
-		head = /obj/item/clothing/head/roguetown/helmet
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
@@ -74,6 +69,7 @@
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 
 /mob/proc/haltyell()

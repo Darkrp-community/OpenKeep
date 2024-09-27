@@ -626,3 +626,22 @@ ____________End of Example*/
 	icon_state ="basic_book_0"
 	base_icon_state = "basic_book"
 	bookfile = "manners.json"
+
+/obj/item/book/rogue/advice_soup
+	name = "Soup de Rattus"
+	desc = "Weathered book containing advice on surviving a famine."
+	bookfile = "AdviceSoup.json"
+	random_cover = TRUE
+
+/obj/item/book/rogue/advice_farming
+	name = "The Secrets of the Agronome"
+	desc = "Soilson bible."
+	bookfile = "AdviceFarming.json"
+	random_cover = TRUE
+
+/obj/item/book/rogue/yeoldecookingmanual // new book with some tips to learn
+	name = "Ye olde ways of cookinge"
+	desc = "Penned by Svend Fatbeard, butler in the fourth generation"
+	icon_state ="book8_0"
+	base_icon_state = "book8"
+	bookfile = "Neu_cooking.json"

@@ -17,11 +17,13 @@
 	move_to_delay = 8
 	animal_species = /mob/living/simple_animal/hostile/retaliate/rogue/bull
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 6,
-						/obj/item/natural/hide=2)
+						/obj/item/natural/hide = 2,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 80
 	maxHealth = 80
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat,/obj/item/reagent_containers/food/snacks/grown/oat)
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,/obj/item/reagent_containers/food/snacks/produce/oat)
 	tame_chance = 25
 	bonus_tame_chance = 15
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -151,7 +153,9 @@
 	see_in_dark = 6
 	move_to_delay = 8
 	base_intents = list(/datum/intent/simple/headbutt)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 6)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 6,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
 	faction = list("cows")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_same = 0
@@ -165,7 +169,7 @@
 	retreat_distance = 0
 	minimum_distance = 0
 	milkies = FALSE
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat,/obj/item/reagent_containers/food/snacks/grown/oat)
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,/obj/item/reagent_containers/food/snacks/produce/oat)
 	footstep_type = FOOTSTEP_MOB_SHOE
 	pooptype = /obj/item/natural/poo/cow
 	STACON = 20

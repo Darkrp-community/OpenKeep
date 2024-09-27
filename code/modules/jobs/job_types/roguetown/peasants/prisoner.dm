@@ -22,6 +22,7 @@
 	bypass_jobban = TRUE
 	display_order = JDO_PRISONER
 	give_bank_account = 173
+	min_pq = -100
 	can_random = FALSE
 	bypass_lastclass = TRUE
 

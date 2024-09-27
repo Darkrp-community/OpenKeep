@@ -5,6 +5,7 @@
 	force = 3
 	throwforce = 3
 	w_class = WEIGHT_CLASS_SMALL
+	sellprice = 5
 	icon = 'icons/mob/human_parts.dmi'
 	icon_state = ""
 	layer = BELOW_MOB_LAYER //so it isn't hidden behind objects when on the floor

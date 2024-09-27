@@ -112,9 +112,10 @@
 	STASPD = 2
 	STACON = 8
 	STASTR = 12
-	can_buckle = FALSE
-	buckle_lying = 0
-	can_saddle = FALSE
+	can_buckle = TRUE
+	buckle_lying = FALSE
+	tame = TRUE
+	can_saddle = TRUE
 	remains_type = /obj/effect/decal/remains/pig
 	response_help_continuous = "pets"
 	response_help_simple = "give the signal to the"
@@ -126,6 +127,18 @@
 	gender = PLURAL
 	icon_state = "skele"
 	icon = 'icons/roguetown/mob/monster/cow.dmi'
+
+/mob/living/simple_animal/hostile/retaliate/rogue/trufflepig/tamed(mob/user)
+	..()
+	deaggroprob = 20
+	if(can_buckle)
+		var/datum/component/riding/D = LoadComponent(/datum/component/riding)
+		D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 4), TEXT_SOUTH = list(0, 4), TEXT_EAST = list(-2, 4), TEXT_WEST = list(2, 4)))
+		D.set_vehicle_dir_layer(SOUTH, ABOVE_MOB_LAYER)
+		D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
+		D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
+		D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
+
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig/Life()
 	. = ..()

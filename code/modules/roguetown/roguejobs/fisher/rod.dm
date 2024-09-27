@@ -4,7 +4,7 @@
 	name = "fishing rod"
 	desc = ""
 	icon_state = "rod"
-	icon = 'icons/roguetown/weapons/tools.dmi'
+	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
 	sharpness = IS_BLUNT
 	wlength = 33
 	var/obj/item/baited = null
@@ -73,7 +73,7 @@
 	if(!check_allowed_items(target,target_self=1))
 		return ..()
 
-	if(istype(target, /turf/open/water))
+	if(istype(target, /turf/open/water) && !istype(target, /turf/open/water/bath))
 		if(user.used_intent.type == ROD_CAST && !user.doing)
 			if(target in range(user,5))
 				user.visible_message("<span class='warning'>[user] casts a line!</span>", \

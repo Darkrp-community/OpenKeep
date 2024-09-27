@@ -1,7 +1,7 @@
 /obj/item/clothing/suit/roguetown/shirt/robe
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "robe"
-	desc = ""
+	desc = "A common robe, worn mostly by religious adepts."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "white_robe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -19,7 +19,7 @@
 /obj/item/clothing/suit/roguetown/shirt/robe/astrata
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "sun robe"
-	desc = ""
+	desc = "The cloth of a follower of Astrata."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "astratarobe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -34,7 +34,7 @@
 /obj/item/clothing/suit/roguetown/shirt/robe/noc
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "moon robe"
-	desc = ""
+	desc = "The cloth of a follower of Noc."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "nocrobe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -49,7 +49,7 @@
 /obj/item/clothing/suit/roguetown/shirt/robe/necromancer
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "necromancer robes"
-	desc = ""
+	desc = "Eerie black garb of death."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "necromrobe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -194,3 +194,28 @@
 	slot_flags = ITEM_SLOT_ARMOR
 	boobed = TRUE
 	color = null
+
+/obj/item/clothing/suit/roguetown/shirt/robe/magus
+	name = "magus's robe"
+	desc = "A dark padded robe worn by only the most mysterious of mages, the magi."
+	icon_state = "warlock"
+	icon = 'icons/roguetown/clothing/armor.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
+	boobed = TRUE
+	flags_inv = HIDEBOOB
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
+	armor = list("melee" = 40, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
+	resistance_flags = FLAMMABLE
+	blocksound = SOFTHIT
+	slot_flags = ITEM_SLOT_ARMOR
+	blade_dulling = DULLING_BASHCHOP
+	armor_class = ARMOR_CLASS_LIGHT
+	max_integrity = 200
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	allowed_sex = list(MALE)
+	allowed_race = list("human", "tiefling", "aasimar")
+	color = null
+	sellprice = 150

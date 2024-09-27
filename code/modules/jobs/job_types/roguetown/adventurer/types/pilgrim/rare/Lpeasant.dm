@@ -48,7 +48,7 @@
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 		pants = null
-	backpack_contents = list(/obj/item/seeds/wheat=1,/obj/item/seeds/apple=1,/obj/item/ash=1)
+	backpack_contents = list(/obj/item/neuFarm/seed/wheat=1,/obj/item/neuFarm/seed/apple=1,/obj/item/ash=1)
 	beltl = /obj/item/rogueweapon/sickle
 	backr = /obj/item/rogueweapon/hoe
 	H.change_stat("strength", 2)
@@ -56,3 +56,4 @@
 	H.change_stat("endurance", 2)
 	H.change_stat("intelligence", -1)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)	//Peasants probably smell terrible. (:
+	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)

@@ -23,7 +23,7 @@
 
 	outfit = /datum/outfit/job/roguetown/watchman
 	give_bank_account = 30
-	min_pq = -4
+	min_pq = 0
 
 	cmode_music = 'sound/music/combat_guard.ogg'
 
@@ -68,3 +68,4 @@
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", 2)
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)

@@ -21,6 +21,7 @@
 	outfit = /datum/outfit/job/roguetown/archivist
 	display_order = 19
 	give_bank_account = 100
+	min_pq = 1
 
 /datum/outfit/job/roguetown/archivist/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -47,6 +48,7 @@
 		H.grant_language(/datum/language/zybantine)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 3, TRUE)
 		H.change_stat("strength", -2)
 		H.change_stat("intelligence", 8)
 		H.change_stat("constitution", -2)

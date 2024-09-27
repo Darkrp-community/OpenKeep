@@ -50,11 +50,17 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		var/prev_real_name = H.real_name
+		var/prev_name = H.name
+		var/honorary = "Emir"
+		if(H.gender == FEMALE)
+			honorary = "Amirah"
+		H.real_name = "[honorary] [prev_real_name]"
+		H.name = "[honorary] [prev_name]"
 		if(!H.has_language(/datum/language/zybantine))
 			H.grant_language(/datum/language/zybantine)
 			to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 2)
-		ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)

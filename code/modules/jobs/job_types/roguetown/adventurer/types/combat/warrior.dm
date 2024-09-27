@@ -14,6 +14,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/sfighter
 	category_tags = list(CTAG_ADVENTURER)
+	min_pq = 0
 
 
 /datum/outfit/job/roguetown/adventurer/sfighter/pre_equip(mob/living/carbon/human/H)
@@ -50,10 +51,10 @@
 		if("Ironmail")
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 		if("Ironplate")
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
-		if("Ironplate&Mail") // Big roller gets iron chainlegs and an iron breastplate over chainmail. Lucky them
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
-			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
+		if("Ironplate&Mail") // Big roller gets iron chainlegs and a steel breastplate over chainmail. Lucky them
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass
+			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 			pants = /obj/item/clothing/under/roguetown/chainlegs/iron
 	switch(weapontype) // We get +1 weapon skill in either axes/maces, swords, or flails depending on our starting weapon
 		if("Axe")

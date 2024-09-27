@@ -5,6 +5,7 @@
 
 	silent = FALSE
 	losebreath = 0
+	vitae_pool = floor(vitae_pool * 0.2) // You killed this mob, only some fading vitae will be obtained from it.
 
 //	if(!gibbed)
 //		emote("deathgasp")
