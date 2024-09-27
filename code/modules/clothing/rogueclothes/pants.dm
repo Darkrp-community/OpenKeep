@@ -127,7 +127,7 @@
 
 /obj/item/clothing/under/roguetown/chainlegs
 	name = "chain chausses"
-	desc = "Chain maille chausses made of exquisite steel rings boasting superior protection."
+	desc = "Chain mail chausses made of exquisite steel rings boasting superior protection."
 	gender = PLURAL
 	icon_state = "chain_legs"
 	item_state = "chain_legs"
@@ -148,13 +148,13 @@
 /obj/item/clothing/under/roguetown/chainlegs/iron
 	icon_state = "ichain_legs"
 	name = "iron chain chausses"
-	desc = "Chain maille chausses made of iron rings woven together, offering protection against cuts and stabs."
+	desc = "Chain mail chausses made of iron rings woven together, offering protection against cuts and stabs."
 	max_integrity = 200
 	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/under/roguetown/platelegs
-	name = "plated chausses"
-	desc = "Chausses made of plated steel, offering additional protection against blunt force."
+	name = "plated leggings"
+	desc = "Leggings made of plated steel, offering additional protection against blunt force."
 	gender = PLURAL
 	icon_state = "heavyleggies" // Finally a sprite
 	item_state = "heavyleggies"
