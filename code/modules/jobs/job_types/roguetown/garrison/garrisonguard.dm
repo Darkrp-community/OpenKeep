@@ -50,7 +50,6 @@
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	cloak = /obj/item/clothing/cloak/stabard/guard
 	shoes = /obj/item/clothing/shoes/roguetown/boots
-	beltl = /obj/item/keyring/guard
 	belt = /obj/item/storage/belt/rogue/leather
 
 /* ! ! ! Class Selection Section Below ! ! !
@@ -76,6 +75,9 @@ Design philosphy:
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/helmet
 	backr = /obj/item/rogueweapon/shield/wood
+	beltr = /obj/item/rogueweapon/sword/iron/messer
+	beltl = /obj/item/rogueweapon/mace
+	backpack_contents = list(/obj/item/keyring/guard)
 
 	//Stats for class
 	H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
@@ -95,17 +97,6 @@ Design philosphy:
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 
-	var/weapontype = pickweight(list("Axe" = 3, "Mace" = 3, "Messer" = 2, "Sword" = 2)) // Rolls for various weapons, all of these are iron tier
-	switch(weapontype)
-		if("Axe")
-			beltr = /obj/item/rogueweapon/woodcut
-		if("Mace")
-			beltr = /obj/item/rogueweapon/mace
-		if("Messer")
-			beltr = /obj/item/rogueweapon/sword/iron/messer
-		if("Sword")
-			beltr = /obj/item/rogueweapon/sword/iron
-
 /datum/advclass/garrison/pikeman
 	name = "Garrison Pikeman"
 	tutorial = "You are a pikeman in the garrison levy. You are less fleet of foot compared to the rest, but you are burly and well practiced with spears, pikes, billhooks - all the various polearms for striking enemies from a distance."
@@ -120,6 +111,8 @@ Design philosphy:
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/helmet/kettle
+	beltr = /obj/item/rogueweapon/sword/iron
+	backpack_contents = list(/obj/item/keyring/guard)
 
 	//Stats for class
 	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) // Only gets one skilled weapon class, cost of that +2 in strength
@@ -139,7 +132,7 @@ Design philosphy:
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 
-	var/weapontype = pickweight(list("Spear" = 6, "Bardiche" = 4)) // Rolls for a spear or a bardiche
+	var/weapontype = pickweight(list("Spear" = 6, "Bardiche" = 4)) // Rolls for various weapons, high roller gets a billhook
 	switch(weapontype)
 		if("Spear")
 			backr = /obj/item/rogueweapon/spear
@@ -155,15 +148,16 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/archer/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets hide armor, leather bracers, and a chain coif
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
+	//Gets a gambeson, leather bracers, and an iron chain coif
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-	beltr = /obj/item/quiver/arrows
 	head = /obj/item/clothing/head/roguetown/roguehood/red
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
+	beltr = /obj/item/quiver/arrows
+	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special
+	backpack_contents = list(/obj/item/keyring/guard)
 
 	//Stats for class
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
@@ -196,17 +190,17 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/fencer/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets an iron chain shirt, a gorget, and bracers
+	//Gets an iron chain shirt and a gorget
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	beltr = /obj/item/rogueweapon/sword/rapier
 	head = /obj/item/clothing/head/roguetown/roguehood/red
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
+	backpack_contents = list(/obj/item/keyring/guard)
 
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE) // Can use a shield, though isn't quite as good as the footman
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
