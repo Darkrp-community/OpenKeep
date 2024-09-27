@@ -165,6 +165,7 @@ Design philosphy:
 	head = /obj/item/clothing/head/roguetown/roguehood/red
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
 
 	//Stats for class
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
