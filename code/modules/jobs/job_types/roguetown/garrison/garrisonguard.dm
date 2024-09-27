@@ -163,7 +163,7 @@ Design philosphy:
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	beltr = /obj/item/quiver/arrows
 	head = /obj/item/clothing/head/roguetown/roguehood/red
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 
 	//Stats for class
