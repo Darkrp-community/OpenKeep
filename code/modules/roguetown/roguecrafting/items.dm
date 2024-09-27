@@ -435,3 +435,10 @@
 	name = "master's guide to literature"
 	result = list(/obj/item/literary/master)
 	craftdiff = 6
+
+/datum/crafting_recipe/roguetown/quarterstaff
+	name = "wooden quarterstaff"
+	result = list(/obj/item/rogueweapon/woodstaff/quarterstaff
+	/obj/item/rogueweapon/woodstaff/quarterstaff)
+	reqs = list(/obj/item/grown/log/tree = 1)
+	skillcraft = /datum/skill/craft/carpentry

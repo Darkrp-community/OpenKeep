@@ -31,11 +31,12 @@
 	head = /obj/item/clothing/head/roguetown/roguehood
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	backr = /obj/item/storage/backpack/rogue/satchel
+	backl =/obj/item/rogueweapon/halberd/bardiche/woodcutter//an specialist in cut trees would have two axes to his name
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/workervest
 	beltr = /obj/item/rogueweapon/woodcut
-	beltl = /obj/item/rogueweapon/huntingknife
+	beltl = /obj/item/rogueweapon/huntingknife/villager
 	backpack_contents = list(/obj/item/flint = 1)
 	H.change_stat("strength", 2)
 	H.change_stat("constitution", 1)

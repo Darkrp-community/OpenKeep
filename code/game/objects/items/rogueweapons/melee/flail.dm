@@ -107,3 +107,36 @@
 				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/flail/farmer
+	force = 15//starting gear for peasant militias
+	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/flailthresh)
+	name = "WoodenS flail"
+	desc = "During peacetime these flails are used to thresh wheat. During wartime - to chase off marauders."
+	icon_state = "peasantflail"
+	icon = 'icons/roguetown/weapons/32.dmi'
+	sharpness = IS_BLUNT
+	//dropshrink = 0.75
+	wlength = WLENGTH_NORMAL
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_HIP
+	associated_skill = /datum/skill/combat/whipsflails
+	smeltresult = /obj/item/ingot/coal//is mostly wood
+	pickup_sound = 'sound/foley/equip/equip_armor_chain.ogg'
+	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
+	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
+	swingsound = BLUNTWOOSH_MED
+	can_parry = FALSE // You can't parry with this, it'd be awkward to tangle chains, use a shield
+	max_integrity = 250
+	throwforce = 5
+	wdefense = 0
+	minstr = 6
+	sellprice = 10
+
+	/obj/item/rogueweapon/flail/militia
+	force = 30//same as the iron flails since is the same with different flavour
+	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/flail/strike/smash, /datum/intent/flailthresh)
+	name = "Militia flail"
+	desc = "when the going gets dire, even a farming tool can become a weapon."
+	icon_state = "militiaflail"
+	icon = 'icons/roguetown/weapons/32.dmi'

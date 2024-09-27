@@ -825,6 +825,13 @@
 	wbalance = -1 // Heavy, STR bonus
 	sellprice = 20
 
+/obj/item/rogueweapon/sword/iron/messer/peasant
+	name = "scythe sword"
+	desc = "A weapon of bad times , a simple scythe blade, fastened to a wooden handle."
+	force = 18 // Can't be dual wielded, but shouldn't be higher than a steel equivalent.
+	icon_state = "scytheblade"
+
+
 /obj/item/rogueweapon/sword/short
 	name = "short sword"
 	desc = "An archaic steel sword made for penetrating the bodies of impudents."
@@ -1247,3 +1254,14 @@
 	wdefense = 3 // Lower than average sword defense (meant to pair with a shield)
 	wbalance = -1 // Likely weighted towards the blade, for deep cuts and chops
 	sellprice = 200 // A noble collector would love to get his/her hands on one of these blades
+
+/obj/item/rogueweapon/sword/scimitar
+	slot_flags = ITEM_SLOT_HIP
+	force = 20
+	force_wielded = 25
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
+	name = "scimitar"
+	desc = "A Zybantu design for swords, this curved blade is the insign of that land."
+	icon_state = "scimitar"
+	icon = 'icons/roguetown/weapons/32.dmi'

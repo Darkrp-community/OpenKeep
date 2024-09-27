@@ -412,7 +412,7 @@
 	possible_item_intents = list(SPEAR_BASH)
 	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood, /datum/intent/spear/bash/swing)
 	name = "wooden quarterstaff"
-	desc = "The ultimate support tool for travellers, a proper quarterstaff that is durable and swift, it even has more range than a normal staff."
+	desc = "A staff that makes any journey easier, a proper quarterstaff that is durable and swift, even has more length than a normal staff in case you need to show someone how good you can handle yourself in a fight."
 	icon_state = "quarterstaff"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	wlength = WLENGTH_LONG
@@ -434,7 +434,7 @@
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	sellprice = 10
 
-/datum/intent/spear/bash/swing//long distance bonk, plonk, wonk.
+/datum/intent/spear/bash/swing//AYAYAYAYA BONK BONK BONK
 	name = "swing"
 	blade_class = BCLASS_BLUNT
 	icon_state = "inbash"
@@ -445,3 +445,59 @@
 	chargetime = 1
 	swingdelay = 1
 	misscost = 5
+
+/obj/item/rogueweapon/woodstaff/quarterstaff/iron
+	force = 10
+	force_wielded = 20
+	possible_item_intents = list(SPEAR_BASH)
+	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood, /datum/intent/spear/bash/swing)
+	name = "iron quarterstaff"
+	desc = "The best kind of tool for bounty hunters who prefer their prisioners broken, bruised and humilliated but not dead, a proper fighting staff capable of disarm and knock out an armed opponent with the right hits."
+	icon_state = "ironstaff"
+	max_integrity = 350//iron tier
+	minstr = 8//meant to be used by average warriors
+
+/obj/item/rogueweapon/woodstaff/quarterstaff/steel
+	force = 15
+	force_wielded = 30
+	possible_item_intents = list(SPEAR_BASH)
+	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood, /datum/intent/spear/bash/swing)
+	name = "steel quarterstaff"
+	desc = "An unusual sight, a knightly combat staff made out of worked steel and reinforced wood is a heavy and powerful weapon, more than enough to beat the living daylights out of any brigand."
+	icon_state = "steelstaff"
+		minstr = 10//very heavy
+	max_integrity = 450//steel tier
+
+//scythe
+/obj/item/rogueweapon/sickle/scythe
+force = 10
+	force_wielded = 20
+	possible_item_intents = list(SPEAR_CUT) //truly just a long knife
+	gripped_intents = list(SPEAR_CUT)
+	name = "scythe"
+	desc = "A humble farming tool with a long range"
+	icon_state = "scythe"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
+	wlength = WLENGTH_GREAT
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
+	max_blade_int = 100
+	max_integrity = 300
+	minstr = 5
+	smeltresult = /obj/item/ingot/iron
+	associated_skill = /datum/skill/combat/polearms
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
+	dropshrink = 0.75
+	blade_dulling = DULLING_BASHCHOP
+	walking_stick = TRUE
+	wdefense = 2
+	thrown_bclass = BCLASS_CUT
+	throwforce = 25
+	sellprice = 10

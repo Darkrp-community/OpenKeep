@@ -128,6 +128,14 @@
 	i_type = "Ammo"
 	craftdiff = 0
 
+/datum/anvil_recipe/weapons/ironstaff
+	name = "Iron quarterstaff (+staff)"
+	recipe_name = "a iron staff"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/rogueweapon/woodstaff/quarterstaff)
+	created_item = /obj/item/rogueweapon/woodstaff/quarterstaff/iron
+
 /datum/anvil_recipe/weapons/axe_iron
 	name = "Axe (+s)"
 	recipe_name = "an Axe"
@@ -143,6 +151,24 @@
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/halberd/bardiche
+	craftdiff = 2
+
+/datum/anvil_recipe/weapons/woodcutter
+	name = "woodcutter great axe (+w)"
+	recipe_name = "a Bardiche"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/small)
+	created_item = /obj/item/rogueweapon/halberd/bardiche/woodcutter
+	craftdiff = 1
+
+/datum/anvil_recipe/weapons/warcutter
+	name = "war axe (2) (+w)"
+	recipe_name = "a war greataxe"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
+	created_item = /obj/item/rogueweapon/halberd/bardiche/warcutter
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/bolts
@@ -178,12 +204,30 @@
 	createditem_num = 1
 	craftdiff = 0 // To train with
 
+/datum/anvil_recipe/weapons/dagger_iron
+	name = "peasant knife x3"
+	recipe_name = "a couple knifes"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/rogueweapon/huntingknife/villager
+	createmultiple = TRUE
+	createditem_num = 2
+	craftdiff = 0 
+
 /datum/anvil_recipe/weapons/flail_iron
 	name = "Flail (+c) (+s)"
 	recipe_name = "a Flail"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/flail
+
+/datum/anvil_recipe/weapons/flail_iron
+	name = "Militia flail (+c) (+s)"
+	recipe_name = "a militia lail"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/flail/militia
+
 
 /datum/anvil_recipe/weapons/lucerne
 	name = "Lucerne (2) (+w)"
@@ -193,6 +237,14 @@
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/eaglebeak/lucerne
 	craftdiff = 2
+
+/datum/anvil_recipe/weapons/sledgehammer
+	name = "sledgehammer(+s)"
+	recipe_name = "a big hammer"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = 	/obj/item/rogueweapon/hammer/sledgehammer
 
 /datum/anvil_recipe/weapons/mace_iron
 	name = "Mace (+s)"
@@ -269,6 +321,15 @@
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/woodcut/steel
 	craftdiff = 2
+
+/datum/anvil_recipe/weapons/warhammer
+	name = "warhammer(+s)"
+	recipe_name = "a big warhammer"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = 	/obj/item/rogueweapon/hammer/sledgehammer/war
+
 
 /datum/anvil_recipe/weapons/battleaxe
 	name = "Battle Axe (2)"
@@ -479,3 +540,11 @@
 	created_item = /obj/item/rogueweapon/sword
 	craftdiff = 2
 
+/datum/anvil_recipe/weapons/steelstaff
+	name = "Steel quarterstaff (+2 staff)"
+	recipe_name = "an steel staff"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/rogueweapon/woodstaff/quarterstaff, /obj/item/rogueweapon/woodstaff/quarterstaff)
+	created_item = /obj/item/rogueweapon/woodstaff/quarterstaff/steel
+	craftdiff = 2
