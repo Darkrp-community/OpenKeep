@@ -111,7 +111,7 @@ Design philosphy:
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/helmet/kettle
-	beltr = /obj/item/rogueweapon/sword/iron
+	beltr = /obj/item/rogueweapon/sword/iron/messer
 	backpack_contents = list(/obj/item/keyring/guard)
 
 	//Stats for class
