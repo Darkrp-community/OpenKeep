@@ -155,7 +155,7 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/archer/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets hide armor, leather bracers, and an iron chain coif
+	//Gets hide armor, leather bracers, and a chain coif
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
