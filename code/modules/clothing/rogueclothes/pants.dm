@@ -166,7 +166,7 @@
 	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/under/roguetown/platelegs
-	name = "plated leggings"
+	name = "plated chausses"
 	desc = "Cuisses made of plated steel, offering additional protection against blunt force."
 	gender = PLURAL
 	icon_state = "heavyleggies" // Finally a sprite
