@@ -167,7 +167,7 @@
 
 /obj/item/clothing/under/roguetown/platelegs
 	name = "plated leggings"
-	desc = "Leggings made of plated steel, offering additional protection against blunt force."
+	desc = "Cuisses made of plated steel, offering additional protection against blunt force."
 	gender = PLURAL
 	icon_state = "heavyleggies" // Finally a sprite
 	item_state = "heavyleggies"
