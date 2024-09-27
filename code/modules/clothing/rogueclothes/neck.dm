@@ -128,7 +128,7 @@
 	blocksound = PLATEHIT
 	smeltresult = /obj/item/ingot/iron
 
-/obj/item/clothing/neck/roguetown/gorget/hoplite // Better than an iron gorget, not quite as good as a steel bervor
+/obj/item/clothing/neck/roguetown/gorget/hoplite // Better than an iron gorget, not quite as good as a steel bevor
 	name = "ancient gorget"
 	desc = "A heavy collar of bronze alloy, meant to protect the neck."
 	icon_state = "aasimarneck"
