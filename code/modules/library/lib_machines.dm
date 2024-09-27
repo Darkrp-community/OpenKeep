@@ -115,15 +115,16 @@
 
 	user.visible_message("<span class='notice'>[user] places a manuscript into the book binder and screws the press.</span>")
 	busy = TRUE
-	sleep(rand(200, 400))
+	sleep(rand(50, 100))
 	busy = FALSE
 
-	var/obj/item/book/B = new(src.loc)
+	var/obj/item/book/rogue/B = new(src.loc)
 	B.name = M.name
 	B.title = M.name
 	B.author = M.author
 	B.dat = M.content
-	B.icon_state = "book[rand(1,7)]"
+	B.icon_state = "[M.select_icon]_0"
+	B.base_icon_state = "[M.select_icon]"
 	qdel(M)
 
 	visible_message("<span class='notice'>[B.title] has been produced from the manuscript!</span>")
@@ -141,15 +142,29 @@
 	var/content = ""
 	var/category = "Unspecified"
 	var/ckey = ""
+	var/newicon = "basic_book_0"
 	var/written = FALSE
+	var/select_icon = "basic_book"
+	var/list/book_icons = list(
+	"Simple green" = "basic_book",
+	"Simple black" = "book",
+	"Simple red" = "book2",
+	"Simple blue" = "book3",
+	"Simple dark yellow" = "book4",
+	"Brown with dark corners" = "book5",
+	"Heavy purple with dark corners" = "book6",
+	"Light purple with gold leaf" = "book7",
+	"Light blue with gold leaf" = "book8",
+	"Grey with gold leaf" = "knowledge")
 
 /obj/item/paper/manuscript/attackby(obj/item/P, mob/living/carbon/human/user, params)
 	if(istype(P, /obj/item/natural/feather) && !written)
 		// Prompt user to populate manuscript fields
-		var/newtitle = input(user, "Enter the title of the manuscript:") as text|null
-		var/newauthor = input(user, "Enter the author's name:") as text|null
+		var/newtitle = dd_limittext(sanitize_hear_message(input(user, "Enter the title of the manuscript:")), MAX_NAME_LEN) as text|null
+		var/newauthor = sanitize_hear_message(input(user, "Enter the author's name:")) as text|null
 		var/newcontent = input(user, "Enter the content of the manuscript:") as text|null
 		var/newcategory = input(user, "Select the category of the manuscript:") in list("Apocrypha & Grimoires", "Myths & Tales", "Legends & Accounts", "Thesis", "Eoratica")
+		var/newicon = book_icons[input(user, "Choose a book style", "Book Style") as anything in book_icons]
 
 		if (newtitle && newauthor && newcontent && newcategory)
 			name = newtitle
@@ -157,6 +172,7 @@
 			content = newcontent
 			category = newcategory
 			ckey = user.ckey
+			select_icon = newicon
 			written = TRUE
 			user << "<span class='notice'>You have successfully written the manuscript.</span>"
 		else

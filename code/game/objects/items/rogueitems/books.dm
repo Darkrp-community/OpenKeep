@@ -260,8 +260,8 @@
 /obj/item/book/rogue/secret/xylix
 	name = "Book of Gold"
 	desc = "{<font color='red'><blink>An ominous book with untold powers.</blink></font>}"
-	icon_state ="xylix_0"
-	base_icon_state = "xylix"
+	icon_state ="spellbookmimic_0"
+	base_icon_state = "pellbookmimic"
 	bookfile = "xylix.json"
 
 /obj/item/book/rogue/xylix/attack_self(mob/user)
@@ -271,112 +271,6 @@
 	..()
 	user.update_inv_hands()
 	to_chat(user, "<span class='notice'>You feel laughter echo in your head.</span>")
-
-//player made books
-/obj/item/book/rogue/tales1
-	name = "Assorted Tales From Yester Yils"
-	desc = "By Alamere J Wevensworth"
-	icon_state ="book_0"
-	base_icon_state = "book"
-	bookfile = "tales1.json"
-
-/obj/item/book/rogue/festus
-	name = "Book of Festus"
-	desc = "Unknown Author"
-	icon_state ="book2_0"
-	base_icon_state = "book2"
-	bookfile = "tales2.json"
-
-/obj/item/book/rogue/tales3
-	name = "Myths & Legends of Rockhill & Beyond Volume I"
-	desc = "Arbalius The Younger"
-	icon_state ="book3_0"
-	base_icon_state = "book3"
-	bookfile = "tales3.json"
-
-/obj/item/book/rogue/bookofpriests
-	name = "Holy Book of Saphria"
-	desc = ""
-	icon_state ="knowledge_0"
-	base_icon_state = "knowledge"
-	bookfile = "holyguide.json"
-
-/obj/item/book/rogue/robber
-	name = "Reading for Robbers"
-	desc = "By Flavius of Dendor"
-	icon_state ="basic_book_0"
-	base_icon_state = "basic_book"
-	bookfile = "tales4.json"
-
-/obj/item/book/rogue/cardgame
-	name = "Graystone's Torment Basic Rules"
-	desc = "By Johnus of Doe"
-	icon_state ="basic_book_0"
-	base_icon_state = "basic_book"
-	bookfile = "tales5.json"
-
-/obj/item/book/rogue/blackmountain
-	name = "Zabrekalrek, The Black Mountain Saga: Part One"
-	desc = "Written by Gorrek Tale-Writer, translated by Hargrid Men-Speaker."
-	icon_state ="book6_0"
-	base_icon_state = "book6"
-	bookfile = "tales6.json"
-
-/obj/item/book/rogue/beardling
-	name = "Rock and Stone - ABC & Tales for Beardlings"
-	desc = "Distributed by the Dwarven Federation"
-	icon_state ="book8_0"
-	base_icon_state = "book8"
-	bookfile = "tales7.json"
-
-/obj/item/book/rogue/abyssor
-	name = "A Tale of Those Who Live At Sea"
-	desc = "By Bellum Aegir"
-	icon_state ="book2_0"
-	base_icon_state = "book2"
-	bookfile = "tales8.json"
-
-/obj/item/book/rogue/necra
-	name = "Burial Rites for Necra"
-	desc = "By Hunlaf, Gravedigger. Revised by Lenore, Priest of Necra."
-	icon_state ="book6_0"
-	base_icon_state = "book6"
-	bookfile = "tales9.json"
-
-/obj/item/book/rogue/noc
-	name = "Dreamseeker"
-	desc = "By Hunlaf, Gravedigger. Revised by Lenore, Priest of Necra."
-	icon_state ="book6_0"
-	base_icon_state = "book6"
-	bookfile = "tales10.json"
-
-/obj/item/book/rogue/fishing
-	name = "Fontaine's Advanced Guide to Fishery"
-	desc = "By Ford Fontaine"
-	icon_state ="book2_0"
-	base_icon_state = "book2"
-	bookfile = "tales11.json"
-
-/obj/item/book/rogue/sword
-	name = "The Six Follies: How To Survive by the Sword"
-	desc = "By Theodore Spillguts"
-	icon_state ="book5_0"
-	base_icon_state = "book5"
-	bookfile = "tales12.json"
-
-/obj/item/book/rogue/arcyne
-	name = "Latent Magicks, where does Arcyne Power come from?"
-	desc = "By Kildren Birchwood, scholar of Magicks"
-	icon_state ="book4_0"
-	base_icon_state = "book4"
-	bookfile = "tales13.json"
-
-/obj/item/book/rogue/nitebeast
-	name = "Legend of the Nitebeast"
-	desc = "By Paquetto the Scholar"
-	icon_state ="book8_0"
-	base_icon_state = "book8"
-	bookfile = "tales14.json"
 
 
 /obj/item/book/rogue/playerbook
@@ -593,36 +487,3 @@
 	random_cover = TRUE
 
 ____________End of Example*/
-
-/obj/item/book/rogue/magicaltheory
-	name = "Arcane Foundations - A historie of Magicks"
-	desc = "Written by the rector of the Valerian College of Magick"
-	icon_state ="knowledge_0"
-	base_icon_state = "knowledge"
-	bookfile = "MagicalTheory.json"
-
-/obj/item/book/rogue/vownecrapage
-	name = "Necra's Vow of Silence"
-	desc = "A faded page, with seemingly no author."
-	icon_state = "book8_0"
-	base_icon_state = "book8"
-	bookfile = "VowOfNecraPage.json"
-
-/obj/item/book/rogue/godofdreamsandnightmares
-	name = "God of Dreams & Nightmares"
-	desc = "An old decrepit book, with seemingly no author."
-	bookfile = "GodDreams.json"
-	random_cover = TRUE
-
-/obj/item/book/rogue/psybibleplayerbook
-	name = "Psybible"
-	desc = "An old tome, authored by Father Ambrose of Grenzelhoft."
-	bookfile = "PsyBible.json"
-	random_cover = TRUE
-
-/obj/item/book/rogue/manners
-	name = "Manners of Gentlemen"
-	desc = "A popular guide for young people of genteel birth."
-	icon_state ="basic_book_0"
-	base_icon_state = "basic_book"
-	bookfile = "manners.json"
