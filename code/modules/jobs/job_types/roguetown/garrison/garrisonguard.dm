@@ -203,6 +203,7 @@ Design philosphy:
 	beltr = /obj/item/rogueweapon/sword/rapier
 	head = /obj/item/clothing/head/roguetown/roguehood/red
 	neck = /obj/item/clothing/neck/roguetown/gorget
+	wrists = /obj/item/clothing/wrists/roguetown/bracers
 
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
