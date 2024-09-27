@@ -403,3 +403,45 @@
 	icon_state = "bronzespear_winged"
 	wdefense = 5
 	sellprice = 150 // A noble collector would love to get his/her hands on one of these spears
+
+////STAFFS!
+
+/obj/item/rogueweapon/woodstaff/quarterstaff
+	force = 10
+	force_wielded = 15
+	possible_item_intents = list(SPEAR_BASH)
+	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood, /datum/intent/spear/bash/swing)
+	name = "wooden quarterstaff"
+	desc = "The ultimate support tool for travellers, a proper quarterstaff that is durable and swift, it even has more range than a normal staff."
+	icon_state = "quarterstaff"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	wlength = WLENGTH_LONG
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	blade_dulling = DULLING_BASHCHOP
+	sharpness = IS_BLUNT
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
+	walking_stick = TRUE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	max_integrity = 250//carpenter work
+	wdefense = 5
+	bigboy = TRUE
+	gripsprite = TRUE
+	associated_skill = /datum/skill/combat/polearms
+	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
+	sellprice = 10
+
+/datum/intent/spear/bash/swing//long distance bonk, plonk, wonk.
+	name = "swing"
+	blade_class = BCLASS_BLUNT
+	icon_state = "inbash"
+	attack_verb = list("bashes", "strikes", "swings")
+	penfactor = 10
+	damfactor = 0.8
+	reach = 2
+	chargetime = 1
+	swingdelay = 1
+	misscost = 5
