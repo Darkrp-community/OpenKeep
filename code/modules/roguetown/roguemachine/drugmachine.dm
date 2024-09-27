@@ -5,6 +5,109 @@
 #define DRUGRADE_CLOTHES 	      	(1<<4)
 #define DRUGRADE_NOTAX				(1<<5)
 
+/obj/item/roguemachine/drugtrade
+	name = "NARCOS"
+	desc = "A machine that exports drugs throughout a network of pneumatic pipes."
+	icon = 'icons/roguetown/misc/machines.dmi'
+	icon_state = "ballooner"
+	density = TRUE
+	blade_dulling = DULLING_BASH
+	var/next_canister
+	var/accepted_items
+	max_integrity = 0
+	anchored = TRUE
+	w_class = WEIGHT_CLASS_GIGANTIC
+
+/obj/structure/roguemachine/drug_chute
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/misc/machines.dmi'
+	icon_state = ""
+	density = FALSE
+	layer = BELOW_OBJ_LAYER
+	anchored = TRUE
+
+/obj/item/roguemachine/drugtrade/attack_hand(mob/living/user)
+	if(!anchored)
+		return ..()
+	user.changeNext_move(CLICK_CD_MELEE)
+
+	var/contents
+
+	contents += "<center>THE DEN<BR>"
+	contents += "--------------<BR>"
+	//contents += "Guild's Tax: [SStreasury.queens_tax*100]%<BR>"
+	contents += "Next Canister: [time2text((next_canister - world.time), "mm:ss")]</center><BR>"
+
+	if(!user.can_read(src, TRUE))
+		contents = stars(contents)
+	var/datum/browser/popup = new(user, "VENDORTHING", "", 370, 220)
+	popup.set_content(contents)
+	popup.open()
+
+/obj/item/roguemachine/drugtrade/update_icon()
+	if(!anchored)
+		w_class = WEIGHT_CLASS_BULKY
+		set_light(0)
+		return
+	w_class = WEIGHT_CLASS_GIGANTIC
+	set_light(2, 2, "#9C37B5")
+
+/obj/item/roguemachine/drugtrade/Initialize()
+	. = ..()
+	if(anchored)
+		START_PROCESSING(SSroguemachine, src)
+	update_icon()
+	for(var/X in GLOB.alldirs)
+		var/T = get_step(src, X)
+		if(!T)
+			continue
+		new /obj/structure/roguemachine/drug_chute(T)
+
+/obj/item/roguemachine/drugtrade/Destroy()
+	STOP_PROCESSING(SSroguemachine, src)
+	set_light(0)
+	return ..()
+
+/obj/item/roguemachine/drugtrade/process()
+	if(!anchored)
+		return TRUE
+	if(world.time > next_canister)
+		next_canister = world.time + rand(2 MINUTES, 3 MINUTES)
+#ifdef TESTSERVER
+		next_canister = world.time + 5 SECONDS
+#endif
+		var/play_sound = FALSE
+		for(var/D in GLOB.alldirs)
+			var/budgie = 0
+			var/turf/T = get_step(src, D)
+			if(!T)
+				continue
+			var/obj/structure/roguemachine/drug_chute/E = locate() in T
+			if(!E)
+				continue
+			accepted_items = list(/obj/item/reagent_containers/powder/spice, /obj/item/reagent_containers/powder/ozium, /obj/item/reagent_containers/powder/moondust)
+			for(var/obj/I in T)
+				if(I.anchored)
+					continue
+				if(!isturf(I.loc))
+					continue
+				if(!(I.type in accepted_items))
+					continue
+				var/prize = I.get_real_price() * 5 // Increase price by 500% Keep in mind drug sell prices are pretty cheap.
+				if(prize >= 1)
+					play_sound=TRUE
+					budgie += prize
+					I.visible_message("<span class='warning'>[I] is sucked into the tube!</span>")
+					qdel(I)
+			budgie = round(budgie)
+			if(budgie > 0)
+				play_sound=TRUE
+				E.budget2change(budgie)
+				budgie = 0
+		if(play_sound)
+			playsound(src.loc, 'sound/misc/hiss.ogg', 100, FALSE, -1)
+
 /obj/structure/roguemachine/drugmachine
 	name = "PURITY"
 	desc = "You want to destroy your life."
