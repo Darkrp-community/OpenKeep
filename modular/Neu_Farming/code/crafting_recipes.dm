@@ -28,7 +28,7 @@
 
 /datum/crafting_recipe/roguetown/dryweed
 	name = "dry westleach leaf"
-	result = /obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed_dried
+	result = /obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed
 	reqs = list(/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed = 1)
 	structurecraft = /obj/structure/fluff/dryingrack
 	time = 2 SECONDS
@@ -40,7 +40,7 @@
 /datum/crafting_recipe/roguetown/sigdry
 	name = "westleach zig"
 	result = /obj/item/clothing/mask/cigarette/rollie/nicotine
-	reqs = list(/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed_dried = 1,
+	reqs = list(/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed = 1,
 				/obj/item/paper = 1)
 	time = 10 SECONDS
 	verbage = "roll"
