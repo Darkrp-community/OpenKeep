@@ -348,7 +348,7 @@
 				/obj/item/reagent_containers/glass/bottle = 1)
 	craftdiff = 2
 	skillcraft = /datum/skill/craft/engineering
-	
+
 /datum/crafting_recipe/roguetown/pyrobolt
 	name = "pyroclastic bolt"
 	result = /obj/item/ammo_casing/caseless/rogue/bolt/pyro
@@ -438,7 +438,7 @@
 
 /datum/crafting_recipe/roguetown/quarterstaff
 	name = "wooden quarterstaff"
-	result = list(/obj/item/rogueweapon/woodstaff/quarterstaff
+	result = list(/obj/item/rogueweapon/woodstaff/quarterstaff,
 	/obj/item/rogueweapon/woodstaff/quarterstaff)
 	reqs = list(/obj/item/grown/log/tree = 1)
 	skillcraft = /datum/skill/craft/carpentry

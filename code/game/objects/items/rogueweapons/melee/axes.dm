@@ -18,9 +18,9 @@
 	wdefense = 1
 	w_class = WEIGHT_CLASS_BULKY
 	wlength = WLENGTH_SHORT
-	resistance_flags = FLAMMABLE // Weapon made mostly of wood	
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	gripped_intents = list(/datum/intent/axe/chop/stone)
-	smeltresult = /obj/item/ingot/coal//is a wooden log and a stone hammered in the top
+	smeltresult = /obj/item/rogueore/coal //is a wooden log and a stone hammered in the top
 	axe_cut = 7
 	sellprice = 10
 
@@ -316,7 +316,7 @@
 	chargetime = 1
 	warnie = "mobwarning"
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-	penfactor = 40 
+	penfactor = 40
 	swingdelay = 1
 	misscost = 10
 

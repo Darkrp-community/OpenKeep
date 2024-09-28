@@ -121,7 +121,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_HIP
 	associated_skill = /datum/skill/combat/whipsflails
-	smeltresult = /obj/item/ingot/coal//is mostly wood
+	smeltresult = /obj/item/rogueore/coal //is mostly wood
 	pickup_sound = 'sound/foley/equip/equip_armor_chain.ogg'
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'

@@ -250,7 +250,7 @@
 	name = "iron buckler"
 	desc = "A small sized iron shield, popular among mercenaries due to it's lightweight and how easy is move with it."
 	icon_state = "ironbuckler"
-	slot_flags = ITEM_SLOT_HIP, ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
 	force = 10
 	throwforce = 10
 	dropshrink = 0.75

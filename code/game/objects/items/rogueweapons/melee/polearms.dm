@@ -465,12 +465,12 @@
 	name = "steel quarterstaff"
 	desc = "An unusual sight, a knightly combat staff made out of worked steel and reinforced wood is a heavy and powerful weapon, more than enough to beat the living daylights out of any brigand."
 	icon_state = "steelstaff"
-		minstr = 10//very heavy
+	minstr = 10//very heavy
 	max_integrity = 450//steel tier
 
 //scythe
 /obj/item/rogueweapon/sickle/scythe
-force = 10
+	force = 10
 	force_wielded = 20
 	possible_item_intents = list(SPEAR_CUT) //truly just a long knife
 	gripped_intents = list(SPEAR_CUT)
