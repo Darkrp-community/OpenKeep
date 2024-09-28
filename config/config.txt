@@ -235,7 +235,7 @@ USEBLACKLIST
 # FORUMURL http://tgstation13.org/phpBB/index.php
 
 ## Wiki address
-WIKIURL https://wiki.stonekeep.xyz/
+WIKIURL https://wiki.stonekeep.xyz/index.php/
 
 ## Rules address
 RULESURL https://wiki.stonekeep.xyz/index.php/Rules

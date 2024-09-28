@@ -222,6 +222,26 @@
 	if(dynamic_icon)
 		icon_state = "[icon_prefix]"
 
+// Fixes an exploit. It shouldn't stack buffs anymore.
+/obj/item/rogue/instrument/throw_at(atom/target, range, speed, mob/thrower, spin, diagonals_first, datum/callback/callback)
+	. = ..()
+	playing = FALSE
+	soundloop.stop()
+	if(dynamic_icon)
+		lower_from_mouth()
+		update_icon()
+	for(var/mob/living/carbon/L in viewers(7))
+		var/mob/living/carbon/buffed = L
+		if(buffed.mind?.has_antag_datum(/datum/antagonist))
+			if(buffed.mind?.isactuallygood())
+				for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+					buffed.remove_status_effect(b) // All applicable bard buffs stopped
+			else
+				return
+		else
+			for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+				buffed.remove_status_effect(b) // All applicable bard buffs stopped
+
 /obj/item/rogue/instrument/proc/lift_to_mouth()
 	icon_state = "[icon_prefix]_play"
 

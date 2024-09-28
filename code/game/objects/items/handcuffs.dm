@@ -256,10 +256,10 @@
 	throw_range = 1
 	icon_state = "beartrap"
 	desc = "A crude and rusty spring trap, used to snare interlopers, or prey on a hunt. Looks almost like falling apart."
-	var/rusty = TRUE
-	var/armed = 0
-	var/trap_damage = 90
-	embedding = list("embedded_unsafe_removal_time" = 40, "embedded_pain_chance" = 10, "embedded_pain_multiplier" = 1, "embed_chance" = 0, "embedded_fall_chance" = 0)
+	var/rusty = TRUE // Is it an old trap? Will most likely be destroyed if not handled right
+	var/armed = FALSE // Is it armed?
+	var/trap_damage = 90 // How much brute damage the trap will do to its victim
+	var/used_time = 12 SECONDS // How many seconds it takes to disarm the trap
 	max_integrity = 100
 
 /obj/item/restraints/legcuffs/beartrap/attack_hand(mob/user)
@@ -270,7 +270,7 @@
 		var/obj/item/bodypart/BP = C.get_bodypart(def_zone)
 		if(!BP)
 			return FALSE
-		if(C.badluck(5))
+		if(C.badluck(5)) // UNLUCKY
 			add_mob_blood(C)
 			if(!BP.is_object_embedded(src))
 				BP.add_embedded_object(src)
@@ -281,17 +281,17 @@
 			C.Stun(80)
 			BP.add_wound(/datum/wound/fracture)
 			BP.update_disabled()
-			C.apply_damage(trap_damage, BRUTE, def_zone)
+			C.apply_damage(trap_damage, BRUTE, def_zone, C.run_armor_check(def_zone, "melee", damage = trap_damage))
 			C.consider_ambush()
 			return FALSE
 		else
-			var/used_time = 10 SECONDS
 			if(C.mind)
 				used_time -= max((C.mind.get_skill_level(/datum/skill/craft/traps) * 2 SECONDS), 2 SECONDS)
 			if(do_after(user, used_time, target = src))
 				armed = FALSE
+				anchored = FALSE
 				update_icon()
-				alpha = 255
+				src.alpha = 255
 				C.visible_message("<span class='notice'>[C] disarms \the [src].</span>", \
 						"<span class='notice'>I disarm \the [src].</span>")
 				C.mind?.adjust_experience(/datum/skill/craft/traps, C.STAINT * boon, FALSE)
@@ -306,7 +306,7 @@
 				C.emote("agony")
 				BP.add_wound(/datum/wound/fracture)
 				BP.update_disabled()
-				C.apply_damage(trap_damage, BRUTE, def_zone)
+				C.apply_damage(trap_damage, BRUTE, def_zone, C.run_armor_check(def_zone, "melee", damage = trap_damage))
 				C.consider_ambush()
 				return FALSE
 	..()
@@ -325,6 +325,7 @@
 
 /obj/item/restraints/legcuffs/beartrap/armed
 	armed = TRUE
+	anchored = TRUE // Pre mapped traps (bad mapping btw, don't) start anchored
 
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage
 	armed = TRUE
@@ -349,11 +350,14 @@
 	if(ishuman(user) && !user.stat && !user.restrained())
 		var/mob/living/L = user
 		if(do_after(user, 50 - (L.STASTR*2), target = user))
-			if(prob(50 + (L.mind.get_skill_level(/datum/skill/craft/traps) * 10)))
-				armed = !armed
+			if(prob(50 + (L.mind.get_skill_level(/datum/skill/craft/traps) * 10))) // 100% chance to set traps properly at Master trapping
+				armed = TRUE // Impossible to use in hand if it's armed
+				L.dropItemToGround(src) // We drop it instantly on the floor beneath us
+				anchored = TRUE // And anchor it so that it can't be carried inside chests (prevents exploit)
 				update_icon()
-				to_chat(user, "<span class='notice'>[src] is now [armed ? "armed" : "disarmed"]</span>")
+				src.alpha = 80 // Set lower visibility for everyone
 				L.mind?.adjust_experience(/datum/skill/craft/traps, L.STAINT * boon, FALSE) // We learn how to set them better, little by little.
+				to_chat(user, "<span class='notice'>I arm |the [src].</span>")
 			else
 				if(rusty)
 					user.visible_message("<span class='warning'>The rusty [src.name] breaks under stress!</span>")
@@ -366,6 +370,7 @@
 
 /obj/item/restraints/legcuffs/beartrap/proc/close_trap()
 	armed = FALSE
+	anchored = FALSE // Take it off the ground
 	alpha = 255
 	update_icon()
 	playsound(src.loc, 'sound/items/beartrap.ogg', 300, TRUE, -1)
@@ -391,15 +396,15 @@
 			if(snap && iscarbon(L))
 				var/mob/living/carbon/C = L
 				if(C.mobility_flags & MOBILITY_STAND)
-					def_zone = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+					def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT)
 					var/obj/item/bodypart/BP = C.get_bodypart(def_zone)
 					if(BP)
 						add_mob_blood(C)
 						if(!BP.is_object_embedded(src))
 							BP.add_embedded_object(src)
 						C.emote("agony")
-						//BP.set_disabled(BODYPART_DISABLED_WOUND)
-						//BP.add_wound(/datum/wound/fracture)
+				//BP.set_disabled(BODYPART_DISABLED_WOUND)
+				// BP.add_wound(/datum/wound/fracture)
 			else if(snap && isanimal(L))
 				var/mob/living/simple_animal/SA = L
 				if(SA.mob_size <= MOB_SIZE_TINY) //don't close the trap if they're as small as a mouse.
@@ -408,8 +413,8 @@
 				close_trap()
 				L.visible_message("<span class='danger'>[L] triggers \the [src].</span>", \
 						"<span class='danger'>I trigger \the [src]!</span>")
-				L.apply_damage(trap_damage, BRUTE, def_zone)
-				L.Stun(80)
+				if(L.apply_damage(trap_damage, BRUTE, def_zone, L.run_armor_check(def_zone, "melee", damage = trap_damage)))
+					L.Stun(80)
 				L.consider_ambush()
 	..()
 

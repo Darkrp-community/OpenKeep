@@ -1,4 +1,4 @@
-/obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc
+/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc
 	name = "Orc Marauder Breastplate"
 	icon_state = "marauder_armor"
 	item_state = "marauder_armor"
@@ -13,7 +13,7 @@
 	max_integrity = 100
 	sellprice = 10
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/iron/orc/warlord
+/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord
 	name = "Orc Warlord Plate"
 	desc = "Fearsome armor which covers nearly the entire body."
 	icon_state = "warlord_armor"
