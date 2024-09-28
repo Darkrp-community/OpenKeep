@@ -196,11 +196,14 @@
 								if(buffed.mind?.isactuallygood())
 									for(var/datum/status_effect/bardicbuff/b in L.status_effects)
 										buffed.remove_status_effect(b)
+										return TRUE
 								else
-									return
+									return TRUE
 							else
 								for(var/datum/status_effect/bardicbuff/b in L.status_effects)
 									buffed.remove_status_effect(b)
+									return TRUE
+				return TRUE
 
 	return ..()
 
