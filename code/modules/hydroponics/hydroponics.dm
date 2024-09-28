@@ -363,7 +363,7 @@
 		myseed = null
 	else
 		oldPlantName = "empty tray"
-	switch(rand(1,18))		// randomly pick predominative weed
+/*	switch(rand(1,18))		// randomly pick predominative weed
 		if(16 to 18)
 			myseed = new /obj/item/seeds/reishi(src)
 		if(14 to 15)
@@ -379,7 +379,7 @@
 		if(4 to 5)
 			myseed = new /obj/item/seeds/plump(src)
 		else
-			myseed = new /obj/item/seeds/starthistle(src)
+			myseed = new /obj/item/seeds/starthistle(src)*/
 	age = 0
 	plant_health = myseed.endurance
 	lastcycle = world.time
