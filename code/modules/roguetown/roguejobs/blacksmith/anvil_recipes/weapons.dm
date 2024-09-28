@@ -446,7 +446,7 @@
 	created_item = /obj/item/rogueweapon/greatsword
 	craftdiff = 4
 
-/datum/anvil_recipe/weapons/halbert
+/datum/anvil_recipe/weapons/halberd
 	name = "Halberd (2) (+w)"
 	recipe_name = "a Halberd"
 	appro_skill = /datum/skill/craft/weaponsmithing
