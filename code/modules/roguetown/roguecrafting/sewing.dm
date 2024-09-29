@@ -173,21 +173,21 @@
 	result = list(/obj/item/clothing/suit/roguetown/shirt/dress/gen/black)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
-	craftdiff = 4
+	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/sewing/Bludress
 	name = "blue dress"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/dress/gen/blue)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
-	craftdiff = 4
+	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/sewing/Purdress
 	name = "purple dress"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/dress/gen/purple)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
-	craftdiff = 4
+	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/sewing/fancyhat
 	name = "fancy hat"
