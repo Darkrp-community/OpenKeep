@@ -7,6 +7,7 @@
 	lefthand_file = 'modular/Barding/icons/instruments_lefthand.dmi'
 	righthand_file = 'modular/Barding/icons/instruments_righthand.dmi'
 	experimental_inhand = FALSE
+	possible_item_intents = list(/datum/intent/use)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK_R|ITEM_SLOT_BACK_L
 	can_parry = FALSE
 	force = 0
@@ -177,7 +178,9 @@
 								// Apply the buff every second to refresh its duration since it's timed
 								while(playing)
 									L.apply_status_effect(buff2use)
-									sleep(10) // Sanity to avoid infinite loop
+									var/boon = user?.mind?.get_learning_boon(/datum/skill/misc/music)
+									user?.mind?.adjust_experience(/datum/skill/misc/music, ceil((user.STAINT*0.2) * boon)) // And gain exp
+									sleep(10 * world.tick_lag) // Sanity to avoid infinite loop
 							else
 								return
 						else
@@ -185,13 +188,20 @@
 							// Apply the buff every second to refresh its duration since it's timed
 							while(playing)
 								L.apply_status_effect(buff2use)
-								sleep(10) // Sanity to avoid infinite loop
+								var/boon = user?.mind?.get_learning_boon(/datum/skill/misc/music)
+								user?.mind?.adjust_experience(/datum/skill/misc/music, ceil((user.STAINT*0.2) * boon)) // and gain exp
+								sleep(10 * world.tick_lag) // Sanity to avoid infinite loop
 					else
 						return
 			else
 				to_chat(user, "I decided not to bestow any boons to my music.")
-				return
-			
+				for(var/mob/living/carbon/L in viewers(7))
+					L.add_stress(bardbonus) // Give us the extra mood regardless.
+				while(playing) // Grant us exp even if we did not apply buffs to anyone.
+					var/boon = user?.mind?.get_learning_boon(/datum/skill/misc/music)
+					user?.mind?.adjust_experience(/datum/skill/misc/music, ceil((user.STAINT*0.2) * boon))
+					sleep(10 * world.tick_lag) // Gain exp every 1 second delay of playing
+
 		// BARDIC BUFFS CODE END //
 
 		while(playing)
@@ -219,12 +229,6 @@
 
 /obj/item/rogue/instrument/dropped(mob/user)
 	. = ..()
-	if(dynamic_icon)
-		icon_state = "[icon_prefix]"
-
-// Fixes an exploit. It shouldn't stack buffs anymore.
-/obj/item/rogue/instrument/throw_at(atom/target, range, speed, mob/thrower, spin, diagonals_first, datum/callback/callback)
-	. = ..()
 	playing = FALSE
 	soundloop.stop()
 	if(dynamic_icon)
@@ -241,6 +245,45 @@
 		else
 			for(var/datum/status_effect/bardicbuff/b in L.status_effects)
 				buffed.remove_status_effect(b) // All applicable bard buffs stopped
+
+// At this point I don't know what other proc should be covered to avoid exploits.
+/obj/item/rogue/instrument/obj_destruction(damage_flag)
+	. = ..()
+	if(playing)
+		playing = FALSE
+		soundloop.stop()
+		for(var/mob/living/carbon/L in viewers(7))
+			var/mob/living/carbon/buffed = L
+			if(buffed.mind?.has_antag_datum(/datum/antagonist))
+				if(buffed.mind?.isactuallygood())
+					for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+						buffed.remove_status_effect(b) // All applicable bard buffs stopped
+				else
+					return
+			else
+				for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+					buffed.remove_status_effect(b) // All applicable bard buffs stopped
+
+// Fixes an exploit. It shouldn't stack buffs anymore.
+/obj/item/rogue/instrument/throw_at(atom/target, range, speed, mob/thrower, spin, diagonals_first, datum/callback/callback)
+	. = ..()
+	if(playing)
+		playing = FALSE
+		soundloop.stop()
+		if(dynamic_icon)
+			lower_from_mouth()
+			update_icon()
+		for(var/mob/living/carbon/L in viewers(7))
+			var/mob/living/carbon/buffed = L
+			if(buffed.mind?.has_antag_datum(/datum/antagonist))
+				if(buffed.mind?.isactuallygood())
+					for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+						buffed.remove_status_effect(b) // All applicable bard buffs stopped
+				else
+					return
+			else
+				for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+					buffed.remove_status_effect(b) // All applicable bard buffs stopped
 
 /obj/item/rogue/instrument/proc/lift_to_mouth()
 	icon_state = "[icon_prefix]_play"
