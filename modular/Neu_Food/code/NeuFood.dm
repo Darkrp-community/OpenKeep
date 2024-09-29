@@ -452,7 +452,10 @@
 		if(prob(12))
 			M.emote("gag")
 			M.add_nausea(9)
-			M.adjustToxLoss(5, 0)
+			if(isdwarf(M))
+				M.adjustToxLoss(2, 0)
+			else
+				M.adjustToxLoss(5, 0)
 	..()
 	. = TRUE
 
