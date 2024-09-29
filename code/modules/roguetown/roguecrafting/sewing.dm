@@ -108,6 +108,13 @@
                 /obj/item/natural/fibers = 1)
 	craftdiff = 1
 
+/datum/crafting_recipe/roguetown/sewing/armingcap
+    name = "arming cap"
+    result = list(/obj/item/clothing/head/roguetown/armingcap)
+    reqs = list(/obj/item/natural/cloth = 2,
+                /obj/item/natural/fibers = 1)
+    craftdiff = 1
+
 
 /*.............. recipes requiring skill 2 ..............*/
 
