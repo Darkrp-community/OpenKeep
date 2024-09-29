@@ -66,6 +66,19 @@
 	new /obj/item/needle/thorn(src)
 	new /obj/item/roguekey/bandit(src)
 
+//Bandit's belt starts with a bandage and a key to their guildhall.
+/obj/item/storage/belt/rogue/leather/mercenary/PopulateContents()
+	new /obj/item/natural/cloth(src)
+	new /obj/item/roguekey/mercenary(src)
+
+/obj/item/storage/belt/rogue/leather/mercenary/shalal
+	name = "shalal belt"
+	icon_state = "shalal"
+
+/obj/item/storage/belt/rogue/leather/mercenary/black
+	name = "black belt"
+	icon_state = "blackbelt"
+
 
 /obj/item/storage/belt/rogue/leather/plaquegold
 	name = "plaque belt"
@@ -232,7 +245,7 @@
 	if(STR)
 		STR.max_combined_w_class = 21
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
-		STR.max_items = 3
+		STR.max_items = 4
 
 /obj/item/storage/backpack/rogue/attack_right(mob/user)
 	var/datum/component/storage/CP = GetComponent(/datum/component/storage)
