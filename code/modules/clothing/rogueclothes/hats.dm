@@ -71,12 +71,6 @@
 /obj/item/clothing/head/roguetown/headband/red
 	color = CLOTHING_RED
 
-/obj/item/clothing/head/roguetown/armingcap
-	name = "arming cap"
-	desc = "A white peasant cap worn by most manual laborers to protect from sunburn."
-	icon_state = "armingcap"
-	item_state = "armingcap"
-	flags_inv = HIDEEARS
 
 //................ Fur Hats ............... //
 /obj/item/clothing/head/roguetown/hatfur
@@ -786,6 +780,38 @@
 	smeltresult = /obj/item/ingot/iron
 
 
+/*----------------\
+| Padded headwear |
+\----------------*/
+
+
+//............... Headscarf ............... //
+/obj/item/clothing/head/roguetown/helmet/leather/headscarf // repathing isnt needed really
+	name = "headscarf"
+	desc = "Rolled cloth. Gives some protection at least."
+	icon_state = "headscarf"
+	color = "#745a4d"
+	sellprice = VALUE_LEATHER_HELMET/2
+
+	armor = list("melee" = 20, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	body_parts_covered = HEAD|HAIR
+	prevent_crits =  CRITICALS_THICK_CLOTH
+	max_integrity = 120
+
+
+//............... Arming Cap ............... //
+/obj/item/clothing/head/roguetown/armingcap // arming caps are padded caps worn under maille coifs and such, should basically be on par with leather coif (it should BE the coif but whatever)
+	name = "arming cap"
+	desc = "A white padded cap worn by most manual laborers to protect from sunburn."
+	icon_state = "armingcap"
+	item_state = "armingcap"
+	flags_inv = HIDEEARS
+
+	armor = list("melee" = 20, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	body_parts_covered = HEAD|HAIR|EARS
+	prevent_crits =  CRITICALS_THICK_CLOTH
+	max_integrity = 100
+
 
 /*----------------\
 | Leather helmets |
@@ -816,17 +842,6 @@
 	name = "buckled hat"
 	desc = "A black top hat with a buckle on top, favored by Witch Hunters and Inquisitors."
 	icon_state = "puritan_hat"
-
-//............... Headscarf ............... //
-/obj/item/clothing/head/roguetown/helmet/leather/headscarf
-	name = "headscarf"
-	desc = "Rolled cloth. Gives some protection at least."
-	icon_state = "headscarf"
-	color = "#745a4d"
-	sellprice = VALUE_LEATHER_HELMET/2
-
-	armor = list("melee" = 20, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	max_integrity = 120
 
 //............... Ominous Hood ............... //
 /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous // a leather coif locked to headslot since you cannot pull it back. Crit prevent between armor items a little weird, this is leather coif, compare to helmet
