@@ -514,6 +514,16 @@
 	foodtype = GRAIN | MEAT
 	tastes = list("succulent meat" = 1)
 
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/cheese
+	w_class = WEIGHT_CLASS_NORMAL
+	foodtype = GRAIN | DAIRY
+	tastes = list("hot cheese" = 1)
+
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/apple
+	w_class = WEIGHT_CLASS_NORMAL
+	foodtype = GRAIN | FRUIT
+	tastes = list("sweet apple" = 1)
+
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/berry
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | FRUIT

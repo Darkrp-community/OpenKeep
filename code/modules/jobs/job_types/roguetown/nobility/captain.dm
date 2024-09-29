@@ -19,7 +19,7 @@
 	bypass_lastclass = TRUE
 	outfit = /datum/outfit/job/roguetown/captain
 	give_bank_account = 120
-	min_pq = 0
+	min_pq = 4
 
 /datum/job/roguetown/captain/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -27,7 +27,7 @@
 		var/mob/living/carbon/human/H = L
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
-		var/honorary = "Ser"
+		var/honorary = "Sir"
 		if(H.gender == FEMALE)
 			honorary = "Dame"
 		H.real_name = "[honorary] [prev_real_name]"
@@ -73,4 +73,5 @@
 		H.change_stat("speed", 1)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell

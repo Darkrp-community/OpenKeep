@@ -5,6 +5,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 	possible_item_intents = list(/datum/intent/use)
+	dust_result = /obj/item/alch/seeddust
 	var/plant_def_type
 	var/seed_identity = "some seed"
 
@@ -68,7 +69,7 @@
 	seed_identity = "wheat seeds"
 	plant_def_type = /datum/plant_def/wheat
 
-/obj/item/neuFarm/seed/wheat/oat
+/obj/item/neuFarm/seed/oat
 	seed_identity = "oat seeds"
 	plant_def_type = /datum/plant_def/oat
 	color = "#a3eca3"
@@ -89,7 +90,7 @@
 	seed_identity = "berry seeds"
 	plant_def_type = /datum/plant_def/berry
 
-/obj/item/neuFarm/seed/berryrogue/poison
+/obj/item/neuFarm/seed/poison_berries
 	seed_identity = "berry seeds"
 	plant_def_type = /datum/plant_def/berry_poison
 

@@ -193,13 +193,21 @@
 	craftdiff = 3
 	subtype_reqs = TRUE
 
-/datum/crafting_recipe/roguetown/pestle
-	name = "stone pestle"
-	result = /obj/item/pestle
-	reqs = list(/obj/item/natural/stone = 1)
+/datum/crafting_recipe/roguetown/alchmortar
+	name = "alchemical mortar"
+	result = /obj/item/mortar
+	reqs = list(/obj/item/natural/stone = 3)
 	tools = list(/obj/item/rogueweapon/huntingknife)
-	craftdiff = 3
-	subtype_reqs = TRUE
+	verbage = "crafts"
+	skillcraft = /datum/skill/craft/masonry
+
+/datum/crafting_recipe/roguetown/pestle
+	name = "pestle"
+	result = /obj/item/pestle
+	reqs = list(/obj/item/natural/stone = 2)
+	tools = list(/obj/item/rogueweapon/huntingknife)
+	verbage = "crafts"
+	skillcraft = /datum/skill/craft/masonry
 
 /datum/crafting_recipe/roguetown/bag
 	name = "bag"
@@ -317,6 +325,16 @@
 				/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison = 1)
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/poisonarrow/alt
+	reqs = list(/obj/item/ammo_casing/caseless/rogue/arrow = 1,
+				/datum/reagent/berrypoison = 5)
+
+/datum/crafting_recipe/roguetown/poisonarrow/potent
+	name = "poison arrow (potent)"
+	result = /obj/item/ammo_casing/caseless/rogue/arrow/poison/potent
+	reqs = list(/obj/item/ammo_casing/caseless/rogue/arrow = 1,
+				/datum/reagent/strongpoison = 5)
+
 /datum/crafting_recipe/roguetown/pyroarrow
 	name = "pyroclastic arrow"
 	result = /obj/item/ammo_casing/caseless/rogue/arrow/pyro
@@ -331,6 +349,16 @@
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/bolt = 1,
 				/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison = 1)
 	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/poisonbolt/alt
+	reqs = list(/obj/item/ammo_casing/caseless/rogue/bolt = 1,
+				/datum/reagent/berrypoison = 5)
+
+/datum/crafting_recipe/roguetown/poisonbolt/potent
+	name = "poison bolt (potent)"
+	result = /obj/item/ammo_casing/caseless/rogue/bolt/poison/potent
+	reqs = list(/obj/item/ammo_casing/caseless/rogue/bolt = 1,
+				/datum/reagent/strongpoison = 5)
 
 /datum/crafting_recipe/roguetown/bomb
 	name = "bomb"
@@ -349,13 +377,31 @@
 	craftdiff = 1
 	skillcraft = /datum/skill/craft/engineering
 
+/datum/crafting_recipe/roguetown/recurve
+	name = "recurve bow"
+	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve)
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+	/obj/item/natural/fibers = 4)
+	craftdiff = 1
+	skillcraft = /datum/skill/craft/carpentry
+
 /datum/crafting_recipe/roguetown/handmadebow
 	name = "wooden bow"
 	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow)
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 	/obj/item/natural/fibers = 6)
-	craftdiff = 3
+	craftdiff = 2
 	skillcraft = /datum/skill/craft/carpentry
+
+/datum/crafting_recipe/roguetown/longbow
+	name = "longbow"
+	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long)
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+	/obj/item/natural/fibers = 8,
+	/obj/item/reagent_containers/food/snacks/fat)
+	skillcraft = /datum/skill/craft/carpentry
+	structurecraft = /obj/machinery/light/rogue/campfire
+	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/flint
 	name = "flint"

@@ -24,6 +24,8 @@
 	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
 	associated_skill = /datum/skill/combat/knives
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
+	equip_sound = 'sound/foley/dropsound/holster_sword.ogg'
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
 	throwforce = 12
 	wdefense = 3
 	wbalance = 1 // All knives are swift, bonus to SPD
@@ -93,9 +95,14 @@
 /obj/item/rogueweapon/huntingknife/cleaver
 	name = "cleaver"
 	desc = "A chef's tool turned armament, cleave off cumbersome flesh with rudimentary ease."
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	icon_state = "cleav"
-	icon = 'icons/roguetown/weapons/32.dmi'
+	item_state = "cleav"
+	experimental_inhand = FALSE
+	experimental_onhip = FALSE
+	experimental_onback = FALSE
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	parrysound = list('sound/combat/parry/bladed/bladedmedium (1).ogg','sound/combat/parry/bladed/bladedmedium (2).ogg','sound/combat/parry/bladed/bladedmedium (3).ogg')
 	swingsound = list('sound/combat/wooshes/bladed/wooshmed (1).ogg','sound/combat/wooshes/bladed/wooshmed (2).ogg','sound/combat/wooshes/bladed/wooshmed (3).ogg')
 	throwforce = 15
@@ -105,6 +112,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	smeltresult = /obj/item/ingot/steel
 	wbalance = 0 // Except this one, too huge and used to chop
+	dropshrink = 0.9
 
 /obj/item/rogueweapon/huntingknife/cleaver/combat
 	name = "knife"
@@ -113,6 +121,9 @@
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	icon_state = "combatknife"
 	icon = 'icons/roguetown/weapons/32.dmi'
+	experimental_inhand = TRUE
+	experimental_onhip = TRUE
+	experimental_onback = TRUE
 	parrysound = list('sound/combat/parry/bladed/bladedmedium (1).ogg','sound/combat/parry/bladed/bladedmedium (2).ogg','sound/combat/parry/bladed/bladedmedium (3).ogg')
 	swingsound = list('sound/combat/wooshes/bladed/wooshmed (1).ogg','sound/combat/wooshes/bladed/wooshmed (2).ogg','sound/combat/wooshes/bladed/wooshmed (3).ogg')
 	throwforce = 16
@@ -157,6 +168,15 @@
 /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	icon_state = "sdaggeralt"
 	desc = "A dagger of refined steel, and even more refined appearance."
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/dirk
+	name = "fanged dagger"
+	desc = "A dagger modeled after the fang of an anthrax spider."
+	experimental_inhand = TRUE
+	experimental_onhip = TRUE
+	experimental_onback = TRUE
+	icon_state = "spiderdagger"
+	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
 	name = "silver dagger"

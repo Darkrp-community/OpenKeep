@@ -19,6 +19,11 @@
 	display_order = JDO_PRINCE
 	give_bank_account = TRUE
 	bypass_lastclass = TRUE
+	min_pq = 2
+
+/datum/job/roguetown/prince/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+	..()
+	SSfamilytree.AddRoyal(L, FAMILY_PROGENY)
 
 /datum/outfit/job/roguetown/prince/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -59,7 +64,7 @@
 		backr = /obj/item/storage/backpack/rogue/satchel
 		if(H.mind)
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)

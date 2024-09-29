@@ -521,7 +521,6 @@
 		/obj/machinery/vending/assist  = "Vendomat",
 		/obj/machinery/vending/engivend = "Engi-Vend",
 		/obj/machinery/vending/hydronutrients = "NutriMax",
-		/obj/machinery/vending/hydroseeds = "MegaSeed Servitor",
 		/obj/machinery/vending/sustenance = "Sustenance Vendor",
 		/obj/machinery/vending/dinnerware = "Plasteel Chef's Dinnerware Vendor",
 		/obj/machinery/vending/cart = "PTech",

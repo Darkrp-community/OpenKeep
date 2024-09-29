@@ -1,7 +1,7 @@
 /obj/item/organ/tongue
 	name = "tongue"
 	desc = ""
-	icon_state = "tonguenormal"
+	icon_state = "tongue"
 	zone = BODY_ZONE_PRECISE_MOUTH
 	slot = ORGAN_SLOT_TONGUE
 	attack_verb = list("licked", "slobbered", "slapped", "frenched", "tongued")

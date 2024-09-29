@@ -223,6 +223,9 @@
 /mob/living/carbon/human/proc/blood_strength()
 	set name = "Night Muscles"
 	set category = "VAMPIRE"
+	
+	var/cooldown = FALSE
+	var/cooldown_time = 3000 // Five minutes cooldown
 
 	var/datum/antagonist/vampirelord/VD = mind.has_antag_datum(/datum/antagonist/vampirelord)
 	if(!VD)
@@ -236,10 +239,22 @@
 	if(has_status_effect(/datum/status_effect/buff/bloodstrength))
 		to_chat(src, "<span class='warning'>Already active.</span>")
 		return
+	if(cooldown)
+		to_chat(src, "<span class='warning'>I can't cast it yet!</span>")
+
+	// Gain experience towards blood magic
+	var/mob/living/carbon/human/licker = usr
+	var/boon = usr.mind?.get_learning_boon(/datum/skill/magic/blood)
+	var/amt2raise = licker.STAINT*2
+	usr.mind.adjust_experience(/datum/skill/magic/blood, floor(amt2raise * boon), FALSE)
 	VD.handle_vitae(-500)
 	apply_status_effect(/datum/status_effect/buff/bloodstrength)
 	to_chat(src, "<span class='greentext'>! NIGHT MUSCLES !</span>")
 	src.playsound_local(get_turf(src), 'sound/misc/vampirespell.ogg', 100, FALSE, pressure_affected = FALSE)
+	cooldown = TRUE
+	sleep(cooldown_time)
+	to_chat(src, "<span class='info'>My [name] ability is ready to be casted again.</span>")
+	cooldown = FALSE
 
 /datum/status_effect/buff/bloodstrength
 	id = "bloodstrength"
@@ -255,6 +270,9 @@
 /mob/living/carbon/human/proc/blood_celerity()
 	set name = "Quickening"
 	set category = "VAMPIRE"
+	
+	var/cooldown = FALSE
+	var/cooldown_time = 3000 // Five minutes cooldown
 
 	var/datum/antagonist/vampirelord/VD = mind.has_antag_datum(/datum/antagonist/vampirelord)
 	if(!VD)
@@ -268,10 +286,21 @@
 	if(has_status_effect(/datum/status_effect/buff/celerity))
 		to_chat(src, "<span class='warning'>Already active.</span>")
 		return
+	if(cooldown)
+		to_chat(src, "<span class='warning'>I can't cast it yet!</span>")
+	// Gain experience towards blood magic
+	var/mob/living/carbon/human/licker = usr
+	var/boon = usr.mind?.get_learning_boon(/datum/skill/magic/blood)
+	var/amt2raise = licker.STAINT*2
+	usr.mind.adjust_experience(/datum/skill/magic/blood, floor(amt2raise * boon), FALSE)
 	VD.handle_vitae(-500)
 	apply_status_effect(/datum/status_effect/buff/celerity)
 	to_chat(src, "<span class='greentext'>! QUICKENING !</span>")
 	src.playsound_local(get_turf(src), 'sound/misc/vampirespell.ogg', 100, FALSE, pressure_affected = FALSE)
+	cooldown = TRUE
+	sleep(cooldown_time)
+	to_chat(src, "<span class='info'>My [name] ability is ready to be casted again.</span>")
+	cooldown = FALSE
 
 /datum/status_effect/buff/celerity
 	id = "celerity"
@@ -290,6 +319,8 @@
 /mob/living/carbon/human/proc/blood_fortitude()
 	set name = "Armor of Darkness"
 	set category = "VAMPIRE"
+	var/cooldown = FALSE
+	var/cooldown_time = 6000 // Ten minutes cooldown, you get an anticrit 100 melee armor for free with the stats.
 
 	var/datum/antagonist/vampire/VD = mind.has_antag_datum(/datum/antagonist/vampire)
 	if(!VD)
@@ -297,16 +328,27 @@
 	if(VD.disguised)
 		to_chat(src, "<span class='warning'>My curse is hidden.</span>")
 		return
-	if(VD.vitae < 200)
+	if(VD.vitae < 500)
 		to_chat(src, "<span class='warning'>Not enough vitae.</span>")
 		return
 	if(has_status_effect(/datum/status_effect/buff/fortitude))
 		to_chat(src, "<span class='warning'>Already active.</span>")
 		return
-	VD.vitae -= 200
+	if(cooldown)
+		to_chat(src, "<span class='warning'>I can't cast it yet!</span>")
+	// Gain experience towards blood magic
+	var/mob/living/carbon/human/licker = usr
+	var/boon = usr.mind?.get_learning_boon(/datum/skill/magic/blood)
+	var/amt2raise = licker.STAINT*2
+	usr.mind.adjust_experience(/datum/skill/magic/blood, floor(amt2raise * boon), FALSE)
+	VD.vitae -= 500
 	apply_status_effect(/datum/status_effect/buff/fortitude)
 	to_chat(src, "<span class='greentext'>! ARMOR OF DARKNESS !</span>")
 	src.playsound_local(get_turf(src), 'sound/misc/vampirespell.ogg', 100, FALSE, pressure_affected = FALSE)
+	cooldown = TRUE
+	sleep(cooldown_time)
+	to_chat(src, "<span class='info'>My [name] ability is ready to be casted again.</span>")
+	cooldown = FALSE
 
 /datum/status_effect/buff/fortitude
 	id = "fortitude"
@@ -350,6 +392,8 @@
 /mob/living/carbon/human/proc/vamp_regenerate()
 	set name = "Regenerate"
 	set category = "VAMPIRE"
+	var/cooldown = FALSE
+	var/cooldown_time = 6000 // Ten minutes cooldown, it's a goddamn AHEAL
 
 	var/silver_curse_status = FALSE
 	for(var/datum/status_effect/debuff/silver_curse in status_effects)
@@ -367,10 +411,21 @@
 	if(VD.vitae < 500)
 		to_chat(src, "<span class='warning'>Not enough vitae.</span>")
 		return
+	if(cooldown)
+		to_chat(src, "<span class='warning'>I can't cast it yet!</span>")
 	to_chat(src, "<span class='greentext'>! REGENERATE !</span>")
 	src.playsound_local(get_turf(src), 'sound/misc/vampirespell.ogg', 100, FALSE, pressure_affected = FALSE)
 	VD.handle_vitae(-500)
+	// Gain experience towards blood magic
+	var/mob/living/carbon/human/licker = usr
+	var/boon = usr.mind?.get_learning_boon(/datum/skill/magic/blood)
+	var/amt2raise = licker.STAINT*2
+	usr.mind.adjust_experience(/datum/skill/magic/blood, floor(amt2raise * boon), FALSE)
 	fully_heal()
+	cooldown = TRUE
+	sleep(cooldown_time)
+	to_chat(src, "<span class='info'>My [name] ability is ready to be casted again.</span>")
+	cooldown = FALSE
 
 /mob/living/carbon/human/proc/vampire_infect()
 	if(!mind)

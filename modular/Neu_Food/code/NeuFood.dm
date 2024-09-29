@@ -5,39 +5,14 @@
  *						*
  * * * * * * * * * * * **/
 
-/* For reference only
-/*	........   Nutrition defines   ................ */
-
-/*	ALREADY DEFINED, SEE code\__DEFINES\roguetown.dm
-
-#define MEAL_FILLING 30
-#define MEAL_GOOD 24
-#define MEAL_AVERAGE 18
-#define MEAL_MEAGRE 15
-#define SNACK_NUTRITIOUS 9
-#define SNACK_DECENT 6
-#define SNACK_POOR 3
-
-*/
-
-/*	........   Rotting defines   ................ */
-#define SHELFLIFE_EXTREME 90 MINUTES
-#define SHELFLIFE_LONG 50 MINUTES
-#define SHELFLIFE_DECENT 30 MINUTES
-#define SHELFLIFE_SHORT 20 MINUTES
-#define SHELFLIFE_TINY 12 MINUTES
-*/
 
 #define SIMPLE_COOKING_XPGAIN 10
 #define COMPLEX_COOKING_XPGAIN 25
 
+
 /*---------------\
 | Food templates |
 \---------------*/
-
-/obj/item/reagent_containers // added vars used in neu cooking, might be used for other things too in the future. How it works is in each items attackby code.
-	var/short_cooktime = FALSE  // based on cooking skill
-	var/long_cooktime = FALSE
 
 /obj/item/reagent_containers/food/snacks/rogue // base food type, for icons and cooktime, and to make it work with processes like pie making
 	icon = 'modular/Neu_Food/icons/food.dmi'
@@ -67,14 +42,7 @@
 	bitesize = 3
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	rotprocess = SHELFLIFE_EXTREME
-/*
-/obj/item/reagent_containers/food/snacks
-	var/chopping_sound = FALSE // does it play a choppy sound when batch sliced?
-	var/slice_sound = FALSE // does it play the slice sound when sliced?
-	var/can_distill = FALSE //If FALSE, this object cannot be distilled into an alcohol.
-	var/distill_reagent //If NULL and this object can be distilled, it uses a generic fruit_wine reagent and adjusts its variables.
-	var/distill_amt = 12
-*/
+
 /obj/item/reagent_containers/food/snacks/proc/changefood(path, mob/living/eater)
 	if(!path || !eater)
 		return
@@ -169,13 +137,6 @@
 	..()
 	qdel(src)
 
-/* added to proc
-/obj/item/reagent_containers/food/snacks/proc/slice(obj/item/W, mob/user)
-	if(slice_sound)
-		playsound(get_turf(user), 'modular/Neu_Food/sound/slicing.ogg', 60, TRUE, -1) // added some choppy sound
-	if(chopping_sound)
-		playsound(get_turf(user), 'modular/Neu_Food/sound/chopping_block.ogg', 60, TRUE, -1) // added some choppy sound
-*/
 
 
 
@@ -196,14 +157,6 @@
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
-
-/obj/item/rogueweapon/huntingknife/cleaver
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	item_state = "cleav"
-	experimental_inhand = FALSE
-	experimental_onhip = FALSE
-	experimental_onback = FALSE
 
 /obj/item/reagent_containers/glass/bowl
 	name = "wooden bowl"
@@ -275,6 +228,58 @@
 				addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), user, min(amount_per_transfer_from_this,5), TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
 		return TRUE
 
+/obj/item/reagent_containers/glass/bowl/attack(mob/M, mob/user, obj/target)
+	testing("a1")
+	if(istype(M))
+		if(user.used_intent.type == INTENT_GENERIC)
+			return ..()
+
+		else
+
+			if(!spillable)
+				return
+
+			if(!reagents || !reagents.total_volume)
+				to_chat(user, "<span class='warning'>[src] is empty!</span>")
+				return
+			if(user.used_intent.type == INTENT_SPLASH)
+				var/R
+				M.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [M]!</span>", \
+								"<span class='danger'>[user] splashes the contents of [src] onto you!</span>")
+				if(reagents)
+					for(var/datum/reagent/A in reagents.reagent_list)
+						R += "[A] ([num2text(A.volume)]),"
+
+				if(isturf(target) && reagents.reagent_list.len && thrownby)
+					log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]")
+					message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] at [ADMIN_VERBOSEJMP(target)].")
+				reagents.reaction(M, TOUCH)
+				log_combat(user, M, "splashed", R)
+				reagents.clear_reagents()
+				return
+			else if(user.used_intent.type == INTENT_POUR)
+				if(!canconsume(M, user))
+					return
+				if(M != user)
+					M.visible_message("<span class='danger'>[user] attempts to feed [M] something.</span>", \
+								"<span class='danger'>[user] attempts to feed you something.</span>")
+					if(!do_mob(user, M))
+						return
+					if(!reagents || !reagents.total_volume)
+						return // The drink might be empty after the delay, such as by spam-feeding
+					M.visible_message("<span class='danger'>[user] feeds [M] something.</span>", \
+								"<span class='danger'>[user] feeds you something.</span>")
+					log_combat(user, M, "fed", reagents.log_list())
+				else
+					to_chat(user, "<span class='notice'>I swallow a gulp of [src].</span>")
+				if(reagents.total_volume > 0)
+					beingeaten()
+					playsound(M.loc,pick(drinksounds), 100, TRUE)
+					visible_message("<span class='info'>[user] eats from [src].</span>")
+					if(do_after(user,1 SECONDS, target = src))
+						addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), user, min(amount_per_transfer_from_this,5), TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
+				return
+
 /obj/item/reagent_containers/glass/bowl/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
 	if(reagents.total_volume > 5) 
 		new /obj/effect/decal/cleanable/food/mess/soup(get_turf(src))
@@ -284,27 +289,6 @@
 	in_use = TRUE
 	sleep(10)
 	in_use = FALSE
-
-/obj/item/reagent_containers/glass/cup
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	experimental_inhand = FALSE
-//	dropshrink = 0.8
-/* added to main
-/obj/item/reagent_containers/glass/bucket/pot
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
-/obj/item/reagent_containers/glass/bucket/pot/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
-	if(reagents.total_volume > 5) 
-		new /obj/effect/decal/cleanable/food/mess(get_turf(src))
-	..()
-
-*/
-/obj/item/cooking/pan
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	experimental_inhand = FALSE
 
 /obj/item/reagent_containers/peppermill // new with some animated art
 	name = "pepper mill"
@@ -325,13 +309,6 @@
 	resistance_flags = NONE
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	experimental_inhand = FALSE
-
-/obj/item/book/rogue/yeoldecookingmanual // new book with some tips to learn
-	name = "Ye olde ways of cookinge"
-	desc = "Penned by Svend Fatbeard, butler in the fourth generation"
-	icon_state ="book8_0"
-	base_icon_state = "book8"
-	bookfile = "Neu_cooking.json"
 
 
 
@@ -389,9 +366,15 @@
 	color = "#dedbaf"
 	taste_description = "egg soup"
 
-/datum/reagent/consumable/soup/cheese
+/datum/reagent/consumable/soup/cheese // A thicker soup, almost on the level of old oatmeal. But less hydration than other soups
+	name = "cheese soup"
+	description = "A thick cheese soup. Creamy and comforting."
 	color = "#c4be70"
-	taste_description = "cheese soup"
+	reagent_state = LIQUID
+	nutriment_factor = 14
+	taste_description = "creamy cheese"
+	taste_mult = 4
+	hydration = 4
 
 /datum/reagent/consumable/soup/stew
 	name = "thick stew"
@@ -469,10 +452,12 @@
 		if(prob(12))
 			M.emote("gag")
 			M.add_nausea(9)
-			M.adjustToxLoss(5, 0)
+			if(isdwarf(M))
+				M.adjustToxLoss(2, 0)
+			else
+				M.adjustToxLoss(5, 0)
 	..()
 	. = TRUE
-
 
 
 
@@ -536,6 +521,8 @@
 	list_reagents = list(/datum/reagent/floure = 1)
 	volume = 1
 	sellprice = 0
+	possible_potion = "spdpot"
+
 /obj/item/reagent_containers/powder/salt/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
 	new /obj/effect/decal/cleanable/food/flour(get_turf(src))
 	..()

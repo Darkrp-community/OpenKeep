@@ -25,7 +25,7 @@
 
 	outfit = /datum/outfit/job/roguetown/veteran
 	give_bank_account = 50
-	min_pq = 0
+	min_pq = 1
 
 	cmode_music = 'sound/music/combat_guard.ogg'
 
@@ -70,24 +70,6 @@
 			H.change_stat("endurance", 2)
 			H.change_stat("speed", -1)	
 			// Aasimar veterans have higher strength overall but lower mental bonuses, and a small negative to speed instead of a bonus. Took too many stabs to the knee or some such
-
-	if(H.charflaw)
-		if(H.charflaw.type != /datum/charflaw/noeyer)
-			if(H.charflaw.type != /datum/charflaw/noeyel)
-				var/obj/item/bodypart/O = H.get_bodypart(BODY_ZONE_R_ARM)
-				if(O)
-					O.drop_limb()
-					qdel(O)
-				O = H.get_bodypart(BODY_ZONE_L_ARM)
-				if(O)
-					O.drop_limb()
-					qdel(O)
-				H.regenerate_limb(BODY_ZONE_R_ARM)
-				H.regenerate_limb(BODY_ZONE_L_ARM)
-				H.charflaw = new /datum/charflaw/noeyer()
-				if(!istype(H.wear_mask, /obj/item/clothing/mask/rogue/eyepatch))
-					qdel(H.wear_mask)
-					mask = /obj/item/clothing/mask/rogue/eyepatch
 
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
