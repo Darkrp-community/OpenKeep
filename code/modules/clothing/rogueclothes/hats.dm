@@ -1236,6 +1236,8 @@
 /obj/item/clothing/head/roguetown/rare
 	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
+	bloody_icon = 'icons/effects/blood32x64.dmi'
+	bloody_icon_state = "helmetblood_big"
 	blocksound = PLATEHIT
 	equip_delay_self = 3 SECONDS
 	unequip_delay_self = 3 SECONDS
@@ -1254,8 +1256,6 @@
 	icon_state = "elfhead"
 	item_state = "elfhead"
 	allowed_race = list("elf", "half-elf", "dark elf")
-	bloody_icon = 'icons/effects/blood32x64.dmi'
-	bloody_icon_state = "helmetblood_big"
 
 	armor_class = ARMOR_CLASS_MEDIUM
 	body_parts_covered = HEAD|HAIR|NOSE
@@ -1277,8 +1277,6 @@
 	item_state = "dwarfhead"
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = list("dwarf")
-	bloody_icon = 'icons/effects/blood32x64.dmi'
-	bloody_icon_state = "helmetblood_big"
 	flags_inv = HIDEEARS
 
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
@@ -1293,8 +1291,6 @@
 	item_state = "human_swordhead"
 	allowed_sex = list(MALE)
 	allowed_race = list("human")
-	bloody_icon = 'icons/effects/blood32x64.dmi'
-	bloody_icon_state = "helmetblood_big"
 	flags_inv = HIDEEARS
 
 	body_parts_covered = HEAD|EARS|HAIR
@@ -1310,8 +1306,6 @@
 	item_state = "human_spearplate"
 	allowed_sex = list(MALE)
 	allowed_race = list("human")
-	bloody_icon = 'icons/effects/blood32x64.dmi'
-	bloody_icon_state = "helmetblood_big"
 	flags_inv = HIDEEARS
 
 	body_parts_covered = HEAD|EARS|HAIR
@@ -1322,13 +1316,12 @@
 	desc = "A weathered bronze helmet topped with a symbol of Astrata's sun."
 	icon = 'icons/roguetown/clothing/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
 	icon_state = "aasimarhead"
 	item_state = "aasimarhead"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	allowed_race = list("aasimar")
-	bloody_icon = 'icons/effects/blood64x64.dmi'
-	bloody_icon_state = "helmetblood_big"
 	flags_inv = HIDEEARS
 
 	body_parts_covered = HEAD|EARS|HAIR
