@@ -413,7 +413,7 @@
 
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|HAIR|NOSE
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = CRITICALS_GOOD_METAL
 	max_integrity = 350
 
 //................ Skull Cap ............... //
@@ -514,7 +514,7 @@
 
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)	
 	body_parts_covered = HEAD|HAIR|NOSE|MOUTH|EARS
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_STAB) // Stab protection out of having faceplate
+	prevent_crits = ALL_CRITICAL_HITS // Stab protection out of having faceplate
 	max_integrity = 350//isn't the same as a steel helmet but is better than a skullcap, costs 2 bars and protects the mouth
 
 //................ Iron Pot Helmet ............... //
@@ -563,7 +563,7 @@
 
 	armor = list("melee" = 60, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = NECK|HAIR|EARS|HEAD
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
+	prevent_crits = CRITICALS_MAILLE_COIF
 
 
 
@@ -585,7 +585,7 @@
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_TINY
 
 	body_parts_covered = FULL_HEAD
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // All visored helmets protect against everything
+	prevent_crits = ALL_CRITICAL_HITS
 	max_integrity = 350
 
 // Proc shared by all visored helmets, therefore modular
@@ -605,7 +605,7 @@
 				H.update_inv_head()
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
-			prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+			prevent_crits = ALL_CRITICAL_HITS
 			body_parts_covered = FULL_HEAD
 			flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 			flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
@@ -652,7 +652,6 @@
 
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
 	max_integrity = 350
 
 /obj/item/clothing/head/roguetown/helmet/visored/knight/black
@@ -680,7 +679,7 @@
 
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = FULL_HEAD
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = CRITICALS_GOOD_METAL
 	max_integrity = 250
 
 
@@ -694,7 +693,7 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 
 	armor = list("melee" = 90, "bullet" = 90, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB) // Stab immunity as a treat for low FOV
+	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
 	icon_state = "topfhelm_gold"
@@ -741,7 +740,7 @@
 	item_state = "astratahelm"
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	prevent_crits = CRITICALS_MAILLE_PLUS
 
 //............... Noc Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
@@ -751,7 +750,7 @@
 	item_state = "nochelm"
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	prevent_crits = CRITICALS_MAILLE_PLUS
 
 //............... Necra Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
@@ -762,7 +761,7 @@
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	prevent_crits = CRITICALS_MAILLE_PLUS
 
 //............... Dendor Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
@@ -772,7 +771,7 @@
 	item_state = "dendorhelm"
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	prevent_crits = CRITICALS_MAILLE_PLUS
 
 //............... Sinistar (Graggar) Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/sinistar
@@ -809,7 +808,7 @@
 
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|HAIR|EARS|NOSE
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT)
+	prevent_crits = CRITICALS_BOILED_LEATHER
 	max_integrity = 200
 
 //............... Buckled Hat ............... //
@@ -913,7 +912,7 @@
 	item_state = "feldhood"
 	color = null
 
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST)
+	prevent_crits = CRITICALS_THICK_CLOTH
 
 //............... Physicians Hood ............... //
 /obj/item/clothing/head/roguetown/roguehood/phys
@@ -923,7 +922,7 @@
 	item_state = "surghood"
 	color = null
 
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST)
+	prevent_crits = CRITICALS_THICK_CLOTH
 
 //............... Feldshers Cage ............... //
 /obj/item/clothing/head/roguetown/helmet/feld
@@ -938,7 +937,7 @@
 	bloody_icon_state = "helmetblood_big"
 
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_BLUNT)
+	prevent_crits = CRITICALS_THICK_LEATHER
 
 
 
@@ -1023,7 +1022,7 @@
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_TINY
 	var/picked = FALSE
 
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/decoratedhounskull/attack_right(mob/user)
 	..()
@@ -1083,7 +1082,7 @@
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_TINY
 	var/picked = FALSE
 
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	prevent_crits = ALL_CRITICAL_HITS
 
 
 /obj/item/clothing/head/roguetown/helmet/heavy/decoratedbucket/attack_right(mob/user)
@@ -1145,7 +1144,7 @@
 	smeltresult = /obj/item/ingot/steel
 	var/picked = FALSE
 
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
+	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket/attack_right(mob/user)
 	..()
@@ -1206,7 +1205,7 @@
 
 	armor = list("melee" = 60, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|EARS|HAIR|EYES
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	prevent_crits = CRITICALS_POOR_METAL
 	max_integrity = 120
 
 
@@ -1245,7 +1244,7 @@
 
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	armor_class = ARMOR_CLASS_HEAVY
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST, BCLASS_BITE, BCLASS_LASHING)
+	prevent_crits = ALL_CRITICAL_HITS
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_SMALL
 
 //............... Bladesinger Helmet ............... //
@@ -1353,7 +1352,7 @@
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
 
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST)
+	prevent_crits =  CRITICALS_THICK_CLOTH
 
 /obj/item/clothing/head/roguetown/wizhat/gen
 	icon_state = "wizardhatgen"
@@ -1485,7 +1484,7 @@
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
 
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST)
+	prevent_crits = CRITICALS_THICK_CLOTH
 
 /obj/item/clothing/head/roguetown/headdress // egyptian
 	name = "foreign headdress"

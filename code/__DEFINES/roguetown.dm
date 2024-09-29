@@ -218,3 +218,63 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 
 #define VALUE_MAGIC_ITEM_WEAK	VALUE_COSTLY_THING+BONUS_VALUE_MODEST
 #define VALUE_MAGIC_ITEM_STRONG	VALUE_MAGIC_ITEM_WEAK+BONUS_VALUE_BIG
+
+
+/*-----------------------------\
+| CRITICAL HIT DEFENSE DEFINES |	- So armor makes sense
+\-----------------------------*/
+
+// All crits
+#define ALL_CRITICAL_HITS list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_BLUNT, \
+BCLASS_STAB, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+// All crits minus stab
+#define CRITICALS_GOOD_METAL list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_BLUNT, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+// Orcs mostly
+#define CRITICALS_POOR_METAL list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_BLUNT) 
+
+// Just cut chop and stab, for coifs and partial maille
+#define CRITICALS_MAILLE_COIF list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_STAB) 
+
+// Maille level but also covers nose twisters
+#define CRITICALS_MAILLE_PLUS list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_STAB, \
+BCLASS_TWIST) 
+
+#define CRITICALS_BOILED_LEATHER list(\
+BCLASS_CUT, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+#define CRITICALS_THICK_LEATHER list(\
+BCLASS_BLUNT, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+#define CRITICALS_THICK_CLOTH list(\
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
