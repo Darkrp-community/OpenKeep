@@ -146,12 +146,12 @@
 				user.visible_message("<span class='warning'>[user] bashes into [src]!</span>")
 				take_damage(200, "brute", "melee", 1)
 			else
-				playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
+				playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 90)
 				force_open()
 				user.visible_message("<span class='warning'>[user] smashes through [src]!</span>")
 			return
 		if(locked)
-			playsound(src, rattlesound, 100)
+			playsound(src, rattlesound, 90)
 			var/oldx = pixel_x
 			animate(src, pixel_x = oldx+1, time = 0.5)
 			animate(pixel_x = oldx-1, time = 0.5)
@@ -233,7 +233,7 @@
 /obj/structure/mineral_door/proc/Open(silent = FALSE)
 	isSwitchingStates = TRUE
 	if(!silent)
-		playsound(src, openSound, 100)
+		playsound(src, openSound, 90)
 	if(!windowed)
 		set_opacity(FALSE)
 	flick("[base_state]opening",src)
@@ -256,7 +256,7 @@
 		return
 	isSwitchingStates = TRUE
 	if(!silent)
-		playsound(src, closeSound, 100)
+		playsound(src, closeSound, 90)
 	flick("[base_state]closing",src)
 	sleep(10)
 	density = TRUE
