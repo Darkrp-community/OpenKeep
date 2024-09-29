@@ -21,7 +21,7 @@
 	list_reagents = list(/datum/reagent/medicine/strongmana = 45)
 
 /obj/item/reagent_containers/glass/bottle/rogue/poison
-	list_reagents = list(/datum/reagent/toxin/killersice = 1)
+	list_reagents = list(/datum/reagent/berrypoison = 15)
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongpoison
 	list_reagents = list(/datum/reagent/strongpoison = 15)
