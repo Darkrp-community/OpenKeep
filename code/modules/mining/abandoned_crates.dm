@@ -45,7 +45,7 @@
 			new /obj/item/vending_refill/sovietsoda(src)
 			new /obj/item/circuitboard/machine/vending(src)
 		if(31 to 35)
-			new /obj/item/seeds/firelemon(src)
+			new /obj/item/poster/random_contraband(src)
 		if(36 to 40)
 			new /obj/item/toy/snappop/phoenix(src)
 			new /obj/item/toy/snappop/phoenix(src)
