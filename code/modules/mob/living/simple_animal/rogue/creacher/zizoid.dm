@@ -17,6 +17,7 @@
 	retreat_distance = 0
 	minimum_distance = 0
 	milkies = FALSE
+	base_intents = list(/datum/intent/simple/stab, /datum/intent/unarmed/claw)
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	pooptype = null
@@ -53,7 +54,7 @@
 	icon_living = "ascend"
 	icon = 'icons/mob/32x64.dmi'
 	move_to_delay = 0
-	base_intents = list(/datum/intent/unarmed/ascendedclaw)
+	base_intents = list(/datum/intent/simple/stab, /datum/intent/unarmed/ascendedclaw)
 	melee_damage_lower = 250
 	melee_damage_upper = 550
 	health = 666666

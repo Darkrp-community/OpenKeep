@@ -1788,7 +1788,7 @@ Slots: [job.spawn_positions]</span>
 						var/datum/faith/faith = faiths_named[faith_input]
 						to_chat(user, "<font color='purple'>Faith: [faith.name]</font>")
 						to_chat(user, "<font color='purple'>Background: [faith.desc]</font>")
-						selected_patron = GLOB.patronlist[faith.godhead] || GLOB.patronlist[default_patron]
+						selected_patron = GLOB.patronlist[faith.godhead] || GLOB.patronlist[pick(GLOB.patrons_by_faith[faith_input])]
 
 				if("patron")
 					var/list/patrons_named = list()
@@ -2192,12 +2192,16 @@ Slots: [job.spawn_positions]</span>
 					else
 						domhand = 1
 				if("family")
+					var/list/famtree_options_list = list(FAMILY_NONE, FAMILY_PARTIAL, FAMILY_NEWLYWED, FAMILY_FULL)
+					if(age > AGE_ADULT)
+						famtree_options_list = list(FAMILY_NONE, FAMILY_NEWLYWED, FAMILY_FULL)
 					var/new_family = input(user, "Do you have relatives in rockhill? \
 						[FAMILY_NONE] will disable this feature. \
 						[FAMILY_PARTIAL] will assign you as a progeny of a local house based on your species. This feature is disabled if your older than ADULT. \
-						[FAMILY_NEWLYWED] assigns you a spouse without adding you to a family. Setspouse will try to assign you as a certain persons spouse.\
-						[FAMILY_FULL] will attempt to assign you as matriarch or patriarch of one of the local houses of rockhill. \
-						If all houses are full then you will not be assigned to any house.", "The Major Houses of Rockhill") as null|anything in list(FAMILY_NONE, FAMILY_PARTIAL, FAMILY_NEWLYWED, FAMILY_FULL)
+						[FAMILY_NEWLYWED] assigns you a spouse without adding you to a family. Setspouse will try to assign you as a certain persons spouse. \
+						[FAMILY_FULL] will attempt to assign you as matriarch or patriarch of one of the local houses of rockhill. Setspouse will will prevent \
+						players with the setspouse = None from matching with you unless their name equals your setspouse. \
+						.", "The Major Houses of Rockhill") as null|anything in famtree_options_list
 					if(new_family)
 						family = new_family
 				//Setspouse is part of the family subsystem. It will check existing families for this character and attempt to place you in this family.
