@@ -6,7 +6,7 @@
 	id = "strpot"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/alch/strengthpot
 	effectedstats = list("strength" = 3)
-	duration = 300
+	duration = 930
 
 /atom/movable/screen/alert/status_effect/buff/alch/strengthpot
 	name = "Strength"
@@ -16,7 +16,7 @@
 	id = "perpot"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/alch/perceptionpot
 	effectedstats = list("perception" = 3)
-	duration = 300
+	duration = 3000
 
 /atom/movable/screen/alert/status_effect/buff/alch/perceptionpot
 	name = "Perception"
@@ -36,7 +36,7 @@
 	id = "conpot"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/alch/constitutionpot
 	effectedstats = list("constitution" = 3)
-	duration = 300
+	duration = 930
 
 /atom/movable/screen/alert/status_effect/buff/alch/constitutionpot
 	name = "Constitution"
@@ -46,7 +46,7 @@
 	id = "endpot"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/alch/endurancepot
 	effectedstats = list("endurance" = 3)
-	duration = 300
+	duration = 930
 
 /atom/movable/screen/alert/status_effect/buff/alch/endurancepot
 	name = "Endurance"
@@ -66,7 +66,7 @@
 	id = "forpot"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/alch/fortunepot
 	effectedstats = list("fortune" = 3)
-	duration = 300
+	duration = 3000
 
 /atom/movable/screen/alert/status_effect/buff/alch/fortunepot
 	name = "Fortune"
