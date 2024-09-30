@@ -11,6 +11,8 @@
 	category_tags = list(CTAG_MERCENARY)
 	maximum_possible_slots = 5
 
+	cmode_music = 'sound/music/combat_steppe.ogg'
+
 /datum/outfit/job/roguetown/mercenary/steppesman/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
