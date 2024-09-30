@@ -20,7 +20,7 @@
 /datum/outfit/job/roguetown/adventurer/monk/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/roguehood
-	neck = /obj/item/clothing/neck/roguetown/psicross/ravox
+	neck = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe
@@ -37,7 +37,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, pick(1,1,2), TRUE) // Wood staff
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
 
 		H.change_stat("strength", 3)
@@ -50,4 +50,3 @@
 		
 	if(H.patron != /datum/patron/divine/ravox)
 		H.patron = GLOB.patronlist[/datum/patron/divine/ravox]
-		to_chat(H, "<span class='warning'>My patron had not endorsed my practices in my younger years. I've since grown acustomed to [H.patron].")

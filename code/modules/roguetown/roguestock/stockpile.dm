@@ -87,6 +87,15 @@
 	withdraw_price = 5
 	importexport_amt = 20
 
+/datum/roguestock/stockpile/turnip
+	name = "Turnips"
+	desc = "The spine of many communities."
+	item_type = /obj/item/reagent_containers/food/snacks/produce/turnip
+	payout_price = 2
+	export_price = 4
+	withdraw_price = 3
+	importexport_amt = 20
+
 /datum/roguestock/stockpile/iron
 	name = "Iron Ore"
 	desc = "Raw unrefined iron ore."

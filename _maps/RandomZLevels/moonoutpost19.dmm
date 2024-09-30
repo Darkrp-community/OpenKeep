@@ -3369,7 +3369,7 @@
 /turf/open/floor/engine,
 /area/awaymission/moonoutpost19/research)
 "hd" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /obj/structure/cable,
 /turf/open/floor/plating{
 	heat_capacity = 1e+006
@@ -6460,7 +6460,7 @@
 	},
 /area/awaymission/moonoutpost19/arrivals)
 "nJ" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /turf/open/floor/plating{
 	heat_capacity = 1e+006;
 	icon_state = "platingdmg3"

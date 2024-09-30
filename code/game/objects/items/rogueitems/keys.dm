@@ -238,7 +238,7 @@
 
 /obj/item/roguekey/mason
 	name = "mason's key"
-	desc = "This bronze key should open the Mason's Guild."
+	desc = "This bronze key should open the mason's doors within the Maker's Guild."
 	icon_state = "brownkey"
 	lockid = "mason"
 
@@ -292,7 +292,7 @@
 
 /obj/item/roguekey/doctor
 	name = "doctor's key"
-	desc = "This key is ued by the Physickers."
+	desc = "This key is used by the Physickers."
 	icon_state = "birdkey"
 	lockid = "doctor"
 

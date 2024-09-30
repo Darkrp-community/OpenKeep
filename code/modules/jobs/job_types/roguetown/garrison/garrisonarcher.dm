@@ -3,8 +3,8 @@
 	flag = WATCHMAN
 	department_flag = GARRISON
 	faction = "Station"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -23,7 +23,7 @@
 
 	outfit = /datum/outfit/job/roguetown/watchman
 	give_bank_account = 30
-	min_pq = -4
+	min_pq = 0
 
 	cmode_music = 'sound/music/combat_guard.ogg'
 

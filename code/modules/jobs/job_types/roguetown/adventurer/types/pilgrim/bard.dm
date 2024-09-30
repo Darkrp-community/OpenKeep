@@ -59,6 +59,8 @@
 			backr = /obj/item/rogue/instrument/harp
 		if(H.dna.species.id == "tiefling")
 			backr = /obj/item/rogue/instrument/guitar
+		if(H.dna.species.id == "aasimar")
+			backr = /obj/item/rogue/instrument/drum // March along the drums of war.
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC) // Bardic rizz
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BARDIC_TRAINING, TRAIT_GENERIC)

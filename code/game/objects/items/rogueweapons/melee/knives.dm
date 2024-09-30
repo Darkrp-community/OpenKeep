@@ -24,6 +24,8 @@
 	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
 	associated_skill = /datum/skill/combat/knives
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
+	equip_sound = 'sound/foley/dropsound/holster_sword.ogg'
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
 	throwforce = 12
 	wdefense = 3
 	wbalance = 1 // All knives are swift, bonus to SPD
@@ -166,6 +168,15 @@
 /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	icon_state = "sdaggeralt"
 	desc = "A dagger of refined steel, and even more refined appearance."
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/dirk
+	name = "fanged dagger"
+	desc = "A dagger modeled after the fang of an anthrax spider."
+	experimental_inhand = TRUE
+	experimental_onhip = TRUE
+	experimental_onback = TRUE
+	icon_state = "spiderdagger"
+	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
 	name = "silver dagger"

@@ -18,6 +18,7 @@
 	outfit = /datum/outfit/job/roguetown/butler
 	display_order = JDO_BUTLER
 	bypass_lastclass = TRUE
+	min_pq = 1
 	give_bank_account = 5
 
 /datum/outfit/job/roguetown/butler/pre_equip(mob/living/carbon/human/H)
