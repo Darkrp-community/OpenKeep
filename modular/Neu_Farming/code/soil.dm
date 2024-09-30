@@ -243,11 +243,11 @@
 		adjust_plant_health(-5)
 	else if(stepper.m_intent == MOVE_INTENT_RUN)
 		adjust_plant_health(-10)
-	playsound(src,"plantcross", 100, FALSE)
+	playsound(src,"plantcross", 90, FALSE)
 
 /obj/structure/soil/proc/deweed()
 	if(weeds >= MAX_PLANT_WEEDS * 0.3)
-		playsound(src,"plantcross", 100, FALSE)
+		playsound(src,"plantcross", 90, FALSE)
 	adjust_weeds(-100)
 
 /obj/structure/soil/proc/user_till_soil(mob/user)
@@ -259,7 +259,7 @@
 	adjust_plant_health(-20)
 	adjust_weeds(-30)
 	if(plant)
-		playsound(src,"plantcross", 100, FALSE)
+		playsound(src,"plantcross", 90, FALSE)
 	update_icon()
 
 /obj/structure/soil/proc/bless_soil()
@@ -387,9 +387,9 @@
 			. += span_warning("It's brown and unhealthy...")
 		// Plant maturation and produce feedback
 		if(matured)
-			. += span_info("It's fully matured.")
+			. += span_info("It's fully grown but not yet ripe.")
 		else
-			. += span_info("It has yet to mature.")
+			. += span_info("It´s far from fully grown.")
 		if(produce_ready)
 			. += span_info("It's ready for harvest.")
 	// Water feedback

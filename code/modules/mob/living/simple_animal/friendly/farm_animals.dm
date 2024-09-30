@@ -121,7 +121,7 @@
 	var/obj/item/udder/udder = null
 	gold_core_spawnable = FRIENDLY_SPAWN
 	blood_volume = BLOOD_VOLUME_NORMAL
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat)
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat, /obj/item/reagent_containers/food/snacks/produce/oat)
 	tame_chance = 25
 	bonus_tame_chance = 15
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -212,7 +212,7 @@
 	response_harm_simple = "kick"
 	attack_verb_continuous = "kicks"
 	attack_verb_simple = "kick"
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat)
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat)
 	health = 3
 	maxHealth = 3
 	ventcrawler = VENTCRAWLER_ALWAYS
@@ -259,7 +259,7 @@
 	turns_per_move = 3
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
 	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat)
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat, /obj/item/reagent_containers/food/snacks/produce/oat)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"

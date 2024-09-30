@@ -697,6 +697,12 @@
 	icon_state = "facial_chin"
 	gender = MALE
 	specuse = list("human", "dwarf", "elf", "tiefling")
+
+/datum/sprite_accessory/facial_hair/braided
+	name = "Dignitary"
+	icon_state = "braided"
+	gender = MALE
+	specuse = list("dwarf")
 	
 /datum/sprite_accessory/facial_hair/manly
 	name = "Drinker"

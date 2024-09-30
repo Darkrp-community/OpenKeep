@@ -50,7 +50,7 @@ SUBSYSTEM_DEF(familytree)
 		/datum/species/human/northern,
 		/datum/species/elf,
 		/datum/species/elf/dark,
-		/datum/species/elf/snow/wood,
+		/datum/species/elf/snow,
 		/datum/species/dwarf/mountain,
 		/datum/species/tieberian,
 		)
@@ -101,14 +101,14 @@ SUBSYSTEM_DEF(familytree)
 	ruling_family.addToHouse(H, status)
 
 /*
-* Assigns people randomly to one of the major
+* Assigns people randomly as heirs to one of the major
 * famlies of Rockhill based on their species.
 */
 /datum/controller/subsystem/familytree/proc/AssignToHouse(mob/living/carbon/human/H)
 	//If no human and they are older than adult age.
 	if(!H || H.age > AGE_ADULT)
 		return
-	var/species = H.dna.species
+	var/species = H.dna.species.type
 	var/adopted = FALSE
 	var/datum/heritage/chosen_house
 	var/list/low_priority_houses = list()
@@ -129,7 +129,8 @@ SUBSYSTEM_DEF(familytree)
 			if(I.dominant_species == species)
 				chosen_house = I
 				break
-			if(prob(10))
+			//Its weird to be placed as a foster child in a family with no people in it.
+			if(prob(10) && I.family.len > 1)
 				chosen_house = I
 				adopted = TRUE
 				break
@@ -149,31 +150,42 @@ SUBSYSTEM_DEF(familytree)
 /datum/controller/subsystem/familytree/proc/AssignToFamily(mob/living/carbon/human/H)
 	if(!H)
 		return
-	var/species = H.dna.species.id
+	var/our_species = H.dna.species.type
 	var/list/low_priority_houses = list()
 	var/list/medium_priority_houses = list()
 	var/list/high_priority_houses = list()
 	for(var/datum/heritage/I in families)
+		//This house is full.
 		if(I.matriarch && I.patriarch)
 			continue
 		//The accursed setspouse code so people can preset their spouses
-		if(H.setspouse)
-			var/mob/living/carbon/human/spouse_to_be
-			if(ishuman(I.matriarch))
-				spouse_to_be = I.matriarch
-			if(ishuman(I.patriarch))
-				spouse_to_be = I.patriarch
+		var/mob/living/carbon/human/spouse_to_be
+		if(ishuman(I.matriarch))
+			spouse_to_be = I.matriarch
+		if(ishuman(I.patriarch))
+			spouse_to_be = I.patriarch
+		//There is someone in this house.
+		if(spouse_to_be)
+			//If this player has the name of the spouse you want.
 			if(spouse_to_be.real_name == H.setspouse)
-				high_priority_houses.Add(I)
+				//You have eachothers names as your setspouse
+				if(spouse_to_be.setspouse == H.real_name)
+					high_priority_houses.Add(I)
+				//They are impartial
+				if(!spouse_to_be.setspouse)
+					medium_priority_houses.Add(I)
+				continue
+			//They would like you as their spouse and your impartial to it.
+			if(!H.setspouse && spouse_to_be.setspouse == H.real_name)
+				medium_priority_houses.Add(I)
+				continue
+			//They are waiting for someone else.
+			if(spouse_to_be.setspouse)
 				continue
 		//Normal Code
-		if(I.dominant_species != species)
+		if(I.dominant_species != our_species)
 			continue
-		//Might be redundant criteria for mid priority.
-		if(I.family.len >= 1 && !I.matriarch && !I.patriarch)
-			medium_priority_houses.Add(I)
-		else
-			low_priority_houses.Add(I)
+		low_priority_houses.Add(I)
 
 	/*
 	* Checks 3 lists.
@@ -181,28 +193,33 @@ SUBSYSTEM_DEF(familytree)
 	* 2 Medium Priority: Houses without spouses
 	* 3 Low Priority: Everything else that applies
 	*/
-	for(var/i = 1 to 3)
-		var/list/what_we_checkin = high_priority_houses
+	var/list/what_we_checkin = list()
+	for(var/cycle = 1 to 3)
 		//If second run then check the other houses.
-		switch(i)
+		switch(cycle)
+			if(1)
+				what_we_checkin = high_priority_houses
 			if(2)
 				what_we_checkin = medium_priority_houses
 			if(3)
 				what_we_checkin = low_priority_houses
 		for(var/datum/heritage/eligable_house in what_we_checkin)
+			var/mob/living/carbon/human/mat = eligable_house.matriarch
+			var/mob/living/carbon/human/pat = eligable_house.patriarch
 			if(!eligable_house.housename)
 				eligable_house.ClaimHouse(H)
 				return
-			if(!eligable_house.matriarch && H.gender == FEMALE)
+			//Sloppy method to check husband and wife one after another.
+			if(!mat && H.gender == FEMALE)
 				eligable_house.addToHouse(H, FAMILY_MOTHER)
 				return
-			if(!eligable_house.patriarch && H.gender == MALE)
+			if(!pat && H.gender == MALE)
 				eligable_house.addToHouse(H, FAMILY_FATHER)
 				return
 	//None of the above added the person to a family. This means we must add them to a entirely new house.
-	if(species == /datum/species/aasimar)
-		return
-	families += new /datum/heritage(H)
+	if(our_species != /datum/species/aasimar)
+		testing("FAMTREE_NEWFAM")
+		families += new /datum/heritage(H)
 
 /*
 * For marrying two people together based on spousename.

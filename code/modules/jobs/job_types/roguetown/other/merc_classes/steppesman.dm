@@ -11,12 +11,14 @@
 	category_tags = list(CTAG_MERCENARY)
 	maximum_possible_slots = 5
 
+	cmode_music = 'sound/music/combat_steppe.ogg'
+
 /datum/outfit/job/roguetown/mercenary/steppesman/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	head = /obj/item/clothing/head/roguetown/papakha
 	gloves = /obj/item/clothing/gloves/roguetown/leather
-	belt = /obj/item/storage/belt/rogue/leather/black
+	belt = /obj/item/storage/belt/rogue/leather/mercenary/black
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
@@ -27,7 +29,7 @@
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/rogueweapon/huntingknife = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
