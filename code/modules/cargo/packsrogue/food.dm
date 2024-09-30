@@ -13,6 +13,30 @@
 	cost = 14
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/manapot
 
+/datum/supply_pack/rogue/food/stronghealthpot
+
+	name = "Strong Healing Potion"
+	cost = 28
+	contains = /obj/item/reagent_containers/glass/bottle/rogue/stronghealthpot
+
+/datum/supply_pack/rogue/food/strongmanapot
+
+	name = "Strong Manna Potion"
+	cost = 28
+	contains = /obj/item/reagent_containers/glass/bottle/rogue/strongmanapot
+
+/datum/supply_pack/rogue/food/antidote
+
+	name = "Antidote Potion"
+	cost = 14
+	contains = /obj/item/reagent_containers/glass/bottle/rogue/antidote
+
+/datum/supply_pack/rogue/food/diseasecure
+
+	name = "Disease Cure Potion"
+	cost = 28
+	contains = /obj/item/reagent_containers/glass/bottle/rogue/diseasecure
+
 /datum/supply_pack/rogue/food/water
 	name = "Water Bottle"
 	cost = 5
@@ -121,12 +145,12 @@
 /datum/supply_pack/rogue/food/potato
 	name = "Dwarven Potato"
 	cost = 4
-	contains = /obj/item/reagent_containers/food/snacks/grown/potato/rogue
+	contains = /obj/item/reagent_containers/food/snacks/produce/potato
 
 /datum/supply_pack/rogue/food/wheat
 	name = "Grain"
 	cost = 3
-	contains = /obj/item/reagent_containers/food/snacks/grown/wheat
+	contains = /obj/item/reagent_containers/food/snacks/produce/wheat
 
 /datum/supply_pack/rogue/food/egg
 	name = "Egg"

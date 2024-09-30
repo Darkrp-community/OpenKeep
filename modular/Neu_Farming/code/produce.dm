@@ -44,7 +44,6 @@
 		else
 			return ..()
 	..()
-//	return ..() fucked with slicing
 
 /obj/item/reagent_containers/food/snacks/produce/wheat
 	seed = /obj/item/neuFarm/seed/wheat
@@ -69,7 +68,7 @@
 		. += "I can easily tell that these are wheat grains."
 
 /obj/item/reagent_containers/food/snacks/produce/oat
-	seed = /obj/item/neuFarm/seed/wheat/oat
+	seed = /obj/item/neuFarm/seed/oat
 	name = "grain"
 	desc = ""
 	icon_state = "oat"
@@ -200,10 +199,10 @@
 	add_overlay(item_overlay)
 
 /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
-	seed = /obj/item/neuFarm/seed/berryrogue/poison
+	seed = /obj/item/neuFarm/seed/poison_berries
 	icon_state = "berries"
 	tastes = list("berry" = 1)
-	list_reagents = list(/datum/reagent/berrypoison = 5, /datum/reagent/consumable/nutriment = 3)
+	list_reagents = list(/datum/reagent/berrypoison = 5, /datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/berrypoison = 5)
 	color_index = "bad"
 	poisonous = TRUE
@@ -256,7 +255,7 @@
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/tobaccodust
 
-/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed_dried
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed
 	seed = null
 	name = "westleach leaf"
 	desc = "A common, strong-smelling leaf dried for smoking."
@@ -387,6 +386,7 @@
 	dropshrink = 0.9
 	rotprocess = SHELFLIFE_EXTREME
 
+
 // -------------- HOPS and BEER WORT -----------------
 
 /datum/crafting_recipe/roguetown/cooking/beerstarter
@@ -421,6 +421,20 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/real
 	rotprocess = null
 	seed = null
+
+// Fyritius flower moved here, note the path is still deprecated, TO DO
+/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue
+	name = "fyritius flower"
+	desc = ""
+	icon_state = "fyritius"
+	tastes = list("tastes like regret and fire" = 1)
+	bitesize = 1
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/fyritiusnectar = 5)
+	can_distill = TRUE // no distill reagent but fyritius nectar could be used as a poison to set people on fire, which is too funny to prevent
+	distill_reagent = null
+	//rotprocess = 10 MINUTES // too rare to rot
+	dust_result = /obj/item/alch/firedust
+
 
 /*
 /obj/item/reagent_containers/food/snacks/produce/garlic
