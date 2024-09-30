@@ -109,9 +109,7 @@
 
 /mob/living/carbon/human/species/zizombie/Initialize()
 	. = ..()
-	spawn(10)
-		after_creation()
-	//addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
+	addtimer(CALLBACK(src, PROC_REF(after_creation)), 1 SECONDS)
 
 /mob/living/carbon/human/species/zizombie/handle_combat()
 	if(mode == AI_HUNT)
