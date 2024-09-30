@@ -181,6 +181,7 @@
 	nojumpsuit = 1
 	sexes = 1
 	damage_overlay_type = "human"
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	var/raceicon = "zizombie"
 
 /datum/species/zizombie/update_damage_overlays(var/mob/living/carbon/human/H)
