@@ -1,4 +1,4 @@
-//Basic
+// Catalyst. This reagent combined with normal potion reagent makes the strong potion reagent. Reactions defined by the end of this doccument
 /datum/reagent/additive
 	name = "additive"
 	reagent_state = LIQUID
@@ -15,12 +15,13 @@
 	alpha = 173
 
 /datum/reagent/medicine/healthpot/on_mob_life(mob/living/carbon/M)
-	M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
-	M.adjustBruteLoss(-2*REM, 0)
-	M.adjustFireLoss(-2*REM, 0)
-	M.adjustOxyLoss(-1, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
-	M.adjustCloneLoss(-2*REM, 0)
+	if(volume > 0.99)
+		M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
+		M.adjustBruteLoss(-2*REM, 0)
+		M.adjustFireLoss(-2*REM, 0)
+		M.adjustOxyLoss(-1, 0)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
+		M.adjustCloneLoss(-2*REM, 0)
 	..()
 	. = 1
 
@@ -33,12 +34,13 @@
 	metabolization_rate = REAGENTS_METABOLISM * 10
 
 /datum/reagent/medicine/stronghealth/on_mob_life(mob/living/carbon/M)
-	M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
-	M.adjustBruteLoss(-8*REM, 0)
-	M.adjustFireLoss(-8*REM, 0)
-	M.adjustOxyLoss(-5, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
-	M.adjustCloneLoss(-5*REM, 0)
+	if(volume > 0.99)
+		M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
+		M.adjustBruteLoss(-8*REM, 0)
+		M.adjustFireLoss(-8*REM, 0)
+		M.adjustOxyLoss(-5, 0)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
+		M.adjustCloneLoss(-5*REM, 0)
 	..()
 	. = 1
 
@@ -54,7 +56,8 @@
 	alpha = 173
 
 /datum/reagent/medicine/manapot/on_mob_life(mob/living/carbon/M)
-	M.rogstam_add(100)
+	if(volume > 0.99)
+		M.rogstam_add(100)
 	..()
 	. = 1
 
@@ -66,7 +69,8 @@
 	metabolization_rate = REAGENTS_METABOLISM * 10
 
 /datum/reagent/medicine/strongmana/on_mob_life(mob/living/carbon/M)
-	M.rogstam_add(200)
+	if(volume > 0.99)
+		M.rogstam_add(200)
 	..()
 	. = 1
 
@@ -80,7 +84,8 @@
 	metabolization_rate = REAGENTS_METABOLISM
 
 /datum/reagent/medicine/antidote/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-4, 0)
+	if(volume > 0.99)
+		M.adjustToxLoss(-4, 0)
 	..()
 	. = 1
 
@@ -93,7 +98,8 @@
 	metabolization_rate = 30 * REAGENTS_METABOLISM
 
 /datum/reagent/medicine/diseasecure/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-6, 0)
+	if(volume > 0.99)
+		M.adjustToxLoss(-8, 0)
 	..()
 	. = 1
 
@@ -198,33 +204,50 @@
 	return ..()
 
 
-//Poisons
-/datum/reagent/berrypoison
+//Poisons			
+/* Tested this quite a bit. Heres the deal. Metabolism REAGENTS_SLOW_METABOLISM is 0.1 and needs to be that so poison isnt too fast working but
+still is dangerous. Toxloss of 3 at metabolism 0.1 puts you in dying early stage then stops for reference of these values.
+A dose of ingested potion is defined as 5u, projectile deliver at most 2u, you already do damage with projectile, a bolt can only feasible hold a tiny amount of poison, so much easier to deliver than ingested and so on.
+If you want to expand on poisons theres tons of fun effects TG chemistry has that could be added, randomzied damage values for more unpredictable poison, add trait based resists instead of the clunky race check etc.*/
+
+/datum/reagent/berrypoison	// Weaker poison, balanced to make you wish for death and incapacitate but not kill
 	name = "Berry Poison"
 	description = ""
 	reagent_state = LIQUID
-	color = "#00B4FF"
-	taste_description = "burning"
-	metabolization_rate = REAGENTS_METABOLISM
+	color = "#47b2e0"
+	taste_description = "bitterness"
+	metabolization_rate = REAGENTS_SLOW_METABOLISM
 
 /datum/reagent/berrypoison/on_mob_life(mob/living/carbon/M)
-	M.add_nausea(9)
-	M.adjustToxLoss(3, 0)
+	if(volume > 0.99)
+		if(isdwarf(M))
+			M.add_nausea(1)
+			M.adjustToxLoss(0.5)
+		else
+			M.add_nausea(3) // so one berry or one dose (one clunk of extracted poison, 5u) will make you really sick and a hair away from crit.
+			M.adjustToxLoss(2)
 	return ..()
 
 
-/datum/reagent/strongpoison
+/datum/reagent/strongpoison		// Strong poison, meant to be somewhat difficult to produce using alchemy or spawned with select antags. Designed to kill in one full dose (5u) better drink antidote fast
 	name = "Strong Poison"
 	description = ""
 	reagent_state = LIQUID
-	color = "#000000"
+	color = "#1a1616"
 	taste_description = "burning"
-	metabolization_rate = REAGENTS_METABOLISM
+	metabolization_rate = REAGENTS_SLOW_METABOLISM
 
 /datum/reagent/strongpoison/on_mob_life(mob/living/carbon/M)
-	M.add_nausea(20)
-	M.adjustToxLoss(12, 0)
+	testing("Someone was poisoned")
+	if(volume > 0.99)
+		if(isdwarf(M))
+			M.add_nausea(1)
+			M.adjustToxLoss(2.3)  // will put you just above dying crit treshold
+		else
+			M.add_nausea(2)
+			M.adjustToxLoss(4.5) // just enough so 5u will kill you dead with no help
 	return ..()
+
 
 //Potion reactions
 /datum/chemical_reaction/alch/stronghealth
@@ -267,8 +290,9 @@
 	metabolization_rate = 0.5
 
 /datum/reagent/toxin/fyritiusnectar/on_mob_life(mob/living/carbon/M)
-	M.add_nausea(9)
-	M.adjustFireLoss(2, 0)
-	M.adjust_fire_stacks(1)
-	M.IgniteMob()
+	if(volume > 0.99)
+		M.add_nausea(9)
+		M.adjustFireLoss(2, 0)
+		M.adjust_fire_stacks(1)
+		M.IgniteMob()
 	return ..()

@@ -23,8 +23,8 @@
 	if(foodextracted && canthresh)
 		new foodextracted(loc)
 		new /obj/item/natural/fibers(loc)
-		playsound(loc,"plantcross", 100, FALSE)
-		playsound(loc,"smashlimb", 50, FALSE)
+//		playsound(loc,"plantcross", 90, FALSE) Causes loud reverb in current setup
+//		playsound(loc,"smashlimb", 50, FALSE)
 		qdel(src)
 
 /obj/item/natural/chaff/attackby(obj/item/I, mob/living/user, params)
