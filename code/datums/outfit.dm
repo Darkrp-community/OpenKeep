@@ -177,8 +177,8 @@
 	pre_equip(H, visualsOnly)
 
 	//Start with uniform,suit,backpack for additional slots
-	if(uniform)
-		H.equip_to_slot_or_del(new pants(H),SLOT_PANTS, TRUE)
+	if(uniform) // this is for legacy/base SS13 outfits, pants are spawned later
+		H.equip_to_slot_or_del(new uniform(H),SLOT_PANTS, TRUE)
 	if(suit)
 		H.equip_to_slot_or_del(new suit(H),SLOT_ARMOR, TRUE)
 	if(back)
