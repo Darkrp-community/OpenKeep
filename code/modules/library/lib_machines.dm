@@ -21,7 +21,7 @@
 	var/sqlckey = sanitizeSQL(M.ckey)
 	
 	// Simulating SQL interaction with testing() for upload
-	testing("UPLOAD QUERY: INSERT INTO library (author, title, content, category, ckey, datetime, round_id_created, approved) VALUES ('[sqlauthor]', '[sqltitle]', '[sqlcontent]', '[sqlcategory]', '[sqlckey]', Now(), '[GLOB.round_id]', 0)")
+	testing("UPLOAD QUERY: INSERT INTO library (author, title, content, category, ckey, datetime, round_id_created, approved) VALUES ('[sqlauthor]', '[sqltitle]', '[sqlcontent]', '[sqlcategory]', '[sqlckey]', Now(), [GLOB.round_id], 0)")
 
 	// Simulating successful upload
 	alert("Upload Complete. The manuscript has been uploaded to the Archive.")
