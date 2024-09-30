@@ -72,7 +72,8 @@
 	pixel_y = 0
 	pixel_x = 0
 
-/obj/item/rogueweapon/thresher/afterattack(obj/target, mob/living/user = usr, proximity)
+
+/obj/item/rogueweapon/thresher/afterattack(obj/target, mob/user, proximity)
 	if(user.used_intent.type == /datum/intent/flailthresh)
 		if(isturf(target.loc))
 			var/turf/T = target.loc
@@ -84,10 +85,11 @@
 				playsound(loc,"plantcross", 80, FALSE)
 				playsound(loc,"smashlimb", 35, FALSE)
 				apply_farming_fatigue(user, 10)
-				user.visible_message(span_notice("[user] threshes the stalks!"), \
-						span_notice("I thresh the stalks."))
-		return
+				user.visible_message("<span class='notice'>[user] threshes the stalks!</span>", \
+									"<span class='notice'>I thresh the stalks.</span>")
+			return
 	..()
+
 
 /* this is too goofy to keep sadly for now we return to infinithreshing
 /obj/item/rogueweapon/thresher/afterattack(obj/target, mob/living/user = usr, proximity)
@@ -108,6 +110,25 @@
 						span_notice("I thresh the stalks."))
 		return
 	..()
+
+// Below is ok but plays sound once for every item so too loud
+/obj/item/rogueweapon/thresher/afterattack(obj/target, mob/living/user = usr, proximity)
+	if(user.used_intent.type == /datum/intent/flailthresh)
+		if(isturf(target.loc))
+			var/turf/T = target.loc
+			var/found = FALSE
+			for(var/obj/item/natural/chaff/C in T)
+				found = TRUE
+				C.thresh()
+			if(found)
+				playsound(loc,"plantcross", 80, FALSE)
+				playsound(loc,"smashlimb", 35, FALSE)
+				apply_farming_fatigue(user, 10)
+				user.visible_message(span_notice("[user] threshes the stalks!"), \
+						span_notice("I thresh the stalks."))
+		return
+	..()
+
 */
 
 /*---------\
