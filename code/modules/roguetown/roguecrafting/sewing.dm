@@ -154,40 +154,6 @@
             	/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
-
-/*.............. recipes requiring skill 3 ..............*/
-
-/datum/crafting_recipe/roguetown/sewing/robe
-    name = "robes"
-    result = list(/obj/item/clothing/suit/roguetown/shirt/robe)
-    reqs = list(/obj/item/natural/cloth = 3,
-                /obj/item/natural/fibers = 1)
-    craftdiff = 3
-
-/datum/crafting_recipe/roguetown/sewing/hgambeson
-    name = "padded gambeson"
-    result = list(/obj/item/clothing/suit/roguetown/armor/gambeson/heavy)
-    reqs = list(/obj/item/natural/cloth = 6,
-                /obj/item/natural/fibers = 4)
-    craftdiff = 3
-
-/datum/crafting_recipe/roguetown/sewing/cape
-	name = "cape"
-	result = list(/obj/item/clothing/cloak/cape)
-	reqs = list(/obj/item/natural/cloth = 2,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 3
-
-
-/* .............. recipes requiring skill 4 ..............*/
-
-/datum/crafting_recipe/roguetown/sewing/fancyhat
-	name = "fancy hat"
-	result = list(/obj/item/clothing/head/roguetown/fancyhat)
-	reqs = list(/obj/item/natural/cloth = 2,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 4
-
 /datum/crafting_recipe/roguetown/sewing/Bladress
 	name = "black dress"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/dress/gen/black)
@@ -208,6 +174,33 @@
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
+
+
+/*.............. recipes requiring skill 3 ..............*/
+
+/datum/crafting_recipe/roguetown/sewing/robe
+    name = "robes"
+    result = list(/obj/item/clothing/suit/roguetown/shirt/robe)
+    reqs = list(/obj/item/natural/cloth = 3,
+                /obj/item/natural/fibers = 1)
+    craftdiff = 3
+
+/datum/crafting_recipe/roguetown/sewing/cape
+	name = "cape"
+	result = list(/obj/item/clothing/cloak/cape)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
+
+
+/* .............. recipes requiring skill 4 ..............*/
+
+/datum/crafting_recipe/roguetown/sewing/fancyhat
+	name = "fancy hat"
+	result = list(/obj/item/clothing/head/roguetown/fancyhat)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/sewing/fancyhat
 	name = "fancy hat"

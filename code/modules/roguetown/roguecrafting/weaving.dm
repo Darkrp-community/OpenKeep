@@ -157,6 +157,13 @@
 				/obj/item/natural/silk = 3,
 				/obj/item/natural/fur/rous = 2)
 
+/datum/crafting_recipe/roguetown/weaving/paddedgambeson
+    name = "padded gambeson"
+    result = list(/obj/item/clothing/suit/roguetown/armor/gambeson/heavy)
+    reqs = list(/obj/item/natural/cloth = 6,
+                /obj/item/natural/fibers = 4)
+    craftdiff = 4
+
 /datum/crafting_recipe/roguetown/weaving/armordress
 	name = "padded dress"
 	result = /obj/item/clothing/suit/roguetown/armor/armordress
