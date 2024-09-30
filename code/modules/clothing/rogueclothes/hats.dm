@@ -293,6 +293,7 @@
 			if(loc == user)
 				user.adjust_fire_stacks(5)
 				user.IgniteMob()
+	return ..()
 
 
 

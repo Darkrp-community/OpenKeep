@@ -611,10 +611,10 @@
 			spawn(used_time + 5) regenerate_icons()
 			rogue_sneaking = TRUE
 	return
-
+/* 
 	if(world.time < mob_timers[MT_INVISIBILITY]) // Check if the mob is affected by the invisibility spell
 		alpha = 0
-		return
+		return */
 
 /mob/proc/toggle_rogmove_intent(intent, silent = FALSE)
 	// If we're becoming sprinting from non-sprinting, reset the counter

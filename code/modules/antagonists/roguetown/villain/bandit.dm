@@ -288,7 +288,7 @@
 		else
 			to_chat(world, "[the_name] was a bandit. He stole [amt] triumphs worth of loot.")
 	return
-
+/* 
 	var/traitorwin = TRUE
 
 	var/count = 0
@@ -311,6 +311,7 @@
 		to_chat(owner.current, "<span class='redtext'>I've failed to satisfy my greed.</span>")
 		if(owner.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/fail.ogg', 100, FALSE, pressure_affected = FALSE)
+*/
 
 /*	.................   Unique Bandit recipes   ................... */
 /datum/crafting_recipe/bandit_volfhelm

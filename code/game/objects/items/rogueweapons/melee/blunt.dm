@@ -292,7 +292,7 @@
 
 // Copper Bludgeon
 
-obj/item/rogueweapon/mace/goden/copper
+/obj/item/rogueweapon/mace/goden/copper
 	force = 10
 	force_wielded = 20
 	slowdown = 1

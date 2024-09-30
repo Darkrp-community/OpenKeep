@@ -53,7 +53,7 @@
 /obj/item/bodypart/head/orc/update_icon_dropped()
 	return
 
-/obj/item/bodypart/head/orc/get_limb_icon()
+/obj/item/bodypart/head/orc/get_limb_icon(dropped, hideaux = FALSE)
 	return
 
 /obj/item/bodypart/head/orc/skeletonize()

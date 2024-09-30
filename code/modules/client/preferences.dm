@@ -1664,7 +1664,7 @@ Slots: [job.spawn_positions]</span>
 					age = pick(pref_species.possible_ages)
 				if("hair")
 					var/list/hairs
-					if(age == AGE_OLD && OLDGREY in pref_species.species_traits)
+					if(age == AGE_OLD && (OLDGREY in pref_species.species_traits))
 						hairs = pref_species.get_oldhc_list()
 					else
 						hairs = pref_species.get_hairc_list()
@@ -1674,7 +1674,7 @@ Slots: [job.spawn_positions]</span>
 					hairstyle = pref_species.random_hairstyle(gender)
 				if("facial")
 					var/list/hairs
-					if(age == AGE_OLD && OLDGREY in pref_species.species_traits)
+					if(age == AGE_OLD && (OLDGREY in pref_species.species_traits))
 						hairs = pref_species.get_oldhc_list()
 					else
 						hairs = pref_species.get_hairc_list()
@@ -1811,7 +1811,7 @@ Slots: [job.spawn_positions]</span>
 				if("hair")
 					var/new_hair
 					var/list/hairs
-					if(age == AGE_OLD && OLDGREY in pref_species.species_traits)
+					if(age == AGE_OLD && (OLDGREY in pref_species.species_traits))
 						hairs = pref_species.get_oldhc_list()
 						new_hair = input(user, "Choose your character's hair color:", "") as null|anything in hairs
 					else

@@ -491,7 +491,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				H.adjust_triumphs(-1)
 				H.visible_message("<span class='danger'>\The [H] thrashes around, unyielding!</span>")
 				to_chat(H.mind, "<span class='danger'>\"Yield.\"</span>")
-				if(H.electrocute_act(10, src))
+				if(H.electrocute_act(10))
 					H.emote("painscream")
 				sleep(20)
 				H.anchored = FALSE
@@ -598,8 +598,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 					if(HAS_TRAIT(HL, TRAIT_NOROGSTAM))
 						return
 					HL.apply_status_effect(/datum/status_effect/debuff/sleepytime)
-					to_chat(HL.mind, "<span class='warning'>This isn't my bed... Where am I?!</span>")
-					HL.playsound_local(src, pick('sound/misc/jumphumans (1).ogg','sound/misc/jumphumans (2).ogg','sound/misc/jumphumans (3).ogg'), 100)
+					to_chat(HL, "<span class='warning'>This isn't my bed... Where am I?!</span>")
+					HL.playsound_local(HL, pick('sound/misc/jumphumans (1).ogg','sound/misc/jumphumans (2).ogg','sound/misc/jumphumans (3).ogg'), 100)
 					HL.forceMove(C)
 					qdel(P)
 
@@ -696,7 +696,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	var/found_assassin = FALSE
 	for(var/obj/item/paper/P in C.contents)
 		if(!user.mind || !user.mind.do_i_know(name=P.info))
-			to_chat(user.mind, "<span class='warning'>I don't know anyone by that name.</span>")
+			to_chat(user, "<span class='warning'>I don't know anyone by that name.</span>")
 			return
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.real_name == P.info)
@@ -709,14 +709,14 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				if(found_assassin == TRUE)
 					ADD_TRAIT(HL, TRAIT_ZIZOID_HUNTED, TRAIT_GENERIC) // Gives the victim a trait to track that they are wanted dead.
 					log_hunted("[key_name(HL)] playing as [HL] had the hunted flaw by Zizoid curse.")
-					to_chat(HL.mind, "<span class='danger'>My hair stands on end. Has someone just said my name? I should watch my back.</span>")
-					to_chat(user.mind, "<span class='warning'>Your target has been marked, your profane call answered. [HL.real_name] will surely perish!</span>")
+					to_chat(HL, "<span class='danger'>My hair stands on end. Has someone just said my name? I should watch my back.</span>")
+					to_chat(user, "<span class='warning'>Your target has been marked, your profane call answered. [HL.real_name] will surely perish!</span>")
 					for(var/obj/item/rogueweapon/huntingknife/idagger/D in C.contents) // Get rid of the dagger used as a sacrifice.
 						qdel(D)
 					qdel(P) // Get rid of the paper with the name on it too.
-					HL.playsound_local(src, 'sound/magic/marked.ogg', 100)
+					HL.playsound_local(HL, 'sound/magic/marked.ogg', 100)
 				else
-					to_chat(user.mind, "<span class='warning'>There has been no answer to your call to the Dark Sun. It seems his servants are far from here...</span>")
+					to_chat(user, "<span class='warning'>There has been no answer to your call to the Dark Sun. It seems his servants are far from here...</span>")
 
 // TRANSMUTATION
 
@@ -958,11 +958,11 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	for(var/mob/living/carbon/human/H in C.contents)
 		if(!iszizocultist(H))
 			return
-		for(var/mob/living/carbon/human/RULER in get_step(src, NORTH))
+		for(var/mob/living/carbon/human/RULER in get_step(C, NORTH))
 			if(RULER != SSticker.rulermob && RULER.stat != DEAD)
 				break
 			RULER.gib()
-		for(var/mob/living/carbon/human/VIRGIN in get_step(src, SOUTH))
+		for(var/mob/living/carbon/human/VIRGIN in get_step(C, SOUTH))
 			if(!VIRGIN.virginity && VIRGIN.stat != DEAD)
 				break
 			VIRGIN.gib()

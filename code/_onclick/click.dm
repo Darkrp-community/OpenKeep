@@ -512,7 +512,7 @@
 		return
 	if(user.get_active_held_item())
 		return
-	var/list/atomy = list()
+	var/list/obj/item/atomy = list()
 	var/list/atomcounts = list()
 	var/list/atomrefs = list()
 	var/list/overrides = list()

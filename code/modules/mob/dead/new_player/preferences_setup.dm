@@ -31,7 +31,7 @@
 		facial_hairstyle = pref_species.random_facial_hairstyle(gender)
 	if(randomise[RANDOM_HAIR_COLOR])
 		var/list/hairs
-		if(age == AGE_OLD && OLDGREY in pref_species.species_traits)
+		if(age == AGE_OLD && (OLDGREY in pref_species.species_traits))
 			hairs = pref_species.get_oldhc_list()
 		else
 			hairs = pref_species.get_hairc_list()
@@ -39,7 +39,7 @@
 		facial_hair_color = hair_color
 	if(randomise[RANDOM_FACIAL_HAIR_COLOR])
 		var/list/hairs
-		if(age == AGE_OLD && OLDGREY in pref_species.species_traits)
+		if(age == AGE_OLD && (OLDGREY in pref_species.species_traits))
 			hairs = pref_species.get_oldhc_list()
 		else
 			hairs = pref_species.get_hairc_list()

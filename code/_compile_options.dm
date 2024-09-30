@@ -1,4 +1,4 @@
-#define TESTING				//By using the testing("message") proc you can create debug-feedback for people with this
+// #define TESTING				//By using the testing("message") proc you can create debug-feedback for people with this
 								//uncommented, but not visible in the release version)
 
 //#define DATUMVAR_DEBUGGING_MODE	//Enables the ability to cache datum vars and retrieve later for debugging which vars changed.
@@ -36,7 +36,7 @@
 //#define VISUALIZE_ACTIVE_TURFS	//Highlights atmos active turfs in green
 #endif
 
-//#define UNIT_TESTS			//Enables unit tests via TEST_RUN_PARAMETERF
+#define UNIT_TESTS			//Enables unit tests via TEST_RUN_PARAMETERF
 
 #ifndef PRELOAD_RSC					//set to:
 #define PRELOAD_RSC		0			//	0 to allow using external resources or on-demand behaviour;

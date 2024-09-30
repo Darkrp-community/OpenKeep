@@ -148,21 +148,21 @@
 	update_icon()
 	..()
 
-/obj/structure/pillory/unbuckle_mob(mob/living/user)
+/obj/structure/pillory/user_unbuckle_mob(mob/living/buckled_mob, mob/living/user)
 	if(latched)
-		if(user.STASTR >= 18)
-			if(do_after(user, 25))
+		if(isliving(user) && user.STASTR >= 18)
+			if(do_after(user, 2.5 SECONDS))
 				user.visible_message(span_warning("[user] breaks [src] open!"))
 				locked = FALSE
 				latched = FALSE
-				..()
+				return ..()
 		else
 			to_chat(usr, span_warning("Unlock it first!"))
 			return FALSE
 	else
-		..()
 		density = TRUE
-	..()
+		return ..()
 	density = TRUE
+	return ..()
 
 #undef PILLORY_HEAD_OFFSET

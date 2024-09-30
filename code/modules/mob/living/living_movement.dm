@@ -49,7 +49,7 @@
 	update_move_intent_slowdown()
 	return ..()
 
-/mob/living/equip_to_slot_if_possible()
+/mob/living/equip_to_slot_if_possible(obj/item/W, slot, qdel_on_fail = FALSE, disable_warning = FALSE, redraw_mob = TRUE, bypass_equip_delay_self = FALSE, initial)
 	. = ..()
 	update_config_movespeed()
 

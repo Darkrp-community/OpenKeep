@@ -21,7 +21,7 @@
 	wander = FALSE
 
 
-mob/living/carbon/human/species/zizombie/ambush/after_creation()
+/mob/living/carbon/human/species/zizombie/ambush/after_creation()
 	..()
 	job = "Ambush zizombie"
 	QDEL_NULL(sexcon)
@@ -50,7 +50,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 /obj/item/bodypart/head/zizombie/update_icon_dropped()
 	return
 
-/obj/item/bodypart/head/zizombie/get_limb_icon()
+/obj/item/bodypart/head/zizombie/get_limb_icon(dropped, hideaux = FALSE)
 	return
 
 /obj/item/bodypart/head/zizombie/skeletonize()
