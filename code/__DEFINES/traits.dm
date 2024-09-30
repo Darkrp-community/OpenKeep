@@ -12,7 +12,7 @@
 #define TRAIT_NOBLE					"Noble Blooded"
 #define TRAIT_EMPATH					"Empath"
 #define TRAIT_BREADY					"Battleready"
-#define TRAIT_MEDIUMARMOR				"Maille Training"
+#define TRAIT_MEDIUMARMOR				"Mail Training"
 #define TRAIT_HEAVYARMOR				"Plate Training"
 #define TRAIT_DODGEEXPERT              "Fast Reflexes"
 #define TRAIT_VILLAIN					"Villain"

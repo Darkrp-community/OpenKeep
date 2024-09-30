@@ -1,6 +1,7 @@
 name: Suggestion
 description: Put in a suggestion
 title: "[Suggestion]: "
+labels: ["Suggestion"]
 
 body:
 - type: markdown

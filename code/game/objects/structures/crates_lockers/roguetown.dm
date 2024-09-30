@@ -41,7 +41,7 @@
 		/obj/item/reagent_containers/powder/spice=20,
 		/obj/item/bomb=6,
 		/obj/item/rogueweapon/huntingknife/idagger=33,
-		/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue=10,
+		/obj/item/reagent_containers/food/snacks/produce/fyritius=10,
 		/obj/item/clothing/suit/roguetown/armor/gambeson=33,
 		/obj/item/clothing/suit/roguetown/armor/leather=33,
 		/obj/item/roguestatue/gold/loot=1,
