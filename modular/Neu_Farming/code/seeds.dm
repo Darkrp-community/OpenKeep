@@ -21,7 +21,7 @@
 	. = ..()
 	// Chance to destroy the seed as it's being stepped on
 	if(prob(10) && istype(L))
-		playsound(loc,"plantcross", 30, FALSE)
+		playsound(loc,"plantcross", 40, FALSE)
 		qdel(src)
 
 /obj/item/neuFarm/seed/examine(mob/user)

@@ -380,7 +380,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		user.changeNext_move(CLICK_CD_MELEE)
-		playsound(src.loc, "plantcross", 70, FALSE, -1)
+		playsound(src.loc, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(1,5), target = src))
 #ifndef MATURESERVER
 			if(!looty.len && (world.time > res_replenish))
@@ -409,7 +409,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		user.changeNext_move(CLICK_CD_MELEE)
-		playsound(src.loc, "plantcross", 70, FALSE, -1)
+		playsound(src.loc, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(1,5), target = src))
 #ifndef MATURESERVER
 			if(!looty2.len && (world.time > res_replenish2))
@@ -438,7 +438,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		user.changeNext_move(CLICK_CD_MELEE)
-		playsound(src.loc, "plantcross", 70, FALSE, -1)
+		playsound(src.loc, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(1,5), target = src))
 #ifndef MATURESERVER
 			if(!looty3.len && (world.time > res_replenish3))

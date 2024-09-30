@@ -3,6 +3,7 @@
 	dried_type = null
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_SMALL
+	sellprice = 1	
 	var/list/pipe_reagents = list()
 	var/seed
 	var/bitesize_mod = 0
