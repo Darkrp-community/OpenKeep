@@ -195,7 +195,7 @@
 /turf/open/floor/plating,
 /area/awaymission/cabin)
 "aE" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /obj/effect/baseturf_helper/asteroid/snow,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
@@ -2199,7 +2199,7 @@
 "gh" = (
 /obj/structure/weightmachine/weightlifter,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /turf/open/floor/engine,
 /area/awaymission/cabin/caves/mountain)
 "gi" = (
@@ -4366,7 +4366,7 @@
 /turf/open/floor/plating/asteroid/snow,
 /area/awaymission/cabin/caves)
 "lb" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium/red{
 	name = "soviet floor"
@@ -5007,7 +5007,7 @@
 /area/awaymission/cabin/snowforest)
 "mx" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/cobweb/cobweb2{
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2{
 	desc = "No, the spider web doesn't have any secrets. For fucksake."
 	},
 /turf/open/floor/mineral/plastitanium/red{
@@ -5133,7 +5133,7 @@
 	},
 /area/awaymission/cabin/caves/sovietcave)
 "mN" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium/red{
 	name = "soviet floor"

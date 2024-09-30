@@ -280,6 +280,14 @@
 	result = /obj/item/rogueweapon/shovel/small
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 			/obj/item/grown/log/tree/stick = 1)
+
+/datum/crafting_recipe/roguetown/broom
+	name = "broom"
+	result = /obj/item/broom
+	reqs = list(/obj/item/natural/fibers = 1,
+			/obj/item/grown/log/tree/stick = 4)
+	craftdiff = 1
+
 /obj/item/rogueweapon/shovel/small/crafted
 	sellprice = 5
 
