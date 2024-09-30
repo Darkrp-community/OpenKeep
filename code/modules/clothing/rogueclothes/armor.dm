@@ -499,7 +499,7 @@
 	body_parts_covered = CHEST|VITALS|LEGS
 	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = list("human", "tiefling","elf", "half-elf", "dark elf")
+	allowed_race = list("human", "tiefling","elf", "half-elf", "dark elf", "aasimar")
 	sellprice = 60
 
 
