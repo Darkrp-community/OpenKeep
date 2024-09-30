@@ -104,7 +104,7 @@
 	. = ..()
 	reagents.add_reagent(pick(/datum/reagent/uranium, /datum/reagent/uranium/radium), 5)
 
-/obj/effect/decal/cleanable/cobweb
+/obj/effect/decal/cleanable/dirt/cobweb
 	name = "cobweb"
 	desc = ""
 	icon = 'modular/Mapping/icons/webbing.dmi'
@@ -116,7 +116,7 @@
 	beauty = -100
 	alpha = 200
 
-/obj/effect/decal/cleanable/cobweb/cobweb2
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2
 	icon_state = "cobweb2"
 
 /obj/effect/decal/cleanable/molten_object
