@@ -280,6 +280,14 @@
 	result = /obj/item/rogueweapon/shovel/small
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 			/obj/item/grown/log/tree/stick = 1)
+
+/datum/crafting_recipe/roguetown/broom
+	name = "broom"
+	result = /obj/item/broom
+	reqs = list(/obj/item/natural/fibers = 1,
+			/obj/item/grown/log/tree/stick = 4)
+	craftdiff = 1
+
 /obj/item/rogueweapon/shovel/small/crafted
 	sellprice = 5
 
@@ -339,7 +347,7 @@
 	name = "pyroclastic arrow"
 	result = /obj/item/ammo_casing/caseless/rogue/arrow/pyro
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/arrow = 1,
-				/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue = 1)
+				/obj/item/reagent_containers/food/snacks/produce/fyritius = 1)
 	craftdiff = 1
 	skillcraft = /datum/skill/craft/engineering
 
@@ -364,7 +372,7 @@
 	name = "bomb"
 	result = /obj/item/bomb/homemade
 	reqs = list(/obj/item/natural/cloth = 1,
-				/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue = 1,
+				/obj/item/reagent_containers/food/snacks/produce/fyritius = 1,
 				/obj/item/reagent_containers/glass/bottle = 1)
 	craftdiff = 2
 	skillcraft = /datum/skill/craft/engineering
@@ -373,7 +381,7 @@
 	name = "pyroclastic bolt"
 	result = /obj/item/ammo_casing/caseless/rogue/bolt/pyro
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/bolt = 1,
-				/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue = 1)
+				/obj/item/reagent_containers/food/snacks/produce/fyritius = 1)
 	craftdiff = 1
 	skillcraft = /datum/skill/craft/engineering
 

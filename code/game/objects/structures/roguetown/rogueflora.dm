@@ -259,7 +259,7 @@
 		if(L.m_intent == MOVE_INTENT_SNEAK)
 			return
 		else
-			playsound(A.loc, "plantcross", 100, FALSE, -1)
+			playsound(A.loc, "plantcross", 90, FALSE, -1)
 			var/oldx = A.pixel_x
 			animate(A, pixel_x = oldx+1, time = 0.5)
 			animate(pixel_x = oldx-1, time = 0.5)
@@ -313,7 +313,7 @@
 
 /obj/structure/flora/roguegrass/pyroclasticflowers/Initialize()
 	if(prob(88))
-		bushtype2 = pickweight(list(/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue = 1))
+		bushtype2 = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/fyritius = 1))
 	loot_replenish2()
 	pixel_x += rand(-3,3)
 	return ..()
@@ -322,7 +322,7 @@
 	if(bushtype2)
 		looty2 += bushtype2
 	if(prob(66))
-		looty2 += /obj/item/reagent_containers/food/snacks/grown/fyritius/rogue
+		looty2 += /obj/item/reagent_containers/food/snacks/produce/fyritius
 
 // swarmpweed bush
 /obj/structure/flora/roguegrass/swampweed
@@ -380,7 +380,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		user.changeNext_move(CLICK_CD_MELEE)
-		playsound(src.loc, "plantcross", 50, FALSE, -1)
+		playsound(src.loc, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(1,5), target = src))
 #ifndef MATURESERVER
 			if(!looty.len && (world.time > res_replenish))
@@ -409,7 +409,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		user.changeNext_move(CLICK_CD_MELEE)
-		playsound(src.loc, "plantcross", 50, FALSE, -1)
+		playsound(src.loc, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(1,5), target = src))
 #ifndef MATURESERVER
 			if(!looty2.len && (world.time > res_replenish2))
@@ -438,7 +438,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		user.changeNext_move(CLICK_CD_MELEE)
-		playsound(src.loc, "plantcross", 50, FALSE, -1)
+		playsound(src.loc, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(1,5), target = src))
 #ifndef MATURESERVER
 			if(!looty3.len && (world.time > res_replenish3))

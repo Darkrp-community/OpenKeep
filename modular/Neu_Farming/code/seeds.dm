@@ -20,8 +20,8 @@
 /obj/item/neuFarm/seed/Crossed(mob/living/L)
 	. = ..()
 	// Chance to destroy the seed as it's being stepped on
-	if(prob(20) && istype(L))
-		playsound(loc,"plantcross", 20, FALSE)
+	if(prob(10) && istype(L))
+		playsound(loc,"plantcross", 40, FALSE)
 		qdel(src)
 
 /obj/item/neuFarm/seed/examine(mob/user)
@@ -116,6 +116,10 @@
 /obj/item/neuFarm/seed/turnip
 	seed_identity = "turnip seedlings"
 	plant_def_type = /datum/plant_def/turnip
+
+/obj/item/neuFarm/seed/fyritius
+	seed_identity = "fyritius seeds"
+	plant_def_type = /datum/plant_def/fyritiusflower
 
 /*
 /obj/item/neuFarm/seed/nut

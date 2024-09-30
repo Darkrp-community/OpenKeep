@@ -4,6 +4,7 @@
 	name = "log"
 	desc = "Refined lumber, ready for use or processing."
 	icon_state = "log"
+	attacked_sound = 'sound/misc/woodhit.ogg'
 	blade_dulling = DULLING_CUT
 	max_integrity = 30
 	static_debris = list(/obj/item/grown/log/tree/small = 2)
@@ -45,6 +46,7 @@
 	name = "small log"
 	desc = "A smaller log that came from a larger log. Suitable for building."
 	icon_state = "logsmall"
+	attacked_sound = 'sound/misc/woodhit.ogg'
 	max_integrity = 30
 	static_debris = list(/obj/item/grown/log/tree/stick = 3)
 	firefuel = 20 MINUTES
@@ -142,6 +144,7 @@
 	name = "lumber"
 	desc = "This is some lumber."
 	icon_state = "lumber"
+	attacked_sound = 'sound/misc/woodhit.ogg'
 	blade_dulling = 0
 	max_integrity = 50
 	firefuel = 5 MINUTES
