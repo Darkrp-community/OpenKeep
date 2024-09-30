@@ -150,6 +150,17 @@
 	produce_nutrition =  HUNGRINESS_TINY
 	produce_nutrition =  HUNGRINESS_SMALL
 
+/datum/plant_def/turnip // cheap to grow
+	name = "turnip patch"
+	icon_state = "turnip"
+	produce_type = /obj/item/reagent_containers/food/snacks/produce/turnip
+	produce_amount_min = 5
+	produce_amount_max = 7
+	maturation_nutrition = HUNGRINESS_SMALL
+	produce_nutrition =  HUNGRINESS_TINY
+	maturation_time = FAST_GROWING
+	produce_time = QUICK_MATURING
+
 /datum/plant_def/sunflower// cheap to grow
 	name = "sunflowers"
 	icon_state = "sunflower"
@@ -162,16 +173,13 @@
 	produce_time = QUICK_MATURING
 	water_drain_rate = 0
 
-/datum/plant_def/turnip // cheap to grow
-	name = "turnip patch"
-	icon_state = "turnip"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/turnip
-	produce_amount_min = 5
-	produce_amount_max = 7
-	maturation_nutrition = HUNGRINESS_SMALL
-	produce_nutrition =  HUNGRINESS_TINY
-	maturation_time = FAST_GROWING
-	produce_time = QUICK_MATURING
+/datum/plant_def/fyritiusflower
+	name = "fyritius flowers"
+	icon_state = "fyritius"
+	produce_type = /obj/item/reagent_containers/food/snacks/produce/fyritius
+	produce_amount_min = 1
+	produce_amount_max = 3
+
 
 /*
 /datum/plant_def/rice

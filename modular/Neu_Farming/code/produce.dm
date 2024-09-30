@@ -234,6 +234,7 @@
 	list_reagents = list(/datum/reagent/drug/space_drugs = 2,/datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/drug/space_drugs = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
+	rotprocess = null
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/swampdust
 
@@ -265,6 +266,7 @@
 	eat_effect = /datum/status_effect/debuff/badmeal
 	list_reagents = list(/datum/reagent/drug/nicotine = 5, /datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/drug/nicotine = 10)
+	rotprocess = null
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/tobaccodust
 
@@ -340,23 +342,6 @@
 	rotprocess = null
 	dropshrink = 0.9
 
-/*	..................   Sunflower   ................... */
-/obj/item/reagent_containers/food/snacks/produce/sunflower
-	seed = /obj/item/neuFarm/seed/sunflower
-	name = "sunflower"
-	desc = ""
-	icon_state = "sunflower"
-	seed = /obj/item/neuFarm/seed/sunflower
-	slot_flags = ITEM_SLOT_HEAD
-	throwforce = 0
-	w_class = WEIGHT_CLASS_TINY
-	throw_speed = 1
-	throw_range = 3
-	list_reagents = list(/datum/reagent/consumable/nutriment = 0)
-	dropshrink = 0.8
-	rotprocess = SHELFLIFE_EXTREME
-	fried_type = /obj/item/reagent_containers/food/snacks/rogue/roastseeds
-
 /*	..................  Pear   ................... */ // for cider or eating raw
 /obj/item/reagent_containers/food/snacks/produce/pear
 	name = "pear"
@@ -386,18 +371,34 @@
 	dropshrink = 0.9
 	rotprocess = SHELFLIFE_EXTREME
 
+/*	..................   Sunflower   ................... */
+/obj/item/reagent_containers/food/snacks/produce/sunflower
+	seed = /obj/item/neuFarm/seed/sunflower
+	name = "sunflower"
+	desc = ""
+	icon_state = "sunflower"
+	seed = /obj/item/neuFarm/seed/sunflower
+	slot_flags = ITEM_SLOT_HEAD
+	throwforce = 0
+	w_class = WEIGHT_CLASS_TINY
+	throw_speed = 1
+	throw_range = 3
+	list_reagents = list(/datum/reagent/consumable/nutriment = 0)
+	dropshrink = 0.8
+	rotprocess = null
+	fried_type = /obj/item/reagent_containers/food/snacks/rogue/roastseeds
 
-// Fyritius flower moved here, note the path is still deprecated, TO DO
-/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue
+/*	..................   Fyritius Flower   ................... */ // some sort of funni fire flowers. Dunno just moving them here for consistency.
+/obj/item/reagent_containers/food/snacks/produce/fyritius
 	name = "fyritius flower"
+	seed = /obj/item/neuFarm/seed/fyritius // if mass producing these breaks shit just comment it out
 	desc = ""
 	icon_state = "fyritius"
 	tastes = list("tastes like regret and fire" = 1)
 	bitesize = 1
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/fyritiusnectar = 5)
-	can_distill = TRUE // no distill reagent but fyritius nectar could be used as a poison to set people on fire, which is too funny to prevent
-	distill_reagent = null
-	//rotprocess = 10 MINUTES // too rare to rot
+	dropshrink = 0.8
+	rotprocess = null
 	dust_result = /obj/item/alch/firedust
 
 /*

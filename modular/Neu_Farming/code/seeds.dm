@@ -117,6 +117,10 @@
 	seed_identity = "turnip seedlings"
 	plant_def_type = /datum/plant_def/turnip
 
+/obj/item/neuFarm/seed/fyritius
+	seed_identity = "fyritius seeds"
+	plant_def_type = /datum/plant_def/fyritiusflower
+
 /*
 /obj/item/neuFarm/seed/nut
 	seed_identity = "rocknut seeds"

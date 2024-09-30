@@ -82,7 +82,7 @@
 				found = TRUE
 				C.thresh()
 			if(found)
-				playsound(loc,"plantcross", 80, FALSE)
+				playsound(loc,"plantcross", 85, FALSE)
 				playsound(loc,"smashlimb", 35, FALSE)
 				apply_farming_fatigue(user, 10)
 				user.visible_message("<span class='notice'>[user] threshes the stalks!</span>", \
