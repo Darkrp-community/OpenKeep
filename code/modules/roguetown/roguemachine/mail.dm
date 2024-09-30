@@ -25,6 +25,9 @@
 				else
 					say("You have additional mail available.")
 					break
+		if(!addl_mail && user.mind.assigned_role == "Inquisitor") // If the user did not get any mail and is an Inquisitor, open the shop.
+			show_inquisitor_shop(user)
+			return
 
 /obj/structure/roguemachine/mail/attack_right(mob/user)
 	. = ..()
@@ -214,12 +217,6 @@
 		return
 	..()
 
-/obj/structure/roguemachine/mail/attack_hand(mob/user)
-	if(user.mind.assigned_role == "Inquisitor")
-		testing("Clicked, opening inquisitor shop")
-		show_inquisitor_shop(user)
-	return
-
 /obj/structure/roguemachine/mail/Initialize()
 	. = ..()
 	SSroguemachine.hermailers += src
@@ -382,7 +379,7 @@
 			max_purchases = 5
 		),
 		"Bag of Coins" = list(
-			list(type = /obj/item/storage/belt/rogue/pouch/coins/mid, count = 1),
+			list(type = /obj/item/storage/belt/rogue/pouch/coins/rich, count = 1),
 			cost = 1,
 			max_purchases = 5
 		)
