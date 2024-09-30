@@ -122,6 +122,7 @@
 	return list()
 
 /mob/living/carbon/get_missing_limbs()
+	RETURN_TYPE(/list)
 	var/list/full = list(
 		BODY_ZONE_HEAD, 
 		BODY_ZONE_CHEST, 
