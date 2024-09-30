@@ -393,7 +393,7 @@
 	name = "Beer starter"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/roguehops = 1,
-		/obj/item/reagent_containers/food/snacks/grown/wheat = 1)
+		/obj/item/reagent_containers/food/snacks/produce/wheat = 1)
 	result = /obj/item/reagent_containers/food/snacks/grown/roguewort
 
 /obj/item/reagent_containers/food/snacks/grown/roguehops
