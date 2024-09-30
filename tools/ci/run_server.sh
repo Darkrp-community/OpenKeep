@@ -3,7 +3,7 @@ set -euo pipefail
 
 MAP=$1
 
-echo Testing $MAP
+echo roguetest $MAP
 
 tools/deploy.sh ci_test
 mkdir ci_test/config
@@ -16,7 +16,7 @@ cp tools/ci/ci_config.txt ci_test/config/config.txt
 cp _maps/$MAP.json ci_test/data/next_map.json
 
 cd ci_test
-DreamDaemon tgstation.dmb -close -trusted -verbose -params "log-directory=ci"
+DreamDaemon stonekeep.dmb -close -trusted -verbose -params "log-directory=ci"
 
 cd ..
 
