@@ -30,7 +30,7 @@
 
 /obj/item/rogueweapon/thresher/military
 	force = 12
-	force_wielded = 24 
+	force_wielded = 24
 	name = "military flail"
 	desc = "Crushes skulls, or grain."
 	icon_state = "military"
@@ -227,7 +227,7 @@
 			return
 		if(istype(T, /turf/open/floor/rogue/dirt))
 			playsound(T,'sound/items/dig_shovel.ogg', 100, TRUE)
-			if(do_after(user, 2 SECONDS, target = src))	
+			if(do_after(user, 2 SECONDS, target = src))
 				playsound(T,'sound/items/dig_shovel.ogg', 100, TRUE)
 				var/obj/structure/soil/soil = get_soil_on_turf(T)
 				if(soil)
@@ -259,7 +259,7 @@
 	name = "pitchfork"
 	desc = "Compost, chaff, hay, it matters not."
 	icon_state = "pitchfork"
-	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+	icon = 'modular/Neu_Farming/icons/farmtools_big.dmi'
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK

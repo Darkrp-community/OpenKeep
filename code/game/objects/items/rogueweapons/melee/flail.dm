@@ -108,10 +108,10 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-/obj/item/rogueweapon/flail/farmer
+/obj/item/rogueweapon/flail/towner
 	force = 15//starting gear for peasant militias
-	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/flailthresh)
-	name = "WoodenS flail"
+	possible_item_intents = list(/datum/intent/mace/strike/wood)
+	name = "Wooden flail"
 	desc = "During peacetime these flails are used to thresh wheat. During wartime - to chase off marauders."
 	icon_state = "peasantflail"
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -133,10 +133,10 @@
 	minstr = 6
 	sellprice = 10
 
-	/obj/item/rogueweapon/flail/militia
+/obj/item/rogueweapon/flail/militia
 	force = 30//same as the iron flails since is the same with different flavour
-	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/flail/strike/smash, /datum/intent/flailthresh)
+	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/flail/strike/smash)
 	name = "Militia flail"
-	desc = "when the going gets dire, even a farming tool can become a weapon."
+	desc = "A lucky hit from such a flail can squash a cheap helmet along with the wearer's skull."
 	icon_state = "militiaflail"
 	icon = 'icons/roguetown/weapons/32.dmi'
