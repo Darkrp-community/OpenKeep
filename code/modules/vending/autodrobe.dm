@@ -68,7 +68,7 @@
 					/obj/item/clothing/suit/wizrobe/marisa/fake = 1,
 					/obj/item/clothing/under/dress/sundress = 1,
 					/obj/item/clothing/head/witchwig = 1,
-					/obj/item/staff/broom = 1,
+					/obj/item/broom = 1,
 					/obj/item/clothing/suit/wizrobe/fake = 1,
 					/obj/item/clothing/head/wizard/fake = 1,
 					/obj/item/staff = 3,
