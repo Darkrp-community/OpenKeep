@@ -304,9 +304,9 @@
 	var/brokemessage = FALSE
 	var/list/armorlist = armor?.getList()
 	for(var/x in armorlist)
-		if(armor[x] > 0)
+		if(armorlist[x] > 0)
 			brokemessage = TRUE
-			armor[x] = 0
+			armorlist[x] = 0
 	if(ismob(loc) && brokemessage)
 		var/mob/M = loc
 		to_chat(M, "ARMOR BROKEN...!")
