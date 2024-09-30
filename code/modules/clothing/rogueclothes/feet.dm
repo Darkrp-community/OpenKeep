@@ -132,8 +132,8 @@
 	name = "plated boots"
 	desc = "Armored boots made from steel offering heavy protection against both melee and ranged attacks."
 	body_parts_covered = FEET
-	icon_state = "armorboots"
-	item_state = "armorboots"
+	icon_state = "soldierboots"
+	item_state = "soldierboots"
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	color = null
 	blocksound = PLATEHIT

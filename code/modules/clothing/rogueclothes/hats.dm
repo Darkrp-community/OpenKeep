@@ -476,7 +476,12 @@
 	icon_state = "kettle"
 	body_parts_covered = HEAD|HAIR
 	flags_inv = HIDEEARS
-	max_integrity = 250 // Covers less, so less overall integrity
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	max_integrity = 350 // It costs 1 bar of steel make two helmets, same as the footman nasal helmet, rebalanced to be the same with different armored parts instead of be unnecesairly weaker
 
 /obj/item/clothing/head/roguetown/helmet/sallet
 	name = "sallet"
@@ -646,6 +651,11 @@
 	adjustable = CAN_CADJUST
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	emote_environment = 3
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
 	block2add = FOV_RIGHT|FOV_LEFT
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
@@ -727,7 +737,7 @@
 	smeltresult = /obj/item/ingot/iron
 	max_integrity = 200 // shitty rusted iron
 
-//............... Temple heavy helmets ......................// 
+//............... Temple heavy helmets ......................//
 /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
 	name = "astrata helmet"
 	desc = "A great helmet decorated with a golden sigil of the solar order. The dependable companion of many holy warriors of Astrata."
@@ -757,7 +767,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 	name = "dendor helmet"
-	desc = "A great helmet with twisted metalwork that imitates the twisting of bark, or the horns of a beast." 
+	desc = "A great helmet with twisted metalwork that imitates the twisting of bark, or the horns of a beast."
 	icon_state = "dendorhelm"
 	item_state = "dendorhelm"
 	emote_environment = 3
@@ -970,7 +980,7 @@
 		pic.appearance_flags = RESET_COLOR
 		if(get_detail_color())
 			pic.color = get_detail_color()
-		add_overlay(pic)		
+		add_overlay(pic)
 
 /obj/item/clothing/head/roguetown/helmet/decoratedhounskull
 	name = "decorated hounskull"
@@ -1027,7 +1037,7 @@
 		pic.appearance_flags = RESET_COLOR
 		if(get_detail_color())
 			pic.color = get_detail_color()
-		add_overlay(pic)		
+		add_overlay(pic)
 
 /obj/item/clothing/head/roguetown/helmet/heavy/decoratedbucket
 	name = "decorated greathelm"
@@ -1084,7 +1094,7 @@
 		pic.appearance_flags = RESET_COLOR
 		if(get_detail_color())
 			pic.color = get_detail_color()
-		add_overlay(pic)		
+		add_overlay(pic)
 
 /obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket
 	name = "decorated goldhelm"
@@ -1141,7 +1151,7 @@
 		pic.appearance_flags = RESET_COLOR
 		if(get_detail_color())
 			pic.color = get_detail_color()
-		add_overlay(pic)	
+		add_overlay(pic)
 
 
 
