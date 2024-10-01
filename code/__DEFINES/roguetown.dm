@@ -342,6 +342,9 @@ BCLASS_TWIST)
 #define MELEE_85___ARROW_65 list(\
 "melee" = 85, "bullet" = 65, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+#define MELEE_90___ARROW_75 list(\
+"melee" = 90, "bullet" = 75, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
 #define MELEE_90___ARROW_90 list(\
 "melee" = 90, "bullet" = 90, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
