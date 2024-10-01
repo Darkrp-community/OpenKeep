@@ -103,7 +103,7 @@
 /datum/supply_pack/rogue/tools/bucket
 	name = "Bucket"
 	cost = 6
-	contains = /obj/item/reagent_containers/glass/bucket
+	contains = /obj/item/reagent_containers/glass/bucket/wooden
 
 /datum/supply_pack/rogue/tools/fryingpan
 	name = "Frying Pan"
