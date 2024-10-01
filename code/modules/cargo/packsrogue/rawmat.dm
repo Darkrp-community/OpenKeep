@@ -74,3 +74,13 @@
 	/obj/item/ash,
 	/obj/item/ash,
 	/obj/item/ash)
+
+/datum/supply_pack/rogue/rawmats/sinew
+	name = "Animal Bone and Sinew"
+	cost = 15
+	contains = list(/obj/item/alch/bone,
+	/obj/item/alch/bone,
+	/obj/item/alch/bone,
+	/obj/item/alch/sinew,
+	/obj/item/alch/sinew,
+	/obj/item/alch/sinew)

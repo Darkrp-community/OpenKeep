@@ -10,18 +10,20 @@
 	name = "thresher"
 	desc = "Crushes grain, or skulls."
 	icon_state = "thresher"
-	icon = 'modular/Neu_Farming/icons/farmtools_big.dmi'
+//	icon = 'modular/Neu_Farming/icons/farmtools_big.dmi'	the stuff related to big sprite commented out below. Instead using normal sized one with backslot for ease of use.
+	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+	slot_flags = ITEM_SLOT_BACK
 	sharpness = IS_BLUNT
-	dropshrink = 0.9
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
-	bigboy = TRUE
+//	dropshrink = 0.9
+//	inhand_x_dimension = 64
+//	inhand_y_dimension = 64
+//	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
 	walking_stick = TRUE
 	wdefense = 2
 	minstr = 6
-	slot_flags = null
+//	slot_flags = null
 	wlength = 66
 	gripsprite = TRUE
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
@@ -51,12 +53,64 @@
 	if(tag)
 		switch(tag)
 			if("gen")
+				return list("shrink" = 0.7,
+"sx" = -9,
+"sy" = 1,
+"nx" = 10,
+"ny" = 0,
+"wx" = -7,
+"wy" = -0,
+"ex" = 6,
+"ey" = 3,
+"northabove" = 0,
+"southabove" = 1,
+"eastabove" = 1,
+"westabove" = 0,
+"nturn" = -15,
+"sturn" = 12,
+"wturn" = 0,
+"eturn" = 354,
+"nflip" = 0,
+"sflip" = 8,
+"wflip" = 8,
+"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.7,
+"sx" = 4,
+"sy" = -7,
+"nx" = -6,
+"ny" = -6,
+"wx" = 1,
+"wy" = -8,
+"ex" = 4,
+"ey" = -8,
+"northabove" = 0,
+"southabove" = 1,
+"eastabove" = 1,
+"westabove" = 1,
+"nturn" = -10, //-40
+"sturn" = 0, // 40
+"wturn" = 10, // 60
+"eturn" = 0, // 25
+"nflip" = 8,
+"sflip" = 0,
+"wflip" = 0,
+"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.4,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/*
+/obj/item/rogueweapon/thresher/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
 				return list("shrink" = 0.7,"sx" = -7,"sy" = 1,"nx" = 8,"ny" = 1,"wx" = -5,"wy" = 0,"ex" = 2,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
 				return list("shrink" = 0.7,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -4,"wy" = -2,"ex" = 5,"ey" = -3,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-
+*/
 /obj/item/rogueweapon/thresher/Initialize()
 	. = ..()
 	pixel_y = -16
@@ -72,7 +126,8 @@
 	pixel_y = 0
 	pixel_x = 0
 
-/obj/item/rogueweapon/thresher/afterattack(obj/target, mob/living/user = usr, proximity)
+
+/obj/item/rogueweapon/thresher/afterattack(obj/target, mob/user, proximity)
 	if(user.used_intent.type == /datum/intent/flailthresh)
 		if(isturf(target.loc))
 			var/turf/T = target.loc
@@ -81,13 +136,14 @@
 				found = TRUE
 				C.thresh()
 			if(found)
-				playsound(loc,"plantcross", 80, FALSE)
+				playsound(loc,"plantcross", 90, FALSE)
 				playsound(loc,"smashlimb", 35, FALSE)
 				apply_farming_fatigue(user, 10)
-				user.visible_message(span_notice("[user] threshes the stalks!"), \
-						span_notice("I thresh the stalks."))
-		return
+				user.visible_message("<span class='notice'>[user] threshes the stalks!</span>", \
+									"<span class='notice'>I thresh the stalks.</span>")
+			return
 	..()
+
 
 /* this is too goofy to keep sadly for now we return to infinithreshing
 /obj/item/rogueweapon/thresher/afterattack(obj/target, mob/living/user = usr, proximity)
@@ -99,7 +155,7 @@
 				user.Immobilize(8)
 				found = TRUE
 				C.thresh()
-				playsound(loc,"plantcross", 85, FALSE)
+				playsound(loc,"plantcross", 90, FALSE)
 				playsound(loc,"smashlimb", 30, FALSE)
 				apply_farming_fatigue(user, 2)
 				sleep(8)
@@ -108,6 +164,25 @@
 						span_notice("I thresh the stalks."))
 		return
 	..()
+
+// Below is ok but plays sound once for every item so too loud
+/obj/item/rogueweapon/thresher/afterattack(obj/target, mob/living/user = usr, proximity)
+	if(user.used_intent.type == /datum/intent/flailthresh)
+		if(isturf(target.loc))
+			var/turf/T = target.loc
+			var/found = FALSE
+			for(var/obj/item/natural/chaff/C in T)
+				found = TRUE
+				C.thresh()
+			if(found)
+				playsound(loc,"plantcross", 90, FALSE)
+				playsound(loc,"smashlimb", 35, FALSE)
+				apply_farming_fatigue(user, 10)
+				user.visible_message(span_notice("[user] threshes the stalks!"), \
+						span_notice("I thresh the stalks."))
+		return
+	..()
+
 */
 
 /*---------\

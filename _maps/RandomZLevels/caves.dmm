@@ -1108,7 +1108,7 @@
 /obj/structure/table,
 /obj/item/paper/fluff/awaymissions/caves/magma,
 /obj/item/pen,
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/plasteel,
 /area/awaymission/caves/BMP_asteroid/level_two)
 "dj" = (
@@ -1190,7 +1190,7 @@
 /area/awaymission/caves/BMP_asteroid/level_two)
 "dx" = (
 /obj/structure/closet/secure_closet/personal,
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /obj/item/sord,
 /turf/open/floor/wood,
 /area/awaymission/caves/northblock)
@@ -1212,12 +1212,12 @@
 /area/awaymission/caves/northblock)
 "dC" = (
 /obj/structure/closet/secure_closet/personal,
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/wood,
 /area/awaymission/caves/northblock)
 "dD" = (
 /obj/structure/table/wood,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /turf/open/floor/wood,
 /area/awaymission/caves/northblock)
 "dE" = (
@@ -1316,7 +1316,7 @@
 "dY" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /obj/effect/landmark/awaystart,
 /turf/open/floor/wood,
 /area/awaymission/caves/northblock)
@@ -1324,7 +1324,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/wood,
 /area/awaymission/caves/northblock)
 "ea" = (
@@ -1458,7 +1458,7 @@
 /area/awaymission/caves/BMP_asteroid)
 "ex" = (
 /obj/structure/closet/secure_closet/miner,
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /obj/item/survivalcapsule,
 /obj/item/extinguisher/mini,
 /turf/open/floor/plasteel,
@@ -1528,7 +1528,7 @@
 /obj/structure/table,
 /obj/item/gun/energy/kinetic_accelerator,
 /obj/item/gun/energy/kinetic_accelerator,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /turf/open/floor/plasteel,
 /area/awaymission/caves/listeningpost)
 "eL" = (
@@ -1743,7 +1743,7 @@
 /area/awaymission/caves/BMP_asteroid)
 "fq" = (
 /obj/structure/bed,
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/plasteel,
 /area/awaymission/caves/BMP_asteroid)
 "fr" = (
@@ -1860,7 +1860,7 @@
 /turf/open/floor/plating,
 /area/awaymission/caves/BMP_asteroid)
 "fK" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/plasteel,
 /area/awaymission/caves/BMP_asteroid)
 "fL" = (

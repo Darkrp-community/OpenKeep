@@ -11,7 +11,7 @@
 	)
 	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/necra, /datum/patron/forgotten)
 	outfit = /datum/outfit/job/roguetown/adventurer/crusader
-	category_tags = list(CTAG_PILGRIM)
+	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 1
 	pickprob = 30
 	min_pq = 0
@@ -59,7 +59,7 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 5, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
