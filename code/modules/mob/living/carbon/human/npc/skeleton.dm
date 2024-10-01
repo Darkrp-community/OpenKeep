@@ -4,7 +4,7 @@
 	race = /datum/species/human/northern
 	gender = MALE
 	bodyparts = list(/obj/item/bodypart/chest, /obj/item/bodypart/head, /obj/item/bodypart/l_arm,
-					 /obj/item/bodypart/r_arm, /obj/item/bodypart/r_leg, /obj/item/bodypart/l_leg)
+					/obj/item/bodypart/r_arm, /obj/item/bodypart/r_leg, /obj/item/bodypart/l_leg)
 	faction = list("undead")
 	var/skel_outfit = /datum/outfit/job/roguetown/npc/skeleton
 	ambushable = FALSE
@@ -287,13 +287,13 @@
 	configure_mind()
 
 /mob/living/carbon/human/species/skeleton/npc/warrior/skilled/proc/configure_mind()
-    if(!mind)
-        mind = new /datum/mind(src)
+	if(!mind)
+		mind = new /datum/mind(src)
 
-    mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)

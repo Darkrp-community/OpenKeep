@@ -382,45 +382,45 @@
 	debris = list(/obj/item/grown/log/tree/small = 1)
 
 /obj/structure/table/wood/counter
-    name = "counter"
-    icon_state = "longtable_mid"
+	name = "counter"
+	icon_state = "longtable_mid"
 
 /obj/structure/table/wood/counter/end
-    icon_state = "longtable"
+	icon_state = "longtable"
 
 /obj/structure/table/wood/plain
-    icon_state = "tablewood1"
+	icon_state = "tablewood1"
 
 /obj/structure/table/wood/plain/alt
-    icon_state = "tablewood2"
+	icon_state = "tablewood2"
 
 /obj/structure/table/wood/plain/alto
-    icon_state = "tablewood3"
+	icon_state = "tablewood3"
 
 /obj/structure/table/wood/reinforced
-    name = "reinforced table"
-    icon_state = "tablewood"
+	name = "reinforced table"
+	icon_state = "tablewood"
 
 /obj/structure/table/wood/reinforced_alt
-    icon_state = "tablewood_alt2"
+	icon_state = "tablewood_alt2"
 
 /obj/structure/table/wood/large
-    icon_state = "largetable_mid"
+	icon_state = "largetable_mid"
 
 /obj/structure/table/wood/large/corner
-    icon_state = "largetable"
+	icon_state = "largetable"
 
 /obj/structure/table/wood/large_alt
-    icon_state = "largetable_mid_alt"
+	icon_state = "largetable_mid_alt"
 
 /obj/structure/table/wood/large/corner_alt
-    icon_state = "largetable_alt"
+	icon_state = "largetable_alt"
 
 /obj/structure/table/wood/large_blue
-    icon_state = "largetable_mid_alt2"
+	icon_state = "largetable_mid_alt2"
 
 /obj/structure/table/wood/large/corner_blue
-    icon_state = "largetable_alt2"
+	icon_state = "largetable_alt2"
 
 /obj/structure/table/wood/fine
 	name = "wooden table"
@@ -522,18 +522,18 @@
 
 /*	..................   More tables   ................... */
 /obj/structure/table/wood/reinf_long
-    icon_state = "tablewood_reinf"
+	icon_state = "tablewood_reinf"
 
 /obj/structure/table/wood/plain_alt
-    icon_state = "tablewood_plain"
+	icon_state = "tablewood_plain"
 
 /obj/structure/table/wood/large_new
-    icon_state = "alt_largetable_mid"
+	icon_state = "alt_largetable_mid"
 /obj/structure/table/wood/large/corner_new
-    icon_state = "alt_largetable"
+	icon_state = "alt_largetable"
 
 /obj/structure/table/wood/reinforced_alter
-    icon_state = "tablewood_alt"
+	icon_state = "tablewood_alt"
 
 /obj/structure/table/wood/nice/decorated
 	icon_state = "tablefine_alt"

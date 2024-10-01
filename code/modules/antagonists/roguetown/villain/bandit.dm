@@ -243,7 +243,7 @@
 	// The commmon skills shared between all bandits
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
- 
+
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)

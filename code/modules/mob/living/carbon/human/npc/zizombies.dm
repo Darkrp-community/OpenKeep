@@ -6,7 +6,7 @@
 	race = /datum/species/zizombie
 	gender = PLURAL
 	bodyparts = list(/obj/item/bodypart/chest/zizombie, /obj/item/bodypart/head/zizombie, /obj/item/bodypart/l_arm/zizombie,
-					 /obj/item/bodypart/r_arm/zizombie, /obj/item/bodypart/r_leg/zizombie, /obj/item/bodypart/l_leg/zizombie)
+					/obj/item/bodypart/r_arm/zizombie, /obj/item/bodypart/r_leg/zizombie, /obj/item/bodypart/l_leg/zizombie)
 	rot_type = /datum/component/rot/corpse/zizombie
 	ambushable = FALSE
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw, /datum/intent/simple/bite, /datum/intent/kick)
@@ -118,15 +118,15 @@
 	. = ..()
 
 /mob/living/carbon/human/species/zizombie/proc/configure_mind()
-    if(!mind)
-        mind = new /datum/mind(src)
+	if(!mind)
+		mind = new /datum/mind(src)
 
-    mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 
 /mob/living/carbon/human/species/zizombie/handle_combat()
 	if(mode == AI_HUNT)

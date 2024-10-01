@@ -456,13 +456,13 @@ SUBSYSTEM_DEF(timer)
 		. = "[callBack.object.type]"
 
 /**
-  * Create a new timer and insert it in the queue
-  *
-  * Arguments:
-  * * callback the callback to call on timer finish
-  * * wait deciseconds to run the timer for
-  * * flags flags for this timer, see: code\__DEFINES\subsystems.dm
-  */
+ * Create a new timer and insert it in the queue
+ *
+ * Arguments:
+ * * callback the callback to call on timer finish
+ * * wait deciseconds to run the timer for
+ * * flags flags for this timer, see: code\__DEFINES\subsystems.dm
+ */
 /proc/addtimer(datum/callback/callback, wait = 0, flags = 0)
 	if (!callback)
 		CRASH("addtimer called without a callback")
@@ -508,11 +508,11 @@ SUBSYSTEM_DEF(timer)
 	return timer.id
 
 /**
-  * Delete a timer
-  *
-  * Arguments:
-  * * id a timerid or a /datum/timedevent
-  */
+ * Delete a timer
+ *
+ * Arguments:
+ * * id a timerid or a /datum/timedevent
+ */
 /proc/deltimer(id)
 	if (!id)
 		return FALSE
@@ -530,11 +530,11 @@ SUBSYSTEM_DEF(timer)
 	return FALSE
 
 /**
-  * Get the remaining deciseconds on a timer
-  *
-  * Arguments:
-  * * id a timerid or a /datum/timedevent
-  */
+ * Get the remaining deciseconds on a timer
+ *
+ * Arguments:
+ * * id a timerid or a /datum/timedevent
+ */
 /proc/timeleft(id)
 	if (!id)
 		return null

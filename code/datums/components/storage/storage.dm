@@ -152,7 +152,7 @@
 	QDEL_NULL(modeswitch_action)
 	return
 /*
- 	if(!isitem(parent) || !allow_quick_gather)
+	if(!isitem(parent) || !allow_quick_gather)
 		return
 	var/obj/item/I = parent
 	modeswitch_action = new(I)

@@ -102,7 +102,7 @@
 		if (GUILLOTINE_BLADE_RAISED)
 			if (LAZYLEN(buckled_mobs))
 				user.visible_message("<span class='warning'>[user] begins to pull the lever!</span>",
-					                 "<span class='warning'>I begin to the pull the lever.</span>")
+					              "<span class='warning'>I begin to the pull the lever.</span>")
 				current_action = GUILLOTINE_ACTION_INUSE
 
 				if (do_after(user, GUILLOTINE_ACTIVATE_DELAY, target = src) && blade_status == GUILLOTINE_BLADE_RAISED)
@@ -192,7 +192,7 @@
 				if(do_after(user, 7, target = src))
 					blade_status = GUILLOTINE_BLADE_RAISED
 					user.visible_message("<span class='notice'>[user] sharpens the large blade of the guillotine.</span>",
-						                 "<span class='notice'>I sharpen the large blade of the guillotine.</span>")
+						              "<span class='notice'>I sharpen the large blade of the guillotine.</span>")
 					blade_sharpness += 1
 					playsound(src, 'sound/items/sharpen_long1.ogg', 100, TRUE)
 					return

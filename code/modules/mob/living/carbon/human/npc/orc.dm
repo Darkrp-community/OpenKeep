@@ -6,7 +6,7 @@
 	race = /datum/species/orc
 	gender = MALE
 	bodyparts = list(/obj/item/bodypart/chest/orc, /obj/item/bodypart/head/orc, /obj/item/bodypart/l_arm/orc,
-					 /obj/item/bodypart/r_arm/orc, /obj/item/bodypart/r_leg/orc, /obj/item/bodypart/l_leg/orc)
+					/obj/item/bodypart/r_arm/orc, /obj/item/bodypart/r_leg/orc, /obj/item/bodypart/l_leg/orc)
 	rot_type = /datum/component/rot/corpse/orc
 //	var/gob_outfit = /datum/outfit/job/roguetown/npc/orc/ambush removed to apply different classes to the orcs
 	ambushable = FALSE
@@ -126,15 +126,15 @@
 	. = ..()
 
 /mob/living/carbon/human/species/orc/proc/configure_mind()
-    if(!mind)
-        mind = new /datum/mind(src)
+	if(!mind)
+		mind = new /datum/mind(src)
 
-    mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 
 /mob/living/carbon/human/species/orc/handle_combat()
 	if(mode == AI_HUNT)

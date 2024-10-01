@@ -208,8 +208,8 @@
 		result = special_faces[result]
 	if(user != null) //Dice was rolled in someone's hand
 		user.visible_message("<span class='notice'>[user] has thrown [src]. It lands on [result]. [comment]</span>", \
-							 "<span class='notice'>I throw [src]. It lands on [result]. [comment]</span>", \
-							 "<span class='hear'>I hear [src] rolling, it sounds like a [fake_result].</span>")
+							"<span class='notice'>I throw [src]. It lands on [result]. [comment]</span>", \
+							"<span class='hear'>I hear [src] rolling, it sounds like a [fake_result].</span>")
 	else if(!src.throwing) //Dice was thrown and is coming to rest
 		visible_message("<span class='notice'>[src] rolls to a stop, landing on [result]. [comment]</span>")
 

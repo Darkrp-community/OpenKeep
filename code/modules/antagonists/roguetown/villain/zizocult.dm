@@ -393,8 +393,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			/obj/effect/decal/cleanable/sigil/SW
 		)
 
-		for(var/i = 1; i <= alldirs.len; i++)
-			var/turf/floor = get_step(src, alldirs[i])
+		for(var/i = 1; i <= GLOB.alldirs.len; i++)
+			var/turf/floor = get_step(src, GLOB.alldirs[i])
 			var/sigil = sigilsPath[i]
 
 			new sigil(floor)
