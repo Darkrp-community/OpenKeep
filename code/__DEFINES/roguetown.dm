@@ -182,14 +182,14 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define VALUE_GOLD_ITEM			M_GOLD+W_MODERATE
 #define VALUE_GOLD_RARE_ITEM	VALUE_GOLD_ITEM+BONUS_VALUE_MODEST
 
-#define VALUE_PADDED_DRESS			M_SILK*4+M_MISC*2+M_SALT+W_MODEST
+#define VALUE_PADDED_DRESS			M_SILK*5+W_MODERATE+BONUS_VALUE_TINY
 #define VALUE_LIGHT_GAMBESSON		M_CLOTH*2+M_MISC+W_MINOR
 #define VALUE_GAMBESSON				M_CLOTH*4+M_MISC+W_MINOR
 #define VALUE_HEAVY_GAMBESSON		M_CLOTH*6+M_MISC*4+W_MODERATE
 #define VALUE_LEATHER_ARMOR			M_LEATHER*2+W_MINOR
-#define VALUE_LEATHER_ARMOR_FUR		VALUM_LEATHER_ARMOR+M_SALT
+#define VALUE_LEATHER_ARMOR_FUR		VALUE_LEATHER_ARMOR+M_SALT
 #define VALUE_LEATHER_ARMOR_PLUS	VALUE_STEEL_SMALL_ITEM+M_LEATHER
-#define VALUE_LEATHER_ARMOR_LORD	VALUM_LEATHER_ARMOR+BONUS_VALUE_MODEST
+#define VALUE_LEATHER_ARMOR_LORD	VALUE_LEATHER_ARMOR+BONUS_VALUE_MODEST
 #define VALUE_IRON_ARMOR			VALUE_IRON_ITEM
 #define VALUE_IRON_ARMOR_UNUSUAL	VALUE_IRON_ITEM+BONUS_VALUE_TINY
 #define VALUE_STEEL_ARMOR			VALUE_STEEL_ITEM
@@ -337,6 +337,10 @@ BCLASS_TWIST)
 // Partial plates, basic open helmet
 #define MELEE_80___ARROW_60 list(\
 "melee" = 80, "bullet" = 60, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+
+#define MELEE_85___ARROW_65 list(\
+"melee" = 85, "bullet" = 65, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 #define MELEE_90___ARROW_90 list(\
 "melee" = 90, "bullet" = 90, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
