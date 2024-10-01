@@ -95,7 +95,7 @@ jobs:
           bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
           python3 tools/ci/template_dm_generator.py
-          DreamMaker stonekeep.dme -DCIBUILDING -DCITESTING -DALL_MAPS
+          DreamMaker -DCIBUILDING -DCITESTING -DALL_MAPS stonekeep.dme
   run_all_tests:
     if: ( !contains(github.event.head_commit.message, '[ci skip]') )
     name: Integration Tests
@@ -134,7 +134,7 @@ jobs:
         run: |
           bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
-          DreamMaker stonekeep.dme -DCIBUILDING
+          DreamMaker -DCIBUILDING stonekeep.dme
           bash tools/ci/run_server.sh roguetest
   test_windows:
     if: ( !contains(github.event.head_commit.message, '[ci skip]') )
