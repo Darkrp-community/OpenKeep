@@ -453,7 +453,7 @@
 	name = "Scroll of Greater Fireball"
 	spell = /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater
 	spellname = "greater fireball"
-	icon_state = "scrollred"
+	icon_state = "scrolldarkred"
 	remarks = list("Ignis et oleum..", "Flammam continere ad momentum..", "Flammam iactare..", "Sit flamma constructum..")
 
 /obj/item/book/granter/spell/blackstone/lightning
@@ -483,27 +483,6 @@
 	spellname = "invisibility"
 	icon_state = "scrollpurple"
 	remarks = list("Pallium nihilum..", "Occultare veritatem..", "Veritatem removan menor..")
-
-/obj/item/book/granter/spell/blackstone/skeleton
-	name = "Scroll of Raise Skeleton"
-	spell = /obj/effect/proc_holder/spell/invoked/raise_undead
-	spellname = "Raise Skeleton"
-	icon_state = "scrolldarkred"
-	remarks = list("Redi damnatos..", "Exitio ad Necram scriptor exolvuntur..", "Ossa in propinquus..")
-
-/obj/item/book/granter/spell/blackstone/sicknessray
-	name = "Scroll of Sickness Ray"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/sickness
-	spellname = "Ray of Sickness"
-	icon_state = "scrollgreen"
-	remarks = list("Foe rubiginem meam..", "Pestilentia in terris..", "Trabes putrida..")
-
-/obj/item/book/granter/spell/blackstone/bonechill
-	name = "Scroll of Bone Chill"
-	spell = /obj/effect/proc_holder/spell/invoked/bonechill
-	spellname = "Bone Chill"
-	icon_state = "scrolldarkred"
-	remarks = list("Mediolanum ventis..", "Sana damnatorum..", "Frigidus ossa mortuorum..")
 
 //scroll for giving the reader a spell point, this should be dungeon loot
 /obj/item/book/granter/spell_points
