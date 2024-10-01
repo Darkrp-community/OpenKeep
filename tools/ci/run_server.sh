@@ -3,7 +3,7 @@ set -euo pipefail
 
 MAP=$1
 
-echo roguetest $MAP
+echo Testing $MAP
 
 tools/deploy.sh ci_test
 mkdir ci_test/config

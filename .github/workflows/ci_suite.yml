@@ -127,7 +127,7 @@ jobs:
           bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
           DreamMaker stonekeep.dme -DCIBUILDING
-          bash tools/ci/run_server.sh
+          bash tools/ci/run_server.sh roguetest
   test_windows:
     if: ( !contains(github.event.head_commit.message, '[ci skip]') )
     name: Windows Build
