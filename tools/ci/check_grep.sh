@@ -108,9 +108,9 @@ if $grep '^\t+ [^ *]' $code_files; then
     st=1
 fi;
 
-section "unit tests"
-unit_test_files="code/modules/unit_tests/**/**.dm"
-# Disabled until someone ports the consistent human type.
+# Disabled until someone ports the consistent human type or adds more unit test greps.
+# section "unit tests"
+# unit_test_files="code/modules/unit_tests/**/**.dm"
 # part "mob/living/carbon/human usage"
 # if $grep 'allocate\(/mob/living/carbon/human[,\)]' $unit_test_files ||
 # 	$grep 'new /mob/living/carbon/human\s?\(' $unit_test_files ||
