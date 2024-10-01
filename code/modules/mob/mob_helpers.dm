@@ -340,7 +340,7 @@
 	if(hud_used && hud_used.action_intent)
 		hud_used.action_intent.icon_state = "[a_intent]"
 
-/mob/proc/examine_intent(var/numb, offhand = FALSE)
+/mob/proc/examine_intent(numb, offhand = FALSE)
 	var/datum/intent/to_examine
 	if(offhand)
 		if(numb)

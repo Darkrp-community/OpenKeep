@@ -420,7 +420,7 @@
 	base_icon_state = "[player_book_icon]"
 	pages = list("<b3><h3>Title: [player_book_title]<br>Author: [player_book_author]</b><h3>[player_book_text]")
 
-/obj/item/book/rogue/playerbook/Initialize(mapload, in_round_player_generated, var/mob/living/in_round_player_mob, text)
+/obj/item/book/rogue/playerbook/Initialize(mapload, in_round_player_generated, mob/living/in_round_player_mob, text)
 	. = ..()
 	is_in_round_player_generated = in_round_player_generated
 	if(is_in_round_player_generated)

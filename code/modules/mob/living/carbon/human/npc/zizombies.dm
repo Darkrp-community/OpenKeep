@@ -182,10 +182,10 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	var/raceicon = "zizombie"
 
-/datum/species/zizombie/update_damage_overlays(var/mob/living/carbon/human/H)
+/datum/species/zizombie/update_damage_overlays(mob/living/carbon/human/H)
 	return
 
-/datum/species/zizombie/regenerate_icons(var/mob/living/carbon/human/H)
+/datum/species/zizombie/regenerate_icons(mob/living/carbon/human/H)
 //	H.cut_overlays()
 	H.icon_state = ""
 	if(H.notransform)

@@ -192,10 +192,10 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	var/raceicon = "orc"
 
-/datum/species/orc/update_damage_overlays(var/mob/living/carbon/human/H)
+/datum/species/orc/update_damage_overlays(mob/living/carbon/human/H)
 	return
 
-/datum/species/orc/regenerate_icons(var/mob/living/carbon/human/H)
+/datum/species/orc/regenerate_icons(mob/living/carbon/human/H)
 //	H.cut_overlays()
 	H.icon_state = ""
 	if(H.notransform)

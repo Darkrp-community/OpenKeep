@@ -167,10 +167,10 @@
 				for(var/A in X.reagents_on_breathe)
 					reagents.add_reagent(A, X.reagents_on_breathe[A])
 
-/mob/living/proc/handle_inwater(var/turf/open/water/W)
+/mob/living/proc/handle_inwater(turf/open/water/W)
 	ExtinguishMob()
 
-/mob/living/carbon/handle_inwater(var/turf/open/water/W)
+/mob/living/carbon/handle_inwater(turf/open/water/W)
 	..()
 	var/datum/reagents/reagentstouch = new()
 	reagentstouch.add_reagent(W.water_reagent, 4)

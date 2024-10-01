@@ -1167,7 +1167,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 			blacklisted = 0
 		return blacklisted
 
-/client/proc/commendsomeone(var/forced = FALSE)
+/client/proc/commendsomeone(forced = FALSE)
 	set category = "OOC"
 	set name = "Commend"
 	set desc = "Make that one person you had Quality RolePlay with happy."

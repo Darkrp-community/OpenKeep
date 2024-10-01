@@ -69,7 +69,7 @@
 /obj/structure/closet/dirthole/toggle(mob/living/user)
 	return
 
-/obj/structure/closet/dirthole/proc/attemptwatermake(mob/living/user, var/obj/item/reagent_containers/bucket)
+/obj/structure/closet/dirthole/proc/attemptwatermake(mob/living/user, obj/item/reagent_containers/bucket)
 	testing("attempting to make water proc called")
 	if(user.used_intent.type == /datum/intent/splash)
 		testing("intent check complete")
