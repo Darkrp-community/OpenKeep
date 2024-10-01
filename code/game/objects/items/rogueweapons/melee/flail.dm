@@ -127,7 +127,7 @@
 	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
 	swingsound = BLUNTWOOSH_MED
 	can_parry = FALSE // You can't parry with this, it'd be awkward to tangle chains, use a shield
-	max_integrity = 250
+	max_integrity = 200
 	throwforce = 5
 	wdefense = 0
 	minstr = 6
