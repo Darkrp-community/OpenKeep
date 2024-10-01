@@ -92,7 +92,6 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	move_to_delay = 7
 	animal_species = /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/fatty = 3,
 									/obj/item/reagent_containers/food/snacks/fat = 1,

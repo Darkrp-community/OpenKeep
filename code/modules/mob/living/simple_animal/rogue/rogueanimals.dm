@@ -30,7 +30,7 @@
 	speak_chance = 1
 
 	turns_per_move = 5
-	move_to_delay = 8
+	move_to_delay = 8	// basically speed when player controlled. Lower is faster, a lot faster.
 	see_in_dark = 6
 	robust_searching = TRUE
 
@@ -43,7 +43,6 @@
 	food_type = list(/obj/item/reagent_containers/food/snacks/produce)
 	pooptype = null
 
-	move_to_delay = 5
 	d_intent = INTENT_DODGE
 	minbodytemp = 180
 	lose_patience_timeout = 150
@@ -73,6 +72,9 @@
 	var/food_max = 50
 	var/deaggroprob = 10
 	var/eat_forever
+
+
+
 
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Move()
