@@ -23,7 +23,7 @@
 
 
 /obj/item/reagent_containers/glass/bottle/rogue
-	volume = 64
+	volume = 70
 
 /obj/item/reagent_containers/glass/bottle/update_icon(dont_fill=FALSE)
 	if(!fill_icon_thresholds || dont_fill)
