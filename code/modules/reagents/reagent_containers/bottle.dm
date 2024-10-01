@@ -21,6 +21,10 @@
 	poursounds = list('sound/items/fillbottle.ogg')
 	experimental_onhip = TRUE
 
+
+/obj/item/reagent_containers/glass/bottle/rogue
+	volume = 64
+
 /obj/item/reagent_containers/glass/bottle/update_icon(dont_fill=FALSE)
 	if(!fill_icon_thresholds || dont_fill)
 		return
