@@ -1,5 +1,6 @@
 #define SHIELD_BASH		/datum/intent/shield/bash
 #define SHIELD_BLOCK		/datum/intent/shield/block
+#define SHIELD_BANG_COOLDOWN (3 SECONDS)
 
 /obj/item/rogueweapon/shield
 	name = ""
@@ -20,6 +21,7 @@
 	resistance_flags = FLAMMABLE
 	can_parry = TRUE
 	associated_skill = /datum/skill/combat/shields
+	destroy_sound = 'sound/foley/shielddestroy.ogg'
 	wdefense = 5
 	var/coverage = 90
 	parrysound = "parrywood"
@@ -28,10 +30,28 @@
 	blade_dulling = DULLING_BASHCHOP
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ash
+	COOLDOWN_DECLARE(shield_bang)
+
+// Shield banging
+/obj/item/rogueweapon/shield/attackby(obj/item/attackby_item, mob/user, params)
+	if(istype(attackby_item, /obj/item/rogueweapon) && !istype(attackby_item, /obj/item/rogueweapon/hammer))
+		if(!COOLDOWN_FINISHED(src, shield_bang))
+			return
+		user.visible_message("<span class='danger'>[user] bangs [src] with [attackby_item]!</span>")
+		playsound(user.loc, 'sound/combat/shieldbang.ogg', 50, TRUE)
+		COOLDOWN_START(src, shield_bang, SHIELD_BANG_COOLDOWN)
+		return
+
+	return ..()
 
 /obj/item/rogueweapon/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the projectile", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, args)
 	if(attack_type == THROWN_PROJECTILE_ATTACK || attack_type == PROJECTILE_ATTACK)
+		if(istype(hitby, /obj/projectile))
+			var/obj/projectile/P = hitby
+			if(P.armor_penetration >= 80)
+				owner.visible_message("<span class='danger'>The [hitby] pierces [owner]'s [src]!</span>")
+				return 0
 		if(owner.client?.chargedprog == 100 && owner.used_intent?.tranged)
 			owner.visible_message("<span class='danger'>[owner] blocks [hitby] with [src]!</span>")
 			return 1
@@ -44,15 +64,23 @@
 /datum/intent/shield/bash
 	name = "bash"
 	icon_state = "inbash"
+	hitsound = list('sound/combat/shieldbash_wood.ogg')
 	chargetime = 0
+
+/datum/intent/shield/bash/metal
+	hitsound = list('sound/combat/shieldbash_metal.ogg')
 
 /datum/intent/shield/block
 	name = "block"
 	icon_state = "inblock"
 	tranged = 1 //we can't attack directly with this intent, but we can charge it
 	tshield = 1
-	chargetime = 0
+	chargetime = 5
+	hitsound = list('sound/combat/shieldbash_wood.ogg')
 	warnie = "shieldwarn"
+
+/datum/intent/shield/block/metal
+	hitsound = list('sound/combat/shieldbash_metal.ogg')
 
 /obj/item/rogueweapon/shield/wood
 	name = "wooden shield"
@@ -87,6 +115,25 @@
 			if("onback")
 				return list("shrink" = 0.6,"sx" = 1,"sy" = 4,"nx" = 1,"ny" = 2,"wx" = 3,"wy" = 3,"ex" = 0,"ey" = 2,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 8,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
+/obj/item/rogueweapon/shield/wood/adept
+
+/obj/item/rogueweapon/shield/wood/adept/Initialize()
+	..()
+	if(!overlays.len)
+		var/icon/J = new('icons/roguetown/weapons/wood_heraldry.dmi')
+		var/list/istates = J.IconStates()
+		if("Psydon" in istates)
+			var/picked_name = "Psydon"
+			var/mutable_appearance/M = mutable_appearance('icons/roguetown/weapons/wood_heraldry.dmi', picked_name)
+			M.alpha = 178
+			add_overlay(M)
+			var/mutable_appearance/MU = mutable_appearance(icon, "woodsh_detail")
+			MU.alpha = 114
+			add_overlay(MU)
+			update_icon()
+		else
+			return
+	
 /obj/item/rogueweapon/shield/tower
 	name = "tower shield"
 	desc = "A gigantic, iron reinforced shield that covers the entire body, a design-copy of the Aasimar shields of an era gone by."
@@ -104,7 +151,44 @@
 	max_integrity = 300
 	smeltresult = /obj/item/ingot/iron // Made with an iron ingot, let us recover it
 
+/obj/item/rogueweapon/shield/tower/spidershield
+	name = "spider shield"
+	desc = "A bulky shield of spike-like lengths molten together. The motifs evoke anything but safety and protection."
+	icon_state = "spidershield"
+	coverage = 55
+
 /obj/item/rogueweapon/shield/tower/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -5,"sy" = -1,"nx" = 6,"ny" = -1,"wx" = 0,"wy" = -2,"ex" = 0,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 1,"eflip" = 0)
+			if("onback")
+				return list("shrink" = 0.6,"sx" = 1,"sy" = 4,"nx" = 1,"ny" = 2,"wx" = 3,"wy" = 3,"ex" = 0,"ey" = 2,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 8,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
+
+/obj/item/rogueweapon/shield/tower/hoplite
+	name = "ancient shield"
+	desc = "A gigantic, bronze reinforced shield that covers the entire body. An aasimar relic from an era long past."
+	icon_state = "boeotian"
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block/metal)
+	force = 20
+	throwforce = 10
+	throw_speed = 1
+	throw_range = 3
+	wlength = WLENGTH_NORMAL
+	wbalance = -1 // Heavy, big shield
+	resistance_flags = null
+	flags_1 = CONDUCT_1
+	wdefense = 8
+	coverage = 75 // Rare shield from unique job, gets a tiny bit of additional coverage
+	attacked_sound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
+	parrysound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
+	max_integrity = 500
+	blade_dulling = DULLING_BASH
+	sellprice = 150 // A noble collector would love to get their hands on one of these
+	smeltresult = null // No bronze ingots yet
+
+/obj/item/rogueweapon/shield/tower/hoplite/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)
@@ -117,6 +201,7 @@
 	name = "kite shield"
 	desc = "A knightly, kite shaped steel shield, emblazoned with heraldry. \nBoasts superior coverage and durability, owed to its exquisite craftsmanship."
 	icon_state = "ironsh"
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block/metal)
 	force = 20
 	throwforce = 10
 	throw_speed = 1
@@ -124,7 +209,7 @@
 	wlength = WLENGTH_NORMAL
 	resistance_flags = null
 	flags_1 = CONDUCT_1
-	wdefense = 8
+	wdefense = 7
 	coverage = 70
 	attacked_sound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
 	parrysound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
@@ -157,3 +242,5 @@
 		add_overlay(MU)
 	else
 		..()
+
+#undef SHIELD_BANG_COOLDOWN

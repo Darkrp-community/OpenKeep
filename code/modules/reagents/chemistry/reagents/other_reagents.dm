@@ -124,7 +124,7 @@
 /datum/reagent/water
 	name = "Water"
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
-	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
+	color = "#6a9295c6"
 	taste_description = "water"
 	var/cooling_temperature = 2
 	glass_icon_state = "glass_clear"
@@ -133,6 +133,7 @@
 	shot_glass_icon_state = "shotglassclear"
 	var/hydration = 12
 	alpha = 100
+	taste_mult = 0.1
 
 /datum/chemical_reaction/grosswaterify
 	name = "grosswater"
@@ -152,11 +153,19 @@
 
 /datum/reagent/water/gross
 	taste_description = "lead"
+	color = "#98934bc6"
+
+/datum/reagent/water/gross/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
+	if(method == INGEST) // Make sure you DRANK the toxic water before giving damage
+		..()
 
 /datum/reagent/water/gross/on_mob_life(mob/living/carbon/M)
+	..()
+	if(HAS_TRAIT(M, TRAIT_NASTY_EATER )) // lets orcs and goblins drink bogwater
+		return
 	M.adjustToxLoss(1)
 	M.add_nausea(50)
-	..()
+
 
 /*
  *	Water reaction to turf

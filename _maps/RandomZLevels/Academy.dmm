@@ -91,7 +91,7 @@
 /turf/open/floor/carpet,
 /area/awaymission/academy/headmaster)
 "ay" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /obj/structure/mirror/magic/lesser{
 	pixel_y = 32
 	},
@@ -429,7 +429,7 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/academy/headmaster)
 "bQ" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -1495,7 +1495,7 @@
 /turf/open/floor/plasteel/white,
 /area/awaymission/academy/classrooms)
 "fM" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/wood,
 /area/awaymission/academy/classrooms)
 "fN" = (
@@ -2090,7 +2090,7 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/awaymission/academy/academyaft)
 "in" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /turf/open/floor/plasteel/cafeteria,
 /area/awaymission/academy/academyaft)
 "io" = (
@@ -2253,7 +2253,7 @@
 /turf/open/floor/wood,
 /area/awaymission/academy/academyaft)
 "iP" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /turf/open/floor/engine,
 /area/awaymission/academy/academyaft)
 "iQ" = (
@@ -2805,7 +2805,7 @@
 /turf/open/floor/engine/cult,
 /area/awaymission/academy/academycellar)
 "kP" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/engine/cult,
 /area/awaymission/academy/academycellar)
 "kQ" = (
@@ -2852,7 +2852,7 @@
 /turf/open/floor/engine/cult,
 /area/awaymission/academy/academycellar)
 "kZ" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/remains/human,
 /turf/open/floor/engine/cult,
@@ -2866,7 +2866,7 @@
 /turf/open/floor/engine/cult,
 /area/awaymission/academy/academycellar)
 "lc" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/mineral/uranium,
 /area/awaymission/academy/academycellar)
 "ld" = (
@@ -2877,7 +2877,7 @@
 /turf/open/floor/engine/cult,
 /area/awaymission/academy/academycellar)
 "lf" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /turf/open/floor/engine/cult,
 /area/awaymission/academy/academycellar)
 "lg" = (
@@ -3104,7 +3104,7 @@
 /turf/open/floor/plating,
 /area/awaymission/academy/academyengine)
 "mg" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/vault,
 /area/awaymission/academy/academyengine)
 "mh" = (
@@ -3217,7 +3217,7 @@
 /turf/closed/mineral/random,
 /area/awaymission/academy/academycellar)
 "mE" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/plating,
 /area/awaymission/academy/academygate)
 "mF" = (

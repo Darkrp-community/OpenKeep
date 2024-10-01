@@ -21,9 +21,9 @@
 "u" = (/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/bog)
 "v" = (/obj/structure/portal,/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/bog)
 "w" = (/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/cave)
-"x" = (/obj/effect/landmark/start/adventurerlate{icon_state = "arrow"; dir = 4},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"x" = (/obj/effect/landmark/start/adventurerlate{dir = 4; icon_state = "arrow"},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
 "y" = (/turf/open/floor/rogue/hexstone,/area/rogue/outdoors/bog)
-"z" = (/obj/effect/landmark/start/adventurerlate{icon_state = "arrow"; dir = 8},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
+"z" = (/obj/effect/landmark/start/adventurerlate{dir = 8; icon_state = "arrow"},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
 "B" = (/obj/effect/landmark/events/testportal{aportalloc = "bog"},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
 "C" = (/obj/structure/flora/roguetree,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
 "D" = (/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/bog)
@@ -151,7 +151,7 @@ bGGGGaaacccccaaaaaGGGGGGaauacccccaaGaaaaaaGGGaacccccaaaGeeeeeeeeeGaaaaaaaaaGaaag
 bGGGGaaacccccaaaaaaaaaGGGGaaaaaaaaaGGaaaaaaGGaacccccaaaGeeeeeeGGGGaaaaGaaaaaaaoglwrwrwwwwwwdddddddiwdwwwfdddddddlldlliillllllldb
 bGDGGaaacccccaaaaaaaaaaaGGGaaaaaaaaaGaaaaaaaaaaccaaaaaaGeeeeeeGaGaaaaGGaaaaaaaowwwrwrrwwrrrrrwwwdwiwwwwwwwwwdddddlllliillllllldb
 bGDGGaaacccccaaaaaacccaaaGGGaaaaaaaaGaacaaasaaaaaaaaaaaGGGeeeeGGaaaaGGaaaaaaaaodwwrrrrrrrrrrrrwwwwiwwddwwwwiiiiddllllllllllldddb
-bGDDGaaaaaaaaaaaaaacccaaaaGaaaaaaaaaaaacaaaaaaaaaaaaaaaGGGGGGGaaaaaGGaaaaaaaaoodwwwwrrrrrrrrrrwwwdiwwdddwwwiiiiddllllllllllldddb
+bGDDaaaaaaaaaaaaaaacccaaaaGaaaaaaaaaaaacaaaaaaaaaaaaaaaGGGGGGGaaaaaGGaaaaaaaaoodwwwwrrrrrrrrrrwwwdiwwdddwwwiiiiddllllllllllldddb
 bGDGGaaGGaaaaaaGGGGGaaaaaaGaaaaccccaaaaaaaaaaaaacaaaaGGaaaaGGaaaaaGGaaaaaaaaDooddddwrrrrrrrrrriiiiiiwddwwwwwdddddllllllllllldddb
 bGDGGaaGGaaaaaGGGGGGGGGGaaGaaaaccccaaaaaaaaGGaaacaaaaaGGGGGaaaaaGGaaccccccDDDodwwdddrrrrrrrrrriiiiiiwddfwwddddddddlllllllddddddb
 bGDDGGGGaaaaaaGGGGGGGGGGaaGaaaaccccaaaaaaGGGaaaaaaaaaaaaaaaaaaGGGaaaccccccDDwwwwwwddwrwwwwwrrriiiiiiwwdwwwwdddddldlllllllddddddb
@@ -161,7 +161,7 @@ bGDGGGGaaaaaaaaaaaacccccaaaaaGaaGGGaGGGGGGGaGaacaaGGGGaaGaaaaaaaaaaaaaaaaoddwwww
 bGDGGGGGaaaaaaaaaaaaaaaaaaaaaGGGGGGaGGaaGGGGGaaaaaaGGGGaGGaaaaaaaaaaaaaooodwwwllllwwwwwwwwwrrrrwwiiwwwddwwdddddddddddddddddddddb
 bGGGGGGGGaaaaaaaaaaaaaaaaGaGGGGGGGGGGaGGGGGGGaaaaaaaaGGGGGGaaaaaaaaaaaaoddrwwwllllwwwwrrrrrrrrrwdriwwwwwwwdddddddddddddddddddddb
 bGGGGDGGGGDDDDDDDDDGGDDDGGGGGGGGDDDDDDDDDGDDDDDCCCDDDDDDGGGGDDDDDDDDDDoodwwwwwlllldddwwwwwwrwwwwddiwwwwwwwiidddddddddddddddddddb
-bGGGDDDGGGGGGGGDGGGGGDGGGGGGGDDDDDDDDCDDDDDDDDDDDDDDDDDDDDDGGGDDDDDDDDodwddwwwlllllllldwwddwwwwldwiwddwwfwwwdddddddddddddddddddb
+bGGGDDDGGGGGGGGDGGGGGDGGGGGGGDDDDDDDDCDDDDDDDxDDDDDDDDDDDDDGGGDDDDDDDDodwddwwwlllllllldwwddwwwwldwiwddwwfwwwdddddddddddddddddddb
 bGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGooddllllllllllllllllllllllliiiddddddddddddddddddddddddddddb
 VXoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooddlllllddlllllllllllllllddddddddddddddddddddddddddddddddb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb

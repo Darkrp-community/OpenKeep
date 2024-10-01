@@ -40,7 +40,7 @@
 	if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 		chance2hit += 20
 	if(istype(user.rmb_intent, /datum/rmb_intent/swift))
-		chance2hit -= 20
+		chance2hit -= 40
 
 	chance2hit = CLAMP(chance2hit, 5, 99)
 
@@ -184,7 +184,9 @@
 					attacker_skill = U.mind.get_skill_level(/datum/skill/combat/unarmed)
 					prob2defend -= (attacker_skill * 20)
 
-			prob2defend = clamp(prob2defend, 5, 99)
+			if(!(mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 50% defense malus if so
+				prob2defend *= 0.8
+			prob2defend = clamp(prob2defend, 5, 95)
 			if(src.client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to parry... [prob2defend]%</span>")
 
@@ -205,7 +207,8 @@
 						// No duping exp gains by attacking with a shield on active hand
 						if(used_weapon == offhand && istype(used_weapon, /obj/item/rogueweapon/shield))
 							// Most shield users aren't bright, let's not make it near impossible to learn
-							H.mind?.adjust_experience(/datum/skill/combat/shields, max(round(H.STAINT - 3), 0), FALSE)
+							var/boon = H.mind?.get_learning_boon(/obj/item/rogueweapon/shield)
+							H.mind?.adjust_experience(/datum/skill/combat/shields, max(round(H.STAINT * boon), 0), FALSE)
 						else
 							H.mind?.adjust_experience(used_weapon.associated_skill, max(round(H.STAINT/2), 0), FALSE)
 
@@ -407,7 +410,9 @@
 							prob2defend = prob2defend - (UH.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
 						if(H.mind)
 							prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
-			prob2defend = clamp(prob2defend, 5, 99)
+			if(!(L.mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 50% defense malus if so
+				prob2defend *= 0.8
+			prob2defend = clamp(prob2defend, 5, 95)
 			if(client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")
 			if(!prob(prob2defend))
@@ -418,7 +423,7 @@
 		else //we are a non human
 			if(client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")
-			prob2defend = clamp(prob2defend, 5, 99)
+			prob2defend = clamp(prob2defend, 5, 95)
 			if(!prob(prob2defend))
 				return FALSE
 		dodgecd = TRUE
@@ -445,6 +450,11 @@
 	return
 
 /mob/proc/taunted(mob/user)
+	for(var/mob/living/simple_animal/hostile/retaliate/A in view(7,src))
+		if(A.owner == user)
+			A.emote("aggro")
+			A.Retaliate()
+			A.GiveTarget(src)
 	return
 
 /mob/proc/shood(mob/user)

@@ -2,20 +2,13 @@
 	..()
 	GLOB.farm_animals++
 	if(tame)
-		tamed()
+		tamed(owner)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/Destroy()
 	..()
 	GLOB.farm_animals = max(GLOB.farm_animals - 1, 0)
 
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/find_food()
-	..()
-	var/obj/structure/spacevine/SV = locate(/obj/structure/spacevine) in loc
-	if(SV)
-		SV.eat(src)
-		food = max(food + 30, 100)
-
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/tamed()
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/tamed(mob/user)
 	..()
 	deaggroprob = 50
 	if(can_buckle)
@@ -52,9 +45,17 @@
 					if(locate(/obj/structure/spacevine) in step || locate(/obj/structure/glowshroom) in step)
 						Move(step, get_dir(src, step))
 
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/UniqueAttack()
+	if(istype(target, /obj/structure/spacevine))
+		var/obj/structure/spacevine/SV = target
+		SV.eat(src)
+		food = max(food + 30, food_max + 50)
+		return
+	return ..()
+
 /mob/living/simple_animal/hostile/retaliate/rogue/goat
 	icon = 'icons/roguetown/mob/monster/gote.dmi'
-	name = "goat"
+	name = "gote"
 	desc = ""
 	icon_state = "goat"
 	icon_living = "goat"
@@ -71,11 +72,13 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 4,
 						/obj/item/reagent_containers/food/snacks/fat = 2,
 						/obj/item/natural/hide = 2,
-						/obj/item/natural/fur = 1)
+						/obj/item/natural/fur = 1,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 80
 	maxHealth = 80
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat,/obj/item/reagent_containers/food/snacks/grown/oat,/obj/item/reagent_containers/food/snacks/grown/apple)
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,/obj/item/reagent_containers/food/snacks/produce/oat,/obj/item/reagent_containers/food/snacks/produce/apple,/obj/item/reagent_containers/food/snacks/produce/berries/rogue)
 	tame_chance = 25
 	bonus_tame_chance = 15
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -135,8 +138,6 @@
 	buckle_lying = 0
 	can_saddle = FALSE
 
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet/get_emote_frequency()
-	return 55100
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/simple_limb_hit(zone)
 	if(!zone)
@@ -181,7 +182,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goatmale
 	icon = 'icons/roguetown/mob/monster/gote.dmi'
-	name = "goat"
+	name = "male gote"
 	icon_state = "goatmale"
 	icon_living = "goatmale"
 	icon_dead = "goatmale_dead"
@@ -196,7 +197,9 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 4,
 						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 2,
-						/obj/item/natural/fur = 1)
+						/obj/item/natural/fur = 1,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
 	faction = list("goats")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_verb_continuous = "headbutts"
@@ -209,7 +212,7 @@
 	retreat_distance = 0
 	minimum_distance = 0
 	milkies = FALSE
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat,/obj/item/reagent_containers/food/snacks/grown/oat,/obj/item/reagent_containers/food/snacks/grown/apple)
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,/obj/item/reagent_containers/food/snacks/produce/oat,/obj/item/reagent_containers/food/snacks/produce/apple,/obj/item/reagent_containers/food/snacks/produce/berries/rogue)
 	footstep_type = FOOTSTEP_MOB_SHOE
 	pooptype = /obj/item/natural/poo/horse
 	STACON = 7
@@ -235,7 +238,7 @@
 			var/mutable_appearance/mounted = mutable_appearance(icon, "goatmale_mounted", 4.3)
 			add_overlay(mounted)
 
-/mob/living/simple_animal/hostile/retaliate/rogue/goatmale/tamed()
+/mob/living/simple_animal/hostile/retaliate/rogue/goatmale/tamed(mob/user)
 	..()
 	deaggroprob = 20
 	if(can_buckle)
@@ -250,7 +253,7 @@
 	..()
 	GLOB.farm_animals++
 	if(tame)
-		tamed()
+		tamed(owner)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goatmale/Destroy()
 	..()
@@ -357,6 +360,3 @@
 	can_buckle = FALSE
 	buckle_lying = 0
 	can_saddle = FALSE
-
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatletboy/get_emote_frequency()
-	return 55100

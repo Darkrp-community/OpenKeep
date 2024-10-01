@@ -48,8 +48,8 @@
 	icon_state = "monkey_painting"
 
 /obj/structure/rogue/trophy/deer
-	name = "deer trophy"
-	desc = "A deer head, a skilled hunter must have slayin this creature."
+	name = "saiga trophy"
+	desc = "A saiga head, mounted on a display as a trophy of a good hunt. An unsavory decoration for Dendorites."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "deer_trophy"
 	dir = SOUTH

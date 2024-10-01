@@ -153,22 +153,21 @@
 			direct = newdir
 			n = get_step(L, direct)
 
-	var/olddir = mob.dir
+	var/target_dir = get_dir(L, n)
 
-	. = ..()
-
-//	update_weather(TRUE)
-
-//	if(mob.m_intent == MOVE_INTENT_RUN) //backpedal and strafe slowdown for quick intent
+	//backpedal and strafe slowdown for quick intent
 	if(L.fixedeye || L.tempfixeye)
-		if(L.dir != direct)
+		if(L.dir != target_dir)
 			add_delay += 2
 			if(L.m_intent == MOVE_INTENT_RUN)
 				L.toggle_rogmove_intent(MOVE_INTENT_WALK)
 	else
-		if(L.dir != olddir)
-			if(L.m_intent == MOVE_INTENT_RUN)
+		if(L.dir != target_dir)
+			// Remove sprint intent if we change direction, but only if we sprinted atleast 1 tile
+			if(L.m_intent == MOVE_INTENT_RUN && L.sprinted_tiles > 0)
 				L.toggle_rogmove_intent(MOVE_INTENT_WALK)
+
+	. = ..()
 
 	if((direct & (direct - 1)) && mob.loc == n) //moved diagonally successfully
 		add_delay *= 2
@@ -591,12 +590,12 @@
 
 //* Updates a mob's sneaking status, rendering them invisible or visible in accordance to their status. TODO:Fix people bypassing the sneak fade by turning, and add a proc var to have a timer after resetting visibility.
 /mob/living/update_sneak_invis(reset = FALSE) //Why isn't this in mob/living/living_movements.dm? Why, I'm glad you asked!
-
+	if(!reset && world.time < mob_timers[MT_INVISIBILITY]) // Check if the mob is affected by the invisibility spell
+		rogue_sneaking = TRUE
+		return
 	var/turf/T = get_turf(src)
 	var/light_amount = T.get_lumcount()
 	var/used_time = 50
-
-	if(mind) used_time = max(used_time - (mind.get_skill_level(/datum/skill/misc/sneaking) * 8), 0)
 
 	if(rogue_sneaking) //If sneaking, check if they should be revealed
 		if((stat > SOFT_CRIT) || IsSleeping() || (world.time < mob_timers[MT_FOUNDSNEAK] + 30 SECONDS) || !T || reset || (m_intent != MOVE_INTENT_SNEAK) || light_amount >= rogue_sneaking_light_threshhold)
@@ -613,7 +612,14 @@
 			rogue_sneaking = TRUE
 	return
 
+	if(world.time < mob_timers[MT_INVISIBILITY]) // Check if the mob is affected by the invisibility spell
+		alpha = 0
+		return
+
 /mob/proc/toggle_rogmove_intent(intent, silent = FALSE)
+	// If we're becoming sprinting from non-sprinting, reset the counter
+	if(!(m_intent == MOVE_INTENT_RUN && intent == MOVE_INTENT_RUN))
+		sprinted_tiles = 0
 	switch(intent)
 		if(MOVE_INTENT_SNEAK)
 			m_intent = MOVE_INTENT_SNEAK
@@ -661,6 +667,25 @@
 				if(!HAS_TRAIT(src, TRAIT_MEDIUMARMOR))
 					return FALSE
 	return TRUE
+
+/mob/living/proc/check_armor_weight()
+	return "Light"
+
+/mob/living/carbon/human/check_armor_weight() // Get the heaviest shirt/armor the mob is wearing.
+	var/heaviest = "Light"
+	if(istype(src.wear_armor, /obj/item/clothing))
+		var/obj/item/clothing/CL = src.wear_armor
+		if(CL.armor_class == ARMOR_CLASS_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
+			heaviest = "Heavy"
+		if(CL.armor_class == ARMOR_CLASS_MEDIUM && heaviest == "Light")
+			heaviest = "Medium"
+	if(istype(src.wear_shirt, /obj/item/clothing))
+		var/obj/item/clothing/CL = src.wear_shirt
+		if(CL.armor_class == ARMOR_CLASS_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
+			heaviest = "Heavy"
+		if(CL.armor_class == ARMOR_CLASS_MEDIUM && heaviest == "Light")
+			heaviest = "Medium"
+	return heaviest
 
 /mob/living/proc/check_dodge_skill()
 	return TRUE

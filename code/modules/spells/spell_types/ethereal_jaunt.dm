@@ -1,7 +1,7 @@
 /obj/effect/proc_holder/spell/targeted/ethereal_jaunt
 	name = "Ethereal Jaunt"
 	desc = ""
-
+	overlay_state = "jaunt"
 	school = "transmutation"
 	charge_max = 300
 	clothes_req = FALSE
@@ -11,11 +11,10 @@
 	cooldown_min = 550 //50 deciseconds reduction per rank
 	include_user = TRUE
 	nonabstract_req = TRUE
-	var/jaunt_duration = 20 //in deciseconds
+	var/jaunt_duration = 25 //in deciseconds
 	var/jaunt_in_time = 5
 	var/jaunt_in_type = /obj/effect/temp_visual/wizard
 	var/jaunt_out_type = /obj/effect/temp_visual/wizard/out
-	action_icon_state = "jaunt"
 	associated_skill = /datum/skill/magic/arcane
 
 /obj/effect/proc_holder/spell/targeted/ethereal_jaunt/cast(list/targets,mob/user = usr) //magnets, so mostly hardcoded

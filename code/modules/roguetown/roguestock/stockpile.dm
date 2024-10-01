@@ -71,7 +71,7 @@
 /datum/roguestock/stockpile/salt
 	name = "Salt"
 	desc = "Rock salt useful for curing and cooking."
-	item_type = /obj/item/reagent_containers/powder/flour/salt
+	item_type = /obj/item/reagent_containers/powder/salt
 	held_items = 2
 	payout_price = 4
 	withdraw_price = 6
@@ -81,10 +81,19 @@
 /datum/roguestock/stockpile/grain
 	name = "Grain"
 	desc = "Spelt grain."
-	item_type = /obj/item/reagent_containers/food/snacks/grown/wheat
+	item_type = /obj/item/reagent_containers/food/snacks/produce/wheat
 	payout_price = 2
 	export_price = 5
 	withdraw_price = 5
+	importexport_amt = 20
+
+/datum/roguestock/stockpile/turnip
+	name = "Turnips"
+	desc = "The spine of many communities."
+	item_type = /obj/item/reagent_containers/food/snacks/produce/turnip
+	payout_price = 2
+	export_price = 4
+	withdraw_price = 3
 	importexport_amt = 20
 
 /datum/roguestock/stockpile/iron

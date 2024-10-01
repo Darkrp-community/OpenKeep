@@ -1,8 +1,9 @@
 /obj/effect/proc_holder/spell/targeted/projectile/magic_missile
 	name = "Magic Missile"
 	desc = ""
-
 	school = "evocation"
+	base_icon_state = ""
+	overlay_state = "missile"
 	releasedrain = 30
 	chargedrain = 1
 	chargetime = 15
@@ -14,13 +15,14 @@
 	cooldown_min = 500 //35 deciseconds reduction per rank
 	max_targets = 1
 	proj_type = /obj/projectile/magic/spell/magic_missile
-	action_icon_state = "magicm"
 	sound = 'sound/magic/timestop.ogg'
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	movement_interrupt = FALSE
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
+	proj_trail_icon = 'icons/obj/projectiles.dmi'
+	proj_trail_icon_state = "magicmd"
 
 /obj/projectile/magic/spell/magic_missile
 	name = "magic missile"
@@ -36,7 +38,9 @@
 	damage_type = BURN
 	trail = TRUE
 	trail_lifespan = 5
-	trail_icon_state = "magicmd"
+	light_color = "#f407f8"
+	light_range = 2
+
 
 /obj/projectile/magic/spell/magic_missile/on_hit(target)
 	. = ..()
@@ -274,6 +278,9 @@
 /obj/effect/proc_holder/spell/aoe_turf/repulse
 	name = "Repulse"
 	desc = ""
+	base_icon_state = ""
+	action_icon_state = "repulse"
+	overlay_state = "repulse"
 	charge_max = 200
 	clothes_req = FALSE
 	invocation = "FROS RO DAH"
@@ -287,8 +294,6 @@
 	var/sparkle_path = /obj/effect/temp_visual/gravpush
 	var/anti_magic_check = TRUE
 	var/repulse_force = MOVE_FORCE_EXTREMELY_STRONG
-
-	action_icon_state = "repulse"
 
 /obj/effect/proc_holder/spell/aoe_turf/repulse/cast(list/targets,mob/user = usr, stun_amt = 5)
 	var/list/thrownatoms = list()

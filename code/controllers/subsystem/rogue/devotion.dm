@@ -30,7 +30,7 @@
 		return FALSE
 
 /datum/devotion/cleric_holder/proc/update_devotion(dev_amt, prog_amt)
-	var/datum/patrongods/P = patron
+	var/datum/patron/P = patron
 	devotion += dev_amt
 	//Max devotion limit
 	if(devotion > max_devotion)
@@ -63,7 +63,7 @@
 	if(!H || !H.mind)
 		return
 
-	var/datum/patrongods/A = H.PATRON
+	var/datum/patron/A = H.patron
 	var/list/spelllist = list(A.t0, A.t1, A.t2, A.t3)
 	for(var/spell_type in spelllist)
 		if(!spell_type || H.mind.has_spell(spell_type))
@@ -76,7 +76,7 @@
 	if(!H || !H.mind)
 		return
 
-	var/datum/patrongods/A = H.PATRON
+	var/datum/patron/A = H.patron
 	var/list/spelllist = list(A.t0, A.t1)
 	for(var/spell_type in spelllist)
 		if(!spell_type || H.mind.has_spell(spell_type))
@@ -84,17 +84,31 @@
 		H.mind.AddSpell(new spell_type)
 	level = CLERIC_T1
 
+/datum/devotion/cleric_holder/proc/grant_spells_cleric(mob/living/carbon/human/H)
+	if(!H || !H.mind)
+		return
+
+	var/datum/patron/A = H.patron
+	var/list/spelllist = list(A.t0, A.t1)
+	for(var/spell_type in spelllist)
+		if(!spell_type || H.mind.has_spell(spell_type))
+			continue
+		H.mind.AddSpell(new spell_type)
+	level = CLERIC_T1
+	max_devotion = 250
+
 /datum/devotion/cleric_holder/proc/grant_spells_templar(mob/living/carbon/human/H)
 	if(!H || !H.mind)
 		return
 
-	var/datum/patrongods/A = H.PATRON
+	var/datum/patron/A = H.patron
 	var/list/spelllist = list(/obj/effect/proc_holder/spell/targeted/churn, A.t0)
 	for(var/spell_type in spelllist)
 		if(!spell_type || H.mind.has_spell(spell_type))
 			continue
 		H.mind.AddSpell(new spell_type)
 	level = CLERIC_T0
+	max_devotion = 150
 
 /mob/living/carbon/human/proc/devotionreport()
 	set name = "Check Devotion"
@@ -123,7 +137,7 @@
 	var/datum/devotion/cleric_holder/C = src.cleric
 	var/prayersesh = 0
 
-	visible_message("[src] kneels their head in prayer to the Gods.", "I kneel my head in prayer to [PATRON]")
+	visible_message("[src] kneels their head in prayer to the Gods.", "I kneel my head in prayer to [patron.name]")
 	for(var/i in 1 to 20)
 		if(do_after(src, 30))
 			if(C.devotion >= C.max_devotion)

@@ -182,6 +182,7 @@
 		H.mode = AI_OFF
 	if(client)
 		client.verbs += /client/proc/lobbyooc
+		client.verbs += /client/proc/commendsomeone
 
 /client/proc/show_game_over()
 	var/atom/movable/screen/splash/credits/S = new(src, FALSE)
@@ -206,7 +207,7 @@
 	for(var/client/C in GLOB.clients)
 		if(C.mob)
 			SSdroning.kill_droning(C)
-			C.mob.playsound_local(C.mob, 'sound/music/credits.ogg', 100, FALSE)
+			C.mob.playsound_local(C.mob, 'sound/misc/roundend.ogg', 100, FALSE)
 		if(isliving(C.mob) && C.ckey)
 			key_list += C.ckey
 //	if(key_list.len)
@@ -221,6 +222,7 @@
 
 	for(var/mob/M in GLOB.mob_list)
 		M.do_game_over()
+		M.playsound_local(M, 'sound/music/credits.ogg', 100, FALSE)
 
 	for(var/I in round_end_events)
 		var/datum/callback/cb = I
@@ -228,6 +230,8 @@
 	LAZYCLEARLIST(round_end_events)
 
 	to_chat(world, "Round ID: [GLOB.rogue_round_id]")
+
+	SSvote.initiate_vote("map", "Psydon")
 
 	sleep(5 SECONDS)
 
@@ -321,6 +325,9 @@
 		if(C.vampire_werewolf() == "werewolf")
 			end_reason = "The Werevolves formed an unholy clan, marauding Rockhill until the end of its daes."
 
+		if(C.cultascended)
+			end_reason = "ZIZOZIZOZIZOZIZO"
+
 		if(C.headrebdecree)
 			end_reason = "The peasant rebels took control of the throne, hail the new community!"
 
@@ -381,9 +388,15 @@
 	var/list/shit = list()
 	shit += "<br><span class='bold'>Δ--------------------Δ</span><br>"
 	shit += "<br><font color='#9b6937'><span class='bold'>Deaths:</span></font> [deaths]"
+	shit += "<br><font color='#825b1c'><span class='bold'>Moat Fallers:</span></font> [moatfallers]"
+	shit += "<br><font color='#700000'><span class='bold'>Ankles Broken:</span></font> [holefall]"
+	shit += "<br><font color='#ffee00'><span class='bold'>People Smiten:</span></font> [pplsmited]"
 	shit += "<br><font color='#af2323'><span class='bold'>Blood spilt:</span></font> [round(blood_lost / 100, 1)]L"
+	shit += "<br><font color='#af2323'><span class='bold'>People Gibbed:</span></font> [gibbs]"
 	shit += "<br><font color='#36959c'><span class='bold'>TRIUMPH(s) Awarded:</span></font> [tri_gained]"
 	shit += "<br><font color='#a02fa4'><span class='bold'>TRIUMPH(s) Stolen:</span></font> [tri_lost * -1]"
+	shit += "<br><font color='#f200ff'><span class='bold'>Drugs Snorted:</span></font> [snort]"
+	shit += "<br><font color='#0f555c'><span class='bold'>Beards Shaved:</span></font> [beardshavers]"
 	shit += "<br><font color='#ffffff'><span class='bold'>Pleasures:</span></font> [cums]"
 //	if(cuckers.len)
 //		shit += "<br><font color='#4e488a'><span class='bold'>Adulterers:</span></font> "

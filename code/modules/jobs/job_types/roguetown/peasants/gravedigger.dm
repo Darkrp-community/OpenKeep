@@ -20,6 +20,7 @@
 	outfit = /datum/outfit/job/roguetown/undertaker
 	display_order = JDO_GRAVEMAN
 	give_bank_account = 34
+	min_pq = -50
 	bypass_lastclass = TRUE
 
 /datum/outfit/job/roguetown/undertaker/pre_equip(mob/living/carbon/human/H)
@@ -39,6 +40,7 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
@@ -46,4 +48,8 @@
 		H.change_stat("strength", 1)
 		H.change_stat("intelligence", -2)
 		H.change_stat("speed", 1)
+		H.change_stat("fortune", -1) // Tradeoff for never being cursed when unearthing graves.
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Operating with corpses every day.
+	ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC) // In case they need to move tombs or anything.
+

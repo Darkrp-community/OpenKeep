@@ -1,6 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/spider
 	icon = 'icons/roguetown/mob/monster/spider.dmi'
 	name = "beespider"
+	desc = "Swamp-lurking creachers with a wicked bite. They make honey from flowers and spin silk from their abdomen. Some dark elves see them as a sacred animal."
 	icon_state = "honeys"
 	icon_living = "honeys"
 	icon_dead = "honeys-dead"
@@ -38,6 +39,7 @@
 	attack_sound = list('sound/vo/mobs/spider/attack (1).ogg','sound/vo/mobs/spider/attack (2).ogg','sound/vo/mobs/spider/attack (3).ogg','sound/vo/mobs/spider/attack (4).ogg')
 	aggressive = 1
 	stat_attack = UNCONSCIOUS
+	body_eater = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated
 	icon = 'icons/roguetown/mob/monster/spider.dmi'
@@ -56,11 +58,6 @@
 	if(prob(33))
 		gender = FEMALE
 	update_icon()
-
-/mob/living/simple_animal/hostile/retaliate/rogue/spider/find_food()
-	. = ..()
-	if(!.)
-		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/AttackingTarget()
 	. = ..()

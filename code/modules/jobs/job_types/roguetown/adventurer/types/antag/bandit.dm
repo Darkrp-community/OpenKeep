@@ -1,9 +1,7 @@
-/*
-	It'd prob be a good idea to fill out a entire roster of bandits
-	For now tho you got this cause I don't feel like reworking the shit ass gamemode yet
-	The antag would also have to be touched as it loads out all the gear attached to the datum lol
-*/
-/datum/advclass/bandit
+///uhhh temporarily makes bandits into a drifter class for now
+///this just exists for giving them the status of bandit, they will pick their actual bandit class in a bit.
+
+/datum/advclass/combat/bandit
 	name = "Bandit"
 	tutorial = "A person living in service of the god Matthios, through theft and social woes can ones suffering be alleviated."
 	allowed_sexes = list(MALE, FEMALE)
@@ -13,18 +11,23 @@
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
-		"Argonian",
 		"Dark Elf",
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/bandit
-	category_tags = list(CTAG_ANTAG, CTAG_BANDIT)
+	maximum_possible_slots = 4
+	category_tags = list(CTAG_ADVENTURER, CTAG_BANDIT)
+	min_pq = 0
+	pickprob = 100
 
 /datum/outfit/job/roguetown/adventurer/bandit/pre_equip(mob/living/carbon/human/H)
 	..()
 
 /datum/outfit/job/roguetown/adventurer/bandit/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
-	var/datum/antagonist/new_antag = new /datum/antagonist/bandit()
-	H.mind.add_antag_datum(new_antag)
+	if(!HAS_TRAIT(H, TRAIT_VILLAIN)) //just incase a vampirelord gets this...
+		var/datum/antagonist/new_antag = new /datum/antagonist/bandit()
+		H.mind.add_antag_datum(new_antag)
+	else
+		H.equipOutfit(/datum/outfit/job/roguetown/adventurer/sfighter)
 

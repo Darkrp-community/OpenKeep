@@ -1,3 +1,12 @@
+/* * * * * * * * * * * **
+ *						*
+ *		  Dwarf			*
+ *						*
+ * 	(Poison resistance)	*
+ *						*
+ * * * * * * * * * * * **/
+
+
 /mob/living/carbon/human/species/dwarf/mountain
 	race = /datum/species/dwarf/mountain
 
@@ -5,18 +14,23 @@
 	name = "Dwarf"
 	id = "dwarf"
 	desc = "<b>Dwarf</b><br>\
-	A proud and robust race of short mountain folk, \
+	A proud and robust race of stunted folk, \
 	the dwarves are known for their pride in martial strength \
-	and their tenacity towards their ancient traditions.\
+	and their tenacity towards their ancient customs. \
 	A Dwarf, much like the rock that they carve their fortress out of \
-	is stubborn and ancient, with their race being the longest lived of all \
-	of the weeping gods creation. They, like stone: also rarely change \
-	and tend to shun the modernization of the world around them. \
-	Instead, a Dwarf looks to his ancestorial heritage for guidance on \
-	the various challenges they face. Even if, in some irony: this behaviour \
-	leads the race towards technological advacement as they continue \
-	to improve their craft through powerful mechanization and forging \
-	Dwarves are hearty, but are not known for their speed or eyesight..."
+	is stubborn and ancient, much like their Patron founder the Saint Malum \
+	during the time of the weeping god. They, like stone: also rarely change \
+	and are stubborn to a fault. \
+	A Dwarf tends to his ancestorial heritage for posterity and guidance on \
+	the various challenges their people will face. Even if, in some irony: this behaviour \
+	leads the race towards technological innovation as they continue \
+	to improve their craft through powerful mechanization and forging. \
+	While also impeding their civilizational growth beyond Grimorias mountain ranges due to \
+	constant infighting regarding 'true' doctrines, traditions, customs. \
+	Dwarves are hearty, stout and prone to severe mood swings, but are not known for their speed or eyesight..."
+
+	skin_tone_wording = "Ore Attunement"
+
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,YOUNGBEARD,STUBBLE,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
@@ -48,8 +62,17 @@
 	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = -2, "fortune" = 0)
 	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 1, "constitution" = 1, "endurance" = 1, "speed" = -1, "fortune" = 0)
 	enflamed_icon = "widefire"
-	possible_faiths = list(FAITH_PSYDON, FAITH_DWARF)
 	patreon_req = 0
+
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
 
 /datum/species/dwarf/mountain/check_roundstart_eligible()
 	return TRUE
@@ -65,14 +88,15 @@
 
 /datum/species/dwarf/mountain/get_skin_list()
 	return sortList(list(
-	"skin1" = "ffe0d1",
-	"skin2" = "fcccb3",
-	"skin3" = "edc6b3",
-	"skin4" = "e2b9a3",
-	"skin5" = "d9a284",
-	"skin6" = "c69b83",
-	"skin7" = "3b2e27",
-	"skin8" = "271f1a"
+		"Platinum" = SKIN_COLOR_PLATINUM,
+		"Aurum" = SKIN_COLOR_AURUM,
+		"Quicksilver" = SKIN_COLOR_QUICKSILVER,
+		"Brass" = SKIN_COLOR_BRASS,
+		"Iron" = SKIN_COLOR_IRON,
+		"Malachite" = SKIN_COLOR_MALACHITE,
+		"Obsidian" = SKIN_COLOR_OBSIDIAN,
+		"Brimstone" = SKIN_COLOR_BRIMSTONE,
+		"Cerargyrite" =	SKIN_COLOR_CERARGYRITE,
 	))
 
 /datum/species/dwarf/mountain/get_hairc_list()
@@ -95,7 +119,11 @@
 	"red - berry" = "b23434",
 	"red - wine" = "b87f77",
 	"red - sunset" = "bf6821",
-	"red - blood" = "822b2b"
+	"red - blood" = "822b2b",
+	"red - maroon" = "612929",
+
+	"white - withered" = "#7c828a"
+
 	))
 
 /datum/species/dwarf/mountain/random_name(gender,unique,lastname)
@@ -121,3 +149,26 @@
 
 /datum/species/dwarf/mountain/random_surname()
 	return " [pick(world.file2list("strings/rt/names/dwarf/dwarmlast.txt"))]"
+
+
+
+/*------------------\
+| Poison Resistance |
+\------------------*/
+
+/*
+To make this work poison on_mob_life needs to have the dwarf modifier in it. Relevant when adding new ones.
+The more specialized/expensive poison the less effect the resistance.
+
+For common natural poisons (berrypoison) = effect reduced by 2/3, half nausea
+For manufactured poisones = effect reduced by half or so
+
+Note: Its not meant to protect against every dangerous/bad reagent, its supposed to be just poisons, making it meaningful against most common reagent hazards but not full protection.
+
+/datum/reagent/toxin/whateverpoison/on_mob_life(mob/living/carbon/M)
+	if(isdwarf(M))
+		M.adjustToxLoss(2, 0)
+	else
+		M.adjustToxLoss(5, 0)
+
+*/

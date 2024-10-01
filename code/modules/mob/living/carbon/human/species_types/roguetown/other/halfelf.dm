@@ -9,33 +9,38 @@
 	upon by more conservative peoples, although as racial tensions lower, \
 	more and more half-elves are being born. To the point that some scholars \
 	worry that someday, it may be impossible to distinguish the two species. \
-	Half-Elves are extremely diverse, as they bring in human and elvish culture\
+	Half-Elves are extremely diverse, as they bring in humen and elvish culture\
 	and it is widely considered that Half-Elf culture is simply a melting pot of \
-	various other cultures condensing into one vibrant entity.\
-	Due to their heritage, Half-Elves dont tend to gain or suffer from any racial traits..."
+	various others condensing into one vibrant entity. \
+	Due to their heritage, Half-Elves tend to gain racial traits depending on how strong their fathers, or mothers, genes were. \
+	Half-Elves also typically try to find identity, in a world that sees them primarly as perversions."
+
+	skin_tone_wording = "Halfling Identity"
+
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "ears" = "ElfH", "wings" = "None")
 	mutant_bodyparts = list("ears")
+	mutanteyes = /obj/item/organ/eyes/elf/less
 	use_skintones = 1
-	possible_ages = ALL_AGES_LIST
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mm.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	hairyness = "t2"
 	soundpack_m = /datum/voicepack/male
 	soundpack_f = /datum/voicepack/female
-	offset_features = list(OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
-	OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
-	OFFSET_FACE = list(0,1), OFFSET_BELT = list(0,1), OFFSET_BACK = list(0,1), \
-	OFFSET_NECK = list(0,1), OFFSET_MOUTH = list(0,1), OFFSET_PANTS = list(0,1), \
-	OFFSET_SHIRT = list(0,1), OFFSET_ARMOR = list(0,1), OFFSET_HANDS = list(0,1), OFFSET_UNDIES = list(0,1), \
+	offset_features = list(OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_WRISTS = list(0,0),\
+	OFFSET_CLOAK = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), \
+	OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,0), \
+	OFFSET_NECK = list(0,0), OFFSET_MOUTH = list(0,0), OFFSET_PANTS = list(0,0), \
+	OFFSET_SHIRT = list(0,0), OFFSET_ARMOR = list(0,0), OFFSET_HANDS = list(0,0), OFFSET_UNDIES = list(0,0), \
 	OFFSET_ID_F = list(0,-1), OFFSET_GLOVES_F = list(0,0), OFFSET_WRISTS_F = list(0,0), OFFSET_HANDS_F = list(0,0), \
 	OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
 	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,-1), OFFSET_BACK_F = list(0,-1), \
@@ -45,16 +50,26 @@
 	specstats_f = list("strength" = 0, "perception" = 1, "intelligence" = 2, "constitution" = -1, "endurance" = -1, "speed" = 2, "fortune" = -1)
 	enflamed_icon = "widefire"
 
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
+
 /datum/species/human/halfelf/check_roundstart_eligible()
 	return TRUE
 
 /datum/species/human/halfelf/get_skin_list()
 	return sortList(list(
-	"skin1" = "ffe0d1",
-	"skin2" = "fcccb3",
-	"skin3" = "edc6b3",
-	"skin4" = "e2b9a3",
-	"skin5" = "5a4a41"
+		"Timber-Gronn" = SKIN_COLOR_TIMBER_GRONN,
+		"Solar-Hue" = SKIN_COLOR_SOLAR_HUE,
+		"Walnut-Stine" = SKIN_COLOR_WALNUT_STINE,
+		"Amber-Stained" = SKIN_COLOR_AMBER_STAINED,
+		"Ebon-Born" = SKIN_COLOR_EBON_BORN,
 	))
 
 /datum/species/human/halfelf/get_hairc_list()
@@ -69,15 +84,21 @@
 	"brown - grain" = "58433b",
 	"brown - soil" = "48322a",
 
-	"red - berry" = "48322a",
+	"red - berry" = "b23434",
 	"red - wine" = "82534c",
 	"red - sunset" = "82462b",
 	"red - blood" = "822b2b",
+	"red - maroon" = "612929",
 
 	"blond - pale" = "9d8d6e",
 	"blond - dirty" = "88754f",
 	"blond - drywheat" = "8f8766",
-	"blond - strawberry" = "977033"
+	"blond - strawberry" = "977033",
+
+	"green - leaf" = "2f3c2e",
+	"green - moss" = "3b3c2a",
+
+	"white - ice" = "f4f4f4"
 
 	))
 
@@ -99,7 +120,6 @@
 			randname = pick( world.file2list("strings/rt/names/elf/elfwm.txt") )
 		if(gender == FEMALE)
 			randname = pick( world.file2list("strings/rt/names/elf/elfwf.txt") )
-	randname += " Halfelven"
 	return randname
 
 /datum/species/human/halfelf/random_surname()

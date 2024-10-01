@@ -299,37 +299,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	return TRUE
 
-/datum/preferences/proc/load_character(slot)
-	if(!path)
-		return FALSE
-	if(!fexists(path))
-		return FALSE
-	var/savefile/S = new /savefile(path)
-	if(!S)
-		return FALSE
-	S.cd = "/"
-	if(!slot)
-		slot = default_slot
-	slot = sanitize_integer(slot, 1, max_save_slots, initial(default_slot))
-	if(slot != default_slot)
-		default_slot = slot
-		WRITE_FILE(S["default_slot"] , slot)
-
-	S.cd = "/character[slot]"
-	var/needs_update = savefile_needs_update(S)
-	if(needs_update == -2)		//fatal, can't load any data
-		return FALSE
-
-	//Species
+/datum/preferences/proc/_load_species(S)
 	var/species_name
-	S["species"]			>> species_name
+	S["species"] >> species_name
 	if(species_name)
 		var/newtype = GLOB.species_list[species_name]
 		if(newtype)
 			pref_species = new newtype
 
-
-
+/datum/preferences/proc/_load_flaw(S)
 	var/charflaw_type
 	S["charflaw"]			>> charflaw_type
 	if(charflaw_type)
@@ -339,13 +317,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		charflaw = GLOB.character_flaws[charflaw]
 		charflaw = new charflaw()
 
-	if(!S["features["mcolor"]"] || S["features["mcolor"]"] == "#000")
-		WRITE_FILE(S["features["mcolor"]"]	, "#FFF")
-
-	if(!S["feature_ethcolor"] || S["feature_ethcolor"] == "#000")
-		WRITE_FILE(S["feature_ethcolor"]	, "9c3030")
-
-	//Character
+/datum/preferences/proc/_load_appearence(S)
 	S["real_name"]			>> real_name
 	S["gender"]				>> gender
 	S["domhand"]			>> domhand
@@ -368,6 +340,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["jumpsuit_style"]		>> jumpsuit_style
 	S["uplink_loc"]			>> uplink_spawn_loc
 	S["randomise"]	>>  randomise
+	S["family"]			>> family
+	S["setspouse"]			>> setspouse
 	S["feature_mcolor"]					>> features["mcolor"]
 	S["feature_ethcolor"]					>> features["ethcolor"]
 	S["feature_lizard_tail"]			>> features["tail_lizard"]
@@ -382,12 +356,47 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_human_tail"]				>> features["tail_human"]
 	S["feature_human_ears"]				>> features["ears"]
 
-	var/patron_name
-	S["selected_patron"]	>> patron_name
-	if(patron_name)
-		var/newtype = GLOB.patronlist[patron_name]
-		if(newtype)
-			selected_patron = new newtype
+/datum/preferences/proc/load_character(slot)
+	if(!path)
+		return FALSE
+	if(!fexists(path))
+		return FALSE
+	var/savefile/S = new /savefile(path)
+	if(!S)
+		return FALSE
+	S.cd = "/"
+	if(!slot)
+		slot = default_slot
+	slot = sanitize_integer(slot, 1, max_save_slots, initial(default_slot))
+	if(slot != default_slot)
+		default_slot = slot
+		WRITE_FILE(S["default_slot"] , slot)
+
+	S.cd = "/character[slot]"
+	var/needs_update = savefile_needs_update(S)
+	if(needs_update == -2)		//fatal, can't load any data
+		return FALSE
+
+	//Species
+	_load_species(S)
+
+	_load_flaw(S)
+
+	if(!S["features["mcolor"]"] || S["features["mcolor"]"] == "#000")
+		WRITE_FILE(S["features["mcolor"]"]	, "#FFF")
+
+	if(!S["feature_ethcolor"] || S["feature_ethcolor"] == "#000")
+		WRITE_FILE(S["feature_ethcolor"]	, "9c3030")
+
+	//Character
+	_load_appearence(S)
+
+	var/patron_typepath
+	S["selected_patron"]	>> patron_typepath
+	if(patron_typepath)
+		selected_patron = GLOB.patronlist[patron_typepath]
+		if(!selected_patron) //failsafe
+			selected_patron = GLOB.patronlist[default_patron]
 
 //	S["selected_patron"]				>> selected_patron
 
@@ -462,8 +471,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	skin_tone		= skin_tone
 	backpack			= sanitize_inlist(backpack, GLOB.backpacklist, initial(backpack))
 	jumpsuit_style	= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
+	family = family
+	setspouse = setspouse
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
 	features["mcolor"]	= sanitize_hexcolor(features["mcolor"], 3, 0)
+	features["mcolor2"]	= sanitize_hexcolor(features["mcolor2"], 6, 0)
+	features["mcolor3"]	= sanitize_hexcolor(features["mcolor3"], 6, 0)
 	features["ethcolor"]	= copytext(features["ethcolor"],1,7)
 	features["tail_lizard"]	= sanitize_inlist(features["tail_lizard"], GLOB.tails_list_lizard)
 	features["tail_human"] 	= sanitize_inlist(features["tail_human"], GLOB.tails_list_human, "None")
@@ -474,8 +487,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["spines"] 	= sanitize_inlist(features["spines"], GLOB.spines_list)
 	features["body_markings"] 	= sanitize_inlist(features["body_markings"], GLOB.body_markings_list)
 	features["feature_lizard_legs"]	= sanitize_inlist(features["legs"], GLOB.legs_list, "Normal Legs")
-	features["moth_wings"] 	= sanitize_inlist(features["moth_wings"], GLOB.moth_wings_list, "Plain")
-	features["moth_markings"] 	= sanitize_inlist(features["moth_markings"], GLOB.moth_markings_list, "None")
+	S["body_markings"] >> body_markings
+	body_markings = SANITIZE_LIST(body_markings)
+	validate_body_markings()
+
+	S["descriptor_entries"] >> descriptor_entries
+	descriptor_entries = SANITIZE_LIST(descriptor_entries)
+	S["custom_descriptors"] >> custom_descriptors
+	custom_descriptors = SANITIZE_LIST(custom_descriptors)
+	validate_descriptors()
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
 	//Validate job prefs
@@ -522,6 +542,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["randomise"]		, randomise)
 	WRITE_FILE(S["species"]			, pref_species.name)
 	WRITE_FILE(S["charflaw"]			, charflaw.type)
+	WRITE_FILE(S["family"]			, 	family)
+	WRITE_FILE(S["setspouse"]			, 	setspouse)
 	WRITE_FILE(S["feature_mcolor"]					, features["mcolor"])
 	WRITE_FILE(S["feature_ethcolor"]					, features["ethcolor"])
 	WRITE_FILE(S["feature_lizard_tail"]			, features["tail_lizard"])
@@ -554,7 +576,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["all_quirks"]			, all_quirks)
 
 	//Patron
-	WRITE_FILE(S["selected_patron"]		, selected_patron.name)
+	WRITE_FILE(S["selected_patron"]		, selected_patron.type)
+
+	// Organs
+	WRITE_FILE(S["customizer_entries"] , customizer_entries)
+	// Body markings
+	WRITE_FILE(S["body_markings"] , body_markings)
+	// Descriptor entries
+	WRITE_FILE(S["descriptor_entries"] , descriptor_entries)
+	WRITE_FILE(S["custom_descriptors"] , custom_descriptors)
 
 	return TRUE
 

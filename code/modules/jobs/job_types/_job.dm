@@ -67,8 +67,8 @@
 
 	//allowed sex/race for picking
 	var/list/allowed_sexes = list(MALE,FEMALE)
-	var/list/allowed_races = ALL_RACES_LIST_NAMES
-	var/list/allowed_patrons = ALL_PATRON_NAMES_LIST
+	var/list/allowed_races
+	var/list/allowed_patrons
 	var/list/allowed_ages = ALL_AGES_LIST
 
 	/// Innate skill levels unlocked at roundstart. Format is list(/datum/skill/foo = SKILL_EXP_NOVICE) with exp as an integer or as per code/_DEFINES/skills.dm
@@ -99,6 +99,9 @@
 	var/give_bank_account = FALSE
 
 	var/can_random = TRUE
+
+	/// Some jobs have unique combat mode music, because why not?
+	var/cmode_music
 
 	/// This job always shows on latechoices
 	var/always_show_on_latechoices = FALSE
@@ -182,6 +185,9 @@
 
 	if(show_in_credits)
 		SScrediticons.processing += H
+
+	if(cmode_music)
+		H.cmode_music = cmode_music
 
 /mob/living/carbon/human/proc/add_credit()
 	if(!mind || !client)

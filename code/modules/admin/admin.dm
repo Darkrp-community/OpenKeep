@@ -244,10 +244,12 @@
 		to_chat(usr, "<span class='warning'>You do not have the rights to start a vote.</span>")
 		return
 
-	var/type = input("What kind of vote?") as null|anything in list("End Round", "Custom")
+	var/type = input("What kind of vote?") as null|anything in list("End Round", "Map", "Custom")
 	switch(type)
 		if("End Round")
 			type = "endround"
+		if("Map")
+			type = "map"
 		if("Custom")
 			type = "custom"
 	SSvote.initiate_vote(type, usr.key)

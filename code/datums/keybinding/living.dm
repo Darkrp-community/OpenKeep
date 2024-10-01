@@ -79,6 +79,7 @@
 
 /datum/keybinding/living/drop_item
 	hotkey_keys = list("Z")
+	classic_keys = list("Z")
 	name = "drop_item"
 	full_name = "Drop Item"
 	description = ""

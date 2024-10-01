@@ -1,6 +1,6 @@
 /datum/crafting_recipe/roguetown/weaving
 	structurecraft = /obj/machinery/loom
-	skillcraft = /datum/skill/misc/weaving
+	skillcraft = /datum/skill/misc/sewing
 
 /datum/crafting_recipe/roguetown/weaving/rags
 	name = "webbed shirt"
@@ -79,6 +79,30 @@
 	craftdiff = 3
 	sellprice = 20
 
+/datum/crafting_recipe/roguetown/weaving/eoramask
+	name = "eora mask"
+	result = list(/obj/item/clothing/head/roguetown/eoramask)
+	reqs = list(/obj/item/ingot/silver,
+				/obj/item/natural/silk = 4)
+	craftdiff = 3
+	sellprice = 20
+
+/datum/crafting_recipe/roguetown/weaving/eorarobes
+	name = "eora robes"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/eora)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/silk = 1)
+	craftdiff = 3
+	sellprice = 20
+
+/datum/crafting_recipe/roguetown/weaving/eorastraps
+	name = "eora straps"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/eora/alt)
+	reqs = list(/obj/item/ingot/gold,
+				/obj/item/natural/silk = 5)
+	craftdiff = 5
+	sellprice = 50
+
 /datum/crafting_recipe/roguetown/weaving/nunhood
 	name = "nun hood"
 	result = list(/obj/item/clothing/head/roguetown/nun)
@@ -93,7 +117,7 @@
 	craftdiff = 3
 	sellprice = 20
 
-/datum/crafting_recipe/roguetown/weaving/barkeep
+/datum/crafting_recipe/roguetown/weaving/barmaid
 	name = "bar dress"
 	result = list (/obj/item/clothing/suit/roguetown/shirt/dress)
 	reqs = list(/obj/item/natural/cloth = 2,
@@ -117,3 +141,12 @@
 				/obj/item/natural/fur = 2)
 	craftdiff = 5
 	sellprice = 60
+
+/datum/crafting_recipe/roguetown/weaving/armordress
+	name = "padded dress"
+	result = /obj/item/clothing/suit/roguetown/armor/armordress
+	reqs = list(/obj/item/natural/silk = 4,
+				/obj/item/natural/fibers = 2,
+				/obj/item/natural/hide = 1)
+	craftdiff = 4
+	sellprice = 80

@@ -9,7 +9,7 @@
 			to_chat(src, "<span class='danger'>[penetrated_text]</span>")
 		else
 			to_chat(src, "<span class='danger'>My armor was penetrated!</span>")
-	else if(armor >= 100)
+	else if(armor >= 130)
 		if(absorb_text)
 			to_chat(src, "<span class='notice'>[absorb_text]</span>")
 		else
@@ -44,10 +44,13 @@
 	return BULLET_ACT_HIT
 
 /mob/living/bullet_act(obj/projectile/P, def_zone = BODY_ZONE_CHEST)
+	if(!prob(P.accuracy + P.bonus_accuracy)) //if your accuracy check fails, you wont hit your intended target
+		def_zone = ran_zone(BODY_ZONE_CHEST, 65)//Hits a random part of the body, geared towards the chest
+
 	var/armor = run_armor_check(def_zone, P.flag, "", "",P.armor_penetration, damage = P.damage)
 
 	next_attack_msg.Cut()
-
+	
 	var/on_hit_state = P.on_hit(src, armor)
 	var/nodmg = FALSE
 	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK)
@@ -117,7 +120,10 @@
 				if(iscarbon(src))
 					var/obj/item/bodypart/affecting = get_bodypart(zone)
 					if(affecting)
-						affecting.bodypart_attacked_by(I.thrown_bclass, I.throwforce, isliving(throwingdatum.thrower) ? throwingdatum.thrower : null, affecting.body_zone, crit_message = TRUE)
+						var/throwee = null
+						if(throwingdatum)
+							throwee = isliving(throwingdatum.thrower) ? throwingdatum.thrower : null
+						affecting.bodypart_attacked_by(I.thrown_bclass, I.throwforce, throwee, affecting.body_zone, crit_message = TRUE)
 				else
 					simple_woundcritroll(I.thrown_bclass, I.throwforce, null, zone, crit_message = TRUE)
 					if(((throwingdatum ? throwingdatum.speed : I.throw_speed) >= EMBED_THROWSPEED_THRESHOLD) || I.embedding.embedded_ignore_throwspeed_threshold)
@@ -210,10 +216,14 @@
 //	if(user.pulling != src)
 //		return
 
-	var/probby =  50 - ((user.STASTR - STASTR) * 10)
-	if(src.dir == turn(get_dir(src,user), 180))//they are behind us
+	var/probby =  20 - ((user.STACON - STACON) * 10)
+	if(src.pulling == user && !instant)
+		probby += 30
+
+	if(src.dir == turn(get_dir(src,user), 180))
 		probby = (probby - 30)
 	probby = clamp(probby, 5, 95)
+
 	if(prob(probby) && !instant && !stat && cmode)
 		visible_message("<span class='warning'>[user] struggles with [src]!</span>",
 						"<span class='warning'>[user] struggles to restrain me!</span>", "<span class='hear'>I hear aggressive shuffling!</span>", null, user)
@@ -222,9 +232,11 @@
 		else
 			to_chat(user, "<span class='warning'>I struggle with [src]!</span>")
 		playsound(src.loc, 'sound/foley/struggle.ogg', 100, FALSE, -1)
-		user.Immobilize(30)
-		user.changeNext_move(35)
+		user.Immobilize(2 SECONDS)
+		user.changeNext_move(2 SECONDS)
 		user.rogfat_add(5)
+		src.Immobilize(1 SECONDS)
+		src.changeNext_move(1 SECONDS)
 		return
 
 	if(!instant)

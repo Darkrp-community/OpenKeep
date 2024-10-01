@@ -6,13 +6,13 @@
 #define TRAIT_NUTCRACKER 				"Nutcracker"
 #define TRAIT_SEEPRICES				"Golden Blood"
 #define TRAIT_STRONGBITE				"Strong Bite"
-#define TRAIT_TORTURER					"Torturer"
 #define TRAIT_HATEWOMEN				"Ladykiller"
 #define TRAIT_GOODLOVER				"Fabled Lover"
+#define TRAIT_SEEDKNOW 			"Seed Knower"
 #define TRAIT_NOBLE					"Noble Blooded"
 #define TRAIT_EMPATH					"Empath"
 #define TRAIT_BREADY					"Battleready"
-#define TRAIT_MEDIUMARMOR				"Maille Training"
+#define TRAIT_MEDIUMARMOR				"Mail Training"
 #define TRAIT_HEAVYARMOR				"Plate Training"
 #define TRAIT_DODGEEXPERT              "Fast Reflexes"
 #define TRAIT_VILLAIN					"Villain"
@@ -20,6 +20,7 @@
 #define TRAIT_CRITICAL_WEAKNESS		"Critical Weakness"
 #define TRAIT_MANIAC_AWOKEN			"Awoken"
 #define TRAIT_NOROGSTAM				"Indefatigable" //for ai
+#define TRAIT_NOSLEEP				"Nite Creacher" //for thralls
 #define TRAIT_NUDIST					"Nudist" //you can't wear most clothes
 #define TRAIT_KNEESTINGER_IMMUNITY		"Blessing of Dendor"
 #define TRAIT_RETARD_ANATOMY			"Inhumen Anatomy" //can't wear hats and shoes
@@ -29,24 +30,34 @@
 #define TRAIT_SOUL_EXAMINE				"Blessing of Necra" //can check bodies to see if they have departed
 #define TRAIT_CYCLOPS_LEFT				"Cyclops (Left)" //poked left eye
 #define TRAIT_CYCLOPS_RIGHT				"Cyclops (Right)" //poked right eye
+#define TRAIT_LEECHIMMUNE				"Unleechable" //leeches wont attach in bog squares
+#define TRAIT_ASSASSIN					"Assassin Training" //used for the assassin drifter's unique mechanics.
+#define TRAIT_BARDIC_TRAINING			"Bardic Training"
+#define TRAIT_GRAVEROBBER				"Graverobber"	// Prevents getting the cursed debuff when unearthing a grave, but permanent -1 LUC to whoever has it.
 
 #define TRAIT_MISSING_NOSE "Missing Nose" //halved stamina regeneration
 #define TRAIT_DISFIGURED "Disfigured"
 #define TRAIT_SPELLCOCKBLOCK "Bewitched" //prevents spellcasting
 #define TRAIT_ANTIMAGIC	"Anti-Magic"
 #define TRAIT_SHOCKIMMUNE "Shock Immunity"
-#define TRAIT_NOSLEEP "Fatal Insomnia"
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
 #define TRAIT_SIMPLE_WOUNDS "simple_wounds"
 #define TRAIT_BANDITCAMP "banditcamp"
+#define TRAIT_KNOWBANDITS "knowbandits"
 #define TRAIT_VAMPMANSION "vampiremansion"
 #define TRAIT_LIMPDICK "limp_dick"
 #define TRAIT_SEXPASS "sexpass"
+#define TRAIT_INTRAINING "intraining" //allows certain roles to bypass the average skill limitation of training dummies
 #define TRAIT_STEELHEARTED "steelhearted" //no bad mood from dismembering or seeing this
 #define TRAIT_IWASREVIVED "iwasrevived" //prevents PQ gain from reviving the same person twice
 #define TRAIT_IWASUNZOMBIFIED "iwasunzombified" //prevents PQ gain from curing a zombie twice
+#define TRAIT_ZIZOID_HUNTED "zizoidhunted" // Used to signal character has been marked by death by the Zizoid cult
+
+// JOB RELATED TRAITS
+
+#define TRAIT_MALUMFIRE "Professional Smith"
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WEBWALK = "I can move freely between webs.",
@@ -56,19 +67,25 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NUTCRACKER = "I love kicking idiots on the nuts!",
 	TRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
 	TRAIT_STRONGBITE = "Stronger bites, critical bite attacks.",
-	TRAIT_TORTURER = "I've learned the art of confessions.",
 	TRAIT_HATEWOMEN = "Double damage against female mobs.",
-	TRAIT_GOODLOVER = "It's a lucky thing to share my bed.",
+	TRAIT_GOODLOVER = "It's a blessing to share a bed with me.",
+	TRAIT_SEEDKNOW = "I know which seeds grow which crops.",
 	TRAIT_NOBLE = "<span class='blue'>I'm of noble blood.</span>",
 	TRAIT_EMPATH = "I can notice when people are in pain.",
 	TRAIT_BREADY = "Defensive stance does not passively fatigue me.",
 	TRAIT_MEDIUMARMOR = "I can move freely in medium armor.",
 	TRAIT_HEAVYARMOR = "I can move freely in heavy armor.",
-	TRAIT_DODGEEXPERT = "I can dodge easly while only wearing light armor.",
+	TRAIT_DODGEEXPERT = "I can dodge easily while only wearing light armor.",
 	TRAIT_VILLAIN = "I am a devious, conniving villain!",
 	TRAIT_SOUL_EXAMINE = "<span class='deadsay'>I know when someone's soul has departed.</span>",
 	TRAIT_CYCLOPS_RIGHT = "<span class='warning'>My right eye has been poked out...</span>",
-	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes."
+	TRAIT_LEECHIMMUNE = "Leeches are reluctant to bite me.",
+	TRAIT_ASSASSIN = "My soul has been tainted by the god of murder.",
+	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
+	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
+	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments.",
+	TRAIT_INTRAINING = "I'm going to be a knight someday!",
+	TRAIT_GRAVEROBBER = "Necra favors my grim deeds, I can unearth graves without being cursed by her."
 	))
 
 // trait accessor defines

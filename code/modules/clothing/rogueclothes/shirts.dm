@@ -1,11 +1,13 @@
 /obj/item/clothing/suit/roguetown/shirt
 	slot_flags = ITEM_SLOT_SHIRT
 	body_parts_covered = CHEST|VITALS
+	prevent_crits = list(BCLASS_LASHING)
 	icon = 'icons/roguetown/clothing/shirts.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
-	equip_sound = 'sound/blank.ogg'
-	drop_sound = 'sound/blank.ogg'
-	pickup_sound =  'sound/blank.ogg'
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	sleevetype = "shirt"
 	edelay_type = 1
@@ -13,6 +15,8 @@
 	bloody_icon_state = "bodyblood"
 	boobed = TRUE
 	sewrepair = TRUE
+	anvilrepair = null
+	smeltresult = /obj/item/ash
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt
 	name = "shirt"
@@ -110,7 +114,7 @@
 
 /obj/item/clothing/suit/roguetown/shirt/shortshirt
 	name = "shirt"
-	desc = ""
+	desc = "A simple shirt."
 	icon_state = "shortshirt"
 	item_state = "shortshirt"
 	r_sleeve_status = SLEEVE_NORMAL
@@ -129,11 +133,20 @@
 	l_sleeve_status = SLEEVE_TORN
 	body_parts_covered = CHEST|VITALS
 
+/obj/item/clothing/suit/roguetown/shirt/shadowshirt
+	name = "silk shirt"
+	desc = "A sleeveless shirt woven of glossy material."
+	icon_state = "shadowshirt"
+	item_state = "shadowshirt"
+	r_sleeve_status = SLEEVE_TORN
+	l_sleeve_status = SLEEVE_TORN
+	body_parts_covered = CHEST|VITALS
+	allowed_race = list("elf", "dark elf")
 
 /obj/item/clothing/suit/roguetown/shirt/rags
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "rags"
-	desc = ""
+	desc = "Better than going naked? You be the judge."
 	body_parts_covered = CHEST|GROIN|VITALS
 	color = "#b0b0b0"
 	icon_state = "rags"
@@ -204,6 +217,20 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
 	color = CLOTHING_PURPLE
 
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/maid
+	color = COLOR_RED
+
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/maid/Initialize()
+	..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+	else
+		GLOB.lordcolor += src
+
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/maid/Destroy()
+	GLOB.lordcolor -= src
+	return ..()
+
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/random/Initialize()
 	color = pick("#6b5445", "#435436", "#704542", "#79763f", CLOTHING_BLUE)
 	..()
@@ -247,6 +274,7 @@
 	desc = ""
 	body_parts_covered = null
 	icon_state = "sexydress"
+	item_state = "sexydress"
 	sleevetype = null
 	sleeved = null
 	color = "#a90707"
@@ -257,7 +285,7 @@
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/webs
 	name = "webbed shirt"
-	desc = "Exotic silk finely woven into.. this? Might as well be wearing a spiderweb"
+	desc = "Exotic silk finely woven into.. this? Might as well be wearing a spiderweb."
 	icon_state = "webs"
 	item_state = "webs"
 	r_sleeve_status = SLEEVE_NORMAL
@@ -268,7 +296,7 @@
 /obj/item/clothing/suit/roguetown/shirt/robe
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "robe"
-	desc = ""
+	desc = "A simple robe, worn by about everyone."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "white_robe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -283,7 +311,7 @@
 /obj/item/clothing/suit/roguetown/shirt/robe/astrata
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "sun robe"
-	desc = ""
+	desc = "Bask in Her glorious incandescence, for it is the Light That Touches All."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "astratarobe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -298,7 +326,7 @@
 /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "briar robe"
-	desc = ""
+	desc = "Nature nurtures us and we, in turn, will nurture it back in the end."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "dendorrobe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -313,7 +341,7 @@
 /obj/item/clothing/suit/roguetown/shirt/robe/necra
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "mourning robe"
-	desc = ""
+	desc = "Fear not to pay the carriageman's toll, for it is safe passage into Her eternal embrace."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "necrarobe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -364,9 +392,11 @@
 	icon_state = "nun"
 	item_state = "nun"
 	allowed_sex = list(FEMALE)
+	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
 
 /obj/item/clothing/suit/roguetown/shirt/robe/wizard
 	name = "wizard's robe"
+	desc = "Robes belonging to notable spellcasters."
 	icon_state = "wizardrobes"
 	icon = 'icons/roguetown/clothing/shirts.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
@@ -383,7 +413,7 @@
 /obj/item/clothing/suit/roguetown/shirt/jester
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
 	name = "jester's tunick"
-	desc = ""
+	desc = "Just remember that the last laugh is on you."
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 	icon_state = "jestershirt"
 	icon = 'icons/roguetown/clothing/shirts.dmi'
@@ -396,8 +426,9 @@
 /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
 	name = "grenzelhoftian hip-shirt"
-	desc = ""
+	desc = "A true fashion statement worn by Grenzelhoftian swordsmen."
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
+	armor = list("melee" = 20, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	icon_state = "grenzelshirt"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	boobed = TRUE

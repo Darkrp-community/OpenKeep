@@ -251,7 +251,7 @@
 		thrown_thing.safe_throw_at(target, thrown_range, thrown_speed, src, null, null, null, move_force)
 		if(!used_sound)
 			used_sound = pick(PUNCHWOOSH)
-		playsound(get_turf(src), used_sound, 100, FALSE)
+		playsound(get_turf(src), used_sound, 60, FALSE)
 
 /mob/living/carbon/restrained(ignore_grab = TRUE)
 //	. = (handcuffed || (!ignore_grab && pulledby && pulledby.grab_state >= GRAB_AGGRESSIVE))
@@ -447,6 +447,10 @@
 	visible_message("[cuff_break ? "<span class='danger'>" : "<span class='warning'>"][src] manages to [cuff_break ? "break" : "slip"] out of [I]!</span>")
 	to_chat(src, "<span class='notice'>I [cuff_break ? "break" : "slip"] out of [I]!</span>")
 
+	if(istype(I, /obj/item/net))
+		if(has_status_effect(/datum/status_effect/debuff/netted))
+			remove_status_effect(/datum/status_effect/debuff/netted)
+
 	if(cuff_break)
 		. = !((I == handcuffed) || (I == legcuffed))
 		qdel(I)
@@ -522,7 +526,7 @@
 		stat("CON: \Roman [STACON]")
 		stat("END: \Roman [STAEND]")
 		stat("SPD: \Roman [STASPD]")
-		stat("PATRON: [PATRON]")
+		stat("PATRON: [patron]")
 
 /mob/living/carbon/Stat()
 	..()
@@ -933,8 +937,10 @@
 				severity = 2
 			if(40 to 60)
 				severity = 3
+				overlay_fullscreen("painflash", /atom/movable/screen/fullscreen/painflash)
 			if(60 to 80)
 				severity = 4
+				overlay_fullscreen("painflash", /atom/movable/screen/fullscreen/painflash)
 			if(80 to 99)
 				severity = 5
 				overlay_fullscreen("painflash", /atom/movable/screen/fullscreen/painflash)

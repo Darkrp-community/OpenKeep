@@ -56,6 +56,8 @@
 	if(!user.hud_used.reads)
 		return
 	if(!user.can_read(src))
+		if(info)
+			user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
 		return
 	/*font-size: 125%;*/
 	if(in_range(user, src) || isobserver(user))
@@ -186,11 +188,20 @@
 /obj/item/paper/confession
 	name = "confession"
 	icon_state = "confession"
-	info = "THE GUILTY PARTY ADMITS THEIR SIN AND THE WEAKENING OF PSYDON'S HOLY FLOCK. THEY WILL REPENT AND SUBMIT TO ANY PUNISHMENT THE CLERGY DEEMS APPROPRIATE, OR BE RELEASED IMMEDIATELY. LET THIS RECORD OF THEIR SIN WEIGH ON THE ANGEL GABRIEL'S JUDGEMENT AT THE MANY-SPIKED GATES OF HEAVEN.<br/><br/>SIGNED,"
-	var/signed = FALSE
-	textper = 150
+	desc = "A drab piece of parchment stained with the magical ink of the Order lodges. Looking at it fills you with profound guilt."
+	info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS  . THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,"
+	var/signed = null
+	var/antag = null // The literal name of the antag, like 'Bandit' or 'worshiper of Zizo'
+	var/bad_type = null // The type of the antag, like 'OUTLAW OF THE THIEF-LORD'
+	textper = 108
+	maxlen = 2000
 
-/obj/item/paper/confession/update_icon_state()
+/obj/item/paper/confession/attackby(obj/item/P, mob/living/carbon/human/user, params)
+	if(istype(P, /obj/item/natural/feather))
+		to_chat(user, "<span class='warning'>The paper resists my attempts to write upon it!</span>")
+		return
+
+/obj/item/paper/confession/update_icon_state() 
 	if(mailer)
 		icon_state = "paper_prep"
 		name = "letter"
@@ -204,23 +215,83 @@
 	icon_state = "confession"
 
 /obj/item/paper/confession/attack(mob/living/carbon/human/M, mob/user)
-	var/mob/living/carbon/V = M
+	testing("paper confession offer. target is [M], user is [user].")
 	if(signed)
 		return ..()
-	if(!M.get_bleed_rate())
-		to_chat(user, "<span class='warning'>No. The sinner must be bleeding.</span>")
-		return
 	if(!M.stat)
 		to_chat(user, "<span class='info'>I courteously offer the confession to [M].</span>")
-		if(alert(M, "Sign the confession with your blood?", "CONFESSION OF SIN", "Yes", "No") != "Yes")
+		if(alert(M, "Sign the confession of your true nature?", "CONFESSION OF SIN", "Yes", "No") != "Yes")
 			return
 		if(M.stat)
 			return
 		if(signed)
 			return
-		if(M.has_flaw(/datum/charflaw/addiction/godfearing))
-			V.add_stress(/datum/stressevent/confessedgood)
+		testing("[M] is signing the confession.")
+		M.confess_sins(resist=FALSE, user=user, torture=FALSE)
+
+/obj/item/paper/confession/read(mob/user)
+	if(!user.client || !user.hud_used)
+		return
+	if(!user.hud_used.reads)
+		return
+	if(!user.can_read(src))
+		if(info)
+			user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
+		return
+	/*font-size: 125%;*/
+	if(in_range(user, src) || isobserver(user))
+		user.hud_used.reads.icon_state = "scroll"
+		user.hud_used.reads.show()
+		var/dat = {"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
+					<html><head><style type=\"text/css\">
+					body { background-image:url('book.png');background-repeat: repeat; }</style></head><body scroll=yes>"}
+		dat += "[info]<br>"
+		dat += "<a href='?src=[REF(src)];close=1' style='position:absolute;right:50px'>Close</a>"
+		dat += "</body></html>"
+		user << browse(dat, "window=reading;size=460x300;can_close=0;can_minimize=0;can_maximize=0;can_resize=0;titlebar=0")
+		onclose(user, "reading", src)
+	else
+		return "<span class='warning'>I'm too far away to read it.</span>"
+
+/obj/item/merctoken
+	name = "mercenary token"
+	desc = "A small, palm-fitting bound scroll - a minuature writ of commendation for a mercenary under MGE. Present to a Guild representative for signing."
+	icon_state = "merctoken"
+	icon = 'icons/roguetown/items/misc.dmi'
+	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+	dropshrink = 0.5
+	firefuel = 30 SECONDS
+	sellprice = 2
+	throwforce = 0
+	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
+	var/signee = null
+	var/signeejob = null
+	var/signed = 0
+
+/obj/item/merctoken/attackby(obj/item/P, mob/living/carbon/human/user, params)
+	if(istype(P, /obj/item/pen) || istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
+		if(!user.can_read(src))
+			to_chat(user, "<span class='warning'>Even a reader would find these verba incomprehensible.</span>")
+			return
+		if(signed == 1)
+			to_chat(user, "<span class='warning'>This token has already been signed.</span>")
+			return
+		if(user.can_read(src))
+			if(user.mind.assigned_role == "Mercenary")
+				to_chat(user, "<span class='warning'>Signing my own commendation would only befool me.</span>")
+				return
+			if(user.mind.assigned_role != "Merchant")
+				to_chat(user, "<span class='warning'>This is incomprehensible.</span>")
+				return
+			if(user.mind.assigned_role == "Merchant")
+				signee = user.real_name
+				signeejob = user.mind.assigned_role
+				visible_message("<span class='warning'>[user] writes their name down on the token.</span>")
+				playsound(src, 'sound/items/write.ogg', 100, FALSE)
+				desc = "A small, palm-fitting bound scroll that can be sent by mail to the Guild. Most of the fine print is unintelligible, save for one bold SIGNEE: [signee], [signeejob] of Enigma."
+				signed = 1
+				return
 		else
-			V.add_stress(/datum/stressevent/confessed)
-		signed = M.real_name
-		info = "THE GUILTY PARTY ADMITS THEIR SIN AND THE WEAKENING OF PSYDON'S HOLY FLOCK. THEY WILL REPENT AND SUBMIT TO ANY PUNISHMENT THE CLERGY DEEMS APPROPRIATE, OR BE RELEASED IMMEDIATELY. LET THIS RECORD OF THEIR SIN WEIGH ON THE ANGEL GABRIEL'S JUDGEMENT AT THE MANY-SPIKED GATES OF HEAVEN.<br/><br/>SIGNED,<br/><font color='red'>[signed]</font>"
+			return

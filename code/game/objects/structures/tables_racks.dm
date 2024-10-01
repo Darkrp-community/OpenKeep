@@ -185,7 +185,25 @@
 				//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
 				I.pixel_x = initial(I.pixel_x) += CLAMP(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
 				I.pixel_y = initial(I.pixel_y) += CLAMP(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
-				return 1
+				if(istype(I, /obj/item/rogue/instrument)) // SURPRISE SURPRISE, YET ANOTHER EXPLOIT PREVENTION.
+					var/obj/item/rogue/instrument/P = I
+					if(P.playing)
+						P.playing = FALSE
+						P.soundloop.stop()
+						for(var/mob/living/carbon/L in viewers(7))
+							var/mob/living/carbon/buffed = L
+							if(buffed.mind?.has_antag_datum(/datum/antagonist))
+								if(buffed.mind?.isactuallygood())
+									for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+										buffed.remove_status_effect(b)
+										return TRUE
+								else
+									return TRUE
+							else
+								for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+									buffed.remove_status_effect(b)
+									return TRUE
+				return TRUE
 
 	return ..()
 
@@ -230,6 +248,7 @@
 /*
  * Glass tables
  */
+
 /obj/structure/table/glass
 	name = "glass table"
 	desc = ""
@@ -303,6 +322,7 @@
  * Wooden tables
  */
 
+
 /obj/structure/table/wood
 	name = "wooden table"
 	desc = ""
@@ -361,7 +381,48 @@
 	icon_state = "vtable2"
 	debris = list(/obj/item/grown/log/tree/small = 1)
 
-/obj/structure/table/fine
+/obj/structure/table/wood/counter
+    name = "counter"
+    icon_state = "longtable_mid"
+
+/obj/structure/table/wood/counter/end
+    icon_state = "longtable"
+
+/obj/structure/table/wood/plain
+    icon_state = "tablewood1"
+
+/obj/structure/table/wood/plain/alt
+    icon_state = "tablewood2"
+
+/obj/structure/table/wood/plain/alto
+    icon_state = "tablewood3"
+
+/obj/structure/table/wood/reinforced
+    name = "reinforced table"
+    icon_state = "tablewood"
+
+/obj/structure/table/wood/reinforced_alt
+    icon_state = "tablewood_alt2"
+
+/obj/structure/table/wood/large
+    icon_state = "largetable_mid"
+
+/obj/structure/table/wood/large/corner
+    icon_state = "largetable"
+
+/obj/structure/table/wood/large_alt
+    icon_state = "largetable_mid_alt"
+
+/obj/structure/table/wood/large/corner_alt
+    icon_state = "largetable_alt"
+
+/obj/structure/table/wood/large_blue
+    icon_state = "largetable_mid_alt2"
+
+/obj/structure/table/wood/large/corner_blue
+    icon_state = "largetable_alt2"
+
+/obj/structure/table/wood/fine
 	name = "wooden table"
 	desc = ""
 	icon = 'icons/roguetown/misc/tables.dmi'
@@ -372,7 +433,7 @@
 	debris = list(/obj/item/grown/log/tree/small = 2)
 	climb_offset = 10
 
-/obj/structure/table/finer
+/obj/structure/table/wood/nice
 	name = "wooden table"
 	desc = ""
 	icon = 'icons/roguetown/misc/tables.dmi'
@@ -459,9 +520,31 @@
 	buildstack = /obj/item/stack/tile/carpet/royalblue
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_royalblue.dmi'
 
+/*	..................   More tables   ................... */
+/obj/structure/table/wood/reinf_long
+    icon_state = "tablewood_reinf"
+
+/obj/structure/table/wood/plain_alt
+    icon_state = "tablewood_plain"
+
+/obj/structure/table/wood/large_new
+    icon_state = "alt_largetable_mid"
+/obj/structure/table/wood/large/corner_new
+    icon_state = "alt_largetable"
+
+/obj/structure/table/wood/reinforced_alter
+    icon_state = "tablewood_alt"
+
+/obj/structure/table/wood/nice/decorated
+	icon_state = "tablefine_alt"
+
+/obj/structure/table/wood/nice/decorated_alt
+	icon_state = "tablefine_alt2"
+
 /*
  * Reinforced tables
  */
+
 /obj/structure/table/reinforced
 	name = "reinforced table"
 	desc = ""
@@ -555,6 +638,7 @@
 /*
  * Racks
  */
+
 /obj/structure/rack
 	name = "rack"
 	desc = ""
@@ -630,7 +714,7 @@
 	take_damage(rand(4,8), BRUTE, "melee", 1)*/
 
 /*
- * Rack destruction
+ * Rack Destruction
  */
 
 /obj/structure/rack/deconstruct(disassembled = TRUE)
@@ -658,11 +742,36 @@
 	pixel_y = 32
 
 /obj/structure/rack/rogue/shelf/big
-	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "shelf_big"
 	climbable = FALSE
 	dir = SOUTH
 	pixel_y = 16
+
+/obj/structure/rack/rogue/shelf/biggest
+	icon_state = "shelf_biggest"
+	pixel_y = 0
+
+/obj/structure/rack/rogue/shelf/notdense // makes the wall mounted one less weird in a way, got downside of offset when loaded again tho
+	density = FALSE
+	pixel_y = 24
+
+// Necessary to avoid a critical bug with disappearing weapons.
+/obj/structure/rack/rogue/attackby(obj/item/W, mob/user, params)
+	if(!user.cmode)
+		if(!(W.item_flags & ABSTRACT))
+			if(user.transferItemToLoc(W, drop_location(), silent = FALSE))
+				var/list/click_params = params2list(params)
+				if(!click_params || !click_params["icon-x"] || !click_params["icon-y"])
+					return
+				W.pixel_x = initial(W.pixel_x) += CLAMP(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
+				W.pixel_y = initial(W.pixel_y) += CLAMP(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
+				return 1
+	else
+		. = ..()
+
+// temporary
+/obj/item/cooking/platter
+
 /*
  * Rack Parts
  */

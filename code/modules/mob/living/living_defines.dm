@@ -163,7 +163,12 @@
 	var/list/death_trackers = list()
 
 	var/rot_type = /datum/component/rot/simple
+
+	var/list/mob_descriptors
+	var/list/custom_descriptors
 	
 	var/rogue_sneaking = FALSE
 	
 	var/rogue_sneaking_light_threshhold = 0.15
+
+	var/voice_pitch = 1

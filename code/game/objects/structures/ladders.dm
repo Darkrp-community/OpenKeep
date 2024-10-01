@@ -88,16 +88,16 @@
 		show_fluff_message(going_up, user)
 		ladder.add_fingerprint(user)
 	var/turf/T = get_turf(ladder)
-	var/atom/movable/AM
-	if(ismob(user.pulling))
-		AM = user.pulling
-		AM.forceMove(T)
-	user.forceMove(T)
-	if(AM)
-		user.start_pulling(AM,supress_message = TRUE)
+	if(isliving(user))
+		mob_move_travel_z_level(user, T)
+	else
+		user.forceMove(T)
 
 /obj/structure/ladder/proc/use(mob/user, is_ghost=FALSE)
 	if(!in_range(src, user))
+		return
+
+	if(user.buckled)
 		return
 
 	if (up && down)

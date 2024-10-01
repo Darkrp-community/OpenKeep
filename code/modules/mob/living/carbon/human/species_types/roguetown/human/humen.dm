@@ -5,35 +5,37 @@
 	name = "Humen"
 	id = "human"
 	desc = "<b>Humen</b><br>\
-	Humen (or Human) are the eldest of the weeping gods creation. Noted for their\
-	tenacity and overwhelming population, humans tend to outnumber the other races. \
-	at a rate of about ten to one in regions such as Grenzelhoft. Althrough to the west \
-	the opposite is true. Humen come from a vast swathe of cultures and ethnicity, most of which\
-	have historically been at odds with one another. Being the eldest of the weeping God, humen\
-	tend to find fortune easier than the other races, and are so diverse that no other racial trait\
+	Humenity is the 'perfected race' of the weeping god. Noted for their \
+	tenacity and overwhelming population, humens tend to outnumber the other races drastically. \
+	Humens come from a vast swathe of cultures and ethnicities all around Grimoria, most of which \
+	have historically been at odds with one another and other races. \
+	Humens tend to find fortune easier than the other races, and are so diverse that no other racial trait \
 	are dominant in their species..."
+
+	skin_tone_wording = "Ancestry"
+
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "wings" = "None")
 	use_skintones = 1
-	possible_ages = ALL_AGES_LIST
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mm.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	hairyness = "t1"
 	soundpack_m = /datum/voicepack/male
 	soundpack_f = /datum/voicepack/female
-	offset_features = list(OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
-	OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
-	OFFSET_FACE = list(0,1), OFFSET_BELT = list(0,1), OFFSET_BACK = list(0,1), \
-	OFFSET_NECK = list(0,1), OFFSET_MOUTH = list(0,1), OFFSET_PANTS = list(0,1), \
-	OFFSET_SHIRT = list(0,1), OFFSET_ARMOR = list(0,1), OFFSET_HANDS = list(0,1), OFFSET_UNDIES = list(0,1), \
+	offset_features = list(OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_WRISTS = list(0,0),\
+	OFFSET_CLOAK = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), \
+	OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,0), \
+	OFFSET_NECK = list(0,0), OFFSET_MOUTH = list(0,0), OFFSET_PANTS = list(0,0), \
+	OFFSET_SHIRT = list(0,0), OFFSET_ARMOR = list(0,0), OFFSET_HANDS = list(0,0), OFFSET_UNDIES = list(0,0), \
 	OFFSET_ID_F = list(0,-1), OFFSET_GLOVES_F = list(0,0), OFFSET_WRISTS_F = list(0,0), OFFSET_HANDS_F = list(0,0), \
 	OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
 	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
@@ -42,24 +44,33 @@
 	specstats = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 1, "endurance" = 1, "speed" = 0, "fortune" = 0)
 	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 1, "constitution" = 0, "endurance" = 0, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
-	possible_faiths = list(FAITH_PSYDON)
+
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
 
 /datum/species/human/northern/check_roundstart_eligible()
 	return TRUE
 
 /datum/species/human/northern/get_skin_list()
 	return sortList(list(
-	"skin1" = "fff0e9",
-	"skin2" = "ffe0d1",
-	"skin3" = "fcccb3",
-	"skin3" = "edc6b3",
-	"skin4" = "e2b9a3",
-	"skin5" = "d9a284",
-	"skin6" = "c9a893",
-	"skin7" = "ba9882",
-	"skin8" = "ac8369",
-	"skin9" = "9c6f52",
-	"skin10" = "4e3729"
+		"Ice Cap" = SKIN_COLOR_ICECAP,
+		"Arctic" = SKIN_COLOR_ARCTIC,
+		"Tundra" = SKIN_COLOR_TUNDRA,
+		"Continental" = SKIN_COLOR_CONTINENTAL,
+		"Temperate" = SKIN_COLOR_TEMPERATE,
+		"Coastal" = SKIN_COLOR_COASTAL,
+		"Subtropical" = SKIN_COLOR_SUBTROPICAL,
+		"Tropical Dry" = SKIN_COLOR_TROPICALDRY,
+		"Tropical Wet" = SKIN_COLOR_TROPICALWET,
+		"Desert" = SKIN_COLOR_DESERT,
+		"Crimson Lands" = SKIN_COLOR_CRIMSONLANDS,
 	))
 
 /datum/species/human/northern/get_hairc_list()
@@ -79,10 +90,11 @@
 	"black - rogue" = "2b201b",
 	"black - midnight" = "1d1b2b",
 
-	"red - berry" = "48322a",
+	"red - berry" = "b23434",
 	"red - wine" = "82534c",
 	"red - sunset" = "82462b",
-	"red - blood" = "822b2b"
+	"red - blood" = "822b2b",
+	"red - maroon" = "612929"
 
 	))
 

@@ -17,11 +17,11 @@
 	var/STASTR
 	var/STASPD
 	var/STAINT
+	var/STACON
 	var/cmode_music
 	var/list/base_intents
 	/// Whether or not we have been turned
 	var/has_turned = FALSE
-	/// Last time we bit someone - Zombies will try to bite after 10 seconds of not biting
 	/// Traits applied to the owner mob when we turn into a zombie
 	var/static/list/traits_zombie = list(
 		TRAIT_NOROGSTAM,
@@ -29,6 +29,7 @@
 		TRAIT_NOLIMBDISABLE,
 		TRAIT_NOHUNGER,
 		TRAIT_EASYDISMEMBER,
+		TRAIT_CRITICAL_WEAKNESS,
 		TRAIT_NOPAIN,
 		TRAIT_NOBREATH,
 		TRAIT_TOXIMMUNE,
@@ -46,6 +47,7 @@
 	/// Traits applied to the owner when we are cured and turn into just "rotmen"
 	var/static/list/traits_rotman = list(
 		TRAIT_EASYDISMEMBER,
+		TRAIT_CRITICAL_WEAKNESS,
 		TRAIT_NOPAIN,
 		TRAIT_NOPAINSTUN,
 		TRAIT_NOBREATH,
@@ -59,11 +61,11 @@
 	if(istype(examined_datum, /datum/antagonist/vampirelord))
 		var/datum/antagonist/vampirelord/V = examined_datum
 		if(!V.disguised)
-			return "<span class='boldnotice'>Another deadite.</span>"
+			return "<span class='boldnotice'>Another kind of deadite.</span>"
 	if(istype(examined_datum, /datum/antagonist/zombie))
 		return "<span class='boldnotice'>Another deadite. My ally.</span>"
 	if(istype(examined_datum, /datum/antagonist/skeleton))
-		return "<span class='boldnotice'>Another deadite.</span>"
+		return "<span class='boldnotice'>Another kind of deadite.</span>"
 
 /datum/antagonist/zombie/on_gain()
 	var/mob/living/carbon/human/zombie = owner?.current
@@ -79,11 +81,17 @@
 	if(zombie.dna?.species)
 		soundpack_m = zombie.dna.species.soundpack_m
 		soundpack_f = zombie.dna.species.soundpack_f
+		var/mutable_appearance/rotflies = mutable_appearance('icons/roguetown/mob/rotten.dmi', "deadite")
+		zombie.add_overlay(rotflies)
 	base_intents = zombie.base_intents
-	STASTR = zombie.STASTR
-	STASPD = zombie.STASPD
-	STAINT = zombie.STAINT
+//	STASTR = zombie.STASTR-1
+//	STASPD = zombie.STASPD-5
+//	STAINT = zombie.STAINT-5
+//	zombie.STACON = 5
+	zombie.STASPD = 5
+	zombie.STAINT = 2
 	cmode_music = zombie.cmode_music
+	zombie.vitae_pool = 0 // Deadites have no vitae to drain from.
 	return ..()
 
 /datum/antagonist/zombie/on_removal()
@@ -105,12 +113,13 @@
 		zombie.STASTR = STASTR
 		zombie.STASPD = STASPD
 		zombie.STAINT = STAINT
+		zombie.cmode_music = cmode_music
 		for(var/trait in traits_zombie)
 			REMOVE_TRAIT(zombie, trait, "[type]")
 		zombie.remove_client_colour(/datum/client_colour/monochrome)
 		if(has_turned && become_rotman)
-			zombie.STACON = max(zombie.STACON - 3, 1) //ur rotting bro
-			zombie.STASPD = max(zombie.STASPD - 4, 1)
+			zombie.STACON = max(zombie.STACON - 5, 1) //ur rotting bro
+			zombie.STASPD = max(zombie.STASPD - 5, 1)
 			zombie.STAINT = max(zombie.STAINT - 3, 1)
 			for(var/trait in traits_rotman)
 				ADD_TRAIT(zombie, trait, "[type]")
@@ -179,11 +188,14 @@
 			zombie_part.rotted = TRUE
 		zombie_part.update_disabled()
 	zombie.update_body()
+	zombie.cmode_music = 'sound/music/combat_weird.ogg'
 
 	if(prob(8))
 		zombie.STASPD = rand(5, 7)
 
 	zombie.STAINT = 1
+
+	zombie.vitae_pool = 0 // Again, just in case.
 
 /datum/antagonist/zombie/greet()
 	to_chat(owner.current, "<span class='userdanger'>Death is not the end...</span>")
@@ -196,8 +208,8 @@
 		return
 	var/mob/living/carbon/human/zombie = user
 	if(world.time > next_idle_sound)
-		zombie.emote("idle")
-		next_idle_sound = world.time + rand(5 SECONDS, 10 SECONDS)
+		zombie.emote("zmoan")
+		next_idle_sound = world.time + rand(12 SECONDS, 32 SECONDS)
 
 //Infected wake param is just a transition from living to zombie, via zombie_infect()
 //Previously you just died without warning in 3 minutes, now you just become an antag
@@ -295,4 +307,5 @@
 	emote("scream") // heres your warning to others bro
 	Knockdown(1)
 	zombie_antag.wake_zombie(TRUE)
+
 	return TRUE

@@ -1060,6 +1060,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		ADMIN_PUNISHMENT_MAZING,
 		ADMIN_PUNISHMENT_CBT,
 		ADMIN_PUNISHMENT_NECKSNAP,
+		ADMIN_PUNISHMENT_HUNTED,
 	)
 
 	var/punishment = input("Choose a punishment", "DIVINE SMITING") as null|anything in sortList(punishment_list)
@@ -1145,6 +1146,18 @@ Traitors and the like can also be revived with the previous role mostly intact.
 				to_chat(usr,"<span class='warning'>Target must have a head!</span>")
 				return
 			affecting.add_wound(/datum/wound/fracture/neck)
+		if(ADMIN_PUNISHMENT_HUNTED)
+			if(!ishuman(target))
+				to_chat(usr,"<span class='warning'>Target must be human!</span>")
+				return
+			ADD_TRAIT(target, TRAIT_ZIZOID_HUNTED, TRAIT_GENERIC) // Gives the victim a trait to track that they are wanted dead.
+			log_hunted("[key_name(target)] playing as [target] had been hunted by Admin punishment.")
+			for (var/mob/living/carbon in world) // Iterate through all mobs in the world
+				if (HAS_TRAIT(carbon, TRAIT_ASSASSIN) && !(carbon.stat == DEAD)) //Check if they are an assassin and alive
+					for(var/obj/item/I in carbon) // Checks to see if the assassin has their dagger on them. If so, the dagger will let them know of a new target.
+						if(istype(I, /obj/item/rogueweapon/huntingknife/idagger/steel/profane)) // Checks to see if the assassin has their dagger on them.
+							carbon.visible_message("profane dagger whispers, <span class='danger'>\"The Dark Sun Graggar himself has ordered us to punish [target.real_name] for their crimes!\"</span>")
+			to_chat(target.mind, "<span class='danger'>My hair stands on end. Has someone just said my name? I should watch my back.</span>")
 	punish_log(target, punishment)
 
 /client/proc/punish_log(whom, punishment)

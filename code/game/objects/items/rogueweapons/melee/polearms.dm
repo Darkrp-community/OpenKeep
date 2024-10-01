@@ -46,17 +46,20 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	blade_dulling = DULLING_BASHCHOP
+	sharpness = IS_BLUNT
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	walking_stick = TRUE
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	max_blade_int = 120
 	max_integrity = 200
 	wdefense = 5
 	bigboy = TRUE
 	gripsprite = TRUE
 	associated_skill = /datum/skill/combat/polearms
+	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
+	sellprice = 5
 
 /obj/item/rogueweapon/woodstaff/getonmobprop(tag)
 	. = ..()
@@ -82,6 +85,7 @@
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
 	blade_dulling = DULLING_BASHCHOP
+	resistance_flags = FIRE_PROOF // Leniency for unique items
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
@@ -91,6 +95,7 @@
 	bigboy = TRUE
 	gripsprite = TRUE
 	associated_skill = /datum/skill/combat/polearms
+	sellprice = 100
 
 /obj/item/rogueweapon/woodstaff/aries/getonmobprop(tag)
 	. = ..()
@@ -120,17 +125,20 @@
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	max_blade_int = 100
 	max_integrity = 300
 	minstr = 8
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
-	dropshrink = 0.6
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
+	dropshrink = 0.75
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 4
 	thrown_bclass = BCLASS_STAB
 	throwforce = 25
+	sellprice = 20
 
 /obj/item/rogueweapon/spear/getonmobprop(tag)
 	. = ..()
@@ -155,6 +163,7 @@
 	inhand_y_dimension = 64
 	bigboy = TRUE
 	gripsprite = TRUE
+	resistance_flags = FIRE_PROOF
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
 	minstr = 8
@@ -162,10 +171,12 @@
 	max_integrity = 450
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/polearms
-	dropshrink = 0.6
+	dropshrink = 0.75
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 5
+	wbalance = -1
+	sellprice = 60
 
 
 /obj/item/rogueweapon/spear/stone
@@ -191,6 +202,7 @@
 	walking_stick = TRUE
 	wdefense = 4
 	max_integrity = 120
+	sellprice = 5
 
 // Halberd Class
 
@@ -222,9 +234,10 @@
 /obj/item/rogueweapon/halberd
 	force = 15
 	force_wielded = 35
+	slowdown = 1
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, /datum/intent/spear/halberd/chop, SPEAR_BASH)
-	name = "halbert"
+	name = "halberd"
 	desc = "A reinforced polearm for clobbering ordained with a crested ax head, pick and sharp point, a royal arm for defence and aggression."
 	icon_state = "halberd"
 	icon = 'icons/roguetown/weapons/64.dmi'
@@ -238,14 +251,17 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	minstr = 8
-	max_blade_int = 100
+	max_blade_int = 300
 	max_integrity = 500
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/polearms
-	dropshrink = 0.6
+	dropshrink = 0.75
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 5
+	wbalance = -1
+	sellprice = 90
 
 /obj/item/rogueweapon/halberd/getonmobprop(tag)
 	. = ..()
@@ -260,25 +276,21 @@
 
 /obj/item/rogueweapon/halberd/bardiche
 	name = "bardiche"
-	desc = "A grand ax of northernly design, renown for decisive and delimbing as well as stunning bashes."
+	desc = "A grand axe of northernly design, renowned for easily chopping off limbs clean with brutal strength."
 	icon_state = "bardiche"
-	smeltresult = /obj/item/ingot/iron
-	max_blade_int = 300
-
-/obj/item/rogueweapon/halberd/iron
-	name = "iron halberd"
-	desc = ""
 	force = 12
-	force_wielded = 30
-	icon_state = "ihalberd"
+	force_wielded = 25
+	slowdown = 1
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	smeltresult = /obj/item/ingot/iron
-	max_blade_int = 300
+	max_blade_int = 200
 	max_integrity = 300
-	
+	sellprice = 40
 
 /obj/item/rogueweapon/eaglebeak
 	force = 15
 	force_wielded = 30
+	slowdown = 1
 	possible_item_intents = list(SPEAR_BASH, SPEAR_THRUST) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_BASH, SPEAR_THRUST, /datum/intent/mace/heavy/smash)
 	name = "eagle's beak"
@@ -299,10 +311,12 @@
 	associated_skill = /datum/skill/combat/polearms
 	max_blade_int = 300
 	max_integrity = 500
-	dropshrink = 0.6
+	dropshrink = 0.75
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 5
+	wbalance = -1
+	sellprice = 60
 
 /obj/item/rogueweapon/eaglebeak/getonmobprop(tag)
 	. = ..()
@@ -321,10 +335,12 @@
 	desc = "A polehammer of simple iron, fracture bone and dissent with simple brute force."
 	force = 12
 	force_wielded = 25
+	slowdown = 1
 	icon_state = "polehammer"
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 300
 	max_integrity = 300
+	sellprice = 40
 
 // Copper Spear
 
@@ -334,7 +350,7 @@
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
 	name = "copper spear"
-	desc = "A spear of Aasimar design, outdated but still serves it's purpose."
+	desc = "A spear of simple design, outdated and cheaply made but still serves its purpose."
 	icon_state = "cspear"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -345,18 +361,21 @@
 	gripsprite = TRUE
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = null
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
+	slot_flags = ITEM_SLOT_BACK
 	max_blade_int = 70
 	max_integrity = 130
 	minstr = 7
 	smeltresult = /obj/item/ingot/copper
 	associated_skill = /datum/skill/combat/polearms
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
 	dropshrink = 0.9
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 4
 	thrown_bclass = BCLASS_STAB
 	throwforce = 20
+	sellprice = 15
 
 /obj/item/rogueweapon/copperspear/getonmobprop(tag)
 	. = ..()
@@ -366,3 +385,21 @@
 				return list("shrink" = 0.7,"sx" = -7,"sy" = 2,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
 				return list("shrink" = 0.7,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+
+/obj/item/rogueweapon/spear/hoplite
+	force = 20 // Unique weapon from rare job, less unwieldy if used with one hand
+	force_wielded = 25
+	name = "ancient spear"
+	desc = "A humble spear with a bronze head, a rare survivor from the battles long past that nearly destroyed Grimoria."
+	icon_state = "bronzespear"
+	max_blade_int = 300
+	max_integrity = 300
+	smeltresult = null // No bronze ingots yet, unfortunately
+	sellprice = 120 // A noble collector would love to get his/her hands on one of these spears
+
+/obj/item/rogueweapon/spear/hoplite/winged // Winged version has +1 weapon defence and sells for a bit more, but is identical otherwise
+	name = "ancient winged spear"
+	desc = "A spear with a winged bronze head, a rare survivor from the battles long past that nearly destroyed Grimoria."
+	icon_state = "bronzespear_winged"
+	wdefense = 5
+	sellprice = 150 // A noble collector would love to get his/her hands on one of these spears

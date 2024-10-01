@@ -119,28 +119,64 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		return
 
 	if(href_list["commendsomeone"])
-		if(SSticker.current_state != GAME_STATE_FINISHED)
+		commendation_popup()
+		return
+
+	switch(href_list["_src_"])
+		if("holder")
+			hsrc = holder
+		if("usr")
+			hsrc = mob
+		if("prefs")
+			if (inprefs)
+				return
+			inprefs = TRUE
+			. = prefs.process_link(usr,href_list)
+			inprefs = FALSE
 			return
-		if(commendedsomeone)
+		if("vars")
+			return view_var_Topic(href,href_list,hsrc)
+		if("chat")
+			return chatOutput.Topic(href, href_list)
+
+	switch(href_list["action"])
+		if("openLink")
+			src << link(href_list["link"])
+	if (hsrc)
+		var/datum/real_src = hsrc
+		if(QDELETED(real_src))
 			return
-		var/list/selections = GLOB.character_ckey_list.Copy()
-		if(!selections.len)
-			return
-		var/selection = input(src,"Which Character?") as null|anything in sortList(selections)
-		if(!selection)
-			return
-		if(commendedsomeone)
-			return
-		var/theykey = selections[selection]
-		if(theykey == ckey)
-			to_chat(src,"You can't commend yourself.")
-			return
-		if(theykey)
-			commendedsomeone = TRUE
-			add_commend(theykey, ckey)
-			to_chat(src,"[selection] commended.")
-			log_game("COMMEND: [ckey] commends [theykey].")
-			log_admin("COMMEND: [ckey] commends [theykey].")
+
+	..()	//redirect to hsrc.Topic()
+
+/client/proc/commendation_popup()
+	if(SSticker.current_state != GAME_STATE_FINISHED)
+		return
+	if(commendedsomeone)
+		return
+	var/list/selections = GLOB.character_ckey_list.Copy()
+	if(!selections.len)
+		return
+	var/selection = input(src,"Which Character?") as null|anything in sortList(selections)
+	if(!selection)
+		return
+	if(commendedsomeone)
+		return
+	var/theykey = selections[selection]
+	if(theykey == ckey)
+		to_chat(src,"You can't commend yourself.")
+		return
+	if(theykey)
+		commendedsomeone = TRUE
+		add_commend(theykey, ckey)
+		to_chat(src,"[selection] commended.")
+		log_game("COMMEND: [ckey] commends [theykey].")
+		log_admin("COMMEND: [ckey] commends [theykey].")
+	return
+
+/client/Topic(href, href_list, hsrc)
+	if(href_list["schizohelp"])
+		answer_schizohelp(locate(href_list["schizohelp"]))
 		return
 
 	switch(href_list["_src_"])
@@ -1132,26 +1168,8 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 		return blacklisted
 
 /client/proc/commendsomeone(var/forced = FALSE)
-	if(commendedsomeone)
-		if(!forced)
-			to_chat(src, "<span class='danger'>You already commended someone this round.</span>")
-		return
-	if(alert(src,"Was there a character during this round that you would like to anonymously commend?", "Commendation", "YES", "NO") != "YES")
-		return
-	var/list/selections = GLOB.character_ckey_list.Copy()
-	if(!selections.len)
-		return
-	var/selection = input(src,"Which Character?") as null|anything in sortList(selections)
-	if(!selection)
-		return
-	var/theykey = selections[selection]
-	if(theykey == ckey)
-		to_chat(src,"You can't commend yourself.")
-		return
-	if(theykey)
-		commendedsomeone = TRUE
-		add_commend(theykey, ckey)
-		to_chat(src,"[selection] commended.")
-		log_game("COMMEND: [ckey] commends [theykey].")
-		log_admin("COMMEND: [ckey] commends [theykey].")
-	return
+	set category = "OOC"
+	set name = "Commend"
+	set desc = "Make that one person you had Quality RolePlay with happy."
+
+	commendation_popup(forced)

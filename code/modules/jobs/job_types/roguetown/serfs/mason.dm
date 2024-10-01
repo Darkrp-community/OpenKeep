@@ -11,6 +11,8 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
 		"Aasimar"
 	)
 	allowed_sexes = list(MALE, FEMALE)
@@ -21,27 +23,30 @@
 	display_order = JDO_MASON
 	bypass_lastclass = TRUE
 	give_bank_account = 8
+	min_pq = -50
 
 /datum/outfit/job/roguetown/mason/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, rand(1,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, rand(1,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, rand(1,3), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, rand(4,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, rand(4,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/masonry, rand(4,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/engineering, rand(2,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(2,2,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, pick(2,2,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/mining, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 4, TRUE)
 
 	head = /obj/item/clothing/head/roguetown/hatfur
 	if(prob(50))
 		head = /obj/item/clothing/head/roguetown/hatblu
-//	armor = /obj/item/clothing/suit/roguetown/armor/workervest
+	armor = /obj/item/clothing/suit/roguetown/armor/workervest
 	cloak = /obj/item/clothing/cloak/apron/waist/brown
 	pants = /obj/item/clothing/under/roguetown/trou
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
@@ -50,9 +55,14 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/hammer/claw
 	backl = /obj/item/storage/backpack/rogue/backpack
-	backpack_contents = list(/obj/item/roguekey/mason = 1)
+	id = /obj/item/clothing/ring/silver/makers_guild
+	backpack_contents = list(/obj/item/roguekey/mason = 1, /obj/item/flint = 1, /obj/item/flashlight/flare/torch/lantern)
+
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", 1)
 	H.change_stat("endurance", 1)
 	H.change_stat("constitution", 1)
 	H.change_stat("speed", -1)
+
+	if(H.dna.species.id == "dwarf")
+		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm

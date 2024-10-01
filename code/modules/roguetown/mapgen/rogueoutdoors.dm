@@ -18,10 +18,11 @@
 							/obj/structure/flora/roguegrass/bush = 13,
 							/obj/structure/flora/roguegrass = 50,
 							/obj/structure/flora/roguegrass/maneater = 1,
+							/obj/structure/flora/roguegrass/pyroclasticflowers = 1,
 							/obj/item/natural/stone = 8,
 							/obj/item/natural/rock = 7,
 							/obj/item/grown/log/tree/stick = 3,
-							/obj/structure/closet/dirthole/closed/loot=6,
+							/obj/structure/closet/dirthole/closed/loot=12,
 							/obj/item/restraints/legcuffs/beartrap/armed/camouflage=0.5)
 	spawnableTurfs = list(/turf/open/floor/rogue/dirt/road=5)
 	allowed_areas = list(/area/rogue/outdoors/rtfield)

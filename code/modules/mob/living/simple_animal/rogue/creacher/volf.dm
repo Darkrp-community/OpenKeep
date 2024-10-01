@@ -1,6 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf
 	icon = 'icons/roguetown/mob/monster/vol.dmi'
 	name = "volf"
+	desc = "Usually content to leave menfolk alone if well-fed, but something in the wilds of Enigma turns them hungry, persistent, and vicious."
 	icon_state = "vv"
 	icon_living = "vv"
 	icon_dead = "vvd"
@@ -15,12 +16,14 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 1,
-						/obj/item/natural/fur = 2)
+						/obj/item/natural/fur/volf = 2,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
 	faction = list("orcs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	health = 110
 	maxHealth = 110
-	melee_damage_lower = 16
+	melee_damage_lower = 15
 	melee_damage_upper = 20
 	vision_range = 9
 	aggro_vision_range = 9
@@ -31,8 +34,8 @@
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	pooptype = null
-	STACON = 7
-	STASTR = 7
+	STACON = 6
+	STASTR = 6
 	STASPD = 12
 	deaggroprob = 0
 	defprob = 35
@@ -45,6 +48,7 @@
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/wolf
+	body_eater = TRUE
 
 /obj/effect/decal/remains/wolf
 	name = "remains"
@@ -57,6 +61,7 @@
 	gender = MALE
 	if(prob(33))
 		gender = FEMALE
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	update_icon()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/death(gibbed)
@@ -97,11 +102,6 @@
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
-
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf/find_food()
-	. = ..()
-	if(!.)
-		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/simple_limb_hit(zone)
 	if(!zone)

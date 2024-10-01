@@ -32,6 +32,18 @@
 	. = ..()
 	reagents.add_reagent(/datum/reagent/ash, 30) //double the amount of ash.
 
+// For Stonekeep Undead Alchemy
+/obj/effect/decal/cleanable/undeadash
+	name = "glimmering ashes"
+	desc = ""
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "special_ash"
+	mergeable_decal = FALSE
+
+/obj/effect/decal/cleanable/undeadash/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/undeadash, 20)
+
 /obj/effect/decal/cleanable/glass
 	name = "tiny shards"
 	desc = ""
@@ -92,18 +104,19 @@
 	. = ..()
 	reagents.add_reagent(pick(/datum/reagent/uranium, /datum/reagent/uranium/radium), 5)
 
-/obj/effect/decal/cleanable/cobweb
+/obj/effect/decal/cleanable/dirt/cobweb
 	name = "cobweb"
 	desc = ""
-	gender = NEUTER
-	layer = 4.2
-	plane = -1
+	icon = 'modular/Mapping/icons/webbing.dmi'
 	icon_state = "cobweb1"
+	gender = NEUTER
+	layer = WALL_OBJ_LAYER
+	plane = -1
 	resistance_flags = FLAMMABLE
 	beauty = -100
 	alpha = 200
 
-/obj/effect/decal/cleanable/cobweb/cobweb2
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2
 	icon_state = "cobweb2"
 
 /obj/effect/decal/cleanable/molten_object

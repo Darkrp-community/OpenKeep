@@ -79,12 +79,40 @@
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/silver_curse
 	duration = 5 SECONDS
 
+/datum/status_effect/debuff/silver_curse/greater
+	duration = 10 SECONDS
+
 /atom/movable/screen/alert/status_effect/debuff/silver_curse
 	name = "Silver Curse"
 	desc = "My BANE!"
 	icon_state = "hunger3"
 
+
+//BROKEN CELIBACY
+
+/datum/status_effect/debuff/chastity
+	id = "chastity"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/chastity
+	effectedstats = list("fortune" = -6)
+	duration = 999 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/chastity
+	name = "Pantheons Curse"
+	desc = "I have broken my oath of celibacy... what have I done"
+	icon_state = "hunger3"
+
+/datum/status_effect/debuff/wiz
+	id = "wiz"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/wiz
+	effectedstats = list("intelligence" = -5)
+	duration = 999 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/wiz
+	name = "Fading Power"
+	desc = "My magical power wanes as I defile my body"
+	icon_state = "hunger3"
 ////////////////////
+
 
 /datum/status_effect/debuff/thirstyt1
 	id = "thirsty1"
@@ -267,6 +295,33 @@
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/sleepytime
 	effectedstats = list("speed" = -2, "endurance" = -2)
 
+/atom/movable/screen/alert/status_effect/debuff/netted
+	name = "Net"
+	desc = "<span class='boldwarning'>A net was thrown on me.. how can I move?</span>\n"
+	icon_state = "muscles"
+
+/datum/status_effect/debuff/netted
+	id = "net"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/netted
+	effectedstats = list("speed" = -5, "endurance" = -2)
+	
+/datum/status_effect/debuff/netted/on_apply()
+		. = ..()
+		var/mob/living/carbon/C = owner
+		C.add_movespeed_modifier(MOVESPEED_ID_NET_SLOWDOWN, multiplicative_slowdown = 3)
+
+/datum/status_effect/debuff/netted/on_remove()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.remove_movespeed_modifier(MOVESPEED_ID_NET_SLOWDOWN)
+		// Already handled in uncuff()
+		/*
+		C.legcuffed = null
+		C.update_inv_legcuffed()*/
+
+
+
 /atom/movable/screen/alert/status_effect/debuff/sleepytime
 	name = "Tired"
 	desc = "<span class='warning'>I am feeling tired.</span>\n"
@@ -280,4 +335,26 @@
 /atom/movable/screen/alert/status_effect/debuff/trainsleep
 	name = "Muscle Soreness"
 	desc = "<span class='warning'>Gaaaah, So sooooooore.</span>\n"
+	icon_state = "muscles"
+ 
+/datum/status_effect/debuff/barbfalter
+	id = "barbfalter"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/barbfalter
+	duration = 30 SECONDS
+	effectedstats = list("strength" = -1, "speed" = -1)
+
+/atom/movable/screen/alert/status_effect/debuff/barbfalter
+	name = "Faltering"
+	desc = "<span class='warning'>I've pushed myself to my limit.</span>\n"
+	icon_state = "muscles"
+  
+/datum/status_effect/debuff/viciousmockery
+	id = "viciousmockery"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/viciousmockery
+	duration = 600 // One minute
+	effectedstats = list("strength" = -2, "speed" = -2,"endurance" = -2)
+
+/atom/movable/screen/alert/status_effect/debuff/viciousmockery
+	name = "Vicious Mockery"
+	desc = "<span class='warning'>THAT SPOONY BARD! ARGH!</span>\n"
 	icon_state = "muscles"

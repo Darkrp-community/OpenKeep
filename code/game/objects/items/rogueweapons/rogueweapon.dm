@@ -19,10 +19,13 @@
 	wlength = 45
 	sellprice = 1
 	has_inspect_verb = TRUE
+	pickup_sound = "rustle" // Sound list define strings are in code/game/sound.dm
 	parrysound = list('sound/combat/parry/parrygen.ogg')
+	drop_sound = 'sound/foley/dropsound/mace_drop.ogg'
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	obj_flags = CAN_BE_HIT
 	blade_dulling = DULLING_BASH
+	resistance_flags = FIRE_PROOF
 	max_integrity = 200
 	wdefense = 3
 	experimental_onhip = TRUE
@@ -35,6 +38,8 @@
 	var/initial_sl
 	var/list/possible_enhancements
 	var/renamed_name
+	var/axe_cut = 0
+	istrainable = TRUE // You can train weapon skills on a dummy with these.
 
 /obj/item/rogueweapon/Initialize()
 	. = ..()
@@ -85,5 +90,5 @@
 	if(hard_dismember)
 		return min(probability, 5)
 	else if(easy_dismember)
-		return probability * 3
+		return probability * 1.5
 	return probability

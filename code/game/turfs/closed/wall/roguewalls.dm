@@ -9,6 +9,18 @@
 	wallclimb = TRUE
 	icon = 'icons/turf/roguewall.dmi'
 
+/turf/closed/wall/mineral/rogue/examine()
+	. += ..()
+	if(max_integrity)
+		var/healthpercent = (turf_integrity/max_integrity) * 100
+		switch(healthpercent)
+			if(50 to 99)
+				. += "It looks slightly damaged."
+			if(25 to 50)
+				. += "It appears heavily damaged."
+			if(1 to 25)
+				. +=  "<span class='warning'>It's falling apart!</span>"
+
 /turf/closed/wall/mineral/rogue/Initialize()
 	if(smooth_icon)
 		icon = smooth_icon
@@ -34,6 +46,8 @@
 	damage_deflection = 10
 
 /turf/closed/wall/mineral/rogue/stone/window
+	name = "stone murder hole"
+	desc = "A wall of stone with convenient small indents on it, perfect to let loose arrows against invaders."
 	opacity = FALSE
 	max_integrity = 800
 
@@ -309,7 +323,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		user.changeNext_move(CLICK_CD_MELEE)
-		playsound(src, "plantcross", 50, FALSE, -1)
+		playsound(src, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(5,10), target = src))
 			if(!res && world.time > res_replenish)
 				res = rand(1,3)

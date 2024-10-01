@@ -13,7 +13,11 @@
 
 		return*/
 	if(ishuman(user))
-//		return
+/*		if(user.mind.assigned_role == "Mercenary")
+			playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
+			user.visible_message("<span class='notice'>These cursed local contraptions confound me.")
+			return
+This is a filter that blocks use of the machine for that role. Could be expanded, made more complex, made for races or whatever.*/
 		var/mob/living/carbon/human/H = user
 		if(istype(P, /obj/item/natural/bundle))
 			say("Single item entries only. Please unstack.")
@@ -25,7 +29,7 @@
 				playsound(src, 'sound/misc/coininsert.ogg', 100, FALSE, -1)
 				return
 			else
-				say("No account found. Submit your fingers to a shylock for inspection.")
+				say("No account found. Submit your fingers to a meister for inspection.")
 		else
 			for(var/datum/roguestock/R in SStreasury.stockpile_datums)
 				if(istype(P,R.item_type))
@@ -41,6 +45,7 @@
 						if(!A)
 							say("Couldn't find where to send the submission.")
 							return
+						//This item is now listed as submitted to the stockpile.
 						P.submitted_to_stockpile = TRUE
 						var/list/turfs = list()
 						for(var/turf/T in A)
@@ -52,7 +57,7 @@
 					flick("submit_anim",src)
 					if(amt)
 						if(!SStreasury.give_money_account(amt, H, "+[amt] from [R.name] bounty"))
-							say("No account found. Submit your fingers to a shylock for inspection.")
+							say("No account found. Submit your fingers to a meister for inspection.")
 					return
 	return ..()
 
@@ -63,6 +68,11 @@
 	. = ..()
 	if(.)
 		return
+/*	if(user.mind.assigned_role == "Mercenary")
+		playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
+		user.visible_message("<span class='notice'>These cursed local contraptions confound me.")
+		return
+This is a filter that blocks use of the machine for that role. Could be expanded, made more complex, made for races or whatever.*/
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	var/canread = user.can_read(src, TRUE)
@@ -87,6 +97,13 @@
 	var/datum/browser/popup = new(user, "VENDORTHING", "", 370, 220)
 	popup.set_content(contents)
 	popup.open()
+
+/obj/structure/roguemachine/submission/attack_right(mob/living/user) // Allows a way to sell piles without clicking 40 times. Simply dump out a pile, stand on top, and right click
+	var/turf/T = get_turf(user)
+	for(var/obj/item/P in get_turf(T))
+		if(move_after(user, 1 SECONDS, target = src))
+			src.attackby(P, user)
+
 /*				//Var for keeping track of timer
 var/global/feeding_hole_wheat_count = 0
 var/global/feeding_hole_reset_timer
@@ -101,7 +118,7 @@ var/global/feeding_hole_reset_timer
 	pixel_y = 32
 
 /obj/structure/feedinghole/attackby(obj/item/P, mob/user, params)
-	if(istype(P, /obj/item/reagent_containers/food/snacks/grown/wheat))
+	if(istype(P, /obj/item/reagent_containers/food/snacks/produce/wheat))
 		qdel(P)
 /*		if(!feeding_hole_reset_timer || world.time > feeding_hole_reset_timer)
 			feeding_hole_wheat_count = 0

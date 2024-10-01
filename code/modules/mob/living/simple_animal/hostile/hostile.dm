@@ -377,6 +377,8 @@
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
 	SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, target)
 	in_melee = TRUE
+	if(!target)
+		return
 	return target.attack_animal(src)
 
 /mob/living/simple_animal/hostile/proc/Aggro()

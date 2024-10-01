@@ -4,37 +4,66 @@
 /datum/species/aasimar
 	name = "Aasimar"
 	id = "aasimar"
-	desc = ""
-	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
+	desc = "<b>Aasimar</b><br>\
+	Immortal offspring created through unknown means by command of the goddess Astrata, \
+	used as soldiers to fight in the Apotheosis God-War. \
+	They quickly earned scorn and fear from the mortal races they fought alongside \
+	for their indifference to the suffering of their allies and unquestioning brutality. \
+	The aasimar who survived the war have been abandoned by Astrata, \
+	left to face an uncertain fate alongside the other races of Grimoria. \
+	It has been long since the Apotheosis and memories of their violent legacy have faded, \
+	but many still view these aasimar survivors as emotionally dull, stubborn, and simple-minded brutes... \
+	though this is not always the case. \
+	Aasimar are known for their incredible strength and resilience, and are a prized addition to any shield wall. \
+	However, they possess less capacity for independent thought due to their wartime construction."
+
+	skin_tone_wording = "Crafted With"
+	nutrition_mod = 2 // 200% higher hunger rate. Hungry, hungry aasimar
+	pain_mod = 0.9 // 10% less pain from wounds
+	bleed_mod = 0.8 // 20% less bleed rate from injuries
+
+	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "wings" = "None")
 	use_skintones = 1
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
-	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	possible_ages = list(AGE_IMMORTAL)
+	max_age = "Unknown"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
-	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt_muscular.dmi'
+	limbs_icon_f = 'icons/roguetown/mob/bodies/f/ft_muscular.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
-	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
+	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
+	use_m = TRUE
 	hairyness = "t1"
-	soundpack_m = /datum/voicepack/male/elf
-	soundpack_f = /datum/voicepack/female/elf
+	soundpack_m = /datum/voicepack/male/serious
+	soundpack_f = /datum/voicepack/female
 	offset_features = list(OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
 	OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
 	OFFSET_FACE = list(0,1), OFFSET_BELT = list(0,1), OFFSET_BACK = list(0,1), \
 	OFFSET_NECK = list(0,1), OFFSET_MOUTH = list(0,1), OFFSET_PANTS = list(0,1), \
 	OFFSET_SHIRT = list(0,1), OFFSET_ARMOR = list(0,1), OFFSET_HANDS = list(0,1), OFFSET_UNDIES = list(0,1), \
-	OFFSET_ID_F = list(0,-1), OFFSET_GLOVES_F = list(0,0), OFFSET_WRISTS_F = list(0,0), OFFSET_HANDS_F = list(0,0), \
-	OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
-	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,-1), OFFSET_BACK_F = list(0,-1), \
-	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
-	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
-	specstats = list("strength" = 0, "perception" = 1, "intelligence" = 1, "constitution" = 0, "endurance" = 1, "speed" = 0, "fortune" = 1)
-	specstats_f = list("strength" = 0, "perception" = 1, "intelligence" = 2, "constitution" = -1, "endurance" = 1, "speed" = 1, "fortune" = 1)
+	OFFSET_ID_F = list(0,1), OFFSET_GLOVES_F = list(0,1), OFFSET_WRISTS_F = list(0,1), OFFSET_HANDS_F = list(0,1), \
+	OFFSET_CLOAK_F = list(0,1), OFFSET_FACEMASK_F = list(0,1), OFFSET_HEAD_F = list(0,1), \
+	OFFSET_FACE_F = list(0,1), OFFSET_BELT_F = list(0,1), OFFSET_BACK_F = list(0,1), \
+	OFFSET_NECK_F = list(0,1), OFFSET_MOUTH_F = list(0,1), OFFSET_PANTS_F = list(0,1), \
+	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
+	specstats = list("strength" = 1, "perception" = 0, "intelligence" = -2, "constitution" = 2, "endurance" = 1, "speed" = 0, "fortune" = -1)
+	specstats_f = list("strength" = 1, "perception" = 0, "intelligence" = -2, "constitution" = 1, "endurance" = 1, "speed" = 1, "fortune" = -1)
 	enflamed_icon = "widefire"
 	patreon_req = 0
+
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
 
 /datum/species/aasimar/check_roundstart_eligible()
 	return TRUE
@@ -79,27 +108,39 @@
 
 /datum/species/aasimar/get_skin_list()
 	return sortList(list(
-	"Planetar" = "ffd859",
-	"Deva"	   = "b6f1f2",
-	"Solar" = "daeaeb",
-	"Empyrean" = "a9ded1",
-	"Gaeian" = "db874f",
-	"Celestial" = "e1c565",
-	"Olympian" = "C7f9cc",
-	"Necran" = "23130c",
-	"Abyssal" = "22577a"
+		"Planetar" = SKIN_COLOR_PLANETAR,
+		"Deva"	   = SKIN_COLOR_DEVA,
+		"Solar" = SKIN_COLOR_SOLAR,
+		"Empyrea" = SKIN_COLOR_EMPYREA,
+		"Gaeia" = SKIN_COLOR_GAEIA,
+		"Celestial" = SKIN_COLOR_CELESTIAL,
+		"Olympia" = SKIN_COLOR_OLYMPIA,
+		"Necral" = SKIN_COLOR_NECRAL,
+		"Abyssal" = SKIN_COLOR_ABYSSAL,
 	))
 
 /datum/species/aasimar/get_hairc_list()
 	return sortList(list(
+	"black - oil" = "181a1d",
+	"black - cave" = "201616",
+	"black - rogue" = "2b201b",
+	"black - midnight" = "1d1b2b",	
+	
 	"white - silver" = "d3d9e3",
 	"white - alabaster" = "fffffc",
 	"white - skies" = "a1b4d4",
+	
 	"yellow - sunlight" = "f3f797",
-	"red - flame" = "ab4637"
+	"blond - strawberry" = "c69b71",
+	"blond - pale" = "9d8d6e",
+
+	"red - flame" = "ab4637",
+	"red - sunset" = "bf6821",
+	"red - blood" = "822b2b",
+	"red - maroon" = "612929"
 	))
 
-/datum/species/tieberian/random_name(gender,unique,lastname)
+/datum/species/aasimar/random_name(gender,unique,lastname)
 
 	var/randname
 	if(unique)

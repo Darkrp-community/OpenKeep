@@ -15,6 +15,9 @@ endmap
 
 map roguetown
 	default
-	#voteweight 1.5
+	votable
+endmap
+
+map dun_manor
 	votable
 endmap

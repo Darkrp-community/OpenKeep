@@ -182,11 +182,6 @@ Charged extracts:
 	colour = "pink"
 	effect_desc = ""
 
-/obj/item/slimecross/charged/pink/do_effect(mob/user)
-	new /obj/item/slimepotion/lovepotion(get_turf(user))
-	user.visible_message("<span class='notice'>[src] distills into a potion!</span>")
-	..()
-
 /obj/item/slimecross/charged/gold
 	colour = "gold"
 	effect_desc = ""

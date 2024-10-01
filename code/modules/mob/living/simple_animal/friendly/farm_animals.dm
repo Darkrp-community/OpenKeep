@@ -121,7 +121,7 @@
 	var/obj/item/udder/udder = null
 	gold_core_spawnable = FRIENDLY_SPAWN
 	blood_volume = BLOOD_VOLUME_NORMAL
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat)
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat, /obj/item/reagent_containers/food/snacks/produce/oat)
 	tame_chance = 25
 	bonus_tame_chance = 15
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -145,7 +145,7 @@
 	else
 		return ..()
 
-/mob/living/simple_animal/cow/tamed()
+/mob/living/simple_animal/cow/tamed(mob/user)
 	. = ..()
 	can_buckle = TRUE
 	buckle_lying = FALSE
@@ -212,7 +212,7 @@
 	response_harm_simple = "kick"
 	attack_verb_continuous = "kicks"
 	attack_verb_simple = "kick"
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat)
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat)
 	health = 3
 	maxHealth = 3
 	ventcrawler = VENTCRAWLER_ALWAYS
@@ -259,7 +259,7 @@
 	turns_per_move = 3
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
 	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat)
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat, /obj/item/reagent_containers/food/snacks/produce/oat)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -341,6 +341,7 @@
 
 /obj/item/udder
 	name = "udder"
+	var/in_use // so you can't spam milking sounds
 
 /obj/item/udder/Initialize()
 	create_reagents(100)
@@ -352,15 +353,24 @@
 
 /obj/item/udder/proc/milkAnimal(obj/O, mob/user)
 	var/obj/item/reagent_containers/glass/G = O
+	if(in_use)
+		return
 	if(G.reagents.total_volume >= G.volume)
 		to_chat(user, "<span class='warning'>[O] is full.</span>")
 		return
-	if(!do_after(user, 20, target = src))
-		var/transfered = reagents.trans_to(O, rand(5,10))
-		if(transfered)
-			user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>", "<span class='notice'>I milk [src] using \the [O].</span>")
-		else
-			to_chat(user, "<span class='warning'>The udder is dry. Wait a bit longer...</span>")
+	if(!reagents.has_reagent(/datum/reagent/consumable/milk, 5))
+		to_chat(user, "<span class='warning'>The udder is dry. Wait a bit longer...</span>")
+		return
+	beingmilked()
+	playsound(O, pick('modular/Creechers/sound/milking1.ogg', 'modular/Creechers/sound/milking2.ogg'), 100, TRUE, -1)
+	if(do_after(user, 20, target = src))
+		reagents.trans_to(O, rand(5,10))
+		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>", "<span class='notice'>I milk [src] using \the [O].</span>")
+
+/obj/item/udder/proc/beingmilked()
+	in_use = TRUE
+	sleep(20)
+	in_use = FALSE
 
 //grenchensnacker
 

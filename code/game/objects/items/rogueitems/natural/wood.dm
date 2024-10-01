@@ -4,6 +4,7 @@
 	name = "log"
 	desc = "Refined lumber, ready for use or processing."
 	icon_state = "log"
+	attacked_sound = 'sound/misc/woodhit.ogg'
 	blade_dulling = DULLING_CUT
 	max_integrity = 30
 	static_debris = list(/obj/item/grown/log/tree/small = 2)
@@ -14,11 +15,38 @@
 	possible_item_intents = list(/datum/intent/hit)
 	obj_flags = CAN_BE_HIT
 	w_class = WEIGHT_CLASS_HUGE
+	var/quality = SMELTERY_LEVEL_NORMAL // For it not to ruin recipes that need it
+
+/*
+* Okay so the root of this proc defines dissasemble
+* but doesnt do anything with it. This means despite
+* burn() calling deconstruct(FALSE) it will still
+* spawn the debris.
+*/
+/obj/item/grown/log/tree/deconstruct(disassembled = TRUE)
+	if(disassembled)
+		return ..()
+	qdel(src)
+
+/obj/item/grown/log/tree/obj_destruction(damage_flag)
+	obj_destroyed = TRUE
+	if(damage_flag == "acid")
+		acid_melt()
+	else if(damage_flag == "fire")
+		burn()
+	else
+		if(destroy_sound)
+			playsound(src, destroy_sound, 100, TRUE)
+		if(destroy_message)
+			visible_message(destroy_message)
+		deconstruct(TRUE)
+	return TRUE
 
 /obj/item/grown/log/tree/small
 	name = "small log"
 	desc = "A smaller log that came from a larger log. Suitable for building."
 	icon_state = "logsmall"
+	attacked_sound = 'sound/misc/woodhit.ogg'
 	max_integrity = 30
 	static_debris = list(/obj/item/grown/log/tree/stick = 3)
 	firefuel = 20 MINUTES
@@ -116,6 +144,7 @@
 	name = "lumber"
 	desc = "This is some lumber."
 	icon_state = "lumber"
+	attacked_sound = 'sound/misc/woodhit.ogg'
 	blade_dulling = 0
 	max_integrity = 50
 	firefuel = 5 MINUTES

@@ -1,16 +1,12 @@
 /mob/living/carbon/human/proc/on_examine_face(mob/living/carbon/human/user)
 	if(!istype(user))
 		return
-	if(user.dna?.species && dna?.species)
-		if(user.dna.species.name != "Dark Elf")
-			if(dna.species.name == "Dark Elf")
-				user.add_stress(/datum/stressevent/delf)
-		if(user.dna.species.name != "Tiefling")
-			if(dna.species.name == "Tiefling")
-				user.add_stress(/datum/stressevent/tieb)
-	if(user.has_flaw(/datum/charflaw/paranoid))
-		if((STASTR - user.STASTR) > 1)
-			user.add_stress(/datum/stressevent/parastr)
+	if(!isdarkelf(user) && isdarkelf(src))
+		user.add_stress(/datum/stressevent/delf)
+	if(!istiefling(user) && istiefling(src))
+		user.add_stress(/datum/stressevent/tieb)
+	if(user.has_flaw(/datum/charflaw/paranoid) && (STASTR - user.STASTR) > 1)
+		user.add_stress(/datum/stressevent/parastr)
 
 /mob/living/carbon/human/examine(mob/user)
 //this is very slightly better than it was because you can use it more places. still can't do \his[src] though.
@@ -64,20 +60,49 @@
 		else
 			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name].")
 
+		if(dna.species.use_skintones)
+			var/skin_tone_wording = dna.species.skin_tone_wording ? lowertext(dna.species.skin_tone_wording) : "skin tone"
+			var/list/skin_tones = dna.species.get_skin_list()
+			var/skin_tone_seen = "incomprehensible"
+			if(skin_tone)
+				//AGGHHHHH this is stupid
+				for(var/tone in skin_tones)
+					if(src.skin_tone == skin_tones[tone])
+						skin_tone_seen = lowertext(tone)
+						break
+			var/slop_lore_string = "."
+			if(ishumannorthern(user))
+				var/mob/living/carbon/human/racist = user
+				var/list/user_skin_tones = racist.dna.species.get_skin_list()
+//				var/user_skin_tone_seen = "incomprehensible"	gives unused warning now, sick of seeing it
+				for(var/tone in user_skin_tones)
+					if(racist.skin_tone == user_skin_tones[tone])
+//						user_skin_tone_seen = lowertext(tone)	gives unused warning now, sick of seeing it
+						break
+			. += "<span class='info'>[capitalize(m2)] [skin_tone_wording] is [skin_tone_seen][slop_lore_string]</span>"
+
 		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
-			if(H.marriedto == real_name)
+			var/mob/living/carbon/human/stranger = user
+			if(RomanticPartner(stranger))
 				. += "<span class='love'>It's my spouse.</span>"
+			if(family_datum == stranger.family_datum && family_datum)
+				var/family_text = ReturnRelation(user)
+				if(family_text)
+					. += family_text
 
 		if(real_name in GLOB.excommunicated_players)
 			. += "<span class='userdanger'>HERETIC! SHAME!</span>"
 
+		if(iszizocultist(user) || iszizolackey(user))
+			if(virginity)
+				. += "<span class='userdanger'>VIRGIN!</span>"
+
 		if(real_name in GLOB.outlawed_players)
 			. += "<span class='userdanger'>OUTLAW!</span>"
 		if(mind && mind.special_role)
-		else
-			if(mind && mind.special_role == "Bandit")
+			if(mind && mind.special_role == "Bandit" && HAS_TRAIT(user, TRAIT_KNOWBANDITS))
 				. += "<span class='userdanger'>BANDIT!</span>"
+		else
 			if(mind && mind.special_role == "Vampire Lord")
 				. += "<span class='userdanger'>A MONSTER!</span>"
 
@@ -438,6 +463,21 @@
 			. += "<a href='?src=[REF(src)];inspect_limb=[checked_zone]'>Inspect [parse_zone(checked_zone)]</a>"
 			if(!(mobility_flags & MOBILITY_STAND) && user != src && (user.zone_selected == BODY_ZONE_CHEST))
 				. += "<a href='?src=[REF(src)];check_hb=1'>Listen to Heartbeat</a>"
+
+	// Characters with the hunted flaw will freak out if they can't see someone's face.
+	if(!appears_dead)
+		if(skipface && user.has_flaw(/datum/charflaw/hunted))
+			user.add_stress(/datum/stressevent/hunted)
+
+	// The Assassin's profane dagger can sniff out their targets, even masked.
+	if(HAS_TRAIT(user, TRAIT_ASSASSIN) && (has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(src, TRAIT_ZIZOID_HUNTED)))
+		for(var/obj/item/I in user)
+			if(istype(I, /obj/item/rogueweapon/huntingknife/idagger/steel/profane))
+				user.visible_message("profane dagger whispers, <span class='danger'>\"That's [real_name]! Strike their heart!\"</span>")
+
+	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
+	for(var/line in lines)
+		. += span_info(line)
 
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))

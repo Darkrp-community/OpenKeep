@@ -73,7 +73,7 @@
 	handle_typing_indicator()
 
 	if(istype(loc, /turf/open/water))
-		handle_inwater()
+		handle_inwater(loc)
 
 	if(stat != DEAD)
 		return 1
@@ -96,7 +96,7 @@
 	handle_fire()
 	handle_typing_indicator()
 	if(istype(loc, /turf/open/water))
-		handle_inwater()
+		handle_inwater(loc)
 
 /mob/living/proc/handle_breathing(times_fired)
 	return

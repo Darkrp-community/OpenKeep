@@ -1,6 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/troll
 	icon = 'icons/roguetown/mob/monster/trolls.dmi'
-	name = "Troll"
+	name = "troll"
+	desc = "Elven legends say these monsters were servants of Dendor tasked to guard his realm; nowadays they are sometimes found in the company of orcs."
 	icon_state = "Troll2"
 	icon_living = "Troll2"
 	icon_dead = "Troll2d"
@@ -10,40 +11,53 @@
 	speak_chance = 1
 	turns_per_move = 2
 	see_in_dark = 10
-	move_to_delay = 3
+	move_to_delay = 7
 	base_intents = list(/datum/intent/unarmed/wwolf, /datum/intent/simple/bigbite)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/xeno = 1,
-						/obj/item/natural/hide = 2)
+						/obj/item/natural/hide = 2,
+						/obj/item/alch/horn = 2)
 	faction = list("orcs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 800
-	maxHealth = 800
-	melee_damage_lower = 55
-	melee_damage_upper = 70
+	health = 600
+	maxHealth = 600
+	melee_damage_lower = 40
+	melee_damage_upper = 60
 	vision_range = 6
 	aggro_vision_range = 6
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 	retreat_distance = 0
 	minimum_distance = 0
+	verb_say = "groans"
+	verb_ask = "grunts"
+	verb_exclaim = "roars"
+	verb_yell = "roars"
 	milkies = FALSE
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	pooptype = null
-	STACON = 16
-	STASTR = 19
+	STACON = 15
+	STASTR = 16
 	STASPD = 2
-	STAEND = 19
+	STAEND = 16
 	deaggroprob = 0
 	defprob = 20
 	defdrain = 15
 	del_on_deaggro = 99 SECONDS
 	retreat_health = 0
+	food_max = 250
 	food = 0
 	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
 	dodgetime = 20
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
-	remains_type = /obj/effect/decal/remains/human // Placeholder until Troll remains are sprited.
+	remains_type = /obj/effect/decal/remains/xeno/troll // Placeholder until Troll remains are sprited.
+	body_eater = TRUE
+	var/critvuln = FALSE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/troll/Initialize()
+	. = ..()
+	if(critvuln)
+		ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/death(gibbed)
 	..()
@@ -73,11 +87,9 @@
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
+	if(fire_stacks <= 0)
+		adjustHealth(-rand(20,35))
 
-/mob/living/simple_animal/hostile/retaliate/rogue/troll/find_food()
-	. = ..()
-	if(!.)
-		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/simple_limb_hit(zone)
 	if(!zone)

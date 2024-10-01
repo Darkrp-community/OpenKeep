@@ -5,6 +5,7 @@
 	force = 3
 	throwforce = 3
 	w_class = WEIGHT_CLASS_SMALL
+	sellprice = 5
 	icon = 'icons/mob/human_parts.dmi'
 	icon_state = ""
 	layer = BELOW_MOB_LAYER //so it isn't hidden behind objects when on the floor
@@ -86,6 +87,12 @@
 	var/fingers = TRUE
 	var/is_prosthetic = FALSE
 
+	/// Visual markings to be rendered alongside the bodypart
+	var/list/markings
+	var/list/aux_markings
+	/// Visual features of the bodypart, such as hair and accessories
+	var/list/bodypart_features
+
 	resistance_flags = FLAMMABLE
 
 /obj/item/bodypart/grabbedintents(mob/living/user, precise)
@@ -120,6 +127,33 @@
 			qdel(src)
 		return
 	return ..()
+
+/obj/item/bodypart/MiddleClick(mob/living/user, params)
+	var/obj/item/held_item = user.get_active_held_item()
+	if(held_item)
+		if(held_item.get_sharpness() && held_item.wlength == WLENGTH_SHORT)
+			var/used_time = 210
+			if(user.mind)
+				used_time -= (user.mind.get_skill_level(/datum/skill/labor/butchering) * 30)
+			visible_message("[user] begins to butcher \the [src].")
+			playsound(src, 'sound/foley/gross.ogg', 100, FALSE)
+			var/steaks = 0
+			switch(user.mind.get_skill_level(/datum/skill/labor/butchering))
+				if(3)
+					steaks = 1
+				if(4 to 5)
+					steaks = 2
+				if(6)
+					steaks = 3 // the steaks have never been higher
+			var/amt2raise = user.STAINT/3
+			if(do_after(user, used_time, target = src))
+				for(steaks, steaks>0, steaks--)
+					new /obj/item/reagent_containers/food/snacks/rogue/meat/steak(get_turf(src))
+				new /obj/item/reagent_containers/food/snacks/rogue/meat/steak(get_turf(src))
+				new /obj/effect/decal/cleanable/blood/splatter(get_turf(src))
+				user.mind.adjust_experience(/datum/skill/labor/butchering, amt2raise, FALSE)
+				qdel(src)
+	..()
 
 /obj/item/bodypart/attack(mob/living/carbon/C, mob/user)
 	if(ishuman(C))

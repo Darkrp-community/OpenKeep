@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/mole
 	icon = 'icons/roguetown/mob/monster/mole.dmi'
-	name = "Lesser Brown Mole"
-	desc = "If this is a lesser mole, you don't want to see the greater one"
+	name = "lesser brown mole"
+	desc = "Usually lurking underground, they sometimes grow to impossible sizes and come to the surface to satiate a strange, newfound hunger for flesh."
 	icon_state = "mole"
 	icon_living = "mole"
 	icon_dead = "mole_dead"
@@ -14,13 +14,15 @@
 	move_to_delay = 5
 	base_intents = list(/datum/intent/simple/claw)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
-						/obj/item/natural/hide = 1,
-						/obj/item/natural/fur = 1)
+						/obj/item/natural/hide = 2,
+						/obj/item/natural/fur = 2,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
 	faction = list("orcs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 300
-	maxHealth = 300
-	melee_damage_lower = 30
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 20
 	melee_damage_upper = 40
 	vision_range = 7
 	aggro_vision_range = 9
@@ -31,10 +33,10 @@
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	pooptype = null
-	STACON = 9
-	STASTR = 13
-	STASPD = 5
-	STAEND = 12
+	STACON = 8
+	STASTR = 12
+	STASPD = 3
+	STAEND = 10
 	deaggroprob = 0
 	defprob = 30
 	defdrain = 10
@@ -46,6 +48,7 @@
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/mole
+	body_eater = TRUE
 /*
 /mob/living/simple_animal/hostile/retaliate/rogue/mole/greater
 	name = "Greater Brown Mole"
@@ -99,11 +102,6 @@
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
-
-/mob/living/simple_animal/hostile/retaliate/rogue/mole/find_food()
-	. = ..()
-	if(!.)
-		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mole/simple_limb_hit(zone)
 	if(!zone)

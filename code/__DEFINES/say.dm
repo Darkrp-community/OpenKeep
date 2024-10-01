@@ -55,12 +55,17 @@
 #define SPAN_COMMAND "command_headset"
 #define SPAN_CLOWN "clown"
 
+#define SPAN_SINGING "singing"
+#define MODE_SING "%"
+
 #define SPAN_GEN "say"
 #define SPAN_DWARF "dwarf"
 #define SPAN_ELF "elf"
-#define SPAN_SAND "celestial"
+#define SPAN_OLDPSYDONIC "oldpsydonic"
+#define SPAN_ZYBANTINE "zybantine"
+#define SPAN_SAND "sandspeak"
 #define SPAN_DELF "delf"
-#define SPAN_HELL "infernal"
+#define SPAN_HELL "hellspeak"
 #define SPAN_BEAST "beast"
 
 //bitflag #defines for return value of the radio() proc.

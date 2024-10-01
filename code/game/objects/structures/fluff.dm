@@ -302,7 +302,7 @@
 
 /obj/structure/fluff/railing/fence
 	name = "palisade"
-	desc = ""
+	desc = "A sturdy fence of wooden stakes."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "fence"
 	density = TRUE
@@ -362,7 +362,7 @@
 
 /obj/structure/bars
 	name = "bars"
-	desc = ""
+	desc = "Iron bars made to keep things in or out."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "bars"
 	density = TRUE
@@ -387,6 +387,9 @@
 	return !density
 	..()
 
+/obj/structure/bars/bent
+	icon_state = "barsbent"
+
 /obj/structure/bars/chainlink
 	icon_state = "chainlink"
 
@@ -410,7 +413,7 @@
 /obj/structure/bars/passage
 	icon_state = "passage0"
 	density = TRUE
-	max_integrity = 1500
+	max_integrity = 2000
 
 /obj/structure/bars/passage/redstone_triggered()
 	if(obj_broken)
@@ -458,7 +461,7 @@
 	var/togg = FALSE
 
 /obj/structure/bars/grille/Initialize()
-	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/FTMET_A1.ogg','sound/foley/footsteps/FTMET_A2.ogg','sound/foley/footsteps/FTMET_A3.ogg','sound/foley/footsteps/FTMET_A4.ogg'), 100)
+	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/FTMET_A1.ogg','sound/foley/footsteps/FTMET_A2.ogg','sound/foley/footsteps/FTMET_A3.ogg','sound/foley/footsteps/FTMET_A4.ogg'), 40)
 	dir = pick(GLOB.cardinals)
 	return ..()
 
@@ -510,7 +513,7 @@
 
 /obj/structure/fluff/clock
 	name = "clock"
-	desc = ""
+	desc = "An intricately-carved grandfather clock. On its pendulum is engraved the sigil of clan Kharzarad, a sickle behind an hourglass."
 	icon = 'icons/roguetown/misc/tallstructure.dmi'
 	icon_state = "clock"
 	density = FALSE
@@ -579,9 +582,13 @@
 		return 0
 	return 1
 
+// Version thats dense. Should honestly be standard?
+/obj/structure/fluff/clock/dense
+	density = TRUE
+
 /obj/structure/fluff/wallclock
 	name = "clock"
-	desc = ""
+	desc = "A wall clock with the sickle and hourglass sigil of clan Kharzarad on its crown."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "wallclock"
 	density = FALSE
@@ -635,7 +642,7 @@
 //vampire
 /obj/structure/fluff/wallclock/vampire
 	name = "ancient clock"
-	desc = ""
+	desc = "This appears to be a clock, but a pair of red lights blink in a recess where the face ought be."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "wallclockvampire"
 	density = FALSE
@@ -670,6 +677,7 @@
 /obj/structure/fluff/signage/examine(mob/user)
 	. = ..()
 	if(!user.is_literate())
+		user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
 		. += "I have no idea what it says."
 	else
 		. += "It says \"TOWN ON ROCKHILL\""
@@ -682,6 +690,7 @@
 /obj/structure/fluff/buysign/examine(mob/user)
 	. = ..()
 	if(!user.is_literate())
+		user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
 		. += "I have no idea what it says."
 	else
 		. += "It says \"IMPORTS\""
@@ -694,6 +703,7 @@
 /obj/structure/fluff/sellsign/examine(mob/user)
 	. = ..()
 	if(!user.is_literate())
+		user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
 		. += "I have no idea what it says."
 	else
 		. += "It says \"EXPORTS\""
@@ -712,6 +722,7 @@
 	. = ..()
 	if(wrotesign)
 		if(!user.is_literate())
+			user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
 			. += "I have no idea what it says."
 		else
 			. += "It says \"[wrotesign]\"."
@@ -734,7 +745,7 @@
 
 /obj/structure/fluff/dryingrack
 	name = "drying rack"
-	desc = ""
+	desc = "A rack of sticks, made to dry produce and smokeleaves in the sun."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "dryrack"
 	density = TRUE
@@ -799,8 +810,12 @@
 	icon_state = "knightstatue_l"
 
 /obj/structure/fluff/statue/astrata
-	name = "Astrata Statue"
-	desc = "A stone statue of the sun Goddess Astrata. Bless."
+	name = "statue of Astrata"
+	desc = "Astrata, the Sun Queen, reigns over light, order, and conquest. She is worshipped and feared in equal measure."
+	max_integrity = 100 // You wanted descructible statues, you'll get them.
+	deconstructible = FALSE
+	density = TRUE
+	blade_dulling = DULLING_BASH
 	icon_state = "astrata"
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 
@@ -843,6 +858,57 @@
 	pixel_x = -32
 	pixel_y = -16
 
+/obj/structure/fluff/telescope
+	name = "telescope"
+	desc = "A mysterious telescope pointing towards the stars."
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "telescope"
+	density = TRUE
+	anchored = FALSE
+
+/obj/structure/fluff/telescope/attack_hand(mob/user)
+	if(!ishuman(user))
+		return
+
+	var/mob/living/carbon/human/H = user
+	var/random_message = rand(1,5)
+	var/message2send = ""
+	switch(random_message)
+		if(1)
+			message2send = "You can see Noc rotating."
+		if(2)
+			message2send = "Looking at Astrata blinds you!"
+		if(3)
+			message2send = "The stars smile at you."
+		if(4)
+			message2send = "Blessed yellow strife."
+		if(5)
+			message2send = "You see a star!"
+	to_chat(H, "<span class='notice'>[message2send]</span>")
+
+	if(random_message == 2)
+		if(do_after(H, 25, target = src))
+			var/obj/item/bodypart/affecting = H.get_bodypart("head")
+			to_chat(H, "<span class='warning'>The blinding light causes you intense pain!</span>")
+			if(affecting && affecting.receive_damage(0, 5))
+				H.update_damage_overlays()
+
+/obj/structure/fluff/globe
+	name = "globe"
+	desc = "A model representing the known world of Grimoria."
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "globe"
+	density = TRUE
+	anchored = FALSE
+
+/obj/structure/fluff/globe/attack_hand(mob/user)
+	if(!ishuman(user))
+		return
+
+	var/mob/living/carbon/human/H = user
+	var/random_message = pick("You spin the globe!", "You land on Rockhill!", "You land on Zybantu!", "You land on Port Thornvale!", "You land on Grenzelhoft!", "You land on Valoria!", "You land on the Fog Islands!")
+	to_chat(H, "<span class='notice'>[random_message]</span>")
+
 /obj/structure/fluff/statue/femalestatue/Initialize()
 	. = ..()
 	var/matrix/M = new
@@ -851,18 +917,20 @@
 
 /obj/structure/fluff/statue/scare
 	name = "scarecrow"
+	desc = "An effigy made to drive away zad and other pesky birds from a farm."
 	icon_state = "td"
 
 /obj/structure/fluff/statue/tdummy
 	name = "practice dummy"
+	desc = "A wood and cloth dummy, made for squires to train with their armaments."
 	icon_state = "p_dummy"
 	icon = 'icons/roguetown/misc/structure.dmi'
 
 /obj/structure/fluff/statue/tdummy/attackby(obj/item/W, mob/user, params)
 	if(!user.cmode)
-		if(W.associated_skill)
-			if(user.mind)
-				if(isliving(user))
+		if(W.istrainable) // Prevents using dumb shit to train with. With temporary exceptions...
+			if(W.associated_skill)
+				if(user.mind && isliving(user))
 					var/mob/living/L = user
 					var/probby = (L.STALUC / 10) * 100
 					probby = min(probby, 99)
@@ -881,12 +949,18 @@
 						probby = 0
 					if(prob(probby) && !L.has_status_effect(/datum/status_effect/debuff/trainsleep) && !user.buckled)
 						user.visible_message("<span class='info'>[user] trains on [src]!</span>")
+						var/boon = user.mind.get_learning_boon(W.associated_skill)
 						var/amt2raise = L.STAINT/2
-						if(user.mind.get_skill_level(W.associated_skill) >= 3)
-							to_chat(user, "<span class='warning'>I've learned all I can from doing this, it's time for the real thing.</span>")
-							amt2raise = 0
+						if(user.mind?.get_skill_level(W.associated_skill) >= 2)
+							if(!HAS_TRAIT(user, TRAIT_INTRAINING))
+								to_chat(user, "<span class='warning'>I've learned all I can from doing this, it's time for the real thing.</span>")
+								amt2raise = 0
+							else
+								if(user.mind?.get_skill_level(W.associated_skill) >= 3)
+									to_chat(user, "<span class='warning'>I've learned all I can from doing this, it's time for the real thing.</span>")
+									amt2raise = 0
 						if(amt2raise > 0)
-							user.mind.adjust_experience(W.associated_skill, amt2raise, FALSE)
+							user.mind.adjust_experience(W.associated_skill, amt2raise * boon, FALSE)
 						playsound(loc,pick('sound/combat/hits/onwood/education1.ogg','sound/combat/hits/onwood/education2.ogg','sound/combat/hits/onwood/education3.ogg'), rand(50,100), FALSE)
 					else
 						user.visible_message("<span class='danger'>[user] trains on [src], but [src] ripostes!</span>")
@@ -895,10 +969,22 @@
 						playsound(loc, 'sound/combat/hits/kick/stomp.ogg', 100, TRUE, -1)
 					flick(pick("p_dummy_smashed","p_dummy_smashedalt"),src)
 					return
+			else //sanity
+				to_chat(user, "<span class='warning'>This thing doesn't have a skill associated with it.</span>")
+				return
+		else // u dun goofed
+			var/mob/living/goof = user
+			user.visible_message("<span class='danger'>[user] awkwardly tries to hit \the [src] with \the [W], but \the [src] ripostes!</span>")
+			goof.AdjustKnockdown(1)
+			goof.throw_at(get_step(goof, get_dir(src,goof)), 2, 2, goof, spin = FALSE)
+			playsound(loc, 'sound/combat/hits/kick/stomp.ogg', 100, TRUE, -1)
+			flick(pick("p_dummy_smashed","p_dummy_smashedalt"),src)
+			return
 	..()
 
 /obj/structure/fluff/statue/spider
-	name = "mother"
+	name = "arachnid idol"
+	desc = "A stone idol of a spider with the head of a smirking elven woman. Her eyes seem to follow you."
 	icon_state = "spidercore"
 
 /obj/structure/fluff/statue/spider/attackby(obj/item/W, mob/user, params)
@@ -910,9 +996,9 @@
 					var/datum/game_mode/chaosmode/C = SSticker.mode
 					C.delfcontrib += 1
 					if(C.delfcontrib >= C.delfgoal)
-						say("Well done, the brood will grow...",language = /datum/language/elvish)
+						say("YOU HAVE DONE WELL, MY CHILD.",language = /datum/language/elvish)
 					else
-						say("Please bring me [C.delfgoal-C.delfcontrib] more honeys, children!",language = /datum/language/elvish)
+						say("BRING ME [C.delfgoal-C.delfcontrib] MORE. I HUNGER.",language = /datum/language/elvish)
 				qdel(W)
 				return TRUE
 	..()
@@ -927,23 +1013,40 @@
 	if(user.mind)
 		var/datum/antagonist/bandit/B = user.mind.has_antag_datum(/datum/antagonist/bandit)
 		if(B)
-			if(istype(W, /obj/item/roguecoin) || istype(W, /obj/item/roguegem))
+			if(istype(W, /obj/item/roguecoin) || istype(W, /obj/item/roguegem) || istype(W, /obj/item/reagent_containers/glass/cup/silver) || istype(W, /obj/item/reagent_containers/glass/cup/golden) || istype(W, /obj/item/clothing/ring) || istype(W, /obj/item/clothing/head/roguetown/crown/circlet) || istype(W, /obj/item/roguestatue))
 				if(B.tri_amt >= 10)
 					to_chat(user, "<span class='warning'>The mouth doesn't open.</span>")
 					return
-				B.contrib += W.get_real_price()
+				if(!istype(W, /obj/item/roguecoin))
+					B.contrib += (W.get_real_price() / 2) //sell jewerly and other fineries, though at a lesser price compared to fencing them first
+				else
+					B.contrib += W.get_real_price()
 				if(B.contrib >= 100)
 					B.tri_amt++
 					user.mind.adjust_triumphs(1)
 					B.contrib -= 100
 					var/obj/item/I
 					switch(B.tri_amt)
+						if(1)
+							I = new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(user.loc)
 						if(2)
-							I = new /obj/item/clothing/suit/roguetown/armor/plate/scale(user.loc)
+							if(HAS_TRAIT(user, TRAIT_MEDIUMARMOR))
+								I = new /obj/item/clothing/suit/roguetown/armor/plate/scale(user.loc)
+							else
+								I = new /obj/item/clothing/suit/roguetown/armor/chainmail/iron(user.loc)
 						if(4)
 							I = new /obj/item/clothing/head/roguetown/helmet/horned(user.loc)
 						if(6)
-							I = new /obj/item/rogueweapon/spear/billhook(user.loc)
+							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2)
+								I = new /obj/item/rogueweapon/spear/billhook(user.loc)
+							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2)
+								I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
+							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2)
+								I = new /obj/item/rogueweapon/sword/long(user.loc)
+							else
+								I = new /obj/item/rogueweapon/mace/steel(user.loc)
+						if(8)
+							I = new /obj/item/clothing/under/roguetown/chainlegs(user.loc)
 					if(I)
 						I.sellprice = 0
 					playsound(loc,'sound/items/carvgood.ogg', 50, TRUE)
@@ -956,6 +1059,7 @@
 
 /obj/structure/fluff/psycross
 	name = "pantheon cross"
+	desc = "A towering monument to the Ten. Marriages are performed under its shadow."
 	icon_state = "psycross"
 	icon = 'icons/roguetown/misc/tallstructure.dmi'
 	break_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
@@ -1010,110 +1114,101 @@
 /obj/structure/fluff/psycross/attackby(obj/item/W, mob/user, params)
 	if(user.mind)
 		if(user.mind.assigned_role == "Priest")
-			if(istype(W, /obj/item/reagent_containers/food/snacks/grown/apple))
+			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/apple))
 				if(!istype(get_area(user), /area/rogue/indoors/town/church/chapel))
 					to_chat(user, "<span class='warning'>I need to do this in the chapel.</span>")
 					return FALSE
 				var/marriage
-				var/obj/item/reagent_containers/food/snacks/grown/apple/A = W
+				var/obj/item/reagent_containers/food/snacks/produce/apple/A = W
+
+				//The MARRIAGE TEST BEGINS
 				if(A.bitten_names.len)
 					if(A.bitten_names.len == 2)
-						var/list/found_mobs = list()
+						//Groom provides the surname that the bride will take
+						var/mob/living/carbon/human/thegroom
+						var/mob/living/carbon/human/thebride
+						//Did anyone get cold feet on the wedding?
 						for(var/mob/M in viewers(src, 7))
 							testing("check [M]")
-							if(found_mobs.len >= 2)
+							if(thegroom && thebride)
 								break
 							if(!ishuman(M))
 								continue
 							var/mob/living/carbon/human/C = M
+							/*
+							* This is for making the first biters name
+							* always be applied to the groom.
+							* second. This seems to be the best way
+							* to use the least amount of variables.
+							*/
+							var/name_placement = 1
 							for(var/X in A.bitten_names)
-								if(C.real_name == X)
-									testing("foundbiter [C.real_name]")
-									found_mobs += C
-						testing("foundmobslen [found_mobs.len]")
-						if(found_mobs.len == 2)
-							var/mob/living/carbon/human/theman
-							var/mob/living/carbon/human/thewoman
-							for(var/mob/living/carbon/human/M in found_mobs) //first find man
-								if(M.marriedto)
+								//I think that guy is dead.
+								if(C.stat == DEAD)
 									continue
-								if(M.gender == MALE)
-									if(theman)
-										testing("fail64")
-										A.burn()
-										return
-									theman = M
-								else
-									if(thewoman)
-										A.burn()
-										testing("fai33")
-										return
-									thewoman = M
-							if(!theman || !thewoman)
-								testing("fail22")
-								return
-							var/surname2use
-							var/index = findtext(theman.real_name, " ")
-							var/womanfirst
-							theman.original_name = theman.real_name
-							thewoman.original_name = thewoman.real_name
-							if(!index)
-								surname2use = theman.dna.species.random_surname()
+								//That person is not a player or afk.
+								if(!C.client)
+									continue
+								//Gotta get a divorce first
+								if(C.IsWedded())
+									continue
+								if(C.real_name == X)
+									//I know this is very sloppy but its alot less code.
+									switch(name_placement)
+										if(1)
+											if(thegroom)
+												continue
+											thegroom = C
+										if(2)
+											if(thebride)
+												continue
+											thebride = C
+									testing("foundbiter [C.real_name]")
+								name_placement++
+
+						//WE FOUND THEM LETS GET THIS SHOW ON THE ROAD!
+						if(!thegroom || !thebride)
+							testing("fail22")
+							return
+						//Alright now for the boring surname formatting.
+						var/surname2use
+						var/index = findtext(thegroom.real_name, " ")
+						var/bridefirst
+						thegroom.original_name = thegroom.real_name
+						thebride.original_name = thebride.real_name
+						if(!index)
+							surname2use = thegroom.dna.species.random_surname()
+						else
+							/*
+							* This code prevents inheriting the last name of
+							* " of wolves" or " the wolf"
+							* remove this if you want "Skibbins of wolves" to
+							* have his bride become "Sarah of wolves".
+							*/
+							if(findtext(thegroom.real_name, " of ") || findtext(thegroom.real_name, " the "))
+								surname2use = thegroom.dna.species.random_surname()
+								thegroom.change_name(copytext(thegroom.real_name, 1,index))
 							else
-								if(findtext(theman.real_name, " of ") || findtext(theman.real_name, " the "))
-									surname2use = theman.dna.species.random_surname()
-									theman.change_name(copytext(theman.real_name, 1,index))
-								else
-									surname2use = copytext(theman.real_name, index)
-									theman.change_name(copytext(theman.real_name, 1,index))
-							index = findtext(thewoman.real_name, " ")
-							if(index)
-								thewoman.change_name(copytext(thewoman.real_name, 1,index))
-							womanfirst = thewoman.real_name
-							theman.change_name(theman.real_name + surname2use)
-							thewoman.change_name(thewoman.real_name + surname2use)
-							theman.marriedto = thewoman.real_name
-							thewoman.marriedto = theman.real_name
-							theman.adjust_triumphs(1)
-							thewoman.adjust_triumphs(1)
-							priority_announce("[theman.real_name] has married [womanfirst]!", title = "Holy Union!", sound = 'sound/misc/bell.ogg')
-							marriage = TRUE
-							qdel(A)
-//							if(theman.has_stress(/datum/stressevent/nobel))
-//								thewoman.add_stress(/datum/stressevent/nobel)
-//							if(thewoman.has_stress(/datum/stressevent/nobel))
-//								theman.add_stress(/datum/stressevent/nobel)
+								surname2use = copytext(thegroom.real_name, index)
+								thegroom.change_name(copytext(thegroom.real_name, 1,index))
+						index = findtext(thebride.real_name, " ")
+						if(index)
+							thebride.change_name(copytext(thebride.real_name, 1,index))
+						bridefirst = thebride.real_name
+						thegroom.change_name(thegroom.real_name + surname2use)
+						thebride.change_name(thebride.real_name + surname2use)
+						thegroom.MarryTo(thebride)
+						thegroom.adjust_triumphs(1)
+						thebride.adjust_triumphs(1)
+						//Bite the apple first if you want to be the groom.
+						priority_announce("[thegroom.real_name] has married [bridefirst]!", title = "Holy Union!", sound = 'sound/misc/bell.ogg')
+						marriage = TRUE
+						qdel(A)
 
 				if(!marriage)
 					A.burn()
 					return
-	. = ..()
-
-/obj/structure/fluff/psycross/proc/check_prayer(mob/living/L,message)
-	if(!L || !message)
-		return FALSE
-	var/message2recognize = sanitize_hear_message(message)
-	var/mob/living/carbon/C = L
-	if(findtext(message2recognize, "zizo"))
-		C.add_stress(/datum/stressevent/psycurse)
-		L.adjust_fire_stacks(100)
-		L.IgniteMob()
-		return FALSE
-	if(length(message2recognize) > 15)
-		if(L.has_flaw(/datum/charflaw/addiction/godfearing))
-			L.sate_addiction()
-		if(L.mob_timers[MT_PSYPRAY])
-			if(world.time < L.mob_timers[MT_PSYPRAY] + 1 MINUTES)
-				L.mob_timers[MT_PSYPRAY] = world.time
-				return FALSE
-		else
-			L.mob_timers[MT_PSYPRAY] = world.time
-		if(!prob(chance2hear))
-			return FALSE
-		else
-			L.playsound_local(L, 'sound/misc/notice (2).ogg', 100, FALSE)
-			C.add_stress(/datum/stressevent/psyprayer)
-			return TRUE
+	return ..()
 
 /obj/structure/fluff/psycross/copper/Destroy()
 	addomen("psycross")
@@ -1215,6 +1310,7 @@
 	name = "clockwork golem scrap"
 	desc = ""
 	icon_state = "clockgolem_dead"
+
 
 /obj/structure/fluff/statue/shisha
 	name = "shisha pipe"

@@ -1,14 +1,14 @@
-/datum/advclass/woodcutter
+/datum/advclass/pilgrim/woodcutter
 	name = "Woodcutter"
-	allowed_sexes = list(MALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list("Humen",
+	"Elf",
+	"Dark Elf",
+	"Half-Elf",
+	"Tiefling",
+	"Dwarf",
+	"Aasimar"
+
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/woodcutter
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
@@ -20,7 +20,7 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)

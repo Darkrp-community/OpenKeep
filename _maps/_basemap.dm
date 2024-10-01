@@ -6,6 +6,7 @@
 	#ifdef ALL_MAPS
 		#include "map_files\Roguetown\roguetown.dmm"
 		#include "map_files\Rogueworld\Rogueworld.dmm"
+		#include "map_files\dun_manor\dun_manor.dmm"
 
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"

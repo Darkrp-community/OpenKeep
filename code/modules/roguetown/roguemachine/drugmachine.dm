@@ -60,7 +60,7 @@
 			if(drugrade_flags & DRUGRADE_MONEYB)
 				amt = recent_payments * 0.50
 			recent_payments = 0
-			send_ooc_note("<b>Income from PURITY:</b> [amt]", job = "Nightmaster")
+			send_ooc_note("<b>Income from PURITY:</b> [amt]", job = "Niteman")
 			secret_budget += amt
 
 /obj/structure/roguemachine/drugmachine/Topic(href, href_list)
@@ -178,7 +178,7 @@
 
 
 	var/mob/living/carbon/human/H = user
-	if(H.job == "Nightmaster")
+	if(H.job == "Niteman")
 		if(canread)
 			contents = "<a href='?src=[REF(src)];secrets=1'>Secrets</a>"
 		else
@@ -229,7 +229,7 @@
 	. = ..()
 	START_PROCESSING(SSroguemachine, src)
 	update_icon()
-	held_items[/obj/item/reagent_containers/powder] = list("PRICE" = rand(41,55),"NAME" = "chuckledust")
+	held_items[/obj/item/reagent_containers/powder/spice] = list("PRICE" = rand(41,55),"NAME" = "chuckledust")
 	held_items[/obj/item/reagent_containers/powder/ozium] = list("PRICE" = rand(25,47),"NAME" = "ozium")
 	held_items[/obj/item/reagent_containers/powder/moondust] = list("PRICE" = rand(13,25),"NAME" = "moondust")
 	held_items[/obj/item/clothing/mask/cigarette/rollie/cannabis] = list("PRICE" = rand(12,18),"NAME" = "swampweed zig")

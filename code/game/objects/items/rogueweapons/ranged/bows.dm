@@ -33,6 +33,7 @@
 
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/shoot_with_empty_chamber()
+	update_icon()
 	return
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/dropped()
@@ -67,7 +68,15 @@
 		else
 			BB.damage = BB.damage
 			BB.embedchance = 100
-		BB.damage = BB.damage * (user.STAPER / 10)
+			BB.accuracy += 15 //fully aiming bow makes your accuracy better.
+		
+		if(user.STAPER > 8)
+			BB.accuracy += (user.STAPER - 8) * 4 //each point of perception above 8 increases standard accuracy by 4.
+			BB.bonus_accuracy += (user.STAPER - 8) //Also, increases bonus accuracy by 1, which cannot fall off due to distance.
+			if(user.STAPER > 10) // Every point over 10 PER adds 10% damage
+				BB.damage = BB.damage * (user.STAPER / 10)
+		BB.damage *= damfactor // Apply bow's inherent damage multiplier regardless of PER
+		BB.bonus_accuracy += (user.mind.get_skill_level(/datum/skill/combat/bows) * 5) //+5 accuracy per level in bows. Bonus accuracy will not drop-off.
 	. = ..()
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/update_icon()
@@ -165,11 +174,17 @@
 	desc = "A finely crafted elvish longbow, bigger than the usual bows. Seems to pack more punch, given it's added size and firing power."
 	icon = 'icons/roguetown/weapons/64.dmi'
 	icon_state = "longbow"
-	item_state = "longbowbow"
+	item_state = "longbow"
 	possible_item_intents = list(/datum/intent/shoot/bow/long, /datum/intent/arc/bow/long,INTENT_GENERIC)
 	fire_sound = 'sound/combat/Ranged/flatbow-shot-03.ogg'
 	slot_flags = ITEM_SLOT_BACK
-	force = 25
+	force = 12
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	damfactor = 1.2
 
 /datum/intent/shoot/bow/long/prewarning()
 	if(mastermob)
@@ -181,11 +196,59 @@
 		mastermob.visible_message("<span class='warning'>[mastermob] draws [masteritem]!</span>")
 		playsound(mastermob, pick('sound/combat/Ranged/bow-draw-04.ogg'), 100, FALSE)
 
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long/update_icon()
+	. = ..()
+	cut_overlays()
+	if(chambered)
+		var/obj/item/I = chambered
+		I.pixel_x = 17
+		I.pixel_y = 12
+		add_overlay(new /mutable_appearance(I))
+		if(ismob(loc))
+			var/mob/M = loc
+			M.update_inv_hands()
+	if(ismob(loc))
+		var/mob/M = loc
+		M.update_inv_hands()
+
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.7,"sx" = -7,"sy" = 2,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
-			if("wielded")
-				return list("shrink" = 0.7,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.7,"sx" = -3,"sy" = 0,"nx" = 6,"ny" = 1,"wx" = -1,"wy" = 1,"ex" = -2,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 9,"sturn" = -100,"wturn" = -102,"eturn" = 10,"nflip" = 1,"sflip" = 8,"wflip" = 8,"eflip" = 1)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+			if("onback")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+
+/datum/intent/shoot/bow/long
+	chargetime = 1.5
+	chargedrain = 1.5
+	charging_slowdown = 3
+
+/datum/intent/arc/bow/long
+	chargetime = 1.5
+	chargedrain = 1.5
+	charging_slowdown = 3
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
+	name = "recurve bow"
+	desc = "A long but slender bow, finely crafted from horn, sinew, and wood. It has an atypical shape."
+	icon_state = "bowr"
+	possible_item_intents = list(/datum/intent/shoot/bow/recurve, /datum/intent/arc/bow/recurve,INTENT_GENERIC)
+	randomspread = 1
+	spread = 1
+	force = 9
+	damfactor = 0.9
+
+/datum/intent/shoot/bow/recurve
+	chargetime = 0.75
+	chargedrain = 1.5
+	charging_slowdown = 2.5
+
+/datum/intent/arc/bow/recurve
+	chargetime = 0.75
+	chargedrain = 1.5
+	charging_slowdown = 2.5

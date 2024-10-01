@@ -37,7 +37,7 @@
 	if(istext(soundin))
 		switch(soundin)
 			if("asdf")
-				used = pick('sound/vo/male/young/laugh (1).ogg','sound/vo/male/young/laugh (2).ogg')
+				used = pick('sound/vo/male/squire/laugh (1).ogg','sound/vo/male/squire/laugh (2).ogg')
 		if(!used) //always silent
 			used = 'sound/blank.ogg'
 		return used
@@ -47,7 +47,7 @@
 	if(istext(soundin))
 		switch(soundin)
 			if("asdf")
-				used = pick('sound/vo/male/young/laugh (1).ogg','sound/vo/male/young/laugh (2).ogg')
+				used = pick('sound/vo/male/squire/laugh (1).ogg','sound/vo/male/squire/laugh (2).ogg')
 		if(!used) //always silent
 			used = 'sound/blank.ogg'
 		return used

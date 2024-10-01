@@ -21,7 +21,7 @@
 
 	display_order = JDO_DRIFTER
 	show_in_credits = TRUE
-	min_pq = -999
+	min_pq = -20
 
 	total_positions = 0
 	spawn_positions = 0
@@ -34,3 +34,8 @@
 		H.advsetup = 1
 		H.invisibility = INVISIBILITY_MAXIMUM
 		H.become_blind("advsetup")
+		if(!H.mind)
+			if(HAS_TRAIT(H, TRAIT_ASSASSIN)) // If the mob is an assassin, they will be given the assassin antag.
+				var/datum/antagonist/new_antag = new /datum/antagonist/assassin()
+				H.mind.add_antag_datum(new_antag)
+

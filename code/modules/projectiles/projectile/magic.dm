@@ -8,6 +8,7 @@
 	pass_flags = PASSTABLE | PASSGRILLE
 	flag = "magic"
 	var/explode_sound = list('sound/misc/explode/incendiary (1).ogg','sound/misc/explode/incendiary (2).ogg')
+	var/mob/living/carbon/human/sender
 
 /obj/projectile/magic/death
 	name = "bolt of death"
@@ -614,11 +615,12 @@
 	name = "Area Bolt"
 	desc = ""
 	damage = 0
+	var/aoe_range = 0
 	var/proxdet = TRUE
 
 /obj/projectile/magic/aoe/Range()
 	if(proxdet)
-		for(var/mob/living/L in range(1, get_turf(src)))
+		for(var/mob/living/L in range(aoe_range, get_turf(src)))
 			if(L.stat != DEAD && L != firer && !L.anti_magic_check())
 				return Bump(L)
 	..()

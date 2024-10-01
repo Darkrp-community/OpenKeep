@@ -4,8 +4,8 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Half-Elf",
 		"Elf",
+		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
@@ -13,6 +13,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/boltslinger
 	category_tags = list(CTAG_MERCENARY)
+	maximum_possible_slots = 5
 
 
 /datum/outfit/job/roguetown/mercenary/boltslinger/pre_equip(mob/living/carbon/human/H)
@@ -21,8 +22,8 @@
 	cloak = /obj/item/clothing/cloak/half
 	head = /obj/item/clothing/head/roguetown/helmet/sallet
 	gloves = /obj/item/clothing/gloves/roguetown/angle
-	belt = /obj/item/storage/belt/rogue/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
+	belt = /obj/item/storage/belt/rogue/leather/mercenary
+	armor = /obj/item/clothing/suit/roguetown/armor/cuirass
 	beltr = /obj/item/rogueweapon/sword/iron
 	beltl = /obj/item/quiver/bolts
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
@@ -30,13 +31,13 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/rogueweapon/huntingknife)
+	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/rogueweapon/huntingknife)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(0,0,1), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
@@ -48,6 +49,9 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+
+		H.merctype = 6
+
 		H.change_stat("perception", 3)
 		H.change_stat("endurance", 1)
 		H.change_stat("strength", 1)

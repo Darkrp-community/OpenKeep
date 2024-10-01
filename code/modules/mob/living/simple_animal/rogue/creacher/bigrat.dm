@@ -1,6 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat
 	icon = 'icons/roguetown/mob/monster/bigrat.dmi'
 	name = "rous"
+	desc = "A Rodent Of Unusual Size. Some suspect the malice of the Cursed Star causes them to mutate."
 	icon_state = "rat"
 	icon_living = "rat"
 	icon_dead = "rat1"
@@ -37,11 +38,12 @@
 	deaggroprob = 0
 	defprob = 40
 	defdrain = 5
-	attack_same = FALSE // Lets two share a room. 
+	attack_same = FALSE // Lets two share a room.
 	retreat_health = 0.3
 	aggressive = 1
 	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/bigrat
+	body_eater = TRUE
 
 /obj/effect/decal/remains/bigrat
 	name = "remains"
@@ -61,12 +63,6 @@
 		icon_living = "Frat"
 		icon_dead = "Frat1"
 	update_icon()
-
-/mob/living/simple_animal/hostile/retaliate/rogue/bigrat/find_food()
-	. = ..()
-	if(!.)
-		return eat_bodies()
-
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/death(gibbed)
 	..()

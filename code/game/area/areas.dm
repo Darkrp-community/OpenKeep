@@ -83,7 +83,7 @@
 	var/droning_vary = 0
 	var/droning_repeat = TRUE
 	var/droning_wait = 0
-	var/droning_volume = 100
+	var/droning_volume = 90 // From 100, part of soundscape polishing THIS VAR DOES NOTHING
 	var/droning_channel = CHANNEL_BUZZ
 	var/droning_frequency = 0
 
@@ -175,6 +175,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	layer = AREA_LAYER
 	map_name = name // Save the initial (the name set in the map) name of the area.
 	canSmoothWithAreas = typecacheof(canSmoothWithAreas)
+	first_time_text = uppertext(first_time_text) // Standardization
 
 	if(requires_power)
 		luminosity = 0

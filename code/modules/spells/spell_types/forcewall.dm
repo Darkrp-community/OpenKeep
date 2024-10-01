@@ -1,6 +1,9 @@
 /obj/effect/proc_holder/spell/targeted/forcewall
 	name = "Forcewall"
 	desc = ""
+	base_icon_state = "" // for spells thats direct activated
+	action_icon_state = "forcewall"
+	overlay_state = "forcewall"
 	school = "transmutation"
 	charge_max = 100
 	releasedrain = 30
@@ -8,7 +11,6 @@
 	clothes_req = FALSE
 	invocation = "SHIELDA MAGIKA"
 	invocation_type = "shout"
-	sound = 'sound/magic/timestop.ogg'
 	action_icon_state = "shield"
 	range = -1
 	include_user = TRUE
@@ -17,6 +19,7 @@
 	var/wall_type = /obj/effect/forcefield/wizard
 
 /obj/effect/proc_holder/spell/targeted/forcewall/cast(list/targets,mob/user = usr)
+	playsound(get_turf(user), 'sound/magic/timestop.ogg', 100, TRUE, -1)
 	new wall_type(get_turf(user),user)
 	if(user.dir == SOUTH || user.dir == NORTH)
 		new wall_type(get_step(user, EAST),user)

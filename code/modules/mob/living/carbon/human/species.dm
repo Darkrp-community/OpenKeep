@@ -35,6 +35,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/custom_clothes = FALSE //append species id to clothing sprite name
 	var/use_f = FALSE //males use female clothes. for elves
+	var/use_m = FALSE //females use male clothes. for aasimar women
 
 	var/datum/voicepack/soundpack_m = /datum/voicepack/male
 	var/datum/voicepack/soundpack_f = /datum/voicepack/female
@@ -50,6 +51,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/liked_food = NONE
 	var/disliked_food = GROSS
 	var/toxic_food = TOXIC
+	var/nutrition_mod = 1	// multiplier for nutrition amount consumed per tic
 	var/list/no_equip = list()	// slots the race can't equip stuff to
 	var/nojumpsuit = 0	// this is sorta... weird. it basically lets you equip stuff that usually needs jumpsuits without one, like belts and pockets and ids
 	var/say_mod = "says"	// affects the speech message
@@ -63,6 +65,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/coldmod = 1		// multiplier for cold damage
 	var/heatmod = 1		// multiplier for heat damage
 	var/stunmod = 1		// multiplier for stun duration
+	var/bleed_mod = 1	// multiplier for blood loss
+	var/pain_mod = 1	// multiplier for pain from wounds
 	var/attack_type = BRUTE //Type of damage attack does
 	var/punchdamagelow = 10      //lowest possible punch damage. if this is set to 0, punches will always miss
 	var/punchdamagehigh = 10      //highest possible punch damage
@@ -107,6 +111,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/obj/item/organ/liver/mutantliver
 	var/obj/item/organ/stomach/mutantstomach
+	var/obj/item/organ/guts/mutantguts
 	var/override_float = FALSE
 
 	//Bitflag that controls what in game ways can select this species as a spawnable source
@@ -114,15 +119,59 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	//in __DEFINES/mobs.dm, defaults to NONE, so people actually have to think about it
 	var/changesource_flags = NONE
 
-	var/possible_faiths
+	//Wording for skin tone on examine and on character setup
+	var/skin_tone_wording = "Skin Tone"
 
 	// value for replacing skin tone/origin term
 	var/alt_origin
+
+		/// List of bodypart features of this species
+	var/list/bodypart_features
+
+	/// List of descriptor choices this species gets in preferences customization
+	var/list/descriptor_choices = list(
+		/datum/descriptor_choice/height,
+		/datum/descriptor_choice/body,
+		/datum/descriptor_choice/stature,
+		/datum/descriptor_choice/face,
+		/datum/descriptor_choice/face_exp,
+		/datum/descriptor_choice/skin,
+		/datum/descriptor_choice/voice,
+		/datum/descriptor_choice/prominent_one,
+		/datum/descriptor_choice/prominent_two,
+		/datum/descriptor_choice/prominent_three,
+		/datum/descriptor_choice/prominent_four,
+	)
+
+	/// List of organ customizers for preferences to customize organs.
+	var/list/customizers
+	/// List of possible body marking sets that the player can choose from in customization
+	var/list/body_marking_sets = list(
+		/datum/body_marking_set/none,
+	)
+	/// List all of body markings that the player can choose from in customization. Body markings from sets get added to here
+	var/list/body_markings
 
 ///////////
 // PROCS //
 ///////////
 
+/datum/species/proc/is_bodypart_feature_slot_allowed(mob/living/carbon/human/human, feature_slot)
+	switch(feature_slot)
+		if(BODYPART_FEATURE_FACIAL_HAIR)
+			return (human.gender == MALE)
+	return TRUE
+
+/datum/species/proc/add_marking_sets_to_markings()
+	if(!body_marking_sets)
+		return
+	if(!body_markings)
+		body_markings = list()
+	var/datum/body_marking_set/bodyset
+	for(var/set_type in body_marking_sets)
+		bodyset = GLOB.body_marking_sets_by_type[set_type]
+		for(var/body_marking_type in bodyset.body_marking_list)
+			body_markings |= body_marking_type
 
 /datum/species/New()
 
@@ -379,6 +428,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/organ/tongue/tongue = C.getorganslot(ORGAN_SLOT_TONGUE)
 	var/obj/item/organ/liver/liver = C.getorganslot(ORGAN_SLOT_LIVER)
 	var/obj/item/organ/stomach/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
+	var/obj/item/organ/guts/guts = C.getorganslot(ORGAN_SLOT_STOMACH_AID)
 	var/obj/item/organ/tail/tail = C.getorganslot(ORGAN_SLOT_TAIL)
 
 	var/should_have_brain = TRUE
@@ -421,13 +471,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	if(stomach && (!should_have_stomach || replace_current))
 		stomach.Remove(C,1)
+		guts.Remove(C,1)
 		QDEL_NULL(stomach)
+		QDEL_NULL(guts)
 	if(should_have_stomach && !stomach)
 		if(mutantstomach)
 			stomach = new mutantstomach()
+			guts = new mutantguts()
 		else
 			stomach = new()
+			guts = new()
 		stomach.Insert(C)
+		guts.Insert(C)
 
 	if(appendix && (!should_have_appendix || replace_current))
 		appendix.Remove(C,1)
@@ -514,7 +569,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	H.update_body_parts()
 
 
-/datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+/datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, datum/preferences/pref_load)
 	// Drop the items the new species can't wear
 	if((AGENDER in species_traits))
 		C.gender = PLURAL
@@ -585,6 +640,16 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	C.add_movespeed_modifier(MOVESPEED_ID_SPECIES, TRUE, 100, override=TRUE, multiplicative_slowdown=speedmod, movetypes=(~FLYING))
 
+	C.remove_all_bodypart_features()
+	for(var/bodypart_feature_type in bodypart_features)
+		var/datum/bodypart_feature/feature = new bodypart_feature_type()
+		if(!is_bodypart_feature_slot_allowed(C, feature.feature_slot))
+			continue
+		C.add_bodypart_feature(feature)
+	if(pref_load)
+		pref_load.apply_customizers_to_character(C)
+		pref_load.apply_descriptors(C)
+
 	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src, old_species)
 
 
@@ -627,7 +692,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	H.remove_overlay(HAIR_LAYER)
 	H.remove_overlay(HAIREXTRA_LAYER)
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
-	if(!HD) //Decapitated
+	if(!HD) // So, no head?
 		return
 
 	if(HD.skeletonized)
@@ -1576,7 +1641,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	// nutrition decrease and satiety
 	if (H.nutrition > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER))
 		// THEY HUNGER
-		var/hunger_rate = HUNGER_FACTOR
+		var/hunger_rate = (HUNGER_FACTOR * nutrition_mod)
 /*		if(H.satiety > MAX_SATIETY)
 			H.satiety = MAX_SATIETY
 		else if(H.satiety > 0)
@@ -2028,6 +2093,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(selzone))
 			var/armor_block = target.run_armor_check(selzone, "melee", blade_dulling = BCLASS_BLUNT)
 			var/damage = user.get_punch_dmg() * 1.4
+			var/balance = 10
 			target.next_attack_msg.Cut()
 			var/nodmg = FALSE
 			if(!target.apply_damage(damage, user.dna.species.attack_type, affecting, armor_block))
@@ -2035,13 +2101,24 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				target.next_attack_msg += " <span class='warning'>Armor stops the damage.</span>"
 			else
 				if(affecting)
-					affecting.bodypart_attacked_by(BCLASS_BLUNT, damage, user, user.zone_selected, crit_message = TRUE)
-			target.visible_message("<span class='danger'>[user] stomps [target]![target.next_attack_msg.Join()]</span>", \
-							"<span class='danger'>I'm stomped by [user]![target.next_attack_msg.Join()]</span>", "<span class='hear'>I hear a sickening kick!</span>", COMBAT_MESSAGE_RANGE, user)
-			to_chat(user, "<span class='danger'>I stomp on [target]![target.next_attack_msg.Join()]</span>")
+					if(selzone == BODY_ZONE_PRECISE_NECK)
+						to_chat(user, "<span class='danger'>I put my foot on [target]'s neck!</span>")
+						nodmg = TRUE
+						target.emote("gasp")
+						target.adjustOxyLoss(25)
+						target.Immobilize(5)
+						balance += 15
+						target.visible_message("<span class='danger'>[user] puts their foot on [target]'s neck!</span>", \
+										"<span class='danger'>I'm get my throat stepped on by [user]! I can't breathe!</span>", "<span class='hear'>I hear a sickening sound of pugilism!</span>", COMBAT_MESSAGE_RANGE, user)
+					else
+						affecting.bodypart_attacked_by(BCLASS_BLUNT, damage, user, user.zone_selected, crit_message = TRUE)
+						target.visible_message("<span class='danger'>[user] stomps [target]![target.next_attack_msg.Join()]</span>", \
+										"<span class='danger'>I'm stomped by [user]![target.next_attack_msg.Join()]</span>", "<span class='hear'>I hear a sickening kick!</span>", COMBAT_MESSAGE_RANGE, user)
+						to_chat(user, "<span class='danger'>I stomp on [target]![target.next_attack_msg.Join()]</span>")
 			target.next_attack_msg.Cut()
 			log_combat(user, target, "kicked")
 			user.do_attack_animation(target, ATTACK_EFFECT_DISARM)
+			user.OffBalance(balance)
 			if(!nodmg)
 				playsound(target, 'sound/combat/hits/kick/stomp.ogg', 100, TRUE, -1)
 			return TRUE
@@ -2131,6 +2208,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(target.mind)
 			target.mind.attackedme[user.real_name] = world.time
 		user.rogfat_add(15)
+		user.OffBalance(15)
 		target.forcesay(GLOB.hit_appends)
 
 /datum/species/proc/spec_hitby(atom/movable/AM, mob/living/carbon/human/H)
@@ -2242,15 +2320,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	//dismemberment
 	var/bloody = 0
-	var/probability = I.get_dismemberment_chance(affecting)
-	var/easy_dismember = HAS_TRAIT(H, TRAIT_EASYDISMEMBER) || affecting.rotted
-	if(prob(probability) || (easy_dismember && prob(probability))) //try twice
-		if(affecting.brute_dam > 0)
-			if(affecting.dismember(I.damtype, selzone))
-				bloody = 1
-				I.add_mob_blood(H)
-				user.update_inv_hands()
-				playsound(get_turf(H), I.get_dismember_sound(), 80, TRUE)
+	var/probability = I.get_dismemberment_chance(affecting, user)
+	if(affecting.brute_dam && prob(probability) && affecting.dismember(I.damtype, user.used_intent?.blade_class, user, selzone))
+		bloody = 1
+		I.add_mob_blood(H)
+		user.update_inv_hands()
+		playsound(get_turf(H), I.get_dismember_sound(), 80, TRUE)
 
 	if(((I.damtype == BRUTE) && I.force && prob(25 + (I.force * 2))))
 		if(affecting.status == BODYPART_ORGANIC)
@@ -2272,7 +2347,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 //					if(prob(I.force))
 //						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 20)
 //						if(H.stat == CONSCIOUS)
-//							H.visible_message("<span class='danger'>[H] is knocked senseless!</span>", "<span class='danger'>You're knocked senseless!</span>")
+//							H.visible_message(span_danger("[H] is knocked senseless!"), span_danger("You're knocked senseless!"))
 //							H.confused = max(H.confused, 20)
 //							H.adjust_blurriness(10)
 //						if(prob(10))
@@ -2299,7 +2374,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(BODY_ZONE_CHEST)
 //				if(H.stat == CONSCIOUS && !I.get_sharpness() && armor_block < 50)
 //					if(prob(I.force))
-//						H.visible_message("<span class='danger'>[H] is knocked down!</span>", "<span class='danger'>You're knocked down!</span>")
+//						H.visible_message(span_danger("[H] is knocked down!"), span_danger("You're knocked down!"))
 //						H.apply_effect(60, EFFECT_KNOCKDOWN, armor_block)
 
 				if(bloody)
@@ -2349,11 +2424,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 							H.emote("painscream")
 						else
 							H.emote("pain")
-				if(damage_amount > ((H.STACON*10) / 3))
+				if(damage_amount > ((H.STACON*10) / 3) && !HAS_TRAIT(H, TRAIT_NOPAINSTUN))
 					H.Immobilize(8)
 					shake_camera(H, 2, 2)
 					H.stuttering += 5
-				if(damage_amount > 10)
+				if(damage_amount > 10 && !HAS_TRAIT(H, TRAIT_NOPAINSTUN))
 					H.Slowdown(clamp(damage_amount/10, 1, 5))
 					shake_camera(H, 1, 1)
 				if(damage_amount < 10)
@@ -2408,9 +2483,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	// called when hit by a projectile
 	switch(P.type)
 		if(/obj/projectile/energy/floramut) // overwritten by plants/pods
-			H.show_message("<span class='notice'>The radiation beam dissipates harmlessly through my body.</span>")
+			H.show_message(span_notice("The radiation beam dissipates harmlessly through my body."))
 		if(/obj/projectile/energy/florayield)
-			H.show_message("<span class='notice'>The radiation beam dissipates harmlessly through my body.</span>")
+			H.show_message(span_notice("The radiation beam dissipates harmlessly through my body."))
 
 /datum/species/proc/bullet_act(obj/projectile/P, mob/living/carbon/human/H, def_zone = BODY_ZONE_CHEST)
 	// called before a projectile hit
@@ -2804,4 +2879,4 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		skill_modifier = mind.get_skill_level(/datum/skill/misc/athletics)
 	var/modifier = -distance
 	if(!prob(STASPD+skill_modifier+modifier))
-		Paralyze(15)
+		Knockdown(8)

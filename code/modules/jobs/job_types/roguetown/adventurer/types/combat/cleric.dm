@@ -1,7 +1,7 @@
 //shield
 /datum/advclass/combat/cleric
 	name = "Cleric"
-	tutorial = "Clerics are wandering warriors of the Gods, an asset to any party."
+	tutorial = "Clerics are wandering warriors of the Gods, drawn from the ranks of temple acolytes who demonstrated martial talent. Protected by armor and zeal, they are a force to be reckoned with."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -14,49 +14,57 @@
 	vampcompat = FALSE
 	outfit = /datum/outfit/job/roguetown/adventurer/cleric
 	category_tags = list(CTAG_ADVENTURER)
-	maximum_possible_slots = 5
+	min_pq = 0
+	maximum_possible_slots = 4
+
+/datum/outfit/job/roguetown/adventurer/cleric
+	allowed_patrons = ALL_CLERIC_PATRONS
 
 /datum/outfit/job/roguetown/adventurer/cleric/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE
-	var/allowed_patrons = list("Astrata", "Dendor", "Necra")
 
-	var/datum/patrongods/ourpatron
-	if(istype(H.PATRON, /datum/patrongods))
-		ourpatron = H.PATRON
-
-	if(!ourpatron || !(ourpatron.name in allowed_patrons))
-
-		var/list/datum/patrongods/possiblegods = list()
-		for(var/datum/patrongods/P in GLOB.patronlist)
-			if(P.name in allowed_patrons)
-				possiblegods |= P
-
-		ourpatron = pick(possiblegods)
-		H.PATRON = ourpatron
-		to_chat(H, "<span class='warning'> My patron had not endorsed my practices in my younger years. I've since grown acustomed to [H.PATRON].")
-
-	switch(ourpatron.name)
+	switch(H.patron?.name)
 		if("Astrata")
-			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
+			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
 		if("Dendor")
-			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
+			cloak = /obj/item/clothing/cloak/stabard/templar/dendor
 		if("Necra")
-			neck = /obj/item/clothing/neck/roguetown/psicross/necra
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
+			cloak = /obj/item/clothing/cloak/stabard/templar/necra
+		if("Eora")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
+			cloak = /obj/item/clothing/cloak/stabard/templar/eora
+			H.virginity = FALSE
+		if("Ravox")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
+		if("Noc")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/noc
+			cloak = /obj/item/clothing/cloak/stabard/templar/noc
+		if("Pestra")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
+			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
+		else // Failsafe
+			cloak = /obj/item/clothing/cloak/tabard/crusader // Give us a generic crusade tabard
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver // Give us a silver psycross for protection against lickers
 
-	armor = /obj/item/clothing/suit/roguetown/armor/plate
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	armor = /obj/item/clothing/suit/roguetown/armor/cuirass // Halfplate has been made heavy armor, billions must make due.
+	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/rogueweapon/mace
-	beltl = /obj/item/storage/belt/rogue/pouch
+	beltl = /obj/item/rogueweapon/mace
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
+	neck = /obj/item/clothing/neck/roguetown/gorget
+
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
@@ -66,13 +74,14 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
 		H.change_stat("strength", 1)
-		H.change_stat("perception", -2)
-		H.change_stat("intelligence", 2)
-		H.change_stat("constitution", 2)
-		H.change_stat("endurance", 3)
+		H.change_stat("intelligence", 1)
+		H.change_stat("constitution", 1)
+		H.change_stat("endurance", 2)
 		H.change_stat("speed", -1)
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.PATRON)
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) // Even if it has limited slots, it is a common drifter role available to anyone. Their armor also is not heavy, so medium armor training is enough
+	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	C.holder_mob = H
-	C.grant_spells(H)
+	C.update_devotion(50, 50)
+	C.grant_spells_cleric(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
+

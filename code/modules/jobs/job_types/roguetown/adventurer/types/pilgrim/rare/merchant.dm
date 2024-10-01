@@ -10,8 +10,10 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/merchant
-	category_tags = (CTAG_PILGRIM)
+	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 2
+	pickprob = 30
+	min_pq = 0
 
 
 /datum/outfit/job/roguetown/adventurer/merchant/pre_equip(mob/living/carbon/human/H)
@@ -24,7 +26,6 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/tailor, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/weaving, 1, TRUE)
 	H.change_stat("intelligence", 2)
 	H.change_stat("speed", 1)
 	shoes = /obj/item/clothing/shoes/roguetown/boots
@@ -48,14 +49,14 @@
 	var/merchtype = pickweight(list("FOOD" = 4, "HEAL" = 2, "SILK" = 1, "GEMS" = 1))
 	switch(merchtype)
 		if("FOOD")		// Travelling food peddler
-			backpack_contents = list(/obj/item/reagent_containers/food/snacks/rogue/meat/salami = 1, /obj/item/reagent_containers/food/snacks/rogue/meat/coppiette = 1, /obj/item/reagent_containers/food/snacks/rogue/cheddar = 1, /obj/item/reagent_containers/food/snacks/rogue/saltfish = 1, /obj/item/reagent_containers/food/snacks/rogue/crackers = 1)
+			backpack_contents = list(/obj/item/reagent_containers/food/snacks/rogue/meat/salami = 1, /obj/item/reagent_containers/food/snacks/rogue/meat/coppiette = 1, /obj/item/reagent_containers/food/snacks/rogue/cheddar = 1, /obj/item/reagent_containers/food/snacks/rogue/saltfish = 1, /obj/item/reagent_containers/food/snacks/rogue/crackerscooked = 1)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
 		if("HEAL")		// Travelling potion seller (If only we had snake oil..)
 			backpack_contents = list(/obj/item/reagent_containers/glass/bottle/rogue/healthpot, /obj/item/reagent_containers/glass/bottle/rogue/healthpot, /obj/item/reagent_containers/glass/bottle/rogue/healthpot, /obj/item/reagent_containers/glass/bottle/rogue/manapot)
 			H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
 		if("SILK")		// Travelling silk trader
 			backpack_contents = list(/obj/item/natural/bundle/silk = 2, /obj/item/natural/fur = 1, /obj/item/natural/bundle/fibers = 2, /obj/item/clothing/suit/roguetown/shirt/dress/silkdress, /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan)
-			H.mind.adjust_skillrank(/datum/skill/misc/weaving, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 		if("GEMS")		// Travelling high-end merchant
 			backpack_contents = list(/obj/item/roguegem/yellow, /obj/item/roguegem/yellow, /obj/item/roguegem/green, /obj/item/roguegem/green, /obj/item/roguegem/violet)
 			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 1, TRUE)

@@ -16,7 +16,7 @@
     )
     outfit = /datum/outfit/job/roguetown/adventurer/physicker
     category_tags = list(CTAG_PILGRIM)
-    maximum_possible_slots = 1
+    maximum_possible_slots = 2
 
 /datum/outfit/job/roguetown/adventurer/physicker/pre_equip(mob/living/carbon/human/H)
     ..()
@@ -33,7 +33,7 @@
 
     H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
     H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-    H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+    H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
     H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
     H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
     if(H.age == AGE_OLD)

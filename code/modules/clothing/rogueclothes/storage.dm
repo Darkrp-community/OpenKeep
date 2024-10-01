@@ -31,7 +31,7 @@
 
 /obj/item/storage/belt/rogue/leather
 	name = "belt"
-	desc = ""
+	desc = "A leather belt."
 	icon_state = "leather"
 	item_state = "leather"
 	equip_sound = 'sound/blank.ogg'
@@ -45,14 +45,44 @@
 		for(var/obj/item/I in things)
 			STR.remove_from_storage(I, get_turf(src))
 
-// Until ninja stars are fixed (able to be removed from embedding), replacing them with poison berries for arrow crafting.
+/obj/item/storage/belt/rogue/leather/assassin // Assassin's super edgy and cool belt can carry normal items (for poison vial, lockpick).
+	heldz_items = 3
+
+/obj/item/storage/belt/rogue/leather/assassin/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		STR.max_combined_w_class = 8
+		STR.max_w_class = WEIGHT_CLASS_NORMAL
+		STR.max_items = heldz_items
+//Assassin's belt starts with their unique dagger, a vial of highly-deadly poison, and a lockpick.
 /obj/item/storage/belt/rogue/leather/assassin/PopulateContents()
-	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
-	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
-	new /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison(src)
+	new /obj/item/reagent_containers/glass/bottle/rogue/poison(src)
+	new /obj/item/rogueweapon/huntingknife/idagger/steel/profane(src)
+	new /obj/item/lockpick(src)
+
+//Bandit's belt starts with a simple needle and a key to their hideout.
+/obj/item/storage/belt/rogue/leather/bandit/PopulateContents()
+	new /obj/item/needle/thorn(src)
+	new /obj/item/roguekey/bandit(src)
+
+//Bandit's belt starts with a bandage and a key to their guildhall.
+/obj/item/storage/belt/rogue/leather/mercenary/PopulateContents()
+	new /obj/item/natural/cloth(src)
+	new /obj/item/roguekey/mercenary(src)
+
+/obj/item/storage/belt/rogue/leather/mercenary/shalal
+	name = "shalal belt"
+	icon_state = "shalal"
+
+/obj/item/storage/belt/rogue/leather/mercenary/black
+	name = "black belt"
+	icon_state = "blackbelt"
+
 
 /obj/item/storage/belt/rogue/leather/plaquegold
 	name = "plaque belt"
+	desc = "A belt with a golden plaque on its front."
 	icon_state = "goldplaque"
 	sellprice = 50
 
@@ -68,17 +98,19 @@
 
 /obj/item/storage/belt/rogue/leather/plaquesilver
 	name = "plaque belt"
+	desc = "A belt with a silver plaque on its front."
 	icon_state = "silverplaque"
 	sellprice = 30
 
 /obj/item/storage/belt/rogue/leather/hand
 	name = "steel belt"
+	desc = "A belt with a steel plate on its front."
 	icon_state = "steelplaque"
 	sellprice = 30
 
 /obj/item/storage/belt/rogue/leather/rope
 	name = "rope belt"
-	desc = ""
+	desc = "A simple belt made of rope."
 	icon_state = "rope"
 	item_state = "rope"
 	color = "#b9a286"
@@ -86,7 +118,7 @@
 
 /obj/item/storage/belt/rogue/leather/cloth
 	name = "cloth sash"
-	desc = ""
+	desc = "A simple cloth sash."
 	icon_state = "cloth"
 	heldz_items = 1
 
@@ -98,7 +130,7 @@
 
 /obj/item/storage/belt/rogue/pouch
 	name = "pouch"
-	desc = ""
+	desc = "Usually used for holding coins."
 	icon = 'icons/roguetown/clothing/storage.dmi'
 	mob_overlay_icon = null
 	icon_state = "pouch"
@@ -177,9 +209,15 @@
 			if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, H, null, TRUE, TRUE))
 				qdel(H)
 
+/obj/item/storage/belt/rogue/pouch/bullets/Initialize()
+	. = ..()
+	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
+	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
+	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
+
 /obj/item/storage/backpack/rogue/satchel
 	name = "satchel"
-	desc = ""
+	desc = "A bulky bag worn over the shoulder which can be used to hold many things."
 	icon_state = "satchel"
 	item_state = "satchel"
 	icon = 'icons/roguetown/clothing/storage.dmi'
@@ -207,7 +245,7 @@
 	if(STR)
 		STR.max_combined_w_class = 21
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
-		STR.max_items = 3
+		STR.max_items = 4
 
 /obj/item/storage/backpack/rogue/attack_right(mob/user)
 	var/datum/component/storage/CP = GetComponent(/datum/component/storage)
@@ -218,7 +256,7 @@
 
 /obj/item/storage/backpack/rogue/backpack
 	name = "backpack"
-	desc = ""
+	desc = "A bulky backpack worn on the back which can store many items."
 	icon_state = "backpack"
 	item_state = "backpack"
 	icon = 'icons/roguetown/clothing/storage.dmi'
@@ -241,7 +279,6 @@
 /obj/item/storage/backpack/rogue/satchel/surgbag
 	name = "surgery bag"
 	desc = "Contains all the phreakish devices one needs to cut a person up."
-	slot_flags = null
 	item_state = "doctorbag"
 	icon_state = "doctorbag"
 	attack_verb = list("beats", "bludgeons")

@@ -37,6 +37,10 @@
 /datum/armor/proc/modifyAllRatings(modifier = 0)
   return getArmor(melee+modifier, bullet+modifier, laser+modifier, energy+modifier, bomb+modifier, bio+modifier, rad+modifier, fire+modifier, acid+modifier, magic+modifier)
 
+//TODO! PORT BLACKSTONE BLUNT/SLASH/STAB ARMOR DEFINES!!!!!!
+/datum/armor/proc/multiplymodifyAllRatings(modifier = 0)
+  return getArmor(melee*modifier, bullet*modifier, laser*modifier, energy*modifier, bomb*modifier, bio*modifier, rad*modifier, fire*modifier, acid*modifier, magic*modifier)
+
 /datum/armor/proc/setRating(melee, bullet, laser, energy, bomb, bio, rad, fire, acid, magic)
   return getArmor((isnull(melee) ? src.melee : melee),\
                   (isnull(bullet) ? src.bullet : bullet),\

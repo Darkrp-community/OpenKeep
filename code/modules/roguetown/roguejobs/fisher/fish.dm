@@ -11,6 +11,7 @@
 	sellprice = 10
 	dropshrink = 0.6
 	slices_num = 1
+	slice_bclass = BCLASS_CHOP
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/mince/fish
 	eat_effect = /datum/status_effect/debuff/uncookedfood
@@ -26,14 +27,18 @@
 		if("gold")
 			sellprice = sellprice * 10
 			name = "legendary [initial(name)]"
+			dust_result = /obj/item/alch/waterdust
 		if("ultra")
 			sellprice = sellprice * 4
 			name = "ultra-rare [initial(name)]"
+			dust_result = /obj/item/alch/waterdust
 		if("rare")
 			sellprice = sellprice * 2
 			name = "rare [initial(name)]"
+			dust_result = /obj/item/alch/waterdust
 		if("com")
 			name = "common [initial(name)]"
+			possible_potion = "conpot"
 	if(!dead)
 		START_PROCESSING(SSobj, src)
 
@@ -77,12 +82,14 @@
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/carp
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/carp
 
+
 /obj/item/reagent_containers/food/snacks/fish/clownfish
 	name = "clownfish"
 	icon_state = "clownfish"
 	sellprice = 40
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish
+
 
 /obj/item/reagent_containers/food/snacks/fish/angler
 	name = "anglerfish"
@@ -91,12 +98,14 @@
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler
 
+
 /obj/item/reagent_containers/food/snacks/fish/eel
 	name = "eel"
 	icon_state = "eel"
 	sellprice = 5
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel
+
 
 /obj/item/reagent_containers/food/snacks/rogue/fryfish
 	icon = 'icons/roguetown/misc/fish.dmi'

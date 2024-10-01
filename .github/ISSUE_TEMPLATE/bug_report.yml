@@ -1,7 +1,7 @@
 name: Bug Report
 description: File a bug report
 title: "[Bug]: "
-
+labels: ["Bug"]
 body:
 - type: markdown
   attributes:
@@ -20,12 +20,12 @@ body:
 - type: dropdown
   id: location
   attributes:
-    label: Location
+    label: Map
     multiple: true
     description: Where did the bug happen?
     options:
-      - RogueTown
-      - RogueWorld
+      - Dun Manor
+      - DakkaTown
   validations:
     required: true
 

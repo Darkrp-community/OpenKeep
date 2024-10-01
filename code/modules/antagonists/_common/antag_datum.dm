@@ -24,6 +24,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 	var/antagpanel_category = "Uncategorized"	//Antagpanel will display these together, REQUIRED
 	var/show_name_in_check_antagonists = FALSE //Will append antagonist name in admin listings - use for categories that share more than one antag type
 	var/increase_votepwr = TRUE
+	var/isgoodguy = FALSE // Some "antagonist" datums are granted to not inherently bad guys, this is to differentiate for the sake of bardic buffs.
 
 /datum/antagonist/New()
 	GLOB.antagonists += src

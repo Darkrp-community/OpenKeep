@@ -153,6 +153,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	///Added success chance after every failed tame attempt.
 	var/bonus_tame_chance
 
+	var/mob/owner = null
+
 	///I don't want to confuse this with client registered_z.
 	var/my_z
 	///What kind of footstep this mob should have. Null if it shouldn't have any.
@@ -212,22 +214,24 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			playsound(loc,'sound/misc/eat.ogg', rand(30,60), TRUE)
 			qdel(O)
 			food = min(food + 30, 100)
-			if(tame)
+			if(tame && owner == user)
 				return
 			var/realchance = tame_chance
 			if(realchance)
 				if(user.mind)
 					realchance += (user.mind.get_skill_level(/datum/skill/labor/taming) * 20)
 				if(prob(realchance))
-					tamed()
+					tamed(user)
 				else
 					tame_chance += bonus_tame_chance
 
 ///Extra effects to add when the mob is tamed, such as adding a riding component
-/mob/living/simple_animal/proc/tamed()
+/mob/living/simple_animal/proc/tamed(mob/user)
 	emote("smile", forced = TRUE)
 	tame = TRUE
 	stop_automated_movement_when_pulled = TRUE
+	if(user)
+		owner = user
 	return
 
 //mob/living/simple_animal/examine(mob/user)
@@ -408,9 +412,10 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	if((bodytemperature < minbodytemp) || (bodytemperature > maxbodytemp))
 		adjustHealth(unsuitable_atmos_damage)
 
-/mob/living/simple_animal/MiddleClick(mob/user, params)
+/mob/living/simple_animal/MiddleClick(mob/living/user, params)
 	if(stat == DEAD)
 		var/obj/item/held_item = user.get_active_held_item()
+		var/boon = user.mind.get_learning_boon(/datum/skill/labor/butchering)
 		if(held_item)
 			if((butcher_results || guaranteed_butcher_results) && held_item.get_sharpness() && held_item.wlength == WLENGTH_SHORT)
 				var/used_time = 210
@@ -418,11 +423,13 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 					used_time -= (user.mind.get_skill_level(/datum/skill/labor/butchering) * 30)
 				visible_message("[user] begins to butcher [src].")
 				playsound(src, 'sound/foley/gross.ogg', 100, FALSE)
+				var/amt2raise = user.STAINT // this is due to the fact that butchering is not as spammable as training a sword because you cant just spam click
 				if(do_after(user, used_time, target = src))
-					gib()
+					user.mind.adjust_experience(/datum/skill/labor/butchering, amt2raise * boon, FALSE)
+					butcher(user)
 	..()
 
-/mob/living/simple_animal/gib()
+/mob/living/simple_animal/proc/butcher(mob/user)
 	if(ssaddle)
 		ssaddle.forceMove(get_turf(src))
 		ssaddle = null
@@ -431,6 +438,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 		if(butcher_results)
 			butcher += butcher_results
+			if(user.mind.get_skill_level(/datum/skill/labor/butchering) >= 5)
+				butcher += butcher_results // double the yield of the stuff you get
 		if(guaranteed_butcher_results)
 			butcher += guaranteed_butcher_results
 		var/rotstuff = FALSE
@@ -446,7 +455,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 				if(rotstuff && istype(I,/obj/item/reagent_containers/food/snacks))
 					var/obj/item/reagent_containers/food/snacks/F = I
 					F.become_rotten()
-	..()
+	gib()
 
 /mob/living/simple_animal/spawn_dust(just_ash = FALSE)
 	if(just_ash || !remains_type)
@@ -827,9 +836,9 @@ mob/living/simple_animal/handle_fire()
 			if(user.mind)
 				var/amt = user.mind.get_skill_level(/datum/skill/misc/riding)
 				if(amt)
-					riding_datum.vehicle_move_delay -= 5
-				else
-					riding_datum.vehicle_move_delay -= 3
+					amt = clamp(amt, 0, 4) //higher speed amounts are a little wild. Max amount achieved at expert riding.
+					riding_datum.vehicle_move_delay -= (amt/5 + 2)
+				riding_datum.vehicle_move_delay -= 3
 			if(loc != oldloc)
 				var/obj/structure/mineral_door/MD = locate() in loc
 				if(MD && !MD.ridethrough)

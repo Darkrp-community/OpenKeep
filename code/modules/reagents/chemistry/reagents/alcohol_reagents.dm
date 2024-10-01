@@ -77,7 +77,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	color = "#8e6c06" // rgb: 102, 67, 0
 	nutriment_factor = 0.1
 	boozepwr = 25
-	taste_description = "beer"
+	taste_description = "ale"
 	glass_name = "glass of beer"
 	glass_desc = ""
 	hydration_factor = 10
@@ -2149,6 +2149,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "overwhelming sourness"
 	color = "#401806"
 
+/datum/reagent/consumable/ethanol/beer/onion
+	name = "Ratkept Onin Cognac"
+	boozepwr = 10
+	taste_description = "spicy sweet malty overtones"
+	color = "#f1b5ff"
+
 // Elf Production - LEAF-LOVERS MOTHERFUCKER
 
 /datum/reagent/consumable/ethanol/beer/aurorian
@@ -2156,6 +2162,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	boozepwr = 5
 	taste_description = "subtle herbacious undertones"
 	color = "#5D8A8A"
+
+/datum/reagent/consumable/ethanol/beer/fireleaf // cabbbage
+	name = "Fireleaf"
+	boozepwr = 2
+	taste_description = "bland liquor"
+	color = "#475e45"
 
 // Dwarven Production - Best in the Realms
 
@@ -2170,6 +2182,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	boozepwr = 40
 	taste_description = "potent oatlike liquor"
 	color = "#5D8A8A"
+
+/datum/reagent/consumable/ethanol/beer/voddena // Not vodka. Trust me.
+	name = "Voddena"
+	boozepwr = 55  // holy shit
+	taste_description = "burning starchy wet dirt"
+	color = "#4b443c"
 
 // WINE - Fancy.. And yes: all drinks are beer, technically. Cope. Seethe. I didnt code it like this.
 

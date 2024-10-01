@@ -56,8 +56,8 @@
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
-	message = trim(copytext(sanitize(message), 1, MAX_MESSAGE_LEN))
-	usr.emote("me",1,message,TRUE)
+	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
+	usr.emote("me",1,message,TRUE, custom_me = TRUE)
 
 ///Speak as a dead person (ghost etc)
 /mob/proc/say_dead(message)
@@ -110,14 +110,19 @@
 ///Check if this message is an emote
 /mob/proc/check_emote(message, forced)
 	if(copytext(message, 1, 2) == "*")
-		emote(copytext(message, 2), intentional = !forced)
+		emote(copytext_char(message, 2), intentional = !forced, custom_me = TRUE)
 		return 1
 
 /mob/proc/check_whisper(message, forced)
 	if(copytext(message, 1, 2) == "+")
 		whisper(copytext(message, 2),sanitize = FALSE)//already sani'd
 		return 1
-
+/* commenting out subtler
+/mob/proc/check_subtler(message, forced)
+	if(copytext_char(message, 1, 2) == "@")
+		emote("subtle", message = copytext_char(message, 2), intentional = !forced)
+		return 1
+*/
 ///Check if the mob has a hivemind channel
 /mob/proc/hivecheck()
 	return 0
@@ -138,6 +143,8 @@
 	var/key = copytext(message, 1, 2)
 	if(key == "#")
 		return MODE_WHISPER
+	else if(key == "%")
+		return MODE_SING
 	else if(key == ";")
 		return MODE_HEADSET
 	else if(length(message) > 2 && (key in GLOB.department_radio_prefixes))

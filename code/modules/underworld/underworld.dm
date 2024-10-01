@@ -24,7 +24,7 @@
 				var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(A.loc)
 				O.livingname = mob.name
 				O.ckey = ckey
-				O.PATRON = prefs.selected_patron
+				O.patron = prefs.selected_patron
 				SSdroning.area_entered(get_area(O), O.client)
 			verbs -= /client/proc/descend
 		if("No")
@@ -215,7 +215,7 @@
 	attack_same = FALSE
 	attack_sound = 'sound/combat/wooshes/bladed/wooshmed (1).ogg'
 	dodge_sound = 'sound/combat/dodge.ogg'
-	parry_sound = "bladedmedium"
+	parry_sound = "sword"
 	d_intent = INTENT_PARRY
 	speak_emote = list("growls")
 	limb_destroyer = 1

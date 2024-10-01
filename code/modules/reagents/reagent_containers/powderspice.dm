@@ -1,4 +1,15 @@
-/obj/item/reagent_containers/powder
+/obj/item/reagent_containers/powder // TO DO Remember this is now obsolete by /obj/item/reagent_containers/powder/spice
+	name = "powder parent item. You should not be seeing this."
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "spice"
+	item_state = "spice"
+	possible_transfer_amounts = list()
+	volume = 15
+	list_reagents = list(/datum/reagent/druqks = 15)
+	sellprice = 10
+
+/obj/item/reagent_containers/powder/spice
 	name = "spice"
 	desc = ""
 	icon = 'icons/roguetown/items/produce.dmi'
@@ -42,6 +53,7 @@
 	show_when_dead = FALSE
 
 /datum/reagent/druqks/overdose_start(mob/living/M)
+	M.flash_fullscreen("hey")
 	M.visible_message("<span class='warning'>Blood runs from [M]'s nose.</span>")
 
 /datum/reagent/druqks/overdose_process(mob/living/M)
@@ -109,6 +121,7 @@
 
 	if(reagents.total_volume)
 		reagents.trans_to(M, reagents.total_volume, transfered_by = user, method = "swallow")
+		SSticker.snort++
 	qdel(src)
 	return TRUE
 
@@ -139,6 +152,7 @@
 	list_reagents = list(/datum/reagent/floure = 1)
 	volume = 1
 	sellprice = 0
+	
 /datum/reagent/floure
 	name = "flower"
 	description = ""
@@ -155,8 +169,8 @@
 	..()
 	qdel(src)
 
-/obj/item/reagent_containers/powder/flour/salt
-	name = "salt"
+/obj/item/reagent_containers/powder/salt
+	name = "coder salt remove"
 	desc = ""
 	gender = PLURAL
 	icon_state = "salt"
@@ -164,14 +178,15 @@
 	volume = 1
 
 /obj/item/reagent_containers/powder/ozium
-	name = "powder"
-	desc = ""
+	name = "ozium"
+	desc = "A potent drug that causes a state of euphoria, but can also arrest breathing."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "ozium"
 	possible_transfer_amounts = list()
 	volume = 15
 	list_reagents = list(/datum/reagent/ozium = 15)
 	sellprice = 5
+	possible_potion = "perpot"
 
 /datum/reagent/ozium
 	name = "Ozium"
@@ -179,6 +194,10 @@
 	color = "#60A584" // rgb: 96, 165, 132
 	overdose_threshold = 16
 	metabolization_rate = 0.2
+
+/datum/reagent/ozium/on_mob_metabolize(mob/living/L)
+	. = ..()
+	L.flash_fullscreen("can_you_see")
 
 /datum/reagent/ozium/overdose_process(mob/living/M)
 	M.adjustToxLoss(0.25*REM, 0)
@@ -188,6 +207,11 @@
 /datum/reagent/ozium/on_mob_life(mob/living/carbon/M)
 	if(M.has_flaw(/datum/charflaw/addiction/junkie))
 		M.sate_addiction()
+	if(prob(10))
+		M.playsound_local(get_turf(M), 'sound/misc/jumpscare (2).ogg', 25)
+		M.flash_fullscreen("hey")
+	if(prob(20))
+		M.flash_fullscreen("whiteflash")
 	M.apply_status_effect(/datum/status_effect/buff/ozium)
 	..()
 
@@ -200,13 +224,14 @@
 
 /obj/item/reagent_containers/powder/moondust
 	name = "moondust"
-	desc = ""
+	desc = "Derived from the skins of certain pallid goblins. Makes folk quick to act and anger."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust"
 	possible_transfer_amounts = list()
 	volume = 15
 	list_reagents = list(/datum/reagent/moondust = 15)
 	sellprice = 5
+	possible_potion = "intpot"
 
 /datum/reagent/moondust/overdose_process(mob/living/M)
 	M.adjustToxLoss(0.25*REM, 0)
@@ -239,14 +264,15 @@
 	M.adjustToxLoss(10, 0)
 
 /obj/item/reagent_containers/powder/moondust_purest
-	name = "moondust"
-	desc = ""
+	name = "pure moondust"
+	desc = "This moondust glitters even in the dark. It seems to have certain pure properties."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust_purest"
 	possible_transfer_amounts = list()
 	volume = 18
 	list_reagents = list(/datum/reagent/moondust_purest = 18)
 	sellprice = 30
+	possible_potion = "spdpot"
 
 /datum/reagent/moondust_purest
 	name = "Purest Moondust"
@@ -287,3 +313,13 @@
 
 /datum/reagent/moondust_purest/overdose_process(mob/living/M)
 	M.adjustToxLoss(10, 0)
+
+/obj/item/reagent_containers/powder/blastpowder
+	name = "blastpowder"
+	desc = "explosive powder known to be produced by the dwarves. It's used in many explosives."
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "blastpowder"
+	possible_transfer_amounts = list()
+	volume = 15
+	list_reagents = list(/datum/reagent/blastpowder = 15)
+	sellprice = 15

@@ -43,6 +43,15 @@
 /turf/open/floor/rogue/ruinedwood/chevron
 	icon_state = "weird2"
 
+/*	..................   Darker version   ................... */
+/turf/open/floor/rogue/ruinedwood/darker // here problem was opposite, too bright wood for bandit lair
+	color = "#d9c9b0"
+/turf/open/floor/rogue/ruinedwood/turned/darker
+	color = "#d9c9b0"
+
+/turf/open/floor/rogue/tile/kitchen // faded kitchen, too dark floors look bad IMO, this much nicer
+	icon_state = "tavern"
+
 /turf/open/floor/rogue/twig
 	icon_state = "twig"
 	footstep = FOOTSTEP_GRASS
@@ -761,3 +770,14 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/grassland.wav'
+
+/turf/open/floor/rogue/plank
+	icon_state = "plank"
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	landsound = 'sound/foley/jumpland/woodland.wav'
+
+/turf/open/floor/rogue/plank/h
+	icon_state = "plank2"

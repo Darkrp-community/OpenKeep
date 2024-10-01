@@ -3,7 +3,7 @@
 	var/t_his = p_their()
 	var/t_is = p_are()
 
-	. = list("<span class='info'>✠ ------------ ✠\nThis is \a <EM>[src]</EM>.")
+	. = list("<span class='info'>ᛉ ------------ ᛉ\nThis is \a <EM>[src]</EM>.")
 
 	var/m1 = "[t_He] [t_is]"
 	var/m2 = "[t_his]"
@@ -95,4 +95,7 @@
 	if(Adjacent(user) && HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
 		. += "<a href='?src=[REF(src)];inspect_animal=1'>Inspect Wounds</a>"
 
-	. += "✠ ------------ ✠</span>"
+	if(desc)
+		. += desc
+
+	. += "ᛉ ------------ ᛉ</span>"

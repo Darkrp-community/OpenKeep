@@ -28,14 +28,22 @@
 	force_string = "robust... against germs"
 	var/uses = 100
 
+/*
 /obj/item/soap/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/slippery, 80)
+*/
+
+/obj/item/soap/cult
+	name = "accursed soap"
+	desc = "It is pulsating."
+	uses = 9
+	cleanspeed = 1
 
 /obj/item/soap/examine(mob/user)
 	. = ..()
 	var/max_uses = initial(uses)
-	var/msg = "It looks like it just came out of the package."
+	var/msg = "It looks like it was just made."
 	if(uses != max_uses)
 		var/percentage_left = uses / max_uses
 		switch(percentage_left)

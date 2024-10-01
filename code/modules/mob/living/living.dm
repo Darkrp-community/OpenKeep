@@ -11,6 +11,7 @@
 		diag_hud.add_to_hud(src)
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
+	init_faith()
 
 /mob/living/Destroy()
 	surgeries = null
@@ -50,15 +51,26 @@
 	med_hud_set_status()
 
 /mob/living/onZImpact(turf/T, levels)
+	var/dex_save = src.mind?.get_skill_level(/datum/skill/misc/climbing)
+	var/sneak_fall = FALSE // If we're sneaking, don't announce it to our surroundings
+	if(dex_save >= 5) // Master climbers can fall down 2 levels without hurting themselves
+		if(levels <= 2)
+			to_chat(src, "<span class='info'>My dexterity allowed me to land on my feet unscathed!</span>")
+			if(src.m_intent != MOVE_INTENT_SNEAK) // If we're sneaking, don't make a sound
+				sneak_fall = TRUE
+				playsound(src.loc, 'sound/foley/bodyfall (1).ogg', 100, FALSE)
+			return
 	var/points
 	for(var/i in 2 to levels)
 		i++
 		points += "!"
-	visible_message("<span class='danger'>[src] falls down[points]</span>", \
-					"<span class='danger'>I fall down[points]</span>")
-	playsound(src.loc, 'sound/foley/zfall.ogg', 100, FALSE)
+	if(!sneak_fall)
+		visible_message("<span class='danger'>[src] falls down[points]</span>", \
+						"<span class='danger'>I fall down[points]</span>")
+		playsound(src.loc, 'sound/foley/zfall.ogg', 100, FALSE)
 	if(!isgroundlessturf(T))
 		ZImpactDamage(T, levels)
+		SSticker.moatfallers++
 	return ..()
 
 /mob/living/proc/ZImpactDamage(turf/T, levels)
@@ -181,26 +193,53 @@
 
 	if(m_intent == MOVE_INTENT_RUN && dir == get_dir(src, M))
 		if(isliving(M))
+			var/sprint_distance = sprinted_tiles
+			toggle_rogmove_intent(MOVE_INTENT_WALK, TRUE)
+			
 			var/mob/living/L = M
-			if(STACON > L.STACON)
-				if(STASTR > L.STASTR)
-					L.Knockdown(1)
-				else
-					Knockdown(1)
-			if(STACON < L.STACON)
+
+			var/self_points = FLOOR((STACON + STASTR + mind.get_skill_level(/datum/skill/misc/athletics))/2, 1)
+			var/target_points = FLOOR((L.STAEND + L.STASTR + L.mind.get_skill_level(/datum/skill/misc/athletics))/2, 1)
+
+			switch(sprint_distance)
+				// Point blank
+				if(0 to 1)
+					self_points -= 6
+				// One to two tile between the people
+				if(2 to 3)
+					self_points -= 3
+				// Five or above tiles between people
+				if(6 to INFINITY)
+					self_points += 1
+
+			// If charging into the BACK of the enemy (facing away)
+			if(L.dir == get_dir(src, L))
+				self_points += 2
+
+			// Random 1 in 10 crit chance of 20 virtual stat points to make it less consistent.
+			if(prob(10))
+				switch(rand(1,2))
+					if(1)
+						self_points += 10
+					if(2)
+						self_points -= 10
+
+			if(self_points > target_points)
+				L.Knockdown(1)
+			if(self_points < target_points)
 				Knockdown(30)
-			if(STACON == L.STACON)
+			if(self_points == target_points)
 				L.Knockdown(1)
 				Knockdown(30)
 			Immobilize(30)
 			var/playsound = FALSE
-			if(apply_damage(15, BRUTE, "head", run_armor_check("head", "melee", damage = 20)))
+			if(apply_damage(15, BRUTE, "head", run_armor_check("head", "blunt", damage = 20)))
 				playsound = TRUE
-			if(L.apply_damage(15, BRUTE, "chest", L.run_armor_check("chest", "melee", damage = 10)))
+			if(L.apply_damage(15, BRUTE, "chest", L.run_armor_check("chest", "blunt", damage = 10)))
 				playsound = TRUE
 			if(playsound)
 				playsound(src, "genblunt", 100, TRUE)
-			visible_message("<span class='warning'>[src] charges into [L]!</span>", "<span class='warning'>I charge into [L]!</span>")
+			visible_message(span_warning("[src] charges into [L]!"), span_warning("I charge into [L]!"))
 			return TRUE
 
 	//okay, so we didn't switch. but should we push?
@@ -384,7 +423,6 @@
 
 	if(isliving(AM))
 		var/mob/living/M = AM
-		log_combat(src, M, "grabbed", addition="passive grab")
 		if(!iscarbon(src))
 			M.LAssailant = null
 		else
@@ -400,6 +438,15 @@
 			var/datum/disease/D = thing
 			if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
 				ContactContractDisease(D)
+
+		// Makes it so people who recently broke out of grabs cannot be grabbed again
+		if(TIMER_COOLDOWN_RUNNING(M, "broke_free") && M.stat == CONSCIOUS)
+			M.visible_message(span_warning("[M] slips from [src]'s grip."), \
+					span_warning("I slip from [src]'s grab."))
+			log_combat(src, M, "tried grabbing", addition="passive grab")
+			return
+
+		log_combat(src, M, "grabbed", addition="passive grab")
 		playsound(src.loc, 'sound/combat/shove.ogg', 50, TRUE, -1)
 		if(iscarbon(M))
 			var/mob/living/carbon/C = M
@@ -732,7 +779,8 @@
 		return
 	health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss()
 	health = min(health, maxHealth)
-	if(HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
+	if(HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS) && !HAS_TRAIT(src, TRAIT_BLOODLOSS_IMMUNE))
+		// You dont have any blood and your not bloodloss immune? Dead.
 		if(blood_volume <= 0)
 			health = 0
 	staminaloss = getStaminaLoss()
@@ -779,7 +827,13 @@
 	for(var/i in get_equipped_items())
 		var/obj/item/item = i
 		SEND_SIGNAL(item, COMSIG_ITEM_WEARERCROSSED, AM, src)
-
+	if(isliving(AM))
+		var/mob/living/L = AM
+		if(L.m_intent == MOVE_INTENT_RUN && lying && !buckle_lying)
+			L.visible_message("<span class='warning'>[L] trips over [src]!</span>","<span class='warning'>I trip over [src]!</span>")
+			L.Knockdown(10)
+			L.Immobilize(20)
+			
 
 
 //proc used to completely heal a mob.
@@ -861,6 +915,9 @@
 
 	var/old_direction = dir
 	var/turf/T = loc
+
+	if(m_intent == MOVE_INTENT_RUN)
+		sprinted_tiles++
 
 	if(wallpressed)
 		update_wallpress(T, newloc, direct)
@@ -1077,27 +1134,24 @@
 /mob/living/resist_grab(moving_resist)
 	. = TRUE
 
+	var/wrestling_diff = 0
 	var/resist_chance = 50
 	var/mob/living/L = pulledby
-	if(pulledby.grab_state >= GRAB_AGGRESSIVE)
-		resist_chance -= 25
-	var/diffy = STASTR - L.STASTR
-	if(diffy > 0)
-		resist_chance = 50 + (diffy * 25)
-//		if(!L.rogfat_add(diffy * 10)) //hard to keep a grip on them
-//			resist_chance = 100
-	if(diffy < 0)
-		resist_chance = 50 - (diffy * 25)
-	if(L.mind)
-		resist_chance -= (L.mind.get_skill_level(/datum/skill/combat/wrestling) * 10)
+
 	if(mind)
-		resist_chance += (mind.get_skill_level(/datum/skill/combat/wrestling) * 10)
+		wrestling_diff += (mind.get_skill_level(/datum/skill/combat/wrestling)) //NPCs don't use this
+	if(L.mind)
+		wrestling_diff -= (L.mind.get_skill_level(/datum/skill/combat/wrestling))
+
+	resist_chance += ((STACON - L.STACON) * 10)
 
 	if(!(mobility_flags & MOBILITY_STAND))
-		resist_chance -= 20
-
-	resist_chance = max(resist_chance, 1)
-
+		resist_chance += -20 + min((wrestling_diff * 5), -20) //Can improve resist chance at high skill difference
+	if(pulledby.grab_state >= GRAB_AGGRESSIVE)
+		resist_chance += -20 + max((wrestling_diff * 10), 0)
+		resist_chance = max(resist_chance, 50 + min((wrestling_diff * 5), 0))
+	else
+		resist_chance = max(resist_chance, 70 + min((wrestling_diff * 5), 0))
 
 	if(moving_resist && client) //we resisted by trying to move
 		client.move_delay = world.time + 20
@@ -1108,6 +1162,12 @@
 		to_chat(pulledby, "<span class='danger'>[src] breaks free of my grip!</span>")
 		log_combat(pulledby, src, "broke grab")
 		pulledby.stop_pulling()
+
+		var/wrestling_cooldown_reduction = 0
+		if(pulledby?.mind?.get_skill_level("wrestling"))
+			wrestling_cooldown_reduction = 0.2 SECONDS * pulledby.mind.get_skill_level("wrestling")
+		TIMER_COOLDOWN_START(src, "broke_free", max(0, 0.8 SECONDS - wrestling_cooldown_reduction))
+
 		return FALSE
 	else
 		rogfat_add(rand(5,15))
@@ -1122,6 +1182,8 @@
 
 /mob/living/carbon/human/resist_grab(moving_resist)
 	var/mob/living/L = pulledby
+	if(hostagetaker)
+		attackhostage()
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
 		if(HAS_TRAIT(H, TRAIT_NOSEGRAB) && !HAS_TRAIT(src, TRAIT_MISSING_NOSE))
@@ -1593,7 +1655,7 @@
 		unset_machine()
 	density = !lying
 	if(lying)
-		if(!lying_prev)
+		if(!lying_prev && !cmode)
 			fall(!canstand_involuntary)
 		layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
 	else
@@ -1752,6 +1814,8 @@
 	. = ..()
 	switch(var_name)
 		if("knockdown")
+			SetKnockdown(var_value)
+		if("paralyzed")
 			SetParalyzed(var_value)
 		if("stun")
 			SetStun(var_value)
@@ -1822,6 +1886,8 @@
 			if(M == src)
 				continue
 			if(see_invisible < M.invisibility)
+				continue
+			if(M.mob_timers[MT_INVISIBILITY] > world.time) // Check if the mob is affected by the invisibility spell
 				continue
 			var/probby = 3 * STAPER
 			if(M.mind)

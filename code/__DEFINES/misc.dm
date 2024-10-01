@@ -13,12 +13,13 @@
 
 
 //Human Overlays Indexes/////////
-#define MUTATIONS_LAYER			47		//mutations. Tk headglows, cold resistance glow, etc
-#define CLOAK_BEHIND_LAYER		46
-#define HANDS_BEHIND_LAYER		45
-#define BELT_BEHIND_LAYER		44
-#define BACK_BEHIND_LAYER		43
-#define BODY_BEHIND_LAYER		42		//certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define MUTATIONS_LAYER			48		//mutations. Tk headglows, cold resistance glow, etc
+#define CLOAK_BEHIND_LAYER		47
+#define HANDS_BEHIND_LAYER		46
+#define BELT_BEHIND_LAYER		45
+#define BACK_BEHIND_LAYER		44
+#define BODY_BEHIND_LAYER		43		//certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define BODY_UNDER_LAYER		42		// Things under the bodyparts but above the "behind body" layer
 #define BODYPARTS_LAYER			41		//Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
 #define BODY_ADJ_LAYER			40		//certain mutantrace features (snout, body markings) that must appear above the body parts
 #define BODY_LAYER				39		//underwear, undershirts, socks, eyes, lips(makeup)
@@ -492,3 +493,15 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 #define FALL_INTERCEPTED		(1<<0) //Stops the movable from falling further and crashing on the ground
 #define FALL_NO_MESSAGE			(1<<1) //Used to suppress the "[A] falls through [old_turf]" messages where it'd make little sense at all, like going downstairs.
 #define FALL_STOP_INTERCEPTING	(1<<2) //Used in situations where halting the whole "intercept" loop would be better, like supermatter dusting (and thus deleting) the atom.
+
+
+// Improvement on holding storage
+// Use this instead of directly setting STR.can_hold to reduce unnecessary typecacheof calls.
+#define CANHOLD_STATIC(comp, L) \
+	var/static/list/canhold_typecache = L; \
+	comp.can_hold = canhold_typecache
+
+// Ditto, for cant_hold.
+#define CANTHOLD_STATIC(comp, L) \
+	var/static/list/canthold_typecache = L; \
+	comp.cant_hold = canthold_typecache

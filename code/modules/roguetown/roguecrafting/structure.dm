@@ -16,10 +16,39 @@
 	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
 
+/datum/crafting_recipe/roguetown/structure/noose
+	name = "noose"
+	result = /obj/structure/noose
+	reqs = list(/obj/item/rope = 1)
+	verbage = "tie"
+	verbage_tp = "ties"
+	craftsound = 'sound/foley/noose_idle.ogg'
+	ontile = TRUE
+
+/datum/crafting_recipe/roguetown/structure/noose/TurfCheck(mob/user, turf/T)
+	var/turf/checking = get_step_multiz(T, UP)
+	if(!checking)
+		return FALSE
+	if(!isopenturf(checking))
+		return FALSE
+	if(istype(checking,/turf/open/transparent/openspace))
+		return FALSE
+	return TRUE
+
 /datum/crafting_recipe/roguetown/structure/psycrss
 	name = "wooden cross"
 	result = /obj/structure/fluff/psycross/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/grown/log/tree/stake = 3)
+	verbage = "carpent"
+	verbage_tp = "carpents"
+	craftsound = 'sound/foley/Building-01.ogg'
+
+
+/datum/crafting_recipe/roguetown/structure/pyre
+	name = "wooden pyre"
+	result = /obj/machinery/light/rogue/campfire/pyre
+	reqs = list(/obj/item/grown/log/tree/small = 2,
 				/obj/item/grown/log/tree/stake = 3)
 	verbage = "carpent"
 	verbage_tp = "carpents"
@@ -52,6 +81,16 @@
 	reqs = list(/obj/item/grown/log/tree/small = 2)
 	verbage = "construct"
 	verbage_tp = "makes"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/structure/dye_bin
+	name = "dye bin"
+	result = /obj/machinery/gear_painter
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	verbage = "construct"
+	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 0
@@ -230,6 +269,9 @@
 	craftdiff = 0
 
 /obj/structure/closet/crate/chest/crafted
+	name = "sturdy chest"
+	icon_state = "chest_neu"
+	base_icon_state = "chest_neu"
 	keylock = FALSE
 	sellprice = 6
 
@@ -356,11 +398,43 @@
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/engineering
 
+/datum/crafting_recipe/roguetown/structure/pressureplate
+	name = "pressure plate"
+	result = /obj/structure/pressure_plate
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+					/obj/item/roguegear = 1)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/engineering
+
+/datum/crafting_recipe/roguetown/structure/repeater
+	name = "repeater"
+	result = /obj/structure/repeater
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+					/obj/item/ingot/iron = 2,
+					/obj/item/roguegear = 1)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/engineering
+
+/datum/crafting_recipe/roguetown/structure/activator
+	name = "activator"
+	result = /obj/structure/activator
+	reqs = list(/obj/item/grown/log/tree/small = 2,
+					/obj/item/ingot/iron = 1,
+					/obj/item/roguegear = 2)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/engineering
+
 /datum/crafting_recipe/roguetown/structure/trapdoor/TurfCheck(mob/user, turf/T)
 	if(istype(T,/turf/open/transparent/openspace))
 		return TRUE
 	if(istype(T,/turf/open/lava))
-		return FALSE
+		return TRUE // its just too hilarious not to allow this
 	return ..()
 
 /datum/crafting_recipe/roguetown/structure/sign
@@ -382,6 +456,41 @@
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/structure/display_stand
+	name = "display stand"
+	result = /obj/structure/mannequin
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/grown/log/tree/stick = 3)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/mannequin
+	name = "mannequin"
+	result = /obj/structure/mannequin/male
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/natural/cloth = 1,
+				/obj/item/ingot/iron = 1)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/mannequin_f
+	name = "feminine mannequin"
+	result = /obj/structure/mannequin/male/female
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/natural/cloth = 1,
+				/obj/item/ingot/iron = 1)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/structure/passage
 	name = "passage"
@@ -412,3 +521,14 @@
 	skillcraft = /datum/skill/craft/carpentry
 	wallcraft = TRUE
 	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/structure/cauldron
+	name = "cauldron"
+	result = /obj/machinery/light/rogue/cauldron
+	reqs = list(/obj/item/ingot/iron = 2,
+				/obj/item/natural/stone = 4,
+				/obj/item/grown/log/tree/small = 1)
+	verbage = "craft"
+	verbage_tp = "crafts"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/masonry

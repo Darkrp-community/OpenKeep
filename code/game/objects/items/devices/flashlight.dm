@@ -337,7 +337,7 @@
 	slot_flags = ITEM_SLOT_HIP
 	var/datum/looping_sound/torchloop/soundloop
 	var/should_self_destruct = TRUE //added for torch burnout
-	max_integrity = 20
+	max_integrity = 40
 	fuel = 30 MINUTES
 	light_depth = 0
 	light_height = 0
@@ -429,7 +429,7 @@
 
         if (should_self_destruct)  // check if self-destruct
             times_used += 1
-            if (times_used >= 6) //amount used before burning out
+            if (times_used >= 8) //amount used before burning out
                 user.visible_message("<span class='warning'>[src] has burnt out and falls apart!</span>")
                 qdel(src)
 
@@ -440,6 +440,10 @@
 	if(on)
 		return FIRE_MINIMUM_TEMPERATURE_TO_SPREAD
 	return ..()
+
+/obj/item/flashlight/flare/torch/prelit/Initialize() //Prelit version, testing to see if it causes less issues with pre_equip dropping stuff in your hands
+	. = ..()
+	spark_act()
 
 /obj/item/flashlight/flare/torch/metal
 	name = "torch"
@@ -468,7 +472,7 @@
 /obj/item/flashlight/flare/torch/lantern
 	name = "lamptern"
 	icon_state = "lamp"
-	desc = ""
+	desc = "A light to guide the way."
 	brightness_on = 7
 	on = FALSE
 	flags_1 = CONDUCT_1
@@ -499,6 +503,28 @@
 	return
 
 /obj/item/flashlight/flare/torch/lantern/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.4,"sx" = -2,"sy" = -4,"nx" = 9,"ny" = -4,"wx" = -3,"wy" = -4,"ex" = 2,"ey" = -4,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/flashlight/flare/torch/lantern/copper
+	name = "copper lamptern"
+	icon_state = "clamp"
+	desc = "A simple and cheap lamptern."
+	brightness_on = 7
+	on = FALSE
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_HIP
+	force = 1
+	on_damage = 5
+	fuel = 120 MINUTES
+	should_self_destruct = FALSE
+
+/obj/item/flashlight/flare/torch/lantern/copper/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)

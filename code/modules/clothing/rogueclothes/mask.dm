@@ -4,6 +4,9 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/masks.dmi'
 	body_parts_covered = FACE
 	slot_flags = ITEM_SLOT_MASK
+	resistance_flags = FIRE_PROOF
+	sewrepair = TRUE
+	anvilrepair = null
 
 /obj/item/clothing/mask/rogue/spectacles
 	name = "spectacles"
@@ -50,12 +53,14 @@
 	max_integrity = 20
 	integrity_failure = 0.5
 	block2add = FOV_RIGHT
-	body_parts_covered = EYES
+	body_parts_covered = RIGHT_EYE
+	resistance_flags = FLAMMABLE
 
 /obj/item/clothing/mask/rogue/eyepatch/left
 	desc = "An eyepatch, fitted for the left eye."
 	icon_state = "eyepatch_l"
 	block2add = FOV_LEFT
+	body_parts_covered = LEFT_EYE
 
 /obj/item/clothing/mask/rogue/lordmask
 	name = "golden halfmask"
@@ -69,23 +74,26 @@
 /obj/item/clothing/mask/rogue/facemask
 	name = "iron mask"
 	icon_state = "imask"
+	desc = "A heavy iron mask that both conceals and protects the face."
 	max_integrity = 100
 	blocksound = PLATEHIT
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
-	resistance_flags = FIRE_PROOF
-	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
 	flags_inv = HIDEFACE
 	body_parts_covered = FACE
 	block2add = FOV_BEHIND
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing
 
 
 /obj/item/clothing/mask/rogue/facemask/prisoner/Initialize()
 	. = ..()
 	name = "cursed mask"
+	desc = "We are often criminals in the eyes of the earth, not only for having committed crimes, but because we know that crimes have been committed."
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
 /obj/item/clothing/mask/rogue/facemask/prisoner/dropped(mob/living/carbon/human/user)
@@ -97,7 +105,14 @@
 /obj/item/clothing/mask/rogue/facemask/steel
 	name = "steel mask"
 	icon_state = "smask"
-	max_integrity = 200
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	desc = "A knightly steel mask that both conceals and protects the face. Usually paired with a bascinet."
+	max_integrity = 300
+
+/obj/item/clothing/mask/rogue/facemask/shadowfacemask
+	name = "anthraxi war mask"
+	desc = "A metal mask resembling a spider's face. Such a visage haunts many an older dark elf's nitemares - while the younger generation simply scoffs at such relics."
+	icon_state = "shadowfacemask"
 
 /obj/item/clothing/mask/rogue/shepherd
 	name = "halfmask"
@@ -106,6 +121,7 @@
 	body_parts_covered = NECK|MOUTH
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	adjustable = CAN_CADJUST
+	resistance_flags = FLAMMABLE
 	toggle_icon_state = TRUE
 	experimental_onhip = TRUE
 
@@ -129,11 +145,20 @@
 					var/mob/living/carbon/H = user
 					H.update_inv_wear_mask()
 
+/obj/item/clothing/mask/rogue/shepherd/rag
+	icon_state = "ragmask"
+
+/obj/item/clothing/mask/rogue/shepherd/shadowmask
+	name = "purple halfmask"
+	icon_state = "shadowmask"
+	desc = "Tiny drops of white dye mark its front, not unlike teeth. A smile that leers from shadow."
+
 /obj/item/clothing/mask/rogue/feld
 	name = "feldsher's mask"
 	desc = "Three times the beaks means three times the doctor."
 	icon_state = "feldmask"
 	item_state = "feldmask"
+	resistance_flags = FLAMMABLE
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	body_parts_covered = FACE|EARS|EYES|MOUTH|NECK
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
@@ -144,7 +169,26 @@
 	desc = "Packed with herbs to conceal the rot."
 	icon_state = "surgmask"
 	item_state = "surgmask"
+	resistance_flags = FLAMMABLE
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	body_parts_covered = FACE|EARS|EYES|MOUTH|NECK
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	sewrepair = TRUE
+
+/obj/item/clothing/mask/rogue/facemask/copper
+	name = "copper mask"
+	icon_state = "cmask"
+	desc = "A heavy copper mask that conceals and protects the face, though not very effectively."
+	max_integrity = 100
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/copper

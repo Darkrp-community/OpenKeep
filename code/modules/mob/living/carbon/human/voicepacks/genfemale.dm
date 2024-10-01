@@ -80,7 +80,7 @@
 			if("whimper")
 				used = list('sound/vo/female/gen/whimper (1).ogg','sound/vo/female/gen/whimper (2).ogg','sound/vo/female/gen/whimper (3).ogg')
 			if("whistle")
-				used = list('sound/vo/female/gen/whistle (1).ogg','sound/vo/female/gen/whistle (2).ogg','sound/vo/female/gen/whistle (3).ogg','sound/vo/female/gen/whistle (4).ogg','sound/vo/female/gen/whistle (5).ogg')
+				used = list('sound/vo/female/gen/whistle (1).ogg','sound/vo/female/gen/whistle (2).ogg','sound/vo/female/gen/whistle (3).ogg','sound/vo/female/gen/whistle (4).ogg','sound/vo/female/gen/whistle (5).ogg','sound/vo/female/gen/whistle (6).ogg','sound/vo/female/gen/whistle (7).ogg')
 			if("yawn")
 				used = list('sound/vo/female/gen/yawn (1).ogg','sound/vo/female/gen/yawn (2).ogg','sound/vo/female/gen/yawn (3).ogg')
 			if("attnwhistle")
@@ -91,5 +91,7 @@
 				used = list('sound/vo/female/gen/se/sexlight (1).ogg','sound/vo/female/gen/se/sexlight (2).ogg','sound/vo/female/gen/se/sexlight (3).ogg','sound/vo/female/gen/se/sexlight (4).ogg','sound/vo/female/gen/se/sexlight (5).ogg','sound/vo/female/gen/se/sexlight (6).ogg','sound/vo/female/gen/se/sexlight (7).ogg')
 			if("sexmoanhvy")
 				used = list('sound/vo/female/gen/se/sex (1).ogg','sound/vo/female/gen/se/sex (2).ogg','sound/vo/female/gen/se/sex (3).ogg','sound/vo/female/gen/se/sex (4).ogg','sound/vo/female/gen/se/sex (5).ogg','sound/vo/female/gen/se/sex (6).ogg','sound/vo/female/gen/se/sex (7).ogg','sound/vo/female/gen/se/sex (8).ogg')
+			if("moan")
+				used = list('sound/vo/female/gen/moan (1).ogg','sound/vo/female/gen/moan (2).ogg','sound/vo/female/gen/moan (3).ogg')
 
 	return used

@@ -31,6 +31,10 @@
 	var/blood_storage = 0
 	/// Maximum amount of blood we can store
 	var/blood_maximum = BLOOD_VOLUME_SURVIVE
+	// Completely silent, no do_after and no visible_message
+	var/completely_silent = FALSE
+	possible_potion = "endpot"
+
 
 /obj/item/natural/worms/leech/Initialize()
 	. = ..()
@@ -72,6 +76,8 @@
 			to_chat(user, "<span class='warning'>Something in the way.</span>")
 			return
 		var/used_time = (70 - (H.mind.get_skill_level(/datum/skill/misc/medicine) * 10))/2
+		if(completely_silent)
+			used_time = 0
 		if(!do_mob(user, H, used_time))
 			return
 		if(!H)
@@ -79,6 +85,8 @@
 		user.dropItemToGround(src)
 		src.forceMove(H)
 		affecting.add_embedded_object(src, silent = TRUE, crit_message = FALSE)
+		if(completely_silent)
+			return
 		if(M == user)
 			user.visible_message("<span class='notice'>[user] places [src] on [user.p_their()] [affecting].</span>", "<span class='notice'>I place a leech on my [affecting].</span>")
 		else
@@ -177,7 +185,7 @@
 				var/picked_desc = pickweight(possible_descs)
 				possible_descs -= picked_desc
 				descs += pickweight(possible_descs)
-	toxin_healing = max(round((MAX_LEECH_EVILNESS - evilness_rating)/MAX_LEECH_EVILNESS * 2 * initial(toxin_healing), 0.1), 1)
+	toxin_healing = min(round((MAX_LEECH_EVILNESS - evilness_rating)/MAX_LEECH_EVILNESS * 2 * initial(toxin_healing), 0.1), -1)
 	blood_sucking = max(round(evilness_rating/MAX_LEECH_EVILNESS * 2 * initial(blood_sucking), 0.1), 1)
 	if(evilness_rating < 10)
 		color = pickweight(all_colors)
@@ -203,7 +211,7 @@
 	drainage = 0
 	toxin_healing = -3
 	blood_storage = BLOOD_VOLUME_SURVIVE
-	blood_maximum = BLOOD_VOLUME_BAD
+	blood_maximum = BLOOD_VOLUME_BAD	
 
 /obj/item/natural/worms/leech/parasite/attack_self(mob/user)
 	. = ..()
@@ -214,5 +222,29 @@
 	else
 		user.visible_message("<span class='notice'>[user] squeezes [src].</span>",\
 							"<span class='notice'>I squeeze [src]. It will now extract blood.</span>")
+
+/obj/item/natural/worms/leech/propaganda
+	name = "accursed leech"
+	desc = "A leech like none other."
+	drainage = 0
+	blood_sucking = 0
+	completely_silent = TRUE
+	embedding = list(
+		"embed_chance" = 100,
+		"embedded_unsafe_removal_time" = 0,
+		"embedded_pain_chance" = 0,
+		"embedded_fall_chance" = 0,
+		"embedded_bloodloss"= 0,
+	)
+
+/obj/item/natural/worms/leech/propaganda/on_embed_life(mob/living/user, obj/item/bodypart/bodypart)
+	. = ..()
+	if(!user)
+		return
+	if(iscarbon(user))
+		var/mob/living/carbon/V = user
+		if(prob(5))
+			V.say(pick("PRAISE ZIZO!", "DEATH TO THE TEN..."))
+		V.add_stress(/datum/stressevent/leechcult)
 
 #undef MAX_LEECH_EVILNESS
