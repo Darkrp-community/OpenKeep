@@ -19,13 +19,13 @@ if command -v rg >/dev/null 2>&1; then
 	if [ ! rg -P '' >/dev/null 2>&1 ] ; then
 		pcre2_support=0
 	fi
-	code_files="code/**/**.dm Modular/**/**.dm"
+	code_files="code/**/**.dm modular/**/**.dm"
 	map_files="_maps/**/**.dmm"
 	code_x_515="code/**/!(__byond_version_compat).dm"
 else
 	pcre2_support=0
 	grep=grep
-	code_files="-r --include=code/**/**.dm --include=Modular/**/**.dm"
+	code_files="-r --include=code/**/**.dm --include=modular/**/**.dm"
 	map_files="-r --include=_maps/**/**.dmm"
 	code_x_515="-r --include=code/**/!(__byond_version_compat).dm"
 fi
