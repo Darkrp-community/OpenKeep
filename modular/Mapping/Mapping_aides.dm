@@ -625,7 +625,7 @@
 	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
 
 
-/*	..................   Traveltiles   ................... */ // these are the ones on centcomm, where the actual lair is
+/*	..................   Traveltiles   ................... */ // these are the ones on centcom, where the actual lair is
 /obj/structure/fluff/traveltile/bandit_lair
 	aportalid = "banditin"
 	aportalgoesto = "banditexit"
