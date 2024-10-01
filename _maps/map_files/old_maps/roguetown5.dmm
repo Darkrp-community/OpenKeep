@@ -9189,7 +9189,7 @@
 /area/rogue/under/town/basement)
 "Iz" = (
 /obj/effect/landmark/latejoin,
-/obj/structure/boatbell/fluff{
+/obj/structure/warningbell/fluff{
 	pixel_y = 16
 	},
 /turf/open/floor/rogue/ruinedwood{
