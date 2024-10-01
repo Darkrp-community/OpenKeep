@@ -128,14 +128,6 @@
 	i_type = "Ammo"
 	craftdiff = 0
 
-/datum/anvil_recipe/weapons/ironstaff
-	name = "Iron quarterstaff (+staff)"
-	recipe_name = "a iron staff"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/rogueweapon/woodstaff/quarterstaff)
-	created_item = /obj/item/rogueweapon/woodstaff/quarterstaff/iron
-
 /datum/anvil_recipe/weapons/axe_iron
 	name = "Axe (+s)"
 	recipe_name = "an Axe"
@@ -213,13 +205,6 @@
 	createmultiple = TRUE
 	createditem_num = 2
 	craftdiff = 0 
-
-/datum/anvil_recipe/weapons/flail_iron
-	name = "Flail (+c) (+s)"
-	recipe_name = "a Flail"
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/stick)
-	created_item = /obj/item/rogueweapon/flail
 
 /datum/anvil_recipe/weapons/flail_iron
 	name = "Militia flail (+c) (+s)"
@@ -548,11 +533,4 @@
 	created_item = /obj/item/rogueweapon/sword
 	craftdiff = 2
 
-/datum/anvil_recipe/weapons/steelstaff
-	name = "Steel quarterstaff (+2 staff)"
-	recipe_name = "an steel staff"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/rogueweapon/woodstaff/quarterstaff, /obj/item/rogueweapon/woodstaff/quarterstaff)
-	created_item = /obj/item/rogueweapon/woodstaff/quarterstaff/steel
-	craftdiff = 2
+

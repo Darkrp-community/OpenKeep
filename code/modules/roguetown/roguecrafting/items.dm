@@ -470,3 +470,17 @@
 	/obj/item/rogueweapon/woodstaff/quarterstaff)
 	reqs = list(/obj/item/grown/log/tree = 1)
 	skillcraft = /datum/skill/craft/carpentry
+
+/datum/crafting_recipe/roguetown/steelstaff
+	name = "Steel quarterstaff (+2 staff)"
+	skillcraft = /datum/skill/craft/carpentry
+	reqs = list(/obj/item/rogueweapon/woodstaff/quarterstaff = 2, /obj/item/ingot/steel)
+	result = list(/obj/item/rogueweapon/woodstaff/quarterstaff/steel)
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/ironstaff
+	name = "Iron quarterstaff"
+	skillcraft = /datum/skill/craft/carpentry
+	reqs = list(/obj/item/rogueweapon/woodstaff/quarterstaff, /obj/item/ingot/iron)
+	result = list(/obj/item/rogueweapon/woodstaff/quarterstaff/iron)
+	craftdiff = 2
