@@ -231,7 +231,7 @@
 // Only non-refactored psycross because Noc likes vamps. Neeeerd!
 /obj/item/clothing/neck/roguetown/psycross/noc
 	name = "amulet of Noc"
-	desc = "Diligence, study, pursuit of truth and wisdom. Let nothing deterr you from it."
+	desc = "Diligence, study, pursuit of truth and wisdom. Let nothing deter you from it."
 	icon_state = "noc"
 	resistance_flags = FIRE_PROOF
 
