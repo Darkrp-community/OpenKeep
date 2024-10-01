@@ -258,7 +258,7 @@
 	throw_range = 3
 	wlength = WLENGTH_NORMAL
 	wbalance = 1 // small, tiny shield
-	resistance_flags = FLAMMABLE
+	resistance_flags = FIRE_PROOF
 	wdefense = 4
 	coverage = 45
 	attacked_sound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')

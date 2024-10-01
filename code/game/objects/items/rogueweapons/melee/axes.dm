@@ -20,7 +20,7 @@
 	wlength = WLENGTH_SHORT
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	gripped_intents = list(/datum/intent/axe/chop/stone)
-	smeltresult = /obj/item/rogueore/coal //is a wooden log and a stone hammered in the top
+	smeltresult = /obj/item/ash //is a wooden log and a stone hammered in the top
 	axe_cut = 7
 	sellprice = 10
 

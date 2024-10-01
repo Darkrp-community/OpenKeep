@@ -206,7 +206,7 @@
 
 /datum/anvil_recipe/weapons/dagger_iron
 	name = "peasant knife x3"
-	recipe_name = "a couple knifes"
+	recipe_name = "three peasantry knives"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/huntingknife/villager
@@ -223,7 +223,7 @@
 
 /datum/anvil_recipe/weapons/flail_iron
 	name = "Militia flail (+c) (+s)"
-	recipe_name = "a militia lail"
+	recipe_name = "a militia flail"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/flail/militia
@@ -299,7 +299,7 @@
 	appro_skill = /datum/skill/craft/armorsmithing
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/shield/tower/buckleriron
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/anvil_recipe/weapons/warclub
 	name = "Warclub (+w)"
