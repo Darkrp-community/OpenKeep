@@ -71,7 +71,7 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
   list_reagents = list(/datum/reagent/consumable/ethanol/beer/blackgoat = 70)
-	desc = "A bottle with the black goat kriek cork-seal. A fruit-sour beer brewed with volfberries for a tangy taste."
+	desc = "A bottle with the black goat kriek cork-seal. A fruit-sour beer brewed with jacksberries for a tangy taste."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/ratkept
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/onion = 70)
@@ -86,7 +86,7 @@
 	desc = "A bottle with the aurorian brewhouse cork-seal. An Elvish beer brewed from an herbal gruit."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/fireleaf
-	list_reagents = list(/datum/reagent/consumable/ethanol/beer/fireleaf= 45)
+	list_reagents = list(/datum/reagent/consumable/ethanol/beer/fireleaf= 70)
 	desc = "A bottle with a generic leaf cork-seal. An Elvish beer formed by distilling cabbages. You're pretty sure you can make your own with certainly higher quality."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/butterhairs
@@ -108,7 +108,7 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/sourwine = 70)
-	desc = "A bottle that contains a grenzelhoftian classic with a black ink cork-seal.. An extremely sour wine that is watered down with mineral water."
+	desc = "A bottle that contains a Grenzelhoftian classic with a black ink cork-seal.. An extremely sour wine that is watered down with mineral water."
   
 /obj/item/reagent_containers/glass/bottle/rogue/redwine
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/redwine = 70)
