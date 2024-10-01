@@ -70,8 +70,8 @@
 	desc = "A bottle with the spotted-hen cork-seal. An extremely cheap lager hailing from a local brewery."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
- 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/blackgoat = 70)
-	desc = "A bottle with the black goat kriek cork-seal. A fruit-sour beer brewed with jacksberries for a tangy taste."
+	list_reagents = list(/datum/reagent/consumable/ethanol/beer/blackgoat = 70)
+	desc = "A bottle with the black goat kriek cork-seal. A fruit-sour beer brewed with jackberries for a tangy taste."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/ratkept
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/onion = 70)
