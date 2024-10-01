@@ -986,7 +986,7 @@
 		return
 	if(stat != DEAD)
 		if(health <= HEALTH_THRESHOLD_DEAD && !HAS_TRAIT(src, TRAIT_NODEATH))
-			emote("deathgurgle")
+			INVOKE_ASYNC(src, PROC_REF(emote), "deathgurgle")
 			death()
 			cure_blind(UNCONSCIOUS_BLIND)
 			return

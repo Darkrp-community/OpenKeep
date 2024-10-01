@@ -230,7 +230,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 ///Extra effects to add when the mob is tamed, such as adding a riding component
 /mob/living/simple_animal/proc/tamed(mob/user)
-	emote("lower_head", forced = TRUE)
+	INVOKE_ASYNC(src, PROC_REF(emote), "lower_head", null, null, null, TRUE)
 	tame = TRUE
 	stop_automated_movement_when_pulled = TRUE
 	if(user)

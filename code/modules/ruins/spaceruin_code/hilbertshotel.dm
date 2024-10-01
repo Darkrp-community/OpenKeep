@@ -19,6 +19,9 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 
 /obj/item/hilbertshotel/Initialize()
     . = ..()
+    INVOKE_ASYNC(src, PROC_REF(spawn_templates))
+
+/obj/item/hilbertshotel/proc/spawn_templates()
     //Load templates
     hotelRoomTemp = new()
     hotelRoomTempEmpty = new()

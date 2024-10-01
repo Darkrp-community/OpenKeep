@@ -64,7 +64,7 @@
 
 /obj/machinery/computer/arena/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
-	LoadDefaultArenas()
+	INVOKE_ASYNC(src, PROC_REF(LoadDefaultArenas))
 	GenerateAntagHuds()
 
 /obj/machinery/computer/arena/proc/GenerateAntagHuds()

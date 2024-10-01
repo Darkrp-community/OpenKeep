@@ -149,7 +149,7 @@
 		deltimer(C.parallax_animate_timer)
 	var/datum/callback/CB = CALLBACK(src, PROC_REF(update_parallax_motionblur), C, animatedir, new_parallax_movedir, newtransform)
 	if(skip_windups)
-		CB.Invoke()
+		CB.InvokeAsync()
 	else
 		C.parallax_animate_timer = addtimer(CB, min(shortesttimer, PARALLAX_LOOP_TIME), TIMER_CLIENT_TIME|TIMER_STOPPABLE)
 
