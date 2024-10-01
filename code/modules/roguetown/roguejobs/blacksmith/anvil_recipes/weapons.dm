@@ -299,7 +299,7 @@
 	appro_skill = /datum/skill/craft/armorsmithing
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/shield/tower/buckleriron
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/anvil_recipe/weapons/warclub
 	name = "Warclub (+w)"
