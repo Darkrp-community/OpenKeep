@@ -65,7 +65,7 @@
 		"Russet" = "#7f461b"
 		)
 /obj/machinery/gear_painter/Destroy()
-	inserted.forceMove(drop_location())
+	inserted?.forceMove(drop_location())
 	return ..()
 
 /obj/machinery/gear_painter/attackby(obj/item/I, mob/living/user)

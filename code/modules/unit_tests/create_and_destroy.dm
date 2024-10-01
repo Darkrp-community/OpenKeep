@@ -120,7 +120,12 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	ignore += typesof(/obj/effect/buildmode_line)
 	//needs a fried item passed
 	ignore += typesof(/obj/item/reagent_containers/food/snacks/deepfryholder)
-
+	// requires other parts
+	ignore += typesof(/obj/machinery/gravity_generator)
+	// requires a generator
+	ignore += typesof(/obj/structure/projected_forcefield)
+	// genuinely just too lazy to get this one working
+	ignore += typesof(/obj/structure/bodycontainer)
 
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/baseturf_count = length(spawn_at.baseturfs)

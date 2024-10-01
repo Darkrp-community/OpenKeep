@@ -90,8 +90,8 @@
 	soundloop.stop()
 	if(controller)
 		controller.endvines()
-	controller.tree = null
-	controller = null
+		controller.tree = null
+		controller = null
 	. = ..()
 
 /obj/structure/flora/roguetree/evil
