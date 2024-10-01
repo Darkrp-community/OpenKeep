@@ -366,6 +366,8 @@ SUBSYSTEM_DEF(shuttle)
 		if(!istype(d) || QDELETED(d))
 			hostileEnvironments -= d
 	emergencyNoEscape = hostileEnvironments.len
+	if(!emergency)
+		return
 
 	if(emergencyNoEscape && (emergency.mode == SHUTTLE_IGNITING))
 		emergency.mode = SHUTTLE_STRANDED
