@@ -17,7 +17,7 @@
 	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
 	swingsound = BLUNTWOOSH_MED
 	can_parry = FALSE // You can't parry with this, it'd be awkward to tangle chains, use a shield
-	max_integrity = 500
+	max_integrity = 300
 	throwforce = 5
 	wdefense = 0
 	minstr = 6
@@ -75,7 +75,7 @@
 	icon_state = "flail"
 	smeltresult = /obj/item/ingot/steel
 	minstr = 4
-	max_integrity = 300
+	max_integrity = 500
 	sellprice = 35
 
 /obj/item/rogueweapon/flail/peasant
@@ -93,6 +93,7 @@
 	wbalance = 0
 	wlength = WLENGTH_LONG
 	slot_flags = ITEM_SLOT_BACK
+	max_integrity = 500
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 45
 	minstr = 8
