@@ -442,7 +442,7 @@
 	max_integrity = INTEGRITY_STRONGEST
 
 //................ Grenzelhoft Cuirass ............... //
-/obj/item/clothing/suit/roguetown/armor/plate/cuirass/grenzelhoft
+/obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
 	name = "grenzelhoft cuirass"
 	desc = "A basic cuirass built from black-steel. It's somewhat more durable and lightweight than regular steel."
 	icon_state = "grenzelcuirass"
