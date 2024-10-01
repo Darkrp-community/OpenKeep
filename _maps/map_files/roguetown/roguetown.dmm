@@ -6491,11 +6491,6 @@
 /obj/item/book/random,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
-"hQA" = (
-/obj/structure/table/wood/plain,
-/obj/item/dice,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/town/sargoth)
 "hRg" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -16336,12 +16331,6 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/mountains)
-"tKd" = (
-/obj/machinery/light/rogue/torchholder{
-	pixel_y = 26
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/mountains)
 "tKz" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -17261,11 +17250,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
-"uKg" = (
-/obj/structure/table/wood/plain,
-/obj/effect/holodeck_effect/cards,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/town/sargoth)
 "uKh" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
@@ -18517,13 +18501,6 @@
 "wgm" = (
 /turf/closed/wall/mineral/rogue/decostone/long,
 /area/rogue/indoors/town/church)
-"wgy" = (
-/obj/machinery/light/rogue/wallfire/candle,
-/turf/open/floor/rogue/ruinedwood{
-	dir = 1;
-	icon_state = "vertw"
-	},
-/area/rogue/indoors/town)
 "wgF" = (
 /obj/machinery/light/rogue/chand,
 /turf/open/transparent/openspace,
@@ -59690,8 +59667,8 @@ uTu
 glt
 glt
 glt
-uKg
-hQA
+glt
+glt
 jYv
 uZS
 iUq
@@ -79855,7 +79832,7 @@ doW
 doW
 qQG
 uNu
-wgy
+bJY
 bJY
 bJY
 npK
@@ -80950,7 +80927,7 @@ doW
 doW
 doW
 doW
-tKd
+doW
 doW
 doW
 doW
@@ -82206,7 +82183,7 @@ doW
 doW
 doW
 doW
-tKd
+doW
 doW
 doW
 doW
