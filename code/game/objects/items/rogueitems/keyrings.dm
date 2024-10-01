@@ -301,3 +301,6 @@
 
 /obj/item/keyring/mayor
 	keys = list(/obj/item/roguekey/garrison, /obj/item/roguekey/elder, /obj/item/roguekey/butcher, /obj/item/roguekey/soilson)
+
+/obj/item/keyring/doctor
+	keys = list(/obj/item/roguekey/doctor, /obj/item/roguekey/manor)
