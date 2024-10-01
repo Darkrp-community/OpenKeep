@@ -99,8 +99,8 @@
 	minstr = 0
 	sellprice = 5
 
-/obj/item/rogueweapon/mace/woodclub/New()
-	..()
+/obj/item/rogueweapon/mace/woodclub/Initialize(mapload)
+	. = ..()
 	icon_state = "club[rand(1,2)]"
 
 /datum/intent/mace/strike/wood

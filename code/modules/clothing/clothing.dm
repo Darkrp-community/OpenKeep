@@ -66,8 +66,8 @@
 	var/detail_tag
 	var/detail_color
 
-/obj/item/clothing/New()
-	..()
+/obj/item/clothing/Initialize(mapload)
+	. = ..()
 	if(armor_class)
 		has_inspect_verb = TRUE
 
