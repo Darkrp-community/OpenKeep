@@ -130,7 +130,7 @@
 	max_integrity = 200
 	throwforce = 5
 	wdefense = 0
-	minstr = 6
+	minstr = 5
 	sellprice = 10
 
 /obj/item/rogueweapon/flail/militia
