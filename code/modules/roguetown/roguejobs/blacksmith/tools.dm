@@ -236,5 +236,5 @@
 	desc = "A heavy steel warhammer, a weapon designed to make knights run in fear, the best option for a common soldier against a knight."
 	icon_state = "warbonker"
 	icon = 'icons/roguetown/weapons/32.dmi'
-	max_integrity = 400
+	max_integrity = 500
 	smeltresult = /obj/item/ingot/steel
