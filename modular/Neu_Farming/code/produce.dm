@@ -90,6 +90,7 @@
 
 // oldpath for map fix TO DO /obj/item/reagent_containers/food/snacks/produce/apple
 // obj/item/seeds/apple
+// ^ PSA: next time you want to do this, make and run an updatepaths migration in tools/UpdatePaths
 /obj/item/reagent_containers/food/snacks/produce/apple
 	seed = /obj/item/neuFarm/seed/apple
 	name = "apple"
