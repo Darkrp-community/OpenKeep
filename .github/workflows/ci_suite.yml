@@ -28,10 +28,18 @@ jobs:
           key: ${{ runner.os }}-spacemandmm-${{ hashFiles('dependencies.sh') }}
           restore-keys: |
             ${{ runner.os }}-spacemandmm-
+      - name: Restore Rust cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo
+          key: ${{ runner.os }}-rust-${{ hashFiles('tools/ci/ci_dependencies.sh')}}
+          restore-keys: |
+            ${{ runner.os }}-rust-
       - name: Install Tools
         run: |
           pip3 install setuptools
           bash tools/ci/install_spaceman_dmm.sh dreamchecker
+          bash tools/ci/install_ripgrep.sh
           tools/bootstrap/python -c ''
       - name: Run Linters
         run: |
