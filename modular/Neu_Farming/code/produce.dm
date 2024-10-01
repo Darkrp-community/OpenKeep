@@ -210,7 +210,7 @@
 	possible_potion = "poison"
 
 /*	..................   Swamp weed   ................... */
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed
+/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed
 	seed = /obj/item/neuFarm/seed/swampleaf
 	name = "swampweed"
 	desc = "A weed that can be dried and smoked to induce a relaxed state."
@@ -225,7 +225,7 @@
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/swampdust
 
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried
+/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed_dried
 	seed = null
 	name = "swampweed"
 	desc = "A dried weed that can be smoked to induce a relaxed state."
