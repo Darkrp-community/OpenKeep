@@ -41,7 +41,9 @@
 
 /datum/unit_test/tend_wounds/Run()
 	var/mob/living/carbon/human/patient = allocate(/mob/living/carbon/human)
-	patient.take_overall_damage(100, 100)
+	// We have to damage just one bodypart to avoid random variability when picking a limb to heal.
+	var/obj/item/bodypart/chest = patient.get_bodypart(BODY_ZONE_CHEST)
+	chest.receive_damage(100, 100)
 
 	var/mob/living/carbon/human/user = allocate(/mob/living/carbon/human)
 
@@ -56,10 +58,10 @@
 
 	// Test that wearing clothing lowers heal amount
 	var/mob/living/carbon/human/naked_patient = allocate(/mob/living/carbon/human)
-	naked_patient.take_overall_damage(100)
+	naked_patient.get_bodypart(BODY_ZONE_CHEST).receive_damage(100, 100)
 
 	var/mob/living/carbon/human/clothed_patient = allocate(/mob/living/carbon/human)
-	clothed_patient.take_overall_damage(100) // take damage before putting on clothes in case they block some of the damage
+	clothed_patient.get_bodypart(BODY_ZONE_CHEST).receive_damage(100, 100) // take damage before putting on clothes in case they block some of the damage
 	clothed_patient.equipOutfit(/datum/outfit/job/roguetown/tester, TRUE)
 
 	basic_brute_heal.success(user, naked_patient, BODY_ZONE_CHEST)
