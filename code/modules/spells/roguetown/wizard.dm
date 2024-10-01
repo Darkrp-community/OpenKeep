@@ -550,7 +550,6 @@
 	desc = "A tiny display of arcyne power used to illuminate."
 	pixel_x = 20
 	light_range = 4
-	light_flags = NONE
 	light_color = "#3FBAFD"
 
 //A spell to choose new spells, upon spawning or gaining levels
