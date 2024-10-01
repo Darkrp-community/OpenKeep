@@ -223,7 +223,7 @@
 
 /datum/anvil_recipe/weapons/flail_iron
 	name = "Militia flail (+c) (+s)"
-	recipe_name = "a militia lail"
+	recipe_name = "a militia flail"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/flail/militia
