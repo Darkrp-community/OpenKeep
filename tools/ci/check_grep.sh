@@ -46,13 +46,12 @@ part() {
 
 section "map issues"
 
-# Disabled until someone runs a TGM conversion pass on the whole codebase and actually enforces using the Git hooks.
-# part "TGM"
-# if $grep -U '^".+" = \(.+\)' $map_files;	then
-# 	echo
-#     echo -e "${RED}ERROR: Non-TGM formatted map detected. Please convert it using Map Merger!${NC}"
-#     st=1
-# fi;
+part "TGM"
+if $grep -U '^".+" = \(.+\)' $map_files;	then
+	echo
+    echo -e "${RED}ERROR: Non-TGM formatted map detected. Please convert it using Map Merger!${NC}"
+    st=1
+fi;
 part "comments"
 if $grep '//' $map_files | $grep -v '//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE' | $grep -v 'name|desc'; then
 	echo
