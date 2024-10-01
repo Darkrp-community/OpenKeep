@@ -87,7 +87,7 @@
 
 /obj/structure/wine_bubble/Initialize()
 	. = ..()
-	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, float), TRUE)
+	float(on = TRUE)
 	QDEL_IN(src, 100)
 
 /obj/structure/wine_bubble/Destroy()

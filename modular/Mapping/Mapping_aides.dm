@@ -84,6 +84,7 @@
 	name = "spectral daemon"
 	color = "#c189cb"
 	alpha = 200
+
 /mob/living/simple_animal/hostile/rogue/demon/xylix/Initialize()
 	switch(pick(1,2,3))
 		if (1)
@@ -101,11 +102,13 @@
 			health = 18
 			melee_damage_lower = 9
 			melee_damage_upper = 25
+	return ..()
 
 /mob/living/simple_animal/hostile/rogue/haunt/xylix
 	name = "spectral daemon"
 	color = "#c189cb"
 	alpha = 200
+
 /mob/living/simple_animal/hostile/rogue/haunt/xylix/Initialize()
 	switch(pick(1,2,3))
 		if (1)
@@ -123,12 +126,14 @@
 			health = 28
 			melee_damage_lower = 8
 			melee_damage_upper = 19
+	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/gaseousform/xylix
 	name = "spectral daemon"
 	faction = list("undead")
 	color = "#c189cb"
 	alpha = 200
+
 /mob/living/simple_animal/hostile/retaliate/gaseousform/xylix/Initialize()
 	switch(pick(1,2,3))
 		if (1)
@@ -146,6 +151,7 @@
 			health = 50
 			melee_damage_lower = 4
 			melee_damage_upper = 16
+	return ..()
 
 
 /obj/structure/glowshroom/single/xylix
@@ -216,6 +222,7 @@
 			redstone_id = "xhutterA"
 		if (2)
 			redstone_id = "xhutterB"
+	return ..()
 
 /obj/effect/spawner/roguemap/xylixlabyrinth_frowny
 	icon = 'icons/mob/actions/roguespells.dmi'
