@@ -206,7 +206,7 @@
 
 /datum/anvil_recipe/weapons/dagger_iron
 	name = "peasant knife x3"
-	recipe_name = "a couple knifes"
+	recipe_name = "three peasantry knives"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/huntingknife/villager
