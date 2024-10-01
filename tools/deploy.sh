@@ -16,11 +16,7 @@ mkdir -p \
     $1/icons/mob/inhands \
     $1/icons/mob/simple \
     $1/icons/obj \
-    $1/icons/runtime \
-    $1/sound/runtime \
     $1/strings \
-    $1/tgui/public \
-    $1/tgui/packages/tgfont/dist
 
 if [ -d ".git" ]; then
   mkdir -p $1/.git/logs
@@ -34,11 +30,7 @@ cp -r icons/mob/clothing/* $1/icons/mob/clothing/
 cp -r icons/mob/inhands/* $1/icons/mob/inhands/
 cp -r icons/mob/simple/* $1/icons/mob/simple/
 cp -r icons/obj/* $1/icons/obj/
-cp -r icons/runtime/* $1/icons/runtime/
-cp -r sound/runtime/* $1/sound/runtime/
 cp -r strings/* $1/strings/
-cp -r tgui/public/* $1/tgui/public/
-cp -r tgui/packages/tgfont/dist/* $1/tgui/packages/tgfont/dist/
 
 #remove .dm files from _maps
 

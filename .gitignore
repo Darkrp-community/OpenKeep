@@ -231,7 +231,6 @@ config/admins.txt
 #/code/_compile_options.dm
 
 /prof.dll
-/rust_g.dll
 
 # OpenDream-compiled DME
 /stonekeep.json
