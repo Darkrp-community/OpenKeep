@@ -25,6 +25,7 @@ fi
 
 cp stonekeep.dmb stonekeep.rsc $1/
 cp -r _maps/* $1/_maps/
+cp -r icons/*_title.dmi $1/icons/
 cp -r icons/effects/* $1/icons/effects/
 cp -r icons/mob/clothing/* $1/icons/mob/clothing/
 cp -r icons/mob/inhands/* $1/icons/mob/inhands/

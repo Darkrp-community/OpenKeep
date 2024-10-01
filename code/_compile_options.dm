@@ -38,6 +38,10 @@
 
 // #define UNIT_TESTS			//Enables unit tests
 
+#if defined(CIBUILDING) && !defined(OPENDREAM)
+#define UNIT_TESTS
+#endif
+
 #ifdef UNIT_TESTS
 #define DEPLOY_TEST
 #endif
@@ -62,10 +66,6 @@
 //Additional code for the above flags.
 #ifdef TESTING
 #warn compiling in TESTING mode. testing() debug messages will be visible.
-#endif
-
-#if defined(CIBUILDING) && !defined(OPENDREAM)
-#define UNIT_TESTS
 #endif
 
 #ifdef CITESTING // avoids the above warning
