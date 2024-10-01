@@ -99,13 +99,13 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 
 	check_for_lord()
 
-	if(ttime > 280 MINUTES) //3 hour cutoff
+/*	if(ttime > 280 MINUTES) //3 hour cutoff
 		for(var/mob/living/carbon/human/H in GLOB.human_list)
 			if(H.stat != DEAD)
 				if(H.allmig_reward)
 					H.adjust_triumphs(H.allmig_reward)
 					H.allmig_reward = 0
-		return TRUE
+		return TRUE*/
 
 /datum/game_mode/chaosmode/proc/check_for_lord()
 	if(world.time < next_check_lord)

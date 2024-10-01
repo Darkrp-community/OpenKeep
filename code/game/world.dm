@@ -1,7 +1,7 @@
 #define RESTART_COUNTER_PATH "data/round_counter.txt"
 
 GLOBAL_VAR(restart_counter)
-
+/*
 /proc/auxtools_stack_trace(msg)
 	CRASH(msg)
 
@@ -16,6 +16,7 @@ GLOBAL_VAR(restart_counter)
 	if (debug_server)
 		call_ext(debug_server, "auxtools_shutdown")()
 	. = ..()
+*/
 
 /**
   * World creation
@@ -101,6 +102,8 @@ GLOBAL_VAR(restart_counter)
 
 	if(NO_INIT_PARAMETER in params)
 		return
+
+	. = ..()
 
 	Master.Initialize(10, FALSE, TRUE)
 

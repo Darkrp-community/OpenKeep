@@ -20,7 +20,7 @@
 	name = "potion of strength"
 	reqs = list(
 		/datum/reagent/medicine/healthpot = 30,
-		/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue = 1,
+		/obj/item/reagent_containers/food/snacks/produce/fyritius = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue = 1
         )
 	result = /obj/item/reagent_containers/glass/bottle/rogue/strengthpotion
@@ -62,7 +62,7 @@
 	name = "potion of speed"
 	reqs = list(
 		/datum/reagent/medicine/manapot = 30,
-		/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue = 1,
+		/obj/item/reagent_containers/food/snacks/produce/fyritius = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue = 1
         )
 	result = /obj/item/reagent_containers/glass/bottle/rogue/speedpotion
@@ -190,7 +190,7 @@
 		/datum/reagent/medicine/manapot = 30,
 		/datum/reagent/medicine/healthpot = 30,
 		/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed = 1,
-		/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue = 1,
+		/obj/item/reagent_containers/food/snacks/produce/fyritius = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue = 1
         )
 	result = /obj/item/reagent_containers/glass/bottle/rogue/luckpotion

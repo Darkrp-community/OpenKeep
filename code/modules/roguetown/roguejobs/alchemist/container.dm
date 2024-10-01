@@ -21,7 +21,7 @@
 	list_reagents = list(/datum/reagent/medicine/strongmana = 45)
 
 /obj/item/reagent_containers/glass/bottle/rogue/poison
-	list_reagents = list(/datum/reagent/toxin/killersice = 1)
+	list_reagents = list(/datum/reagent/berrypoison = 15)
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongpoison
 	list_reagents = list(/datum/reagent/strongpoison = 15)
@@ -37,6 +37,24 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/diseasecure
 	list_reagents = list(/datum/reagent/medicine/diseasecure = 45)
+
+/obj/item/reagent_containers/glass/bottle/vial/strpot
+	list_reagents = list(/datum/reagent/buff/strength = 30)
+
+/obj/item/reagent_containers/glass/bottle/vial/perpot
+	list_reagents = list(/datum/reagent/buff/perception = 30)
+
+/obj/item/reagent_containers/glass/bottle/vial/intpot
+	list_reagents = list(/datum/reagent/buff/intelligence = 30)
+
+/obj/item/reagent_containers/glass/bottle/vial/conpot
+	list_reagents = list(/datum/reagent/buff/constitution = 30)
+
+/obj/item/reagent_containers/glass/bottle/vial/endpot
+	list_reagents = list(/datum/reagent/buff/endurance = 30)
+
+/obj/item/reagent_containers/glass/bottle/vial/spdpot
+	list_reagents = list(/datum/reagent/buff/speed = 30)
 
 //////////////////////////
 /// ALCOHOLIC BOTTLES ///

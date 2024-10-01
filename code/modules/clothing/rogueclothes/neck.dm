@@ -144,7 +144,7 @@
 	break_sound = 'sound/foley/breaksound.ogg'
 	smeltresult = /obj/item/ingot/iron
 
-/obj/item/clothing/neck/roguetown/gorget/hoplite // Better than an iron gorget, not quite as good as a steel bervor
+/obj/item/clothing/neck/roguetown/gorget/hoplite // Better than an iron gorget, not quite as good as a steel bevor
 	name = "ancient gorget"
 	desc = "A heavy collar of bronze alloy, meant to protect the neck."
 	icon_state = "aasimarneck"
@@ -219,7 +219,7 @@
 // Only non-refactored psycross because Noc likes vamps. Neeeerd!
 /obj/item/clothing/neck/roguetown/psycross/noc
 	name = "amulet of Noc"
-	desc = "Diligence, study, pursuit of truth and wisdom. Let nothing deterr you from it."
+	desc = "Diligence, study, pursuit of truth and wisdom. Let nothing deter you from it."
 	icon_state = "noc"
 	resistance_flags = FIRE_PROOF
 

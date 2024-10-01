@@ -33,6 +33,7 @@
 
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/shoot_with_empty_chamber()
+	update_icon()
 	return
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/dropped()
@@ -194,6 +195,21 @@
 	if(mastermob)
 		mastermob.visible_message("<span class='warning'>[mastermob] draws [masteritem]!</span>")
 		playsound(mastermob, pick('sound/combat/Ranged/bow-draw-04.ogg'), 100, FALSE)
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long/update_icon()
+	. = ..()
+	cut_overlays()
+	if(chambered)
+		var/obj/item/I = chambered
+		I.pixel_x = 17
+		I.pixel_y = 12
+		add_overlay(new /mutable_appearance(I))
+		if(ismob(loc))
+			var/mob/M = loc
+			M.update_inv_hands()
+	if(ismob(loc))
+		var/mob/M = loc
+		M.update_inv_hands()
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long/getonmobprop(tag)
 	. = ..()
