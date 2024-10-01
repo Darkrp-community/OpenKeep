@@ -545,7 +545,7 @@
 		on = FALSE
 		set_light(0)
 		update_icon()
-		playsound(src.loc, 'sound/foley/torchfixturetake.ogg', 100)
+		playsound(src.loc, 'sound/foley/torchfixturetake.ogg', 70)
 
 /obj/machinery/light/rogue/torchholder/update_icon()
 	if(torchy)
@@ -595,7 +595,7 @@
 				LR.forceMove(src)
 				torchy = LR
 				update_icon()
-			playsound(src.loc, 'sound/foley/torchfixtureput.ogg', 100)
+			playsound(src.loc, 'sound/foley/torchfixtureput.ogg', 70)
 		return
 	. = ..()
 

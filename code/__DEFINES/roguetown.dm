@@ -107,6 +107,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_BANDIT			"CAT_BANDIT"		// Bandit class - Tied to the bandit antag really	<- Disabled; bandits got stuck with class selection
 #define CTAG_CHALLENGE 		"CAT_CHALLENGE"  	// Challenge class - Meant to be free for everyone
 #define CTAG_MERCENARY		"CAT_MERCENARY"
+#define CTAG_GARRISON		"CAT_GARRISON"
 #define CTAG_ADEPT			"CAT_ADEPT" // Used for Adept class selection
 
 /*
@@ -181,7 +182,6 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define VALUE_GOLD_ITEM			M_GOLD+W_MODERATE
 #define VALUE_GOLD_RARE_ITEM	VALUE_GOLD_ITEM+BONUS_VALUE_MODEST
 
-
 #define VALUE_PADDED_DRESS			M_SILK*4+M_MISC*2+M_SALT+W_MODEST
 #define VALUE_LIGHT_GAMBESSON		M_CLOTH*2+M_MISC+W_MINOR
 #define VALUE_GAMBESSON				M_CLOTH*4+M_MISC+W_MINOR
@@ -214,6 +214,67 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define VALUE_COMMON_GOODS	VALUE_DIRT_CHEAP * 2		// so 12
 #define VALUE_COSTLY_THING	VALUE_COMMON_GOODS * 3		// 36
 #define VALUE_LUXURY_THING	VALUE_COSTLY_THING * 2		// and 72
+#define VALUE_EXTREME		VALUE_LUXURY_THING * 4		// and 288
 
 #define VALUE_MAGIC_ITEM_WEAK	VALUE_COSTLY_THING+BONUS_VALUE_MODEST
 #define VALUE_MAGIC_ITEM_STRONG	VALUE_MAGIC_ITEM_WEAK+BONUS_VALUE_BIG
+
+
+/*-----------------------------\
+| CRITICAL HIT DEFENSE DEFINES |	- So armor makes sense
+\-----------------------------*/
+
+// All crits
+#define ALL_CRITICAL_HITS list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_BLUNT, \
+BCLASS_STAB, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+// All crits minus stab
+#define CRITICALS_GOOD_METAL list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_BLUNT, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+// Orcs mostly
+#define CRITICALS_POOR_METAL list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_BLUNT) 
+
+// Just cut chop and stab, for coifs and partial maille
+#define CRITICALS_MAILLE_COIF list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_STAB) 
+
+// Maille level but also covers nose twisters
+#define CRITICALS_MAILLE_PLUS list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_STAB, \
+BCLASS_TWIST) 
+
+#define CRITICALS_BOILED_LEATHER list(\
+BCLASS_CUT, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+#define CRITICALS_THICK_LEATHER list(\
+BCLASS_BLUNT, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+#define CRITICALS_THICK_CLOTH list(\
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
