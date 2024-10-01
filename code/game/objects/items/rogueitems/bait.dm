@@ -104,4 +104,8 @@
 	desc = "A deployable bag of bait used by hunters to attract predators within the wilds."
 	icon_state = "baitb"
 	attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 20,
-						/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10)
+						/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 5,
+						/mob/living/simple_animal/hostile/retaliate/rogue/mole = 10,
+						/mob/living/simple_animal/hostile/retaliate/rogue/troll = 5,
+						/mob/living/simple_animal/hostile/retaliate/rogue/trollbog = 5
+						)
