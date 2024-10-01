@@ -29,13 +29,12 @@
 	body_parts_covered = CHEST
 
 
+
 /*---------------\
 |			 	 |
 |  Light Armor	 |
 |			 	 |
 \---------------*/
-
-
 
 /*-------------\
 | Padded Armor |	- Cloth based
@@ -328,8 +327,6 @@
 
 	body_parts_covered = CHEST|VITALS|LEGS // legs on a vest? hmm....
 
-/obj/item/clothing/suit/roguetown/armor/leather/vest/butler
-	color = CLOTHING_RED
 
 //................ Other Vests ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butler/Initialize()
@@ -345,6 +342,10 @@
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 	color = "#3c3a38"
+
+/obj/item/clothing/suit/roguetown/armor/leather/vest/butler
+	color = CLOTHING_RED
+
 
 //................ Amazon chainkini ............... //	- made of iron, 100/15, a little peculiar
 /obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
@@ -705,7 +706,6 @@
 	max_integrity = INTEGRITY_STRONG
 
 
-
 //................ Snowflake Plate ............... //
 /obj/item/clothing/suit/roguetown/armor/rare
 	name = "Parent rare armor"
@@ -731,7 +731,6 @@
 	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/fullplate (1).ogg',\
 												'sound/foley/footsteps/armor/fullplate (2).ogg',\
 												'sound/foley/footsteps/armor/fullplate (3).ogg'), 100)
-
 
 /obj/item/clothing/suit/roguetown/armor/rare/elfplate
 	name = "dark elf plate"
@@ -784,8 +783,6 @@
 /obj/item/clothing/suit/roguetown/armor/rare/hoplite
 	name = "ancient plate armor"
 	desc = "A battered set of bronze plate armor. Intricate runes and carvings once adorned the pieces, but most have faded with age."
-	icon = 'icons/roguetown/clothing/armor.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
 	icon_state = "aasimarplate"
 	item_state = "aasimarplate"
 	allowed_race = list("aasimar")
