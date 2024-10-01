@@ -107,6 +107,5 @@
 						/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10,
 						/mob/living/simple_animal/hostile/retaliate/rogue/mole = 10,
 						/mob/living/simple_animal/hostile/retaliate/rogue/troll = 10,
-						/mob/living/simple_animal/hostile/retaliate/rogue/trollbog = 10,
-						/mob/living/carbon/human/species/goblin/npc = 20
+						/mob/living/simple_animal/hostile/retaliate/rogue/trollbog = 10
 						)
