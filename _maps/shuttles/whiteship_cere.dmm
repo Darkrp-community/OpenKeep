@@ -51,7 +51,7 @@
 /turf/open/floor/mineral/titanium,
 /area/shuttle/abandoned)
 "ai" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -116,7 +116,7 @@
 	},
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -355,7 +355,7 @@
 /area/shuttle/abandoned)
 "aT" = (
 /obj/structure/table,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /obj/item/storage/firstaid/regular,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light{

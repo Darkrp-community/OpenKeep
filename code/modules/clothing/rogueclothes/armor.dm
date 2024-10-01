@@ -776,9 +776,11 @@
 	icon_state = "nightman"
 	desc = "A silken jacket discretely padded with leather on the inside."
 	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
-	allowed_sex = list(MALE)
 	allowed_race = list("human", "tiefling", "aasimar")
 	sellprice = VALUE_LEATHER_ARMOR_LORD
+	allowed_sex = list(MALE, FEMALE)
+	allowed_race = list("human", "tiefling","elf", "half-elf", "dark elf", "aasimar")
+	sellprice = 60
 
 	body_parts_covered = CHEST|VITALS|LEGS
 

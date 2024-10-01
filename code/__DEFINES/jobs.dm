@@ -104,6 +104,7 @@
 #define ARCHIVIST   (1<<6)
 #define MERCHANT	(1<<7)
 #define FELDSHER    (1<<8)
+#define NIGHTMAN    (1<<9)
 
 #define GARRISON		(1<<1)
 

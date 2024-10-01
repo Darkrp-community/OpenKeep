@@ -56,8 +56,8 @@
 				found = TRUE
 				C.thresh()
 			if(found)
-				playsound(loc,"plantcross", 100, FALSE)
-				playsound(loc,"smashlimb", 50, FALSE)
+				playsound(loc,"plantcross", 90, FALSE)
+				playsound(loc,"smashlimb", 40, FALSE)
 				user.visible_message("<span class='notice'>[user] threshes the stalks!</span>", \
 									"<span class='notice'>I thresh the stalks.</span>")
 			return
