@@ -59,8 +59,8 @@
 	naked_patient.take_overall_damage(100)
 
 	var/mob/living/carbon/human/clothed_patient = allocate(/mob/living/carbon/human)
+	clothed_patient.take_overall_damage(100) // take damage before putting on clothes in case they block some of the damage
 	clothed_patient.equipOutfit(/datum/outfit/job/roguetown/tester, TRUE)
-	clothed_patient.take_overall_damage(100)
 
 	basic_brute_heal.success(user, naked_patient, BODY_ZONE_CHEST)
 	basic_brute_heal.success(user, clothed_patient, BODY_ZONE_CHEST)
