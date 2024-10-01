@@ -18,6 +18,8 @@
 	body_parts_covered = HEAD|HAIR
 	sellprice = VALUE_CHEAP_CLOTHING
 
+	max_integrity = INTEGRITY_WORST
+
 /obj/item/clothing/head/roguetown/equipped(mob/user, slot)
 	. = ..()
 	user.update_fov_angles()
@@ -25,6 +27,7 @@
 /obj/item/clothing/head/roguetown/dropped(mob/user)
 	. = ..()
 	user.update_fov_angles()
+
 
 
 //................ Simple Hats ............... //
@@ -71,6 +74,15 @@
 /obj/item/clothing/head/roguetown/headband/red
 	color = CLOTHING_RED
 
+/obj/item/clothing/head/roguetown/softcap
+	name = "soft cap"
+	desc = "A white cap worn by most manual laborers to protect from sunburn."
+	icon_state = "armingcap"
+	item_state = "armingcap"
+	flags_inv = HIDEEARS
+
+	body_parts_covered = HEAD|HAIR|EARS
+
 
 //................ Fur Hats ............... //
 /obj/item/clothing/head/roguetown/hatfur
@@ -89,6 +101,9 @@
 	item_state = "papakha"
 	sellprice = VALUE_FINE_CLOTHING
 
+	max_integrity = INTEGRITY_POOR
+
+
 //................ Chaperon Hat ............... //
 /obj/item/clothing/head/roguetown/chaperon
 	name = "chaperon hat"
@@ -103,10 +118,11 @@
 	icon_state = "chap_alt"
 	item_state = "chap_alt"
 	flags_inv = HIDEEARS
-	color = "#cf99e3"
+	color = CLOTHING_PINK	
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/random/Initialize()
-	color = pick(CLOTHING_TEAL,  CLOTHING_GREEN, CLOTHING_ORANGE, CLOTHING_MAJENTA, CLOTHING_YELLOW)
+	color = pick(CLOTHING_TEAL, CLOTHING_GREEN, CLOTHING_ORANGE, CLOTHING_MAJENTA, CLOTHING_YELLOW,CLOTHING_SALMON, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW)
+
 
 //................ Cook Hat ............... //
 /obj/item/clothing/head/roguetown/cookhat
@@ -156,8 +172,8 @@
 	edelay_type = 1
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
+
 	body_parts_covered = NECK
-	max_integrity = 100
 
 /obj/item/clothing/head/roguetown/roguehood/red
 	color = CLOTHING_RED
@@ -341,7 +357,7 @@
 	icon_state = "serpcrown"
 	dynamic_hair_suffix = null
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
-	sellprice = 200
+	sellprice = VALUE_EXTREME
 	sewrepair = FALSE
 	resistance_flags = FIRE_PROOF|ACID_PROOF|LAVA_PROOF|UNACIDABLE|INDESTRUCTIBLE
 
@@ -353,7 +369,7 @@
 	name = "crown"
 	desc = "A replacement for the Crown of Rockhill, every bit as valid as proof of sovereignity as the original."
 	icon_state = "serpcrowno"
-	sellprice = 100
+	sellprice = VALUE_GOLD_ITEM
 
 /obj/item/clothing/head/roguetown/crown/sparrowcrown
 	name = "champion's circlet"
@@ -363,7 +379,7 @@
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	sewrepair = FALSE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	sellprice = 50
+	sellprice = VALUE_GOLD_ITEM
 
 /obj/item/clothing/head/roguetown/jester
 	name = "jester's hat"
@@ -405,10 +421,10 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ITEM
 
-	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_IRON_GOOD
 	body_parts_covered = HEAD|HAIR|NOSE
 	prevent_crits = CRITICALS_GOOD_METAL
-	max_integrity = 350
+	max_integrity = INTEGRITY_STANDARD
 
 //................ Skull Cap ............... //
 /obj/item/clothing/head/roguetown/helmet/skullcap
@@ -418,9 +434,9 @@
 	smeltresult = /obj/item/ash
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
-	armor = list("melee" = 70, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_IRON
 	body_parts_covered = HEAD|HAIR|EARS
-	max_integrity = 150
+	max_integrity = INTEGRITY_POOR
 
 //................ Horned Cap ............... //
 /obj/item/clothing/head/roguetown/helmet/horned
@@ -431,7 +447,6 @@
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
 	body_parts_covered = HEAD|HAIR|EARS
-	max_integrity = 150
 
 //................ Winged Cap ............... //
 /obj/item/clothing/head/roguetown/helmet/winged
@@ -442,10 +457,9 @@
 	worn_y_dimension = 64
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
-	sellprice = VALUE_CHEAP_IRON_HELMET+ BONUS_VALUE_TINY
 
 	body_parts_covered = HEAD|HAIR
-	max_integrity = 200
+
 
 //................ Kettle Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/kettle
@@ -456,8 +470,8 @@
 	smeltresult = /obj/item/ash
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
+	armor = ARMOR_STEEL_BAD
 	body_parts_covered = HEAD|HAIR
-	max_integrity = 250 // Covers less, so less overall integrity
 
 //................ Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet
@@ -468,8 +482,9 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_STEEL_HELMET
 
+	armor = ARMOR_STEEL_PARTIAL
 	body_parts_covered = HEAD|HAIR|EARS
-	max_integrity = 300
+	max_integrity = INTEGRITY_STRONG
 
 //................ Elf Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet/elven	// blackoak merc helmet
@@ -478,8 +493,6 @@
 	item_state = "bascinet_novisor"
 	color = COLOR_ASSEMBLY_GOLD
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_MODEST
-
-	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 //................ Zybantine Kulah Khud ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet/zybantine // Unique Zybantu merc kit
@@ -501,15 +514,15 @@
 	item_state = "ironplate"
 	flags_inv = HIDEEARS
 	block2add = FOV_RIGHT|FOV_LEFT // Unremovable visor.
-	equip_delay_self = 25
-	unequip_delay_self = 25
+	equip_delay_self = 2 SECONDS
+	unequip_delay_self = 2 SECONDS
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)	
 	body_parts_covered = HEAD|HAIR|NOSE|MOUTH|EARS
 	prevent_crits = ALL_CRITICAL_HITS // Stab protection out of having faceplate
-	max_integrity = 350//isn't the same as a steel helmet but is better than a skullcap, costs 2 bars and protects the mouth
+	max_integrity = INTEGRITY_STRONG //isn't the same as a steel helmet but is better than a skullcap, costs 2 bars and protects the mouth
 
 //................ Iron Pot Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/ironpot
@@ -521,9 +534,8 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_HELMET
 
-	armor = list("melee" = 50, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_LEATHER_BEST // splint mail, best light armor level
 	body_parts_covered = HEAD|HAIR|NOSE|EARS
-	max_integrity = 250//isn't the same as a steel helmet but is better than a skullcap
 
 
 //................ Copper Lamellar Cap ............... //
@@ -538,7 +550,7 @@
 
 	armor = list("melee" = 30, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|HAIR|EARS
-	max_integrity = 150 //lowest possible for copper
+	max_integrity = INTEGRITY_POOR
 
 //............... Battle Nun ........................... (unique kit for the role, iron coif mechanically.)
 /obj/item/clothing/head/roguetown/helmet/battlenun
@@ -555,7 +567,7 @@
 	resistance_flags = FIRE_PROOF
 	smeltresult = /obj/item/ash
 
-	armor = list("melee" = 60, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_MAILLE
 	body_parts_covered = NECK|HAIR|EARS|HEAD
 	prevent_crits = CRITICALS_MAILLE_COIF
 
@@ -579,8 +591,8 @@
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_TINY
 
 	body_parts_covered = FULL_HEAD
+	max_integrity = INTEGRITY_STRONG
 	prevent_crits = ALL_CRITICAL_HITS
-	max_integrity = 350
 
 // Proc shared by all visored helmets, therefore modular
 /obj/item/clothing/head/roguetown/helmet/visored/AdjustClothes(mob/user)
@@ -646,7 +658,6 @@
 
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
-	max_integrity = 350
 
 /obj/item/clothing/head/roguetown/helmet/visored/knight/black
 	color = CLOTHING_BLACK
@@ -671,10 +682,10 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_STEEL_HELMET
 
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_STEEL
 	body_parts_covered = FULL_HEAD
 	prevent_crits = CRITICALS_GOOD_METAL
-	max_integrity = 250
+	max_integrity = INTEGRITY_STRONGEST // no moving parts, steel
 
 
 //............... Great Helm ............... //
@@ -686,7 +697,7 @@
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 
-	armor = list("melee" = 90, "bullet" = 90, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_STEEL_BEST
 	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
@@ -707,7 +718,8 @@
 
 	armor = list("melee" = 90, "bullet" = 70, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST) // Again no lashing protection!
-	max_integrity = 300 // Still made of iron.
+	max_integrity = INTEGRITY_STRONG
+
 
 //............... Rusted Barbute ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/rust
@@ -719,8 +731,7 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_LEATHER_HELMET
 
-	max_integrity = 200 // shitty rusted iron
-	sellprice = VALUE_IRON_HELMET/2
+	max_integrity = INTEGRITY_STANDARD // shitty rusted iron
 
 
 
@@ -793,10 +804,10 @@
 	color = "#745a4d"
 	sellprice = VALUE_LEATHER_HELMET/2
 
-	armor = list("melee" = 20, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_GAMBESON
 	body_parts_covered = HEAD|HAIR
 	prevent_crits =  CRITICALS_THICK_CLOTH
-	max_integrity = 120
+	max_integrity = INTEGRITY_POOR
 
 
 //............... Arming Cap ............... //
@@ -807,10 +818,10 @@
 	item_state = "armingcap"
 	flags_inv = HIDEEARS
 
-	armor = list("melee" = 20, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_GAMBESON
 	body_parts_covered = HEAD|HAIR|EARS
 	prevent_crits =  CRITICALS_THICK_CLOTH
-	max_integrity = 100
+	max_integrity = INTEGRITY_POOR
 
 
 /*----------------\
@@ -832,10 +843,10 @@
 	sewrepair = TRUE
 	sellprice = VALUE_LEATHER_HELMET
 
-	armor = list("melee" = 30, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_LEATHER
 	body_parts_covered = HEAD|HAIR|EARS|NOSE
 	prevent_crits = CRITICALS_BOILED_LEATHER
-	max_integrity = 200
+	max_integrity = INTEGRITY_STANDARD
 
 //............... Buckled Hat ............... //
 /obj/item/clothing/head/roguetown/helmet/leather/inquisitor
@@ -852,7 +863,7 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	sellprice = VALUE_LEATHER_HELMET/2
 
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_GAMBESON_GOOD
 	body_parts_covered = NECK|HAIR|EARS|HEAD
 
 //............... Hardened Helmet ............... //
@@ -879,7 +890,7 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	sellprice = VALUE_LEATHER_HELMET+BONUS_VALUE_MODEST
 
-	armor = list("melee" = 20, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_GAMBESON
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_BLUNT)
 
 	var/brightness_on = 4 //less than a torch; basically good for one person.
@@ -977,6 +988,7 @@
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_TINY
 	var/picked = FALSE
 
+	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB, BCLASS_TWIST)
 
 /obj/item/clothing/head/roguetown/helmet/decoratedknighthelm/attack_right(mob/user)
@@ -1037,6 +1049,7 @@
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_TINY
 	var/picked = FALSE
 
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/decoratedhounskull/attack_right(mob/user)
@@ -1097,8 +1110,8 @@
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_TINY
 	var/picked = FALSE
 
+	armor = ARMOR_STEEL_BEST
 	prevent_crits = ALL_CRITICAL_HITS
-
 
 /obj/item/clothing/head/roguetown/helmet/heavy/decoratedbucket/attack_right(mob/user)
 	..()
@@ -1159,6 +1172,7 @@
 	smeltresult = /obj/item/ingot/steel
 	var/picked = FALSE
 
+	armor = ARMOR_STEEL_BEST
 	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket/attack_right(mob/user)
@@ -1259,7 +1273,7 @@
 	resistance_flags = FIRE_PROOF // These are all metallic
 	anvilrepair = /datum/skill/craft/armorsmithing
 
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_STEEL_BEST
 	armor_class = ARMOR_CLASS_HEAVY
 	prevent_crits = ALL_CRITICAL_HITS
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_SMALL

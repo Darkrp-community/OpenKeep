@@ -188,7 +188,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define VALUE_HEAVY_GAMBESSON		M_CLOTH*6+M_MISC*4+W_MODERATE
 #define VALUE_LEATHER_ARMOR			M_LEATHER*2+W_MINOR
 #define VALUE_LEATHER_ARMOR_FUR		VALUM_LEATHER_ARMOR+M_SALT
-#define VALUE_LEATHER_ARMOR_STUD	VALUE_STEEL_SMALL_ITEM+M_LEATHER
+#define VALUE_LEATHER_ARMOR_PLUS	VALUE_STEEL_SMALL_ITEM+M_LEATHER
 #define VALUE_LEATHER_ARMOR_LORD	VALUM_LEATHER_ARMOR+BONUS_VALUE_MODEST
 #define VALUE_IRON_ARMOR			VALUE_IRON_ITEM
 #define VALUE_IRON_ARMOR_UNUSUAL	VALUE_IRON_ITEM+BONUS_VALUE_TINY
@@ -262,6 +262,13 @@ BCLASS_CHOP, \
 BCLASS_STAB, \
 BCLASS_TWIST) 
 
+#define CRITICALS_REINFORCED_LEATHER list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
 #define CRITICALS_BOILED_LEATHER list(\
 BCLASS_CUT, \
 BCLASS_LASHING, \
@@ -278,3 +285,84 @@ BCLASS_TWIST)
 BCLASS_LASHING, \
 BCLASS_BITE, \
 BCLASS_TWIST) 
+
+
+/*------------------------\
+| ARMOR INTEGRITY DEFINES |	- So armor makes sense
+\------------------------*/
+
+#define INTEGRITY_STRONGEST		500
+#define INTEGRITY_STRONG		300
+#define INTEGRITY_STANDARD		200
+#define INTEGRITY_POOR			150
+#define INTEGRITY_WORST			100
+
+
+/*--------------------\
+| ARMOR VALUE DEFINES |	- So armor makes sense
+\--------------------*/
+
+// Light Gambesson/padded cloth
+#define MELEE_15___ARROW_NOTHING list(\
+"melee" = 15, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+// Gambesson
+#define MELEE_20___ARROW_10 list(\
+"melee" = 20, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+// Thick Gambesson
+#define MELEE_30___ARROW_15 list(\
+"melee" = 30, "bullet" = 15, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+// Leather and Silk armor
+#define MELEE_40___ARROW_20 list(\
+"melee" = 40, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+// Fur armor or boiled leather
+#define MELEE_50___ARROW_25 list(\
+"melee" = 50, "bullet" = 25, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+// Splint mail (leather + little plates partial)
+#define MELEE_60___ARROW_30 list(\
+"melee" = 60, "bullet" = 30, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+// Maille
+#define MELEE_80___ARROW_90 list(\
+"melee" = 80, "bullet" = 90, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+// Iron armor
+#define MELEE_70___ARROW_50 list(\
+"melee" = 70, "bullet" = 50, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+// Partial plates, basic open helmet
+#define MELEE_80___ARROW_60 list(\
+"melee" = 80, "bullet" = 60, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+#define MELEE_90___ARROW_90 list(\
+"melee" = 90, "bullet" = 90, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+#define MELEE_95___ARROW_95 list(\
+"melee" = 95, "bullet" = 95, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+#define MELEE_100___ARROW_100 list(\
+"melee" = 100, "bullet" = 100, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+
+#define ARMOR_GAMBESON_BAD	MELEE_15___ARROW_NOTHING
+#define ARMOR_GAMBESON		MELEE_40___ARROW_20
+#define ARMOR_GAMBESON_GOOD	MELEE_30___ARROW_15
+
+#define ARMOR_LEATHER		MELEE_40___ARROW_20
+#define ARMOR_LEATHER_GOOD	MELEE_50___ARROW_25
+#define ARMOR_LEATHER_BEST	MELEE_60___ARROW_30
+
+#define ARMOR_MAILLE		MELEE_80___ARROW_90
+
+#define ARMOR_IRON_BAD		MELEE_60___ARROW_50
+#define ARMOR_IRON			MELEE_70___ARROW_50
+#define ARMOR_IRON_GOOD		MELEE_80___ARROW_60
+
+#define ARMOR_STEEL_BAD		MELEE_85___ARROW_65
+#define ARMOR_STEEL_PARTIAL	MELEE_90___ARROW_75
+#define ARMOR_STEEL			MELEE_90___ARROW_90
+#define ARMOR_STEEL_BEST	MELEE_100___ARROW_100
