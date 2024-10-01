@@ -229,3 +229,6 @@ config/admins.txt
 
 # Ignore compile options to default to testing environment
 #/code/_compile_options.dm
+
+/prof.dll
+/rust_g.dll
