@@ -190,12 +190,12 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/fencer/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets studded leather (which hopefully will be renamed splint mail at some point...), a gorget, and bracers
+	//Gets studded leather (which hopefully will be renamed splint mail at some point...), bracers, and a chain coif
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	beltr = /obj/item/rogueweapon/sword/rapier
 	head = /obj/item/clothing/head/roguetown/roguehood/red
-	neck = /obj/item/clothing/neck/roguetown/gorget
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	backpack_contents = list(/obj/item/keyring/guard)
 
