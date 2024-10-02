@@ -42,11 +42,22 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.change_stat("intelligence", 2)
+		H.change_stat("intelligence", 1)
 		H.change_stat("strength", 1)
 		H.change_stat("perception", 2)
 		H.change_stat("constitution", 2)
+		switch(H.patron?.name)
+			if("Astrata")
+				wrists = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
+			if("Necra")
+				wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
+			if("Pestra")
+				wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
+			else
+				wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)		//If they have torture variables, they shouldn't be effected by stuff.

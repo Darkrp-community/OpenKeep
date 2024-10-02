@@ -22,6 +22,7 @@
 	outfit = /datum/outfit/job/roguetown/nitemaiden
 	display_order = JDO_NITEMAIDEN
 	give_bank_account = TRUE
+	min_pq = -20
 	can_random = FALSE
 	bypass_lastclass = TRUE
 

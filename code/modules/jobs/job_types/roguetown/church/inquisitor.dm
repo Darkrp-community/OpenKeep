@@ -16,7 +16,8 @@
 
 	outfit = /datum/outfit/job/roguetown/inquisitor
 	display_order = JDO_PURITAN
-	min_pq = 0
+	min_pq = 4
+	bypass_lastclass = TRUE
 
 /datum/job/roguetown/inquisitor/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -41,7 +42,7 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	head = /obj/item/clothing/head/roguetown/helmet/leather/inquisitor
 	gloves = /obj/item/clothing/gloves/roguetown/angle
-	wrists = /obj/item/clothing/neck/roguetown/psicross/silver
+	wrists = /obj/item/clothing/neck/roguetown/psycross/silver
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/rogueweapon/sword/long/forgotten
 	beltl = /obj/item/flashlight/flare/torch/lantern
@@ -50,9 +51,9 @@
 	backpack_contents = list(/obj/item/keyring/inquisitor = 1)
 	var/prev_real_name = H.real_name
 	var/prev_name = H.name
-	var/honorary = "Retter"
+	var/honorary = "Ritter"
 	if(H.gender == FEMALE)
-		honorary = "Retterin"
+		honorary = "Ritterin"
 	H.real_name = "[honorary] [prev_real_name]"
 	H.name = "[honorary] [prev_name]"
 	H.confession_points = 1 // Starting with 1 point

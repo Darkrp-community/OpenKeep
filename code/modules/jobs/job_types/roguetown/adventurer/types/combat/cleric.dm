@@ -24,32 +24,33 @@
 	..()
 	H.virginity = TRUE
 
-	cloak = /obj/item/clothing/cloak/tabard/crusader // Give us a generic crusade tabard, or one based on our chosen diety...
-	wrists = /obj/item/clothing/neck/roguetown/psicross/astrata // Give us an Astrata psicross, or one based on our chosen diety...
 	switch(H.patron?.name)
 		if("Astrata")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
 			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
 		if("Dendor")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/dendor
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 			cloak = /obj/item/clothing/cloak/stabard/templar/dendor
 		if("Necra")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/necra
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
 		if("Eora")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
 			cloak = /obj/item/clothing/cloak/stabard/templar/eora
 			H.virginity = FALSE
 		if("Ravox")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/ravox
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
 		if("Noc")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
+			wrists = /obj/item/clothing/neck/roguetown/psycross/noc
 			cloak = /obj/item/clothing/cloak/stabard/templar/noc
 		if("Pestra")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/pestra
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
+		else // Failsafe
+			cloak = /obj/item/clothing/cloak/tabard/crusader // Give us a generic crusade tabard
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver // Give us a silver psycross for protection against lickers
 
-	armor = /obj/item/clothing/suit/roguetown/armor/plate
+	armor = /obj/item/clothing/suit/roguetown/armor/cuirass // Halfplate has been made heavy armor, billions must make due.
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
