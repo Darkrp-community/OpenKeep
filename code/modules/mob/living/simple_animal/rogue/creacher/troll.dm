@@ -5,40 +5,50 @@
 	icon_state = "Troll2"
 	icon_living = "Troll2"
 	icon_dead = "Troll2d"
-	gender = MALE
+
+	faction = list("orcs")
+	footstep_type = FOOTSTEP_MOB_HEAVY
 	emote_hear = null
 	emote_see = null
-	speak_chance = 1
-	turns_per_move = 2
-	see_in_dark = 10
-	move_to_delay = 7
-	base_intents = list(/datum/intent/unarmed/wwolf, /datum/intent/simple/bigbite)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/xeno = 1,
-						/obj/item/natural/hide = 2,
-						/obj/item/alch/horn = 2)
-	faction = list("orcs")
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 600
-	maxHealth = 600
-	melee_damage_lower = 40
-	melee_damage_upper = 60
-	vision_range = 6
-	aggro_vision_range = 6
-	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
-	retreat_distance = 0
-	minimum_distance = 0
 	verb_say = "groans"
 	verb_ask = "grunts"
 	verb_exclaim = "roars"
 	verb_yell = "roars"
-	milkies = FALSE
-	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
-	footstep_type = FOOTSTEP_MOB_HEAVY
-	pooptype = null
+
+	turns_per_move = 2
+	see_in_dark = 10
+	move_to_delay = 7
+	vision_range = 6
+	aggro_vision_range = 6
+
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
+						/obj/item/alch/horn = 2)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
+						/obj/item/natural/hide = 2,
+						/obj/item/alch/horn = 2)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider= 2,
+						/obj/item/natural/hide = 3,
+						/obj/item/alch/horn = 2)
+
+	health = TROLL_HEALTH
+	maxHealth = TROLL_HEALTH
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat,
+					/obj/item/bodypart,
+					/obj/item/organ)
+
+	base_intents = list(/datum/intent/unarmed/wwolf, /datum/intent/simple/bigbite)
+	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
+	melee_damage_lower = 40
+	melee_damage_upper = 60
+	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
+
 	STACON = 15
 	STASTR = 16
 	STASPD = 2
 	STAEND = 16
+
+	retreat_distance = 0
+	minimum_distance = 0
 	deaggroprob = 0
 	defprob = 20
 	defdrain = 15
@@ -46,11 +56,10 @@
 	retreat_health = 0
 	food_max = 250
 	food = 0
-	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
 	dodgetime = 20
-	aggressive = 1
+	aggressive = TRUE
 //	stat_attack = UNCONSCIOUS
-	remains_type = /obj/effect/decal/remains/xeno/troll // Placeholder until Troll remains are sprited.
+	remains_type = /obj/effect/decal/remains/troll
 	body_eater = TRUE
 	var/critvuln = FALSE
 
@@ -132,3 +141,9 @@
 		if(BODY_ZONE_L_ARM)
 			return "foreleg"
 	return ..()
+
+/obj/effect/decal/remains/troll
+	name = "remains"
+	gender = PLURAL
+	icon_state = "mole_bones"
+	icon = 'icons/roguetown/mob/monster/mole.dmi' // mole bones is a placeholder
