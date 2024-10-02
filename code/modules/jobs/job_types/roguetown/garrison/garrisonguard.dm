@@ -69,7 +69,7 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/footman/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets an iron cuirass over chain, a gorget, and a simple nasal helmet
+	//Gets a steel cuirass over chain, a gorget, and a nasal helmet
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	neck = /obj/item/clothing/neck/roguetown/gorget
@@ -108,7 +108,7 @@ Design philosphy:
 	..()
 	//Gets chain over a gambeson, a gorget, and a kettle helmet
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/helmet/kettle
 	beltr = /obj/item/rogueweapon/sword/iron/messer
@@ -148,8 +148,8 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/archer/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets a gambeson, leather bracers, and an iron chain coif
-	armor = /obj/item/clothing/suit/roguetown/armor/gambeson
+	//Gets a padded gambeson, leather bracers, and a chain coif
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	head = /obj/item/clothing/head/roguetown/roguehood/red
@@ -176,7 +176,7 @@ Design philosphy:
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.change_stat("perception", 2)
 	H.change_stat("endurance", 1)
-	H.change_stat("speed", 1)
+	H.change_stat("speed", 2)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
@@ -190,9 +190,9 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/fencer/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets an iron chain shirt, a gorget, and bracers
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
+	//Gets studded leather (which hopefully will be renamed splint mail at some point...), a gorget, and bracers
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	beltr = /obj/item/rogueweapon/sword/rapier
 	head = /obj/item/clothing/head/roguetown/roguehood/red
 	neck = /obj/item/clothing/neck/roguetown/gorget
@@ -207,8 +207,8 @@ Design philosphy:
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.change_stat("endurance", 1)
-	H.change_stat("speed", 2) // Quickest of the bunch
+	H.change_stat("endurance", 2)
+	H.change_stat("speed", 2)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
