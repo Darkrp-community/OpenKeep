@@ -10,7 +10,7 @@
 
 /datum/heritage
 	var/housename
-	var/dominant_species
+	var/datum/species/dominant_species
 	var/mob/living/carbon/human/matriarch
 	var/mob/living/carbon/human/patriarch
 	var/list/family = list()
@@ -26,7 +26,7 @@
 		housename = new_name
 	dominant_species = majority_species
 	if(!majority_species && progenator)
-		dominant_species = progenator.dna.species
+		dominant_species = progenator.dna.species.type
 
 /*
 * Renames entire house. Useful for default houses.
@@ -37,7 +37,7 @@
 		gender_male = TRUE
 	addToHouse(person, gender_male ? FAMILY_FATHER : FAMILY_MOTHER)
 	housename = SurnameFormatting(person)
-	dominant_species = person.dna.species
+	dominant_species = person.dna.species.type
 
 /*
 * Adds someone to the family using a mob and a status.
@@ -51,14 +51,21 @@
 	if(family[person])
 		testing("FAMTREE_ERROR:add2")
 		return
+	//Species that are logical decendents.
+	var/list/heir_species = list(dominant_species)
+	if(matriarch)
+		heir_species += SpeciesHeirs(matriarch.dna.species)
+	if(patriarch)
+		heir_species += SpeciesHeirs(patriarch.dna.species)
 	//Make a seperate list so we not mistake the status for another duplicate status role.
 	var/list/temp_list = list()
-	if(status == FAMILY_PROGENY)
-		if(person.dna.species.id != dominant_species)
-			status = FAMILY_ADOPTED
-		else
+	if(status == FAMILY_PROGENY && heir_species)
+		if(person.dna.species.type in heir_species)
 			//This has no purpose other than to add their TRUE PARENTS to their DNA/blood
 			person.MixDNA(patriarch, matriarch, override = TRUE)
+		else
+			status = FAMILY_ADOPTED
+
 	//Add the human as a key then assign its value as its familial role.
 	temp_list += person
 	temp_list[person] = status
@@ -104,7 +111,7 @@
 		if(familialrole_b == FAMILY_PROGENY)
 			txt += "It's my progeny."
 		if(familialrole_b == FAMILY_ADOPTED)
-			if(looker.dna.species == lookee.dna.species && familialrole_a == FAMILY_FATHER)
+			if(looker.dna.species.type == lookee.dna.species.type)
 				txt += "It's my bastard."
 			else
 				txt += "It's the adopted one."
@@ -116,6 +123,8 @@
 			txt += "It's my mother."
 		if(familialrole_b == FAMILY_PROGENY || familialrole_b == FAMILY_ADOPTED)
 			txt += "It's my sibling."
+	if(txt == "")
+		return
 	return span_nicegreen("<B>[txt]</B>")
 
 /*
@@ -217,6 +226,14 @@
 	//If new hyrbids are made add the logic of their conception here.
 	if(istype(fledgling_species, mixes[mix_text]))
 		return TRUE
+
+/*
+* For calculating if this individual can lead to this species. One for One rather than Two for One calculation.
+*/
+/datum/heritage/proc/SpeciesHeirs(datum/species/core_species)
+	. = list(core_species.type)
+	if(istype(core_species, /datum/species/human/northern) || istype(core_species, /datum/species/elf))
+		. += /datum/species/human/halfelf
 
 /*
 * Taken from marriage alter. This formats a name into its surname

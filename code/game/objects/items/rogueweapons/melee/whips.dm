@@ -1,5 +1,5 @@
 /obj/item/rogueweapon/whip
-	force = 19
+	force = 20
 	possible_item_intents = list(/datum/intent/whip/crack, /datum/intent/whip/lash)
 	name = "whip"
 	desc = "A leather whip, intertwining rope, leather and a fanged tip to inflict enormous pain. Favored by slavers and beast-tamers."
@@ -32,7 +32,7 @@
 
 
 /obj/item/rogueweapon/whip/antique
-	force = 26
+	force = 25
 	name = "Repenta En"
 	desc = "An extremely well maintained whip, with a polished steel tip and gilded handle"
 	minstr = 7
@@ -68,7 +68,7 @@
 	canparry = TRUE
 
 /obj/item/rogueweapon/whip/spiderwhip
-	force = 20
+	force = 30
 	name = "lashkiss whip"
 	desc = "A dark whip with segmented, ashen spines for a base. Claimed to be hewn from dendrified prisoners of terror."
 	icon_state = "spiderwhip"

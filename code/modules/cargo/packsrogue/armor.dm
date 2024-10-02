@@ -5,7 +5,7 @@
 
 /datum/supply_pack/rogue/armor/skullcap
 	name = "Skullcap Helmet"
-	cost = 25
+	cost = 30
 	contains = /obj/item/clothing/head/roguetown/helmet/skullcap
 
 /datum/supply_pack/rogue/armor/sallet
@@ -35,12 +35,12 @@
 
 /datum/supply_pack/rogue/armor/leather_armor
 	name = "Leather Armor"
-	cost = 16
+	cost = 20
 	contains = /obj/item/clothing/suit/roguetown/armor/leather
 
 /datum/supply_pack/rogue/armor/studleather
 	name = "Studded Leather Armor"
-	cost = 18
+	cost = 30
 	contains = /obj/item/clothing/suit/roguetown/armor/leather/studded
 
 /datum/supply_pack/rogue/armor/chainmail_iron
@@ -48,10 +48,10 @@
 	cost = 22
 	contains = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 
-/datum/supply_pack/rogue/armor/plate_half
-	name = "Steel Cuirass"
-	cost = 35
-	contains = /obj/item/clothing/suit/roguetown/armor/plate/half
+/datum/supply_pack/rogue/armor/cuirass
+	name = "Breastplate"
+	cost = 50
+	contains = /obj/item/clothing/suit/roguetown/armor/cuirass
 
 /datum/supply_pack/rogue/armor/brigandine
 	name = "Brigandine"
