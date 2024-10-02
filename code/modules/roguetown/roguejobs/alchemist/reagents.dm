@@ -225,7 +225,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 			M.adjustToxLoss(0.5)
 		else
 			M.add_nausea(3) // so one berry or one dose (one clunk of extracted poison, 5u) will make you really sick and a hair away from crit.
-			M.adjustToxLoss(2)
+			M.adjustToxLoss(3)
 	return ..()
 
 
