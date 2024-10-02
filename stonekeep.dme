@@ -3434,6 +3434,7 @@
 #include "interface\skin.dmf"
 #include "modular\Barding\code\Barding_instruments.dm"
 #include "modular\Creechers\code\trufflepig.dm"
+#include "modular\Creechers\code\wildboar.dm"
 #include "modular\Mapping\Mapping_aides.dm"
 #include "modular\Neu_Farming\code\bin.dm"
 #include "modular\Neu_Farming\code\chaff.dm"
