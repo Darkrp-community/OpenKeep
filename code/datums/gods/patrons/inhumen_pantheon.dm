@@ -61,10 +61,10 @@
 
 /datum/patron/inhumen/zastaris
 	name = "Zastaris"
-	domain = "Queen of Swords, Demon Lord of Lust and Ambition"
-	desc = "Patroness of succubi, soaked in blood and crowned with desire. She demands her followers murder the powerful and topple their thrones."
-	flaws = "Vindictiveness, Lack of Empathy, Hedonism"
-	worshippers = "The Debauched, Assassins, Anarchists"
+	domain = "Queen of Swords, Demon Lord of Secret Murder and Ambition"
+	desc = "Patroness of succubi, soaked in blood and crowned with desire. She demands her followers kill the powerful and topple their thrones."
+	flaws = "Vindictiveness, Lack of Empathy, Manipulation"
+	worshippers = "Assassins, Anarchists, Would-Be Conquerors"
 	sins = "Timidity, Humility, Brutishness"
 	confess_lines = list(
 		"I prostrate myself to Zastaris alone!",
