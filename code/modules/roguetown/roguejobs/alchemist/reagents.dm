@@ -219,13 +219,13 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	metabolization_rate = REAGENTS_SLOW_METABOLISM
 
 /datum/reagent/berrypoison/on_mob_life(mob/living/carbon/M)
-//	if(volume > 0.99)
-	if(isdwarf(M))
-		M.add_nausea(1)
-		M.adjustToxLoss(0.5)
-	else
-		M.add_nausea(3) // so one berry or one dose (one clunk of extracted poison, 5u) will make you really sick and a hair away from crit.
-		M.adjustToxLoss(2.5)
+	if(volume > 0.09)
+		if(isdwarf(M))
+			M.add_nausea(1)
+			M.adjustToxLoss(0.5)
+		else
+			M.add_nausea(3) // so one berry or one dose (one clunk of extracted poison, 5u) will make you really sick and a hair away from crit.
+			M.adjustToxLoss(2)
 	return ..()
 
 
@@ -239,13 +239,13 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 
 /datum/reagent/strongpoison/on_mob_life(mob/living/carbon/M)
 	testing("Someone was poisoned")
-//	if(volume > 0.99)
-	if(isdwarf(M))
-		M.add_nausea(1)
-		M.adjustToxLoss(2.3)  // will put you just above dying crit treshold
-	else
-		M.add_nausea(2)
-		M.adjustToxLoss(4.5) // just enough so 5u will kill you dead with no help
+	if(volume > 0.09)
+		if(isdwarf(M))
+			M.add_nausea(1)
+			M.adjustToxLoss(2.3)  // will put you just above dying crit treshold
+		else
+			M.add_nausea(2)
+			M.adjustToxLoss(4.5) // just enough so 5u will kill you dead with no help
 	return ..()
 
 
