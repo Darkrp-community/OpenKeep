@@ -108,7 +108,7 @@ Design philosphy:
 	..()
 	//Gets chain over a gambeson, a gorget, and a kettle helmet
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/helmet/kettle
 	beltr = /obj/item/rogueweapon/sword/iron/messer
@@ -192,7 +192,7 @@ Design philosphy:
 	..()
 	//Gets studded leather (which hopefully will be renamed splint mail at some point...), a gorget, and bracers
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	beltr = /obj/item/rogueweapon/sword/rapier
 	head = /obj/item/clothing/head/roguetown/roguehood/red
 	neck = /obj/item/clothing/neck/roguetown/gorget
