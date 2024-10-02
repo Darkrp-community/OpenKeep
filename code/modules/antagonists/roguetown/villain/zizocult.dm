@@ -587,7 +587,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			return
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.real_name == P.info)
-				if(HL.IsSleeping())
+				if(HL.has_status_effect(/datum/status_effect/debuff/sleepytime))
 					if(HL.mind.assigned_role in GLOB.church_positions)
 						to_chat(HL.mind, "<span class='warning'>I sense an unholy presence loom near my soul.</span>")
 						return
@@ -597,10 +597,12 @@ GLOBAL_LIST_EMPTY(ritualslist)
 						return
 					if(HAS_TRAIT(HL, TRAIT_NOROGSTAM))
 						return
-					HL.apply_status_effect(/datum/status_effect/debuff/sleepytime)
-					to_chat(HL.mind, "<span class='warning'>This isn't my bed... Where am I?!</span>")
-					HL.playsound_local(src, pick('sound/misc/jumphumans (1).ogg','sound/misc/jumphumans (2).ogg','sound/misc/jumphumans (3).ogg'), 100)
-					HL.forceMove(C)
+					to_chat(HL.mind, "<span class='warning'>I'm so sleepy...</span>")
+					HL.SetSleeping(30)
+					spawn(10 SECONDS)
+						to_chat(HL.mind, "<span class='warning'>This isn't my bed... Where am I?!</span>")
+						HL.playsound_local(src, pick('sound/misc/jumphumans (1).ogg','sound/misc/jumphumans (2).ogg','sound/misc/jumphumans (3).ogg'), 100)
+						HL.forceMove(C)
 					qdel(P)
 
 /datum/ritual/falseappearance
@@ -628,62 +630,41 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		H.dna.update_dna_identity()
 		break
 
-/datum/ritual/pactofunity
-	name = "Pact of Unity"
+/datum/ritual/heartache
+	name = "Heartaches"
 	circle = "Servantry"
-	center_requirement = /obj/item/paper
+	center_requirement = /obj/item/organ/heart
 	
-	n_req = /obj/item/organ/eyes
+	n_req = /obj/item/natural/worms/leech
 
-	function = /proc/pactofunity
+	function = /proc/heartache
 
-/obj/item/pactofunity // Not paper because I don't fuck with that.
-	name = "pact of unity"
-	desc = "Write down your name and about your fiendish ways."
-	icon = 'icons/roguetown/items/misc.dmi'
-	icon_state = "confession"
-	var/mob/living/carbon/human/signed
+/obj/item/corruptedheart	
+	name = "corrupted heart"
+	desc = "It sparkles with forbidden magic energy. It makes all the heart aches go away."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "heart-on"
 
-/obj/item/pactofunity/examine(mob/user)
-	. = ..()
-	if(signed)
-		to_chat(user, "It is bound to [signed.real_name].")
+/obj/item/corruptedheart/attack(mob/living/M, mob/living/user)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(iszizocultist(H) || iszizolackey(H))
+			H.blood_volume = BLOOD_VOLUME_MAXIMUM
+			to_chat(H, "<span class='notice'>My elixir of life is stagnant once again.</span>")
+			qdel(src)
+		else
+			if(!do_mob(user, H, 2 SECONDS))
+				return
+			if(M.cmode)
+				user.electrocute_act(30)
+			H.electrocute_act(20)
+			H.Stun(10 SECONDS)
+			H.silent += 30
+			qdel(src)
 
-/obj/item/pactofunity/attack_self(mob/user)
-	. = ..()
-	var/alert = alert(user, "Rip up the pact of unity?", "ROGUETOWN", "RIP", "Cancel")
-	if(alert == "RIP")
-		user.playsound_local(user, 'sound/foley/cloth_rip.ogg', 50)
-		to_chat(signed.mind, "<span class='userdanger'>I FAILED! MY LIFE DWINDLES!</span>")
-		sleep(2 MINUTES)
-		if(istype(signed.wear_neck, /obj/item/clothing/neck/roguetown/psycross))
-			return
-		signed.dust(drop_items=TRUE)
-
-/obj/item/pactofunity/attack(mob/living/M, mob/living/user)
-	. = ..()
-	if(!ishuman(M))
-		return
-	var/mob/living/carbon/human/H = M
-	if(signed)
-		return ..()
-	if(!H.get_bleed_rate())
-		to_chat(user, "<span class='warning'>No. They must be bleeding.</span>")
-		return
-	if(!H.stat)
-		to_chat(user, "<span class='info'>I courteously offer \the [src] to [H].</span>")
-		if(alert(H, "Sign the pact with your blood?", "ROGUETOWN", "Yes", "No") != "Yes")
-			return
-		if(H.stat)
-			return
-		if(signed)
-			return
-		to_chat(H, "<span class='info'>I signed the paper, hopefully I won't regret this.</span>")
-		signed = H
-
-/proc/pactofunity(var/mob/user, var/turf/C)
-	new /obj/item/pactofunity(C)
-	to_chat(user.mind, "<span class='notice'>The Pact of Unity. When a person willingly signs their name on this they become my pawn. When I rip up the paper their soul is good as dead.</span>")
+/proc/heartache(var/mob/user, var/turf/C)
+	new /obj/item/corruptedheart(C)
+	to_chat(user.mind, "<span class='notice'>A corrupted heart. When used on a non-enlightened mortal their heart shall ache and they will be immobilized and too stunned to speak. Perfect for getting new soon-to-be enlightened. Now, just don't use it at the combat ready.</span>")
 
 /datum/ritual/darksunmark
 	name = "Dark Sun's Mark"
@@ -851,6 +832,21 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		to_chat(H.mind, "<span class='notice'>I feel like my legs have become stronger.</span>")
 		break
 
+/datum/ritual/fleshmend
+	name = "Fleshmend"
+	circle = "Fleshcrafting"
+	center_requirement = /mob/living/carbon/human
+	n_req =  /obj/item/reagent_containers/food/snacks/rogue/meat
+
+	function = /proc/fleshmend
+
+/proc/fleshmend(var/mob/user, var/turf/C)
+	for(var/mob/living/carbon/human/H in C.contents)
+		H.playsound_local(C, 'sound/misc/vampirespell.ogg', 100, FALSE, pressure_affected = FALSE)
+		H.fully_heal()
+		to_chat(H.mind, "<span class='notice'>I feel like my legs have become stronger.</span>")
+		break
+
 /datum/ritual/darkeyes
 	name = "Darkened Eyes"
 	circle = "Fleshcrafting"
@@ -941,6 +937,19 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			if(cavity.cavity_item)
 				cavity.cavity_item.forceMove(drop_location)
 				cavity.cavity_item = null
+
+/datum/ritual/badomen
+	name = "Bad Omen"
+	circle = "Fleshcrafting"
+	center_requirement = /mob/living/carbon/human
+
+	function = /proc/badomenzizo
+
+/proc/badomenzizo(var/mob/user, var/turf/C)
+	for(var/mob/living/carbon/human/H in C.contents)
+		if(H.stat == DEAD)
+			H.gib(FALSE, FALSE, FALSE)
+			addomen("roundstart")
 
 /datum/ritual/ascend
 	name = "ASCEND!"
