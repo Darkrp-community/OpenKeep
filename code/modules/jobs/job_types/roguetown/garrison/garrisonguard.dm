@@ -70,7 +70,7 @@ Design philosphy:
 /datum/outfit/job/roguetown/guardsman/footman/pre_equip(mob/living/carbon/human/H)
 	..()
 	//Gets an iron cuirass over chain, a gorget, and a simple nasal helmet
-	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
+	armor = /obj/item/clothing/suit/roguetown/armor/cuirass
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/helmet
