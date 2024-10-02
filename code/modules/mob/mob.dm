@@ -300,7 +300,7 @@ GLOBAL_VAR_INIT(mobids, 1)
   *
   * Initial is used to indicate whether or not this is the initial equipment (job datums etc) or just a player doing it
   */
-/mob/proc/equip_to_slot_if_possible(obj/item/W, slot, qdel_on_fail = FALSE, disable_warning = FALSE, redraw_mob = TRUE, bypass_equip_delay_self = FALSE, initial = FALSE)
+/mob/proc/equip_to_slot_if_possible(obj/item/W, slot, qdel_on_fail = FALSE, disable_warning = FALSE, redraw_mob = TRUE, bypass_equip_delay_self = FALSE, initial)
 	if(!istype(W))
 		return FALSE
 	if(!W.mob_can_equip(src, null, slot, disable_warning, bypass_equip_delay_self))
@@ -322,7 +322,7 @@ GLOBAL_VAR_INIT(mobids, 1)
   *
   *In most cases you will want to use equip_to_slot_if_possible()
   */
-/mob/proc/equip_to_slot(obj/item/W, slot)
+/mob/proc/equip_to_slot(obj/item/W, slot, initial)
 	return
 
 /**
@@ -334,7 +334,7 @@ GLOBAL_VAR_INIT(mobids, 1)
   * Also bypasses equip delay checks, since the mob isn't actually putting it on.
   * Initial is used to indicate whether or not this is the initial equipment (job datums etc) or just a player doing it
   */
-/mob/proc/equip_to_slot_or_del(obj/item/W, slot, initial = FALSE)
+/mob/proc/equip_to_slot_or_del(obj/item/W, slot, initial)
 	return equip_to_slot_if_possible(W, slot, TRUE, TRUE, FALSE, TRUE, initial)
 
 /**

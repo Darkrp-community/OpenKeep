@@ -130,15 +130,15 @@
 			if(!wet)
 				cleanme = FALSE
 			add_blood_DNA(O.return_blood_DNA())
-		if(prob(33 + (wet*10)) && cleanme)
-			wet = max(wet-1, 0)
+		if(prob(40 + (wet*10)) && cleanme)
+			wet = max(wet-0.50, 0)
 			user.visible_message("<span class='notice'>[user] wipes \the [O.name] with [src].</span>", "<span class='notice'>I wipe \the [O.name] with [src].</span>")
 			qdel(O)
 		else
 			user.visible_message("<span class='warning'>[user] wipes \the [O.name] with [src].</span>", "<span class='warning'>I wipe \the [O.name] with [src].</span>")
 		playsound(user, "clothwipe", 100, TRUE)
 	else
-		if(prob(30 + (wet*10)))
+		if(prob(40 + (wet*10)))
 			user.visible_message("<span class='notice'>[user] wipes \the [O.name] with [src].</span>", "<span class='notice'>I wipe \the [O.name] with [src].</span>")
 
 			if(O.return_blood_DNA())
@@ -149,7 +149,7 @@
 				SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
 			else
 				SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRONG)
-			wet = max(wet-1, 0)
+			wet = max(wet-0.50, 0)
 		else
 			user.visible_message("<span class='warning'>[user] wipes \the [O.name] with [src].</span>", "<span class='warning'>I wipe \the [O.name] with [src].</span>")
 		playsound(user, "clothwipe", 100, TRUE)
@@ -157,12 +157,12 @@
 /obj/item/natural/cloth/attack_turf(turf/T, mob/living/user)
 	if(istype(T, /turf/open/water))
 		return ..()
-	if(prob(30 + (wet*10)))
+	if(prob(40 + (wet*10)))
 		user.visible_message("<span class='notice'>[user] wipes \the [T.name] with [src].</span>", "<span class='notice'>I wipe \the [T.name] with [src].</span>")
 		if(wet)
 			for(var/obj/effect/decal/cleanable/C in T)
 				qdel(C)
-			wet = max(wet-1, 0)
+			wet = max(wet-0.50, 0)
 	else
 		user.visible_message("<span class='warning'>[user] wipes \the [T.name] with [src].</span>", "<span class='warning'>I wipe \the [T.name] with [src].</span>")
 	playsound(user, "clothwipe", 100, TRUE)
@@ -175,7 +175,7 @@
 
 /obj/item/natural/cloth/wash_act()
 	. = ..()
-	wet = 5
+	wet = 6
 
 /obj/item/natural/cloth/proc/bandage(mob/living/M, mob/user)
 	if(!M.can_inject(user, TRUE))
