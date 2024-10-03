@@ -273,7 +273,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 
 /datum/charflaw/budaddict
 	name = "Bud Addict"
-	desc = "Im too used to wearing an eoran bud, I couldnt live without it."
+	desc = "I'm so used to wearing an eoran bud, I can't live without it."
 	var/last_check = 0
 	var/equipped = TRUE
 

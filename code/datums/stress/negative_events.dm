@@ -297,4 +297,4 @@
 /datum/stressevent/nobud
 	timer = 1 MINUTES
 	stressadd = 20
-	desc = "<span class='red'>I cant think straight! I need my eoran bud again, where is it?!</span>"
+	desc = "<span class='red'>I can't think straight! I need my eoran bud again, where is it?!</span>"
