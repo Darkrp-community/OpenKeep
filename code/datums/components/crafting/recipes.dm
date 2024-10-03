@@ -17,7 +17,7 @@
 	var/verbage = "craft"
 	var/verbage_tp = "crafts" // Third person of verbage var
 	var/craftsound = 'sound/foley/bandage.ogg'
-	var/subtype_reqs = FALSE
+	var/subtype_reqs = FALSE	// If FALSE this does not allow Subtypes of the ingridients. Set it to TRUE to allow crafting with say, fur/gote and fur/volf interchangeably. Has drawbacks & advantages.
 	var/structurecraft = null
 	var/buildsame = FALSE //allows palisades to be built on top of each other just not the same dir
 	var/wallcraft = FALSE

@@ -217,7 +217,7 @@
 	},
 /area/awaymission/wildwest/mines)
 "bb" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/plating,
 /area/awaymission/wildwest/refine)
 "bc" = (
@@ -295,7 +295,7 @@
 /area/awaymission/wildwest/mines)
 "bt" = (
 /obj/structure/closet/crate,
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/plating,
 /area/awaymission/wildwest/refine)
 "bu" = (
@@ -1804,7 +1804,7 @@
 /turf/open/floor/plasteel,
 /area/awaymission/wildwest/refine)
 "fY" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
@@ -1837,7 +1837,7 @@
 /turf/open/floor/plasteel,
 /area/awaymission/wildwest/refine)
 "gf" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
 "gg" = (

@@ -482,7 +482,7 @@
 	name = "leather vest"
 	icon_state = "leathervest"
 	item_state = "leathervest"
-	color = null
+	color = "#dfa590" // gives a slightly darker and reddish hue to contrast nicely with the leather pants.
 
 // Unique swashbuckler vest. Notice it doesn't cover arms.
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
@@ -518,8 +518,8 @@
 	desc = "A silken jacket discretely padded with leather on the inside."
 	body_parts_covered = CHEST|VITALS|LEGS
 	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
-	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_sex = list(MALE, FEMALE)
+	allowed_race = list("human", "tiefling","elf", "half-elf", "dark elf", "aasimar")
 	sellprice = 60
 
 

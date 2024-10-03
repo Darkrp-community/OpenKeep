@@ -389,13 +389,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	attack_verb = list("bludgeoned", "whacked", "disciplined")
 	resistance_flags = FLAMMABLE
 
-/obj/item/staff/broom
-	name = "broom"
-	desc = ""
-	icon = 'icons/obj/wizard.dmi'
-	icon_state = "broom"
-	resistance_flags = FLAMMABLE
-
 /obj/item/staff/stick
 	name = "stick"
 	desc = ""
