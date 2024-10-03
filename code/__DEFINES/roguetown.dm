@@ -321,11 +321,11 @@ BCLASS_TWIST)
 "melee" = 15, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 // Gambesson
-#define MELEE_20___ARROW_10 list(\
-"melee" = 20, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define MELEE_20___ARROW_20 list(\
+"melee" = 20, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-#define MELEE_30___ARROW_15 list(\
-"melee" = 30, "bullet" = 15, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define MELEE_30___ARROW_20 list(\
+"melee" = 30, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 // Thick Gambesson
 #define MELEE_30___ARROW_30 list(\
@@ -376,8 +376,8 @@ BCLASS_TWIST)
 
 
 #define ARMOR_GAMBESON_BAD	MELEE_15___ARROW_NOTHING
-#define ARMOR_GAMBESON		MELEE_30___ARROW_30
-#define ARMOR_GAMBESON_GOOD	MELEE_40___ARROW_40
+#define ARMOR_GAMBESON		MELEE_20___ARROW_20
+#define ARMOR_GAMBESON_GOOD	MELEE_30___ARROW_20
 
 #define ARMOR_LEATHER		MELEE_40___ARROW_20
 #define ARMOR_LEATHER_GOOD	MELEE_50___ARROW_25

@@ -77,7 +77,7 @@
 	desc = "A gambeson with additional padding layers, hardened to make it more durable. It still cannot compare to proper armor."
 	sellprice = VALUE_HEAVY_GAMBESSON
 
-	armor = ARMOR_GAMBESON_GOOD
+	armor = ARMOR_LEATHER
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dark
