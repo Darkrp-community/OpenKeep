@@ -115,8 +115,8 @@ Design philosphy:
 	backpack_contents = list(/obj/item/keyring/guard)
 
 	//Stats for class
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) // Only gets one skilled weapon class, cost of that +2 in strength
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
@@ -190,13 +190,13 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/fencer/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets studded leather (which hopefully will be renamed splint mail at some point...), bracers, and a chain coif
+	//Gets studded leather (which hopefully will be renamed splint mail at some point...) and a chain coif
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	beltr = /obj/item/rogueweapon/sword/rapier
+	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	head = /obj/item/clothing/head/roguetown/roguehood/red
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	backpack_contents = list(/obj/item/keyring/guard)
 
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
