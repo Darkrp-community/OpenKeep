@@ -17,7 +17,8 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	"Pain Freek"=/datum/charflaw/addiction/masochist,
 	"Random Flaw or No Flaw"=/datum/charflaw/randflaw,
 	"Guaranteed No Flaw (3 TRI)"=/datum/charflaw/noflaw,
-	"Hunted"=/datum/charflaw/hunted))
+	"Hunted"=/datum/charflaw/hunted,
+	"Bud Addict"=/datum/charflaw/budaddict))
 
 /datum/charflaw
 	var/name
@@ -269,3 +270,32 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 		if(H.name) // If you don't check this, the log entry wont have a name as flaw_on_life is checked at least once before the name is set.
 			log_hunted("[H.ckey] playing as [H.name] had the hunted flaw by vice.")
 			logged = TRUE
+
+/datum/charflaw/budaddict
+	name = "Bud Addict"
+	desc = "Im too used to wearing an eoran bud, I couldnt live without it."
+	var/last_check = 0
+	var/equipped = TRUE
+
+/datum/charflaw/budaddict/on_mob_creation(mob/user)
+	..()
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/peaceflower(H), SLOT_HEAD)
+
+/datum/charflaw/budaddict/flaw_on_life(mob/user)
+	if(world.time < last_check + 10 SECONDS)
+		return
+	if(!user)
+		return
+	last_check = world.time
+
+	var/mob/living/carbon/human/H = user
+	var/noflower = TRUE
+
+	if(H.head)
+		if(istype(H.head, /obj/item/clothing/head/peaceflower))
+			noflower = FALSE
+	if(noflower)
+		H.add_stress(/datum/stressevent/nobud)
