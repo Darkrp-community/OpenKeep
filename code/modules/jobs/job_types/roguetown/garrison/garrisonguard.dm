@@ -132,7 +132,7 @@ Design philosphy:
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 
-	var/weapontype = pickweight(list("Spear" = 6, "Bardiche" = 4)) // Rolls for various weapons, high roller gets a billhook
+	var/weapontype = pickweight(list("Spear" = 6, "Bardiche" = 4)) // Rolls for either a spear or a bardiche
 	switch(weapontype)
 		if("Spear")
 			backr = /obj/item/rogueweapon/spear
