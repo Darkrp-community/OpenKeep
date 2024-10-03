@@ -407,3 +407,31 @@
 	icon_state = "grapeshot" // NEEDS SPRITE
 	dropshrink = 0.5
 	projectile_type = /obj/projectile/bullet/fragment
+
+/obj/item/ammo_casing/caseless/rogue/dart
+	name = "dart"
+	desc = "A thorn fasioned into a primitive dart."
+	projectile_type = /obj/projectile/bullet/reusable/dart
+	caliber = "dart"
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "dart"
+	dropshrink = 0.8
+	max_integrity = 10
+	force = 10
+
+/obj/projectile/bullet/reusable/dart
+	name = "dart"
+	desc = "A thorn faschioned into a primitive dart."
+	damage = 25
+	damage_type = BRUTE
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "dart_proj"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/dart
+	range = 20
+	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
+	embedchance = 100
+	armor_penetration = 1
+	woundclass = BCLASS_STAB
+	flag = "dart"
+	speed = 0.3
+	accuracy = 50	
