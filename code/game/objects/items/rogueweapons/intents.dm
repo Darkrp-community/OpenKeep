@@ -444,7 +444,7 @@
 	blade_class = BCLASS_BLUNT
 	hitsound = "punch_hard"
 	chargetime = 0
-	penfactor = 15
+	penfactor = 13
 	swingdelay = 0
 	candodge = TRUE
 	canparry = TRUE
@@ -462,6 +462,20 @@
 	candodge = TRUE
 	canparry = TRUE
 	miss_text = "slashes the air!"
+
+/datum/intent/simple/peck
+	name = "peck"
+	icon_state = "instrike"
+	attack_verb = list("pecks", "scratches")
+	animname = "blank22"
+	blade_class = BCLASS_CUT
+	hitsound = "smallslash"
+	chargetime = 0
+	penfactor = 2
+	swingdelay = 1
+	candodge = TRUE
+	canparry = TRUE
+	miss_text = "pecks the air!"
 
 /datum/intent/simple/bite
 	name = "bite"
