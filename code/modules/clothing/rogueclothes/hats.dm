@@ -472,10 +472,10 @@
 	max_integrity = 300
 
 //................ Elf Sallet ............... //
-/obj/item/clothing/head/roguetown/helmet/sallet/elven	// blackoak merc helmet
+/obj/item/clothing/head/roguetown/rare/elvenbarbute	// blackoak merc helmet
 	desc = "A steel helmet with a thin gold plating designed for Elven woodland guardians."
-	icon_state = "bascinet_novisor"
-	item_state = "bascinet_novisor"
+	icon_state = "elven_barbute_winged"
+	item_state = "elven_barbute_winged"
 	color = COLOR_ASSEMBLY_GOLD
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_MODEST
 
@@ -991,6 +991,7 @@
 		"Graggar"="graggar_decoration",
 		"Efreet"="efreet_decoration",
 		"Sun"="sun_decoration",
+		"Peace"="peace_decoration",
 		"Feathers"="feathers_decoration",
 		"Lion"="lion_decoration",
 		"Red Dragon"="dragon_red_decoration",
@@ -998,6 +999,7 @@
 		"Horns"="horns_decoration",
 		"Swan"="swan_decoration",
 		"Fish"="fish_decoration",
+		"Windmill"="windmill_decoration",
 		"Oathtaker"="oathtaker_decoration",
 		"Skull"="skull_decoration")
 
@@ -1051,6 +1053,7 @@
 		"Graggar"="graggar_houndecoration",
 		"Efreet"="efreet_houndecoration",
 		"Sun"="sun_houndecoration",
+		"Peace"="peace_houndecoration",
 		"Feathers"="feathers_houndecoration",
 		"Lion"="lion_houndecoration",
 		"Red Dragon"="dragon_red_houndecoration",
@@ -1058,6 +1061,7 @@
 		"Horns"="horns_houndecoration",
 		"Swan"="swan_houndecoration",
 		"Fish"="fish_houndecoration",
+		"Windmill"="peace_houndecoration",
 		"Oathtaker"="oathtaker_houndecoration",
 		"Skull"="skull_houndecoration")
 
@@ -1112,6 +1116,7 @@
 		"Graggar"="graggar_bucket",
 		"Efreet"="efreet_bucket",
 		"Sun"="sun_bucket",
+		"Peace"="peace_bucket",
 		"Feathers"="feathers_bucket",
 		"Lion"="lion_bucket",
 		"Red Dragon"="dragon_red_bucket",
@@ -1119,6 +1124,7 @@
 		"Horns"="horns_bucket",
 		"Swan"="swan_bucket",
 		"Fish"="fish_bucket",
+		"Windmill"="windmill_bucket",
 		"Oathtaker"="oathtaker_bucket",
 		"Skull"="skull_bucket")
 
@@ -1173,6 +1179,7 @@
 		"Graggar"="graggar_gbucket",
 		"Efreet"="efreet_gbucket",
 		"Sun"="sun_gbucket",
+		"Peace"="peace_gbucket",
 		"Feathers"="feathers_gbucket",
 		"Lion"="lion_gbucket",
 		"Red Dragon"="dragon_red_gbucket",
@@ -1180,6 +1187,7 @@
 		"Horns"="horns_gbucket",
 		"Swan"="swan_gbucket",
 		"Fish"="fish_gbucket",
+		"Windmill"="windmill_gbucket",
 		"Oathtaker"="oathtaker_gbucket",
 		"Skull"="skull_gbucket")
 
@@ -1203,6 +1211,62 @@
 		add_overlay(pic)	
 
 
+/obj/item/clothing/head/roguetown/helmet/decoratedbascinet
+	name = "decorated bascinet"
+	icon_state = "decorated_bascinet"
+	item_state = "decorated_bascinet"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	desc = "A simple steel helmet that can be decorated with a crest. Somewhat basic, but you'll be the envy of those who cannot afford such a fancy helmet."
+	flags_inv = HIDEEARS
+	sellprice = VALUE_STEEL_HELMET
+	body_parts_covered = HEAD|HAIR|EARS
+	smeltresult = /obj/item/ingot/steel
+	var/picked = FALSE
+
+/obj/item/clothing/head/roguetown/helmet/decoratedbascinet/attack_right(mob/user)
+	..()
+	if(!picked)
+		var/list/icons = list(
+		"Basic"="basic_bascinet",
+		"Blue"="blue_bascinet",
+		"Stripes"="stripes_bascinet",
+		"Red Castle"="castle_red_bascinet",
+		"White Castle"="castle_white_bascinet",
+		"Graggar"="graggar_bascinet",
+		"Efreet"="efreet_bascinet",
+		"Sun"="sun_bascinet",
+		"Peace"="peace_bascinet",
+		"Feathers"="feathers_bascinet",
+		"Lion"="lion_bascinet",
+		"Red Dragon"="dragon_red_bascinet",
+		"Green Dragon"="dragon_green_bascinet",
+		"Horns"="horns_bascinet",
+		"Swan"="swan_bascinet",
+		"Fish"="fish_bascinet",
+		"Windmill"="windmill_bascinet",
+		"Oathtaker"="oathtaker_bascinet",
+		"Skull"="skull_bascinet")
+
+		var/choice = input(user, "Choose a crest.", "Knightly crests") as anything in icons
+		var/playerchoice = icons[choice]
+		picked = TRUE
+		icon_state = playerchoice
+		item_state = playerchoice
+		update_icon()
+		if(loc == user && ishuman(user))
+			var/mob/living/carbon/H = user
+			H.update_inv_head()
+
+/obj/item/clothing/head/roguetown/helmet/decoratedbascinet/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)	
 
 /*----------------------\
 | Unique helmets & hats |	- Unique means no crafting them, no importing, nothing but spawn with the intended class

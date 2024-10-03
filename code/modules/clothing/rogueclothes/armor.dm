@@ -190,8 +190,10 @@
 	allowed_race = list("elf", "dark elf")
 
 // Blackoak armor, unique
-/obj/item/clothing/suit/roguetown/armor/plate/elven
+/obj/item/clothing/suit/roguetown/armor/rare/elvenchestplate
 	name = "elven guardian cuirass"
+	icon_state = "chestplate"
+	item_state = "chestplate"
 	desc = "A cuirass made of steel with a thin decorative gold plating. Lightweight and durable."
 	color = COLOR_ASSEMBLY_GOLD
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)

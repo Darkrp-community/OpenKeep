@@ -342,7 +342,6 @@
 	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/head/roguetown/helmet/decoratedknighthelm
 	craftdiff = 4
-	i_type = "Armor"
 
 /datum/anvil_recipe/armor/decoratedhelmetpig
 	name = "Decorated Pigface Helmet (2) (c)"
@@ -350,7 +349,6 @@
 	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/head/roguetown/helmet/decoratedhounskull
 	craftdiff = 3
-	i_type = "Armor"
 
 /datum/anvil_recipe/armor/decoratedhelmetbuc
 	name = "Decorated Bucket Helmet (2) (c)"
@@ -358,7 +356,6 @@
 	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decoratedbucket
 	craftdiff = 3
-	i_type = "Armor"
 
 /datum/anvil_recipe/armor/decoratedhelmetbucgold
 	name = "Decorated Gold-Trimmed Bucket Helmet (2) (c)"
@@ -366,4 +363,10 @@
 	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket
 	craftdiff = 3
-	i_type = "Armor"
+
+/datum/anvil_recipe/armor/decoratedbascinet
+	name = "Decorated Bascinet (2) (c)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/head/roguetown/helmet/decoratedbascinet
+	craftdiff = 2
