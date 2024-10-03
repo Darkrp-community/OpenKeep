@@ -1246,6 +1246,18 @@
 // The src mob is trying to strip an item from someone
 // Override if a certain type of mob should be behave differently when stripping items (can't, for example)
 /mob/living/stripPanelUnequip(obj/item/what, mob/who, where)
+// This check is just used for the peaceflower to prevent those wearing it from removing off others.
+	if(istype(what, /obj/item/clothing/head/peaceflower))
+		var/mob/living/carbon/human/stripper = src
+		var/obj/item/clothing/head/peaceflower/stripper_flower = stripper.get_item_by_slot(SLOT_HEAD)
+
+		var/mob/living/carbon/human/target = who
+		var/obj/item/clothing/head/peaceflower/target_flower = target.get_item_by_slot(SLOT_HEAD)
+
+		if(stripper_flower && target_flower)
+			to_chat(src, "<span class='warning'>You can't bring yourself to remove another person's peaceflower while wearing one yourself.</span>")
+			return
+
 	if(!what.canStrip(who))
 		to_chat(src, "<span class='warning'>I can't remove \the [what.name], it appears to be stuck!</span>")
 		return
@@ -1261,17 +1273,6 @@
 	if(check_arm_grabbed(active_hand_index))
 		to_chat(src, "<span class='warning'>Someone is grabbing my arm!</span>")
 		return
-// Used for the Eoran bud, if you wear one, you cant remove another person's bud.
-	if(istype(what, /obj/item/clothing/head/peaceflower))
-		var/mob/living/carbon/human/stripper = src
-		var/obj/item/clothing/head/peaceflower/stripper_flower = stripper.get_item_by_slot(SLOT_HEAD)
-
-		var/mob/living/carbon/human/target = who
-		var/obj/item/clothing/head/peaceflower/target_flower = target.get_item_by_slot(SLOT_HEAD)
-
-		if(stripper_flower && target_flower)
-			to_chat(src, "<span class='warning'>You can't bring yourself to remove another person's peaceflower while wearing one yourself.</span>")
-			return
 	who.visible_message("<span class='warning'>[src] tries to remove [who]'s [what.name].</span>", \
 						"<span class='danger'>[src] tries to remove my [what.name].</span>", null, null, src)
 	to_chat(src, "<span class='danger'>I try to remove [who]'s [what.name]...</span>")
