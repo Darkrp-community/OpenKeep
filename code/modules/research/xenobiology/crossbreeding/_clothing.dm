@@ -120,19 +120,10 @@ Slimecrossing Armor
 
 /obj/item/clothing/head/peaceflower/attack_hand(mob/user)
 	if(iscarbon(user))
-		var/mob/living/carbon/human/C = user
-		// Check if the user has a peaceflower equipped on their head slot
-		var/obj/item/clothing/head/peaceflower/user_flower = C.get_equip(SLOT_HEAD)
-		if(user_flower && istype(user_flower, /obj/item/clothing/head/peaceflower))
-			// Check if the target (the person being clicked) is also wearing a peaceflower
-			if(src == C.head)
-				to_chat(user, "<span class='warning'>I feel at peace. <b style='color:pink'>Why would you want anything else?</b></span>")
-				return
-			else
-				to_chat(user, "<span class='warning'>You can't bring yourself to disturb someone else wearing a peaceflower.</span>")
-				return
-	// Allow default behavior if none of the checks stop it
-	return ..()
+		var/mob/living/carbon/C = user
+		if(src == C.head)
+			to_chat(user, "<span class='warning'>I feel at peace. <b style='color:pink'>Why would you want anything else?</b></span>")
+			return
 
 /obj/item/clothing/suit/armor/heavy/adamantine
 	name = "adamantine armor"
