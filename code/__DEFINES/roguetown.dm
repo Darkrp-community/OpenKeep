@@ -142,13 +142,21 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define M_WOOD		2	// one small log.
 #define M_CLOTH		2	// one cloth piece
 #define M_GRAIN		1	// one threshed wheat grain
+#define M_FUR		M_CLOTH * 2
 #define M_SILK		M_CLOTH * 2	// one silk thread
-#define M_SALT		4	// one salt, or raw ore, or fur, or coal
-#define M_LEATHER	M_CLOTH * 4
+#define M_SALT		4	// one salt, or raw ore, or coal
+#define M_LEATHER	M_CLOTH * 2 // one hide
 #define M_IRON		12	// one iron bar  Twelve is a good number for it can be halved, cut in three and four without fractions. Multiples of 6
 #define M_STEEL		M_IRON+W_MODERATE	// one steel bar
 #define M_SILVER	M_IRON*3	// one silver bar
 #define M_GOLD		M_IRON*5	// one gold bar
+
+// Skill costs - a rarity value add, items requiring a high skill to produce are rarer and has more intrinsic value. So craftsmen can make a profit.
+#define SKILL_1		2
+#define SKILL_2		4
+#define SKILL_3		6
+#define SKILL_4		8
+#define SKILL_5		10
 
 // Work costs - valued VERY low compared to raw materials, this is a problem but at least its systemic and visible now and can be adjusted. Very rough, time to gather stuff, refine it etc etc as well as crafting time itself.
 #define W_MINOR		2				// Less than 10 seconds of work
@@ -183,9 +191,15 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define VALUE_GOLD_RARE_ITEM	VALUE_GOLD_ITEM+BONUS_VALUE_MODEST
 
 #define VALUE_PADDED_DRESS			M_SILK*5+W_MODERATE+BONUS_VALUE_TINY
+#define VALUE_SMALL_LEATHER			M_LEATHER+W_MINOR
+#define VALUE_MEDIUM_LEATHER		M_LEATHER*2+W_MINOR
+#define VALUE_BIG_LEATHER			M_LEATHER*3+W_MINOR
+#define VALUE_SMALL_FUR				M_FUR+M_MISC*2+W_MINOR
+
 #define VALUE_LIGHT_GAMBESSON		M_CLOTH*2+M_MISC+W_MINOR
 #define VALUE_GAMBESSON				M_CLOTH*4+M_MISC+W_MINOR
 #define VALUE_HEAVY_GAMBESSON		M_CLOTH*6+M_MISC*4+W_MODERATE
+#define VALUE_FUR_ARMOR				M_LEATHER*2+M_FUR+W_MINOR
 #define VALUE_LEATHER_ARMOR			M_LEATHER*2+W_MINOR
 #define VALUE_LEATHER_ARMOR_FUR		VALUE_LEATHER_ARMOR+M_SALT
 #define VALUE_LEATHER_ARMOR_PLUS	VALUE_STEEL_SMALL_ITEM+M_LEATHER

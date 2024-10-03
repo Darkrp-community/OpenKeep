@@ -453,6 +453,7 @@
 
 	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+
 //................ Iron Breastplate ............... //	- A breastplate is a cuirass without its back plate
 /obj/item/clothing/suit/roguetown/armor/cuirass/iron
 	name = "iron breastplate"
@@ -704,6 +705,7 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 	armor = list("melee" = 90, "bullet" = 90, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = INTEGRITY_STRONG
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 
 
 //................ Snowflake Plate ............... //
