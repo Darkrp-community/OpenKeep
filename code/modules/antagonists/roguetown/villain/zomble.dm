@@ -87,7 +87,7 @@
 //	STASPD = zombie.STASPD-5
 //	STAINT = zombie.STAINT-5
 //	zombie.STACON = 5
-	zombie.STASPD = 2
+	zombie.STASPD = 3
 	zombie.STAINT = 1
 	cmode_music = zombie.cmode_music
 	zombie.vitae_pool = 0 // Deadites have no vitae to drain from.
@@ -189,7 +189,7 @@
 	zombie.update_body()
 	zombie.cmode_music = 'sound/music/combat_weird.ogg'
 
-	zombie.STASPD = 2
+	zombie.STASPD = 3
 	zombie.STAINT = 1
 
 	zombie.vitae_pool = 0 // Again, just in case.

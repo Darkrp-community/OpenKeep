@@ -488,7 +488,7 @@
 	candodge = TRUE
 	canparry = TRUE
 
-/datum/intent/unarmed/claw
+/datum/intent/unarmed/claw	// defined as attack with some AP
 	name = "claw"
 	icon_state = "inclaw"
 	attack_verb = list("claws", "scratches", "rends", "tears")
