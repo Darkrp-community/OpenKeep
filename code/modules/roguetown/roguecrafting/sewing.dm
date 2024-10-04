@@ -1,55 +1,65 @@
 /datum/crafting_recipe/roguetown/sewing
-    tools = list(/obj/item/needle)
-    skillcraft = /datum/skill/misc/sewing
+	tools = list(/obj/item/needle)
+	skillcraft = /datum/skill/misc/sewing
+	subtype_reqs = TRUE // so you can use any subtype of fur
+	craftdiff = 0
 
-    /* craftdiff of 0 */
+/*.............. recipes requiring no skill..............*/
 
 /datum/crafting_recipe/roguetown/sewing/rags
 	name = "rags"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/rags)
 	reqs = list(/obj/item/natural/cloth = 2)
-	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/sewing/loincloth
 	name = "loincloth"
 	result = list(/obj/item/clothing/under/roguetown/loincloth)
 	reqs = list(/obj/item/natural/cloth = 1)
-	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/sewing/halfcloak
     name = "cloth half cloak"
     result = list(/obj/item/clothing/cloak/half)
     reqs = list(/obj/item/natural/cloth = 1,
                 /obj/item/natural/fibers = 1)
-    craftdiff = 0
 
 /datum/crafting_recipe/roguetown/sewing/clothgloves
     name = "cloth gloves"
     result = list(/obj/item/clothing/gloves/roguetown/fingerless)
     reqs = list(/obj/item/natural/cloth = 1,
                 /obj/item/natural/fibers = 1)
-    craftdiff = 0
 
 /datum/crafting_recipe/roguetown/sewing/clothshirt
     name = "cloth shirt"
     result = list(/obj/item/clothing/suit/roguetown/shirt/undershirt)
     reqs = list(/obj/item/natural/cloth = 2,
                 /obj/item/natural/fibers = 1)
-    craftdiff = 0
 
 /datum/crafting_recipe/roguetown/sewing/clothtrou
     name = "cloth trousers"
     result = list(/obj/item/clothing/under/roguetown/trou)
     reqs = list(/obj/item/natural/cloth = 2,
                 /obj/item/natural/fibers = 1)
-    craftdiff = 0
 
 /datum/crafting_recipe/roguetown/sewing/headband
     name = "headband"
     result = list(/obj/item/clothing/head/roguetown/headband)
     reqs = list(/obj/item/natural/cloth = 2,
                 /obj/item/natural/fibers = 1)
-    craftdiff = 0
+
+/datum/crafting_recipe/roguetown/sewing/knitcap
+    name = "knit cap"
+    result = list(/obj/item/clothing/head/roguetown/knitcap)
+    reqs = list(/obj/item/natural/cloth = 2,
+                /obj/item/natural/fibers = 1)
+
+/datum/crafting_recipe/roguetown/sewing/zigbox
+	name = "zigbox"
+	result = list(/obj/item/storage/fancy/cigarettes/zig/empty)
+	reqs = list(/obj/item/paper = 1,
+				/obj/item/natural/fibers = 1)
+
+
+/*.............. recipes requiring skill 1 ..............*/
 
 /datum/crafting_recipe/roguetown/sewing/Reyepatch
 	name = "right eye patch"
@@ -64,22 +74,6 @@
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
-
-/datum/crafting_recipe/roguetown/sewing/knitcap
-    name = "knit cap"
-    result = list(/obj/item/clothing/head/roguetown/knitcap)
-    reqs = list(/obj/item/natural/cloth = 2,
-                /obj/item/natural/fibers = 1)
-    craftdiff = 0
-
-/datum/crafting_recipe/roguetown/sewing/zigbox
-	name = "zigbox"
-	result = list(/obj/item/storage/fancy/cigarettes/zig/empty)
-	reqs = list(/obj/item/paper = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 0
-
-/* craftdiff of 1 */
 
 /datum/crafting_recipe/roguetown/sewing/strawhat
 	name = "straw hat"
@@ -107,7 +101,22 @@
                 /obj/item/natural/fibers = 1)
     craftdiff = 1
 
-/* craftdiff of 2 */
+/datum/crafting_recipe/roguetown/sewing/sleepingbag
+	name = "sleepcloth"
+	result = list(/obj/item/sleepingbag)
+	reqs =  list(/obj/item/natural/cloth = 2,
+                /obj/item/natural/fibers = 1)
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/sewing/armingcap
+    name = "arming cap"
+    result = list(/obj/item/clothing/head/roguetown/armingcap)
+    reqs = list(/obj/item/natural/cloth = 2,
+                /obj/item/natural/fibers = 1)
+    craftdiff = 1
+
+
+/*.............. recipes requiring skill 2 ..............*/
 
 /datum/crafting_recipe/roguetown/sewing/gambeson
 	name = "gambeson"
@@ -131,13 +140,6 @@
                 /obj/item/natural/fibers = 1)
     craftdiff = 2
 
-/datum/crafting_recipe/roguetown/sewing/sleepingbag
-	name = "sleepcloth"
-	result = list(/obj/item/sleepingbag)
-	reqs =  list(/obj/item/natural/cloth = 2,
-                /obj/item/natural/fibers = 1)
-	craftdiff = 1
-
 /datum/crafting_recipe/roguetown/sewing/bedsheet
 	name = "bedsheet"
 	result = list(/obj/item/bedsheet/rogue/cloth)
@@ -151,22 +153,6 @@
 	reqs = list(/obj/item/natural/hide = 2,
             	/obj/item/natural/fibers = 1)
 	craftdiff = 2
-
-/* craftdiff of 3+ */
-
-/datum/crafting_recipe/roguetown/sewing/robe
-    name = "robes"
-    result = list(/obj/item/clothing/suit/roguetown/shirt/robe)
-    reqs = list(/obj/item/natural/cloth = 3,
-                /obj/item/natural/fibers = 1)
-    craftdiff = 3
-
-/datum/crafting_recipe/roguetown/sewing/fancyhat
-	name = "fancy hat"
-	result = list(/obj/item/clothing/head/roguetown/fancyhat)
-	reqs = list(/obj/item/natural/cloth = 2,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/sewing/Bladress
 	name = "black dress"
@@ -189,6 +175,33 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
+
+/*.............. recipes requiring skill 3 ..............*/
+
+/datum/crafting_recipe/roguetown/sewing/robe
+    name = "robes"
+    result = list(/obj/item/clothing/suit/roguetown/shirt/robe)
+    reqs = list(/obj/item/natural/cloth = 3,
+                /obj/item/natural/fibers = 1)
+    craftdiff = 3
+
+/datum/crafting_recipe/roguetown/sewing/cape
+	name = "cape"
+	result = list(/obj/item/clothing/cloak/cape)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
+
+
+/* .............. recipes requiring skill 4 ..............*/
+
+/datum/crafting_recipe/roguetown/sewing/fancyhat
+	name = "fancy hat"
+	result = list(/obj/item/clothing/head/roguetown/fancyhat)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 4
+
 /datum/crafting_recipe/roguetown/sewing/fancyhat
 	name = "fancy hat"
 	result = list(/obj/item/clothing/head/roguetown/fancyhat)
@@ -203,23 +216,13 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
 
-/datum/crafting_recipe/roguetown/sewing/hgambeson
-    name = "padded gambeson"
-    result = list(/obj/item/clothing/suit/roguetown/armor/gambeson/heavy)
-    reqs = list(/obj/item/natural/cloth = 6,
-                /obj/item/natural/fibers = 4)
-    craftdiff = 3
 
-/datum/crafting_recipe/roguetown/sewing/cape
-	name = "cape"
-	result = list(/obj/item/clothing/cloak/cape)
-	reqs = list(/obj/item/natural/cloth = 2,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 3
+/*.............. recipes requiring skill 5 ..............*/
 
 /datum/crafting_recipe/roguetown/sewing/lordcloak
 	name = "lordly cloak"
 	result = list(/obj/item/clothing/cloak/lordcloak)
 	reqs = list(/obj/item/natural/fur = 2,
 				/obj/item/natural/hide = 4)
-	craftdiff = 5
+	craftdiff = 4
+

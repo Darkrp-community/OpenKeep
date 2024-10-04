@@ -229,10 +229,11 @@ SUBSYSTEM_DEF(familytree)
 	var/list/high_priority_lover = list()
 	var/list/mid_priority_lover = list()
 	var/list/low_priority_lover = list()
-	for(var/mob/living/carbon/human/L in viable_spouses)
+	for(var/vs in viable_spouses)
 		//Thats no one.
-		if(!L)
+		if(!vs || !ishuman(vs))
 			continue
+		var/mob/living/carbon/human/L = vs
 		//Thats you dude.
 		if(L == H)
 			continue
@@ -256,14 +257,26 @@ SUBSYSTEM_DEF(familytree)
 			continue
 		//Everyone else is placed in the loser pile.
 		low_priority_lover.Add(L)
-	var/lover = pick(high_priority_lover)
-	//High priority lover failed and we still await our true spouse.
-	if(!lover && !H.setspouse)
-		//High priority lover was empty so check the mid priority.
-		lover = pick(mid_priority_lover)
-		if(!lover)
-			//Lets just check everyone else.
-			lover = pick(low_priority_lover)
+
+	var/lover
+	//Im sorry its convoluted but i think its more COMPRESSED.
+	for(var/cycle = 1 to 3)
+		//WE FOUND THEM!!!
+		if(lover)
+			break
+		if(cycle > 2 && H.setspouse)
+			break
+		var/list/what_we_checkin = list()
+		switch(cycle)
+			if(1)
+				what_we_checkin = high_priority_lover
+			if(2)
+				what_we_checkin = mid_priority_lover
+			if(3)
+				what_we_checkin = low_priority_lover
+		//To avoid runtime errors due to picking from a empty list.
+		if(what_we_checkin.len)
+			lover = pick(what_we_checkin)
 	//Success YOUR MARRIED!!!
 	if(ishuman(lover) && lover)
 		viable_spouses -= lover
