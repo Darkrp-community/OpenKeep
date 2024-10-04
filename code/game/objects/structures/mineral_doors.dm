@@ -195,9 +195,9 @@
 		return
 	if(locked)
 		if( user.used_intent.type == /datum/intent/unarmed/claw )
+			user.changeNext_move(CLICK_CD_MELEE)	
 			to_chat(user, "<span class='warning'>The deadite claws at the door!!</span>")
 			take_damage(40, "brute", "melee", 1)
-			sleep(10)	// to avoid spam
 			return
 		if(isliving(user))
 			var/mob/living/L = user
