@@ -1,5 +1,5 @@
 /obj/item/rogueweapon/flail
-	force = 30
+	force = 20
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/flail/strike/smash)
 	name = "military flail"
 	desc = "A sturdy handle afixed to a cruel spiked ball with a harrowing metal chain."
@@ -141,6 +141,7 @@
 	desc = "A lucky hit from such a flail can squash a cheap helmet along with the wearer's skull."
 	icon_state = "militiaflail"
 	icon = 'icons/roguetown/weapons/32.dmi'
+
 /obj/item/rogueweapon/flail
 	force = 20
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/flail/strike/smash)
