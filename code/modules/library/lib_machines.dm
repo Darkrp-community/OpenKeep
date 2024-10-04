@@ -10,7 +10,7 @@
 
 /obj/machinery/printingpress/proc/upload_manuscript(mob/user, obj/item/paper/manuscript/M)
 	// Simulating SQL interaction with testing() for upload
-	testing("UPLOAD QUERY: INSERT INTO library (author, title, content, category, ckey, datetime, round_id_created, approved) VALUES ('[M.author]', '[M.name]', '[M.content]', '[M.category]', '[M.ckey]', Now(), '[GLOB.round_id]', 0)")
+	testing("UPLOAD QUERY: INSERT INTO library (author, title, content, category, ckey, datetime, round_id_created, approved) VALUES ('[M.author]', '[M.name]', '[M.content]', '[M.category]', '[M.ckey]', Now(), [GLOB.round_id], 0)")
 
 	// Simulating successful upload
 	alert("Upload Complete. The manuscript has been uploaded to the Archive.")
