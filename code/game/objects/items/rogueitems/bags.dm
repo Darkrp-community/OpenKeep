@@ -20,6 +20,9 @@
 	. = ..()
 	if(slot == SLOT_HEAD)
 		user.become_blind("blindfold_[REF(src)]")
+	if(HAS_TRAIT(user, TRAIT_ROTMAN))
+		user.visible_message("<span class='info'>The bag slips through dead fingers...</span>") // just to cover some silly zombie ambush tactics
+		user.dropItemToGround(src, TRUE)
 
 /obj/item/storage/roguebag/dropped(mob/living/carbon/human/user)
 	..()

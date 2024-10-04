@@ -17,6 +17,11 @@
 	icon_state = "stone[rand(1,4)]"
 	..()
 
+/obj/item/natural/stone/equipped(mob/living/carbon/human/user, slot)
+	. = ..()
+	if(HAS_TRAIT(user, TRAIT_ROTMAN))
+		user.visible_message("<span class='info'>The stone slips through dead fingers...</span>")
+		user.dropItemToGround(src, TRUE)
 
 /obj/item/natural/stone/attackby(obj/item/W, mob/user, params)
 	user.changeNext_move(CLICK_CD_MELEE)

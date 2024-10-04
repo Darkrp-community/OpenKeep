@@ -172,12 +172,12 @@
 
 /mob/living/carbon/handle_inwater(var/turf/open/water/W)
 	..()
-	var/datum/reagents/reagentstouch = new()
-	reagentstouch.add_reagent(W.water_reagent, 4)
-	reagentstouch.trans_to(src, reagents.total_volume, transfered_by = src, method = TOUCH)
+	if(HAS_TRAIT(src, TRAIT_NOBREATH))
+		return TRUE
+//	var/datum/reagents/reagentstouch = new()				This makes units transfer when in the water. Like a sponge. Questionable utility, fires a lot to no use, more harm than good.
+//	reagentstouch.add_reagent(W.water_reagent, 4)			could be used in some sort of poison pool type tile for dungeons or something, not water.
+//	reagentstouch.trans_to(src, reagents.total_volume, transfered_by = src, method = TOUCH)
 	if(lying)
-		if(HAS_TRAIT(src, TRAIT_NOBREATH))
-			return TRUE
 		adjustOxyLoss(5)
 		emote("drown")
 		var/datum/reagents/reagents = new()
