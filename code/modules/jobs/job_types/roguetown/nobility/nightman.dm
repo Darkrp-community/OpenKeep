@@ -46,6 +46,17 @@
 		H.change_stat("strength", 1)
 		H.change_stat("intelligence", -1)
 
+		if(H.gender == FEMALE)
+			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE) 
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)	
+			H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+			H.change_stat("strength", -1)
+			H.change_stat("intelligence", 1)
+
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou/leather
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman
@@ -57,4 +68,5 @@
 			if(H.dna.species.id == "dwarf")
 				armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	else
-		pants = /obj/item/clothing/under/roguetown/tights
+		armor = /obj/item/clothing/suit/roguetown/armor/armordress
+		shoes = /obj/item/clothing/shoes/roguetown/gladiator
