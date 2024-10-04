@@ -139,6 +139,7 @@
 	if( user.used_intent.type == /datum/intent/unarmed/claw )
 		to_chat(user, "<span class='warning'>The deadite smashes the window!!</span>")
 		obj_break()
+		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	src.visible_message("<span class='info'>[user] knocks on [src].</span>")
 	add_fingerprint(user)

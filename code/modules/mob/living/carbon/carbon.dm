@@ -552,7 +552,7 @@
 /mob/living/carbon/proc/handle_nausea()
 	if(HAS_TRAIT(src, TRAIT_ROTMAN))
 		return TRUE
-	if(DEAD)
+	if(stat == DEAD)
 		return TRUE
 	if(nausea >= 100)
 		if(mob_timers["puke"])
