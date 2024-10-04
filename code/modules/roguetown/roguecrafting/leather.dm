@@ -159,6 +159,11 @@
 	reqs = list(/obj/item/natural/hide = 1)
 	craftdiff = 2
 
-
+/datum/crafting_recipe/roguetown/leather/volfmantle
+	name = "volf mantle"
+	result = /obj/item/clothing/cloak/volfmantle
+	reqs = list(/obj/item/natural/fur/volf = 2,
+				/obj/item/natural/head/volf = 1)
+	craftdiff = 2
 
 
