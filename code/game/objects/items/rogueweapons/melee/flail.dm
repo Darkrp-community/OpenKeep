@@ -71,7 +71,7 @@
 /obj/item/rogueweapon/flail/sflail
 	name = "Steel flail"
 	desc = "A knightly flail made of worked steel, with a flanged head. An effective design that shows brutality."
-	force = 20
+	force = 30
 	icon_state = "flail"
 	smeltresult = /obj/item/ingot/steel
 	minstr = 4
