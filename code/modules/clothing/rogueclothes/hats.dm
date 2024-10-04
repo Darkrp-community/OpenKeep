@@ -42,6 +42,11 @@
 	desc = "Welcome to the grain fields, thou plowerer of the fertile."
 	icon_state = "strawhat"
 
+/obj/item/clothing/head/roguetown/brimmed
+	desc = "A simple brimmed hat that provides some relief from the sun."
+	icon_state = "brimmed"
+
+
 /obj/item/clothing/head/roguetown/fisherhat
 	name = "straw hat"
 	desc = "Wenches shall lust for thee. Fishe will fear thee. \
@@ -409,7 +414,7 @@
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|HAIR|NOSE
 	prevent_crits = CRITICALS_GOOD_METAL
-	max_integrity = 350
+	max_integrity = 300
 
 //................ Skull Cap ............... //
 /obj/item/clothing/head/roguetown/helmet/skullcap
@@ -463,7 +468,7 @@
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
 	body_parts_covered = HEAD|HAIR
-	max_integrity = 250 // Covers less, so less overall integrity
+	max_integrity = 300 // Covers less, so less overall integrity
 
 //................ Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet
@@ -475,7 +480,7 @@
 	sellprice = VALUE_STEEL_HELMET
 
 	body_parts_covered = HEAD|HAIR|EARS
-	max_integrity = 300
+	max_integrity = 350
 
 //................ Elf Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet/elven	// blackoak merc helmet

@@ -28,7 +28,8 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	pants = /obj/item/clothing/under/roguetown/trou
-	head = /obj/item/clothing/head/roguetown/roguehood
+	head = /obj/item/clothing/head/roguetown/brimmed
+	neck = /obj/item/clothing/neck/roguetown/coif
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl =/obj/item/rogueweapon/halberd/bardiche/woodcutter//an specialist in cut trees would have two axes to his name

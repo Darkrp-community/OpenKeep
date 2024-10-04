@@ -19,7 +19,6 @@
 	beltr = /obj/item/rogueweapon/hammer
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backr =	/obj/item/rogueweapon/hammer/sledgehammer
-	mask = /obj/item/clothing/mask/rogue/facemask
 	pants = /obj/item/clothing/under/roguetown/trou
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt

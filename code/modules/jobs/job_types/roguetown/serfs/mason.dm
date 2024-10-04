@@ -43,7 +43,8 @@
 		H.mind.adjust_skillrank(/datum/skill/labor/mining, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 4, TRUE)
 
-	head = /obj/item/clothing/head/roguetown/chaperon/greyscale//found out that is a hat used by most of artisans and workers, goes into the game
+	head = /obj/item/clothing/head/roguetown/brimmed
+	neck = /obj/item/clothing/neck/roguetown/coif
 	armor = /obj/item/clothing/suit/roguetown/armor/workervest
 	cloak = /obj/item/clothing/cloak/apron/waist/brown
 	pants = /obj/item/clothing/under/roguetown/trou
