@@ -137,7 +137,7 @@
 /obj/item/rogueweapon/flail/militia
 	force = 20 //same as the iron flails since is the same with different flavour
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/flail/strike/smash)
-	name = "Militia flail"
+	name = "militia flail"
 	desc = "A lucky hit from such a flail can squash a cheap helmet along with the wearer's skull."
 	icon_state = "militiaflail"
 	icon = 'icons/roguetown/weapons/32.dmi'
