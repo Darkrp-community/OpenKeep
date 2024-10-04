@@ -231,7 +231,7 @@
 	force = 20
 	force_wielded = 25//same as any mace
 	possible_item_intents = list(/datum/intent/mace/strike)
-	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
+	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
 	name = "steel warhammer"
 	desc = "A heavy steel warhammer, a weapon designed to make knights run in fear, the best option for a common soldier against a knight."
 	icon_state = "warbonker"
