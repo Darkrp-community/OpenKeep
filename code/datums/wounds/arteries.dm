@@ -10,8 +10,8 @@
 	sewn_bleed_rate = 0.2
 	clotting_threshold = null
 	sewn_clotting_threshold = null
-	woundpain = 50
-	sewn_woundpain = 20
+	woundpain = 20
+	sewn_woundpain = 10
 	mob_overlay = "s1"
 	sewn_overlay = "cut"
 	can_sew = TRUE
@@ -44,8 +44,8 @@
 	sewn_whp = 25
 	bleed_rate = 50
 	sewn_bleed_rate = 0.5
-	woundpain = 60
-	sewn_woundpain = 30
+	woundpain = 25
+	sewn_woundpain = 10
 	mob_overlay = "s1_throat"
 
 /datum/wound/artery/neck/on_mob_gain(mob/living/affected)
@@ -64,7 +64,7 @@
 	sewn_whp = 35
 	bleed_rate = 50
 	sewn_bleed_rate = 0.8
-	woundpain = 100
+	woundpain = 80
 	sewn_woundpain = 50
 
 /datum/wound/artery/chest/on_mob_gain(mob/living/affected)
