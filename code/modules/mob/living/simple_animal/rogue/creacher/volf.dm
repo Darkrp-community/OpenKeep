@@ -18,7 +18,8 @@
 						/obj/item/natural/hide = 1,
 						/obj/item/natural/fur/volf = 2,
 						/obj/item/alch/sinew = 2,
-						/obj/item/alch/bone = 1)
+						/obj/item/alch/bone = 1,
+						/obj/item/natural/head/volf = 1)
 	faction = list("orcs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	health = 110

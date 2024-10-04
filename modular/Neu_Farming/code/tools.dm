@@ -11,7 +11,7 @@
 	desc = "Crushes grain, or skulls."
 	icon_state = "thresher"
 //	icon = 'modular/Neu_Farming/icons/farmtools_big.dmi'	the stuff related to big sprite commented out below. Instead using normal sized one with backslot for ease of use.
-	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+	icon = 'icons/roguetown/weapons/64.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	sharpness = IS_BLUNT
 //	dropshrink = 0.9
@@ -32,7 +32,9 @@
 
 /obj/item/rogueweapon/thresher/military
 	force = 12
-	force_wielded = 24
+	force_wielded = 25
+	possible_item_intents = list(MACE_STRIKE)
+	gripped_intents = list(/datum/intent/flailthresh,/datum/intent/flail/strike/long, /datum/intent/flail/strike/smash/long)
 	name = "military flail"
 	desc = "Crushes skulls, or grain."
 	icon_state = "military"
@@ -195,7 +197,7 @@
 	name = "sickle"
 	desc = "Rusted blade, worn handle, symbol of toil."
 	icon_state = "sickle"
-	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_SHARP
 	wlength = 10
 	slot_flags = ITEM_SLOT_HIP
@@ -226,7 +228,7 @@
 	name = "hoe"
 	desc = ""
 	icon_state = "hoe"
-	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+	icon = 'icons/roguetown/weapons/tools.dmi'
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
@@ -334,10 +336,10 @@
 	name = "pitchfork"
 	desc = "Compost, chaff, hay, it matters not."
 	icon_state = "pitchfork"
-	icon = 'modular/Neu_Farming/icons/farmtools_big.dmi'
+	icon = 'icons/roguetown/weapons/64.dmi'
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = FALSE
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	minstr = 6

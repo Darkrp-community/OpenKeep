@@ -1025,6 +1025,20 @@
 	wdefense = 5
 	wbalance = 1
 
+/obj/item/rogueweapon/sword/rapier/ironestoc
+	name = "iron estoc"
+	force = 16
+	desc = "A precise iron estoc, favored by the skilled duelists of valoria."
+	icon_state = "estoc"
+	smeltresult = /obj/item/ingot/iron
+	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
+	gripped_intents = null
+	parrysound = "rapier"
+	swingsound = BLADEWOOSH_SMALL
+	minstr = 6
+	wdefense = 5
+	wbalance = 1
+
 /datum/intent/sword/cut/rapier
 	name = "strike"
 	icon_state = "incut"

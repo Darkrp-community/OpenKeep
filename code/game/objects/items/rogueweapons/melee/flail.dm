@@ -1,5 +1,5 @@
 /obj/item/rogueweapon/flail
-	force = 30
+	force = 20
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/flail/strike/smash)
 	name = "military flail"
 	desc = "A sturdy handle afixed to a cruel spiked ball with a harrowing metal chain."
@@ -71,7 +71,7 @@
 /obj/item/rogueweapon/flail/sflail
 	name = "Steel flail"
 	desc = "A knightly flail made of worked steel, with a flanged head. An effective design that shows brutality."
-	force = 20
+	force = 30
 	icon_state = "flail"
 	smeltresult = /obj/item/ingot/steel
 	minstr = 4
@@ -135,7 +135,7 @@
 	sellprice = 10
 
 /obj/item/rogueweapon/flail/militia
-	force = 30//same as the iron flails since is the same with different flavour
+	force = 20//same as the iron flails since is the same with different flavour
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/flail/strike/smash)
 	name = "Militia flail"
 	desc = "A lucky hit from such a flail can squash a cheap helmet along with the wearer's skull."

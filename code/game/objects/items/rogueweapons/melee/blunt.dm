@@ -144,6 +144,13 @@
 	wdefense = 3
 	sellprice = 15
 
+/obj/item/rogueweapon/mace/cudgel/carpenter
+	force = 15
+	force_wielded = 20
+	name = "peasant cudgel"
+	icon_state = "carpentercudgel"
+	desc = "A stubby club reinforced with iron bits, popular among village watchmen and peasant militias, reinforced and hard hitting stills being a club and not a proper mace."
+
 /obj/item/rogueweapon/mace/cudgel/getonmobprop(tag)
 	. = ..()
 	if(tag)

@@ -147,7 +147,7 @@
 
 /datum/anvil_recipe/weapons/woodcutter
 	name = "woodcutter great axe (+w)"
-	recipe_name = "a Bardiche"
+	recipe_name = "a great axe for woodcutters"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
@@ -268,6 +268,13 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/sword/iron
+
+/datum/anvil_recipe/weapons/sword_iron
+	name = "estoc"
+	recipe_name = "a Duelist Sword"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/rogueweapon/sword/rapier/ironestoc
 
 /datum/anvil_recipe/weapons/towershield
 	name = "Tower Shield (+w)"
@@ -533,4 +540,18 @@
 	created_item = /obj/item/rogueweapon/sword
 	craftdiff = 2
 
+/datum/anvil_recipe/weapons/scimitar_steel
+	name = "Scimitar"
+	recipe_name = "a Zibantu Sword"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/rogueweapon/sword/scimitar
+	craftdiff = 2
 
+/datum/anvil_recipe/weapons/falchion
+	name = "Falchion"
+	recipe_name = "a heavy one handed sword"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/rogueweapon/sword/sabre/messer
+	craftdiff = 2
