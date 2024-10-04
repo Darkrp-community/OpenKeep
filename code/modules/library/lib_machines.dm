@@ -9,23 +9,11 @@
 	var/cooldown = 0
 
 /obj/machinery/printingpress/proc/upload_manuscript(mob/user, obj/item/paper/manuscript/M)
-	/*
-	if (!SSdbcore.Connect())
-		alert("Noc has abandoned you. Connection to the divine intellect has been severed.")
-		return
-	*/
-	var/sqltitle = sanitizeSQL(M.name)
-	var/sqlauthor = sanitizeSQL(M.author)
-	var/sqlcontent = sanitizeSQL(M.content)
-	var/sqlcategory = sanitizeSQL(M.category)
-	var/sqlckey = sanitizeSQL(M.ckey)
-	
 	// Simulating SQL interaction with testing() for upload
-	testing("UPLOAD QUERY: INSERT INTO library (author, title, content, category, ckey, datetime, round_id_created, approved) VALUES ('[sqlauthor]', '[sqltitle]', '[sqlcontent]', '[sqlcategory]', '[sqlckey]', Now(), '[GLOB.round_id]', 0)")
+	testing("UPLOAD QUERY: INSERT INTO library (author, title, content, category, ckey, datetime, round_id_created, approved) VALUES ('[M.author]', '[M.name]', '[M.content]', '[M.category]', '[M.ckey]', Now(), '[GLOB.round_id]', 0)")
 
 	// Simulating successful upload
 	alert("Upload Complete. The manuscript has been uploaded to the Archive.")
-	
 	user.visible_message("<span class='notice'>[user] uploads a manuscript to the archive.</span>")
 	qdel(M)
 
@@ -33,17 +21,11 @@
 	if (cooldown > world.time)
 		user << "The printing press is still recalibrating."
 		return
-	/*
-	if (!SSdbcore.Connect())
-		user << "Noc has abandoned you. Connection to the divine intellect has been severed."
-		return
-	*/
-
+	
 	var/sqlid = sanitizeSQL(id)
 	
 	// Simulating SQL interaction with testing() for print
 	testing("PRINT QUERY: SELECT author, title, content, category FROM library WHERE id = [sqlid] AND isnull(deleted)")
-
 
 	// Simulating data retrieval from database
 	var/title = "Test Manuscript Title"
@@ -59,17 +41,42 @@
 		B.icon_state = "book[rand(1,8)]"
 		visible_message("<span class='notice'>The printing press hums as it produces a bound manuscript titled [title].</span>")
 	
-	// Cooldown period
+	cooldown = world.time + PRINTER_COOLDOWN
+
+/obj/machinery/printingpress/attack_right(mob/user)
+	var/choice = input(user, "Choose an option for the printing press") in list("Print The Book", "Print a Tome of Justice", "Print from the Archive")
+	
+	switch(choice)
+		if ("Print a Bible")
+			print_bibble(user)
+		if("Print a Tome of Justice")
+			print_justice(user)
+		if ("Print from the Archive")
+			search_manuscripts(user, "", "", "Any")
+
+/obj/machinery/printingpress/proc/print_bibble(mob/user)
+	// Creates a static book (Bibble)
+	if (cooldown > world.time)
+		user << "The printing press is still recalibrating."
+		return
+	
+	var/obj/item/book/rogue/bibble/B = new(src.loc)
+	visible_message("<span class='notice'>The printing press hums as it produces [B.name].</span>")
+	
+	cooldown = world.time + PRINTER_COOLDOWN
+
+/obj/machinery/printingpress/proc/print_justice(mob/user)
+	// Creates a static book (Tome of Justice)
+	if (cooldown > world.time)
+		user << "The printing press is still recalibrating."
+		return
+	
+	var/obj/item/book/rogue/law/B = new(src.loc)
+	visible_message("<span class='notice'>The printing press hums as it produces the [B.name].</span>")
+	
 	cooldown = world.time + PRINTER_COOLDOWN
 
 /obj/machinery/printingpress/proc/search_manuscripts(mob/user, var/search_title, var/search_author, var/search_category)
-	/*
-	if (!SSdbcore.Connect())
-		alert("Noc has abandoned you. Connection to the divine intellect has been severed.")
-		return
-	*/
-	
-	// Simulating the SQL search query
 	var/sqlquery = "SELECT id, author, title, category FROM library WHERE isnull(deleted)"
 	
 	if (search_author != "")
@@ -122,7 +129,7 @@
 	B.name = M.name
 	B.title = M.name
 	B.author = M.author
-	B.dat = M.content
+	B.pages = list("<b3><h3>Title: [B.title]<br>Author: [B.author]</b><h3>[M.info]")
 	B.icon_state = "[M.select_icon]_0"
 	B.base_icon_state = "[M.select_icon]"
 	qdel(M)
@@ -162,7 +169,7 @@
 		// Prompt user to populate manuscript fields
 		var/newtitle = dd_limittext(sanitize_hear_message(input(user, "Enter the title of the manuscript:")), MAX_NAME_LEN) as text|null
 		var/newauthor = sanitize_hear_message(input(user, "Enter the author's name:")) as text|null
-		var/newcontent = input(user, "Enter the content of the manuscript:") as text|null
+		var/newcontent = "<p>[input(user, "Enter the content of the manuscript:")]</p>" as text|null
 		var/newcategory = input(user, "Select the category of the manuscript:") in list("Apocrypha & Grimoires", "Myths & Tales", "Legends & Accounts", "Thesis", "Eoratica")
 		var/newicon = book_icons[input(user, "Choose a book style", "Book Style") as anything in book_icons]
 
@@ -174,10 +181,12 @@
 			ckey = user.ckey
 			select_icon = newicon
 			written = TRUE
+			info = parsepencode(content)
 			user << "<span class='notice'>You have successfully written the manuscript.</span>"
 		else
 			user << "<span class='warning'>You must fill out all fields to complete the manuscript.</span>"
-		return TRUE
+		return
+	else if(istype(P, /obj/item/natural/feather) && written)
+		user << "<span class='warning'>The manuscript has already been written.</span>"
+		return
 	return ..()
-
-
