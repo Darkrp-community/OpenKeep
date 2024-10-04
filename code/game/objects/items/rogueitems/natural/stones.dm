@@ -20,7 +20,7 @@
 /obj/item/natural/stone/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(HAS_TRAIT(user, TRAIT_ROTMAN))
-		user.visible_message("<span class='info'>The stone slips through dead fingers...</span>")
+		to_chat(user, span_info("The bag slips through dead fingers..."))	
 		user.dropItemToGround(src, TRUE)
 
 /obj/item/natural/stone/attackby(obj/item/W, mob/user, params)
