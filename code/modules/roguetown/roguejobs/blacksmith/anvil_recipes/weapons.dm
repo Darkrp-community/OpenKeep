@@ -228,7 +228,7 @@
 	recipe_name = "a big hammer"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/grown/log/tree/stick)
+	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = 	/obj/item/rogueweapon/hammer/sledgehammer
 
 /datum/anvil_recipe/weapons/mace_iron
