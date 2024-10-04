@@ -3,6 +3,9 @@
 	dried_type = null
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_SMALL
+	sellprice = 1	
+	force = 0
+	throwforce = 0
 	var/list/pipe_reagents = list()
 	var/seed
 	var/bitesize_mod = 0
@@ -44,7 +47,6 @@
 		else
 			return ..()
 	..()
-//	return ..() fucked with slicing
 
 /obj/item/reagent_containers/food/snacks/produce/wheat
 	seed = /obj/item/neuFarm/seed/wheat
@@ -69,7 +71,7 @@
 		. += "I can easily tell that these are wheat grains."
 
 /obj/item/reagent_containers/food/snacks/produce/oat
-	seed = /obj/item/neuFarm/seed/wheat/oat
+	seed = /obj/item/neuFarm/seed/oat
 	name = "grain"
 	desc = ""
 	icon_state = "oat"
@@ -200,10 +202,10 @@
 	add_overlay(item_overlay)
 
 /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
-	seed = /obj/item/neuFarm/seed/berryrogue/poison
+	seed = /obj/item/neuFarm/seed/poison_berries
 	icon_state = "berries"
 	tastes = list("berry" = 1)
-	list_reagents = list(/datum/reagent/berrypoison = 5, /datum/reagent/consumable/nutriment = 3)
+	list_reagents = list(/datum/reagent/berrypoison = 5, /datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/berrypoison = 5)
 	color_index = "bad"
 	poisonous = TRUE
@@ -235,6 +237,7 @@
 	list_reagents = list(/datum/reagent/drug/space_drugs = 2,/datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/drug/space_drugs = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
+	rotprocess = null
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/swampdust
 
@@ -256,7 +259,7 @@
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/tobaccodust
 
-/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed_dried
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed
 	seed = null
 	name = "westleach leaf"
 	desc = "A common, strong-smelling leaf dried for smoking."
@@ -266,6 +269,7 @@
 	eat_effect = /datum/status_effect/debuff/badmeal
 	list_reagents = list(/datum/reagent/drug/nicotine = 5, /datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/drug/nicotine = 10)
+	rotprocess = null
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/tobaccodust
 
@@ -341,23 +345,6 @@
 	rotprocess = null
 	dropshrink = 0.9
 
-/*	..................   Sunflower   ................... */
-/obj/item/reagent_containers/food/snacks/produce/sunflower
-	seed = /obj/item/neuFarm/seed/sunflower
-	name = "sunflower"
-	desc = ""
-	icon_state = "sunflower"
-	seed = /obj/item/neuFarm/seed/sunflower
-	slot_flags = ITEM_SLOT_HEAD
-	throwforce = 0
-	w_class = WEIGHT_CLASS_TINY
-	throw_speed = 1
-	throw_range = 3
-	list_reagents = list(/datum/reagent/consumable/nutriment = 0)
-	dropshrink = 0.8
-	rotprocess = SHELFLIFE_EXTREME
-	fried_type = /obj/item/reagent_containers/food/snacks/rogue/roastseeds
-
 /*	..................  Pear   ................... */ // for cider or eating raw
 /obj/item/reagent_containers/food/snacks/produce/pear
 	name = "pear"
@@ -386,6 +373,41 @@
 	chopping_sound = TRUE
 	dropshrink = 0.9
 	rotprocess = SHELFLIFE_EXTREME
+
+/*	..................   Sunflower   ................... */
+/obj/item/reagent_containers/food/snacks/produce/sunflower
+	seed = /obj/item/neuFarm/seed/sunflower
+	name = "sunflower"
+	desc = ""
+	icon_state = "sunflower"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head_items.dmi'
+	seed = /obj/item/neuFarm/seed/sunflower
+	slot_flags = ITEM_SLOT_HEAD
+	throwforce = 0
+	w_class = WEIGHT_CLASS_TINY
+	throw_speed = 1
+	throw_range = 3
+	list_reagents = list(/datum/reagent/consumable/nutriment = 0)
+	dropshrink = 0.8
+	rotprocess = null
+	fried_type = /obj/item/reagent_containers/food/snacks/rogue/roastseeds
+
+
+/*	..................   Fyritius Flower   ................... */ // some sort of funni fire flowers. Dunno just moving them here for consistency.
+/obj/item/reagent_containers/food/snacks/produce/fyritius
+	name = "fyritius flower"
+	seed = /obj/item/neuFarm/seed/fyritius // if mass producing these breaks shit just comment it out
+	desc = ""
+	icon_state = "fyritius"
+	tastes = list("tastes like a burning coal and fire" = 1)
+	bitesize = 1
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/fyritiusnectar = 5)
+	dropshrink = 0.8
+	rotprocess = null
+	dust_result = /obj/item/alch/firedust
+	w_class = WEIGHT_CLASS_TINY
+	throw_speed = 1
+	throw_range = 3
 
 /*
 /obj/item/reagent_containers/food/snacks/produce/garlic

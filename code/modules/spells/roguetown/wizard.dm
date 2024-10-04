@@ -49,6 +49,10 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			L.electrocute_act(1, src)
+			// Experience gain!
+			var/boon = sender.mind?.get_learning_boon(/datum/skill/magic/arcane)
+			var/amt2raise = sender.STAINT*2
+			sender.mind?.adjust_experience(/datum/skill/magic/arcane, floor(amt2raise * boon), FALSE)
 	qdel(src)
 
 /obj/effect/proc_holder/spell/invoked/projectile/bloodlightning
@@ -97,6 +101,10 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			L.electrocute_act(1, src)
+			// Experience gain!
+			var/boon = sender.mind?.get_learning_boon(/datum/skill/magic/blood)
+			var/amt2raise = sender.STAINT*2
+			sender.mind?.adjust_experience(/datum/skill/magic/blood, floor(amt2raise * boon), FALSE)
 	qdel(src)
 
 /obj/effect/proc_holder/spell/invoked/projectile/bloodsteal
@@ -132,7 +140,6 @@
 	flag = "magic"
 	light_color = "#e74141"
 	light_range = 7
-	var/mob/living/carbon/human/sender
 
 /obj/projectile/magic/bloodsteal/on_hit(target)
 	. = ..()
@@ -147,11 +154,16 @@
 			var/mob/living/carbon/human/H = target
 			var/datum/antagonist/vampirelord/VDrinker = sender.mind.has_antag_datum(/datum/antagonist/vampirelord)
 			H.blood_volume = max(H.blood_volume-45, 0)
+			if(H.vitae_pool >= 500) // You'll only get vitae IF they have vitae.
+				H.vitae_pool -= 500
+				VDrinker.handle_vitae(500)
+			var/boon = sender.mind?.get_learning_boon(/datum/skill/magic/blood)
+			var/amt2raise = sender.STAINT*2
+			sender.mind?.adjust_experience(/datum/skill/magic/blood, floor(amt2raise * boon), FALSE)
 			H.handle_blood()
 			H.visible_message("<span class='danger'>[target] has their blood ripped from their body!!</span>", \
 					"<span class='userdanger'>My blood erupts from my body!", "<span class='hear'>...</span>", COMBAT_MESSAGE_RANGE, target)
 			new /obj/effect/decal/cleanable/blood/puddle(H.loc)
-			VDrinker.handle_vitae(400)
 	qdel(src)
 
 /obj/effect/proc_holder/spell/invoked/projectile/fireball
@@ -195,6 +207,11 @@
 			playsound(get_turf(target), 'sound/magic/magic_nulled.ogg', 100)
 			qdel(src)
 			return BULLET_ACT_BLOCK
+		else
+			// Experience gain!
+			var/boon = sender.mind?.get_learning_boon(/datum/skill/magic/arcane)
+			var/amt2raise = sender.STAINT*2
+			sender.mind?.adjust_experience(/datum/skill/magic/arcane, floor(amt2raise * boon), FALSE)
 
 
 
@@ -250,3 +267,9 @@
 			playsound(get_turf(target), 'sound/magic/magic_nulled.ogg', 100)
 			qdel(src)
 			return BULLET_ACT_BLOCK
+		else
+			// Experience gain!
+			var/boon = sender.mind?.get_learning_boon(/datum/skill/magic/arcane)
+			var/amt2raise = sender.STAINT
+			sender.mind?.adjust_experience(/datum/skill/magic/arcane, floor(amt2raise * boon), FALSE)
+

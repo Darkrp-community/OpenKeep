@@ -46,6 +46,8 @@
 	damage_deflection = 10
 
 /turf/closed/wall/mineral/rogue/stone/window
+	name = "stone murder hole"
+	desc = "A wall of stone with convenient small indents on it, perfect to let loose arrows against invaders."
 	opacity = FALSE
 	max_integrity = 800
 
@@ -321,7 +323,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		user.changeNext_move(CLICK_CD_MELEE)
-		playsound(src, "plantcross", 50, FALSE, -1)
+		playsound(src, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(5,10), target = src))
 			if(!res && world.time > res_replenish)
 				res = rand(1,3)

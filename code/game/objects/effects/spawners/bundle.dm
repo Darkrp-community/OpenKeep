@@ -147,7 +147,7 @@
 	items = list(
 		/obj/item/clothing/under/dress/sundress,
 		/obj/item/clothing/head/witchwig,
-		/obj/item/staff/broom)
+		/obj/item/broom)
 
 /obj/effect/spawner/bundle/costume/wizard
 	name = "wizard costume spawner"

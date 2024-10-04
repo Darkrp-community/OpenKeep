@@ -107,6 +107,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_BANDIT			"CAT_BANDIT"		// Bandit class - Tied to the bandit antag really	<- Disabled; bandits got stuck with class selection
 #define CTAG_CHALLENGE 		"CAT_CHALLENGE"  	// Challenge class - Meant to be free for everyone
 #define CTAG_MERCENARY		"CAT_MERCENARY"
+#define CTAG_GARRISON		"CAT_GARRISON"
 #define CTAG_ADEPT			"CAT_ADEPT" // Used for Adept class selection
 
 /*
@@ -141,13 +142,21 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define M_WOOD		2	// one small log.
 #define M_CLOTH		2	// one cloth piece
 #define M_GRAIN		1	// one threshed wheat grain
+#define M_FUR		M_CLOTH * 2
 #define M_SILK		M_CLOTH * 2	// one silk thread
-#define M_SALT		4	// one salt, or raw ore, or fur, or coal
-#define M_LEATHER	M_CLOTH * 4
+#define M_SALT		4	// one salt, or raw ore, or coal
+#define M_LEATHER	M_CLOTH * 2 // one hide
 #define M_IRON		12	// one iron bar  Twelve is a good number for it can be halved, cut in three and four without fractions. Multiples of 6
 #define M_STEEL		M_IRON+W_MODERATE	// one steel bar
 #define M_SILVER	M_IRON*3	// one silver bar
 #define M_GOLD		M_IRON*5	// one gold bar
+
+// Skill costs - a rarity value add, items requiring a high skill to produce are rarer and has more intrinsic value. So craftsmen can make a profit.
+#define SKILL_1		2
+#define SKILL_2		4
+#define SKILL_3		6
+#define SKILL_4		8
+#define SKILL_5		10
 
 // Work costs - valued VERY low compared to raw materials, this is a problem but at least its systemic and visible now and can be adjusted. Very rough, time to gather stuff, refine it etc etc as well as crafting time itself.
 #define W_MINOR		2				// Less than 10 seconds of work
@@ -181,11 +190,16 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define VALUE_GOLD_ITEM			M_GOLD+W_MODERATE
 #define VALUE_GOLD_RARE_ITEM	VALUE_GOLD_ITEM+BONUS_VALUE_MODEST
 
+#define VALUE_SMALL_LEATHER			M_LEATHER+W_MINOR
+#define VALUE_MEDIUM_LEATHER		M_LEATHER*2+W_MINOR
+#define VALUE_BIG_LEATHER			M_LEATHER*3+W_MINOR
+#define VALUE_SMALL_FUR				M_FUR+M_MISC*2+W_MINOR
 
-#define VALUE_PADDED_DRESS			M_SILK*4+M_MISC*2+M_SALT+W_MODEST
+#define VALUE_PADDED_DRESS			M_SILK*4+M_MISC*2+M_FUR+W_MODEST
 #define VALUE_LIGHT_GAMBESSON		M_CLOTH*2+M_MISC+W_MINOR
 #define VALUE_GAMBESSON				M_CLOTH*4+M_MISC+W_MINOR
 #define VALUE_HEAVY_GAMBESSON		M_CLOTH*6+M_MISC*4+W_MODERATE
+#define VALUE_FUR_ARMOR				M_LEATHER*2+M_FUR+W_MINOR
 #define VALUE_LEATHER_ARMOR			M_LEATHER*2+W_MINOR
 #define VALUE_LEATHER_ARMOR_FUR		VALUM_LEATHER_ARMOR+M_SALT
 #define VALUE_LEATHER_ARMOR_STUD	VALUE_STEEL_SMALL_ITEM+M_LEATHER
@@ -214,6 +228,67 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define VALUE_COMMON_GOODS	VALUE_DIRT_CHEAP * 2		// so 12
 #define VALUE_COSTLY_THING	VALUE_COMMON_GOODS * 3		// 36
 #define VALUE_LUXURY_THING	VALUE_COSTLY_THING * 2		// and 72
+#define VALUE_EXTREME		VALUE_LUXURY_THING * 4		// and 288
 
 #define VALUE_MAGIC_ITEM_WEAK	VALUE_COSTLY_THING+BONUS_VALUE_MODEST
 #define VALUE_MAGIC_ITEM_STRONG	VALUE_MAGIC_ITEM_WEAK+BONUS_VALUE_BIG
+
+
+/*-----------------------------\
+| CRITICAL HIT DEFENSE DEFINES |	- So armor makes sense
+\-----------------------------*/
+
+// All crits
+#define ALL_CRITICAL_HITS list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_BLUNT, \
+BCLASS_STAB, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+// All crits minus stab
+#define CRITICALS_GOOD_METAL list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_BLUNT, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+// Orcs mostly
+#define CRITICALS_POOR_METAL list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_BLUNT) 
+
+// Just cut chop and stab, for coifs and partial maille
+#define CRITICALS_MAILLE_COIF list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_STAB) 
+
+// Maille level but also covers nose twisters
+#define CRITICALS_MAILLE_PLUS list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_STAB, \
+BCLASS_TWIST) 
+
+#define CRITICALS_BOILED_LEATHER list(\
+BCLASS_CUT, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+#define CRITICALS_THICK_LEATHER list(\
+BCLASS_BLUNT, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+#define CRITICALS_THICK_CLOTH list(\
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 

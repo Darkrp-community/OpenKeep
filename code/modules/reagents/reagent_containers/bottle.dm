@@ -22,6 +22,9 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	poursounds = list('sound/items/fillbottle.ogg')
 	experimental_onhip = TRUE
 
+/obj/item/reagent_containers/glass/bottle/rogue
+	volume = 70
+
 /obj/item/reagent_containers/glass/bottle/attackby(obj/item/I, mob/user, params)
 	if(reagents.total_volume)
 		return
