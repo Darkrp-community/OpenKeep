@@ -284,7 +284,7 @@
 //attempting to fix transformation issues//it worked wohoo, don't touch it.
 /obj/item/rogueweapon/halberd/bardiche/warcutter
 	slot_flags = ITEM_SLOT_BACK
-	force = 16
+	force = 15
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut)
 	name = "footman war axe"
