@@ -447,7 +447,7 @@
 	misscost = 5
 
 /obj/item/rogueweapon/woodstaff/quarterstaff/iron
-	force = 10
+	force = 15
 	force_wielded = 20
 	possible_item_intents = list(SPEAR_BASH)
 	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood, /datum/intent/spear/bash/swing)
