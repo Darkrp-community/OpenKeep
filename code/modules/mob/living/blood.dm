@@ -34,7 +34,7 @@
 		blood_volume = min(blood_volume+0.5, BLOOD_VOLUME_MAXIMUM)
 
 	//Effects of bloodloss
-	if(!HAS_TRAIT(src, TRAIT_BLOODLOSS_IMMUNE))
+	if(!HAS_TRAIT(src, TRAIT_BLOODLOSS_IMMUNE) && !DEAD)
 		switch(blood_volume)
 			if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
 				if(prob(3))
