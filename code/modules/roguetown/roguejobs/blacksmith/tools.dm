@@ -210,6 +210,7 @@
 	sharpness = IS_BLUNT
 	//dropshrink = 0.8
 	wlength = 10
+	wbalance = -1 // Heavy
 	gripsprite = TRUE
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_NORMAL
