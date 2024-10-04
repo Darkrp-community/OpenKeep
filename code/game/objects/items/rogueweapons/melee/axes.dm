@@ -307,7 +307,7 @@
 	sellprice = 20
 
 /datum/intent/axe/thrust
-	name = "Spike"
+	name = "impale"
 	blade_class = BCLASS_STAB
 	attack_verb = list("stabs")
 	animname = "stab"
