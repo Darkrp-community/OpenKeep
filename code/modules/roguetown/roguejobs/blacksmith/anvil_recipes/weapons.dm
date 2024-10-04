@@ -155,7 +155,7 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/warcutter
-	name = "war axe (2) (+w)"
+	name = "War axe (2) (+w)"
 	recipe_name = "a war greataxe"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
