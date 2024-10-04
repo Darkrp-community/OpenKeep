@@ -5,6 +5,8 @@
 			used = 'sound/vo/assassin/flaugh.ogg'
 		if("whistle")
 			used = list('sound/vo/assassin/whistle1.ogg', 'sound/vo/assassin/whistle2.ogg')
+		if("hum")
+			used = list('sound/vo/assassin/fhum.ogg', 'sound/vo/assassin/fhum2.ogg')	
 	if(!used)
 		used = ..(soundin, modifiers)
 	return used

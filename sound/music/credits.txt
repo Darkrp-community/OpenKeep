@@ -11,3 +11,11 @@ combat_guard.ogg: Deus Ex - Desolation Combat
 combat_guard2.ogg: Deus Ex - NYC Streets Combat
 combat_physician.ogg: Pathologic (Classic) - Utroba Aggression
 combat_bum.ogg: Pathologic (Classic) - Most Combat Theme
+title.ogg: Kings Field IV - Dark Reality
+roundend.ogg: Fear & Hunger 2: Termina - Dark Outside Extended
+accord (8).ogg: Tchaikovsky - Dance of the Sugar Plum Fairy. Cover by Amy Turk
+lute (8).ogg: Oblivion - Harvest Dawn. Cover by Daniel Estrem
+drum (5).ogg: Middle East Loop - Malfulf 90 bpm. Kettem BEAT
+guitar (15).ogg: Fear & Hunger - Prelude to Darkness Guitar Part Only
+flute (8).ogg: Elden Ring - Scribe Flute Song
+manor.gg: Fear & Hunger 2: Termina - Midnight Hour
