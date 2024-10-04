@@ -72,6 +72,7 @@
 	name = "Steel flail"
 	desc = "A knightly flail made of worked steel, with a flanged head. An effective design that shows brutality."
 	force = 30
+	force = 30
 	icon_state = "flail"
 	smeltresult = /obj/item/ingot/steel
 	minstr = 4
@@ -112,7 +113,7 @@
 /obj/item/rogueweapon/flail/towner
 	force = 15//starting gear for peasant militias
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
-	name = "Wooden flail"
+	name = "wooden flail"
 	desc = "During peacetime these flails are used to thresh wheat. During wartime - to chase off marauders."
 	icon_state = "peasantflail"
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -137,7 +138,7 @@
 /obj/item/rogueweapon/flail/militia
 	force = 20//same as the iron flails since is the same with different flavour
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/flail/strike/smash)
-	name = "Militia flail"
+	name = "militia flail"
 	desc = "A lucky hit from such a flail can squash a cheap helmet along with the wearer's skull."
 	icon_state = "militiaflail"
 	icon = 'icons/roguetown/weapons/32.dmi'

@@ -250,7 +250,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	bigboy = TRUE
 	force = 15
-	force_wielded = 25
+	force_wielded = 20
 	possible_item_intents = list(/datum/intent/axe/cut)
 	name = "woodcutter axe"
 	desc = "The tool, weapon, and loyal companion of woodcutters. Able to chop mighty trees and repel the threats of the forest with."
@@ -284,8 +284,8 @@
 //attempting to fix transformation issues//it worked wohoo, don't touch it.
 /obj/item/rogueweapon/halberd/bardiche/warcutter
 	slot_flags = ITEM_SLOT_BACK
-	force = 16
-	force_wielded = 30
+	force = 15
+	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut)
 	name = "footman war axe"
 	desc = "An enormous spiked axe. The ideal choice for a militiaman wanting to cut a fancy noble whoreson down to size."
@@ -307,7 +307,7 @@
 	sellprice = 20
 
 /datum/intent/axe/thrust
-	name = "Spike"
+	name = "impale"
 	blade_class = BCLASS_STAB
 	attack_verb = list("stabs")
 	animname = "stab"

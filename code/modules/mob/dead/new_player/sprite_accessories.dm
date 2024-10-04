@@ -1195,6 +1195,16 @@
 	color_src = SKINCOLOR
 	offsetti = TRUE
 
+/* Needs to be made selectable somehow. Tie to gender? Enable horn selection in char pref? I dunno. Sprites there anyways.
+/datum/sprite_accessory/horns/tieb_alt
+	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
+	name = "TiebHornies"
+	icon_state = "tiebhornsalt"
+	specuse = list("tiefling")
+	color_src = SKINCOLOR
+	offsetti = TRUE
+*/
+
 /datum/sprite_accessory/ears/cat
 	name = "Cat"
 	icon_state = "cat"

@@ -155,7 +155,7 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/warcutter
-	name = "war axe (2) (+w)"
+	name = "War axe (2) (+w)"
 	recipe_name = "a war greataxe"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
@@ -224,11 +224,11 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/sledgehammer
-	name = "sledgehammer(+s)"
+	name = "Sledgehammer(+s)"
 	recipe_name = "a big hammer"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/grown/log/tree/stick)
+	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = 	/obj/item/rogueweapon/hammer/sledgehammer
 
 /datum/anvil_recipe/weapons/mace_iron
@@ -327,7 +327,7 @@
 	recipe_name = "a big warhammer"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/grown/log/tree/stick)
+	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = 	/obj/item/rogueweapon/hammer/sledgehammer/war
 
 

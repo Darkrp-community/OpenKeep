@@ -17,10 +17,10 @@
 	icon_state = "shade_mob_a"
 	icon_living = "shade_mob_a"
 	icon_dead = null
+
 	gender = PLURAL
 	emote_hear = null
 	emote_see = null
-	speak_chance = 1
 	turns_per_move = 6
 	see_in_dark = 9
 	move_to_delay = 2
@@ -42,13 +42,12 @@
 	* made them proud, remind them of
 	* their forgotten humility.
 	*/
-	health = 75
-	maxHealth = 75
+	health = SHADE_HEALTH
+	maxHealth = SHADE_HEALTH
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	vision_range = 9
 	aggro_vision_range = 9
-	environment_smash = ENVIRONMENT_SMASH_NONE
 	melee_damage_type = BRUTE
 	// Makes thrown objects phase through them
 	pass_flags = LETPASSTHROW
@@ -65,8 +64,6 @@
 	search_objects = FALSE
 	//Why wander when you know your fate.
 	wander = FALSE
-	milkies = FALSE
-	pooptype = null
 	STACON = 6
 	STASTR = 6
 	STASPD = 6
