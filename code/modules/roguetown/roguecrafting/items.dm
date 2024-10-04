@@ -474,7 +474,7 @@
 /datum/crafting_recipe/roguetown/steelstaff
 	name = "Steel quarterstaff (+2 staff)"
 	skillcraft = /datum/skill/craft/carpentry
-	reqs = list(/obj/item/rogueweapon/woodstaff/quarterstaff = 2, /obj/item/ingot/steel)
+	reqs = list(/obj/item/rogueweapon/woodstaff/quarterstaff, /obj/item/ingot/steel = 2)
 	result = list(/obj/item/rogueweapon/woodstaff/quarterstaff/steel)
 	craftdiff = 3
 
