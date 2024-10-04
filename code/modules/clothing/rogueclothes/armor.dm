@@ -482,7 +482,7 @@
 	name = "leather vest"
 	icon_state = "leathervest"
 	item_state = "leathervest"
-	color = null
+	color = "#dfa590" // gives a slightly darker and reddish hue to contrast nicely with the leather pants.
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/jacket
 	name = "leather jacket"
