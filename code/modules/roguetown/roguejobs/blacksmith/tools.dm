@@ -229,7 +229,7 @@
 
 /obj/item/rogueweapon/hammer/sledgehammer/war
 	force = 20
-	force_wielded = 25//same as any mace
+	force_wielded = 30
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
 	name = "steel warhammer"
