@@ -112,7 +112,7 @@
 /obj/item/rogueweapon/flail/towner
 	force = 15//starting gear for peasant militias
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
-	name = "Wooden flail"
+	name = "wooden flail"
 	desc = "During peacetime these flails are used to thresh wheat. During wartime - to chase off marauders."
 	icon_state = "peasantflail"
 	icon = 'icons/roguetown/weapons/32.dmi'
