@@ -10,7 +10,7 @@
 	created_item = /obj/item/customblank
 	createmultiple = TRUE
 	createditem_num = 4
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/chains
 	name = "Chains x3"
@@ -20,7 +20,7 @@
 	created_item = /obj/item/rope/chain
 	createmultiple = TRUE
 	createditem_num = 2
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/cogiron
 	name = "Cog x3"
@@ -30,7 +30,7 @@
 	created_item = /obj/item/roguegear
 	createmultiple = TRUE
 	createditem_num = 2
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/cogstee
 	name = "Cog x4"
@@ -40,7 +40,7 @@
 	created_item = /obj/item/roguegear
 	createmultiple = TRUE
 	createditem_num = 3
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/cups
 	name = "Cups x3"
@@ -56,7 +56,7 @@
 	recipe_name = "a Frypan"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/cooking/pan
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/gobletsteel
 	name = "Goblets x3"
@@ -65,7 +65,7 @@
 	created_item = /obj/item/reagent_containers/glass/cup/steel
 	createmultiple = TRUE
 	createditem_num = 2
-	craftdiff = 3
+	craftdiff = 1
 
 /datum/anvil_recipe/tools/gobletgold
 	name = "Goblets x3"
@@ -74,7 +74,7 @@
 	created_item = /obj/item/reagent_containers/glass/cup/golden
 	createmultiple = TRUE
 	createditem_num = 2
-	craftdiff = 5
+	craftdiff = 3
 
 /datum/anvil_recipe/tools/gobletsilver
 	name = "Goblets x3"
@@ -83,7 +83,7 @@
 	created_item = /obj/item/reagent_containers/glass/cup/silver
 	createmultiple = TRUE
 	createditem_num = 2
-	craftdiff = 4
+	craftdiff = 2
 
 /datum/anvil_recipe/tools/hammer
 	name = "Hammer (+s)"
@@ -92,7 +92,7 @@
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/hammer
 	i_type = "Tools"
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/anvil_recipe/tools/hoe
 	name = "Hoe (+2s)"
@@ -101,7 +101,7 @@
 	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/hoe
 	i_type = "Tools"
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/anvil_recipe/tools/keyring
 	name = "Keyrings x3"
@@ -110,14 +110,14 @@
 	created_item = /obj/item/keyring
 	createmultiple = TRUE
 	createditem_num = 2
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/lamptern
 	name = "Lamptern"
 	recipe_name = "a Lamptern"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/flashlight/flare/torch/lantern
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/anvil_recipe/tools/locks
 	name = "Lock x5"
@@ -127,7 +127,7 @@
 	created_item = /obj/item/customlock
 	createmultiple = TRUE
 	createditem_num = 4
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/lockpicks
 	name = "Lockpicks x3"
@@ -136,7 +136,7 @@
 	created_item = /obj/item/lockpick
 	createmultiple = TRUE
 	createditem_num = 2
-	craftdiff = 3
+	craftdiff = 2
 
 /datum/anvil_recipe/tools/lockpickring
 	name = "Lockpickrings x3"
@@ -162,7 +162,7 @@
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/pick
 	i_type = "Tools"
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/anvil_recipe/tools/pitchfork
 	name = "Pitchfork (+2s)"
@@ -171,7 +171,7 @@
 	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/pitchfork
 	i_type = "Tools"
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/anvil_recipe/tools/sewingneedle
 	name = "Sewing Needles x3"
@@ -180,7 +180,7 @@
 	created_item = /obj/item/needle
 	createmultiple = TRUE
 	createditem_num = 2 // They can be refilled with fiber now
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/anvil_recipe/tools/shovel
 	name = "Shovel (+2s)"
@@ -189,7 +189,7 @@
 	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/shovel
 	i_type = "Tools"
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/anvil_recipe/tools/sickle
 	name = "Sickle (+s)"
@@ -198,7 +198,7 @@
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/sickle
 	i_type = "Tools"
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/anvil_recipe/tools/tongs
 	name = "Tongs"
@@ -206,7 +206,7 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/tongs
 	i_type = "Tools"
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/anvil_recipe/tools/torch
 	name = "Torches x5 (+c)"
@@ -216,14 +216,14 @@
 	created_item = /obj/item/flashlight/flare/torch/metal
 	createmultiple = TRUE
 	createditem_num = 4
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/pote
 	name = "Iron pot"
 	recipe_name = "a cooking pot"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/reagent_containers/glass/bucket/pot
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/hoe/copper
 	name = "Hoe (+2s)"
@@ -232,7 +232,7 @@
 	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/hoe/copper
 	i_type = "Tools"
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/sickle/copper
 	name = "Sickle (+s)"
@@ -241,7 +241,7 @@
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/sickle/copper
 	i_type = "Tools"
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/pitchfork/copper
 	name = "Pitchfork (+2s)"
@@ -250,7 +250,7 @@
 	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/pitchfork/copper
 	i_type = "Tools"
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/pick/copper
 	name = "Pick (+s)"
@@ -259,14 +259,14 @@
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/pick/copper
 	i_type = "Tools"
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/lamptern/copper
 	name = "Lamptern"
 	recipe_name = "a Lamptern"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/flashlight/flare/torch/lantern/copper
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/anvil_recipe/tools/hammer/copper
 	name = "Hammer (+s)"
@@ -275,4 +275,4 @@
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/hammer/copper
 	i_type = "Tools"
-	craftdiff = 1
+	craftdiff = 0
