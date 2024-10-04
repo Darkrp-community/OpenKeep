@@ -29,88 +29,78 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /datum/intent/shoot/blowgun
-	chargedrain = 0 //no drain to aim a crossbow
-
-/datum/intent/shoot/blowgun/get_chargetime()
-	if(mastermob && chargetime)
-		var/newtime = chargetime
-		//skill block
-		newtime = newtime + 18
-		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/crossbows) * 3)
-		//per block
-		newtime = newtime + 20
-		newtime = newtime - (mastermob.STAPER)
-		if(newtime > 0)
-			return newtime
-		else
-			return 0.1
-	return chargetime
-
-/datum/intent/shoot/blowgun
-	chargedrain = 0 //no drain to aim a gun
-	charging_slowdown = 4
-	warnoffset = 20
-	chargetime = 10
-
-/datum/intent/shoot/blowgun/arc
-	name = "arc"
-	icon_state = "inarc"
+	chargetime = 0.5
 	chargedrain = 1
-	charging_slowdown = 3
-	warnoffset = 20
+	charging_slowdown = 1
 
-/datum/intent/shoot/blowgun/arc/arc_check()
+/datum/intent/shoot/blowgun/can_charge()
+	if(mastermob)
+		if(mastermob.get_num_arms(FALSE) < 2)
+			return FALSE
+		if(mastermob.get_inactive_held_item())
+			return FALSE
 	return TRUE
 
+/datum/intent/shoot/blowgun/prewarning()
+	if(mastermob)
+		mastermob.visible_message("<span class='warning'>[mastermob] takes a deep breath [masteritem]!</span>")
+
 /datum/intent/shoot/blowgun/get_chargetime()
 	if(mastermob && chargetime)
-		var/newtime = chargetime
+		var/newtime = 0
 		//skill block
-		newtime = newtime + 18
-		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/firearms) * 3.5)
+		newtime = newtime + 10
+		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/crossbows) * (10/6))
+		//str block //rtd replace 10 with drawdiff on bows that are hard and scale str more (10/20 = 0.5)
+		newtime = newtime + 10
+		newtime = newtime - (mastermob.STASTR * (10/20))
 		//per block
 		newtime = newtime + 20
-		// Perception aint gonna help you with loading a musket, bud
-		//newtime = newtime - (mastermob.STAPER)
+		newtime = newtime - (mastermob.STAPER * 1) //20/20 is 1
 		if(newtime > 0)
 			return newtime
 		else
 			return 0.1
-	return chargetime
-
-/datum/intent/shoot/blowgun/pistol/get_chargetime()
-	if(mastermob && chargetime)
-		var/newtime = chargetime
-		//skill block
-		newtime = newtime + 18
-		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/firearms) * 3)
-		//per block
-		newtime = newtime + 20
-		newtime = newtime - (mastermob.STAPER)
-		if(newtime > 0)
-			return newtime
-		else
-			return 1
 	return chargetime
 
 /datum/intent/arc/blowgun
-	chargetime = 1
-	chargedrain = 0 //no drain to aim a crossbow
+	chargetime = 0.5
+	chargedrain = 1
+	charging_slowdown = 1
+
+/datum/intent/arc/blowgun/can_charge()
+	if(mastermob)
+		if(mastermob.get_num_arms(FALSE) < 2)
+			return FALSE
+		if(mastermob.get_inactive_held_item())
+			return FALSE
+	return TRUE
+
+/datum/intent/arc/blowgun/prewarning()
+	if(mastermob)
+		mastermob.visible_message("<span class='warning'>[mastermob] takes a deep breath [masteritem]!</span>")
+		playsound(mastermob, pick('sound/combat/Ranged/bow-draw-01.ogg'), 100, FALSE)
 
 /datum/intent/arc/blowgun/get_chargetime()
 	if(mastermob && chargetime)
-		var/newtime = chargetime
+		var/newtime = 0
 		//skill block
-		newtime = newtime + 18
-		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/crossbows) * 3)
+		newtime = newtime + 10
+		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/crossbows) * (10/6))
+		//str block //rtd replace 10 with drawdiff on bows that are hard and scale str more (10/20 = 0.5)
+		newtime = newtime + 10
+		newtime = newtime - (mastermob.STASTR * (10/20))
 		//per block
 		newtime = newtime + 20
-		newtime = newtime - (mastermob.STAPER)
+		newtime = newtime - (mastermob.STAPER * 1) //20/20 is 1
 		if(newtime > 0)
 			return newtime
 		else
 			return 1
 	return chargetime
+
+/datum/intent/shoot/blowgun/arc/arc_check()
+	return TRUE
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/blowgun/shoot_with_empty_chamber()
 	if(cocked)
