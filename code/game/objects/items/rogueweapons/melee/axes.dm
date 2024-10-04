@@ -285,7 +285,7 @@
 /obj/item/rogueweapon/halberd/bardiche/warcutter
 	slot_flags = ITEM_SLOT_BACK
 	force = 16
-	force_wielded = 30
+	force_wielded = 25
 	possible_item_intents = list(/datum/intent/axe/cut)
 	name = "footman war axe"
 	desc = "An enormous spiked axe. The ideal choice for a militiaman wanting to cut a fancy noble whoreson down to size."
