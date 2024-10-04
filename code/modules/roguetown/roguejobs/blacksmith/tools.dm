@@ -202,7 +202,7 @@
 	force = 15
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/mace/strike)
-	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
+	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
 	name = "sledgehammer"
 	desc = "It's almost asking to be put to work."
 	icon_state = "sledgehammer"
