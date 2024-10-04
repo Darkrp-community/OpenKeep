@@ -224,7 +224,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/sledgehammer
-	name = "sledgehammer(+s)"
+	name = "Sledgehammer(+s)"
 	recipe_name = "a big hammer"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
