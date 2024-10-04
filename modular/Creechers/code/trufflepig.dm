@@ -49,19 +49,20 @@
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/truffles/cooked
 	color = "#ab7d6f"
 	tastes = list("mushroom" = 1)
-	sellprice = 5
+	sellprice = 30
+	rotprocess = null
 /obj/item/reagent_containers/food/snacks/rogue/truffles/cooked
 	eat_effect = /datum/status_effect/buff/foodbuff
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	color = "#835b4f"
-	tastes = list("succulent truffles" = 1)
+	tastes = list("delicious truffles" = 1)
 /obj/item/reagent_containers/food/snacks/rogue/truffles/Initialize()
 	icon_state = pick("mushroom1_full","mushroom1_full","mushroom1_full")
 	. = ..()
 
 /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms
 	name = "truffles"
-	icon = 'icons/obj/hydroponics/harvest.dmi'
+	icon = 'modular/Creechers/icons/piggie.dmi'
 	icon_state = "mushroom1_full"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms/cooked
@@ -91,11 +92,16 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	move_to_delay = 7
 	animal_species = /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/fatty = 3,
+									/obj/item/reagent_containers/food/snacks/fat = 1,
+									/obj/item/natural/hide = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/fatty = 4,
-						/obj/item/reagent_containers/food/snacks/fat = 2,
-						/obj/item/natural/hide = 2)
+							/obj/item/reagent_containers/food/snacks/fat = 2,
+							/obj/item/natural/hide = 2)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/fatty = 5,
+							/obj/item/reagent_containers/food/snacks/fat = 3,
+							/obj/item/natural/hide = 3)
 	base_intents = list(/datum/intent/simple/headbutt)
 	health = 80
 	maxHealth = 80
@@ -111,9 +117,10 @@
 	STASPD = 2
 	STACON = 8
 	STASTR = 12
-	can_buckle = FALSE
-	buckle_lying = 0
-	can_saddle = FALSE
+	can_buckle = TRUE
+	buckle_lying = FALSE
+	tame = TRUE
+	can_saddle = TRUE
 	remains_type = /obj/effect/decal/remains/pig
 	response_help_continuous = "pets"
 	response_help_simple = "give the signal to the"
@@ -125,6 +132,18 @@
 	gender = PLURAL
 	icon_state = "skele"
 	icon = 'icons/roguetown/mob/monster/cow.dmi'
+
+/mob/living/simple_animal/hostile/retaliate/rogue/trufflepig/tamed(mob/user)
+	..()
+	deaggroprob = 20
+	if(can_buckle)
+		var/datum/component/riding/D = LoadComponent(/datum/component/riding)
+		D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 4), TEXT_SOUTH = list(0, 4), TEXT_EAST = list(-2, 4), TEXT_WEST = list(2, 4)))
+		D.set_vehicle_dir_layer(SOUTH, ABOVE_MOB_LAYER)
+		D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
+		D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
+		D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
+
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig/Life()
 	. = ..()

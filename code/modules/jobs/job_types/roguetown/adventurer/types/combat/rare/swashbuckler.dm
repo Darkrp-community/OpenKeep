@@ -14,6 +14,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/swashbuckler
 	maximum_possible_slots = 1
+	min_pq = 0
 	category_tags = list(CTAG_ADVENTURER)
 
 	/datum/outfit/job/roguetown/adventurer/swashbuckler/pre_equip((mob/living/carbon/human/H))
@@ -30,7 +31,6 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 
 	if(H.gender == FEMALE)
 		H.underwear = "Femleotard"

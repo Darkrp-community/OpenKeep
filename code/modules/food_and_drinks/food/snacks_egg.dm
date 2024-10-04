@@ -35,6 +35,7 @@
 	var/static/chick_count = 0 //I copied this from the chicken_count (note the "en" in there) variable from chicken code.
 	rotprocess = 15 MINUTES
 	var/fertile = FALSE
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/egg
 
 /obj/item/reagent_containers/food/snacks/egg/become_rotten()
 	. = ..()
@@ -68,7 +69,7 @@
 		var/obj/O = new /obj/effect/decal/cleanable/food/egg_smudge(T)
 		O.pixel_x = rand(-8,8)
 		O.pixel_y = rand(-8,8)
-		if(prob(13)) //Roughly a 1/8 (12.5%) chance to make a chick, as in Minecraft. I decided not to include the chances for the creation of multiple chicks from the impact of one egg, since that'd probably require nested prob()s or something (and people might think that it was a bug, anyway).
+		if(prob(1)) //Roughly (1%) chance to make a chick, as in Minecraft. I decided not to include the chances for the creation of multiple chicks from the impact of one egg, since that'd probably require nested prob()s or something (and people might think that it was a bug, anyway).
 			if(chick_count < MAX_CHICKENS) //Chicken code uses this MAX_CHICKENS variable, so I figured that I'd use it again here. Even this check and the check in chicken code both use the MAX_CHICKENS variable, they use independent counter variables and thus are independent of each other.
 				new /mob/living/simple_animal/chick(T)
 				chick_count++

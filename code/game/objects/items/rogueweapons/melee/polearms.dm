@@ -58,6 +58,7 @@
 	bigboy = TRUE
 	gripsprite = TRUE
 	associated_skill = /datum/skill/combat/polearms
+	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	sellprice = 5
 
 /obj/item/rogueweapon/woodstaff/getonmobprop(tag)
@@ -130,7 +131,8 @@
 	minstr = 8
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
-	dropshrink = 0.6
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
+	dropshrink = 0.75
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 4
@@ -169,7 +171,7 @@
 	max_integrity = 450
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/polearms
-	dropshrink = 0.6
+	dropshrink = 0.75
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 5
@@ -232,9 +234,10 @@
 /obj/item/rogueweapon/halberd
 	force = 15
 	force_wielded = 35
+	slowdown = 1
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, /datum/intent/spear/halberd/chop, SPEAR_BASH)
-	name = "halbert"
+	name = "halberd"
 	desc = "A reinforced polearm for clobbering ordained with a crested ax head, pick and sharp point, a royal arm for defence and aggression."
 	icon_state = "halberd"
 	icon = 'icons/roguetown/weapons/64.dmi'
@@ -250,9 +253,10 @@
 	minstr = 8
 	max_blade_int = 300
 	max_integrity = 500
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
 	smeltresult = /obj/item/ingot/steel
 	associated_skill = /datum/skill/combat/polearms
-	dropshrink = 0.6
+	dropshrink = 0.75
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 5
@@ -276,6 +280,7 @@
 	icon_state = "bardiche"
 	force = 12
 	force_wielded = 25
+	slowdown = 1
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 200
@@ -285,6 +290,7 @@
 /obj/item/rogueweapon/eaglebeak
 	force = 15
 	force_wielded = 30
+	slowdown = 1
 	possible_item_intents = list(SPEAR_BASH, SPEAR_THRUST) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_BASH, SPEAR_THRUST, /datum/intent/mace/heavy/smash)
 	name = "eagle's beak"
@@ -305,7 +311,7 @@
 	associated_skill = /datum/skill/combat/polearms
 	max_blade_int = 300
 	max_integrity = 500
-	dropshrink = 0.6
+	dropshrink = 0.75
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	wdefense = 5
@@ -329,6 +335,7 @@
 	desc = "A polehammer of simple iron, fracture bone and dissent with simple brute force."
 	force = 12
 	force_wielded = 25
+	slowdown = 1
 	icon_state = "polehammer"
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 300
@@ -343,7 +350,7 @@
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
 	name = "copper spear"
-	desc = "A spear of Aasimar design, outdated but still serves it's purpose."
+	desc = "A spear of simple design, outdated and cheaply made but still serves its purpose."
 	icon_state = "cspear"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -355,12 +362,13 @@
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
-	slot_flags = null
+	slot_flags = ITEM_SLOT_BACK
 	max_blade_int = 70
 	max_integrity = 130
 	minstr = 7
 	smeltresult = /obj/item/ingot/copper
 	associated_skill = /datum/skill/combat/polearms
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
 	dropshrink = 0.9
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE

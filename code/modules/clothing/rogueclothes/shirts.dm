@@ -1,11 +1,13 @@
 /obj/item/clothing/suit/roguetown/shirt
 	slot_flags = ITEM_SLOT_SHIRT
 	body_parts_covered = CHEST|VITALS
+	prevent_crits = list(BCLASS_LASHING)
 	icon = 'icons/roguetown/clothing/shirts.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
-	equip_sound = 'sound/blank.ogg'
-	drop_sound = 'sound/blank.ogg'
-	pickup_sound =  'sound/blank.ogg'
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	sleevetype = "shirt"
 	edelay_type = 1
@@ -131,6 +133,15 @@
 	l_sleeve_status = SLEEVE_TORN
 	body_parts_covered = CHEST|VITALS
 
+/obj/item/clothing/suit/roguetown/shirt/shadowshirt
+	name = "silk shirt"
+	desc = "A sleeveless shirt woven of glossy material."
+	icon_state = "shadowshirt"
+	item_state = "shadowshirt"
+	r_sleeve_status = SLEEVE_TORN
+	l_sleeve_status = SLEEVE_TORN
+	body_parts_covered = CHEST|VITALS
+	allowed_race = list("elf", "dark elf")
 
 /obj/item/clothing/suit/roguetown/shirt/rags
 	slot_flags = ITEM_SLOT_ARMOR
@@ -206,6 +217,20 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
 	color = CLOTHING_PURPLE
 
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/maid
+	color = COLOR_RED
+
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/maid/Initialize()
+	..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+	else
+		GLOB.lordcolor += src
+
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/maid/Destroy()
+	GLOB.lordcolor -= src
+	return ..()
+
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/random/Initialize()
 	color = pick("#6b5445", "#435436", "#704542", "#79763f", CLOTHING_BLUE)
 	..()
@@ -249,6 +274,7 @@
 	desc = ""
 	body_parts_covered = null
 	icon_state = "sexydress"
+	item_state = "sexydress"
 	sleevetype = null
 	sleeved = null
 	color = "#a90707"

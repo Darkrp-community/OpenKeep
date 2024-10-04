@@ -146,20 +146,20 @@
 	prefix = "a"
 
 /datum/mob_descriptor/prominent/prominent_potbelly
-	name = "Prominent Potbelly"
+	name = "Potbelly"
 	verbage = "%HAVE%"
 	prefix = "a"
 
 /datum/mob_descriptor/prominent/prominent_thighs
-	name = "Prominent Thighs"
+	name = "Fat Thighs"
 	verbage = "%HAVE%"
 
 /datum/mob_descriptor/prominent/prominent_shoulders
-	name = "Prominent Shoulders"
+	name = "Broad Shoulders"
 	verbage = "%HAVE%"
 
 /datum/mob_descriptor/prominent/prominent_jawline
-	name = "Prominent Jawline"
+	name = "Jutting Jawline"
 	verbage = "%HAVE%"
 	prefix = "a"
 
@@ -204,7 +204,7 @@
 	prefix = "a"
 
 /datum/mob_descriptor/prominent/aristocratic_haughtiness
-	name = "Aristocratic Haughtiness"
+	name = "Aristocratic Disdain"
 	verbage = "%HAVE%"
 	prefix = "an"
 
@@ -238,9 +238,8 @@
 	prefix = "a"
 
 /datum/mob_descriptor/prominent/haughty_atmosphere
-	name = "Haughty Atmosphere"
+	name = "Haughty Mannerisms"
 	verbage = "%HAVE%"
-	prefix = "a"
 
 /datum/mob_descriptor/prominent/untrustworthy
 	name = "Untrustworthy"
@@ -274,3 +273,97 @@
 	name = "Keen Look"
 	verbage = "%HAVE%"
 	prefix = "a"
+
+
+/datum/mob_descriptor/prominent/presence_stoic
+	name = "Stoic Prescence"
+	verbage = "%HAVE%"
+	prefix = "a"
+
+/datum/mob_descriptor/prominent/hands_platters
+	name = "Hands like platters"
+	verbage = "%HAVE%"
+
+/datum/mob_descriptor/prominent/hands_delicate
+	name = "Delicate hands"
+	verbage = "%HAVE%"
+
+/datum/mob_descriptor/prominent/fingers_long
+	name = "Long fingers"
+	verbage = "%HAVE%"
+
+/datum/mob_descriptor/prominent/teeth_fine
+	name = "Fine Teeth"
+	verbage = "%HAVE%"
+
+/datum/mob_descriptor/prominent/teeth_rotting
+	name = "Rotting Teeth"
+	verbage = "%HAVE%"
+
+/datum/mob_descriptor/prominent/teeth_missing
+	name = "Missing Teeth"
+	verbage = "%HAVE%"
+
+/datum/mob_descriptor/prominent/teeth_fine
+	name = "Fine Teeth"
+	verbage = "%HAVE%"
+
+/datum/mob_descriptor/prominent/laugh_donkey
+	name = "Donkey-like Laugh"
+	verbage = "%HAVE%"
+	prefix = "a"
+
+/datum/mob_descriptor/prominent/nose_crooked
+	name = "Crooked Nose"
+	verbage = "%HAVE%"
+	prefix = "a"
+
+/datum/mob_descriptor/prominent/nose_broken
+	name = "Broken Nose"
+	verbage = "%HAVE%"
+	prefix = "a"
+
+/datum/mob_descriptor/prominent/nose_button
+	name = "Button Nose"
+	verbage = "%HAVE%"
+	prefix = "a"
+
+/datum/mob_descriptor/prominent/nose_hawk
+	name = "Hawkish Nose"
+	verbage = "%HAVE%"
+	prefix = "a"
+
+/datum/mob_descriptor/prominent/nose_aquiline
+	name = "Aquiline Nose"
+	verbage = "%HAVE%"
+	prefix = "a"
+
+/datum/mob_descriptor/prominent/neck_bull
+	name = "Bull Neck"
+	verbage = "%HAVE%"
+	prefix = "a"
+
+/datum/mob_descriptor/prominent/hair_perfumed
+	name = "Perfumed Hair"
+	verbage = "%HAVE%"
+
+/datum/mob_descriptor/prominent/hair_oiled
+	name = "Oiled Hair"
+	verbage = "%HAVE%"
+
+/datum/mob_descriptor/prominent/hair_curly
+	name = "Curly Hair"
+	verbage = "%HAVE%"
+
+/datum/mob_descriptor/prominent/hair_coarse
+	name = "Coarse Hair"
+	verbage = "%HAVE%"
+
+/datum/mob_descriptor/prominent/hair_thin
+	name = "Thin Hair"
+	verbage = "%HAVE%"
+
+/datum/mob_descriptor/prominent/ears_large
+	name = "Large Ears"
+	verbage = "%HAVE%"
+

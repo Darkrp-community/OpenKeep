@@ -89,7 +89,7 @@
 					if(blood_volume <= BLOOD_VOLUME_SURVIVE)
 						adjustOxyLoss(0.5)
 						if(blood_volume <= 20)
-							adjustOxyLoss(5)
+							adjustOxyLoss(2.5)
 			if(!client && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 				if(mob_timers["slo"])
 					if(world.time > mob_timers["slo"] + 90 SECONDS)

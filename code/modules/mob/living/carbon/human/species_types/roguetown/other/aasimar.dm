@@ -18,6 +18,9 @@
 	However, they possess less capacity for independent thought due to their wartime construction."
 
 	skin_tone_wording = "Crafted With"
+	nutrition_mod = 2 // 200% higher hunger rate. Hungry, hungry aasimar
+	pain_mod = 0.9 // 10% less pain from wounds
+	bleed_mod = 0.8 // 20% less bleed rate from injuries
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
@@ -35,8 +38,8 @@
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	use_m = TRUE
 	hairyness = "t1"
-	soundpack_m = /datum/voicepack/male/elf
-	soundpack_f = /datum/voicepack/female/elf
+	soundpack_m = /datum/voicepack/male/serious
+	soundpack_f = /datum/voicepack/female
 	offset_features = list(OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
 	OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
 	OFFSET_FACE = list(0,1), OFFSET_BELT = list(0,1), OFFSET_BACK = list(0,1), \
@@ -48,7 +51,7 @@
 	OFFSET_NECK_F = list(0,1), OFFSET_MOUTH_F = list(0,1), OFFSET_PANTS_F = list(0,1), \
 	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
 	specstats = list("strength" = 1, "perception" = 0, "intelligence" = -2, "constitution" = 2, "endurance" = 1, "speed" = 0, "fortune" = -1)
-	specstats_f = list("strength" = 1, "perception" = 0, "intelligence" = -1, "constitution" = 1, "endurance" = 0, "speed" = 1, "fortune" = -1)
+	specstats_f = list("strength" = 1, "perception" = 0, "intelligence" = -2, "constitution" = 1, "endurance" = 1, "speed" = 1, "fortune" = -1)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 

@@ -286,9 +286,10 @@
 							H.dna.species.kicked(src, H)
 						else
 							M.onkick(src)
+							OffBalance(15) // Off balance for human enemies moved to dna.species.onkick
 				else
 					A.onkick(src)
-				OffBalance(30)
+					OffBalance(10)
 				return
 			if(INTENT_JUMP)
 				if(istype(src.loc, /turf/open/water))

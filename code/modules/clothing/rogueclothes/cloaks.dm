@@ -6,6 +6,8 @@
 	desc = "A simple cloak covering the body."
 	edelay_type = 1
 	equip_delay_self = 10
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
 	bloody_icon_state = "bodyblood"
 	sewrepair = TRUE
 	anvilrepair = null
@@ -212,6 +214,17 @@
 	GLOB.lordcolor -= src
 	return ..()
 
+/obj/item/clothing/cloak/tabard/adept
+	detail_tag = "_psy"
+	color = CLOTHING_BLACK
+	detail_color = CLOTHING_WHITE
+
+/obj/item/clothing/cloak/tabard/adept/Initialize()
+	..()
+	update_icon()
+
+/obj/item/clothing/cloak/tabard/adept/attack_right(mob/user)
+	return
 
 //////////////////////////
 /// SOLDIER TABARD
@@ -683,6 +696,10 @@
 /obj/item/clothing/cloak/raincloak/blue
 	color = CLOTHING_BLUE
 
+/obj/item/clothing/cloak/raincloak/random/Initialize()
+	color = pick(CLOTHING_RED, CLOTHING_PURPLE, CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_BLUE)
+	..()
+
 /obj/item/clothing/head/hooded/rainhood
 	name = "hood"
 	desc = "A hood that's attached to the raincoat."
@@ -690,7 +707,7 @@
 	item_state = "rain_hood"
 	slot_flags = ITEM_SLOT_HEAD
 	dynamic_hair_suffix = ""
-	edelay_type = 1
+	edelay_type = 1 // Leaving as 1 so you get that small do_after for dramatic purposes
 	body_parts_covered = HEAD
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	block2add = FOV_BEHIND
@@ -805,6 +822,7 @@
 	sleeved = null
 	sleevetype = null
 	body_parts_covered = null
+	flags_inv = null
 
 /obj/item/clothing/cloak/stole/red
 	icon_state = "stole_red"
@@ -871,6 +889,13 @@
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = list("human", "tiefling", "elf", "aasimar")
 
+/obj/item/clothing/cloak/half/shadowcloak
+	name = "stalker cloak"
+	desc = "A heavy leather cloak held together by a gilded pin. The pin depicts a spider with disconnected legs."
+	icon_state = "shadowcloak"
+	color = null
+	allowed_race = list("elf", "dark elf")
+
 /obj/item/clothing/cloak/half/brown
 	color = CLOTHING_BROWN
 
@@ -896,6 +921,22 @@
 	GLOB.lordcolor -= src
 	return ..()
 
+/obj/item/clothing/cloak/half/random/Initialize()
+	color = pick(CLOTHING_RED, CLOTHING_PURPLE, CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_BLUE)
+	..()
+
+//............... Battle Nun ........................... (unique kit for the role, tabard for aesthetics)
+/obj/item/clothing/cloak/battlenun
+	name = "nun vestments"
+	desc = "Chaste, righteous, merciless to the wicked."
+	color = null
+	icon_state = "battlenun"
+	item_state = "battlenun"
+	allowed_sex = list(FEMALE)
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+
 // Dumping old black knight stuff here
 /obj/item/clothing/cloak/cape/blkknight
 	name = "blood cape"
@@ -906,6 +947,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/blkknight
 	name = "blacksteel helmet"
+	desc = "A helmet black as nite, with blue decorations. Instills fear upon those that gaze upon it."
 	icon_state = "bkhelm"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
@@ -947,6 +989,7 @@
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
+	armor_class = ARMOR_CLASS_MEDIUM
 	icon_state = "bkarmor"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'

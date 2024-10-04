@@ -252,7 +252,7 @@
 	keys = list(/obj/item/roguekey/archive, /obj/item/roguekey/manor)
 
 /obj/item/keyring/merchant
-	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/merchant)
+	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/merchant, /obj/item/roguekey/mercenary)
 
 /obj/item/keyring/stevedore
 	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/warehouse)
@@ -267,13 +267,13 @@
 	keys = list(/obj/item/roguekey/tavern, /obj/item/roguekey/roomiv, /obj/item/roguekey/roomiii, /obj/item/roguekey/roomii, /obj/item/roguekey/roomi)
 
 /obj/item/keyring/priest
-	keys = list(/obj/item/roguekey/priest, /obj/item/roguekey/confession, /obj/item/roguekey/church, /obj/item/roguekey/monastery, /obj/item/roguekey/puritan)
+	keys = list(/obj/item/roguekey/priest, /obj/item/roguekey/confession, /obj/item/roguekey/church, /obj/item/roguekey/monastery, /obj/item/roguekey/inquisition)
 
-/obj/item/keyring/puritan
-	keys = list(/obj/item/roguekey/puritan, /obj/item/roguekey/manor, /obj/item/roguekey/dungeon, /obj/item/roguekey/confession, /obj/item/roguekey/church)
+/obj/item/keyring/inquisitor
+	keys = list(/obj/item/roguekey/inquisition, /obj/item/roguekey/manor, /obj/item/roguekey/church)
 
 /obj/item/keyring/shepherd
-	keys = list(/obj/item/roguekey/confession, /obj/item/roguekey/church)
+	keys = list(/obj/item/roguekey/inquisition, /obj/item/roguekey/church)
 
 /obj/item/keyring/niteman
 	keys = list(/obj/item/roguekey/niteman, /obj/item/roguekey/nitemaiden)
@@ -287,8 +287,8 @@
 /obj/item/keyring/dungeoneer
 	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/walls)
 
-/obj/item/keyring/servant
-	keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison)
+/obj/item/keyring/butler
+	keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/butler)
 
 /obj/item/keyring/jester
 	keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/theatre)

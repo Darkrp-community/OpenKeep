@@ -31,7 +31,7 @@
 	attack_same = FALSE
 	attack_sound = 'sound/combat/wooshes/bladed/wooshmed (1).ogg'
 	dodge_sound = 'sound/combat/dodge.ogg'
-	parry_sound = "bladedmedium"
+	parry_sound = "sword"
 	d_intent = INTENT_PARRY
 	speak_emote = list("growls")
 	limb_destroyer = 1
@@ -152,7 +152,7 @@
 	for(var/H in haunts)
 		var/mob/living/simple_animal/hostile/rogue/haunt/D = H
 		D.death()
-	var/spawned = pick(/obj/item/reagent_containers/powder)
+	var/spawned = pick(/obj/item/reagent_containers/powder/spice)
 	new spawned(get_turf(src))
 	. = ..()
 

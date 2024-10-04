@@ -67,6 +67,12 @@
 	icon_state = "mazekey"
 	lockid = "manor"
 
+/obj/item/roguekey/butler // intended for chests, crates, cellar doors, NOT kitchen access
+	name = "servants key"
+	desc = "The key to the pantrys and cellars of the manor."
+	icon_state = "mazekey"
+	lockid = "butler"
+
 /obj/item/roguekey/bandit // use the old key name for various old keys for dungeons etc, less dumb than bandit keys having a label on it saying bandit key
 	name = "old key"
 	icon_state = "mazekey"
@@ -232,7 +238,7 @@
 
 /obj/item/roguekey/mason
 	name = "mason's key"
-	desc = "This bronze key should open the Mason's Guild."
+	desc = "This bronze key should open the mason's doors within the Maker's Guild."
 	icon_state = "brownkey"
 	lockid = "mason"
 
@@ -254,8 +260,8 @@
 	icon_state = "greenkey"
 	lockid = "mercenary"
 
-/obj/item/roguekey/puritan
-	name = "inquisitor's key"
+/obj/item/roguekey/inquisition
+	name = "inquisition key"
 	desc = "This is an intricate key."
 	icon_state = "mazekey"
 	lockid = "puritan"
@@ -286,7 +292,7 @@
 
 /obj/item/roguekey/doctor
 	name = "doctor's key"
-	desc = "This key is ued by the Physickers."
+	desc = "This key is used by the Physickers."
 	icon_state = "birdkey"
 	lockid = "doctor"
 

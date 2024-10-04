@@ -85,6 +85,16 @@
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/structure/dye_bin
+	name = "dye bin"
+	result = /obj/machinery/gear_painter
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	verbage = "construct"
+	verbage_tp = "carpents"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 0
+
 /datum/crafting_recipe/roguetown/structure/chair
 	name = "wooden chair"
 	result = /obj/item/chair/rogue/crafted
@@ -259,6 +269,9 @@
 	craftdiff = 0
 
 /obj/structure/closet/crate/chest/crafted
+	name = "sturdy chest"
+	icon_state = "chest_neu"
+	base_icon_state = "chest_neu"
 	keylock = FALSE
 	sellprice = 6
 
@@ -508,3 +521,14 @@
 	skillcraft = /datum/skill/craft/carpentry
 	wallcraft = TRUE
 	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/structure/cauldron
+	name = "cauldron"
+	result = /obj/machinery/light/rogue/cauldron
+	reqs = list(/obj/item/ingot/iron = 2,
+				/obj/item/natural/stone = 4,
+				/obj/item/grown/log/tree/small = 1)
+	verbage = "craft"
+	verbage_tp = "crafts"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/masonry

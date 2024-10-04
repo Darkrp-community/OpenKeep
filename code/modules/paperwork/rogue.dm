@@ -189,12 +189,17 @@
 	name = "confession"
 	icon_state = "confession"
 	desc = "A drab piece of parchment stained with the magical ink of the Order lodges. Looking at it fills you with profound guilt."
-	info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS  . THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE HOLY PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,"
+	info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS  . THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,"
 	var/signed = null
 	var/antag = null // The literal name of the antag, like 'Bandit' or 'worshiper of Zizo'
 	var/bad_type = null // The type of the antag, like 'OUTLAW OF THE THIEF-LORD'
 	textper = 108
 	maxlen = 2000
+
+/obj/item/paper/confession/attackby(obj/item/P, mob/living/carbon/human/user, params)
+	if(istype(P, /obj/item/natural/feather))
+		to_chat(user, "<span class='warning'>The paper resists my attempts to write upon it!</span>")
+		return
 
 /obj/item/paper/confession/update_icon_state() 
 	if(mailer)
@@ -247,3 +252,46 @@
 		onclose(user, "reading", src)
 	else
 		return "<span class='warning'>I'm too far away to read it.</span>"
+
+/obj/item/merctoken
+	name = "mercenary token"
+	desc = "A small, palm-fitting bound scroll - a minuature writ of commendation for a mercenary under MGE. Present to a Guild representative for signing."
+	icon_state = "merctoken"
+	icon = 'icons/roguetown/items/misc.dmi'
+	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+	dropshrink = 0.5
+	firefuel = 30 SECONDS
+	sellprice = 2
+	throwforce = 0
+	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
+	var/signee = null
+	var/signeejob = null
+	var/signed = 0
+
+/obj/item/merctoken/attackby(obj/item/P, mob/living/carbon/human/user, params)
+	if(istype(P, /obj/item/pen) || istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
+		if(!user.can_read(src))
+			to_chat(user, "<span class='warning'>Even a reader would find these verba incomprehensible.</span>")
+			return
+		if(signed == 1)
+			to_chat(user, "<span class='warning'>This token has already been signed.</span>")
+			return
+		if(user.can_read(src))
+			if(user.mind.assigned_role == "Mercenary")
+				to_chat(user, "<span class='warning'>Signing my own commendation would only befool me.</span>")
+				return
+			if(user.mind.assigned_role != "Merchant")
+				to_chat(user, "<span class='warning'>This is incomprehensible.</span>")
+				return
+			if(user.mind.assigned_role == "Merchant")
+				signee = user.real_name
+				signeejob = user.mind.assigned_role
+				visible_message("<span class='warning'>[user] writes their name down on the token.</span>")
+				playsound(src, 'sound/items/write.ogg', 100, FALSE)
+				desc = "A small, palm-fitting bound scroll that can be sent by mail to the Guild. Most of the fine print is unintelligible, save for one bold SIGNEE: [signee], [signeejob] of Enigma."
+				signed = 1
+				return
+		else
+			return

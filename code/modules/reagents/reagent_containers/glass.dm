@@ -310,6 +310,7 @@
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	icon_state = "woodbucket"
 	item_state = "woodbucket"
+	max_integrity = 300
 	custom_materials = list(/datum/material/iron=200)
 	w_class = WEIGHT_CLASS_BULKY
 	amount_per_transfer_from_this = 9
@@ -360,6 +361,7 @@
 	item_state = "woodbucket"
 	icon = 'icons/roguetown/items/misc.dmi'
 
+	possible_item_intents = list(/datum/intent/fill, INTENT_POUR, INTENT_SPLASH, INTENT_GENERIC)
 	custom_materials = null
 	force = 5
 	throwforce = 10

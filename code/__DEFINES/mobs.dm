@@ -187,8 +187,8 @@
 #define NUTRITION_LEVEL_START_MIN 500
 #define NUTRITION_LEVEL_START_MAX 900
 
-#define HYDRATION_LEVEL_START_MIN 500
-#define HYDRATION_LEVEL_START_MAX 600
+#define HYDRATION_LEVEL_START_MIN 600
+#define HYDRATION_LEVEL_START_MAX 900
 
 //Disgust levels for humans
 #define DISGUST_LEVEL_MAXEDOUT 150
@@ -338,6 +338,7 @@
 #define HUNGER_FACTOR		0.15	//factor at which mob nutrition decreases
 #define ETHEREAL_CHARGE_FACTOR	0.12 //factor at which ethereal's charge decreases
 #define REAGENTS_METABOLISM 1	//How many units of reagent are consumed per tick, by default.
+#define REAGENTS_SLOW_METABOLISM 0.1 // needed to have poisons have powerful effect at low doses without making it too fast
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4)	// By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
 
 // Eye protection
@@ -402,6 +403,7 @@
 #define SKIN_COLOR_MALACHITE "c69b83"
 #define SKIN_COLOR_OBSIDIAN "3b2e27"
 #define SKIN_COLOR_BRIMSTONE "271f1a"
+#define SKIN_COLOR_CERARGYRITE "74708b"
 
 //DARK ELF SKIN TONES
 #define SKIN_COLOR_MAGGOT "9796a9"
@@ -413,7 +415,7 @@
 #define SKIN_COLOR_ARACHNID_ICHOR "2F2F38"
 
 //ELF SKIN TONES
-#define SKIN_COLOR_SNOW_ELF "ffe0d1"
+#define SKIN_COLOR_SNOW_ELF "fff0e9"
 #define SKIN_COLOR_PLAIN_ELF "fcccb3"
 #define SKIN_COLOR_MOUNTAIN_ELF "edc6b3"
 #define SKIN_COLOR_COASTAL_ELF "e2b9a3"
@@ -461,6 +463,9 @@
 #define SKIN_COLOUR_ZARCONUM "BA6A92"
 #define SKIN_COLOUR_ABYSS "41577C"
 #define SKIN_COLOUR_ASH "A0AFC9"
+#define SKIN_COLOR_CASTILLIAN	"cc5757"
+#define SKIN_COLOR_ASTURIAS	"a23737"
+#define SKIN_COLOR_VAQUERO	"a74a4a"
 
 //SPECIAL SKIN TONES
 #define SKIN_COLOR_ROT "878f79"

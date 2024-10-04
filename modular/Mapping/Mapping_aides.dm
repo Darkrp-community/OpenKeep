@@ -295,81 +295,23 @@
 
 
 /*	..................   Various mapping aides   ................... */
-/* already in main
-/obj/structure/closet/crate/chest/wicker
-	name = "wicker basket"
-	desc = "Fibers interwoven to make a cheap storage bin."
-	base_icon_state = "wicker"
-	icon_state = "wicker"
-	open_sound = 'sound/items/book_open.ogg'
-	open_sound = 'sound/items/book_close.ogg'
-	close_sound = 'sound/items/book_close.ogg'
-
-/obj/structure/closet/crate/chest/neu
-	name = "sturdy oak chest"
-	icon_state = "chest_neu"
-	base_icon_state = "chest_neu"
-
-/obj/structure/closet/crate/chest/neu_iron
-	name = "reinforced chest"
-	icon_state = "chestiron_neu"
-	base_icon_state = "chestiron_neu"
-
-/obj/structure/closet/crate/chest/neu_fancy
-	name = "fancy chest"
-	icon_state = "chestfancy_neu"
-	base_icon_state = "chestfancy_neu"
-
-/obj/structure/closet/crate/chest/old_crate
-	name = "old crate"
-	base_icon_state = "woodchestalt"
-	icon_state = "woodchestalt"
-
-/obj/structure/closet/crate/drawer/random
-	icon_state = "drawer1"
-	base_icon_state = "drawer1"
-	pixel_y = 8
-
-/obj/structure/closet/crate/drawer/random/Initialize()
-	. = ..()
-	if(icon_state == "drawer1")
-		base_icon_state = "drawer[rand(1,4)]"
-		icon_state = "[base_icon_state]"
-	else
-		base_icon_state = "drawer1"
-		pixel_y = 8
-
-/obj/structure/mineral_door/wood/deadbolt/shutter
-	name = "serving hatch"
-	desc = "Can be locked from the inside."
-	icon_state = "serving"
-	base_state = "serving"
-	max_integrity = 250
-	over_state = "servingopen"
-	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
-	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
-	dir = NORTH
-	locked = TRUE
-
-*/
-/obj/structure/closet/crate/chest/crate
-	name = "crate"
-	base_icon_state = "woodchest"
-	icon_state = "woodchest"
-
 
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
-
-/turf/open/floor/rogue/tile/kitchen
-	icon_state = "tavern"
 
 /obj/machinery/light/rogue/wallfire/big_fireplace
 	icon_state = "fireplace1"
 	base_state = "fireplace"
 	icon = 'icons/roguetown/misc/fireplace64.dmi'
 
-
+/obj/machinery/light/rogue/hearth/big_fireplace
+	name = "fireplace"
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+	fueluse = -1
+	pixel_x = -16
+	climb_offset = 4
 
 
 /*	..................   Wizard Shenanigans   ................... */
@@ -586,9 +528,6 @@
 	icon_state = "vinez"
 	pixel_y = 32
 
-/obj/structure/rack/rogue/shelf/notdense
-	density = FALSE
-	pixel_y = 24
 
 /*	..................   Red brick Walls   ................... */
 /turf/closed/wall/mineral/rogue/stonebrick/reddish
@@ -604,23 +543,6 @@
 	color = "#ffddd7"
 
 
-/*	..................   Lights   ................... */
-/obj/machinery/light/rogue/campfire/longlived
-	fueluse = 180 MINUTES
-
-/obj/item/candle/yellow/lit/infinite
-	light_power = 1
-	light_range = 4
-	start_lit = TRUE
-	infinite = TRUE
-	icon_state = "candle1_lit"
-	anchored = TRUE
-
-/obj/item/candle/yellow/lit/infinite/strong
-	light_power = 2
-	light_range = 4
-	pixel_x = 4
-
 /obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
 	name = "candle lamp"
 	icon = 'modular/Mapping/icons/decoration.dmi'
@@ -629,67 +551,6 @@
 	layer = WALL_OBJ_LAYER+0.1
 	light_power = 0.9
 	light_range = 6
-
-/obj/machinery/light/rogue/wallfire/candle/weak
-	light_power = 0.9
-	light_range = 6
-/obj/machinery/light/rogue/wallfire/candle/weak/l
-	pixel_x = -32
-	pixel_y = 0
-/obj/machinery/light/rogue/wallfire/candle/weak/r
-	pixel_x = 32
-	pixel_y = 0
-
-
-
-/*	..................   More chairs   ................... */
-/obj/structure/chair/wood/rogue/chair_noble
-	name = "fine chair"
-	icon_state = "chair_green"
-	icon = 'icons/roguetown/misc/structure.dmi'
-	item_chair = /obj/item/chair/rogue/chair_nobles
-	blade_dulling = DULLING_BASHCHOP
-	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
-	attacked_sound = "woodimpact"
-/obj/item/chair/rogue/chair_nobles
-	icon_state = "chair_green"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble
-
-/obj/structure/chair/wood/rogue/chair_noble/purple
-	icon_state = "chair_purple"
-	item_chair = /obj/item/chair/rogue/chair_nobles/purple
-/obj/item/chair/rogue/chair_nobles/purple
-	icon_state = "chair_purple"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble/purple
-
-/obj/structure/chair/wood/rogue/chair_noble/red
-	icon_state = "chair_red"
-	item_chair = /obj/item/chair/rogue/chair_nobles/red
-/obj/item/chair/rogue/chair_nobles/red
-	icon_state = "chair_purple"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble/red
-
-/*	..................   More tables   ................... */
-/obj/structure/table/wood/reinf_long
-    icon_state = "tablewood_reinf"
-
-/obj/structure/table/wood/plain_alt
-    icon_state = "tablewood_plain"
-
-/obj/structure/table/wood/large_new
-    icon_state = "alt_largetable_mid"
-/obj/structure/table/wood/large/corner_new
-    icon_state = "alt_largetable"
-
-/obj/structure/table/wood/reinforced_alter
-    icon_state = "tablewood_alt"
-
-/obj/structure/table/wood/nice/decorated
-	icon_state = "tablefine_alt"
-
-/obj/structure/table/wood/nice/decorated_alt
-	icon_state = "tablefine_alt2"
-
 
 
 /*	..................   Misc   ................... */
@@ -711,17 +572,6 @@
 	color = "#617163"
 
 
-/obj/structure/chair/bench/couch/redleft
-	icon_state = "redcouch_alt"
-/obj/structure/chair/bench/couch/redright
-	icon_state = "redcouch2_alt"
-
-/obj/structure/roguetent/preopen
-	density = FALSE
-
-
-/obj/structure/fluff/clock/dense
-	density = TRUE
 
 /*	..................   The Drunken Saiga   ................... */
 /obj/structure/fluff/walldeco/innsign/saiga
@@ -768,11 +618,134 @@
 	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
 
 
+/*	..................   Traveltiles   ................... */ // these are the ones on centcomm, where the actual lair is
+/obj/structure/fluff/traveltile/bandit_lair
+	aportalid = "banditin"
+	aportalgoesto = "banditexit"
+
+/obj/structure/fluff/traveltile/vampire_lair
+	aportalid = "vampin"
+	aportalgoesto = "vampexit"
+
+/obj/structure/fluff/traveltile/inhumen_lair
+	aportalid = "inhumenin"
+	aportalgoesto = "inhumenexit"
+
+
+/obj/structure/fluff/traveltile/to_inhumen_tribe
+	name = "to the Deep Bog"
+	aportalid = "inhumenexit"
+	aportalgoesto = "inhumenin"
+
+/* moved to main. leave this be for now, I want to be able to find the additions I make easily for tweaking
+/*	..................   More chairs   ................... */
+/obj/structure/chair/wood/rogue/chair_noble
+	name = "fine chair"
+	icon_state = "chair_green"
+	icon = 'icons/roguetown/misc/structure.dmi'
+	item_chair = /obj/item/chair/rogue/chair_nobles
+	blade_dulling = DULLING_BASHCHOP
+	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
+	attacked_sound = "woodimpact"
+/obj/item/chair/rogue/chair_nobles
+	icon_state = "chair_green"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble
+
+/obj/structure/chair/wood/rogue/chair_noble/purple
+	icon_state = "chair_purple"
+	item_chair = /obj/item/chair/rogue/chair_nobles/purple
+/obj/item/chair/rogue/chair_nobles/purple
+	icon_state = "chair_purple"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble/purple
+
+/obj/structure/chair/wood/rogue/chair_noble/red
+	icon_state = "chair_red"
+	item_chair = /obj/item/chair/rogue/chair_nobles/red
+/obj/item/chair/rogue/chair_nobles/red
+	icon_state = "chair_purple"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble/red
+
+/obj/structure/chair/bench/couch/redleft
+	icon_state = "redcouch_alt"
+/obj/structure/chair/bench/couch/redright
+	icon_state = "redcouch2_alt"
+
+
+/*	..................   Lights   ................... */
+/obj/item/candle/yellow/lit/infinite
+	light_power = 1
+	light_range = 4
+	start_lit = TRUE
+	infinite = TRUE
+	icon_state = "candle1_lit"
+	anchored = TRUE
+
+/obj/item/candle/yellow/lit/infinite/strong
+	light_power = 2
+	light_range = 4
+	pixel_x = 4
+
+/obj/machinery/light/rogue/campfire/longlived
+	fueluse = 180 MINUTES
+
+/obj/machinery/light/rogue/wallfire/candle/weak
+	light_power = 0.9
+	light_range = 6
+/obj/machinery/light/rogue/wallfire/candle/weak/l
+	pixel_x = -32
+	pixel_y = 0
+/obj/machinery/light/rogue/wallfire/candle/weak/r
+	pixel_x = 32
+	pixel_y = 0
+
+/*	..................   More tables   ................... */
+/obj/structure/table/wood/reinf_long
+    icon_state = "tablewood_reinf"
+
+/obj/structure/table/wood/plain_alt
+    icon_state = "tablewood_plain"
+
+/obj/structure/table/wood/large_new
+    icon_state = "alt_largetable_mid"
+/obj/structure/table/wood/large/corner_new
+    icon_state = "alt_largetable"
+
+/obj/structure/table/wood/reinforced_alter
+    icon_state = "tablewood_alt"
+
+/obj/structure/table/wood/nice/decorated
+	icon_state = "tablefine_alt"
+
+/obj/structure/table/wood/nice/decorated_alt
+	icon_state = "tablefine_alt2"
+
+
 /area/rogue/indoors/bandit_lair
 	name = "lair (Bandits)"
 
 /area/rogue/indoors/vampire_manor
 	name = "lair (Vampire Lord)"
+
+/area/rogue/outdoors/bog/inhumen_camp
+	name = "lair (Inhumen)"
+	droning_sound = 'sound/music/area/decap.ogg'
+	first_time_text = "THE DEEP BOG"
+
+// Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
+/obj/structure/bed/rogue/bear
+	desc = "A hide of a slain bear. It looks like someone sleeps on it often."
+	icon = 'icons/turf/floors/bear.dmi'
+	icon_state = "bear"
+	pixel_x = -16
+	pixel_y = -27
+
+/obj/structure/fluff/walldeco/skullspike // for ground really
+	icon = 'modular/Mapping/icons/decoration.dmi'
+	icon_state = "skullspike"
+	plane = -1
+	layer = ABOVE_MOB_LAYER
+	pixel_x = 8
+	pixel_y = 24
 
 /*	..................   Floors   ................... */
 /turf/open/floor/rogue/ruinedwood/darker
@@ -780,7 +753,129 @@
 /turf/open/floor/rogue/ruinedwood/turned/darker
 	color = "#d9c9b0"
 
+/turf/open/floor/rogue/tile/kitchen
+	icon_state = "tavern"
 
-// Temp to avoid conflicts
-/obj/item/cooking/pot
 
+/obj/structure/roguetent/preopen
+	density = FALSE
+
+/obj/structure/fluff/clock/dense
+	density = TRUE
+
+
+/obj/structure/closet/crate/chest/crate
+	name = "crate"
+	base_icon_state = "woodchest"
+	icon_state = "woodchest"
+
+/obj/structure/closet/crate/chest/wicker
+	name = "wicker basket"
+	desc = "Fibers interwoven to make a cheap storage bin."
+	base_icon_state = "wicker"
+	icon_state = "wicker"
+	open_sound = 'sound/items/book_open.ogg'
+	open_sound = 'sound/items/book_close.ogg'
+	close_sound = 'sound/items/book_close.ogg'
+
+/obj/structure/closet/crate/chest/neu
+	name = "sturdy oak chest"
+	icon_state = "chest_neu"
+	base_icon_state = "chest_neu"
+
+/obj/structure/closet/crate/chest/neu_iron
+	name = "reinforced chest"
+	icon_state = "chestiron_neu"
+	base_icon_state = "chestiron_neu"
+
+/obj/structure/closet/crate/chest/neu_fancy
+	name = "fancy chest"
+	icon_state = "chestfancy_neu"
+	base_icon_state = "chestfancy_neu"
+
+/obj/structure/closet/crate/chest/old_crate
+	name = "old crate"
+	base_icon_state = "woodchestalt"
+	icon_state = "woodchestalt"
+
+/obj/structure/closet/crate/drawer/random
+	icon_state = "drawer1"
+	base_icon_state = "drawer1"
+	pixel_y = 8
+
+/obj/structure/closet/crate/drawer/random/Initialize()
+	. = ..()
+	if(icon_state == "drawer1")
+		base_icon_state = "drawer[rand(1,4)]"
+		icon_state = "[base_icon_state]"
+	else
+		base_icon_state = "drawer1"
+		pixel_y = 8
+
+/obj/structure/mineral_door/wood/deadbolt/shutter
+	name = "serving hatch"
+	desc = "Can be locked from the inside."
+	icon_state = "serving"
+	base_state = "serving"
+	max_integrity = 250
+	over_state = "servingopen"
+	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
+	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
+	dir = NORTH
+	locked = TRUE
+
+/obj/structure/closet/crate/chest/wicker
+	name = "wicker basket"
+	desc = "Fibers interwoven to make a cheap storage bin."
+	base_icon_state = "wicker"
+	icon_state = "wicker"
+	open_sound = 'sound/items/book_open.ogg'
+	open_sound = 'sound/items/book_close.ogg'
+	close_sound = 'sound/items/book_close.ogg'
+
+/obj/structure/closet/crate/chest/neu
+	name = "sturdy oak chest"
+	icon_state = "chest_neu"
+	base_icon_state = "chest_neu"
+
+/obj/structure/closet/crate/chest/neu_iron
+	name = "reinforced chest"
+	icon_state = "chestiron_neu"
+	base_icon_state = "chestiron_neu"
+
+/obj/structure/closet/crate/chest/neu_fancy
+	name = "fancy chest"
+	icon_state = "chestfancy_neu"
+	base_icon_state = "chestfancy_neu"
+
+/obj/structure/closet/crate/chest/old_crate
+	name = "old crate"
+	base_icon_state = "woodchestalt"
+	icon_state = "woodchestalt"
+
+/obj/structure/closet/crate/drawer/random
+	icon_state = "drawer1"
+	base_icon_state = "drawer1"
+	pixel_y = 8
+
+/obj/structure/closet/crate/drawer/random/Initialize()
+	. = ..()
+	if(icon_state == "drawer1")
+		base_icon_state = "drawer[rand(1,4)]"
+		icon_state = "[base_icon_state]"
+	else
+		base_icon_state = "drawer1"
+		pixel_y = 8
+
+/obj/structure/mineral_door/wood/deadbolt/shutter
+	name = "serving hatch"
+	desc = "Can be locked from the inside."
+	icon_state = "serving"
+	base_state = "serving"
+	max_integrity = 250
+	over_state = "servingopen"
+	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
+	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
+	dir = NORTH
+	locked = TRUE
+*/

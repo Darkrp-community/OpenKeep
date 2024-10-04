@@ -1,12 +1,13 @@
 /datum/patron/godless
-	name = "Science"
-	domain = "Ontological Reality"
-	desc = "No gods or kings, only man! Gods exist but you give them the finger."
-	worshippers = "Madmen, some dwarves, the occasional mathematician"
+	name = "Godless"
+	domain = "Abandonment of the Gods"
+	desc = "Worship of the gods is foolish! Gods exist but you refuse to worship them due to your own hubris."
+	flaws = "Stubborn, Unrelenting, Misguided"
+	worshippers = "Egomaniacs, Heretics, the Ignorant"
+	sins = "Idolatry, Worship, Blind Faith"
 	associated_faith = /datum/faith/godless
-	preference_accessible = FALSE
 	confess_lines = list(
-		"No Gods, No Masters! The faith is FALSE!",
+		"No Gods, No Masters! There is only ME!",
 		"A man chooses, a slave obeys - I will be free from the Gods!",
-		"The old ways WILL CRUMBLE, the gods are UNTRUE!"
+		"The old ways WILL CRUMBLE, the gods are UNJUST!"
 	)

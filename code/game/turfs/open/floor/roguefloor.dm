@@ -43,6 +43,15 @@
 /turf/open/floor/rogue/ruinedwood/chevron
 	icon_state = "weird2"
 
+/*	..................   Darker version   ................... */
+/turf/open/floor/rogue/ruinedwood/darker // here problem was opposite, too bright wood for bandit lair
+	color = "#d9c9b0"
+/turf/open/floor/rogue/ruinedwood/turned/darker
+	color = "#d9c9b0"
+
+/turf/open/floor/rogue/tile/kitchen // faded kitchen, too dark floors look bad IMO, this much nicer
+	icon_state = "tavern"
+
 /turf/open/floor/rogue/twig
 	icon_state = "twig"
 	footstep = FOOTSTEP_GRASS

@@ -461,7 +461,7 @@
 	var/togg = FALSE
 
 /obj/structure/bars/grille/Initialize()
-	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/FTMET_A1.ogg','sound/foley/footsteps/FTMET_A2.ogg','sound/foley/footsteps/FTMET_A3.ogg','sound/foley/footsteps/FTMET_A4.ogg'), 100)
+	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/FTMET_A1.ogg','sound/foley/footsteps/FTMET_A2.ogg','sound/foley/footsteps/FTMET_A3.ogg','sound/foley/footsteps/FTMET_A4.ogg'), 40)
 	dir = pick(GLOB.cardinals)
 	return ..()
 
@@ -581,6 +581,10 @@
 	if(get_dir(O.loc, target) == dir)
 		return 0
 	return 1
+
+// Version thats dense. Should honestly be standard?
+/obj/structure/fluff/clock/dense
+	density = TRUE
 
 /obj/structure/fluff/wallclock
 	name = "clock"
@@ -808,6 +812,10 @@
 /obj/structure/fluff/statue/astrata
 	name = "statue of Astrata"
 	desc = "Astrata, the Sun Queen, reigns over light, order, and conquest. She is worshipped and feared in equal measure."
+	max_integrity = 100 // You wanted descructible statues, you'll get them.
+	deconstructible = FALSE
+	density = TRUE
+	blade_dulling = DULLING_BASH
 	icon_state = "astrata"
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 
@@ -877,7 +885,7 @@
 		if(5)
 			message2send = "You see a star!"
 	to_chat(H, "<span class='notice'>[message2send]</span>")
-	
+
 	if(random_message == 2)
 		if(do_after(H, 25, target = src))
 			var/obj/item/bodypart/affecting = H.get_bodypart("head")
@@ -943,9 +951,14 @@
 						user.visible_message("<span class='info'>[user] trains on [src]!</span>")
 						var/boon = user.mind.get_learning_boon(W.associated_skill)
 						var/amt2raise = L.STAINT/2
-						if(user.mind.get_skill_level(W.associated_skill) >= 2)
-							to_chat(user, "<span class='warning'>I've learned all I can from doing this, it's time for the real thing.</span>")
-							amt2raise = 0
+						if(user.mind?.get_skill_level(W.associated_skill) >= 2)
+							if(!HAS_TRAIT(user, TRAIT_INTRAINING))
+								to_chat(user, "<span class='warning'>I've learned all I can from doing this, it's time for the real thing.</span>")
+								amt2raise = 0
+							else
+								if(user.mind?.get_skill_level(W.associated_skill) >= 3)
+									to_chat(user, "<span class='warning'>I've learned all I can from doing this, it's time for the real thing.</span>")
+									amt2raise = 0
 						if(amt2raise > 0)
 							user.mind.adjust_experience(W.associated_skill, amt2raise * boon, FALSE)
 						playsound(loc,pick('sound/combat/hits/onwood/education1.ogg','sound/combat/hits/onwood/education2.ogg','sound/combat/hits/onwood/education3.ogg'), rand(50,100), FALSE)
@@ -1024,11 +1037,11 @@
 						if(4)
 							I = new /obj/item/clothing/head/roguetown/helmet/horned(user.loc)
 						if(6)
-							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2) 
+							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2)
 								I = new /obj/item/rogueweapon/spear/billhook(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2) 
+							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2)
 								I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2) 
+							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2)
 								I = new /obj/item/rogueweapon/sword/long(user.loc)
 							else
 								I = new /obj/item/rogueweapon/mace/steel(user.loc)
@@ -1101,12 +1114,12 @@
 /obj/structure/fluff/psycross/attackby(obj/item/W, mob/user, params)
 	if(user.mind)
 		if(user.mind.assigned_role == "Priest")
-			if(istype(W, /obj/item/reagent_containers/food/snacks/grown/apple))
+			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/apple))
 				if(!istype(get_area(user), /area/rogue/indoors/town/church/chapel))
 					to_chat(user, "<span class='warning'>I need to do this in the chapel.</span>")
 					return FALSE
 				var/marriage
-				var/obj/item/reagent_containers/food/snacks/grown/apple/A = W
+				var/obj/item/reagent_containers/food/snacks/produce/apple/A = W
 
 				//The MARRIAGE TEST BEGINS
 				if(A.bitten_names.len)
@@ -1137,7 +1150,7 @@
 								if(!C.client)
 									continue
 								//Gotta get a divorce first
-								if(C.marriedto)
+								if(C.IsWedded())
 									continue
 								if(C.real_name == X)
 									//I know this is very sloppy but its alot less code.
@@ -1184,8 +1197,7 @@
 						bridefirst = thebride.real_name
 						thegroom.change_name(thegroom.real_name + surname2use)
 						thebride.change_name(thebride.real_name + surname2use)
-						thegroom.marriedto = thebride.real_name
-						thebride.marriedto = thegroom.real_name
+						thegroom.MarryTo(thebride)
 						thegroom.adjust_triumphs(1)
 						thebride.adjust_triumphs(1)
 						//Bite the apple first if you want to be the groom.
@@ -1197,32 +1209,6 @@
 					A.burn()
 					return
 	return ..()
-
-/obj/structure/fluff/psycross/proc/check_prayer(mob/living/L,message)
-	if(!L || !message)
-		return FALSE
-	var/message2recognize = sanitize_hear_message(message)
-	var/mob/living/carbon/C = L
-	if(findtext(message2recognize, "zizo"))
-		C.add_stress(/datum/stressevent/psycurse)
-		L.adjust_fire_stacks(100)
-		L.IgniteMob()
-		return FALSE
-	if(length(message2recognize) > 15)
-		if(L.has_flaw(/datum/charflaw/addiction/godfearing))
-			L.sate_addiction()
-		if(L.mob_timers[MT_PSYPRAY])
-			if(world.time < L.mob_timers[MT_PSYPRAY] + 1 MINUTES)
-				L.mob_timers[MT_PSYPRAY] = world.time
-				return FALSE
-		else
-			L.mob_timers[MT_PSYPRAY] = world.time
-		if(!prob(chance2hear))
-			return FALSE
-		else
-			L.playsound_local(L, 'sound/misc/notice (2).ogg', 100, FALSE)
-			C.add_stress(/datum/stressevent/psyprayer)
-			return TRUE
 
 /obj/structure/fluff/psycross/copper/Destroy()
 	addomen("psycross")
@@ -1324,6 +1310,7 @@
 	name = "clockwork golem scrap"
 	desc = ""
 	icon_state = "clockgolem_dead"
+
 
 /obj/structure/fluff/statue/shisha
 	name = "shisha pipe"

@@ -231,6 +231,8 @@
 
 	to_chat(world, "Round ID: [GLOB.rogue_round_id]")
 
+	SSvote.initiate_vote("map", "Psydon")
+
 	sleep(5 SECONDS)
 
 	gamemode_report()

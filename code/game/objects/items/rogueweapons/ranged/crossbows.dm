@@ -19,7 +19,6 @@
 	load_sound = 'sound/foley/nockarrow.ogg'
 	fire_sound = 'sound/combat/Ranged/crossbow-small-shot-02.ogg'
 	associated_skill = /datum/skill/combat/crossbows
-	var/damfactor = 1
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/getonmobprop(tag)
 	. = ..()
@@ -46,6 +45,53 @@
 			return newtime
 		else
 			return 0.1
+	return chargetime
+
+/datum/intent/shoot/musket
+	chargedrain = 0 //no drain to aim a gun
+	charging_slowdown = 4
+	warnoffset = 20
+	chargetime = 10
+
+/datum/intent/shoot/musket/arc
+	name = "arc"
+	icon_state = "inarc"
+	chargedrain = 1
+	charging_slowdown = 3
+	warnoffset = 20
+
+/datum/intent/shoot/musket/arc/arc_check()
+	return TRUE
+
+/datum/intent/shoot/musket/get_chargetime()
+	if(mastermob && chargetime)
+		var/newtime = chargetime
+		//skill block
+		newtime = newtime + 18
+		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/firearms) * 3.5)
+		//per block
+		newtime = newtime + 20
+		// Perception aint gonna help you with loading a musket, bud
+		//newtime = newtime - (mastermob.STAPER)
+		if(newtime > 0)
+			return newtime
+		else
+			return 0.1
+	return chargetime
+
+/datum/intent/shoot/musket/pistol/get_chargetime()
+	if(mastermob && chargetime)
+		var/newtime = chargetime
+		//skill block
+		newtime = newtime + 18
+		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/firearms) * 3)
+		//per block
+		newtime = newtime + 20
+		newtime = newtime - (mastermob.STAPER)
+		if(newtime > 0)
+			return newtime
+		else
+			return 1
 	return chargetime
 
 /datum/intent/arc/crossbow
@@ -105,8 +151,16 @@
 		spread = 0
 	for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
 		var/obj/projectile/BB = CB.BB
-		if(user.STAPER > 10)
-			BB.damage = BB.damage * (user.STAPER / 10) * damfactor
+		if(user.client)
+			if(user.client.chargedprog >= 100)
+				BB.accuracy += 15 //better accuracy for fully aiming
+		if(user.STAPER > 8)
+			BB.accuracy += (user.STAPER - 8) * 4 //each point of perception above 8 increases standard accuracy by 4.
+			BB.bonus_accuracy += (user.STAPER - 8) //Also, increases bonus accuracy by 1, which cannot fall off due to distance.
+			if(user.STAPER > 10)
+				BB.damage = BB.damage * (user.STAPER / 10)
+		BB.damage *= damfactor // Apply damfactor multiplier regardless of PER.
+		BB.bonus_accuracy += (user.mind.get_skill_level(/datum/skill/combat/crossbows) * 3) //+3 accuracy per level in crossbows
 	cocked = FALSE
 	..()
 

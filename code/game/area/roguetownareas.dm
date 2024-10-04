@@ -704,3 +704,17 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/catacombs.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
+
+
+///// ANTAGONIST AREAS //////  - used on centcomm so you can teleport there easily. Each antag area just gets one unique type, if its outdoor use generic indoors, vice versa, to avoid clutter in area list
+
+/area/rogue/indoors/bandit_lair
+	name = "lair (Bandits)"
+
+/area/rogue/indoors/vampire_manor
+	name = "lair (Vampire Lord)"
+
+/area/rogue/outdoors/bog/inhumen_camp
+	name = "lair (Inhumen)"
+	droning_sound = 'sound/music/area/decap.ogg'
+	first_time_text = "THE DEEP BOG"

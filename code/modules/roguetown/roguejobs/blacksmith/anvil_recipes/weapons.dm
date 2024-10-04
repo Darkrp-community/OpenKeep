@@ -71,19 +71,19 @@
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
-	created_item = /obj/item/rogueweapon/knife/copperdagger
+	created_item = /obj/item/rogueweapon/copperdagger
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 0
 
-/datum/anvil_recipe/weapons/cmace
-	name = "Mace (2)"
-	recipe_name = "a Mace"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/copper
-	additional_items = list(/obj/item/ingot/copper)
-	created_item = (/obj/item/rogueweapon/mace/coppermace)
-	craftdiff = 0
+//datum/anvil_recipe/weapons/cmace
+//	name = "Mace (2)"
+//	recipe_name = "a Mace"
+//	appro_skill = /datum/skill/craft/weaponsmithing
+//	req_bar = /obj/item/ingot/copper
+//	additional_items = list(/obj/item/ingot/copper)
+//	created_item = (/obj/item/rogueweapon/mace/coppermace)
+//	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cmesser
 	name = "Messer (+1s)"
@@ -95,16 +95,24 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cspears
-	name = "Spear x2 (+4s)"
+	name = "Spear x2 (+w)"
 	recipe_name = "two Spears"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
-	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
+	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/copperspear
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 0
 
+/datum/anvil_recipe/weapons/cfalx
+	name = "Copper Falx (2)"
+	recipe_name = "a great copper sword"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/copper
+	additional_items = list(/obj/item/ingot/copper)
+	created_item = /obj/item/rogueweapon/sword/long/rider/copper
+	craftdiff = 0
 
 // IRON GEAR - Middle Tier, what most disgusting Men at Arms have
 
@@ -114,7 +122,7 @@
 	appro_skill = /datum/skill/craft/engineering
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/projectile/bullet/reusable/arrow
+	created_item = /obj/item/ammo_casing/caseless/rogue/arrow
 	createmultiple = TRUE
 	createditem_num = 4
 	i_type = "Ammo"
@@ -149,6 +157,17 @@
 	i_type = "Ammo"
 	craftdiff = 1
 
+/datum/anvil_recipe/weapons/bullets
+	name = "Lead Bullets x5 (+s)"
+	recipe_name = "five Lead Bullets"
+	appro_skill = /datum/skill/craft/engineering
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/ammo_casing/caseless/rogue/bullet
+	createmultiple = TRUE
+	createditem_num = 4
+	i_type = "Ammo"
+	craftdiff = 0
+
 /datum/anvil_recipe/weapons/dagger_iron
 	name = "Dagger x2"
 	recipe_name = "a couple Daggers"
@@ -160,9 +179,10 @@
 	craftdiff = 0 // To train with
 
 /datum/anvil_recipe/weapons/flail_iron
-	name = "Flail"
+	name = "Flail (+c) (+s)"
 	recipe_name = "a Flail"
 	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/flail
 
 /datum/anvil_recipe/weapons/lucerne
@@ -219,6 +239,15 @@
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/shield/tower
+	craftdiff = 2
+
+/datum/anvil_recipe/weapons/warclub
+	name = "Warclub (+w)"
+	recipe_name = "a Warclub"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/small)
+	created_item = /obj/item/rogueweapon/mace/goden
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/zweihander
@@ -331,9 +360,10 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/flail_steel
-	name = "Flail"
+	name = "Flail (+c) (+s)"
 	recipe_name = "a Flail"
 	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/flail/sflail
 	craftdiff = 2
 
@@ -355,7 +385,7 @@
 	created_item = /obj/item/rogueweapon/greatsword
 	craftdiff = 4
 
-/datum/anvil_recipe/weapons/halbert
+/datum/anvil_recipe/weapons/halberd
 	name = "Halberd (2) (+w)"
 	recipe_name = "a Halberd"
 	appro_skill = /datum/skill/craft/weaponsmithing
@@ -399,6 +429,24 @@
 	created_item = /obj/item/rogueweapon/mace/steel
 	craftdiff = 2
 
+/datum/anvil_recipe/weapons/peasant_flail
+	name = "Peasant Flail (+c) (+w)"
+	recipe_name = "a two-handed flail"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/small)
+	created_item = /obj/item/rogueweapon/flail/peasant
+	craftdiff = 3
+
+/datum/anvil_recipe/weapons/paxe
+	name = "Pick-Axe (2) (+s)"
+	recipe_name = "a Pick that is also an Axe"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel, /obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/pick/paxe
+	craftdiff = 3
+
 /datum/anvil_recipe/weapons/rapier_steel
 	name = "Rapier"
 	recipe_name = "a Rapier"
@@ -429,14 +477,5 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/sword
-	craftdiff = 2
-
-/datum/anvil_recipe/weapons/warclub
-	name = "Warclub (+w)"
-	recipe_name = "a Warclub"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/mace/goden
 	craftdiff = 2
 

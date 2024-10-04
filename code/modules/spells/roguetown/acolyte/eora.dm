@@ -7,7 +7,7 @@
 	range = 7
 	overlay_state = "love"
 	sound = list('sound/magic/magnet.ogg')
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross/eora)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/eora)
 	releasedrain = 40
 	chargetime = 60
 	warnie = "spellwarning"
@@ -35,7 +35,7 @@
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	chargedloop = null
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross/eora)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/eora)
 	sound = 'sound/magic/whiteflame.ogg'
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
@@ -57,7 +57,7 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/C = target
 		C.visible_message("<span class='info'>A purple haze shrouds [target]!</span>", "<span class='notice'>I feel much calmer.</span>")
-		C.reagents.add_reagent(/datum/reagent/berrypoison, 1)
+		C.reagents.add_reagent(/datum/reagent/berrypoison, 3)
 		C.reagents.add_reagent(/datum/reagent/moondust, 3)
 		C.reagents.add_reagent(/datum/reagent/consumable/ethanol/beer/wine, 3)
 		return

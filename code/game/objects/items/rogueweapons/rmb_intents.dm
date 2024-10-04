@@ -26,13 +26,9 @@
 				I = L.get_active_held_item()
 				if(I?.associated_skill)
 					theirskill = L.mind.get_skill_level(I.associated_skill)
-		if(ourskill > theirskill)
-			if(istype(user.rmb_intent, /datum/rmb_intent/feint))
-				perc += (ourskill - theirskill)*15
-			else
-				perc += (ourskill - theirskill)*10
-	if(user.STAINT < L.STAINT)
-		perc -= 15
+		perc += (ourskill - theirskill)*15 	//skill is of the essence
+		perc += (user.STAINT - L.STAINT)*10	//but it's also mostly a mindgame
+		perc += (user.STASPD - L.STASPD)*5 	//yet a speedy feint is hard to counter
 	if(L.d_intent == INTENT_DODGE)
 		perc = 0
 	if(!L.cmode)
@@ -42,13 +38,20 @@
 	if(user.has_status_effect(/datum/status_effect/debuff/feintcd))
 		perc -= rand(10,30)
 	user.apply_status_effect(/datum/status_effect/debuff/feintcd)
-	perc = CLAMP(perc, 0, 99)
-	if(prob(perc))
-		L.apply_status_effect(/datum/status_effect/debuff/feinted)
-		L.changeNext_move(4)
-		L.Immobilize(5)
-		to_chat(user, "<span class='notice'>[L] fell for my feint attack!</span>")
-		to_chat(L, "<span class='danger'>I fall for [user]'s feint attack!</span>")
+	perc = CLAMP(perc, 0, 90) //no zero risk superfeinting
+	if(prob(perc)) //feint intent increases the immobilize duration significantly
+		if(istype(user.rmb_intent, /datum/rmb_intent/feint))
+			L.apply_status_effect(/datum/status_effect/debuff/feinted)
+			L.changeNext_move(10)
+			L.Immobilize(15)
+			to_chat(user, span_notice("[L] fell for my feint attack!"))
+			to_chat(L, span_danger("I fall for [user]'s feint attack!"))
+		else
+			L.apply_status_effect(/datum/status_effect/debuff/feinted)
+			L.changeNext_move(4)
+			L.Immobilize(5)
+			to_chat(user, span_notice("[L] fell for my feint attack!"))
+			to_chat(L, span_danger("I fall for [user]'s feint attack!"))
 	else
 		if(user.client?.prefs.showrolls)
 			to_chat(user, "<span class='warning'>[L] did not fall for my feint... [perc]%</span>")
@@ -80,11 +83,22 @@
 
 /datum/status_effect/debuff/feinted
 	id = "nofeint"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/feinted
 	duration = 50
+
+/atom/movable/screen/alert/status_effect/debuff/feinted
+	name = "Feinted"
+	desc = "<span class='boldwarning'>I have been tricked, and cannot defend myself!</span>\n"
+	icon_state = "muscles"
 
 /datum/status_effect/debuff/feintcd
 	id = "feintcd"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/feintcd
 	duration = 100
+
+/atom/movable/screen/alert/status_effect/debuff/feintcd
+	name = "Feint Cooldown"
+	desc = "<span class='warning'>I have feinted recently, my opponents will be wary.</span>\n"
 
 /datum/status_effect/debuff/riposted
 	id = "riposted"

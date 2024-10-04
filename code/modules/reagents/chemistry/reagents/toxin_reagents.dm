@@ -473,7 +473,7 @@
 	..()
 	return TRUE
 
-/datum/reagent/toxin/cyanide
+/datum/reagent/toxin/cyanide// not balanced for RT
 	name = "Cyanide"
 	description = "An infamous poison known for its use in assassination. Causes small amounts of toxin damage with a small chance of oxygen damage or a stun."
 	reagent_state = LIQUID
@@ -482,7 +482,6 @@
 	toxpwr = 0
 
 /datum/reagent/toxin/cyanide/on_mob_life(mob/living/carbon/M)
-	testing("toxin OML")
 	M.add_nausea(20)
 	M.adjustToxLoss(3, 0)
 	return ..()
@@ -496,7 +495,9 @@
 	toxpwr = 0
 
 /datum/reagent/toxin/killersice/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(10, 0)
+	testing("Someone was poisoned")
+	if(volume > 0.95)
+		M.adjustToxLoss(10, 0)
 	return ..()
 
 /datum/reagent/toxin/bad_food

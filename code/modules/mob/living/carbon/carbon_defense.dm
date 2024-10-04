@@ -58,14 +58,22 @@
 	if(!skipcatch)	//ugly, but easy
 		if(can_catch_item())
 			if(istype(AM, /obj/item))
-				var/obj/item/I = AM
-				if(isturf(I.loc))
-					I.attack_hand(src)
-					if(get_active_held_item() == I) //if our attack_hand() picks up the item...
-						visible_message("<span class='warning'>[src] catches [I]!</span>", \
-										"<span class='danger'>I catch [I] in mid-air!</span>")
-						throw_mode_off()
-						return 1
+				if(!istype(AM, /obj/item/net))
+					var/obj/item/I = AM
+					if(isturf(I.loc))
+						I.attack_hand(src)
+						if(get_active_held_item() == I) //if our attack_hand() picks up the item...
+							visible_message("<span class='warning'>[src] catches [I]!</span>", \
+											"<span class='danger'>I catch [I] in mid-air!</span>")
+							throw_mode_off()
+							return 1
+				else
+					var/obj/item/net/N
+					visible_message("<span class='warning'>[src] tries to catch \the [N] but gets snared by it!</span>", \
+									"<span class='danger'>Why did I even try to do this...?</span>") // Hahaha dumbass!!!
+					throw_mode_off()
+					N.ensnare(src)
+					return
 	..()
 
 
@@ -189,7 +197,7 @@
 		return
 	affecting = get_bodypart(check_zone(useder)) //precise attacks, on yourself or someone you are grabbing
 	if(!affecting) //missing limb
-		to_chat(user, "<span class='warning'>Unfortunately, there's nothing there.</span>")
+		to_chat(user, span_warning("Unfortunately, there's nothing there."))
 		return FALSE
 	SEND_SIGNAL(I, COMSIG_ITEM_ATTACK_ZONE, src, user, affecting)
 	I.funny_attack_effects(src, user)
@@ -225,11 +233,10 @@
 		send_item_attack_message(I, user, affecting.name)
 
 	if(statforce)
-		var/probability = I.get_dismemberment_chance(affecting)
-		if(prob(probability))
-			if(affecting.dismember(I.damtype, user.used_intent?.blade_class, user, user.zone_selected))
-				I.add_mob_blood(src)
-				playsound(get_turf(src), I.get_dismember_sound(), 80, TRUE)
+		var/probability = I.get_dismemberment_chance(affecting, user)
+		if(prob(probability) && affecting.dismember(I.damtype, user.used_intent?.blade_class, user, user.zone_selected))
+			I.add_mob_blood(src)
+			playsound(get_turf(src), I.get_dismember_sound(), 80, TRUE)
 		return TRUE //successful attack
 
 /mob/living/carbon/attack_drone(mob/living/simple_animal/drone/user)

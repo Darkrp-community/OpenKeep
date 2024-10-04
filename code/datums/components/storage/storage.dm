@@ -293,14 +293,14 @@
 	progress.update(progress.goal - things.len)
 	return FALSE
 
-/datum/component/storage/proc/quick_empty(mob/M)
+/datum/component/storage/proc/quick_empty(mob/user) // Evidently this handles emptying sacks in Roguetown...
 	var/atom/A = parent
-	if(!M.canUseStorage() || !A.Adjacent(M) || M.incapacitated())
+	if(!user.canUseStorage() || !A.Adjacent(user) || user.incapacitated()) // Some sanity checks
 		return
 	if(locked)
 //		to_chat(M, "<span class='warning'>[parent] seems to be locked!</span>")
 		return FALSE
-	A.add_fingerprint(M)
+	A.add_fingerprint(user)
 //	to_chat(M, "<span class='notice'>I start dumping out [parent].</span>")
 //	var/turf/T = get_turf(A)
 	var/list/things = contents()
@@ -309,12 +309,21 @@
 //	while (do_after(M, dump_time, TRUE, T, FALSE, CALLBACK(src, PROC_REF(mass_remove_from_storage), T, things, progress)))
 //		stoplag(1)
 //	qdel(progress)
-	var/turf/target = get_turf(A)
-	for(var/obj/item/I in things)
+	var/turf/T = get_step(user, user.dir)
+	for(var/obj/structure/S in T) // Is there a structure in the way that isn't a chest, table, rack, or handcart? Can't dump the sack out on that
+		if(S.density && !istype(S, /obj/structure/table) && !istype(S, /obj/structure/closet/crate) && !istype(S, /obj/structure/rack) && !istype(S, /obj/structure/bars) && !istype(S, /obj/structure/handcart))
+			to_chat(user, "<span class='warning'>Something in the way.</span>")
+			return
+
+	if(istype(T, /turf/closed)) // Is there an impassible turf in the way? Don't dump the sack out on that
+		to_chat(user, "<span class='warning'>Something in the way.</span>")
+		return		
+
+	for(var/obj/item/I in things) // If the above aren't true, dump the sack onto the tile in front of us
 		things -= I
 //		if(I.loc != real_location)
 //			continue
-		remove_from_storage(I, target)
+		remove_from_storage(I, T)
 		I.pixel_x = initial(I.pixel_x) += rand(-10,10)
 		I.pixel_y = initial(I.pixel_y) += rand(-10,10)
 //		if(trigger_on_found && I.on_found())

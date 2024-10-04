@@ -27,12 +27,13 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.change_stat("strength", 2) // Same stat spread as lancer/swordmaster, but no -1 speed at the cost of 1 point of endurance. A very powerful dwarf indeed
 		H.change_stat("constitution", 2)
 		H.change_stat("endurance", 1)
 
 	pants = /obj/item/clothing/under/roguetown/tights/black
-	backr = /obj/item/rogueweapon/mace/warhammer
+	backr = /obj/item/rogueweapon/mace/goden/steel/warhammer
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	shoes = /obj/item/clothing/shoes/roguetown/boots/rare/dwarfplate
 	gloves = /obj/item/clothing/gloves/roguetown/rare/dwarfplate
