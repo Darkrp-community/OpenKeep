@@ -7,6 +7,7 @@
 	recipe_name = "a Statue"
 	req_bar = /obj/item/ingot/silver
 	created_item = /obj/item/roguestatue/silver
+	craftdiff = 3
 
 /datum/anvil_recipe/valuables/ringg
 	name = "Gold Rings x3"
@@ -15,18 +16,21 @@
 	created_item = /obj/item/clothing/ring/gold
 	createmultiple = TRUE
 	createditem_num = 2
+	craftdiff = 5
 
 /datum/anvil_recipe/valuables/gold
 	name = "Golden Statue"
 	recipe_name = "a Statue"
 	req_bar = /obj/item/ingot/gold
 	created_item = /obj/item/roguestatue/gold
+	craftdiff = 3
 
 /datum/anvil_recipe/valuables/iron
 	name = "Iron statue"
 	recipe_name = "a Statue"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/roguestatue/iron
+	craftdiff = 1
 
 /datum/anvil_recipe/valuables/rings
 	name = "Silver Rings x3"
@@ -35,6 +39,7 @@
 	created_item = /obj/item/clothing/ring/silver
 	createmultiple = TRUE
 	createditem_num = 2
+	craftdiff = 3
 
 /datum/anvil_recipe/valuables/steel
 	name = "Steel statue"
