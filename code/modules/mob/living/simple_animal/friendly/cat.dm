@@ -83,6 +83,27 @@
 	name = "inn cat"
 	desc = "This old, fat cat keeps the inn free of rats... allegedly. It seems like he mostly lazes about in the sun and asks for treats."
 
+/mob/living/simple_animal/pet/cat/cabbit
+	name = "cabbit"
+	desc = "A cabbit, a particular favorite of Enigma's fauna, as pets and meals." // Do NOT eat the cabbit!!!!!!
+	icon = 'icons/roguetown/mob/cabbit.dmi'
+	icon_state = "cabbit"
+	icon_living = "cabbit"
+	icon_dead = "cabbit_dead"
+	speak = list("Meow!", "Chk!", "Purr!", "Chrr!")
+	speak_emote = list("chirrups", "meows")
+	emote_hear = list("meows.", "clucks.")
+	emote_see = list("brings their ears alert.", "scratches their ear with a hindleg.")
+	childtype = list() // TODO: puppy cabbits =:3
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+							/obj/item/alch/sinew = 1,
+							/obj/item/alch/bone = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+							/obj/item/alch/sinew = 2,
+							/obj/item/alch/bone = 1,
+							/obj/item/natural/fur/cabbit = 1)
+
 /mob/living/simple_animal/pet/cat/black
 	name = "black cat"
 	desc = "Possessed of lamplike eyes and a meow that sounds like the rattle of bones. Black cats are sacred to Necra, said to bring wandering spirits to the Carriageman."
