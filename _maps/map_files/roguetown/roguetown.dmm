@@ -2540,6 +2540,10 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
+"djD" = (
+/obj/structure/mineral_door/bars,
+/turf/open/water/sewer,
+/area/rogue/under/town/sewer)
 "dlu" = (
 /obj/structure/chair/wood/rogue{
 	dir = 4
@@ -8518,6 +8522,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/twig,
 /area/rogue/under/town/basement)
+"kBO" = (
+/obj/structure/bars/cemetery,
+/turf/open/floor/rogue/blocks/green,
+/area/rogue/under/town/sewer)
 "kBQ" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 8
@@ -39331,9 +39339,9 @@ kOb
 wed
 wed
 cbv
-xug
-czv
-xug
+kBO
+djD
+kBO
 wBg
 vzQ
 vzQ
@@ -41844,9 +41852,9 @@ dNv
 dNv
 dNv
 mvo
-xug
-czv
-xug
+kBO
+djD
+kBO
 mvo
 vzQ
 vzQ
