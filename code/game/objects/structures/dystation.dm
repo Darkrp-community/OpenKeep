@@ -4,7 +4,9 @@
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "dye_bin_full"
 	density = TRUE
-	anchored = TRUE
+	anchored = FALSE
+	max_integrity = 80
+	attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
 	var/atom/movable/inserted
 	var/activecolor = "#FFFFFF"
 	/// Allow holder'd mobs
@@ -68,6 +70,18 @@
 	inserted.forceMove(drop_location())
 	return ..()
 
+/obj/machinery/gear_painter/Destroy()
+	icon_state = "washbin_destroy"
+	density = FALSE
+	GLOB.machines.Remove(src)
+	if(!speed_process)
+		STOP_PROCESSING(SSmachines, src)
+	else
+		STOP_PROCESSING(SSfastprocess, src)
+	dropContents()
+	playsound(get_turf(src), 'sound/combat/hits/onwood/destroywalldoor.ogg', 40, TRUE, -1)
+	return ..()
+
 /obj/machinery/gear_painter/attackby(obj/item/I, mob/living/user)
 	if(allow_mobs && istype(I, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/H = I
@@ -91,8 +105,12 @@
 	return FALSE
 
 /obj/machinery/gear_painter/ui_interact(mob/user)
-	if(!is_operational())
+	if( user.used_intent.type == /datum/intent/grab )
 		return
+	if( user.used_intent.type == /datum/intent/unarmed/shove )
+		return ..()
+	if(!is_operational())
+		return ..()
 	user.set_machine(src)
 	var/list/dat = list("<TITLE>Dye Station Control Panel</TITLE><BR>")
 	if(!inserted)

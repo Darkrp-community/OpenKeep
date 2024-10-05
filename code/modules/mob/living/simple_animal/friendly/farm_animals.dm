@@ -34,7 +34,7 @@
 	stop_automated_movement_when_pulled = 1
 	blood_volume = BLOOD_VOLUME_NORMAL
 	food_type = list(/obj/item/reagent_containers/food/snacks/grown)
-	var/obj/item/udder/udder = null
+//	var/obj/item/udder/udder = null
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
@@ -75,6 +75,7 @@
 /mob/living/simple_animal/hostile/retaliate/goat/attackby(obj/item/O, mob/user, params)
 	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass))
 		udder.milkAnimal(O, user)
+		changeNext_move(CLICK_CD_MELEE)
 		return 1
 	else
 		return ..()
@@ -118,7 +119,7 @@
 	attack_sound = 'sound/blank.ogg'
 	health = 100
 	maxHealth = 100
-	var/obj/item/udder/udder = null
+//	var/obj/item/udder/udder = null
 	gold_core_spawnable = FRIENDLY_SPAWN
 	blood_volume = BLOOD_VOLUME_NORMAL
 	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat, /obj/item/reagent_containers/food/snacks/produce/oat)
@@ -308,7 +309,7 @@
 			qdel(O)
 			eggsleft += rand(1, 4)
 		else
-			to_chat(user, "<span class='warning'>[name] doesn't seem hungry!</span>")
+			to_chat(user, span_warning("[name] doesn't seem hungry!"))
 	else
 		..()
 
@@ -333,7 +334,7 @@
 		if(isturf(loc))
 			amount_grown += rand(1,2)
 			if(amount_grown >= 100)
-				visible_message("<span class='notice'>[src] hatches with a quiet cracking sound.</span>")
+				visible_message(span_notice("[src] hatches with a quiet cracking sound."))
 				new /mob/living/simple_animal/chick(get_turf(src))
 				STOP_PROCESSING(SSobj, src)
 				qdel(src)
@@ -353,24 +354,19 @@
 
 /obj/item/udder/proc/milkAnimal(obj/O, mob/user)
 	var/obj/item/reagent_containers/glass/G = O
-	if(in_use)
-		return
 	if(G.reagents.total_volume >= G.volume)
-		to_chat(user, "<span class='warning'>[O] is full.</span>")
+		to_chat(user, span_warning("[O] is full."))
 		return
 	if(!reagents.has_reagent(/datum/reagent/consumable/milk, 5))
-		to_chat(user, "<span class='warning'>The udder is dry. Wait a bit longer...</span>")
+		to_chat(user, span_warning("The udder is dry. Wait a bit longer..."))
+		sleep(10)
 		return
-	beingmilked()
-	playsound(O, pick('modular/Creechers/sound/milking1.ogg', 'modular/Creechers/sound/milking2.ogg'), 100, TRUE, -1)
-	if(do_after(user, 20, target = src))
+	if(do_after(user, 1 SECONDS, target = src))
 		reagents.trans_to(O, rand(5,10))
-		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>", "<span class='notice'>I milk [src] using \the [O].</span>")
+		visible_message(span_notice("[user] milks [src] using \the [O]"))
+		playsound(O, pick('modular/Creechers/sound/milking1.ogg', 'modular/Creechers/sound/milking2.ogg'), 100, TRUE, -1)
+		sleep(10)
 
-/obj/item/udder/proc/beingmilked()
-	in_use = TRUE
-	sleep(20)
-	in_use = FALSE
 
 //grenchensnacker
 
