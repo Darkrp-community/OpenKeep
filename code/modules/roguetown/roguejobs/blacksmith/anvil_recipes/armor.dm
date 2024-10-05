@@ -320,6 +320,13 @@
 	created_item = /obj/item/clothing/head/roguetown/helmet/sallet
 	craftdiff = 2
 
+/datum/anvil_recipe/armor/bascinet
+	name = "Bascinet"
+	recipe_name = "a Bascinet"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/bascinet
+	craftdiff = 2
+
 /datum/anvil_recipe/armor/scalemail
 	name = "Scalemail"
 	recipe_name = "a Scalemail"
@@ -365,8 +372,8 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/decoratedbascinet
-	name = "Decorated Bascinet (2) (c)"
+	name = "Decorated Bascinet (c)"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
+	additional_items = list(/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/head/roguetown/helmet/decoratedbascinet
 	craftdiff = 2

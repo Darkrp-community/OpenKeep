@@ -471,6 +471,17 @@
 	body_parts_covered = HEAD|HAIR|EARS
 	max_integrity = 300
 
+/obj/item/clothing/head/roguetown/helmet/bascinet
+	name = "bascinet"
+	icon_state = "bascinet_novisor"
+	desc = "A simple steel bascinet without a visor. Makes up for what it lacks in protection in visibility."
+	flags_inv = HIDEEARS
+	smeltresult = /obj/item/ingot/steel
+	sellprice = VALUE_STEEL_HELMET
+
+	body_parts_covered = HEAD|HAIR|EARS
+	max_integrity = 300
+
 //................ Elf Sallet ............... //
 /obj/item/clothing/head/roguetown/rare/elvenbarbute	// blackoak merc helmet
 	desc = "A steel helmet with a thin gold plating designed for Elven woodland guardians."
