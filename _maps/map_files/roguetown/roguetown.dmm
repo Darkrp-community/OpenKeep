@@ -6745,6 +6745,15 @@
 "iFl" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town)
+"iFG" = (
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/obj/machinery/light/rogue/torchholder{
+	pixel_y = 26
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/town)
 "iFT" = (
 /obj/item/candle/yellow/lit,
 /turf/open/floor/rogue/churchrough,
@@ -11457,6 +11466,15 @@
 	},
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/chapel)
+"otN" = (
+/obj/structure/fluff/railing/fence{
+	dir = 8
+	},
+/obj/machinery/light/rogue/torchholder{
+	pixel_y = 26
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/town)
 "ouF" = (
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw"
@@ -55604,7 +55622,7 @@ lac
 lac
 lac
 rru
-lDq
+otN
 lDq
 lDq
 lDq
@@ -56860,7 +56878,7 @@ lac
 lac
 lac
 rru
-gzb
+iFG
 gzb
 ksi
 gzb
