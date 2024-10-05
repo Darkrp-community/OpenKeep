@@ -18,4 +18,13 @@ lute (8).ogg: Oblivion - Harvest Dawn. Cover by Daniel Estrem
 drum (5).ogg: Middle East Loop - Malfulf 90 bpm. Kettem BEAT
 guitar (15).ogg: Fear & Hunger - Prelude to Darkness Guitar Part Only
 flute (8).ogg: Elden Ring - Scribe Flute Song
-manor.gg: Fear & Hunger 2: Termina - Midnight Hour
+manor2.ogg: Fear & Hunger 2: Termina - Midnight Hour
+night.ogg: Vampire The Masquerade: Bloodlines - Hollywood
+crazycombat.ogg: Vampire The Masquerade: Bloodlines - Disturbed And Twisted Combat
+spice2.ogg: The Appolo Stars - Power Of The Source
+combat_rg.ogg: USAF Band - Cyrus The Great
+combat_noble.ogg: Aram Khachaturian - Masquerade Suite - Waltz
+churchnight.ogg: Fear & Hunger 2: Termina - Cathedral Whispers
+combat_bandit3.ogg: Manhunt - White Trash
+combat_assassin2.ogg: Fear & Hunger 2: Termina - Monologue With The Moon
+PIG.ogg: Manhunt - Deliverance

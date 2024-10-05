@@ -68,7 +68,7 @@
 	if(H.mobid in GLOB.character_list)
 		GLOB.character_list[H.mobid] = null
 	GLOB.chosen_names -= H.real_name
-	H.cmode_music = 'sound/music/combat_bandit.ogg'
+	H.cmode_music = list('sound/music/combat_bandit.ogg', 'sound/music/combat_bandit2.ogg', 'sound/music/combat_bandit3.ogg')
 
 	addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, choose_name_popup), "BANDIT"), 5 SECONDS)
 //	H.job = "Bandit"
