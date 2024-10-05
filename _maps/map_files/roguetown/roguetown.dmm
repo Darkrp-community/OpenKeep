@@ -1490,6 +1490,10 @@
 	icon_state = "roofg"
 	},
 /area/rogue/indoors/town)
+"bSu" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/troll,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cave)
 "bSw" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /obj/structure/closet/crate/roguecloset,
@@ -8815,6 +8819,10 @@
 /obj/item/alch/bone,
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/under/town/sewer)
+"kVD" = (
+/obj/item/rogueweapon/pick/copper,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cave)
 "kVR" = (
 /obj/structure/roguemachine/mail,
 /turf/open/floor/rogue/blocks/stonered/tiny,
@@ -32590,10 +32598,10 @@ vzQ
 vzQ
 vzQ
 vzQ
+kVD
 mae
 mae
-mae
-mae
+vzH
 vzQ
 vzQ
 vzQ
@@ -32749,8 +32757,8 @@ vzQ
 vzQ
 mae
 xKX
-xKX
-mae
+vzH
+vzH
 vzQ
 vzQ
 vzQ
@@ -32904,9 +32912,9 @@ vzQ
 vzQ
 vzQ
 vzQ
-mae
-xKX
-mae
+vzH
+vzH
+vzH
 vzQ
 vzQ
 vzQ
@@ -33061,8 +33069,8 @@ vzQ
 vzQ
 vzQ
 vzQ
-mae
-mae
+vzQ
+vzH
 vzQ
 vzQ
 vzQ
@@ -34317,7 +34325,7 @@ vzQ
 vzQ
 vzH
 xKX
-cIx
+bSu
 vzQ
 vzQ
 vzQ
