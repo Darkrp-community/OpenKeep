@@ -96,11 +96,6 @@
 	},
 /turf/open/indestructible/hotelwood,
 /area/hilbertshotel)
-"s" = (
-/obj/structure/table/wood/fancy,
-/obj/item/reagent_containers/food/snacks/grown/poppy,
-/turf/open/indestructible/hotelwood,
-/area/hilbertshotel)
 "t" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -499,7 +494,7 @@ d
 j
 q
 q
-s
+h
 b
 w
 C
