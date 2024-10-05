@@ -270,7 +270,7 @@
 	created_item = /obj/item/rogueweapon/sword/iron
 
 /datum/anvil_recipe/weapons/sword_iron
-	name = "estoc"
+	name = "Estoc"
 	recipe_name = "a Duelist Sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
@@ -286,7 +286,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/ironbuckler
-	name = "buckler shield"
+	name = "Buckler"
 	recipe_name = "a small Shield"
 	appro_skill = /datum/skill/craft/armorsmithing
 	req_bar = /obj/item/ingot/iron
@@ -323,7 +323,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/warhammer
-	name = "warhammer(+s)"
+	name = "Warhammer(+s)"
 	recipe_name = "a big warhammer"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -542,7 +542,7 @@
 
 /datum/anvil_recipe/weapons/scimitar_steel
 	name = "Scimitar"
-	recipe_name = "a Zibantu Sword"
+	recipe_name = "a Zybean Sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/sword/scimitar
