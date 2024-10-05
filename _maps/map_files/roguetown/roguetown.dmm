@@ -13884,6 +13884,12 @@
 /obj/structure/bars,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
+"rhn" = (
+/turf/closed/wall/mineral/rogue/pipe{
+	icon_state = "iron_corner";
+	dir = 1
+	},
+/area/rogue/under/cave)
 "rjb" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/indoors/town/dwarfin)
@@ -18217,6 +18223,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/shelter/town/sargoth)
+"wxz" = (
+/turf/closed/wall/mineral/rogue/pipe{
+	icon_state = "iron_corner";
+	dir = 8
+	},
+/area/rogue/under/cave)
 "wxB" = (
 /obj/structure/fluff/statue/gargoyle,
 /turf/open/floor/rogue/blocks,
@@ -26901,7 +26913,7 @@ rtq
 xug
 czv
 xug
-vzQ
+rtq
 vzQ
 xPr
 xPr
@@ -27058,7 +27070,7 @@ rtq
 xug
 czv
 xug
-vzQ
+rtq
 vzQ
 xPr
 xPr
@@ -27215,7 +27227,7 @@ rtq
 xug
 czv
 xug
-vzQ
+rtq
 vzQ
 xPr
 xPr
@@ -27372,7 +27384,7 @@ rtq
 xug
 czv
 xug
-vzQ
+rtq
 vzQ
 xPr
 xPr
@@ -27529,7 +27541,7 @@ rtq
 xug
 czv
 xug
-vzQ
+rtq
 vzQ
 xPr
 xPr
@@ -27686,7 +27698,7 @@ rtq
 xug
 czv
 xug
-vzQ
+rtq
 vzQ
 xPr
 xPr
@@ -27843,7 +27855,7 @@ rtq
 xug
 czv
 xug
-vzQ
+rtq
 vzQ
 xPr
 xPr
@@ -28000,8 +28012,8 @@ rtq
 xug
 czv
 xug
-vzQ
-vzQ
+wxz
+kYt
 xPr
 xPr
 vzQ
@@ -28152,7 +28164,7 @@ czv
 xug
 rtq
 vzQ
-vzQ
+kYt
 xMt
 xug
 czv
@@ -28309,7 +28321,7 @@ czv
 xug
 rtq
 vzQ
-vzQ
+kYt
 pxB
 xug
 czv
@@ -28628,8 +28640,8 @@ xug
 xug
 czv
 xug
-vzQ
-vzQ
+rhn
+kYt
 xPr
 xPr
 vzQ
@@ -28785,7 +28797,7 @@ czv
 czv
 czv
 xug
-vzQ
+rtq
 vzQ
 xPr
 xPr
@@ -28942,7 +28954,7 @@ xug
 xug
 czv
 xug
-vzQ
+rtq
 vzQ
 xPr
 xPr
@@ -29092,14 +29104,14 @@ rtq
 xug
 czv
 xug
-rtq
-vzQ
-vzQ
-vzQ
-vzQ
-vzQ
-vzQ
-vzQ
+rhn
+wsd
+wsd
+wsd
+wsd
+wsd
+wsd
+uhG
 vzQ
 xPr
 xPr
@@ -38796,7 +38808,7 @@ oVk
 oVk
 rtq
 xug
-xug
+xbF
 xug
 rtq
 vzQ
@@ -39266,7 +39278,7 @@ xug
 xug
 xug
 xug
-xbF
+xug
 czv
 xug
 xug
