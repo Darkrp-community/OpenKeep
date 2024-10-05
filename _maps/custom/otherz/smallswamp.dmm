@@ -79,20 +79,8 @@
 "w" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/cave)
-"x" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 4
-	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/bog)
 "y" = (
 /turf/open/floor/rogue/hexstone,
-/area/rogue/outdoors/bog)
-"z" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 8
-	},
-/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "B" = (
 /obj/effect/landmark/events/testportal{
@@ -343,7 +331,7 @@ G
 G
 G
 D
-x
+D
 a
 a
 c
@@ -529,7 +517,7 @@ D
 D
 D
 D
-x
+D
 D
 D
 D
@@ -6125,7 +6113,7 @@ a
 a
 a
 D
-x
+D
 G
 o
 b
@@ -16187,7 +16175,7 @@ Q
 Q
 Q
 Q
-z
+D
 a
 a
 a
@@ -16284,11 +16272,11 @@ Q
 Q
 Q
 Q
-z
 D
 D
 D
 D
+D
 G
 G
 G
@@ -16351,7 +16339,7 @@ c
 c
 c
 a
-z
+D
 D
 G
 G
