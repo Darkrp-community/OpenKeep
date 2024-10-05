@@ -10,7 +10,7 @@
 	sewn_bleed_rate = 0.2
 	clotting_threshold = null
 	sewn_clotting_threshold = null
-	woundpain = 40
+	woundpain = 35
 	sewn_woundpain = 20
 	mob_overlay = "s1"
 	sewn_overlay = "cut"
