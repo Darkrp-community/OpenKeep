@@ -21,7 +21,7 @@
 	if(slot == SLOT_HEAD)
 		user.become_blind("blindfold_[REF(src)]")
 	if(HAS_TRAIT(user, TRAIT_ROTMAN))
-		to_chat(user, span_info("The bag slips through dead fingers..."))	
+		to_chat(user, span_info("The [src] slips through dead fingers..."))	
 		user.dropItemToGround(src, TRUE)
 
 /obj/item/storage/roguebag/dropped(mob/living/carbon/human/user)
