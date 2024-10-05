@@ -542,7 +542,7 @@
 
 /datum/anvil_recipe/weapons/scimitar_steel
 	name = "Scimitar"
-	recipe_name = "a Zibantu Sword"
+	recipe_name = "a Zybean Sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/sword/scimitar
