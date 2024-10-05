@@ -8,8 +8,12 @@
 	var/mapGeneratorType = /datum/mapGenerator/nature
 	var/datum/mapGenerator/mapGenerator
 
-/obj/effect/landmark/mapGenerator/New()
+/obj/effect/landmark/mapGenerator/Initialize(mapload)
 	..()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/effect/landmark/mapGenerator/LateInitialize()
+	. = ..()
 	if(startTurfZ < 0)
 		startTurfZ = z
 	if(endTurfZ < 0)
@@ -17,3 +21,4 @@
 	mapGenerator = new mapGeneratorType()
 	mapGenerator.defineRegion(locate(startTurfX,startTurfY,startTurfZ), locate(endTurfX,endTurfY,endTurfZ))
 	mapGenerator.generate()
+	qdel(src)
