@@ -13,7 +13,7 @@
 	"Half-Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/mastercarpenter
-	category_tags = list(CTAG_PILGRIM)
+	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 	maximum_possible_slots = 1
 	pickprob = 15
 
