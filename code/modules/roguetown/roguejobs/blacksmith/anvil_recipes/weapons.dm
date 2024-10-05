@@ -323,7 +323,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/warhammer
-	name = "warhammer(+s)"
+	name = "Warhammer(+s)"
 	recipe_name = "a big warhammer"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
