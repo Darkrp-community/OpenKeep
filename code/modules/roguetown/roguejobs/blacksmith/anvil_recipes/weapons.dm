@@ -286,7 +286,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/ironbuckler
-	name = "buckler shield"
+	name = "Buckler"
 	recipe_name = "a small Shield"
 	appro_skill = /datum/skill/craft/armorsmithing
 	req_bar = /obj/item/ingot/iron
