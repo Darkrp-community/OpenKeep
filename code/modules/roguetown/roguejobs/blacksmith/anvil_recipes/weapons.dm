@@ -270,7 +270,7 @@
 	created_item = /obj/item/rogueweapon/sword/iron
 
 /datum/anvil_recipe/weapons/sword_iron
-	name = "estoc"
+	name = "Estoc"
 	recipe_name = "a Duelist Sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
