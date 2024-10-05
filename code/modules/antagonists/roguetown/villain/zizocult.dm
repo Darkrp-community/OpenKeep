@@ -476,8 +476,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			if(istype(H.wear_neck, /obj/item/clothing/neck/roguetown/psycross))
 				to_chat(user.mind, "<span class='danger'>\"They are wearing my bane...\"</span>")
 				return
-			if(M.cultists.len >= 4)
-				to_chat(user.mind, "<span class='danger'>\"The veil is too strong to support more than three lackeys.\"</span>")
+			if(M.cultists.len >= 6)
+				to_chat(user.mind, "<span class='danger'>\"The veil is too strong to support more than five lackeys.\"</span>")
 				return
 			var/datum/antagonist/zizocultist/PR = user.mind.has_antag_datum(/datum/antagonist/zizocultist)
 			var/alert = alert(H, "YOU WILL BE SHOWN THE TRUTH. DO YOU RESIST? (Resisting: 1 TRI)", "ROGUETOWN", "Yield", "Resist")
@@ -491,7 +491,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				H.adjust_triumphs(-1)
 				H.visible_message("<span class='danger'>\The [H] thrashes around, unyielding!</span>")
 				to_chat(H.mind, "<span class='danger'>\"Yield.\"</span>")
-				if(H.electrocute_act(10, src))
+				if(H.electrocute_act(10))
 					H.emote("painscream")
 				sleep(20)
 				H.anchored = FALSE
@@ -601,7 +601,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 					HL.SetSleeping(30)
 					spawn(10 SECONDS)
 						to_chat(HL.mind, "<span class='warning'>This isn't my bed... Where am I?!</span>")
-						HL.playsound_local(src, pick('sound/misc/jumphumans (1).ogg','sound/misc/jumphumans (2).ogg','sound/misc/jumphumans (3).ogg'), 100)
+						HL.playsound_local(HL.loc, pick('sound/misc/jumphumans (1).ogg','sound/misc/jumphumans (2).ogg','sound/misc/jumphumans (3).ogg'), 100)
 						HL.forceMove(C)
 					qdel(P)
 
@@ -695,7 +695,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 					for(var/obj/item/rogueweapon/huntingknife/idagger/D in C.contents) // Get rid of the dagger used as a sacrifice.
 						qdel(D)
 					qdel(P) // Get rid of the paper with the name on it too.
-					HL.playsound_local(src, 'sound/magic/marked.ogg', 100)
+					HL.playsound_local(HL.loc, 'sound/magic/marked.ogg', 100)
 				else
 					to_chat(user.mind, "<span class='warning'>There has been no answer to your call to the Dark Sun. It seems his servants are far from here...</span>")
 
@@ -967,11 +967,11 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	for(var/mob/living/carbon/human/H in C.contents)
 		if(!iszizocultist(H))
 			return
-		for(var/mob/living/carbon/human/RULER in get_step(src, NORTH))
+		for(var/mob/living/carbon/human/RULER in get_step(C, NORTH))
 			if(RULER != SSticker.rulermob && RULER.stat != DEAD)
 				break
 			RULER.gib()
-		for(var/mob/living/carbon/human/VIRGIN in get_step(src, SOUTH))
+		for(var/mob/living/carbon/human/VIRGIN in get_step(C, SOUTH))
 			if(!VIRGIN.virginity && VIRGIN.stat != DEAD)
 				break
 			VIRGIN.gib()
@@ -982,7 +982,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		trl.ckey = H.ckey
 		H.gib()
 		to_chat(world, "\n<font color='purple'>15 minutes remain.</font>")
-		for(var/mob/living/carbon/V in GLOB.human_list)
+		for(var/mob/living/carbon/human/V in GLOB.human_list)
 			if(V.mind in CM.cultists)
 				V.add_stress(/datum/stressevent/lovezizo)
 			else

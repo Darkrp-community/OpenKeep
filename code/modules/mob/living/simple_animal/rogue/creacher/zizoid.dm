@@ -1,5 +1,3 @@
-
-
 /mob/living/simple_animal/hostile/retaliate/rogue/blood
 	name = "FLESH HOMUNCULUS"
 	desc = null
@@ -42,12 +40,10 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/troll // Placeholder until Troll remains are sprited.
 	body_eater = TRUE
-	var/critvuln = TRUE
 	critvuln = FALSE
-	STACON = 10
-	STASTR = 19
-	STASPD = 1
-	STAEND = 11
+
+/mob/living/simple_animal/hostile/retaliate/rogue/blood/Initialize()
+	ADD_TRAIT(src, TRAIT_BLOODLOSS_IMMUNE, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/blood/ascended
 	name = "???"
@@ -76,6 +72,7 @@
 	. = ..()
 	set_light(5,5, LIGHT_COLOR_RED)
 	ADD_TRAIT(src, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_BLOODLOSS_IMMUNE, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/blood/ascended/get_sound(input)
 	switch(input)
