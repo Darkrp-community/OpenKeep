@@ -8661,6 +8661,10 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town)
+"kZB" = (
+/obj/structure/fluff/railing/border,
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/garrison)
 "kZT" = (
 /obj/structure/fluff/statue/gargoyle/moss,
 /turf/open/floor/rogue/blocks,
@@ -74085,7 +74089,7 @@ iRt
 aRV
 jcb
 rGg
-rGg
+aRV
 iRt
 doW
 doW
@@ -74240,7 +74244,7 @@ doW
 doW
 eCr
 eVH
-aRV
+kZB
 cDN
 skP
 eCr
