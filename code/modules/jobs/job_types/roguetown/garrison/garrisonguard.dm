@@ -193,7 +193,7 @@ Design philosphy:
 	//Gets studded leather (which hopefully will be renamed splint mail at some point...) and a chain coif
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
-	beltr = /obj/item/rogueweapon/sword/rapier
+	beltr = /obj/item/rogueweapon/sword/rapier/ironestoc
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	head = /obj/item/clothing/head/roguetown/roguehood/red
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
