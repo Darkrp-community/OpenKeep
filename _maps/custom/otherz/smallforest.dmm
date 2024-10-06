@@ -10,9 +10,8 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods)
 "ad" = (
-/obj/effect/landmark/start/adventurerlate,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/woods)
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
 "ae" = (
 /obj/effect/spawner/roguemap/stump,
 /turf/open/floor/rogue/cobblerock,
@@ -33,23 +32,34 @@
 "ai" = (
 /obj/structure/flora/newtree,
 /turf/closed/wall/mineral/rogue/wooddark,
-/area/rogue/outdoors/woods)
+/area/rogue/outdoors/rtfield)
 "aj" = (
 /obj/structure/flora/newtree,
 /turf/closed/wall/mineral/rogue/wooddark/end{
 	dir = 4
 	},
-/area/rogue/outdoors/woods)
+/area/rogue/outdoors/rtfield)
+"ak" = (
+/obj/structure/flora/newtree,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
 "al" = (
 /obj/structure/flora/newtree,
 /turf/closed/wall/mineral/rogue/wooddark/end{
 	dir = 8
 	},
-/area/rogue/outdoors/woods)
+/area/rogue/outdoors/rtfield)
 "am" = (
 /obj/structure/flora/newtree,
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
-/area/rogue/outdoors/woods)
+/area/rogue/outdoors/rtfield)
+"an" = (
+/obj/structure/flora/newtree,
+/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck{
+	tame = 1
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
 "ao" = (
 /obj/structure/fluff/railing/fence,
 /turf/open/floor/rogue/dirt,
@@ -160,8 +170,8 @@
 /area/rogue/outdoors/woods)
 "fA" = (
 /turf/open/water/river{
-	dir = 4;
-	icon_state = "rockwd"
+	icon_state = "rockwd";
+	dir = 4
 	},
 /area/rogue/outdoors/woods)
 "fZ" = (
@@ -241,8 +251,8 @@
 /area/rogue/outdoors/woods)
 "yH" = (
 /turf/open/water/river{
-	dir = 8;
-	icon_state = "rockwd"
+	icon_state = "rockwd";
+	dir = 8
 	},
 /area/rogue/outdoors/woods)
 "zN" = (
@@ -255,8 +265,8 @@
 /area/rogue/outdoors/woods)
 "CD" = (
 /obj/effect/landmark/mapGenerator/rogue/forest{
-	endTurfX = 128;
-	endTurfY = 128
+	endTurfY = 128;
+	endTurfX = 128
 	},
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/woods)
@@ -268,8 +278,8 @@
 /area/rogue/outdoors/woods)
 "CN" = (
 /obj/structure/fluff/traveltile/bandit{
-	aportalgoesto = "banditin";
-	aportalid = "banditexit"
+	aportalid = "banditexit";
+	aportalgoesto = "banditin"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
@@ -586,7 +596,7 @@ Lu
 Lu
 Lu
 Jc
-ub
+Ep
 Jc
 Jc
 dI
@@ -601,7 +611,7 @@ Jc
 Jc
 Jc
 Jc
-Jc
+hD
 Jc
 Jc
 Jc
@@ -731,7 +741,7 @@ Jc
 Jc
 Jc
 Jc
-Jc
+hD
 Jc
 Jc
 Jc
@@ -798,7 +808,7 @@ jC
 HH
 HH
 HH
-ub
+ad
 sN
 sN
 sN
@@ -862,7 +872,7 @@ Jc
 Jc
 hD
 hD
-Jc
+hD
 Jc
 Jc
 ub
@@ -993,12 +1003,12 @@ Jc
 hD
 hD
 hD
-Jc
-Jc
+hD
+hD
 ub
-Jc
-Jc
-Jc
+hD
+hD
+hD
 hD
 hD
 hD
@@ -1393,10 +1403,10 @@ hD
 hD
 hD
 hD
-Jc
-Jc
-Jc
-Jc
+hD
+hD
+hD
+hD
 dI
 "}
 (9,1,1) = {"
@@ -1522,11 +1532,11 @@ hD
 hD
 hD
 hD
-Jc
-Jc
-Jc
-Jc
-Jc
+hD
+hD
+hD
+hD
+hD
 dI
 "}
 (10,1,1) = {"
@@ -2180,7 +2190,7 @@ Jc
 dI
 "}
 (15,1,1) = {"
-ub
+ru
 ub
 ub
 ub
@@ -2440,9 +2450,9 @@ hD
 dI
 "}
 (17,1,1) = {"
-dI
 Jc
 Jc
+Lg
 sN
 sN
 sN
@@ -2571,8 +2581,8 @@ dI
 "}
 (18,1,1) = {"
 dI
-ad
 Jc
+Lg
 sN
 sN
 sN
@@ -2700,9 +2710,9 @@ Jc
 dI
 "}
 (19,1,1) = {"
-dI
 Jc
 Jc
+Lg
 Lg
 Lg
 sN
@@ -3606,7 +3616,7 @@ Lu
 Lu
 Lu
 Lu
-ub
+Ul
 dI
 "}
 (26,1,1) = {"
@@ -8737,10 +8747,10 @@ aA
 Jc
 Lg
 aj
-lj
-lj
-lj
-lj
+ak
+ak
+ak
+ak
 aj
 Bm
 ub
@@ -8866,11 +8876,11 @@ aA
 aA
 Jc
 sN
-lj
-lj
-lj
-lj
-lj
+ak
+ak
+ak
+an
+ak
 am
 sN
 ub
@@ -8997,10 +9007,10 @@ Jc
 Jc
 sN
 al
-lj
-lj
-lj
-lj
+ak
+ak
+ak
+ak
 am
 sN
 ub
