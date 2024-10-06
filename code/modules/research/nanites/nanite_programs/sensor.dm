@@ -441,8 +441,8 @@
 	var/species_type = "Human"
 	var/mode = "Is"
 	var/list/static/allowed_species = list(
-    	"Human" = /datum/species/human,
-    	"Lizard" = /datum/species/lizard,
+		"Human" = /datum/species/human,
+		"Lizard" = /datum/species/lizard,
 		"Moth" = /datum/species/moth,
 		"Ethereal" = /datum/species/ethereal,
 		"Pod" = /datum/species/pod,

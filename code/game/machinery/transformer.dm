@@ -93,7 +93,7 @@
 	var/mob/living/silicon/robot/R = H.Robotize()
 	R.cell = new /obj/item/stock_parts/cell/upgraded/plus(R, robot_cell_charge)
 
- 	// So he can't jump out the gate right away.
+	// So he can't jump out the gate right away.
 	R.SetLockdown()
 	if(masterAI)
 		R.connected_ai = masterAI

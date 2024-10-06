@@ -15,7 +15,7 @@
 
 /obj/structure/guillotine
 	name = "guillotine"
-	desc = ""
+	desc = "This is the end."
 	icon = 'icons/obj/guillotine.dmi'
 	icon_state = "guillotine_raised"
 	can_buckle = TRUE
@@ -165,8 +165,8 @@
 			var/delay_offset = 0
 			for(var/mob/M in viewers(src, 7))
 				var/mob/living/carbon/C = M
-				if (ishuman(M))
-					C.add_stress(/datum/stressevent/viewexecution)
+				if (iscarbon(C))
+					M.add_stress(/datum/stressevent/viewexecution)
 					addtimer(CALLBACK(C, TYPE_PROC_REF(/mob, emote), "clap"), delay_offset * 0.3)
 					delay_offset++
 		else
@@ -192,7 +192,7 @@
 				if(do_after(user, 7, target = src))
 					blade_status = GUILLOTINE_BLADE_RAISED
 					user.visible_message("<span class='notice'>[user] sharpens the large blade of the guillotine.</span>",
-						                 "<span class='notice'>I sharpen the large blade of the guillotine.</span>")
+						              "<span class='notice'>I sharpen the large blade of the guillotine.</span>")
 					blade_sharpness += 1
 					playsound(src, 'sound/items/sharpen_long1.ogg', 100, TRUE)
 					return
