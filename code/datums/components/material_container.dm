@@ -155,7 +155,7 @@
 	return FALSE
 
 /// Proc for transfering materials to another container.
-/datum/component/material_container/proc/transer_amt_to(var/datum/component/material_container/T, amt, datum/material/mat)
+/datum/component/material_container/proc/transer_amt_to(datum/component/material_container/T, amt, datum/material/mat)
 	if(!istype(mat))
 		mat = getmaterialref(mat)
 	if((amt==0)||(!T)||(!mat))

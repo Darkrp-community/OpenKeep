@@ -32,11 +32,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
 	bitesize = 3
 	eat_effect = /datum/status_effect/debuff/uncookedfood
-
-/obj/item/reagent_containers/food/snacks/rogue/foodbase/New() // disables the random placement on creation for this object MAYBE OBSOLETE?
-	..()
-	pixel_x = 0
-	pixel_y = 0
+	do_random_pixel_offset = FALSE // disables the random placement on creation for this object
 
 /obj/item/reagent_containers/food/snacks/rogue/preserved // just convenient way to group food with long rotprocess
 	bitesize = 3
