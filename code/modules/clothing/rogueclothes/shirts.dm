@@ -439,35 +439,38 @@
 	var/picked = FALSE
 	colorgrenz = TRUE
 
+/obj/item/clothing/suit/roguetown/shirt/grenzelhoft/proc/get_player_input()
+	if(!ishuman(loc))
+		return
+
+	var/list/colors = list(
+	"PURPLE"="#865c9c",
+	"RED"="#933030",
+	"BROWN"="#685542",
+	"GREEN"="#79763f",
+	"BLUE"="#395480",
+	"YELLOW"="#b5b004",
+	"TEAL"="#249589",
+	"WHITE"="#ffffff",
+	"ORANGE"="#b86f0c",
+	"MAJENTA"="#962e5c")
+	var/mob/living/carbon/human/L = loc
+	var/choice = input(L, "Choose a color.", "GRENZELHOFTIAN COLORPLEX") as anything in colors
+	var/playerchoice = colors[choice]
+	picked = TRUE
+	detail_color = playerchoice
+	update_icon()
+	for(var/obj/item/clothing/V in L.get_equipped_items(FALSE))
+		testing("clothes to color are [V]")
+		if(V.colorgrenz)
+			V.detail_color = playerchoice
+			V.update_icon()
+	L.regenerate_icons()
+
 /obj/item/clothing/suit/roguetown/shirt/grenzelhoft/Initialize()
-	..()
+	. = ..()
 	if(!picked)
-		var/list/colors = list(
-		"PURPLE"="#865c9c",
-		"RED"="#933030",
-		"BROWN"="#685542",
-		"GREEN"="#79763f",
-		"BLUE"="#395480",
-		"YELLOW"="#b5b004",
-		"TEAL"="#249589",
-		"WHITE"="#ffffff",
-		"ORANGE"="#b86f0c",
-		"MAJENTA"="#962e5c")
-
-		var/mob/living/carbon/human/L = loc
-		var/choice = input(L, "Choose a color.", "GRENZELHOFTIAN COLORPLEX") as anything in colors
-		var/playerchoice = colors[choice]
-		picked = TRUE
-		detail_color = playerchoice
-		update_icon()
-		for(var/obj/item/clothing/V in L.get_equipped_items(FALSE))
-			testing("clothes to color are [V]")
-			if(V.colorgrenz)
-				V.detail_color = playerchoice
-				V.update_icon()
-		L.regenerate_icons()
-
-
+		INVOKE_ASYNC(src, PROC_REF(get_player_input))
 
 /obj/item/clothing/suit/roguetown/shirt/grenzelhoft/update_icon()
 	cut_overlays()

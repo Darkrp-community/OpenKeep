@@ -216,7 +216,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			testing("[G.name]")
 			GLOB.ritualslist[G.name] = G
 
-/obj/effect/decal/cleanable/sigil/proc/consume_ingredients(var/datum/ritual/R)
+/obj/effect/decal/cleanable/sigil/proc/consume_ingredients(datum/ritual/R)
 
 	for(var/atom/A in get_step(src, NORTH))
 		if(istype(A, R.n_req) && !ishuman(A))
@@ -367,7 +367,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 /obj/effect/decal/cleanable/sigil/NW
 	icon_state = "NW"
 
-/turf/open/floor/proc/generateSigils(var/mob/M, var/input)
+/turf/open/floor/proc/generateSigils(mob/M, input)
 	var/turf/T = get_turf(M.loc)
 	for(var/obj/A in T)
 		if(istype(A, /obj/effect/decal/cleanable/sigil))
@@ -393,8 +393,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			/obj/effect/decal/cleanable/sigil/SW
 		)
 
-		for(var/i = 1; i <= alldirs.len; i++)
-			var/turf/floor = get_step(src, alldirs[i])
+		for(var/i = 1; i <= GLOB.alldirs.len; i++)
+			var/turf/floor = get_step(src, GLOB.alldirs[i])
 			var/sigil = sigilsPath[i]
 
 			new sigil(floor)
@@ -461,7 +461,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/convert
 
-/proc/convert(var/mob/user, var/turf/C)
+/proc/convert(mob/user, turf/C)
 	var/datum/game_mode/chaosmode/M = SSticker.mode
 	testing("NOW TESTING CONVERT")
 
@@ -491,7 +491,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				H.adjust_triumphs(-1)
 				H.visible_message("<span class='danger'>\The [H] thrashes around, unyielding!</span>")
 				to_chat(H.mind, "<span class='danger'>\"Yield.\"</span>")
-				if(H.electrocute_act(10, src))
+				if(H.electrocute_act(10))
 					H.emote("painscream")
 				sleep(20)
 				H.anchored = FALSE
@@ -505,7 +505,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/skeletaljaunt
 
-/proc/skeletaljaunt(var/mob/user, var/turf/C)
+/proc/skeletaljaunt(mob/user, turf/C)
 	for(var/mob/living/carbon/human/H in C.contents)
 		if(H == user)
 			return
@@ -580,7 +580,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/thecall
 
-/proc/thecall(var/mob/user, var/turf/C)
+/proc/thecall(mob/user, turf/C)
 	for(var/obj/item/paper/P in C.contents)
 		if(!user.mind || !user.mind.do_i_know(name=P.info))
 			to_chat(user.mind, "<span class='warning'>I don't know anyone by that name.</span>")
@@ -598,8 +598,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 					if(HAS_TRAIT(HL, TRAIT_NOROGSTAM))
 						return
 					HL.apply_status_effect(/datum/status_effect/debuff/sleepytime)
-					to_chat(HL.mind, "<span class='warning'>This isn't my bed... Where am I?!</span>")
-					HL.playsound_local(src, pick('sound/misc/jumphumans (1).ogg','sound/misc/jumphumans (2).ogg','sound/misc/jumphumans (3).ogg'), 100)
+					to_chat(HL, "<span class='warning'>This isn't my bed... Where am I?!</span>")
+					HL.playsound_local(HL, pick('sound/misc/jumphumans (1).ogg','sound/misc/jumphumans (2).ogg','sound/misc/jumphumans (3).ogg'), 100)
 					HL.forceMove(C)
 					qdel(P)
 
@@ -615,7 +615,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/falseappearance
 
-/proc/falseappearance(var/mob/user, var/turf/C)
+/proc/falseappearance(mob/user, turf/C)
 	for(var/mob/living/carbon/human/H in C.contents)
 		var/datum/preferences/A = new()//Randomize appearance for the guy
 		var/first_names = GLOB.first_names
@@ -681,7 +681,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		to_chat(H, "<span class='info'>I signed the paper, hopefully I won't regret this.</span>")
 		signed = H
 
-/proc/pactofunity(var/mob/user, var/turf/C)
+/proc/pactofunity(mob/user, turf/C)
 	new /obj/item/pactofunity(C)
 	to_chat(user.mind, "<span class='notice'>The Pact of Unity. When a person willingly signs their name on this they become my pawn. When I rip up the paper their soul is good as dead.</span>")
 
@@ -692,11 +692,11 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/darksunmark
 
-/proc/darksunmark(var/mob/user, var/turf/C)
+/proc/darksunmark(mob/user, turf/C)
 	var/found_assassin = FALSE
 	for(var/obj/item/paper/P in C.contents)
 		if(!user.mind || !user.mind.do_i_know(name=P.info))
-			to_chat(user.mind, "<span class='warning'>I don't know anyone by that name.</span>")
+			to_chat(user, "<span class='warning'>I don't know anyone by that name.</span>")
 			return
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.real_name == P.info)
@@ -709,14 +709,14 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				if(found_assassin == TRUE)
 					ADD_TRAIT(HL, TRAIT_ZIZOID_HUNTED, TRAIT_GENERIC) // Gives the victim a trait to track that they are wanted dead.
 					log_hunted("[key_name(HL)] playing as [HL] had the hunted flaw by Zizoid curse.")
-					to_chat(HL.mind, "<span class='danger'>My hair stands on end. Has someone just said my name? I should watch my back.</span>")
-					to_chat(user.mind, "<span class='warning'>Your target has been marked, your profane call answered. [HL.real_name] will surely perish!</span>")
+					to_chat(HL, "<span class='danger'>My hair stands on end. Has someone just said my name? I should watch my back.</span>")
+					to_chat(user, "<span class='warning'>Your target has been marked, your profane call answered. [HL.real_name] will surely perish!</span>")
 					for(var/obj/item/rogueweapon/huntingknife/idagger/D in C.contents) // Get rid of the dagger used as a sacrifice.
 						qdel(D)
 					qdel(P) // Get rid of the paper with the name on it too.
-					HL.playsound_local(src, 'sound/magic/marked.ogg', 100)
+					HL.playsound_local(HL, 'sound/magic/marked.ogg', 100)
 				else
-					to_chat(user.mind, "<span class='warning'>There has been no answer to your call to the Dark Sun. It seems his servants are far from here...</span>")
+					to_chat(user, "<span class='warning'>There has been no answer to your call to the Dark Sun. It seems his servants are far from here...</span>")
 
 // TRANSMUTATION
 
@@ -727,7 +727,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/allseeingeye
 
-/proc/allseeingeye(var/mob/user, var/turf/C)
+/proc/allseeingeye(mob/user, turf/C)
 	new /obj/item/scrying/eye(C)
 
 /datum/ritual/criminalstool
@@ -737,7 +737,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/criminalstool
 
-/proc/criminalstool(var/mob/user, var/turf/C)
+/proc/criminalstool(mob/user, turf/C)
 	new /obj/item/soap/cult(C)
 	to_chat(user.mind, "<span class='notice'>The Criminal's Tool. Could be useful for hiding tracks or getting rid of sigils.</span>")
 
@@ -750,7 +750,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	
 	function = /proc/propaganda
 
-/proc/propaganda(var/mob/user, var/turf/C)
+/proc/propaganda(mob/user, turf/C)
 	new /obj/item/natural/worms/leech/propaganda(C)
 	to_chat(user.mind, "<span class='notice'>A leech to make their minds wrangled. They'll be in bad spirits.</span>")
 
@@ -773,7 +773,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	. = ..()
 	qdel(src)
 
-/proc/falseidol(var/mob/user, var/turf/C)
+/proc/falseidol(mob/user, turf/C)
 	for(var/mob/living/carbon/human/H in C.contents)
 		var/obj/effect/dummy/falseidol/idol = new(C)
 		var/datum/icon_snapshot/entry = new
@@ -795,7 +795,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	
 	function = /proc/invademind
 
-/proc/invademind(var/mob/user, var/turf/C)
+/proc/invademind(mob/user, turf/C)
 	for(var/obj/item/paper/P in C.contents)
 		var/info = ""
 		info = sanitize(P.info)
@@ -815,7 +815,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/summonweapons
 
-/proc/summonweapons(var/mob/user, var/turf/C)
+/proc/summonweapons(mob/user, turf/C)
 	var/datum/effect_system/spark_spread/S = new(C)
 	S.set_up(1, 1, C)
 	S.start()
@@ -845,7 +845,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/bunnylegs
 
-/proc/bunnylegs(var/mob/user, var/turf/C)
+/proc/bunnylegs(mob/user, turf/C)
 	for(var/mob/living/carbon/human/H in C.contents)
 		ADD_TRAIT(H, TRAIT_ZJUMP, TRAIT_GENERIC)
 		to_chat(H.mind, "<span class='notice'>I feel like my legs have become stronger.</span>")
@@ -862,7 +862,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/darkeyes
 
-/proc/darkeyes(var/mob/user, var/turf/C)
+/proc/darkeyes(mob/user, turf/C)
 	for(var/mob/living/carbon/human/H in C.contents)
 		var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 		if(eyes)
@@ -884,7 +884,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/nopain
 
-/proc/nopain(var/mob/user, var/turf/C)
+/proc/nopain(mob/user, turf/C)
 	for(var/mob/living/carbon/human/H in C.contents)
 		ADD_TRAIT(user, TRAIT_NOPAIN, TRAIT_GENERIC)
 		to_chat(H.mind, "<span class='notice'>I no longer feel pain, but it has come at a terrible cost.</span>")
@@ -908,7 +908,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/fleshform
 
-/proc/fleshform(var/mob/user, var/turf/C)
+/proc/fleshform(mob/user, turf/C)
 	for(var/mob/living/carbon/human/H in C.contents)
 		if(iszizocultist(H))
 			to_chat(H.mind, "<span class='danger'>\"I'm not letting my strongest follower become a mindless brute.\"</span>")
@@ -927,7 +927,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/guttedlikeafish
 
-/proc/guttedlikeafish(var/mob/user, var/turf/C)
+/proc/guttedlikeafish(mob/user, turf/C)
 	for(var/mob/living/carbon/human/H in C.contents)
 		if(H.stat == DEAD)
 			H.take_overall_damage(500)
@@ -952,17 +952,17 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	
 	function = /proc/ascend
 
-/proc/ascend(var/mob/user, var/turf/C)
+/proc/ascend(mob/user, turf/C)
 	var/datum/game_mode/chaosmode/CM = SSticker.mode
 
 	for(var/mob/living/carbon/human/H in C.contents)
 		if(!iszizocultist(H))
 			return
-		for(var/mob/living/carbon/human/RULER in get_step(src, NORTH))
+		for(var/mob/living/carbon/human/RULER in get_step(C, NORTH))
 			if(RULER != SSticker.rulermob && RULER.stat != DEAD)
 				break
 			RULER.gib()
-		for(var/mob/living/carbon/human/VIRGIN in get_step(src, SOUTH))
+		for(var/mob/living/carbon/human/VIRGIN in get_step(C, SOUTH))
 			if(!VIRGIN.virginity && VIRGIN.stat != DEAD)
 				break
 			VIRGIN.gib()

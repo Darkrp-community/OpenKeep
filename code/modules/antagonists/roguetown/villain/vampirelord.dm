@@ -512,8 +512,10 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	. = ..()
 	set_light(3, 20, LIGHT_COLOR_BLOOD_MAGIC)
 	playsound(loc, 'sound/misc/portalopen.ogg', 100, FALSE, pressure_affected = FALSE)
-	sleep(600)
-	visible_message("<span class='boldnotice'>[src] shudders before rapidly closing.</span>")
+	addtimer(CALLBACK(src, PROC_REF(close_portal)), 1 MINUTES)
+
+/obj/structure/vampire/portal/proc/close_portal()
+	visible_message(span_boldnotice("[src] shudders before rapidly closing."))
 	qdel(src)
 
 /obj/structure/vampire/portal/sending/Destroy()

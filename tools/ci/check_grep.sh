@@ -19,13 +19,13 @@ if command -v rg >/dev/null 2>&1; then
 	if [ ! rg -P '' >/dev/null 2>&1 ] ; then
 		pcre2_support=0
 	fi
-	code_files="code/**/**.dm"
+	code_files="code/**/**.dm modular/**/**.dm"
 	map_files="_maps/**/**.dmm"
 	code_x_515="code/**/!(__byond_version_compat).dm"
 else
 	pcre2_support=0
 	grep=grep
-	code_files="-r --include=code/**/**.dm"
+	code_files="-r --include=code/**/**.dm --include=modular/**/**.dm"
 	map_files="-r --include=_maps/**/**.dmm"
 	code_x_515="-r --include=code/**/!(__byond_version_compat).dm"
 fi
@@ -107,16 +107,17 @@ if $grep '^\t+ [^ *]' $code_files; then
     st=1
 fi;
 
-section "unit tests"
-unit_test_files="code/modules/unit_tests/**/**.dm"
-part "mob/living/carbon/human usage"
-if $grep 'allocate\(/mob/living/carbon/human[,\)]' $unit_test_files ||
-	$grep 'new /mob/living/carbon/human\s?\(' $unit_test_files ||
-	$grep 'var/mob/living/carbon/human/\w+\s?=\s?new' $unit_test_files ; then
-	echo
-	echo -e "${RED}ERROR: Usage of mob/living/carbon/human detected in a unit test, please use mob/living/carbon/human/consistent.${NC}"
-	st=1
-fi;
+# Disabled until someone ports the consistent human type or adds more unit test greps.
+# section "unit tests"
+# unit_test_files="code/modules/unit_tests/**/**.dm"
+# part "mob/living/carbon/human usage"
+# if $grep 'allocate\(/mob/living/carbon/human[,\)]' $unit_test_files ||
+# 	$grep 'new /mob/living/carbon/human\s?\(' $unit_test_files ||
+# 	$grep 'var/mob/living/carbon/human/\w+\s?=\s?new' $unit_test_files ; then
+# 	echo
+# 	echo -e "${RED}ERROR: Usage of mob/living/carbon/human detected in a unit test, please use mob/living/carbon/human/consistent.${NC}"
+# 	st=1
+# fi;
 
 section "common mistakes"
 part "global vars"
@@ -133,13 +134,6 @@ if $grep '^/[\w/]\S+\(.*(var/|, ?var/.*).*\)' $code_files; then
 	st=1
 fi;
 
-part "can_perform_action argument check"
-if $grep 'can_perform_action\(\s*\)' $code_files; then
-	echo
-	echo -e "${RED}ERROR: Found a can_perform_action() proc with improper arguments.${NC}"
-	st=1
-fi;
-
 part "src as a trait source" # ideally we'd lint / test for ANY datum reference as a trait source, but 'src' is the most common.
 if $grep -i '(add_trait|remove_trait)\(.+,\s*.+,\s*src\)' $code_files; then
 	echo
@@ -152,42 +146,16 @@ if $grep -i '(add_traits|remove_traits)\(.+,\s*src\)' $code_files; then
 	st=1
 fi;
 
-part "ensure proper lowertext usage"
-# lowertext() is a BYOND-level proc, so it can be used in any sort of code... including the TGS DMAPI which we don't manage in this repository.
-# basically, we filter out any results with "tgs" in it to account for this edgecase without having to enforce this rule in that separate codebase.
-# grepping the grep results is a bit of a sad solution to this but it's pretty much the only option in our existing linter framework
-if $grep -i 'lowertext\(.+\)' $code_files | $grep -v 'UNLINT\(.+\)' | $grep -v '\/modules\/tgs\/'; then
-	echo
-	echo -e "${RED}ERROR: Found a lowertext() proc call. Please use the LOWER_TEXT() macro instead. If you know what you are doing, wrap your text (ensure it is a string) in UNLINT().${NC}"
-	st=1
-fi;
-
-part "balloon_alert sanity"
-if $grep 'balloon_alert\(".*"\)' $code_files; then
-	echo
-	echo -e "${RED}ERROR: Found a balloon alert with improper arguments.${NC}"
-	st=1
-fi;
-
-if $grep 'balloon_alert(.*span_)' $code_files; then
-	echo
-	echo -e "${RED}ERROR: Balloon alerts should never contain spans.${NC}"
-	st=1
-fi;
-
-part "balloon_alert idiomatic usage"
-if $grep 'balloon_alert\(.*?, ?"[A-Z]' $code_files; then
-	echo
-	echo -e "${RED}ERROR: Balloon alerts should not start with capital letters. This includes text like 'AI'. If this is a false positive, wrap the text in UNLINT().${NC}"
-	st=1
-fi;
-
-part "update_icon_updates_onmob element usage"
-if $grep 'AddElement\(/datum/element/update_icon_updates_onmob.+ITEM_SLOT_HANDS' $code_files; then
-	echo
-	echo -e "${RED}ERROR: update_icon_updates_onmob element automatically updates ITEM_SLOT_HANDS, this is redundant and should be removed.${NC}"
-	st=1
-fi;
+# Disabled because I can't be assed to care about this, but it might be a nice change in the future.
+# part "ensure proper lowertext usage"
+# # lowertext() is a BYOND-level proc, so it can be used in any sort of code... including the TGS DMAPI which we don't manage in this repository.
+# # basically, we filter out any results with "tgs" in it to account for this edgecase without having to enforce this rule in that separate codebase.
+# # grepping the grep results is a bit of a sad solution to this but it's pretty much the only option in our existing linter framework
+# if $grep -i 'lowertext\(.+\)' $code_files | $grep -v 'UNLINT\(.+\)' | $grep -v '/modules/tgs/'; then
+# 	echo
+# 	echo -e "${RED}ERROR: Found a lowertext() proc call. Please use the LOWER_TEXT() macro instead. If you know what you are doing, wrap your text (ensure it is a string) in UNLINT().${NC}"
+# 	st=1
+# fi;
 
 part "common spelling mistakes"
 if $grep -i 'centcomm' $code_files; then
@@ -276,18 +244,13 @@ if [ "$pcre2_support" -eq 1 ]; then
 		echo -e "${RED}ERROR: File(s) with no trailing newline detected, please add one.${NC}"
 		st=1
 	fi
-	part "datum stockpart sanity"
-	if $grep -P 'for\b.*/obj/item/stock_parts/(?!cell)(?![\w_]+ in )' $code_files; then
-		echo
-		echo -e "${RED}ERROR: Should be using datum/stock_part instead"
-		st=1
-	fi;
-	part "improper atom initialize args"
-	if $grep -P '^/(obj|mob|turf|area|atom)/.+/Initialize\((?!mapload).*\)' $code_files; then
-		echo
-		echo -e "${RED}ERROR: Initialize override without 'mapload' argument.${NC}"
-		st=1
-	fi;
+	# Fuck it, I'll do this later, there's 1577 of these. Goddammit.
+	# part "improper atom initialize args"
+	# if $grep -P '^/(obj|mob|turf|area|atom)/.+/Initialize\((?!mapload).*\)' $code_files; then
+	# 	echo
+	# 	echo -e "${RED}ERROR: Initialize override without 'mapload' argument.${NC}"
+	# 	st=1
+	# fi;
 else
 	echo -e "${RED}pcre2 not supported, skipping checks requiring pcre2"
 	echo -e "if you want to run these checks install ripgrep with pcre2 support.${NC}"

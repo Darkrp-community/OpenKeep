@@ -167,10 +167,10 @@
 				for(var/A in X.reagents_on_breathe)
 					reagents.add_reagent(A, X.reagents_on_breathe[A])
 
-/mob/living/proc/handle_inwater(var/turf/open/water/W)
+/mob/living/proc/handle_inwater(turf/open/water/W)
 	ExtinguishMob()
 
-/mob/living/carbon/handle_inwater(var/turf/open/water/W)
+/mob/living/carbon/handle_inwater(turf/open/water/W)
 	..()
 	if(HAS_TRAIT(src, TRAIT_NOBREATH))
 		return TRUE
@@ -223,7 +223,7 @@
 //Start of a breath chain, calls breathe()
 /mob/living/carbon/handle_breathing(times_fired)
 	return
-	var/next_breath = 4
+/* 	var/next_breath = 4
 	var/obj/item/organ/lungs/L = getorganslot(ORGAN_SLOT_LUNGS)
 	var/obj/item/organ/heart/H = getorganslot(ORGAN_SLOT_HEART)
 	if(L)
@@ -242,7 +242,7 @@
 	else
 		if(istype(loc, /obj/))
 			var/obj/location_as_object = loc
-			location_as_object.handle_internal_lifeform(src,0)
+			location_as_object.handle_internal_lifeform(src,0) */
 
 //Second link in a breath chain, calls check_breath()
 /mob/living/carbon/proc/breathe()
