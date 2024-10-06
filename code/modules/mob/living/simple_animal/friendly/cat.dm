@@ -375,7 +375,7 @@
 /mob/living/simple_animal/pet/cat/inn/attack_hand(mob/living/carbon/human/M) // Gato Basado - not all pets are welcome
 	. = ..()
 	if((isdarkelf(M)))  // l´cursed bonbonbon
-		visible_message("<span class='notice'>The cat hisses at [M] and recoils in disgust.</span>")
+		visible_message("<span class='notice'>\The [src] hisses at [M] and recoils in disgust.</span>")
 		icon_state = "[icon_living]"
 		set_resting(FALSE)
 		update_mobility()
@@ -385,7 +385,7 @@
 		personal_space()
 
 	if(M.mind && M.mind.has_antag_datum(/datum/antagonist/vampirelord))
-		visible_message("<span class='notice'>The cat hisses at [M] and recoils in disgust.</span>")
+		visible_message("<span class='notice'>\The [src] hisses at [M] and recoils in disgust.</span>")
 		icon_state = "[icon_living]"
 		set_resting(FALSE)
 		update_mobility()
