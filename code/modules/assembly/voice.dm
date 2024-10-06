@@ -16,10 +16,12 @@
 	var/listening = FALSE
 	var/recorded = "" //the activation message
 	var/mode = 1
-	var/static/list/modes = list("inclusive",
-								 "exclusive",
-								 "recognizer",
-								 "voice sensor")
+	var/static/list/modes = list(
+		"inclusive",
+		"exclusive",
+		"recognizer",
+		"voice sensor"
+	)
 
 /obj/item/assembly/voice/examine(mob/user)
 	. = ..()

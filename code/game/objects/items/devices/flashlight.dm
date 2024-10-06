@@ -87,7 +87,7 @@
 						M.visible_message("<span class='notice'>[M] directs [src] to [M.p_their()] eyes.</span>", "<span class='notice'>I wave the light in front of your eyes.</span>")
 				else
 					user.visible_message("<span class='warning'>[user] directs [src] to [M]'s eyes.</span>", \
-										 "<span class='danger'>I direct [src] to [M]'s eyes.</span>")
+										"<span class='danger'>I direct [src] to [M]'s eyes.</span>")
 					if(M.stat == DEAD || (HAS_TRAIT(M, TRAIT_BLIND)) || !M.flash_act(visual = 1)) //mob is dead or fully blind
 						to_chat(user, "<span class='warning'>[M]'s pupils don't react to the light!</span>")
 					else if(M.dna && M.dna.check_mutation(XRAY))	//mob has X-ray vision
@@ -152,7 +152,7 @@
 
 				else
 					user.visible_message("<span class='notice'>[user] directs [src] to [M]'s mouth.</span>",\
-										 "<span class='notice'>I direct [src] to [M]'s mouth.</span>")
+										"<span class='notice'>I direct [src] to [M]'s mouth.</span>")
 					if(organ_count)
 						to_chat(user, "<span class='notice'>Inside [their] mouth [organ_count > 1 ? "are" : "is"] [organ_list].</span>")
 					else
@@ -418,20 +418,20 @@
 	..()
 
 /obj/item/flashlight/flare/torch/afterattack(atom/movable/A, mob/user, proximity)
-    . = ..()
-    if (!proximity)
-        return
-    if (on && (prob(50) || (user.used_intent.type == /datum/intent/use)))
-        if (ismob(A))
-            A.spark_act()
-        else
-            A.fire_act(3,3)
+	. = ..()
+	if (!proximity)
+		return
+	if (on && (prob(50) || (user.used_intent.type == /datum/intent/use)))
+		if (ismob(A))
+			A.spark_act()
+		else
+			A.fire_act(3,3)
 
-        if (should_self_destruct)  // check if self-destruct
-            times_used += 1
-            if (times_used >= 8) //amount used before burning out
-                user.visible_message("<span class='warning'>[src] has burnt out and falls apart!</span>")
-                qdel(src)
+		if (should_self_destruct)  // check if self-destruct
+			times_used += 1
+			if (times_used >= 8) //amount used before burning out
+				user.visible_message("<span class='warning'>[src] has burnt out and falls apart!</span>")
+				qdel(src)
 
 /obj/item/flashlight/flare/torch/spark_act()
 	fire_act()
@@ -454,20 +454,20 @@
 	should_self_destruct = TRUE
 
 /obj/item/flashlight/flare/torch/metal/afterattack(atom/movable/A, mob/user, proximity)
-    . = ..()
-    if(!proximity)
-        return
-    if(on && (prob(50) || (user.used_intent.type == /datum/intent/use)))
-        if(ismob(A))
-            A.spark_act()
-        else
-            A.fire_act(3,3)
+	. = ..()
+	if(!proximity)
+		return
+	if(on && (prob(50) || (user.used_intent.type == /datum/intent/use)))
+		if(ismob(A))
+			A.spark_act()
+		else
+			A.fire_act(3,3)
 
-        if (should_self_destruct)  // check if self-destruct
-            times_used += 1
-            if (times_used >= 13) //amount used before burning out
-                user.visible_message("<span class='warning'>[src] has burnt out and falls apart!</span>")
-                qdel(src)
+		if (should_self_destruct)  // check if self-destruct
+			times_used += 1
+			if (times_used >= 13) //amount used before burning out
+				user.visible_message("<span class='warning'>[src] has burnt out and falls apart!</span>")
+				qdel(src)
 
 /obj/item/flashlight/flare/torch/lantern
 	name = "lamptern"
@@ -483,14 +483,14 @@
 	should_self_destruct = FALSE
 
 /obj/item/flashlight/flare/torch/lantern/afterattack(atom/movable/A, mob/user, proximity)
-    . = ..()
-    if(!proximity)
-        return
-    if(on && (prob(50) || (user.used_intent.type == /datum/intent/use)))
-        if(ismob(A))
-            A.spark_act()
-        else
-            A.fire_act(3,3)
+	. = ..()
+	if(!proximity)
+		return
+	if(on && (prob(50) || (user.used_intent.type == /datum/intent/use)))
+		if(ismob(A))
+			A.spark_act()
+		else
+			A.fire_act(3,3)
 
 /obj/item/flashlight/flare/torch/lantern/process()
 	open_flame(heat)
@@ -591,7 +591,7 @@
 	return TRUE
 
 /obj/item/flashlight/emp/attack(mob/living/M, mob/living/user)
-	if(on && user.zone_selected in list(BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_MOUTH)) // call original attack when examining organs
+	if(on && (user.zone_selected in list(BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_MOUTH))) // call original attack when examining organs
 		..()
 	return
 

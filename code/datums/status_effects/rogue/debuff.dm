@@ -336,7 +336,7 @@
 	name = "Muscle Soreness"
 	desc = "<span class='warning'>Gaaaah, So sooooooore.</span>\n"
 	icon_state = "muscles"
- 
+
 /datum/status_effect/debuff/barbfalter
 	id = "barbfalter"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/barbfalter
@@ -347,7 +347,7 @@
 	name = "Faltering"
 	desc = "<span class='warning'>I've pushed myself to my limit.</span>\n"
 	icon_state = "muscles"
-  
+
 /datum/status_effect/debuff/viciousmockery
 	id = "viciousmockery"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/viciousmockery
