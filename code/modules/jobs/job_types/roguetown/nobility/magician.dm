@@ -27,7 +27,6 @@
 
 /datum/outfit/job/roguetown/magician/pre_equip(mob/living/carbon/human/H)
 	..()
-	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
 	head = /obj/item/clothing/head/roguetown/wizhat/gen
 	backr = /obj/item/storage/backpack/rogue/satchel
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/black
@@ -46,18 +45,6 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 3, TRUE)
-	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
-	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-	H.virginity = TRUE
-	H.change_stat("strength", -2)
-	H.change_stat("intelligence", 5)
-	H.change_stat("constitution", -2)
-	H.change_stat("speed", -2)
-	H.mind.adjust_spellpoints(8)
-	if(H.mind)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/learnspell)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 		if(H.age == AGE_OLD)
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/courtmage
 			H.change_stat("speed", -1)
@@ -71,15 +58,17 @@
 				if(H.gender == MALE)
 					armor = /obj/item/clothing/suit/roguetown/shirt/robe/wizard
 					H.dna.species.soundpack_m = new /datum/voicepack/male/wizard()
-		if(H.age == AGE_MIDDLEAGED)
-			cloak = /obj/item/clothing/cloak/black_cloak
-
-/datum/outfit/job/roguetown/magician/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-
+		ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+		H.virginity = TRUE
+		H.change_stat("strength", -2)
+		H.change_stat("intelligence", 5)
+		H.change_stat("constitution", -2)
+		H.change_stat("speed", -2)
+		H.mind.adjust_spellpoints(8)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/learnspell)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 
 //............... Unique Court Mage Stuff ...........................
 /*

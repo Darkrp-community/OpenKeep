@@ -776,6 +776,7 @@
 /obj/effect/proc_holder/spell/invoked/push_spell
 	name = "Repulse"
 	desc = "Conjure forth a wave of energy, repelling anyone around you."
+	overlay_state = "repulse"
 	cost = 3
 	xp_gain = TRUE
 	releasedrain = 50
