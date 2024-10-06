@@ -432,7 +432,7 @@
 	icon = 'icons/roguetown/items/misc.dmi'
 	oneuse = TRUE
     drop_sound = 'sound/foley/dropsound/paper_drop.ogg'
-    pickup_sound =  'sound/blank.ogg'
+	pickup_sound =  'sound/blank.ogg'
 
 /obj/item/book/granter/spell/blackstone/onlearned(mob/living/carbon/user)
 	..()
