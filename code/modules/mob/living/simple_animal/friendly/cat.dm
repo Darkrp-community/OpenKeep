@@ -287,7 +287,7 @@
 					if(!M.dead)
 						walk_towards(src, M, 1)
 						sleep(3)
-						visible_message("<span class='notice'>The cat kills the rat!</span>")
+						visible_message("<span class='notice'>\The [src] kills the rat!</span>")
 						M.obj_destruction()
 						movement_target = null
 						stop_automated_movement = 0
