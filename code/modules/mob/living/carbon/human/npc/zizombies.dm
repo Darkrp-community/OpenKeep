@@ -6,7 +6,7 @@
 	race = /datum/species/zizombie
 	gender = PLURAL
 	bodyparts = list(/obj/item/bodypart/chest/zizombie, /obj/item/bodypart/head/zizombie, /obj/item/bodypart/l_arm/zizombie,
-					 /obj/item/bodypart/r_arm/zizombie, /obj/item/bodypart/r_leg/zizombie, /obj/item/bodypart/l_leg/zizombie)
+					/obj/item/bodypart/r_arm/zizombie, /obj/item/bodypart/r_leg/zizombie, /obj/item/bodypart/l_leg/zizombie)
 	rot_type = /datum/component/rot/corpse/zizombie
 	ambushable = FALSE
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw, /datum/intent/simple/bite, /datum/intent/kick)
@@ -21,7 +21,7 @@
 	wander = FALSE
 
 
-mob/living/carbon/human/species/zizombie/ambush/after_creation()
+/mob/living/carbon/human/species/zizombie/ambush/after_creation()
 	..()
 	job = "Ambush zizombie"
 	QDEL_NULL(sexcon)
@@ -50,7 +50,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 /obj/item/bodypart/head/zizombie/update_icon_dropped()
 	return
 
-/obj/item/bodypart/head/zizombie/get_limb_icon()
+/obj/item/bodypart/head/zizombie/get_limb_icon(dropped, hideaux = FALSE)
 	return
 
 /obj/item/bodypart/head/zizombie/skeletonize()
@@ -109,9 +109,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 
 /mob/living/carbon/human/species/zizombie/Initialize()
 	. = ..()
-	spawn(10)
-		after_creation()
-	//addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
+	addtimer(CALLBACK(src, PROC_REF(after_creation)), 1 SECONDS)
 
 /mob/living/carbon/human/species/zizombie/handle_combat()
 	if(mode == AI_HUNT)
@@ -120,15 +118,15 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 	. = ..()
 
 /mob/living/carbon/human/species/zizombie/proc/configure_mind()
-    if(!mind)
-        mind = new /datum/mind(src)
+	if(!mind)
+		mind = new /datum/mind(src)
 
-    mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 
 /mob/living/carbon/human/species/zizombie/handle_combat()
 	if(mode == AI_HUNT)
@@ -181,12 +179,13 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 	nojumpsuit = 1
 	sexes = 1
 	damage_overlay_type = "human"
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	var/raceicon = "zizombie"
 
-/datum/species/zizombie/update_damage_overlays(var/mob/living/carbon/human/H)
+/datum/species/zizombie/update_damage_overlays(mob/living/carbon/human/H)
 	return
 
-/datum/species/zizombie/regenerate_icons(var/mob/living/carbon/human/H)
+/datum/species/zizombie/regenerate_icons(mob/living/carbon/human/H)
 //	H.cut_overlays()
 	H.icon_state = ""
 	if(H.notransform)

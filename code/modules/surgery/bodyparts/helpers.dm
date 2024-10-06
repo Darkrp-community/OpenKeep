@@ -3,6 +3,7 @@
 	return
 
 /mob/living/carbon/get_bodypart(zone)
+	RETURN_TYPE(/obj/item/bodypart)
 	if(!zone)
 		zone = BODY_ZONE_CHEST
 	for(var/obj/item/bodypart/bodypart as anything in bodyparts)
@@ -122,6 +123,7 @@
 	return list()
 
 /mob/living/carbon/get_missing_limbs()
+	RETURN_TYPE(/list)
 	var/list/full = list(
 		BODY_ZONE_HEAD, 
 		BODY_ZONE_CHEST, 

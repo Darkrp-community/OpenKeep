@@ -1,12 +1,12 @@
 /**
-  *This is the proc that handles the order of an item_attack.
-  *The order of procs called is:
-  *tool_act on the target. If it returns TRUE, the chain will be stopped.
-  *pre_attack() on src. If this returns TRUE, the chain will be stopped.
-  *attackby on the target. If it returns TRUE, the chain will be stopped.
-  *and lastly
-  *afterattack. The return value does not matter.
-  */
+ *This is the proc that handles the order of an item_attack.
+ *The order of procs called is:
+ *tool_act on the target. If it returns TRUE, the chain will be stopped.
+ *pre_attack() on src. If this returns TRUE, the chain will be stopped.
+ *attackby on the target. If it returns TRUE, the chain will be stopped.
+ *and lastly
+ *afterattack. The return value does not matter.
+ */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
 	if(user.check_arm_grabbed(user.active_hand_index))
 		to_chat(user, "<span class='notice'>I can't move my arm!</span>")

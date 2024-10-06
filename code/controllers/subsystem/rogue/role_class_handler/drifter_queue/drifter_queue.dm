@@ -226,7 +226,7 @@
 	else
 		GLOB.respawncounts[character.ckey] = 1
 
-	return character
 	log_manifest(character.mind.key, character.mind, character, latejoin = TRUE)
+	return character
 
 

@@ -575,9 +575,13 @@
 	required_reagents = list(/datum/reagent/toxin/plasma = 1)
 	required_container = /obj/item/slime_extract/sepia
 	required_other = TRUE
+	deletes_extract = FALSE // we delete it manually
 
 /datum/chemical_reaction/slime/slimestop/on_reaction(datum/reagents/holder)
-	sleep(50)
+	addtimer(CALLBACK(src, PROC_REF(do_slimestop), holder), 5 SECONDS)
+	..()
+
+/datum/chemical_reaction/slime/slimestop/proc/do_slimestop(datum/reagents/holder)
 	var/obj/item/slime_extract/sepia/extract = holder.my_atom
 	var/turf/T = get_turf(holder.my_atom)
 	new /obj/effect/timestop(T, null, null, null)
@@ -586,8 +590,7 @@
 			var/mob/lastheld = get_mob_by_key(holder.my_atom.fingerprintslast)
 			if(lastheld && !lastheld.equip_to_slot_if_possible(extract, SLOT_HANDS, disable_warning = TRUE))
 				extract.forceMove(get_turf(lastheld))
-
-	..()
+	qdel(src)
 
 /datum/chemical_reaction/slime/slimecamera
 	name = "Slime Camera"
