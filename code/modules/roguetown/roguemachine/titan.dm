@@ -220,7 +220,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	if(!Adjacent(user))
 		return
 
-	var/mob/list/possible_mobs = orange(2, src)
+	var/list/mob/possible_mobs = orange(2, src)
 	var/mob/victim = input(user, "Who should change their post?", src, null) as null|mob in possible_mobs - user
 	if(isnull(victim) || !Adjacent(user))
 		return

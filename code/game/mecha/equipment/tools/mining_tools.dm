@@ -33,7 +33,7 @@
 			return
 	target.visible_message("<span class='warning'>[chassis] starts to drill [target].</span>", \
 					"<span class='danger'>[chassis] starts to drill [target]...</span>", \
-					 "<span class='hear'>I hear drilling.</span>")
+					"<span class='hear'>I hear drilling.</span>")
 
 	if(do_after_cooldown(target))
 		set_ready_state(FALSE)

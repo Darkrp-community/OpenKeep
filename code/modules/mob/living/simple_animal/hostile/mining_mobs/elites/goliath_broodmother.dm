@@ -4,17 +4,17 @@
 #define CALL_CHILDREN 4
 
 /**
-  * # Goliath Broodmother
-  *
-  * A stronger, faster variation of the goliath.  Has the ability to spawn baby goliaths, which it can later detonate at will.
-  * When it's health is below half, tendrils will spawn randomly around it.  When it is below a quarter of health, this effect is doubled.
-  * It's attacks are as follows:
-  * - Spawns a 3x3/plus shape of tentacles on the target location
-  * - Spawns 2 baby goliaths on its tile, up to a max of 8.  Children blow up when they die.
-  * - The broodmother lets out a noise, and is able to move faster for 6.5 seconds.
-  * - Summons your children around you.
-  * The broodmother is a fight revolving around stage control, as the activator has to manage the baby goliaths and the broodmother herself, along with all the tendrils.
-  */
+ * # Goliath Broodmother
+ *
+ * A stronger, faster variation of the goliath.  Has the ability to spawn baby goliaths, which it can later detonate at will.
+ * When it's health is below half, tendrils will spawn randomly around it.  When it is below a quarter of health, this effect is doubled.
+ * It's attacks are as follows:
+ * - Spawns a 3x3/plus shape of tentacles on the target location
+ * - Spawns 2 baby goliaths on its tile, up to a max of 8.  Children blow up when they die.
+ * - The broodmother lets out a noise, and is able to move faster for 6.5 seconds.
+ * - Summons your children around you.
+ * The broodmother is a fight revolving around stage control, as the activator has to manage the baby goliaths and the broodmother herself, along with all the tendrils.
+ */
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother
 	name = "goliath broodmother"
@@ -217,6 +217,9 @@
 
 /obj/effect/temp_visual/goliath_tentacle/broodmother/patch/Initialize(mapload, new_spawner)
 	. = ..()
+	INVOKE_ASYNC(src, PROC_REF(spawn_tentacles))
+
+/obj/effect/temp_visual/goliath_tentacle/broodmother/patch/proc/spawn_tentacles()
 	var/tentacle_locs = spiral_range_turfs(1, get_turf(src))
 	for(var/T in tentacle_locs)
 		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T, spawner)

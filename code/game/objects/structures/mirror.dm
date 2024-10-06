@@ -59,7 +59,7 @@
 					if("hair color")
 						var/new_hair
 						var/list/hairs
-						if(H.age == AGE_OLD && OLDGREY in H.dna.species.species_traits)
+						if(H.age == AGE_OLD && (OLDGREY in H.dna.species.species_traits))
 							hairs = H.dna.species.get_oldhc_list()
 							new_hair = input(user, "Choose your character's hair color:", "") as null|anything in hairs
 						else

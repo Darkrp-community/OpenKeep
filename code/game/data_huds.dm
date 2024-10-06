@@ -83,7 +83,7 @@
  */
 
 /***********************************************
- Medical HUD! Basic mode needs suit sensors on.
+Medical HUD! Basic mode needs suit sensors on.
 ************************************************/
 
 //HELPERS
@@ -149,7 +149,6 @@
 			return "health-85"
 		else
 			return "health-100"
-	return "0"
 
 //HOOKS
 
@@ -214,7 +213,7 @@
 
 
 /***********************************************
- Security HUDs! Basic mode shows only the job.
+Security HUDs! Basic mode shows only the job.
 ************************************************/
 
 //HOOKS
@@ -274,7 +273,7 @@
 	holder.icon_state = null
 
 /***********************************************
- Diagnostic HUDs!
+Diagnostic HUDs!
 ************************************************/
 
 /mob/living/proc/hud_set_nanite_indicator()
@@ -302,7 +301,6 @@
 			return "crit"
 		else
 			return "dead"
-	return "dead"
 
 //Sillycone hooks
 /mob/living/silicon/proc/diag_hud_set_health()

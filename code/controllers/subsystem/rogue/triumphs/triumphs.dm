@@ -63,7 +63,7 @@ SUBSYSTEM_DEF(triumphs)
 	// This represents the triumph buy organization on the main SS for triumphs
 	// Each key is a category name
 	// And then the list will have a number in a string that leads to a list of datums
-	var/list/central_state_data = list(
+	var/list/list/list/central_state_data = list( // this is updated to be a list of lists in subsystem Initialize
 		TRIUMPH_CAT_ROUND_EFX = 0,
 		TRIUMPH_CAT_CHARACTER = 0,
 		TRIUMPH_CAT_MISC = 0,
@@ -135,40 +135,31 @@ SUBSYSTEM_DEF(triumphs)
 			for(var/cur_check_path in stick_it_in.conflicts_with) // Time to refund anything already bought it personally hates
 				for(var/datum/triumph_buy/active_datum in active_triumph_buy_queue)
 					if(ispath(cur_check_path, active_datum.type))
-						// Give the person who originally bought it a 50% refund
-						var/ckey_cur_owna = active_datum.ckey_of_buyer
-						var/refund_amount = round(active_datum.triumph_cost * current_refund_percentage)
-						triumph_adjust(refund_amount, ckey_cur_owna)
-
-						if(GLOB.directory[ckey_cur_owna]) // If they are still logged into the game, inform them they got refunded
-							to_chat(GLOB.directory[ckey_cur_owna], "<span class='redtext'>You were refunded [refund_amount] triumphs due to CONFLICTS.</span>")
-
-						// Cleanup Time
-						active_datum.on_removal()
-						active_triumph_buy_queue -= active_datum
-
+						attempt_to_unbuy_triumph_condition(C, active_datum, reason = "CONFLICTS")
 
 		stick_it_in.on_buy()
 		call_menu_refresh()
-/*
+/**
 	This occurs when you try to unbuy a triumph condition and removes it
-*/
-/datum/controller/subsystem/triumphs/proc/attempt_to_unbuy_triumph_condition(client/C, datum/triumph_buy/pull_it_out)
-	var/triumph_amount = get_triumphs(C.ckey) - pull_it_out.triumph_cost
-	if(triumph_amount >= 0)
-		triumph_adjust(pull_it_out.triumph_cost*-1, C.ckey)
-
-		// Give the person who originally bought it a 50% refund
-		var/ckey_prev_owna = pull_it_out.ckey_of_buyer
-		var/refund_amount = round(pull_it_out.triumph_cost * current_refund_percentage)
-		triumph_adjust(refund_amount, ckey_prev_owna)
-
-		if(GLOB.directory[ckey_prev_owna]) // If they are still logged into the game, inform them they got refunded
-			to_chat(GLOB.directory[ckey_prev_owna], "<span class='redtext'>You were refunded [refund_amount] triumphs due to a UNBUY.</span>")
-
-		pull_it_out.on_removal()
-
-		active_triumph_buy_queue -= pull_it_out
+	Also used for refunding due to conflicts
+ */
+/datum/controller/subsystem/triumphs/proc/attempt_to_unbuy_triumph_condition(client/C, datum/triumph_buy/pull_it_out, reason = "\improper UNBUY")
+	if(pull_it_out.ckey_of_buyer != C.ckey)
+		// We're being unbought by someone other than the original buyer?
+		// That costs extra, you know... (for some reason? I don't know, Macha wrote it that way)
+		if(get_triumphs(C.ckey) < pull_it_out.triumph_cost) // We're too broke!
+			to_chat(C, span_redtext("You don't have enough triumphs to unbuy that."))
+			return FALSE
+		triumph_adjust(-pull_it_out.triumph_cost, C.ckey)
+	// Give the person who originally bought it a 50% refund
+	var/ckey_prev_owna = pull_it_out.ckey_of_buyer
+	var/refund_amount = round(pull_it_out.triumph_cost * current_refund_percentage)
+	triumph_adjust(refund_amount, ckey_prev_owna)
+	if(GLOB.directory[ckey_prev_owna]) // If they are still logged into the game, inform them they got refunded
+		to_chat(GLOB.directory[ckey_prev_owna], span_redtext("You were refunded [refund_amount] triumph\s due to \a [reason]."))
+	pull_it_out.on_removal()
+	active_triumph_buy_queue -= pull_it_out
+	return TRUE
 
 // Same deal as the role class stuff, we are only really just caching this to update displays as people buy stuff.
 // So we have to be careful to not leave it in when unneeded otherwise we will have to keep track of which menus are actually open.

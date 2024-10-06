@@ -4,7 +4,7 @@
 /datum/species/proc/get_accent_list()
 	return
 
-/datum/species/proc/handle_speech(datum/source, mob/speech_args)
+/datum/species/proc/handle_speech(datum/source, list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
 	if(message)
 		var/list/accent_words = strings("spellcheck.json", "spellcheck")
