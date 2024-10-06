@@ -911,8 +911,8 @@
 /obj/item/storage/box/ingredients/wildcard/PopulateContents()
 	for(var/i in 1 to 7)
 		var/randomFood = pick(
-							  /obj/item/reagent_containers/food/snacks/chocolatebar,
-							  /obj/item/reagent_containers/food/drinks/bottle/wine)
+							/obj/item/reagent_containers/food/snacks/chocolatebar,
+							/obj/item/reagent_containers/food/drinks/bottle/wine)
 		new randomFood(src)
 
 /obj/item/storage/box/ingredients/fiesta

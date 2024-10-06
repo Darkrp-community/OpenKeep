@@ -160,7 +160,7 @@
 
 /datum/action/innate/cult/blood_spell/emp/Activate()
 	owner.visible_message("<span class='warning'>[owner]'s hand flashes a bright blue!</span>", \
-						 "<span class='cultitalic'>I speak the cursed words, emitting an EMP blast from my hand.</span>")
+						"<span class='cultitalic'>I speak the cursed words, emitting an EMP blast from my hand.</span>")
 	empulse(owner, 2, 5)
 	owner.whisper(invocation, language = /datum/language/common)
 	charges--
@@ -198,7 +198,7 @@
 			to_chat(owner, "<span class='warning'>A ritual dagger appears in my hand!</span>")
 		else
 			owner.visible_message("<span class='warning'>A ritual dagger appears at [owner]'s feet!</span>", \
-				 "<span class='cultitalic'>A ritual dagger materializes at my feet.</span>")
+				"<span class='cultitalic'>A ritual dagger materializes at my feet.</span>")
 		SEND_SOUND(owner, sound('sound/blank.ogg',0,1,25))
 		charges--
 		desc = base_desc
@@ -302,7 +302,7 @@
 		button_icon_state = "back"
 	else
 		owner.visible_message("<span class='warning'>A flash of light shines from [owner]'s hand!</span>", \
-			 "<span class='cultitalic'>I invoke the counterspell, revealing nearby runes.</span>")
+			"<span class='cultitalic'>I invoke the counterspell, revealing nearby runes.</span>")
 		charges--
 		owner.whisper(invocation, language = /datum/language/common)
 		SEND_SOUND(owner, sound('sound/blank.ogg',0,1,25))
@@ -806,7 +806,7 @@
 						to_chat(user, "<span class='cultitalic'>A [rite.name] appears in my hand!</span>")
 					else
 						user.visible_message("<span class='warning'>A [rite.name] appears at [user]'s feet!</span>", \
-							 "<span class='cultitalic'>A [rite.name] materializes at my feet.</span>")
+							"<span class='cultitalic'>A [rite.name] materializes at my feet.</span>")
 			if("Blood Bolt Barrage (300)")
 				if(uses < BLOOD_BARRAGE_COST)
 					to_chat(user, "<span class='cultitalic'>I need [BLOOD_BARRAGE_COST] charges to perform this rite.</span>")

@@ -712,26 +712,26 @@
 			M.visible_message("<span class='warning'>[M]'s body starts convulsing!</span>")
 			M.notify_ghost_cloning(source = M)
 			M.do_jitter_animation(10)
-			addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living/carbon, do_jitter_animation), 10), 40) //jitter immediately, then again after 4 and 8 seconds
-			addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living/carbon, do_jitter_animation), 10), 80)
-			sleep(100) //so the ghost has time to re-enter
-
-
-			if(iscarbon(M))
-				var/mob/living/carbon/C = M
-				if(!(C.dna && C.dna.species && (NOBLOOD in C.dna.species.species_traits)))
-					C.blood_volume = max(C.blood_volume, BLOOD_VOLUME_NORMAL) //so you don't instantly re-die from a lack of blood
-				for(var/organ in C.internal_organs)
-					var/obj/item/organ/O = organ
-					O.setOrganDamage(0) //so you don't near-instantly re-die because my heart has decayed to the point of complete failure
-
-			M.adjustOxyLoss(-20, 0)
-			M.adjustToxLoss(-20, 0)
-			M.updatehealth()
-			if(M.revive(full_heal = FALSE, admin_revive = FALSE))
-				M.emote("breathgasp")
-				log_combat(M, M, "revived", src)
+			addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living/carbon, do_jitter_animation), 10), 4 SECONDS) //jitter immediately, then again after 4 and 8 seconds
+			addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living/carbon, do_jitter_animation), 10), 8 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(finish_revive), M, method, reac_volume), 10 SECONDS) //so the ghost has time to re-enter
 	..()
+
+/datum/reagent/medicine/strange_reagent/proc/finish_revive(mob/living/M, method=TOUCH, reac_volume)
+	if(iscarbon(M))
+		var/mob/living/carbon/C = M
+		if(!(C.dna && C.dna.species && (NOBLOOD in C.dna.species.species_traits)))
+			C.blood_volume = max(C.blood_volume, BLOOD_VOLUME_NORMAL) //so you don't instantly re-die from a lack of blood
+		for(var/organ in C.internal_organs)
+			var/obj/item/organ/O = organ
+			O.setOrganDamage(0) //so you don't near-instantly re-die because my heart has decayed to the point of complete failure
+
+	M.adjustOxyLoss(-20, 0)
+	M.adjustToxLoss(-20, 0)
+	M.updatehealth()
+	if(M.revive(full_heal = FALSE, admin_revive = FALSE))
+		M.emote("breathgasp")
+		log_combat(M, M, "revived", src)
 
 /datum/reagent/medicine/strange_reagent/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(0.5*REM, 0)

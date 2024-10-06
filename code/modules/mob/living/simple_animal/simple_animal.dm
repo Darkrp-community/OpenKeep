@@ -230,7 +230,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 ///Extra effects to add when the mob is tamed, such as adding a riding component
 /mob/living/simple_animal/proc/tamed(mob/user)
-	emote("lower_head", forced = TRUE)
+	INVOKE_ASYNC(src, PROC_REF(emote), "lower_head", null, null, null, TRUE)
 	tame = TRUE
 	stop_automated_movement_when_pulled = TRUE
 	if(user)
@@ -494,9 +494,9 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 /mob/living/simple_animal/Stat()
 	..()
 	return //RTCHANGE
-	if(statpanel("Status"))
+/* 	if(statpanel("Status"))
 		stat(null, "Health: [round((health / maxHealth) * 100)]%")
-		return 1
+		return 1 */
 
 /mob/living/simple_animal/proc/drop_loot()
 	if(loot.len)
@@ -545,7 +545,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			return FALSE
 	return TRUE
 
-mob/living/simple_animal/handle_fire()
+/mob/living/simple_animal/handle_fire()
 	. = ..()
 	if(fire_stacks > 0)
 		apply_damage(5, BURN)
@@ -607,8 +607,8 @@ mob/living/simple_animal/handle_fire()
 		if(target)
 			return new childspawn(target)
 //			visible_message("<span class='warning'>[src] finally gives birth.</span>")
-			playsound(src, 'sound/foley/gross.ogg', 100, FALSE)
-			breedchildren--
+//			playsound(src, 'sound/foley/gross.ogg', 100, FALSE)
+//			breedchildren--
 
 /mob/living/simple_animal/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE)
 	if(incapacitated())

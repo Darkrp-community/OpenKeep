@@ -27,32 +27,28 @@
 
 
 /obj/item/fishingrod/attackby(obj/item/I, mob/user, params)
-	if(!baited)
-		if(I.isbait) // Don't use items that aren't bait
-			user.visible_message("<span class='notice'>[user] hooks something to the line.</span>", \
-								"<span class='notice'>I hook [I] to my line.</span>")
-			playsound(src.loc, 'sound/foley/pierce.ogg', 50, FALSE)
-			if(istype(I,/obj/item/natural/worms))
-				var/obj/item/natural/worms/W = I
-				if(W.amt > 1)
-					W.amt--
-					var/obj/item/natural/worms/N = new W.type(src)
-					baited = N
-				else
-					W.forceMove(src)
-					baited = W
-			else
-				I.forceMove(src)
-				baited = I
-			update_icon()
-			return
-		else
-			to_chat(user, "<span class='notice'>This isn't suitable as bait...</span>")
-			return
-	else
+	if(baited)
 		to_chat(user, "<span class='warning'>The rod already has bait on it!</span>")
 		return
-	. = ..()
+	if(!I.isbait) // Don't use items that aren't bait
+		to_chat(user, "<span class='notice'>This isn't suitable as bait...</span>")
+		return
+	user.visible_message("<span class='notice'>[user] hooks something to the line.</span>", \
+						"<span class='notice'>I hook [I] to my line.</span>")
+	playsound(src.loc, 'sound/foley/pierce.ogg', 50, FALSE)
+	if(istype(I,/obj/item/natural/worms))
+		var/obj/item/natural/worms/W = I
+		if(W.amt > 1)
+			W.amt--
+			var/obj/item/natural/worms/N = new W.type(src)
+			baited = N
+		else
+			W.forceMove(src)
+			baited = W
+	else
+		I.forceMove(src)
+		baited = I
+	update_icon()
 
 /obj/item/fishingrod/getonmobprop(tag)
 	. = ..()
