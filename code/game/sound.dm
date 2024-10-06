@@ -16,7 +16,7 @@
 	//allocate a channel if necessary now so its the same for everyone
 	channel = channel || open_sound_channel()
 
- 	// Looping through the player list has the added bonus of working for mobs inside containers
+	// Looping through the player list has the added bonus of working for mobs inside containers
 	var/sound/S = soundin
 	if(!istype(S))
 		S = sound(get_sfx(soundin))
