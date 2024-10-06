@@ -292,7 +292,7 @@
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.apply_status_effect(/datum/status_effect/debuff/barbfalter)
-    
+	
 // BARDIC BUFFS BELOW
 
 /datum/status_effect/bardicbuff
