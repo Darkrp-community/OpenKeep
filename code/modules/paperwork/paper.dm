@@ -441,7 +441,6 @@
 		else
 			to_chat(user, "<span class='warning'>I can't write.</span>")
 			return
-		return
 
 	if(istype(P, /obj/item/paper))
 		var/obj/item/paper/p = P
