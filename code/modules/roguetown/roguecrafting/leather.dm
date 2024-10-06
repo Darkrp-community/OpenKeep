@@ -162,7 +162,7 @@
 
 
 
-datum/crafting_recipe/roguetown/leather/leatherjacket
+/datum/crafting_recipe/roguetown/leather/leatherjacket
 	name = "leather jacket"
 	result = list(/obj/item/clothing/suit/roguetown/armor/leather/vest/jacket)
 	reqs = list(/obj/item/natural/hide = 1)
