@@ -356,10 +356,9 @@
 		Goto(user,move_to_delay)
 		addtimer(CALLBACK(src, PROC_REF(return_action)), 3 SECONDS)
 
-// Goatmilk-udder
+
+//................. UDDER (GOTE).......................//
 /obj/item/gudder
-	name = "udder"
-	var/in_use // so you can't spam milking sounds
 
 /obj/item/gudder/Initialize()
 	create_reagents(100)
@@ -369,21 +368,19 @@
 /obj/item/gudder/proc/generateMilk()
 	reagents.add_reagent(/datum/reagent/consumable/milk/gote, 1)
 
-/obj/item/gudder/proc/milkAnimal(obj/O, mob/user)
+/obj/item/gudder/proc/milkAnimal(obj/O, mob/living/user = usr)
 	var/obj/item/reagent_containers/glass/G = O
 	if(G.reagents.total_volume >= G.volume)
 		to_chat(user, span_warning("[O] is full."))
 		return
 	if(!reagents.has_reagent(/datum/reagent/consumable/milk/gote, 5))
 		to_chat(user, span_warning("The udder is dry. Wait a bit longer..."))
-		sleep(10) // just to not have the damn spam click I dunno
+		user.changeNext_move(10)
 		return
 	if(do_after(user, 1 SECONDS, target = src))
 		reagents.trans_to(O, rand(5,10))
-		visible_message(span_notice("[user] milks [src] using \the [O]"))
-		playsound(O, pick('modular/Creechers/sound/milking1.ogg', 'modular/Creechers/sound/milking2.ogg'), 100, TRUE, -1)
-		sleep(10)
-
-
-
+		user.visible_message(span_notice("[user] milks [src] using \the [O]"))
+		playsound(O, pick('sound/vo/mobs/cow/milking (1).ogg', 'sound/vo/mobs/cow/milking (2).ogg'), 100, TRUE, -1)
+		user.Immobilize(1 SECONDS)
+		user.changeNext_move(1 SECONDS)
 

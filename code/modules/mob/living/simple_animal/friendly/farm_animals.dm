@@ -1,4 +1,5 @@
-//goat
+//	This whole file is mostly obsolete stuff, some bits like chicken still in sue 
+// //goat
 /mob/living/simple_animal/hostile/retaliate/goat
 	name = "goat"
 	desc = ""
@@ -75,7 +76,6 @@
 /mob/living/simple_animal/hostile/retaliate/goat/attackby(obj/item/O, mob/user, params)
 	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass))
 		udder.milkAnimal(O, user)
-		changeNext_move(CLICK_CD_MELEE)
 		return 1
 	else
 		return ..()
@@ -339,33 +339,6 @@
 				STOP_PROCESSING(SSobj, src)
 				qdel(src)
 
-
-/obj/item/udder
-	name = "udder"
-	var/in_use // so you can't spam milking sounds
-
-/obj/item/udder/Initialize()
-	create_reagents(100)
-	reagents.add_reagent(/datum/reagent/consumable/milk, rand(0,20))
-	. = ..()
-
-/obj/item/udder/proc/generateMilk()
-	reagents.add_reagent(/datum/reagent/consumable/milk, 1)
-
-/obj/item/udder/proc/milkAnimal(obj/O, mob/user)
-	var/obj/item/reagent_containers/glass/G = O
-	if(G.reagents.total_volume >= G.volume)
-		to_chat(user, span_warning("[O] is full."))
-		return
-	if(!reagents.has_reagent(/datum/reagent/consumable/milk, 5))
-		to_chat(user, span_warning("The udder is dry. Wait a bit longer..."))
-		sleep(10)
-		return
-	if(do_after(user, 1 SECONDS, target = src))
-		reagents.trans_to(O, rand(5,10))
-		visible_message(span_notice("[user] milks [src] using \the [O]"))
-		playsound(O, pick('modular/Creechers/sound/milking1.ogg', 'modular/Creechers/sound/milking2.ogg'), 100, TRUE, -1)
-		sleep(10)
 
 
 //grenchensnacker
