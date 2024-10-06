@@ -168,7 +168,7 @@ datum/crafting_recipe/roguetown/leather/leatherjacket
 	reqs = list(/obj/item/natural/hide = 1)
 	craftdiff = 1
 
-datum/crafting_recipe/roguetown/leather/brimmedhat
+/datum/crafting_recipe/roguetown/leather/brimmedhat
 	name = "brimmed hat x2"
 	result = list(/obj/item/clothing/head/roguetown/brimmed)
 	reqs = list(/obj/item/natural/hide = 1)
