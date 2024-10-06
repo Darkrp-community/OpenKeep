@@ -238,7 +238,6 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 | CRITICAL HIT DEFENSE DEFINES |	- So armor makes sense
 \-----------------------------*/
 
-// All crits
 #define ALL_CRITICAL_HITS list(\
 BCLASS_CUT, \
 BCLASS_CHOP, \
@@ -248,8 +247,16 @@ BCLASS_LASHING, \
 BCLASS_BITE, \
 BCLASS_TWIST) 
 
-// All crits minus stab
-#define CRITICALS_GOOD_METAL list(\
+// Vampire heavy armor, always vulnerable to whips
+#define ALL_CRITICAL_HITS_VAMP list(\
+BCLASS_CUT, \
+BCLASS_CHOP, \
+BCLASS_BLUNT, \
+BCLASS_STAB, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+#define ALL_EXCEPT_STAB list(\
 BCLASS_CUT, \
 BCLASS_CHOP, \
 BCLASS_BLUNT, \
@@ -257,48 +264,51 @@ BCLASS_LASHING, \
 BCLASS_BITE, \
 BCLASS_TWIST) 
 
-// Orcs mostly
-#define CRITICALS_POOR_METAL list(\
-BCLASS_CUT, \
-BCLASS_CHOP, \
-BCLASS_BLUNT) 
-
-// Just cut chop and stab, for coifs and partial maille
-#define CRITICALS_MAILLE_COIF list(\
-BCLASS_CUT, \
-BCLASS_CHOP, \
-BCLASS_STAB) 
-
-// Maille level but also covers nose twisters
-#define CRITICALS_MAILLE_PLUS list(\
+// Typical maille
+#define ALL_EXCEPT_BLUNT list(\
 BCLASS_CUT, \
 BCLASS_CHOP, \
 BCLASS_STAB, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
 BCLASS_TWIST) 
 
-#define CRITICALS_REINFORCED_LEATHER list(\
+// Plates cover only a few organs and bones
+#define ONLY_VITAL_ORGANS list(\
+BCLASS_CHOP, \
+BCLASS_BLUNT) 
+
+#define ALL_EXCEPT_CHOP_AND_STAB list(\
+BCLASS_CUT, \
+BCLASS_BLUNT, \
+BCLASS_LASHING, \
+BCLASS_BITE, \
+BCLASS_TWIST) 
+
+#define ALL_EXCEPT_BLUNT_AND_STAB list(\
 BCLASS_CUT, \
 BCLASS_CHOP, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
 BCLASS_TWIST) 
 
-#define CRITICALS_BOILED_LEATHER list(\
+#define CUT_AND_MINOR_CRITS list(\
 BCLASS_CUT, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
 BCLASS_TWIST) 
 
-#define CRITICALS_THICK_LEATHER list(\
+#define BLUNT_AND_MINOR_CRITS list(\
 BCLASS_BLUNT, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
 BCLASS_TWIST) 
 
-#define CRITICALS_THICK_CLOTH list(\
+#define MINOR_CRITICALS list(\
 BCLASS_LASHING, \
 BCLASS_BITE, \
 BCLASS_TWIST) 
+
 
 
 /*------------------------\
@@ -313,38 +323,35 @@ BCLASS_TWIST)
 
 
 /*--------------------\
-| ARMOR VALUE DEFINES |	- So armor makes sense
+| ARMOR VALUE DEFINES |	- So armor makes sense. Basic arrow got 25 AP so less than 25 "bullet" does nothing vs arrows generally
 \--------------------*/
 
 // Light Gambesson/padded cloth
 #define MELEE_15___ARROW_NOTHING list(\
 "melee" = 15, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
 // Gambesson
-#define MELEE_20___ARROW_20 list(\
-"melee" = 20, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-#define MELEE_30___ARROW_20 list(\
-"melee" = 30, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
+#define MELEE_20___ARROW_30 list(\
+"melee" = 20, "bullet" = 30, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 // Thick Gambesson
-#define MELEE_30___ARROW_30 list(\
-"melee" = 30, "bullet" = 30, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define MELEE_30___ARROW_35 list(\
+"melee" = 30, "bullet" = 35, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 // Leather and Silk armor
 #define MELEE_40___ARROW_20 list(\
 "melee" = 40, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-#define MELEE_40___ARROW_40 list(\
-"melee" = 40, "bullet" = 40, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
 // Fur armor or boiled leather
 #define MELEE_50___ARROW_25 list(\
 "melee" = 50, "bullet" = 25, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
 // Splint mail (leather + little plates partial)
 #define MELEE_60___ARROW_30 list(\
 "melee" = 60, "bullet" = 30, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+// Thick partial plates
+#define MELEE_50___ARROW_NOTHING list(\
+"melee" = 50, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+#define MELEE_60___ARROW_50 list(\
+"melee" = 60, "bullet" = 50, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 // Maille
 #define MELEE_80___ARROW_90 list(\
@@ -376,14 +383,16 @@ BCLASS_TWIST)
 
 
 #define ARMOR_GAMBESON_BAD	MELEE_15___ARROW_NOTHING
-#define ARMOR_GAMBESON		MELEE_20___ARROW_20
-#define ARMOR_GAMBESON_GOOD	MELEE_30___ARROW_20
+#define ARMOR_GAMBESON		MELEE_20___ARROW_30
+#define ARMOR_GAMBESON_GOOD	MELEE_30___ARROW_35
 
 #define ARMOR_LEATHER		MELEE_40___ARROW_20
 #define ARMOR_LEATHER_GOOD	MELEE_50___ARROW_25
 #define ARMOR_LEATHER_BEST	MELEE_60___ARROW_30
 
 #define ARMOR_MAILLE		MELEE_80___ARROW_90
+
+#define ARMOR_COPPER		MELEE_50___ARROW_NOTHING
 
 #define ARMOR_IRON_BAD		MELEE_60___ARROW_50
 #define ARMOR_IRON			MELEE_70___ARROW_50
@@ -393,3 +402,108 @@ BCLASS_TWIST)
 #define ARMOR_STEEL_PARTIAL	MELEE_90___ARROW_75
 #define ARMOR_STEEL			MELEE_90___ARROW_90
 #define ARMOR_STEEL_BEST	MELEE_100___ARROW_100
+
+#define HELMET_KNIGHT_DECORATIONS list(\
+		"Basic"="basic_decoration",\
+		"Blue"="blue_decoration",\
+		"Stripes"="stripes_decoration",\
+		"Red Castle"="castle_red_decoration",\
+		"White Castle"="castle_white_decoration",\
+		"Graggar"="graggar_decoration",\
+		"Efreet"="efreet_decoration",\
+		"Sun"="sun_decoration",\
+		"Peace"="peace_decoration",\
+		"Feathers"="feathers_decoration",\
+		"Lion"="lion_decoration",\
+		"Red Dragon"="dragon_red_decoration",\
+		"Green Dragon"="dragon_green_decoration",\
+		"Horns"="horns_decoration",\
+		"Swan"="swan_decoration",\
+		"Fish"="fish_decoration",\
+		"Windmill"="windmill_decoration", \
+		"Oathtaker"="oathtaker_decoration",\
+		"Skull"="skull_decoration")
+
+#define HELMET_HOUNSKULL_DECORATIONS list(\
+		"Basic"="basic_houndecoration",\
+		"Blue"="blue_houndecoration",\
+		"Stripes"="stripes_houndecoration",\
+		"Red Castle"="castle_red_houndecoration",\
+		"White Castle"="castle_white_houndecoration",\
+		"Graggar"="graggar_houndecoration",\
+		"Efreet"="efreet_houndecoration",\
+		"Peace"="peace_houndecoration",\
+		"Sun"="sun_houndecoration",\
+		"Feathers"="feathers_houndecoration",\
+		"Lion"="lion_houndecoration",\
+		"Red Dragon"="dragon_red_houndecoration",\
+		"Green Dragon"="dragon_green_houndecoration",\
+		"Horns"="horns_houndecoration",\
+		"Swan"="swan_houndecoration",\
+		"Fish"="fish_houndecoration",\
+		"Windmill"="peace_houndecoration",\
+		"Oathtaker"="oathtaker_houndecoration",\
+		"Skull"="skull_houndecoration")
+
+#define HELMET_BUCKET_DECORATIONS list(\
+		"Basic"="basic_bucket",\
+		"Blue"="blue_bucket",\
+		"Stripes"="stripes_bucket",\
+		"Red Castle"="castle_red_bucket",\
+		"White Castle"="castle_white_bucket",\
+		"Graggar"="graggar_bucket",\
+		"Efreet"="efreet_bucket",\
+		"Peace"="peace_bucket",\
+		"Sun"="sun_bucket",\
+		"Feathers"="feathers_bucket",\
+		"Lion"="lion_bucket",\
+		"Red Dragon"="dragon_red_bucket",\
+		"Green Dragon"="dragon_green_bucket",\
+		"Horns"="horns_bucket",\
+		"Swan"="swan_bucket",\
+		"Fish"="fish_bucket",\
+		"Windmill"="windmill_bucket",\
+		"Oathtaker"="oathtaker_bucket",\
+		"Skull"="skull_bucket")
+
+#define HELMET_GOLD_DECORATIONS list(\
+		"Basic"="basic_gbucket",\
+		"Blue"="blue_gbucket",\
+		"Stripes"="stripes_gbucket",\
+		"Red Castle"="castle_red_gbucket",\
+		"White Castle"="castle_white_gbucket",\
+		"Graggar"="graggar_gbucket",\
+		"Efreet"="efreet_gbucket",\
+		"Peace"="peace_gbucket",\
+		"Sun"="sun_gbucket",\
+		"Feathers"="feathers_gbucket",\
+		"Lion"="lion_gbucket",\
+		"Red Dragon"="dragon_red_gbucket",\
+		"Green Dragon"="dragon_green_gbucket",\
+		"Horns"="horns_gbucket",\
+		"Swan"="swan_gbucket",\
+		"Fish"="fish_gbucket",\
+		"Windmill"="windmill_gbucket",\
+		"Oathtaker"="oathtaker_gbucket",\
+		"Skull"="skull_gbucket")
+
+#define BASCINET_DECORATIONS list(\
+		"Basic"="basic_bascinet",\
+		"Blue"="blue_bascinet",\
+		"Stripes"="stripes_bascinet",\
+		"Red Castle"="castle_red_bascinet",\
+		"White Castle"="castle_white_bascinet",\
+		"Graggar"="graggar_bascinet",\
+		"Efreet"="efreet_bascinet",\
+		"Sun"="sun_bascinet",\
+		"Peace"="peace_bascinet",\
+		"Feathers"="feathers_bascinet",\
+		"Lion"="lion_bascinet",\
+		"Red Dragon"="dragon_red_bascinet",\
+		"Green Dragon"="dragon_green_bascinet",\
+		"Horns"="horns_bascinet",\
+		"Swan"="swan_bascinet",\
+		"Fish"="fish_bascinet",\
+		"Windmill"="windmill_bascinet",\
+		"Oathtaker"="oathtaker_bascinet",\
+		"Skull"="skull_bascinet")

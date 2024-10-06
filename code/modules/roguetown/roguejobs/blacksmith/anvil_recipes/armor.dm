@@ -340,7 +340,7 @@
 	name = "Decorated Knight's Helmet (2) (c)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
-	created_item = /obj/item/clothing/head/roguetown/helmet/decoratedknighthelm
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decorated/knight
 	craftdiff = 4
 	i_type = "Armor"
 
@@ -348,7 +348,7 @@
 	name = "Decorated Pigface Helmet (2) (c)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
-	created_item = /obj/item/clothing/head/roguetown/helmet/decoratedhounskull
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decorated/hounskull
 	craftdiff = 3
 	i_type = "Armor"
 
@@ -356,7 +356,7 @@
 	name = "Decorated Bucket Helmet (2) (c)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
-	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decoratedbucket
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decorated/bucket
 	craftdiff = 3
 	i_type = "Armor"
 
@@ -364,6 +364,6 @@
 	name = "Decorated Gold-Trimmed Bucket Helmet (2) (c)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
-	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decorated/golden
 	craftdiff = 3
 	i_type = "Armor"
