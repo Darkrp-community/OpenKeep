@@ -109,7 +109,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 
 	syncRegex()
 
-	//do not convert to to_chat()
+	//do not convert to to_chat
 	SEND_TEXT(owner, "<span class=\"userdanger\">Failed to load fancy chat, reverting to old chat. Certain features won't work.</span>")
 
 /datum/chatOutput/proc/showChat()

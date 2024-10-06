@@ -1126,7 +1126,7 @@
 									wuzantag = TRUE
 						if(!wuzantag)
 							adjust_playerquality(-2, H.ckey, reason="Raped as a non villain.")
-					addtimer(CALLBACK(eatingus, /mob/.proc/emote, "gag"), rand(10,20))
+					addtimer(CALLBACK(eatingus, TYPE_PROC_REF(/mob, emote), "gag"), rand(10,20))
 		if("insideass")
 			if(owner.has_flaw(/datum/charflaw/addiction/lovefiend))
 				owner.sate_addiction()

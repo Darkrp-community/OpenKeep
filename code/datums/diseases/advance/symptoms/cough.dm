@@ -31,10 +31,10 @@ BONUS
 	symptom_delay_max = 15
 	var/spread_range = 1
 	threshold_desc = "<b>Resistance 11:</b> The host will drop small items when coughing.<br>\
-					  <b>Resistance 15:</b> Occasionally causes coughing fits that stun the host. The extra coughs do not spread the virus.<br>\
-					  <b>Stage Speed 6:</b> Increases cough frequency.<br>\
-					  <b>Transmission 7:</b> Coughing will now infect bystanders up to 2 tiles away.<br>\
-					  <b>Stealth 4:</b> The symptom remains hidden until active."
+					<b>Resistance 15:</b> Occasionally causes coughing fits that stun the host. The extra coughs do not spread the virus.<br>\
+					<b>Stage Speed 6:</b> Increases cough frequency.<br>\
+					<b>Transmission 7:</b> Coughing will now infect bystanders up to 2 tiles away.<br>\
+					<b>Stealth 4:</b> The symptom remains hidden until active."
 
 /datum/symptom/cough/Start(datum/disease/advance/A)
 	if(!..())
