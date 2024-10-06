@@ -422,7 +422,11 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 
 
-//................ Steel Cuirass ............... //		-A cuirass is armor that covers both stomach and chest front as well as your back. Same coverage as halfplate.
+/*-----------------------\
+|  Cuirass & Breastplate |	-A cuirass is armor that covers both stomach and chest front as well as your back. A breastplate only covers your front torso. Differentiate with crit prevention, groin coverage, integrity, or not at all?
+\-----------------------*/
+
+//................ Steel Cuirass ............... //	
 /obj/item/clothing/suit/roguetown/armor/cuirass
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "steel cuirass"
@@ -484,7 +488,7 @@
 	item_state = "shadowplate"
 	allowed_race = list("elf", "dark elf")
 
-//................ Copper Breastplate ............... //
+//................ Copper Heart-protector ............... //
 /obj/item/clothing/suit/roguetown/armor/cuirass/copperchest
 	name = "copper heart protector"//SHITTY ARMOR SHITTY ARMOR!!
 	desc = "Very simple and crude protection for the chest. Ancient fighters once used similar gear, with better quality..."

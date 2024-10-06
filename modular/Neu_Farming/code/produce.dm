@@ -4,6 +4,8 @@
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_SMALL
 	sellprice = 1	
+	force = 0
+	throwforce = 0
 	var/list/pipe_reagents = list()
 	var/seed
 	var/bitesize_mod = 0
@@ -90,6 +92,7 @@
 
 // oldpath for map fix TO DO /obj/item/reagent_containers/food/snacks/produce/apple
 // obj/item/seeds/apple
+// ^ PSA: next time you want to do this, make and run an updatepaths migration in tools/UpdatePaths
 /obj/item/reagent_containers/food/snacks/produce/apple
 	seed = /obj/item/neuFarm/seed/apple
 	name = "apple"
@@ -378,6 +381,7 @@
 	name = "sunflower"
 	desc = ""
 	icon_state = "sunflower"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head_items.dmi'
 	seed = /obj/item/neuFarm/seed/sunflower
 	slot_flags = ITEM_SLOT_HEAD
 	throwforce = 0
@@ -389,18 +393,22 @@
 	rotprocess = null
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/roastseeds
 
+
 /*	..................   Fyritius Flower   ................... */ // some sort of funni fire flowers. Dunno just moving them here for consistency.
 /obj/item/reagent_containers/food/snacks/produce/fyritius
 	name = "fyritius flower"
 	seed = /obj/item/neuFarm/seed/fyritius // if mass producing these breaks shit just comment it out
 	desc = ""
 	icon_state = "fyritius"
-	tastes = list("tastes like regret and fire" = 1)
+	tastes = list("tastes like a burning coal and fire" = 1)
 	bitesize = 1
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/fyritiusnectar = 5)
 	dropshrink = 0.8
 	rotprocess = null
 	dust_result = /obj/item/alch/firedust
+	w_class = WEIGHT_CLASS_TINY
+	throw_speed = 1
+	throw_range = 3
 
 /*
 /obj/item/reagent_containers/food/snacks/produce/garlic
