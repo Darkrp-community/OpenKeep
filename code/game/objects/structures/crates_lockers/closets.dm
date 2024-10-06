@@ -304,7 +304,7 @@
 		else
 			playsound(src, 'sound/foley/doors/lockrattle.ogg', 100)
 
-obj/structure/closet/proc/trypicklock(obj/item/I, mob/user)
+/obj/structure/closet/proc/trypicklock(obj/item/I, mob/user)
 	if(opened)
 		to_chat(user, "<span class='warning'>This cannot be picked while it is open.</span>")
 		return
@@ -398,13 +398,13 @@ obj/structure/closet/proc/trypicklock(obj/item/I, mob/user)
 	var/list/targets = list(O, src)
 	add_fingerprint(user)
 	user.visible_message("<span class='warning'>[user] [actuallyismob ? "tries to ":""]stuff [O] into [src].</span>", \
-				 	 	"<span class='warning'>I [actuallyismob ? "try to ":""]stuff [O] into [src].</span>", \
-				 	 	"<span class='hear'>I hear clanging.</span>")
+						"<span class='warning'>I [actuallyismob ? "try to ":""]stuff [O] into [src].</span>", \
+						"<span class='hear'>I hear clanging.</span>")
 	if(actuallyismob)
 		if(do_after_mob(user, targets, 40))
 			user.visible_message("<span class='notice'>[user] stuffs [O] into [src].</span>", \
-							 	 "<span class='notice'>I stuff [O] into [src].</span>", \
-							 	 "<span class='hear'>I hear a loud bang.</span>")
+								"<span class='notice'>I stuff [O] into [src].</span>", \
+								"<span class='hear'>I hear a loud bang.</span>")
 			var/mob/living/L = O
 			if(!issilicon(L))
 				L.Paralyze(40)

@@ -63,7 +63,7 @@
 	max_integrity = 150
 	sellprice = 10
 
-obj/item/clothing/head/roguetown/helmet/leather/orc
+/obj/item/clothing/head/roguetown/helmet/leather/orc
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "leather helmet"
 	desc = ""
