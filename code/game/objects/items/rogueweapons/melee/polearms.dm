@@ -412,7 +412,7 @@
 	possible_item_intents = list(SPEAR_BASH)
 	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood, /datum/intent/spear/bash/swing)
 	name = "wooden quarterstaff"
-	desc = "A staff that makes any journey easier, a proper quarterstaff that is durable and swift, even has more length than a normal staff in case you need to show someone how good you can handle yourself in a fight."
+	desc = "A staff that makes any journey easier. Durable and swift, capable of bludgeoning stray volves and ruffians alike."
 	icon_state = "quarterstaff"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	wlength = WLENGTH_LONG
@@ -452,7 +452,7 @@
 	possible_item_intents = list(SPEAR_BASH)
 	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood, /datum/intent/spear/bash/swing)
 	name = "iron quarterstaff"
-	desc = "The best kind of tool for bounty hunters who prefer their prisioners broken, bruised and humilliated but not dead, a proper fighting staff capable of disarm and knock out an armed opponent with the right hits."
+	desc = "A perfect tool for bounty hunters who prefer their prisoners broken and bruised but not slain. This reinforced staff is capable of clubbing even an armed opponent into submission with some carefully placed strikes."
 	icon_state = "ironstaff"
 	max_integrity = 350//iron tier
 	minstr = 8//meant to be used by average warriors
@@ -463,7 +463,7 @@
 	possible_item_intents = list(SPEAR_BASH)
 	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood, /datum/intent/spear/bash/swing)
 	name = "steel quarterstaff"
-	desc = "An unusual sight, a knightly combat staff made out of worked steel and reinforced wood is a heavy and powerful weapon, more than enough to beat the living daylights out of any brigand."
+	desc = "An unusual sight, a knightly combat staff made out of worked steel and reinforced wood. It is a heavy and powerful weapon, more than capable of beating the living daylights out of any brigand."
 	icon_state = "steelstaff"
 	minstr = 10//very heavy
 	max_integrity = 450//steel tier
@@ -475,7 +475,7 @@
 	possible_item_intents = list(SPEAR_CUT) //truly just a long knife
 	gripped_intents = list(SPEAR_CUT)
 	name = "scythe"
-	desc = "A humble farming tool with a long range"
+	desc = "A humble farming tool with long reach, traditionally used to cut grass or wheat."
 	icon_state = "scythe"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16

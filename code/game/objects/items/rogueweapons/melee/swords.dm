@@ -827,7 +827,7 @@
 
 /obj/item/rogueweapon/sword/iron/messer/peasant
 	name = "scythe sword"
-	desc = "A weapon of bad times , a simple scythe blade, fastened to a wooden handle."
+	desc = "A simple scythe blade has been fastened to a wooden handle to create an improvised weapon."
 	force = 18 // Can't be dual wielded, but shouldn't be higher than a steel equivalent.
 	icon_state = "scytheblade"
 
@@ -1028,7 +1028,7 @@
 /obj/item/rogueweapon/sword/rapier/ironestoc
 	name = "iron estoc"
 	force = 16
-	desc = "A precise iron estoc, favored by the skilled duelists of valoria."
+	desc = "A precise iron estoc, favored by the skilled duelists of Valoria."
 	icon_state = "estoc"
 	smeltresult = /obj/item/ingot/iron
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
@@ -1291,6 +1291,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	name = "scimitar"
-	desc = "A Zybantu design for swords, this curved blade is the insign of that land."
+	desc = "A Zybantu design for swords, these curved blades are a common sight in the lands of the Ziggurat."
 	icon_state = "scimitar"
 	icon = 'icons/roguetown/weapons/32.dmi'

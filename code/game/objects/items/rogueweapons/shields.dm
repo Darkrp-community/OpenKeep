@@ -248,7 +248,7 @@
 
 /obj/item/rogueweapon/shield/tower/buckleriron
 	name = "iron buckler"
-	desc = "A small sized iron shield, popular among mercenaries due to it's lightweight and how easy is move with it."
+	desc = "A small sized iron shield, popular among mercenaries due to it's light weight and ease of mobility."
 	icon_state = "ironbuckler"
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
 	force = 10
