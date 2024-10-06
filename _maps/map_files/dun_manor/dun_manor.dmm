@@ -8855,13 +8855,6 @@
 "jRg" = (
 /turf/closed/wall/mineral/rogue/wooddark/horizontal,
 /area/rogue/outdoors/rtfield)
-"jRq" = (
-/obj/structure/fluff/railing/fence{
-	dir = 1;
-	icon_state = "fence"
-	},
-/turf/open/floor/rogue/woodturned,
-/area/rogue/outdoors/town/roofs)
 "jRv" = (
 /obj/structure/roguetent,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -17537,7 +17530,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/rtfield)
 "twR" = (
-/mob/living/simple_animal/pet/cat/inn,
+/mob/living/simple_animal/pet/cat/rogue/inn,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "txr" = (
@@ -18960,10 +18953,6 @@
 /mob/living/carbon/human/species/goblin/npc/cave,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/sewer)
-"vdU" = (
-/obj/machinery/light/rogue/torchholder/r,
-/turf/open/floor/rogue/woodturned,
-/area/rogue/outdoors/town/roofs)
 "veu" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/roguemachine/mail/l,
@@ -19917,7 +19906,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town)
 "wqe" = (
-/mob/living/simple_animal/pet/cat/black{
+/mob/living/simple_animal/pet/cat/rogue/black{
 	name = "Morticia"
 	},
 /turf/open/floor/rogue/cobblerock,
@@ -80326,7 +80315,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-jRq
+bAb
 ktP
 fGQ
 qhb
@@ -80377,7 +80366,7 @@ qhb
 qhb
 qhb
 qhb
-vdU
+fGQ
 ktP
 kDi
 qhb
@@ -81741,7 +81730,7 @@ tXZ
 tXZ
 bAb
 ktP
-vdU
+fGQ
 qhb
 qhb
 qhb
@@ -86123,7 +86112,7 @@ tXZ
 tXZ
 bAb
 ktP
-vdU
+fGQ
 qhb
 qhb
 qhb
@@ -86200,7 +86189,7 @@ xqr
 waT
 ouw
 qhb
-vdU
+fGQ
 ktP
 kDi
 tXZ
