@@ -113,6 +113,7 @@
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/random/Initialize()
 	color = pick(CLOTHING_TEAL,  CLOTHING_GREEN, CLOTHING_ORANGE, CLOTHING_MAJENTA, CLOTHING_YELLOW)
+	return ..()
 
 //................ Cook Hat ............... //
 /obj/item/clothing/head/roguetown/cookhat
@@ -173,11 +174,11 @@
 
 /obj/item/clothing/head/roguetown/roguehood/random/Initialize()
 	color = pick("#544236", "#435436", "#543836", "#79763f")
-	..()
+	return ..()
 
 /obj/item/clothing/head/roguetown/roguehood/mage/Initialize()
 	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
-	..()
+	return ..()
 
 /obj/item/clothing/head/roguetown/roguehood/AdjustClothes(mob/user)
 	if(loc == user)
@@ -299,6 +300,7 @@
 			if(loc == user)
 				user.adjust_fire_stacks(5)
 				user.IgniteMob()
+	return ..()
 
 
 

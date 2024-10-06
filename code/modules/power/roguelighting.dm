@@ -32,8 +32,8 @@
 	GLOB.sunlights -= src
 	. = ..()
 
-/obj/effect/sunlight/New()
-	..()
+/obj/effect/sunlight/Initialize(mapload)
+	. = ..()
 #ifdef TESTING
 	icon_state = "electricity2"
 #else
@@ -66,9 +66,9 @@
 	startTurfX = 1
 	startTurfY = 1
 
-/obj/effect/landmark/mapGenerator/sunlights/New()
+/obj/effect/landmark/mapGenerator/sunlights/Initialize(mapload)
 	GLOB.sky_z |= z
-	. = ..()
+	return ..()
 
 /datum/mapGenerator/sunlights
 	modules = list(/datum/mapGeneratorModule/sunlights)

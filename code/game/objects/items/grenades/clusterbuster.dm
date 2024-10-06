@@ -72,7 +72,7 @@
 	spawn_payload(type, numspawned)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/payload_spawner/proc/spawn_payload(type, numspawned)
+/obj/effect/payload_spawner/proc/spawn_payload(type, numspawned = 0)
 	for(var/loop in 1 to numspawned)
 		var/obj/item/grenade/P = new type(loc)
 		if(istype(P))

@@ -129,8 +129,8 @@ SUBSYSTEM_DEF(mapping)
 		returning += M
 		qdel(T, TRUE)
 
-/* Nuke threats, for making the blue tiles on the station go RED
-   Used by the AI doomsday and the self destruct nuke.
+/*	Nuke threats, for making the blue tiles on the station go RED
+	Used by the AI doomsday and the self destruct nuke.
 */
 
 /datum/controller/subsystem/mapping/proc/add_nuke_threat(datum/nuke)

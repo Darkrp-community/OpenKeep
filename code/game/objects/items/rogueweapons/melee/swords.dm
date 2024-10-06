@@ -679,18 +679,18 @@
 	misscost = 5
 
 /datum/intent/sword/thrust/zwei
-    name = "thrust"
-    blade_class = BCLASS_STAB
-    attack_verb = list("stabs")
-    animname = "stab"
-    icon_state = "instab"
-    reach = 1
-    chargetime = 1
-    warnie = "mobwarning"
-    hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-    penfactor = 20
-    swingdelay = 1
-    misscost = 5
+	name = "thrust"
+	blade_class = BCLASS_STAB
+	attack_verb = list("stabs")
+	animname = "stab"
+	icon_state = "instab"
+	reach = 1
+	chargetime = 1
+	warnie = "mobwarning"
+	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
+	penfactor = 20
+	swingdelay = 1
+	misscost = 5
 
 /datum/intent/sword/strike
 	name = "pommel strike"

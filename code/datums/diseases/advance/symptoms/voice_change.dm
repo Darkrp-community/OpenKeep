@@ -33,8 +33,8 @@ Bonus
 	var/datum/language_holder/original_language
 	var/datum/language_holder/mob_language
 	threshold_desc = "<b>Transmission 14:</b> The host's language center of the brain is damaged, leading to complete inability to speak or understand any language.<br>\
-					  <b>Stage Speed 7:</b> Changes voice more often.<br>\
-					  <b>Stealth 3:</b> The symptom remains hidden until active."
+					<b>Stage Speed 7:</b> Changes voice more often.<br>\
+					<b>Stealth 3:</b> The symptom remains hidden until active."
 
 /datum/symptom/voice_change/Start(datum/disease/advance/A)
 	if(!..())

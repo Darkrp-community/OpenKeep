@@ -629,7 +629,7 @@
 	max_integrity = 120
 	sellprice = 10
 
-obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
+/obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	name = "Orc Marauder Chain Vest"
 	icon_state = "orc_chainvest"
 	item_state = "orc_chainvest"
