@@ -1,4 +1,4 @@
-mob/living/simple_animal/hostile/retaliate/rogue/wolf
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf
 	icon = 'icons/roguetown/mob/monster/vol.dmi'
 	name = "volf"
 	desc = "Usually content to leave menfolk alone if well-fed, but something in the wilds of Enigma turns them hungry, persistent, and vicious."
