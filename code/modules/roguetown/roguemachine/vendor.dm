@@ -258,6 +258,9 @@
 /obj/structure/roguemachine/vendor/inn
 	keycontrol = "tavern"
 
+/obj/structure/roguemachine/vendor/inn
+	keycontrol = "tavern"
+
 /obj/structure/roguemachine/vendor/inn/Initialize()
 	. = ..()
 	for(var/X in list(/obj/item/roguekey/roomi,/obj/item/roguekey/roomii,/obj/item/roguekey/roomiii,/obj/item/roguekey/roomiv,/obj/item/roguekey/roomv,/obj/item/roguekey/roomvi))
@@ -277,17 +280,17 @@
 
 /obj/structure/roguemachine/vendor/steward/Initialize()
 	. = ..()
-	for(var/X in list(/obj/item/roguekey/shop1,/obj/item/roguekey/shop2,/obj/item/roguekey/shop3,/obj/item/roguekey/shop4,/obj/item/roguekey/shop5,/obj/item/roguekey/shop6,/obj/item/roguekey/shop7,/obj/item/roguekey/shop8,/obj/item/roguekey/shop9))
+	for(var/X in list(/obj/item/roguekey/shops/shop1,/obj/item/roguekey/shops/shop2,/obj/item/roguekey/shops/shop3,/obj/item/roguekey/shops/shop4,/obj/item/roguekey/shops/shop5,/obj/item/roguekey/shops/shop6,/obj/item/roguekey/shops/shop7,/obj/item/roguekey/shops/shop8,/obj/item/roguekey/shops/shop9))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 10
-	for(var/X in list(/obj/item/roguekey/house1,/obj/item/roguekey/house2,/obj/item/roguekey/house,3/obj/item/roguekey/house4))
+	for(var/X in list(/obj/item/roguekey/houses/house1,/obj/item/roguekey/houses/house2,/obj/item/roguekey/houses/house3,/obj/item/roguekey/houses/house4))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 60
-	for(var/X in list(/obj/item/roguekey/house5,/obj/item/roguekey/house6))
+	for(var/X in list(/obj/item/roguekey/houses/house5,/obj/item/roguekey/houses/house6))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
