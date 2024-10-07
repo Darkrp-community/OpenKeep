@@ -64,7 +64,7 @@
 
 /obj/machinery/computer/arena/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
-	LoadDefaultArenas()
+	INVOKE_ASYNC(src, PROC_REF(LoadDefaultArenas))
 	GenerateAntagHuds()
 
 /obj/machinery/computer/arena/proc/GenerateAntagHuds()
@@ -78,9 +78,9 @@
 			team_hud_index[team] = length(GLOB.huds)
 
 /**
-  * Loads the arenas from config directory.
-  * THESE ARE FULLY CACHED FOR QUICK SWITCHING SO KEEP TRACK OF THE AMOUNT
-  */
+ * Loads the arenas from config directory.
+ * THESE ARE FULLY CACHED FOR QUICK SWITCHING SO KEEP TRACK OF THE AMOUNT
+ */
 /obj/machinery/computer/arena/proc/LoadDefaultArenas()
 	if(default_arenas_loaded)
 		return

@@ -73,7 +73,7 @@ GLOBAL_LIST_EMPTY(doppler_arrays)
 	playsound(src, 'sound/blank.ogg', 50, TRUE)
 
 /obj/machinery/doppler_array/proc/sense_explosion(turf/epicenter,devastation_range,heavy_impact_range,light_impact_range,
-												  took,orig_dev_range,orig_heavy_range,orig_light_range)
+													took,orig_dev_range,orig_heavy_range,orig_light_range)
 	if(stat & NOPOWER)
 		return FALSE
 	var/turf/zone = get_turf(src)
@@ -94,8 +94,8 @@ GLOBAL_LIST_EMPTY(doppler_arrays)
 
 
 	var/list/messages = list("Explosive disturbance detected.", \
-							 "Epicenter at: grid ([epicenter.x],[epicenter.y]). Temporal displacement of tachyons: [took] seconds.", \
-							 "Factual: Epicenter radius: [devastation_range]. Outer radius: [heavy_impact_range]. Shockwave radius: [light_impact_range].")
+							"Epicenter at: grid ([epicenter.x],[epicenter.y]). Temporal displacement of tachyons: [took] seconds.", \
+							"Factual: Epicenter radius: [devastation_range]. Outer radius: [heavy_impact_range]. Shockwave radius: [light_impact_range].")
 
 	// If the bomb was capped, say its theoretical size.
 	if(devastation_range < orig_dev_range || heavy_impact_range < orig_heavy_range || light_impact_range < orig_light_range)

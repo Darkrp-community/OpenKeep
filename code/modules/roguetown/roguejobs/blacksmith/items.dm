@@ -99,4 +99,3 @@
 		linking = S
 		to_chat(user, "<span class='info'>Link beginning...</span>")
 		return
-	..()

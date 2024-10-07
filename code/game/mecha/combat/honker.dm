@@ -92,7 +92,7 @@
 						</div>
 						</body>
 						</html>
-					 "}
+					"}
 	return output
 
 /obj/mecha/combat/honker/get_commands()
