@@ -510,7 +510,7 @@
 /datum/crafting_recipe/roguetown/woodengreatflail
 	name = "great wooden flail"
 	skillcraft = /datum/skill/craft/carpentry
-	reqs = list( /obj/item/rope = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/rope = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/grown/log/tree/small = 1)
 	tools = list(/obj/item/rogueweapon/hammer)
 	req_table = TRUE
 	result = list(/obj/item/rogueweapon/thresher)
