@@ -315,7 +315,8 @@
 				user.adjust_fire_stacks(5)
 				user.IgniteMob()
 		return
-	else continue
+	else
+		. = ..()
 
 
 /*----------\
