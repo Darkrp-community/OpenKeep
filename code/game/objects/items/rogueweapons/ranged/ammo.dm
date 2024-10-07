@@ -430,7 +430,7 @@
 	range = 20
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
 	embedchance = 100
-	armor_penetration = 1
+	armor_penetration = 10
 	woundclass = BCLASS_STAB
 	flag = "dart"
 	speed = 0.3
