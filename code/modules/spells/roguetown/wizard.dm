@@ -572,7 +572,9 @@
 		/obj/effect/proc_holder/spell/invoked/forcewall_weak,
 		/obj/effect/proc_holder/spell/invoked/slowdown_spell_aoe,
 		/obj/effect/proc_holder/spell/invoked/haste,
-		/obj/effect/proc_holder/spell/invoked/push_spell,
+//		/obj/effect/proc_holder/spell/invoked/push_spell,
+//		/obj/effect/proc_holder/spell/targeted/ethereal_jaunt,
+//		/obj/effect/proc_holder/spell/aoe_turf/knock,
 		/obj/effect/proc_holder/spell/targeted/touch/darkvision,// 2 cost
 		/obj/effect/proc_holder/spell/invoked/message,
 		/obj/effect/proc_holder/spell/invoked/blade_burst,
