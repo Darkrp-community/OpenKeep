@@ -219,7 +219,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	metabolization_rate = REAGENTS_SLOW_METABOLISM
 
 /datum/reagent/berrypoison/on_mob_life(mob/living/carbon/M)
-	if(volume > 0.99)
+	if(volume > 0.09)
 		if(isdwarf(M))
 			M.add_nausea(1)
 			M.adjustToxLoss(0.5)
@@ -239,7 +239,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 
 /datum/reagent/strongpoison/on_mob_life(mob/living/carbon/M)
 	testing("Someone was poisoned")
-	if(volume > 0.99)
+	if(volume > 0.09)
 		if(isdwarf(M))
 			M.add_nausea(1)
 			M.adjustToxLoss(2.3)  // will put you just above dying crit treshold
