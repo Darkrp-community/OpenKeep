@@ -550,6 +550,10 @@
 	nausea = clamp(nausea + amt, 0, 300)
 
 /mob/living/carbon/proc/handle_nausea()
+	if(HAS_TRAIT(src, TRAIT_ROTMAN))
+		return TRUE
+	if(stat == DEAD)
+		return TRUE
 	if(nausea >= 100)
 		if(mob_timers["puke"])
 			if(world.time > mob_timers["puke"] + 16 SECONDS)
