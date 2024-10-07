@@ -134,7 +134,7 @@
 /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 	name = "striped tunic"
 	desc = "A common tunic worn by just about anyone. Nothing special, but essential."
-	icon_state = "workervest"
+	icon_state = "striped"
 	sleevetype = null
 	sleeved = null
 	nodismemsleeves = TRUE
@@ -188,7 +188,6 @@
 	name = "splint mail"
 	desc = "Leather armor reinforced with strips of metal riveted to the inside. Usually made from metal recycled from old breastplates or cooking utensils, coverage is partial at best."
 	icon_state = "studleather"
-	item_state = "studleather"
 	sellprice = VALUE_LEATHER_ARMOR_PLUS
 
 	armor = ARMOR_LEATHER_BEST
@@ -202,8 +201,7 @@
 	name = "leather vest"
 	desc = "A leather vest with no sleeves, won't really protect much but it's at least padded enough to be an armor."
 	icon_state = "vest"
-	item_state = "vest"
-	color = "#514339"
+	color = CLOTHING_BROWN
 	blade_dulling = DULLING_BASHCHOP
 	blocksound = SOFTHIT
 	break_sound = 'sound/foley/cloth_rip.ogg'
@@ -375,7 +373,7 @@
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "maille"
 	desc = "Made out of interlocked steel rings. Offers superior resistance against arrows, stabs and cuts. \nUsually worn as padding for proper armor, it is also called a haubergon, the little hauberk."
-	icon_state = "haubergeon"
+	icon_state = "maille"
 	blocksound = CHAINHIT
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
 	pickup_sound = 'sound/foley/equip/equip_armor_chain.ogg'
