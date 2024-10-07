@@ -123,8 +123,9 @@
 	icon_state = "chap_alt"
 	item_state = "chap_alt"
 	flags_inv = HIDEEARS
-	color = CLOTHING_PINK	
+	color = CLOTHING_PINK
 
+/obj/item/clothing/head/roguetown/chaperon/greyscale/random
 /obj/item/clothing/head/roguetown/chaperon/greyscale/random/Initialize()
 	color = pick(CLOTHING_TEAL, CLOTHING_GREEN, CLOTHING_ORANGE, CLOTHING_MAJENTA, CLOTHING_YELLOW,CLOTHING_SALMON, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW)
 
@@ -313,7 +314,7 @@
 			if(loc == user)
 				user.adjust_fire_stacks(5)
 				user.IgniteMob()
-
+	else ...()
 
 
 /*----------\
@@ -542,7 +543,7 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)	
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|HAIR|NOSE|MOUTH|EARS
 	prevent_crits = ALL_CRITICAL_HITS // Stab protection out of having faceplate
 	max_integrity = INTEGRITY_STRONG //isn't the same as a steel helmet but is better than a skullcap, costs 2 bars and protects the mouth
@@ -785,7 +786,7 @@
 
 
 
-//............... Temple heavy helmets ......................// 
+//............... Temple heavy helmets ......................//
 
 //............... Astrata Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
