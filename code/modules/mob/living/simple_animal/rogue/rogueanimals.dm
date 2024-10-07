@@ -208,7 +208,7 @@
 	var/list/check_health = list("health" = src.health)
 
 	if(L.stat != CONSCIOUS)
-		src.visible_message("<span class='danger'>[src] starts to rip apart [L]!</span>")
+		src.visible_message(span_danger("[src] starts to rip apart [L]!"))
 		if(attack_sound)
 			playsound(src, pick(attack_sound), 100, TRUE, -1)
 		//If their health is decreased at all during the 10 seconds the dismemberment will fail and they will lose target.
@@ -265,7 +265,7 @@
 	if(enemies.len)
 		if(prob(23))
 			enemies = list()
-			src.visible_message("<span class='notice'>[src] calms down.</span>")
+			src.visible_message(span_info("[src] calms down."))
 			LoseTarget()
 		else
 			return
@@ -282,7 +282,7 @@
 				if(mob_timers["aggro_time"])
 					if(world.time > mob_timers["aggro_time"] + 30 SECONDS)
 						enemies = list()
-						src.visible_message("<span class='info'>[src] calms down.</span>")
+						src.visible_message(span_info("[src] calms down."))
 						LoseTarget()
 				else
 					mob_timers["aggro_time"] = world.time
@@ -356,10 +356,9 @@
 		Goto(user,move_to_delay)
 		addtimer(CALLBACK(src, PROC_REF(return_action)), 3 SECONDS)
 
-// Goatmilk-udder
+
+//................. UDDER (GOTE).......................//
 /obj/item/gudder
-	name = "udder"
-	var/in_use // so you can't spam milking sounds
 
 /obj/item/gudder/Initialize()
 	create_reagents(100)
@@ -369,24 +368,19 @@
 /obj/item/gudder/proc/generateMilk()
 	reagents.add_reagent(/datum/reagent/consumable/milk/gote, 1)
 
-/obj/item/gudder/proc/milkAnimal(obj/O, mob/user)
+/obj/item/gudder/proc/milkAnimal(obj/O, mob/living/user = usr)
 	var/obj/item/reagent_containers/glass/G = O
-	if(in_use)
-		return
 	if(G.reagents.total_volume >= G.volume)
-		to_chat(user, "<span class='warning'>[O] is full.</span>")
+		to_chat(user, span_warning("[O] is full."))
 		return
 	if(!reagents.has_reagent(/datum/reagent/consumable/milk/gote, 5))
-		to_chat(user, "<span class='warning'>The udder is dry. Wait a bit longer...</span>")
+		to_chat(user, span_warning("The udder is dry. Wait a bit longer..."))
+		user.changeNext_move(10)
 		return
-	beingmilked()
-	playsound(O, pick('modular/Creechers/sound/milking1.ogg', 'modular/Creechers/sound/milking2.ogg'), 100, TRUE, -1)
-	if(do_after(user, 20, target = src))
+	if(do_after(user, 1 SECONDS, target = src))
 		reagents.trans_to(O, rand(5,10))
-		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>", "<span class='notice'>I milk [src] using \the [O].</span>")
-
-/obj/item/gudder/proc/beingmilked()
-	in_use = TRUE
-	sleep(15)
-	in_use = FALSE
+		user.visible_message(span_notice("[user] milks [src] using \the [O]"))
+		playsound(O, pick('sound/vo/mobs/cow/milking (1).ogg', 'sound/vo/mobs/cow/milking (2).ogg'), 100, TRUE, -1)
+		user.Immobilize(1 SECONDS)
+		user.changeNext_move(1 SECONDS)
 
