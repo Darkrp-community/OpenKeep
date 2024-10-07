@@ -53,7 +53,7 @@
 		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/crossbows) * (10/6))
 		//str block //rtd replace 10 with drawdiff on bows that are hard and scale str more (10/20 = 0.5)
 		newtime = newtime + 10
-		newtime = newtime - (mastermob.STASTR * (10/20))
+		newtime = newtime - (mastermob.STAEND * (10/20)) // Hold your breath...
 		//per block
 		newtime = newtime + 20
 		newtime = newtime - (mastermob.STAPER * 1) //20/20 is 1
