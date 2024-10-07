@@ -10,6 +10,7 @@
 	name = "thresher"
 	desc = "Crushes grain, or skulls."
 	icon_state = "thresher"
+	bigboy = TRUE
 //	icon = 'modular/Neu_Farming/icons/farmtools_big.dmi'	the stuff related to big sprite commented out below. Instead using normal sized one with backslot for ease of use.
 	icon = 'icons/roguetown/weapons/64.dmi'
 	slot_flags = ITEM_SLOT_BACK
@@ -38,6 +39,7 @@
 	name = "military flail"
 	desc = "Crushes skulls, or grain."
 	icon_state = "military"
+	bigboy = TRUE
 	minstr = 7
 	smeltresult = /obj/item/ingot/iron
 
