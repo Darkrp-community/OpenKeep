@@ -129,7 +129,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	opacity = 0
 
 	var/cost = 0 //how many points it costs to learn this spell
-	var/xp_gain = TRUE
+	var/xp_gain = FALSE
 
 	var/school = "evocation" //not relevant at now, but may be important later if there are changes to how spells work. the ones I used for now will probably be changed... maybe spell presets? lacking flexibility but with some other benefit?
 
@@ -476,7 +476,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	return
 
 	//Add xp based on the fatigue used
-	if(xp_gain)
+	if(xp_gain = TRUE)
 		adjust_experience(usr, associated_skill, round(get_fatigue_drain() * MAGIC_XP_MULTIPLIER))
 
 /obj/effect/proc_holder/spell/proc/view_or_range(distance = world.view, center=usr, type="view")
