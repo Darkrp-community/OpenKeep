@@ -225,7 +225,7 @@
 	name = "leather vest"
 	icon_state = "leathervest"
 	item_state = "leathervest"
-	color = CLOTHING_WHITE
+	color = "#d69c87" // custom coloring
 
 //................ Other Vests ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butler
