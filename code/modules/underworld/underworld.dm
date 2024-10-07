@@ -72,8 +72,8 @@
 	for(var/obj/item/underworld/coin/A in world)
 		amountinworld += 1
 	if(amountinworld < 3)
-		for(var/obj/effect/landmark/underworldcoin/B in world)
-			new /obj/item/underworld/coin(B.loc)
+		for(var/turf/spawn_loc in GLOB.underworldcoin)
+			new /obj/item/underworld/coin(spawn_loc)
 
 
 // shit that eventually will need moved elsewhere
