@@ -165,7 +165,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "alm" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/table/wood/ancientlog,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "amj" = (
@@ -2217,7 +2217,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "cTx" = (
-/obj/structure/flora/roguetree/stump/burnt,
+/obj/structure/table/wood/treestump/burnt,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "cTX" = (
@@ -7813,7 +7813,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "jXY" = (
-/obj/structure/flora/roguetree/stump/burnt,
+/obj/structure/table/wood/treestump/burnt,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "jYf" = (
@@ -14087,7 +14087,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
 "rNB" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/table/wood/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "rNK" = (

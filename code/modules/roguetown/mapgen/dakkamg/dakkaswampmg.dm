@@ -16,7 +16,7 @@
 							/obj/structure/flora/roguegrass/pyroclasticflowers = 1,
 							/obj/structure/flora/roguegrass/maneater = 0,
 							/obj/structure/flora/roguegrass = 23,
-							/obj/structure/flora/roguetree/stump/log = 20,
+							/obj/structure/table/wood/ancientlog = 20,
 							/obj/item/natural/rock = 30,
 							/obj/item/natural/stone = 30,
 							/obj/structure/flora/roguegrass/swampweed = 30,

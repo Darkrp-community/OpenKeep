@@ -18,7 +18,7 @@
 	debris = list(/obj/item/grown/log/tree/stick = 2)
 	static_debris = list(/obj/item/grown/log/tree = 1)
 	alpha = 200
-	var/stump_type = /obj/structure/flora/roguetree/stump
+	var/stump_type = /obj/structure/table/wood/treestump
 
 /obj/structure/flora/roguetree/attack_right(mob/user)
 	if(user.mind && isliving(user))
@@ -117,14 +117,14 @@
 	desc = "A scorched pillar of a once living tree."
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	icon_state = "t1"
-	stump_type = /obj/structure/flora/roguetree/stump/burnt
+	stump_type = /obj/structure/table/wood/treestump/burnt
 	pixel_x = -32
 
 /obj/structure/flora/roguetree/burnt/Initialize()
 	. = ..()
 	icon_state = "t[rand(1,4)]"
 
-/obj/structure/flora/roguetree/stump/burnt
+/obj/structure/table/wood/treestump/burnt
 	name = "tree stump"
 	desc = "This stump is burnt. Maybe someone is trying to get coal the easy way."
 	static_debris = list(/obj/item/rogueore/coal = 1)
@@ -134,7 +134,7 @@
 	stump_type = null
 	pixel_x = -32
 
-/obj/structure/flora/roguetree/stump/burnt/Initialize()
+/obj/structure/table/wood/treestump/burnt/Initialize()
 	. = ..()
 	icon_state = "st[rand(1,2)]"
 
@@ -150,31 +150,28 @@
 	. = ..()
 	icon_state = "screaming[rand(1,3)]"
 
-/obj/structure/flora/roguetree/stump
+
+// Treestumps are now tables, so you can tablecraft with them and so on.
+/obj/structure/table/wood/treestump
 	name = "tree stump"
 	desc = "Someone cut this tree down."
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
 	icon_state = "t1stump"
-	opacity = 0
 	max_integrity = 100
-	climbable = TRUE
 	climb_time = 0
-	layer = TABLE_LAYER
-	plane = GAME_PLANE
 	blade_dulling = DULLING_CUT
 	static_debris = list()
 	debris = null
-	alpha = 255
 	pixel_x = -16
 	climb_offset = 14
 	stump_type = FALSE
 	var/isunburnt = TRUE // Var needed for the burnt stump
-	var/isactuallyastump = TRUE // Var needed for the stupid ancient log below
 
-/obj/structure/flora/roguetree/stump/Initialize()
+/obj/structure/table/wood/treestump/Initialize()
 	. = ..()
 	icon_state = "t[rand(1,4)]stump"
 
-/obj/structure/flora/roguetree/stump/attackby(obj/item/I, mob/user, params)
+/obj/structure/table/wood/treestump/attackby(obj/item/I, mob/user, params)
 	if(isactuallyastump)
 		if(istype(I, /obj/item/rogueweapon/shovel))
 			to_chat(user, "I start unearthing the stump...")
@@ -190,19 +187,17 @@
 	else
 		. = ..()
 
-/obj/structure/flora/roguetree/stump/log
+/obj/structure/table/wood/ancientlog
 	name = "ancient log"
 	desc = "A felled piece of tree long forgotten, the poorman's table."
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
 	icon_state = "log1"
-	opacity = 0
 	max_integrity = 200
 	blade_dulling = DULLING_CUT
 	static_debris = list(/obj/item/grown/log/tree = 1)
 	climb_offset = 14
-	stump_type = FALSE
-	isactuallyastump = FALSE
 
-/obj/structure/flora/roguetree/stump/log/Initialize()
+/obj/structure/table/wood/ancientlog/Initialize()
 	. = ..()
 	icon_state = "log[rand(1,2)]"
 

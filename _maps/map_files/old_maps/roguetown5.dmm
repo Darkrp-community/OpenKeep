@@ -1897,7 +1897,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "gZ" = (
-/obj/structure/flora/roguetree/stump/burnt,
+/obj/structure/table/wood/treestump/burnt,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "ha" = (
@@ -3202,7 +3202,7 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/dwarfin)
 "lR" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/table/wood/ancientlog,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "lS" = (
@@ -3949,7 +3949,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "oL" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/table/wood/ancientlog,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "oM" = (
@@ -9292,7 +9292,7 @@
 	},
 /area/rogue/outdoors/town)
 "IY" = (
-/obj/structure/flora/roguetree/stump/burnt,
+/obj/structure/table/wood/treestump/burnt,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "IZ" = (
@@ -9855,7 +9855,7 @@
 /turf/open/floor/rogue/blocks/paving,
 /area/rogue/under/town/basement)
 "Mm" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "Mn" = (
