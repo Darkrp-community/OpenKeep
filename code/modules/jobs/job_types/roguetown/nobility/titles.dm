@@ -42,8 +42,8 @@
 	armor = /obj/item/clothing/suit/roguetown/shirt/rags
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 
-/datum/job/roguetown/hedtman
-	title = "Hedtman of Mount Decapitation"
+/datum/job/roguetown/hetman
+	title = "Hetman of Mount Decapitation"
 	tutorial = ""
 	flag = LORD
 	department_flag = NOBLEMEN
@@ -51,13 +51,13 @@
 	total_positions = 0
 	spawn_positions = 0
 
-	outfit = /datum/outfit/job/roguetown/hedtman
+	outfit = /datum/outfit/job/roguetown/hetman
 	display_order = 6
 
 
-/datum/outfit/job/roguetown/hedtman
-	name = "Hedtman of Mount Decapitation"
-	jobtype = /datum/job/roguetown/hedtman
+/datum/outfit/job/roguetown/hetman
+	name = "Hetman of Mount Decapitation"
+	jobtype = /datum/job/roguetown/hetman
 
 	pants = /obj/item/clothing/under/roguetown/tights
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
