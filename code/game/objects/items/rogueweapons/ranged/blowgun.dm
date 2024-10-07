@@ -43,7 +43,7 @@
 
 /datum/intent/shoot/blowgun/prewarning()
 	if(mastermob)
-		mastermob.visible_message("<span class='warning'>[mastermob] takes a deep breath [masteritem]!</span>")
+		mastermob.visible_message("<span class='warning'>[mastermob] takes a deep breath!</span>")
 
 /datum/intent/shoot/blowgun/get_chargetime()
 	if(mastermob && chargetime)
