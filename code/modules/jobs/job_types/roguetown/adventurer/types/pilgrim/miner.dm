@@ -27,7 +27,7 @@
 	beltl = /obj/item/rogueweapon/pick
 	backr = /obj/item/rogueweapon/shovel
 	backl = /obj/item/storage/backpack/rogue/backpack
-	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/huntingknife = 1)
+	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/huntingknife/villager = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/mining, 4, TRUE)
