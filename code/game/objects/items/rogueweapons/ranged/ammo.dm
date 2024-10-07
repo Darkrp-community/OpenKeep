@@ -422,7 +422,7 @@
 /obj/projectile/bullet/reusable/dart
 	name = "dart"
 	desc = "A thorn faschioned into a primitive dart."
-	damage = 25
+	damage = 20
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "dart_proj"
