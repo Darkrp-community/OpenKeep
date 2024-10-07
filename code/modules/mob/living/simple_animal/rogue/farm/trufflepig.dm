@@ -42,7 +42,7 @@
 //	........   Truffles   ................
 /obj/item/reagent_containers/food/snacks/rogue/truffles
 	name = "truffles"
-	icon = 'modular/Creechers/icons/piggie.dmi'
+	icon = 'modular/Neu_Farming/icons/produce.dmi'
 	icon_state = "mushroom1_full"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/truffles/cooked
@@ -62,7 +62,7 @@
 
 /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms
 	name = "truffles"
-	icon = 'modular/Creechers/icons/piggie.dmi'
+	icon = 'modular/Neu_Farming/icons/produce.dmi'
 	icon_state = "mushroom1_full"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms/cooked
@@ -78,21 +78,24 @@
 
 //	........   Truffle Pig   ................
 /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig
-	icon = 'modular/Creechers/icons/piggie.dmi'
+	icon = 'icons/roguetown/mob/monster/piggie.dmi'
 	name = "truffle pig"
 	desc = "A hairy pig, bred for finding truffles in the bog."
 	icon_state = "piggie_m"
 	icon_living = "piggie_m"
 	icon_dead = "piggie_dead"
 	icon_gib = "piggie_dead"
-	gender = MALE
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	emote_see = list("eyes the surroundings.", "flicks its ears.")
-	stop_automated_movement_when_pulled = TRUE
-	speak_chance = 1
-	turns_per_move = 5
-	see_in_dark = 6
+
 	animal_species = /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig
+	faction = list("goats")
+	footstep_type = FOOTSTEP_MOB_SHOE
+	emote_see = list("eyes the surroundings.", "flicks its ears.")
+	deathsound = 'sound/vo/mobs/pig/hangry.ogg'
+
+	stop_automated_movement_when_pulled = TRUE
+	response_help_continuous = "pets"
+	response_help_simple = "give the signal to the"
+
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/fatty = 3,
 									/obj/item/reagent_containers/food/snacks/fat = 1,
 									/obj/item/natural/hide = 1)
@@ -102,13 +105,15 @@
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/fatty = 5,
 							/obj/item/reagent_containers/food/snacks/fat = 3,
 							/obj/item/natural/hide = 3)
-	base_intents = list(/datum/intent/simple/headbutt)
-	health = 80
-	maxHealth = 80
+
+	health = FEMALE_GOTE_HEALTH
+	maxHealth = FEMALE_GOTE_HEALTH
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/truffles)
-	footstep_type = FOOTSTEP_MOB_SHOE
 	pooptype = /obj/item/natural/poo/horse
-	faction = list("goats")
+	tame = TRUE
+	remains_type = /obj/effect/decal/remains/pig
+
+	base_intents = list(/datum/intent/simple/headbutt)
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bites"
 	melee_damage_lower = 8
@@ -119,13 +124,25 @@
 	STASTR = 12
 	can_buckle = TRUE
 	buckle_lying = FALSE
-	tame = TRUE
 	can_saddle = TRUE
-	remains_type = /obj/effect/decal/remains/pig
-	response_help_continuous = "pets"
-	response_help_simple = "give the signal to the"
 	var/hangry_meter = 0
 
+/mob/living/simple_animal/hostile/retaliate/rogue/trufflepig/get_sound(input)
+	switch(input)
+		if("aggro")
+			return pick('sound/vo/mobs/pig/hangry.ogg')
+		if("pain")
+			return pick('sound/vo/mobs/pig/grunt (1).ogg','sound/vo/mobs/pig/grunt (2).ogg')
+		if("death")
+			return pick('sound/vo/mobs/pig/grunt (1).ogg','sound/vo/mobs/pig/grunt (2).ogg')
+		if("idle")
+			return pick('sound/vo/mobs/pig/grunt (1).ogg','sound/vo/mobs/pig/grunt (2).ogg')
+
+/mob/living/simple_animal/hostile/retaliate/rogue/trufflepig/taunted(mob/user)
+	emote("aggro")
+	Retaliate()
+	GiveTarget(user)
+	return
 
 /obj/effect/decal/remains/pig
 	name = "remains"
@@ -164,10 +181,10 @@
 	hangry_meter += 1
 	if(hangry_meter > 9)
 		to_chat(M, "<span class='notice'>The pig squeals in anger. Its sulking and refusing to work until it gets delicious truffles.</span>")
-		playsound(get_turf(src), 'modular/Creechers/sound/pighangry.ogg', 150, TRUE, -1)
+		playsound(get_turf(src), 'sound/vo/mobs/pig/hangry.ogg', 120, TRUE, -1)
 		return
 	if(M.used_intent.type == INTENT_HELP)
-		playsound(get_turf(src), pick('modular/Creechers/sound/pig1.ogg','modular/Creechers/sound/pig2.ogg'), 100, TRUE, -1)
+		playsound(get_turf(src), pick('sound/vo/mobs/pig/grunt (1).ogg','sound/vo/mobs/pig/grunt (2).ogg'), 100, TRUE, -1)
 		dir = pick(GLOB.cardinals)
 		step(src, dir)
 		playsound(src, 'sound/items/sniff.ogg', 60, FALSE)
@@ -177,7 +194,7 @@
 		playsound(src, 'sound/items/sniff.ogg', 60, FALSE)
 		sleep(10)
 		dir = pick(GLOB.cardinals)
-		playsound(get_turf(src), pick('modular/Creechers/sound/pig1.ogg','modular/Creechers/sound/pig2.ogg'), 100, TRUE, -1)
+		playsound(get_turf(src), pick('sound/vo/mobs/pig/grunt (1).ogg','sound/vo/mobs/pig/grunt (2).ogg'), 100, TRUE, -1)
 		var/turf/t = get_turf(src)
 		trufflesearch(t, 5)
 
@@ -191,9 +208,9 @@
 		visible_message("<span class='notice'>The pig munches the truffles reluctantly.</span>")
 		playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
 		qdel(O)
-		playsound(get_turf(src), 'modular/Creechers/sound/pighangry.ogg', 130, TRUE, -1)
+		playsound(get_turf(src), 'sound/vo/mobs/pig/hangry.ogg', 100, TRUE, -1)
 		sleep(20)
-		playsound(get_turf(src), 'modular/Creechers/sound/pighangry.ogg', 130, TRUE, -1)
+		playsound(get_turf(src), 'sound/vo/mobs/pig/hangry.ogg', 100, TRUE, -1)
 		visible_message("<span class='notice'>The pig shivers.</span>")
 		sleep(10)
 		death()
@@ -217,7 +234,7 @@
 /obj/effect/temp_visual/truffle_overlay
 	plane = FULLSCREEN_PLANE
 	layer = FLASH_LAYER
-	icon = 'modular/Creechers/icons/trufflesniff.dmi'
+	icon = 'icons/roguetown/mob/trufflesniff.dmi'
 	icon_state = "foundsome"
 	appearance_flags = 0 //to avoid having TILE_BOUND in the flags, so that the 480x480 icon states let you see it no matter where you are
 	duration = 35
