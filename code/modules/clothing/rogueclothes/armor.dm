@@ -120,7 +120,7 @@
 	icon_state = "armordressalt"
 
 
-//................ Arming Jacket ............... // 
+//................ Arming Jacket ............... //
 /obj/item/clothing/suit/roguetown/armor/gambeson/lord
 	name = "arming jacket"
 	desc = "Similar to a gambeson, it is meant to be used under heavier armor."
@@ -363,8 +363,8 @@
 
 //................ Amazon chainkini ............... //	- made of iron, 100/15, a little peculiar
 /obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
-	name = "amazon maille"
-	desc = "A combination of leather hides and chainmail, typically worn by warrior women of the isle of Issa."
+	name = "amazonian maille"
+	desc = "A combination of fur and maille, typically worn by warrior women of the isle of Issa."
 	icon_state = "chainkini"
 	item_state = "chainkini"
 	allowed_sex = list(FEMALE)
@@ -377,10 +377,10 @@
 	body_parts_covered = CHEST|GROIN
 
 
-//................ Maille ............... //
+//................ Iron Maille ............... //
 /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-	name = "chainmaille"
-	desc = "A light chain vest made of iron rings. Offers good protection against arrows, stabs and cuts."
+	name = "iron maille"
+	desc = "A vest made of iron rings. Offers good protection against arrows, stabs and cuts."
 	icon_state = "ichainmail"
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ARMOR
@@ -412,11 +412,11 @@
 |			 	 |
 \---------------*/
 
-//................ Haubergon ............... //	- means little hauberk
+//................ Maille ............... //
 /obj/item/clothing/suit/roguetown/armor/chainmail
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
-	name = "haubergeon"
-	desc = "A mail shirt made out of interlocked steel rings. Offers superior resistance against arrows, stabs and cuts. \nUsually worn as padding for proper armor, it still is as serviceable as a hauberk."
+	name = "maille"
+	desc = "Made out of interlocked steel rings. Offers superior resistance against arrows, stabs and cuts. \nUsually worn as padding for proper armor, it is also called a haubergon, the little hauberk."
 	icon_state = "haubergeon"
 	blocksound = CHAINHIT
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
@@ -455,7 +455,7 @@
 |  Cuirass & Breastplate |
 \-----------------------*/
 // A cuirass is armor that covers both stomach and chest front as well as your back. A breastplate only covers your front torso. Make breastplates light and define with crit prevention, groin coverage, integrity, or not at all?
-//................ Steel Cuirass ............... //	
+//................ Steel Cuirass ............... //
 /obj/item/clothing/suit/roguetown/armor/cuirass
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "steel cuirass"
@@ -702,7 +702,7 @@
 	GLOB.lordcolor -= src
 	return ..()
 
-//................ Coat of Plate ............... // 
+//................ Coat of Plate ............... //
 /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates	// Scalemail with Bonus 50& integrity, minus 10% arrow armor. Brigandine for the heraldry I think.
 	name = "coat of plates"
 	desc = "A Zybantine leather coat with steel scales woven with miniscule threads of adamantine, \
