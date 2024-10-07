@@ -206,7 +206,7 @@
 				return
 		if(world.time >= last_bump+20)
 			last_bump = world.time
-			playsound(src, 'sound/foley/doors/knocking2.ogg', 100)
+			playsound(src, 'sound/foley/doors/knocking1.ogg', 100)
 			user.visible_message("<span class='warning'>[user] knocks on [src].</span>", \
 				"<span class='notice'>I knock on [src].</span>")
 		return
@@ -629,7 +629,7 @@
 	name = "door"
 	desc = ""
 	icon_state = "woodhandle"
-	openSound = list('sound/foley/doors/creak.ogg', 'sound/foley/doors/creak2.ogg')
+	openSound = list('sound/foley/doors/creak.ogg')
 	closeSound = 'sound/foley/doors/shut.ogg'
 	sheetType = null
 	resistance_flags = FLAMMABLE
