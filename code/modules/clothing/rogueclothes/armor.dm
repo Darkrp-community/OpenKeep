@@ -219,7 +219,7 @@
 	max_integrity = INTEGRITY_STRONG
 
 
-//................ Leather Vest ............... //
+//................ Leather Vest ............... //	- has no sleeves.  - can be worn in armor OR shirt slot
 /obj/item/clothing/suit/roguetown/armor/leather/vest
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "leather vest"
@@ -251,9 +251,22 @@
 	color = CLOTHING_WHITE
 
 
+//................ Jacket ............... //
+//obj/item/clothing/suit/roguetown/armor/leather/jacket
+/obj/item/clothing/suit/roguetown/armor/leather/vest/jacket
+	name = "leather jacket"
+	icon_state = "leatherjacketo"
+	desc = "A padded leather jacket with buttons, is warm and durable for the daily work."
+	body_parts_covered = CHEST|VITALS|ARMS
+	color = null
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	allowed_sex = list(MALE, FEMALE)
+	allowed_race = list("human", "tiefling","elf", "half-elf", "dark elf", "aasimar", "dwarf")
+	sellprice = 10
+
 //................ Sea Jacket ............... //
 // Unique swashbuckler vest. Notice it doesn't cover arms. Should not be vest subtype, works very differently
-//obj/item/clothing/suit/roguetown/armor/leather/jacket
+//obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "sea jacket"
