@@ -727,7 +727,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/underworldsafe // To prevent demons spawn camping will save a lot of ear rape.
 	name = "safe zone"
 
-/obj/effect/landmark/underworldcoin/Initialize(mapload)
-	SHOULD_CALL_PARENT(FALSE)
-	GLOB.underworldcoin += loc
+/obj/effect/landmark/underworldcoin/New()
+	..()
+	new /obj/item/underworld/coin(src.loc)
 	return INITIALIZE_HINT_QDEL
