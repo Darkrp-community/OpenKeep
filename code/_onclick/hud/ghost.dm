@@ -56,7 +56,7 @@
 							// Store the current time for the player
 							GLOB.job_respawn_delays[G.ckey] = world.time + target_job.same_job_respawn_delay
 
-					for(var/turf/spawn_loc in GLOB.underworldcoin)
+					for(var/turf/spawn_loc in GLOB.underworldcoinspawns)
 						var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(spawn_loc)
 						O.livingname = G.name
 						O.ckey = G.ckey
@@ -70,7 +70,7 @@
 			if(C.skeletons)
 				G.returntolobby()
 		if(alert("Travel with the boatman?", "", "Yes", "No") == "Yes")
-			for(var/turf/spawn_loc in GLOB.underworldcoin)
+			for(var/turf/spawn_loc in GLOB.underworldcoinspawns)
 				var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(spawn_loc)
 				O.livingname = G.name
 				O.ckey = G.ckey
