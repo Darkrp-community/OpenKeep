@@ -78,7 +78,7 @@
 
 /datum/intent/arc/blowgun/prewarning()
 	if(mastermob)
-		mastermob.visible_message("<span class='warning'>[mastermob] takes a deep breath [masteritem]!</span>")
+		mastermob.visible_message("<span class='warning'>[mastermob] takes a deep breath!</span>")
 		playsound(mastermob, pick('sound/combat/Ranged/bow-draw-01.ogg'), 100, FALSE)
 
 /datum/intent/arc/blowgun/get_chargetime()
