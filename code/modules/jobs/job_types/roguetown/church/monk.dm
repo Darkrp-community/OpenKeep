@@ -75,7 +75,7 @@
 			head = /obj/item/clothing/head/roguetown/roguehood
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver
 			shoes = /obj/item/clothing/shoes/roguetown/boots
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/plain
 
 
 	if(H.mind)

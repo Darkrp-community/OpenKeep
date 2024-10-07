@@ -36,7 +36,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
 		if(H.age == AGE_OLD)
 			head = /obj/item/clothing/head/roguetown/wizhat/gen
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/plain
 			backl = /obj/item/storage/backpack/rogue/backpack
 			H.change_stat("intelligence", 1)
 			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)

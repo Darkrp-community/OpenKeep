@@ -187,8 +187,8 @@
 
 //................ Splint Mail ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/studded
-	name = "splint mail"
-	desc = "Leather armor reinforced with strips of metal riveted to the inside. Usually made from metal recycled from old breastplates or cooking utensils, coverage is partial at best."
+	name = "splint armor"
+	desc = "The smell of an old leather coat, with pieces of recycled metal from old breastplates or cooking utensils riveted to the inside."
 	icon_state = "splint"
 	sellprice = VALUE_LEATHER_ARMOR_PLUS
 
