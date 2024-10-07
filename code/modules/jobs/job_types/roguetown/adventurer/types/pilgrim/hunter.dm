@@ -22,6 +22,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
+	head = /obj/item/clothing/head/roguetown/brimmed
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
