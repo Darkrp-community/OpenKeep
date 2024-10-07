@@ -124,19 +124,6 @@
 	. = ..()
 	icon_state = "t[rand(1,4)]"
 
-/obj/structure/table/wood/treestump/burnt
-	name = "tree stump"
-	desc = "This stump is burnt. Maybe someone is trying to get coal the easy way."
-	static_debris = list(/obj/item/rogueore/coal = 1)
-	isunburnt = FALSE
-	icon_state = "st1"
-	icon = 'icons/roguetown/misc/96x96.dmi'
-	stump_type = null
-	pixel_x = -32
-
-/obj/structure/table/wood/treestump/burnt/Initialize()
-	. = ..()
-	icon_state = "st[rand(1,2)]"
 
 /obj/structure/flora/roguetree/underworld
 	name = "screaming tree"
@@ -155,16 +142,14 @@
 /obj/structure/table/wood/treestump
 	name = "tree stump"
 	desc = "Someone cut this tree down."
-	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	icon = 'icons/roguetown/misc/tree.dmi'
 	icon_state = "t1stump"
 	max_integrity = 100
 	climb_time = 0
 	blade_dulling = DULLING_CUT
 	static_debris = list()
 	debris = null
-	pixel_x = -16
 	climb_offset = 14
-	stump_type = FALSE
 	var/isunburnt = TRUE // Var needed for the burnt stump
 
 /obj/structure/table/wood/treestump/Initialize()
@@ -172,20 +157,30 @@
 	icon_state = "t[rand(1,4)]stump"
 
 /obj/structure/table/wood/treestump/attackby(obj/item/I, mob/user, params)
-	if(isactuallyastump)
-		if(istype(I, /obj/item/rogueweapon/shovel))
-			to_chat(user, "I start unearthing the stump...")
-			playsound(loc,'sound/items/dig_shovel.ogg', 100, TRUE)
-			if(do_after(user, 50))
-				user.visible_message("<span class='notice'>[user] unearths \the [src].</span>", \
-									"<span class='notice'>I unearth \the [src].</span>")
-				if(isunburnt)
-					new /obj/item/grown/log/tree/small(loc) // Rewarded with an extra small log if done the right way.return
-				obj_destruction("brute")
-		else
-			..()
+	if(istype(I, /obj/item/rogueweapon/shovel))
+		to_chat(user, "I start unearthing the stump...")
+		playsound(loc,'sound/items/dig_shovel.ogg', 100, TRUE)
+		if(do_after(user, 50))
+			user.visible_message("<span class='notice'>[user] unearths \the [src].</span>", \
+								"<span class='notice'>I unearth \the [src].</span>")
+			if(isunburnt)
+				new /obj/item/grown/log/tree/small(loc) // Rewarded with an extra small log if done the right way.return
+			obj_destruction("brute")
 	else
 		. = ..()
+
+/obj/structure/table/wood/treestump/burnt
+	name = "tree stump"
+	desc = "This stump is burnt. Maybe someone is trying to get coal the easy way."
+	static_debris = list(/obj/item/rogueore/coal = 1)
+	isunburnt = FALSE
+	icon_state = "st1"
+	icon = 'icons/roguetown/misc/tree.dmi'
+
+/obj/structure/table/wood/treestump/burnt/Initialize()
+	. = ..()
+	icon_state = "st[rand(1,2)]"
+
 
 /obj/structure/table/wood/ancientlog
 	name = "ancient log"
@@ -195,6 +190,7 @@
 	max_integrity = 200
 	blade_dulling = DULLING_CUT
 	static_debris = list(/obj/item/grown/log/tree = 1)
+	pixel_x = -16
 	climb_offset = 14
 
 /obj/structure/table/wood/ancientlog/Initialize()
