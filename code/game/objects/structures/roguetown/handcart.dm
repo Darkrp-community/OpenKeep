@@ -89,9 +89,9 @@
 	update_icon()
 
 /obj/structure/handcart/Moved(atom/oldLoc, direction)
-    . = ..()
-    if(pulledby)
-        setDir(pulledby.dir)  // Set the handcart's direction to the direction of the entity pulling it.
+	. = ..()
+	if(pulledby)
+		setDir(pulledby.dir)  // Set the handcart's direction to the direction of the entity pulling it.
 
 /obj/structure/handcart/proc/take_contents()
 	var/turf/T = get_turf(src)

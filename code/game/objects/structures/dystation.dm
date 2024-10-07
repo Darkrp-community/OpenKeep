@@ -30,7 +30,7 @@
 			/obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 			)
 	var/static/list/selectable_colors = list(
-  		"White" = "#ffffff",
+		"White" = "#ffffff",
 		"Black" = "#414143",
 		"Light Grey" = "#999999",
 		"Mage Grey" = "#6c6c6c",
@@ -65,7 +65,7 @@
 		"Russet" = "#7f461b"
 		)
 /obj/machinery/gear_painter/Destroy()
-	inserted.forceMove(drop_location())
+	inserted?.forceMove(drop_location())
 	return ..()
 
 /obj/machinery/gear_painter/attackby(obj/item/I, mob/living/user)

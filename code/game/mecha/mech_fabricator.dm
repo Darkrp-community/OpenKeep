@@ -291,8 +291,8 @@
 				left_part += output_parts_list(part_set)
 				left_part += "<hr><a href='?src=[REF(src)];screen=main'>Return</a>"
 	dat = {"<html>
-			  <head>
-			  <title>[name]</title>
+			<head>
+			<title>[name]</title>
 				<style>
 				.res_name {font-weight: bold; text-transform: capitalize;}
 				.red {color: #f00;}

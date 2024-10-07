@@ -57,7 +57,19 @@
 					H.update_inv_neck()
 					H.update_inv_head()
 
-
+/obj/item/clothing/neck/roguetown/coif/cloth
+	name = "padded coif"
+	desc = "A simple coif made of cloth. Not very effective armor, but may soften weak blows and keeps the head and neck warm."
+	icon_state = "ccoif"
+	item_state = "ccoif"
+	flags_inv = HIDEEARS|HIDEHAIR
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
+	blocksound = SOFTHIT
+	body_parts_covered = NECK|HAIR|EARS|HEAD
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	adjustable = CAN_CADJUST
+	toggle_icon_state = TRUE
 
 /obj/item/clothing/neck/roguetown/chaincoif
 	name = "chain coif"

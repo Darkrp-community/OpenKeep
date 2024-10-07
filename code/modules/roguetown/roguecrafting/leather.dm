@@ -162,3 +162,21 @@
 
 
 
+/datum/crafting_recipe/roguetown/leather/leatherjacket
+	name = "leather jacket"
+	result = list(/obj/item/clothing/suit/roguetown/armor/leather/vest/jacket)
+	reqs = list(/obj/item/natural/hide = 1)
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/leather/brimmedhat
+	name = "brimmed hat x2"
+	result = list(/obj/item/clothing/head/roguetown/brimmed)
+	reqs = list(/obj/item/natural/hide = 1)
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/leather/volfmantle
+	name = "volf mantle"
+	result = /obj/item/clothing/cloak/volfmantle
+	reqs = list(/obj/item/natural/fur/volf = 2,
+	/obj/item/natural/head/volf = 1)
+	craftdiff = 2

@@ -66,8 +66,8 @@
 	var/detail_tag
 	var/detail_color
 
-/obj/item/clothing/New()
-	..()
+/obj/item/clothing/Initialize(mapload)
+	. = ..()
 	if(armor_class)
 		has_inspect_verb = TRUE
 
@@ -302,13 +302,14 @@
 	if(!damaged_clothes)
 		update_clothes_damaged_state(TRUE)
 	var/brokemessage = FALSE
-	for(var/x in armor)
-		if(armor[x] > 0)
+	var/list/armorlist = armor?.getList()
+	for(var/x in armorlist)
+		if(armorlist[x] > 0)
 			brokemessage = TRUE
-			armor[x] = 0
+			armorlist[x] = 0
 	if(ismob(loc) && brokemessage)
 		var/mob/M = loc
-		to_chat(M, "ARMOR BROKEN..!")
+		to_chat(M, "ARMOR BROKEN...!")
 	..()
 
 /obj/item/clothing/proc/update_clothes_damaged_state(damaging = TRUE)
@@ -335,7 +336,7 @@ SEE_MOBS  // can see all mobs, no matter what
 SEE_OBJS  // can see all objs, no matter what
 SEE_TURFS // can see all turfs (and areas), no matter what
 SEE_PIXELS// if an object is located on an unlit area, but some of its pixels are
-          // in a lit area (via pixel_x,y or smooth movement), can see those pixels
+		  // in a lit area (via pixel_x,y or smooth movement), can see those pixels
 BLIND     // can't see anything
 */
 

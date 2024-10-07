@@ -41,6 +41,7 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/hammer/claw
 	backl = /obj/item/storage/backpack/rogue/backpack
+	backr =/obj/item/rogueweapon/halberd/bardiche/woodcutter//an specialist in cut trees would have two axes to his name
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/huntingknife = 1)
 	H.change_stat("strength", 2)
 	H.change_stat("endurance", 3)
