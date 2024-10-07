@@ -103,6 +103,7 @@
 	icon_state = "cabbit"
 	icon_living = "cabbit"
 	icon_dead = "cabbit_dead"
+	remains_type = /obj/effect/decal/remains/cabbit
 	speak = list("Meow!", "Chk!", "Purr!", "Chrr!")
 	speak_emote = list("chirrups", "meows")
 	emote_hear = list("meows.", "clucks.")
