@@ -99,8 +99,8 @@
 	minstr = 0
 	sellprice = 5
 
-/obj/item/rogueweapon/mace/woodclub/New()
-	..()
+/obj/item/rogueweapon/mace/woodclub/Initialize(mapload)
+	. = ..()
 	icon_state = "club[rand(1,2)]"
 
 /datum/intent/mace/strike/wood
@@ -143,6 +143,13 @@
 	minstr = 0
 	wdefense = 3
 	sellprice = 15
+
+/obj/item/rogueweapon/mace/cudgel/carpenter
+	force = 15
+	force_wielded = 20
+	name = "peasant cudgel"
+	icon_state = "carpentercudgel"
+	desc = "A stubby club reinforced with iron bits, popular among village watchmen and peasant militias. Despite being reinforced and hard-hitting, it still cannot compare to a proper mace."
 
 /obj/item/rogueweapon/mace/cudgel/getonmobprop(tag)
 	. = ..()
@@ -292,7 +299,7 @@
 
 // Copper Bludgeon
 
-obj/item/rogueweapon/mace/goden/copper
+/obj/item/rogueweapon/mace/goden/copper
 	force = 10
 	force_wielded = 20
 	slowdown = 1

@@ -145,42 +145,42 @@
 
 //STASIS
 /datum/status_effect/incapacitating/stasis
-        id = "stasis"
-        duration = -1
-        tick_interval = 10
-        alert_type = /atom/movable/screen/alert/status_effect/stasis
-        var/last_dead_time
+		id = "stasis"
+		duration = -1
+		tick_interval = 10
+		alert_type = /atom/movable/screen/alert/status_effect/stasis
+		var/last_dead_time
 
 /datum/status_effect/incapacitating/stasis/proc/update_time_of_death()
-        if(last_dead_time)
-                var/delta = world.time - last_dead_time
-                var/new_timeofdeath = owner.timeofdeath + delta
-                owner.timeofdeath = new_timeofdeath
-                owner.tod = station_time_timestamp(wtime=new_timeofdeath)
-                last_dead_time = null
-        if(owner.stat == DEAD)
-                last_dead_time = world.time
+		if(last_dead_time)
+				var/delta = world.time - last_dead_time
+				var/new_timeofdeath = owner.timeofdeath + delta
+				owner.timeofdeath = new_timeofdeath
+				owner.tod = station_time_timestamp(wtime=new_timeofdeath)
+				last_dead_time = null
+		if(owner.stat == DEAD)
+				last_dead_time = world.time
 
 /datum/status_effect/incapacitating/stasis/on_creation(mob/living/new_owner, set_duration, updating_canmove)
-        . = ..()
-        update_time_of_death()
-        owner.reagents?.end_metabolization(owner, FALSE)
+		. = ..()
+		update_time_of_death()
+		owner.reagents?.end_metabolization(owner, FALSE)
 
 /datum/status_effect/incapacitating/stasis/tick()
-        update_time_of_death()
+		update_time_of_death()
 
 /datum/status_effect/incapacitating/stasis/on_remove()
-        update_time_of_death()
-        return ..()
+		update_time_of_death()
+		return ..()
 
 /datum/status_effect/incapacitating/stasis/be_replaced()
-        update_time_of_death()
-        return ..()
+		update_time_of_death()
+		return ..()
 
 /atom/movable/screen/alert/status_effect/stasis
-        name = "Stasis"
-        desc = ""
-        icon_state = "stasis"
+		name = "Stasis"
+		desc = ""
+		icon_state = "stasis"
 
 //GOLEM GANG
 

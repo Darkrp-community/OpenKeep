@@ -73,7 +73,7 @@
 			else
 				blocked = 100
 				target.visible_message("<span class='danger'>\The [src] was deflected!</span>", \
-									   "<span class='danger'>My armor protected me against \the [src]!</span>")
+									"<span class='danger'>My armor protected me against \the [src]!</span>")
 
 	..(target, blocked)
 	DISABLE_BITFIELD(reagents.flags, NO_REACT)
@@ -125,7 +125,7 @@
 
 	var/explode_sound = list('sound/misc/explode/incendiary (1).ogg','sound/misc/explode/incendiary (2).ogg')
 
-    //explosion values
+	//explosion values
 	var/exp_heavy = 0
 	var/exp_light = 0
 	var/exp_flash = 0
@@ -228,7 +228,7 @@
 			else
 				blocked = 100
 				target.visible_message("<span class='danger'>\The [src] was deflected!</span>", \
-									   "<span class='danger'>My armor protected me against \the [src]!</span>")
+									"<span class='danger'>My armor protected me against \the [src]!</span>")
 
 	..(target, blocked)
 	DISABLE_BITFIELD(reagents.flags, NO_REACT)
@@ -279,7 +279,7 @@
 
 	var/explode_sound = list('sound/misc/explode/incendiary (1).ogg','sound/misc/explode/incendiary (2).ogg')
 
-    //explosion values
+	//explosion values
 	var/exp_heavy = 0
 	var/exp_light = 0
 	var/exp_flash = 0

@@ -180,13 +180,13 @@
 	sellprice = 35
 //wip
 /obj/item/scomstone/attack_right(mob/user)
-    user.changeNext_move(CLICK_CD_MELEE)
-    var/input_text = input(user, "Enter your message:", "Message")
-    if(input_text)
-        for(var/obj/structure/roguemachine/scomm/S in SSroguemachine.scomm_machines)
-            S.repeat_message(input_text)
-        for(var/obj/item/scomstone/S in SSroguemachine.scomm_machines)
-            S.repeat_message(input_text)
+	user.changeNext_move(CLICK_CD_MELEE)
+	var/input_text = input(user, "Enter your message:", "Message")
+	if(input_text)
+		for(var/obj/structure/roguemachine/scomm/S in SSroguemachine.scomm_machines)
+			S.repeat_message(input_text)
+		for(var/obj/item/scomstone/S in SSroguemachine.scomm_machines)
+			S.repeat_message(input_text)
 
 /obj/item/scomstone/MiddleClick(mob/user)
 	if(.)

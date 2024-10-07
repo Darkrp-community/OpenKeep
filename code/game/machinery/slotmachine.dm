@@ -41,13 +41,13 @@
 	jackpots = rand(1, 4) //false hope
 	plays = rand(75, 200)
 
-	toggle_reel_spin(1) //The reels won't spin unless we activate them
+	set_reel_instant(1) //The reels won't spin unless we activate them
 
 	var/list/reel = reels[1]
 	for(var/i = 0, i < reel.len, i++) //Populate the reels.
 		randomize_reels()
 
-	toggle_reel_spin(0)
+	set_reel_instant(0)
 
 	for(cointype in typesof(/obj/item/coin))
 		var/obj/item/coin/C = cointype
@@ -205,7 +205,7 @@
 	plays += 1
 	working = TRUE
 
-	toggle_reel_spin(1)
+	set_reel_instant(1)
 	update_icon()
 	updateDialog()
 
@@ -219,7 +219,7 @@
 	updateDialog()
 
 /obj/machinery/computer/slot_machine/proc/finish_spinning(spin_loop, mob/user, the_name)
-	toggle_reel_spin(0, REEL_DEACTIVATE_DELAY)
+	toggle_reel_spin(0)
 	working = FALSE
 	deltimer(spin_loop)
 	give_prizes(the_name, user)
@@ -239,10 +239,15 @@
 		return 0
 	return 1
 
-/obj/machinery/computer/slot_machine/proc/toggle_reel_spin(value, delay = 0) //value is 1 or 0 aka on or off
+// Like toggle_reel_spin but with no delay, used for cases like Initialize where sleeps are forbidden
+/obj/machinery/computer/slot_machine/proc/set_reel_instant(value)
 	for(var/list/reel in reels)
 		reels[reel] = value
-		sleep(delay)
+
+/obj/machinery/computer/slot_machine/proc/toggle_reel_spin(value) //value is 1 or 0 aka on or off
+	for(var/list/reel in reels)
+		reels[reel] = value
+		sleep(REEL_DEACTIVATE_DELAY)
 
 /obj/machinery/computer/slot_machine/proc/randomize_reels()
 

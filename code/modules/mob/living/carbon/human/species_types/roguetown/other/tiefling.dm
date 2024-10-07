@@ -81,7 +81,7 @@
 	UnregisterSignal(C, COMSIG_MOB_SAY)
 	C.remove_language(/datum/language/hellspeak)
 
-/datum/species/tieberian/handle_speech(datum/source, mob/speech_args)
+/datum/species/tieberian/handle_speech(datum/source, list/speech_args)
 	. = ..()
 	var/message = speech_args[SPEECH_MESSAGE]
 	if(message)
@@ -107,12 +107,15 @@
 /datum/species/tieberian/get_skin_list()
 	return sortList(list(
 		"Crimson Land" = SKIN_COLOR_CRIMSON_LAND,
-		"Zanguine" = SKIN_COLOR_ZANGUINE,
 		"Sun Stained" = SKIN_COLOR_SUNSTAINED,
 		"Sundered" = SKIN_COLOR_SUNDERED,
 		"Zarkana" = SKIN_COLOUR_ARCANA,
 		"Zarconum" = SKIN_COLOUR_ZARCONUM,
 		"Abyssium" = SKIN_COLOUR_ABYSS,
+		"Castillian" = SKIN_COLOR_CASTILLIAN,
+		"Asturias" = SKIN_COLOR_ASTURIAS,
+		"Vaquero" = SKIN_COLOR_VAQUERO,
+		"Zanguine" = SKIN_COLOR_ZANGUINE,
 		"Ash" = SKIN_COLOUR_ASH,
 	))
 

@@ -11,7 +11,7 @@
 
 /turf/open/hotspot_expose(added, maxstacks, soh)
 	return
-	var/list/air_gases = air?.gases
+/* 	var/list/air_gases = air?.gases
 	if(!air_gases)
 		return
 
@@ -38,7 +38,7 @@
 
 		active_hotspot.just_spawned = (current_cycle < SSair.times_fired)
 			//remove just_spawned protection if no longer processing this cell
-		SSair.add_to_active(src, 0)
+		SSair.add_to_active(src, 0) */
 
 //This is the icon for fire on turfs, also helps for nurturing small fires until they are full tile
 /obj/effect/hotspot
@@ -181,13 +181,13 @@
 		qdel(src)
 		return
 
-	for(var/mob/living/carbon/human/H in view(2, H))
+	for(var/mob/living/carbon/human/H in view(2, src))
 		if(H.has_flaw(/datum/charflaw/addiction/pyromaniac))
 			H.sate_addiction()
 
 	perform_exposure()
 	return
-
+/* 
 	if(location.excited_group)
 		location.excited_group.reset_cooldowns()
 
@@ -231,7 +231,7 @@
 
 	if(location.heat_capacity && temperature > location.heat_capacity)
 		location.to_be_destroyed = TRUE
-	return TRUE
+	return TRUE */
 
 /obj/effect/hotspot/Destroy()
 	set_light(0)

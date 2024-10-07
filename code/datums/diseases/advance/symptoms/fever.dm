@@ -29,7 +29,7 @@ Bonus
 	symptom_delay_max = 30
 	var/unsafe = FALSE //over the heat threshold
 	threshold_desc = "<b>Resistance 5:</b> Increases fever intensity, fever can overheat and harm the host.<br>\
-					  <b>Resistance 10:</b> Further increases fever intensity."
+					<b>Resistance 10:</b> Further increases fever intensity."
 
 /datum/symptom/fever/Start(datum/disease/advance/A)
 	if(!..())

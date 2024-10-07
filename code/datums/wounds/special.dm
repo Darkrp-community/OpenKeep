@@ -3,7 +3,7 @@
 	sound_effect = 'sound/combat/crit.ogg'
 	severity = WOUND_SEVERITY_SEVERE
 	whp = null
-	woundpain = 0
+	woundpain = 10
 	can_sew = FALSE
 	can_cauterize = FALSE
 	critical = FALSE
@@ -20,6 +20,7 @@
 		"The eardrums are gored!",
 		"The eardrums are ruptured!",
 	)
+	woundpain = 50
 	can_sew = FALSE
 	can_cauterize = FALSE
 	critical = TRUE
@@ -70,6 +71,7 @@
 		"The right eye is gouged!",
 		"The right eye is destroyed!",
 	)
+	woundpain = 15
 
 /datum/wound/facial/eyes/right/can_stack_with(datum/wound/other)
 	if(istype(other, /datum/wound/facial/eyes/right))
@@ -103,6 +105,7 @@
 		"The left eye is gouged!",
 		"The left eye is destroyed!",
 	)
+	woundpain = 15
 
 /datum/wound/facial/eyes/left/can_stack_with(datum/wound/other)
 	if(istype(other, /datum/wound/facial/eyes/left))
@@ -136,6 +139,7 @@
 		"The tongue is severed!",
 		"The tongue flies off in an arc!"
 	)
+	woundpain = 8
 	can_sew = FALSE
 	can_cauterize = FALSE
 	critical = TRUE
