@@ -91,6 +91,14 @@
 /obj/effect/landmark/underworldsafe,
 /turf/open/floor/rogue/underworld/road,
 /area/rogue/underworld)
+"C" = (
+/obj/item/underworld/coin,
+/turf/open/floor/rogue/underworld/road,
+/area/rogue/underworld)
+"U" = (
+/obj/item/underworld/coin,
+/turf/open/floor/plating/dirt/dark,
+/area/rogue/underworld)
 
 (1,1,1) = {"
 a
@@ -6603,7 +6611,7 @@ c
 n
 e
 o
-b
+U
 b
 b
 b
@@ -6616,11 +6624,11 @@ e
 e
 e
 o
-e
+C
 e
 e
 o
-e
+C
 e
 e
 e
@@ -6735,14 +6743,14 @@ e
 e
 b
 r
-b
+U
 e
 e
 e
 e
 e
 o
-e
+C
 e
 e
 e
@@ -6754,7 +6762,7 @@ e
 e
 e
 o
-e
+C
 e
 e
 n
@@ -7123,7 +7131,7 @@ c
 n
 e
 o
-b
+U
 b
 b
 e
@@ -7135,7 +7143,7 @@ e
 e
 e
 o
-e
+C
 e
 e
 e
@@ -7259,7 +7267,7 @@ b
 b
 e
 o
-e
+C
 e
 e
 e
@@ -7382,7 +7390,7 @@ a
 c
 n
 o
-e
+C
 b
 b
 b
@@ -7400,7 +7408,7 @@ e
 e
 e
 o
-e
+C
 e
 e
 e
@@ -7534,7 +7542,7 @@ e
 e
 e
 o
-e
+C
 e
 e
 n
@@ -7902,7 +7910,7 @@ a
 c
 n
 o
-b
+U
 b
 d
 f
@@ -8047,7 +8055,7 @@ e
 e
 e
 o
-e
+C
 e
 e
 e
@@ -8182,7 +8190,7 @@ e
 e
 e
 o
-e
+C
 e
 e
 e
@@ -8315,7 +8323,7 @@ e
 e
 e
 o
-e
+C
 e
 e
 s
@@ -8951,13 +8959,13 @@ e
 e
 e
 o
-e
+C
 e
 e
 e
 e
 o
-e
+C
 e
 e
 e
@@ -9076,7 +9084,7 @@ b
 b
 b
 r
-e
+C
 e
 e
 e
@@ -9333,7 +9341,7 @@ c
 n
 e
 r
-b
+U
 b
 b
 b
@@ -9344,7 +9352,7 @@ e
 e
 e
 o
-e
+C
 e
 e
 e
@@ -9355,7 +9363,7 @@ e
 e
 e
 o
-e
+C
 e
 n
 s
@@ -9469,7 +9477,7 @@ b
 b
 e
 o
-e
+C
 e
 e
 e
@@ -9596,7 +9604,7 @@ b
 b
 b
 r
-b
+U
 e
 e
 e
@@ -9606,12 +9614,12 @@ e
 e
 e
 o
-e
+C
 e
 e
 e
 o
-e
+C
 e
 e
 e
@@ -9723,7 +9731,7 @@ c
 n
 e
 r
-b
+U
 b
 b
 b
