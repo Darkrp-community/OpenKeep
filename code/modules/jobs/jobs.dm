@@ -70,7 +70,9 @@ GLOBAL_LIST_INIT(noble_positions, list(
 	"Archivist",
 	"Merchant",
 	"Feldsher",
-	"Warden of the Terrorbog"
+	"Warden of the Terrorbog",
+	"Huntmaster of the Murderwoods",
+	"Hetman of Mount Decapitation"
 	))
 
 GLOBAL_LIST_INIT(garrison_positions, list(
