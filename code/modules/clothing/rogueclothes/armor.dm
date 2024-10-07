@@ -858,7 +858,7 @@
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	max_integrity = INTEGRITY_POOR
 
-obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
+/obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	name = "crude maille"
 	icon_state = "orc_chainvest"
 	item_state = "orc_chainvest"

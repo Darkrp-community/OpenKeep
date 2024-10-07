@@ -125,8 +125,8 @@
 	flags_inv = HIDEEARS
 	color = CLOTHING_PINK
 
-/obj/item/clothing/head/roguetown/chaperon/greyscale/random
 /obj/item/clothing/head/roguetown/chaperon/greyscale/random/Initialize()
+	. = ..()
 	color = pick(CLOTHING_TEAL, CLOTHING_GREEN, CLOTHING_ORANGE, CLOTHING_MAJENTA, CLOTHING_YELLOW,CLOTHING_SALMON, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW)
 
 
@@ -311,9 +311,9 @@
 	if((user.job != "Priest") && (user.job != "Priestess"))
 		to_chat(user, "<font color='yellow'>UNWORTHY HANDS TOUCH THE VISAGE, CEASE OR BE PUNISHED</font>")
 		spawn(30)
-			if(loc == user)
-				user.adjust_fire_stacks(5)
-				user.IgniteMob()
+//			if(loc == user)
+		user.adjust_fire_stacks(5)
+		user.IgniteMob()
 	else ...()
 
 
