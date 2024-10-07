@@ -184,10 +184,11 @@
 
 /obj/item/gun/energy/dueling/Destroy()
 	. = ..()
-	if(duel.gun_A == src)
-		duel.gun_A = null
-	if(duel.gun_B == src)
-		duel.gun_B = null
+	if(duel)
+		if(duel.gun_A == src)
+			duel.gun_A = null
+		if(duel.gun_B == src)
+			duel.gun_B = null
 	duel = null
 
 /obj/item/gun/energy/dueling/can_trigger_gun(mob/living/user)

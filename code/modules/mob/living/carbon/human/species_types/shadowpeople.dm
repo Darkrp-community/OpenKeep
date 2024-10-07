@@ -102,12 +102,12 @@
 	if(M != user)
 		return ..()
 	user.visible_message("<span class='warning'>[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!</span>", \
-						 "<span class='danger'>[src] feels unnaturally cold in my hands. You raise [src] my mouth and devour it!</span>")
+						"<span class='danger'>[src] feels unnaturally cold in my hands. You raise [src] my mouth and devour it!</span>")
 	playsound(user, 'sound/blank.ogg', 50, TRUE)
 
 
 	user.visible_message("<span class='warning'>Blood erupts from [user]'s arm as it reforms into a weapon!</span>", \
-						 "<span class='danger'>Icy blood pumps through my veins as my arm reforms itself!</span>")
+						"<span class='danger'>Icy blood pumps through my veins as my arm reforms itself!</span>")
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	Insert(user)
 

@@ -6,7 +6,7 @@
 	race = /datum/species/orc
 	gender = MALE
 	bodyparts = list(/obj/item/bodypart/chest/orc, /obj/item/bodypart/head/orc, /obj/item/bodypart/l_arm/orc,
-					 /obj/item/bodypart/r_arm/orc, /obj/item/bodypart/r_leg/orc, /obj/item/bodypart/l_leg/orc)
+					/obj/item/bodypart/r_arm/orc, /obj/item/bodypart/r_leg/orc, /obj/item/bodypart/l_leg/orc)
 	rot_type = /datum/component/rot/corpse/orc
 //	var/gob_outfit = /datum/outfit/job/roguetown/npc/orc/ambush removed to apply different classes to the orcs
 	ambushable = FALSE
@@ -53,7 +53,7 @@
 /obj/item/bodypart/head/orc/update_icon_dropped()
 	return
 
-/obj/item/bodypart/head/orc/get_limb_icon()
+/obj/item/bodypart/head/orc/get_limb_icon(dropped, hideaux = FALSE)
 	return
 
 /obj/item/bodypart/head/orc/skeletonize()
@@ -117,9 +117,7 @@
 
 /mob/living/carbon/human/species/orc/Initialize()
 	. = ..()
-	spawn(10)
-		after_creation()
-	//addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
+	addtimer(CALLBACK(src, PROC_REF(after_creation)), 1 SECONDS)
 
 /mob/living/carbon/human/species/orc/handle_combat()
 	if(mode == AI_HUNT)
@@ -128,15 +126,15 @@
 	. = ..()
 
 /mob/living/carbon/human/species/orc/proc/configure_mind()
-    if(!mind)
-        mind = new /datum/mind(src)
+	if(!mind)
+		mind = new /datum/mind(src)
 
-    mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 
 /mob/living/carbon/human/species/orc/handle_combat()
 	if(mode == AI_HUNT)
@@ -191,12 +189,13 @@
 	nojumpsuit = 1
 	sexes = 1
 	damage_overlay_type = ""
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	var/raceicon = "orc"
 
-/datum/species/orc/update_damage_overlays(var/mob/living/carbon/human/H)
+/datum/species/orc/update_damage_overlays(mob/living/carbon/human/H)
 	return
 
-/datum/species/orc/regenerate_icons(var/mob/living/carbon/human/H)
+/datum/species/orc/regenerate_icons(mob/living/carbon/human/H)
 //	H.cut_overlays()
 	H.icon_state = ""
 	if(H.notransform)

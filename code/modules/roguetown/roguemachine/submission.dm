@@ -8,7 +8,7 @@
 	pixel_y = 32
 
 /obj/structure/roguemachine/submission/attackby(obj/item/P, mob/user, params)
-/*	if(feeding_hole_wheat_count < 5)
+/*	if(GLOB.feeding_hole_wheat_count < 5)
 		user << "You hear squeaks coming from the hole, but it seems inactive."
 
 		return*/
@@ -105,8 +105,8 @@ This is a filter that blocks use of the machine for that role. Could be expanded
 			src.attackby(P, user)
 
 /*				//Var for keeping track of timer
-var/global/feeding_hole_wheat_count = 0
-var/global/feeding_hole_reset_timer
+GLOBAL_VAR_INIT(feeding_hole_wheat_count, 0)
+GLOBAL_VAR(feeding_hole_reset_timer)
 */
 			//WIP for now it does really nothing, but people will be gaslighted into thinking it does.
 /obj/structure/feedinghole
@@ -120,11 +120,11 @@ var/global/feeding_hole_reset_timer
 /obj/structure/feedinghole/attackby(obj/item/P, mob/user, params)
 	if(istype(P, /obj/item/reagent_containers/food/snacks/produce/wheat))
 		qdel(P)
-/*		if(!feeding_hole_reset_timer || world.time > feeding_hole_reset_timer)
-			feeding_hole_wheat_count = 0
-			feeding_hole_reset_timer = world.time + (1 MINUTES)
+/*		if(!GLOB.feeding_hole_reset_timer || world.time > GLOB.feeding_hole_reset_timer)
+			GLOB.feeding_hole_wheat_count = 0
+			GLOB.feeding_hole_reset_timer = world.time + (1 MINUTES)
 
-		feeding_hole_wheat_count++
+		GLOB.feeding_hole_wheat_count++
 */
 		playsound(src, 'sound/misc/beep.ogg', 100, FALSE, -1)
 		user.visible_message("<span class='notice'>[user] feeds [P] into the [src].</span>",
