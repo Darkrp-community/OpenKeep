@@ -609,7 +609,7 @@
 		return
 	if (is_type_in_typecache(target, ovens))
 //		if (held_sausage && held_sausage.roasted)
-//			to_chat("<span class='warning'>My [held_sausage] has already been cooked!</span>")
+//			to_chat(user, "<span class='warning'>My [held_sausage] has already been cooked!</span>")
 //			return
 		if (istype(target, /obj/singularity) && get_dist(user, target) < 10)
 			to_chat(user, "<span class='notice'>I send [held_sausage] towards [target].</span>")

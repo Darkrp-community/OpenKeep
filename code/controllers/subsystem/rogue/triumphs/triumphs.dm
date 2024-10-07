@@ -63,7 +63,7 @@ SUBSYSTEM_DEF(triumphs)
 	// This represents the triumph buy organization on the main SS for triumphs
 	// Each key is a category name
 	// And then the list will have a number in a string that leads to a list of datums
-	var/list/central_state_data = list(
+	var/list/list/list/central_state_data = list( // this is updated to be a list of lists in subsystem Initialize
 		TRIUMPH_CAT_ROUND_EFX = 0,
 		TRIUMPH_CAT_CHARACTER = 0,
 		TRIUMPH_CAT_MISC = 0,

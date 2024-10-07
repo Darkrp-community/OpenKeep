@@ -484,6 +484,18 @@
 	item_state = "leathervest"
 	color = "#dfa590" // gives a slightly darker and reddish hue to contrast nicely with the leather pants.
 
+/obj/item/clothing/suit/roguetown/armor/leather/vest/jacket
+	name = "leather jacket"
+	icon_state = "leatherjacketo"
+	desc = "A padded leather jacket with buttons, is warm and durable for the daily work."
+	body_parts_covered = CHEST|VITALS|ARMS
+	color = null
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	allowed_sex = list(MALE, FEMALE)
+	allowed_race = list("human", "tiefling","elf", "half-elf", "dark elf", "aasimar", "dwarf")
+	sellprice = 10
+
+
 // Unique swashbuckler vest. Notice it doesn't cover arms.
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	name = "sea jacket"
@@ -617,7 +629,7 @@
 	max_integrity = 120
 	sellprice = 10
 
-obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
+/obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	name = "Orc Marauder Chain Vest"
 	icon_state = "orc_chainvest"
 	item_state = "orc_chainvest"

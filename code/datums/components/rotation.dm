@@ -126,7 +126,7 @@
 		if(ROTATION_FLIP)
 			rot_degree = 180
 	AM.setDir(turn(AM.dir,rot_degree))
-	after_rotation.Invoke(user,rotation_type)
+	after_rotation.InvokeAsync(user,rotation_type)
 
 /datum/component/simple_rotation/proc/default_can_user_rotate(mob/living/user, rotation_type)
 	if(!istype(user) || !user.canUseTopic(parent, BE_CLOSE, NO_DEXTERITY))

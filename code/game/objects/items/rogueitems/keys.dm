@@ -494,22 +494,22 @@
 	icon_state = "rustkey"
 	lockid = "butcher"
 
-obj/item/roguekey/elder
+/obj/item/roguekey/elder
 	name = "mayor's key"
 	icon_state = "rustkey"
 	lockid = "elder"
 
-obj/item/roguekey/apothecary
+/obj/item/roguekey/apothecary
 	name = "apothecary's key"
 	icon_state = "rustkey"
 	lockid = "apothecary"
 
-obj/item/roguekey/weaponsmith
+/obj/item/roguekey/weaponsmith
 	name = "weaponsmith's key"
 	icon_state = "rustkey"
 	lockid = "weaponsmith"
 
-obj/item/roguekey/armorsmith
+/obj/item/roguekey/armorsmith
 	name = "armorsmith's key"
 	icon_state = "rustkey"
 	lockid = "armorsmith"

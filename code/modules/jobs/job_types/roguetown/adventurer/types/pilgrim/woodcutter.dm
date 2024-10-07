@@ -28,14 +28,15 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	pants = /obj/item/clothing/under/roguetown/trou
-	head = /obj/item/clothing/head/roguetown/roguehood
+	head = /obj/item/clothing/head/roguetown/brimmed
+	neck = /obj/item/clothing/neck/roguetown/coif
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	backr = /obj/item/storage/backpack/rogue/satchel
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/workervest
 	beltr = /obj/item/rogueweapon/woodcut
-	beltl = /obj/item/rogueweapon/huntingknife
+	beltl = /obj/item/rogueweapon/huntingknife/villager
 	backpack_contents = list(/obj/item/flint = 1)
 	H.change_stat("strength", 2)
 	H.change_stat("constitution", 1)

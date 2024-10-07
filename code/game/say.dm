@@ -1,5 +1,5 @@
 /*
- 	Miauw's big Say() rewrite.
+	Miauw's big Say() rewrite.
 	This file has the basic atom/movable level speech procs.
 	And the base of the send_speech() proc, which is the core of saycode.
 */
@@ -168,10 +168,10 @@ GLOBAL_LIST_INIT(freqtospan, list(
 
 /proc/get_radio_name(freq)
 	return freq
-	var/returntext = GLOB.reverseradiochannels["[freq]"]
+/* 	var/returntext = GLOB.reverseradiochannels["[freq]"]
 	if(returntext)
 		return returntext
-	return "[copytext("[freq]", 1, 4)].[copytext("[freq]", 4, 5)]"
+	return "[copytext("[freq]", 1, 4)].[copytext("[freq]", 4, 5)]" */
 
 /proc/attach_spans(input, list/spans)
 	return "[message_spans_start(spans)][input]</span>"
