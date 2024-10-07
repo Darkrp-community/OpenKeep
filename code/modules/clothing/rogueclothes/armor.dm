@@ -75,6 +75,7 @@
 /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	name = "light gambeson"
 	desc = "A barely padded gambeson, typically worn by the peasantry as cheap yet fashionable armor for the whole body."
+	icon_state = "gambesonl"
 	sellprice = VALUE_LIGHT_GAMBESSON
 
 	armor = ARMOR_GAMBESON_BAD
@@ -83,6 +84,7 @@
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	name = "padded gambeson"
 	desc = "A gambeson with additional padding layers, hardened to make it more durable. It still cannot compare to proper armor."
+	icon_state = "gambesonp"
 	sellprice = VALUE_HEAVY_GAMBESSON
 
 	armor = ARMOR_GAMBESON_GOOD
@@ -116,7 +118,7 @@
 	desc = "Similar to a gambeson, it is meant to be used under heavier armor."
 	icon_state = "dgamb"
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar") // lacks sprites for other races and genders
 	sellprice = VALUE_GAMBESSON+BONUS_VALUE_MODEST
 
 	body_parts_covered = CHEST|ARMS|VITALS|GROIN
@@ -187,7 +189,7 @@
 /obj/item/clothing/suit/roguetown/armor/leather/studded
 	name = "splint mail"
 	desc = "Leather armor reinforced with strips of metal riveted to the inside. Usually made from metal recycled from old breastplates or cooking utensils, coverage is partial at best."
-	icon_state = "studleather"
+	icon_state = "splint"
 	sellprice = VALUE_LEATHER_ARMOR_PLUS
 
 	armor = ARMOR_LEATHER_BEST
