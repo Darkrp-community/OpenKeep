@@ -33,7 +33,7 @@
 	..()
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	head = /obj/item/clothing/head/roguetown/brimmed
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/jacket
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	cloak = /obj/item/clothing/cloak/half
@@ -63,5 +63,5 @@
 		else
 			H.change_stat("strength", 2)
 			H.change_stat("perception", 1)
-			H.change_stat("intelligence", 2)			
+			H.change_stat("intelligence", 2)
 	H.verbs |= /mob/proc/haltyell

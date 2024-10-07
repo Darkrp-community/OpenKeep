@@ -91,7 +91,7 @@
 	recipe_name = "a heavy plate armor"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/ingot/iron)
-	created_item = /obj/item/clothing/suit/roguetown/armor/plate/scale/iron 
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/iron
 	craftdiff = 1
 
 /datum/anvil_recipe/armor/iplatehelmet

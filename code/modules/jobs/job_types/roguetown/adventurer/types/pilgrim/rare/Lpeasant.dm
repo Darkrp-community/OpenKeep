@@ -42,7 +42,7 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	backl = /obj/item/storage/backpack/rogue/satchel
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	armor = /obj/item/clothing/suit/roguetown/armor/workervest
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 	mouth = /obj/item/clothing/mask/cigarette/pipe/westman
 	if(H.gender == FEMALE)
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random

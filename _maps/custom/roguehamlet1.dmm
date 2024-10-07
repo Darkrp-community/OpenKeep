@@ -21566,7 +21566,7 @@
 /area/rogue/indoors/shelter/mountains)
 "wJv" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/hand,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/hand,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"

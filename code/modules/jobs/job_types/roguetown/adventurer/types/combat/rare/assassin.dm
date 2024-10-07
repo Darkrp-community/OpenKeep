@@ -85,7 +85,7 @@
 				neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 				head = /obj/item/clothing/head/roguetown/fisherhat
 				mouth = /obj/item/rogueweapon/huntingknife
-				armor = /obj/item/clothing/suit/roguetown/armor/workervest
+				armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 				backl = /obj/item/storage/backpack/rogue/satchel
 				belt = /obj/item/storage/belt/rogue/leather/assassin
 				backr = /obj/item/fishingrod
@@ -94,7 +94,7 @@
 				backpack_contents = list(/obj/item/rogueweapon/huntingknife = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)
 			else
 				shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
-				armor = /obj/item/clothing/suit/roguetown/armor/workervest
+				armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 				shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 				neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 				head = /obj/item/clothing/head/roguetown/fisherhat
@@ -125,7 +125,7 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, -2, TRUE)
 			head = /obj/item/clothing/head/roguetown/armingcap
 			pants = /obj/item/clothing/under/roguetown/trou
-			armor = /obj/item/clothing/suit/roguetown/armor/workervest
+			armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 			belt = /obj/item/storage/belt/rogue/leather/assassin
@@ -179,7 +179,7 @@
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			backl = /obj/item/storage/backpack/rogue/satchel
 			neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-			armor = /obj/item/clothing/suit/roguetown/armor/workervest
+			armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 			mouth = /obj/item/rogueweapon/huntingknife
 			beltr = /obj/item/flint
 			if(H.gender == FEMALE)
@@ -200,7 +200,7 @@
 			backr = /obj/item/storage/backpack/rogue/satchel
 			neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			armor = /obj/item/clothing/suit/roguetown/armor/workervest
+			armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 			beltr = /obj/item/rogueweapon/woodcut
 			beltl = /obj/item/rogueweapon/huntingknife
 			backpack_contents = list(/obj/item/flint = 1)

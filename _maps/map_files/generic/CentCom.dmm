@@ -2730,19 +2730,19 @@
 /area/rogue)
 "xO" = (
 /obj/structure/table/wood/fancy/black,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman{
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman{
 	desc = "A rough jacket worn by Guild Officials.";
 	name = "Guild Jacket"
 	},
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman{
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman{
 	desc = "A rough jacket worn by Guild Officials.";
 	name = "Guild Jacket"
 	},
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman{
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman{
 	desc = "A rough jacket worn by Guild Officials.";
 	name = "Guild Jacket"
 	},
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman{
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman{
 	desc = "A rough jacket worn by Guild Officials.";
 	name = "Guild Jacket"
 	},
@@ -2869,8 +2869,8 @@
 /area/rogue/indoors/vampire_manor)
 "zn" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/clothing/suit/roguetown/armor/heartfelt/hand,
-/obj/item/clothing/suit/roguetown/armor/heartfelt/lord,
+/obj/item/clothing/suit/roguetown/armor/medium/heartfelt_hand,
+/obj/item/clothing/suit/roguetown/armor/medium/heartfelt_lord,
 /obj/item/clothing/suit/roguetown/armor/plate/vampire,
 /obj/item/clothing/suit/roguetown/armor/plate/blkknight,
 /turf/open/floor/rogue/carpet,
@@ -3409,18 +3409,18 @@
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher,
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher,
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/hand,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/hand,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/hand,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/hand,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/hand,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/hand,
 /obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep,
 /obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep,
 /obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/sea,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/sea,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/sea,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman,
 /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan,
 /turf/open/floor/rogue/wood,
 /area/rogue)
@@ -4389,10 +4389,10 @@
 /area/rogue/indoors/bandit_lair)
 "Wc" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/clothing/suit/roguetown/armor/armordress,
-/obj/item/clothing/suit/roguetown/armor/armordress,
-/obj/item/clothing/suit/roguetown/armor/armordress/alt,
-/obj/item/clothing/suit/roguetown/armor/armordress/alt,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "We" = (

@@ -10373,7 +10373,7 @@
 /area/rogue/indoors/town/dwarfin)
 "neO" = (
 /obj/structure/closet/crate/roguecloset/dark,
-/obj/item/clothing/suit/roguetown/armor/armordress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
 /obj/item/clothing/shoes/roguetown/boots/leather,
 /obj/item/clothing/suit/roguetown/armor/leather/vest,
 /turf/open/floor/rogue/wood,
@@ -13116,7 +13116,7 @@
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/suit/roguetown/armor/leather/vest,
 /obj/item/clothing/shoes/roguetown/boots/leather,
-/obj/item/clothing/suit/roguetown/armor/armordress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/dwarfin)
 "qAJ" = (
@@ -13996,8 +13996,8 @@
 /obj/structure/closet/crate/roguecloset/inn,
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random,
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random,
-/obj/item/clothing/suit/roguetown/armor/silkcoat,
-/obj/item/clothing/suit/roguetown/armor/silkcoat,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},

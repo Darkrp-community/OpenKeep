@@ -129,10 +129,10 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define TRIUMPH_CAT_ACTIVE_DATUMS "ACTIVE"
 
 
-// .............. SELLPRICE/VALUE DEFINES ..................... // 
+// .............. SELLPRICE/VALUE DEFINES ..................... //
 // Basicallly material cost + work cost will be the value from now on. Needs work to value these things in comparison but its a simple way to get some consistency to it
 // The material cost, work cost and bonus value should mostly be a under the hood thing so its easy to parse. Adjusting them will obviously affect end user costs.
-// Keep values divisible by 2 and 3 and 4 without fractions, lets avoid money fractions guys. 
+// Keep values divisible by 2 and 3 and 4 without fractions, lets avoid money fractions guys.
 
 // Material costs.
 // theres two parts of what a material is worth, how hard is it to find it and how painful is it to collect, and how useful is it.
@@ -169,7 +169,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define BONUS_VALUE_MODEST		BONUS_VALUE_SMALL * 2
 #define BONUS_VALUE_BIG			BONUS_VALUE_SMALL * 4
 
-#define GREED_SMALL_POTATO		BONUS_VALUE_TINY	// to get some profit margin to the offmap trading company and make economy make sense 
+#define GREED_SMALL_POTATO		BONUS_VALUE_TINY	// to get some profit margin to the offmap trading company and make economy make sense
 #define GREEDY_TRADER			BONUS_VALUE_SMALL	// slap this on most stuff the trader imports (its the markup they pay their supplier, or just double value for stuff you want to keep rare)
 
 /*--------------\
@@ -245,7 +245,7 @@ BCLASS_BLUNT, \
 BCLASS_STAB, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 // Vampire heavy armor, always vulnerable to whips
 #define ALL_CRITICAL_HITS_VAMP list(\
@@ -254,7 +254,7 @@ BCLASS_CHOP, \
 BCLASS_BLUNT, \
 BCLASS_STAB, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 #define ALL_EXCEPT_STAB list(\
 BCLASS_CUT, \
@@ -262,7 +262,7 @@ BCLASS_CHOP, \
 BCLASS_BLUNT, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 // Typical maille
 #define ALL_EXCEPT_BLUNT list(\
@@ -271,43 +271,43 @@ BCLASS_CHOP, \
 BCLASS_STAB, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 // Plates cover only a few organs and bones
 #define ONLY_VITAL_ORGANS list(\
 BCLASS_CHOP, \
-BCLASS_BLUNT) 
+BCLASS_BLUNT)
 
 #define ALL_EXCEPT_CHOP_AND_STAB list(\
 BCLASS_CUT, \
 BCLASS_BLUNT, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 #define ALL_EXCEPT_BLUNT_AND_STAB list(\
 BCLASS_CUT, \
 BCLASS_CHOP, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 #define CUT_AND_MINOR_CRITS list(\
 BCLASS_CUT, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 #define BLUNT_AND_MINOR_CRITS list(\
 BCLASS_BLUNT, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 #define MINOR_CRITICALS list(\
 BCLASS_LASHING, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 
 
@@ -349,7 +349,10 @@ BCLASS_TWIST)
 // Thick partial plates
 #define MELEE_50___ARROW_NOTHING list(\
 "melee" = 50, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
+#define MELEE_70___ARROW_NOTHING list(\
+"melee" = 70, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define MELEE_45___ARROW_65 list(\
+"melee" = 45, "bullet" = 65, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 #define MELEE_60___ARROW_50 list(\
 "melee" = 60, "bullet" = 50, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
@@ -390,7 +393,9 @@ BCLASS_TWIST)
 #define ARMOR_LEATHER_GOOD	MELEE_50___ARROW_25
 #define ARMOR_LEATHER_BEST	MELEE_60___ARROW_30
 
+#define ARMOR_MAILLE_IRON	MELEE_45___ARROW_65
 #define ARMOR_MAILLE		MELEE_80___ARROW_90
+#define ARMOR_MAILLE_GOOD	MELEE_80___ARROW_100
 
 #define ARMOR_COPPER		MELEE_50___ARROW_NOTHING
 
