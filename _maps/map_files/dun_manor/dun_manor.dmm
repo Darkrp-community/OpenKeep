@@ -7265,7 +7265,7 @@
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/chapel)
 "hOP" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
@@ -7856,7 +7856,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "iAu" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/town)
 "iAW" = (
@@ -17207,7 +17207,7 @@
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
 "sWM" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town)
 "sWU" = (
@@ -18706,7 +18706,7 @@
 	},
 /area/rogue/indoors/soilsons)
 "uHq" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "uIB" = (

@@ -649,3 +649,85 @@
 	dir = SOUTH
 	debris = list(/obj/item/natural/thorn = 3, /obj/item/grown/log/tree/stick = 1)
 //WIP
+
+
+/*	..................   Meagre Bush   ................... */	// This works on the characters stats and doesnt have a preset vendor content. Hardmode compared to the OG one.
+/obj/structure/flora/roguegrass/bush_meagre
+	name = "bush"
+	desc = "Home to thorns, spiders, and maybe some berries."
+	icon_state = "bush1"
+	layer = ABOVE_ALL_MOB_LAYER
+	max_integrity = 35
+	climbable = FALSE
+	dir = SOUTH
+	debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1)
+	var/prob2findstuff = 20	// base % to find any useful thing in the bush, gets modded by perception
+	var/prob2findgoodie = 20	// base % to find good stuff in the bush, gets modded by fortune and perception
+	var/islooted = FALSE
+	var/tobacco
+	var/berries
+	var/goodie
+	var/trashie
+
+/obj/structure/flora/roguegrass/bush_meagre/update_icon()
+	if(berries)
+		icon_state = "bush_berry[rand(1,3)]"
+	else
+		icon_state = "bush[rand(1, 4)]"
+
+/obj/structure/flora/roguegrass/bush_meagre/Initialize()
+	if(prob(30))
+		tobacco = TRUE
+		berries = FALSE
+		goodie = /obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed
+	else
+		tobacco = FALSE
+		berries = TRUE
+		if(prob(60))
+			goodie = /obj/item/reagent_containers/food/snacks/produce/berries/rogue
+		else
+			goodie = /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
+	pixel_x += rand(-3,3)
+	if(prob(60))
+		trashie = /obj/item/natural/thorn
+	else
+		trashie = /obj/item/natural/fibers
+	return ..()
+
+/obj/structure/flora/roguegrass/bush_meagre/attack_hand(mob/living/user)
+	var/mob/living/L = user
+	user.changeNext_move(CLICK_CD_MELEE)
+	playsound(src.loc, "plantcross", 80, FALSE, -1)
+	prob2findstuff = prob2findstuff + ( user.STAPER * 4 )
+	prob2findgoodie = prob2findgoodie + ( user.STALUC * 2 ) + ( user.STAPER * 2 )
+	user.visible_message(span_small("[user] searches through [src]."))
+
+	if(do_after(L, rand(5,20), target = src))
+
+		if(islooted)
+			to_chat(user, span_warning("Picked clean."))
+			return
+
+		if(prob(prob2findstuff))
+
+			if(prob(prob2findgoodie))
+				var/obj/item/B = goodie
+				if(B)
+					B = new B(user.loc)
+					user.put_in_hands(B)
+					user.visible_message(span_notice("[user] finds [B] in [src]."))
+					islooted = TRUE
+					add_overlay("bush_empty_overlay")
+					return
+			else
+				var/obj/item/B = trashie
+				if(B)
+					B = new B(user.loc)
+					user.put_in_hands(B)
+					user.visible_message(span_notice("[user] finds [B] in [src]."))
+					islooted = TRUE
+					add_overlay("bush_empty_overlay")
+					return
+
+		else
+			to_chat(user, span_small("Didn't find anything."))
