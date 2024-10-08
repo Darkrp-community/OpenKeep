@@ -55,7 +55,7 @@
 /turf/open/floor/rogue/underworld/road,
 /area/rogue/underworld)
 "o" = (
-/obj/effect/landmark/underworldcoin,
+/obj/structure/fluff/psycross/copper,
 /turf/open/floor/rogue/underworld/road,
 /area/rogue/underworld)
 "p" = (
@@ -67,10 +67,6 @@
 /area/rogue/underworld)
 "q" = (
 /obj/structure/flora/roguetree/underworld,
-/turf/open/floor/plating/dirt/dark,
-/area/rogue/underworld)
-"r" = (
-/obj/effect/landmark/underworldcoin,
 /turf/open/floor/plating/dirt/dark,
 /area/rogue/underworld)
 "s" = (
@@ -6610,7 +6606,7 @@ a
 c
 n
 e
-o
+e
 U
 b
 b
@@ -6623,11 +6619,11 @@ e
 e
 e
 e
-o
+e
 C
 e
 e
-o
+e
 C
 e
 e
@@ -6742,14 +6738,14 @@ n
 e
 e
 b
-r
+b
 U
 e
 e
 e
 e
 e
-o
+e
 C
 e
 e
@@ -6761,7 +6757,7 @@ e
 e
 e
 e
-o
+e
 C
 e
 e
@@ -7130,7 +7126,7 @@ a
 c
 n
 e
-o
+e
 U
 b
 b
@@ -7142,7 +7138,7 @@ e
 e
 e
 e
-o
+e
 C
 e
 e
@@ -7266,7 +7262,7 @@ b
 b
 b
 e
-o
+e
 C
 e
 e
@@ -7389,7 +7385,7 @@ a
 a
 c
 n
-o
+e
 C
 b
 b
@@ -7407,7 +7403,7 @@ e
 e
 e
 e
-o
+e
 C
 e
 e
@@ -7541,7 +7537,7 @@ e
 e
 e
 e
-o
+e
 C
 e
 e
@@ -7909,7 +7905,7 @@ a
 a
 c
 n
-o
+e
 U
 b
 d
@@ -8053,8 +8049,8 @@ e
 e
 e
 e
-e
 o
+e
 C
 e
 e
@@ -8189,7 +8185,7 @@ e
 e
 e
 e
-o
+e
 C
 e
 e
@@ -8322,7 +8318,7 @@ e
 e
 e
 e
-o
+e
 C
 e
 e
@@ -8958,13 +8954,13 @@ e
 e
 e
 e
-o
+e
 C
 e
 e
 e
 e
-o
+e
 C
 e
 e
@@ -9083,7 +9079,7 @@ e
 b
 b
 b
-r
+b
 C
 e
 e
@@ -9340,7 +9336,7 @@ a
 c
 n
 e
-r
+b
 U
 b
 b
@@ -9351,7 +9347,7 @@ e
 e
 e
 e
-o
+e
 C
 e
 e
@@ -9362,7 +9358,7 @@ e
 e
 e
 e
-o
+e
 C
 e
 n
@@ -9476,7 +9472,7 @@ b
 b
 b
 e
-o
+e
 C
 e
 e
@@ -9603,7 +9599,7 @@ e
 b
 b
 b
-r
+b
 U
 e
 e
@@ -9613,12 +9609,12 @@ e
 e
 e
 e
-o
+e
 C
 e
 e
 e
-o
+e
 C
 e
 e
@@ -9730,7 +9726,7 @@ a
 c
 n
 e
-r
+b
 U
 b
 b
