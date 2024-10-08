@@ -86,6 +86,8 @@
 	AddFamilyIcon(person)
 	//This goes through the family and "logically" sorts out true heirs to bastards.
 	BloodTies()
+	//Applys latejoin UI to family members with the UI on. Optimize later. -IP
+	LateJoinAddToUI(person)
 
 /*
 * Returns text to human examine
@@ -296,6 +298,12 @@
 			continue
 		iconer.family_UI = TRUE
 		iconer.client.images.Add(family_icons[H])
+
+//Sloppy bandaid way to apply latejoin family member icons.
+/datum/heritage/proc/LateJoinAddToUI(mob/living/carbon/human/new_fam)
+	for(var/mob/living/carbon/human/H in family)
+		if(H.family_UI && H.client)
+			H.client.images.Add(family_icons[new_fam])
 
 //Adds family icon to the list.
 /datum/heritage/proc/AddFamilyIcon(mob/living/carbon/human/famicon)

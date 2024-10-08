@@ -39,13 +39,13 @@
 	icon_state = "treeorstump"
 	name = "Tree or stump spawner"
 	probby = 50
-	spawned = list(/obj/structure/flora/roguetree, /obj/structure/flora/roguetree/stump)
+	spawned = list(/obj/structure/flora/roguetree, /obj/structure/table/wood/treestump)
 
 /obj/effect/spawner/roguemap/stump
 	icon_state = "stump"
 	name = "stump spawner"
 	probby = 75
-	spawned = list(/obj/structure/flora/roguetree/stump)
+	spawned = list(/obj/structure/table/wood/treestump)
 
 /obj/effect/spawner/roguemap/shroud
 	icon_state = "shroud"
