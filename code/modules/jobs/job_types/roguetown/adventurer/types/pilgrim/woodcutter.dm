@@ -38,6 +38,5 @@
 	beltr = /obj/item/rogueweapon/woodcut
 	beltl = /obj/item/rogueweapon/huntingknife/villager
 	backpack_contents = list(/obj/item/flint = 1)
-	H.change_stat("strength", 2)
+	H.change_stat("strength", 1)
 	H.change_stat("endurance", 1) // Tree chopping builds endurance
-	H.change_stat("speed", -1)
