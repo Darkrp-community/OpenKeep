@@ -60,13 +60,13 @@
 	for(var/obj/item/bodypart/B in C.bodyparts)
 		if(!B.skeletonized && B.is_organic_limb())
 			if(!B.rotted)
-				if(amount > 25 MINUTES)
+				if(amount > 12 MINUTES)
 					B.rotted = TRUE
 					findonerotten = TRUE
 					shouldupdate = TRUE
 					C.change_stat("constitution", -8, "rottenlimbs")
 			else
-				if(amount > 45 MINUTES)
+				if(amount > 25 MINUTES)
 					if(!is_zombie)
 						B.skeletonize()
 						if(C.dna && C.dna.species)
