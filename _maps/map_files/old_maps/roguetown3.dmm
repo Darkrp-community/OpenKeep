@@ -6112,7 +6112,7 @@
 /area/rogue)
 "asZ" = (
 /obj/structure/closet/crate/roguecloset/lord,
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord,
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "ata" = (
@@ -12203,7 +12203,7 @@
 /area/rogue/outdoors/beach)
 "gCd" = (
 /obj/structure/closet/crate/chest,
-/obj/item/clothing/suit/roguetown/armor/chainmail/chainkini,
+/obj/item/clothing/suit/roguetown/armor/amazon_chainkini,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cave)
 "gGu" = (

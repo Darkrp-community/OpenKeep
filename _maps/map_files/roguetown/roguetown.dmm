@@ -8360,7 +8360,7 @@
 /area/rogue/indoors/town/shop)
 "kEn" = (
 /obj/structure/closet/crate/roguecloset/lord,
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord,
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /obj/item/rogueweapon/sword/rapier/lord,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)

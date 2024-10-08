@@ -113,7 +113,7 @@
 
 
 //................ Arming Jacket ............... //
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming
 	name = "arming jacket"
 	desc = "Similar to a gambeson, it is meant to be used under heavier armor."
 	icon_state = "arming"
@@ -295,7 +295,7 @@
 	prevent_crits = CUT_AND_MINOR_CRITS
 
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat/Initialize()
-	color = pick(CLOTHING_WHITE, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW, CLOTHING_SALMON)
+	color = pick(CLOTHING_PURPLE, CLOTHING_WHITE,CLOTHING_RED)
 	..()
 
 //................ Silk Jacket ............... //
@@ -318,20 +318,20 @@
 
 
 
-//................ Amazon chainkini ............... //	- made of iron, 100/15, a little peculiar
-/obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
+//................ Amazon chainkini ............... //
+/obj/item/clothing/suit/roguetown/armor/amazon_chainkini
 	name = "amazonian maille"
 	desc = "A combination of fur and maille, typically worn by warrior women of the isle of Issa."
 	icon_state = "chainkini"
 	item_state = "chainkini"
 	allowed_sex = list(FEMALE)
-	allowed_race = ALL_RACES_LIST
+	sewrepair = TRUE
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ARMOR_UNUSUAL
 
 	armor_class = ARMOR_CLASS_LIGHT
 	armor = MELEE_70___ARROW_NOTHING
-	body_parts_covered = CHEST|GROIN
+	body_parts_covered = CHEST|GROIN|VITALS
 
 
 //................ Iron Maille ............... //
@@ -349,7 +349,7 @@
 
 //................ Copper Heart-protector ............... //
 /obj/item/clothing/suit/roguetown/armor/cuirass/copperchest
-	name = "heart protector"//SHITTY ARMOR SHITTY ARMOR!!
+	name = "heart protector"
 	desc = "Very simple and crude protection for the chest. Ancient fighters once used similar gear, with better quality..."
 	icon_state = "copperchest"
 	item_state = "copperchest"
@@ -388,12 +388,6 @@
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 	prevent_crits = ALL_EXCEPT_BLUNT
 
-/obj/item/clothing/suit/roguetown/armor/chainmail/Initialize()
-	. = ..()
-	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/chain (1).ogg',\
-												'sound/foley/footsteps/armor/chain (2).ogg',\
-												'sound/foley/footsteps/armor/chain (3).ogg'), 80)
-
 
 //................ Hauberk ............... //
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
@@ -406,6 +400,12 @@
 
 	armor = list("melee" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/Initialize()
+	. = ..()
+	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/chain (1).ogg',\
+												'sound/foley/footsteps/armor/chain (2).ogg',\
+												'sound/foley/footsteps/armor/chain (3).ogg'), 80)
 
 
 /*-----------------------\
@@ -439,7 +439,7 @@
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	boobed = TRUE
 
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 //................ Black Oak Cuirass ............... //
 /obj/item/clothing/suit/roguetown/armor/plate/cuirass/elven
@@ -460,7 +460,7 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ARMOR
 
-	armor = list("melee" = 70, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_IRON
 	body_parts_covered = CHEST|VITALS
 	max_integrity = INTEGRITY_STRONG
 
@@ -506,7 +506,7 @@
 	allowed_sex = list(MALE)
 	sellprice = VALUE_SNOWFLAKE_STEEL+BONUS_VALUE_SMALL
 
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 95, "bullet" = 95, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 
 //................ Coat of Armor ............... //
@@ -517,7 +517,7 @@
 	item_state = "heartfelt_hand"
 	sellprice = VALUE_SNOWFLAKE_STEEL
 
-	armor = list("melee" = 90, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 90, "bullet" = 95, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 
 

@@ -3960,7 +3960,7 @@
 /area/rogue/outdoors/town)
 "oN" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord,
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "oO" = (

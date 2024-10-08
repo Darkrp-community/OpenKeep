@@ -12521,7 +12521,7 @@
 /obj/item/clothing/mask/rat/jackal,
 /obj/item/clothing/mask/muzzle,
 /obj/item/clothing/head/roguetown/nun,
-/obj/item/clothing/suit/roguetown/armor/chainmail/chainkini,
+/obj/item/clothing/suit/roguetown/armor/amazon_chainkini,
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
 /obj/item/rope,
 /obj/machinery/light/rogue/wallfire/candle/lamp{
@@ -20341,7 +20341,7 @@
 "uST" = (
 /obj/structure/closet/crate/roguecloset/lord,
 /obj/item/natural/cloth,
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord,
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /obj/item/clothing/cloak/raincloak/furcloak,
 /obj/item/clothing/suit/roguetown/armor/plate/scale,
 /turf/open/floor/rogue/herringbone,
