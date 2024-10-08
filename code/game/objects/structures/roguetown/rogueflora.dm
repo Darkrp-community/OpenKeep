@@ -198,6 +198,26 @@
 	icon_state = "log[rand(1,2)]"
 
 
+/obj/structure/chair/bench/ancientlog
+	name = "ancient log"
+	desc = "A felled piece of tree long forgotten, the poorman's table."
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	icon_state = "log1"
+	max_integrity = 200
+	sleepy = 0.1
+	pixel_x = -14
+	pixel_y = 7
+
+/obj/structure/chair/bench/post_buckle_mob(mob/living/M)
+	..()
+	M.pixel_y = 4
+
+/obj/structure/chair/bench/post_unbuckle_mob(mob/living/M)
+	..()
+	M.pixel_x = M.get_standard_pixel_x_offset(M.lying)
+	M.pixel_y = M.get_standard_pixel_y_offset(M.lying)
+
+
 //newbushes
 
 /obj/structure/flora/roguegrass
