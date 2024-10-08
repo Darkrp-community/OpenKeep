@@ -498,8 +498,44 @@
 				qdel(mmb_intent)
 				input = null
 				mmb_intent = null
+				var/mob/living/carbon/human/H = src
+				if(ishuman(src) && H.dna.species.name == "Kitsune") //The intention is to make them get an overlay. They may crit with their bite, but everyone will know they are biting.
+					var/mutable_appearance/eldritch_maw = mutable_appearance('icons/roguetown/mob/bodies/m/mt_kit.dmi', "eldritch_maw", MOUTH_LAYER)
+					H.remove_overlay(eldritch_maw)
+					visible_message("<span class='warning'>[src]'s face knits together.</span>")
+					playsound(src.loc, 'sound/combat/fracture/fracturewet (2).ogg', 50, 1)
+					H.cut_overlay(eldritch_maw)
+					update_icon()
+					H.update_body()
 			else
 				mmb_intent = new INTENT_BITE(src)
+				var/mob/living/carbon/human/H = src
+				if(ishuman(src) && H.dna.species.name == "Kitsune") //The intention is to make them get an overlay. They may crit with their bite, but everyone will know they are biting.
+					var/mutable_appearance/eldritch_maw = mutable_appearance('icons/roguetown/mob/bodies/m/mt_kit.dmi', "eldritch_maw", MOUTH_LAYER)
+					H.remove_overlay(eldritch_maw)
+					visible_message("<span class='warning'>[src]'s face splits into a deadly maw.</span>")
+					playsound(src.loc, 'sound/combat/fracture/fracturewet (2).ogg', 50, 1)
+					add_overlay(eldritch_maw)
+					update_icon()
+					H.update_body()
+
+/*
+		if(QINTENT_STEAL)
+		if(QINTENT_KICK)
+		if(QINTENT_SPELL)
+		if(QINTENT_JUMP)
+		if(QINTENT_GIVE)
+		if(QINTENT_SPELL)
+
+
+
+var/mutable_appearance/colored_overlay = mutble_appearance(icon, "lipstick_uncap_color")
+colored_overlay.color = colour
+icon_state = "lipstick_uncap"
+add_overlay(colored_overlay)
+*/
+
+
 		if(QINTENT_JUMP)
 			if(mmb_intent?.type == INTENT_JUMP)
 				qdel(mmb_intent)

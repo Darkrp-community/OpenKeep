@@ -1,13 +1,17 @@
 /datum/advclass/crusader
 	name = "Crusader"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Aasimar"
-	)
+	allowed_races = list("Humen",
+	"Elf",
+	"Half-Elf",
+	"Dwarf",
+	"Tiefling",
+	"Dark Elf",
+	"Aasimar",
+	"Kitsune",
+	"Tengu",
+	"Oni",
+	"Kappa")
 	outfit = /datum/outfit/job/roguetown/adventurer/crusader
 	maximum_possible_slots = 2
 	tutorial = "The crusaders... Knights who have pledged \

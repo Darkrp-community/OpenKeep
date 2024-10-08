@@ -10,8 +10,11 @@
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
-		"Dark Elf"
-	)
+		"Dark Elf",
+		"Kitsune",
+		"Tengu",
+		"Oni",
+		"Kappa")
 	outfit = /datum/outfit/job/roguetown/adventurer/swashbuckler
 	maximum_possible_slots = 1
 	category_tags = list(CTAG_ADVENTURER)

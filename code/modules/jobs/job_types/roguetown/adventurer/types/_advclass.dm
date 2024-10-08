@@ -11,6 +11,10 @@
 	"Tiefling",
 	"Dark Elf",
 	"Aasimar"
+	"Dwarf",
+	"Kitsune",
+	"Tengu",
+	"Oni"
 	)
 	var/list/allowed_patrons
 	var/list/allowed_ages

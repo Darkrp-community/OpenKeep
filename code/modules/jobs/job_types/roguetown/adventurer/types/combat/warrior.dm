@@ -3,14 +3,17 @@
 	name = "Warrior"
 	tutorial = "Wandering sellswords, foolhardy gloryhounds, deserters... many and varied folk turn to the path of the warrior. Very few meet anything greater than the bottom of a tankard or the wrong end of a noose."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Dark Elf",
-		"Tiefling"
-	)
+	allowed_races = list("Humen",
+	"Elf",
+	"Half-Elf",
+	"Dwarf",
+	"Tiefling",
+	"Dark Elf",
+	"Aasimar",
+	"Kitsune",
+	"Tengu",
+	"Oni",
+	"Kappa")
 	outfit = /datum/outfit/job/roguetown/adventurer/sfighter
 	category_tags = list(CTAG_ADVENTURER)
 

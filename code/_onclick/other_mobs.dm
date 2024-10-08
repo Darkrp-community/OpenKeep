@@ -361,6 +361,29 @@
 					return
 				if(src.incapacitated())
 					return
+
+/*
+var/mutable_appearance/colored_overlay = mutable_appearance(icon, "lipstick_uncap_color")
+colored_overlay.color = colour
+icon_state = "lipstick_uncap"
+add_overlay(colored_overlay)
+
+	if(!overlays.len)
+		var/icon/J = new('icons/roguetown/weapons/wood_heraldry.dmi')
+		var/list/istates = J.IconStates()
+		var/picked_name = input(user, "Choose a Heraldry", "ROGUETOWN", name) as null|anything in sortList(istates)
+		if(!picked_name)
+			picked_name = "none"
+		var/mutable_appearance/M = mutable_appearance('icons/roguetown/weapons/wood_heraldry.dmi', picked_name)
+		M.alpha = 178
+		add_overlay(M)
+		var/mutable_appearance/MU = mutable_appearance(icon, "woodsh_detail")
+		MU.alpha = 114
+		add_overlay(MU)
+	else
+		..()
+*/
+
 				if(!get_location_accessible(src, BODY_ZONE_PRECISE_MOUTH, grabs="other"))
 					to_chat(src, "<span class='warning'>My mouth is blocked.</span>")
 					return
