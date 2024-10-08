@@ -132,12 +132,12 @@
 			qdel(I)
 			return
 
-	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheddarwedge) || istype(I, /obj/item/reagent_containers/food/snacks/rogue/veg/potato_sliced)  || istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese) )
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheddarwedge) || istype(I, /obj/item/reagent_containers/food/snacks/rogue/veg/potato_sliced)  || istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese) || istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese/gote) )
 		if (process_step > 4)
 			return
 		playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
 		if(process_step == 1 && do_after(user,short_cooktime, target = src))
-			to_chat(user, "<span class='notice'>Starting on a pot pie...</span>")
+			to_chat(user, span_notice("Starting on a pot pie..."))
 			name = "unfinished pot pie"
 			process_step += 1
 			potpie = TRUE
