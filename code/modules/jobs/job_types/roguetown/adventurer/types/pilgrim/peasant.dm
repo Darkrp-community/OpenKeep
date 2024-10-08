@@ -41,6 +41,8 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/workervest
 	beltl = /obj/item/rogueweapon/sickle
 	beltr = /obj/item/flint
+	var/obj/item/rogueweapon/pitchfork/P = new()
+	H.put_in_hands(P, forced = TRUE)
 	if(H.gender == FEMALE)
 		head = /obj/item/clothing/head/roguetown/armingcap
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random

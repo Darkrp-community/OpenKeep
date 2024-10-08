@@ -50,6 +50,8 @@
 	mouth = /obj/item/clothing/mask/cigarette/pipe/westman
 	beltl = /obj/item/rogueweapon/sickle
 	beltr = /obj/item/rogueweapon/huntingknife
+	var/obj/item/rogueweapon/pitchfork/P = new()
+	H.put_in_hands(P, forced = TRUE)
 	backpack_contents = list(/obj/item/neuFarm/seed/wheat=1,/obj/item/neuFarm/seed/apple=1,/obj/item/neuFarm/seed/cabbage=1,/obj/item/neuFarm/seed/potato=1,/obj/item/neuFarm/seed/onion=1,/obj/item/ash=2,/obj/item/flint=1,/obj/item/storage/belt/rogue/pouch/coins/mid=1)
 	H.change_stat("strength", 2)
 	H.change_stat("constitution", 1)
