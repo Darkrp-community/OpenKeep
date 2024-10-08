@@ -116,9 +116,8 @@
 /obj/item/clothing/suit/roguetown/armor/gambeson/lord
 	name = "arming jacket"
 	desc = "Similar to a gambeson, it is meant to be used under heavier armor."
-	icon_state = "dgamb"
-	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar") // lacks sprites for other races and genders
+	icon_state = "arming"
+	allowed_race = list("human", "tiefling", "elf", "aasimar") // lacks sprites for other races
 	sellprice = VALUE_GAMBESSON+BONUS_VALUE_MODEST
 
 	body_parts_covered = CHEST|ARMS|VITALS|GROIN
@@ -296,7 +295,7 @@
 	prevent_crits = CUT_AND_MINOR_CRITS
 
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat/Initialize()
-	color = pick(CLOTHING_PURPLE, CLOTHING_WHITE,CLOTHING_GREEN, CLOTHING_RED, CLOTHING_SALMON)
+	color = pick(CLOTHING_WHITE, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW, CLOTHING_SALMON)
 	..()
 
 //................ Silk Jacket ............... //
@@ -488,7 +487,7 @@
 /obj/item/clothing/suit/roguetown/armor/plate/scale // important is how this item covers legs too compared to halfplate
 	name = "scalemail"
 	desc = "A scale shirt typically padded with various interlocked steel plates. Offers decent protection."
-	icon_state = "lamellar"
+	icon_state = "scale"
 	sellprice = VALUE_STEEL_ARMOR_FINE
 
 	armor_class = ARMOR_CLASS_MEDIUM
@@ -663,8 +662,7 @@
 
 //................ Snowflake Plate ............... //
 /obj/item/clothing/suit/roguetown/armor/rare
-	name = "Parent rare armor"
-	desc = "You shouldn't be seeing this. Did you forget to add a description?"
+	name = "rare armor template"
 	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
 	sleeved = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
@@ -685,7 +683,7 @@
 	. = ..()
 	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/fullplate (1).ogg',\
 												'sound/foley/footsteps/armor/fullplate (2).ogg',\
-												'sound/foley/footsteps/armor/fullplate (3).ogg'), 100)
+												'sound/foley/footsteps/armor/fullplate (3).ogg'), 80)
 
 /obj/item/clothing/suit/roguetown/armor/rare/elfplate
 	name = "dark elf plate"
@@ -738,6 +736,9 @@
 /obj/item/clothing/suit/roguetown/armor/rare/hoplite
 	name = "ancient plate armor"
 	desc = "A battered set of bronze plate armor. Intricate runes and carvings once adorned the pieces, but most have faded with age."
+	icon = 'icons/roguetown/clothing/armor.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	icon_state = "aasimarplate"
 	item_state = "aasimarplate"
 	allowed_race = list("aasimar")
@@ -773,37 +774,17 @@
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 
 
-//................ Crude Armor ............... // Orc stuff
-/obj/item/clothing/suit/roguetown/armor/plate/breastplate/orc
-	name = "crude plate armor"
-	icon_state = "marauder_armor"
-	item_state = "marauder_armor"
-	icon = 'icons/roguetown/clothing/armor.dmi'
-	allowed_race = list("orc")
-	smeltresult = /obj/item/ingot/iron
-	sellprice = NO_MARKET_VALUE
-
+//................ Blacksteel Plate ............... //
+/obj/item/clothing/suit/roguetown/armor/plate/blkknight
+	name = "blacksteel plate"
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS
 	armor_class = ARMOR_CLASS_MEDIUM
-	armor = ARMOR_IRON_BAD
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS	// got arm & leg too because of NPC I guess? Still weird
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
-	max_integrity = INTEGRITY_POOR
+	icon_state = "bkarmor"
+	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 
-/obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
-	name = "crude maille"
-	icon_state = "orc_chainvest"
-	item_state = "orc_chainvest"
-	icon = 'icons/roguetown/clothing/armor.dmi'
-	allowed_race = list("orc")
-	blocksound = PLATEHIT
-	smeltresult = /obj/item/ingot/iron
-	sellprice = NO_MARKET_VALUE
 
-	armor_class = ARMOR_CLASS_MEDIUM
-	armor = list("melee" = 25, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS	// got arm & leg too because of NPC I guess? Still weird
-	prevent_crits = ALL_EXCEPT_BLUNT
-	max_integrity = INTEGRITY_POOR
 
 // VAMPIRE ARMORS BELOW
 

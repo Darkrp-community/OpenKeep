@@ -1632,10 +1632,10 @@
 /area/rogue)
 "hS" = (
 /obj/structure/table/wood/fancy/red,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc,
+/obj/item/clothing/suit/roguetown/armor/plate/orc,
+/obj/item/clothing/suit/roguetown/armor/plate/orc,
+/obj/item/clothing/suit/roguetown/armor/plate/orc,
+/obj/item/clothing/suit/roguetown/armor/plate/orc,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "hX" = (
@@ -2553,10 +2553,10 @@
 /area/rogue/indoors)
 "vd" = (
 /obj/structure/table/wood/fancy/red,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord,
+/obj/item/clothing/suit/roguetown/armor/plate/orc/warlord,
+/obj/item/clothing/suit/roguetown/armor/plate/orc/warlord,
+/obj/item/clothing/suit/roguetown/armor/plate/orc/warlord,
+/obj/item/clothing/suit/roguetown/armor/plate/orc/warlord,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "ve" = (
