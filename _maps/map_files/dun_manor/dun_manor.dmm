@@ -13056,13 +13056,6 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/church/chapel)
-"olO" = (
-/obj/structure/mineral_door/wood/fancywood{
-	dir = 1;
-	lockid = "soilson"
-	},
-/turf/closed,
-/area/rogue/indoors/soilsons)
 "omo" = (
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/grass,
@@ -20121,9 +20114,7 @@
 	dir = 1;
 	lockid = "soilson"
 	},
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "horzw"
-	},
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/soilsons)
 "weZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -54240,7 +54231,7 @@ cxb
 rqG
 qgO
 pDJ
-olO
+weo
 cMO
 pDJ
 weo
