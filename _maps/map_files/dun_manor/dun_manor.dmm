@@ -31,8 +31,8 @@
 "acV" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "apartment1";
-	name = "stall I"
+	lockid = "shop1";
+	name = "shop I"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town)
@@ -3397,15 +3397,10 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town)
 "dHr" = (
-/obj/structure/closet/crate/chest{
-	name = "house keys"
+/obj/structure/chair/wood/rogue{
+	dir = 8;
+	icon_state = "chair2"
 	},
-/obj/item/roguekey/houses/house1,
-/obj/item/roguekey/houses/house2,
-/obj/item/roguekey/houses/house3,
-/obj/item/roguekey/houses/house4,
-/obj/item/roguekey/houses/house5,
-/obj/item/roguekey/houses/house6,
 /turf/open/floor/rogue/tile/tilerg,
 /area/rogue/indoors/town)
 "dHC" = (
@@ -6480,8 +6475,8 @@
 "haN" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "apartment2";
-	name = "stall III"
+	lockid = "shop3";
+	name = "shop III"
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town)
@@ -6526,10 +6521,6 @@
 /obj/structure/table/wood{
 	dir = 6;
 	icon_state = "largetable"
-	},
-/obj/item/roguekey/apartments/apartment1{
-	name = "stall i key";
-	pixel_x = -6
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
@@ -6985,8 +6976,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "apartment2";
-	name = "stall IV"
+	lockid = "shop4";
+	name = "shop IV"
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town)
@@ -11251,6 +11242,10 @@
 /obj/structure/fluff/statue/tdummy,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
+"moX" = (
+/obj/structure/roguemachine/vendor/steward,
+/turf/closed/wall/mineral/rogue/craftstone,
+/area/rogue/indoors/town)
 "mpj" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
@@ -14951,6 +14946,10 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
+"quN" = (
+/obj/structure/roguemachine/vendor/inn,
+/turf/closed/wall/mineral/rogue/decowood,
+/area/rogue/indoors/town/tavern)
 "quZ" = (
 /obj/structure/roguemachine/mail/l,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -19217,8 +19216,8 @@
 "vnl" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "apartment2";
-	name = "stall II"
+	lockid = "shop2";
+	name = "shop II"
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town)
@@ -21822,28 +21821,16 @@
 /area/rogue/indoors/town/magician)
 "xZT" = (
 /obj/structure/closet/crate/chest{
-	name = "stall keys"
-	},
-/obj/item/roguekey/apartments/apartment3{
-	name = "stall iii key";
-	pixel_x = -6
-	},
-/obj/item/roguekey/apartments/apartment4{
-	name = "stall iv key";
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/item/roguekey/apartments/apartment2{
-	name = "stall ii key";
-	pixel_x = 6
-	},
-/obj/item/roguekey/apartments/apartment5{
-	name = "stall v key"
+	name = "spare stall keys"
 	},
 /obj/structure/fluff/walldeco/stone{
 	pixel_x = 0;
 	pixel_y = -32
 	},
+/obj/item/roguekey/shops/shop1,
+/obj/item/roguekey/shops/shop2,
+/obj/item/roguekey/shops/shop3,
+/obj/item/roguekey/shops/shop4,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town)
 "yaa" = (
@@ -57615,7 +57602,7 @@ xqr
 vnd
 vpP
 vpP
-xqr
+moX
 cyk
 pJn
 pJn
@@ -77869,7 +77856,7 @@ grm
 osP
 cgw
 cgw
-sjq
+quN
 ccw
 ccw
 epJ
