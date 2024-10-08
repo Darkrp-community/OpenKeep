@@ -20087,7 +20087,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town)
 "wqe" = (
-/mob/living/simple_animal/pet/cat/black{
+/mob/living/simple_animal/pet/cat/rogue/black{
 	name = "Morticia"
 	},
 /turf/open/floor/rogue/cobblerock,
