@@ -22,7 +22,6 @@
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
-	custom_clothes = TRUE //They use the same clothes as dwarves. Just copypaste the female dwarf icon and rename.
 	use_f = TRUE
 	mutant_bodyparts = list("ears","tail_human")
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
@@ -36,7 +35,8 @@
 	use_f = FALSE
 	soundpack_m = /datum/voicepack/male/elf
 	soundpack_f = /datum/voicepack/female/elf
-/* experimenting - original
+	minrace_pq = 20
+
 	offset_features = list(OFFSET_ID = list(0,-1), OFFSET_GLOVES = list(0,-1), OFFSET_WRISTS = list(0,-1),\
 	OFFSET_CLOAK = list(0,-1), OFFSET_FACEMASK = list(0,-1), OFFSET_HEAD = list(0,-1), \
 	OFFSET_FACE = list(0,-1), OFFSET_BELT = list(0,-1), OFFSET_BACK = list(0,-1), \
@@ -47,17 +47,6 @@
 	OFFSET_FACE_F = list(0,-2), OFFSET_BELT_F = list(0,-1), OFFSET_BACK_F = list(0,-2), \
 	OFFSET_NECK_F = list(0,-2), OFFSET_MOUTH_F = list(0,-2), OFFSET_PANTS_F = list(0,-1), \
 	OFFSET_SHIRT_F = list(0,-1), OFFSET_ARMOR_F = list(0,-1), OFFSET_UNDIES_F = list(0,-1))
-*/
-	offset_features = list(OFFSET_ID = list(0,-2), OFFSET_GLOVES = list(0,-1), OFFSET_WRISTS = list(0,-2),\
-	OFFSET_CLOAK = list(0,-2), OFFSET_FACEMASK = list(0,-2), OFFSET_HEAD = list(0,-2), \
-	OFFSET_FACE = list(0,-2), OFFSET_BELT = list(0,-2), OFFSET_BACK = list(0,-2), \
-	OFFSET_NECK = list(0,-2), OFFSET_MOUTH = list(0,-2), OFFSET_PANTS = list(0,-2), \
-	OFFSET_SHIRT = list(0,-2), OFFSET_ARMOR = list(0,-2), OFFSET_HANDS = list(0,-2), OFFSET_UNDIES = list(0,-2), \
-	OFFSET_ID_F = list(0,-2), OFFSET_GLOVES_F = list(0,-2), OFFSET_WRISTS_F = list(0,-2), OFFSET_HANDS_F = list(0,-3), \
-	OFFSET_CLOAK_F = list(0,-2), OFFSET_FACEMASK_F = list(0,-3), OFFSET_HEAD_F = list(0,-3), \
-	OFFSET_FACE_F = list(0,-3), OFFSET_BELT_F = list(0,-2), OFFSET_BACK_F = list(0,-3), \
-	OFFSET_NECK_F = list(0,-3), OFFSET_MOUTH_F = list(0,-3), OFFSET_PANTS_F = list(0,-2), \
-	OFFSET_SHIRT_F = list(0,-2), OFFSET_ARMOR_F = list(0,-2), OFFSET_UNDIES_F = list(0,-2))
 	specstats = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = 0, "fortune" = 0)
 	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
@@ -109,8 +98,6 @@
 	"green - moss" = "3b3c2a",
 	"white - silver" = "e8fdfd",
 	"white - oceanid" = "afdddd"
-
-
 	))
 
 /datum/species/elf/kappa/random_name(gender,unique,lastname)

@@ -247,6 +247,12 @@
 	color = null
 	blocksound = PLATEHIT
 
+///////////////////////////////////////////////////////////////////
+// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
+// If the usage is desired, ask monochrome9090 for permission.   //
+// Respect the artists's will, COMMISSION them instead.          //
+// This is solely for SPRITES. The code is free for the taking.	 //
+///////////////////////////////////////////////////////////////////
 
 /obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/kusaritabi
 	name = "kusari tabi"
@@ -316,3 +322,18 @@
 	icon_state = "geta"
 	item_state = "geta"
 	body_parts_covered = FEET
+
+/obj/item/clothing/shoes/roguetown/kaizoku/geta/cloudhead
+	name = "cloudhead shoes"
+	desc = "A traditional shoes with dinstinctive upturned toe design that resembles the shape of clouds, to symbolize connection to the skies."
+	icon_state = "cloudhead_shoes"
+	item_state = "cloudhead_shoes"
+
+/obj/item/clothing/shoes/roguetown/nobleboot/gutal
+	name = "leather gutal"
+	desc = "The boots used by Abyssariad cavalry with upturned toes and durable, oil-boiled leather."
+	icon_state = "leathergutal"
+	item_state = "leathergutal"
+	icon = 'icons/roguetown/kaizoku/clothingicon/feet.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/feet.dmi'
+	sleeved = 'icons/roguetown/kaizoku/clothing/feet.dmi'

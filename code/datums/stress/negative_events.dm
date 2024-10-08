@@ -293,3 +293,13 @@
 	timer = 3 MINUTES
 	stressadd = 6
 	desc = "<span class='red'>I slept on the floor! What am I?! An animal?!</span>"
+
+/datum/stressevent/raider
+	timer = 1 MINUTES
+	stressadd = 1
+	desc = "<span class='red'>Jeopardous sea raider, the bad omen itself.</span>"
+
+/datum/stressevent/whaler
+	timer = 1 MINUTES
+	stressadd = 1
+	desc = "<span class='red'>Filthy corrupted whaler. Never forget the Storm Daughter.</span>"

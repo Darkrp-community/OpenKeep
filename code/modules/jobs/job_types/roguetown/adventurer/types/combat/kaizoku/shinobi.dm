@@ -49,7 +49,11 @@
 	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi/shinobi
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+//	if(H.dna.species.name == "Kappa")
+//		to_chat(H, "<span class='warning'>As I've lived on the fog island's sewers, I've been trained by a rousmen.")
+//		var/TMNT = pickweight(list("Donatello" = 1, "Leonardo" = 1, "Michelangelo" = 1, "Raphael" = 1)) // is this a reference...?
 
+		
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	H.change_stat("perception", 1)
 	H.change_stat("speed", 3)

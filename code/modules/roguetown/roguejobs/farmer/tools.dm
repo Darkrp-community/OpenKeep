@@ -271,12 +271,13 @@
 
 /obj/item/rogueweapon/sickle/kama
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop,MACE_STRIKE,/datum/intent/flailthresh)
-	force = 15
 	name = "kama"
 	desc = "Originally created for the harvesting of rice, the kama has also found popularity as a commoner's weapon thanks to its axe-like design. On occasion, one is combined with a length of chain to make a kusari gama."
 	icon_state = "kama"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	associated_skill = /datum/skill/combat/axesmaces
+	force = 15 // Same damage as Iron Swords with less integrity.
+	force_wielded = 20
 	max_blade_int = 100
 	max_integrity = 200
 	blade_dulling = DULLING_BASHCHOP

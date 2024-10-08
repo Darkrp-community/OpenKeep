@@ -851,14 +851,6 @@
 	clickcd = 10
 	penfactor = 30
 
-/datum/intent/sword/cut/sorii //sorii is the curvature of a Japanese sword, make it better for cutting - worse at thrusting.
-	clickcd = 10
-	damfactor = 1.15
-
-/datum/intent/sword/thrust/sorii //sorii is the curvature of a Japanese sword, make it better for cutting - worse at thrusting.
-	clickcd = 10
-	damfactor = 0.85
-
 /obj/item/rogueweapon/sword/iron/messer
 	name = "iron messer"
 	desc = "A single edged blade fashioned in the Grenzelhoft messer style."
@@ -1275,18 +1267,19 @@
 
 /obj/item/rogueweapon/sword/uchigatana
 	name = "uchigatana"
-	desc = "Slightly shorter and simpler in design than the tachi, the uchigatana is the main sword of Abyssariad and Islander footsoldiers. Unlike continental swords of similar length, this design lends itself well to brutal chopping strikes alongside skillful swordplay, but lacks a long crossguard for safely parrying other blades."
+	desc = "Shorter and simpler than the Tachi, the Uchigatana is the primary sidearm for the Abyssariad and Heartfelt footsoldiers. Its curved blade favor powerfull chopping strikes - but lacks a protective crossguard and the curve makes it less efficient in thrusting."
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 	icon_state = "uchigatana"
-	force_wielded = 30
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/chop)
-	wdefense = 3
-	bloody_icon_state = null
-	bigboy = 1
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
 
 /obj/item/rogueweapon/sword/uchigatana/fire //Experimental weapon. Not to be found ingame.
 	name = "fire uchigatana"
-	desc = "Slightly shorter and simpler in design than the tachi, the uchigatana is the main sword of Abyssariad and Islander footsoldiers. Unlike other uchigatanas, this sword in specifically seems curiously improved with 'frigus' runes."
+	desc = "Shorter and simpler than the Tachi, the Uchigatana is the primary sidearm for the Abyssariad and Heartfelt footsoldiers. Unlike other uchigatanas, this sword in specifically seems curiously improved with 'frigus' runes."
 
 /obj/item/rogueweapon/sword/uchigatana/fire/attack(mob/M, mob/living/carbon/human/user)
 	if(ismob(M))
@@ -1307,7 +1300,7 @@
 
 /obj/item/rogueweapon/sword/long/rider/tachi
 	name = "tachi"
-	desc = "A long, curved blade of Abyssariad make, introduced when sea raiders returned to the Fog Isles with captured horses and began developing their own cavalry tactics, years before the Blood Apotheosis. Nowadays, it is mostly family heirlooms by high-ranking zamurai."
+	desc = "A long, curved blade of Abyssariad make, introduced when Wokou raiders returned to the Fog Isles with captured horses and began developing their own cavalry tactics."
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/longsword/chop, /datum/intent/longsword/thrust)
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
@@ -1319,7 +1312,7 @@
 
 /obj/item/rogueweapon/greatsword/odachi
 	force = 15
-	force_wielded = 40 // easier to break, more expensive version of flamberge that can't bash - but can be crafted. No one spawns with it.
+	force_wielded = 40 // easier to break, more expensive version of flamberge that can't bash - but can be crafted.
 	possible_item_intents = list(/datum/intent/sword/cut)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/longsword/chop, /datum/intent/sword/thrust)
 	name = "odachi"
@@ -1330,7 +1323,7 @@
 	smeltresult = /obj/item/ingot/steel
 	max_blade_int = 150
 	max_integrity = 300
-	sellprice = 120
+	sellprice = 90
 
 /obj/item/rogueweapon/sword/iron/jian
 	name = "iron jian"
@@ -1349,16 +1342,37 @@
 	desc = "A expensive Abyssariad saber with wide middle and tapered ends in a 'willow-leaf' shape, it concentrates the force of a strike in an axe-like blow, while retaining the swiftness of a saber."
 	icon_state = "yuntoudao"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
-	minstr = 8 //Did you saw the size and handguard of this beast?
-	wdefense = 4
+
+/obj/item/rogueweapon/sword/short/jian
+	name = "short jian"
+	desc = "A simple, shortened version of the double-edged Jian. This is usually given to Abyssariad citizens as a right for self-defense by the emperor's will."
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	icon_state = "shortjian"
 
 /obj/item/rogueweapon/sword/short/wakizashi
 	name = "wakizashi"
 	desc = "A shorter design of katana designed to replace the tanto as a zamurai's sidearm. The sorii makes it cut deeper - but is not efficient at thrusting, and can't handle much stress."
 	icon_state = "wakizashi"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
-	possible_item_intents = list(/datum/intent/sword/cut/sorii, /datum/intent/sword/thrust/sorii, /datum/intent/sword/chop)
-	smeltresult = /obj/item/ingot/steel
-	minstr = 5 //Katanas are not as light as these redditors implies.
-	max_blade_int = 180
-	max_integrity = 260
+	possible_item_intents = list(/datum/intent/sword/cut/sorii, /datum/intent/sword/thrust/sorii)
+
+/datum/intent/sword/cut/sorii //It is the reverse of the Shortsword.
+	clickcd = 10
+	penfactor = 30
+
+/datum/intent/sword/thrust/sorii
+	clickcd = 10
+	damfactor = 0.85
+
+/obj/item/rogueweapon/sword/sabre/piandao
+	name = "piandao"
+	desc = "An curved abyssariad sword with a broad, single-edged blade that ends in a heavier curve for powerful and fast sweeping strikes."
+	icon_state = "piandao"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+
+/obj/item/rogueweapon/sword/sabre/piandao/dec
+	name = "decorated piandao"
+	desc = "The Abyssariad saber with the hilt covered in gold and letters reflecting the user's family lineage."
+	icon_state = "piandaodec"
+	max_integrity = 550
+	sellprice = 140

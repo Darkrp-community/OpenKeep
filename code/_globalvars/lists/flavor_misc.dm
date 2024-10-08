@@ -28,6 +28,8 @@ GLOBAL_LIST_EMPTY(socks_list)		//stores /datum/sprite_accessory/socks indexed by
 GLOBAL_LIST_EMPTY(body_markings_list)
 GLOBAL_LIST_EMPTY(tails_list_lizard)
 GLOBAL_LIST_EMPTY(animated_tails_list_lizard)
+GLOBAL_LIST_EMPTY(tongue_list_kitsune)
+GLOBAL_LIST_EMPTY(animated_tongue_list_kitsune)
 GLOBAL_LIST_EMPTY(snouts_list)
 GLOBAL_LIST_EMPTY(horns_list)
 GLOBAL_LIST_EMPTY(frills_list)

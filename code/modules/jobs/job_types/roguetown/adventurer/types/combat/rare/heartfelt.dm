@@ -1,6 +1,6 @@
 /datum/advclass/combat/heartfeltlord
 	name = "Lord of Heartfelt"
-	tutorial = "The proud lord of Heartfelt - your kingdom conquered of late by Grezenholft. \
+	tutorial = "The proud lord of Heartfelt - your kingdom raided of late by Grezenholft. \
 	Rebellious masses grows on your previous fief, and your alies are no longer in hiding. \
 	However, there was a reason on why you came to the Isle of Enigma..."
 	allowed_sexes = list(MALE, FEMALE)
@@ -13,12 +13,12 @@
 
 /datum/outfit/job/roguetown/adventurer/heartfeltlord/pre_equip(mob/living/carbon/human/H)
 	..()
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+	shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt
 	belt = /obj/item/storage/belt/rogue/leather/black
 	mask = /obj/item/clothing/mask/rogue/kaizoku/menpo/steel
 	head = /obj/item/clothing/head/roguetown/helmet/visored/knight/zunari/heartfelt
-	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
-	pants = /obj/item/clothing/under/roguetown/tights/black
+	shoes = /obj/item/clothing/shoes/roguetown/nobleboot/gutal
+	pants = /obj/item/clothing/under/roguetown/tobi/random
 	cloak = /obj/item/clothing/cloak/heartfelt
 	armor = /obj/item/clothing/suit/roguetown/armor/heartfelt/lord/kaizoku
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich

@@ -10,7 +10,10 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Kitsune",
+		"Tengu",
+		"Oni"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/hunter
 
@@ -28,8 +31,16 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/quiver/arrows
 	beltl = /obj/item/flashlight/flare/torch/lantern
-	backpack_contents = list(/obj/item/flint = 1, /obj/item/bait = 1, /obj/item/rogueweapon/huntingknife = 1)
 	gloves = /obj/item/clothing/gloves/roguetown/leather
+	if(H.dna?.species)
+		if(H.dna.species?.id == "abyssariad")
+			pants = /obj/item/clothing/under/roguetown/tobi/random
+			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
+			backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/muneate/random
+			backpack_contents = list(/obj/item/flint = 1, /obj/item/bait = 1, /obj/item/rogueweapon/huntingknife/idagger/kunai = 1)
+		else
+			backpack_contents = list(/obj/item/flint = 1, /obj/item/bait = 1, /obj/item/rogueweapon/huntingknife = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 3, TRUE)
@@ -68,7 +79,10 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Kitsune",
+		"Tengu",
+		"Oni"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/hunter // Everything is the same
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)

@@ -436,4 +436,4 @@
 	name = "tengu eyes"
 	desc = ""
 	eye_icon_state = "eyes_tengu"
-	icon_state = "eyes_tengu"
+	icon_state = "eyeball"

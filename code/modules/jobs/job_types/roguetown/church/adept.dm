@@ -10,7 +10,7 @@
 		"Humen",
 		"Elf",
 		"Half-Elf",
-		"Dwarf",
+		"Dwarf"
 	)
 	allowed_sexes = list(MALE)
 	tutorial = "The Adepts are Non-Noble warriors who are accepted by the Inquisitor to learn under his wing, they are competent fighters ready to face the darkness of the world with their martial skills and faith."

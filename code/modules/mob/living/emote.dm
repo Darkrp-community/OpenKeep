@@ -463,7 +463,7 @@
 		else
 			L.Knockdown(10)
 
-/datum/emote/living/flap
+/datum/emote/living/flap //here?
 	key = "flap"
 	key_third_person = "flaps"
 	message = "flaps their wings."
@@ -479,7 +479,7 @@
 		if(H.dna.features["wings"] != "None")
 			if("wingsopen" in H.dna.species.mutant_bodyparts)
 				open = TRUE
-				H.CloseWings()
+				H.CloseWings() //here?
 			else
 				H.OpenWings()
 			addtimer(CALLBACK(H, open ? TYPE_PROC_REF(/mob/living/carbon/human, OpenWings) : TYPE_PROC_REF(/mob/living/carbon/human, CloseWings)), wing_time)
@@ -1305,7 +1305,7 @@
 */
 
  //what to do next: Make it have a 'acting time' instead of instadeath.
-/mob/living/verb/seppuku()
+/mob/living/verb/seppuku() //sadly, non-abyssariads still see this option.
 	var/am_abyssariad = FALSE
 	if(ishuman(src))
 		var/mob/living/carbon/human/C = src
@@ -1330,4 +1330,3 @@
 	else
 		to_chat(src, "<span class='warning'>You have no idea what this ritual is even about.</span>")
 		return
-

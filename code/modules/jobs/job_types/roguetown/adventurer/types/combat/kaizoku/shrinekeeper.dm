@@ -4,7 +4,9 @@
 /datum/advclass/combat/abyssariad/shrinekeepers
 	name = "Shrinekeeper"
 	allowed_sexes = list(MALE, FEMALE)
-	tutorial = "The shrines needs to be cared of, and there is no one most suitable for such duty than the purifier branch. They perform rituals to submit demonic spirits just as much they submit mortals with martial arts."
+	tutorial = "The shrines needs to be cared of, and there is no one most suitable for such duty than the purifier branch. \
+	Those who knows the art of folding clothes while people are still in them. The Involuntary Yoga Practicers.\
+	They perform rituals to submit demonic spirits just as much they submit mortals with martial arts."
 	allowed_races = list(
 	"Kitsune",
 	"Tengu",
@@ -36,7 +38,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, pick(1,1,2), TRUE) // Wood staff
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/carpentry, 1, TRUE) //They lose 'Medicine' to have 'Carpetry', because Shrinekeepers... make shrines.
+		H.mind.adjust_skillrank(/datum/skill/misc/carpentry, 1, TRUE) //They lose 'Medicine' to have 'Carpetry', because Shrinekeepers... repair shrines.
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
 

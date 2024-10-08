@@ -14,7 +14,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Kitsune", //Lore Situationism: The three abyssariad races have been brought over to the Garrison for prestige values and to cement the King's power by holding culturally loyal-bound raiders as part of the army.
+		"Tengu",
+		"Oni",
+		"Kappa" // So they are not kept out. People hate the lack of options afterall, but they will not be present on royal ones. 
 	)
 	tutorial = "You are an Archer in the Kings garrison and are used as a scout, or to man the walls and shoot at invaders."
 	display_order = JDO_GARRISONARCHER
@@ -49,6 +53,20 @@
 	else
 		head = /obj/item/clothing/head/roguetown/roguehood/red
 
+	if(H.dna?.species)
+		if(H.dna.species?.id == "abyssariad")
+			to_chat(H, "<span class='warning'>I am a Ashigaru working under the banner of the king, and I must treat him as I would my daimyo, and the captain my leading shogun.")
+			pants = /obj/item/clothing/under/roguetown/tobi/random
+			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
+			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
+			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/dustwalker
+			belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
+			backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/tanto = 1)
+			if(prob(30))
+				head = /obj/item/clothing/head/roguetown/helmet/kettle/jingasa
+			else
+				head = /obj/item/clothing/head/roguetown/roguehood/red
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 5, TRUE)

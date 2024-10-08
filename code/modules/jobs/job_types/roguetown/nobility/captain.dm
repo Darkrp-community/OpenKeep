@@ -10,7 +10,10 @@
 		"Humen",
 		"Elf",
 		"Half-Elf",
-		"Dwarf"
+		"Dwarf",
+		"Kitsune", //Lore Situationism: The three abyssariad races have been brought over to the Garrison for prestige values and to cement the King's power by holding culturally loyal-bound raiders as part of the army.
+		"Tengu",
+		"Oni" //gatekeeping Aasimars and Onis from joining as Captains, but allowing Dwarves is not really well perceived by me.
 	)
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_CAPTAIN
@@ -47,6 +50,20 @@
 	beltl = /obj/item/rogueweapon/sword/sabre
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	cloak = /obj/item/clothing/cloak/cape/guard
+
+	if(H.dna?.species)
+		if(H.dna.species?.id == "abyssariad") // Weaponskill 5 justifies the Abyssariad being a legitimate Abyssal Champion.
+			to_chat(H, "<span class='warning'>I am a still lingering champion of Abyssor from the ancient ages, a Shogun. My duty is to protect the divine right of Rockhill's royal family, and lead their retainers.")
+			head = /obj/item/clothing/head/roguetown/helmet/visored/knight/abyssalchampion
+			gloves = /obj/item/clothing/gloves/roguetown/plate/tatamitekko
+			pants = /obj/item/clothing/under/roguetown/platelegs/weepershanwenkai
+			armor = /obj/item/clothing/suit/roguetown/armor/shanwenkai
+			neck = /obj/item/clothing/neck/roguetown/gorget //Exception.
+			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt
+			shoes = /obj/item/clothing/shoes/roguetown/nobleboot/gutal
+			beltl = /obj/item/rogueweapon/sword/sabre/piandao
+			beltr = /obj/item/rogueweapon/mace/cudgel/jitte
+
 	backpack_contents = list(/obj/item/keyring/captain = 1, /obj/item/signal_horn = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)

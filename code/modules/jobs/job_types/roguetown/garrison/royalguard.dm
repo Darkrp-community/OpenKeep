@@ -12,7 +12,10 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
-		"Aasimar"
+		"Aasimar",
+		"Kitsune", //Lore Situationism: The three abyssariad races have been brought over to the Garrison for prestige values and to cement the King's power by holding culturally loyal-bound raiders as part of the army.
+		"Tengu",
+		"Oni"
 	)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
 	tutorial = "You're an elite member of the Garrison, awarded with knighthood for your prowess and loyalty. Be a stalwart guardian for the royal family, and serve them until your dying breath."
@@ -66,7 +69,25 @@
 		head = /obj/item/clothing/head/roguetown/helmet/visored/knight
 	else
 		head = /obj/item/clothing/head/roguetown/helmet/sallet
-
+	if(H.dna?.species)
+		if(H.dna.species?.id == "abyssariad")
+			to_chat(H, "<span class='warning'>I am a Zamurai fighting under the banner of Rockhill's king, and I must treat him as I would my daimyo with the uppermost honor.")
+			pants = /obj/item/clothing/under/roguetown/chainlegs/sendan
+			neck = null //Abyssariads rarely uses gorgets. For that they use menpos.
+			mask = /obj/item/clothing/mask/rogue/kaizoku/menpo
+			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
+			armor = /obj/item/clothing/suit/roguetown/armor/brigandine/oyoroi/royal
+			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/kusaritabi
+			belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
+			beltr = /obj/item/rogueweapon/sword/uchigatana
+			backr = /obj/item/storage/backpack/rogue/satchel
+			r_hand = /obj/item/rogueweapon/halberd/bardiche/naginata
+			if(prob(30))
+				head = /obj/item/clothing/head/roguetown/helmet/visored/knight/zunari
+			else
+				head = /obj/item/clothing/head/roguetown/helmet/sallet/tosei_kabuto
+			if(H.dna.species.name == "Oni")
+				r_hand = /obj/item/rogueweapon/mace/goden/tetsubo //We hitting the proper oni tropes.
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
@@ -81,6 +102,9 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+		if(H.dna.species.name == "Oni")
+			H.mind.adjust_skillrank(/datum/skill/combat/polearms, -4, TRUE) //re:focus on their proper weapon. Hopefully this code WORKS.
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)
 		H.change_stat("strength", 2)
 		H.change_stat("perception", 2)
 		H.change_stat("endurance", 2)

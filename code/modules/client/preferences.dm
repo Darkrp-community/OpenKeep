@@ -516,6 +516,19 @@ GLOBAL_LIST_EMPTY(chosen_names)
 					dat += "</td>"
 					mutant_category = 0
 
+			if("kitsune_tongue" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Tail</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=kitsune_tongue;task=input'>[features["kitsune_tongue"]]</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
 			if("snout" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -654,7 +667,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			if(CONFIG_GET(flag/join_with_mutant_humans))
 
-				if("wings" in pref_species.default_features && GLOB.r_wings_list.len >1)
+				if("wings" in pref_species.default_features && GLOB.r_wings_list.len >1) //here
 					if(!mutant_category)
 						dat += APPEARANCE_CATEGORY_COLUMN
 
@@ -1944,6 +1957,8 @@ Slots: [job.spawn_positions]</span>
 						if(user.client)
 							if(bla.patreon_req > user.client.patreonlevel())
 								continue
+							if(bla.minrace_pq > get_playerquality(user.ckey)) // PQ check here
+								continue
 						else
 							continue
 						crap += bla
@@ -2002,6 +2017,12 @@ Slots: [job.spawn_positions]</span>
 					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.tails_list_lizard
 					if(new_tail)
 						features["tail_lizard"] = new_tail
+
+				if("kitsune_tongue")
+					var/new_tongue
+					new_tongue = input(user, "Choose your character's tongue:", "Character Preference") as null|anything in GLOB.tongue_list_kitsune
+					if(new_tongue)
+						features["kitsune_tongue"] = new_tongue
 
 				if("tail_human")
 					var/new_tail
@@ -2435,6 +2456,10 @@ Slots: [job.spawn_positions]</span>
 			chosen_species = /datum/species/human/northern
 			pref_species = new /datum/species/human/northern
 			random_character(gender)
+		if(pref_species.minrace_pq > get_playerquality(parent.ckey)) //HERE
+			chosen_species = /datum/species/human/northern
+			pref_species = new /datum/species/human/northern
+			random_character(gender)
 
 	character.age = age
 	character.dna.features = features.Copy()
@@ -2515,6 +2540,14 @@ Slots: [job.spawn_positions]</span>
 
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
+
+	if(icon_updates)
+		character.update_body()
+		character.update_hair()
+		character.update_body_parts(redraw = TRUE)
+
+	if("kitsune_tongue" in pref_species.default_features)
+		character.dna.species.mutant_bodyparts |= "kitsune_tongue"
 
 	if(icon_updates)
 		character.update_body()

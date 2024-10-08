@@ -517,8 +517,6 @@
 	desc = ""
 	brightness_on = 6			// luminosity when on
 
-
-
 /obj/item/flashlight/lantern/heirloom_moth
 	name = "old lantern"
 	desc = ""

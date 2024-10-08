@@ -7,7 +7,11 @@
 		"Humen",
 		"Elf",
 		"Half-Elf",
-		"Aasimar"
+		"Aasimar",
+		"Kitsune",
+		"Tengu",
+		"Oni",
+		"Kappa"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/merchant
 	category_tags = list(CTAG_PILGRIM)

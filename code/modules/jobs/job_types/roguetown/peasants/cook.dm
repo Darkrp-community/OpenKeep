@@ -13,7 +13,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Aasimar",
+		"Kitsune",
+		"Tengu",
+		"Oni"
 	)
 	tutorial = "Working closely with the Innkeep who owns Skull Crack Inn, the cook should focus on cooking food for all the hungry mouths of Roguetown."
 

@@ -286,6 +286,10 @@
 	icon = 'icons/roguetown/kaizoku/clothingicon/belts.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/belts.dmi'
 
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho/random/Initialize()
+	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	..()
+
 /obj/item/storage/belt/rogue/kaizoku/leather/daisho/ninja/PopulateContents()
 	new /obj/item/reagent_containers/food/snacks/fogdart(src)
 	new /obj/item/reagent_containers/food/snacks/fogdart(src)

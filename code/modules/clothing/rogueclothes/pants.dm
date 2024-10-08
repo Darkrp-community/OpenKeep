@@ -224,13 +224,17 @@
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
 	icon_state = "haidate_tatami"
 	item_state = "haidate_tatami"
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
+	alternate_worn_layer = SHOESLEEVE_LAYER
 
-/obj/item/clothing/under/roguetown/chainlegs/haidate_tatami/sendan
+/obj/item/clothing/under/roguetown/chainlegs/sendan
 	name = "haidate sendan"
 	desc = "Segmented thigh armor with overlapping plates that allows engagement in prolonged combat, without causing mobility issues."
 	icon_state = "haidate_sendan"
 	icon = 'icons/roguetown/kaizoku/clothingicon/pants.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
+	alternate_worn_layer = SHOESLEEVE_LAYER
 
 /obj/item/clothing/under/roguetown/platelegs/yoroihakama
 	name = "yoroihakama"
@@ -238,8 +242,10 @@
 	gender = PLURAL
 	icon = 'icons/roguetown/kaizoku/clothingicon/pants.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
 	icon_state = "yoroihakama"
 	item_state = "yoroihakama"
+	alternate_worn_layer = SHOESLEEVE_LAYER
 
 /obj/item/clothing/under/roguetown/kaizoku/yoroihakama/update_icon()
 	cut_overlays()
@@ -252,7 +258,7 @@
 
 /obj/item/clothing/under/roguetown/tobi
 	name = "tobi pants"
-	desc = "baggy pants of abyssariad design. Suitable for those who works the field and avoid horseback."
+	desc = "Baggy pants of abyssariad design. Suitable for those who works the field and avoid horseback."
 	gender = PLURAL
 	icon_state = "tobi"
 	item_state = "tobi"
@@ -289,7 +295,7 @@
 	color = "#bd3541"
 
 /obj/item/clothing/under/roguetown/kaizoku/tobi/dragonslayer
-	desc = "baggy pants of abyssariad design. This one is coated in asbestos, and may be just as dangerous."
+	desc = "Baggy pants of abyssariad design. This one is coated in asbestos, and may be just as dangerous."
 	color = "#3d4681"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 75,"energy" = 75, "bomb" = 75, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
@@ -299,13 +305,22 @@
 	desc = "A tobi made out of Dendor's beloved guardians - so Abyssor's beloved guardians can use it."
 	colorable_var = TRUE
 
+/obj/item/clothing/under/roguetown/kaizoku/tobi/fur/random/Initialize()
+	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	..()
+
 /obj/item/clothing/under/roguetown/kaizoku/tobi/hakama
 	name = "hakama"
 	icon_state = "hakama"
 	alternate_worn_layer = SHOESLEEVE_LAYER
 	body_parts_covered = GROIN|LEGS|FEET
-	desc = "suitable for the Abyssariad-cultured, in which large battle-skirts does not hurt their masculinity, differently of the frail Imperial counterpart."
+	desc = "Suitable for the Abyssariad-cultured, in which large battle-skirts does not hurt their masculinity, differently of the frail Imperial counterpart."
 	colorable_var = TRUE
+	alternate_worn_layer = SHOESLEEVE_LAYER
+
+/obj/item/clothing/under/roguetown/kaizoku/tobi/hakama/random/Initialize()
+	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	..()
 
 /obj/item/clothing/under/roguetown/kaizoku/shinobizubon
 	name = "shinobi zubon"
@@ -326,7 +341,7 @@
 
 /obj/item/clothing/under/roguetown/kaizoku/ceramic
 	name = "marauder chausses"
-	desc = "Chausses used by marauders under the banner of the Abyssariads."
+	desc = "Bone chausses chiseled into a mimicry of shells, equal to a lamellar of mollusk shells, so it better absorb and disperse impact."
 	gender = PLURAL
 	icon = 'icons/roguetown/kaizoku/clothingicon/pants.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
@@ -334,8 +349,8 @@
 	icon_state = "marauder_leg"
 	item_state = "marauder_leg"
 	sewrepair = FALSE
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	max_integrity = 300
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 200
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	armor_class = ARMOR_CLASS_HEAVY
 	body_parts_covered = GROIN|LEGS|FEET
@@ -343,8 +358,18 @@
 	var/do_sound = FALSE
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
-	r_sleeve_status = SLEEVE_NOMOD
-	l_sleeve_status = SLEEVE_NOMOD
+	alternate_worn_layer = SHOESLEEVE_LAYER
+
+/obj/item/clothing/under/roguetown/platelegs/weepershanwenkai
+	name = "weeper-patterned championage lowerhalf"
+	desc = "Lower part of a godwenkai armor, relics of Abyssariad Championage for those of high-ranking deeply bound to Abyssanctum. Usually made of bronze, the grasp of the current era brought high-quality steel to the table."
+	icon = 'icons/roguetown/kaizoku/clothingicon/pants.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
+	icon_state = "weepershanwenkai"
+	item_state = "weepershanwenkai"
+	gender = PLURAL
+	alternate_worn_layer = SHOESLEEVE_LAYER
 
 /obj/item/clothing/under/roguetown/kaizoku/ceramic/light
 	name = "ivory leg plates"
@@ -352,9 +377,10 @@
 	icon = 'icons/roguetown/kaizoku/clothingicon/pants.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
-	max_integrity = 200
+	max_integrity = 100
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CHOP, BCLASS_BLUNT)
-
+	body_parts_covered = LEGS|FEET
 	gender = PLURAL
 	icon_state = "ivory_legs"
 	item_state = "ivory_legs"
@@ -366,7 +392,7 @@
 		var/the_time = world.time
 		if(world.time > (the_time + 30 SECONDS))
 			return
-		var/colorone = input(user, "Your emotions spreads your will.","Abyssor allows you to flush emotions within the threads.") as null|anything in CLOTHING_COLOR_NAMES
+		var/colorone = input(user, "Your emotions spreads your will.","Flush emotions within the threads.") as null|anything in CLOTHING_COLOR_NAMES
 		if(!colorone)
 			return
 		picked = TRUE

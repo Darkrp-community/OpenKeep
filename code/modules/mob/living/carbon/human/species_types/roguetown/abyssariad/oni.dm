@@ -24,6 +24,7 @@
 	mutant_bodyparts = list("ears","horns")
 	use_skintones = 1
 	possible_ages = list(AGE_IMMORTAL) //Abyssariads are Immortal. However, Onis are the newest ones on the fold, and they become Orcs mentally if they stray away from Abyssor.
+	max_age = 430 //The year Onis became part of the Abyssariads. Roughly after the Blood Apotheosis
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = MEAT
@@ -47,23 +48,35 @@
 	OFFSET_NECK_F = list(0,1), OFFSET_MOUTH_F = list(0,1), OFFSET_PANTS_F = list(0,1), \
 	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
 	specstats = list("strength" = 2, "perception" = -1, "intelligence" = -2, "constitution" = 1, "endurance" = 1, "speed" = -1, "fortune" = -1)
-	specstats_f = list("strength" = 2, "perception" = -1, "intelligence" = -2, "constitution" = 1, "endurance" = 1, "speed" = -1, "fortune" = -1)
+	specstats_f = list("strength" = 2, "perception" = -1, "intelligence" = -2, "constitution" = 1, "endurance" = 1, "speed" = -1, "fortune" = -1) // Don't even bother making each gender different. Abyssariads are equals in championage.
 	enflamed_icon = "widefire"
-	patreon_req = 0
+	minrace_pq = 20
+
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
 
 /datum/species/abyssariad/oni/check_roundstart_eligible()
 	return TRUE
 
 /datum/species/abyssariad/oni/get_skin_list()
 	return sortList(list(
-	"skin1" = "A84C4F",
-	"skin2" = "09371A",
-	"skin3" = "439399",
-	"skin4" = "50715C",
-	"skin5" = "292413",
-	"skin6" = "1F1A23"
+		"Defiant Oni" = SKIN_COLOR_DEFIANCE,
+		"Sanguine Oni" = SKIN_COLOR_DEFIANCE_SANGUINE,
+		"Stable Oni" = SKIN_COLOR_STABILITY,
+		"Intellectual Oni" = SKIN_COLOR_STABILITY_INTELLECT,
+		"Serene Oni" = SKIN_COLOR_SERENITY,
+		"Harmonious Oni" = SKIN_COLOR_SERENITY_PEACE,
+		"Audacious Oni" = SKIN_COLOR_AUDACY,
+		"Mysterious Oni" = SKIN_COLOR_AUDACY_MYSTERY,
+		"Recently Purified" = SKIN_COLOR_BLANK_PURIFICATED,
 	))
-
 
 /datum/species/abyssariad/oni/get_hairc_list()
 	return sortList(list(

@@ -31,9 +31,9 @@ for the mouth with opens with a emote (or bite intention).<<<
 	skin_tone_wording = "Championage Branch"
 
 	default_color = "FFFFFF"
-	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS)
+	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,KITSUNE_TONGUE)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
-	default_features = list("mcolor" = "FFF", "ears" = "Vulp", "tail_human" = "VulpianiV")
+	default_features = list("mcolor" = "FFF", "ears" = "Vulp", "tail_human" = "VulpianiV", "kitsune_tongue" = "eldritch")
 	use_skintones = 1
 	possible_ages = list(AGE_IMMORTAL) //Abyssariads are Immortal. However, if they become stray from Abyssor - they suffer severe dementia after some decades.
 	skinned_type = /obj/item/stack/sheet/animalhide/human
@@ -45,7 +45,7 @@ for the mouth with opens with a emote (or bite intention).<<<
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	hairyness = ""
-	mutant_bodyparts = list("ears","tail_human")
+	mutant_bodyparts = list("ears","tail_human", "kitsune_tongue")
 	use_f = FALSE
 	soundpack_m = /datum/voicepack/male/abyssariad
 	soundpack_f = /datum/voicepack/female/abyssariad
@@ -64,9 +64,22 @@ for the mouth with opens with a emote (or bite intention).<<<
     // =>Disadvantage: -Lower Stationary Acuity; They are better at noticing movements, bad at noticing stationary objects. Bad with bows by nature. Foxes have that IRL because of nightvision. At least they have more reason to have it than Dark Elves.
 	// -Low fat mass, high muscle mass. Streamlined body structure that minimizes resistance and maximizes intense muscular movements.
 	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0) // 1-2+2-1+0 = +1 ; Elves have +2, paying off for additional +1 str
-	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0) // Don't even bother making each gender different. They are equals in championage.
+	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
 	enflamed_icon = "widefire"
 	mutanttongue = /obj/item/organ/tongue/kitsune
+	minrace_pq = 0
+
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+		/datum/customizer/bodypart_feature/tongue/kitsune,
+		/datum/customizer/organ/tongue/kitsune
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
 
 /datum/species/abyssariad/kitsune/get_span_language(datum/language/message_language)
 	if(!message_language)
@@ -81,15 +94,16 @@ for the mouth with opens with a emote (or bite intention).<<<
 
 /datum/species/abyssariad/kitsune/get_skin_list()
 	return sortList(list(
-	"1. Silver Purifier" = "ffe0d1",
-	"2. Warp Caster" = "fcccb3",
-	"3. Marble" = "edc6b3",
-	"4. Bogwalker" = "e2b9a3",
-	"4. Duskwalker" = "d9a284",
-	"5. Bronze Purifier" = "c9a893",
-	"6. Twilight Veil" = "ba9882",
-	"7. Midnight Veil" = "44342a",
-	"8. Ebony Purifier" = "221A15"
+		"Oathbound Muqian" = SKIN_COLOR_OATHBOUND_MUQIAN,
+		"Oathbound Kaizoku" = SKIN_COLOR_OATHBOUND_KAIZOKU,
+		"Oathbound Shuhen" = SKIN_COLOR_OATHBOUND_SHUHEN,
+		"Oathbound Linyou" = SKIN_COLOR_OATHBOUND_LINYOU,
+		"Oathbound Dustwalker" = SKIN_COLOR_OATHBOUND_DUSTWALKER,
+		"Warpcaster Muqian" = SKIN_COLOR_WARPCASTER_MUQIAN,
+		"Warpcaster Kaizoku" = SKIN_COLOR_WARPCASTER_KAIZOKU,
+		"Warpcaster Shuhen" = SKIN_COLOR_WARPCASTER_SHUHEN,
+		"Warpcaster Linyou" = SKIN_COLOR_WARPCASTER_LINYOU,
+		"Warpcaster Dustwalker" = SKIN_COLOR_WARPCASTER_DUSTWALKER,
 	))
 
 /datum/species/abyssariad/kitsune/get_hairc_list()
@@ -141,9 +155,26 @@ for the mouth with opens with a emote (or bite intention).<<<
 	randname += " Clanless"
 	return randname
 
-
 /datum/species/abyssariad/kitsune/random_surname()
 	return " [pick(world.file2list("strings/rt/names/abyssariad/abyssnorm.txt.txt"))]"
 
 /datum/species/abyssariad/kitsune/get_accent_list()
 	return strings("japanese_replacement.json", "japanese")
+
+/datum/species/abyssariad/kitsune/can_wag_tongue(mob/living/carbon/human/H)
+	return ("kitsune_tongue" in mutant_bodyparts) || ("waggingkitsune_tongue" in mutant_bodyparts)
+
+/datum/species/abyssariad/kitsune/is_wagging_tongue(mob/living/carbon/human/H)
+	return ("waggingkitsune_tongue" in mutant_bodyparts)
+
+/datum/species/abyssariad/kitsune/start_wagging_tongue(mob/living/carbon/human/H)
+	if("kitsune_tongue" in mutant_bodyparts)
+		mutant_bodyparts -= "kitsune_tongue"
+		mutant_bodyparts |= "waggingkitsune_tongue"
+	H.update_body()
+
+/datum/species/abyssariad/kitsune/stop_wagging_tongue(mob/living/carbon/human/H)
+	if("waggingkitsune_tongue" in mutant_bodyparts)
+		mutant_bodyparts -= "waggingkitsune_tongue"
+		mutant_bodyparts |= "kitsune_tongue"
+	H.update_body()

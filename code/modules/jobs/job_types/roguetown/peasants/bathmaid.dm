@@ -12,7 +12,11 @@
 		"Half-Elf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Kitsune", //For Abyssariads, prostitution is illegal and a dishonor for the entire clan.
+		"Tengu",
+		"Oni",
+		"Kappa"
 	)
 
 	tutorial = "Nobody would envy your lot in life, for the role of the bathwench is not something so idly taken. It comes from a place of desperation, least usually: for any with true compassion or skill would seek position with a nunnery or the medical trade. Launder clothes and soothe wounds, that is your loathsome creed."
@@ -49,6 +53,13 @@
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
+	if(H.dna?.species)
+		if(H.dna.species?.id == "abyssariad")
+			mask = /obj/item/clothing/mask/rogue/kaizoku/facemask/dishonor
+			to_chat(H, "<span class='userdanger'>In pursuit of hedonism and vices, I forfeited my honor and values of the Abyssal Tide. My soul can no longer claim the essence of an Abyssariad.</span>")
+			if(H.patron == /datum/patron/divine/abyssor)
+				H.patron = GLOB.patronlist[/datum/patron/divine/eora]
+				to_chat(H, "<span class='warning'>The waters I once revered now scorn me - the rivers blistering my impure skin. I've failed Abyssor as his champion, and now I've bonded with [H.patron].")
 
 // Washing Implements
 

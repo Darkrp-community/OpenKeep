@@ -89,9 +89,9 @@
 				used = list('sound/vo/male/abyssariad/abyssariad_praise.ogg','sound/vo/male/abyssariad/abyssariad_praise2.ogg')
 			if("yoo")
 				used = 'sound/vo/male/abyssariad/yoooo.ogg'
-			if("throatsing")
-				if(prob(5))
-					used = 'sound/vo/male/abyssariad/throatsing_rare.ogg' //I am not afraid.
+			if("throatsing") //need to find a way to make a bigger cooldown on this one. This emote is long.
+				if(prob(5)) 
+					used = 'sound/vo/male/abyssariad/throatsing_rare.ogg' //I am not afraid. I know gundam will hate me for this one. But trust me, it's worth it
 				else
 					used = list('sound/vo/male/abyssariad/throatsing1.ogg','sound/vo/male/abyssariad/mthroatsing1.ogg','sound/vo/male/abyssariad/mthroatsing2.ogg','sound/vo/male/abyssariad/mthroatsing3.ogg','sound/vo/male/abyssariad/mthroatsing4.ogg','sound/vo/male/abyssariad/mthroatsing5.ogg')
 	if(!used)

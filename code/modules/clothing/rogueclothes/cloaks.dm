@@ -797,7 +797,6 @@
 	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	nodismemsleeves = TRUE
 
-
 /obj/item/clothing/cloak/stole
 	name = "stole"
 	desc = "Garments of a priest, usually worn when giving mass to the people."
@@ -959,6 +958,7 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 
+//kaizoku shit below
 
 /obj/item/clothing/cloak/raincloak/mino
 	name = "mino cloak"
@@ -966,7 +966,73 @@
 	icon_state = "mino"
 	inhand_mod = FALSE
 	hoodtype = null
-	icon = 'icons/roguetown/kaizoku/clothingicon/cloak.dmi'
-	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/cloak.dmi'
+	icon = 'icons/roguetown/kaizoku/clothingicon/cloaks.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
-	sleeved = 'icons/roguetown/kaizoku/clothing/cloak.dmi'
+	sleeved = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+
+/obj/item/clothing/cloak/odoshisohei
+	name = "senior sohei odoshi"
+	desc = "Tightly packed lacing patterns usually used for binding leather and metal scales, now used to show affiliation to clans or shrines."
+	icon_state = "odoshisohei"
+	icon = 'icons/roguetown/kaizoku/clothingicon/cloaks.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS
+	sleeved = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+	slot_flags = ITEM_SLOT_CLOAK
+	nodismemsleeves = TRUE
+
+/obj/item/clothing/cloak/haramaki
+	name = "haramaki"
+	icon_state = "haramaki"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+	sleeved = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+	icon = 'icons/roguetown/kaizoku/clothingicon/cloaks.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	var/picked
+
+/obj/item/clothing/cloak/haramaki/attack_right(mob/user)
+	if(picked)
+		return
+	var/the_time = world.time
+	var/design = input(user, "Select a design.","Tabard Design") as null|anything in list("None","Split", "Quadrants", "Boxes", "Diamonds", "Middle-split")
+	if(!design)
+		return
+	var/colorone = input(user, "Select a primary color.","Tabard Design") as null|anything in CLOTHING_COLOR_NAMES
+	if(!colorone)
+		return
+	var/colortwo
+	if(design != "None")
+		colortwo = input(user, "Select a primary color.","Tabard Design") as null|anything in CLOTHING_COLOR_NAMES
+		if(!colortwo)
+			return
+	if(world.time > (the_time + 30 SECONDS))
+		return
+	picked = TRUE
+	switch(design)
+		if("Split")
+			detail_tag = "_spl"
+		if("Quadrants")
+			detail_tag = "_quad"
+		if("Boxes")
+			detail_tag = "_box"
+		if("Diamonds")
+			detail_tag = "_dim"
+		if("Middle-split")
+			detail_tag = "_spl2"
+	color = clothing_color2hex(colorone)
+	if(colortwo)
+		detail_color = clothing_color2hex(colortwo)
+	update_icon()
+	if(ismob(loc))
+		var/mob/L = loc
+		L.update_inv_cloak()
+
+/obj/item/clothing/cloak/haramaki/odoshi
+	name = "odoshi"
+	icon_state = "odoshi"

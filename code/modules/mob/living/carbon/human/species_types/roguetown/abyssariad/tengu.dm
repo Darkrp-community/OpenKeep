@@ -8,11 +8,11 @@
 /datum/species/abyssariad/tengu
 	name = "Tengu"
 	id = "abyssariad"
-	desc = "<b>Ocean branched Champions</b><br>\
-	Molded from Abyssor's relentless oceans, the Tengus are a inquisitive race with lithe bodies \
+	desc = "<b>Sky branched Champions</b><br>\
+	Molded from Abyssor's relentless skies, the Tengus are a inquisitive race with lithe bodies \
 	glaceful as the flows of the tides to navigate and glide across the rocky shores and crashing \
 	waves of their currently destroyed domain to provide information, supplies and messages in any \
-	battlefield. Just like the oceans they branched from, they are vast and enduring - if not \
+	battlefield. Just like the skies they branched from, they are vast and enduring - if not \
 	mysterious and deep, often appearing aloof and solitary to outsiders. Their society almost crumbled \
 	during The Bloody Apotheosis, but their bronze-age traditions lives on together with a deep \
 	hatred for all things Graggar. They are refined souls that, when not belonging to military or clerical jobs, \
@@ -49,10 +49,21 @@
 	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
-	specstats = list("strength" = 0, "perception" = 1, "intelligence" = 0, "constitution" = 0, "endurance" = 0, "speed" = 3, "fortune" = 0)
-	specstats_f = list("strength" = 0, "perception" = 2, "intelligence" = 0, "constitution" = -1, "endurance" = -1, "speed" = 3, "fortune" = 0)
+	specstats = list("strength" = 0, "perception" = 2, "intelligence" = 0, "constitution" = -1, "endurance" = -1, "speed" = 3, "fortune" = 0)
+	specstats_f = list("strength" = 0, "perception" = 2, "intelligence" = 0, "constitution" = -1, "endurance" = -1, "speed" = 3, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
 	enflamed_icon = "widefire"
 	mutanteyes = /obj/item/organ/eyes/rogue/tengu
+	minrace_pq = 20
+
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
 
 /datum/species/abyssariad/tengu/get_span_language(datum/language/message_language)
 	if(!message_language)
@@ -66,16 +77,17 @@
 
 /datum/species/abyssariad/tengu/get_skin_list()
 	return sortList(list(
-	"Silver Purifier" = "ffe0d1",
-	"Warp Caster" = "fcccb3",
-	"Marble" = "edc6b3",
-	"Bogwalker" = "e2b9a3",
-	"Duskwalker" = "d9a284",
-	"Bronze Purifier" = "c9a893",
-	"Twilight Veil" = "ba9882",
-	"Midnight Veil" = "44342a",
-	"Peppersblow Unit" = "771111",
-	"Ebony Purifier" = "221A15"
+		"Oathbound Muqian" = SKIN_COLOR_OATHBOUND_MUQIAN,
+		"Oathbound Kaizoku" = SKIN_COLOR_OATHBOUND_KAIZOKU,
+		"Oathbound Shuhen" = SKIN_COLOR_OATHBOUND_SHUHEN,
+		"Oathbound Linyou" = SKIN_COLOR_OATHBOUND_LINYOU,
+		"Oathbound Dustwalker" = SKIN_COLOR_OATHBOUND_DUSTWALKER,
+		"Warpcaster Muqian" = SKIN_COLOR_WARPCASTER_MUQIAN,
+		"Warpcaster Kaizoku" = SKIN_COLOR_WARPCASTER_KAIZOKU,
+		"Warpcaster Shuhen" = SKIN_COLOR_WARPCASTER_SHUHEN,
+		"Warpcaster Linyou" = SKIN_COLOR_WARPCASTER_LINYOU,
+		"Warpcaster Dustwalker" = SKIN_COLOR_WARPCASTER_DUSTWALKER,
+		"Peppersblow Warpcaster" = SKIN_COLOR_PEPPERSBLOW,
 	))
 
 

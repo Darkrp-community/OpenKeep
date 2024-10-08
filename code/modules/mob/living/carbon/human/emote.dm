@@ -142,11 +142,29 @@
 	else
 		H.dna.species.stop_wagging_tail(H)
 
+/datum/emote/living/carbon/human/tongue/run_emote(mob/user, params, type_override, intentional)
+	. = ..()
+	if(!.)
+		return
+	var/mob/living/carbon/human/H = user
+	if(!istype(H) || !H.dna || !H.dna.species || !H.dna.species.can_wag_tongue(H))
+		return
+	if(!H.dna.species.is_wagging_tongue())
+		H.dna.species.start_wagging_tongue(H)
+	else
+		H.dna.species.stop_wagging_tongue(H)
+
 /datum/emote/living/carbon/human/wag/can_run_emote(mob/user, status_check = TRUE , intentional)
 	if(!..())
 		return FALSE
 	var/mob/living/carbon/human/H = user
 	return H.dna && H.dna.species && H.dna.species.can_wag_tail(user)
+
+/datum/emote/living/carbon/human/eldritch/can_run_emote(mob/user, status_check = TRUE , intentional)
+	if(!..())
+		return FALSE
+	var/mob/living/carbon/human/H = user
+	return H.dna && H.dna.species && H.dna.species.can_wag_tongue(user)
 
 /datum/emote/living/carbon/human/wag/select_message_type(mob/user, intentional)
 	. = ..()
@@ -203,5 +221,3 @@
 	if(isturf(loc))
 		var/turf/T = loc
 		T.Entered(src)
-
-//Ayy lmao

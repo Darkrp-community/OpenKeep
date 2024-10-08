@@ -5,7 +5,11 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Human",
-		"Elf"
+		"Elf",
+		"Kitsune",
+		"Tengu",
+		"Oni",
+		"Kappa"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/farmermaster
 	maximum_possible_slots = 1

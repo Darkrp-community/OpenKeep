@@ -493,6 +493,10 @@
 	body_parts_covered = CHEST|ARMS|VITALS
 	colorable_var = TRUE
 
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/monkgarb/random/Initialize()
+	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	..()
+
 /obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo
 	name = "kamishimo"
 	desc = "A formal kimono used by men, a short sleeveless garment made of hemp which usually comes together with a hakama, and worn on top of a kosode or kimono. To use one without cloth underneath, conveys a ronin nature."
@@ -503,6 +507,10 @@
 	l_sleeve_status = SLEEVE_NORMAL
 	body_parts_covered = CHEST|VITALS
 	colorable_var = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/random/Initialize()
+	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	..()
 
 /obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/ronin
 	color = "#526652"
@@ -523,7 +531,6 @@
 /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random/Initialize()
 	color = pick("#6b5445", "#435436", "#704542", "#79763f")
 	..()
-
 
 /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/shinobi
 	color = "#372161"
@@ -547,7 +554,7 @@
 		var/the_time = world.time
 		if(world.time > (the_time + 30 SECONDS))
 			return
-		var/colorone = input(user, "Your emotions spreads your will.","Abyssor allows you to flush emotions within the threads.") as null|anything in CLOTHING_COLOR_NAMES
+		var/colorone = input(user, "Your emotions spreads your will.","Flush emotions within the threads.") as null|anything in CLOTHING_COLOR_NAMES
 		if(!colorone)
 			return
 		picked = TRUE
@@ -560,3 +567,40 @@
 		return
 	else 
 		return
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/zamurai/Initialize()
+	..()
+	if(!picked)
+		var/list/colors = list(
+		"PURPLE"="#865c9c",
+		"RED"="#933030",
+		"BROWN"="#685542",
+		"GREEN"="#79763f",
+		"BLUE"="#395480",
+		"YELLOW"="#b5b004",
+		"TEAL"="#249589",
+		"WHITE"="#ffffff",
+		"ORANGE"="#b86f0c",
+		"MAJENTA"="#962e5c")
+
+		var/mob/living/carbon/human/L = loc
+		var/choice = input(L, "Choose a color.", "ZAMURAI COLORPLEX") as anything in colors
+		var/playerchoice = colors[choice]
+		picked = TRUE
+		detail_color = playerchoice
+		update_icon()
+		for(var/obj/item/clothing/V in L.get_equipped_items(FALSE))
+			testing("clothes to color are [V]")
+			if(V.colorgrenz)
+				V.detail_color = playerchoice
+				V.update_icon()
+		L.regenerate_icons()
+
+/obj/item/clothing/suit/roguetown/shirt/grenzelhoft/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)

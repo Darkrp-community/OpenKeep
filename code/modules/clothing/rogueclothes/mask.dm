@@ -264,14 +264,14 @@
 
 /obj/item/clothing/mask/rogue/kaizoku/facemask/dishonor
 	name = "dishonor mask"
-	desc = "Blackpowder-infused, soul-bound veil for dishonored champions as a consequence for bringing shame to their clan and traditions, for those unentitled to be called Abyssariads - prostitutes, beggars and burakumins in general. If broken, it will explode."
+	desc = "Blackpowder-infused, soul-bound veil for dishonored Abyssariads as a consequence for bringing shame to their clan and traditions, for those unentitled to be called Abyssariads - the Burakumins (non-persons), such as prostitutes and beggars. If broken, it will explode."
 	icon_state = "bmask"
-	max_integrity = 300
+	max_integrity = 300 //Unique and very protective. You will need it.
 	blocksound = PLATEHIT
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	resistance_flags = FIRE_PROOF
-	armor = list("melee" = 50, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	flags_inv = HIDEFACE
 	body_parts_covered = EYES | EARS | NOSE //Allows them to use their mouth due to the mouth opening.
@@ -295,11 +295,12 @@
 	if(QDELETED(src))
 		return
 	explode(src)
+	qdel(src)
 
 /obj/item/clothing/mask/rogue/kaizoku/facemask/dishonor/proc/explode(skipprob)
 	STOP_PROCESSING(SSfastprocess, src)
 	var/turf/T = get_turf(src)
-	explosion(T, light_impact_range = 1, flame_range = 1, smoke = TRUE, soundin = pick('sound/misc/explode/bottlebomb (1).ogg','sound/misc/explode/bottlebomb (2).ogg'))
+	explosion(T, light_impact_range = 2, flame_range = 2, smoke = TRUE, soundin = pick('sound/misc/explode/bottlebomb (1).ogg','sound/misc/explode/bottlebomb (2).ogg'))
 
 /obj/item/clothing/mask/rogue/kaizoku/attack_right(mob/user)
 	if(colorable_var == TRUE)

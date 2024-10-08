@@ -107,7 +107,7 @@
 
 
 /obj/item/rogueweapon/spear
-	force = 15
+	force = 15 
 	force_wielded = 25
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
@@ -454,8 +454,6 @@
 	desc = "A long, straight-headed spear of Abyssariad design, often used by sea raiders to fend off light cavalry on in-land offensives."
 	icon_state = "suyari"
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
-	force = 10
-	force_wielded = 30
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, /datum/intent/axe/chop, SPEAR_BASH)
 	pixel_y = -16
@@ -467,26 +465,29 @@
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
 	minstr = 8
-	max_blade_int = 100
-	max_integrity = 450
-	smeltresult = /obj/item/ingot/steel
+	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
 	dropshrink = 0.8
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
-	wdefense = 4
+	wdefense = 5
 
 /obj/item/rogueweapon/spear/yari/katakama
 	name = "katakama yari"
 	desc = "An evolution of the su yari, recognizable for a single scythe-like tang perpendicular to the main point that allows for better defense against the likes of naginata."
 	icon_state = "katakamayari"
 	wdefense = 6
+	smeltresult = /obj/item/ingot/steel
+	max_blade_int = 150
+	max_integrity = 400
 
-/obj/item/rogueweapon/spear/yari/jumonji
+/obj/item/rogueweapon/spear/yari/katakama/jumonji
 	name = "jumonji yari"
 	desc = "The design of the katakama yari taken to its logical conclusion, the jumonji yari features an elongated tang on each side that is the same length as the forward point. There is no polearm that offers better defense."
 	icon_state = "jumonjiyari"
 	wdefense = 8
+	max_blade_int = 150
+	max_integrity = 430 //has more metal on this one.
 
 /obj/item/rogueweapon/halberd/bardiche/naginata
 	name = "naginata"
@@ -496,10 +497,9 @@
 	smeltresult = /obj/item/ingot/iron
 	dropshrink = 0.8
 
-
 /obj/item/rogueweapon/halberd/bardiche/naginata/tsukushi //When smithed, make two instead of one.
 	name = "tsukushi naginata"
-	desc = "A cheaper, easier to construct Iron Naginata with a blade held by its guard instead of its tang. Likely developed from a scythe, the blade is easily found on poor, wandering monks."
+	desc = "A cheaper, easier to construct iron Naginata with a blade held by its guard instead of its tang. Likely developed from a scythe, the blade is easily found on poor, wandering monks."
 	force = 15
 	force_wielded = 25
 	icon_state = "surplusnaginata"

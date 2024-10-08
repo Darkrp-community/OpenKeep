@@ -819,7 +819,7 @@
 	name = "Femundies"
 	icon_state = "female_bikini"
 	gender = FEMALE
-	specuse = ALL_RACES_LIST
+	specuse = list("human", "dwarf", "elf", "tiefling", "aasimar", "orc", "zizombie") //had to change that one. Sorry. The RNG was forcing the Abyssariad females to have this.
 
 /datum/sprite_accessory/underwear/female_leotard
 	name = "Femleotard"
@@ -1353,3 +1353,4 @@
 /datum/sprite_accessory/moth_markings/moonfly
 	name = "Moon Fly"
 	icon_state = "moonfly"
+

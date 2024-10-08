@@ -414,7 +414,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
 	name = "otsuchi"
-	desc = "A wooden greathammer of Abyssariad make, heavy enough to give any warrior pause."
+	desc = "A wooden greathammer of Abyssariad make, heavy enough to give any warrior pause. Often used by Yamabushi warriors."
 	icon_state = "otsuchi"
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 	sharpness = IS_BLUNT
@@ -425,7 +425,7 @@
 	associated_skill = /datum/skill/combat/axesmaces
 	smeltresult = /obj/item/ash
 	swingsound = BLUNTWOOSH_HUGE
-	max_integrity = 500
+	max_integrity = 350
 	minstr = 10
 	wdefense = 3
 	pixel_y = -16
@@ -436,8 +436,6 @@
 	gripsprite = TRUE
 
 /obj/item/rogueweapon/mace/goden/kanabo
-	force = 20
-	force_wielded = 35
 	possible_item_intents = list(/datum/intent/mace/heavy/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
 	name = "kanabo"
@@ -465,8 +463,8 @@
 	slowdown = 1
 
 /obj/item/rogueweapon/mace/goden/tetsubo
-	force = 25
-	force_wielded = 50
+	force = 20
+	force_wielded = 40
 	possible_item_intents = list(/datum/intent/mace/heavy/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
 	name = "tetsubo"
@@ -483,7 +481,7 @@
 	parrysound = "parrywood"
 	swingsound = BLUNTWOOSH_MED
 	max_integrity = 600
-	minstr = 15//Favored weapon of the Oni
+	minstr = 14 //Favored weapon of the Oni
 	wdefense = 4
 	pixel_y = -16
 	pixel_x = -16
@@ -499,21 +497,21 @@
 	name = "ararebo"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	icon_state = "ararebo"
-	desc = "A short, iron-capped club used by Abyssariads as a cudgel. The spikes cause it to inflict bleeding wounds."
+	desc = "A large, iron-capped club used by Abyssariads as a cudgel. The spikes cause it to inflict bleeding wounds."
 	gripped_intents = null
 	smeltresult = /obj/item/ingot/iron
 	wlength = WLENGTH_SHORT
 	w_class = WEIGHT_CLASS_NORMAL
-	sharpness = IS_SHARP
+	sharpness = IS_SHARP //If you come to me saying they can't be sharp, I'm actually bending your spine. Ararebos FUGGS even in WWI.
 	max_integrity = 300
-	wbalance = 0
+	wbalance = -1
 	minstr = 0
 	wdefense = 3
 
 /obj/item/rogueweapon/mace/cudgel/ararebo/obsidian
 	name = "obsidian club"
 	icon_state = "obsidian_club"
-	desc = "A short, wooden club with sharp flakes of obsidian embedded into it. Its appearance is similar to a flanged mace, but it inflicts deep cuts."
+	desc = "A large, wooden club with sharp flakes of obsidian embedded into it. Its appearance is similar to a flanged mace, but it inflicts deep cuts."
 	max_integrity = 150
 
 /obj/item/rogueweapon/mace/cudgel/ararebos/steel
@@ -521,7 +519,7 @@
 	force_wielded = 25
 	name = "steel ararebo"
 	icon_state = "ararebos"
-	desc = "A short, steel-capped club used by Abyssariads as a cudgel. The spikes cause it to inflict bleeding wounds."
+	desc = "A large, steel-capped club used by Abyssariads as a cudgel. The spikes cause it to inflict bleeding wounds."
 	gripped_intents = null
 	smeltresult = /obj/item/ingot/steel
 
@@ -529,7 +527,7 @@
 	force = 15
 	force_wielded = 20
 	name = "rungu club"
-	desc = "A more well defined, chiseled wooden club that can be throw at enemies. Used by Kappa warriors."
+	desc = "A more well defined, chiseled and ashed wooden club that can be throw at enemies. Used by Kappa warriors."
 	icon_state = "rungu"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	wbalance = 0
@@ -544,18 +542,7 @@
 	throwforce = 25
 
 /obj/item/rogueweapon/mace/cudgel/jitte
-	force = 15
-	force_wielded = 20
 	name = "jitte"
-	desc = "Unlike most weapons named in the Abyssariad tongue, the jitte was designed by Humens. The hook along the shaft allows the club to arrest a blade that has been parried, greatly increasing the defensive utility of the otherwise simple baton."
+	desc = "An abyssariad Ashigaru guard weapon. The hook along the shaft allows the club to arrest a blade that has been parried, increasing the defensive utility of a otherwise simple baton."
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	icon_state = "jitte"
-	//dropshrink = 0.75
-	wbalance = 2
-	wdefense = 10
-	max_integrity = 300
-	wlength = WLENGTH_NORMAL
-	w_class = WEIGHT_CLASS_NORMAL
-	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
-	smeltresult = /obj/item/ingot/steel
-	minstr = 0

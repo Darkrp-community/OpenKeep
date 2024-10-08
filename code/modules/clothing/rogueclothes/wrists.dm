@@ -70,8 +70,17 @@
 	desc = "a sashinuki kote, the armored sleeves and gloves knitted into a jacket layer. It belongs as one of the armor component of Sangu, together with Suneate and Haidate."
 	icon = 'icons/roguetown/kaizoku/clothingicon/wrists.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/wrists.dmi'
+	body_parts_covered = ARMS|HANDS //bracer that protects hands and arms.
 	icon_state = "kote"
 	item_state = "kote"
+
+/obj/item/clothing/wrists/roguetown/bracers/mountainstar
+	name = "weeping god-patterned bracers"
+	desc = "Y-shaped steel plates marks this bracer everywhere it is looked upon."
+	icon = 'icons/roguetown/kaizoku/clothingicon/wrists.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/wrists.dmi'
+	icon_state = "mountainstar"
+	item_state = "mountainstar"
 
 /obj/item/clothing/wrists/roguetown/kaizoku/dragonwrap
 	name = "dragon wrappings"
@@ -85,3 +94,29 @@
 	heat_protection = ARMS|HANDS
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
+	name = "khudagach bracers"
+	desc = "Oil-boiled leather bracers made to protect the forearms and wrists of abyssariad archers, light cavalry and farming folk."
+	icon_state = "khudagach"
+	item_state = "khudagach"
+	icon = 'icons/roguetown/kaizoku/clothingicon/wrists.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/wrists.dmi'
+
+/obj/item/clothing/wrists/roguetown/bracers/bonebracer
+	name = "bone bracers"
+	desc = "the bracers made of bone, usually created and used by tribalistic kappas."
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	icon = 'icons/roguetown/kaizoku/clothingicon/wrists.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/wrists.dmi'
+	icon_state = "bonebracers"
+	item_state = "bonebracers"
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_TWIST)
+	resistance_flags = null
+	blocksound = SOFTHIT
+	smeltresult = /obj/item/ash
+	blade_dulling = DULLING_BASHCHOP
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
+	anvilrepair = null
+	sewrepair = FALSE

@@ -41,3 +41,7 @@
 	feature_slot = BODYPART_FEATURE_ACCESSORY
 	body_zone = BODY_ZONE_HEAD
 
+/datum/bodypart_feature/tongue/kitsune_tongue
+	name = "Souleating Jaws"
+	feature_slot = BODYPART_FEATURE_ACCESSORY
+	body_zone = BODY_ZONE_HEAD

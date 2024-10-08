@@ -422,7 +422,6 @@
 	icon_state = "kunai"
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/tanto
-	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut,/datum/intent/dagger/thrust/pick)
 	force = 14
 	name = "tanto"
 	icon_state = "tanto"
@@ -431,15 +430,15 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/kaiken
 	name = "kaiken"
-	desc = "As weapon laws were put into place in colonized Abyssariad islands in which had high humen or elven population, many outside of the warrior caste were forbidden of carrying blades in public. This resulted in the creation of easily concealed blade such as this - for self defense... and assassinations."
+	desc = "The weapon laws in colonized Abyssariad islands, with high humen of elven population, forbade non-warriors from carrying blades in public, so abyssariad colonists made weapons such as this."
 	icon_state = "kaiken"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut,/datum/intent/dagger/thrust/pick)
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/rogueweapon/huntingknife/idagger/sai
+/obj/item/rogueweapon/huntingknife/idagger/sai //I request a coder to help me out on this. Make the sai recognize there is another sai on the other hand, and give full 8 wdefense, otherwise its 3 or 4.
 	name = "sai"
-	desc = "Typically carried in pairs, the sai is recognizable for its unique design, with the central shaft consisting of a sharply-tapered rod and two prongs protecting the cross-guard. Although effective enough at damaging with jabbing attacks, it lacks a blade and cannot cut. What it excels at, however is defending against other weapons."
+	desc = "Recognizable by its uniqueness and typically carried in pairs, the sai features a sharply-tapered central rod with two prongs at the cross-guards. It lacks blade for cutting, but it excels in jabbing and defending against other weapons."
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	icon_state = "sai"
 	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/thrust/pick)

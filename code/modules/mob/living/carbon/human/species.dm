@@ -16,6 +16,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/list/possible_ages = ALL_AGES_LIST
 	var/sexes = 1		// whether or not the race has sexual characteristics. at the moment this is only 0 for skeletons and shadows
 	var/patreon_req
+	var/minrace_pq = -999
 	var/max_age = 75
 	var/list/offset_features = list(OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0),\
 	OFFSET_CLOAK = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), \
@@ -78,7 +79,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/flying_species = FALSE //is a flying species, just a check for some things
 	var/datum/action/innate/flight/fly //the actual flying ability given to flying species
-	var/wings_icon = "Angel" //the icon used for the wings
+	var/wings_icon = "Angel" //the icon used for the wings //here?
 
 	// species-only traits. Can be found in DNA.dm
 	var/list/species_traits = list()
@@ -1053,11 +1054,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else if ("tail_lizard" in mutant_bodyparts)
 			bodyparts_to_add -= "waggingtail_lizard"
 
-	if("animatedkitsune_tongue" in mutant_bodyparts)
+	if("kitsune_tongue" in mutant_bodyparts)
 		if(H.wear_armor && (H.wear_armor.flags_inv & HIDEJUMPSUIT))
-			bodyparts_to_add -= "animatedkitsune_tongue"
+			bodyparts_to_add -= "kitsune_tongue"
+
+	if("waggingkitsune_tongue" in mutant_bodyparts)
+		if(H.wear_armor && (H.wear_armor.flags_inv & HIDEFACE))
+			bodyparts_to_add -= "waggingkitsune_tongue"
 		else if ("kitsune_tongue" in mutant_bodyparts)
-			bodyparts_to_add -= "animatedkitsune_tongue"
+			bodyparts_to_add -= "waggingkitsune_tongue"
 
 		if(H.wear_armor && (H.wear_armor.flags_inv & HIDEJUMPSUIT))
 			bodyparts_to_add -= "snout_open"
@@ -1118,7 +1123,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
 			standing += accessory_overlay
 
-	if("wings" in mutant_bodyparts)
+	if("wings" in mutant_bodyparts) //here?
 		if(!H.dna.features["wings"] || H.dna.features["wings"] == "None" || (H.wear_armor && (H.wear_armor.flags_inv & HIDEJUMPSUIT) && (!H.wear_armor.species_exception || !is_type_in_list(src, H.wear_armor.species_exception))))
 			bodyparts_to_add -= "wings"
 
@@ -1168,9 +1173,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if("waggingtail_lizard")
 					S = GLOB.animated_tails_list_lizard[H.dna.features["tail_lizard"]]
 				if("kitsune_tongue")
-					S = GLOB.tails_list_lizard[H.dna.features["kitsue_tongue"]]
-				if("animatedkitsune_tongue")
-					S = GLOB.animated_tails_list_lizard[H.dna.features["animatedkitsune_tongue"]]
+					S = GLOB.tongue_list_kitsune[H.dna.features["kitsune_tongue"]]
+				if("waggingkitsune_tongue")
+					S = GLOB.animated_tongue_list_kitsune[H.dna.features["kitsune_tongue"]]
 				if("tail_human")
 					S = GLOB.tails_list_human[H.dna.features["tail_human"]]
 				if("waggingtail_human")
@@ -1190,7 +1195,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if("body_markings")
 					S = GLOB.body_markings_list[H.dna.features["body_markings"]]
 				if("wings")
-					S = GLOB.wings_list[H.dna.features["wings"]]
+					S = GLOB.wings_list[H.dna.features["wings"]] //here?
 				if("wingsopen")
 					S = GLOB.wings_open_list[H.dna.features["wings"]]
 				if("legs")
@@ -1212,10 +1217,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			else if(bodypart == "waggingtail_lizard" || bodypart == "waggingtail_human")
 				bodypart = "waggingtail"
 
-			if(bodypart == "kitsune_tongue" || bodypart == "tongue")
+			if(bodypart == "kitsune_tongue" || bodypart == "tongue_human")
 				bodypart = "tongue"
-			else if(bodypart == "animatedkitsune_tongue" || bodypart == "animatedkitsune_tongue")
-				bodypart = "animatedkitsune"
+			else if(bodypart == "waggingkitsune_tongue" || bodypart == "waggingtongue_human")
+				bodypart = "waggingtongue"
 
 			if(S.gender_specific)
 				accessory_overlay.icon_state = "[g]_[bodypart]_[S.icon_state]_[layertext]"
@@ -2732,6 +2737,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/stop_wagging_tail(mob/living/carbon/human/H)
 
+
 ///////////////
 //FLIGHT SHIT//
 ///////////////
@@ -2885,16 +2891,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(!prob(STASPD+skill_modifier+modifier))
 		Paralyze(15)
 
-////////////////
-//Abyssariad: Kitsune Jaw//
-////////////////
+//Fucking bullshit I can't fix myself. 
 
-/datum/species/proc/can_open_eldritch(mob/living/carbon/human/H)
+/datum/species/proc/can_wag_tongue(mob/living/carbon/human/H)
 	return FALSE
 
-/datum/species/proc/is_eldritch_open(mob/living/carbon/human/H)
+/datum/species/proc/is_wagging_tongue(mob/living/carbon/human/H)
 	return FALSE
 
-/datum/species/proc/start_eldritch(mob/living/carbon/human/H)
+/datum/species/proc/start_wagging_tongue(mob/living/carbon/human/H)
 
-/datum/species/proc/stop_eldritch(mob/living/carbon/human/H)
+/datum/species/proc/stop_wagging_tongue(mob/living/carbon/human/H)

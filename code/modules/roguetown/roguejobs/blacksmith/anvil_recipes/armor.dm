@@ -287,3 +287,278 @@
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/sallet)
 	craftdiff = 3
+
+/datum/anvil_recipe/armor/platemask/menpo //experimental
+	name = "iron menpo"
+	recipe_name = "a pair of half menpos"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/mask/rogue/kaizoku/menpo
+	craftdiff = 0
+
+
+//Kaizoku Altversions
+/*
+
+/obj/item/clothing/suit/roguetown/armor/plate/mirror/iron
+
+/datum/anvil_recipe/armor/ichainleg/kaizoku
+	name = "Haidate Tatami x2"
+	recipe_name = "a pair of Iron Haidate Tatami"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/under/roguetown/chainlegs/iron/haidate_tatami
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 0
+
+/datum/anvil_recipe/armor/ichaincoif/kaizoku
+	name = "Kusari Zukin (chainmail hood) x2"
+	recipe_name = "a pair of Kusari Zukin"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/neck/roguetown/chaincoif/iron/kusari_zukin
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 0
+
+/datum/anvil_recipe/armor/ichainmail/tatami
+	name = "iron karuta tatami (folding armor)"
+	recipe_name = "a karuta tatami"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/tatami
+
+/datum/anvil_recipe/armor/platemask/halfmenpo
+	name = "iron half menpos x2"
+	recipe_name = "a pair of half menpos"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/mask/rogue/kaizoku/menpo/half
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 0
+
+
+
+//do here too
+
+
+
+/obj/item/clothing/mask/rogue/kaizoku/menpo/facemask
+
+/datum/anvil_recipe/armor/platemask/menpo
+	name = "iron menpo"
+	recipe_name = "a pair of half menpos"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/mask/rogue/kaizoku/menpo
+	craftdiff = 0
+
+/datum/anvil_recipe/armor/platebootlight/kusaritabi
+	name = "Kusari Tabi x2"
+	recipe_name = "a pair of Kusari Tabi"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/kusaritabi
+	createmultiple = TRUE
+	createditem_num = 1
+
+/datum/anvil_recipe/armor/skullcap
+	name = "Skullcap x2"
+	recipe_name = "a pair of Skullcaps"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/head/roguetown/helmet/skullcap
+	createmultiple = TRUE
+	createditem_num = 1
+
+/obj/item/clothing/head/roguetown/helmet/skullcap/hachigane
+/obj/item/clothing/head/roguetown/helmet/skullcap/rattan
+
+/datum/anvil_recipe/armor/studdedleather
+	name = "Studded leather (2h)"
+	recipe_name = "a Studded Leather Armor"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/hide, /obj/item/natural/hide)
+	created_item = /obj/item/clothing/suit/roguetown/armor/leather/studded
+	craftdiff = 1
+
+/obj/item/clothing/suit/roguetown/armor/leather/studded/kikko
+
+/datum/anvil_recipe/armor/brigadine
+	name = "Brigandine (3) (c)"
+	recipe_name = "a Brigandine"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/natural/cloth)
+	created_item = /obj/item/clothing/suit/roguetown/armor/brigandine
+	craftdiff = 3
+
+/obj/item/clothing/suit/roguetown/armor/brigandine/oyoroi
+
+/datum/anvil_recipe/armor/chainleg
+	name = "Chain chausses x2"
+	recipe_name = "a pair of Chain Chausses"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/under/roguetown/chainlegs
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 2
+
+/obj/item/clothing/under/roguetown/chainlegs/sendan
+
+/datum/anvil_recipe/armor/chaincoif
+	name = "Chain coif x2"
+	recipe_name = "a pair of Chain Coifs"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/neck/roguetown/chaincoif
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 2
+
+/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
+
+/datum/anvil_recipe/armor/hplate
+	name = "Cuirass"
+	recipe_name = "a Cuirass"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/half
+	craftdiff = 3
+
+/obj/item/clothing/suit/roguetown/armor/plate/half/nanbando
+/obj/item/clothing/suit/roguetown/armor/plate/half/sanmaido
+
+/datum/anvil_recipe/armor/platemask/steel
+	name = "Face mask"
+	recipe_name = "a Face Mask"
+	req_bar = /obj/item/ingot/steel
+	created_item = (/obj/item/clothing/mask/rogue/facemask/steel)
+	craftdiff = 2
+-one
+/obj/item/clothing/mask/rogue/kaizoku/menpo/steel/half
+/obj/item/clothing/mask/rogue/kaizoku/menpo/facemask/steel
+/obj/item/clothing/mask/rogue/kaizoku/menpo/facemask/tengu
+/obj/item/clothing/mask/rogue/kaizoku/menpo/facemask/kitsune
+-two
+/obj/item/clothing/mask/rogue/kaizoku/menpo/steel
+
+/datum/anvil_recipe/armor/plate
+	name = "Half-plate armor (3)"
+	recipe_name = "a Half-Plate Armor"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate
+	craftdiff = 3
+
+/obj/item/clothing/suit/roguetown/armor/plate/nanbando
+/obj/item/clothing/suit/roguetown/armor/plate/mirror
+
+/datum/anvil_recipe/armor/haubergeon
+	name = "Haubergeon"
+	recipe_name = "a Haubergeon"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail
+	craftdiff = 2
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/tatami
+
+/datum/anvil_recipe/armor/hauberk
+	name = "Hauberk (2)"
+	recipe_name = "a Hauberk"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
+	craftdiff = 3
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/kusari
+
+/datum/anvil_recipe/armor/helmetkettle
+	name = "Kettle helmet x2"
+	recipe_name = "a pair of Kettle Helmets"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/kettle
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 2
+
+/obj/item/clothing/head/roguetown/helmet/kettle/jingasa
+
+/datum/anvil_recipe/armor/helmetknight
+	name = "Knight's helmet (2)"
+	recipe_name = "a Knight's Helmet"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/knight)
+	craftdiff = 3
+
+/obj/item/clothing/head/roguetown/helmet/visored/knight/zunari
+
+/datum/anvil_recipe/armor/helmetnasal
+	name = "Nasal helmet x2"
+	recipe_name = "a pair of Nasal Helmets"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 2
+
+/obj/item/clothing/head/roguetown/helmet/zijinguan
+
+/datum/anvil_recipe/armor/platefull
+	name = "Plate armor (4)"
+	recipe_name = "a Full-Plate Armor"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel,/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/full
+	craftdiff = 4
+
+/datum/anvil_recipe/armor/platebracer
+	name = "Plate vambraces x2"
+	recipe_name = "a couple of Plate Vambraces"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/wrists/roguetown/bracers
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 3
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/nanbando
+
+/datum/anvil_recipe/armor/plateleg
+	name = "Plate chausses x2"
+	recipe_name = "a couple of Plate Chausses"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/under/roguetown/platelegs
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 3
+
+/obj/item/clothing/under/roguetown/platelegs/yoroihakama
+
+/datum/anvil_recipe/armor/plateboot
+	name = "Plated boots"
+	recipe_name = "some Plated Boots"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/shoes/roguetown/boots/armor
+	craftdiff = 3
+
+/obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/suneate
+
+/datum/anvil_recipe/armor/helmetsall
+	name = "Sallet"
+	recipe_name = "a Sallet"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/sallet
+	craftdiff = 2
+
+/obj/item/clothing/head/roguetown/helmet/sallet/tosei_kabuto
+
+/datum/anvil_recipe/armor/scalemail
+	name = "Scalemail"
+	recipe_name = "a Scalemail"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/scale
+	craftdiff = 3
+
+/datum/anvil_recipe/armor/helmetsallv
+	name = "Visored sallet (2)"
+	recipe_name = "a Visored Sallet"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/sallet)
+	craftdiff = 3
+	/obj/item/clothing/head/roguetown/helmet/sallet/tosei_kabuto/visored
+
+/obj/item/clothing/wrists/roguetown/bracers/kote //fucking make more
+*/

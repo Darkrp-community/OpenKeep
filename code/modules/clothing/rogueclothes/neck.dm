@@ -273,6 +273,14 @@
 	item_state = "surgcollar"
 	sellprice = 15
 
+///////////////////////////////////////////////////////////////////
+// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
+// If the usage is desired, ask monochrome9090 for permission.   //
+// Respect the artists's will, COMMISSION them instead.          //
+// This is solely for SPRITES. The code is free for the taking.	 //
+///////////////////////////////////////////////////////////////////
+
+
 /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
 	name = "karuta zukin"
 	desc = "A protective hood composed of rectangular plates sewn onto a fabric backing, offering a more solid \
@@ -303,6 +311,25 @@
 					var/mob/living/carbon/H = user
 					H.update_inv_neck()
 					H.update_inv_head()
+	if(colorable_var == TRUE)
+		if(picked)
+			return
+		var/the_time = world.time
+		if(world.time > (the_time + 30 SECONDS))
+			return
+		var/colorone = input(user, "Your emotions spreads your will.","Flush emotions within the threads.") as null|anything in CLOTHING_COLOR_NAMES
+		if(!colorone)
+			return
+		picked = TRUE
+		color = clothing_color2hex(colorone)
+		update_icon()
+		if(ismob(loc))
+			var/mob/L = loc
+			L.update_inv_head()
+			L.update_inv_neck()
+		return
+	else 
+		return
 
 /obj/item/clothing/neck/roguetown/chaincoif/iron/kusari_zukin
 	name = "iron kusari zukin"
@@ -319,7 +346,7 @@
 		var/the_time = world.time
 		if(world.time > (the_time + 30 SECONDS))
 			return
-		var/colorone = input(user, "Your emotions spreads your will.","Abyssor allows you to flush emotions within the threads.") as null|anything in CLOTHING_COLOR_NAMES
+		var/colorone = input(user, "Your emotions spreads your will.","Flush emotions within the threads.") as null|anything in CLOTHING_COLOR_NAMES
 		if(!colorone)
 			return
 		picked = TRUE
@@ -332,3 +359,10 @@
 		return
 	else 
 		return
+
+/obj/item/clothing/neck/roguetown/psicross/abyssor
+	name = "amulet of Abyssor"
+	desc = "Despair thee not at the abyssal depths, for where light doth fade, vessels of might shall be therein carved."
+	icon = 'icons/roguetown/kaizoku/clothingicon/neck.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/neck.dmi'
+	icon_state = "abyssor"

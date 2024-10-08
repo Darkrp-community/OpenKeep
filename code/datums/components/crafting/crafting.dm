@@ -211,11 +211,11 @@
 				return
 	if(R.req_kaizoku) //Requires Fog-island/Heartfell culture.
 		if(!HAS_TRAIT(user, TRAIT_KAIZOKU))
-			to_chat(user, "<span class='warning'>I literally can't fathom how islanders could make something so strange and weird.</span>")
+			to_chat(user, "<span class='warning'>I literally can't fathom how islanders do this. Differential hardening? Steel folding? Lost-wax casting? Tatami? What is that?</span>")
 			return //If not Abyssariad or someone from Heartfell, you can't make it.
 	if(R.req_antikaizoku) //Requires Imperial or 'else' culture.
 		if(HAS_TRAIT(user, TRAIT_KAIZOKU))
-			to_chat(user, "<span class='warning'>I literally can't fanthom how whalers and imperials could make something so strange and weird.</span>")
+			to_chat(user, "<span class='warning'>I literally can't fanthom how whalers and imperials do this. Case hardening? Riveting? Fullering? Fluting? What is that?</span>")
 			return //If abyssariad of someone from Heartfell, you can't make it.
 	if(R.req_table)
 		if(!(locate(/obj/structure/table) in T))

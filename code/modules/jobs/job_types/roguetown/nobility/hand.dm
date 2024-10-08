@@ -12,7 +12,6 @@
 		"Half-Elf",
 		"Dwarf",
 		"Aasimar",
-		"Kitsune" //just to test. Remove later.
 	)
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/hand
