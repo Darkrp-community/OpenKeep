@@ -48,4 +48,4 @@
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/huntingknife = 1)
 	H.change_stat("strength", 2)
 	H.change_stat("endurance", 2)
-	H.change_stat("intelligence", 2)
+	H.change_stat("intelligence", 1)
