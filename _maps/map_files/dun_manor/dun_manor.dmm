@@ -1604,6 +1604,13 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town)
+"bJq" = (
+/obj/machinery/light/rogue/wallfire/candle,
+/obj/structure/mannequin,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
+/area/rogue/indoors/town)
 "bJK" = (
 /obj/structure/mineral_door/wood/deadbolt,
 /turf/open/floor/rogue/cobblerock,
@@ -2422,7 +2429,7 @@
 /obj/structure/mineral_door/wood/donjon{
 	dir = 1;
 	locked = 1;
-	lockid = "garrison";
+	lockid = "veteran";
 	name = "veterans house"
 	},
 /obj/effect/decal/cobbleedge{
@@ -2874,6 +2881,8 @@
 /obj/item/roguekey/merchant,
 /obj/item/roguekey/doctor,
 /obj/item/roguekey/butler,
+/obj/item/roguekey/elder,
+/obj/item/roguekey/veteran,
 /turf/open/floor/rogue/tile/tilerg,
 /area/rogue/indoors/town)
 "ddU" = (
@@ -3037,9 +3046,9 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
 "dmj" = (
-/obj/item/storage/backpack/rogue/satchel,
-/obj/structure/closet/crate/drawer,
-/obj/item/roguekey/soilson,
+/obj/item/rogueweapon/shield/wood/crafted{
+	pixel_y = 32
+	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -4577,15 +4586,12 @@
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/mountains)
 "fat" = (
-/obj/structure/table/wood{
-	dir = 1;
-	icon_state = "longtable"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/roguecloset,
+/obj/item/storage/backpack/rogue/satchel,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
 	},
-/obj/item/cooking/pan,
-/obj/item/rogueweapon/shield/wood/crafted{
-	pixel_y = 32
-	},
-/turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
 "fay" = (
 /obj/effect/decal/cobbleedge,
@@ -8986,6 +8992,10 @@
 "jUJ" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_y = 32
+	},
+/obj/structure/giantfur/small{
+	pixel_x = -11;
+	pixel_y = -34
 	},
 /obj/structure/bed/rogue/inn/wool,
 /obj/item/bedsheet/rogue/cloth,
@@ -14678,7 +14688,7 @@
 "qdX" = (
 /obj/structure/mineral_door/wood/donjon{
 	locked = 1;
-	lockid = "garrison";
+	lockid = "veteran";
 	name = "veterans house";
 	dir = 8
 	},
@@ -15603,7 +15613,6 @@
 	},
 /area/rogue/indoors/town/church/chapel)
 "reZ" = (
-/obj/structure/giantfur/small,
 /obj/effect/landmark/start/veteran,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood{
@@ -16585,11 +16594,11 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
 "snU" = (
+/obj/item/natural/stone,
 /obj/structure/table/wood{
 	dir = 1;
 	icon_state = "tablewood1"
 	},
-/obj/item/natural/stone,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -55265,7 +55274,7 @@ paC
 krt
 waT
 oyZ
-oyZ
+fat
 waT
 fNg
 pJn
@@ -55735,7 +55744,7 @@ iGv
 kjK
 pJn
 doE
-khi
+bJq
 bPQ
 waT
 lRI
@@ -56363,7 +56372,7 @@ hvn
 hvn
 pJn
 waT
-fat
+wQM
 ees
 bPQ
 uTB
