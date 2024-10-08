@@ -499,6 +499,11 @@
 	icon_state = "rustkey"
 	lockid = "elder"
 
+/obj/item/roguekey/veteran
+	name = "veteran's key"
+	icon_state = "rustkey"
+	lockid = "veteran"
+
 /obj/item/roguekey/apothecary
 	name = "apothecary's key"
 	icon_state = "rustkey"
