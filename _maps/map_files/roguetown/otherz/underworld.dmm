@@ -91,6 +91,10 @@
 /obj/item/underworld/coin,
 /turf/open/floor/rogue/underworld/road,
 /area/rogue/underworld)
+"I" = (
+/obj/effect/landmark/underworldcoin,
+/turf/open/floor/rogue/underworld/road,
+/area/rogue/underworld)
 "U" = (
 /obj/item/underworld/coin,
 /turf/open/floor/plating/dirt/dark,
@@ -8046,7 +8050,7 @@ k
 p
 k
 e
-e
+t
 e
 e
 o
@@ -8179,7 +8183,7 @@ e
 e
 e
 e
-e
+I
 e
 e
 e
