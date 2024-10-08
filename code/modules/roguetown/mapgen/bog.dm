@@ -21,7 +21,7 @@
 							/obj/item/natural/stone = 30,
 							/obj/structure/flora/roguegrass/swampweed = 30,
 							/obj/item/grown/log/tree/stick = 4,
-							/obj/structure/flora/roguegrass/maneater/real = 1,
+							/obj/structure/flora/roguegrass/maneater/real = 2,
 							/obj/item/restraints/legcuffs/beartrap/armed/camouflage = 0)
 	spawnableTurfs = list(/turf/open/water/swamp = 5,
 	                     /turf/open/floor/rogue/dirt = 80)
