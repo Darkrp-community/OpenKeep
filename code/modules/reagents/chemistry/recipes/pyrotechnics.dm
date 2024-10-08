@@ -4,7 +4,7 @@
 	var/strengthdiv = 10
 	var/modifier = 0
 
-/datum/chemical_reaction/reagent_explosion/on_reaction(datum/reagents/holder, created_volume)
+/datum/chemical_reaction/reagent_explosion/proc/do_explosion(datum/reagents/holder, created_volume)
 	var/turf/T = get_turf(holder.my_atom)
 	var/inside_msg
 	if(ismob(holder.my_atom))
@@ -23,6 +23,8 @@
 	e.start()
 	holder.clear_reagents()
 
+/datum/chemical_reaction/reagent_explosion/on_reaction(datum/reagents/holder, created_volume)
+	do_explosion()
 
 /datum/chemical_reaction/reagent_explosion/nitroglycerin
 	name = "Nitroglycerin"
@@ -163,7 +165,6 @@
 			R.stun(20)
 			R.reveal(100)
 			R.adjustHealth(50)
-		sleep(20)
 		for(var/mob/living/carbon/C in get_hearers_in_view(round(created_volume/48,1),get_turf(holder.my_atom)))
 			if(iscultist(C))
 				to_chat(C, "<span class='danger'>The divine explosion sears you!</span>")
@@ -189,8 +190,7 @@
 	mix_message = "<span class='boldannounce'>Sparks start flying around the gunpowder!</span>"
 
 /datum/chemical_reaction/reagent_explosion/gunpowder_explosion/on_reaction(datum/reagents/holder, created_volume)
-	sleep(rand(50,100))
-	..()
+	addtimer(CALLBACK(src, PROC_REF(do_explosion), holder, created_volume), rand(5 SECONDS, 10 SECONDS))
 
 /datum/chemical_reaction/thermite
 	name = "Thermite"
@@ -521,10 +521,12 @@
 	var/tesla_flags = TESLA_MOB_DAMAGE | TESLA_OBJ_DAMAGE | TESLA_MOB_STUN
 
 /datum/chemical_reaction/reagent_explosion/teslium_lightning/on_reaction(datum/reagents/holder, created_volume)
+	addtimer(CALLBACK(src, PROC_REF(do_explosion), holder, created_volume), 0.5 SECONDS)
+
+/datum/chemical_reaction/reagent_explosion/teslium_lightning/do_explosion(datum/reagents/holder, created_volume)
 	var/T1 = created_volume * 20		//100 units : Zap 3 times, with powers 2000/5000/12000. Tesla revolvers have a power of 10000 for comparison.
 	var/T2 = created_volume * 50
 	var/T3 = created_volume * 120
-	sleep(5)
 	if(created_volume >= 75)
 		tesla_zap(holder.my_atom, 7, T1, tesla_flags)
 		playsound(holder.my_atom, 'sound/blank.ogg', 50, TRUE)

@@ -472,7 +472,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					inserted_modify_id.assignment = t1
 					playsound(src, 'sound/blank.ogg', 50, FALSE)
 		if ("demote")
-			if(inserted_modify_id.assignment in head_subordinates || inserted_modify_id.assignment == "Assistant")
+			if((inserted_modify_id.assignment in head_subordinates) || inserted_modify_id.assignment == "Assistant")
 				inserted_modify_id.assignment = "Unassigned"
 				playsound(src, 'sound/blank.ogg', 50, FALSE)
 			else

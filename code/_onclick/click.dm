@@ -495,9 +495,9 @@
 	return
 
 /**
-  *Middle click
-  *Mainly used for swapping hands
-  */
+ *Middle click
+ *Mainly used for swapping hands
+ */
 /mob/proc/MiddleClickOn(atom/A, params)
 	. = SEND_SIGNAL(src, COMSIG_MOB_MIDDLECLICKON, A)
 	if(. & COMSIG_MOB_CANCEL_CLICKON)
@@ -512,7 +512,7 @@
 		return
 	if(user.get_active_held_item())
 		return
-	var/list/atomy = list()
+	var/list/obj/item/atomy = list()
 	var/list/atomcounts = list()
 	var/list/atomrefs = list()
 	var/list/overrides = list()

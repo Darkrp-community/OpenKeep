@@ -18,13 +18,16 @@
 /obj/item/chrono_eraser/proc/pass_mind(datum/mind/M)
 	erased_minds += M
 
+/obj/item/chrono_eraser/proc/delete_gun()
+	if(PA)
+		QDEL_NULL(PA)
+
 /obj/item/chrono_eraser/dropped()
 	..()
-	if(PA)
-		qdel(PA)
+	delete_gun()
 
 /obj/item/chrono_eraser/Destroy()
-	dropped()
+	delete_gun()
 	return ..()
 
 /obj/item/chrono_eraser/ui_action_click(mob/user)
@@ -32,7 +35,7 @@
 		var/mob/living/carbon/C = user
 		if(C.back == src)
 			if(PA)
-				qdel(PA)
+				QDEL_NULL(PA)
 			else
 				PA = new(src)
 				user.put_in_hands(PA)
