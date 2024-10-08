@@ -1604,6 +1604,13 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town)
+"bJq" = (
+/obj/machinery/light/rogue/wallfire/candle,
+/obj/structure/mannequin,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
+/area/rogue/indoors/town)
 "bJK" = (
 /obj/structure/mineral_door/wood/deadbolt,
 /turf/open/floor/rogue/cobblerock,
@@ -2875,6 +2882,7 @@
 /obj/item/roguekey/doctor,
 /obj/item/roguekey/butler,
 /obj/item/roguekey/elder,
+/obj/item/roguekey/veteran,
 /turf/open/floor/rogue/tile/tilerg,
 /area/rogue/indoors/town)
 "ddU" = (
@@ -11529,13 +11537,6 @@
 "mLp" = (
 /obj/structure/fluff/clodpile,
 /turf/open/floor/rogue/dirt,
-/area/rogue/indoors/town)
-"mLQ" = (
-/obj/machinery/light/rogue/wallfire/candle,
-/obj/structure/mannequin,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "weird1"
-	},
 /area/rogue/indoors/town)
 "mLW" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle{
@@ -55743,7 +55744,7 @@ iGv
 kjK
 pJn
 doE
-mLQ
+bJq
 bPQ
 waT
 lRI
