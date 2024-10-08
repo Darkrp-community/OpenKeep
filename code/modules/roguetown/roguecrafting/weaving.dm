@@ -138,9 +138,31 @@
 	result = list (/obj/item/clothing/suit/roguetown/armor/silkcoat)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/silk = 3,
-				/obj/item/natural/fur = 2)
+				/obj/item/natural/fur/gote = 2)
 	craftdiff = 5
 	sellprice = 60
+
+/datum/crafting_recipe/roguetown/weaving/silkcoat/two
+	reqs = list(/obj/item/natural/cloth = 1,
+				/obj/item/natural/silk = 3,
+				/obj/item/natural/fur/volf = 2)
+
+/datum/crafting_recipe/roguetown/weaving/silkcoat/three
+	reqs = list(/obj/item/natural/cloth = 1,
+				/obj/item/natural/silk = 3,
+				/obj/item/natural/fur/mole = 2)
+
+/datum/crafting_recipe/roguetown/weaving/silkcoat/four
+	reqs = list(/obj/item/natural/cloth = 1,
+				/obj/item/natural/silk = 3,
+				/obj/item/natural/fur/rous = 2)
+
+/datum/crafting_recipe/roguetown/weaving/paddedgambeson
+	name = "padded gambeson"
+	result = list(/obj/item/clothing/suit/roguetown/armor/gambeson/heavy)
+	reqs = list(/obj/item/natural/cloth = 6,
+				/obj/item/natural/fibers = 4)
+	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/weaving/armordress
 	name = "padded dress"

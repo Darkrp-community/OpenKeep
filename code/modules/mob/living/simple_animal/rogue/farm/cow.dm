@@ -7,39 +7,69 @@
 	icon_living = "cow"
 	icon_dead = "cow_dead"
 	icon_gib = "cow_gib"
+
+	animal_species = /mob/living/simple_animal/hostile/retaliate/rogue/bull
+	faction = list("cows")
 	gender = FEMALE
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	footstep_type = FOOTSTEP_MOB_SHOE
 	emote_hear = list("brays.")
 	emote_see = list("shakes its head.", "chews her cud.")
-	speak_chance = 1
-	turns_per_move = 5
-	see_in_dark = 6
-	move_to_delay = 8
-	animal_species = /mob/living/simple_animal/hostile/retaliate/rogue/bull
+
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 4,
+						/obj/item/natural/hide = 1,
+						/obj/item/alch/sinew = 1,
+						/obj/item/alch/bone = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 6,
 						/obj/item/natural/hide = 2,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	base_intents = list(/datum/intent/simple/headbutt)
-	health = 80
-	maxHealth = 80
-	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,/obj/item/reagent_containers/food/snacks/produce/oat)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 8,
+						/obj/item/natural/hide = 3,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
+
+	health = FEMALE_MOOBEAST_HEALTH
+	maxHealth = FEMALE_MOOBEAST_HEALTH
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,
+					/obj/item/reagent_containers/food/snacks/produce/oat,
+					/obj/item/reagent_containers/food/snacks/produce/turnip,
+					/obj/item/reagent_containers/food/snacks/produce/cabbage)
+	pooptype = /obj/item/natural/poo/cow
+	var/milkies = TRUE
 	tame_chance = 25
 	bonus_tame_chance = 15
-	footstep_type = FOOTSTEP_MOB_SHOE
-	pooptype = /obj/item/natural/poo/cow
-	milkies = TRUE
-	faction = list("cows")
-	attack_verb_continuous = "headbutts"
-	attack_verb_simple = "headbutt"
+
+	base_intents = list(/datum/intent/simple/headbutt)
+	attack_verb_continuous = "stomps"
+	attack_verb_simple = "stomps"
 	melee_damage_lower = 10
 	melee_damage_upper = 12
 	STASPD = 4
 	STACON = 4
 	STASTR = 4
-	childtype = list(/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet = 95, /mob/living/simple_animal/hostile/retaliate/rogue/cow/bullet = 5)
+	childtype = list(/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet = 95, 
+					/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet/bullet = 5)
 	remains_type = /obj/effect/decal/remains/cow
 
+
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/Initialize()
+	..()
+	if(milkies)
+		udder = new()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/Destroy()
+	qdel(udder)
+	udder = null
+	..()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/attackby(obj/item/O, mob/user, params)
+	if(!stat && istype(O, /obj/item/reagent_containers/glass))
+//		changeNext_move(20) // milking sound length
+		if(udder)
+			udder.milkAnimal(O, user)
+			return 1
+	else
+		return ..()
 
 /obj/effect/decal/remains/cow
 	name = "remains"
@@ -57,30 +87,6 @@
 			return pick('sound/vo/mobs/cow/death (1).ogg','sound/vo/mobs/cow/death (2).ogg')
 		if("idle")
 			return pick('sound/vo/mobs/cow/idle (1).ogg','sound/vo/mobs/cow/idle (2).ogg','sound/vo/mobs/cow/idle (3).ogg','sound/vo/mobs/cow/idle (4).ogg','sound/vo/mobs/cow/idle (5).ogg')
-
-
-/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet
-	name = "calf"
-	desc = "So cute!"
-	icon_state = "cowlet"
-	icon_living = "cowlet"
-	icon_dead = "cowlet_dead"
-	icon_gib = "cowlet_gib"
-	animal_species = null
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	base_intents = list(/datum/intent/simple/headbutt)
-	health = 20
-	pass_flags = PASSTABLE | PASSMOB
-	mob_size = MOB_SIZE_SMALL
-	maxHealth = 20
-	milkies = FALSE
-	melee_damage_lower = 1
-	melee_damage_upper = 6
-	STACON = 5
-	STASTR = 5
-	STASPD = 5
-	defprob = 50
-	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/cow
 
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/simple_limb_hit(zone)
@@ -128,7 +134,7 @@
 	if(!stat && M.used_intent.type == INTENT_DISARM && icon_state != icon_dead && !has_buckled_mobs())
 		M.visible_message("<span class='warning'>[M] tips over [src].</span>",
 			"<span class='notice'>I tip over [src].</span>")
-		to_chat(src, "<span class='danger'>I am tipped over by [M]!</span>")
+		to_chat(src, span_danger("I am tipped over by [M]!"))
 		Paralyze(60, ignore_canstun = TRUE)
 		icon_state = "[initial(icon_state)]_tip"
 		spawn(60)
@@ -136,6 +142,16 @@
 				icon_state = icon_living
 	else
 		..()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/Life()
+	. = ..()
+	if(.)
+		if(food > 0)
+			if(udder)
+				if(production > 0)
+					production--
+					udder.generateMilk()
+
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bull
 	icon = 'icons/roguetown/mob/monster/cow.dmi'
@@ -145,33 +161,39 @@
 	icon_living = "bull"
 	icon_dead = "bull_dead"
 	icon_gib = "bull_gib"
-	gender = MALE
+
+	faction = list("cows")
+	footstep_type = FOOTSTEP_MOB_SHOE
 	emote_hear = list("chews.")
 	emote_see = list("shakes his head.", "chews his cud.")
-	speak_chance = 1
-	turns_per_move = 5
-	see_in_dark = 6
-	move_to_delay = 8
-	base_intents = list(/datum/intent/simple/headbutt)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 6,
+
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 4,
+						/obj/item/alch/sinew = 1,
+						/obj/item/alch/bone = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 7,
+						/obj/item/natural/hide = 3,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	faction = list("cows")
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	attack_same = 0
-	attack_verb_continuous = "headbutts"
-	attack_verb_simple = "headbutt"
-	health = 150
-	maxHealth = 150
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 9,
+						/obj/item/natural/hide = 4,
+						/obj/item/alch/sinew = 2,
+						/obj/item/alch/bone = 1)
+
+	health = MALE_MOOBEAST_HEALTH
+	maxHealth = MALE_MOOBEAST_HEALTH
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,
+					/obj/item/reagent_containers/food/snacks/produce/oat,
+					/obj/item/reagent_containers/food/snacks/produce/turnip,
+					/obj/item/reagent_containers/food/snacks/produce/cabbage)
+	pooptype = /obj/item/natural/poo/cow
+
+	base_intents = list(/datum/intent/simple/headbutt)
+	attack_verb_continuous = "gores"
+	attack_verb_simple = "gores"
 	melee_damage_lower = 25
-	melee_damage_upper = 50
-	environment_smash = ENVIRONMENT_SMASH_NONE
+	melee_damage_upper = 45
 	retreat_distance = 0
 	minimum_distance = 0
-	milkies = FALSE
-	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,/obj/item/reagent_containers/food/snacks/produce/oat)
-	footstep_type = FOOTSTEP_MOB_SHOE
-	pooptype = /obj/item/natural/poo/cow
 	STACON = 20
 	STASTR = 12
 	STASPD = 2
@@ -194,7 +216,7 @@
 	GiveTarget(user)
 	return
 
-/mob/living/simple_animal/hostile/retaliate/bull/simple_limb_hit(zone)
+/mob/living/simple_animal/hostile/retaliate/rogue/bull/simple_limb_hit(zone)
 	if(!zone)
 		return ""
 	switch(zone)
@@ -234,30 +256,43 @@
 			return "foreleg"
 	return ..()
 
-/mob/living/simple_animal/hostile/retaliate/bull/taunted(mob/user)
-	Retaliate()
-	GiveTarget(user)
-	return
-
-/mob/living/simple_animal/hostile/retaliate/rogue/cow/bullet
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet
 	name = "calf"
-	desc = "So cute! Be careful of those horns, though."
-	gender = MALE
-	icon_state = "bullet"
-	icon_living = "bullet"
-	icon_dead = "bullet_dead"
-	icon_gib = "bullet_gib"
+	desc = "So cute!"
+	icon_state = "cowlet"
+	icon_living = "cowlet"
+	icon_dead = "cowlet_dead"
+	icon_gib = "cowlet_gib"
+
 	animal_species = null
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	base_intents = list(/datum/intent/simple/headbutt)
-	health = 20
-	maxHealth = 20
-	pass_flags = PASSTABLE | PASSMOB
 	mob_size = MOB_SIZE_SMALL
+	pass_flags = PASSTABLE | PASSMOB
+
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
+								/obj/item/natural/hide = 1)
+
+	health = CALF_HEALTH
+	maxHealth = CALF_HEALTH
 	milkies = FALSE
+
+	base_intents = list(/datum/intent/simple/headbutt)
 	melee_damage_lower = 1
 	melee_damage_upper = 6
 	STACON = 5
 	STASTR = 5
 	STASPD = 5
+	defprob = 50
+	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/cow
+
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet/bullet
+	desc = "So cute! Be careful of those horns, though."
+	icon_state = "bullet"
+	icon_living = "bullet"
+	icon_dead = "bullet_dead"
+	icon_gib = "bullet_gib"
+
+	gender = MALE
+
 	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/bull

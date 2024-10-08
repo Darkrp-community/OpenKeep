@@ -300,7 +300,10 @@
 	keys = list(/obj/item/roguekey/armorsmith, /obj/item/roguekey/blacksmith)
 
 /obj/item/keyring/mayor
-	keys = list(/obj/item/roguekey/garrison, /obj/item/roguekey/elder, /obj/item/roguekey/butcher, /obj/item/roguekey/soilson)
+	keys = list(/obj/item/roguekey/veteran, /obj/item/roguekey/garrison, /obj/item/roguekey/elder, /obj/item/roguekey/butcher, /obj/item/roguekey/soilson, /obj/item/roguekey/manor)
 
 /obj/item/keyring/doctor
 	keys = list(/obj/item/roguekey/doctor, /obj/item/roguekey/manor)
+
+/obj/item/keyring/veteran
+	keys = list(/obj/item/roguekey/veteran, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/elder, /obj/item/roguekey/butcher, /obj/item/roguekey/soilson)

@@ -44,7 +44,7 @@
 						repair_percent = 0
 				else
 					repair_percent = max(user.mind.get_skill_level(I.anvilrepair) * 0.03, 0.01)
-			
+
 			if(I.obj_integrity < I.max_integrity) // Gain experience only if you effectively repair the item
 				if(repair_percent)
 					repair_percent = repair_percent * I.max_integrity
@@ -197,3 +197,45 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	associated_skill = /datum/skill/combat/axesmaces
 	smeltresult = /obj/item/ingot/copper
+
+/obj/item/rogueweapon/hammer/sledgehammer
+	force = 15
+	force_wielded = 25
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
+	name = "sledgehammer"
+	desc = "It's almost asking to be put to work."
+	icon_state = "sledgehammer"
+	icon = 'icons/roguetown/weapons/32.dmi'
+	sharpness = IS_BLUNT
+	//dropshrink = 0.8
+	wlength = 10
+	wbalance = -1 // Heavy
+	gripsprite = TRUE
+	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
+	w_class = WEIGHT_CLASS_NORMAL
+	associated_skill = /datum/skill/combat/axesmaces
+	smeltresult = /obj/item/ingot/iron
+
+/obj/item/rogueweapon/hammer/sledgehammer/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -9,"sy" = 1,"nx" = 12,"ny" = 1,"wx" = -8,"wy" = 1,"ex" = 6,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 3,"sy" = 4,"nx" = -1,"ny" = 4,"wx" = -8,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/hammer/sledgehammer/war
+	force = 15
+	force_wielded = 30
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
+	name = "steel warhammer"
+	desc = "A heavy steel warhammer, a weapon designed to make knights run in fear, the best option for a common soldier against a knight."
+	icon_state = "warbonker"
+	icon = 'icons/roguetown/weapons/32.dmi'
+	max_integrity = 500
+	smeltresult = /obj/item/ingot/steel

@@ -284,6 +284,12 @@
 | Salted milk |
 \------------*/		// The base for making butter and cheese
 
+/datum/reagent/consumable/milk/gote
+	taste_description = "gote milk"
+
+/datum/reagent/consumable/milk/salted_gote
+	taste_description = "salty gote-milk"
+
 /datum/reagent/consumable/milk/salted
 	taste_description = "salty milk"
 
@@ -293,14 +299,18 @@
 		short_cooktime = (70 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
 		long_cooktime = (120 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/powder/salt))
-		if(!reagents.has_reagent(/datum/reagent/consumable/milk, 15))
+		if(!reagents.has_reagent(/datum/reagent/consumable/milk, 15) && !reagents.has_reagent(/datum/reagent/consumable/milk/gote, 15))
 			to_chat(user, "<span class='warning'>Not enough milk.</span>")
 			return
 		to_chat(user, "<span class='warning'>Adding salt to the milk.</span>")
 		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
 		if(do_after(user,2 SECONDS, target = src))
-			reagents.remove_reagent(/datum/reagent/consumable/milk, 15)
-			reagents.add_reagent(/datum/reagent/consumable/milk/salted, 15)		
+			if(reagents.has_reagent(/datum/reagent/consumable/milk, 15))
+				reagents.remove_reagent(/datum/reagent/consumable/milk, 15)
+				reagents.add_reagent(/datum/reagent/consumable/milk/salted, 15)
+			if(reagents.has_reagent(/datum/reagent/consumable/milk/gote, 15))
+				reagents.remove_reagent(/datum/reagent/consumable/milk/gote, 15)
+				reagents.add_reagent(/datum/reagent/consumable/milk/salted_gote, 15)
 			qdel(I)
 
 
@@ -314,15 +324,18 @@
 	if(user.mind)
 		long_cooktime = (200 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*20))	
 	if(istype(I, /obj/item/kitchen/spoon))
-		if(!reagents.has_reagent(/datum/reagent/consumable/milk/salted, 15))
+		if(!reagents.has_reagent(/datum/reagent/consumable/milk/salted, 15) && !reagents.has_reagent(/datum/reagent/consumable/milk/salted_gote, 15))
 			to_chat(user, "<span class='warning'>Not enough salted milk.</span>")
 			return
-		user.rogfat_add(70) // forgot rogfat is our lovely stamloss proc here
+		user.rogfat_add(40) // forgot rogfat is our lovely stamloss proc here
 		user.visible_message("<span class='info'>[user] churns butter...</span>")
 		playsound(get_turf(user), 'modular/Neu_Food/sound/churn.ogg', 100, TRUE, -1)
 		if(do_after(user,long_cooktime, target = src))
-			user.rogfat_add(60)
-			reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 15)
+			user.rogfat_add(50)
+			if(reagents.has_reagent(/datum/reagent/consumable/milk/salted, 15))
+				reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 15)
+			if(reagents.has_reagent(/datum/reagent/consumable/milk/salted_gote, 15))
+				reagents.remove_reagent(/datum/reagent/consumable/milk/salted_gote, 15)
 			new /obj/item/reagent_containers/food/snacks/butter(drop_location())
 			user.mind.adjust_experience(/datum/skill/craft/cooking, COMPLEX_COOKING_XPGAIN, FALSE)
 		return
@@ -388,6 +401,13 @@
 				reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 5)
 				user.mind.adjust_experience(/datum/skill/craft/cooking, COMPLEX_COOKING_XPGAIN, FALSE)
 				new /obj/item/reagent_containers/food/snacks/rogue/cheese(drop_location())
+		else if(reagents.has_reagent(/datum/reagent/consumable/milk/salted_gote, 5))
+			user.visible_message("<span class='info'>[user] strains fresh cheese...</span>")
+			playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
+			if(do_after(user,long_cooktime, target = src))
+				reagents.remove_reagent(/datum/reagent/consumable/milk/salted_gote, 5)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, COMPLEX_COOKING_XPGAIN, FALSE)
+				new /obj/item/reagent_containers/food/snacks/rogue/cheese/gote(drop_location())
 
 		var/obj/item/natural/cloth/T = I
 		if(T.wet && !T.return_blood_DNA())
@@ -469,7 +489,8 @@
 	name = "unfinished cheese wheel"
 	icon_state = "cheesewheel_3"
 	w_class = WEIGHT_CLASS_BULKY
-	var/mature_proc = .proc/maturing_done
+	var/mature_proc = PROC_REF(maturing_done)
+
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/cheesewheel_three/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
@@ -509,6 +530,9 @@
 	rotprocess = SHELFLIFE_DECENT
 	become_rot_type = null
 	slice_path = null
+
+/obj/item/reagent_containers/food/snacks/rogue/cheese/gote
+	name = "fresh gote cheese"
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddar
 	name = "wheel of cheese"

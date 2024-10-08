@@ -84,6 +84,7 @@
 	name = "spectral daemon"
 	color = "#c189cb"
 	alpha = 200
+
 /mob/living/simple_animal/hostile/rogue/demon/xylix/Initialize()
 	switch(pick(1,2,3))
 		if (1)
@@ -101,11 +102,13 @@
 			health = 18
 			melee_damage_lower = 9
 			melee_damage_upper = 25
+	return ..()
 
 /mob/living/simple_animal/hostile/rogue/haunt/xylix
 	name = "spectral daemon"
 	color = "#c189cb"
 	alpha = 200
+
 /mob/living/simple_animal/hostile/rogue/haunt/xylix/Initialize()
 	switch(pick(1,2,3))
 		if (1)
@@ -123,12 +126,14 @@
 			health = 28
 			melee_damage_lower = 8
 			melee_damage_upper = 19
+	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/gaseousform/xylix
 	name = "spectral daemon"
 	faction = list("undead")
 	color = "#c189cb"
 	alpha = 200
+
 /mob/living/simple_animal/hostile/retaliate/gaseousform/xylix/Initialize()
 	switch(pick(1,2,3))
 		if (1)
@@ -146,6 +151,7 @@
 			health = 50
 			melee_damage_lower = 4
 			melee_damage_upper = 16
+	return ..()
 
 
 /obj/structure/glowshroom/single/xylix
@@ -216,6 +222,7 @@
 			redstone_id = "xhutterA"
 		if (2)
 			redstone_id = "xhutterB"
+	return ..()
 
 /obj/effect/spawner/roguemap/xylixlabyrinth_frowny
 	icon = 'icons/mob/actions/roguespells.dmi'
@@ -618,7 +625,7 @@
 	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
 
 
-/*	..................   Traveltiles   ................... */ // these are the ones on centcomm, where the actual lair is
+/*	..................   Traveltiles   ................... */ // these are the ones on centcom, where the actual lair is
 /obj/structure/fluff/traveltile/bandit_lair
 	aportalid = "banditin"
 	aportalgoesto = "banditexit"
@@ -700,18 +707,18 @@
 
 /*	..................   More tables   ................... */
 /obj/structure/table/wood/reinf_long
-    icon_state = "tablewood_reinf"
+	icon_state = "tablewood_reinf"
 
 /obj/structure/table/wood/plain_alt
-    icon_state = "tablewood_plain"
+	icon_state = "tablewood_plain"
 
 /obj/structure/table/wood/large_new
-    icon_state = "alt_largetable_mid"
+	icon_state = "alt_largetable_mid"
 /obj/structure/table/wood/large/corner_new
-    icon_state = "alt_largetable"
+	icon_state = "alt_largetable"
 
 /obj/structure/table/wood/reinforced_alter
-    icon_state = "tablewood_alt"
+	icon_state = "tablewood_alt"
 
 /obj/structure/table/wood/nice/decorated
 	icon_state = "tablefine_alt"

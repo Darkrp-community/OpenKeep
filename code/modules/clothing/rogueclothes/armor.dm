@@ -334,10 +334,10 @@
 /obj/item/clothing/suit/roguetown/armor/armordress
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "padded dress"
-	desc = "A padded dress that is usually worn by the female nobility. Offers some protection against melee."
+	desc = "A padded dress that is usually worn by the female nobility. A sturdy but fashionable piece of apparel."
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|VITALS
 	icon_state = "armordress"
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_BLUNT)
 	blocksound = SOFTHIT
 	resistance_flags = FLAMMABLE
@@ -361,7 +361,7 @@
 	desc = "A full body suit made of various layers of interwoven cloth that is either worn as affordable armour on its own, or used as padding for metal armour. Slightly protects the wearer against cuts."
 	icon_state = "gambeson"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
-	armor = list("melee" = 20, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT)
 	resistance_flags = FLAMMABLE
 	blocksound = SOFTUNDERHIT
@@ -385,12 +385,12 @@
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	name = "padded gambeson"
-	desc = "A gambeson with additional padding layers, hardened to make it more durable. It still cannot compare to proper armor."
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	desc = "A gambeson with additional padding layers, hardened to make it more durable."
+	armor = list("melee" = 40, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	sellprice = 30
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dark
-	desc = "A gambeson with additional padding layers, hardened to make it more durable. It still cannot compare to proper armor. This one is black."
+	desc = "A gambeson with additional padding layers, hardened to make it more durable. This one is black."
 	color = "#383838"
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/lord
@@ -482,7 +482,19 @@
 	name = "leather vest"
 	icon_state = "leathervest"
 	item_state = "leathervest"
+	color = "#dfa590" // gives a slightly darker and reddish hue to contrast nicely with the leather pants.
+
+/obj/item/clothing/suit/roguetown/armor/leather/vest/jacket
+	name = "leather jacket"
+	icon_state = "leatherjacketo"
+	desc = "A padded leather jacket with buttons, is warm and durable for the daily work."
+	body_parts_covered = CHEST|VITALS|ARMS
 	color = null
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	allowed_sex = list(MALE, FEMALE)
+	allowed_race = list("human", "tiefling","elf", "half-elf", "dark elf", "aasimar", "dwarf")
+	sellprice = 10
+
 
 // Unique swashbuckler vest. Notice it doesn't cover arms.
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
@@ -617,7 +629,7 @@
 	max_integrity = 120
 	sellprice = 10
 
-obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
+/obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	name = "Orc Marauder Chain Vest"
 	icon_state = "orc_chainvest"
 	item_state = "orc_chainvest"
