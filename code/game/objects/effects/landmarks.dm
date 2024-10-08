@@ -729,5 +729,5 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/underworldcoin/Initialize(mapload)
 	SHOULD_CALL_PARENT(FALSE)
-	GLOB.underworldcoin += loc
+	GLOB.underworldcoinspawns += loc
 	return INITIALIZE_HINT_QDEL

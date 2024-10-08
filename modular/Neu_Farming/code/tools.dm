@@ -11,7 +11,7 @@
 	desc = "Crushes grain, or skulls."
 	icon_state = "thresher"
 //	icon = 'modular/Neu_Farming/icons/farmtools_big.dmi'	the stuff related to big sprite commented out below. Instead using normal sized one with backslot for ease of use.
-	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+	icon = 'icons/roguetown/weapons/64.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	sharpness = IS_BLUNT
 //	dropshrink = 0.9
@@ -32,7 +32,9 @@
 
 /obj/item/rogueweapon/thresher/military
 	force = 12
-	force_wielded = 24 
+	force_wielded = 25
+	possible_item_intents = list(MACE_STRIKE)
+	gripped_intents = list(/datum/intent/flailthresh,/datum/intent/flail/strike/long, /datum/intent/flail/strike/smash/long)
 	name = "military flail"
 	desc = "Crushes skulls, or grain."
 	icon_state = "military"
@@ -195,7 +197,7 @@
 	name = "sickle"
 	desc = "Rusted blade, worn handle, symbol of toil."
 	icon_state = "sickle"
-	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_SHARP
 	wlength = 10
 	slot_flags = ITEM_SLOT_HIP
@@ -226,7 +228,7 @@
 	name = "hoe"
 	desc = ""
 	icon_state = "hoe"
-	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+	icon = 'icons/roguetown/weapons/tools.dmi'
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
@@ -302,7 +304,7 @@
 			return
 		if(istype(T, /turf/open/floor/rogue/dirt))
 			playsound(T,'sound/items/dig_shovel.ogg', 100, TRUE)
-			if(do_after(user, 2 SECONDS, target = src))	
+			if(do_after(user, 2 SECONDS, target = src))
 				playsound(T,'sound/items/dig_shovel.ogg', 100, TRUE)
 				var/obj/structure/soil/soil = get_soil_on_turf(T)
 				if(soil)
@@ -334,10 +336,10 @@
 	name = "pitchfork"
 	desc = "Compost, chaff, hay, it matters not."
 	icon_state = "pitchfork"
-	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+	icon = 'icons/roguetown/weapons/64.dmi'
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = FALSE
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	minstr = 6
@@ -349,6 +351,19 @@
 	thrown_bclass = BCLASS_STAB
 	throwforce = 15
 
+/obj/item/rogueweapon/pitchfork/getonmobprop(tag) // better
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.7,"sx" = -7,"sy" = 0,"nx" = 8,"ny" = 0,"wx" = -5,"wy" = 0,"ex" = 0,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.7,"sx" = 3,"sy" = -4,"nx" = 3,"ny" = -3,"wx" = -4,"wy" = -4,"ex" = 2,"ey" = -4,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 45,"sturn" = 135,"wturn" = -45,"eturn" = 45,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+
+/*/
 /obj/item/rogueweapon/pitchfork/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -399,7 +414,7 @@
 "eflip" = 1)
 			if("onbelt")
 				return list("shrink" = 0.4,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-
+*/
 
 /datum/intent/pforkdump
 	name = "scoop"
