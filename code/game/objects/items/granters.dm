@@ -426,15 +426,15 @@
 	oneuse = FALSE
 	remarks = list("So that is how icing is made!", "Placing fruit on top? How simple...", "Huh layering cake seems harder then this...", "This book smells like candy", "A clown must have made this page, or they forgot to spell check it before printing...", "Wait, a way to cook slime to be safe?")
 
-//! --BLACKSTONE SCROLLS-- !/
-/obj/item/book/granter/spell/blackstone/
+//! --MAGICK SCROLLS-- !/
+/obj/item/book/granter/spell/magick/
 	desc = "A scroll of potential known only to those that can decipher its secrets."
 	icon = 'icons/roguetown/items/misc.dmi'
 	oneuse = TRUE
 	drop_sound = 'sound/foley/dropsound/paper_drop.ogg'
 	pickup_sound =  'sound/blank.ogg'
 
-/obj/item/book/granter/spell/blackstone/onlearned(mob/living/carbon/user)
+/obj/item/book/granter/spell/magick/onlearned(mob/living/carbon/user)
 	..()
 	if(oneuse == TRUE)
 		name = "siphoned scroll"
@@ -442,42 +442,42 @@
 		icon_state = "scroll"
 		user.visible_message(span_warning("[src] has had its magic ink ripped from the scroll!"))
 
-/obj/item/book/granter/spell/blackstone/fireball
+/obj/item/book/granter/spell/magick/fireball
 	name = "Scroll of Fireball"
 	spell = /obj/effect/proc_holder/spell/invoked/projectile/fireball
 	spellname = "fireball"
 	icon_state = "scrollred"
 	remarks = list("Ignis et oleum..", "Flammam continere ad momentum..", "Flammam iactare..", "Sit flamma constructum..")
 
-/obj/item/book/granter/spell/blackstone/greaterfireball
+/obj/item/book/granter/spell/magick/greaterfireball
 	name = "Scroll of Greater Fireball"
 	spell = /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater
 	spellname = "greater fireball"
 	icon_state = "scrolldarkred"
 	remarks = list("Ignis et oleum..", "Flammam continere ad momentum..", "Flammam iactare..", "Sit flamma constructum..")
 
-/obj/item/book/granter/spell/blackstone/lightning
+/obj/item/book/granter/spell/magick/lightning
 	name = "Scroll of Lightning"
 	spell = /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt
 	spellname = "lightning"
 	icon_state = "scrollyellow"
 	remarks = list("Essentia fulgurum digitorum..", "Fulgur de nubibus desuper..", "Fulgur eiecit digitos..", "Praecipe intus aedificatur..")
 
-/obj/item/book/granter/spell/blackstone/fetch
+/obj/item/book/granter/spell/magick/fetch
 	name = "Scroll of Fetch"
 	spell = /obj/effect/proc_holder/spell/invoked/projectile/fetch
 	spellname = "fetch"
 	icon_state = "scrollpurple"
 	remarks = list("Returnus Revico..", "Manus de reverti..", "Menus de returnus..")
 
-/obj/item/book/granter/spell/blackstone/blindness
+/obj/item/book/granter/spell/magick/blindness
 	name = "Scroll of Blindness"
 	spell = /obj/effect/proc_holder/spell/invoked/blindness
 	spellname = "blindness"
 	icon_state = "scrollpurple"
 	remarks = list("Occultare oculos..", "Vivus amoevtar..", "Visioner removan..")
 
-/obj/item/book/granter/spell/blackstone/invisibility
+/obj/item/book/granter/spell/magick/invisibility
 	name = "Scroll of Invisibility"
 	spell = /obj/effect/proc_holder/spell/invoked/invisibility
 	spellname = "invisibility"
