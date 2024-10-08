@@ -2763,7 +2763,7 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "yb" = (
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "yd" = (

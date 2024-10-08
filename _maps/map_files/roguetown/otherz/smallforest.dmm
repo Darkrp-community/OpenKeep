@@ -159,11 +159,11 @@
 /turf/open/chasm/jungle,
 /area/rogue/outdoors/woods)
 "aP" = (
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "aQ" = (
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "bc" = (

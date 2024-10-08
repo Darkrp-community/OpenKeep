@@ -6748,7 +6748,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "xe" = (
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "xf" = (

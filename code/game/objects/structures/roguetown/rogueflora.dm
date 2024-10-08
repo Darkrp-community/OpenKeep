@@ -138,7 +138,7 @@
 	icon_state = "screaming[rand(1,3)]"
 
 
-// Treestumps are now tables, so you can tablecraft with them and so on.
+/*	.............  Treestump   ................ */	// Treestumps are now tables, so you can tablecraft with them and so on.
 /obj/structure/table/wood/treestump
 	name = "tree stump"
 	desc = "Someone cut this tree down."
@@ -182,40 +182,31 @@
 	icon_state = "st[rand(1,2)]"
 
 
-/obj/structure/table/wood/ancientlog
-	name = "ancient log"
-	desc = "A felled piece of tree long forgotten, the poorman's table."
-	icon = 'icons/roguetown/misc/foliagetall.dmi'
-	icon_state = "log1"
-	max_integrity = 200
-	blade_dulling = DULLING_CUT
-	static_debris = list(/obj/item/grown/log/tree = 1)
-	pixel_x = -16
-	climb_offset = 14
-
-/obj/structure/table/wood/ancientlog/Initialize()
-	. = ..()
-	icon_state = "log[rand(1,2)]"
-
-
+/*	.............   Ancient log   ................ */	// Functionally a sofa, slightly better than sleeping on the ground
 /obj/structure/chair/bench/ancientlog
 	name = "ancient log"
-	desc = "A felled piece of tree long forgotten, the poorman's table."
+	desc = "A felled piece of tree long forgotten, the poorman's sofa."
 	icon = 'icons/roguetown/misc/foliagetall.dmi'
 	icon_state = "log1"
+	blade_dulling = DULLING_CUT
+	static_debris = list(/obj/item/grown/log/tree = 1)
 	max_integrity = 200
 	sleepy = 0.1
 	pixel_x = -14
 	pixel_y = 7
+	pass_flags = PASSTABLE
 
-/obj/structure/chair/bench/post_buckle_mob(mob/living/M)
-	..()
-	M.pixel_y = 4
+/obj/structure/chair/bench/ancientlog/Initialize()
+	. = ..()
+	icon_state = "log[rand(1,2)]"
 
-/obj/structure/chair/bench/post_unbuckle_mob(mob/living/M)
+/obj/structure/chair/bench/ancientlog/post_buckle_mob(mob/living/M)
 	..()
-	M.pixel_x = M.get_standard_pixel_x_offset(M.lying)
-	M.pixel_y = M.get_standard_pixel_y_offset(M.lying)
+	M.set_mob_offsets("bed_buckle", _x = 0, _y = 5)
+
+/obj/structure/chair/bench/ancientlog/post_unbuckle_mob(mob/living/M)
+	..()
+	M.reset_offsets("bed_buckle")
 
 
 //newbushes

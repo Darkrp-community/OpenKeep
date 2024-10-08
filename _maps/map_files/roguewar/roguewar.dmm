@@ -461,7 +461,7 @@
 /area/rogue)
 "oW" = (
 /obj/structure/flora/roguetree,
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt,
 /area/rogue)
 "pg" = (
@@ -742,7 +742,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue)
 "za" = (
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "zk" = (
@@ -769,7 +769,7 @@
 "zS" = (
 /obj/structure/flora/roguetree,
 /obj/structure/flora/roguetree,
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "zT" = (
@@ -1097,7 +1097,7 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "JZ" = (
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /obj/item/roguebin/water/gross,
 /area/rogue)
 "Kf" = (
@@ -1393,7 +1393,7 @@
 /area/rogue)
 "Uw" = (
 /obj/structure/flora/roguetree,
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "Uz" = (

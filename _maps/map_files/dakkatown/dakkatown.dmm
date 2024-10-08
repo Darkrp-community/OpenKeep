@@ -3885,7 +3885,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/dwarfin)
 "oN" = (
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "oO" = (
@@ -4919,7 +4919,7 @@
 /turf/closed/wall/mineral/rogue/pipe,
 /area/rogue/indoors/town/dwarfin)
 "sM" = (
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "sN" = (
@@ -6708,7 +6708,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "zK" = (
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "zL" = (

@@ -89,7 +89,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "aC" = (
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/water/swamp,
 /area/rogue/outdoors/woods)
 "aD" = (

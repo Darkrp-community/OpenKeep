@@ -3202,7 +3202,7 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/dwarfin)
 "lR" = (
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "lS" = (
@@ -3949,7 +3949,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "oL" = (
-/obj/structure/table/wood/ancientlog,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "oM" = (

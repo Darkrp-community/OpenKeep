@@ -16,7 +16,7 @@
 							/obj/structure/flora/roguegrass/bush = 12,
 							/obj/structure/flora/roguegrass/maneater = 0,
 							/obj/structure/flora/roguegrass = 23,
-							/obj/structure/table/wood/ancientlog = 20,
+							/obj/structure/chair/bench/ancientlog = 20,
 							/obj/item/natural/rock = 30,
 							/obj/item/natural/stone = 30,
 							/obj/structure/flora/roguegrass/swampweed = 30,
