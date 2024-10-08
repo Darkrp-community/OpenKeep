@@ -173,22 +173,23 @@
 			belt = /obj/item/storage/belt/rogue/leather/assassin
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 			pants = /obj/item/clothing/under/roguetown/trou
-			head = /obj/item/clothing/head/roguetown/armingcap
+			head = /obj/item/clothing/head/roguetown/strawhat
 			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			backr = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+			backr = /obj/item/rogueweapon/hoe
 			backl = /obj/item/storage/backpack/rogue/satchel
 			neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 			armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
-			mouth = /obj/item/rogueweapon/huntingknife
+			beltl = /obj/item/rogueweapon/sickle
 			beltr = /obj/item/flint
+			var/obj/item/rogueweapon/pitchfork/P = new()
+			H.put_in_hands(P, forced = TRUE)
 			if(H.gender == FEMALE)
+				head = /obj/item/clothing/head/roguetown/armingcap
 				armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 				shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 				pants = null
-			backpack_contents = list(/obj/item/neuFarm/seed/wheat=1,/obj/item/neuFarm/seed/apple=1,/obj/item/ash=1)
-			beltl = /obj/item/rogueweapon/sickle
-			backr = /obj/item/rogueweapon/pitchfork
+			backpack_contents = list(/obj/item/neuFarm/seed/wheat=1,/obj/item/neuFarm/seed/apple=1,/obj/item/ash=1,/obj/item/rogueweapon/huntingknife/villager=1)
 		if("Woodcutter")
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE) //Use the axe...
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, -2, TRUE)

@@ -110,7 +110,7 @@
 	if(!target)
 		var/escape_path
 		for(var/obj/structure/flora/RT in view(6, src))
-			if(istype(RT,/obj/structure/flora/roguetree/stump))
+			if(istype(RT,/obj/structure/table/wood/treestump))
 				continue
 			if(istype(RT,/obj/structure/flora/roguetree))
 				escape_path = RT
