@@ -151,6 +151,7 @@
 /datum/component/storage/proc/update_actions()
 	QDEL_NULL(modeswitch_action)
 	return
+/*
 	if(!isitem(parent) || !allow_quick_gather)
 		return
 	var/obj/item/I = parent
@@ -161,6 +162,7 @@
 		if(!istype(M))
 			return
 		modeswitch_action.Grant(M)
+*/
 
 /datum/component/storage/proc/change_master(datum/component/storage/concrete/new_master)
 	if(new_master == src || (!isnull(new_master) && !istype(new_master)))
@@ -324,8 +326,8 @@
 //		if(I.loc != real_location)
 //			continue
 		remove_from_storage(I, T)
-		I.pixel_x = initial(I.pixel_x) += rand(-10,10)
-		I.pixel_y = initial(I.pixel_y) += rand(-10,10)
+		I.pixel_x = initial(I.pixel_x) + rand(-10,10)
+		I.pixel_y = initial(I.pixel_y) + rand(-10,10)
 //		if(trigger_on_found && I.on_found())
 //			return FALSE
 
@@ -337,8 +339,8 @@
 			testing("debugbag5 [I]")
 			continue
 		remove_from_storage(I, target)
-		I.pixel_x = initial(I.pixel_x) += rand(-10,10)
-		I.pixel_y = initial(I.pixel_y) += rand(-10,10)
+		I.pixel_x = initial(I.pixel_x) + rand(-10,10)
+		I.pixel_y = initial(I.pixel_y) + rand(-10,10)
 		if(trigger_on_found && I.on_found())
 			testing("debugbag6 [I]")
 			return FALSE

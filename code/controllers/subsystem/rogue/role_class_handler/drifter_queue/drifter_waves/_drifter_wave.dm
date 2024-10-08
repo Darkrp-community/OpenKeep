@@ -55,7 +55,7 @@
 	var/forced_class_bypass_reqs = TRUE
 
 /*
- 	How many times we are going to plusboost the forced classes
+	How many times we are going to plusboost the forced classes
 	EX: forced_class_plusboost = 2
 */
 	var/forced_class_plusboost

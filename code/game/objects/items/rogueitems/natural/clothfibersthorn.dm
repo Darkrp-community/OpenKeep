@@ -112,7 +112,7 @@
 /obj/item/natural/cloth/examine(mob/user)
 	. = ..()
 	if(wet)
-		. += "<span class='notice'>It's wet!</span>"
+		. += span_notice("It's wet!")
 
 /obj/item/natural/cloth/bandit
 	color = "#ff0000"
@@ -122,7 +122,7 @@
 /obj/item/natural/cloth/attack_obj(obj/O, mob/living/user)
 	testing("attackobj")
 	if(user.client && ((O in user.client.screen) && !user.is_holding(O)))
-		to_chat(user, "<span class='warning'>I need to take that [O.name] off before cleaning it!</span>")
+		to_chat(user, span_warning("I need to take that [O.name] off before cleaning it!"))
 		return
 	if(istype(O, /obj/effect/decal/cleanable))
 		var/cleanme = TRUE
@@ -132,14 +132,14 @@
 			add_blood_DNA(O.return_blood_DNA())
 		if(prob(40 + (wet*10)) && cleanme)
 			wet = max(wet-0.50, 0)
-			user.visible_message("<span class='notice'>[user] wipes \the [O.name] with [src].</span>", "<span class='notice'>I wipe \the [O.name] with [src].</span>")
+			user.visible_message(span_info("[user] wipes \the [O.name] with [src]."), span_info("I wipe \the [O.name] with [src]."))
 			qdel(O)
 		else
-			user.visible_message("<span class='warning'>[user] wipes \the [O.name] with [src].</span>", "<span class='warning'>I wipe \the [O.name] with [src].</span>")
+			user.visible_message(span_warning("[user] wipes \the [O.name] with [src]."), span_warning("I wipe \the [O.name] with [src]."))
 		playsound(user, "clothwipe", 100, TRUE)
 	else
 		if(prob(40 + (wet*10)))
-			user.visible_message("<span class='notice'>[user] wipes \the [O.name] with [src].</span>", "<span class='notice'>I wipe \the [O.name] with [src].</span>")
+			user.visible_message(span_info("[user] wipes \the [O.name] with [src]."), span_info("I wipe \the [O.name] with [src]."))
 
 			if(O.return_blood_DNA())
 				add_blood_DNA(O.return_blood_DNA())
@@ -150,21 +150,17 @@
 			else
 				SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRONG)
 			wet = max(wet-0.50, 0)
-		else
-			user.visible_message("<span class='warning'>[user] wipes \the [O.name] with [src].</span>", "<span class='warning'>I wipe \the [O.name] with [src].</span>")
 		playsound(user, "clothwipe", 100, TRUE)
 
 /obj/item/natural/cloth/attack_turf(turf/T, mob/living/user)
 	if(istype(T, /turf/open/water))
 		return ..()
 	if(prob(40 + (wet*10)))
-		user.visible_message("<span class='notice'>[user] wipes \the [T.name] with [src].</span>", "<span class='notice'>I wipe \the [T.name] with [src].</span>")
+		user.visible_message(span_notice("[user] wipes \the [T.name] with [src]."), span_notice("I wipe \the [T.name] with [src]."))
 		if(wet)
 			for(var/obj/effect/decal/cleanable/C in T)
 				qdel(C)
 			wet = max(wet-0.50, 0)
-	else
-		user.visible_message("<span class='warning'>[user] wipes \the [T.name] with [src].</span>", "<span class='warning'>I wipe \the [T.name] with [src].</span>")
 	playsound(user, "clothwipe", 100, TRUE)
 
 

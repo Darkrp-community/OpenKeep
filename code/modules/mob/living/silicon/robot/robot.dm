@@ -144,7 +144,7 @@
 		mmi.brainmob.container = mmi
 		mmi.update_icon()
 
-	updatename()
+	INVOKE_ASYNC(src, PROC_REF(updatename))
 
 	playsound(loc, 'sound/blank.ogg', 75, TRUE)
 	aicamera = new/obj/item/camera/siliconcam/robot_camera(src)
@@ -769,7 +769,7 @@
 
 /mob/living/silicon/robot/modules/Initialize()
 	. = ..()
-	module.transform_to(set_module)
+	INVOKE_ASYNC(module, TYPE_PROC_REF(/obj/item/robot_module, transform_to), set_module)
 
 /mob/living/silicon/robot/modules/standard
 	set_module = /obj/item/robot_module/standard

@@ -308,7 +308,7 @@
 	onclose(user, "mob[REF(src)]")
 
 /mob/living/carbon/fall(forced)
-    loc.handle_fall(src, forced)//it's loc so it doesn't call the mob's handle_fall which does nothing
+	loc.handle_fall(src, forced)//it's loc so it doesn't call the mob's handle_fall which does nothing
 
 /mob/living/carbon/is_muzzled()
 	return(istype(src.wear_mask, /obj/item/clothing/mask/muzzle))
@@ -550,6 +550,10 @@
 	nausea = clamp(nausea + amt, 0, 300)
 
 /mob/living/carbon/proc/handle_nausea()
+	if(HAS_TRAIT(src, TRAIT_ROTMAN))
+		return TRUE
+	if(stat == DEAD)
+		return TRUE
 	if(nausea >= 100)
 		if(mob_timers["puke"])
 			if(world.time > mob_timers["puke"] + 16 SECONDS)
@@ -986,7 +990,7 @@
 		return
 	if(stat != DEAD)
 		if(health <= HEALTH_THRESHOLD_DEAD && !HAS_TRAIT(src, TRAIT_NODEATH))
-			emote("deathgurgle")
+			INVOKE_ASYNC(src, PROC_REF(emote), "deathgurgle")
 			death()
 			cure_blind(UNCONSCIOUS_BLIND)
 			return

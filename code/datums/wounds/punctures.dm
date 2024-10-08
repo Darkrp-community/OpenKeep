@@ -8,8 +8,8 @@
 	sewn_clotting_rate = 0.01
 	clotting_threshold = 0.2
 	sewn_clotting_threshold = 0.1
-	woundpain = 0
-	sewn_woundpain = 0
+	woundpain = 6
+	sewn_woundpain = 3
 	sew_threshold = 75
 	mob_overlay = "cut"
 	can_sew = TRUE
@@ -25,6 +25,8 @@
 	sewn_clotting_rate = 0.01
 	clotting_threshold = 0.1
 	sewn_clotting_threshold = 0.1
+	woundpain = 3
+	sewn_woundpain = 1
 	sew_threshold = 35
 
 /datum/wound/puncture/large
@@ -37,6 +39,8 @@
 	sewn_clotting_rate = 0.01
 	clotting_threshold = 0.5
 	sewn_clotting_threshold = 0.25
+	woundpain = 15
+	sewn_woundpain = 8
 	sew_threshold = 100
 
 /datum/wound/puncture/drilling
@@ -49,6 +53,8 @@
 	sewn_bleed_rate = 0.1
 	clotting_rate = null
 	clotting_threshold = null
+	woundpain = 15
+	sewn_woundpain = 8
 	sew_threshold = 100
 	passive_healing = 0
 	sleep_healing = 0

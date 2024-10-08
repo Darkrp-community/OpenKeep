@@ -10,11 +10,12 @@
 
 /obj/item/clothing/head/helmet/space/chronos/dropped()
 	if(suit)
-		suit.deactivate(1, 1)
+		suit.deactivate(TRUE, TRUE)
 	..()
 
 /obj/item/clothing/head/helmet/space/chronos/Destroy()
-	dropped()
+	suit?.deactivate(TRUE, TRUE)
+	suit = null
 	return ..()
 
 
@@ -59,12 +60,14 @@
 			deactivate()
 
 /obj/item/clothing/suit/space/chronos/dropped()
-	if(activated)
-		deactivate()
+	deactivate()
 	..()
 
 /obj/item/clothing/suit/space/chronos/Destroy()
-	dropped()
+	deactivate(force = TRUE)
+	helmet = null
+	QDEL_NULL(camera)
+	QDEL_NULL(teleport_now)
 	return ..()
 
 /obj/item/clothing/suit/space/chronos/emp_act(severity)
@@ -209,36 +212,37 @@
 		activating = 0
 
 /obj/item/clothing/suit/space/chronos/proc/deactivate(force = 0, silent = FALSE)
-	if(activated && (!teleporting || force))
-		activating = 1
-		var/mob/living/carbon/human/user = src.loc
-		var/hard_landing = teleporting && force
-		REMOVE_TRAIT(src, TRAIT_NODROP, CHRONOSUIT_TRAIT)
-		cooldown = world.time + cooldowntime * 1.5
-		activated = 0
-		activating = 0
-		finish_chronowalk()
-		if(user && ishuman(user))
-			teleport_now.Remove(user)
-			if(user.wear_armor == src)
-				if(hard_landing)
-					user.electrocute_act(35, src, flags = SHOCK_NOGLOVES)
-					user.Paralyze(200)
-				if(!silent)
-					to_chat(user, "\nroot@ChronosuitMK4# chronowalk4 --stop\n")
-					if(camera)
-						to_chat(user, "\[ <span style='color: #ff5500;'>ok</span> \] Sending TERM signal to chronowalk4-view")
-					if(helmet)
-						to_chat(user, "\[ <span style='color: #ff5500;'>ok</span> \] Stopping ui display driver")
-						to_chat(user, "\[ <span style='color: #ff5500;'>ok</span> \] Stopping brainwave scanner")
-						to_chat(user, "\[ <span style='color: #ff5500;'>ok</span> \] Unmounting /dev/helmet")
-					to_chat(user, "logout")
-		if(helmet)
-			REMOVE_TRAIT(helmet, TRAIT_NODROP, CHRONOSUIT_TRAIT)
-			helmet.suit = null
-			helmet = null
-		if(camera)
-			QDEL_NULL(camera)
+	if(!activated || (teleporting && !force))
+		return
+	activating = 1
+	var/mob/living/carbon/human/user = src.loc
+	var/hard_landing = teleporting && force
+	REMOVE_TRAIT(src, TRAIT_NODROP, CHRONOSUIT_TRAIT)
+	cooldown = world.time + cooldowntime * 1.5
+	activated = 0
+	activating = 0
+	finish_chronowalk()
+	if(user && ishuman(user))
+		teleport_now.Remove(user)
+		if(user.wear_armor == src)
+			if(hard_landing)
+				user.electrocute_act(35, src, flags = SHOCK_NOGLOVES)
+				user.Paralyze(200)
+			if(!silent)
+				to_chat(user, "\nroot@ChronosuitMK4# chronowalk4 --stop\n")
+				if(camera)
+					to_chat(user, "\[ <span style='color: #ff5500;'>ok</span> \] Sending TERM signal to chronowalk4-view")
+				if(helmet)
+					to_chat(user, "\[ <span style='color: #ff5500;'>ok</span> \] Stopping ui display driver")
+					to_chat(user, "\[ <span style='color: #ff5500;'>ok</span> \] Stopping brainwave scanner")
+					to_chat(user, "\[ <span style='color: #ff5500;'>ok</span> \] Unmounting /dev/helmet")
+				to_chat(user, "logout")
+	if(helmet)
+		REMOVE_TRAIT(helmet, TRAIT_NODROP, CHRONOSUIT_TRAIT)
+		helmet.suit = null
+		helmet = null
+	if(camera)
+		QDEL_NULL(camera)
 
 /obj/effect/chronos_cam
 	name = "Chronosuit View"
@@ -252,6 +256,12 @@
 	var/phase_time_length = 3
 	var/atom/movable/screen/chronos_target/target_ui
 	var/obj/item/clothing/suit/space/chronos/chronosuit
+
+/obj/effect/chronos_cam/Destroy()
+	holder = null
+	chronosuit = null
+	QDEL_NULL(target_ui)
+	return ..()
 
 /obj/effect/chronos_cam/singularity_act()
 	return
@@ -329,6 +339,10 @@
 	button_icon_state = "chrono_phase"
 	check_flags = AB_CHECK_CONSCIOUS //|AB_CHECK_INSIDE
 	var/obj/item/clothing/suit/space/chronos/chronosuit = null
+
+/datum/action/innate/chrono_teleport/Destroy()
+	chronosuit = null
+	return ..()
 
 /datum/action/innate/chrono_teleport/IsAvailable()
 	return (chronosuit && chronosuit.activated && chronosuit.camera && !chronosuit.teleporting)
