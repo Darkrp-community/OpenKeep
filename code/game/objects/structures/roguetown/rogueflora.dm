@@ -663,6 +663,7 @@
 	debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1)
 	var/prob2findstuff = 20	// base % to find any useful thing in the bush, gets modded by perception
 	var/prob2findgoodie = 20	// base % to find good stuff in the bush, gets modded by fortune and perception
+	var/luckydouble
 	var/islooted = FALSE
 	var/tobacco
 	var/berries
@@ -700,6 +701,7 @@
 	playsound(src.loc, "plantcross", 80, FALSE, -1)
 	prob2findstuff = prob2findstuff + ( user.STAPER * 4 )
 	prob2findgoodie = prob2findgoodie + ( user.STALUC * 2 ) + ( user.STAPER * 2 )
+	luckydouble = (user.STALUC)
 	user.visible_message(span_small("[user] searches through [src]."))
 
 	if(do_after(L, rand(5,20), target = src))
@@ -716,8 +718,11 @@
 					B = new B(user.loc)
 					user.put_in_hands(B)
 					user.visible_message(span_notice("[user] finds [B] in [src]."))
-					islooted = TRUE
-					add_overlay("bush_empty_overlay")
+					if(prob(luckydouble))
+						return
+					else
+						islooted = TRUE
+						add_overlay("bush_empty_overlay")
 					return
 			else
 				var/obj/item/B = trashie
@@ -725,8 +730,11 @@
 					B = new B(user.loc)
 					user.put_in_hands(B)
 					user.visible_message(span_notice("[user] finds [B] in [src]."))
-					islooted = TRUE
-					add_overlay("bush_empty_overlay")
+					if(prob(luckydouble))
+						return
+					else
+						islooted = TRUE
+						add_overlay("bush_empty_overlay")
 					return
 
 		else
