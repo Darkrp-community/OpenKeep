@@ -34,12 +34,11 @@
 		H.become_blind("advsetup")
 
 /datum/outfit/job/roguetown/squire
+	H.virginity = TRUE
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	pants = /obj/item/clothing/under/roguetown/tights
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
-
-	H.virginity = TRUE
 	if(H.gender == MALE && H.dna?.species)
 		H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
 
