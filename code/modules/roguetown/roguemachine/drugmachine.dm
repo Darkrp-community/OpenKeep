@@ -79,7 +79,7 @@
 			var/obj/structure/roguemachine/drug_chute/E = locate() in T
 			if(!E)
 				continue
-			accepted_items = list(/obj/item/reagent_containers/powder/spice, /obj/item/reagent_containers/powder/ozium, /obj/item/reagent_containers/powder/moondust)
+			accepted_items = list(/obj/item/reagent_containers/powder/spice, /obj/item/reagent_containers/powder/ozium, /obj/item/reagent_containers/powder/moondust, /obj/item/reagent_containers/powder/moondust_purest, /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried, /obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed)
 			for(var/obj/I in T)
 				if(I.anchored)
 					continue
@@ -87,7 +87,7 @@
 					continue
 				if(!(I.type in accepted_items))
 					continue
-				var/prize = I.get_real_price() * 5 // Increase price by 500% Keep in mind drug sell prices are pretty cheap.
+				var/prize = I.get_real_price() * 5 // Increase price by 500% Keep in mind drug sell prices are pretty cheap to encourage more trade with the baths, also drugs are expensive.
 				if(prize >= 1)
 					play_sound=TRUE
 					budgie += prize
