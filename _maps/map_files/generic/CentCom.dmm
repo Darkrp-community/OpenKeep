@@ -729,8 +729,6 @@
 /area/rogue/indoors/vampire_manor)
 "bQ" = (
 /obj/structure/bookcase,
-/obj/item/book/rogue/magicaltheory,
-/obj/item/book/rogue/arcyne,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -812,8 +810,6 @@
 /area/rogue/indoors/vampire_manor)
 "ca" = (
 /obj/structure/bookcase,
-/obj/item/book/rogue/manners,
-/obj/item/book/rogue/sword,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/vampire_manor)
 "cb" = (
@@ -898,8 +894,6 @@
 /area/rogue/indoors/vampire_manor)
 "cp" = (
 /obj/structure/bookcase,
-/obj/item/book/rogue/fishing,
-/obj/item/book/rogue/cardgame,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/vampire_manor)
 "cq" = (
@@ -1332,8 +1326,6 @@
 /area/rogue/outdoors/woods)
 "dN" = (
 /obj/structure/bookcase,
-/obj/item/book/rogue/tales1,
-/obj/item/book/rogue/godofdreamsandnightmares,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/vampire_manor)
 "dO" = (
@@ -4557,12 +4549,6 @@
 /obj/machinery/light/rogue/hearth,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/bandit_lair)
-"Yt" = (
-/obj/structure/bookcase,
-/obj/item/book/rogue/nitebeast,
-/obj/item/book/rogue/yeoldecookingmanual,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/vampire_manor)
 "Yv" = (
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt/road,
@@ -11649,7 +11635,7 @@ yE
 cJ
 Ba
 Ba
-Yt
+dN
 yE
 yE
 yE
