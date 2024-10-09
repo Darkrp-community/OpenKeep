@@ -287,7 +287,7 @@
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 60
-	for(var/X in list(/obj/item/roguekey/houses/house5,/obj/item/roguekey/houses/house6))
+	for(var/X in list(/obj/item/roguekey/houses/house5,/obj/item/roguekey/houses/house6,/obj/item/roguekey/houses/house7,/obj/item/roguekey/houses/house8))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
