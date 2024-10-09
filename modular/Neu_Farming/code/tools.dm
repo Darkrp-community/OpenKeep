@@ -309,7 +309,7 @@
 	inhand_y_dimension = 64
 	bigboy = TRUE
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = FALSE
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	minstr = 6

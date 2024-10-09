@@ -28,7 +28,7 @@
 	pants = /obj/item/clothing/under/roguetown/trou
 
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueore/coal=1, /obj/item/rogueore/iron=1, /obj/item/rogueweapon/huntingknife/villager)
+	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueore/coal=1, /obj/item/rogueore/iron=1, /obj/item/rogueweapon/huntingknife/villager = 1)
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
