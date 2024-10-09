@@ -1433,7 +1433,7 @@
 	dir = 1;
 	icon_state = "largetable_mid"
 	},
-/mob/living/simple_animal/pet/cat/black,
+/mob/living/simple_animal/pet/cat/rogue/black,
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/vampire_manor)
 "eU" = (
@@ -1839,7 +1839,7 @@
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/indoors/bandit_lair)
 "mx" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog/inhumen_camp)
 "mO" = (
@@ -2763,7 +2763,7 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "yb" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "yd" = (
@@ -3168,7 +3168,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "Fs" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /obj/item/flashlight/flare/torch,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog/inhumen_camp)

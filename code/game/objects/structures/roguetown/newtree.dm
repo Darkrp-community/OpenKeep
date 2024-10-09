@@ -175,8 +175,8 @@
 		for(var/obj/structure/flora/newleaf/LEAF in DIA)
 			LEAF.obj_destruction(damage_type)
 
-	if(!istype(NT, /turf/open/transparent/openspace) && !(locate(/obj/structure/flora/roguetree/stump) in NT))//if i don't add the stump check it spawns however many zlevels it goes up because of src recursion
-		new /obj/structure/flora/roguetree/stump(NT)
+	if(!istype(NT, /turf/open/transparent/openspace) && !(locate(/obj/structure/table/wood/treestump) in NT))//if i don't add the stump check it spawns however many zlevels it goes up because of src recursion
+		new /obj/structure/table/wood/treestump(NT)
 	playsound(src, 'sound/misc/treefall.ogg', 100, FALSE)
 
 /obj/structure/flora/newtree/proc/build_trees()

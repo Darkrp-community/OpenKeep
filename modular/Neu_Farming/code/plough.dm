@@ -1,7 +1,8 @@
 /obj/structure/plough
 	name = "plough"
 	desc = "A wooden plough with iron blades to till the earth for crops."
-	icon = 'modular/Neu_Farming/icons/plough.dmi'
+	icon = 'modular/Neu_Farming/icons/plough_big.dmi'
+//	icon = 'modular/Neu_Farming/icons/plough.dmi'
 	icon_state = "plough"
 	density = TRUE
 	max_integrity = 600
@@ -9,6 +10,7 @@
 	climbable = FALSE
 	facepull = FALSE
 	drag_slowdown = 6
+	pixel_x = -8
 
 /obj/structure/plough/Moved(oldLoc, movement_dir)
 	. = ..()
