@@ -18010,7 +18010,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/rtfield)
 "twR" = (
-/mob/living/simple_animal/pet/cat/inn,
+/mob/living/simple_animal/pet/cat/rogue/inn,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "txr" = (
@@ -20410,7 +20410,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town)
 "wqe" = (
-/mob/living/simple_animal/pet/cat/black{
+/mob/living/simple_animal/pet/cat/rogue/black{
 	name = "Morticia"
 	},
 /turf/open/floor/rogue/cobblerock,
