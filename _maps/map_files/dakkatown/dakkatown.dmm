@@ -3885,7 +3885,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/dwarfin)
 "oN" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "oO" = (
@@ -4230,7 +4230,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/church)
 "pY" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "pZ" = (
@@ -4919,7 +4919,7 @@
 /turf/closed/wall/mineral/rogue/pipe,
 /area/rogue/indoors/town/dwarfin)
 "sM" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "sN" = (
@@ -6708,7 +6708,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "zK" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "zL" = (
@@ -9948,7 +9948,7 @@
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/indoors/town/dwarfin)
 "LX" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "LY" = (
@@ -13067,7 +13067,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "XH" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "XI" = (
@@ -13679,7 +13679,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "ZQ" = (
-/mob/living/simple_animal/pet/cat/inn{
+/mob/living/simple_animal/pet/cat/rogue/inn{
 	dir = 4
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,

@@ -672,13 +672,13 @@
 	if(SSticker.current_state == GAME_STATE_PREGAME || SSticker.current_state == GAME_STATE_STARTUP)
 		if(alert("Enter Manual Gamemode Selection? Will disable random generation",,"Yes","No") == "Yes")
 			for(var/I in 1 to 10)
-				var/choice = input(usr, "Select Gamemodes", "Select Gamemodes") as anything in roguegamemodes|null
+				var/choice = input(usr, "Select Gamemodes", "Select Gamemodes") as anything in GLOB.roguegamemodes|null
 				if(!choice || choice == "CANCEL")
 					message_admins("<font color='blue'>\
 						[usr.key] has forced the gamemode.</font>")
 					return
 				SSticker.manualmodes |= choice
-				roguegamemodes -= choice		
+				GLOB.roguegamemodes -= choice		
 	else
 		to_chat(usr, "<font color='red'>Error: Force Modes: Game has already started.</font>")
 
