@@ -9082,10 +9082,13 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "jPO" = (
-/obj/machinery/light/rogue/torchholder/l{
-	dir = 8
+/obj/structure/fluff/walldeco/customflag{
+	pixel_y = 32
 	},
-/turf/open/floor/rogue/dirt/road,
+/obj/effect/decal/cobbleedge{
+	dir = 6
+	},
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "jPP" = (
 /obj/structure/chair/wood/rogue{
@@ -11576,11 +11579,10 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town)
 "mva" = (
-/obj/effect/decal/cobbleedge{
-	dir = 10
+/obj/machinery/light/rogue/torchholder/l{
+	dir = 8
 	},
-/obj/machinery/light/rogue/torchholder/c,
-/turf/open/floor/rogue/cobblerock,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "mvz" = (
 /obj/structure/closet/crate/roguecloset,
@@ -16305,9 +16307,6 @@
 "rHL" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors/town/church/chapel)
-"rHW" = (
-/turf/closed/wall/mineral/rogue/craftstone,
-/area/rogue/outdoors/town/roofs)
 "rIl" = (
 /obj/structure/fluff/railing/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -18153,12 +18152,10 @@
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/garrison)
 "tFq" = (
-/obj/structure/fluff/walldeco/customflag{
-	pixel_y = 32
-	},
 /obj/effect/decal/cobbleedge{
-	dir = 6
+	dir = 10
 	},
+/obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "tFu" = (
@@ -59509,7 +59506,7 @@ doE
 oQn
 ptQ
 waT
-mva
+tFq
 pJn
 mbj
 xqr
@@ -59518,7 +59515,7 @@ aif
 aDo
 mbj
 xqr
-tFq
+jPO
 uEE
 hvn
 cyk
@@ -61084,7 +61081,7 @@ pJn
 gog
 gog
 gog
-jPO
+mva
 gog
 gog
 sxT
@@ -108559,7 +108556,7 @@ ouw
 ouw
 ouw
 qhb
-rHW
+qhb
 ouw
 ouw
 ouw
@@ -108716,8 +108713,8 @@ ouw
 ouw
 ouw
 qhb
-rHW
-rHW
+qhb
+qhb
 qhb
 qhb
 qhb
