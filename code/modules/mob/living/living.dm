@@ -195,7 +195,7 @@
 		if(isliving(M))
 			var/sprint_distance = sprinted_tiles
 			toggle_rogmove_intent(MOVE_INTENT_WALK, TRUE)
-			
+
 			var/mob/living/L = M
 
 			var/self_points = FLOOR((STACON + STASTR + mind.get_skill_level(/datum/skill/misc/athletics))/2, 1)
@@ -833,7 +833,7 @@
 			L.visible_message("<span class='warning'>[L] trips over [src]!</span>","<span class='warning'>I trip over [src]!</span>")
 			L.Knockdown(10)
 			L.Immobilize(20)
-			
+
 
 
 //proc used to completely heal a mob.
@@ -1255,7 +1255,7 @@
 		var/obj/item/clothing/head/peaceflower/target_flower = target.get_item_by_slot(SLOT_HEAD)
 
 		if(stripper_flower && target_flower)
-			to_chat(src, "<span class='warning'>You can't bring yourself to remove another person's peaceflower while wearing one yourself.</span>")
+			to_chat(src, "<span class='warning'>I feel at peace. <b style='color:pink'>Why would I take that feeling from them?</b></span>")
 			return
 
 	if(!what.canStrip(who))
