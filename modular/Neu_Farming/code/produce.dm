@@ -278,7 +278,7 @@
 	rotprocess = null
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/tobaccodust
-	sellprice = 2
+	sellprice = 1
 
 
 /*	..................   Cabbage   ................... */

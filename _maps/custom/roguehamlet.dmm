@@ -3323,7 +3323,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/under/basement)
 "dMe" = (
-/mob/living/simple_animal/pet/cat/inn,
+/mob/living/simple_animal/pet/cat/rogue/inn,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/tavern/saiga)
 "dMl" = (
