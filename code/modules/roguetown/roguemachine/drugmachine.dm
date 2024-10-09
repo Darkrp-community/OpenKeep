@@ -284,3 +284,5 @@
 /obj/structure/roguemachine/drugmachine/Initialize()
 	. = ..()
 	update_icon()
+
+#undef UPGRADE_NOTAX
