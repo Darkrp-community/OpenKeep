@@ -147,3 +147,53 @@
 	gender = PLURAL
 	icon_state = "mole_bones"
 	icon = 'icons/roguetown/mob/monster/mole.dmi' // mole bones is a placeholder
+
+// You know I had to. Hostile, killer cabbit. Strong. Fast. But not as durable.
+// The most foul, cruel and bad tempered feline-rodent you ever set eyes on.
+/mob/living/simple_animal/hostile/retaliate/rogue/troll/caerbannog
+	name = "cabbit of the Cairne Bog"
+	desc = "That's no ordinary cabbit..."
+	icon = 'icons/roguetown/mob/cabbit.dmi'
+	icon_state = "cabbit_evil"
+	icon_living = "cabbit_evil"
+	icon_dead = "cabbit_evil_dead"
+	speak = list("HISSS", "GHRHRHRHL")
+	speak_emote = list("squeaks")
+	emote_hear = list("raises its ears.", "hisses.")
+	emote_see = list("turns his head around.", "stands with its hindlegs in guard.")
+	health = 160
+	maxHealth = 160
+	move_to_delay = 3 // FAST.
+	attack_sound = list('sound/vo/mobs/rat/aggro (1).ogg', 'sound/vo/mobs/rat/aggro (2).ogg', 'sound/vo/mobs/rat/aggro (3).ogg')
+	STACON = 5
+	STASTR = 5
+	STASPD = 10
+	STAEND = 5
+	remains_type = /obj/effect/decal/remains/cabbit
+	melee_damage_lower = 20
+	melee_damage_upper = 40
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+							/obj/item/alch/sinew = 1,
+							/obj/item/alch/bone = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+							/obj/item/alch/sinew = 2,
+							/obj/item/alch/bone = 1,
+							/obj/item/natural/fur/cabbit = 1)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/troll/caerbannog/get_sound(input)
+	switch(input)
+		if("aggro")
+			return pick('sound/vo/mobs/rabbit/rabbit_alert.ogg')
+		if("pain")
+			return pick('sound/vo/mobs/rabbit/rabbit_pain1.ogg', 'sound/vo/mobs/rabbit/rabbit_pain2.ogg')
+		if("death")
+			return pick('sound/vo/mobs/rabbit/rabbit_death.ogg')
+
+/obj/effect/decal/remains/cabbit
+	name = "remains"
+	gender = PLURAL
+	icon = 'icons/roguetown/mob/cabbit.dmi'
+	icon_state = "cabbit_remains"
+
