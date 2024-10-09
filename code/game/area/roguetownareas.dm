@@ -358,12 +358,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "town"
 	droning_sound = 'sound/music/area/towngen.ogg'
 	droning_sound_dusk = null
-	droning_sound_night = null
+	droning_sound_night = 'sound/music/area/night.ogg'
 
 /area/rogue/indoors/town/manor
 	name = "Manor"
 	icon_state = "manor"
-	droning_sound = 'sound/music/area/manor.ogg'
+	droning_sound = list('sound/music/area/manor.ogg', 'sound/music/area/manor2.ogg')
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
@@ -456,14 +456,14 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "church"
 	droning_sound = 'sound/music/area/church.ogg'
 	droning_sound_dusk = null
-	droning_sound_night = null
+	droning_sound_night = 'sound/music/area/churchnight.ogg'
 	converted_type = /area/rogue/outdoors/exposed/church
 
 /area/rogue/outdoors/exposed/church
 	icon_state = "church"
 	droning_sound = 'sound/music/area/church.ogg'
 	droning_sound_dusk = null
-	droning_sound_night = null
+	droning_sound_night = 'sound/music/area/churchnight.ogg'
 
 /area/rogue/indoors/town/church/chapel
 	icon_state = "chapel"
@@ -515,7 +515,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "town"
 	droning_sound = 'sound/music/area/townstreets.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_night = 'sound/music/area/night.ogg'
 	converted_type = /area/rogue/indoors/shelter/town
 	first_time_text = "THE TOWN OF ROCKHILL"
 
@@ -530,7 +530,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "sargoth"
 	droning_sound = 'sound/music/area/sargoth.ogg'
 	droning_sound_dusk = null
-	droning_sound_night = null
+	droning_sound_night = 'sound/music/area/night.ogg'
 	converted_type = /area/rogue/indoors/shelter/town/sargoth
 
 /area/rogue/indoors/shelter/town/sargoth
@@ -548,7 +548,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	spookynight = SPOOKY_GEN
 	droning_sound = 'sound/music/area/field.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_night = 'sound/music/area/night.ogg'
 	converted_type = /area/rogue/indoors/shelter/town/roofs
 
 /area/rogue/indoors/shelter/town/roofs
@@ -706,7 +706,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 
-///// ANTAGONIST AREAS //////  - used on centcomm so you can teleport there easily. Each antag area just gets one unique type, if its outdoor use generic indoors, vice versa, to avoid clutter in area list
+///// ANTAGONIST AREAS //////  - used on centcom so you can teleport there easily. Each antag area just gets one unique type, if its outdoor use generic indoors, vice versa, to avoid clutter in area list
 
 /area/rogue/indoors/bandit_lair
 	name = "lair (Bandits)"

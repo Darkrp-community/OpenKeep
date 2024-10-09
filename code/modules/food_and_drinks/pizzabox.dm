@@ -221,7 +221,7 @@
 			unprocess()
 			qdel(src)
 	if(!bomb_active || bomb_defused)
-		if(bomb_defused && bomb in src)
+		if(bomb_defused && (bomb in src))
 			bomb.defuse()
 			bomb_active = FALSE
 			unprocess()
@@ -309,7 +309,7 @@
 		/obj/item/reagent_containers/food/snacks/pizza/margherita = 1,
 		/obj/item/reagent_containers/food/snacks/pizza/sassysage = 0.8,
 		/obj/item/reagent_containers/food/snacks/pizza/vegetable = 0.8,
-   		/obj/item/reagent_containers/food/snacks/pizza/pineapple = 0.5,
+		/obj/item/reagent_containers/food/snacks/pizza/pineapple = 0.5,
 		/obj/item/reagent_containers/food/snacks/pizza/donkpocket = 0.3,
 		/obj/item/reagent_containers/food/snacks/pizza/dank = 0.1) //pizzas here are weighted by chance to be someone's favorite
 	var/static/list/pizza_preferences

@@ -403,3 +403,101 @@
 	icon_state = "bronzespear_winged"
 	wdefense = 5
 	sellprice = 150 // A noble collector would love to get his/her hands on one of these spears
+
+////STAFFS!
+
+/obj/item/rogueweapon/woodstaff/quarterstaff
+	force = 10
+	force_wielded = 15
+	possible_item_intents = list(SPEAR_BASH)
+	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood, /datum/intent/spear/bash/swing)
+	name = "wooden quarterstaff"
+	desc = "A staff that makes any journey easier. Durable and swift, capable of bludgeoning stray volves and ruffians alike."
+	icon_state = "quarterstaff"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	wlength = WLENGTH_LONG
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	blade_dulling = DULLING_BASHCHOP
+	sharpness = IS_BLUNT
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
+	walking_stick = TRUE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	max_integrity = 250//carpenter work
+	wdefense = 5
+	bigboy = TRUE
+	gripsprite = TRUE
+	associated_skill = /datum/skill/combat/polearms
+	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
+	sellprice = 10
+
+/datum/intent/spear/bash/swing//AYAYAYAYA BONK BONK BONK
+	name = "swing"
+	blade_class = BCLASS_BLUNT
+	icon_state = "inbash"
+	attack_verb = list("bashes", "strikes", "swings")
+	penfactor = 10
+	damfactor = 0.8
+	reach = 2
+	chargetime = 1
+	swingdelay = 1
+	misscost = 5
+
+/obj/item/rogueweapon/woodstaff/quarterstaff/iron
+	force = 15
+	force_wielded = 20
+	possible_item_intents = list(SPEAR_BASH)
+	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood, /datum/intent/spear/bash/swing)
+	name = "iron quarterstaff"
+	desc = "A perfect tool for bounty hunters who prefer their prisoners broken and bruised but not slain. This reinforced staff is capable of clubbing even an armed opponent into submission with some carefully placed strikes."
+	icon_state = "ironstaff"
+	max_integrity = 350//iron tier
+	minstr = 8//meant to be used by average warriors
+
+/obj/item/rogueweapon/woodstaff/quarterstaff/steel
+	force = 15
+	force_wielded = 30
+	possible_item_intents = list(SPEAR_BASH)
+	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood, /datum/intent/spear/bash/swing)
+	name = "steel quarterstaff"
+	desc = "An unusual sight, a knightly combat staff made out of worked steel and reinforced wood. It is a heavy and powerful weapon, more than capable of beating the living daylights out of any brigand."
+	icon_state = "steelstaff"
+	minstr = 10//very heavy
+	max_integrity = 450//steel tier
+
+//scythe
+/obj/item/rogueweapon/sickle/scythe
+	force = 10
+	force_wielded = 20
+	possible_item_intents = list(SPEAR_CUT) //truly just a long knife
+	gripped_intents = list(SPEAR_CUT)
+	name = "scythe"
+	desc = "A humble farming tool with long reach, traditionally used to cut grass or wheat."
+	icon_state = "scythe"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
+	wlength = WLENGTH_GREAT
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
+	max_blade_int = 100
+	max_integrity = 300
+	minstr = 5
+	smeltresult = /obj/item/ingot/iron
+	associated_skill = /datum/skill/combat/polearms
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
+	dropshrink = 0.75
+	blade_dulling = DULLING_BASHCHOP
+	walking_stick = TRUE
+	wdefense = 2
+	thrown_bclass = BCLASS_CUT
+	throwforce = 25
+	sellprice = 10

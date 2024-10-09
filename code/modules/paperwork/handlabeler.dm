@@ -56,7 +56,7 @@
 		return
 
 	user.visible_message("<span class='notice'>[user] labels [A] as [label].</span>", \
-						 "<span class='notice'>I label [A] as [label].</span>")
+						"<span class='notice'>I label [A] as [label].</span>")
 	A.name = "[A.name] ([label])"
 	labels_left--
 
