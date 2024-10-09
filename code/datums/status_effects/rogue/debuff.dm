@@ -351,7 +351,7 @@
 /datum/status_effect/debuff/revive
 	id = "revive"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/revive
-	duration = 25 MINUTES
+	duration = 15 MINUTES
 	effectedstats = list("strength" = -4, "speed" = -3, "endurance" = -3, "constitution" = -4)
 
 /atom/movable/screen/alert/status_effect/debuff/revive
