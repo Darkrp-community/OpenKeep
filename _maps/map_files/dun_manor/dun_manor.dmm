@@ -6235,8 +6235,8 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "gBY" = (
-/obj/structure/roguemachine/bathvend,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/roguemachine/drugmachine,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
 "gBZ" = (
