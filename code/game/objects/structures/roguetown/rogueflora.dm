@@ -691,7 +691,7 @@
 		else
 			goodie = /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
 	pixel_x += rand(-3,3)
-	if(prob(60))
+	if(prob(80))
 		trashie = /obj/item/natural/thorn
 	else
 		trashie = /obj/item/natural/fibers
