@@ -34,13 +34,10 @@
 		H.become_blind("advsetup")
 
 /datum/outfit/job/roguetown/squire
-	H.virginity = TRUE
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	pants = /obj/item/clothing/under/roguetown/tights
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
-	if(H.gender == MALE && H.dna?.species)
-		H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
 
 /* ! ! ! Class Selection Section Below ! ! !
 Design philosphy:
@@ -57,6 +54,7 @@ Design philosphy:
 	category_tags = list(CTAG_SQUIRE)
 
 /datum/outfit/job/roguetown/squire/swordsman/pre_equip(mob/living/carbon/human/H)
+	H.virginity = TRUE
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
@@ -80,6 +78,8 @@ Design philosphy:
 		H.change_stat("perception", 1)
 		H.change_stat("constitution", 1)
 		H.change_stat("speed", 1)
+		if(H.gender == MALE && H.dna?.species)
+			H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
 	ADD_TRAIT(H, TRAIT_INTRAINING, TRAIT_GENERIC) // An exception to the average combat skill cap on training dummies, since we are a combat role in training... we can get up to skilled! Hooray!
 
 	var/weapontype = pickweight(list("Iron Sword" = 7, "Steel Sword" = 3)) // Rolls for either an iron or steel sword
@@ -97,6 +97,7 @@ Design philosphy:
 	category_tags = list(CTAG_SQUIRE)
 
 /datum/outfit/job/roguetown/squire/lancer/pre_equip(mob/living/carbon/human/H)
+	H.virginity = TRUE
 	r_hand = /obj/item/rogueweapon/spear
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	gloves = /obj/item/clothing/gloves/roguetown/leather
@@ -122,6 +123,8 @@ Design philosphy:
 		H.change_stat("perception", 1)
 		H.change_stat("constitution", 1)
 		H.change_stat("speed", 1)
+		if(H.gender == MALE && H.dna?.species)
+			H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
 	ADD_TRAIT(H, TRAIT_INTRAINING, TRAIT_GENERIC) // An exception to the average combat skill cap on training dummies, since we are a combat role in training... we can get up to skilled! Hooray!
 
 /datum/advclass/squire/flail
@@ -132,6 +135,7 @@ Design philosphy:
 	category_tags = list(CTAG_SQUIRE)
 
 /datum/outfit/job/roguetown/squire/flail/pre_equip(mob/living/carbon/human/H)
+	H.virginity = TRUE
 	beltr = /obj/item/rogueweapon/flail/sflail
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	gloves = /obj/item/clothing/gloves/roguetown/leather
@@ -156,4 +160,6 @@ Design philosphy:
 		H.change_stat("perception", 1)
 		H.change_stat("constitution", 1)
 		H.change_stat("speed", 2)
+		if(H.gender == MALE && H.dna?.species)
+			H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
 	ADD_TRAIT(H, TRAIT_INTRAINING, TRAIT_GENERIC) // An exception to the average combat skill cap on training dummies, since we are a combat role in training... we can get up to skilled! Hooray!
