@@ -703,7 +703,7 @@
 	playsound(src.loc, "plantcross", 80, FALSE, -1)
 	prob2findstuff = prob2findstuff + ( user.STAPER * 4 )
 	prob2findgoodie = prob2findgoodie + ( user.STALUC * 2 ) + ( user.STAPER * 2 )
-	luckydouble = (user.STALUC)
+	luckydouble = ( user.STALUC * 2 )
 	user.visible_message(span_small("[user] searches through [src]."))
 
 	if(do_after(L, rand(5,20), target = src))
