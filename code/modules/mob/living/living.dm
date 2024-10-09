@@ -508,7 +508,7 @@
 
 /mob/living/proc/set_pull_offsets(mob/living/M, grab_state = GRAB_PASSIVE)
 	return //rtd fix not updating because no dirchange
-	if(M == src)
+/* 	if(M == src)
 		return
 	if(M.wallpressed)
 		return
@@ -541,7 +541,7 @@
 				M.lying = 270
 				M.update_transform()
 				M.lying_prev = M.lying
-			M.set_mob_offsets("pulledby", _x = offset, _y = 0)
+			M.set_mob_offsets("pulledby", _x = offset, _y = 0) */
 
 /mob/living
 	var/list/mob_offsets = list()
@@ -628,7 +628,7 @@
 		return
 	if(!reaper)
 		return
-	if (InCritical() || health <= 0 || blood_volume in -INFINITY to BLOOD_VOLUME_SURVIVE)
+	if (InCritical() || health <= 0 || (blood_volume < BLOOD_VOLUME_SURVIVE))
 		log_message("Has [whispered ? "whispered his final words" : "succumbed to death"] while in [InFullCritical() ? "hard":"soft"] critical with [round(health, 0.1)] points of health!", LOG_ATTACK)
 		adjustOxyLoss(201)
 		updatehealth()
@@ -1166,7 +1166,7 @@
 		var/wrestling_cooldown_reduction = 0
 		if(pulledby?.mind?.get_skill_level("wrestling"))
 			wrestling_cooldown_reduction = 0.2 SECONDS * pulledby.mind.get_skill_level("wrestling")
-		TIMER_COOLDOWN_START(src, "broke_free", max(0, 0.8 SECONDS - wrestling_cooldown_reduction))
+		TIMER_COOLDOWN_START(src, "broke_free", max(0, 1.5 SECONDS - wrestling_cooldown_reduction))
 
 		return FALSE
 	else

@@ -68,7 +68,7 @@
 	if(H.mobid in GLOB.character_list)
 		GLOB.character_list[H.mobid] = null
 	GLOB.chosen_names -= H.real_name
-	H.cmode_music = 'sound/music/combat_bandit.ogg'
+	H.cmode_music = list('sound/music/combat_bandit.ogg', 'sound/music/combat_bandit2.ogg', 'sound/music/combat_bandit3.ogg')
 
 	addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, choose_name_popup), "BANDIT"), 5 SECONDS)
 //	H.job = "Bandit"
@@ -243,7 +243,7 @@
 	// The commmon skills shared between all bandits
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
- 
+
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
@@ -288,7 +288,7 @@
 		else
 			to_chat(world, "[the_name] was a bandit. He stole [amt] triumphs worth of loot.")
 	return
-
+/* 
 	var/traitorwin = TRUE
 
 	var/count = 0
@@ -311,6 +311,7 @@
 		to_chat(owner.current, "<span class='redtext'>I've failed to satisfy my greed.</span>")
 		if(owner.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/fail.ogg', 100, FALSE, pressure_affected = FALSE)
+*/
 
 /*	.................   Unique Bandit recipes   ................... */
 /datum/crafting_recipe/bandit_volfhelm

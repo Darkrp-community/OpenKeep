@@ -305,7 +305,8 @@
 	"Song 4" = 'modular/Barding/sound/instruments/lute (4).ogg',
 	"Song 5" = 'modular/Barding/sound/instruments/lute (5).ogg',
 	"Song 6" = 'modular/Barding/sound/instruments/lute (6).ogg',
-	"Song 7" = 'modular/Barding/sound/instruments/lute (7).ogg')
+	"Song 7" = 'modular/Barding/sound/instruments/lute (7).ogg',
+	"Soilson's Song" = 'modular/Barding/sound/instruments/lute (8).ogg')
 
 /obj/item/rogue/instrument/accord
 	name = "accordion"
@@ -318,7 +319,9 @@
 	"Song 4" = 'modular/Barding/sound/instruments/accord (4).ogg',
 	"Song 5" = 'modular/Barding/sound/instruments/accord (5).ogg',
 	"Song 6" = 'modular/Barding/sound/instruments/accord (6).ogg',
-	"Song of the Falconeer" = 'modular/Barding/sound/instruments/accord (7).ogg')
+	"Song of the Falconeer" = 'modular/Barding/sound/instruments/accord (7).ogg',
+	"Dwarven Frolick" = 'modular/Barding/sound/instruments/accord (8).ogg'
+	)
 
 /obj/item/rogue/instrument/guitar
 	name = "guitar"
@@ -339,7 +342,8 @@
 	"The Mask" = 'modular/Barding/sound/instruments/guitar (11).ogg',
 	"Evolvado" = 'modular/Barding/sound/instruments/guitar (12).ogg',	
 	"Asturias" = 'modular/Barding/sound/instruments/guitar (13).ogg',
-	"The Fools Journey" = 'modular/Barding/sound/instruments/guitar (14).ogg',	
+	"The Fools Journey" = 'modular/Barding/sound/instruments/guitar (14).ogg',
+	"Prelude to Sorrow" = 'modular/Barding/sound/instruments/guitar (15).ogg'
 	)
 
 /obj/item/rogue/instrument/harp
@@ -350,7 +354,8 @@
 	"Song 1" = 'modular/Barding/sound/instruments/harb (1).ogg',
 	"Song 2" = 'modular/Barding/sound/instruments/harb (2).ogg',
 	"Song 3" = 'modular/Barding/sound/instruments/harb (3).ogg',
-	"Dance of the Mages" = 'modular/Barding/sound/instruments/harp (4).ogg')
+	"Dance of the Mages" = 'modular/Barding/sound/instruments/harp (4).ogg',
+	"Trickster Wisps" = 'modular/Barding/sound/instruments/harp (5).ogg')
 
 /obj/item/rogue/instrument/flute // small rats approach a little when begin playing
 	name = "flute"
@@ -365,7 +370,8 @@
 	"Song 4" = 'modular/Barding/sound/instruments/flute (4).ogg',
 	"Song 5" = 'modular/Barding/sound/instruments/flute (5).ogg',
 	"Song 6" = 'modular/Barding/sound/instruments/flute (6).ogg',
-	"Flower Melody" = 'modular/Barding/sound/instruments/flute (7).ogg')
+	"Flower Melody" = 'modular/Barding/sound/instruments/flute (7).ogg',
+	"Noble Solace" = 'modular/Barding/sound/instruments/flute (8).ogg')
 
 /obj/item/rogue/instrument/drum
 	name = "drum"
@@ -375,4 +381,5 @@
 	"Song 1" = 'modular/Barding/sound/instruments/drum (1).ogg',
 	"Song 2" = 'modular/Barding/sound/instruments/drum (2).ogg',
 	"Song 3" = 'modular/Barding/sound/instruments/drum (3).ogg',
-	"Snare drum" = 'modular/Barding/sound/instruments/drum (4).ogg')
+	"Snare drum" = 'modular/Barding/sound/instruments/drum (4).ogg',
+	"Desert Heat" = 'modular/Barding/sound/instruments/drum (5).ogg')
