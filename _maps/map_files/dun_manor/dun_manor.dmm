@@ -1859,6 +1859,7 @@
 "bVY" = (
 /obj/structure/chair/wood/rogue,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/villager,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "bWh" = (
@@ -4495,6 +4496,17 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
+"eQh" = (
+/obj/structure/chair/wood/rogue{
+	dir = 8;
+	icon_state = "chair2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/villager{
+	dir = 8
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern)
 "eRp" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/item/reagent_containers/food/snacks/produce/onion,
@@ -5595,6 +5607,9 @@
 /obj/structure/chair/wood/rogue{
 	dir = 4;
 	icon_state = "chair2"
+	},
+/obj/effect/landmark/start/villager{
+	dir = 4
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
@@ -6790,6 +6805,9 @@
 	dir = 4;
 	icon_state = "chair2"
 	},
+/obj/effect/landmark/start/villager{
+	dir = 4
+	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "hkW" = (
@@ -6827,6 +6845,7 @@
 "hnk" = (
 /obj/structure/chair/wood,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/villager,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "hnK" = (
@@ -7199,6 +7218,17 @@
 /obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
+"hFG" = (
+/obj/structure/chair/wood/rogue{
+	dir = 4;
+	icon_state = "chair2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/villager{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/rogue/indoors/town/tavern)
 "hFV" = (
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/machinery/light/rogue/torchholder/r,
@@ -18060,6 +18090,16 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/shop)
+"tBI" = (
+/obj/structure/chair/wood/rogue{
+	dir = 8;
+	icon_state = "chair2"
+	},
+/obj/effect/landmark/start/villager{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/rogue/indoors/town/tavern)
 "tBX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fermenting_barrel/random/water,
@@ -18727,6 +18767,9 @@
 /obj/structure/chair/wood/rogue{
 	dir = 8;
 	icon_state = "chair2"
+	},
+/obj/effect/landmark/start/villager{
+	dir = 8
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
@@ -78968,8 +79011,8 @@ osP
 sjq
 spG
 ccw
-qtZ
-qtZ
+tBI
+tBI
 jBO
 jwG
 hxz
@@ -79284,7 +79327,7 @@ dnr
 uEe
 jBO
 iLQ
-raW
+hFG
 ccw
 upV
 xpA
@@ -79598,7 +79641,7 @@ fwh
 epJ
 jwG
 jwG
-tpj
+eQh
 ccw
 suz
 jJE
