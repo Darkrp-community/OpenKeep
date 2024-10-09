@@ -1001,3 +1001,16 @@
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
+
+
+/obj/item/clothing/cloak/volfmantle
+	name = "volf mantle"
+	desc = "A warm cloak made using the hide and head of a slain volf. A status symbol if ever there was one."
+	color = null
+	icon_state = "volfpelt"
+	item_state = "volfpelt"
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	inhand_mod = FALSE
+	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK

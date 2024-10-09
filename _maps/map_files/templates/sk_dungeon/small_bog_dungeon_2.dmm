@@ -41,7 +41,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "j" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "k" = (
@@ -56,7 +56,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/bog)
 "m" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "n" = (
@@ -135,7 +135,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "D" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "E" = (

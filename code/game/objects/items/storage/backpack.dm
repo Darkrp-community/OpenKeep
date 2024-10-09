@@ -75,7 +75,7 @@
 
 /obj/item/storage/backpack/santabag/Initialize()
 	. = ..()
-	regenerate_presents()
+	INVOKE_ASYNC(src, PROC_REF(regenerate_presents))
 
 /obj/item/storage/backpack/santabag/ComponentInitialize()
 	. = ..()

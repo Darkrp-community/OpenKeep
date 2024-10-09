@@ -18,7 +18,7 @@
 	debris = list(/obj/item/grown/log/tree/stick = 2)
 	static_debris = list(/obj/item/grown/log/tree = 1)
 	alpha = 200
-	var/stump_type = /obj/structure/flora/roguetree/stump
+	var/stump_type = /obj/structure/table/wood/treestump
 
 /obj/structure/flora/roguetree/attack_right(mob/user)
 	if(user.mind && isliving(user))
@@ -90,8 +90,8 @@
 	soundloop.stop()
 	if(controller)
 		controller.endvines()
-	controller.tree = null
-	controller = null
+		controller.tree = null
+		controller = null
 	. = ..()
 
 /obj/structure/flora/roguetree/evil
@@ -117,26 +117,13 @@
 	desc = "A scorched pillar of a once living tree."
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	icon_state = "t1"
-	stump_type = /obj/structure/flora/roguetree/stump/burnt
+	stump_type = /obj/structure/table/wood/treestump/burnt
 	pixel_x = -32
 
 /obj/structure/flora/roguetree/burnt/Initialize()
 	. = ..()
 	icon_state = "t[rand(1,4)]"
 
-/obj/structure/flora/roguetree/stump/burnt
-	name = "tree stump"
-	desc = "This stump is burnt. Maybe someone is trying to get coal the easy way."
-	static_debris = list(/obj/item/rogueore/coal = 1)
-	isunburnt = FALSE
-	icon_state = "st1"
-	icon = 'icons/roguetown/misc/96x96.dmi'
-	stump_type = null
-	pixel_x = -32
-
-/obj/structure/flora/roguetree/stump/burnt/Initialize()
-	. = ..()
-	icon_state = "st[rand(1,2)]"
 
 /obj/structure/flora/roguetree/underworld
 	name = "screaming tree"
@@ -150,61 +137,76 @@
 	. = ..()
 	icon_state = "screaming[rand(1,3)]"
 
-/obj/structure/flora/roguetree/stump
+
+/*	.............  Treestump   ................ */	// Treestumps are now tables, so you can tablecraft with them and so on.
+/obj/structure/table/wood/treestump
 	name = "tree stump"
 	desc = "Someone cut this tree down."
+	icon = 'icons/roguetown/misc/tree.dmi'
 	icon_state = "t1stump"
-	opacity = 0
 	max_integrity = 100
-	climbable = TRUE
 	climb_time = 0
-	layer = TABLE_LAYER
-	plane = GAME_PLANE
 	blade_dulling = DULLING_CUT
 	static_debris = list()
 	debris = null
-	alpha = 255
-	pixel_x = -16
 	climb_offset = 14
-	stump_type = FALSE
 	var/isunburnt = TRUE // Var needed for the burnt stump
-	var/isactuallyastump = TRUE // Var needed for the stupid ancient log below
 
-/obj/structure/flora/roguetree/stump/Initialize()
+/obj/structure/table/wood/treestump/Initialize()
 	. = ..()
 	icon_state = "t[rand(1,4)]stump"
 
-/obj/structure/flora/roguetree/stump/attackby(obj/item/I, mob/user, params)
-	if(isactuallyastump)
-		if(istype(I, /obj/item/rogueweapon/shovel))
-			to_chat(user, "I start unearthing the stump...")
-			playsound(loc,'sound/items/dig_shovel.ogg', 100, TRUE)
-			if(do_after(user, 50))
-				user.visible_message("<span class='notice'>[user] unearths \the [src].</span>", \
-									"<span class='notice'>I unearth \the [src].</span>")
-				if(isunburnt)
-					new /obj/item/grown/log/tree/small(loc) // Rewarded with an extra small log if done the right way.return
-				obj_destruction("brute")
-		else
-			..()
+/obj/structure/table/wood/treestump/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/rogueweapon/shovel))
+		to_chat(user, "I start unearthing the stump...")
+		playsound(loc,'sound/items/dig_shovel.ogg', 100, TRUE)
+		if(do_after(user, 50))
+			user.visible_message("<span class='notice'>[user] unearths \the [src].</span>", \
+								"<span class='notice'>I unearth \the [src].</span>")
+			if(isunburnt)
+				new /obj/item/grown/log/tree/small(loc) // Rewarded with an extra small log if done the right way.return
+			obj_destruction("brute")
 	else
 		. = ..()
 
-/obj/structure/flora/roguetree/stump/log
+/obj/structure/table/wood/treestump/burnt
+	name = "tree stump"
+	desc = "This stump is burnt. Maybe someone is trying to get coal the easy way."
+	static_debris = list(/obj/item/rogueore/coal = 1)
+	isunburnt = FALSE
+	icon_state = "st1"
+	icon = 'icons/roguetown/misc/tree.dmi'
+
+/obj/structure/table/wood/treestump/burnt/Initialize()
+	. = ..()
+	icon_state = "st[rand(1,2)]"
+
+
+/*	.............   Ancient log   ................ */	// Functionally a sofa, slightly better than sleeping on the ground
+/obj/structure/chair/bench/ancientlog
 	name = "ancient log"
-	desc = "A felled piece of tree long forgotten, the poorman's table."
+	desc = "A felled piece of tree long forgotten, the poorman's sofa."
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
 	icon_state = "log1"
-	opacity = 0
-	max_integrity = 200
 	blade_dulling = DULLING_CUT
 	static_debris = list(/obj/item/grown/log/tree = 1)
-	climb_offset = 14
-	stump_type = FALSE
-	isactuallyastump = FALSE
+	max_integrity = 200
+	sleepy = 0.1
+	pixel_x = -14
+	pixel_y = 7
+	pass_flags = PASSTABLE
 
-/obj/structure/flora/roguetree/stump/log/Initialize()
+/obj/structure/chair/bench/ancientlog/Initialize()
 	. = ..()
 	icon_state = "log[rand(1,2)]"
+
+/obj/structure/chair/bench/ancientlog/post_buckle_mob(mob/living/M)
+	..()
+	M.set_mob_offsets("bed_buckle", _x = 0, _y = 5)
+
+/obj/structure/chair/bench/ancientlog/post_unbuckle_mob(mob/living/M)
+	..()
+	M.reset_offsets("bed_buckle")
 
 
 //newbushes
@@ -639,13 +641,13 @@
 //Thorn bush
 
 /obj/structure/flora/roguegrass/thorn_bush
-    name = "thorn bush"
-    desc = "A thorny bush, bearing a bountiful collection of razor sharp thorns!"
-    icon_state = "thornbush"
-    layer = ABOVE_ALL_MOB_LAYER
-    blade_dulling = DULLING_CUT
-    max_integrity = 35
-    climbable = FALSE
-    dir = SOUTH
-    debris = list(/obj/item/natural/thorn = 3, /obj/item/grown/log/tree/stick = 1)
+	name = "thorn bush"
+	desc = "A thorny bush, bearing a bountiful collection of razor sharp thorns!"
+	icon_state = "thornbush"
+	layer = ABOVE_ALL_MOB_LAYER
+	blade_dulling = DULLING_CUT
+	max_integrity = 35
+	climbable = FALSE
+	dir = SOUTH
+	debris = list(/obj/item/natural/thorn = 3, /obj/item/grown/log/tree/stick = 1)
 //WIP
