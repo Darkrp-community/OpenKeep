@@ -68,8 +68,7 @@
 			H.change_stat("strength", 2)
 			H.change_stat("intelligence", 2)
 			H.change_stat("endurance", 2)
-			H.change_stat("speed", -1)
-			// Aasimar veterans have higher strength but lower bonuses overall, and a small negative to speed. Took too many stabs to the knee or some such
+			// Aasimar veterans have higher strength but much lower perception and intelligence bonuses overall
 
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
