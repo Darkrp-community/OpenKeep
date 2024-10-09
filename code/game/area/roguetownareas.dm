@@ -546,8 +546,6 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	spookysounds = SPOOKY_GEN
 	spookynight = SPOOKY_GEN
 	droning_sound = 'sound/music/area/field.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/night.ogg'
 	converted_type = /area/rogue/indoors/shelter/town/roofs
 
 /area/rogue/indoors/shelter/town/roofs
