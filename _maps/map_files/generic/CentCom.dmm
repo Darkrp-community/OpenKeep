@@ -1433,7 +1433,7 @@
 	dir = 1;
 	icon_state = "largetable_mid"
 	},
-/mob/living/simple_animal/pet/cat/black,
+/mob/living/simple_animal/pet/cat/rogue/black,
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/vampire_manor)
 "eU" = (
