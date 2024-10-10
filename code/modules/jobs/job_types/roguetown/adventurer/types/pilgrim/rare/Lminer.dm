@@ -15,7 +15,7 @@
 	..()
 	head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
 	pants = /obj/item/clothing/under/roguetown/trou
-	armor = /obj/item/clothing/suit/roguetown/armor/workervest
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	belt = /obj/item/storage/belt/rogue/leather

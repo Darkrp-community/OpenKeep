@@ -199,9 +199,9 @@
 	icon_state = "tablewood2";
 	dir = 10
 	},
-/obj/item/clothing/suit/roguetown/armor/armordress,
-/obj/item/clothing/suit/roguetown/armor/armordress/alt,
-/obj/item/clothing/suit/roguetown/armor/armordress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors)
 "aF" = (

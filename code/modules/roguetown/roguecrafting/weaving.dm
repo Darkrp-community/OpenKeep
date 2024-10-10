@@ -135,7 +135,7 @@
 
 /datum/crafting_recipe/roguetown/weaving/silkcoat
 	name = "silk coat"
-	result = list (/obj/item/clothing/suit/roguetown/armor/silkcoat)
+	result = list (/obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/silk = 3,
 				/obj/item/natural/fur/gote = 2)
@@ -166,7 +166,7 @@
 
 /datum/crafting_recipe/roguetown/weaving/armordress
 	name = "padded dress"
-	result = /obj/item/clothing/suit/roguetown/armor/armordress
+	result = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
 	reqs = list(/obj/item/natural/silk = 4,
 				/obj/item/natural/fibers = 2,
 				/obj/item/natural/hide = 1)

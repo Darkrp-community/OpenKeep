@@ -193,7 +193,7 @@
 
 /datum/crafting_recipe/roguetown/sewing/robe
 	name = "robes"
-	result = list(/obj/item/clothing/suit/roguetown/shirt/robe)
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/plain)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3

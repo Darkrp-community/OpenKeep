@@ -376,7 +376,7 @@
 /area/rogue)
 "pO" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/clothing/suit/roguetown/armor/armordress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
 /obj/item/clothing/suit/roguetown/armor/leather/vest,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/under/roguetown/tights/random,

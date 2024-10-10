@@ -36,7 +36,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 
 	head = /obj/item/clothing/head/roguetown/hatfur
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/jacket
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket
 	pants = /obj/item/clothing/under/roguetown/trou
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather

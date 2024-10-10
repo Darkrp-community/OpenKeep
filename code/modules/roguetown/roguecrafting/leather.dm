@@ -21,7 +21,7 @@
 
 /datum/crafting_recipe/roguetown/leather/gloves
 	name = "leather gloves (x2)"
-	result = list(/obj/item/clothing/gloves/roguetown/leather, 
+	result = list(/obj/item/clothing/gloves/roguetown/leather,
 	/obj/item/clothing/gloves/roguetown/leather)
 
 /datum/crafting_recipe/roguetown/leather/bracers
@@ -164,7 +164,7 @@
 
 /datum/crafting_recipe/roguetown/leather/leatherjacket
 	name = "leather jacket"
-	result = list(/obj/item/clothing/suit/roguetown/armor/leather/vest/jacket)
+	result = list(/obj/item/clothing/suit/roguetown/armor/leather/jacket)
 	reqs = list(/obj/item/natural/hide = 1)
 	craftdiff = 1
 

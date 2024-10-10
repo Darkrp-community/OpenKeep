@@ -983,18 +983,6 @@
 	sellprice = 666
 	static_price = TRUE
 
-/obj/item/clothing/suit/roguetown/armor/plate/blkknight
-	slot_flags = ITEM_SLOT_ARMOR
-	name = "blacksteel plate"
-	body_parts_covered = CHEST|GROIN|VITALS|ARMS
-	r_sleeve_status = SLEEVE_NOMOD
-	l_sleeve_status = SLEEVE_NOMOD
-	armor_class = ARMOR_CLASS_MEDIUM
-	icon_state = "bkarmor"
-	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
-	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
-
 /obj/item/clothing/shoes/roguetown/boots/armor/blkknight
 	name = "blacksteel boots"
 	icon_state = "bkboots"

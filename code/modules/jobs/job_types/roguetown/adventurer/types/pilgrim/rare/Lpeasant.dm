@@ -44,9 +44,9 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	backr = /obj/item/rogueweapon/hoe
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 	backl = /obj/item/storage/backpack/rogue/backpack
 	neck = /obj/item/clothing/neck/roguetown/coif/cloth
-	armor = /obj/item/clothing/suit/roguetown/armor/workervest
 	mouth = /obj/item/clothing/mask/cigarette/pipe/westman
 	beltl = /obj/item/rogueweapon/sickle
 	beltr = /obj/item/rogueweapon/huntingknife

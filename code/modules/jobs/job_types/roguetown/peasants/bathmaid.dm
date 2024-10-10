@@ -50,7 +50,7 @@
 	if(H.gender == MALE)
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 
 // Washing Implements
 
