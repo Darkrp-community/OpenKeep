@@ -12,7 +12,7 @@
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	spawnableAtoms = list(/obj/structure/flora/roguetree = 1,
-							/obj/structure/flora/roguegrass/bush = 12,
+							/obj/structure/flora/roguegrass/bush_meagre = 12,
 							/obj/structure/flora/roguegrass/pyroclasticflowers = 1,
 							/obj/structure/flora/roguegrass/maneater = 0,
 							/obj/structure/flora/roguegrass = 23,

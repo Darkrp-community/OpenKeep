@@ -3257,7 +3257,7 @@
 	dir = 1
 	},
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/manorgarri)
@@ -3546,7 +3546,7 @@
 	dir = 6
 	},
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/manorgarri)
 "dXk" = (
@@ -6867,7 +6867,7 @@
 	first_time_text = "Blackwine Manor"
 	})
 "hGm" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "hGL" = (
@@ -8012,7 +8012,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
 "iNQ" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
@@ -9284,7 +9284,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "khr" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
@@ -12208,7 +12208,7 @@
 /turf/open/water/sewer,
 /area/rogue/under/town/sewer)
 "nlR" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/mountains)
 "nlS" = (
@@ -18086,7 +18086,7 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "tjQ" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/mountains)
 "tki" = (
@@ -18481,7 +18481,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/shop)
 "tFc" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/manorgarri)
@@ -20157,7 +20157,7 @@
 	dir = 10
 	},
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/manorgarri)
 "vlr" = (
@@ -21614,7 +21614,7 @@
 	})
 "wNi" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
@@ -21823,7 +21823,7 @@
 /turf/open/floor/rogue/rooftop,
 /area/rogue)
 "wVF" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "wXm" = (
