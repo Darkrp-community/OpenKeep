@@ -24,6 +24,36 @@
 	icon_state = "guild_mason"
 	sellprice = 0
 
+/obj/item/clothing/ring/silver/dorpel
+	name = "dorpel ring"
+	icon_state = "s_ring_diamond"
+	sellprice = 140
+
+/obj/item/clothing/ring/silver/blortz
+	name = "blortz ring"
+	icon_state = "s_ring_quartz"
+	sellprice = 110
+
+/obj/item/clothing/ring/silver/saffira
+	name = "saffira ring"
+	icon_state = "s_ring_sapphire"
+	sellprice = 95
+
+/obj/item/clothing/ring/silver/gemerald
+	name = "gemerald ring"
+	icon_state = "s_ring_emerald"
+	sellprice = 80
+
+/obj/item/clothing/ring/silver/toper
+	name = "toper ring"
+	icon_state = "s_ring_topaz"
+	sellprice = 65
+
+/obj/item/clothing/ring/silver/rontz
+	name = "rontz ring"
+	icon_state = "s_ring_ruby"
+	sellprice = 130
+
 /obj/item/clothing/ring/gold
 	name = "gold ring"
 	icon_state = "ring_g"
@@ -34,6 +64,36 @@
 	desc = "The wearer is a proud member of the Mercator guild."
 	icon_state = "guild_mercator"
 	sellprice = 0
+
+/obj/item/clothing/ring/gold/dorpel
+	name = "dorpel ring"
+	icon_state = "g_ring_diamond"
+	sellprice = 270
+
+/obj/item/clothing/ring/gold/blortz
+	name = "blortz ring"
+	icon_state = "g_ring_quartz"
+	sellprice = 245
+
+/obj/item/clothing/ring/gold/saffira
+	name = "saffira ring"
+	icon_state = "g_ring_sapphire"
+	sellprice = 200
+
+/obj/item/clothing/ring/gold/gemerald
+	name = "gemerald ring"
+	icon_state = "g_ring_emerald"
+	sellprice = 195
+
+/obj/item/clothing/ring/gold/toper
+	name = "toper ring"
+	icon_state = "g_ring_topaz"
+	sellprice = 180
+
+/obj/item/clothing/ring/gold/rontz
+	name = "rontz ring"
+	icon_state = "g_ring_ruby"
+	sellprice = 255
 
 /obj/item/clothing/ring/active
 	var/active = FALSE
@@ -142,7 +202,7 @@
 	REMOVE_TRAIT(user, TRAIT_LEECHIMMUNE,"Unleechable")
 	REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
 	REMOVE_TRAIT(user, TRAIT_SHOCKIMMUNE, "Shock Immunity")
-	
+
 /obj/item/clothing/ring/gold/ravox
 	name = "ring of ravox"
 	desc = "Old ring, inscribed with arcane words. Just being near it imbues you with otherworldly strength."

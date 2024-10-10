@@ -3,7 +3,7 @@
 	dried_type = null
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_SMALL
-	sellprice = 1	
+	sellprice = 1
 	force = 0
 	throwforce = 0
 	var/list/pipe_reagents = list()
@@ -241,6 +241,7 @@
 	rotprocess = null
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/swampdust
+	sellprice = 2
 
 
 /*	..................   Pipe weed   ................... */
@@ -273,6 +274,7 @@
 	rotprocess = null
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/tobaccodust
+	sellprice = 1
 
 
 /*	..................   Cabbage   ................... */
