@@ -1,3 +1,4 @@
+
 /obj/item/clothing/head/roguetown
 	slot_flags = ITEM_SLOT_HEAD
 	name = "hat"
@@ -40,6 +41,11 @@
 	name = "crude straw hat"
 	desc = "Welcome to the grain fields, thou plowerer of the fertile."
 	icon_state = "strawhat"
+
+/obj/item/clothing/head/roguetown/brimmed
+	desc = "A simple brimmed hat that provides some relief from the sun."
+	icon_state = "brimmed"
+
 
 /obj/item/clothing/head/roguetown/fisherhat
 	name = "straw hat"
@@ -107,6 +113,7 @@
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/random/Initialize()
 	color = pick(CLOTHING_TEAL,  CLOTHING_GREEN, CLOTHING_ORANGE, CLOTHING_MAJENTA, CLOTHING_YELLOW)
+	return ..()
 
 //................ Cook Hat ............... //
 /obj/item/clothing/head/roguetown/cookhat
@@ -167,11 +174,11 @@
 
 /obj/item/clothing/head/roguetown/roguehood/random/Initialize()
 	color = pick("#544236", "#435436", "#543836", "#79763f")
-	..()
+	return ..()
 
 /obj/item/clothing/head/roguetown/roguehood/mage/Initialize()
 	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
-	..()
+	return ..()
 
 /obj/item/clothing/head/roguetown/roguehood/AdjustClothes(mob/user)
 	if(loc == user)
@@ -293,6 +300,7 @@
 			if(loc == user)
 				user.adjust_fire_stacks(5)
 				user.IgniteMob()
+	return ..()
 
 
 
@@ -408,7 +416,7 @@
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|HAIR|NOSE
 	prevent_crits = CRITICALS_GOOD_METAL
-	max_integrity = 350
+	max_integrity = 300
 
 //................ Skull Cap ............... //
 /obj/item/clothing/head/roguetown/helmet/skullcap
@@ -452,12 +460,17 @@
 	name = "kettle helmet"
 	desc = "A lightweight steel helmet generally worn by crossbowmen and garrison archers."
 	icon_state = "kettle"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
 	flags_inv = HIDEEARS
 	smeltresult = /obj/item/ash
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
 	body_parts_covered = HEAD|HAIR
-	max_integrity = 250 // Covers less, so less overall integrity
+	max_integrity = 300 // Covers less, so less overall integrity
 
 //................ Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet
@@ -469,7 +482,7 @@
 	sellprice = VALUE_STEEL_HELMET
 
 	body_parts_covered = HEAD|HAIR|EARS
-	max_integrity = 300
+	max_integrity = 350
 
 //................ Elf Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet/elven	// blackoak merc helmet
@@ -506,7 +519,7 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)	
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|HAIR|NOSE|MOUTH|EARS
 	prevent_crits = ALL_CRITICAL_HITS // Stab protection out of having faceplate
 	max_integrity = 350//isn't the same as a steel helmet but is better than a skullcap, costs 2 bars and protects the mouth
@@ -639,6 +652,11 @@
 	desc = "A lightweight armet that protects dreams of chivalrous friendship, fair maidens to rescue, and glorious deeds of combat. Its visor can be flipped over for higher visibility at the cost of eye protection."
 	icon_state = "knight"
 	item_state = "knight"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
 	adjustable = CAN_CADJUST
 	emote_environment = 3
 	block2add = FOV_RIGHT|FOV_LEFT
@@ -724,7 +742,7 @@
 
 
 
-//............... Temple heavy helmets ......................// 
+//............... Temple heavy helmets ......................//
 
 //............... Astrata Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
@@ -760,7 +778,7 @@
 //............... Dendor Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 	name = "dendor helmet"
-	desc = "A great helmet with twisted metalwork that imitates the twisting of bark, or the horns of a beast." 
+	desc = "A great helmet with twisted metalwork that imitates the twisting of bark, or the horns of a beast."
 	icon_state = "dendorhelm"
 	item_state = "dendorhelm"
 	emote_environment = 3
@@ -1018,7 +1036,7 @@
 		pic.appearance_flags = RESET_COLOR
 		if(get_detail_color())
 			pic.color = get_detail_color()
-		add_overlay(pic)		
+		add_overlay(pic)
 
 //............... Decorated Hounskull ............... //
 /obj/item/clothing/head/roguetown/helmet/decoratedhounskull
@@ -1078,7 +1096,7 @@
 		pic.appearance_flags = RESET_COLOR
 		if(get_detail_color())
 			pic.color = get_detail_color()
-		add_overlay(pic)		
+		add_overlay(pic)
 
 //............... Decorated Great Helm ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/decoratedbucket
@@ -1139,7 +1157,7 @@
 		pic.appearance_flags = RESET_COLOR
 		if(get_detail_color())
 			pic.color = get_detail_color()
-		add_overlay(pic)		
+		add_overlay(pic)
 
 
 //............... Decorated Gold Helm ............... //
@@ -1200,7 +1218,7 @@
 		pic.appearance_flags = RESET_COLOR
 		if(get_detail_color())
 			pic.color = get_detail_color()
-		add_overlay(pic)	
+		add_overlay(pic)
 
 
 
@@ -1216,7 +1234,7 @@
 	icon = 'icons/roguetown/mob/monster/orc.dmi'
 	allowed_race = list("orc")
 	smeltresult = /obj/item/ingot/iron
-	sellprice = NO_MARKET_VALUE	
+	sellprice = NO_MARKET_VALUE
 
 	armor = list("melee" = 60, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|EARS|HAIR|EYES
@@ -1511,7 +1529,7 @@
 //	var/will_cover // used for avoiding issues when worn on hip, currently only helmets
 //	var/will_hide
 
-// Prevents coverage error when unequipping. 
+// Prevents coverage error when unequipping.
 /obj/item/clothing/head/roguetown/helmet/visored/dropped(mob/user)
 	. = ..()
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)

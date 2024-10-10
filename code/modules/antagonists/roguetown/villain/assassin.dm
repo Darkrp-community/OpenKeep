@@ -14,7 +14,7 @@
 	)
 
 /datum/antagonist/assassin/on_gain()
-	owner.current.cmode_music = 'sound/music/combat_assassin.ogg'
+	owner.current.cmode_music = list('sound/music/combat_assassin.ogg', 'sound/music/combat_assassin2.ogg')
 	if(owner.current.job != "Drifter") // This code only runs if the assassin is assigned midround and is not a drifter.
 		owner.current.patron = GLOB.patronlist[/datum/patron/inhumen/graggar]
 		ADD_TRAIT(owner.current, TRAIT_ASSASSIN, TRAIT_GENERIC)
@@ -55,7 +55,7 @@
 
 /datum/antagonist/assassin/roundend_report()
 	var/traitorwin = FALSE
-	for(var/obj/item/I in owner) // Check to see if the Assassin has their profane dagger on them, and then check the souls contained therein.
+	for(var/obj/item/I in owner.current) // Check to see if the Assassin has their profane dagger on them, and then check the souls contained therein.
 		if(istype(I, /obj/item/rogueweapon/huntingknife/idagger/steel/profane))
 			for(var/mob/dead/observer/profane/A in I) // Each trapped soul is announced to the server
 				if(A)

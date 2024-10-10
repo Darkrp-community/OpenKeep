@@ -56,7 +56,6 @@
 			return pick("rain1", "rain2", "rain3", "rain4")
 		if(WIND_DOWN_STAGE)
 			return "bla2"
-			return end_overlay
 	return "bla3"
 
 /datum/weather/rain/starteffected()

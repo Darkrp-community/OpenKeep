@@ -13,9 +13,9 @@
 	var/obj/item/rogueweapon/sword/long/heirloom
 
 /obj/structure/fireaxecabinet/Initialize()
-    . = ..()
-    heirloom = new /obj/item/rogueweapon/sword/long/heirloom
-    update_icon()
+	. = ..()
+	heirloom = new /obj/item/rogueweapon/sword/long/heirloom
+	update_icon()
 
 /obj/structure/fireaxecabinet/Destroy()
 	if(heirloom)
