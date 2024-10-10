@@ -4235,6 +4235,12 @@
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
+"etd" = (
+/obj/structure/mineral_door/wood{
+	lockid = "nightmaiden"
+	},
+/turf/open/floor/rogue/blocks/stonered/tiny,
+/area/rogue/indoors/town/bath)
 "ett" = (
 /turf/closed/wall/mineral/rogue/wooddark/end{
 	dir = 8
@@ -9757,12 +9763,6 @@
 	},
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/bath)
-"ktV" = (
-/obj/structure/mineral_door/wood{
-	lockid = "nightmaiden"
-	},
-/turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/town/bath)
 "kul" = (
 /obj/structure/rack/rogue,
 /obj/item/rope,
@@ -9893,7 +9893,10 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "kAA" = (
-/turf/closed/wall/mineral/rogue/craftstone,
+/obj/structure/mineral_door/wood{
+	lockid = "nightmaiden"
+	},
+/turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
 "kAB" = (
 /obj/structure/fluff/railing/fence,
@@ -11522,10 +11525,8 @@
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/town/sewer)
 "mhG" = (
-/obj/structure/mineral_door/wood{
-	lockid = "nightmaiden"
-	},
-/turf/open/floor/rogue/blocks/stonered/tiny,
+/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
 "mhH" = (
 /obj/structure/closet/crate/chest/neu,
@@ -11654,14 +11655,6 @@
 	icon_state = "wooden_floort"
 	},
 /area/rogue/outdoors/town/roofs)
-"mrA" = (
-/obj/structure/closet/crate/chest/neu,
-/obj/item/roguekey/nitemaiden,
-/obj/item/roguekey/nitemaiden,
-/obj/item/roguekey/nitemaiden,
-/obj/item/roguekey/nitemaiden,
-/turf/open/floor/carpet/inn,
-/area/rogue/indoors/town/bath)
 "mrD" = (
 /obj/structure/chair/wood/rogue/chair3,
 /turf/open/floor/rogue/blocks,
@@ -15739,6 +15732,14 @@
 /obj/structure/fermenting_barrel/water,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
+"qQg" = (
+/obj/structure/closet/crate/chest/neu,
+/obj/item/roguekey/nitemaiden,
+/obj/item/roguekey/nitemaiden,
+/obj/item/roguekey/nitemaiden,
+/obj/item/roguekey/nitemaiden,
+/turf/open/floor/carpet/inn,
+/area/rogue/indoors/town/bath)
 "qQV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/turned,
@@ -18592,10 +18593,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
-"tWA" = (
-/obj/machinery/light/rogue/wallfire/candle/blue/r,
-/turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/town/bath)
 "tWL" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/rogue/cobble,
@@ -23968,9 +23965,9 @@ fTX
 ugL
 ugL
 ovB
-ugL
-ugL
-lYk
+fzF
+fzF
+fzF
 fzF
 wBb
 ugL
@@ -24594,13 +24591,13 @@ mOe
 oFV
 mOe
 mOe
-ktV
-tWA
+kAA
+mhG
 iiU
 ugL
 iiU
-tWA
-ktV
+mhG
+kAA
 mOe
 mOe
 mOe
@@ -25709,7 +25706,7 @@ ugL
 ewT
 lYS
 lYS
-mrA
+qQg
 ugL
 pNQ
 pNQ
@@ -26019,7 +26016,7 @@ uZR
 adV
 adV
 hCc
-kAA
+ugL
 qAk
 mOe
 mOe
@@ -26632,7 +26629,7 @@ ugL
 ugL
 ugL
 jfC
-mhG
+etd
 jfC
 ugL
 gpb
