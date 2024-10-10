@@ -6,67 +6,160 @@
 	total_positions = 2
 	spawn_positions = 2
 
+	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
 		"Elf",
 		"Half-Elf",
 		"Dwarf"
 	)
-	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT)
 
-	tutorial = "You've always had greater aspirations than the simple life of a peasant. You and your friends practiced the basics, swordfighting with sticks and loosing arrows into hay bale targets. The Captain took notice of your potential, and recruited you as a personal ward. Learn from the garrison and train hard... maybe one dae you will be honored with knighthood."
+	tutorial = "You've always had greater aspirations than the simple life of a peasant. You and your friends practiced the basics, swordfighting with sticks and loosing arrows into hay bale targets. The Royal Guard took notice of your potential, and recruited you as a personal ward. Learn from your protector and train hard... maybe one dae you will be honored with knighthood."
 
-	outfit = /datum/outfit/job/roguetown/squire
 	display_order = JDO_SQUIRE
+	bypass_lastclass = TRUE
+
+	outfit = /datum/outfit/job/roguetown/squire	//Default outfit.
+	advclass_cat_rolls = list(CTAG_SQUIRE = 20)	//Handles class selection.
 	give_bank_account = TRUE
 	min_pq = 0
-	bypass_lastclass = TRUE
-	selection_color = "#304529"
 
-/datum/outfit/job/roguetown/squire/pre_equip(mob/living/carbon/human/H)
-	..()
-	neck = /obj/item/storage/belt/rogue/pouch
-	beltl = /obj/item/keyring/guard
-	backr = /obj/item/storage/backpack/rogue/satchel
-	pants = /obj/item/clothing/under/roguetown/tights
+/datum/job/roguetown/squire/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+	. = ..()
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		H.advsetup = 1
+		H.invisibility = INVISIBILITY_MAXIMUM
+		H.become_blind("advsetup")
+
+/datum/outfit/job/roguetown/squire
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
+	pants = /obj/item/clothing/under/roguetown/tights
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
-	switch(pick(1,2,3))
-		if (1)
-			beltr = /obj/item/rogueweapon/mace/wsword
-		if (2)
-			beltr = /obj/item/rogueweapon/mace/copperbludgeon
-		if (3)
-			beltr = /obj/item/rogueweapon/copperdagger
 
-/datum/outfit/job/roguetown/squire/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
+/* ! ! ! Class Selection Section Below ! ! !
+Design philosphy:
+- Swords Training, specializes in handling swords. - Light armor
+- Spear Training, specializes in handling a spear. - Light armor
+- Flail Training, specializes in handling a flail. - Light armor
+*/
 
-	ADD_TRAIT(H, TRAIT_INTRAINING, TRAIT_GENERIC) // An exception to the average combat skill cap on training dummies, since we are a combat role in training... we can get up to skilled! Hooray!
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+/datum/advclass/squire/swordsman
+	name = "Swordsman Squire"
+	tutorial = "Your training has been singularly focused on the intricacies of the sword, a weapon whose versatility belies the difficulty of its use."
+	outfit = /datum/outfit/job/roguetown/squire/swordsman
+		
+	category_tags = list(CTAG_SQUIRE)
 
+/datum/outfit/job/roguetown/squire/swordsman/pre_equip(mob/living/carbon/human/H)
 	H.virginity = TRUE
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+	gloves = /obj/item/clothing/gloves/roguetown/leather
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	backr = /obj/item/storage/backpack/rogue/satchel
+	backpack_contents = list(
+		/obj/item/storage/belt/rogue/pouch,
+		/obj/item/clothing/neck/roguetown/chaincoif
+	)
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+		H.change_stat("strength", 1)
+		H.change_stat("perception", 1)
+		H.change_stat("constitution", 1)
+		H.change_stat("speed", 1)
+		if(H.gender == MALE && H.dna?.species)
+			H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
+	ADD_TRAIT(H, TRAIT_INTRAINING, TRAIT_GENERIC) // An exception to the average combat skill cap on training dummies, since we are a combat role in training... we can get up to skilled! Hooray!
 
-	H.change_stat("perception", 1)
-	H.change_stat("constitution", 1)
-	H.change_stat("speed", 1)
+	var/weapontype = pickweight(list("Iron Sword" = 7, "Steel Sword" = 3)) // Rolls for either an iron or steel sword
+	switch(weapontype)
+		if("Iron Sword")
+			beltr = /obj/item/rogueweapon/sword/iron
+		if("Steel Sword")	
+			beltr = /obj/item/rogueweapon/sword
 
-	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	if(H.gender == MALE && H.dna?.species)
-		H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
+/datum/advclass/squire/lancer
+	name = "Lancer Squire"
+	tutorial = "A hopeful for the next generation of knightly mounted lancers and infantry pike specialists, your training with polearms sets you apart from other squires."
+	outfit = /datum/outfit/job/roguetown/squire/lancer
+		
+	category_tags = list(CTAG_SQUIRE)
+
+/datum/outfit/job/roguetown/squire/lancer/pre_equip(mob/living/carbon/human/H)
+	H.virginity = TRUE
+	r_hand = /obj/item/rogueweapon/spear
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+	gloves = /obj/item/clothing/gloves/roguetown/leather
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	backr = /obj/item/storage/backpack/rogue/satchel
+	backpack_contents = list(
+		/obj/item/storage/belt/rogue/pouch,
+		/obj/item/clothing/neck/roguetown/chaincoif
+	)
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+		H.change_stat("strength", 1)
+		H.change_stat("perception", 1)
+		H.change_stat("constitution", 1)
+		H.change_stat("speed", 1)
+		if(H.gender == MALE && H.dna?.species)
+			H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
+	ADD_TRAIT(H, TRAIT_INTRAINING, TRAIT_GENERIC) // An exception to the average combat skill cap on training dummies, since we are a combat role in training... we can get up to skilled! Hooray!
+
+/datum/advclass/squire/flail
+	name = "Flailman of the Realm"
+	tutorial = "Your training with a flail was an indication of a squires that was not mainstream at all. This weapon, beautiful in its chaotic grace, has a certain appeal and requires not only brawn, but as well as suppleness and accuracy that makes the path to mastery quite arduous."
+	outfit = /datum/outfit/job/roguetown/squire/flail
+		
+	category_tags = list(CTAG_SQUIRE)
+
+/datum/outfit/job/roguetown/squire/flail/pre_equip(mob/living/carbon/human/H)
+	H.virginity = TRUE
+	beltr = /obj/item/rogueweapon/flail/sflail
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+	gloves = /obj/item/clothing/gloves/roguetown/leather
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	backr = /obj/item/storage/backpack/rogue/satchel
+	backpack_contents = list(
+		/obj/item/storage/belt/rogue/pouch,
+		/obj/item/clothing/neck/roguetown/chaincoif,
+		)
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+		H.change_stat("perception", 1)
+		H.change_stat("constitution", 1)
+		H.change_stat("speed", 2)
+		if(H.gender == MALE && H.dna?.species)
+			H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
+	ADD_TRAIT(H, TRAIT_INTRAINING, TRAIT_GENERIC) // An exception to the average combat skill cap on training dummies, since we are a combat role in training... we can get up to skilled! Hooray!
