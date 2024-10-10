@@ -55,7 +55,7 @@
 /turf/open/floor/rogue/underworld/road,
 /area/rogue/underworld)
 "o" = (
-/obj/effect/landmark/underworldcoin,
+/obj/structure/fluff/psycross/copper,
 /turf/open/floor/rogue/underworld/road,
 /area/rogue/underworld)
 "p" = (
@@ -67,10 +67,6 @@
 /area/rogue/underworld)
 "q" = (
 /obj/structure/flora/roguetree/underworld,
-/turf/open/floor/plating/dirt/dark,
-/area/rogue/underworld)
-"r" = (
-/obj/effect/landmark/underworldcoin,
 /turf/open/floor/plating/dirt/dark,
 /area/rogue/underworld)
 "s" = (
@@ -90,6 +86,22 @@
 /obj/structure/flora/roguetree/underworld,
 /obj/effect/landmark/underworldsafe,
 /turf/open/floor/rogue/underworld/road,
+/area/rogue/underworld)
+"C" = (
+/obj/item/underworld/coin,
+/turf/open/floor/rogue/underworld/road,
+/area/rogue/underworld)
+"I" = (
+/obj/effect/landmark/underworldcoin,
+/turf/open/floor/rogue/underworld/road,
+/area/rogue/underworld)
+"U" = (
+/obj/structure/bookcase,
+/obj/item/book/rogue/advice_farming,
+/obj/item/book/rogue/advice_soup,
+/obj/item/book/rogue/yeoldecookingmanual,
+/obj/item/book/rogue/fishing,
+/turf/open/floor/rogue/churchrough,
 /area/rogue/underworld)
 
 (1,1,1) = {"
@@ -6602,7 +6614,7 @@ a
 c
 n
 e
-o
+e
 b
 b
 b
@@ -6614,12 +6626,12 @@ e
 e
 e
 e
-e
-o
-e
+k
 e
 e
-o
+e
+e
+e
 e
 e
 e
@@ -6734,14 +6746,18 @@ n
 e
 e
 b
-r
+b
 b
 e
 e
 e
 e
 e
-o
+e
+e
+k
+U
+k
 e
 e
 e
@@ -6750,10 +6766,6 @@ e
 e
 e
 e
-e
-e
-e
-o
 e
 e
 e
@@ -6874,7 +6886,7 @@ e
 e
 e
 e
-e
+k
 e
 e
 e
@@ -7122,7 +7134,7 @@ a
 c
 n
 e
-o
+e
 b
 b
 b
@@ -7134,7 +7146,7 @@ e
 e
 e
 e
-o
+e
 e
 e
 e
@@ -7258,7 +7270,7 @@ b
 b
 b
 e
-o
+e
 e
 e
 e
@@ -7381,7 +7393,7 @@ a
 a
 c
 n
-o
+e
 e
 b
 b
@@ -7399,7 +7411,7 @@ e
 e
 e
 e
-o
+e
 e
 e
 e
@@ -7533,7 +7545,7 @@ e
 e
 e
 e
-o
+e
 e
 e
 e
@@ -7901,7 +7913,7 @@ a
 a
 c
 n
-o
+e
 b
 b
 d
@@ -8042,9 +8054,8 @@ k
 p
 k
 e
-e
-e
-e
+t
+C
 e
 o
 e
@@ -8058,6 +8069,7 @@ e
 e
 e
 e
+n
 s
 e
 e
@@ -8175,19 +8187,19 @@ e
 e
 e
 e
+I
 e
 e
 e
 e
 e
 e
-o
 e
 e
 e
 e
 e
-e
+n
 s
 e
 e
@@ -8314,10 +8326,10 @@ e
 e
 e
 e
-o
 e
 e
 e
+n
 s
 e
 e
@@ -8950,13 +8962,13 @@ e
 e
 e
 e
-o
 e
 e
 e
 e
 e
-o
+e
+e
 e
 e
 e
@@ -9075,7 +9087,7 @@ e
 b
 b
 b
-r
+b
 e
 e
 e
@@ -9332,19 +9344,11 @@ a
 c
 n
 e
-r
 b
 b
 b
 b
-e
-e
-e
-e
-e
-e
-o
-e
+b
 e
 e
 e
@@ -9354,7 +9358,15 @@ e
 e
 e
 e
-o
+e
+e
+e
+e
+e
+e
+e
+e
+e
 e
 e
 n
@@ -9468,7 +9480,7 @@ b
 b
 b
 e
-o
+e
 e
 e
 e
@@ -9595,7 +9607,7 @@ e
 b
 b
 b
-r
+b
 b
 e
 e
@@ -9605,12 +9617,12 @@ e
 e
 e
 e
-o
 e
 e
 e
 e
-o
+e
+e
 e
 e
 e
@@ -9722,7 +9734,7 @@ a
 c
 n
 e
-r
+b
 b
 b
 b
@@ -16297,7 +16309,7 @@ i
 n
 e
 e
-t
+e
 e
 e
 n
