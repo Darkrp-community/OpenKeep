@@ -31,6 +31,7 @@
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	spawnableAtoms = list(/obj/structure/flora/roguegrass/water = 5,
 						/obj/structure/flora/roguegrass/water/reeds = 80,
+						/obj/structure/flora/roguegrass/water/reeds = 20,
 						/obj/structure/glowshroom = 60)
 	allowed_turfs = list(/turf/open/water/swamp,
 						/turf/open/water/swamp/deep)
