@@ -2773,8 +2773,6 @@
 	icon_state = "longtable"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/roguekey/nitemaiden,
-/obj/item/roguekey/nitemaiden,
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/town/bath)
 "cSe" = (
@@ -7853,11 +7851,12 @@
 /area/rogue/outdoors/town)
 "iiU" = (
 /obj/structure/closet/crate/roguecloset/lord{
-	lockid = "nightmaiden"
+	lockid = "nightmaiden";
+	locked = 0
 	},
-/obj/item/clothing/suit/roguetown/shirt/dress/silkdress,
-/obj/item/clothing/suit/roguetown/shirt/dress/silkdress,
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random,
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
 "ijp" = (
@@ -9065,18 +9064,6 @@
 	pixel_y = 8;
 	pixel_x = -4
 	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed{
-	pixel_y = 8;
-	pixel_x = -4
-	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried{
-	pixel_y = -8;
-	pixel_x = 4
-	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried{
-	pixel_y = -8;
-	pixel_x = 4
-	},
 /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried{
 	pixel_y = -8;
 	pixel_x = 4
@@ -9100,8 +9087,6 @@
 /obj/structure/closet/crate/chest/neu,
 /obj/item/reagent_containers/powder/ozium,
 /obj/item/reagent_containers/powder/ozium,
-/obj/item/reagent_containers/powder/ozium,
-/obj/item/reagent_containers/powder/moondust,
 /obj/item/reagent_containers/powder/moondust,
 /obj/item/reagent_containers/powder/moondust,
 /obj/item/reagent_containers/powder/spice,
@@ -9771,6 +9756,12 @@
 	pixel_x = -2
 	},
 /turf/open/floor/rogue/churchmarble,
+/area/rogue/indoors/town/bath)
+"ktV" = (
+/obj/structure/mineral_door/wood{
+	lockid = "nightmaiden"
+	},
+/turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
 "kul" = (
 /obj/structure/rack/rogue,
@@ -11532,10 +11523,9 @@
 /area/rogue/under/town/sewer)
 "mhG" = (
 /obj/structure/mineral_door/wood{
-	locked = 1;
 	lockid = "nightmaiden"
 	},
-/turf/closed/wall/mineral/rogue/stonebrick/reddish,
+/turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
 "mhH" = (
 /obj/structure/closet/crate/chest/neu,
@@ -11664,6 +11654,14 @@
 	icon_state = "wooden_floort"
 	},
 /area/rogue/outdoors/town/roofs)
+"mrA" = (
+/obj/structure/closet/crate/chest/neu,
+/obj/item/roguekey/nitemaiden,
+/obj/item/roguekey/nitemaiden,
+/obj/item/roguekey/nitemaiden,
+/obj/item/roguekey/nitemaiden,
+/turf/open/floor/carpet/inn,
+/area/rogue/indoors/town/bath)
 "mrD" = (
 /obj/structure/chair/wood/rogue/chair3,
 /turf/open/floor/rogue/blocks,
@@ -18576,7 +18574,8 @@
 "tUH" = (
 /obj/structure/mineral_door/wood/donjon{
 	lockid = "tavern";
-	dir = 4
+	dir = 4;
+	locked = 1
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -18593,6 +18592,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
+"tWA" = (
+/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/town/bath)
 "tWL" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/rogue/cobble,
@@ -24591,13 +24594,13 @@ mOe
 oFV
 mOe
 mOe
-cVp
-mOe
+ktV
+tWA
 iiU
 ugL
 iiU
-mOe
-cVp
+tWA
+ktV
 mOe
 mOe
 mOe
@@ -25706,7 +25709,7 @@ ugL
 ewT
 lYS
 lYS
-lYS
+mrA
 ugL
 pNQ
 pNQ
@@ -26629,7 +26632,7 @@ ugL
 ugL
 ugL
 jfC
-qid
+mhG
 jfC
 ugL
 gpb
@@ -27417,7 +27420,7 @@ oGa
 oFV
 pUC
 ugL
-mhG
+qid
 ugL
 ugL
 ugL
