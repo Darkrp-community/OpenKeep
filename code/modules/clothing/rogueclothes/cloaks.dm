@@ -1014,3 +1014,16 @@
 	nodismemsleeves = TRUE
 	inhand_mod = FALSE
 	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
+
+/obj/item/clothing/cloak/wickercloak
+	name = "wickercloak"
+	desc = "An improvised cloak made using foliage."
+	icon_state = "wicker_cloak"
+	item_state = "wicker_cloak"
+	alternate_worn_layer = CLOAK_BEHIND_LAYER
+	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	inhand_mod = TRUE
+	allowed_race = list("human", "tiefling", "elf", "aasimar")

@@ -78,6 +78,20 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 60
 
+/obj/item/clothing/suit/roguetown/armor/chainmail/boggardhauberk
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "boggard's hauberk"
+	desc = "A hauberk mixed with plant fibres, swampweed, mud and other found flora - a favorite among bandits and ambushers alike, if you can stand the occasional crawling on your skin."
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
+	icon_state = "bogarmor"
+	item_state = "bogarmor"
+	armor = list("melee" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	do_sound = TRUE
+	smeltresult = /obj/item/ingot/steel
+	armor_class = ARMOR_CLASS_MEDIUM
+	sellprice = 50
+
 /obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
 	name = "amazon mail"
 	desc = "A combination of leather hides and chainmail armor, typically worn by warrior women of the isle of Issa."

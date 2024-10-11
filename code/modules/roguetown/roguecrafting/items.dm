@@ -536,3 +536,42 @@
 	req_table = TRUE
 	result = list(/obj/item/rogueweapon/mace/cudgel/carpenter, /obj/item/rogueweapon/mace/cudgel/carpenter)
 	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/earnecklace
+	name = "ear necklace"
+	result = /obj/item/clothing/neck/roguetown/earnecklace
+	reqs = list(/obj/item/organ/ears = 4,
+				/obj/item/rope = 1)
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/elfearnecklace
+	name = "elf ear necklace"
+	result = /obj/item/clothing/neck/roguetown/earnecklace/elf
+	reqs = list(/obj/item/organ/ears = 4,
+				/obj/item/rope = 1)
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/bogcowl
+	name = "bogcowl"
+	result = /obj/item/clothing/neck/roguetown/bogcowl
+	reqs = list(/obj/item/natural/dirtclod = 1,
+				/obj/item/grown/log/tree/stick = 3,
+				/obj/item/natural/fibers = 2)
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/boggardhauberk
+	name = "boggard's hauberk"
+	result = /obj/item/clothing/suit/roguetown/armor/chainmail/boggardhauberk
+	reqs = list(/obj/item/natural/dirtclod = 3,
+				/obj/item/grown/log/tree/stick = 3,
+				/obj/item/natural/fibers = 3,
+				/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk = 1)
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/wickercloak
+	name = "wickercloak"
+	result = /obj/item/clothing/cloak/wickercloak
+	reqs = list(/obj/item/natural/dirtclod = 1,
+				/obj/item/grown/log/tree/stick = 5,
+				/obj/item/natural/fibers = 3)
+	craftdiff = 0
