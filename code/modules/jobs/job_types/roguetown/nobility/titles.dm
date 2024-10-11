@@ -22,6 +22,7 @@
 
 /datum/job/roguetown/huntmaster
 	title = "Huntmaster of the Murderwoods"
+	f_title = "Huntmistress of the Murderwoods"
 	tutorial = ""
 	flag = LORD
 	department_flag = NOBLEMEN
@@ -44,6 +45,7 @@
 
 /datum/job/roguetown/hetman
 	title = "Hetman of Mount Decapitation"
+	f_title = "Hetwoman of Mount Decapitation"
 	tutorial = ""
 	flag = LORD
 	department_flag = NOBLEMEN
