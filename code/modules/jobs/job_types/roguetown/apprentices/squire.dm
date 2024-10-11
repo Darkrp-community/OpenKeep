@@ -50,7 +50,7 @@ Design philosphy:
 	name = "Swordsman Squire"
 	tutorial = "Your training has been singularly focused on the intricacies of the sword, a weapon whose versatility belies the difficulty of its use."
 	outfit = /datum/outfit/job/roguetown/squire/swordsman
-		
+
 	category_tags = list(CTAG_SQUIRE)
 
 /datum/outfit/job/roguetown/squire/swordsman/pre_equip(mob/living/carbon/human/H)
@@ -86,14 +86,14 @@ Design philosphy:
 	switch(weapontype)
 		if("Iron Sword")
 			beltr = /obj/item/rogueweapon/sword/iron
-		if("Steel Sword")	
+		if("Steel Sword")
 			beltr = /obj/item/rogueweapon/sword
 
 /datum/advclass/squire/lancer
 	name = "Lancer Squire"
 	tutorial = "A hopeful for the next generation of knightly mounted lancers and infantry pike specialists, your training with polearms sets you apart from other squires."
 	outfit = /datum/outfit/job/roguetown/squire/lancer
-		
+
 	category_tags = list(CTAG_SQUIRE)
 
 /datum/outfit/job/roguetown/squire/lancer/pre_equip(mob/living/carbon/human/H)
@@ -131,12 +131,12 @@ Design philosphy:
 	name = "Flailman of the Realm"
 	tutorial = "Your training with a flail was an indication of a squires that was not mainstream at all. This weapon, beautiful in its chaotic grace, has a certain appeal and requires not only brawn, but as well as suppleness and accuracy that makes the path to mastery quite arduous."
 	outfit = /datum/outfit/job/roguetown/squire/flail
-		
+
 	category_tags = list(CTAG_SQUIRE)
 
 /datum/outfit/job/roguetown/squire/flail/pre_equip(mob/living/carbon/human/H)
 	H.virginity = TRUE
-	beltr = /obj/item/rogueweapon/flail/sflail
+	beltr = /obj/item/rogueweapon/flail
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
