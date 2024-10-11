@@ -3950,6 +3950,12 @@
 	},
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/church/chapel)
+"dZY" = (
+/obj/structure/bars/passage/shutter{
+	redstone_id = "merchroofshutt"
+	},
+/turf/open/transparent/openspace,
+/area/rogue/indoors/town/shop)
 "eaK" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/chest/neu,
@@ -5655,6 +5661,11 @@
 	},
 /turf/open/floor/rogue/metal,
 /area/rogue/indoors/town/garrison)
+"fYs" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/mannequin,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/shop)
 "fYt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/cobble,
@@ -12796,6 +12807,12 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/shop)
+"nMp" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/wallclock,
+/obj/structure/rack/rogue,
+/turf/open/floor/carpet/stellar,
+/area/rogue/indoors/town/shop)
 "nOZ" = (
 /obj/structure/fluff/walldeco/innsign{
 	desc = "A sign for a local inn.";
@@ -13501,16 +13518,6 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors/town)
-"ous" = (
-/obj/structure/table/wood{
-	dir = 1;
-	icon_state = "longtable"
-	},
-/obj/structure/fluff/wallclock,
-/obj/item/clothing/neck/roguetown/coif,
-/obj/item/clothing/mask/bandana/black,
-/turf/open/floor/carpet/stellar,
-/area/rogue/indoors/town/shop)
 "ouw" = (
 /turf/open/floor/rogue/rooftop{
 	dir = 2;
@@ -14467,11 +14474,13 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/manor)
 "puV" = (
+/obj/machinery/light/rogue/torchholder/c,
 /obj/structure/table/wood{
+	dir = 1;
 	icon_state = "longtable"
 	},
-/obj/machinery/light/rogue/torchholder/c,
-/obj/item/staff/stick,
+/obj/item/clothing/neck/roguetown/coif,
+/obj/item/clothing/mask/bandana/black,
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/shop)
 "pvA" = (
@@ -16963,7 +16972,10 @@
 /turf/open/transparent/openspace,
 /area/rogue/under/cave)
 "siA" = (
-/obj/structure/rack/rogue,
+/obj/structure/table/wood{
+	icon_state = "longtable"
+	},
+/obj/item/staff/stick,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
 "sjl" = (
@@ -20310,12 +20322,6 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/church/chapel)
-"vVR" = (
-/obj/structure/bars/passage/shutter{
-	redstone_id = "merchroofshutt"
-	},
-/turf/open/transparent/openspace,
-/area/rogue/indoors/town/shop)
 "vWM" = (
 /obj/structure/bed/rogue/inn/hay,
 /turf/open/floor/rogue/cobble,
@@ -20723,6 +20729,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town)
+"wxj" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "merchant"
+	},
+/turf/closed,
+/area/rogue/indoors/town/shop)
 "wxB" = (
 /obj/structure/closet/crate/chest,
 /obj/item/natural/cloth,
@@ -57043,8 +57056,8 @@ cxb
 xzL
 dYY
 eWD
-xzL
-ous
+wxj
+mZc
 bBj
 xaY
 exy
@@ -57199,9 +57212,9 @@ hvn
 wse
 xzL
 qDA
-eWD
-ogr
-bBj
+fYs
+xzL
+nMp
 mZc
 xaY
 eVL
@@ -104770,9 +104783,9 @@ qhb
 qhb
 qhb
 tNt
-vVR
-vVR
-vVR
+dZY
+dZY
+dZY
 pPb
 ouw
 ouw
@@ -104927,9 +104940,9 @@ qhb
 qhb
 qhb
 tNt
-vVR
-vVR
-vVR
+dZY
+dZY
+dZY
 pPb
 ouw
 ouw
@@ -105084,9 +105097,9 @@ qhb
 qhb
 qhb
 tNt
-vVR
-vVR
-vVR
+dZY
+dZY
+dZY
 pPb
 ouw
 ouw
@@ -105241,8 +105254,8 @@ qhb
 qhb
 qhb
 tNt
-vVR
-vVR
+dZY
+dZY
 rfI
 pPb
 ouw
