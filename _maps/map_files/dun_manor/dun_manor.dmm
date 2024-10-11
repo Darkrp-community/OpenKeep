@@ -5661,11 +5661,6 @@
 	},
 /turf/open/floor/rogue/metal,
 /area/rogue/indoors/town/garrison)
-"fYs" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/mannequin,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/shop)
 "fYt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/cobble,
@@ -6114,6 +6109,12 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/church/chapel)
+"guQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/wallclock,
+/obj/structure/rack/rogue,
+/turf/open/floor/carpet/stellar,
+/area/rogue/indoors/town/shop)
 "guY" = (
 /obj/effect/spawner/roguemap/grass_low,
 /obj/structure/fluff/railing/wood{
@@ -6809,6 +6810,11 @@
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/tavern)
+"hfk" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/mannequin,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/shop)
 "hfo" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -8927,6 +8933,13 @@
 	},
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor)
+"jBy" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "merchant"
+	},
+/turf/closed,
+/area/rogue/indoors/town/shop)
 "jBG" = (
 /obj/structure/chair/wood/rogue/chair3{
 	dir = 4
@@ -12807,12 +12820,6 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/shop)
-"nMp" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fluff/wallclock,
-/obj/structure/rack/rogue,
-/turf/open/floor/carpet/stellar,
-/area/rogue/indoors/town/shop)
 "nOZ" = (
 /obj/structure/fluff/walldeco/innsign{
 	desc = "A sign for a local inn.";
@@ -15608,11 +15615,10 @@
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town)
 "qHt" = (
-/obj/effect/landmark/start/grabber{
-	dir = 8;
-	name = "Hauler"
-	},
 /obj/structure/bed/rogue/inn/hay,
+/obj/effect/landmark/start/grabber{
+	dir = 8
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "qIm" = (
@@ -20729,13 +20735,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town)
-"wxj" = (
-/obj/structure/mineral_door/wood{
-	locked = 1;
-	lockid = "merchant"
-	},
-/turf/closed,
-/area/rogue/indoors/town/shop)
 "wxB" = (
 /obj/structure/closet/crate/chest,
 /obj/item/natural/cloth,
@@ -22337,13 +22336,12 @@
 /turf/closed/wall/mineral/rogue/tent,
 /area/rogue/indoors/town)
 "xWS" = (
-/obj/effect/landmark/start/grabber{
-	dir = 8;
-	name = "Hauler"
-	},
 /obj/structure/bed/rogue/inn/hay,
 /obj/effect/decal/cobbleedge{
 	dir = 5
+	},
+/obj/effect/landmark/start/grabber{
+	dir = 8
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
@@ -57056,7 +57054,7 @@ cxb
 xzL
 dYY
 eWD
-wxj
+jBy
 mZc
 bBj
 xaY
@@ -57212,9 +57210,9 @@ hvn
 wse
 xzL
 qDA
-fYs
+hfk
 xzL
-nMp
+guQ
 mZc
 xaY
 eVL
