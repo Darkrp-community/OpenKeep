@@ -6307,7 +6307,6 @@
 /area/rogue/indoors/town/garrison)
 "gFQ" = (
 /obj/structure/roguemachine/scomm/l,
-/obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "gGO" = (
@@ -11323,12 +11322,6 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
-"lVi" = (
-/obj/structure/bars/passage/shutter{
-	redstone_id = "merchroofshutt"
-	},
-/turf/open/transparent/openspace,
-/area/rogue/indoors/town/shop)
 "lVW" = (
 /obj/effect/decal/cobbleedge{
 	dir = 10
@@ -20317,6 +20310,12 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/church/chapel)
+"vVR" = (
+/obj/structure/bars/passage/shutter{
+	redstone_id = "merchroofshutt"
+	},
+/turf/open/transparent/openspace,
+/area/rogue/indoors/town/shop)
 "vWM" = (
 /obj/structure/bed/rogue/inn/hay,
 /turf/open/floor/rogue/cobble,
@@ -104771,9 +104770,9 @@ qhb
 qhb
 qhb
 tNt
-lVi
-lVi
-lVi
+vVR
+vVR
+vVR
 pPb
 ouw
 ouw
@@ -104928,9 +104927,9 @@ qhb
 qhb
 qhb
 tNt
-lVi
-lVi
-lVi
+vVR
+vVR
+vVR
 pPb
 ouw
 ouw
@@ -105085,9 +105084,9 @@ qhb
 qhb
 qhb
 tNt
-lVi
-lVi
-lVi
+vVR
+vVR
+vVR
 pPb
 ouw
 ouw
@@ -105242,8 +105241,8 @@ qhb
 qhb
 qhb
 tNt
-lVi
-lVi
+vVR
+vVR
 rfI
 pPb
 ouw
