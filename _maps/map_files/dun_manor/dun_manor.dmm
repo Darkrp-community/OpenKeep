@@ -3950,14 +3950,6 @@
 	},
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/church/chapel)
-"dZY" = (
-/obj/structure/bars/passage/shutter{
-	redstone_id = "merchroofshutt"
-	},
-/turf/closed/wall/mineral/rogue/roofwall/middle{
-	dir = 1
-	},
-/area/rogue/outdoors/town/roofs)
 "eaK" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/chest/neu,
@@ -4233,11 +4225,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/church/chapel)
-"erT" = (
-/turf/closed/wall/mineral/rogue/roofwall/outercorner{
-	dir = 4
-	},
-/area/rogue/outdoors/town/roofs)
 "esp" = (
 /obj/structure/chair/wood/rogue{
 	dir = 1;
@@ -4608,11 +4595,6 @@
 /obj/item/grown/log/tree/stake,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
-"eTj" = (
-/turf/closed/wall/mineral/rogue/roofwall/outercorner{
-	dir = 8
-	},
-/area/rogue/outdoors/town/roofs)
 "eTk" = (
 /obj/structure/fermenting_barrel/random/water,
 /turf/open/floor/rogue/cobble,
@@ -5673,11 +5655,6 @@
 	},
 /turf/open/floor/rogue/metal,
 /area/rogue/indoors/town/garrison)
-"fYs" = (
-/turf/closed/wall/mineral/rogue/roofwall/middle{
-	dir = 1
-	},
-/area/rogue/outdoors/town/roofs)
 "fYt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/cobble,
@@ -6126,11 +6103,6 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/church/chapel)
-"guQ" = (
-/turf/closed/wall/mineral/rogue/roofwall/middle{
-	dir = 4
-	},
-/area/rogue/outdoors/town/roofs)
 "guY" = (
 /obj/effect/spawner/roguemap/grass_low,
 /obj/structure/fluff/railing/wood{
@@ -6827,9 +6799,6 @@
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/tavern)
-"hfk" = (
-/turf/closed/wall/mineral/rogue/roofwall/middle,
-/area/rogue/outdoors/town/roofs)
 "hfo" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -8948,11 +8917,6 @@
 	},
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor)
-"jBy" = (
-/turf/closed/wall/mineral/rogue/roofwall/outercorner{
-	dir = 1
-	},
-/area/rogue/outdoors/town/roofs)
 "jBG" = (
 /obj/structure/chair/wood/rogue/chair3{
 	dir = 4
@@ -11022,7 +10986,7 @@
 /area/rogue/outdoors/town)
 "lDq" = (
 /turf/closed/wall/mineral/rogue/roofwall/outercorner,
-/area/rogue/outdoors/town/roofs)
+/area/rogue/indoors/town/shop)
 "lDG" = (
 /obj/structure/table/wood{
 	dir = 5;
@@ -11363,10 +11327,8 @@
 /obj/structure/bars/passage/shutter{
 	redstone_id = "merchroofshutt"
 	},
-/turf/closed/wall/mineral/rogue/roofwall/middle{
-	dir = 8
-	},
-/area/rogue/outdoors/town/roofs)
+/turf/open/transparent/openspace,
+/area/rogue/indoors/town/shop)
 "lVW" = (
 /obj/effect/decal/cobbleedge{
 	dir = 10
@@ -12841,14 +12803,6 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/shop)
-"nMp" = (
-/obj/structure/bars/passage/shutter{
-	redstone_id = "merchroofshutt"
-	},
-/turf/closed/wall/mineral/rogue/roofwall/outercorner{
-	dir = 2
-	},
-/area/rogue/outdoors/town/roofs)
 "nOZ" = (
 /obj/structure/fluff/walldeco/innsign{
 	desc = "A sign for a local inn.";
@@ -16095,8 +16049,8 @@
 /obj/structure/bars/passage/shutter{
 	redstone_id = "merchroofshutt"
 	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/town/roofs)
+/turf/open/transparent/openspace,
+/area/rogue/indoors/town/shop)
 "rfY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/blocks,
@@ -20363,15 +20317,6 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/church/chapel)
-"vVR" = (
-/obj/structure/bars/passage/shutter{
-	redstone_id = "merchroofshutt"
-	},
-/turf/open/floor/rogue/rooftop{
-	dir = 2;
-	icon_state = "roofg"
-	},
-/area/rogue/outdoors/town/roofs)
 "vWM" = (
 /obj/structure/bed/rogue/inn/hay,
 /turf/open/floor/rogue/cobble,
@@ -20779,11 +20724,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town)
-"wxj" = (
-/turf/closed/wall/mineral/rogue/roofwall/middle{
-	dir = 8
-	},
-/area/rogue/outdoors/town/roofs)
 "wxB" = (
 /obj/structure/closet/crate/chest,
 /obj/item/natural/cloth,
@@ -104674,10 +104614,10 @@ qhb
 qhb
 qhb
 lDq
-wxj
-wxj
-wxj
-erT
+cOn
+cOn
+cOn
+hvJ
 qhb
 qhb
 qhb
@@ -104830,11 +104770,11 @@ qhb
 qhb
 qhb
 qhb
-fYs
-vVR
-vVR
-vVR
-hfk
+tNt
+lVi
+lVi
+lVi
+pPb
 ouw
 ouw
 ouw
@@ -104987,11 +104927,11 @@ qhb
 qhb
 qhb
 qhb
-fYs
-vVR
-vVR
-vVR
-hfk
+tNt
+lVi
+lVi
+lVi
+pPb
 ouw
 ouw
 ouw
@@ -105144,11 +105084,11 @@ qhb
 qhb
 qhb
 qhb
-fYs
-vVR
-nMp
+tNt
 lVi
-hfk
+lVi
+lVi
+pPb
 ouw
 ouw
 ouw
@@ -105301,11 +105241,11 @@ qhb
 qhb
 qhb
 qhb
-fYs
-vVR
-dZY
+tNt
+lVi
+lVi
 rfI
-hfk
+pPb
 ouw
 cxD
 ouw
@@ -105458,11 +105398,11 @@ qhb
 qhb
 qhb
 qhb
-jBy
-guQ
-guQ
-guQ
-eTj
+dfr
+ygn
+ygn
+ygn
+gOJ
 ouw
 ouw
 ouw
