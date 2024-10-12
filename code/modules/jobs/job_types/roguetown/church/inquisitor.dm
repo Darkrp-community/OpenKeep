@@ -56,7 +56,7 @@
 		honorary = "Ritterin"
 	H.real_name = "[honorary] [prev_real_name]"
 	H.name = "[honorary] [prev_name]"
-	H.confession_points = 1 // Starting with 1 point
+	H.confession_points = 10 // Starting with 10 points
 	H.purchase_history = list() // Initialize as an empty list to track purchases
 
 	if(H.mind)
