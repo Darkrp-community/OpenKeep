@@ -669,32 +669,37 @@
 	var/islooted = FALSE
 	var/tobacco
 	var/berries
+	var/silky	// just for bog bushes, its part of a whole thing, don't add bog bushes outside bog
 	var/goodie
-	var/trashie
+	var/trashie = /obj/item/natural/thorn
 
 /obj/structure/flora/roguegrass/bush_meagre/update_icon()
-	if(berries)
-		icon_state = "bush_berry[rand(1,3)]"
-	else
-		icon_state = "bush[rand(1, 4)]"
+	if(!silky)
+		if(berries)
+			icon_state = "bush_berry[rand(1,3)]"
+		else
+			icon_state = "bush[rand(1, 4)]"
 
 /obj/structure/flora/roguegrass/bush_meagre/Initialize()
-	if(prob(30))
-		tobacco = TRUE
-		berries = FALSE
-		goodie = /obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed
+	if(silky)
+		goodie = /obj/item/reagent_containers/food/snacks/grub/silk
 	else
-		tobacco = FALSE
-		berries = TRUE
-		if(prob(60))
-			goodie = /obj/item/reagent_containers/food/snacks/produce/berries/rogue
+		if(prob(30))
+			tobacco = TRUE
+			berries = FALSE
+			goodie = /obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed
 		else
-			goodie = /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
+			tobacco = FALSE
+			berries = TRUE
+			if(prob(60))
+				goodie = /obj/item/reagent_containers/food/snacks/produce/berries/rogue
+			else
+				goodie = /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
 	pixel_x += rand(-3,3)
-	if(prob(80))
-		trashie = /obj/item/natural/thorn
-	else
+	if(prob(10))
 		trashie = /obj/item/natural/fibers
+	if(prob(70))
+		debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/natural/thorn = 1)
 	return ..()
 
 /obj/structure/flora/roguegrass/bush_meagre/attack_hand(mob/living/user)
@@ -704,7 +709,7 @@
 	prob2findstuff = prob2findstuff + ( user.STAPER * 4 )
 	prob2findgoodie = prob2findgoodie + ( user.STALUC * 2 ) + ( user.STAPER * 2 )
 	luckydouble = ( user.STALUC * 2 )
-	user.visible_message(span_small("[user] searches through [src]."))
+	user.visible_message(span_noticesmall("[user] searches through [src]."))
 
 	if(do_after(L, rand(5,20), target = src))
 
@@ -740,4 +745,30 @@
 					return
 
 		else
-			to_chat(user, span_small("Didn't find anything."))
+			to_chat(user, span_noticesmall("Didn't find anything."))
+
+
+/obj/structure/flora/roguegrass/bush_meagre/bog
+	desc = "These large bushes are known to be well-liked by silkworms who make their nests in their dark depths."
+	icon = 'icons/roguetown/mob/monster/Trolls.dmi'
+	icon_state = "Trolls"
+	pixel_x = -15
+	pixel_y = -7
+	silky = TRUE
+
+
+/obj/item/reagent_containers/food/snacks/grub/silk
+	name = "silk grub"
+	desc = "Squeeze hard to force out the silk string."
+	icon = 'icons/roguetown/items/natural.dmi'
+	icon_state = "grub"
+	color = CLOTHING_YELLOW
+	list_reagents = list(/datum/reagent/consumable/soup/stew/gross = 1)
+
+/obj/item/reagent_containers/food/snacks/grub/silk/attack_self(mob/living/user)
+	user.visible_message(span_notice("[user] crushes [src], forcing the silk out."), span_notice("I crush [src], forcing the silk out."))
+	playsound(get_turf(src), 'modular/Neu_Food/sound/meatslap.ogg', 100, TRUE, -1)
+	var/obj/item/natural/silk/M = new
+	qdel(src)
+	user.put_in_hands(M)
+
