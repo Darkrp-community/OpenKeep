@@ -3177,6 +3177,7 @@
 #include "code\modules\roguetown\roguejobs\cook\tools\pan.dm"
 #include "code\modules\roguetown\roguejobs\cook\tools\pot.dm"
 #include "code\modules\roguetown\roguejobs\cook\tools\skewer.dm"
+#include "code\modules\roguetown\roguejobs\craftsman\tools.dm"
 #include "code\modules\roguetown\roguejobs\farmer\plantedcrops.dm"
 #include "code\modules\roguetown\roguejobs\farmer\tools.dm"
 #include "code\modules\roguetown\roguejobs\fisher\fish.dm"
