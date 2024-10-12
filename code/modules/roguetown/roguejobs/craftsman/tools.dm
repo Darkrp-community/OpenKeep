@@ -24,16 +24,23 @@
 	max_blade_int = 50
 
 /obj/item/rogueweapon/chisel
-	force = 5
-	possible_item_intents = list(/datum/intent/pick)
-	gripped_intents = null
+
 	name = "chisel"
 	desc = ""
 	icon_state = "chisel"
 	icon = 'icons/roguetown/items/crafting.dmi'
+	force = 2
+	throwforce = 2
+	possible_item_intents = list(/datum/intent/stab, /datum/intent/pick)
+	gripped_intents = null
+	twohands_required = FALSE
 	sharpness = IS_SHARP
 	dropshrink = 0.9
+	w_class = WEIGHT_CLASS_SMALL
 	wdefense = 1
+	blade_dulling = 0
+	max_integrity = 150
+	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP
 //	pixel_y = -16
 //	pixel_x = -16
 //	inhand_x_dimension = 64

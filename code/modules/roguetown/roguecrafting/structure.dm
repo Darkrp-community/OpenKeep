@@ -57,7 +57,7 @@
 /datum/crafting_recipe/roguetown/structure/door
 	name = "wooden door"
 	result = /obj/structure/mineral_door/wood/deadbolt
-	reqs = list(/obj/item/grown/log/tree/small = 2)
+	reqs = list(/obj/item/natural/plank = 3)
 	verbage = "carpent"
 	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -66,7 +66,7 @@
 /datum/crafting_recipe/roguetown/structure/barrel
 	name = "wooden barrel"
 	result = /obj/structure/fermenting_barrel/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/natural/plank = 2)
 	verbage = "construct"
 	verbage_tp = "makes"
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -78,7 +78,7 @@
 /datum/crafting_recipe/roguetown/roguebin
 	name = "wooden bin"
 	result = /obj/item/roguebin
-	reqs = list(/obj/item/grown/log/tree/small = 2)
+	reqs = list(/obj/item/natural/plank = 2)
 	verbage = "construct"
 	verbage_tp = "makes"
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -88,7 +88,7 @@
 /datum/crafting_recipe/roguetown/structure/dye_bin
 	name = "dye bin"
 	result = /obj/machinery/gear_painter
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/natural/plank = 1)
 	verbage = "construct"
 	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -98,7 +98,7 @@
 /datum/crafting_recipe/roguetown/structure/chair
 	name = "wooden chair"
 	result = /obj/item/chair/rogue/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/natural/plank = 1)
 	verbage = "carpent"
 	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -110,7 +110,7 @@
 /datum/crafting_recipe/roguetown/structure/stool
 	name = "wooden stool"
 	result = /obj/item/chair/stool/bar/rogue/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/natural/plank = 1)
 	skillcraft = /datum/skill/craft/carpentry
 	verbage = "carpent"
 	verbage_tp = "carpents"
