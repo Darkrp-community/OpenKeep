@@ -1357,9 +1357,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/basement)
-"boe" = (
-/turf/open/water/bath,
-/area/rogue/under/town/sewer)
 "boo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/stellar,
@@ -2773,8 +2770,6 @@
 	icon_state = "longtable"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/roguekey/nitemaiden,
-/obj/item/roguekey/nitemaiden,
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/town/bath)
 "cSe" = (
@@ -4237,6 +4232,12 @@
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
+"etd" = (
+/obj/structure/mineral_door/wood{
+	lockid = "nightmaiden"
+	},
+/turf/open/floor/rogue/blocks/stonered/tiny,
+/area/rogue/indoors/town/bath)
 "ett" = (
 /turf/closed/wall/mineral/rogue/wooddark/end{
 	dir = 8
@@ -4924,20 +4925,6 @@
 	},
 /obj/item/clothing/mask/cigarette/rollie/mindbreaker{
 	pixel_y = 8
-	},
-/obj/item/clothing/mask/cigarette/rollie/mindbreaker{
-	pixel_y = 8
-	},
-/obj/item/clothing/mask/cigarette/rollie/mindbreaker{
-	pixel_y = 8
-	},
-/obj/item/clothing/mask/cigarette/pipe/crafted{
-	pixel_y = -2;
-	pixel_x = 6
-	},
-/obj/item/clothing/mask/cigarette/pipe/crafted{
-	pixel_y = -2;
-	pixel_x = 6
 	},
 /obj/item/clothing/mask/cigarette/pipe/crafted{
 	pixel_y = -2;
@@ -7853,11 +7840,12 @@
 /area/rogue/outdoors/town)
 "iiU" = (
 /obj/structure/closet/crate/roguecloset/lord{
-	lockid = "nightmaiden"
+	lockid = "nightmaiden";
+	locked = 0
 	},
-/obj/item/clothing/suit/roguetown/shirt/dress/silkdress,
-/obj/item/clothing/suit/roguetown/shirt/dress/silkdress,
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random,
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
 "ijp" = (
@@ -8740,8 +8728,6 @@
 "jjI" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/bath/soap,
-/obj/item/bath/soap,
-/obj/item/bath/soap,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
 "jjK" = (
@@ -9049,26 +9035,6 @@
 /area/rogue/outdoors/rtfield)
 "jIv" = (
 /obj/structure/rack/rogue/shelf/biggest,
-/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed{
-	pixel_y = 8;
-	pixel_x = -4
-	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed{
-	pixel_y = 8;
-	pixel_x = -4
-	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed{
-	pixel_y = 8;
-	pixel_x = -4
-	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed{
-	pixel_y = 8;
-	pixel_x = -4
-	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed{
-	pixel_y = 8;
-	pixel_x = -4
-	},
 /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried{
 	pixel_y = -8;
 	pixel_x = 4
@@ -9077,13 +9043,17 @@
 	pixel_y = -8;
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried{
-	pixel_y = -8;
-	pixel_x = 4
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
+	pixel_y = 8;
+	pixel_x = -4
 	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried{
-	pixel_y = -8;
-	pixel_x = 4
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
+	pixel_y = 8;
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
+	pixel_y = 8;
+	pixel_x = -4
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
@@ -9100,8 +9070,6 @@
 /obj/structure/closet/crate/chest/neu,
 /obj/item/reagent_containers/powder/ozium,
 /obj/item/reagent_containers/powder/ozium,
-/obj/item/reagent_containers/powder/ozium,
-/obj/item/reagent_containers/powder/moondust,
 /obj/item/reagent_containers/powder/moondust,
 /obj/item/reagent_containers/powder/moondust,
 /obj/item/reagent_containers/powder/spice,
@@ -9902,7 +9870,10 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "kAA" = (
-/turf/closed/wall/mineral/rogue/craftstone,
+/obj/structure/mineral_door/wood{
+	lockid = "nightmaiden"
+	},
+/turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
 "kAB" = (
 /obj/structure/fluff/railing/fence,
@@ -11531,11 +11502,8 @@
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/town/sewer)
 "mhG" = (
-/obj/structure/mineral_door/wood{
-	locked = 1;
-	lockid = "nightmaiden"
-	},
-/turf/closed/wall/mineral/rogue/stonebrick/reddish,
+/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
 "mhH" = (
 /obj/structure/closet/crate/chest/neu,
@@ -15741,6 +15709,14 @@
 /obj/structure/fermenting_barrel/water,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
+"qQg" = (
+/obj/structure/closet/crate/chest/neu,
+/obj/item/roguekey/nitemaiden,
+/obj/item/roguekey/nitemaiden,
+/obj/item/roguekey/nitemaiden,
+/obj/item/roguekey/nitemaiden,
+/turf/open/floor/carpet/inn,
+/area/rogue/indoors/town/bath)
 "qQV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/turned,
@@ -16927,7 +16903,7 @@
 	pixel_x = 16;
 	pixel_y = 24
 	},
-/turf/open/water/bath,
+/turf/open/water/sewer,
 /area/rogue/under/town/sewer)
 "seP" = (
 /obj/structure/fluff/railing/wood{
@@ -18576,7 +18552,8 @@
 "tUH" = (
 /obj/structure/mineral_door/wood/donjon{
 	lockid = "tavern";
-	dir = 4
+	dir = 4;
+	locked = 1
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -18774,7 +18751,7 @@
 /area/rogue/indoors/town)
 "ufU" = (
 /obj/structure/stairs,
-/turf/closed,
+/turf/open/floor/rogue/blocks/green,
 /area/rogue/under/town/sewer)
 "ugj" = (
 /obj/structure/fluff/clock,
@@ -23170,30 +23147,30 @@ oGK
 oGK
 rDj
 cVE
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
-boe
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
+heh
 cVE
 pmA
 pNQ
@@ -23327,7 +23304,7 @@ cVE
 cVE
 cVE
 cVE
-boe
+heh
 bLB
 oGK
 oGK
@@ -23338,7 +23315,7 @@ oGK
 oGK
 oGK
 vrR
-boe
+heh
 cVE
 bLB
 oGK
@@ -23350,7 +23327,7 @@ oGK
 oGK
 oGK
 vrR
-boe
+heh
 cVE
 pmA
 pNQ
@@ -23479,12 +23456,12 @@ oGK
 oGK
 rDj
 cVE
-boe
-boe
-boe
-boe
-boe
-boe
+heh
+heh
+heh
+heh
+heh
+heh
 pmA
 pNQ
 lYk
@@ -23507,7 +23484,7 @@ wBb
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 pmA
 pNQ
@@ -23636,7 +23613,7 @@ cVE
 cVE
 cVE
 cVE
-boe
+heh
 bLB
 oGK
 oGK
@@ -23652,7 +23629,7 @@ ugL
 cVE
 cVE
 cVE
-boe
+heh
 cVE
 cVE
 cVE
@@ -23664,7 +23641,7 @@ tyl
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 ppJ
 oGK
@@ -23791,9 +23768,9 @@ pmA
 heh
 heh
 heh
-boe
-boe
-boe
+heh
+heh
+heh
 pmA
 pNQ
 pNQ
@@ -23806,13 +23783,13 @@ fpz
 fpz
 fpz
 ipJ
-boe
-boe
-boe
+heh
+heh
+heh
 sdH
-boe
-boe
-boe
+heh
+heh
+heh
 ipJ
 fpz
 fpz
@@ -23821,7 +23798,7 @@ ugL
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 cVE
 cVE
@@ -23965,9 +23942,9 @@ fTX
 ugL
 ugL
 ovB
-ugL
-ugL
-lYk
+fzF
+fzF
+fzF
 fzF
 wBb
 ugL
@@ -23978,11 +23955,11 @@ ugL
 pNQ
 pNQ
 pmA
-boe
-boe
-boe
-boe
-boe
+heh
+heh
+heh
+heh
+heh
 cVE
 pmA
 pNQ
@@ -24139,7 +24116,7 @@ hcC
 oGK
 oGK
 vrR
-boe
+heh
 cVE
 pmA
 pNQ
@@ -24296,7 +24273,7 @@ oGK
 oGK
 oGK
 qGI
-boe
+heh
 cVE
 pmA
 pNQ
@@ -24453,7 +24430,7 @@ cVE
 nyR
 pjj
 pmA
-boe
+heh
 cVE
 ppJ
 oGK
@@ -24591,13 +24568,13 @@ mOe
 oFV
 mOe
 mOe
-cVp
-mOe
+kAA
+mhG
 iiU
 ugL
 iiU
-mOe
-cVp
+mhG
+kAA
 mOe
 mOe
 mOe
@@ -24610,7 +24587,7 @@ phI
 cue
 pjj
 pmA
-boe
+heh
 cVE
 cVE
 cVE
@@ -24767,9 +24744,9 @@ phI
 cVE
 pjj
 pmA
-boe
-boe
-boe
+heh
+heh
+heh
 cVE
 pmA
 pNQ
@@ -24926,7 +24903,7 @@ pjj
 ppJ
 oGK
 vrR
-boe
+heh
 cVE
 pmA
 pNQ
@@ -25083,7 +25060,7 @@ pjj
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 pmA
 pNQ
@@ -25240,7 +25217,7 @@ pjj
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 pmA
 pNQ
@@ -25397,7 +25374,7 @@ ugL
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 pmA
 pNQ
@@ -25554,7 +25531,7 @@ ugL
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 pmA
 pNQ
@@ -25706,12 +25683,12 @@ ugL
 ewT
 lYS
 lYS
-lYS
+qQg
 ugL
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 pmA
 pNQ
@@ -25868,7 +25845,7 @@ ugL
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 pmA
 pNQ
@@ -26016,7 +25993,7 @@ uZR
 adV
 adV
 hCc
-kAA
+ugL
 qAk
 mOe
 mOe
@@ -26025,7 +26002,7 @@ ugL
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 pmA
 pNQ
@@ -26182,7 +26159,7 @@ ugL
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 pmA
 pNQ
@@ -26339,7 +26316,7 @@ ugL
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 pmA
 pNQ
@@ -26496,7 +26473,7 @@ ugL
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 pmA
 pNQ
@@ -26629,7 +26606,7 @@ ugL
 ugL
 ugL
 jfC
-qid
+etd
 jfC
 ugL
 gpb
@@ -26653,7 +26630,7 @@ pNQ
 pNQ
 pNQ
 pmA
-boe
+heh
 cVE
 pmA
 pNQ
@@ -26771,8 +26748,8 @@ pNQ
 pNQ
 pNQ
 pNQ
-lKl
-lKl
+exi
+twd
 pmA
 pNQ
 pNQ
@@ -26810,7 +26787,7 @@ bLB
 oGK
 oGK
 rDj
-boe
+heh
 cVE
 pmA
 pNQ
@@ -26964,10 +26941,10 @@ exi
 pNQ
 pNQ
 qGI
-boe
-boe
-boe
-boe
+heh
+heh
+heh
+heh
 cVE
 pmA
 pNQ
@@ -27121,7 +27098,7 @@ exi
 exi
 twd
 rxQ
-boe
+heh
 cVE
 cVE
 cVE
@@ -27417,7 +27394,7 @@ oGa
 oFV
 pUC
 ugL
-mhG
+qid
 ugL
 ugL
 ugL
@@ -27430,7 +27407,7 @@ ugL
 ugL
 pNQ
 pNQ
-exi
+twd
 exi
 pNQ
 pNQ
@@ -27899,9 +27876,9 @@ ugL
 pNQ
 pNQ
 pNQ
-lKl
-lKl
-lKl
+exi
+exi
+exi
 pNQ
 pNQ
 pNQ
@@ -28056,9 +28033,9 @@ pNQ
 pNQ
 pNQ
 pNQ
-lKl
+exi
 pNQ
-lKl
+exi
 pNQ
 pNQ
 pNQ
@@ -50046,8 +50023,8 @@ omo
 jIk
 omo
 jIk
-xOC
-xOC
+jIk
+jIk
 jIk
 jIk
 omo
@@ -50203,9 +50180,9 @@ jIk
 jIk
 jIk
 jIk
-xOC
-xOC
-xOC
+jIk
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -50359,9 +50336,9 @@ jIk
 jIk
 jIk
 jIk
-xOC
-xOC
-xOC
+jIk
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -50517,7 +50494,7 @@ jIk
 jIk
 jIk
 jIk
-xOC
+jIk
 jIk
 jIk
 omo
@@ -51449,7 +51426,7 @@ jIk
 jIk
 jIk
 jIk
-xOC
+jIk
 xOC
 xOC
 xOC
@@ -51605,8 +51582,8 @@ jIk
 jIk
 jIk
 jIk
-xOC
-xOC
+jIk
+jIk
 xOC
 xOC
 xOC
