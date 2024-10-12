@@ -40,11 +40,10 @@
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
-		if("Eora")
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
-			neck = /obj/item/clothing/neck/roguetown/chaincoif
-			cloak = /obj/item/clothing/cloak/stabard/templar/eora
-			H.virginity = FALSE
+	//	if("Eora") This existing is a bug. if you want to properly implement them, add a godhelmet. -S.E.L.F HELL
+	//		wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
+	//		neck = /obj/item/clothing/neck/roguetown/chaincoif
+	//		cloak = /obj/item/clothing/cloak/stabard/templar/eora
 		if("Pestra")
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
@@ -82,7 +81,7 @@
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
-		
+
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	//Max devotion limit - Templars are stronger but cannot pray to gain more abilities beyond t1
 	C.update_devotion(50, 50)
