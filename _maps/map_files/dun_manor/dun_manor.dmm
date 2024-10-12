@@ -1589,9 +1589,9 @@
 "bFo" = (
 /obj/structure/fluff/customsign{
 	icon_state = "shitsign";
-	wrotesign = "Houses I - V & Stable: East";
 	pixel_x = 0;
-	pixel_y = 0
+	pixel_y = 0;
+	wrotesign = "Houses I - V & Stable: East"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
@@ -4927,12 +4927,12 @@
 	pixel_y = 8
 	},
 /obj/item/clothing/mask/cigarette/pipe/crafted{
-	pixel_y = -2;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = -2
 	},
 /obj/item/clothing/mask/cigarette/pipe/crafted{
-	pixel_y = -2;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = -2
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
@@ -7840,8 +7840,8 @@
 /area/rogue/outdoors/town)
 "iiU" = (
 /obj/structure/closet/crate/roguecloset/lord{
-	lockid = "nightmaiden";
-	locked = 0
+	locked = 0;
+	lockid = "nightmaiden"
 	},
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random,
@@ -9036,24 +9036,24 @@
 "jIv" = (
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried{
-	pixel_y = -8;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -8
 	},
 /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried{
-	pixel_y = -8;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -8
 	},
 /obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
@@ -9735,8 +9735,8 @@
 	pixel_y = 5
 	},
 /obj/item/clothing/head/peaceflower{
-	pixel_y = 2;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 2
 	},
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/bath)
@@ -15084,10 +15084,10 @@
 /area/rogue/indoors/town/dwarfin)
 "qdX" = (
 /obj/structure/mineral_door/wood/donjon{
+	dir = 8;
 	locked = 1;
 	lockid = "veteran";
-	name = "veterans house";
-	dir = 8
+	name = "veterans house"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -16290,9 +16290,9 @@
 "rvX" = (
 /obj/structure/fluff/customsign{
 	icon_state = "shitsign";
-	wrotesign = "Keep: Northeast";
 	pixel_x = 0;
-	pixel_y = -7
+	pixel_y = -7;
+	wrotesign = "Keep: Northeast"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
@@ -18144,8 +18144,8 @@
 /area/rogue/indoors/town/church)
 "tvn" = (
 /obj/machinery/light/rogue/wallfire/candle/blue{
-	pixel_y = 0;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = 0
 	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/bath)
@@ -18551,9 +18551,9 @@
 /area/rogue/indoors/town/church)
 "tUH" = (
 /obj/structure/mineral_door/wood/donjon{
-	lockid = "tavern";
 	dir = 4;
-	locked = 1
+	locked = 1;
+	lockid = "tavern"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -18587,6 +18587,10 @@
 	icon_state = "chess"
 	},
 /area/rogue/indoors/town/dwarfin)
+"tXp" = (
+/obj/structure/flora/roguegrass/bush,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/town)
 "tXC" = (
 /obj/structure/fluff/railing/border{
 	dir = 10;
@@ -19723,8 +19727,8 @@
 /area/rogue/under/town/basement)
 "voS" = (
 /obj/machinery/light/rogue/wallfire/candle/blue{
-	pixel_y = 0;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = 0
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
@@ -19773,15 +19777,15 @@
 /obj/structure/fluff/customsign{
 	dir = 1;
 	icon_state = "shitsign";
-	wrotesign = "Church: Northwest";
 	pixel_x = 0;
-	pixel_y = 24
+	pixel_y = 24;
+	wrotesign = "Church: Northwest"
 	},
 /obj/structure/fluff/customsign{
 	icon_state = "shitsign";
-	wrotesign = "Houses VI - VIII: Southeast";
 	pixel_x = 0;
-	pixel_y = 12
+	pixel_y = 12;
+	wrotesign = "Houses VI - VIII: Southeast"
 	},
 /obj/structure/fluff/customsign{
 	dir = 1;
@@ -63931,7 +63935,7 @@ xOC
 doE
 bKO
 doE
-uHq
+tiD
 cxb
 nko
 nko
@@ -64088,7 +64092,7 @@ xOC
 doE
 iwJ
 doE
-uHq
+tiD
 rqG
 nko
 nko
@@ -64120,7 +64124,7 @@ fmc
 jfK
 tVC
 cxb
-uHq
+tiD
 wze
 cxb
 cxb
@@ -64245,7 +64249,7 @@ xOC
 waT
 oyZ
 waT
-uHq
+tiD
 rqG
 cxb
 cxb
@@ -64277,7 +64281,7 @@ fmc
 tVC
 iiP
 tVC
-uHq
+tXp
 wze
 rqG
 cxb
@@ -64402,7 +64406,7 @@ xOC
 doE
 bKO
 doE
-uHq
+tiD
 cxb
 ndg
 cxb
@@ -64434,7 +64438,7 @@ fmc
 tVC
 qTv
 tVC
-uHq
+tXp
 pkG
 pzz
 cxb
@@ -64559,7 +64563,7 @@ xOC
 doE
 iwJ
 doE
-uHq
+tiD
 cxb
 cxb
 rqG
@@ -64903,7 +64907,7 @@ bUB
 snq
 jVR
 fmc
-uHq
+tXp
 tVC
 tVC
 wze
@@ -65060,7 +65064,7 @@ jSY
 fmc
 fmc
 fmc
-uHq
+tiD
 tVC
 tVC
 wze
@@ -65658,7 +65662,7 @@ xOC
 waT
 oyZ
 waT
-uHq
+tiD
 ndg
 pJn
 pJn
@@ -65815,7 +65819,7 @@ xOC
 doE
 bKO
 doE
-uHq
+tiD
 cxb
 pJn
 pJn
@@ -65972,7 +65976,7 @@ xOC
 doE
 iwJ
 doE
-uHq
+tiD
 djt
 pJn
 pJn
@@ -66129,7 +66133,7 @@ xOC
 waT
 oyZ
 waT
-uHq
+tiD
 cxb
 pJn
 pJn
@@ -67731,7 +67735,7 @@ fmc
 pJn
 pJn
 rqG
-uHq
+tXp
 doE
 iwJ
 doE
@@ -67888,7 +67892,7 @@ pJn
 pJn
 pJn
 cxb
-uHq
+tXp
 waT
 oyZ
 waT
@@ -68045,7 +68049,7 @@ pJn
 pJn
 bOa
 cxb
-uHq
+tXp
 doE
 bKO
 doE
@@ -68202,7 +68206,7 @@ pJn
 rqG
 ndg
 cxb
-uHq
+tXp
 doE
 iwJ
 doE

@@ -191,7 +191,7 @@
 	blade_dulling = DULLING_CUT
 	static_debris = list(/obj/item/grown/log/tree = 1)
 	max_integrity = 200
-	sleepy = 0.1
+	sleepy = 0.2
 	pixel_x = -14
 	pixel_y = 7
 	pass_flags = PASSTABLE
@@ -220,7 +220,9 @@
 	destroy_sound = "plantcross"
 	max_integrity = 5
 	debris = list(/obj/item/natural/fibers = 1)
-
+	var/prob2findstuff // base % to find any useful thing in the bush, gets modded by perception
+	var/islooted = FALSE	// for harvestable
+	var/luckydouble			//	for various luck based effects
 
 /obj/structure/flora/roguegrass/spark_act()
 	fire_act()
@@ -269,11 +271,11 @@
 			L.consider_ambush()
 	return
 
-// normal bush
+// normal bush. Oldstyle. Kept for the managed palace hedges for now.
 /obj/structure/flora/roguegrass/bush
 	name = "bush"
 	desc = "A bush, a den for critters and treasures."
-	icon_state = "bush1"
+	icon_state = "bush"
 	layer = ABOVE_ALL_MOB_LAYER
 	var/res_replenish
 	max_integrity = 35
@@ -298,6 +300,128 @@
 	if(prob(66))
 		looty += /obj/item/natural/thorn
 	looty += /obj/item/natural/fibers
+
+
+// normalbush looting
+/obj/structure/flora/roguegrass/bush/attack_hand(mob/user)
+	if(isliving(user))
+		var/mob/living/L = user
+		user.changeNext_move(CLICK_CD_MELEE)
+		playsound(src.loc, "plantcross", 80, FALSE, -1)
+		if(do_after(L, rand(1,5), target = src))
+#ifndef MATURESERVER
+			if(!looty.len && (world.time > res_replenish))
+				loot_replenish()
+#endif
+			if(prob(50) && looty.len)
+				if(looty.len == 1)
+					res_replenish = world.time + 8 MINUTES
+				var/obj/item/B = pick_n_take(looty)
+				if(B)
+					B = new B(user.loc)
+					user.put_in_hands(B)
+					user.visible_message("<span class='notice'>[user] finds [B] in [src].</span>")
+					return
+			user.visible_message("<span class='warning'>[user] searches through [src].</span>")
+#ifdef MATURESERVER
+			if(!looty.len)
+				to_chat(user, "<span class='warning'>Picked clean.</span>")
+#else
+			if(!looty.len)
+				to_chat(user, "<span class='warning'>Picked clean... I should try later.</span>")
+#endif
+
+
+/obj/structure/flora/roguegrass/bush/update_icon()
+	icon_state = "bush"
+
+/obj/structure/flora/roguegrass/bush/CanPass(atom/movable/mover, turf/target)
+	if(istype(mover) && (mover.pass_flags & PASSGRILLE))
+		return 1
+	if(get_dir(loc, target) == dir)
+		return 0
+	return 1
+
+/obj/structure/flora/roguegrass/bush/CheckExit(atom/movable/mover as mob|obj, turf/target)
+	if(istype(mover) && (mover.pass_flags & PASSGRILLE))
+		return 1
+	if(get_dir(mover.loc, target) == dir)
+		return 0
+	return 1
+
+// bush crossing
+/obj/structure/flora/roguegrass/bush/Crossed(atom/movable/AM)
+	..()
+	if(isliving(AM))
+		var/mob/living/L = AM
+		L.Immobilize(5)
+		if(L.m_intent == MOVE_INTENT_WALK)
+			L.Immobilize(5)
+		if(L.m_intent == MOVE_INTENT_RUN)
+			if(!ishuman(L))
+				to_chat(L, "<span class='warning'>I'm cut on a thorn!</span>")
+				L.apply_damage(5, BRUTE)
+				L.Immobilize(5)
+			else
+				var/mob/living/carbon/human/H = L
+				if(prob(20))
+					if(!HAS_TRAIT(src, TRAIT_PIERCEIMMUNE))
+//						H.throw_alert("embeddedobject", /atom/movable/screen/alert/embeddedobject)
+						var/obj/item/bodypart/BP = pick(H.bodyparts)
+						var/obj/item/natural/thorn/TH = new(src.loc)
+						BP.add_embedded_object(TH, silent = TRUE)
+						BP.receive_damage(10)
+						to_chat(H, "<span class='danger'>\A [TH] impales my [BP.name]!</span>")
+						L.Paralyze(5)
+				else
+					var/obj/item/bodypart/BP = pick(H.bodyparts)
+					to_chat(H, "<span class='warning'>A thorn [pick("slices","cuts","nicks")] my [BP.name].</span>")
+					BP.receive_damage(10)
+
+
+/obj/structure/flora/roguegrass/bush/wall
+	name = "great bush"
+	desc = "A bush, this one's roots are too thick and block the way."
+	opacity = TRUE
+	density = 1
+	climbable = FALSE
+	icon_state = "bushwall1"
+	max_integrity = 150
+	debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/natural/thorn = 1)
+	attacked_sound = 'sound/misc/woodhit.ogg'
+
+/obj/structure/flora/roguegrass/bush/wall/Initialize()
+	..()
+	icon_state = "bushwall[pick(1,2)]"
+
+/obj/structure/flora/roguegrass/bush/wall/update_icon()
+	return
+
+/obj/structure/flora/roguegrass/bush/wall/CanPass(atom/movable/mover, turf/target)
+	if(istype(mover) && (mover.pass_flags & PASSGRILLE))
+		return 1
+	return 0
+
+/obj/structure/flora/roguegrass/bush/wall/CheckExit(atom/movable/O, turf/target)
+	if(istype(O) && (O.pass_flags & PASSGRILLE))
+		return 1
+	return 0
+
+/obj/structure/flora/roguegrass/bush/wall/tall
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	desc = "A tall bush that has grown into a hedge."
+	icon_state = "tallbush1"
+	opacity = 1
+	pixel_x = -16
+	debris = null
+	static_debris = null
+
+
+/obj/structure/flora/roguegrass/bush/wall/tall/Initialize()
+	..()
+	icon_state = "tallbush[pick(1,2)]"
+
+
 
 // fyrituis bush
 /obj/structure/flora/roguegrass/pyroclasticflowers
@@ -353,58 +477,9 @@
 	if(prob(66))
 		looty3 += /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed
 
-// bush crossing
-/obj/structure/flora/roguegrass/bush/Crossed(atom/movable/AM)
-	..()
-	if(isliving(AM))
-		var/mob/living/L = AM
-		if(L.m_intent == MOVE_INTENT_RUN && !L.lying)
-			if(!ishuman(L))
-				to_chat(L, "<span class='warning'>I'm cut on a thorn!</span>")
-				L.apply_damage(5, BRUTE)
-			else
-				var/mob/living/carbon/human/H = L
-				if(prob(20))
-					if(!HAS_TRAIT(src, TRAIT_PIERCEIMMUNE))
-//						H.throw_alert("embeddedobject", /atom/movable/screen/alert/embeddedobject)
-						var/obj/item/bodypart/BP = pick(H.bodyparts)
-						var/obj/item/natural/thorn/TH = new(src.loc)
-						BP.add_embedded_object(TH, silent = TRUE)
-						BP.receive_damage(10)
-						to_chat(H, "<span class='danger'>\A [TH] impales my [BP.name]!</span>")
-				else
-					var/obj/item/bodypart/BP = pick(H.bodyparts)
-					to_chat(H, "<span class='warning'>A thorn [pick("slices","cuts","nicks")] my [BP.name].</span>")
-					BP.receive_damage(10)
 
-// normalbush looting
-/obj/structure/flora/roguegrass/bush/attack_hand(mob/user)
-	if(isliving(user))
-		var/mob/living/L = user
-		user.changeNext_move(CLICK_CD_MELEE)
-		playsound(src.loc, "plantcross", 80, FALSE, -1)
-		if(do_after(L, rand(1,5), target = src))
-#ifndef MATURESERVER
-			if(!looty.len && (world.time > res_replenish))
-				loot_replenish()
-#endif
-			if(prob(50) && looty.len)
-				if(looty.len == 1)
-					res_replenish = world.time + 8 MINUTES
-				var/obj/item/B = pick_n_take(looty)
-				if(B)
-					B = new B(user.loc)
-					user.put_in_hands(B)
-					user.visible_message("<span class='notice'>[user] finds [B] in [src].</span>")
-					return
-			user.visible_message("<span class='warning'>[user] searches through [src].</span>")
-#ifdef MATURESERVER
-			if(!looty.len)
-				to_chat(user, "<span class='warning'>Picked clean.</span>")
-#else
-			if(!looty.len)
-				to_chat(user, "<span class='warning'>Picked clean... I should try later.</span>")
-#endif
+
+
 
 // pyroflower cluster looting
 /obj/structure/flora/roguegrass/pyroclasticflowers/attack_hand(mob/user)
@@ -465,69 +540,13 @@
 #endif
 
 // varients
-/obj/structure/flora/roguegrass/bush/update_icon()
-	icon_state = "bush[rand(1, 4)]"
+
 
 /obj/structure/flora/roguegrass/pyroclasticflowers/update_icon()
 	icon_state = "pyroflower[rand(1, 3)]"
 
 /obj/structure/flora/roguegrass/swampweed/update_icon()
 	icon_state = "swarmpweed[rand(1, 3)]"
-
-/obj/structure/flora/roguegrass/bush/CanPass(atom/movable/mover, turf/target)
-	if(istype(mover) && (mover.pass_flags & PASSGRILLE))
-		return 1
-	if(get_dir(loc, target) == dir)
-		return 0
-	return 1
-
-/obj/structure/flora/roguegrass/bush/CheckExit(atom/movable/mover as mob|obj, turf/target)
-	if(istype(mover) && (mover.pass_flags & PASSGRILLE))
-		return 1
-	if(get_dir(mover.loc, target) == dir)
-		return 0
-	return 1
-
-/obj/structure/flora/roguegrass/bush/wall
-	name = "great bush"
-	desc = "A bush, this one's roots are too thick and block the way."
-	opacity = TRUE
-	density = 1
-	climbable = FALSE
-	icon_state = "bushwall1"
-	max_integrity = 150
-	debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/natural/thorn = 1)
-	attacked_sound = 'sound/misc/woodhit.ogg'
-
-/obj/structure/flora/roguegrass/bush/wall/Initialize()
-	..()
-	icon_state = "bushwall[pick(1,2)]"
-
-/obj/structure/flora/roguegrass/bush/wall/update_icon()
-	return
-
-/obj/structure/flora/roguegrass/bush/wall/CanPass(atom/movable/mover, turf/target)
-	if(istype(mover) && (mover.pass_flags & PASSGRILLE))
-		return 1
-	return 0
-
-/obj/structure/flora/roguegrass/bush/wall/CheckExit(atom/movable/O, turf/target)
-	if(istype(O) && (O.pass_flags & PASSGRILLE))
-		return 1
-	return 0
-
-/obj/structure/flora/roguegrass/bush/wall/tall
-	icon = 'icons/roguetown/misc/foliagetall.dmi'
-	desc = "A tall bush that has grown into a hedge."
-	icon_state = "tallbush1"
-	opacity = 1
-	pixel_x = -16
-	debris = null
-	static_debris = null
-
-/obj/structure/flora/roguegrass/bush/wall/tall/Initialize()
-	..()
-	icon_state = "tallbush[pick(1,2)]"
 
 
 /obj/structure/flora/rogueshroom
@@ -638,19 +657,85 @@
 	. = ..()
 	icon_state = "rock[rand(1,4)]"
 
-//Thorn bush
 
+/*	..................   Thorn Bush   ................... */	// Updated to use searcher perception, can yield thorns
 /obj/structure/flora/roguegrass/thorn_bush
 	name = "thorn bush"
 	desc = "A thorny bush, bearing a bountiful collection of razor sharp thorns!"
-	icon_state = "thornbush"
+	icon_state = "thornbush1"
 	layer = ABOVE_ALL_MOB_LAYER
 	blade_dulling = DULLING_CUT
 	max_integrity = 35
 	climbable = FALSE
 	dir = SOUTH
 	debris = list(/obj/item/natural/thorn = 3, /obj/item/grown/log/tree/stick = 1)
-//WIP
+	prob2findstuff = 15
+
+/obj/structure/flora/roguegrass/thorn_bush/Initialize()
+	. = ..()
+	icon_state = "thornbush[rand(1,2)]"
+
+/obj/structure/flora/roguegrass/thorn_bush/attack_hand(mob/living/user)
+	var/mob/living/L = user
+	user.changeNext_move(CLICK_CD_MELEE)
+	playsound(src.loc, "plantcross", 80, FALSE, -1)
+	prob2findstuff = prob2findstuff + ( user.STAPER * 4 )
+	user.visible_message(span_noticesmall("[user] searches through [src]."))
+
+	if(do_after(L, rand(5,20), target = src))
+
+		if(islooted)
+			to_chat(user, span_warning("Picked clean."))
+			return
+
+		if(prob(prob2findstuff))
+			var/obj/item/natural/thorn/B = new
+			user.put_in_hands(B)
+			user.visible_message(span_notice("[user] finds [B] in [src]."))
+			if(prob(20))
+				islooted = TRUE
+
+		else
+			if(!HAS_TRAIT(src, TRAIT_PIERCEIMMUNE))
+				user.apply_damage(5, BRUTE)
+			to_chat(user, span_warning("You cut yourself on the thorns!"))
+
+	prob2findstuff = 15
+
+/obj/structure/flora/roguegrass/thorn_bush/Crossed(atom/movable/AM)
+	..()
+	if(isliving(AM))
+		var/mob/living/L = AM
+		L.Immobilize(10)
+		if(L.m_intent == MOVE_INTENT_SNEAK)
+			return
+		if(L.m_intent == MOVE_INTENT_WALK)
+			if(!ishuman(L))
+				return
+			else
+				to_chat(L, span_warning("I'm scratched by the thorns."))
+				L.apply_damage(5, BRUTE)
+				L.Immobilize(10)
+
+		if(L.m_intent == MOVE_INTENT_RUN)
+			if(!ishuman(L))
+				to_chat(L, "<span class='warning'>I'm cut on a thorn!</span>")
+				L.apply_damage(5, BRUTE)
+			else
+				var/mob/living/carbon/human/H = L
+				if(prob(80))
+					if(!HAS_TRAIT(src, TRAIT_PIERCEIMMUNE))
+						var/obj/item/bodypart/BP = pick(H.bodyparts)
+						var/obj/item/natural/thorn/TH = new(src.loc)
+						BP.add_embedded_object(TH, silent = TRUE)
+						BP.receive_damage(10)
+						to_chat(H, "<span class='danger'>\A [TH] impales my [BP.name]!</span>")
+						L.Paralyze(10)
+				else
+					var/obj/item/bodypart/BP = pick(H.bodyparts)
+					to_chat(H, "<span class='warning'>A thorn [pick("slices","cuts","nicks")] my [BP.name].</span>")
+					BP.receive_damage(10)
+					L.Immobilize(10)
 
 
 /*	..................   Meagre Bush   ................... */	// This works on the characters stats and doesnt have a preset vendor content. Hardmode compared to the OG one.
@@ -663,10 +748,8 @@
 	climbable = FALSE
 	dir = SOUTH
 	debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1)
-	var/prob2findstuff = 20	// base % to find any useful thing in the bush, gets modded by perception
-	var/prob2findgoodie = 20	// base % to find good stuff in the bush, gets modded by fortune and perception
-	var/luckydouble
-	var/islooted = FALSE
+	prob2findstuff = 18
+	var/prob2findgoodie = 15	// base % to find good stuff in the bush, gets modded by fortune and perception
 	var/tobacco
 	var/berries
 	var/silky	// just for bog bushes, its part of a whole thing, don't add bog bushes outside bog
@@ -678,7 +761,7 @@
 		if(berries)
 			icon_state = "bush_berry[rand(1,3)]"
 		else
-			icon_state = "bush[rand(1, 4)]"
+			icon_state = "bush[rand(1, 3)]"
 
 /obj/structure/flora/roguegrass/bush_meagre/Initialize()
 	if(silky)
@@ -701,6 +784,34 @@
 	if(prob(70))
 		debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/natural/thorn = 1)
 	return ..()
+
+// bush crossing
+/obj/structure/flora/roguegrass/bush_meagre/Crossed(atom/movable/AM)
+	..()
+	if(isliving(AM))
+		var/mob/living/L = AM
+		L.Immobilize(5)
+		if(L.m_intent == MOVE_INTENT_WALK)
+			L.Immobilize(5)
+		if(L.m_intent == MOVE_INTENT_RUN)
+			if(!ishuman(L))
+				to_chat(L, "<span class='warning'>I'm cut on a thorn!</span>")
+				L.apply_damage(5, BRUTE)
+				L.Immobilize(5)
+			else
+				var/mob/living/carbon/human/H = L
+				if(prob(20))
+					if(!HAS_TRAIT(src, TRAIT_PIERCEIMMUNE))
+						var/obj/item/bodypart/BP = pick(H.bodyparts)
+						var/obj/item/natural/thorn/TH = new(src.loc)
+						BP.add_embedded_object(TH, silent = TRUE)
+						BP.receive_damage(10)
+						to_chat(H, "<span class='danger'>\A [TH] impales my [BP.name]!</span>")
+						L.Paralyze(5)
+				else
+					var/obj/item/bodypart/BP = pick(H.bodyparts)
+					to_chat(H, "<span class='warning'>A thorn [pick("slices","cuts","nicks")] my [BP.name].</span>")
+					BP.receive_damage(10)
 
 /obj/structure/flora/roguegrass/bush_meagre/attack_hand(mob/living/user)
 	var/mob/living/L = user
@@ -746,6 +857,9 @@
 
 		else
 			to_chat(user, span_noticesmall("Didn't find anything."))
+	prob2findstuff = 18
+	prob2findgoodie = 15
+	luckydouble	= 3
 
 
 /obj/structure/flora/roguegrass/bush_meagre/bog
