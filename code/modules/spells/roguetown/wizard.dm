@@ -21,7 +21,6 @@
 	sparks_spread = 3
 	sparks_amt = 5
 	cost = 3
-	xp_gain = TRUE
 
 /obj/projectile/magic/lightning
 	name = "bolt of lightning"
@@ -187,7 +186,6 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	cost = 4
-	xp_gain = TRUE
 
 /obj/projectile/magic/aoe/fireball/rogue
 	name = "fireball"
@@ -238,7 +236,6 @@
 	movement_interrupt = TRUE
 	chargedloop = /datum/looping_sound/invokegen
 	cost = 10
-	xp_gain = TRUE
 
 /obj/projectile/magic/aoe/fireball/rogue/great
 	name = "fireball"
@@ -269,7 +266,6 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	cost = 3
-	xp_gain = TRUE
 
 /obj/projectile/magic/aoe/fireball/rogue2
 	name = "fireball"
@@ -315,7 +311,6 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	cost = 2
-	xp_gain = TRUE
 
 /obj/projectile/energy/rogue3
 	name = "Arcane Bolt"
@@ -356,7 +351,6 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	cost = 2
-	xp_gain = TRUE
 
 /obj/projectile/magic/fetch/on_hit(target)
 	. = ..()
@@ -392,7 +386,6 @@
 	associated_skill = /datum/skill/magic/arcane
 	hand_path = /obj/item/melee/touch_attack/prestidigitation
 	cost = 1
-	xp_gain = TRUE
 
 /obj/item/melee/touch_attack/prestidigitation
 	name = "\improper prestidigitating touch"
@@ -625,7 +618,6 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	var/wall_type = /obj/structure/forcefield_weak/caster
-	xp_gain = TRUE
 	cost = 3
 
 //adapted from forcefields.dm, this needs to be destructible
@@ -685,7 +677,6 @@
 	name = "Ensnare"
 	desc = "Tendrils of arcyne force hold anyone in a small area in place for a short while."
 	cost = 3
-	xp_gain = TRUE
 	releasedrain = 20
 	chargedrain = 1
 	chargetime = 20
@@ -737,7 +728,6 @@
 	name = "Message"
 	desc = "Latch onto the mind of one who is familiar to you, whispering a message into their head."
 	cost = 2
-	xp_gain = TRUE
 	releasedrain = 30
 	chargedrain = 1
 	chargetime = 5 SECONDS
@@ -780,7 +770,6 @@
 	desc = "Conjure forth a wave of energy, repelling anyone around you."
 	overlay_state = "repulse"
 	cost = 3
-	xp_gain = TRUE
 	releasedrain = 50
 	chargedrain = 1
 	chargetime = 3 SECONDS
@@ -837,7 +826,6 @@
 	name = "Blade Burst"
 	desc = "Summon a storm of arcyne force in an area that damages through armor, wounding anything in that location after a delay."
 	cost = 2
-	xp_gain = TRUE
 	releasedrain = 30
 	chargedrain = 1
 	chargetime = 20
@@ -891,7 +879,6 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	hand_path = /obj/item/melee/touch_attack/nondetection
-	xp_gain = TRUE
 	cost = 1
 
 /obj/item/melee/touch_attack/nondetection
@@ -957,7 +944,6 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	hand_path = /obj/item/melee/touch_attack/darkvision
-	xp_gain = TRUE
 	cost = 2
 
 /obj/item/melee/touch_attack/darkvision
@@ -991,7 +977,6 @@
 	name = "Featherfall"
 	desc = "Grant yourself and any creatures adjacent to you some defense against falls."
 	cost = 1
-	xp_gain = TRUE
 	school = "transmutation"
 	releasedrain = 50
 	chargedrain = 0
@@ -1018,7 +1003,6 @@
 	name = "Haste"
 	desc = "Cause a target to be magically hastened."
 	cost = 3
-	xp_gain = TRUE
 	releasedrain = 25
 	chargedrain = 1
 	chargetime = 4 SECONDS
