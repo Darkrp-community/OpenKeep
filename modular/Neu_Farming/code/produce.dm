@@ -395,6 +395,40 @@
 	rotprocess = null
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/roastseeds
 
+// -------------- HOPS and BEER WORT -----------------
+
+/datum/crafting_recipe/roguetown/cooking/beerstarter
+	name = "Beer starter"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/roguehops = 1,
+		/obj/item/reagent_containers/food/snacks/produce/wheat = 1)
+	result = /obj/item/reagent_containers/food/snacks/grown/roguewort
+
+/obj/item/reagent_containers/food/snacks/grown/roguehops
+	name = "bog bitters"
+	desc = ""
+	icon_state = "swampweedd" //placeholder
+	eat_effect = /datum/status_effect/debuff/uncookedfood
+	tastes = list("exteme bitterness" = 1)
+	bitesize = 1
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	can_distill = FALSE
+	rotprocess = null
+	seed = null
+
+/obj/item/reagent_containers/food/snacks/grown/roguewort
+	name = "wort"
+	desc = "disgusting mash of leaves and grain, brew this into a strong stout"
+	icon_state = "flour"
+	eat_effect = /datum/status_effect/debuff/uncookedfood
+	tastes = list("exteme bitterness" = 1)
+	bitesize = 1
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	can_distill = TRUE
+	distill_amt = 36 //net increase over ingredients
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/real
+	rotprocess = null
+	seed = null
 
 /*	..................   Fyritius Flower   ................... */ // some sort of funni fire flowers. Dunno just moving them here for consistency.
 /obj/item/reagent_containers/food/snacks/produce/fyritius
@@ -411,6 +445,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 1
 	throw_range = 3
+
 
 /*
 /obj/item/reagent_containers/food/snacks/produce/garlic
