@@ -38,6 +38,7 @@
 
 
 
+//..................................................................................................................................
 /*---------------\
 |			 	 |
 |  Light Armor	 |
@@ -52,7 +53,7 @@
 /obj/item/clothing/suit/roguetown/armor/gambeson
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "gambeson"
-	desc = "A full body suit made of various layers of interwoven cloth that is either worn as affordable armour on its own, or used as padding for metal armour. Slightly protects the wearer against cuts."
+	desc = "Thick quilted cloth in layers, good on its own or worn below metal as padding."
 	icon_state = "gambeson"
 	resistance_flags = FLAMMABLE
 	blocksound = SOFTUNDERHIT
@@ -91,14 +92,13 @@
 	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dark
-	desc = "A gambeson with additional padding layers, hardened to make it more durable. It still cannot compare to proper armor. This one is black."
 	color = CLOTHING_BLACK_WARM
 
 
 //................ Padded Dress ............... //
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
 	name = "padded dress"
-	desc = "A padded dress that is usually worn by the female nobility. Offers some protection against melee."
+	desc = "A padded dress that is usually worn by the female nobility, to maintain both vitality and good taste at once."
 	icon_state = "armordress"
 	allowed_sex = list(FEMALE)
 	allowed_race = list("human", "tiefling", "elf", "aasimar")
@@ -115,9 +115,8 @@
 //................ Arming Jacket ............... //
 /obj/item/clothing/suit/roguetown/armor/gambeson/arming
 	name = "arming jacket"
-	desc = "Similar to a gambeson, it is meant to be used under heavier armor."
+	desc = "Thick quilted cloth, a gambesson for the discerning knight. it is meant to be used under heavier armor."
 	icon_state = "arming"
-	allowed_race = list("human", "tiefling", "elf", "aasimar") // lacks sprites for other races
 	sellprice = VALUE_GAMBESSON+BONUS_VALUE_MODEST
 
 	body_parts_covered = CHEST|ARMS|VITALS|GROIN
@@ -246,9 +245,9 @@
 
 //................ Jacket ............... //	- Has a small storage space
 /obj/item/clothing/suit/roguetown/armor/leather/jacket
-	name = "leather jacket"
+	name = "tanned jacket"
 	icon_state = "leatherjacketo"
-	desc = "A padded leather jacket with buttons, is warm and durable for the daily work."
+	desc = "A heavy leather jacket with wooden buttons, favored by workers who can afford it."
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 
 	body_parts_covered = CHEST|VITALS|ARMS
@@ -302,7 +301,7 @@
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
 	name = "silk jacket"
 	icon_state = "nightman"
-	desc = "A silken jacket discretely padded with leather on the inside."
+	desc = "Expensive silk hides thick leather pads underneath."
 	sellprice = VALUE_LEATHER_ARMOR_LORD
 
 	body_parts_covered = CHEST|VITALS|LEGS
@@ -317,11 +316,10 @@
 	body_parts_covered = CHEST|VITALS|LEGS
 
 
-
 //................ Amazon chainkini ............... //
 /obj/item/clothing/suit/roguetown/armor/amazon_chainkini
-	name = "amazonian maille"
-	desc = "A combination of fur and maille, typically worn by warrior women of the isle of Issa."
+	name = "amazonian armor"
+	desc = "Fur skirt and maille chest holder, typically worn by warrior women of the isle of Issa."
 	icon_state = "chainkini"
 	item_state = "chainkini"
 	allowed_sex = list(FEMALE)
@@ -363,6 +361,8 @@
 	max_integrity = INTEGRITY_POOR
 
 
+
+//..................................................................................................................................
 /*---------------\
 |			 	 |
 |  Medium Armor	 |
@@ -393,7 +393,7 @@
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "hauberk"
-	desc = "A full body maille suit made of interlocked steel rings. Offers superior resistance against arrows, stabs and cuts throughout all of the body."
+	desc = "A long shirt of maille, heavy on the shoulders."
 	icon_state = "hauberk"
 	item_state = "hauberk"
 	sellprice = VALUE_STEEL_ARMOR_FINE
@@ -433,7 +433,7 @@
 //................ Grenzelhoft Cuirass ............... //
 /obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
 	name = "grenzelhoft cuirass"
-	desc = "A basic cuirass built from black-steel. It's somewhat more durable and lightweight than regular steel."
+	desc = "Simple armor, but made from Grenzelhoftian black-steel, famed afar for its strength."
 	icon_state = "grenzelcuirass"
 	item_state = "grenzelcuirass"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
@@ -454,7 +454,7 @@
 //................ Iron Breastplate ............... //	- A breastplate is a cuirass without its back plate.
 /obj/item/clothing/suit/roguetown/armor/cuirass/iron
 	name = "iron breastplate"
-	desc = "Solid iron to protect the torso."
+	desc = "Many cooking pots gave their lives to protect this torso."
 	icon_state = "ibreastplate"
 	item_state = "ibreastplate"
 	smeltresult = /obj/item/ingot/iron
@@ -497,30 +497,47 @@
 	max_integrity = INTEGRITY_STRONGEST
 
 
-//................ Coat of Armor ............... //
-/obj/item/clothing/suit/roguetown/armor/medium/heartfelt_lord
-	name = "coat of armor"
-	desc = "A lordly coat of armor of Heartfelt design. Masterfully crafted to protect important nobility."
-	icon_state = "heartfelt"
-	item_state = "heartfelt"
-	allowed_sex = list(MALE)
+//................ Armored Surcoat ............... //	- splint mail looking armor thats colored
+/obj/item/clothing/suit/roguetown/armor/medium/surcoat
+	name = "armored surcoat"
+	desc = "Metal plates partly hidden by cloth, fitted for a man."
+	icon_state = "surcoat"
+	item_state = "surcoat"
+	allowed_sex = list(MALE)	// trouble getting the sprites to work with females, sick of it, remains male only like it used to be
+	detail_tag = "_metal"		// metal bits are the details so keep them uncolorer = white
+	detail_color = COLOR_WHITE
+
+/obj/item/clothing/suit/roguetown/armor/medium/surcoat/Initialize()
+	. = ..()
+	update_icon()
+
+/obj/item/clothing/suit/roguetown/armor/medium/surcoat/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+//................ Armored surcoat (Heartfelt Lord) ............... //
+/obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt
+	desc = "A lordly protection in Heartfelt colors. Masterfully crafted to protect important nobility."
+	color = CLOTHING_RED
 	sellprice = VALUE_SNOWFLAKE_STEEL+BONUS_VALUE_SMALL
 
 	armor = list("melee" = 95, "bullet" = 95, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 
-//................ Coat of Armor ............... //
-/obj/item/clothing/suit/roguetown/armor/medium/heartfelt_hand
-	name = "coat of armor"
+//................ Armored surcoat (Heartfelt Hand) ............... //
+/obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/hand
 	desc = "A coat of armor typicially worn by distinguished retainers of Heartfeltian nobles."
-	icon_state = "heartfelt_hand"
-	item_state = "heartfelt_hand"
 	sellprice = VALUE_SNOWFLAKE_STEEL
 
 	armor = list("melee" = 90, "bullet" = 95, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 
-
+//..................................................................................................................................
 /*---------------\
 |			 	 |
 |  Heavy Armor	 |
@@ -584,7 +601,7 @@
 //................ Rusted Half-plate ............... //
 /obj/item/clothing/suit/roguetown/armor/plate/rust
 	name = "rusted half-plate"
-	desc = "Old and rusted plate armor. Less durable than it used to be, but still quite protective."
+	desc = "Old glory, old defeats, most of the rust comes from damp and not the blood of previous wearers, one would hope."
 	icon_state = "rustplate"
 	item_state = "rustplate"
 	smeltresult = /obj/item/ingot/iron
@@ -748,6 +765,8 @@
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS
 
 
+
+//..................................................................................................................................
 /*-----------------\
 | Antagonist Armor |
 \-----------------*/
