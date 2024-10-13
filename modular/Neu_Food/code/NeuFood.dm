@@ -178,18 +178,18 @@
 /obj/item/reagent_containers/glass/bowl/update_icon()
 	cut_overlays()
 	if(reagents)
-		if(reagents.total_volume > 0) 
-			if(reagents.total_volume <= 11) 
+		if(reagents.total_volume > 0)
+			if(reagents.total_volume <= 11)
 				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_low")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
-		if(reagents.total_volume > 11) 
-			if(reagents.total_volume <= 22) 
+		if(reagents.total_volume > 11)
+			if(reagents.total_volume <= 22)
 				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_half")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
-		if(reagents.total_volume > 22) 
-			if(reagents.has_reagent(/datum/reagent/consumable/soup/oatmeal, 10)) 
+		if(reagents.total_volume > 22)
+			if(reagents.has_reagent(/datum/reagent/consumable/soup/oatmeal, 10))
 				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_oatmeal")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
@@ -203,7 +203,7 @@
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				icon_state = "bowl_steam"
 				add_overlay(filling)
-			else 
+			else
 				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_full")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
@@ -277,7 +277,7 @@
 				return
 
 /obj/item/reagent_containers/glass/bowl/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
-	if(reagents.total_volume > 5) 
+	if(reagents.total_volume > 5)
 		new /obj/effect/decal/cleanable/food/mess/soup(get_turf(src))
 	..()
 
@@ -320,7 +320,7 @@
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
 			H.adjust_hydration(hydration)
 		if(M.blood_volume < BLOOD_VOLUME_NORMAL)
-			M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_NORMAL)
+			M.blood_volume = min(M.blood_volume+6, BLOOD_VOLUME_NORMAL)
 	..()
 
 /datum/reagent/consumable/soup/oatmeal
@@ -395,7 +395,7 @@
 	color = "#5f4a0e"
 	taste_description = "rich truffles"
 
-/datum/reagent/water/spicy // filler, not important 
+/datum/reagent/water/spicy // filler, not important
 	taste_description = "something spicy"
 	color = "#ea9f9fc6"
 
@@ -485,7 +485,7 @@
 		return ..()
 	if(isturf(loc)&& (!found_table))
 		to_chat(user, "<span class='notice'>Need a table...</span>")
-		return ..()	
+		return ..()
 	if(!R.reagents.has_reagent(/datum/reagent/water, 10))
 		to_chat(user, "<span class='notice'>Needs more water to work it.</span>")
 		return TRUE
@@ -496,7 +496,7 @@
 		desc = "Destined for greatness, at your hands."
 		R.reagents.remove_reagent(/datum/reagent/water, 10)
 		water_added = TRUE
-		color = "#d9d0cb"	
+		color = "#d9d0cb"
 	return TRUE
 
 /obj/item/reagent_containers/powder/flour/attack_hand(mob/user)
@@ -714,7 +714,7 @@
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
 
 	else
-		return ..()	
+		return ..()
 
 
 
@@ -761,7 +761,7 @@
 /*	.................   Decent shelflife   ................... */
 
 * Fresh cheese
-* Mixed dishes with meats 
+* Mixed dishes with meats
 * Fried meats & eggs
 
 /*	.................   Short shelflife   ................... */
