@@ -45,7 +45,6 @@
 
 /datum/job/roguetown/hetman
 	title = "Hetman of Mount Decapitation"
-	f_title = "Hetwoman of Mount Decapitation"
 	tutorial = ""
 	flag = LORD
 	department_flag = NOBLEMEN
