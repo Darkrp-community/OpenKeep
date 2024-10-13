@@ -279,7 +279,7 @@
 	chargetime = 3
 	swingdelay = 3
 	icon_state = "insmash"
-	misscost = 30
+	misscost = 25
 	warnie = "mobwarning"
 
 // For the Goedendag. If it applies to the grand mace, use this one instead.
