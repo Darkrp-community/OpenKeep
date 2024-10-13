@@ -117,6 +117,7 @@
 	result = list(/obj/item/clothing/under/roguetown/trou)
 	reqs = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 1)
+	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/sewing/lgambeson
 	name = "light gambeson"
