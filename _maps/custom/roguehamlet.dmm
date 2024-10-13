@@ -1429,7 +1429,7 @@
 /area/rogue/indoors/town)
 "bFC" = (
 /obj/item/reagent_containers/glass/bottle/anxiety,
-/obj/item/reagent_containers/glass/bottle/cyanide,
+/obj/item/reagent_containers/glass/bottle/rogue/strongpoison,
 /obj/structure/closet/crate/chest/neu_iron{
 	locked = 1;
 	lockid = "mage";
