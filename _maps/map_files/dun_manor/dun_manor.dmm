@@ -8933,13 +8933,6 @@
 	},
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor)
-"jBy" = (
-/obj/structure/mineral_door/wood{
-	locked = 1;
-	lockid = "merchant"
-	},
-/turf/closed,
-/area/rogue/indoors/town/shop)
 "jBG" = (
 /obj/structure/chair/wood/rogue/chair3{
 	dir = 4
@@ -57054,7 +57047,7 @@ cxb
 xzL
 dYY
 eWD
-jBy
+ogr
 mZc
 bBj
 xaY
