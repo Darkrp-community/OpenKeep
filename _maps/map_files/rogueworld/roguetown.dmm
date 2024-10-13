@@ -9893,7 +9893,7 @@
 "HO" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/clothing/head/roguetown/helmet/leather,
-/obj/item/clothing/head/roguetown/roguehood,
+/obj/item/clothing/head/roguetown/roguehood/random,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "HP" = (

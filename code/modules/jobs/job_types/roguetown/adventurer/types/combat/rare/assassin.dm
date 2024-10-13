@@ -196,7 +196,7 @@
 			belt = /obj/item/storage/belt/rogue/leather/assassin
 			shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 			pants = /obj/item/clothing/under/roguetown/trou
-			head = /obj/item/clothing/head/roguetown/roguehood
+			head = /obj/item/clothing/head/roguetown/roguehood/random
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 			backr = /obj/item/storage/backpack/rogue/satchel
 			neck = /obj/item/storage/belt/rogue/pouch/coins/poor

@@ -326,6 +326,10 @@ BCLASS_TWIST)
 | ARMOR VALUE DEFINES |	- So armor makes sense. Basic arrow got 25 AP so less than 25 "bullet" does nothing vs arrows generally
 \--------------------*/
 
+#define MELEE_5___ARROW_NOTHING list(\
+"melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define MELEE_10___ARROW_5 list(\
+"melee" = 10, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 // Light Gambesson/padded cloth
 #define MELEE_15___ARROW_NOTHING list(\
 "melee" = 15, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -384,6 +388,8 @@ BCLASS_TWIST)
 #define MELEE_100___ARROW_100 list(\
 "melee" = 100, "bullet" = 100, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+#define ARMOR_MINIMAL		MELEE_5___ARROW_NOTHING
+#define ARMOR_MIMOR			MELEE_10___ARROW_5
 
 #define ARMOR_GAMBESON_BAD	MELEE_15___ARROW_NOTHING
 #define ARMOR_GAMBESON		MELEE_20___ARROW_30

@@ -54,7 +54,7 @@
 			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
 		if("Eora")
-			head = /obj/item/clothing/head/roguetown/roguehood/eora
+			head = /obj/item/clothing/head/roguetown/eoramask
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/eora
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
@@ -66,13 +66,13 @@
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 		if("Pestra")
-			head = /obj/item/clothing/head/roguetown/roguehood
+			head = /obj/item/clothing/head/roguetown/roguehood/brown
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/green
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
 		else // Failsafe
-			head = /obj/item/clothing/head/roguetown/roguehood
+			head = /obj/item/clothing/head/roguetown/roguehood/random
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/plain

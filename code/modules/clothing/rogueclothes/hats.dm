@@ -4,7 +4,6 @@
 	desc = ""
 	icon = 'icons/roguetown/clothing/head.dmi'
 	icon_state = "top_hat"
-	item_state = "that"
 	dynamic_hair_suffix = "+generic"
 	bloody_icon_state = "helmetblood"
 	equip_sound = "rustle"
@@ -166,7 +165,6 @@
 /obj/item/clothing/head/roguetown/roguehood
 	name = "hood"
 	desc = "Conceals your face, whether against the rain, or the gazes of others."
-	color = CLOTHING_BROWN
 	icon_state = "basichood"
 	item_state = "basichood"
 	dynamic_hair_suffix = ""
@@ -179,6 +177,9 @@
 	toggle_icon_state = TRUE
 
 	body_parts_covered = NECK
+
+/obj/item/clothing/head/roguetown/roguehood/brown
+	color = CLOTHING_BROWN
 
 /obj/item/clothing/head/roguetown/roguehood/red
 	color = CLOTHING_RED
@@ -222,7 +223,6 @@
 	icon = 'icons/roguetown/clothing/head.dmi'
 	icon_state = "shalal"
 	item_state = "shalal"
-	color = null
 
 //................ Sun Hood ............... //
 /obj/item/clothing/head/roguetown/roguehood/astrata
@@ -232,7 +232,6 @@
 	icon_state = "astratahood"
 	item_state = "astratahood"
 	resistance_flags = FIRE_PROOF // Not the sun hat!
-	color = null
 
 //................ Moon Hood ............... //
 /obj/item/clothing/head/roguetown/roguehood/nochood
@@ -242,12 +241,13 @@
 	icon_state = "nochood"
 	item_state = "nochood"
 	dropshrink = 0.8
-	color = null
 
-//................ Rabbet Hood ............... //
+	armor = ARMOR_MIMOR
+
+//................ Rabbet Hood ............... //	- The "upgraded" headwear for Eoran acolytes
 /obj/item/clothing/head/roguetown/roguehood/eora
 	name = "rabbet hood"
-	desc = "A painted wooden rabbet mask worn by the faithful of Eora, usually during their rituals."
+	desc = "A silver rabbet mask worn by the faithful of Eora, usually during their rituals. Comes with a hood that can be pulled up for warmth."
 	icon = 'icons/roguetown/clothing/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	icon_state = "eorahood"
@@ -256,7 +256,26 @@
 	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	color = null
+	resistance_flags = FIRE_PROOF // Made of metal
+
+	armor = ARMOR_MIMOR
+
+//................ Solar Visage ............... //	- The new improved Priest headwear
+/obj/item/clothing/head/roguetown/roguehood/priest
+	name = "solar visage"
+	desc = "The sanctified headwear of the most devoted. The mask can be removed."
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	icon_state = "solar"
+	item_state = "solar"
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	resistance_flags = FIRE_PROOF // Made of metal
+
+	armor = ARMOR_MIMOR
+
 
 
 
@@ -269,7 +288,6 @@
 	name = "death shroud"
 	desc = "Worn by the faithful of Necra, or less savory individuals."
 	icon_state = "necrahood"
-	item_state = "necrahood"
 	dynamic_hair_suffix = ""
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
@@ -278,16 +296,14 @@
 	name = "briar mask"
 	desc = "Worn by the faithful of Dendor."
 	icon_state = "dendormask"
-	item_state = "dendormask"
 	dynamic_hair_suffix = ""
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
 
-//................ Rabbet Mask ............... //
+//................ Rabbet Mask ............... //	- Basic Eora Acolyte
 /obj/item/clothing/head/roguetown/eoramask
-	name = "eoran mask"
-	desc = "A silver rabbet mask worn by the faithful of Eora, usually during their rituals."
+	name = "rabbet mask"
+	desc = "A painted wooden rabbet mask worn by the faithful of Eora, usually during their rituals."
 	icon_state = "eoramask"
-	item_state = "eoramask"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
@@ -295,17 +311,20 @@
 	worn_y_dimension = 64
 	dynamic_hair_suffix = ""
 	flags_inv = HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
-	resistance_flags = FIRE_PROOF // Made of metal
+
+	armor = ARMOR_MINIMAL
 
 //................ Solar Visage ............... //
 /obj/item/clothing/head/roguetown/priestmask
 	name = "solar visage"
 	desc = "The sanctified helm of the most devoted. Thieves beware."
 	icon_state = "priesthead"
-	item_state = "priesthead"
+//	item_state = "priesthead"
 	dynamic_hair_suffix = ""
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	resistance_flags = FIRE_PROOF
+
+	armor = ARMOR_MIMOR
 
 /obj/item/clothing/head/roguetown/priestmask/pickup(mob/living/user)
 	if((user.job != "Priest") && (user.job != "Priestess"))
@@ -328,7 +347,6 @@
 	name = "golden circlet"
 	desc = ""
 	icon_state = "goldcirclet"
-	item_state = "goldcirclet"
 	dynamic_hair_suffix = null
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -392,7 +410,6 @@
 	name = "jester's hat"
 	desc = "Just remember that the last laugh is on you."
 	icon_state = "jester"
-	item_state = "jester"
 	dynamic_hair_suffix = "+generic"
 
 /obj/item/clothing/head/roguetown/cookhat/chef // only unique thing is the name

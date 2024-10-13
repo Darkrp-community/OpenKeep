@@ -19,7 +19,7 @@
 
 /datum/outfit/job/roguetown/adventurer/monk/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/roguehood
+	head = /obj/item/clothing/head/roguetown/roguehood/brown
 	neck = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
