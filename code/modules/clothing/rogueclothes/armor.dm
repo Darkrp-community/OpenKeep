@@ -18,10 +18,9 @@
 	blade_dulling = DULLING_BASHCHOP
 	nodismemsleeves = TRUE
 	equip_sound = 'sound/foley/equip/equip_armor.ogg'
-	drop_sound = 'sound/blank.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	pickup_sound =  'sound/blank.ogg'
 	break_sound = 'sound/foley/breaksound.ogg'
-	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	experimental_onhip = TRUE // does this do anything on armor I wonder?
 //	blocking_behavior		use to block gloves when armor includes them etc
 	sellprice = VALUE_COMMON_GOODS
@@ -156,7 +155,6 @@
 	name = "leather armor"
 	desc = "A light armor typically made out of boiled leather. Offers slight protection from most weapons."
 	icon_state = "leather"
-	allowed_sex = list(MALE, FEMALE)
 	resistance_flags = FLAMMABLE
 	blade_dulling = DULLING_BASHCHOP
 	blocksound = SOFTHIT
@@ -204,8 +202,6 @@
 	color = CLOTHING_BROWN
 	blade_dulling = DULLING_BASHCHOP
 	blocksound = SOFTHIT
-	break_sound = 'sound/foley/cloth_rip.ogg'
-	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	sewrepair = TRUE
 	sleevetype = null
 	sleeved = null
@@ -220,7 +216,7 @@
 
 //................ Butchers Vest ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher
-	name = "leather vest"
+	name = "butchers vest"
 	icon_state = "leathervest"
 	item_state = "leathervest"
 	color = "#d69c87" // custom coloring
@@ -248,7 +244,6 @@
 	name = "tanned jacket"
 	icon_state = "leatherjacketo"
 	desc = "A heavy leather jacket with wooden buttons, favored by workers who can afford it."
-	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 
 	body_parts_covered = CHEST|VITALS|ARMS
 
@@ -285,7 +280,6 @@
 	name = "silk coat"
 	desc = "An expertly padded coat made from the finest silks. Long may live the nobility that dons it."
 	icon_state = "bliaut"
-	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	sleevetype = "shirt"
 	allowed_sex = list(FEMALE)
 	sellprice = VALUE_LEATHER_ARMOR_LORD
@@ -391,7 +385,6 @@
 
 //................ Hauberk ............... //
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "hauberk"
 	desc = "A long shirt of maille, heavy on the shoulders."
 	icon_state = "hauberk"
@@ -546,7 +539,7 @@
 
 //................ Half-plate Armor ............... //
 /obj/item/clothing/suit/roguetown/armor/plate
-	name = "steel half-plate armor"
+	name = "steel half-plate"
 	desc = "Plate armor with shoulder guards. An incomplete, bulky set of excellent armor."
 	icon_state = "halfplate"
 	item_state = "halfplate"
@@ -740,7 +733,7 @@
 	max_integrity = INTEGRITY_STRONG+100
 
 /obj/item/clothing/suit/roguetown/armor/rare/zybanplate
-	name = "zybantean kataphractoe scaleskin"
+	name = "kataphractoe scaleskin"
 	desc = "Steel scales woven into armor with miniscule threads of adamantine, \
 			ensuring the wearer optimal defence with forgiving breathability. \
 			The sigil of the Zybantu Kataphractoe is embezzeled at the throat guard."
@@ -773,8 +766,8 @@
 
 //................ Ancient Ceremonial Plate ............... //	- ANTAG GEAR Vampire Lord, do not use for other things. Their medium armor
 /obj/item/clothing/suit/roguetown/armor/plate/vampire
-	name = "ancient ceremonial plate"
-	desc = "An ornate, ancient plate armor worn by the masters of the nite."
+	name = "ancient plate"
+	desc = "An ornate, ceremonial plate armor worn by the masters of the nite."
 	icon_state = "vplate"
 	item_state = "vplate"
 
@@ -844,7 +837,7 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/shoes/roguetown/boots/armor/vampire
-	name = "ancient ceremonial plated boots"
+	name = "ancient ceremonial boots"
 	desc = "Antediluvian boots with ceremonial ornamets from ages past."
 	body_parts_covered = FEET
 	icon_state = "vboots"

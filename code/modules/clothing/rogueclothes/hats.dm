@@ -237,7 +237,7 @@
 //................ Moon Hood ............... //
 /obj/item/clothing/head/roguetown/roguehood/nochood
 	name = "moon hood"
-	desc = "Worn by the faitful of Noc."
+	desc = "The face of the Moon Prince. Worn by the faitful of Noc."
 	icon = 'icons/roguetown/clothing/head.dmi'
 	icon_state = "nochood"
 	item_state = "nochood"
@@ -247,7 +247,7 @@
 //................ Rabbet Hood ............... //
 /obj/item/clothing/head/roguetown/roguehood/eora
 	name = "rabbet hood"
-	desc = "A silver rabbet mask worn by the faithful of Eora, usually during their rituals."
+	desc = "A painted wooden rabbet mask worn by the faithful of Eora, usually during their rituals."
 	icon = 'icons/roguetown/clothing/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	icon_state = "eorahood"
@@ -405,6 +405,7 @@
 
 
 
+//......................................................................................................
 /*------------------\
 |			 	 	|
 |  Basic Helmets	|
@@ -624,6 +625,7 @@
 
 
 
+//......................................................................................................
 /*----------------\
 | Visored helmets |
 \----------------*/
@@ -719,6 +721,7 @@
 
 
 
+//......................................................................................................
 /*------------------\
 |			 	 	|
 |  Heavy Helmets	|	- Limited FOV but good armor and coverage
@@ -735,7 +738,7 @@
 	block2add = FOV_RIGHT|FOV_LEFT
 	equip_delay_self = 3 SECONDS
 	unequip_delay_self = 3 SECONDS
-	emote_environment = 3
+	emote_environment = 3		// Unknown if this actually works and what it does
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_STEEL_HELMET
 
@@ -843,6 +846,7 @@
 
 
 
+//......................................................................................................
 /*------------------\
 | Decorated helmets |
 \------------------*/
@@ -989,6 +993,7 @@
 
 
 
+//......................................................................................................
 /*------------------\
 |			 	 	|
 |  Light Helmets	|	-made from leather, cloth, differ from basic in materials mostly
@@ -1170,6 +1175,7 @@
 
 
 
+//......................................................................................................
 /*----------------------\
 | Unique helmets & hats |	- Unique means no crafting them, no importing, nothing but spawn with the intended class
 \----------------------*/
