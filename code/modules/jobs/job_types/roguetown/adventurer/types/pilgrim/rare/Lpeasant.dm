@@ -39,14 +39,14 @@
 	H.mind.adjust_skillrank(/datum/skill/labor/taming, 2, TRUE)
 
 	belt = /obj/item/storage/belt/rogue/leather
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	pants = /obj/item/clothing/under/roguetown/trou
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	backr = /obj/item/rogueweapon/hoe
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 	backl = /obj/item/storage/backpack/rogue/backpack
 	neck = /obj/item/clothing/neck/roguetown/coif/cloth
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson
 	mouth = /obj/item/clothing/mask/cigarette/pipe/westman
 	beltl = /obj/item/rogueweapon/sickle
 	beltr = /obj/item/rogueweapon/huntingknife
