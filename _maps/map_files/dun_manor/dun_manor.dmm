@@ -7430,7 +7430,7 @@
 /obj/item/clothing/mask/rogue/spectacles,
 /obj/item/clothing/mask/rogue/spectacles/golden,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/shop)
 "hLb" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -18282,7 +18282,7 @@
 /obj/item/bait/bloody,
 /obj/item/bait/bloody,
 /obj/item/fishingrod/crafted,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/shop)
 "tBX" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -56741,7 +56741,7 @@ wMV
 xzL
 oxt
 dRV
-mZc
+xaY
 bBj
 hKO
 xzL
@@ -56898,7 +56898,7 @@ jPb
 xzL
 naM
 psP
-mZc
+xaY
 mZc
 tBF
 xzL
@@ -57056,8 +57056,8 @@ xzL
 cLH
 kWL
 xaY
-xaY
-xaY
+mZc
+mZc
 xzL
 wDd
 gBZ
