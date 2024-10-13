@@ -44,11 +44,10 @@
 	name = "poison bolt"
 	desc = "A bolt dipped with a weak poison."
 	icon_state = "bolt_poison"
-	projectile_type = /obj/projectile/bullet/reusable/bolt/poison
+	projectile_type = /obj/projectile/bullet/reusable/bolt/poison/weak
 
 /obj/projectile/bullet/reusable/bolt/poison
 	name = "poison bolt"
-	desc = "A bolt dipped with a weak poison."
 	icon_state = "boltpoison_proj"
 	damage = BOLT_DAMAGE-10
 	range = 15
@@ -77,7 +76,11 @@
 	reagents.handle_reactions()
 	return BULLET_ACT_HIT
 
-/obj/projectile/bullet/reusable/bolt/poison/Initialize()
+//................ Poison Bolt (weak) ............... //
+/obj/projectile/bullet/reusable/bolt/poison/weak
+	desc = "A bolt dipped with a weak poison."
+
+/obj/projectile/bullet/reusable/bolt/poison/weak/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/berrypoison, 2)
 
@@ -183,7 +186,7 @@
 /obj/item/ammo_casing/caseless/rogue/arrow/poison
 	name = "poison arrow"
 	desc = "An arrow with it's tip drenched in a weak poison."
-	projectile_type = /obj/projectile/bullet/reusable/arrow/poison
+	projectile_type = /obj/projectile/bullet/reusable/arrow/poison/weak
 	icon_state = "arrow_poison"
 
 /obj/projectile/bullet/reusable/arrow/poison
@@ -217,7 +220,11 @@
 	reagents.handle_reactions()
 	return BULLET_ACT_HIT
 
-/obj/projectile/bullet/reusable/arrow/poison/Initialize()
+//................ Poison Arrow (weak) ............... //
+/obj/projectile/bullet/reusable/arrow/poison/weak
+	desc = "An arrow with its tip drenched in a weak poison."
+
+/obj/projectile/bullet/reusable/arrow/poison/weak/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/berrypoison, 2)
 
