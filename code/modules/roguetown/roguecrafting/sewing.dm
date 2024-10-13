@@ -22,6 +22,12 @@
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 
+/datum/crafting_recipe/roguetown/sewing/apron
+	name = "cloth apron"
+	result = list(/obj/item/clothing/cloak/apron)
+	reqs = list(/obj/item/natural/cloth = 1,
+				/obj/item/natural/fibers = 1)
+
 /datum/crafting_recipe/roguetown/sewing/clothgloves
 	name = "cloth gloves"
 	result = list(/obj/item/clothing/gloves/roguetown/fingerless)
@@ -34,9 +40,15 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 
-/datum/crafting_recipe/roguetown/sewing/clothtrou
-	name = "cloth trousers"
-	result = list(/obj/item/clothing/under/roguetown/trou)
+/datum/crafting_recipe/roguetown/sewing/tunic
+	name = "tunic"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/tunic/ucolored)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+
+/datum/crafting_recipe/roguetown/sewing/clothtights
+	name = "cloth tights"
+	result = list(/obj/item/clothing/under/roguetown/tights)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 
@@ -76,7 +88,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/sewing/strawhat
-	name = "straw hat"
+	name = "crude straw hat"
 	result = list(/obj/item/clothing/head/roguetown/strawhat)
 	reqs = list(/obj/item/natural/fibers = 3)
 	craftdiff = 1
@@ -99,6 +111,12 @@
 	reqs = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/sewing/clothtrou
+	name = "cloth trousers"
+	result = list(/obj/item/clothing/under/roguetown/trou)
+	reqs = list(/obj/item/natural/cloth = 4,
+				/obj/item/natural/fibers = 1)
 
 /datum/crafting_recipe/roguetown/sewing/lgambeson
 	name = "light gambeson"
@@ -137,6 +155,12 @@
 	result = list(/obj/item/clothing/neck/roguetown/coif/cloth)
 	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2)
 	tools = list(/obj/item/needle)
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/sewing/fisherhat
+	name = "straw hat"
+	result = list(/obj/item/clothing/head/roguetown/fisherhat)
+	reqs = list(/obj/item/natural/fibers = 3)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/sewing/tabard
