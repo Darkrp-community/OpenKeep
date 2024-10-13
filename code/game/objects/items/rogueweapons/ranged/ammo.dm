@@ -262,7 +262,7 @@
 	armor_penetration = ARROW_PENETRATION-15
 	var/explode_sound = list('sound/misc/explode/incendiary (1).ogg','sound/misc/explode/incendiary (2).ogg')
 
-    //explosion values
+//explosion values
 	var/exp_heavy = 0
 	var/exp_light = 0
 	var/exp_flash = 0
