@@ -553,8 +553,8 @@
 
 //................ Iron Pot Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/ironpot
-	name = "iron pot helmet"
-	desc = "A iron pot style helmet designed to protect the skull and the nose, designs like those are outdated but they are simple to make in big numbers."
+	name = "pot helmet"
+	desc = "Simple iron helmet with a noseguard, designs like those are outdated but they are simple to make in big numbers."
 	icon_state = "ironpot"
 	item_state = "ironpot"
 	flags_inv = HIDEEARS
@@ -747,6 +747,11 @@
 	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STRONGEST // no moving parts, steel
 
+/obj/item/clothing/head/roguetown/helmet/heavy/necked		// includes a coif or gorget part to cover neck. Why? So templars can wear their cross on their neck basically, also special thing for Temple
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	body_parts_covered = HEAD_NECK
+	prevent_crits = ALL_EXCEPT_BLUNT
+
 
 //............... Great Helm ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket
@@ -792,36 +797,28 @@
 
 
 //............... Temple heavy helmets ......................//
-
 //............... Astrata Helmet ............... //
-/obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
+/obj/item/clothing/head/roguetown/helmet/heavy/necked/astrata
 	name = "astrata helmet"
-	desc = "A great helmet decorated with a golden sigil of the solar order. The dependable companion of many holy warriors of Astrata."
+	desc = "A great helmet decorated with a golden sigil of the solar order and a maille neck cover. The dependable companion of many holy warriors of Astrata."
 	icon_state = "astratahelm"
 	item_state = "astratahelm"
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	prevent_crits = ALL_EXCEPT_BLUNT
 
 //............... Noc Helmet ............... //
-/obj/item/clothing/head/roguetown/helmet/heavy/nochelm
+/obj/item/clothing/head/roguetown/helmet/heavy/necked/noc
 	name = "noc helmet"
-	desc = "A sleek and rounded heavy helmet. Its unique craft is said to allow holy warriors of Noc additional insight before battle."
+	desc = "A sleek and rounded heavy helmet with a maille neck cover. Its unique craft is said to allow holy warriors of Noc additional insight before battle."
 	icon_state = "nochelm"
 	item_state = "nochelm"
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	prevent_crits = ALL_EXCEPT_BLUNT
 
 //............... Necra Helmet ............... //
-/obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
+/obj/item/clothing/head/roguetown/helmet/heavy/necked/necra
 	name = "necra helmet"
-	desc = "A reinforced helmet shaped into the visage of a skull. A symbol of authority for the battle servants of the Undermaiden."
+	desc = "A reinforced helmet shaped into the visage of a skull with a maille neck cover under the cloth. A symbol of authority for the battle servants of the Undermaiden."
 	icon_state = "necrahelm"
 	item_state = "necrahelm"
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	smeltresult = /obj/item/ingot/steel
-	prevent_crits = ALL_EXCEPT_BLUNT
 
-//............... Dendor Helmet ............... //
+//............... Dendor Helmet ............... //	This one seems a bit out of place
 /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 	name = "dendor helmet"
 	desc = "A great helmet with twisted metalwork that imitates the twisting of bark, or the horns of a beast."
