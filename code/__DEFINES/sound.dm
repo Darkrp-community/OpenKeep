@@ -203,6 +203,7 @@ GLOBAL_LIST_INIT(ambience_files, list(
 	'sound/music/area/forest.ogg',
 	'sound/music/area/magiciantower.ogg',
 	'sound/music/area/manor.ogg',
+	'sound/music/area/manor2.ogg',
 	'sound/music/area/manorgarri.ogg',
 	'sound/music/area/manorgarr_alt.ogg',
 	'sound/music/area/sargoth.ogg',

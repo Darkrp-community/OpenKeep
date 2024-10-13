@@ -358,7 +358,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "town"
 	droning_sound = 'sound/music/area/towngen.ogg'
 	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/night.ogg'
+//	droning_sound_night = 'sound/music/area/night.ogg'
 
 /area/rogue/indoors/town/manor
 	name = "Manor"
