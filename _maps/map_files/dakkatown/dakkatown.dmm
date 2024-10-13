@@ -2890,7 +2890,7 @@
 /area/rogue/indoors/town/manor)
 "kU" = (
 /obj/structure/rack/rogue,
-/obj/item/clothing/suit/roguetown/armor/plate/scale,
+/obj/item/clothing/suit/roguetown/armor/medium/scale,
 /obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/manor)

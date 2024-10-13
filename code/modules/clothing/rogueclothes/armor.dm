@@ -29,6 +29,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/medium	// Template, not for use
 	name = "Medium armor template"
+	equip_delay_self = 4 SECONDS
+	unequip_delay_self = 4 SECONDS
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
@@ -74,7 +76,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	name = "light gambeson"
-	desc = "A barely padded gambeson, typically worn by the peasantry as cheap yet fashionable armor for the whole body."
+	desc = "Thin and the maker skimped on the padding, typically worn by the peasantry to give some protection against cold for the whole body."
 	icon_state = "gambesonl"
 	sellprice = VALUE_LIGHT_GAMBESSON
 
@@ -83,7 +85,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	name = "padded gambeson"
-	desc = "A gambeson with additional padding layers, hardened to make it more durable. It still cannot compare to proper armor."
+	desc = "Thick, padded, this will help a little even against arrows. A wise man carried steel as well, but it will do in a pinch."
 	icon_state = "gambesonp"
 	sellprice = VALUE_HEAVY_GAMBESSON
 
@@ -97,7 +99,7 @@
 //................ Padded Dress ............... //
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
 	name = "padded dress"
-	desc = "A padded dress that is usually worn by the female nobility, to maintain both vitality and good taste at once."
+	desc = "Favored by the female nobility, to maintain both vitality and good taste while out hunting."
 	icon_state = "armordress"
 	allowed_sex = list(FEMALE)
 	allowed_race = list("human", "tiefling", "elf", "aasimar")
@@ -184,7 +186,7 @@
 //................ Splint Mail ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/studded
 	name = "splint armor"
-	desc = "The smell of an old leather coat, with pieces of recycled metal from old breastplates or cooking utensils riveted to the inside."
+	desc = "The smell of a leather coat, with pieces of recycled metal from old breastplates or cooking utensils riveted to the inside."
 	icon_state = "splint"
 	sellprice = VALUE_LEATHER_ARMOR_PLUS
 
@@ -197,7 +199,7 @@
 /obj/item/clothing/suit/roguetown/armor/leather/vest
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "leather vest"
-	desc = "A leather vest with no sleeves, won't really protect much but it's at least padded enough to be an armor."
+	desc = "Obviously no sleeves, won't really protect much but it's at least padded enough to be an armor, and can be worn against the skin snugly."
 	icon_state = "vest"
 	color = CLOTHING_BROWN
 	blade_dulling = DULLING_BASHCHOP
@@ -218,7 +220,7 @@
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher
 	name = "butchers vest"
 	icon_state = "leathervest"
-	item_state = "leathervest"
+//	item_state = "leathervest"
 	color = "#d69c87" // custom coloring
 
 //................ Other Vests ............... //
@@ -295,7 +297,7 @@
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
 	name = "silk jacket"
 	icon_state = "nightman"
-	desc = "Expensive silk hides thick leather pads underneath."
+	desc = "Displaying wealth while keeping your guts safe from blades with thick leather pads underneath."
 	sellprice = VALUE_LEATHER_ARMOR_LORD
 
 	body_parts_covered = CHEST|VITALS|LEGS
@@ -304,7 +306,7 @@
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand
 	name = "noble coat"
 	icon_state = "handcoat"
-	desc = "A quality silken coat, discretely padded with leather on the inside to protect its affluent wearer."
+	desc = "A quality silken coat, discretely lined with thin metal platr on the inside to protect its affluent wearer."
 	sellprice = VALUE_LEATHER_ARMOR_LORD
 
 	body_parts_covered = CHEST|VITALS|LEGS
@@ -324,6 +326,7 @@
 	armor_class = ARMOR_CLASS_LIGHT
 	armor = MELEE_70___ARROW_NOTHING
 	body_parts_covered = CHEST|GROIN|VITALS
+	prevent_crits = ALL_EXCEPT_BLUNT
 
 
 //................ Iron Maille ............... //
@@ -359,7 +362,7 @@
 //..................................................................................................................................
 /*---------------\
 |			 	 |
-|  Medium Armor	 |
+|  Medium Armor	 |		- Can't dodge?	- Max 95% protection
 |			 	 |
 \---------------*/
 
@@ -386,7 +389,7 @@
 //................ Hauberk ............... //
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	name = "hauberk"
-	desc = "A long shirt of maille, heavy on the shoulders."
+	desc = "A long shirt of maille, heavy on the shoulders. Can be worn as a shirt, but some men with hairy chests consider it torture."
 	icon_state = "hauberk"
 	item_state = "hauberk"
 	sellprice = VALUE_STEEL_ARMOR_FINE
@@ -447,7 +450,7 @@
 //................ Iron Breastplate ............... //	- A breastplate is a cuirass without its back plate.
 /obj/item/clothing/suit/roguetown/armor/cuirass/iron
 	name = "iron breastplate"
-	desc = "Many cooking pots gave their lives to protect this torso."
+	desc = "Many cooking pots ended their daes on the anvil to form this protective plate."
 	icon_state = "ibreastplate"
 	item_state = "ibreastplate"
 	smeltresult = /obj/item/ingot/iron
@@ -477,13 +480,12 @@
 
 
 //................ Scalemail ............... //
-/obj/item/clothing/suit/roguetown/armor/plate/scale // important is how this item covers legs too compared to halfplate
+/obj/item/clothing/suit/roguetown/armor/medium/scale // important is how this item covers legs too compared to halfplate
 	name = "scalemail"
-	desc = "A scale shirt typically padded with various interlocked steel plates. Offers decent protection."
+	desc = "Overlapping steel plates almost makes the wearer look like he has silvery fish scales."
 	icon_state = "scale"
 	sellprice = VALUE_STEEL_ARMOR_FINE
 
-	armor_class = ARMOR_CLASS_MEDIUM
 	armor = list("melee" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|VITALS|GROIN|LEGS
 	prevent_crits = ALL_CRITICAL_HITS
@@ -515,7 +517,7 @@
 
 //................ Armored surcoat (Heartfelt Lord) ............... //
 /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt
-	desc = "A lordly protection in Heartfelt colors. Masterfully crafted to protect important nobility."
+	desc = "A lordly protection in Heartfelt colors. Masterfully crafted coat of plates, for important nobility."
 	color = CLOTHING_RED
 	sellprice = VALUE_SNOWFLAKE_STEEL+BONUS_VALUE_SMALL
 

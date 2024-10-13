@@ -325,7 +325,7 @@
 	recipe_name = "a Scalemail"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/clothing/suit/roguetown/armor/plate/scale
+	created_item = /obj/item/clothing/suit/roguetown/armor/medium/scale
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/helmetsallv

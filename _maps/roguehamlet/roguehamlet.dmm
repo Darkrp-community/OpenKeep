@@ -20533,7 +20533,7 @@
 /obj/item/natural/cloth,
 /obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /obj/item/clothing/cloak/raincloak/furcloak,
-/obj/item/clothing/suit/roguetown/armor/plate/scale,
+/obj/item/clothing/suit/roguetown/armor/medium/scale,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"

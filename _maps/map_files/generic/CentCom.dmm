@@ -3980,9 +3980,9 @@
 /area/rogue)
 "Rr" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/clothing/suit/roguetown/armor/plate/scale,
-/obj/item/clothing/suit/roguetown/armor/plate/scale,
-/obj/item/clothing/suit/roguetown/armor/plate/scale,
+/obj/item/clothing/suit/roguetown/armor/medium/scale,
+/obj/item/clothing/suit/roguetown/armor/medium/scale,
+/obj/item/clothing/suit/roguetown/armor/medium/scale,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "Rt" = (
