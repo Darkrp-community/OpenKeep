@@ -1197,8 +1197,8 @@
 ///obj/item/clothing/head/roguetown/helmet/rare
 /obj/item/clothing/head/roguetown/rare
 	name = "rare helmet template"
-	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
-	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
+	icon = 'icons/roguetown/clothing/Racial_Armour.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'
 	bloody_icon = 'icons/effects/blood32x64.dmi'
 	bloody_icon_state = "helmetblood_big"
 	blocksound = PLATEHIT	//DELETE AFTER REPATH

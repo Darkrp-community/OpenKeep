@@ -675,9 +675,9 @@
 //................ Snowflake Plate ............... //
 /obj/item/clothing/suit/roguetown/armor/rare
 	name = "rare armor template"
-	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
-	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
-	sleeved = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
+	icon = 'icons/roguetown/clothing/Racial_Armour.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'
 	sleevetype = null
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
