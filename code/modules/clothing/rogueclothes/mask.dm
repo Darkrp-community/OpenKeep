@@ -88,6 +88,7 @@
 	experimental_onhip = TRUE
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
+	clothing_flags = CANT_SLEEP_IN
 
 /obj/item/clothing/mask/rogue/shepherd/clothmask
 	name = "cloth mask"

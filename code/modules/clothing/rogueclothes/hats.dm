@@ -412,6 +412,7 @@
 	sewrepair = FALSE
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ITEM
+	clothing_flags = CANT_SLEEP_IN
 
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|HAIR|NOSE
@@ -1289,7 +1290,7 @@
 	icon_state = "elfhead"
 	item_state = "elfhead"
 	allowed_race = list("elf", "half-elf", "dark elf")
-
+	clothing_flags = CANT_SLEEP_IN
 	armor_class = ARMOR_CLASS_MEDIUM
 	body_parts_covered = HEAD|HAIR|NOSE
 
@@ -1311,7 +1312,7 @@
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = list("dwarf")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
 
 
@@ -1325,7 +1326,7 @@
 	allowed_sex = list(MALE)
 	allowed_race = list("human")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR
 
 
@@ -1340,7 +1341,7 @@
 	allowed_sex = list(MALE)
 	allowed_race = list("human")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR
 
 //............... Hoplite Helmet ............... //
@@ -1356,7 +1357,7 @@
 	worn_y_dimension = 64
 	allowed_race = list("aasimar")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR
 
 

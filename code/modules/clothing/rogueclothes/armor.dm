@@ -43,6 +43,7 @@
 	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 	armor_class = ARMOR_CLASS_MEDIUM
+	clothing_flags = CANT_SLEEP_IN
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 30
 
@@ -111,6 +112,7 @@
 	equip_delay_self = 40
 	unequip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
+	clothing_flags = CANT_SLEEP_IN
 	sellprice = 90
 
 /obj/item/clothing/suit/roguetown/armor/plate/Initialize()
@@ -246,6 +248,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
+	clothing_flags = CANT_SLEEP_IN
 	sellprice = 200
 
 /obj/item/clothing/suit/roguetown/armor/heartfelt/hand
@@ -263,6 +266,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
+	clothing_flags = CANT_SLEEP_IN
 	sellprice = 150
 
 /obj/item/clothing/suit/roguetown/armor/brigandine
@@ -280,6 +284,7 @@
 	equip_delay_self = 40
 	unequip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
+	clothing_flags = CANT_SLEEP_IN
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 95
 
@@ -690,6 +695,7 @@
 	equip_delay_self = 25
 	unequip_delay_self = 25
 	armor_class = ARMOR_CLASS_MEDIUM // Elven craft
+	clothing_flags = CANT_SLEEP_IN
 
 /obj/item/clothing/suit/roguetown/armor/rare/elfplate/Initialize()
 	. = ..()
@@ -719,6 +725,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_HEAVY
+	clothing_flags = CANT_SLEEP_IN
 
 /obj/item/clothing/suit/roguetown/armor/rare/dwarfplate/Initialize()
 	. = ..()
@@ -743,6 +750,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_HEAVY
+	clothing_flags = CANT_SLEEP_IN
 	sellprice = 200
 
 /obj/item/clothing/suit/roguetown/armor/rare/grenzelplate/Initialize()
@@ -770,6 +778,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_HEAVY
+	clothing_flags = CANT_SLEEP_IN
 	sellprice = 200
 
 /obj/item/clothing/suit/roguetown/armor/rare/zybanplate/Initialize()
