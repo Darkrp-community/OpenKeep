@@ -1613,6 +1613,13 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
+"bEy" = (
+/obj/structure/fluff/walldeco/customflag{
+	pixel_x = 32;
+	pixel_y = 0
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/town)
 "bEW" = (
 /obj/effect/spawner/roguemap/stump,
 /turf/open/floor/rogue/grass,
@@ -16181,10 +16188,6 @@
 /obj/structure/bars/passage/shutter/open{
 	redstone_id = "stewardshutter"
 	},
-/obj/structure/roguemachine/atm{
-	pixel_y = 0;
-	pixel_x = 32
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town)
@@ -17917,11 +17920,12 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/town/sewer)
 "sTn" = (
-/obj/structure/bars/passage/shutter/open{
-	redstone_id = "stewardshutter"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/roguemachine/atm,
+/obj/structure/roguemachine/stockpile{
+	pixel_y = 0;
+	pixel_x = 32
+	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town)
 "sTt" = (
@@ -58201,7 +58205,7 @@ rJM
 rJM
 rJM
 fLt
-hvn
+bEy
 rJM
 rJM
 hvn
@@ -58516,8 +58520,8 @@ dHl
 xqr
 xqr
 xqr
-jBn
 sTn
+rag
 cyk
 pJn
 pJn
