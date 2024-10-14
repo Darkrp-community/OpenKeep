@@ -99,14 +99,6 @@
 /obj/item/underworld/coin,
 /turf/open/floor/rogue/underworld/road,
 /area/rogue/underworld)
-"U" = (
-/obj/structure/bookcase,
-/obj/item/book/rogue/advice_farming,
-/obj/item/book/rogue/advice_soup,
-/obj/item/book/rogue/yeoldecookingmanual,
-/obj/item/book/rogue/fishing,
-/turf/open/floor/rogue/churchrough,
-/area/rogue/underworld)
 
 (1,1,1) = {"
 a
@@ -6760,7 +6752,7 @@ e
 e
 n
 n
-U
+k
 k
 e
 e
