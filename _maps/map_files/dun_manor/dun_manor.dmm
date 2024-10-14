@@ -5930,6 +5930,13 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/bath)
+"gli" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "garrison"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/town/roofs)
 "glI" = (
 /obj/structure/chair/wood/rogue/chair3{
 	dir = 1
@@ -8876,6 +8883,13 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
+"juN" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/rooftop{
+	dir = 2;
+	icon_state = "roofg"
+	},
+/area/rogue/outdoors/town/roofs)
 "juT" = (
 /obj/structure/toilet,
 /obj/effect/decal/cleanable/blood/old,
@@ -10505,6 +10519,13 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
+"lct" = (
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/floor/rogue/rooftop{
+	dir = 2;
+	icon_state = "roofg"
+	},
+/area/rogue/outdoors/town/roofs)
 "lcv" = (
 /obj/structure/fluff/railing/border{
 	dir = 9
@@ -13192,6 +13213,15 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/manor)
+"odr" = (
+/obj/machinery/light/rogue/torchholder/l{
+	dir = 1
+	},
+/turf/open/floor/rogue/rooftop{
+	dir = 2;
+	icon_state = "roofg"
+	},
+/area/rogue/outdoors/town/roofs)
 "oee" = (
 /obj/structure/table/wood{
 	dir = 6;
@@ -15026,6 +15056,10 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town)
+"pXg" = (
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/town/roofs)
 "pXr" = (
 /obj/effect/decal/cobbleedge{
 	dir = 6
@@ -111074,6 +111108,7 @@ qhb
 qhb
 ouw
 ouw
+juN
 ouw
 ouw
 ouw
@@ -111082,8 +111117,7 @@ ouw
 ouw
 ouw
 ouw
-ouw
-ouw
+juN
 ouw
 ouw
 qhb
@@ -111370,6 +111404,7 @@ rcD
 qXK
 rcD
 rcD
+lct
 ouw
 ouw
 ouw
@@ -111414,8 +111449,7 @@ ouw
 ouw
 ouw
 ouw
-ouw
-ouw
+odr
 rcD
 rcD
 qXK
@@ -111683,7 +111717,7 @@ wNM
 iBb
 iBb
 iBb
-wNM
+gli
 ouw
 ouw
 ouw
@@ -111730,7 +111764,7 @@ ouw
 ouw
 ouw
 ouw
-wNM
+gli
 iBb
 iBb
 cnf
@@ -111998,6 +112032,7 @@ rcD
 cnf
 rcD
 rcD
+pXg
 qhb
 qhb
 qhb
@@ -112013,7 +112048,6 @@ qhb
 qhb
 qhb
 qhb
-qhb
 ouw
 ouw
 ouw
@@ -112043,7 +112077,7 @@ ouw
 ouw
 ouw
 ouw
-ouw
+odr
 rcD
 rcD
 iBb
@@ -113126,7 +113160,7 @@ qhb
 qhb
 ouw
 ouw
-ouw
+juN
 ouw
 ouw
 ouw
@@ -113765,7 +113799,7 @@ ouw
 ouw
 ouw
 ouw
-ouw
+juN
 ouw
 ouw
 qhb
