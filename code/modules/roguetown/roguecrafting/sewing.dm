@@ -75,9 +75,9 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 
-/datum/crafting_recipe/roguetown/sewing/pcoif
+/datum/crafting_recipe/roguetown/sewing/cmask
 	name = "cloth mask"
-	result = list(/obj/item/clothing/neck/roguetown/coif/cloth)
+	result = list(/obj/item/clothing/mask/rogue/shepherd/clothmask)
 	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2)
 	tools = list(/obj/item/needle)
 
@@ -116,9 +116,9 @@
 	reqs = list(/obj/item/natural/cloth = 3,)
 	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/sewing/cmask
-	name = "cloth mask"
-	result = list(/obj/item/clothing/mask/rogue/shepherd/clothmask)
+/datum/crafting_recipe/roguetown/sewing/pcoif
+	name = "cloth coif"
+	result = list(/obj/item/clothing/neck/roguetown/coif/cloth)
 	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 1)
 	craftdiff = 1
 
