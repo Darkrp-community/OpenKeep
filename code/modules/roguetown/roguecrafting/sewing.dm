@@ -78,7 +78,7 @@
 /datum/crafting_recipe/roguetown/sewing/cmask
 	name = "cloth mask"
 	result = list(/obj/item/clothing/mask/rogue/shepherd/clothmask)
-	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2)
+	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 1)
 	tools = list(/obj/item/needle)
 
 /datum/crafting_recipe/roguetown/sewing/zigbox
@@ -119,7 +119,7 @@
 /datum/crafting_recipe/roguetown/sewing/pcoif
 	name = "cloth coif"
 	result = list(/obj/item/clothing/neck/roguetown/coif/cloth)
-	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 1)
+	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/sewing/jupon
