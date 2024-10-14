@@ -202,6 +202,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "splatter3"
 	},
+/obj/item/clothing/ring/silver/makers_guild,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains/decap)
 "wx" = (
@@ -272,6 +273,11 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains/decap)
+"Gx" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/roguecoin/silver/pile,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/mountains/decap)
 "Ho" = (
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/mountains/decap)
@@ -318,15 +324,15 @@
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains/decap)
+"PC" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/mountains/decap)
 "PO" = (
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/mountains/decap)
 "Qo" = (
 /turf/open/floor/rogue/hexstone,
-/area/rogue/outdoors/mountains/decap)
-"Qy" = (
-/obj/machinery/light/rogue/campfire,
-/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains/decap)
 "QE" = (
 /obj/item/ammo_casing/caseless/rogue/arrow/stone,
@@ -9089,8 +9095,8 @@ yb
 ke
 TZ
 TZ
-Ab
-Ab
+PC
+ax
 ZS
 ZS
 Ab
@@ -9220,7 +9226,7 @@ Ab
 Ab
 TZ
 TZ
-Ab
+PC
 ZS
 ZS
 ZS
@@ -9482,7 +9488,7 @@ Ab
 Ab
 ZS
 ZS
-Qy
+ZS
 ZS
 ZS
 aa
@@ -13473,7 +13479,7 @@ so
 so
 so
 gp
-eo
+Gx
 PO
 QE
 eo
