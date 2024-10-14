@@ -44,17 +44,17 @@
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
 		if("Dendor")
-			head = /obj/item/clothing/head/roguetown/dendormask
+			head = /obj/item/clothing/head/roguetown/padded/briarvisage
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 		if("Necra")
-			head = /obj/item/clothing/head/roguetown/necrahood
+			head = /obj/item/clothing/head/roguetown/padded/deathshroud
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
 		if("Eora")
-			head = /obj/item/clothing/head/roguetown/eoramask
+			head = /obj/item/clothing/head/roguetown/padded/rabbetvisage
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/eora
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora

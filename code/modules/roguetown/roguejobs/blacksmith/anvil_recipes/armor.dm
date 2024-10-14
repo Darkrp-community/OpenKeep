@@ -99,7 +99,7 @@
 	recipe_name = "a face guarded iron helmet"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron)
-	created_item = /obj/item/clothing/head/roguetown/helmet/ironplate
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/ironplate
 	craftdiff = 1
 
 /datum/anvil_recipe/armor/ipothelmet

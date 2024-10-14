@@ -13475,8 +13475,8 @@
 /obj/item/clothing/suit/roguetown/shirt/robe/necra,
 /obj/item/clothing/suit/roguetown/shirt/robe/dendor,
 /obj/item/clothing/suit/roguetown/shirt/robe/astrata,
-/obj/item/clothing/head/roguetown/dendormask,
-/obj/item/clothing/head/roguetown/necrahood,
+/obj/item/clothing/head/roguetown/padded/briarvisage,
+/obj/item/clothing/head/roguetown/padded/deathshroud,
 /obj/item/clothing/head/roguetown/roguehood/astrata,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/theatre)

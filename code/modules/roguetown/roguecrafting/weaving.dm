@@ -73,7 +73,7 @@
 
 /datum/crafting_recipe/roguetown/weaving/necrahood
 	name = "necra hood"
-	result = list(/obj/item/clothing/head/roguetown/necrahood)
+	result = list(/obj/item/clothing/head/roguetown/padded/deathshroud)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/silk = 1)
 	craftdiff = 3
@@ -81,7 +81,7 @@
 
 /datum/crafting_recipe/roguetown/weaving/eoramask
 	name = "eora mask"
-	result = list(/obj/item/clothing/head/roguetown/eoramask)
+	result = list(/obj/item/clothing/head/roguetown/roguehood/eora)
 	reqs = list(/obj/item/ingot/silver,
 				/obj/item/natural/silk = 4)
 	craftdiff = 3

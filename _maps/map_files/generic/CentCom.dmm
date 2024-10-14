@@ -4097,8 +4097,8 @@
 	dir = 1;
 	icon_state = "largetable_mid"
 	},
-/obj/item/clothing/head/roguetown/dendormask,
-/obj/item/clothing/head/roguetown/eoramask,
+/obj/item/clothing/head/roguetown/padded/briarvisage,
+/obj/item/clothing/head/roguetown/padded/rabbetvisage,
 /obj/item/clothing/head/roguetown/priestmask,
 /turf/open/floor/rogue/wood,
 /area/rogue)
@@ -4108,7 +4108,7 @@
 	icon_state = "longtable"
 	},
 /obj/item/clothing/head/roguetown/menacing,
-/obj/item/clothing/head/roguetown/necrahood,
+/obj/item/clothing/head/roguetown/padded/deathshroud,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "Tz" = (

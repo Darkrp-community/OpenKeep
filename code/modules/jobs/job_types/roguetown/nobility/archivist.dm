@@ -33,7 +33,7 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
 		pants = /obj/item/clothing/under/roguetown/tights/black
-		head = /obj/item/clothing/head/roguetown/niteman
+		head = /obj/item/clothing/head/roguetown/tophat
 	H.virginity = TRUE
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
