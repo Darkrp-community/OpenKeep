@@ -6,6 +6,10 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains/decap)
+"ac" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains/decap)
 "ax" = (
 /obj/machinery/light/rogue/campfire,
 /turf/open/floor/rogue/dirt/road,
@@ -32,6 +36,18 @@
 /obj/structure/barricade/wooden/rogue/crude,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/decap)
+"cT" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/alch/magicdust,
+/obj/item/alch/magicdust,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/mountains/decap)
+"cW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/statue,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains/decap)
 "df" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 4;
@@ -42,6 +58,12 @@
 "dU" = (
 /obj/structure/fluff/walldeco/customflag,
 /turf/closed/wall/mineral/rogue/stone,
+/area/rogue/outdoors/mountains/decap)
+"dY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/coffin,
+/obj/item/rogueweapon/sword/scimitar,
+/turf/open/floor/rogue/greenstone,
 /area/rogue/outdoors/mountains/decap)
 "eo" = (
 /turf/open/floor/rogue/twig,
@@ -76,6 +98,23 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/decap)
+"gy" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains/decap)
+"gL" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/rack/rogue,
+/obj/item/reagent_containers/glass/bottle/rogue/manapot,
+/obj/item/reagent_containers/glass/bottle/rogue/manapot,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains/decap)
+"hh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/mountains/decap)
 "ht" = (
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/hexstone,
@@ -83,6 +122,24 @@
 "hD" = (
 /obj/item/clothing/head/roguetown/helmet/goblin,
 /turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/mountains/decap)
+"hK" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/mountains/decap)
+"hO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/rack/rogue/shelf/biggest,
+/obj/structure/rack/rogue/shelf,
+/obj/item/reagent_containers/glass/bottle/rogue/elfblue,
+/turf/open/floor/rogue/greenstone,
+/area/rogue/outdoors/mountains/decap)
+"iP" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/wood/plain/alt,
+/obj/item/mortar,
+/obj/item/pestle,
+/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/mountains/decap)
 "ke" = (
 /turf/closed/wall/mineral/rogue/tent,
@@ -137,6 +194,17 @@
 	},
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/mountains/decap)
+"oU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/coffin,
+/obj/item/roguecoin/gold/pile,
+/obj/item/rogueweapon/sword/decorated,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/mountains/decap)
+"pO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/wall/mineral/rogue/craftstone,
+/area/rogue/outdoors/mountains/decap)
 "re" = (
 /obj/structure/table/wood/plain/alt,
 /obj/item/candle/skull/lit,
@@ -150,6 +218,11 @@
 "so" = (
 /turf/closed/mineral/random/rogue,
 /area/rogue/outdoors/mountains/decap)
+"sA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/rogue/cauldron,
+/turf/open/floor/rogue/greenstone,
+/area/rogue/outdoors/mountains/decap)
 "sF" = (
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains/decap)
@@ -162,6 +235,13 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains/decap)
+"sQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/coffin,
+/obj/item/reagent_containers/powder/moondust_purest,
+/obj/item/reagent_containers/powder/moondust_purest,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains/decap)
 "sR" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -169,6 +249,24 @@
 /area/rogue/outdoors/mountains/decap)
 "sV" = (
 /turf/closed/mineral/random/rogue/med,
+/area/rogue/outdoors/mountains/decap)
+"sY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/rogue/wallfire/candle/blue/l,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains/decap)
+"th" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/suit/roguetown/shirt/robe/phys,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/rogue/greenstone,
+/area/rogue/outdoors/mountains/decap)
+"tz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gib6-old"
+	},
+/turf/open/floor/rogue/greenstone,
 /area/rogue/outdoors/mountains/decap)
 "tB" = (
 /turf/open/water/river,
@@ -197,6 +295,17 @@
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/outdoors/mountains/decap)
+"uC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/barricade/wooden/rogue,
+/obj/structure/barricade/wooden/rogue/crude,
+/turf/open/floor/rogue/greenstone,
+/area/rogue/outdoors/mountains/decap)
+"vx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/mountains/decap)
 "vy" = (
 /obj/item/ammo_casing/caseless/rogue/arrow/stone,
 /obj/effect/decal/cleanable/blood/old{
@@ -205,14 +314,50 @@
 /obj/item/clothing/ring/silver/makers_guild,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains/decap)
+"vU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/coffin,
+/obj/item/clothing/ring/silver/calm,
+/obj/item/clothing/head/roguetown/helmet/sallet/zybantine,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/mountains/decap)
 "wx" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/clothing/head/roguetown/hatfur,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains/decap)
+"wz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains/decap)
+"wA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/carbon/human/species/skeleton/npc/peasant,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/mountains/decap)
+"wU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains/decap)
+"xu" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/bars/passage{
+	redstone_id = "sewerruin1"
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/mountains/decap)
 "yb" = (
 /obj/structure/fluff/walldeco/masonflag,
 /turf/closed/wall/mineral/rogue/tent,
+/area/rogue/outdoors/mountains/decap)
+"yx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/rack/rogue,
+/obj/item/reagent_containers/glass/bottle/rogue/healthpot,
+/obj/item/reagent_containers/glass/bottle/rogue/healthpot,
+/turf/open/floor/rogue/greenstone,
 /area/rogue/outdoors/mountains/decap)
 "zK" = (
 /obj/structure/fluff/railing/fence,
@@ -221,6 +366,12 @@
 "zO" = (
 /obj/structure/fluff/railing/stonehedge,
 /turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/mountains/decap)
+"zU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/coffin,
+/obj/item/alch/bonemeal,
+/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/mountains/decap)
 "Ab" = (
 /turf/open/floor/rogue/dirt/road,
@@ -252,9 +403,21 @@
 /obj/structure/bars,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/decap)
+"CU" = (
+/obj/structure/mineral_door/wood/green{
+	name = "Old Door";
+	locked = 1
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains/decap)
 "Dh" = (
 /obj/structure/fluff/walldeco/masonflag,
 /turf/closed/wall/mineral/rogue/stone,
+/area/rogue/outdoors/mountains/decap)
+"DW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/rogue/wallfire/candle/blue/l,
+/turf/open/floor/rogue/greenstone,
 /area/rogue/outdoors/mountains/decap)
 "DX" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -263,6 +426,12 @@
 "Ef" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/mountains/decap)
+"EA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/coffin,
+/obj/item/roguecoin/silver/pile,
+/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains/decap)
 "Fy" = (
 /obj/structure/rack/rogue,
@@ -281,6 +450,10 @@
 "Ho" = (
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/mountains/decap)
+"HK" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/greenstone,
+/area/rogue/outdoors/mountains/decap)
 "IO" = (
 /obj/structure/bed/rogue/shit,
 /turf/open/floor/rogue/twig,
@@ -293,6 +466,11 @@
 "JW" = (
 /obj/structure/bed/rogue/sleepingbag,
 /turf/open/floor/rogue/ruinedwood/turned,
+/area/rogue/outdoors/mountains/decap)
+"KL" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/carbon/human/species/skeleton/npc/peasant,
+/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains/decap)
 "Le" = (
 /turf/open/water/cleanshallow,
@@ -311,12 +489,25 @@
 	},
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/mountains/decap)
+"MM" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "splatter3"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains/decap)
 "NQ" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/outdoors/mountains/decap)
 "Ox" = (
 /obj/structure/roguetent/preopen,
 /turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/mountains/decap)
+"OM" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/rogue/wallfire/candle/blue,
+/mob/living/carbon/human/species/skeleton/npc/warrior,
+/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains/decap)
 "Pr" = (
 /obj/effect/decal/cleanable/blood/old{
@@ -334,9 +525,34 @@
 "Qo" = (
 /turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/mountains/decap)
+"QB" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/wall/mineral/rogue/craftstone,
+/area/rogue/outdoors/mountains/decap)
 "QE" = (
 /obj/item/ammo_casing/caseless/rogue/arrow/stone,
 /turf/open/floor/rogue/twig,
+/area/rogue/outdoors/mountains/decap)
+"QF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/coffin,
+/obj/item/alch/bone,
+/obj/item/alch/bone,
+/obj/item/alch/bone,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains/decap)
+"Ra" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/coffin,
+/obj/item/roguecoin/silver/pile,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/mountains/decap)
+"Rp" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/wood/plain/alt,
+/obj/item/candle/skull,
+/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/mountains/decap)
 "Ss" = (
 /turf/open/floor/rogue/volcanic,
@@ -344,6 +560,12 @@
 "SL" = (
 /obj/item/ammo_casing/caseless/rogue/arrow/stone,
 /turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/mountains/decap)
+"SZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/barricade/wooden/rogue,
+/obj/structure/barricade/wooden/rogue/crude,
+/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains/decap)
 "TB" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -360,13 +582,41 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/mountains/decap)
+"Ut" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood,
+/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/turf/open/floor/rogue/greenstone,
+/area/rogue/outdoors/mountains/decap)
 "UA" = (
 /obj/structure/flora/rogueshroom,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/decap)
+"Vh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/bars/passage{
+	redstone_id = "sewerruin1"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains/decap)
 "Wo" = (
 /obj/structure/fluff/railing/stonehedge,
 /turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/mountains/decap)
+"Wx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "splatter3"
+	},
+/mob/living/carbon/human/species/skeleton/npc/peasant,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains/decap)
+"Xe" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/coffin,
+/obj/item/alch/feaudust,
+/obj/item/alch/feaudust,
+/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/mountains/decap)
 "Xq" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/troll,
@@ -392,6 +642,13 @@
 	dir = 8
 	},
 /turf/open/floor/rogue/tile,
+/area/rogue/outdoors/mountains/decap)
+"Zj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/bars/passage{
+	redstone_id = "sewerruin1"
+	},
+/turf/open/floor/rogue/greenstone,
 /area/rogue/outdoors/mountains/decap)
 "ZS" = (
 /turf/open/floor/rogue/cobblerock,
@@ -8777,8 +9034,8 @@ Ab
 lV
 lV
 lV
-sV
-sV
+lV
+lV
 lV
 TZ
 TZ
@@ -8900,17 +9157,17 @@ TZ
 TZ
 TZ
 Ab
-sV
-sV
-sV
-sV
-sV
-sV
-sV
-sV
-sV
-sV
-sV
+lV
+lV
+lV
+lV
+lV
+lV
+lV
+lV
+lV
+lV
+lV
 TZ
 TZ
 TZ
@@ -9025,22 +9282,22 @@ sV
 sV
 sV
 sV
-sV
-sV
-sV
-sV
-Ab
-sV
-sV
-uf
-uf
-sV
-sV
-sV
-sV
-sV
-sV
-sV
+lV
+lV
+lV
+lV
+lV
+lV
+NQ
+NQ
+NQ
+NQ
+NQ
+NQ
+NQ
+NQ
+NQ
+lV
 TZ
 TZ
 TZ
@@ -9155,23 +9412,23 @@ sV
 sV
 sV
 sV
-sV
-sV
-sV
-sV
-sV
-sV
-uf
-uf
-uf
-uf
-uf
-uf
-sV
-sV
-sV
-sV
-sV
+lV
+NQ
+NQ
+NQ
+NQ
+NQ
+NQ
+EA
+Wx
+QF
+HK
+dY
+MM
+sQ
+NQ
+lV
+lV
 TZ
 TZ
 TZ
@@ -9285,22 +9542,22 @@ uf
 uf
 uf
 uf
-uf
-uf
-uf
-uf
-sV
-sV
-uf
-uf
-uf
-uf
-uf
-uf
-sV
-sV
-sV
-sV
+lV
+NQ
+ac
+sY
+wz
+ac
+pO
+hK
+hK
+ac
+tz
+ac
+wA
+ac
+NQ
+lV
 TZ
 TZ
 TZ
@@ -9415,22 +9672,22 @@ uf
 uf
 uf
 uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-sV
-sV
-sV
+lV
+NQ
+cW
+oU
+ac
+ac
+pO
+Rp
+Xe
+HK
+HK
+zU
+ac
+Ra
+NQ
+lV
 TZ
 TZ
 TZ
@@ -9545,22 +9802,22 @@ uf
 uf
 uf
 uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-sV
-sV
-sV
+lV
+NQ
+HK
+HK
+hK
+hK
+pO
+pO
+pO
+Vh
+pO
+pO
+pO
+pO
+NQ
+lV
 TZ
 TZ
 TZ
@@ -9675,22 +9932,22 @@ uf
 uf
 uf
 uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-sV
-sV
-sV
+lV
+NQ
+pO
+pO
+xu
+pO
+pO
+ac
+DW
+HK
+pO
+ac
+hK
+ac
+NQ
+lV
 TZ
 TZ
 TZ
@@ -9805,23 +10062,23 @@ uf
 uf
 uf
 uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-sV
-sV
-sV
-TZ
+lV
+NQ
+ac
+HK
+hK
+ac
+SZ
+HK
+HK
+hK
+hK
+wA
+ac
+wU
+NQ
+lV
+lV
 TZ
 TZ
 TZ
@@ -9935,23 +10192,23 @@ sV
 sV
 sV
 sV
-sV
-sV
-sV
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-sV
-sV
-sV
-TZ
+lV
+NQ
+OM
+ac
+hK
+ac
+uC
+HK
+hK
+hh
+hK
+hK
+hK
+ac
+NQ
+NQ
+lV
 TZ
 TZ
 TZ
@@ -10065,23 +10322,23 @@ sV
 sV
 sV
 sV
-sV
-sV
-sV
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-sV
-sV
-sV
-sV
-sV
-Ab
+lV
+NQ
+pO
+pO
+xu
+pO
+pO
+pO
+pO
+pO
+pO
+HK
+HK
+ac
+ac
+NQ
+lV
 UA
 Ab
 Ab
@@ -10195,22 +10452,22 @@ TZ
 TZ
 TZ
 TZ
-sV
-sV
-sV
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-sV
-sV
-sV
-sV
-sV
+lV
+NQ
+ac
+hK
+hK
+ac
+pO
+sA
+iP
+cT
+pO
+Zj
+pO
+ac
+wU
+NQ
 Ab
 Ab
 Ab
@@ -10325,22 +10582,22 @@ TZ
 TZ
 TZ
 TZ
-sV
-sV
-sV
-sV
-sV
-sV
-uf
-uf
-uf
-sV
-sV
-sV
-sV
-sV
-sV
-sV
+lV
+NQ
+cW
+vU
+hK
+hK
+pO
+HK
+KL
+hK
+HK
+HK
+pO
+HK
+ac
+CU
 Ab
 TZ
 TZ
@@ -10455,22 +10712,22 @@ TZ
 TZ
 TZ
 TZ
-sV
-sV
-sV
-sV
-sV
-sV
-uf
-uf
-uf
-sV
-sV
-sV
-sV
-sV
-sV
-sV
+lV
+NQ
+ac
+gy
+wz
+ac
+pO
+yx
+ac
+vx
+ac
+HK
+pO
+pO
+NQ
+NQ
 Ab
 TZ
 TZ
@@ -10585,22 +10842,22 @@ TZ
 TZ
 TZ
 TZ
-sV
-sV
-sV
-sV
-sV
-sV
-uf
-uf
-uf
-sV
-sV
-sV
-sV
-sV
-sV
-sV
+lV
+NQ
+NQ
+NQ
+NQ
+NQ
+QB
+hO
+th
+Ut
+gL
+NQ
+NQ
+lV
+lV
+lV
 Ab
 TZ
 TZ
@@ -10715,20 +10972,20 @@ TZ
 TZ
 TZ
 TZ
-sV
-sV
-sV
-sV
-sV
-sV
-sV
-sV
-sV
-sV
-sV
-sV
-sV
-Ab
+lV
+lV
+lV
+lV
+lV
+NQ
+NQ
+NQ
+NQ
+NQ
+NQ
+NQ
+lV
+lV
 Ab
 Ab
 Ab
@@ -10850,14 +11107,14 @@ TZ
 TZ
 TZ
 lV
-sV
-sV
-sV
-sV
-sV
-sV
-sV
-Ab
+lV
+lV
+lV
+lV
+lV
+lV
+lV
+lV
 Ab
 Ab
 Ab
