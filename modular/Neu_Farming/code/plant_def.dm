@@ -121,7 +121,6 @@
 	produce_amount_min = 3
 	produce_amount_max = 4
 	maturation_nutrition = HUNGRINESS_DEMANDING
-	produce_nutrition =  HUNGRINESS_SMALL
 
 /datum/plant_def/berry_poison
 	name = "berry bush"
@@ -137,7 +136,6 @@
 	uproot_loot = list(/obj/item/grown/log/tree/small)
 	perennial = TRUE
 	maturation_nutrition = HUNGRINESS_DEMANDING
-	produce_nutrition =  HUNGRINESS_SMALL
 
 /datum/plant_def/pear
 	name = "pear tree"
@@ -146,7 +144,6 @@
 	uproot_loot = list(/obj/item/grown/log/tree/small)
 	perennial = TRUE
 	maturation_nutrition = HUNGRINESS_DEMANDING
-	produce_nutrition =  HUNGRINESS_SMALL
 
 //................ Nutrition-efficient plants ...............................
 /datum/plant_def/potato
