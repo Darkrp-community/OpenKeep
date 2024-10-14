@@ -342,7 +342,7 @@
 /obj/item/clothing/head/roguetown/roguehood/priest/pickup(mob/living/user)
 	if((user.job != "Priest") && (user.job != "Priestess"))
 		user.visible_message(span_warningbig ("UNWORTHY HANDS TOUCH MY VISAGE, CEASE OR BE PUNISHED"))
-		user.playsound_local(user, 'sound/misc/astratascream.ogg', 90, falloff = 0.1, TRUE)
+//		user.playsound_local(user, 'sound/misc/astratascream.ogg', 90, falloff = 0.1, TRUE)
 		spawn(30)
 			if(loc == user)
 				user.adjust_fire_stacks(4)
