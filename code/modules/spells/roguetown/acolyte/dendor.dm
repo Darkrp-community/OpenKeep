@@ -1,4 +1,3 @@
-// Druid
 /obj/effect/proc_holder/spell/targeted/blesscrop
 	name = "Bless Crops"
 	range = 5
@@ -66,14 +65,21 @@
 	cast_without_targets = TRUE
 	sound = 'sound/items/dig_shovel.ogg'
 	associated_skill = /datum/skill/magic/holy
-	req_items = list(/obj/item/clothing/neck/roguetown/psycross)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/dendor)
 	invocation = "Treefather light the way."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 
 /obj/effect/proc_holder/spell/targeted/conjure_glowshroom/cast(list/targets,mob/user = usr)
 	var/turf/T = user.loc
+	new /obj/structure/kneestingers(T)
+
+/* The old more powerful version that spwans 4 kneestingers instead of one
+/obj/effect/proc_holder/spell/targeted/conjure_glowshroom/cast(list/targets,mob/user = usr)
+	var/turf/T = user.loc
 	for(var/X in GLOB.cardinals)
 		var/turf/TT = get_step(T, X)
 		if(!isclosedturf(TT) && !locate(/obj/structure/glowshroom) in TT)
-			new /obj/structure/glowshroom(TT)
+			if(prob(50))
+				new /obj/structure/glowshroom(TT)
 	return TRUE
+*/

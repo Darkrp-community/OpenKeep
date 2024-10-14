@@ -7079,7 +7079,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "Bf" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/swamp,
 /area/rogue/outdoors/rtfield)
 "Bh" = (

@@ -258,6 +258,75 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
 
+/obj/item/rogueweapon/mace/goden/shillelagh
+	possible_item_intents = list(/datum/intent/mace/heavy/strike)
+	gripped_intents = list(/datum/intent/mace/heavy/smash)
+	name = "heavy club"
+	desc = "Big old oak branch, carved to a deadly weapon."
+	icon_state = "shillelagh"
+	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+	max_integrity = 300
+	minstr = 8
+	pixel_y = 0
+	pixel_x = 0
+	bigboy = FALSE
+	gripsprite = TRUE
+	sellprice = 5
+	walking_stick = TRUE
+
+/obj/item/rogueweapon/mace/goden/shillelagh/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.7,
+"sx" = -11,
+"sy" = 1,
+"nx" = 12,
+"ny" = 0,
+"wx" = -7,
+"wy" = -0,
+"ex" = 6,
+"ey" = 3,
+"northabove" = 0,
+"southabove" = 1,
+"eastabove" = 1,
+"westabove" = 0,
+"nturn" = -15,
+"sturn" = 12,
+"wturn" = 0,
+"eturn" = 354,
+"nflip" = 0,
+"sflip" = 8,
+"wflip" = 8,
+"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.8,
+"sx" = 5,
+"sy" = -6,
+"nx" = -7,
+"ny" = -6,
+"wx" = 2,
+"wy" = -6,
+"ex" = 6,
+"ey" = -4,
+"northabove" = 0,
+"southabove" = 1,
+"eastabove" = 1,
+"westabove" = 1,
+"nturn" = -40,
+"sturn" = 40,
+"wturn" = 30,
+"eturn" = -25,
+"nflip" = 8,
+"sflip" = 0,
+"wflip" = 0,
+"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.7,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+
+
 /datum/intent/mace/heavy/strike
 	name = "strike"
 	blade_class = BCLASS_BLUNT
