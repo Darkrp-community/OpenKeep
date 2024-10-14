@@ -180,7 +180,9 @@
 /obj/projectile/bullet/reusable/arrow/stone
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/stone
 	embedchance = 80
-	armor_penetration = ARROW_PENETRATION-15
+	armor_penetration = 0
+	damage = ARROW_DAMAGE-2
+
 
 //................ Poison Arrow ............... //
 /obj/item/ammo_casing/caseless/rogue/arrow/poison
