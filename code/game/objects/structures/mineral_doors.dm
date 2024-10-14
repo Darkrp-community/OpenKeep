@@ -46,6 +46,8 @@
 	var/kickthresh = 15
 	var/swing_closed = TRUE
 
+	var/ghostproof = FALSE	// Set to true to stop dead players passing through closed ones. Only use this for special areas, not generally
+
 	damage_deflection = 10
 
 /obj/structure/mineral_door/onkick(mob/user)
@@ -132,10 +134,11 @@
 	. = ..()
 	move_update_air(T)
 
-/obj/structure/mineral_door/attack_ghost(mob/dead/observer/user)
-	density = FALSE
-	. = step(user,get_dir(user,src.loc))
-	density = TRUE
+/obj/structure/mineral_door/attack_ghost(mob/dead/observer/user)	// lets ghosts click on windows to transport across
+	if(!ghostproof)
+		density = FALSE
+		. = step(user,get_dir(user,src.loc))
+		density = TRUE
 
 /obj/structure/mineral_door/Bumped(atom/movable/AM)
 	..()
