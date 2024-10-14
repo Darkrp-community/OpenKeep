@@ -371,9 +371,6 @@
 	},
 /turf/open/floor/rogue/greenstone,
 /area/rogue/outdoors/mountains/decap)
-"tB" = (
-/turf/open/water/river,
-/area/rogue/outdoors/mountains/decap)
 "tF" = (
 /obj/structure/table/wood/plain/alt,
 /turf/open/floor/rogue/twig,
@@ -14234,7 +14231,7 @@ Bq
 Bq
 sV
 sV
-tB
+Bq
 sV
 sV
 TZ
@@ -14624,7 +14621,7 @@ Bq
 Bq
 sV
 sV
-tB
+Bq
 sV
 sV
 TZ
