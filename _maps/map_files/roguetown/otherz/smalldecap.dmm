@@ -144,6 +144,11 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains/decap)
+"dn" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/mountains/decap)
 "dH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old{
@@ -1055,6 +1060,16 @@
 /mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/mountains/decap)
+"Fc" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/mountains/decap)
+"Fj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
+/turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/mountains/decap)
 "Ft" = (
 /obj/structure/spider/stickyweb,
@@ -16486,7 +16501,7 @@ TZ
 oH
 UO
 gp
-CY
+dn
 Sy
 CY
 Sy
@@ -16750,7 +16765,7 @@ ln
 gp
 CY
 CY
-CY
+dn
 CY
 CY
 gp
@@ -17132,7 +17147,7 @@ CY
 gp
 ee
 ee
-ee
+Fj
 rL
 CC
 Se
@@ -17526,7 +17541,7 @@ gp
 gp
 cE
 Vd
-Vd
+Fc
 sw
 gp
 ee
