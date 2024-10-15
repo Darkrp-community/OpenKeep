@@ -2193,13 +2193,11 @@ Slots: [job.spawn_positions]</span>
 						domhand = 1
 				if("family")
 					var/list/famtree_options_list = list(FAMILY_NONE, FAMILY_PARTIAL, FAMILY_NEWLYWED, FAMILY_FULL, "EXPLAIN THIS TO ME")
-					if(age > AGE_ADULT)
-						famtree_options_list = list(FAMILY_NONE, FAMILY_NEWLYWED, FAMILY_FULL, "EXPLAIN THIS TO ME")
 					var/new_family = input(user, "Do you have relatives in rockhill?", "The Major Houses of Rockhill") as null|anything in famtree_options_list
 					if(new_family == "EXPLAIN THIS TO ME")
 						to_chat(user, span_purple("\
 						--[FAMILY_NONE] will disable this feature.<br>\
-						--[FAMILY_PARTIAL] will assign you as a progeny of a local house based on your species. This feature is disabled if your older than ADULT.<br>\
+						--[FAMILY_PARTIAL] will assign you as a progeny of a local house based on your species. This feature will instead assign you as a aunt or uncle to a local family if your older than ADULT.<br>\
 						--[FAMILY_NEWLYWED] assigns you a spouse without adding you to a family. Setspouse will prioritize pairing you with another newlywed with the same name as your setspouse.<br>\
 						--[FAMILY_FULL] will attempt to assign you as matriarch or patriarch of one of the local houses of rockhill. Setspouse will will prevent \
 						players with the setspouse = None from matching with you unless their name equals your setspouse."))
