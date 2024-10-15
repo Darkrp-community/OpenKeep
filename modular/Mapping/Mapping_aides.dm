@@ -597,8 +597,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep
 	name = "padded vest"
-	desc = "Dyed green, belongs to the innkeeper."
-	icon_state = "workervest"
+	desc = "Dyed green, belongs to the owner of the Drunken Saiga inn."
+	icon_state = "striped"
 	color = "#638b45"
 
 /turf/open/floor/rogue/tile/checker_green

@@ -138,7 +138,7 @@
 "vG" = (
 /obj/structure/closet/crate/coffin,
 /obj/item/clothing/suit/roguetown/shirt/robe/necra,
-/obj/item/clothing/head/roguetown/necrahood,
+/obj/item/clothing/head/roguetown/padded/deathshroud,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/bog)
 "wa" = (
@@ -198,7 +198,7 @@
 /area/rogue/outdoors/bog)
 "CW" = (
 /obj/structure/table/church,
-/obj/item/clothing/head/roguetown/helmet/heavy/necrahelm,
+/obj/item/clothing/head/roguetown/helmet/heavy/necked/necra,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/bog)
 "Dp" = (
