@@ -35,7 +35,7 @@
 	neck = /obj/item/clothing/neck/roguetown/shalal
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/veryrich)
 	if(H.gender == FEMALE)
-		armor = /obj/item/clothing/suit/roguetown/armor/silkcoat
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/black
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)

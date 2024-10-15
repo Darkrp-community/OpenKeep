@@ -38,7 +38,7 @@
 	backr = /obj/item/rogueweapon/hoe
 	backl = /obj/item/storage/backpack/rogue/satchel
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	armor = /obj/item/clothing/suit/roguetown/armor/workervest
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 	beltl = /obj/item/rogueweapon/sickle
 	beltr = /obj/item/flint
 	var/obj/item/rogueweapon/pitchfork/P = new()

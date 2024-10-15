@@ -192,8 +192,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 20,
 				/mob/living/simple_animal/hostile/retaliate/rogue/spider = 80,
 				/mob/living/carbon/human/species/goblin/npc/ambush/sea = 50,
-				/mob/living/simple_animal/hostile/retaliate/rogue/troll = 35,
-				/mob/living/simple_animal/hostile/retaliate/rogue/bogbug = 70)
+				/mob/living/simple_animal/hostile/retaliate/rogue/troll = 35)	//Bogbugs bugged bigtime, so removed for now.
 
 	first_time_text = "THE TERRORBOG"
 	converted_type = /area/rogue/indoors/shelter/bog
@@ -342,6 +341,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_BEACH
 	spookysounds = SPOOKY_CAVE
 	spookynight = SPOOKY_GEN
+
+
 
 
 ///// TOWN AREAS //////
@@ -507,6 +508,11 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/dwarf.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
+
+// so you can teleport to the farm
+/area/rogue/indoors/soilsons
+	name = "soilsons"
+
 
 ///// OUTDOORS AREAS (again, for some reason)
 
