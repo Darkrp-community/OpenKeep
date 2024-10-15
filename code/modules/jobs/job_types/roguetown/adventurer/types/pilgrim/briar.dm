@@ -65,16 +65,16 @@
 
 /*	.................   Unique Dendor recipes   ................... */
 /datum/crafting_recipe/dendor_visage
-	name = "Dendor Visage"
+	name = "face of the forest (unique)"
 	time = 7 SECONDS
 	reqs = list(/obj/item/grown/log/tree/small = 1)
-	result = /obj/item/clothing/head/roguetown/padded/briarvisage
+	result = /obj/item/clothing/head/roguetown/padded/faceforest
 	craftdiff = 0
 	category = CAT_NONE
 
 /datum/crafting_recipe/dendor_shrine
-	name = "Shrine to Dendor"
-	time = 7 SECONDS
+	name = "shrine to Dendor (unique)"
+	time = 10 SECONDS
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/thorn = 3,
 				/obj/item/natural/head/saiga = 1)

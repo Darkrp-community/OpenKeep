@@ -276,14 +276,15 @@
 	else
 		. = ..()
 
-//................ Briar Visage ............... //	- Rare Dendor headwear
-/obj/item/clothing/head/roguetown/padded/briarvisage
-	name = "briar visage"
+//................ Face of the Forest ............... //	- Upgraded Dendor headwear
+/obj/item/clothing/head/roguetown/padded/faceforest
+	name = "face of the forest"
 	desc = "Worn by the faithful of Dendor."
 	icon_state = "dendormask"
 	dynamic_hair_suffix = ""
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
-
+	body_parts_covered = FULL_HEAD
+	prevent_crits = CUT_AND_MINOR_CRITS
 
 //................ Rabbet Visage ............... //	- Basic Eora Acolyte
 /obj/item/clothing/head/roguetown/padded/rabbetvisage
