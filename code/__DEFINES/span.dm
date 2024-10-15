@@ -100,6 +100,7 @@
 #define span_nicegreen(str) ("<span class='nicegreen'>" + str + "</span>")
 #define span_notice(str) ("<span class='notice'>" + str + "</span>")
 #define span_noticealien(str) ("<span class='noticealien'>" + str + "</span>")
+#define span_noticesmall(str) ("<span class='noticesmall'>" + str + "</span>")
 #define span_ooc(str) ("<span class='ooc'>" + str + "</span>")
 #define span_papyrus(str) ("<span class='papyrus'>" + str + "</span>")
 #define span_phobia(str) ("<span class='phobia'>" + str + "</span>")

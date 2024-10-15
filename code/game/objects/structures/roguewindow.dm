@@ -31,6 +31,11 @@
 		return
 	icon_state = "[base_state]"
 
+/obj/structure/roguewindow/attack_ghost(mob/dead/observer/user)	// lets ghosts click on windows to transport across
+	density = FALSE
+	. = step(user,get_dir(user,src.loc))
+	density = TRUE
+
 /obj/structure/roguewindow/stained
 	icon_state = "stained-silver"
 	base_state = "stained-silver"
