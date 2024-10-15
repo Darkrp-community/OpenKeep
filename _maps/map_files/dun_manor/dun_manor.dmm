@@ -5076,7 +5076,7 @@
 /area/rogue/indoors/town/dwarfin)
 "fmN" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/clothing/suit/roguetown/armor/armordress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
 /obj/item/clothing/suit/roguetown/armor/leather/vest,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/under/roguetown/tights/random,
@@ -7672,7 +7672,7 @@
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/chapel)
 "hOP" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
@@ -8332,7 +8332,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "iAu" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/town)
 "iAW" = (
@@ -18215,7 +18215,7 @@
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
 "sWM" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town)
 "sWU" = (
@@ -19158,6 +19158,10 @@
 	icon_state = "chess"
 	},
 /area/rogue/indoors/town/dwarfin)
+"tXp" = (
+/obj/structure/flora/roguegrass/bush,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/town)
 "tXC" = (
 /obj/structure/fluff/railing/border{
 	dir = 10;
@@ -19758,7 +19762,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/soilsons)
 "uHq" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "uIB" = (
@@ -21837,7 +21841,7 @@
 /area/rogue/indoors/town)
 "wUp" = (
 /obj/structure/closet/crate/roguecloset/lord,
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord,
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -64532,7 +64536,7 @@ xOC
 doE
 bKO
 doE
-uHq
+tiD
 cxb
 nko
 nko
@@ -64689,7 +64693,7 @@ xOC
 doE
 iwJ
 doE
-uHq
+tiD
 rqG
 nko
 nko
@@ -64721,7 +64725,7 @@ fmc
 jfK
 tVC
 cxb
-uHq
+tiD
 wze
 cxb
 cxb
@@ -64846,7 +64850,7 @@ xOC
 waT
 oyZ
 waT
-uHq
+tiD
 rqG
 cxb
 cxb
@@ -64878,7 +64882,7 @@ fmc
 tVC
 iiP
 tVC
-uHq
+tXp
 wze
 rqG
 cxb
@@ -65003,7 +65007,7 @@ xOC
 doE
 bKO
 doE
-uHq
+tiD
 cxb
 ndg
 cxb
@@ -65035,7 +65039,7 @@ fmc
 tVC
 qTv
 tVC
-uHq
+tXp
 pkG
 pzz
 cxb
@@ -65160,7 +65164,7 @@ xOC
 doE
 iwJ
 doE
-uHq
+tiD
 cxb
 cxb
 rqG
@@ -65504,7 +65508,7 @@ bUB
 snq
 jVR
 fmc
-uHq
+tXp
 tVC
 tVC
 wze
@@ -65661,7 +65665,7 @@ jSY
 fmc
 fmc
 fmc
-uHq
+tiD
 tVC
 tVC
 wze
@@ -66259,7 +66263,7 @@ xOC
 waT
 oyZ
 waT
-uHq
+tiD
 ndg
 pJn
 pJn
@@ -66416,7 +66420,7 @@ xOC
 doE
 bKO
 doE
-uHq
+tiD
 cxb
 pJn
 pJn
@@ -66573,7 +66577,7 @@ xOC
 doE
 iwJ
 doE
-uHq
+tiD
 djt
 pJn
 pJn
@@ -66730,7 +66734,7 @@ xOC
 waT
 oyZ
 waT
-uHq
+tiD
 cxb
 pJn
 pJn
@@ -68332,7 +68336,7 @@ fmc
 pJn
 pJn
 rqG
-uHq
+tXp
 doE
 iwJ
 doE
@@ -68489,7 +68493,7 @@ pJn
 pJn
 pJn
 cxb
-uHq
+tXp
 waT
 oyZ
 waT
@@ -68646,7 +68650,7 @@ pJn
 pJn
 bOa
 cxb
-uHq
+tXp
 doE
 bKO
 doE
@@ -68803,7 +68807,7 @@ pJn
 rqG
 ndg
 cxb
-uHq
+tXp
 doE
 iwJ
 doE
