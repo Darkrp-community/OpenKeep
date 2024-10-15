@@ -16,14 +16,15 @@
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 	spawnableAtoms = list(/obj/structure/flora/newtree = 5,
-							/obj/structure/flora/roguegrass/bush = 6,
-							/obj/structure/flora/roguegrass = 100,
+							/obj/structure/flora/roguegrass/bush_meagre = 6,
+							/obj/structure/flora/roguegrass/thorn_bush = 2,
+							/obj/structure/flora/roguegrass = 95,
 							/obj/item/natural/stone = 5,
 							/obj/item/natural/rock = 6,
 							/obj/structure/flora/roguegrass/pyroclasticflowers = 1,
 							/obj/item/grown/log/tree/stick = 5,
-							/obj/structure/flora/roguetree/stump/log = 3,
-							/obj/structure/flora/roguetree/stump = 4,
+							/obj/structure/chair/bench/ancientlog = 3,
+							/obj/structure/table/wood/treestump = 4,
 							/obj/structure/closet/dirthole/closed/loot=6,
 							/obj/item/restraints/legcuffs/beartrap/armed/camouflage=0.25,
 							/obj/structure/flora/roguegrass/maneater/real=0.25)
@@ -49,7 +50,7 @@
 	excluded_turfs = list()
 	allowed_areas = list(/area/rogue/outdoors/woods)
 	spawnableAtoms = list(/obj/structure/flora/roguetree = 0,
-							/obj/structure/flora/roguegrass/bush = 6,
+							/obj/structure/flora/roguegrass/bush_meagre = 6,
 							/obj/structure/flora/roguegrass = 120,
 							/obj/structure/flora/roguegrass/maneater = 0.25,
 							/obj/structure/flora/roguegrass/maneater/real = 0.25,
@@ -57,7 +58,7 @@
 							/obj/item/natural/stone = 6,
 							/obj/item/natural/rock = 5,
 							/obj/item/grown/log/tree/stick = 3,
-							/obj/structure/flora/roguetree/stump/log = 5)
+							/obj/structure/chair/bench/ancientlog = 5)
 
 /datum/mapGeneratorModule/forestwaterturf
 	clusterCheckFlags = CLUSTER_CHECK_SAME_ATOMS

@@ -37,7 +37,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 		head = /obj/item/clothing/head/roguetown/fisherhat
-		armor = /obj/item/clothing/suit/roguetown/armor/workervest
+		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 		backl = /obj/item/storage/backpack/rogue/satchel
 		belt = /obj/item/storage/belt/rogue/leather
 		backr = /obj/item/fishingrod
@@ -47,7 +47,7 @@
 
 	else
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
-		armor = /obj/item/clothing/suit/roguetown/armor/workervest
+		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 		head = /obj/item/clothing/head/roguetown/fisherhat

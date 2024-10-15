@@ -75,13 +75,13 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	if(closed)
 		reagent_flags = TRANSPARENT
 		reagents.flags = reagent_flags
-		desc = "A bottle with a cork."
+//		desc = "A bottle with a cork."
 		spillable = FALSE
 	else
 		reagent_flags = OPENCONTAINER
 		reagents.flags = reagent_flags
 		playsound(user.loc,'sound/items/uncork.ogg', 100, TRUE)
-		desc = "An open bottle, hopefully a cork is close by."
+//		desc = "An open bottle, hopefully a cork is close by."
 		spillable = TRUE
 	update_icon()
 

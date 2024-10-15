@@ -6,21 +6,26 @@
 	able to handle almost every single task there is to do on a fief."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Human",
-		"Elf"
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/farmermaster
 	maximum_possible_slots = 1
 	pickprob = 15
-	category_tags = list(CTAG_PILGRIM)
+	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 
 /datum/outfit/job/roguetown/adventurer/farmermaster/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(0,1,1), TRUE)
@@ -33,24 +38,21 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/taming, 2, TRUE)
 
-	belt = /obj/item/storage/belt/rogue/leather/rope
+	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	pants = /obj/item/clothing/under/roguetown/trou
-	head = /obj/item/clothing/head/roguetown/strawhat
-	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-	backr = /obj/item/storage/backpack/rogue/satchel
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	backl = /obj/item/storage/backpack/rogue/satchel
-	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	armor = /obj/item/clothing/suit/roguetown/armor/workervest
-	mouth = /obj/item/clothing/mask/cigarette/pipe/westman
-	if(H.gender == FEMALE)
-		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-		pants = null
-	backpack_contents = list(/obj/item/neuFarm/seed/wheat=1,/obj/item/neuFarm/seed/apple=1,/obj/item/ash=1)
-	beltl = /obj/item/rogueweapon/sickle
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	backr = /obj/item/rogueweapon/hoe
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	backl = /obj/item/storage/backpack/rogue/backpack
+	neck = /obj/item/clothing/neck/roguetown/coif/cloth
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson
+	mouth = /obj/item/clothing/mask/cigarette/pipe/westman
+	beltl = /obj/item/rogueweapon/sickle
+	beltr = /obj/item/rogueweapon/huntingknife
+	var/obj/item/rogueweapon/pitchfork/P = new()
+	H.put_in_hands(P, forced = TRUE)
+	backpack_contents = list(/obj/item/neuFarm/seed/wheat=1,/obj/item/neuFarm/seed/apple=1,/obj/item/neuFarm/seed/cabbage=1,/obj/item/neuFarm/seed/potato=1,/obj/item/neuFarm/seed/onion=1,/obj/item/ash=2,/obj/item/flint=1,/obj/item/storage/belt/rogue/pouch/coins/mid=1)
 	H.change_stat("strength", 2)
 	H.change_stat("constitution", 1)
 	H.change_stat("endurance", 2)
