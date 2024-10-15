@@ -54,7 +54,7 @@
 		B.aggressive = 0
 		B.tamed(user)
 
-/obj/effect/proc_holder/spell/targeted/conjure_glowshroom
+/obj/effect/proc_holder/spell/targeted/conjure_kneestingers
 	name = "Fungal Illumination"
 	range = 1
 	overlay_state = "blesscrop"
@@ -68,12 +68,12 @@
 	invocation = "Treefather light the way."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 
-/obj/effect/proc_holder/spell/targeted/conjure_glowshroom/cast(list/targets,mob/user = usr)
+/obj/effect/proc_holder/spell/targeted/conjure_kneestingers/cast(list/targets,mob/user = usr)
 	var/turf/T = user.loc
 	new /obj/structure/kneestingers(T)
 
 /* The old more powerful version that spwans 4 kneestingers instead of one
-/obj/effect/proc_holder/spell/targeted/conjure_glowshroom/cast(list/targets,mob/user = usr)
+/obj/effect/proc_holder/spell/targeted/conjure_kneestingers/cast(list/targets,mob/user = usr)
 	var/turf/T = user.loc
 	for(var/X in GLOB.cardinals)
 		var/turf/TT = get_step(T, X)

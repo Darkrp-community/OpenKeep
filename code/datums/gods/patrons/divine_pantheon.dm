@@ -38,7 +38,7 @@
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/blesscrop
 	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
-	t3 = /obj/effect/proc_holder/spell/targeted/conjure_glowshroom // kneestingers
+	t3 = /obj/effect/proc_holder/spell/targeted/conjure_kneestingers // kneestingers
 
 /datum/patron/divine/abyssor
 	name = "Abyssor"
@@ -82,7 +82,7 @@
 	desc = "The finest alchemist to ever live, made saint by her own brew."
 	flaws = "Drunkenness, Crudeness, Irresponsibility"
 	worshippers = "The Ill and Infirm, Alchemists, Necromancers"
-	sins = "´Curing´ Abnormalities, Refusing to Help Unfortunates, Groveling"	
+	sins = "´Curing´ Abnormalities, Refusing to Help Unfortunates, Groveling"
 	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
 	t1 = /obj/effect/proc_holder/spell/invoked/heal
 	t2 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
