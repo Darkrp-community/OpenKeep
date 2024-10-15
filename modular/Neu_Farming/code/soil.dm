@@ -140,7 +140,7 @@
 /obj/structure/soil/proc/try_handle_fertilizing(obj/item/attacking_item, mob/user, params)
 	var/fertilize_amount = 0
 	if(istype(attacking_item, /obj/item/ash))
-		fertilize_amount = 80
+		fertilize_amount = 50
 	else if (istype(attacking_item, /obj/item/natural/poo))
 		fertilize_amount = 150
 	else if (istype(attacking_item, /obj/item/compost))
@@ -387,7 +387,7 @@
 			. += span_warning("It's brown and unhealthy...")
 		// Plant maturation and produce feedback
 		if(matured)
-			. += span_info("It's fully grown but not yet ripe.")
+			. += span_info("It's fully grown but perhaps not yet ripe.")
 		else
 			. += span_info("It´s far from fully grown.")
 		if(produce_ready)

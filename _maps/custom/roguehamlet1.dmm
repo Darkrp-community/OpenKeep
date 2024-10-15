@@ -1392,7 +1392,7 @@
 /obj/item/reagent_containers/glass/bottle/capsaicin,
 /obj/item/reagent_containers/glass/bottle/carbon,
 /obj/item/reagent_containers/glass/bottle/copper,
-/obj/item/reagent_containers/glass/bottle/cyanide,
+/obj/item/reagent_containers/glass/bottle/rogue/strongpoison,
 /obj/structure/closet/crate/roguecloset/dark,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/magician)
