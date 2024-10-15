@@ -313,18 +313,9 @@
 	dropshrink = 0.9
 	rotprocess = SHELFLIFE_LONG
 
-/*/obj/item/reagent_containers/food/snacks/produce/onion/slice(obj/item/W, mob/user) I cant do it. Below causes a runtime its true but its so tiny! And this new one is so damn boring.
-	. = ..()
-	to_chat(user, "<span class='notice'>My eyes sting a little...</span>") */
 /obj/item/reagent_containers/food/snacks/produce/onion/slice(accuracy, obj/item/W, mob/user)
-	var/datum/effect_system/smoke_spread/transparent/S = new	//Since the onion is destroyed when it's sliced,
-	var/splat_location = get_turf(src)	//we need to set up the smoke beforehand
-	S.attach(splat_location)
-	S.set_up(reagents, 0, splat_location, 0)
-	if(..())
-		S.start()
-		return TRUE
-	qdel(S)
+	to_chat(user, span_notice("My eyes sting a little..."))
+	new /obj/effect/particle_effect/smoke/transparent(get_turf(src))
 
 
 /*	..................   Potato   ................... */

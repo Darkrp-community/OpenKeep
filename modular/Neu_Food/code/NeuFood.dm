@@ -23,6 +23,32 @@
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	cooktime = 30 SECONDS
 	var/process_step // used for pie making and other similar modular foods
+	var/simplest_skillcheck
+	var/basic_skillcheck
+	var/advanced_skillcheck
+	var/master_skillcheck
+	var/skill_lacking = "Your skill is lacking."
+
+/obj/item/reagent_containers/food/snacks/rogue/attackby(obj/item/I, mob/user, params)
+	if(user.mind)
+		if(simplest_skillcheck)
+			if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 1)
+			to_chat(user, span_warning(skill_lacking))
+			return
+		if(basic_skillcheck)
+			if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 2)
+			to_chat(user, span_warning(skill_lacking))
+			return
+		if(advanced_skillcheck)
+			if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 3)
+			to_chat(user, span_warning(skill_lacking))
+			return
+		if(master_skillcheck)
+			if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 4)
+			to_chat(user, span_warning(skill_lacking))
+			return
+	 ..()
+
 
 /obj/item/reagent_containers/food/snacks/rogue/Initialize()
 	. = ..()
@@ -38,6 +64,8 @@
 	bitesize = 3
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	rotprocess = SHELFLIFE_EXTREME
+	basic_skillcheck = TRUE
+	skill_lacking = "Garnering a dish is beyond your skills."
 
 /obj/item/reagent_containers/food/snacks/proc/changefood(path, mob/living/eater)
 	if(!path || !eater)
@@ -178,18 +206,18 @@
 /obj/item/reagent_containers/glass/bowl/update_icon()
 	cut_overlays()
 	if(reagents)
-		if(reagents.total_volume > 0) 
-			if(reagents.total_volume <= 11) 
+		if(reagents.total_volume > 0)
+			if(reagents.total_volume <= 11)
 				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_low")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
-		if(reagents.total_volume > 11) 
-			if(reagents.total_volume <= 22) 
+		if(reagents.total_volume > 11)
+			if(reagents.total_volume <= 22)
 				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_half")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
-		if(reagents.total_volume > 22) 
-			if(reagents.has_reagent(/datum/reagent/consumable/soup/oatmeal, 10)) 
+		if(reagents.total_volume > 22)
+			if(reagents.has_reagent(/datum/reagent/consumable/soup/oatmeal, 10))
 				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_oatmeal")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
@@ -203,7 +231,7 @@
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				icon_state = "bowl_steam"
 				add_overlay(filling)
-			else 
+			else
 				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_full")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
@@ -277,7 +305,7 @@
 				return
 
 /obj/item/reagent_containers/glass/bowl/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
-	if(reagents.total_volume > 5) 
+	if(reagents.total_volume > 5)
 		new /obj/effect/decal/cleanable/food/mess/soup(get_turf(src))
 	..()
 
@@ -395,7 +423,7 @@
 	color = "#5f4a0e"
 	taste_description = "rich truffles"
 
-/datum/reagent/water/spicy // filler, not important 
+/datum/reagent/water/spicy // filler, not important
 	taste_description = "something spicy"
 	color = "#ea9f9fc6"
 
@@ -485,7 +513,7 @@
 		return ..()
 	if(isturf(loc)&& (!found_table))
 		to_chat(user, "<span class='notice'>Need a table...</span>")
-		return ..()	
+		return ..()
 	if(!R.reagents.has_reagent(/datum/reagent/water, 10))
 		to_chat(user, "<span class='notice'>Needs more water to work it.</span>")
 		return TRUE
@@ -496,7 +524,7 @@
 		desc = "Destined for greatness, at your hands."
 		R.reagents.remove_reagent(/datum/reagent/water, 10)
 		water_added = TRUE
-		color = "#d9d0cb"	
+		color = "#d9d0cb"
 	return TRUE
 
 /obj/item/reagent_containers/powder/flour/attack_hand(mob/user)
@@ -568,11 +596,11 @@
 				qdel(src)
 		else
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
-	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian))
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/friedegg/valerian))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
-				new /obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian/plated(loc)
+				new /obj/item/reagent_containers/food/snacks/rogue/friedegg/valerian/plated(loc)
 				qdel(I)
 				qdel(src)
 		else
@@ -714,7 +742,7 @@
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
 
 	else
-		return ..()	
+		return ..()
 
 
 
@@ -761,7 +789,7 @@
 /*	.................   Decent shelflife   ................... */
 
 * Fresh cheese
-* Mixed dishes with meats 
+* Mixed dishes with meats
 * Fried meats & eggs
 
 /*	.................   Short shelflife   ................... */
@@ -772,5 +800,27 @@
 /*	.................   Tiny shelflife   ................... */
 
 * Minced meat
+
+
+
+
+
+/* * * * * * * * * * * **
+ *						*
+ *	 Skillchecks		*	- Just lists as it stands on 2024-10-15
+ *						*
+ * * * * * * * * * * * **/
+
+/*	.................   No skill required   ................... *//*
+
+* Frying things in a pan or risk it over a open flame
+* Combining fried eggs
+
+
+/*	.................   Require Cooking 1   ................... */
+
+* Making dough
+* Putting garnish on slices of bread & toast
+*
 
 */

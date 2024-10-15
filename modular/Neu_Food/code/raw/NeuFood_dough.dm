@@ -17,6 +17,8 @@
 	icon_state = "dough_base"
 	w_class = WEIGHT_CLASS_NORMAL
 	rotprocess = SHELFLIFE_LONG
+	simplest_skillcheck = TRUE
+	skill_lacking = "Even making a simple dough is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/dough_base/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
@@ -120,6 +122,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("dough" = 1)
 	rotprocess = SHELFLIFE_LONG
+	basic_skillcheck = TRUE
+	skill_lacking = "Complicated bun-manipulation is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/doughslice/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
@@ -208,6 +212,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	slice_sound = TRUE
 	rotprocess = SHELFLIFE_LONG
+	advanced_skillcheck = TRUE
+	skill_lacking = "Pastry-making is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/butterdough/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
@@ -239,6 +245,8 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pastry
 	w_class = WEIGHT_CLASS_NORMAL
 	rotprocess = SHELFLIFE_LONG
+	advanced_skillcheck = TRUE
+	skill_lacking = "Pastry-making is beyond your skills."
 // Dough + rolling pin on table = flat dough. RT got some similar proc for this.
 /obj/item/reagent_containers/food/snacks/rogue/butterdoughslice/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -302,6 +310,8 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom
 	w_class = WEIGHT_CLASS_NORMAL
 	rotprocess = SHELFLIFE_LONG
+	simplest_skillcheck = TRUE
+	skill_lacking = "Even pie-filling is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/piedough/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
@@ -474,6 +484,8 @@
 	rotprocess = SHELFLIFE_LONG
 	dropshrink = 0.8
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/breadslice
+	simplest_skillcheck = TRUE
+	skill_lacking = "Lack the skill to even garnish a slice of bread. Shameful."
 /obj/item/reagent_containers/food/snacks/rogue/breadslice/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
@@ -522,6 +534,8 @@
 	cooked_type = null
 	bitesize = 2
 	rotprocess = null
+	simplest_skillcheck = TRUE
+	skill_lacking = "Lack the skill to even butter a toast. Shameful."
 /obj/item/reagent_containers/food/snacks/rogue/breadslice/toast/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
@@ -578,6 +592,8 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	w_class = WEIGHT_CLASS_NORMAL
 	rotprocess = SHELFLIFE_LONG
+	basic_skillcheck = TRUE
+	skill_lacking = "Complicated bread-making is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/rbread_half/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
@@ -748,6 +764,8 @@
 	bitesize = 2
 	rotprocess = SHELFLIFE_EXTREME
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/bun
+	basic_skillcheck = TRUE
+	skill_lacking = "Complicated bun-manipulation is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/bun/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
@@ -891,6 +909,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | DAIRY
 	rotprocess = SHELFLIFE_LONG
+	master_skillcheck = TRUE
+	skill_lacking = "Cake-baking is far beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/cake_base/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
@@ -1010,6 +1030,3 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	trash = /obj/item/cooking/platter
 
-/* maybe split up spider honey cake WIP
-	desc = "A cake glazed with spider-honey, a favorite dish among the Dark Elf nobility in Grimoria. Symbol of authority, a delicious residue covers the sweet cake which causes playful stinging and numbness in the mouth."
-*/

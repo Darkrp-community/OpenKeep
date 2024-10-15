@@ -51,6 +51,8 @@
 	tastes = list("mushroom" = 1)
 	sellprice = 30
 	rotprocess = null
+	advanced_skillcheck = TRUE
+	skill_lacking = "Preparing truffles is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/truffles/cooked
 	eat_effect = /datum/status_effect/buff/foodbuff
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3)

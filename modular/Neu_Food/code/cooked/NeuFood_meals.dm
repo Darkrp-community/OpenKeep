@@ -211,7 +211,7 @@
 \------------------*/
 
 /*	.................   Valerian Omelette   ................... */
-/obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian
+/obj/item/reagent_containers/food/snacks/rogue/friedegg/valerian
 	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
 	tastes = list("fried cackleberries" = 1, "cheese" = 1)
 	name = "valerian omelette"
@@ -219,7 +219,7 @@
 	icon_state = "omelette"
 	eat_effect = /datum/status_effect/buff/foodbuff
 	rotprocess = SHELFLIFE_DECENT
-/obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian/plated
+/obj/item/reagent_containers/food/snacks/rogue/friedegg/valerian/plated
 	icon_state = "omelette_plated"
 	item_state = "plate_food"
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
@@ -296,6 +296,8 @@
 	cooked_type = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
 	rotprocess = SHELFLIFE_DECENT
+	basic_skillcheck = TRUE
+	skill_lacking = "Spicing and garnering a dish is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/attackby(obj/item/I, mob/user, params)
 	var/obj/item/reagent_containers/peppermill/mill = I
 	if (!isturf(src.loc) || \
