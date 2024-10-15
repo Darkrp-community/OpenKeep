@@ -49,6 +49,11 @@
 	desc = "the head of a fearsome volf."
 	icon_state = "volfhead"
 
+/obj/item/natural/head/saiga
+	name = "saiga head"
+	desc = "the head of a proud saiga."
+	icon_state = "saigahead"
+
 //RTD make this a storage item and make clickign on animals with things put it in storage
 /obj/item/natural/saddle
 	name = "saddle"

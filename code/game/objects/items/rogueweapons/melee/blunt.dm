@@ -259,20 +259,25 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
 
 /obj/item/rogueweapon/mace/goden/shillelagh
-	possible_item_intents = list(/datum/intent/mace/heavy/strike)
-	gripped_intents = list(/datum/intent/mace/heavy/smash)
-	name = "heavy club"
+	name = "shillelagh"
 	desc = "Big old oak branch, carved to a deadly weapon."
 	icon_state = "shillelagh"
 	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
-	max_integrity = 300
-	minstr = 8
 	pixel_y = 0
 	pixel_x = 0
 	bigboy = FALSE
 	gripsprite = TRUE
-	sellprice = 5
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
 	walking_stick = TRUE
+	max_integrity = 300
+	minstr = 8
+	sellprice = 5
+
+	force = 20
+	force_wielded = 30
+	possible_item_intents = list(/datum/intent/mace/heavy/strike)
+	gripped_intents = list(/datum/intent/mace/heavy/smash)
+
 
 /obj/item/rogueweapon/mace/goden/shillelagh/getonmobprop(tag)
 	. = ..()
@@ -280,14 +285,14 @@
 		switch(tag)
 			if("gen")
 				return list("shrink" = 0.7,
-"sx" = -11,
-"sy" = 1,
-"nx" = 12,
+"sx" = -10,
+"sy" = 0,
+"nx" = 11,
 "ny" = 0,
-"wx" = -7,
-"wy" = -0,
+"wx" = -5,
+"wy" = -1,
 "ex" = 6,
-"ey" = 3,
+"ey" = 1,
 "northabove" = 0,
 "southabove" = 1,
 "eastabove" = 1,
@@ -301,10 +306,10 @@
 "wflip" = 8,
 "eflip" = 0)
 			if("wielded")
-				return list("shrink" = 0.8,
-"sx" = 5,
+				return list("shrink" = 0.7,
+"sx" = 6,
 "sy" = -6,
-"nx" = -7,
+"nx" = -5,
 "ny" = -6,
 "wx" = 2,
 "wy" = -6,
@@ -314,16 +319,16 @@
 "southabove" = 1,
 "eastabove" = 1,
 "westabove" = 1,
-"nturn" = -40,
-"sturn" = 40,
-"wturn" = 30,
-"eturn" = -25,
+"nturn" = 0,
+"sturn" = 0,
+"wturn" = 20,
+"eturn" = -20,
 "nflip" = 8,
 "sflip" = 0,
 "wflip" = 0,
 "eflip" = 0)
 			if("onbelt")
-				return list("shrink" = 0.7,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+				return list("shrink" = 0.7,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 2,"wy" = -5,"ex" = 6,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 
 

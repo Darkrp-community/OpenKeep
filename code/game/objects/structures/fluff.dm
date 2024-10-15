@@ -981,6 +981,13 @@
 			return
 	..()
 
+//..................................................................................................................................
+/*-------------------\
+|			 		 |
+|  Shrines & Crosses |
+|			 		 |
+\-------------------*/
+
 /obj/structure/fluff/statue/spider
 	name = "arachnid idol"
 	desc = "A stone idol of a spider with the head of a smirking elven woman. Her eyes seem to follow you."
@@ -1098,7 +1105,7 @@
 		return 0
 	return !density
 
-/obj/structure/fluff/psycross/copper
+/obj/structure/fluff/psycross/copper	// the big nice on in the Temple, destroying it triggers Omens. Not so for the craftable ones.
 	name = "pantheon cross"
 	icon_state = "psycrosschurch"
 	break_sound = null
@@ -1109,6 +1116,16 @@
 	name = "wooden pantheon cross"
 	icon_state = "psycrosscrafted"
 	chance2hear = 10
+
+/obj/structure/fluff/psycross/crafted/dendor_volf
+	name = "shrine to Dendor"
+	desc = "The life force of a Volf has consecrated this holy place."
+	icon_state = "shrine_dendor_volf"
+
+/obj/structure/fluff/psycross/crafted/dendor_saiga
+	name = "shrine to Dendor"
+	desc = "The life force of a Saiga has consecrated this holy place."
+	icon_state = "shrine_dendor_saiga"
 
 /obj/structure/fluff/psycross/attackby(obj/item/W, mob/user, params)
 	if(user.mind)
@@ -1209,6 +1226,8 @@
 					return
 	return ..()
 
+
+
 /obj/structure/fluff/psycross/copper/Destroy()
 	addomen("psycross")
 	..()
@@ -1240,6 +1259,8 @@
 		var/diff = power - M.confused
 		M.confused += min(power, diff)
 
+
+//..................................................................................................................................
 /obj/structure/fluff/beach_towel
 	name = "beach towel"
 	desc = ""
