@@ -19492,7 +19492,9 @@
 /area/rogue/indoors/town)
 "upc" = (
 /obj/structure/bed/rogue/inn/hay,
-/obj/effect/landmark/start/grabber,
+/obj/effect/landmark/start/grabber{
+	name = "Stevedore"
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "upV" = (
