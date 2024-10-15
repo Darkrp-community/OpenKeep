@@ -293,7 +293,7 @@
 				if(!myseed.yield)
 					php = 0
 				update_seed_icon()
-
+/*
 /obj/machinery/crop/attack_right(mob/living/user)
 	var/boon = user?.mind?.get_learning_boon(/datum/skill/labor/farming)
 	if(weeds > 0)
@@ -314,3 +314,4 @@
 			user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT * boon)
 			update_seed_icon()
 		return
+*/
