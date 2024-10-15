@@ -6652,7 +6652,7 @@
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/suit/roguetown/armor/leather/vest,
 /obj/item/clothing/shoes/roguetown/boots/leather,
-/obj/item/clothing/suit/roguetown/armor/armordress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/dwarfin)
 "wM" = (
@@ -9955,7 +9955,7 @@
 "HO" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/clothing/head/roguetown/helmet/leather,
-/obj/item/clothing/head/roguetown/roguehood,
+/obj/item/clothing/head/roguetown/roguehood/random,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "HP" = (

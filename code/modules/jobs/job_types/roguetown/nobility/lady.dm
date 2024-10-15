@@ -30,7 +30,7 @@
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	beltl = /obj/item/keyring/queen
-	armor = /obj/item/clothing/suit/roguetown/armor/armordress
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/clothing/head/roguetown/crown/circlet = 1)
 	if(SSticker.rulertype == "Queen")
@@ -38,7 +38,7 @@
 		SSroguemachine.crown = head
 		cloak = /obj/item/clothing/cloak/lordcloak
 		belt = /obj/item/storage/belt/rogue/leather/plaquegold
-		armor = /obj/item/clothing/suit/roguetown/armor/armordress/alt
+		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt
 		l_hand = /obj/item/rogueweapon/lordscepter
 		if(H.mind)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
@@ -54,7 +54,7 @@
 			H.change_stat("perception", 2)
 			H.change_stat("fortune", 5)
 	if(prob(66))
-		armor = /obj/item/clothing/suit/roguetown/armor/armordress/alt
+		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt
 	id = /obj/item/clothing/ring/silver
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	if(H.mind)
