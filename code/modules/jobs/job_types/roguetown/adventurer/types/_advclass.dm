@@ -15,6 +15,10 @@
 	var/list/allowed_patrons
 	var/list/allowed_ages
 	var/pickprob = 100
+	var/amtchosen = 0
+	var/plevel_req = 0
+	var/ispilgrim = FALSE
+	var/isvillager = FALSE
 	var/maximum_possible_slots = 999
 	var/total_slots_occupied = 0
 	var/min_pq = -100
@@ -22,6 +26,7 @@
 
 	var/horse = FALSE
 	var/vampcompat = TRUE
+	var/ismerc = FALSE
 
 	/// This class is immune to species-based swapped gender locks
 	var/immune_to_genderswap = FALSE

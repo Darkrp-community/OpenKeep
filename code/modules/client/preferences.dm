@@ -1543,11 +1543,6 @@ Slots: [job.spawn_positions]</span>
 	else if(href_list["preference"] == "triumphs")
 		user.show_triumphs_list()
 
-	else if(href_list["preference"] == "drifters")
-		switch(href_list["task"])
-			if("show_drifter_queue")
-				SSrole_class_handler.add_drifter_queue_viewer(user.client)
-
 	else if(href_list["preference"] == "playerquality")
 		check_pq_menu(user.ckey)
 
@@ -1561,8 +1556,6 @@ Slots: [job.spawn_positions]</span>
 	else if(href_list["preference"] == "customizers")
 		ShowCustomizers(user)
 		return
-	else if(href_list["preference"] == "triumph_buy_menu")
-		SStriumphs.startup_triumphs_menu(user.client)
 
 	else if(href_list["preference"] == "keybinds")
 		switch(href_list["task"])

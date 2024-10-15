@@ -192,6 +192,7 @@
 /obj/item/rogueweapon/huntingknife/idagger/silver/pickup(mob/user)
 	. = ..()
 	var/mob/living/carbon/human/H = user
+	var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 	if(ishuman(H))
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
@@ -199,8 +200,7 @@
 			H.adjustFireLoss(60)
 			H.Paralyze(20)
 			H.fire_act(1,5)
-		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
-			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(V_lord)
 			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
 				H.Knockdown(10)
@@ -209,11 +209,9 @@
 /obj/item/rogueweapon/huntingknife/idagger/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	. = ..()
 	if(ishuman(M))
-		var/datum/antagonist/vampirelord/V_lord = FALSE
 		var/mob/living/carbon/human/H = M
-		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord))
-			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
-		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+		var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			H.Knockdown(20)
 			H.adjustFireLoss(60)
 			H.Paralyze(20)
@@ -234,12 +232,8 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/s_user = user
 		var/mob/living/carbon/human/H = target
-		var/datum/antagonist/vampirelord/lesser/V = FALSE
-		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
-			V =  H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
-		var/datum/antagonist/vampirelord/V_lord = FALSE
-		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/))
-			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		var/datum/antagonist/vampirelord/lesser/V = H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+		var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 		if(V)
 			if(V.disguised)
 				H.Stun(20)
