@@ -18,27 +18,27 @@
 
 	switch(H.patron?.name)
 		if("Astrata")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/astrata
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
 		if("Dendor")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 		if("Necra")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/necra
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 		if("Eora")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
 			H.virginity = FALSE
 		if("Noc")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/noc
 			wrists = /obj/item/clothing/neck/roguetown/psycross/noc
 		if("Pestra")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 		if("Ravox")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/ravox	
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver
