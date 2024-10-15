@@ -74,6 +74,7 @@ h1.alert, h2.alert	{color: #c9c1ba;font-family: Pterra, TrueType;}
 .love					{color: #e7bed8;	font-size: 75%;}
 .info					{color: #a9a5b6;						font-size: 75%;}
 .biginfo				{color: #a9a5b6;}
+.noticesmall			{color: #f1d669;						font-size: 85%;}
 .notice					{color: #f1d669;}
 .boldnotice				{color: #f1d669;	font-weight: bold;}
 .hear					{color: #6685f5;	font-style: italic;}
