@@ -61,7 +61,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/basement)
 "aeM" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/mountains)
 "afz" = (
@@ -1258,7 +1258,7 @@
 /obj/structure/closet/crate/coffin,
 /obj/structure/fluff/walldeco/maidendrape,
 /obj/item/clothing/suit/roguetown/shirt/robe/necra,
-/obj/item/clothing/head/roguetown/necrahood,
+/obj/item/clothing/head/roguetown/padded/deathshroud,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
 "bFf" = (
@@ -1449,7 +1449,7 @@
 /obj/effect/decal/cobbleedge{
 	dir = 6
 	},
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "bQu" = (
@@ -3840,7 +3840,7 @@
 /obj/effect/decal/cobbleedge{
 	dir = 6
 	},
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
@@ -4646,7 +4646,7 @@
 	dir = 8;
 	pixel_y = -1
 	},
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "fRa" = (
@@ -6146,7 +6146,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "hIN" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "hIO" = (
@@ -6248,7 +6248,7 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor)
 "hOt" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains)
 "hOJ" = (
@@ -7021,7 +7021,7 @@
 /obj/effect/decal/cobbleedge{
 	dir = 10
 	},
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
@@ -8550,7 +8550,7 @@
 /area/rogue/indoors/town/shop)
 "kEn" = (
 /obj/structure/closet/crate/roguecloset/lord,
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord,
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /obj/item/rogueweapon/sword/rapier/lord,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
@@ -8807,7 +8807,7 @@
 /obj/effect/decal/cobbleedge{
 	dir = 10
 	},
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "kUS" = (
@@ -10596,7 +10596,7 @@
 /area/rogue/indoors/town/dwarfin)
 "neO" = (
 /obj/structure/closet/crate/roguecloset/dark,
-/obj/item/clothing/suit/roguetown/armor/armordress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
 /obj/item/clothing/shoes/roguetown/boots/leather,
 /obj/item/clothing/suit/roguetown/armor/leather/vest,
 /turf/open/floor/rogue/wood,
@@ -11619,7 +11619,7 @@
 /obj/effect/decal/cobbleedge{
 	dir = 10
 	},
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "omU" = (
@@ -13420,7 +13420,7 @@
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/suit/roguetown/armor/leather/vest,
 /obj/item/clothing/shoes/roguetown/boots/leather,
-/obj/item/clothing/suit/roguetown/armor/armordress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/dwarfin)
 "qAJ" = (
@@ -14202,7 +14202,7 @@
 /obj/structure/fluff/railing/wood{
 	dir = 1
 	},
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "rAg" = (
@@ -14317,8 +14317,8 @@
 /obj/structure/closet/crate/roguecloset/inn,
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random,
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random,
-/obj/item/clothing/suit/roguetown/armor/silkcoat,
-/obj/item/clothing/suit/roguetown/armor/silkcoat,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -15361,7 +15361,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "teG" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
@@ -16351,7 +16351,7 @@
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/outdoors/town/roofs)
 "ulR" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "umn" = (
@@ -19157,7 +19157,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)
 "xJh" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/flora/roguegrass,
 /obj/machinery/light/rogue/torchholder{
 	dir = 8

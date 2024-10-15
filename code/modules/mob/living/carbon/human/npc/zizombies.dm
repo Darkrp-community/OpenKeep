@@ -258,50 +258,26 @@
 	H.STASPD = 7
 	H.STACON = 10
 	H.STAEND = 16//the zombies shouldn't get tired after all
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+	pants = /obj/item/clothing/under/roguetown/tights/vagrant
+	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	head = /obj/item/clothing/head/roguetown/roguehood/random
 	var/loadout = rand(1,6)
 	switch(loadout)
 		if(1) //Axe Warrior
 			r_hand = /obj/item/rogueweapon/woodcut
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
 		if(2) //Long Stick Fighter
 			r_hand = /obj/item/rogueweapon/woodstaff
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
 		if(3) //Club Caveman
 			r_hand = /obj/item/rogueweapon/mace/woodclub
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
 		if(4) //Stabbity Stabbity your Knight is now horizontality
 			r_hand =/obj/item/rogueweapon/pitchfork
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
 		if(5) //Bonk Build
 			r_hand = /obj/item/rogueweapon/thresher
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
 		if(6) //Bonk Build
 			r_hand = /obj/item/rogueweapon/hoe
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
+
 
 ///////////////////////////////////////////////////////////// EVENTMIN ZIZOMBIES
 /mob/living/carbon/human/species/zizombie/npc/ambush/after_creation()

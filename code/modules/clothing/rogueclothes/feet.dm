@@ -186,9 +186,9 @@
 	sellprice = 20
 
 /obj/item/clothing/shoes/roguetown/boots/rare
-	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
-	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
-	sleeved = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
+	icon = 'icons/roguetown/clothing/Racial_Armour.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'
 	sleevetype = null
 	resistance_flags = FIRE_PROOF // All of these are plated
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
