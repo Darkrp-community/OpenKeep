@@ -153,7 +153,7 @@
 
 /obj/machinery/crop/proc/rainedon()
 	water = 100
-
+/*
 /obj/machinery/crop/attackby(obj/item/I, mob/living/user, params)
 	var/boon = user.mind?.get_learning_boon(/datum/skill/labor/farming)
 	if(istype(I, /obj/item/seeds))
@@ -293,7 +293,7 @@
 				if(!myseed.yield)
 					php = 0
 				update_seed_icon()
-/*
+
 /obj/machinery/crop/attack_right(mob/living/user)
 	var/boon = user?.mind?.get_learning_boon(/datum/skill/labor/farming)
 	if(weeds > 0)
