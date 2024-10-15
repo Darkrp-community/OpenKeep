@@ -11,7 +11,7 @@
 		"Dark Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/assassin
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 2
 	min_pq = 0
 	pickprob = 100

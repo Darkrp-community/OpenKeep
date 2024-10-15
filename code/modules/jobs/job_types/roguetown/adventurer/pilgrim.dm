@@ -11,7 +11,7 @@
 	outfit = null
 	outfit_female = null
 	bypass_jobban = FALSE
-	advclass_cat_rolls = list(CTAG_PILGRIM = 5)
+	advclass_cat_rolls = list(CTAG_PILGRIM = 15)
 
 	display_order = JDO_PILGRIM
 	min_pq = -20

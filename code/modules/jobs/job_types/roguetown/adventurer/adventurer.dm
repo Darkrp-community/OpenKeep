@@ -23,7 +23,7 @@ GLOBAL_LIST_EMPTY(billagerspawns)
 	job_reopens_slots_on_death = TRUE
 	same_job_respawn_delay = 15 MINUTES
 
-	advclass_cat_rolls = list(CTAG_ADVENTURER = 5)
+	advclass_cat_rolls = list(CTAG_ADVENTURER = 15)
 
 
 /datum/job/roguetown/adventurer/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
