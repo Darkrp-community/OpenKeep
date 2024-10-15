@@ -13,6 +13,7 @@
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/preserved/onion_fried
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/onion
+	distill_amt = 6
 
 /*	..................   Cabbage   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/veg/cabbage_sliced
@@ -30,6 +31,7 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_fried
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/voddena
+	distill_amt = 8
 
 /*	..................   Turnip   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/veg/turnip_sliced
