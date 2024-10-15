@@ -48,7 +48,7 @@
 
 /datum/crafting_recipe/roguetown/sewing/stripedtunic
 	name = "striped tunic"
-	result = list(/obj/item/clothing/suit/roguetown/armor/workervest)
+	result = list(/obj/item/clothing/suit/roguetown/armor/gambeson/light/striped)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 
