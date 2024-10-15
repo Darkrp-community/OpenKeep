@@ -50,6 +50,162 @@
 	default_color = DEFAULT_SECONDARY
 	covers_chest = TRUE
 
+/datum/body_marking/burnface_r
+	name = "Burns (r)"
+	icon_state = "burnface_r"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+
+/datum/body_marking/burnface_l
+	name = "Burns (l)"
+	icon_state = "burnface_l"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+
+/datum/body_marking/burneye_r
+	name = "Burned Eye (r)"
+	icon_state = "burneye_r"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/burneye_l
+	name = "Burned Eye (l)"
+	icon_state = "burneye_l"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/brows/dark
+	name = "Dark Eyebrows"
+	icon_state = "darkbrows"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/unibrow/dark
+	name = "Dark Unibrow"
+	icon_state = "darkunibrow"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/deadeye_r
+	name = "Dead Eye (r)"
+	icon_state = "deadeye_r"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/deadeye_l
+	name = "Dead Eye (l)"
+	icon_state = "deadeye_l"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/scarhead
+	name = "Scarred Head"
+	icon_state = "scarhead"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/scar
+	name = "Scar"
+	icon_state = "scar"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/scart
+	name = "Scar2"
+	icon_state = "scar2"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/slashedeye_r
+	name = "Slashed Eye (r)"
+	icon_state = "slashedeye_r"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/slashedeye_r
+	name = "Slashed Eye (r)"
+	icon_state = "slashedeye_r"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/slashedeye_l
+	name = "Slashed Eye (l)"
+	icon_state = "slashedeye_l"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/mangled
+	name = "Mangled Jaw"
+	icon_state = "mangled"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/warpaint_blue
+	name = "Warpaint (Blue)"
+	icon_state = "warpaint_blue"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/warpaint_red
+	name = "Warpaint (Red)"
+	icon_state = "warpaint_red"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/warpaint_green
+	name = "Warpaint (Green)"
+	icon_state = "warpaint_green"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/warpaint_purple
+	name = "Warpaint (Purple)"
+	icon_state = "warpaint_purple"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/warpaint_black
+	name = "Warpaint (Black)"
+	icon_state = "warpaint_black"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/harlequin
+	name = "Harlequin"
+	icon_state = "harlequin"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/tattoo_lips
+	name = "Tattoo (Lips)"
+	icon_state = "tattoo_lips"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/tattoo_eye_r
+	name = "Tattoo (r Eye)"
+	icon_state = "tattoo_eye_r"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/tattoo_eye_l
+	name = "Tattoo (l Eye)"
+	icon_state = "tattoo_eye_l"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/brows
+	name = "Thick Eyebrows"
+	icon_state = "brows"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+	
+/datum/body_marking/unibrow
+	name = "Unibrow"
+	icon_state = "unibrow"
+	icon = 'icons/mob/body_markings/stonekeep_markings.dmi'
+	affected_bodyparts = HEAD
+
 /datum/body_marking/spotted
 	icon = 'icons/mob/body_markings/spotted_markings.dmi'
 	name = "Spots"
