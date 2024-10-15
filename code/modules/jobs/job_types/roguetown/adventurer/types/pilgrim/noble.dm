@@ -13,7 +13,8 @@
 		"Dark Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/noble
-	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
+	isvillager = TRUE
+	ispilgrim = TRUE
 	maximum_possible_slots = 2
 
 

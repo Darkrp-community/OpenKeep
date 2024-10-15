@@ -801,7 +801,12 @@
 		qdel(src)
 		return
 	else
-		SSrole_class_handler.setup_class_handler(H)
+		if(H.job == "Mercenary")
+			if(H.mercsetup())
+				qdel(src)
+
+		else if(H.advsetup())
+			qdel(src)
 
 /atom/movable/screen/eye_intent
 	name = "eye intent"

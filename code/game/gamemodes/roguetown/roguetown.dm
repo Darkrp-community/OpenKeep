@@ -151,7 +151,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 			pick_cultist()
 			log_game("Major Antagonist: Cultists")
 		if(3)
-			if(num_players() >= 14) //as in 14 roundstart-ready players 
+			if(num_players() >= 14) //as in 14 roundstart-ready players
 				pick_vampires()
 				log_game("Major Antagonist: Vampire Lord")
 			else
@@ -439,15 +439,11 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 			vampires += vampire
 ///////////////// BANDIT
 
-//normal bandit dont work right now so its disabled in the meantime just in case.
-/*
 	for(var/datum/mind/bandito in pre_bandits)
 		var/datum/antagonist/new_antag = new /datum/antagonist/bandit()
 		addtimer(CALLBACK(bandito, TYPE_PROC_REF(/datum/mind, add_antag_datum), new_antag), rand(10,100))
 		GLOB.pre_setup_antags -= bandito
 		bandits += bandito
-		//SSrole_class_handler.bandits_in_round = TRUE
-	*/
 
 ///////////////// REBELS
 	for(var/datum/mind/rebelguy in pre_rebels)
@@ -463,7 +459,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 
 /datum/game_mode/chaosmode/make_antag_chance(mob/living/carbon/human/character) //klatejoin
 	return
-/* 
+/*
 // ******** VILLAINS
 	var/num_villains = round((num_players() * 0.30)+1, 1)
 	if((villains.len + pre_villains.len) >= num_villains) //Upper cap for number of latejoin antagonists

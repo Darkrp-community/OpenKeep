@@ -7,7 +7,8 @@
 		"Dwarf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/grenzelhoft
-	category_tags = list(CTAG_PILGRIM)
+	isvillager = FALSE
+	ispilgrim = TRUE
 	maximum_possible_slots = 1
 	pickprob = 30
 	min_pq = 0

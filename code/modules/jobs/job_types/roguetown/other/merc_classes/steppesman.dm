@@ -8,7 +8,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/steppesman
-	category_tags = list(CTAG_MERCENARY)
+	ismerc = TRUE
 	maximum_possible_slots = 5
 
 	cmode_music = 'sound/music/combat_steppe.ogg'

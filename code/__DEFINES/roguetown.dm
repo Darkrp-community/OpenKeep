@@ -93,46 +93,10 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define SHELFLIFE_SHORT 20 MINUTES
 #define SHELFLIFE_TINY 12 MINUTES
 
-/*
-	Formerly bitflags, now we are strings
-	Currently used for classes, I could have used these for drifters tho
-*/
-
-#define CTAG_ALLCLASS		"CAT_ALLCLASS"		// jus a define for allclass to not deal with actively typing strings
-#define CTAG_DISABLED 		"CAT_DISABLED" 		// Disabled, aka don't make it fuckin APPEAR
-#define CTAG_PILGRIM 		"CAT_PILGRIM"  		// Pilgrim classes
-#define CTAG_ADVENTURER 	"CAT_ADVENTURER"  	// Adventurer classes
-#define CTAG_TOWNER 		"CAT_TOWNER"  		// Villager class - Villagers can use it
-#define CTAG_ANTAG 			"CAT_ANTAG"  		// Antag class - results in an antag
-#define CTAG_BANDIT			"CAT_BANDIT"		// Bandit class - Tied to the bandit antag really	<- Disabled; bandits got stuck with class selection
-#define CTAG_CHALLENGE 		"CAT_CHALLENGE"  	// Challenge class - Meant to be free for everyone
-#define CTAG_MERCENARY		"CAT_MERCENARY"
-#define CTAG_GARRISON		"CAT_GARRISON"
-#define CTAG_ADEPT			"CAT_ADEPT" // Used for Adept class selection
-
-/*
-	String category tags
-	This time for the drifter waves, used for sorting and scheduling purposes
-*/
-#define DTAG_ALLWAVES		"CAT_ALLWAVES"		// Another define for jus the basic allclass
-#define DTAG_DISABLED		"CAT_DISABLED"		// Disabled, do not use
-#define DTAG_FILLERS		"CAT_FILLER"		// If we have nothing better to do, time for filler
-#define DTAG_ANTAGS			"CAT_ANTAGS"		// A catchall for antag groups
-#define DTAG_BANDITS		"CAT_BANDITS"		// some bandits I guess 	<- Disabled; issues with spawning bandits as drifters
-
-/*
-	Defines for the triumph buy datum categories
-*/
-#define TRIUMPH_CAT_ROUND_EFX "ROUND-EFX"
-#define TRIUMPH_CAT_CHARACTER "CHARACTER"
-#define TRIUMPH_CAT_MISC "MISC!"
-#define TRIUMPH_CAT_ACTIVE_DATUMS "ACTIVE"
-
-
-// .............. SELLPRICE/VALUE DEFINES ..................... // 
+// .............. SELLPRICE/VALUE DEFINES ..................... //
 // Basicallly material cost + work cost will be the value from now on. Needs work to value these things in comparison but its a simple way to get some consistency to it
 // The material cost, work cost and bonus value should mostly be a under the hood thing so its easy to parse. Adjusting them will obviously affect end user costs.
-// Keep values divisible by 2 and 3 and 4 without fractions, lets avoid money fractions guys. 
+// Keep values divisible by 2 and 3 and 4 without fractions, lets avoid money fractions guys.
 
 // Material costs.
 // theres two parts of what a material is worth, how hard is it to find it and how painful is it to collect, and how useful is it.
@@ -169,7 +133,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define BONUS_VALUE_MODEST		BONUS_VALUE_SMALL * 2
 #define BONUS_VALUE_BIG			BONUS_VALUE_SMALL * 4
 
-#define GREED_SMALL_POTATO		BONUS_VALUE_TINY	// to get some profit margin to the offmap trading company and make economy make sense 
+#define GREED_SMALL_POTATO		BONUS_VALUE_TINY	// to get some profit margin to the offmap trading company and make economy make sense
 #define GREEDY_TRADER			BONUS_VALUE_SMALL	// slap this on most stuff the trader imports (its the markup they pay their supplier, or just double value for stuff you want to keep rare)
 
 /*--------------\
@@ -246,7 +210,7 @@ BCLASS_BLUNT, \
 BCLASS_STAB, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 // All crits minus stab
 #define CRITICALS_GOOD_METAL list(\
@@ -255,40 +219,40 @@ BCLASS_CHOP, \
 BCLASS_BLUNT, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 // Orcs mostly
 #define CRITICALS_POOR_METAL list(\
 BCLASS_CUT, \
 BCLASS_CHOP, \
-BCLASS_BLUNT) 
+BCLASS_BLUNT)
 
 // Just cut chop and stab, for coifs and partial maille
 #define CRITICALS_MAILLE_COIF list(\
 BCLASS_CUT, \
 BCLASS_CHOP, \
-BCLASS_STAB) 
+BCLASS_STAB)
 
 // Maille level but also covers nose twisters
 #define CRITICALS_MAILLE_PLUS list(\
 BCLASS_CUT, \
 BCLASS_CHOP, \
 BCLASS_STAB, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 #define CRITICALS_BOILED_LEATHER list(\
 BCLASS_CUT, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 #define CRITICALS_THICK_LEATHER list(\
 BCLASS_BLUNT, \
 BCLASS_LASHING, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)
 
 #define CRITICALS_THICK_CLOTH list(\
 BCLASS_LASHING, \
 BCLASS_BITE, \
-BCLASS_TWIST) 
+BCLASS_TWIST)

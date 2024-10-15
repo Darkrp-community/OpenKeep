@@ -16,7 +16,8 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/mastercarpenter
-	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
+	isvillager = TRUE
+	ispilgrim = TRUE
 	maximum_possible_slots = 1
 	pickprob = 15
 

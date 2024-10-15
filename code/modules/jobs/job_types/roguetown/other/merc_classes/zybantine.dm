@@ -12,7 +12,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/zybantine
-	category_tags = list(CTAG_MERCENARY)
+	ismerc = TRUE
 	maximum_possible_slots = 5
 
 	cmode_music = 'sound/music/combat_desertrider.ogg' //GREATEST COMBAT TRACK IN THE GAME SO FAR BESIDES MAYBE MANIAC2.OGG
