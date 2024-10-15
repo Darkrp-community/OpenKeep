@@ -629,7 +629,7 @@
 	name = "door"
 	desc = ""
 	icon_state = "woodhandle"
-	openSound = 'sound/foley/doors/creak.ogg'
+	openSound = list('sound/foley/doors/creak.ogg')
 	closeSound = 'sound/foley/doors/shut.ogg'
 	sheetType = null
 	resistance_flags = FLAMMABLE

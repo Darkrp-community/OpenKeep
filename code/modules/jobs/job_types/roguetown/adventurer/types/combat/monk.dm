@@ -19,11 +19,11 @@
 
 /datum/outfit/job/roguetown/adventurer/monk/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/roguehood
+	head = /obj/item/clothing/head/roguetown/roguehood/brown
 	neck = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
-	armor = /obj/item/clothing/suit/roguetown/shirt/robe
+	armor = /obj/item/clothing/suit/roguetown/shirt/robe/plain
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
@@ -45,8 +45,8 @@
 		H.change_stat("endurance", 2)
 		H.change_stat("perception", -1)
 		H.change_stat("speed", 1)
-		
+
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-		
+
 	if(H.patron != /datum/patron/divine/ravox)
 		H.patron = GLOB.patronlist[/datum/patron/divine/ravox]

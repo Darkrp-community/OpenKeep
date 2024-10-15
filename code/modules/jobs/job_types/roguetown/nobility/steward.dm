@@ -19,6 +19,7 @@
 	outfit = /datum/outfit/job/roguetown/steward
 	give_bank_account = 100
 	min_pq = 2
+	cmode_music = 'sound/music/combat_noble.ogg'
 
 /datum/outfit/job/roguetown/steward/pre_equip(mob/living/carbon/human/H)
 	..()

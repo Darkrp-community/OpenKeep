@@ -197,10 +197,12 @@
 #define NOSE		(1<<16)
 #define RIGHT_EYE	(1<<17)
 #define LEFT_EYE	(1<<18)
-#define HAIR		(1<<19) 
+#define HAIR		(1<<19)
 #define EYES		(LEFT_EYE | RIGHT_EYE)
 #define FACE		(MOUTH | NOSE | EYES)
 #define FULL_HEAD	(HEAD | MOUTH | NOSE | EYES | EARS | HAIR)
+#define HEAD_EXCEPT_MOUTH	(HEAD | NOSE | EYES | EARS | HAIR)
+#define HEAD_NECK	(HEAD | MOUTH | NOSE | EYES | EARS | HAIR | NECK)
 #define BELOW_HEAD	(CHEST | GROIN | VITALS | ARMS | HANDS | LEGS | FEET)
 #define BELOW_CHEST	(GROIN | VITALS | LEGS | FEET) //for water
 #define FULL_BODY	(FULL_HEAD | NECK | BELOW_HEAD)
