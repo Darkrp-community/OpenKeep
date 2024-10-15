@@ -17,7 +17,7 @@
 
 		if (QDELETED(src))
 			return
-		
+
 		handle_wounds()
 		handle_embedded_objects()
 		handle_blood()
@@ -54,7 +54,7 @@
 						if(!wound.sleep_healing)
 							continue
 						wound.heal_wound(wound.sleep_healing * sleepy_mod)
-				adjustToxLoss(-sleepy_mod)
+				adjustToxLoss( - ( sleepy_mod * 0.5) )
 				if(eyesclosed && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 					Sleeping(300)
 		else if(!IsSleeping() && !HAS_TRAIT(src, TRAIT_NOSLEEP))
