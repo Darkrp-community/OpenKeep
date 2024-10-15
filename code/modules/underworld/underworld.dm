@@ -3,7 +3,7 @@
 	set name = "Journey to the Underworld"
 	set category = "Spirit"
 
-	switch(alert("Begin the long walk in the underworld too your judgement....",,"Yes","No"))
+	switch(alert("Begin the long walk in the underworld to your judgement....",,"Yes","No"))
 		if("Yes")
 			if(istype(mob, /mob/living/carbon/human))
 				var/mob/living/carbon/human/D = mob
@@ -66,7 +66,7 @@
 	client.verbs -= /client/proc/descend
 	qdel(src)
 	return
-
+/*	Commented out. Resource intensive and not actually needed with the timer to put in hands and maze setup
 /proc/coin_upkeep()
 	if(length(GLOB.underworldcoins) >= 3)
 		return
@@ -76,7 +76,7 @@
 		new /obj/item/underworld/coin(spawn_loc)
 		if(length(GLOB.underworldcoins) >= 3)
 			break
-
+*/
 
 // shit that eventually will need moved elsewhere
 /obj/item/flashlight/lantern/shrunken
