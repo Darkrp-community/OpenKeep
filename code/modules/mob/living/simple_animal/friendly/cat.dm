@@ -73,7 +73,7 @@
 	if(locate(/mob/living/carbon) in get_turf(src))
 		sleep(1)
 		dir = pick(GLOB.alldirs)
-		step(src, dir)	
+		step(src, dir)
 		personal_space()
 	else
 		return
@@ -84,10 +84,10 @@
 	STASPD = 5
 	var/isracist = TRUE // Hisses at dark elves if they try to pet it
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 							/obj/item/alch/sinew = 1,
 							/obj/item/alch/bone = 1)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 							/obj/item/alch/sinew = 2,
 							/obj/item/alch/bone = 1)
 
@@ -110,10 +110,10 @@
 	emote_see = list("brings their ears alert.", "scratches their ear with a hindleg.")
 	childtype = list() // TODO: puppy cabbits =:3
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 							/obj/item/alch/sinew = 1,
 							/obj/item/alch/bone = 1)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 							/obj/item/alch/sinew = 2,
 							/obj/item/alch/bone = 1,
 							/obj/item/natural/fur/cabbit = 1)
@@ -311,7 +311,7 @@
 						stop_automated_movement = 0
 						break
 
-	
+
 
 
 
@@ -398,7 +398,7 @@
 			icon_state = "[icon_living]"
 			set_resting(FALSE)
 			update_mobility()
-			playsound(get_turf(src), 'modular/Creechers/sound/cathiss.ogg', 80, TRUE, -1)
+			playsound(get_turf(src), 'sound/vo/mobs/catte/cathiss.ogg', 80, TRUE, -1)
 			dir = pick(GLOB.alldirs)
 			step(src, dir)
 			personal_space()
@@ -408,7 +408,7 @@
 				icon_state = "[icon_living]"
 				set_resting(FALSE)
 				update_mobility()
-				playsound(get_turf(src), 'modular/Creechers/sound/cathiss.ogg', 80, TRUE, -1)
+				playsound(get_turf(src), 'sound/vo/mobs/catte/cathiss.ogg', 80, TRUE, -1)
 				dir = pick(GLOB.alldirs)
 				step(src, dir)
 				personal_space()
