@@ -7971,7 +7971,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue)
 "ayO" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue)
 "ayP" = (
@@ -7994,7 +7994,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "ayT" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "ayU" = (
@@ -8143,7 +8143,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town)
 "azy" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
 "azz" = (
@@ -8211,7 +8211,7 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue)
 "azM" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "azN" = (
@@ -10380,7 +10380,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
 "aGB" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "aGC" = (
@@ -10436,7 +10436,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "aGM" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "aGN" = (
@@ -11619,7 +11619,7 @@
 	},
 /area/rogue/outdoors/rtfield)
 "bIB" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/beach)
 "bLa" = (
@@ -12746,7 +12746,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cave)
 "luK" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/beach)
 "lvS" = (
@@ -13989,7 +13989,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
 "vQk" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/beach)
 "vUC" = (
