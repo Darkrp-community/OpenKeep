@@ -147,8 +147,8 @@
 /area/rogue/outdoors/mountains/decap)
 "eJ" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/whip/antique,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/suit/roguetown/armor/cuirass/iron/rust,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/outdoors/mountains/decap)
 "eR" = (
@@ -321,10 +321,6 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains/decap)
-"lx" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/troll,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/mountains/decap)
 "lz" = (
 /obj/structure/fluff/railing/fence,
 /turf/open/floor/rogue/dirt,
@@ -475,11 +471,6 @@
 /area/rogue/outdoors/mountains/decap)
 "so" = (
 /turf/closed/mineral/random/rogue,
-/area/rogue/outdoors/mountains/decap)
-"ss" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/troll,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains/decap)
 "sw" = (
 /obj/structure/table/wood/reinforced,
@@ -979,15 +970,8 @@
 /obj/item/roguecoin/gold/pile,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains/decap)
-"Iy" = (
-/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/blocks,
-/area/rogue/outdoors/mountains/decap)
 "IN" = (
 /obj/structure/closet/crate/roguecloset/dark,
-/obj/item/rogueweapon/halberd/bardiche,
 /obj/item/rogueweapon/mace/steel,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/wood/nosmooth,
@@ -1094,7 +1078,6 @@
 "OM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/rogue/wallfire/candle/blue,
-/mob/living/carbon/human/species/skeleton/npc/warrior,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains/decap)
 "OO" = (
@@ -1309,8 +1292,8 @@
 /area/rogue/outdoors/mountains/decap)
 "VH" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/shield/tower/metal,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/neck/roguetown/gorget/hoplite,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/outdoors/mountains/decap)
 "Wo" = (
@@ -1382,8 +1365,8 @@
 /area/rogue/outdoors/mountains/decap)
 "YA" = (
 /obj/structure/closet/crate/roguecloset/dark,
-/obj/item/clothing/suit/roguetown/armor/plate/scale/iron,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/head/roguetown/helmet/skullcap,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/outdoors/mountains/decap)
 "YM" = (
@@ -15454,11 +15437,11 @@ gp
 UO
 TZ
 TZ
-ss
+oH
 VG
 TZ
 TZ
-lx
+TZ
 La
 TZ
 gp
@@ -16364,7 +16347,7 @@ gp
 gp
 gp
 CY
-Iy
+Ak
 CY
 CY
 gp
@@ -17160,7 +17143,7 @@ gp
 TV
 Qx
 Qx
-zr
+TV
 zP
 Om
 IN
