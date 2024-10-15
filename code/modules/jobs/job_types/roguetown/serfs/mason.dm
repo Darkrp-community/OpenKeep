@@ -45,7 +45,7 @@
 
 	head = /obj/item/clothing/head/roguetown/brimmed
 	neck = /obj/item/clothing/neck/roguetown/coif
-	armor = /obj/item/clothing/suit/roguetown/armor/workervest
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 	cloak = /obj/item/clothing/cloak/apron/waist/brown
 	pants = /obj/item/clothing/under/roguetown/trou
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/green//gave them the guild tunic they have on the map, blacksmiths get them too

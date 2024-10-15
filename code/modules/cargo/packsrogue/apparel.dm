@@ -58,11 +58,6 @@
 	cost = 25
 	contains = /obj/item/clothing/mask/rogue/spectacles
 
-/datum/supply_pack/rogue/apparel/spectacles_golden
-	name = "Golden Spectacles"
-	cost = 40
-	contains = /obj/item/clothing/mask/rogue/spectacles/golden
-
 /datum/supply_pack/rogue/apparel/shepherd
 	name = "Black Halfmask"
 	cost = 10
@@ -101,7 +96,7 @@
 /datum/supply_pack/rogue/apparel/armordress
 	name = "Padded Dress"
 	cost = 30
-	contains = /obj/item/clothing/suit/roguetown/armor/armordress
+	contains = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
 
 /datum/supply_pack/rogue/apparel/leather_vest_random
 	name = "Leather Vest"
@@ -111,12 +106,12 @@
 /datum/supply_pack/rogue/apparel/workervest
 	name = "Worker Vest"
 	cost = 10
-	contains = /obj/item/clothing/suit/roguetown/armor/workervest
+	contains = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 
 /datum/supply_pack/rogue/apparel/silkcoat
 	name = "Silk Coat"
 	cost = 60
-	contains = /obj/item/clothing/suit/roguetown/armor/silkcoat
+	contains = /obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat
 
 /datum/supply_pack/rogue/apparel/undershirt_random
 	name = "Undershirt"
@@ -237,16 +232,6 @@
 	name = "Black Leather Belt"
 	cost = 6
 	contains = /obj/item/storage/belt/rogue/leather/black
-
-/datum/supply_pack/rogue/apparel/silver_plaque_belt
-	name = "Silver Plaque Belt"
-	cost = 40
-	contains = /obj/item/storage/belt/rogue/leather/plaquesilver
-
-/datum/supply_pack/rogue/apparel/gold_plaque_belt
-	name = "Gold Plaque Belt"
-	cost = 60
-	contains = /obj/item/storage/belt/rogue/leather/plaquegold
 
 /datum/supply_pack/rogue/apparel/pouch
 	name = "Pouch"

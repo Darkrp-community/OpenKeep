@@ -3298,7 +3298,7 @@
 	dir = 1
 	},
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/manorgarri)
@@ -3323,7 +3323,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/under/basement)
 "dMe" = (
-/mob/living/simple_animal/pet/cat/inn,
+/mob/living/simple_animal/pet/cat/rogue/inn,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/tavern/saiga)
 "dMl" = (
@@ -3582,7 +3582,7 @@
 	dir = 6
 	},
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/manorgarri)
 "dXk" = (
@@ -7156,7 +7156,7 @@
 	first_time_text = "Blackwine Manor"
 	})
 "hGm" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "hGL" = (
@@ -8366,7 +8366,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
 "iNQ" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
@@ -9678,7 +9678,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "khr" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
@@ -12521,7 +12521,7 @@
 /obj/item/clothing/mask/rat/jackal,
 /obj/item/clothing/mask/muzzle,
 /obj/item/clothing/head/roguetown/nun,
-/obj/item/clothing/suit/roguetown/armor/chainmail/chainkini,
+/obj/item/clothing/suit/roguetown/armor/amazon_chainkini,
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
 /obj/item/rope,
 /obj/machinery/light/rogue/wallfire/candle/lamp{
@@ -12606,7 +12606,7 @@
 /turf/open/water/sewer,
 /area/rogue/under/town/sewer)
 "nlR" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/mountains)
 "nlS" = (
@@ -18516,7 +18516,7 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "tjQ" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/mountains)
 "tki" = (
@@ -18919,7 +18919,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/shop)
 "tFc" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/manorgarri)
@@ -20341,9 +20341,9 @@
 "uST" = (
 /obj/structure/closet/crate/roguecloset/lord,
 /obj/item/natural/cloth,
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord,
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /obj/item/clothing/cloak/raincloak/furcloak,
-/obj/item/clothing/suit/roguetown/armor/plate/scale,
+/obj/item/clothing/suit/roguetown/armor/medium/scale,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"
@@ -20670,7 +20670,7 @@
 	dir = 10
 	},
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/manorgarri)
 "vlr" = (
@@ -21336,7 +21336,7 @@
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/magician)
 "vVI" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "vVY" = (
@@ -22145,7 +22145,7 @@
 /area/rogue/indoors/shelter/mountains)
 "wJv" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/hand,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/hand,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"
@@ -22189,7 +22189,7 @@
 	})
 "wNi" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
