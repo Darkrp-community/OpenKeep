@@ -4980,7 +4980,7 @@
 /area/rogue/indoors/town/dwarfin)
 "fmN" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/clothing/suit/roguetown/armor/armordress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
 /obj/item/clothing/suit/roguetown/armor/leather/vest,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/under/roguetown/tights/random,
@@ -21252,7 +21252,7 @@
 /area/rogue/indoors/town)
 "wUp" = (
 /obj/structure/closet/crate/roguecloset/lord,
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord,
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},

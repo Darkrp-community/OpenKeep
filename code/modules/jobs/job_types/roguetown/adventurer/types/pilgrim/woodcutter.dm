@@ -34,7 +34,7 @@
 	backr = /obj/item/storage/backpack/rogue/satchel
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/workervest
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 	beltr = /obj/item/rogueweapon/woodcut
 	beltl = /obj/item/rogueweapon/huntingknife/villager
 	backpack_contents = list(/obj/item/flint = 1)

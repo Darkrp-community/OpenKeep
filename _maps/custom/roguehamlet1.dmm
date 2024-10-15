@@ -15984,7 +15984,7 @@
 /obj/item/clothing/mask/rat/jackal,
 /obj/item/clothing/mask/muzzle,
 /obj/item/clothing/head/roguetown/nun,
-/obj/item/clothing/suit/roguetown/armor/chainmail/chainkini,
+/obj/item/clothing/suit/roguetown/armor/amazon_chainkini,
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/under/town/basement)
@@ -19819,7 +19819,7 @@
 "uST" = (
 /obj/structure/closet/crate/roguecloset/inn,
 /obj/item/natural/cloth,
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord,
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /obj/item/clothing/cloak/raincloak/furcloak,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
@@ -21566,7 +21566,7 @@
 /area/rogue/indoors/shelter/mountains)
 "wJv" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/hand,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/hand,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"
