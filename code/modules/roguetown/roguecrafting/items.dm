@@ -20,6 +20,24 @@
 	verbage = "sew"
 	verbage_tp = "sews"
 
+/datum/crafting_recipe/roguetown/plank
+	name = "wooden plank"
+	result = list(/obj/item/natural/plank = 2)
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	tools = list(/obj/item/rogueweapon/handsaw)
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 1
+	verbage = "saw"
+	verbage_tp = "saws"
+
+/datum/crafting_recipe/roguetown/plank/short
+	name = "short wooden plank"
+	result = /obj/item/natural/plank/short
+	reqs = list(/datum/crafting_recipe/roguetown/plank = 1)
+	tools = list(/obj/item/rogueweapon/handsaw)
+	skillcraft = /datum/skill/craft/carpentry
+
+
 /datum/crafting_recipe/roguetown/clothsash
 	name = "cloth sash"
 	result = /obj/item/storage/belt/rogue/leather/cloth
