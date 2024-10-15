@@ -1,6 +1,6 @@
 
 /obj/item/roguekey
-	name = "key"
+	name = "old key"
 	desc = "A simple key of simple uses."
 	icon_state = "iron"
 	icon = 'icons/roguetown/items/keys.dmi'
@@ -74,7 +74,6 @@
 	lockid = "butler"
 
 /obj/item/roguekey/bandit // use the old key name for various old keys for dungeons etc, less dumb than bandit keys having a label on it saying bandit key
-	name = "old key"
 	icon_state = "mazekey"
 	lockid = "banditcamp"
 
@@ -182,11 +181,10 @@
 
 //vampire mansion//
 /obj/item/roguekey/vampire
-	name = "mansion key"
 	desc = "This key is awfully pink and weirdly shaped."
 	icon_state = "vampkey"
 	lockid = "mansionvampire"
-//
+
 
 /obj/item/roguekey/blacksmith
 	name = "blacksmith key"
@@ -201,8 +199,7 @@
 	lockid = "butcher"
 
 /obj/item/roguekey/walls
-	name = "walls key"
-	desc = "This is a rusty key."
+	desc = "This is a rusty key for the walls."
 	icon_state = "rustkey"
 	lockid = "walls"
 
@@ -231,7 +228,6 @@
 	lockid = "mage"
 
 /obj/item/roguekey/graveyard
-	name = "crypt key"
 	desc = "This rusty key belongs to the Gravekeepers."
 	icon_state = "rustkey"
 	lockid = "graveyard"

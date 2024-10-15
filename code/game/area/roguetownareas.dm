@@ -343,6 +343,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	spookynight = SPOOKY_GEN
 
 
+
+
 ///// TOWN AREAS //////
 
 /area/rogue/indoors/town
@@ -506,6 +508,11 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/dwarf.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
+
+// so you can teleport to the farm
+/area/rogue/indoors/soilsons
+	name = "soilsons"
+
 
 ///// OUTDOORS AREAS (again, for some reason)
 
