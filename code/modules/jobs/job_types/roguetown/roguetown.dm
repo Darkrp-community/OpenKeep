@@ -79,7 +79,3 @@
 			if(check_crownlist(H.ckey))
 				H.mind.special_items["Champion Circlet"] = /obj/item/clothing/head/roguetown/crown/sparrowcrown
 			give_special_items(H)
-	for(var/list_key in SStriumphs.post_equip_calls)
-		var/datum/triumph_buy/thing = SStriumphs.post_equip_calls[list_key]
-		thing.on_activate(H)
-	return
