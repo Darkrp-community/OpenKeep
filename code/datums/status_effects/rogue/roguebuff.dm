@@ -224,6 +224,27 @@
 	desc = "<span class='nicegreen'>Divine knowledge flows through me.</span>\n"
 	icon_state = "intelligence"
 
+
+// ---------------------- EYES OF THE BEAST --------------------------------
+/datum/status_effect/buff/beastsense
+	id = "beastsense"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/beastsense
+	duration = 10 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/beastsense
+	name = "Bestial Senses"
+	desc = "<span class='nicegreen'>No scent too faint, no shadow too dark, I will find my prey...</span>\n"
+	icon_state = "bestialsense"
+
+/datum/status_effect/buff/beastsense/on_apply()
+	. = ..()
+	ADD_TRAIT(owner, TRAIT_NIGHT_VISION, TRAIT_GENERIC)
+
+/datum/status_effect/buff/beastsense/on_remove()
+	. = ..()
+	REMOVE_TRAIT(owner, TRAIT_NIGHT_VISION, TRAIT_GENERIC)
+
+
 /datum/status_effect/buff/barbrage
 	id = "barbrage"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/barbrage
@@ -240,7 +261,7 @@
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.apply_status_effect(/datum/status_effect/debuff/barbfalter)
-	
+
 // BARDIC BUFFS BELOW
 
 /datum/status_effect/bardicbuff
@@ -333,4 +354,4 @@
 				O.adjust_triumphs(1) // Before people start crying about muh triumph lost
 				to_chat(O, "<span class='nicegreen'>Astrata's blessed light cleanses away your tiredness!</span>")
 			else
-				return	
+				return

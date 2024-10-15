@@ -102,7 +102,7 @@
 	water_drain_rate = 0
 
 /datum/plant_def/berry
-	name = "berry bush"
+	name = "jacksberry bush"
 	icon_state = "berry"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/berries/rogue
 	uproot_loot = list(/obj/item/grown/log/tree/small)
@@ -113,7 +113,7 @@
 	produce_nutrition =  HUNGRINESS_SMALL
 
 /datum/plant_def/berry_poison
-	name = "berry bush"
+	name = "jacksberry bush"
 	icon_state = "berry"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
 	uproot_loot = list(/obj/item/grown/log/tree/small)

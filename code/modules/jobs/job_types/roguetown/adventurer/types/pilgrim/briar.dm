@@ -1,11 +1,7 @@
 /datum/advclass/pilgrim/briar
 	name = "Briar"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list("Humen",
-	"Elf",
-	"Dwarf",
-	"Half-Elf",
-	)
+	allowed_races = ALL_RACES_LIST_NAMES
 	outfit = /datum/outfit/job/roguetown/adventurer/briar
 	category_tags = list(CTAG_PILGRIM)
 //	allowed_patrons = list(/datum/patron/divine/dendor)		this doesn't work so long its a subclass type
@@ -49,6 +45,8 @@
 		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor_visage)
 		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor_shrine)
 		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor_shrine/volf)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/shrine_sacrifice_prey)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/shrine_sacrifice_predator)
 
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	C.holder_mob = H
@@ -56,7 +54,7 @@
 	C.grant_spells(H)
 
 /datum/outfit/job/roguetown/adventurer/briar
-	var/tutorial = "<br><br><font color='#44720e'><span class='bold'>Stoic gardeners or flesh-eating predators all can follow Dendors path. <br>His Briars scorn civilized living, many embracing their animal nature, being fickle and temperamental.</span></font><br><br>"
+	var/tutorial = "<br><br><font color='#44720e'><span class='bold'>Stoic gardeners or flesh-eating predators, all can follow Dendors path. <br>His Briars scorn civilized living, many embracing their animal nature, being fickle and temperamental.</span></font><br><br>"
 
 /datum/outfit/job/roguetown/adventurer/briar/post_equip(mob/living/carbon/human/H)
 	..()
@@ -91,3 +89,17 @@
 				/obj/item/natural/head/volf = 1)
 	result = /obj/structure/fluff/psycross/crafted/dendor_volf
 
+/datum/crafting_recipe/shrine_sacrifice_prey
+	name = "prey sacrifice to Dendor (unique)"
+	time = 10 SECONDS
+	structurecraft = /obj/structure/fluff/psycross/crafted/dendor_saiga
+	reqs = list(/obj/item/reagent_containers/food/snacks/grub/silk = 1,
+				/obj/item/natural/worms = 1,
+				/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed = 1,
+				/obj/item/reagent_containers/food/snacks/produce/berries/rogue = 1)
+	result = /obj/structure/fluff/psycross/crafted/dendor_saiga
+	verbage = "makes a sacrifice"
+	verbage_tp = "makes a sacrifice"
+	craftsound = 'sound/foley/burning_sacrifice.ogg'
+	craftdiff = 0
+	category = CAT_NONE

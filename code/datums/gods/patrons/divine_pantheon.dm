@@ -36,9 +36,9 @@
 	worshippers = "Druids, Beasts, Madmen"
 	sins = "Deforestation, Overhunting, Disrespecting Nature"
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/targeted/blesscrop
+	t1 = /obj/effect/proc_holder/spell/self/beastsense
 	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
-	t3 = /obj/effect/proc_holder/spell/targeted/conjure_kneestingers // kneestingers
+	t3 = /obj/effect/proc_holder/spell/targeted/conjure_kneestingers
 
 /datum/patron/divine/abyssor
 	name = "Abyssor"

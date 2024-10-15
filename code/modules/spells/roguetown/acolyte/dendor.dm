@@ -29,6 +29,22 @@
 		visible_message("<FONT COLOR='green'>[usr] blesses the crop with Dendor's Favour!</FONT><BR>")
 	return growed
 
+/obj/effect/proc_holder/spell/self/beastsense
+	name = "Beastial Senses"
+	desc = "Grants the Dendorite a keen sense of smell and excellent vision, to better hunt with."
+	overlay_state = "beast"
+	charge_max = 12 MINUTES
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/dendor)
+	invocation = "I will find my prey!"
+	invocation_type = "shout"
+	cooldown_min = 10 MINUTES
+	releasedrain = 30
+
+/obj/effect/proc_holder/spell/self/beastsense/cast(list/targets,mob/living/user = usr)
+	playsound(get_turf(user), 'sound/vo/mobs/wwolf/idle (1).ogg', 50, TRUE)
+	user.apply_status_effect(/datum/status_effect/buff/beastsense)
+
+
 //At some point, this spell should Awaken beasts, allowing a ghost to possess them. Not for this PR though.
 /obj/effect/proc_holder/spell/targeted/beasttame
 	name = "Tame Beast"
