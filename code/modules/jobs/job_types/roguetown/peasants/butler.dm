@@ -56,7 +56,7 @@
 	else
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/maid
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-		shoes = /obj/item/clothing/shoes/roguetown/nobleboot
+		shoes = /obj/item/clothing/shoes/roguetown/ridingboots
 		cloak = /obj/item/clothing/cloak/apron
 		belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 		beltr = /obj/item/keyring/butler
