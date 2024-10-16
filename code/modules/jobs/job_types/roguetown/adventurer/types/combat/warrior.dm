@@ -40,12 +40,11 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	belt = /obj/item/storage/belt/rogue/leather
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/shield/wood
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
-	var/armortype = pickweight(list("Ironmail" = 6, "Ironplate" = 3, "Ironplate&Mail" = 1)) // At best they can get an iron breastplate over mail
+	var/armortype = pickweight(list("Ironmail" = 6, "Ironplate" = 3, "Ironplate&Legs" = 1)) // At best they can get an iron breastplate over mail and iron chainleggings
 	var/weapontype = pickweight(list("Axe" = 2, "Mace" = 2, "Messer" = 2, "Sword" = 3, "Flail" = 1)) // Rolls for various weapons, all of these are iron tier
 	switch(armortype)
 		if("Ironmail")
@@ -54,9 +53,9 @@
 		if("Ironplate")
 			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
-		if("Ironplate&Mail") // Big roller gets iron chainlegs and a steel breastplate over chainmail. Lucky them
-			armor = /obj/item/clothing/suit/roguetown/armor/cuirass
-			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
+		if("Ironplate&Legs") // Big roller gets an iron cuirass over iron mail AND iron chain leggings. Lucky them
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
+			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 			pants = /obj/item/clothing/under/roguetown/chainlegs/iron
 	switch(weapontype) // We get +1 weapon skill in either axes/maces, swords, or flails depending on our starting weapon
 		if("Axe")
@@ -78,8 +77,8 @@
 	if(prob(66))
 		neck = /obj/item/clothing/neck/roguetown/gorget
 		head = /obj/item/clothing/head/roguetown/helmet/kettle
-	else // High roller gets steel chain coif and nasal helmet
-		neck = /obj/item/clothing/neck/roguetown/chaincoif
+	else // High roller gets an iron chain coif and nasal helmet
+		neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
 		head = /obj/item/clothing/head/roguetown/helmet
 
 	H.change_stat("strength", 2)
