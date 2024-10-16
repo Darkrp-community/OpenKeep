@@ -476,7 +476,7 @@
 "axF" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "garrison"
+	lockid = "walls"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town/roofs)
@@ -1454,7 +1454,7 @@
 /area/rogue/indoors/town/garrison)
 "bsk" = (
 /obj/structure/mineral_door/wood{
-	lockid = "garrison"
+	lockid = "walls"
 	},
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
@@ -6455,7 +6455,7 @@
 /obj/structure/mineral_door/wood/donjon{
 	dir = 1;
 	locked = 1;
-	lockid = "garrison";
+	lockid = "walls";
 	name = "garrison wall entrance"
 	},
 /turf/open/floor/rogue/cobble,
@@ -10816,7 +10816,7 @@
 /obj/structure/mineral_door/wood/donjon{
 	dir = 8;
 	locked = 1;
-	lockid = "garrison";
+	lockid = "walls";
 	name = "garrison wall entrance"
 	},
 /turf/open/floor/rogue/cobble,
@@ -12475,7 +12475,7 @@
 "mYm" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "garrison"
+	lockid = "walls"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
@@ -13703,6 +13703,13 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/church/chapel)
+"ohU" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "walls"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town)
 "oiN" = (
 /obj/structure/table/wood{
 	icon_state = "longtable"
@@ -57931,7 +57938,7 @@ fJa
 fJa
 jMi
 bdS
-ddz
+ohU
 hvn
 wse
 xzL
@@ -59344,7 +59351,7 @@ vWM
 aDZ
 jMi
 iYA
-ddz
+ohU
 cyk
 gSm
 cyk
@@ -61529,7 +61536,7 @@ mIm
 rjf
 nkb
 rjf
-ddz
+ohU
 pJn
 pJn
 pJn
@@ -76930,7 +76937,7 @@ rjf
 rjf
 jYX
 jYX
-ddz
+ohU
 lcT
 lcT
 lcT
@@ -76945,22 +76952,22 @@ lcT
 lcT
 lcT
 lcT
-ddz
+ohU
 jYX
 rjf
 rjf
 rjf
-ddz
+ohU
 qGx
 qGx
 qGx
 qGx
-ddz
+ohU
 rjf
 rjf
 rjf
 rjf
-ddz
+ohU
 lcT
 lcT
 lcT
@@ -76975,7 +76982,7 @@ lcT
 lcT
 lcT
 lcT
-ddz
+ohU
 jYX
 rjf
 rjf
@@ -77398,7 +77405,7 @@ tXZ
 tXZ
 tXZ
 fJa
-ddz
+ohU
 fJa
 qhb
 qhb
@@ -77449,7 +77456,7 @@ qhb
 qhb
 qhb
 fJa
-ddz
+ohU
 fJa
 qhb
 qhb
@@ -81951,7 +81958,7 @@ tXZ
 tXZ
 tXZ
 fJa
-ddz
+ohU
 fJa
 qhb
 ouw
@@ -82579,7 +82586,7 @@ tXZ
 tXZ
 tXZ
 dQZ
-ddz
+ohU
 dQZ
 qhb
 qhb
@@ -83364,7 +83371,7 @@ tXZ
 tXZ
 tXZ
 fJa
-ddz
+ohU
 dQZ
 qhb
 qhb
@@ -83666,7 +83673,7 @@ mIm
 rWZ
 jYX
 jYX
-ddz
+ohU
 lcT
 lcT
 lcT
@@ -83676,7 +83683,7 @@ lcT
 lcT
 lcT
 lcT
-ddz
+ohU
 jYX
 jMi
 rjf
@@ -83741,7 +83748,7 @@ lcT
 lcT
 lcT
 lcT
-ddz
+ohU
 rjf
 rjf
 rjf
@@ -83978,7 +83985,7 @@ tXZ
 tXZ
 tXZ
 fJa
-ddz
+ohU
 fJa
 qhb
 qhb
@@ -84057,7 +84064,7 @@ qhb
 lcT
 lcT
 fJa
-ddz
+ohU
 fJa
 fJa
 tXZ
@@ -87825,7 +87832,7 @@ qhb
 qhb
 qhb
 fJa
-ddz
+ohU
 fJa
 tXZ
 tXZ
@@ -88062,7 +88069,7 @@ mIm
 rjf
 rjf
 rWZ
-ddz
+ohU
 lcT
 lcT
 tPq
@@ -88137,7 +88144,7 @@ lcT
 lcT
 lcT
 lcT
-ddz
+ohU
 rjf
 rjf
 jYX
@@ -88374,7 +88381,7 @@ tXZ
 tXZ
 tXZ
 dQZ
-ddz
+ohU
 fJa
 qhb
 qhb
@@ -91736,7 +91743,7 @@ qhb
 qhb
 qhb
 fJa
-ddz
+ohU
 fJa
 tXZ
 tXZ
@@ -92023,7 +92030,7 @@ mIm
 jYX
 jMi
 rjf
-ddz
+ohU
 lcT
 lcT
 lcT
@@ -92048,7 +92055,7 @@ lcT
 lcT
 lcT
 lcT
-ddz
+ohU
 rjf
 rjf
 jYX
@@ -92142,7 +92149,7 @@ tXZ
 tXZ
 tXZ
 fJa
-ddz
+ohU
 fJa
 qhb
 qhb
@@ -92335,7 +92342,7 @@ qhb
 qhb
 qhb
 fJa
-ddz
+ohU
 fJa
 tXZ
 tXZ
@@ -92458,12 +92465,12 @@ mIm
 bdS
 rjf
 jYX
-ddz
+ohU
 qiW
 ktP
 ktP
 qiW
-ddz
+ohU
 rWZ
 jMi
 rjf
@@ -92779,7 +92786,7 @@ tXZ
 tXZ
 tXZ
 fJa
-ddz
+ohU
 fJa
 qhb
 qhb
@@ -93564,7 +93571,7 @@ tXZ
 tXZ
 tXZ
 fJa
-ddz
+ohU
 fJa
 qhb
 qhb
@@ -93591,7 +93598,7 @@ qhb
 qhb
 qhb
 fJa
-ddz
+ohU
 fJa
 tXZ
 tXZ
@@ -93880,7 +93887,7 @@ mIm
 iYA
 rjf
 jYX
-ddz
+ohU
 lcT
 ktP
 qiW
@@ -93903,7 +93910,7 @@ ktP
 lcT
 ktP
 lcT
-ddz
+ohU
 jYX
 rjf
 rjf
