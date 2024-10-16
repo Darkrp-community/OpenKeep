@@ -430,11 +430,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/outdoors/mountains/decap)
-"pT" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/retaliate/rogue/troll,
-/turf/open/floor/rogue/concrete,
-/area/rogue/outdoors/mountains/decap)
 "qF" = (
 /obj/structure/closet/crate/roguecloset/inn/chest,
 /obj/item/clothing/suit/roguetown/shirt/robe/magus,
@@ -15320,7 +15315,7 @@ gp
 CY
 CY
 gp
-pT
+ee
 ee
 ee
 ee
