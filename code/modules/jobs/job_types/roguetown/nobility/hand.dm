@@ -20,7 +20,7 @@
 	bypass_lastclass = TRUE
 	whitelist_req = FALSE
 	give_bank_account = 120
-	min_pq = 4
+	min_pq = 2
 	cmode_music = 'sound/music/combat_noble.ogg'
 
 /*
