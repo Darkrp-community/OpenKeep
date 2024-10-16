@@ -382,6 +382,7 @@
 "oO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old,
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/outdoors/mountains/decap)
 "oU" = (
@@ -1255,6 +1256,11 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/tile,
 /area/rogue/outdoors/mountains/decap)
+"Us" = (
+/obj/structure/closet/crate/chest/neu_fancy,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/tile/kitchen,
+/area/rogue/outdoors/mountains/decap)
 "Ut" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood,
@@ -1299,6 +1305,11 @@
 "Wo" = (
 /obj/structure/fluff/railing/stonehedge,
 /turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/mountains/decap)
+"Wu" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
+/turf/open/floor/rogue/tile/kitchen,
 /area/rogue/outdoors/mountains/decap)
 "Wx" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -15453,7 +15464,7 @@ gp
 CY
 gp
 ee
-KJ
+Us
 Bo
 Bo
 ff
@@ -15583,7 +15594,7 @@ Sy
 wy
 gp
 za
-Ty
+Wu
 Ty
 Ty
 Ty
