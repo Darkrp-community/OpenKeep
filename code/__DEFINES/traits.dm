@@ -84,7 +84,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
 	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
 	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments.",
-	TRAIT_INTRAINING = "I'm going to be a knight someday!",
+	TRAIT_INTRAINING = "I'm going to be a knight someday! I can use training dummies more effectively than others.",
 	TRAIT_GRAVEROBBER = "Necra favors my grim deeds, I can unearth graves without being cursed by her."
 	))
 

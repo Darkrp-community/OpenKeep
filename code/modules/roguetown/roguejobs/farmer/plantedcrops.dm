@@ -153,7 +153,7 @@
 
 /obj/machinery/crop/proc/rainedon()
 	water = 100
-
+/*
 /obj/machinery/crop/attackby(obj/item/I, mob/living/user, params)
 	var/boon = user.mind?.get_learning_boon(/datum/skill/labor/farming)
 	if(istype(I, /obj/item/seeds))
@@ -314,3 +314,4 @@
 			user?.mind?.adjust_experience(/datum/skill/labor/farming, user.STAINT * boon)
 			update_seed_icon()
 		return
+*/

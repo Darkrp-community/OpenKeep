@@ -38,7 +38,7 @@
 	if(outfit)
 		H.equipOutfit(outfit)
 
-	H.advjob = name
+	H.advjob = "Adventurer"
 
 	var/turf/TU = get_turf(H)
 	if(TU)
