@@ -120,15 +120,15 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 
-/datum/advclass/hand/advisor
-	name = "Advisor"
+/datum/advclass/hand/tutor
+	name = "Tutor"
 	tutorial = "You have played researcher and confidant to the Noble-Family for so long that you are a vault of knowledge, something you exploit with potent conviction. Let no man ever forget the knowledge you wield. You've read more books than any blademaster or spymaster could ever claim to."
-	outfit = /datum/outfit/job/roguetown/hand/advisor
+	outfit = /datum/outfit/job/roguetown/hand/tutor
 
 	category_tags = list(CTAG_HAND)
 
-//Advisor start. Trades combat skills for more knowledge and skills - for older hands, hands that don't do combat - people who wanna play old advisors.
-/datum/outfit/job/roguetown/hand/advisor/pre_equip(mob/living/carbon/human/H)
+//Tutor start. Trades combat skills for more knowledge and skills - for older hands, hands that don't do combat - people who wanna play old advisors.
+/datum/outfit/job/roguetown/hand/tutor/pre_equip(mob/living/carbon/human/H)
 	head = /obj/item/clothing/head/roguetown/courtierhat
 	mask = /obj/item/clothing/mask/rogue/spectacles/golden
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
