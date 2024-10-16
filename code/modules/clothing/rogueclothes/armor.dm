@@ -36,7 +36,7 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 	body_parts_covered = CHEST|VITALS|GROIN|LEGS
 	max_integrity = INTEGRITY_STANDARD
-
+	clothing_flags = CANT_SLEEP_IN
 
 
 //..................................................................................................................................
@@ -551,7 +551,7 @@
 	unequip_delay_self = 4 SECONDS
 	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
 	sellprice = VALUE_STEEL_ARMOR
-
+	clothing_flags = CANT_SLEEP_IN
 	armor_class = ARMOR_CLASS_HEAVY
 	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|VITALS
@@ -616,7 +616,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_BRIGANDINE
-
+	clothing_flags = CANT_SLEEP_IN
 	armor_class = ARMOR_CLASS_HEAVY
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
@@ -684,7 +684,7 @@
 	equip_delay_self = 4 SECONDS
 	unequip_delay_self = 4 SECONDS
 	sellprice = VALUE_SNOWFLAKE_STEEL
-
+	clothing_flags = CANT_SLEEP_IN
 	armor_class = ARMOR_CLASS_HEAVY
 	armor = ARMOR_STEEL_BEST
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
