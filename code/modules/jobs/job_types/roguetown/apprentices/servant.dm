@@ -17,7 +17,7 @@
 	)
 	allowed_ages = list(AGE_ADULT, AGE_IMMORTAL)
 
-	tutorial = "You have been granted the privilege of a life within the ruler's home as a servant. You are the faceless, nameless labor that keeps the court fed, washed, and attended to. You work your fingers to the bone nearly every dae, and have naught to show for it but boney fingers. Perhaps this week you will finally be recognized, or allowed some respite?"
+	tutorial = "You are the faceless, nameless labor that keeps the royal court fed, washed, and attended to. You work your fingers to the bone nearly every dae, and have naught to show for it but boney fingers. Perhaps this week you will finally be recognized, or allowed some respite?"
 
 	outfit = /datum/outfit/job/roguetown/servant
 	display_order = JDO_SERVANT
