@@ -245,9 +245,6 @@
 /obj/item/keyring/guard
 	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls)
 
-/obj/item/keyring/guardcastle
-	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor)
-
 /obj/item/keyring/archivist
 	keys = list(/obj/item/roguekey/archive, /obj/item/roguekey/manor)
 
