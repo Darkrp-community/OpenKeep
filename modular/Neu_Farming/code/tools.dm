@@ -5,9 +5,9 @@
 /obj/item/rogueweapon/thresher
 	name = "thresher"
 	desc = "Crushes grain, or skulls."
-	icon_state = "thresher"
+	icon_state = "icons/roguetown/weapons/tools.dmi"
 //	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
-	icon = 'icons/roguetown/weapons/64.dmi'
+	icon = 'icons/roguetown/weapons/tools.dmi'
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
@@ -37,7 +37,7 @@
 	possible_item_intents = list(MACE_STRIKE)
 	gripped_intents = list(/datum/intent/flail/strike/long, /datum/intent/flail/strike/smash/long, /datum/intent/flailthresh,)
 	name = "military flail"
-	desc = "Crushes skulls, or grain."
+	desc = "A reinforced thresher designed to smash skulls, the design isn't the best but the craftman did the best job possible using simple working tools."
 	icon_state = "military"
 	minstr = 7
 	smeltresult = /obj/item/ingot/iron
@@ -302,14 +302,14 @@
 	desc = "Compost, chaff, hay, it matters not."
 	icon_state = "pitchfork"
 //	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
-	icon = 'icons/roguetown/weapons/64.dmi'
+	icon = 'icons/roguetown/weapons/tools.dmi'
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	bigboy = TRUE
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = FALSE
+	slot_flags = TRUE
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	minstr = 6
@@ -332,11 +332,52 @@
 	if(tag)
 		switch(tag)
 			if("gen")
-				return list("shrink" = 0.7,"sx" = -7,"sy" = 0,"nx" = 8,"ny" = 0,"wx" = -5,"wy" = 0,"ex" = 0,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.75,
+"sx" = 0,
+"sy" = -8,
+"nx" = 2,
+"ny" = -7,
+"wx" = -4,
+"wy" = -6,
+"ex" = 5,
+"ey" = -7,
+"northabove" = 0,
+"southabove" = 1,
+"eastabove" = 1,
+"westabove" = 0,
+"nturn" = 105,
+"sturn" = -90,
+"wturn" = 0,
+"eturn" = 90,
+"nflip" = 0,
+"sflip" = 8,
+"wflip" = 8,
+"eflip" = 1)
 			if("wielded")
-				return list("shrink" = 0.7,"sx" = 3,"sy" = -4,"nx" = 3,"ny" = -3,"wx" = -4,"wy" = -4,"ex" = 2,"ey" = -4,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 45,"sturn" = 135,"wturn" = -45,"eturn" = 45,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.75,
+"sx" = 3,
+"sy" = -5,
+"nx" = -7,
+"ny" = -4,
+"wx" = 0,
+"wy" = -5,
+"ex" = 5,
+"ey" = -4,
+"northabove" = 0,
+"southabove" = 1,
+"eastabove" = 1,
+"westabove" = 1,
+"nturn" = 135,
+"sturn" = -135,
+"wturn" = 240,
+"eturn" = 30,
+"nflip" = 0,
+"sflip" = 8,
+"wflip" = 8,
+"eflip" = 1)
 			if("onbelt")
-				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+				return list("shrink" = 0.4,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = -2,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
 
 /datum/intent/pforkdump
 	name = "scoop"
