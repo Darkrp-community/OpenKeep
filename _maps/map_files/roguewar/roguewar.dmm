@@ -461,7 +461,7 @@
 /area/rogue)
 "oW" = (
 /obj/structure/flora/roguetree,
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt,
 /area/rogue)
 "pg" = (
@@ -742,7 +742,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue)
 "za" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "zk" = (
@@ -769,7 +769,7 @@
 "zS" = (
 /obj/structure/flora/roguetree,
 /obj/structure/flora/roguetree,
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "zT" = (
@@ -1097,7 +1097,7 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "JZ" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /obj/item/roguebin/water/gross,
 /area/rogue)
 "Kf" = (
@@ -1105,7 +1105,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue)
 "Kh" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /obj/structure/fluff/railing/fence{
 	icon_state = "fence";
 	dir = 4
@@ -1179,7 +1179,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue)
 "MF" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "MI" = (
@@ -1252,7 +1252,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue)
 "PO" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
 "PV" = (
@@ -1393,7 +1393,7 @@
 /area/rogue)
 "Uw" = (
 /obj/structure/flora/roguetree,
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "Uz" = (
@@ -1496,7 +1496,7 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue)
 "Yd" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "Yf" = (
@@ -1528,7 +1528,7 @@
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue)
 "Zb" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/fluff/railing/fence{
 	icon_state = "fence";
 	dir = 1
@@ -1550,7 +1550,7 @@
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue)
 "ZC" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
 "ZG" = (

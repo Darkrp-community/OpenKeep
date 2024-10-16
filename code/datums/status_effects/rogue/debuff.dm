@@ -303,6 +303,7 @@
 /datum/status_effect/debuff/netted
 	id = "net"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/netted
+	duration = 2 MINUTES
 	effectedstats = list("speed" = -5, "endurance" = -2)
 
 /datum/status_effect/debuff/netted/on_apply()

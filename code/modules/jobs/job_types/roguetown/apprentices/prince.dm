@@ -12,6 +12,7 @@
 	)
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT)
+	cmode_music = 'sound/music/combat_noble.ogg'
 
 	tutorial = "You’ve never felt the gnawing of the winter, never known the bite of hunger and certainly have never known a honest day's work. You are as free as any bird in the sky, and you may revel in your debauchery for as long as your parents remain upon the throne: But someday you’ll have to grow up, and that will be the day your carelessness will cost you more than a few mammons."
 
@@ -56,7 +57,7 @@
 	else
 		head = /obj/item/clothing/head/roguetown/hennin
 		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
-		armor = /obj/item/clothing/suit/roguetown/armor/silkcoat
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 		belt = /obj/item/storage/belt/rogue/leather/cloth/lady

@@ -63,6 +63,7 @@
 //roguetown
 #define CLOTHING_RED			"#a32121"
 #define CLOTHING_PURPLE			"#8747b1"
+#define CLOTHING_BLACK_WARM		"#3d3a36"
 #define CLOTHING_BLACK			"#414143"
 #define CLOTHING_BROWN			"#685542"
 #define CLOTHING_GREEN			"#428138"
@@ -74,9 +75,16 @@
 #define CLOTHING_ORANGE			"#bd6606"
 #define CLOTHING_MAJENTA		"#962e5c"
 
+#define CLOTHING_PINK			"#cf99e3"
+#define CLOTHING_SALMON			"#ba8f9e"
+#define CLOTHING_PALE_BLUE		"#94b4b6"
+#define CLOTHING_PALE_ORANGE	"#bd978c"
+#define CLOTHING_PALE_GREEN		"#92bd8c"
+#define CLOTHING_PALE_YELLOW	"#c7c981"
+
 #define CLOTHING_WET			"#bbbbbb"
 
-#define CLOTHING_COLOR_NAMES	list("Red","Purple","Black","Brown","Green","Blue","Yellow","Teal","White","Orange","Majenta")
+#define CLOTHING_COLOR_NAMES	list("Red","Purple","Black","Brown","Green","Blue","Yellow","Teal","White","Orange","Majenta", "Salmon", "Pink", "Pale Blue", "Pale Orange", "Pale Green", "Pale Yellow")
 
 /proc/clothing_color2hex(input)
 	switch(input)
@@ -102,3 +110,15 @@
 			return CLOTHING_ORANGE
 		if("Majenta")
 			return CLOTHING_MAJENTA
+		if("Pink",)
+			return CLOTHING_PINK
+		if("Salmon",)
+			return CLOTHING_SALMON
+		if("Pale Blue")
+			return CLOTHING_PALE_BLUE
+		if("Pale Orange",)
+			return CLOTHING_PALE_ORANGE
+		if("Pale Green")
+			return CLOTHING_PALE_GREEN
+		if("Pale Yellow")
+			return CLOTHING_PALE_YELLOW

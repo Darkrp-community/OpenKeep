@@ -10,7 +10,7 @@
 	)
 	sound_effect = "wetbreak"
 	whp = 40
-	woundpain = 100
+	woundpain = 60
 	mob_overlay = "frac"
 	can_sew = FALSE
 	can_cauterize = FALSE

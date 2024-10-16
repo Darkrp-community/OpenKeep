@@ -17,7 +17,7 @@
 
 		if (QDELETED(src))
 			return
-		
+
 		handle_wounds()
 		handle_embedded_objects()
 		handle_blood()
@@ -54,7 +54,7 @@
 						if(!wound.sleep_healing)
 							continue
 						wound.heal_wound(wound.sleep_healing * sleepy_mod)
-				adjustToxLoss(-sleepy_mod)
+				adjustToxLoss( - ( sleepy_mod * 0.5) )
 				if(eyesclosed && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 					Sleeping(300)
 		else if(!IsSleeping() && !HAS_TRAIT(src, TRAIT_NOSLEEP))
@@ -172,12 +172,15 @@
 
 /mob/living/carbon/handle_inwater(turf/open/water/W)
 	..()
-	var/datum/reagents/reagentstouch = new()
-	reagentstouch.add_reagent(W.water_reagent, 4)
-	reagentstouch.trans_to(src, reagents.total_volume, transfered_by = src, method = TOUCH)
+	if(HAS_TRAIT(src, TRAIT_NOBREATH))
+		return TRUE
+	if(stat == DEAD)
+		return TRUE
+/*	if(W.water_level == 3)	// deep water, to dissuade diving in dirty lakes. Does not work quite right not worth the effort right now, TO DO
+		var/datum/reagents/reagentstouch = new()
+		reagentstouch.add_reagent(W.water_reagent, 2)
+		reagentstouch.trans_to(src, reagents.total_volume, transfered_by = src, method = TOUCH)	*/
 	if(lying)
-		if(HAS_TRAIT(src, TRAIT_NOBREATH))
-			return TRUE
 		adjustOxyLoss(5)
 		emote("drown")
 		var/datum/reagents/reagents = new()

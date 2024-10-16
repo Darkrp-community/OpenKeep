@@ -7,6 +7,7 @@
 /datum/intent
 	var/name = "intent"
 	var/desc = ""
+//	icon = 'icons/mob/roguehud.dmi'		so you can find the icons
 	var/icon_state = "instrike"
 	var/list/attack_verb = list("hits", "strikes")
 	var/obj/item/masteritem
@@ -353,23 +354,6 @@
 			M.taunted(user)
 	return
 
-/datum/intent/unarmed/claw
-	name = "claw"
-	icon_state = "inpunch"
-	attack_verb = list("claws", "scratches", "rends", "rips at")
-	chargetime = 0
-	animname = "blank22"
-	hitsound = "smallslash"
-	misscost = 5
-	releasedrain = 5
-	swingdelay = 0
-	rmb_ranged = TRUE
-	candodge = TRUE
-	canparry = TRUE
-	blade_class = BCLASS_CUT
-	miss_text = "claws at thin air!"
-	miss_sound = "punchwoosh"
-
 /datum/intent/unarmed/shove
 	name = "shove"
 	icon_state = "inshove"
@@ -451,7 +435,7 @@
 
 /datum/intent/simple/claw
 	name = "claw"
-	icon_state = "instrike"
+	icon_state = "inclaw"
 	attack_verb = list("slashes", "claws")
 	animname = "blank22"
 	blade_class = BCLASS_CUT
@@ -504,10 +488,10 @@
 	candodge = TRUE
 	canparry = TRUE
 
-/datum/intent/unarmed/claw
+/datum/intent/unarmed/claw	// defined as attack with some AP
 	name = "claw"
-	icon_state = "instrike"
-	attack_verb = list("claws", "tears", "rips")
+	icon_state = "inclaw"
+	attack_verb = list("claws", "scratches", "rends", "tears")
 	animname = "cut"
 	blade_class = BCLASS_CUT
 	hitsound = "smallslash"
@@ -515,11 +499,16 @@
 	candodge = TRUE
 	canparry = TRUE
 	miss_text = "claws the air!"
-	miss_sound = "bluntwooshmed"
+	miss_sound = "blunthwoosh"
+	chargetime = 0
+	misscost = 5
+	releasedrain = 5
+	swingdelay = 0
+	rmb_ranged = TRUE
 
 /datum/intent/unarmed/wwolf
 	name = "claw"
-	icon_state = "inchop"
+	icon_state = "inclaw"
 	attack_verb = list("claws", "mauls", "eviscerates")
 	animname = "cut"
 	blade_class = BCLASS_CHOP
@@ -532,7 +521,7 @@
 
 /datum/intent/unarmed/ascendedclaw
 	name = "claw"
-	icon_state = "inchop"
+	icon_state = "inclaw"
 	attack_verb = list("claws", "mauls", "eviscerates")
 	animname = "cut"
 	blade_class = BCLASS_CHOP

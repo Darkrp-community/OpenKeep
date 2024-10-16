@@ -38,7 +38,7 @@
 		fruit.reagents.trans_to(src, fruit.reagents.total_volume)
 	if(fruit.distill_reagent)
 		reagents.add_reagent(fruit.distill_reagent, fruit.distill_amt)
-		reagents.add_reagent(/datum/reagent/water, 3)
+//		reagents.add_reagent(/datum/reagent/water, 1)
 	qdel(fruit)
 	playsound(src, "bubbles", 100, TRUE)
 
@@ -52,6 +52,7 @@
 			to_chat(user, "<span class='warning'>[I] is stuck to my hand!</span>")
 			return TRUE
 		to_chat(user, "<span class='info'>I place [I] into [src].</span>")
+		playsound(src, pick('modular/Neu_Farming/sound/touch1.ogg','modular/Neu_Farming/sound/touch2.ogg','modular/Neu_Farming/sound/touch3.ogg'), 170, TRUE)
 		addtimer(CALLBACK(src, PROC_REF(makeWine), fruit), rand(1 MINUTES, 3 MINUTES))
 		return TRUE
 	..()

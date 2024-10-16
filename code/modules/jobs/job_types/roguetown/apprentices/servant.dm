@@ -17,7 +17,7 @@
 	)
 	allowed_ages = list(AGE_ADULT, AGE_IMMORTAL)
 
-	tutorial = "Granted a comfortable life in the Lord's manor as one of his servants! You will appreciate it more and more every day as you clean the floors and are beaten for nothing."
+	tutorial = "You are the faceless, nameless labor that keeps the royal court fed, washed, and attended to. You work your fingers to the bone nearly every dae, and have naught to show for it but boney fingers. Perhaps this week you will finally be recognized, or allowed some respite?"
 
 	outfit = /datum/outfit/job/roguetown/servant
 	display_order = JDO_SERVANT
@@ -32,6 +32,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
@@ -47,8 +48,6 @@
 		beltr = /obj/item/roguekey/manor
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black
-		H.change_stat("strength", -1)
-		H.change_stat("perception", 1)
 		H.change_stat("speed", 1)
 		H.change_stat("endurance", 1)
 	else
@@ -59,7 +58,5 @@
 		cloak = /obj/item/clothing/cloak/apron/waist
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		beltr = /obj/item/roguekey/manor
-		H.change_stat("strength", -1)
-		H.change_stat("perception", 1)
 		H.change_stat("speed", 1)
 		H.change_stat("endurance", 1)

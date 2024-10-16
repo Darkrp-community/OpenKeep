@@ -15,10 +15,10 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/fishermaster
-	
+
 	maximum_possible_slots = 1
 	pickprob = 15
-	category_tags = list(CTAG_PILGRIM)
+	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 
 /datum/outfit/job/roguetown/adventurer/fishermaster/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -29,7 +29,7 @@
 		neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 		head = /obj/item/clothing/head/roguetown/fisherhat
 		backr = /obj/item/storage/backpack/rogue/satchel
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 		belt = /obj/item/storage/belt/rogue/leather
 		backl = /obj/item/fishingrod
 		beltr = /obj/item/cooking/pan
@@ -57,7 +57,7 @@
 		neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 		head = /obj/item/clothing/head/roguetown/fisherhat
 		backr = /obj/item/storage/backpack/rogue/satchel
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 		belt = /obj/item/storage/belt/rogue/leather
 		beltr = /obj/item/fishingrod
 		beltl = /obj/item/rogueweapon/huntingknife

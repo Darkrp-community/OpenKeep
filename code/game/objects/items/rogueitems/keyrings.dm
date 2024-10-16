@@ -279,10 +279,10 @@
 	keys = list(/obj/item/roguekey/niteman, /obj/item/roguekey/nitemaiden)
 
 /obj/item/keyring/hand
-	keys = list(/obj/item/roguekey/hand, /obj/item/roguekey/steward, /obj/item/roguekey/tavern, /obj/item/roguekey/church, /obj/item/roguekey/walls, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard)
+	keys = list(/obj/item/roguekey/hand, /obj/item/roguekey/steward, /obj/item/roguekey/tavern, /obj/item/roguekey/church, /obj/item/roguekey/merchant, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard)
 
 /obj/item/keyring/steward
-	keys = list(/obj/item/roguekey/steward, /obj/item/roguekey/walls, /obj/item/roguekey/dungeon, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard)
+	keys = list(/obj/item/roguekey/steward, /obj/item/roguekey/walls, /obj/item/roguekey/dungeon, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard, /obj/item/roguekey/warehouse)
 
 /obj/item/keyring/dungeoneer
 	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/walls)
@@ -300,4 +300,10 @@
 	keys = list(/obj/item/roguekey/armorsmith, /obj/item/roguekey/blacksmith)
 
 /obj/item/keyring/mayor
-	keys = list(/obj/item/roguekey/garrison, /obj/item/roguekey/elder, /obj/item/roguekey/butcher, /obj/item/roguekey/soilson)
+	keys = list(/obj/item/roguekey/veteran, /obj/item/roguekey/garrison, /obj/item/roguekey/elder, /obj/item/roguekey/butcher, /obj/item/roguekey/soilson, /obj/item/roguekey/manor)
+
+/obj/item/keyring/doctor
+	keys = list(/obj/item/roguekey/doctor, /obj/item/roguekey/manor)
+
+/obj/item/keyring/veteran
+	keys = list(/obj/item/roguekey/veteran, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/elder, /obj/item/roguekey/butcher, /obj/item/roguekey/soilson)

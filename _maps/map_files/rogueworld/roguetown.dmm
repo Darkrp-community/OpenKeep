@@ -5797,7 +5797,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "tF" = (
-/obj/structure/flora/roguetree/stump/burnt,
+/obj/structure/table/wood/treestump/burnt,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "tG" = (
@@ -6117,11 +6117,11 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/warehouse)
 "uN" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "uO" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "uP" = (
@@ -6534,7 +6534,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
 "wk" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "wl" = (
@@ -6641,7 +6641,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "wG" = (
-/obj/structure/flora/roguetree/stump/burnt,
+/obj/structure/table/wood/treestump/burnt,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "wH" = (
@@ -6666,7 +6666,7 @@
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/suit/roguetown/armor/leather/vest,
 /obj/item/clothing/shoes/roguetown/boots/leather,
-/obj/item/clothing/suit/roguetown/armor/armordress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/dwarfin)
 "wM" = (
@@ -6748,7 +6748,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "xe" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "xf" = (
@@ -9893,7 +9893,7 @@
 "HO" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/clothing/head/roguetown/helmet/leather,
-/obj/item/clothing/head/roguetown/roguehood,
+/obj/item/clothing/head/roguetown/roguehood/random,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "HP" = (
