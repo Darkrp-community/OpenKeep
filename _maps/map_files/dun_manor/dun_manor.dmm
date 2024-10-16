@@ -13352,15 +13352,8 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/outdoors/town/roofs)
 "nTP" = (
-/obj/structure/bed/rogue/inn/double,
-/obj/item/bedsheet/rogue/fabric_double,
-/obj/effect/landmark/start/hand{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "weird1"
-	},
+/obj/effect/landmark/start/hand,
+/turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/town/manor)
 "nTR" = (
 /obj/machinery/light/rogue/torchholder{
@@ -66232,7 +66225,7 @@ fmc
 fmc
 xac
 foh
-nJG
+nTP
 jbx
 nJG
 nJG
@@ -89328,7 +89321,7 @@ qws
 xmr
 tmR
 feH
-nTP
+tcG
 fmc
 ouw
 qhb
