@@ -26,7 +26,7 @@
 /datum/supply_pack/rogue/jewelry/gemcirclet
 	name = "Decorated Circlet"
 	cost = 100
-	contains = /obj/item/clothing/head/roguetown/nyle
+	contains = /obj/item/clothing/head/roguetown/crown/nyle
 
 /datum/supply_pack/rogue/jewelry/silver_plaque_belt
 	name = "Silver Plaque Belt"

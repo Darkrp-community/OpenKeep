@@ -2874,8 +2874,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/skill_modifier = 10
 	if(istype(starting_turf) && !QDELETED(starting_turf))
 		distance = get_dist(starting_turf, src)
-	if(mind)
-		skill_modifier = mind.get_skill_level(/datum/skill/misc/athletics)
+	skill_modifier *= mind?.get_skill_level(/datum/skill/misc/athletics)
 	var/modifier = -distance
 	if(!prob(STASPD+skill_modifier+modifier))
 		Knockdown(8)
