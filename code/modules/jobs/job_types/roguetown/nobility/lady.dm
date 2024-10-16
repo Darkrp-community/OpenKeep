@@ -27,7 +27,7 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
-	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
+	neck = /obj/item/storage/belt/rogue/pouch
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	beltl = /obj/item/keyring/queen
 	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
