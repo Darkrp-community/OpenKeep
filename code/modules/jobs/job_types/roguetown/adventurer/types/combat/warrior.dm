@@ -52,7 +52,7 @@
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 		if("Ironplate")
 			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
-			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 		if("Ironplate&Legs") // Big roller gets an iron cuirass over iron mail AND iron chain leggings. Lucky them
 			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
 			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
