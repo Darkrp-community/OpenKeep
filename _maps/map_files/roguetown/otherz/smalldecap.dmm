@@ -45,14 +45,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/outdoors/mountains/decap)
-"by" = (
-/obj/structure/mineral_door/wood/green{
-	name = "Old Door";
-	locked = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/blocks,
-/area/rogue/outdoors/mountains/decap)
 "ch" = (
 /obj/structure/fluff/railing/stonehedge{
 	dir = 1
@@ -17246,7 +17238,7 @@ Fc
 sw
 gp
 ee
-by
+CY
 TV
 Qx
 Qx
