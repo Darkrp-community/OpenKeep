@@ -16,7 +16,7 @@
 	outfit = /datum/outfit/job/roguetown/hand
 	advclass_cat_rolls = list(CTAG_HAND = 5)
 	display_order = JDO_HAND
-	tutorial = "You owe everything to your liege. Once, you were just a humble friend- now you are one of the most important men within the kingdom itself. You have played spymaster and confidant to the Noble-Family for so long that you are a vault of intrigue, something you exploit with potent conviction. Let no man ever forget whose ear you whisper into. You've killed more men with those lips than any blademaster could ever claim to."
+	tutorial = "You owe everything to your liege. Once, you were just a humble friend- now you are one of the most important men within the kingdom itself."
 	bypass_lastclass = TRUE
 	whitelist_req = FALSE
 	give_bank_account = 120
@@ -49,7 +49,7 @@
 
 /datum/advclass/hand/duelist
 	name = "Duelist"
-	tutorial = "You have played blademaster and strategist to the Noble-Family for so long that you are a master tactician, something you exploit with potent conviction. Let no man ever forget how you cut down your enemies. You've killed more men with swords than any spymaster could ever claim to."
+	tutorial = "You have played blademaster and strategist to the Noble-Family for so long that you are a master tactician, something you exploit with potent conviction. Let no man ever forget how many duels you have won to uphold your and the Monarch's honor. You've killed more men with swords than any spymaster could ever claim to."
 	outfit = /datum/outfit/job/roguetown/hand/duelist
 
 	category_tags = list(CTAG_HAND)
