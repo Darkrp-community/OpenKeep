@@ -28,7 +28,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(2,3), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(1,1,2), TRUE)
@@ -50,11 +50,13 @@
 	switch(armortype)
 		if("Ironmail")
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 		if("Ironplate")
 			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
+			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 		if("Ironplate&Mail") // Big roller gets iron chainlegs and a steel breastplate over chainmail. Lucky them
 			armor = /obj/item/clothing/suit/roguetown/armor/cuirass
-			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 			pants = /obj/item/clothing/under/roguetown/chainlegs/iron
 	switch(weapontype) // We get +1 weapon skill in either axes/maces, swords, or flails depending on our starting weapon
 		if("Axe")
@@ -75,9 +77,10 @@
 
 	if(prob(66))
 		neck = /obj/item/clothing/neck/roguetown/gorget
-		head = /obj/item/clothing/head/roguetown/helmet/skullcap
-	else // High roller gets steel chain coif
+		head = /obj/item/clothing/head/roguetown/helmet/kettle
+	else // High roller gets steel chain coif and nasal helmet
 		neck = /obj/item/clothing/neck/roguetown/chaincoif
+		head = /obj/item/clothing/head/roguetown/helmet
 
 	H.change_stat("strength", 2)
 	H.change_stat("endurance", 1)
