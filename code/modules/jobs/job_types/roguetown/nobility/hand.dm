@@ -113,7 +113,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 5, TRUE) // not like they're gonna break into the vault.
-	H.change_stat("strength", -2)
+	H.change_stat("strength", -1)
 	H.change_stat("perception", 3)
 	H.change_stat("speed", 2)
 	H.change_stat("intelligence", 1)
@@ -129,6 +129,8 @@
 
 //Advisor start. Trades combat skills for more knowledge and skills - for older hands, hands that don't do combat - people who wanna play old advisors.
 /datum/outfit/job/roguetown/hand/advisor/pre_equip(mob/living/carbon/human/H)
+	head = /obj/item/clothing/head/roguetown/courtierhat
+	mask = /obj/item/clothing/mask/rogue/spectacles/golden
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand
 	pants = /obj/item/clothing/under/roguetown/tights/black
