@@ -47,15 +47,15 @@
 		H.invisibility = INVISIBILITY_MAXIMUM
 		H.become_blind("advsetup")
 
-/datum/advclass/hand/hand
-	name = "Hand"
-	tutorial = "You have played blademaster and strategist to the Noble-Family for so long that you are a master tactician, something you exploit with potent conviction. Let no man ever forget whose ear you whisper into. You've killed more men with swords than any spymaster could ever claim to."
-	outfit = /datum/outfit/job/roguetown/hand/handclassic
+/datum/advclass/hand/duelist
+	name = "Duelist"
+	tutorial = "You have played blademaster and strategist to the Noble-Family for so long that you are a master tactician, something you exploit with potent conviction. Let no man ever forget how you cut down your enemies. You've killed more men with swords than any spymaster could ever claim to."
+	outfit = /datum/outfit/job/roguetown/hand/duelist
 
 	category_tags = list(CTAG_HAND)
 
-//Classical hand start - same as the OG before nerf.
-/datum/outfit/job/roguetown/hand/handclassic/pre_equip(mob/living/carbon/human/H)
+//Duelist start. Basically brings back OG Hand before nerf.
+/datum/outfit/job/roguetown/hand/duelist/pre_equip(mob/living/carbon/human/H)
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand
 	pants = /obj/item/clothing/under/roguetown/tights/black
