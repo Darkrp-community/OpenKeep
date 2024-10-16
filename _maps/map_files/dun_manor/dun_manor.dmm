@@ -4714,6 +4714,10 @@
 "eSl" = (
 /turf/closed/indestructible/roguewindow,
 /area/rogue/indoors/town)
+"eSV" = (
+/obj/effect/landmark/start/hand,
+/turf/open/floor/rogue/carpet/lord/left,
+/area/rogue/indoors/town/manor)
 "eTc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood{
@@ -5318,6 +5322,16 @@
 	icon_state = "chess"
 	},
 /area/rogue/indoors/town/shop)
+"fAb" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	pixel_y = -1
+	},
+/obj/effect/landmark/start/jester{
+	dir = 1
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manor)
 "fAC" = (
 /obj/structure/roguemachine/atm{
 	pixel_y = -32
@@ -9697,13 +9711,6 @@
 	dir = 4
 	},
 /area/rogue/indoors/town/manor)
-"jYK" = (
-/obj/structure/fluff/statue/knight/r,
-/obj/effect/landmark/start/jester{
-	dir = 8
-	},
-/turf/open/floor/rogue/tile/masonic/single,
-/area/rogue/indoors/town/manor)
 "jYO" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_y = 32
@@ -9732,6 +9739,13 @@
 	icon_state = "chess"
 	},
 /area/rogue/under/town/basement)
+"kao" = (
+/obj/structure/fluff/statue/knight/r,
+/obj/effect/landmark/start/jester{
+	dir = 8
+	},
+/turf/open/floor/rogue/tile/masonic/single,
+/area/rogue/indoors/town/manor)
 "kaS" = (
 /obj/structure/chair/wood/rogue/fancy{
 	dir = 4;
@@ -10351,12 +10365,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
-"kIP" = (
-/obj/effect/landmark/start/jester{
-	dir = 1
-	},
-/turf/open/floor/rogue/carpet/lord/center,
-/area/rogue/indoors/town/manor)
 "kJD" = (
 /obj/item/paper/scroll,
 /obj/item/natural/feather,
@@ -11443,6 +11451,7 @@
 "lHD" = (
 /obj/item/reagent_containers/glass/cup/golden,
 /obj/structure/table/wood,
+/obj/item/roguekey/lord,
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor)
 "lHW" = (
@@ -13253,7 +13262,6 @@
 	dir = 1;
 	icon_state = "longtable"
 	},
-/obj/item/roguekey/lord,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -13362,8 +13370,10 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/outdoors/town/roofs)
 "nTP" = (
-/obj/effect/landmark/start/hand,
-/turf/open/floor/rogue/carpet/lord/left,
+/obj/effect/landmark/start/jester{
+	dir = 1
+	},
+/turf/open/floor/rogue/carpet/lord/center,
 /area/rogue/indoors/town/manor)
 "nTR" = (
 /obj/machinery/light/rogue/torchholder{
@@ -15091,16 +15101,6 @@
 /obj/item/book/rogue/yeoldecookingmanual,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/magician)
-"pFY" = (
-/obj/structure/fluff/railing/wood{
-	dir = 1;
-	pixel_y = -1
-	},
-/obj/effect/landmark/start/jester{
-	dir = 1
-	},
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town/manor)
 "pGb" = (
 /obj/effect/decal/cobbleedge{
 	dir = 6
@@ -15535,11 +15535,6 @@
 	lockid = "manor"
 	},
 /turf/open/floor/rogue/wood,
-/area/rogue/indoors/town/manor)
-"qbD" = (
-/obj/machinery/light/rogue/chand,
-/obj/effect/landmark/start/jester,
-/turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor)
 "qbF" = (
 /obj/structure/chair/wood/rogue,
@@ -23238,6 +23233,11 @@
 /obj/item/candle/yellow/lit,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
+"yhG" = (
+/obj/machinery/light/rogue/chand,
+/obj/effect/landmark/start/jester,
+/turf/open/transparent/openspace,
+/area/rogue/indoors/town/manor)
 "yie" = (
 /obj/structure/fluff/railing/border{
 	dir = 6;
@@ -66250,7 +66250,7 @@ fmc
 fmc
 xac
 foh
-nTP
+eSV
 jbx
 nJG
 nJG
@@ -66412,7 +66412,7 @@ sZw
 oQd
 vtJ
 reZ
-kIP
+nTP
 dpY
 oQd
 oQd
@@ -67508,7 +67508,7 @@ fmc
 rNR
 cYB
 jLc
-jYK
+kao
 fmc
 dEj
 ljG
@@ -90744,13 +90744,13 @@ aGn
 eZI
 tbN
 tbN
-qbD
+yhG
 tbN
 tbN
 eHD
 tbN
 qQX
-pFY
+fAb
 cYB
 qaR
 aGn
