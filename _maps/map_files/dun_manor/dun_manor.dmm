@@ -6023,9 +6023,6 @@
 "gjG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/roguemachine/scomm/r,
-/obj/structure/roguemachine/stockpile{
-	pixel_y = -32
-	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/garrison)
 "gjH" = (
@@ -11787,12 +11784,11 @@
 	},
 /area/rogue/indoors/town/manor)
 "lZW" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/roguemachine/atm{
-	pixel_y = -32
+	pixel_y = 0
 	},
-/turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/town/garrison)
+/turf/closed/wall/mineral/rogue/craftstone,
+/area/rogue/indoors/town)
 "maa" = (
 /obj/structure/lever/wall{
 	dir = 8;
@@ -12753,6 +12749,12 @@
 "nkb" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town)
+"nkh" = (
+/obj/structure/roguemachine/stockpile{
+	pixel_y = 0
+	},
+/turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors/town)
 "nko" = (
 /obj/structure/flora/roguegrass/bush/wall,
@@ -63606,8 +63608,8 @@ dYs
 fYt
 hAS
 dGX
+oUq
 lZW
-xqr
 tYY
 lHi
 llz
@@ -63764,7 +63766,7 @@ xXW
 hAS
 xXW
 gjG
-xqr
+nkh
 haW
 fjC
 llz
