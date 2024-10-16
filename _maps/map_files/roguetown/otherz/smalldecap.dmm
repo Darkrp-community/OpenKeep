@@ -248,6 +248,7 @@
 "hE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/gibs/torso,
+/mob/living/simple_animal/hostile/retaliate/rogue/troll,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains/decap)
 "hK" = (
@@ -424,6 +425,11 @@
 "pO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/rogue/craftstone,
+/area/rogue/outdoors/mountains/decap)
+"pT" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/retaliate/rogue/troll,
+/turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/mountains/decap)
 "qF" = (
 /obj/structure/closet/crate/roguecloset/inn/chest,
@@ -811,11 +817,6 @@
 "Bq" = (
 /turf/open/lava,
 /area/rogue/outdoors/mountains/decap)
-"Bx" = (
-/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/concrete,
-/area/rogue/outdoors/mountains/decap)
 "BI" = (
 /obj/structure/fluff/traveltile{
 	aportalgoesto = "decapout";
@@ -834,11 +835,6 @@
 /obj/item/roguecoin/copper/pile,
 /obj/item/roguecoin/copper/pile,
 /turf/open/floor/rogue/naturalstone,
-/area/rogue/outdoors/mountains/decap)
-"Cm" = (
-/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains/decap)
 "CC" = (
 /obj/structure/rack/rogue,
@@ -903,6 +899,14 @@
 /mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/mountains/decap)
+"EV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/mineral_door/wood/green{
+	name = "Old Door";
+	locked = 1
+	},
+/turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains/decap)
 "Fc" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -972,6 +976,17 @@
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/roguecoin/gold/pile,
 /turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/mountains/decap)
+"Ij" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/old,
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/mountains/decap)
+"IE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/retaliate/rogue/troll,
+/turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains/decap)
 "IN" = (
 /obj/structure/closet/crate/roguecloset/dark,
@@ -1093,11 +1108,6 @@
 /area/rogue/outdoors/mountains/decap)
 "PO" = (
 /turf/open/floor/rogue/tile,
-/area/rogue/outdoors/mountains/decap)
-"PQ" = (
-/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/tile/kitchen,
 /area/rogue/outdoors/mountains/decap)
 "PS" = (
 /obj/structure/table/wood/reinforced,
@@ -1303,9 +1313,10 @@
 /obj/structure/fluff/railing/stonehedge,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains/decap)
-"Wu" = (
+"Wt" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/retaliate/rogue/troll,
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/outdoors/mountains/decap)
 "Xe" = (
@@ -15322,9 +15333,9 @@ gp
 CY
 CY
 gp
+pT
 ee
 ee
-Bx
 ee
 ee
 ee
@@ -15583,11 +15594,11 @@ Sy
 wy
 gp
 za
-Wu
 Ty
 Ty
 Ty
-Bx
+Ty
+ee
 gp
 lV
 Bq
@@ -15713,10 +15724,10 @@ CY
 wy
 tU
 ee
+Wt
 Mu
 Mu
-Mu
-Mu
+Wt
 Al
 gp
 lV
@@ -15844,7 +15855,7 @@ oA
 gp
 gp
 ee
-PQ
+Ty
 Ty
 Ty
 ee
@@ -16098,7 +16109,7 @@ gp
 oA
 CY
 oA
-CY
+EV
 oA
 oA
 CY
@@ -16218,17 +16229,17 @@ gp
 gp
 gp
 CY
-CY
+IE
 CY
 gp
 TZ
 oH
 UO
 gp
-dn
-Sy
 CY
 Sy
+CY
+Ij
 CY
 CY
 wy
@@ -16605,7 +16616,7 @@ lV
 lV
 gp
 gp
-Cm
+CY
 hE
 Ak
 CY
@@ -16737,7 +16748,7 @@ gp
 gp
 CY
 AZ
-Cm
+CY
 gp
 gp
 gp
