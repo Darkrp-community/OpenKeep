@@ -498,6 +498,14 @@
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town)
+"ayc" = (
+/obj/structure/mineral_door/wood/donjon{
+	lockid = "dungeon";
+	dir = 4;
+	locked = 1
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/town/basement)
 "ayq" = (
 /obj/structure/rogue/trophy/deer,
 /obj/structure/table/wood{
@@ -18267,7 +18275,7 @@
 /obj/structure/mineral_door/wood/donjon{
 	dir = 1;
 	locked = 1;
-	lockid = "garrison";
+	lockid = "dungeon";
 	name = "garrison"
 	},
 /obj/effect/decal/cobbleedge{
@@ -42541,7 +42549,7 @@ rwZ
 gdw
 gdw
 gdw
-iIK
+ayc
 gdw
 gdw
 gdw
@@ -58313,7 +58321,7 @@ uHq
 rqG
 cxb
 waT
-ddz
+lkx
 waT
 aNC
 ymg
