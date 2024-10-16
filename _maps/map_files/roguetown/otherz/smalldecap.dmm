@@ -548,9 +548,6 @@
 /turf/open/water/swamp,
 /area/rogue/outdoors/mountains/decap)
 "tU" = (
-/obj/structure/bars/passage{
-	redstone_id = "sewerruin1"
-	},
 /obj/structure/mineral_door/wood/green{
 	name = "Old Door";
 	locked = 1
@@ -687,13 +684,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains/decap)
-"xu" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/bars/passage{
-	redstone_id = "sewerruin1"
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/mountains/decap)
 "yb" = (
 /obj/structure/fluff/walldeco/masonflag,
 /turf/closed/wall/mineral/rogue/tent,
@@ -706,9 +696,6 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/outdoors/mountains/decap)
 "yC" = (
-/obj/structure/bars/passage{
-	redstone_id = "sewerruin1"
-	},
 /obj/structure/mineral_door/wood/green{
 	name = "Old Door";
 	locked = 1
@@ -1220,9 +1207,6 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains/decap)
 "Tk" = (
-/obj/structure/bars/passage{
-	redstone_id = "sewerruin1"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/mineral_door/wood/green{
@@ -10666,7 +10650,7 @@ lV
 NQ
 pO
 pO
-xu
+hK
 pO
 pO
 ac
@@ -10795,7 +10779,7 @@ uf
 lV
 NQ
 ac
-HK
+RG
 hK
 ac
 SZ
@@ -11056,7 +11040,7 @@ lV
 NQ
 pO
 pO
-xu
+hK
 pO
 pO
 pO
@@ -13897,7 +13881,7 @@ Bq
 Bq
 Bq
 Bq
-Bq
+sV
 sV
 TZ
 TZ
@@ -14027,7 +14011,7 @@ Bq
 Bq
 Bq
 Bq
-Bq
+sV
 TZ
 TZ
 sV
@@ -14694,7 +14678,7 @@ TZ
 TZ
 TZ
 TZ
-Bq
+sV
 Bq
 sV
 sV
@@ -14824,7 +14808,7 @@ TZ
 TZ
 TZ
 TZ
-Bq
+sV
 Bq
 Bq
 Bq
@@ -14953,8 +14937,8 @@ sV
 sV
 TZ
 TZ
-Bq
-Bq
+sV
+sV
 Bq
 Bq
 Bq
@@ -15462,7 +15446,7 @@ sV
 sV
 sV
 TZ
-uf
+TZ
 uf
 uf
 uf
