@@ -1,27 +1,139 @@
-#define DRUGRADE_MONEYA				(1<<0)
-#define DRUGRADE_MONEYB 	      	(1<<1)
-#define DRUGRADE_WINE 	          	(1<<2)
-#define DRUGRADE_WEAPONS 	      	(1<<3)
-#define DRUGRADE_CLOTHES 	      	(1<<4)
-#define DRUGRADE_NOTAX				(1<<5)
+/obj/item/roguemachine/drugtrade
+	name = "NARCOS"
+	desc = "A machine that exports drugs throughout a network of pneumatic pipes."
+	icon = 'icons/roguetown/misc/machines.dmi'
+	icon_state = "ballooner"
+	density = TRUE
+	blade_dulling = DULLING_BASH
+	var/next_canister
+	var/accepted_items
+	max_integrity = 0
+	anchored = TRUE
+	w_class = WEIGHT_CLASS_GIGANTIC
+
+/obj/structure/roguemachine/drug_chute
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/misc/machines.dmi'
+	icon_state = ""
+	density = FALSE
+	layer = BELOW_OBJ_LAYER
+	anchored = TRUE
+
+/obj/item/roguemachine/drugtrade/attack_hand(mob/living/user)
+	if(!anchored)
+		return ..()
+	user.changeNext_move(CLICK_CD_MELEE)
+
+	var/contents
+
+	contents += "<center>THE DEN<BR>"
+	contents += "--------------<BR>"
+	//contents += "Guild's Tax: [SStreasury.queens_tax*100]%<BR>"
+	contents += "Next Canister: [time2text((next_canister - world.time), "mm:ss")]</center><BR>"
+
+	if(!user.can_read(src, TRUE))
+		contents = stars(contents)
+	var/datum/browser/popup = new(user, "VENDORTHING", "", 370, 220)
+	popup.set_content(contents)
+	popup.open()
+
+/obj/item/roguemachine/drugtrade/update_icon()
+	if(!anchored)
+		w_class = WEIGHT_CLASS_BULKY
+		set_light(0)
+		return
+	w_class = WEIGHT_CLASS_GIGANTIC
+	set_light(2, 2, "#9C37B5")
+
+/obj/item/roguemachine/drugtrade/Initialize()
+	. = ..()
+	if(anchored)
+		START_PROCESSING(SSroguemachine, src)
+	update_icon()
+	for(var/X in GLOB.alldirs)
+		var/T = get_step(src, X)
+		if(!T)
+			continue
+		new /obj/structure/roguemachine/drug_chute(T)
+
+/obj/item/roguemachine/drugtrade/Destroy()
+	STOP_PROCESSING(SSroguemachine, src)
+	set_light(0)
+	return ..()
+
+/obj/item/roguemachine/drugtrade/process()
+	if(!anchored)
+		return TRUE
+	if(world.time > next_canister)
+		next_canister = world.time + rand(2 MINUTES, 3 MINUTES)
+#ifdef TESTSERVER
+		next_canister = world.time + 5 SECONDS
+#endif
+		var/play_sound = FALSE
+		for(var/D in GLOB.alldirs)
+			var/budgie = 0
+			var/turf/T = get_step(src, D)
+			if(!T)
+				continue
+			var/obj/structure/roguemachine/drug_chute/E = locate() in T
+			if(!E)
+				continue
+			accepted_items = list(/obj/item/reagent_containers/powder/spice, /obj/item/reagent_containers/powder/ozium, /obj/item/reagent_containers/powder/moondust, /obj/item/reagent_containers/powder/moondust_purest, /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried, /obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed)
+			for(var/obj/I in T)
+				if(I.anchored)
+					continue
+				if(!isturf(I.loc))
+					continue
+				if(!(I.type in accepted_items))
+					continue
+				var/prize = I.get_real_price() * 5 // Increase price by 500% Keep in mind drug sell prices are pretty cheap to encourage more trade with the baths, also drugs are expensive.
+				if(prize >= 1)
+					play_sound=TRUE
+					budgie += prize
+					I.visible_message("<span class='warning'>[I] is sucked into the tube!</span>")
+					qdel(I)
+			budgie = round(budgie)
+			if(budgie > 0)
+				play_sound=TRUE
+				E.budget2change(budgie)
+				budgie = 0
+		if(play_sound)
+			playsound(src.loc, 'sound/misc/hiss.ogg', 100, FALSE, -1)
+
+
+///PURITY 2.0///
+
+#define UPGRADE_NOTAX		(1<<0)
 
 /obj/structure/roguemachine/drugmachine
 	name = "PURITY"
 	desc = "You want to destroy your life."
 	icon = 'icons/roguetown/misc/machines.dmi'
-	icon_state = "streetvendor1"
+	icon_state = "goldvendor"
 	density = TRUE
 	blade_dulling = DULLING_BASH
 	max_integrity = 0
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
 	var/list/held_items = list()
-	var/locked = FALSE
+	var/locked = TRUE
 	var/budget = 0
-	var/secret_budget = 0
-	var/recent_payments = 0
-	var/last_payout = 0
-	var/drugrade_flags
+	var/upgrade_flags
+	var/current_cat = "1"
+
+/obj/structure/roguemachine/drugmachine/Initialize()
+	. = ..()
+	update_icon()
+
+/obj/structure/roguemachine/drugmachine/update_icon()
+	cut_overlays()
+	if(obj_broken)
+		set_light(0)
+		return
+	set_light(1, 1, "#8f06b5")
+	add_overlay(mutable_appearance(icon, "vendor-merch"))
+
 
 /obj/structure/roguemachine/drugmachine/attackby(obj/item/P, mob/user, params)
 	if(istype(P, /obj/item/roguekey))
@@ -51,109 +163,58 @@
 		return attack_hand(user)
 	..()
 
-/obj/structure/roguemachine/drugmachine/process()
-	if(recent_payments)
-		if(world.time > last_payout + rand(6 MINUTES,8 MINUTES))
-			var/amt = recent_payments * 0.10
-			if(drugrade_flags & DRUGRADE_MONEYA)
-				amt = recent_payments * 0.25
-			if(drugrade_flags & DRUGRADE_MONEYB)
-				amt = recent_payments * 0.50
-			recent_payments = 0
-			send_ooc_note("<b>Income from PURITY:</b> [amt]", job = "Niteman")
-			secret_budget += amt
-
 /obj/structure/roguemachine/drugmachine/Topic(href, href_list)
 	. = ..()
 	if(!ishuman(usr))
 		return
+	if(!usr.canUseTopic(src, BE_CLOSE) || locked)
+		return
 	if(href_list["buy"])
-		if(!usr.canUseTopic(src, BE_CLOSE) || locked)
-			return
 		var/mob/M = usr
-		var/O = text2path(href_list["buy"])
-		if(held_items[O]["PRICE"])
-			var/tax_amt = round(SStreasury.tax_value * held_items[O]["PRICE"])
-			var/full_price = held_items[O]["PRICE"] + tax_amt
-			if(drugrade_flags & DRUGRADE_NOTAX)
-				full_price = held_items[O]["PRICE"]
-			if(budget >= full_price)
-				budget -= full_price
-				recent_payments += held_items[O]["PRICE"]
-				if(!(drugrade_flags & DRUGRADE_NOTAX))
-					SStreasury.give_money_treasury(tax_amt, "purity import tax")
-			else
-				say("Not enough!")
-				return
-		var/obj/item/I = new O(get_turf(src))
-		M.put_in_hands(I)
-	if(href_list["change"])
-		if(!usr.canUseTopic(src, BE_CLOSE) || locked)
+		var/path = text2path(href_list["buy"])
+		if(!ispath(path, /datum/supply_pack))
+			message_admins("NITEMAN [usr.key] IS TRYING TO BUY A [path] WITH THE GOLDFACE. THIS IS AN EXPLOIT.")
 			return
+		var/datum/supply_pack/PA = new path
+		var/cost = PA.cost
+		var/tax_amt=round(SStreasury.tax_value * cost)
+		cost=cost+tax_amt
+		if(upgrade_flags & UPGRADE_NOTAX)
+			cost = PA.cost
+		if(budget >= cost)
+			budget -= cost
+			if(!(upgrade_flags & UPGRADE_NOTAX))
+				SStreasury.give_money_treasury(tax_amt, "goldface import tax")
+		else
+			say("Not enough!")
+			return
+		var/pathi = pick(PA.contains)
+		var/obj/item/I = new pathi(get_turf(src))
+		M.put_in_hands(I)
+		qdel(PA)
+	if(href_list["change"])
 		if(budget > 0)
 			budget2change(budget, usr)
 			budget = 0
+	if(href_list["changecat"])
+		current_cat = href_list["changecat"]
 	if(href_list["secrets"])
-		if(!usr.canUseTopic(src, BE_CLOSE) || locked)
-			return
 		var/list/options = list()
-		options += "Withdraw Cut"
-		if(drugrade_flags & DRUGRADE_NOTAX)
+		if(upgrade_flags & UPGRADE_NOTAX)
 			options += "Enable Paying Taxes"
 		else
 			options += "Stop Paying Taxes"
-		if(!(drugrade_flags & DRUGRADE_MONEYA))
-			options += "Unlock 25% Cut (30)"
-		else
-			if(!(drugrade_flags & DRUGRADE_MONEYB))
-				options += "Unlock 50% Cut (105)"
 		var/select = input(usr, "Please select an option.", "", null) as null|anything in options
 		if(!select)
 			return
 		if(!usr.canUseTopic(src, BE_CLOSE) || locked)
 			return
 		switch(select)
-			if("Withdraw Cut")
-				options = list("To Bank", "Direct")
-				select = input(usr, "Please select an option.", "", null) as null|anything in options
-				if(!select)
-					return
-				if(!usr.canUseTopic(src, BE_CLOSE) || locked)
-					return
-				switch(select)
-					if("To Bank")
-						var/mob/living/carbon/human/H = usr
-						SStreasury.generate_money_account(secret_budget, H)
-						secret_budget = 0
-					if("Direct")
-						if(secret_budget > 0)
-							budget2change(secret_budget, usr)
-							secret_budget = 0
 			if("Enable Paying Taxes")
-				drugrade_flags &= ~DRUGRADE_NOTAX
+				upgrade_flags &= ~UPGRADE_NOTAX
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 			if("Stop Paying Taxes")
-				drugrade_flags |= DRUGRADE_NOTAX
-				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
-			if("Unlock 25% Cut (30)")
-				if(drugrade_flags & DRUGRADE_MONEYA)
-					return
-				if(budget < 30)
-					say("Ask again when you're serious.")
-					playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
-					return
-				budget -= 30
-				drugrade_flags |= DRUGRADE_MONEYA
-				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
-			if("Unlock 50% Cut (105)")
-				if(drugrade_flags & DRUGRADE_MONEYB)
-					return
-				if(budget < 105)
-					say("Ask again when you're serious.")
-					playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
-					return
-				budget -= 105
-				drugrade_flags |= DRUGRADE_MONEYB
+				upgrade_flags |= UPGRADE_NOTAX
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	return attack_hand(usr)
 
@@ -164,41 +225,46 @@
 	if(!ishuman(user))
 		return
 	if(locked)
+		to_chat(user, "<span class='warning'>It's locked. Of course.</span>")
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	var/canread = user.can_read(src, TRUE)
 	var/contents
-	if(canread)
-		contents = "<center>PURITY - In the name of pleasure.<BR>"
-		contents += "<a href='?src=[REF(src)];change=1'>MAMMON LOADED:</a> [budget]<BR>"
-	else
-		contents = "<center>[stars("PURITY - In the name of pleasure.")]<BR>"
-		contents += "<a href='?src=[REF(src)];change=1'>[stars("MAMMON LOADED:")]</a> [budget]<BR>"
-
+	contents = "<center>PURITY - In the pursuit of pleasure.<BR>"
+	contents += "<a href='?src=[REF(src)];change=1'>MAMMON LOADED:</a> [budget]<BR>"
 
 	var/mob/living/carbon/human/H = user
 	if(H.job == "Niteman")
 		if(canread)
-			contents = "<a href='?src=[REF(src)];secrets=1'>Secrets</a>"
+			contents += "<a href='?src=[REF(src)];secrets=1'>Secrets</a>"
 		else
-			contents = "<a href='?src=[REF(src)];secrets=1'>[stars("Secrets")]</a>"
+			contents += "<a href='?src=[REF(src)];secrets=1'>[stars("Secrets")]</a>"
 
-	contents += "</center>"
+	contents += "</center><BR>"
 
-	for(var/I in held_items)
-		var/price = held_items[I]["PRICE"] + (SStreasury.tax_value * held_items[I]["PRICE"])
-		var/namer = held_items[I]["NAME"]
-		if(!price)
-			price = "0"
-		if(!namer)
-			held_items[I]["NAME"] = "thing"
-			namer = "thing"
-		if(canread)
-			contents += "[namer] + [price] <a href='?src=[REF(src)];buy=[I]'>BUY</a>"
-		else
-			contents += "[stars(namer)] + [stars(price)] <a href='?src=[REF(src)];buy=[I]'>[stars("BUY")]</a>"
-		contents += "<BR>"
+	var/list/unlocked_cats = list("Narcotics","Instruments")
+	if(current_cat == "1")
+		contents += "<center>"
+		for(var/X in unlocked_cats)
+			contents += "<a href='?src=[REF(src)];changecat=[X]'>[X]</a><BR>"
+		contents += "</center>"
+	else
+		contents += "<center>[current_cat]<BR></center>"
+		contents += "<center><a href='?src=[REF(src)];changecat=1'>\[RETURN\]</a><BR><BR></center>"
+		var/list/pax = list()
+		for(var/pack in SSshuttle.supply_packs)
+			var/datum/supply_pack/PA = SSshuttle.supply_packs[pack]
+			if(PA.group == current_cat)
+				pax += PA
+		for(var/datum/supply_pack/PA in sortList(pax))
+			var/costy = PA.cost
+			if(!(upgrade_flags & UPGRADE_NOTAX))
+				costy=round(costy+(SStreasury.tax_value * costy))
+			contents += "[PA.name] - ([costy])<a href='?src=[REF(src)];buy=[PA.type]'>BUY</a><BR>"
+
+	if(!canread)
+		contents = stars(contents)
 
 	var/datum/browser/popup = new(user, "VENDORTHING", "", 370, 220)
 	popup.set_content(contents)
@@ -209,42 +275,14 @@
 	budget2change(budget)
 	set_light(0)
 	update_icon()
-	icon_state = "streetvendor0"
-
-/obj/structure/roguemachine/drugmachine/update_icon()
-	cut_overlays()
-	if(obj_broken)
-		set_light(0)
-		return
-	set_light(1, 1, "#1b7bf1")
-	add_overlay(mutable_appearance(icon, "vendor-drug"))
-
+	icon_state = "goldvendor0"
 
 /obj/structure/roguemachine/drugmachine/Destroy()
 	set_light(0)
-	STOP_PROCESSING(SSroguemachine, src)
 	return ..()
 
 /obj/structure/roguemachine/drugmachine/Initialize()
 	. = ..()
-	START_PROCESSING(SSroguemachine, src)
 	update_icon()
-	held_items[/obj/item/reagent_containers/powder/spice] = list("PRICE" = rand(41,55),"NAME" = "chuckledust")
-	held_items[/obj/item/reagent_containers/powder/ozium] = list("PRICE" = rand(25,47),"NAME" = "ozium")
-	held_items[/obj/item/reagent_containers/powder/moondust] = list("PRICE" = rand(13,25),"NAME" = "moondust")
-	held_items[/obj/item/clothing/mask/cigarette/rollie/cannabis] = list("PRICE" = rand(12,18),"NAME" = "swampweed zig")
-	held_items[/obj/item/clothing/mask/cigarette/rollie/nicotine] = list("PRICE" = rand(5,10),"NAME" = "zig")
-/*	held_items[/obj/item/reagent_containers/glass/bottle/rogue/wine] = list("PRICE" = rand(35,77),"NAME" = "vino")
-	held_items[/obj/item/rogueweapon/huntingknife/idagger] = list("PRICE" = rand(20,33),"NAME" = "kinfe")
-	held_items[/obj/item/clothing/cloak/half] = list("PRICE" = rand(103,110),"NAME" = "black halfcloak")
-	held_items[/obj/item/clothing/gloves/roguetown/fingerless] = list("PRICE" = rand(16,31),"NAME" = "gloves with 6 holes")
-	held_items[/obj/item/clothing/head/roguetown/roguehood/black] = list("PRICE" = rand(43,45),"NAME" = "black hood")
-	held_items[/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow] = list("PRICE" = rand(58,88),"NAME" = "crossed bow")
-	held_items[/obj/item/quiver/bolts] = list("PRICE" = rand(33,57),"NAME" = "quiver w/ bolts")*/
 
-#undef DRUGRADE_MONEYA
-#undef DRUGRADE_MONEYB
-#undef DRUGRADE_WINE
-#undef DRUGRADE_WEAPONS
-#undef DRUGRADE_CLOTHES
-#undef DRUGRADE_NOTAX
+#undef UPGRADE_NOTAX
