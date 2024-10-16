@@ -32,7 +32,6 @@
 "aV" = (
 /obj/structure/closet/crate/chest/neu_fancy,
 /obj/item/roguecoin/copper/pile,
-/obj/item/roguecoin/copper/pile,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/outdoors/mountains/decap)
@@ -135,7 +134,7 @@
 "dY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/coffin,
-/obj/item/rogueweapon/sword/scimitar,
+/obj/item/rogueweapon/sword/sabre,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/outdoors/mountains/decap)
 "ee" = (
@@ -261,6 +260,12 @@
 /obj/structure/rack/rogue/shelf,
 /obj/item/reagent_containers/glass/bottle/rogue/elfblue,
 /turf/open/floor/rogue/greenstone,
+/area/rogue/outdoors/mountains/decap)
+"if" = (
+/obj/structure/closet/crate/chest/neu_fancy,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/roguestatue/iron,
+/turf/open/floor/rogue/tile/kitchen,
 /area/rogue/outdoors/mountains/decap)
 "iA" = (
 /obj/machinery/light/rogue/hearth,
@@ -388,7 +393,6 @@
 "oU" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/coffin,
-/obj/item/roguecoin/gold/pile,
 /obj/item/rogueweapon/sword/decorated,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/mountains/decap)
@@ -503,8 +507,7 @@
 "sQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/coffin,
-/obj/item/reagent_containers/powder/moondust_purest,
-/obj/item/reagent_containers/powder/moondust_purest,
+/obj/item/reagent_containers/powder/spice,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains/decap)
 "sR" = (
@@ -664,7 +667,7 @@
 /area/rogue/outdoors/mountains/decap)
 "wA" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/carbon/human/species/skeleton/npc/peasant,
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/mountains/decap)
 "wS" = (
@@ -968,7 +971,6 @@
 "Ii" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/roguecoin/gold/pile,
-/obj/item/roguecoin/gold/pile,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains/decap)
 "IN" = (
@@ -1001,17 +1003,6 @@
 /obj/item/roguegem/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/concrete,
-/area/rogue/outdoors/mountains/decap)
-"KJ" = (
-/obj/structure/closet/crate/chest/neu_fancy,
-/obj/item/roguecoin/gold/pile,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/tile/kitchen,
-/area/rogue/outdoors/mountains/decap)
-"KL" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/carbon/human/species/skeleton/npc/peasant,
-/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains/decap)
 "KP" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1180,6 +1171,11 @@
 /obj/item/candle/skull,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/mountains/decap)
+"RG" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
+/turf/open/floor/rogue/greenstone,
+/area/rogue/outdoors/mountains/decap)
 "RJ" = (
 /obj/structure/bed/rogue/inn/double,
 /obj/item/bedsheet/rogue/fabric_double,
@@ -1259,6 +1255,7 @@
 "Us" = (
 /obj/structure/closet/crate/chest/neu_fancy,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/roguecoin/copper/pile,
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/outdoors/mountains/decap)
 "Ut" = (
@@ -1310,14 +1307,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
 /turf/open/floor/rogue/tile/kitchen,
-/area/rogue/outdoors/mountains/decap)
-"Wx" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "splatter3"
-	},
-/mob/living/carbon/human/species/skeleton/npc/peasant,
-/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains/decap)
 "Xe" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -10168,9 +10157,9 @@ NQ
 NQ
 NQ
 EA
-Wx
+MM
 QF
-HK
+RG
 dY
 MM
 sQ
@@ -10302,8 +10291,8 @@ hK
 ac
 tz
 ac
-wA
-ac
+hK
+wz
 NQ
 lV
 TZ
@@ -11338,7 +11327,7 @@ hK
 hK
 pO
 HK
-KL
+ac
 hK
 HK
 HK
@@ -11468,7 +11457,7 @@ wz
 ac
 pO
 yx
-ac
+wz
 vx
 ac
 HK
@@ -15465,7 +15454,7 @@ CY
 gp
 ee
 Us
-Bo
+if
 Bo
 ff
 ee
@@ -15985,7 +15974,7 @@ oA
 CY
 gp
 ee
-KJ
+if
 ZN
 aV
 ee
