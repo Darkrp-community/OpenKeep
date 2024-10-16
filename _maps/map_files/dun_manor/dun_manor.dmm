@@ -4714,10 +4714,6 @@
 "eSl" = (
 /turf/closed/indestructible/roguewindow,
 /area/rogue/indoors/town)
-"eSV" = (
-/obj/effect/landmark/start/hand,
-/turf/open/floor/rogue/carpet/lord/left,
-/area/rogue/indoors/town/manor)
 "eTc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood{
@@ -5001,6 +4997,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/shop)
+"ffc" = (
+/obj/structure/fluff/statue/knight/r,
+/obj/effect/landmark/start/jester{
+	dir = 8
+	},
+/turf/open/floor/rogue/tile/masonic/single,
+/area/rogue/indoors/town/manor)
 "ffq" = (
 /obj/structure/closet/crate/chest/neu_iron,
 /obj/item/ammo_casing/caseless/rogue/bolt/pyro,
@@ -5152,6 +5155,7 @@
 "foh" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/cup/golden,
+/obj/item/roguekey/lord,
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/town/manor)
 "fpz" = (
@@ -5322,16 +5326,6 @@
 	icon_state = "chess"
 	},
 /area/rogue/indoors/town/shop)
-"fAb" = (
-/obj/structure/fluff/railing/wood{
-	dir = 1;
-	pixel_y = -1
-	},
-/obj/effect/landmark/start/jester{
-	dir = 1
-	},
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town/manor)
 "fAC" = (
 /obj/structure/roguemachine/atm{
 	pixel_y = -32
@@ -9739,13 +9733,6 @@
 	icon_state = "chess"
 	},
 /area/rogue/under/town/basement)
-"kao" = (
-/obj/structure/fluff/statue/knight/r,
-/obj/effect/landmark/start/jester{
-	dir = 8
-	},
-/turf/open/floor/rogue/tile/masonic/single,
-/area/rogue/indoors/town/manor)
 "kaS" = (
 /obj/structure/chair/wood/rogue/fancy{
 	dir = 4;
@@ -11451,7 +11438,6 @@
 "lHD" = (
 /obj/item/reagent_containers/glass/cup/golden,
 /obj/structure/table/wood,
-/obj/item/roguekey/lord,
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor)
 "lHW" = (
@@ -14523,6 +14509,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
+"pcm" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	pixel_y = -1
+	},
+/obj/effect/landmark/start/jester{
+	dir = 1
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manor)
 "pcT" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fluff/walldeco/painting/seraphina{
@@ -14976,6 +14972,10 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
+"pyr" = (
+/obj/effect/landmark/start/hand,
+/turf/open/floor/rogue/carpet/lord/left,
+/area/rogue/indoors/town/manor)
 "pzh" = (
 /obj/structure/fluff/psycross,
 /obj/structure/fluff/railing/wood,
@@ -17432,6 +17432,11 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
+"shs" = (
+/obj/machinery/light/rogue/chand,
+/obj/effect/landmark/start/jester,
+/turf/open/transparent/openspace,
+/area/rogue/indoors/town/manor)
 "shu" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -23233,11 +23238,6 @@
 /obj/item/candle/yellow/lit,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
-"yhG" = (
-/obj/machinery/light/rogue/chand,
-/obj/effect/landmark/start/jester,
-/turf/open/transparent/openspace,
-/area/rogue/indoors/town/manor)
 "yie" = (
 /obj/structure/fluff/railing/border{
 	dir = 6;
@@ -66250,7 +66250,7 @@ fmc
 fmc
 xac
 foh
-eSV
+pyr
 jbx
 nJG
 nJG
@@ -67508,7 +67508,7 @@ fmc
 rNR
 cYB
 jLc
-kao
+ffc
 fmc
 dEj
 ljG
@@ -90744,13 +90744,13 @@ aGn
 eZI
 tbN
 tbN
-yhG
+shs
 tbN
 tbN
 eHD
 tbN
 qQX
-fAb
+pcm
 cYB
 qaR
 aGn
