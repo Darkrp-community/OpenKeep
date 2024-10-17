@@ -222,7 +222,7 @@
 
 // PANTHEON SILVER PSYCROSSES START
 
-/obj/item/clothing/neck/roguetown/psycross/silver/astrata 
+/obj/item/clothing/neck/roguetown/psycross/silver/astrata
 	name = "amulet of Astrata"
 	desc = "Blessed be everything the light of the sun touches, for it is protected by Her grace."
 	icon_state = "astrata"
@@ -364,3 +364,18 @@
 	name = "petrified larvae charm"
 	desc = "The husk of a desiccated beespider larva, passed down within the ranks of those whose names have been struck from dark elven history. The old tyranny's uprooting would be their last act of true valor."
 	icon_state = "spider"
+
+/obj/item/clothing/neck/roguetown/bogcowl
+	name = "bogcowl"
+	desc = "An odd cowl made using mud, sticks, and fibers."
+	icon_state = "bogcowl"
+
+/obj/item/clothing/neck/roguetown/elfears
+	name = "elfear necklace"
+	desc = "A grim necklace made to show off the wearer's macabre collection of cut off elf ears."
+	icon_state = "elfears"
+
+/obj/item/clothing/neck/roguetown/menears
+	name = "menear necklace"
+	desc = "A grim necklace made to show off the wearer's macabre collection of cut off humen ears."
+	icon_state = "menears"

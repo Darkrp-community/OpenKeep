@@ -518,6 +518,40 @@
 	armor = ARMOR_STEEL_BAD
 	body_parts_covered = HEAD|HAIR
 
+//................ Kettle Helmet (Slitted)............... //
+/obj/item/clothing/head/roguetown/helmet/slitkettle
+	name = "kettle helmet"
+	desc = "A lightweight steel helmet generally worn by crossbowmen and garrison archers. This one has eyeslits for the paranoid."
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	icon_state = "slitkettle"
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS
+	smeltresult = /obj/item/ash
+	sellprice = VALUE_CHEAP_IRON_HELMET
+
+	armor = ARMOR_STEEL_BAD
+	body_parts_covered = HEAD|HAIR
+
+//................ Halfvisor Helmet............... //
+/obj/item/clothing/head/roguetown/helmet/halfvisor
+	name = "Halfvisor helmet"
+	desc = "A light halfvisor helmet, providing excellent vision as well as protection to the top of the head, while also looking rather nice. Comes with a plume."
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	icon_state = "halfvisor"
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS
+	smeltresult = /obj/item/ash
+	sellprice = VALUE_CHEAP_IRON_HELMET
+
+	armor = ARMOR_STEEL_BAD
+	body_parts_covered = HEAD|HAIR
+
 //................ Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet
 	name = "sallet"
@@ -728,7 +762,18 @@
 /obj/item/clothing/head/roguetown/helmet/visored/knight/black
 	color = CLOTHING_BLACK
 
-
+//............... Klappvisor Helmet ..................//
+/obj/item/clothing/head/roguetown/helmet/visored/klappvisor
+	name = "klappvisor"
+	desc = "A bascinet with a mounted pivot to protect the face by deflecting blows. Unlike its cousin the Hounskull, the plate mounted on the pivot is far more flat, but just as good at deflecting blows."
+	icon_state = "klappvisor"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	block2add = FOV_RIGHT|FOV_LEFT
+	dropshrink = 1.0
+	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 //......................................................................................................
 /*------------------\
@@ -813,7 +858,38 @@
 
 	max_integrity = INTEGRITY_STANDARD // shitty rusted iron
 
+//............... Onion Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/onion
+	name = "onion helmet"
+	desc = "A tremendously heavy helmet that even the most hardy of warriors cannot wear for too long. Cumbersome and difficult, this oddly shaped helmet still provides excellent protection."
+	icon_state = "onionhelm"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
+	armor = ARMOR_STEEL_BEST
+	prevent_crits = ALL_CRITICAL_HITS
+
+//............... Beak Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/beak //Tunnel vision FOV
+	name = "beak helmet"
+	desc = "A curious helmet in the shape of an eagle's head - there seems to be a lock on it."
+	icon_state = "beakhelm"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+
+	armor = ARMOR_STEEL_BEST
+	prevent_crits = ALL_CRITICAL_HITS
+
+//............... Frog Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/frog
+	name = "frog helmet"
+	desc = "A thick, heavy helmet that severely obscures the wearer's vision. Still rather protective."
+	icon_state = "froghelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
+	armor = ARMOR_STEEL_BEST
+	prevent_crits = ALL_CRITICAL_HITS
 
 //............... Temple heavy helmets ......................//
 //............... Astrata Helmet ............... //
@@ -1220,6 +1296,15 @@
 	prevent_crits = ALL_CRITICAL_HITS
 	max_integrity = INTEGRITY_STRONG
 
+//............... Briar Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/briarhelm // Have an idea. Possible a Preacher archetype.
+	name = "briar helmet"
+	desc = "An ever grinning mask protects the face of this odd helmet, topped with a crown of briars."
+	icon_state = "briarhelm"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
+	armor = ARMOR_STEEL_BEST
+	prevent_crits = ALL_CRITICAL_HITS
 
 //............... Bladesinger Helmet ............... //
 /obj/item/clothing/head/roguetown/rare/elfplate // Unique Bladesinger kit
@@ -1292,6 +1377,18 @@
 
 	body_parts_covered = HEAD|EARS|HAIR
 
+//............... Totod Helmet ................//
+/obj/item/clothing/head/roguetown/helmet/heavy/totod // Unique helmet for Totod. Essentially a reskinned Greathelm so not much different from what they usually pack
+	name = "totod helm"
+	desc = "An ornamentally styled steel helm, bearing the infamous wretched wings of the Totod Order. The curtain call for abominations and innocents alike."
+	icon_state = "totodhelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+
+	armor = ARMOR_STEEL_BEST
+	prevent_crits = ALL_CRITICAL_HITS
 
 /*-------------------\
 | Antagonist Helmets |
