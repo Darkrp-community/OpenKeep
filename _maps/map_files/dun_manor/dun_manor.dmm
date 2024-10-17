@@ -5946,10 +5946,10 @@
 /area/rogue/outdoors/town)
 "gfq" = (
 /obj/structure/chair/wood/rogue{
-	dir = 4;
+	dir = 1;
 	icon_state = "chair2"
 	},
-/turf/open/floor/rogue/tile/masonic,
+/turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor)
 "gfr" = (
 /obj/structure/fluff/railing/wood,
@@ -7858,10 +7858,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "hWZ" = (
-/obj/structure/chair/wood/rogue{
-	dir = 8;
-	icon_state = "chair2"
-	},
+/obj/structure/chair/wood/rogue,
 /turf/open/floor/rogue/tile/masonic{
 	dir = 1
 	},
@@ -9235,14 +9232,6 @@
 /obj/structure/giantfur/small,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
-"jBv" = (
-/obj/machinery/light/rogue/torchholder/r,
-/obj/structure/chair/wood/rogue{
-	dir = 8;
-	icon_state = "chair2"
-	},
-/turf/open/floor/rogue/tile/masonic/single,
-/area/rogue/indoors/town/manor)
 "jBG" = (
 /obj/structure/chair/wood/rogue/chair3{
 	dir = 4
@@ -9725,6 +9714,16 @@
 /obj/item/paper/scroll,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/magician)
+"jYA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/wood/rogue{
+	dir = 8;
+	icon_state = "chair2"
+	},
+/turf/open/floor/rogue/tile/masonic{
+	dir = 4
+	},
+/area/rogue/indoors/town/manor)
 "jYO" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_y = 32
@@ -10151,15 +10150,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
-"kyP" = (
-/obj/structure/chair/wood/rogue{
-	dir = 8;
-	icon_state = "chair2"
-	},
-/turf/open/floor/rogue/tile/masonic{
-	dir = 4
-	},
-/area/rogue/indoors/town/manor)
 "kza" = (
 /obj/effect/decal/cobbleedge,
 /obj/structure/fluff/walldeco/customflag{
@@ -10963,12 +10953,8 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/shop)
 "lgZ" = (
-/obj/machinery/light/rogue/torchholder/l,
-/obj/structure/chair/wood/rogue{
-	dir = 4;
-	icon_state = "chair2"
-	},
-/turf/open/floor/rogue/tile/masonic/single,
+/obj/structure/chair/wood/rogue,
+/turf/open/floor/rogue/tile/masonic,
 /area/rogue/indoors/town/manor)
 "lhm" = (
 /obj/item/rogueweapon/shovel/small,
@@ -16697,6 +16683,7 @@
 	dir = 1;
 	icon_state = "borderfall"
 	},
+/obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor)
 "rkx" = (
@@ -65537,7 +65524,7 @@ pvA
 ooo
 mRK
 pKq
-lgZ
+tca
 pTw
 mzg
 fmc
@@ -65693,8 +65680,8 @@ iOF
 nZd
 rcJ
 rkv
-wBY
-cru
+eNS
+hWZ
 pmp
 gSu
 fmc
@@ -65851,9 +65838,9 @@ cYB
 gMZ
 jIY
 kEp
-kyP
-hWZ
-tca
+wBY
+cru
+gfq
 ujl
 mzg
 fmc
@@ -66009,7 +65996,7 @@ hsK
 hIk
 lPp
 tca
-ujl
+jYA
 pKq
 fmc
 kUZ
@@ -66951,7 +66938,7 @@ gMZ
 eUQ
 jaH
 tca
-cSR
+wxP
 dEj
 fmc
 sVH
@@ -67107,9 +67094,9 @@ cYB
 hsK
 pvv
 oHc
-wxP
+lql
+eza
 gfq
-tca
 cSR
 bma
 fmc
@@ -67263,8 +67250,8 @@ tIG
 dRD
 uta
 rkv
-lql
-eza
+cSR
+lgZ
 pmp
 uyA
 fmc
@@ -67421,7 +67408,7 @@ pvA
 dAX
 rQI
 dEj
-jBv
+tca
 dMM
 dEj
 fmc
