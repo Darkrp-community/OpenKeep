@@ -359,7 +359,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "town"
 	droning_sound = 'sound/music/area/towngen.ogg'
 	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/night.ogg'
+//	droning_sound_night = 'sound/music/area/night.ogg'
 
 /area/rogue/indoors/town/manor
 	name = "Manor"
@@ -521,7 +521,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "town"
 	droning_sound = 'sound/music/area/townstreets.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/night.ogg'
+//	droning_sound_night = 'sound/music/area/night.ogg'	Too much guitar honestly
 	converted_type = /area/rogue/indoors/shelter/town
 	first_time_text = "THE TOWN OF ROCKHILL"
 
@@ -536,7 +536,6 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "sargoth"
 	droning_sound = 'sound/music/area/sargoth.ogg'
 	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/night.ogg'
 	converted_type = /area/rogue/indoors/shelter/town/sargoth
 
 /area/rogue/indoors/shelter/town/sargoth
@@ -553,8 +552,6 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	spookysounds = SPOOKY_GEN
 	spookynight = SPOOKY_GEN
 	droning_sound = 'sound/music/area/field.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/night.ogg'
 	converted_type = /area/rogue/indoors/shelter/town/roofs
 
 /area/rogue/indoors/shelter/town/roofs
