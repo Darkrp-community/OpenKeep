@@ -130,6 +130,19 @@
 	. = ..()
 	color = pick(CLOTHING_TEAL, CLOTHING_GREEN, CLOTHING_ORANGE, CLOTHING_MAJENTA, CLOTHING_YELLOW,CLOTHING_SALMON, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW)
 
+/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonlords
+	color = CLOTHING_RED
+
+/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonlords/Initialize()
+	..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+	else
+		GLOB.lordcolor += src
+
+/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonlords/Destroy()
+	GLOB.lordcolor -= src
+	return ..()
 
 //................ Cook Hat ............... //
 /obj/item/clothing/head/roguetown/cookhat

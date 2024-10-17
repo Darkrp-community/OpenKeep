@@ -288,6 +288,24 @@
 	color = pick("#e6e5e5", "#52BE80", "#C39BD3", "#EC7063","#5DADE2")
 	..()
 
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdresslords
+	color = CLOTHING_PURPLE
+
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdresslords/Initialize()
+	..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+	else
+		GLOB.lordcolor += src
+
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdresslords/lordcolor(primary,secondary)
+	if(secondary)
+		color = secondary
+
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdresslords/Destroy()
+	GLOB.lordcolor -= src
+	return ..()
+
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "dress"
