@@ -38,7 +38,7 @@
 	beltr = /obj/item/keyring/steward
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1)
+	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1, /obj/item/lockpickring/mundane = 1)
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
