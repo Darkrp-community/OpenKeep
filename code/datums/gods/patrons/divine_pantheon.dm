@@ -36,9 +36,9 @@
 	worshippers = "Druids, Beasts, Madmen"
 	sins = "Deforestation, Overhunting, Disrespecting Nature"
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/targeted/blesscrop
+	t1 = /obj/effect/proc_holder/spell/self/beastsense
 	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
-	t3 = null
+	t3 = /obj/effect/proc_holder/spell/targeted/conjure_kneestingers
 
 /datum/patron/divine/abyssor
 	name = "Abyssor"
@@ -82,7 +82,7 @@
 	desc = "The finest alchemist to ever live, made saint by her own brew."
 	flaws = "Drunkenness, Crudeness, Irresponsibility"
 	worshippers = "The Ill and Infirm, Alchemists, Necromancers"
-	sins = "´Curing´ Abnormalities, Refusing to Help Unfortunates, Groveling"	
+	sins = "´Curing´ Abnormalities, Refusing to Help Unfortunates, Groveling"
 	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
 	t1 = /obj/effect/proc_holder/spell/invoked/heal
 	t2 = /obj/effect/proc_holder/spell/invoked/attach_bodypart

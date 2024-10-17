@@ -3197,7 +3197,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "akj" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/sewer,
 /area/rogue)
 "akk" = (
@@ -9793,7 +9793,7 @@
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/beach)
 "aEL" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/beach)
 "aEM" = (
@@ -9808,7 +9808,7 @@
 /turf/open/water/sewer,
 /area/rogue/under/cave)
 "aEP" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/sewer,
 /area/rogue/under/cave)
 "aEQ" = (
@@ -12953,7 +12953,7 @@
 	},
 /area/rogue)
 "nEU" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cave)
 "nGG" = (
@@ -13162,7 +13162,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
 "poI" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/beach)
 "ppV" = (
