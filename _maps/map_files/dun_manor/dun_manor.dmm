@@ -14829,8 +14829,11 @@
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/dwarfin)
 "poj" = (
-/obj/structure/mineral_door/wood,
-/turf/open/floor/rogue/cobble/mossy,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/mineral_door/wood{
+	lockid = "tavern"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "poq" = (
 /obj/effect/decal/shadow_floor{
@@ -19262,10 +19265,6 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
-"tWL" = (
-/obj/structure/mineral_door/wood,
-/turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/tavern)
 "tWM" = (
 /obj/item/roguekey/vault,
 /obj/structure/closet/crate/roguecloset{
@@ -56003,7 +56002,7 @@ wBZ
 wBZ
 wBZ
 wBZ
-sjq
+wBZ
 eVv
 ewE
 xIK
@@ -56159,8 +56158,8 @@ fYP
 wBZ
 sbp
 sQL
-tWL
-ewE
+sQL
+poj
 tqC
 xIK
 xIK
@@ -56314,9 +56313,9 @@ ccw
 ccw
 jwG
 wBZ
-wBZ
-poj
-wBZ
+sQL
+xfP
+sQL
 wBZ
 wBZ
 lBX
