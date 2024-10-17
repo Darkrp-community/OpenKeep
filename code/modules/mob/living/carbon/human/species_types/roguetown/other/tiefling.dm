@@ -2,7 +2,7 @@
 	*				*
 	*	Tiefling	*
 	*				*
- 	*===============*/
+	*===============*/
 
 /mob/living/carbon/human/species/tieberian
 	race = /datum/species/tieberian

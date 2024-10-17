@@ -2,7 +2,7 @@
 	*				*
 	*	Half-Elf	*
 	*				*
- 	*===============*/
+	*===============*/
 
 /mob/living/carbon/human/species/human/halfelf
 	race = /datum/species/human/halfelf
