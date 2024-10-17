@@ -5945,11 +5945,10 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "gfq" = (
-/obj/structure/chair/wood/rogue{
-	dir = 1;
-	icon_state = "chair2"
+/obj/structure/chair/wood/rogue,
+/turf/open/floor/rogue/tile/masonic{
+	dir = 1
 	},
-/turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor)
 "gfr" = (
 /obj/structure/fluff/railing/wood,
@@ -7859,9 +7858,7 @@
 /area/rogue/outdoors/rtfield)
 "hWZ" = (
 /obj/structure/chair/wood/rogue,
-/turf/open/floor/rogue/tile/masonic{
-	dir = 1
-	},
+/turf/open/floor/rogue/tile/masonic,
 /area/rogue/indoors/town/manor)
 "hXc" = (
 /obj/structure/fluff/walldeco/med{
@@ -9232,6 +9229,10 @@
 /obj/structure/giantfur/small,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
+"jBv" = (
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/tile/masonic/single,
+/area/rogue/indoors/town/manor)
 "jBG" = (
 /obj/structure/chair/wood/rogue/chair3{
 	dir = 4
@@ -10150,6 +10151,13 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
+"kyP" = (
+/obj/structure/chair/wood/rogue{
+	dir = 1;
+	icon_state = "chair2"
+	},
+/turf/open/floor/rogue/tile/masonic/single,
+/area/rogue/indoors/town/manor)
 "kza" = (
 /obj/effect/decal/cobbleedge,
 /obj/structure/fluff/walldeco/customflag{
@@ -10953,8 +10961,8 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/shop)
 "lgZ" = (
-/obj/structure/chair/wood/rogue,
-/turf/open/floor/rogue/tile/masonic,
+/obj/machinery/light/rogue/torchholder/l,
+/turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor)
 "lhm" = (
 /obj/item/rogueweapon/shovel/small,
@@ -65524,7 +65532,7 @@ pvA
 ooo
 mRK
 pKq
-tca
+lgZ
 pTw
 mzg
 fmc
@@ -65681,7 +65689,7 @@ nZd
 rcJ
 rkv
 eNS
-hWZ
+gfq
 pmp
 gSu
 fmc
@@ -65840,7 +65848,7 @@ jIY
 kEp
 wBY
 cru
-gfq
+kyP
 ujl
 mzg
 fmc
@@ -67096,7 +67104,7 @@ pvv
 oHc
 lql
 eza
-gfq
+kyP
 cSR
 bma
 fmc
@@ -67251,7 +67259,7 @@ dRD
 uta
 rkv
 cSR
-lgZ
+hWZ
 pmp
 uyA
 fmc
@@ -67408,7 +67416,7 @@ pvA
 dAX
 rQI
 dEj
-tca
+jBv
 dMM
 dEj
 fmc
