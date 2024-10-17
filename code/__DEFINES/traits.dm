@@ -36,6 +36,7 @@
 #define TRAIT_GRAVEROBBER				"Graverobber"	// Prevents getting the cursed debuff when unearthing a grave, but permanent -1 LUC to whoever has it.
 
 #define TRAIT_BLESSED					"Once blessed"	// prevents blessings stackings
+#define TRAIT_MIRACULOUS_FORAGING		"Miracle Foraging"	// makes bushes much more generous
 #define TRAIT_MISSING_NOSE				"Missing Nose" //halved stamina regeneration
 #define TRAIT_DISFIGURED				"Disfigured"
 #define TRAIT_SPELLCOCKBLOCK			"Bewitched" //prevents spellcasting

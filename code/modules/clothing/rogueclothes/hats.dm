@@ -244,7 +244,7 @@
 	default_hidden = HIDEEARS|HIDEHAIR
 	dropshrink = 0.8
 
-	armor = ARMOR_MIMOR
+	armor = ARMOR_MINOR
 	prevent_crits = MINOR_CRITICALS
 
 
@@ -263,7 +263,7 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 
-//................ Briar Thorns ............... //	- Basic Dendor Briar
+//................ Briar Thorns ............... //	- Dendor Briar
 /obj/item/clothing/head/roguetown/padded/briarthorns
 	name = "briar thorns"
 	desc = "The pain it causes perhaps can distract from the whispers of a mad God overpowering your sanity..."
@@ -274,16 +274,6 @@
 	to_chat(user, span_warning ("The thorns prick me."))
 	user.adjustBruteLoss(4)
 
-
-//................ Face of the Forest ............... //	- Upgraded Dendor headwear
-/obj/item/clothing/head/roguetown/padded/faceforest
-	name = "face of the forest"
-	desc = "Worn by the faithful of Dendor."
-	icon_state = "dendormask"
-	dynamic_hair_suffix = ""
-	flags_inv = HIDEFACE|HIDEFACIALHAIR
-	body_parts_covered = FULL_HEAD
-	prevent_crits = CUT_AND_MINOR_CRITS
 
 //................ Rabbet Visage ............... //	- Basic Eora Acolyte
 /obj/item/clothing/head/roguetown/padded/rabbetvisage
@@ -309,7 +299,7 @@
 	worn_y_dimension = 64
 	resistance_flags = FIRE_PROOF // Made of metal
 
-	armor = ARMOR_MIMOR
+	armor = ARMOR_MINOR
 
 
 //................ Sun Hood ............... //	- Basic Astrata Acolyte
@@ -336,7 +326,7 @@
 	default_hidden = HIDEEARS|HIDEHAIR
 	resistance_flags = FIRE_PROOF
 
-	armor = ARMOR_MIMOR
+	armor = ARMOR_MINOR
 	prevent_crits = MINOR_CRITICALS
 
 /obj/item/clothing/head/roguetown/roguehood/priest/pickup(mob/living/user)

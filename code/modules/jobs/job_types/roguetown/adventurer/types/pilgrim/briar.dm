@@ -23,6 +23,7 @@
 	backl = /obj/item/rogueweapon/mace/goden/shillelagh
 
 	H.change_stat("strength", 1)
+	H.change_stat("endurance", 1)
 	H.change_stat("intelligence", -1)
 
 	if(H.mind)
@@ -75,9 +76,9 @@
 	req_table = FALSE
 
 /datum/crafting_recipe/dendor/visage
-	name = "face of the forest (unique)"
+	name = "druids mask (unique)"
 	reqs = list(/obj/item/grown/log/tree/small = 1)
-	result = /obj/item/clothing/head/roguetown/padded/faceforest
+	result = /obj/item/clothing/mask/rogue/druid
 
 /datum/crafting_recipe/dendor/shrine
 	name = "prey shrine to Dendor (unique)"
@@ -103,8 +104,8 @@
 				/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed = 1,
 				/obj/item/reagent_containers/food/snacks/produce/berries = 1)
 	result = /obj/item/blessing_of_dendor_prey
-	verbage = "makes a sacrifice"
-	verbage_tp = "makes a sacrifice"
+	verbage = "make"
+	verbage_tp = "make"
 	craftsound = 'sound/foley/burning_sacrifice.ogg'
 
 /datum/crafting_recipe/dendor/sacrifice_predator
@@ -112,8 +113,8 @@
 	structurecraft = /obj/structure/fluff/psycross/crafted/shrine/dendor_volf
 	reqs = list(/obj/item/bait/bloody = 2)
 	result = /obj/item/blessing_of_dendor_predator
-	verbage = "makes a sacrifice"
-	verbage_tp = "makes a sacrifice"
+	verbage = "make a"
+	verbage_tp = "make a"
 	craftsound = 'sound/foley/burning_sacrifice.ogg'
 
 
@@ -135,9 +136,10 @@
 		playsound(get_turf(user), 'sound/vo/smokedrag.ogg', 100, TRUE)
 		playsound(get_turf(user), 'sound/misc/wind.ogg', 100, TRUE, -1)
 		sleep(30)
-		to_chat(user, span_notice("A wind blows trough the trees...your feel better able to help things to grow."))
+		to_chat(user, span_notice("A wind blows trough the trees...your foraging will be easier from now on, surely."))
 		user.emote("smile")
 		ADD_TRAIT(user, TRAIT_BLESSED, TRAIT_GENERIC)
+		ADD_TRAIT(user, TRAIT_MIRACULOUS_FORAGING, TRAIT_GENERIC)
 		user.AddSpell(new /obj/effect/proc_holder/spell/targeted/blesscrop(null))
 		if(user.mind.has_spell(/obj/effect/proc_holder/spell/targeted/conjure_kneestingers))
 			user.apply_status_effect(/datum/status_effect/buff/calm)
