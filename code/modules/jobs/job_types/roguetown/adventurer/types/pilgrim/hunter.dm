@@ -38,7 +38,7 @@
 			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
 			backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/muneate/random
-			backpack_contents = list(/obj/item/flint = 1, /obj/item/bait = 1, /obj/item/rogueweapon/huntingknife/idagger/kunai = 1)
+			backpack_contents = list(/obj/item/flint = 1, /obj/item/bait = 1, /obj/item/rogueweapon/huntingknife/kunai = 1)
 		else
 			backpack_contents = list(/obj/item/flint = 1, /obj/item/bait = 1, /obj/item/rogueweapon/huntingknife = 1)
 	if(H.mind)

@@ -97,40 +97,42 @@
 			H.change_stat("strength", 2)
 			H.change_stat("endurance", 1)
 			H.change_stat("constitution", 1)
-
-			var/background = pickweight(list("FullDaisho_Ronin" = 6, "SavageKiller_Ronin" = 3, "AntiDaisho_Ronin" = 2, "Reformed_Ronin" = 1))
-			switch(background)
-				if("FullDaisho_Ronin")
-					beltl = /obj/item/rogueweapon/sword/uchigatana
-					to_chat(H, "<span class='info'>I managed to retain my full Daisho, even without masters to finance my activities.</span>")
-					H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-				if("Reformed_Ronin")
-					beltl = /obj/item/rogueweapon/flail/sflail/kusarifundo
-					to_chat(H, "<span class='info'>My sword was broken during battle, and from the blade, I made one anew. This is all what remains of my deceased master.</span>")
-					H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
-				if("SavageKiller_Ronin")
-					beltr = /obj/item/rogueweapon/battle/ono
-					to_chat(H, "<span class='info'>I killed a sanguinary savage and took from him his axe, and grinded the steel into a more efficient Ono. I've conquered a WHALER's soul, and will DOMINATE HIS WAYS.</span>")
-					H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-				if("AntiDaisho_Ronin")
-					beltr = /obj/item/rogueweapon/sword/sabre/messer/yuntoudao
-					to_chat(H, "<span class='info'>The Daisho is obsolete. My sword is made to do more than draw blood - It should grind my enemies into mince.</span>")
-					H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-
+			
 			belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho
 			pants = /obj/item/clothing/under/roguetown/chainlegs/iron/haidate_tatami
 			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/kusaritabi
-			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/tatami
+			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/ronin
 			cloak = /obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/ronin
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/rust
-			neck = /obj/item/clothing/mask/rogue/kaizoku/menpo/half
+			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/tatami
+			mask = /obj/item/clothing/mask/rogue/kaizoku/menpo/half
 			backl = /obj/item/storage/backpack/rogue/satchel
-			head = /obj/item/clothing/head/roguetown/tengai/roningasa //Not protective.
+			head = /obj/item/clothing/head/roguetown/tengai/roningasa //Not protective
 			if(prob(35))
 				beltr = /obj/item/rogueweapon/sword/short/wakizashi //Higher Daisho
 			else
 				beltr = /obj/item/rogueweapon/huntingknife/idagger/steel/tanto //Lesser Daisho
+
+			H.become_blind("TRAIT_GENERIC")
+
+			var/background = pickweight(list("Fulldaisho" = 6, "Savagekiller" = 3, "Antidaisho" = 2, "Reformed" = 1))
+			switch(background)
+				if("Fulldaisho")
+					beltl = /obj/item/rogueweapon/sword/uchigatana
+					to_chat(H, "<span class='info'>I managed to retain my full Daisho, even without masters to finance my activities.</span>")
+					H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+				if("Reformed")
+					beltl = /obj/item/rogueweapon/flail/sflail/kusarifundo
+					to_chat(H, "<span class='info'>My sword was broken during battle, and from the blade, I made one anew. This is all what remains of my deceased master.</span>")
+					H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
+				if("Savagekiller")
+					beltr = /obj/item/rogueweapon/battle/ono
+					to_chat(H, "<span class='info'>I killed a sanguinary savage and took from him his axe, and grinded the steel into a more efficient Ono. I've conquered a WHALER's soul, and will DOMINATE HIS WAYS.</span>")
+					H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+				if("Antidaisho")
+					beltr = /obj/item/rogueweapon/sword/sabre/messer/yuntoudao
+					to_chat(H, "<span class='info'>The Daisho is obsolete. My sword is made to do more than draw blood - It should grind my enemies into mince.</span>")
+					H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		else //If not Abyssariad, can be anything else from this following options:
 			var/classes = list("Deserter","Poacher","Brigand")
 			var/classchoice = input("Choose your background", "Available backgrounds") as anything in classes

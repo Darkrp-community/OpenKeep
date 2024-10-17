@@ -1,3 +1,4 @@
+//NOT FINISHED UP YET.
 /datum/advclass/combat/marauder //role capable of crafting their own low-tier armor.
 	name = "Marauder Tribal"
 	allowed_sexes = list(MALE, FEMALE)
@@ -5,7 +6,7 @@
 	"Kappa")
 	outfit = /datum/outfit/job/roguetown/adventurer/marauder
 	category_tags = list(CTAG_ADVENTURER)
-	tutorial = "Ever since Grezenholft invasions on Fog Islands, the Kappa Tribes became allies of many Abyssariad clans. Even if untrue for the entire government, Kappa Marauders take part of Abyssariad expeditions as formidable annihilators of Humens and Goblins alike."
+	tutorial = "Ever since Grezenholft invasions on Fog Islands, the Kappa Tribes became allies of many Abyssariad clans and guardians. Even if untrue for the entire government itself, Kappa Marauders take part of Abyssariad expeditions as ''allies'' and formidable annihilators of Humens and Goblins alike."
 
 
 /obj/item/clothing/suit/roguetown/armor/kaizoku/ceramic/light
@@ -43,28 +44,25 @@ backl = /obj/item/storage/backpack/rogue/satchel
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE) //Elf-Goblin nature.
 
-
-/obj/item/clothing/suit/roguetown/armor/ceramic
-/obj/item/clothing/suit/roguetown/armor/ceramic/reinforced
-/obj/item/clothing/suit/roguetown/armor/ceramic/light
-
 /datum/outfit/job/roguetown/adventurer/abyssariad/wokou/pre_equip(mob/living/carbon/human/H) // Same as Warrior.
 	..()
 	H.become_blind("TRAIT_GENERIC")
-	var/tribaltype = list("boneclad","riverdweller","bodysnatcher")
+	var/tribaltype = list("boneclad","riverdweller","bodysnatcher", "skypiercer")
 	var/specialization = input("Choose your equipments", "Available equipments") as anything in wokoutype
 	switch(specialization)
-		if("boneclad") //Starts with no survival tool, but has full body equipment they'd usually make by hunting.
+		if("boneclad") //Starts with no survival tool. Full melee, tier 3 makeshift armor roundstart. Mace/axe focus.
 			H.set_blindness(0)
 			armor = /obj/item/clothing/suit/roguetown/armor/ceramic/reinforced
 			head = /obj/item/clothing/head/roguetown/helmet/ceramic/reinforced
 			pants = /obj/item/clothing/under/roguetown/kaizoku/ceramic
 			beltl = /obj/item/rogueweapon/mace/cudgel/rungu
 			beltr = /obj/item/rogueweapon/mace/cudgel/ararebo/obsidian
+			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/bonebracer
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 			
-			to_chat(H, span_warning( "<span class='info'>Boneclad info.</span>"))
+			to_chat(H, span_warning( "<span class='info'>I am a warrior from Boneclad Clan! Revenge against paumpers-folk! No more shall we pity the fool! To be forced to work is only for weaklings and the disgraced!</span>"))
 
 			//same as normal warriors.
 			H.change_stat("strength", 2)
@@ -73,7 +71,7 @@ backl = /obj/item/storage/backpack/rogue/satchel
 			H.change_stat("intelligence", -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
-		if("bodysnatcher") //
+		if("bodysnatcher") //Starts with blade as survival tool. Has Tier 2 makeshift armor, spear and throwable ranged weapon. Spear focus.
 			H.set_blindness(0)
 			armor = /obj/item/clothing/suit/roguetown/armor/ceramic
 			head = /obj/item/clothing/head/roguetown/helmet/ceramic/medium
@@ -81,11 +79,14 @@ backl = /obj/item/storage/backpack/rogue/satchel
 			backr = /obj/item/rogueweapon/spear/obsidian
 			backl = /obj/item/rogueweapon/shield/rattan
 			beltr = /obj/item/rogueweapon/mace/cudgel/rungu
+			beltl = /obj/item/rogueweapon/huntingknife/kunai
+			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/bonebracer
 
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 			
-			to_chat(H, span_warning( "<span class='info'>Boneclad info.</span>"))
+			to_chat(H, span_warning( "<span class='info'>I hold the banner of my ancestors with all that is left, the grief long eternal. We've long suffered under the deathly sickle of the Humens. How long we shall last in war?</span>"))
 
 			//same as normal warriors.
 			H.change_stat("strength", 2)
@@ -93,3 +94,39 @@ backl = /obj/item/storage/backpack/rogue/satchel
 			H.change_stat("constitution", 1)
 			H.change_stat("intelligence", -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+
+		if("skypiercer") //Start with survival tool. Ranged weapon focus.
+			H.set_blindness(0)
+			cloaks = /obj/item/clothing/cloak/raincloak/mino
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/muneate/kappa
+			shirt = /obj/item/clothing/suit/roguetown/armor/ceramic/light
+			head = /obj/item/clothing/head/roguetown/helmet/ceramic
+			pants = /obj/item/clothing/under/roguetown/kaizoku/tribal
+			beltr = /obj/item/rogueweapon/mace/cudgel/rungu
+			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/bonebracer
+			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+			backl = /obj/item/storage/backpack/rogue/satchel
+			beltl = /obj/item/flashlight/flare/torch/lantern
+
+
+			H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
+			backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/huntingknife/kunai = 1)
+
+		if("riverdweller") //Start with survival tool and 
+			H.set_blindness(0)
+
+
+	pants = /obj/item/clothing/under/roguetown/chainlegs
+	cloak = /obj/item/clothing/cloak/tabard/knight/guard
+	neck = /obj/item/clothing/neck/roguetown/gorget
+	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
+	armor = /obj/item/clothing/suit/roguetown/armor/brigandine // Wear the King's colors.
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
+	beltl = /obj/item/keyring/guardcastle
+	belt = /obj/item/storage/belt/rogue/leather
+	beltr = /obj/item/rogueweapon/sword
+	backr = /obj/item/storage/backpack/rogue/satchel
+	backl = /obj/item/rogueweapon/shield/tower/metal
+	r_hand = /obj/item/rogueweapon/halberd

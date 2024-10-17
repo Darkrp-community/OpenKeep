@@ -221,6 +221,7 @@
 /obj/item/clothing/mask/rogue/kaizoku/menpo/steel/half
 	name = "steel menpo"
 	icon_state = "steelmenpo"
+	desc = "The lower part of a menpo portraying the maws of a Oni's head. It covers only the neck and the mouth, often used by warriors that cares about their sight."
 	max_integrity = 200
 	body_parts_covered = NECK|MOUTH
 	flags_cover = HEADCOVERSMOUTH | MASKCOVERSMOUTH
@@ -235,7 +236,6 @@
 /obj/item/clothing/mask/rogue/kaizoku/menpo/facemask/steel
 	name = "steel tribal mask"
 	icon_state = "steelmenpo_tribal"
-	desc = "The old, barely used mask of the almost extinct Merkpeople, with fish-like characteristics. Usually used by Kappas."
 	max_integrity = 200
 
 /obj/item/clothing/mask/rogue/kaizoku/menpo/facemask/tengu
@@ -266,7 +266,7 @@
 	name = "dishonor mask"
 	desc = "Blackpowder-infused, soul-bound veil for dishonored Abyssariads as a consequence for bringing shame to their clan and traditions, for those unentitled to be called Abyssariads - the Burakumins (non-persons), such as prostitutes and beggars. If broken, it will explode."
 	icon_state = "bmask"
-	max_integrity = 300 //Unique and very protective. You will need it.
+	max_integrity = 300 //Unique and very protective. You will need it. Trust me.
 	blocksound = PLATEHIT
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'

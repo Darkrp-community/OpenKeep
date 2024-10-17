@@ -14,6 +14,7 @@
 	"Kappa")
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/wokou
 	category_tags = list(CTAG_ADVENTURER)
+	pickprob = 100
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/wokou/pre_equip(mob/living/carbon/human/H) // Same as Warrior.
 	..()
@@ -74,7 +75,7 @@
 			backl = /obj/item/storage/backpack/rogue/satchel
 			beltr = /obj/item/quiver/arrows
 			if(prob(60))
-				beltl = /obj/item/rogueweapon/huntingknife/idagger/kunai //so they HAVE something to use in melee combat.
+				beltl = /obj/item/rogueweapon/huntingknife/kunai //so they HAVE something to use in melee combat.
 			else
 				beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/tanto // luckyroll. Now you have a short-short sword.
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)

@@ -1359,11 +1359,11 @@
 	worn_y_dimension = 64
 	sewrepair = TRUE
 
-/obj/item/clothing/head/roguetown/helmet/heavy/bronzepot
+/obj/item/clothing/head/roguetown/helmet/heavy/bronzepot //hopefully asking someone to draw this helmet.
 	name = "relic of urn"
 	icon_state = "bronzeb"
 	desc = "The eternal relic of the Champions of the Urn, used by demonslaying abyssariads, the extensions of Heavenly Emperor's will. It cannot be removed, forever one with the user - molten, grafted and skin-infused, but it bends light upon itself for clear sight."
-	smeltresult = /obj/item/ingot/steel //Intentional. The helmet is not actually made of bronze. It is just a lingering apotheosis-age term.
+	smeltresult = /obj/item/ingot/steel //Intentional. The helmet is not actually made of bronze. It is just a lingering apotheosis-age term for that internal-mirror design.
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
@@ -1371,7 +1371,7 @@
 	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	block2add = null //Can easily see - cannot remove the helmet.
+	block2add = null //Can easily see - cannot remove the helmet. This is your new skull.
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bronzepot/Initialize()
 	. = ..()

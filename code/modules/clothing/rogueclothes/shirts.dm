@@ -500,7 +500,7 @@
 /obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo
 	name = "kamishimo"
 	desc = "A formal kimono used by men, a short sleeveless garment made of hemp which usually comes together with a hakama, and worn on top of a kosode or kimono. To use one without cloth underneath, conveys a ronin nature."
-	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
+	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
 	icon_state = "kamishimo"
 	item_state = "kamishimo"
 	r_sleeve_status = SLEEVE_NORMAL
@@ -514,6 +514,10 @@
 
 /obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/ronin
 	color = "#526652"
+	colorable_var = FALSE
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/eidolon
+	color = "#613a3f"
 	colorable_var = FALSE
 
 /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt

@@ -769,6 +769,10 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	color = pick("#6b5445", "#435436", "#704542", "#79763f")
 	..()
 
+/obj/item/clothing/suit/roguetown/armor/leather/muneate/kappa
+	color = "#579447"
+	colorable_var = FALSE
+
 /obj/item/clothing/suit/roguetown/armor/plate/nanbando
 	name = "nanban-dou-sode"
 	desc = "Abyssariad steel cuirass, refined and with additional sode for protection. Rare and prized by High-ranking zamurais, this design has been acquired from raided humen settlements."
@@ -927,6 +931,10 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
 	icon_state = "kikko"
 	colorable_var = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/leather/studded/kikko/eidolon
+	color = "#613a3f"
+	colorable_var = FALSE
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/kikko/AdjustClothes(mob/user)
 	if(loc == user)
@@ -1155,6 +1163,14 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/random/Initialize()
 	color = pick("#6b5445", "#435436", "#704542", "#79763f")
 	..()
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/ronin/Initialize()
+	color = "#861e1e"
+	colorable_var = FALSE
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/eidolon
+	color = "#613a3f"
+	colorable_var = FALSE
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/deelcoat
 	name = "reinforced deel coat"

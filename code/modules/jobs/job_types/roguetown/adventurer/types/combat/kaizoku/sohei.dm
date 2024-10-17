@@ -1,6 +1,8 @@
 /datum/advclass/combat/abyssariad/sohei
 	name = "Senso Sohei"
-	tutorial = "Senso Soheis are the Abyssanctum war disciples from the Tideweaver branch, the direct continuation of the champions of old age. Their duty is to protect the shrines and spiritual entities from demonic corruption."
+	tutorial = "Senso Soheis are the Abyssanctum war disciples from the Tideweaver branch, the direct \
+	continuation of the champions of old age. Their duty is to protect the shrines and spiritual entities \
+	from demonic corruption."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Kitsune",
@@ -12,6 +14,7 @@
 	category_tags = list(CTAG_ADVENTURER)
 	vampcompat = FALSE
 	maximum_possible_slots = 2 //Only two, united with Yamabushi. Perhaps in the future they start as unpowered Church role? At least that's the case for Kaizoku maps.  
+	pickprob = 100
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/sohei
 	allowed_patrons = list(/datum/patron/divine/abyssor)
@@ -32,22 +35,22 @@
 	switch(background)
 		if("thunder")
 			neck = /obj/item/clothing/head/roguetown/soheicloth/thunder
-			pants = /obj/item/clothing/under/roguetown/kaizoku/tobi/thunder
+			pants = /obj/item/clothing/under/roguetown/tobi/thunder
 			belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/thunder
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/thunder
 		if("storm")
 			neck = /obj/item/clothing/head/roguetown/soheicloth/storm
-			pants = /obj/item/clothing/under/roguetown/kaizoku/tobi/storm
+			pants = /obj/item/clothing/under/roguetown/tobi/storm
 			belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/storm
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/storm
 		if("ocean")
 			neck = /obj/item/clothing/head/roguetown/soheicloth/ocean
-			pants = /obj/item/clothing/under/roguetown/kaizoku/tobi/ocean
+			pants = /obj/item/clothing/under/roguetown/tobi/ocean
 			belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/ocean
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/ocean
 		if("island")
 			neck = /obj/item/clothing/head/roguetown/soheicloth/island
-			pants = /obj/item/clothing/under/roguetown/kaizoku/tobi/island
+			pants = /obj/item/clothing/under/roguetown/tobi/island
 			belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/island
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/island
 	switch(weapontype)
@@ -62,7 +65,7 @@
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) //The true focus of this class.
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE) //I don't think they are deserving of bows tbh
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE) //I don't think they are deserving of bows, but Soheis irl also used them, soo...
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)

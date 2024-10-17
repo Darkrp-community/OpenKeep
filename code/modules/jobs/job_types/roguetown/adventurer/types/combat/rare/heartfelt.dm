@@ -19,12 +19,12 @@
 	head = /obj/item/clothing/head/roguetown/helmet/visored/knight/zunari/heartfelt
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot/gutal
 	pants = /obj/item/clothing/under/roguetown/tobi/random
-	cloak = /obj/item/clothing/cloak/heartfelt
+	cloak = /obj/item/clothing/cloak/newheartfelt
 	armor = /obj/item/clothing/suit/roguetown/armor/heartfelt/lord/kaizoku
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	beltl = /obj/item/scomstone
 	gloves = /obj/item/clothing/gloves/roguetown/leather/black
-	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
 	beltl = /obj/item/rogueweapon/sword/long/rider/tachi
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)

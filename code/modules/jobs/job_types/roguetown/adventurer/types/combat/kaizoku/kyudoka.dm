@@ -10,6 +10,7 @@
 	"Kappa")
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/kyudoka
 	category_tags = list(CTAG_ADVENTURER)
+	pickprob = 100
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/kyudoka/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -26,7 +27,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot/gutal
-	pants = /obj/item/clothing/under/roguetown/kaizoku/tobi/fur/random
+	pants = /obj/item/clothing/under/roguetown/tobi/fur/random
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/random //For the drip's sake that portrays their military side.
 	if(prob(23))
 		gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal
@@ -39,7 +40,7 @@
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long/yumi
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltr = /obj/item/flashlight/flare/torch/lantern
-	backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/huntingknife/idagger/kunai = 1)
+	backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/huntingknife/kunai = 1)
 	beltl = /obj/item/quiver/arrows
 	H.change_stat("perception", 2)
 	H.change_stat("endurance", 1)

@@ -12,7 +12,10 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Oni",
+		"Kitsune",
+		"Tengu"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/bandit
 	maximum_possible_slots = 5

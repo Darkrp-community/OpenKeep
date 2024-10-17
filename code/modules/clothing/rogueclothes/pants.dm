@@ -278,38 +278,38 @@
 	color = pick("#6b5445", "#435436", "#704542", "#79763f")
 	..()
 
-/obj/item/clothing/under/roguetown/kaizoku/tobi/thunder
+/obj/item/clothing/under/roguetown/tobi/thunder
 	name = "thunder tobi pants"
 	color = "#be8b48"
 
-/obj/item/clothing/under/roguetown/kaizoku/tobi/storm
+/obj/item/clothing/under/roguetown/tobi/storm
 	name = "storm tobi pants"
 	color = "#1a2677"
 
-/obj/item/clothing/under/roguetown/kaizoku/tobi/ocean
+/obj/item/clothing/under/roguetown/tobi/ocean
 	name = "ocean tobi pants"
 	color = "#56928a"
 
-/obj/item/clothing/under/roguetown/kaizoku/tobi/island
+/obj/item/clothing/under/roguetown/tobi/island
 	name = "island tobi pants"
 	color = "#bd3541"
 
-/obj/item/clothing/under/roguetown/kaizoku/tobi/dragonslayer
+/obj/item/clothing/under/roguetown/tobi/dragonslayer
 	desc = "Baggy pants of abyssariad design. This one is coated in asbestos, and may be just as dangerous."
 	color = "#3d4681"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 75,"energy" = 75, "bomb" = 75, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/under/roguetown/kaizoku/tobi/fur
+/obj/item/clothing/under/roguetown/tobi/fur
 	name = "fur tobi"
 	icon_state = "furpants"
 	desc = "A tobi made out of Dendor's beloved guardians - so Abyssor's beloved guardians can use it."
 	colorable_var = TRUE
 
-/obj/item/clothing/under/roguetown/kaizoku/tobi/fur/random/Initialize()
+/obj/item/clothing/under/roguetown/tobi/fur/random/Initialize()
 	color = pick("#6b5445", "#435436", "#704542", "#79763f")
 	..()
 
-/obj/item/clothing/under/roguetown/kaizoku/tobi/hakama
+/obj/item/clothing/under/roguetown/tobi/hakama
 	name = "hakama"
 	icon_state = "hakama"
 	alternate_worn_layer = SHOESLEEVE_LAYER
@@ -318,9 +318,13 @@
 	colorable_var = TRUE
 	alternate_worn_layer = SHOESLEEVE_LAYER
 
-/obj/item/clothing/under/roguetown/kaizoku/tobi/hakama/random/Initialize()
+/obj/item/clothing/under/roguetown/tobi/hakama/random/Initialize()
 	color = pick("#6b5445", "#435436", "#704542", "#79763f")
 	..()
+
+/obj/item/clothing/under/roguetown/tobi/hakama/eidolon
+	color = "#613a3f"
+	colorable_var = FALSE
 
 /obj/item/clothing/under/roguetown/kaizoku/shinobizubon
 	name = "shinobi zubon"

@@ -409,7 +409,7 @@
 	possible_item_intents = list(SPEAR_BASH)
 	gripped_intents = list(SPEAR_BASH,/datum/intent/spear/thrust/mancatcher)
 	name = "sasumata"
-	desc = "A unique polearm featuring a spring-action pincer on the end, lined with spikes designed to cause extreme pain, rather than extreme injury. Referred to as a man-catcher in the Humen tongue, it is a favored tool of slavers and bounty-hunters."
+	desc = "A unique polearm featuring a spring-action pincer on the end, lined with spikes designed to cause extreme pain, rather than extreme injury. Referred to as a man-catcher in the Humen tongue due to coastal kidnappings performed by abyssariad Wokous."
 	icon_state = "sasumata"
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 	wlength = WLENGTH_GREAT
@@ -451,7 +451,7 @@
 
 /obj/item/rogueweapon/spear/yari
 	name = "su yari"
-	desc = "A long, straight-headed spear of Abyssariad design, often used by sea raiders to fend off light cavalry on in-land offensives."
+	desc = "A long, straight-headed spear of Abyssariad design, often used by sea raiders to fend off light cavalry on in-land offensives. Well know for the 'Yari wall' strategy and for being 'Yarimazing' among Abyssariads."
 	icon_state = "suyari"
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
@@ -464,28 +464,26 @@
 	gripsprite = TRUE
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
-	minstr = 8
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
 	dropshrink = 0.8
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
-	wdefense = 5
 
 /obj/item/rogueweapon/spear/yari/katakama
 	name = "katakama yari"
 	desc = "An evolution of the su yari, recognizable for a single scythe-like tang perpendicular to the main point that allows for better defense against the likes of naginata."
 	icon_state = "katakamayari"
-	wdefense = 6
+	wdefense = 5
 	smeltresult = /obj/item/ingot/steel
 	max_blade_int = 150
 	max_integrity = 400
 
 /obj/item/rogueweapon/spear/yari/katakama/jumonji
 	name = "jumonji yari"
-	desc = "The design of the katakama yari taken to its logical conclusion, the jumonji yari features an elongated tang on each side that is the same length as the forward point. There is no polearm that offers better defense."
+	desc = "The design of the katakama yari taken to its logical conclusion, the jumonji yari features an elongated tang on each side that is the same length as the forward point. There is no polearms that offers better defense without harming efficiency."
 	icon_state = "jumonjiyari"
-	wdefense = 8
+	wdefense = 6
 	max_blade_int = 150
 	max_integrity = 430 //has more metal on this one.
 
@@ -494,10 +492,9 @@
 	desc = "Its earliest form being a tachi blade mounted upon a long wooden pole, the naginata was the first polearm to come into widespread use by the Abyssariad, who developed the weapon in order to better combat Humen and Elven cavalry."
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 	icon_state = "naginata"
-	smeltresult = /obj/item/ingot/iron
 	dropshrink = 0.8
 
-/obj/item/rogueweapon/halberd/bardiche/naginata/tsukushi //When smithed, make two instead of one.
+/obj/item/rogueweapon/halberd/bardiche/naginata/tsukushi //make two instead of only one
 	name = "tsukushi naginata"
 	desc = "A cheaper, easier to construct iron Naginata with a blade held by its guard instead of its tang. Likely developed from a scythe, the blade is easily found on poor, wandering monks."
 	force = 15
@@ -507,15 +504,11 @@
 	dropshrink = 0.8
 	wdefense = 4
 
-/obj/item/rogueweapon/halberd/bardiche/naginata/bisento
+/obj/item/rogueweapon/halberd/bisento
 	name = "bisento"
 	desc = "The Bisento is the direct evolution of the old, outdated Champion Guandao. Akin to a large cleaver or a broad axe."
-	force = 10
-	force_wielded = 40
 	icon_state = "bisento"
-	smeltresult = /obj/item/ingot/steel
 	dropshrink = 0.8
-	wdefense = 4
 
 /obj/item/rogueweapon/spear/obsidian
 	force = 15
@@ -539,4 +532,5 @@
 	name = "bo staff"
 	desc = "the bo, or 'abyssariad quarterstaff', is a simple weapon used in martial arts to entrap, strike and sweep the enemy."
 	icon_state = "bostaff"
-	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	bigboy = FALSE

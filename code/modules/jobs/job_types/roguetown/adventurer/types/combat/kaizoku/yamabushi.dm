@@ -3,7 +3,9 @@
 /datum/advclass/combat/abyssariad/yamabushi
 	name = "Yamabushi"
 	allowed_sexes = list(MALE, FEMALE)
-	tutorial = "The Yamabushi stands as the battle-hardened stewards and hermits of knowledge dedicated to society's welfare of Abyssanctum's faith. Their wisdom welcome other patron within their sacred ranks so their devotion further embrace the greater good. They meditate on mountains and endure long lengths each voyage."
+	tutorial = "The Yamabushi stands as the battle-hardened stewards and hermits of knowledge dedicated to society's \
+	welfare of Abyssanctum's faith. Their wisdom welcome other patron within their sacred ranks so their devotion \
+	further embrace the greater good. They meditate on mountains and endure long lengths each voyage."
 	allowed_races = list(
 	"Kitsune",
 	"Tengu",
@@ -13,6 +15,8 @@
 	maximum_possible_slots = 2 //Less slots. It is split with Sohei.
 	min_pq = 2
 	category_tags = list(CTAG_ADVENTURER)
+	pickprob = 100
+	vampcompat = FALSE
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/yamabushi/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -35,7 +39,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/nanbando
 	shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/monkgarb/random
 	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi
-	pants = /obj/item/clothing/under/roguetown/kaizoku/tobi/hakama/random
+	pants = /obj/item/clothing/under/roguetown/tobi/hakama/random
 	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor

@@ -1307,8 +1307,8 @@
 	icon_state = "tachi"
 	item_state = "tachi"
 	wbalance = 1
-	pixel_y = -14
-	pixel_x = -16
+	pixel_y = -16
+	pixel_x = -18
 
 /obj/item/rogueweapon/greatsword/odachi
 	force = 15

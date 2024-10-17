@@ -1,21 +1,23 @@
-/datum/advclass/combat/mage
-	name = "Mage"
-	tutorial = "Mages are usually grown-up apprentices of wizards. They are seeking adventure, using their arcyne knowledge to aid other adventurers."
-	allowed_sexes = list(MALE)
+/datum/advclass/combat/abyssariad/onmyoji //They will have their own magic in the future, most hopefully.
+	name = "Wandering Onmyoji"
+	tutorial = "The Pilgrim of the Pressuring Depth, spiritcallers of Abyssor, sage of the oceans. The Onmyojis are celestial magicians skilled in divination \
+	and manifesting the powers of the sea as intermediaries between the Abyssariads and the Abyssal realm. The Onmyojis are empowered in the same way Abyssor \
+	was empowered, in the depths of the Weeping God's pressuring tears."
+	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Kitsune",
 		"Tengu",
 		"Oni",
 		"Kappa"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/mage
+	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/onmyoji
 	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 2
 
 /datum/outfit/job/roguetown/adventurer/mage
-	allowed_patrons = list(/datum/patron/divine/noc)
+	allowed_patrons = list(/datum/patron/divine/abyssor)
 
-/datum/outfit/job/roguetown/adventurer/mage/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/adventurer/abyssariad/onmyoji/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/roguehood/mage
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
@@ -30,12 +32,6 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
-		if(H.age == AGE_OLD)
-			head = /obj/item/clothing/head/roguetown/wizhat/gen
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe
-			backl = /obj/item/storage/backpack/rogue/backpack
-			H.change_stat("intelligence", 1)
-			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
 		H.change_stat("strength", -2)
 		H.change_stat("intelligence", 3)
 		H.change_stat("constitution", -2)

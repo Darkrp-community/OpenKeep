@@ -10,7 +10,8 @@
 	sewrepair = TRUE
 	anvilrepair = null
 	smeltresult = /obj/item/ash
-
+	var/picked
+	var/colorable_var = FALSE
 
 //////////////////////////
 /// TABARD
@@ -27,7 +28,6 @@
 	body_parts_covered = CHEST|GROIN
 	boobed = TRUE
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
-	var/picked
 
 /obj/item/clothing/cloak/tabard/update_icon()
 	cut_overlays()
@@ -228,7 +228,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
-	var/picked
 
 /obj/item/clothing/cloak/stabard/attack_right(mob/user)
 	if(picked)
@@ -971,6 +970,30 @@
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
 	sleeved = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
 
+/obj/item/clothing/cloak/raincloak/guardiancloak
+	name = "guardian cloak"
+	desc = "The design of cloaks from Guardians of old. The symbol of the Eternity Eagle remains binding the cloth on the user, for those who protects the skies and oceans."
+	icon_state = "guardiancloak"
+	inhand_mod = FALSE
+	hoodtype = null
+	icon = 'icons/roguetown/kaizoku/clothingicon/cloaks.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS
+	sleeved = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+	colorable_var = TRUE
+
+/obj/item/clothing/cloak/raincloak/horocloak
+	name = "horo cloak"
+	desc = "A billowing cloak of war designed to catch the wind and scatter arrows that hit its user from the back."
+	icon_state = "horocloak"
+	inhand_mod = FALSE
+	hoodtype = null
+	icon = 'icons/roguetown/kaizoku/clothingicon/cloaks.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS
+	sleeved = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+	colorable_var = TRUE
+
 /obj/item/clothing/cloak/odoshisohei
 	name = "senior sohei odoshi"
 	desc = "Tightly packed lacing patterns usually used for binding leather and metal scales, now used to show affiliation to clans or shrines."
@@ -994,15 +1017,31 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
-	var/picked
+
+/obj/item/clothing/cloak/haramaki/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
 
 /obj/item/clothing/cloak/haramaki/attack_right(mob/user)
 	if(picked)
 		return
 	var/the_time = world.time
-	var/design = input(user, "Select a design.","Tabard Design") as null|anything in list("None","Split", "Quadrants", "Boxes", "Diamonds", "Middle-split")
+	var/design = input(user, "Select a design.","Tabard Design") as null|anything in list("None", "Symbol", "Split", "Quadrants", "Boxes", "Diamonds", "Middle-split")
 	if(!design)
 		return
+	if(world.time > (the_time + 30 SECONDS))
+		return
+	if(design == "Symbol")
+		design = null
+		design = input(user, "Select a symbol.","Tabard Design") as null|anything in list("chalice","psy","peace","z","imp","skull","widow","arrow")
+		if(!design)
+			return
+		design = "_[design]"
 	var/colorone = input(user, "Select a primary color.","Tabard Design") as null|anything in CLOTHING_COLOR_NAMES
 	if(!colorone)
 		return
@@ -1014,6 +1053,8 @@
 	if(world.time > (the_time + 30 SECONDS))
 		return
 	picked = TRUE
+	if(design != "None")
+		detail_tag = design
 	switch(design)
 		if("Split")
 			detail_tag = "_spl"
@@ -1036,3 +1077,108 @@
 /obj/item/clothing/cloak/haramaki/odoshi
 	name = "odoshi"
 	icon_state = "odoshi"
+
+/obj/item/clothing/cloak/newheartfelt
+	name = "heartfelt cloak"
+	desc = "Luxurious silk cloak adorned in regal red, the protective garment that has long portrayed the fiery spirit of the Heartfelt people, and their dutiful lords."
+	icon_state = "heartfelt_cloak"
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+	sleeved = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+	icon = 'icons/roguetown/kaizoku/clothingicon/cloaks.dmi'
+	sleevetype = "shirt"
+	slot_flags = ITEM_SLOT_CLOAK
+	allowed_sex = list(MALE, FEMALE)
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
+	sellprice = 50
+	nodismemsleeves = TRUE
+
+/obj/item/clothing/cloak/attack_right(mob/user)
+	if(colorable_var == TRUE)
+		if(picked)
+			return
+		var/the_time = world.time
+		if(world.time > (the_time + 30 SECONDS))
+			return
+		var/colorone = input(user, "Your emotions spreads your will.","Flush emotions within the threads.") as null|anything in CLOTHING_COLOR_NAMES
+		if(!colorone)
+			return
+		picked = TRUE
+		color = clothing_color2hex(colorone)
+		update_icon()
+		if(ismob(loc))
+			var/mob/L = loc
+			L.update_inv_shirt()
+			L.update_inv_armor()
+		return
+	else 
+		return
+
+/obj/item/clothing/cloak/jinbaori
+	name = "jinbaori"
+	icon_state = "jinbaori"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+	sleeved = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+	icon = 'icons/roguetown/kaizoku/clothingicon/cloaks.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+
+/obj/item/clothing/cloak/jinbaori/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+/obj/item/clothing/cloak/jinbaori/attack_right(mob/user)
+	if(picked)
+		return
+	var/the_time = world.time
+	var/design = input(user, "Select a design.","Tabard Design") as null|anything in list("None", "Split", "Quadrants", "Boxes", "Diamonds", "Middle-split")
+	if(!design)
+		return
+	if(world.time > (the_time + 30 SECONDS))
+		return
+	if(design == "Symbol")
+		design = null
+		design = input(user, "Select a symbol.","Tabard Design") as null|anything in list("chalice","psy","peace","z","imp","skull","widow","arrow")
+		if(!design)
+			return
+		design = "_[design]"
+	var/colorone = input(user, "Select a primary color.","Tabard Design") as null|anything in CLOTHING_COLOR_NAMES
+	if(!colorone)
+		return
+	var/colortwo
+	if(design != "None")
+		colortwo = input(user, "Select a primary color.","Tabard Design") as null|anything in CLOTHING_COLOR_NAMES
+		if(!colortwo)
+			return
+	if(world.time > (the_time + 30 SECONDS))
+		return
+	picked = TRUE
+	if(design != "None")
+		detail_tag = design
+	switch(design)
+		if("Split")
+			detail_tag = "_spl"
+		if("Quadrants")
+			detail_tag = "_quad"
+		if("Boxes")
+			detail_tag = "_box"
+		if("Diamonds")
+			detail_tag = "_dim"
+		if("Middle-split")
+			detail_tag = "_spl2"
+	color = clothing_color2hex(colorone)
+	if(colortwo)
+		detail_color = clothing_color2hex(colortwo)
+	update_icon()
+	if(ismob(loc))
+		var/mob/L = loc
+		L.update_inv_cloak()

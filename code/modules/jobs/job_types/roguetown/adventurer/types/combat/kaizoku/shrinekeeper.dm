@@ -5,7 +5,7 @@
 	name = "Shrinekeeper"
 	allowed_sexes = list(MALE, FEMALE)
 	tutorial = "The shrines needs to be cared of, and there is no one most suitable for such duty than the purifier branch. \
-	Those who knows the art of folding clothes while people are still in them. The Involuntary Yoga Practicers.\
+	Those who knows the art of folding clothes while people are still in them. The Involuntary Yoga Practicers. Bokh and Bajutsu.\
 	They perform rituals to submit demonic spirits just as much they submit mortals with martial arts."
 	allowed_races = list(
 	"Kitsune",
@@ -15,11 +15,12 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/shrinekeepers
 	category_tags = list(CTAG_ADVENTURER)
 	vampcompat = FALSE
+	pickprob = 100
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/shrinekeepers
 	allowed_patrons = list(/datum/patron/divine/abyssor)
 
-/datum/outfit/job/roguetown/adventurer/monk/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/adventurer/abyssariad/shrinekeepers/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/takuhatsugasa
 	neck = /obj/item/clothing/neck/roguetown/psicross/abyssor
@@ -30,7 +31,7 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backr = /obj/item/rogueweapon/woodstaff/bostaff
-    shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/monkgarb
+	shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/monkgarb/random
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
@@ -38,7 +39,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, pick(1,1,2), TRUE) // Wood staff
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/carpentry, 1, TRUE) //They lose 'Medicine' to have 'Carpetry', because Shrinekeepers... repair shrines.
+		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE) //They lose 'Medicine' to have 'Carpetry', because Shrinekeepers... repair shrines.
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
 

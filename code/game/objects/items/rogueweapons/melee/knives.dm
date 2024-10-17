@@ -414,15 +414,13 @@
 // This is solely for SPRITES. The code is free for the taking.	 //
 ///////////////////////////////////////////////////////////////////
 
-/obj/item/rogueweapon/huntingknife/idagger/kunai
+/obj/item/rogueweapon/huntingknife/kunai //Normal hunting knife with a unique special use.
 	name = "kunai"
 	desc = "A simple stabbing weapon made of iron which originated as a masonry or gardening tool, useful for climbing walls in similar ways to pitons."
-	force = 12
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	icon_state = "kunai"
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/tanto
-	force = 14
 	name = "tanto"
 	icon_state = "tanto"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'

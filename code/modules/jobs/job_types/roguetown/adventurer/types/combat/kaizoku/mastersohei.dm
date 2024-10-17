@@ -1,6 +1,8 @@
 /datum/advclass/combat/abyssariad/mastersohei
 	name = "Jushoku Sohei"
-	tutorial = "High-ranking Sohei who hold authority within multiple temples and Soheis retainers within their influence. Often in charge of militant activities, these senior soheis are in search of demonic corruption to dismantle - or involve themselves in spiritual matters."
+	tutorial = "High-ranking Sohei who hold authority within multiple temples and Soheis retainers within their influence. \
+	Often in charge of militant activities, these senior soheis are in search of demonic corruption to dismantle - \
+	or involve themselves in spiritual matters with a iron fist."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Kitsune",
@@ -10,7 +12,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/mastersohei
 	maximum_possible_slots = 1
-	pickprob = 15
+	pickprob = 100
 	category_tags = list(CTAG_ADVENTURER)
 	vampcompat = FALSE
 
@@ -27,7 +29,7 @@
 	cloak = /obj/item/clothing/cloak/odoshisohei
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
 	gloves = /obj/item/clothing/gloves/roguetown/chain/kikko
-	backl = /obj/item/rogueweapon/halberd/bardiche/naginata
+	backl = /obj/item/rogueweapon/halberd/bisento
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
