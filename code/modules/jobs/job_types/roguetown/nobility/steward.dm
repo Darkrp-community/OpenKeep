@@ -28,7 +28,7 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random
 	else
-		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/random
+		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/tuniclords
 		pants = /obj/item/clothing/under/roguetown/tights
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots

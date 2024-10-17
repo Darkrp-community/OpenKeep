@@ -185,6 +185,24 @@
 	color = pick(CLOTHING_PURPLE, CLOTHING_RED, CLOTHING_BLUE, CLOTHING_GREEN)
 	..()
 
+/obj/item/clothing/suit/roguetown/shirt/tunic/tuniclords
+	color = CLOTHING_PURPLE
+
+/obj/item/clothing/suit/roguetown/shirt/tunic/tuniclords/Initialize()
+	..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+	else
+		GLOB.lordcolor += src
+
+/obj/item/clothing/suit/roguetown/shirt/tunic/tuniclords/lordcolor(primary,secondary)
+	if(secondary)
+		color = secondary
+
+/obj/item/clothing/suit/roguetown/shirt/tunic/tuniclords/Destroy()
+	GLOB.lordcolor -= src
+	return ..()
+
 /obj/item/clothing/suit/roguetown/shirt/dress
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "dress"
