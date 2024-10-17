@@ -35,11 +35,12 @@
 #define TRAIT_BARDIC_TRAINING			"Bardic Training"
 #define TRAIT_GRAVEROBBER				"Graverobber"	// Prevents getting the cursed debuff when unearthing a grave, but permanent -1 LUC to whoever has it.
 
-#define TRAIT_MISSING_NOSE "Missing Nose" //halved stamina regeneration
-#define TRAIT_DISFIGURED "Disfigured"
-#define TRAIT_SPELLCOCKBLOCK "Bewitched" //prevents spellcasting
-#define TRAIT_ANTIMAGIC	"Anti-Magic"
-#define TRAIT_SHOCKIMMUNE "Shock Immunity"
+#define TRAIT_BLESSED					"Once blessed"	// prevents blessings stackings
+#define TRAIT_MISSING_NOSE				"Missing Nose" //halved stamina regeneration
+#define TRAIT_DISFIGURED				"Disfigured"
+#define TRAIT_SPELLCOCKBLOCK			"Bewitched" //prevents spellcasting
+#define TRAIT_ANTIMAGIC					"Anti-Magic"
+#define TRAIT_SHOCKIMMUNE				"Shock Immunity"
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"

@@ -62,11 +62,13 @@
 /obj/structure/kneestingers/New(loc, obj/item/seeds/newseed, mutate_stats)
 	..()
 	set_light(1.5, 1.5, "#d4fcac")
-
-	icon_state = "glowshroom[rand(1,3)]"
-
-	pixel_x = rand(-4, 4)
-	pixel_y = rand(0,5)
+	if(icon_state == "glowshroom1" )
+		icon_state = "glowshroom[rand(1,3)]"
+		pixel_x = rand(-4, 4)
+		pixel_y = rand(0,5)
+	else
+		pixel_x = rand(-2, 2)
+		pixel_y = rand(0,2)
 
 /obj/structure/kneestingers/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	if(damage_type == BURN && damage_amount)
@@ -82,3 +84,18 @@
 	var/obj/effect/decal/cleanable/molten_object/I = new (get_turf(src))
 	I.desc = ""
 	qdel(src)
+
+// -------------- Decaying Kneestingers (for spells and such) -----------------------
+/obj/structure/kneestingers/decaying
+/obj/structure/kneestingers/decaying/Initialize()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(stingers_decay)), 5 MINUTES)
+	icon_state = "glowshroom_A[rand(1,3)]"
+
+/obj/structure/kneestingers/decaying/proc/stingers_decay()
+	playsound(src,"plantcross", 100, FALSE)
+	icon_state = "[icon_state]_dying"
+	sleep(5)
+	qdel(src)
+
+

@@ -266,15 +266,14 @@
 //................ Briar Thorns ............... //	- Basic Dendor Briar
 /obj/item/clothing/head/roguetown/padded/briarthorns
 	name = "briar thorns"
-	desc = "Worn by the faithful of Dendor."
+	desc = "The pain it causes perhaps can distract from the whispers of a mad God overpowering your sanity..."
 	icon_state = "briarthorns"
 
 /obj/item/clothing/head/roguetown/padded/briarthorns/pickup(mob/living/user)
-	if(!istype(user.patron, /datum/patron/divine/dendor))
-		to_chat(user, span_warning ("The thorns prick me."))
-		user.adjustBruteLoss(5)
-	else
-		. = ..()
+	. = ..()
+	to_chat(user, span_warning ("The thorns prick me."))
+	user.adjustBruteLoss(4)
+
 
 //................ Face of the Forest ............... //	- Upgraded Dendor headwear
 /obj/item/clothing/head/roguetown/padded/faceforest
