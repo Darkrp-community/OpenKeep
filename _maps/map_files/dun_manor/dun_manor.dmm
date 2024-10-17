@@ -9725,15 +9725,6 @@
 /obj/item/paper/scroll,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/magician)
-"jYA" = (
-/obj/structure/fluff/walldeco/customflag{
-	pixel_y = 32
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/tile/masonic{
-	dir = 4
-	},
-/area/rogue/indoors/town/manor)
 "jYO" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_y = 32
@@ -66017,8 +66008,8 @@ cYB
 hsK
 hIk
 lPp
-fmc
-jYA
+tca
+ujl
 pKq
 fmc
 kUZ
@@ -66174,7 +66165,7 @@ eHX
 oTI
 wKp
 eNS
-xuJ
+pKq
 oBr
 ujl
 xuJ
@@ -66802,7 +66793,7 @@ nSd
 oTI
 tiq
 cSR
-ffK
+dEj
 tca
 cSR
 ffK
@@ -66959,8 +66950,8 @@ cYB
 gMZ
 eUQ
 jaH
-fmc
-sVH
+tca
+cSR
 dEj
 fmc
 sVH
@@ -90353,7 +90344,7 @@ fmc
 fmc
 tbN
 tbN
-kOL
+tbN
 tbN
 tbN
 kOL
@@ -91295,7 +91286,7 @@ fmc
 fmc
 tbN
 tbN
-kOL
+tbN
 tbN
 tbN
 kOL
