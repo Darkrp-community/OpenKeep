@@ -56,7 +56,7 @@
 
 /atom/movable/screen/alert/status_effect/buff/clean_plus
 	name = "Clean"
-	desc = "<span class='nicegreen'>I feel very refreshed.</span>\n"
+	desc = span_nicegreen("I feel very refreshed.")
 	icon_state = "buff"	// add custom icon TO DO
 
 
