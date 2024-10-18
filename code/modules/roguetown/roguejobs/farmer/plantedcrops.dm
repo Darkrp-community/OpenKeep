@@ -139,7 +139,7 @@
 			gn = 1
 			if(growth >= 100)
 				gn = 2
-		var/image/crop_overlay = image('icons/roguetown/misc/crops.dmi', "[myseed.species][gn]", "layer"=2.91)
+		var/image/crop_overlay = image('icons/roguetown/misc/foliage.dmi', "[myseed.species][gn]", "layer"=2.91)
 		layz += crop_overlay
 
 	if(weeds >= 50) //put the weeds under

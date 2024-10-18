@@ -8528,7 +8528,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
 "Da" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "Db" = (
@@ -8547,7 +8547,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
 "De" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "Df" = (
@@ -8588,7 +8588,7 @@
 /turf/open/water/sewer,
 /area/rogue/outdoors/rtfield)
 "Dn" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/rtfield)
 "Do" = (
@@ -8625,7 +8625,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
 "Du" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/sewer,
 /area/rogue/outdoors/rtfield)
 "Dv" = (
@@ -9409,7 +9409,7 @@
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church/chapel)
 "Gc" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/swamp,
 /area/rogue/outdoors/rtfield)
 "Gd" = (

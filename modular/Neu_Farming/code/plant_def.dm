@@ -113,7 +113,7 @@
 
 //................ Perennial plants ...............................	(Don't need replanting but generally needs more nutrition refills)
 /datum/plant_def/berry
-	name = "berry bush"
+	name = "jacksberry bush"
 	icon_state = "berry"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/berries/rogue
 	uproot_loot = list(/obj/item/grown/log/tree/stick)
@@ -123,7 +123,7 @@
 	maturation_nutrition = HUNGRINESS_DEMANDING
 
 /datum/plant_def/berry_poison
-	name = "berry bush"
+	name = "jacksberry bush"
 	icon_state = "berry"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
 	uproot_loot = list(/obj/item/grown/log/tree/stick)

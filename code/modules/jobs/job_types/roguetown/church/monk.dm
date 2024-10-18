@@ -15,7 +15,7 @@
 		"Aasimar"
 	)
 	tutorial = "Chores, exercise, prayer... and more chores. You are a humble acolyte at the temple in Rockhill, not yet a trained guardian or an ordained priest. But who else would keep the fires lit and the floors clean?"
-	allowed_patrons = ALL_CLERIC_PATRONS
+	allowed_patrons = ALL_TEMPLE_PATRONS
 	outfit = /datum/outfit/job/roguetown/monk
 
 	display_order = JDO_MONK
@@ -43,10 +43,6 @@
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
-		if("Dendor")
-			head = /obj/item/clothing/head/roguetown/padded/briarvisage
-			neck = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 		if("Necra")
 			head = /obj/item/clothing/head/roguetown/padded/deathshroud
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra

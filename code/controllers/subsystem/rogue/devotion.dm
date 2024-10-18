@@ -54,6 +54,7 @@
 			if(progression >= CLERIC_REQ_3)
 				level = CLERIC_T3
 				usr.mind.AddSpell(new P.t3)
+				to_chat(usr, span_notice("All my Gods miracles are now open to me..."))
 				return
 		if(CLERIC_T3) // already maxed out
 			return
