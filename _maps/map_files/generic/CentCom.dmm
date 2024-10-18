@@ -1576,13 +1576,13 @@
 /obj/item/grown/log/tree/stick,
 /obj/item/grown/log/tree/stick,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "ht" = (
 /obj/machinery/anvil/crafted,
 /obj/item/rogueweapon/hammer,
 /obj/item/rogueweapon/tongs,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "hy" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/keyring,
@@ -1989,7 +1989,7 @@
 "nN" = (
 /obj/machinery/light/rogue/forge,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "nO" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -2053,7 +2053,7 @@
 "oV" = (
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "pa" = (
 /obj/item/rogueweapon/flail,
 /obj/item/rogueweapon/flail,
@@ -2098,7 +2098,7 @@
 "pu" = (
 /obj/structure/fluff/grindwheel,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "pA" = (
 /obj/effect/landmark/vteleportsending,
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
@@ -2843,7 +2843,7 @@
 /area/rogue/indoors/bandit_lair)
 "yR" = (
 /turf/closed/wall/mineral/rogue/wood,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "zc" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/roguecoin/silver/pile,
@@ -3100,7 +3100,7 @@
 /area/rogue/outdoors/woods)
 "DA" = (
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "Eg" = (
 /obj/structure/table/wood/fancy/orange,
 /obj/item/clothing/suit/roguetown/armor/rare/dwarfplate,
@@ -3131,11 +3131,11 @@
 /area/rogue/outdoors/bog/inhumen_camp)
 "Ev" = (
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "Ew" = (
 /obj/item/roguebin/water,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "EC" = (
 /obj/structure/toilet,
 /turf/open/floor/rogue/dirt/road,
@@ -3269,7 +3269,7 @@
 	pixel_y = -1
 	},
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "GP" = (
 /obj/item/rogueweapon/shovel,
 /turf/open/floor/rogue/dirt/road,
@@ -3563,7 +3563,7 @@
 	pixel_y = -1
 	},
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "KM" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 1
@@ -3821,7 +3821,7 @@
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/stoneaxe,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "Ph" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors)
@@ -4054,7 +4054,7 @@
 "Se" = (
 /obj/machinery/light/rogue/smelter,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "Sm" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/ruinedwood/turned/darker,
@@ -4475,7 +4475,7 @@
 "WI" = (
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "WL" = (
 /obj/structure/flora/roguetree,
 /turf/open/floor/rogue/grass,
@@ -4502,7 +4502,7 @@
 /obj/item/rogueore/iron,
 /obj/item/rogueore/iron,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "Xp" = (
 /obj/structure/table/wood{
 	dir = 5;
