@@ -330,9 +330,9 @@
 		to_chat(victim, "<span class='notice'>I feel a dark presence from [A.name].</span>")
 
 /obj/item/voodoo/suicide_act(mob/living/carbon/user)
-    user.visible_message("<span class='suicide'>[user] links the voodoo doll to [user.p_them()]self and sits on it, infinitely crushing [user.p_them()]self! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-    user.gib()
-    return(BRUTELOSS)
+	user.visible_message("<span class='suicide'>[user] links the voodoo doll to [user.p_them()]self and sits on it, infinitely crushing [user.p_them()]self! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.gib()
+	return(BRUTELOSS)
 
 /obj/item/voodoo/fire_act(added, maxstacks)
 	if(target)

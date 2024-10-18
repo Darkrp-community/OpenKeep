@@ -11,7 +11,7 @@
 		"Dark Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/assassin
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 2
 	min_pq = 0
 	pickprob = 100
@@ -85,7 +85,7 @@
 				neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 				head = /obj/item/clothing/head/roguetown/fisherhat
 				mouth = /obj/item/rogueweapon/huntingknife
-				armor = /obj/item/clothing/suit/roguetown/armor/workervest
+				armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 				backl = /obj/item/storage/backpack/rogue/satchel
 				belt = /obj/item/storage/belt/rogue/leather/assassin
 				backr = /obj/item/fishingrod
@@ -94,7 +94,7 @@
 				backpack_contents = list(/obj/item/rogueweapon/huntingknife = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)
 			else
 				shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
-				armor = /obj/item/clothing/suit/roguetown/armor/workervest
+				armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 				shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 				neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 				head = /obj/item/clothing/head/roguetown/fisherhat
@@ -125,7 +125,7 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, -2, TRUE)
 			head = /obj/item/clothing/head/roguetown/armingcap
 			pants = /obj/item/clothing/under/roguetown/trou
-			armor = /obj/item/clothing/suit/roguetown/armor/workervest
+			armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 			belt = /obj/item/storage/belt/rogue/leather/assassin
@@ -173,34 +173,35 @@
 			belt = /obj/item/storage/belt/rogue/leather/assassin
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 			pants = /obj/item/clothing/under/roguetown/trou
-			head = /obj/item/clothing/head/roguetown/armingcap
+			head = /obj/item/clothing/head/roguetown/strawhat
 			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			backr = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+			backr = /obj/item/rogueweapon/hoe
 			backl = /obj/item/storage/backpack/rogue/satchel
 			neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-			armor = /obj/item/clothing/suit/roguetown/armor/workervest
-			mouth = /obj/item/rogueweapon/huntingknife
+			armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
+			beltl = /obj/item/rogueweapon/sickle
 			beltr = /obj/item/flint
+			var/obj/item/rogueweapon/pitchfork/P = new()
+			H.put_in_hands(P, forced = TRUE)
 			if(H.gender == FEMALE)
+				head = /obj/item/clothing/head/roguetown/armingcap
 				armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 				shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 				pants = null
-			backpack_contents = list(/obj/item/neuFarm/seed/wheat=1,/obj/item/neuFarm/seed/apple=1,/obj/item/ash=1)
-			beltl = /obj/item/rogueweapon/sickle
-			backr = /obj/item/rogueweapon/pitchfork
+			backpack_contents = list(/obj/item/neuFarm/seed/wheat=1,/obj/item/neuFarm/seed/apple=1,/obj/item/ash=1,/obj/item/rogueweapon/huntingknife/villager=1)
 		if("Woodcutter")
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE) //Use the axe...
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, -2, TRUE)
 			belt = /obj/item/storage/belt/rogue/leather/assassin
 			shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 			pants = /obj/item/clothing/under/roguetown/trou
-			head = /obj/item/clothing/head/roguetown/roguehood
+			head = /obj/item/clothing/head/roguetown/roguehood/random
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 			backr = /obj/item/storage/backpack/rogue/satchel
 			neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			armor = /obj/item/clothing/suit/roguetown/armor/workervest
+			armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 			beltr = /obj/item/rogueweapon/woodcut
 			beltl = /obj/item/rogueweapon/huntingknife
 			backpack_contents = list(/obj/item/flint = 1)

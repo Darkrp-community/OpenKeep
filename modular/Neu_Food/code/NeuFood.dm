@@ -32,11 +32,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
 	bitesize = 3
 	eat_effect = /datum/status_effect/debuff/uncookedfood
-
-/obj/item/reagent_containers/food/snacks/rogue/foodbase/New() // disables the random placement on creation for this object MAYBE OBSOLETE?
-	..()
-	pixel_x = 0
-	pixel_y = 0
+	do_random_pixel_offset = FALSE // disables the random placement on creation for this object
 
 /obj/item/reagent_containers/food/snacks/rogue/preserved // just convenient way to group food with long rotprocess
 	bitesize = 3
@@ -182,18 +178,18 @@
 /obj/item/reagent_containers/glass/bowl/update_icon()
 	cut_overlays()
 	if(reagents)
-		if(reagents.total_volume > 0) 
-			if(reagents.total_volume <= 11) 
+		if(reagents.total_volume > 0)
+			if(reagents.total_volume <= 11)
 				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_low")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
-		if(reagents.total_volume > 11) 
-			if(reagents.total_volume <= 22) 
+		if(reagents.total_volume > 11)
+			if(reagents.total_volume <= 22)
 				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_half")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
-		if(reagents.total_volume > 22) 
-			if(reagents.has_reagent(/datum/reagent/consumable/soup/oatmeal, 10)) 
+		if(reagents.total_volume > 22)
+			if(reagents.has_reagent(/datum/reagent/consumable/soup/oatmeal, 10))
 				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_oatmeal")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
@@ -207,7 +203,7 @@
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				icon_state = "bowl_steam"
 				add_overlay(filling)
-			else 
+			else
 				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_full")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
@@ -281,7 +277,7 @@
 				return
 
 /obj/item/reagent_containers/glass/bowl/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
-	if(reagents.total_volume > 5) 
+	if(reagents.total_volume > 5)
 		new /obj/effect/decal/cleanable/food/mess/soup(get_turf(src))
 	..()
 
@@ -317,14 +313,14 @@
 \-------------*/	// These are for the pot, if more vegetables are added and need to be integrated into the pot brewing you need to add them here
 
 /datum/reagent/consumable/soup // so you get hydrated without the flavor system messing it up. Works like water with less hydration
-	var/hydration = 6
+	var/hydration = 5
 /datum/reagent/consumable/soup/on_mob_life(mob/living/carbon/M)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
 			H.adjust_hydration(hydration)
 		if(M.blood_volume < BLOOD_VOLUME_NORMAL)
-			M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_NORMAL)
+			M.blood_volume = min(M.blood_volume+6, BLOOD_VOLUME_NORMAL)
 	..()
 
 /datum/reagent/consumable/soup/oatmeal
@@ -332,7 +328,7 @@
 	description = "Fitting for a peasant."
 	reagent_state = LIQUID
 	color = "#c38553"
-	nutriment_factor = 12
+	nutriment_factor = 10
 	metabolization_rate = 0.5 // half as fast as normal, last twice as long
 	taste_description = "oatmeal"
 	taste_mult = 3
@@ -342,7 +338,7 @@
 	name = "vegetable soup"
 	description = ""
 	reagent_state = LIQUID
-	nutriment_factor = 10
+	nutriment_factor = 8
 	taste_mult = 4
 	hydration = 8
 
@@ -371,7 +367,7 @@
 	description = "A thick cheese soup. Creamy and comforting."
 	color = "#c4be70"
 	reagent_state = LIQUID
-	nutriment_factor = 14
+	nutriment_factor = 12
 	taste_description = "creamy cheese"
 	taste_mult = 4
 	hydration = 4
@@ -380,7 +376,7 @@
 	name = "thick stew"
 	description = "All manners of edible bits went into this."
 	reagent_state = LIQUID
-	nutriment_factor = 20
+	nutriment_factor = 16
 	taste_mult = 4
 
 /datum/reagent/consumable/soup/stew/chicken
@@ -399,7 +395,7 @@
 	color = "#5f4a0e"
 	taste_description = "rich truffles"
 
-/datum/reagent/water/spicy // filler, not important 
+/datum/reagent/water/spicy // filler, not important
 	taste_description = "something spicy"
 	color = "#ea9f9fc6"
 
@@ -489,7 +485,7 @@
 		return ..()
 	if(isturf(loc)&& (!found_table))
 		to_chat(user, "<span class='notice'>Need a table...</span>")
-		return ..()	
+		return ..()
 	if(!R.reagents.has_reagent(/datum/reagent/water, 10))
 		to_chat(user, "<span class='notice'>Needs more water to work it.</span>")
 		return TRUE
@@ -500,7 +496,7 @@
 		desc = "Destined for greatness, at your hands."
 		R.reagents.remove_reagent(/datum/reagent/water, 10)
 		water_added = TRUE
-		color = "#d9d0cb"	
+		color = "#d9d0cb"
 	return TRUE
 
 /obj/item/reagent_containers/powder/flour/attack_hand(mob/user)
@@ -718,7 +714,7 @@
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
 
 	else
-		return ..()	
+		return ..()
 
 
 
@@ -765,7 +761,7 @@
 /*	.................   Decent shelflife   ................... */
 
 * Fresh cheese
-* Mixed dishes with meats 
+* Mixed dishes with meats
 * Fried meats & eggs
 
 /*	.................   Short shelflife   ................... */

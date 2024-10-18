@@ -184,7 +184,7 @@
 					attacker_skill = U.mind.get_skill_level(/datum/skill/combat/unarmed)
 					prob2defend -= (attacker_skill * 20)
 
-			if(!(mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 50% defense malus if so
+			if(!(mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 20% defense malus if so
 				prob2defend *= 0.8
 			prob2defend = clamp(prob2defend, 5, 95)
 			if(src.client?.prefs.showrolls)
@@ -202,7 +202,7 @@
 
 			if(weapon_parry == TRUE)
 				if(do_parry(used_weapon, drained, user)) //show message
-					 // defender skill gain
+					// defender skill gain
 					if((mobility_flags & MOBILITY_STAND) && attacker_skill && (defender_skill < attacker_skill - SKILL_LEVEL_NOVICE))
 						// No duping exp gains by attacking with a shield on active hand
 						if(used_weapon == offhand && istype(used_weapon, /obj/item/rogueweapon/shield))
@@ -411,7 +411,7 @@
 						if(H.mind)
 							prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
 			if(!(L.mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 50% defense malus if so
-				prob2defend *= 0.8
+				prob2defend *= 0.5
 			prob2defend = clamp(prob2defend, 5, 95)
 			if(client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")

@@ -4,7 +4,9 @@
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "dye_bin_full"
 	density = TRUE
-	anchored = TRUE
+	anchored = FALSE
+	max_integrity = 80
+	attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
 	var/atom/movable/inserted
 	var/activecolor = "#FFFFFF"
 	/// Allow holder'd mobs
@@ -22,6 +24,9 @@
 			/obj/item/clothing/head/roguetown/headband,
 			/obj/item/clothing/head/roguetown/armingcap,
 			/obj/item/clothing/head/roguetown/chaperon,
+			/obj/item/clothing/cloak/apron/cook,
+			/obj/item/clothing/cloak/apron/waist,
+			/obj/item/clothing/head/roguetown/cookhat,
 			/obj/item/storage/belt/rogue/leather/rope,
 			/obj/item/storage/belt/rogue/leather/cloth,
 			/obj/item/clothing/shoes/roguetown/simpleshoes,
@@ -30,7 +35,7 @@
 			/obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 			)
 	var/static/list/selectable_colors = list(
-  		"White" = "#ffffff",
+		"White" = "#ffffff",
 		"Black" = "#414143",
 		"Light Grey" = "#999999",
 		"Mage Grey" = "#6c6c6c",
@@ -65,7 +70,19 @@
 		"Russet" = "#7f461b"
 		)
 /obj/machinery/gear_painter/Destroy()
-	inserted.forceMove(drop_location())
+	inserted?.forceMove(drop_location())
+	return ..()
+
+/obj/machinery/gear_painter/Destroy()
+	icon_state = "washbin_destroy"
+	density = FALSE
+	GLOB.machines.Remove(src)
+	if(!speed_process)
+		STOP_PROCESSING(SSmachines, src)
+	else
+		STOP_PROCESSING(SSfastprocess, src)
+	dropContents()
+	playsound(get_turf(src), 'sound/combat/hits/onwood/destroywalldoor.ogg', 40, TRUE, -1)
 	return ..()
 
 /obj/machinery/gear_painter/attackby(obj/item/I, mob/living/user)
@@ -91,8 +108,12 @@
 	return FALSE
 
 /obj/machinery/gear_painter/ui_interact(mob/user)
-	if(!is_operational())
+	if( user.used_intent.type == /datum/intent/grab )
 		return
+	if( user.used_intent.type == /datum/intent/unarmed/shove )
+		return ..()
+	if(!is_operational())
+		return ..()
 	user.set_machine(src)
 	var/list/dat = list("<TITLE>Dye Station Control Panel</TITLE><BR>")
 	if(!inserted)

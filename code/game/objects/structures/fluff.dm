@@ -226,7 +226,7 @@
 		if(!(M.mobility_flags & MOBILITY_STAND))
 			if(passcrawl)
 				return TRUE
-	if(icon_state == "woodrailing" && dir in CORNERDIRS)
+	if(icon_state == "woodrailing" && (dir in CORNERDIRS))
 		var/list/baddirs = list()
 		switch(dir)
 			if(SOUTHEAST)
@@ -257,7 +257,7 @@
 		if(!(M.mobility_flags & MOBILITY_STAND))
 			if(passcrawl)
 				return TRUE
-	if(icon_state == "woodrailing" && dir in CORNERDIRS)
+	if(icon_state == "woodrailing" && (dir in CORNERDIRS))
 		var/list/baddirs = list()
 		switch(dir)
 			if(SOUTHEAST)
@@ -384,8 +384,7 @@
 		return 1
 	if(mover.throwing && !ismob(mover))
 		return prob(66)
-	return !density
-	..()
+	return ..()
 
 /obj/structure/bars/bent
 	icon_state = "barsbent"
@@ -1031,7 +1030,7 @@
 							I = new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(user.loc)
 						if(2)
 							if(HAS_TRAIT(user, TRAIT_MEDIUMARMOR))
-								I = new /obj/item/clothing/suit/roguetown/armor/plate/scale(user.loc)
+								I = new /obj/item/clothing/suit/roguetown/armor/medium/scale(user.loc)
 							else
 								I = new /obj/item/clothing/suit/roguetown/armor/chainmail/iron(user.loc)
 						if(4)

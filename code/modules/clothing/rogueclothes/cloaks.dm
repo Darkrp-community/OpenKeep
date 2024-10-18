@@ -777,10 +777,6 @@
 	return ..()
 
 
-/obj/item/clothing/cloak/cape/puritan
-	icon_state = "puritan_cape"
-	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
-
 /obj/item/clothing/cloak/cape/archivist
 	icon_state = "puritan_cape"
 	color = CLOTHING_BLACK
@@ -936,6 +932,18 @@
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+//.............inquisitor cloaks......... (For inquisitors..)
+/obj/item/clothing/cloak/cape/puritan
+	icon_state = "puritan_cape"
+	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
+
+/obj/item/clothing/cloak/cape/inquisitor
+	name = "Inquisitors Cloak"
+	desc = "A time honored cloak Valorian design, used by founding clans of the Valorian Lodge"
+	icon_state = "inquisitor_cloak"
+	icon = 'icons/roguetown/clothing/cloaks.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
 
 // Dumping old black knight stuff here
 /obj/item/clothing/cloak/cape/blkknight
@@ -983,21 +991,22 @@
 	sellprice = 666
 	static_price = TRUE
 
-/obj/item/clothing/suit/roguetown/armor/plate/blkknight
-	slot_flags = ITEM_SLOT_ARMOR
-	name = "blacksteel plate"
-	body_parts_covered = CHEST|GROIN|VITALS|ARMS
-	r_sleeve_status = SLEEVE_NOMOD
-	l_sleeve_status = SLEEVE_NOMOD
-	armor_class = ARMOR_CLASS_MEDIUM
-	icon_state = "bkarmor"
-	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
-	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
-
 /obj/item/clothing/shoes/roguetown/boots/armor/blkknight
 	name = "blacksteel boots"
 	icon_state = "bkboots"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
+
+
+/obj/item/clothing/cloak/volfmantle
+	name = "volf mantle"
+	desc = "A warm cloak made using the hide and head of a slain volf. A status symbol if ever there was one."
+	color = null
+	icon_state = "volfpelt"
+	item_state = "volfpelt"
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	inhand_mod = FALSE
+	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK

@@ -1,6 +1,6 @@
 
 /obj/item/roguekey
-	name = "key"
+	name = "old key"
 	desc = "A simple key of simple uses."
 	icon_state = "iron"
 	icon = 'icons/roguetown/items/keys.dmi'
@@ -74,7 +74,6 @@
 	lockid = "butler"
 
 /obj/item/roguekey/bandit // use the old key name for various old keys for dungeons etc, less dumb than bandit keys having a label on it saying bandit key
-	name = "old key"
 	icon_state = "mazekey"
 	lockid = "banditcamp"
 
@@ -182,11 +181,10 @@
 
 //vampire mansion//
 /obj/item/roguekey/vampire
-	name = "mansion key"
 	desc = "This key is awfully pink and weirdly shaped."
 	icon_state = "vampkey"
 	lockid = "mansionvampire"
-//
+
 
 /obj/item/roguekey/blacksmith
 	name = "blacksmith key"
@@ -201,8 +199,7 @@
 	lockid = "butcher"
 
 /obj/item/roguekey/walls
-	name = "walls key"
-	desc = "This is a rusty key."
+	desc = "This is a rusty key for the walls."
 	icon_state = "rustkey"
 	lockid = "walls"
 
@@ -231,7 +228,6 @@
 	lockid = "mage"
 
 /obj/item/roguekey/graveyard
-	name = "crypt key"
 	desc = "This rusty key belongs to the Gravekeepers."
 	icon_state = "rustkey"
 	lockid = "graveyard"
@@ -315,47 +311,47 @@
 	lockid = ""
 
 /obj/item/roguekey/houses/house1
-	name = "house i key"
+	name = "house I key"
 	icon_state = "brownkey"
 	lockid = "house1"
 
 /obj/item/roguekey/houses/house2
-	name = "house ii key"
+	name = "house II key"
 	icon_state = "brownkey"
 	lockid = "house2"
 
 /obj/item/roguekey/houses/house3
-	name = "house iii key"
+	name = "house III key"
 	icon_state = "brownkey"
 	lockid = "house3"
 
 /obj/item/roguekey/houses/house4
-	name = "house iv key"
+	name = "house IV key"
 	icon_state = "brownkey"
 	lockid = "house4"
 
 /obj/item/roguekey/houses/house5
-	name = "house v key"
+	name = "house V key"
 	icon_state = "brownkey"
 	lockid = "house5"
 
 /obj/item/roguekey/houses/house6
-	name = "house vi key"
+	name = "house VI key"
 	icon_state = "brownkey"
 	lockid = "house6"
 
 /obj/item/roguekey/houses/house7
-	name = "house vii key"
+	name = "house VII key"
 	icon_state = "brownkey"
 	lockid = "house7"
 
 /obj/item/roguekey/houses/house8
-	name = "house viii key"
+	name = "house VIII key"
 	icon_state = "brownkey"
 	lockid = "house8"
 
 /obj/item/roguekey/houses/house9
-	name = "house ix key"
+	name = "house IX key"
 	icon_state = "brownkey"
 	lockid = "house9"
 
@@ -440,47 +436,47 @@
 	lockid = ""
 
 /obj/item/roguekey/shops/shop1
-	name = "shop i key"
+	name = "shop I key"
 	icon_state = "rustkey"
 	lockid = "shop1"
 
 /obj/item/roguekey/shops/shop2
-	name = "shop ii key"
+	name = "shop II key"
 	icon_state = "rustkey"
 	lockid = "shop2"
 
 /obj/item/roguekey/shops/shop3
-	name = "shop iii key"
+	name = "shop III key"
 	icon_state = "rustkey"
 	lockid = "shop3"
 
 /obj/item/roguekey/shops/shop4
-	name = "shop iv key"
+	name = "shop IV key"
 	icon_state = "rustkey"
 	lockid = "shop4"
 
 /obj/item/roguekey/shops/shop5
-	name = "shop v key"
+	name = "shop V key"
 	icon_state = "rustkey"
 	lockid = "shop5"
 
 /obj/item/roguekey/shops/shop6
-	name = "shop vi key"
+	name = "shop VI key"
 	icon_state = "rustkey"
 	lockid = "shop6"
 
 /obj/item/roguekey/shops/shop7
-	name = "shop vii key"
+	name = "shop VII key"
 	icon_state = "rustkey"
 	lockid = "shop7"
 
 /obj/item/roguekey/shops/shop8
-	name = "shop viii key"
+	name = "shop VIII key"
 	icon_state = "rustkey"
 	lockid = "shop8"
 
 /obj/item/roguekey/shops/shop9
-	name = "shop ix key"
+	name = "shop IX key"
 	icon_state = "rustkey"
 	lockid = "shop9"
 
@@ -494,22 +490,27 @@
 	icon_state = "rustkey"
 	lockid = "butcher"
 
-obj/item/roguekey/elder
+/obj/item/roguekey/elder
 	name = "mayor's key"
 	icon_state = "rustkey"
 	lockid = "elder"
 
-obj/item/roguekey/apothecary
+/obj/item/roguekey/veteran
+	name = "veteran's key"
+	icon_state = "rustkey"
+	lockid = "veteran"
+
+/obj/item/roguekey/apothecary
 	name = "apothecary's key"
 	icon_state = "rustkey"
 	lockid = "apothecary"
 
-obj/item/roguekey/weaponsmith
+/obj/item/roguekey/weaponsmith
 	name = "weaponsmith's key"
 	icon_state = "rustkey"
 	lockid = "weaponsmith"
 
-obj/item/roguekey/armorsmith
+/obj/item/roguekey/armorsmith
 	name = "armorsmith's key"
 	icon_state = "rustkey"
 	lockid = "armorsmith"

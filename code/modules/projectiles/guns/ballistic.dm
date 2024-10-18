@@ -61,7 +61,7 @@
 	var/special_mags = FALSE
 	///The bolt type of the gun, affects quite a bit of functionality, see combat.dm defines for bolt types: BOLT_TYPE_STANDARD; BOLT_TYPE_LOCKING; BOLT_TYPE_OPEN; BOLT_TYPE_NO_BOLT
 	var/bolt_type = BOLT_TYPE_STANDARD
- 	///Used for locking bolt and open bolt guns. Set a bit differently for the two but prevents firing when true for both.
+	///Used for locking bolt and open bolt guns. Set a bit differently for the two but prevents firing when true for both.
 	var/bolt_locked = FALSE
 	///Whether the gun has to be racked each shot or not.
 	var/semi_auto = TRUE
@@ -281,6 +281,7 @@
 	if (can_be_sawn_off)
 		if (sawoff(user, A))
 			return
+	user.update_inv_hands()
 	return FALSE
 
 /obj/item/gun/ballistic/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)

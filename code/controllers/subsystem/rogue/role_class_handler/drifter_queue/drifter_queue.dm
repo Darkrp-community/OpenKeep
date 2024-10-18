@@ -8,9 +8,9 @@
 	contents: drifter_queue_menus = list("ckey" = /datum/drifter_queue_menu, "ckey2" = /datum/drifter_queue_menu,... etc)
 */
 	var/list/drifter_queue_menus = list()
-	
+
 	// Set this to false manually to stop the system, if you want to start the system call toggle_drifter_queue()
-	var/drifter_queue_enabled = TRUE
+	var/drifter_queue_enabled = FALSE
 	// Whether we are currently delayed, which stops the actual wave handling segment from firing
 	var/drifter_queue_delayed = TRUE
 
@@ -43,7 +43,7 @@
 	var/drifter_queue_player_tbl_string = ""
 	var/time_left_until_next_wave_string = "DISABLED"
 	// List of menu datums that we are currently processing in the fire() var on this subsystem
-	var/list/currentrun = list() 
+	var/list/currentrun = list()
 
 /*
 	Hey we got somethin to keep track of now, which is drifter queue
@@ -69,7 +69,7 @@
 		var/current_ckey = currentrun[currentrun.len]
 		var/datum/drifter_queue_menu/current_menu = currentrun[current_ckey]
 		currentrun.len--
-		
+
 		// If the datum has no linked client just remove it
 		if(!current_menu.linked_client)
 			drifter_queue_menus.Remove(current_ckey)
@@ -79,7 +79,7 @@
 		var/client/target_client = current_menu.linked_client
 		// Refresh timer
 		target_client << output(url_encode(time_left_until_next_wave_string), "drifter_queue.browser:update_timer")
-		
+
 		// Whether its time to refresh the webpage for someone
 		if(queue_total_browser_update)
 			current_menu.show_drifter_queue_menu()
@@ -182,7 +182,7 @@
 		return
 
 	// you could technically have a wave of any fuckin job if you wanted ironically
-	var/rank = current_wave.job_rank 
+	var/rank = current_wave.job_rank
 
 	// The important segments of SSjob's AssignRole, the only thing we are missing is incrementing the jobcount which we will not do for immigrants
 	ourguy.mind.assigned_role = rank
@@ -201,7 +201,7 @@
 		var/equip = SSjob.EquipRank(character, rank, TRUE)
 		//Theres many ways to go about it, but if you want to turn someone into some other shit, and decide to look at cyborg.dm
 		//You can just return a mob in the job's equip datum, and this will help it.
-		if(isliving(equip))	
+		if(isliving(equip))
 			character = equip
 
 	var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
@@ -226,7 +226,7 @@
 	else
 		GLOB.respawncounts[character.ckey] = 1
 
-	return character
 	log_manifest(character.mind.key, character.mind, character, latejoin = TRUE)
+	return character
 
 

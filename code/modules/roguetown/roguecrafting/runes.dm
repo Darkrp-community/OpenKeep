@@ -74,7 +74,7 @@
 	else if(user.mind.get_skill_level(/datum/skill/magic/arcane) <= 5)
 		to_chat(user, "<span class='notice'>Arcane power is emblazened in your mind!</span>")
 		user.mind.adjust_experience(/datum/skill/magic/arcane, 150, FALSE)
- 	user.visible_message("<span class='warning'>[src] glows dark, and then crumbles!</span>")
+	user.visible_message("<span class='warning'>[src] glows dark, and then crumbles!</span>")
 	qdel(src)
 
 /obj/item/rune/spell/fire_rune

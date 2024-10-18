@@ -22,8 +22,10 @@
 	air_update_turf(TRUE)
 
 /obj/machinery/field/containment/Destroy()
-	FG1.fields -= src
-	FG2.fields -= src
+	if(length(FG1?.fields))
+		FG1.fields -= src
+	if(length(FG2?.fields))
+		FG2.fields -= src
 	CanAtmosPass = ATMOS_PASS_YES
 	air_update_turf(TRUE)
 	return ..()

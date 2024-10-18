@@ -1064,7 +1064,7 @@
 		if(C.silent || !C.can_speak_vocal())
 			message = "makes a muffled scream!"
 		if(intentional)
-			if(!C.rogfat_add(10))
+			if(!C.rogfat_add(3)) // I guess this is here to reduce spamming? Or some other concept? Reduced from 10
 				to_chat(C, "<span class='warning'>I try to scream but my voice fails me.</span>")
 				. = FALSE
 

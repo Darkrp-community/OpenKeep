@@ -1,17 +1,17 @@
 /*Composed of 7 parts :
 
- 3 Particle Emitters
- 1 Power Box
- 1 Fuel Chamber
- 1 End Cap
- 1 Control computer
+3 Particle Emitters
+1 Power Box
+1 Fuel Chamber
+1 End Cap
+1 Control computer
 
- Setup map
+Setup map
 
-   |EC|
- CC|FC|
-   |PB|
- PE|PE|PE
+*   |EC|
+* CC|FC|
+*   |PB|
+* PE|PE|PE
 
 */
 #define PA_CONSTRUCTION_UNSECURED  0

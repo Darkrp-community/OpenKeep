@@ -3,7 +3,7 @@
 	set name = "Journey to the Underworld"
 	set category = "Spirit"
 
-	switch(alert("Begin the long walk in the underworld too your judgement....",,"Yes","No"))
+	switch(alert("Begin the long walk in the underworld to your judgement....",,"Yes","No"))
 		if("Yes")
 			if(istype(mob, /mob/living/carbon/human))
 				var/mob/living/carbon/human/D = mob
@@ -20,8 +20,8 @@
 						// Store the current time for the player
 						GLOB.job_respawn_delays[src.ckey] = world.time + target_job.same_job_respawn_delay
 
-			for(var/obj/effect/landmark/underworld/A in world)
-				var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(A.loc)
+			for(var/turf/spawn_loc in GLOB.underworldcoinspawns)
+				var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(spawn_loc)
 				O.livingname = mob.name
 				O.ckey = ckey
 				O.patron = prefs.selected_patron
@@ -66,15 +66,17 @@
 	client.verbs -= /client/proc/descend
 	qdel(src)
 	return
-
+/*	Commented out. Resource intensive and not actually needed with the timer to put in hands and maze setup
 /proc/coin_upkeep()
-	var/amountinworld = 0
-	for(var/obj/item/underworld/coin/A in world)
-		amountinworld += 1
-	if(amountinworld < 3)
-		for(var/obj/effect/landmark/underworldcoin/B in world)
-			new /obj/item/underworld/coin(B.loc)
-
+	if(length(GLOB.underworldcoins) >= 3)
+		return
+	for(var/turf/spawn_loc in GLOB.underworldcoinspawns)
+		if(locate(/obj/item/underworld/coin) in spawn_loc)
+			continue
+		new /obj/item/underworld/coin(spawn_loc)
+		if(length(GLOB.underworldcoins) >= 3)
+			break
+*/
 
 // shit that eventually will need moved elsewhere
 /obj/item/flashlight/lantern/shrunken
@@ -172,6 +174,14 @@
 	desc = "This is more than just a coin."
 	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
 	icon_state = "soultoken_floor"
+
+/obj/item/underworld/coin/Initialize()
+	. = ..()
+	GLOB.underworldcoins += src
+
+/obj/item/underworld/coin/Destroy()
+	GLOB.underworldcoins -= src
+	return ..()
 
 /obj/item/underworld/coin/pickup(mob/user)
 	..()

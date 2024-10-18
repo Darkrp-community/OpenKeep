@@ -3,7 +3,9 @@
 	dried_type = null
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_SMALL
-	sellprice = 1	
+	sellprice = 1
+	force = 0
+	throwforce = 0
 	var/list/pipe_reagents = list()
 	var/seed
 	var/bitesize_mod = 0
@@ -62,7 +64,7 @@
 	grind_results = list(/datum/reagent/floure = 10)
 	dropshrink = 0.9
 	mill_result = /obj/item/reagent_containers/powder/flour
-/obj/item/reagent_containers/food/snacks/produce/wheat/examine(var/mob/user)
+/obj/item/reagent_containers/food/snacks/produce/wheat/examine(mob/user)
 	var/farminglvl = user.mind?.get_skill_level(/datum/skill/labor/farming)
 	. += ..()
 	if(farminglvl >= 0)
@@ -82,14 +84,13 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/ale
 	distill_amt = 12
 	grind_results = list(/datum/reagent/floure = 10)
-/obj/item/reagent_containers/food/snacks/produce/oat/examine(var/mob/user)
+/obj/item/reagent_containers/food/snacks/produce/oat/examine(mob/user)
 	var/farminglvl = user.mind?.get_skill_level(/datum/skill/labor/farming)
 	. += ..()
 	if(farminglvl >= 0)
 		. += "I can easily tell that these are oat groats."
 
-// oldpath for map fix TO DO /obj/item/reagent_containers/food/snacks/produce/apple
-// obj/item/seeds/apple
+// ^ PSA: next time you want to do this, make and run an updatepaths migration in tools/UpdatePaths
 /obj/item/reagent_containers/food/snacks/produce/apple
 	seed = /obj/item/neuFarm/seed/apple
 	name = "apple"
@@ -107,6 +108,7 @@
 	rotprocess = SHELFLIFE_DECENT
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/cider
+	sellprice = 0 // spoil too quickly to export
 	var/equippedloc = null
 	var/list/bitten_names = list()
 	possible_potion = "endpot"
@@ -152,12 +154,13 @@
 	icon_state = "berries"
 	tastes = list("berry" = 1)
 	bitesize = 5
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 0.5)
 	dropshrink = 0.75
 	var/color_index = "good"
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/jackberrywine
 	rotprocess = SHELFLIFE_SHORT
+	sellprice = 0 // spoil too quickly to export
 	var/poisonous = FALSE
 	possible_potion = "antidote"
 
@@ -174,7 +177,7 @@
 	update_icon()
 	..()
 
-/obj/item/reagent_containers/food/snacks/produce/berries/rogue/examine(var/mob/user)
+/obj/item/reagent_containers/food/snacks/produce/berries/rogue/examine(mob/user)
 	var/farminglvl = user.mind?.get_skill_level(/datum/skill/labor/farming)
 	. += ..()
 	if(farminglvl >= 3 && poisonous == TRUE)
@@ -203,7 +206,7 @@
 	seed = /obj/item/neuFarm/seed/poison_berries
 	icon_state = "berries"
 	tastes = list("berry" = 1)
-	list_reagents = list(/datum/reagent/berrypoison = 5, /datum/reagent/consumable/nutriment = 1)
+	list_reagents = list(/datum/reagent/berrypoison = 5)
 	grind_results = list(/datum/reagent/berrypoison = 5)
 	color_index = "bad"
 	poisonous = TRUE
@@ -224,6 +227,7 @@
 	rotprocess = SHELFLIFE_LONG
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/swampdust
+	sellprice = 0 // only dried has value
 
 /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried
 	seed = null
@@ -238,6 +242,7 @@
 	rotprocess = null
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/swampdust
+	sellprice = 2
 
 
 /*	..................   Pipe weed   ................... */
@@ -256,6 +261,7 @@
 	rotprocess = SHELFLIFE_LONG
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/tobaccodust
+	sellprice = 0 // only dried has value
 
 /obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed
 	seed = null
@@ -270,6 +276,7 @@
 	rotprocess = null
 	possible_potion = "poison"
 	dust_result = /obj/item/alch/tobaccodust
+	sellprice = 1
 
 
 /*	..................   Cabbage   ................... */
@@ -304,6 +311,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/onion
+	distill_amt = 6
 	chopping_sound = TRUE
 	dropshrink = 0.9
 	rotprocess = SHELFLIFE_LONG
@@ -340,6 +348,7 @@
 	bitesize = 1
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/voddena
+	distill_amt = 8
 	rotprocess = null
 	dropshrink = 0.9
 
@@ -378,6 +387,7 @@
 	name = "sunflower"
 	desc = ""
 	icon_state = "sunflower"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head_items.dmi'
 	seed = /obj/item/neuFarm/seed/sunflower
 	slot_flags = ITEM_SLOT_HEAD
 	throwforce = 0
@@ -389,18 +399,22 @@
 	rotprocess = null
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/roastseeds
 
+
 /*	..................   Fyritius Flower   ................... */ // some sort of funni fire flowers. Dunno just moving them here for consistency.
 /obj/item/reagent_containers/food/snacks/produce/fyritius
 	name = "fyritius flower"
 	seed = /obj/item/neuFarm/seed/fyritius // if mass producing these breaks shit just comment it out
 	desc = ""
 	icon_state = "fyritius"
-	tastes = list("tastes like regret and fire" = 1)
+	tastes = list("tastes like a burning coal and fire" = 1)
 	bitesize = 1
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/fyritiusnectar = 5)
 	dropshrink = 0.8
 	rotprocess = null
 	dust_result = /obj/item/alch/firedust
+	w_class = WEIGHT_CLASS_TINY
+	throw_speed = 1
+	throw_range = 3
 
 /*
 /obj/item/reagent_containers/food/snacks/produce/garlic
@@ -419,18 +433,4 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/toxin/amanitin = 3)
 	grind_results = list(/datum/reagent/toxin/amanitin = 6)
 
-/obj/item/reagent_containers/food/snacks/produce/rice
-//	seed = /obj/item/neuFarm/seed/rice
-	name = "rice grain"
-	desc = ""
-	icon_state = "rice"
-	gender = PLURAL
-	filling_color = "#f0f0f0"
-	bitesize_mod = 2
-	foodtype = GRAIN
-	tastes = list("rice" = 1)
-	can_distill = TRUE
-	distill_reagent = /datum/reagent/consumable/ethanol/sake
-	distill_amt = 12
-	grind_results = list(/datum/reagent/floure = 10)
 */
