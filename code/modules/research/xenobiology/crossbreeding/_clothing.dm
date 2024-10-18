@@ -126,7 +126,6 @@ Slimecrossing Armor
 		if(src == C.head)
 			to_chat(user, "<span class='warning'>I feel at peace. <b style='color:pink'>Why would you want anything else?</b></span>")
 			return
-	return ..()
 
 /obj/item/clothing/suit/armor/heavy/adamantine
 	name = "adamantine armor"
