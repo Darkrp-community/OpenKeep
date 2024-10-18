@@ -904,7 +904,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church)
 "dt" = (
-/obj/structure/chair/wood/rogue/throne,
+/obj/structure/chair/bench/throne,
 /obj/effect/landmark/start/prince,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
@@ -4912,7 +4912,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "se" = (
-/obj/structure/chair/wood/rogue/throne,
+/obj/structure/chair/bench/throne,
 /obj/effect/landmark/start/lady,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)

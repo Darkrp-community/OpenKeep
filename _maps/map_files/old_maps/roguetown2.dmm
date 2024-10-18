@@ -1500,7 +1500,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "fz" = (
-/obj/structure/chair/wood/rogue/throne,
+/obj/structure/chair/bench/throne,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "fA" = (
