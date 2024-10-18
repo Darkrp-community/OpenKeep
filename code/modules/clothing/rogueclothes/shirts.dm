@@ -185,21 +185,17 @@
 	color = pick(CLOTHING_PURPLE, CLOTHING_RED, CLOTHING_BLUE, CLOTHING_GREEN)
 	..()
 
-/obj/item/clothing/suit/roguetown/shirt/tunic/tuniclords
-	color = CLOTHING_PURPLE
+/obj/item/clothing/suit/roguetown/shirt/tunic/tunicprimary
+	color = CLOTHING_RED
 
-/obj/item/clothing/suit/roguetown/shirt/tunic/tuniclords/Initialize()
+/obj/item/clothing/suit/roguetown/shirt/tunic/tunicprimary/Initialize()
 	..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
 		GLOB.lordcolor += src
 
-/obj/item/clothing/suit/roguetown/shirt/tunic/tuniclords/lordcolor(primary,secondary)
-	if(secondary)
-		color = secondary
-
-/obj/item/clothing/suit/roguetown/shirt/tunic/tuniclords/Destroy()
+/obj/item/clothing/suit/roguetown/shirt/tunic/tunicprimary/Destroy()
 	GLOB.lordcolor -= src
 	return ..()
 
@@ -288,21 +284,17 @@
 	color = pick("#e6e5e5", "#52BE80", "#C39BD3", "#EC7063","#5DADE2")
 	..()
 
-/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdresslords
-	color = CLOTHING_PURPLE
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdressprimary
+	color = CLOTHING_RED
 
-/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdresslords/Initialize()
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdressprimary/Initialize()
 	..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
 		GLOB.lordcolor += src
 
-/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdresslords/lordcolor(primary,secondary)
-	if(secondary)
-		color = secondary
-
-/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdresslords/Destroy()
+/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdressprimary/Destroy()
 	GLOB.lordcolor -= src
 	return ..()
 

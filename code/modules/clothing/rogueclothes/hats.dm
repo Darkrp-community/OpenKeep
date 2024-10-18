@@ -130,17 +130,21 @@
 	. = ..()
 	color = pick(CLOTHING_TEAL, CLOTHING_GREEN, CLOTHING_ORANGE, CLOTHING_MAJENTA, CLOTHING_YELLOW,CLOTHING_SALMON, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW)
 
-/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonlords
-	color = CLOTHING_RED
+/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary
+	color = CLOTHING_PURPLE
 
-/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonlords/Initialize()
+/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary/Initialize()
 	..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
 		GLOB.lordcolor += src
 
-/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonlords/Destroy()
+/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary/lordcolor(primary,secondary)
+	if(secondary)
+		color = secondary
+
+/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary/Destroy()
 	GLOB.lordcolor -= src
 	return ..()
 
