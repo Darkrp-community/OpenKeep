@@ -146,3 +146,7 @@
 
 	return TRUE
 
+/obj/structure/handcart/Move(atom/newloc, direct, glide_size_override)
+	. = ..()
+	if (. && pulledby && dir != pulledby.dir)
+		setDir(pulledby.dir)
