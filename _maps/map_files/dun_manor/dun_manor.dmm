@@ -14745,6 +14745,11 @@
 /obj/item/natural/stone,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
+"ped" = (
+/obj/structure/bed/rogue/inn/hay,
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors/town/church/chapel)
 "peB" = (
 /obj/structure/table/wood{
 	dir = 5;
@@ -16047,8 +16052,15 @@
 	},
 /area/rogue/indoors/town/dwarfin)
 "qtr" = (
+/obj/structure/bars{
+	icon_state = "barsbent";
+	layer = 2.81
+	},
+/obj/structure/table/wood/reinforced_alt,
 /obj/item/storage/roguebag,
-/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/tile{
+	icon_state = "chess"
+	},
 /area/rogue/indoors/town/church/chapel)
 "qtZ" = (
 /obj/structure/chair/wood/rogue{
@@ -16401,11 +16413,6 @@
 /obj/item/reagent_containers/glass/bottle/vial,
 /turf/open/floor/rogue/twig,
 /area/rogue/under/town/basement)
-"qOj" = (
-/obj/structure/bed/rogue/inn/hay,
-/obj/machinery/light/rogue/torchholder/c,
-/turf/open/floor/rogue/hexstone,
-/area/rogue/indoors/town/church/chapel)
 "qOK" = (
 /obj/structure/chair/bench/ultimacouch,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -80393,10 +80400,10 @@ rHL
 aKW
 rHL
 rHL
-qOj
+ped
 faB
 evf
-qtr
+evf
 jLj
 aax
 wyG
@@ -80554,7 +80561,7 @@ evf
 evf
 evf
 jla
-jLj
+qtr
 wyG
 wyG
 wyG
