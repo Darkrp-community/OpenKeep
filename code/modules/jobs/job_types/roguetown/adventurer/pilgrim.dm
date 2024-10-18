@@ -17,6 +17,7 @@
 	min_pq = -20
 	always_show_on_latechoices = TRUE
 	same_job_respawn_delay = 0
+	bypass_lastclass = TRUE
 
 
 /datum/job/roguetown/pilgrim/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
