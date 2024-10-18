@@ -6041,7 +6041,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
 "wV" = (
-/obj/structure/chair/wood/rogue/throne,
+/obj/structure/chair/bench/throne,
 /obj/effect/landmark/start/prince,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
@@ -9940,7 +9940,7 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/manor)
 "LV" = (
-/obj/structure/chair/wood/rogue/throne,
+/obj/structure/chair/bench/throne,
 /obj/effect/landmark/start/lady,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
