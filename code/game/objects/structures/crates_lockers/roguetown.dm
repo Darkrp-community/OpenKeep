@@ -64,6 +64,7 @@
 		/obj/item/clothing/ring/gold=10,
 		/obj/item/roguecoin/silver/pile=4,
 		/obj/item/rogueweapon/pick=23,
+		/obj/item/book/granter/spell_points=5,
 		/obj/item/riddleofsteel=2,
 		/obj/item/clothing/neck/roguetown/talkstone=2
 		)
