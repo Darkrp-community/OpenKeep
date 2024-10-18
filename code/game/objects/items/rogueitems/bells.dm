@@ -2,13 +2,14 @@
 
 /obj/item/handheld_bell
 	name = "church bell"
-	desc = "A small bell that rings loudly when used."
+	desc = "A small bell that can draw a crowd if needed."
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "churchbell"
 	throw_speed = 2
 	throw_range = 5
 	throwforce = 5
 	damtype = BRUTE
+	slot_flags = ITEM_SLOT_HIP
 	force = 5
 	hitsound = 'sound/items/bsmith1.ogg'
 	var/cooldown = 3 SECONDS
@@ -18,7 +19,7 @@
 	. = ..()
 	if(ringing)
 		return
-	playsound(src.loc, 'sound/misc/bell.ogg', 50, 1)
+	playsound(src.loc, 'sound/misc/handbell.ogg', 50, 1)
 
 
 	for(var/mob/M in view(10, src.loc))
