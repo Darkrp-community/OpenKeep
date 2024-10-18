@@ -3976,11 +3976,6 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors/town/tavern)
-"dUx" = (
-/obj/structure/bed/rogue/inn/hay,
-/obj/machinery/light/rogue/torchholder/c,
-/turf/open/floor/rogue/hexstone,
-/area/rogue/indoors/town/church/chapel)
 "dUN" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/rogue/wooddark/horizontal,
@@ -9158,9 +9153,15 @@
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
 "jla" = (
-/obj/effect/landmark/start/churchling,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/hexstone,
+/obj/structure/bars{
+	icon_state = "barsbent";
+	layer = 2.81
+	},
+/obj/structure/table/wood/reinforced_alt,
+/obj/item/storage/roguebag,
+/turf/open/floor/rogue/tile{
+	icon_state = "chess"
+	},
 /area/rogue/indoors/town/church/chapel)
 "jmw" = (
 /obj/structure/fluff/statue/gargoyle,
@@ -13742,8 +13743,8 @@
 	},
 /area/rogue/under/town/basement)
 "obw" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/start/churchling,
+/obj/structure/bed/rogue/inn/hay,
+/obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church/chapel)
 "obY" = (
@@ -16864,17 +16865,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
-"rjB" = (
-/obj/structure/bars{
-	icon_state = "barsbent";
-	layer = 2.81
-	},
-/obj/structure/table/wood/reinforced_alt,
-/obj/item/storage/roguebag,
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
-/area/rogue/indoors/town/church/chapel)
 "rjG" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/cobblerock,
@@ -80403,7 +80393,7 @@ rHL
 aKW
 rHL
 rHL
-dUx
+obw
 faB
 evf
 evf
@@ -80563,8 +80553,8 @@ lSH
 evf
 evf
 evf
+rdS
 jla
-rjB
 wyG
 wyG
 wyG
@@ -80719,8 +80709,8 @@ qPR
 lSH
 rdS
 evf
-obw
-obw
+rdS
+rdS
 kDK
 wyG
 wyG
