@@ -101,11 +101,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains/decap)
-"dn" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
-/turf/open/floor/rogue/blocks,
-/area/rogue/outdoors/mountains/decap)
 "dH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old{
@@ -354,6 +349,7 @@
 	locked = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains/decap)
 "oa" = (
@@ -779,6 +775,14 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains/decap)
+"Bc" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/mineral_door/wood/green{
+	name = "Old Door";
+	locked = 1
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/outdoors/mountains/decap)
 "Bo" = (
 /obj/structure/closet/crate/chest/neu_fancy,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -818,6 +822,7 @@
 	name = "Old Door";
 	locked = 1
 	},
+/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains/decap)
 "CY" = (
@@ -1052,6 +1057,10 @@
 "Ox" = (
 /obj/structure/roguetent/preopen,
 /turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/mountains/decap)
+"OE" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/troll,
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains/decap)
 "OM" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1349,6 +1358,11 @@
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/mountains/decap)
+"Zt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/retaliate/rogue/troll,
+/turf/open/floor/rogue/tile/kitchen,
 /area/rogue/outdoors/mountains/decap)
 "ZN" = (
 /obj/structure/closet/crate/chest/neu_fancy,
@@ -13502,8 +13516,8 @@ Bq
 Bq
 Bq
 Bq
-lV
-lV
+sV
+sV
 uf
 uf
 uf
@@ -13632,8 +13646,8 @@ Bq
 Bq
 Bq
 Bq
-lV
-lV
+sV
+sV
 uf
 uf
 uf
@@ -13762,8 +13776,8 @@ sV
 Bq
 Bq
 Bq
-lV
-lV
+sV
+sV
 uf
 uf
 uf
@@ -15409,7 +15423,7 @@ TZ
 oH
 VG
 TZ
-TZ
+OE
 TZ
 La
 TZ
@@ -15554,7 +15568,7 @@ gp
 za
 Ty
 Ty
-Ty
+Zt
 Ty
 ee
 gp
@@ -16458,7 +16472,7 @@ ln
 gp
 CY
 CY
-dn
+CY
 CY
 CY
 gp
@@ -16847,7 +16861,7 @@ Se
 jf
 ao
 gp
-ee
+Bc
 gp
 gp
 gp
@@ -16973,7 +16987,7 @@ Vd
 Vd
 Vd
 Vd
-Vd
+Fc
 Vd
 Vd
 ee
