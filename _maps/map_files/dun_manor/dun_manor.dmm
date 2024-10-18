@@ -11320,6 +11320,12 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
+"luq" = (
+/obj/machinery/light/rogue/wallfire/candle{
+	pixel_y = -32
+	},
+/turf/open/floor/rogue/church,
+/area/rogue/indoors/town/church/chapel)
 "luE" = (
 /obj/structure/bookcase,
 /turf/open/floor/rogue/tile{
@@ -78348,7 +78354,7 @@ mXn
 rKS
 kuX
 mXn
-mXn
+luq
 rHL
 xDn
 rHL
