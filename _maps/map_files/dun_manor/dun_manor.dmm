@@ -16047,7 +16047,6 @@
 	},
 /area/rogue/indoors/town/dwarfin)
 "qtr" = (
-/obj/machinery/light/rogue/torchholder/l,
 /obj/item/storage/roguebag,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church/chapel)
@@ -16402,6 +16401,11 @@
 /obj/item/reagent_containers/glass/bottle/vial,
 /turf/open/floor/rogue/twig,
 /area/rogue/under/town/basement)
+"qOj" = (
+/obj/structure/bed/rogue/inn/hay,
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors/town/church/chapel)
 "qOK" = (
 /obj/structure/chair/bench/ultimacouch,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -80389,7 +80393,7 @@ rHL
 aKW
 rHL
 rHL
-faB
+qOj
 faB
 evf
 qtr
