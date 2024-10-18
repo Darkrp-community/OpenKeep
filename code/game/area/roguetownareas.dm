@@ -192,8 +192,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 20,
 				/mob/living/simple_animal/hostile/retaliate/rogue/spider = 80,
 				/mob/living/carbon/human/species/goblin/npc/ambush/sea = 50,
-				/mob/living/simple_animal/hostile/retaliate/rogue/troll = 35,
-				/mob/living/simple_animal/hostile/retaliate/rogue/bogbug = 70)
+				/mob/living/simple_animal/hostile/retaliate/rogue/troll = 35)	//Bogbugs bugged bigtime, so removed for now.
 
 	first_time_text = "THE TERRORBOG"
 	converted_type = /area/rogue/indoors/shelter/bog
@@ -344,6 +343,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	spookynight = SPOOKY_GEN
 
 
+
+
 ///// TOWN AREAS //////
 
 /area/rogue/indoors/town
@@ -358,7 +359,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "town"
 	droning_sound = 'sound/music/area/towngen.ogg'
 	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/night.ogg'
+//	droning_sound_night = 'sound/music/area/night.ogg'
 
 /area/rogue/indoors/town/manor
 	name = "Manor"
@@ -508,6 +509,11 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = null
 	droning_sound_night = null
 
+// so you can teleport to the farm
+/area/rogue/indoors/soilsons
+	name = "soilsons"
+
+
 ///// OUTDOORS AREAS (again, for some reason)
 
 /area/rogue/outdoors/town
@@ -515,7 +521,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "town"
 	droning_sound = 'sound/music/area/townstreets.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/night.ogg'
+//	droning_sound_night = 'sound/music/area/night.ogg'	Too much guitar honestly
 	converted_type = /area/rogue/indoors/shelter/town
 	first_time_text = "THE TOWN OF ROCKHILL"
 
@@ -530,7 +536,6 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "sargoth"
 	droning_sound = 'sound/music/area/sargoth.ogg'
 	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/night.ogg'
 	converted_type = /area/rogue/indoors/shelter/town/sargoth
 
 /area/rogue/indoors/shelter/town/sargoth
@@ -547,8 +552,6 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	spookysounds = SPOOKY_GEN
 	spookynight = SPOOKY_GEN
 	droning_sound = 'sound/music/area/field.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/night.ogg'
 	converted_type = /area/rogue/indoors/shelter/town/roofs
 
 /area/rogue/indoors/shelter/town/roofs

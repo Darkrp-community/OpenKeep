@@ -28,7 +28,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	shoes = /obj/item/clothing/shoes/roguetown/gladiator
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
+	armor = /obj/item/clothing/suit/roguetown/armor/amazon_chainkini
 	var/weapontype = pickweight(list("Sword" = 3, "Spear" = 7))
 	switch(weapontype)
 		if("Sword")

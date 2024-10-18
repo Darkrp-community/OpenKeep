@@ -125,7 +125,7 @@
 /area/rogue/outdoors/bog)
 "O" = (
 /obj/structure/closet/crate/coffin,
-/obj/item/clothing/head/roguetown/helmet/heavy/nochelm,
+/obj/item/clothing/head/roguetown/helmet/heavy/necked/noc,
 /obj/item/clothing/ring/silver/noc,
 /obj/item/clothing/neck/roguetown/psycross/noc,
 /turf/open/floor/rogue/herringbone,

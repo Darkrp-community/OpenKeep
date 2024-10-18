@@ -1252,7 +1252,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue)
 "PO" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
 "PV" = (
@@ -1496,7 +1496,7 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue)
 "Yd" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "Yf" = (
@@ -1528,7 +1528,7 @@
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue)
 "Zb" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /obj/structure/fluff/railing/fence{
 	icon_state = "fence";
 	dir = 1
