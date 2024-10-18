@@ -14613,7 +14613,7 @@
 	},
 /area/rogue/indoors/town/manor)
 "sbX" = (
-/obj/structure/chair/wood/rogue/throne,
+/obj/structure/chair/bench/throne,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "sdt" = (
@@ -18018,7 +18018,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/garrison)
 "wlp" = (
-/obj/structure/chair/wood/rogue/throne,
+/obj/structure/chair/bench/throne,
 /obj/effect/landmark/start/lady,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
