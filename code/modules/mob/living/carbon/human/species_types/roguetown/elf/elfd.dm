@@ -1,3 +1,11 @@
+	/*==============*
+	*				*
+	*	Dark Elf	*
+	*				*
+	*===============*/
+
+//	( + Night Vision Plus )
+
 /mob/living/carbon/human/species/elf/dark
 	race = /datum/species/elf/dark
 
