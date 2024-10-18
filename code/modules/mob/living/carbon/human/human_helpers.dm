@@ -240,12 +240,18 @@
 	spouse_name = spouse.real_name
 	spouse.spouse_name = real_name
 	//If the bride is male then we assign her status in the family as father.
-	if(family_datum && (family_datum.patriarch == src || family_datum.matriarch == src))
-		family_datum.TransferFamilies(spouse, bridemale ? FAMILY_FATHER : FAMILY_MOTHER)
-		return
-	if(brides_family && (brides_family.patriarch == spouse || brides_family.matriarch == spouse))
-		brides_family.TransferFamilies(spouse, groommale ? FAMILY_FATHER : FAMILY_MOTHER)
-		return
+	if(family_datum)
+		if(family_datum.patriarch == src || family_datum.matriarch == src)
+			family_datum.TransferFamilies(spouse, bridemale ? FAMILY_FATHER : FAMILY_MOTHER)
+			return
+		else
+			family_datum.TransferFamilies(spouse, FAMILY_INLAW)
+	if(brides_family)
+		if(brides_family.patriarch == spouse || brides_family.matriarch == spouse)
+			brides_family.TransferFamilies(spouse, groommale ? FAMILY_FATHER : FAMILY_MOTHER)
+			return
+		else
+			family_datum.TransferFamilies(spouse, FAMILY_INLAW)
 
 //Perspective stranger looks at --> src
 /mob/living/carbon/human/proc/ReturnRelation(mob/living/carbon/human/stranger)
