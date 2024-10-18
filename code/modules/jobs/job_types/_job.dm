@@ -81,6 +81,7 @@
 
 	var/f_title = null
 
+	var/job_greet_text = TRUE
 	var/tutorial = null
 
 	var/whitelist_req = FALSE
@@ -128,6 +129,14 @@
 
 /datum/job/proc/special_job_check(mob/dead/new_player/player)
 	return TRUE
+
+/datum/job/proc/greet(mob/player)
+	if(!job_greet_text)
+		return
+	to_chat(player, span_notice("You are the <b>[title]</b>"))
+	if(tutorial)
+		to_chat(player, span_notice("*-----------------*"))
+		to_chat(player, span_notice(tutorial))
 
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
