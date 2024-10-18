@@ -42,7 +42,7 @@
 	body_eater = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/blood/Initialize()
-	..()
+	. = ..()
 	ADD_TRAIT(src, TRAIT_BLOODLOSS_IMMUNE, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/blood/ascended
