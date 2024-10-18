@@ -179,7 +179,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	if(!speak)
 		return
 	whisper("O schlet'a ty'schkotot ty'skvoro...")
-	sleep(10)
+	sleep(5)
 	whisper("[speak]")
 
 	for(var/datum/mind/V in C.cultists)
@@ -476,8 +476,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			if(istype(H.wear_neck, /obj/item/clothing/neck/roguetown/psycross))
 				to_chat(user.mind, "<span class='danger'>\"They are wearing my bane...\"</span>")
 				return
-			if(M.cultists.len >= 6)
-				to_chat(user.mind, "<span class='danger'>\"The veil is too strong to support more than five lackeys.\"</span>")
+			if(M.cultists.len >= 8)
+				to_chat(user.mind, "<span class='danger'>\"The veil is too strong to support more than seven lackeys.\"</span>")
 				return
 			var/datum/antagonist/zizocultist/PR = user.mind.has_antag_datum(/datum/antagonist/zizocultist)
 			var/alert = alert(H, "YOU WILL BE SHOWN THE TRUTH. DO YOU RESIST? (Resisting: 1 TRI)", "ROGUETOWN", "Yield", "Resist")
@@ -801,8 +801,11 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	S.set_up(1, 1, C)
 	S.start()
 
-	new /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous(C)
-	new /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous(C)
+	new /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous/cult(C)
+	new /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous/cult(C)
+
+	new /obj/item/clothing/cloak/half/shadowcloak/cult(C)
+	new /obj/item/clothing/cloak/half/shadowcloak/cult(C)
 
 	new /obj/item/rogueweapon/sword(C)
 	new /obj/item/rogueweapon/huntingknife(C)
@@ -844,7 +847,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	for(var/mob/living/carbon/human/H in C.contents)
 		H.playsound_local(C, 'sound/misc/vampirespell.ogg', 100, FALSE, pressure_affected = FALSE)
 		H.fully_heal()
-		to_chat(H.mind, "<span class='notice'>I feel like my legs have become stronger.</span>")
+		to_chat(H.mind, "<span class='notice'>ZIZO EMPOWERS ME!</span>")
 		break
 
 /datum/ritual/darkeyes
@@ -979,7 +982,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			VIRGIN.gib()
 		CM.cultascended = TRUE
 		addomen("ascend")
-		to_chat(user.mind, "<span class='userdanger'>I HAVE DONE IT! I HAVE REACHED A HIGHER FORM! SOON THERE WILL BE NO GODS. ONLY MASTERS!</span>")
+		to_chat(user.mind, "<span class='userdanger'>I HAVE DONE IT! I HAVE REACHED A HIGHER FORM! ZIZO SMILES UPON ME WITH MALICE IN HIS EYES TOWARD THE ONES WHO LACK KNOWLEDGE AND UNDERSTANDING!</span>")
 		var/mob/living/trl = new /mob/living/simple_animal/hostile/retaliate/rogue/blood/ascended(C)
 		trl.ckey = H.ckey
 		H.gib()

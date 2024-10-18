@@ -14,13 +14,13 @@
 	retreat_distance = 0
 	minimum_distance = 0
 
-	health = TROLL_HEALTH
-	maxHealth = TROLL_HEALTH
+	health = 900
+	maxHealth = 900
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat,
 					/obj/item/bodypart,
 					/obj/item/organ)
 
-	base_intents = list(/datum/intent/simple/stab, /datum/intent/unarmed/claw)
+	base_intents = list(/datum/intent/unarmed/claw)
 	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
 	melee_damage_lower = 40
 	melee_damage_upper = 60
@@ -40,25 +40,24 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/troll // Placeholder until Troll remains are sprited.
 	body_eater = TRUE
-	critvuln = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/blood/Initialize()
+	..()
 	ADD_TRAIT(src, TRAIT_BLOODLOSS_IMMUNE, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/blood/ascended
 	name = "???"
-	desc = null
+	desc = ""
 	hud_type = /datum/hud/human
 	icon_state = "ascend"
 	icon_living = "ascend"
 	icon = 'icons/mob/32x64.dmi'
 	move_to_delay = 0
-	base_intents = list(/datum/intent/simple/stab, /datum/intent/unarmed/ascendedclaw)
+	base_intents = list(/datum/intent/unarmed/ascendedclaw)
 	melee_damage_lower = 250
 	melee_damage_upper = 550
 	health = 666666
 	maxHealth = 666666
-	critvuln = FALSE
 	STACON = 66
 	STASTR = 66
 	STASPD = 66
