@@ -41,6 +41,25 @@
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/goodfood)
 
+//============= CLEAN PLUS ===============
+/datum/status_effect/buff/clean_plus
+	id = "cleanplus"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/clean_plus
+	effectedstats = list("fortune" = 1)
+	duration = 20 MINUTES
+
+/datum/status_effect/buff/clean_plus/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/stressevent/clean_plus)
+
+/atom/movable/screen/alert/status_effect/buff/clean_plus
+	name = "Clean"
+	desc = span_nicegreen("I feel very refreshed.")
+	icon_state = "buff"	// add custom icon TO DO
+
+
 /datum/status_effect/buff/druqks
 	id = "druqks"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/druqks
@@ -240,7 +259,7 @@
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.apply_status_effect(/datum/status_effect/debuff/barbfalter)
-	
+
 // BARDIC BUFFS BELOW
 
 /datum/status_effect/bardicbuff
@@ -333,4 +352,4 @@
 				O.adjust_triumphs(1) // Before people start crying about muh triumph lost
 				to_chat(O, "<span class='nicegreen'>Astrata's blessed light cleanses away your tiredness!</span>")
 			else
-				return	
+				return
