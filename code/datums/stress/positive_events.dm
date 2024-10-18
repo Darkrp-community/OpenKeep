@@ -12,7 +12,7 @@
 	timer = 30 SECONDS
 	stressadd = -1
 	desc = span_green("Death. Hehe...")
-	
+
 /datum/stressevent/viewdismembermaniac
 	timer = 2 MINUTES
 	stressadd = -1
@@ -127,6 +127,16 @@
 	timer = 5 MINUTES
 	stressadd = -5
 	desc = span_green("Down with the tyranny!")
+
+/datum/stressevent/clean
+	timer = 15 MINUTES
+	stressadd = -1
+	desc = span_green("I cleaned myself recently.")
+
+/datum/stressevent/clean_plus
+	timer = 20 MINUTES
+	stressadd = -2
+	desc = span_green("That was an amazing bath.")
 
 /datum/stressevent/music
 	timer = 1 MINUTES

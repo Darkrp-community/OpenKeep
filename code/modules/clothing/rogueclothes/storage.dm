@@ -215,6 +215,14 @@
 	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
 	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
 
+
+//Nitemaiden pouch
+/obj/item/storage/belt/rogue/pouch/nitemaiden/PopulateContents()
+	new /obj/item/natural/cloth(src)
+	new /obj/item/bath/soap(src)
+	new /obj/item/roguecoin/copper/pile(src)
+
+
 /obj/item/storage/backpack/rogue/satchel
 	name = "satchel"
 	desc = "A bulky bag worn over the shoulder which can be used to hold many things."
