@@ -277,7 +277,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 							if(lord.vamplevel <= 3) // Unless they're ascended
 								if(secondsundersun > 1) // Failsafe for the reminder
 									if(secondsundersun >= time2getdusted) // If we accumulated enough seconds under the sun to our vampire level...
-										to_chat(H, span_warning("ASTRATA SMOLDERS ME INTO ASHES!")) // I could feel my eyes / turning into dust.
+										to_chat(H, "<span class='userdanger'>ASTRATA SMOLDERS ME INTO ASHES!</span>") // I could feel my eyes / turning into dust.
 										H.emote("firescream", forced = TRUE)
 										H.dust() // And two strangers, turning into dust.
 									else
