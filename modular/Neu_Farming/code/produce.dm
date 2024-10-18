@@ -311,6 +311,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/onion
+	distill_amt = 6
 	chopping_sound = TRUE
 	dropshrink = 0.9
 	rotprocess = SHELFLIFE_LONG
@@ -347,6 +348,7 @@
 	bitesize = 1
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/voddena
+	distill_amt = 8
 	rotprocess = null
 	dropshrink = 0.9
 
@@ -431,18 +433,4 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/toxin/amanitin = 3)
 	grind_results = list(/datum/reagent/toxin/amanitin = 6)
 
-/obj/item/reagent_containers/food/snacks/produce/rice
-//	seed = /obj/item/neuFarm/seed/rice
-	name = "rice grain"
-	desc = ""
-	icon_state = "rice"
-	gender = PLURAL
-	filling_color = "#f0f0f0"
-	bitesize_mod = 2
-	foodtype = GRAIN
-	tastes = list("rice" = 1)
-	can_distill = TRUE
-	distill_reagent = /datum/reagent/consumable/ethanol/sake
-	distill_amt = 12
-	grind_results = list(/datum/reagent/floure = 10)
 */

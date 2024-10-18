@@ -930,6 +930,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<b>UNREADY</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>READY</a>"
 			if(PLAYER_READY_TO_PLAY)
 				dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>UNREADY</a> <b>READY</b>"
+				log_game("([user || "NO KEY"]) readied as ([real_name])")
 	else
 		dat += "<a href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
 //	dat += "<a href='?_src_=prefs;preference=reset_all'>Reset Setup</a>"

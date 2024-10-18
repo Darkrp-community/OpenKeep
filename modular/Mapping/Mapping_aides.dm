@@ -705,38 +705,6 @@
 	pixel_x = 32
 	pixel_y = 0
 
-/*	..................   More tables   ................... */
-/obj/structure/table/wood/reinf_long
-	icon_state = "tablewood_reinf"
-
-/obj/structure/table/wood/plain_alt
-	icon_state = "tablewood_plain"
-
-/obj/structure/table/wood/large_new
-	icon_state = "alt_largetable_mid"
-/obj/structure/table/wood/large/corner_new
-	icon_state = "alt_largetable"
-
-/obj/structure/table/wood/reinforced_alter
-	icon_state = "tablewood_alt"
-
-/obj/structure/table/wood/nice/decorated
-	icon_state = "tablefine_alt"
-
-/obj/structure/table/wood/nice/decorated_alt
-	icon_state = "tablefine_alt2"
-
-
-/area/rogue/indoors/bandit_lair
-	name = "lair (Bandits)"
-
-/area/rogue/indoors/vampire_manor
-	name = "lair (Vampire Lord)"
-
-/area/rogue/outdoors/bog/inhumen_camp
-	name = "lair (Inhumen)"
-	droning_sound = 'sound/music/area/decap.ogg'
-	first_time_text = "THE DEEP BOG"
 
 // Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
 /obj/structure/bed/rogue/bear
