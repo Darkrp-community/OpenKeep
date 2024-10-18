@@ -695,7 +695,7 @@ ____________End of Example*/
 
 /atom/movable/screen/alert/status_effect/buff/blessed
 	name = "Blessed"
-	desc = ""
+	desc = "The Weeping God fills my heart."
 	icon_state = "buff"
 
 /datum/status_effect/buff/blessed/on_apply()
