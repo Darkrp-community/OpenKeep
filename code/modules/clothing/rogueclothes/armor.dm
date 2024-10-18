@@ -455,10 +455,11 @@
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 //................ Black Oak Cuirass ............... //
-/obj/item/clothing/suit/roguetown/armor/plate/cuirass/elven
+/obj/item/clothing/suit/roguetown/armor/cuirass/elven
 	name = "elven guardian cuirass"
 	desc = "A cuirass made of steel with a thin decorative gold plating. Lightweight and durable."
-	icon_state = "cuirasse"
+	icon_state = "halfplate"
+	item_state = "cuirasse"
 	color = COLOR_ASSEMBLY_GOLD
 	equip_delay_self = 2 SECONDS
 	unequip_delay_self = 2 SECONDS

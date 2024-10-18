@@ -944,7 +944,8 @@
 	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	icon_state = "sinistar"
+	icon_state = "sinistarhelm"
+	dropshrink = 0.9
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	smeltresult = /obj/item/ingot/iron
 
