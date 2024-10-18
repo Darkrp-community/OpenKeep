@@ -820,6 +820,15 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town)
+"aMT" = (
+/obj/effect/decal/cobbleedge{
+	dir = 8
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 1
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/town)
 "aMV" = (
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/cobble,
@@ -1336,15 +1345,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
-"bjv" = (
-/obj/effect/decal/cobbleedge{
-	dir = 5
-	},
-/obj/effect/decal/cobbleedge{
-	dir = 9
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/town)
 "bjK" = (
 /obj/structure/mineral_door/wood/donjon{
 	locked = 1;
@@ -1439,15 +1439,6 @@
 /obj/item/broom,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town)
-"bpE" = (
-/obj/effect/decal/cobbleedge{
-	dir = 5
-	},
-/obj/effect/decal/cobbleedge{
-	dir = 6
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/town)
 "bpI" = (
 /obj/structure/chair/bench/ultimacouch,
 /turf/open/floor/carpet/stellar,
@@ -1475,6 +1466,15 @@
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/garrison)
+"brG" = (
+/obj/effect/decal/cobbleedge{
+	dir = 10
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 5
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/town)
 "bsk" = (
 /obj/structure/mineral_door/wood{
 	lockid = "walls"
@@ -1542,12 +1542,6 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/rtfield)
-"bwA" = (
-/obj/structure/stairs{
-	dir = 4
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/town)
 "bwE" = (
 /obj/structure/stairs{
 	dir = 1;
@@ -6195,15 +6189,6 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town/roofs)
-"goC" = (
-/obj/effect/decal/cobbleedge{
-	dir = 9
-	},
-/obj/effect/decal/cobbleedge{
-	dir = 10
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/town)
 "goI" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/spear,
@@ -6898,6 +6883,13 @@
 /obj/structure/chair/wood/rogue/fancy,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/magician)
+"haq" = (
+/obj/effect/decal/cobbleedge{
+	dir = 9
+	},
+/obj/structure/flora/roguegrass,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/town)
 "haz" = (
 /obj/structure/bed/rogue/inn/wool,
 /obj/item/bedsheet/rogue/cloth,
@@ -7659,15 +7651,6 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/tame,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town)
-"hIV" = (
-/obj/effect/decal/cobbleedge{
-	dir = 5
-	},
-/obj/effect/decal/cobbleedge{
-	dir = 9
-	},
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/town)
 "hJq" = (
 /obj/structure/rack/rogue,
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow,
@@ -7844,6 +7827,13 @@
 /obj/effect/spawner/roguemap/hauntz_random,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/town)
+"hUB" = (
+/obj/effect/spawner/roguemap/hauntz_random,
+/obj/effect/decal/cobbleedge{
+	dir = 6
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/town)
 "hUK" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
@@ -7979,13 +7969,6 @@
 /obj/item/roguekey/inquisition,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/church)
-"ibi" = (
-/obj/effect/spawner/roguemap/hauntz_random,
-/obj/effect/decal/cobbleedge{
-	dir = 6
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/town)
 "ibF" = (
 /obj/structure/fluff/railing/fence,
 /turf/open/floor/rogue/dirt/road,
@@ -8703,13 +8686,6 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/garrison)
-"iPR" = (
-/obj/effect/decal/cobbleedge{
-	dir = 9
-	},
-/obj/structure/flora/roguegrass,
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/town)
 "iPW" = (
 /obj/machinery/light/rogue/oven/west,
 /turf/open/floor/rogue/cobble,
@@ -9123,12 +9099,6 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/manor)
-"jnp" = (
-/obj/effect/decal/cobbleedge{
-	dir = 5
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/town)
 "jnq" = (
 /obj/structure/mineral_door/wood/window{
 	lockid = "dungeon";
@@ -9211,17 +9181,6 @@
 /obj/machinery/light/rogue/campfire,
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/under/town/sewer)
-"jrf" = (
-/obj/effect/decal/cobbleedge{
-	dir = 1;
-	icon_state = "borderfall"
-	},
-/obj/structure/fluff/railing/border{
-	dir = 1;
-	icon_state = "border"
-	},
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/town)
 "jrj" = (
 /turf/closed/wall/mineral/rogue/wooddark/end,
 /area/rogue/indoors/town/tavern)
@@ -10166,6 +10125,15 @@
 "kuX" = (
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church/chapel)
+"kuZ" = (
+/obj/effect/decal/cobbleedge{
+	dir = 5
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 6
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/town)
 "kvm" = (
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
@@ -11235,6 +11203,12 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town/roofs)
+"lrA" = (
+/obj/effect/decal/cobbleedge{
+	dir = 9
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/town)
 "lsi" = (
 /obj/structure/roguemachine/mail,
 /turf/open/floor/rogue/wood,
@@ -11706,6 +11680,15 @@
 /obj/item/kitchen/rollingpin,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/church/chapel)
+"lQv" = (
+/obj/effect/decal/cobbleedge{
+	dir = 10
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 6
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/town)
 "lQC" = (
 /turf/closed/wall/mineral/rogue/decostone/fluffstone/reddish,
 /area/rogue/indoors/town/bath)
@@ -11819,6 +11802,15 @@
 /obj/structure/bars/cemetery,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
+"lWO" = (
+/obj/effect/decal/cobbleedge{
+	dir = 9
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 10
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/town)
 "lXN" = (
 /obj/structure/fluff/grindwheel,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -11854,15 +11846,6 @@
 /obj/machinery/light/rogue/firebowl,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/basement)
-"lYQ" = (
-/obj/effect/decal/cobbleedge{
-	dir = 5
-	},
-/obj/effect/decal/cobbleedge{
-	dir = 6
-	},
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/town)
 "lYR" = (
 /obj/structure/fluff/statue/scare{
 	pixel_x = 10
@@ -12572,15 +12555,6 @@
 	},
 /turf/open/floor/rogue/dirt/ambush,
 /area/rogue/outdoors/town)
-"mVw" = (
-/obj/effect/decal/cobbleedge{
-	dir = 10
-	},
-/obj/effect/decal/cobbleedge{
-	dir = 5
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/town)
 "mVZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -13100,6 +13074,15 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"ntA" = (
+/obj/effect/decal/cobbleedge{
+	dir = 4
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 1
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/town)
 "ntN" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/rogue/craftstone,
@@ -13608,12 +13591,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/town/basement)
-"nXL" = (
-/obj/effect/decal/cobbleedge{
-	dir = 9
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/town)
 "nXO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/roguemachine/mail,
@@ -13934,6 +13911,12 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
+"oow" = (
+/obj/effect/decal/cobbleedge{
+	dir = 5
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/town)
 "ooy" = (
 /obj/structure/roguewindow/openclose{
 	dir = 8;
@@ -14337,15 +14320,6 @@
 "oIz" = (
 /turf/closed/wall/mineral/rogue/wooddark/horizontal,
 /area/rogue/outdoors/town/roofs)
-"oIS" = (
-/obj/effect/decal/cobbleedge{
-	dir = 8
-	},
-/obj/effect/decal/cobbleedge{
-	dir = 1
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/town)
 "oJC" = (
 /obj/structure/bars,
 /turf/open/floor/rogue/concrete,
@@ -14975,7 +14949,10 @@
 /obj/structure/fluff/walldeco/customflag{
 	pixel_y = 32
 	},
-/turf/open/floor/rogue/cobble,
+/obj/effect/decal/cobbleedge{
+	dir = 4
+	},
+/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town)
 "ppa" = (
 /obj/structure/closet/crate/roguecloset{
@@ -15285,6 +15262,15 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town)
+"pGe" = (
+/obj/effect/decal/cobbleedge{
+	dir = 5
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 6
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/town)
 "pGp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cobbleedge{
@@ -15420,16 +15406,6 @@
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
-"pLl" = (
-/obj/structure/fluff/walldeco/customflag{
-	pixel_y = 32
-	},
-/obj/effect/decal/cobbleedge{
-	dir = 9
-	},
-/obj/structure/flora/roguegrass,
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/town)
 "pLR" = (
 /obj/structure/mannequin,
 /turf/open/floor/rogue/tile,
@@ -15997,6 +15973,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church/chapel)
+"qtD" = (
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall"
+	},
+/obj/structure/fluff/railing/border{
+	dir = 1;
+	icon_state = "border"
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/town)
 "qtZ" = (
 /obj/structure/chair/wood/rogue{
 	dir = 8;
@@ -16856,15 +16843,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town/roofs)
-"rnw" = (
-/obj/effect/decal/cobbleedge{
-	dir = 10
-	},
-/obj/effect/decal/cobbleedge{
-	dir = 6
-	},
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/town)
 "rnz" = (
 /obj/structure/fluff/railing/fence,
 /obj/structure/fluff/railing/fence{
@@ -19653,6 +19631,16 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
+"umc" = (
+/obj/structure/fluff/walldeco/customflag{
+	pixel_y = 32
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 9
+	},
+/obj/structure/flora/roguegrass,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/town)
 "umX" = (
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/wood,
@@ -20031,6 +20019,12 @@
 "uHq" = (
 /obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
+/area/rogue/outdoors/town)
+"uIt" = (
+/obj/structure/stairs{
+	dir = 4
+	},
+/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/town)
 "uIB" = (
 /obj/machinery/light/rogue/wallfire/candle/r,
@@ -21333,6 +21327,15 @@
 /obj/item/reagent_containers/food/snacks/smallrat,
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/indoors/town/church/chapel)
+"wih" = (
+/obj/effect/decal/cobbleedge{
+	dir = 5
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 9
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/town)
 "wiP" = (
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/cobblerock,
@@ -22265,15 +22268,6 @@
 /obj/item/book/rogue/manners,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
-"xaP" = (
-/obj/effect/decal/cobbleedge{
-	dir = 10
-	},
-/obj/effect/decal/cobbleedge{
-	dir = 6
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/town)
 "xaY" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
@@ -22361,6 +22355,15 @@
 "xfP" = (
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/tavern)
+"xfU" = (
+/obj/effect/decal/cobbleedge{
+	dir = 5
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 9
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/town)
 "xgy" = (
 /turf/open/floor/rogue/plank,
 /area/rogue/outdoors/rtfield)
@@ -22523,6 +22526,15 @@
 	},
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town)
+"xoJ" = (
+/obj/effect/decal/cobbleedge{
+	dir = 10
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 6
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/town)
 "xpc" = (
 /obj/structure/rack/rogue/shelf,
 /obj/structure/rack/rogue/shelf/big{
@@ -23470,9 +23482,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor)
 "yiw" = (
-/obj/effect/decal/cobbleedge{
-	dir = 4
-	},
+/obj/machinery/light/rogue/torchholder/c,
 /obj/effect/decal/cobbleedge{
 	dir = 1
 	},
@@ -54550,7 +54560,7 @@ uIX
 uIX
 uIX
 kfl
-bwA
+uIt
 kfl
 uIX
 uHq
@@ -55812,7 +55822,7 @@ hvn
 hvn
 ycP
 pXr
-iPR
+haq
 hvn
 rLi
 wBZ
@@ -57242,7 +57252,7 @@ wBZ
 uzi
 qGh
 qGh
-yiw
+ntA
 iGv
 iGv
 iGv
@@ -57397,13 +57407,13 @@ fgv
 sXQ
 wBZ
 uzi
-nXL
+lrA
 iyO
-oIS
+aMT
 hvn
 hvn
 dYg
-bjv
+wih
 hvn
 pJn
 waT
@@ -57421,7 +57431,7 @@ tau
 xqr
 xqr
 rkE
-jrf
+qtD
 tVC
 gog
 doE
@@ -57578,7 +57588,7 @@ jYX
 xqr
 fJx
 jVv
-jrf
+qtD
 tVC
 cxb
 doE
@@ -58806,7 +58816,7 @@ iyO
 diq
 hvn
 rJM
-lYQ
+pGe
 rJM
 rJM
 hvn
@@ -58814,7 +58824,7 @@ hvn
 hvn
 hvn
 hvn
-jnp
+hvn
 hvn
 hvn
 hvn
@@ -58828,8 +58838,8 @@ hvn
 hvn
 hvn
 hvn
-rnw
-hIV
+xoJ
+xfU
 hvn
 hvn
 hvn
@@ -58844,7 +58854,7 @@ hvn
 hvn
 hvn
 pXr
-nXL
+lrA
 hvn
 hvn
 hvn
@@ -58931,7 +58941,7 @@ nKp
 hvn
 hvn
 pXr
-iPR
+haq
 hvn
 hvn
 nCN
@@ -58949,7 +58959,7 @@ qGh
 hvn
 hvn
 hvn
-goC
+lWO
 iyO
 hvn
 ppf
@@ -58969,9 +58979,9 @@ pJn
 vrN
 rqG
 cxb
-rJM
-rJM
-iyO
+qGh
+qGh
+pXr
 hvn
 hvn
 nCN
@@ -60050,7 +60060,7 @@ wSp
 jOv
 rBd
 qGh
-nXL
+lrA
 hvn
 rJM
 pUt
@@ -60344,7 +60354,7 @@ rhJ
 xqr
 kjK
 sxT
-bpE
+kuZ
 cyk
 pJn
 gSm
@@ -60658,7 +60668,7 @@ mbj
 xqr
 jPO
 uEE
-xaP
+lQv
 cyk
 pJn
 uEE
@@ -60679,7 +60689,7 @@ jOv
 poY
 hvn
 hvn
-jnp
+oow
 hvn
 bjK
 aEC
@@ -60834,7 +60844,7 @@ oGI
 gKZ
 jOv
 jOv
-jvK
+yiw
 hvn
 iyO
 fzp
@@ -60991,7 +61001,7 @@ gRh
 gRh
 tfp
 cMv
-hvn
+diq
 hvn
 hvn
 pJn
@@ -61148,7 +61158,7 @@ gRh
 oGI
 gRh
 awm
-qGh
+diq
 hvn
 hvn
 kjK
@@ -61305,7 +61315,7 @@ dmf
 pLV
 rjb
 uul
-iyO
+diq
 qGh
 hvn
 hvn
@@ -61462,7 +61472,7 @@ jOv
 jOv
 jOv
 cAt
-hvn
+diq
 iyO
 hvn
 hvn
@@ -62092,7 +62102,7 @@ pJn
 pJn
 sxT
 hvn
-mVw
+brG
 hvn
 hvn
 pJn
@@ -64919,7 +64929,7 @@ cxb
 cxb
 axE
 pXr
-iPR
+haq
 wze
 tVC
 uHq
@@ -65703,7 +65713,7 @@ wze
 rqG
 rqG
 axE
-jnp
+oow
 hvn
 wze
 tVC
@@ -66643,8 +66653,8 @@ jvK
 qGh
 hvn
 hvn
-ibi
-nXL
+hUB
+lrA
 hvn
 fzp
 pJn
@@ -66953,7 +66963,7 @@ cFH
 cFH
 fQc
 fmc
-pLl
+umc
 rJM
 gog
 cxb
