@@ -40,7 +40,6 @@
 	new_player_panel()
 	if(client)
 		client.playtitlemusic()
-		client.PreloadAmbience()
 	if(SSticker.current_state < GAME_STATE_SETTING_UP)
 		var/tl = SSticker.GetTimeLeft()
 		var/postfix
