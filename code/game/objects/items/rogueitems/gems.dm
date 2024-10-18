@@ -50,6 +50,11 @@
 	icon_state = "sapphire_cut"
 	sellprice = 56
 
+/obj/item/roguegem/diamond
+	name = "dorpel"
+	desc = "Beautifully clear, it demands respect."
+	icon_state = "diamond_cut"
+	sellprice = 121
 
 /// riddle
 

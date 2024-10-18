@@ -89,6 +89,17 @@
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
 
+/obj/item/clothing/mask/rogue/shepherd/clothmask
+	name = "cloth mask"
+	icon_state = "clothm"
+	desc = "A simple cloth mask that suppresses bad odors, or offers minor protection when doing dirty work such as mining or gravedigging."
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	body_parts_covered = NECK|MOUTH
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	adjustable = CAN_CADJUST
+	resistance_flags = FLAMMABLE
+	toggle_icon_state = TRUE
+	experimental_onhip = TRUE
 
 /obj/item/clothing/mask/rogue/facemask/prisoner/Initialize()
 	. = ..()

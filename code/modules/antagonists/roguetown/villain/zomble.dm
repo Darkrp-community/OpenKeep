@@ -35,7 +35,6 @@
 		TRAIT_TOXIMMUNE,
 		TRAIT_CHUNKYFINGERS,
 		TRAIT_NOSLEEP,
-		TRAIT_BASHDOORS,
 		TRAIT_SHOCKIMMUNE,
 		TRAIT_SPELLCOCKBLOCK,
 		TRAIT_BLOODLOSS_IMMUNE,
@@ -88,8 +87,8 @@
 //	STASPD = zombie.STASPD-5
 //	STAINT = zombie.STAINT-5
 //	zombie.STACON = 5
-	zombie.STASPD = 5
-	zombie.STAINT = 2
+	zombie.STASPD = 3
+	zombie.STAINT = 1
 	cmode_music = zombie.cmode_music
 	zombie.vitae_pool = 0 // Deadites have no vitae to drain from.
 	return ..()
@@ -190,9 +189,7 @@
 	zombie.update_body()
 	zombie.cmode_music = 'sound/music/combat_weird.ogg'
 
-	if(prob(8))
-		zombie.STASPD = rand(5, 7)
-
+	zombie.STASPD = 3
 	zombie.STAINT = 1
 
 	zombie.vitae_pool = 0 // Again, just in case.
@@ -209,7 +206,7 @@
 	var/mob/living/carbon/human/zombie = user
 	if(world.time > next_idle_sound)
 		zombie.emote("zmoan")
-		next_idle_sound = world.time + rand(12 SECONDS, 32 SECONDS)
+		next_idle_sound = world.time + rand(20 SECONDS, 40 SECONDS)
 
 //Infected wake param is just a transition from living to zombie, via zombie_infect()
 //Previously you just died without warning in 3 minutes, now you just become an antag

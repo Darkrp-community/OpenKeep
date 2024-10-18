@@ -38,6 +38,7 @@
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/roguekey/tavern
+	beltr = /obj/item/rogueweapon/huntingknife/villager
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/random
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random

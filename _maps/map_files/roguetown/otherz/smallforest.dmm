@@ -61,8 +61,8 @@
 /area/rogue/outdoors/river)
 "aq" = (
 /turf/open/water/river{
-	icon_state = "rockwd";
-	dir = 4
+	dir = 4;
+	icon_state = "rockwd"
 	},
 /area/rogue/outdoors/river)
 "ar" = (
@@ -83,8 +83,8 @@
 /area/rogue/outdoors/river)
 "av" = (
 /turf/open/water/river{
-	icon_state = "rockwd";
-	dir = 8
+	dir = 8;
+	icon_state = "rockwd"
 	},
 /area/rogue/outdoors/river)
 "aw" = (
@@ -159,11 +159,11 @@
 /turf/open/chasm/jungle,
 /area/rogue/outdoors/woods)
 "aP" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "aQ" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "bc" = (
@@ -210,8 +210,8 @@
 /area/rogue/outdoors/river)
 "fA" = (
 /turf/open/water/river{
-	icon_state = "rockwd";
-	dir = 4
+	dir = 4;
+	icon_state = "rockwd"
 	},
 /area/rogue/outdoors/woods)
 "fB" = (
@@ -442,15 +442,15 @@
 /area/rogue/outdoors/river)
 "CD" = (
 /obj/effect/landmark/mapGenerator/rogue/forest{
-	endTurfY = 128;
-	endTurfX = 128
+	endTurfX = 128;
+	endTurfY = 128
 	},
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/river)
 "CN" = (
 /obj/structure/fluff/traveltile/bandit{
-	aportalid = "banditexit";
-	aportalgoesto = "banditin"
+	aportalgoesto = "banditin";
+	aportalid = "banditexit"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/caverogue)
@@ -900,13 +900,13 @@ aa
 aa
 aa
 ag
+ac
+ac
+ac
 ag
-ac
-ac
-ac
+pu
 pu
 Ep
-pu
 pu
 ak
 ak
@@ -920,7 +920,7 @@ ag
 ag
 ag
 ag
-aF
+ag
 ag
 ag
 pu
@@ -1050,7 +1050,7 @@ ag
 ag
 ag
 ag
-aF
+ag
 ag
 ag
 pu
@@ -1181,13 +1181,13 @@ aD
 ag
 aF
 aF
-aF
+ag
 ag
 ag
 ae
 pu
-aF
-aF
+ag
+ag
 ag
 aF
 aF
@@ -1312,12 +1312,12 @@ ag
 aF
 aF
 aF
-aF
-aF
+ag
+ag
 pu
-aF
-aF
-aF
+ag
+ag
+ag
 aF
 aF
 aF
@@ -1711,11 +1711,11 @@ aF
 aF
 aF
 aF
-aF
-aF
-aF
-aF
-aF
+ag
+ag
+ag
+ag
+ag
 aa
 "}
 (9,1,1) = {"
@@ -1840,12 +1840,12 @@ aF
 aF
 aF
 aF
-aF
-aF
-aF
-aF
-aF
-aF
+ag
+ag
+ag
+ag
+ag
+ag
 aa
 "}
 (10,1,1) = {"
@@ -2623,8 +2623,8 @@ ag
 ag
 ag
 aF
-aF
-aF
+ag
+ag
 ag
 aa
 "}

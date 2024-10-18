@@ -44,6 +44,7 @@
 	if(!user.cmode)
 		if(!insertion_allowed(P))
 			return
+		user.dropItemToGround(P)
 		put_in(P)
 		playsound(loc, 'sound/foley/cartadd.ogg', 100, FALSE, -1)
 		return
@@ -145,3 +146,7 @@
 
 	return TRUE
 
+/obj/structure/handcart/Move(atom/newloc, direct, glide_size_override)
+	. = ..()
+	if (. && pulledby && dir != pulledby.dir)
+		setDir(pulledby.dir)

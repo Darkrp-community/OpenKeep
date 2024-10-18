@@ -144,6 +144,13 @@
 	wdefense = 3
 	sellprice = 15
 
+/obj/item/rogueweapon/mace/cudgel/carpenter
+	force = 15
+	force_wielded = 20
+	name = "peasant cudgel"
+	icon_state = "carpentercudgel"
+	desc = "A stubby club reinforced with iron bits, popular among village watchmen and peasant militias. Despite being reinforced and hard-hitting, it still cannot compare to a proper mace."
+
 /obj/item/rogueweapon/mace/cudgel/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -272,7 +279,7 @@
 	chargetime = 3
 	swingdelay = 3
 	icon_state = "insmash"
-	misscost = 30
+	misscost = 23
 	warnie = "mobwarning"
 
 // For the Goedendag. If it applies to the grand mace, use this one instead.
