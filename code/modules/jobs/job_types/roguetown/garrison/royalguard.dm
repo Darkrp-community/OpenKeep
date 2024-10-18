@@ -56,7 +56,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine // Wear the King's colors.
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-	beltl = /obj/item/keyring/guardcastle
+	beltl = /obj/item/keyring/mguard
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/sword
 	backr = /obj/item/storage/backpack/rogue/satchel
