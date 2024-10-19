@@ -454,7 +454,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 				else
 					butcher = butcher_results
 			if(user.mind.get_skill_level(/datum/skill/labor/butchering) == 4)
-				if(prob(30))
+				if(prob(50))
 					butcher = perfect_butcher_results // decent chance to get great result
 				else
 					butcher = butcher_results
