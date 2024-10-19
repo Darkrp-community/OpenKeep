@@ -189,6 +189,10 @@
 	base_icon_state = "bibble"
 	title = "bible"
 	dat = "gott.json"
+	force = 2
+	force_wielded = 4
+	throwforce = 1
+	possible_item_intents = list(/datum/intent/use, /datum/intent/mace/strike/wood)
 
 /obj/item/book/rogue/bibble/read(mob/user)
 	if(!open)
@@ -657,6 +661,10 @@ ____________End of Example*/
 	base_icon_state = "psybibble"
 	title = "bible"
 	dat = "gott.json"
+	force = 2
+	force_wielded = 4
+	throwforce = 1
+	possible_item_intents = list(/datum/intent/use, /datum/intent/mace/strike/wood)
 
 /obj/item/book/rogue/psybibble/read(mob/user)
 	if(!open)
