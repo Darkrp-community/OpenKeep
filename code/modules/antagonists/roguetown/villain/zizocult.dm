@@ -662,7 +662,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			H.silent += 30
 			qdel(src)
 
-/proc/heartache(var/mob/user, var/turf/C)
+/proc/heartache(mob/user, turf/C)
 	new /obj/item/corruptedheart(C)
 	to_chat(user.mind, "<span class='notice'>A corrupted heart. When used on a non-enlightened mortal their heart shall ache and they will be immobilized and too stunned to speak. Perfect for getting new soon-to-be enlightened. Now, just don't use it at the combat ready.</span>")
 
@@ -843,7 +843,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/fleshmend
 
-/proc/fleshmend(var/mob/user, var/turf/C)
+/proc/fleshmend(mob/user, turf/C)
 	for(var/mob/living/carbon/human/H in C.contents)
 		H.playsound_local(C, 'sound/misc/vampirespell.ogg', 100, FALSE, pressure_affected = FALSE)
 		H.fully_heal()
@@ -948,7 +948,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	function = /proc/badomenzizo
 
-/proc/badomenzizo(var/mob/user, var/turf/C)
+/proc/badomenzizo(mob/user, turf/C)
 	for(var/mob/living/carbon/human/H in C.contents)
 		if(H.stat == DEAD)
 			H.gib(FALSE, FALSE, FALSE)
