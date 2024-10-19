@@ -274,7 +274,7 @@
 	sellprice = 5
 
 	force = 20
-	force_wielded = 30
+	force_wielded = 32
 	possible_item_intents = list(/datum/intent/mace/heavy/strike)
 	gripped_intents = list(/datum/intent/mace/heavy/smash)
 

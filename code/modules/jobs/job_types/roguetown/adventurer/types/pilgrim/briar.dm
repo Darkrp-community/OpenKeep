@@ -7,6 +7,7 @@
 	tutorial = "Stoic gardeners or flesh-eating predators, all can follow Dendors path. <br>His Briars scorn civilized living, many embracing their animal nature, being fickle and temperamental."
 //	allowed_patrons = list(/datum/patron/divine/dendor)		this doesn't work so long its a subclass type
 	cmode_music = 'sound/music/combat_dendor.ogg'
+	maximum_possible_slots = 4	// to be lowered to 2 once testing is done
 
 /datum/outfit/job/roguetown/adventurer/briar/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -39,8 +40,11 @@
 		H.mind.adjust_skillrank(/datum/skill/labor/taming, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
@@ -128,10 +132,14 @@
 	alpha = 155
 	anchored = TRUE
 /obj/item/blessing_of_dendor_prey/attack_hand(mob/living/carbon/human/user)
-	if(HAS_TRAIT(user, TRAIT_BLESSED))
-		to_chat(user, span_info("No creecher can be twice blessed..."))
-		return
 	if(user.patron.type == /datum/patron/divine/dendor)
+		if(HAS_TRAIT(user, TRAIT_BLESSED))
+			to_chat(user, span_info("No creecher can be twice blessed, but Dendor approves of the sacrifice..."))
+			var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(user, user.patron)
+			C.holder_mob = user
+			C.devotion += 100
+			qdel(src)
+			return
 		icon_state = "dendor_grow_end"
 		playsound(get_turf(user), 'sound/vo/smokedrag.ogg', 100, TRUE)
 		playsound(get_turf(user), 'sound/misc/wind.ogg', 100, TRUE, -1)
@@ -157,10 +165,14 @@
 	alpha = 155
 	anchored = TRUE
 /obj/item/blessing_of_dendor_predator/attack_hand(mob/living/carbon/human/user)
-	if(HAS_TRAIT(user, TRAIT_BLESSED))
-		to_chat(user, span_info("No creecher can be twice blessed..."))
-		return
 	if(user.patron.type == /datum/patron/divine/dendor)
+		if(HAS_TRAIT(user, TRAIT_BLESSED))
+			to_chat(user, span_info("No creecher can be twice blessed, but Dendor approves of the sacrifice..."))
+			var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(user, user.patron)
+			C.holder_mob = user
+			C.devotion += 100
+			qdel(src)
+			return
 		icon_state = "dendor_consume_end"
 		playsound(get_turf(user), 'sound/vo/smokedrag.ogg', 100, TRUE)
 		sleep(30)
