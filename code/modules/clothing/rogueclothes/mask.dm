@@ -215,7 +215,7 @@
 	flags_inv = HIDEFACE
 	body_parts_covered = FACE
 	block2add = FOV_BEHIND
-	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	slot_flags = ITEM_SLOT_MASK
 	experimental_onhip = TRUE
 
 	armor = ARMOR_MINOR
