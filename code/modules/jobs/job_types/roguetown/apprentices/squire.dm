@@ -27,7 +27,7 @@
 /datum/outfit/job/roguetown/squire/pre_equip(mob/living/carbon/human/H)
 	..()
 	neck = /obj/item/storage/belt/rogue/pouch
-	beltl = /obj/item/keyring/guard
+	beltl = /obj/item/keyring/mguard
 	backr = /obj/item/storage/backpack/rogue/satchel
 	pants = /obj/item/clothing/under/roguetown/tights
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard

@@ -1,7 +1,7 @@
 //used in various places
 #define ALL_RACES_LIST			list("human", "dwarf", "elf", "tiefling", "aasimar", "orc", "zizombie")
 
-#define ALL_RACES_LIST_NAMES		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Dwarf","Tiefling", "Aasimar")
+#define ALL_PLAYER_RACES_BY_NAME		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Dwarf","Tiefling", "Aasimar")
 
 #define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra)
 #define ALL_TEMPLAR_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra)
@@ -53,6 +53,8 @@ GLOBAL_LIST_INIT(wolf_suffixes, list("Fang", "Claw", "Stalker", "Prowler", "Roar
 #define FAMILY_MOTHER "Mother"
 #define FAMILY_PROGENY "Progeny"
 #define FAMILY_ADOPTED "Adoptive Progeny"
+#define FAMILY_OMMER "Parents Sibling"
+#define FAMILY_INLAW "In Law"
 
 GLOBAL_LIST_EMPTY(sunlights)
 GLOBAL_LIST_EMPTY(job_respawn_delays)

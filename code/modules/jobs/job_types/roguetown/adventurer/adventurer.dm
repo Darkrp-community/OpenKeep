@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY(billagerspawns)
 	faction = "Station"
 	total_positions = 8
 	spawn_positions = 8
-	allowed_races = ALL_RACES_LIST_NAMES
+	allowed_races = ALL_PLAYER_RACES_BY_NAME
 	tutorial = "Hero of nothing, adventurer by trade. Whatever led you to this fate is up to the wind to decide, and you've never fancied yourself for much other than the thrill. Someday your pride is going to catch up to you, and you're going to find out why most men don't end up in the annals of history."
 
 
@@ -22,7 +22,7 @@ GLOBAL_LIST_EMPTY(billagerspawns)
 	always_show_on_latechoices = TRUE
 	job_reopens_slots_on_death = TRUE
 	same_job_respawn_delay = 15 MINUTES
-
+	bypass_lastclass = TRUE
 	advclass_cat_rolls = list(CTAG_ADVENTURER = 15)
 
 
