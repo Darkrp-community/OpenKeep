@@ -5305,7 +5305,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/twig,
+/turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "fsP" = (
 /turf/open/floor/rogue/dirt/road,
