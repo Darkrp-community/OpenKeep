@@ -46,6 +46,8 @@
 	var/kickthresh = 15
 	var/swing_closed = TRUE
 
+	var/ghostproof = FALSE	// Set to true to stop dead players passing through closed ones. Only use this for special areas, not generally
+
 	damage_deflection = 10
 
 /obj/structure/mineral_door/onkick(mob/user)
@@ -132,6 +134,12 @@
 	. = ..()
 	move_update_air(T)
 
+/obj/structure/mineral_door/attack_ghost(mob/dead/observer/user)	// lets ghosts click on windows to transport across
+	if(!ghostproof)
+		density = FALSE
+		. = step(user,get_dir(user,src.loc))
+		density = TRUE
+
 /obj/structure/mineral_door/Bumped(atom/movable/AM)
 	..()
 	if(door_opened)
@@ -175,6 +183,7 @@
 					else
 						addtimer(CALLBACK(src, PROC_REF(Close), FALSE), 25)
 
+
 /obj/structure/mineral_door/attack_ai(mob/user) //those aren't machinery, they're just big fucking slabs of a mineral
 	if(isAI(user)) //so the AI can't open it
 		return
@@ -195,7 +204,7 @@
 		return
 	if(locked)
 		if( user.used_intent.type == /datum/intent/unarmed/claw )
-			user.changeNext_move(CLICK_CD_MELEE)	
+			user.changeNext_move(CLICK_CD_MELEE)
 			to_chat(user, "<span class='warning'>The deadite claws at the door!!</span>")
 			take_damage(40, "brute", "melee", 1)
 			return
@@ -351,7 +360,7 @@
 
 		var/obj/item/lockpick/P = I
 		var/mob/living/L = user
-		
+
 		var/pickskill = user.mind.get_skill_level(/datum/skill/misc/lockpicking)
 		var/perbonus = L.STAPER/5
 		var/picktime = 70

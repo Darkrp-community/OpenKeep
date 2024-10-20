@@ -44,9 +44,9 @@
 		head = /obj/item/clothing/head/roguetown/headband/red
 		beltr = /obj/item/rogueweapon/mace/cudgel
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		wrists = /obj/item/keyring/stevedore
+		neck = /obj/item/roguekey/warehouse
 		belt = /obj/item/storage/belt/rogue/leather/rope
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)
@@ -56,10 +56,10 @@
 		pants = /obj/item/clothing/under/roguetown/tights/sailor
 		beltr = /obj/item/rogueweapon/mace/cudgel
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		wrists = /obj/item/keyring/stevedore
+		neck = /obj/item/roguekey/warehouse
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 		head = /obj/item/clothing/head/roguetown/headband
 		H.change_stat("endurance", 1)
 		H.change_stat("intelligence", 1)

@@ -124,7 +124,7 @@
 				BUFSTR++
 			STASTR = newamt
 
-			var/obj/item/bodypart/armr = get_bodypart(BODY_ZONE_R_ARM)
+		/*	var/obj/item/bodypart/armr = get_bodypart(BODY_ZONE_R_ARM)
 			if(armr)
 				if(STASTR <= 10)
 					armr.sellprice = STASTR
@@ -148,7 +148,7 @@
 						if(STASTR > 14)
 							arml.sellprice = STASTR*6
 							if(STASTR > 16)
-								arml.sellprice = STASTR*10
+								arml.sellprice = STASTR*10		Commented out since no gating to fix goblins etc being farmed for truly ludicrous amounts*/
 
 		if("perception")
 			newamt = STAPER + amt
@@ -170,7 +170,7 @@
 				BUFPER++
 			STAPER = newamt
 
-			var/obj/item/organ/eyes/eyes = getorganslot(ORGAN_SLOT_EYES)
+		/*	var/obj/item/organ/eyes/eyes = getorganslot(ORGAN_SLOT_EYES)
 			if(eyes)
 				if(STAPER <= 10)
 					eyes.sellprice = STAPER
@@ -179,7 +179,7 @@
 					if(STAPER > 12) //PER is harder to max out and buff
 						eyes.sellprice = STAPER*4
 						if(STAPER > 14) //tiefling boltslinger basically
-							eyes.sellprice = STAPER*6
+							eyes.sellprice = STAPER*6	*/
 
 			update_fov_angles()
 
@@ -203,7 +203,7 @@
 				BUFINT++
 			STAINT = newamt
 
-			var/obj/item/organ/brain/brain = getorganslot(ORGAN_SLOT_BRAIN)
+		/*	var/obj/item/organ/brain/brain = getorganslot(ORGAN_SLOT_BRAIN)
 			if(brain)
 				if(STAINT <= 10)
 					brain.sellprice = STAINT
@@ -213,8 +213,8 @@
 						brain.sellprice = STAINT*4
 						if(STAINT > 13)
 							brain.sellprice = STAINT*6
-							if(STAINT > 15) //15+ needs a special job - baseline old age elf is 14. 
-								brain.sellprice += STAINT*10 //"smartest" human npcs rn are zizombies and orcs at 10 INT - galaxy brains are player-exclusive.
+							if(STAINT > 15) //15+ needs a special job - baseline old age elf is 14.
+								brain.sellprice += STAINT*10  "smartest" human npcs rn are zizombies and orcs at 10 INT - galaxy brains are player-exclusive.	*/
 
 
 		if("constitution")
@@ -237,7 +237,7 @@
 				BUFCON++
 			STACON = newamt
 
-			var/obj/item/organ/liver/liver = getorganslot(ORGAN_SLOT_LIVER)
+		/*	var/obj/item/organ/liver/liver = getorganslot(ORGAN_SLOT_LIVER)
 			if(liver)
 				if(STACON >= 10)
 					liver.sellprice = STACON
@@ -274,7 +274,7 @@
 						if(STACON > 13)
 							guts.sellprice = STACON*4
 							if(STACON > 15)
-								guts.sellprice += STACON*5
+								guts.sellprice += STACON*5	Commented out since no gating to fix goblins etc being farmed for truly ludicrous amounts*/
 
 
 		if("endurance")
@@ -297,7 +297,7 @@
 				BUFEND++
 			STAEND = newamt
 
-			var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
+		/*	var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
 			if(heart)
 				if(STAEND <= 10)
 					heart.sellprice = STAEND
@@ -321,7 +321,7 @@
 						if(STAEND > 14)
 							lungs.sellprice = STAEND*5
 							if(STAEND > 16)
-								lungs.sellprice += STAEND*7
+								lungs.sellprice += STAEND*7	Commented out since no gating to fix goblins etc being farmed for truly ludicrous amounts*/
 
 		if("speed")
 			newamt = STASPD + amt
@@ -343,7 +343,7 @@
 				BUFSPE++
 			STASPD = newamt
 
-			var/obj/item/bodypart/legr = get_bodypart(BODY_ZONE_R_LEG)
+		/*	var/obj/item/bodypart/legr = get_bodypart(BODY_ZONE_R_LEG)
 			if(legr)
 				if(STASPD <= 10)
 					legr.sellprice = STASPD
@@ -367,7 +367,7 @@
 						if(STASPD > 15)
 							legl.sellprice = STASPD*6
 							if(STASPD > 17)
-								legl.sellprice += STASPD*8
+								legl.sellprice += STASPD*8	Commented out since no gating to fix goblins etc being farmed for truly ludicrous amounts*/
 
 			update_move_intent_slowdown()
 
@@ -391,7 +391,7 @@
 				BUFLUC++
 			STALUC = newamt
 
-			var/obj/item/organ/tongue/tongue = getorganslot(ORGAN_SLOT_TONGUE) //Superstition? also only really beggars and jesters can be farmed for this
+		/*	var/obj/item/organ/tongue/tongue = getorganslot(ORGAN_SLOT_TONGUE) //Superstition? also only really beggars and jesters can be farmed for this
 			if(tongue)
 				if(STALUC <= 10)
 					tongue.sellprice = STALUC
@@ -400,7 +400,7 @@
 					if(STALUC > 12)
 						tongue.sellprice = STALUC*4
 						if(STALUC > 14)
-							tongue.sellprice = STALUC*6
+							tongue.sellprice = STALUC*6	Commented out since no gating to fix goblins etc being farmed for truly ludicrous amounts*/
 
 /proc/generic_stat_comparison(userstat as num, targetstat as num)
 	var/difference = userstat - targetstat
