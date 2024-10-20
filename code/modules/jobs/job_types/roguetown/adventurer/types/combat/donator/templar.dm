@@ -34,11 +34,11 @@
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 			wrists = /obj/item/clothing/neck/roguetown/psycross/noc
 		if("Pestra")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm // no more placeholder
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 		if("Ravox")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/ravox	
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver
