@@ -130,6 +130,23 @@
 	. = ..()
 	color = pick(CLOTHING_TEAL, CLOTHING_GREEN, CLOTHING_ORANGE, CLOTHING_MAJENTA, CLOTHING_YELLOW,CLOTHING_SALMON, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW)
 
+/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary
+	color = CLOTHING_PURPLE
+
+/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary/Initialize()
+	..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+	else
+		GLOB.lordcolor += src
+
+/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary/lordcolor(primary,secondary)
+	if(secondary)
+		color = secondary
+
+/obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary/Destroy()
+	GLOB.lordcolor -= src
+	return ..()
 
 //................ Cook Hat ............... //
 /obj/item/clothing/head/roguetown/cookhat
@@ -851,7 +868,8 @@
 	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	icon_state = "sinistar"
+	icon_state = "sinistarhelm"
+	dropshrink = 0.9
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	smeltresult = /obj/item/ingot/iron
 

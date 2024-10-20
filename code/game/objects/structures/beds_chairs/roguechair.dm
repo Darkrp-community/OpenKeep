@@ -80,6 +80,9 @@
 /obj/structure/chair/bench/couchablack/r
 	icon_state = "couchablackaright"
 
+/obj/structure/chair/bench/throne
+	name = "small throne"
+	icon_state = "thronechair"
 
 /obj/structure/chair/bench/couch/Initialize()
 	..()
@@ -118,13 +121,6 @@
 	icon_state = "chair3"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	item_chair = /obj/item/chair/rogue
-	blade_dulling = DULLING_BASHCHOP
-	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
-	attacked_sound = "woodimpact"
-
-/obj/structure/chair/wood/rogue/throne
-	icon_state = "thronechair"
-	icon = 'icons/roguetown/misc/structure.dmi'
 	blade_dulling = DULLING_BASHCHOP
 	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
 	attacked_sound = "woodimpact"
