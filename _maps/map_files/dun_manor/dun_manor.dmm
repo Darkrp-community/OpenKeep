@@ -17656,6 +17656,13 @@
 "rYA" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town)
+"rYP" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/bearpelt{
+	pixel_x = -32
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town)
 "rZb" = (
 /obj/structure/fermenting_barrel/water,
 /turf/open/floor/rogue/ruinedwood,
@@ -90197,7 +90204,7 @@ xqr
 xqr
 xqr
 gRw
-spx
+jpi
 doE
 amw
 fjC
@@ -90354,7 +90361,7 @@ ouw
 xqr
 xqr
 jpi
-qjR
+rYP
 ett
 oyZ
 bOK
