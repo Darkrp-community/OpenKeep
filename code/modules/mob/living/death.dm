@@ -10,7 +10,7 @@
 		gib_animation()
 
 	spill_embedded_objects()
-	
+
 	spill_organs(no_brain, no_organs, no_bodyparts)
 
 	if(!no_bodyparts)
@@ -42,7 +42,7 @@
 
 	if(drop_items)
 		unequip_everything()
-	
+
 	if(buckled)
 		buckled.unbuckle_mob(src, force = TRUE)
 
@@ -95,6 +95,8 @@
 	if(!gibbed && !QDELETED(src))
 		addtimer(CALLBACK(src, PROC_REF(med_hud_set_status)), (DEFIB_TIME_LIMIT * 10) + 1)
 	stop_pulling()
+
+	to_chat(src, span_green("A bleak afterlife awaits...but the Gods may let you walk again in another shape! Spirit, you must descend in a Journey to the Afterlife and wait there for judgment..."))
 
 	. = ..()
 

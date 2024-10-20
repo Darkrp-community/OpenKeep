@@ -136,12 +136,6 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 200, 55)
 
-/obj/item/reagent_containers/food/drinks/bottle/gin
-	name = "Griffeater gin"
-	desc = ""
-	icon_state = "ginbottle"
-	list_reagents = list(/datum/reagent/consumable/ethanol/gin = 100)
-
 /obj/item/reagent_containers/food/drinks/bottle/whiskey
 	name = "Uncle Git's special reserve"
 	desc = ""
@@ -160,24 +154,12 @@
 	icon_state = "badminka"
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
 
-/obj/item/reagent_containers/food/drinks/bottle/tequila
-	name = "Caccavo guaranteed quality tequila"
-	desc = ""
-	icon_state = "tequilabottle"
-	list_reagents = list(/datum/reagent/consumable/ethanol/tequila = 100)
-
 /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing
 	name = "bottle of nothing"
 	desc = ""
 	icon_state = "bottleofnothing"
 	list_reagents = list(/datum/reagent/consumable/nothing = 100)
 	foodtype = NONE
-
-/obj/item/reagent_containers/food/drinks/bottle/patron
-	name = "Wrapp Artiste Patron"
-	desc = ""
-	icon_state = "patronbottle"
-	list_reagents = list(/datum/reagent/consumable/ethanol/patron = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/rum
 	name = "Captain Pete's Cuban spiced rum"
@@ -195,31 +177,6 @@
 /obj/item/reagent_containers/food/drinks/bottle/holywater/hell
 	desc = ""
 	list_reagents = list(/datum/reagent/hellwater = 100)
-
-/obj/item/reagent_containers/food/drinks/bottle/vermouth
-	name = "Goldeneye vermouth"
-	desc = ""
-	icon_state = "vermouthbottle"
-	list_reagents = list(/datum/reagent/consumable/ethanol/vermouth = 100)
-
-/obj/item/reagent_containers/food/drinks/bottle/kahlua
-	name = "Robert Robust's coffee liqueur"
-	desc = ""
-	icon_state = "kahluabottle"
-	list_reagents = list(/datum/reagent/consumable/ethanol/kahlua = 100)
-	foodtype = VEGETABLES
-
-/obj/item/reagent_containers/food/drinks/bottle/goldschlager
-	name = "College Girl goldschlager"
-	desc = ""
-	icon_state = "goldschlagerbottle"
-	list_reagents = list(/datum/reagent/consumable/ethanol/goldschlager = 100)
-
-/obj/item/reagent_containers/food/drinks/bottle/cognac
-	name = "Chateau de Baton premium cognac"
-	desc = ""
-	icon_state = "cognacbottle"
-	list_reagents = list(/datum/reagent/consumable/ethanol/cognac = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/wine
 	name = "Doublebeard's bearded special wine"
@@ -288,18 +245,6 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/lizardwine = 100)
 	foodtype = FRUIT | ALCOHOL
 
-/obj/item/reagent_containers/food/drinks/bottle/hcider
-	name = "Jian Hard Cider"
-	desc = ""
-	icon_state = "hcider"
-	volume = 50
-	list_reagents = list(/datum/reagent/consumable/ethanol/hcider = 50)
-
-/obj/item/reagent_containers/food/drinks/bottle/grappa
-	name = "Phillipes well-aged Grappa"
-	desc = ""
-	icon_state = "grappabottle"
-	list_reagents = list(/datum/reagent/consumable/ethanol/grappa = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/sake
 	name = "Ryo's traditional sake"
@@ -374,68 +319,6 @@
 	list_reagents = list(/datum/reagent/consumable/limejuice = 100)
 	foodtype = FRUIT
 
-/obj/item/reagent_containers/food/drinks/bottle/menthol
-	name = "menthol"
-	desc = ""
-	custom_price = 10
-	icon_state = "mentholbox"
-	item_state = "carton"
-	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
-	isGlass = FALSE
-	list_reagents = list(/datum/reagent/consumable/menthol = 100)
-
-/obj/item/reagent_containers/food/drinks/bottle/grenadine
-	name = "Jester Grenadine"
-	desc = ""
-	custom_price = 10
-	icon_state = "grenadine"
-	isGlass = TRUE
-	list_reagents = list(/datum/reagent/consumable/grenadine = 100)
-	foodtype = FRUIT
-
-/obj/item/reagent_containers/food/drinks/bottle/applejack
-	name = "Buckin' Bronco's Applejack"
-	desc = ""
-	custom_price = 10
-	icon_state = "applejack_bottle"
-	isGlass = TRUE
-	list_reagents = list(/datum/reagent/consumable/ethanol/applejack = 100)
-	foodtype = FRUIT
-
-/obj/item/reagent_containers/food/drinks/bottle/champagne
-	name = "Eau d' Dandy Brut Champagne"
-	desc = ""
-	custom_premium_price = 200
-	icon_state = "champagne_bottle"
-	isGlass = TRUE
-	list_reagents = list(/datum/reagent/consumable/ethanol/champagne = 100)
-
-/obj/item/reagent_containers/food/drinks/bottle/blazaam
-	name = "Ginbad's Blazaam"
-	desc = ""
-	icon_state = "blazaambottle"
-	list_reagents = list(/datum/reagent/consumable/ethanol/blazaam = 100)
-
-/obj/item/reagent_containers/food/drinks/bottle/trappist
-	name = "Mont de Requin Trappistes Bleu"
-	desc = ""
-	custom_premium_price = 50
-	icon_state = "trappistbottle"
-	volume = 50
-	list_reagents = list(/datum/reagent/consumable/ethanol/trappist = 50)
-
-/obj/item/reagent_containers/food/drinks/bottle/hooch
-	name = "hooch bottle"
-	desc = ""
-	icon_state = "hoochbottle"
-	list_reagents = list(/datum/reagent/consumable/ethanol/hooch = 100)
-
-/obj/item/reagent_containers/food/drinks/bottle/moonshine
-	name = "moonshine jug"
-	desc = ""
-	icon_state = "moonshinebottle"
-	list_reagents = list(/datum/reagent/consumable/ethanol/moonshine = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/blank //Don't let players print these from a lathe, bottles should be obtained in mass from the bar only.
 	name = "glass bottle"

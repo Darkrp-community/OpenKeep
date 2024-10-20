@@ -17,7 +17,7 @@
 	head = /obj/item/clothing/head/roguetown/helmet/sallet/elven
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	belt = /obj/item/storage/belt/rogue/leather/mercenary/black
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/elven
+	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/elven
 	backr = /obj/item/rogueweapon/spear
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special

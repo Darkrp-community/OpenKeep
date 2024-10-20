@@ -69,7 +69,10 @@ GLOBAL_LIST_INIT(noble_positions, list(
 	"Court Magician",
 	"Archivist",
 	"Merchant",
-	"Feldsher"
+	"Feldsher",
+	"Warden of the Terrorbog",
+	"Huntmaster of the Murderwoods",
+	"Hetman of Mount Decapitation"
 	))
 
 GLOBAL_LIST_INIT(garrison_positions, list(
@@ -110,15 +113,11 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Miner",
 	"Hunter",
 	"Fisher",
-	"Lumberjack",
 	"Butler",
-	"Adventurer",
 	"Towner",
-	"Pilgrim",
 	"Mercenary",
 	"Niteman",
 	"Nitemaiden",
-	"Docker",
 	"Prisoner",
 	"Beggar",
 	"Adventurer",
