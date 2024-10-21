@@ -260,7 +260,7 @@
 
 /obj/structure/roguemachine/vendor/inn/Initialize()
 	. = ..()
-	for(var/X in list(/obj/item/roguekey/roomi,/obj/item/roguekey/roomii,/obj/item/roguekey/roomiii,/obj/item/roguekey/roomiv,/obj/item/roguekey/roomv,/obj/item/roguekey/roomvi))
+	for(var/X in list(/obj/item/roguekey/roomi,/obj/item/roguekey/roomii,/obj/item/roguekey/roomiii))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
@@ -282,31 +282,11 @@
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 5
-	for(var/X in list(/obj/item/roguekey/houses/house1))
-		var/obj/P = new X(src)
-		held_items[P] = list()
-		held_items[P]["NAME"] = P.name
-		held_items[P]["PRICE"] = 60
 	for(var/X in list(/obj/item/roguekey/houses/house2,/obj/item/roguekey/houses/house3))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 100
-	for(var/X in list(/obj/item/roguekey/houses/house4))
-		var/obj/P = new X(src)
-		held_items[P] = list()
-		held_items[P]["NAME"] = P.name
-		held_items[P]["PRICE"] = 70
-	for(var/X in list(/obj/item/roguekey/houses/house5))
-		var/obj/P = new X(src)
-		held_items[P] = list()
-		held_items[P]["NAME"] = P.name
-		held_items[P]["PRICE"] = 60
-	for(var/X in list(/obj/item/roguekey/houses/house6))
-		var/obj/P = new X(src)
-		held_items[P] = list()
-		held_items[P]["NAME"] = P.name
-		held_items[P]["PRICE"] = 70
 	for(var/X in list(/obj/item/roguekey/houses/house7,/obj/item/roguekey/houses/house8))
 		var/obj/P = new X(src)
 		held_items[P] = list()
