@@ -1553,10 +1553,6 @@
 	dir = 1;
 	icon_state = "stairs"
 	},
-/obj/structure/fluff/railing/border{
-	dir = 8;
-	icon_state = "border"
-	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "bwM" = (
@@ -1611,17 +1607,8 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "bAb" = (
-/obj/structure/fluff/railing/border,
-/obj/structure/fluff/railing/border{
-	dir = 4;
-	icon_state = "border"
-	},
-/obj/structure/fluff/railing/border{
-	dir = 9;
-	pixel_x = 24;
-	pixel_y = -24
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "bAL" = (
@@ -2386,8 +2373,7 @@
 /area/rogue/indoors/soilsons)
 "cpl" = (
 /obj/structure/fluff/railing/border{
-	dir = 10;
-	icon_state = "border"
+	dir = 8
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/tavern)
@@ -5806,14 +5792,6 @@
 	icon_state = "bfloorz"
 	},
 /area/rogue/indoors/town/manor)
-"fQr" = (
-/obj/structure/fluff/railing/border{
-	dir = 4;
-	icon_state = "border"
-	},
-/obj/structure/fluff/railing/border,
-/turf/open/transparent/openspace,
-/area/rogue/indoors/town/tavern)
 "fQu" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -5858,10 +5836,6 @@
 	icon_state = "endwooddark"
 	},
 /area/rogue/indoors/town/magician)
-"fRX" = (
-/obj/structure/fluff/railing/border,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/tavern)
 "fTo" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/transparent/openspace,
@@ -7656,18 +7630,7 @@
 /area/rogue/indoors/town/bath)
 "hED" = (
 /obj/structure/fluff/railing/border,
-/obj/structure/fluff/railing/border{
-	dir = 4;
-	icon_state = "border"
-	},
-/obj/structure/fluff/railing/border{
-	dir = 9;
-	pixel_x = 24;
-	pixel_y = -24
-	},
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
-	},
+/obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "hEP" = (
@@ -13589,12 +13552,11 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
 "nRt" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fluff/railing/border{
-	dir = 8;
-	icon_state = "border"
+	dir = 8
 	},
-/obj/structure/fluff/railing/border,
-/turf/open/transparent/openspace,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "nRL" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -14697,8 +14659,9 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "oVb" = (
-/obj/structure/fluff/railing/border,
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/railing/border{
+	dir = 1
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "oVp" = (
@@ -20688,11 +20651,10 @@
 /turf/closed,
 /area/rogue/indoors/town/church/chapel)
 "vex" = (
-/obj/structure/fluff/railing/border{
-	dir = 6;
-	icon_state = "border"
-	},
 /obj/structure/chair/stool/rogue,
+/obj/structure/fluff/railing/border{
+	dir = 5
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "vfo" = (
@@ -21304,15 +21266,11 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "vNb" = (
-/obj/structure/stairs{
-	dir = 1;
-	icon_state = "stairs"
+/obj/structure/fluff/railing/border,
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
 	},
-/obj/structure/fluff/railing/border{
-	dir = 4;
-	icon_state = "border"
-	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "vOq" = (
 /obj/structure/fluff/railing/fence{
@@ -104020,7 +103978,7 @@ hwi
 sjq
 ewE
 xIK
-vex
+oYz
 dow
 dow
 oNb
@@ -104176,7 +104134,7 @@ sjq
 sjq
 eVv
 xIK
-vex
+xIK
 hED
 sXQ
 sXQ
@@ -104333,8 +104291,8 @@ ocp
 jBO
 xIK
 xIK
-oVb
-sXQ
+bAb
+vNb
 sXQ
 sXQ
 sXQ
@@ -104489,11 +104447,11 @@ sjq
 oyk
 jBO
 xIK
-ngZ
+ewE
 bAb
+vNb
 sXQ
-sXQ
-sXQ
+nVL
 sXQ
 sde
 jBO
@@ -104645,11 +104603,11 @@ ouw
 pxM
 vuy
 xIK
-xIK
-fRX
+oNb
+oNb
+vex
+vNb
 sXQ
-sXQ
-nVL
 sXQ
 sXQ
 tXC
@@ -104803,9 +104761,9 @@ pxM
 xIK
 ewE
 bwE
-nRt
 sXQ
-sXQ
+oVb
+hED
 sXQ
 sXQ
 sXQ
@@ -104959,8 +104917,8 @@ ouw
 sjq
 tqC
 ewE
-vNb
-fQr
+bwE
+sXQ
 eVv
 sjq
 sjq
@@ -105116,7 +105074,7 @@ ouw
 eVv
 pvC
 xIK
-ewE
+nRt
 cpl
 sjq
 xin
