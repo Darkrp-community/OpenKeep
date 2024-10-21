@@ -63,3 +63,7 @@
 	else
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
+
+	if(H.dna.species.id == "dwarf")
+		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
+		H.cmode_music = 'sound/music/combat_dwarf.ogg'
