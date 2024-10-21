@@ -5,9 +5,9 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/briar
 	category_tags = list(CTAG_PILGRIM)
 	tutorial = "Stoic gardeners or flesh-eating predators, all can follow Dendors path. <br>His Briars scorn civilized living, many embracing their animal nature, being fickle and temperamental."
-//	allowed_patrons = list(/datum/patron/divine/dendor)		this doesn't work so long its a subclass type
+//	allowed_patrons = list(/datum/patron/divine/dendor)		this doesn't work so long its a subclass type. Besides its preferable to forceswitch as it does to make selection less clunky.
 	cmode_music = 'sound/music/combat_dendor.ogg'
-	maximum_possible_slots = 4	// to be lowered to 2 once testing is done
+	maximum_possible_slots = 4	// to be lowered to 2? once testing is done
 
 /datum/outfit/job/roguetown/adventurer/briar/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -60,12 +60,11 @@
 	C.holder_mob = H
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	C.grant_spells(H)
-
 	if((H.facial_hairstyle == "Wise Hermit") || (H.facial_hairstyle == "Knightly") || (H.facial_hairstyle == "Raider") || (H.facial_hairstyle == "Rumata") || (H.facial_hairstyle == "Choppe") || (H.facial_hairstyle == "Full Beard") || (H.facial_hairstyle == "Fullest Beard") || (H.facial_hairstyle == "Drinker") || (H.facial_hairstyle == "Knowledge") || (H.facial_hairstyle == "Brew") || (H.facial_hairstyle == "Ranger"))
 		C.devotion += 40
 
 /datum/outfit/job/roguetown/adventurer/briar
-	var/tutorial = "<br><br><font color='#44720e'><span class='bold'>You know well how to make a shrine to Dendor, wood, thorns, and the head of a favored animal.<br><br>Choose a path, devouring or growing, and make your sacrifices...<br><br>Remember - Dendor will not grant more than one Blessing for you, and only those mastering all his Miracles can unlock their full potential.  </span></font><br><br>"
+	var/tutorial = "<br><br><font color='#44720e'><span class='bold'>You know well how to make a shrine to Dendor, wood, thorns, and the head of a favored animal.<br><br>Choose a path, devouring or growing, and make your sacrifices...<br><br>Remember - Dendor will only grant special powers from Blessing the first time you do recieve it, and only those mastering all his Miracles can unlock their full potential.  </span></font><br><br>"
 
 /datum/outfit/job/roguetown/adventurer/briar/post_equip(mob/living/carbon/human/H)
 	..()
@@ -133,14 +132,13 @@
 	anchored = TRUE
 /obj/item/blessing_of_dendor_prey/attack_hand(mob/living/carbon/human/user)
 	if(user.patron.type == /datum/patron/divine/dendor)
+		icon_state = "dendor_grow_end"
 		if(HAS_TRAIT(user, TRAIT_BLESSED))
-			to_chat(user, span_info("No creecher can be twice blessed, but Dendor approves of the sacrifice..."))
-			var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(user, user.patron)
-			C.holder_mob = user
-			C.devotion += 100
+			to_chat(user, span_info("Dendor will not grant more powers, but he still approves of the sacrifice, judging by the signs..."))
+			user.apply_status_effect(/datum/status_effect/buff/blessed)
+			sleep(10)
 			qdel(src)
 			return
-		icon_state = "dendor_grow_end"
 		playsound(get_turf(user), 'sound/vo/smokedrag.ogg', 100, TRUE)
 		playsound(get_turf(user), 'sound/misc/wind.ogg', 100, TRUE, -1)
 		sleep(30)
@@ -166,14 +164,13 @@
 	anchored = TRUE
 /obj/item/blessing_of_dendor_predator/attack_hand(mob/living/carbon/human/user)
 	if(user.patron.type == /datum/patron/divine/dendor)
+		icon_state = "dendor_consume_end"
 		if(HAS_TRAIT(user, TRAIT_BLESSED))
-			to_chat(user, span_info("No creecher can be twice blessed, but Dendor approves of the sacrifice..."))
-			var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(user, user.patron)
-			C.holder_mob = user
-			C.devotion += 100
+			to_chat(user, span_info("Dendor will not grant more powers, but he still approves of the sacrifice, judging by the signs..."))
+			user.apply_status_effect(/datum/status_effect/buff/blessed)
+			sleep(10)
 			qdel(src)
 			return
-		icon_state = "dendor_consume_end"
 		playsound(get_turf(user), 'sound/vo/smokedrag.ogg', 100, TRUE)
 		sleep(30)
 		to_chat(user, span_notice("A volf howls far away...and your teeth begin to sear with pain. Your sacrifice was accepted!"))
