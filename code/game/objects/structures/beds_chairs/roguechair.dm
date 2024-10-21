@@ -85,7 +85,7 @@
 	icon_state = "thronechair"
 
 /obj/structure/chair/bench/couch/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else

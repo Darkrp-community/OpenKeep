@@ -61,7 +61,7 @@
 	base_intents = list(/datum/intent/simple/bite)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/Initialize()
-	..()
+	. = ..()
 	gender = MALE
 	if(prob(33))
 		gender = FEMALE

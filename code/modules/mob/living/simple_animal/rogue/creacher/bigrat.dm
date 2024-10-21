@@ -25,7 +25,7 @@
 
 	health = ROUS_HEALTH
 	maxHealth = ROUS_HEALTH
-	food_type = list(/obj/item/reagent_containers/food/snacks, 
+	food_type = list(/obj/item/reagent_containers/food/snacks,
 					/obj/item/bodypart,
 					/obj/item/organ)
 
@@ -59,7 +59,7 @@
 	pixel_y = -8
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/Initialize()
-	..()
+	. = ..()
 	gender = MALE
 	if(prob(33))
 		gender = FEMALE

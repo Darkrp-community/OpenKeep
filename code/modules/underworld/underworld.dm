@@ -108,7 +108,7 @@
 	density = TRUE
 
 /obj/structure/underworld/carriageman/Initialize()
-	..()
+	. = ..()
 	set_light(5, 30, LIGHT_COLOR_BLUE)
 
 /obj/structure/underworld/carriageman/attack_hand(mob/living/carbon/spirit/user)
@@ -155,7 +155,7 @@
 
 
 /obj/structure/underworld/carriage/Initialize()
-	..()
+	. = ..()
 	set_light(5, 30, LIGHT_COLOR_BLUE)
 
 /obj/structure/underworld/carriage/attack_hand(mob/living/carbon/spirit/user)
@@ -328,8 +328,8 @@
 	if(. && prob(8) && iscarbon(target))
 		var/mob/living/carbon/C = target
 		C.Immobilize(50)
-		C.visible_message("<span class='danger'>\The [src] paralyzes \the [C] in fear!</span>", \
-				"<span class='danger'>\The [src] paralyzes me!</span>")
+		C.visible_message(span_danger("\The [src] paralyzes \the [C] in fear!"), \
+				span_danger("\The [src] paralyzes me!"))
 		emote("laugh")
 
 /obj/effect/landmark/underworldsafe/Crossed(atom/movable/AM, oldloc)
