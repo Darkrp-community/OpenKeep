@@ -5792,6 +5792,13 @@
 	icon_state = "bfloorz"
 	},
 /area/rogue/indoors/town/manor)
+"fQr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/railing/border{
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "fQu" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -5836,6 +5843,14 @@
 	icon_state = "endwooddark"
 	},
 /area/rogue/indoors/town/magician)
+"fRX" = (
+/obj/structure/fluff/railing/border{
+	dir = 4;
+	icon_state = "border"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "fTo" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/transparent/openspace,
@@ -13552,9 +13567,8 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
 "nRt" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fluff/railing/border{
-	dir = 8
+	dir = 1
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
@@ -14659,9 +14673,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "oVb" = (
-/obj/structure/fluff/railing/border{
-	dir = 1
-	},
+/obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "oVp" = (
@@ -15470,6 +15482,13 @@
 /obj/effect/spawner/roguemap/grass_low,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
+"pGR" = (
+/obj/structure/chair/stool/rogue,
+/obj/structure/fluff/railing/border{
+	dir = 5
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "pGZ" = (
 /obj/effect/spawner/roguemap/grass_low,
 /obj/structure/fluff/railing/fence,
@@ -20651,9 +20670,9 @@
 /turf/closed,
 /area/rogue/indoors/town/church/chapel)
 "vex" = (
-/obj/structure/chair/stool/rogue,
-/obj/structure/fluff/railing/border{
-	dir = 5
+/obj/structure/fluff/railing/border,
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
@@ -21267,9 +21286,8 @@
 /area/rogue/indoors/town/manor)
 "vNb" = (
 /obj/structure/fluff/railing/border,
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
-	},
+/obj/structure/chair/stool/rogue,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "vOq" = (
@@ -104291,8 +104309,8 @@ ocp
 jBO
 xIK
 xIK
-bAb
-vNb
+oVb
+vex
 sXQ
 sXQ
 sXQ
@@ -104447,9 +104465,9 @@ sjq
 oyk
 jBO
 xIK
-ewE
+xIK
 bAb
-vNb
+vex
 sXQ
 nVL
 sXQ
@@ -104603,10 +104621,10 @@ ouw
 pxM
 vuy
 xIK
-oNb
-oNb
+fRX
+fRX
+pGR
 vex
-vNb
 sXQ
 sXQ
 sXQ
@@ -104762,8 +104780,8 @@ xIK
 ewE
 bwE
 sXQ
-oVb
-hED
+nRt
+vNb
 sXQ
 sXQ
 sXQ
@@ -105074,7 +105092,7 @@ ouw
 eVv
 pvC
 xIK
-nRt
+fQr
 cpl
 sjq
 xin
