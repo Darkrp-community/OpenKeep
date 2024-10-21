@@ -24,41 +24,50 @@
 	..()
 	H.virginity = TRUE
 
-	switch(H.patron?.name)
-		if("Astrata")
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
-			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
-		if("Dendor")
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
-			cloak = /obj/item/clothing/cloak/stabard/templar/dendor
-		if("Necra")
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
-			cloak = /obj/item/clothing/cloak/stabard/templar/necra
-		if("Eora")
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
-			cloak = /obj/item/clothing/cloak/stabard/templar/eora
-			H.virginity = FALSE
-		if("Ravox")
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
-		if("Noc")
-			wrists = /obj/item/clothing/neck/roguetown/psycross/noc
-			cloak = /obj/item/clothing/cloak/stabard/templar/noc
-		if("Pestra")
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
-			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
-		else // Failsafe
-			cloak = /obj/item/clothing/cloak/tabard/crusader // Give us a generic crusade tabard
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver // Give us a silver psycross for protection against lickers
-
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass // Halfplate has been made heavy armor, billions must make due.
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/rogueweapon/mace
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
-	neck = /obj/item/clothing/neck/roguetown/gorget
+
+	switch(H.patron?.name)
+		if("Astrata")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
+			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
+			neck = /obj/item/clothing/neck/roguetown/chaincoif
+		if("Dendor")	// good helmet but no money
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
+			neck = /obj/item/clothing/neck/roguetown/coif
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
+			cloak = /obj/item/clothing/cloak/raincloak/furcloak
+			beltr = /obj/item/rogueweapon/huntingknife/stoneknife
+		if("Necra")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
+			cloak = /obj/item/clothing/cloak/stabard/templar/necra
+			neck = /obj/item/clothing/neck/roguetown/gorget
+		if("Eora")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
+			cloak = /obj/item/clothing/cloak/stabard/templar/eora
+			neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+			H.virginity = FALSE
+		if("Ravox")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
+			neck = /obj/item/clothing/neck/roguetown/gorget
+		if("Noc")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/noc
+			cloak = /obj/item/clothing/cloak/stabard/templar/noc
+			neck = /obj/item/clothing/neck/roguetown/chaincoif
+		if("Pestra")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
+			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
+			neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+		else // Failsafe
+			cloak = /obj/item/clothing/cloak/tabard/crusader // Give us a generic crusade tabard
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver // Give us a silver psycross for protection against lickers
+			neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)

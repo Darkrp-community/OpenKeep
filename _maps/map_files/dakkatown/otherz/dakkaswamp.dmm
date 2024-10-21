@@ -157,7 +157,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/spidercave)
 "rc" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/swamp,
 /area/rogue/outdoors/bog)
 "rl" = (
@@ -170,7 +170,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "rB" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/swamp,
 /area/rogue/outdoors/spidercave)
 "sg" = (
@@ -199,7 +199,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/spidercave)
 "uP" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/bog)
 "wp" = (

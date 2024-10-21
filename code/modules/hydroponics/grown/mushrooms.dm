@@ -258,9 +258,9 @@
 	desc = ""
 	icon_state = "glowshroom"
 	filling_color = "#00FA9A"
-	var/effect_path = /obj/structure/glowshroom
+	var/effect_path = /obj/structure/kneestingers
 	wine_power = 50
-
+/*
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/attack_self(mob/user)
 	if(isspaceturf(user.loc))
 		return FALSE
@@ -273,7 +273,7 @@
 		var/turf/closed/wall = get_step(user.loc, tempdir)
 		if(istype(wall))
 			maxcount++
-	for(var/obj/structure/glowshroom/G in user.loc)
+	for(var/obj/structure/kneestingers/G in user.loc)
 		count++
 	if(count >= maxcount)
 		to_chat(user, "<span class='warning'>There are too many shrooms here to plant [src].</span>")
@@ -282,7 +282,7 @@
 	to_chat(user, "<span class='notice'>I plant [src].</span>")
 	qdel(src)
 	return TRUE
-
+*/
 
 // Glowcap
 /obj/item/seeds/glowshroom/glowcap
@@ -301,11 +301,6 @@
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/glowcap
 	seed = /obj/item/seeds/glowshroom/glowcap
 	name = "glowcap cluster"
-	desc = ""
-	icon_state = "glowcap"
-	filling_color = "#00FA9A"
-	effect_path = /obj/structure/glowshroom/glowcap
-	tastes = list("glowcap" = 1)
 
 
 //Shadowshroom
@@ -328,7 +323,6 @@
 	name = "shadowshroom cluster"
 	desc = ""
 	icon_state = "shadowshroom"
-	effect_path = /obj/structure/glowshroom/shadowshroom
 	tastes = list("shadow" = 1, "mushroom" = 1)
 	wine_power = 60
 
