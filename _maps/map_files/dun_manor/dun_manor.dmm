@@ -716,6 +716,10 @@
 /obj/structure/table/wood/plain_alt,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church/chapel)
+"aHM" = (
+/obj/structure/roguemachine/scomm/l,
+/turf/open/floor/carpet/red,
+/area/rogue/indoors/town/tavern)
 "aHV" = (
 /obj/effect/spawner/roguemap/grass_low,
 /turf/open/floor/rogue/grass,
@@ -1549,11 +1553,9 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/rtfield)
 "bwE" = (
-/obj/structure/stairs{
-	dir = 1;
-	icon_state = "stairs"
-	},
-/turf/open/floor/rogue/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/roguemachine/scomm/l,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "bwM" = (
 /obj/machinery/light/rogue/torchholder/l,
@@ -3017,6 +3019,13 @@
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/rtfield)
+"cSy" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/railing/border{
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "cSR" = (
 /turf/open/floor/rogue/tile/masonic{
 	dir = 8
@@ -5793,10 +5802,9 @@
 	},
 /area/rogue/indoors/town/manor)
 "fQr" = (
+/obj/structure/fluff/railing/border,
+/obj/structure/chair/stool/rogue,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fluff/railing/border{
-	dir = 8
-	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "fQu" = (
@@ -13567,10 +13575,8 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
 "nRt" = (
-/obj/structure/fluff/railing/border{
-	dir = 1
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
+/obj/structure/roguemachine/scomm,
+/turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
 "nRL" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -15482,13 +15488,6 @@
 /obj/effect/spawner/roguemap/grass_low,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
-"pGR" = (
-/obj/structure/chair/stool/rogue,
-/obj/structure/fluff/railing/border{
-	dir = 5
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/tavern)
 "pGZ" = (
 /obj/effect/spawner/roguemap/grass_low,
 /obj/structure/fluff/railing/fence,
@@ -21285,10 +21284,11 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "vNb" = (
-/obj/structure/fluff/railing/border,
-/obj/structure/chair/stool/rogue,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/ruinedwood/spiral,
+/obj/structure/stairs{
+	dir = 1;
+	icon_state = "stairs"
+	},
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "vOq" = (
 /obj/structure/fluff/railing/fence{
@@ -23688,6 +23688,13 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/dwarfin)
+"yen" = (
+/obj/structure/chair/stool/rogue,
+/obj/structure/fluff/railing/border{
+	dir = 5
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "yev" = (
 /obj/structure/fluff/walldeco/maidendrape,
 /turf/open/floor/rogue/grass,
@@ -23732,6 +23739,12 @@
 	icon_state = "largetable"
 	},
 /turf/open/floor/carpet/red,
+/area/rogue/indoors/town/tavern)
+"yhJ" = (
+/obj/structure/fluff/railing/border{
+	dir = 1
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "yie" = (
 /obj/structure/fluff/railing/border{
@@ -54691,7 +54704,7 @@ pJn
 rqG
 wBZ
 ugj
-ewE
+bwE
 xIK
 ewE
 haz
@@ -55013,7 +55026,7 @@ bVY
 jwG
 jwG
 sjq
-jBO
+nRt
 jBO
 hre
 pde
@@ -104306,7 +104319,7 @@ qhb
 ouw
 sjq
 ocp
-jBO
+aHM
 xIK
 xIK
 oVb
@@ -104623,7 +104636,7 @@ vuy
 xIK
 fRX
 fRX
-pGR
+yen
 vex
 sXQ
 sXQ
@@ -104778,10 +104791,10 @@ ouw
 pxM
 xIK
 ewE
-bwE
-sXQ
-nRt
 vNb
+sXQ
+yhJ
+fQr
 sXQ
 sXQ
 sXQ
@@ -104935,7 +104948,7 @@ ouw
 sjq
 tqC
 ewE
-bwE
+vNb
 sXQ
 eVv
 sjq
@@ -105092,7 +105105,7 @@ ouw
 eVv
 pvC
 xIK
-fQr
+cSy
 cpl
 sjq
 xin
