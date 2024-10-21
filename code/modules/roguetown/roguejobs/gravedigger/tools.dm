@@ -6,8 +6,8 @@
 	name = "shovel"
 	desc = ""
 	icon_state = "shovel"
-	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
-//	icon = 'icons/roguetown/weapons/64.dmi'
+//icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT
 	dropshrink = 0.9
 	wdefense = 1
@@ -201,7 +201,7 @@
 	possible_item_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel)
 	name = "spade"
 	icon_state = "spade"
-//	icon = 'icons/roguetown/weapons/tools.dmi'
+	icon = 'icons/roguetown/weapons/tools.dmi'
 	bigboy = FALSE
 	sharpness = IS_BLUNT
 	dropshrink = 1
