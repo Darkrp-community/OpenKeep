@@ -78,3 +78,17 @@
 	name = "short wooden plank"
 	desc = "a smooth wooden plank that has been cut short."
 	firefuel = 10 MINUTES
+
+/obj/item/natural/stoneblock
+	name = "stone block"
+	desc = "A rectangular stone block for building."
+	icon = 'icons/roguetown/items/crafting.dmi'
+	icon_state = "stoneblock"
+	gripped_intents = null
+	dropshrink = 0.75
+	possible_item_intents = list(INTENT_GENERIC)
+	force = 10
+	throwforce = 20
+	slot_flags = null
+	obj_flags = null
+	w_class = WEIGHT_CLASS_TINY
