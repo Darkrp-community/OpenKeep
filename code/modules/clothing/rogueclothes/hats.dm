@@ -859,6 +859,16 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	prevent_crits = ALL_EXCEPT_BLUNT
 
+
+//............... Pestra Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
+	name = "pestran helmet"
+	desc = "A greathelm made of rough, tainted iron. Modeled after a Plauged Carrion, a most blessed abomination of Pestra"
+	icon_state = "pestrahelm"
+	item_state = "pestraahelm"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+
+
 //............... Sinistar (Graggar) Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/sinistar
 	name = "sinistar helmet"

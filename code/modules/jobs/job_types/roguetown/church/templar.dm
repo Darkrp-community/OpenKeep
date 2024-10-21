@@ -47,7 +47,7 @@
 			H.virginity = FALSE
 		if("Pestra")
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
-			neck = /obj/item/clothing/neck/roguetown/chaincoif
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
 		if("Noc")
 			neck = /obj/item/clothing/neck/roguetown/psycross/noc
