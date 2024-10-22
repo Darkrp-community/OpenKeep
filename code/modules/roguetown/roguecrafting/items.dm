@@ -536,6 +536,8 @@
 	result = list(/obj/item/natural/bowstring)
 	reqs = list(/obj/item/natural/fibers = 4)
 	craftdiff = 1
+	verbage = "twist"
+	verbage_tp = "twists"
 
 /datum/crafting_recipe/roguetown/handmadebow
 	name = "wooden bow"
