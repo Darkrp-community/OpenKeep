@@ -258,9 +258,6 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
 
-
-/*.............. recipes requiring skill 5 ..............*/
-
 /datum/crafting_recipe/roguetown/sewing/lordcloak
 	name = "lordly cloak"
 	result = list(/obj/item/clothing/cloak/lordcloak)
@@ -268,3 +265,10 @@
 				/obj/item/natural/hide = 4)
 	craftdiff = 4
 
+/* .............. recipes requiring a role  ..............*/
+/datum/crafting_recipe/roguetown/sewing/tunic
+	name = "well-made tunic"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/tunic/ucolored)
+	reqs = list(/obj/item/natural/cloth = 2)
+	always_availible = FALSE
+	craftdiff = 1

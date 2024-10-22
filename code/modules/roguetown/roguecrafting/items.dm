@@ -398,32 +398,6 @@
 	craftdiff = 1
 	skillcraft = /datum/skill/craft/engineering
 
-/datum/crafting_recipe/roguetown/recurve
-	name = "recurve bow"
-	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/obj/item/natural/fibers = 4)
-	craftdiff = 1
-	skillcraft = /datum/skill/craft/carpentry
-
-/datum/crafting_recipe/roguetown/handmadebow
-	name = "wooden bow"
-	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/obj/item/natural/fibers = 6)
-	craftdiff = 2
-	skillcraft = /datum/skill/craft/carpentry
-
-/datum/crafting_recipe/roguetown/longbow
-	name = "longbow"
-	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/obj/item/natural/fibers = 8,
-	/obj/item/reagent_containers/food/snacks/fat)
-	skillcraft = /datum/skill/craft/carpentry
-	structurecraft = /obj/machinery/light/rogue/campfire
-	craftdiff = 3
-
 /datum/crafting_recipe/roguetown/flint
 	name = "flint"
 	result = /obj/item/flint
@@ -476,6 +450,8 @@
 	name = "master's guide to literature"
 	result = list(/obj/item/literary/master)
 	craftdiff = 6
+
+//weapons
 
 /datum/crafting_recipe/roguetown/quarterstaff
 	name = "wooden quarterstaff"
@@ -548,4 +524,37 @@
 	tools = list(/obj/item/rogueweapon/hammer)
 	req_table = TRUE
 	result = list(/obj/item/rogueweapon/mace/cudgel/carpenter, /obj/item/rogueweapon/mace/cudgel/carpenter)
+	craftdiff = 3
+
+//bows
+/datum/crafting_recipe/roguetown/bowyer
+	tools = list(/obj/item/rogueweapon/huntingknife)
+	skillcraft = /datum/skill/craft/carpentry
+
+/datum/crafting_recipe/roguetown/bowstring
+	name = "bowstring"
+	result = list(/obj/item/natural/bowstring)
+	reqs = list(/obj/item/natural/fibers = 4)
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/handmadebow
+	name = "wooden bow"
+	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow)
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+	/obj/item/natural/bowstring = 1)
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/recurve
+	name = "recurve bow"
+	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve, /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve)
+	reqs = list(/obj/item/grown/log/tree/small = 2, /obj/item/alch/sinew = 1, /obj/item/alch/horn = 1, /obj/item/natural/bowstring = 2)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/longbow
+	name = "longbow"
+	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long)
+	reqs = list(/obj/item/grown/log/tree = 1,
+	/obj/item/natural/bowstring = 1,
+	/obj/item/reagent_containers/food/snacks/fat)
+	structurecraft = /obj/machinery/light/rogue/campfire
 	craftdiff = 3
