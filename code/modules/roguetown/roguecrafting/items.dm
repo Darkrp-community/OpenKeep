@@ -539,7 +539,7 @@
 	verbage = "twist"
 	verbage_tp = "twists"
 
-/datum/crafting_recipe/roguetown/handmadebow
+/datum/crafting_recipe/roguetown/bowyer/handmadebow
 	name = "wooden bow"
 	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow)
 	reqs = list(/obj/item/grown/log/tree/small = 1,
