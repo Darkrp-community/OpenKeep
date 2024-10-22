@@ -57,6 +57,56 @@
 					H.update_inv_neck()
 					H.update_inv_head()
 
+
+//................ Keffiyeh ............... //
+/obj/item/clothing/neck/roguetown/keffiyeh
+	name = "keffiyeh"
+	desc = "An eastern scarf usually worn around the head and neck over a padded coif."
+	icon = 'icons/roguetown/clothing/head.dmi'
+	icon_state = "shalal"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+	dynamic_hair_suffix = ""
+	dropshrink = 0.8
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
+	blocksound = SOFTHIT
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
+	flags_inv = HIDEEARS|HIDEHAIR
+	body_parts_covered = NECK|HAIR|EARS|HEAD
+	adjustable = CAN_CADJUST
+	toggle_icon_state = TRUE
+	max_integrity = 150
+	sewrepair = TRUE
+	anvilrepair = null
+	resistance_flags = FLAMMABLE // Made of leather
+	smeltresult = /obj/item/ash
+
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+
+/obj/item/clothing/neck/roguetown/keffiyeh/AdjustClothes(mob/user)
+	if(loc == user)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			if(toggle_icon_state)
+				icon_state = "[initial(icon_state)]_t"
+			flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+			body_parts_covered = NECK | HEAD | MOUTH | NOSE | EARS | HAIR
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_neck()
+				H.update_inv_head()
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_neck()
+					H.update_inv_head()
+
+
 /obj/item/clothing/neck/roguetown/coif/cloth
 	name = "padded coif"
 	desc = "A simple coif made of cloth. Not very effective armor, but may soften weak blows and keeps the head and neck warm."
@@ -222,7 +272,7 @@
 
 // PANTHEON SILVER PSYCROSSES START
 
-/obj/item/clothing/neck/roguetown/psycross/silver/astrata 
+/obj/item/clothing/neck/roguetown/psycross/silver/astrata
 	name = "amulet of Astrata"
 	desc = "Blessed be everything the light of the sun touches, for it is protected by Her grace."
 	icon_state = "astrata"
@@ -298,6 +348,9 @@
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
 	sellprice = 15
+
+/obj/item/clothing/neck/roguetown/shalal/emir
+	name = "desert noble medal"
 
 /obj/item/clothing/neck/roguetown/feld
 	name = "feldsher's collar"
