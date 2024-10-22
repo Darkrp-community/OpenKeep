@@ -556,7 +556,7 @@
 	name = "longbow"
 	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long)
 	reqs = list(/obj/item/grown/log/tree = 1,
-	/obj/item/natural/bowstring = 1,
+	/obj/item/alch/sinew = 1,
 	/obj/item/reagent_containers/food/snacks/fat)
 	structurecraft = /obj/machinery/light/rogue/campfire
 	craftdiff = 3
