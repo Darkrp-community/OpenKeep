@@ -136,7 +136,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_combined_w_class = 100
-	STR.max_items = 30
+	STR.max_items = 25
 	STR.insert_preposition = "in"
 	STR.click_gather = TRUE
 	STR.attack_hand_interact = FALSE
