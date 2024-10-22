@@ -552,7 +552,7 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/bowstring = 1)
 	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/longbow
+/datum/crafting_recipe/roguetown/bowyer/longbow
 	name = "longbow"
 	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long)
 	reqs = list(/obj/item/grown/log/tree = 1,
