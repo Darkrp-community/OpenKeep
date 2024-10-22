@@ -69,7 +69,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/decap)
 "mD" = (
-/obj/effect/landmark/map_load_mark/stonekeep_dungeon/mt_decap_surface,
+/obj/effect/landmark/map_load_mark/mt_decap_surface/surface_area,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/exposed/decap)
 "ol" = (
@@ -239,13 +239,6 @@
 /area/rogue/under/cavelava)
 "Ub" = (
 /turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/exposed/decap)
-"VA" = (
-/obj/effect/landmark/mapGenerator/sunlights{
-	endTurfX = 128;
-	endTurfY = 128
-	},
-/turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/exposed/decap)
 "XT" = (
 /turf/closed/mineral/random/rogue,
@@ -17414,7 +17407,7 @@ Mv
 Mv
 Mv
 Mv
-VA
+Mv
 Mv
 Mv
 "}
