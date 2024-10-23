@@ -37,7 +37,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltr = /obj/item/keyring/steward
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
-	backl = /obj/item/storage/backpack/rogue/satchel
+	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1, /obj/item/lockpickring/mundane = 1)
 
 	if(H.mind)
@@ -46,7 +46,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 6, TRUE)
 		H.change_stat("strength", -2)
 		H.change_stat("intelligence", 8)
 		H.change_stat("constitution", -2)
