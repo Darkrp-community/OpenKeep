@@ -863,7 +863,7 @@
 //............... Pestra Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
 	name = "pestran helmet"
-	desc = "A greathelm made of rough, tainted iron. Modeled after a Plauged Carrion, a most blessed abomination of Pestra"
+	desc = "A great helmet made of coarse, tainted steel. It is modeled after a plagued carrion, a blessed abomination of Pestra."
 	icon_state = "pestrahelm"
 	item_state = "pestraahelm"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
