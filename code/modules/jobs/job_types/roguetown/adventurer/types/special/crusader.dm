@@ -88,7 +88,7 @@
 	H.change_stat("endurance", 2)
 	H.change_stat("constitution", 2)
 	H.change_stat("strength", 1)
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 
 	// Females are crossbow and dagger based
