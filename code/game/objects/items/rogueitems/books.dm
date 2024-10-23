@@ -378,6 +378,12 @@
 	base_icon_state = "book8"
 	bookfile = "tales14.json"
 
+/obj/item/book/rogue/mysticalfog
+	name = "Studie of the Etheral Foge phenomenon"
+	desc = "By Roubert the Elder"
+	icon_state ="book7_0"
+	base_icon_state = "book8"
+	bookfile = "tales15.json"
 
 /obj/item/book/rogue/playerbook
 	var/player_book_text = "moisture in the air or water leaks have rendered the carefully written caligraphy of this book unreadable"

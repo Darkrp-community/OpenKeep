@@ -1,10 +1,10 @@
-/*
+
 /datum/weather/fog
 	name = "fog"
 	desc = ""
 
 	telegraph_duration = 10 SECONDS
-	telegraph_message = "<span class='warning'>The fog is coming.</span>"
+	telegraph_message = "<span class='warning'>The fog is seeping out of the very ground...</span>"
 	telegraph_sound = 'sound/blank.ogg'
 
 	weather_message = ""
@@ -34,4 +34,4 @@
 		wind_down()
 		return
 #endif
-*/
+

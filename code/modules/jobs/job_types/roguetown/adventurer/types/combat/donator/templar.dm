@@ -1,4 +1,4 @@
-/datum/advclass/combat/templar
+/datum/advclass/combat/paladin
 	name = "Paladin"
 	tutorial = "Paladins are former noblemen and clerics who have dedicated themselves to great combat prowess. Often, they were promised redemption for past sins if they crusaded in the name of the gods."
 	allowed_sexes = list(MALE, FEMALE)
@@ -6,13 +6,13 @@
 		"Humen",
 		"Aasimar"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/templar
+	outfit = /datum/outfit/job/roguetown/adventurer/paladin
 	maximum_possible_slots = 1
 	min_pq = 2
 	pickprob = 15
 	category_tags = list(CTAG_ADVENTURER)
 
-/datum/outfit/job/roguetown/adventurer/templar/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/adventurer/paladin/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE
 

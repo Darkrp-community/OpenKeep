@@ -315,9 +315,9 @@
 	pixel_y = 0
 	sleepy = 3
 	debris = list(/obj/item/grown/log/tree/small = 2)
-/*            ///////WIP  This will essentially allow for multiple mobs to buckle, just needs to change mousedrop function
+//////WIP  This will essentially allow for multiple mobs to buckle, just needs to change mousedrop function
 /obj/structure/bed/rogue/inn/double
-	var/list/buckled_mobs = list()
+//	var/list/buckled_mobs = list()
 
 /obj/structure/bed/rogue/inn/double/post_buckle_mob(mob/living/M)
 	. = ..()
@@ -336,7 +336,7 @@
 	for(var/mob/living/buckled_mob in buckled_mobs)
 		buckled_mob.set_mob_offsets("bed_buckle", _x = x_offset, _y = 5)
 		x_offset += 10
-*/
+
 
 
 // ------------ DECENT BEDS ----------------------
