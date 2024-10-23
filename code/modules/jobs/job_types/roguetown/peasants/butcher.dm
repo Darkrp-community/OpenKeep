@@ -28,12 +28,12 @@
 	..()
 
 	belt = /obj/item/storage/belt/rogue/leather
-	beltr= /obj/item/rogueweapon/huntingknife
+	beltr= /obj/item/storage/meatbag
 	beltl= /obj/item/roguekey/butcher
 	backl = /obj/item/storage/backpack/rogue/satchel
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	backpack_contents = list(/obj/item/kitchen/spoon, /obj/item/reagent_containers/food/snacks/rogue/truffles)
+	backpack_contents = list(/obj/item/kitchen/spoon, /obj/item/reagent_containers/food/snacks/rogue/truffles, /obj/item/rogueweapon/huntingknife)
 
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou
