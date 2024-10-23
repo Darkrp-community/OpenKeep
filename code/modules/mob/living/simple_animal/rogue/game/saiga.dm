@@ -84,7 +84,7 @@
 	STASPD = 15
 	STACON = 8
 	STASTR = 9
-	childtype = list(/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid = 70, 
+	childtype = list(/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid = 70,
 					/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid/boy = 30)
 	can_buckle = TRUE
 	buckle_lying = FALSE
@@ -236,7 +236,7 @@
 			return pick('sound/vo/mobs/saiga/idle (1).ogg','sound/vo/mobs/saiga/idle (2).ogg','sound/vo/mobs/saiga/idle (3).ogg','sound/vo/mobs/saiga/idle (4).ogg','sound/vo/mobs/saiga/idle (5).ogg','sound/vo/mobs/saiga/idle (6).ogg','sound/vo/mobs/saiga/idle (7).ogg')
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/Initialize()
-	..()
+	. = ..()
 	if(tame)
 		tamed(owner)
 
