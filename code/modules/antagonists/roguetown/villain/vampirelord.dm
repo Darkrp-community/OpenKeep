@@ -1036,7 +1036,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vampirelord/Initialize()
-	. = ..()
+	..()
 	GLOB.vlord_starts += loc
 
 /obj/effect/landmark/start/vampirespawn
@@ -1051,7 +1051,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vampirespawn/Initialize()
-	. = ..()
+	..()
 	GLOB.vspawn_starts += loc
 
 /obj/effect/landmark/vteleport

@@ -95,7 +95,8 @@
 
 /mob/living/carbon/human/proc/deaggrodel()
 	if(aggressive)
-		for(var/mob/living/L in view(7)) // scan for enemies
+		var/list/around = hearers(7, src)  // scan for enemies
+		for(var/mob/living/L in around)
 			if( should_target(L) && (L != src))
 				if(L.stat != DEAD)
 					retaliate(L)
@@ -256,7 +257,8 @@
 		if(AI_IDLE)		// idle
 			if(world.time >= next_seek)
 				next_seek = world.time + 3 SECONDS
-				for(var/mob/living/L in view(7, src)) // scan for enemies
+				var/list/around = hearers(7, src) // scan for enemies
+				for(var/mob/living/L in around)
 					if(should_target(L))
 						retaliate(L)
 
@@ -273,9 +275,9 @@
 				for(var/obj/item/I in view(1,src))
 					if(!isturf(I.loc))
 						continue
-					if(blacklistItems[I])
+					if(I in blacklistItems)
 						continue
-					if(I.force > 7)
+					if(I && I.force > 7)
 						equip_item(I)
 
 //			// switch targets

@@ -55,7 +55,7 @@
 	color = CLOTHING_RED
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/guard/Initialize()
-	. = ..()
+	..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -70,7 +70,7 @@
 	color = CLOTHING_PURPLE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/guardsecond/Initialize()
-	. = ..()
+	..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else

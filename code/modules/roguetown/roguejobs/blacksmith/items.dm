@@ -75,7 +75,7 @@
 /obj/item/roguegear/attack_self(mob/user)
 	if(linking)
 		linking = null
-		to_chat(user, span_warning("Linking halted."))
+		to_chat(user, "<span class='warning'>Linking halted.</span>")
 		return
 
 /obj/item/roguegear/attack_obj(obj/O, mob/living/user)
@@ -84,16 +84,18 @@
 	var/obj/structure/S = O
 	if(linking)
 		if(linking == O)
-			to_chat(user, span_warning("You cannot link me to myself."))
+			to_chat(user, "<span class='warning'>You cannot link me to myself.</span>")
 			return
 		if(linking in S.redstone_attached)
-			to_chat(user, span_warning("Already linked."))
+			to_chat(user, "<span class='warning'>Already linked.</span>")
 			linking = null
 			return
 		S.redstone_attached |= linking
 		linking.redstone_attached |= S
 		linking = null
-		to_chat(user, span_notice("Link complete."))
+		to_chat(user, "<span class='notice'>Link complete.</span>")
 		return
-	linking = S
-	to_chat(user, span_info("Link beginning..."))
+	else
+		linking = S
+		to_chat(user, "<span class='info'>Link beginning...</span>")
+		return

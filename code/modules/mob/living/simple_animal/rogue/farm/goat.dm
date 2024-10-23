@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/Initialize()
-	. = ..()
+	..()
 	GLOB.farm_animals++
 	if(tame)
 		tamed(owner)
@@ -114,7 +114,7 @@
 
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/Initialize()
-	. = ..()
+	..()
 	if(milkies)
 		gudder = new()
 
