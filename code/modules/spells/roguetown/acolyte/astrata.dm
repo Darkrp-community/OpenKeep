@@ -24,9 +24,9 @@
 		user.visible_message("<font color='yellow'>[user] points at [L]!</font>")
 		if(L.anti_magic_check(TRUE, TRUE))
 			return FALSE
-		L.adjust_fire_stacks(5)
+		L.adjust_fire_stacks(6)
 		L.IgniteMob()
-		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, ExtinguishMob)), 5 SECONDS)
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, ExtinguishMob)), 6 SECONDS)
 		return TRUE
 
 	// Spell interaction with ignitable objects (burn wooden things, light torches up)
@@ -58,6 +58,7 @@
 	charge_max = 2 MINUTES
 	miracle = TRUE
 	devotion_cost = -100
+	req_inhand = list(/obj/item/roguecoin/gold = 10)
 	/// Amount of PQ gained for reviving people
 	var/revive_pq = 0.25
 

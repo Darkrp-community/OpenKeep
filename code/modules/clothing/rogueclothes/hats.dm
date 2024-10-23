@@ -265,14 +265,18 @@
 	prevent_crits = MINOR_CRITICALS
 
 
-//................ Death Face ............... //	- Basic Necra Acolyte
-/obj/item/clothing/head/roguetown/padded/deathface
-	name = "death face"
-	desc = "When inducted into the cult of Necra, the supplicant must make a talisman from the jawbone of a deceased loved one. Many favor a chin-guard made from a jawbone. Worn by the faithful of Necra."
-	icon_state = "deathface"
+//................ Death Shroud ............... //	- The new toggleable hood version
+/obj/item/clothing/head/roguetown/roguehood/necra
+	name = "death shroud"
+	desc = "When inducted into the cult of Necra, the supplicant must make a talisman from the remains of a deceased loved one. Many favor a chin-guard made from a jawbone. The veil can be lowered."
+	icon_state = "necrahood"
 	flags_inv = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
+	default_hidden = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
 
-//................ Death Shroud ............... //	- Rare Necra headwear
+	armor = ARMOR_MIMOR
+	prevent_crits = MINOR_CRITICALS
+
+//................ Death Shroud ............... //	- old Necra headwear
 /obj/item/clothing/head/roguetown/padded/deathshroud
 	name = "death shroud"
 	desc = "Worn by the faithful of Necra, or less savory individuals."
