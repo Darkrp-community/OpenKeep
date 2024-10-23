@@ -1,4 +1,4 @@
-
+/*
 /datum/weather/fog
 	name = "fog"
 	desc = ""
@@ -34,3 +34,4 @@
 		wind_down()
 		return
 #endif
+*/

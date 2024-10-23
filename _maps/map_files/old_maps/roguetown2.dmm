@@ -1285,7 +1285,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/under/town/basement)
 "eD" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /obj/item/bedsheet/rogue/cloth,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/under/town/basement)
@@ -5186,7 +5186,7 @@
 /turf/closed/wall/mineral/rogue/roofwall/middle,
 /area/rogue)
 "rB" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "rC" = (
@@ -7774,7 +7774,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "Az" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/cloth,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -7923,7 +7923,7 @@
 	},
 /area/rogue/indoors/town/tavern)
 "AZ" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/tavern)
 "Ba" = (
@@ -8029,7 +8029,7 @@
 	},
 /area/rogue/indoors/town/tavern)
 "Bm" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/pelt,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -8265,7 +8265,7 @@
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/outdoors/exposed/dwarf)
 "Cf" = (
-/obj/structure/bed/rogue/inn/wooldouble,
+/obj/structure/bed/rogue/wooldouble,
 /obj/item/bedsheet/rogue/double_pelt,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town)
@@ -9822,7 +9822,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
 "Hs" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "Ht" = (
@@ -10100,7 +10100,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
 "Im" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
 "In" = (
@@ -10947,7 +10947,7 @@
 	},
 /area/rogue/indoors/town/dwarfin)
 "Ld" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw";
 	dir = 1
@@ -11397,7 +11397,7 @@
 	},
 /area/rogue/indoors/town/magician)
 "MA" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/fabric,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/magician)
