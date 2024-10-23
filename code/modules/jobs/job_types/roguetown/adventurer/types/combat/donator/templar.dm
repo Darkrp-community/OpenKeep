@@ -70,7 +70,10 @@
 		H.change_stat("constitution", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", -2)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/churn)
+		if(H.patron != /datum/patron/divine/necra)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/churn)
+		else
+			H.change_stat("fortune", 1)	// instead of duped churn necrans gets more fortune
 	if(H.dna?.species)
 		if(H.dna.species.id == "human")
 			H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
@@ -80,6 +83,6 @@
 	C.holder_mob = H
 	C.grant_spells_templar(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/churn)
+
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
