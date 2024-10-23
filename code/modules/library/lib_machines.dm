@@ -1,9 +1,6 @@
 #define PRINTER_COOLDOWN 600 // The time between printing manuscripts and binding books
 #define PRINTING_TIME 250 // The time it takes to actually print something using the printing press
 
-#define PRINTER_COOLDOWN 60 // The time between printing manuscripts and binding books
-#define PRINTING_TIME 250 // Simulate 25 seconds (25 seconds * 10 ticks per second)
-
 /obj/machinery/printingpress
 	name = "printing press"
 	icon = 'icons/roguetown/misc/machines.dmi'
@@ -19,29 +16,31 @@
 /obj/machinery/printingpress/attackby(obj/item/O, mob/user, params)
 	if(printing)
 		user << "<span class='warning'>The printing press is currently printing. Please wait.</span>"
-		return TRUE
+		return
 	if(output_item)
-		user << "<span class='notice'>Please retrieve the printed item before inserting new paper.</span>"
-		return TRUE
+		user << "<span class='notice'>Please retrieve the printed item before inserting new items.</span>"
+		return
+	if(istype(O, /obj/item/paper/manuscript))
+		var/obj/item/paper/manuscript/M = O
+		if(!M.written)
+			user << "<span class='notice'>This manuscript is blank. You need to write something before uploading it.</span>"
+			return
+		// Prompt the user to upload the manuscript
+		var/choice = input(user, "Do you want to upload the manuscript to the archive?") in list("Yes", "No")
+		if(choice == "Yes")
+			upload_manuscript(user, M)
+			// Optionally delete the manuscript after uploading
+			qdel(M)
+			user << "<span class='notice'>The manuscript has been uploaded and removed from your inventory.</span>"
+		else
+			user << "<span class='notice'>You decide not to upload the manuscript.</span>"
+		return
 	if(istype(O, /obj/item/paper) && !has_paper)
-		// Attempt to transfer the paper to the printing press
-		qdel(O)
 		has_paper = TRUE
 		loaded_paper = O
 		src.icon_state = "Ppress_Prepared"
 		user << "<span class='notice'>You insert the blank paper into the printing press.</span>"
-		// Delete the paper as it's consumed
-		del O
-		return TRUE
-	if(istype(O, /obj/item/paper/manuscript))
-		var/obj/item/paper/manuscript/M = O
-		if(M.written)
-			// Upload manuscript to the archive
-			upload_manuscript(user, M)
-			return TRUE
-		else
-			user << "<span class='notice'>You need to fill out the manuscript before you can transfer it to the archives.</span>"
-			return TRUE
+		qdel(O)
 	return ..()
 
 /obj/machinery/printingpress/attack_hand(mob/user)
@@ -51,12 +50,22 @@
 	if(output_item)
 		// Try to put the item into the user's hands
 		if(!user.put_in_hands(output_item))
-			user << "<span class='warning'>Your hands are full. You cannot retrieve the printed item.</span>"
-			return
-		user << "<span class='notice'>You retrieve [output_item] from the printing press.</span>"
-		user.visible_message("<span class='notice'>[user] retrieves [output_item] from the printing press.</span>")
-		// Reset the press
+			user.contents += output_item // If hands are full, put it in inventory
+			user << "<span class='notice'>Your hands are full, the printed item has been placed in your inventory.</span>"
+		else
+			user << "<span class='notice'>You retrieve [output_item] from the printing press.</span>"
 		output_item = null
+		src.icon_state = "Ppress_Clean"
+		return
+	if(loaded_paper)
+		// Allow the user to retrieve the blank paper
+		var/obj/item/paper/P = new /obj/item/paper(get_turf(user)) // Create the item at the user's location
+		if(!user.put_in_hands(P)) // Try to put the item in the user's hands
+			testing("Failed to place item in hands, dropping at user's location")
+			P.forceMove(get_turf(user)) // If not, drop it at the user's location	
+		user << "<span class='notice'>You retrieve the [P.name] from the printing press.</span>"
+		has_paper = FALSE
+		loaded_paper = null
 		src.icon_state = "Ppress_Clean"
 		return
 	else
@@ -91,6 +100,11 @@
 	src.icon_state = "Ppress_Printing"
 	user << "<span class='notice'>The [src] starts printing...</span>"
 	playsound(src.loc, 'sound/misc/ppress.ogg', 100, FALSE)
+	// Delete the blank paper as it's consumed during printing
+	if(loaded_paper)
+		qdel(loaded_paper)
+		loaded_paper = null
+		has_paper = FALSE
 	sleep(PRINTING_TIME)
 	if(print_type == "bibble")
 		print_bibble(user)
@@ -101,20 +115,14 @@
 	// Printing is done
 	printing = FALSE
 	src.icon_state = "Ppress_Done"
-	user << "<span class='notice'>The printing press has finished printing.</span>"
 	cooldown = world.time + PRINTER_COOLDOWN
-	// Do not eject the product immediately; wait for the user to retrieve it
-	// Remove has_paper flag since the paper has been used
-	has_paper = FALSE
 
 /obj/machinery/printingpress/proc/upload_manuscript(mob/user, obj/item/paper/manuscript/M)
 	// Simulating SQL interaction with testing() for upload
-	testing("UPLOAD QUERY: INSERT INTO library (author, title, content, category, ckey, datetime, round_id_created, approved) VALUES ('[M.author]', '[M.name]', '[M.content]', '[M.category]', '[M.ckey]', Now(), [GLOB.round_id], 0)")
-
+	testing("UPLOAD QUERY: INSERT INTO library (author, title, content, category, select_icon, ckey, datetime, round_id_created, approved) VALUES ('[M.author]', '[M.name]', '[M.content]', '[M.category]', '[M.select_icon] '[M.ckey]', Now(), [GLOB.round_id], 0)")
 	// Simulating successful upload
 	user << "<span class='notice'>Upload Complete. The manuscript has been uploaded to the Archive.</span>"
 	user.visible_message("<span class='notice'>[user] uploads a manuscript to the archive.</span>")
-	qdel(M)
 
 /obj/machinery/printingpress/proc/print_bibble(mob/user)
 	// Creates a static book (Bibble)
@@ -130,10 +138,8 @@
 
 /obj/machinery/printingpress/proc/print_manuscript(mob/user, var/id)
 	var/sqlid = sanitizeSQL(id)
-
 	// Simulating SQL interaction with testing() for print
 	testing("PRINT QUERY: SELECT author, title, content, category, ckey, select_icon FROM library WHERE id = [sqlid] AND isnull(deleted)")
-
 	// Simulated data retrieval from database
 	var/title = "Test Manuscript Title"
 	var/author = "Test Author"
@@ -141,7 +147,6 @@
 	var/category = "Test Category"
 	var/ckey = "test_ckey"
 	var/select_icon = "basic_book" // Should match one of the manuscript's book_icons
-
 	// Create a new manuscript object
 	var/obj/item/paper/manuscript/M = new()
 	M.name = title
@@ -152,46 +157,37 @@
 	M.select_icon = select_icon
 	M.written = TRUE
 	M.info = M.parsepencode(content)
-
 	output_item = M
-
 	visible_message("<span class='notice'>The printing press hums as it produces a manuscript titled [title].</span>")
 
 /obj/machinery/printingpress/proc/choose_search_parameters(mob/user)
 	var/search_title = input(user, "Enter the title (optional):") as text|null
 	var/search_author = input(user, "Enter the author (optional):") as text|null
 	var/search_category = input(user, "Select a category (optional):") in list("Any", "Apocrypha & Grimoires", "Myths & Tales", "Legends & Accounts", "Thesis", "Erotica")
-
 	// Pass the selected parameters to search_manuscripts
 	search_manuscripts(user, search_title, search_author, search_category)
 
 /obj/machinery/printingpress/proc/search_manuscripts(mob/user, var/search_title, var/search_author, var/search_category)
 	var/sqlquery = "SELECT id, author, title, category FROM library WHERE isnull(deleted)"
-
 	if (search_author != "")
 		sqlquery += " AND author LIKE '%[sanitizeSQL(search_author)]%'"
 	if (search_title != "")
 		sqlquery += " AND title LIKE '%[sanitizeSQL(search_title)]%'"
 	if (search_category != "Any")
 		sqlquery += " AND category = '[sanitizeSQL(search_category)]'"
-
 	testing("SEARCH QUERY: " + sqlquery)
-
 	// Simulating search results
 	var/dat = "<h3>Manuscript Search Results:</h3><br>"
 	dat += "<table><tr><th>Author</th><th>Title</th><th>Category</th><th>Print</th></tr>"
-
 	// Simulating found entries with the ID field
 	var/id = 1 // Simulated ID
 	dat += "<tr><td>Test Author</td><td>Test Manuscript Title</td><td>Apocrypha & Grimoires</td><td><a href='?src=[REF(src)];print=1;id=[id]'>Print</a></td></tr>"
-
 	dat += "</table>"
 	user << browse(dat, "window=search_results")
 
 /obj/machinery/printingpress/Topic(href, href_list)
 	if(printing)
 		return // Ignore interactions while printing
-
 	if("print" in href_list)
 		var/id = href_list["id"]
 		start_printing(usr, "archive", id)
