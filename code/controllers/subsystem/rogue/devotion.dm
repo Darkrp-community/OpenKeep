@@ -4,9 +4,9 @@
 #define CLERIC_T2 2
 #define CLERIC_T3 3
 
-#define CLERIC_REQ_1 100
-#define CLERIC_REQ_2 200
-#define CLERIC_REQ_3 400
+#define CLERIC_REQ_1 80
+#define CLERIC_REQ_2 160
+#define CLERIC_REQ_3 240
 
 // Cleric Holder Datums
 
