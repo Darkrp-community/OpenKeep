@@ -95,7 +95,7 @@
 			continue
 		H.mind.AddSpell(new spell_type)
 	level = CLERIC_T1
-	max_devotion = 250
+	max_devotion = 230
 
 /datum/devotion/cleric_holder/proc/grant_spells_templar(mob/living/carbon/human/H)
 	if(!H || !H.mind)
