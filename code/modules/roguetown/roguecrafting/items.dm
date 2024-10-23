@@ -544,7 +544,7 @@
 	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow)
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 	/obj/item/natural/bowstring = 1)
-	craftdiff = 1
+	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/bowyer/recurve
 	name = "recurve bow"
