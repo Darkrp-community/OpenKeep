@@ -246,7 +246,7 @@
 		LoseTarget()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Initialize()
-	. = ..()
+	..()
 	if(tame)
 		tamed(owner)
 	ADD_TRAIT(src, TRAIT_SIMPLE_WOUNDS, TRAIT_GENERIC)

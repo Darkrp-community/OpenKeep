@@ -92,7 +92,7 @@
 	return
 
 /obj/item/clothing/cloak/tabard/knight/Initialize()
-	. = ..()
+	..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -106,7 +106,7 @@
 	detail_tag = "_psy"
 
 /obj/item/clothing/cloak/tabard/crusader/Initialize()
-	. = ..()
+	..()
 	update_icon()
 
 /obj/item/clothing/cloak/tabard/crusader/attack_right(mob/user)
@@ -187,7 +187,7 @@
 		L.update_inv_cloak()
 
 /obj/item/clothing/cloak/tabard/knight/guard/Initialize()
-	. = ..()
+	..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -309,7 +309,7 @@
 		L.update_inv_cloak()
 
 /obj/item/clothing/cloak/stabard/guard/Initialize()
-	. = ..()
+	..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -346,7 +346,7 @@
 	detail_tag = "_quad"
 
 /obj/item/clothing/cloak/stabard/mercenary/Initialize()
-	. = ..()
+	..()
 	detail_tag = pick("_quad", "_spl", "_box", "_dim")
 	color = clothing_color2hex(pick(CLOTHING_COLOR_NAMES))
 	detail_color = clothing_color2hex(pick(CLOTHING_COLOR_NAMES))
@@ -503,7 +503,7 @@
 
 
 /obj/item/clothing/cloak/stabard/surcoat/guard/Initialize()
-	. = ..()
+	..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -556,7 +556,7 @@
 		L.update_inv_cloak()
 
 /obj/item/clothing/cloak/lordcloak/Initialize()
-	. = ..()
+	..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -907,7 +907,7 @@
 	inhand_mod = FALSE
 
 /obj/item/clothing/cloak/half/vet/Initialize()
-	. = ..()
+	..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
