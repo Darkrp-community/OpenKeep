@@ -311,7 +311,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/under/cavelava
 	name = "cavelava"
 	icon_state = "cavelava"
-	first_time_text = "MOUNT DECAPITATION"
+	first_time_text = "DEEP MOUNT DECAPITATION"
 	ambientsounds = AMB_CAVELAVA
 	ambientnight = AMB_CAVELAVA
 	spookysounds = SPOOKY_CAVE
