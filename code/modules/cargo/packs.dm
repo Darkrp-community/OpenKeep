@@ -2317,17 +2317,6 @@
 					/obj/structure/piano/unanchored)
 	crate_type = /obj/structure/closet/crate/wooden
 
-/datum/supply_pack/misc/book_crate
-	name = "Book Crate"
-	desc = ""
-	cost = 1500
-	contains = list(/obj/item/book/codex_gigas,
-					/obj/item/book/manual/random/,
-					/obj/item/book/manual/random/,
-					/obj/item/book/manual/random/,
-					/obj/item/book/random/triple)
-	crate_type = /obj/structure/closet/crate/wooden
-
 /datum/supply_pack/misc/paper
 	name = "Bureaucracy Crate"
 	desc = ""//that was too forced

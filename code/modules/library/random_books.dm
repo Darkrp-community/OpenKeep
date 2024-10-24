@@ -1,29 +1,3 @@
-/obj/item/book/manual/random
-	icon_state = "random_book"
-
-/obj/item/book/manual/random/Initialize()
-	..()
-	var/static/banned_books = list(/obj/item/book/manual/random, /obj/item/book/manual/nuclear, /obj/item/book/manual/wiki)
-	var/newtype = pick(subtypesof(/obj/item/book/manual) - banned_books)
-	new newtype(loc)
-	return INITIALIZE_HINT_QDEL
-
-/obj/item/book/random
-	icon_state = "random_book"
-	var/amount = 1
-	var/category = null
-
-/obj/item/book/random/Initialize()
-	..()
-	return INITIALIZE_HINT_LATELOAD
-
-/obj/item/book/random/LateInitialize()
-	create_random_books(amount, src.loc, TRUE, category)
-	qdel(src)
-
-/obj/item/book/random/triple
-	amount = 3
-
 /obj/structure/bookcase/random
 	var/category = null
 	var/book_count = 10
@@ -31,100 +5,124 @@
 	anchored = TRUE
 	state = 2
 
-/obj/structure/bookcase/random/Initialize(mapload)
-	. = ..()
-	if(book_count && isnum(book_count))
-		book_count += pick(-1,-1,0,1,1)
-		. = INITIALIZE_HINT_LATELOAD
+	Initialize(mapload)
+		. = ..()
+		if(book_count && isnum(book_count))
+			book_count += pick(-1, -1, 0, 1, 1)
+			. = INITIALIZE_HINT_LATELOAD
 
-/obj/structure/bookcase/random/LateInitialize()
-	create_random_books_rogue(book_count, src)
-	update_icon()
+	LateInitialize()
+		create_random_books(book_count, src, FALSE, category)
+		update_icon()
 
-/obj/structure/bookcase/random/archive
-	book_count = 5
+/obj/structure/bookcase/random/apocrypha
+	name = "bookcase (Apocrypha & Grimoires)"
+	category = "Apocrypha & Grimoires"
 
-/obj/structure/bookcase/random/archive/Initialize(mapload)
-	. = ..()
-	if(book_count && isnum(book_count))
-		book_count += pick(0,1,2,3,4,5,6,7,8,9,10)
-		. = INITIALIZE_HINT_LATELOAD
+/obj/structure/bookcase/random/myths
+	name = "bookcase (Myths & Tales)"
+	category = "Myths & Tales"
 
-/obj/structure/bookcase/random/archive/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/book/rogue/playerbook))
-		var/obj/item/book/rogue/playerbook/PB = I
-		if(PB.is_in_round_player_generated)
-			to_chat(user, "<span class='notice'>[SSlibrarian.playerbook2file(PB.player_book_text, PB.player_book_title, PB.player_book_author, PB.player_book_author_ckey, PB.player_book_icon)]</span>")
-			PB.is_in_round_player_generated = FALSE
+/obj/structure/bookcase/random/legends
+	name = "bookcase (Legends & Accounts)"
+	category = "Legends & Accounts"
 
-	. = ..()
+/obj/structure/bookcase/random/thesis
+	name = "bookcase (Thesis)"
+	category = "Thesis"
+
+/obj/structure/bookcase/random/eoratica
+	name = "bookcase (Eoratica)"
+	category = "Eoratica"
 
 /proc/create_random_books(amount = 2, location, fail_loud = FALSE, category = null)
 	. = list()
-	if(!isnum(amount) || amount<1)
+	if (!isnum(amount) || amount < 1)
 		return
-	if(prob(25))
-		category = null
 	var/datum/DBQuery/query_get_random_books = SSdbcore.NewQuery({"
-		SELECT author, title, content
+		SELECT author, title, content, category, select_icon
 		FROM [format_table_name("library")]
 		WHERE isnull(deleted) AND (:category IS NULL OR category = :category)
-		ORDER BY rand() LIMIT :limit
+		ORDER BY RAND() LIMIT :limit
 	"}, list("category" = category, "limit" = amount))
-	if(query_get_random_books.Execute())
-		while(query_get_random_books.NextRow())
-			var/obj/item/book/B = new(location)
+	if (query_get_random_books.Execute())
+		while (query_get_random_books.NextRow())
+			var/author = query_get_random_books.item[1]
+			var/title = query_get_random_books.item[2]
+			var/content = query_get_random_books.item[3]
+			var/category_db = query_get_random_books.item[4]
+			var/select_icon = query_get_random_books.item[6]
+
+			var/obj/item/book/rogue/B = new(location)
+			B.author = author
+			B.title = title
+			B.pages = list("<b3><h3>Title: [B.title]<br>Author: [B.author]</b><h3>[content]")
+			B.name = B.title
+			if (select_icon)
+				B.icon_state = "[select_icon]_0"
+				B.base_icon_state = select_icon
+			else
+				B.icon_state = "book[rand(1,8)]"
 			. += B
-			B.author	=	query_get_random_books.item[2]
-			B.title		=	query_get_random_books.item[3]
-			B.dat		=	query_get_random_books.item[4]
-			B.name		=	"Book: [B.title]"
-			B.icon_state=	"book[rand(1,8)]"
 	qdel(query_get_random_books)
 
-/proc/create_random_books_rogue(amount = 2, location)
-	var/list/possible_books = subtypesof(/obj/item/book/rogue/)
-	var/list/player_book_titles = SSlibrarian.pull_player_book_titles()
-	for(var/b in 1 to amount)
-		if(prob(0.1))
-			new /obj/item/book_crafting_kit(location)
-		if(prob(clamp(length(player_book_titles), 10, 90)))
-			var/obj/item/book/rogue/playerbook/newbook = new /obj/item/book/rogue/playerbook(location)
-			if(prob(33))
-				newbook.pages = SSlibrarian.file2playerbook("ruined")["text"]
+/obj/item/book/rogue/random_book
+	var/book_category = null
+	random_cover = TRUE
+
+	Initialize()
+		..()
+		get_random_book_from_database(book_category)
+
+	proc/get_random_book_from_database(var/book_category)
+		var/datum/DBQuery/query_get_random_book = SSdbcore.NewQuery({"
+			SELECT author, title, content, category, select_icon
+			FROM [format_table_name("library")]
+			WHERE isnull(deleted) AND category = :category
+			ORDER BY RAND() LIMIT 1
+		"}, list("category" = book_category))
+
+		if (query_get_random_book.Execute())
+			if (query_get_random_book.NextRow())
+				src.author = query_get_random_book.item[1]
+				src.title = query_get_random_book.item[2]
+				var/content = query_get_random_book.item[3]
+				src.category = query_get_random_book.item[4]
+				var/select_icon = query_get_random_book.item[6]
+
+				src.pages = list("<b3><h3>Title: [src.title]<br>Author: [src.author]</b><h3>[content]")
+				src.name = src.title
+				if (select_icon)
+					src.icon_state = "[select_icon]_0"
+					src.base_icon_state = select_icon
+				else
+					src.icon_state = "book[rand(1,8)]"
 		else
-			var/obj/item/book/rogue/addition = pick(possible_books)
-			var/obj/item/book/rogue/newbook = new addition(location)
-			if(istype(newbook, /obj/item/book/rogue/secret))
-				qdel(newbook)
-				continue
-			if(istype(newbook, /obj/item/book/rogue/bibble))
-				qdel(newbook)
-				continue
-			if(prob(33))
-				newbook.bookfile = "ruined.json"
+			src.name = "Empty Book"
+			src.pages = list("<b3><h3>No books available in this category.</h3></b>")
+		qdel(query_get_random_book)
 
+/obj/item/book/rogue/random_apocrypha
+	parent_type = /obj/item/book/rogue/random_book
+	book_category = "Apocrypha & Grimoires"
+	name = "Book (Apocrypha & Grimoires)"
 
-/obj/structure/bookcase/random/fiction
-	name = "bookcase (Fiction)"
-	category = "Fiction"
-/obj/structure/bookcase/random/nonfiction
-	name = "bookcase (Non-Fiction)"
-	category = "Non-fiction"
-/obj/structure/bookcase/random/religion
-	name = "bookcase (Religion)"
-	category = "Religion"
-/obj/structure/bookcase/random/adult
-	name = "bookcase (Adult)"
-	category = "Adult"
+/obj/item/book/rogue/random_myths
+	parent_type = /obj/item/book/rogue/random_book
+	book_category = "Myths & Tales"
+	name = "Book (Myths & Tales)"
 
-/obj/structure/bookcase/random/reference
-	name = "bookcase (Reference)"
-	category = "Reference"
-	var/ref_book_prob = 20
+/obj/item/book/rogue/random_legends
+	parent_type = /obj/item/book/rogue/random_book
+	book_category = "Legends & Accounts"
+	name = "Book (Legends & Accounts)"
 
-/obj/structure/bookcase/random/reference/Initialize(mapload)
-	. = ..()
-	while(book_count > 0 && prob(ref_book_prob))
-		book_count--
-		new /obj/item/book/manual/random(src)
+/obj/item/book/rogue/random_thesis
+	parent_type = /obj/item/book/rogue/random_book
+	book_category = "Thesis"
+	name = "Book (Thesis)"
+
+/obj/item/book/rogue/random_eoratica
+	parent_type = /obj/item/book/rogue/random_book
+	book_category = "Eoratica"
+	name = "Book (Eoratica)"

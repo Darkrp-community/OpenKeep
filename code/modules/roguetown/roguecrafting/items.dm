@@ -297,15 +297,6 @@
 	reqs = list(/obj/item/natural/fibers = 4)
 	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/book_crafting_kit
-	name = "book crafting kit"
-	result = /obj/item/book_crafting_kit
-	reqs = list(
-			/obj/item/natural/hide = 2,
-			/obj/item/natural/cloth = 1)
-	tools = list(/obj/item/needle = 1)
-	req_table = TRUE
-
 /datum/crafting_recipe/roguetown/mantrap
 	name = "mantrap"
 	result = list(/obj/item/restraints/legcuffs/beartrap,
