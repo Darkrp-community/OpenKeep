@@ -97,6 +97,13 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 
+/datum/crafting_recipe/roguetown/leather/meatbag
+	name = "game satchel"
+	result = /obj/item/storage/meatbag
+	reqs = list(/obj/item/natural/hide = 1,
+				/obj/item/natural/cloth = 1)
+	craftdiff = 1
+
 /datum/crafting_recipe/roguetown/leather/waterskin
 	name = "waterskin"
 	result = /obj/item/reagent_containers/glass/bottle/waterskin
@@ -108,7 +115,7 @@
 	name = "heavy leather gloves"
 	result = /obj/item/clothing/gloves/roguetown/angle
 	reqs = list(/obj/item/natural/hide = 1,
-				/obj/item/natural/fur/gote = 1)
+				/obj/item/natural/fur = 1)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/helmet
