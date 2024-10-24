@@ -403,6 +403,23 @@
 												'sound/foley/footsteps/armor/chain (2).ogg',\
 												'sound/foley/footsteps/armor/chain (3).ogg'), 80)
 
+//.............. Boggard's Hauberk ..............//
+/obj/item/clothing/suit/roguetown/armor/chainmail/boggardhauberk
+	name = "boggard's hauberk"
+	desc = "Chain mail mixed with plant fibres, swampweed, mud and other found flora - a favorite among bandits and ambushers alike, if you can stand the occasional crawling on your skin."
+	icon_state = "bogarmor"
+	item_state = "bogarmor"
+	sellprice = VALUE_DIRT_CHEAP //You covered a perfectly good Hauberk in mud and sticks. Its value has quite obviously decreased a good few mammon.
+
+	armor = list("melee" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/boggardhauberk/Initialize()
+	. = ..()
+	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/chain (1).ogg',\
+												'sound/foley/footsteps/armor/chain (2).ogg',\
+												'sound/foley/footsteps/armor/chain (3).ogg'), 80)
+
 
 /*-----------------------\
 |  Cuirass & Breastplate |
