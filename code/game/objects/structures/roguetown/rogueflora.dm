@@ -391,7 +391,7 @@
 	attacked_sound = 'sound/misc/woodhit.ogg'
 
 /obj/structure/flora/roguegrass/bush/wall/Initialize()
-	..()
+	. = ..()
 	icon_state = "bushwall[pick(1,2)]"
 
 /obj/structure/flora/roguegrass/bush/wall/update_icon()
@@ -418,10 +418,8 @@
 
 
 /obj/structure/flora/roguegrass/bush/wall/tall/Initialize()
-	..()
+	. = ..()
 	icon_state = "tallbush[pick(1,2)]"
-
-
 
 // fyrituis bush
 /obj/structure/flora/roguegrass/pyroclasticflowers
@@ -437,18 +435,50 @@
 	var/bushtype2
 	var/res_replenish2
 
+/obj/structure/flora/roguegrass/pyroclasticflowers/update_icon()
+	icon_state = "pyroflower[rand(1,3)]"
+
 /obj/structure/flora/roguegrass/pyroclasticflowers/Initialize()
+	. = ..()
 	if(prob(88))
 		bushtype2 = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/fyritius = 1))
 	loot_replenish2()
 	pixel_x += rand(-3,3)
-	return ..()
 
 /obj/structure/flora/roguegrass/pyroclasticflowers/proc/loot_replenish2()
 	if(bushtype2)
 		looty2 += bushtype2
 	if(prob(66))
 		looty2 += /obj/item/reagent_containers/food/snacks/produce/fyritius
+
+// pyroflower cluster looting
+/obj/structure/flora/roguegrass/pyroclasticflowers/attack_hand(mob/user)
+	if(isliving(user))
+		var/mob/living/L = user
+		user.changeNext_move(CLICK_CD_MELEE)
+		playsound(src.loc, "plantcross", 80, FALSE, -1)
+		if(do_after(L, rand(1,5), target = src))
+#ifndef MATURESERVER
+			if(!looty2.len && (world.time > res_replenish2))
+				loot_replenish2()
+#endif
+			if(prob(50) && looty2.len)
+				if(looty2.len == 1)
+					res_replenish2 = world.time + 8 MINUTES
+				var/obj/item/B = pick_n_take(looty2)
+				if(B)
+					B = new B(user.loc)
+					user.put_in_hands(B)
+					user.visible_message(span_notice("[user] finds [B] in [src]."))
+					return
+			user.visible_message(span_warning("[user] searches through [src]."))
+#ifdef MATURESERVER
+			if(!looty2.len)
+				to_chat(user, span_warning("Picked clean."))
+#else
+			if(!looty2.len)
+				to_chat(user, span_warning("Picked clean... I should try later."))
+#endif
 
 // swarmpweed bush
 /obj/structure/flora/roguegrass/swampweed
@@ -580,7 +610,7 @@
 
 
 /obj/structure/flora/rogueshroom/Initialize()
-	..()
+	. = ..()
 	icon_state = "mush[rand(1,5)]"
 	if(icon_state == "mush5")
 		static_debris = list(/obj/item/natural/thorn=1, /obj/item/grown/log/tree/small = 1)
@@ -836,6 +866,9 @@
 					B = new B(user.loc)
 					user.put_in_hands(B)
 					user.visible_message(span_notice("[user] finds [B] in [src]."))
+					if(HAS_TRAIT(user, TRAIT_MIRACULOUS_FORAGING))
+						if(prob(35))
+							return
 					if(prob(luckydouble))
 						return
 					else
@@ -848,6 +881,9 @@
 					B = new B(user.loc)
 					user.put_in_hands(B)
 					user.visible_message(span_notice("[user] finds [B] in [src]."))
+					if(HAS_TRAIT(user, TRAIT_MIRACULOUS_FORAGING))
+						if(prob(35))
+							return
 					if(prob(luckydouble))
 						return
 					else

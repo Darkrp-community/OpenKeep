@@ -35,13 +35,13 @@
 #define TRAIT_ASSASSIN					"Assassin Training" //used for the assassin drifter's unique mechanics.
 #define TRAIT_BARDIC_TRAINING			"Bardic Training"
 #define TRAIT_GRAVEROBBER				"Graverobber"	// Prevents getting the cursed debuff when unearthing a grave, but permanent -1 LUC to whoever has it.
-
-#define TRAIT_MISSING_NOSE "Missing Nose" //halved stamina regeneration
-#define TRAIT_DISFIGURED "Disfigured"
-#define TRAIT_SPELLCOCKBLOCK "Bewitched" //prevents spellcasting
-#define TRAIT_ANTIMAGIC	"Anti-Magic"
-#define TRAIT_ANTISCRYING "Non-Detection"
-#define TRAIT_SHOCKIMMUNE "Shock Immunity"
+#define TRAIT_BLESSED					"Once blessed"	// prevents blessings stackings
+#define TRAIT_MIRACULOUS_FORAGING		"Miracle Foraging"	// makes bushes much more generous
+#define TRAIT_MISSING_NOSE				"Missing Nose" //halved stamina regeneration
+#define TRAIT_DISFIGURED				"Disfigured"
+#define TRAIT_SPELLCOCKBLOCK			"Bewitched" //prevents spellcasting
+#define TRAIT_ANTIMAGIC					"Anti-Magic"
+#define TRAIT_SHOCKIMMUNE				"Shock Immunity"
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
