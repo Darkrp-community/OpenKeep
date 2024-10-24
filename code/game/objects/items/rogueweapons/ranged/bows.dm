@@ -230,10 +230,10 @@
 
 /datum/intent/shoot/bow/recurve
 	chargetime = 0.75
-	chargedrain = 1.5
-	charging_slowdown = 2.5
+	chargedrain = 0.5
+	charging_slowdown = 1
 
 /datum/intent/arc/bow/recurve
 	chargetime = 0.75
-	chargedrain = 1.5
-	charging_slowdown = 2.5
+	chargedrain = 0.5
+	charging_slowdown = 1
