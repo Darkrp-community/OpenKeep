@@ -38,6 +38,16 @@
 		)
 
 
+/*	..................   Toll randomizer (poor mans coin generator, cheaper workload is all)  ................... */
+/obj/effect/spawner/roguemap/tollrandom
+	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
+	icon_state = "soultoken_floor"
+	probby = 25
+	color = "#ff0000"
+	spawned = list(
+		/obj/item/underworld/coin = 1,
+		)
+
 
 /*	..................   Hauntz randomizer   ................... */
 /obj/effect/spawner/roguemap/hauntz_random
