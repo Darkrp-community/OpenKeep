@@ -261,7 +261,7 @@
 	default_hidden = HIDEEARS|HIDEHAIR
 	dropshrink = 0.8
 
-	armor = ARMOR_MIMOR
+	armor = ARMOR_MINOR
 	prevent_crits = MINOR_CRITICALS
 
 
@@ -280,26 +280,16 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 
-//................ Briar Thorns ............... //	- Basic Dendor Briar
+//................ Briar Thorns ............... //	- Dendor Briar
 /obj/item/clothing/head/roguetown/padded/briarthorns
 	name = "briar thorns"
-	desc = "Worn by the faithful of Dendor."
+	desc = "The pain it causes perhaps can distract from the whispers of a mad God overpowering your sanity..."
 	icon_state = "briarthorns"
 
 /obj/item/clothing/head/roguetown/padded/briarthorns/pickup(mob/living/user)
-	if(!istype(user.patron, /datum/patron/divine/dendor))
-		to_chat(user, span_warning ("The thorns prick me."))
-		user.adjustBruteLoss(5)
-	else
-		. = ..()
-
-//................ Briar Visage ............... //	- Rare Dendor headwear
-/obj/item/clothing/head/roguetown/padded/briarvisage
-	name = "briar visage"
-	desc = "Worn by the faithful of Dendor."
-	icon_state = "dendormask"
-	dynamic_hair_suffix = ""
-	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	. = ..()
+	to_chat(user, span_warning ("The thorns prick me."))
+	user.adjustBruteLoss(4)
 
 
 //................ Rabbet Visage ............... //	- Basic Eora Acolyte
@@ -326,7 +316,7 @@
 	worn_y_dimension = 64
 	resistance_flags = FIRE_PROOF // Made of metal
 
-	armor = ARMOR_MIMOR
+	armor = ARMOR_MINOR
 
 
 //................ Sun Hood ............... //	- Basic Astrata Acolyte
@@ -353,7 +343,7 @@
 	default_hidden = HIDEEARS|HIDEHAIR
 	resistance_flags = FIRE_PROOF
 
-	armor = ARMOR_MIMOR
+	armor = ARMOR_MINOR
 	prevent_crits = MINOR_CRITICALS
 
 /obj/item/clothing/head/roguetown/roguehood/priest/pickup(mob/living/user)
@@ -477,6 +467,7 @@
 	sewrepair = FALSE
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ITEM
+	clothing_flags = CANT_SLEEP_IN
 
 	armor = ARMOR_IRON_GOOD
 	body_parts_covered = HEAD|HAIR|NOSE
@@ -1255,7 +1246,7 @@
 	desc = "A bizarrely lightweight helmet of alloyed dark elven steel, offering unparalleled protection for elite bladesingers."
 	icon_state = "elfhead"
 	allowed_race = list("elf", "half-elf", "dark elf")
-
+	clothing_flags = CANT_SLEEP_IN
 	armor_class = ARMOR_CLASS_MEDIUM
 	body_parts_covered = HEAD|HAIR|NOSE
 
@@ -1274,7 +1265,7 @@
 	icon_state = "dwarfhead"
 	allowed_race = list("dwarf")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD_EXCEPT_MOUTH
 
 
@@ -1287,7 +1278,7 @@
 	allowed_sex = list(MALE)
 	allowed_race = list("human")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR
 
 
@@ -1302,7 +1293,7 @@
 	allowed_sex = list(MALE)
 	allowed_race = list("human")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR
 
 //............... Hoplite Helmet ............... //
@@ -1317,7 +1308,7 @@
 	worn_y_dimension = 64
 	allowed_race = list("aasimar")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR
 
 

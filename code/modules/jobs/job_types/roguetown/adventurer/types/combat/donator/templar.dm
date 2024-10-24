@@ -20,9 +20,6 @@
 		if("Astrata")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/astrata
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
-		if("Dendor")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 		if("Necra")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/necra
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
