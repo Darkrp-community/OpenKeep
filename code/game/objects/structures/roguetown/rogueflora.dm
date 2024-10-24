@@ -866,6 +866,9 @@
 					B = new B(user.loc)
 					user.put_in_hands(B)
 					user.visible_message(span_notice("[user] finds [B] in [src]."))
+					if(HAS_TRAIT(user, TRAIT_MIRACULOUS_FORAGING))
+						if(prob(35))
+							return
 					if(prob(luckydouble))
 						return
 					else
@@ -878,6 +881,9 @@
 					B = new B(user.loc)
 					user.put_in_hands(B)
 					user.visible_message(span_notice("[user] finds [B] in [src]."))
+					if(HAS_TRAIT(user, TRAIT_MIRACULOUS_FORAGING))
+						if(prob(35))
+							return
 					if(prob(luckydouble))
 						return
 					else
