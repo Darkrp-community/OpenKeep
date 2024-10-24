@@ -41,6 +41,7 @@
 #define TRAIT_DISFIGURED				"Disfigured"
 #define TRAIT_SPELLCOCKBLOCK			"Bewitched" //prevents spellcasting
 #define TRAIT_ANTIMAGIC					"Anti-Magic"
+#define TRAIT_ANTISCRYING				"Anti-Scrying"
 #define TRAIT_SHOCKIMMUNE				"Shock Immunity"
 
 #define TRAIT_BASHDOORS "bashdoors"
