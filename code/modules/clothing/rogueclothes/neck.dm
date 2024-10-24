@@ -90,6 +90,7 @@
 	toggle_icon_state = TRUE
 	blocksound = CHAINHIT
 	smeltresult = null
+	clothing_flags = CANT_SLEEP_IN
 
 /obj/item/clothing/neck/roguetown/chaincoif/AdjustClothes(mob/user)
 	if(loc == user)
@@ -137,6 +138,7 @@
 	// Realistically, it should also prevent stab crits. But for balance purposes let's not powercreep chainmail coifs for that purpose.
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
+	clothing_flags = CANT_SLEEP_IN
 
 /obj/item/clothing/neck/roguetown/gorget
 	name = "gorget"
@@ -151,6 +153,7 @@
 	body_parts_covered = NECK
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
+	clothing_flags = CANT_SLEEP_IN
 	equip_sound = 'sound/foley/equip/equip_armor.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	break_sound = 'sound/foley/breaksound.ogg'
@@ -222,7 +225,7 @@
 
 // PANTHEON SILVER PSYCROSSES START
 
-/obj/item/clothing/neck/roguetown/psycross/silver/astrata 
+/obj/item/clothing/neck/roguetown/psycross/silver/astrata
 	name = "amulet of Astrata"
 	desc = "Blessed be everything the light of the sun touches, for it is protected by Her grace."
 	icon_state = "astrata"
