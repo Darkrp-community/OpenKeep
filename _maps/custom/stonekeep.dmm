@@ -1314,7 +1314,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "eP" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/cloth,
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/cobble,
@@ -4322,7 +4322,7 @@
 	},
 /area/rogue/indoors/town)
 "ph" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /obj/item/bedsheet/rogue/cloth,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
@@ -4940,7 +4940,7 @@
 /turf/closed/wall/mineral/rogue/roofwall/middle,
 /area/rogue/indoors/town/church)
 "rB" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "rC" = (
@@ -5114,7 +5114,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/town/sewer)
 "sl" = (
-/obj/structure/bed/rogue/inn/wooldouble,
+/obj/structure/bed/rogue/wooldouble,
 /obj/item/bedsheet/rogue/double_pelt,
 /obj/effect/landmark/start/villager,
 /turf/open/floor/rogue/woodturned,
@@ -5274,7 +5274,7 @@
 /turf/open/floor/carpet/purple/airless,
 /area/rogue/indoors/town/tavern)
 "sR" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /obj/effect/landmark/start/villager,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw";
@@ -7258,7 +7258,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "Az" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/cloth,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -7401,7 +7401,7 @@
 	},
 /area/rogue/indoors/town/tavern)
 "AZ" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/tavern)
 "Ba" = (
@@ -7507,7 +7507,7 @@
 	},
 /area/rogue/indoors/town/tavern)
 "Bm" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/pelt,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -8510,7 +8510,7 @@
 	},
 /area/rogue/indoors/town/church)
 "Fc" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /turf/open/floor/rogue/blocks{
 	icon_state = "newstone2"
 	},
@@ -9158,7 +9158,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
 "Hs" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "Ht" = (
@@ -9443,7 +9443,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
 "Im" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
 "In" = (
@@ -10179,7 +10179,7 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
 "KH" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -10654,7 +10654,7 @@
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/magician)
 "MA" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/fabric,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/magician)
@@ -11896,7 +11896,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/dwarf)
 "RK" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/wool,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -13277,7 +13277,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/dwarfin)
 "XZ" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/cloth,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -13483,7 +13483,7 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor)
 "Za" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/blocks{
 	icon_state = "newstone2"
@@ -13497,7 +13497,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
 "Zc" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/pelt,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)

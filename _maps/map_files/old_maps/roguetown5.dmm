@@ -3784,7 +3784,7 @@
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/outdoors/exposed/dwarf)
 "od" = (
-/obj/structure/bed/rogue/inn/wooldouble,
+/obj/structure/bed/rogue/wooldouble,
 /obj/item/bedsheet/rogue/double_pelt,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town)
@@ -5219,7 +5219,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
 "tg" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "th" = (
@@ -5588,7 +5588,7 @@
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/under/town/basement)
 "ux" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
 "uy" = (
@@ -6386,7 +6386,7 @@
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/indoors/town/shop)
 "xM" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -6549,7 +6549,7 @@
 	},
 /area/rogue/indoors/town)
 "yl" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw";
 	dir = 1
@@ -6842,7 +6842,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "zs" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/fabric,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/magician)
@@ -7141,7 +7141,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "Aw" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/cloth,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -7151,7 +7151,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "Ay" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "AA" = (
@@ -7489,7 +7489,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "BP" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/tavern)
 "BQ" = (
@@ -7510,7 +7510,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
 "BT" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/pelt,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -8738,7 +8738,7 @@
 	},
 /area/rogue/indoors/town/shop)
 "Gv" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
 "Gx" = (
@@ -10479,7 +10479,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "Qf" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/cloth,
 /turf/open/floor/rogue/wood,
 /area/rogue/under/town/basement)
@@ -11550,7 +11550,7 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
 "Wm" = (
-/obj/structure/bed/rogue/inn/wooldouble,
+/obj/structure/bed/rogue/wooldouble,
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/indoors/town)
 "Wn" = (

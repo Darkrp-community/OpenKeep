@@ -237,7 +237,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "gI" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors)
 "hD" = (

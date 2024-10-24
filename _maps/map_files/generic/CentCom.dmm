@@ -1363,7 +1363,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/vampire_manor)
 "dT" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/vampire_manor)
 "dU" = (
@@ -1835,7 +1835,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
 "mv" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/indoors/bandit_lair)
 "mx" = (

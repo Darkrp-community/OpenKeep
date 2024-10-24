@@ -13,7 +13,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "cM" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/outdoors/bog)
 "cP" = (
@@ -102,7 +102,7 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/bog)
 "rL" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /mob/living/carbon/human/species/skeleton/npc/peasant,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/outdoors/bog)

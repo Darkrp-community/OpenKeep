@@ -1248,7 +1248,7 @@
 /turf/closed/mineral/random/rogue,
 /area/rogue/outdoors/mountains/decap)
 "XP" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/outdoors/mountains/decap)

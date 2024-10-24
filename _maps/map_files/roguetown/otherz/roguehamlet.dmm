@@ -760,7 +760,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town)
 "aUj" = (
-/obj/structure/bed/rogue/inn/wooldouble,
+/obj/structure/bed/rogue/wooldouble,
 /obj/item/bedsheet/rogue/double_pelt,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
@@ -1883,7 +1883,7 @@
 	first_time_text = "Blackwine Manor"
 	})
 "ceG" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /obj/item/storage/belt/rogue/pouch/coins/mid,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
@@ -2195,7 +2195,7 @@
 	first_time_text = "Blackwine Manor"
 	})
 "cCc" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/indoors/shelter/town/dwarf)
 "cCk" = (
@@ -3712,7 +3712,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/town)
 "ejm" = (
-/obj/structure/bed/rogue/inn/wooldouble,
+/obj/structure/bed/rogue/wooldouble,
 /obj/item/bedsheet/rogue/fabric_double,
 /turf/open/floor/carpet/purple,
 /area/rogue/under/town/basement)
@@ -3782,7 +3782,7 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town)
 "elO" = (
-/obj/structure/bed/rogue/inn/wooldouble,
+/obj/structure/bed/rogue/wooldouble,
 /obj/effect/decal/cobbleedge{
 	dir = 10
 	},
@@ -4384,7 +4384,7 @@
 /area/rogue/indoors/town)
 "ePF" = (
 /obj/item/bedsheet/rogue/double_pelt,
-/obj/structure/bed/rogue/inn/wooldouble,
+/obj/structure/bed/rogue/wooldouble,
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/town/tavern)
 "ePO" = (
@@ -5353,7 +5353,7 @@
 	first_time_text = "Abandoned Mine"
 	})
 "fVV" = (
-/obj/structure/bed/rogue/inn/wooldouble,
+/obj/structure/bed/rogue/wooldouble,
 /obj/item/bedsheet/rogue/fabric_double,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town)
@@ -5400,7 +5400,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/garrison)
 "fXZ" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /obj/structure/fluff/nest,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
@@ -5715,7 +5715,7 @@
 	},
 /area/rogue/indoors/town/vault)
 "goV" = (
-/obj/structure/bed/rogue/inn/wooldouble,
+/obj/structure/bed/rogue/wooldouble,
 /obj/item/bedsheet/rogue/fabric_double,
 /obj/structure/fluff/walldeco/painting/seraphina{
 	pixel_x = 32
@@ -5848,7 +5848,7 @@
 /turf/closed/wall/mineral/rogue/decostone/fluffstone,
 /area/rogue/indoors)
 "gwY" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison)
 "gxx" = (
@@ -6133,7 +6133,7 @@
 /turf/open/floor/rogue/tile/masonic/spiral,
 /area/rogue/outdoors/exposed/under/basement)
 "gKF" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town)
 "gKG" = (
@@ -7895,7 +7895,7 @@
 /turf/open/floor/rogue/metal/barograte,
 /area/rogue/indoors/town/cell)
 "iKe" = (
-/obj/structure/bed/rogue/inn/wooldouble,
+/obj/structure/bed/rogue/wooldouble,
 /obj/item/bedsheet/rogue/double_pelt,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
@@ -9883,7 +9883,7 @@
 	},
 /area/rogue/indoors/town)
 "kPS" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/church)
 "kPU" = (
@@ -11187,7 +11187,7 @@
 /obj/effect/decal/cleanable/dirt/cobweb{
 	icon_state = "cobweb2"
 	},
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/church)
 "mmm" = (
@@ -11622,7 +11622,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town)
 "mKN" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /obj/item/storage/belt/rogue/pouch/coins/mid,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
@@ -11642,7 +11642,7 @@
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/magician)
 "mMc" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town/tavern)
 "mMv" = (
@@ -12079,7 +12079,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/exposed/church)
 "njt" = (
-/obj/structure/bed/rogue/inn/wooldouble,
+/obj/structure/bed/rogue/wooldouble,
 /obj/item/bedsheet/rogue/double_pelt,
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/town/tavern)
@@ -12944,7 +12944,7 @@
 	pixel_x = 0;
 	pixel_y = 32
 	},
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/magician)
 "ofr" = (
@@ -14206,7 +14206,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/under/town/sewer)
 "phC" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/town/dwarf)
 "phV" = (
@@ -14377,7 +14377,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "ppJ" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
@@ -14594,7 +14594,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
 "pBo" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/shop)
 "pBw" = (
@@ -17282,7 +17282,7 @@
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/shelter/rtfield)
 "ssy" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
 "ssC" = (
@@ -17622,7 +17622,7 @@
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/town/basement)
 "sMv" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "sMK" = (
@@ -18806,7 +18806,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/dwarfin)
 "tXg" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/church)
 "tXt" = (
@@ -19830,7 +19830,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/tavern)
 "uWG" = (
-/obj/structure/bed/rogue/inn/hay,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/church)
 "uWU" = (
@@ -20256,7 +20256,7 @@
 	first_time_text = "Blackwine Manor"
 	})
 "vuN" = (
-/obj/structure/bed/rogue/inn/wooldouble,
+/obj/structure/bed/rogue/wooldouble,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/shelter/rtfield)
 "vuZ" = (
@@ -21105,7 +21105,7 @@
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
 	})
 "wkp" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
 "wks" = (
@@ -21815,7 +21815,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
 "xbB" = (
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town/garrison)
 "xbY" = (
@@ -21990,7 +21990,7 @@
 /area/rogue/indoors/town/church)
 "xje" = (
 /obj/item/bedsheet/rogue/cloth,
-/obj/structure/bed/rogue/inn/wool,
+/obj/structure/bed/rogue/wool,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "xjk" = (
@@ -22403,7 +22403,7 @@
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
 	})
 "xEM" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /mob/living/simple_animal/hostile/zombie,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
@@ -22979,7 +22979,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "yhf" = (
-/obj/structure/bed/rogue/inn/pileofshit,
+/obj/structure/bed/rogue/mediocre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
 	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
