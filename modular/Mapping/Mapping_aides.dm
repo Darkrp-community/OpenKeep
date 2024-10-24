@@ -86,7 +86,7 @@
 		/mob/living/simple_animal/hostile/retaliate/gaseousform/xylix = 30,
 		/mob/living/simple_animal/hostile/rogue/demon/xylix = 10,
 		/mob/living/simple_animal/hostile/rogue/haunt/xylix = 5,
-		/obj/structure/glowshroom/single/xylix = 5,
+		/obj/structure/kneestingers/xylix = 5,
 		/obj/item/roguecoin/silver/pile/xylix = 5,
 		)
 
@@ -164,7 +164,7 @@
 	return ..()
 
 
-/obj/structure/glowshroom/single/xylix
+/obj/structure/kneestingers/xylix
 	name = ""
 	desc = ""
 	icon = 'icons/roguetown/items/valuable.dmi'
@@ -258,7 +258,7 @@
 	icon_state = "wall_funny"
 	pixel_y = 32
 
-/obj/structure/glowshroom/single/xylix
+/obj/structure/kneestingers/xylix
 	name = "fancy chest"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "chestfancy_neu"
