@@ -3,8 +3,9 @@
 
 #define ALL_PLAYER_RACES_BY_NAME		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Dwarf","Tiefling", "Aasimar")
 
-#define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra)
-#define ALL_TEMPLAR_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra)
+#define ALL_TEMPLE_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/necra, /datum/patron/divine/pestra)
+#define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/necra, /datum/patron/divine/pestra, /datum/patron/divine/dendor)
+#define ALL_TEMPLAR_PATRONS 	list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/necra, /datum/patron/divine/pestra)
 
 #define PLATEHIT "plate"
 #define CHAINHIT "chain"
@@ -53,6 +54,8 @@ GLOBAL_LIST_INIT(wolf_suffixes, list("Fang", "Claw", "Stalker", "Prowler", "Roar
 #define FAMILY_MOTHER "Mother"
 #define FAMILY_PROGENY "Progeny"
 #define FAMILY_ADOPTED "Adoptive Progeny"
+#define FAMILY_OMMER "Parents Sibling"
+#define FAMILY_INLAW "In Law"
 
 GLOBAL_LIST_EMPTY(sunlights)
 GLOBAL_LIST_EMPTY(job_respawn_delays)
@@ -389,7 +392,7 @@ BCLASS_TWIST)
 "melee" = 100, "bullet" = 100, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 #define ARMOR_MINIMAL		MELEE_5___ARROW_NOTHING
-#define ARMOR_MIMOR			MELEE_10___ARROW_5
+#define ARMOR_MINOR				MELEE_10___ARROW_5
 
 #define ARMOR_GAMBESON_BAD	MELEE_15___ARROW_NOTHING
 #define ARMOR_GAMBESON		MELEE_20___ARROW_30
