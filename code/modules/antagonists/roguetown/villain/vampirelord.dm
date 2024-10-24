@@ -29,6 +29,9 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/cache_hair
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/bat/batform //attached to the datum itself to avoid cloning memes, and other duplicates
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/gaseousform/gas
+	var/secondsundersun = 0 // How many seconds have we spent under the sun? Once it reaches 100 * vampire lord level, we get dusted.
+	var/time2getdusted = 150 // How many deciseconds (15 seg) we have before being dusted at base level of 0
+	var/timesincelastmessage = 0 // Counter that increases by 1 every second, at 15 displays the message
 
 /datum/antagonist/vampirelord/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
 	if(istype(examined_datum, /datum/antagonist/vampirelord/lesser))
@@ -253,6 +256,9 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	if(!user)
 		return
 	var/mob/living/carbon/human/H = user
+	var/datum/antagonist/vampirelord/lord = user.mind?.has_antag_datum(/datum/antagonist/vampirelord)
+	if(lord.vamplevel > 0)
+		time2getdusted = 300 * lord.vamplevel // This is necessary because otherwise anything by zero is an instant dust.
 	if(H.stat == DEAD)
 		return
 	if(H.advsetup)
@@ -265,24 +271,54 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		if(GLOB.tod != "night")
 			if(isturf(H.loc))
 				var/turf/T = H.loc
-				if(T.can_see_sky())
+				if(T.can_see_sky()) // Are we on an outdoors turf, or able to see the sky?
 					if(T.get_lumcount() > 0.15)
 						if(!isspawn) // VLord is more punished for daylight excursions.
-							var/datum/antagonist/vampirelord/lord = user.mind?.has_antag_datum(/datum/antagonist/vampirelord)
-							var/timeundersun = 100 * lord.vamplevel
-							if(lord.vamplevel < 4) // Unless they're ascended
-								to_chat(H, "<span class='warning'>Astrata spurns me! I must get out of her rays before I am undone!</span>")
-								sleep(timeundersun) // The more you ascend the more time you get to get to safety before becoming dust.
-								var/turf/N = H.loc
-								if(N.can_see_sky())
-									if(N.get_lumcount() > 0.15)
-										H.dust()
+							if(lord.vamplevel <= 3) // Unless they're ascended
+								if(secondsundersun > 1) // Failsafe for the reminder
+									if(secondsundersun >= time2getdusted) // If we accumulated enough seconds under the sun to our vampire level...
+										to_chat(H, "<span class='userdanger'>ASTRATA SMOLDERS ME INTO ASHES!</span>") // I could feel my eyes / turning into dust.
+										H.emote("firescream", forced = TRUE)
+										H.dust() // And two strangers, turning into dust.
+									else
+										sleep(10)
+										secondsundersun += 10 // Add ten deciseconds (one second) per life tick we spent under the sun.
+										timesincelastmessage += 10 // Add one second to the message timer
+										if(timesincelastmessage > 49) // Every 5 seconds, remind us we're walking on sunshine (woah ooh)
+											to_chat(H, span_warning("Astrata spurns me! I must get out of her rays before I am undone!"))
+											timesincelastmessage = 0
+								else // This will only happen once, at the start of every life cycle check
+									to_chat(H, span_warning("Astrata spurns me! I must get out of her rays before I am undone!"))
+									secondsundersun += 10 // Add our first 10 deciseconds (one second) of time we spent under the sun.
+							else
+								if(timesincelastmessage < 1)
+									to_chat(H, "<span class='userdanger'>I HAVE CONQUERED THE SUN! NOT EVEN ASTRATA HERSELF CAN STOP ME NOW!!</span>") // Kars momento.
+									timesincelastmessage += 1
 								else
-									to_chat(H, "<span class='warning'>That was too close. I must avoid the sun.</span>")
-						else if (isspawn && !disguised)
-							to_chat(H, "<span class='warning'>Astrata spurns me! I must get out of her rays!</span>")
-							H.fire_act(1,5)
-							handle_vitae(-10)
+									sleep(10)
+									timesincelastmessage += 10
+									if(timesincelastmessage > 5999)
+										to_chat(H, "<span class='userdanger'>I HAVE CONQUERED THE SUN! NOT EVEN ASTRATA HERSELF CAN STOP ME NOW!!</span>") // Kars momento.
+										timesincelastmessage = 0
+						else if(isspawn) // Failsafe, just in case.
+							if(!disguised) // Nondisguised thralls just get set on fire.
+								if(secondsundersun == 0 && timesincelastmessage < 1)
+									to_chat(H, span_warning("Astrata spurns me! I must get out of her rays before I am undone!"))
+									secondsundersun++ // Just for thralls to show the message as well.
+									timesincelastmessage++ // Start counting
+								else // Our first grace second is gone, start burning us
+									H.fire_act(1,5)
+									H.emote("firescream", forced = TRUE)
+									handle_vitae(-10) // Vitae lost per life tick as extra punishment.
+									timesincelastmessage++ // Add one second to the timer
+									if(timesincelastmessage >= 15) // Every 15 seconds, remind us we're walking on sunshine (woah ooh)
+										to_chat(H, span_warning("Astrata spurns me! I must get out of her rays before I am undone!"))
+										timesincelastmessage = 0
+				else // We're under a roof, no longer being cooked by Astrata.
+					if(secondsundersun > 0) // Will only display the message if we HAD BEEN under the sun, guaranteeing no spam.
+						to_chat(H, span_warning("That was too close. I must avoid the sun.")) // Safe!
+					secondsundersun = 0 // Then reset our counter back to zero.
+					timesincelastmessage = 0 // To start from scratch.
 
 	if(H.on_fire)
 		if(disguised)
@@ -299,9 +335,9 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		H.blood_volume = BLOOD_VOLUME_MAXIMUM
 		if(vitae < 200)
 			if(disguised)
-				to_chat(H, "<span class='warning'>My disguise fails!</span>")
+				to_chat(H, span_warning("My disguise fails!"))
 				H.vampire_undisguise(src)
-	handle_vitae(-1)
+	handle_vitae(-0.5) // Since vitae is now finite, less vitae lost per life tick.
 
 /datum/antagonist/vampirelord/proc/handle_vitae(change, tribute)
 	var/tempcurrent = vitae
@@ -1000,7 +1036,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vampirelord/Initialize()
-	..()
+	. = ..()
 	GLOB.vlord_starts += loc
 
 /obj/effect/landmark/start/vampirespawn
@@ -1015,7 +1051,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vampirespawn/Initialize()
-	..()
+	. = ..()
 	GLOB.vspawn_starts += loc
 
 /obj/effect/landmark/vteleport

@@ -28,8 +28,8 @@
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/quiver/arrows
-	beltl = /obj/item/flashlight/flare/torch/lantern
-	backpack_contents = list(/obj/item/flint = 1, /obj/item/bait = 1, /obj/item/rogueweapon/huntingknife = 1)
+	beltl = /obj/item/storage/meatbag
+	backpack_contents = list(/obj/item/flint = 1, /obj/item/bait = 1, /obj/item/rogueweapon/huntingknife = 1, /obj/item/flashlight/flare/torch/lantern = 1)
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
