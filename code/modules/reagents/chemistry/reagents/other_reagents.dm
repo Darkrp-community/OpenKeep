@@ -164,7 +164,7 @@
 	if(HAS_TRAIT(M, TRAIT_NASTY_EATER )) // lets orcs and goblins drink bogwater
 		return
 	M.adjustToxLoss(1)
-	M.add_nausea(50)
+	M.add_nausea(12) //Over 8 units will cause puking
 
 
 /*
