@@ -225,7 +225,7 @@
 	},
 /area/rogue/outdoors/rtfield)
 "JZ" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "Ld" = (
@@ -293,7 +293,7 @@
 /turf/open/water/river,
 /area/rogue/outdoors/town/sargoth)
 "VX" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/rtfield)
 "WD" = (

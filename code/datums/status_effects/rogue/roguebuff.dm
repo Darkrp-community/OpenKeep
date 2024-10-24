@@ -198,16 +198,7 @@
 	desc = "<span class='nicegreen'>I am so high maaaaaaaaan</span>\n"
 	icon_state = "weed"
 
-/datum/status_effect/buff/ravox
-	id = "ravoxbuff"
-	alert_type = /atom/movable/screen/alert/status_effect/buff/ravoxbuff
-	effectedstats = list("constitution" = 1,"endurance" = 1,"strength" = 1)
-	duration = 240 MINUTES
 
-/atom/movable/screen/alert/status_effect/buff/ravoxbuff
-	name = "Divine Power"
-	desc = "<span class='nicegreen'>Divine power flows through me.</span>\n"
-	icon_state = "ravox"
 
 /datum/status_effect/buff/calm
 	id = "calm"
@@ -232,16 +223,7 @@
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stressevent/calm)
 
-/datum/status_effect/buff/noc
-	id = "nocbuff"
-	alert_type = /atom/movable/screen/alert/status_effect/buff/nocbuff
-	effectedstats = list("intelligence" = 3)
-	duration = 240 MINUTES
 
-/atom/movable/screen/alert/status_effect/buff/nocbuff
-	name = "Divine Knowledge"
-	desc = "<span class='nicegreen'>Divine knowledge flows through me.</span>\n"
-	icon_state = "intelligence"
 
 /datum/status_effect/buff/barbrage
 	id = "barbrage"
@@ -259,6 +241,128 @@
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.apply_status_effect(/datum/status_effect/debuff/barbfalter)
+
+
+
+//============================================================================
+/*--------------\
+|				|
+| Divine Buffs	|
+|		 	 	|
+\---------------*/
+
+// ---------------------- DIVINE KNOWLEDGE ( NOC ) ----------------------------
+/datum/status_effect/buff/noc
+	id = "nocbuff"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/nocbuff
+	effectedstats = list("intelligence" = 3)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/nocbuff
+	name = "Divine Knowledge"
+	desc = "<span class='nicegreen'>Divine knowledge flows through me.</span>\n"
+	icon_state = "intelligence"
+
+
+
+// ---------------------- DIVINE POWER ( RAVOX ) ----------------------------
+/datum/status_effect/buff/ravox
+	id = "ravoxbuff"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/ravoxbuff
+	effectedstats = list("constitution" = 1,"endurance" = 1,"strength" = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/ravoxbuff
+	name = "Divine Power"
+	desc = "<span class='nicegreen'>Divine power flows through me.</span>\n"
+	icon_state = "ravox"
+
+
+/*-----------------\
+|  Dendor Miracles |
+\-----------------*/
+
+// ---------------------- EYES OF THE BEAST ( DENDOR ) ----------------------------
+/datum/status_effect/buff/beastsense
+	id = "beastsense"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/beastsense
+	duration = 10 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/beastsense
+	name = "Bestial Senses"
+	desc = "<span class='nicegreen'>No scent too faint, no shadow too dark...</span>\n"
+	icon_state = "bestialsense"
+
+/datum/status_effect/buff/beastsense/on_apply()
+	. = ..()
+	var/mob/living/carbon/human/H = owner
+	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
+	if(!eyes || eyes.lighting_alpha)
+		return
+	eyes.see_in_dark = 4
+	eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+	owner.update_sight()
+
+/datum/status_effect/buff/beastsense/on_remove()
+	. = ..()
+	var/mob/living/carbon/human/H = owner
+	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
+	if(!eyes)
+		return
+	if((iself(owner)))
+		return
+	eyes.see_in_dark = 0
+	eyes.lighting_alpha = null
+	owner.update_sight()
+
+
+/datum/status_effect/buff/beastsense_elf
+	id = "beastsenself"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/beastsenself
+	effectedstats = list("perception" = 2)
+	duration = 10 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/beastsenself
+	name = "Bestial Sense"
+	desc = "<span class='nicegreen'>No scent too faint, no shadow too dark...</span>\n"
+	icon_state = "bestialsense"
+
+
+
+// ---------------------- TROLL SHAPE ( DENDOR ) ----------------------------
+/datum/status_effect/buff/trollshape
+	id = "trollshape"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/trollshape
+	effectedstats = list("strength" = 5, "endurance" = 2, "speed" = -3, "intelligence" = -5)
+	duration = 3 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/trollshape
+	name = "Troll Shape"
+	desc = "<span class='nicegreen'>I AM STRONG! DENDORS ENEMIES WILL DIE!</span>\n"
+	icon_state = "trollshape"
+/datum/status_effect/buff/trollshape/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/human/C = owner
+		C.resize = 1.2
+		C.update_transform()
+		C.AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HEAVY, 1, 2)
+
+/datum/status_effect/buff/trollshape/on_remove()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/human/C = owner
+		C.emote("pain", forced = TRUE)
+		playsound(get_turf(C), 'sound/gore/flesh_eat_03.ogg', 100, TRUE)
+		to_chat(C, span_warning("Dendors transformation fades, flesh shrinking back. My body aches..."))
+		C.adjustBruteLoss(10)
+		C.apply_status_effect(/datum/status_effect/debuff/barbfalter)
+		C.resize = 0.85
+		C.update_transform()
+		C.AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, 2)
+
+
+
 
 // BARDIC BUFFS BELOW
 
