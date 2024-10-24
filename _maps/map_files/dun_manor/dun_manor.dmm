@@ -31,7 +31,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "shop1";
-	name = "shop I"
+	name = "Shop I"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town)
@@ -171,7 +171,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "doctor";
-	name = "physicker's office door"
+	name = "Physicker's Office"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -237,12 +237,11 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town)
 "anI" = (
-/obj/structure/chair/wood/rogue{
-	dir = 1;
-	icon_state = "chair2"
-	},
+/obj/structure/closet/crate/chest/old_crate,
+/obj/machinery/light/rogue/wallfire/candle,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/carpet/red,
+/obj/item/reagent_containers/glass/bottle/rogue/wine,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "anU" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
@@ -280,11 +279,11 @@
 	},
 /area/rogue/indoors/town)
 "aqS" = (
-/obj/structure/fluff/customsign{
-	icon_state = "shitsign";
-	wrotesign = "Mercenaries Guild, upstairs"
+/obj/structure/chair/wood/rogue{
+	dir = 4;
+	icon_state = "chair2"
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
 "ara" = (
 /obj/machinery/light/rogue/torchholder/l,
@@ -489,7 +488,8 @@
 /obj/structure/mineral_door/wood/donjon{
 	lockid = "dungeon";
 	dir = 4;
-	locked = 1
+	locked = 1;
+	name = "Keep Dungeon"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -555,6 +555,19 @@
 /obj/effect/landmark/start/orphan,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/rtfield)
+"aCC" = (
+/obj/structure/table/wood{
+	dir = 1;
+	icon_state = "longtable"
+	},
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/tavern)
 "aCD" = (
 /obj/structure/closet/crate/roguecloset/crafted,
 /turf/open/floor/carpet/red,
@@ -704,6 +717,16 @@
 /obj/structure/table/wood/plain_alt,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church/chapel)
+"aHx" = (
+/obj/structure/bed/rogue,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/weaponsmith,
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/town/dwarfin)
+"aHM" = (
+/obj/structure/roguemachine/scomm/l,
+/turf/open/floor/carpet/red,
+/area/rogue/indoors/town/tavern)
 "aHV" = (
 /obj/effect/spawner/roguemap/grass_low,
 /turf/open/floor/rogue/grass,
@@ -744,7 +767,7 @@
 /area/rogue/indoors/town/magician)
 "aJl" = (
 /obj/structure/mineral_door/wood/window{
-	name = "physicker's door"
+	name = "Physicker's Office"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -971,6 +994,13 @@
 /obj/structure/rack/rogue/shelf/big,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town)
+"aQP" = (
+/obj/structure/roguewindow/openclose{
+	dir = 1;
+	icon_state = "woodwindowdir"
+	},
+/turf/closed/wall/mineral/rogue/wooddark/window,
+/area/rogue/indoors/town/tavern)
 "aRe" = (
 /obj/structure/stairs{
 	dir = 1;
@@ -998,14 +1028,15 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "armorsmith";
-	name = "armorsmith's door"
+	name = "Armorsmith's Door"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
 "aSL" = (
 /obj/structure/mineral_door/wood/fancywood{
 	dir = 1;
-	lockid = "soilson"
+	lockid = "soilson";
+	name = "Village Farm"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
@@ -1215,7 +1246,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "weaponsmith";
-	name = "weaponsmith's door"
+	name = "Weaponsmith's Door"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/dwarfin)
@@ -1286,7 +1317,7 @@
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
 	lockid = "puritan";
-	name = "inquisition"
+	name = "Inquisition Offices"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/church)
@@ -1318,6 +1349,13 @@
 "biI" = (
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/rtfield)
+"biJ" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/candle/yellow,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "biS" = (
 /obj/structure/closet/crate/roguecloset{
 	lockid = "butler"
@@ -1339,7 +1377,7 @@
 /obj/structure/mineral_door/wood/donjon{
 	locked = 1;
 	lockid = "garrison";
-	name = "garrison"
+	name = "Garrison"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
@@ -1382,7 +1420,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "house5";
-	name = "house V"
+	name = "House V"
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
@@ -1473,7 +1511,7 @@
 /area/rogue/indoors/town/magician)
 "bug" = (
 /obj/structure/mineral_door/wood/deadbolt{
-	name = "church bath"
+	name = "Church Bath"
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
@@ -1497,7 +1535,8 @@
 "buT" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
-	lockid = "vault"
+	lockid = "vault";
+	name = "Keep Vault"
 	},
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
@@ -1523,15 +1562,9 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/rtfield)
 "bwE" = (
-/obj/structure/stairs{
-	dir = 1;
-	icon_state = "stairs"
-	},
-/obj/structure/fluff/railing/border{
-	dir = 8;
-	icon_state = "border"
-	},
-/turf/open/floor/rogue/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/roguemachine/scomm/l,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "bwM" = (
 /obj/machinery/light/rogue/torchholder/l,
@@ -1585,11 +1618,9 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "bAb" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/villager{
-	dir = 1
-	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "bAL" = (
 /obj/structure/fluff/railing/border{
@@ -1632,11 +1663,12 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
 "bCZ" = (
-/obj/structure/mineral_door/bars{
-	lockid = "graveyard"
-	},
 /obj/effect/decal/cobbleedge{
 	dir = 6
+	},
+/obj/structure/mineral_door/bars{
+	lockid = "graveyard";
+	name = "Graveyard"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town)
@@ -1756,7 +1788,9 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/town)
 "bJK" = (
-/obj/structure/mineral_door/wood/deadbolt,
+/obj/structure/mineral_door/wood/deadbolt{
+	name = "Training Yard"
+	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "bJQ" = (
@@ -1811,9 +1845,21 @@
 	},
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/bath)
+"bMg" = (
+/obj/structure/chair/bench/ultimacouch,
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/tavern)
 "bMu" = (
 /obj/item/roguebin/water,
 /turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/tavern)
+"bMQ" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "roomhunt";
+	name = "HUNT Room"
+	},
+/turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
 "bMR" = (
 /obj/effect/decal/cobbleedge{
@@ -1823,6 +1869,14 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors/soilsons)
+"bNh" = (
+/obj/structure/chair/wood/rogue{
+	dir = 8;
+	icon_state = "chair2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "bNp" = (
 /obj/effect/decal/cobbleedge{
 	dir = 9
@@ -1859,7 +1913,8 @@
 "bOK" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "steward"
+	lockid = "steward";
+	name = "Steward's Chambers"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
@@ -1889,7 +1944,8 @@
 /area/rogue/indoors/town)
 "bPL" = (
 /obj/structure/mineral_door/wood/window{
-	lockid = "tavern"
+	lockid = "tavern";
+	name = "Inn Backdoor"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
@@ -1917,6 +1973,10 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
+"bQW" = (
+/obj/machinery/light/rogue/wallfire/candle/r,
+/turf/open/floor/carpet/red,
+/area/rogue/indoors/town/tavern)
 "bRk" = (
 /obj/structure/fluff/railing/border{
 	dir = 9;
@@ -1972,7 +2032,6 @@
 "bVY" = (
 /obj/structure/chair/wood/rogue,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/start/villager,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "bWh" = (
@@ -2211,12 +2270,19 @@
 /obj/structure/fluff/railing/stonehedge,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
+"cjE" = (
+/obj/structure/fluff/railing/border{
+	dir = 1;
+	icon_state = "border"
+	},
+/obj/structure/fluff/clock,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "cjQ" = (
 /turf/open/floor/rogue/dirt/ambush,
 /area/rogue/outdoors/town)
 "cjX" = (
-/obj/structure/bookcase,
-/turf/open/floor/rogue/ruinedwood/spiral,
+/turf/closed/wall/mineral/rogue/wooddark/horizontal,
 /area/rogue/indoors/town/tavern)
 "clq" = (
 /obj/structure/table/wood{
@@ -2330,9 +2396,10 @@
 	},
 /area/rogue/indoors/soilsons)
 "cpl" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/reagent_containers/glass/bucket/pot,
-/turf/open/floor/rogue/blocks,
+/obj/structure/fluff/railing/border{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/tavern)
 "cpm" = (
 /turf/open/floor/rogue/herringbone,
@@ -2383,7 +2450,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "armorsmith";
-	name = "armorsmith's door"
+	name = "Armorsmith's Door"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/dwarfin)
@@ -2421,6 +2488,13 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/church/chapel)
+"ctg" = (
+/obj/item/bedsheet/rogue/cloth,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/villager,
+/obj/structure/bed/rogue/inn/hay,
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/town)
 "ctl" = (
 /obj/structure/fluff/customsign{
 	icon_state = "shitsign";
@@ -2463,7 +2537,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "roomiii";
-	name = "ROOM III"
+	name = "Room III"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -2672,7 +2746,7 @@
 	dir = 1;
 	locked = 1;
 	lockid = "veteran";
-	name = "veteran's house"
+	name = "Veteran's House"
 	},
 /obj/effect/decal/cobbleedge{
 	dir = 1
@@ -2692,7 +2766,7 @@
 /obj/structure/mineral_door/wood/donjon{
 	locked = 1;
 	lockid = "garrison";
-	name = "squireroom door"
+	name = "Squires' Quarters"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood{
@@ -2748,6 +2822,14 @@
 "cGp" = (
 /turf/closed/wall/mineral/rogue/wooddark/window,
 /area/rogue/indoors/town/garrison)
+"cGD" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "manor";
+	name = "Ale Storage"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/town/basement)
 "cGL" = (
 /obj/structure/chair/wood/rogue/chair3,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2806,7 +2888,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
-	lockid = "priest"
+	lockid = "priest";
+	name = "Confession"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/church/chapel)
@@ -2829,7 +2912,8 @@
 /obj/structure/mineral_door/wood/donjon{
 	dir = 8;
 	locked = 1;
-	lockid = "nightmaiden"
+	lockid = "nightmaiden";
+	name = "Bathhouse"
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
@@ -2890,7 +2974,8 @@
 /obj/structure/mineral_door/wood/donjon{
 	lockid = "warehouse";
 	dir = 4;
-	locked = 1
+	locked = 1;
+	name = "Warehouse"
 	},
 /obj/structure/bars/passage{
 	density = 0;
@@ -2967,6 +3052,13 @@
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/rtfield)
+"cSy" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/railing/border{
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "cSR" = (
 /turf/open/floor/rogue/tile/masonic{
 	dir = 8
@@ -3008,7 +3100,8 @@
 "cVp" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "nightmaiden"
+	lockid = "nightmaiden";
+	name = "Bathhouse Main Office"
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
@@ -3118,6 +3211,14 @@
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
+"dbI" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "walls";
+	name = "Village Gatehouse"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town)
 "dck" = (
 /obj/machinery/light/rogue/torchholder/l,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3144,14 +3245,15 @@
 	icon_state = "wcv";
 	locked = 1;
 	lockid = "manor";
-	name = "archivists chambers"
+	name = "Archivist's Chambers"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)
 "ddz" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "garrison"
+	lockid = "walls";
+	name = "Wall Entrance"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
@@ -3163,6 +3265,16 @@
 	},
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town)
+"ddH" = (
+/obj/structure/mineral_door/wood/donjon{
+	dir = 8;
+	icon_state = "donjondir";
+	locked = 1;
+	lockid = "nightmaiden";
+	name = "Private Room II"
+	},
+/turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/town/bath)
 "ddU" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -3224,10 +3336,19 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
+"dgD" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "roomhunt";
+	name = "HUNT Balcony"
+	},
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/tavern)
 "dgV" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "graveyard"
+	lockid = "graveyard";
+	name = "Gravedigger's Room"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -3325,7 +3446,7 @@
 "dnd" = (
 /obj/structure/mineral_door/wood{
 	lockid = "doctor";
-	name = "physicker's bedroom door"
+	name = "Physicker's Room"
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
@@ -3343,9 +3464,11 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "dow" = (
-/obj/structure/rogue/trophy/deer,
-/obj/structure/chair/bench/ultimacouch,
-/turf/open/floor/rogue/woodturned,
+/obj/structure/fluff/railing/border{
+	dir = 4;
+	icon_state = "border"
+	},
+/turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
 "doE" = (
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
@@ -3358,6 +3481,17 @@
 "dpH" = (
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors/town/manor)
+"dpQ" = (
+/obj/structure/mineral_door/wood{
+	icon_state = "wcv";
+	locked = 1;
+	lockid = "tower";
+	name = "Apprentice's Chambers"
+	},
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
+/area/rogue/indoors/town/magician)
 "dpS" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/transparent/openspace,
@@ -3406,16 +3540,13 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "dty" = (
-/obj/structure/chair/wood/rogue{
-	dir = 4;
-	icon_state = "chair2"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/bedsheet/rogue/cloth,
 /obj/effect/landmark/start/villager{
-	dir = 4
+	dir = 8
 	},
-/turf/open/floor/carpet/red,
-/area/rogue/indoors/town/tavern)
+/obj/structure/bed/rogue/inn/hay,
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/town)
 "duc" = (
 /obj/machinery/light/rogue/wallfire/candle/r,
 /obj/structure/table/wood{
@@ -3647,7 +3778,8 @@
 /area/rogue/indoors/town/garrison)
 "dGH" = (
 /obj/structure/mineral_door/bars{
-	lockid = "manor"
+	lockid = "manor";
+	name = "Royal Viewing Area"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -3941,13 +4073,10 @@
 /turf/open/floor/rogue/tile/bath,
 /area/rogue/under/town/basement)
 "dUf" = (
-/obj/structure/roguewindow/openclose{
-	dir = 1;
-	icon_state = "woodwindowdir"
-	},
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "horzw"
-	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/bed/rogue/inn/wool,
+/obj/item/bedsheet/rogue/cloth,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "dUN" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4121,7 +4250,8 @@
 "edf" = (
 /obj/structure/mineral_door/wood/fancywood{
 	locked = 1;
-	lockid = "elder"
+	lockid = "elder";
+	name = "Mayor's Room"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
@@ -4161,7 +4291,8 @@
 "eeN" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
-	lockid = "manor"
+	lockid = "manor";
+	name = "Sewer Entrance"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
@@ -4195,7 +4326,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "manor";
-	name = "guest lodging"
+	name = "Guest Lodging"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/darker,
@@ -4231,6 +4362,13 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/magician)
+"ehL" = (
+/obj/structure/mineral_door/wood/fancywood{
+	lockid = "manor";
+	name = "Outer Balcony"
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manor)
 "eiP" = (
 /obj/structure/fluff/railing/fence{
 	dir = 1;
@@ -4420,7 +4558,8 @@
 /area/rogue/outdoors/town)
 "etd" = (
 /obj/structure/mineral_door/wood{
-	lockid = "nightmaiden"
+	lockid = "nightmaiden";
+	name = "Party Room"
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
@@ -4508,7 +4647,8 @@
 "exs" = (
 /obj/structure/mineral_door/wood/fancywood{
 	dir = 1;
-	lockid = "soilson"
+	lockid = "soilson";
+	name = "Farm Kitchen"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/soilsons)
@@ -4564,6 +4704,16 @@
 /obj/item/natural/bundle/stick,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"eDJ" = (
+/obj/structure/fluff/railing/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/customsign{
+	dir = 1;
+	icon_state = "shitsign";
+	wrotesign = "Mercenaries Guild, downstairs"
+	},
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/tavern)
 "eDR" = (
 /obj/structure/roguemachine/mail,
 /obj/item/storage/roguebag{
@@ -5000,7 +5150,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "roomv";
-	name = "ROOM V"
+	name = "Room V"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -5027,7 +5177,8 @@
 "fcW" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "merchant"
+	lockid = "merchant";
+	name = "Merchant's Shop"
 	},
 /obj/effect/decal/cobbleedge{
 	dir = 9
@@ -5079,6 +5230,13 @@
 /obj/item/ammo_casing/caseless/rogue/bolt/pyro,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"ffI" = (
+/obj/structure/fluff/railing/border{
+	dir = 6;
+	icon_state = "border"
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern)
 "ffK" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/tile/masonic,
@@ -5099,6 +5257,14 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/magician)
+"fgF" = (
+/obj/structure/mineral_door/wood/window{
+	locked = 1;
+	lockid = "tavern";
+	name = "Keg Room"
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern)
 "fgW" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_x = 32;
@@ -5123,7 +5289,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
-	lockid = "priest"
+	lockid = "priest";
+	name = "Downstairs"
 	},
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church/chapel)
@@ -5161,7 +5328,8 @@
 "flP" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
-	lockid = "blacksmith"
+	lockid = "blacksmith";
+	name = "Smelter"
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
@@ -5263,7 +5431,8 @@
 /area/rogue/indoors/town)
 "fsD" = (
 /obj/structure/mineral_door/wood/deadbolt{
-	dir = 8
+	dir = 8;
+	name = "Bedroom"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood,
@@ -5293,12 +5462,17 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town)
 "fvb" = (
-/obj/structure/fluff/railing/wood{
-	dir = 4;
-	icon_state = "woodrailing"
-	},
-/turf/open/floor/rogue/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/bookcase,
+/turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
+"fvc" = (
+/obj/structure/mineral_door/wood/fancywood{
+	lockid = "manor";
+	name = "War Room"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/manor)
 "fvy" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/rope,
@@ -5372,6 +5546,14 @@
 /obj/item/rogueweapon/shield/wood,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"fyD" = (
+/obj/structure/mineral_door/wood/donjon/stone{
+	locked = 1;
+	lockid = "priest";
+	name = "Her Holy Church"
+	},
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors/town/church/chapel)
 "fzp" = (
 /obj/effect/decal/cobbleedge{
 	dir = 6
@@ -5415,7 +5597,8 @@
 /area/rogue/indoors/town/garrison)
 "fAJ" = (
 /obj/structure/mineral_door/bars{
-	lockid = "graveyard"
+	lockid = "graveyard";
+	name = "Graveyard"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town)
@@ -5526,7 +5709,9 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "fFB" = (
-/obj/structure/mineral_door/wood,
+/obj/structure/mineral_door/wood{
+	name = "Bell Tower"
+	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/church/chapel)
 "fFJ" = (
@@ -5546,7 +5731,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "blacksmith";
-	name = "smithy door"
+	name = "Blacksmiths' Door"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/dwarfin)
@@ -5646,7 +5831,8 @@
 "fLJ" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "manor"
+	lockid = "manor";
+	name = "Steward & Guest Quarter's"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
@@ -5671,6 +5857,13 @@
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
+"fNw" = (
+/obj/structure/mineral_door/wood/deadbolt{
+	dir = 8;
+	name = "Master Bedroom"
+	},
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town)
 "fOh" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/pick,
@@ -5724,12 +5917,10 @@
 	},
 /area/rogue/indoors/town/manor)
 "fQr" = (
-/obj/structure/fluff/railing/border{
-	dir = 4;
-	icon_state = "border"
-	},
 /obj/structure/fluff/railing/border,
-/turf/open/transparent/openspace,
+/obj/structure/chair/stool/rogue,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "fQu" = (
 /obj/structure/fluff/railing/wood{
@@ -5776,12 +5967,12 @@
 	},
 /area/rogue/indoors/town/magician)
 "fRX" = (
-/obj/structure/fluff/railing/wood{
+/obj/structure/fluff/railing/border{
 	dir = 4;
-	icon_state = "woodrailing"
+	icon_state = "border"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "fTo" = (
 /obj/machinery/light/rogue/wallfire/candle,
@@ -5807,7 +5998,8 @@
 "fUx" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "vault"
+	lockid = "vault";
+	name = "Inner Vault"
 	},
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
@@ -5914,9 +6106,6 @@
 	dir = 4;
 	icon_state = "chair2"
 	},
-/obj/effect/landmark/start/villager{
-	dir = 4
-	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
 "fZj" = (
@@ -5961,7 +6150,8 @@
 "gaV" = (
 /obj/structure/mineral_door/wood/donjon{
 	locked = 1;
-	lockid = "priest"
+	lockid = "priest";
+	name = "Priest's Room"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church/chapel)
@@ -6068,7 +6258,7 @@
 /obj/structure/mineral_door/bars{
 	locked = 1;
 	lockid = "puritan";
-	name = "dungeon of the damned"
+	name = "Dungeon of the Damned"
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
@@ -6468,7 +6658,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "mason";
-	name = "Maker's Guild door"
+	name = "Maker's Guild"
 	},
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
@@ -6490,16 +6680,10 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "gBR" = (
-/obj/structure/chair/wood/rogue{
-	dir = 8;
-	icon_state = "chair2"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/start/villager{
-	dir = 8
-	},
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town/tavern)
+/obj/structure/closet/crate/drawer,
+/obj/item/roguekey/houses/house5,
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/town)
 "gBY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/roguemachine/drugmachine,
@@ -6540,6 +6724,14 @@
 /obj/item/clothing/cloak/raincloak/mortus,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"gEj" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "manor";
+	name = "Keep Baths"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/town/basement)
 "gFr" = (
 /obj/structure/chair/wood/rogue,
 /turf/open/floor/carpet/inn,
@@ -6549,7 +6741,7 @@
 	dir = 1;
 	locked = 1;
 	lockid = "walls";
-	name = "garrison wall entrance"
+	name = "Garrison Wall Entrance"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
@@ -6928,7 +7120,7 @@
 "gZn" = (
 /obj/structure/mineral_door/wood{
 	lockid = "garrison";
-	name = "supply storage door";
+	name = "Supply Storage";
 	locked = 1
 	},
 /obj/effect/decal/cobbleedge{
@@ -6951,10 +7143,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/magician)
 "haz" = (
-/obj/structure/bed/rogue/inn/wool,
-/obj/item/bedsheet/rogue/cloth,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/wood,
+/turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors/town/tavern)
 "haD" = (
 /obj/structure/rack/rogue,
@@ -6977,7 +7166,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "shop3";
-	name = "shop III"
+	name = "Shop III"
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town)
@@ -7008,7 +7197,6 @@
 "hbq" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/natural/chaff/oat,
-/obj/item/natural/saddle,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town)
 "hbw" = (
@@ -7209,9 +7397,6 @@
 	dir = 4;
 	icon_state = "chair2"
 	},
-/obj/effect/landmark/start/villager{
-	dir = 4
-	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "hkW" = (
@@ -7250,8 +7435,13 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "hnk" = (
-/obj/structure/chair/wood,
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/wood/rogue,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern)
+"hnw" = (
+/obj/structure/fluff/railing/border{
+	dir = 5
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "hnK" = (
@@ -7301,12 +7491,10 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town)
 "hqw" = (
-/obj/structure/mineral_door/wood{
-	locked = 1;
-	lockid = "roomhunt";
-	name = "HUNT ROOM"
-	},
-/turf/open/floor/rogue/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/roguekey/mercenary,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "hqE" = (
 /turf/open/floor/rogue/ruinedwood/chevron,
@@ -7487,6 +7675,7 @@
 "hwi" = (
 /obj/structure/closet/crate/drawer,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/roguekey/roomvi,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "hxz" = (
@@ -7525,7 +7714,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "shop4";
-	name = "shop IV"
+	name = "Shop IV"
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town)
@@ -7588,18 +7777,16 @@
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/bath)
 "hED" = (
-/obj/structure/table/wood{
-	dir = 1;
-	icon_state = "longtable"
-	},
-/turf/open/floor/rogue/ruinedwood,
+/obj/structure/fluff/railing/border,
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "hEP" = (
 /obj/effect/decal/cobbleedge,
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "house8";
-	name = "house VIII"
+	name = "House VIII"
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
@@ -7667,7 +7854,8 @@
 /area/rogue/indoors/town)
 "hHQ" = (
 /obj/structure/mineral_door/wood/fancywood{
-	lockid = "butcher"
+	lockid = "butcher";
+	name = "Animal Pen"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
@@ -7849,11 +8037,16 @@
 /obj/structure/fluff/walldeco/chains,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
+"hSb" = (
+/obj/structure/chair/wood/rogue,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/red,
+/area/rogue/indoors/town/tavern)
 "hSi" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "weaponsmith";
-	name = "weaponsmith's bedroom door"
+	name = "Weaponsmith's Room"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -7891,7 +8084,8 @@
 "hUK" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
-	lockid = "blacksmith"
+	lockid = "blacksmith";
+	name = "Smelter"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/dwarfin)
@@ -8107,7 +8301,7 @@
 	dir = 1;
 	locked = 1;
 	lockid = "garrison";
-	name = "garrison"
+	name = "Garrison"
 	},
 /obj/effect/decal/cobbleedge,
 /turf/open/floor/rogue/blocks,
@@ -8224,6 +8418,14 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
+"inS" = (
+/obj/structure/mineral_door/wood/donjon/stone{
+	locked = 1;
+	lockid = "priest";
+	name = "Inner Hallway"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/church/chapel)
 "ipd" = (
 /obj/effect/landmark/start/manorguardsman{
 	dir = 8
@@ -8275,6 +8477,15 @@
 "irq" = (
 /obj/structure/fluff/walldeco/customflag,
 /turf/closed/wall/mineral/rogue/craftstone,
+/area/rogue/indoors/town)
+"irB" = (
+/obj/structure/mineral_door/wood/fancywood{
+	lockid = "butcher";
+	name = "Chicken Coop"
+	},
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "horzw"
+	},
 /area/rogue/indoors/town)
 "irT" = (
 /obj/machinery/light/rogue/wallfire/candle,
@@ -8333,7 +8544,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "mason";
-	name = "mason's bedroom door"
+	name = "Mason's Room"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -8408,10 +8619,18 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "house3";
-	name = "house III"
+	name = "House III"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
+"iyz" = (
+/obj/structure/chair/wood/rogue{
+	dir = 4;
+	icon_state = "chair2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "iyC" = (
 /obj/item/natural/stone,
 /obj/structure/fluff/railing/border{
@@ -8440,7 +8659,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "manor";
-	name = "jesters chambers"
+	name = "Jester's Chambers"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -8465,7 +8684,7 @@
 	icon_state = "wcv";
 	locked = 1;
 	lockid = "manor";
-	name = "guard quarters"
+	name = "Royal Guards' Chambers"
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/town/basement)
@@ -8481,6 +8700,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
+"iCM" = (
+/obj/structure/bed/rogue/inn/wool,
+/obj/item/bedsheet/rogue/cloth,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/villager{
+	dir = 8
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern)
 "iCQ" = (
 /obj/structure/chair/wood/rogue,
 /turf/open/floor/carpet/royalblack,
@@ -8546,7 +8774,8 @@
 /area/rogue/under/town/basement)
 "iHz" = (
 /obj/structure/mineral_door/wood/violet{
-	lockid = "tavern"
+	lockid = "tavern";
+	name = "Sleeping Quarters"
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
@@ -8597,7 +8826,8 @@
 "iIK" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "manor"
+	lockid = "manor";
+	name = "Wine Cellar"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -8721,6 +8951,15 @@
 	icon_state = "linoleum"
 	},
 /area/rogue/indoors/town/vault)
+"iOq" = (
+/obj/structure/mineral_door/wood{
+	icon_state = "wcv";
+	locked = 1;
+	lockid = "tower";
+	name = "Magician's Chambers"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/magician)
 "iOy" = (
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/town)
@@ -8828,7 +9067,8 @@
 "iUs" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "merchant"
+	lockid = "merchant";
+	name = "Merchant's Room"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/shop)
@@ -8851,6 +9091,7 @@
 "iVI" = (
 /obj/structure/closet/crate/roguecloset/inn,
 /obj/item/broom,
+/obj/item/roguekey/houses/house1,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "iWR" = (
@@ -8870,7 +9111,8 @@
 "iXf" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
-	lockid = "dungeon"
+	lockid = "dungeon";
+	name = "Cell III"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/concrete,
@@ -9164,7 +9406,7 @@
 "jnq" = (
 /obj/structure/mineral_door/wood/window{
 	lockid = "dungeon";
-	name = "dungeoneer's room door";
+	name = "Dungeoneer's Room";
 	locked = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9253,6 +9495,13 @@
 /obj/item/reagent_containers/glass/bucket/wooden,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
+"jrv" = (
+/obj/structure/chair/wood/rogue{
+	dir = 4;
+	icon_state = "chair2"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "jrJ" = (
 /obj/structure/fluff/railing/border,
 /turf/open/transparent/openspace,
@@ -9312,6 +9561,14 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town)
+"jzB" = (
+/obj/structure/fluff/railing/border{
+	dir = 1;
+	icon_state = "border"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "jBn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/rogue/craftstone,
@@ -9621,13 +9878,11 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "jPP" = (
-/obj/structure/chair/wood/rogue{
-	dir = 1;
-	icon_state = "chair2"
+/obj/structure/fluff/railing/border{
+	dir = 9
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/tavern)
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/town/roofs)
 "jPT" = (
 /obj/structure/fluff/statue/knight/interior,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9695,7 +9950,8 @@
 /area/rogue/under/town/basement)
 "jSY" = (
 /obj/structure/mineral_door/wood/fancywood{
-	lockid = "manor"
+	lockid = "manor";
+	name = "Manor"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)
@@ -9745,7 +10001,8 @@
 "jVE" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "butler"
+	lockid = "butler";
+	name = "Fine Wines"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -9820,6 +10077,14 @@
 	dir = 4
 	},
 /area/rogue/indoors/town/manor)
+"jYB" = (
+/obj/structure/mineral_door/wood/donjon/stone{
+	locked = 1;
+	lockid = "priest";
+	name = "Acolyte's Quarters"
+	},
+/turf/open/floor/rogue/church,
+/area/rogue/indoors/town/church/chapel)
 "jYO" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_y = 32
@@ -10053,7 +10318,8 @@
 /obj/structure/mineral_door/wood/donjon{
 	dir = 8;
 	locked = 1;
-	lockid = "nightman"
+	lockid = "nightman";
+	name = "Vault"
 	},
 /turf/open/floor/carpet/inn,
 /area/rogue/under/town/sewer)
@@ -10309,7 +10575,7 @@
 /obj/structure/mineral_door/wood/fancywood{
 	locked = 1;
 	lockid = "elder";
-	name = "Mayors House"
+	name = "Mayor's House"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
@@ -10319,7 +10585,8 @@
 /area/rogue/under/town/basement)
 "kAA" = (
 /obj/structure/mineral_door/wood{
-	lockid = "nightmaiden"
+	lockid = "nightmaiden";
+	name = "Maiden's Quarters"
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
@@ -10370,7 +10637,8 @@
 "kDK" = (
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
-	lockid = "priest"
+	lockid = "priest";
+	name = "Church Kitchen"
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church/chapel)
@@ -10445,7 +10713,8 @@
 "kGP" = (
 /obj/structure/mineral_door/wood/fancywood{
 	dir = 1;
-	lockid = "mercenary"
+	lockid = "mercenary";
+	name = "Bunkroom III"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
@@ -10525,6 +10794,14 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
+"kKv" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "walls";
+	name = "Wall Tower"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/garrison)
 "kKI" = (
 /obj/structure/stairs/stone{
 	dir = 1;
@@ -10690,13 +10967,9 @@
 	},
 /area/rogue/indoors/town/vault)
 "kQC" = (
-/obj/structure/mineral_door/bars{
-	locked = 1;
-	lockid = "graveyard";
-	name = "royal crypt"
-	},
-/turf/open/floor/rogue/blocks,
-/area/rogue/under/town/basement)
+/obj/structure/fermenting_barrel/random/water,
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town)
 "kQI" = (
 /obj/structure/handcart{
 	dir = 8;
@@ -10743,7 +11016,8 @@
 /obj/structure/mineral_door/wood{
 	icon_state = "wcv";
 	locked = 1;
-	lockid = "manor"
+	lockid = "manor";
+	name = "Prince's Chambers"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -10794,6 +11068,7 @@
 	dir = 1;
 	icon_state = "tablewood1"
 	},
+/obj/item/broom,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "kUY" = (
@@ -10867,6 +11142,22 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"kYr" = (
+/obj/structure/stairs,
+/obj/structure/fluff/railing/border{
+	dir = 4;
+	icon_state = "border"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
+"kYv" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "walls";
+	name = "Southern Gatehouse"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/garrison)
 "kZd" = (
 /obj/structure/bars/cemetery,
 /turf/open/floor/rogue/blocks,
@@ -10888,7 +11179,9 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/sewer)
 "laD" = (
-/obj/structure/mineral_door/swing_door,
+/obj/structure/mineral_door/swing_door{
+	name = "Bar Entrance"
+	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
 "laR" = (
@@ -11130,14 +11423,16 @@
 /area/rogue/indoors/town/manor)
 "lkr" = (
 /obj/machinery/light/rogue/wallfire/candle,
-/obj/structure/bed/rogue/inn/wool,
 /obj/item/bedsheet/rogue/cloth,
+/obj/effect/landmark/start/villager,
+/obj/structure/bed/rogue/inn/hay,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "lkx" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "walls"
+	lockid = "walls";
+	name = "Northern Gatehouse"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
@@ -11171,7 +11466,8 @@
 "llO" = (
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
-	lockid = "priest"
+	lockid = "priest";
+	name = "Meeting Room"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/church/chapel)
@@ -11236,7 +11532,9 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town/roofs)
 "loM" = (
-/obj/structure/mineral_door/bars,
+/obj/structure/mineral_door/bars{
+	name = "Sewer Entrance"
+	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
 "lpd" = (
@@ -11315,7 +11613,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "house2";
-	name = "house II"
+	name = "House II"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
@@ -11345,7 +11643,8 @@
 "lvi" = (
 /obj/structure/mineral_door/wood/window{
 	locked = 1;
-	lockid = "tavern"
+	lockid = "tavern";
+	name = "Stage Entrance"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -11437,15 +11736,11 @@
 	},
 /area/rogue/outdoors/town/roofs)
 "lAr" = (
-/obj/structure/closet/crate/chest/old_crate,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
-/obj/machinery/light/rogue/wallfire/candle,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/ruinedwood/spiral,
+/obj/structure/closet/crate/roguecloset{
+	lockid = "butler"
+	},
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "lAK" = (
 /obj/structure/fluff/railing/wood{
@@ -11485,7 +11780,8 @@
 "lCj" = (
 /obj/structure/mineral_door/wood/window{
 	locked = 1;
-	lockid = "tavern"
+	lockid = "tavern";
+	name = "Kitchen Entrance"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -11580,12 +11876,12 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
 "lHr" = (
-/obj/structure/mineral_door/wood{
-	locked = 0;
+/obj/structure/mineral_door/wood/window{
+	locked = 1;
 	lockid = "tavern";
-	name = "MEETING ROOM"
+	name = "Meeting Room"
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "lHD" = (
 /obj/item/reagent_containers/glass/cup/golden,
@@ -11602,7 +11898,8 @@
 "lHX" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "nightmaiden"
+	lockid = "nightmaiden";
+	name = "Storage"
 	},
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/bath)
@@ -11647,7 +11944,8 @@
 "lLa" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
-	lockid = "dungeon"
+	lockid = "dungeon";
+	name = "Prison of the Damned"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
@@ -11684,7 +11982,6 @@
 /area/rogue/indoors/town/church/chapel)
 "lMc" = (
 /obj/machinery/light/rogue/wallfire/candle,
-/obj/structure/closet/crate/drawer,
 /obj/effect/decal/cobbleedge{
 	dir = 4
 	},
@@ -11808,7 +12105,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "roomii";
-	name = "ROOM II"
+	name = "Room II"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -12167,6 +12464,13 @@
 /obj/structure/roguemachine/vendor/steward,
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors/town)
+"moY" = (
+/obj/structure/fluff/railing/border{
+	dir = 10;
+	icon_state = "border"
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern)
 "mpj" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
@@ -12193,7 +12497,8 @@
 	dir = 1;
 	icon_state = "donjondir";
 	locked = 1;
-	lockid = "steward"
+	lockid = "steward";
+	name = "Warehouse"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
@@ -12263,6 +12568,14 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
+"mvn" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "walls";
+	name = "Wall Tower"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town)
 "mvz" = (
 /obj/structure/fluff/walldeco/moon{
 	pixel_x = -32
@@ -12300,7 +12613,7 @@
 "myk" = (
 /obj/structure/mineral_door/wood/window{
 	lockid = "sheriff";
-	name = "captains room door";
+	name = "Captain's Office";
 	locked = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12334,6 +12647,15 @@
 /obj/structure/closet/crate/coffin,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"mBu" = (
+/obj/structure/mineral_door/wood{
+	icon_state = "wcv";
+	locked = 1;
+	lockid = "tower";
+	name = "Magician's Tower"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/magician)
 "mCh" = (
 /obj/item/broom,
 /obj/item/natural/cloth,
@@ -12459,6 +12781,14 @@
 /obj/effect/landmark/latejoin,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town)
+"mKT" = (
+/obj/structure/mineral_door/bars{
+	locked = 1;
+	lockid = "dungeon";
+	name = "Cell I"
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/indoors/town/garrison)
 "mLf" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/carpet/red,
@@ -12473,8 +12803,8 @@
 	},
 /area/rogue/indoors/town)
 "mMT" = (
-/obj/structure/giantfur/small{
-	pixel_x = -19
+/obj/machinery/light/rogue/wallfire{
+	pixel_y = -32
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -12491,7 +12821,8 @@
 "mNo" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "blacksmith"
+	lockid = "blacksmith";
+	name = "Blacksmiths' Rooms"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/dwarfin)
@@ -12519,6 +12850,14 @@
 "mOe" = (
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
+"mOF" = (
+/obj/structure/mineral_door/wood/fancywood{
+	dir = 1;
+	lockid = "mercenary";
+	name = "Bunkroom II"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "mPR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fluff/railing/wood{
@@ -12596,7 +12935,8 @@
 /obj/structure/mineral_door/wood/donjon{
 	locked = 1;
 	lockid = "steward";
-	dir = 8
+	dir = 8;
+	name = "Steward's Office"
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town)
@@ -12662,7 +13002,8 @@
 "mYm" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "walls"
+	lockid = "walls";
+	name = "Wall Entrance"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
@@ -12720,7 +13061,8 @@
 /area/rogue/indoors/town/garrison)
 "naH" = (
 /obj/structure/mineral_door/wood/window{
-	lockid = "tavern"
+	lockid = "tavern";
+	name = "Skullcrack Inn"
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
@@ -12796,7 +13138,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "doctor";
-	name = "examination room"
+	name = "Examination Room"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -12897,6 +13239,14 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
+"nhJ" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "merchant";
+	name = "Balloon Tower"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/shop)
 "niE" = (
 /obj/structure/closet/dirthole/grave,
 /obj/structure/fluff/railing/wood{
@@ -13166,9 +13516,9 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/magician)
 "nwz" = (
-/obj/structure/closet/crate/chest/old_crate,
-/obj/item/roguekey/mercenary,
-/turf/open/floor/carpet/red,
+/obj/structure/giantfur,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "nwA" = (
 /obj/machinery/light/rogue/wallfire/candle,
@@ -13217,7 +13567,8 @@
 /obj/structure/mineral_door/wood{
 	icon_state = "wcr";
 	locked = 1;
-	lockid = "garrison"
+	lockid = "garrison";
+	name = "Guard Barracks"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood{
@@ -13320,6 +13671,15 @@
 	icon_state = "chess"
 	},
 /area/rogue/indoors/town/shop)
+"nHu" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/bedsheet/rogue/cloth,
+/obj/effect/landmark/start/villager{
+	dir = 8
+	},
+/obj/structure/bed/rogue/inn/hay,
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/town)
 "nHA" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
@@ -13360,9 +13720,7 @@
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/town/manor)
 "nJZ" = (
-/obj/structure/closet/crate/chest/old_crate,
-/obj/item/reagent_containers/glass/bottle/rogue/wine,
-/turf/open/floor/carpet/red,
+/turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/tavern)
 "nKp" = (
 /obj/structure/bars/passage{
@@ -13459,12 +13817,8 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
 "nRt" = (
-/obj/structure/fluff/railing/border{
-	dir = 8;
-	icon_state = "border"
-	},
-/obj/structure/fluff/railing/border,
-/turf/open/transparent/openspace,
+/obj/structure/roguemachine/scomm,
+/turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
 "nRL" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -13597,6 +13951,18 @@
 /obj/effect/decal/cobbleedge,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/basement)
+"nVL" = (
+/obj/machinery/light/rogue/chand,
+/turf/open/transparent/openspace,
+/area/rogue/indoors/town/tavern)
+"nWh" = (
+/obj/structure/mineral_door/wood/fancywood{
+	dir = 1;
+	lockid = "mercenary";
+	name = "Bunkroom I"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "nWw" = (
 /obj/structure/roguewindow/openclose,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -13673,7 +14039,8 @@
 /obj/structure/mineral_door/wood{
 	icon_state = "wcv";
 	locked = 1;
-	lockid = "tower"
+	lockid = "tower";
+	name = "Meeting Room"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -13689,8 +14056,10 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "nZO" = (
-/obj/structure/roguemachine/scomm/l,
-/turf/open/floor/carpet/red,
+/turf/closed/wall/mineral/rogue/wooddark/end{
+	dir = 8;
+	icon_state = "endwooddark"
+	},
 /area/rogue/indoors/town/tavern)
 "nZR" = (
 /obj/structure/fluff/railing/border{
@@ -13736,28 +14105,20 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church/chapel)
 "obY" = (
-/obj/structure/chair/wood/rogue{
-	dir = 8;
-	icon_state = "chair2"
-	},
-/obj/effect/landmark/start/villager{
-	dir = 8
-	},
-/turf/open/floor/carpet/red,
-/area/rogue/indoors/town/tavern)
+/obj/structure/closet/crate/drawer,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/roguekey/houses/house4,
+/obj/item/roguekey/houses/house4,
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/town)
 "occ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/church/chapel)
 "ocp" = (
-/obj/structure/mineral_door/wood/fancywood{
-	dir = 1;
-	locked = 1;
-	lockid = "mercenary";
-	name = "bunkhouse"
-	},
-/turf/open/floor/rogue/cobble,
+/obj/structure/chair/bench/ultimacouch,
+/turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
 "ocH" = (
 /obj/structure/fluff/walldeco/rpainting/forest{
@@ -13825,7 +14186,8 @@
 "ogr" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "merchant"
+	lockid = "merchant";
+	name = "Balloon Tower"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/shop)
@@ -13923,7 +14285,8 @@
 "omP" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
-	lockid = "manor"
+	lockid = "manor";
+	name = "Sewer Entrance"
 	},
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/under/town/basement)
@@ -13948,7 +14311,7 @@
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
 	lockid = "hpriest";
-	name = "inner chamber"
+	name = "Church Vault"
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
@@ -14096,7 +14459,7 @@
 "otY" = (
 /obj/structure/mineral_door/wood/fancywood{
 	lockid = "butcher";
-	name = "Butchers House"
+	name = "Butcher's House"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
@@ -14131,9 +14494,12 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/garrison)
 "oxh" = (
-/obj/structure/bed/rogue/inn/wool,
 /obj/item/bedsheet/rogue/cloth,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/villager{
+	dir = 8
+	},
+/obj/structure/bed/rogue/inn/hay,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "oxt" = (
@@ -14149,8 +14515,10 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/shop)
 "oyk" = (
-/obj/machinery/light/rogue/wallfire/candle,
-/turf/open/floor/rogue/wood,
+/obj/structure/chair/bench/ultimacouch/r{
+	icon_state = "ultimacochright"
+	},
+/turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
 "oyt" = (
 /obj/structure/closet/crate/chest,
@@ -14278,7 +14646,9 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/church/chapel)
 "oDZ" = (
-/obj/structure/mineral_door/bars,
+/obj/structure/mineral_door/bars{
+	name = "Sewer Entrance"
+	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "oFD" = (
@@ -14424,8 +14794,10 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/town/basement)
 "oNb" = (
-/obj/structure/fluff/clock,
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/railing/border{
+	dir = 4;
+	icon_state = "border"
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "oNE" = (
@@ -14561,6 +14933,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
+"oVb" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "oVp" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -14701,6 +15077,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
+"pcd" = (
+/obj/structure/mineral_door/wood/fancywood{
+	dir = 1;
+	locked = 1;
+	lockid = "mercenary";
+	name = "Mercenary Offices"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "pcT" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border{
@@ -14810,6 +15195,10 @@
 /area/rogue/under/town/sewer)
 "phM" = (
 /obj/effect/decal/cobbleedge,
+/obj/structure/table/wood{
+	dir = 1;
+	icon_state = "tablewood1"
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "phW" = (
@@ -14823,7 +15212,8 @@
 /area/rogue/outdoors/rtfield)
 "pix" = (
 /obj/structure/mineral_door/wood/deadbolt{
-	dir = 8
+	dir = 8;
+	name = "Balcony"
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
@@ -14853,14 +15243,16 @@
 "pjw" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "graveyard"
+	lockid = "graveyard";
+	name = "Gravedigger's Quarters"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "pjY" = (
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
-	lockid = "priest"
+	lockid = "priest";
+	name = "Upstairs"
 	},
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/chapel)
@@ -14970,7 +15362,8 @@
 "poj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/mineral_door/wood{
-	lockid = "tavern"
+	lockid = "tavern";
+	name = "Arena Entrance"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
@@ -15112,8 +15505,8 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "ptN" = (
-/obj/structure/bed/rogue/inn/wool,
-/obj/item/bedsheet/rogue/cloth,
+/obj/structure/rack/rogue/shelf/big,
+/obj/item/broom,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "ptQ" = (
@@ -15181,8 +15574,8 @@
 	},
 /area/rogue/indoors/town)
 "pxM" = (
-/obj/structure/closet/crate/drawer,
-/turf/open/floor/rogue/woodturned,
+/obj/structure/roguewindow,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "pya" = (
 /obj/structure/roguewindow,
@@ -15519,7 +15912,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "roomi";
-	name = "ROOM I"
+	name = "Room I"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -15538,6 +15931,14 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
+"pOB" = (
+/obj/structure/mineral_door/wood/fancywood{
+	dir = 1;
+	lockid = "mercenary";
+	name = "Bunkroom IV"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "pOG" = (
 /obj/structure/table/wood{
 	dir = 10;
@@ -15603,6 +16004,14 @@
 /obj/item/reagent_containers/food/snacks/smallrat/dead,
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/under/town/sewer)
+"pSf" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "merchant";
+	name = "Clothing Storage"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/shop)
 "pSu" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/blocks,
@@ -15709,7 +16118,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "house6";
-	name = "house VI"
+	name = "House VI"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
@@ -15758,7 +16167,8 @@
 /area/rogue/indoors/town/church/chapel)
 "qaR" = (
 /obj/structure/mineral_door/wood/fancywood{
-	lockid = "manor"
+	lockid = "manor";
+	name = "Inner Balcony"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
@@ -15775,7 +16185,7 @@
 	dir = 8;
 	locked = 1;
 	lockid = "veteran";
-	name = "veteran's house"
+	name = "Veteran's House"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -15799,7 +16209,7 @@
 	icon_state = "wcv";
 	locked = 1;
 	lockid = "manor";
-	name = "alchemical laboratory"
+	name = "Alchemical Storage"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -15859,7 +16269,7 @@
 /obj/structure/mineral_door/wood/fancywood{
 	locked = 1;
 	lockid = "lord";
-	name = "Lord's Apartment"
+	name = "Lord's Chambers"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -15872,7 +16282,8 @@
 "qid" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "nightmaiden"
+	lockid = "nightmaiden";
+	name = "Bathhouse Main Office"
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
@@ -16027,8 +16438,8 @@
 	},
 /area/rogue/indoors/town/magician)
 "qsr" = (
-/obj/structure/fermenting_barrel/crafted,
-/turf/open/floor/rogue/wood,
+/obj/structure/roguewindow,
+/turf/closed/wall/mineral/rogue/wooddark/window,
 /area/rogue/indoors/town/tavern)
 "qsO" = (
 /obj/structure/fluff/railing/border{
@@ -16140,7 +16551,9 @@
 /area/rogue/indoors/town)
 "qzC" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/mineral_door/wood,
+/obj/structure/mineral_door/wood{
+	name = "Confession"
+	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -16291,6 +16704,18 @@
 "qGx" = (
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town)
+"qGA" = (
+/obj/structure/fluff/railing/border{
+	dir = 10;
+	icon_state = "border"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/wood/rogue{
+	dir = 1;
+	icon_state = "chair2"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "qGI" = (
 /turf/closed/wall/mineral/rogue/pipe,
 /area/rogue/under/town/sewer)
@@ -16458,7 +16883,8 @@
 "qRv" = (
 /obj/structure/mineral_door/wood/fancywood{
 	locked = 1;
-	lockid = "garrison"
+	lockid = "garrison";
+	name = "Mayor's Armory"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
@@ -16475,7 +16901,9 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "qTF" = (
-/obj/structure/mineral_door/bars,
+/obj/structure/mineral_door/bars{
+	name = "Sewer Entrance"
+	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/bath)
 "qTJ" = (
@@ -16611,7 +17039,8 @@
 "qZS" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "steward"
+	lockid = "steward";
+	name = "Hallway"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
@@ -16678,7 +17107,8 @@
 "rbM" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "nightman"
+	lockid = "nightman";
+	name = "Niteman's Office"
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
@@ -16724,7 +17154,7 @@
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
 	lockid = "puritan";
-	name = "inquisitor's apartment"
+	name = "Inquisitor's Apartment"
 	},
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/church)
@@ -16932,6 +17362,13 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
+"rpD" = (
+/obj/structure/mineral_door/wood/fancywood{
+	lockid = "manor";
+	name = "Manor Vestibule"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/manor)
 "rqG" = (
 /obj/effect/spawner/roguemap/grass_low,
 /turf/open/floor/rogue/grass,
@@ -17026,7 +17463,8 @@
 /area/rogue/outdoors/town)
 "rwp" = (
 /obj/structure/mineral_door/wood/fancywood{
-	lockid = "butcher"
+	lockid = "butcher";
+	name = "Butcher's Cellar"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -17057,6 +17495,14 @@
 /obj/structure/bars,
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/under/town/sewer)
+"ryg" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "manor";
+	name = "Cellar"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/town/basement)
 "rys" = (
 /obj/structure/fermenting_barrel/water,
 /turf/open/floor/rogue/dirt/road,
@@ -17138,6 +17584,8 @@
 "rCZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/drawer,
+/obj/item/roguekey/houses/house6,
+/obj/item/roguekey/houses/house6,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "rDj" = (
@@ -17203,6 +17651,14 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town)
+"rJs" = (
+/obj/structure/table/wood{
+	dir = 1;
+	icon_state = "longtable"
+	},
+/obj/machinery/light/rogue/wallfire/candle/r,
+/turf/open/floor/carpet/red,
+/area/rogue/indoors/town/tavern)
 "rJM" = (
 /obj/effect/decal/cobbleedge{
 	dir = 4
@@ -17399,7 +17855,8 @@
 /area/rogue/indoors/town/magician)
 "rRo" = (
 /obj/structure/mineral_door/wood/deadbolt{
-	dir = 8
+	dir = 8;
+	name = "Apprentices' Quarters"
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
@@ -17494,7 +17951,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "weaponsmith";
-	name = "weaponsmith's door"
+	name = "Weaponsmith's Door"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
@@ -17550,7 +18007,8 @@
 "saJ" = (
 /obj/structure/mineral_door/wood/fancywood{
 	dir = 1;
-	lockid = "soilson"
+	lockid = "soilson";
+	name = "Soiler's Room"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood{
@@ -17635,6 +18093,14 @@
 /obj/item/clothing/under/roguetown/trou/leather,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"sde" = (
+/obj/structure/fluff/railing/border{
+	dir = 1;
+	icon_state = "border"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/red,
+/area/rogue/indoors/town/tavern)
 "sdr" = (
 /obj/structure/stairs{
 	dir = 1;
@@ -17670,7 +18136,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "roomvi";
-	name = "ROOM VI"
+	name = "Room VI"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -18400,7 +18866,7 @@
 /obj/structure/mineral_door/wood/donjon{
 	locked = 1;
 	lockid = "garrison";
-	name = "garrison";
+	name = "Sewer Entrance";
 	dir = 4
 	},
 /turf/open/floor/rogue/blocks,
@@ -18426,8 +18892,7 @@
 /area/rogue/indoors/soilsons)
 "sUn" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/r,
-/turf/open/floor/carpet/red,
+/turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town/tavern)
 "sUC" = (
 /obj/structure/fermenting_barrel,
@@ -18436,7 +18901,8 @@
 /area/rogue/indoors/town)
 "sUG" = (
 /obj/structure/mineral_door/wood/deadbolt{
-	dir = 1
+	dir = 1;
+	name = "Hallway"
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town)
@@ -18510,7 +18976,7 @@
 	dir = 1;
 	locked = 1;
 	lockid = "dungeon";
-	name = "garrison"
+	name = "Cells"
 	},
 /obj/effect/decal/cobbleedge{
 	dir = 1
@@ -18532,7 +18998,8 @@
 "tae" = (
 /obj/structure/mineral_door/wood/fancywood{
 	locked = 1;
-	lockid = "elder"
+	lockid = "elder";
+	name = "Kitchen Door"
 	},
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
@@ -18545,7 +19012,8 @@
 "tau" = (
 /obj/structure/mineral_door/wood/fancywood{
 	locked = 1;
-	lockid = "elder"
+	lockid = "elder";
+	name = "Cellar Door"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
@@ -18676,7 +19144,8 @@
 "tfY" = (
 /obj/structure/mineral_door/wood{
 	lockid = "garrison";
-	locked = 1
+	locked = 1;
+	name = "Staging Area"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -18687,7 +19156,8 @@
 "tgK" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
-	lockid = "dungeon"
+	lockid = "dungeon";
+	name = "Cell II"
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/garrison)
@@ -18847,7 +19317,8 @@
 "tng" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
-	lockid = "garrison"
+	lockid = "garrison";
+	name = "Armory"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/cobble,
@@ -18867,7 +19338,8 @@
 /obj/structure/mineral_door/wood/fancywood{
 	dir = 1;
 	locked = 1;
-	lockid = "soilson"
+	lockid = "soilson";
+	name = "Farm House"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/soilsons)
@@ -18891,7 +19363,8 @@
 "tqe" = (
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 0;
-	lockid = "priest"
+	lockid = "priest";
+	name = "Sick Ward"
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church/chapel)
@@ -18901,7 +19374,7 @@
 	},
 /area/rogue/indoors/town)
 "tqC" = (
-/obj/machinery/light/rogue/wallfire/candle/r,
+/obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "tqP" = (
@@ -19218,8 +19691,8 @@
 "tHJ" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "house4";
-	name = "house IV stable"
+	lockid = "garrison";
+	name = "Garrison Stables"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town)
@@ -19344,13 +19817,13 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town/roofs)
 "tPD" = (
-/obj/structure/table/wood{
-	dir = 1;
-	icon_state = "tablewood1"
+/obj/structure/closet/crate/roguecloset{
+	lockid = "butler"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/twig,
-/area/rogue/indoors/town)
+/obj/item/roguekey/roomiv,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern)
 "tQp" = (
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
@@ -19397,6 +19870,14 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"tSg" = (
+/obj/structure/mineral_door/bars{
+	locked = 1;
+	lockid = "graveyard";
+	name = "Grave Plots"
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/town/basement)
 "tSz" = (
 /obj/structure/roguewindow,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -19411,7 +19892,8 @@
 /obj/structure/mineral_door/wood/donjon{
 	dir = 4;
 	locked = 1;
-	lockid = "tavern"
+	lockid = "tavern";
+	name = "Sewer Entrance"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -19459,11 +19941,10 @@
 /area/rogue/outdoors/town)
 "tXC" = (
 /obj/structure/fluff/railing/border{
-	dir = 10;
+	dir = 1;
 	icon_state = "border"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/rogue/ruinedwood/spiral,
+/turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
 "tXX" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
@@ -19609,7 +20090,9 @@
 /turf/closed/mineral/random/rogue,
 /area/rogue/outdoors/mountains)
 "ufp" = (
-/obj/structure/mineral_door/wood/deadbolt,
+/obj/structure/mineral_door/wood/deadbolt{
+	name = "Training Shed"
+	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -19797,9 +20280,6 @@
 	dir = 8;
 	icon_state = "chair2"
 	},
-/obj/effect/landmark/start/villager{
-	dir = 8
-	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
 "upZ" = (
@@ -19911,7 +20391,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "house1";
-	name = "house I"
+	name = "House I"
 	},
 /obj/effect/decal/cobbleedge{
 	dir = 1
@@ -19950,6 +20430,12 @@
 "uxb" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors/town/dwarfin)
+"uxm" = (
+/obj/machinery/light/rogue/wallfire{
+	pixel_y = 32
+	},
+/turf/open/floor/carpet/red,
+/area/rogue/indoors/town/tavern)
 "uxQ" = (
 /obj/structure/stairs{
 	dir = 8
@@ -20051,13 +20537,8 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)
 "uEe" = (
-/obj/machinery/light/rogue/torchholder/c,
-/obj/structure/fluff/customsign{
-	dir = 1;
-	icon_state = "shitsign";
-	wrotesign = "Mercenaries Guild, upstairs"
-	},
-/turf/open/floor/rogue/wood,
+/obj/structure/stairs,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "uEo" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -20121,7 +20602,8 @@
 "uJi" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "manor"
+	lockid = "manor";
+	name = "Kitchen Storage"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
@@ -20265,7 +20747,7 @@
 	dir = 8;
 	locked = 1;
 	lockid = "walls";
-	name = "garrison wall entrance"
+	name = "Garrison Wall Entrance"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
@@ -20508,6 +20990,13 @@
 	},
 /turf/closed,
 /area/rogue/indoors/town/church/chapel)
+"vex" = (
+/obj/structure/fluff/railing/border,
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "vfo" = (
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
@@ -20534,10 +21023,18 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town/roofs)
 "vhg" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/roguecloset{
 	lockid = "butler"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
+"vhk" = (
+/obj/structure/mineral_door/wood/window{
+	locked = 1;
+	lockid = "tavern";
+	name = "Party Room"
+	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "vhp" = (
@@ -20607,7 +21104,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "shop2";
-	name = "shop II"
+	name = "Shop II"
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town)
@@ -20626,6 +21123,13 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
+"vpa" = (
+/obj/structure/fluff/railing/border{
+	dir = 1;
+	icon_state = "border"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "vpe" = (
 /obj/structure/fluff/customsign{
 	icon_state = "shitsign";
@@ -20747,7 +21251,7 @@
 /obj/structure/mineral_door/wood/donjon{
 	locked = 1;
 	lockid = "garrison";
-	name = "garrison";
+	name = "Sewer Entrance";
 	dir = 8
 	},
 /turf/open/floor/rogue/blocks/green,
@@ -20763,6 +21267,10 @@
 "vuw" = (
 /turf/open/floor/rogue/dirt/ambush,
 /area/rogue/outdoors/mountains)
+"vuy" = (
+/obj/structure/table/wood/nice,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "vvP" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -20776,7 +21284,8 @@
 /area/rogue/indoors/town)
 "vvQ" = (
 /obj/structure/mineral_door/wood/donjon{
-	lockid = "tavern"
+	lockid = "tavern";
+	name = "Innkeep's Office"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -20807,9 +21316,11 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
 "vxn" = (
+/obj/machinery/light/rogue/wallfire/candle{
+	pixel_y = -32
+	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fermenting_barrel/crafted,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "vxB" = (
 /turf/open/floor/rogue/tile{
@@ -20921,7 +21432,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "roomiv";
-	name = "ROOM IV"
+	name = "Room IV"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
@@ -21108,10 +21619,6 @@
 	dir = 1;
 	icon_state = "stairs"
 	},
-/obj/structure/fluff/railing/border{
-	dir = 4;
-	icon_state = "border"
-	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "vOq" = (
@@ -21132,6 +21639,13 @@
 	icon_state = "vertw"
 	},
 /area/rogue/outdoors/town/roofs)
+"vOr" = (
+/obj/structure/mineral_door/wood/fancywood{
+	lockid = "manor";
+	name = "Library"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/manor)
 "vOL" = (
 /obj/structure/fluff/railing/fence{
 	dir = 8;
@@ -21180,7 +21694,7 @@
 	dir = 4;
 	locked = 1;
 	lockid = "manor";
-	name = "keep entrance"
+	name = "Keep Entrance"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
@@ -21357,7 +21871,8 @@
 "wdm" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
-	lockid = "graveyard"
+	lockid = "graveyard";
+	name = "Royal Crypt"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
@@ -21377,7 +21892,8 @@
 "weo" = (
 /obj/structure/mineral_door/wood/fancywood{
 	dir = 1;
-	lockid = "soilson"
+	lockid = "soilson";
+	name = "Dining Hall"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/soilsons)
@@ -21451,7 +21967,8 @@
 "wlk" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "steward"
+	lockid = "steward";
+	name = "Steward's Quarters"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
@@ -21470,7 +21987,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "house4";
-	name = "house IV"
+	name = "House IV"
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
@@ -21505,6 +22022,7 @@
 	dir = 9;
 	icon_state = "largetable"
 	},
+/obj/item/candle/yellow/lit,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
 "wpD" = (
@@ -21547,6 +22065,17 @@
 	icon_state = "chess"
 	},
 /area/rogue/indoors/town/church)
+"wqg" = (
+/obj/structure/mineral_door/wood{
+	icon_state = "wcv";
+	locked = 1;
+	lockid = "tower";
+	name = "Alchemy Lab"
+	},
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
+/area/rogue/indoors/town/magician)
 "wqx" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/cobble,
@@ -21659,7 +22188,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "house7";
-	name = "house VII"
+	name = "House VII"
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town)
@@ -21730,7 +22259,8 @@
 "wyJ" = (
 /obj/structure/mineral_door/wood/fancywood{
 	dir = 1;
-	lockid = "soilson"
+	lockid = "soilson";
+	name = "Farm Kitchen"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/soilsons)
@@ -21812,9 +22342,20 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "wAH" = (
-/obj/machinery/light/rogue/wallfire/candle/l,
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/stairs,
+/obj/structure/fluff/railing/border{
+	dir = 8;
+	icon_state = "border"
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
+"wAJ" = (
+/obj/structure/fluff/railing/border{
+	dir = 6;
+	icon_state = "border"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "wAU" = (
 /turf/open/floor/rogue/ruinedwood{
@@ -21904,9 +22445,8 @@
 /area/rogue/indoors/town/manor)
 "wHq" = (
 /obj/structure/chair/wood/rogue/chair3{
-	dir = 4
+	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "wHt" = (
@@ -21944,7 +22484,8 @@
 "wIw" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "manor"
+	lockid = "manor";
+	name = "Sleeping Quarters"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)
@@ -21954,9 +22495,6 @@
 	icon_state = "chair2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/start/villager{
-	dir = 4
-	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
 "wIQ" = (
@@ -22080,7 +22618,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "armorsmith";
-	name = "armorsmith's bedroom door"
+	name = "Armorsmith's Room"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -22408,11 +22946,9 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
 "xeV" = (
-/obj/structure/table/wood{
-	dir = 1;
-	icon_state = "longtable"
-	},
-/turf/open/floor/carpet/red,
+/obj/structure/closet/crate/drawer,
+/obj/item/roguekey/roomv,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "xeY" = (
 /obj/structure/flora/newtree,
@@ -22475,6 +23011,11 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
+"xin" = (
+/obj/structure/rogue/trophy/deer,
+/obj/structure/closet/crate/drawer,
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/tavern)
 "xis" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
 /obj/structure/chair/wood/rogue/fancy{
@@ -22501,7 +23042,8 @@
 "xiX" = (
 /obj/structure/mineral_door/wood{
 	icon_state = "wcv";
-	lockid = "shop"
+	lockid = "shop";
+	name = "Shop"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
@@ -22584,7 +23126,8 @@
 /obj/structure/mineral_door/wood{
 	icon_state = "wcv";
 	locked = 1;
-	lockid = "manor"
+	lockid = "manor";
+	name = "Manor Backdoor"
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
@@ -22616,6 +23159,7 @@
 	pixel_y = 40
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/reagent_containers/glass/bucket/pot,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/tavern)
 "xpt" = (
@@ -22625,9 +23169,6 @@
 /obj/structure/chair/wood/rogue{
 	dir = 8;
 	icon_state = "chair2"
-	},
-/obj/effect/landmark/start/villager{
-	dir = 8
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
@@ -22653,6 +23194,13 @@
 "xqr" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors/town)
+"xqA" = (
+/obj/structure/mineral_door/wood/fancywood{
+	lockid = "manor";
+	name = "Manor Kitchen"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/manor)
 "xqD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/carpet,
@@ -22675,6 +23223,12 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors/town)
+"xrG" = (
+/obj/structure/mineral_door/bars{
+	name = "Bathhouse Gate"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/bath)
 "xrN" = (
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot,
 /obj/structure/closet/crate/chest/old_crate,
@@ -22895,6 +23449,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
+"xCB" = (
+/obj/structure/fermenting_barrel/crafted,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "xCI" = (
 /obj/effect/decal/cobbleedge{
 	dir = 10
@@ -22916,8 +23474,9 @@
 	},
 /area/rogue/indoors/town/manor)
 "xDO" = (
-/obj/machinery/light/rogue/firebowl/standing,
-/turf/open/floor/rogue/cobble,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fermenting_barrel/beer,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/tavern)
 "xEh" = (
 /turf/open/floor/rogue/ruinedwood/turned,
@@ -23031,7 +23590,7 @@
 "xIz" = (
 /obj/structure/mineral_door/wood/donjon{
 	lockid = "blacksmith";
-	name = "Maker's Quarters door"
+	name = "Maker's Quarters"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/dwarfin)
@@ -23043,7 +23602,8 @@
 	dir = 8;
 	icon_state = "donjondir";
 	locked = 1;
-	lockid = "nightmaiden"
+	lockid = "nightmaiden";
+	name = "Private Room I"
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
@@ -23051,7 +23611,8 @@
 /obj/structure/mineral_door/wood{
 	icon_state = "wcv";
 	locked = 1;
-	lockid = "tower"
+	lockid = "tower";
+	name = "Study"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/magician)
@@ -23108,6 +23669,14 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
+"xLR" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "merchant";
+	name = "Storage"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/shop)
 "xMf" = (
 /obj/structure/table/wood{
 	dir = 5;
@@ -23168,7 +23737,9 @@
 	},
 /area/rogue/outdoors/town/roofs)
 "xOq" = (
-/obj/structure/mineral_door/swing_door,
+/obj/structure/mineral_door/swing_door{
+	name = "Party Room"
+	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "xOt" = (
@@ -23182,7 +23753,7 @@
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
 	lockid = "priest";
-	name = "cemetary"
+	name = "Inner Sanctum"
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
@@ -23428,7 +23999,8 @@
 /obj/structure/mineral_door/wood/donjon{
 	icon_state = "donjondir";
 	locked = 1;
-	lockid = "steward"
+	lockid = "steward";
+	name = "Steward's Office"
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town)
@@ -23498,6 +24070,13 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/dwarfin)
+"yen" = (
+/obj/structure/chair/stool/rogue,
+/obj/structure/fluff/railing/border{
+	dir = 5
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "yev" = (
 /obj/structure/fluff/walldeco/maidendrape,
 /turf/open/floor/rogue/grass,
@@ -23541,8 +24120,13 @@
 	dir = 6;
 	icon_state = "largetable"
 	},
-/obj/item/candle/yellow/lit,
 /turf/open/floor/carpet/red,
+/area/rogue/indoors/town/tavern)
+"yhJ" = (
+/obj/structure/fluff/railing/border{
+	dir = 1
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "yie" = (
 /obj/structure/fluff/railing/border{
@@ -25783,7 +26367,7 @@ gWx
 ugL
 ugL
 ugL
-xJs
+ddH
 ugL
 pjj
 phI
@@ -29231,7 +29815,7 @@ uJS
 ugL
 ugL
 ugL
-qTF
+xrG
 szY
 ugL
 oGK
@@ -29984,7 +30568,7 @@ pNQ
 gdw
 gdw
 syR
-wdm
+tSg
 syR
 gdw
 gdw
@@ -29992,7 +30576,7 @@ gdw
 gdw
 gdw
 syR
-wdm
+tSg
 syR
 gdw
 gdw
@@ -30796,10 +31380,10 @@ heh
 qGI
 ipJ
 ipJ
-qGI
-cVE
 nze
 gdw
+gdw
+nze
 nze
 wQv
 xpt
@@ -30953,10 +31537,10 @@ heh
 pmA
 lak
 jiG
-ipJ
-cVE
 pUA
 ihh
+bBD
+bBD
 bBD
 xpt
 bBD
@@ -31110,9 +31694,9 @@ heh
 pmA
 bHA
 lak
-ipJ
-cVE
 nze
+pUA
+pUA
 pUA
 pUA
 uwQ
@@ -31554,7 +32138,7 @@ pNQ
 gdw
 gdw
 syR
-kQC
+wdm
 syR
 gdw
 gdw
@@ -31562,7 +32146,7 @@ gdw
 gdw
 gdw
 syR
-kQC
+wdm
 htk
 gdw
 gdw
@@ -41768,7 +42352,7 @@ gdw
 gdw
 gdw
 gdw
-iIK
+ryg
 gdw
 nze
 nze
@@ -41918,7 +42502,7 @@ iSP
 gdw
 gdw
 gdw
-iIK
+gEj
 gdw
 gdw
 gdw
@@ -43493,7 +44077,7 @@ gdw
 tRT
 vxB
 vxB
-iIK
+cGD
 bBD
 vFB
 rCp
@@ -54031,23 +54615,23 @@ ndg
 rqG
 wBZ
 wBZ
-oNb
-wAH
-xIK
-jBO
-jBO
-nZO
-xIK
-xIK
-wAH
-ewE
-vCS
-oge
-mfn
-sjq
 kob
+iLQ
+iLQ
+jBO
 ccw
-vhg
+nZO
+cjX
+eVv
+sjq
+sjq
+sjq
+eVv
+sjq
+sjq
+sjq
+sjq
+eVv
 wBZ
 wBZ
 cxb
@@ -54188,24 +54772,24 @@ gog
 rqG
 qCd
 hnk
-ewE
-xIK
-xIK
-jBO
-jBO
-jBO
-xIK
-xIK
-xIK
-ewE
-sjq
-jwG
-tpj
-sjq
 jwG
 jBO
-raW
-iLQ
+jBO
+bQW
+ccw
+ccw
+eVv
+kWT
+qOK
+xiO
+psI
+sjq
+pZV
+xIK
+sjq
+epe
+jrj
+eVv
 wBZ
 cxb
 doE
@@ -54344,25 +54928,25 @@ pJn
 pJn
 bEW
 wBZ
-pOd
-sjq
+cjX
+cjX
+lHr
+cjX
 eVv
-lSf
+jwG
+jwG
 sjq
-eVv
-cus
-sjq
-eVv
-xIK
-ewE
-sjq
-haz
-vhg
-sjq
-kzX
-kKX
-kZW
 anI
+sGV
+xMf
+nSL
+sjq
+nrj
+jBO
+sjq
+iJG
+tWc
+sjq
 wBZ
 cxb
 waT
@@ -54501,25 +55085,25 @@ pJn
 pJn
 rqG
 wBZ
-ccw
-mfn
-sjq
-jwG
-rEc
-sjq
-jwG
-rEc
-sjq
+ugj
+bwE
 xIK
-xIK
-eVv
-sjq
-sjq
-eVv
+ewE
+haz
 jwG
-kKX
-xeV
-dJn
+jwG
+eVv
+pvC
+ewE
+kwm
+kwm
+sjq
+grL
+iLQ
+sjq
+iLQ
+jkZ
+eVv
 wBZ
 cxb
 doE
@@ -54658,25 +55242,25 @@ pJn
 pJn
 rqG
 wBZ
-kzX
-tpj
-sjq
-jwG
-aPn
-sjq
-kzX
-aPn
-sjq
+uxm
+aqS
 jBO
-jBO
-ybo
-xIK
-xIK
+ewE
 lHr
 jwG
+jwG
+ccw
+sjq
 jBO
-qtZ
 jBO
+oYz
+eVv
+sjq
+nWh
+eVv
+kGP
+sjq
+sjq
 wBZ
 cxb
 doE
@@ -54815,24 +55399,24 @@ pJn
 pJn
 pJn
 wBZ
+kKX
+kZW
+dJn
+xIK
+haz
+bVY
 jwG
-ccw
+jwG
 sjq
-cmO
-jwG
-sjq
-jwG
-jwG
-sjq
+nRt
+jBO
+hre
+pde
+qgB
 iLQ
 jBO
-xIK
-xIK
-xIK
-eVv
-sjq
-eVv
-sjq
+qgB
+sIT
 sjq
 wBZ
 cxb
@@ -54972,25 +55556,25 @@ pJn
 pJn
 pJn
 wBZ
-nSp
-vhg
-sjq
+hSb
+rJs
+dJn
 vhg
 haz
+rEc
+jBO
+jBO
+pxM
+jBO
+jBO
+ngZ
+tGm
+pov
+jBO
+iLQ
+qgB
+aCC
 sjq
-nSp
-wLy
-sjq
-ewE
-ewE
-xIK
-xIK
-xIK
-sjq
-dow
-cgw
-cgw
-dkn
 wBZ
 cxb
 doE
@@ -55135,19 +55719,19 @@ wBZ
 wBZ
 wBZ
 wBZ
-wBZ
-wBZ
-eVv
-fca
-eVv
-ewE
-xIK
-cjX
-sjq
-lTw
 jBO
-sTt
-cmA
+iLQ
+pxM
+jBO
+vHW
+qGA
+eVv
+sjq
+mOF
+eVv
+pOB
+sjq
+eVv
 wBZ
 cxb
 doE
@@ -55289,22 +55873,22 @@ wBZ
 nWK
 iBA
 bGJ
-sQL
-iGn
 oDI
 sXQ
 wBZ
-hwi
-ccw
+qCf
+jBO
 sjq
+qCf
+nfd
+hqw
+sjq
+tWc
 ewE
-xIK
-cjX
 sjq
-ucN
 jBO
-jBO
-cUn
+hTD
+sjq
 wBZ
 cxb
 waT
@@ -55446,22 +56030,22 @@ wBZ
 xpc
 htG
 scy
-sQL
-iBA
 lgi
 haY
 wBZ
-cmO
-jwG
+ccw
+ffI
+eVv
+pcd
+gNq
+gNq
+eVv
+nrj
+jBO
 sjq
-jBO
-jBO
-ewE
-sjq
-xZC
-jBO
-jBO
-cgw
+dKR
+tWc
+eVv
 wBZ
 cxb
 doE
@@ -55603,22 +56187,22 @@ wBZ
 cnb
 sQL
 vpm
-sQL
-xDO
 iBA
-cpl
+xDO
 wBZ
-haz
-wLy
-sjq
-jBO
-jBO
+jwG
+moY
+wAH
 ewE
+jrv
+jrv
+sjq
+sWi
+jBO
+sjq
+nZx
 eVv
-pxM
-jBO
-jBO
-tRR
+bDS
 wBZ
 cxb
 doE
@@ -55762,19 +56346,19 @@ hfg
 gHf
 bGJ
 eRp
-bGJ
-iBA
 wBZ
+ccw
+jwG
+uEe
+xIK
+ewE
+nwz
+eVv
 sjq
 sjq
 eVv
-qCf
-jBO
-xIK
-hqw
-osP
-osP
-ucN
+eVv
+bDS
 wBZ
 wBZ
 rqG
@@ -55919,15 +56503,15 @@ iGn
 auw
 bGJ
 sIm
-sQL
-jHz
 wBZ
+gjb
 ccw
-oge
-sgY
-ewE
+uEe
 xIK
-ugj
+xIK
+xIK
+xCB
+wBZ
 wBZ
 wBZ
 wBZ
@@ -56075,15 +56659,15 @@ iGn
 iGn
 bGJ
 sQL
-sQL
-sQL
 jHz
 wBZ
-haz
-hwi
-sjq
+gjb
+wAJ
+kYr
 ewE
 xIK
+xIK
+xCB
 wBZ
 wBZ
 fKl
@@ -56238,9 +56822,9 @@ wBZ
 wBZ
 wBZ
 wBZ
-eVv
-ewE
+iJG
 xIK
+ewE
 wBZ
 bOa
 wmK
@@ -56395,9 +56979,9 @@ sbp
 sQL
 sQL
 poj
-tqC
 xIK
-xIK
+ewE
+ewE
 wBZ
 ltm
 ppf
@@ -56887,7 +57471,7 @@ xqr
 jiD
 jiD
 xqr
-xqr
+tau
 xqr
 xqr
 kNF
@@ -56896,7 +57480,7 @@ pJn
 gog
 waT
 waT
-hHQ
+irB
 oyZ
 waT
 oyZ
@@ -57044,7 +57628,7 @@ xqr
 bPY
 txr
 xqr
-vFq
+jYX
 vFq
 xqr
 xqr
@@ -57359,7 +57943,7 @@ mEm
 kNz
 xqr
 rjf
-rjf
+kQC
 xqr
 xqr
 pyj
@@ -58091,7 +58675,7 @@ cxb
 xzL
 dYY
 eWD
-ogr
+pSf
 mZc
 bBj
 xaY
@@ -58242,7 +58826,7 @@ fJa
 fJa
 jMi
 bdS
-lkx
+ddz
 hvn
 wse
 xzL
@@ -58632,7 +59216,7 @@ uHq
 rqG
 cxb
 waT
-lkx
+dbI
 waT
 aNC
 ymg
@@ -59702,7 +60286,7 @@ gog
 uEE
 fzp
 uEE
-mYm
+kYv
 vgA
 xFh
 vlM
@@ -60785,7 +61369,7 @@ nHA
 sZo
 dGX
 nHA
-tgK
+mKT
 llR
 llR
 qUD
@@ -60899,7 +61483,7 @@ oyZ
 waT
 gog
 doE
-oxh
+ctg
 sLn
 uut
 cyk
@@ -61840,7 +62424,7 @@ mIm
 rjf
 nkb
 rjf
-lkx
+ddz
 pJn
 pJn
 pJn
@@ -62637,10 +63221,10 @@ cxb
 doE
 uWB
 phM
-bmi
+wHq
 sLn
 doE
-rqG
+cxb
 cxb
 cxb
 doE
@@ -62794,14 +63378,14 @@ nFj
 doE
 lMc
 dby
-wHq
-tPD
+sLn
+sLn
 doE
 cjQ
 cxb
 cxb
 doE
-lxg
+gBR
 aOB
 kUP
 uWB
@@ -62950,9 +63534,9 @@ lpz
 xpP
 doE
 ptN
-sLn
-cEg
-cEg
+nHu
+obY
+dty
 doE
 cjQ
 cjQ
@@ -66104,7 +66688,7 @@ fmc
 fmc
 fmc
 fmc
-jSY
+rpD
 fmc
 fmc
 fmc
@@ -67360,7 +67944,7 @@ fmc
 fmc
 fmc
 fmc
-jSY
+xqA
 fmc
 fmc
 fmc
@@ -77241,7 +77825,7 @@ rjf
 rjf
 jYX
 jYX
-lkx
+mvn
 lcT
 lcT
 lcT
@@ -77256,22 +77840,22 @@ lcT
 lcT
 lcT
 lcT
-lkx
+mvn
 jYX
 rjf
 rjf
 rjf
-lkx
+mvn
 qGx
 qGx
 qGx
 qGx
-lkx
+mvn
 rjf
 rjf
 rjf
 rjf
-lkx
+mvn
 lcT
 lcT
 lcT
@@ -77286,7 +77870,7 @@ lcT
 lcT
 lcT
 lcT
-lkx
+mvn
 jYX
 rjf
 rjf
@@ -77709,7 +78293,7 @@ tXZ
 tXZ
 tXZ
 fJa
-lkx
+mvn
 fJa
 qhb
 qhb
@@ -77760,7 +78344,7 @@ qhb
 qhb
 qhb
 fJa
-lkx
+mvn
 fJa
 qhb
 qhb
@@ -78686,7 +79270,7 @@ bfW
 gef
 eVv
 sjq
-lCj
+fgF
 sjq
 eVv
 uKb
@@ -78814,7 +79398,7 @@ qhb
 rHL
 rHL
 eLo
-pjY
+jYB
 rHL
 eLo
 kfw
@@ -79453,7 +80037,7 @@ kuX
 kuX
 kuX
 kuX
-kDK
+fyD
 nWW
 nWW
 vEG
@@ -79792,7 +80376,7 @@ jwG
 osP
 jBO
 iLQ
-lCj
+vhk
 jwG
 pfa
 jBO
@@ -80256,8 +80840,8 @@ osP
 sjq
 spG
 ccw
-obY
-obY
+qtZ
+qtZ
 jBO
 jwG
 hxz
@@ -80569,10 +81153,10 @@ lvi
 sjq
 eVv
 dnr
-uEe
+mZt
 jBO
 iLQ
-dty
+raW
 ccw
 upV
 xpA
@@ -80726,7 +81310,7 @@ wTk
 ewE
 qyy
 eYT
-bAb
+epJ
 jwG
 bVY
 oql
@@ -80883,10 +81467,10 @@ ewE
 xIK
 qyy
 fwh
-bAb
+epJ
 jwG
 jwG
-gBR
+tpj
 ccw
 suz
 jJE
@@ -81045,7 +81629,7 @@ jwG
 jwG
 jwG
 ccw
-suz
+eDJ
 wss
 kEv
 sjq
@@ -81198,7 +81782,7 @@ xIK
 gyx
 eYT
 jwG
-bAb
+epJ
 jwG
 nUt
 jwG
@@ -81354,7 +81938,7 @@ eVv
 ewE
 gyx
 snM
-bAb
+epJ
 xij
 jwG
 xij
@@ -81799,7 +82383,7 @@ nWw
 hjB
 ctK
 vHV
-iUs
+nhJ
 osE
 aFS
 xzL
@@ -82262,7 +82846,7 @@ tXZ
 tXZ
 tXZ
 fJa
-lkx
+mvn
 fJa
 qhb
 ouw
@@ -82313,7 +82897,7 @@ qhb
 qhb
 ktP
 cKp
-mYm
+kKv
 tlh
 ktP
 ktP
@@ -82584,7 +83168,7 @@ ouw
 xzL
 alw
 hNd
-iUs
+xLR
 ffb
 aFS
 xzL
@@ -82890,7 +83474,7 @@ tXZ
 tXZ
 tXZ
 dQZ
-lkx
+mvn
 dQZ
 qhb
 qhb
@@ -82941,7 +83525,7 @@ qhb
 qhb
 xka
 cKp
-mYm
+kKv
 cKp
 amk
 qhb
@@ -83675,7 +84259,7 @@ tXZ
 tXZ
 tXZ
 fJa
-lkx
+mvn
 dQZ
 qhb
 qhb
@@ -83726,7 +84310,7 @@ qhb
 qhb
 xka
 cKp
-mYm
+kKv
 cKp
 amk
 qhb
@@ -83977,7 +84561,7 @@ mIm
 rWZ
 jYX
 jYX
-lkx
+mvn
 lcT
 lcT
 lcT
@@ -83987,7 +84571,7 @@ lcT
 lcT
 lcT
 lcT
-lkx
+mvn
 jYX
 jMi
 rjf
@@ -84006,7 +84590,7 @@ jOv
 fwb
 jOv
 jOv
-tKY
+aHx
 qAG
 wAU
 wAU
@@ -84042,7 +84626,7 @@ cKp
 fYt
 wjv
 hAS
-mYm
+kKv
 lcT
 lcT
 lcT
@@ -84052,7 +84636,7 @@ lcT
 lcT
 lcT
 lcT
-lkx
+mvn
 rjf
 rjf
 rjf
@@ -84289,7 +84873,7 @@ tXZ
 tXZ
 tXZ
 fJa
-lkx
+mvn
 fJa
 qhb
 qhb
@@ -84368,7 +84952,7 @@ qhb
 qhb
 qhb
 fJa
-lkx
+mvn
 fJa
 fJa
 tXZ
@@ -85767,7 +86351,7 @@ ouw
 ouw
 ouw
 bKO
-ptN
+dty
 rCZ
 oxh
 vhp
@@ -87500,7 +88084,7 @@ qhb
 ouw
 waT
 oyZ
-pix
+fNw
 waT
 fsD
 oyZ
@@ -88136,7 +88720,7 @@ qhb
 qhb
 qhb
 fJa
-lkx
+mvn
 fJa
 tXZ
 tXZ
@@ -88373,7 +88957,7 @@ mIm
 rjf
 rjf
 rWZ
-lkx
+mvn
 lcT
 lcT
 tPq
@@ -88383,11 +88967,11 @@ lcT
 tPq
 lcT
 lcT
-mYm
+kKv
 fYt
 hAS
 hAS
-mYm
+kKv
 hAS
 vgA
 hAS
@@ -88403,7 +88987,7 @@ vgA
 hAS
 hAS
 hAS
-mYm
+kKv
 hAS
 hAS
 hAS
@@ -88417,7 +89001,7 @@ weZ
 bqq
 hAS
 hAS
-mYm
+kKv
 aEC
 nHA
 nHA
@@ -88434,7 +89018,7 @@ pSu
 nHA
 nHA
 aEC
-mYm
+kKv
 hAS
 hAS
 wjv
@@ -88448,7 +89032,7 @@ lcT
 lcT
 lcT
 lcT
-lkx
+mvn
 rjf
 rjf
 jYX
@@ -88685,7 +89269,7 @@ tXZ
 tXZ
 tXZ
 dQZ
-lkx
+mvn
 fJa
 qhb
 qhb
@@ -88907,7 +89491,7 @@ pkc
 xqr
 qhb
 cKp
-mYm
+kKv
 cKp
 tXZ
 tXZ
@@ -90282,9 +90866,9 @@ fmc
 fmc
 ljG
 fmc
-jSY
+fvc
 hTE
-jSY
+fvc
 fmc
 fmc
 uZa
@@ -90580,7 +91164,7 @@ fmc
 rbH
 azh
 azh
-jSY
+vOr
 bUB
 bUB
 aGn
@@ -91072,7 +91656,7 @@ arb
 gtk
 eon
 vMg
-qaR
+ehL
 sMV
 sBs
 sMV
@@ -91522,7 +92106,7 @@ fmc
 gms
 azh
 azh
-jSY
+vOr
 bUB
 bUB
 aGn
@@ -91852,9 +92436,9 @@ fmc
 fmc
 tvN
 fmc
-jSY
+fvc
 hTE
-jSY
+fvc
 fmc
 fmc
 uZa
@@ -92047,7 +92631,7 @@ qhb
 qhb
 qhb
 fJa
-lkx
+mvn
 fJa
 tXZ
 tXZ
@@ -92334,7 +92918,7 @@ mIm
 jYX
 jMi
 rjf
-lkx
+mvn
 lcT
 lcT
 lcT
@@ -92359,7 +92943,7 @@ lcT
 lcT
 lcT
 lcT
-lkx
+mvn
 rjf
 rjf
 jYX
@@ -92453,7 +93037,7 @@ tXZ
 tXZ
 tXZ
 fJa
-lkx
+mvn
 fJa
 qhb
 qhb
@@ -92646,7 +93230,7 @@ qhb
 qhb
 qhb
 fJa
-lkx
+mvn
 fJa
 tXZ
 tXZ
@@ -92769,12 +93353,12 @@ mIm
 bdS
 rjf
 jYX
-lkx
+mvn
 qiW
 ktP
 ktP
 qiW
-lkx
+mvn
 rWZ
 jMi
 rjf
@@ -93090,7 +93674,7 @@ tXZ
 tXZ
 tXZ
 fJa
-lkx
+mvn
 fJa
 qhb
 qhb
@@ -93875,7 +94459,7 @@ tXZ
 tXZ
 tXZ
 fJa
-lkx
+mvn
 fJa
 qhb
 qhb
@@ -93902,7 +94486,7 @@ qhb
 qhb
 qhb
 fJa
-lkx
+mvn
 fJa
 tXZ
 tXZ
@@ -94191,7 +94775,7 @@ mIm
 iYA
 rjf
 jYX
-lkx
+mvn
 lcT
 ktP
 qiW
@@ -94214,7 +94798,7 @@ ktP
 lcT
 ktP
 lcT
-lkx
+mvn
 jYX
 rjf
 rjf
@@ -102705,16 +103289,16 @@ orU
 ouw
 eVv
 sjq
-xKj
 sjq
+sjq
+sjq
+sjq
+sjq
+qsr
 eVv
 sjq
-xKj
-sjq
-xKj
+qsr
 eVv
-ouw
-ouw
 ouw
 ouw
 ouw
@@ -102860,19 +103444,19 @@ qhb
 qhb
 ouw
 eVv
-kWT
-qOK
-xiO
-psI
-sjq
-pZV
-xIK
-sjq
-epe
-jrj
 eVv
-ouw
-ouw
+sjq
+eVv
+iyz
+biJ
+sjq
+oge
+mfn
+sjq
+wLy
+rEc
+sjq
+eVv
 ouw
 ouw
 ouw
@@ -103018,19 +103602,19 @@ qhb
 ouw
 sjq
 lAr
-sGV
-xMf
-nSL
+ccw
 sjq
-nrj
-jBO
+xIK
+ewE
+vCS
+jwG
+tpj
 sjq
-iJG
-tWc
+kzX
+aPn
 sjq
-ouw
-ouw
-ouw
+sjq
+eVv
 ouw
 ouw
 ouw
@@ -103173,22 +103757,22 @@ qhb
 qhb
 qhb
 ouw
-xKj
-ewE
+sjq
+cmO
+jwG
+fca
 xIK
-kwm
-kwm
+xIK
 sjq
-grL
-iLQ
+iCM
+tPD
 sjq
-iLQ
-jkZ
+jwG
+jwG
+sjq
+rEc
+sjq
 eVv
-ouw
-ouw
-ouw
-ouw
 ouw
 ouw
 ouw
@@ -103330,22 +103914,22 @@ qhb
 qhb
 qhb
 ouw
-xKj
-nwz
-jBO
-jBO
-oYz
+qsr
+iCM
+xeV
+sjq
+xIK
+xIK
 eVv
 sjq
-kGP
+sjq
 eVv
-kGP
+jwG
+nSp
 sjq
+aPn
+wLy
 sjq
-ouw
-ouw
-ouw
-ouw
 ouw
 ouw
 ouw
@@ -103488,21 +104072,21 @@ qhb
 qhb
 ouw
 sjq
-nJZ
-jBO
-jBO
-hre
-pde
-qgB
-iLQ
-jBO
-qgB
-sIT
-dUf
-ouw
-ouw
-ouw
-ouw
+sjq
+sjq
+eVv
+iJG
+xIK
+dnr
+fvb
+fvb
+eVv
+cus
+sjq
+eVv
+ccw
+mMT
+sjq
 ouw
 ouw
 ouw
@@ -103644,22 +104228,22 @@ qhb
 qhb
 qhb
 ouw
-xKj
-jBO
-jBO
-jBO
-ngZ
-tGm
-pov
+qsr
+ccw
+oge
+sgY
+ewE
+xIK
+xIK
 jBO
 iLQ
-qgB
-hED
+ybo
+xIK
+ewE
+lSf
+ccw
 dUf
-ouw
-ouw
-ouw
-ouw
+qsr
 ouw
 ouw
 ouw
@@ -103801,22 +104385,22 @@ qhb
 qhb
 qhb
 ouw
-xKj
-jBO
-jBO
-vHW
-tXC
+sjq
+iCM
+hwi
+sjq
+ewE
+xIK
+oYz
+dow
+dow
+oNb
+hnw
+ewE
 eVv
 sjq
-kGP
-eVv
-kGP
 sjq
 eVv
-ouw
-ouw
-ouw
-ouw
 ouw
 ouw
 ouw
@@ -103959,21 +104543,21 @@ qhb
 qhb
 ouw
 sjq
-qCf
-sUn
-nfd
-jPP
 sjq
-tWc
-ewE
 sjq
-jBO
-hTD
-xKj
-ouw
-ouw
-ouw
-ouw
+eVv
+xIK
+xIK
+hED
+sXQ
+sXQ
+sXQ
+vpa
+xIK
+sjq
+wLy
+rEc
+sjq
 ouw
 ouw
 ouw
@@ -104092,7 +104676,7 @@ qhb
 ouw
 rHL
 rHL
-llO
+inS
 rHL
 rHL
 rHL
@@ -104115,22 +104699,22 @@ qhb
 qhb
 qhb
 ouw
-eVv
-ocp
-eVv
-gNq
-gNq
-eVv
-nrj
-jBO
 sjq
-dKR
-tWc
-eVv
-ouw
-ouw
-ouw
-ouw
+ocp
+aHM
+xIK
+xIK
+oVb
+vex
+sXQ
+sXQ
+sXQ
+jzB
+xIK
+pOd
+jwG
+aPn
+sjq
 ouw
 ouw
 ouw
@@ -104274,20 +104858,20 @@ qhb
 ouw
 sjq
 oyk
-aqS
-ljm
-ljm
-sjq
-sWi
+jBO
+xIK
+xIK
+bAb
+vex
+sXQ
+nVL
+sXQ
+sde
 jBO
 sjq
-nZx
-eVv
-bDS
-ouw
-ouw
-ouw
-ouw
+cmO
+jwG
+qsr
 ouw
 ouw
 ouw
@@ -104429,22 +105013,22 @@ qhb
 qhb
 qhb
 ouw
-xKj
-jwG
-jwG
-fvb
+pxM
+vuy
+xIK
 fRX
-eVv
+fRX
+yen
+vex
+sXQ
+sXQ
+sXQ
+tXC
+jBO
 sjq
-xKj
+dUf
+sUn
 eVv
-eVv
-bDS
-ouw
-ouw
-ouw
-ouw
-ouw
 ouw
 ouw
 ouw
@@ -104586,21 +105170,21 @@ qhb
 qhb
 qhb
 ouw
-xKj
-ccw
-mMT
-bwE
-nRt
+pxM
+xIK
+ewE
+vNb
+sXQ
+yhJ
+fQr
+sXQ
+sXQ
+sXQ
+cjE
+vxn
+eVv
 sjq
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
+eVv
 ouw
 ouw
 ouw
@@ -104744,21 +105328,21 @@ qhb
 qhb
 ouw
 sjq
-oag
-ccw
+tqC
+ewE
 vNb
-fQr
+sXQ
+eVv
+sjq
+sjq
+sjq
+sjq
+eVv
+bNh
 sjq
 ouw
 ouw
 ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-qhb
 qhb
 qhb
 qhb
@@ -104902,17 +105486,17 @@ qhb
 ouw
 eVv
 pvC
-vxn
-qsr
-kWT
+xIK
+cSy
+cpl
+sjq
+xin
+cgw
+cgw
+dkn
+sjq
+pvC
 eVv
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
 ouw
 qhb
 qhb
@@ -105059,16 +105643,16 @@ qhb
 ouw
 ouw
 eVv
-sjq
+pvC
+xIK
+nJZ
+bMQ
+osP
+jBO
+sTt
+cmA
 sjq
 eVv
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
 ouw
 ouw
 qhb
@@ -105216,15 +105800,15 @@ qhb
 qhb
 ouw
 ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
+eVv
+sjq
+sjq
+eVv
+ucN
+jBO
+jBO
+cUn
+sjq
 ouw
 ouw
 ouw
@@ -105375,13 +105959,13 @@ ouw
 ouw
 ouw
 ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
+sjq
+sjq
+xZC
+jBO
+jBO
+cgw
+aQP
 ouw
 ouw
 ouw
@@ -105532,13 +106116,13 @@ ouw
 ouw
 ouw
 ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
+sjq
+sjq
+bMg
+jBO
+jBO
+tRR
+sjq
 ouw
 ouw
 ouw
@@ -105689,13 +106273,13 @@ ouw
 ouw
 ouw
 ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
-ouw
+eVv
+sjq
+lTw
+osP
+ucN
+sjq
+eVv
 ouw
 ouw
 ouw
@@ -105847,11 +106431,11 @@ ouw
 ouw
 ouw
 ouw
-ouw
-ouw
-ouw
-ouw
-ouw
+eVv
+sjq
+dgD
+sjq
+eVv
 ouw
 ouw
 ouw
@@ -106004,11 +106588,11 @@ qhb
 qhb
 qhb
 qhb
-qhb
-qhb
-qhb
-qhb
-qhb
+oKl
+ktP
+ktP
+ktP
+atE
 qhb
 qhb
 qhb
@@ -106161,11 +106745,11 @@ qhb
 qhb
 qhb
 qhb
-qhb
-qhb
-qhb
-qhb
-qhb
+sLS
+rkX
+rkX
+rkX
+jPP
 qhb
 qhb
 qhb
@@ -114611,7 +115195,7 @@ gIx
 eUm
 eUm
 eUm
-nZq
+dpQ
 vld
 eUm
 eUm
@@ -114927,7 +115511,7 @@ oOv
 fRC
 oOv
 gbo
-nZq
+wqg
 gbo
 oOv
 fRC
@@ -115389,7 +115973,7 @@ jXB
 ogv
 mGS
 fQu
-xJG
+mBu
 rCC
 rCC
 uNI
@@ -115404,7 +115988,7 @@ xJG
 uNI
 uNI
 uNI
-xJG
+iOq
 uNI
 uNI
 uNI
