@@ -24,12 +24,12 @@
 	id = "makers_camp_1"
 	//Mapppath is a direct pointer to the DMM file of your mini map, make sure no typos! The map file can be anywhere as long as this is set properly.
 	//Do NOT include (checkmark) the .dmm file! Just stick it in a folder and you're done with it.
-	mappath = "_maps/map_files/templates/mtdecap_area/makers_camp_1.dmm"
+	mappath = "_maps/map_files/templates/mtdecap_area/makers_camp_surface_1.dmm"
 
 /datum/map_template/randomized_1
 	name = "prospector den"
 	id = "randomized_1"
-	mappath = "_maps/map_files/templates/mtdecap_area/randomized_1.dmm"
+	mappath = "_maps/map_files/templates/mtdecap_area/random_zone_1.dmm"
 
 /obj/effect/landmark/map_load_mark/mt_decap_surface/surface_area
 
@@ -48,9 +48,9 @@
 	id = "makers_camp_1"
 	//Mapppath is a direct pointer to the DMM file of your mini map, make sure no typos! The map file can be anywhere as long as this is set properly.
 	//Do NOT include (checkmark) the .dmm file! Just stick it in a folder and you're done with it.
-	mappath = "_maps/map_files/templates/mtdecap_area/makers_camp_1.dmm"
+	mappath = "_maps/map_files/templates/mtdecap_area/makers_camp_surface_1.dmm"
 
 /datum/map_template/randomized_1
 	name = "prospector den"
 	id = "randomized_1"
-	mappath = "_maps/map_files/templates/mtdecap_area/randomized_1.dmm"
+	mappath = "_maps/map_files/templates/mtdecap_area/random_zone_1.dmm"
