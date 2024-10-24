@@ -14360,6 +14360,10 @@
 /obj/structure/roguemachine/scomm/l,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/rtfield)
+"ord" = (
+/obj/structure/kneestingers,
+/turf/open/water/swamp,
+/area/rogue/under/town/sewer)
 "orK" = (
 /obj/structure/roguewindow/openclose{
 	dir = 1;
@@ -22514,6 +22518,11 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/chicken,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
+"wKK" = (
+/obj/item/grown/log/tree/stake,
+/obj/structure/kneestingers,
+/turf/open/water/swamp,
+/area/rogue/under/town/sewer)
 "wKP" = (
 /obj/structure/giantfur/small,
 /turf/open/floor/rogue/ruinedwood{
@@ -28490,7 +28499,7 @@ exi
 exi
 pNQ
 pNQ
-exi
+ord
 exi
 exi
 exi
@@ -36159,7 +36168,7 @@ pNQ
 pNQ
 pNQ
 pNQ
-exi
+ord
 pNQ
 qOY
 qOY
@@ -37029,7 +37038,7 @@ pNQ
 pNQ
 exi
 exi
-exi
+ord
 pNQ
 pNQ
 pNQ
@@ -43138,7 +43147,7 @@ pNQ
 pNQ
 exi
 exi
-exi
+ord
 pNQ
 pNQ
 pNQ
@@ -43850,7 +43859,7 @@ pNQ
 pNQ
 pNQ
 pNQ
-exi
+ord
 sjE
 exi
 pNQ
@@ -44520,7 +44529,7 @@ pNQ
 pNQ
 pNQ
 pNQ
-sjE
+wKK
 exi
 exi
 exi
