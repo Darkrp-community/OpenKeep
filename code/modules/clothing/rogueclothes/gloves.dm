@@ -70,6 +70,7 @@
 	armor = list("melee" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB)
 	armor_class = ARMOR_CLASS_MEDIUM
+	clothing_flags = CANT_SLEEP_IN
 	resistance_flags = null
 	blocksound = CHAINHIT
 	max_integrity = 300
@@ -96,6 +97,7 @@
 	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	armor_class = ARMOR_CLASS_HEAVY
+	clothing_flags = CANT_SLEEP_IN
 	blocksound = PLATEHIT
 	equip_delay_self = 25
 	unequip_delay_self = 25
@@ -148,6 +150,7 @@
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
+	clothing_flags = CANT_SLEEP_IN
 
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 
