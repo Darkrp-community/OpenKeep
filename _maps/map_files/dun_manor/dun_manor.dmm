@@ -5181,7 +5181,8 @@
 /obj/structure/mineral_door/wood{
 	icon_state = "wcv";
 	lockid = "shop";
-	name = "Merchant's Shop"
+	name = "Merchant's Shop";
+	locked = 1
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
