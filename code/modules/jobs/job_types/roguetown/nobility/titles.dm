@@ -86,3 +86,47 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	armor = /obj/item/clothing/suit/roguetown/shirt/rags
 	shoes = /obj/item/clothing/shoes/roguetown/boots
+
+/datum/job/roguetown/forgemaster
+	title = "Master of the Forge"
+	tutorial = ""
+	flag = LORD
+	department_flag = NOBLEMEN
+	faction = "Station"
+	total_positions = 0
+	spawn_positions = 0
+
+	outfit = /datum/outfit/job/roguetown/forgemaster
+	display_order = 6
+
+
+/datum/outfit/job/roguetown/forgemaster
+	name = "Master of the Forge"
+	jobtype = /datum/job/roguetown/forgemaster
+
+	pants = /obj/item/clothing/under/roguetown/tights
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+	armor = /obj/item/clothing/suit/roguetown/shirt/rags
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+
+/datum/job/roguetown/rockhillchampion
+	title = "Champion of Rockhill"
+	tutorial = ""
+	flag = LORD
+	department_flag = NOBLEMEN
+	faction = "Station"
+	total_positions = 0
+	spawn_positions = 0
+
+	outfit = /datum/outfit/job/roguetown/rockhillchampion
+	display_order = 6
+
+
+/datum/outfit/job/roguetown/rockhillchampion
+	name = "Champion of Rockhill"
+	jobtype = /datum/job/roguetown/rockhillchampion
+
+	pants = /obj/item/clothing/under/roguetown/tights
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+	armor = /obj/item/clothing/suit/roguetown/shirt/rags
+	shoes = /obj/item/clothing/shoes/roguetown/boots
