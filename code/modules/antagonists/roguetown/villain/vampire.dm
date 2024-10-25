@@ -421,7 +421,7 @@
 	var/boon = usr.mind?.get_learning_boon(/datum/skill/magic/blood)
 	var/amt2raise = licker.STAINT*2
 	usr.mind.adjust_experience(/datum/skill/magic/blood, floor(amt2raise * boon), FALSE)
-	fully_heal()
+	fully_heal(admin_revive = TRUE)
 	cooldown = TRUE
 	sleep(cooldown_time)
 	to_chat(src, "<span class='info'>My [name] ability is ready to be casted again.</span>")

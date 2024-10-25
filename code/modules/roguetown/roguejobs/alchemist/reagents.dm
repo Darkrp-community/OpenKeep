@@ -244,7 +244,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 			M.add_nausea(1)
 			M.adjustToxLoss(2.3)  // will put you just above dying crit treshold
 		else
-			M.add_nausea(2)
+			M.add_nausea(6) //So a poison bolt (2u) will eventually cause puking at least once
 			M.adjustToxLoss(4.5) // just enough so 5u will kill you dead with no help
 	return ..()
 

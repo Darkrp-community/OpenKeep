@@ -4,7 +4,8 @@
 	severity = WOUND_SEVERITY_SEVERE
 	whp = null
 	woundpain = 10
-	can_sew = FALSE
+	can_sew = TRUE
+	sewn_bleed_rate = 0
 	can_cauterize = FALSE
 	critical = FALSE
 
@@ -21,8 +22,8 @@
 		"The eardrums are ruptured!",
 	)
 	woundpain = 50
-	can_sew = FALSE
-	can_cauterize = FALSE
+	bleed_rate = 8
+	can_cauterize = TRUE
 	critical = TRUE
 
 /datum/wound/facial/ears/can_apply_to_mob(mob/living/affected)
@@ -48,7 +49,7 @@
 		"The eye is destroyed!",
 	)
 	woundpain = 30
-	can_sew = FALSE
+	bleed_rate = 8
 	can_cauterize = FALSE
 	critical = TRUE
 
@@ -71,7 +72,6 @@
 		"The right eye is gouged!",
 		"The right eye is destroyed!",
 	)
-	woundpain = 15
 
 /datum/wound/facial/eyes/right/can_stack_with(datum/wound/other)
 	if(istype(other, /datum/wound/facial/eyes/right))
@@ -96,6 +96,8 @@
 /datum/wound/facial/eyes/right/permanent
 	whp = null
 	woundpain = 0
+	bleed_rate = 0
+	can_sew = FALSE
 
 /datum/wound/facial/eyes/left
 	name = "left eye evisceration"
@@ -105,7 +107,6 @@
 		"The left eye is gouged!",
 		"The left eye is destroyed!",
 	)
-	woundpain = 15
 
 /datum/wound/facial/eyes/left/can_stack_with(datum/wound/other)
 	if(istype(other, /datum/wound/facial/eyes/left))
@@ -130,6 +131,8 @@
 /datum/wound/facial/eyes/left/permanent
 	whp = null
 	woundpain = 0
+	bleed_rate = 0
+	can_sew = FALSE
 
 /datum/wound/facial/tongue
 	name = "glossectomy"
@@ -140,7 +143,7 @@
 		"The tongue flies off in an arc!"
 	)
 	woundpain = 8
-	can_sew = FALSE
+	bleed_rate = 10
 	can_cauterize = FALSE
 	critical = TRUE
 
