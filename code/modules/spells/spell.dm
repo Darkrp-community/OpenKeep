@@ -1,6 +1,6 @@
 #define TARGET_CLOSEST 1
 #define TARGET_RANDOM 2
-
+#define MAGIC_XP_MULTIPLIER 0.3 //used to miltuply the amount of xp gained from spells
 
 /obj/effect/proc_holder
 	var/panel = "Debug"//What panel the proc holder needs to go on.
@@ -127,6 +127,8 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	pass_flags = PASSTABLE
 	density = FALSE
 	opacity = 0
+
+	var/cost = 0 //how many points it costs to learn this spell
 
 	var/school = "evocation" //not relevant at now, but may be important later if there are changes to how spells work. the ones I used for now will probably be changed... maybe spell presets? lacking flexibility but with some other benefit?
 
