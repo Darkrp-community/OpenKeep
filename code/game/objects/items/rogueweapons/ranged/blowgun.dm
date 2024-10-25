@@ -2,9 +2,8 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher/blowgun
 	name = "blowgun"
 	desc = "A primitive tool used for hunting. Sometimes favored by Rogues for its ease of use and easy obtainability."
-	icon = 'icons/roguetown/weapons/32.dmi'
+	icon = 'icons/roguetown/weapons/bows.dmi'
 	icon_state = "blowgun"
-	item_state = "blowgun"
 	possible_item_intents = list(/datum/intent/shoot/blowgun, /datum/intent/arc/blowgun, INTENT_GENERIC)
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/blowgun
 	slot_flags = ITEM_SLOT_HIP
@@ -65,7 +64,7 @@
 			BB.damage = BB.damage
 			BB.embedchance = 100
 			BB.accuracy += 15 //fully aiming blow makes your accuracy better.
-		
+
 		if(user.STAPER > 8)
 			BB.accuracy += (user.STAPER - 8) * 4 //each point of perception above 8 increases standard accuracy by 4.
 			BB.bonus_accuracy += (user.STAPER - 8) //Also, increases bonus accuracy by 1, which cannot fall off due to distance.

@@ -222,6 +222,13 @@
 	new /obj/item/bath/soap(src)
 	new /obj/item/roguecoin/copper/pile(src)
 
+//Amazon pouch
+/obj/item/storage/belt/rogue/pouch/amazon/PopulateContents()
+	new /obj/item/natural/cloth(src)
+	new /obj/item/ammo_casing/caseless/rogue/dart(src)
+	new /obj/item/ammo_casing/caseless/rogue/dart(src)
+
+
 
 /obj/item/storage/backpack/rogue/satchel
 	name = "satchel"

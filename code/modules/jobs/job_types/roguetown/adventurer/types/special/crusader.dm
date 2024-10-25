@@ -3,6 +3,7 @@
 	tutorial = "The Crusaders are knights who have pledged \
 	their wealth and lands to the Church, taking up the banner \
 	of the Totod Order dedicated to retaking Valoria. \
+	Three cults provide knights for the Order: Astrata, Necra and the Forgotten God. \
 	You were sent to Enigma by the Order to get any and all assistance from the faithful for the Crusade."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -19,36 +20,56 @@
 /datum/outfit/job/roguetown/adventurer/crusader/pre_equip(mob/living/carbon/human/H)
 	..()
 
-	pants = /obj/item/clothing/under/roguetown/chainlegs
-	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader
+	neck = /obj/item/clothing/neck/roguetown/coif/cloth
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	cloak = /obj/item/clothing/cloak/cape/crusader
 	gloves = /obj/item/clothing/gloves/roguetown/chain
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/random
+	pants = /obj/item/clothing/under/roguetown/chainlegs
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 	backr = /obj/item/rogueweapon/shield/tower/metal
-	backl = /obj/item/storage/backpack/rogue/satchel
+	backl = /obj/item/clothing/cloak/cape/crusader
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/rogueweapon/sword/silver
+	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1)
 
 	// Run this first so that patron gets changed before assigning gear.
-	if(H.patron != /datum/patron/divine/astrata || H.patron != /datum/patron/divine/necra)
+	if(H.patron == /datum/patron/divine/noc)
+		H.patron = GLOB.patronlist[/datum/patron/divine/astrata]
+	if(H.patron == /datum/patron/divine/eora)
+		H.patron = GLOB.patronlist[/datum/patron/divine/necra]
+	if(H.patron == /datum/patron/godless)
+		H.patron = GLOB.patronlist[/datum/patron/divine/necra]
+	if(H.patron == /datum/patron/divine/pestra)
 		H.patron = GLOB.patronlist[/datum/patron/forgotten]
-	
+	if(H.patron == /datum/patron/divine/dendor)
+		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+	if(H.patron == /datum/patron/divine/malum)
+		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+	if(H.patron == /datum/patron/divine/xylix)
+		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+	if(H.patron == /datum/patron/divine/ravox)
+		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+	if(H.patron == /datum/patron/divine/abyssor)
+		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+
 	// Now we equip according to patron.
 	switch(H.patron?.name)
 		if("Astrata")
-			armor = /obj/item/clothing/cloak/stabard/crusader // Gold for Astrata regardless of gender
+			cloak = /obj/item/clothing/cloak/stabard/crusader // Gold for Astrata regardless of gender
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
 		if("Necra")
-			armor = /obj/item/clothing/cloak/stabard/templar/necra
+			cloak = /obj/item/clothing/cloak/stabard/templar/necra
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 		if("Forgotten God")
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver
 			if(H.gender == FEMALE) // Silver for female, gold for male
-				armor = /obj/item/clothing/cloak/stabard/crusader/t
+				cloak = /obj/item/clothing/cloak/stabard/crusader/t
 			else
-				armor = /obj/item/clothing/cloak/stabard/crusader
+				cloak = /obj/item/clothing/cloak/stabard/crusader
 		else // Failsafe
-			armor = /obj/item/clothing/cloak/stabard/crusader // Gold version regardless of gender or patron
+			cloak = /obj/item/clothing/cloak/stabard/crusader // Gold version regardless of gender or patron
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver
 
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
@@ -67,20 +88,19 @@
 	H.change_stat("endurance", 2)
 	H.change_stat("constitution", 2)
 	H.change_stat("strength", 1)
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 
 	// Females are crossbow and dagger based
 	if(H.gender == FEMALE)
 		head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
 		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
+		beltl = /obj/item/rogueweapon/huntingknife/idagger/silver
 		beltr = /obj/item/quiver/bolts
-		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1, /obj/item/storage/belt/rogue/pouch/coins/rich = 1)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	// Males are sword and shield based
 	else
-		head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader
-		backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
 	// Finally, grant us the language
@@ -88,6 +108,14 @@
 	if(!H.has_language(/datum/language/oldpsydonic))
 		H.grant_language(/datum/language/oldpsydonic)
 		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
+
+/datum/outfit/job/roguetown/adventurer/crusader // Reminder message
+	var/tutorial = "<br><br><font color='#bdc34a'><span class='bold'>You have been sent from the Totod Order on a mission to aid your struggle against the Blood Barons somehow. The details of your mission may vary, perhaps to find allies, funding, or a agent of the enemy...</span></font><br><br>"
+
+/datum/outfit/job/roguetown/adventurer/crusader/post_equip(mob/living/carbon/human/H)
+	..()
+	to_chat(H, tutorial)
+
 
 /obj/item/clothing/cloak/stabard/crusader
 	name = "surcoat of the golden order"

@@ -46,8 +46,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	backl = /obj/item/storage/backpack/rogue/satchel
-	head = /obj/item/clothing/head/roguetown/roguehood/shalal
-	neck = /obj/item/clothing/neck/roguetown/coif
+	head = /obj/item/clothing/neck/roguetown/keffiyeh
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/lockpick)
 	if(!H.has_language(/datum/language/zybantine))
 		H.grant_language(/datum/language/zybantine)
