@@ -88,9 +88,9 @@
 				if(stat < 3) //not dead
 					if(!(NOBLOOD in dna?.species?.species_traits))
 						if(blood_volume <= BLOOD_VOLUME_SURVIVE)
-							adjustOxyLoss(1)
+							adjustOxyLoss(0.5)
 							if(blood_volume <= 40)
-								adjustOxyLoss(3.5)
+								adjustOxyLoss(3)
 			if(!client && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 				if(mob_timers["slo"])
 					if(world.time > mob_timers["slo"] + 90 SECONDS)
