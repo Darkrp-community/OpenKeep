@@ -526,6 +526,18 @@
 	armor = ARMOR_STEEL_BAD
 	body_parts_covered = HEAD|HAIR
 
+//................ CULTIST HOOD ............... //
+/obj/item/clothing/head/roguetown/helmet/leather/hood_ominous/cult
+	name = "ominous hood"
+	desc = "It echoes with ominous laughter."
+	icon_state = "warlockhood"
+	dynamic_hair_suffix = ""
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	sellprice = VALUE_LEATHER_HELMET/2
+
+	armor = ARMOR_STEEL_BAD
+	body_parts_covered = NECK|HAIR|EARS|HEAD
+
 //................ Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet
 	name = "sallet"
