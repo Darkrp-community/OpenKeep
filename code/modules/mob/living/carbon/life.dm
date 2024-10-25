@@ -35,6 +35,14 @@
 				if(getOxyLoss() < 20)
 					heart_attacking = FALSE
 
+		var/cant_fall_asleep = FALSE
+		var/cause = " I just can't..."
+		for(var/obj/item/clothing/thing in get_equipped_items(FALSE))
+			if(thing.clothing_flags & CANT_SLEEP_IN)
+				cant_fall_asleep = TRUE
+				cause = " \The [thing] bothers me..."
+				break
+
 		//Healing while sleeping in a bed
 		if(stat >= UNCONSCIOUS)
 			var/sleepy_mod = buckled?.sleepy || 0.5
@@ -61,22 +69,30 @@
 		else if(!IsSleeping() && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 			// Resting on a bed or something
 			if(buckled?.sleepy)
-				if(eyesclosed)
+				if(eyesclosed && !cant_fall_asleep || (eyesclosed && !(fallingas >= 10 && cant_fall_asleep)))
 					if(!fallingas)
-						to_chat(src, "<span class='warning'>I'll fall asleep soon...</span>")
+						to_chat(src, span_warning("I'll fall asleep soon..."))
 					fallingas++
 					if(fallingas > 15)
 						Sleeping(300)
+				else if(eyesclosed && fallingas >= 10 && cant_fall_asleep)
+					if(fallingas != 13)
+						to_chat(src, span_boldwarning("I can't sleep...[cause]"))
+					fallingas = 13
 				else
 					rogstam_add(buckled.sleepy * 10)
 			// Resting on the ground (not sleeping or with eyes closed and about to fall asleep)
 			else if(!(mobility_flags & MOBILITY_STAND))
-				if(eyesclosed)
+				if(eyesclosed && !cant_fall_asleep || (eyesclosed && !(fallingas >= 10 && cant_fall_asleep)))
 					if(!fallingas)
-						to_chat(src, "<span class='warning'>I'll fall asleep soon, although a bed would be more comfortable...</span>")
+						to_chat(src, span_warning("I'll fall asleep soon, although a bed would be more comfortable..."))
 					fallingas++
 					if(fallingas > 25)
 						Sleeping(300)
+				else if(eyesclosed && fallingas >= 10 && cant_fall_asleep)
+					if(fallingas != 13)
+						to_chat(src, span_boldwarning("I can't sleep...[cause]"))
+					fallingas = 13
 				else
 					rogstam_add(10)
 			else if(fallingas)

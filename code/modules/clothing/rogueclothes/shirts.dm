@@ -31,9 +31,7 @@
 	name = "undervestments"
 	desc = ""
 	icon_state = "priestunder"
-	sleeved = null
-	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	color = CLOTHING_BLACK
