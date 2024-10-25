@@ -64,3 +64,25 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	armor = /obj/item/clothing/suit/roguetown/shirt/rags
 	shoes = /obj/item/clothing/shoes/roguetown/boots
+
+/datum/job/roguetown/concubine
+	title = "Concubine"
+	tutorial = ""
+	flag = LADY
+	department_flag = NOBLEMEN
+	faction = "Station"
+	total_positions = 0
+	spawn_positions = 0
+
+	outfit = /datum/outfit/job/roguetown/concubine
+	display_order = 6
+
+
+/datum/outfit/job/roguetown/concubine
+	name = "Concubine"
+	jobtype = /datum/job/roguetown/concubine
+
+	pants = /obj/item/clothing/under/roguetown/tights
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+	armor = /obj/item/clothing/suit/roguetown/shirt/rags
+	shoes = /obj/item/clothing/shoes/roguetown/boots

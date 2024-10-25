@@ -70,6 +70,8 @@ GLOBAL_LIST_INIT(noble_positions, list(
 	"Archivist",
 	"Merchant",
 	"Feldsher",
+	"Niteman",
+	"Concubine",
 	"Warden of the Terrorbog",
 	"Huntmaster of the Murderwoods",
 	"Hetman of Mount Decapitation"
@@ -116,7 +118,6 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Butler",
 	"Towner",
 	"Mercenary",
-	"Niteman",
 	"Nitemaiden",
 	"Prisoner",
 	"Beggar",

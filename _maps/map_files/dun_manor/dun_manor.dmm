@@ -5175,13 +5175,13 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "fcW" = (
-/obj/structure/mineral_door/wood{
-	locked = 1;
-	lockid = "merchant";
-	name = "Merchant's Shop"
-	},
 /obj/effect/decal/cobbleedge{
 	dir = 9
+	},
+/obj/structure/mineral_door/wood{
+	icon_state = "wcv";
+	lockid = "shop";
+	name = "Merchant's Shop"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
@@ -8792,7 +8792,6 @@
 /obj/item/roguekey/mason,
 /obj/item/roguekey/mercenary,
 /obj/item/roguekey/tavern,
-/obj/item/roguekey/merchant,
 /obj/item/roguekey/doctor,
 /obj/item/roguekey/butler,
 /obj/item/roguekey/elder,
@@ -8802,6 +8801,7 @@
 	pixel_y = -32
 	},
 /obj/item/roguekey/warehouse,
+/obj/item/roguekey/nitemaiden,
 /turf/open/floor/rogue/tile/tilerg,
 /area/rogue/indoors/town)
 "iHZ" = (
@@ -23041,8 +23041,8 @@
 /area/rogue/indoors/town/tavern)
 "xiX" = (
 /obj/structure/mineral_door/wood{
-	icon_state = "wcv";
-	lockid = "shop";
+	locked = 1;
+	lockid = "merchant";
 	name = "Shop"
 	},
 /turf/open/floor/rogue/wood,
