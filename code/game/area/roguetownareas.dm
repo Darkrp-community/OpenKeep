@@ -149,7 +149,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/turf/open/floor/rogue/grass)
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 60,
-				/mob/living/simple_animal/hostile/retaliate/rogue/trollbog = 10,
+				/mob/living/simple_animal/hostile/retaliate/rogue/troll = 10,
 				/mob/living/carbon/human/species/goblin/npc/ambush = 45,
 				/mob/living/simple_animal/hostile/retaliate/rogue/mole = 25)
 	first_time_text = "THE MURDERWOOD"
@@ -192,7 +192,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 20,
 				/mob/living/simple_animal/hostile/retaliate/rogue/spider = 80,
 				/mob/living/carbon/human/species/goblin/npc/ambush/sea = 50,
-				/mob/living/simple_animal/hostile/retaliate/rogue/troll = 35)	//Bogbugs bugged bigtime, so removed for now.
+				/mob/living/simple_animal/hostile/retaliate/rogue/trollbog = 35)
 
 	first_time_text = "THE TERRORBOG"
 	converted_type = /area/rogue/indoors/shelter/bog
