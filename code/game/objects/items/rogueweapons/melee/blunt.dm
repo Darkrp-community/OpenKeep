@@ -109,6 +109,14 @@
 	swingdelay = 0
 	misscost = 5
 
+/datum/intent/mace/strike/wood/long//long attack for two handed clubs
+	hitsound = list('sound/combat/hits/blunt/woodblunt (1).ogg', 'sound/combat/hits/blunt/woodblunt (2).ogg')
+	penfactor = 20
+	reach = 2
+	swingdelay = 0
+	misscost = 5
+
+
 /datum/intent/mace/smash/wood
 	hitsound = list('sound/combat/hits/blunt/woodblunt (1).ogg', 'sound/combat/hits/blunt/woodblunt (2).ogg')
 	penfactor = 30
