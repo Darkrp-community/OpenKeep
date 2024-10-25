@@ -467,6 +467,7 @@
 	sewrepair = FALSE
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ITEM
+	clothing_flags = CANT_SLEEP_IN
 
 	armor = ARMOR_IRON_GOOD
 	body_parts_covered = HEAD|HAIR|NOSE
@@ -861,6 +862,16 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	prevent_crits = ALL_EXCEPT_BLUNT
 
+
+//............... Pestra Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
+	name = "pestran helmet"
+	desc = "A great helmet made of coarse, tainted steel. It is modeled after a plagued carrion, a blessed abomination of Pestra."
+	icon_state = "pestrahelm"
+	item_state = "pestraahelm"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+
+
 //............... Sinistar (Graggar) Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/sinistar
 	name = "sinistar helmet"
@@ -1247,7 +1258,7 @@
 	desc = "A bizarrely lightweight helmet of alloyed dark elven steel, offering unparalleled protection for elite bladesingers."
 	icon_state = "elfhead"
 	allowed_race = list("elf", "half-elf", "dark elf")
-
+	clothing_flags = CANT_SLEEP_IN
 	armor_class = ARMOR_CLASS_MEDIUM
 	body_parts_covered = HEAD|HAIR|NOSE
 
@@ -1266,7 +1277,7 @@
 	icon_state = "dwarfhead"
 	allowed_race = list("dwarf")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD_EXCEPT_MOUTH
 
 
@@ -1279,7 +1290,7 @@
 	allowed_sex = list(MALE)
 	allowed_race = list("human")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR
 
 
@@ -1294,7 +1305,7 @@
 	allowed_sex = list(MALE)
 	allowed_race = list("human")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR
 
 //............... Hoplite Helmet ............... //
@@ -1309,7 +1320,7 @@
 	worn_y_dimension = 64
 	allowed_race = list("aasimar")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR
 
 
