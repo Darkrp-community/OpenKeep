@@ -115,7 +115,7 @@
 	name = "heavy leather gloves"
 	result = /obj/item/clothing/gloves/roguetown/angle
 	reqs = list(/obj/item/natural/hide = 1,
-				/obj/item/natural/fur/gote = 1)
+				/obj/item/natural/fur = 1)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/helmet
