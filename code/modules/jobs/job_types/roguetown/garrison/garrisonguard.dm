@@ -67,7 +67,7 @@
 		if(H.dna.species?.id == "abyssariad")
 			to_chat(H, "<span class='warning'>I am a Ashigaru working under the banner of the king, and I must treat him as I would my daimyo, and the kyaputen my leading shogun.")
 			pants = /obj/item/clothing/under/roguetown/tobi/random
-			cloak = /obj/item/clothing/cloak/stabard/guard
+			cloak = /obj/item/clothing/cloak/jinbaori/guard
 			neck = null
 			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
 			mask = /obj/item/clothing/mask/rogue/kaizoku/menpo/half //Abyssariads uses menpos to protect the neck. Weaker in durability, but protects the mouth.

@@ -325,7 +325,7 @@
 
 /obj/item/clothing/shoes/roguetown/kaizoku/geta/cloudhead
 	name = "cloudhead shoes"
-	desc = "A traditional shoes with dinstinctive upturned toe design that resembles the shape of clouds, to symbolize connection to the skies."
+	desc = "A traditional shoes with distinctive upturned toe design that resembles the shape of clouds, to symbolize connection to the skies."
 	icon_state = "cloudhead_shoes"
 	item_state = "cloudhead_shoes"
 

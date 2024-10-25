@@ -1008,6 +1008,7 @@
 /obj/item/clothing/cloak/haramaki
 	name = "haramaki"
 	icon_state = "haramaki"
+	desc = "Tightly packed lacing patterns usually used for binding leather and metal scales."
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
 	boobed = TRUE
@@ -1182,3 +1183,102 @@
 	if(ismob(loc))
 		var/mob/L = loc
 		L.update_inv_cloak()
+
+/obj/item/clothing/cloak/jinbaori/guard
+	desc = "A jinbaori with the lord's heraldic colors. This one is worn typically by Ashigarus."
+	color = CLOTHING_RED
+	detail_tag = "_spl"
+	detail_color = CLOTHING_PURPLE
+
+/obj/item/clothing/cloak/jinbaori/guard/attack_right(mob/user)
+	if(picked)
+		return
+	var/the_time = world.time
+	var/chosen = input(user, "Select a design.","Tabard Design") as null|anything in list("Split", "Quadrants", "Boxes", "Diamonds", "Middle-split")
+	if(world.time > (the_time + 10 SECONDS))
+		return
+	if(!chosen)
+		return
+	picked = TRUE
+	switch(chosen)
+		if("Split")
+			detail_tag = "_spl"
+		if("Quadrants")
+			detail_tag = "_quad"
+		if("Boxes")
+			detail_tag = "_box"
+		if("Diamonds")
+			detail_tag = "_dim"
+		if("Middle-split")
+			detail_tag = "_spl2"
+	update_icon()
+	if(ismob(loc))
+		var/mob/L = loc
+		L.update_inv_cloak()
+
+/obj/item/clothing/cloak/jinbaori/guard/Initialize()
+	..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+	else
+		GLOB.lordcolor += src
+
+/obj/item/clothing/cloak/haramaki/odoshi/zamurai
+	desc = "The Odoshi used by Foglander Zamurais bond to Rockhill's lords. It uses said lord's heraldic colors."
+	color = CLOTHING_RED
+	detail_tag = "_spl2"
+	detail_color = CLOTHING_PURPLE
+
+/obj/item/clothing/cloak/haramaki/odoshi/zamurai/attack_right(mob/user)
+	if(picked)
+		return
+	var/the_time = world.time
+	var/chosen = input(user, "Select a design.","Tabard Design") as null|anything in list("Split", "Quadrants", "Boxes", "Diamonds", "Middle-split")
+	if(world.time > (the_time + 10 SECONDS))
+		return
+	if(!chosen)
+		return
+	picked = TRUE
+	switch(chosen)
+		if("Split")
+			detail_tag = "_spl"
+		if("Quadrants")
+			detail_tag = "_quad"
+		if("Boxes")
+			detail_tag = "_box"
+		if("Diamonds")
+			detail_tag = "_dim"
+		if("Middle-split")
+			detail_tag = "_spl2"
+	update_icon()
+	if(ismob(loc))
+		var/mob/L = loc
+		L.update_inv_cloak()
+
+/obj/item/clothing/cloak/haramaki/odoshi/zamurai/Initialize()
+	..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+	else
+		GLOB.lordcolor += src
+
+/obj/item/clothing/cloak/haramaki/odoshi/zamurai/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+/obj/item/clothing/cloak/haramaki/odoshi/zamurai/lordcolor(primary,secondary)
+	color = primary
+	detail_color = secondary
+	update_icon()
+	if(ismob(loc))
+		var/mob/L = loc
+		L.update_inv_cloak()
+
+/obj/item/clothing/cloak/haramaki/odoshi/zamurai/Destroy()
+	GLOB.lordcolor -= src
+	return ..()

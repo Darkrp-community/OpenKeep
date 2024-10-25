@@ -297,7 +297,7 @@
 /datum/stressevent/raider
 	timer = 1 MINUTES
 	stressadd = 1
-	desc = "<span class='red'>Jeopardous sea raider, the bad omen itself.</span>"
+	desc = "<span class='red'>Jeopardous sea raider, they prey on fellow men.</span>"
 
 /datum/stressevent/whaler
 	timer = 1 MINUTES

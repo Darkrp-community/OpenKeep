@@ -18,6 +18,8 @@
 	pants = /obj/item/clothing/under/roguetown/tobi/random
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	armor = /obj/item/clothing/suit/roguetown/armor/heartfelt/hand/kaizoku
+	if(H.gender == FEMALE)
+		armor = /obj/item/clothing/suit/roguetown/armor/heartfelt/hand/kaizoku/female
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal/black
 	beltl = /obj/item/rogueweapon/sword/sabre/piandao/dec

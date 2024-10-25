@@ -551,6 +551,38 @@
 	body_parts_covered = CHEST|VITALS
 	colorable_var = FALSE
 
+/obj/item/clothing/suit/roguetown/shirt/robe/wizard/guardian
+	name = "onmyoji's warfare garb"
+	desc = "The garbs used by Abyssariad magicians during times of warfare, holding the marks of Abyssor upon the cloth."
+	icon_state = "abyssaltunic"
+	icon = 'icons/roguetown/kaizoku/clothingicon/shirt.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/shirt.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_shirts.dmi'
+	boobed = TRUE
+	flags_inv = HIDEBOOB
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	allowed_sex = list(MALE, FEMALE)
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
+	color = null
+	sellprice = 100
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/robe
+	name = "onmyoji's garb"
+	desc = "Casual abyssariad garbs usually used by magicians, or those living on the frigid, treacherous mountains on the edges of the Fog islands."
+	icon_state = "loosetunic"
+	icon = 'icons/roguetown/clothing/shirts.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/shirts.dmi'
+	boobed = TRUE
+	flags_inv = HIDEBOOB
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	allowed_sex = list(MALE)
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
+	color = null
+	colorable_var = TRUE
+
 /obj/item/clothing/suit/roguetown/shirt/kaizoku/attack_right(mob/user)
 	if(colorable_var == TRUE)
 		if(picked)

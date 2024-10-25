@@ -302,6 +302,32 @@
 	var/turf/T = get_turf(src)
 	explosion(T, light_impact_range = 2, flame_range = 2, smoke = TRUE, soundin = pick('sound/misc/explode/bottlebomb (1).ogg','sound/misc/explode/bottlebomb (2).ogg'))
 
+/obj/item/clothing/mask/rogue/kaizoku/eyeband
+	name = "eye bands"
+	icon_state = "eyeband"
+	max_integrity = 20
+	integrity_failure = 0.5
+	body_parts_covered = EYES
+	icon = 'icons/roguetown/kaizoku/clothingicon/masks.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/masks.dmi'
+	colorable_var = TRUE
+
+/obj/item/clothing/mask/rogue/kaizoku/eyeband/leonardo //katanas
+	color = "#4f47be"
+	colorable_var = FALSE
+
+/obj/item/clothing/mask/rogue/kaizoku/eyeband/michelangelo //nunchucks
+	color = "#a76e38"
+	colorable_var = FALSE
+
+/obj/item/clothing/mask/rogue/kaizoku/eyeband/donatello //bo staff
+	color = "#65219c"
+	colorable_var = FALSE
+
+/obj/item/clothing/mask/rogue/kaizoku/eyeband/raphael //sais
+	color = "#8a2d2d"
+	colorable_var = FALSE
+
 /obj/item/clothing/mask/rogue/kaizoku/attack_right(mob/user)
 	if(colorable_var == TRUE)
 		if(picked)

@@ -1,4 +1,3 @@
-//NOT FINISHED UP YET.
 /datum/advclass/combat/marauder //role capable of crafting their own low-tier armor.
 	name = "Marauder Tribal"
 	allowed_sexes = list(MALE, FEMALE)
@@ -8,29 +7,8 @@
 	category_tags = list(CTAG_ADVENTURER)
 	tutorial = "Ever since Grezenholft invasions on Fog Islands, the Kappa Tribes became allies of many Abyssariad clans and guardians. Even if untrue for the entire government itself, Kappa Marauders take part of Abyssariad expeditions as ''allies'' and formidable annihilators of Humens and Goblins alike."
 
-
-/obj/item/clothing/suit/roguetown/armor/kaizoku/ceramic/light
-/obj/item/clothing/suit/roguetown/armor/kaizoku/ceramic/medium
-/obj/item/clothing/suit/roguetown/armor/kaizoku/ceramic
-
-/obj/item/clothing/under/roguetown/kaizoku/ceramic/light
-/obj/item/clothing/under/roguetown/kaizoku/tribal
-/obj/item/clothing/shoes/roguetown/sandals
-
-/obj/item/clothing/head/roguetown/helmet/ceramic
-/obj/item/clothing/head/roguetown/helmet/ceramic/medium
-/obj/item/clothing/head/roguetown/helmet/ceramic/reinforced
-
-backr = /obj/item/rogueweapon/spear/obsidian
-beltl = /obj/item/rogueweapon/mace/cudgel/rungu
-backr/obj/item/rogueweapon/mace/cudgel/ararebo/obsidian
-backl = /obj/item/storage/backpack/rogue/satchel
-/obj/item/clothing/wrists/roguetown/bracers/leather
-
-
 /datum/outfit/job/roguetown/adventurer/marauder/pre_equip(mob/living/carbon/human/H)
 	..()
-
 	//average normal skill for all. They are not civilized kappas, so they have skills for survival.
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE) 
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
@@ -43,12 +21,9 @@ backl = /obj/item/storage/backpack/rogue/satchel
 	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE) //Elf-Goblin nature.
-
-/datum/outfit/job/roguetown/adventurer/abyssariad/wokou/pre_equip(mob/living/carbon/human/H) // Same as Warrior.
-	..()
 	H.become_blind("TRAIT_GENERIC")
-	var/tribaltype = list("boneclad","riverdweller","bodysnatcher", "skypiercer")
-	var/specialization = input("Choose your equipments", "Available equipments") as anything in wokoutype
+	var/tribaltype = list("boneclad","bodysnatcher", "skypiercer")
+	var/specialization = input("Choose your equipments", "Available equipments") as anything in tribaltype
 	switch(specialization)
 		if("boneclad") //Starts with no survival tool. Full melee, tier 3 makeshift armor roundstart. Mace/axe focus.
 			H.set_blindness(0)
@@ -56,9 +31,12 @@ backl = /obj/item/storage/backpack/rogue/satchel
 			head = /obj/item/clothing/head/roguetown/helmet/ceramic/reinforced
 			pants = /obj/item/clothing/under/roguetown/kaizoku/ceramic
 			beltl = /obj/item/rogueweapon/mace/cudgel/rungu
-			beltr = /obj/item/rogueweapon/mace/cudgel/ararebo/obsidian
+			backl = /obj/item/rogueweapon/mace/cudgel/ararebo/obsidian
 			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/bonebracer
+			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/tribal
+			belt = /obj/item/storage/belt/rogue/leather/rope
+
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 			
@@ -82,6 +60,8 @@ backl = /obj/item/storage/backpack/rogue/satchel
 			beltl = /obj/item/rogueweapon/huntingknife/kunai
 			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/bonebracer
+			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/tribal
+			belt = /obj/item/storage/belt/rogue/leather/rope
 
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
@@ -97,36 +77,19 @@ backl = /obj/item/storage/backpack/rogue/satchel
 
 		if("skypiercer") //Start with survival tool. Ranged weapon focus.
 			H.set_blindness(0)
-			cloaks = /obj/item/clothing/cloak/raincloak/mino
+			cloak = /obj/item/clothing/cloak/raincloak/mino
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/muneate/kappa
 			shirt = /obj/item/clothing/suit/roguetown/armor/ceramic/light
 			head = /obj/item/clothing/head/roguetown/helmet/ceramic
 			pants = /obj/item/clothing/under/roguetown/kaizoku/tribal
-			beltr = /obj/item/rogueweapon/mace/cudgel/rungu
 			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/bonebracer
 			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-			backl = /obj/item/storage/backpack/rogue/satchel
 			beltl = /obj/item/flashlight/flare/torch/lantern
-
+			backl = /obj/item/quiver/arrows
+			belt = /obj/item/storage/belt/rogue/leather
 
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
 			backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/huntingknife/kunai = 1)
-
-		if("riverdweller") //Start with survival tool and 
-			H.set_blindness(0)
-
-
-	pants = /obj/item/clothing/under/roguetown/chainlegs
-	cloak = /obj/item/clothing/cloak/tabard/knight/guard
-	neck = /obj/item/clothing/neck/roguetown/gorget
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
-	armor = /obj/item/clothing/suit/roguetown/armor/brigandine // Wear the King's colors.
-	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-	beltl = /obj/item/keyring/guardcastle
-	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/rogueweapon/sword
-	backr = /obj/item/storage/backpack/rogue/satchel
-	backl = /obj/item/rogueweapon/shield/tower/metal
-	r_hand = /obj/item/rogueweapon/halberd
+	H.cure_blind("TRAIT_GENERIC")

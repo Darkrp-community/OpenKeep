@@ -1466,6 +1466,42 @@
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	block2add = FOV_RIGHT|FOV_LEFT
 	bloody_icon_state = null
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+
+/obj/item/clothing/head/roguetown/wizhat/onmyoji
+	name = "onmyoji warhat"
+	desc = "Surprisingly huge hats used by Onmyojis whom take part of the abyssal championage in warfare. The hat shadows hides the eyes from the lower castes."
+	icon_state = "abyssalhat"
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	sellprice = 100
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	resistance_flags = FLAMMABLE
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	colorable_var = TRUE
+
+/obj/item/clothing/head/roguetown/wizhat/onmyoji/eboshi
+	name = "eboshi hat"
+	desc = "traditional Onmyoji hats for those who desires to practice natural sciences and divinations rather than warfare."
+	icon_state = "eboshihat"
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	sellprice = 100
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	resistance_flags = FLAMMABLE
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	colorable_var = TRUE
 
 /obj/item/clothing/head/roguetown/attack_right(mob/user)
 	if(colorable_var == TRUE)

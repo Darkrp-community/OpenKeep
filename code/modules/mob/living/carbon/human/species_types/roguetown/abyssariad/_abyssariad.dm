@@ -12,11 +12,23 @@
 	C.grant_language(/datum/language/common)
 	C.grant_language(/datum/language/abyssal)
 	C.cmode_music = 'sound/music/combatabyssariad.ogg'
-	C.mind.teach_crafting_recipe(/datum/anvil_recipe/armor/platemask/menpo)
 //	C.verbs |= /mob/proc/praise
 	C.verbs |= /mob/proc/yoo
 	C.verbs |= /mob/proc/throatsing
 	ADD_TRAIT(C, TRAIT_KAIZOKU, TRAIT_GENERIC)  //Cultural Trait. Must not be considered a 'buff' or 'debuff'.
+
+
+/*H.mind.teach_crafting_recipe(/datum/crafting_recipe/bandit_volfhelm)
+
+/datum/crafting_recipe/bandit_volfhelm
+	name = "(Bandit) Volfhelm"
+	time = 4 SECONDS
+	reqs = list(/obj/item/natural/fur/volf = 2)
+	result = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
+	category = CAT_NONE
+*/
+
+
 
 ///mob/proc/banzai()
 //	set name = "Banzai"

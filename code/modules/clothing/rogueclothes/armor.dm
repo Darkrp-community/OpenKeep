@@ -1056,7 +1056,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 
 //New Rare Heartfelt equipment
 
-/obj/item/clothing/suit/roguetown/armor/heartfelt/lord/kaizoku //Improved this armor slightly since, compared to other rare adventurer roles + normal adventurers, the previous Heartfelt Lord was abnoxiously bad.
+/obj/item/clothing/suit/roguetown/armor/heartfelt/lord/kaizoku //Improved this armor slightly since, compared to other rare adventurer roles + normal adventurers, the previous Heartfelt Lord was quite bad in terms of integrity.
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "heartfelt kikko gusoku"
 	desc = "A lordly body armor of Heartfelt design, based on Abyssariad armor techniques to further protect the nobility."
@@ -1081,14 +1081,14 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	name = "abyssariad kikko gusoku"
 	desc = "The Heartfelt design reforged in the ways of Fog Islands to better supply quick-moving zamurai cavalry, replacing the heavier and costier O-Yoroi lamellar."
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS //does not protect the arms. Countering the Brigandine that protects the arms, but not legs.
-	icon_state = "kikkoabyss"
-	item_state = "kikkoabyss"
+	icon_state = "kikkoabyssal"
+	item_state = "kikkoabyssal"
 	sellprice = 45 //not unique.
 
 /obj/item/clothing/suit/roguetown/armor/heartfelt/hand/kaizoku
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "coat of armor"
-	desc = "A coat of armor typicially worn by distinguished retainers of Heartfeltian nobles, with layers of Steel Kikko inside."
+	desc = "A coat of armor typicially worn by distinguished retainers of Heartfeltian nobles, with layers of steel kikko inside."
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	icon_state = "heartfelt_kikkocoat"
 	item_state = "heartfelt_kikkocoat"
@@ -1108,7 +1108,7 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 /obj/item/clothing/suit/roguetown/armor/heartfelt/hand/kaizoku/female
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "dress of armor"
-	desc = "A dress of armor typicially worn by distinguished retainers of Heartfeltian nobles, with with layers of Steel Kikko inside."
+	desc = "A dress of armor typicially worn by distinguished retainers of Heartfeltian nobles, with with layers of steel kikko inside."
 	icon_state = "heartfelt_kikkodress"
 	item_state = "heartfelt_kikkodress"
 
@@ -1179,6 +1179,24 @@ obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
+
+/obj/item/clothing/suit/roguetown/armor/leather/ninjakappa //same as studded leather armor
+	name = "tribalistic bronze cuirass"
+	desc = "A layered armor with oil-boiled leather reinforced with bronze plates sew into the fabric. Light and flexible, it is used by Kappas who became part of underground shinobi operations to destroy illegal gangs, drugdealers and centers of prostitution."
+	icon_state = "ninjakappa"
+	item_state = "ninjakappa"
+	blocksound = SOFTHIT
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_CHOP)
+	armor = list("melee" = 60, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	nodismemsleeves = TRUE
+	body_parts_covered = CHEST|GROIN|VITALS
+	max_integrity = 300
+	sellprice = 50
+	armor_class = ARMOR_CLASS_LIGHT
+	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
+
 
 /obj/item/clothing/suit/roguetown/armor/attack_right(mob/user)
 	if(colorable_var == TRUE)
