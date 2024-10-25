@@ -416,6 +416,7 @@
 	icon_state = "archivist"
 	icon = 'icons/roguetown/clothing/shirts.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/shirts.dmi'
 	boobed = TRUE
 	flags_inv = HIDEBOOB
 	r_sleeve_status = SLEEVE_NORMAL
