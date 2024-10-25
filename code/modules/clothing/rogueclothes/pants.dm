@@ -120,6 +120,7 @@
 	name = "leather trousers"
 	desc = "Standard leather pants for hardy workers."
 	icon_state = "leathertrou"
+	armor = ARMOR_LEATHER
 
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
