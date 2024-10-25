@@ -96,6 +96,8 @@
 /datum/wound/facial/eyes/right/permanent
 	whp = null
 	woundpain = 0
+	bleed_rate = 0
+	can_sew = FALSE
 
 /datum/wound/facial/eyes/left
 	name = "left eye evisceration"
@@ -129,6 +131,8 @@
 /datum/wound/facial/eyes/left/permanent
 	whp = null
 	woundpain = 0
+	bleed_rate = 0
+	can_sew = FALSE
 
 /datum/wound/facial/tongue
 	name = "glossectomy"
