@@ -5,7 +5,7 @@
 
 /datum/supply_pack/rogue/rawmats/copper
 	name = "Copper Ore"
-	cost = 20
+	cost = 50
 	contains = list(
 		/obj/item/rogueore/copper,
 		/obj/item/rogueore/copper,
@@ -16,9 +16,8 @@
 
 /datum/supply_pack/rogue/rawmats/iron
 	name = "Iron Ore"
-	cost = 30
+	cost = 80
 	contains = list(
-		/obj/item/rogueore/iron,
 		/obj/item/rogueore/iron,
 		/obj/item/rogueore/iron,
 		/obj/item/rogueore/iron,

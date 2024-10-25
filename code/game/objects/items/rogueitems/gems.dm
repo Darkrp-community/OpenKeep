@@ -75,3 +75,15 @@
 /obj/item/riddleofsteel/Initialize()
 	. = ..()
 	set_light(2, 1, "#ff0d0d")
+
+/obj/item/roguegem/random
+	name = "random gem"
+	desc = "no way i fucked the code"
+	icon_state = null
+
+/obj/item/roguegem/random/Initialize()
+	..()
+	var/newgem = list(/obj/item/roguegem = 5, /obj/item/roguegem/green = 10, /obj/item/roguegem/blue = 10, /obj/item/roguegem/yellow = 20, /obj/item/roguegem/violet = 10, /obj/item/roguegem/diamond = 5, /obj/item/natural/rock/coal = 1)//you thought you had found gems, but it was COAL...
+	var/pickgem = pickweight(newgem)
+	new pickgem(get_turf(src))
+	qdel(src)
