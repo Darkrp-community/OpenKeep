@@ -862,6 +862,14 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	prevent_crits = ALL_EXCEPT_BLUNT
 
+//............... Eora Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/sallet/eoran
+	name = "eora helmet"
+	desc = "A stylized sallet, with elegant flowers atop it"
+	icon_state = "eorahelm"
+	item_state = "eorahelm"
+	armor = ARMOR_STEEL_BEST
+
 
 //............... Pestra Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
