@@ -250,7 +250,7 @@
 
 /obj/item/restraints/legcuffs/beartrap
 	icon = 'icons/roguetown/items/misc.dmi'
-	name = "mantrap"
+	name = "volftrap"
 	gender = NEUTER
 	throw_speed = 1
 	throw_range = 1

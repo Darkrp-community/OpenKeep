@@ -320,7 +320,7 @@
 	req_table = TRUE
 
 /datum/crafting_recipe/roguetown/mantrap
-	name = "mantrap"
+	name = "volftrap"
 	result = list(/obj/item/restraints/legcuffs/beartrap,
 				/obj/item/restraints/legcuffs/beartrap)
 	reqs = list(/obj/item/grown/log/tree/small = 1,

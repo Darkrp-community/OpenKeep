@@ -144,8 +144,8 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/tools/mantrap
-	name = "mantrap"
-	recipe_name = "a mantrap"
+	name = "volftrap"
+	recipe_name = "a volftrap"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/restraints/legcuffs/beartrap/crafted
 	appro_skill = /datum/skill/craft/traps
