@@ -4,9 +4,9 @@
 #define CLERIC_T2 2
 #define CLERIC_T3 3
 
-#define CLERIC_REQ_1 100
-#define CLERIC_REQ_2 250
-#define CLERIC_REQ_3 500
+#define CLERIC_REQ_1 80
+#define CLERIC_REQ_2 160
+#define CLERIC_REQ_3 240
 
 // Cleric Holder Datums
 
@@ -96,7 +96,7 @@
 			continue
 		H.mind.AddSpell(new spell_type)
 	level = CLERIC_T1
-	max_devotion = 250
+	max_devotion = 230
 
 /datum/devotion/cleric_holder/proc/grant_spells_templar(mob/living/carbon/human/H)
 	if(!H || !H.mind)
