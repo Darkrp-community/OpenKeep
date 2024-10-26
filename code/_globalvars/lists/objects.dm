@@ -44,4 +44,20 @@ GLOBAL_LIST_EMPTY(alert_consoles)			// Station alert consoles, /obj/machinery/co
 GLOBAL_LIST_INIT(rod_jobs, list(
 	"Garrison Guard",
 	"Captain",
+	"Dungeoneer",
+	"Royal Guard",
+	"Veteran",
+	"Squire"
+	"Servant"
+	"Steward",
+	"Queen",
+	"King",
+	"Prince",
+	"Hand",
+	"Court Magician",
+	"Butler",
+	"Archivist",
+	"Stevedore",
+	"Jester",
+	"Prisoner",
 ))
