@@ -47,8 +47,8 @@ GLOBAL_LIST_INIT(rod_jobs, list(
 	"Dungeoneer",
 	"Royal Guard",
 	"Veteran",
-	"Squire"
-	"Servant"
+	"Squire",
+	"Servant",
 	"Steward",
 	"Queen",
 	"King",
