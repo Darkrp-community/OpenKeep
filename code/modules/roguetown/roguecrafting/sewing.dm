@@ -6,11 +6,6 @@
 
 /*.............. recipes requiring no skill..............*/
 
-/datum/crafting_recipe/roguetown/sewing/windingsheet
-	name = "winding sheet"
-	result = list(/obj/structure/closet/burial_shroud)
-	reqs = list(/obj/item/natural/cloth = 2)
-
 /datum/crafting_recipe/roguetown/sewing/rags
 	name = "rags"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/rags)
