@@ -20899,10 +20899,6 @@
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/town/basement)
-"vaV" = (
-/obj/effect/sunlight,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/rtfield)
 "vbe" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/wood,
@@ -38641,7 +38637,7 @@ bId
 bId
 bId
 bId
-frE
+bId
 bId
 bId
 bId
@@ -46301,7 +46297,7 @@ bId
 bId
 bId
 bId
-frE
+bId
 bId
 bId
 bId
@@ -46627,7 +46623,7 @@ bId
 bId
 bId
 bId
-frE
+bId
 bId
 bId
 bId
@@ -66890,7 +66886,7 @@ pQJ
 pQJ
 lRx
 pQJ
-vaV
+pQJ
 pQJ
 pQJ
 pQJ
