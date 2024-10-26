@@ -271,9 +271,8 @@
 	desc = "When inducted into the cult of Necra, the supplicant must make a talisman from the remains of a deceased loved one. Many favor a chin-guard made from a jawbone."
 	icon_state = "necrahood"
 	flags_inv = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
-	default_hidden = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
 
-	armor = ARMOR_MIMOR
+	armor = ARMOR_MINOR
 	prevent_crits = MINOR_CRITICALS
 
 //................ Death Shroud ............... //	- Necra headwear that conceals indentity
@@ -344,11 +343,15 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	flags_inv = HIDEEARS|HIDEHAIR
-	default_hidden = HIDEEARS|HIDEHAIR
 	resistance_flags = FIRE_PROOF
 
 	armor = ARMOR_MINOR
 	prevent_crits = MINOR_CRITICALS
+
+/obj/item/clothing/head/roguetown/roguehood/priest/Initialize()
+	. = ..()
+	adjustable = CADJUSTED
+	AdjustClothes()
 
 /obj/item/clothing/head/roguetown/roguehood/priest/pickup(mob/living/user)
 	if((user.job != "Priest") && (user.job != "Priestess"))
