@@ -234,4 +234,3 @@ config/admins.txt
 
 # OpenDream-compiled DME
 /stonekeep.json
-code/_compile_options.dm
