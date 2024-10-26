@@ -27,7 +27,7 @@
 		playsound(user, 'sound/items/flint.ogg', 150, FALSE)
 		L.adjust_fire_stacks(5)
 		L.IgniteMob()
-		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, ExtinguishMob)), 8 SECONDS)
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, ExtinguishMob)), 7 SECONDS)
 		return TRUE
 
 	// Spell interaction with ignitable objects (burn wooden things, light torches up)
