@@ -26,18 +26,18 @@
 	if(H.gender == FEMALE)
 		H.virginity = TRUE
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-		armor = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random
+		armor = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdressprimary
 	else
-		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/random
+		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/tunicprimary
 		pants = /obj/item/clothing/under/roguetown/tights
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	head = /obj/item/clothing/head/roguetown/chaperon/greyscale/random
+	head = /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltr = /obj/item/keyring/steward
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
-	backl = /obj/item/storage/backpack/rogue/satchel
+	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1, /obj/item/lockpickring/mundane = 1)
 
 	if(H.mind)
@@ -46,7 +46,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 6, TRUE)
 		H.change_stat("strength", -2)
 		H.change_stat("intelligence", 8)
 		H.change_stat("constitution", -2)

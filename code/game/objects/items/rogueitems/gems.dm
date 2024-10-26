@@ -73,7 +73,7 @@
 	sellprice = 554
 
 /obj/item/riddleofsteel/Initialize()
-	..()
+	. = ..()
 	set_light(2, 1, "#ff0d0d")
 
 /obj/item/roguegem/random

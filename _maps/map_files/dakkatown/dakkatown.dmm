@@ -6041,7 +6041,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
 "wV" = (
-/obj/structure/chair/wood/rogue/throne,
+/obj/structure/chair/bench/throne,
 /obj/effect/landmark/start/prince,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
@@ -7079,7 +7079,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "Bf" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/swamp,
 /area/rogue/outdoors/rtfield)
 "Bh" = (
@@ -9940,7 +9940,7 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/manor)
 "LV" = (
-/obj/structure/chair/wood/rogue/throne,
+/obj/structure/chair/bench/throne,
 /obj/effect/landmark/start/lady,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
@@ -13475,7 +13475,7 @@
 /obj/item/clothing/suit/roguetown/shirt/robe/necra,
 /obj/item/clothing/suit/roguetown/shirt/robe/dendor,
 /obj/item/clothing/suit/roguetown/shirt/robe/astrata,
-/obj/item/clothing/head/roguetown/padded/briarvisage,
+/obj/item/clothing/mask/rogue/druid,
 /obj/item/clothing/head/roguetown/padded/deathshroud,
 /obj/item/clothing/head/roguetown/roguehood/astrata,
 /turf/open/floor/rogue/blocks,
