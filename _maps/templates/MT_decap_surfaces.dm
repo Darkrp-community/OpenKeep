@@ -7,7 +7,7 @@
 //Note: You can place multiple of the same map mark, it will pick and load them multiple times just fine
 //Other note: Loading a .dmm will overwrite whatever was on the tiles but will not delete objects, so clear an area of trees etc in the area you want to make.
 
-/obj/effect/landmark/map_load_mark/mt_decap_surface
+/obj/effect/landmark/map_load_mark/mtdecap_area
 
 	//Name can be anything, it doesn't matter
 	name = "mount decapitation surface areas"
@@ -31,7 +31,7 @@
 	id = "randomized_1"
 	mappath = "_maps/map_files/templates/mtdecap_area/random_zone_1.dmm"
 
-/obj/effect/landmark/map_load_mark/mt_decap_surface/surface_area
+/obj/effect/landmark/map_load_mark/mtdecap_area/surface_area
 
 	//Name can be anything, it doesn't matter
 	name = "mount decapitation surface areas"
