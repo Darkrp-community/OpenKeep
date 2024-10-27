@@ -2712,10 +2712,6 @@
 /obj/structure/fluff/walldeco/med,
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors/town)
-"cBN" = (
-/obj/effect/sunlight,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield)
 "cBU" = (
 /obj/structure/chair/wood/rogue/chair3,
 /turf/open/floor/rogue/ruinedwood{
@@ -5418,10 +5414,6 @@
 	icon_state = "chess"
 	},
 /area/rogue/indoors/town/dwarfin)
-"frE" = (
-/obj/effect/sunlight,
-/turf/open/water/swamp/deep,
-/area/rogue/outdoors/river)
 "frH" = (
 /obj/structure/table/wood{
 	icon_state = "longtable"
@@ -8130,11 +8122,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
-"hWV" = (
-/obj/effect/spawner/roguemap/grass_low,
-/obj/effect/sunlight,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield)
 "hWZ" = (
 /obj/structure/chair/wood/rogue,
 /turf/open/floor/rogue/tile/masonic,
@@ -10531,10 +10518,6 @@
 /obj/structure/stairs/stone,
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/chapel)
-"kzt" = (
-/obj/effect/sunlight,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/town)
 "kzE" = (
 /obj/structure/closet/crate/chest/crate,
 /obj/item/rogueweapon/mace/wsword,
@@ -11790,10 +11773,6 @@
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
-"lDW" = (
-/obj/effect/sunlight,
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/town)
 "lEi" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -14927,10 +14906,6 @@
 	icon_state = "weird1"
 	},
 /area/rogue/under/town/basement)
-"oWp" = (
-/obj/effect/sunlight,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/rtfield)
 "oWK" = (
 /obj/item/reagent_containers/glass/bucket/pot,
 /turf/open/floor/rogue/cobble,
@@ -18180,10 +18155,6 @@
 /obj/item/grown/log/tree/stake,
 /turf/open/water/swamp,
 /area/rogue/under/town/sewer)
-"skh" = (
-/obj/effect/sunlight,
-/turf/open/water/cleanshallow,
-/area/rogue/outdoors/town)
 "skv" = (
 /obj/structure/chair/bench/ultimacouch/r{
 	icon_state = "ultimacochright"
@@ -19640,10 +19611,6 @@
 /obj/item/book/rogue/necra,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/magician)
-"tGW" = (
-/obj/effect/sunlight,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/rtfield)
 "tHr" = (
 /obj/structure/lever{
 	name = "gate lever";
@@ -20792,10 +20759,6 @@
 /obj/structure/roguemachine/scomm/l,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
-"uVL" = (
-/obj/effect/sunlight,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/town)
 "uVP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/chest/old_crate,
@@ -34092,7 +34055,7 @@ bId
 bId
 bId
 bId
-frE
+bId
 bId
 bId
 bId
@@ -36126,7 +36089,7 @@ bId
 bId
 bId
 bId
-frE
+bId
 bId
 bId
 bId
@@ -38943,7 +38906,7 @@ bId
 bId
 bId
 bId
-frE
+bId
 bId
 bId
 bId
@@ -44110,7 +44073,7 @@ bId
 bId
 bId
 bId
-frE
+bId
 bId
 bId
 bId
@@ -45724,7 +45687,7 @@ bId
 bId
 bId
 bId
-frE
+bId
 bId
 azO
 azO
@@ -47384,7 +47347,7 @@ bId
 bId
 bId
 bId
-frE
+bId
 bId
 bId
 bId
@@ -47622,7 +47585,7 @@ bId
 bId
 bId
 bId
-frE
+bId
 bId
 bId
 bId
@@ -47799,7 +47762,6 @@ bId
 bId
 bId
 bId
-frE
 bId
 bId
 bId
@@ -47826,7 +47788,8 @@ bId
 bId
 bId
 bId
-frE
+bId
+bId
 bId
 bId
 bId
@@ -51577,15 +51540,6 @@ jIk
 xmW
 xmW
 xmW
-cBN
-jIk
-jIk
-jIk
-jIk
-xmW
-xmW
-xmW
-jIk
 jIk
 jIk
 jIk
@@ -51594,6 +51548,15 @@ jIk
 xmW
 xmW
 xmW
+jIk
+jIk
+jIk
+jIk
+jIk
+jIk
+xmW
+xmW
+xmW
 xmW
 jIk
 jIk
@@ -51605,7 +51568,7 @@ jIk
 jIk
 jIk
 jIk
-cBN
+jIk
 jIk
 jIk
 jIk
@@ -51640,7 +51603,7 @@ ylN
 ylN
 ylN
 ylN
-tGW
+ylN
 ylN
 ylN
 ylN
@@ -54462,7 +54425,7 @@ iNv
 gog
 gog
 gog
-kzt
+gog
 gog
 gog
 gog
@@ -54851,7 +54814,7 @@ jIk
 jIk
 fsP
 fsP
-tGW
+ylN
 ylN
 ylN
 ylN
@@ -55678,7 +55641,7 @@ uIX
 rqG
 cxb
 cxb
-uVL
+pJn
 lnn
 pJn
 wBZ
@@ -57002,7 +56965,7 @@ ylN
 ylN
 ylN
 xmW
-hWV
+xmW
 jIk
 jIk
 biI
@@ -58505,7 +58468,7 @@ hun
 mEr
 eIt
 gSm
-lDW
+hvn
 hmi
 wFh
 lcX
@@ -58776,7 +58739,7 @@ xmW
 xmW
 xmW
 xmW
-hWV
+jIk
 ylN
 ylN
 ylN
@@ -59300,7 +59263,7 @@ qGh
 hvn
 hvn
 hvn
-lDW
+hvn
 hvn
 hvn
 iGv
@@ -59490,7 +59453,7 @@ nCN
 hvn
 hvn
 rJM
-lDW
+hvn
 hvn
 hvn
 hvn
@@ -59589,7 +59552,7 @@ nCN
 hvn
 hvn
 hvn
-lDW
+hvn
 hvn
 hvn
 hvn
@@ -61939,7 +61902,7 @@ lRI
 pJn
 pJn
 pJn
-uVL
+pJn
 pJn
 pJn
 uxb
@@ -62429,7 +62392,7 @@ pJn
 pJn
 pJn
 hvn
-lDW
+hvn
 hvn
 pJn
 qYl
@@ -63651,7 +63614,7 @@ doE
 uHq
 cxb
 pKN
-skh
+pKN
 pKN
 pKN
 cxb
@@ -64104,7 +64067,7 @@ xmW
 jIk
 jIk
 xmW
-hWV
+xmW
 ymg
 jIk
 xmW
@@ -68657,7 +68620,7 @@ ylN
 ylN
 fsP
 fsP
-oWp
+fsP
 ylN
 ylN
 ylN
