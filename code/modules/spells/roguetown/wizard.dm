@@ -664,6 +664,8 @@
 	caster = summoner
 
 /obj/structure/forcefield_weak/caster/CanPass(atom/movable/mover, turf/target)	//only the caster can move through this freely
+	if(mover == caster)
+		return TRUE
 	if(ismob(mover))
 		var/mob/M = mover
 		if(M.anti_magic_check(chargecost = 0) || structureclimber == M)
@@ -693,7 +695,7 @@
 	range = 6
 	overlay_state = "ensnare"
 	var/area_of_effect = 1
-	var/duration = 2.5 SECONDS
+	var/duration = 4 SECONDS
 	var/delay = 0.8 SECONDS
 
 /obj/effect/proc_holder/spell/invoked/slowdown_spell_aoe/cast(list/targets, mob/user = usr)
