@@ -323,7 +323,7 @@
 	item_state = "geta"
 	body_parts_covered = FEET
 
-/obj/item/clothing/shoes/roguetown/kaizoku/geta/cloudhead
+/obj/item/clothing/shoes/roguetown/kaizoku/geta/cloudhead //forgot to make cloudhead onmob?
 	name = "cloudhead shoes"
 	desc = "A traditional shoes with distinctive upturned toe design that resembles the shape of clouds, to symbolize connection to the skies."
 	icon_state = "cloudhead_shoes"

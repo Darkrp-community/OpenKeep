@@ -1488,6 +1488,9 @@
 	bloody_icon_state = "helmetblood_big"
 	colorable_var = TRUE
 
+/obj/item/clothing/head/roguetown/wizhat/onmyoji/random/Initialize()
+	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
+
 /obj/item/clothing/head/roguetown/wizhat/onmyoji/eboshi
 	name = "eboshi hat"
 	desc = "traditional Onmyoji hats for those who desires to practice natural sciences and divinations rather than warfare."
@@ -1502,6 +1505,9 @@
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
 	colorable_var = TRUE
+
+/obj/item/clothing/head/roguetown/wizhat/onmyoji/eboshi/random/Initialize()
+	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
 
 /obj/item/clothing/head/roguetown/attack_right(mob/user)
 	if(colorable_var == TRUE)

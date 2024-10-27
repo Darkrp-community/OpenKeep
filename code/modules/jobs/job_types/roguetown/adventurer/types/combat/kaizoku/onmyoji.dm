@@ -21,11 +21,11 @@
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta/cloudhead
 	if(prob(50))
-		armor = /obj/item/clothing/suit/roguetown/shirt/kaizoku/robe
-		head = /obj/item/clothing/head/roguetown/wizhat/onmyoji/eboshi
+		armor = /obj/item/clothing/suit/roguetown/shirt/kaizoku/robe/random
+		head = /obj/item/clothing/head/roguetown/wizhat/onmyoji/eboshi/random
 	else
 		armor = /obj/item/clothing/suit/roguetown/shirt/robe/wizard/guardian
-		head = /obj/item/clothing/head/roguetown/wizhat/onmyoji
+		head = /obj/item/clothing/head/roguetown/wizhat/onmyoji/random
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	backr = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/reagent_containers/glass/bottle/rogue/manapot

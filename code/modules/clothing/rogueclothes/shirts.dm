@@ -583,6 +583,9 @@
 	color = null
 	colorable_var = TRUE
 
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/robe/random/Initialize()
+	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
+
 /obj/item/clothing/suit/roguetown/shirt/kaizoku/attack_right(mob/user)
 	if(colorable_var == TRUE)
 		if(picked)
