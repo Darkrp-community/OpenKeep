@@ -611,7 +611,7 @@
 			spawn(used_time + 5) regenerate_icons()
 			rogue_sneaking = TRUE
 	return
-/* 
+/*
 	if(world.time < mob_timers[MT_INVISIBILITY]) // Check if the mob is affected by the invisibility spell
 		alpha = 0
 		return */
@@ -701,6 +701,12 @@
 			return FALSE
 	if(istype(src.wear_shirt, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_shirt
+		if(CL.armor_class == ARMOR_CLASS_HEAVY)
+			return FALSE
+		if(CL.armor_class == ARMOR_CLASS_MEDIUM)
+			return FALSE
+	if(istype(src.wear_pants, /obj/item/clothing))
+		var/obj/item/clothing/CL = src.wear_pants
 		if(CL.armor_class == ARMOR_CLASS_HEAVY)
 			return FALSE
 		if(CL.armor_class == ARMOR_CLASS_MEDIUM)

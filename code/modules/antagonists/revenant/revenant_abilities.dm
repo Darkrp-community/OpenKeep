@@ -363,7 +363,7 @@
 		vine.add_atom_colour("#823abb", TEMPORARY_COLOUR_PRIORITY)
 		new /obj/effect/temp_visual/revenant(vine.loc)
 		QDEL_IN(vine, 10)
-	for(var/obj/structure/glowshroom/shroom in T)
+	for(var/obj/structure/kneestingers/shroom in T)
 		shroom.add_atom_colour("#823abb", TEMPORARY_COLOUR_PRIORITY)
 		new /obj/effect/temp_visual/revenant(shroom.loc)
 		QDEL_IN(shroom, 10)
