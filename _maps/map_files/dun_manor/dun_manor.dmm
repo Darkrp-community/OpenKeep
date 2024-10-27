@@ -17380,6 +17380,13 @@
 /obj/effect/landmark/start/monk,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/church/chapel)
+"ruS" = (
+/obj/structure/fluff/traveltile/bandit{
+	aportalgoesto = "banditin";
+	aportalid = "banditexit"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors/cave)
 "ruT" = (
 /obj/structure/roguemachine/scomm{
 	pixel_y = -32
@@ -17515,6 +17522,9 @@
 "rCC" = (
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/magician)
+"rCS" = (
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors/cave)
 "rCW" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/item/reagent_containers/food/snacks/produce/wheat,
@@ -56045,9 +56055,9 @@ sKt
 "}
 (49,1,2) = {"
 eUz
-eUz
-eUz
-eUz
+rCS
+rCS
+rCS
 eUz
 eUz
 omo
@@ -56202,9 +56212,9 @@ xOC
 "}
 (50,1,2) = {"
 eUz
+rCS
 eUz
-eUz
-eUz
+rCS
 eUz
 eUz
 omo
@@ -56359,11 +56369,11 @@ xOC
 "}
 (51,1,2) = {"
 eUz
+ruS
 eUz
-eUz
-eUz
-eUz
-eUz
+rCS
+rCS
+rCS
 xmW
 xmW
 xmW
