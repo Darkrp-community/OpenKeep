@@ -161,7 +161,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			load_path(C.ckey)
 			unlock_content = C.IsByondMember()
 			if(unlock_content)
-				max_save_slots = 8
+				max_save_slots += 5
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
 		if(load_character())
@@ -637,7 +637,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 					dat += "</td>"
 					mutant_category = 0
 */
-			if("ears" in pref_species.default_features && !pref_species.use_f)
+			if(("ears" in pref_species.default_features) && !pref_species.use_f)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
@@ -658,7 +658,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			if(CONFIG_GET(flag/join_with_mutant_humans))
 
-				if("wings" in pref_species.default_features && GLOB.r_wings_list.len >1)
+				if(("wings" in pref_species.default_features) && GLOB.r_wings_list.len >1)
 					if(!mutant_category)
 						dat += APPEARANCE_CATEGORY_COLUMN
 
@@ -930,6 +930,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<b>UNREADY</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>READY</a>"
 			if(PLAYER_READY_TO_PLAY)
 				dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>UNREADY</a> <b>READY</b>"
+				log_game("([user || "NO KEY"]) readied as ([real_name])")
 	else
 		dat += "<a href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
 //	dat += "<a href='?_src_=prefs;preference=reset_all'>Reset Setup</a>"
@@ -1664,7 +1665,7 @@ Slots: [job.spawn_positions]</span>
 					age = pick(pref_species.possible_ages)
 				if("hair")
 					var/list/hairs
-					if(age == AGE_OLD && OLDGREY in pref_species.species_traits)
+					if(age == AGE_OLD && (OLDGREY in pref_species.species_traits))
 						hairs = pref_species.get_oldhc_list()
 					else
 						hairs = pref_species.get_hairc_list()
@@ -1674,7 +1675,7 @@ Slots: [job.spawn_positions]</span>
 					hairstyle = pref_species.random_hairstyle(gender)
 				if("facial")
 					var/list/hairs
-					if(age == AGE_OLD && OLDGREY in pref_species.species_traits)
+					if(age == AGE_OLD && (OLDGREY in pref_species.species_traits))
 						hairs = pref_species.get_oldhc_list()
 					else
 						hairs = pref_species.get_hairc_list()
@@ -1811,7 +1812,7 @@ Slots: [job.spawn_positions]</span>
 				if("hair")
 					var/new_hair
 					var/list/hairs
-					if(age == AGE_OLD && OLDGREY in pref_species.species_traits)
+					if(age == AGE_OLD && (OLDGREY in pref_species.species_traits))
 						hairs = pref_species.get_oldhc_list()
 						new_hair = input(user, "Choose your character's hair color:", "") as null|anything in hairs
 					else
@@ -2192,17 +2193,17 @@ Slots: [job.spawn_positions]</span>
 					else
 						domhand = 1
 				if("family")
-					var/list/famtree_options_list = list(FAMILY_NONE, FAMILY_PARTIAL, FAMILY_NEWLYWED, FAMILY_FULL)
-					if(age > AGE_ADULT)
-						famtree_options_list = list(FAMILY_NONE, FAMILY_NEWLYWED, FAMILY_FULL)
-					var/new_family = input(user, "Do you have relatives in rockhill? \
-						[FAMILY_NONE] will disable this feature. \
-						[FAMILY_PARTIAL] will assign you as a progeny of a local house based on your species. This feature is disabled if your older than ADULT. \
-						[FAMILY_NEWLYWED] assigns you a spouse without adding you to a family. Setspouse will try to assign you as a certain persons spouse. \
-						[FAMILY_FULL] will attempt to assign you as matriarch or patriarch of one of the local houses of rockhill. Setspouse will will prevent \
-						players with the setspouse = None from matching with you unless their name equals your setspouse. \
-						.", "The Major Houses of Rockhill") as null|anything in famtree_options_list
-					if(new_family)
+					var/list/famtree_options_list = list(FAMILY_NONE, FAMILY_PARTIAL, FAMILY_NEWLYWED, FAMILY_FULL, "EXPLAIN THIS TO ME")
+					var/new_family = input(user, "Do you have relatives in rockhill?", "The Major Houses of Rockhill") as null|anything in famtree_options_list
+					if(new_family == "EXPLAIN THIS TO ME")
+						to_chat(user, span_purple("\
+						--[FAMILY_NONE] will disable this feature.<br>\
+						--[FAMILY_PARTIAL] will assign you as a progeny of a local house based on your species. This feature will instead assign you as a aunt or uncle to a local family if your older than ADULT.<br>\
+						--[FAMILY_NEWLYWED] assigns you a spouse without adding you to a family. Setspouse will prioritize pairing you with another newlywed with the same name as your setspouse.<br>\
+						--[FAMILY_FULL] will attempt to assign you as matriarch or patriarch of one of the local houses of rockhill. Setspouse will will prevent \
+						players with the setspouse = None from matching with you unless their name equals your setspouse."))
+
+					else if(new_family)
 						family = new_family
 				//Setspouse is part of the family subsystem. It will check existing families for this character and attempt to place you in this family.
 				if("setspouse")

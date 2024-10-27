@@ -6,8 +6,6 @@
 
 #ifdef FASTLOAD
 	#define FORCE_MAP "_maps/dun_manor.json"
-#else
-	#define FORCE_MAP "_maps/dun_manor.json"
 #endif
 
 //#define WARTIME

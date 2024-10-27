@@ -3,36 +3,34 @@
 \-----------*/
 
 /obj/item/rogueweapon/thresher
-	force = 10
-	force_wielded = 14
-	possible_item_intents = list(MACE_STRIKE)
-	gripped_intents = list(/datum/intent/flailthresh,MACE_STRIKE)
 	name = "thresher"
 	desc = "Crushes grain, or skulls."
 	icon_state = "thresher"
-//	icon = 'modular/Neu_Farming/icons/farmtools_big.dmi'	the stuff related to big sprite commented out below. Instead using normal sized one with backslot for ease of use.
 	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+//	icon = 'icons/roguetown/weapons/64.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	sharpness = IS_BLUNT
-//	dropshrink = 0.9
-//	inhand_x_dimension = 64
-//	inhand_y_dimension = 64
-//	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
 	walking_stick = TRUE
-	wdefense = 2
 	minstr = 6
-//	slot_flags = null
-	wlength = 66
 	gripsprite = TRUE
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = null
 	associated_skill = /datum/skill/combat/whipsflails
+	possible_item_intents = list(MACE_STRIKE)
+	gripped_intents = list(/datum/intent/flailthresh,MACE_STRIKE)
+
+	force = 10
+	force_wielded = 14
+	wdefense = 2
+	wlength = 66
 
 /obj/item/rogueweapon/thresher/military
 	force = 12
-	force_wielded = 24 
+	force_wielded = 25
+	possible_item_intents = list(MACE_STRIKE)
+	gripped_intents = list(/datum/intent/flail/strike/long, /datum/intent/flail/strike/smash/long, /datum/intent/flailthresh,)
 	name = "military flail"
 	desc = "Crushes skulls, or grain."
 	icon_state = "military"
@@ -196,6 +194,7 @@
 	desc = "Rusted blade, worn handle, symbol of toil."
 	icon_state = "sickle"
 	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+//	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_SHARP
 	wlength = 10
 	slot_flags = ITEM_SLOT_HIP
@@ -219,25 +218,29 @@
 \------*/
 
 /obj/item/rogueweapon/hoe
-	force = 5
-	force_wielded = 10
-	possible_item_intents = list(/datum/intent/pick)
-	gripped_intents = list(TILL_INTENT,/datum/intent/pick,SPEAR_BASH)
 	name = "hoe"
 	desc = ""
 	icon_state = "hoe"
 	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+//	icon = 'icons/roguetown/weapons/tools.dmi'
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	minstr = 5
 	sharpness = IS_BLUNT
 	walking_stick = TRUE
-	wdefense = 2
-	wlength = 66
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
+	possible_item_intents = list(/datum/intent/pick)
+	gripped_intents = list(TILL_INTENT,/datum/intent/pick,SPEAR_BASH)
 	associated_skill = /datum/skill/combat/polearms
+
+	force = 5
+	force_wielded = 10
+	wdefense = 2
+	wlength = 66
+
+
 
 /obj/item/rogueweapon/hoe/getonmobprop(tag)
 	. = ..()
@@ -288,7 +291,7 @@
 "wflip" = 0,
 "eflip" = 0)
 			if("onbelt")
-				return list("shrink" = 0.4,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+				return list("shrink" = 0.6,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogueweapon/hoe/attack_turf(turf/T, mob/living/user)
 	if(user.used_intent.type == /datum/intent/till)
@@ -302,7 +305,7 @@
 			return
 		if(istype(T, /turf/open/floor/rogue/dirt))
 			playsound(T,'sound/items/dig_shovel.ogg', 100, TRUE)
-			if(do_after(user, 2 SECONDS, target = src))	
+			if(do_after(user, 2 SECONDS, target = src))
 				playsound(T,'sound/items/dig_shovel.ogg', 100, TRUE)
 				var/obj/structure/soil/soil = get_soil_on_turf(T)
 				if(soil)
@@ -326,28 +329,29 @@
 \------------*/
 
 /obj/item/rogueweapon/pitchfork
-
-	force = 10
-	force_wielded = 22
-	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH)
-	gripped_intents = list(DUMP_INTENT,SPEAR_BASH,SPEAR_THRUST)
 	name = "pitchfork"
 	desc = "Compost, chaff, hay, it matters not."
 	icon_state = "pitchfork"
 	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
-	wlength = WLENGTH_LONG
+//	icon = 'icons/roguetown/weapons/64.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	blade_dulling = DULLING_BASHCHOP
 	walking_stick = TRUE
 	minstr = 6
-	wdefense = 2
 	var/list/forked = list()
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
+	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH)
+	gripped_intents = list(DUMP_INTENT,SPEAR_BASH,SPEAR_THRUST)
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
 	thrown_bclass = BCLASS_STAB
 	throwforce = 15
+
+	force = 10
+	force_wielded = 22
+	wdefense = 2
+	wlength = WLENGTH_LONG
 
 /obj/item/rogueweapon/pitchfork/getonmobprop(tag)
 	. = ..()
@@ -398,8 +402,7 @@
 "wflip" = 8,
 "eflip" = 1)
 			if("onbelt")
-				return list("shrink" = 0.4,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-
+				return list("shrink" = 0.5,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /datum/intent/pforkdump
 	name = "scoop"

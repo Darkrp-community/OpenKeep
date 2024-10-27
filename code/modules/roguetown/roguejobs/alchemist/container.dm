@@ -57,13 +57,14 @@
 	list_reagents = list(/datum/reagent/buff/speed = 30)
 
 //////////////////////////
-/// ALCOHOLIC BOTTLES ///
+/// ALCOHOLIC BOTTLES ///	- add fancy var to retain custom descriptions when corking
 //////////////////////////
 
 // BEER - Cheap, Plentiful, Saviours of Family Life
 /obj/item/reagent_containers/glass/bottle/rogue/beer
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 70)
 	desc = "A bottle that contains a generic housebrewed small-beer. It has an improvised corkseal made of hardened clay."
+	fancy = TRUE
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/spottedhen
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/spottedhen = 70)
@@ -76,7 +77,7 @@
 /obj/item/reagent_containers/glass/bottle/rogue/beer/ratkept
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/onion = 70)
 	desc = "A bottle with surprisingly no cork-seal. On the glass is carved the word \"ONI-N\", the 'O' seems to have been scratched out completely. Dubious. On the glass is a paper glued to it showing an illustration of rats guarding a cellar filled with bottles against a hoard of beggars."
-  
+
 /obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/hagwoodbitter = 70)
 	desc = "A bottle with the hagwood bitters cork-seal. The least bitter thing to be exported from the Grenzelhoft occupied state of Zorn."
@@ -105,11 +106,12 @@
 /obj/item/reagent_containers/glass/bottle/rogue/wine
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/wine = 70)
 	desc = "A bottle that contains a generic red-wine, likely from Zybantu. It has a red-clay cork-seal."
+	fancy = TRUE
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/sourwine = 70)
 	desc = "A bottle that contains a Grenzelhoftian classic with a black ink cork-seal.. An extremely sour wine that is watered down with mineral water."
-  
+
 /obj/item/reagent_containers/glass/bottle/rogue/redwine
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/redwine = 70)
 	desc = "A bottle with the Valorian Merchant Guild cork-seal. This one appears to be labelled as a relatively young red-wine from the coinlord state."

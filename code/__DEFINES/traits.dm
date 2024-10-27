@@ -35,11 +35,13 @@
 #define TRAIT_BARDIC_TRAINING			"Bardic Training"
 #define TRAIT_GRAVEROBBER				"Graverobber"	// Prevents getting the cursed debuff when unearthing a grave, but permanent -1 LUC to whoever has it.
 
-#define TRAIT_MISSING_NOSE "Missing Nose" //halved stamina regeneration
-#define TRAIT_DISFIGURED "Disfigured"
-#define TRAIT_SPELLCOCKBLOCK "Bewitched" //prevents spellcasting
-#define TRAIT_ANTIMAGIC	"Anti-Magic"
-#define TRAIT_SHOCKIMMUNE "Shock Immunity"
+#define TRAIT_BLESSED					"Once blessed"	// prevents blessings stackings
+#define TRAIT_MIRACULOUS_FORAGING		"Miracle Foraging"	// makes bushes much more generous
+#define TRAIT_MISSING_NOSE				"Missing Nose" //halved stamina regeneration
+#define TRAIT_DISFIGURED				"Disfigured"
+#define TRAIT_SPELLCOCKBLOCK			"Bewitched" //prevents spellcasting
+#define TRAIT_ANTIMAGIC					"Anti-Magic"
+#define TRAIT_SHOCKIMMUNE				"Shock Immunity"
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -84,7 +86,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
 	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
 	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments.",
-	TRAIT_INTRAINING = "I'm going to be a knight someday!",
+	TRAIT_INTRAINING = "I'm going to be a knight someday! I can use training dummies more effectively than others.",
 	TRAIT_GRAVEROBBER = "Necra favors my grim deeds, I can unearth graves without being cursed by her."
 	))
 

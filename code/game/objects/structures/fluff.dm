@@ -195,7 +195,7 @@
 
 
 /obj/structure/fluff/railing/Initialize()
-	..()
+	. = ..()
 	var/lay = getwlayer(dir)
 	if(lay)
 		layer = lay
@@ -226,7 +226,7 @@
 		if(!(M.mobility_flags & MOBILITY_STAND))
 			if(passcrawl)
 				return TRUE
-	if(icon_state == "woodrailing" && dir in CORNERDIRS)
+	if(icon_state == "woodrailing" && (dir in CORNERDIRS))
 		var/list/baddirs = list()
 		switch(dir)
 			if(SOUTHEAST)
@@ -257,7 +257,7 @@
 		if(!(M.mobility_flags & MOBILITY_STAND))
 			if(passcrawl)
 				return TRUE
-	if(icon_state == "woodrailing" && dir in CORNERDIRS)
+	if(icon_state == "woodrailing" && (dir in CORNERDIRS))
 		var/list/baddirs = list()
 		switch(dir)
 			if(SOUTHEAST)
@@ -315,7 +315,7 @@
 	climb_offset = 6
 
 /obj/structure/fluff/railing/fence/Initialize()
-	..()
+	. = ..()
 	smooth_fences()
 
 /obj/structure/fluff/railing/fence/Destroy()
@@ -384,8 +384,7 @@
 		return 1
 	if(mover.throwing && !ismob(mover))
 		return prob(66)
-	return !density
-	..()
+	return ..()
 
 /obj/structure/bars/bent
 	icon_state = "barsbent"
@@ -982,6 +981,11 @@
 			return
 	..()
 
+//..................................................................................................................................
+/*-------------------\
+|  Shrines & Crosses |
+\-------------------*/
+
 /obj/structure/fluff/statue/spider
 	name = "arachnid idol"
 	desc = "A stone idol of a spider with the head of a smirking elven woman. Her eyes seem to follow you."
@@ -1031,7 +1035,7 @@
 							I = new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(user.loc)
 						if(2)
 							if(HAS_TRAIT(user, TRAIT_MEDIUMARMOR))
-								I = new /obj/item/clothing/suit/roguetown/armor/plate/scale(user.loc)
+								I = new /obj/item/clothing/suit/roguetown/armor/medium/scale(user.loc)
 							else
 								I = new /obj/item/clothing/suit/roguetown/armor/chainmail/iron(user.loc)
 						if(4)
@@ -1079,6 +1083,7 @@
 	dir = NORTH
 	buckle_requires_restraints = 1
 	buckle_prevents_pull = 1
+	var/shrine = FALSE	// used for some checks
 
 /obj/structure/fluff/psycross/post_buckle_mob(mob/living/M)
 	..()
@@ -1090,16 +1095,22 @@
 	M.reset_offsets("bed_buckle")
 
 /obj/structure/fluff/psycross/CanPass(atom/movable/mover, turf/target)
-	if(get_dir(loc, mover) == dir)
+	if(shrine)
+		return
+	else if(get_dir(loc, mover) == dir)
 		return 0
-	return !density
+	else
+		return !density
 
 /obj/structure/fluff/psycross/CheckExit(atom/movable/O, turf/target)
-	if(get_dir(O.loc, target) == dir)
+	if(shrine)
+		return
+	else if(get_dir(O.loc, target) == dir)
 		return 0
-	return !density
+	else
+		return !density
 
-/obj/structure/fluff/psycross/copper
+/obj/structure/fluff/psycross/copper	// the big nice on in the Temple, destroying it triggers Omens. Not so for the craftable ones.
 	name = "pantheon cross"
 	icon_state = "psycrosschurch"
 	break_sound = null
@@ -1110,6 +1121,24 @@
 	name = "wooden pantheon cross"
 	icon_state = "psycrosscrafted"
 	chance2hear = 10
+
+/obj/structure/fluff/psycross/crafted/shrine
+	density = TRUE
+	plane = -1	// to keep the 3d effect when mob behind it
+	layer = 4.1
+	can_buckle = FALSE
+	dir = SOUTH
+	shrine = TRUE
+
+/obj/structure/fluff/psycross/crafted/shrine/dendor_volf
+	name = "shrine to Dendor"
+	desc = "The life force of a Volf has consecrated this holy place.<br/> Present several blood bait here to craft a worthy sacrifice."
+	icon_state = "shrine_dendor_volf"
+
+/obj/structure/fluff/psycross/crafted/shrine/dendor_saiga
+	name = "shrine to Dendor"
+	desc = "The life force of a Saiga has consecrated this holy place.<br/> Present jacksberries, westleach leaves, and silk grubs for crafting a worthy sacrifice."
+	icon_state = "shrine_dendor_saiga"
 
 /obj/structure/fluff/psycross/attackby(obj/item/W, mob/user, params)
 	if(user.mind)
@@ -1210,6 +1239,8 @@
 					return
 	return ..()
 
+
+
 /obj/structure/fluff/psycross/copper/Destroy()
 	addomen("psycross")
 	..()
@@ -1241,6 +1272,8 @@
 		var/diff = power - M.confused
 		M.confused += min(power, diff)
 
+
+//================================
 /obj/structure/fluff/beach_towel
 	name = "beach towel"
 	desc = ""

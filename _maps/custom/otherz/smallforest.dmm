@@ -71,7 +71,7 @@
 	},
 /area/rogue/outdoors/woods)
 "aq" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/river{
 	dir = 4
 	},
@@ -89,7 +89,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "aC" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/water/swamp,
 /area/rogue/outdoors/woods)
 "aD" = (
@@ -122,7 +122,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "aO" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/swamp,
 /area/rogue/outdoors/woods)
 "aQ" = (

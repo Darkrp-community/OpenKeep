@@ -1500,7 +1500,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "fz" = (
-/obj/structure/chair/wood/rogue/throne,
+/obj/structure/chair/bench/throne,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "fA" = (
@@ -5812,7 +5812,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "tF" = (
-/obj/structure/flora/roguetree/stump/burnt,
+/obj/structure/table/wood/treestump/burnt,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "tG" = (
@@ -6109,11 +6109,11 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/shop)
 "uN" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "uO" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "uP" = (
@@ -6520,7 +6520,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "wk" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "wl" = (
@@ -6627,7 +6627,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "wG" = (
-/obj/structure/flora/roguetree/stump/burnt,
+/obj/structure/table/wood/treestump/burnt,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "wH" = (
@@ -6652,7 +6652,7 @@
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/suit/roguetown/armor/leather/vest,
 /obj/item/clothing/shoes/roguetown/boots/leather,
-/obj/item/clothing/suit/roguetown/armor/armordress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/dwarfin)
 "wM" = (
@@ -6734,7 +6734,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "xe" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "xf" = (
@@ -8558,7 +8558,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
 "Da" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "Db" = (
@@ -8577,7 +8577,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
 "De" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "Df" = (
@@ -8618,7 +8618,7 @@
 /turf/open/water/sewer,
 /area/rogue/outdoors/rtfield)
 "Dn" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/rtfield)
 "Do" = (
@@ -8655,7 +8655,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
 "Du" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/sewer,
 /area/rogue/outdoors/rtfield)
 "Dv" = (
@@ -9955,7 +9955,7 @@
 "HO" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/clothing/head/roguetown/helmet/leather,
-/obj/item/clothing/head/roguetown/roguehood,
+/obj/item/clothing/head/roguetown/roguehood/random,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "HP" = (

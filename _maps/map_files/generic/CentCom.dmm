@@ -326,8 +326,8 @@
 /obj/item/clothing/suit/roguetown/armor/gambeson,
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy,
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy,
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord,
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord,
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming,
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "aK" = (
@@ -1425,7 +1425,7 @@
 	dir = 1;
 	icon_state = "largetable_mid"
 	},
-/mob/living/simple_animal/pet/cat/black,
+/mob/living/simple_animal/pet/cat/rogue/black,
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/vampire_manor)
 "eU" = (
@@ -1568,13 +1568,13 @@
 /obj/item/grown/log/tree/stick,
 /obj/item/grown/log/tree/stick,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "ht" = (
 /obj/machinery/anvil/crafted,
 /obj/item/rogueweapon/hammer,
 /obj/item/rogueweapon/tongs,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "hy" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/keyring,
@@ -1624,10 +1624,10 @@
 /area/rogue)
 "hS" = (
 /obj/structure/table/wood/fancy/red,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc,
+/obj/item/clothing/suit/roguetown/armor/plate/orc,
+/obj/item/clothing/suit/roguetown/armor/plate/orc,
+/obj/item/clothing/suit/roguetown/armor/plate/orc,
+/obj/item/clothing/suit/roguetown/armor/plate/orc,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "hX" = (
@@ -1831,7 +1831,7 @@
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/indoors/bandit_lair)
 "mx" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog/inhumen_camp)
 "mO" = (
@@ -1981,7 +1981,7 @@
 "nN" = (
 /obj/machinery/light/rogue/forge,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "nO" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -2036,6 +2036,7 @@
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/rogueore/gold,
 /obj/item/reagent_containers/powder/moondust,
+/obj/item/clothing/head/roguetown/helmet/heavy/sinistar,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "oI" = (
@@ -2044,7 +2045,7 @@
 "oV" = (
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "pa" = (
 /obj/item/rogueweapon/flail,
 /obj/item/rogueweapon/flail,
@@ -2089,7 +2090,7 @@
 "pu" = (
 /obj/structure/fluff/grindwheel,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "pA" = (
 /obj/effect/landmark/vteleportsending,
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
@@ -2291,6 +2292,10 @@
 	},
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/vampire_manor)
+"rt" = (
+/obj/item/rogueweapon/hoe,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "rw" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/vampire_manor)
@@ -2328,6 +2333,10 @@
 /obj/item/rogueweapon/huntingknife/cleaver,
 /turf/open/floor/rogue/tile/checker_green,
 /area/rogue)
+"sb" = (
+/obj/item/rogueweapon/pitchfork,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "sf" = (
 /obj/structure/bed/rogue/bear,
 /turf/open/floor/rogue/dirt/road,
@@ -2545,10 +2554,10 @@
 /area/rogue/indoors)
 "vd" = (
 /obj/structure/table/wood/fancy/red,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord,
-/obj/item/clothing/suit/roguetown/armor/cuirass/iron/orc/warlord,
+/obj/item/clothing/suit/roguetown/armor/plate/orc/warlord,
+/obj/item/clothing/suit/roguetown/armor/plate/orc/warlord,
+/obj/item/clothing/suit/roguetown/armor/plate/orc/warlord,
+/obj/item/clothing/suit/roguetown/armor/plate/orc/warlord,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "ve" = (
@@ -2571,6 +2580,10 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors)
+"vj" = (
+/obj/item/rogueweapon/thresher/military,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "vk" = (
 /obj/structure/table/wood{
 	dir = 5;
@@ -2722,19 +2735,19 @@
 /area/rogue)
 "xO" = (
 /obj/structure/table/wood/fancy/black,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman{
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman{
 	desc = "A rough jacket worn by Guild Officials.";
 	name = "Guild Jacket"
 	},
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman{
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman{
 	desc = "A rough jacket worn by Guild Officials.";
 	name = "Guild Jacket"
 	},
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman{
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman{
 	desc = "A rough jacket worn by Guild Officials.";
 	name = "Guild Jacket"
 	},
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman{
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman{
 	desc = "A rough jacket worn by Guild Officials.";
 	name = "Guild Jacket"
 	},
@@ -2755,7 +2768,7 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "yb" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "yd" = (
@@ -2822,7 +2835,7 @@
 /area/rogue/indoors/bandit_lair)
 "yR" = (
 /turf/closed/wall/mineral/rogue/wood,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "zc" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/roguecoin/silver/pile,
@@ -2861,8 +2874,8 @@
 /area/rogue/indoors/vampire_manor)
 "zn" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/clothing/suit/roguetown/armor/heartfelt/hand,
-/obj/item/clothing/suit/roguetown/armor/heartfelt/lord,
+/obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/hand,
+/obj/item/clothing/suit/roguetown/armor/medium/surcoat,
 /obj/item/clothing/suit/roguetown/armor/plate/vampire,
 /obj/item/clothing/suit/roguetown/armor/plate/blkknight,
 /turf/open/floor/rogue/carpet,
@@ -3079,7 +3092,7 @@
 /area/rogue/outdoors/woods)
 "DA" = (
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "Eg" = (
 /obj/structure/table/wood/fancy/orange,
 /obj/item/clothing/suit/roguetown/armor/rare/dwarfplate,
@@ -3110,11 +3123,11 @@
 /area/rogue/outdoors/bog/inhumen_camp)
 "Ev" = (
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "Ew" = (
 /obj/item/roguebin/water,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "EC" = (
 /obj/structure/toilet,
 /turf/open/floor/rogue/dirt/road,
@@ -3160,7 +3173,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "Fs" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /obj/item/flashlight/flare/torch,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog/inhumen_camp)
@@ -3248,7 +3261,11 @@
 	pixel_y = -1
 	},
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
+"GP" = (
+/obj/item/rogueweapon/shovel,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "GS" = (
 /obj/structure/fluff/clodpile,
 /turf/open/floor/rogue/dirt/road,
@@ -3401,18 +3418,18 @@
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher,
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher,
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/hand,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/hand,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/hand,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/hand,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/hand,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/hand,
 /obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep,
 /obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep,
 /obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman,
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/sea,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/sea,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/sea,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman,
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman,
 /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan,
 /turf/open/floor/rogue/wood,
 /area/rogue)
@@ -3538,7 +3555,7 @@
 	pixel_y = -1
 	},
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "KM" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 1
@@ -3642,6 +3659,10 @@
 /obj/structure/mineral_door/swing_door,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue)
+"Mw" = (
+/obj/item/rogueweapon/sickle,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "MF" = (
 /obj/structure/giantfur{
 	pixel_y = -16
@@ -3792,7 +3813,7 @@
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/stoneaxe,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "Ph" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors)
@@ -3972,9 +3993,9 @@
 /area/rogue)
 "Rr" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/clothing/suit/roguetown/armor/plate/scale,
-/obj/item/clothing/suit/roguetown/armor/plate/scale,
-/obj/item/clothing/suit/roguetown/armor/plate/scale,
+/obj/item/clothing/suit/roguetown/armor/medium/scale,
+/obj/item/clothing/suit/roguetown/armor/medium/scale,
+/obj/item/clothing/suit/roguetown/armor/medium/scale,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "Rt" = (
@@ -4025,7 +4046,7 @@
 "Se" = (
 /obj/machinery/light/rogue/smelter,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "Sm" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/ruinedwood/turned/darker,
@@ -4089,8 +4110,8 @@
 	dir = 1;
 	icon_state = "largetable_mid"
 	},
-/obj/item/clothing/head/roguetown/dendormask,
-/obj/item/clothing/head/roguetown/eoramask,
+/obj/item/clothing/mask/rogue/druid,
+/obj/item/clothing/head/roguetown/padded/rabbetvisage,
 /obj/item/clothing/head/roguetown/priestmask,
 /turf/open/floor/rogue/wood,
 /area/rogue)
@@ -4100,7 +4121,7 @@
 	icon_state = "longtable"
 	},
 /obj/item/clothing/head/roguetown/menacing,
-/obj/item/clothing/head/roguetown/necrahood,
+/obj/item/clothing/head/roguetown/padded/deathshroud,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "Tz" = (
@@ -4381,10 +4402,10 @@
 /area/rogue/indoors/bandit_lair)
 "Wc" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/clothing/suit/roguetown/armor/armordress,
-/obj/item/clothing/suit/roguetown/armor/armordress,
-/obj/item/clothing/suit/roguetown/armor/armordress/alt,
-/obj/item/clothing/suit/roguetown/armor/armordress/alt,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "We" = (
@@ -4446,7 +4467,7 @@
 "WI" = (
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "WL" = (
 /obj/structure/flora/roguetree,
 /turf/open/floor/rogue/grass,
@@ -4473,7 +4494,7 @@
 /obj/item/rogueore/iron,
 /obj/item/rogueore/iron,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/town/dwarfin)
+/area/rogue/indoors/bandit_lair)
 "Xp" = (
 /obj/structure/table/wood{
 	dir = 5;
@@ -4522,8 +4543,8 @@
 /area/rogue)
 "Yc" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/clothing/suit/roguetown/armor/chainmail/chainkini,
-/obj/item/clothing/suit/roguetown/armor/chainmail/chainkini,
+/obj/item/clothing/suit/roguetown/armor/amazon_chainkini,
+/obj/item/clothing/suit/roguetown/armor/amazon_chainkini,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "Yh" = (
@@ -4553,11 +4574,19 @@
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
+"Yx" = (
+/obj/item/rogueweapon/thresher,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "YC" = (
 /obj/structure/table/wood/plain,
 /obj/structure/fluff/millstone,
 /turf/open/floor/rogue/tile/checker_green,
 /area/rogue)
+"YH" = (
+/obj/item/rogueweapon/shovel/small,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "YJ" = (
 /obj/item/reagent_containers/food/condiment/milk,
 /obj/item/reagent_containers/food/condiment/milk,
@@ -10157,9 +10186,9 @@ ee
 SW
 aG
 an
+YH
 RH
-RH
-RH
+vj
 eX
 Lt
 Lt
@@ -10287,9 +10316,9 @@ aM
 aN
 aN
 an
+GP
 RH
-RH
-RH
+Yx
 Lt
 Ix
 sZ
@@ -10417,9 +10446,9 @@ an
 an
 an
 vq
-RH
-RH
-RH
+rt
+Mw
+sb
 RP
 Dt
 sZ

@@ -82,10 +82,12 @@
 		checkmarriage = TRUE
 	if(patriarch && matriarch && checkmarriage)
 		patriarch.MarryTo(matriarch)
+		//This goes through the family and "logically" sorts out true heirs to step children.
+		BloodTies()
 	//Adds a preset hud icon to the heritage datum. Helps with rapidly adding the icon to family members UI.
 	AddFamilyIcon(person)
-	//This goes through the family and "logically" sorts out true heirs to bastards.
-	BloodTies()
+	//Applys latejoin UI to family members with the UI on. Optimize later. -IP
+	LateJoinAddToUI(person)
 
 /*
 * Returns text to human examine
@@ -107,22 +109,50 @@
 	* perspective is looker looking at lookee.
 	*/
 	var/txt = ""
-	if(familialrole_a == FAMILY_FATHER || familialrole_a == FAMILY_MOTHER)
-		if(familialrole_b == FAMILY_PROGENY)
+	//With the addition of uncle/aunt this does look a bit like spagetti code.
+	//Perspective Mother/Father
+	if(familialrole_a in list(FAMILY_FATHER, FAMILY_MOTHER))
+		if(familialrole_b in FAMILY_PROGENY)
 			txt += "It's my progeny."
+		if(familialrole_b == FAMILY_OMMER)
+			txt += "It's my sibling."
+		if(familialrole_b == FAMILY_INLAW)
+			switch(lookee.gender)
+				if(MALE)
+					txt += "It's my son in law."
+				if(FEMALE)
+					txt += "It's my daughter in law."
 		if(familialrole_b == FAMILY_ADOPTED)
 			if(looker.dna.species.type == lookee.dna.species.type)
 				txt += "It's my bastard."
 			else
 				txt += "It's the adopted one."
 
-	if(familialrole_a == FAMILY_PROGENY || familialrole_a == FAMILY_ADOPTED)
+	//Perspective Offspring
+	if(familialrole_a in list(FAMILY_PROGENY, FAMILY_ADOPTED))
+		if(familialrole_b in list(FAMILY_PROGENY, FAMILY_ADOPTED))
+			txt += "It's my sibling."
 		if(familialrole_b == FAMILY_FATHER)
 			txt += "It's my father."
 		if(familialrole_b == FAMILY_MOTHER)
 			txt += "It's my mother."
-		if(familialrole_b == FAMILY_PROGENY || familialrole_b == FAMILY_ADOPTED)
+		if(familialrole_b == FAMILY_OMMER)
+			switch(lookee.gender)
+				if(MALE)
+					txt += "It's my uncle."
+				if(FEMALE)
+					txt += "It's my aunt."
+
+	//Perspective Uncle/Aunt
+	if(familialrole_a == FAMILY_OMMER)
+		if(familialrole_b in list(FAMILY_FATHER, FAMILY_MOTHER, FAMILY_OMMER))
 			txt += "It's my sibling."
+		if(familialrole_b in list(FAMILY_PROGENY, FAMILY_ADOPTED))
+			switch(lookee.gender)
+				if(MALE)
+					txt += "It's my nephew."
+				if(FEMALE)
+					txt += "It's my niece."
 	if(txt == "")
 		return
 	return span_nicegreen("<B>[txt]</B>")
@@ -296,6 +326,12 @@
 			continue
 		iconer.family_UI = TRUE
 		iconer.client.images.Add(family_icons[H])
+
+//Sloppy bandaid way to apply latejoin family member icons.
+/datum/heritage/proc/LateJoinAddToUI(mob/living/carbon/human/new_fam)
+	for(var/mob/living/carbon/human/H in family)
+		if(H.family_UI && H.client)
+			H.client.images.Add(family_icons[new_fam])
 
 //Adds family icon to the list.
 /datum/heritage/proc/AddFamilyIcon(mob/living/carbon/human/famicon)

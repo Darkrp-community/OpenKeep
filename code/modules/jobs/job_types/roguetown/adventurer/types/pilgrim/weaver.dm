@@ -28,7 +28,7 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	beltr = /obj/item/rogueweapon/huntingknife/idagger
+	beltr = /obj/item/rogueweapon/huntingknife/villager
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	beltl = /obj/item/needle
 	backpack_contents = list(/obj/item/natural/cloth = 1, /obj/item/natural/cloth = 1, /obj/item/natural/bundle/fibers = 1, /obj/item/needle = 1)

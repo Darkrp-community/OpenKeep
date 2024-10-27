@@ -286,9 +286,9 @@
 	icon_state = "snowman"
 
 /obj/structure/statue/snow/snowlegion
-    name = "snowlegion"
-    desc = ""
-    icon_state = "snowlegion"
+	name = "snowlegion"
+	desc = ""
+	icon_state = "snowlegion"
 
 ///////////////////////////////bronze///////////////////////////////////
 

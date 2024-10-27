@@ -15,7 +15,7 @@
 		"Aasimar"
 	)
 	tutorial = "Chores, exercise, prayer... and more chores. You are a humble acolyte at the temple in Rockhill, not yet a trained guardian or an ordained priest. But who else would keep the fires lit and the floors clean?"
-	allowed_patrons = ALL_CLERIC_PATRONS
+	allowed_patrons = ALL_TEMPLE_PATRONS
 	outfit = /datum/outfit/job/roguetown/monk
 
 	display_order = JDO_MONK
@@ -34,7 +34,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/roguekey/church
-	backl = /obj/item/rogueweapon/woodstaff
+	backl = /obj/item/rogueweapon/woodstaff/quarterstaff
 	backpack_contents = list(/obj/item/needle)
 	switch(A.name)
 		if("Astrata")
@@ -43,18 +43,14 @@
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
-		if("Dendor")
-			head = /obj/item/clothing/head/roguetown/dendormask
-			neck = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 		if("Necra")
-			head = /obj/item/clothing/head/roguetown/necrahood
+			head = /obj/item/clothing/head/roguetown/padded/deathshroud
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
 		if("Eora")
-			head = /obj/item/clothing/head/roguetown/roguehood/eora
+			head = /obj/item/clothing/head/roguetown/padded/rabbetvisage
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/eora
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
@@ -66,16 +62,16 @@
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 		if("Pestra")
-			head = /obj/item/clothing/head/roguetown/roguehood
+			head = /obj/item/clothing/head/roguetown/roguehood/brown
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/green
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
 		else // Failsafe
-			head = /obj/item/clothing/head/roguetown/roguehood
+			head = /obj/item/clothing/head/roguetown/roguehood/random
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver
 			shoes = /obj/item/clothing/shoes/roguetown/boots
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/plain
 
 
 	if(H.mind)

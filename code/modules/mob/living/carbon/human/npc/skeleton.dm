@@ -4,7 +4,7 @@
 	race = /datum/species/human/northern
 	gender = MALE
 	bodyparts = list(/obj/item/bodypart/chest, /obj/item/bodypart/head, /obj/item/bodypart/l_arm,
-					 /obj/item/bodypart/r_arm, /obj/item/bodypart/r_leg, /obj/item/bodypart/l_leg)
+					/obj/item/bodypart/r_arm, /obj/item/bodypart/r_leg, /obj/item/bodypart/l_leg)
 	faction = list("undead")
 	var/skel_outfit = /datum/outfit/job/roguetown/npc/skeleton
 	ambushable = FALSE
@@ -105,44 +105,33 @@
 	H.STASPD = 8
 	H.STACON = 8
 	H.STAEND = 8
-	var/loadout = rand(1,6)
+	var/loadout = rand(1,7)
+	head = /obj/item/clothing/head/roguetown/roguehood/random
+	pants = /obj/item/clothing/under/roguetown/tights/vagrant
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 	switch(loadout)
 		if(1) //Axe Warrior
 			r_hand = /obj/item/rogueweapon/woodcut
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
+			head = /obj/item/clothing/head/roguetown/knitcap
 		if(2) //Long Stick Fighter
 			r_hand = /obj/item/rogueweapon/woodstaff
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
 		if(3) //Club Caveman
 			r_hand = /obj/item/rogueweapon/mace/woodclub
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
 		if(4) //Stabbity Stabbity your Knight is now horizontality
 			r_hand =/obj/item/rogueweapon/pitchfork
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
+			head = /obj/item/clothing/head/roguetown/strawhat
 		if(5) //Bonk Build
 			r_hand = /obj/item/rogueweapon/thresher
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
 		if(6) //Bonk Build
 			r_hand = /obj/item/rogueweapon/hoe
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
+			head = /obj/item/clothing/head/roguetown/fisherhat
+		if(7) //Ex Wife
+			r_hand = /obj/item/cooking/pan
+			head = /obj/item/clothing/head/roguetown/armingcap
+			shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/brown
+
 
 ///////////////////////////////////////////////////////////// EVENTMIN SKELETONGS
 /mob/living/carbon/human/species/skeleton/npc/ambush/after_creation()
@@ -179,7 +168,7 @@
 	if(prob(50))
 		head = /obj/item/clothing/head/roguetown/helmet/leather
 	if(prob(50))
-		head = /obj/item/clothing/head/roguetown/roguehood
+		head = /obj/item/clothing/head/roguetown/roguehood/random
 	if(prob(50))
 		r_hand = /obj/item/rogueweapon/sword/iron
 	else
@@ -287,13 +276,13 @@
 	configure_mind()
 
 /mob/living/carbon/human/species/skeleton/npc/warrior/skilled/proc/configure_mind()
-    if(!mind)
-        mind = new /datum/mind(src)
+	if(!mind)
+		mind = new /datum/mind(src)
 
-    mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)

@@ -14,7 +14,7 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
@@ -25,20 +25,23 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
+	neck = /obj/item/storage/belt/rogue/pouch/amazon
 	belt = /obj/item/storage/belt/rogue/leather/rope
+	beltl = /obj/item/gun/ballistic/revolver/grenadelauncher/blowgun
 	shoes = /obj/item/clothing/shoes/roguetown/gladiator
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
+	armor = /obj/item/clothing/suit/roguetown/armor/amazon_chainkini
+
 	var/weapontype = pickweight(list("Sword" = 3, "Spear" = 7))
 	switch(weapontype)
 		if("Sword")
-			beltr = /obj/item/rogueweapon/sword/iron
+			var/obj/item/rogueweapon/sword/iron/short/P = new()
+			H.put_in_hands(P, forced = TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		if("Spear")
-			r_hand = /obj/item/rogueweapon/spear
+			var /obj/item/rogueweapon/spear/P = new()
+			H.put_in_hands(P, forced = TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
-	if(prob(45))
-		backr = /obj/item/storage/backpack/rogue/satchel
 	if(prob(50))
 		shoes = /obj/item/clothing/shoes/roguetown/boots
 	H.change_stat("strength", 2)
@@ -48,4 +51,3 @@
 	H.change_stat("speed", 1)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
-

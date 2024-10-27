@@ -87,7 +87,7 @@
 	},
 /area/rogue/indoors/town/tavern)
 "ar" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/rtfield)
 "as" = (
@@ -904,7 +904,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church)
 "dt" = (
-/obj/structure/chair/wood/rogue/throne,
+/obj/structure/chair/bench/throne,
 /obj/effect/landmark/start/prince,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
@@ -1897,7 +1897,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "gZ" = (
-/obj/structure/flora/roguetree/stump/burnt,
+/obj/structure/table/wood/treestump/burnt,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "ha" = (
@@ -3073,7 +3073,7 @@
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors/town/shop)
 "lq" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "lr" = (
@@ -3202,7 +3202,7 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/dwarfin)
 "lR" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "lS" = (
@@ -3805,7 +3805,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "oh" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "oi" = (
@@ -3819,7 +3819,7 @@
 	},
 /area/rogue/outdoors/mountains)
 "ol" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "om" = (
@@ -3827,7 +3827,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
 "on" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "op" = (
@@ -3948,7 +3948,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "oL" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "oM" = (
@@ -3959,7 +3959,7 @@
 /area/rogue/outdoors/town)
 "oN" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord,
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "oO" = (
@@ -4912,7 +4912,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "se" = (
-/obj/structure/chair/wood/rogue/throne,
+/obj/structure/chair/bench/throne,
 /obj/effect/landmark/start/lady,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
@@ -7290,7 +7290,7 @@
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/suit/roguetown/armor/leather/vest,
 /obj/item/clothing/shoes/roguetown/boots/leather,
-/obj/item/clothing/suit/roguetown/armor/armordress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/dwarfin)
 "AX" = (
@@ -8506,7 +8506,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "FH" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/sewer,
 /area/rogue/outdoors/rtfield)
 "FI" = (
@@ -9291,7 +9291,7 @@
 	},
 /area/rogue/outdoors/town)
 "IY" = (
-/obj/structure/flora/roguetree/stump/burnt,
+/obj/structure/table/wood/treestump/burnt,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "IZ" = (
@@ -9816,7 +9816,7 @@
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/outdoors/town)
 "Md" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/town)
 "Me" = (
@@ -9853,7 +9853,7 @@
 /turf/open/floor/rogue/blocks/paving,
 /area/rogue/under/town/basement)
 "Mm" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "Mn" = (
@@ -9986,7 +9986,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/garrison)
 "MW" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "MX" = (
@@ -10616,7 +10616,7 @@
 "Ra" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/clothing/head/roguetown/helmet/leather,
-/obj/item/clothing/head/roguetown/roguehood,
+/obj/item/clothing/head/roguetown/roguehood/random,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "Re" = (

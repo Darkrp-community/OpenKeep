@@ -120,9 +120,12 @@
 				C.head_update(src, forced = 1)
 
 			if(active_sound)
-				while(up)
-					playsound(src, "[active_sound]", 100, FALSE, 4)
-					sleep(15)
+				INVOKE_ASYNC(src, PROC_REF(visor_loop))
+
+/obj/item/clothing/head/helmet/proc/visor_loop()
+	while(up)
+		playsound(src, "[active_sound]", 100, FALSE, 4)
+		sleep(15)
 
 /obj/item/clothing/head/helmet/justice
 	name = "helmet of justice"

@@ -3197,7 +3197,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "akj" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/sewer,
 /area/rogue)
 "akk" = (
@@ -4999,7 +4999,7 @@
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/suit/roguetown/armor/leather/vest,
 /obj/item/clothing/shoes/roguetown/boots/leather,
-/obj/item/clothing/suit/roguetown/armor/armordress,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "apH" = (
@@ -5516,7 +5516,7 @@
 "arf" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/clothing/head/roguetown/helmet/leather,
-/obj/item/clothing/head/roguetown/roguehood,
+/obj/item/clothing/head/roguetown/roguehood/random,
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "arg" = (
@@ -6112,7 +6112,7 @@
 /area/rogue)
 "asZ" = (
 /obj/structure/closet/crate/roguecloset/lord,
-/obj/item/clothing/suit/roguetown/armor/gambeson/lord,
+/obj/item/clothing/suit/roguetown/armor/gambeson/arming,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "ata" = (
@@ -7971,7 +7971,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue)
 "ayO" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue)
 "ayP" = (
@@ -7994,7 +7994,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "ayT" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "ayU" = (
@@ -8143,7 +8143,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town)
 "azy" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
 "azz" = (
@@ -8211,7 +8211,7 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue)
 "azM" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "azN" = (
@@ -8550,7 +8550,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "aBc" = (
-/obj/structure/flora/roguetree/stump,
+/obj/structure/table/wood/treestump,
 /turf/open/floor/rogue/dirt,
 /area/rogue)
 "aBd" = (
@@ -8579,7 +8579,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "aBh" = (
-/obj/structure/flora/roguetree/stump/log,
+/obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt,
 /area/rogue)
 "aBi" = (
@@ -9793,7 +9793,7 @@
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/beach)
 "aEL" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/beach)
 "aEM" = (
@@ -9808,7 +9808,7 @@
 /turf/open/water/sewer,
 /area/rogue/under/cave)
 "aEP" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/water/sewer,
 /area/rogue/under/cave)
 "aEQ" = (
@@ -10380,7 +10380,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
 "aGB" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "aGC" = (
@@ -10436,7 +10436,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "aGM" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "aGN" = (
@@ -11619,7 +11619,7 @@
 	},
 /area/rogue/outdoors/rtfield)
 "bIB" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/beach)
 "bLa" = (
@@ -12203,7 +12203,7 @@
 /area/rogue/outdoors/beach)
 "gCd" = (
 /obj/structure/closet/crate/chest,
-/obj/item/clothing/suit/roguetown/armor/chainmail/chainkini,
+/obj/item/clothing/suit/roguetown/armor/amazon_chainkini,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cave)
 "gGu" = (
@@ -12746,7 +12746,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cave)
 "luK" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/beach)
 "lvS" = (
@@ -12953,7 +12953,7 @@
 	},
 /area/rogue)
 "nEU" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cave)
 "nGG" = (
@@ -13162,7 +13162,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
 "poI" = (
-/obj/structure/glowshroom,
+/obj/structure/kneestingers,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/beach)
 "ppV" = (
@@ -13989,7 +13989,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
 "vQk" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/beach)
 "vUC" = (

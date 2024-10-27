@@ -1,5 +1,5 @@
 // This mode will become the main basis for the typical roguetown round. Based off of chaos mode.
-var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "Bandits", "CANCEL") // This is mainly used for forcemgamemodes
+GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "Bandits", "CANCEL")) // This is mainly used for forcemgamemodes
 
 /datum/game_mode/chaosmode
 	name = "roguemode"
@@ -151,7 +151,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 			pick_cultist()
 			log_game("Major Antagonist: Cultists")
 		if(3)
-			if(num_players() >= 14) //as in 14 roundstart-ready players 
+			if(num_players() >= 14) //as in 14 roundstart-ready players
 				pick_vampires()
 				log_game("Major Antagonist: Vampire Lord")
 			else
@@ -297,7 +297,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_cultist()
-	var/remaining = 2 // 1 leader, 1 lackey :)
+	var/remaining = 3 // 1 leader, 2 lackeys :)
 	restricted_jobs = list("King",
 	"Queen",
 	"Merchant",
@@ -364,7 +364,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 /*	var/num_werewolves = rand(1,3)
 #ifdef TESTSERVER
 	num_werewolves = 100
-#endif*/
+#endif
+*/
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
 	if(antag_candidates.len)
 		var/datum/mind/werewolf = pick(antag_candidates)
@@ -462,7 +463,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 
 /datum/game_mode/chaosmode/make_antag_chance(mob/living/carbon/human/character) //klatejoin
 	return
-//******** VILLAINS
+/*
+// ******** VILLAINS
 	var/num_villains = round((num_players() * 0.30)+1, 1)
 	if((villains.len + pre_villains.len) >= num_villains) //Upper cap for number of latejoin antagonists
 		return
@@ -472,6 +474,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampire Lord", "Extended", "
 				if(!(character.job in restricted_jobs))
 					if(prob(66))
 						add_latejoin_villain(character.mind)
+*/
 
 /datum/game_mode/chaosmode/proc/add_latejoin_villain(datum/mind/character)
 	var/datum/antagonist/villain/new_antag = new /datum/antagonist/villain()

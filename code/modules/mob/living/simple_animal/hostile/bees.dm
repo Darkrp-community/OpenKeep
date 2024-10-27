@@ -143,7 +143,7 @@
 
 
 /mob/living/simple_animal/hostile/poison/bees/AttackingTarget()
- 	//Pollinate
+	//Pollinate
 	if(istype(target, /obj/machinery/hydroponics))
 		var/obj/machinery/hydroponics/Hydro = target
 		pollinate(Hydro)
@@ -231,7 +231,7 @@
 	return FALSE
 
 
-//leave pollination for the peasent bees
+//leave pollination for the peasant bees
 /mob/living/simple_animal/hostile/poison/bees/queen/AttackingTarget()
 	. = ..()
 	if(. && beegent && isliving(target))
@@ -240,7 +240,7 @@
 		L.reagents.add_reagent(beegent.type, rand(1,5))
 
 
-//PEASENT BEES
+//PEASANT BEES
 /mob/living/simple_animal/hostile/poison/bees/queen/pollinate()
 	return
 

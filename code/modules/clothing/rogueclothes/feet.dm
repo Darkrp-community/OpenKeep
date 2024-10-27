@@ -140,6 +140,7 @@
 	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 500
 	armor_class = ARMOR_CLASS_HEAVY
+	clothing_flags = CANT_SLEEP_IN
 	anvilrepair = /datum/skill/craft/armorsmithing
 	resistance_flags = FIRE_PROOF
 	pickup_sound = "rustle"
@@ -150,8 +151,8 @@
 
 /obj/item/clothing/shoes/roguetown/boots/armor/light
 	name = "light plate boots"
-	icon_state = "vboots"
-	item_state = "vboots"
+	icon_state = "soldierboots"
+	item_state = "soldierboots"
 	desc = "Lightly armored boots made from iron offering protection against both melee and ranged attacks."
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 250
@@ -186,9 +187,9 @@
 	sellprice = 20
 
 /obj/item/clothing/shoes/roguetown/boots/rare
-	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
-	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
-	sleeved = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
+	icon = 'icons/roguetown/clothing/Racial_Armour.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'
 	sleevetype = null
 	resistance_flags = FIRE_PROOF // All of these are plated
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
@@ -198,6 +199,7 @@
 	break_sound = 'sound/foley/breaksound.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	clothing_flags = CANT_SLEEP_IN
 	sellprice = 30
 
 /obj/item/clothing/shoes/roguetown/boots/rare/elfplate

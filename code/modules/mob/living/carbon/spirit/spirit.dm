@@ -9,7 +9,7 @@
 	mob_biotypes = MOB_SPIRIT|MOB_HUMANOID
 	gib_type = /obj/effect/decal/cleanable/blood/gibs
 	bodyparts = list(/obj/item/bodypart/chest/spirit, /obj/item/bodypart/head/spirit, /obj/item/bodypart/l_arm/spirit,
-					 /obj/item/bodypart/r_arm/spirit, /obj/item/bodypart/r_leg/spirit, /obj/item/bodypart/l_leg/spirit)
+					/obj/item/bodypart/r_arm/spirit, /obj/item/bodypart/r_leg/spirit, /obj/item/bodypart/l_leg/spirit)
 	hud_type = /datum/hud/spirit
 	var/paid = FALSE
 	var/beingmoved = FALSE
@@ -40,7 +40,7 @@
 	icon_state = "spiritpart"
 
 /mob/living/carbon/spirit/Initialize(mapload, cubespawned=FALSE, mob/spawner)
-	coin_upkeep()
+//	coin_upkeep()	costly and not needed with the give_patron_toll failsafe if maze is drained
 	verbs += /mob/living/proc/mob_sleep
 	verbs += /mob/living/proc/lay_down
 	ADD_TRAIT(src, TRAIT_PACIFISM, "status effects")
@@ -53,6 +53,7 @@
 	var/L = new /obj/item/flashlight/lantern/shrunken(src.loc)
 	put_in_hands(L)
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_BAREFOOT, 1, 2)
+	addtimer(CALLBACK(src, PROC_REF(give_patron_toll)), 10 MINUTES)
 
 /mob/living/carbon/spirit/create_internal_organs()
 	internal_organs += new /obj/item/organ/lungs
@@ -67,6 +68,23 @@
 
 /mob/living/carbon/spirit/Destroy()
 	return ..()
+
+
+/mob/living/carbon/spirit/IgniteMob() // Override so they don't catch on fire.
+	return
+
+/mob/living/carbon/spirit/proc/give_patron_toll()
+	if(QDELETED(src) || paid)
+		return
+	for(var/item in held_items)
+		if(istype(item, /obj/item/underworld/coin))
+			return
+	put_in_hands(new /obj/item/underworld/coin(get_turf(src)))
+	if(patron)
+		to_chat(src, "<span class='danger'>Your suffering has not gone unnoticed, [patron] has rewarded you with your toll.</span>")
+	else
+		to_chat(src, "<span class='danger'>Your suffering has not gone unnoticed, your patron has rewarded you with your toll.</span>")
+	playsound(src, 'sound/combat/caught.ogg', 80, TRUE, -1)
 
 /mob/living/carbon/spirit/updatehealth()
 	. = ..()

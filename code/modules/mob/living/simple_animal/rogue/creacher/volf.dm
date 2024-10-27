@@ -19,17 +19,16 @@
 						/obj/item/natural/fur/volf = 1,
 						/obj/item/alch/bone = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
-						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 1,
 						/obj/item/natural/fur/volf = 2,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
-						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 1,
 						/obj/item/natural/fur/volf = 3,
 						/obj/item/alch/sinew = 2,
-						/obj/item/alch/bone = 1)
+						/obj/item/alch/bone = 1,
+						/obj/item/natural/head/volf = 1)
 
 	health = VOLF_HEALTH
 	maxHealth = VOLF_HEALTH
@@ -154,4 +153,3 @@
 		if(BODY_ZONE_L_ARM)
 			return "foreleg"
 	return ..()
-

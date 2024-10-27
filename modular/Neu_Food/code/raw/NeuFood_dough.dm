@@ -25,7 +25,7 @@
 	if(istype(I, /obj/item/reagent_containers/powder/flour))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'modular/Neu_Food/sound/kneading.ogg', 100, TRUE, -1)
-			to_chat(user, "<span class='notice'>Kneading in more powder...</span>")
+			to_chat(user, span_notice("Kneading in more powder..."))
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/dough(loc)
 				qdel(I)
@@ -55,45 +55,45 @@
 	if(istype(I, /obj/item/reagent_containers/food/snacks/butterslice))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'modular/Neu_Food/sound/kneading_alt.ogg', 90, TRUE, -1)
-			to_chat(user, "<span class='notice'>Kneading butter into the dough...</span>")
+			to_chat(user, span_notice("Kneading butter into the dough..."))
 			if(do_after(user,long_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/butterdough(loc)
 				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to roll it out!</span>")
+			to_chat(user, span_warning("Put [src] on a table before working it!"))
 	if(istype(I, /obj/item/kitchen/rollingpin))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'modular/Neu_Food/sound/rollingpin.ogg', 100, TRUE, -1)
-			to_chat(user, "<span class='notice'>Rolling [src] into cracker dough.</span>")
+			to_chat(user, span_notice("Rolling [src] into cracker dough."))
 			if(do_after(user,long_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/foodbase/hardtack_raw(loc)
 				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to roll it out!</span>")
+			to_chat(user, span_warning("Put [src] on a table before working it!"))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/raisins/poison))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'modular/Neu_Food/sound/kneading.ogg', 100, TRUE, -1)
-			to_chat(user, "<span class='notice'>Kneading the dough and adding raisins...</span>")
+			to_chat(user, span_notice("Kneading the dough and adding raisins..."))
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/rbread_half_poison(loc)
 				qdel(I)
 				qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to roll it out!</span>")
+			to_chat(user, span_warning("Put [src] on a table before working it!"))
 	else if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/raisins))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'modular/Neu_Food/sound/kneading.ogg', 100, TRUE, -1)
-			to_chat(user, "<span class='notice'>Kneading the dough and adding raisins...</span>")
+			to_chat(user, span_notice("Kneading the dough and adding raisins..."))
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/rbread_half(loc)
 				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to roll it out!</span>")
+			to_chat(user, span_warning("Put [src] on a table before working it!"))
 	else
 		return ..()	
 
@@ -111,27 +111,39 @@
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
 		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
-	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese))
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese/gote))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'modular/Neu_Food/sound/kneading_alt.ogg', 90, TRUE, -1)
-			to_chat(user, "<span class='notice'>Adding fresh cheese...</span>")
+			to_chat(user, span_notice("Adding fresh gote cheese..."))
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/foodbase/cheesebun_raw(loc)
 				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to roll it out!</span>")
+			to_chat(user, span_warning("You need to put [src] on a table to knead in the [I]!"))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/doughslice))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'modular/Neu_Food/sound/kneading.ogg', 100, TRUE, -1)
-			to_chat(user, "<span class='notice'>Combining dough...</span>")
+			to_chat(user, span_notice("Combining dough..."))
 			if(do_after(user,short_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/dough(loc)
 				qdel(I)
 				qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to roll it out!</span>")
+			to_chat(user, span_warning("Put [src] on a table before working it!"))
+	else if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese))
+		if(isturf(loc)&& (found_table))
+			playsound(get_turf(user), 'modular/Neu_Food/sound/kneading_alt.ogg', 90, TRUE, -1)
+			to_chat(user, span_notice("Adding fresh cheese..."))
+			if(do_after(user,short_cooktime, target = src))
+				new /obj/item/reagent_containers/food/snacks/rogue/foodbase/cheesebun_raw(loc)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
+				qdel(I)
+				qdel(src)
+		else
+			to_chat(user, span_warning("You need to put [src] on a table to knead in the [I]!"))
+
 	else
 		return ..()
 
@@ -161,7 +173,7 @@
 	if(istype(I, /obj/item/reagent_containers/food/snacks/egg))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
-			to_chat(user, "<span class='notice'>Working cackleberry into the dough, shaping it into a cake...</span>")
+			to_chat(user, span_notice("Working cackleberry into the dough, shaping it into a cake..."))
 			playsound(get_turf(user), 'modular/Neu_Food/sound/eggbreak.ogg', 100, TRUE, -1)
 			if(do_after(user,long_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/cake_base(loc)
@@ -169,7 +181,7 @@
 				qdel(I)
 				qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to roll it out!</span>")
+			to_chat(user, span_warning("Put [src] on a table before working it!"))
 	else
 		return ..()
 
@@ -199,7 +211,7 @@
 				qdel(src)
 				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to roll it out!</span>")
+			to_chat(user, span_warning("Put [src] on a table before working it!"))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/raisins/poison))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
@@ -210,7 +222,7 @@
 				qdel(src)
 				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to work it.</span>")
+			to_chat(user, span_warning("Put [src] on a table before working it!"))
 	if(I.get_sharpness())
 		if(!isdwarf(user))
 			to_chat(user, "<span class='warning'>You lack knowledge of dwarven pastries!</span>")
@@ -224,7 +236,7 @@
 					qdel(src)
 					user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			else
-				to_chat(user, "<span class='warning'>You need to put [src] on a table to cut it!</span>")
+				to_chat(user, span_warning("Put [src] on a table before cutting it!"))
 	else if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/raisins))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
@@ -235,7 +247,7 @@
 				qdel(src)
 				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to work it.</span>")
+			to_chat(user, span_warning("Put [src] on a table before working it!"))
 	else
 		..()
 
@@ -283,6 +295,15 @@
 		to_chat(user, "<span class='notice'>Making a handpie...</span>")
 		if(do_after(user,short_cooktime, target = src))
 			var/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/apple/handpie= new(get_turf(user))
+			user.put_in_hands(handpie)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
+			qdel(I)
+			qdel(src)
+	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese/gote))
+		playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 50, TRUE, -1)
+		to_chat(user, "<span class='notice'>Making a handpie...</span>")
+		if(do_after(user,short_cooktime, target = src))
+			var/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/cheese/handpie= new(get_turf(user))
 			user.put_in_hands(handpie)
 			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			qdel(I)
@@ -516,7 +537,7 @@
 				qdel(I)
 				qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to work it.</span>")
+			to_chat(user, span_warning("Put [src] on a table before working it!"))
 	else
 		return ..()	
 
@@ -597,7 +618,7 @@
 				qdel(I)
 				qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to work it.</span>")
+			to_chat(user, span_warning("Put [src] on a table before working it!"))
 	else
 		return ..()	
 
@@ -829,7 +850,7 @@
 				qdel(I)
 				qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to work it.</span>")
+			to_chat(user, span_warning("Put [src] on a table before working it!"))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/honey))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
@@ -840,7 +861,7 @@
 				qdel(I)
 				qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a table to work it.</span>")
+			to_chat(user, span_warning("Put [src] on a table before working it!"))
 	else
 		return ..()	
 

@@ -17,7 +17,7 @@
 
 		if (QDELETED(src))
 			return
-		
+
 		handle_wounds()
 		handle_embedded_objects()
 		handle_blood()
@@ -34,6 +34,14 @@
 			else
 				if(getOxyLoss() < 20)
 					heart_attacking = FALSE
+
+		var/cant_fall_asleep = FALSE
+		var/cause = " I just can't..."
+		for(var/obj/item/clothing/thing in get_equipped_items(FALSE))
+			if(thing.clothing_flags & CANT_SLEEP_IN)
+				cant_fall_asleep = TRUE
+				cause = " \The [thing] bothers me..."
+				break
 
 		//Healing while sleeping in a bed
 		if(stat >= UNCONSCIOUS)
@@ -54,28 +62,36 @@
 						if(!wound.sleep_healing)
 							continue
 						wound.heal_wound(wound.sleep_healing * sleepy_mod)
-				adjustToxLoss(-sleepy_mod)
+				adjustToxLoss( - ( sleepy_mod * 0.5) )
 				if(eyesclosed && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 					Sleeping(300)
 		else if(!IsSleeping() && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 			// Resting on a bed or something
 			if(buckled?.sleepy)
-				if(eyesclosed)
+				if(eyesclosed && !cant_fall_asleep || (eyesclosed && !(fallingas >= 10 && cant_fall_asleep)))
 					if(!fallingas)
-						to_chat(src, "<span class='warning'>I'll fall asleep soon...</span>")
+						to_chat(src, span_warning("I'll fall asleep soon..."))
 					fallingas++
 					if(fallingas > 15)
 						Sleeping(300)
+				else if(eyesclosed && fallingas >= 10 && cant_fall_asleep)
+					if(fallingas != 13)
+						to_chat(src, span_boldwarning("I can't sleep...[cause]"))
+					fallingas = 13
 				else
 					rogstam_add(buckled.sleepy * 10)
 			// Resting on the ground (not sleeping or with eyes closed and about to fall asleep)
 			else if(!(mobility_flags & MOBILITY_STAND))
-				if(eyesclosed)
+				if(eyesclosed && !cant_fall_asleep || (eyesclosed && !(fallingas >= 10 && cant_fall_asleep)))
 					if(!fallingas)
-						to_chat(src, "<span class='warning'>I'll fall asleep soon, although a bed would be more comfortable...</span>")
+						to_chat(src, span_warning("I'll fall asleep soon, although a bed would be more comfortable..."))
 					fallingas++
 					if(fallingas > 25)
 						Sleeping(300)
+				else if(eyesclosed && fallingas >= 10 && cant_fall_asleep)
+					if(fallingas != 13)
+						to_chat(src, span_boldwarning("I can't sleep...[cause]"))
+					fallingas = 13
 				else
 					rogstam_add(10)
 			else if(fallingas)
@@ -167,17 +183,20 @@
 				for(var/A in X.reagents_on_breathe)
 					reagents.add_reagent(A, X.reagents_on_breathe[A])
 
-/mob/living/proc/handle_inwater(var/turf/open/water/W)
+/mob/living/proc/handle_inwater(turf/open/water/W)
 	ExtinguishMob()
 
-/mob/living/carbon/handle_inwater(var/turf/open/water/W)
+/mob/living/carbon/handle_inwater(turf/open/water/W)
 	..()
-	var/datum/reagents/reagentstouch = new()
-	reagentstouch.add_reagent(W.water_reagent, 4)
-	reagentstouch.trans_to(src, reagents.total_volume, transfered_by = src, method = TOUCH)
+	if(HAS_TRAIT(src, TRAIT_NOBREATH))
+		return TRUE
+	if(stat == DEAD)
+		return TRUE
+/*	if(W.water_level == 3)	// deep water, to dissuade diving in dirty lakes. Does not work quite right not worth the effort right now, TO DO
+		var/datum/reagents/reagentstouch = new()
+		reagentstouch.add_reagent(W.water_reagent, 2)
+		reagentstouch.trans_to(src, reagents.total_volume, transfered_by = src, method = TOUCH)	*/
 	if(lying)
-		if(HAS_TRAIT(src, TRAIT_NOBREATH))
-			return TRUE
 		adjustOxyLoss(5)
 		emote("drown")
 		var/datum/reagents/reagents = new()
@@ -208,7 +227,7 @@
 				BPinteg += WO.woundpain
 //		BPinteg = min(((totwound / BP.max_damage) * 100) + BPinteg, initial(BP.max_damage))
 //		if(BPinteg > amt) //this is here to ensure that pain doesn't add up, but is rather picked from the worst limb
-		amt += ((BPinteg) * dna.species.pain_mod)
+		amt += ((BPinteg) * dna?.species?.pain_mod)
 	return amt
 
 
@@ -220,7 +239,7 @@
 //Start of a breath chain, calls breathe()
 /mob/living/carbon/handle_breathing(times_fired)
 	return
-	var/next_breath = 4
+/* 	var/next_breath = 4
 	var/obj/item/organ/lungs/L = getorganslot(ORGAN_SLOT_LUNGS)
 	var/obj/item/organ/heart/H = getorganslot(ORGAN_SLOT_HEART)
 	if(L)
@@ -239,7 +258,7 @@
 	else
 		if(istype(loc, /obj/))
 			var/obj/location_as_object = loc
-			location_as_object.handle_internal_lifeform(src,0)
+			location_as_object.handle_internal_lifeform(src,0) */
 
 //Second link in a breath chain, calls check_breath()
 /mob/living/carbon/proc/breathe()

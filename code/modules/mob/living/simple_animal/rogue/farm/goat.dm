@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/Initialize()
-	..()
+	. = ..()
 	GLOB.farm_animals++
 	if(tame)
 		tamed(owner)
@@ -42,7 +42,7 @@
 			for(var/direction in shuffle(list(1,2,4,8,5,6,9,10)))
 				var/step = get_step(src, direction)
 				if(step)
-					if(locate(/obj/structure/spacevine) in step || locate(/obj/structure/glowshroom) in step)
+					if(locate(/obj/structure/spacevine) in step || locate(/obj/structure/kneestingers) in step)
 						Move(step, get_dir(src, step))
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/UniqueAttack()
@@ -68,9 +68,8 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 	emote_see = list("shakes her head.", "chews her cud.")
 
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
 						/obj/item/natural/hide = 1,
-						/obj/item/alch/sinew = 1,
 						/obj/item/alch/bone = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 4,
 						/obj/item/reagent_containers/food/snacks/fat = 2,
@@ -110,11 +109,11 @@
 	childtype = list(/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet = 90, /mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet/boy = 10)
 	can_buckle = TRUE
 	remains_type = /obj/effect/decal/remains/cow
-	var/obj/item/gudder/gudder = null
+
 
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/Initialize()
-	..()
+	. = ..()
 	if(milkies)
 		gudder = new()
 
@@ -125,19 +124,12 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/attackby(obj/item/O, mob/user, params)
 	if(!stat && istype(O, /obj/item/reagent_containers/glass))
+		changeNext_move(20) // milking sound length
 		if(gudder)
 			gudder.milkAnimal(O, user)
 			return 1
 	else
 		return ..()
-
-/mob/living/simple_animal/hostile/retaliate/rogue/goat/Life()
-	. = ..()
-	if(.)
-		if(gudder)
-			if(production > 0)
-				production--
-				gudder.generateMilk()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/get_sound(input)
 	switch(input)
@@ -313,7 +305,7 @@
 			for(var/direction in shuffle(list(1,2,4,8,5,6,9,10)))
 				var/step = get_step(src, direction)
 				if(step)
-					if(locate(/obj/structure/spacevine) in step || locate(/obj/structure/glowshroom) in step)
+					if(locate(/obj/structure/spacevine) in step || locate(/obj/structure/kneestingers) in step)
 						Move(step, get_dir(src, step))
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goatmale/simple_limb_hit(zone)

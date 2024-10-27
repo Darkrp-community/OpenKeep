@@ -40,6 +40,22 @@
 	desc = "from a rous."
 	icon_state = "pelt_rous"
 
+/obj/item/natural/fur/cabbit
+	desc = "from a cabbit."
+	icon_state = "wool2"
+
+/obj/item/natural/head/volf
+	name = "volf head"
+	desc = "the head of a fearsome volf."
+	icon_state = "volfhead"
+	layer = 3.1
+
+/obj/item/natural/head/saiga
+	name = "saiga head"
+	desc = "the head of a proud saiga."
+	icon_state = "saigahead"
+	layer = 3.1
+
 //RTD make this a storage item and make clickign on animals with things put it in storage
 /obj/item/natural/saddle
 	name = "saddle"

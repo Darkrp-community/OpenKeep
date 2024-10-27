@@ -22,7 +22,7 @@
 			continue
 
 		H.add_stress(/datum/stressevent/perfume)
-		if(prob(15))
+		if(prob(2))
 			H.visible_message(span_green("The [descriptor] of [scent] bombards my nostrils."))
 
 /datum/pollutant/fragrance
