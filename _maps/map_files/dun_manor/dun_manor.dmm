@@ -2970,6 +2970,9 @@
 /obj/item/paper,
 /obj/item/paper,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/natural/feather,
+/obj/item/natural/feather,
+/obj/item/natural/feather,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "cNu" = (
@@ -7107,7 +7110,7 @@
 "gXl" = (
 /obj/structure/table/vtable/v2,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/book/rogue/random_apocrypha,
+/obj/item/book/rogue/random_book/apocrypha,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "gXr" = (
@@ -16187,7 +16190,7 @@
 /area/rogue/outdoors/town)
 "pVu" = (
 /obj/structure/table/vtable/v2,
-/obj/item/book/rogue/random_legends,
+/obj/item/book/rogue/random_book/myths,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "pVT" = (

@@ -94,29 +94,29 @@
 			icon_state = "bookcase"
 
 /obj/structure/bookcase/random/apocrypha
-	parent_type = /obj/structure/bookcase/random
 	name = "bookcase (Apocrypha & Grimoires)"
 	category = "Apocrypha & Grimoires"
 
 /obj/structure/bookcase/random/myths
-	parent_type = /obj/structure/bookcase/random
 	name = "bookcase (Myths & Tales)"
 	category = "Myths & Tales"
 
 /obj/structure/bookcase/random/legends
-	parent_type = /obj/structure/bookcase/random
 	name = "bookcase (Legends & Accounts)"
 	category = "Legends & Accounts"
 
 /obj/structure/bookcase/random/thesis
-	parent_type = /obj/structure/bookcase/random
 	name = "bookcase (Thesis)"
 	category = "Thesis"
 
 /obj/structure/bookcase/random/eoratica
-	parent_type = /obj/structure/bookcase/random
 	name = "bookcase (Eoratica)"
 	category = "Eoratica"
+
+/obj/structure/bookcase/random/archive //Depreciated subtype, used in the old code. Swap these out for one of the types above whenever possible.
+	name = "bookcase (Random)"
+	category = "Eoratica"
+	desc = "This is an improper bookcase. Please exit the game and inform your local mapper where this is and to replace it."
 
 /obj/item/book/rogue/random_book
 	var/book_category = null
@@ -159,27 +159,26 @@
 		if(query_get_random_book)
 			qdel(query_get_random_book)
 
-/obj/item/book/rogue/random_apocrypha
-	parent_type = /obj/item/book/rogue/random_book
+/obj/item/book/rogue/random_book/apocrypha
 	book_category = "Apocrypha & Grimoires"
 	name = "Book (Apocrypha & Grimoires)"
 
-/obj/item/book/rogue/random_myths
-	parent_type = /obj/item/book/rogue/random_book
+/obj/item/book/rogue/random_book/myths
 	book_category = "Myths & Tales"
 	name = "Book (Myths & Tales)"
 
-/obj/item/book/rogue/random_legends
-	parent_type = /obj/item/book/rogue/random_book
+/obj/item/book/rogue/random_book/legends
 	book_category = "Legends & Accounts"
 	name = "Book (Legends & Accounts)"
 
-/obj/item/book/rogue/random_thesis
-	parent_type = /obj/item/book/rogue/random_book
+/obj/item/book/rogue/random_book/thesis
 	book_category = "Thesis"
 	name = "Book (Thesis)"
 
-/obj/item/book/rogue/random_eoratica
-	parent_type = /obj/item/book/rogue/random_book
+/obj/item/book/rogue/random_book/eoratica
 	book_category = "Eoratica"
 	name = "Book (Eoratica)"
+
+/obj/item/book/random // Depreciated subtpye
+	name = "Book (improper)"
+	desc = "Inform your local coder/mapper to have this removed."
