@@ -11513,6 +11513,10 @@
 /obj/structure/closet/crate/chest/neu,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
+"nfE" = (
+/obj/structure/well,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/town)
 "nfH" = (
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -58618,8 +58622,8 @@ oJC
 bHF
 cyz
 cyz
-kPs
-cyz
+eSf
+nfE
 eSf
 cyz
 vjc
@@ -58774,9 +58778,9 @@ vuX
 sbo
 lxt
 cyz
-vDC
-eSf
 cyz
+eSf
+vDC
 eSf
 cyz
 nLb
