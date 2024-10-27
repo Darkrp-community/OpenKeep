@@ -20652,6 +20652,10 @@
 /obj/structure/fluff/walldeco/church/line,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
+"uMi" = (
+/obj/structure/kneestingers,
+/turf/open/water/swamp,
+/area/rogue/under/cave)
 "uMk" = (
 /obj/structure/bed/rogue/shit{
 	name = "makeshift bed"
@@ -26601,7 +26605,7 @@ pNQ
 pNQ
 pNQ
 pNQ
-eZs
+uMi
 eZs
 eZs
 eZs
@@ -28346,7 +28350,7 @@ pNQ
 pNQ
 pNQ
 exi
-twd
+exi
 pmA
 pNQ
 pNQ
@@ -28650,7 +28654,7 @@ exi
 exi
 exi
 sjE
-twd
+exi
 exi
 exi
 exi
@@ -29004,7 +29008,7 @@ ugL
 ugL
 pNQ
 pNQ
-twd
+exi
 exi
 pNQ
 pNQ
@@ -34387,12 +34391,12 @@ pNQ
 pNQ
 pNQ
 pNQ
+azO
+azO
 pNQ
 pNQ
 pNQ
-pNQ
-pNQ
-pNQ
+azO
 azO
 azO
 bId
@@ -34543,13 +34547,13 @@ pNQ
 pNQ
 pNQ
 pNQ
-pNQ
-pNQ
-pNQ
-pNQ
-pNQ
-pNQ
-pNQ
+azO
+azO
+azO
+azO
+azO
+azO
+azO
 azO
 azO
 bId
@@ -34699,9 +34703,9 @@ pNQ
 pNQ
 pNQ
 pNQ
-pNQ
-pNQ
-pNQ
+azO
+azO
+azO
 pNQ
 pNQ
 pNQ
@@ -34856,8 +34860,8 @@ pNQ
 pNQ
 pNQ
 pNQ
-pNQ
-pNQ
+azO
+azO
 pNQ
 pNQ
 pNQ
@@ -35012,9 +35016,9 @@ pNQ
 pNQ
 pNQ
 pNQ
-pNQ
-pNQ
-pNQ
+azO
+azO
+azO
 pNQ
 pNQ
 pNQ
@@ -35168,9 +35172,9 @@ pNQ
 pNQ
 pNQ
 pNQ
-pNQ
-pNQ
-pNQ
+azO
+azO
+azO
 pNQ
 pNQ
 pNQ
@@ -35324,10 +35328,10 @@ pNQ
 pNQ
 pNQ
 pNQ
-pNQ
-pNQ
-pNQ
-pNQ
+azO
+azO
+azO
+azO
 pNQ
 pNQ
 pNQ
@@ -35382,7 +35386,7 @@ pNQ
 pNQ
 pNQ
 pNQ
-exi
+ord
 exi
 pNQ
 pNQ
@@ -35450,14 +35454,14 @@ pNQ
 pNQ
 pNQ
 pNQ
-twd
+exi
 exi
 exi
 exi
 exi
 sjE
 exi
-twd
+exi
 pNQ
 pNQ
 pNQ
@@ -35481,9 +35485,9 @@ pNQ
 pNQ
 pNQ
 pNQ
-pNQ
-pNQ
-pNQ
+azO
+azO
+azO
 pNQ
 pNQ
 pNQ
@@ -35541,11 +35545,11 @@ pNQ
 pNQ
 pNQ
 exi
-twd
 exi
 exi
 exi
-twd
+exi
+exi
 exi
 exi
 exi
@@ -35639,7 +35643,7 @@ pNQ
 pNQ
 pNQ
 pNQ
-pNQ
+azO
 pNQ
 pNQ
 pNQ
@@ -35796,7 +35800,7 @@ pNQ
 pNQ
 pNQ
 pNQ
-pNQ
+azO
 pNQ
 pNQ
 pNQ
@@ -35841,7 +35845,7 @@ pNQ
 pNQ
 pNQ
 pNQ
-eZs
+uMi
 eZs
 pNQ
 pNQ
@@ -35953,8 +35957,8 @@ pNQ
 pNQ
 pNQ
 pNQ
-pNQ
-pNQ
+azO
+azO
 pNQ
 azO
 azO
@@ -36111,7 +36115,7 @@ pNQ
 pNQ
 pNQ
 pNQ
-pNQ
+azO
 azO
 azO
 azO
@@ -37248,7 +37252,7 @@ pNQ
 pNQ
 pNQ
 pNQ
-eZs
+uMi
 pNQ
 pNQ
 pNQ
@@ -39618,7 +39622,7 @@ pNQ
 pNQ
 exi
 exi
-twd
+exi
 pNQ
 pNQ
 pNQ
@@ -40393,7 +40397,7 @@ pNQ
 pNQ
 pNQ
 pNQ
-eZs
+uMi
 pNQ
 pNQ
 pNQ
@@ -40637,7 +40641,7 @@ exi
 sjE
 exi
 exi
-twd
+exi
 exi
 exi
 pNQ
@@ -41188,7 +41192,7 @@ pNQ
 pNQ
 pNQ
 exi
-twd
+exi
 pNQ
 pNQ
 pNQ
@@ -41728,7 +41732,7 @@ bLB
 rDj
 pNQ
 pNQ
-twd
+exi
 exi
 pNQ
 pNQ
@@ -43456,7 +43460,7 @@ pNQ
 pNQ
 pNQ
 exi
-twd
+exi
 exi
 pNQ
 pNQ
@@ -43700,7 +43704,7 @@ pNQ
 pNQ
 exi
 exi
-twd
+exi
 pNQ
 pNQ
 pNQ
@@ -44327,7 +44331,7 @@ pNQ
 pNQ
 pNQ
 pNQ
-twd
+exi
 exi
 pNQ
 pNQ
@@ -44844,7 +44848,6 @@ exi
 exi
 exi
 mhu
-twd
 exi
 exi
 exi
@@ -44852,7 +44855,8 @@ exi
 exi
 exi
 exi
-twd
+exi
+exi
 pNQ
 pNQ
 pNQ
@@ -45118,7 +45122,7 @@ pNQ
 pNQ
 pNQ
 mhu
-twd
+exi
 exi
 exi
 exi
@@ -45750,7 +45754,7 @@ pNQ
 pNQ
 pNQ
 exi
-twd
+exi
 pNQ
 pNQ
 pNQ
@@ -45781,7 +45785,7 @@ pNQ
 pNQ
 pNQ
 pNQ
-twd
+exi
 exi
 pNQ
 pNQ
@@ -67983,11 +67987,11 @@ pQJ
 pQJ
 pQJ
 pQJ
-wdz
+pQJ
 bZE
 bZE
 bZE
-oDx
+pQJ
 pQJ
 pQJ
 pQJ
