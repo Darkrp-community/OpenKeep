@@ -16,7 +16,7 @@
 	no_early_release = TRUE
 	movement_interrupt = FALSE
 	charging_slowdown = 3
-	chargedloop = /datum/looping_sound/invokegen
+	chargedloop = /datum/looping_sound/invokelightning
 	associated_skill = /datum/skill/magic/arcane
 	sparks_spread = 3
 	sparks_amt = 5
@@ -183,7 +183,7 @@
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	movement_interrupt = TRUE
-	chargedloop = /datum/looping_sound/invokegen
+	chargedloop = /datum/looping_sound/invokefire
 	associated_skill = /datum/skill/magic/arcane
 	cost = 4
 
@@ -234,7 +234,7 @@
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	movement_interrupt = TRUE
-	chargedloop = /datum/looping_sound/invokegen
+	chargedloop = /datum/looping_sound/invokefire
 	cost = 10
 
 /obj/projectile/magic/aoe/fireball/rogue/great
@@ -263,12 +263,12 @@
 	no_early_release = TRUE
 	movement_interrupt = FALSE
 	charging_slowdown = 3
-	chargedloop = /datum/looping_sound/invokegen
+	chargedloop = /datum/looping_sound/invokefire
 	associated_skill = /datum/skill/magic/arcane
 	cost = 3
 
 /obj/projectile/magic/aoe/fireball/rogue2
-	name = "fireball"
+	name = "spitfire"
 	exp_heavy = 0
 	exp_light = 0
 	exp_flash = 1
@@ -547,7 +547,7 @@
 	light_color = "#3FBAFD"
 
 //A spell to choose new spells, upon spawning or gaining levels
-/obj/effect/proc_holder/spell/invoked/learnspell
+/obj/effect/proc_holder/spell/self/learnspell
 	name = "Attempt to learn a new spell"
 	desc = "Weave a new spell"
 	school = "transmutation"
@@ -555,7 +555,7 @@
 	chargedrain = 0
 	chargetime = 0
 
-/obj/effect/proc_holder/spell/invoked/learnspell/cast(list/targets, mob/user = usr)
+/obj/effect/proc_holder/spell/self/learnspell/cast(list/targets, mob/user = usr)
 	. = ..()
 	//list of spells you can learn, it may be good to move this somewhere else eventually
 	//TODO: make GLOB list of spells, give them a true/false tag for learning, run through that list to generate choices
@@ -597,6 +597,8 @@
 	else
 		user.mind.used_spell_points += item.cost
 		user.mind.AddSpell(new item)
+		addtimer(CALLBACK(user.mind, TYPE_PROC_REF(/datum/mind, check_learnspell), src), 2 SECONDS) //self remove if no points
+		return TRUE
 
 //forcewall
 /obj/effect/proc_holder/spell/invoked/forcewall_weak
@@ -623,8 +625,8 @@
 
 //adapted from forcefields.dm, this needs to be destructible
 /obj/structure/forcefield_weak
-	desc = "A wall of pure arcyne force."
 	name = "Arcyne Wall"
+	desc = "A wall of pure arcyne force."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "forcefield"
 	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
@@ -643,15 +645,15 @@
 		QDEL_IN(src, timeleft) //delete after it runs out
 
 /obj/effect/proc_holder/spell/invoked/forcewall_weak/cast(list/targets,mob/user = usr)
-	var/turf/target_turf = get_step(user, user.dir)
-	var/turf/target_turf_two = get_step(target_turf, turn(user.dir, 90))
-	var/turf/target_turf_three = get_step(target_turf, turn(user.dir, -90))
-	if(!locate(/obj/structure/forcefield_weak/caster) in target_turf)
-		new /obj/structure/forcefield_weak/caster(target_turf, user)
-	if(!locate(/obj/structure/forcefield_weak/caster) in target_turf_two)
-		new /obj/structure/forcefield_weak/caster(target_turf_two, user)
-	if(!locate(/obj/structure/forcefield_weak/caster) in target_turf_three)
-		new /obj/structure/forcefield_weak/caster(target_turf_three, user)
+	var/turf/front = get_step(user, user.dir)
+	new wall_type(front, user)
+	if(user.dir == SOUTH || user.dir == NORTH)
+		new wall_type(get_step(front, WEST), user)
+		new wall_type(get_step(front, EAST), user)
+	else
+		new wall_type(get_step(front, NORTH), user)
+		new wall_type(get_step(front, SOUTH), user)
+	user.visible_message("[user] mutters an incantation and a wall of arcyne force manifests out of thin air!")
 	return TRUE
 
 /obj/structure/forcefield_weak/caster
@@ -743,7 +745,7 @@
 
 /obj/effect/proc_holder/spell/invoked/message/cast(list/targets, mob/user)
 	. = ..()
-	var/input = stripped_input(user, "Who are you trying to contact?")
+	var/input = input(user, "Who are you trying to contact?")
 	if(!input)
 		return
 	if(!user.key)
@@ -756,7 +758,7 @@
 		return
 	for(var/mob/living/carbon/human/HL in GLOB.human_list)
 		if(HL.real_name == input)
-			var/message = stripped_input(user, "You make a connection. What are you trying to say?")
+			var/message = input(user, "You make a connection. What are you trying to say?")
 			if(!message)
 				return
 			to_chat(HL, "Arcyne whispers fill the back of my head, resolving into a clear, if distant, voice: </span><font color=#7246ff>\"[message]\"</font>")
@@ -791,9 +793,10 @@
 	var/list/thrownatoms = list()
 	var/atom/throwtarget
 	var/distfromcaster
-	playMagSound()
+	playsound(user, 'sound/magic/repulse.ogg', 80, TRUE)
 	user.visible_message("[user] mutters an incantation and a wave of force radiates outward!")
 	for(var/turf/T in view(push_range, user))
+		new /obj/effect/temp_visual/kinetic_blast(T)
 		for(var/atom/movable/AM in T)
 			thrownatoms += AM
 
@@ -859,14 +862,18 @@
 
 /obj/effect/proc_holder/spell/invoked/blade_burst/cast(list/targets, mob/user)
 	var/turf/T = get_turf(targets[1])
+	var/play_cleave = FALSE
 	new /obj/effect/temp_visual/trap(T)
+	playsound(T, 'sound/magic/blade_burst.ogg', 80, TRUE, soundping = TRUE)
 	sleep(delay)
 	new /obj/effect/temp_visual/blade_burst(T)
-	playsound(T,'sound/magic/charged.ogg', 80, TRUE)
 	for(var/mob/living/L in T.contents)
+		play_cleave = TRUE
 		L.adjustBruteLoss(damage)
 		playsound(T, "genslash", 80, TRUE)
 		to_chat(L, "<span class='userdanger'>I'm cut by arcyne force!</span>")
+	if(play_cleave)
+		playsound(T,'sound/combat/newstuck.ogg', 80, TRUE, soundping = TRUE)
 	return TRUE
 
 /obj/effect/proc_holder/spell/targeted/touch/nondetection
@@ -1024,6 +1031,7 @@
 
 	var/mob/living/spelltarget = A
 	spelltarget.apply_status_effect(/datum/status_effect/buff/haste)
+	playsound(get_turf(spelltarget), 'sound/magic/haste.ogg', 80, TRUE, soundping = TRUE)
 
 	if(spelltarget != user)
 		user.visible_message("[user] mutters an incantation and [spelltarget] briefly shines yellow.")
