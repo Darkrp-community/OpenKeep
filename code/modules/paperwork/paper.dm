@@ -441,7 +441,6 @@
 		else
 			to_chat(user, "<span class='warning'>I can't write.</span>")
 			return
-		return
 	if(!P.can_be_package_wrapped())
 		return ..()
 

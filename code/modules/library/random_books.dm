@@ -123,8 +123,13 @@
 	random_cover = TRUE
 
 	Initialize()
-		. = ..()
+		if(!..())
+			return FALSE
+		return INITIALIZE_HINT_LATELOAD // Indicate that LateInitialize() should be called
+
+	LateInitialize()
 		get_random_book_from_database(book_category)
+		return ..()
 
 	proc/get_random_book_from_database(var/book_category)
 		var/datum/DBQuery/query_get_random_book = SSdbcore.NewQuery({"
