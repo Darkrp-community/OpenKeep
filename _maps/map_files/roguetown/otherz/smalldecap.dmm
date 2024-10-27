@@ -102,9 +102,8 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/cavelava)
 "cD" = (
-/obj/machinery/light/rogue/campfire,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/mountains/decap)
+/turf/open/floor/rogue/ruinedwood/turned/darker,
+/area/rogue)
 "cL" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/roguestatue/silver/gnome,
@@ -165,10 +164,7 @@
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/outdoors/caves)
 "em" = (
-/obj/effect/landmark/mapGenerator/rogue/cave{
-	endTurfX = 155;
-	endTurfY = 155
-	},
+/obj/effect/landmark/mapGenerator/rogue/decap,
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/cavelava)
 "eo" = (
@@ -206,12 +202,31 @@
 	},
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/under/cavelava)
+"fv" = (
+/obj/structure/fluff/railing/stonehedge{
+	dir = 8
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/mountains/decap)
+"fP" = (
+/obj/structure/stairs/stone{
+	dir = 1
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/mountains/decap)
 "fT" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/outdoors/mountains/decap)
 "fZ" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/mountains)
+"ga" = (
+/obj/structure/fluff/railing/stonehedge,
+/obj/structure/fluff/railing/stonehedge{
+	dir = 4
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/mountains/decap)
 "ge" = (
 /turf/closed/mineral/random/rogue/med,
 /area/rogue/outdoors/mountains/decap)
@@ -221,10 +236,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cavelava)
 "gn" = (
-/obj/effect/landmark/mapGenerator/rogue/mountain{
-	endTurfX = 155;
-	endTurfY = 155
-	},
+/obj/effect/landmark/mapGenerator/rogue/cave/lava,
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/cavelava)
 "gp" = (
@@ -537,6 +549,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/under/cavelava)
+"pL" = (
+/obj/machinery/light/rogue/campfire,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cavelava)
 "pN" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/deception)
@@ -611,13 +627,6 @@
 "rU" = (
 /obj/structure/roguerock,
 /turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/mountains/decap)
-"rY" = (
-/obj/effect/landmark/mapGenerator/rogue/cave{
-	endTurfX = 155;
-	endTurfY = 155
-	},
-/turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/mountains/decap)
 "so" = (
 /turf/closed/mineral/rogue/salt,
@@ -851,12 +860,8 @@
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/outdoors/mountains/decap)
 "zK" = (
-/obj/structure/fluff/traveltile{
-	aportalgoesto = "forestdecapin";
-	aportalid = "forestdecapout"
-	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/mountains/decap)
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/under/cavelava)
 "zS" = (
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
@@ -880,6 +885,13 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/caves)
+"At" = (
+/obj/structure/fluff/traveltile{
+	aportalgoesto = "forestdecapin";
+	aportalid = "forestdecapout"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cavelava)
 "Au" = (
 /obj/item/grown/log/tree/small,
 /obj/structure/closet/crate/chest/crafted,
@@ -938,6 +950,15 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/dwarfin)
+"BU" = (
+/obj/structure/stairs/stone{
+	dir = 1
+	},
+/obj/structure/stairs/stone{
+	dir = 1
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/under/cavelava)
 "BV" = (
 /obj/structure/fluff/railing/fence{
 	dir = 4
@@ -964,6 +985,12 @@
 /obj/item/alch/feaudust,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/cavelava)
+"CI" = (
+/obj/structure/stairs/stone{
+	dir = 1
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/under/cavelava)
 "Dd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -975,11 +1002,7 @@
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/mountains/decap)
 "Dh" = (
-/obj/structure/fluff/traveltile{
-	aportalgoesto = "decapout";
-	aportalid = "decapin";
-	aallmig = "rwfielddecap"
-	},
+/obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/decap)
 "Dl" = (
@@ -1239,13 +1262,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/under/cavelava)
-"Kz" = (
-/obj/effect/landmark/mapGenerator/rogue/mountain{
-	endTurfX = 155;
-	endTurfY = 155
-	},
-/turf/closed/mineral/rogue/bedrock,
-/area/rogue/outdoors/mountains/decap)
 "KA" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains)
@@ -1294,6 +1310,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/under/cavelava)
+"Lx" = (
+/obj/structure/fluff/railing/stonehedge,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/mountains/decap)
 "LD" = (
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/dwarfin)
@@ -1317,6 +1337,12 @@
 /obj/machinery/light/rogue/torchholder,
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/indoors/town/dwarfin)
+"MH" = (
+/obj/structure/fluff/railing/stonehedge{
+	dir = 4
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/mountains/decap)
 "MN" = (
 /turf/closed/mineral/random/rogue/high,
 /area/rogue/outdoors/mountains/deception)
@@ -1353,6 +1379,12 @@
 /obj/item/pestle,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/cavelava)
+"NI" = (
+/obj/structure/stairs/stone{
+	dir = 1
+	},
+/turf/closed/mineral/rogue/copper,
+/area/rogue/outdoors/mountains/decap)
 "NM" = (
 /obj/structure/closet/crate/chest/neu_fancy,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1633,6 +1665,12 @@
 /obj/structure/flora/roguetree,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavelava)
+"Up" = (
+/obj/structure/fluff/railing/stonehedge{
+	dir = 4
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/mountains/decap)
 "Ut" = (
 /obj/structure/mineral_door/wood/green{
 	name = "Old Door";
@@ -1674,6 +1712,9 @@
 "VN" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/darker,
+/area/rogue/under/cavelava)
+"VT" = (
+/turf/closed/mineral/rogue/copper,
 /area/rogue/under/cavelava)
 "Wd" = (
 /turf/closed/mineral/random/rogue/med,
@@ -1810,6 +1851,12 @@
 /obj/item/rogueweapon/pick,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/dwarfin)
+"Ze" = (
+/obj/structure/stairs/stone{
+	dir = 1
+	},
+/turf/closed/mineral/random/rogue,
+/area/rogue/outdoors/mountains/decap)
 "Zk" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -9641,13 +9688,13 @@ jd
 jd
 jd
 jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
+LR
+LR
+LR
+LR
+LR
+LR
+LR
 LR
 "}
 (61,1,1) = {"
@@ -9768,16 +9815,16 @@ jd
 jd
 jd
 jd
+LR
+LR
+LR
+LR
+LR
 jd
 jd
 jd
 jd
-jd
-jd
-jd
-jd
-jd
-jd
+LR
 LR
 "}
 (62,1,1) = {"
@@ -9896,8 +9943,8 @@ jd
 jd
 jd
 jd
-jd
-jd
+LR
+LR
 jd
 jd
 jd
@@ -10025,7 +10072,7 @@ jd
 jd
 jd
 jd
-jd
+LR
 jd
 jd
 jd
@@ -10155,15 +10202,15 @@ jd
 jd
 jd
 jd
+LR
 jd
 jd
 jd
 jd
 jd
-jd
-jd
-jd
-jd
+VT
+VT
+VT
 jd
 jd
 jd
@@ -10283,21 +10330,21 @@ jd
 jd
 jd
 jd
+LR
+LR
+LR
 jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
+VT
+VT
+VT
+VT
+VT
+ak
+ak
+VT
+LR
+LR
+LR
 LR
 "}
 (66,1,1) = {"
@@ -10413,21 +10460,21 @@ jd
 jd
 jd
 jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
+LR
+LR
+LR
+CI
+zK
+zK
+zK
+zK
+zK
+ak
+ak
+ak
+LR
+LR
+LR
 LR
 "}
 (67,1,1) = {"
@@ -10543,21 +10590,21 @@ jd
 jd
 jd
 jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
+LR
+LR
+LR
+CI
+zK
+zK
+zK
+zK
+zK
+ak
+ak
+ak
+At
+LR
+LR
 LR
 "}
 (68,1,1) = {"
@@ -10673,21 +10720,21 @@ jd
 jd
 jd
 jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
+LR
+LR
+LR
+CI
+zK
+zK
+zK
+zK
+zK
+ak
+ak
+ak
+At
+LR
+LR
 LR
 "}
 (69,1,1) = {"
@@ -10803,21 +10850,21 @@ jd
 jd
 jd
 jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
+LR
+LR
+LR
+BU
+zK
+zK
+zK
+zK
+zK
+ak
+ak
+ak
+At
+LR
+LR
 LR
 "}
 (70,1,1) = {"
@@ -10933,21 +10980,21 @@ jd
 jd
 jd
 jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
+LR
+LR
+LR
+CI
+zK
+zK
+zK
+zK
+zK
+pL
+zK
+ak
+At
+LR
+LR
 LR
 "}
 (71,1,1) = {"
@@ -11063,21 +11110,21 @@ jd
 jd
 jd
 jd
+LR
+LR
+LR
 jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
+zK
+zK
+VT
+VT
+VT
+zK
+ak
+ak
+LR
+LR
+LR
 LR
 "}
 (72,1,1) = {"
@@ -11194,20 +11241,20 @@ jd
 jd
 jd
 jd
+LR
+LR
+jd
+VT
+VT
 jd
 jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
+VT
+zK
+ak
+ak
+LR
+LR
+LR
 LR
 "}
 (73,1,1) = {"
@@ -11325,16 +11372,16 @@ jd
 jd
 jd
 jd
+LR
 jd
 jd
 jd
 jd
 jd
-jd
-jd
-jd
-jd
-jd
+VT
+VT
+VT
+VT
 jd
 jd
 jd
@@ -11456,15 +11503,15 @@ jd
 jd
 jd
 jd
+LR
 jd
 jd
 jd
 jd
 jd
 jd
-jd
-jd
-jd
+VT
+VT
 jd
 jd
 jd
@@ -11586,7 +11633,7 @@ jd
 jd
 jd
 jd
-jd
+LR
 jd
 jd
 jd
@@ -11717,7 +11764,7 @@ jd
 jd
 jd
 jd
-jd
+LR
 jd
 jd
 jd
@@ -11848,7 +11895,7 @@ jd
 jd
 jd
 jd
-jd
+LR
 jd
 jd
 jd
@@ -11979,8 +12026,8 @@ jd
 jd
 jd
 jd
-jd
-jd
+LR
+LR
 jd
 jd
 jd
@@ -12110,14 +12157,14 @@ jd
 jd
 jd
 jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
+LR
+LR
+LR
+LR
+LR
+LR
+LR
+LR
 LR
 "}
 (80,1,1) = {"
@@ -18749,7 +18796,7 @@ Zo
 Zo
 Zo
 Zo
-Kz
+Zo
 "}
 (3,1,2) = {"
 Zo
@@ -18879,7 +18926,7 @@ Zo
 Zo
 Zo
 Zo
-rY
+Zo
 "}
 (4,1,2) = {"
 Zo
@@ -20954,8 +21001,8 @@ XT
 XT
 FL
 zv
-zv
-zv
+ge
+ge
 Zo
 Zo
 Zo
@@ -21084,8 +21131,8 @@ zv
 zv
 zv
 zv
-zv
-zv
+ge
+ge
 Zo
 Zo
 Zo
@@ -21215,9 +21262,9 @@ zv
 zv
 zv
 zv
-zv
-zv
-zv
+ge
+ge
+Zo
 Zo
 Zo
 "}
@@ -21345,9 +21392,9 @@ FL
 FL
 zv
 zv
-zv
-zv
-zv
+ge
+ge
+Zo
 Zo
 Zo
 "}
@@ -21475,9 +21522,9 @@ zv
 zv
 zv
 zv
-zv
-zv
-Dh
+ge
+ge
+Zo
 Zo
 Zo
 "}
@@ -21604,10 +21651,10 @@ FL
 FL
 FL
 zv
-cD
 zv
-zv
-Dh
+ge
+ge
+Zo
 Zo
 Zo
 "}
@@ -21735,9 +21782,9 @@ FL
 FL
 zv
 zv
-zv
-zv
-Dh
+ge
+ge
+Zo
 Zo
 Zo
 "}
@@ -21848,8 +21895,8 @@ KA
 FL
 wx
 wx
-FL
-FL
+ge
+ge
 FL
 FL
 FL
@@ -21865,9 +21912,9 @@ FL
 FL
 zv
 zv
-zv
-zv
-Dh
+ge
+ge
+Zo
 Zo
 Zo
 "}
@@ -21978,7 +22025,7 @@ KA
 FL
 FL
 ge
-FL
+ge
 FL
 FL
 FL
@@ -21995,9 +22042,9 @@ FL
 FL
 zv
 zv
-zv
-zv
-zv
+ge
+ge
+Zo
 Zo
 Zo
 "}
@@ -22125,9 +22172,9 @@ wx
 FL
 FL
 zv
-zv
-zv
-zv
+ge
+ge
+Zo
 Zo
 Zo
 "}
@@ -22255,7 +22302,7 @@ wx
 wx
 ge
 zv
-Zo
+ge
 Zo
 Zo
 Zo
@@ -22385,7 +22432,7 @@ ge
 wx
 wx
 wx
-Zo
+ge
 Zo
 Zo
 Zo
@@ -25098,8 +25145,8 @@ ge
 XT
 XT
 FL
-FL
-FL
+gp
+gp
 zv
 gp
 gp
@@ -25230,7 +25277,7 @@ XT
 XT
 FL
 gp
-zv
+gp
 gp
 gp
 gp
@@ -25361,8 +25408,8 @@ XT
 XT
 gp
 gp
-zv
-zv
+gp
+gp
 FL
 gp
 gp
@@ -25492,7 +25539,7 @@ XT
 gp
 gp
 gp
-zv
+gp
 XT
 XT
 gp
@@ -25622,7 +25669,7 @@ XT
 FL
 gp
 gp
-zv
+gp
 FL
 FL
 gp
@@ -25751,9 +25798,9 @@ ge
 ge
 FL
 FL
-FL
 gp
-FL
+gp
+pm
 FL
 gp
 gp
@@ -25881,8 +25928,8 @@ ge
 ge
 FL
 FL
-FL
-zv
+gp
+gp
 gp
 FL
 FL
@@ -26009,12 +26056,12 @@ FL
 ge
 ge
 ge
-FL
+pm
 FL
 gp
 gp
-aB
-FL
+gp
+gp
 FL
 gp
 gp
@@ -26275,8 +26322,8 @@ FL
 FL
 gp
 gp
-FL
 gp
+aB
 gp
 gp
 gp
@@ -26400,10 +26447,10 @@ ge
 FL
 FL
 FL
+pm
 FL
 FL
-FL
-FL
+gp
 gp
 gp
 gp
@@ -26534,10 +26581,10 @@ FL
 FL
 FL
 FL
+gp
 FL
 FL
-FL
-FL
+pm
 FL
 gp
 gp
@@ -26662,10 +26709,10 @@ FL
 FL
 FL
 FL
-pm
+FL
 FL
 zv
-FL
+gp
 FL
 XT
 XT
@@ -26791,11 +26838,11 @@ FL
 FL
 FL
 FL
+pm
 FL
 FL
-FL
-FL
-FL
+gp
+gp
 FL
 XT
 XT
@@ -26924,8 +26971,8 @@ FL
 FL
 FL
 FL
-FL
-FL
+gp
+gp
 FL
 so
 XT
@@ -27054,12 +27101,12 @@ FL
 FL
 FL
 FL
-FL
-pm
-FL
-XT
-XT
-so
+gp
+gp
+gp
+fv
+fv
+fv
 XT
 zv
 zv
@@ -27183,19 +27230,19 @@ zv
 zv
 FL
 FL
-FL
-FL
-FL
-FL
-XT
-XT
-XT
-XT
-XT
+pm
+gp
+gp
+gp
+Ze
+hT
+hT
+Lx
 zv
 zv
 zv
-zK
+zv
+zv
 Zo
 Zo
 Zo
@@ -27315,17 +27362,17 @@ zv
 zv
 zv
 zv
+gp
+gp
+NI
+hT
+hT
+Lx
 zv
 zv
-Bq
-Bq
-XT
-XT
 zv
 zv
 zv
-zv
-zK
 Zo
 Zo
 Zo
@@ -27444,18 +27491,18 @@ eo
 zv
 zv
 zv
+Dh
+gp
+gp
+fP
+hT
+hT
+Lx
 zv
 zv
 zv
 zv
 zv
-zv
-zv
-zv
-zv
-zv
-zv
-zK
 Zo
 Zo
 Zo
@@ -27575,17 +27622,17 @@ zv
 zv
 zv
 zv
+gp
+gp
+fP
+hT
+hT
+Lx
 zv
 zv
-zv
-zv
-zv
-zv
-zv
-cD
 gp
 zv
-zK
+zv
 Zo
 Zo
 Zo
@@ -27705,12 +27752,12 @@ ge
 zv
 ge
 zv
+gp
 zv
-eo
-zv
-zv
-zv
-zv
+MH
+Up
+Up
+ga
 zv
 gp
 zv
@@ -27835,10 +27882,10 @@ ge
 XT
 XT
 XT
-XT
-XT
-Bq
-Bq
+gp
+gp
+gp
+gp
 Bq
 zv
 zv
@@ -27965,10 +28012,10 @@ ge
 XT
 XT
 XT
-XT
-XT
-XT
-XT
+gp
+gp
+gp
+gp
 XT
 zv
 gp
@@ -28096,10 +28143,10 @@ XT
 XT
 XT
 XT
-XT
-XT
-XT
-Bq
+gp
+gp
+gp
+gp
 zv
 gp
 zv
@@ -28226,10 +28273,10 @@ ge
 ge
 ge
 ge
-XT
-ge
-Bq
-Bq
+gp
+gp
+gp
+gp
 gp
 gp
 Bq
@@ -28357,7 +28404,7 @@ pm
 FL
 FL
 FL
-FL
+gp
 FL
 FL
 gp
@@ -65764,11 +65811,11 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
-Dl
-Dl
-Dl
+cD
+cD
+cD
+cD
+cD
 Dl
 Dl
 Dl
@@ -65893,12 +65940,12 @@ Dl
 Dl
 Dl
 Dl
+cD
 Dl
-Dl
-Dl
-Dl
-Dl
-Dl
+cD
+cD
+cD
+cD
 Dl
 Dl
 Dl
@@ -66025,10 +66072,10 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
-Dl
-Dl
+cD
+cD
+cD
+cD
 Dl
 Dl
 Dl
@@ -66155,10 +66202,10 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
-Dl
-Dl
+cD
+cD
+cD
+cD
 Dl
 Dl
 Dl
@@ -66282,13 +66329,13 @@ Dl
 Dl
 Dl
 Dl
+cD
+cD
 Dl
-Dl
-Dl
-Dl
-Dl
-Dl
-Dl
+cD
+cD
+cD
+cD
 Dl
 Dl
 Dl
@@ -66412,13 +66459,13 @@ Dl
 Dl
 Dl
 Dl
+cD
+cD
 Dl
-Dl
-Dl
-Dl
-Dl
-Dl
-Dl
+cD
+cD
+cD
+cD
 Dl
 Dl
 Dl
@@ -66542,8 +66589,8 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
+cD
+cD
 Dl
 Dl
 Dl
@@ -66672,8 +66719,8 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
+cD
+cD
 Dl
 Dl
 Dl
@@ -66802,11 +66849,11 @@ Dl
 Dl
 Dl
 Dl
+cD
+cD
 Dl
-Dl
-Dl
-Dl
-Dl
+cD
+cD
 Dl
 Dl
 Dl
