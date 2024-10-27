@@ -2,251 +2,251 @@
 #define PRINTING_TIME 250 // The time it takes to actually print something using the printing press
 
 /obj/machinery/printingpress
-    name = "printing press"
-    icon = 'icons/roguetown/misc/machines.dmi'
-    icon_state = "Ppress_Clean"
-    desc = "The Archivist's wonder. Gears, ink, and wood blocks can turn the written word to the printed word."
-    density = TRUE
-    var/cooldown = 0
-    var/printing = FALSE
-    var/has_paper = FALSE
-    var/obj/item/paper/loaded_paper
-    var/obj/item/output_item // Variable to store the printed item
+	name = "printing press"
+	icon = 'icons/roguetown/misc/machines.dmi'
+	icon_state = "Ppress_Clean"
+	desc = "The Archivist's wonder. Gears, ink, and wood blocks can turn the written word to the printed word."
+	density = TRUE
+	var/cooldown = 0
+	var/printing = FALSE
+	var/has_paper = FALSE
+	var/obj/item/paper/loaded_paper
+	var/obj/item/output_item // Variable to store the printed item
 
 /obj/machinery/printingpress/attackby(obj/item/O, mob/user, params)
-    if(printing)
-        user << "<span class='warning'>The printing press is currently printing. Please wait.</span>"
-        return
-    if(output_item)
-        user << "<span class='notice'>Please retrieve the printed item before inserting new items.</span>"
-        return
-    if(istype(O, /obj/item/paper/manuscript))
-        var/obj/item/paper/manuscript/M = O
-        if(!M.written)
-            user << "<span class='notice'>This manuscript is blank. You need to write something before uploading it.</span>"
-            return
-        // Prompt the user to upload the manuscript
-        var/choice = input(user, "Do you want to upload the manuscript to the archive?") in list("Yes", "No")
-        if(choice == "Yes")
-            upload_manuscript(user, M)
-            // Optionally delete the manuscript after uploading
-            qdel(M)
-            user << "<span class='notice'>The manuscript has been uploaded and removed from your inventory.</span>"
-        else
-            user << "<span class='notice'>You decide not to upload the manuscript.</span>"
-        return
-    if(istype(O, /obj/item/paper) && !has_paper)
-        has_paper = TRUE
-        loaded_paper = O
-        src.icon_state = "Ppress_Prepared"
-        user << "<span class='notice'>You insert the blank paper into the printing press.</span>"
-        qdel(O)
-    return ..()
+	if(printing)
+		user << "<span class='warning'>The printing press is currently printing. Please wait.</span>"
+		return
+	if(output_item)
+		user << "<span class='notice'>Please retrieve the printed item before inserting new items.</span>"
+		return
+	if(istype(O, /obj/item/paper/manuscript))
+		var/obj/item/paper/manuscript/M = O
+		if(!M.written)
+			user << "<span class='notice'>This manuscript is blank. You need to write something before uploading it.</span>"
+			return
+		// Prompt the user to upload the manuscript
+		var/choice = input(user, "Do you want to upload the manuscript to the archive?") in list("Yes", "No")
+		if(choice == "Yes")
+			upload_manuscript(user, M)
+			// Optionally delete the manuscript after uploading
+			qdel(M)
+			user << "<span class='notice'>The manuscript has been uploaded and removed from your inventory.</span>"
+		else
+			user << "<span class='notice'>You decide not to upload the manuscript.</span>"
+		return
+	if(istype(O, /obj/item/paper) && !has_paper)
+		has_paper = TRUE
+		loaded_paper = O
+		src.icon_state = "Ppress_Prepared"
+		user << "<span class='notice'>You insert the blank paper into the printing press.</span>"
+		qdel(O)
+	return ..()
 
 /obj/machinery/printingpress/attack_hand(mob/user)
-    if(printing)
-        user << "<span class='warning'>The printing press is currently printing. Please wait.</span>"
-        return
-    if(output_item)
-        // Try to put the item into the user's hands
-        if(!user.put_in_hands(output_item))
-            user.contents += output_item // If hands are full, put it in inventory
-            user << "<span class='notice'>Your hands are full, the printed item has been placed in your inventory.</span>"
-        else
-            user << "<span class='notice'>You retrieve [output_item] from the printing press.</span>"
-        output_item = null
-        src.icon_state = "Ppress_Clean"
-        return
-    if(loaded_paper)
-        // Allow the user to retrieve the blank paper
-        var/obj/item/paper/P = new /obj/item/paper(get_turf(user)) // Create the item at the user's location
-        if(!user.put_in_hands(P)) // Try to put the item in the user's hands
-            P.forceMove(get_turf(user)) // If not, drop it at the user's location
-        user << "<span class='notice'>You retrieve the [P.name] from the printing press.</span>"
-        has_paper = FALSE
-        loaded_paper = null
-        src.icon_state = "Ppress_Clean"
-        return
-    else
-        // Default interaction or message
-        user << "<span class='notice'>The printing press is empty.</span>"
-        return
+	if(printing)
+		user << "<span class='warning'>The printing press is currently printing. Please wait.</span>"
+		return
+	if(output_item)
+		// Try to put the item into the user's hands
+		if(!user.put_in_hands(output_item))
+			user.contents += output_item // If hands are full, put it in inventory
+			user << "<span class='notice'>Your hands are full, the printed item has been placed in your inventory.</span>"
+		else
+			user << "<span class='notice'>You retrieve [output_item] from the printing press.</span>"
+		output_item = null
+		src.icon_state = "Ppress_Clean"
+		return
+	if(loaded_paper)
+		// Allow the user to retrieve the blank paper
+		var/obj/item/paper/P = new /obj/item/paper(get_turf(user)) // Create the item at the user's location
+		if(!user.put_in_hands(P)) // Try to put the item in the user's hands
+			P.forceMove(get_turf(user)) // If not, drop it at the user's location
+		user << "<span class='notice'>You retrieve the [P.name] from the printing press.</span>"
+		has_paper = FALSE
+		loaded_paper = null
+		src.icon_state = "Ppress_Clean"
+		return
+	else
+		// Default interaction or message
+		user << "<span class='notice'>The printing press is empty.</span>"
+		return
 
 /obj/machinery/printingpress/attack_right(mob/user)
-    if(printing)
-        user << "<span class='warning'>The printing press is currently printing. Please wait.</span>"
-        return
-    if(output_item)
-        user << "<span class='notice'>There is a finished product in the printing press. Use an empty hand to retrieve it.</span>"
-        return
-    if(!has_paper)
-        user << "<span class='warning'>The printing press requires a blank piece of paper to print.</span>"
-        return
-    var/choice = input(user, "Choose an option for the printing press") in list("Print The Book", "Print a Tome of Justice", "Print from the Archive")
-    switch(choice)
-        if ("Print The Book")
-            start_printing(user, "bibble")
-        if ("Print a Tome of Justice")
-            start_printing(user, "justice")
-        if ("Print from the Archive")
-            choose_search_parameters(user)
+	if(printing)
+		user << "<span class='warning'>The printing press is currently printing. Please wait.</span>"
+		return
+	if(output_item)
+		user << "<span class='notice'>There is a finished product in the printing press. Use an empty hand to retrieve it.</span>"
+		return
+	if(!has_paper)
+		user << "<span class='warning'>The printing press requires a blank piece of paper to print.</span>"
+		return
+	var/choice = input(user, "Choose an option for the printing press") in list("Print The Book", "Print a Tome of Justice", "Print from the Archive")
+	switch(choice)
+		if ("Print The Book")
+			start_printing(user, "bibble")
+		if ("Print a Tome of Justice")
+			start_printing(user, "justice")
+		if ("Print from the Archive")
+			choose_search_parameters(user)
 
 /obj/machinery/printingpress/proc/start_printing(mob/user, print_type, id = null)
-    if(cooldown > world.time)
-        user << "<span class='warning'>The printing press is still recalibrating.</span>"
-        return
-    printing = TRUE
-    src.icon_state = "Ppress_Printing"
-    user << "<span class='notice'>The [src] starts printing...</span>"
-    playsound(src.loc, 'sound/misc/ppress.ogg', 100, FALSE)
-    // Delete the blank paper as it's consumed during printing
-    if(loaded_paper)
-        qdel(loaded_paper)
-        loaded_paper = null
-        has_paper = FALSE
-    sleep(PRINTING_TIME)
-    if(print_type == "bibble")
-        print_bibble(user)
-    else if(print_type == "justice")
-        print_justice(user)
-    else if(print_type == "archive")
-        print_manuscript(user, id)
-    // Printing is done
-    printing = FALSE
-    src.icon_state = "Ppress_Done"
-    cooldown = world.time + PRINTER_COOLDOWN
+	if(cooldown > world.time)
+		user << "<span class='warning'>The printing press is still recalibrating.</span>"
+		return
+	printing = TRUE
+	src.icon_state = "Ppress_Printing"
+	user << "<span class='notice'>The [src] starts printing...</span>"
+	playsound(src.loc, 'sound/misc/ppress.ogg', 100, FALSE)
+	// Delete the blank paper as it's consumed during printing
+	if(loaded_paper)
+		qdel(loaded_paper)
+		loaded_paper = null
+		has_paper = FALSE
+	sleep(PRINTING_TIME)
+	if(print_type == "bibble")
+		print_bibble(user)
+	else if(print_type == "justice")
+		print_justice(user)
+	else if(print_type == "archive")
+		print_manuscript(user, id)
+	// Printing is done
+	printing = FALSE
+	src.icon_state = "Ppress_Done"
+	cooldown = world.time + PRINTER_COOLDOWN
 
 /obj/machinery/printingpress/proc/upload_manuscript(mob/user, obj/item/paper/manuscript/M)
-    // Perform the actual SQL INSERT query
-    var/datum/DBQuery/query_upload_manuscript = SSdbcore.NewQuery({"
-        INSERT INTO library (author, title, content, category, select_icon, ckey, datetime, round_id_created, approved)
-        VALUES (:author, :title, :content, :category, :select_icon, :ckey, Now(), :round_id_created, :approved)
-    "}, list(
-        "author" = M.author,
-        "title" = M.name,
-        "content" = M.content,
-        "category" = M.category,
-        "select_icon" = M.select_icon,
-        "ckey" = M.ckey,
-        "round_id_created" = GLOB.round_id,
-        "approved" = 0
-    ))
+	// Perform the actual SQL INSERT query
+	var/datum/DBQuery/query_upload_manuscript = SSdbcore.NewQuery({"
+		INSERT INTO library (author, title, content, category, select_icon, ckey, datetime, round_id_created, approved)
+		VALUES (:author, :title, :content, :category, :select_icon, :ckey, Now(), :round_id_created, :approved)
+	"}, list(
+		"author" = M.author,
+		"title" = M.name,
+		"content" = M.content,
+		"category" = M.category,
+		"select_icon" = M.select_icon,
+		"ckey" = M.ckey,
+		"round_id_created" = GLOB.round_id,
+		"approved" = 0
+	))
 
-    if (query_upload_manuscript.Execute())
-        user << "<span class='notice'>Upload Complete. The manuscript has been uploaded to the Archive.</span>"
-        user.visible_message("<span class='notice'>[user] uploads a manuscript to the archive.</span>")
-    else
-        user << "<span class='warning'>Upload failed. Please try again later.</span>"
+	if (query_upload_manuscript.Execute())
+		user << "<span class='notice'>Upload Complete. The manuscript has been uploaded to the Archive.</span>"
+		user.visible_message("<span class='notice'>[user] uploads a manuscript to the archive.</span>")
+	else
+		user << "<span class='warning'>Upload failed. Please try again later.</span>"
 
-    qdel(query_upload_manuscript)
+	qdel(query_upload_manuscript)
 
 /obj/machinery/printingpress/proc/print_bibble(mob/user)
-    // Creates a static book (Bibble)
-    var/obj/item/book/rogue/bibble/B = new()
-    output_item = B
-    visible_message("<span class='notice'>The printing press hums as it produces [B.name].</span>")
+	// Creates a static book (Bibble)
+	var/obj/item/book/rogue/bibble/B = new()
+	output_item = B
+	visible_message("<span class='notice'>The printing press hums as it produces [B.name].</span>")
 
 /obj/machinery/printingpress/proc/print_justice(mob/user)
-    // Creates a static book (Tome of Justice)
-    var/obj/item/book/rogue/law/B = new()
-    output_item = B
-    visible_message("<span class='notice'>The printing press hums as it produces the [B.name].</span>")
+	// Creates a static book (Tome of Justice)
+	var/obj/item/book/rogue/law/B = new()
+	output_item = B
+	visible_message("<span class='notice'>The printing press hums as it produces the [B.name].</span>")
 
 /obj/machinery/printingpress/proc/print_manuscript(mob/user, id)
-    var/sqlid = text2num(id)
-    if (!sqlid)
-        user << "<span class='warning'>Invalid manuscript ID.</span>"
-        return
+	var/sqlid = text2num(id)
+	if (!sqlid)
+		user << "<span class='warning'>Invalid manuscript ID.</span>"
+		return
 
-    // Perform the actual SQL SELECT query
-    var/datum/DBQuery/query_print_manuscript = SSdbcore.NewQuery({"
-        SELECT author, title, content, category, ckey, select_icon
-        FROM library
-        WHERE id = :id AND isnull(deleted)
-    "}, list("id" = sqlid))
+	// Perform the actual SQL SELECT query
+	var/datum/DBQuery/query_print_manuscript = SSdbcore.NewQuery({"
+		SELECT author, title, content, category, ckey, select_icon
+		FROM library
+		WHERE id = :id AND isnull(deleted)
+	"}, list("id" = sqlid))
 
-    if (query_print_manuscript.Execute() && query_print_manuscript.NextRow())
-        var/author = query_print_manuscript.item[1]
-        var/title = query_print_manuscript.item[2]
-        var/content = query_print_manuscript.item[3]
-        var/category = query_print_manuscript.item[4]
-        var/ckey = query_print_manuscript.item[5]
-        var/select_icon = query_print_manuscript.item[6]
+	if (query_print_manuscript.Execute() && query_print_manuscript.NextRow())
+		var/author = query_print_manuscript.item[1]
+		var/title = query_print_manuscript.item[2]
+		var/content = query_print_manuscript.item[3]
+		var/category = query_print_manuscript.item[4]
+		var/ckey = query_print_manuscript.item[5]
+		var/select_icon = query_print_manuscript.item[6]
 
-        // Check if the manuscript is in the forbidden category
-        if (category == "Apocrypha & Grimoires")
-            user << "<span class='warning'>This manuscript cannot be printed using the printing press.</span>"
-            qdel(query_print_manuscript)
-            return
+		// Check if the manuscript is in the forbidden category
+		if (category == "Apocrypha & Grimoires")
+			user << "<span class='warning'>This manuscript cannot be printed using the printing press.</span>"
+			qdel(query_print_manuscript)
+			return
 
-        // Create a new manuscript object
-        var/obj/item/paper/manuscript/M = new()
-        M.name = title
-        M.author = author
-        M.content = content
-        M.category = category
-        M.ckey = ckey
-        M.select_icon = select_icon
-        M.written = TRUE
-        M.info = content
-        output_item = M
-        visible_message("<span class='notice'>The printing press hums as it produces a manuscript titled [title].</span>")
-    else
-        user << "<span class='warning'>Could not find manuscript with ID [id].</span>"
+		// Create a new manuscript object
+		var/obj/item/paper/manuscript/M = new()
+		M.name = title
+		M.author = author
+		M.content = content
+		M.category = category
+		M.ckey = ckey
+		M.select_icon = select_icon
+		M.written = TRUE
+		M.info = content
+		output_item = M
+		visible_message("<span class='notice'>The printing press hums as it produces a manuscript titled [title].</span>")
+	else
+		user << "<span class='warning'>Could not find manuscript with ID [id].</span>"
 
-    qdel(query_print_manuscript)
+	qdel(query_print_manuscript)
 
 /obj/machinery/printingpress/proc/choose_search_parameters(mob/user)
-    var/search_title = input(user, "Enter the title (optional):") as text|null
-    var/search_author = input(user, "Enter the author (optional):") as text|null
-    var/search_category = input(user, "Select a category (optional):") in list("Any", "Myths & Tales", "Legends & Accounts", "Thesis", "Eoratica") // Removed "Apocrypha & Grimoires"
-    // Pass the selected parameters to search_manuscripts
-    search_manuscripts(user, search_title, search_author, search_category)
+	var/search_title = input(user, "Enter the title (optional):") as text|null
+	var/search_author = input(user, "Enter the author (optional):") as text|null
+	var/search_category = input(user, "Select a category (optional):") in list("Any", "Myths & Tales", "Legends & Accounts", "Thesis", "Eoratica") // Removed "Apocrypha & Grimoires"
+	// Pass the selected parameters to search_manuscripts
+	search_manuscripts(user, search_title, search_author, search_category)
 
 /obj/machinery/printingpress/proc/search_manuscripts(mob/user, search_title, search_author, search_category)
-    var/list/params = list()
-    var/sqlquery = "SELECT id, author, title, category FROM library WHERE isnull(deleted) AND category != 'Apocrypha & Grimoires'" // Exclude forbidden category
+	var/list/params = list()
+	var/sqlquery = "SELECT id, author, title, category FROM library WHERE isnull(deleted) AND category != 'Apocrypha & Grimoires'" // Exclude forbidden category
 
-    if (search_author && search_author != "")
-        sqlquery += " AND author LIKE :author"
-        params["author"] = "%" + search_author + "%"
-    if (search_title && search_title != "")
-        sqlquery += " AND title LIKE :title"
-        params["title"] = "%" + search_title + "%"
-    if (search_category && search_category != "Any")
-        sqlquery += " AND category = :category"
-        params["category"] = search_category
+	if (search_author && search_author != "")
+		sqlquery += " AND author LIKE :author"
+		params["author"] = "%" + search_author + "%"
+	if (search_title && search_title != "")
+		sqlquery += " AND title LIKE :title"
+		params["title"] = "%" + search_title + "%"
+	if (search_category && search_category != "Any")
+		sqlquery += " AND category = :category"
+		params["category"] = search_category
 
-    var/datum/DBQuery/query_search_manuscripts = SSdbcore.NewQuery(sqlquery, params)
+	var/datum/DBQuery/query_search_manuscripts = SSdbcore.NewQuery(sqlquery, params)
 
-    var/dat = "<h3>Manuscript Search Results:</h3><br>"
-    dat += "<table><tr><th>Author</th><th>Title</th><th>Category</th><th>Print</th></tr>"
+	var/dat = "<h3>Manuscript Search Results:</h3><br>"
+	dat += "<table><tr><th>Author</th><th>Title</th><th>Category</th><th>Print</th></tr>"
 
-    if (query_search_manuscripts.Execute())
-        var/has_results = FALSE
-        while (query_search_manuscripts.NextRow())
-            has_results = TRUE
-            var/id = query_search_manuscripts.item[1]
-            var/author = query_search_manuscripts.item[2]
-            var/title = query_search_manuscripts.item[3]
-            var/category = query_search_manuscripts.item[4]
-            dat += "<tr><td>[html_encode(author)]</td><td>[html_encode(title)]</td><td>[html_encode(category)]</td><td><a href='?src=[REF(src)];print=1;id=[id]'>Print</a></td></tr>"
-        if (!has_results)
-            dat += "<tr><td colspan='4'>No results found.</td></tr>"
-    else
-        dat += "<tr><td colspan='4'>Error executing search query.</td></tr>"
+	if (query_search_manuscripts.Execute())
+		var/has_results = FALSE
+		while (query_search_manuscripts.NextRow())
+			has_results = TRUE
+			var/id = query_search_manuscripts.item[1]
+			var/author = query_search_manuscripts.item[2]
+			var/title = query_search_manuscripts.item[3]
+			var/category = query_search_manuscripts.item[4]
+			dat += "<tr><td>[html_encode(author)]</td><td>[html_encode(title)]</td><td>[html_encode(category)]</td><td><a href='?src=[REF(src)];print=1;id=[id]'>Print</a></td></tr>"
+		if (!has_results)
+			dat += "<tr><td colspan='4'>No results found.</td></tr>"
+	else
+		dat += "<tr><td colspan='4'>Error executing search query.</td></tr>"
 
-    dat += "</table>"
-    user << browse(dat, "window=search_results")
+	dat += "</table>"
+	user << browse(dat, "window=search_results")
 
-    qdel(query_search_manuscripts)
+	qdel(query_search_manuscripts)
 
 /obj/machinery/printingpress/Topic(href, href_list)
-    if(printing)
-        return // Ignore interactions while printing
-    if("print" in href_list)
-        var/id = href_list["id"]
-        start_printing(usr, "archive", id)
+	if(printing)
+		return // Ignore interactions while printing
+	if("print" in href_list)
+		var/id = href_list["id"]
+		start_printing(usr, "archive", id)
 
 /obj/machinery/bookbinder
 	name = "book binder"

@@ -1,7 +1,6 @@
 /obj/structure/bookcase/random
 	var/category = null
 	var/book_count = 10
-	icon_state = "bookcase"
 	anchored = TRUE
 	state = 2
 	based = "a"
@@ -94,12 +93,37 @@
 		else
 			icon_state = "bookcase"
 
+/obj/structure/bookcase/random/apocrypha
+	parent_type = /obj/structure/bookcase/random
+	name = "bookcase (Apocrypha & Grimoires)"
+	category = "Apocrypha & Grimoires"
+
+/obj/structure/bookcase/random/myths
+	parent_type = /obj/structure/bookcase/random
+	name = "bookcase (Myths & Tales)"
+	category = "Myths & Tales"
+
+/obj/structure/bookcase/random/legends
+	parent_type = /obj/structure/bookcase/random
+	name = "bookcase (Legends & Accounts)"
+	category = "Legends & Accounts"
+
+/obj/structure/bookcase/random/thesis
+	parent_type = /obj/structure/bookcase/random
+	name = "bookcase (Thesis)"
+	category = "Thesis"
+
+/obj/structure/bookcase/random/eoratica
+	parent_type = /obj/structure/bookcase/random
+	name = "bookcase (Eoratica)"
+	category = "Eoratica"
+
 /obj/item/book/rogue/random_book
 	var/book_category = null
 	random_cover = TRUE
 
 	Initialize()
-		..()
+		. = ..()
 		get_random_book_from_database(book_category)
 
 	proc/get_random_book_from_database(var/book_category)
