@@ -132,7 +132,7 @@
 	get_random_book_from_database(book_category)
 	return ..()
 
-/obj/item/book/rogue/random_book/proc/get_random_book_from_database(var/book_category)
+/obj/item/book/rogue/random_book/proc/get_random_book_from_database(book_category)
 	var/datum/DBQuery/query_get_random_book = SSdbcore.NewQuery({"
 		SELECT author, title, content, category, select_icon
 		FROM library
