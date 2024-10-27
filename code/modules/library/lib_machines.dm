@@ -297,16 +297,16 @@
 	var/written = FALSE
 	var/select_icon = "basic_book"
 	var/list/book_icons = list(
-	"Simple green" = "basic_book",
-	"Simple black" = "book",
-	"Simple red" = "book2",
-	"Simple blue" = "book3",
-	"Simple dark yellow" = "book4",
-	"Brown with dark corners" = "book5",
-	"Heavy purple with dark corners" = "book6",
-	"Light purple with gold leaf" = "book7",
-	"Light blue with gold leaf" = "book8",
-	"Grey with gold leaf" = "knowledge")
+		"Simple green" = "basic_book",
+		"Simple black" = "book",
+		"Simple red" = "book2",
+		"Simple blue" = "book3",
+		"Simple dark yellow" = "book4",
+		"Brown with dark corners" = "book5",
+		"Heavy purple with dark corners" = "book6",
+		"Light purple with gold leaf" = "book7",
+		"Light blue with gold leaf" = "book8",
+		"Grey with gold leaf" = "knowledge")
 
 /obj/item/paper/attack_right(mob/user)
 	if(istype(user, /mob/living/carbon/human))
@@ -330,9 +330,9 @@
 /obj/item/paper/manuscript/attackby(obj/item/P, mob/living/carbon/human/user, params)
 	if(istype(P, /obj/item/natural/feather) && !written)
 		// Prompt user to populate manuscript fields
-		var/newtitle = dd_limittext(sanitize_hear_message(input(user, "Enter the title of the manuscript:")), MAX_NAME_LEN) as text|null
-		var/newauthor = sanitize_hear_message(input(user, "Enter the author's name:")) as text|null
-		var/newcontent = "<p>[input(user, "Enter the content of the manuscript:")]</p>" as text|null
+		var/newtitle = dd_limittext(sanitize_hear_message(input(user, "Enter the title of the manuscript:") as text|null), MAX_NAME_LEN)
+		var/newauthor = sanitize_hear_message(input(user, "Enter the author's name:") as text|null)
+		var/newcontent = "<p>[input(user, "Enter the content of the manuscript:") as text|null]</p>"
 		var/newcategory = input(user, "Select the category of the manuscript:") in list("Apocrypha & Grimoires", "Myths & Tales", "Legends & Accounts", "Thesis", "Eoratica")
 		var/newicon = book_icons[input(user, "Choose a book style", "Book Style") as anything in book_icons]
 
