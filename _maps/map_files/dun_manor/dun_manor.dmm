@@ -17383,7 +17383,7 @@
 "ruS" = (
 /obj/structure/fluff/traveltile/bandit{
 	aportalgoesto = "banditin";
-	aportalid = "banditexit"
+	aportalid = "escaperoute"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/cave)
@@ -21101,8 +21101,8 @@
 /area/rogue/indoors/town/tavern)
 "vpx" = (
 /obj/effect/landmark/mapGenerator/sunlights{
-	endTurfX = 128;
-	endTurfY = 128
+	endTurfX = 155;
+	endTurfY = 155
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
@@ -97344,7 +97344,7 @@ fam
 fam
 fam
 fam
-cdY
+vpx
 "}
 (2,1,4) = {"
 fam
@@ -97501,7 +97501,7 @@ fam
 fam
 fam
 fam
-vpx
+fam
 "}
 (3,1,4) = {"
 fam
