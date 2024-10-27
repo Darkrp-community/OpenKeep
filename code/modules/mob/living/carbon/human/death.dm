@@ -96,8 +96,9 @@
 
 		if(yeae)
 			if(mind)
-				if((mind.assigned_role == "King") || (mind.assigned_role == "Priest"))
-					addomen("importantdeath")
+//				if((mind.assigned_role == "King") || (mind.assigned_role == "Priest"))
+				if(mind.assigned_role == "Priest")
+					addomen("importantdeath")	// message changed to reflect only priest for now, change it if more roles added. (Priest dying causes Bad Omen)
 
 		if(!gibbed && yeae)
 			for(var/mob/living/carbon/human/HU in viewers(7, src))

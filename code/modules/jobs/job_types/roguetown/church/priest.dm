@@ -23,7 +23,7 @@
 
 	display_order = JDO_PRIEST
 	give_bank_account = 115
-	min_pq = 0
+	min_pq = 4
 	selection_color = "#c2a45d"
 
 /datum/outfit/job/roguetown/priest/pre_equip(mob/living/carbon/human/H)
@@ -44,7 +44,7 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/needle = 1, /obj/item/storage/belt/rogue/pouch/coins/rich = 1 )
 
-	if(H.dna.species.id == "aasimar")
+	if((H.dna.species.id == "aasimar" || H.dna.species.id == "dwarf"))
 		head = /obj/item/clothing/head/roguetown/roguehood/priest
 
 	else

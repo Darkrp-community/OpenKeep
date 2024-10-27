@@ -339,11 +339,13 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	icon_state = "solar"
 	dynamic_hair_suffix = "+generic"
+	dropshrink = 0.8
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	default_hidden = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	resistance_flags = FIRE_PROOF
 
 	armor = ARMOR_MINOR
@@ -352,12 +354,14 @@
 
 /obj/item/clothing/head/roguetown/roguehood/priest/AdjustClothes(mob/user)
 	if(loc == user)
+		playsound(user, "rustle", 70, TRUE, -5)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
 			if(toggle_icon_state)
 				icon_state = "[initial(icon_state)]_t"
 			flags_inv = HIDEEARS|HIDEHAIR
 			body_parts_covered = NECK|HAIR|EARS|HEAD
+			dynamic_hair_suffix = "+generic"
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
 				H.update_inv_head()
@@ -383,8 +387,8 @@
 
 /obj/item/clothing/head/roguetown/roguehood/priest/pickup(mob/living/user)
 	if((user.job != "Priest") && (user.job != "Priestess"))
-		user.visible_message(span_warningbig ("UNWORTHY HANDS TOUCH MY VISAGE, CEASE OR BE PUNISHED"))
-		playsound(get_turf(user), 'sound/misc/astratascream.ogg', 80, falloff = 0.2, TRUE)
+		playsound(user, 'sound/misc/astratascream.ogg', 80,  falloff = 0.2)
+		user.visible_message(span_reallybig("UNWORTHY HANDS TOUCH MY VISAGE, CEASE OR BE PUNISHED"))
 		spawn(30)
 			if(loc == user)
 				user.adjust_fire_stacks(3)
