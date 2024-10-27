@@ -40,13 +40,15 @@
 	beltl = /obj/item/keyring/priest
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/rogueweapon/mace/church
-	id = /obj/item/clothing/ring/active/nomag
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/needle = 1, /obj/item/storage/belt/rogue/pouch/coins/rich = 1 )
 
 	if(H.dna.species.id == "aasimar")
 		head = /obj/item/clothing/head/roguetown/roguehood/priest
+
+	else
+		id = /obj/item/clothing/ring/active/nomag
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
@@ -75,7 +77,7 @@
 	H.verbs |= /mob/living/carbon/human/proc/churchexcommunicate
 	H.verbs |= /mob/living/carbon/human/proc/churchannouncement
 
-
+	H.update_icons()
 
 /mob/living/carbon/human/proc/coronate_lord()
 	set name = "Coronate"

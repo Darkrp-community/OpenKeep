@@ -332,34 +332,62 @@
 	armor = ARMOR_MINIMAL
 	prevent_crits = MINOR_CRITICALS
 
-//................ Solar Visage ............... //	- The new improved Priest headwear
+//................ Solar Visage ............... //	- The new improved Priest headwear. Integratged magic resist so don't need the null ring, and inverted toggle.
 /obj/item/clothing/head/roguetown/roguehood/priest
 	name = "solar visage"
 	desc = "The sanctified headwear of the most devoted. The mask can be removed."
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	icon_state = "solar"
+	dynamic_hair_suffix = "+generic"
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	flags_inv = HIDEEARS|HIDEHAIR
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	resistance_flags = FIRE_PROOF
 
 	armor = ARMOR_MINOR
+	body_parts_covered = FULL_HEAD | NECK
 	prevent_crits = MINOR_CRITICALS
 
-/obj/item/clothing/head/roguetown/roguehood/priest/Initialize()
+/obj/item/clothing/head/roguetown/roguehood/priest/AdjustClothes(mob/user)
+	if(loc == user)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			if(toggle_icon_state)
+				icon_state = "[initial(icon_state)]_t"
+			flags_inv = HIDEEARS|HIDEHAIR
+			body_parts_covered = NECK|HAIR|EARS|HEAD
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_head()
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			flags_inv = default_hidden
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_head()
+		user.update_fov_angles()
+
+/obj/item/clothing/head/roguetown/roguehood/priest/equipped(mob/user, slot)
 	. = ..()
-	adjustable = CADJUSTED
-	AdjustClothes()
+	if (slot == SLOT_HEAD && istype(user))
+		ADD_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
+	else
+		REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
+
+/obj/item/clothing/head/roguetown/roguehood/priest/dropped(mob/user)
+	. = ..()
+	REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
 
 /obj/item/clothing/head/roguetown/roguehood/priest/pickup(mob/living/user)
 	if((user.job != "Priest") && (user.job != "Priestess"))
 		user.visible_message(span_warningbig ("UNWORTHY HANDS TOUCH MY VISAGE, CEASE OR BE PUNISHED"))
-//		user.playsound_local(user, 'sound/misc/astratascream.ogg', 90, falloff = 0.1, TRUE)
+		playsound(get_turf(user), 'sound/misc/astratascream.ogg', 80, falloff = 0.2, TRUE)
 		spawn(30)
 			if(loc == user)
-				user.adjust_fire_stacks(4)
+				user.adjust_fire_stacks(3)
 				user.IgniteMob()
 		return
 	else
