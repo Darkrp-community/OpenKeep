@@ -901,6 +901,14 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	prevent_crits = ALL_EXCEPT_BLUNT
 
+//............... Eora Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/sallet/eoran
+	name = "eora helmet"
+	desc = "A standard helmet forged in the style typical of Eoran worshippers, a simple yet practical protective piece of equipment. Upon it lays several laurels of flowers and other colorful ornaments, followed by several symbols and standards of the user's chapter, accomplishments or even punishment"
+	icon_state = "eorahelm"
+	item_state = "eorahelm"
+	armor = ARMOR_STEEL_BEST
+
 
 //............... Pestra Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
