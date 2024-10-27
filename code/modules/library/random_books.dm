@@ -4,67 +4,95 @@
 	icon_state = "bookcase"
 	anchored = TRUE
 	state = 2
+	based = "a"
 
 	Initialize(mapload)
 		. = ..()
-		if(book_count && isnum(book_count))
-			book_count += pick(-1, -1, 0, 1, 1)
-			. = INITIALIZE_HINT_LATELOAD
+		based = pick("a","b","c","d","e","f","g","h")
+		state = 2
+		anchored = TRUE
+		book_count = rand(5,10) // Set book_count between 5 and 10
+		. = INITIALIZE_HINT_LATELOAD
 
 	LateInitialize()
-		create_random_books(book_count, src, FALSE, category)
+		create_random_books(book_count)
 		update_icon()
 
-/obj/structure/bookcase/random/apocrypha
-	name = "bookcase (Apocrypha & Grimoires)"
-	category = "Apocrypha & Grimoires"
+	proc/create_random_books(amount = 2)
+		. = list()
+		if (!isnum(amount) || amount < 1)
+			return
 
-/obj/structure/bookcase/random/myths
-	name = "bookcase (Myths & Tales)"
-	category = "Myths & Tales"
+		// First, get the total number of available books in the category
+		var/datum/DBQuery/query_count_books = SSdbcore.NewQuery({"
+			SELECT COUNT(*) FROM library
+			WHERE isnull(deleted) AND (:category IS NULL OR category = :category)
+		"}, list("category" = src.category))
 
-/obj/structure/bookcase/random/legends
-	name = "bookcase (Legends & Accounts)"
-	category = "Legends & Accounts"
+		var/total_books = 0
+		if (query_count_books && query_count_books.Execute() && query_count_books.NextRow())
+			total_books = text2num(query_count_books.item[1])
+		if(query_count_books)
+			qdel(query_count_books)
 
-/obj/structure/bookcase/random/thesis
-	name = "bookcase (Thesis)"
-	category = "Thesis"
+		if(total_books == 0)
+			return
 
-/obj/structure/bookcase/random/eoratica
-	name = "bookcase (Eoratica)"
-	category = "Eoratica"
+		// Adjust amount to be the minimum of requested amount and total available books
+		amount = min(amount, total_books)
 
-/proc/create_random_books(amount = 2, location, fail_loud = FALSE, category = null)
-	. = list()
-	if (!isnum(amount) || amount < 1)
-		return
-	var/datum/DBQuery/query_get_random_books = SSdbcore.NewQuery({"
-		SELECT author, title, content, category, select_icon
-		FROM [format_table_name("library")]
-		WHERE isnull(deleted) AND (:category IS NULL OR category = :category)
-		ORDER BY RAND() LIMIT :limit
-	"}, list("category" = category, "limit" = amount))
-	if (query_get_random_books.Execute())
-		while (query_get_random_books.NextRow())
-			var/author = query_get_random_books.item[1]
-			var/title = query_get_random_books.item[2]
-			var/content = query_get_random_books.item[3]
-			var/category_db = query_get_random_books.item[4]
-			var/select_icon = query_get_random_books.item[6]
+		// Now fetch random books without duplicates
+		var/datum/DBQuery/query_get_random_books = SSdbcore.NewQuery({"
+			SELECT author, title, content, category, select_icon
+			FROM library
+			WHERE isnull(deleted) AND (:category IS NULL OR category = :category)
+			ORDER BY RAND() LIMIT :limit
+		"}, list("category" = src.category, "limit" = amount * 2)) // Fetch extra in case of duplicates
 
-			var/obj/item/book/rogue/B = new(location)
-			B.author = author
-			B.title = title
-			B.pages = list("<b3><h3>Title: [B.title]<br>Author: [B.author]</b><h3>[content]")
-			B.name = B.title
-			if (select_icon)
-				B.icon_state = "[select_icon]_0"
-				B.base_icon_state = select_icon
-			else
-				B.icon_state = "book[rand(1,8)]"
-			. += B
-	qdel(query_get_random_books)
+		if (query_get_random_books && query_get_random_books.Execute())
+			var/list/added_titles = list()
+			while (query_get_random_books.NextRow())
+				var/title = query_get_random_books.item[2]
+				// Check if we have already added this book (by title)
+				if(title in added_titles)
+					continue // Skip duplicate
+				var/author = query_get_random_books.item[1]
+				var/content = query_get_random_books.item[3]
+				var/category_db = query_get_random_books.item[4]
+				var/select_icon = query_get_random_books.item[5]
+
+				// Check if the bookcase has space
+				if(length(src.contents) >= 15)
+					break // Bookcase is full
+
+				var/obj/item/book/rogue/B = new()
+				B.author = author
+				B.title = title
+				B.pages = list("<b3><h3>Title: [B.title]<br>Author: [B.author]</b><h3>[content]")
+				B.name = B.title
+				B.category = category_db
+				if (select_icon)
+					B.icon_state = "[select_icon]_0"
+					B.base_icon_state = select_icon
+				else
+					B.icon_state = "book[rand(1,8)]"
+
+				// Place the book into the bookcase's contents
+				B.loc = src
+
+				. += B
+				added_titles += title
+
+				if(length(src.contents) >= amount)
+					break // Reached desired amount of books
+		if(query_get_random_books)
+			qdel(query_get_random_books)
+
+	update_icon()
+		if((length(contents) >= 1) && (length(contents) <= 15))
+			icon_state = "[based][length(contents)]"
+		else
+			icon_state = "bookcase"
 
 /obj/item/book/rogue/random_book
 	var/book_category = null
@@ -77,18 +105,18 @@
 	proc/get_random_book_from_database(var/book_category)
 		var/datum/DBQuery/query_get_random_book = SSdbcore.NewQuery({"
 			SELECT author, title, content, category, select_icon
-			FROM [format_table_name("library")]
+			FROM library
 			WHERE isnull(deleted) AND category = :category
 			ORDER BY RAND() LIMIT 1
 		"}, list("category" = book_category))
 
-		if (query_get_random_book.Execute())
+		if (query_get_random_book && query_get_random_book.Execute())
 			if (query_get_random_book.NextRow())
 				src.author = query_get_random_book.item[1]
 				src.title = query_get_random_book.item[2]
 				var/content = query_get_random_book.item[3]
 				src.category = query_get_random_book.item[4]
-				var/select_icon = query_get_random_book.item[6]
+				var/select_icon = query_get_random_book.item[5]
 
 				src.pages = list("<b3><h3>Title: [src.title]<br>Author: [src.author]</b><h3>[content]")
 				src.name = src.title
@@ -97,10 +125,15 @@
 					src.base_icon_state = select_icon
 				else
 					src.icon_state = "book[rand(1,8)]"
+			else
+				// No books found; delete the book object
+				qdel(src)
 		else
-			src.name = "Empty Book"
-			src.pages = list("<b3><h3>No books available in this category.</h3></b>")
-		qdel(query_get_random_book)
+			// Query failed; delete the book object
+			qdel(src)
+
+		if(query_get_random_book)
+			qdel(query_get_random_book)
 
 /obj/item/book/rogue/random_apocrypha
 	parent_type = /obj/item/book/rogue/random_book
