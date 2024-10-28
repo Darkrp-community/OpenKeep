@@ -1317,10 +1317,10 @@
 	},
 /area/rogue/indoors/town)
 "bza" = (
-/obj/structure/bed/rogue/inn/hay,
 /obj/effect/landmark/start/servant{
 	dir = 8
 	},
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "bzh" = (
@@ -2578,8 +2578,8 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)
 "cVh" = (
-/obj/structure/bed/rogue/inn/hay,
 /obj/effect/landmark/start/butler,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "cVr" = (
@@ -5695,8 +5695,8 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor)
 "gyi" = (
-/obj/structure/bed/rogue/inn/wooldouble,
 /obj/item/bedsheet/rogue/double_pelt,
+/obj/structure/bed/rogue/wooldouble,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -9373,8 +9373,8 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/basement)
 "kIp" = (
-/obj/structure/bed/rogue/inn/hay,
 /obj/effect/landmark/start/servant,
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "kIq" = (
@@ -10122,7 +10122,6 @@
 /area/rogue/indoors/town/manor)
 "lBP" = (
 /obj/structure/bed/rogue,
-/obj/item/bedsheet/rogue/cloth,
 /obj/effect/landmark/start/dungeoneer{
 	dir = 8
 	},
@@ -10528,7 +10527,6 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
 "mcU" = (
-/obj/structure/bed/rogue/inn/wool,
 /obj/item/bedsheet/rogue/pelt,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church)
@@ -11220,8 +11218,8 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
 "mNa" = (
-/obj/structure/bed/rogue/inn/wool,
 /obj/item/bedsheet/rogue/fabric,
+/obj/structure/bed/rogue/mediocre,
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/indoors/town/bath)
 "mNg" = (
@@ -11487,7 +11485,6 @@
 /area/rogue/outdoors/town)
 "ncG" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/bed/rogue/inn/wool,
 /obj/item/bedsheet/rogue/pelt,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church)
@@ -13876,7 +13873,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
 "pGk" = (
-/obj/structure/bed/rogue,
+/obj/structure/bed/rogue/mediocre,
 /obj/item/bedsheet/rogue/cloth,
 /turf/open/floor/rogue/blocks/paving,
 /area/rogue/indoors/town/dwarfin)
@@ -18105,7 +18102,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "uHp" = (
-/obj/structure/bed/rogue,
+/obj/structure/bed/rogue/shit,
 /obj/effect/landmark/start/prisoner,
 /turf/open/floor/rogue/carpet,
 /area/rogue/under/town/basement)
@@ -19264,7 +19261,7 @@
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rogue/indoors/town/bath)
 "vTO" = (
-/obj/structure/bed/rogue,
+/obj/structure/bed/rogue/shit,
 /obj/effect/landmark/start/prisoner{
 	dir = 4
 	},
