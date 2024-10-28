@@ -210,7 +210,7 @@
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
 			H.adjust_hydration(10)
 		if(H.blood_volume < BLOOD_VOLUME_NORMAL)
-			H.blood_volume = min(H.blood_volume+10, BLOOD_VOLUME_NORMAL)
+			H.blood_volume = min(H.blood_volume+15, BLOOD_VOLUME_NORMAL)
 	..()
 
 /datum/reagent/consumable/soymilk
