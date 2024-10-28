@@ -1814,6 +1814,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				user.visible_message("<span class='warning'>[user] stole [target]'s [I.name]!</span>",
 								"<span class='notice'>I stole [target]'s [I.name]!</span>", null, null, target)
 				to_chat(target, "<span class='danger'>[user] stole my [I.name]!</span>")*/
+		var/def_zone = check_zone(user.zone_selected)
+		var/obj/item/bodypart/affecting = target.get_bodypart(def_zone)
+		if(length(affecting?.embedded_objects))
+			for(var/obj/item/embedded in affecting.embedded_objects)
+				target.grabbedby(user, 1, item_override = embedded)
+				return TRUE
 		target.grabbedby(user)
 		return TRUE
 
@@ -2874,8 +2880,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/skill_modifier = 10
 	if(istype(starting_turf) && !QDELETED(starting_turf))
 		distance = get_dist(starting_turf, src)
-	if(mind)
-		skill_modifier = mind.get_skill_level(/datum/skill/misc/athletics)
+	skill_modifier *= mind?.get_skill_level(/datum/skill/misc/athletics)
 	var/modifier = -distance
 	if(!prob(STASPD+skill_modifier+modifier))
 		Knockdown(8)

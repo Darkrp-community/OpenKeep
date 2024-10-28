@@ -106,6 +106,7 @@ SUBSYSTEM_DEF(job)
 			if(player.client)
 				player.client.prefs.lastclass = null
 				player.client.prefs.save_preferences()
+		job.greet(player)
 		return TRUE
 	JobDebug("AR has failed, Player: [player], Rank: [rank]")
 	return FALSE
@@ -529,7 +530,7 @@ SUBSYSTEM_DEF(job)
 
 			if(length(job.allowed_races) && !(player.client.prefs.pref_species.name in job.allowed_races))
 				continue
-			
+
 			if(length(job.allowed_patrons) && !(player.client.prefs.selected_patron.type in job.allowed_patrons))
 				continue
 

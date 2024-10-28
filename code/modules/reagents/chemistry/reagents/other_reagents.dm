@@ -148,7 +148,7 @@
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
 			H.adjust_hydration(hydration)
 		if(M.blood_volume < BLOOD_VOLUME_NORMAL)
-			M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_NORMAL)
+			M.blood_volume = min(M.blood_volume+4, BLOOD_VOLUME_NORMAL)
 	..()
 
 /datum/reagent/water/gross

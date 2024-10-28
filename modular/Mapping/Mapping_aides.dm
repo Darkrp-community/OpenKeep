@@ -5,8 +5,8 @@
 
 /obj/effect/spawner/roguemap/loot/common
 	spawned = list(
-		/obj/item/roguecoin/copper/pile = 15,		
-		/obj/item/rogueweapon/huntingknife = 10, 
+		/obj/item/roguecoin/copper/pile = 15,
+		/obj/item/rogueweapon/huntingknife = 10,
 		/obj/item/rogueweapon/huntingknife/idagger = 8,
 		/obj/item/rogueweapon/huntingknife/idagger/steel = 4,
 		/obj/item/rogueweapon/huntingknife/idagger/silver = 2,
@@ -15,7 +15,7 @@
 		/obj/item/rogueweapon/mace = 5,
 		/obj/item/quiver/arrows = 5,
 		/obj/item/rogueweapon/sword/iron/short = 5,
-		/obj/item/clothing/suit/roguetown/armor/leather = 10, 
+		/obj/item/clothing/suit/roguetown/armor/leather = 10,
 		/obj/item/clothing/suit/roguetown/armor/gambeson = 15,
 		/obj/item/clothing/gloves/roguetown/chain/iron = 3,
 		/obj/item/clothing/neck/roguetown/coif = 3,
@@ -28,8 +28,8 @@
 	probby = 50
 	color = "#ff0000"
 	spawned = list(
-		/obj/item/reagent_containers/food/snacks/smallrat = 30,		
-		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10, 
+		/obj/item/reagent_containers/food/snacks/smallrat = 30,
+		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
 		/obj/item/organ/guts = 5,
 		/obj/item/roguecoin/copper = 5,
 		/obj/effect/gibspawner/generic = 5,
@@ -73,10 +73,10 @@
 	probby = 50
 	color = "#e44aff"
 	spawned = list(
-		/mob/living/simple_animal/hostile/retaliate/gaseousform/xylix = 30,		
-		/mob/living/simple_animal/hostile/rogue/demon/xylix = 10, 
+		/mob/living/simple_animal/hostile/retaliate/gaseousform/xylix = 30,
+		/mob/living/simple_animal/hostile/rogue/demon/xylix = 10,
 		/mob/living/simple_animal/hostile/rogue/haunt/xylix = 5,
-		/obj/structure/glowshroom/single/xylix = 5,
+		/obj/structure/kneestingers/xylix = 5,
 		/obj/item/roguecoin/silver/pile/xylix = 5,
 		)
 
@@ -91,12 +91,12 @@
 			maxHealth = 30
 			health = 30
 			melee_damage_lower = 3
-			melee_damage_upper = 12		
+			melee_damage_upper = 12
 		if (2)
 			maxHealth = 45
 			health = 45
 			melee_damage_lower = 6
-			melee_damage_upper = 18	
+			melee_damage_upper = 18
 		if (3)
 			maxHealth = 18
 			health = 18
@@ -115,12 +115,12 @@
 			maxHealth = 40
 			health = 40
 			melee_damage_lower = 3
-			melee_damage_upper = 9		
+			melee_damage_upper = 9
 		if (2)
 			maxHealth = 35
 			health = 35
 			melee_damage_lower = 5
-			melee_damage_upper = 14	
+			melee_damage_upper = 14
 		if (3)
 			maxHealth = 28
 			health = 28
@@ -140,12 +140,12 @@
 			maxHealth = 70
 			health = 70
 			melee_damage_lower = 2
-			melee_damage_upper = 10		
+			melee_damage_upper = 10
 		if (2)
 			maxHealth = 60
 			health = 60
 			melee_damage_lower = 3
-			melee_damage_upper = 13	
+			melee_damage_upper = 13
 		if (3)
 			maxHealth = 50
 			health = 50
@@ -154,7 +154,7 @@
 	return ..()
 
 
-/obj/structure/glowshroom/single/xylix
+/obj/structure/kneestingers/xylix
 	name = ""
 	desc = ""
 	icon = 'icons/roguetown/items/valuable.dmi'
@@ -248,7 +248,7 @@
 	icon_state = "wall_funny"
 	pixel_y = 32
 
-/obj/structure/glowshroom/single/xylix
+/obj/structure/kneestingers/xylix
 	name = "fancy chest"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "chestfancy_neu"
@@ -275,7 +275,7 @@
 	alpha = rand(80,109)
 	switch(pick(1,2))
 		if (1)
-			static_debris = FALSE		
+			static_debris = FALSE
 		if (2)
 			static_debris = list(/obj/item/natural/silk = 1)
 	. = ..()
@@ -362,7 +362,7 @@
 			alpha = 180
 			qdel(I)
 	else
-		return ..()	
+		return ..()
 
 
 /*	..................   NOC Device (Fixed scrying ball)   ................... */
@@ -597,8 +597,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep
 	name = "padded vest"
-	desc = "Dyed green, belongs to the innkeeper."
-	icon_state = "workervest"
+	desc = "Dyed green, belongs to the owner of the Drunken Saiga inn."
+	icon_state = "striped"
 	color = "#638b45"
 
 /turf/open/floor/rogue/tile/checker_green
@@ -705,38 +705,6 @@
 	pixel_x = 32
 	pixel_y = 0
 
-/*	..................   More tables   ................... */
-/obj/structure/table/wood/reinf_long
-	icon_state = "tablewood_reinf"
-
-/obj/structure/table/wood/plain_alt
-	icon_state = "tablewood_plain"
-
-/obj/structure/table/wood/large_new
-	icon_state = "alt_largetable_mid"
-/obj/structure/table/wood/large/corner_new
-	icon_state = "alt_largetable"
-
-/obj/structure/table/wood/reinforced_alter
-	icon_state = "tablewood_alt"
-
-/obj/structure/table/wood/nice/decorated
-	icon_state = "tablefine_alt"
-
-/obj/structure/table/wood/nice/decorated_alt
-	icon_state = "tablefine_alt2"
-
-
-/area/rogue/indoors/bandit_lair
-	name = "lair (Bandits)"
-
-/area/rogue/indoors/vampire_manor
-	name = "lair (Vampire Lord)"
-
-/area/rogue/outdoors/bog/inhumen_camp
-	name = "lair (Inhumen)"
-	droning_sound = 'sound/music/area/decap.ogg'
-	first_time_text = "THE DEEP BOG"
 
 // Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
 /obj/structure/bed/rogue/bear

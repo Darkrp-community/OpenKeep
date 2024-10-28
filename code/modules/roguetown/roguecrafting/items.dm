@@ -46,6 +46,18 @@
 	craftdiff = 1
 	verbage = "chisel"
 	verbage_tp = "chisels"
+/datum/crafting_recipe/roguetown/dart
+	name = "dart"
+	result = /obj/item/ammo_casing/caseless/rogue/dart
+	reqs = list(/obj/item/natural/thorn = 1,
+				/obj/item/grown/log/tree/stick = 1)
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/blowgun
+	name = "blowgun"
+	result = /obj/item/gun/ballistic/revolver/grenadelauncher/blowgun
+	reqs = list(/obj/item/grown/log/tree/stick = 1)
+	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/clothsash
 	name = "cloth sash"

@@ -88,6 +88,7 @@
 	experimental_onhip = TRUE
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
+	clothing_flags = CANT_SLEEP_IN
 
 /obj/item/clothing/mask/rogue/shepherd/clothmask
 	name = "cloth mask"
@@ -203,3 +204,20 @@
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/copper
+
+//................ Druids Mask ............... //
+/obj/item/clothing/mask/rogue/druid
+	name = "druids mask"
+	desc = "Roots from a old oak-tree, shaped according to the wishes of Tree-father."
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+	icon_state = "dendormask"
+	resistance_flags = FIRE_PROOF
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK
+	experimental_onhip = TRUE
+
+	armor = ARMOR_MINOR
+	prevent_crits = CUT_AND_MINOR_CRITS

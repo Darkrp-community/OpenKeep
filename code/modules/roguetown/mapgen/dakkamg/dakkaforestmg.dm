@@ -13,7 +13,7 @@
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 	spawnableAtoms = list(/obj/structure/flora/newtree = 5,
-							/obj/structure/flora/roguegrass/bush = 6,
+							/obj/structure/flora/roguegrass/bush_meagre = 6,
 							/obj/structure/flora/roguegrass = 100,
 							/obj/structure/flora/roguegrass/pyroclasticflowers = 1,
 							/obj/item/natural/stone = 5,
@@ -46,7 +46,7 @@
 	excluded_turfs = list()
 	allowed_areas = list(/area/rogue/outdoors/woods)
 	spawnableAtoms = list(/obj/structure/flora/roguetree = 0,
-							/obj/structure/flora/roguegrass/bush = 6,
+							/obj/structure/flora/roguegrass/bush_meagre = 6,
 							/obj/structure/flora/roguegrass = 120,
 							/obj/structure/flora/roguegrass/maneater = 0,
 							/obj/structure/flora/roguegrass/maneater/real = 0,
@@ -63,4 +63,4 @@
 	allowed_areas = list(/area/rogue/outdoors/woods)
 	spawnableAtoms = list(/obj/structure/flora/roguegrass/water = 20,
 	                        /obj/structure/flora/roguegrass/water/reeds = 30,
-	                        /obj/structure/glowshroom = 55)
+	                        /obj/structure/kneestingers = 55)

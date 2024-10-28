@@ -10,7 +10,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
 "d" = (
-/obj/structure/flora/roguegrass/bush,
+/obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
 "e" = (

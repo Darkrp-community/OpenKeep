@@ -11,7 +11,7 @@
 	show_in_credits = FALSE
 
 	// Everyone can be a homeless man looking for work!
-	allowed_races = ALL_RACES_LIST_NAMES
+	allowed_races = ALL_PLAYER_RACES_BY_NAME
 
 	tutorial = "A drifter of unknown origin searching things such as fame, fortune, and perhaps just some work to do."
 

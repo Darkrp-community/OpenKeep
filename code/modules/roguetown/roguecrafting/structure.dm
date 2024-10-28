@@ -277,7 +277,7 @@
 
 /datum/crafting_recipe/roguetown/structure/closet
 	name = "closet"
-	result = /obj/structure/closet/crate/roguecloset
+	result = /obj/structure/closet/crate/roguecloset/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 2)
 	verbage = "construct"
 	verbage_tp = "constructs"
@@ -286,6 +286,15 @@
 
 /obj/structure/closet/crate/roguecloset/crafted
 	sellprice = 6
+
+/datum/crafting_recipe/roguetown/structure/coffin
+	name = "wooden coffin"
+	result = /obj/structure/closet/crate/coffin
+	reqs = list(/obj/item/grown/log/tree/small = 2)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/structure/campfire
 	name = "campfire"
