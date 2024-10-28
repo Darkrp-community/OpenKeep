@@ -151,7 +151,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 			pick_cultist()
 			log_game("Major Antagonist: Cultists")
 		if(3)
-			if(num_players() >= 14) //as in 14 roundstart-ready players 
+			if(num_players() >= 14) //as in 14 roundstart-ready players
 				pick_vampires()
 				log_game("Major Antagonist: Vampire Lord")
 			else
@@ -297,7 +297,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_cultist()
-	var/remaining = 2 // 1 leader, 1 lackey :)
+	var/remaining = 3 // 1 leader, 2 lackeys :)
 	restricted_jobs = list("King",
 	"Queen",
 	"Merchant",
@@ -463,7 +463,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 
 /datum/game_mode/chaosmode/make_antag_chance(mob/living/carbon/human/character) //klatejoin
 	return
-/* 
+/*
 // ******** VILLAINS
 	var/num_villains = round((num_players() * 0.30)+1, 1)
 	if((villains.len + pre_villains.len) >= num_villains) //Upper cap for number of latejoin antagonists
