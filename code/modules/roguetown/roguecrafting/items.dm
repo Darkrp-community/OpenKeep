@@ -40,12 +40,13 @@
 /obj/item/natural/stoneblock
 	name = "stone block"
 	result = list(/obj/item/natural/stoneblock = 2)
-	reqs = list(/obj/item/natural/stonl = 1)
+	reqs = list(/obj/item/natural/stone = 1)
 	tools = list(/obj/item/rogueweapon/chisel)
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 1
 	verbage = "chisel"
 	verbage_tp = "chisels"
+
 /datum/crafting_recipe/roguetown/dart
 	name = "dart"
 	result = /obj/item/ammo_casing/caseless/rogue/dart
