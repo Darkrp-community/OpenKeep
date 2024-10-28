@@ -37,7 +37,7 @@
 	tools = list(/obj/item/rogueweapon/handsaw)
 	skillcraft = /datum/skill/craft/carpentry
 
-/obj/item/natural/stoneblock
+/datum/crafting_recipe/roguetown/stoneblock
 	name = "stone block"
 	result = list(/obj/item/natural/stoneblock = 2)
 	reqs = list(/obj/item/natural/stone = 1)
