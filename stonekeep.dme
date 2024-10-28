@@ -9,7 +9,6 @@
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
 #include "_maps\templates\bog_shack_small.dm"
-#include "_maps\templates\MT_decap_surfaces.dm"
 #include "_maps\templates\sk_dungeons.dm"
 #include "code\__byond_version_compat.dm"
 #include "code\_compile_options.dm"
