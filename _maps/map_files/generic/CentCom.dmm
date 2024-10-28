@@ -1246,10 +1246,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/vampire_manor)
 "dv" = (
-/obj/structure/fluff/traveltile{
-	aportalgoesto = "banditexit";
-	aportalid = "banditin"
-	},
+/obj/structure/fluff/traveltile/exit_bandit,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "dw" = (
@@ -2549,12 +2546,6 @@
 /obj/structure/chair/bench/couch/redleft,
 /turf/open/floor/rogue/hexstone,
 /area/rogue)
-"uQ" = (
-/obj/structure/bed/rogue/shit{
-	name = "makeshift bed"
-	},
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/bog/inhumen_camp)
 "uU" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/structure/chair/wood/rogue,
@@ -3066,7 +3057,7 @@
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/indoors/bandit_lair)
 "Df" = (
-/obj/structure/fluff/traveltile/inhumen_lair,
+/obj/structure/fluff/traveltile/exit_inhumen,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog/inhumen_camp)
 "Dg" = (
@@ -3802,6 +3793,10 @@
 /obj/item/rogueweapon/eaglebeak/lucerne,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
+"OA" = (
+/obj/structure/fluff/traveltile/exit_vampire,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "OQ" = (
 /turf/closed/mineral/random/rogue/med,
 /area/rogue/indoors)
@@ -7017,14 +7012,14 @@ vQ
 vQ
 vQ
 vQ
-xt
+Te
 vQ
 vQ
 vQ
 vQ
 vQ
 vQ
-Wp
+vQ
 vQ
 vQ
 dv
@@ -7284,7 +7279,7 @@ Sy
 Sy
 vQ
 vQ
-vQ
+Wp
 vQ
 vQ
 vQ
@@ -11967,7 +11962,7 @@ vQ
 vQ
 vQ
 vQ
-sk
+OA
 Iw
 "}
 (57,1,1) = {"
@@ -12097,7 +12092,7 @@ vQ
 vQ
 vQ
 vQ
-sk
+OA
 Iw
 "}
 (58,1,1) = {"
@@ -13059,17 +13054,17 @@ tN
 rQ
 rQ
 rQ
-Nn
-VB
-VB
-PY
-VB
-VB
-Qj
-VB
-VB
-gk
-VB
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
 rQ
 rQ
 rQ
@@ -13189,17 +13184,17 @@ tN
 rQ
 rQ
 rQ
-Pk
-VB
-VB
-VB
-uQ
-VB
-VB
-VB
-VB
-VB
-II
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
 rQ
 rQ
 rQ
@@ -13319,17 +13314,17 @@ tN
 rQ
 rQ
 rQ
-XY
-VB
-uQ
-VB
-VB
-VB
-VB
-uQ
-VB
-VB
-VB
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
 rQ
 rQ
 rQ
@@ -13449,17 +13444,17 @@ tN
 rQ
 rQ
 rQ
-VB
-VB
-VB
-VB
-VB
-uQ
-TU
-VB
-VB
-uQ
-VB
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
 rQ
 rQ
 rQ
@@ -13579,17 +13574,17 @@ tN
 rQ
 rQ
 rQ
-VB
-VB
-VB
-uQ
-VB
-VB
-VB
-VB
-VB
-VB
-VB
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
 rQ
 rQ
 rQ
