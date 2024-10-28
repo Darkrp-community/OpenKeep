@@ -1098,7 +1098,7 @@
 /area/rogue/indoors/town/magician)
 "aVu" = (
 /turf/closed/indestructible/wooddark,
-/area/rogue/outdoors/beach/boat)
+/area/rogue/outdoors/coast)
 "aVA" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/church,
@@ -2287,7 +2287,7 @@
 	dir = 2;
 	icon_state = "roofg"
 	},
-/area/rogue/outdoors/beach/boat)
+/area/rogue/outdoors/coast)
 "cjp" = (
 /obj/structure/fluff/railing/fence,
 /obj/structure/fluff/railing/stonehedge,
@@ -6545,7 +6545,7 @@
 	dir = 2;
 	icon_state = "roofg"
 	},
-/area/rogue/outdoors/beach/boat)
+/area/rogue/outdoors/coast)
 "gpQ" = (
 /obj/effect/decal/cobbleedge{
 	dir = 9
@@ -14359,7 +14359,7 @@
 	dir = 2;
 	icon_state = "roofg"
 	},
-/area/rogue/outdoors/beach/boat)
+/area/rogue/outdoors/coast)
 "obY" = (
 /obj/structure/closet/crate/drawer,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -16460,7 +16460,7 @@
 	dir = 2;
 	icon_state = "roofg"
 	},
-/area/rogue/outdoors/beach/boat)
+/area/rogue/outdoors/coast)
 "pWV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -17195,7 +17195,7 @@
 	dir = 2;
 	icon_state = "roofg"
 	},
-/area/rogue/outdoors/beach/boat)
+/area/rogue/outdoors/coast)
 "qLS" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -17874,9 +17874,6 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
-"rwg" = (
-/turf/closed/indestructible/wooddark/hull,
-/area/rogue/outdoors/beach/boat)
 "rwp" = (
 /obj/structure/mineral_door/wood/fancywood{
 	lockid = "butcher";
@@ -19283,7 +19280,7 @@
 	dir = 2;
 	icon_state = "roofg"
 	},
-/area/rogue/outdoors/beach/boat)
+/area/rogue/outdoors/coast)
 "sTe" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/table/optable,
@@ -23904,7 +23901,7 @@
 	dir = 2;
 	icon_state = "roofg"
 	},
-/area/rogue/outdoors/beach/boat)
+/area/rogue/outdoors/coast)
 "xxF" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/cobble,
@@ -94163,7 +94160,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-rwg
+aaj
 cjg
 cjg
 cjg
@@ -94172,7 +94169,7 @@ cjg
 cjg
 cjg
 cjg
-rwg
+aaj
 tXZ
 tXZ
 tXZ
@@ -94320,7 +94317,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-rwg
+aaj
 cjg
 cjg
 cjg
@@ -94329,7 +94326,7 @@ cjg
 cjg
 cjg
 cjg
-rwg
+aaj
 tXZ
 tXZ
 tXZ
@@ -94477,7 +94474,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-rwg
+aaj
 cjg
 cjg
 cjg
@@ -94486,7 +94483,7 @@ cjg
 cjg
 cjg
 cjg
-rwg
+aaj
 tXZ
 tXZ
 tXZ
@@ -94635,14 +94632,14 @@ tXZ
 tXZ
 tXZ
 tXZ
-rwg
+aaj
 cjg
 cjg
 cjg
 cjg
 cjg
 cjg
-rwg
+aaj
 tXZ
 tXZ
 tXZ
@@ -94792,14 +94789,14 @@ tXZ
 tXZ
 tXZ
 tXZ
-rwg
+aaj
 cjg
 cjg
 cjg
 cjg
 cjg
 cjg
-rwg
+aaj
 tXZ
 tXZ
 tXZ
@@ -94950,12 +94947,12 @@ tXZ
 tXZ
 tXZ
 tXZ
-rwg
+aaj
 cjg
 cjg
 cjg
 cjg
-rwg
+aaj
 tXZ
 tXZ
 tXZ
@@ -95107,12 +95104,12 @@ tXZ
 tXZ
 tXZ
 tXZ
-rwg
-rwg
+aaj
+aaj
 cjg
 obJ
-rwg
-rwg
+aaj
+aaj
 tXZ
 tXZ
 tXZ
@@ -95266,8 +95263,8 @@ tXZ
 tXZ
 tXZ
 tXZ
-rwg
-rwg
+aaj
+aaj
 tXZ
 tXZ
 tXZ

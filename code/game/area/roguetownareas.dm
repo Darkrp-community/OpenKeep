@@ -161,6 +161,20 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
 	droning_sound_night = 'sound/music/area/forestnight.ogg'
 
+/area/rogue/outdoors/woods_safe
+	name = "woods"
+	icon_state = "woods"
+	ambientsounds = AMB_FORESTDAY
+	ambientnight = AMB_FORESTNIGHT
+	spookysounds = SPOOKY_CROWS
+	spookynight = SPOOKY_FOREST
+	droning_sound = 'sound/music/area/forest.ogg'
+	droning_sound_dusk = 'sound/music/area/septimus.ogg'
+	droning_sound_night = 'sound/music/area/forestnight.ogg'
+	soundenv = 15
+	converted_type = /area/rogue/indoors/shelter/woods
+
+
 
 /area/rogue/outdoors/river
 	name = "river"
