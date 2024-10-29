@@ -121,6 +121,10 @@
 	seed_identity = "fyritius seeds"
 	plant_def_type = /datum/plant_def/fyritiusflower
 
+/obj/item/neuFarm/seed/poppy
+	seed_identity = "poppy seeds"
+	plant_def_type = /datum/plant_def/poppy
+
 /*
 /obj/item/neuFarm/seed/nut
 	seed_identity = "rocknut seeds"
