@@ -344,11 +344,11 @@
 			written = TRUE
 			info = parsepencode(content)
 			icon_state = "paperwrite"
-			user << "<span class='notice'>You have successfully written the manuscript.</span>"
+			to_chat(user, "<span class='notice'>You have successfully written the manuscript.</span>")
 		else
-			user << "<span class='warning'>You must fill out all fields to complete the manuscript.</span>"
+			to_chat(user, "<span class='notice'>You must fill out all fields to complete the manuscript.</span>")
 		return
 	else if(istype(P, /obj/item/natural/feather) && written)
-		user << "<span class='warning'>The manuscript has already been written.</span>"
+		to_chat(user, "<span class='notice'>The manuscript has already been written.</span>")
 		return
 	return ..()
