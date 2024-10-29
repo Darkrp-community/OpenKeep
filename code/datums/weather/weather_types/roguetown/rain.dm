@@ -44,6 +44,8 @@
 	if(isopenturf(A))
 		var/turf/open/T = A
 		W.reaction_turf(T, 300)
+		for(var/obj/effect/decal/cleanable/blood/target in T)
+			qdel(target)
 	qdel(W)
 	return ..()
 
