@@ -6,9 +6,6 @@
 
 GLOBAL_LIST_EMPTY(vampire_objects)
 
-/datum/species/human/northern/vampire
-	mutanteyes = /obj/item/organ/eyes/night_vision/werewolf
-
 /datum/antagonist/vampirelord
 	name = "Vampire Lord"
 	roundend_category = "Vampires"
@@ -103,9 +100,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		GLOB.character_list[H.mobid] = null
 	GLOB.chosen_names -= H.real_name
 
-	H.set_species(/datum/species/human/northern/vampire)
-	H.age = AGE_ADULT
-
 	H.equipOutfit(/datum/outfit/job/roguetown/vamplord)
 	H.patron = GLOB.patronlist[/datum/patron/forgotten] //Servant forever of he who is forgotten.
 	H.after_creation()
@@ -150,6 +144,9 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/outfit/job/roguetown/vamplord/pre_equip(mob/living/carbon/human/H)
 	..()
+	H.set_species(/datum/species/human/vampire)
+	H.age = AGE_ADULT
+
 	H.mind.adjust_skillrank(/datum/skill/magic/blood, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
@@ -1326,3 +1323,111 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			to_chat(L, "<font color='red'>I managed to snap out of my trance!</font>")
 			to_chat(user, "<font color='red'>They resisted my allure!</font>")
 			return
+
+
+	/*==============*
+	*				*
+	*	 Vampire	*
+	*				*
+	*===============*/
+
+/mob/living/carbon/human/species/human/vampire
+	race = /datum/species/human/vampire
+
+/datum/species/human/vampire
+	name = "Humen"
+	id = "human"
+	desc = "<b>Humen</b><br>\
+	Humenity is the 'perfected race' of the weeping god. Noted for their \
+	tenacity and overwhelming population, humens tend to outnumber the other races drastically. \
+	Humens come from a vast swathe of cultures and ethnicities all around Grimoria, most of which \
+	have historically been at odds with one another and other races. \
+	Humens tend to find fortune easier than the other races, and are so diverse that no other racial trait \
+	are dominant in their species..."
+
+	skin_tone_wording = "Ancestry"
+
+	default_color = "FFFFFF"
+	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
+	inherent_traits = list(TRAIT_NOMOBSWAP)
+	default_features = list("mcolor" = "FFF", "wings" = "None")
+	use_skintones = 1
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	skinned_type = /obj/item/stack/sheet/animalhide/human
+	disliked_food = NONE
+	liked_food = NONE
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mm.dmi'
+	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
+	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
+	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
+	hairyness = "t1"
+	soundpack_m = /datum/voicepack/male
+	soundpack_f = /datum/voicepack/female
+	offset_features = list(OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_WRISTS = list(0,0),\
+	OFFSET_CLOAK = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), \
+	OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,0), \
+	OFFSET_NECK = list(0,0), OFFSET_MOUTH = list(0,0), OFFSET_PANTS = list(0,0), \
+	OFFSET_SHIRT = list(0,0), OFFSET_ARMOR = list(0,0), OFFSET_HANDS = list(0,0), OFFSET_UNDIES = list(0,0), \
+	OFFSET_ID_F = list(0,-1), OFFSET_GLOVES_F = list(0,0), OFFSET_WRISTS_F = list(0,0), OFFSET_HANDS_F = list(0,0), \
+	OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
+	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
+	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
+	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
+	specstats = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 1, "endurance" = 2, "speed" = 0, "fortune" = 1)
+	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 1, "constitution" = 0, "endurance" = 0, "speed" = 1, "fortune" = 1)
+	enflamed_icon = "widefire"
+	mutanteyes = /obj/item/organ/eyes/night_vision/werewolf
+
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
+
+/datum/species/human/vampire/check_roundstart_eligible()
+	return TRUE
+
+/datum/species/human/vampire/get_skin_list()
+	return sortList(list(
+		"Ice Cap" = SKIN_COLOR_ICECAP,
+		"Arctic" = SKIN_COLOR_ARCTIC,
+		"Tundra" = SKIN_COLOR_TUNDRA,
+		"Continental" = SKIN_COLOR_CONTINENTAL,
+		"Temperate" = SKIN_COLOR_TEMPERATE,
+		"Coastal" = SKIN_COLOR_COASTAL,
+		"Subtropical" = SKIN_COLOR_SUBTROPICAL,
+		"Tropical Dry" = SKIN_COLOR_TROPICALDRY,
+		"Tropical Wet" = SKIN_COLOR_TROPICALWET,
+		"Desert" = SKIN_COLOR_DESERT,
+		"Crimson Lands" = SKIN_COLOR_CRIMSONLANDS,
+	))
+
+/datum/species/human/vampire/get_hairc_list()
+	return sortList(list(
+	"blond - pale" = "9d8d6e",
+	"blond - dirty" = "88754f",
+	"blond - drywheat" = "d5ba7b",
+	"blond - strawberry" = "c69b71",
+
+	"brown - mud" = "362e25",
+	"brown - oats" = "584a3b",
+	"brown - grain" = "58433b",
+	"brown - soil" = "48322a",
+
+	"black - oil" = "181a1d",
+	"black - cave" = "201616",
+	"black - rogue" = "2b201b",
+	"black - midnight" = "1d1b2b",
+
+	"red - berry" = "b23434",
+	"red - wine" = "82534c",
+	"red - sunset" = "82462b",
+	"red - blood" = "822b2b",
+	"red - maroon" = "612929"
+
+	))
