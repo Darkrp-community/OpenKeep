@@ -202,9 +202,6 @@ SUBSYSTEM_DEF(dbcore)
 		if (qdel)
 			qdel(query)
 
-/datum/controller/subsystem/dbcore/proc/Quote(string)
-	return (string && "'" + (string) + "'") || "NULL"
-
 
 /*
 Takes a list of rows (each row being an associated list of column => value) and inserts them via a single mass query.

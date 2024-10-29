@@ -15,7 +15,7 @@
 
 /obj/machinery/printingpress/attackby(obj/item/O, mob/user, params)
 	if(printing)
-		to_chat(user, span_warning("The printing press is currently printing. Please wait."))
+		to_chat(user, span_warning("[src] is currently printing. Please wait."))
 		return
 	if(output_item)
 		to_chat(user, span_notice("Please retrieve the printed item before inserting new items."))
@@ -26,7 +26,7 @@
 			to_chat(user, span_notice("This manuscript is blank. You need to write something before uploading it."))
 			return
 		// Prompt the user to upload the manuscript
-		var/choice = input(user, "Do you want to upload the manuscript to the archive?") in list("Yes", "No")
+		var/choice = input(user, "Do you want to add the manuscript to the archive?") in list("Yes", "No")
 		if(choice == "Yes")
 			upload_manuscript(user, M)
 			// Optionally delete the manuscript after uploading
@@ -39,21 +39,20 @@
 		has_paper = TRUE
 		loaded_paper = O
 		src.icon_state = "Ppress_Prepared"
-		user << "<span class='notice'>You insert the blank paper into the printing press.</span>"
+		to_chat(user, span_warning("You insert the blank paper into [src]."))
 		qdel(O)
 	return ..()
 
 /obj/machinery/printingpress/attack_hand(mob/user)
 	if(printing)
-		user << "<span class='warning'>The printing press is currently printing. Please wait.</span>"
+		to_chat(user, span_warning("The [src] is currently printing. Please wait."))
 		return
 	if(output_item)
 		// Try to put the item into the user's hands
 		if(!user.put_in_hands(output_item))
-			user.contents += output_item // If hands are full, put it in inventory
-			user << "<span class='notice'>Your hands are full, the printed item has been placed in your inventory.</span>"
+			output_item.forceMove(get_turf(user))
 		else
-			user << "<span class='notice'>You retrieve [output_item] from the printing press.</span>"
+			to_chat(user, span_warning("You retrieve [output_item] from [src]."))
 		output_item = null
 		src.icon_state = "Ppress_Clean"
 		return
@@ -62,27 +61,27 @@
 		var/obj/item/paper/P = new /obj/item/paper(get_turf(user)) // Create the item at the user's location
 		if(!user.put_in_hands(P)) // Try to put the item in the user's hands
 			P.forceMove(get_turf(user)) // If not, drop it at the user's location
-		user << "<span class='notice'>You retrieve the [P.name] from the printing press.</span>"
+		to_chat(user, span_warning("You retrieve the [P.name] from [src]."))
 		has_paper = FALSE
 		loaded_paper = null
 		src.icon_state = "Ppress_Clean"
 		return
 	else
 		// Default interaction or message
-		user << "<span class='notice'>The printing press is empty.</span>"
+		to_chat(user, span_warning("[src] is empty."))
 		return
 
 /obj/machinery/printingpress/attack_right(mob/user)
 	if(printing)
-		user << "<span class='warning'>The printing press is currently printing. Please wait.</span>"
+		to_chat(user, span_warning("[src] is currently printing. Please wait."))
 		return
 	if(output_item)
-		user << "<span class='notice'>There is a finished product in the printing press. Use an empty hand to retrieve it.</span>"
+		to_chat(user, span_warning("There is a finished product in [src]. Use an empty hand to retrieve it."))
 		return
 	if(!has_paper)
-		user << "<span class='warning'>The printing press requires a blank piece of paper to print.</span>"
+		to_chat(user, span_warning("[src] requires a blank piece of paper to print."))
 		return
-	var/choice = input(user, "Choose an option for the printing press") in list("Print The Book", "Print a Tome of Justice", "Print from the Archive")
+	var/choice = input(user, "Choose an option for the [src]") in list("Print The Book", "Print a Tome of Justice", "Print from the Archive")
 	switch(choice)
 		if ("Print The Book")
 			start_printing(user, "bibble")
@@ -93,11 +92,11 @@
 
 /obj/machinery/printingpress/proc/start_printing(mob/user, print_type, id = null)
 	if(cooldown > world.time)
-		user << "<span class='warning'>The printing press is still recalibrating.</span>"
+		to_chat(user, span_warning("[src] is still recalibrating."))
 		return
 	printing = TRUE
 	src.icon_state = "Ppress_Printing"
-	user << "<span class='notice'>The [src] starts printing...</span>"
+	to_chat(user, span_warning("[src] starts printing..."))
 	playsound(src.loc, 'sound/misc/ppress.ogg', 100, FALSE)
 	// Delete the blank paper as it's consumed during printing
 	if(loaded_paper)
@@ -135,7 +134,7 @@
 	if (query_upload_manuscript.Execute())
 		user.visible_message(span_notice("[user] uploads a manuscript to the archive."), span_notice("You upload a manuscript to the archive."))
 	else
-		user << "<span class='warning'>Upload failed. Please try again later.</span>"
+		to_chat(user, span_warning("Manuscript storage failed. Please try again later."))
 
 	qdel(query_upload_manuscript)
 
@@ -149,12 +148,12 @@
 	// Creates a static book (Tome of Justice)
 	var/obj/item/book/rogue/law/B = new()
 	output_item = B
-	visible_message("<span class='notice'>The printing press hums as it produces the [B.name].</span>")
+	visible_message("<span class='notice'>[src] hums as it produces the [B.name].</span>")
 
 /obj/machinery/printingpress/proc/print_manuscript(mob/user, id)
 	var/sqlid = text2num(id)
 	if (!sqlid)
-		user << "<span class='warning'>Invalid manuscript ID.</span>"
+		to_chat(user, span_warning("Invalid manuscript ID."))
 		return
 
 	// Perform the actual SQL SELECT query
@@ -174,7 +173,7 @@
 
 		// Check if the manuscript is in the forbidden category
 		if (category == "Apocrypha & Grimoires")
-			user << "<span class='warning'>This manuscript cannot be printed using the printing press.</span>"
+			to_chat(user, span_warning("This manuscript cannot be printed using [src]."))
 			qdel(query_print_manuscript)
 			return
 
@@ -189,9 +188,9 @@
 		M.written = TRUE
 		M.info = content
 		output_item = M
-		visible_message("<span class='notice'>The printing press hums as it produces a manuscript titled [title].</span>")
+		visible_message("<span class='notice'>[src] hums as it produces a manuscript titled [title].</span>")
 	else
-		user << "<span class='warning'>Could not find manuscript with ID [id].</span>"
+		to_chat(user, span_warning("Could not find manuscript with ID [id]."))
 
 	qdel(query_print_manuscript)
 
@@ -257,7 +256,7 @@
 
 /obj/machinery/bookbinder/proc/bind_book(mob/user, obj/item/paper/manuscript/M)
 	if (busy)
-		to_chat(user, "<span class='warning'>The book binding bench is already pressing a book!</span>")
+		to_chat(user, "<span class='warning'>[src] is already pressing a book!</span>")
 		return
 
 	if (!user.transferItemToLoc(M, src))
