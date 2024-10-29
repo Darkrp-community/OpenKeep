@@ -248,6 +248,22 @@
 	createditem_num = 1
 	craftdiff = 2
 
+/datum/anvil_recipe/armor/helmetslitkettle
+	name = "Slitted Kettle helmet x2"
+	recipe_name = "a pair of Slitted Kettle Helmets"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/slitkettle
+	createmultiple = TRUE
+	createditem_num = 1
+	craftdiff = 2
+
+/datum/anvil_recipe/armor/froghelmet
+	name = "Frog helmet"
+	recipe_name = "a Frog Helmet"
+	req_bar = /obj/item/ingot/steel
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/frog)
+	craftdiff = 2
+
 /datum/anvil_recipe/armor/helmetknight
 	name = "Knight's helmet (2)"
 	recipe_name = "a Knight's Helmet"
@@ -320,6 +336,13 @@
 	created_item = /obj/item/clothing/head/roguetown/helmet/sallet
 	craftdiff = 2
 
+/datum/anvil_recipe/armor/bascinet
+	name = "Bascinet"
+	recipe_name = "a Bascinet"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/bascinet
+	craftdiff = 2
+
 /datum/anvil_recipe/armor/scalemail
 	name = "Scalemail"
 	recipe_name = "a Scalemail"
@@ -342,7 +365,6 @@
 	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decorated/knight
 	craftdiff = 4
-	i_type = "Armor"
 
 /datum/anvil_recipe/armor/decoratedhelmetpig
 	name = "Decorated Pigface Helmet (2) (c)"
@@ -350,7 +372,6 @@
 	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decorated/hounskull
 	craftdiff = 3
-	i_type = "Armor"
 
 /datum/anvil_recipe/armor/decoratedhelmetbuc
 	name = "Decorated Bucket Helmet (2) (c)"
@@ -358,12 +379,18 @@
 	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decorated/bucket
 	craftdiff = 3
-	i_type = "Armor"
 
 /datum/anvil_recipe/armor/decoratedhelmetbucgold
-	name = "Decorated Gold-Trimmed Bucket Helmet (2) (c)"
+	name = "Decorated Gold-Trimmed Bucket Helmet (3) (c)"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
+	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/gold,/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decorated/golden
 	craftdiff = 3
-	i_type = "Armor"
+
+/datum/anvil_recipe/armor/decoratedbascinet
+	name = "Decorated Bascinet (c)"
+	recipe_name = "a Decorated Bascinet"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decorated/bascinet
+	craftdiff = 2
