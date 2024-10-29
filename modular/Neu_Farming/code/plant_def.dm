@@ -187,8 +187,8 @@
 	icon_state = "poppy"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/poppy
 	produce_amount_min = 1
-	produce_amount_max = 2
-	water_drain_rate = 0
+	produce_amount_max = 1
+	maturation_nutrition = HUNGRINESS_DEMANDING
 
 /*
 /datum/plant_def/garlic
