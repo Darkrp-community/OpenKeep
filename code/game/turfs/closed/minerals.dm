@@ -614,7 +614,7 @@
 /turf/closed/mineral/random/rogue/high
 	icon_state = "minrandhigh"
 	mineralChance = 60
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/gold = 5 , /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/silver = 5, /turf/closed/mineral/rogue/gemeralds = 5)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/gold = 15 , /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/silver = 15, /turf/closed/mineral/rogue/gemeralds = 10)
 
 
 //begin actual mineral turfs
