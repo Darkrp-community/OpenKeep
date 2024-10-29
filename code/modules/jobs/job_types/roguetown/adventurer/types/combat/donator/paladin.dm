@@ -1,4 +1,4 @@
-/datum/advclass/combat/templar
+/datum/advclass/combat/paladin
 	name = "Paladin"
 	tutorial = "Paladins are former noblemen and clerics who have dedicated themselves to great combat prowess. Often, they were promised redemption for past sins if they crusaded in the name of the gods."
 	allowed_sexes = list(MALE, FEMALE)
@@ -6,13 +6,13 @@
 		"Humen",
 		"Aasimar"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/templar
+	outfit = /datum/outfit/job/roguetown/adventurer/paladin
 	maximum_possible_slots = 1
 	min_pq = 2
 	pickprob = 15
 	category_tags = list(CTAG_ADVENTURER)
 
-/datum/outfit/job/roguetown/adventurer/templar/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/adventurer/paladin/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE
 
@@ -24,14 +24,14 @@
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/necra
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 		if("Eora")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
+			head = /obj/item/clothing/head/roguetown/helmet/sallet/eoran
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
 			H.virginity = FALSE
 		if("Noc")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/noc
 			wrists = /obj/item/clothing/neck/roguetown/psycross/noc
 		if("Pestra")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 		if("Ravox")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
@@ -67,7 +67,10 @@
 		H.change_stat("constitution", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", -2)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/churn)
+		if(H.patron != /datum/patron/divine/necra)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/churn)
+		else
+			H.change_stat("fortune", 1)	// instead of duped churn necrans gets more fortune
 	if(H.dna?.species)
 		if(H.dna.species.id == "human")
 			H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
@@ -77,6 +80,6 @@
 	C.holder_mob = H
 	C.grant_spells_templar(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/churn)
+
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
