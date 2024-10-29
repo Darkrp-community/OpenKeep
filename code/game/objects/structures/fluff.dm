@@ -818,6 +818,11 @@
 	icon_state = "astrata"
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 
+/obj/structure/fluff/statue/astrata/decorated
+	name = "decorated statue of Astrata"
+	desc = "Astrata, the Sun Queen, reigns over light, order, and conquest. She is worshipped and feared in equal measure. This particular statue of the Goddess is decorated with golden jewelry."
+	icon_state = "astrata_bling"
+
 /obj/structure/fluff/statue/knight/r
 	icon_state = "knightstatue_r"
 
