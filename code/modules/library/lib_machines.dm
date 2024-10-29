@@ -15,15 +15,15 @@
 
 /obj/machinery/printingpress/attackby(obj/item/O, mob/user, params)
 	if(printing)
-		user << "<span class='warning'>The printing press is currently printing. Please wait.</span>"
+		to_chat(user, span_warning("The printing press is currently printing. Please wait."))
 		return
 	if(output_item)
-		user << "<span class='notice'>Please retrieve the printed item before inserting new items.</span>"
+		to_chat(user, span_notice("Please retrieve the printed item before inserting new items."))
 		return
 	if(istype(O, /obj/item/paper/manuscript))
 		var/obj/item/paper/manuscript/M = O
 		if(!M.written)
-			user << "<span class='notice'>This manuscript is blank. You need to write something before uploading it.</span>"
+			to_chat(user, span_notice("This manuscript is blank. You need to write something before uploading it."))
 			return
 		// Prompt the user to upload the manuscript
 		var/choice = input(user, "Do you want to upload the manuscript to the archive?") in list("Yes", "No")
@@ -31,9 +31,9 @@
 			upload_manuscript(user, M)
 			// Optionally delete the manuscript after uploading
 			qdel(M)
-			user << "<span class='notice'>The manuscript has been uploaded and removed from your inventory.</span>"
+			to_chat(user, span_notice("The manuscript has been uploaded and removed from your inventory."))
 		else
-			user << "<span class='notice'>You decide not to upload the manuscript.</span>"
+			to_chat(user, span_notice("You decide not to upload the manuscript."))
 		return
 	if(istype(O, /obj/item/paper) && !has_paper)
 		has_paper = TRUE
@@ -133,8 +133,7 @@
 	))
 
 	if (query_upload_manuscript.Execute())
-		user << "<span class='notice'>Upload Complete. The manuscript has been uploaded to the Archive.</span>"
-		user.visible_message("<span class='notice'>[user] uploads a manuscript to the archive.</span>")
+		user.visible_message(span_notice("[user] uploads a manuscript to the archive."), span_notice("You upload a manuscript to the archive."))
 	else
 		user << "<span class='warning'>Upload failed. Please try again later.</span>"
 
@@ -264,7 +263,7 @@
 	if (!user.transferItemToLoc(M, src))
 		return
 
-	user.visible_message("<span class='notice'>[user] places a manuscript into the book binder and screws the press.</span>")
+	user.visible_message(span_notice("[user] places \the [M] into \the [src] and screws the press."), span_notice("I place \the [M] into \the [src] and screw the press."))
 	busy = TRUE
 	sleep(rand(50, 100))
 	busy = FALSE
