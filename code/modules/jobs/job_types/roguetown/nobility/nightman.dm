@@ -12,12 +12,10 @@
 		"Dwarf",
 		"Elf",
 		"Half-Elf",
-		"Tiefling",
-		"Dark Elf",
 		"Aasimar"
 	)
 
-	tutorial = "You are renting out the bath-house in a joint operation with the Innkeep. Providing security for the bathwenches and helping them find work, or a troublemaking rake that the others hate to tolerate."
+	tutorial = "You are renting out the bath-house in a joint operation with the Innkeep. Providing security for the bathwenches and helping them find work, or a troublemaking rake that the others hate to tolerate. You are also a member of the King's royal court and one of his courtiers."
 
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/niteman
