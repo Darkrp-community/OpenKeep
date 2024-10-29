@@ -479,7 +479,7 @@
 	log_game("Starting a round of extended.")
 	mode.spend_threat(mode.threat)
 	return TRUE
-
+/*
 //////////////////////////////////////////////
 //                                          //
 //               CLOWN OPS                  //
@@ -504,7 +504,7 @@
 		for(var/datum/mind/V in assigned)
 			V.assigned_role = "Clown Operative"
 			V.special_role = "Clown Operative"
-
+*/
 //////////////////////////////////////////////
 //                                          //
 //               DEVIL                      //
