@@ -635,6 +635,9 @@
 "Vh" = (
 /turf/open/water/river,
 /area/rogue/outdoors/woods)
+"Vz" = (
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/woods_safe)
 "VY" = (
 /obj/structure/fermenting_barrel,
 /turf/open/floor/rogue/dirt,
@@ -14589,9 +14592,9 @@ Bm
 dI
 "}
 (108,1,1) = {"
-Lu
-Lu
-Lu
+Vz
+Vz
+Vz
 Lu
 Lu
 Jc
@@ -14722,7 +14725,7 @@ dI
 dI
 Jc
 Jc
-Lu
+Vz
 Lu
 Lu
 Jc
@@ -14853,7 +14856,7 @@ dI
 Bm
 Jc
 Jc
-Lu
+Vz
 Lu
 Jc
 Jc
@@ -14983,7 +14986,7 @@ dI
 Bm
 Bm
 Jc
-Lu
+Vz
 Lu
 Lu
 Jc
@@ -15114,7 +15117,7 @@ Bm
 Bm
 Bm
 Jc
-Lu
+Vz
 Lu
 Lu
 Lu
@@ -15245,8 +15248,8 @@ sN
 Jc
 Jc
 Jc
-Lu
-Lu
+Vz
+Vz
 Lu
 Lu
 Lg
@@ -15375,8 +15378,8 @@ sN
 sN
 Jc
 sN
-Lu
-Lu
+Jc
+Vz
 Jc
 Lu
 Lu
@@ -15506,8 +15509,8 @@ sN
 sN
 Jc
 sN
-Lu
-Lu
+Vz
+Vz
 Lu
 Lu
 Lu
@@ -15637,8 +15640,8 @@ sN
 sN
 sN
 sN
-Lu
-Lu
+Jc
+Vz
 Jc
 Lu
 Jc
@@ -15768,8 +15771,8 @@ sN
 sN
 sN
 sN
-Lu
-Lu
+Vz
+Vz
 Lu
 Jc
 Jc
@@ -15899,8 +15902,8 @@ sN
 sN
 sN
 sN
-Lu
-Lu
+Jc
+Vz
 Lu
 Jc
 Jc
@@ -16030,7 +16033,7 @@ sN
 sN
 sN
 Jc
-Lu
+Vz
 Lu
 Jc
 Jc
@@ -16160,7 +16163,7 @@ sN
 Bm
 Jc
 Jc
-Lu
+Vz
 Lu
 Lu
 Jc
@@ -16291,7 +16294,7 @@ sN
 Jc
 Lg
 sN
-Lu
+Vz
 Lu
 Lu
 Jc
@@ -16422,8 +16425,8 @@ ub
 Lg
 sN
 Jc
-Lu
-Lu
+Vz
+Vz
 Lu
 Jc
 Jc
@@ -16554,7 +16557,7 @@ sN
 Bm
 Jc
 Jc
-Lu
+Vz
 Lu
 Jc
 Bm
@@ -16684,7 +16687,7 @@ Lg
 Bm
 Bm
 Jc
-Lu
+Vz
 Lu
 Jc
 Jc
@@ -16814,7 +16817,7 @@ sN
 Bm
 Bm
 Jc
-Lu
+Vz
 Lu
 Jc
 sN
@@ -16944,7 +16947,7 @@ dI
 dI
 dI
 Jc
-Lu
+Vz
 Lu
 Jc
 Jc
@@ -17074,7 +17077,7 @@ dI
 dI
 dI
 dI
-Lu
+Vz
 Lu
 Jc
 Bm
@@ -17204,7 +17207,7 @@ dI
 dI
 dI
 dI
-Lu
+Vz
 Lu
 dI
 dI
@@ -17311,7 +17314,7 @@ dI
 dI
 Lu
 fA
-Lu
+Vz
 PG
 PG
 PG

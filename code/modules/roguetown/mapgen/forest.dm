@@ -26,8 +26,8 @@
 							/obj/structure/chair/bench/ancientlog = 3,
 							/obj/structure/table/wood/treestump = 4,
 							/obj/structure/closet/dirthole/closed/loot=6,
-							/obj/item/restraints/legcuffs/beartrap/armed/camouflage=0.25,
-							/obj/structure/flora/roguegrass/maneater/real=0.25)
+							/obj/item/restraints/legcuffs/beartrap/armed/camouflage=0.1,
+							/obj/structure/flora/roguegrass/maneater/real=0.1)
 	spawnableTurfs = list(/turf/open/floor/rogue/dirt/road=80,
 						/turf/open/water/swamp=25)
 	allowed_areas = list(/area/rogue/outdoors/woods)
