@@ -81,7 +81,7 @@
 	if(!has_paper)
 		to_chat(user, span_warning("[src] requires a blank piece of paper to print."))
 		return
-	var/choice = input(user, "Choose an option for the [src]") in list("Print The Book", "Print a Tome of Justice", "Print from the Archive")
+	var/choice = input(user, "Choose an option for \the [src]") in list("Print The Book", "Print a Tome of Justice", "Print from the Archive")
 	switch(choice)
 		if ("Print The Book")
 			start_printing(user, "bibble")
@@ -313,7 +313,7 @@
 			to_chat(user, "<span class='warning'>I don't know how to do this!</span>")
 			return
 		if(!user.is_holding(src))
-			to_chat(user, "<span class='warning'>I need to hold the [src] to turn it into a manuscript!</span>")
+			to_chat(user, "<span class='warning'>I need to hold \the [src] to turn it into a manuscript!</span>")
 			return
 		if(info)
 			to_chat(user, "<span class='warning'>The paper already has content!</span>")
