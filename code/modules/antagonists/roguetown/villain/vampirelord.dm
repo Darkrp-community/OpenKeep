@@ -6,6 +6,9 @@
 
 GLOBAL_LIST_EMPTY(vampire_objects)
 
+/datum/species/human/northern/vampire
+	mutanteyes = /obj/item/organ/eyes/night_vision/werewolf
+
 /datum/antagonist/vampirelord
 	name = "Vampire Lord"
 	roundend_category = "Vampires"
@@ -60,12 +63,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	ADD_TRAIT(owner.current, TRAIT_VAMPMANSION, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_VILLAIN, "[type]")
 	owner.current.cmode_music = 'sound/music/combat_vamp.ogg'
-	var/obj/item/organ/eyes/eyes = owner.current.getorganslot(ORGAN_SLOT_EYES)
-	if(eyes)
-		eyes.Remove(owner.current,1)
-		QDEL_NULL(eyes)
-	eyes = new /obj/item/organ/eyes/night_vision/zombie
-	eyes.Insert(owner.current)
 	owner.current.AddSpell(new /obj/effect/proc_holder/spell/targeted/transfix)
 	owner.current.verbs |= /mob/living/carbon/human/proc/vamp_regenerate
 	owner.current.verbs |= /mob/living/carbon/human/proc/vampire_telepathy
@@ -105,15 +102,13 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	if(H.mobid in GLOB.character_list)
 		GLOB.character_list[H.mobid] = null
 	GLOB.chosen_names -= H.real_name
-	if(H.dna.species?.id != "human" && H.dna.species?.id != "elf")
-		H.age = AGE_ADULT
-		if(prob(50))
-			H.set_species(/datum/species/human/northern)
-		else
-			H.set_species(/datum/species/elf/snow) //setspecies randomizes body
-		H.after_creation()
+
+	H.set_species(/datum/species/human/northern/vampire)
+	H.age = AGE_ADULT
+
 	H.equipOutfit(/datum/outfit/job/roguetown/vamplord)
 	H.patron = GLOB.patronlist[/datum/patron/forgotten] //Servant forever of he who is forgotten.
+	H.after_creation()
 
 	return TRUE
 
