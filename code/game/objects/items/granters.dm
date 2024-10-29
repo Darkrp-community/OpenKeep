@@ -425,3 +425,87 @@
 	icon_state = "cooking_learing_sweets"
 	oneuse = FALSE
 	remarks = list("So that is how icing is made!", "Placing fruit on top? How simple...", "Huh layering cake seems harder then this...", "This book smells like candy", "A clown must have made this page, or they forgot to spell check it before printing...", "Wait, a way to cook slime to be safe?")
+
+//! --MAGICK SCROLLS-- !/
+/obj/item/book/granter/spell/magick/
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'icons/roguetown/items/misc.dmi'
+	oneuse = TRUE
+	drop_sound = 'sound/foley/dropsound/paper_drop.ogg'
+	pickup_sound =  'sound/blank.ogg'
+
+/obj/item/book/granter/spell/magick/onlearned(mob/living/carbon/user)
+	..()
+	if(oneuse == TRUE)
+		name = "siphoned scroll"
+		desc = "A scroll once inscribed with magical scripture. The surface is now barren of knowledge, siphoned by someone else. It's utterly useless."
+		icon_state = "scroll"
+		user.visible_message(span_warning("[src] has had its magic ink ripped from the scroll!"))
+
+/obj/item/book/granter/spell/magick/fireball
+	name = "Scroll of Fireball"
+	spell = /obj/effect/proc_holder/spell/invoked/projectile/fireball
+	spellname = "fireball"
+	icon_state = "scrollred"
+	remarks = list("Ignis et oleum..", "Flammam continere ad momentum..", "Flammam iactare..", "Sit flamma constructum..")
+
+/obj/item/book/granter/spell/magick/greaterfireball
+	name = "Scroll of Greater Fireball"
+	spell = /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater
+	spellname = "greater fireball"
+	icon_state = "scrolldarkred"
+	remarks = list("Ignis et oleum..", "Flammam continere ad momentum..", "Flammam iactare..", "Sit flamma constructum..")
+
+/obj/item/book/granter/spell/magick/lightning
+	name = "Scroll of Lightning"
+	spell = /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt
+	spellname = "lightning"
+	icon_state = "scrollyellow"
+	remarks = list("Essentia fulgurum digitorum..", "Fulgur de nubibus desuper..", "Fulgur eiecit digitos..", "Praecipe intus aedificatur..")
+
+/obj/item/book/granter/spell/magick/fetch
+	name = "Scroll of Fetch"
+	spell = /obj/effect/proc_holder/spell/invoked/projectile/fetch
+	spellname = "fetch"
+	icon_state = "scrollpurple"
+	remarks = list("Returnus Revico..", "Manus de reverti..", "Menus de returnus..")
+
+/obj/item/book/granter/spell/magick/blindness
+	name = "Scroll of Blindness"
+	spell = /obj/effect/proc_holder/spell/invoked/blindness
+	spellname = "blindness"
+	icon_state = "scrollpurple"
+	remarks = list("Occultare oculos..", "Vivus amoevtar..", "Visioner removan..")
+
+/obj/item/book/granter/spell/magick/invisibility
+	name = "Scroll of Invisibility"
+	spell = /obj/effect/proc_holder/spell/invoked/invisibility
+	spellname = "invisibility"
+	icon_state = "scrollpurple"
+	remarks = list("Pallium nihilum..", "Occultare veritatem..", "Veritatem removan menor..")
+
+//scroll for giving the reader a spell point, this should be dungeon loot
+/obj/item/book/granter/spell_points
+	name = "Arcyne Insight"
+	icon_state = "scrollpurple"
+	icon = 'icons/roguetown/items/misc.dmi'
+	oneuse = TRUE
+	drop_sound = 'sound/foley/dropsound/paper_drop.ogg'
+	pickup_sound =  'sound/blank.ogg'
+
+/obj/item/book/granter/spell_points/on_reading_finished(mob/user)
+	var/arcaneskill = user.mind.get_skill_level(/datum/skill/magic/arcane)
+	if(arcaneskill >= SKILL_LEVEL_NOVICE) //Required arcane skill of NOVICE or higher to use the granter
+		to_chat(user, span_notice("I absorb the insights on the scroll, and feel more adept at spellcraft!"))
+		user.mind.adjust_spellpoints(1)
+		onlearned(user)
+	else
+		to_chat(user, span_notice("I don't know what to make of this."))
+
+/obj/item/book/granter/spell_points/onlearned(mob/living/carbon/user)
+	..()
+	if(oneuse == TRUE)
+		name = "siphoned scroll"
+		desc = "A scroll once inscribed with magical scripture. The surface is now barren of knowledge, siphoned by someone else. It's utterly useless."
+		icon_state = "scroll"
+		user.visible_message(span_warning("[src] has had its magic ink ripped from the scroll!"))
