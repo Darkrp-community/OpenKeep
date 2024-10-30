@@ -416,6 +416,22 @@
 	throw_speed = 1
 	throw_range = 3
 
+/* .......... Poppies ........ */
+/obj/item/reagent_containers/food/snacks/produce/poppy
+	seed = /obj/item/neuFarm/seed/sunflower
+	name = "poppy"
+	desc = "For their crimson beauty and the sedating effect of their crushed seeds, these flowers are considered a symbol of Eora."
+	icon_state = "poppy"
+	seed = /obj/item/neuFarm/seed/poppy
+	throwforce = 0
+	w_class = WEIGHT_CLASS_TINY
+	throw_speed = 1
+	throw_range = 3
+	list_reagents = list(/datum/reagent/consumable/nutriment = 0)
+	dropshrink = 0.5
+	rotprocess = null
+	dust_result = /obj/item/reagent_containers/powder/ozium
+
 /*
 /obj/item/reagent_containers/food/snacks/produce/garlic
 	name = "garlic"

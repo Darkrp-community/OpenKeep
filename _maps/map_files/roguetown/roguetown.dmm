@@ -400,6 +400,7 @@
 /obj/item/clothing/mask/cigarette/pipe/crafted,
 /obj/item/reagent_containers/powder/spice,
 /obj/item/reagent_containers/powder/spice,
+/obj/item/neuFarm/seed/poppy,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
 "aza" = (
