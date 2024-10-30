@@ -205,7 +205,7 @@
 	sellprice = 60
 
 /obj/item/rogueweapon/sword/long/death
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/rogueweapon/sword/long/getonmobprop(tag)
 	. = ..()
@@ -1257,7 +1257,7 @@
 	slot_flags = ITEM_SLOT_BACK//how the fuck you could put this thing on your hip?
 	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/copper
-	sellprice = 25//lets make the two bars worth it 
+	sellprice = 25//lets make the two bars worth it
 
 // Hoplite Kophesh
 /obj/item/rogueweapon/sword/khopesh

@@ -70,7 +70,7 @@
 	H.verbs |= /mob/living/carbon/human/proc/churchannouncement
 //	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 //		H.underwear = "Femleotard"
-//		H.underwear_color = CLOTHING_BLACK
+//		H.underwear_color = CLOTHING_SOOT_BLACK
 //		H.update_body()
 
 

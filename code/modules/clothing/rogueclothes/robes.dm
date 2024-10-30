@@ -22,7 +22,7 @@
 	color = "#7c6d5c"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/black
-	color = CLOTHING_BLACK_WARM
+	color = CLOTHING_DARK_INK
 
 /obj/item/clothing/suit/roguetown/shirt/robe/white
 

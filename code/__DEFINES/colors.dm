@@ -61,64 +61,108 @@
 
 
 //roguetown
-#define CLOTHING_RED			"#a32121"
-#define CLOTHING_PURPLE			"#8747b1"
-#define CLOTHING_BLACK_WARM		"#3d3a36"
-#define CLOTHING_BLACK			"#414143"
-#define CLOTHING_BROWN			"#685542"
-#define CLOTHING_GREEN			"#428138"
-#define CLOTHING_DARK_GREEN		"#264d26"
-#define CLOTHING_BLUE			"#537bc6"
-#define CLOTHING_YELLOW			"#b5b004"
-#define CLOTHING_TEAL			"#249589"
+// Expensive dyes ==========================
+#define EXPENSIVE_DYES			list("Ash Grey","Chalk White","Cream","White","Blood Red","Royal Purple","Dark Ink","Forest Green","Sky Blue","Mustard Yellow","Teal","Fyritius Orange","Majenta", "Salmon", "Russet", "Chestnut", "Maroon","Red Ochre", "Dunked in Water" )
+
+#define CLOTHING_BLOOD_RED		"#5d1d1d"
+#define CLOTHING_ROYAL_PURPLE	"#4c305e"
+#define CLOTHING_DARK_INK		"#392f2f"
+#define CLOTHING_FOREST_GREEN	"#336022"
+#define CLOTHING_SKY_BLUE		"#203459"
+#define CLOTHING_TEAL			"#244f4a"
+#define CLOTHING_FYRITIUS_DYE	"#85521b"
+#define CLOTHING_MAJENTA		"#5a1c38"
+#define CLOTHING_SALMON			"#603f49"
+#define CLOTHING_RUSSET			"#7a4c29"
+#define CLOTHING_CHESTNUT		"#5f3d21"
+#define CLOTHING_MAROON			"#5a1010"
+#define CLOTHING_RED_OCHRE		"#5e2c28"
+#define CLOTHING_MUSTARD_YELLOW	"#76740c"
+#define CLOTHING_YELLOW_OCHRE	"#6b550d"
+
+
+// Cheap dyes ==========================
+#define CHEAP_DYES				list("Ash Grey","Chalk White","Cream","White", "Soot Black","Bark Brown","Winestain Red","Berry Blue","Spring Green","Pear Yellow","Peasant Brown","Mud Brown","Bog Green","Dunked in Water" )
+
+#define CLOTHING_SOOT_BLACK		"#4b4b50"
+#define CLOTHING_WINESTAIN_RED	"#5a3232"
+#define CLOTHING_BERRY_BLUE		"#363f4f"
+#define CLOTHING_PEAR_YELLOW	"#545530"
+#define CLOTHING_BARK_BROWN		"#483931"
+#define CLOTHING_PEASANT_BROWN	"#422c26"
+#define CLOTHING_MUD_BROWN		"#4c4636"
+#define CLOTHING_SPRING_GREEN	"#2d3f30"
+#define CLOTHING_BOG_GREEN		"#475335"
+
+#define CLOTHING_ASH_GREY		"#999999"
+#define CLOTHING_CHALK_WHITE	"#c7c0b5"
+#define CLOTHING_CREAM			"#b0ae80"
 #define CLOTHING_WHITE			"#ffffff"
-#define CLOTHING_ORANGE			"#bd6606"
-#define CLOTHING_MAJENTA		"#962e5c"
-
-#define CLOTHING_PINK			"#cf99e3"
-#define CLOTHING_SALMON			"#ba8f9e"
-#define CLOTHING_PALE_BLUE		"#94b4b6"
-#define CLOTHING_PALE_ORANGE	"#bd978c"
-#define CLOTHING_PALE_GREEN		"#92bd8c"
-#define CLOTHING_PALE_YELLOW	"#c7c981"
-
 #define CLOTHING_WET			"#bbbbbb"
 
-#define CLOTHING_COLOR_NAMES	list("Red","Purple","Black","Brown","Green","Blue","Yellow","Teal","White","Orange","Majenta", "Salmon", "Pink", "Pale Blue", "Pale Orange", "Pale Green", "Pale Yellow")
+#define RANDOM_PEASANT_DYES		pick(CLOTHING_BARK_BROWN , CLOTHING_PEASANT_BROWN, CLOTHING_MUD_BROWN , CLOTHING_BOG_GREEN , CLOTHING_SPRING_GREEN , CLOTHING_PEAR_YELLOW )
+#define RANDOM_NOBLE_DYES		pick(CLOTHING_BLOOD_RED , CLOTHING_FOREST_GREEN , CLOTHING_SKY_BLUE , CLOTHING_MUSTARD_YELLOW , CLOTHING_TEAL , CLOTHING_FYRITIUS_DYE, CLOTHING_YELLOW_OCHRE )
+
+#define CLOTHING_COLOR_NAMES	list("Ash Grey","Chalk White","Cream","White","Blood Red","Royal Purple","Dark Ink","Forest Green","Sky Blue","Mustard Yellow","Teal","Fyritius Orange","Majenta", "Salmon", "Pink", "Russet", "Chestnut", "Maroon","Red Ochre", "Soot Black","Bark Brown","Winestain Red","Berry Blue","Spring Green","Pear Yellow","Peasant Brown","Mud Brown","Bog Green", "Dunked in Water" )
 
 /proc/clothing_color2hex(input)
 	switch(input)
-		if("Red")
-			return CLOTHING_RED
-		if("Purple")
-			return CLOTHING_PURPLE
-		if("Black")
-			return CLOTHING_BLACK
-		if("Brown")
-			return CLOTHING_BROWN
-		if("Green")
-			return CLOTHING_GREEN
-		if("Blue")
-			return CLOTHING_BLUE
-		if("Yellow")
-			return CLOTHING_YELLOW
+		if("Blood Red")
+			return CLOTHING_BLOOD_RED
+		if("Royal Purple")
+			return CLOTHING_ROYAL_PURPLE
+		if("Forest Green")
+			return CLOTHING_FOREST_GREEN
+		if("Sky Blue")
+			return CLOTHING_SKY_BLUE
+		if("Mustard Yellow")
+			return CLOTHING_MUSTARD_YELLOW
 		if("Teal")
 			return CLOTHING_TEAL
-		if("White")
-			return CLOTHING_WHITE
-		if("Orange")
-			return CLOTHING_ORANGE
+		if("Fyritius Orange")
+			return CLOTHING_FYRITIUS_DYE
 		if("Majenta")
 			return CLOTHING_MAJENTA
-		if("Pink",)
-			return CLOTHING_PINK
-		if("Salmon",)
+		if("Salmon")
 			return CLOTHING_SALMON
-		if("Pale Blue")
-			return CLOTHING_PALE_BLUE
-		if("Pale Orange",)
-			return CLOTHING_PALE_ORANGE
-		if("Pale Green")
-			return CLOTHING_PALE_GREEN
-		if("Pale Yellow")
-			return CLOTHING_PALE_YELLOW
+		if("Russet")
+			return CLOTHING_RUSSET
+		if("Chestnut")
+			return CLOTHING_CHESTNUT
+		if("Yellow Ochre")
+			return CLOTHING_YELLOW_OCHRE
+		if("Red Ochre" )
+			return CLOTHING_RED_OCHRE
+		if("Maroon" )
+			return CLOTHING_MAROON
+
+		if("Soot Black")
+			return CLOTHING_SOOT_BLACK
+		if("Winestain Red")
+			return CLOTHING_WINESTAIN_RED
+		if("Berry Blue")
+			return CLOTHING_BERRY_BLUE
+		if("Pear Yellow")
+			return CLOTHING_PEAR_YELLOW
+		if("Bark Brown")
+			return CLOTHING_BARK_BROWN
+		if("Peasant Brown" )
+			return CLOTHING_PEASANT_BROWN
+		if("Mud Brown")
+			return CLOTHING_MUD_BROWN
+		if("Bog Green")
+			return CLOTHING_BOG_GREEN
+		if("Spring Green")
+			return CLOTHING_SPRING_GREEN
+
+		if("White")
+			return CLOTHING_WHITE
+		if("Ash Grey")
+			return CLOTHING_ASH_GREY
+		if("Chalk White")
+			return CLOTHING_CHALK_WHITE
+		if("Cream")
+			return CLOTHING_CREAM
+		if("Dunked in water")
+			return CLOTHING_WET
+

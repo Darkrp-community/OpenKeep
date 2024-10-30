@@ -53,27 +53,30 @@
 //	adjustable = CAN_CADJUST
 
 /obj/item/clothing/under/roguetown/tights/random/Initialize()
-	color = pick("#544236", "#435436", "#543836", "#79763f")
+	color = RANDOM_PEASANT_DYES
 	..()
 
+/obj/item/clothing/under/roguetown/tights/uncolored
+	color = CLOTHING_CREAM
+
 /obj/item/clothing/under/roguetown/tights/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/under/roguetown/tights/red
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/under/roguetown/tights/purple
-	color = CLOTHING_PURPLE
+	color = CLOTHING_ROYAL_PURPLE
 
 /obj/item/clothing/under/roguetown/tights/green
-	color = "#3c693c"
+	color = CLOTHING_FOREST_GREEN
 
 /obj/item/clothing/under/roguetown/tights/jester
 	desc = "Funny tights!"
-	color = "#1E3B20"
+	color = CLOTHING_SALMON
 
 /obj/item/clothing/under/roguetown/tights/lord
-	color = "#865c9c"
+	color = CLOTHING_ROYAL_PURPLE
 
 /obj/item/clothing/under/roguetown/tights/vagrant
 	r_sleeve_status = SLEEVE_TORN
@@ -204,7 +207,7 @@
 	l_sleeve_status = SLEEVE_NOMOD
 
 /obj/item/clothing/under/roguetown/loincloth/brown
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 
 /obj/item/clothing/under/roguetown/loincloth/pink
 	color = "#b98ae3"

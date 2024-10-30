@@ -1789,8 +1789,8 @@
 	icon_state = "longtable"
 	},
 /obj/item/clothing/mask/cigarette/pipe/westman,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -11858,7 +11858,7 @@
 "Rs" = (
 /obj/structure/closet/crate/drawer,
 /obj/item/clothing/mask/cigarette/pipe/westman,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/indoors/town/bath)
 "Rt" = (
@@ -13389,9 +13389,9 @@
 	icon_state = "longtable";
 	dir = 1
 	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
 /obj/structure/rack/rogue/shelf,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)

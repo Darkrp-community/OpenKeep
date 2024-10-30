@@ -75,7 +75,7 @@
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/roguetown/headband/red
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/head/roguetown/softcap
 	name = "soft cap"
@@ -124,14 +124,13 @@
 	desc = "A comfortable and fashionable headgear."
 	icon_state = "chap_alt"
 	flags_inv = HIDEEARS
-	color = CLOTHING_PINK
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/random/Initialize()
 	. = ..()
-	color = pick(CLOTHING_TEAL, CLOTHING_GREEN, CLOTHING_ORANGE, CLOTHING_MAJENTA, CLOTHING_YELLOW,CLOTHING_SALMON, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW)
+	color = pick(CLOTHING_TEAL, CLOTHING_FOREST_GREEN, CLOTHING_FYRITIUS_DYE, CLOTHING_MAJENTA, CLOTHING_MUSTARD_YELLOW,CLOTHING_SALMON, CLOTHING_SKY_BLUE, CLOTHING_YELLOW_OCHRE, CLOTHING_RED_OCHRE, CLOTHING_RUSSET)
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary
-	color = CLOTHING_PURPLE
+	color = CLOTHING_ROYAL_PURPLE
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary/Initialize()
 	..()
@@ -203,13 +202,13 @@
 	body_parts_covered = NECK
 
 /obj/item/clothing/head/roguetown/roguehood/brown
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 
 /obj/item/clothing/head/roguetown/roguehood/red
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/head/roguetown/roguehood/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/head/roguetown/roguehood/random/Initialize()
 	color = pick("#544236", "#435436", "#543836", "#79763f")
@@ -442,7 +441,7 @@
 /obj/item/clothing/head/roguetown/tophat
 	name = "teller's hat"
 	icon_state = "tophat"
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 
 
@@ -746,7 +745,7 @@
 	body_parts_covered = HEAD_EXCEPT_MOUTH
 
 /obj/item/clothing/head/roguetown/helmet/visored/knight/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 
 
@@ -1055,7 +1054,7 @@
 	name = "headscarf"
 	desc = "Rolled cloth. Gives some protection at least."
 	icon_state = "headscarf"
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 	sellprice = VALUE_LEATHER_HELMET/2
 	armor = ARMOR_GAMBESON
 	body_parts_covered = HEAD|HAIR

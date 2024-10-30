@@ -104,8 +104,8 @@
 	name = "green sacrifice to Dendor (unique)"
 	structurecraft = /obj/structure/fluff/psycross/crafted/shrine/dendor_saiga
 	reqs = list(/obj/item/reagent_containers/food/snacks/grub/silk = 1,
-				/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed = 1,
-				/obj/item/reagent_containers/food/snacks/produce/berries = 1)
+				/obj/item/reagent_containers/food/snacks/produce/pipeweed = 1,
+				/obj/item/reagent_containers/food/snacks/produce/jacksberries = 1)
 	result = /obj/item/blessing_of_dendor_prey
 	verbage = "make"
 	verbage_tp = "make"

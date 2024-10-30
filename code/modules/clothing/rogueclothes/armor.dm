@@ -93,7 +93,7 @@
 	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dark
-	color = CLOTHING_BLACK_WARM
+	color = CLOTHING_DARK_INK
 
 
 //................ Padded Dress ............... //
@@ -143,7 +143,7 @@
 	body_parts_covered = CHEST|VITALS
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped/Initialize()
-	color = pick(CLOTHING_SALMON, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW)
+	color = pick(CLOTHING_SALMON, CLOTHING_BERRY_BLUE, CLOTHING_SPRING_GREEN, CLOTHING_PEAR_YELLOW)
 	..()
 
 
@@ -201,7 +201,7 @@
 	name = "leather vest"
 	desc = "Obviously no sleeves, won't really protect much but it's at least padded enough to be an armor, and can be worn against the skin snugly."
 	icon_state = "vest"
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 	blade_dulling = DULLING_BASHCHOP
 	blocksound = SOFTHIT
 	sewrepair = TRUE
@@ -213,7 +213,7 @@
 	prevent_crits = CUT_AND_MINOR_CRITS
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/random/Initialize()
-	color = pick(CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_PALE_ORANGE)
+	color = pick(CLOTHING_SOOT_BLACK, CLOTHING_BARK_BROWN, CLOTHING_FOREST_GREEN)
 	..()
 
 //................ Butchers Vest ............... //
@@ -225,7 +225,7 @@
 
 //................ Other Vests ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butler
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butler/Initialize()
 	..()
@@ -238,7 +238,7 @@
 	return ..()
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/black
-	color = CLOTHING_BLACK_WARM
+	color = CLOTHING_DARK_INK
 
 
 //................ Jacket ............... //	- Has a small storage space
@@ -290,7 +290,7 @@
 	prevent_crits = CUT_AND_MINOR_CRITS
 
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat/Initialize()
-	color = pick(CLOTHING_PURPLE, CLOTHING_WHITE,CLOTHING_RED)
+	color = pick(CLOTHING_ROYAL_PURPLE, CLOTHING_WHITE,CLOTHING_BLOOD_RED)
 	..()
 
 //................ Silk Jacket ............... //
@@ -519,7 +519,7 @@
 //................ Armored surcoat (Heartfelt Lord) ............... //
 /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt
 	desc = "A lordly protection in Heartfelt colors. Masterfully crafted coat of plates, for important nobility."
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 	sellprice = VALUE_SNOWFLAKE_STEEL+BONUS_VALUE_SMALL
 
 	armor = list("melee" = 95, "bullet" = 95, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
