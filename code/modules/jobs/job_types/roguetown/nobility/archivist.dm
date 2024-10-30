@@ -63,5 +63,5 @@
 		H.change_stat("constitution", -1)
 		H.change_stat("endurance", -1)
 		H.change_stat("speed", -1)
-	if(H.dna.species.id == ("Dwarf" OR "Humen" OR "Half-Elf" OR "Elf"))
+	if(H.dna.species.id in list("Dwarf", "Humen", "Half-Elf", "Elf"))
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
