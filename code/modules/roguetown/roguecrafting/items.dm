@@ -556,7 +556,7 @@
 	reqs = list(/obj/item/natural/dirtclod = 1,
 				/obj/item/grown/log/tree/stick = 5,
 				/obj/item/natural/fibers = 3)
- craftdiff = 0
+	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/earnecklace
 	name = "ear necklace"
