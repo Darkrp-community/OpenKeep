@@ -187,7 +187,7 @@
 	icon_state = "poppy"
 	produce_type = /obj/item/reagent_containers/food/snacks/produce/poppy
 	produce_amount_min = 1
-	produce_amount_max = 1
+	produce_amount_max = 2
 	maturation_nutrition = HUNGRINESS_DEMANDING
 
 /*
