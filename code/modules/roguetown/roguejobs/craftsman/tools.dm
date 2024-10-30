@@ -74,7 +74,7 @@
 	muteinmouth = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 
-/obj/item/natural/plank/short
+/obj/item/natural/plankshort
 	name = "short wooden plank"
 	desc = "a smooth wooden plank that has been cut short."
 	firefuel = 10 MINUTES
@@ -87,8 +87,8 @@
 	gripped_intents = null
 	dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)
-	force = 10
-	throwforce = 20
+	force = 12
+	throwforce = 20 //brick is valid wea
 	slot_flags = null
 	obj_flags = null
 	w_class = WEIGHT_CLASS_TINY

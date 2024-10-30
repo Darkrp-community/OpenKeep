@@ -204,7 +204,7 @@
 	created_item = /obj/item/rogueweapon/huntingknife/villager
 	createmultiple = TRUE
 	createditem_num = 2
-	craftdiff = 0 
+	craftdiff = 0
 
 /datum/anvil_recipe/weapons/flail_iron
 	name = "Militia flail (+c) (+s)"
@@ -281,7 +281,7 @@
 	recipe_name = "a Tower Shield"
 	appro_skill = /datum/skill/craft/armorsmithing
 	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/natural/plank/short, /obj/item/natural/plank/short)
+	additional_items = list(/obj/item/natural/plankshort, /obj/item/natural/plankshort)
 	created_item = /obj/item/rogueweapon/shield/tower
 	craftdiff = 2
 

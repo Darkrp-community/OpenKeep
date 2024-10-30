@@ -131,7 +131,7 @@
 /datum/crafting_recipe/roguetown/structure/smelter
 	name = "ore furnace"
 	result = /obj/machinery/light/rogue/smelter
-	reqs = list(/obj/item/natural/stone = 4,
+	reqs = list(/obj/item/natural/stoneblock = 4,
 			/obj/item/rogueore/coal = 1)
 	verbage = "build"
 	verbage_tp = "builds"
@@ -150,7 +150,7 @@
 /datum/crafting_recipe/roguetown/structure/forge
 	name = "forge"
 	result = /obj/machinery/light/rogue/forge
-	reqs = list(/obj/item/natural/stone = 4,
+	reqs = list(/obj/item/natural/stoneblock = 4,
 				/obj/item/rogueore/coal = 1)
 
 	verbage = "build"
@@ -333,7 +333,7 @@
 	name = "oven"
 	result = /obj/machinery/light/rogue/oven
 	reqs = list(/obj/item/grown/log/tree/small = 1,
-				/obj/item/natural/stone = 3)
+				/obj/item/natural/stoneblock = 3)
 	verbage = "mason"
 	verbage_tp = "masons"
 	craftsound = 'sound/foley/Building-01.ogg'

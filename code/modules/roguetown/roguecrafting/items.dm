@@ -30,9 +30,9 @@
 	verbage = "saw"
 	verbage_tp = "saws"
 
-/datum/crafting_recipe/roguetown/plank/short
+/datum/crafting_recipe/roguetown/plankshort
 	name = "short wooden plank"
-	result = /obj/item/natural/plank/short
+	result = /obj/item/natural/plankshort
 	reqs = list(/datum/crafting_recipe/roguetown/plank = 1)
 	tools = list(/obj/item/rogueweapon/handsaw)
 	skillcraft = /datum/skill/craft/carpentry
