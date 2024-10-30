@@ -70,10 +70,12 @@
 	name = "solar vestments"
 	desc = "Holy vestments sanctified by divine hands. Caution is advised if not a faithful."
 	icon_state = "priestrobe"
+	dropshrink = 0.8
 
 /obj/item/clothing/suit/roguetown/shirt/robe/priest/pickup(mob/living/user)
 	if((user.job != "Priest") && (user.job != "Priestess"))
-		to_chat(user, "<font color='yellow'>UNWORTHY HANDS TOUCH THE VESTMENTS, CEASE OR BE PUNISHED</font>")
+		user.visible_message(span_reallybig("UNWORTHY HANDS TOUCH MY VISAGE, CEASE OR BE PUNISHED"))
+		playsound(user, 'sound/misc/astratascream.ogg', 80,  falloff = 0.2)
 		spawn(30)
 			if(loc == user)
 				user.adjust_fire_stacks(5)
