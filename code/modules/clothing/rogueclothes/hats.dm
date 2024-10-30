@@ -261,18 +261,21 @@
 	default_hidden = HIDEEARS|HIDEHAIR
 	dropshrink = 0.8
 
-	armor = ARMOR_MIMOR
+	armor = ARMOR_MINOR
 	prevent_crits = MINOR_CRITICALS
 
 
-//................ Death Face ............... //	- Basic Necra Acolyte
+//................ Death Face ............... //
 /obj/item/clothing/head/roguetown/padded/deathface
-	name = "death face"
-	desc = "When inducted into the cult of Necra, the supplicant must make a talisman from the jawbone of a deceased loved one. Many favor a chin-guard made from a jawbone. Worn by the faithful of Necra."
-	icon_state = "deathface"
+	name = "death shroud"
+	desc = "When inducted into the cult of Necra, the supplicant must make a talisman from the remains of a deceased loved one. Many favor a chin-guard made from a jawbone."
+	icon_state = "necrahood"
 	flags_inv = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
 
-//................ Death Shroud ............... //	- Rare Necra headwear
+	armor = ARMOR_MINOR
+	prevent_crits = MINOR_CRITICALS
+
+//................ Death Shroud ............... //	- Necra headwear that conceals indentity
 /obj/item/clothing/head/roguetown/padded/deathshroud
 	name = "death shroud"
 	desc = "Worn by the faithful of Necra, or less savory individuals."
@@ -280,26 +283,16 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 
-//................ Briar Thorns ............... //	- Basic Dendor Briar
+//................ Briar Thorns ............... //	- Dendor Briar
 /obj/item/clothing/head/roguetown/padded/briarthorns
 	name = "briar thorns"
-	desc = "Worn by the faithful of Dendor."
+	desc = "The pain it causes perhaps can distract from the whispers of a mad God overpowering your sanity..."
 	icon_state = "briarthorns"
 
 /obj/item/clothing/head/roguetown/padded/briarthorns/pickup(mob/living/user)
-	if(!istype(user.patron, /datum/patron/divine/dendor))
-		to_chat(user, span_warning ("The thorns prick me."))
-		user.adjustBruteLoss(5)
-	else
-		. = ..()
-
-//................ Briar Visage ............... //	- Rare Dendor headwear
-/obj/item/clothing/head/roguetown/padded/briarvisage
-	name = "briar visage"
-	desc = "Worn by the faithful of Dendor."
-	icon_state = "dendormask"
-	dynamic_hair_suffix = ""
-	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	. = ..()
+	to_chat(user, span_warning ("The thorns prick me."))
+	user.adjustBruteLoss(4)
 
 
 //................ Rabbet Visage ............... //	- Basic Eora Acolyte
@@ -326,7 +319,7 @@
 	worn_y_dimension = 64
 	resistance_flags = FIRE_PROOF // Made of metal
 
-	armor = ARMOR_MIMOR
+	armor = ARMOR_MINOR
 
 
 //................ Sun Hood ............... //	- Basic Astrata Acolyte
@@ -339,30 +332,66 @@
 	armor = ARMOR_MINIMAL
 	prevent_crits = MINOR_CRITICALS
 
-//................ Solar Visage ............... //	- The new improved Priest headwear
+//................ Solar Visage ............... //	- The new improved Priest headwear. Integratged magic resist so don't need the null ring, and inverted toggle.
 /obj/item/clothing/head/roguetown/roguehood/priest
 	name = "solar visage"
 	desc = "The sanctified headwear of the most devoted. The mask can be removed."
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	icon_state = "solar"
+	dynamic_hair_suffix = "+generic"
+	dropshrink = 0.8
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	flags_inv = HIDEEARS|HIDEHAIR
-	default_hidden = HIDEEARS|HIDEHAIR
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	default_hidden = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	resistance_flags = FIRE_PROOF
 
-	armor = ARMOR_MIMOR
+	armor = ARMOR_MINOR
+	body_parts_covered = FULL_HEAD | NECK
 	prevent_crits = MINOR_CRITICALS
+
+/obj/item/clothing/head/roguetown/roguehood/priest/AdjustClothes(mob/user)
+	if(loc == user)
+		playsound(user, "rustle", 70, TRUE, -5)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			if(toggle_icon_state)
+				icon_state = "[initial(icon_state)]_t"
+			flags_inv = HIDEEARS|HIDEHAIR
+			body_parts_covered = NECK|HAIR|EARS|HEAD
+			dynamic_hair_suffix = "+generic"
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_head()
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			flags_inv = default_hidden
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_head()
+		user.update_fov_angles()
+
+/obj/item/clothing/head/roguetown/roguehood/priest/equipped(mob/user, slot)
+	. = ..()
+	if (slot == SLOT_HEAD && istype(user))
+		ADD_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
+	else
+		REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
+
+/obj/item/clothing/head/roguetown/roguehood/priest/dropped(mob/user)
+	. = ..()
+	REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
 
 /obj/item/clothing/head/roguetown/roguehood/priest/pickup(mob/living/user)
 	if((user.job != "Priest") && (user.job != "Priestess"))
-		user.visible_message(span_warningbig ("UNWORTHY HANDS TOUCH MY VISAGE, CEASE OR BE PUNISHED"))
-//		user.playsound_local(user, 'sound/misc/astratascream.ogg', 90, falloff = 0.1, TRUE)
+		playsound(user, 'sound/misc/astratascream.ogg', 80,  falloff = 0.2)
+		user.visible_message(span_reallybig("UNWORTHY HANDS TOUCH MY VISAGE, CEASE OR BE PUNISHED"))
 		spawn(30)
 			if(loc == user)
-				user.adjust_fire_stacks(4)
+				user.adjust_fire_stacks(3)
 				user.IgniteMob()
 		return
 	else
@@ -477,6 +506,7 @@
 	sewrepair = FALSE
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ITEM
+	clothing_flags = CANT_SLEEP_IN
 
 	armor = ARMOR_IRON_GOOD
 	body_parts_covered = HEAD|HAIR|NOSE
@@ -534,6 +564,18 @@
 
 	armor = ARMOR_STEEL_BAD
 	body_parts_covered = HEAD|HAIR
+
+//................ CULTIST HOOD ............... //
+/obj/item/clothing/head/roguetown/helmet/leather/hood_ominous/cult
+	name = "ominous hood"
+	desc = "It echoes with ominous laughter."
+	icon_state = "warlockhood"
+	dynamic_hair_suffix = ""
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	sellprice = VALUE_LEATHER_HELMET/2
+
+	armor = ARMOR_STEEL_BAD
+	body_parts_covered = NECK|HAIR|EARS|HEAD
 
 //................ Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet
@@ -858,6 +900,24 @@
 	icon_state = "dendorhelm"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	prevent_crits = ALL_EXCEPT_BLUNT
+
+//............... Eora Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/sallet/eoran
+	name = "eora helmet"
+	desc = "A standard helmet forged in the style typical of Eoran worshippers, a simple yet practical protective piece of equipment. Upon it lays several laurels of flowers and other colorful ornaments, followed by several symbols and standards of the user's chapter, accomplishments or even punishment"
+	icon_state = "eorahelm"
+	item_state = "eorahelm"
+	armor = ARMOR_STEEL_BEST
+
+
+//............... Pestra Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
+	name = "pestran helmet"
+	desc = "A great helmet made of coarse, tainted steel. It is modeled after a plagued carrion, a blessed abomination of Pestra."
+	icon_state = "pestrahelm"
+	item_state = "pestraahelm"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+
 
 //............... Sinistar (Graggar) Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/sinistar
@@ -1245,7 +1305,7 @@
 	desc = "A bizarrely lightweight helmet of alloyed dark elven steel, offering unparalleled protection for elite bladesingers."
 	icon_state = "elfhead"
 	allowed_race = list("elf", "half-elf", "dark elf")
-
+	clothing_flags = CANT_SLEEP_IN
 	armor_class = ARMOR_CLASS_MEDIUM
 	body_parts_covered = HEAD|HAIR|NOSE
 
@@ -1264,7 +1324,7 @@
 	icon_state = "dwarfhead"
 	allowed_race = list("dwarf")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD_EXCEPT_MOUTH
 
 
@@ -1277,7 +1337,7 @@
 	allowed_sex = list(MALE)
 	allowed_race = list("human")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR
 
 
@@ -1292,7 +1352,7 @@
 	allowed_sex = list(MALE)
 	allowed_race = list("human")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR
 
 //............... Hoplite Helmet ............... //
@@ -1307,7 +1367,7 @@
 	worn_y_dimension = 64
 	allowed_race = list("aasimar")
 	flags_inv = HIDEEARS
-
+	clothing_flags = CANT_SLEEP_IN
 	body_parts_covered = HEAD|EARS|HAIR
 
 

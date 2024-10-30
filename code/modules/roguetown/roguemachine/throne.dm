@@ -15,12 +15,12 @@
 	M.set_mob_offsets("bed_buckle", _x = 0, _y = 8)
 
 /obj/structure/roguethrone/post_unbuckle_mob(mob/living/M)
-	..()
+	. = ..()
 	density = FALSE
 	M.reset_offsets("bed_buckle")
 
 /obj/structure/roguethrone/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else

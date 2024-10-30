@@ -76,7 +76,7 @@
 		/mob/living/simple_animal/hostile/retaliate/gaseousform/xylix = 30,
 		/mob/living/simple_animal/hostile/rogue/demon/xylix = 10,
 		/mob/living/simple_animal/hostile/rogue/haunt/xylix = 5,
-		/obj/structure/glowshroom/single/xylix = 5,
+		/obj/structure/kneestingers/xylix = 5,
 		/obj/item/roguecoin/silver/pile/xylix = 5,
 		)
 
@@ -154,7 +154,7 @@
 	return ..()
 
 
-/obj/structure/glowshroom/single/xylix
+/obj/structure/kneestingers/xylix
 	name = ""
 	desc = ""
 	icon = 'icons/roguetown/items/valuable.dmi'
@@ -248,7 +248,7 @@
 	icon_state = "wall_funny"
 	pixel_y = 32
 
-/obj/structure/glowshroom/single/xylix
+/obj/structure/kneestingers/xylix
 	name = "fancy chest"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "chestfancy_neu"
@@ -514,6 +514,16 @@
 	pixel_y = 32
 
 
+/obj/structure/fluff/shipssprote
+	name = ""
+	desc = ""
+	icon = 'icons/obj/atmospherics/pipes/disposal.dmi'
+	icon_state = "pipe"
+	mouse_opacity = 0
+	color = "#5a4621"
+	pixel_y = -16
+
+
 /obj/structure/fluff/walldeco/bath/random
 	icon_state = "bath"
 	pixel_y = 32
@@ -625,16 +635,16 @@
 	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
 
 
-/*	..................   Traveltiles   ................... */ // these are the ones on centcom, where the actual lair is
-/obj/structure/fluff/traveltile/bandit_lair
+/*	..................   Traveltiles   ................... */ // these are the ones on centcom, where the actual lair is, to reduce varedits onmap
+/obj/structure/fluff/traveltile/exit_bandit		// mus NOT be a traveltile/bandit child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
 	aportalid = "banditin"
 	aportalgoesto = "banditexit"
 
-/obj/structure/fluff/traveltile/vampire_lair
+/obj/structure/fluff/traveltile/exit_vampire	// mus NOT be a traveltile/vampire child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
 	aportalid = "vampin"
 	aportalgoesto = "vampexit"
 
-/obj/structure/fluff/traveltile/inhumen_lair
+/obj/structure/fluff/traveltile/exit_inhumen
 	aportalid = "inhumenin"
 	aportalgoesto = "inhumenexit"
 
@@ -643,6 +653,18 @@
 	name = "to the Deep Bog"
 	aportalid = "inhumenexit"
 	aportalgoesto = "inhumenin"
+
+
+/*	..................   Toll randomizer (poor mans coin generator, cheaper workload is all)  ................... */
+/obj/effect/spawner/roguemap/tollrandom
+	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
+	icon_state = "soultoken_floor"
+	probby = 25
+	color = "#ff0000"
+	spawned = list(
+		/obj/item/underworld/coin = 1,
+		)
+
 
 /* moved to main. leave this be for now, I want to be able to find the additions I make easily for tweaking
 /*	..................   More chairs   ................... */
