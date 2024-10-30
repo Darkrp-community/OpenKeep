@@ -20,6 +20,7 @@
 	desc = ""
 	icon_state = "smashed_egg1"
 	random_icon_states = list("smashed_egg1", "smashed_egg2", "smashed_egg3")
+	alpha = 200
 
 /obj/effect/decal/cleanable/food/pie_smudge //honk
 	name = "smashed pie"

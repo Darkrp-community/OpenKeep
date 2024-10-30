@@ -68,7 +68,7 @@
 					/obj/item/clothing/suit/wizrobe/marisa/fake = 1,
 					/obj/item/clothing/under/dress/sundress = 1,
 					/obj/item/clothing/head/witchwig = 1,
-					/obj/item/staff/broom = 1,
+					/obj/item/broom = 1,
 					/obj/item/clothing/suit/wizrobe/fake = 1,
 					/obj/item/clothing/head/wizard/fake = 1,
 					/obj/item/staff = 3,
@@ -142,9 +142,9 @@
 /obj/machinery/vending/autodrobe/canLoadItem(obj/item/I,mob/user)
 	return (I.type in products)
 
-	default_price = 50
+/* 	default_price = 50
 	extra_price = 75
-	payment_department = ACCOUNT_SRV
+	payment_department = ACCOUNT_SRV */
 /obj/machinery/vending/autodrobe/all_access
 	desc = ""
 	req_access = null

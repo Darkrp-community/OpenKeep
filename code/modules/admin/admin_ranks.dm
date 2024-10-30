@@ -19,12 +19,10 @@ GLOBAL_PROTECT(protected_ranks)
 		if (name == "NoRank") //only del if this is a true creation (and not just a New() proc call), other wise trialmins/coders could abuse this to deadmin other admins
 			QDEL_IN(src, 0)
 			CRASH("Admin proc call creation of admin datum")
-		return
 	name = init_name
 	if(!name)
 		qdel(src)
 		CRASH("Admin rank created without name.")
-		return
 	if(init_rights)
 		rights = init_rights
 	include_rights = rights

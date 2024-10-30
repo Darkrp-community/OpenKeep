@@ -261,7 +261,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	image_state = "clown"
 
 /obj/effect/hallucination/simple/clown/Initialize(mapload, mob/living/carbon/T, duration)
-	..(loc, T)
+	. = ..(loc, T)
 	name = pick(GLOB.clown_names)
 	QDEL_IN(src,duration)
 
@@ -1152,7 +1152,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		if(fakemob)
 			sleep(rand(20, 50))
 			to_chat(target, "<span class='deadsay'><b>DEAD: [fakemob.name]</b> says, \"[pick("rip","why did i just drop dead?","hey [target.first_name()]","git gud","you too?","is the AI rogue?",\
-			 "i[prob(50)?" fucking":""] hate [pick("blood cult", "clock cult", "revenants", "this round","this","myself","admins","you")]")]\"</span>")
+			"i[prob(50)?" fucking":""] hate [pick("blood cult", "clock cult", "revenants", "this round","this","myself","admins","you")]")]\"</span>")
 	sleep(rand(70,90))
 	target.set_screwyhud(SCREWYHUD_NONE)
 	target.SetParalyzed(0)

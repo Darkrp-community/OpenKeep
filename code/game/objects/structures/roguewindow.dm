@@ -31,6 +31,11 @@
 		return
 	icon_state = "[base_state]"
 
+/obj/structure/roguewindow/attack_ghost(mob/dead/observer/user)	// lets ghosts click on windows to transport across
+	density = FALSE
+	. = step(user,get_dir(user,src.loc))
+	density = TRUE
+
 /obj/structure/roguewindow/stained
 	icon_state = "stained-silver"
 	base_state = "stained-silver"
@@ -124,6 +129,12 @@
 			return !density
 	return ..()
 
+/obj/structure/roguewindow/proc/force_open()
+	playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
+	climbable = TRUE
+	opacity = FALSE
+	update_icon()
+
 /obj/structure/roguewindow/attackby(obj/item/W, mob/user, params)
 	return ..()
 
@@ -136,10 +147,15 @@
 		return
 	if(brokenstate)
 		return
+	if( user.used_intent.type == /datum/intent/unarmed/claw )
+		to_chat(user, "<span class='warning'>The deadite smashes the window!!</span>")
+		obj_break()
+		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	src.visible_message("<span class='info'>[user] knocks on [src].</span>")
 	add_fingerprint(user)
 	playsound(src, 'sound/misc/glassknock.ogg', 100)
+
 
 /obj/structure/roguewindow/obj_break(damage_flag)
 	if(!brokenstate)

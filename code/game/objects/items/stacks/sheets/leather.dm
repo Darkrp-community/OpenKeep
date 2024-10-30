@@ -184,9 +184,7 @@ GLOBAL_LIST_INIT(sinew_recipes, list ( \
 	. = ..()
 	. += GLOB.sinew_recipes
 
-		/*
- * Plates
- 		*/
+// Plates
 /obj/item/stack/sheet/animalhide/goliath_hide
 	name = "goliath hide plates"
 	desc = ""

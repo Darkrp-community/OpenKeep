@@ -22,10 +22,10 @@
 
 	outfit = /datum/outfit/job/roguetown/royalguard
 	give_bank_account = 30
-	min_pq = -4
+	min_pq = 2
 	selection_color = "#920909"
 
-	cmode_music = 'sound/music/combat_guard.ogg'
+	cmode_music = 'sound/music/combat_rg.ogg'
 
 /datum/job/roguetown/royalguard/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -41,7 +41,7 @@
 			S.name = "knight's tabard ([index])"
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
-		var/honorary = "Ser"
+		var/honorary = "Sir"
 		if(H.gender == FEMALE)
 			honorary = "Dame"
 		H.real_name = "[honorary] [prev_real_name]"
@@ -56,7 +56,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine // Wear the King's colors.
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-	beltl = /obj/item/keyring/guardcastle
+	beltl = /obj/item/keyring/mguard
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/sword
 	backr = /obj/item/storage/backpack/rogue/satchel
@@ -87,3 +87,4 @@
 		H.change_stat("constitution", 1)
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)

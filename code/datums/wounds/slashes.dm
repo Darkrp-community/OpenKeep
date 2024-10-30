@@ -2,14 +2,14 @@
 	name = "slash"
 	whp = 30
 	sewn_whp = 10
-	bleed_rate = 0.4
+	bleed_rate = 0.8
 	sewn_bleed_rate = 0.02
 	clotting_rate = 0.02
 	sewn_clotting_rate = 0.02
 	clotting_threshold = 0.2
 	sewn_clotting_threshold = 0.1
-	woundpain = 0
-	sewn_woundpain = 0
+	woundpain = 8
+	sewn_woundpain = 2
 	sew_threshold = 50
 	mob_overlay = "cut"
 	can_sew = TRUE
@@ -19,24 +19,28 @@
 	name = "small slash"
 	whp = 15
 	sewn_whp = 5
-	bleed_rate = 0.2
+	bleed_rate = 0.4
 	sewn_bleed_rate = 0.01
 	clotting_rate = 0.02
 	sewn_clotting_rate = 0.02
 	clotting_threshold = 0.1
 	sewn_clotting_threshold = 0.05
+	woundpain = 4
+	sewn_woundpain = 1
 	sew_threshold = 25
 
 /datum/wound/slash/large
 	name = "gruesome slash"
 	whp = 40
 	sewn_whp = 12
-	bleed_rate = 1
+	bleed_rate = 2
 	sewn_bleed_rate = 0.05
 	clotting_rate = 0.02
 	sewn_clotting_rate = 0.02
 	clotting_threshold = 0.4
 	sewn_clotting_threshold = 0.1
+	woundpain = 15
+	sewn_woundpain = 5
 	sew_threshold = 75
 
 /datum/wound/slash/disembowel
@@ -47,12 +51,14 @@
 	sound_effect = 'sound/combat/crit2.ogg'
 	whp = 100
 	sewn_whp = 35
-	bleed_rate = 20
+	bleed_rate = 30
 	sewn_bleed_rate = 0.8
 	clotting_rate = 0.02
 	sewn_clotting_rate = 0.02
 	clotting_threshold = 10
 	sewn_clotting_threshold = 0.5
+	woundpain = 25
+	sewn_woundpain = 10
 	sew_threshold = 150 //absolutely awful to sew up
 	critical = TRUE
 	/// Organs we can disembowel associated with chance to disembowel
@@ -104,10 +110,12 @@
 	severity = WOUND_SEVERITY_SUPERFICIAL
 	whp = 40
 	sewn_whp = 12
-	bleed_rate = 1
+	bleed_rate = 2
 	sewn_bleed_rate = 0.05
 	clotting_rate = null
 	clotting_threshold = null
+	woundpain = 4
+	sewn_woundpain = 2
 	sew_threshold = 75
 	passive_healing = 0
 	sleep_healing = 0

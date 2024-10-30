@@ -3,8 +3,9 @@
 	sound_effect = 'sound/combat/crit.ogg'
 	severity = WOUND_SEVERITY_SEVERE
 	whp = null
-	woundpain = 0
-	can_sew = FALSE
+	woundpain = 10
+	can_sew = TRUE
+	sewn_bleed_rate = 0
 	can_cauterize = FALSE
 	critical = FALSE
 
@@ -20,8 +21,9 @@
 		"The eardrums are gored!",
 		"The eardrums are ruptured!",
 	)
-	can_sew = FALSE
-	can_cauterize = FALSE
+	woundpain = 50
+	bleed_rate = 8
+	can_cauterize = TRUE
 	critical = TRUE
 
 /datum/wound/facial/ears/can_apply_to_mob(mob/living/affected)
@@ -47,7 +49,7 @@
 		"The eye is destroyed!",
 	)
 	woundpain = 30
-	can_sew = FALSE
+	bleed_rate = 8
 	can_cauterize = FALSE
 	critical = TRUE
 
@@ -94,6 +96,8 @@
 /datum/wound/facial/eyes/right/permanent
 	whp = null
 	woundpain = 0
+	bleed_rate = 0
+	can_sew = FALSE
 
 /datum/wound/facial/eyes/left
 	name = "left eye evisceration"
@@ -127,6 +131,8 @@
 /datum/wound/facial/eyes/left/permanent
 	whp = null
 	woundpain = 0
+	bleed_rate = 0
+	can_sew = FALSE
 
 /datum/wound/facial/tongue
 	name = "glossectomy"
@@ -136,7 +142,8 @@
 		"The tongue is severed!",
 		"The tongue flies off in an arc!"
 	)
-	can_sew = FALSE
+	woundpain = 8
+	bleed_rate = 10
 	can_cauterize = FALSE
 	critical = TRUE
 

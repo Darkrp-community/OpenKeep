@@ -111,7 +111,7 @@
 			affecting.try_crit(BCLASS_TWIST, 300)
 
 	for(var/mob/living/M in T.contents)
-		visible_message("\The [src] hits \the [M.name]!")
+		visible_message("\The [src] hits \the [T]!")
 		M.AdjustKnockdown(levels * 20)
 		M.take_overall_damage(dam * 3.5)
 
@@ -132,7 +132,8 @@
 		AddComponent(/datum/component/mood)
 
 /mob/living/carbon/human/Destroy()
-	SShumannpc.processing -= src
+	QDEL_NULL(sexcon)
+	STOP_PROCESSING(SShumannpc, src)
 	QDEL_NULL(physiology)
 	GLOB.human_list -= src
 	return ..()
@@ -160,7 +161,7 @@
 				stat("Confessions sent: [GLOB.confessors.len]")
 
 	return //RTchange
-
+/*
 	if(statpanel("Status"))
 //		stat(null, "Intent: [used_intent]")
 //		stat(null, "Move Mode: [m_intent]")
@@ -206,7 +207,7 @@
 					for(var/thing in diseases)
 						var/datum/disease/D = thing
 						stat("*", "[D.name], Type: [D.spread_text], Stage: [D.stage]/[D.max_stages], Possible Cure: [D.cure_text]")
-
+ */
 
 /mob/living/carbon/human/show_inv(mob/user)
 	user.set_machine(src)

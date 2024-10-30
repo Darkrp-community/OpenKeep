@@ -40,7 +40,7 @@
 	if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 		chance2hit += 20
 	if(istype(user.rmb_intent, /datum/rmb_intent/swift))
-		chance2hit -= 20
+		chance2hit -= 40
 
 	chance2hit = CLAMP(chance2hit, 5, 99)
 
@@ -184,7 +184,9 @@
 					attacker_skill = U.mind.get_skill_level(/datum/skill/combat/unarmed)
 					prob2defend -= (attacker_skill * 20)
 
-			prob2defend = clamp(prob2defend, 5, 99)
+			if(!(mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 20% defense malus if so
+				prob2defend *= 0.8
+			prob2defend = clamp(prob2defend, 5, 95)
 			if(src.client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to parry... [prob2defend]%</span>")
 
@@ -200,7 +202,7 @@
 
 			if(weapon_parry == TRUE)
 				if(do_parry(used_weapon, drained, user)) //show message
-					 // defender skill gain
+					// defender skill gain
 					if((mobility_flags & MOBILITY_STAND) && attacker_skill && (defender_skill < attacker_skill - SKILL_LEVEL_NOVICE))
 						// No duping exp gains by attacking with a shield on active hand
 						if(used_weapon == offhand && istype(used_weapon, /obj/item/rogueweapon/shield))
@@ -379,7 +381,7 @@
 			if(I.wbalance > 0 && U.STASPD > L.STASPD) //nme weapon is quick, so they get a bonus based on spddiff
 				prob2defend = prob2defend - ( I.wbalance * ((U.STASPD - L.STASPD) * 10) )
 			if(I.wbalance < 0 && L.STASPD > U.STASPD) //nme weapon is slow, so its easier to dodge if we're faster
-				prob2defend = prob2defend + ( I.wbalance * ((U.STASPD - L.STASPD) * -10) )
+				prob2defend = prob2defend + ( I.wbalance * ((U.STASPD - L.STASPD) * 10) )
 			if(UH?.mind)
 				prob2defend = prob2defend - (UH.mind.get_skill_level(I.associated_skill) * 10)
 		if(H)
@@ -387,7 +389,7 @@
 				H.Knockdown(1)
 				return FALSE
 			if(H?.check_dodge_skill())
-				drained = drained - 5
+				drained = drained - 2
 //			if(H.mind)
 //				drained = drained + max((H.checkwornweight() * 10)-(mind.get_skill_level(/datum/skill/misc/athletics) * 10),0)
 //			else
@@ -408,7 +410,9 @@
 							prob2defend = prob2defend - (UH.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
 						if(H.mind)
 							prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
-			prob2defend = clamp(prob2defend, 5, 99)
+			if(!(L.mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 50% defense malus if so
+				prob2defend *= 0.5
+			prob2defend = clamp(prob2defend, 5, 95)
 			if(client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")
 			if(!prob(prob2defend))
@@ -419,7 +423,7 @@
 		else //we are a non human
 			if(client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")
-			prob2defend = clamp(prob2defend, 5, 99)
+			prob2defend = clamp(prob2defend, 5, 95)
 			if(!prob(prob2defend))
 				return FALSE
 		dodgecd = TRUE

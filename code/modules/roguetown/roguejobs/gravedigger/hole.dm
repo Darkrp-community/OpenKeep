@@ -69,7 +69,7 @@
 /obj/structure/closet/dirthole/toggle(mob/living/user)
 	return
 
-/obj/structure/closet/dirthole/proc/attemptwatermake(mob/living/user, var/obj/item/reagent_containers/bucket)
+/obj/structure/closet/dirthole/proc/attemptwatermake(mob/living/user, obj/item/reagent_containers/bucket)
 	testing("attempting to make water proc called")
 	if(user.used_intent.type == /datum/intent/splash)
 		testing("intent check complete")
@@ -143,7 +143,7 @@
 //								playsound(mastert,'sound/items/dig_shovel.ogg', 100, TRUE)
 //								mastert.ChangeTurf(T.type, flags = CHANGETURF_INHERIT_AIR)
 //								return
-			to_chat(user, "<span class='warning'>I can't dig myself any deeper.</span>")
+			to_chat(user, "<span class='warning'>I think that's deep enough.</span>")
 			return
 		var/used_str = 10
 		if(iscarbon(user))
@@ -168,7 +168,11 @@
 				qdel(G)
 				if(isliving(user))
 					var/mob/living/L = user
-					L.apply_status_effect(/datum/status_effect/debuff/cursed)
+					if(HAS_TRAIT(L, TRAIT_GRAVEROBBER))
+						to_chat(user, "<span class='warning'>Necra turns a blind eye to my deeds.</span>")
+					else
+						to_chat(user, "<span class='warning'>Necra shuns my blasphemous deeds, I am cursed!</span>")
+						L.apply_status_effect(/datum/status_effect/debuff/cursed)
 		update_icon()
 		attacking_shovel.heldclod = new(attacking_shovel)
 		attacking_shovel.update_icon()
@@ -178,12 +182,12 @@
 /datum/status_effect/debuff/cursed
 	id = "cursed"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/cursed
-	effectedstats = list("fortune" = -3)
+	effectedstats = list("fortune" = -5) // More severe so that the permanent debuff from having the perk makes it actually worth it.
 	duration = 10 MINUTES
 
 /atom/movable/screen/alert/status_effect/debuff/cursed
 	name = "Cursed"
-	desc = ""
+	desc = "Necra has punished me by my blasphemous deeds with terribly bad luck."
 	icon_state = "debuff"
 
 /obj/structure/closet/dirthole/MouseDrop_T(atom/movable/O, mob/living/user)
@@ -211,13 +215,13 @@
 	var/list/targets = list(O, src)
 	add_fingerprint(user)
 	user.visible_message("<span class='warning'>[user] [actuallyismob ? "tries to ":""]stuff [O] into [src].</span>", \
-				 	 	"<span class='warning'>I [actuallyismob ? "try to ":""]stuff [O] into [src].</span>", \
-				 	 	"<span class='hear'>I hear clanging.</span>")
+						"<span class='warning'>I [actuallyismob ? "try to ":""]stuff [O] into [src].</span>", \
+						"<span class='hear'>I hear clanging.</span>")
 	if(actuallyismob)
 		if(do_after_mob(user, targets, 40))
 			user.visible_message("<span class='notice'>[user] stuffs [O] into [src].</span>", \
-							 	 "<span class='notice'>I stuff [O] into [src].</span>", \
-							 	 "<span class='hear'>I hear a loud bang.</span>")
+								"<span class='notice'>I stuff [O] into [src].</span>", \
+								"<span class='hear'>I hear a loud bang.</span>")
 			var/mob/living/L = O
 			if(!issilicon(L))
 				L.Paralyze(40)

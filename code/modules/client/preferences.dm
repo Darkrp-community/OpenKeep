@@ -135,7 +135,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/alignment = ALIGNMENT_TN
 	var/datum/charflaw/charflaw
 
+	//Family system
 	var/family = FAMILY_NONE
+	var/setspouse = ""
 
 	var/crt = FALSE
 
@@ -159,7 +161,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			load_path(C.ckey)
 			unlock_content = C.IsByondMember()
 			if(unlock_content)
-				max_save_slots = 8
+				max_save_slots += 5
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
 		if(load_character())
@@ -323,7 +325,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 					dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER_ANTAG]'>When Antagonist: [(randomise[RANDOM_GENDER_ANTAG]) ? "Yes" : "No"]</A>"
 
 			if(AGE_IMMORTAL in pref_species.possible_ages)
-				dat += "<b>Age:</b> <a href='?_src_=prefs;preference=age;task=input'>[AGE_IMMORTAL]</a><BR>"				
+				dat += "<b>Age:</b> <a href='?_src_=prefs;preference=age;task=input'>[AGE_IMMORTAL]</a><BR>"
 			else
 				dat += "<b>Age:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
 
@@ -337,7 +339,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			var/datum/faith/selected_faith = GLOB.faithlist[selected_patron?.associated_faith]
 			dat += "<b>Faith:</b> <a href='?_src_=prefs;preference=faith;task=input'>[selected_faith?.name || "FUCK!"]</a><BR>"
 			dat += "<b>Patron:</b> <a href='?_src_=prefs;preference=patron;task=input'>[selected_patron?.name || "FUCK!"]</a><BR>"
-//			dat += "<b>Family:</b> <a href='?_src_=prefs;preference=family'>Unknown</a><BR>" // Disabling until its working
+			dat += "<b>Family:</b> <a href='?_src_=prefs;preference=family'>[family ? family : "None"]</a><BR>"
+			if(family == FAMILY_FULL || family == FAMILY_NEWLYWED)
+				dat += "<b>Preferred Spouse:</b> <a href='?_src_=prefs;preference=setspouse'>[setspouse ? setspouse : "None"]</a><BR>"
 			dat += "<b>Dominance:</b> <a href='?_src_=prefs;preference=domhand'>[domhand == 1 ? "Left-handed" : "Right-handed"]</a><BR>"
 
 /*
@@ -633,7 +637,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 					dat += "</td>"
 					mutant_category = 0
 */
-			if("ears" in pref_species.default_features && !pref_species.use_f)
+			if(("ears" in pref_species.default_features) && !pref_species.use_f)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
@@ -654,7 +658,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			if(CONFIG_GET(flag/join_with_mutant_humans))
 
-				if("wings" in pref_species.default_features && GLOB.r_wings_list.len >1)
+				if(("wings" in pref_species.default_features) && GLOB.r_wings_list.len >1)
 					if(!mutant_category)
 						dat += APPEARANCE_CATEGORY_COLUMN
 
@@ -926,11 +930,18 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<b>UNREADY</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>READY</a>"
 			if(PLAYER_READY_TO_PLAY)
 				dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>UNREADY</a> <b>READY</b>"
+				log_game("([user || "NO KEY"]) readied as ([real_name])")
 	else
 		dat += "<a href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
 //	dat += "<a href='?_src_=prefs;preference=reset_all'>Reset Setup</a>"
 		dat += "</center>"
 
+	dat += "</td>"
+	dat += "<td width='33%' align='right'>"
+	dat += "<b>Be Voice:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Enabled":"Disabled"]</a>"
+	dat += "</td>"
+	dat += "</tr>"
+	dat += "</table>"
 
 	if(user.client.is_new_player())
 		dat = list("<center>REGISTER!</center>")
@@ -1654,7 +1665,7 @@ Slots: [job.spawn_positions]</span>
 					age = pick(pref_species.possible_ages)
 				if("hair")
 					var/list/hairs
-					if(age == AGE_OLD && OLDGREY in pref_species.species_traits)
+					if(age == AGE_OLD && (OLDGREY in pref_species.species_traits))
 						hairs = pref_species.get_oldhc_list()
 					else
 						hairs = pref_species.get_hairc_list()
@@ -1664,7 +1675,7 @@ Slots: [job.spawn_positions]</span>
 					hairstyle = pref_species.random_hairstyle(gender)
 				if("facial")
 					var/list/hairs
-					if(age == AGE_OLD && OLDGREY in pref_species.species_traits)
+					if(age == AGE_OLD && (OLDGREY in pref_species.species_traits))
 						hairs = pref_species.get_oldhc_list()
 					else
 						hairs = pref_species.get_hairc_list()
@@ -1778,7 +1789,7 @@ Slots: [job.spawn_positions]</span>
 						var/datum/faith/faith = faiths_named[faith_input]
 						to_chat(user, "<font color='purple'>Faith: [faith.name]</font>")
 						to_chat(user, "<font color='purple'>Background: [faith.desc]</font>")
-						selected_patron = GLOB.patronlist[faith.godhead] || GLOB.patronlist[default_patron]
+						selected_patron = GLOB.patronlist[faith.godhead] || GLOB.patronlist[pick(GLOB.patrons_by_faith[faith_input])]
 
 				if("patron")
 					var/list/patrons_named = list()
@@ -1801,7 +1812,7 @@ Slots: [job.spawn_positions]</span>
 				if("hair")
 					var/new_hair
 					var/list/hairs
-					if(age == AGE_OLD && OLDGREY in pref_species.species_traits)
+					if(age == AGE_OLD && (OLDGREY in pref_species.species_traits))
 						hairs = pref_species.get_oldhc_list()
 						new_hair = input(user, "Choose your character's hair color:", "") as null|anything in hairs
 					else
@@ -1961,6 +1972,7 @@ Slots: [job.spawn_positions]</span>
 						ResetJobs()
 						if(pref_species.desc)
 							to_chat(user, "[pref_species.desc]")
+						age = pick(pref_species.possible_ages)
 						to_chat(user, "<font color='red'>Classes reset.</font>")
 						random_character(gender)
 						accessory = "Nothing"
@@ -2181,9 +2193,25 @@ Slots: [job.spawn_positions]</span>
 					else
 						domhand = 1
 				if("family")
-					var/list/loly = list("Not yet.","Work in progress.","Don't click me.","Stop clicking this.","Nope.","Be patient.","Sooner or later.")
-					to_chat(user, "<font color='red'>[pick(loly)]</font>")
-					return
+					var/list/famtree_options_list = list(FAMILY_NONE, FAMILY_PARTIAL, FAMILY_NEWLYWED, FAMILY_FULL, "EXPLAIN THIS TO ME")
+					var/new_family = input(user, "Do you have relatives in rockhill?", "The Major Houses of Rockhill") as null|anything in famtree_options_list
+					if(new_family == "EXPLAIN THIS TO ME")
+						to_chat(user, span_purple("\
+						--[FAMILY_NONE] will disable this feature.<br>\
+						--[FAMILY_PARTIAL] will assign you as a progeny of a local house based on your species. This feature will instead assign you as a aunt or uncle to a local family if your older than ADULT.<br>\
+						--[FAMILY_NEWLYWED] assigns you a spouse without adding you to a family. Setspouse will prioritize pairing you with another newlywed with the same name as your setspouse.<br>\
+						--[FAMILY_FULL] will attempt to assign you as matriarch or patriarch of one of the local houses of rockhill. Setspouse will will prevent \
+						players with the setspouse = None from matching with you unless their name equals your setspouse."))
+
+					else if(new_family)
+						family = new_family
+				//Setspouse is part of the family subsystem. It will check existing families for this character and attempt to place you in this family.
+				if("setspouse")
+					var/newspouse = input(user, "Input the name of another player:","Rememberin your spouse") as text|null
+					if(newspouse)
+						setspouse = newspouse
+					else
+						setspouse = null
 				if("alignment")
 ///					to_chat(user, "<font color='puple'>Alignment is how you communicate to the Game Masters if your character follows a certain set of behavior restrictions. This allows you to </font>")
 					var/new_alignment = input(user, "Alignment is how you communicate to the Game Masters and other players the intent of your character. Your character will be under less administrative scrutiny for evil actions if you choose evil alignments, but you will experience subtle disadvantages. Alignment is overwritten for antagonists.", "Alignment") as null|anything in ALL_ALIGNMENTS_LIST
@@ -2377,6 +2405,15 @@ Slots: [job.spawn_positions]</span>
 					widescreenpref = !widescreenpref
 					user.client.change_view(CONFIG_GET(string/default_view))
 
+				if("schizo_voice")
+					toggles ^= SCHIZO_VOICE
+					if(toggles & SCHIZO_VOICE)
+						to_chat(user, "<span class='warning'>You are now a voice.\n\
+										As a voice, you will receive meditations from players asking about game mechanics!\n\
+										Good voices could be rewarded with PQ by staff for answering meditations, while bad ones are punished.</span>")
+					else
+						to_chat(user, span_warning("You are no longer a voice."))
+
 				if("save")
 					save_preferences()
 					save_character()
@@ -2520,6 +2557,9 @@ Slots: [job.spawn_positions]</span>
 		character.update_body()
 		character.update_hair()
 		character.update_body_parts(redraw = TRUE)
+
+	character.familytree_pref = family
+	character.setspouse = setspouse
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)

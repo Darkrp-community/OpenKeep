@@ -121,8 +121,8 @@
 			return
 		new /obj/item/stack/sheet/cloth(user.drop_location())
 		user.visible_message("<span class='notice'>[user] cuts [src] into pieces of cloth with [I].</span>", \
-					 "<span class='notice'>I cut [src] into pieces of cloth with [I].</span>", \
-					 "<span class='hear'>I hear cutting.</span>")
+					"<span class='notice'>I cut [src] into pieces of cloth with [I].</span>", \
+					"<span class='hear'>I hear cutting.</span>")
 		use(2)
 	else
 		return ..()*/
@@ -224,7 +224,7 @@
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
 
 /obj/item/stack/medical/mesh/Initialize()
-	..()
+	. = ..()
 	if(amount == max_amount)	 //only seal full mesh packs
 		is_open = FALSE
 		icon_state = "regen_mesh_closed"
@@ -258,7 +258,7 @@
 	. = ..()
 
 /obj/item/stack/medical/mesh/attack_hand(mob/user)
-	if(!is_open & user.get_inactive_held_item() == src)
+	if(!is_open && user.get_inactive_held_item() == src)
 		to_chat(user, "<span class='warning'>I need to open [src] first.</span>")
 		return
 	. = ..()

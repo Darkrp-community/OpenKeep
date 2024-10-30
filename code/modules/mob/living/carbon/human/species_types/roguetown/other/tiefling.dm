@@ -1,3 +1,9 @@
+	/*==============*
+	*				*
+	*	Tiefling	*
+	*				*
+	*===============*/
+
 /mob/living/carbon/human/species/tieberian
 	race = /datum/species/tieberian
 
@@ -28,26 +34,26 @@
 	liked_food = NONE
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mm.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	hairyness = "t3"
 	mutant_bodyparts = list("ears","tail_human","horns")
-	soundpack_m = /datum/voicepack/male/elf
-	soundpack_f = /datum/voicepack/female/elf
-	offset_features = list(OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
-	OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
-	OFFSET_FACE = list(0,1), OFFSET_BELT = list(0,1), OFFSET_BACK = list(0,1), \
-	OFFSET_NECK = list(0,1), OFFSET_MOUTH = list(0,1), OFFSET_PANTS = list(0,1), \
-	OFFSET_SHIRT = list(0,1), OFFSET_ARMOR = list(0,1), OFFSET_HANDS = list(0,1), OFFSET_UNDIES = list(0,1), \
+	soundpack_m = /datum/voicepack/male
+	soundpack_f = /datum/voicepack/female
+	offset_features = list(OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_WRISTS = list(0,0),\
+	OFFSET_CLOAK = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), \
+	OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,0), \
+	OFFSET_NECK = list(0,0), OFFSET_MOUTH = list(0,0), OFFSET_PANTS = list(0,0), \
+	OFFSET_SHIRT = list(0,0), OFFSET_ARMOR = list(0,0), OFFSET_HANDS = list(0,0), OFFSET_UNDIES = list(0,0), \
 	OFFSET_ID_F = list(0,-1), OFFSET_GLOVES_F = list(0,0), OFFSET_WRISTS_F = list(0,0), OFFSET_HANDS_F = list(0,0), \
 	OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
 	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,-1), OFFSET_BACK_F = list(0,-1), \
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
 	specstats = list("strength" = 0, "perception" = 2, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = -1)
-	specstats_f = list("strength" = 0, "perception" = 2, "intelligence" = 2, "constitution" = -2, "endurance" = -1, "speed" = 2, "fortune" = -1)
+	specstats_f = list("strength" = 0, "perception" = 3, "intelligence" = 2, "constitution" = -2, "endurance" = -1, "speed" = 1, "fortune" = -1)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
@@ -81,7 +87,7 @@
 	UnregisterSignal(C, COMSIG_MOB_SAY)
 	C.remove_language(/datum/language/hellspeak)
 
-/datum/species/tieberian/handle_speech(datum/source, mob/speech_args)
+/datum/species/tieberian/handle_speech(datum/source, list/speech_args)
 	. = ..()
 	var/message = speech_args[SPEECH_MESSAGE]
 	if(message)
@@ -107,12 +113,15 @@
 /datum/species/tieberian/get_skin_list()
 	return sortList(list(
 		"Crimson Land" = SKIN_COLOR_CRIMSON_LAND,
-		"Zanguine" = SKIN_COLOR_ZANGUINE,
 		"Sun Stained" = SKIN_COLOR_SUNSTAINED,
 		"Sundered" = SKIN_COLOR_SUNDERED,
 		"Zarkana" = SKIN_COLOUR_ARCANA,
 		"Zarconum" = SKIN_COLOUR_ZARCONUM,
 		"Abyssium" = SKIN_COLOUR_ABYSS,
+		"Castillian" = SKIN_COLOR_CASTILLIAN,
+		"Asturias" = SKIN_COLOR_ASTURIAS,
+		"Vaquero" = SKIN_COLOR_VAQUERO,
+		"Zanguine" = SKIN_COLOR_ZANGUINE,
 		"Ash" = SKIN_COLOUR_ASH,
 	))
 
@@ -121,7 +130,16 @@
 	"black - oil" = "181a1d",
 	"black - cave" = "201616",
 	"black - rogue" = "2b201b",
-	"black - midnight" = "1d1b2b"
+	"black - midnight" = "1d1b2b",
+
+	"purple - arcane" = "3f2f42",
+
+	"blue - abyss" = "09282d",
+
+	"red - demonic" = "480808",
+	"red - impish" = "641010",
+	"red - rubescent" = "8d5858"
+
 	))
 
 /datum/species/tieberian/random_name(gender,unique,lastname)

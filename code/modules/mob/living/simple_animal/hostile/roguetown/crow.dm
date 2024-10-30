@@ -17,6 +17,7 @@
 	rotprocess = null
 	static_debris = list(/obj/item/natural/feather=1)
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/friedcrow
+	dust_result = /obj/item/alch/airdust
 
 /obj/item/reagent_containers/food/snacks/rogue/friedcrow
 	name = "fried zad"
@@ -28,8 +29,9 @@
 	w_class = WEIGHT_CLASS_TINY
 	tastes = list("burnt flesh" = 1)
 	eat_effect = null
-	rotprocess = 12 MINUTES
+	rotprocess = SHELFLIFE_SHORT
 	sellprice = 0
+	dust_result = /obj/item/alch/airdust
 
 /obj/item/reagent_containers/food/snacks/crow/burning(input as num)
 	. = ..()
@@ -41,7 +43,7 @@
 
 /obj/item/reagent_containers/food/snacks/crow/dead
 	dead = TRUE
-	rotprocess = 15 MINUTES
+	rotprocess = SHELFLIFE_SHORT
 
 /obj/item/reagent_containers/food/snacks/crow/Initialize()
 	. = ..()
@@ -85,7 +87,7 @@
 		dead = TRUE
 		playsound(src, 'sound/vo/mobs/rat/rat_death.ogg', 100, FALSE, -1)
 		icon_state = "[icon_state]1"
-		rotprocess = 15 MINUTES
+		rotprocess = SHELFLIFE_SHORT
 		return 1
 	. = ..()
 

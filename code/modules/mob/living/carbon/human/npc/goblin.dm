@@ -6,12 +6,13 @@
 	race = /datum/species/goblin
 	gender = MALE
 	bodyparts = list(/obj/item/bodypart/chest/goblin, /obj/item/bodypart/head/goblin, /obj/item/bodypart/l_arm/goblin,
-					 /obj/item/bodypart/r_arm/goblin, /obj/item/bodypart/r_leg/goblin, /obj/item/bodypart/l_leg/goblin)
+					/obj/item/bodypart/r_arm/goblin, /obj/item/bodypart/r_leg/goblin, /obj/item/bodypart/l_leg/goblin)
 	rot_type = /datum/component/rot/corpse/goblin
 	var/gob_outfit = /datum/outfit/job/roguetown/npc/goblin
 	ambushable = FALSE
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw)
 	possible_rmb_intents = list()
+	vitae_pool = 250 // Small, frail creechers with not so much vitality to gain from.
 
 /mob/living/carbon/human/species/goblin/npc
 	aggressive=1
@@ -89,7 +90,7 @@
 /obj/item/bodypart/head/goblin/update_icon_dropped()
 	return
 
-/obj/item/bodypart/head/goblin/get_limb_icon()
+/obj/item/bodypart/head/goblin/get_limb_icon(dropped, hideaux = FALSE)
 	return
 
 /obj/item/bodypart/head/goblin/skeletonize()
@@ -103,12 +104,13 @@
 	name = "goblin"
 	id = "goblin"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
-	inherent_traits = list(TRAIT_NOROGSTAM,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE, TRAIT_EASYDISMEMBER, TRAIT_CRITICAL_WEAKNESS)
+	inherent_traits = list(TRAIT_NOROGSTAM,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE, TRAIT_EASYDISMEMBER, TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE)
 	no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS, SLOT_S_STORE)
 	nojumpsuit = 1
 	sexes = 1
 	offset_features = list(OFFSET_HANDS = list(0,-4), OFFSET_HANDS_F = list(0,-4))
 	damage_overlay_type = ""
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	var/raceicon = "goblin"
 
 /datum/species/goblin/regenerate_icons(mob/living/carbon/human/H)
@@ -185,9 +187,7 @@
 
 /mob/living/carbon/human/species/goblin/Initialize()
 	. = ..()
-	spawn(10)
-		after_creation()
-	//addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
+	addtimer(CALLBACK(src, PROC_REF(after_creation)), 1 SECONDS)
 
 /mob/living/carbon/human/species/goblin/handle_combat()
 	if(mode == AI_HUNT)
@@ -316,7 +316,7 @@
 				head = /obj/item/clothing/head/roguetown/helmet/leather/goblin
 		if(5) //heavy armored sword/flail/shields
 			if(prob(30))
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/goblin
+				armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/goblin
 			else
 				armor = /obj/item/clothing/suit/roguetown/armor/leather/goblin
 			if(prob(80))
@@ -403,9 +403,7 @@
 		return
 	spawning = TRUE
 	update_icon()
-	spawn(2 SECONDS)
-		creategob()
-	//addtimer(CALLBACK(src, PROC_REF(creategob)), 4 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(creategob)), 2 SECONDS)
 
 /obj/structure/gob_portal/Destroy()
 	soundloop.stop()

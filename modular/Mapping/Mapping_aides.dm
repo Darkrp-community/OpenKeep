@@ -5,8 +5,8 @@
 
 /obj/effect/spawner/roguemap/loot/common
 	spawned = list(
-		/obj/item/roguecoin/copper/pile = 15,		
-		/obj/item/rogueweapon/huntingknife = 10, 
+		/obj/item/roguecoin/copper/pile = 15,
+		/obj/item/rogueweapon/huntingknife = 10,
 		/obj/item/rogueweapon/huntingknife/idagger = 8,
 		/obj/item/rogueweapon/huntingknife/idagger/steel = 4,
 		/obj/item/rogueweapon/huntingknife/idagger/silver = 2,
@@ -15,7 +15,7 @@
 		/obj/item/rogueweapon/mace = 5,
 		/obj/item/quiver/arrows = 5,
 		/obj/item/rogueweapon/sword/iron/short = 5,
-		/obj/item/clothing/suit/roguetown/armor/leather = 10, 
+		/obj/item/clothing/suit/roguetown/armor/leather = 10,
 		/obj/item/clothing/suit/roguetown/armor/gambeson = 15,
 		/obj/item/clothing/gloves/roguetown/chain/iron = 3,
 		/obj/item/clothing/neck/roguetown/coif = 3,
@@ -28,8 +28,8 @@
 	probby = 50
 	color = "#ff0000"
 	spawned = list(
-		/obj/item/reagent_containers/food/snacks/smallrat = 30,		
-		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10, 
+		/obj/item/reagent_containers/food/snacks/smallrat = 30,
+		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
 		/obj/item/organ/guts = 5,
 		/obj/item/roguecoin/copper = 5,
 		/obj/effect/gibspawner/generic = 5,
@@ -73,10 +73,10 @@
 	probby = 50
 	color = "#e44aff"
 	spawned = list(
-		/mob/living/simple_animal/hostile/retaliate/gaseousform/xylix = 30,		
-		/mob/living/simple_animal/hostile/rogue/demon/xylix = 10, 
+		/mob/living/simple_animal/hostile/retaliate/gaseousform/xylix = 30,
+		/mob/living/simple_animal/hostile/rogue/demon/xylix = 10,
 		/mob/living/simple_animal/hostile/rogue/haunt/xylix = 5,
-		/obj/structure/glowshroom/single/xylix = 5,
+		/obj/structure/kneestingers/xylix = 5,
 		/obj/item/roguecoin/silver/pile/xylix = 5,
 		)
 
@@ -84,71 +84,77 @@
 	name = "spectral daemon"
 	color = "#c189cb"
 	alpha = 200
+
 /mob/living/simple_animal/hostile/rogue/demon/xylix/Initialize()
 	switch(pick(1,2,3))
 		if (1)
 			maxHealth = 30
 			health = 30
 			melee_damage_lower = 3
-			melee_damage_upper = 12		
+			melee_damage_upper = 12
 		if (2)
 			maxHealth = 45
 			health = 45
 			melee_damage_lower = 6
-			melee_damage_upper = 18	
+			melee_damage_upper = 18
 		if (3)
 			maxHealth = 18
 			health = 18
 			melee_damage_lower = 9
 			melee_damage_upper = 25
+	return ..()
 
 /mob/living/simple_animal/hostile/rogue/haunt/xylix
 	name = "spectral daemon"
 	color = "#c189cb"
 	alpha = 200
+
 /mob/living/simple_animal/hostile/rogue/haunt/xylix/Initialize()
 	switch(pick(1,2,3))
 		if (1)
 			maxHealth = 40
 			health = 40
 			melee_damage_lower = 3
-			melee_damage_upper = 9		
+			melee_damage_upper = 9
 		if (2)
 			maxHealth = 35
 			health = 35
 			melee_damage_lower = 5
-			melee_damage_upper = 14	
+			melee_damage_upper = 14
 		if (3)
 			maxHealth = 28
 			health = 28
 			melee_damage_lower = 8
 			melee_damage_upper = 19
+	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/gaseousform/xylix
 	name = "spectral daemon"
 	faction = list("undead")
 	color = "#c189cb"
 	alpha = 200
+
 /mob/living/simple_animal/hostile/retaliate/gaseousform/xylix/Initialize()
 	switch(pick(1,2,3))
 		if (1)
 			maxHealth = 70
 			health = 70
 			melee_damage_lower = 2
-			melee_damage_upper = 10		
+			melee_damage_upper = 10
 		if (2)
 			maxHealth = 60
 			health = 60
 			melee_damage_lower = 3
-			melee_damage_upper = 13	
+			melee_damage_upper = 13
 		if (3)
 			maxHealth = 50
 			health = 50
 			melee_damage_lower = 4
 			melee_damage_upper = 16
+	return ..()
 
 
-/obj/structure/glowshroom/single/xylix
+/obj/structure/kneestingers/xylix
 	name = ""
 	desc = ""
 	icon = 'icons/roguetown/items/valuable.dmi'
@@ -216,6 +222,7 @@
 			redstone_id = "xhutterA"
 		if (2)
 			redstone_id = "xhutterB"
+	return ..()
 
 /obj/effect/spawner/roguemap/xylixlabyrinth_frowny
 	icon = 'icons/mob/actions/roguespells.dmi'
@@ -241,7 +248,7 @@
 	icon_state = "wall_funny"
 	pixel_y = 32
 
-/obj/structure/glowshroom/single/xylix
+/obj/structure/kneestingers/xylix
 	name = "fancy chest"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "chestfancy_neu"
@@ -268,7 +275,7 @@
 	alpha = rand(80,109)
 	switch(pick(1,2))
 		if (1)
-			static_debris = FALSE		
+			static_debris = FALSE
 		if (2)
 			static_debris = list(/obj/item/natural/silk = 1)
 	. = ..()
@@ -295,81 +302,23 @@
 
 
 /*	..................   Various mapping aides   ................... */
-/* already in main
-/obj/structure/closet/crate/chest/wicker
-	name = "wicker basket"
-	desc = "Fibers interwoven to make a cheap storage bin."
-	base_icon_state = "wicker"
-	icon_state = "wicker"
-	open_sound = 'sound/items/book_open.ogg'
-	open_sound = 'sound/items/book_close.ogg'
-	close_sound = 'sound/items/book_close.ogg'
-
-/obj/structure/closet/crate/chest/neu
-	name = "sturdy oak chest"
-	icon_state = "chest_neu"
-	base_icon_state = "chest_neu"
-
-/obj/structure/closet/crate/chest/neu_iron
-	name = "reinforced chest"
-	icon_state = "chestiron_neu"
-	base_icon_state = "chestiron_neu"
-
-/obj/structure/closet/crate/chest/neu_fancy
-	name = "fancy chest"
-	icon_state = "chestfancy_neu"
-	base_icon_state = "chestfancy_neu"
-
-/obj/structure/closet/crate/chest/old_crate
-	name = "old crate"
-	base_icon_state = "woodchestalt"
-	icon_state = "woodchestalt"
-
-/obj/structure/closet/crate/drawer/random
-	icon_state = "drawer1"
-	base_icon_state = "drawer1"
-	pixel_y = 8
-
-/obj/structure/closet/crate/drawer/random/Initialize()
-	. = ..()
-	if(icon_state == "drawer1")
-		base_icon_state = "drawer[rand(1,4)]"
-		icon_state = "[base_icon_state]"
-	else
-		base_icon_state = "drawer1"
-		pixel_y = 8
-
-/obj/structure/mineral_door/wood/deadbolt/shutter
-	name = "serving hatch"
-	desc = "Can be locked from the inside."
-	icon_state = "serving"
-	base_state = "serving"
-	max_integrity = 250
-	over_state = "servingopen"
-	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
-	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
-	dir = NORTH
-	locked = TRUE
-
-*/
-/obj/structure/closet/crate/chest/crate
-	name = "crate"
-	base_icon_state = "woodchest"
-	icon_state = "woodchest"
-
 
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
-
-/turf/open/floor/rogue/tile/kitchen
-	icon_state = "tavern"
 
 /obj/machinery/light/rogue/wallfire/big_fireplace
 	icon_state = "fireplace1"
 	base_state = "fireplace"
 	icon = 'icons/roguetown/misc/fireplace64.dmi'
 
-
+/obj/machinery/light/rogue/hearth/big_fireplace
+	name = "fireplace"
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+	fueluse = -1
+	pixel_x = -16
+	climb_offset = 4
 
 
 /*	..................   Wizard Shenanigans   ................... */
@@ -413,7 +362,7 @@
 			alpha = 180
 			qdel(I)
 	else
-		return ..()	
+		return ..()
 
 
 /*	..................   NOC Device (Fixed scrying ball)   ................... */
@@ -565,6 +514,16 @@
 	pixel_y = 32
 
 
+/obj/structure/fluff/shipssprote
+	name = ""
+	desc = ""
+	icon = 'icons/obj/atmospherics/pipes/disposal.dmi'
+	icon_state = "pipe"
+	mouse_opacity = 0
+	color = "#5a4621"
+	pixel_y = -16
+
+
 /obj/structure/fluff/walldeco/bath/random
 	icon_state = "bath"
 	pixel_y = 32
@@ -586,9 +545,6 @@
 	icon_state = "vinez"
 	pixel_y = 32
 
-/obj/structure/rack/rogue/shelf/notdense
-	density = FALSE
-	pixel_y = 24
 
 /*	..................   Red brick Walls   ................... */
 /turf/closed/wall/mineral/rogue/stonebrick/reddish
@@ -604,23 +560,6 @@
 	color = "#ffddd7"
 
 
-/*	..................   Lights   ................... */
-/obj/machinery/light/rogue/campfire/longlived
-	fueluse = 180 MINUTES
-
-/obj/item/candle/yellow/lit/infinite
-	light_power = 1
-	light_range = 4
-	start_lit = TRUE
-	infinite = TRUE
-	icon_state = "candle1_lit"
-	anchored = TRUE
-
-/obj/item/candle/yellow/lit/infinite/strong
-	light_power = 2
-	light_range = 4
-	pixel_x = 4
-
 /obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
 	name = "candle lamp"
 	icon = 'modular/Mapping/icons/decoration.dmi'
@@ -630,18 +569,104 @@
 	light_power = 0.9
 	light_range = 6
 
-/obj/machinery/light/rogue/wallfire/candle/weak
-	light_power = 0.9
-	light_range = 6
-/obj/machinery/light/rogue/wallfire/candle/weak/l
-	pixel_x = -32
-	pixel_y = 0
-/obj/machinery/light/rogue/wallfire/candle/weak/r
-	pixel_x = 32
-	pixel_y = 0
+
+/*	..................   Misc   ................... */
+/obj/structure/bars/alt
+	icon_state = "bars_alt"
+	plane = -3
+	layer = WALL_OBJ_LAYER+0.05
+
+/obj/item/roguebin/alt
+	icon_state = "washbin2"
+
+/obj/structure/mirror/alt
+	icon_state = "mirror_alt"
+
+/obj/item/roguestatue/silver/gnome
+	name = "petrified gnome"
+	desc = "A literal gnome, turned to stone mid-step and put on a matching stone platform. Rather unsettling."
+	smeltresult = null
+	color = "#617163"
 
 
 
+/*	..................   The Drunken Saiga   ................... */
+/obj/structure/fluff/walldeco/innsign/saiga
+	name = "The Drunken Saiga"
+	icon = 'modular/Mapping/icons/decoration.dmi'
+	icon_state = "bar_saiga"
+	plane = -1
+	pixel_x = 3
+	pixel_y = 16
+
+/obj/structure/fluff/walldeco/innsign/trophy
+	name = "saiga trophy"
+	icon = 'modular/Mapping/icons/decoration.dmi'
+	icon_state = "saiga_trophy"
+	pixel_y = 32
+
+/obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep
+	name = "padded vest"
+	desc = "Dyed green, belongs to the owner of the Drunken Saiga inn."
+	icon_state = "striped"
+	color = "#638b45"
+
+/turf/open/floor/rogue/tile/checker_green
+	icon_state = "tile"
+	color = "#94df5b"
+
+
+
+/*	..................   Areas to play with the music a bit   ................... */
+/area/rogue/indoors/town/bath/redhouse // lets try something different
+	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
+	converted_type = /area/rogue/outdoors/exposed/bath/redhouse
+
+/area/rogue/outdoors/exposed/bath/redhouse
+	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
+
+/area/rogue/indoors/town/tavern/saiga
+	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
+	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
+	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
+
+/area/rogue/outdoors/exposed/tavern/saiga
+	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
+	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
+
+
+/*	..................   Traveltiles   ................... */ // these are the ones on centcom, where the actual lair is, to reduce varedits onmap
+/obj/structure/fluff/traveltile/exit_bandit		// mus NOT be a traveltile/bandit child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
+	aportalid = "banditin"
+	aportalgoesto = "banditexit"
+
+/obj/structure/fluff/traveltile/exit_vampire	// mus NOT be a traveltile/vampire child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
+	aportalid = "vampin"
+	aportalgoesto = "vampexit"
+
+/obj/structure/fluff/traveltile/exit_inhumen
+	aportalid = "inhumenin"
+	aportalgoesto = "inhumenexit"
+
+
+/obj/structure/fluff/traveltile/to_inhumen_tribe
+	name = "to the Deep Bog"
+	aportalid = "inhumenexit"
+	aportalgoesto = "inhumenin"
+
+
+/*	..................   Toll randomizer (poor mans coin generator, cheaper workload is all)  ................... */
+/obj/effect/spawner/roguemap/tollrandom
+	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
+	icon_state = "soultoken_floor"
+	probby = 25
+	color = "#ff0000"
+	spawned = list(
+		/obj/item/underworld/coin = 1,
+		)
+
+
+/* moved to main. leave this be for now, I want to be able to find the additions I make easily for tweaking
 /*	..................   More chairs   ................... */
 /obj/structure/chair/wood/rogue/chair_noble
 	name = "fine chair"
@@ -669,110 +694,55 @@
 	icon_state = "chair_purple"
 	origin_type = /obj/structure/chair/wood/rogue/chair_noble/red
 
-/*	..................   More tables   ................... */
-/obj/structure/table/wood/reinf_long
-    icon_state = "tablewood_reinf"
-
-/obj/structure/table/wood/plain_alt
-    icon_state = "tablewood_plain"
-
-/obj/structure/table/wood/large_new
-    icon_state = "alt_largetable_mid"
-/obj/structure/table/wood/large/corner_new
-    icon_state = "alt_largetable"
-
-/obj/structure/table/wood/reinforced_alter
-    icon_state = "tablewood_alt"
-
-/obj/structure/table/wood/nice/decorated
-	icon_state = "tablefine_alt"
-
-/obj/structure/table/wood/nice/decorated_alt
-	icon_state = "tablefine_alt2"
-
-
-
-/*	..................   Misc   ................... */
-/obj/structure/bars/alt
-	icon_state = "bars_alt"
-	plane = -3
-	layer = WALL_OBJ_LAYER+0.05
-
-/obj/item/roguebin/alt
-	icon_state = "washbin2"
-
-/obj/structure/mirror/alt
-	icon_state = "mirror_alt"
-
-/obj/item/roguestatue/silver/gnome
-	name = "petrified gnome"
-	desc = "A literal gnome, turned to stone mid-step and put on a matching stone platform. Rather unsettling."
-	smeltresult = null
-	color = "#617163"
-
-
 /obj/structure/chair/bench/couch/redleft
 	icon_state = "redcouch_alt"
 /obj/structure/chair/bench/couch/redright
 	icon_state = "redcouch2_alt"
 
-/obj/structure/roguetent/preopen
-	density = FALSE
+
+/*	..................   Lights   ................... */
+/obj/item/candle/yellow/lit/infinite
+	light_power = 1
+	light_range = 4
+	start_lit = TRUE
+	infinite = TRUE
+	icon_state = "candle1_lit"
+	anchored = TRUE
+
+/obj/item/candle/yellow/lit/infinite/strong
+	light_power = 2
+	light_range = 4
+	pixel_x = 4
+
+/obj/machinery/light/rogue/campfire/longlived
+	fueluse = 180 MINUTES
+
+/obj/machinery/light/rogue/wallfire/candle/weak
+	light_power = 0.9
+	light_range = 6
+/obj/machinery/light/rogue/wallfire/candle/weak/l
+	pixel_x = -32
+	pixel_y = 0
+/obj/machinery/light/rogue/wallfire/candle/weak/r
+	pixel_x = 32
+	pixel_y = 0
 
 
-/obj/structure/fluff/clock/dense
-	density = TRUE
+// Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
+/obj/structure/bed/rogue/bear
+	desc = "A hide of a slain bear. It looks like someone sleeps on it often."
+	icon = 'icons/turf/floors/bear.dmi'
+	icon_state = "bear"
+	pixel_x = -16
+	pixel_y = -27
 
-/*	..................   The Drunken Saiga   ................... */
-/obj/structure/fluff/walldeco/innsign/saiga
-	name = "The Drunken Saiga"
+/obj/structure/fluff/walldeco/skullspike // for ground really
 	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "bar_saiga"
+	icon_state = "skullspike"
 	plane = -1
-	pixel_x = 3
-	pixel_y = 16
-
-/obj/structure/fluff/walldeco/innsign/trophy
-	name = "saiga trophy"
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "saiga_trophy"
-	pixel_y = 32
-
-/obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep
-	name = "padded vest"
-	desc = "Dyed green, belongs to the innkeeper."
-	icon_state = "workervest"
-	color = "#638b45"
-
-/turf/open/floor/rogue/tile/checker_green
-	icon_state = "tile"
-	color = "#94df5b"
-
-
-
-/*	..................   Areas to play with the music a bit   ................... */
-/area/rogue/indoors/town/bath/redhouse // lets try something different
-	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
-	converted_type = /area/rogue/outdoors/exposed/bath/redhouse
-
-/area/rogue/outdoors/exposed/bath/redhouse
-	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
-
-/area/rogue/indoors/town/tavern/saiga
-	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
-	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
-	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
-
-/area/rogue/outdoors/exposed/tavern/saiga
-	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
-	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
-
-
-/area/rogue/indoors/bandit_lair
-	name = "lair (Bandits)"
-
-/area/rogue/indoors/vampire_manor
-	name = "lair (Vampire Lord)"
+	layer = ABOVE_MOB_LAYER
+	pixel_x = 8
+	pixel_y = 24
 
 /*	..................   Floors   ................... */
 /turf/open/floor/rogue/ruinedwood/darker
@@ -780,7 +750,129 @@
 /turf/open/floor/rogue/ruinedwood/turned/darker
 	color = "#d9c9b0"
 
+/turf/open/floor/rogue/tile/kitchen
+	icon_state = "tavern"
 
-// Temp to avoid conflicts
-/obj/item/cooking/pot
 
+/obj/structure/roguetent/preopen
+	density = FALSE
+
+/obj/structure/fluff/clock/dense
+	density = TRUE
+
+
+/obj/structure/closet/crate/chest/crate
+	name = "crate"
+	base_icon_state = "woodchest"
+	icon_state = "woodchest"
+
+/obj/structure/closet/crate/chest/wicker
+	name = "wicker basket"
+	desc = "Fibers interwoven to make a cheap storage bin."
+	base_icon_state = "wicker"
+	icon_state = "wicker"
+	open_sound = 'sound/items/book_open.ogg'
+	open_sound = 'sound/items/book_close.ogg'
+	close_sound = 'sound/items/book_close.ogg'
+
+/obj/structure/closet/crate/chest/neu
+	name = "sturdy oak chest"
+	icon_state = "chest_neu"
+	base_icon_state = "chest_neu"
+
+/obj/structure/closet/crate/chest/neu_iron
+	name = "reinforced chest"
+	icon_state = "chestiron_neu"
+	base_icon_state = "chestiron_neu"
+
+/obj/structure/closet/crate/chest/neu_fancy
+	name = "fancy chest"
+	icon_state = "chestfancy_neu"
+	base_icon_state = "chestfancy_neu"
+
+/obj/structure/closet/crate/chest/old_crate
+	name = "old crate"
+	base_icon_state = "woodchestalt"
+	icon_state = "woodchestalt"
+
+/obj/structure/closet/crate/drawer/random
+	icon_state = "drawer1"
+	base_icon_state = "drawer1"
+	pixel_y = 8
+
+/obj/structure/closet/crate/drawer/random/Initialize()
+	. = ..()
+	if(icon_state == "drawer1")
+		base_icon_state = "drawer[rand(1,4)]"
+		icon_state = "[base_icon_state]"
+	else
+		base_icon_state = "drawer1"
+		pixel_y = 8
+
+/obj/structure/mineral_door/wood/deadbolt/shutter
+	name = "serving hatch"
+	desc = "Can be locked from the inside."
+	icon_state = "serving"
+	base_state = "serving"
+	max_integrity = 250
+	over_state = "servingopen"
+	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
+	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
+	dir = NORTH
+	locked = TRUE
+
+/obj/structure/closet/crate/chest/wicker
+	name = "wicker basket"
+	desc = "Fibers interwoven to make a cheap storage bin."
+	base_icon_state = "wicker"
+	icon_state = "wicker"
+	open_sound = 'sound/items/book_open.ogg'
+	open_sound = 'sound/items/book_close.ogg'
+	close_sound = 'sound/items/book_close.ogg'
+
+/obj/structure/closet/crate/chest/neu
+	name = "sturdy oak chest"
+	icon_state = "chest_neu"
+	base_icon_state = "chest_neu"
+
+/obj/structure/closet/crate/chest/neu_iron
+	name = "reinforced chest"
+	icon_state = "chestiron_neu"
+	base_icon_state = "chestiron_neu"
+
+/obj/structure/closet/crate/chest/neu_fancy
+	name = "fancy chest"
+	icon_state = "chestfancy_neu"
+	base_icon_state = "chestfancy_neu"
+
+/obj/structure/closet/crate/chest/old_crate
+	name = "old crate"
+	base_icon_state = "woodchestalt"
+	icon_state = "woodchestalt"
+
+/obj/structure/closet/crate/drawer/random
+	icon_state = "drawer1"
+	base_icon_state = "drawer1"
+	pixel_y = 8
+
+/obj/structure/closet/crate/drawer/random/Initialize()
+	. = ..()
+	if(icon_state == "drawer1")
+		base_icon_state = "drawer[rand(1,4)]"
+		icon_state = "[base_icon_state]"
+	else
+		base_icon_state = "drawer1"
+		pixel_y = 8
+
+/obj/structure/mineral_door/wood/deadbolt/shutter
+	name = "serving hatch"
+	desc = "Can be locked from the inside."
+	icon_state = "serving"
+	base_state = "serving"
+	max_integrity = 250
+	over_state = "servingopen"
+	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
+	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
+	dir = NORTH
+	locked = TRUE
+*/

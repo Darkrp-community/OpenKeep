@@ -97,9 +97,11 @@ Slimecrossing Armor
 /obj/item/clothing/head/peaceflower
 	name = "eoran bud"
 	desc = "A flower of gentle petals, associated with Eora or Necra. Usually adorned as a headress or laid at graves as a symbol of love or peace."
-	icon = 'icons/roguetown/items/produce.dmi'
+	icon = 'modular/Neu_Farming/icons/produce.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head_items.dmi'
 	icon_state = "peaceflower"
 	item_state = "peaceflower"
+	dropshrink = 0.9
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = NONE
 	dynamic_hair_suffix = ""
@@ -137,7 +139,7 @@ Slimecrossing Armor
 	var/hit_reflect_chance = 40
 
 /obj/item/clothing/suit/armor/heavy/adamantine/IsReflect(def_zone)
-	if(def_zone in list(BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG) && prob(hit_reflect_chance))
+	if((def_zone in list(BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)) && prob(hit_reflect_chance))
 		return TRUE
 	else
 		return FALSE

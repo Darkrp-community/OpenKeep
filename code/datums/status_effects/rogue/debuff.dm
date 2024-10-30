@@ -295,6 +295,34 @@
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/sleepytime
 	effectedstats = list("speed" = -2, "endurance" = -2)
 
+/atom/movable/screen/alert/status_effect/debuff/netted
+	name = "Net"
+	desc = "<span class='boldwarning'>A net was thrown on me.. how can I move?</span>\n"
+	icon_state = "muscles"
+
+/datum/status_effect/debuff/netted
+	id = "net"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/netted
+	duration = 2 MINUTES
+	effectedstats = list("speed" = -5, "endurance" = -2)
+
+/datum/status_effect/debuff/netted/on_apply()
+		. = ..()
+		var/mob/living/carbon/C = owner
+		C.add_movespeed_modifier(MOVESPEED_ID_NET_SLOWDOWN, multiplicative_slowdown = 3)
+
+/datum/status_effect/debuff/netted/on_remove()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.remove_movespeed_modifier(MOVESPEED_ID_NET_SLOWDOWN)
+		// Already handled in uncuff()
+		/*
+		C.legcuffed = null
+		C.update_inv_legcuffed()*/
+
+
+
 /atom/movable/screen/alert/status_effect/debuff/sleepytime
 	name = "Tired"
 	desc = "<span class='warning'>I am feeling tired.</span>\n"
@@ -308,6 +336,28 @@
 /atom/movable/screen/alert/status_effect/debuff/trainsleep
 	name = "Muscle Soreness"
 	desc = "<span class='warning'>Gaaaah, So sooooooore.</span>\n"
+	icon_state = "muscles"
+
+/datum/status_effect/debuff/barbfalter
+	id = "barbfalter"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/barbfalter
+	duration = 30 SECONDS
+	effectedstats = list("strength" = -1, "speed" = -1)
+
+/atom/movable/screen/alert/status_effect/debuff/barbfalter
+	name = "Faltering"
+	desc = "<span class='warning'>I've pushed myself to my limit.</span>\n"
+	icon_state = "muscles"
+
+/datum/status_effect/debuff/revive
+	id = "revive"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/revive
+	duration = 15 MINUTES
+	effectedstats = list("strength" = -4, "speed" = -3, "endurance" = -3, "constitution" = -4)
+
+/atom/movable/screen/alert/status_effect/debuff/revive
+	name = "Revival Sickness"
+	desc = "<span class='warning'>I have returned from oblivion.. but the fatigue of death still affects me.</span>\n"
 	icon_state = "muscles"
 
 /datum/status_effect/debuff/viciousmockery

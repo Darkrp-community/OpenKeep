@@ -6,11 +6,11 @@
 	sound_effect = 'sound/combat/crit.ogg'
 	whp = 50
 	sewn_whp = 20
-	bleed_rate = 20
+	bleed_rate = 25
 	sewn_bleed_rate = 0.2
 	clotting_threshold = null
 	sewn_clotting_threshold = null
-	woundpain = 50
+	woundpain = 35
 	sewn_woundpain = 20
 	mob_overlay = "s1"
 	sewn_overlay = "cut"
@@ -42,10 +42,10 @@
 	crit_message = "Blood sprays from %VICTIM's throat!"
 	whp = 100
 	sewn_whp = 25
-	bleed_rate = 50
+	bleed_rate = 60
 	sewn_bleed_rate = 0.5
-	woundpain = 60
-	sewn_woundpain = 30
+	woundpain = 45
+	sewn_woundpain = 20
 	mob_overlay = "s1_throat"
 
 /datum/wound/artery/neck/on_mob_gain(mob/living/affected)
@@ -62,9 +62,9 @@
 	severity = WOUND_SEVERITY_FATAL
 	whp = 100
 	sewn_whp = 35
-	bleed_rate = 50
+	bleed_rate = 60
 	sewn_bleed_rate = 0.8
-	woundpain = 100
+	woundpain = 80
 	sewn_woundpain = 50
 
 /datum/wound/artery/chest/on_mob_gain(mob/living/affected)

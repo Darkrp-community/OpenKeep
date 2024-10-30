@@ -5,6 +5,7 @@
 	var/status = ORGAN_ORGANIC
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 0
+	sellprice = 10
 	var/zone = BODY_ZONE_CHEST
 	var/slot
 	// DO NOT add slots with matching names to different zones - it will break internal_organs_slot list!
@@ -182,11 +183,11 @@
 	applyOrganDamage(d - damage)
 
 /** check_damage_thresholds
-  * input: M (a mob, the owner of the organ we call the proc on)
-  * output: returns a message should get displayed.
-  * description: By checking our current damage against our previous damage, we can decide whether we've passed an organ threshold.
-  *				 If we have, send the corresponding threshold message to the owner, if such a message exists.
-  */
+ * input: M (a mob, the owner of the organ we call the proc on)
+ * output: returns a message should get displayed.
+ * description: By checking our current damage against our previous damage, we can decide whether we've passed an organ threshold.
+ *				 If we have, send the corresponding threshold message to the owner, if such a message exists.
+ */
 /obj/item/organ/proc/check_damage_thresholds(mob/M)
 	if(damage == prev_damage)
 		return

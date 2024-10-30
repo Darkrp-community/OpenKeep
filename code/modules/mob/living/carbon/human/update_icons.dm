@@ -395,20 +395,15 @@ There are several things that need to be remembered:
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_RING]
 		inv.update_icon()
 
-	var/mutable_appearance/id_overlay
 
 	if(wear_ring)
 		wear_ring.screen_loc = rogueui_ringr
 		if(client && hud_used && hud_used.hud_shown)
 			client.screen += wear_ring
 		update_observer_view(wear_ring)
-		if(dna && dna.species.sexes)
-			var/G = (gender == FEMALE) ? "f" : "m"
-			if((G == "f" && !dna.species.use_m) || dna.species.use_f)
-				id_overlay = wear_ring.build_worn_icon(default_layer = RING_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = TRUE)
-			else
-				id_overlay = wear_ring.build_worn_icon(default_layer = RING_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', coom = FALSE)
-		if(gender == MALE)
+		var/use_female_sprites = dna?.species.sexes ? (gender == FEMALE && !dna.species.use_m) || dna.species.use_f : FALSE
+		var/mutable_appearance/id_overlay = wear_ring.build_worn_icon(default_layer = RING_LAYER, default_icon_file = 'icons/roguetown/clothing/onmob/rings.dmi', coom = use_female_sprites)
+		if(!dna?.species.sexes || gender == MALE)
 			if(OFFSET_ID in dna.species.offset_features)
 				id_overlay.pixel_x += dna.species.offset_features[OFFSET_ID][1]
 				id_overlay.pixel_y += dna.species.offset_features[OFFSET_ID][2]
@@ -740,7 +735,7 @@ There are several things that need to be remembered:
 			if(beltr.experimental_onhip)
 				var/list/prop
 				if(beltr.force_reupdate_inhand)
-					prop = beltr.onprop["onbelt"]
+					prop = beltr.onprop?["onbelt"]
 					if(!prop)
 						beltr.onprop["onbelt"] = beltr.getonmobprop("onbelt")
 						prop = beltr.onprop["onbelt"]
@@ -792,10 +787,10 @@ There are several things that need to be remembered:
 			if(beltl.experimental_onhip)
 				var/list/prop
 				if(beltl.force_reupdate_inhand)
-					prop = beltl.onprop["onbelt"]
+					prop = beltl.onprop?["onbelt"]
 					if(!prop)
-						beltl.onprop["onbelt"] = beltl.getonmobprop("onbelt")
-						prop = beltl.onprop["onbelt"]
+						prop = beltl.getonmobprop("onbelt")
+						LAZYSET(beltl.onprop, "onbelt", prop)
 				else
 					prop = beltl.getonmobprop("onbelt")
 				if(prop)
@@ -960,10 +955,10 @@ There are several things that need to be remembered:
 			if(backr.experimental_onback)
 				var/list/prop
 				if(backr.force_reupdate_inhand)
-					prop = backr.onprop["onback"]
+					prop = backr.onprop?["onback"]
 					if(!prop)
-						backr.onprop["onback"] = backr.getonmobprop("onback")
-						prop = backr.onprop["onback"]
+						prop = backr.getonmobprop("onback")
+						LAZYSET(backr.onprop, "onback", prop)
 				else
 					prop = backr.getonmobprop("onback")
 				if(prop)
@@ -1013,10 +1008,10 @@ There are several things that need to be remembered:
 			if(backl.experimental_onback)
 				var/list/prop
 				if(backl.force_reupdate_inhand)
-					prop = backl.onprop["onback"]
+					prop = backl.onprop?["onback"]
 					if(!prop)
-						backl.onprop["onback"] = backl.getonmobprop("onback")
-						prop = backl.onprop["onback"]
+						prop = backl.getonmobprop("onback")
+						LAZYSET(backl.onprop, "onback", backl.getonmobprop("onback"))
 				else
 					prop = backl.getonmobprop("onback")
 				if(prop)
@@ -1522,10 +1517,10 @@ There are several things that need to be remembered:
 /*
 Does everything in relation to building the /mutable_appearance used in the mob's overlays list
 covers:
- inhands and any other form of worn item
- centering large appearances
- layering appearances on custom layers
- building appearances from custom icon files
+ * inhands and any other form of worn item
+ * centering large appearances
+ * layering appearances on custom layers
+ * building appearances from custom icon files
 
 By Remie Richards (yes I'm taking credit because this just removed 90% of the copypaste in update_icons())
 

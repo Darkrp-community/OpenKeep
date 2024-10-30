@@ -244,10 +244,12 @@
 		to_chat(usr, "<span class='warning'>You do not have the rights to start a vote.</span>")
 		return
 
-	var/type = input("What kind of vote?") as null|anything in list("End Round", "Custom")
+	var/type = input("What kind of vote?") as null|anything in list("End Round", "Map", "Custom")
 	switch(type)
 		if("End Round")
 			type = "endround"
+		if("Map")
+			type = "map"
 		if("Custom")
 			type = "custom"
 	SSvote.initiate_vote(type, usr.key)
@@ -670,13 +672,13 @@
 	if(SSticker.current_state == GAME_STATE_PREGAME || SSticker.current_state == GAME_STATE_STARTUP)
 		if(alert("Enter Manual Gamemode Selection? Will disable random generation",,"Yes","No") == "Yes")
 			for(var/I in 1 to 10)
-				var/choice = input(usr, "Select Gamemodes", "Select Gamemodes") as anything in roguegamemodes|null
+				var/choice = input(usr, "Select Gamemodes", "Select Gamemodes") as anything in GLOB.roguegamemodes|null
 				if(!choice || choice == "CANCEL")
 					message_admins("<font color='blue'>\
 						[usr.key] has forced the gamemode.</font>")
 					return
 				SSticker.manualmodes |= choice
-				roguegamemodes -= choice		
+				GLOB.roguegamemodes -= choice		
 	else
 		to_chat(usr, "<font color='red'>Error: Force Modes: Game has already started.</font>")
 

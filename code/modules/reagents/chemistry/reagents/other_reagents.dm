@@ -160,9 +160,12 @@
 		..()
 
 /datum/reagent/water/gross/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(1)
-	M.add_nausea(50)
 	..()
+	if(HAS_TRAIT(M, TRAIT_NASTY_EATER )) // lets orcs and goblins drink bogwater
+		return
+	M.adjustToxLoss(1)
+	M.add_nausea(12) //Over 8 units will cause puking
+
 
 /*
  *	Water reaction to turf
@@ -296,9 +299,8 @@
 		var/mob/living/carbon/human/H = M
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
 			H.adjust_hydration(hydration)
-	if(!data)
-		data = 1
-	data++
+	var/old_count = LAZYACCESS(data, "misc")
+	LAZYSET(data, "misc", old_count + 1)
 	M.jitteriness = min(M.jitteriness+4,10)
 	if(iscultist(M))
 		for(var/datum/action/innate/cult/blood_magic/BM in M.actions)
@@ -1381,7 +1383,7 @@
 	color = "#FFFFFF" // white
 	random_color_list = list("#FFFFFF") //doesn't actually change appearance at all
 
- /* used by crayons, can't color living things but still used for stuff like food recipes */
+// used by crayons, can't color living things but still used for stuff like food recipes
 
 /datum/reagent/colorful_reagent/powder/red/crayon
 	name = "Red Crayon Powder"

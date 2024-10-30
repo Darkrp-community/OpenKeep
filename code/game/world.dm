@@ -3,21 +3,21 @@
 GLOBAL_VAR(restart_counter)
 
 /**
-  * World creation
-  *
-  * Here is where a round itself is actually begun and setup, lots of important config changes happen here
-  * * db connection setup
-  * * config loaded from files
-  * * loads admins
-  * * Sets up the dynamic menu system
-  * * and most importantly, calls initialize on the master subsystem, starting the game loop that causes the rest of the game to begin processing and setting up
-  *
-  * Note this happens after the Master subsystem is created (as that is a global datum), this means all the subsystems exist,
-  * but they have not been Initialized at this point, only their New proc has run
-  *
-  * Nothing happens until something moves. ~Albert Einstein
-  *
-  */
+ * World creation
+ *
+ * Here is where a round itself is actually begun and setup, lots of important config changes happen here
+ * * db connection setup
+ * * config loaded from files
+ * * loads admins
+ * * Sets up the dynamic menu system
+ * * and most importantly, calls initialize on the master subsystem, starting the game loop that causes the rest of the game to begin processing and setting up
+ *
+ * Note this happens after the Master subsystem is created (as that is a global datum), this means all the subsystems exist,
+ * but they have not been Initialized at this point, only their New proc has run
+ *
+ * Nothing happens until something moves. ~Albert Einstein
+ *
+ */
 
 /world/New()
 
@@ -84,11 +84,13 @@ GLOBAL_VAR(restart_counter)
 	if(NO_INIT_PARAMETER in params)
 		return
 
+	. = ..()
+
 	Master.Initialize(10, FALSE, TRUE)
 
-	if(TEST_RUN_PARAMETER in params)
-		HandleTestRun()
-
+#ifdef UNIT_TESTS
+	HandleTestRun()
+#endif
 
 /world/proc/HandleTestRun()
 	//trigger things to run the whole process
@@ -272,9 +274,10 @@ GLOBAL_VAR(restart_counter)
 
 	TgsReboot()
 
-	if(TEST_RUN_PARAMETER in params)
-		FinishTestRun()
-		return
+#ifdef UNIT_TESTS
+	FinishTestRun()
+	return
+#endif
 
 	if(TgsAvailable())
 		send2chat(new /datum/tgs_message_content("Round ending!"), CONFIG_GET(string/chat_announce_new_game))

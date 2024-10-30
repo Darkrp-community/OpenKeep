@@ -42,7 +42,7 @@
 							protection = val
 							used = armorworn // ...force us to use it above all!
 				// If we don't have armor equipped or the one we have is broken...
-				else if(bp == shirtworn && wear_armor.obj_integrity <= 0 || armorworn == null)
+				else if(bp == shirtworn && src.wear_armor?.obj_integrity <= 0 || armorworn == null)
 					if(val > 0) // ...and it's not just a linen shirt...
 						if(val > protection)
 							protection = val
@@ -185,7 +185,7 @@
 		var/final_block_chance = wear_neck.block_chance - (CLAMP((armor_penetration-wear_neck.armor_penetration)/2,0,100)) + block_chance_modifier
 		if(wear_neck.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
 			return TRUE
-  return FALSE
+	return FALSE
 
 /mob/living/carbon/human/proc/check_block()
 	if(mind)

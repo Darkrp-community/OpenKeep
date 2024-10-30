@@ -26,6 +26,13 @@
 		/datum/mob_descriptor/face/chubby,
 		/datum/mob_descriptor/face/mousy,
 		/datum/mob_descriptor/face/full,
+		/datum/mob_descriptor/face/cat,
+		/datum/mob_descriptor/face/pig,
+		/datum/mob_descriptor/face/rat,
+		/datum/mob_descriptor/face/hollow,
+		/datum/mob_descriptor/face/weatherbitten,
+		/datum/mob_descriptor/face/wrinkled,
+		/datum/mob_descriptor/face/malformed,
 	)
 
 /datum/descriptor_choice/face_exp
@@ -62,6 +69,12 @@
 		/datum/mob_descriptor/face_exp/humble,
 		/datum/mob_descriptor/face_exp/smug,
 		/datum/mob_descriptor/face_exp/curious,
+		/datum/mob_descriptor/face_exp/dreamy,
+		/datum/mob_descriptor/face_exp/mild,
+		/datum/mob_descriptor/face_exp/glowering,
+		/datum/mob_descriptor/face_exp/miserable,
+		/datum/mob_descriptor/face_exp/puzzled,
+		/datum/mob_descriptor/face_exp/shy,
 	)
 
 /datum/descriptor_choice/body
@@ -70,31 +83,36 @@
 	descriptors = list(
 		/datum/mob_descriptor/body/average,
 		/datum/mob_descriptor/body/athletic,
-		/datum/mob_descriptor/body/muscular,
+		/datum/mob_descriptor/body/barrel,
+		/datum/mob_descriptor/body/broadshoulder,
+		/datum/mob_descriptor/body/burly,
+		/datum/mob_descriptor/body/bulky,
+		/datum/mob_descriptor/body/bottomheavy,
+		/datum/mob_descriptor/body/bowleg,
+		/datum/mob_descriptor/body/curvy,
+		/datum/mob_descriptor/body/decrepit,
+		/datum/mob_descriptor/body/dainty,
+		/datum/mob_descriptor/body/gaunt,
+		/datum/mob_descriptor/body/heavy,
 		/datum/mob_descriptor/body/herculean,
 		/datum/mob_descriptor/body/plump,
 		/datum/mob_descriptor/body/pearshaped,
 		/datum/mob_descriptor/body/pudgy,
-		/datum/mob_descriptor/body/strongfat,
+		/datum/mob_descriptor/body/petite,
+		/datum/mob_descriptor/body/portly,
 		/datum/mob_descriptor/body/round,
-		/datum/mob_descriptor/body/heavy,
-		/datum/mob_descriptor/body/topheavy,
-		/datum/mob_descriptor/body/bottomheavy,
-		/datum/mob_descriptor/body/curvy,
-		/datum/mob_descriptor/body/decrepit,
-		/datum/mob_descriptor/body/thin,
-		/datum/mob_descriptor/body/bulky,
+		/datum/mob_descriptor/body/skeletal,
+		/datum/mob_descriptor/body/strongfat,
 		/datum/mob_descriptor/body/slender,
 		/datum/mob_descriptor/body/lissome,
 		/datum/mob_descriptor/body/lanky,
-		/datum/mob_descriptor/body/twiggy,
-		/datum/mob_descriptor/body/dainty,
-		/datum/mob_descriptor/body/petite,
-		/datum/mob_descriptor/body/gaunt,
 		/datum/mob_descriptor/body/lean,
-		/datum/mob_descriptor/body/skeletal,
-		/datum/mob_descriptor/body/broadshoulder,
-		/datum/mob_descriptor/body/burly,
+		/datum/mob_descriptor/body/muscular,
+		/datum/mob_descriptor/body/twiggy,
+		/datum/mob_descriptor/body/topheavy,
+		/datum/mob_descriptor/body/thin,
+		/datum/mob_descriptor/body/willowy,
+		/datum/mob_descriptor/body/wiry,
 	)
 
 /datum/descriptor_choice/stature
@@ -113,6 +131,14 @@
 		/datum/mob_descriptor/stature/bookworm,
 		/datum/mob_descriptor/stature/lowlife,
 		/datum/mob_descriptor/stature/dignitary,
+		/datum/mob_descriptor/stature/trickster,
+		/datum/mob_descriptor/stature/vagabond,
+		/datum/mob_descriptor/stature/foreigner,
+		/datum/mob_descriptor/stature/scoundrel,
+		/datum/mob_descriptor/stature/commoner,
+		/datum/mob_descriptor/stature/simpleton,
+		/datum/mob_descriptor/stature/cavalier,
+		/datum/mob_descriptor/stature/swashbuckler,
 	)
 
 /datum/descriptor_choice/voice
@@ -147,6 +173,7 @@
 		/datum/mob_descriptor/voice/snide,
 		/datum/mob_descriptor/voice/smoker,
 		/datum/mob_descriptor/voice/venomous,
+		/datum/mob_descriptor/voice/stuttering,
 	)
 
 /datum/descriptor_choice/skin
@@ -168,6 +195,10 @@
 		/datum/mob_descriptor/skin/dusky,
 		/datum/mob_descriptor/skin/irritated,
 		/datum/mob_descriptor/skin/ashen,
+		/datum/mob_descriptor/skin/calloused,
+		/datum/mob_descriptor/skin/warts,
+		/datum/mob_descriptor/skin/inked,
+		/datum/mob_descriptor/skin/freckles,
 	)
 
 /datum/descriptor_choice/height
@@ -179,7 +210,14 @@
 		/datum/mob_descriptor/height/short,
 		/datum/mob_descriptor/height/towering,
 		/datum/mob_descriptor/height/tiny,
+		/datum/mob_descriptor/height/shortly,
+		/datum/mob_descriptor/height/tallish,
+		/datum/mob_descriptor/height/average,	
+		/datum/mob_descriptor/height/lowslung,
+		/datum/mob_descriptor/height/statuesque,
+		/datum/mob_descriptor/height/longshanked,
 	)
+
 
 #define PROMINENT_DESCRIPTORS \
 	/datum/mob_descriptor/prominent/hunched_over,\
@@ -227,6 +265,26 @@
 	/datum/mob_descriptor/prominent/whimsy,\
 	/datum/mob_descriptor/prominent/dim_look,\
 	/datum/mob_descriptor/prominent/keen_look,\
+	/datum/mob_descriptor/prominent/presence_stoic,\
+	/datum/mob_descriptor/prominent/hands_platters,\
+	/datum/mob_descriptor/prominent/laugh_donkey,\
+	/datum/mob_descriptor/prominent/fingers_long,\
+	/datum/mob_descriptor/prominent/hands_delicate,\
+	/datum/mob_descriptor/prominent/teeth_fine,\
+	/datum/mob_descriptor/prominent/teeth_rotting,\
+	/datum/mob_descriptor/prominent/teeth_missing,\
+	/datum/mob_descriptor/prominent/nose_crooked,\
+	/datum/mob_descriptor/prominent/nose_broken,\
+	/datum/mob_descriptor/prominent/nose_button,\
+	/datum/mob_descriptor/prominent/nose_hawk,\
+	/datum/mob_descriptor/prominent/nose_aquiline,\
+	/datum/mob_descriptor/prominent/neck_bull,\
+	/datum/mob_descriptor/prominent/hair_perfumed,\
+	/datum/mob_descriptor/prominent/hair_oiled,\
+	/datum/mob_descriptor/prominent/hair_curly,\
+	/datum/mob_descriptor/prominent/hair_coarse,\
+	/datum/mob_descriptor/prominent/hair_thin,\
+	/datum/mob_descriptor/prominent/ears_large,\
 	/datum/mob_descriptor/prominent/custom/one,\
 	/datum/mob_descriptor/prominent/custom/two
 

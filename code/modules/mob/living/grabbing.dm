@@ -126,11 +126,30 @@
 		return
 	qdel(src)
 
+/mob/living/carbon/human
+	var/mob/living/carbon/human/hostagetaker //Stores the person that took us hostage in a var, allows us to force them to attack the mob and such
+	var/mob/living/carbon/human/hostage //What hostage we have
+
+/mob/living/carbon/human/proc/attackhostage()
+	if(!istype(hostagetaker.get_active_held_item(), /obj/item/rogueweapon))
+		return
+	var/obj/item/rogueweapon/WP = hostagetaker.get_active_held_item()
+	WP.attack(src, hostagetaker)
+	hostagetaker.visible_message("<span class='danger'>\The [hostagetaker] attacks \the [src] reflexively!</span>")
+	hostagetaker.hostage = null
+	hostagetaker = null
+
 /obj/item/grabbing/attack(mob/living/M, mob/living/user)
-	if(M != grabbed)
-		return FALSE
 	if(!valid_check())
 		return FALSE
+	if(M != grabbed)
+		if(!istype(limb_grabbed, /obj/item/bodypart/head))
+			return FALSE
+		if(M != user)
+			return FALSE
+		user.changeNext_move(CLICK_CD_RESIST)
+		headbutt(user)
+		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	switch(user.used_intent.type)
 		if(/datum/intent/grab/upgrade)
@@ -149,6 +168,22 @@
 					C.visible_message("<span class='danger'>[user] [pick("chokes", "strangles")] [C]!</span>", \
 									"<span class='userdanger'>[user] [pick("chokes", "strangles")] me!</span>", "<span class='hear'>I hear a sickening sound of pugilism!</span>", COMBAT_MESSAGE_RANGE, user)
 					to_chat(user, "<span class='danger'>I [pick("choke", "strangle")] [C]!</span>")
+		if(/datum/intent/grab/hostage)
+			if(limb_grabbed && grab_state > 0) //this implies a carbon victim
+				if(ishuman(M) && M != user)
+					var/mob/living/carbon/human/H = M
+					var/mob/living/carbon/human/U = user
+					if(U.cmode)
+						if(H.cmode)
+							to_chat(U, "<span class='warning'>[H] is too prepared for combat to be taken hostage.</span>")
+							return
+						to_chat(U, "<span class='warning'>I take [H] hostage.</span>")
+						to_chat(H, "<span class='danger'>[U] takes us hostage!</span>")
+
+						U.swap_hand() // Swaps hand to weapon so you can attack instantly if hostage decides to resist
+
+						U.hostage = H
+						H.hostagetaker = U
 		if(/datum/intent/grab/twist)
 			if(limb_grabbed && grab_state > 0) //this implies a carbon victim
 				if(iscarbon(M))
@@ -221,6 +256,30 @@
 	to_chat(user, "<span class='warning'>I twist [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]</span>")
 	C.next_attack_msg.Cut()
 	log_combat(user, C, "limbtwisted [sublimb_grabbed] ")
+
+/obj/item/grabbing/proc/headbutt(mob/living/carbon/human/H)
+	var/mob/living/carbon/C = grabbed
+	var/obj/item/bodypart/Chead = C.get_bodypart(BODY_ZONE_HEAD)
+	var/obj/item/bodypart/Hhead = H.get_bodypart(BODY_ZONE_HEAD)
+	var/armor_block = C.run_armor_check(Chead, "melee")
+	var/armor_block_user = H.run_armor_check(Hhead, "melee")
+	var/damage = H.get_punch_dmg()
+	C.next_attack_msg.Cut()
+	playsound(C.loc, "genblunt", 100, FALSE, -1)
+	C.apply_damage(damage*1.5, , Chead, armor_block)
+	Chead.bodypart_attacked_by(BCLASS_SMASH, damage*1.5, H, crit_message=TRUE)
+	H.apply_damage(damage, BRUTE, Hhead, armor_block_user)
+	Hhead.bodypart_attacked_by(BCLASS_SMASH, damage/1.2, H, crit_message=TRUE)
+	C.stop_pulling(TRUE)
+	C.Immobilize(10)
+	C.OffBalance(10)
+	H.Immobilize(5)
+
+	C.visible_message("<span class='danger'>[H] headbutts [C]'s [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]</span>", \
+					"<span class='userdanger'>[H] headbutts my [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]</span>", "<span class='hear'>I hear a sickening sound of pugilism!</span>", COMBAT_MESSAGE_RANGE, H)
+	to_chat(H, "<span class='warning'>I headbutt [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]</span>")
+	C.next_attack_msg.Cut()
+	log_combat(H, C, "headbutted ")
 
 /obj/item/grabbing/proc/twistitemlimb(mob/living/user) //implies limb_grabbed and sublimb are things
 	var/mob/living/M = grabbed
@@ -368,6 +427,11 @@
 	desc = ""
 	icon_state = "inchoke"
 
+/datum/intent/grab/hostage
+	name = "hostage"
+	desc = ""
+	icon_state = "inhostage"
+
 /datum/intent/grab/shove
 	name = "shove"
 	desc = ""
@@ -427,15 +491,14 @@
 		playsound(C.loc, "smallslash", 100, FALSE, -1)
 		limb_grabbed.bodypart_attacked_by(BCLASS_BITE, damage, user, sublimb_grabbed, crit_message = TRUE)
 		if(user.mind)
-			if(user.mind.has_antag_datum(/datum/antagonist/werewolf))
+			if(ishuman(C) && user.mind.has_antag_datum(/datum/antagonist/werewolf))
 				var/mob/living/carbon/human/H = C
-				if(prob(25) && H)
-					spawn(3 MINUTES)
-						H.werewolf_infect()
-					//addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_infect)), 3 MINUTES)
+				if(prob(25))
+					addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_infect)), 3 MINUTES)
 			if(user.mind.has_antag_datum(/datum/antagonist/zombie))
 				var/mob/living/carbon/human/H = C
-				INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human, zombie_infect_attempt))
+				if(istype(H))
+					INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human, zombie_infect_attempt))
 				if(C.stat)
 					if(istype(limb_grabbed, /obj/item/bodypart/head))
 						var/obj/item/bodypart/head/HE = limb_grabbed
@@ -478,7 +541,7 @@
 		return
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
-		if(istype(H.wear_neck, /obj/item/clothing/neck/roguetown/psicross/silver))
+		if(istype(H.wear_neck, /obj/item/clothing/neck/roguetown/psycross/silver))
 			to_chat(user, "<span class='userdanger'>SILVER! HISSS!!!</span>")
 			return
 	last_drink = world.time
@@ -497,8 +560,9 @@
 				addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon, vomit), 0, TRUE), rand(8 SECONDS, 15 SECONDS))
 			else
 				if(VVictim)
-					to_chat(user, "<span class='warning'>It's vitae, just like mine.</span>")
-				else
+					to_chat(user, "<span class='warning'>I cannot drain vitae from a fellow nitewalker.</span>")
+					return
+				else if(C.vitae_pool > 500)
 					C.blood_volume = max(C.blood_volume-45, 0)
 					if(ishuman(C))
 						var/mob/living/carbon/human/H = C
@@ -506,30 +570,46 @@
 							to_chat(user, "<span class='love'>Virgin blood, delicious!</span>")
 							var/mob/living/carbon/V = user
 							V.add_stress(/datum/stressevent/vblood)
-							if(VDrinker.isspawn)
-								VDrinker.handle_vitae(750, 750)
+							if(C.vitae_pool >= 750)
+								if(VDrinker.isspawn)
+									VDrinker.handle_vitae(750, 750)
+								else
+									VDrinker.handle_vitae(750)
+								C.vitae_pool -= 760
+								to_chat(user, "<span class='love'>...And empowering!</span>")
+							else if(C.vitae_pool < 750) // In case someone already drank from their vitae.
+								var/vitaeleft = C.vitae_pool // We assume they're left with 250 vitae or less, so we take it all
+								if(VDrinker.isspawn)
+									VDrinker.handle_vitae(vitaeleft, vitaeleft)
+								else
+									VDrinker.handle_vitae(vitaeleft)
+								C.vitae_pool -= vitaeleft
+								to_chat(user, "<span class='notice'>...But alas, only leftovers...</span>")
 							else
-								VDrinker.handle_vitae(1000)
-					if(VDrinker.isspawn)
-						VDrinker.handle_vitae(500, 500)
-					else
-						VDrinker.handle_vitae(500)
-		else
-/*			if(VVictim)
-				to_chat(user, "<span class='notice'>A strange, sweet taste tickles my throat.</span>")
-				addtimer(CALLBACK(user, .mob/living/carbon/human/proc/vampire_infect), 1 MINUTES) // I'll use this for succession later.
-			else */
+								to_chat(user, "<span class='warning'>And yet, not enough vitae can be extracted from them... Tsk.</span>")
+						else
+							if(VDrinker.isspawn)
+								VDrinker.handle_vitae(500, 500)
+							else
+								VDrinker.handle_vitae(500)
+							C.vitae_pool -= 500
+				else
+					to_chat(user, span_warning("No more vitae from this blood..."))
+		else // Don't larp as a vampire, kids.
 			to_chat(user, "<span class='warning'>I'm going to puke...</span>")
 			addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon, vomit), 0, TRUE), rand(8 SECONDS, 15 SECONDS))
 	else
-		if(user.mind)
+		if(user.mind) // We're drinking from a mob or a person who disconnected from the game
 			if(user.mind.has_antag_datum(/datum/antagonist/vampirelord))
 				var/datum/antagonist/vampirelord/VDrinker = user.mind.has_antag_datum(/datum/antagonist/vampirelord)
 				C.blood_volume = max(C.blood_volume-45, 0)
-				if(VDrinker.isspawn)
-					VDrinker.handle_vitae(300, 300)
+				if(C.vitae_pool >= 250)
+					if(VDrinker.isspawn)
+						VDrinker.handle_vitae(250, 250)
+					else
+						VDrinker.handle_vitae(250)
 				else
-					VDrinker.handle_vitae(300)
+					to_chat(user, "<span class='warning'>And yet, not enough vitae can be extracted from them... Tsk.</span>")
 
 	C.blood_volume = max(C.blood_volume-5, 0)
 	C.handle_blood()

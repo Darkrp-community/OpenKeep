@@ -99,11 +99,14 @@
 //	msg = copytext(sanitize(msg), 1, MAX_MESSAGE_LEN)
 	if(!msg)
 		return
-	log_prayer("[src.key]/([src.name]): [msg]")
 
-	msg = "<span class='info'>[real_name] prays: [msg]</span>"
+	// Make it show only for admins, linked so that it's easier for them to jump to the person praying
+	message_admins("[src.key]/([src.real_name]) [ADMIN_JMP(src)] prays: <span class='info'>[msg]</span>")
 
-//	for(var/client/C in GLOB.admins)
+	// Log the prayer to file
+	log_prayer("<span class='info'>[src.key]/([src.real_name]) prays: [msg]</span>")
+
+/*	for(var/client/C in GLOB.admins)
 //		if(C.prefs.chat_toggles & CHAT_PRAYER)
 ///			to_chat(C, msg)
 
@@ -123,3 +126,4 @@
 		if(!go)
 			continue
 		to_chat(J, msg)
+*/

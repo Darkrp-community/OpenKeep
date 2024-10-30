@@ -1,6 +1,7 @@
 /datum/crafting_recipe/roguetown/weaving
 	structurecraft = /obj/machinery/loom
 	skillcraft = /datum/skill/misc/sewing
+	subtype_reqs = TRUE // so you can use any subtype of fur
 
 /datum/crafting_recipe/roguetown/weaving/rags
 	name = "webbed shirt"
@@ -73,7 +74,7 @@
 
 /datum/crafting_recipe/roguetown/weaving/necrahood
 	name = "necra hood"
-	result = list(/obj/item/clothing/head/roguetown/necrahood)
+	result = list(/obj/item/clothing/head/roguetown/padded/deathshroud)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/silk = 1)
 	craftdiff = 3
@@ -81,7 +82,7 @@
 
 /datum/crafting_recipe/roguetown/weaving/eoramask
 	name = "eora mask"
-	result = list(/obj/item/clothing/head/roguetown/eoramask)
+	result = list(/obj/item/clothing/head/roguetown/roguehood/eora)
 	reqs = list(/obj/item/ingot/silver,
 				/obj/item/natural/silk = 4)
 	craftdiff = 3
@@ -135,16 +136,23 @@
 
 /datum/crafting_recipe/roguetown/weaving/silkcoat
 	name = "silk coat"
-	result = list (/obj/item/clothing/suit/roguetown/armor/silkcoat)
+	result = list (/obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/silk = 3,
 				/obj/item/natural/fur = 2)
 	craftdiff = 5
 	sellprice = 60
 
+/datum/crafting_recipe/roguetown/weaving/paddedgambeson
+	name = "padded gambeson"
+	result = list(/obj/item/clothing/suit/roguetown/armor/gambeson/heavy)
+	reqs = list(/obj/item/natural/cloth = 6,
+				/obj/item/natural/fibers = 4)
+	craftdiff = 4
+
 /datum/crafting_recipe/roguetown/weaving/armordress
 	name = "padded dress"
-	result = /obj/item/clothing/suit/roguetown/armor/armordress
+	result = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
 	reqs = list(/obj/item/natural/silk = 4,
 				/obj/item/natural/fibers = 2,
 				/obj/item/natural/hide = 1)

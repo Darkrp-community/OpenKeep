@@ -55,10 +55,13 @@
 			backr = /obj/item/rogue/instrument/lute
 		if(H.dna.species.id == "dwarf")
 			backr = /obj/item/rogue/instrument/accord
+			H.cmode_music = 'sound/music/combat_dwarf.ogg'
 		if(H.dna.species.id == "elf")
 			backr = /obj/item/rogue/instrument/harp
 		if(H.dna.species.id == "tiefling")
 			backr = /obj/item/rogue/instrument/guitar
+		if(H.dna.species.id == "aasimar")
+			backr = /obj/item/rogue/instrument/drum // March along the drums of war.
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC) // Bardic rizz
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BARDIC_TRAINING, TRAIT_GENERIC)

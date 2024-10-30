@@ -121,11 +121,11 @@
 /mob/living/carbon/Stat()
 	..()
 	return
-	if(statpanel("Status")) //RTCHANGE
+/* 	if(statpanel("Status")) //RTCHANGE
 		var/obj/item/organ/heart/vampire/darkheart = getorgan(/obj/item/organ/heart/vampire)
 		if(darkheart)
 			stat(null, "<span class='notice'>Current blood level: [blood_volume]/[BLOOD_VOLUME_MAXIMUM].</span>")
-			return 1
+			return 1 */
 
 
 /obj/item/organ/heart/vampire

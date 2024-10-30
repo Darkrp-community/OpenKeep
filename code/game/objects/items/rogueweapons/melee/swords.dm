@@ -11,14 +11,16 @@
 	icon = 'icons/roguetown/weapons/32.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/rogue_righthand.dmi'
-	parrysound = "bladedmedium"
+	parrysound = "sword"
 	swingsound = BLADEWOOSH_MED
 	associated_skill = /datum/skill/combat/swords
 	max_blade_int = 300
 	max_integrity = 500
 	wlength = WLENGTH_NORMAL
 	w_class = WEIGHT_CLASS_BULKY
-	pickup_sound = 'sound/foley/equip/swordlarge1.ogg'
+	pickup_sound = "unsheathe_sword"
+	equip_sound = 'sound/foley/dropsound/holster_sword.ogg'
+	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
 	flags_1 = CONDUCT_1
 	throwforce = 10
 	thrown_bclass = BCLASS_CUT
@@ -182,10 +184,10 @@
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "longsword"
 	desc = "A long hand-and-a-half blade, wielded by the virtuous and vile alike."
-	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
-	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
+	parrysound = "largeblade"
+	pickup_sound = "brandish_blade"
+	bigboy = TRUE
 	max_blade_int = 300
 	max_integrity = 500
 	wlength = WLENGTH_LONG
@@ -194,7 +196,6 @@
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	associated_skill = /datum/skill/combat/swords
 	throwforce = 15
 	thrown_bclass = BCLASS_CUT
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
@@ -227,24 +228,13 @@
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "old sword"
 	desc = "An old steel sword with a heraldic green leather grip, mouldered by years of neglect."
-	parrysound = "bladedmedium"
-	swingsound = BLADEWOOSH_LARGE
-	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
 	max_blade_int = 180 // Neglected, unused
 	max_integrity = 300
-	wlength = WLENGTH_LONG
-	gripsprite = TRUE
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	associated_skill = /datum/skill/combat/swords
-	throwforce = 15
-	thrown_bclass = BCLASS_CUT
-	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
-	dropshrink = 0.75
-	smeltresult = /obj/item/ingot/steel
+	static_price = TRUE
 	sellprice = 45 // Old and chipped
 
 /obj/item/rogueweapon/sword/long/getonmobprop(tag)
@@ -269,22 +259,10 @@
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "judgement"
 	desc = "A sword with a silvered grip, a jeweled hilt and a honed blade; a design fit for nobility."
-	parrysound = "bladedmedium"
-	swingsound = BLADEWOOSH_LARGE
-	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
-	wlength = WLENGTH_LONG
-	gripsprite = TRUE
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	associated_skill = /datum/skill/combat/swords
-	throwforce = 15
-	thrown_bclass = BCLASS_CUT
-	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
-	dropshrink = 0.75
-	smeltresult = /obj/item/ingot/steel
 	sellprice = 363
 	static_price = TRUE
 	var/last_used = 0
@@ -397,22 +375,10 @@
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "Jaded Fang"
 	desc = "An ancestral long blade with an ominous glow, serrated with barbs along it's edges. Stained with a strange green tint."
-	parrysound = "bladedmedium"
-	swingsound = BLADEWOOSH_LARGE
-	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
-	wlength = WLENGTH_LONG
-	gripsprite = TRUE
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	associated_skill = /datum/skill/combat/swords
-	throwforce = 15
-	thrown_bclass = BCLASS_CUT
-	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
-	dropshrink = 0.75
-	smeltresult = /obj/item/ingot/steel
 	sellprice = 363
 	static_price = TRUE
 
@@ -439,22 +405,10 @@
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "kilij scimitar"
 	desc = "A curved blade of Zybantu origin meaning 'curved one'. The standard sword that saw the conquest of the Zybantine continent and peoples."
-	parrysound = "bladedmedium"
-	swingsound = BLADEWOOSH_LARGE
-	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
-	wlength = WLENGTH_LONG
-	gripsprite = TRUE
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	associated_skill = /datum/skill/combat/swords
-	throwforce = 15
-	thrown_bclass = BCLASS_CUT
-	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
-	dropshrink = 0.75
-	smeltresult = /obj/item/ingot/steel
 	sellprice = 80
 
 /obj/item/rogueweapon/sword/long/rider/getonmobprop(tag)
@@ -480,25 +434,16 @@
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "shalal saber"
 	desc = "A humongous saber of Zybantu origin in the style of the Shalal tribesfolk, renowned for their defiance against magic and mastery of mounted swordsmanship."
-	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
+	parrysound = "rapier"
 	swingsound = BLADEWOOSH_SMALL
-	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 0
-	wlength = WLENGTH_LONG
-	gripsprite = TRUE
+	bigboy = FALSE
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	associated_skill = /datum/skill/combat/swords
-	throwforce = 15
-	thrown_bclass = BCLASS_CUT
-	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
-	dropshrink = 0.75
 	minstr = 6
 	sellprice = 80
 	wdefense = 5
-	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/sword/long/marlin/getonmobprop(tag)
 	. = ..()
@@ -523,23 +468,12 @@
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "forgotten blade"
 	desc = "A large silver-alloy sword made in a revisionist style, honoring the Forgotten God. Best known as the prefered weapon of Inquisitorial Lodges"
-	parrysound = "bladedmedium"
-	swingsound = BLADEWOOSH_LARGE
-	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
 	max_blade_int = 240 // Integrity and blade retention is .8 of a steel sword
 	max_integrity = 400
-	wlength = WLENGTH_LONG
-	gripsprite = TRUE
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	associated_skill = /datum/skill/combat/swords
-	throwforce = 15
-	thrown_bclass = BCLASS_CUT
-	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
-	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/silver
 	wbalance = -1
 	wdefense = 4
@@ -638,7 +572,8 @@
 	desc = "An oversized hunk of metal designed for putting fear into men and killing beasts."
 	icon_state = "gsw"
 	icon = 'icons/roguetown/weapons/64.dmi'
-	parrysound = "bladedlarge"
+	parrysound = "largeblade"
+	pickup_sound = "brandish_blade"
 	swingsound = BLADEWOOSH_HUGE
 	pixel_y = -16
 	pixel_x = -16
@@ -667,9 +602,11 @@
 			if("gen")
 				return list("shrink" = 0.6,"sx" = -6,"sy" = 6,"nx" = 6,"ny" = 7,"wx" = 0,"wy" = 5,"ex" = -1,"ey" = 7,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -50,"sturn" = 40,"wturn" = 50,"eturn" = -50,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
-				return list("shrink" = 0.6,"sx" = 9,"sy" = -4,"nx" = -7,"ny" = 1,"wx" = -9,"wy" = 2,"ex" = 10,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 5,"sturn" = -190,"wturn" = -170,"eturn" = -10,"nflip" = 4,"sflip" = 4,"wflip" = 1,"eflip" = 0)
+				return list("shrink" = 0.6,"sx" = 3,"sy" = 4,"nx" = -1,"ny" = 4,"wx" = -8,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onback")
 				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
+
+
 
 /obj/item/rogueweapon/greatsword/flamberge
 	name = "flamberge"
@@ -677,7 +614,6 @@
 	icon_state = "flamberge"
 	force = 15
 	force_wielded = 40 // Unique weapon from rare job
-	smeltresult = /obj/item/ingot/steel
 	max_blade_int = 200
 	max_integrity = 400
 	sellprice = 120
@@ -694,17 +630,40 @@
 	max_integrity = 300
 	sellprice = 60
 
+/obj/item/rogueweapon/greatsword/zwei/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = 6,"nx" = 6,"ny" = 7,"wx" = 0,"wy" = 5,"ex" = -1,"ey" = 7,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -50,"sturn" = 40,"wturn" = 50,"eturn" = -50,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 9,"sy" = -4,"nx" = -7,"ny" = 1,"wx" = -9,"wy" = 2,"ex" = 10,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 5,"sturn" = -190,"wturn" = -170,"eturn" = -10,"nflip" = 4,"sflip" = 4,"wflip" = 1,"eflip" = 0)
+			if("onback")
+				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
+
 /obj/item/rogueweapon/greatsword/elfgsword
 	force = 15
 	force_wielded = 30 // Unique weapon from rare job
 	name = "elven kriegsmesser"
 	desc = "A huge, curved elven blade. It's metal is of a high quality, yet still light, crafted by the greatest elven bladesmiths."
 	icon_state = "kriegsmesser"
-	smeltresult = /obj/item/ingot/steel
 	max_blade_int = 300
 	max_integrity = 300
+	wbalance = 0
 	minstr = 10
 	sellprice = 120
+
+/obj/item/rogueweapon/greatsword/elfgsword/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = 6,"nx" = 6,"ny" = 7,"wx" = 0,"wy" = 5,"ex" = -1,"ey" = 7,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -50,"sturn" = 40,"wturn" = 50,"eturn" = -50,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 9,"sy" = -4,"nx" = -7,"ny" = 1,"wx" = -9,"wy" = 2,"ex" = 10,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 5,"sturn" = -190,"wturn" = -170,"eturn" = -10,"nflip" = 4,"sflip" = 4,"wflip" = 1,"eflip" = 0)
+			if("onback")
+				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
+
 
 // Attack Intents
 
@@ -720,18 +679,18 @@
 	misscost = 5
 
 /datum/intent/sword/thrust/zwei
-    name = "thrust"
-    blade_class = BCLASS_STAB
-    attack_verb = list("stabs")
-    animname = "stab"
-    icon_state = "instab"
-    reach = 1
-    chargetime = 1
-    warnie = "mobwarning"
-    hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-    penfactor = 20
-    swingdelay = 1
-    misscost = 5
+	name = "thrust"
+	blade_class = BCLASS_STAB
+	attack_verb = list("stabs")
+	animname = "stab"
+	icon_state = "instab"
+	reach = 1
+	chargetime = 1
+	warnie = "mobwarning"
+	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
+	penfactor = 20
+	swingdelay = 1
+	misscost = 5
 
 /datum/intent/sword/strike
 	name = "pommel strike"
@@ -856,6 +815,7 @@
 	desc = "A single edged blade fashioned in the Grenzelhoft messer style."
 	force = 18 // Can't be dual wielded, but shouldn't be higher than a steel equivalent.
 	icon_state = "imesser"
+	swingsound = BLADEWOOSH_LARGE
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
 	gripped_intents = null
 	max_blade_int = 250
@@ -864,6 +824,13 @@
 	wdefense = 3
 	wbalance = -1 // Heavy, STR bonus
 	sellprice = 20
+
+/obj/item/rogueweapon/sword/iron/messer/peasant
+	name = "scythe sword"
+	desc = "A simple scythe blade has been fastened to a wooden handle to create an improvised weapon."
+	force = 18 // Can't be dual wielded, but shouldn't be higher than a steel equivalent.
+	icon_state = "scytheblade"
+
 
 /obj/item/rogueweapon/sword/short
 	name = "short sword"
@@ -1020,6 +987,7 @@
 	desc = "A broad steel falchion, a favored sword among the few created by dwarffolk."
 	force = 20
 	icon_state = "falchion"
+	swingsound = BLADEWOOSH_HUGE
 	smeltresult = /obj/item/ingot/steel
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/axe/chop)
 	gripped_intents = null
@@ -1027,6 +995,21 @@
 	wdefense = 2
 	wbalance = -1 // Heavy
 	sellprice = 100
+
+/obj/item/rogueweapon/sword/sabre/glaive
+	name = "stalker glaive"
+	desc = "A once elegant blade of mythril, diminishing under the suns gaze"
+	icon_state = "spidersaber"
+	max_integrity = 350
+	smeltresult = /obj/item/ingot/steel
+	gripped_intents = null
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/short)
+	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
+	swingsound = BLADEWOOSH_SMALL
+	minstr = 4
+	wdefense = 5
+	wbalance = 1
+
 
 //Rapiers
 /obj/item/rogueweapon/sword/rapier
@@ -1036,7 +1019,21 @@
 	smeltresult = /obj/item/ingot/steel
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
 	gripped_intents = null
-	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
+	parrysound = "rapier"
+	swingsound = BLADEWOOSH_SMALL
+	minstr = 6
+	wdefense = 5
+	wbalance = 1
+
+/obj/item/rogueweapon/sword/rapier/ironestoc
+	name = "iron estoc"
+	force = 16
+	desc = "A precise iron estoc, favored by the skilled duelists of Valoria."
+	icon_state = "estoc"
+	smeltresult = /obj/item/ingot/iron
+	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
+	gripped_intents = null
+	parrysound = "rapier"
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 6
 	wdefense = 5
@@ -1186,7 +1183,7 @@
 	icon_state = "cutlass"
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/chop)
 	gripped_intents = null
-	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
+	parrysound = "rapier"
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 6
 	wdefense = 5
@@ -1205,7 +1202,6 @@
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "copper messer"
 	desc = "A weapon of war from simpler times, its copper material is unideal but still efficient for the price."
-	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
 	wlength = WLENGTH_LONG
@@ -1233,6 +1229,36 @@
 			if("onbelt")
 				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+/obj/item/rogueweapon/sword/long/rider/copper
+	force = 10
+	force_wielded = 20 // Shitty Design, Shitty materials, SHITTY WEAPON
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
+	icon_state = "copperfalx"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	item_state = "copperfalx"
+	name = "copper falx"
+	desc = "A special 'sword' of copper, the material isn't the best but is good enough to slash and kill. "
+	parrysound = "sword"
+	swingsound = BLADEWOOSH_LARGE
+	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
+	bigboy = TRUE
+	max_blade_int = 150 // Shitty Weapon
+	max_integrity = 230//this is fair to be fair
+	wlength = WLENGTH_LONG
+	gripsprite = TRUE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	associated_skill = /datum/skill/combat/swords
+	throwforce = 15
+	thrown_bclass = BCLASS_CUT
+	slot_flags = ITEM_SLOT_BACK//how the fuck you could put this thing on your hip?
+	dropshrink = 0.75
+	smeltresult = /obj/item/ingot/copper
+	sellprice = 25//lets make the two bars worth it 
+
 // Hoplite Kophesh
 /obj/item/rogueweapon/sword/khopesh
 	name = "ancient khopesh"
@@ -1248,7 +1274,7 @@
 	pixel_y = -16
 	pixel_x = -16
 	dropshrink = 0.75
-	bigboy = 1 // WHY DOES THIS FUCKING VARIABLE CONTROL WHETHER THE BLOOD OVERLAY WORKS ON 64x64 WEAPONS
+	bigboy = TRUE // WHY DOES THIS FUCKING VARIABLE CONTROL WHETHER THE BLOOD OVERLAY WORKS ON 64x64 WEAPONS
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	smeltresult = null // No bronze ingots yet
 	max_blade_int = 300
@@ -1257,3 +1283,14 @@
 	wdefense = 3 // Lower than average sword defense (meant to pair with a shield)
 	wbalance = -1 // Likely weighted towards the blade, for deep cuts and chops
 	sellprice = 200 // A noble collector would love to get his/her hands on one of these blades
+
+/obj/item/rogueweapon/sword/scimitar
+	slot_flags = ITEM_SLOT_HIP
+	force = 20
+	force_wielded = 25
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
+	name = "scimitar"
+	desc = "A Zybantu design for swords, these curved blades are a common sight in the lands of the Ziggurat."
+	icon_state = "scimitar"
+	icon = 'icons/roguetown/weapons/32.dmi'

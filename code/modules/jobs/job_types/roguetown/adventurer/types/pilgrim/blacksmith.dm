@@ -37,14 +37,14 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(0,0,1), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(0,1,1), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(1,2,2), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/masonry, pick(0,1,1), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/engineering, pick(0,1,1), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/masonry, pick(1,1,2), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, pick(1,1,2), TRUE) // For the bin
+		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE) // For craftable beartraps
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, pick(0,0,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 3, TRUE)
@@ -63,3 +63,7 @@
 	else
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
+
+	if(H.dna.species.id == "dwarf")
+		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
+		H.cmode_music = 'sound/music/combat_dwarf.ogg'

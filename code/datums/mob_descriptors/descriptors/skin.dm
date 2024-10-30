@@ -16,7 +16,7 @@
 	name = "Rugged Skin"
 
 /datum/mob_descriptor/skin/diseased
-	name = "Diseased Skin"
+	name = "Diseased, flaking skin"
 
 /datum/mob_descriptor/skin/dry
 	name = "Dry Skin"
@@ -43,7 +43,20 @@
 	name = "Dusky Skin"
 
 /datum/mob_descriptor/skin/irritated
-	name = "Irritated Skin"
+	name = "Blemished Skin"
 
 /datum/mob_descriptor/skin/ashen
 	name = "Ashen Skin"
+
+/datum/mob_descriptor/skin/calloused
+	name = "Calloused hands"
+
+/datum/mob_descriptor/skin/warts
+	name = "Several Warts"
+
+/datum/mob_descriptor/skin/inked
+	name = "Ink-stained hands"
+
+/datum/mob_descriptor/skin/freckles
+	name = "Freckles"
+

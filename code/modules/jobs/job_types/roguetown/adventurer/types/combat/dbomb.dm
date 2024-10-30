@@ -4,6 +4,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list("Dwarf")
 	outfit = /datum/outfit/job/roguetown/adventurer/dbomb
+	min_pq = 0
 	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/dbomb/pre_equip(mob/living/carbon/human/H)
@@ -19,7 +20,7 @@
 	backpack_contents = list(/obj/item/bomb = 1, /obj/item/flint = 1)
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/smelting, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)

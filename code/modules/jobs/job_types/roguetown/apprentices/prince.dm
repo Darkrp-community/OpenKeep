@@ -12,6 +12,7 @@
 	)
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT)
+	cmode_music = 'sound/music/combat_noble.ogg'
 
 	tutorial = "You’ve never felt the gnawing of the winter, never known the bite of hunger and certainly have never known a honest day's work. You are as free as any bird in the sky, and you may revel in your debauchery for as long as your parents remain upon the throne: But someday you’ll have to grow up, and that will be the day your carelessness will cost you more than a few mammons."
 
@@ -19,6 +20,11 @@
 	display_order = JDO_PRINCE
 	give_bank_account = TRUE
 	bypass_lastclass = TRUE
+	min_pq = 2
+
+/datum/job/roguetown/prince/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+	..()
+	SSfamilytree.AddRoyal(L, FAMILY_PROGENY)
 
 /datum/outfit/job/roguetown/prince/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -51,7 +57,7 @@
 	else
 		head = /obj/item/clothing/head/roguetown/hennin
 		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
-		armor = /obj/item/clothing/suit/roguetown/armor/silkcoat
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 		belt = /obj/item/storage/belt/rogue/leather/cloth/lady
@@ -59,7 +65,7 @@
 		backr = /obj/item/storage/backpack/rogue/satchel
 		if(H.mind)
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)

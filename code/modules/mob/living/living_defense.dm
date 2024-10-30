@@ -9,7 +9,7 @@
 			to_chat(src, "<span class='danger'>[penetrated_text]</span>")
 		else
 			to_chat(src, "<span class='danger'>My armor was penetrated!</span>")
-	else if(armor >= 100)
+	else if(armor >= 130)
 		if(absorb_text)
 			to_chat(src, "<span class='notice'>[absorb_text]</span>")
 		else
@@ -44,10 +44,13 @@
 	return BULLET_ACT_HIT
 
 /mob/living/bullet_act(obj/projectile/P, def_zone = BODY_ZONE_CHEST)
+	if(!prob(P.accuracy + P.bonus_accuracy)) //if your accuracy check fails, you wont hit your intended target
+		def_zone = ran_zone(BODY_ZONE_CHEST, 65)//Hits a random part of the body, geared towards the chest
+
 	var/armor = run_armor_check(def_zone, P.flag, "", "",P.armor_penetration, damage = P.damage)
 
 	next_attack_msg.Cut()
-
+	
 	var/on_hit_state = P.on_hit(src, armor)
 	var/nodmg = FALSE
 	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK)

@@ -38,10 +38,10 @@
 /obj/structure/closet/crate/chest/lootbox/PopulateContents()
 	var/list/loot = list(
 		/obj/item/storage/fancy/cigarettes/zig/empty=40,
-		/obj/item/reagent_containers/powder=20,
+		/obj/item/reagent_containers/powder/spice=20,
 		/obj/item/bomb=6,
 		/obj/item/rogueweapon/huntingknife/idagger=33,
-		/obj/item/reagent_containers/food/snacks/grown/fyritius/rogue=10,
+		/obj/item/reagent_containers/food/snacks/produce/fyritius=10,
 		/obj/item/clothing/suit/roguetown/armor/gambeson=33,
 		/obj/item/clothing/suit/roguetown/armor/leather=33,
 		/obj/item/roguestatue/gold/loot=1,
@@ -64,6 +64,7 @@
 		/obj/item/clothing/ring/gold=10,
 		/obj/item/roguecoin/silver/pile=4,
 		/obj/item/rogueweapon/pick=23,
+		/obj/item/book/granter/spell_points=5,
 		/obj/item/riddleofsteel=2,
 		/obj/item/clothing/neck/roguetown/talkstone=2
 		)
@@ -171,6 +172,11 @@
 	name = "old crate"
 	base_icon_state = "woodchestalt"
 	icon_state = "woodchestalt"
+
+/obj/structure/closet/crate/chest/crate
+	name = "crate"
+	base_icon_state = "woodchest"
+	icon_state = "woodchest"
 
 /obj/structure/closet/crate/drawer/random
 	icon_state = "drawer1"

@@ -1,32 +1,60 @@
+#define TROLL_HEALTH 600
+#define BOGTROLL_HEALTH 300
+#define MOLE_HEALTH 200
+#define BOGBUG_HEALTH 160
+#define SPIDER_HEALTH 120
+#define VOLF_HEALTH 110
+#define SHADE_HEALTH 75
+#define ROUS_HEALTH 35
+
+#define FEMALE_MOOBEAST_HEALTH 100
+#define MALE_MOOBEAST_HEALTH 150
+#define FEMALE_GOTE_HEALTH 80
+#define MALE_GOTE_HEALTH 120
+#define CALF_HEALTH 20
+#define CHICKEN_HEALTH 15
+
 //these mobs run away when attacked
 /mob/living/simple_animal/hostile/retaliate/rogue
-	turns_per_move = 5
-	see_in_dark = 6
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
 	response_disarm_simple = "gently push aside"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
+
+	gender = MALE
 	faction = list("rogueanimal")
-	robust_searching = 1
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	attack_sound = PUNCHWOOSH
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	speak_chance = 1
+
+	turns_per_move = 5
+	move_to_delay = 8	// basically speed when player controlled. Lower is faster, a lot faster.
+	see_in_dark = 6
+	robust_searching = TRUE
+
+	botched_butcher_results = list(/obj/item/alch/bone = 1) // 50% chance to get if skill 0 in butchery
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 1)
+	perfect_butcher_results = list(/obj/item/natural/hide = 1) // level 5 butchery bonus
+
 	health = 40
 	maxHealth = 40
-	move_to_delay = 5
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce)
+	pooptype = null
+
 	d_intent = INTENT_DODGE
 	minbodytemp = 180
 	lose_patience_timeout = 150
 	vision_range = 5
 	aggro_vision_range = 18
+	attack_sound = PUNCHWOOSH
 	harm_intent_damage = 5
-	attack_same = 0
+	attack_same = FALSE
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	blood_volume = BLOOD_VOLUME_NORMAL
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown)
-	footstep_type = FOOTSTEP_MOB_SHOE
-	stop_automated_movement_when_pulled = 0
+
+	stop_automated_movement_when_pulled = FALSE
 	tame_chance = 0
 	retreat_distance = 10
 	minimum_distance = 10
@@ -34,6 +62,8 @@
 	dodge_sound = 'sound/combat/dodge.ogg'
 	dodge_prob = 0
 	search_objects = TRUE
+	can_saddle = FALSE
+
 	//Should turn this into a flag thing but i dont want to touch too many things
 	var/body_eater = FALSE
 	//If the creature is doing something they should STOP MOVING.
@@ -42,8 +72,18 @@
 	var/food_max = 50
 	var/deaggroprob = 10
 	var/eat_forever
-	var/obj/item/udder/udder = null
-	var/milkies = FALSE
+
+
+/mob/living/simple_animal/hostile/retaliate/rogue/onbite(mob/living/carbon/human/user)
+	visible_message(span_danger("[user] bites [src]!"))
+	playsound(src, "smallslash", 100, TRUE, -1)
+	var/bite_power = 3
+
+	if(HAS_TRAIT(user, TRAIT_STRONGBITE))
+		bite_power += ( user.STASTR )
+
+	apply_damage((bite_power), BRUTE)
+	..()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Move()
 	//If you cant act and dont have a player stop moving.
@@ -176,7 +216,7 @@
 	var/list/check_health = list("health" = src.health)
 
 	if(L.stat != CONSCIOUS)
-		src.visible_message("<span class='danger'>[src] starts to rip apart [L]!</span>")
+		src.visible_message(span_danger("[src] starts to rip apart [L]!"))
 		if(attack_sound)
 			playsound(src, pick(attack_sound), 100, TRUE, -1)
 		//If their health is decreased at all during the 10 seconds the dismemberment will fail and they will lose target.
@@ -206,9 +246,7 @@
 		LoseTarget()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Initialize()
-	..()
-	if(milkies)
-		udder = new()
+	. = ..()
 	if(tame)
 		tamed(owner)
 	ADD_TRAIT(src, TRAIT_SIMPLE_WOUNDS, TRAIT_GENERIC)
@@ -235,16 +273,12 @@
 	if(enemies.len)
 		if(prob(23))
 			enemies = list()
-			src.visible_message("<span class='notice'>[src] calms down.</span>")
+			src.visible_message(span_info("[src] calms down."))
 			LoseTarget()
 		else
 			return
 	..()
 
-/mob/living/simple_animal/hostile/retaliate/rogue/Destroy()
-	qdel(udder)
-	udder = null
-	..()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Life()
 	. = ..()
@@ -256,7 +290,7 @@
 				if(mob_timers["aggro_time"])
 					if(world.time > mob_timers["aggro_time"] + 30 SECONDS)
 						enemies = list()
-						src.visible_message("<span class='info'>[src] calms down.</span>")
+						src.visible_message(span_info("[src] calms down."))
 						LoseTarget()
 				else
 					mob_timers["aggro_time"] = world.time
@@ -281,10 +315,7 @@
 			else
 				if(childtype)
 					make_babies()
-		if(udder)
-			if(production > 0)
-				production--
-				udder.generateMilk()
+
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Retaliate()
 //	if(!enemies.len && message)
@@ -295,13 +326,6 @@
 	mob_timers["aggro_time"] = world.time
 	..()
 
-/mob/living/simple_animal/hostile/retaliate/rogue/attackby(obj/item/O, mob/user, params)
-	if(!stat && istype(O, /obj/item/reagent_containers/glass))
-		if(udder)
-			udder.milkAnimal(O, user)
-			return 1
-	else
-		return ..()
 
 //Prevents certain items from being targeted as food.
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/PickyEater(atom/thing_to_eat)
@@ -339,3 +363,32 @@
 		stop_automated_movement = TRUE
 		Goto(user,move_to_delay)
 		addtimer(CALLBACK(src, PROC_REF(return_action)), 3 SECONDS)
+
+
+//................. UDDER (GOTE).......................//
+/obj/item/gudder
+
+/obj/item/gudder/Initialize()
+	create_reagents(100)
+	reagents.add_reagent(/datum/reagent/consumable/milk/gote, rand(0,20))
+	. = ..()
+
+/obj/item/gudder/proc/generateMilk()
+	reagents.add_reagent(/datum/reagent/consumable/milk/gote, 1)
+
+/obj/item/gudder/proc/milkAnimal(obj/O, mob/living/user = usr)
+	var/obj/item/reagent_containers/glass/G = O
+	if(G.reagents.total_volume >= G.volume)
+		to_chat(user, span_warning("[O] is full."))
+		return
+	if(!reagents.has_reagent(/datum/reagent/consumable/milk/gote, 5))
+		to_chat(user, span_warning("The udder is dry. Wait a bit longer..."))
+		user.changeNext_move(10)
+		return
+	if(do_after(user, 1 SECONDS, target = src))
+		reagents.trans_to(O, rand(5,10))
+		user.visible_message(span_notice("[user] milks [src] using \the [O]"))
+		playsound(O, pick('sound/vo/mobs/cow/milking (1).ogg', 'sound/vo/mobs/cow/milking (2).ogg'), 100, TRUE, -1)
+		user.Immobilize(1 SECONDS)
+		user.changeNext_move(1 SECONDS)
+

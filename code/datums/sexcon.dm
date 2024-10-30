@@ -212,9 +212,6 @@
 	START_PROCESSING(SSsex, user.sexcon)
 	START_PROCESSING(SSsex, src)
 
-/mob/living/carbon/human
-	var/virginity = FALSE
-
 /mob/living/carbon/human/proc/on_virgin_loss()
 	var/mob/living/carbon/P = src
 	virginity = FALSE
@@ -1129,7 +1126,7 @@
 									wuzantag = TRUE
 						if(!wuzantag)
 							adjust_playerquality(-2, H.ckey, reason="Raped as a non villain.")
-					addtimer(CALLBACK(eatingus, /mob/.proc/emote, "gag"), rand(10,20))
+					addtimer(CALLBACK(eatingus, TYPE_PROC_REF(/mob, emote), "gag"), rand(10,20))
 		if("insideass")
 			if(owner.has_flaw(/datum/charflaw/addiction/lovefiend))
 				owner.sate_addiction()
@@ -1162,19 +1159,12 @@
 				if(ishuman(owner) && ishuman(fucking))
 					var/mob/living/carbon/human/H = owner
 					var/mob/living/carbon/human/F = fucking
-					if(F.marriedto)
-						if(F.marriedto != H.real_name)
-							if(SSticker.cuckers)
-								SSticker.cuckers += ", [F.real_name] (with [H.real_name])"
-							else
-								SSticker.cuckers += "[F.real_name] (with [H.real_name])"
-					if(H.marriedto)
-						if(H.marriedto != F.real_name)
-							if(SSticker.cuckers)
-								SSticker.cuckers += ", [H.real_name] (with [F.real_name])"
-							else
-								SSticker.cuckers += "[H.real_name] (with [F.real_name])"
-					if(H.marriedto == F.real_name)
+					if((F.IsWedded() && !F.RomanticPartner(H)) || (H.IsWedded() && !H.RomanticPartner(F)))
+						if(SSticker.cuckers)
+							SSticker.cuckers += ", [F.real_name] (with [H.real_name])"
+						else
+							SSticker.cuckers += "[F.real_name] (with [H.real_name])"
+					if(H.RomanticPartner(F))
 						yee = 1
 						C.add_stress(/datum/stressevent/cumlove)
 					if(HAS_TRAIT(F, TRAIT_GOODLOVER))
@@ -1268,7 +1258,7 @@
 					if(ishuman(owner) && ishuman(inpussy))
 						var/mob/living/carbon/human/H = inpussy
 						var/mob/living/carbon/human/F = owner
-						if(H.marriedto == F.real_name)
+						if(H.RomanticPartner(F))
 							yee = 1
 							C.add_stress(/datum/stressevent/cumlove)
 					if(!yee)

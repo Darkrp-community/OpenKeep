@@ -1,7 +1,7 @@
 /datum/advclass/combat/heartfeltlord
 	name = "Lord of Heartfelt"
-	tutorial = "You are the proud lord of heartfelt \
-	but why did you come to the isle of enigma?"
+	tutorial = "You are the proud lord of Heartfelt, \
+	but why have you come to Rockhill?"
 	allowed_sexes = list(MALE)
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/heartfeltlord
@@ -19,7 +19,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	cloak = /obj/item/clothing/cloak/heartfelt
-	armor = /obj/item/clothing/suit/roguetown/armor/heartfelt/lord
+	armor = /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	beltl = /obj/item/scomstone
 	gloves = /obj/item/clothing/gloves/roguetown/leather/black
@@ -46,5 +46,4 @@
 		H.change_stat("fortune", 5)
 
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

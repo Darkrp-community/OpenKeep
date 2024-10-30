@@ -17,6 +17,7 @@
 	spawn_positions = 1
 	display_order = JDO_TEMPLAR
 	give_bank_account = 0
+	min_pq = 2
 
 /datum/outfit/job/roguetown/templar
 	name = "Templar"
@@ -25,34 +26,40 @@
 /datum/outfit/job/roguetown/templar/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
-	neck = /obj/item/clothing/neck/roguetown/psicross/astrata
 	cloak = /obj/item/clothing/cloak/tabard/crusader/tief
 	switch(H.patron.name)
 		if("Astrata")
-			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/astrata
 			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
 		if("Dendor")
-			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/dendor
 		if("Necra")
-			neck = /obj/item/clothing/neck/roguetown/psicross/necra
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/necra
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
-		if("Pestra")
+		if("Eora")
+			head = /obj/item/clothing/head/roguetown/helmet/sallet/eoran
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
+			cloak = /obj/item/clothing/cloak/stabard/templar/eora
+			H.virginity = FALSE
+		if("Pestra")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
 		if("Noc")
-			neck = /obj/item/clothing/neck/roguetown/psicross/noc
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
+			neck = /obj/item/clothing/neck/roguetown/psycross/noc
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/noc
 			cloak = /obj/item/clothing/cloak/stabard/templar/noc
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/roguekey/church = 1, /obj/item/clothing/neck/roguetown/chaincoif = 1)
+	backpack_contents = list(/obj/item/keyring/priest = 1)
 	backr = /obj/item/rogueweapon/shield/tower/metal
 	belt = /obj/item/storage/belt/rogue/leather/black
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
@@ -75,7 +82,8 @@
 		H.change_stat("speed", -1)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-		
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
+
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	//Max devotion limit - Templars are stronger but cannot pray to gain more abilities beyond t1
 	C.update_devotion(50, 50)

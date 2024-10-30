@@ -1,26 +1,17 @@
-/obj/item
-	var/list/onprop = list()
-//#ifdef TESTSERVER
-	var/force_reupdate_inhand = TRUE
-	var/smelted = FALSE // Sanity for smelteries to avoid runtimes, if this is a bar smelted through ore for exp gain
-	var/istrainable = FALSE // Can this be used against a training dummy to learn skills? Prevents dumb exploits.
-//#else
-//	var/force_reupdate_inhand = FALSE
-//#endif
+// Helper items for spriters so they can see how in-hands look in game.
+// They're basically red square sprites placed on the floor so spriters can adjust their sprites properly
+// Used on admin testing area only.
 
-// Initalize addon for the var for custom inhands 32x32. 
-/obj/item/Initialize()
-	. = ..()
-	if(!experimental_inhand)
-		inhand_x_dimension = 32
-		inhand_y_dimension = 32
-
+// 32x32 in-hand helper item
 /obj/item/inhand_tester
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "inhand_test"
 
+// 64x64 in-hand helper item
 /obj/item/inhand_tester/big
 	icon = 'icons/roguetown/misc/64x64.dmi'
+
+// START OF ROGUE PROCS NECESSARY FOR ITEM TRANSFORMS, ETC
 
 /obj/item/proc/getmoboverlay(tag, prop, behind = FALSE, mirrored = FALSE)
 	var/used_index = icon_state

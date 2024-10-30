@@ -1,10 +1,11 @@
 /datum/advclass/combat/swordmaster
-	name = "Swordmaster"
+	name = "Hedge Knight"
 	tutorial = "You spent years serving the eastern Grenzelhoftian lords, and now you spend your days as a travelling hedge knight. Upon this island, you like to increase the fame of your sword skills, as well as your honor."
 	allowed_sexes = list(MALE)
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/swordmaster
 	maximum_possible_slots = 1
+	min_pq = 2
 	pickprob = 15
 	category_tags = list(CTAG_ADVENTURER)
 
@@ -14,7 +15,7 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
@@ -24,9 +25,9 @@
 		H.change_stat("speed", -1)
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
-		var/honorary = "Retter"
+		var/honorary = "Ritter"
 		if(H.gender == FEMALE)
-			honorary = "Retterin"
+			honorary = "Ritterin"
 		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
 

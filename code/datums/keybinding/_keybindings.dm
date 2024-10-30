@@ -15,7 +15,7 @@
 		classic_keys = hotkey_keys.Copy()
 	
 /datum/keybinding/proc/down(client/user)
-    return FALSE
+	return FALSE
 
 /datum/keybinding/proc/up(client/user)
-    return FALSE
+	return FALSE

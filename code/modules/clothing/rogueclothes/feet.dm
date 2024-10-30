@@ -6,7 +6,12 @@
 	gender = PLURAL
 	slot_flags = ITEM_SLOT_SHOES
 	body_parts_covered = FEET
+	prevent_crits = list(BCLASS_LASHING, BCLASS_TWIST)
 	sleeved = 'icons/roguetown/clothing/onmob/feet.dmi'
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	sleevetype = "leg"
 	bloody_icon_state = "shoeblood"
 	equip_delay_self = 30
@@ -129,20 +134,25 @@
 	body_parts_covered = FEET
 	icon_state = "armorboots"
 	item_state = "armorboots"
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	color = null
 	blocksound = PLATEHIT
 	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 500
 	armor_class = ARMOR_CLASS_HEAVY
+	clothing_flags = CANT_SLEEP_IN
 	anvilrepair = /datum/skill/craft/armorsmithing
 	resistance_flags = FIRE_PROOF
+	pickup_sound = "rustle"
+	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	break_sound = 'sound/foley/breaksound.ogg'
 	sellprice = 25
 
 /obj/item/clothing/shoes/roguetown/boots/armor/light
 	name = "light plate boots"
-	icon_state = "vboots"
-	item_state = "vboots"
+	icon_state = "soldierboots"
+	item_state = "soldierboots"
 	desc = "Lightly armored boots made from iron offering protection against both melee and ranged attacks."
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 250
@@ -153,6 +163,7 @@
 	name = "leather boots"
 	//dropshrink = 0.75
 	desc = "Boots made out of sturdy leather. Providing light protection against melee attacks."
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST)
 	gender = PLURAL
 	icon_state = "leatherboots"
 	item_state = "leatherboots"
@@ -176,13 +187,19 @@
 	sellprice = 20
 
 /obj/item/clothing/shoes/roguetown/boots/rare
-	icon = 'icons/roguetown/topadd/takyon/Racial_Armour.dmi'
-	mob_overlay_icon = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
-	sleeved = 'icons/roguetown/topadd/takyon/onmob_racial.dmi'
+	icon = 'icons/roguetown/clothing/Racial_Armour.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'
 	sleevetype = null
 	resistance_flags = FIRE_PROOF // All of these are plated
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	pickup_sound = "rustle"
+	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	break_sound = 'sound/foley/breaksound.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	clothing_flags = CANT_SLEEP_IN
 	sellprice = 30
 
 /obj/item/clothing/shoes/roguetown/boots/rare/elfplate
@@ -192,7 +209,6 @@
 	icon_state = "elfshoes"
 	item_state = "elfshoes"
 	allowed_race = list("elf", "half-elf", "dark elf")
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	color = null
 	blocksound = PLATEHIT
 
@@ -215,7 +231,6 @@
 	body_parts_covered = FEET|LEGS
 	icon_state = "dwarfshoe"
 	item_state = "dwarfshoe"
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	color = null
 	blocksound = PLATEHIT
 
@@ -229,7 +244,6 @@
 	body_parts_covered = FEET|LEGS
 	icon_state = "human_swordshoes"
 	item_state = "human_swordshoes"
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	color = null
 	blocksound = PLATEHIT
 
@@ -243,6 +257,5 @@
 	body_parts_covered = FEET|LEGS
 	icon_state = "human_spearshoe"
 	item_state = "human_spearshoe"
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	color = null
 	blocksound = PLATEHIT

@@ -175,8 +175,8 @@
 		for(var/obj/structure/flora/newleaf/LEAF in DIA)
 			LEAF.obj_destruction(damage_type)
 
-	if(!istype(NT, /turf/open/transparent/openspace) && !(locate(/obj/structure/flora/roguetree/stump) in NT))//if i don't add the stump check it spawns however many zlevels it goes up because of src recursion
-		new /obj/structure/flora/roguetree/stump(NT)
+	if(!istype(NT, /turf/open/transparent/openspace) && !(locate(/obj/structure/table/wood/treestump) in NT))//if i don't add the stump check it spawns however many zlevels it goes up because of src recursion
+		new /obj/structure/table/wood/treestump(NT)
 	playsound(src, 'sound/misc/treefall.ogg', 100, FALSE)
 
 /obj/structure/flora/newtree/proc/build_trees()
@@ -283,6 +283,7 @@
 	desc = "A stable branch, should be safe to walk on."
 	icon = 'icons/roguetown/misc/tree.dmi'
 	icon_state = "branch-end1"
+	attacked_sound = 'sound/misc/woodhit.ogg'
 //	var/tree_type = 1
 	var/base_state = TRUE
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN

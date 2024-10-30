@@ -30,7 +30,7 @@
 				dead = TRUE
 				playsound(get_turf(user), 'sound/vo/mobs/rat/rat_death.ogg', 100, FALSE, -1)
 				icon_state = "srat1"
-				rotprocess = 15 MINUTES
+				rotprocess = SHELFLIFE_SHORT
 				var/mob/living/carbon/V = user
 				V.add_stress(/datum/stressevent/drankrat)
 			return
@@ -39,14 +39,14 @@
 /obj/item/reagent_containers/food/snacks/rogue/friedrat
 	name = "fried rat"
 	desc = ""
-	icon = 'icons/roguetown/items/food.dmi'
+	icon = 'modular/Neu_Food/icons/food.dmi'
 	icon_state = "cookedrat"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	w_class = WEIGHT_CLASS_TINY
 	tastes = list("burnt flesh" = 1)
 	eat_effect = null
-	rotprocess = 15 MINUTES
+	rotprocess = SHELFLIFE_SHORT
 	sellprice = 0
 
 /obj/item/reagent_containers/food/snacks/smallrat/burning(input as num)
@@ -55,7 +55,7 @@
 			dead = TRUE
 			playsound(src, 'sound/vo/mobs/rat/rat_death.ogg', 100, FALSE, -1)
 			icon_state = "srat1"
-			rotprocess = 15 MINUTES
+			rotprocess = SHELFLIFE_SHORT
 	. = ..()
 
 /obj/item/reagent_containers/food/snacks/smallrat/Crossed(mob/living/L)
@@ -70,15 +70,16 @@
 
 
 /obj/item/reagent_containers/food/snacks/smallrat/dead
+	icon_state = "srat1"
 	dead = TRUE
-	rotprocess = 15 MINUTES
+	rotprocess = SHELFLIFE_SHORT
 
 /obj/item/reagent_containers/food/snacks/smallrat/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
 	if(dead)
-		icon_state = "sratl"
-		rotprocess = 15 MINUTES
+		icon_state = "srat1"
+		rotprocess = SHELFLIFE_SHORT
 
 /obj/item/reagent_containers/food/snacks/smallrat/attack_hand(mob/user)
 	if(isliving(user))
@@ -133,10 +134,9 @@
 /obj/item/reagent_containers/food/snacks/smallrat/obj_destruction(damage_flag)
 	//..()
 	if(!dead)
-		dead = TRUE
-		rotprocess = 15 MINUTES
+		new /obj/item/reagent_containers/food/snacks/smallrat/dead(src)
 		playsound(src, 'sound/vo/mobs/rat/rat_death.ogg', 100, FALSE, -1)
-		icon_state = "[icon_state]1"
+		qdel(src)
 		return 1
 	. = ..()
 

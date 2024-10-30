@@ -189,6 +189,10 @@
 	base_icon_state = "bibble"
 	title = "bible"
 	dat = "gott.json"
+	force = 2
+	force_wielded = 4
+	throwforce = 1
+	possible_item_intents = list(/datum/intent/use, /datum/intent/mace/strike/wood)
 
 /obj/item/book/rogue/bibble/read(mob/user)
 	if(!open)
@@ -378,6 +382,12 @@
 	base_icon_state = "book8"
 	bookfile = "tales14.json"
 
+/obj/item/book/rogue/mysticalfog
+	name = "Studie of the Etheral Foge phenomenon"
+	desc = "By Roubert the Elder"
+	icon_state ="book7_0"
+	base_icon_state = "book8"
+	bookfile = "tales15.json"
 
 /obj/item/book/rogue/playerbook
 	var/player_book_text = "moisture in the air or water leaks have rendered the carefully written caligraphy of this book unreadable"
@@ -404,16 +414,27 @@
 	base_icon_state = "basic_book"
 	override_find_book = TRUE
 
-/obj/item/book/rogue/playerbook/Initialize(loc, in_round_player_generated, var/mob/living/in_round_player_mob, text)
+/obj/item/book/rogue/playerbook/proc/get_player_input(mob/living/in_round_player_mob, text)
+	player_book_author_ckey = in_round_player_mob.ckey
+	player_book_title = dd_limittext(capitalize(sanitize_hear_message(input(in_round_player_mob, "What title do you want to give the book? (max 42 characters)", "Title", "Unknown"))), MAX_NAME_LEN)
+	player_book_author = "[dd_limittext(sanitize_hear_message(input(in_round_player_mob, "Do you want to preface your author name with an author title? (max 42 characters)", "Author Title", "")), MAX_NAME_LEN)] [in_round_player_mob.real_name]"
+	player_book_icon = book_icons[input(in_round_player_mob, "Choose a book style", "Book Style") as anything in book_icons]
+	player_book_text = text
+	message_admins("[player_book_author_ckey]([in_round_player_mob.real_name]) has generated the player book: [player_book_title]")
+	update_book_data()
+
+/obj/item/book/rogue/playerbook/proc/update_book_data()
+	name = "[player_book_title]"
+	desc = "By [player_book_author]"
+	icon_state = "[player_book_icon]_0"
+	base_icon_state = "[player_book_icon]"
+	pages = list("<b3><h3>Title: [player_book_title]<br>Author: [player_book_author]</b><h3>[player_book_text]")
+
+/obj/item/book/rogue/playerbook/Initialize(mapload, in_round_player_generated, mob/living/in_round_player_mob, text)
 	. = ..()
 	is_in_round_player_generated = in_round_player_generated
 	if(is_in_round_player_generated)
-		player_book_author_ckey = in_round_player_mob.ckey
-		player_book_title = dd_limittext(capitalize(sanitize_hear_message(input(in_round_player_mob, "What title do you want to give the book? (max 42 characters)", "Title", "Unknown"))), MAX_NAME_LEN)
-		player_book_author = "[dd_limittext(sanitize_hear_message(input(in_round_player_mob, "Do you want to preface your author name with an author title? (max 42 characters)", "Author Title", "")), MAX_NAME_LEN)] [in_round_player_mob.real_name]"
-		player_book_icon = book_icons[input(in_round_player_mob, "Choose a book style", "Book Style") as anything in book_icons]
-		player_book_text = text
-		message_admins("[player_book_author_ckey]([in_round_player_mob.real_name]) has generated the player book: [player_book_title]")
+		INVOKE_ASYNC(src, PROC_REF(update_book_data), in_round_player_mob, text)
 	else
 		player_book_titles = SSlibrarian.pull_player_book_titles()
 		player_book_content = SSlibrarian.file2playerbook(pick(player_book_titles))
@@ -422,13 +443,7 @@
 		player_book_author_ckey = player_book_content["author_ckey"]
 		player_book_icon = player_book_content["icon"]
 		player_book_text = player_book_content["text"]
-
-	name = "[player_book_title]"
-	desc = "By [player_book_author]"
-	icon_state = "[player_book_icon]_0"
-	base_icon_state = "[player_book_icon]"
-
-	pages = list("<b3><h3>Title: [player_book_title]<br>Author: [player_book_author]</b><h3>[player_book_text]")
+		update_book_data()
 
 /obj/item/manuscript
 	name = "2 page manuscript"
@@ -626,3 +641,85 @@ ____________End of Example*/
 	icon_state ="basic_book_0"
 	base_icon_state = "basic_book"
 	bookfile = "manners.json"
+
+/obj/item/book/rogue/advice_soup
+	name = "Soup de Rattus"
+	desc = "Weathered book containing advice on surviving a famine."
+	bookfile = "AdviceSoup.json"
+	random_cover = TRUE
+
+/obj/item/book/rogue/advice_farming
+	name = "The Secrets of the Agronome"
+	desc = "Soilson bible."
+	bookfile = "AdviceFarming.json"
+	random_cover = TRUE
+
+/obj/item/book/rogue/yeoldecookingmanual // new book with some tips to learn
+	name = "Ye olde ways of cookinge"
+	desc = "Penned by Svend Fatbeard, butler in the fourth generation"
+	icon_state ="book8_0"
+	base_icon_state = "book8"
+	bookfile = "Neu_cooking.json"
+
+/obj/item/book/rogue/psybibble
+	name = "The Book"
+	icon_state = "psybibble_0"
+	base_icon_state = "psybibble"
+	title = "bible"
+	dat = "gott.json"
+	force = 2
+	force_wielded = 4
+	throwforce = 1
+	possible_item_intents = list(/datum/intent/use, /datum/intent/mace/strike/wood)
+
+/obj/item/book/rogue/psybibble/read(mob/user)
+	if(!open)
+		to_chat(user, "<span class='info'>Open me first.</span>")
+		return FALSE
+	if(!user.client || !user.hud_used)
+		return
+	if(!user.hud_used.reads)
+		return
+	if(!user.can_read(src))
+		user.mind.adjust_experience(/datum/skill/misc/reading, 4, FALSE)
+		return
+	if(in_range(user, src) || isobserver(user))
+		user.changeNext_move(CLICK_CD_MELEE)
+		var/m
+		var/list/verses = world.file2list("strings/psybibble.txt")
+		m = pick(verses)
+		if(m)
+			user.say(m)
+
+/obj/item/book/rogue/psybibble/attack(mob/living/M, mob/user)
+	if(user.mind && user.mind.assigned_role == "Preacher")
+		if(!user.can_read(src))
+			//to_chat(user, "<span class='warning'>I don't understand these scribbly black lines.</span>")
+			return
+		M.apply_status_effect(/datum/status_effect/buff/blessed)
+		user.visible_message("<span class='notice'>[user] blesses [M].</span>")
+		playsound(user, 'sound/magic/bless.ogg', 100, FALSE)
+		return
+
+/datum/status_effect/buff/blessed
+	id = "blessed"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/blessed
+	effectedstats = list("fortune" = 1)
+	duration = 20 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/blessed
+	name = "Blessed"
+	desc = "The Weeping God fills my heart."
+	icon_state = "buff"
+
+/datum/status_effect/buff/blessed/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/stressevent/blessed)
+
+/datum/status_effect/buff/blessed/on_remove()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.remove_stress(/datum/stressevent/blessed)

@@ -1,3 +1,11 @@
+	/*==============*
+	*				*
+	*	  Dwarf		*
+	*				*
+	*===============*/
+
+//	( + Poison Resistance )
+
 /mob/living/carbon/human/species/dwarf/mountain
 	race = /datum/species/dwarf/mountain
 
@@ -50,8 +58,8 @@
 	OFFSET_FACE_F = list(0,-5), OFFSET_BELT_F = list(0,-5), OFFSET_BACK_F = list(0,-5), \
 	OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES = list(0,0), OFFSET_UNDIES_F = list(0,0))
-	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = -2, "fortune" = 0)
-	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 1, "constitution" = 1, "endurance" = 1, "speed" = -1, "fortune" = 0)
+	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 0, "constitution" = 3, "endurance" = 2, "speed" = -1, "fortune" = 0)
+	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 1, "constitution" = 2, "endurance" = 2, "speed" = -1, "fortune" = 0)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
@@ -87,6 +95,7 @@
 		"Malachite" = SKIN_COLOR_MALACHITE,
 		"Obsidian" = SKIN_COLOR_OBSIDIAN,
 		"Brimstone" = SKIN_COLOR_BRIMSTONE,
+		"Cerargyrite" =	SKIN_COLOR_CERARGYRITE,
 	))
 
 /datum/species/dwarf/mountain/get_hairc_list()
@@ -110,7 +119,10 @@
 	"red - wine" = "b87f77",
 	"red - sunset" = "bf6821",
 	"red - blood" = "822b2b",
-	"red - maroon" = "612929"
+	"red - maroon" = "612929",
+
+	"white - withered" = "#7c828a"
+
 	))
 
 /datum/species/dwarf/mountain/random_name(gender,unique,lastname)
@@ -136,3 +148,26 @@
 
 /datum/species/dwarf/mountain/random_surname()
 	return " [pick(world.file2list("strings/rt/names/dwarf/dwarmlast.txt"))]"
+
+
+
+/*------------------\
+| Poison Resistance |
+\------------------*/
+
+/*
+To make this work poison on_mob_life needs to have the dwarf modifier in it. Relevant when adding new ones.
+The more specialized/expensive poison the less effect the resistance.
+
+For common natural poisons (berrypoison) = effect reduced by 2/3, half nausea
+For manufactured poisones = effect reduced by half or so
+
+Note: Its not meant to protect against every dangerous/bad reagent, its supposed to be just poisons, making it meaningful against most common reagent hazards but not full protection.
+
+/datum/reagent/toxin/whateverpoison/on_mob_life(mob/living/carbon/M)
+	if(isdwarf(M))
+		M.adjustToxLoss(2, 0)
+	else
+		M.adjustToxLoss(5, 0)
+
+*/

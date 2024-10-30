@@ -7,6 +7,7 @@
 	lefthand_file = 'modular/Barding/icons/instruments_lefthand.dmi'
 	righthand_file = 'modular/Barding/icons/instruments_righthand.dmi'
 	experimental_inhand = FALSE
+	possible_item_intents = list(/datum/intent/use)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK_R|ITEM_SLOT_BACK_L
 	can_parry = FALSE
 	force = 0
@@ -177,7 +178,9 @@
 								// Apply the buff every second to refresh its duration since it's timed
 								while(playing)
 									L.apply_status_effect(buff2use)
-									sleep(10) // Sanity to avoid infinite loop
+									var/boon = user?.mind?.get_learning_boon(/datum/skill/misc/music)
+									user?.mind?.adjust_experience(/datum/skill/misc/music, ceil((user.STAINT*0.2) * boon)) // And gain exp
+									sleep(10 * world.tick_lag) // Sanity to avoid infinite loop
 							else
 								return
 						else
@@ -185,13 +188,20 @@
 							// Apply the buff every second to refresh its duration since it's timed
 							while(playing)
 								L.apply_status_effect(buff2use)
-								sleep(10) // Sanity to avoid infinite loop
+								var/boon = user?.mind?.get_learning_boon(/datum/skill/misc/music)
+								user?.mind?.adjust_experience(/datum/skill/misc/music, ceil((user.STAINT*0.2) * boon)) // and gain exp
+								sleep(10 * world.tick_lag) // Sanity to avoid infinite loop
 					else
 						return
 			else
 				to_chat(user, "I decided not to bestow any boons to my music.")
-				return
-			
+				for(var/mob/living/carbon/L in viewers(7))
+					L.add_stress(bardbonus) // Give us the extra mood regardless.
+				while(playing) // Grant us exp even if we did not apply buffs to anyone.
+					var/boon = user?.mind?.get_learning_boon(/datum/skill/misc/music)
+					user?.mind?.adjust_experience(/datum/skill/misc/music, ceil((user.STAINT*0.2) * boon))
+					sleep(10 * world.tick_lag) // Gain exp every 1 second delay of playing
+
 		// BARDIC BUFFS CODE END //
 
 		while(playing)
@@ -219,8 +229,61 @@
 
 /obj/item/rogue/instrument/dropped(mob/user)
 	. = ..()
+	playing = FALSE
+	soundloop.stop()
 	if(dynamic_icon)
-		icon_state = "[icon_prefix]"
+		lower_from_mouth()
+		update_icon()
+	for(var/mob/living/carbon/L in viewers(7))
+		var/mob/living/carbon/buffed = L
+		if(buffed.mind?.has_antag_datum(/datum/antagonist))
+			if(buffed.mind?.isactuallygood())
+				for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+					buffed.remove_status_effect(b) // All applicable bard buffs stopped
+			else
+				return
+		else
+			for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+				buffed.remove_status_effect(b) // All applicable bard buffs stopped
+
+// At this point I don't know what other proc should be covered to avoid exploits.
+/obj/item/rogue/instrument/obj_destruction(damage_flag)
+	. = ..()
+	if(playing)
+		playing = FALSE
+		soundloop.stop()
+		for(var/mob/living/carbon/L in viewers(7))
+			var/mob/living/carbon/buffed = L
+			if(buffed.mind?.has_antag_datum(/datum/antagonist))
+				if(buffed.mind?.isactuallygood())
+					for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+						buffed.remove_status_effect(b) // All applicable bard buffs stopped
+				else
+					return
+			else
+				for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+					buffed.remove_status_effect(b) // All applicable bard buffs stopped
+
+// Fixes an exploit. It shouldn't stack buffs anymore.
+/obj/item/rogue/instrument/throw_at(atom/target, range, speed, mob/thrower, spin, diagonals_first, datum/callback/callback)
+	. = ..()
+	if(playing)
+		playing = FALSE
+		soundloop.stop()
+		if(dynamic_icon)
+			lower_from_mouth()
+			update_icon()
+		for(var/mob/living/carbon/L in viewers(7))
+			var/mob/living/carbon/buffed = L
+			if(buffed.mind?.has_antag_datum(/datum/antagonist))
+				if(buffed.mind?.isactuallygood())
+					for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+						buffed.remove_status_effect(b) // All applicable bard buffs stopped
+				else
+					return
+			else
+				for(var/datum/status_effect/bardicbuff/b in L.status_effects)
+					buffed.remove_status_effect(b) // All applicable bard buffs stopped
 
 /obj/item/rogue/instrument/proc/lift_to_mouth()
 	icon_state = "[icon_prefix]_play"
@@ -242,7 +305,8 @@
 	"Song 4" = 'modular/Barding/sound/instruments/lute (4).ogg',
 	"Song 5" = 'modular/Barding/sound/instruments/lute (5).ogg',
 	"Song 6" = 'modular/Barding/sound/instruments/lute (6).ogg',
-	"Song 7" = 'modular/Barding/sound/instruments/lute (7).ogg')
+	"Song 7" = 'modular/Barding/sound/instruments/lute (7).ogg',
+	"Soilson's Song" = 'modular/Barding/sound/instruments/lute (8).ogg')
 
 /obj/item/rogue/instrument/accord
 	name = "accordion"
@@ -255,7 +319,9 @@
 	"Song 4" = 'modular/Barding/sound/instruments/accord (4).ogg',
 	"Song 5" = 'modular/Barding/sound/instruments/accord (5).ogg',
 	"Song 6" = 'modular/Barding/sound/instruments/accord (6).ogg',
-	"Song of the Falconeer" = 'modular/Barding/sound/instruments/accord (7).ogg')
+	"Song of the Falconeer" = 'modular/Barding/sound/instruments/accord (7).ogg',
+	"Dwarven Frolick" = 'modular/Barding/sound/instruments/accord (8).ogg'
+	)
 
 /obj/item/rogue/instrument/guitar
 	name = "guitar"
@@ -276,7 +342,8 @@
 	"The Mask" = 'modular/Barding/sound/instruments/guitar (11).ogg',
 	"Evolvado" = 'modular/Barding/sound/instruments/guitar (12).ogg',	
 	"Asturias" = 'modular/Barding/sound/instruments/guitar (13).ogg',
-	"The Fools Journey" = 'modular/Barding/sound/instruments/guitar (14).ogg',	
+	"The Fools Journey" = 'modular/Barding/sound/instruments/guitar (14).ogg',
+	"Prelude to Sorrow" = 'modular/Barding/sound/instruments/guitar (15).ogg'
 	)
 
 /obj/item/rogue/instrument/harp
@@ -287,7 +354,8 @@
 	"Song 1" = 'modular/Barding/sound/instruments/harb (1).ogg',
 	"Song 2" = 'modular/Barding/sound/instruments/harb (2).ogg',
 	"Song 3" = 'modular/Barding/sound/instruments/harb (3).ogg',
-	"Dance of the Mages" = 'modular/Barding/sound/instruments/harp (4).ogg')
+	"Dance of the Mages" = 'modular/Barding/sound/instruments/harp (4).ogg',
+	"Trickster Wisps" = 'modular/Barding/sound/instruments/harp (5).ogg')
 
 /obj/item/rogue/instrument/flute // small rats approach a little when begin playing
 	name = "flute"
@@ -302,7 +370,8 @@
 	"Song 4" = 'modular/Barding/sound/instruments/flute (4).ogg',
 	"Song 5" = 'modular/Barding/sound/instruments/flute (5).ogg',
 	"Song 6" = 'modular/Barding/sound/instruments/flute (6).ogg',
-	"Flower Melody" = 'modular/Barding/sound/instruments/flute (7).ogg')
+	"Flower Melody" = 'modular/Barding/sound/instruments/flute (7).ogg',
+	"Noble Solace" = 'modular/Barding/sound/instruments/flute (8).ogg')
 
 /obj/item/rogue/instrument/drum
 	name = "drum"
@@ -312,4 +381,5 @@
 	"Song 1" = 'modular/Barding/sound/instruments/drum (1).ogg',
 	"Song 2" = 'modular/Barding/sound/instruments/drum (2).ogg',
 	"Song 3" = 'modular/Barding/sound/instruments/drum (3).ogg',
-	"Snare drum" = 'modular/Barding/sound/instruments/drum (4).ogg')
+	"Snare drum" = 'modular/Barding/sound/instruments/drum (4).ogg',
+	"Desert Heat" = 'modular/Barding/sound/instruments/drum (5).ogg')

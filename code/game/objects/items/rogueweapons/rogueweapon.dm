@@ -19,7 +19,9 @@
 	wlength = 45
 	sellprice = 1
 	has_inspect_verb = TRUE
+	pickup_sound = "rustle" // Sound list define strings are in code/game/sound.dm
 	parrysound = list('sound/combat/parry/parrygen.ogg')
+	drop_sound = 'sound/foley/dropsound/mace_drop.ogg'
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	obj_flags = CAN_BE_HIT
 	blade_dulling = DULLING_BASH
@@ -74,10 +76,12 @@
 		else
 			return 0
 
-	if(nuforce < 10)
+	if(nuforce < 25) //End force needs to be at least this high, after accounting for strong intent and chop. An iron messer should be able to do it, but not a dagger.
 		return 0
 
-	var/probability = nuforce * (total_dam / affecting.max_damage)
+	var/probability = (nuforce * (total_dam / affecting.max_damage) - 5) //More weight given to total damage accumulated on the limb
+	if(affecting.body_zone == BODY_ZONE_HEAD) //Decapitations are harder to pull off in general
+		probability *= 0.5
 	var/hard_dismember = HAS_TRAIT(affecting, TRAIT_HARDDISMEMBER)
 	var/easy_dismember = affecting.rotted || affecting.skeletonized || HAS_TRAIT(affecting, TRAIT_EASYDISMEMBER)
 	if(affecting.owner)
@@ -88,5 +92,5 @@
 	if(hard_dismember)
 		return min(probability, 5)
 	else if(easy_dismember)
-		return probability * 3
+		return probability * 1.5
 	return probability

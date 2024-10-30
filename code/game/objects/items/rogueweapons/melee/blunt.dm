@@ -10,6 +10,7 @@
 	item_state = "mace_greyscale"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	equip_sound = "rustle"
 	sharpness = IS_BLUNT
 	//dropshrink = 0.75
 	wlength = WLENGTH_NORMAL
@@ -98,8 +99,8 @@
 	minstr = 0
 	sellprice = 5
 
-/obj/item/rogueweapon/mace/woodclub/New()
-	..()
+/obj/item/rogueweapon/mace/woodclub/Initialize(mapload)
+	. = ..()
 	icon_state = "club[rand(1,2)]"
 
 /datum/intent/mace/strike/wood
@@ -142,6 +143,13 @@
 	minstr = 0
 	wdefense = 3
 	sellprice = 15
+
+/obj/item/rogueweapon/mace/cudgel/carpenter
+	force = 15
+	force_wielded = 20
+	name = "peasant cudgel"
+	icon_state = "carpentercudgel"
+	desc = "A stubby club reinforced with iron bits, popular among village watchmen and peasant militias. Despite being reinforced and hard-hitting, it still cannot compare to a proper mace."
 
 /obj/item/rogueweapon/mace/cudgel/getonmobprop(tag)
 	. = ..()
@@ -246,9 +254,83 @@
 			if("gen")
 				return list("shrink" = 0.7,"sx" = -8,"sy" = 6,"nx" = 8,"ny" = 6,"wx" = -5,"wy" = 6,"ex" = 0,"ey" = 6,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -32,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("wielded")
-				return list("shrink" = 0.7,"sx" = 5,"sy" = -2,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -2,"ex" = 5,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+				return list("shrink" = 0.7,"sx" = 5,"sy" = -2,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -2,"ex" = 5,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -24,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
+
+/obj/item/rogueweapon/mace/goden/shillelagh		// The Briar signature weapon. Sturdy oak war club.
+	name = "shillelagh"
+	desc = "Big old oak branch, carved to a deadly weapon."
+	icon_state = "shillelagh"
+	icon = 'icons/roguetown/weapons/shillelagh.dmi'
+	pixel_y = 0
+	pixel_x = 0
+	bigboy = FALSE
+	gripsprite = TRUE
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
+	walking_stick = TRUE
+	max_integrity = 200
+	minstr = 8
+	sellprice = 5
+
+	force = 20
+	force_wielded = 32
+	possible_item_intents = list(/datum/intent/mace/heavy/strike)
+	gripped_intents = list(/datum/intent/mace/heavy/smash)
+
+
+/obj/item/rogueweapon/mace/goden/shillelagh/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.7,
+"sx" = -10,
+"sy" = 0,
+"nx" = 11,
+"ny" = 0,
+"wx" = -5,
+"wy" = -1,
+"ex" = 6,
+"ey" = 1,
+"northabove" = 0,
+"southabove" = 1,
+"eastabove" = 1,
+"westabove" = 0,
+"nturn" = -15,
+"sturn" = 12,
+"wturn" = 0,
+"eturn" = 354,
+"nflip" = 0,
+"sflip" = 8,
+"wflip" = 8,
+"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.7,
+"sx" = 6,
+"sy" = -6,
+"nx" = -5,
+"ny" = -6,
+"wx" = 2,
+"wy" = -6,
+"ex" = 6,
+"ey" = -4,
+"northabove" = 0,
+"southabove" = 1,
+"eastabove" = 1,
+"westabove" = 1,
+"nturn" = 0,
+"sturn" = 0,
+"wturn" = 20,
+"eturn" = -20,
+"nflip" = 8,
+"sflip" = 0,
+"wflip" = 0,
+"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.7,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 2,"wy" = -5,"ex" = 8,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+
 
 /datum/intent/mace/heavy/strike
 	name = "strike"
@@ -271,7 +353,7 @@
 	chargetime = 3
 	swingdelay = 3
 	icon_state = "insmash"
-	misscost = 30
+	misscost = 23
 	warnie = "mobwarning"
 
 // For the Goedendag. If it applies to the grand mace, use this one instead.
@@ -290,6 +372,37 @@
 	misscost = 15
 
 // Copper Bludgeon
+
+/obj/item/rogueweapon/mace/goden/copper
+	force = 10
+	force_wielded = 20
+	slowdown = 1
+	possible_item_intents = list(/datum/intent/mace/heavy/strike)
+	gripped_intents = list(/datum/intent/mace/heavy/smash, /datum/intent/mace/thrust)
+	name = "copper warclub"
+	desc = "A two handed club, decorated with a crown of spikes. A barbaric besign, good enough to be used as a weapon."
+	icon_state = "cwarclub"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	//dropshrink = 0.75
+	wlength = WLENGTH_LONG
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	associated_skill = /datum/skill/combat/axesmaces
+	smeltresult = /obj/item/ash
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
+	parrysound = "parrywood"
+	swingsound = BLUNTWOOSH_MED
+	max_integrity = 150
+	minstr = 10
+	wdefense = 3
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
+	wbalance = 0
+	sellprice = 35
 
 /obj/item/rogueweapon/mace/copperbludgeon
 	force = 12
@@ -359,38 +472,18 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
 
-/datum/intent/mace/smash/warhamm
-	reach = 2
-
 // Unique longbeard hammer.
-/obj/item/rogueweapon/mace/warhammer
-	force = 10
-	force_wielded = 20
-	possible_item_intents = list(/datum/intent/mace/strike)
-	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
+/obj/item/rogueweapon/mace/goden/steel/warhammer
 	name = "warhammer"
 	desc = "A great dwarven warhammer made of stern steel, enscratched with oaths of battle and time."
 	icon_state = "warhammer"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	//dropshrink = 0.75
 	wlength = WLENGTH_GREAT
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-	associated_skill = /datum/skill/combat/axesmaces
-	smeltresult = /obj/item/ingot/steel
 	swingsound = BLUNTWOOSH_HUGE
-	max_integrity = 500
-	minstr = 10
-	wdefense = 3
-	pixel_y = -16
-	pixel_x = -16
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
-	bigboy = TRUE
-	gripsprite = TRUE
 	sellprice = 100
 
-/obj/item/rogueweapon/mace/warhammer/getonmobprop(tag)
+/obj/item/rogueweapon/mace/goden/steel/warhammer/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)

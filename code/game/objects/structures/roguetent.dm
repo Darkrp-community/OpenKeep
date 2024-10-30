@@ -49,3 +49,7 @@
 		close_up(user)
 	else
 		open_up(user)
+
+// Preopen version, so visuals and opacity matches up round start.
+/obj/structure/roguetent/preopen
+	density = FALSE

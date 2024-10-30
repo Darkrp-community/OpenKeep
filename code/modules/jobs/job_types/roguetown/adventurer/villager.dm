@@ -5,7 +5,7 @@
 	faction = "Station"
 	total_positions = 50
 	spawn_positions = 50
-	allowed_races = ALL_RACES_LIST_NAMES
+	allowed_races = ALL_PLAYER_RACES_BY_NAME
 	tutorial = "You've lived in this shithole for effectively all your life. You are not an explorer, nor exactly a warrior in many cases. You're just some average poor bastard who thinks they'll be something someday."
 	advclass_cat_rolls = list(CTAG_TOWNER = 20)
 	outfit = null
@@ -13,8 +13,9 @@
 	bypass_jobban = FALSE
 	display_order = JDO_VILLAGER
 	give_bank_account = TRUE
-	min_pq = -15
+	min_pq = -100
 	same_job_respawn_delay = 0
+	bypass_lastclass = TRUE
 
 
 

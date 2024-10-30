@@ -55,6 +55,7 @@
 		return ..()
 	if(W.smeltresult)
 		if(ore.len < maxore)
+			user.dropItemToGround(W)
 			W.forceMove(src)
 			ore += W
 			if(!isliving(user) || !user.mind)
@@ -87,7 +88,7 @@
 			cooking = 0
 			return
 		else
-			to_chat(user, "<span class='warning'>\The [W.name] can be smelted, but \the [src] is full.</span>")
+			to_chat(user, "<span class='warning'>\The [W.name] [W.smeltresult? "can" : "can't"] be smelted, but \the [src] is full.</span>")
 	else
 		if(!W.firefuel && !istype(W, /obj/item/flint) && !istype(W, /obj/item/flashlight/flare/torch) && !istype(W, /obj/item/rogueore/coal))
 			to_chat(user, "<span class='warning'>\The [W.name] cannot be smelted.</span>")

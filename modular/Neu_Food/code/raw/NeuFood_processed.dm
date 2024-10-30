@@ -16,53 +16,21 @@
 /obj/item/reagent_containers/food/snacks/fat/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
-		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
+		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/mince))
 		if(isturf(loc)&& (found_table))
 			to_chat(user, "<span class='notice'>Stuffing a wiener...</span>")
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,long_cooktime, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/meat/sausage(loc)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 		else
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
 	else
 		return ..()
-
-// -------------- RAISINS -----------------
-/obj/item/reagent_containers/food/snacks/rogue/raisins
-	name = "raisins"
-	icon = 'icons/roguetown/items/produce.dmi'
-	icon_state = "raisins5"
-	bitesize = 5
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
-	w_class = WEIGHT_CLASS_TINY
-	tastes = list("dried fruit" = 1)
-	foodtype = GRAIN
-	eat_effect = null
-	rotprocess = null
-
-/obj/item/reagent_containers/food/snacks/rogue/raisins/On_Consume(mob/living/eater)
-	..()
-	if(bitecount == 1)
-		icon_state = "raisins4"
-	if(bitecount == 2)
-		icon_state = "raisins3"
-	if(bitecount == 3)
-		icon_state = "raisins2"
-	if(bitecount == 4)
-		icon_state = "raisins1"
-
-/obj/item/reagent_containers/food/snacks/rogue/raisins/CheckParts(list/parts_list, datum/crafting_recipe/R)
-	..()
-	for(var/obj/item/reagent_containers/food/snacks/M in parts_list)
-		color = M.filling_color
-		if(M.reagents)
-			M.reagents.remove_reagent(/datum/reagent/consumable/nutriment, M.reagents.total_volume)
-			M.reagents.trans_to(src, M.reagents.total_volume)
-		qdel(M)
 
 // -------------- SPIDER HONEY -----------------
 /obj/item/reagent_containers/food/snacks/rogue/honey
@@ -76,6 +44,10 @@
 	eat_effect = null
 	rotprocess = null
 
+
+/*------------------\
+| Drying Rack foods |
+\------------------*/
 
 /*	........   Drying Rack recipes   ................ */
 /datum/crafting_recipe/roguetown/cooking/salami
@@ -123,14 +95,63 @@
 
 /datum/crafting_recipe/roguetown/cooking/raisins
 	name = "raisins"
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 1)
+	reqs = list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue = 1)
 	parts = list(
-		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 1)
+		/obj/item/reagent_containers/food/snacks/produce/berries/rogue = 1)
+	blacklist = list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison)
 	result = /obj/item/reagent_containers/food/snacks/rogue/raisins
 	structurecraft = /obj/structure/fluff/dryingrack
 	req_table = FALSE
 	craftdiff = 0
 	subtype_reqs = TRUE
+
+/datum/crafting_recipe/roguetown/cooking/raisins_poison
+	name = "raisins"
+	reqs = list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison = 1)
+	parts = list(
+		/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison = 1)
+	result = /obj/item/reagent_containers/food/snacks/rogue/raisins/poison
+	structurecraft = /obj/structure/fluff/dryingrack
+	req_table = FALSE
+	craftdiff = 0
+	subtype_reqs = TRUE
+
+// -------------- RAISINS -----------------
+/obj/item/reagent_containers/food/snacks/rogue/raisins
+	name = "raisins"
+	icon = 'modular/Neu_Farming/icons/produce.dmi'
+	icon_state = "raisins5"
+	bitesize = 5
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
+	w_class = WEIGHT_CLASS_TINY
+	tastes = list("dried fruit" = 1)
+	foodtype = GRAIN
+	eat_effect = null
+	rotprocess = null
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/On_Consume(mob/living/eater)
+	..()
+	if(bitecount == 1)
+		icon_state = "raisins4"
+	if(bitecount == 2)
+		icon_state = "raisins3"
+	if(bitecount == 3)
+		icon_state = "raisins2"
+	if(bitecount == 4)
+		icon_state = "raisins1"
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/CheckParts(list/parts_list, datum/crafting_recipe/R)
+	..()
+	for(var/obj/item/reagent_containers/food/snacks/M in parts_list)
+		color = M.filling_color
+		if(M.reagents)
+			M.reagents.remove_reagent(/datum/reagent/consumable/nutriment, M.reagents.total_volume)
+			M.reagents.trans_to(src, M.reagents.total_volume)
+		qdel(M)
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/poison
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR, /datum/reagent/berrypoison = 4)
+	tastes = list("bitter dried fruit" = 1)
 
 
 // -------------- SALUMOI (dwarven smoked sausage) -----------------
@@ -259,14 +280,16 @@
 
 
 
-/* * * * * * * * * * * * * * *	*
- *								*
- *		Butter & Cheese			*
- *					 			*
- *								*
- * * * * * * * * * * * * * * * 	*/
+/*------------\
+| Salted milk |
+\------------*/		// The base for making butter and cheese
 
-/*	........   Salting milk (for butter & cheesemaking)   ................ */
+/datum/reagent/consumable/milk/gote
+	taste_description = "gote milk"
+
+/datum/reagent/consumable/milk/salted_gote
+	taste_description = "salty gote-milk"
+
 /datum/reagent/consumable/milk/salted
 	taste_description = "salty milk"
 
@@ -276,29 +299,45 @@
 		short_cooktime = (70 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
 		long_cooktime = (120 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/powder/salt))
-		if(!reagents.has_reagent(/datum/reagent/consumable/milk, 15))
+		if(!reagents.has_reagent(/datum/reagent/consumable/milk, 15) && !reagents.has_reagent(/datum/reagent/consumable/milk/gote, 15))
 			to_chat(user, "<span class='warning'>Not enough milk.</span>")
 			return
 		to_chat(user, "<span class='warning'>Adding salt to the milk.</span>")
 		playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
 		if(do_after(user,2 SECONDS, target = src))
-			reagents.remove_reagent(/datum/reagent/consumable/milk, 15)
-			reagents.add_reagent(/datum/reagent/consumable/milk/salted, 15)		
+			if(reagents.has_reagent(/datum/reagent/consumable/milk, 15))
+				reagents.remove_reagent(/datum/reagent/consumable/milk, 15)
+				reagents.add_reagent(/datum/reagent/consumable/milk/salted, 15)
+			if(reagents.has_reagent(/datum/reagent/consumable/milk/gote, 15))
+				reagents.remove_reagent(/datum/reagent/consumable/milk/gote, 15)
+				reagents.add_reagent(/datum/reagent/consumable/milk/salted_gote, 15)
 			qdel(I)
+
+
+
+/*-------\
+| Butter |
+\-------*/
 
 /*	............   Churning butter   ................ */
 /obj/item/reagent_containers/glass/bucket/wooden/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
 		long_cooktime = (200 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*20))	
 	if(istype(I, /obj/item/kitchen/spoon))
-		if(!reagents.has_reagent(/datum/reagent/consumable/milk/salted, 15))
+		if(!reagents.has_reagent(/datum/reagent/consumable/milk/salted, 15) && !reagents.has_reagent(/datum/reagent/consumable/milk/salted_gote, 15))
 			to_chat(user, "<span class='warning'>Not enough salted milk.</span>")
 			return
+		user.rogfat_add(40) // forgot rogfat is our lovely stamloss proc here
 		user.visible_message("<span class='info'>[user] churns butter...</span>")
 		playsound(get_turf(user), 'modular/Neu_Food/sound/churn.ogg', 100, TRUE, -1)
 		if(do_after(user,long_cooktime, target = src))
-			reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 15)
+			user.rogfat_add(50)
+			if(reagents.has_reagent(/datum/reagent/consumable/milk/salted, 15))
+				reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 15)
+			if(reagents.has_reagent(/datum/reagent/consumable/milk/salted_gote, 15))
+				reagents.remove_reagent(/datum/reagent/consumable/milk/salted_gote, 15)
 			new /obj/item/reagent_containers/food/snacks/butter(drop_location())
+			user.mind.adjust_experience(/datum/skill/craft/cooking, COMPLEX_COOKING_XPGAIN, FALSE)
 		return
 	..()
 
@@ -342,8 +381,13 @@
 	name = "butter"
 	desc = ""
 	foodtype = DAIRY
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 
+
+
+/*-------\
+| Cheese |
+\-------*/
 
 /*	............   Making fresh cheese   ................ */
 /obj/item/reagent_containers/glass/bucket/wooden/attackby(obj/item/I, mob/user, params)
@@ -355,7 +399,15 @@
 			playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
 			if(do_after(user,long_cooktime, target = src))
 				reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 5)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, COMPLEX_COOKING_XPGAIN, FALSE)
 				new /obj/item/reagent_containers/food/snacks/rogue/cheese(drop_location())
+		else if(reagents.has_reagent(/datum/reagent/consumable/milk/salted_gote, 5))
+			user.visible_message("<span class='info'>[user] strains fresh cheese...</span>")
+			playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
+			if(do_after(user,long_cooktime, target = src))
+				reagents.remove_reagent(/datum/reagent/consumable/milk/salted_gote, 5)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, COMPLEX_COOKING_XPGAIN, FALSE)
+				new /obj/item/reagent_containers/food/snacks/rogue/cheese/gote(drop_location())
 
 		var/obj/item/natural/cloth/T = I
 		if(T.wet && !T.return_blood_DNA())
@@ -374,9 +426,6 @@
 			return
 	..()
 
-
-
-
 /*	............   Making cheese wheel   ................ */
 /obj/item/natural/cloth/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -386,6 +435,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,3 SECONDS, target = src))
 				new /obj/item/reagent_containers/food/snacks/rogue/foodbase/cheesewheel_start(loc)
+				user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 				qdel(I)
 				qdel(src)
 			return
@@ -400,8 +450,8 @@
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/cheesewheel_start/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
-		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
@@ -421,8 +471,8 @@
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/cheesewheel_two/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
-		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
@@ -439,12 +489,13 @@
 	name = "unfinished cheese wheel"
 	icon_state = "cheesewheel_3"
 	w_class = WEIGHT_CLASS_BULKY
-	var/mature_proc = .proc/maturing_done
+	var/mature_proc = PROC_REF(maturing_done)
+
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/cheesewheel_three/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
-		short_cooktime = (60 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
@@ -466,8 +517,6 @@
 	qdel(src)
 
 
-
-
 // -------------- CHEESE -----------------
 /obj/item/reagent_containers/food/snacks/rogue/cheese
 	name = "fresh cheese"
@@ -481,6 +530,9 @@
 	rotprocess = SHELFLIFE_DECENT
 	become_rot_type = null
 	slice_path = null
+
+/obj/item/reagent_containers/food/snacks/rogue/cheese/gote
+	name = "fresh gote cheese"
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddar
 	name = "wheel of cheese"

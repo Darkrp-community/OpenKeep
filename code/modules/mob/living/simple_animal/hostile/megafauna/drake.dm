@@ -15,14 +15,14 @@ It acts as a melee creature, chasing down and attacking its target while also us
 Whenever possible, the drake will breathe fire directly at it's target, igniting and heavily damaging anything caught in the blast.
 It also often causes lava to pool from the ground around you - many nearby turfs will temporarily turn into lava, dealing damage to anything on the turfs.
 The drake also utilizes its wings to fly into the sky, flying after its target and attempting to slam down on them. Anything near when it slams down takes huge damage.
- - Sometimes it will chain these swooping attacks over and over, making swiftness a necessity.
- - Sometimes, it will encase its target in an arena of lava
+- Sometimes it will chain these swooping attacks over and over, making swiftness a necessity.
+- Sometimes, it will encase its target in an arena of lava
 
 When an ash drake dies, it leaves behind a chest that can contain four things:
- 1. A spectral blade that allows its wielder to call ghosts to it, enhancing its power
- 2. A lava staff that allows its wielder to create lava
- 3. A spellbook and wand of fireballs
- 4. A bottle of dragon's blood with several effects, including turning its imbiber into a drake themselves.
+1. A spectral blade that allows its wielder to call ghosts to it, enhancing its power
+2. A lava staff that allows its wielder to create lava
+3. A spellbook and wand of fireballs
+4. A bottle of dragon's blood with several effects, including turning its imbiber into a drake themselves.
 
 When butchered, they leave behind diamonds, sinew, bone, and ash drake hide. Ash drake hide can be used to create a hooded cloak that protects its wearer from ash storms.
 
@@ -31,14 +31,14 @@ Difficulty: Medium
 */
 
 /mob/living/simple_animal/hostile/megafauna/dragon
-	name = "Dragon"
-	desc = ""
+	name = "Wyvern"
+	desc = "<span class='warning'>Terror of Grimoria, Dendor's rage made manifest - Abandon all hope and save yourselves!</span>"
 	health = 5500
 	maxHealth = 5500
 	attack_verb_continuous = "chomps"
 	attack_verb_simple = "chomp"
 	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/vo/mobs/dragon/attack.ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
-	icon = 'icons/mob/lavaland/96x96megafauna.dmi'
+	icon = 'icons/roguetown/mob/monster/wyvern.dmi'
 	icon_state = "dragon"
 	icon_living = "dragon"
 	icon_dead = "dragon_dead"
@@ -54,10 +54,13 @@ Difficulty: Medium
 	defdrain = 40
 	melee_damage_lower = 70
 	melee_damage_upper = 100
+	damage_coeff = list(BRUTE = 1, BURN = 0, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1) //Sets burn to 0, otherwise it eventually just burns itself to death.
 	move_to_delay = 2
 	base_intents = list(/datum/intent/simple/bigbite)
 	ranged = TRUE
-	pixel_x = -16
+	mouse_opacity = MOUSE_OPACITY_ICON
+	pixel_x = -32
+	pixel_y = -16
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
 	loot = list(/obj/structure/closet/crate/necropolis/dragon)
 	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
@@ -292,7 +295,7 @@ Difficulty: Medium
 		new /obj/effect/hotspot(T)
 		T.hotspot_expose(700,50,1)
 		for(var/mob/living/L in T.contents)
-			if(L in hit_list || L == source)
+			if((L in hit_list) || L == source)
 				continue
 			hit_list += L
 			L.adjustFireLoss(20)
@@ -490,7 +493,7 @@ Difficulty: Medium
 /obj/effect/temp_visual/dragon_swoop
 	name = "certain death"
 	desc = ""
-	icon = 'icons/effects/96x96.dmi'
+	icon = 'icons/roguetown/mob/monster/wyvern.dmi'
 	icon_state = "landing"
 	layer = BELOW_MOB_LAYER
 	pixel_x = -32
@@ -499,8 +502,8 @@ Difficulty: Medium
 	duration = 10
 
 /obj/effect/temp_visual/dragon_flight
-	icon = 'icons/mob/lavaland/96x96megafauna.dmi'
-	icon_state = "dragon"
+	icon = 'icons/roguetown/mob/monster/wyvern.dmi'
+	icon_state = "dragon_shadow"
 	layer = ABOVE_ALL_MOB_LAYER
 	pixel_x = -16
 	duration = 10
@@ -534,7 +537,7 @@ Difficulty: Medium
 	else
 		animate(src, pixel_x = -16, pixel_z = 0, time = 5)
 
-obj/effect/temp_visual/fireball
+/obj/effect/temp_visual/fireball
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "fireball"
 	name = "fireball"
@@ -584,7 +587,8 @@ obj/effect/temp_visual/fireball
 			L.adjustFireLoss(10) //if we've already hit them, do way less damage
 
 /mob/living/simple_animal/hostile/megafauna/dragon/lesser
-	name = "lesser ash drake"
+	name = "wyvern fledgling"
+	desc = "Foul winged vermin! Destroy it, before its wingspan eclipses our very Sun."
 	maxHealth = 200
 	health = 200
 	faction = list("neutral")
@@ -592,7 +596,7 @@ obj/effect/temp_visual/fireball
 	melee_damage_upper = 30
 	melee_damage_lower = 30
 	mouse_opacity = MOUSE_OPACITY_ICON
-	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
+	damage_coeff = list(BRUTE = 1, BURN = 0.2, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
 	loot = list()
 	crusher_loot = list()
 	butcher_results = list(/obj/item/stack/ore/diamond = 1, /obj/item/stack/sheet/sinew = 1, /obj/item/stack/sheet/bone = 2)

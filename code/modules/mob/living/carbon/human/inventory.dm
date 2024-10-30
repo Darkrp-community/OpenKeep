@@ -107,7 +107,7 @@
 
 //This is an UNSAFE proc. Use mob_can_equip() before calling this one! Or rather use equip_to_slot_if_possible() or advanced_equip_to_slot_if_possible()
 // Initial is used to indicate whether or not this is the initial equipment (job datums etc) or just a player doing it
-/mob/living/carbon/human/equip_to_slot(obj/item/I, slot, initial = FALSE)
+/mob/living/carbon/human/equip_to_slot(obj/item/I, slot, initial)
 	if(!..()) //a check failed or the item has already found its slot
 		return
 
@@ -298,7 +298,8 @@
 			dropItemToGround(beltr, TRUE, silent = FALSE)
 			dropItemToGround(beltl, TRUE, silent = FALSE)
 		var/obj/item/storage/S = I
-		S.emptyStorage()
+		if(istype(S))
+			S.emptyStorage()
 		belt = null
 		if(!QDELETED(src))
 			update_inv_belt()

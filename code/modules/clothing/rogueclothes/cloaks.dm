@@ -6,6 +6,8 @@
 	desc = "A simple cloak covering the body."
 	edelay_type = 1
 	equip_delay_self = 10
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
 	bloody_icon_state = "bodyblood"
 	sewrepair = TRUE
 	anvilrepair = null
@@ -90,7 +92,7 @@
 	return
 
 /obj/item/clothing/cloak/tabard/knight/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -104,7 +106,7 @@
 	detail_tag = "_psy"
 
 /obj/item/clothing/cloak/tabard/crusader/Initialize()
-	..()
+	. = ..()
 	update_icon()
 
 /obj/item/clothing/cloak/tabard/crusader/attack_right(mob/user)
@@ -185,7 +187,7 @@
 		L.update_inv_cloak()
 
 /obj/item/clothing/cloak/tabard/knight/guard/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -212,6 +214,17 @@
 	GLOB.lordcolor -= src
 	return ..()
 
+/obj/item/clothing/cloak/tabard/adept
+	detail_tag = "_psy"
+	color = CLOTHING_BLACK
+	detail_color = CLOTHING_WHITE
+
+/obj/item/clothing/cloak/tabard/adept/Initialize()
+	..()
+	update_icon()
+
+/obj/item/clothing/cloak/tabard/adept/attack_right(mob/user)
+	return
 
 //////////////////////////
 /// SOLDIER TABARD
@@ -296,7 +309,7 @@
 		L.update_inv_cloak()
 
 /obj/item/clothing/cloak/stabard/guard/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -333,7 +346,7 @@
 	detail_tag = "_quad"
 
 /obj/item/clothing/cloak/stabard/mercenary/Initialize()
-	..()
+	. = ..()
 	detail_tag = pick("_quad", "_spl", "_box", "_dim")
 	color = clothing_color2hex(pick(CLOTHING_COLOR_NAMES))
 	detail_color = clothing_color2hex(pick(CLOTHING_COLOR_NAMES))
@@ -490,7 +503,7 @@
 
 
 /obj/item/clothing/cloak/stabard/surcoat/guard/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -543,7 +556,7 @@
 		L.update_inv_cloak()
 
 /obj/item/clothing/cloak/lordcloak/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -683,6 +696,10 @@
 /obj/item/clothing/cloak/raincloak/blue
 	color = CLOTHING_BLUE
 
+/obj/item/clothing/cloak/raincloak/random/Initialize()
+	color = pick(CLOTHING_RED, CLOTHING_PURPLE, CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_BLUE)
+	..()
+
 /obj/item/clothing/head/hooded/rainhood
 	name = "hood"
 	desc = "A hood that's attached to the raincoat."
@@ -690,7 +707,7 @@
 	item_state = "rain_hood"
 	slot_flags = ITEM_SLOT_HEAD
 	dynamic_hair_suffix = ""
-	edelay_type = 1
+	edelay_type = 1 // Leaving as 1 so you get that small do_after for dramatic purposes
 	body_parts_covered = HEAD
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	block2add = FOV_BEHIND
@@ -760,10 +777,6 @@
 	return ..()
 
 
-/obj/item/clothing/cloak/cape/puritan
-	icon_state = "puritan_cape"
-	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
-
 /obj/item/clothing/cloak/cape/archivist
 	icon_state = "puritan_cape"
 	color = CLOTHING_BLACK
@@ -805,6 +818,7 @@
 	sleeved = null
 	sleevetype = null
 	body_parts_covered = null
+	flags_inv = null
 
 /obj/item/clothing/cloak/stole/red
 	icon_state = "stole_red"
@@ -871,6 +885,20 @@
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = list("human", "tiefling", "elf", "aasimar")
 
+/obj/item/clothing/cloak/half/shadowcloak
+	name = "stalker cloak"
+	desc = "A heavy leather cloak held together by a gilded pin. The pin depicts a spider with disconnected legs."
+	icon_state = "shadowcloak"
+	color = null
+	allowed_race = list("elf", "dark elf")
+
+/obj/item/clothing/cloak/half/shadowcloak/cult
+	name = "ominous cloak"
+	desc = "Those who wear, thy should beware, for those who do; never come back as who they once were again."
+	allowed_race = ALL_RACES_LIST
+	body_parts_covered = ARMS|CHEST
+	armor = ARMOR_STEEL_BAD
+
 /obj/item/clothing/cloak/half/brown
 	color = CLOTHING_BROWN
 
@@ -886,7 +914,7 @@
 	inhand_mod = FALSE
 
 /obj/item/clothing/cloak/half/vet/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -895,6 +923,34 @@
 /obj/item/clothing/cloak/half/vet/Destroy()
 	GLOB.lordcolor -= src
 	return ..()
+
+/obj/item/clothing/cloak/half/random/Initialize()
+	color = pick(CLOTHING_RED, CLOTHING_PURPLE, CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_BLUE)
+	..()
+
+//............... Battle Nun ........................... (unique kit for the role, tabard for aesthetics)
+/obj/item/clothing/cloak/battlenun
+	name = "nun vestments"
+	desc = "Chaste, righteous, merciless to the wicked."
+	color = null
+	icon_state = "battlenun"
+	item_state = "battlenun"
+	allowed_sex = list(FEMALE)
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+//.............inquisitor cloaks......... (For inquisitors..)
+/obj/item/clothing/cloak/cape/puritan
+	icon_state = "puritan_cape"
+	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
+
+/obj/item/clothing/cloak/cape/inquisitor
+	name = "Inquisitors Cloak"
+	desc = "A time honored cloak Valorian design, used by founding clans of the Valorian Lodge"
+	icon_state = "inquisitor_cloak"
+	icon = 'icons/roguetown/clothing/cloaks.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
 
 // Dumping old black knight stuff here
 /obj/item/clothing/cloak/cape/blkknight
@@ -906,6 +962,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/blkknight
 	name = "blacksteel helmet"
+	desc = "A helmet black as nite, with blue decorations. Instills fear upon those that gaze upon it."
 	icon_state = "bkhelm"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
@@ -941,20 +998,22 @@
 	sellprice = 666
 	static_price = TRUE
 
-/obj/item/clothing/suit/roguetown/armor/plate/blkknight
-	slot_flags = ITEM_SLOT_ARMOR
-	name = "blacksteel plate"
-	body_parts_covered = CHEST|GROIN|VITALS|ARMS
-	r_sleeve_status = SLEEVE_NOMOD
-	l_sleeve_status = SLEEVE_NOMOD
-	icon_state = "bkarmor"
-	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
-	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
-
 /obj/item/clothing/shoes/roguetown/boots/armor/blkknight
 	name = "blacksteel boots"
 	icon_state = "bkboots"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
+
+
+/obj/item/clothing/cloak/volfmantle
+	name = "volf mantle"
+	desc = "A warm cloak made using the hide and head of a slain volf. A status symbol if ever there was one."
+	color = null
+	icon_state = "volfpelt"
+	item_state = "volfpelt"
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	inhand_mod = FALSE
+	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK

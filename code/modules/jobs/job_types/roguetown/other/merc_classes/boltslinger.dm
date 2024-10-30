@@ -22,8 +22,8 @@
 	cloak = /obj/item/clothing/cloak/half
 	head = /obj/item/clothing/head/roguetown/helmet/sallet
 	gloves = /obj/item/clothing/gloves/roguetown/angle
-	belt = /obj/item/storage/belt/rogue/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
+	belt = /obj/item/storage/belt/rogue/leather/mercenary
+	armor = /obj/item/clothing/suit/roguetown/armor/cuirass
 	beltr = /obj/item/rogueweapon/sword/iron
 	beltl = /obj/item/quiver/bolts
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
@@ -31,7 +31,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/rogueweapon/huntingknife)
+	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/rogueweapon/huntingknife)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
@@ -49,6 +49,9 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+
+		H.merctype = 6
+
 		H.change_stat("perception", 3)
 		H.change_stat("endurance", 1)
 		H.change_stat("strength", 1)
