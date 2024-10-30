@@ -182,6 +182,14 @@
 	produce_amount_max = 3
 	maturation_time = FAST_GROWING
 
+/datum/plant_def/poppy
+	name = "poppies"
+	icon_state = "poppy"
+	produce_type = /obj/item/reagent_containers/food/snacks/produce/poppy
+	produce_amount_min = 1
+	produce_amount_max = 2
+	maturation_nutrition = HUNGRINESS_DEMANDING
+
 /*
 /datum/plant_def/garlic
 	name = "garlic patch"
