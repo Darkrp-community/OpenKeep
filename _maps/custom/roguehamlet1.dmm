@@ -2145,7 +2145,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/basement)
 "cya" = (
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /obj/structure/closet/crate/roguecloset/lord{
 	lockid = "nightman"
 	},
@@ -2414,7 +2414,7 @@
 /obj/item/neuFarm/seed/oat,
 /obj/item/neuFarm/seed/apple,
 /obj/item/neuFarm/seed/apple,
-/obj/item/neuFarm/seed/pipeweed,
+/obj/item/neuFarm/seed/westleach,
 /obj/item/clothing/mask/cigarette/pipe/westman,
 /obj/structure/closet/crate/roguecloset/inn/chest,
 /turf/open/floor/rogue/dirt/road,
@@ -4098,9 +4098,9 @@
 "ezG" = (
 /obj/item/neuFarm/seed/wheat,
 /obj/item/neuFarm/seed/apple,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
 /obj/structure/closet/crate/roguecloset/inn/chest,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
@@ -5554,7 +5554,7 @@
 /area/rogue/indoors/town/tavern)
 "gdJ" = (
 /obj/structure/fluff/dryingrack,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"
@@ -6026,7 +6026,7 @@
 /obj/item/clothing/mask/cigarette/pipe{
 	pixel_y = 14
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_y = 7
 	},
 /obj/item/storage/box/matches,
@@ -9337,7 +9337,7 @@
 	},
 /obj/structure/closet/crate/roguecloset/lord,
 /obj/item/clothing/mask/cigarette/pipe/westman,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
 /obj/item/reagent_containers/glass/cup/golden,
 /turf/open/floor/rogue/concrete,
@@ -11365,12 +11365,12 @@
 /area/rogue/indoors/town/magician)
 "msG" = (
 /obj/structure/closet/crate/roguecloset/inn/chest,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "msX" = (
@@ -13997,8 +13997,8 @@
 /obj/effect/decal/cobbleedge{
 	dir = 10
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"
@@ -19690,8 +19690,8 @@
 /obj/item/clothing/mask/cigarette/rollie/nicotine,
 /obj/item/clothing/mask/cigarette/rollie/nicotine,
 /obj/item/clothing/mask/cigarette/rollie/nicotine,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /obj/item/clothing/mask/cigarette/pipe,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)

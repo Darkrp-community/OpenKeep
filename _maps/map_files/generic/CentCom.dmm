@@ -732,14 +732,14 @@
 /obj/item/clothing/mask/cigarette/pipe/westman{
 	pixel_y = 10
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = -2;
 	pixel_y = 12
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = 2;
 	pixel_y = 7
 	},
@@ -3881,11 +3881,11 @@
 /area/rogue)
 "Qv" = (
 /obj/structure/table/wood/plain_alt,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = 4;
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = 7;
 	pixel_y = 7
 	},

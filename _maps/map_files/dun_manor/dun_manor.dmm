@@ -5447,8 +5447,8 @@
 "fmT" = (
 /obj/structure/closet/crate/chest/crate,
 /obj/item/reagent_containers/food/snacks/produce/swampweed_dried,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /obj/item/reagent_containers/food/snacks/produce/swampweed,
 /obj/item/reagent_containers/food/snacks/produce/swampweed,
 /obj/item/clothing/mask/cigarette/pipe/crafted,
@@ -9872,15 +9872,15 @@
 	pixel_x = 4;
 	pixel_y = -8
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = -4;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = -4;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = -4;
 	pixel_y = 8
 	},
@@ -24155,8 +24155,8 @@
 "xKf" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/item/clothing/mask/cigarette/pipe/westman,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
 /obj/item/neuFarm/seed/apple,
 /obj/item/neuFarm/seed/oat,
 /obj/item/neuFarm/seed/sunflower,
@@ -24462,7 +24462,7 @@
 	},
 /obj/structure/closet/crate/chest/wicker,
 /obj/item/neuFarm/seed/sunflower,
-/obj/item/neuFarm/seed/pipeweed,
+/obj/item/neuFarm/seed/westleach,
 /obj/item/neuFarm/seed/cabbage,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"

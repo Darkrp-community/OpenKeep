@@ -4416,8 +4416,8 @@
 "eGC" = (
 /obj/structure/closet/crate/chest/neu_iron,
 /obj/item/reagent_containers/food/snacks/produce/swampweed_dried,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /obj/item/reagent_containers/food/snacks/produce/swampweed,
 /obj/item/reagent_containers/food/snacks/produce/swampweed,
 /obj/item/clothing/mask/cigarette/pipe/crafted,
@@ -5705,9 +5705,9 @@
 "fXC" = (
 /obj/item/clothing/mask/cigarette/pipe/westman,
 /obj/structure/closet/crate/chest/wicker,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "fXO" = (
@@ -5837,7 +5837,7 @@
 /area/rogue/indoors/town/tavern/saiga)
 "gdJ" = (
 /obj/structure/fluff/dryingrack,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"
@@ -6317,7 +6317,7 @@
 /obj/item/clothing/mask/cigarette/pipe{
 	pixel_y = 14
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_y = 7
 	},
 /obj/item/storage/box/matches,
@@ -9806,7 +9806,7 @@
 	},
 /obj/structure/closet/crate/chest/neu_iron,
 /obj/item/clothing/mask/cigarette/pipe/westman,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/town/basement)
 "kkq" = (
@@ -11834,12 +11834,12 @@
 /area/rogue/indoors/town/magician)
 "msG" = (
 /obj/structure/closet/crate/chest/old_crate,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "msX" = (
@@ -12230,10 +12230,10 @@
 /obj/structure/closet/crate/chest/neu,
 /obj/item/clothing/mask/cigarette/pipe,
 /obj/item/clothing/mask/cigarette/pipe,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /obj/machinery/light/rogue/wallfire/candle/weak/r,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/bath/redhouse)
@@ -14515,8 +14515,8 @@
 /obj/effect/decal/cobbleedge{
 	dir = 10
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"
@@ -20397,8 +20397,8 @@
 /obj/item/clothing/mask/cigarette/rollie/nicotine,
 /obj/item/clothing/mask/cigarette/rollie/nicotine,
 /obj/item/clothing/mask/cigarette/rollie/nicotine,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /obj/item/clothing/mask/cigarette/pipe,
 /obj/item/storage/fancy/cigarettes/zig,
 /obj/item/storage/fancy/cigarettes/zig,

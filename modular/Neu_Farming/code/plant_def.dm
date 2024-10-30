@@ -97,7 +97,7 @@
 /datum/plant_def/pipeweed
 	name = "westleach leaf"
 	icon_state = "westleach"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/pipeweed
+	produce_type = /obj/item/reagent_containers/food/snacks/produce/westleach
 	produce_amount_min = 3
 	produce_amount_max = 6
 	water_drain_rate = 0

@@ -221,7 +221,7 @@
 	filling_color = "#008000"
 	bitesize_mod = 1
 	foodtype = VEGETABLES
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 1)
 	tastes = list("sweet" = 1,"bitterness" = 1)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
@@ -245,17 +245,17 @@
 	sellprice = 2
 
 
-/*	..................   Pipe weed   ................... */
-/obj/item/reagent_containers/food/snacks/produce/pipeweed
-	seed = /obj/item/neuFarm/seed/pipeweed
-	name = "pipeweed"
-	desc = "A common, strong-smelling leaf that is often dried and smoked. Also known as Westleach leaves."
+/*	..................   Westleach leaf   ................... */
+/obj/item/reagent_containers/food/snacks/produce/westleach
+	seed = /obj/item/neuFarm/seed/westleach
+	name = "westleach leaf"
+	desc = "A common, strong-smelling leaf that is often dried and smoked. Also known as pipeweed."
 	icon_state = "westleach"
 	filling_color = "#008000"
 	bitesize_mod = 1
 	foodtype = VEGETABLES
 	tastes = list("sweet" = 1,"bitterness" = 1)
-	list_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
+	list_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 2)
 	grind_results = list(/datum/reagent/drug/nicotine = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
@@ -263,9 +263,9 @@
 	dust_result = /obj/item/alch/tobaccodust
 	sellprice = 0 // only dried has value
 
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach
 	seed = null
-	name = "dries pipeweed"
+	name = "dried westleach leaf"
 	desc = "A common, strong-smelling leaf dried for smoking."
 	icon_state = "westleachd"
 	dry = TRUE

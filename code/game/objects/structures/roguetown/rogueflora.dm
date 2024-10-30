@@ -289,7 +289,7 @@
 	if(prob(88))
 		bushtype = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/jacksberries=5,
 					/obj/item/reagent_containers/food/snacks/produce/jacksberries/poison=3,
-					/obj/item/reagent_containers/food/snacks/produce/pipeweed=2))
+					/obj/item/reagent_containers/food/snacks/produce/westleach=2))
 	loot_replenish()
 	pixel_x += rand(-3,3)
 	return ..()
@@ -800,7 +800,7 @@
 		if(prob(30))
 			tobacco = TRUE
 			berries = FALSE
-			goodie = /obj/item/reagent_containers/food/snacks/produce/pipeweed
+			goodie = /obj/item/reagent_containers/food/snacks/produce/westleach
 		else
 			tobacco = FALSE
 			berries = TRUE
