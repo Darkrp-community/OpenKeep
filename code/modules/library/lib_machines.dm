@@ -160,7 +160,7 @@
 	var/datum/DBQuery/query_print_manuscript = SSdbcore.NewQuery({"
 		SELECT author, title, content, category, ckey, select_icon
 		FROM library
-		WHERE id = :id AND isnull(deleted)
+		WHERE id = :id AND isnull(deleted) AND approved = 1
 	"}, list("id" = sqlid))
 
 	if (query_print_manuscript.Execute() && query_print_manuscript.NextRow())
@@ -203,7 +203,7 @@
 
 /obj/machinery/printingpress/proc/search_manuscripts(mob/user, search_title, search_author, search_category)
 	var/list/params = list()
-	var/sqlquery = "SELECT id, author, title, category FROM library WHERE isnull(deleted) AND category != 'Apocrypha & Grimoires'" // Exclude forbidden category
+	var/sqlquery = "SELECT id, author, title, category FROM library WHERE isnull(deleted) AND approved = 1 AND category != 'Apocrypha & Grimoires'" // Exclude forbidden category
 
 	if (search_author && search_author != "")
 		sqlquery += " AND author LIKE :author"
@@ -328,9 +328,9 @@
 /obj/item/paper/manuscript/attackby(obj/item/P, mob/living/carbon/human/user, params)
 	if(istype(P, /obj/item/natural/feather) && !written)
 		// Prompt user to populate manuscript fields
-		var/newtitle = dd_limittext(sanitize_hear_message(input(user, "Enter the title of the manuscript:") as text|null), MAX_NAME_LEN)
-		var/newauthor = sanitize_hear_message(input(user, "Enter the author's name:") as text|null)
-		var/newcontent = "<p>[input(user, "Enter the content of the manuscript:") as text|null]</p>"
+		var/newtitle = dd_limittext(sanitize_hear_message(input(user, "Enter the title of the manuscript:") as text|null), MAX_CHARTER_LEN)
+		var/newauthor = dd_limittext(sanitize_hear_message(input(user, "Enter the author's name:") as text|null), MAX_CHARTER_LEN)
+		var/newcontent = "<p>[dd_limittext(input(user, "Enter the content of the manuscript:") as text|null, MAX_BOOK_LEN)]</p>"
 		var/newcategory = input(user, "Select the category of the manuscript:") in list("Apocrypha & Grimoires", "Myths & Tales", "Legends & Accounts", "Thesis", "Eoratica")
 		var/newicon = book_icons[input(user, "Choose a book style", "Book Style") as anything in book_icons]
 
