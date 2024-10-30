@@ -25,7 +25,7 @@
 /datum/crafting_recipe/roguetown/turfs/daubwall
 	name = "daub wall"
 	result = /turf/closed/wall/mineral/rogue/decowood
-		reqs = list(/obj/item/grown/log/tree/stick = 3, /obj/item/natural/dirtclod = 2)
+	reqs = list(/obj/item/grown/log/tree/stick = 3, /obj/item/natural/dirtclod = 2)
 	skillcraft = /datum/skill/craft/crafting
 	verbage = "build"
 	verbage_tp = "builds"
