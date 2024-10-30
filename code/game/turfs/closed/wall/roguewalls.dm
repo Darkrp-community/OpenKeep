@@ -232,8 +232,8 @@
 	icon_state = "roofTurf_IC"
 
 /turf/closed/wall/mineral/rogue/decowood
-	name = "decorated wooden wall"
-	desc = "This one is a fancy wooden wall."
+	name = "daub wall"
+	desc = "a wattle and daub wall."
 	icon = 'icons/turf/roguewall.dmi'
 	icon_state = "decowood"
 	smooth = SMOOTH_FALSE
