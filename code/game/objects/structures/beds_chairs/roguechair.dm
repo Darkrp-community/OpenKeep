@@ -373,6 +373,7 @@
 
 // ------------ UNCOMFORTABLE BEDS ----------------------
 /obj/structure/bed/rogue/shit
+	name = "uncomfortable bed"
 	icon_state = "shitbed"
 	sleepy = 0.5
 
