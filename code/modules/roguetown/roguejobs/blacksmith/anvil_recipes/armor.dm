@@ -250,7 +250,7 @@
 
 /datum/anvil_recipe/armor/helmetslitkettle
 	name = "Slitted Kettle helmet x2"
-	recipe_name = "a pair of Slitted Kettle Helmets"
+	recipe_name = "a pair of slitted kettle helmets"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/roguetown/helmet/slitkettle
 	createmultiple = TRUE
@@ -259,7 +259,7 @@
 
 /datum/anvil_recipe/armor/froghelmet
 	name = "Frog helmet"
-	recipe_name = "a Frog Helmet"
+	recipe_name = "a frog helmet"
 	req_bar = /obj/item/ingot/steel
 	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/frog)
 	craftdiff = 2
