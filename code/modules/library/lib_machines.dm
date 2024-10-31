@@ -160,7 +160,7 @@
 	var/datum/DBQuery/query_print_manuscript = SSdbcore.NewQuery({"
 		SELECT author, title, content, category, ckey, select_icon
 		FROM library
-		WHERE id = :id AND isnull(deleted) AND approved = 1
+		WHERE id = :id AND deleted <> 1 AND approved = 1
 	"}, list("id" = sqlid))
 
 	if (query_print_manuscript.Execute() && query_print_manuscript.NextRow())
@@ -203,7 +203,7 @@
 
 /obj/machinery/printingpress/proc/search_manuscripts(mob/user, search_title, search_author, search_category)
 	var/list/params = list()
-	var/sqlquery = "SELECT id, author, title, category FROM library WHERE isnull(deleted) AND approved = 1 AND category != 'Apocrypha & Grimoires'" // Exclude forbidden category
+	var/sqlquery = "SELECT id, author, title, category FROM library WHERE deleted <> 1 AND approved = 1 AND category != 'Apocrypha & Grimoires'" // Exclude forbidden category
 
 	if (search_author && search_author != "")
 		sqlquery += " AND author LIKE :author"

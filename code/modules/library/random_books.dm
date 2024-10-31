@@ -26,7 +26,7 @@
 	// First, get the total number of available books in the category
 	var/datum/DBQuery/query_count_books = SSdbcore.NewQuery({"
 		SELECT COUNT(*) FROM library
-		WHERE isnull(deleted) AND approved = 1 AND (:category IS NULL OR category = :category)
+		WHERE deleted <> 1 AND approved = 1 AND (:category IS NULL OR category = :category)
 	"}, list("category" = src.category))
 
 	var/total_books = 0
@@ -136,7 +136,7 @@
 	var/datum/DBQuery/query_get_random_book = SSdbcore.NewQuery({"
 		SELECT author, title, content, category, select_icon
 		FROM library
-		WHERE isnull(deleted) AND approved = 1 AND category = :category
+		WHERE deleted <> 1 AND approved = 1 AND category = :category
 		ORDER BY RAND() LIMIT 1
 	"}, list("category" = book_category))
 
