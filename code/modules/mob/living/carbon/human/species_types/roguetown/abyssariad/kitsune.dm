@@ -35,7 +35,7 @@ for the mouth with opens with a emote (or bite intention).<<<
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "ears" = "Vulp", "tail_human" = "VulpianiV", "kitsune_tongue" = "eldritch")
 	use_skintones = 1
-	possible_ages = list(AGE_IMMORTAL) //Abyssariads are Immortal. However, if they become stray from Abyssor - they suffer severe dementia after some decades.
+	possible_ages = list(AGE_IMMORTAL) //Abyssariads are Immortal. However, if they become stray from Abyssor - they suffer severe dementia, and after some decades, become Dais.
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = MEAT

@@ -2,4 +2,24 @@
 # Basically, a list of ckeys who make it past user connection                                 #
 # Case is not important for ckey.                                                             #
 ###############################################################################################
-Dekkar
+#RUINEREK
+#Polyushko
+#dimmadunk 
+#TheMojaveWanderer
+#Croike
+#SeisoStingray
+#N7Slayer
+#BladeburstNINJA
+#IXIAragon
+#SpartanBobby
+#Rosetango
+#IXIAragon
+#Snek_The_Great
+#blackcat055
+#Mailbob
+#rebel0
+#EpicToaster01398
+#Murdo_of_Astora
+#dimosek
+#Abaddonius
+Psydon

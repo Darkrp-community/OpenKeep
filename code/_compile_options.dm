@@ -1,4 +1,4 @@
-#define TESTING				//By using the testing("message") proc you can create debug-feedback for people with this
+//#define TESTING				//By using the testing("message") proc you can create debug-feedback for people with this
 								//uncommented, but not visible in the release version)
 
 //#define DATUMVAR_DEBUGGING_MODE	//Enables the ability to cache datum vars and retrieve later for debugging which vars changed.
@@ -56,18 +56,18 @@
 #endif
 
 //Additional code for the above flags.
-#ifdef TESTING
-#warn compiling in TESTING mode. testing() debug messages will be visible.
-#endif
+//#ifdef TESTING
+//#warn compiling in TESTING mode. testing() debug messages will be visible.
+//#endif
 
-#ifdef GC_FAILURE_HARD_LOOKUP
-#define FIND_REF_NO_CHECK_TICK
-#endif
+//#ifdef GC_FAILURE_HARD_LOOKUP
+//#define FIND_REF_NO_CHECK_TICK
+//#endif
 
-#ifdef TRAVISBUILDING
-#define UNIT_TESTS
-#endif
+//#ifdef TRAVISBUILDING
+//#define UNIT_TESTS
+//#endif
 
-#ifdef TRAVISTESTING
-#define TESTING
-#endif
+//#ifdef TRAVISTESTING
+//#define TESTING
+//#endif

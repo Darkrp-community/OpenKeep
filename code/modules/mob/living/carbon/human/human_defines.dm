@@ -105,6 +105,7 @@
 	var/canseebandits = FALSE
 
 	var/marriedto
+	var/bondedto
 
 	var/has_stubble = TRUE
 

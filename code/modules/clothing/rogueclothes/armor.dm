@@ -316,8 +316,7 @@
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
 	blocksound = SOFTHIT
-	resistance_flags = FLAMMABLE
-	allowed_sex = list(FEMALE)
+	allowed_sex = list("female")
 	allowed_race = list("human", "tiefling", "elf", "aasimar", "abyssariad")
 	blade_dulling = DULLING_BASHCHOP
 	break_sound = 'sound/foley/cloth_rip.ogg'
@@ -373,9 +372,7 @@
 	desc = "Similar to a gambeson, it is meant to be used under heavier armor."
 	icon_state = "dgamb"
 	allowed_sex = list(MALE)
-	body_parts_covered = CHEST|ARMS|VITALS|GROIN
 	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
-	sellprice = 40
 
 /obj/item/clothing/suit/roguetown/armor/leather
 	slot_flags = ITEM_SLOT_ARMOR
