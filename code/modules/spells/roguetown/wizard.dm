@@ -155,6 +155,8 @@
 			var/mob/living/carbon/human/H = target
 			var/datum/antagonist/vampirelord/VDrinker = sender.mind.has_antag_datum(/datum/antagonist/vampirelord)
 			H.blood_volume = max(H.blood_volume-45, 0)
+			var/boon = sender.mind?.get_learning_boon(/datum/skill/magic/blood)
+			var/amt2raise = sender.STAINT*2
 			sender.mind?.adjust_experience(/datum/skill/magic/blood, floor(amt2raise * boon), FALSE)
 			H.handle_blood()
 			H.visible_message("<span class='danger'>[target] has their blood ripped from their body!!</span>", \
