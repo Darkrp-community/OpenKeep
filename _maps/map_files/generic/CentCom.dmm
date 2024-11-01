@@ -1409,6 +1409,10 @@
 /obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue)
+"fn" = (
+/obj/effect/landmark/start/evilskeleton,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/bog/inhumen_camp)
 "fp" = (
 /obj/machinery/light/rogue/hearth,
 /obj/item/cooking/pan,
@@ -20540,7 +20544,7 @@ pC
 VB
 VB
 LL
-Zt
+fn
 Zt
 UJ
 VB

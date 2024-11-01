@@ -339,6 +339,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 
+/obj/effect/landmark/start/evilskeleton	// Trying to make EVIL SKELTON actually spawn
+	name = "Skeleton"
+	icon = 'icons/mob/actions/roguespells.dmi'
+	icon_state = "raiseskele"
+	alpha = 20
+	delete_after_roundstart = FALSE
+
 // START LANDMARKS FOLLOW. Don't change the names unless
 // you are refactoring shitty landmark code.
 /obj/effect/landmark/start/assistant
