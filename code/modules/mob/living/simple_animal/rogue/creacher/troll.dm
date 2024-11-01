@@ -5,6 +5,7 @@
 	icon_state = "Troll2"
 	icon_living = "Troll2"
 	icon_dead = "Troll2d"
+	pixel_x = -16
 
 	faction = list("orcs")
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -32,7 +33,7 @@
 
 	health = TROLL_HEALTH
 	maxHealth = TROLL_HEALTH
-	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat,
+	food_type = list(
 					/obj/item/bodypart,
 					/obj/item/organ)
 
@@ -174,10 +175,10 @@
 	melee_damage_upper = 40
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 							/obj/item/alch/sinew = 1,
 							/obj/item/alch/bone = 1)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 							/obj/item/alch/sinew = 2,
 							/obj/item/alch/bone = 1,
 							/obj/item/natural/fur/cabbit = 1)
