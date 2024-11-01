@@ -110,8 +110,8 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/Moved()
 	. = ..()
-	if(icon_state == "Trollso")
-		icon_state = "Trolla"
+	if(!icon_state == "Troll")
+		icon_state = "Troll"
 
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/GiveTarget()
