@@ -564,6 +564,23 @@
 	armor = ARMOR_STEEL_BAD
 	body_parts_covered = HEAD|HAIR
 
+//................ Kettle Helmet (Slitted)............... //
+/obj/item/clothing/head/roguetown/helmet/slitkettle
+	name = "kettle helmet"
+	desc = "A lightweight steel helmet generally worn by crossbowmen and garrison archers. This one has eyeslits for the paranoid."
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	icon_state = "slitkettle"
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS
+	smeltresult = /obj/item/ash
+	sellprice = VALUE_CHEAP_IRON_HELMET
+
+	armor = ARMOR_STEEL_BAD
+	body_parts_covered = HEAD|HAIR
+
 //................ CULTIST HOOD ............... //
 /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous/cult
 	name = "ominous hood"
@@ -871,7 +888,18 @@
 
 	max_integrity = INTEGRITY_STANDARD // shitty rusted iron
 
+//............... Frog Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/frog
+	name = "frog helmet"
+	desc = "A thick, heavy helmet that severely obscures the wearer's vision. Still rather protective."
+	icon_state = "froghelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
+	armor = ARMOR_STEEL_BEST
+	prevent_crits = ALL_CRITICAL_HITS
 
 //............... Temple heavy helmets ......................//
 //............... Astrata Helmet ............... //
