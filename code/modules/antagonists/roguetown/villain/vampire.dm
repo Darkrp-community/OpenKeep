@@ -223,7 +223,7 @@
 /mob/living/carbon/human/proc/blood_strength()
 	set name = "Night Muscles"
 	set category = "VAMPIRE"
-	
+
 	var/cooldown = FALSE
 	var/cooldown_time = 3000 // Five minutes cooldown
 
@@ -270,7 +270,7 @@
 /mob/living/carbon/human/proc/blood_celerity()
 	set name = "Quickening"
 	set category = "VAMPIRE"
-	
+
 	var/cooldown = FALSE
 	var/cooldown_time = 3000 // Five minutes cooldown
 
