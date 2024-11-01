@@ -77,7 +77,7 @@
 	range = 5
 	overlay_state = "tamebeast"
 	releasedrain = 30
-	charge_max = 30 SECONDS
+	charge_max = 6 MINUTES
 	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/dendor)
 	max_targets = 0
 	cast_without_targets = TRUE

@@ -3,13 +3,13 @@
 	flag = GRAVEDIGGER
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 8
+	spawn_positions = 8
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Elf", 
+		"Elf",
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
