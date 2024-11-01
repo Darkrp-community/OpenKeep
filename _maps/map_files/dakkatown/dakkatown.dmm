@@ -1452,8 +1452,8 @@
 /area/rogue/under/town/basement)
 "fz" = (
 /obj/structure/table/wood/plain,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
 /obj/item/neuFarm/seed/pipeweed,
 /obj/item/reagent_containers/food/snacks/grown/nettle,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -1521,14 +1521,14 @@
 "fJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/chest/wicker,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/ruin)
 "fL" = (
@@ -6931,8 +6931,8 @@
 /area/rogue/indoors/town/dwarfin)
 "AC" = (
 /obj/structure/closet/crate/chest/old_crate,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
 /obj/item/clothing/mask/cigarette/pipe/westman,
 /obj/item/clothing/mask/cigarette/pipe,
 /turf/open/floor/rogue/blocks/green,
@@ -9200,9 +9200,9 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/shop)
 "Jf" = (
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
 /obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/magician)

@@ -4409,8 +4409,8 @@
 /obj/item/reagent_containers/glass/bottle/formaldehyde,
 /obj/item/reagent_containers/powder/spice,
 /obj/item/reagent_containers/powder/spice,
-/obj/item/reagent_containers/food/snacks/produce/swampweed_dried,
-/obj/item/reagent_containers/food/snacks/produce/swampweed_dried,
+/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried,
+/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried,
 /obj/item/reagent_containers/glass/bottle/rogue/poison,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -5446,11 +5446,11 @@
 /area/rogue/indoors/town/dwarfin)
 "fmT" = (
 /obj/structure/closet/crate/chest/crate,
-/obj/item/reagent_containers/food/snacks/produce/swampweed_dried,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/swampweed,
-/obj/item/reagent_containers/food/snacks/produce/swampweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed,
+/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed,
 /obj/item/clothing/mask/cigarette/pipe/crafted,
 /obj/item/reagent_containers/powder/spice,
 /obj/item/reagent_containers/powder/spice,
@@ -9864,23 +9864,23 @@
 /area/rogue/outdoors/rtfield)
 "jIv" = (
 /obj/structure/rack/rogue/shelf/biggest,
-/obj/item/reagent_containers/food/snacks/produce/swampweed_dried{
+/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried{
 	pixel_x = 4;
 	pixel_y = -8
 	},
-/obj/item/reagent_containers/food/snacks/produce/swampweed_dried{
+/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried{
 	pixel_x = 4;
 	pixel_y = -8
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
 	pixel_x = -4;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
 	pixel_x = -4;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
 	pixel_x = -4;
 	pixel_y = 8
 	},

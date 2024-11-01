@@ -105,7 +105,7 @@
 /datum/plant_def/sweetleaf
 	name = "swampweed"
 	icon_state = "swampweed"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/swampweed
+	produce_type = /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed
 	produce_amount_min = 3
 	produce_amount_max = 5
 	water_drain_rate = 0
@@ -115,7 +115,7 @@
 /datum/plant_def/berry
 	name = "jacksberry bush"
 	icon_state = "berry"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/jacksberries
+	produce_type = /obj/item/reagent_containers/food/snacks/produce/berries/rogue
 	uproot_loot = list(/obj/item/grown/log/tree/stick)
 	perennial = TRUE
 	produce_amount_min = 3
@@ -125,7 +125,7 @@
 /datum/plant_def/berry_poison
 	name = "jacksberry bush"
 	icon_state = "berry"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/jacksberries/poison
+	produce_type = /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
 	uproot_loot = list(/obj/item/grown/log/tree/stick)
 	perennial = TRUE
 

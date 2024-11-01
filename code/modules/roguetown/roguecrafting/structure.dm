@@ -90,9 +90,9 @@
 	result = /obj/machinery/simple_dye_bin
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 	/obj/item/ash = 1,
-	/obj/item/reagent_containers/food/snacks/produce/jacksberries = 1,
+	/obj/item/reagent_containers/food/snacks/produce/berries/rogue = 1,
 	/obj/item/natural/dirtclod = 1,
-	/obj/item/reagent_containers/food/snacks/produce/swampweed = 1,)
+	/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed = 1,)
 	verbage = "construct"
 	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'

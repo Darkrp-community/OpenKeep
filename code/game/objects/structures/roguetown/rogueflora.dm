@@ -287,8 +287,8 @@
 
 /obj/structure/flora/roguegrass/bush/Initialize()
 	if(prob(88))
-		bushtype = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/jacksberries=5,
-					/obj/item/reagent_containers/food/snacks/produce/jacksberries/poison=3,
+		bushtype = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue=5,
+					/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison=3,
 					/obj/item/reagent_containers/food/snacks/produce/westleach=2))
 	loot_replenish()
 	pixel_x += rand(-3,3)
@@ -496,7 +496,7 @@
 
 /obj/structure/flora/roguegrass/swampweed/Initialize()
 	if(prob(88))
-		bushtype3 = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/swampweed = 1))
+		bushtype3 = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed = 1))
 	loot_replenish3()
 	pixel_x += rand(-3,3)
 	return ..()
@@ -505,7 +505,7 @@
 	if(bushtype3)
 		looty3 += bushtype3
 	if(prob(66))
-		looty3 += /obj/item/reagent_containers/food/snacks/produce/swampweed
+		looty3 += /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed
 
 
 
@@ -805,9 +805,9 @@
 			tobacco = FALSE
 			berries = TRUE
 			if(prob(60))
-				goodie = /obj/item/reagent_containers/food/snacks/produce/jacksberries
+				goodie = /obj/item/reagent_containers/food/snacks/produce/berries/rogue
 			else
-				goodie = /obj/item/reagent_containers/food/snacks/produce/jacksberries/poison
+				goodie = /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
 	pixel_x += rand(-3,3)
 	if(prob(10))
 		trashie = /obj/item/natural/fibers

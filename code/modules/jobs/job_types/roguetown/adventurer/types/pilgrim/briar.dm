@@ -105,7 +105,7 @@
 	structurecraft = /obj/structure/fluff/psycross/crafted/shrine/dendor_saiga
 	reqs = list(/obj/item/reagent_containers/food/snacks/grub/silk = 1,
 				/obj/item/reagent_containers/food/snacks/produce/westleach = 1,
-				/obj/item/reagent_containers/food/snacks/produce/jacksberries = 1)
+				/obj/item/reagent_containers/food/snacks/produce/berries/rogue = 1)
 	result = /obj/item/blessing_of_dendor_prey
 	verbage = "make"
 	verbage_tp = "make"
