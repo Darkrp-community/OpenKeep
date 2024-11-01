@@ -133,17 +133,19 @@
 
 //................ Spiked club ............... //
 /obj/item/rogueweapon/mace/spiked
+	name = "spiked mace"
 	icon_state = "spikedmace"
 	max_integrity = 200
-	force = 20
-	force_wielded = 30
+	force = DAMAGE_MACE+2
+	force_wielded = DAMAGE_MACE_WIELD+3
 
 //................ Morningstar ............... //
 /obj/item/rogueweapon/mace/steel/morningstar
+	name = "morningstar"
 	icon_state = "spiked_club_old"
 	max_integrity = 300
-	force = 20
-	force_wielded = 30
+	force = DAMAGE_MACE+2
+	force_wielded = DAMAGE_MACE_WIELD+3
 
 //................ Copper bludgeon ............... //
 /obj/item/rogueweapon/mace/copperbludgeon
