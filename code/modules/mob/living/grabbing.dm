@@ -562,7 +562,6 @@
 				if(VVictim)
 					to_chat(user, "<span class='warning'>I cannot drain vitae from a fellow nitewalker.</span>")
 					return
-				else if(C.vitae_pool > 500)
 					C.blood_volume = max(C.blood_volume-45, 0)
 					if(ishuman(C))
 						var/mob/living/carbon/human/H = C
@@ -570,32 +569,15 @@
 							to_chat(user, "<span class='love'>Virgin blood, delicious!</span>")
 							var/mob/living/carbon/V = user
 							V.add_stress(/datum/stressevent/vblood)
-							if(C.vitae_pool >= 750)
-								if(VDrinker.isspawn)
-									VDrinker.handle_vitae(750, 750)
-								else
-									VDrinker.handle_vitae(750)
-								C.vitae_pool -= 760
-								to_chat(user, "<span class='love'>...And empowering!</span>")
-							else if(C.vitae_pool < 750) // In case someone already drank from their vitae.
-								var/vitaeleft = C.vitae_pool // We assume they're left with 250 vitae or less, so we take it all
-								if(VDrinker.isspawn)
-									VDrinker.handle_vitae(vitaeleft, vitaeleft)
-								else
-									VDrinker.handle_vitae(vitaeleft)
-								C.vitae_pool -= vitaeleft
-								to_chat(user, "<span class='notice'>...But alas, only leftovers...</span>")
-							else
-								to_chat(user, "<span class='warning'>And yet, not enough vitae can be extracted from them... Tsk.</span>")
-						else
 							if(VDrinker.isspawn)
-								VDrinker.handle_vitae(500, 500)
+								VDrinker.handle_vitae(750, 750)
 							else
-								VDrinker.handle_vitae(500)
-							C.vitae_pool -= 500
-				else
-					to_chat(user, span_warning("No more vitae from this blood..."))
-		else // Don't larp as a vampire, kids.
+								VDrinker.handle_vitae(1000)
+					if(VDrinker.isspawn)
+						VDrinker.handle_vitae(500, 500)
+					else
+						VDrinker.handle_vitae(500)
+		else
 			to_chat(user, "<span class='warning'>I'm going to puke...</span>")
 			addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon, vomit), 0, TRUE), rand(8 SECONDS, 15 SECONDS))
 	else
@@ -603,13 +585,10 @@
 			if(user.mind.has_antag_datum(/datum/antagonist/vampirelord))
 				var/datum/antagonist/vampirelord/VDrinker = user.mind.has_antag_datum(/datum/antagonist/vampirelord)
 				C.blood_volume = max(C.blood_volume-45, 0)
-				if(C.vitae_pool >= 250)
-					if(VDrinker.isspawn)
-						VDrinker.handle_vitae(250, 250)
-					else
-						VDrinker.handle_vitae(250)
+				if(VDrinker.isspawn)
+					VDrinker.handle_vitae(300, 300)
 				else
-					to_chat(user, "<span class='warning'>And yet, not enough vitae can be extracted from them... Tsk.</span>")
+					VDrinker.handle_vitae(300)
 
 	C.blood_volume = max(C.blood_volume-5, 0)
 	C.handle_blood()

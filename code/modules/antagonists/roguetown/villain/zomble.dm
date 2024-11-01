@@ -90,7 +90,6 @@
 	zombie.STASPD = 3
 	zombie.STAINT = 1
 	cmode_music = zombie.cmode_music
-	zombie.vitae_pool = 0 // Deadites have no vitae to drain from.
 	return ..()
 
 /datum/antagonist/zombie/on_removal()
@@ -191,8 +190,6 @@
 
 	zombie.STASPD = 3
 	zombie.STAINT = 1
-
-	zombie.vitae_pool = 0 // Again, just in case.
 
 /datum/antagonist/zombie/greet()
 	to_chat(owner.current, "<span class='userdanger'>Death is not the end...</span>")
