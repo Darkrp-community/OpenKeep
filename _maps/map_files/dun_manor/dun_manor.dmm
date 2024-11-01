@@ -7957,7 +7957,7 @@
 	lockid = "archive";
 	name = "Archivist's Apartment"
 	},
-/turf/closed/wall/mineral/rogue/craftstone,
+/turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town)
 "hES" = (
 /obj/structure/flora/roguegrass,
@@ -15377,6 +15377,7 @@
 "oXg" = (
 /obj/structure/fermenting_barrel/random/water,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/rogue/wallfire/candle/blue/l,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town)
 "oXq" = (

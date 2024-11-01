@@ -14,8 +14,8 @@
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/structure/bookcase/random/LateInitialize()
-	create_random_books(book_count)
-	update_icon()
+	src.create_random_books(book_count)
+	src.update_icon()
 	return ..()
 
 /obj/structure/bookcase/random/proc/create_random_books(amount = 2)
@@ -129,7 +129,7 @@
 	return INITIALIZE_HINT_LATELOAD // Indicate that LateInitialize() should be called
 
 /obj/item/book/rogue/random_book/LateInitialize()
-	get_random_book_from_database(book_category)
+	src.get_random_book_from_database(book_category)
 	return ..()
 
 /obj/item/book/rogue/random_book/proc/get_random_book_from_database(book_category)
