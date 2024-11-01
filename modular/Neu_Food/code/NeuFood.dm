@@ -1,7 +1,7 @@
 /* * * * * * * * * * * **
  *						*	-Cooking based on slapcrafting
  *		 NeuFood		*	-Uses defines to track nutrition
- *						*	-Meant to replace menu crafting completely for foods
+ *	Made by NPC1314		*	-Meant to replace menu crafting completely for foods
  *						*
  * * * * * * * * * * * **/
 
