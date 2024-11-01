@@ -79,7 +79,7 @@
 			var/obj/structure/roguemachine/drug_chute/E = locate() in T
 			if(!E)
 				continue
-			accepted_items = list(/obj/item/reagent_containers/powder/spice, /obj/item/reagent_containers/powder/ozium, /obj/item/reagent_containers/powder/moondust, /obj/item/reagent_containers/powder/moondust_purest, /obj/item/reagent_containers/food/snacks/produce/swampweed_dried, /obj/item/reagent_containers/food/snacks/produce/dry_westleach)
+			accepted_items = list(/obj/item/reagent_containers/powder/spice, /obj/item/reagent_containers/powder/ozium, /obj/item/reagent_containers/powder/moondust, /obj/item/reagent_containers/powder/moondust_purest, /obj/item/reagent_containers/food/snacks/produce/swampweed_dried, /obj/item/reagent_containers/food/snacks/produce/dry_pipeweed)
 			for(var/obj/I in T)
 				if(I.anchored)
 					continue

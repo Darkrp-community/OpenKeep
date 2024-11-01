@@ -18,7 +18,7 @@
 /datum/supply_pack/rogue/seeds/weed
 	name = "Pipe Weed"
 	cost = 8
-	contains = /obj/item/neuFarm/seed/westleach
+	contains = /obj/item/neuFarm/seed/pipeweed
 
 /datum/supply_pack/rogue/seeds/sleaf
 	name = "Swamp Weed"

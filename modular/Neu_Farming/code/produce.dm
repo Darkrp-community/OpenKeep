@@ -247,7 +247,7 @@
 
 /*	..................   Westleach leaf   ................... */
 /obj/item/reagent_containers/food/snacks/produce/westleach
-	seed = /obj/item/neuFarm/seed/westleach
+	seed = /obj/item/neuFarm/seed/pipeweed
 	name = "westleach leaf"
 	desc = "A common, strong-smelling leaf that is often dried and smoked. Also known as pipeweed."
 	icon_state = "westleach"
@@ -263,7 +263,7 @@
 	dust_result = /obj/item/alch/tobaccodust
 	sellprice = 0 // only dried has value
 
-/obj/item/reagent_containers/food/snacks/produce/dry_westleach
+/obj/item/reagent_containers/food/snacks/produce/dry_pipeweed
 	seed = null
 	name = "dried westleach leaf"
 	desc = "A common, strong-smelling leaf dried for smoking."

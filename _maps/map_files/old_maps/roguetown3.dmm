@@ -5806,7 +5806,7 @@
 /obj/item/neuFarm/seed/oat,
 /obj/item/neuFarm/seed/apple,
 /obj/item/neuFarm/seed/apple,
-/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/pipeweed,
 /obj/item/clothing/mask/cigarette/pipe/westman,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
@@ -13916,9 +13916,9 @@
 /obj/structure/closet/crate/chest,
 /obj/item/neuFarm/seed/wheat,
 /obj/item/neuFarm/seed/apple,
-/obj/item/neuFarm/seed/westleach,
-/obj/item/neuFarm/seed/westleach,
-/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/pipeweed,
+/obj/item/neuFarm/seed/pipeweed,
+/obj/item/neuFarm/seed/pipeweed,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "vga" = (
