@@ -560,8 +560,9 @@
 				addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon, vomit), 0, TRUE), rand(8 SECONDS, 15 SECONDS))
 			else
 				if(VVictim)
-					to_chat(user, "<span class='warning'>I cannot drain vitae from a fellow nitewalker.</span>")
-					return
+					to_chat(user, "<span class='warning'>It's vitae, just like mine.</span>")
+				else
+					C.blood_volume = max(C.blood_volume-45, 0)
 					if(ishuman(C))
 						var/mob/living/carbon/human/H = C
 						if(H.virginity)
