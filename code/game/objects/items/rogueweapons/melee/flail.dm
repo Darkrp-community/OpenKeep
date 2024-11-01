@@ -44,7 +44,7 @@
 	swingdelay = 5
 	misscost = 5
 	attack_verb = list("strikes", "hits")
-	penfactor = 5
+	penfactor = AP_FLAIL_STRIKE
 
 /datum/intent/flail/strike/long
 	reach = 2
@@ -66,7 +66,7 @@
 	misscost = 10
 	attack_verb = list("smashes")
 	damfactor = 1.2
-	penfactor = 80
+	penfactor = AP_FLAIL_SMASH
 
 /datum/intent/flail/strike/smash/long
 	reach = 2

@@ -25,7 +25,7 @@
 	max_integrity = 300
 	minstr = 7
 	wdefense = AVERAGE_PARRY
-	wbalance = -1
+	wbalance = EASY_TO_DODGE
 	sellprice = 20
 	blade_dulling = DULLING_BASHCHOP
 
@@ -117,35 +117,39 @@
 	icon_state = "churchmace"
 	smeltresult = /obj/item/ingot/steel
 	blade_dulling = DULLING_BASH
-	wdefense = GOOD_PARRY
 	sellprice = 100
+	wdefense = GOOD_PARRY
+
 
 //................ Steel mace ............... //	Better wbalance and wdefense
 /obj/item/rogueweapon/mace/steel
 	name = "steel mace"
 	desc = "A well-crafted mace with a steel head. Easier to control and hits just as hard."
 	icon_state = "smace"
-	wbalance = 0
-	smeltresult = /obj/item/ingot/steel
 	blade_dulling = DULLING_BASH
-	wdefense = GOOD_PARRY
+	smeltresult = /obj/item/ingot/steel
+	wbalance = DODGE_CHANCE_NORMAL
 	sellprice = 60
+	wdefense = GOOD_PARRY
+
 
 //................ Spiked club ............... //
 /obj/item/rogueweapon/mace/spiked
+	force = DAMAGE_MACE+2
+	force_wielded = DAMAGE_MACE_WIELD+3
 	name = "spiked mace"
 	icon_state = "spikedmace"
 	max_integrity = 200
-	force = DAMAGE_MACE+2
-	force_wielded = DAMAGE_MACE_WIELD+3
+
 
 //................ Morningstar ............... //
 /obj/item/rogueweapon/mace/steel/morningstar
+	force = DAMAGE_MACE+2
+	force_wielded = DAMAGE_MACE_WIELD+3
 	name = "morningstar"
 	icon_state = "spiked_club_old"
 	max_integrity = 300
-	force = DAMAGE_MACE+2
-	force_wielded = DAMAGE_MACE_WIELD+3
+
 
 //................ Copper bludgeon ............... //
 /obj/item/rogueweapon/mace/copperbludgeon
@@ -156,9 +160,9 @@
 	icon_state = "cbludgeon"
 	max_integrity = 80
 	minstr = 5
-	wdefense = MEDIOCHRE_PARRY
 	smeltresult = /obj/item/ingot/copper
 	sellprice = 10
+	wdefense = MEDIOCHRE_PARRY
 
 
 //................ Club ............... //
@@ -168,19 +172,18 @@
 	name = "club"
 	desc = "A weapon older than recorded time itself."
 	icon_state = "club1"
-	wdefense = MEDIOCHRE_PARRY
 	max_integrity = 120
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	smeltresult = /obj/item/ash
-	minstr = 0
+	minstr = 2
 	sellprice = 5
+	wdefense = MEDIOCHRE_PARRY
 
 /obj/item/rogueweapon/mace/woodclub/Initialize(mapload)
 	. = ..()
 	icon_state = "club[rand(1,2)]"
-
 
 
 //................ Cudgel ............... //
@@ -196,16 +199,10 @@
 	wlength = WLENGTH_SHORT
 	w_class = WEIGHT_CLASS_NORMAL
 	max_integrity = 180
-	wbalance = 1
-	minstr = 0
-	wdefense = MEDIOCHRE_PARRY
+	minstr = 2
+	wbalance = HARD_TO_DODGE
 	sellprice = 15
-
-//................ Alt cudgel ............... //
-/obj/item/rogueweapon/mace/cudgel/carpenter
-	name = "peasant cudgel"
-	icon_state = "carpentercudgel"
-	desc = "A stubby club reinforced with iron bits, popular among village watchmen and peasant militias. Despite being reinforced and hard-hitting, it still cannot compare to a proper mace."
+	wdefense = MEDIOCHRE_PARRY
 
 /obj/item/rogueweapon/mace/cudgel/getonmobprop(tag)
 	. = ..()
@@ -216,27 +213,25 @@
 			if("onbelt")
 				return list("shrink" = 0.4,"sx" = -3,"sy" = -4,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 70,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 1,"wflip" = 0,"eflip" = 0)
 
+//................ Alt cudgel ............... //
+/obj/item/rogueweapon/mace/cudgel/carpenter
+	name = "peasant cudgel"
+	icon_state = "carpentercudgel"
+	desc = "A stubby club reinforced with iron bits, popular among village watchmen and peasant militias. Despite being reinforced and hard-hitting, it still cannot compare to a proper mace."
+
 
 //................ Wooden sword ............... //
-/obj/item/rogueweapon/mace/wsword
+/obj/item/rogueweapon/mace/woodclub/train_sword
 	force = 5
 	force_wielded = 8
 	name = "wooden sword"
 	desc = "Crude wood assembled into the shape of a sword, a terrible weapon to be on the recieving end of during a training spat."
 	icon_state = "wsword"
-	possible_item_intents = list(/datum/intent/mace/strike/wood)
-	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
-	smeltresult = /obj/item/ash
-	resistance_flags = FLAMMABLE // Weapon made mostly of wood
-	max_integrity = 100
-	minstr = 0
-	wdefense = ULTMATE_PARRY
 	wbalance = 0
 	associated_skill = /datum/skill/combat/swords
-	sellprice = 5
+	wdefense = ULTMATE_PARRY
 
-
-/obj/item/rogueweapon/mace/wsword/getonmobprop(tag)
+/obj/item/rogueweapon/mace/woodclub/train_sword/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)
@@ -259,24 +254,23 @@
 	desc = "A two handed club, decorated with a spiked cap crown. A perfect way to say Good Morning to any would be noble-knight."
 	icon_state = "goedendag"
 	icon = 'icons/roguetown/weapons/64.dmi'
-	//dropshrink = 0.75
-	wlength = WLENGTH_LONG
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-	smeltresult = /obj/item/ash
-	resistance_flags = FLAMMABLE // Weapon made mostly of wood
-	parrysound = "parrywood"
-	max_integrity = 400
-	minstr = 10
-	wdefense = GOOD_PARRY
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	bigboy = TRUE
 	gripsprite = TRUE
-	wbalance = -1
+	wlength = WLENGTH_LONG
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	smeltresult = /obj/item/ash
+	resistance_flags = FLAMMABLE // Weapon made mostly of wood
+	minstr = 10
+	parrysound = "parrywood"
+	max_integrity = 300
+	wbalance = EASY_TO_DODGE
 	sellprice = 35
+	wdefense = GOOD_PARRY
 
 /obj/item/rogueweapon/mace/goden/getonmobprop(tag)
 	. = ..()
@@ -291,16 +285,16 @@
 
 //................ Grand mace ............... //
 /obj/item/rogueweapon/mace/goden/steel
+	gripped_intents = list(/datum/intent/mace/smash/heavy) // It's a 2h flanged mace, not a goedendag.
 	name = "grand mace"
 	desc = "A casted polearm, rumored to be the weapon-design used by the Forgotten God himself."
-	gripped_intents = list(/datum/intent/mace/smash/heavy) // It's a 2h flanged mace, not a goedendag.
 	icon_state = "polemace"
 	resistance_flags = FIRE_PROOF
 	smeltresult = /obj/item/ingot/steel
-	max_integrity = 500
+	max_integrity = INTEGRITY_STRONGEST
 //	slowdown = 1
-	wbalance = 0
 	sellprice = 60
+	wbalance = DODGE_CHANCE_NORMAL
 
 /obj/item/rogueweapon/mace/goden/steel/getonmobprop(tag)
 	. = ..()
@@ -315,6 +309,7 @@
 
 //................ Shillelagh ............... //
 /obj/item/rogueweapon/mace/goden/shillelagh		// The Briar signature weapon. Sturdy oak war club.
+	gripped_intents = list(/datum/intent/mace/smash/heavy)
 	name = "shillelagh"
 	desc = "Big old oak branch, carved to a deadly weapon."
 	icon_state = "shillelagh"
@@ -328,7 +323,7 @@
 	max_integrity = 200
 	minstr = 8
 	sellprice = 5
-	gripped_intents = list(/datum/intent/mace/smash/heavy)
+
 
 /obj/item/rogueweapon/mace/goden/shillelagh/getonmobprop(tag)
 	. = ..()
@@ -347,7 +342,6 @@
 	name = "warhammer"
 	desc = "A great dwarven warhammer made of stern steel, enscratched with oaths of battle and time."
 	icon_state = "warhammer"
-	icon = 'icons/roguetown/weapons/64.dmi'
 	wlength = WLENGTH_GREAT
 	swingsound = BLUNTWOOSH_HUGE
 	sellprice = 100

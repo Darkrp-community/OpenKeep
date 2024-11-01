@@ -149,8 +149,8 @@
 
 /datum/crafting_recipe/roguetown/woodsword
 	name = "wood sword"
-	result = list(/obj/item/rogueweapon/mace/wsword,
-					/obj/item/rogueweapon/mace/wsword)
+	result = list(/obj/item/rogueweapon/mace/woodclub/train_sword,
+					/obj/item/rogueweapon/mace/woodclub/train_sword)
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1

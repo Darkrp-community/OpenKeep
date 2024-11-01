@@ -484,7 +484,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors)
 "bo" = (
-/obj/item/rogueweapon/mace/wsword,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
 "bp" = (

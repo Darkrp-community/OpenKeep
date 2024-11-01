@@ -29,7 +29,7 @@
 /area/rogue/outdoors/exposed/under/basement)
 "abA" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/mace/wsword,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
 "act" = (
@@ -12470,7 +12470,7 @@
 /area/rogue/under/town/basement)
 "nFQ" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/mace/wsword,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/town)
 "nFY" = (
@@ -17957,7 +17957,7 @@
 	name = "The Laws of the Fool";
 	info = "THE LAWS OF THE FOOL:<br/>1. Seek the news and spread it to all<br/>2. Play antics on all who deserve it.<br/>3. Improvise with thy wit!<br/>4. Be tactful. Know when thy art is welcome.<br/>5. Be misshapen (or dwarvish) (or simply play dumb)<br/>6. Speak harsh truths in jest<br/>7. Emote! Play on the stage of life!<br/>8. Keep your head and face smooth and shaven (dwarvern fools may keep the beard)<br/>9. Carry thy wooden sword proudly!<br/>10. Spread thy strings of influence, create chaos in others...<br/>11. If thou must fight, fight well<br/>12. Spread thy wealth to those who deserve it, and troublesome gifts to those who don't!<br/>13. Be compassionate and insightful, even when scathing<br/><br/>LEGENDARY FOOLS:<br/>Taeleffer the Dwarf - Fallen in battle on a suicide charge with a wooden sword, his courage turning the tide<br/>Roland the Farter - Capable of farting, whistling, and jumping in unison<br/>Tom the Fool a.k.a. "Longshanks" - Pioneer of Tomfoolery and the one-man show.<br/>Rahear the Minstrel - Witful gossiper, talented idiot, and former monk.<br/>Shen-Jang-Goa - The crafty diplomat and spy, disarming dignitaries with wisdom and humour.<br/>Maggoty Johnson - The legendary playwright, known for his crude humour.<br/>Ser Dangerfield - The ultimate fall man, perfected the craft of the "MyWife" jest."
 	},
-/obj/item/rogueweapon/mace/wsword,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"

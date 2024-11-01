@@ -13,6 +13,7 @@
 #define AP_FLAIL_SMASH 80
 #define AP_CLUB_SMASH 30
 
+//wdefense defines
 #define TERRIBLE_PARRY -1
 #define BAD_PARRY 0
 #define MEDIOCHRE_PARRY 1
@@ -20,6 +21,13 @@
 #define GOOD_PARRY 3
 #define GREAT_PARRY 4
 #define ULTMATE_PARRY 5
+
+//wbalance defines
+#define VERY_EASY_TO_DODGE -2
+#define EASY_TO_DODGE -1
+#define DODGE_CHANCE_NORMAL 0
+#define HARD_TO_DODGE 1
+#define VERY_HARD_TO_DODGE 2
 
 /obj/item/rogueweapon
 	name = ""

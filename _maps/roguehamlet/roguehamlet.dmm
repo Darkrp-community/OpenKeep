@@ -4789,8 +4789,8 @@
 /area/rogue/outdoors/town/roofs)
 "faa" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/mace/wsword,
-/obj/item/rogueweapon/mace/wsword,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/town)
 "fai" = (
@@ -18605,7 +18605,7 @@
 "tfA" = (
 /obj/structure/closet/crate/chest/neu,
 /obj/item/rogue/instrument/flute,
-/obj/item/rogueweapon/mace/wsword,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
 /obj/item/rogueweapon/sickle,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
