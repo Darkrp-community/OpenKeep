@@ -292,7 +292,7 @@
 	force_wielded = 30
 	slowdown = 1
 	possible_item_intents = list(SPEAR_BASH, SPEAR_THRUST) //bash is for nonlethal takedowns, only targets limbs
-	gripped_intents = list(SPEAR_BASH, SPEAR_THRUST, /datum/intent/mace/heavy/smash)
+	gripped_intents = list(SPEAR_BASH, SPEAR_THRUST, /datum/intent/mace/smash/heavy)
 	name = "eagle's beak"
 	desc = "A reinforced pole affixed with an ornate steel eagle's head, of which it's beak is intended to pierce with great harm."
 	icon_state = "eaglebeak"

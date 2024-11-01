@@ -1,4 +1,25 @@
+#define DAMAGE_WEAK_FLAIL 17
+#define DAMAGE_NORMAL_FLAIL 23
+#define DAMAGE_GOOD_FLAIL 28
 
+#define DAMAGE_CLUB 15
+#define DAMAGE_CLUB_WIELD 20
+#define DAMAGE_MACE 20
+#define DAMAGE_MACE_WIELD 25
+#define DAMAGE_HEAVYCLUB_WIELD 30
+
+#define AP_FLAIL_STRIKE 5
+#define AP_CLUB_STRIKE 20
+#define AP_FLAIL_SMASH 80
+#define AP_CLUB_SMASH 30
+
+#define TERRIBLE_PARRY -1
+#define BAD_PARRY 0
+#define MEDIOCHRE_PARRY 1
+#define AVERAGE_PARRY 2
+#define GOOD_PARRY 3
+#define GREAT_PARRY 4
+#define ULTMATE_PARRY 5
 
 /obj/item/rogueweapon
 	name = ""

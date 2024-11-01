@@ -204,7 +204,7 @@
 	created_item = /obj/item/rogueweapon/huntingknife/villager
 	createmultiple = TRUE
 	createditem_num = 2
-	craftdiff = 0 
+	craftdiff = 0
 
 /datum/anvil_recipe/weapons/flail_iron
 	name = "Militia flail (+c) (+s)"
@@ -494,7 +494,7 @@
 	name = "Peasant Flail (+c) (+w)"
 	recipe_name = "a two-handed flail"
 	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/steel
+	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/flail/peasant
 	craftdiff = 3
