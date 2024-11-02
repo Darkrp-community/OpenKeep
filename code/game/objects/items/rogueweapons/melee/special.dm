@@ -74,7 +74,7 @@
 			if(H.anti_magic_check())
 				return
 		
-			if(!(H in SStreasury.bank_accounts))
+			if(!(H.job in GLOB.rod_jobs))
 				return
 
 			if(istype(user.used_intent, /datum/intent/lord_electrocute))
