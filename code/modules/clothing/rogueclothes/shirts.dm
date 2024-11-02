@@ -47,7 +47,7 @@
 	color = CLOTHING_RED_OCHRE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/purple
-	color = CLOTHING_ROYAL_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/green
 	color = CLOTHING_FOREST_GREEN
@@ -68,7 +68,7 @@
 
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/guardsecond
-	color = CLOTHING_ROYAL_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/guardsecond/Initialize()
 	. = ..()
@@ -180,13 +180,13 @@
 	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/purple
-	color = CLOTHING_ROYAL_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/ucolored
 	color = CLOTHING_ASH_GREY
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/random/Initialize()
-	color = pick(CLOTHING_ROYAL_PURPLE, CLOTHING_BLOOD_RED, CLOTHING_SKY_BLUE, CLOTHING_FOREST_GREEN)
+	color = pick(CLOTHING_PLUM_PURPLE, CLOTHING_BLOOD_RED, CLOTHING_SKY_BLUE, CLOTHING_FOREST_GREEN)
 	..()
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/tunicprimary
@@ -235,7 +235,7 @@
 	color = CLOTHING_BOG_GREEN
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
-	color = CLOTHING_ROYAL_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/maid
 	color = CLOTHING_DARK_INK
@@ -370,7 +370,7 @@
 	"TEAL"="#249589",
 	"WHITE"="#ffffff",
 	"ORANGE"="#b86f0c",
-	"MAJENTA"="#962e5c")
+	"Royal Majenta"="#962e5c")
 	var/mob/living/carbon/human/L = loc
 	var/choice = input(L, "Choose a color.", "GRENZELHOFTIAN COLORPLEX") as anything in colors
 	var/playerchoice = colors[choice]

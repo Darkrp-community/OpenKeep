@@ -86,7 +86,7 @@
 		L.update_inv_cloak()
 
 /obj/item/clothing/cloak/tabard/knight
-	color = CLOTHING_ROYAL_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/tabard/knight/attack_right(mob/user)
 	return
@@ -160,7 +160,7 @@
 	desc = "A tabard with the lord's heraldic colors."
 	color = CLOTHING_BLOOD_RED
 	detail_tag = "_spl"
-	detail_color = CLOTHING_ROYAL_PURPLE
+	detail_color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/tabard/knight/guard/attack_right(mob/user)
 	if(picked)
@@ -282,7 +282,7 @@
 	desc = "A tabard with the lord's heraldic colors. This one is worn typically by guards."
 	color = CLOTHING_BLOOD_RED
 	detail_tag = "_spl"
-	detail_color = CLOTHING_ROYAL_PURPLE
+	detail_color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/stabard/guard/attack_right(mob/user)
 	if(picked)
@@ -475,7 +475,7 @@
 	desc = "A surcoat with the lord's heraldic colors."
 	color = CLOTHING_BLOOD_RED
 	detail_tag = "_quad"
-	detail_color = CLOTHING_ROYAL_PURPLE
+	detail_color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/stabard/surcoat/guard/attack_right(mob/user)
 	if(picked)
@@ -537,7 +537,7 @@
 //	allowed_sex = list("male")
 	allowed_race = list("human", "tiefling", "elf", "aasimar")
 	detail_tag = "_det"
-	detail_color = CLOTHING_ROYAL_PURPLE
+	detail_color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/lordcloak/update_icon()
 	cut_overlays()
@@ -680,7 +680,7 @@
 	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/cloak/raincloak/purple
-	color = CLOTHING_ROYAL_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/raincloak/mortus
 	name = "funeral cloak"
@@ -697,7 +697,7 @@
 	color = CLOTHING_SKY_BLUE
 
 /obj/item/clothing/cloak/raincloak/random/Initialize()
-	color = pick(CLOTHING_BLOOD_RED, CLOTHING_ROYAL_PURPLE, CLOTHING_SOOT_BLACK, CLOTHING_BARK_BROWN, CLOTHING_FOREST_GREEN, CLOTHING_SKY_BLUE)
+	color = pick(CLOTHING_BLOOD_RED, CLOTHING_PLUM_PURPLE, CLOTHING_SOOT_BLACK, CLOTHING_BARK_BROWN, CLOTHING_FOREST_GREEN, CLOTHING_SKY_BLUE)
 	..()
 
 /obj/item/clothing/head/hooded/rainhood
@@ -732,10 +732,10 @@
 		color = pick("#685542","#66564d")
 
 /obj/item/clothing/cloak/raincloak/furcloak/brown
-	color = "#685542"
+	color = CLOTHING_MUD_BROWN
 
 /obj/item/clothing/cloak/raincloak/furcloak/black
-	color = "#66564d"
+	color = CLOTHING_ASH_GREY
 
 /obj/item/clothing/head/hooded/rainhood/furhood
 	icon_state = "fur_hood"
@@ -756,7 +756,7 @@
 	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
 
 /obj/item/clothing/cloak/cape/knight
-	color = CLOTHING_ROYAL_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/cape/guard
 	color = CLOTHING_BLOOD_RED
@@ -925,7 +925,7 @@
 	return ..()
 
 /obj/item/clothing/cloak/half/random/Initialize()
-	color = pick(CLOTHING_BLOOD_RED, CLOTHING_ROYAL_PURPLE, CLOTHING_SOOT_BLACK, CLOTHING_BARK_BROWN, CLOTHING_FOREST_GREEN, CLOTHING_SKY_BLUE)
+	color = pick(CLOTHING_WINESTAIN_RED, CLOTHING_MUSTARD_YELLOW, CLOTHING_SOOT_BLACK, CLOTHING_BARK_BROWN, CLOTHING_FOREST_GREEN, CLOTHING_BERRY_BLUE)
 	..()
 
 //............... Battle Nun ........................... (unique kit for the role, tabard for aesthetics)

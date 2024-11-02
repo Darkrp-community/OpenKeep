@@ -290,7 +290,7 @@
 	prevent_crits = CUT_AND_MINOR_CRITS
 
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat/Initialize()
-	color = pick(CLOTHING_ROYAL_PURPLE, CLOTHING_WHITE,CLOTHING_BLOOD_RED)
+	color = pick(CLOTHING_PLUM_PURPLE, CLOTHING_WHITE,CLOTHING_BLOOD_RED)
 	..()
 
 //................ Silk Jacket ............... //

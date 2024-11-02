@@ -41,21 +41,29 @@
 		"Ash Grey" ="#999999",
 		"Chalk White" ="#c7c0b5",
 		"Cream" ="#b0ae80",
-		"Blood Red" ="#5d1d1d",
-		"Royal Purple" ="#4c305e",
+		"Blood Red" ="#682020",
+		"Plum Purple" ="#532e6b",
 		"Dark Ink" ="#392f2f",
-		"Forest Green" ="#336022",
-		"Sky Blue" ="#203459",
-		"Mustard Yellow" ="#76740c",
-		"Teal" ="#244f4a",
-		"Fyritius Orange" ="#85521b",
-		"Majenta" ="#5a1c38",
-		"Salmon" ="#603f49",
+		"Forest Green" ="#32691e",
+		"Sky Blue" ="#1a3567",
+		"Mustard Yellow" ="#7f7b0b",
+
+		"Royal Black" ="#2f352f",
+		"Royal Red" ="#8f3636",
+		"Royal Majenta" ="#822b52",
+		"Bark Brown"="#685542",
+		"Bog Green" ="#58793f",
+		"Royal Teal" ="#249589",
+		"Pear Yellow" ="#b5b004",
+		"Fyritius Orange" ="#b47011",
+		"Royal Purple" ="#865c9c",
+
+		"Salmon" ="#784353",
 		"Russet" ="#7a4c29",
 		"Chestnut" ="#5f3d21",
-		"Yellow Ochre" ="#6b550d",
-		"Red Ochre" = "#5e2c28",
-		"Maroon" ="#5a1010"
+		"Yellow Ochre" ="#616011",
+		"Red Ochre" = "#6f2d28",
+		"Maroon" ="#672c0d"
 		)
 
 
@@ -160,9 +168,6 @@
 
 
 
-
-
-
 /obj/machinery/simple_dye_bin
 	name = "simple dye bin"
 	desc = "A barrel with a selection of cheap things that will stain your clothes in muted colors. Ash, clods of dirt, jacksberries and swampweed provides all the colors any peasant could want!"
@@ -207,14 +212,20 @@
 		"Chalk White" ="#c7c0b5",
 		"Cream" ="#b0ae80",
 		"Soot Black" ="#4b4b50",
-		"Winestain Red" ="#5a3232",
-		"Berry Blue" ="#363f4f",
-		"Pear Yellow" ="#545530",
-		"Bark Brown"="#483931",
-		"Peasant Brown" ="#422c26",
-		"Mud Brown" ="#4c4636",
-		"Spring Green" ="#2d3f30",
-		"Bog Green" ="#475335"
+		"Royal Black" ="#2f352f",
+		"Winestain Red" ="#6b3737",
+		"Royal Red" ="#8f3636",
+		"Royal Majenta" ="#822b52",
+		"Peasant Brown" ="#705243",
+		"Bark Brown"="#685542",
+		"Mud Brown" ="#685542",
+		"Spring Green" ="#324b37",
+		"Bog Green" ="#58793f",
+		"Royal Teal" ="#249589",
+		"Berry Blue" ="#38455b",
+		"Pear Yellow" ="#b5b004",
+		"Fyritius Orange" ="#b47011",
+		"Royal Purple" ="#865c9c"
 		)
 
 /obj/machinery/simple_dye_bin/Destroy()

@@ -127,10 +127,10 @@
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/random/Initialize()
 	. = ..()
-	color = pick(CLOTHING_TEAL, CLOTHING_FOREST_GREEN, CLOTHING_FYRITIUS_DYE, CLOTHING_MAJENTA, CLOTHING_MUSTARD_YELLOW,CLOTHING_SALMON, CLOTHING_SKY_BLUE, CLOTHING_YELLOW_OCHRE, CLOTHING_RED_OCHRE, CLOTHING_RUSSET)
+	color = pick(CLOTHING_ROYAL_TEAL, CLOTHING_FOREST_GREEN, CLOTHING_FYRITIUS_DYE, CLOTHING_ROYAL_MAJENTA, CLOTHING_MUSTARD_YELLOW,CLOTHING_SALMON, CLOTHING_SKY_BLUE, CLOTHING_YELLOW_OCHRE, CLOTHING_RED_OCHRE, CLOTHING_RUSSET)
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary
-	color = CLOTHING_ROYAL_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary/Initialize()
 	..()

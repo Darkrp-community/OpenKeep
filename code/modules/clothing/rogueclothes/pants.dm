@@ -66,7 +66,7 @@
 	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/under/roguetown/tights/purple
-	color = CLOTHING_ROYAL_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/under/roguetown/tights/green
 	color = CLOTHING_FOREST_GREEN
@@ -76,7 +76,7 @@
 	color = CLOTHING_SALMON
 
 /obj/item/clothing/under/roguetown/tights/lord
-	color = CLOTHING_ROYAL_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/under/roguetown/tights/vagrant
 	r_sleeve_status = SLEEVE_TORN
