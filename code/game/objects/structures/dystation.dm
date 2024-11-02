@@ -255,6 +255,9 @@
 /obj/machinery/simple_dye_bin/attackby(obj/item/I, mob/living/user)
 	if(allow_mobs && istype(I, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/H = I
+		if(inserted)
+			user.visible_message("<span class='notice'>[src] is already full.</span>")
+			return
 		if(!user.transferItemToLoc(I, src))
 			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
 			return
