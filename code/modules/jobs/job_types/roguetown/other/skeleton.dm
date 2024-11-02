@@ -92,7 +92,7 @@
 	if(prob(10))
 		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	if(prob(10))
-		armor = /obj/item/clothing/suit/roguetown/armor/cuirass/copperches
+		armor = /obj/item/clothing/suit/roguetown/armor/cuirass/copperchest
 	if(prob(10))
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	if(prob(10))
