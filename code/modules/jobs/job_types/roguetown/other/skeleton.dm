@@ -4,7 +4,7 @@
 //	department_flag = PEASANTS
 	faction = "Station"
 	total_positions = 2
-	spawn_positions = 1
+	spawn_positions = 0
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -78,6 +78,8 @@
 		ADD_TRAIT(H, TRAIT_SHOCKIMMUNE, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
+		H.silent = TRUE		// makes them unable to audible emote or speak, no more sexy moan zombies
+		H.grant_language(/datum/language/hellspeak)
 
 /datum/outfit/job/roguetown/skeleton/pre_equip(mob/living/carbon/human/H)
 	..()

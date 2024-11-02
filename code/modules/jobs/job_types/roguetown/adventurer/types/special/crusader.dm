@@ -151,6 +151,8 @@
 /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
 	desc = "A silver gilded bucket helm, inscriptions in old Psydonic are found embezzeled on every inch of silver. Grenzelhoft specializes in these helmets, the Totod order has been purchasing them en-masse."
 	icon_state = "crusader_helmt2"
+	icon = 'icons/roguetown/clothing/special/crusader.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/crusader.dmi'
 
 /obj/item/clothing/cloak/cape/crusader/ComponentInitialize()
 	. = ..()
