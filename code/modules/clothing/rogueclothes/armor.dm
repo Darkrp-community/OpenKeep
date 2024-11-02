@@ -78,6 +78,7 @@
 	name = "light gambeson"
 	desc = "Thin and the maker skimped on the padding, typically worn by the peasantry to give some protection against cold for the whole body."
 	icon_state = "gambesonl"
+	color = CLOTHING_LINEN
 	sellprice = VALUE_LIGHT_GAMBESSON
 
 	armor = ARMOR_GAMBESON_BAD

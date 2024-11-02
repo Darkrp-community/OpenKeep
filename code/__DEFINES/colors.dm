@@ -62,22 +62,24 @@
 
 //roguetown
 // Expensive dyes ==========================
-#define EXPENSIVE_DYES			list("Ash Grey","Chalk White","Cream","White","Blood Red","Plum Purple","Dark Ink","Forest Green","Sky Blue","Mustard Yellow", "Salmon", "Russet", "Chestnut", "Maroon","Red Ochre", "Dunked in Water" )
+#define EXPENSIVE_DYES			list("Ash Grey","Chalk White","Cream","White","Blood Red","Plum Purple","Dark Ink","Forest Green","Sky Blue","Mustard Yellow", "Salmon", "Russet", "Maroon","Red Ochre", "Dunked in Water" )
 
 #define CLOTHING_DARK_INK		"#392f2f"
 #define CLOTHING_PLUM_PURPLE	"#532e6b"
-#define CLOTHING_SALMON			"#784353"
-#define CLOTHING_BLOOD_RED		"#682020"
+#define CLOTHING_SALMON			"#925567"
+#define CLOTHING_BLOOD_RED		"#770d0d"
 
 #define CLOTHING_MAROON			"#672c0d"
 #define CLOTHING_RED_OCHRE		"#6f2d28"
-#define CLOTHING_RUSSET			"#7a4c29"
-#define CLOTHING_CHESTNUT		"#5f3d21"
-#define CLOTHING_MUSTARD_YELLOW	"#7f7b0b"
-#define CLOTHING_YELLOW_OCHRE	"#616011"
+#define CLOTHING_RUSSET			"#733f18"
+#define CLOTHING_MUSTARD_YELLOW	"#89823a"
+#define CLOTHING_YELLOW_OCHRE	"#9b7a02"
 #define CLOTHING_FOREST_GREEN	"#32691e"
 #define CLOTHING_SKY_BLUE		"#1a3567"
-
+#define CLOTHING_MAGE_BLUE		"#4756d8"
+#define CLOTHING_MAGE_GREEN		"#759259"
+#define CLOTHING_MAGE_ORANGE	"#ad5e29"
+#define CLOTHING_MAGE_YELLOW	"#d2bc2b"
 
 // Royal dyes ==========================
 #define CLOTHING_ROYAL_RED		"#8f3636"
@@ -93,20 +95,21 @@
 
 
 // Cheap dyes ==========================
-#define CHEAP_DYES				list("Ash Grey","Chalk White","Cream","Royal Black","Soot Black","Bark Brown","Winestain Red","Royal Red","Royal Majenta","Fyritius Orange","Berry Blue","Royal Blue","Royal Purple","Spring Green","Pear Yellow","Peasant Brown","Mud Brown","Bog Green","Royal Teal","Dunked in Water" )
+#define CHEAP_DYES				list("Ash Grey","Chalk White","Cream","Royal Black","Soot Black","Bark Brown","Winestain Red","Royal Red","Royal Majenta","Fyritius Orange","Berry Blue","Royal Blue","Royal Purple","Spring Green","Pear Yellow","Peasant Brown","Mud Brown","Chestnut","Old Leather","Bog Green","Royal Teal","Dunked in Water" )
 
 #define CLOTHING_SOOT_BLACK		"#4b4b50"
 #define CLOTHING_WINESTAIN_RED	"#6b3737"
 #define CLOTHING_PEASANT_BROWN	"#705243"
 #define CLOTHING_MUD_BROWN		"#685542"
-#define CLOTHING_SPRING_GREEN	"#324b37"
+#define CLOTHING_CHESTNUT		"#5f3d21"
+#define CLOTHING_OLD_LEATHER	"#473a30"
+#define CLOTHING_SPRING_GREEN	"#435436"
 #define CLOTHING_BERRY_BLUE		"#38455b"
 
 #define CLOTHING_ASH_GREY		"#999999"
-#define CLOTHING_CREAM			"#b0ae80"
+#define CLOTHING_LINEN			"#b0ae80"
 #define CLOTHING_WHITE			"#ffffff"
 #define CLOTHING_WET			"#bbbbbb"
-
 #define RANDOM_PEASANT_DYES		pick(CLOTHING_BARK_BROWN , CLOTHING_PEASANT_BROWN, CLOTHING_MUD_BROWN , CLOTHING_BOG_GREEN , CLOTHING_SPRING_GREEN , CLOTHING_PEAR_YELLOW )
 #define RANDOM_NOBLE_DYES		pick(CLOTHING_BLOOD_RED , CLOTHING_FOREST_GREEN , CLOTHING_SKY_BLUE , CLOTHING_MUSTARD_YELLOW , CLOTHING_ROYAL_TEAL , CLOTHING_FYRITIUS_DYE, CLOTHING_YELLOW_OCHRE )
 
@@ -173,7 +176,7 @@
 		if("Chalk White")
 			return CLOTHING_CHALK_WHITE
 		if("Cream")
-			return CLOTHING_CREAM
+			return CLOTHING_LINEN
 		if("Dunked in water")
 			return CLOTHING_WET
 

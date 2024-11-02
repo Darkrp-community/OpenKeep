@@ -201,6 +201,9 @@
 
 	body_parts_covered = NECK
 
+/obj/item/clothing/head/roguetown/roguehood/uncolored
+	color = CLOTHING_LINEN
+
 /obj/item/clothing/head/roguetown/roguehood/brown
 	color = CLOTHING_BARK_BROWN
 
@@ -211,11 +214,11 @@
 	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/head/roguetown/roguehood/random/Initialize()
-	color = pick("#544236", "#435436", "#543836", "#79763f")
+	color = pick( CLOTHING_PEASANT_BROWN, CLOTHING_SPRING_GREEN, CLOTHING_CHESTNUT, CLOTHING_YELLOW_OCHRE)
 	..()
 
 /obj/item/clothing/head/roguetown/roguehood/mage/Initialize()
-	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
+	color = pick(CLOTHING_MAGE_BLUE, CLOTHING_MAGE_GREEN, CLOTHING_MAGE_ORANGE, CLOTHING_MAGE_YELLOW)
 	..()
 
 /obj/item/clothing/head/roguetown/roguehood/AdjustClothes(mob/user)

@@ -41,10 +41,10 @@
 		"Ash Grey" ="#999999",
 		"Chalk White" ="#c7c0b5",
 		"Cream" ="#b0ae80",
-		"Blood Red" ="#682020",
-		"Plum Purple" ="#532e6b",
-		"Dark Ink" ="#392f2f",
-		"Forest Green" ="#32691e",
+		"Blood Red" ="#770d0d",
+		"Plum Purple" ="#552e6e",
+		"Dark Ink" ="#372b2b",
+		"Forest Green" ="#3e7e27",
 		"Sky Blue" ="#1a3567",
 		"Mustard Yellow" ="#7f7b0b",
 
@@ -53,15 +53,18 @@
 		"Royal Majenta" ="#822b52",
 		"Bark Brown"="#685542",
 		"Bog Green" ="#58793f",
+		"Mage Green" ="#759259",
 		"Royal Teal" ="#249589",
 		"Pear Yellow" ="#b5b004",
+		"Mage Yellow" ="#d2bc2b",
 		"Fyritius Orange" ="#b47011",
+		"Mage Orange" ="#ad5e29",
 		"Royal Purple" ="#865c9c",
+		"Mage Blue" ="#4756d8",
 
-		"Salmon" ="#784353",
-		"Russet" ="#7a4c29",
-		"Chestnut" ="#5f3d21",
-		"Yellow Ochre" ="#616011",
+		"Salmon" ="#925567",
+		"Russet" ="#733f18",
+		"Yellow Ochre" ="#9b7a02",
 		"Red Ochre" = "#6f2d28",
 		"Maroon" ="#672c0d"
 		)
@@ -93,10 +96,13 @@
 			H.release()
 
 	if(is_type_in_list(I, allowed_types) && is_operational())
+		if(inserted)
+			user.visible_message("<span class='notice'>[src] is already full.</span>")
+			return
 		if(!user.transferItemToLoc(I, src))
 			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
 			return
-		user.visible_message("<span class='notice'>[user] inserts [I] into [src]'s receptable.</span>")
+		user.visible_message("<span class='notice'>[user] inserts [I] into [src].</span>")
 
 		inserted = I
 	else
@@ -217,9 +223,11 @@
 		"Royal Red" ="#8f3636",
 		"Royal Majenta" ="#822b52",
 		"Peasant Brown" ="#705243",
+		"Chestnut" ="#5f3d21",
 		"Bark Brown"="#685542",
 		"Mud Brown" ="#685542",
-		"Spring Green" ="#324b37",
+		"Old Leather" ="#473a30",
+		"Spring Green" ="#435436",
 		"Bog Green" ="#58793f",
 		"Royal Teal" ="#249589",
 		"Berry Blue" ="#38455b",

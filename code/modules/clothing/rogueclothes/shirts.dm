@@ -34,7 +34,7 @@
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/uncolored
-	color = CLOTHING_CREAM
+	color = CLOTHING_LINEN
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	color = CLOTHING_SOOT_BLACK
@@ -126,7 +126,7 @@
 	..()
 
 /obj/item/clothing/suit/roguetown/shirt/shortshirt/uncolored
-	color = CLOTHING_CREAM
+	color = CLOTHING_LINEN
 
 /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	name = "shirt"
@@ -165,7 +165,7 @@
 	body_parts_covered = CHEST|GROIN|VITALS
 	boobed = FALSE
 	icon_state = "tunic"
-	color = CLOTHING_CREAM
+	color = CLOTHING_LINEN
 	sleevetype = "tunic"
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
@@ -261,7 +261,7 @@
 	desc = "Comfortable yet elegant, it offers both style and comfort for everyday wear"
 	body_parts_covered = CHEST|GROIN|LEGS|VITALS
 	icon_state = "silkdress"
-	color = CLOTHING_CREAM
+	color = CLOTHING_LINEN
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess
 	color = CLOTHING_CHALK_WHITE

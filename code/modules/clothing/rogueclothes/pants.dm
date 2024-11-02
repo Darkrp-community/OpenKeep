@@ -57,7 +57,7 @@
 	..()
 
 /obj/item/clothing/under/roguetown/tights/uncolored
-	color = CLOTHING_CREAM
+	color = CLOTHING_LINEN
 
 /obj/item/clothing/under/roguetown/tights/black
 	color = CLOTHING_SOOT_BLACK
