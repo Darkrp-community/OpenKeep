@@ -104,7 +104,7 @@
 		if (2)
 			head = /obj/item/clothing/head/roguetown/helmet/winged
 		if (3)
-			head = /obj/item/clothing/head/roguetown/helmet/leather/conical)
+			head = /obj/item/clothing/head/roguetown/helmet/leather/conical
 		if (4)
 			head = /obj/item/clothing/head/roguetown/helmet/coppercap
 		if (5)
