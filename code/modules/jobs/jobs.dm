@@ -76,6 +76,7 @@ GLOBAL_LIST_INIT(noble_positions, list(
 	))
 
 GLOBAL_LIST_INIT(garrison_positions, list(
+	"Captain",
 	"Garrison Guard",
 	"Royal Guard",
 	"Veteran",
