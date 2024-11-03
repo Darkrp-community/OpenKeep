@@ -5103,11 +5103,10 @@
 /area/rogue/indoors/town/shop)
 "eVS" = (
 /obj/effect/spawner/roguemap/hauntz_random,
-/obj/effect/decal/cobbleedge{
-	dir = 5
+/turf/open/floor/rogue/tile{
+	icon_state = "chess"
 	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/town)
+/area/rogue/under/town/basement)
 "eWD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -18332,6 +18331,10 @@
 /obj/structure/bars,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/sewer)
+"rWx" = (
+/obj/effect/spawner/roguemap/hauntz_random,
+/turf/open/floor/rogue/carpet/lord/center,
+/area/rogue/indoors/town/manor)
 "rWN" = (
 /obj/structure/mineral_door/wood/fancywood{
 	locked = 1;
@@ -19225,6 +19228,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cobbleedge,
+/obj/effect/spawner/roguemap/hauntz_random,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/town)
 "sQg" = (
@@ -43522,7 +43526,7 @@ ruG
 ruG
 ruG
 ruG
-ruG
+eVS
 ruG
 ruG
 ruG
@@ -55981,7 +55985,7 @@ gog
 gog
 gog
 fNg
-kIb
+gog
 gog
 gog
 gog
@@ -57507,7 +57511,7 @@ cxb
 cxb
 cxb
 cxb
-eVS
+fBB
 rJM
 hvn
 lCs
@@ -60015,7 +60019,7 @@ hvn
 hvn
 qGh
 hvn
-nCN
+hvn
 hvn
 hvn
 hvn
@@ -60201,7 +60205,7 @@ qGh
 iyO
 hvn
 hvn
-nCN
+hvn
 hvn
 tOE
 hAS
@@ -63490,7 +63494,7 @@ gog
 pJn
 pJn
 pJn
-lnn
+pJn
 pJn
 pJn
 pJn
@@ -66299,7 +66303,7 @@ tVC
 cxb
 tiD
 wze
-cxb
+pIs
 cxb
 axE
 trb
@@ -67861,7 +67865,7 @@ oQd
 oQd
 oQd
 oQd
-oQd
+rWx
 oQd
 oQd
 oQd
@@ -69120,7 +69124,7 @@ nwA
 cZw
 shs
 fmc
-pJn
+lnn
 pJn
 rqG
 ddz
