@@ -799,7 +799,7 @@
 					pot.reagents.remove_reagent(/datum/reagent/water, 1)
 
 			// Bad and rotten and toxic stuff below. Less lethal due to boiling, but really disgusting. Graggars inhumen followers love this stuff, get some healing from it too.
-			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/jacksberries/poison) || istype(W, /obj/item/natural/poo)|| istype(W, /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms) || istype(W, /obj/item/natural/worms))
+			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/jacksberry/poison) || istype(W, /obj/item/natural/poo)|| istype(W, /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms) || istype(W, /obj/item/natural/worms))
 				if(do_after(user,2 SECONDS, target = src))
 					user.visible_message("<span class='info'>[user] places [W] into the pot.</span>")
 					playsound(src.loc, 'sound/items/Fish_out.ogg', 20, TRUE)

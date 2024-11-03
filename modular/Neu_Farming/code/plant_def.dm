@@ -115,7 +115,7 @@
 /datum/plant_def/berry
 	name = "jacksberry bush"
 	icon_state = "berry"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/jacksberries
+	produce_type = /obj/item/reagent_containers/food/snacks/produce/jacksberry
 	uproot_loot = list(/obj/item/grown/log/tree/stick)
 	perennial = TRUE
 	produce_amount_min = 3
@@ -125,7 +125,7 @@
 /datum/plant_def/berry_poison
 	name = "jacksberry bush"
 	icon_state = "berry"
-	produce_type = /obj/item/reagent_containers/food/snacks/produce/jacksberries/poison
+	produce_type = /obj/item/reagent_containers/food/snacks/produce/jacksberry/poison
 	uproot_loot = list(/obj/item/grown/log/tree/stick)
 	perennial = TRUE
 

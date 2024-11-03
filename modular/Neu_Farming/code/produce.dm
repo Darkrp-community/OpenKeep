@@ -147,7 +147,7 @@
 			if(equippedloc != H.loc)
 				H.dropItemToGround(H.head)
 
-/obj/item/reagent_containers/food/snacks/produce/jacksberries
+/obj/item/reagent_containers/food/snacks/produce/jacksberry
 	seed = /obj/item/neuFarm/seed/berryrogue
 	name = "jacksberries"
 	desc = "Common berries found throughout Rockhill. A traveler's repast, or Dendor's wrath."
@@ -164,7 +164,7 @@
 	var/poisonous = FALSE
 	possible_potion = "antidote"
 
-/obj/item/reagent_containers/food/snacks/produce/jacksberries/Initialize()
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/Initialize()
 	if(GLOB.berrycolors[color_index])
 		filling_color = GLOB.berrycolors[color_index]
 	else
@@ -177,17 +177,17 @@
 	update_icon()
 	..()
 
-/obj/item/reagent_containers/food/snacks/produce/jacksberries/examine(mob/user)
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/examine(mob/user)
 	var/farminglvl = user.mind?.get_skill_level(/datum/skill/labor/farming)
 	. += ..()
 	if(farminglvl >= 3 && poisonous == TRUE)
 		. += "These berries appear to be poisonous."
 
-/obj/item/reagent_containers/food/snacks/produce/jacksberries/On_Consume(mob/living/eater)
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/On_Consume(mob/living/eater)
 	..()
 	update_icon()
 
-/obj/item/reagent_containers/food/snacks/produce/jacksberries/update_icon()
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/update_icon()
 	cut_overlays()
 	var/used_state = "berriesc5"
 	if(bitecount == 1)
@@ -202,7 +202,7 @@
 	item_overlay.color = filling_color
 	add_overlay(item_overlay)
 
-/obj/item/reagent_containers/food/snacks/produce/jacksberries/poison
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison
 	seed = /obj/item/neuFarm/seed/poison_berries
 	icon_state = "berries"
 	tastes = list("berry" = 1)

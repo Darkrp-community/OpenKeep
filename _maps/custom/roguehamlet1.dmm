@@ -263,13 +263,13 @@
 /obj/item/reagent_containers/food/snacks/produce/apple,
 /obj/item/reagent_containers/food/snacks/produce/apple,
 /obj/item/reagent_containers/food/snacks/produce/apple,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/under/basement)
 "asF" = (
@@ -10647,7 +10647,7 @@
 /obj/item/rogueweapon/huntingknife/idagger/steel,
 /obj/item/reagent_containers/glass/bottle/rogue/poison,
 /obj/item/clothing/mask/cigarette/rollie/mindbreaker,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries/poison,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison,
 /obj/item/keyring/nightman,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town)
@@ -10957,7 +10957,7 @@
 	first_time_text = "Blackwine Manor"
 	})
 "lTO" = (
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
 /obj/structure/closet/crate/roguecloset/inn/chest,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/rtfield)

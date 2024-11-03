@@ -286,12 +286,12 @@
 /obj/item/reagent_containers/food/snacks/produce/apple,
 /obj/item/reagent_containers/food/snacks/produce/apple,
 /obj/item/reagent_containers/food/snacks/produce/apple,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
 /obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/under/basement)
@@ -4923,7 +4923,7 @@
 /obj/item/rogueweapon/huntingknife/idagger/steel,
 /obj/item/reagent_containers/glass/bottle/rogue/poison,
 /obj/item/clothing/mask/cigarette/rollie/mindbreaker,
-/obj/item/reagent_containers/food/snacks/produce/jacksberries/poison,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath/redhouse)
 "fhC" = (
@@ -11338,7 +11338,7 @@
 	},
 /area/rogue)
 "lTO" = (
-/obj/item/reagent_containers/food/snacks/produce/jacksberries,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry,
 /obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/rtfield)

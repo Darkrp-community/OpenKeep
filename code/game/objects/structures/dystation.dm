@@ -42,11 +42,11 @@
 		"Chalk White" ="#c7c0b5",
 		"Cream" ="#b0ae80",
 		"Blood Red" ="#770d0d",
-		"Plum Purple" ="#552e6e",
+		"Plum Purple" ="#4b2265",
 		"Dark Ink" ="#372b2b",
-		"Forest Green" ="#3e7e27",
-		"Sky Blue" ="#1a3567",
-		"Mustard Yellow" ="#7f7b0b",
+		"Forest Green" ="#3f8b24",
+		"Sky Blue" ="#1b3c7a",
+		"Mustard Yellow" ="#979044",
 
 		"Royal Black" ="#2f352f",
 		"Royal Red" ="#8f3636",
@@ -62,7 +62,7 @@
 		"Royal Purple" ="#865c9c",
 		"Mage Blue" ="#4756d8",
 
-		"Salmon" ="#925567",
+		"Salmon" ="#a56176",
 		"Russet" ="#733f18",
 		"Yellow Ochre" ="#9b7a02",
 		"Red Ochre" = "#6f2d28",
@@ -172,6 +172,22 @@
 		inserted = null
 		updateUsrDialog()
 
+/obj/machinery/dye_bin/onkick(mob/user)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(prob(L.STASTR * 8))
+			playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
+			user.visible_message("<span class='warning'>[user] kicks over [src], ruining the contents!</span>", \
+				"<span class='warning'>I kick over [src], ruining the contents!</span>")
+			var/obj/item/roguebin/I = new /obj/item/roguebin (loc)
+			I.kover = TRUE
+			I.update_icon()
+			qdel(src)
+
+		else
+			playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
+			user.visible_message("<span class='warning'>[user] kicks [src]!</span>", \
+				"<span class='warning'>I kick [src]!</span>")
 
 
 /obj/machinery/simple_dye_bin
@@ -337,3 +353,22 @@
 		inserted.forceMove(drop_location())
 		inserted = null
 		updateUsrDialog()
+
+
+
+/obj/machinery/simple_dye_bin/onkick(mob/user)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(prob(L.STASTR * 8))
+			playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
+			user.visible_message("<span class='warning'>[user] kicks over [src], ruining the contents!</span>", \
+				"<span class='warning'>I kick over [src], ruining the contents!</span>")
+			var/obj/item/roguebin/I = new /obj/item/roguebin (loc)
+			I.kover = TRUE
+			I.update_icon()
+			qdel(src)
+
+		else
+			playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
+			user.visible_message("<span class='warning'>[user] kicks [src]!</span>", \
+				"<span class='warning'>I kick [src]!</span>")
