@@ -106,6 +106,30 @@
 					H.update_inv_neck()
 					H.update_inv_head()
 
+/obj/item/clothing/neck/roguetown/keffiyeh/red
+	color = CLOTHING_RED
+
+/obj/item/clothing/neck/roguetown/keffiyeh/yellow
+	color = CLOTHING_PALE_YELLOW
+
+/obj/item/clothing/neck/roguetown/keffiyeh/orange
+	color = CLOTHING_ORANGE
+
+/obj/item/clothing/neck/roguetown/keffiyeh/green
+	color = CLOTHING_GREEN
+
+/obj/item/clothing/neck/roguetown/keffiyeh/blue
+	color = CLOTHING_PALE_BLUE
+
+/obj/item/clothing/neck/roguetown/keffiyeh/purple
+	color = CLOTHING_PURPLE
+
+/obj/item/clothing/neck/roguetown/keffiyeh/teal
+	color = CLOTHING_TEAL
+
+/obj/item/clothing/neck/roguetown/keffiyeh/black
+	color = CLOTHING_BLACK
+
 
 /obj/item/clothing/neck/roguetown/coif/cloth
 	name = "padded coif"

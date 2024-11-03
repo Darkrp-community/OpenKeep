@@ -24,6 +24,7 @@
 			/obj/item/clothing/head/roguetown/headband,
 			/obj/item/clothing/head/roguetown/armingcap,
 			/obj/item/clothing/head/roguetown/chaperon,
+			/obj/item/clothing/neck/roguetown/keffiyeh,
 			/obj/item/clothing/cloak/apron/cook,
 			/obj/item/clothing/cloak/apron/waist,
 			/obj/item/clothing/head/roguetown/cookhat,
