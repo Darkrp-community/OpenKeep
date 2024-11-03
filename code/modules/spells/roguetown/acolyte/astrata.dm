@@ -4,7 +4,7 @@
 	releasedrain = 30
 	chargedrain = 0
 	chargetime = 0
-	range = 15
+	range = 12
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	chargedloop = null
@@ -14,7 +14,7 @@
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
-	charge_max = 5 SECONDS
+	charge_max = 8 SECONDS	// the cooldown
 	miracle = TRUE
 	devotion_cost = -45
 
@@ -24,9 +24,10 @@
 		user.visible_message("<font color='yellow'>[user] points at [L]!</font>")
 		if(L.anti_magic_check(TRUE, TRUE))
 			return FALSE
+		playsound(user, 'sound/items/flint.ogg', 150, FALSE)
 		L.adjust_fire_stacks(5)
 		L.IgniteMob()
-		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, ExtinguishMob)), 5 SECONDS)
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, ExtinguishMob)), 7 SECONDS)
 		return TRUE
 
 	// Spell interaction with ignitable objects (burn wooden things, light torches up)
@@ -58,6 +59,7 @@
 	charge_max = 2 MINUTES
 	miracle = TRUE
 	devotion_cost = -100
+//	req_inhand = list(/obj/item/roguecoin/gold)
 	/// Amount of PQ gained for reviving people
 	var/revive_pq = 0.25
 
