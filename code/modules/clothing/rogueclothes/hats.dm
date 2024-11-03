@@ -947,7 +947,7 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 
 //................ Malum Helmet ............. //
-/obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
+/obj/item/clothing/head/roguetown/helmet/heavy/malumhelm
 	name = "malumite helmet"
 	desc = "A great helmet of sturdy dark steel. Its chiseled countenance reminds the viewer of Malum's stern gaze."
 	icon_state = "malumhelm"
