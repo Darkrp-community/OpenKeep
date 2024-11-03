@@ -600,7 +600,7 @@
 	dir = pick(GLOB.cardinals)
 	. = ..()
 
-
+/*	..................   Stone Block Floors   ................... */
 /turf/open/floor/rogue/blocks
 	icon_state = "blocks"
 	footstep = FOOTSTEP_STONE
@@ -837,6 +837,7 @@
 	. = ..()
 	dir = pick(GLOB.cardinals)
 
+/*	..................   Cobblestone   ................... */
 /turf/open/floor/rogue/cobble
 	icon_state = "cobblestone1"
 	footstep = FOOTSTEP_STONE
@@ -936,6 +937,7 @@
 						/turf/open/floor/rogue/snow/patchy,
 						/turf/open/floor/rogue/snow/rough)
 
+/*	..................   Miscellany   ................... */
 /turf/open/floor/rogue/tile/masonic
 	icon_state = "masonic"
 /turf/open/floor/rogue/tile/masonic/single
