@@ -287,3 +287,55 @@
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/sallet)
 	craftdiff = 3
+
+//Kaizoku Altversions
+/*
+/obj/item/clothing/suit/roguetown/armor/plate/nanbando
+
+/obj/item/clothing/suit/roguetown/armor/plate/half/nanbando
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/nanbando
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/tatami
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/iron/tatami
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/kusari
+
+/obj/item/clothing/suit/roguetown/armor/plate/mirror/iron
+
+/obj/item/clothing/suit/roguetown/armor/plate/mirror
+
+/obj/item/clothing/suit/roguetown/armor/brigandine/oyoroi
+
+/obj/item/clothing/suit/roguetown/armor/brigandine/oyoroi/oyoroigusoku
+
+/obj/item/clothing/suit/roguetown/armor/plate/half/sanmaido
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

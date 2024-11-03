@@ -222,3 +222,18 @@
 	chargetime = 0.75
 	chargedrain = 1.5
 	charging_slowdown = 2.5
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
+	name = "hankyu bow"
+	desc = "a smaller version of the asymmetrical bow named Yumi. It must be shot overhead - and it is perfect for horseback use."
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	icon_state = "hankyu_bow"
+	item_state = "hankyu_bow"
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long/yumi
+	name = "yumi bow"
+	desc = "The asymmetrical and elegant piece of Kyudo warfare, hard-hitting and powerful, bringing fear to orcish hordes and demons on a whim."
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
+	icon_state = "yumi"
+	item_state = "yumi"
+	bigboy = TRUE

@@ -132,6 +132,9 @@
 #define NO_ORGAN_FEATURES			22
 #define NO_BODYPART_FEATURES			23
 
+//Abyssariad only 
+#define KITSUNE_TONGUE			24
+
 //organ defines
 #define STANDARD_ORGAN_THRESHOLD 	100
 #define STANDARD_ORGAN_HEALING 		0.001

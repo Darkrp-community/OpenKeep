@@ -11,10 +11,8 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
-		"Kitsune",
-		"Tengu",
-		"Oni",
-		"Kappa")
+		"Aasimar",
+	)
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/hand
 	display_order = JDO_HAND

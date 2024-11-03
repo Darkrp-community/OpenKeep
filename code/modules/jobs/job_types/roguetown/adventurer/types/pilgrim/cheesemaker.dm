@@ -3,17 +3,19 @@
 	tutorial = "Craftsmen who have mastered the art of curdling milks \
 				into delicious and long lasting wheels of cheese."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list("Humen",
-	"Elf",
-	"Half-Elf",
-	"Dwarf",
-	"Tiefling",
-	"Dark Elf",
-	"Aasimar",
-	"Kitsune",
-	"Tengu",
-	"Oni",
-	"Kappa")
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar",
+		"Kitsune",
+		"Tengu",
+		"Oni",
+		"Kappa"
+	)
 	outfit = /datum/outfit/job/roguetown/adventurer/cheesemaker
 
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)

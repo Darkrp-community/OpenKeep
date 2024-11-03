@@ -388,3 +388,22 @@
 	name = "master's guide to literature"
 	result = list(/obj/item/literary/master)
 	craftdiff = 6
+
+//code testing
+
+/datum/crafting_recipe/roguetown/omegateste
+	name = "flintooo(abyssariad)"
+	result = /obj/item/flint
+	reqs = list(
+			/obj/item/natural/stone = 1)
+	craftdiff = 0 // Something to practice engineering with.
+	req_table = TRUE
+	req_kaizoku = TRUE
+
+/datum/crafting_recipe/roguetown/testeomega
+	name = "flintaaal(imperial)"
+	result = /obj/item/flint
+	reqs = list(
+			/obj/item/natural/stone = 1)
+	craftdiff = 0 // Something to practice engineering with.
+	req_antikaizoku = TRUE

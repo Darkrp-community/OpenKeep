@@ -7,7 +7,8 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Dwarf"
+		"Dwarf",
+		"Oni" //Onis are often master artisans on Fog islands.
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/masterblacksmith
 	maximum_possible_slots = 1

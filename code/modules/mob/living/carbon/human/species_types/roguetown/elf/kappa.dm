@@ -2,17 +2,18 @@
 	race = /datum/species/elf/kappa
 
 /datum/species/elf/kappa
-	name = "kappa"
+	name = "Kappa"
 	id = "elf"
 	desc = "<b>Kappa</b><br>\
-    Originally elves that arrived at the island centuries in the past, they have been \
-    corrupted by the demonic essence over generations, now possessing a blend of their \
-    elven features and current reptilian traits, as their skin obtained a scaled texture \
-    and a large shell on the back. They are a small, water-dwelling creatures that inhabit \
-    rivers and ponds, and usually live a tribalistic life, feared by those aware of their \
-    mischievous, people-drowning nature. Kitsunes and Tengus consider them viable assets \
-    for the defense of the isles, yet Onis find them fun to squash due to their natural \
-    armor."
+	An amalgamation between Goblins and Elves that arrived at the Fog islands centuries \
+	ago, long corrupted by demonic essence and alchemical misconducts over generations, \
+	they now possess features that blends amphibious traits from Goblin's lineage, \
+	including moist, permeable skin and a large shell on their back. They are a small, \
+	water-dwelling creatures that inhabit rivers and ponds, often living tribalistic, \
+	hedonistic lives, feared by those aware of their mischievous, people-drowning nature. \
+	One may say these are misunderstood rituals of trust, others warns the others that it is \
+	a sacrifice to the spirits they believe that exists. They have a natural, biological \
+	antipathy and abhorrence to humens - and a mutual alliance with Abyssariads."
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
@@ -21,17 +22,21 @@
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
+	use_f = TRUE
 	mutant_bodyparts = list("ears","tail_human")
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon_m = 'icons/roguetown/mob/bodies/m/ms_kappa.dmi'
-	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fs_kappa.dmi'
+	limbs_icon_m = 'icons/roguetown/kaizoku/abyssariad_bodies/male/ms_kappa.dmi'
+	limbs_icon_f = 'icons/roguetown/kaizoku/abyssariad_bodies/female/fs_kappa.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
-	hairyness = "t3"
+
+	hairyness = ""
 	use_f = FALSE
 	soundpack_m = /datum/voicepack/male/elf
 	soundpack_f = /datum/voicepack/female/elf
+	minrace_pq = 0
+
 	offset_features = list(OFFSET_ID = list(0,-1), OFFSET_GLOVES = list(0,-1), OFFSET_WRISTS = list(0,-1),\
 	OFFSET_CLOAK = list(0,-1), OFFSET_FACEMASK = list(0,-1), OFFSET_HEAD = list(0,-1), \
 	OFFSET_FACE = list(0,-1), OFFSET_BELT = list(0,-1), OFFSET_BACK = list(0,-1), \
@@ -45,7 +50,6 @@
 	specstats = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = 0, "fortune" = 0)
 	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
-	possible_faiths = list(FAITH_PSYDON)
 
 /datum/species/elf/kappa/check_roundstart_eligible()
 	return TRUE
@@ -61,13 +65,14 @@
 
 /datum/species/elf/kappa/get_skin_list()
 	return sortList(list(
-	"Swampclan" = "129B57", 
+	"Swampclan" = "728400", 
 	"Jungleclan" = "0D6D30",
-	"Leafclan" = "E26846",
-	"Bogclan" = "086247",
+	"Leafclan" = "5ea889",
+	"Bogclan" = "1b7a5e",
 	"Forestclan" = "5FB098",
-	"Shadowclan" = "3D3D8D",
-	"Abyssalclan" = "5D40AD"
+	"Shadowclan" = "60609e",
+	"Firebloomclan" = "E26846",
+	"Abyssalclan" = "a198b8"
 	))
 
 /datum/species/elf/kappa/get_hairc_list()
@@ -90,8 +95,9 @@
 	"green - grass" = "2a482c",
 	"green - swamp" = "3b482a",
 	"green - leaf" = "2f3c2e",
-	"green - moss" = "3b3c2a"
-
+	"green - moss" = "3b3c2a",
+	"white - silver" = "e8fdfd",
+	"white - oceanid" = "afdddd"
 	))
 
 /datum/species/elf/kappa/random_name(gender,unique,lastname)
@@ -119,3 +125,16 @@
 
 /datum/species/elf/kappa/get_accent_list()
 	return strings("japanese_replacement.json", "japanese")
+
+/datum/species/elf/kappa/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	..()
+	RegisterSignal(C, COMSIG_MOB_SAY, .proc/handle_speech)
+	C.grant_language(/datum/language/abyssal)
+	C.cmode_music = 'sound/music/combatabyssariad.ogg'
+	C.verbs |= /mob/proc/croak
+	ADD_TRAIT(C, TRAIT_KAIZOKU, TRAIT_GENERIC)  //Cultural Trait. Must not be considered a 'buff' or 'debuff'.
+
+/mob/proc/croak()
+	set name = "Croak"
+	set category = "Noises"
+	emote("croak")

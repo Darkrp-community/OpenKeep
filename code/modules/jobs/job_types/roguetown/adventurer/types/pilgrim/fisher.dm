@@ -3,17 +3,19 @@
 	tutorial = "Simple folk with an affinity for catching fish out of any body of water, \
 				they are decent cooks and swimmers, living off the gifts of Abyssor."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list("Humen",
-	"Elf",
-	"Half-Elf",
-	"Dwarf",
-	"Tiefling",
-	"Dark Elf",
-	"Aasimar",
-	"Kitsune",
-	"Tengu",
-	"Oni",
-	"Kappa")
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar",
+		"Kitsune",
+		"Tengu",
+		"Oni",
+		"Kappa"
+	)
 	outfit = /datum/outfit/job/roguetown/adventurer/fisher
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 

@@ -29,6 +29,7 @@
 	H.dna.features["mcolor"] = random_short_color()
 	H.dna.features["ethcolor"] = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)]
 	H.dna.features["tail_lizard"] = pick(GLOB.tails_list_lizard)
+	H.dna.features["kitsune_tongue"] = pick(GLOB.tongue_list_kitsune)
 	H.dna.features["snout"] = pick(GLOB.snouts_list)
 	for(var/X in GLOB.horns_list.Copy())
 		var/datum/sprite_accessory/S = GLOB.horns_list[X]

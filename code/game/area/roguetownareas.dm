@@ -193,7 +193,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/spider = 80,
 				/mob/living/carbon/human/species/goblin/npc/ambush/sea = 50,
 				/mob/living/simple_animal/hostile/retaliate/rogue/troll = 35,
-				/mob/living/simple_animal/hostile/retaliate/rogue/bogbug = 70)
+				/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion = 70,
+				/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion/necrobug = 40)
 
 	first_time_text = "THE TERRORBOG"
 	converted_type = /area/rogue/indoors/shelter/bog
@@ -600,6 +601,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 	ambientrain = RAIN_SEWER
 	converted_type = /area/rogue/outdoors/exposed/under/sewer
+	ambush_mobs = list(
+				/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion = 70,
+				/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion/necrobug = 40)
 
 /area/rogue/outdoors/exposed/under/sewer
 	icon_state = "sewer"

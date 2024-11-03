@@ -59,7 +59,7 @@
 	H.change_stat("constitution", 2)
 	H.change_stat("intelligence", -1)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC) 
 	if(H.dna?.species)
 		H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
 	if(H.patron != /datum/patron/divine/ravox)

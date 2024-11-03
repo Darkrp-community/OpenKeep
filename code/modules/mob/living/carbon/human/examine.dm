@@ -5,6 +5,10 @@
 		user.add_stress(/datum/stressevent/delf)
 	if(!istiefling(user) && istiefling(src))
 		user.add_stress(/datum/stressevent/tieb)
+	if(isabyssariad(user) && ishumannorthern(src))
+		user.add_stress(/datum/stressevent/whaler)
+	if(ishumannorthern(user) && isabyssariad(src))
+		user.add_stress(/datum/stressevent/raider)
 	if(user.has_flaw(/datum/charflaw/paranoid) && (STASTR - user.STASTR) > 1)
 		user.add_stress(/datum/stressevent/parastr)
 

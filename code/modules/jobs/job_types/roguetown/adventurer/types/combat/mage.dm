@@ -4,11 +4,11 @@
 	allowed_sexes = list("male")
 	allowed_races = list("Humen",
 	"Humen",
-	 "Elf",
-	 "Half-Elf",
-	 "Elf",
-	 "Dark Elf",
-	 "Tiefling",
+	"Elf",
+	"Half-Elf",
+	"Elf",
+	"Dark Elf",
+	"Tiefling",
 	"Aasimar")
 	outfit = /datum/outfit/job/roguetown/adventurer/mage
 	category_tags = list(CTAG_ADVENTURER)

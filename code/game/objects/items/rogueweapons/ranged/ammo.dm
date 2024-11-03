@@ -293,3 +293,90 @@
 	dropshrink = 0.5
 	possible_item_intents = list(/datum/intent/use)
 	max_integrity = 0
+
+//// Kaizoku Edition ////
+
+/obj/projectile/bullet/reusable/arrow/poison/fog
+	name = "fog arrow"
+	desc = "An arrow with it's tip drenched in a powerful sedactive."
+	icon = 'icons/roguetown/kaizoku/weapons/ammo.dmi'
+	icon_state = "arrowfog_proj"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow
+
+/obj/item/ammo_casing/caseless/rogue/arrow/poison/fog
+	name = "fog arrow"
+	desc = "An arrow with it's tip drenched in a powerful sedactive."
+	projectile_type = /obj/projectile/bullet/reusable/arrow/poison/fog
+	icon = 'icons/roguetown/kaizoku/weapons/ammo.dmi'
+	icon_state = "arrow_fog"
+
+/obj/projectile/bullet/reusable/arrow/poison/fog/Initialize()
+	. = ..()
+	create_reagents(50, NO_REACT)
+
+/obj/projectile/bullet/reusable/arrow/poison/fog/on_hit(atom/target, blocked = FALSE)
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		if(blocked != 100) // not completely blocked
+			if(M.can_inject(null, FALSE, def_zone, piercing)) // Pass the hit zone to see if it can inject by whether it hit the head or the body.
+				..()
+				reagents.reaction(M, INJECT)
+				reagents.trans_to(M, reagents.total_volume)
+				return BULLET_ACT_HIT
+			else
+				blocked = 100
+				target.visible_message("<span class='danger'>\The [src] was deflected!</span>", \
+									   "<span class='danger'>My armor protected me against \the [src]!</span>")
+
+	..(target, blocked)
+	DISABLE_BITFIELD(reagents.flags, NO_REACT)
+	reagents.handle_reactions()
+	return BULLET_ACT_HIT
+
+/obj/projectile/bullet/reusable/arrow/poison/fog/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/fogblight, 5)
+
+/obj/item/ammo_casing/caseless/rogue/bolt/poison/fog
+	name = "fog bolt"
+	desc = "A bolt dipped with a potent sedactive."
+	projectile_type = /obj/projectile/bullet/reusable/bolt/poison/fog
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
+	icon = 'icons/roguetown/kaizoku/weapons/ammo.dmi'
+	icon_state = "bolt_fog"
+
+/obj/projectile/bullet/reusable/bolt/poison/fog
+	name = "fog bolt"
+	desc = "A bolt dipped with a potent sedactive."
+	damage = 35
+	damage_type = BRUTE
+	icon = 'icons/roguetown/kaizoku/weapons/ammo.dmi'
+	icon_state = "boltfogn_proj"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/bolt
+
+/obj/projectile/bullet/reusable/bolt/poison/fog/Initialize()
+	. = ..()
+	create_reagents(50, NO_REACT)
+
+/obj/projectile/bullet/reusable/bolt/poison/fog/on_hit(atom/target, blocked = FALSE)
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		if(blocked != 100) // not completely blocked
+			if(M.can_inject(null, FALSE, def_zone, piercing)) // Pass the hit zone to see if it can inject by whether it hit the head or the body.
+				..()
+				reagents.reaction(M, INJECT)
+				reagents.trans_to(M, reagents.total_volume)
+				return BULLET_ACT_HIT
+			else
+				blocked = 100
+				target.visible_message("<span class='danger'>\The [src] was deflected!</span>", \
+									   "<span class='danger'>My armor protected me against \the [src]!</span>")
+
+	..(target, blocked)
+	DISABLE_BITFIELD(reagents.flags, NO_REACT)
+	reagents.handle_reactions()
+	return BULLET_ACT_HIT
+
+/obj/projectile/bullet/reusable/bolt/poison/fog/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/fogblight, 5)

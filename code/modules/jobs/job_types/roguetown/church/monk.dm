@@ -12,7 +12,11 @@
 		"Half-Elf",
 		"Dwarf",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Kitsune",
+		"Tengu",
+		"Oni",
+		"Kappa"
 	)
 	tutorial = "Chores, exercise, prayer... and more chores. You are a humble acolyte at the temple in Rockhill, not yet a trained guardian or an ordained priest. But who else would keep the fires lit and the floors clean?"
 	allowed_patrons = ALL_CLERIC_PATRONS
@@ -77,7 +81,12 @@
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("perception", -1)
-
+	if(H.dna?.species)
+		if(H.dna.species?.id == "abyssariad")
+			to_chat(H, "<span class='warning'>From the Abyssanctum shrines to the churches of Enigma, I am one with all. The other god's ways may be exotic, yet they exist to be understood.")
+			backl = /obj/item/rogueweapon/woodstaff/bostaff
+			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
+			H.virginity = FALSE //Abyssanctum religion, abyssal tide culture and values does not include chastity. It is UNFITTING to expect immortals creatures to be virgins to their gods. Removing that for lore's sake. 
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	C.holder_mob = H
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)

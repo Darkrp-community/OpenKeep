@@ -3,8 +3,6 @@
 	switch(modifiers)
 		if("old")
 			used = getmold(soundin)
-		if("young")
-			used = getmyoung(soundin)
 		if("silenced")
 			used = getmsilenced(soundin)
 	if(!used)
@@ -26,11 +24,11 @@
 			if("haltyell")
 				used = used = list('sound/vo/male/abyssariad/halt.ogg','sound/vo/male/abyssariad/halt(3).ogg','sound/vo/male/abyssariad/halt2.ogg')
 			if("huh")
-				used = list('sound/vo/male/abyssariad/huh.ogg','sound/vo/male/abyssariad/huh(2).ogg','sound/vo/male/abyssariad/huh2.ogg')
+				used = list('sound/vo/male/abyssariad/huh.ogg','sound/vo/male/abyssariad/huh(2).ogg')
 			if("laugh")
 				used = list('sound/vo/male/abyssariad/laugh (1).ogg','sound/vo/male/abyssariad/laugh (2).ogg','sound/vo/male/abyssariad/laugh again.ogg','sound/vo/male/abyssariad/laugh(3).ogg','sound/vo/male/abyssariad/morelaugh.ogg')
 			if("pain")
-				used = list('sound/vo/male/abyssariad/pain(1).ogg','sound/vo/male/abyssariad/pain(4).ogg','sound/vo/male/abyssariad/pain(5).ogg','sound/vo/male/abyssariad/pain(3).ogg')
+				used = list('sound/vo/male/abyssariad/pain(4).ogg','sound/vo/male/abyssariad/pain(5).ogg','sound/vo/male/abyssariad/pain(3).ogg')
 			if("paincrit")
 				used = list('sound/vo/male/abyssariad/painmoan.ogg','sound/vo/male/abyssariad/paincrit(3).ogg')
 			if("painmoan")
@@ -57,53 +55,45 @@
 				used = 'sound/vo/male/gen/fatigue.ogg'
 			if("gag")
 				used = list('sound/vo/male/gen/gag (1).ogg','sound/vo/male/gen/gag (2).ogg','sound/vo/male/gen/gag (3).ogg')
-			if("gasp")
-				used = 'sound/vo/male/gen/gasp.ogg'
 			if("groin")
 				used = list('sound/vo/male/gen/groin (1).ogg','sound/vo/male/gen/groin (2).ogg')
 			if("groan")
 				used = list('sound/vo/male/gen/groan (1).ogg','sound/vo/male/gen/groan (2).ogg','sound/vo/male/gen/groan (3).ogg','sound/vo/male/gen/groan (4).ogg','sound/vo/male/gen/groan (5).ogg','sound/vo/male/gen/groan (6).ogg')
 			if("hmm")
-				used = 'sound/vo/male/gen/hmm.ogg'
+				used = 'sound/vo/male/abyssariad/huh2.ogg'
 			if("hum")
 				used = list('sound/vo/male/gen/hum (1).ogg','sound/vo/male/gen/hum (2).ogg','sound/vo/male/gen/hum (3).ogg')
 			if("jump")
 				used = 'sound/vo/male/gen/jump.ogg'
-			if("laugh")
-				used = list('sound/vo/male/gen/laugh (2).ogg','sound/vo/male/gen/laugh (3).ogg','sound/vo/male/gen/laugh (4).ogg','sound/vo/male/gen/laugh (5).ogg','sound/vo/male/gen/laugh (6).ogg')
 			if("leap")
 				used = 'sound/vo/male/gen/leap.ogg'
 			if("pain")
 				used = list('sound/vo/male/gen/pain (1).ogg','sound/vo/male/gen/pain (2).ogg','sound/vo/male/gen/pain (3).ogg')
 			if("paincrit")
 				used = list('sound/vo/male/gen/paincrit (1).ogg','sound/vo/male/gen/paincrit (2).ogg')
-			if("painmoan")
-				used = list('sound/vo/male/gen/painmoan (1).ogg','sound/vo/male/gen/painmoan (2).ogg','sound/vo/male/gen/painmoan (3).ogg','sound/vo/male/gen/painmoan (4).ogg','sound/vo/male/gen/painmoan (5).ogg')
 			if("painscream")
 				used = list('sound/vo/male/gen/painscream (1).ogg','sound/vo/male/gen/painscream (2).ogg','sound/vo/male/gen/painscream (3).ogg')
 			if("rage")
 				used = list('sound/vo/male/gen/rage (1).ogg','sound/vo/male/gen/rage (2).ogg')
 			if("scream")
 				used = list('sound/vo/male/gen/scream (1).ogg','sound/vo/male/gen/scream (2).ogg')
-				if(prob(1))
-					used = 'sound/vo/male/wilhelm_scream.ogg'
-			if("shh")
-				used = 'sound/vo/male/gen/shh.ogg'
 			if("sigh")
 				used = 'sound/vo/male/gen/sigh.ogg'
-			if("snore")
-				used = list('sound/vo/male/gen/snore (1).ogg','sound/vo/male/gen/snore (2).ogg','sound/vo/male/gen/snore (3).ogg','sound/vo/male/gen/snore (4).ogg')
 			if("whimper")
 				used = list('sound/vo/male/gen/whimper (1).ogg','sound/vo/male/gen/whimper (2).ogg','sound/vo/male/gen/whimper (3).ogg')
-			if("whistle")
-				used = list('sound/vo/male/gen/whistle (1).ogg','sound/vo/male/gen/whistle (2).ogg','sound/vo/male/gen/whistle (3).ogg')
 			if("yawn")
 				used = list('sound/vo/male/gen/yawn (1).ogg','sound/vo/male/gen/yawn (2).ogg')
 			if("attnwhistle")
 				used = 'sound/vo/attn.ogg'
-			if("psst")
-				used = 'sound/vo/psst.ogg'
-
+			if("praise")
+				used = list('sound/vo/male/abyssariad/abyssariad_praise.ogg','sound/vo/male/abyssariad/abyssariad_praise2.ogg')
+			if("yoo")
+				used = 'sound/vo/male/abyssariad/yoooo.ogg'
+			if("throatsing") //need to find a way to make a bigger cooldown on this one. This emote is long.
+				if(prob(5)) 
+					used = 'sound/vo/male/abyssariad/throatsing_rare.ogg' //I am not afraid. I know gundam will hate me for this one. But trust me, it's worth it
+				else
+					used = list('sound/vo/male/abyssariad/throatsing1.ogg','sound/vo/male/abyssariad/mthroatsing1.ogg','sound/vo/male/abyssariad/mthroatsing2.ogg','sound/vo/male/abyssariad/mthroatsing3.ogg','sound/vo/male/abyssariad/mthroatsing4.ogg','sound/vo/male/abyssariad/mthroatsing5.ogg')
 	if(!used)
 		used = ..(soundin)
 	return used

@@ -63,3 +63,18 @@
 		tail_type = H.dna.features["tail_lizard"]
 		spines = H.dna.features["spines"]
 		H.update_body()
+
+/obj/item/organ/tongue/kitsune/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(istype(H))
+		if(!("kitsune_tongue" in H.dna.species.mutant_bodyparts))
+			H.dna.features["kitsune_tongue"] = tongue_type
+			H.dna.species.mutant_bodyparts |= "kitsune_tongue"
+		H.update_body()
+
+/obj/item/organ/tongue/kitsune/Remove(mob/living/carbon/human/H, special = 0)
+	..()
+	if(istype(H))
+		H.dna.species.mutant_bodyparts -= "kitsune_tongue"
+		tongue_type = H.dna.features["kitsune_tongue"]
+		H.update_body()

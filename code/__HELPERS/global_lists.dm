@@ -23,6 +23,8 @@
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/body_markings, GLOB.body_markings_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/lizard, GLOB.tails_list_lizard)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/tails_animated/lizard, GLOB.animated_tails_list_lizard)
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/tongue/kitsune, GLOB.tongue_list_kitsune)
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/tongue_animated/kitsune, GLOB.animated_tongue_list_kitsune)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/human, GLOB.tails_list_human)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/tails_animated/human, GLOB.animated_tails_list_human)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/snouts, GLOB.snouts_list)
@@ -37,7 +39,6 @@
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/wings, GLOB.r_wings_list,roundstart = TRUE)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/caps, GLOB.caps_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_wings, GLOB.moth_wings_list)
-
 
 	//Species
 	for(var/spath in subtypesof(/datum/species))

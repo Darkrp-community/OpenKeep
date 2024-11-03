@@ -63,3 +63,5 @@
 		if(!H.has_language(/datum/language/elvish))
 			H.grant_language(/datum/language/elvish)
 			to_chat(H, "<span class='info'>I can speak Elfish with ,e before my speech.</span>")
+
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow

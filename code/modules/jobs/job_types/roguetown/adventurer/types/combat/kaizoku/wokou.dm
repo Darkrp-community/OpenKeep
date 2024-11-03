@@ -1,0 +1,149 @@
+// The Abyssariad BROADER version of "The Warrior" class.
+// It's meant to be a RnG catch-many for the players that have gambling addiction and
+// greater cultural juice. Otherwise they will take Ronin, Sohei or Marauder.
+// Militaristic as it fit their theme. But not a member of the Zamurai caste.
+/datum/advclass/combat/abyssariad/wokou
+	name = "Wokou Warrior"
+	tutorial = "The Wokou is a general term for abyssariad fighter and/or pirates, those who constantly causes annual invasions on coastline provinces worldwide. They have many specializations and many \
+	receives government subsidy. However, their presence on Enigma has less boundaries to raiding the place, but more about taking the 'lawful' privateer role."
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list(
+	"Kitsune",
+	"Tengu",
+	"Oni",
+	"Kappa")
+	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/wokou
+	category_tags = list(CTAG_ADVENTURER)
+	pickprob = 100
+
+/datum/outfit/job/roguetown/adventurer/abyssariad/wokou/pre_equip(mob/living/carbon/human/H) // Same as Warrior.
+	..()
+	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(1,2), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,1,2), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(2,3), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(1,1,2), TRUE)
+
+	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi
+	gloves = /obj/item/clothing/gloves/roguetown/leather
+	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho
+	shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
+	pants = /obj/item/clothing/under/roguetown/tobi/random
+	
+	H.become_blind("TRAIT_GENERIC")
+	var/wokoutype = list("LinYou(Ambusher)","Dustrider(Scout)","Muqian(Towerdweller)","Shuhen(Militia)","Kaizoku(Navy)")
+	var/specialization = input("Choose your culture", "Available culture") as anything in wokoutype
+	switch(specialization) //as far I know, all roles here are meant to be balanced.
+		if("LinYou(Ambusher)") //Weaker iron armor, specialized exactly in being able to repair their own weaker armor.
+			var/roll = rand(1, 100)
+			H.set_blindness(0)
+			armor = /obj/item/clothing/suit/roguetown/armor/rattan
+			head = /obj/item/clothing/head/roguetown/helmet/skullcap/rattan
+			backl = /obj/item/storage/backpack/rogue/satchel
+			backr = /obj/item/rogueweapon/shield/rattan
+			beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
+			if(roll <= 33)
+				beltl = /obj/item/rogueweapon/sword/short/jian
+			else if(roll <= 66)
+				beltl = /obj/item/rogueweapon/sword/iron/messer/dao
+			else
+				beltl = /obj/item/rogueweapon/sword/iron/jian
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			to_chat(H, span_warning( "<span class='info'>Hailing from the tropical edges, I am a 'LinYou', armored in humble, oil-boiled wickerwork and iron, I am trained to perform long-term expeditions and guerrila tactics on any soil.</span>"))
+
+			//same as normal warriors.
+			H.change_stat("strength", 2)
+			H.change_stat("endurance", 1)
+			H.change_stat("constitution", 1)
+			H.change_stat("intelligence", -1)
+			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+
+		if("Dustrider(Scout)") // Full light armor, highest quality of light armor. Loses shield and money for bow. Literally mongolian, but lacking a horse.
+			H.set_blindness(0)
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/dustwalker
+			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/deelcoat
+			head = /obj/item/clothing/head/roguetown/helmet/leather/malgai/duulga
+			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
+			backl = /obj/item/storage/backpack/rogue/satchel
+			beltr = /obj/item/quiver/arrows
+			if(prob(60))
+				beltl = /obj/item/rogueweapon/huntingknife/kunai //so they HAVE something to use in melee combat.
+			else
+				beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/tanto // luckyroll. Now you have a short-short sword.
+			H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
+
+			//please tell me if this is balanced or not.
+			H.change_stat("strength", 1)
+			H.change_stat("speed", 2)
+			H.change_stat("intelligence", -1)
+			H.change_stat("endurance", 1)
+			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+			to_chat(H, span_warning( "<span class='info'>Hailing from the arid heart of the island, I am a 'Dustwalker'. I left my horse behind to try my luck among the sailing allies, but my trusted bow remains with me.</span>"))
+
+		if("Shuhen(Militia)")  //No protective helmet, full face protection + neck from a full menpo - still does not protect the head. Their weapon also functions to work the field, but since that can be done by hand nowadays, is no balance issue now.
+			H.set_blindness(0)
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/mirror/iron
+			head = /obj/item/clothing/head/roguetown/tengai/gasa
+			if(prob(33))
+				head = /obj/item/clothing/head/roguetown/tengai/torioigasa
+			if(prob(33))
+				head = /obj/item/clothing/head/roguetown/tengai/sandogasa
+			mask = /obj/item/clothing/mask/rogue/kaizoku/menpo
+			backr = /obj/item/rogueweapon/shield/rattan
+			beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
+			if(prob(60))
+				beltl = /obj/item/rogueweapon/sickle/kama
+			else
+				beltl = /obj/item/rogueweapon/woodcut/changfu // luckyroll. Now you have an axe.
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+			to_chat(H, span_warning("<span class='info'>Farmlands shall never struggle under my might, as I came from the Outskirts where the demons once brew, I slaughtered the Grezenholft like pigs - and I can do it again. May the waters fortalify the soil I step on.</span>"))
+
+			//same as normal warriors.
+			H.change_stat("strength", 2)
+			H.change_stat("endurance", 1)
+			H.change_stat("constitution", 1)
+			H.change_stat("intelligence", -1)
+			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+
+		if("Muqian(Towerdweller)") //The 20% of Wokou Population. Practically the best armored - but has no shield and no money, and have to rely on flails.
+			H.set_blindness(0)
+			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/kusari
+			neck = /obj/item/clothing/neck/roguetown/chaincoif/iron/kusari_zukin
+			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/kusaritabi
+			beltl = /obj/item/rogueweapon/flail/kusarigama
+			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
+			to_chat(H, span_warning("<span class='info'>I am a Muqian, I hail from the towers of civilization, those upheld in sturdy chains alike my body. May the dices of destiny enlight my ways.</span>"))
+
+			//same as normal warriors.
+			H.change_stat("strength", 2)
+			H.change_stat("endurance", 1)
+			H.change_stat("constitution", 1)
+			H.change_stat("intelligence", -1)
+			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+
+		if("Kaizoku(Navy)") // Special one. "AYO THIS IS THE PROJECT NAME!!!" Start with Steel Weapon - but uses weak light armor, but they have DRIP, and non-rattan shield, because from where they come from, has no Rattan.
+			H.set_blindness(0)
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/kaizoku
+			head = /obj/item/clothing/head/roguetown/helmet/leather/malgai/kaizoku
+			beltl = /obj/item/rogueweapon/sword/sabre/messer/yuntoudao
+			backr = /obj/item/rogueweapon/shield/wood
+			beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			to_chat(H, span_warning("<span class='info'>I am a son of Kaizoku and I am one with the destroyed Atoll, my life is on the seas. The major empire's supply lines shall crumble against my ways of warfare. May the Abyssal Emperor live FOREVER. </span>"))
+
+			//please tell me if this is balanced or not.
+			H.change_stat("strength", 1)
+			H.change_stat("speed", 2)
+			H.change_stat("intelligence", -1)
+			H.change_stat("endurance", 1)
+			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+
+	H.cure_blind("TRAIT_GENERIC")

@@ -14,7 +14,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Kitsune", //Lore Situationism: The three abyssariad races have been brought over to the Garrison for prestige values and to cement the King's power by holding culturally loyal-bound raiders as part of the army.
+		"Tengu",
+		"Oni",
+		"Kappa" //So players are not kept out.	 They hate it afterall.
 	)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
 	tutorial = "You are a soldier on guard duty in the kings Garrison, you have been trained in defensive tactics to deal with the horrors of the island and protect the town to the best of your ability."
@@ -58,6 +62,24 @@
 		head = /obj/item/clothing/head/roguetown/helmet/kettle
 	else
 		head = /obj/item/clothing/head/roguetown/helmet
+	
+	if(H.dna?.species)
+		if(H.dna.species?.id == "abyssariad")
+			to_chat(H, "<span class='warning'>I am a Ashigaru working under the banner of the king, and I must treat him as I would my daimyo, and the kyaputen my leading shogun.")
+			pants = /obj/item/clothing/under/roguetown/tobi/random
+			cloak = /obj/item/clothing/cloak/jinbaori/guard
+			neck = null
+			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
+			mask = /obj/item/clothing/mask/rogue/kaizoku/menpo/half //Abyssariads uses menpos to protect the neck. Weaker in durability, but protects the mouth.
+			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi
+			belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
+			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/tatami
+			beltr = /obj/item/rogueweapon/mace/cudgel/jitte
+			backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/tanto = 1)
+			if(prob(30))
+				head = /obj/item/clothing/head/roguetown/helmet/kettle/jingasa
+			else
+				head = /obj/item/clothing/head/roguetown/helmet/zijinguan
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)

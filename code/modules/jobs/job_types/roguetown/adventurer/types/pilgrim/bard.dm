@@ -6,17 +6,19 @@
 	the last ones in a party to die. Their wish is to experience \
 	the greatest adventures of the age and write amazing songs about them."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list("Humen",
-	"Elf",
-	"Half-Elf",
-	"Dwarf",
-	"Tiefling",
-	"Dark Elf",
-	"Aasimar",
-	"Kitsune",
-	"Tengu",
-	"Oni",
-	"Kappa")
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar",
+		"Kitsune",
+		"Tengu",
+		"Oni",
+		"Kappa"
+	)
 	outfit = /datum/outfit/job/roguetown/adventurer/bard
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 

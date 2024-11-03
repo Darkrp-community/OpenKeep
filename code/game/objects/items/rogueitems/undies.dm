@@ -33,3 +33,15 @@
 				H.underwear_color = color
 				H.update_body()
 				qdel(src)
+
+/obj/item/undies/fundoshi
+	name = "fundoshi"
+	desc = "Simple undergarment that is merely a cloth folded on itself."
+	icon = 'icons/roguetown/kaizoku/clothingicon/underwear.dmi'
+	icon_state = "fundoshi"
+
+/obj/item/undies/fundoshi/f
+	name = "female fundoshi"
+	desc = "Simple undergarment that is merely a cloth folded on itself."
+	icon_state = "girlfundoshi"
+	gendered = FEMALE

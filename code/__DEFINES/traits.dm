@@ -33,6 +33,7 @@
 #define TRAIT_ASSASSIN					"Assassin Training" //used for the assassin drifter's unique mechanics.
 #define TRAIT_BARDIC_TRAINING			"Bardic Training"
 
+#define TRAIT_KAIZOKU					"Foglander Cultured"
 #define TRAIT_MISSING_NOSE "Missing Nose" //halved stamina regeneration
 #define TRAIT_DISFIGURED "Disfigured"
 #define TRAIT_SPELLCOCKBLOCK "Bewitched" //prevents spellcasting
@@ -78,8 +79,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEECHIMMUNE = "Leeches are reluctant to bite me.",
 	TRAIT_ASSASSIN = "My soul has been tainted by the god of murder.",
 	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
-	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
-	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments."
+	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality."
 	))
 
 // trait accessor defines
@@ -346,3 +346,44 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define SLEEPING_CARP_TRAIT "sleeping_carp"
 #define MADE_UNCLONEABLE "made-uncloneable"
 #define TIMESTOP_TRAIT "timestop"
+
+
+
+/*
+/datum/species/abyssariad/on_species_gain(mob/living/carbon/C, datum/species/old_species) //make abyssariads PQ locked
+	..()
+	RegisterSignal(C, COMSIG_MOB_SAY, .proc/handle_speech)
+	C.grant_language(/datum/language/common)
+	C.grant_language(/datum/language/abyssal)
+	C.cmode_music = 'sound/music/combatabyssariad.ogg'
+	C.mind.teach_anvil_recipe(/datum/anvil_recipe/armor/platemask/menpo)
+	C.verbs |= /mob/proc/praise
+	C.verbs |= /mob/proc/yoo
+	C.verbs |= /mob/proc/throatsing
+	ADD_TRAIT(C, TRAIT_KAIZOKU, TRAIT_GENERIC)  //Cultural Trait. Must not be considered a 'buff' or 'debuff'.
+
+
+/obj/item/book/granter/crafting_recipe
+	var/list/crafting_recipe_types = list()
+
+if(HAS_TRAIT(user, TRAIT_FREERUNNING))
+
+/obj/item/book/granter/crafting_recipe/on_reading_finished(mob/user)
+	. = ..()
+	if(!user.mind)
+		return
+	for(var/crafting_recipe_type in crafting_recipe_types)
+		var/datum/crafting_recipe/R = crafting_recipe_type
+		user.mind.teach_crafting_recipe(crafting_recipe_type)
+		to_chat(user,"<span class='notice'>I learned how to make [initial(R.name)].</span>")
+
+/obj/item/book/granter/crafting_recipe/cooking_sweets_101
+	name = "Cooking Desserts 101"
+	desc = ""
+	crafting_recipe_types = list(
+		/datum/crafting_recipe/food/mimetart,
+		/datum/crafting_recipe/food/berrytart,
+		/datum/crafting_recipe/food/cocolavatart,
+		/datum/crafting_recipe/food/clowncake,
+		/datum/crafting_recipe/food/vanillacake
+*/

@@ -451,3 +451,195 @@
 		if(get_detail_color())
 			pic.color = get_detail_color()
 		add_overlay(pic)
+
+///////////////////////////////////////////////////////////////////
+// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
+// If the usage is desired, ask monochrome9090 for permission.   //
+// Respect the artists's will, COMMISSION them instead.          //
+// This is solely for SPRITES. The code is free for the taking.	 //
+///////////////////////////////////////////////////////////////////
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku
+	icon = 'icons/roguetown/kaizoku/clothingicon/shirt.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/shirt.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_shirts.dmi'
+	var/picked
+	var/colorable_var = FALSE
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/kimono
+	name = "traditional kimono"
+	desc = "A front-wrapped garment with long sleeves made from a long, narrow bolt of cloth used as a formal garment by the poor and rich alike."
+	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
+	icon_state = "kimono"
+	item_state = "kimono"
+	boobed = TRUE
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
+	colorable_var = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/kimono/ronin
+	color = "#526652"
+	colorable_var = FALSE
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/monkgarb
+	name = "monk samue"
+	desc = "The Samue is the clothing used by Abyssanctum monks engaged on the act of Samu, most proper for those performing temple maintenance and mountain hiking."
+	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
+	icon_state = "monkgarb"
+	item_state = "monkgarb"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	body_parts_covered = CHEST|ARMS|VITALS
+	colorable_var = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/monkgarb/random/Initialize()
+	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	..()
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo
+	name = "kamishimo"
+	desc = "A formal kimono used by men, a short sleeveless garment made of hemp which usually comes together with a hakama, and worn on top of a kosode or kimono. To use one without cloth underneath, conveys a ronin nature."
+	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	icon_state = "kamishimo"
+	item_state = "kamishimo"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	body_parts_covered = CHEST|VITALS
+	colorable_var = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/random/Initialize()
+	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	..()
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/ronin
+	color = "#526652"
+	colorable_var = FALSE
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/eidolon
+	color = "#613a3f"
+	colorable_var = FALSE
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt
+	name = "kimono jinbei"
+	desc = "A summer shirt that goes along with a tobi, used during the hot summers on Fog islands."
+	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
+	icon_state = "looseshirt"
+	item_state = "looseshirt"
+	boobed = TRUE
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	body_parts_covered = CHEST|ARMS|VITALS
+	colorable_var = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random/Initialize()
+	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	..()
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/shinobi
+	color = "#372161"
+	colorable_var = FALSE
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/tribal
+	name = "tribal garbs"
+	desc = "Tribal clothings made from plant fiber commonly used by Kappa tribesmen."
+	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
+	icon_state = "tribalgarb"
+	item_state = "tribalgarb"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	body_parts_covered = CHEST|VITALS
+	colorable_var = FALSE
+
+/obj/item/clothing/suit/roguetown/shirt/robe/wizard/guardian
+	name = "onmyoji's warfare garb"
+	desc = "The garbs used by Abyssariad magicians during times of warfare, holding the marks of Abyssor upon the cloth."
+	icon_state = "abyssaltunic"
+	icon = 'icons/roguetown/kaizoku/clothingicon/shirt.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/shirt.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_shirts.dmi'
+	boobed = TRUE
+	flags_inv = HIDEBOOB
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	allowed_sex = list(MALE, FEMALE)
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
+	color = null
+	sellprice = 100
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/robe
+	name = "onmyoji's garb"
+	desc = "Casual abyssariad garbs usually used by magicians, or those living on the frigid, treacherous mountains on the edges of the Fog islands."
+	icon_state = "loosetunic"
+	icon = 'icons/roguetown/clothing/shirts.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/shirts.dmi'
+	boobed = TRUE
+	flags_inv = HIDEBOOB
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	allowed_sex = list(MALE)
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
+	color = null
+	colorable_var = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/robe/random/Initialize()
+	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/attack_right(mob/user)
+	if(colorable_var == TRUE)
+		if(picked)
+			return
+		var/the_time = world.time
+		if(world.time > (the_time + 30 SECONDS))
+			return
+		var/colorone = input(user, "Your emotions spreads your will.","Flush emotions within the threads.") as null|anything in CLOTHING_COLOR_NAMES
+		if(!colorone)
+			return
+		picked = TRUE
+		color = clothing_color2hex(colorone)
+		update_icon()
+		if(ismob(loc))
+			var/mob/L = loc
+			L.update_inv_shirt()
+			L.update_inv_armor()
+		return
+	else 
+		return
+
+/obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/zamurai/Initialize()
+	..()
+	if(!picked)
+		var/list/colors = list(
+		"PURPLE"="#865c9c",
+		"RED"="#933030",
+		"BROWN"="#685542",
+		"GREEN"="#79763f",
+		"BLUE"="#395480",
+		"YELLOW"="#b5b004",
+		"TEAL"="#249589",
+		"WHITE"="#ffffff",
+		"ORANGE"="#b86f0c",
+		"MAJENTA"="#962e5c")
+
+		var/mob/living/carbon/human/L = loc
+		var/choice = input(L, "Choose a color.", "ZAMURAI COLORPLEX") as anything in colors
+		var/playerchoice = colors[choice]
+		picked = TRUE
+		detail_color = playerchoice
+		update_icon()
+		for(var/obj/item/clothing/V in L.get_equipped_items(FALSE))
+			testing("clothes to color are [V]")
+			if(V.colorgrenz)
+				V.detail_color = playerchoice
+				V.update_icon()
+		L.regenerate_icons()
+
+/obj/item/clothing/suit/roguetown/shirt/grenzelhoft/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)

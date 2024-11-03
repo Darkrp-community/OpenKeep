@@ -343,6 +343,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_mcolor"]					>> features["mcolor"]
 	S["feature_ethcolor"]					>> features["ethcolor"]
 	S["feature_lizard_tail"]			>> features["tail_lizard"]
+	S["feature_kitsune_tongue"] 		>> features["kitsune_tongue"]
 	S["feature_lizard_snout"]			>> features["snout"]
 	S["feature_lizard_horns"]			>> features["horns"]
 	S["feature_lizard_frills"]			>> features["frills"]
@@ -353,6 +354,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_moth_markings"]			>> features["moth_markings"]
 	S["feature_human_tail"]				>> features["tail_human"]
 	S["feature_human_ears"]				>> features["ears"]
+
 
 /datum/preferences/proc/load_character(slot)
 	if(!path)
@@ -475,6 +477,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["mcolor3"]	= sanitize_hexcolor(features["mcolor3"], 6, 0)
 	features["ethcolor"]	= copytext(features["ethcolor"],1,7)
 	features["tail_lizard"]	= sanitize_inlist(features["tail_lizard"], GLOB.tails_list_lizard)
+	features["kitsune_tongue"] = sanitize_inlist(features["kitsune_tongue"], GLOB.tongue_list_kitsune)
 	features["tail_human"] 	= sanitize_inlist(features["tail_human"], GLOB.tails_list_human, "None")
 	features["snout"]	= sanitize_inlist(features["snout"], GLOB.snouts_list)
 	features["horns"] 	= sanitize_inlist(features["horns"], GLOB.horns_list, "None")
@@ -541,6 +544,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_mcolor"]					, features["mcolor"])
 	WRITE_FILE(S["feature_ethcolor"]					, features["ethcolor"])
 	WRITE_FILE(S["feature_lizard_tail"]			, features["tail_lizard"])
+	WRITE_FILE(S["feature_kitsune_tongue"], features["kitsune_tongue"])
 	WRITE_FILE(S["feature_human_tail"]				, features["tail_human"])
 	WRITE_FILE(S["feature_lizard_snout"]			, features["snout"])
 	WRITE_FILE(S["feature_lizard_horns"]			, features["horns"])
@@ -551,7 +555,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_lizard_legs"]			, features["legs"])
 	WRITE_FILE(S["feature_moth_wings"]			, features["moth_wings"])
 	WRITE_FILE(S["feature_moth_markings"]		, features["moth_markings"])
-
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)

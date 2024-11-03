@@ -3,17 +3,19 @@
 	tutorial = "Woodsmen and women that dedicate their lives to chopping wood \
 	for profit, and expertly building things out of it."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list("Humen",
-	"Elf",
-	"Half-Elf",
-	"Dwarf",
-	"Tiefling",
-	"Dark Elf",
-	"Aasimar",
-	"Kitsune",
-	"Tengu",
-	"Oni",
-	"Kappa")
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar",
+		"Kitsune",
+		"Tengu",
+		"Oni",
+		"Kappa"
+	)
 	outfit = /datum/outfit/job/roguetown/adventurer/carpenter
 
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)

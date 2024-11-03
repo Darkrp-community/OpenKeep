@@ -125,6 +125,8 @@
 	if(user)
 		if(pref_species.patreon_req > user.patreonlevel())
 			return FALSE
+		if(pref_species.minrace_pq > get_playerquality(user.ckey)) // PQ check here
+			return FALSE
 	return TRUE
 
 /mob/proc/patreonlevel()

@@ -1,10 +1,14 @@
-/mob/living/simple_animal/hostile/retaliate/rogue/bogbug
-	icon = 'icons/roguetown/mob/monster/bogbug.dmi'
-	name = "bog bug"
-	desc = "A vile insect, skittering forward on spindly, hairy legs. Enjoys the flesh of sapients as much as it enjoys its fellow swamp-dwellers."
-	icon_state = "bogbug"
-	icon_living = "bogbug"
-	icon_dead = "bogbugdead"
+// Got this one resprited and remade. I'd rather make a literal reference to CEV: Eris with a resprite rather than use
+// the sprites from a Russian C-Word Z*pe Game. It's literally STOLEN from life web. 
+// We don't need that. We don't need to lifewebify anything. If it is to have a sprite - we'd rather make it proper.
+
+/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion
+	icon = 'icons/roguetown/mob/monster/sewercarrion.dmi'
+	name = "sewercarrion"
+	desc = "when humenity first developed the sewers, the cockroaches overfed upon alchemical waste, overgrowing- taking on humen flesh."
+	icon_state = "sewercarrion"
+	icon_living = "sewercarrion"
+	icon_dead = "sewercarriondead"
 	gender = MALE
 	emote_hear = null
 	emote_see = null
@@ -20,8 +24,8 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	health = 160
 	maxHealth = 160
-	melee_damage_lower = 25
-	melee_damage_upper = 35
+	melee_damage_lower = 18
+	melee_damage_upper = 26
 	vision_range = 9
 	aggro_vision_range = 9
 	environment_smash = ENVIRONMENT_SMASH_NONE
@@ -45,29 +49,47 @@
 	dodgetime = 20
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
-	remains_type = /obj/effect/decal/remains/bogbug
+	remains_type = /obj/effect/decal/remains/sewercarrion
 	body_eater = TRUE
 
-/obj/effect/decal/remains/bogbug
+/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion/necrobug
+	name = "necrophage"
+	icon_state = "necrobug"
+	icon_living = "necrobug"
+	icon_dead = "necrobugdead"
+	desc = "overgrow from alchemical waste and humen flesh, the necrophages spreads across all non-contaminated sewers to the bog."
+
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/xeno = 2,
+						/obj/item/natural/hide = 2)
+	STACON = 15
+	STASTR = 14
+	STASPD = 10
+	STAEND = 15
+	health = 220
+	maxHealth = 220
+	melee_damage_lower = 25
+	melee_damage_upper = 35
+
+/obj/effect/decal/remains/sewercarrion
 	name = "remains"
 	gender = PLURAL
 	icon_state = "bones"
 	icon = 'icons/roguetown/mob/monster/vol.dmi'
 
-/mob/living/simple_animal/hostile/retaliate/rogue/bogbug/Initialize()
+/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion/Initialize()
 	. = ..()
 	gender = MALE
 
-/mob/living/simple_animal/hostile/retaliate/rogue/bogbug/death(gibbed)
+/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion/death(gibbed)
 	..()
 	update_icon()
 
 
-/mob/living/simple_animal/hostile/retaliate/rogue/bogbug/update_icon()
+/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion/update_icon()
 	cut_overlays()
 	..()
 
-/mob/living/simple_animal/hostile/retaliate/rogue/bogbug/get_sound(input)
+/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion/get_sound(input)
 	switch(input)
 		if("aggro")
 			return pick('sound/vo/mobs/bogbug/bogbug1.ogg','sound/vo/mobs/bogbug/bogbug2.ogg','sound/vo/mobs/bogbug/bogbug3.ogg')
@@ -80,19 +102,19 @@
 		if("cidle")
 			return pick('sound/vo/mobs/bogbug/bogbug3.ogg','sound/vo/mobs/bogbug/bogbugidle.ogg')
 
-/mob/living/simple_animal/hostile/retaliate/rogue/bogbug/taunted(mob/user)
+/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion/taunted(mob/user)
 	emote("aggro")
 	Retaliate()
 	GiveTarget(user)
 	return
 
-/mob/living/simple_animal/hostile/retaliate/rogue/bogbug/Life()
+/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion/Life()
 	..()
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
 
-/mob/living/simple_animal/hostile/retaliate/rogue/bogbug/simple_limb_hit(zone)
+/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion/simple_limb_hit(zone)
 	if(!zone)
 		return ""
 	switch(zone)
@@ -134,3 +156,20 @@
 			return "foreleg"
 	return ..()
 
+/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion/update_icon()
+	cut_overlays()
+	..()
+	if(stat != DEAD)
+		var/mutable_appearance/eye_lights = mutable_appearance(icon, "sewercarrion-eyes")
+		eye_lights.plane = 19
+		eye_lights.layer = 19
+		add_overlay(eye_lights)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/sewercarrion/necrobug/update_icon()
+	cut_overlays()
+	..()
+	if(stat != DEAD)
+		var/mutable_appearance/eye_lights = mutable_appearance(icon, "necrobug-eyes")
+		eye_lights.plane = 19
+		eye_lights.layer = 19
+		add_overlay(eye_lights)

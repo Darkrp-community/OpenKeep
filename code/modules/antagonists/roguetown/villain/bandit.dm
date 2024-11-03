@@ -82,130 +82,181 @@
 /datum/outfit/job/roguetown/bandit/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.become_blind("TRAIT_GENERIC")
-	var/classes = list("Deserter","Poacher","Brigand")
-	var/classchoice = input("Choose your background", "Available backgrounds") as anything in classes
-
-	switch(classchoice)
-	
-		if("Deserter") //well armored, polearm skill, shield skill. The heavy melee class.
+	if(H.dna?.species)
+		if(H.dna.species?.id == "abyssariad") //Average sword, barely any armor - all this to justify a chance in getting 4 exp in Swords for Akira Kurosawa experience for duels. Still weaker than Swordmaster, since they are not champions.
 			H.set_blindness(0)
-			to_chat(H, span_warning("You were once a soldier employed under a lord, and left illegally. You're capable with armor, shields, and polearms."))
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+			to_chat(H, span_warning("You are a person of the waves, the one who drifters as the ocean. Now with your link to Abyssor broken, you've bonded to Matthios to avoid the dai-corruption."))
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE) //for the sake of duelism trope, there is a chance to get 4xp sword.
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			H.change_stat("strength", 2)
 			H.change_stat("endurance", 1)
 			H.change_stat("constitution", 1)
+			
+			belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho
+			pants = /obj/item/clothing/under/roguetown/chainlegs/iron/haidate_tatami
+			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/kusaritabi
+			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/ronin
+			cloak = /obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/ronin
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
+			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/tatami
+			mask = /obj/item/clothing/mask/rogue/kaizoku/menpo/half
+			backl = /obj/item/storage/backpack/rogue/satchel
+			head = /obj/item/clothing/head/roguetown/tengai/roningasa //Not protective
+			if(prob(35))
+				beltr = /obj/item/rogueweapon/sword/short/wakizashi //Higher Daisho
+			else
+				beltr = /obj/item/rogueweapon/huntingknife/idagger/steel/tanto //Lesser Daisho
 
-			armor = /obj/item/clothing/suit/roguetown/armor/plate/rust
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/rust
-			beltl = /obj/item/clothing/head/roguetown/menacing/bandit
+			H.become_blind("TRAIT_GENERIC")
 
-			if(H.age == AGE_OLD) //old deserters are experts with polearms
-				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+			var/background = pickweight(list("Fulldaisho" = 6, "Savagekiller" = 3, "Antidaisho" = 2, "Reformed" = 1))
+			switch(background)
+				if("Fulldaisho")
+					beltl = /obj/item/rogueweapon/sword/uchigatana
+					to_chat(H, "<span class='info'>I managed to retain my full Daisho, even without masters to finance my activities.</span>")
+					H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+				if("Reformed")
+					beltl = /obj/item/rogueweapon/flail/sflail/kusarifundo
+					to_chat(H, "<span class='info'>My sword was broken during battle, and from the blade, I made one anew. This is all what remains of my deceased master.</span>")
+					H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
+				if("Savagekiller")
+					beltr = /obj/item/rogueweapon/battle/ono
+					to_chat(H, "<span class='info'>I killed a sanguinary savage and took from him his axe, and grinded the steel into a more efficient Ono. I've conquered a WHALER's soul, and will DOMINATE HIS WAYS.</span>")
+					H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+				if("Antidaisho")
+					beltr = /obj/item/rogueweapon/sword/sabre/messer/yuntoudao
+					to_chat(H, "<span class='info'>The Daisho is obsolete. My sword is made to do more than draw blood - It should grind my enemies into mince.</span>")
+					H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		else //If not Abyssariad, can be anything else from this following options:
+			var/classes = list("Deserter","Poacher","Brigand")
+			var/classchoice = input("Choose your background", "Available backgrounds") as anything in classes
 
-			switch(pick(1,3))
-				if (1 to 2)
-					backr = /obj/item/rogueweapon/spear
-				if (3)
-					backr = /obj/item/rogueweapon/halberd/bardiche
+			switch(classchoice)
+	
+				if("Deserter") //well armored, polearm skill, shield skill. The heavy melee class.
+					H.set_blindness(0)
+					to_chat(H, span_warning("You were once a soldier employed under a lord, and left illegally. You're capable with armor, shields, and polearms."))
+					H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+					ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+					H.change_stat("strength", 2)
+					H.change_stat("endurance", 1)
+					H.change_stat("constitution", 1)
 
-			switch(pick(1,2))
-				if (1) //worse leg protection, better neck protection, and a face mask
+					armor = /obj/item/clothing/suit/roguetown/armor/plate/rust
+					wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+					head = /obj/item/clothing/head/roguetown/helmet/heavy/rust
+					beltl = /obj/item/clothing/head/roguetown/menacing/bandit
+
+					if(H.age == AGE_OLD) //old deserters are experts with polearms
+						H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+
+					switch(pick(1,3))
+						if (1 to 2)
+							backr = /obj/item/rogueweapon/spear
+						if (3)
+							backr = /obj/item/rogueweapon/halberd/bardiche
+
+					switch(pick(1,2))
+						if (1) //worse leg protection, better neck protection, and a face mask
+							pants = /obj/item/clothing/under/roguetown/trou/leather
+							neck = /obj/item/clothing/neck/roguetown/chaincoif
+							mask = /obj/item/clothing/mask/rogue/facemask
+						if (2) //better leg protection, worse neck protection
+							pants = /obj/item/clothing/under/roguetown/chainlegs/iron
+							neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+							mask = /obj/item/clothing/mask/rogue/shepherd/rag
+
+				if("Poacher") //good perception, speed, bow skill, and knife skill. Also some cooking and skincrafting since they are poachers. The speedy ranged class.
+					H.set_blindness(0)
+					to_chat(H, span_warning("You illegally hunt within the lands of others, and are quite good at it."))
+					H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+					ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+					H.change_stat("strength", 1)
+					H.change_stat("endurance", 1)
+					H.change_stat("perception", 2)
+					H.change_stat("speed", 2)
+
+					armor = /obj/item/clothing/suit/roguetown/armor/gambeson
 					pants = /obj/item/clothing/under/roguetown/trou/leather
-					neck = /obj/item/clothing/neck/roguetown/chaincoif
-					mask = /obj/item/clothing/mask/rogue/facemask
-				if (2) //better leg protection, worse neck protection
-					pants = /obj/item/clothing/under/roguetown/chainlegs/iron
-					neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+					beltr = /obj/item/rogueweapon/huntingknife
+					backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+					beltl = /obj/item/quiver/arrows
+					head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 					mask = /obj/item/clothing/mask/rogue/shepherd/rag
 
-		if("Poacher") //good perception, speed, bow skill, and knife skill. Also some cooking and skincrafting since they are poachers. The speedy ranged class.
-			H.set_blindness(0)
-			to_chat(H, span_warning("You illegally hunt within the lands of others, and are quite good at it."))
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-			H.change_stat("strength", 1)
-			H.change_stat("endurance", 1)
-			H.change_stat("perception", 2)
-			H.change_stat("speed", 2)
+					if(H.age == AGE_OLD) //old poachers are better at their jobs
+						H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
+						H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
+						H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
 
-			armor = /obj/item/clothing/suit/roguetown/armor/gambeson
-			pants = /obj/item/clothing/under/roguetown/trou/leather
-			beltr = /obj/item/rogueweapon/huntingknife
-			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-			beltl = /obj/item/quiver/arrows
-			head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
-			mask = /obj/item/clothing/mask/rogue/shepherd/rag
+					switch(pick(1,3))
+						if (1)
+							beltr = /obj/item/rogueweapon/huntingknife
+						if (2)
+							beltr = /obj/item/rogueweapon/huntingknife/cleaver
+						if (3)
+							beltr = /obj/item/rogueweapon/huntingknife/idagger
 
-			if(H.age == AGE_OLD) //old poachers are better at their jobs
-				H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
+				if("Brigand") //good sword skill, shield skill, flail skill, mace skill, slightly speedy. Kind of an all rounder.
+					H.set_blindness(0)
+					to_chat(H, span_warning("You are experienced with using swords and clubs to threaten and rob others."))
+					H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+					H.change_stat("strength", 2)
+					H.change_stat("endurance", 2)
+					H.change_stat("constitution", 1)
+					H.change_stat("speed", 1)
 
-			switch(pick(1,3))
-				if (1)
-					beltr = /obj/item/rogueweapon/huntingknife
-				if (2)
-					beltr = /obj/item/rogueweapon/huntingknife/cleaver
-				if (3)
-					beltr = /obj/item/rogueweapon/huntingknife/idagger
+					neck = /obj/item/clothing/neck/roguetown/coif
+					wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+					pants = /obj/item/clothing/under/roguetown/trou/leather
+					head = /obj/item/clothing/head/roguetown/menacing/bandit
+					beltl = /obj/item/clothing/mask/rogue/shepherd/rag
 
-		if("Brigand") //good sword skill, shield skill, flail skill, mace skill, slightly speedy. Kind of an all rounder.
-			H.set_blindness(0)
-			to_chat(H, span_warning("You are experienced with using swords and clubs to threaten and rob others."))
-			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-			H.change_stat("strength", 2)
-			H.change_stat("endurance", 2)
-			H.change_stat("constitution", 1)
-			H.change_stat("speed", 1)
+					switch(pick(1,2))
+						if (1)
+							armor = /obj/item/clothing/suit/roguetown/armor/leather
+						if (2)
+							armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 
-			neck = /obj/item/clothing/neck/roguetown/coif
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			pants = /obj/item/clothing/under/roguetown/trou/leather
-			head = /obj/item/clothing/head/roguetown/menacing/bandit
-			beltl = /obj/item/clothing/mask/rogue/shepherd/rag
+					if(H.age == AGE_OLD) //old brigands have been in the business for so long that they have managed to pick up some better gear along the way
+						armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+						mask = /obj/item/clothing/mask/rogue/facemask
 
-			switch(pick(1,2))
-				if (1)
-					armor = /obj/item/clothing/suit/roguetown/armor/leather
-				if (2)
-					armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
-
-			if(H.age == AGE_OLD) //old brigands have been in the business for so long that they have managed to pick up some better gear along the way
-				armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
-				mask = /obj/item/clothing/mask/rogue/facemask
-
-			switch(pick(1,4))
-				if (1)
-					beltr = /obj/item/rogueweapon/sword/iron
-				if (2)
-					beltr = /obj/item/rogueweapon/flail
-				if (3)
-					beltr = /obj/item/rogueweapon/mace
-				if (4)
-					beltr = /obj/item/rogueweapon/sword/iron/messer
-
+					switch(pick(1,4))
+						if (1)
+							beltr = /obj/item/rogueweapon/sword/iron
+						if (2)
+							beltr = /obj/item/rogueweapon/flail
+						if (3)
+							beltr = /obj/item/rogueweapon/mace
+						if (4)
+							beltr = /obj/item/rogueweapon/sword/iron/messer
 	H.cure_blind("TRAIT_GENERIC")
 
 	// The commmon skills shared between all bandits
@@ -220,18 +271,20 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 
-	// The commmon gear shared between all bandits
-	belt = /obj/item/storage/belt/rogue/leather
-	shoes = /obj/item/clothing/shoes/roguetown/boots
-	backl = /obj/item/storage/backpack/rogue/satchel
+	// The commmon gear shared between all bandits //Recent edit: Abyssariads are an exception for this standard.
+	if(H.dna?.species)
+		if(!H.dna.species?.id == "abyssariad")
+			belt = /obj/item/storage/belt/rogue/leather
+			shoes = /obj/item/clothing/shoes/roguetown/boots
+			backl = /obj/item/storage/backpack/rogue/satchel
 
-	switch(pick(1,3))
-		if (1 to 2)
-			gloves = /obj/item/clothing/gloves/roguetown/leather
-			shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
-		if (3)
-			gloves = /obj/item/clothing/gloves/roguetown/angle
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+			switch(pick(1,3))
+				if (1 to 2)
+					gloves = /obj/item/clothing/gloves/roguetown/leather
+					shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
+				if (3)
+					gloves = /obj/item/clothing/gloves/roguetown/angle
+					shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 
 	H.change_stat("intelligence", -2)
 	var/obj/item/bodypart/B = H.get_bodypart("head")

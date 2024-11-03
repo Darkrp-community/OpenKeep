@@ -55,6 +55,8 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/human, GLOB.tails_list_human)
 	if(!GLOB.tails_list_lizard.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/lizard, GLOB.tails_list_lizard)
+	if(!GLOB.tongue_list_kitsune.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/tongue/kitsune, GLOB.tongue_list_kitsune)
 	if(!GLOB.snouts_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/snouts, GLOB.snouts_list)
 	if(!GLOB.horns_list.len)
