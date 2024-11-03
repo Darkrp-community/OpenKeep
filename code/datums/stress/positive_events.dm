@@ -119,9 +119,14 @@
 	desc = span_green("I'm stuffed! Feels good.")
 
 /datum/stressevent/goodfood
-	timer = 10 MINUTES
+	timer = 15 MINUTES
+	stressadd = -1
+	desc = list(span_green("I ate some good food."),span_green("Tasty!"))
+
+/datum/stressevent/goodfoodplus
+	timer = 20 MINUTES
 	stressadd = -2
-	desc = list(span_green("A meal fit for a god!"),span_green("Delicious!"))
+	desc = list(span_green("A meal fit for a king!"),span_green("Delicious!"))
 
 /datum/stressevent/prebel
 	timer = 5 MINUTES

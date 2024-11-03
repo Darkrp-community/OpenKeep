@@ -24,15 +24,16 @@
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stressevent/drunk)
 
+//============= FOOD BUFFS ===============
 /datum/status_effect/buff/foodbuff
 	id = "foodbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/foodbuff
-	effectedstats = list("constitution" = 1,"endurance" = 1)
-	duration = 10 MINUTES
+	effectedstats = list("endurance" = 1)
+	duration = 15 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/foodbuff
-	name = "Great Meal"
-	desc = span_nicegreen("That was a good meal!")
+	name = "Good Meal"
+	desc = span_nicegreen("That was a pretty good meal!")
 	icon_state = "foodbuff"
 
 /datum/status_effect/buff/foodbuff/on_apply()
@@ -40,6 +41,23 @@
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/goodfood)
+
+/datum/status_effect/buff/foodbuffplus
+	id = "foodbuff"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/foodbuffplus
+	effectedstats = list("constitution" = 1,"endurance" = 1)
+	duration = 20 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/foodbuffplus
+	name = "Great Meal"
+	desc = span_nicegreen("That was a fantastic meal!")
+	icon_state = "foodbuff"
+
+/datum/status_effect/buff/foodbuffplus/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/stressevent/goodfoodplus)
 
 //============= CLEAN PLUS ===============
 /datum/status_effect/buff/clean_plus

@@ -25,28 +25,28 @@
 	var/process_step // used for pie making and other similar modular foods
 	var/simplest_skillcheck
 	var/basic_skillcheck
-	var/advanced_skillcheck
-	var/master_skillcheck
+	var/foodbuff_skillcheck
+	var/best_foodbuff_skillcheck
 	var/skill_lacking = "Your skill is lacking."
 
 /obj/item/reagent_containers/food/snacks/rogue/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
 		if(simplest_skillcheck)
 			if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 1)
-			to_chat(user, span_warning(skill_lacking))
-			return
+				to_chat(user, span_warning(skill_lacking))
+				return
 		if(basic_skillcheck)
 			if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 2)
-			to_chat(user, span_warning(skill_lacking))
-			return
-		if(advanced_skillcheck)
+				to_chat(user, span_warning(skill_lacking))
+				return
+		if(foodbuff_skillcheck)		// you need cooking 3 to make food with the basic foodbuff
 			if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 3)
-			to_chat(user, span_warning(skill_lacking))
-			return
-		if(master_skillcheck)
+				to_chat(user, span_warning(skill_lacking))
+				return
+		if(best_foodbuff_skillcheck)	// you need cooking 4 to make food with the best foodbuff
 			if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 4)
-			to_chat(user, span_warning(skill_lacking))
-			return
+				to_chat(user, span_warning(skill_lacking))
+				return
 	 ..()
 
 
@@ -745,14 +745,14 @@
 		return ..()
 
 
-
+/*
 /* * * * * * * * * * * **
  *						*
  *	 Food Rot Timers	*	- Just lists as it stands on 2024-08-24
  *						*
  * * * * * * * * * * * **/
 
-/*	.................   Never spoils   ................... *//*
+/*	.................   Never spoils   ................... */
 
 * Hardtack
 * Toast
@@ -811,16 +811,34 @@
  *						*
  * * * * * * * * * * * **/
 
-/*	.................   No skill required   ................... *//*
+/*	.................   Best foodbuffs (requires cooking 4)   ................... */
 
-* Frying things in a pan or risk it over a open flame
-* Combining fried eggs
+* Full pie
+* Valorian omelette
+* Royal truffles
+* Zybantine cake
+* Cheesecake
 
 
-/*	.................   Require Cooking 1   ................... */
+/*	.................   Ok foodbuffs (requires cooking 3)   ................... */
 
-* Making dough
-* Putting garnish on slices of bread & toast
-*
+* Handpie
+* Frybird & Tato
+* Spiced bird-roast
+* Wiener & fried onions
+* Wiener & fried potato
+* Wiener cabbage
+* Wiener & potato and onions
+* Grenzelbun
+* Onion steak
+* Pepper steak
+
+
+
+/*	.................   Food processing (requires cooking 2)   ................... */
+
+* Stuffing sausage
+* Churning butter
+* Making cheese
 
 */

@@ -21,7 +21,7 @@
 	var/potpie
 	var/berrypie
 	var/poisoning
-	advanced_skillcheck = TRUE
+	foodbuff_skillcheck = TRUE
 	skill_lacking = "Even pie-filling is beyond your skills."
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom/update_icon()
@@ -433,7 +433,7 @@
 	foodtype = GRAIN | DAIRY
 	warming = 5 MINUTES
 	bitesize = 3
-	eat_effect = /datum/status_effect/buff/foodbuff
+	eat_effect = /datum/status_effect/buff/foodbuffplus
 	color = "#e7e2df"
 	rotprocess = SHELFLIFE_LONG
 
@@ -441,7 +441,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat // bae item
 	name = "meat pie"
 	desc = ""
-	eat_effect = /datum/status_effect/buff/foodbuff
+	eat_effect = /datum/status_effect/buff/foodbuffplus
 	foodtype = GRAIN | DAIRY | MEAT
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/meat

@@ -217,7 +217,7 @@
 	name = "valerian omelette"
 	desc = "Fried cackleberries on a bed of half-melted cheese, a dish from distant lands."
 	icon_state = "omelette"
-	eat_effect = /datum/status_effect/buff/foodbuff
+	eat_effect = /datum/status_effect/buff/foodbuffplus
 	rotprocess = SHELFLIFE_DECENT
 /obj/item/reagent_containers/food/snacks/rogue/friedegg/valerian/plated
 	icon_state = "omelette_plated"
@@ -296,7 +296,7 @@
 	cooked_type = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
 	rotprocess = SHELFLIFE_DECENT
-	basic_skillcheck = TRUE
+	foodbuff_skillcheck = TRUE
 	skill_lacking = "Spicing and garnering a dish is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/attackby(obj/item/I, mob/user, params)
 	var/obj/item/reagent_containers/peppermill/mill = I
@@ -381,7 +381,7 @@
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
 	rotprocess = SHELFLIFE_LONG
-	eat_effect = /datum/status_effect/buff/foodbuff
+	eat_effect = /datum/status_effect/buff/foodbuffplus
 /obj/item/reagent_containers/food/snacks/rogue/royaltruffles/plated
 	icon_state = "royaltruffles_plated"
 	item_state = "plate_food"

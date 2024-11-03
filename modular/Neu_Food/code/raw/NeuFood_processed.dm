@@ -13,14 +13,15 @@
 	icon_state = "fat"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	eat_effect = /datum/status_effect/debuff/uncookedfood
-	basic_skillcheck = TRUE
-	skill_lacking = "Sausage-making is beyond your skills."
 /obj/item/reagent_containers/food/snacks/fat/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
 		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/mince))
+		if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 2)
+			to_chat(user, span_warning("I don't know how to make butter."))
+			return
 		if(isturf(loc)&& (found_table))
 			to_chat(user, "<span class='notice'>Stuffing a wiener...</span>")
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
@@ -326,6 +327,9 @@
 	if(user.mind)
 		long_cooktime = (200 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*20))
 	if(istype(I, /obj/item/kitchen/spoon))
+		if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 2)
+			to_chat(user, span_warning("I don't know how to make butter."))
+			return
 		if(!reagents.has_reagent(/datum/reagent/consumable/milk/salted, 15) && !reagents.has_reagent(/datum/reagent/consumable/milk/salted_gote, 15))
 			to_chat(user, "<span class='warning'>Not enough salted milk.</span>")
 			return
@@ -397,6 +401,9 @@
 		long_cooktime = (100 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/natural/cloth))
 		if(reagents.has_reagent(/datum/reagent/consumable/milk/salted, 5))
+			if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 2)
+				to_chat(user, span_warning("I don't know how to make cheese."))
+				return
 			user.visible_message("<span class='info'>[user] strains fresh cheese...</span>")
 			playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
 			if(do_after(user,long_cooktime, target = src))
@@ -404,6 +411,9 @@
 				user.mind.adjust_experience(/datum/skill/craft/cooking, COMPLEX_COOKING_XPGAIN, FALSE)
 				new /obj/item/reagent_containers/food/snacks/rogue/cheese(drop_location())
 		else if(reagents.has_reagent(/datum/reagent/consumable/milk/salted_gote, 5))
+			if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 2)
+				to_chat(user, span_warning("I don't know how to make cheese."))
+				return
 			user.visible_message("<span class='info'>[user] strains fresh cheese...</span>")
 			playsound(src, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
 			if(do_after(user,long_cooktime, target = src))
@@ -432,6 +442,9 @@
 /obj/item/natural/cloth/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheese))
+		if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 2)
+			to_chat(user, span_warning("I don't know how to make cheese."))
+			return
 		if(isturf(loc)&& (found_table))
 			user.visible_message("<span class='info'>[user] starts packing the cloth with fresh cheese...</span>")
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)

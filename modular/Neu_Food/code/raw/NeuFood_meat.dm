@@ -101,7 +101,7 @@
 	slice_path = null
 	filling_color = "#8a0000"
 	rotprocess = SHELFLIFE_TINY
-	cooked_type = null
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/cornedbeef
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/mince
 	basic_skillcheck = TRUE
 	skill_lacking = "Sausage-making is beyond your skills."
@@ -147,10 +147,12 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/fish
 	name = "minced fish"
 	icon_state = "fishmince"
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/cornedbeef/fish
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/poultry
 	name = "mince"
 	icon_state = "meatmince"
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/cornedbeef/bird
 
 /*	..................   Sausage & Wiener   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/meat/sausage

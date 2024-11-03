@@ -73,20 +73,3 @@
 	icon_state = "buff"
 
 
-
-	
-/*
-/datum/status_effect/buff/foodbuff
-	id = "foodbuff"
-	alert_type = /obj/screen/alert/status_effect/buff/foodbuff
-	effectedstats = list("constitution" = 1,"endurance" = 1)
-	duration = 10 MINUTES
-
-/datum/status_effect/buff/foodbuff/on_apply()
-	owner.add_stress(/datum/stressevent/goodfood)
-	return ..()
-
-/obj/screen/alert/status_effect/buff/foodbuff
-	name = "Great Meal"
-	desc = ""
-	icon_state = "foodbuff"*/

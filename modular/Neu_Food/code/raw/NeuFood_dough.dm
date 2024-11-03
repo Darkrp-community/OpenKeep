@@ -212,7 +212,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	slice_sound = TRUE
 	rotprocess = SHELFLIFE_LONG
-	advanced_skillcheck = TRUE
+	foodbuff_skillcheck = TRUE
 	skill_lacking = "Pastry-making is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/butterdough/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -245,7 +245,7 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pastry
 	w_class = WEIGHT_CLASS_NORMAL
 	rotprocess = SHELFLIFE_LONG
-	advanced_skillcheck = TRUE
+	foodbuff_skillcheck = TRUE
 	skill_lacking = "Pastry-making is beyond your skills."
 // Dough + rolling pin on table = flat dough. RT got some similar proc for this.
 /obj/item/reagent_containers/food/snacks/rogue/butterdoughslice/attackby(obj/item/I, mob/user, params)
@@ -310,7 +310,7 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom
 	w_class = WEIGHT_CLASS_NORMAL
 	rotprocess = SHELFLIFE_LONG
-	simplest_skillcheck = TRUE
+	foodbuff_skillcheck = TRUE
 	skill_lacking = "Even pie-filling is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/piedough/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
@@ -436,7 +436,7 @@
 	name = "bread loaf"
 	desc = "One of the staple foods of the world, with the decline of magic, the loss of bread-duplication has led to mass famines around Grimoria."
 	icon_state = "loaf6"
-	bread_state = "loaf"
+	var/bread_state = "loaf"
 	slices_num = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/breadslice
 	list_reagents = list(/datum/reagent/consumable/nutriment = DOUGH_NUTRITION-6)
@@ -561,7 +561,7 @@
 	desc = "A delightful piece of heaven, in every slice."
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_NUTRITIOUS)
 	rotprocess = 30 MINUTES
-	eat_effect = /datum/status_effect/buff/foodbuff
+//	eat_effect = /datum/status_effect/buff/foodbuff
 /obj/item/reagent_containers/food/snacks/rogue/sandwich/salami
 	tastes = list("salumoi" = 1,"bread" = 1)
 	name = "salumoi bread"
@@ -909,7 +909,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | DAIRY
 	rotprocess = SHELFLIFE_LONG
-	master_skillcheck = TRUE
+	best_foodbuff_skillcheck = TRUE
 	skill_lacking = "Cake-baking is far beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/cake_base/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -965,7 +965,7 @@
 	slice_batch = TRUE
 	slice_sound = TRUE
 	rotprocess = SHELFLIFE_LONG
-	eat_effect = /datum/status_effect/buff/foodbuff
+	eat_effect = /datum/status_effect/buff/foodbuffplus
 	bitesize = 16
 
 /obj/item/reagent_containers/food/snacks/rogue/hcakeslice
@@ -977,7 +977,7 @@
 	cooked_type = null
 	foodtype = GRAIN | DAIRY | SUGAR
 	bitesize = 3
-	eat_effect = /datum/status_effect/buff/foodbuff
+	eat_effect = /datum/status_effect/buff/foodbuffplus
 	rotprocess = SHELFLIFE_LONG
 /obj/item/reagent_containers/food/snacks/rogue/hcakeslice/plated
 	icon_state = "honeycakeslice_plated"
@@ -1010,7 +1010,7 @@
 	slice_batch = TRUE
 	slice_sound = TRUE
 	rotprocess = SHELFLIFE_LONG
-	eat_effect = /datum/status_effect/buff/foodbuff
+	eat_effect = /datum/status_effect/buff/foodbuffplus
 	bitesize = 16
 
 /obj/item/reagent_containers/food/snacks/rogue/ccakeslice
@@ -1022,7 +1022,7 @@
 	cooked_type = null
 	foodtype = GRAIN | DAIRY | SUGAR
 	bitesize = 2
-	eat_effect = /datum/status_effect/buff/foodbuff
+	eat_effect = /datum/status_effect/buff/foodbuffplus
 	rotprocess = SHELFLIFE_LONG
 /obj/item/reagent_containers/food/snacks/rogue/ccakeslice/plated
 	icon_state = "cheesecake_slice_plated"

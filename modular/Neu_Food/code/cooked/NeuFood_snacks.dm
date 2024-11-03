@@ -16,7 +16,7 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = MEATSLAB_NUTRITION)
 	rotprocess = SHELFLIFE_DECENT
 	tastes = list("warm steak" = 1)
-	basic_skillcheck = TRUE
+	foodbuff_skillcheck = TRUE
 	skill_lacking = "Spicing and garnering a dish is beyond your skills."
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried/attackby(obj/item/I, mob/user, params)
@@ -59,6 +59,29 @@
 		to_chat(user, "<span class='warning'>You need to put [src] on a table to knead in the spice.</span>")
 
 
+/*	.............   Corned beef   ................ */
+/obj/item/reagent_containers/food/snacks/rogue/meat/cornedbeef
+	eat_effect = null
+	slices_num = 0
+	name = "corned beef"
+	desc = "Cooked mince, not bad."
+	icon_state = "meatmince"
+	color = "#9d7f75aa"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = (MEATSLAB_NUTRITION/2))
+	rotprocess = SHELFLIFE_DECENT
+	tastes = list("corned beef" = 1)
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/cornedbeef/fish
+	name = "corned fish"
+	color = "#c8a094aa"
+	tastes = list("fish" = 1)
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/cornedbeef/bird
+	name = "corned birdmeat"
+	color = "#aa928aaa"
+	tastes = list("bird" = 1)
+
+
 /*	.............   Fried Cackleberry   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/friedegg
 	trash = null
@@ -94,7 +117,7 @@
 	name = "fried cackleberries"
 	desc = "Double the yolks, double the fun."
 	icon_state = "seggs"
-	advanced_skillcheck = TRUE
+	best_foodbuff_skillcheck = TRUE
 	skill_lacking = "Exotic omelettes is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/friedegg/two/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -123,7 +146,7 @@
 	fried_type = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	rotprocess = SHELFLIFE_DECENT
-	basic_skillcheck = TRUE
+	foodbuff_skillcheck = TRUE
 	skill_lacking = "Spicing and garnering a dish is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -158,8 +181,8 @@
 	icon_state = "friedbacon"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	rotprocess = SHELFLIFE_DECENT
-
-
+	best_foodbuff_skillcheck = TRUE
+	skill_lacking = "Only a master chef can make such delicacies."
 /obj/item/reagent_containers/food/snacks/rogue/truffles/Initialize()
 	icon_state = pick("mushroom1_full","mushroom1_full","mushroom1_full")
 	. = ..()
@@ -217,7 +240,7 @@
 	fried_type = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	rotprocess = SHELFLIFE_EXTREME
-	basic_skillcheck = TRUE
+	foodbuff_skillcheck = TRUE
 	skill_lacking = "Spicing and garnering a dish is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -273,6 +296,8 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	tastes = list("warm cabbage" = 1)
 	rotprocess = SHELFLIFE_LONG
+	foodbuff_skillcheck = TRUE
+	skill_lacking = "Spicing and garnering a dish is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/preserved/cabbage_fried/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
@@ -298,6 +323,8 @@
 	bitesize = 4
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	rotprocess = SHELFLIFE_LONG
+	foodbuff_skillcheck = TRUE
+	skill_lacking = "Spicing and garnering a dish is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_baked/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
@@ -334,6 +361,8 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	tastes = list("savoury morsel" = 1)
 	rotprocess = SHELFLIFE_DECENT
+	foodbuff_skillcheck = TRUE
+	skill_lacking = "A well made meal is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/preserved/onion_fried/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
@@ -360,6 +389,8 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	tastes = list("warm potato" = 1)
 	rotprocess = SHELFLIFE_LONG
+	foodbuff_skillcheck = TRUE
+	skill_lacking = "A well made meal is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_fried/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
