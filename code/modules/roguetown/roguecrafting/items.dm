@@ -72,6 +72,7 @@
 	verbage = "braid"
 	verbage_tp = "braids"
 
+/*
 /datum/crafting_recipe/roguetown/net
 	name = "net"
 	result = /obj/item/net
@@ -80,7 +81,7 @@
 				/obj/item/natural/stone = 3)
 	verbage = "braid"
 	verbage_tp = "braids"
-
+*/
 
 /datum/crafting_recipe/roguetown/torch
 	name = "torch"

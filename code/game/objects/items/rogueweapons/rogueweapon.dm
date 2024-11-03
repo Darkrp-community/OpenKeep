@@ -31,7 +31,7 @@
 	experimental_onhip = TRUE
 	experimental_onback = TRUE
 	embedding = list(
-		"embed_chance" = 20,
+		"embed_chance" = 0, //Leave this at 0 until embed code is given an overhaul. Ideally each weapon should have a different value. Doesn't affect ranged or things like mantraps.
 		"embedded_pain_multiplier" = 1,
 		"embedded_fall_chance" = 0,
 	)
