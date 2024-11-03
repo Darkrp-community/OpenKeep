@@ -38,6 +38,7 @@
 	beltl = /obj/item/rogueweapon/pick
 	backr = /obj/item/rogueweapon/woodcut/steel
 	backl = /obj/item/storage/backpack/rogue/backpack
+	backpack_contents = list(/obj/item/rogueweapon/chisel)
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", 2)
 	H.change_stat("endurance", 2)
