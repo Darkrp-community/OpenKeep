@@ -77,7 +77,17 @@
 /obj/item/natural/plankshort
 	name = "short wooden plank"
 	desc = "a smooth wooden plank that has been cut short."
+	force = 8
+	throwforce = 8
+	icon_state = "woodplankshort"
 	firefuel = 10 MINUTES
+	resistance_flags = FLAMMABLE
+	slot_flags = null
+	body_parts_covered = null
+	experimental_onhip = TRUE
+	max_integrity = 15
+	muteinmouth = TRUE
+	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/natural/stoneblock
 	name = "stone block"
