@@ -49,19 +49,19 @@
 	move_to_delay = 7
 
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
-						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 1,
 						/obj/item/alch/bone = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
 						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 2,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 4,
 						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 4,
 						/obj/item/alch/sinew = 2,
-						/obj/item/alch/bone = 1)
+						/obj/item/alch/bone = 1,
+						/obj/item/natural/head/saiga = 1)
 
 	health = FEMALE_MOOBEAST_HEALTH
 	maxHealth = FEMALE_MOOBEAST_HEALTH
@@ -84,7 +84,7 @@
 	STASPD = 15
 	STACON = 8
 	STASTR = 9
-	childtype = list(/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid = 70, 
+	childtype = list(/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid = 70,
 					/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid/boy = 30)
 	can_buckle = TRUE
 	buckle_lying = FALSE
@@ -236,7 +236,7 @@
 			return pick('sound/vo/mobs/saiga/idle (1).ogg','sound/vo/mobs/saiga/idle (2).ogg','sound/vo/mobs/saiga/idle (3).ogg','sound/vo/mobs/saiga/idle (4).ogg','sound/vo/mobs/saiga/idle (5).ogg','sound/vo/mobs/saiga/idle (6).ogg','sound/vo/mobs/saiga/idle (7).ogg')
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/Initialize()
-	..()
+	. = ..()
 	if(tame)
 		tamed(owner)
 

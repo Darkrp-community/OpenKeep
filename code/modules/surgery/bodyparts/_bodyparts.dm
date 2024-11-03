@@ -5,7 +5,7 @@
 	force = 3
 	throwforce = 3
 	w_class = WEIGHT_CLASS_SMALL
-	sellprice = 5
+//	sellprice = 5
 	icon = 'icons/mob/human_parts.dmi'
 	icon_state = ""
 	layer = BELOW_MOB_LAYER //so it isn't hidden behind objects when on the floor
@@ -235,7 +235,7 @@
 		. |= BODYPART_LIFE_UPDATE_HEALTH
 
 /obj/item/bodypart/Initialize()
-	..()
+	. = ..()
 	update_HP()
 
 /obj/item/bodypart/proc/update_HP()
@@ -321,7 +321,7 @@
 		owner.updatehealth()
 	consider_processing()
 	update_disabled()
-	cremation_progress = min(0, cremation_progress - ((brute_dam + burn_dam)*(100/max_damage)))
+	//cremation_progress = min(0, cremation_progress - ((brute_dam + burn_dam)*(100/max_damage)))
 	return update_bodypart_damage_state()
 
 //Returns total damage.

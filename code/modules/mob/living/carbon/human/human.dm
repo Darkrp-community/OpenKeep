@@ -132,7 +132,8 @@
 		AddComponent(/datum/component/mood)
 
 /mob/living/carbon/human/Destroy()
-	SShumannpc.processing -= src
+	QDEL_NULL(sexcon)
+	STOP_PROCESSING(SShumannpc, src)
 	QDEL_NULL(physiology)
 	GLOB.human_list -= src
 	return ..()
@@ -160,7 +161,7 @@
 				stat("Confessions sent: [GLOB.confessors.len]")
 
 	return //RTchange
-/* 
+/*
 	if(statpanel("Status"))
 //		stat(null, "Intent: [used_intent]")
 //		stat(null, "Move Mode: [m_intent]")

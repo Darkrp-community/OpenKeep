@@ -38,12 +38,13 @@
 		H.change_stat("strength", 1)
 
 	if(H.dna.species.id == "dwarf")
+		H.cmode_music = 'sound/music/combat_dwarf.ogg'
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(1,2,2), TRUE)
 		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
 		beltl = /obj/item/rogueweapon/pick/paxe // Dorfs get a pick as their primary weapon and axes/maces to use it
-	else // No miner's helm for Delves as they haven nitevision now.       
+	else // No miner's helm for Delves as they haven nitevision now.
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		beltl = /obj/item/rogueweapon/sword/sabre // Dark elves get a sabre as their primary weapon and swords skill, who woulda thought

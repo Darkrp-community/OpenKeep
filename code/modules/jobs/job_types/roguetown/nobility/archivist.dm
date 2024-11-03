@@ -15,7 +15,7 @@
 		"Dwarf",
 		"Aasimar"
 	)
-	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fetch)
+	spells = list(/obj/effect/proc_holder/spell/self/learnspell, /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 	allowed_patrons = list(/datum/patron/divine/noc)
 
 	outfit = /datum/outfit/job/roguetown/archivist
@@ -31,9 +31,9 @@
 		head  = /obj/item/clothing/head/roguetown/roguehood/black
 	else
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
 		pants = /obj/item/clothing/under/roguetown/tights/black
-		head = /obj/item/clothing/head/roguetown/niteman
+		head = /obj/item/clothing/head/roguetown/tophat
 	H.virginity = TRUE
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
@@ -49,6 +49,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 3, TRUE)
+		H.mind.adjust_spellpoints(2)
 		H.change_stat("strength", -2)
 		H.change_stat("intelligence", 8)
 		H.change_stat("constitution", -2)

@@ -92,7 +92,7 @@
 	return
 
 /obj/item/clothing/cloak/tabard/knight/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -106,7 +106,7 @@
 	detail_tag = "_psy"
 
 /obj/item/clothing/cloak/tabard/crusader/Initialize()
-	..()
+	. = ..()
 	update_icon()
 
 /obj/item/clothing/cloak/tabard/crusader/attack_right(mob/user)
@@ -187,7 +187,7 @@
 		L.update_inv_cloak()
 
 /obj/item/clothing/cloak/tabard/knight/guard/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -309,7 +309,7 @@
 		L.update_inv_cloak()
 
 /obj/item/clothing/cloak/stabard/guard/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -346,7 +346,7 @@
 	detail_tag = "_quad"
 
 /obj/item/clothing/cloak/stabard/mercenary/Initialize()
-	..()
+	. = ..()
 	detail_tag = pick("_quad", "_spl", "_box", "_dim")
 	color = clothing_color2hex(pick(CLOTHING_COLOR_NAMES))
 	detail_color = clothing_color2hex(pick(CLOTHING_COLOR_NAMES))
@@ -503,7 +503,7 @@
 
 
 /obj/item/clothing/cloak/stabard/surcoat/guard/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -556,7 +556,7 @@
 		L.update_inv_cloak()
 
 /obj/item/clothing/cloak/lordcloak/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -892,6 +892,13 @@
 	color = null
 	allowed_race = list("elf", "dark elf")
 
+/obj/item/clothing/cloak/half/shadowcloak/cult
+	name = "ominous cloak"
+	desc = "Those who wear, thy should beware, for those who do; never come back as who they once were again."
+	allowed_race = ALL_RACES_LIST
+	body_parts_covered = ARMS|CHEST
+	armor = ARMOR_STEEL_BAD
+
 /obj/item/clothing/cloak/half/brown
 	color = CLOTHING_BROWN
 
@@ -907,7 +914,7 @@
 	inhand_mod = FALSE
 
 /obj/item/clothing/cloak/half/vet/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -990,18 +997,6 @@
 	resistance_flags = FIRE_PROOF
 	sellprice = 666
 	static_price = TRUE
-
-/obj/item/clothing/suit/roguetown/armor/plate/blkknight
-	slot_flags = ITEM_SLOT_ARMOR
-	name = "blacksteel plate"
-	body_parts_covered = CHEST|GROIN|VITALS|ARMS
-	r_sleeve_status = SLEEVE_NOMOD
-	l_sleeve_status = SLEEVE_NOMOD
-	armor_class = ARMOR_CLASS_MEDIUM
-	icon_state = "bkarmor"
-	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
-	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 
 /obj/item/clothing/shoes/roguetown/boots/armor/blkknight
 	name = "blacksteel boots"

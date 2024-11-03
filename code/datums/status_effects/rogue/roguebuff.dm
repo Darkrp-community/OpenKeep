@@ -10,7 +10,7 @@
 
 /atom/movable/screen/alert/status_effect/buff/drunk
 	name = "Drunk"
-	desc = "<span class='nicegreen'>I feel very drunk.</span>\n"
+	desc = span_nicegreen("I feel very drunk.")
 	icon_state = "drunk"
 
 /datum/status_effect/buff/drunk/on_apply()
@@ -32,7 +32,7 @@
 
 /atom/movable/screen/alert/status_effect/buff/foodbuff
 	name = "Great Meal"
-	desc = "<span class='nicegreen'>That was a good meal!</span>\n"
+	desc = span_nicegreen("That was a good meal!")
 	icon_state = "foodbuff"
 
 /datum/status_effect/buff/foodbuff/on_apply()
@@ -40,6 +40,25 @@
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/goodfood)
+
+//============= CLEAN PLUS ===============
+/datum/status_effect/buff/clean_plus
+	id = "cleanplus"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/clean_plus
+	effectedstats = list("fortune" = 1)
+	duration = 20 MINUTES
+
+/datum/status_effect/buff/clean_plus/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/stressevent/clean_plus)
+
+/atom/movable/screen/alert/status_effect/buff/clean_plus
+	name = "Clean"
+	desc = span_nicegreen("I feel very refreshed.")
+	icon_state = "buff"	// add custom icon TO DO
+
 
 /datum/status_effect/buff/druqks
 	id = "druqks"
@@ -76,7 +95,7 @@
 
 /atom/movable/screen/alert/status_effect/buff/druqks
 	name = "High"
-	desc = "<span class='nicegreen'>I am tripping balls.</span>\n"
+	desc = span_nicegreen("I am tripping balls.")
 	icon_state = "acid"
 
 /datum/status_effect/buff/ozium
@@ -176,19 +195,59 @@
 
 /atom/movable/screen/alert/status_effect/buff/weed
 	name = "Dazed"
-	desc = "<span class='nicegreen'>I am so high maaaaaaaaan</span>\n"
+	desc = span_nicegreen("I am so high maaaaaaaaan.")
 	icon_state = "weed"
 
-/datum/status_effect/buff/ravox
-	id = "ravoxbuff"
-	alert_type = /atom/movable/screen/alert/status_effect/buff/ravoxbuff
-	effectedstats = list("constitution" = 1,"endurance" = 1,"strength" = 1)
-	duration = 240 MINUTES
+/atom/movable/screen/alert/status_effect/buff/featherfall
+	name = "Featherfall"
+	desc = "I am somewhat protected against falling from heights."
+	icon_state = "buff"
 
-/atom/movable/screen/alert/status_effect/buff/ravoxbuff
-	name = "Divine Power"
-	desc = "<span class='nicegreen'>Divine power flows through me.</span>\n"
-	icon_state = "ravox"
+/datum/status_effect/buff/featherfall
+	id = "featherfall"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/featherfall
+	duration = 1 MINUTES
+
+/datum/status_effect/buff/featherfall/on_apply()
+	. = ..()
+	to_chat(owner, span_warning("I feel lighter."))
+	ADD_TRAIT(owner, TRAIT_NOFALLDAMAGE1, MAGIC_TRAIT)
+
+/datum/status_effect/buff/featherfall/on_remove()
+	. = ..()
+	to_chat(owner, span_warning("The feeling of lightness fades."))
+	REMOVE_TRAIT(owner, TRAIT_NOFALLDAMAGE1, MAGIC_TRAIT)
+
+/atom/movable/screen/alert/status_effect/buff/darkvision
+	name = "Darkvision"
+	desc = "I can see in the dark somewhat."
+	icon_state = "buff"
+
+/datum/status_effect/buff/darkvision
+	id = "darkvision"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/darkvision
+	duration = 10 MINUTES
+
+/datum/status_effect/buff/darkvision/on_apply()
+	. = ..()
+	to_chat(owner, span_warning("The darkness fades somewhat."))
+	ADD_TRAIT(owner, TRAIT_DARKVISION, MAGIC_TRAIT)
+
+/datum/status_effect/buff/darkvision/on_remove()
+	. = ..()
+	to_chat(owner, span_warning("The darkness returns to normal."))
+	REMOVE_TRAIT(owner, TRAIT_DARKVISION, MAGIC_TRAIT)
+
+/atom/movable/screen/alert/status_effect/buff/haste
+	name = "Haste"
+	desc = "I am magically hastened."
+	icon_state = "buff"
+
+/datum/status_effect/buff/haste
+	id = "haste"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/haste
+	effectedstats = list("speed" = 3)
+	duration = 1 MINUTES
 
 /datum/status_effect/buff/calm
 	id = "calm"
@@ -198,7 +257,7 @@
 
 /atom/movable/screen/alert/status_effect/buff/calm
 	name = "Calmness"
-	desc = "<span class='nicegreen'>I feel a supernatural calm coming over me.</span>\n"
+	desc = span_nicegreen("I feel a supernatural calm coming over me.")
 	icon_state = "stressg"
 
 /datum/status_effect/buff/calm/on_apply()
@@ -213,16 +272,7 @@
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stressevent/calm)
 
-/datum/status_effect/buff/noc
-	id = "nocbuff"
-	alert_type = /atom/movable/screen/alert/status_effect/buff/nocbuff
-	effectedstats = list("intelligence" = 3)
-	duration = 240 MINUTES
 
-/atom/movable/screen/alert/status_effect/buff/nocbuff
-	name = "Divine Knowledge"
-	desc = "<span class='nicegreen'>Divine knowledge flows through me.</span>\n"
-	icon_state = "intelligence"
 
 /datum/status_effect/buff/barbrage
 	id = "barbrage"
@@ -232,7 +282,7 @@
 
 /atom/movable/screen/alert/status_effect/buff/barbrage
 	name = "Barbaric Rage"
-	desc = "<span class='nicegreen'>WITNESS ME!</span>\n"
+	desc = span_nicegreen("WITNESS ME!")
 	icon_state = "ravox"
 
 /datum/status_effect/buff/barbrage/on_remove()
@@ -240,7 +290,129 @@
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.apply_status_effect(/datum/status_effect/debuff/barbfalter)
-	
+
+
+
+//============================================================================
+/*--------------\
+|				|
+| Divine Buffs	|
+|		 	 	|
+\---------------*/
+
+// ---------------------- DIVINE KNOWLEDGE ( NOC ) ----------------------------
+/datum/status_effect/buff/noc
+	id = "nocbuff"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/nocbuff
+	effectedstats = list("intelligence" = 3)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/nocbuff
+	name = "Divine Knowledge"
+	desc = span_nicegreen("Divine knowledge flows through me.")
+	icon_state = "intelligence"
+
+
+
+// ---------------------- DIVINE POWER ( RAVOX ) ----------------------------
+/datum/status_effect/buff/ravox
+	id = "ravoxbuff"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/ravoxbuff
+	effectedstats = list("constitution" = 1,"endurance" = 1,"strength" = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/ravoxbuff
+	name = "Divine Power"
+	desc = span_nicegreen("Divine power flows through me.")
+	icon_state = "ravox"
+
+
+/*-----------------\
+|  Dendor Miracles |
+\-----------------*/
+
+// ---------------------- EYES OF THE BEAST ( DENDOR ) ----------------------------
+/datum/status_effect/buff/beastsense
+	id = "beastsense"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/beastsense
+	duration = 10 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/beastsense
+	name = "Bestial Senses"
+	desc = span_nicegreen("No scent too faint, no shadow too dark...")
+	icon_state = "bestialsense"
+
+/datum/status_effect/buff/beastsense/on_apply()
+	. = ..()
+	var/mob/living/carbon/human/H = owner
+	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
+	if(!eyes || eyes.lighting_alpha)
+		return
+	eyes.see_in_dark = 4
+	eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+	owner.update_sight()
+
+/datum/status_effect/buff/beastsense/on_remove()
+	. = ..()
+	var/mob/living/carbon/human/H = owner
+	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
+	if(!eyes)
+		return
+	if((iself(owner)))
+		return
+	eyes.see_in_dark = 0
+	eyes.lighting_alpha = null
+	owner.update_sight()
+
+
+/datum/status_effect/buff/beastsense_elf
+	id = "beastsenself"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/beastsenself
+	effectedstats = list("perception" = 2)
+	duration = 10 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/beastsenself
+	name = "Bestial Sense"
+	desc = span_nicegreen("No scent too faint, no shadow too dark...")
+	icon_state = "bestialsense"
+
+
+
+// ---------------------- TROLL SHAPE ( DENDOR ) ----------------------------
+/datum/status_effect/buff/trollshape
+	id = "trollshape"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/trollshape
+	effectedstats = list("strength" = 5, "endurance" = 2, "speed" = -3, "intelligence" = -5)
+	duration = 3 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/trollshape
+	name = "Troll Shape"
+	desc = span_nicegreen("I AM STRONG! DENDORS ENEMIES WILL DIE!")
+	icon_state = "trollshape"
+/datum/status_effect/buff/trollshape/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/human/C = owner
+		C.resize = 1.2
+		C.update_transform()
+		C.AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HEAVY, 1, 2)
+
+/datum/status_effect/buff/trollshape/on_remove()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/human/C = owner
+		C.emote("pain", forced = TRUE)
+		playsound(get_turf(C), 'sound/gore/flesh_eat_03.ogg', 100, TRUE)
+		to_chat(C, span_warning("Dendors transformation fades, flesh shrinking back. My body aches..."))
+		C.adjustBruteLoss(10)
+		C.apply_status_effect(/datum/status_effect/debuff/barbfalter)
+		C.resize = 0.85
+		C.update_transform()
+		C.AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, 2)
+
+
+
+
 // BARDIC BUFFS BELOW
 
 /datum/status_effect/bardicbuff
@@ -319,7 +491,7 @@
 					if(O.IsSleeping())
 						O.SetSleeping(0) // WAKE UP!
 					O.adjust_triumphs(1) // Before people start crying about muh triumph lost
-					to_chat(O, "<span class='nicegreen'>Astrata's blessed light cleanses away your tiredness!</span>")
+					to_chat(O, span_nicegreen("Astrata's blessed light cleanses away your tiredness!"))
 			else
 				return
 		else
@@ -331,6 +503,6 @@
 				if(O.IsSleeping())
 					O.SetSleeping(0) // GRAB A BRUSH AND PUT A LITTLE MAKEUP
 				O.adjust_triumphs(1) // Before people start crying about muh triumph lost
-				to_chat(O, "<span class='nicegreen'>Astrata's blessed light cleanses away your tiredness!</span>")
+				to_chat(O, span_nicegreen("Astrata's blessed light cleanses away your tiredness!"))
 			else
-				return	
+				return

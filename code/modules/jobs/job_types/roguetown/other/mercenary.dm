@@ -36,13 +36,9 @@
 		H.invisibility = INVISIBILITY_MAXIMUM
 		H.become_blind("advsetup")
 
-/datum/outfit/job/roguetown/mercenary // when turned to adventurerclass, tutorial was broken. This fixes that.
-	var/tutorial = "<br>Another day, another mammon - your sponsor, the Merchant, representing the MGE guild, should have work for you todae, go find out.<br>"
+/datum/outfit/job/roguetown/mercenary // Reminder message
+	var/tutorial = "<br><br><font color='#855b14'><span class='bold'>Another day, another mammon - your sponsor, the Merchant, representing the MGE guild, should have work for you todae, go find out.</span></font><br><br>"
 
 /datum/outfit/job/roguetown/mercenary/post_equip(mob/living/carbon/human/H)
 	..()
 	to_chat(H, tutorial)
-
-// terribly sinful but here temporary so can push ahead since extended testmerge purgatory 
-/area/rogue/indoors/soilsons
-	name = "soilsons"

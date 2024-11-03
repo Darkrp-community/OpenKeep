@@ -31,6 +31,11 @@
 		return
 	icon_state = "[base_state]"
 
+/obj/structure/roguewindow/attack_ghost(mob/dead/observer/user)	// lets ghosts click on windows to transport across
+	density = FALSE
+	. = step(user,get_dir(user,src.loc))
+	density = TRUE
+
 /obj/structure/roguewindow/stained
 	icon_state = "stained-silver"
 	base_state = "stained-silver"
@@ -123,6 +128,12 @@
 		else
 			return !density
 	return ..()
+
+/obj/structure/roguewindow/proc/force_open()
+	playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
+	climbable = TRUE
+	opacity = FALSE
+	update_icon()
 
 /obj/structure/roguewindow/attackby(obj/item/W, mob/user, params)
 	return ..()

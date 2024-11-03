@@ -40,10 +40,10 @@
 	melee_damage_upper = 50
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 
-	STACON = 15
+	STACON = 16
 	STASTR = 16
 	STASPD = 3
-	STAEND = 14
+	STAEND = 15
 
 	retreat_distance = 0
 	minimum_distance = 0
@@ -67,6 +67,7 @@
 	. = ..()
 	if(critvuln)
 		ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC)	// bogtroll does not mind kneestingers
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/death(gibbed)
 	..()

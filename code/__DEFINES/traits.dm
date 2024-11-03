@@ -8,7 +8,7 @@
 #define TRAIT_STRONGBITE				"Strong Bite"
 #define TRAIT_HATEWOMEN				"Ladykiller"
 #define TRAIT_GOODLOVER				"Fabled Lover"
-#define TRAIT_SEEDKNOW 			"Seed Knower"
+#define TRAIT_SEEDKNOW 				"Seed Knower"
 #define TRAIT_NOBLE					"Noble Blooded"
 #define TRAIT_EMPATH					"Empath"
 #define TRAIT_BREADY					"Battleready"
@@ -25,6 +25,7 @@
 #define TRAIT_KNEESTINGER_IMMUNITY		"Blessing of Dendor"
 #define TRAIT_RETARD_ANATOMY			"Inhumen Anatomy" //can't wear hats and shoes
 #define TRAIT_NASTY_EATER 				"Inhumen Digestion" //can eat rotten food, organs, poison berries, and drink murky water
+#define TRAIT_NOFALLDAMAGE1 		"Minor fall damage immunity"
 #define TRAIT_ROT_EATER				"Blessing of Pestra" //can eat rotten food
 #define TRAIT_ORGAN_EATER				"Blessing of Graggar"
 #define TRAIT_SOUL_EXAMINE				"Blessing of Necra" //can check bodies to see if they have departed
@@ -34,12 +35,14 @@
 #define TRAIT_ASSASSIN					"Assassin Training" //used for the assassin drifter's unique mechanics.
 #define TRAIT_BARDIC_TRAINING			"Bardic Training"
 #define TRAIT_GRAVEROBBER				"Graverobber"	// Prevents getting the cursed debuff when unearthing a grave, but permanent -1 LUC to whoever has it.
-
-#define TRAIT_MISSING_NOSE "Missing Nose" //halved stamina regeneration
-#define TRAIT_DISFIGURED "Disfigured"
-#define TRAIT_SPELLCOCKBLOCK "Bewitched" //prevents spellcasting
-#define TRAIT_ANTIMAGIC	"Anti-Magic"
-#define TRAIT_SHOCKIMMUNE "Shock Immunity"
+#define TRAIT_BLESSED					"Once blessed"	// prevents blessings stackings
+#define TRAIT_MIRACULOUS_FORAGING		"Miracle Foraging"	// makes bushes much more generous
+#define TRAIT_MISSING_NOSE				"Missing Nose" //halved stamina regeneration
+#define TRAIT_DISFIGURED				"Disfigured"
+#define TRAIT_SPELLCOCKBLOCK			"Bewitched" //prevents spellcasting
+#define TRAIT_ANTIMAGIC					"Anti-Magic"
+#define TRAIT_ANTISCRYING				"Anti-Scrying"
+#define TRAIT_SHOCKIMMUNE				"Shock Immunity"
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -61,31 +64,49 @@
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WEBWALK = "I can move freely between webs.",
-	TRAIT_NOSTINK = "<span class='deadsay'>My nose is numb to the smell of decay.</span>",
+	TRAIT_NOSTINK = span_dead("My nose is numb to the smell of decay."),
 	TRAIT_ZJUMP = "Time to reach a new high.",
 	TRAIT_NOSEGRAB = "I love to grab idiots by their noses!",
 	TRAIT_NUTCRACKER = "I love kicking idiots on the nuts!",
 	TRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
 	TRAIT_STRONGBITE = "Stronger bites, critical bite attacks.",
 	TRAIT_HATEWOMEN = "Double damage against female mobs.",
-	TRAIT_GOODLOVER = "It's a blessing to share a bed with me.",
-	TRAIT_SEEDKNOW = "I know which seeds grow which crops.",
-	TRAIT_NOBLE = "<span class='blue'>I'm of noble blood.</span>",
+	TRAIT_GOODLOVER = span_love("It's a lucky thing to share my bed."),
+	TRAIT_SEEDKNOW = span_info("I know which seeds grow which crops."),
+	TRAIT_NOBLE = span_blue("I'm of noble blood."),
 	TRAIT_EMPATH = "I can notice when people are in pain.",
 	TRAIT_BREADY = "Defensive stance does not passively fatigue me.",
 	TRAIT_MEDIUMARMOR = "I can move freely in medium armor.",
 	TRAIT_HEAVYARMOR = "I can move freely in heavy armor.",
 	TRAIT_DODGEEXPERT = "I can dodge easily while only wearing light armor.",
 	TRAIT_VILLAIN = "I am a devious, conniving villain!",
-	TRAIT_SOUL_EXAMINE = "<span class='deadsay'>I know when someone's soul has departed.</span>",
-	TRAIT_CYCLOPS_RIGHT = "<span class='warning'>My right eye has been poked out...</span>",
+	TRAIT_CRITICAL_RESISTANCE = "I am resistant to wounds that would be life threatening to others.",
+	TRAIT_CRITICAL_WEAKNESS = span_danger("I am weak to wounds that others could survive."),
+	TRAIT_MANIAC_AWOKEN = span_danger("I am <b>WAKING UP</b> and the sheeple know this. They will resist."),
+	TRAIT_NOROGSTAM = "I have boundless energy, I will never tire.",
+	TRAIT_NOSLEEP = span_warning("I can't sleep."),
+	TRAIT_NUDIST = "I <b>refuse</b> to wear clothes. They are a hindrance to my freedom.",
+	TRAIT_KNEESTINGER_IMMUNITY = "I am immune to the shock of kneestingers.",
+	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
+	TRAIT_NASTY_EATER = span_dead("I can eat bad food, and water that would be toxic to humen will not affect me."),
+	TRAIT_NOFALLDAMAGE1 = span_warning("I can easily handle minor falls."),
+	TRAIT_ROT_EATER = span_necrosis("I can eat rotten food."),
+	TRAIT_ORGAN_EATER = span_bloody("I can eat organs and raw flesh."),
+	TRAIT_SOUL_EXAMINE = span_deadsay("I know when someone's soul has departed."),
+	TRAIT_CYCLOPS_LEFT = span_warning("My left eye has been poked out..."),
+	TRAIT_CYCLOPS_RIGHT = span_warning("My right eye has been poked out..."),
 	TRAIT_LEECHIMMUNE = "Leeches are reluctant to bite me.",
 	TRAIT_ASSASSIN = "My soul has been tainted by the god of murder.",
-	TRAIT_RETARD_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
-	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
 	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments.",
-	TRAIT_INTRAINING = "I'm going to be a knight someday!",
-	TRAIT_GRAVEROBBER = "Necra favors my grim deeds, I can unearth graves without being cursed by her."
+	TRAIT_GRAVEROBBER = "Necra favors my grim deeds, I can unearth graves without being cursed by her.",
+	TRAIT_MISSING_NOSE = span_warning("I struggle to breathe."),
+	TRAIT_DISFIGURED = span_warning("No one can recognize me..."),
+	TRAIT_SPELLCOCKBLOCK = span_warning("I cannot cast any spells."),
+	TRAIT_ANTIMAGIC = "I am immune to most forms of magic.",
+	TRAIT_ANTISCRYING = "I am immune to most forms of magical divination.",
+	TRAIT_SHOCKIMMUNE = "I am immune to electrical shocks.",
+	TRAIT_INTRAINING = "I'm going to be a knight someday! I can use training dummies more effectively than others.",
+	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
 	))
 
 // trait accessor defines
@@ -314,6 +335,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define INNATE_TRAIT "innate"
 
 // unique trait sources, still defines
+#define TRAIT_DARKVISION "darkvision"
 #define CLONING_POD_TRAIT "cloning-pod"
 #define STATUE_MUTE "statue"
 #define CHANGELING_DRAIN "drain"

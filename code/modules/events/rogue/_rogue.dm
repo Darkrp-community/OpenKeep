@@ -26,7 +26,7 @@ GLOBAL_LIST_INIT(badomens, list())
 		if("roundstart")
 			used = "Zizo."
 		if("importantdeath")
-			used = "A Noble has perished."
+			used = "The Priest has perished! The Ten are weakened..."
 		if("skellysiege")
 			used = "Unwelcome visitors!"
 		if("nolord")

@@ -393,3 +393,12 @@
 	opacity = 0
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "window-solid"
+
+// Boat
+/turf/closed/indestructible/wooddark/hull
+	name = "hull"
+	color = "#d6d5a8"
+
+/turf/closed/indestructible/wooddark/mast
+	name = "mast"
+	color = "#a6a68b"

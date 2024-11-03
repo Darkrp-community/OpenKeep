@@ -1,7 +1,7 @@
 /* * * * * * * * * * * **
  *						*	-Cooking based on slapcrafting
  *		 NeuFood		*	-Uses defines to track nutrition
- *						*	-Meant to replace menu crafting completely for foods
+ *	Made by NPC1314		*	-Meant to replace menu crafting completely for foods
  *						*
  * * * * * * * * * * * **/
 
@@ -341,14 +341,14 @@
 \-------------*/	// These are for the pot, if more vegetables are added and need to be integrated into the pot brewing you need to add them here
 
 /datum/reagent/consumable/soup // so you get hydrated without the flavor system messing it up. Works like water with less hydration
-	var/hydration = 6
+	var/hydration = 5
 /datum/reagent/consumable/soup/on_mob_life(mob/living/carbon/M)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
 			H.adjust_hydration(hydration)
 		if(M.blood_volume < BLOOD_VOLUME_NORMAL)
-			M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_NORMAL)
+			M.blood_volume = min(M.blood_volume+6, BLOOD_VOLUME_NORMAL)
 	..()
 
 /datum/reagent/consumable/soup/oatmeal
@@ -356,7 +356,7 @@
 	description = "Fitting for a peasant."
 	reagent_state = LIQUID
 	color = "#c38553"
-	nutriment_factor = 12
+	nutriment_factor = 10
 	metabolization_rate = 0.5 // half as fast as normal, last twice as long
 	taste_description = "oatmeal"
 	taste_mult = 3
@@ -366,7 +366,7 @@
 	name = "vegetable soup"
 	description = ""
 	reagent_state = LIQUID
-	nutriment_factor = 10
+	nutriment_factor = 8
 	taste_mult = 4
 	hydration = 8
 
@@ -395,7 +395,7 @@
 	description = "A thick cheese soup. Creamy and comforting."
 	color = "#c4be70"
 	reagent_state = LIQUID
-	nutriment_factor = 14
+	nutriment_factor = 12
 	taste_description = "creamy cheese"
 	taste_mult = 4
 	hydration = 4
@@ -404,7 +404,7 @@
 	name = "thick stew"
 	description = "All manners of edible bits went into this."
 	reagent_state = LIQUID
-	nutriment_factor = 20
+	nutriment_factor = 16
 	taste_mult = 4
 
 /datum/reagent/consumable/soup/stew/chicken

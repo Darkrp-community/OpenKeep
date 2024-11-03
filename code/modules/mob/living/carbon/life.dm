@@ -17,7 +17,7 @@
 
 		if (QDELETED(src))
 			return
-		
+
 		handle_wounds()
 		handle_embedded_objects()
 		handle_blood()
@@ -35,9 +35,18 @@
 				if(getOxyLoss() < 20)
 					heart_attacking = FALSE
 
+		var/cant_fall_asleep = FALSE
+		var/cause = " I just can't..."
+		for(var/obj/item/clothing/thing in get_equipped_items(FALSE))
+			if(thing.clothing_flags & CANT_SLEEP_IN)
+				cant_fall_asleep = TRUE
+				cause = " \The [thing] bothers me..."
+				break
+
 		//Healing while sleeping in a bed
 		if(stat >= UNCONSCIOUS)
 			var/sleepy_mod = buckled?.sleepy || 0.5
+			var/bleed_rate = get_bleed_rate()
 			var/yess = HAS_TRAIT(src, TRAIT_NOHUNGER)
 			if(nutrition > 0 || yess)
 				rogstam_add(sleepy_mod * 15)
@@ -45,8 +54,8 @@
 				if(!bleed_rate)
 					blood_volume = min(blood_volume + (4 * sleepy_mod), BLOOD_VOLUME_NORMAL)
 				for(var/obj/item/bodypart/affecting as anything in bodyparts)
-					//for context, it takes 5 small cuts (0.2 x 5) or 3 normal cuts (0.4 x 3) for a bodypart to not be able to heal itself
-					if(affecting.get_bleed_rate() >= 1)
+					//for context, it takes 5 small cuts (0.4 x 5) or 3 normal cuts (0.8 x 3) for a bodypart to not be able to heal itself
+					if(affecting.get_bleed_rate() >= 2)
 						continue
 					if(affecting.heal_damage(sleepy_mod, sleepy_mod, required_status = BODYPART_ORGANIC))
 						src.update_damage_overlays()
@@ -54,28 +63,36 @@
 						if(!wound.sleep_healing)
 							continue
 						wound.heal_wound(wound.sleep_healing * sleepy_mod)
-				adjustToxLoss(-sleepy_mod)
+				adjustToxLoss( - ( sleepy_mod * 0.5) )
 				if(eyesclosed && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 					Sleeping(300)
 		else if(!IsSleeping() && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 			// Resting on a bed or something
 			if(buckled?.sleepy)
-				if(eyesclosed)
+				if(eyesclosed && !cant_fall_asleep || (eyesclosed && !(fallingas >= 10 && cant_fall_asleep)))
 					if(!fallingas)
-						to_chat(src, "<span class='warning'>I'll fall asleep soon...</span>")
+						to_chat(src, span_warning("I'll fall asleep soon..."))
 					fallingas++
 					if(fallingas > 15)
 						Sleeping(300)
+				else if(eyesclosed && fallingas >= 10 && cant_fall_asleep)
+					if(fallingas != 13)
+						to_chat(src, span_boldwarning("I can't sleep...[cause]"))
+					fallingas = 13
 				else
 					rogstam_add(buckled.sleepy * 10)
 			// Resting on the ground (not sleeping or with eyes closed and about to fall asleep)
 			else if(!(mobility_flags & MOBILITY_STAND))
-				if(eyesclosed)
+				if(eyesclosed && !cant_fall_asleep || (eyesclosed && !(fallingas >= 10 && cant_fall_asleep)))
 					if(!fallingas)
-						to_chat(src, "<span class='warning'>I'll fall asleep soon, although a bed would be more comfortable...</span>")
+						to_chat(src, span_warning("I'll fall asleep soon, although a bed would be more comfortable..."))
 					fallingas++
 					if(fallingas > 25)
 						Sleeping(300)
+				else if(eyesclosed && fallingas >= 10 && cant_fall_asleep)
+					if(fallingas != 13)
+						to_chat(src, span_boldwarning("I can't sleep...[cause]"))
+					fallingas = 13
 				else
 					rogstam_add(10)
 			else if(fallingas)
@@ -211,7 +228,7 @@
 				BPinteg += WO.woundpain
 //		BPinteg = min(((totwound / BP.max_damage) * 100) + BPinteg, initial(BP.max_damage))
 //		if(BPinteg > amt) //this is here to ensure that pain doesn't add up, but is rather picked from the worst limb
-		amt += ((BPinteg) * dna.species.pain_mod)
+		amt += ((BPinteg) * dna?.species?.pain_mod)
 	return amt
 
 
@@ -806,19 +823,17 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 
 	//Only starts when the chest has taken full damage
 	var/obj/item/bodypart/chest = get_bodypart(BODY_ZONE_CHEST)
-	if(!(chest.get_damage() >= chest.max_damage))
+	if(!(chest.get_damage() >= (chest.max_damage - 5)))
 		return
 
 	//Burn off limbs one by one
 	var/obj/item/bodypart/limb
 	var/list/limb_list = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-	var/still_has_limbs = FALSE
 	var/should_update_body = FALSE
 	for(var/zone in limb_list)
 		limb = get_bodypart(zone)
 		if(limb && !limb.skeletonized)
-			still_has_limbs = TRUE
-			if(limb.get_damage() >= limb.max_damage)
+			if(limb.get_damage() >= (limb.max_damage - 5))
 				limb.cremation_progress += rand(2,5)
 				if(dna && dna.species && !(NOBLOOD in dna.species.species_traits))
 					blood_volume = max(blood_volume - 10, 0)
@@ -826,39 +841,36 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 					if(limb.status == BODYPART_ORGANIC) //Non-organic limbs don't burn
 						limb.skeletonize()
 						should_update_body = TRUE
-//						limb.drop_limb()
-//						limb.visible_message("<span class='warning'>[src]'s [limb.name] crumbles into ash!</span>")
-//						qdel(limb)
-//					else
-//						limb.drop_limb()
-//						limb.visible_message("<span class='warning'>[src]'s [limb.name] detaches from [p_their()] body!</span>")
-	if(still_has_limbs)
-		return
+						limb.drop_limb()
+						limb.visible_message("<span class='warning'>[src]'s [limb.name] crumbles into ash!</span>")
+						qdel(limb)
+					else
+						limb.drop_limb()
+						limb.visible_message("<span class='warning'>[src]'s [limb.name] detaches from [p_their()] body!</span>")
 
 	//Burn the head last
 	var/obj/item/bodypart/head = get_bodypart(BODY_ZONE_HEAD)
 	if(head && !head.skeletonized)
-		if(head.get_damage() >= head.max_damage)
-			head.cremation_progress += 999
-			if(head.cremation_progress >= 20)
+		if(head.get_damage() >= (head.max_damage - 5))
+			head.cremation_progress += rand(1,4)
+			if(head.cremation_progress >= 50)
 				if(head.status == BODYPART_ORGANIC) //Non-organic limbs don't burn
 					limb.skeletonize()
 					should_update_body = TRUE
-//					head.drop_limb()
-//					head.visible_message("<span class='warning'>[src]'s head crumbles into ash!</span>")
-//					qdel(head)
-//				else
-//					head.drop_limb()
-//					head.visible_message("<span class='warning'>[src]'s head detaches from [p_their()] body!</span>")
-		return
+					head.drop_limb()
+					head.visible_message("<span class='warning'>[src]'s head crumbles into ash!</span>")
+					qdel(head)
+				else
+					head.drop_limb()
+					head.visible_message("<span class='warning'>[src]'s head detaches from [p_their()] body!</span>")
 
 	//Nothing left: dust the body, drop the items (if they're flammable they'll burn on their own)
 	if(chest && !chest.skeletonized)
-		if(chest.get_damage() >= chest.max_damage)
-			chest.cremation_progress += 999
-			if(chest.cremation_progress >= 19)
-		//		visible_message("<span class='warning'>[src]'s body crumbles into a pile of ash!</span>")
-		//		dust(TRUE, TRUE)
+		if(chest.get_damage() >= (chest.max_damage - 5))
+			chest.cremation_progress += rand(1,4)
+			if(chest.cremation_progress >= 100)
+				visible_message("<span class='warning'>[src]'s body crumbles into a pile of ash!</span>")
+				dust(TRUE, TRUE)
 				chest.skeletonized = TRUE
 				if(ishuman(src))
 					var/mob/living/carbon/human/H = src

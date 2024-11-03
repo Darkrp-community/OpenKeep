@@ -36,17 +36,15 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
 		if(H.age == AGE_OLD)
 			head = /obj/item/clothing/head/roguetown/wizhat/gen
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/plain
 			backl = /obj/item/storage/backpack/rogue/backpack
+			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 			H.change_stat("intelligence", 1)
-			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
 		H.change_stat("strength", -2)
 		H.change_stat("intelligence", 3)
 		H.change_stat("constitution", -2)
 		H.change_stat("endurance", -1)
 		H.change_stat("speed", -2)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
+		H.mind.adjust_spellpoints(7)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/learnspell)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)

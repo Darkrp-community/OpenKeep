@@ -56,15 +56,6 @@
 	tastes = list("iron" = 1)
 	foodtype = GROSS
 
-/obj/item/reagent_containers/food/snacks/soup/wingfangchu
-	name = "wing fang chu"
-	desc = ""
-	icon_state = "wingfangchu"
-	trash = /obj/item/reagent_containers/glass/bowl
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/soysauce = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
-	tastes = list("soy" = 1)
-	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/soup/clownstears
 	name = "clown's tears"
@@ -74,14 +65,6 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/banana = 5, /datum/reagent/water = 5, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/consumable/clownstears = 10)
 	tastes = list("a bad joke" = 1)
 	foodtype = FRUIT | SUGAR
-
-/obj/item/reagent_containers/food/snacks/soup/vegetable
-	name = "vegetable soup"
-	desc = ""
-	icon_state = "vegetablesoup"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
-	tastes = list("vegetables" = 1)
-	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/soup/nettle
 	name = "nettle soup"
@@ -115,15 +98,6 @@
 	tastes = list("hot peppers" = 1)
 	foodtype = VEGETABLES | MEAT
 
-/obj/item/reagent_containers/food/snacks/soup/coldchili
-	name = "cold chili"
-	desc = ""
-	icon_state = "coldchili"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/frostoil = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	tastes = list("tomato" = 1, "mint" = 1)
-	foodtype = VEGETABLES | MEAT
-
 /obj/item/reagent_containers/food/snacks/soup/monkeysdelight
 	name = "monkey's delight"
 	desc = ""
@@ -149,23 +123,6 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/liquidgibs = 3)
 	tastes = list("tomato" = 1, "squirming" = 1)
 	foodtype = MEAT | GROSS
-
-/obj/item/reagent_containers/food/snacks/soup/milo
-	name = "milosoup"
-	desc = ""
-	icon_state = "milosoup"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
-	tastes = list("milo" = 1) // wtf is milo
-	foodtype = GROSS | VEGETABLES
-
-/obj/item/reagent_containers/food/snacks/soup/mushroom
-	name = "chantrelle soup"
-	desc = ""
-	icon_state = "mushroomsoup"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 5)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 4)
-	tastes = list("mushroom" = 1)
-	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/soup/beet
 	name = "beet soup"
@@ -218,39 +175,6 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 5)
 	tastes = list("sweet potato" = 1)
 	foodtype = VEGETABLES | SUGAR
-
-/obj/item/reagent_containers/food/snacks/soup/beet/red
-	name = "red beet soup"
-	desc = ""
-	icon_state = "redbeetsoup"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 6)
-	tastes = list("beet" = 1)
-	foodtype = VEGETABLES
-
-/obj/item/reagent_containers/food/snacks/soup/onion
-	name = "french onion soup"
-	desc = ""
-	icon_state = "onionsoup"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 5)
-	tastes = list("caramelized onions" = 1)
-	foodtype = VEGETABLES
-
-/obj/item/reagent_containers/food/snacks/soup/bisque
-	name = "bisque"
-	desc = ""
-	icon_state = "bisque"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 6)
-	tastes = list("creamy texture" = 1, "crab" = 4)
-	foodtype = MEAT
-
-/obj/item/reagent_containers/food/snacks/soup/electron
-	name = "electron soup"
-	desc = ""
-	icon_state = "electronsoup"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/liquidelectricity = 5)
-	tastes = list("mushroom" = 1, "electrons" = 4)
-	filling_color = "#CC2B52"
-	foodtype = VEGETABLES | TOXIC
 
 /obj/item/reagent_containers/food/snacks/soup/bungocurry
 	name = "bungo curry"
