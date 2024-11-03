@@ -42,10 +42,10 @@
 	melee_damage_upper = 60
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 
-	STACON = 15
+	STACON = 16
 	STASTR = 16
 	STASPD = 2
-	STAEND = 16
+	STAEND = 17
 
 	retreat_distance = 0
 	minimum_distance = 0
@@ -174,10 +174,10 @@
 	melee_damage_upper = 40
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 							/obj/item/alch/sinew = 1,
 							/obj/item/alch/bone = 1)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 							/obj/item/alch/sinew = 2,
 							/obj/item/alch/bone = 1,
 							/obj/item/natural/fur/cabbit = 1)

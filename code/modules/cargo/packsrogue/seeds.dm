@@ -59,3 +59,8 @@
 	name = "Pear"
 	cost = 40
 	contains = /obj/item/neuFarm/seed/pear
+
+/datum/supply_pack/rogue/seeds/poppy
+	name = "Poppy"
+	cost = 50
+	contains = /obj/item/neuFarm/seed/poppy
