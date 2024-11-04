@@ -29,7 +29,7 @@
 		H.change_stat("speed", 1)
 	if(H.gender == FEMALE)
 		H.underwear = "Femleotard"
-		H.underwear_color = CLOTHING_BLACK
+		H.underwear_color = CLOTHING_SOOT_BLACK
 		H.update_body()
 	if(H.dna.species.name == "Dark Elf")
 		pants = /obj/item/clothing/under/roguetown/tights/black
