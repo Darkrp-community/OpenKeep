@@ -732,14 +732,14 @@
 /obj/item/clothing/mask/cigarette/pipe/westman{
 	pixel_y = 10
 	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = -2;
 	pixel_y = 12
 	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = 2;
 	pixel_y = 7
 	},
@@ -3861,11 +3861,11 @@
 /area/rogue)
 "Qv" = (
 /obj/structure/table/wood/plain_alt,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = 4;
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = 7;
 	pixel_y = 7
 	},
@@ -4178,9 +4178,6 @@
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "Ut" = (
-/obj/item/rogueweapon/mace/coppermace,
-/obj/item/rogueweapon/mace/coppermace,
-/obj/item/rogueweapon/mace/coppermace,
 /obj/structure/table/wood{
 	dir = 8;
 	icon_state = "largetable"
@@ -4210,7 +4207,6 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog/inhumen_camp)
 "UN" = (
-/obj/effect/proc_holder/spell/invoked/heal,
 /obj/item/rogueweapon/mace/cudgel,
 /obj/structure/table/wood{
 	dir = 8;
