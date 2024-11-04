@@ -32,7 +32,7 @@
 /obj/structure/fluff/signage{
 	name = "Stonekeep"
 	},
-/turf/open/floor/rogue/dirt/road,
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "aj" = (
 /turf/closed/mineral/random/rogue/high,
@@ -5423,8 +5423,8 @@ Jc
 jc
 Jc
 jc
-ag
-ag
+Jc
+Jc
 Jc
 Jc
 aA
@@ -5546,15 +5546,15 @@ Jc
 jc
 Jc
 jc
-ag
-ag
 Jc
 Jc
 Jc
 Jc
 Jc
-ag
-ag
+Jc
+Jc
+Jc
+Jc
 Bm
 Bm
 Jc
@@ -5676,8 +5676,8 @@ Jc
 Jc
 Jc
 Jc
-ag
-ag
+Jc
+Jc
 Jc
 Jc
 Jc
@@ -16404,8 +16404,8 @@ Jc
 Lu
 fA
 Lu
-Jc
 ai
+ub
 ab
 ab
 Jc

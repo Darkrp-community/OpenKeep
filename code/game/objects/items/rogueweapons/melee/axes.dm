@@ -1,6 +1,7 @@
 /obj/item/rogueweapon/stoneaxe
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
 	force = 12
+	force_wielded = 17
 	possible_item_intents = list(/datum/intent/axe/chop/stone)
 	name = "stone axe"
 	desc = "Hewn wood, steadfast thread, a chipped stone. A recipe to bend nature to your will."

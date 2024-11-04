@@ -19,10 +19,10 @@
 	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/suit/roguetown/shirt/robe/plain
-	color = "#7c6d5c"
+	color = CLOTHING_LINEN
 
 /obj/item/clothing/suit/roguetown/shirt/robe/black
-	color = CLOTHING_BLACK_WARM
+	color = CLOTHING_DARK_INK
 
 /obj/item/clothing/suit/roguetown/shirt/robe/white
 
@@ -86,10 +86,10 @@
 
 //................ Wizard Robes ............... //
 /obj/item/clothing/suit/roguetown/shirt/robe/courtmage
-	color = "#6c6c6c"
+	color = CLOTHING_ASH_GREY
 
 /obj/item/clothing/suit/roguetown/shirt/robe/mage/Initialize()
-	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
+	color = pick( CLOTHING_PEASANT_BROWN, CLOTHING_SPRING_GREEN, CLOTHING_CHESTNUT, CLOTHING_YELLOW_OCHRE)
 	. = ..()
 
 /obj/item/clothing/suit/roguetown/shirt/robe/wizard

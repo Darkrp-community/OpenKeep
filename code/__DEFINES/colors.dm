@@ -61,64 +61,122 @@
 
 
 //roguetown
-#define CLOTHING_RED			"#a32121"
-#define CLOTHING_PURPLE			"#8747b1"
-#define CLOTHING_BLACK_WARM		"#3d3a36"
-#define CLOTHING_BLACK			"#414143"
-#define CLOTHING_BROWN			"#685542"
-#define CLOTHING_GREEN			"#428138"
-#define CLOTHING_DARK_GREEN		"#264d26"
-#define CLOTHING_BLUE			"#537bc6"
-#define CLOTHING_YELLOW			"#b5b004"
-#define CLOTHING_TEAL			"#249589"
+// Expensive dyes ==========================
+#define EXPENSIVE_DYES			list("Ash Grey","Chalk White","Cream","White","Blood Red","Plum Purple","Dark Ink","Forest Green","Sky Blue","Mustard Yellow", "Salmon", "Russet", "Maroon","Red Ochre", "Dunked in Water" )
+
+#define CLOTHING_DARK_INK		"#392f2f"
+#define CLOTHING_PLUM_PURPLE	"#4b2265"
+#define CLOTHING_SALMON			"#a56176"
+#define CLOTHING_BLOOD_RED		"#770d0d"
+
+#define CLOTHING_MAROON			"#672c0d"
+#define CLOTHING_RED_OCHRE		"#6f2d28"
+#define CLOTHING_RUSSET			"#733f18"
+#define CLOTHING_MUSTARD_YELLOW	"#979044"
+#define CLOTHING_YELLOW_OCHRE	"#9b7a02"
+#define CLOTHING_FOREST_GREEN	"#3f8b24"
+#define CLOTHING_SKY_BLUE		"#1b3c7a"
+#define CLOTHING_MAGE_BLUE		"#4756d8"
+#define CLOTHING_MAGE_GREEN		"#759259"
+#define CLOTHING_MAGE_ORANGE	"#ad5e29"
+#define CLOTHING_MAGE_YELLOW	"#d2bc2b"
+
+// Royal dyes ==========================
+#define CLOTHING_ROYAL_RED		"#8f3636"
+#define CLOTHING_ROYAL_MAJENTA	"#822b52"
+#define CLOTHING_FYRITIUS_DYE	"#b47011"
+#define CLOTHING_ROYAL_PURPLE	"#865c9c"
+#define CLOTHING_BARK_BROWN		"#685542"
+#define CLOTHING_ROYAL_BLACK	"#2f352f"
+#define CLOTHING_BOG_GREEN		"#58793f"
+#define CLOTHING_ROYAL_TEAL		"#249589"
+#define CLOTHING_PEAR_YELLOW	"#b5b004"
+#define CLOTHING_CHALK_WHITE	"#c7c0b5"
+
+
+// Cheap dyes ==========================
+#define CHEAP_DYES				list("Ash Grey","Chalk White","Cream","Royal Black","Soot Black","Bark Brown","Winestain Red","Royal Red","Royal Majenta","Fyritius Orange","Berry Blue","Royal Blue","Royal Purple","Spring Green","Pear Yellow","Peasant Brown","Mud Brown","Chestnut","Old Leather","Bog Green","Royal Teal","Dunked in Water" )
+
+#define CLOTHING_SOOT_BLACK		"#4b4b50"
+#define CLOTHING_WINESTAIN_RED	"#6b3737"
+#define CLOTHING_PEASANT_BROWN	"#705243"
+#define CLOTHING_MUD_BROWN		"#685542"
+#define CLOTHING_CHESTNUT		"#5f3d21"
+#define CLOTHING_OLD_LEATHER	"#473a30"
+#define CLOTHING_SPRING_GREEN	"#435436"
+#define CLOTHING_BERRY_BLUE		"#38455b"
+
+#define CLOTHING_ASH_GREY		"#999999"
+#define CLOTHING_LINEN			"#b0ae80"
 #define CLOTHING_WHITE			"#ffffff"
-#define CLOTHING_ORANGE			"#bd6606"
-#define CLOTHING_MAJENTA		"#962e5c"
-
-#define CLOTHING_PINK			"#cf99e3"
-#define CLOTHING_SALMON			"#ba8f9e"
-#define CLOTHING_PALE_BLUE		"#94b4b6"
-#define CLOTHING_PALE_ORANGE	"#bd978c"
-#define CLOTHING_PALE_GREEN		"#92bd8c"
-#define CLOTHING_PALE_YELLOW	"#c7c981"
-
 #define CLOTHING_WET			"#bbbbbb"
+#define RANDOM_PEASANT_DYES		pick(CLOTHING_BARK_BROWN , CLOTHING_PEASANT_BROWN, CLOTHING_MUD_BROWN , CLOTHING_BOG_GREEN , CLOTHING_SPRING_GREEN , CLOTHING_PEAR_YELLOW )
+#define RANDOM_NOBLE_DYES		pick(CLOTHING_BLOOD_RED , CLOTHING_FOREST_GREEN , CLOTHING_SKY_BLUE , CLOTHING_MUSTARD_YELLOW , CLOTHING_ROYAL_TEAL , CLOTHING_FYRITIUS_DYE, CLOTHING_YELLOW_OCHRE )
 
-#define CLOTHING_COLOR_NAMES	list("Red","Purple","Black","Brown","Green","Blue","Yellow","Teal","White","Orange","Majenta", "Salmon", "Pink", "Pale Blue", "Pale Orange", "Pale Green", "Pale Yellow")
+#define CLOTHING_COLOR_NAMES	list("Ash Grey","Chalk White","Cream","White","Dark Ink","Plum Purple","Salmon","Blood Red", "Maroon","Red Ochre","Russet","Chestnut","Mustard Yellow","Yellow Ochre","Forest Green","Sky Blue","Teal", "Royal Black","Soot Black","Winestain Red","Royal Red","Royal Majenta","Fyritius Orange","Bark Brown","Peasant Brown","Mud Brown","Pear Yellow","Spring Green","Bog Green","Royal Teal","Berry Blue", "Royal Blue", "Royal Purple","Dunked in Water" )
 
 /proc/clothing_color2hex(input)
 	switch(input)
-		if("Red")
-			return CLOTHING_RED
-		if("Purple")
-			return CLOTHING_PURPLE
-		if("Black")
-			return CLOTHING_BLACK
-		if("Brown")
-			return CLOTHING_BROWN
-		if("Green")
-			return CLOTHING_GREEN
-		if("Blue")
-			return CLOTHING_BLUE
-		if("Yellow")
-			return CLOTHING_YELLOW
+		if("Blood Red")
+			return CLOTHING_BLOOD_RED
+		if("Plum Purple")
+			return CLOTHING_PLUM_PURPLE
+		if("Royal Purple")
+			return CLOTHING_ROYAL_PURPLE
+		if("Forest Green")
+			return CLOTHING_FOREST_GREEN
+		if("Sky Blue")
+			return CLOTHING_SKY_BLUE
+		if("Mustard Yellow")
+			return CLOTHING_MUSTARD_YELLOW
 		if("Teal")
-			return CLOTHING_TEAL
+			return CLOTHING_ROYAL_TEAL
+		if("Royal Majenta")
+			return CLOTHING_ROYAL_MAJENTA
+		if("Salmon")
+			return CLOTHING_SALMON
+		if("Russet")
+			return CLOTHING_RUSSET
+		if("Chestnut")
+			return CLOTHING_CHESTNUT
+		if("Yellow Ochre")
+			return CLOTHING_YELLOW_OCHRE
+		if("Red Ochre" )
+			return CLOTHING_RED_OCHRE
+		if("Maroon" )
+			return CLOTHING_MAROON
+
+		if("Soot Black")
+			return CLOTHING_SOOT_BLACK
+		if("Winestain Red")
+			return CLOTHING_WINESTAIN_RED
+		if("Royal Red")
+			return CLOTHING_ROYAL_RED
+		if("Fyritius Orange")
+			return CLOTHING_FYRITIUS_DYE
+		if("Berry Blue")
+			return CLOTHING_BERRY_BLUE
+		if("Pear Yellow")
+			return CLOTHING_PEAR_YELLOW
+		if("Bark Brown")
+			return CLOTHING_BARK_BROWN
+		if("Peasant Brown" )
+			return CLOTHING_PEASANT_BROWN
+		if("Mud Brown")
+			return CLOTHING_MUD_BROWN
+		if("Bog Green")
+			return CLOTHING_BOG_GREEN
+		if("Spring Green")
+			return CLOTHING_SPRING_GREEN
+
 		if("White")
 			return CLOTHING_WHITE
-		if("Orange")
-			return CLOTHING_ORANGE
-		if("Majenta")
-			return CLOTHING_MAJENTA
-		if("Pink",)
-			return CLOTHING_PINK
-		if("Salmon",)
-			return CLOTHING_SALMON
-		if("Pale Blue")
-			return CLOTHING_PALE_BLUE
-		if("Pale Orange",)
-			return CLOTHING_PALE_ORANGE
-		if("Pale Green")
-			return CLOTHING_PALE_GREEN
-		if("Pale Yellow")
-			return CLOTHING_PALE_YELLOW
+		if("Ash Grey")
+			return CLOTHING_ASH_GREY
+		if("Chalk White")
+			return CLOTHING_CHALK_WHITE
+		if("Cream")
+			return CLOTHING_LINEN
+		if("Dunked in water")
+			return CLOTHING_WET
+
