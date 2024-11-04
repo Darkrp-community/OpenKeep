@@ -71,7 +71,7 @@
 	icon_state = "simpleshoe"
 	item_state = "simpleshoe"
 	resistance_flags = null
-	color = "#473a30"
+	color = CLOTHING_OLD_LEATHER
 
 /obj/item/clothing/shoes/roguetown/simpleshoes/white
 	color = null
@@ -89,7 +89,7 @@
 	icon_state = "simpleshoe"
 	item_state = "simpleshoe"
 	resistance_flags = null
-	color = "#cbcac9"
+	color = CLOTHING_ASH_GREY
 	sellprice = 20
 
 /obj/item/clothing/shoes/roguetown/gladiator
