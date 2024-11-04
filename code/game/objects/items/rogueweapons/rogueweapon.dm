@@ -10,7 +10,7 @@
 
 #define AP_FLAIL_STRIKE 5
 #define AP_CLUB_STRIKE 20
-#define AP_FLAIL_SMASH 80
+#define AP_FLAIL_SMASH 70
 #define AP_CLUB_SMASH 30
 
 //wdefense defines
