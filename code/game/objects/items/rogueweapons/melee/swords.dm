@@ -205,7 +205,7 @@
 	sellprice = 60
 
 /obj/item/rogueweapon/sword/long/death
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/rogueweapon/sword/long/getonmobprop(tag)
 	. = ..()
