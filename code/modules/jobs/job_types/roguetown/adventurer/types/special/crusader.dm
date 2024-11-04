@@ -140,14 +140,19 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/crusader
 	name = "bucket helm"
-	desc = "An ornate bucket helmet, adorned in golden regalia denoting the faith of the Forgotten God. Some Astratan sects have adopted the style to venerate the sun-goddess in recent times."
-	icon_state = "crusader_helm"
-	icon = 'icons/roguetown/clothing/special/crusader.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/crusader.dmi'
+	desc = "Proud knights of the Totod order displays their faith and their allegiance openly."
+	icon_state = "totodhelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
 
 /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
 	desc = "A silver gilded bucket helm, inscriptions in old Psydonic are found embezzeled on every inch of silver. Grenzelhoft specializes in these helmets, the Totod order has been purchasing them en-masse."
 	icon_state = "crusader_helmt2"
+	icon = 'icons/roguetown/clothing/special/crusader.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/crusader.dmi'
 
 /obj/item/clothing/cloak/cape/crusader/ComponentInitialize()
 	. = ..()
