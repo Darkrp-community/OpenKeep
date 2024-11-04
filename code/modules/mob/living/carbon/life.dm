@@ -49,7 +49,7 @@
 			var/bleed_rate = get_bleed_rate()
 			var/yess = HAS_TRAIT(src, TRAIT_NOHUNGER)
 			if(nutrition > 0 || yess)
-				rogstam_add(sleepy_mod * 15)
+				rogstam_add(sleepy_mod * 20)
 			if(hydration > 0 || yess)
 				if(!bleed_rate)
 					blood_volume = min(blood_volume + (4 * sleepy_mod), BLOOD_VOLUME_NORMAL)

@@ -15,7 +15,7 @@
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes/buckle
 	belt = /obj/item/storage/belt/rogue/leather/mercenary
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	beltr = /obj/item/rogueweapon/huntingknife
