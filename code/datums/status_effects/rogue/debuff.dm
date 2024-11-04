@@ -78,14 +78,41 @@
 	id = "silver_curse"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/silver_curse
 	duration = 5 SECONDS
-
+/*	Pointless subtype, code doesnt handle it well, dont use
 /datum/status_effect/debuff/silver_curse/greater
 	duration = 10 SECONDS
-
+*/
 /atom/movable/screen/alert/status_effect/debuff/silver_curse
 	name = "Silver Curse"
 	desc = "My BANE!"
 	icon_state = "hunger3"
+
+
+// PINTLEDESTRUCTION
+
+/datum/status_effect/debuff/pintledestruction
+	id = "pintlegone"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/pintledestruction
+	duration = 60 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/pintledestruction
+	name = "Wine-Curse"
+	desc = "Oh Gods...it's dead..."
+	icon_state = "muscles"
+
+/datum/status_effect/debuff/pintledestruction/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/stressevent/sadfate)
+	ADD_TRAIT(owner, TRAIT_LIMPDICK, TRAIT_GENERIC)
+
+/datum/status_effect/debuff/pintledestruction/on_remove()
+	. = ..()
+	REMOVE_TRAIT(owner, TRAIT_LIMPDICK, TRAIT_GENERIC)
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.remove_stress(/datum/stressevent/sadfate)
 
 
 //BROKEN CELIBACY

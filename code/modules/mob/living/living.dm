@@ -51,6 +51,9 @@
 	med_hud_set_status()
 
 /mob/living/onZImpact(turf/T, levels)
+	if(HAS_TRAIT(src, TRAIT_NOFALLDAMAGE1))
+		if(levels <= 2)
+			return
 	var/dex_save = src.mind?.get_skill_level(/datum/skill/misc/climbing)
 	var/sneak_fall = FALSE // If we're sneaking, don't announce it to our surroundings
 	if(dex_save >= 5) // Master climbers can fall down 2 levels without hurting themselves
@@ -195,7 +198,7 @@
 		if(isliving(M))
 			var/sprint_distance = sprinted_tiles
 			toggle_rogmove_intent(MOVE_INTENT_WALK, TRUE)
-			
+
 			var/mob/living/L = M
 
 			var/self_points = FLOOR((STACON + STASTR + mind.get_skill_level(/datum/skill/misc/athletics))/2, 1)
@@ -833,7 +836,7 @@
 			L.visible_message("<span class='warning'>[L] trips over [src]!</span>","<span class='warning'>I trip over [src]!</span>")
 			L.Knockdown(10)
 			L.Immobilize(20)
-			
+
 
 
 //proc used to completely heal a mob.

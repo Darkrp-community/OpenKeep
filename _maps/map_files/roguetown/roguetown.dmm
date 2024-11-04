@@ -392,14 +392,15 @@
 /area/rogue/indoors/town/manor)
 "ayz" = (
 /obj/structure/closet/crate/chest/crate,
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed,
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed,
+/obj/item/reagent_containers/food/snacks/produce/swampweed_dried,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/swampweed,
+/obj/item/reagent_containers/food/snacks/produce/swampweed,
 /obj/item/clothing/mask/cigarette/pipe/crafted,
 /obj/item/reagent_containers/powder/spice,
 /obj/item/reagent_containers/powder/spice,
+/obj/item/neuFarm/seed/poppy,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
 "aza" = (
@@ -1413,7 +1414,7 @@
 "bFU" = (
 /obj/structure/closet/crate/drawer,
 /obj/item/clothing/mask/cigarette/pipe/westman,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/indoors/town/bath)
 "bGl" = (
@@ -4366,10 +4367,10 @@
 /area/rogue/outdoors/mountains)
 "eVl" = (
 /obj/structure/closet/crate/chest/old_crate,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried,
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/swampweed_dried,
+/obj/item/reagent_containers/food/snacks/produce/swampweed_dried,
 /turf/open/floor/rogue/tile{
 	icon_state = "greenstone"
 	},
@@ -6168,7 +6169,7 @@
 	pixel_x = -4;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "gZy" = (
@@ -6780,9 +6781,9 @@
 /area/rogue/indoors/town/dwarfin)
 "hLj" = (
 /obj/structure/closet/crate/chest/wicker,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
 /turf/open/floor/rogue/ruinedwood{
 	dir = 1;
 	icon_state = "vertw"
@@ -15936,8 +15937,8 @@
 	icon_state = "longtable"
 	},
 /obj/item/clothing/mask/cigarette/pipe/westman,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /obj/item/roguekey/lord,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -19937,23 +19938,23 @@
 /area/rogue/under/town/basement)
 "wIL" = (
 /obj/structure/rack/rogue/shelf/biggest,
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried{
+/obj/item/reagent_containers/food/snacks/produce/swampweed_dried{
 	pixel_x = 4;
 	pixel_y = -8
 	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried{
+/obj/item/reagent_containers/food/snacks/produce/swampweed_dried{
 	pixel_x = 4;
 	pixel_y = -8
 	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = -4;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = -4;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed{
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach{
 	pixel_x = -4;
 	pixel_y = 8
 	},
@@ -20737,10 +20738,10 @@
 /obj/item/alch/bone,
 /obj/item/alch/bone,
 /obj/item/alch/bone,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed,
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried,
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach,
+/obj/item/reagent_containers/food/snacks/produce/swampweed_dried,
+/obj/item/reagent_containers/food/snacks/produce/swampweed_dried,
 /obj/item/reagent_containers/powder/ozium,
 /obj/item/reagent_containers/powder/moondust,
 /obj/item/reagent_containers/powder/moondust_purest,

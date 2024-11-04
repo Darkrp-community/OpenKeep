@@ -119,8 +119,6 @@ GLOBAL_LIST_EMPTY(jam_on_wardec)
 			return FALSE
 	return TRUE
 
-/obj/item/nuclear_challenge/clownops
-	uplink_type = /obj/item/uplink/clownop
 
 #undef CHALLENGE_TELECRYSTALS
 #undef CHALLENGE_TIME_LIMIT
