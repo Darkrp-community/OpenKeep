@@ -28,8 +28,8 @@
 
 /datum/crafting_recipe/roguetown/dryweed
 	name = "dry westleach leaf"
-	result = /obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed
-	reqs = list(/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed = 1)
+	result = /obj/item/reagent_containers/food/snacks/produce/dry_westleach
+	reqs = list(/obj/item/reagent_containers/food/snacks/produce/westleach = 1)
 	structurecraft = /obj/structure/fluff/dryingrack
 	time = 2 SECONDS
 	verbage = "dry"
@@ -40,7 +40,7 @@
 /datum/crafting_recipe/roguetown/sigdry
 	name = "westleach zig"
 	result = /obj/item/clothing/mask/cigarette/rollie/nicotine
-	reqs = list(/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed = 1,
+	reqs = list(/obj/item/reagent_containers/food/snacks/produce/dry_westleach = 1,
 				/obj/item/paper = 1)
 	time = 10 SECONDS
 	verbage = "roll"
@@ -51,8 +51,8 @@
 //crafting recipes
 /datum/crafting_recipe/roguetown/dryleaf
 	name = "dry swampweed"
-	result = /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried
-	reqs = list(/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed = 1)
+	result = /obj/item/reagent_containers/food/snacks/produce/swampweed_dried
+	reqs = list(/obj/item/reagent_containers/food/snacks/produce/swampweed = 1)
 	structurecraft = /obj/structure/fluff/dryingrack
 	time = 2 SECONDS
 	verbage = "dry"
@@ -63,7 +63,7 @@
 /datum/crafting_recipe/roguetown/sigsweet
 	name = "swampweed zig"
 	result = /obj/item/clothing/mask/cigarette/rollie/cannabis
-	reqs = list(/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried = 1,
+	reqs = list(/obj/item/reagent_containers/food/snacks/produce/swampweed_dried = 1,
 				/obj/item/paper = 1)
 	time = 10 SECONDS
 	verbage = "roll"
