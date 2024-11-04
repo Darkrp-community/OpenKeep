@@ -312,7 +312,7 @@
 	if(prob(50))
 		head = /obj/item/clothing/head/roguetown/helmet/leather
 	if(prob(50))
-		head = /obj/item/clothing/head/roguetown/roguehood
+		head = /obj/item/clothing/head/roguetown/roguehood/uncolored
 	if(prob(50))
 		r_hand = /obj/item/rogueweapon/sword/iron
 		shoes = /obj/item/clothing/shoes/roguetown/boots

@@ -29,7 +29,7 @@
 	resistance_flags = FLAMMABLE // Made of leather
 
 /obj/item/clothing/gloves/roguetown/leather/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/gloves/roguetown/fingerless
 	name = "fingerless gloves"
