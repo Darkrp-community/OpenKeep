@@ -76,7 +76,7 @@
 		else
 			return 0
 
-	if(nuforce < 25) //End force needs to be at least this high, after accounting for strong intent and chop. An iron messer should be able to do it, but not a dagger.
+	if(nuforce < 20) //End force needs to be at least this high, after accounting for strong intent and chop. An iron messer should be able to do it, but not a dagger.
 		return 0
 
 	var/probability = (nuforce * (total_dam / affecting.max_damage) - 5) //More weight given to total damage accumulated on the limb
@@ -92,5 +92,5 @@
 	if(hard_dismember)
 		return min(probability, 5)
 	else if(easy_dismember)
-		return probability * 1.5
+		return probability * 2.0
 	return probability
