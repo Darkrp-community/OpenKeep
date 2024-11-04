@@ -699,6 +699,7 @@
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/cloak/raincloak/mortus,
 /obj/item/flashlight/flare/torch/lantern,
+/obj/item/clothing/head/roguetown/padded/deathface,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "aGn" = (
@@ -5284,6 +5285,10 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/magician)
+"few" = (
+/obj/structure/fluff/traveltile/inhumen,
+/turf/open/water/swamp,
+/area/rogue/outdoors/rtfield)
 "feH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/rogue/wallfire/candle/r,
@@ -6200,7 +6205,6 @@
 	},
 /obj/item/clothing/cloak/stole/red,
 /obj/item/clothing/cloak/chasuble,
-/obj/item/rogueweapon/woodstaff/aries,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/church/chapel)
 "gao" = (
@@ -14237,6 +14241,9 @@
 /obj/structure/roguemachine/mail,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/dwarfin)
+"nYa" = (
+/turf/open/water/swamp,
+/area/rogue/outdoors/rtfield)
 "nYu" = (
 /turf/open/floor/rogue/twig,
 /area/rogue/under/town/basement)
@@ -64822,11 +64829,11 @@ xOC
 "}
 (101,1,2) = {"
 eUz
+few
+nYa
 eUz
-eUz
-eUz
-eUz
-eUz
+nYa
+nYa
 eUz
 eUz
 eUz
@@ -64979,12 +64986,12 @@ xOC
 "}
 (102,1,2) = {"
 eUz
-eUz
-eUz
-eUz
-eUz
-eUz
-eUz
+few
+nYa
+nYa
+nYa
+nYa
+nYa
 eUz
 eUz
 omo
@@ -65137,13 +65144,13 @@ xOC
 (103,1,2) = {"
 eUz
 eUz
+nYa
+nYa
 eUz
 eUz
-eUz
-eUz
-eUz
-eUz
-eUz
+nYa
+nYa
+nYa
 jIk
 jIk
 jIk
