@@ -269,7 +269,7 @@
 /obj/item/clothing/head/roguetown/padded/deathface
 	name = "death shroud"
 	desc = "When inducted into the cult of Necra, the supplicant must make a talisman from the remains of a deceased loved one. Many favor a chin-guard made from a jawbone."
-	icon_state = "necrahood"
+	icon_state = "deathface"
 	flags_inv = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
 
 	armor = ARMOR_MINOR
