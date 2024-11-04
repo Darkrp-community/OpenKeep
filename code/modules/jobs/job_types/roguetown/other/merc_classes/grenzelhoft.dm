@@ -30,7 +30,7 @@
 
 	if(H.gender == FEMALE)
 		H.underwear = "Femleotard"
-		H.underwear_color = CLOTHING_BLACK
+		H.underwear_color = CLOTHING_SOOT_BLACK
 		H.update_body()
 
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor

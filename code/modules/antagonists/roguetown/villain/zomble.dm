@@ -93,9 +93,10 @@
 	zombie.silent = TRUE		// makes them unable to audible emote or speak, no more sexy moan zombies
 //	cmode_music ='sound/music/combat_weird.ogg'
 	zombie.vitae_pool = 0 // Deadites have no vitae to drain from
-	zombie.remove_language(/datum/language/common)
-	zombie.remove_language(/datum/language/dwarvish)
-	zombie.remove_language(/datum/language/elvish)
+	zombie.remove_all_languages()
+//	zombie.remove_language(/datum/language/common)
+//	zombie.remove_language(/datum/language/dwarvish)
+//	zombie.remove_language(/datum/language/elvish)
 	zombie.grant_language(/datum/language/hellspeak)
 
 	return ..()
