@@ -14,13 +14,14 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 /obj/item/reagent_containers/food/snacks/fat/attackby(obj/item/I, mob/user, params)
+	. = ..()
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
 		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/mince))
 		if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 2)
-			to_chat(user, span_warning("I don't know how to make butter."))
+			to_chat(user, span_warning("I don't know how to make sausages."))
 			return
 		if(isturf(loc)&& (found_table))
 			to_chat(user, "<span class='notice'>Stuffing a wiener...</span>")
@@ -32,8 +33,8 @@
 				qdel(src)
 		else
 			to_chat(user, "<span class='warning'>You need to put [src] on a table to work on it.</span>")
-	else
-		return ..()
+//	else
+//		return ..()
 
 // -------------- SPIDER HONEY -----------------
 /obj/item/reagent_containers/food/snacks/rogue/honey

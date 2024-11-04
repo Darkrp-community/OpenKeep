@@ -47,7 +47,7 @@
 			if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 4)
 				to_chat(user, span_warning(skill_lacking))
 				return
-	 ..()
+//	. = ..()
 
 
 /obj/item/reagent_containers/food/snacks/rogue/Initialize()

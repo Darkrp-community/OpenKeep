@@ -171,9 +171,10 @@
 \------------*/
 
 /obj/item/reagent_containers/food/snacks/rogue/dough_brown
-	name = "dough"
+	name = "oat dough"
 	desc = "The triumph of all bakers."
-	icon_state = "dough_brown"
+	icon_state = "dough"
+	color = "#dac9b6"
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/bread_brown
 	w_class = WEIGHT_CLASS_NORMAL
 	rotprocess = SHELFLIFE_LONG
@@ -450,8 +451,16 @@
 	name = "bread loaf"
 	desc = "One of the staple foods of the world, this one has lots of fibers!"
 	icon_state = "brownloaf6"
-	bread_state = "brownloaf"
+	var/bread_state = "brownloaf"
+	slices_num = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/breadslice_brown
+	dropshrink = 0.9
+	list_reagents = list(/datum/reagent/consumable/nutriment = DOUGH_NUTRITION-6)
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("bread" = 1)
+	slice_batch = FALSE
+	slice_sound = TRUE
+	rotprocess = SHELFLIFE_EXTREME
 
 /obj/item/reagent_containers/food/snacks/rogue/bread/update_icon()
 	if(slices_num)
