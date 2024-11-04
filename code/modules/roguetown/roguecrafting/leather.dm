@@ -54,7 +54,7 @@
 
 /datum/crafting_recipe/roguetown/leather/hood
 	name = "leather hood"
-	result = /obj/item/clothing/head/roguetown/roguehood
+	result = /obj/item/clothing/head/roguetown/roguehood/brown
 
 /datum/crafting_recipe/roguetown/leather/cloak
 	name = "leather cloak"
