@@ -252,7 +252,7 @@
 
 
 /obj/item/storage/backpack/rogue/satchel/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/storage/backpack/rogue/satchel/ComponentInitialize()
 	. = ..()
