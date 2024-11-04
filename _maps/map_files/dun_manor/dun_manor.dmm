@@ -8068,6 +8068,10 @@
 	icon_state = "chess"
 	},
 /area/rogue/indoors/town/shop)
+"hNn" = (
+/obj/machinery/simple_dye_bin,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/town)
 "hOo" = (
 /obj/structure/stairs/stone{
 	dir = 1;
@@ -60509,7 +60513,7 @@ xqr
 xqr
 xqr
 irq
-hvn
+hNn
 wse
 gog
 pJn
