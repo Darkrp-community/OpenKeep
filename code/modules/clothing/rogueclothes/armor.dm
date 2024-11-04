@@ -24,19 +24,20 @@
 	experimental_onhip = TRUE // does this do anything on armor I wonder?
 //	blocking_behavior		use to block gloves when armor includes them etc
 	sellprice = VALUE_COMMON_GOODS
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_MINIMAL
 	body_parts_covered = CHEST
 
 /obj/item/clothing/suit/roguetown/armor/medium	// Template, not for use
 	name = "Medium armor template"
 	equip_delay_self = 4 SECONDS
-	unequip_delay_self = 4 SECONDS
+	unequip_delay_self = 3 SECONDS
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
-	armor_class = ARMOR_CLASS_MEDIUM
-	body_parts_covered = CHEST|VITALS|GROIN|LEGS
+	armor_class = AC_MEDIUM
+	armor = ARMOR_SCALE
 	max_integrity = INTEGRITY_STANDARD
 	clothing_flags = CANT_SLEEP_IN
+	prevent_crits = ALL_EXCEPT_STAB
 
 
 //..................................................................................................................................
@@ -69,10 +70,10 @@
 	l_sleeve_status = SLEEVE_NOMOD
 	sellprice = VALUE_GAMBESSON
 
-	armor_class = ARMOR_CLASS_LIGHT
-	armor = ARMOR_GAMBESON
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
-	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
+	armor_class = AC_LIGHT
+	armor = ARMOR_PADDED
+	body_parts_covered = COVERAGE_FULL
+	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	name = "light gambeson"
@@ -80,8 +81,8 @@
 	icon_state = "gambesonl"
 	sellprice = VALUE_LIGHT_GAMBESSON
 
-	armor = ARMOR_GAMBESON_BAD
-	prevent_crits = null // It won't help, like, at all.
+	armor = ARMOR_PADDED_BAD
+	prevent_crits = MINOR_CRITICALS
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	name = "padded gambeson"
@@ -89,8 +90,7 @@
 	icon_state = "gambesonp"
 	sellprice = VALUE_HEAVY_GAMBESSON
 
-	armor = ARMOR_GAMBESON_GOOD
-	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
+	armor = ARMOR_PADDED_GOOD
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dark
 	color = CLOTHING_BLACK_WARM
@@ -107,7 +107,7 @@
 	l_sleeve_status = SLEEVE_NORMAL
 	sellprice = VALUE_PADDED_DRESS
 
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS|VITALS
+	body_parts_covered = COVERAGE_FULL
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt
 	icon_state = "armordressalt"
@@ -120,7 +120,7 @@
 	icon_state = "arming"
 	sellprice = VALUE_GAMBESSON+BONUS_VALUE_MODEST
 
-	body_parts_covered = CHEST|ARMS|VITALS|GROIN
+	body_parts_covered =  COVERAGE_ALL_BUT_LEGS
 
 
 //................ Stalker Robe ............... //
@@ -140,7 +140,7 @@
 	sleeved = null
 	nodismemsleeves = TRUE
 
-	body_parts_covered = CHEST|VITALS
+	body_parts_covered = COVERAGE_VEST
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped/Initialize()
 	color = pick(CLOTHING_SALMON, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW)
@@ -168,9 +168,9 @@
 	smeltresult = /obj/item/ash
 	sellprice = VALUE_LEATHER_ARMOR
 
-	armor_class = ARMOR_CLASS_LIGHT
-	armor = ARMOR_LEATHER
-	body_parts_covered = CHEST|GROIN|VITALS
+	armor_class = AC_LIGHT
+	armor = ARMOR_LEATHER_BAD
+	body_parts_covered = COVERAGE_TORSO
 	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
 	max_integrity = INTEGRITY_STANDARD
 
@@ -181,7 +181,7 @@
 	icon_state = "hidearmor"
 	sellprice = VALUE_LEATHER_ARMOR_FUR
 
-	armor = ARMOR_LEATHER_GOOD
+	armor = ARMOR_LEATHER
 
 //................ Splint Mail ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/studded
@@ -190,7 +190,7 @@
 	icon_state = "splint"
 	sellprice = VALUE_LEATHER_ARMOR_PLUS
 
-	armor = ARMOR_LEATHER_BEST
+	armor = ARMOR_LEATHER_GOOD
 	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STRONG
 
@@ -208,8 +208,8 @@
 	sleevetype = null
 	sleeved = null
 
-	armor = ARMOR_GAMBESON_GOOD
-	body_parts_covered = CHEST|VITALS
+	armor = ARMOR_LEATHER_BAD
+	body_parts_covered = COVERAGE_VEST
 	prevent_crits = CUT_AND_MINOR_CRITS
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/random/Initialize()
@@ -220,7 +220,6 @@
 /obj/item/clothing/suit/roguetown/armor/leather/vest/butcher
 	name = "butchers vest"
 	icon_state = "leathervest"
-//	item_state = "leathervest"
 	color = "#d69c87" // custom coloring
 
 //................ Other Vests ............... //
@@ -247,7 +246,7 @@
 	icon_state = "leatherjacketo"
 	desc = "A heavy leather jacket with wooden buttons, favored by workers who can afford it."
 
-	body_parts_covered = CHEST|VITALS|ARMS
+	body_parts_covered = COVERAGE_SHIRT
 
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/ComponentInitialize()
 	. = ..()
@@ -274,8 +273,8 @@
 	icon_state = "sailorvest"
 	sleevetype = "shirt"
 
-	armor = ARMOR_LEATHER_BEST
-	body_parts_covered = CHEST|VITALS
+	armor = ARMOR_LEATHER
+	body_parts_covered = COVERAGE_VEST
 
 //................ Silk Coat ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat
@@ -286,7 +285,7 @@
 	allowed_sex = list(FEMALE)
 	sellprice = VALUE_LEATHER_ARMOR_LORD
 
-	body_parts_covered = CHEST|LEGS|VITALS|GROIN
+	body_parts_covered = COVERAGE_ALL_BUT_ARMS
 	prevent_crits = CUT_AND_MINOR_CRITS
 
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat/Initialize()
@@ -300,7 +299,7 @@
 	desc = "Displaying wealth while keeping your guts safe from blades with thick leather pads underneath."
 	sellprice = VALUE_LEATHER_ARMOR_LORD
 
-	body_parts_covered = CHEST|VITALS|LEGS
+	body_parts_covered = COVERAGE_SHIRT
 
 //................ Hand´s Coat ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand
@@ -309,7 +308,7 @@
 	desc = "A quality silken coat, discretely lined with thin metal platr on the inside to protect its affluent wearer."
 	sellprice = VALUE_LEATHER_ARMOR_LORD
 
-	body_parts_covered = CHEST|VITALS|LEGS
+	body_parts_covered = COVERAGE_ALL_BUT_ARMS
 
 
 //................ Amazon chainkini ............... //
@@ -323,23 +322,10 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ARMOR_UNUSUAL
 
-	armor_class = ARMOR_CLASS_LIGHT
-	armor = MELEE_70___ARROW_NOTHING
-	body_parts_covered = CHEST|GROIN|VITALS
+	armor_class = AC_LIGHT
+	armor = ARMOR_LEATHER_GOOD
+	body_parts_covered = COVERAGE_TORSO
 	prevent_crits = ALL_EXCEPT_BLUNT
-
-
-//................ Iron Maille ............... //
-/obj/item/clothing/suit/roguetown/armor/chainmail/iron
-	name = "iron maille"
-	desc = "A vest made of iron rings. Offers good protection against arrows, stabs and cuts."
-	icon_state = "ichainmail"
-	smeltresult = /obj/item/ingot/iron
-	sellprice = VALUE_IRON_ARMOR
-
-	armor = ARMOR_MAILLE_IRON
-	armor_class = ARMOR_CLASS_LIGHT
-	body_parts_covered = CHEST|GROIN|VITALS
 
 
 //................ Copper Heart-protector ............... //
@@ -351,9 +337,9 @@
 	smeltresult = /obj/item/ingot/copper
 	sellprice = VALUE_DIRT_CHEAP
 
-	armor_class = ARMOR_CLASS_LIGHT
-	armor = ARMOR_COPPER
-	body_parts_covered = CHEST|VITALS
+	armor_class = AC_LIGHT
+	armor = ARMOR_PLATE_BAD
+	body_parts_covered = CHEST
 	prevent_crits = ONLY_VITAL_ORGANS
 	max_integrity = INTEGRITY_POOR
 
@@ -362,7 +348,7 @@
 //..................................................................................................................................
 /*---------------\
 |			 	 |
-|  Medium Armor	 |		- Can't dodge?	- Max 95% protection
+|  Medium Armor	 |
 |			 	 |
 \---------------*/
 
@@ -380,10 +366,24 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_STEEL_ARMOR
 
-	armor_class = ARMOR_CLASS_MEDIUM
+	armor_class = AC_MEDIUM
 	armor = ARMOR_MAILLE
-	body_parts_covered = CHEST|GROIN|ARMS|VITALS
+	body_parts_covered = COVERAGE_ALL_BUT_LEGS
 	prevent_crits = ALL_EXCEPT_BLUNT
+	max_integrity = INTEGRITY_STRONG
+
+
+//................ Iron Maille ............... //
+/obj/item/clothing/suit/roguetown/armor/chainmail/iron
+	name = "iron maille"
+	desc = "A short-sleeved shirt made of iron rings. Offers good protection against arrows, stabs and cuts."
+	icon_state = "ichainmail"
+	smeltresult = /obj/item/ingot/iron
+	sellprice = VALUE_IRON_ARMOR
+
+	armor = ARMOR_MAILLE_IRON
+	body_parts_covered = COVERAGE_TORSO
+	max_integrity = INTEGRITY_STANDARD
 
 
 //................ Hauberk ............... //
@@ -394,8 +394,7 @@
 	item_state = "hauberk"
 	sellprice = VALUE_STEEL_ARMOR_FINE
 
-	armor = list("melee" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
+	body_parts_covered = COVERAGE_FULL
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/Initialize()
 	. = ..()
@@ -420,11 +419,11 @@
 	boobed = FALSE
 	sellprice = VALUE_STEEL_ARMOR
 
-	armor_class = ARMOR_CLASS_MEDIUM
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|VITALS|GROIN
+	armor_class = AC_MEDIUM
+	armor = ARMOR_PLATE
+	body_parts_covered = COVERAGE_TORSO
 	prevent_crits = ALL_EXCEPT_STAB
-	max_integrity = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONG
 
 //................ Grenzelhoft Cuirass ............... //
 /obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
@@ -435,7 +434,7 @@
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	boobed = TRUE
 
-	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_PLATE_GOOD
 
 //................ Black Oak Cuirass ............... //
 /obj/item/clothing/suit/roguetown/armor/cuirass/elven
@@ -457,9 +456,9 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ARMOR
 
-	armor = ARMOR_IRON
-	body_parts_covered = CHEST|VITALS
-	max_integrity = INTEGRITY_STRONG
+	armor = ARMOR_PLATE_BAD
+	body_parts_covered = COVERAGE_VEST
+	max_integrity = INTEGRITY_STANDARD
 
 //................ Rusted Breastplate ............... //
 /obj/item/clothing/suit/roguetown/armor/cuirass/iron/rust
@@ -469,7 +468,7 @@
 	item_state = "rusthalf"
 	sellprice = VALUE_IRON_ARMOR/2
 
-	max_integrity = INTEGRITY_STANDARD
+	max_integrity = INTEGRITY_POOR
 
 //................ Scourge Breastplate ............... //
 /obj/item/clothing/suit/roguetown/armor/cuirass/iron/shadowplate
@@ -487,10 +486,9 @@
 	icon_state = "scale"
 	sellprice = VALUE_STEEL_ARMOR_FINE
 
-	armor = list("melee" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|VITALS|GROIN|LEGS
+	body_parts_covered = COVERAGE_ALL_BUT_ARMS
 	prevent_crits = ALL_CRITICAL_HITS
-	max_integrity = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONG
 
 
 //................ Armored Surcoat ............... //	- splint mail looking armor thats colored
@@ -516,21 +514,15 @@
 			pic.color = get_detail_color()
 		add_overlay(pic)
 
-//................ Armored surcoat (Heartfelt Lord) ............... //
+//................ Armored surcoat (Heartfelt) ............... //
 /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt
 	desc = "A lordly protection in Heartfelt colors. Masterfully crafted coat of plates, for important nobility."
 	color = CLOTHING_RED
 	sellprice = VALUE_SNOWFLAKE_STEEL+BONUS_VALUE_SMALL
 
-	armor = list("melee" = 95, "bullet" = 95, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
+	body_parts_covered = COVERAGE_FULL
 
-//................ Armored surcoat (Heartfelt Hand) ............... //
-/obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/hand
-	desc = "A coat of armor typicially worn by distinguished retainers of Heartfeltian nobles."
-	sellprice = VALUE_SNOWFLAKE_STEEL
 
-	armor = list("melee" = 90, "bullet" = 95, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 
 //..................................................................................................................................
@@ -545,7 +537,6 @@
 	name = "steel half-plate"
 	desc = "Plate armor with shoulder guards. An incomplete, bulky set of excellent armor."
 	icon_state = "halfplate"
-	item_state = "halfplate"
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 4 SECONDS
@@ -553,9 +544,10 @@
 	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
 	sellprice = VALUE_STEEL_ARMOR
 	clothing_flags = CANT_SLEEP_IN
-	armor_class = ARMOR_CLASS_HEAVY
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|GROIN|VITALS
+
+	armor_class = AC_HEAVY
+	armor = ARMOR_PLATE
+	body_parts_covered = COVERAGE_ALL_BUT_ARMS
 	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STRONGEST
 
@@ -573,12 +565,11 @@
 	icon_state = "plate"
 	item_state = "plate"
 	equip_delay_self = 8 SECONDS
-	unequip_delay_self = 8 SECONDS
+	unequip_delay_self = 7 SECONDS
 	sellprice = VALUE_FULL_PLATE
 
-	armor_class = ARMOR_CLASS_HEAVY
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
+	armor = ARMOR_PLATE
+	body_parts_covered = COVERAGE_FULL
 
 
 //................ Iron Plate Armor ............... //
@@ -589,8 +580,7 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ARMOR*2
 
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|VITALS|GROIN|LEGS
+	armor = ARMOR_PLATE_BAD
 	max_integrity = INTEGRITY_STRONG
 
 
@@ -618,9 +608,10 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_BRIGANDINE
 	clothing_flags = CANT_SLEEP_IN
-	armor_class = ARMOR_CLASS_HEAVY
-	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|GROIN|VITALS|ARMS
+
+	armor_class = AC_HEAVY
+	armor = ARMOR_PLATE_BAD
+	body_parts_covered = COVERAGE_ALL_BUT_LEGS
 	max_integrity = INTEGRITY_STRONGEST
 	prevent_crits = ALL_EXCEPT_STAB
 
@@ -659,7 +650,7 @@
 	return ..()
 
 //................ Coat of Plate ............... //
-/obj/item/clothing/suit/roguetown/armor/brigandine/coatplates	// Scalemail with Bonus 50& integrity, minus 10% arrow armor. Brigandine for the heraldry I think.
+/obj/item/clothing/suit/roguetown/armor/brigandine/coatplates
 	name = "coat of plates"
 	desc = "A Zybantine leather coat with steel scales woven with miniscule threads of adamantine, \
 			ensuring the wearer an optimal defence with forgiving breathability and mobility."
@@ -667,10 +658,7 @@
 	blocksound = PLATEHIT
 	sellprice = VALUE_SNOWFLAKE_STEEL
 
-	armor_class = ARMOR_CLASS_MEDIUM
-	armor = list("melee" = 90, "bullet" = 90, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = INTEGRITY_STRONG
-	prevent_crits = ALL_EXCEPT_STAB
 
 
 //................ Snowflake Plate ............... //
@@ -686,9 +674,10 @@
 	unequip_delay_self = 4 SECONDS
 	sellprice = VALUE_SNOWFLAKE_STEEL
 	clothing_flags = CANT_SLEEP_IN
-	armor_class = ARMOR_CLASS_HEAVY
-	armor = ARMOR_STEEL_BEST
-	body_parts_covered = CHEST|GROIN|ARMS|VITALS
+
+	armor_class = AC_HEAVY
+	armor = ARMOR_PLATE_GOOD
+	body_parts_covered = COVERAGE_ALL_BUT_LEGS
 	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STRONGEST
 
@@ -702,38 +691,30 @@
 	name = "dark elf plate"
 	desc = "A fine suit of sleek, moulded dark elf metal. Its interlocking nature and light weight allow for increased maneuverability."
 	icon_state = "elfchest"
-	item_state = "elfchest"
 	allowed_race = list("elf", "half-elf", "dark elf")
 	equip_delay_self = 2 SECONDS
 	unequip_delay_self = 2 SECONDS
 
-	armor_class = ARMOR_CLASS_MEDIUM // Elven craft
-	body_parts_covered = CHEST|VITALS
+	armor_class = AC_MEDIUM // Elven craft, also a cuirass
+	body_parts_covered = COVERAGE_VEST
 
 /obj/item/clothing/suit/roguetown/armor/rare/elfplate/welfplate
 	name = "elvish plate"
 	desc = "A suit of steel interwoven, through honed elven technique, with hardened bark plates."
 	icon_state = "welfchest"
-	item_state = "welfchest"
 
 /obj/item/clothing/suit/roguetown/armor/rare/dwarfplate
 	name = "dwarvish plate"
 	desc = "Plate armor made out of the sturdiest, finest dwarvish metal armor. It's as heavy and durable as it gets."
 	icon_state = "dwarfchest"
-	item_state = "dwarfchest"
 	allowed_race = list("dwarf")
-
-	max_integrity = INTEGRITY_STRONGEST+100
 
 /obj/item/clothing/suit/roguetown/armor/rare/grenzelplate
 	name = "grenzelhoftian plate regalia"
 	desc = "Engraved on this masterwork of humen metallurgy lies \"Thrice Slain, Thrice Risen, Thrice Pronged\" alongside the symbol of The Forgotten God in its neck guard."
 	icon_state = "human_swordchest"
-	item_state = "human_swordchest"
 	allowed_race = list("human")
 	allowed_sex = list(MALE)
-
-	max_integrity = INTEGRITY_STRONG+100
 
 /obj/item/clothing/suit/roguetown/armor/rare/zybanplate
 	name = "kataphractoe scaleskin"
@@ -741,7 +722,6 @@
 			ensuring the wearer optimal defence with forgiving breathability. \
 			The sigil of the Zybantu Kataphractoe is embezzeled at the throat guard."
 	icon_state = "human_spearchest"
-	item_state = "human_spearchest"
 	allowed_race = list("human")
 	allowed_sex = list(MALE)
 
@@ -753,12 +733,11 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	icon_state = "aasimarplate"
-	item_state = "aasimarplate"
 	allowed_race = list("aasimar")
 	smeltresult = null // No bronze ingots yet, unfortunately
 	sellprice = VALUE_SNOWFLAKE_STEEL+BONUS_VALUE_MODEST // It has great value to historical collectors
 
-	body_parts_covered = CHEST|GROIN|VITALS|LEGS
+	body_parts_covered = COVERAGE_ALL_BUT_ARMS
 
 
 
@@ -767,33 +746,42 @@
 | Antagonist Armor |
 \-----------------*/
 
-//................ Ancient Ceremonial Plate ............... //	- ANTAG GEAR Vampire Lord, do not use for other things. Their medium armor
-/obj/item/clothing/suit/roguetown/armor/plate/vampire
-	name = "ancient plate"
-	desc = "An ornate, ceremonial plate armor worn by the masters of the nite."
-	icon_state = "vplate"
-	item_state = "vplate"
 
-	armor_class = ARMOR_CLASS_MEDIUM
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|GROIN|VITALS
+//................ Ancient Ceremonial Plate ............... //
+/obj/item/clothing/suit/roguetown/armor/cuirass/vampire
+	name = "ancient plate"
+	desc = "A ornate, ceremonial plate cuirass of considerable age."
+	icon_state = "vplate"
+
+	armor_class = AC_MEDIUM
+	armor = ARMOR_PLATE_GOOD
+	body_parts_covered = COVERAGE_TORSO
 	prevent_crits = ALL_CRITICAL_HITS_VAMP
 
-//................ Ancient Haubergon ............... //	- ANTAG GEAR Vampire Lord, do not use for other things. They can wear their chain shirt like the other bikers. Their light armor
-/obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire
+//................ Ancient Haubergon ............... //
+/obj/item/clothing/suit/roguetown/armor/haubergon_vampire
 	name = "ancient haubergon"
 	desc = "A style of armor long out of use. Rests easy on the shoulders."
 	icon_state = "vunder"
-	item_state = "vunder"
+	blocksound = CHAINHIT
+	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+	pickup_sound = 'sound/foley/equip/equip_armor_chain.ogg'
+	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	sellprice = VALUE_IRON_ARMOR_UNUSUAL
 
-	body_parts_covered = CHEST|GROIN|ARMS|VITALS
+	armor_class = AC_LIGHT
+	armor = ARMOR_SCALE
+	body_parts_covered = COVERAGE_ALL_BUT_LEGS
+	prevent_crits = ALL_EXCEPT_BLUNT
 
 
 //................ Blacksteel Plate ............... //
 /obj/item/clothing/suit/roguetown/armor/plate/blkknight
 	name = "blacksteel plate"
-	body_parts_covered = CHEST|GROIN|VITALS|ARMS
-	armor_class = ARMOR_CLASS_MEDIUM
+	body_parts_covered = COVERAGE_ALL_BUT_LEGS
+	armor_class = AC_MEDIUM
 	icon_state = "bkarmor"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
@@ -810,8 +798,8 @@
 	icon_state = "vpants"
 	item_state = "vpants"
 	sewrepair = FALSE
-	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST) // Vampire armors don't protect against lashing, Castlevania reference
+	armor = ARMOR_PLATE_GOOD
+	prevent_crits = ALL_CRITICAL_HITS_VAMP // Vampire armors don't protect against lashing, Castlevania reference
 	blocksound = PLATEHIT
 	do_sound = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
@@ -849,7 +837,7 @@
 	color = null
 	blocksound = PLATEHIT
 	smeltresult = /obj/item/ingot/steel
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_PLATE_GOOD
 
 /obj/item/clothing/gloves/roguetown/chain/vampire
 	name = "ancient ceremonial gloves"

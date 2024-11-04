@@ -2813,9 +2813,9 @@
 /area/rogue/indoors/vampire_manor)
 "zn" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/hand,
+/obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt,
 /obj/item/clothing/suit/roguetown/armor/medium/surcoat,
-/obj/item/clothing/suit/roguetown/armor/plate/vampire,
+/obj/item/clothing/suit/roguetown/armor/cuirass/vampire,
 /obj/item/clothing/suit/roguetown/armor/plate/blkknight,
 /turf/open/floor/rogue/carpet,
 /area/rogue)

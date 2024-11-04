@@ -14,7 +14,7 @@
 	sewrepair = TRUE
 	anvilrepair = null
 	smeltresult = /obj/item/ash // Helmets have pre-defined smeltresults, this is for hats
-	body_parts_covered = HEAD|HAIR
+	body_parts_covered = COVERAGE_SKULL
 	sellprice = VALUE_CHEAP_CLOTHING
 
 	max_integrity = INTEGRITY_WORST
@@ -261,7 +261,7 @@
 	default_hidden = HIDEEARS|HIDEHAIR
 	dropshrink = 0.8
 
-	armor = ARMOR_MINOR
+	armor = ARMOR_WEAK
 	prevent_crits = MINOR_CRITICALS
 
 
@@ -272,7 +272,7 @@
 	icon_state = "deathface"
 	flags_inv = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
 
-	armor = ARMOR_MINOR
+	armor = ARMOR_WEAK
 	prevent_crits = MINOR_CRITICALS
 
 //................ Death Shroud ............... //	- Necra headwear that conceals indentity
@@ -319,7 +319,7 @@
 	worn_y_dimension = 64
 	resistance_flags = FIRE_PROOF // Made of metal
 
-	armor = ARMOR_MINOR
+	armor = ARMOR_WEAK
 
 
 //................ Sun Hood ............... //	- Basic Astrata Acolyte
@@ -348,7 +348,7 @@
 	default_hidden = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	resistance_flags = FIRE_PROOF
 
-	armor = ARMOR_MINOR
+	armor = ARMOR_WEAK
 	body_parts_covered = FULL_HEAD | NECK
 	prevent_crits = MINOR_CRITICALS
 
@@ -508,8 +508,8 @@
 	sellprice = VALUE_IRON_ITEM
 	clothing_flags = CANT_SLEEP_IN
 
-	armor = ARMOR_IRON_GOOD
-	body_parts_covered = HEAD|HAIR|NOSE
+	armor = ARMOR_PLATE_BAD
+	body_parts_covered = COVERAGE_NASAL
 	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STANDARD
 
@@ -521,8 +521,7 @@
 	smeltresult = /obj/item/ash
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
-	armor = ARMOR_IRON
-	body_parts_covered = HEAD|HAIR|EARS
+	body_parts_covered = COVERAGE_SKULL
 	max_integrity = INTEGRITY_POOR
 
 //................ Horned Cap ............... //
@@ -533,7 +532,7 @@
 	smeltresult = /obj/item/ash
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
-	body_parts_covered = HEAD|HAIR|EARS
+	body_parts_covered = COVERAGE_SKULL
 
 //................ Winged Cap ............... //
 /obj/item/clothing/head/roguetown/helmet/winged
@@ -545,7 +544,7 @@
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
 
-	body_parts_covered = HEAD|HAIR
+	body_parts_covered = COVERAGE_SKULL
 
 
 //................ Kettle Helmet ............... //
@@ -562,8 +561,7 @@
 	smeltresult = /obj/item/ash
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
-	armor = ARMOR_STEEL_BAD
-	body_parts_covered = HEAD|HAIR
+	body_parts_covered = COVERAGE_HEAD
 
 //................ Kettle Helmet (Slitted)............... //
 /obj/item/clothing/head/roguetown/helmet/slitkettle
@@ -579,7 +577,7 @@
 	smeltresult = /obj/item/ash
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
-	armor = ARMOR_STEEL_BAD
+	armor = ARMOR_PLATE_BAD
 	body_parts_covered = HEAD|HAIR
 
 //................ CULTIST HOOD ............... //
@@ -591,7 +589,7 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	sellprice = VALUE_LEATHER_HELMET/2
 
-	armor = ARMOR_STEEL_BAD
+	armor = ARMOR_PLATE_BAD
 	body_parts_covered = NECK|HAIR|EARS|HEAD
 
 //................ Sallet ............... //
@@ -603,8 +601,8 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_STEEL_HELMET
 
-	armor = ARMOR_STEEL_PARTIAL
-	body_parts_covered = HEAD|HAIR|EARS
+	armor =  ARMOR_PLATE
+	body_parts_covered = COVERAGE_HEAD
 	max_integrity = INTEGRITY_STRONG
 
 //................ Elf Sallet ............... //
@@ -637,7 +635,7 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_STEEL_HELMET
 
-	body_parts_covered = HEAD|HAIR|EARS
+	body_parts_covered = COVERAGE_HEAD
 	max_integrity = INTEGRITY_STRONG
 
 
@@ -650,8 +648,8 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_HELMET
 
-	armor = ARMOR_LEATHER_BEST // splint mail, best light armor level
-	body_parts_covered = HEAD|HAIR|NOSE|EARS
+	armor = ARMOR_LEATHER_GOOD
+	body_parts_covered = COVERAGE_HEAD_NOSE
 
 
 //................ Copper Lamellar Cap ............... //
@@ -663,8 +661,8 @@
 	smeltresult = /obj/item/ingot/copper
 	sellprice = VALUE_LEATHER_HELMET // until copper/new mats properly finished and integrated this is a stopgap
 
-	armor = ARMOR_COPPER
-	body_parts_covered = HEAD|HAIR|EARS
+	armor = ARMOR_PADDED_GOOD
+	body_parts_covered = COVERAGE_HEAD
 	prevent_crits = ONLY_VITAL_ORGANS
 	max_integrity = INTEGRITY_POOR
 
@@ -730,6 +728,7 @@
 	smeltresult = /obj/item/ingot/steel // All visored helmets are made of steel
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_TINY
 
+	armor = ARMOR_PLATE
 	body_parts_covered = FULL_HEAD
 	max_integrity = INTEGRITY_STRONG
 	prevent_crits = ALL_CRITICAL_HITS
@@ -740,7 +739,7 @@
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
 			icon_state = "[initial(icon_state)]_raised"
-			body_parts_covered = HEAD|HAIR|EARS
+			body_parts_covered = COVERAGE_HEAD
 			flags_inv = HIDEEARS
 			flags_cover = null
 			prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT) // Vulnerable to eye stabbing while visor is open
@@ -750,10 +749,10 @@
 				H.update_inv_head()
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
-			prevent_crits = ALL_CRITICAL_HITS
-			body_parts_covered = FULL_HEAD
-			flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-			flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+//			body_parts_covered = FULL_HEAD
+//			prevent_crits = ALL_CRITICAL_HITS
+//			flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+//			flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 			if(user)
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
@@ -769,7 +768,6 @@
 	desc = "A steel helmet offering good overall protection. Its visor can be flipped over for higher visibility at the cost of eye protection."
 	icon_state = "sallet_visor"
 
-	armor = list("melee" = 90, "bullet" = 75, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 //............... Hounskull ............... //
 /obj/item/clothing/head/roguetown/helmet/visored/hounskull
@@ -779,9 +777,8 @@
 			at the cost of eye protection."
 	icon_state = "hounskull"
 	emote_environment = 3
-	block2add = FOV_RIGHT|FOV_LEFT
 
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_PLATE_GOOD
 
 //............... Knights Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/visored/knight
@@ -793,13 +790,8 @@
 	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	adjustable = CAN_CADJUST
-	emote_environment = 3
-	block2add = FOV_RIGHT|FOV_LEFT
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 
-	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = HEAD_EXCEPT_MOUTH
+	emote_environment = 3
 
 /obj/item/clothing/head/roguetown/helmet/visored/knight/black
 	color = CLOTHING_BLACK
@@ -826,7 +818,7 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_STEEL_HELMET
 
-	armor = ARMOR_STEEL
+	armor = ARMOR_PLATE_BAD
 	body_parts_covered = FULL_HEAD
 	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STRONGEST // no moving parts, steel
@@ -857,7 +849,7 @@
 	icon_state = "topfhelm"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 
-	armor = ARMOR_STEEL_BEST
+	armor = ARMOR_PLATE_GOOD
 	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
@@ -899,7 +891,7 @@
 	worn_y_dimension = 64
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-	armor = ARMOR_STEEL_BEST
+	armor = ARMOR_PLATE_GOOD
 	prevent_crits = ALL_CRITICAL_HITS
 
 //............... Temple heavy helmets ......................//
@@ -935,7 +927,7 @@
 	desc = "A standard helmet forged in the style typical of Eoran worshippers, a simple yet practical protective piece of equipment. Upon it lays several laurels of flowers and other colorful ornaments, followed by several symbols and standards of the user's chapter, accomplishments or even punishment"
 	icon_state = "eorahelm"
 	item_state = "eorahelm"
-	armor = ARMOR_STEEL_BEST
+	armor = ARMOR_PLATE_GOOD
 
 
 //............... Pestra Helmet ............... //
@@ -1039,7 +1031,7 @@
 	desc = "A lavish great helm which allows a crest to be mounted on top."
 	icon_state = "decorated_bucket"
 
-	armor = ARMOR_STEEL_BEST
+	armor = ARMOR_PLATE_GOOD
 
 /obj/item/clothing/head/roguetown/helmet/heavy/decorated/bucket/attack_right(mob/user)
 	..()
@@ -1061,7 +1053,7 @@
 	desc = "A lavish gold-trimmed greathelm which allows a crest to be mounted on top."
 	icon_state = "decorated_gbucket"
 
-	armor = ARMOR_STEEL_BEST
+	armor = ARMOR_PLATE_GOOD
 
 /obj/item/clothing/head/roguetown/helmet/heavy/decorated/golden/attack_right(mob/user)
 	..()
@@ -1124,7 +1116,7 @@
 	icon_state = "headscarf"
 	color = CLOTHING_BROWN
 	sellprice = VALUE_LEATHER_HELMET/2
-	armor = ARMOR_GAMBESON
+	armor = ARMOR_PADDED
 	body_parts_covered = HEAD|HAIR
 	prevent_crits =  MINOR_CRITICALS
 	max_integrity = INTEGRITY_POOR
@@ -1137,7 +1129,7 @@
 	icon_state = "armingcap"
 	flags_inv = HIDEEARS
 
-	armor = ARMOR_GAMBESON
+	armor = ARMOR_PADDED
 	body_parts_covered = HEAD|HAIR|EARS
 	prevent_crits =  MINOR_CRITICALS
 	max_integrity = INTEGRITY_POOR
@@ -1162,7 +1154,7 @@
 	sewrepair = TRUE
 	sellprice = VALUE_LEATHER_HELMET
 
-	armor = ARMOR_LEATHER
+	armor = ARMOR_LEATHER_BAD
 	body_parts_covered = HEAD|HAIR|EARS|NOSE
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_STANDARD
@@ -1182,7 +1174,7 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	sellprice = VALUE_LEATHER_HELMET/2
 
-	armor = ARMOR_GAMBESON_GOOD
+	armor = ARMOR_PADDED_GOOD
 	body_parts_covered = NECK|HAIR|EARS|HEAD
 
 //............... Hardened Helmet ............... //
@@ -1208,7 +1200,7 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	sellprice = VALUE_LEATHER_HELMET+BONUS_VALUE_MODEST
 
-	armor = ARMOR_GAMBESON
+	armor = ARMOR_PADDED
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_BLUNT)
 
 	var/brightness_on = 4 //less than a torch; basically good for one person.
@@ -1299,7 +1291,7 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = NO_MARKET_VALUE
 
-	armor = ARMOR_COPPER
+	armor = ARMOR_PADDED_GOOD
 	body_parts_covered = HEAD|EARS|HAIR|EYES
 	prevent_crits = ONLY_VITAL_ORGANS
 	max_integrity = INTEGRITY_POOR
@@ -1321,8 +1313,8 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_SMALL
 
-	armor = ARMOR_STEEL_BEST
-	armor_class = ARMOR_CLASS_HEAVY
+	armor = ARMOR_PLATE_GOOD
+	armor_class = AC_HEAVY
 	prevent_crits = ALL_CRITICAL_HITS
 	max_integrity = INTEGRITY_STRONG
 
@@ -1334,7 +1326,7 @@
 	icon_state = "elfhead"
 	allowed_race = list("elf", "half-elf", "dark elf")
 	clothing_flags = CANT_SLEEP_IN
-	armor_class = ARMOR_CLASS_MEDIUM
+	armor_class = AC_MEDIUM
 	body_parts_covered = HEAD|HAIR|NOSE
 
 /obj/item/clothing/head/roguetown/rare/elfplate/welfplate // Unique Bladesinger kit

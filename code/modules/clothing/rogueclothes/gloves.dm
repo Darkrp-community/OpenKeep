@@ -69,7 +69,7 @@
 	icon_state = "cgloves"
 	armor = list("melee" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB)
-	armor_class = ARMOR_CLASS_MEDIUM
+	armor_class = AC_MEDIUM
 	clothing_flags = CANT_SLEEP_IN
 	resistance_flags = null
 	blocksound = CHAINHIT
@@ -96,7 +96,7 @@
 	icon_state = "gauntlets"
 	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
-	armor_class = ARMOR_CLASS_HEAVY
+	armor_class = AC_HEAVY
 	clothing_flags = CANT_SLEEP_IN
 	blocksound = PLATEHIT
 	equip_delay_self = 25

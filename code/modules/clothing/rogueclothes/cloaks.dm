@@ -897,7 +897,7 @@
 	desc = "Those who wear, thy should beware, for those who do; never come back as who they once were again."
 	allowed_race = ALL_RACES_LIST
 	body_parts_covered = ARMS|CHEST
-	armor = ARMOR_STEEL_BAD
+	armor = ARMOR_MAILLE_GOOD
 
 /obj/item/clothing/cloak/half/brown
 	color = CLOTHING_BROWN
