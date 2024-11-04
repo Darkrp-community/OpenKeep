@@ -1824,7 +1824,6 @@
 "gO" = (
 /obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /obj/structure/closet/crate/chest/neu,
-/obj/item/rogueweapon/mace/coppermace,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/town/ruin)
 "gQ" = (
