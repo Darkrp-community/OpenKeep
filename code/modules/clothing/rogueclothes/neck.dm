@@ -314,8 +314,21 @@
 
 /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 	name = "amulet of Pestra"
-	desc = "A Pestran amulet depicting her fabled walking staff, encrusted in this trinket is a venomous serpent. Believed to ward off disease and lessen poisons to devoted worshippers of the wise hag."
+	desc = "When pure, alcohol is best used as a cleanser of wounds and a cleanser of the palate."
 	icon_state = "pestra"
+	resistance_flags = FIRE_PROOF
+
+
+/obj/item/clothing/neck/roguetown/psycross/silver/malum
+	name = "amulet of Malum"
+	desc = "Blessed be our works, made in His name."
+	icon_state = "malum"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/silver/malum_steel
+	name = "amulet of Malum"
+	desc = "Let the tools that guide thee be thy hands."
+	icon_state = "malum_alt"
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psycross/g
