@@ -227,7 +227,7 @@
 		GLOB.fires_list -= src
 
 /obj/machinery/light/rogue/Destroy()
-	QDEL_NULL(soundloop)	
+	QDEL_NULL(soundloop)
 	GLOB.fires_list -= src
 	. = ..()
 
@@ -799,7 +799,7 @@
 					pot.reagents.remove_reagent(/datum/reagent/water, 1)
 
 			// Bad and rotten and toxic stuff below. Less lethal due to boiling, but really disgusting. Graggars inhumen followers love this stuff, get some healing from it too.
-			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison) || istype(W, /obj/item/natural/poo)|| istype(W, /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms) || istype(W, /obj/item/natural/worms))
+			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/jacksberry/poison) || istype(W, /obj/item/natural/poo)|| istype(W, /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms) || istype(W, /obj/item/natural/worms))
 				if(do_after(user,2 SECONDS, target = src))
 					user.visible_message("<span class='info'>[user] places [W] into the pot.</span>")
 					playsound(src.loc, 'sound/items/Fish_out.ogg', 20, TRUE)
@@ -853,7 +853,7 @@
 					playsound(src, "bubbles", 30, TRUE)
 					pot.reagents.add_reagent(/datum/reagent/consumable/soup/stew/gross, 32)
 					pot.reagents.remove_reagent(/datum/reagent/water, 1)
-	
+
 			else if(istype(W, /obj/item/reagent_containers/food/snacks/smallrat))  // a step to far for most beggars, paying tribute to Graggar
 				if(do_after(user,2 SECONDS, target = src))
 					user.visible_message("<span class='info'>[user] throws [W] into the boiling water.</span>")
@@ -898,11 +898,11 @@
 	if(attachment)
 		if(istype(attachment, /obj/item/cooking/pan))
 			if(food)
-				if(rawegg)	
+				if(rawegg)
 					to_chat(user, "<span class='notice'>Throws away the raw egg.</span>")
 					rawegg = FALSE
 					qdel(food)
-					update_icon()			
+					update_icon()
 				if(!user.put_in_active_hand(food))
 					food.forceMove(user.loc)
 				food = null
@@ -967,7 +967,7 @@
 		burn_out()
 
 /obj/machinery/light/rogue/hearth/Destroy()
-	QDEL_NULL(boilloop)	
+	QDEL_NULL(boilloop)
 	. = ..()
 
 /obj/machinery/light/rogue/campfire

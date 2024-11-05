@@ -75,7 +75,7 @@
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/roguetown/headband/red
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/head/roguetown/softcap
 	name = "soft cap"
@@ -124,14 +124,13 @@
 	desc = "A comfortable and fashionable headgear."
 	icon_state = "chap_alt"
 	flags_inv = HIDEEARS
-	color = CLOTHING_PINK
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/random/Initialize()
 	. = ..()
-	color = pick(CLOTHING_TEAL, CLOTHING_GREEN, CLOTHING_ORANGE, CLOTHING_MAJENTA, CLOTHING_YELLOW,CLOTHING_SALMON, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW)
+	color = pick(CLOTHING_ROYAL_TEAL, CLOTHING_FOREST_GREEN, CLOTHING_FYRITIUS_DYE, CLOTHING_ROYAL_MAJENTA, CLOTHING_MUSTARD_YELLOW,CLOTHING_SALMON, CLOTHING_SKY_BLUE, CLOTHING_YELLOW_OCHRE, CLOTHING_RED_OCHRE, CLOTHING_RUSSET)
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary
-	color = CLOTHING_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary/Initialize()
 	..()
@@ -202,21 +201,24 @@
 
 	body_parts_covered = NECK
 
+/obj/item/clothing/head/roguetown/roguehood/uncolored
+	color = CLOTHING_LINEN
+
 /obj/item/clothing/head/roguetown/roguehood/brown
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 
 /obj/item/clothing/head/roguetown/roguehood/red
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/head/roguetown/roguehood/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/head/roguetown/roguehood/random/Initialize()
-	color = pick("#544236", "#435436", "#543836", "#79763f")
+	color = pick( CLOTHING_PEASANT_BROWN, CLOTHING_SPRING_GREEN, CLOTHING_CHESTNUT, CLOTHING_YELLOW_OCHRE)
 	..()
 
 /obj/item/clothing/head/roguetown/roguehood/mage/Initialize()
-	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
+	color = pick(CLOTHING_MAGE_BLUE, CLOTHING_MAGE_GREEN, CLOTHING_MAGE_ORANGE, CLOTHING_MAGE_YELLOW)
 	..()
 
 /obj/item/clothing/head/roguetown/roguehood/AdjustClothes(mob/user)
@@ -265,14 +267,17 @@
 	prevent_crits = MINOR_CRITICALS
 
 
-//................ Death Face ............... //	- Basic Necra Acolyte
+//................ Death Face ............... //
 /obj/item/clothing/head/roguetown/padded/deathface
-	name = "death face"
-	desc = "When inducted into the cult of Necra, the supplicant must make a talisman from the jawbone of a deceased loved one. Many favor a chin-guard made from a jawbone. Worn by the faithful of Necra."
+	name = "death shroud"
+	desc = "When inducted into the cult of Necra, the supplicant must make a talisman from the remains of a deceased loved one. Many favor a chin-guard made from a jawbone."
 	icon_state = "deathface"
 	flags_inv = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
 
-//................ Death Shroud ............... //	- Rare Necra headwear
+	armor = ARMOR_MINOR
+	prevent_crits = MINOR_CRITICALS
+
+//................ Death Shroud ............... //	- Necra headwear that conceals indentity
 /obj/item/clothing/head/roguetown/padded/deathshroud
 	name = "death shroud"
 	desc = "Worn by the faithful of Necra, or less savory individuals."
@@ -329,30 +334,66 @@
 	armor = ARMOR_MINIMAL
 	prevent_crits = MINOR_CRITICALS
 
-//................ Solar Visage ............... //	- The new improved Priest headwear
+//................ Solar Visage ............... //	- The new improved Priest headwear. Integratged magic resist so don't need the null ring, and inverted toggle.
 /obj/item/clothing/head/roguetown/roguehood/priest
 	name = "solar visage"
 	desc = "The sanctified headwear of the most devoted. The mask can be removed."
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	icon_state = "solar"
+	dynamic_hair_suffix = "+generic"
+	dropshrink = 0.8
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	flags_inv = HIDEEARS|HIDEHAIR
-	default_hidden = HIDEEARS|HIDEHAIR
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	default_hidden = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	resistance_flags = FIRE_PROOF
 
 	armor = ARMOR_MINOR
+	body_parts_covered = FULL_HEAD | NECK
 	prevent_crits = MINOR_CRITICALS
+
+/obj/item/clothing/head/roguetown/roguehood/priest/AdjustClothes(mob/user)
+	if(loc == user)
+		playsound(user, "rustle", 70, TRUE, -5)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			if(toggle_icon_state)
+				icon_state = "[initial(icon_state)]_t"
+			flags_inv = HIDEEARS|HIDEHAIR
+			body_parts_covered = NECK|HAIR|EARS|HEAD
+			dynamic_hair_suffix = "+generic"
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_head()
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			flags_inv = default_hidden
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_head()
+		user.update_fov_angles()
+
+/obj/item/clothing/head/roguetown/roguehood/priest/equipped(mob/user, slot)
+	. = ..()
+	if (slot == SLOT_HEAD && istype(user))
+		ADD_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
+	else
+		REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
+
+/obj/item/clothing/head/roguetown/roguehood/priest/dropped(mob/user)
+	. = ..()
+	REMOVE_TRAIT(user, TRAIT_ANTIMAGIC,"Anti-Magic")
 
 /obj/item/clothing/head/roguetown/roguehood/priest/pickup(mob/living/user)
 	if((user.job != "Priest") && (user.job != "Priestess"))
-		user.visible_message(span_warningbig ("UNWORTHY HANDS TOUCH MY VISAGE, CEASE OR BE PUNISHED"))
-//		user.playsound_local(user, 'sound/misc/astratascream.ogg', 90, falloff = 0.1, TRUE)
+		playsound(user, 'sound/misc/astratascream.ogg', 80,  falloff = 0.2)
+		user.visible_message(span_reallybig("UNWORTHY HANDS TOUCH MY VISAGE, CEASE OR BE PUNISHED"))
 		spawn(30)
 			if(loc == user)
-				user.adjust_fire_stacks(4)
+				user.adjust_fire_stacks(3)
 				user.IgniteMob()
 		return
 	else
@@ -442,7 +483,7 @@
 /obj/item/clothing/head/roguetown/tophat
 	name = "teller's hat"
 	icon_state = "tophat"
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 
 
@@ -515,6 +556,23 @@
 	desc = "A lightweight steel helmet generally worn by crossbowmen and garrison archers."
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	icon_state = "kettle"
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS
+	smeltresult = /obj/item/ash
+	sellprice = VALUE_CHEAP_IRON_HELMET
+
+	armor = ARMOR_STEEL_BAD
+	body_parts_covered = HEAD|HAIR
+
+//................ Kettle Helmet (Slitted)............... //
+/obj/item/clothing/head/roguetown/helmet/slitkettle
+	name = "kettle helmet"
+	desc = "A lightweight steel helmet generally worn by crossbowmen and garrison archers. This one has eyeslits for the paranoid."
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	icon_state = "slitkettle"
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
@@ -746,7 +804,7 @@
 	body_parts_covered = HEAD_EXCEPT_MOUTH
 
 /obj/item/clothing/head/roguetown/helmet/visored/knight/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 
 
@@ -833,7 +891,18 @@
 
 	max_integrity = INTEGRITY_STANDARD // shitty rusted iron
 
+//............... Frog Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/frog
+	name = "frog helmet"
+	desc = "A thick, heavy helmet that severely obscures the wearer's vision. Still rather protective."
+	icon_state = "froghelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
+	armor = ARMOR_STEEL_BEST
+	prevent_crits = ALL_CRITICAL_HITS
 
 //............... Temple heavy helmets ......................//
 //............... Astrata Helmet ............... //
@@ -1055,7 +1124,7 @@
 	name = "headscarf"
 	desc = "Rolled cloth. Gives some protection at least."
 	icon_state = "headscarf"
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 	sellprice = VALUE_LEATHER_HELMET/2
 	armor = ARMOR_GAMBESON
 	body_parts_covered = HEAD|HAIR

@@ -20,7 +20,7 @@
 /obj/item/natural/stone/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(HAS_TRAIT(user, TRAIT_ROTMAN))
-		to_chat(user, span_info("The [src] slips through dead fingers..."))	
+		to_chat(user, span_info("The [src] slips through dead fingers..."))
 		user.dropItemToGround(src, TRUE)
 
 /obj/item/natural/stone/attackby(obj/item/W, mob/user, params)
@@ -131,3 +131,5 @@
 /obj/item/natural/rock/copper
 	mineralType = /obj/item/rogueore/copper
 
+/obj/item/natural/rock/gemerald
+	mineralType = /obj/item/natural/rock/gemerald
