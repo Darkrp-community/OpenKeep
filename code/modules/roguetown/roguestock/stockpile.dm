@@ -162,7 +162,7 @@
 /datum/roguestock/stockpile/jacksberry
 	name = "Jacksberries"
 	desc = "Sweet berries, prime for winemaking."
-	item_type = /obj/item/reagent_containers/food/snacks/produce/berries/rogue
+	item_type = /obj/item/reagent_containers/food/snacks/produce/jacksberry
 	payout_price = 2
 	export_price = 3
 	withdraw_price = 3
