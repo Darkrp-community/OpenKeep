@@ -292,9 +292,9 @@
 			qdel(src)
 			return BULLET_ACT_BLOCK
 
-/obj/effect/proc_holder/spell/invoked/projectile/arcanebolt
-	name = "Arcane Bolt"
-	desc = "Shoot out rapid bolts of arcane magic, that firmly hits on impact."
+/obj/effect/proc_holder/spell/invoked/projectile/arcynebolt
+	name = "Arcyne Bolt"
+	desc = "Shoot out rapid bolts of arcyne magic, that firmly hits on impact."
 	clothes_req = FALSE
 	range = 12
 	projectile_type = /obj/projectile/energy/rogue3
@@ -314,7 +314,7 @@
 	cost = 2
 
 /obj/projectile/energy/rogue3
-	name = "Arcane Bolt"
+	name = "Arcyne Bolt"
 	icon_state = "arcane_barrage"
 	damage = 45
 	damage_type = BRUTE
@@ -575,7 +575,7 @@
 		/obj/effect/proc_holder/spell/self/message,
 		/obj/effect/proc_holder/spell/invoked/blade_burst,
 		/obj/effect/proc_holder/spell/invoked/projectile/fetch,
-		/obj/effect/proc_holder/spell/invoked/projectile/arcanebolt,
+		/obj/effect/proc_holder/spell/invoked/projectile/arcynebolt,
 		/obj/effect/proc_holder/spell/targeted/touch/nondetection, // 1 cost
 		/obj/effect/proc_holder/spell/targeted/touch/prestidigitation,
 		/obj/effect/proc_holder/spell/invoked/featherfall,
