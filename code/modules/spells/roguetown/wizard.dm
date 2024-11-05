@@ -1060,7 +1060,6 @@
 	name = "Longstrider"
 	desc = "Grant yourself and any creatures adjacent to you free movement through rough terrain."
 	cost = 1
-	xp_gain = TRUE
 	school = "transmutation"
 	releasedrain = 50
 	chargedrain = 0
