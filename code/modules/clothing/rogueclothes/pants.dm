@@ -104,27 +104,6 @@
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
 
-/obj/item/clothing/under/roguetown/trou
-	name = "work trousers"
-	desc = "Padded pants for hardy workers."
-	gender = PLURAL
-	icon_state = "trou"
-	item_state = "trou"
-//	adjustable = CAN_CADJUST
-	sewrepair = TRUE
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_LASHING, BCLASS_BITE)
-	blocksound = SOFTHIT
-	blade_dulling = DULLING_BASHCHOP
-	r_sleeve_status = SLEEVE_NORMAL
-	l_sleeve_status = SLEEVE_NORMAL
-
-/obj/item/clothing/under/roguetown/trou/leather
-	name = "leather trousers"
-	desc = "Standard leather pants for hardy workers."
-	icon_state = "leathertrou"
-	armor = ARMOR_LEATHER
-
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
 	desc = "Dark trousers worn by morticians while performing burial rites."
@@ -137,6 +116,79 @@
 	icon_state = "shadowpants"
 	allowed_race = list("elf", "dark elf")
 
+/obj/item/clothing/under/roguetown/loincloth
+	name = "loincloth"
+	desc = "Protects your modesty, but not much else."
+	icon_state = "loincloth"
+	item_state = "loincloth"
+//	adjustable = CAN_CADJUST
+	r_sleeve_status = SLEEVE_NOMOD
+	l_sleeve_status = SLEEVE_NOMOD
+
+/obj/item/clothing/under/roguetown/loincloth/brown
+	color = CLOTHING_BARK_BROWN
+
+/obj/item/clothing/under/roguetown/loincloth/pink
+	color = "#b98ae3"
+
+
+//..................................................................................................................................
+/*---------------\
+|			 	 |
+|  Light Armor	 |
+|			 	 |
+\---------------*/
+
+/obj/item/clothing/under/roguetown/trou
+	name = "work trousers"
+	desc = "Padded pants for hardy workers."
+	gender = PLURAL
+	icon_state = "trou"
+	item_state = "trou"
+//	adjustable = CAN_CADJUST
+	sewrepair = TRUE
+	armor = ARMOR_PADDED_BAD
+	prevent_crits = list(BCLASS_CUT, BCLASS_LASHING, BCLASS_BITE)
+	blocksound = SOFTHIT
+	blade_dulling = DULLING_BASHCHOP
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+
+/obj/item/clothing/under/roguetown/trou/leather
+	name = "leather trousers"
+	desc = "Standard leather pants for hardy workers."
+	icon_state = "leathertrou"
+	armor = ARMOR_LEATHER
+
+/obj/item/clothing/under/roguetown/grenzelpants
+	name = "grenzelhoftian paumpers"
+	desc = "Padded pants for extra comfort and protection, adorned in vibrant colors."
+	icon_state = "grenzelpants"
+	item_state = "grenzelpants"
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
+	detail_tag = "_detail"
+	armor = ARMOR_PADDED
+	prevent_crits = list(BCLASS_BITE, BCLASS_LASHING, BCLASS_TWIST)
+	colorgrenz = TRUE
+
+/obj/item/clothing/under/roguetown/grenzelpants/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+
+
+//..................................................................................................................................
+/*---------------\
+|			 	 |
+|  Medium Armor	 |
+|			 	 |
+\---------------*/
+
 /obj/item/clothing/under/roguetown/chainlegs
 	name = "chain chausses"
 	desc = "Chain mail chausses made of exquisite steel rings boasting superior protection."
@@ -145,7 +197,7 @@
 	item_state = "chain_legs"
 //	adjustable = CAN_CADJUST
 	sewrepair = FALSE
-	armor = list("melee" = 100, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_MAILLE
 	max_integrity = 300
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
 	armor_class = AC_MEDIUM
@@ -168,7 +220,14 @@
 	name = "iron chain chausses"
 	desc = "Chain mail chausses made of iron rings woven together, offering protection against cuts and stabs."
 	max_integrity = 200
-	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_MAILLE_IRON
+
+//..................................................................................................................................
+/*---------------\
+|			 	 |
+|  Heavy Armor	 |
+|			 	 |
+\---------------*/
 
 /obj/item/clothing/under/roguetown/platelegs
 	name = "plated chausses"
@@ -178,7 +237,7 @@
 	item_state = "heavyleggies"
 	// adjustable = CAN_CADJUST
 	sewrepair = FALSE
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_PLATE
 	max_integrity = 500
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	armor_class = AC_HEAVY
@@ -197,37 +256,5 @@
 	l_sleeve_status = SLEEVE_NOMOD
 	clothing_flags = CANT_SLEEP_IN
 
-/obj/item/clothing/under/roguetown/loincloth
-	name = "loincloth"
-	desc = "Protects your modesty, but not much else."
-	icon_state = "loincloth"
-	item_state = "loincloth"
-//	adjustable = CAN_CADJUST
-	r_sleeve_status = SLEEVE_NOMOD
-	l_sleeve_status = SLEEVE_NOMOD
 
-/obj/item/clothing/under/roguetown/loincloth/brown
-	color = CLOTHING_BARK_BROWN
 
-/obj/item/clothing/under/roguetown/loincloth/pink
-	color = "#b98ae3"
-
-/obj/item/clothing/under/roguetown/grenzelpants
-	name = "grenzelhoftian paumpers"
-	desc = "Padded pants for extra comfort and protection, adorned in vibrant colors."
-	icon_state = "grenzelpants"
-	item_state = "grenzelpants"
-	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
-	detail_tag = "_detail"
-	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_BITE, BCLASS_LASHING, BCLASS_TWIST)
-	colorgrenz = TRUE
-
-/obj/item/clothing/under/roguetown/grenzelpants/update_icon()
-	cut_overlays()
-	if(get_detail_tag())
-		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
-		pic.appearance_flags = RESET_COLOR
-		if(get_detail_color())
-			pic.color = get_detail_color()
-		add_overlay(pic)
