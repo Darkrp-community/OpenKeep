@@ -102,7 +102,7 @@
 
 
 	var/list/L = params2list(params)
-	if (L["middle"]) //start charging a spell or readying a mmb intent
+	if (L["middle"]) //start charging a spell or readying a mmb intent- Moved to front so it can't be overriden by people holding right click
 		if(mob.next_move > world.time)
 			return
 		mob.atkswinging = "middle"
