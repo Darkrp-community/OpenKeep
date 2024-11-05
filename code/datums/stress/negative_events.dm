@@ -293,3 +293,8 @@
 	timer = 3 MINUTES
 	stressadd = 6
 	desc = "<span class='red'>I slept on the floor! What am I?! An animal?!</span>"
+
+/datum/stressevent/sadfate
+	timer = 60 MINUTES
+	stressadd = 1
+	desc = "<span class='red'>I feel useless...</span>"

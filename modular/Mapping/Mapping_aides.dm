@@ -514,6 +514,16 @@
 	pixel_y = 32
 
 
+/obj/structure/fluff/shipssprote
+	name = ""
+	desc = ""
+	icon = 'icons/obj/atmospherics/pipes/disposal.dmi'
+	icon_state = "pipe"
+	mouse_opacity = 0
+	color = "#5a4621"
+	pixel_y = -16
+
+
 /obj/structure/fluff/walldeco/bath/random
 	icon_state = "bath"
 	pixel_y = 32
@@ -536,18 +546,45 @@
 	pixel_y = 32
 
 
-/*	..................   Red brick Walls   ................... */
-/turf/closed/wall/mineral/rogue/stonebrick/reddish
-	color = "#e0b7af"
+/*	..................   Innocent Bush   ................... */
+/obj/structure/innocent_bush
+	name = "bush"
+	desc = "These large bushes are known to be well-liked by silkworms who make their nests in their dark depths."
+	icon = 'icons/roguetown/mob/monster/Trolls.dmi'
+	icon_state = "Trolls"
+	pixel_x = -16
+	layer = ABOVE_ALL_MOB_LAYER
+	max_integrity = 500
+	density = TRUE
 
-/turf/closed/wall/mineral/rogue/decostone/fluffstone/reddish
-	color = "#fbc5bc"
+/obj/structure/innocent_bush/attack_hand(mob/living/carbon/human/user)
+//	playsound(src.loc, "plantcross", 80, FALSE, -1)
+//	user.visible_message(span_noticesmall("[user] searches through [src]."))
+//	shake_camera(user, 2, 2)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/trollbog (get_turf(src))
+	qdel(src)
 
-/turf/closed/wall/mineral/rogue/decostone/cand/reddish
-	color = "#fbd2cb"
+/obj/structure/innocent_bush/attackby(obj/item, /mob/living/user, params)
+//	playsound(src.loc, "plantcross", 80, FALSE, -1)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+//	shake_camera(user, 2, 2)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/trollbog (get_turf(src))
+	qdel(src)
 
-/obj/structure/stairs/stone/reddish
-	color = "#ffddd7"
+/obj/structure/innocent_bush/Bumped(atom/movable/AM)
+	playsound(src.loc, "plantcross", 80, FALSE, -1)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/trollbog (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_bush/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	playsound(src.loc, "plantcross", 80, FALSE, -1)
+	sleep(4)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/trollbog (get_turf(src))
+	qdel(src)
+
 
 
 /obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
@@ -625,16 +662,16 @@
 	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
 
 
-/*	..................   Traveltiles   ................... */ // these are the ones on centcom, where the actual lair is
-/obj/structure/fluff/traveltile/bandit_lair
+/*	..................   Traveltiles   ................... */ // these are the ones on centcom, where the actual lair is, to reduce varedits onmap
+/obj/structure/fluff/traveltile/exit_bandit		// mus NOT be a traveltile/bandit child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
 	aportalid = "banditin"
 	aportalgoesto = "banditexit"
 
-/obj/structure/fluff/traveltile/vampire_lair
+/obj/structure/fluff/traveltile/exit_vampire	// mus NOT be a traveltile/vampire child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
 	aportalid = "vampin"
 	aportalgoesto = "vampexit"
 
-/obj/structure/fluff/traveltile/inhumen_lair
+/obj/structure/fluff/traveltile/exit_inhumen
 	aportalid = "inhumenin"
 	aportalgoesto = "inhumenexit"
 
@@ -643,6 +680,18 @@
 	name = "to the Deep Bog"
 	aportalid = "inhumenexit"
 	aportalgoesto = "inhumenin"
+
+
+/*	..................   Toll randomizer (poor mans coin generator, cheaper workload is all)  ................... */
+/obj/effect/spawner/roguemap/tollrandom
+	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
+	icon_state = "soultoken_floor"
+	probby = 25
+	color = "#ff0000"
+	spawned = list(
+		/obj/item/underworld/coin = 1,
+		)
+
 
 /* moved to main. leave this be for now, I want to be able to find the additions I make easily for tweaking
 /*	..................   More chairs   ................... */

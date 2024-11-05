@@ -314,8 +314,21 @@
 
 /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 	name = "amulet of Pestra"
-	desc = "A Pestran amulet depicting her fabled walking staff, encrusted in this trinket is a venomous serpent. Believed to ward off disease and lessen poisons to devoted worshippers of the wise hag."
+	desc = "When pure, alcohol is best used as a cleanser of wounds and a cleanser of the palate."
 	icon_state = "pestra"
+	resistance_flags = FIRE_PROOF
+
+
+/obj/item/clothing/neck/roguetown/psycross/silver/malum
+	name = "amulet of Malum"
+	desc = "Blessed be our works, made in His name."
+	icon_state = "malum"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/silver/malum_steel
+	name = "amulet of Malum"
+	desc = "Let the tools that guide thee be thy hands."
+	icon_state = "malum_alt"
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psycross/g
@@ -420,3 +433,18 @@
 	name = "petrified larvae charm"
 	desc = "The husk of a desiccated beespider larva, passed down within the ranks of those whose names have been struck from dark elven history. The old tyranny's uprooting would be their last act of true valor."
 	icon_state = "spider"
+
+/obj/item/clothing/neck/roguetown/bogcowl
+	name = "bogcowl"
+	desc = "An odd cowl made using mud, sticks, and fibers."
+	icon_state = "bogcowl"
+
+/obj/item/clothing/neck/roguetown/elfears
+	name = "elfear necklace"
+	desc = "A grim necklace made to show off the wearer's macabre collection of cut off elf ears."
+	icon_state = "elfears"
+
+/obj/item/clothing/neck/roguetown/menears
+	name = "menear necklace"
+	desc = "A grim necklace made to show off the wearer's macabre collection of cut off humen ears."
+	icon_state = "menears"

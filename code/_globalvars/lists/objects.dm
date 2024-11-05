@@ -40,3 +40,32 @@ GLOBAL_LIST_EMPTY(ai_status_displays)
 
 GLOBAL_LIST_EMPTY(mob_spawners) 		    // All mob_spawn objects
 GLOBAL_LIST_EMPTY(alert_consoles)			// Station alert consoles, /obj/machinery/computer/station_alert
+
+GLOBAL_LIST_INIT(rod_jobs, list(
+	"Garrison Guard",
+	"Captain",
+	"Dungeoneer",
+	"Royal Guard",
+	"Veteran",
+	"Squire",
+	"Mayor",
+	"Servant",
+	"Steward",
+	"Queen",
+	"King",
+	"Prince",
+	"Hand",
+	"Court Magician",
+	"Butler",
+	"Archivist",
+	"Stevedore",
+	"Jester",
+	"Prisoner",
+	"Feldsher",
+	"Niteman",
+	"Concubine",
+	"Champion of Rockhill",
+	"Warden of the Terrorbog",
+	"Huntmaster of the Murderwoods",
+	"Hetman of Mount Decapitation",
+))
