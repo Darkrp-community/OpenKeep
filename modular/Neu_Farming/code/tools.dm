@@ -292,12 +292,7 @@
 	desc = "Compost, chaff, hay, it matters not."
 	icon_state = "pitchfork"
 //	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
-	icon = 'icons/roguetown/weapons/64.dmi'
-	pixel_y = -16
-	pixel_x = -16
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
-	bigboy = TRUE
+	icon = 'icons/roguetown/weapons/tools.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	blade_dulling = DULLING_BASHCHOP
