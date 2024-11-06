@@ -22,6 +22,7 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	dropshrink = 0.8
+	max_integrity = INTEGRITY_WORST
 
 /obj/item/clothing/under/roguetown/AdjustClothes(mob/user)
 #ifdef MATURESERVER
@@ -147,18 +148,20 @@
 	item_state = "trou"
 //	adjustable = CAN_CADJUST
 	sewrepair = TRUE
-	armor = ARMOR_PADDED_BAD
-	prevent_crits = list(BCLASS_CUT, BCLASS_LASHING, BCLASS_BITE)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
+
+	armor = ARMOR_PADDED_BAD
+	prevent_crits = MINOR_CRITICALS
 
 /obj/item/clothing/under/roguetown/trou/leather
 	name = "leather trousers"
 	desc = "Standard leather pants for hardy workers."
 	icon_state = "leathertrou"
 	armor = ARMOR_LEATHER
+	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/under/roguetown/grenzelpants
 	name = "grenzelhoftian paumpers"
@@ -167,9 +170,10 @@
 	item_state = "grenzelpants"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	detail_tag = "_detail"
-	armor = ARMOR_PADDED
-	prevent_crits = list(BCLASS_BITE, BCLASS_LASHING, BCLASS_TWIST)
 	colorgrenz = TRUE
+	armor = ARMOR_PADDED
+	prevent_crits = MINOR_CRITICALS
+	max_integrity = INTEGRITY_STANDARD
 
 /obj/item/clothing/under/roguetown/grenzelpants/update_icon()
 	cut_overlays()
@@ -179,7 +183,6 @@
 		if(get_detail_color())
 			pic.color = get_detail_color()
 		add_overlay(pic)
-
 
 
 //..................................................................................................................................
@@ -197,10 +200,6 @@
 	item_state = "chain_legs"
 //	adjustable = CAN_CADJUST
 	sewrepair = FALSE
-	armor = ARMOR_MAILLE
-	max_integrity = 300
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
-	armor_class = AC_MEDIUM
 	resistance_flags = FIRE_PROOF
 	blocksound = CHAINHIT
 	equip_delay_self = 25
@@ -213,14 +212,20 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
-	clothing_flags = CANT_SLEEP_IN
+
+	armor_class = AC_MEDIUM
+	armor = ARMOR_MAILLE
+	max_integrity = INTEGRITY_STRONGEST
+	prevent_crits = ALL_EXCEPT_BLUNT
+
 
 /obj/item/clothing/under/roguetown/chainlegs/iron
 	icon_state = "ichain_legs"
 	name = "iron chain chausses"
 	desc = "Chain mail chausses made of iron rings woven together, offering protection against cuts and stabs."
-	max_integrity = 200
 	armor = ARMOR_MAILLE_IRON
+	max_integrity = INTEGRITY_STRONG
+
 
 //..................................................................................................................................
 /*---------------\
@@ -237,10 +242,6 @@
 	item_state = "heavyleggies"
 	// adjustable = CAN_CADJUST
 	sewrepair = FALSE
-	armor = ARMOR_PLATE
-	max_integrity = 500
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
-	armor_class = AC_HEAVY
 	blocksound = PLATEHIT
 	equip_delay_self = 30
 	unequip_delay_self = 30
@@ -256,5 +257,8 @@
 	l_sleeve_status = SLEEVE_NOMOD
 	clothing_flags = CANT_SLEEP_IN
 
-
+	armor_class = AC_HEAVY
+	armor = ARMOR_PLATE
+	max_integrity = INTEGRITY_STRONGEST
+	prevent_crits = ALL_EXCEPT_STAB
 

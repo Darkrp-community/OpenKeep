@@ -519,7 +519,7 @@
 			r_hand = /obj/item/rogueweapon/greatsword/zwei
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
@@ -531,7 +531,7 @@
 			r_hand = /obj/item/rogueweapon/halberd
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet
@@ -543,7 +543,7 @@
 			r_hand = /obj/item/rogueweapon/eaglebeak
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet
@@ -556,7 +556,7 @@
 			l_hand = /obj/item/rogueweapon/huntingknife/idagger
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet
@@ -568,7 +568,7 @@
 			r_hand = /obj/item/rogueweapon/battle
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet
