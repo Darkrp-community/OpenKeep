@@ -67,7 +67,7 @@
 	maxHealth = FEMALE_MOOBEAST_HEALTH
 	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,
 					/obj/item/reagent_containers/food/snacks/produce/oat,
-					/obj/item/reagent_containers/food/snacks/produce/berries/rogue,
+					/obj/item/reagent_containers/food/snacks/produce/jacksberry,
 					/obj/item/reagent_containers/food/snacks/produce/apple)
 	tame_chance = 25
 	bonus_tame_chance = 15
@@ -184,7 +184,7 @@
 	maxHealth = MALE_MOOBEAST_HEALTH
 	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,
 					/obj/item/reagent_containers/food/snacks/produce/oat,
-					/obj/item/reagent_containers/food/snacks/produce/berries/rogue,
+					/obj/item/reagent_containers/food/snacks/produce/jacksberry,
 					/obj/item/reagent_containers/food/snacks/produce/apple)
 	pooptype = /obj/item/natural/poo/horse
 
