@@ -91,7 +91,7 @@
 					/obj/item/reagent_containers/food/snacks/produce/apple,
 					/obj/item/reagent_containers/food/snacks/produce/turnip,
 					/obj/item/reagent_containers/food/snacks/produce/cabbage,
-					/obj/item/reagent_containers/food/snacks/produce/berries/rogue)
+					/obj/item/reagent_containers/food/snacks/produce/jacksberry)
 	tame_chance = 25
 	bonus_tame_chance = 15
 	pooptype = /obj/item/natural/poo/horse
@@ -220,7 +220,7 @@
 					/obj/item/reagent_containers/food/snacks/produce/apple,
 					/obj/item/reagent_containers/food/snacks/produce/turnip,
 					/obj/item/reagent_containers/food/snacks/produce/cabbage,
-					/obj/item/reagent_containers/food/snacks/produce/berries/rogue)
+					/obj/item/reagent_containers/food/snacks/produce/jacksberry)
 	pooptype = /obj/item/natural/poo/horse
 
 	base_intents = list(/datum/intent/simple/headbutt)
