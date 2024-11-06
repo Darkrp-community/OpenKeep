@@ -1066,6 +1066,7 @@
 	chargetime = 4 SECONDS
 	charge_max = 2 MINUTES
 	warnie = "spellwarning"
+	overlay_state = "jump"
 	no_early_release = TRUE
 	charging_slowdown = 1
 	chargedloop = /datum/looping_sound/invokegen
