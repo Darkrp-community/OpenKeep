@@ -39,6 +39,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 6, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.change_stat("strength", 2)
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 1)

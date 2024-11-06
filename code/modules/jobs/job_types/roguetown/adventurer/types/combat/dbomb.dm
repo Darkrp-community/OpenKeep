@@ -28,10 +28,11 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 	H.change_stat("strength", 1)
 	H.change_stat("endurance", 1)
 	switch(pick(1,2))
 		if (1)
-			shoes = /obj/item/clothing/shoes/roguetown/boots/leather	
+			shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		if (2)
 			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
