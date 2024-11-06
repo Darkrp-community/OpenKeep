@@ -5,6 +5,7 @@
 	icon_state = "Troll2"
 	icon_living = "Troll2"
 	icon_dead = "Troll2d"
+	pixel_x = -16
 
 	faction = list("orcs")
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -32,7 +33,7 @@
 
 	health = TROLL_HEALTH
 	maxHealth = TROLL_HEALTH
-	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat,
+	food_type = list(
 					/obj/item/bodypart,
 					/obj/item/organ)
 

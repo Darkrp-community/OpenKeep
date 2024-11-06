@@ -163,3 +163,19 @@
 		else
 			to_chat(user, "<b>It is a dead end.</b>")
 			return FALSE
+
+
+/obj/structure/fluff/traveltile/inhumen/can_go(mob/user)
+	. = ..()
+	if(.)
+		var/mob/living/L = user
+		if(HAS_TRAIT(L, TRAIT_INHUMENCAMP))
+			for(var/mob/living/carbon/human/H in hearers(6,src))
+				if(!HAS_TRAIT(H, TRAIT_INHUMENCAMP))
+					to_chat(user, "<b>I discover the entrance to the vampire mansion.</b>")
+					ADD_TRAIT(H, TRAIT_INHUMENCAMP, TRAIT_GENERIC)
+			return TRUE
+		else
+			to_chat(user, "<b>It is a dead end.</b>")
+			return FALSE
+
