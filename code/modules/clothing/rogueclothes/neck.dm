@@ -110,26 +110,28 @@
 	color = COLOR_MAROON
 
 /obj/item/clothing/neck/roguetown/keffiyeh/yellow
-	color = COLOR_YELLOW
+	color = CLOTHING_PEAR_YELLOW
 
 /obj/item/clothing/neck/roguetown/keffiyeh/orange
-	color = COLOR_ORANGE
+	color = CLOTHING_FYRITIUS_DYE
 
 /obj/item/clothing/neck/roguetown/keffiyeh/green
-	color = COLOR_GREEN_GRAY
+	color = CLOTHING_BOG_GREEN
 
 /obj/item/clothing/neck/roguetown/keffiyeh/blue
-	color = COLOR_PALE_BLUE_GRAY
+	color = CLOTHING_MAGE_BLUE
 
 /obj/item/clothing/neck/roguetown/keffiyeh/purple
-	color = COLOR_PURPLE_GRAY
+	color = CLOTHING_ROYAL_PURPLE
 
 /obj/item/clothing/neck/roguetown/keffiyeh/teal
-	color = COLOR_TEAL
+	color = CLOTHING_ROYAL_TEAL
 
 /obj/item/clothing/neck/roguetown/keffiyeh/black
-	color = COLOR_ALMOST_BLACK
+	color = CLOTHING_ROYAL_BLACK
 
+/obj/item/clothing/neck/roguetown/keffiyeh/white
+	color = CLOTHING_ASH_GREY
 
 /obj/item/clothing/neck/roguetown/coif/cloth
 	name = "padded coif"
