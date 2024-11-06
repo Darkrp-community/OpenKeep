@@ -248,7 +248,7 @@
 
 /obj/effect/proc_holder/spell/invoked/projectile/spitfire
 	name = "Spitfire"
-	desc = "Shoot out a series of low-powered balls of fire that shine brightly on impact, potentially blinding a target."
+	desc = "Shoot out a of low-powered ball of fire that shines brightly on impact, potentially blinding a target."
 	clothes_req = FALSE
 	range = 8
 	projectile_type = /obj/projectile/magic/aoe/fireball/rogue2
@@ -260,7 +260,6 @@
 	chargetime = 10
 	charge_max = 8 SECONDS
 	warnie = "spellwarning"
-	projectiles_per_fire = 3
 	no_early_release = TRUE
 	movement_interrupt = FALSE
 	charging_slowdown = 3
