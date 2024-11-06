@@ -3,7 +3,7 @@
 	name = "bottle bomb"
 	desc = "Dangerous explosion, in a bottle."
 	icon_state = "clear_bomb"
-	icon = 'icons/roguetown/items/cooking.dmi'
+	icon = 'icons/roguetown/items/bottles.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	//dropshrink = 0
 	throwforce = 0

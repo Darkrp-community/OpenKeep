@@ -1,0 +1,4 @@
+/obj/item/kitchen/spoon_plastic : /obj/item/kitchen/spoon/plastic{@OLD}
+/obj/item/cooking/spoon : /obj/item/kitchen/spoon{@OLD}
+/obj/item/cooking/rollingpin : /obj/item/kitchen/rollingpin{@OLD}
+

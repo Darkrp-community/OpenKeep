@@ -122,7 +122,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("dough" = 1)
 	rotprocess = SHELFLIFE_LONG
-	basic_skillcheck = TRUE
+	simplest_skillcheck = TRUE
 	skill_lacking = "Complicated bun-manipulation is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/doughslice/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -601,7 +601,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	w_class = WEIGHT_CLASS_NORMAL
 	rotprocess = SHELFLIFE_LONG
-	basic_skillcheck = TRUE
+	simplest_skillcheck = TRUE
 	skill_lacking = "Complicated bread-making is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/rbread_half/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -773,7 +773,7 @@
 	bitesize = 2
 	rotprocess = SHELFLIFE_EXTREME
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/bun
-	basic_skillcheck = TRUE
+	simplest_skillcheck = TRUE
 	skill_lacking = "Complicated bun-manipulation is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/bun/attackby(obj/item/I, mob/user, params)
 	if(user.mind)

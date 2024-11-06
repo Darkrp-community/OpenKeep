@@ -7,7 +7,7 @@
 
 // -------------- FAT -----------------
 /obj/item/reagent_containers/food/snacks/fat
-	icon = 'modular/Neu_Food/icons/food.dmi'
+	icon = 'icons/roguetown/items/food.dmi'
 	name = "fat"
 	desc = ""
 	icon_state = "fat"
@@ -39,7 +39,6 @@
 // -------------- SPIDER HONEY -----------------
 /obj/item/reagent_containers/food/snacks/rogue/honey
 	name = "spider honey"
-	icon = 'modular/Neu_Food/icons/food.dmi'
 	icon_state = "spiderhoney"
 	bitesize = 3
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
@@ -350,7 +349,7 @@
 
 // -------------- BUTTER -----------------
 /obj/item/reagent_containers/food/snacks/butter
-	icon = 'modular/Neu_Food/icons/food.dmi'
+	icon = 'icons/roguetown/items/food.dmi'
 	name = "stick of butter"
 	desc = ""
 	icon_state = "butter6"
@@ -383,7 +382,7 @@
 			changefood(slice_path, eater)
 
 /obj/item/reagent_containers/food/snacks/butterslice
-	icon = 'modular/Neu_Food/icons/food.dmi'
+	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "butter_slice"
 	name = "butter"
 	desc = ""

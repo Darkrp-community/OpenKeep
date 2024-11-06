@@ -15,7 +15,7 @@
 \---------------*/
 
 /obj/item/reagent_containers/food/snacks/rogue // base food type, for icons and cooktime, and to make it work with processes like pie making
-	icon = 'modular/Neu_Food/icons/food.dmi'
+	icon = 'icons/roguetown/items/food.dmi'
 	desc = ""
 	slices_num = 0
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
@@ -24,7 +24,6 @@
 	cooktime = 30 SECONDS
 	var/process_step // used for pie making and other similar modular foods
 	var/simplest_skillcheck
-	var/basic_skillcheck
 	var/foodbuff_skillcheck
 	var/best_foodbuff_skillcheck
 	var/skill_lacking = "Your skill is lacking."
@@ -33,10 +32,6 @@
 	if(user.mind)
 		if(simplest_skillcheck)
 			if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 1)
-				to_chat(user, span_warning(skill_lacking))
-				return
-		if(basic_skillcheck)
-			if(user.mind.get_skill_level(/datum/skill/craft/cooking) <= 2)
 				to_chat(user, span_warning(skill_lacking))
 				return
 		if(foodbuff_skillcheck)		// you need cooking 3 to make food with the basic foodbuff
@@ -64,7 +59,7 @@
 	bitesize = 3
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	rotprocess = SHELFLIFE_EXTREME
-	basic_skillcheck = TRUE
+	simplest_skillcheck = TRUE
 	skill_lacking = "Garnering a dish is beyond your skills."
 
 /obj/item/reagent_containers/food/snacks/proc/changefood(path, mob/living/eater)
@@ -112,7 +107,7 @@
 
 /obj/item/reagent_containers/food/snacks/rotten
 	name = "rotten food"
-	icon = 'modular/Neu_Food/icons/food.dmi'
+	icon = 'icons/roguetown/items/food.dmi'
 	color = "#6c6897"
 	eat_effect = /datum/status_effect/debuff/rotfood
 	slices_num = 0
@@ -163,7 +158,6 @@
 
 
 
-
 /*--------------\
 | Kitchen tools |
 \--------------*/
@@ -171,21 +165,21 @@
 /obj/item/kitchen/spoon
 	name = "wooden spoon"
 	desc = "Traditional utensil for shoveling soup into your mouth, or to churn butter with."
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
+//	icon = 'icons/roguetown/items/cooking.dmi'
 	icon_state = "spoon"
 	force = 0
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/kitchen/rollingpin
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
+//	icon = 'icons/roguetown/items/cooking.dmi'
+//	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+//	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	experimental_inhand = FALSE
 
 /obj/item/reagent_containers/glass/bowl
 	name = "wooden bowl"
 	desc = "It is the empty space that makes the bowl useful."
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
+	icon = 'icons/roguetown/items/cooking.dmi'
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	icon_state = "bowl"
@@ -208,31 +202,31 @@
 	if(reagents)
 		if(reagents.total_volume > 0)
 			if(reagents.total_volume <= 11)
-				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_low")
+				var/mutable_appearance/filling = mutable_appearance('icons/roguetown/items/cooking.dmi', "bowl_low")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
 		if(reagents.total_volume > 11)
 			if(reagents.total_volume <= 22)
-				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_half")
+				var/mutable_appearance/filling = mutable_appearance('icons/roguetown/items/cooking.dmi', "bowl_half")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
 		if(reagents.total_volume > 22)
 			if(reagents.has_reagent(/datum/reagent/consumable/soup/oatmeal, 10))
-				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_oatmeal")
+				var/mutable_appearance/filling = mutable_appearance('icons/roguetown/items/cooking.dmi', "bowl_oatmeal")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
 			if(reagents.has_reagent(/datum/reagent/consumable/soup/veggie/cabbage, 17) || reagents.has_reagent(/datum/reagent/consumable/soup/veggie/onion, 17) || reagents.has_reagent(/datum/reagent/consumable/soup/veggie/onion, 17))
-				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_full")
+				var/mutable_appearance/filling = mutable_appearance('icons/roguetown/items/cooking.dmi', "bowl_full")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				icon_state = "bowl_steam"
 				add_overlay(filling)
 			if(reagents.has_reagent(/datum/reagent/consumable/soup/stew/chicken, 17) || reagents.has_reagent(/datum/reagent/consumable/soup/stew/meat, 17) || reagents.has_reagent(/datum/reagent/consumable/soup/stew/fish, 17))
-				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_stew")
+				var/mutable_appearance/filling = mutable_appearance('icons/roguetown/items/cooking.dmi', "bowl_stew")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				icon_state = "bowl_steam"
 				add_overlay(filling)
 			else
-				var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bowl_full")
+				var/mutable_appearance/filling = mutable_appearance('icons/roguetown/items/cooking.dmi', "bowl_full")
 				filling.color = mix_color_from_reagents(reagents.reagent_list)
 				add_overlay(filling)
 	else
@@ -316,7 +310,7 @@
 
 /obj/item/reagent_containers/peppermill // new with some animated art
 	name = "pepper mill"
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
+	icon = 'icons/roguetown/items/cooking.dmi'
 	icon_state = "peppermill"
 	layer = CLOSED_BLASTDOOR_LAYER // obj layer + a little, small obj layering above convenient
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
@@ -326,9 +320,6 @@
 /obj/item/cooking/platter
 	name = "platter"
 	desc = "Made from fired clay or wood."
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
 	icon_state = "platter"
 	resistance_flags = NONE
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
@@ -835,7 +826,7 @@
 
 
 
-/*	.................   Food processing (requires cooking 2)   ................... */
+/*	.................   Food processing (requires cooking 1)   ................... */
 
 * Stuffing sausage
 * Churning butter

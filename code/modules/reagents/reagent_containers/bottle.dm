@@ -4,7 +4,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 /obj/item/reagent_containers/glass/bottle
 	name = "bottle"
 	desc = "A bottle with a cork."
-	icon = 'icons/roguetown/items/cooking.dmi'
+	icon = 'icons/roguetown/items/bottles.dmi'
 	icon_state = "clear_bottle1"
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
@@ -466,7 +466,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 /obj/item/bottlemessage
 	name = "message bottle"
 	desc = "Inside is a scroll, pop it open and read the ancient wisdoms."
-	icon = 'icons/roguetown/items/cooking.dmi'
+	icon = 'icons/roguetown/items/bottles.dmi'
 	dropshrink = 0.5
 	icon_state = "bottle_message"
 	w_class = WEIGHT_CLASS_NORMAL

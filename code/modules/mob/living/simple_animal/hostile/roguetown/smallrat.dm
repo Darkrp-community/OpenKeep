@@ -39,7 +39,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/friedrat
 	name = "fried rat"
 	desc = ""
-	icon = 'modular/Neu_Food/icons/food.dmi'
+	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "cookedrat"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
