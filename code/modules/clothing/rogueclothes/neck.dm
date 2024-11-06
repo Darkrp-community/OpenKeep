@@ -107,28 +107,28 @@
 					H.update_inv_head()
 
 /obj/item/clothing/neck/roguetown/keffiyeh/red
-	color = CLOTHING_RED
+	color = COLOR_MAROON
 
 /obj/item/clothing/neck/roguetown/keffiyeh/yellow
-	color = CLOTHING_PALE_YELLOW
+	color = COLOR_YELLOW
 
 /obj/item/clothing/neck/roguetown/keffiyeh/orange
-	color = CLOTHING_ORANGE
+	color = COLOR_ORANGE
 
 /obj/item/clothing/neck/roguetown/keffiyeh/green
-	color = CLOTHING_GREEN
+	color = COLOR_GREEN_GRAY
 
 /obj/item/clothing/neck/roguetown/keffiyeh/blue
-	color = CLOTHING_PALE_BLUE
+	color = COLOR_PALE_BLUE_GRAY
 
 /obj/item/clothing/neck/roguetown/keffiyeh/purple
-	color = CLOTHING_PURPLE
+	color = COLOR_PURPLE_GRAY
 
 /obj/item/clothing/neck/roguetown/keffiyeh/teal
-	color = CLOTHING_TEAL
+	color = COLOR_TEAL
 
 /obj/item/clothing/neck/roguetown/keffiyeh/black
-	color = CLOTHING_BLACK
+	color = COLOR_ALMOST_BLACK
 
 
 /obj/item/clothing/neck/roguetown/coif/cloth
