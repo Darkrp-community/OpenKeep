@@ -41,11 +41,12 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
 
 	if(H.gender == FEMALE)
 		H.underwear = "Femleotard"
-		H.underwear_color = CLOTHING_BLACK
+		H.underwear_color = CLOTHING_SOOT_BLACK
 		H.update_body()
 	shirt = pick(/obj/item/clothing/suit/roguetown/shirt/undershirt/sailor, /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)

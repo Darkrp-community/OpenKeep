@@ -70,6 +70,9 @@ GLOBAL_LIST_INIT(noble_positions, list(
 	"Archivist",
 	"Merchant",
 	"Feldsher",
+	"Concubine",
+	"Master of the Forge",
+	"Champion of Rockhill",
 	"Warden of the Terrorbog",
 	"Huntmaster of the Murderwoods",
 	"Hetman of Mount Decapitation"

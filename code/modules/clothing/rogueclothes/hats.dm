@@ -75,7 +75,7 @@
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/roguetown/headband/red
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/head/roguetown/softcap
 	name = "soft cap"
@@ -124,14 +124,13 @@
 	desc = "A comfortable and fashionable headgear."
 	icon_state = "chap_alt"
 	flags_inv = HIDEEARS
-	color = CLOTHING_PINK
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/random/Initialize()
 	. = ..()
-	color = pick(CLOTHING_TEAL, CLOTHING_GREEN, CLOTHING_ORANGE, CLOTHING_MAJENTA, CLOTHING_YELLOW,CLOTHING_SALMON, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW)
+	color = pick(CLOTHING_ROYAL_TEAL, CLOTHING_FOREST_GREEN, CLOTHING_FYRITIUS_DYE, CLOTHING_ROYAL_MAJENTA, CLOTHING_MUSTARD_YELLOW,CLOTHING_SALMON, CLOTHING_SKY_BLUE, CLOTHING_YELLOW_OCHRE, CLOTHING_RED_OCHRE, CLOTHING_RUSSET)
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary
-	color = CLOTHING_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary/Initialize()
 	..()
@@ -202,21 +201,24 @@
 
 	body_parts_covered = NECK
 
+/obj/item/clothing/head/roguetown/roguehood/uncolored
+	color = CLOTHING_LINEN
+
 /obj/item/clothing/head/roguetown/roguehood/brown
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 
 /obj/item/clothing/head/roguetown/roguehood/red
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/head/roguetown/roguehood/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/head/roguetown/roguehood/random/Initialize()
-	color = pick("#544236", "#435436", "#543836", "#79763f")
+	color = pick( CLOTHING_PEASANT_BROWN, CLOTHING_SPRING_GREEN, CLOTHING_CHESTNUT, CLOTHING_YELLOW_OCHRE)
 	..()
 
 /obj/item/clothing/head/roguetown/roguehood/mage/Initialize()
-	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
+	color = pick(CLOTHING_MAGE_BLUE, CLOTHING_MAGE_GREEN, CLOTHING_MAGE_ORANGE, CLOTHING_MAGE_YELLOW)
 	..()
 
 /obj/item/clothing/head/roguetown/roguehood/AdjustClothes(mob/user)
@@ -269,7 +271,7 @@
 /obj/item/clothing/head/roguetown/padded/deathface
 	name = "death shroud"
 	desc = "When inducted into the cult of Necra, the supplicant must make a talisman from the remains of a deceased loved one. Many favor a chin-guard made from a jawbone."
-	icon_state = "necrahood"
+	icon_state = "deathface"
 	flags_inv = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
 
 	armor = ARMOR_MINOR
@@ -481,7 +483,7 @@
 /obj/item/clothing/head/roguetown/tophat
 	name = "teller's hat"
 	icon_state = "tophat"
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 
 
@@ -554,6 +556,23 @@
 	desc = "A lightweight steel helmet generally worn by crossbowmen and garrison archers."
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	icon_state = "kettle"
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS
+	smeltresult = /obj/item/ash
+	sellprice = VALUE_CHEAP_IRON_HELMET
+
+	armor = ARMOR_STEEL_BAD
+	body_parts_covered = HEAD|HAIR
+
+//................ Kettle Helmet (Slitted)............... //
+/obj/item/clothing/head/roguetown/helmet/slitkettle
+	name = "kettle helmet"
+	desc = "A lightweight steel helmet generally worn by crossbowmen and garrison archers. This one has eyeslits for the paranoid."
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	icon_state = "slitkettle"
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
@@ -785,7 +804,7 @@
 	body_parts_covered = HEAD_EXCEPT_MOUTH
 
 /obj/item/clothing/head/roguetown/helmet/visored/knight/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 
 
@@ -872,7 +891,18 @@
 
 	max_integrity = INTEGRITY_STANDARD // shitty rusted iron
 
+//............... Frog Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/frog
+	name = "frog helmet"
+	desc = "A thick, heavy helmet that severely obscures the wearer's vision. Still rather protective."
+	icon_state = "froghelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
+	armor = ARMOR_STEEL_BEST
+	prevent_crits = ALL_CRITICAL_HITS
 
 //............... Temple heavy helmets ......................//
 //............... Astrata Helmet ............... //
@@ -915,7 +945,15 @@
 	name = "pestran helmet"
 	desc = "A great helmet made of coarse, tainted steel. It is modeled after a plagued carrion, a blessed abomination of Pestra."
 	icon_state = "pestrahelm"
-	item_state = "pestraahelm"
+	item_state = "pestrahelm"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+
+//................ Malum Helmet ............. //
+/obj/item/clothing/head/roguetown/helmet/heavy/malumhelm
+	name = "malumite helmet"
+	desc = "A great helmet of sturdy dark steel. Its chiseled countenance reminds the viewer of Malum's stern gaze."
+	icon_state = "malumhelm"
+	item_state = "malumhelm"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 
 
@@ -1094,7 +1132,7 @@
 	name = "headscarf"
 	desc = "Rolled cloth. Gives some protection at least."
 	icon_state = "headscarf"
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 	sellprice = VALUE_LEATHER_HELMET/2
 	armor = ARMOR_GAMBESON
 	body_parts_covered = HEAD|HAIR

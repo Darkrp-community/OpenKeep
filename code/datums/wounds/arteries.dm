@@ -18,7 +18,7 @@
 	can_cauterize = TRUE
 	critical = TRUE
 	sleep_healing = 0
-	embed_chance = 75
+	embed_chance = 0
 
 /datum/wound/artery/can_stack_with(datum/wound/other)
 	if(istype(other, /datum/wound/artery) && (type == other.type))
