@@ -84,6 +84,10 @@
 			user.visible_message("<span class='notice'>[user] chops [src]!</span>")
 			slice(W, user)
 			return 1
+		if(slice_bclass == BCLASS_CUT)
+			user.visible_message("<span class='notice'>[user] slices [src]!</span>")
+			slice(W, user)
+			return 1
 		else if(slice(W, user))
 			return 1
 	..()
