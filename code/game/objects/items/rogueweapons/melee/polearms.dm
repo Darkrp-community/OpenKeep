@@ -55,6 +55,9 @@
 	swingdelay = 1
 	misscost = 10
 
+/datum/intent/polearm/thrust/spear
+	penfactor = AP_POLEARM_THRUST
+
 /*------------\
 | Bash intent |
 \------------*/
@@ -114,8 +117,8 @@
 /obj/item/rogueweapon/polearm/woodstaff
 	force =  DAMAGE_STAFF
 	force_wielded =  DAMAGE_STAFF_WIELD-1
-	possible_item_intents = list(SPEAR_BASH)
-	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood)
+	possible_item_intents = list(POLEARM_BASH)
+	gripped_intents = list(POLEARM_BASH,/datum/intent/mace/smash/wood)
 	name = "wooden staff"
 	desc = "The ultimate tool of travel for weary wanderers, support your weight or crack the heads that don't support you."
 	icon_state = "woodstaff"
@@ -150,7 +153,7 @@
 //................ Iron-shod Staff ............... //
 /obj/item/rogueweapon/polearm/woodstaff/quarterstaff/iron
 	force_wielded =  DAMAGE_STAFF_WIELD
-	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash)
+	gripped_intents = list(POLEARM_BASH,/datum/intent/mace/smash)
 	name = "iron quarterstaff"
 	desc = "A perfect tool for bounty hunters who prefer their prisoners broken and bruised but not slain. This reinforced staff is capable of clubbing even an armed opponent into submission with some carefully placed strikes."
 	icon_state = "ironstaff"
@@ -159,7 +162,7 @@
 
 /obj/item/rogueweapon/polearm/woodstaff/quarterstaff/steel
 	force_wielded =  DAMAGE_STAFF_WIELD+1
-	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash)
+	gripped_intents = list(POLEARM_BASH,/datum/intent/mace/smash)
 	name = "steel quarterstaff"
 	desc = "An unusual sight, a knightly combat staff made out of worked steel and reinforced wood. It is a heavy and powerful weapon, more than capable of beating the living daylights out of any brigand."
 	icon_state = "steelstaff"
@@ -182,8 +185,8 @@
 	force = DAMAGE_SPEAR
 	force_wielded = DAMAGE_SPEAR_WIELD
 	throwforce = DAMAGE_SPEAR_WIELD
-	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
-	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
+	possible_item_intents = list(SPEAR_THRUST, POLEARM_BASH) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(POLEARM_THRUST, SPEAR_CUT, POLEARM_BASH)
 	name = "spear"
 	desc = "The humble spear, use the pointy end."
 	icon_state = "spear"
@@ -208,8 +211,8 @@
 	name = "billhook"
 	desc = "A polearm with a curved krag, a Valorian design for dismounting mounted warriors and to strike down monstrous beasts."
 	icon_state = "billhook"
-	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
-	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, /datum/intent/polearm/chop, SPEAR_BASH)
+	possible_item_intents = list(POLEARM_THRUST, POLEARM_BASH) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(POLEARM_THRUST, SPEAR_CUT, /datum/intent/polearm/chop, POLEARM_BASH)
 	resistance_flags = FIRE_PROOF
 	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
 	max_blade_int = 100
@@ -265,8 +268,8 @@
 	force = DAMAGE_SPEAR
 	force_wielded = DAMAGE_HALBERD_WIELD
 	slowdown = 1
-	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
-	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, /datum/intent/polearm/chop, SPEAR_BASH)
+	possible_item_intents = list(POLEARM_THRUST, POLEARM_BASH) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(POLEARM_THRUST, SPEAR_CUT, /datum/intent/polearm/chop, POLEARM_BASH)
 	name = "halberd"
 	desc = "A reinforced polearm for clobbering ordained with a crested ax head, pick and sharp point, a royal arm for defence and aggression."
 	icon_state = "halberd"
@@ -317,8 +320,8 @@
 	force = DAMAGE_SPEAR
 	force_wielded = DAMAGE_SPEAR_WIELD
 	slowdown = 1
-	possible_item_intents = list(SPEAR_BASH, /datum/intent/polearm/chop) //bash is for nonlethal takedowns, only targets limbs
-	gripped_intents = list(SPEAR_BASH, SPEAR_THRUST, /datum/intent/mace/smash/heavy,/datum/intent/polearm/chop)
+	possible_item_intents = list(POLEARM_BASH, /datum/intent/polearm/chop) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(POLEARM_BASH, POLEARM_THRUST, /datum/intent/mace/smash/heavy,/datum/intent/polearm/chop)
 	name = "eagle's beak"
 	desc = "A reinforced pole affixed with an ornate steel eagle's head, of which it's beak is intended to pierce with great harm."
 	icon_state = "eaglebeak"
