@@ -183,7 +183,8 @@
 
 /obj/item/rogueweapon/mace/woodclub/Initialize(mapload)
 	. = ..()
-	icon_state = "club[rand(1,2)]"
+	if(icon_state == "club1")
+		icon_state = "club[rand(1,2)]"
 
 
 //................ Cudgel ............... //

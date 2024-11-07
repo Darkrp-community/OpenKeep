@@ -95,9 +95,9 @@
 
 //................ Steel Flail ............... //
 /obj/item/rogueweapon/flail/sflail
+	force = DAMAGE_GOOD_FLAIL
 	name = "steel flail"
 	desc = "A knightly flail made of worked steel, with a flanged head. An effective and brutal design."
-	force = DAMAGE_GOOD_FLAIL
 	icon_state = "flail"
 	smeltresult = /obj/item/ingot/steel
 	minstr = 4
@@ -106,12 +106,12 @@
 
 //................ Peasant Flail ............... // A little confusing still
 /obj/item/rogueweapon/flail/peasant
+	force = DAMAGE_NORMAL_FLAIL
+	force_wielded = DAMAGE_GOOD_FLAIL
 	name = "peasant flail"
 	desc = "What used to be a humble thresher by design, has become a deadly flail with extended range and punch. Favored by the peasantry militia or knight errants."
 	icon = 'icons/roguetown/weapons/64.dmi'
 	icon_state = "bigflail"
-	force = DAMAGE_NORMAL_FLAIL
-	force_wielded = DAMAGE_GOOD_FLAIL
 	possible_item_intents = list(/datum/intent/flail/strike/long)
 	gripped_intents = list(/datum/intent/flail/strike/long, /datum/intent/flail/strike/smash/long)
 	bigboy = TRUE
