@@ -56,7 +56,6 @@
 /*------------\
 | Stab intent |	good AP, fast
 \---------.--*/
-
 /datum/intent/dagger/thrust
 	name = "stab"
 	icon_state = "instab"
@@ -82,10 +81,10 @@
 	swingdelay = 1
 	blade_class = BCLASS_PICK
 */
+
 /*------------\
 | Chop intent |	small AP, bonus damage
 \------------*/
-
 /datum/intent/dagger/chop
 	name = "chop"
 	icon_state = "inchop"
@@ -401,6 +400,7 @@
 
 	S.forceMove(container)
 
+//................ Stone Knife ............... //
 /obj/item/rogueweapon/knife/stone
 	force = DAMAGE_KNIFE
 	throwforce = DAMAGE_KNIFE
