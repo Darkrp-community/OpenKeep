@@ -203,7 +203,6 @@ SUBSYSTEM_DEF(dbcore)
 			qdel(query)
 
 
-
 /*
 Takes a list of rows (each row being an associated list of column => value) and inserts them via a single mass query.
 Rows missing columns present in other rows will resolve to SQL NULL
