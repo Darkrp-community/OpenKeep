@@ -6,7 +6,7 @@
 /datum/supply_pack/rogue/weapons/shortsword
 	name = "Iron Short Sword"
 	cost = 15
-	contains = /obj/item/rogueweapon/sword/iron/short
+	contains = /obj/item/rogueweapon/sword/short
 
 /datum/supply_pack/rogue/weapons/sword
 	name = "Iron Sword"

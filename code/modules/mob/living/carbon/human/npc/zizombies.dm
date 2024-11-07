@@ -398,7 +398,7 @@
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(6) //zizombie Warrior
-			r_hand = /obj/item/rogueweapon/sword/iron/messer
+			r_hand = /obj/item/rogueweapon/sword/scimitar/messer
 			l_hand = /obj/item/rogueweapon/knife/dagger
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
@@ -552,7 +552,7 @@
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 		if(4) //zizombie Warrior
-			r_hand = /obj/item/rogueweapon/sword/iron/short
+			r_hand = /obj/item/rogueweapon/sword/short
 			l_hand = /obj/item/rogueweapon/knife/dagger
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light

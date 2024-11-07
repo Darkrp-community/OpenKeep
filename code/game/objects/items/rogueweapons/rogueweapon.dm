@@ -31,6 +31,8 @@
 #define DAMAGE_LONGSWORD_WIELD 28
 #define DAMAGE_GREATSWORD_WIELD 35
 
+#define DAMAGE_WHIP 20
+
 // ===== AP DEFINES =======
 #define AP_AXE_CUT 5
 #define AP_AXE_CHOP 15

@@ -8928,7 +8928,7 @@
 	pixel_y = -10
 	},
 /obj/item/rogueweapon/mace/spiked,
-/obj/item/rogueweapon/sword/iron/messer,
+/obj/item/rogueweapon/sword/scimitar/messer,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "iFR" = (
@@ -11581,11 +11581,11 @@
 	pixel_y = -14
 	},
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/sword/iron/messer{
+/obj/item/rogueweapon/sword/scimitar/messer{
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/rogueweapon/sword/iron/short{
+/obj/item/rogueweapon/sword/short{
 	pixel_x = 2;
 	pixel_y = -2
 	},
@@ -16529,7 +16529,7 @@
 	dir = 1;
 	icon_state = "tablewood1"
 	},
-/obj/item/rogueweapon/sword/iron/short{
+/obj/item/rogueweapon/sword/short{
 	pixel_x = 6;
 	pixel_y = 5
 	},

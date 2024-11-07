@@ -236,7 +236,7 @@
 				if (3)
 					beltr = /obj/item/rogueweapon/mace
 				if (4)
-					beltr = /obj/item/rogueweapon/sword/iron/messer
+					beltr = /obj/item/rogueweapon/sword/scimitar/messer
 
 	H.cure_blind("TRAIT_GENERIC")
 

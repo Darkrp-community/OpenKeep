@@ -3622,11 +3622,11 @@
 /area/rogue/indoors/town)
 "ehB" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/sword/iron/messer{
+/obj/item/rogueweapon/sword/scimitar/messer{
 	pixel_y = 2;
 	pixel_x = -3
 	},
-/obj/item/rogueweapon/sword/iron/short{
+/obj/item/rogueweapon/sword/short{
 	pixel_y = -2;
 	pixel_x = 2
 	},
@@ -5357,8 +5357,8 @@
 /area/rogue/indoors/town/manor)
 "gix" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/sword/iron/messer,
-/obj/item/rogueweapon/sword/iron/messer{
+/obj/item/rogueweapon/sword/scimitar/messer,
+/obj/item/rogueweapon/sword/scimitar/messer{
 	pixel_y = 2;
 	pixel_x = -3
 	},
@@ -18133,7 +18133,7 @@
 /area/rogue/indoors/town)
 "uIj" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/sword/iron/short{
+/obj/item/rogueweapon/sword/short{
 	pixel_y = -2;
 	pixel_x = 2
 	},

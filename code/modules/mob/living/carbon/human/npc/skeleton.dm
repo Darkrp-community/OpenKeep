@@ -249,7 +249,7 @@
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(6) //Skeleton Warrior
-			r_hand = /obj/item/rogueweapon/sword/iron/messer
+			r_hand = /obj/item/rogueweapon/sword/scimitar/messer
 			l_hand = /obj/item/rogueweapon/knife/dagger
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 			pants = /obj/item/clothing/under/roguetown/tights/vagrant

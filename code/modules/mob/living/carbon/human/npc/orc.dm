@@ -302,8 +302,8 @@
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			else
-				r_hand = /obj/item/rogueweapon/sword/iron/short
-				l_hand = /obj/item/rogueweapon/sword/iron/short
+				r_hand = /obj/item/rogueweapon/sword/short
+				l_hand = /obj/item/rogueweapon/sword/short
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			if(prob(80))
@@ -326,7 +326,7 @@
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			if(prob(30))
-				r_hand = /obj/item/rogueweapon/sword/iron/messer
+				r_hand = /obj/item/rogueweapon/sword/scimitar/messer
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 
@@ -425,7 +425,7 @@
 			head = /obj/item/clothing/head/roguetown/helmet/leather
 		if(3) //Club Caveman
 			r_hand = /obj/item/rogueweapon/flail
-			l_hand = /obj/item/rogueweapon/sword/iron/messer
+			l_hand = /obj/item/rogueweapon/sword/scimitar/messer
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/leather
@@ -433,7 +433,7 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			r_hand = /obj/item/rogueweapon/sword/iron
-			l_hand = /obj/item/rogueweapon/sword/iron/short
+			l_hand = /obj/item/rogueweapon/sword/short
 			head = /obj/item/clothing/head/roguetown/helmet/leather
 		if(5) //Marauder Ironblade
 			if(prob(50))
@@ -443,7 +443,7 @@
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			else
 				r_hand = /obj/item/rogueweapon/mace/spiked
-				l_hand = /obj/item/rogueweapon/sword/iron/messer
+				l_hand = /obj/item/rogueweapon/sword/scimitar/messer
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				cloak = /obj/item/clothing/cloak/raincloak/brown
@@ -552,7 +552,7 @@
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(3) // WE DON'T WANNA GO TO WAR TODAY BUT THE LORD OF THE LASH SAYS "NAY NAY NAY!!" WE'RE GONNA MARCH ALL DAE, ALL DAE, ALL DAE! WHERE THERE'S A WHIP THERE'S A WAY!!
 			r_hand = /obj/item/rogueweapon/whip/antique
-			l_hand = /obj/item/rogueweapon/sword/iron/short
+			l_hand = /obj/item/rogueweapon/sword/short
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc/warlord
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(4) // Big Sword and Big Shield

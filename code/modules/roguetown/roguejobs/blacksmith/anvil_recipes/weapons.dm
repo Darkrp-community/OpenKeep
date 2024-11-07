@@ -235,7 +235,7 @@
 	name = "Messer"
 	recipe_name = "a Messer"
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/sword/iron/messer
+	created_item = /obj/item/rogueweapon/sword/scimitar/messer
 
 /datum/anvil_recipe/weapons/spear_iron
 	name = "Spear x2 (+w)"
@@ -251,7 +251,7 @@
 	name = "Short sword"
 	recipe_name = "a Short Sword"
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/sword/iron/short
+	created_item = /obj/item/rogueweapon/sword/short
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/sword_iron
@@ -521,7 +521,7 @@
 	recipe_name = "a Short Sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/sword/iron/short
+	created_item = /obj/item/rogueweapon/sword/short
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/sword_steel

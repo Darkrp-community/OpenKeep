@@ -6529,7 +6529,7 @@
 	})
 "gPa" = (
 /obj/structure/fluff/grindwheel,
-/obj/item/rogueweapon/sword/iron/messer,
+/obj/item/rogueweapon/sword/scimitar/messer,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/town/dwarf)
 "gQS" = (
@@ -9343,10 +9343,10 @@
 /area/rogue/indoors/shelter/rtfield)
 "jNH" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/sword/iron/short,
-/obj/item/rogueweapon/sword/iron/short,
-/obj/item/rogueweapon/sword/iron/messer,
-/obj/item/rogueweapon/sword/iron/messer,
+/obj/item/rogueweapon/sword/short,
+/obj/item/rogueweapon/sword/short,
+/obj/item/rogueweapon/sword/scimitar/messer,
+/obj/item/rogueweapon/sword/scimitar/messer,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
 "jNI" = (

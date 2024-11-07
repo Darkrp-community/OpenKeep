@@ -75,7 +75,7 @@ Design philosphy:
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/helmet
 	backr = /obj/item/rogueweapon/shield/wood
-	beltr = /obj/item/rogueweapon/sword/iron/messer
+	beltr = /obj/item/rogueweapon/sword/scimitar/messer
 	beltl = /obj/item/rogueweapon/mace
 	backpack_contents = list(/obj/item/keyring/guard)
 
@@ -111,7 +111,7 @@ Design philosphy:
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/helmet/kettle
-	beltr = /obj/item/rogueweapon/sword/iron/messer
+	beltr = /obj/item/rogueweapon/sword/scimitar/messer
 	backpack_contents = list(/obj/item/keyring/guard)
 
 	//Stats for class

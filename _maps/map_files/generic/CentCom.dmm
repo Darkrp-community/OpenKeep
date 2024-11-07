@@ -451,9 +451,9 @@
 /obj/structure/table/wood{
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/sword/long/marlin,
-/obj/item/rogueweapon/sword/long/marlin,
-/obj/item/rogueweapon/sword/long/marlin,
+/obj/item/rogueweapon/sword/sabre/shalal,
+/obj/item/rogueweapon/sword/sabre/shalal,
+/obj/item/rogueweapon/sword/sabre/shalal,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "bb" = (
@@ -1908,9 +1908,9 @@
 /turf/open/floor/rogue/tile/checker_green,
 /area/rogue)
 "nA" = (
-/obj/item/rogueweapon/sword/iron/short,
-/obj/item/rogueweapon/sword/iron/short,
-/obj/item/rogueweapon/sword/iron/short,
+/obj/item/rogueweapon/sword/short,
+/obj/item/rogueweapon/sword/short,
+/obj/item/rogueweapon/sword/short,
 /obj/structure/table/wood/large/corner_blue{
 	dir = 10
 	},
@@ -4621,7 +4621,7 @@
 /area/rogue/outdoors/bog/inhumen_camp)
 "Zh" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/sword/iron/short,
+/obj/item/rogueweapon/sword/short,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/indoors/bandit_lair)
 "Zl" = (

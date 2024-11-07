@@ -269,8 +269,7 @@
 	max_integrity = INTEGRITY_STRONG
 	wdefense = GOOD_PARRY
 
-
-/obj/item/rogueweapon/sword/iron/short
+/obj/item/rogueweapon/sword/short
 	force = DAMAGE_SHORTSWORD
 	name = "short sword"
 	desc = "An iron sword of shortened design, a reduced grip for primarily single hand use."
@@ -278,45 +277,27 @@
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
 	gripped_intents = null
 	smeltresult = /obj/item/ingot/iron
-	max_integrity = 200
+	max_integrity = INTEGRITY_STANDARD
 	minstr = 4
-	wdefense = 3
-	wbalance = 1
+	wdefense = GOOD_PARRY
+	wbalance = HARD_TO_DODGE
 	sellprice = 15
 
 
-/obj/item/rogueweapon/sword/iron/messer
-	name = "iron messer"
-	desc = "A single edged blade fashioned in the Grenzelhoft messer style."
-	icon_state = "imesser"
-	swingsound = BLADEWOOSH_LARGE
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
-	gripped_intents = null
-	minstr = 8 // Heavy blade used by orcs
-	wbalance = EASY_TO_DODGE
-	sellprice = 20
 
-/obj/item/rogueweapon/sword/iron/messer/peasant
-	name = "scythe sword"
-	desc = "A simple scythe blade has been fastened to a wooden handle to create an improvised weapon."
-	force = 18 // Can't be dual wielded, but shouldn't be higher than a steel equivalent.
-	icon_state = "scytheblade"
-
-
-
-
-// Sabres
+/*-------\
+| Sabres |	Onehanded, slightly weaker thrust, better for parries. Think rapier but cutting focus.
+\-------*/
 /obj/item/rogueweapon/sword/sabre
 	name = "sabre"
 	desc = "A swift sabre, favored by duelists and cut-throats alike."
 	icon_state = "saber"
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/curved)
-
 	gripped_intents = null
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 5
-	wbalance = HARD_TO_DODGE
+	wdefense = ULTMATE_PARRY
 
 /obj/item/rogueweapon/sword/sabre/dec
 	name = "decorated sabre"
@@ -324,56 +305,106 @@
 	icon_state = "decsaber"
 	sellprice = 140
 
+/obj/item/rogueweapon/sword/sabre/stalker
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/short)
+	name = "stalker sabre"
+	desc = "A once elegant blade of mythril, diminishing under the suns gaze"
+	icon_state = "spidersaber"
+
+//................ Cutlass ............... //
+/obj/item/rogueweapon/sword/sabre/cutlass
+	name = "cutlass"
+	desc = "Both tool and weapon of war, favored by Abyssor cultists and sailors for seafaring battle."
+	icon_state = "cutlass"
+	minstr = 6
+	wbalance = HARD_TO_DODGE
+
+//................ Kings Sword ............... //
+/obj/item/rogueweapon/sword/sabre/lord
+	force = DAMAGE_SWORD_WIELD
+	name = "Kings Sword"
+	desc = "Passed down through the ages, a weapon that once carved a kingdom out now relegated to a decorative piece."
+	icon_state = "lordrap"
+	sellprice = 200
+	max_blade_int = 400
+
+//................ Shalal Sabre ............... //
+/obj/item/rogueweapon/sword/sabre/shalal
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop/long, /datum/intent/sword/thrust/long)
+	icon_state = "marlin"
+	name = "shalal sabre"
+	desc = "A fine weapon of Zybantu origin in the style of the Shalal tribesfolk, renowned for their defiance against magic and mastery of mounted swordsmanship."
+	parrysound = "rapier"
+	minstr = 6
+	sellprice = 80
+	icon = 'icons/roguetown/weapons/64.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
+	bigboy = TRUE
+	wlength = WLENGTH_LONG
+	gripsprite = TRUE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
+	dropshrink = 0.75
+
+/obj/item/rogueweapon/sword/sabre/shalal/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -10,"sy" = -8,"nx" = 13,"ny" = -8,"wx" = -8,"wy" = -7,"ex" = 7,"ey" = -8,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 90,"sturn" = -90,"wturn" = -80,"eturn" = 81,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 3,"sy" = 4,"nx" = -1,"ny" = 4,"wx" = -8,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 
+/obj/item/rogueweapon/sword/sabre/scythe
+	force = DAMAGE_SWORD-2
+	name = "scythe sword"
+	desc = "A farming tool blade has been fastened to a shorter wooden handle to create an improvised weapon."
+	icon_state = "scytheblade"
+	wdefense = AVERAGE_PARRY
+
+
+/*----------\
+| Scimitars |	Normal swords with a strong cutting emphasis.
+\----------*/
 /obj/item/rogueweapon/sword/scimitar
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop)
-	gripped_intents = null
 	name = "scimitar"
 	desc = "A Zybantu design for swords, these curved blades are a common sight in the lands of the Ziggurat."
 	icon_state = "scimitar"
-	swingsound = BLADEWOOSH_HUGE
+	swingsound = BLADEWOOSH_LARGE
 	wdefense = AVERAGE_PARRY
 
 /obj/item/rogueweapon/sword/scimitar/falchion
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
 	name = "falchion"
-	desc = "A broad steel falchion, a favored sword among the few created by dwarffolk."
+	desc = "Broad blade, excellent steel, a design inspired by Malum the dwarves claim."
 	icon_state = "falchion_old"
+	swingsound = BLADEWOOSH_HUGE
 	wbalance = EASY_TO_DODGE
 	sellprice = 100
 
-// Cutless
-/obj/item/rogueweapon/sword/sabre/cutlass
-	name = "cutlass"
-	desc = "Both tool and weapon of war, favored by Abyssor cultists and sailors for seafaring battle."
-	icon_state = "cutlass"
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop)
-	gripped_intents = null
-	parrysound = "rapier"
-	swingsound = BLADEWOOSH_SMALL
-	minstr = 6
-	wbalance = HARD_TO_DODGE
-
-/obj/item/rogueweapon/sword/sabre/stalker
-	name = "stalker sabre"
-	desc = "A once elegant blade of mythril, diminishing under the suns gaze"
-	icon_state = "spidersaber"
-	max_integrity = 350
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/short)
+/obj/item/rogueweapon/sword/scimitar/messer
+	name = "messer"
+	desc = "Straight iron blade, simple cutting edge, no nonsense and a popular northern blade."
+	icon_state = "imesser"
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
+	minstr = 8 // Heavy blade used by orcs
+	wbalance = EASY_TO_DODGE
+	sellprice = 20
 
 
-/obj/item/rogueweapon/sword/sabre/lord
-	force = 25
-	name = "Kings Sword"
-	desc = "Passed down through the ages, a weapon that once carved a kingdom out now relegated to a decorative piece."
-	icon_state = "lordrap"
-	sellprice = 300
-	max_integrity = 600
-	max_blade_int = 400
-	wdefense = 7
 
-//Rapiers
+/*--------\
+| Rapiers |		Onehanded, slightly weaker cut, more AP thrust, harder to dodge.
+\--------*/
 /obj/item/rogueweapon/sword/rapier
 	name = "rapier"
 	desc = "A precise rapier, favored by the small, eloquent and bloodthirsty."
@@ -384,15 +415,13 @@
 	parrysound = "rapier"
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 6
-	wdefense = ULTMATE_PARRY
-	wbalance = HARD_TO_DODGE
+	wbalance = VERY_HARD_TO_DODGE
 
 /obj/item/rogueweapon/sword/rapier/ironestoc
 	name = "estoc"
 	desc = "A precise iron estoc, favored by the skilled duelists of Valoria."
 	icon_state = "estoc"
 	smeltresult = /obj/item/ingot/iron
-	wdefense = GREAT_PARRY
 	wbalance = HARD_TO_DODGE
 
 /obj/item/rogueweapon/sword/rapier/dec
@@ -560,6 +589,7 @@
 			if("wielded") return list("shrink" = 0.6,"sx" = 6,"sy" = -2,"nx" = -4,"ny" = 2,"wx" = -8,"wy" = -1,"ex" = 8,"ey" = 3,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 15,"sturn" = -200,"wturn" = -160,"eturn" = -25,"nflip" = 8,"sflip" = 8,"wflip" = 0,"eflip" = 0)
 			if("onbelt") return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+//................ Heirloom Sword ............... //
 /obj/item/rogueweapon/sword/long/heirloom
 	force = DAMAGE_SWORD-2
 	force_wielded = DAMAGE_SWORD_WIELD-2
@@ -579,16 +609,8 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
 	icon_state = "judgement"
-	icon = 'icons/roguetown/weapons/64.dmi'
-	item_state = "judgement"
-	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "judgement"
 	desc = "A sword with a silvered grip, a jeweled hilt and a honed blade; a design fit for nobility."
-	pixel_y = -16
-	pixel_x = -16
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
 	sellprice = 363
 	static_price = TRUE
 	var/last_used = 0
@@ -710,8 +732,6 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogueweapon/sword/long/rider
-	force = 15
-	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
 	icon_state = "tabi"
@@ -730,30 +750,6 @@
 			if("onbelt")
 				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-/obj/item/rogueweapon/sword/long/marlin
-	force = 15
-	force_wielded = 30
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop/long, /datum/intent/sword/thrust/long)
-	icon_state = "marlin"
-	name = "shalal saber"
-	desc = "A humongous saber of Zybantu origin in the style of the Shalal tribesfolk, renowned for their defiance against magic and mastery of mounted swordsmanship."
-	parrysound = "rapier"
-	swingsound = BLADEWOOSH_SMALL
-	minstr = 6
-	sellprice = 80
-	wdefense = 5
-
-/obj/item/rogueweapon/sword/long/marlin/getonmobprop(tag)
-	. = ..()
-	if(tag)
-		switch(tag)
-			if("gen")
-				return list("shrink" = 0.6,"sx" = -10,"sy" = -8,"nx" = 13,"ny" = -8,"wx" = -8,"wy" = -7,"ex" = 7,"ey" = -8,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 90,"sturn" = -90,"wturn" = -80,"eturn" = 81,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
-			if("wielded")
-				return list("shrink" = 0.6,"sx" = 3,"sy" = 4,"nx" = -1,"ny" = 4,"wx" = -8,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
-			if("onbelt")
-				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogueweapon/sword/long/forgotten
 	force = 16 // Damage is .9 of a steel sword
@@ -761,10 +757,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
 	icon_state = "forgotten"
-	icon = 'icons/roguetown/weapons/64.dmi'
-	item_state = "forgotten"
-	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "forgotten blade"
 	desc = "A large silver-alloy sword made in a revisionist style, honoring the Forgotten God. Best known as the prefered weapon of Inquisitorial Lodges"
 	max_blade_int = 240 // Integrity and blade retention is .8 of a steel sword
@@ -814,8 +806,6 @@
 		to_chat(user, "<span class='notice'>The silver effect is on cooldown.</span>")
 		return
 
-
-
 	. = ..()
 	if(ishuman(target))
 		var/mob/living/carbon/human/s_user = user
@@ -858,16 +848,17 @@
 				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
 				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I HAVE TRANSCENDED!</span>")
 
+//................ Greatsword ............... //
 /obj/item/rogueweapon/sword/long/greatsword
 	force_wielded = DAMAGE_GREATSWORD_WIELD
-	possible_item_intents = list(/datum/intent/sword/chop,/datum/intent/sword/strike) //bash is for nonlethal takedowns, only targets limbs
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
 	name = "greatsword"
 	desc = "An oversized hunk of metal designed for putting fear into men and killing beasts."
 	icon_state = "gsw"
 	swingsound = BLADEWOOSH_HUGE
 	wlength = WLENGTH_GREAT
 	slot_flags = ITEM_SLOT_BACK
-	minstr = 12
+	minstr = 11
 	wbalance = EASY_TO_DODGE
 	sellprice = 90
 
@@ -882,7 +873,7 @@
 			if("onback")
 				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
-
+//................ Flamberge ............... //
 /obj/item/rogueweapon/sword/long/greatsword/flamberge
 	name = "flamberge"
 	desc = "Commonly known as a flame-bladed sword, this weapon has an undulating blade. It's wave-like form distributes force better, and is less likely to break on impact."
@@ -891,12 +882,12 @@
 	sellprice = 120
 
 /obj/item/rogueweapon/sword/long/greatsword/zwei
+	possible_item_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
+	force_wielded = DAMAGE_LONGSWORD_WIELD
 	name = "zweihander"
 	desc = "Sometimes known as a doppelhander or beidhander, this weapon's size is so impressive that it's handling properties are more akin to that of a polearm than a sword."
 	icon_state = "steelzwei"
-	force_wielded = 25 // A weapon worth 3 iron bars can't be as good as one worth 3 steel bars. Steel sword tier.
-	possible_item_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 150 // Iron tier
 	max_integrity = 300
@@ -913,6 +904,7 @@
 			if("onback")
 				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
+//................ Kriegsmesser ............... //
 /obj/item/rogueweapon/sword/long/greatsword/elfgsword
 	name = "elven kriegsmesser"
 	desc = "A huge, curved elven blade. It's metal is of a high quality, yet still light, crafted by the greatest elven bladesmiths."
@@ -933,7 +925,7 @@
 				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
 
-
+//................ Executioners Sword ............... //
 /obj/item/rogueweapon/sword/long/exe
 	possible_item_intents = list(/datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/chop)
@@ -954,6 +946,7 @@
 			if("onback")
 				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
+//................ Terminus Est ............... //
 /obj/item/rogueweapon/sword/long/exe/cloth
 	icon_state = "terminusest"
 	name = "Terminus Est"
@@ -964,9 +957,6 @@
 	SEND_SIGNAL(src, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRONG)
 	user.visible_message("<span class='warning'>[user] wipes [src] down with its cloth.</span>","<span class='notice'>I wipe [src] down with its cloth.</span>")
 	return
-
-
-
 
 
 // Copper Messer
