@@ -557,7 +557,7 @@
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(4) // Big Sword and Big Shield
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc/warlord
-			r_hand = /obj/item/rogueweapon/sword/sabre/messer
+			r_hand = /obj/item/rogueweapon/sword/scimitar/falchion
 			l_hand = /obj/item/rogueweapon/shield/tower
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(5) //Anti Knight STR Build

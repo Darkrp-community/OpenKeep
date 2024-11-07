@@ -11844,7 +11844,7 @@
 /area/rogue/under/town/sewer)
 "SY" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/sword/rapier/lord,
+/obj/item/rogueweapon/sword/sabre/lord,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/manor)
 "SZ" = (

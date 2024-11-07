@@ -9286,7 +9286,7 @@
 "kEn" = (
 /obj/structure/closet/crate/roguecloset/lord,
 /obj/item/clothing/suit/roguetown/armor/gambeson/arming,
-/obj/item/rogueweapon/sword/rapier/lord,
+/obj/item/rogueweapon/sword/sabre/lord,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -14406,7 +14406,7 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/town)
 "qqj" = (
-/obj/item/rogueweapon/sword/sabre/glaive,
+/obj/item/rogueweapon/sword/sabre/stalker,
 /obj/item/clothing/mask/rogue/facemask/shadowfacemask,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/rogue/dirt/road,

@@ -363,7 +363,7 @@
 	recipe_name = "a Cutlass"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/sword/cutlass
+	created_item = /obj/item/rogueweapon/sword/sabre/cutlass
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/dagger_steel
@@ -545,5 +545,5 @@
 	recipe_name = "a heavy one handed sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/sword/sabre/messer
+	created_item = /obj/item/rogueweapon/sword/scimitar/falchion
 	craftdiff = 2

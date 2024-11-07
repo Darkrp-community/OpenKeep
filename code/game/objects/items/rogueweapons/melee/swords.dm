@@ -76,13 +76,12 @@
 	animname = "chop"
 	blade_class = BCLASS_CHOP
 	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
-	penfactor = 15
+	penfactor = AP_SWORD_CHOP
 	damfactor = 1.1
 	swingdelay = 1
 	misscost = 8
 
 /datum/intent/sword/chop/long
-	penfactor = 20
 	damfactor = 1.1
 	chargetime = 1.2
 	swingdelay = 1.5
@@ -303,15 +302,49 @@
 	force = 18 // Can't be dual wielded, but shouldn't be higher than a steel equivalent.
 	icon_state = "scytheblade"
 
-/obj/item/rogueweapon/sword/scimitar
+
+
+
+// Sabres
+/obj/item/rogueweapon/sword/sabre
+	name = "sabre"
+	desc = "A swift sabre, favored by duelists and cut-throats alike."
+	icon_state = "saber"
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/curved)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/curved)
+
+	gripped_intents = null
+	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
+	swingsound = BLADEWOOSH_SMALL
+	minstr = 5
+	wbalance = HARD_TO_DODGE
+
+/obj/item/rogueweapon/sword/sabre/dec
+	name = "decorated sabre"
+	desc = "A saber decorated with fashionable gold accents without sacrificing its lethal practicality."
+	icon_state = "decsaber"
+	sellprice = 140
+
+
+
+/obj/item/rogueweapon/sword/scimitar
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop)
+	gripped_intents = null
 	name = "scimitar"
 	desc = "A Zybantu design for swords, these curved blades are a common sight in the lands of the Ziggurat."
 	icon_state = "scimitar"
+	swingsound = BLADEWOOSH_HUGE
+	wdefense = AVERAGE_PARRY
+
+/obj/item/rogueweapon/sword/scimitar/falchion
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
+	name = "falchion"
+	desc = "A broad steel falchion, a favored sword among the few created by dwarffolk."
+	icon_state = "falchion_old"
+	wbalance = EASY_TO_DODGE
+	sellprice = 100
 
 // Cutless
-/obj/item/rogueweapon/sword/cutlass
+/obj/item/rogueweapon/sword/sabre/cutlass
 	name = "cutlass"
 	desc = "Both tool and weapon of war, favored by Abyssor cultists and sailors for seafaring battle."
 	icon_state = "cutlass"
@@ -322,51 +355,15 @@
 	minstr = 6
 	wbalance = HARD_TO_DODGE
 
-
-// Sabres
-/obj/item/rogueweapon/sword/sabre
-	name = "saber"
-	desc = "A swift sabre, favored by duelists and cut-throats alike."
-	icon_state = "saber"
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop)
-	gripped_intents = null
-	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
-	swingsound = BLADEWOOSH_SMALL
-	minstr = 5
-	wbalance = HARD_TO_DODGE
-
-/obj/item/rogueweapon/sword/sabre/dec
-	name = "decorated saber"
-	desc = "A saber decorated with fashionable gold accents without sacrificing its lethal practicality."
-	icon_state = "decsaber"
-	sellprice = 140
-
-/obj/item/rogueweapon/sword/sabre/messer
-	name = "falchion"
-	desc = "A broad steel falchion, a favored sword among the few created by dwarffolk."
-	icon_state = "falchion"
-	swingsound = BLADEWOOSH_HUGE
-	smeltresult = /obj/item/ingot/steel
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
-	wdefense = 2
-	wbalance = -1 // Heavy
-	sellprice = 100
-
-/obj/item/rogueweapon/sword/sabre/glaive
-	name = "stalker glaive"
+/obj/item/rogueweapon/sword/sabre/stalker
+	name = "stalker sabre"
 	desc = "A once elegant blade of mythril, diminishing under the suns gaze"
 	icon_state = "spidersaber"
 	max_integrity = 350
-	smeltresult = /obj/item/ingot/steel
-	gripped_intents = null
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/short)
-	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
-	swingsound = BLADEWOOSH_SMALL
-	minstr = 4
-	wdefense = 5
-	wbalance = 1
 
-/obj/item/rogueweapon/sword/rapier/lord
+
+/obj/item/rogueweapon/sword/sabre/lord
 	force = 25
 	name = "Kings Sword"
 	desc = "Passed down through the ages, a weapon that once carved a kingdom out now relegated to a decorative piece."

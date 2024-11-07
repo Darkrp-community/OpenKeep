@@ -886,8 +886,8 @@
 	icon_state = "tablewood2";
 	dir = 10
 	},
-/obj/item/rogueweapon/sword/cutlass,
-/obj/item/rogueweapon/sword/cutlass,
+/obj/item/rogueweapon/sword/sabre/cutlass,
+/obj/item/rogueweapon/sword/sabre/cutlass,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
 "cj" = (

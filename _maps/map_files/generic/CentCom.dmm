@@ -3959,9 +3959,9 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "Rm" = (
-/obj/item/rogueweapon/sword/sabre/messer,
-/obj/item/rogueweapon/sword/sabre/messer,
-/obj/item/rogueweapon/sword/sabre/messer,
+/obj/item/rogueweapon/sword/scimitar/falchion,
+/obj/item/rogueweapon/sword/scimitar/falchion,
+/obj/item/rogueweapon/sword/scimitar/falchion,
 /obj/structure/table/wood/large/corner_blue{
 	dir = 6
 	},
