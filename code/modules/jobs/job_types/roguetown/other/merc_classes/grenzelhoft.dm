@@ -41,7 +41,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/mercenary
 	beltl = /obj/item/rogueweapon/mace/cudgel
 	shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
-	head = /obj/item/clothing/head/roguetown/grenzelhofthat
+	head = /obj/item/clothing/head/roguetown/helmet/skullcap/grenzelhoft
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/greatsword/zwei

@@ -185,7 +185,7 @@
 	armor = ARMOR_LEATHER
 
 //................ Splint Mail ............... //
-/obj/item/clothing/suit/roguetown/armor/leather/studded
+/obj/item/clothing/suit/roguetown/armor/leather/splint
 	name = "splint armor"
 	desc = "The smell of a leather coat, with pieces of recycled metal from old breastplates or cooking utensils riveted to the inside."
 	icon_state = "splint"

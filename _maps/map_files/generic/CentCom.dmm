@@ -1702,8 +1702,8 @@
 /obj/item/clothing/suit/roguetown/armor/leather,
 /obj/item/clothing/suit/roguetown/armor/leather,
 /obj/item/clothing/suit/roguetown/armor/leather,
-/obj/item/clothing/suit/roguetown/armor/leather/studded,
-/obj/item/clothing/suit/roguetown/armor/leather/studded,
+/obj/item/clothing/suit/roguetown/armor/leather/splint,
+/obj/item/clothing/suit/roguetown/armor/leather/splint,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "kB" = (
@@ -3351,9 +3351,9 @@
 	dir = 1;
 	icon_state = "longtable"
 	},
-/obj/item/clothing/head/roguetown/grenzelhofthat,
-/obj/item/clothing/head/roguetown/grenzelhofthat,
-/obj/item/clothing/head/roguetown/grenzelhofthat,
+/obj/item/clothing/head/roguetown/helmet/skullcap/grenzelhoft,
+/obj/item/clothing/head/roguetown/helmet/skullcap/grenzelhoft,
+/obj/item/clothing/head/roguetown/helmet/skullcap/grenzelhoft,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "Iw" = (

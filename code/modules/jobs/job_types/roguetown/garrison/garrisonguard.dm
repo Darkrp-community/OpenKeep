@@ -191,7 +191,7 @@ Design philosphy:
 /datum/outfit/job/roguetown/guardsman/fencer/pre_equip(mob/living/carbon/human/H)
 	..()
 	//Gets studded leather (which hopefully will be renamed splint mail at some point...) and a chain coif
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	beltr = /obj/item/rogueweapon/sword/rapier
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special

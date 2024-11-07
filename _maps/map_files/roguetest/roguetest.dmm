@@ -145,9 +145,9 @@
 	icon_state = "tablewood2";
 	dir = 10
 	},
-/obj/item/clothing/suit/roguetown/armor/leather/studded,
-/obj/item/clothing/suit/roguetown/armor/leather/studded,
-/obj/item/clothing/suit/roguetown/armor/leather/studded,
+/obj/item/clothing/suit/roguetown/armor/leather/splint,
+/obj/item/clothing/suit/roguetown/armor/leather/splint,
+/obj/item/clothing/suit/roguetown/armor/leather/splint,
 /obj/item/clothing/suit/roguetown/armor/leather,
 /obj/item/clothing/suit/roguetown/armor/leather,
 /obj/item/clothing/suit/roguetown/armor/leather,
