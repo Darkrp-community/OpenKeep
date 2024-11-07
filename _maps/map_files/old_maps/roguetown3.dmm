@@ -4652,7 +4652,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "aoH" = (
-/obj/item/rogueweapon/stoneaxe/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "aoI" = (

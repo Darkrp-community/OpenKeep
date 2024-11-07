@@ -551,9 +551,9 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "bo" = (
-/obj/item/rogueweapon/copperaxe,
-/obj/item/rogueweapon/copperaxe,
-/obj/item/rogueweapon/copperaxe,
+/obj/item/rogueweapon/axe/copper,
+/obj/item/rogueweapon/axe/copper,
+/obj/item/rogueweapon/axe/copper,
 /obj/structure/table/wood/large/corner_new{
 	dir = 1
 	},
@@ -563,21 +563,21 @@
 /obj/structure/table/wood/large/corner_new{
 	dir = 1
 	},
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "bq" = (
 /obj/structure/table/wood/large/corner_new{
 	dir = 5
 	},
-/obj/item/rogueweapon/battle,
-/obj/item/rogueweapon/battle,
-/obj/item/rogueweapon/battle,
-/obj/item/rogueweapon/battle,
+/obj/item/rogueweapon/axe/battle,
+/obj/item/rogueweapon/axe/battle,
+/obj/item/rogueweapon/axe/battle,
+/obj/item/rogueweapon/axe/battle,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "br" = (
@@ -2259,9 +2259,9 @@
 /obj/structure/table/wood/large/corner_new{
 	dir = 9
 	},
-/obj/item/rogueweapon/stoneaxe,
-/obj/item/rogueweapon/stoneaxe,
-/obj/item/rogueweapon/stoneaxe,
+/obj/item/rogueweapon/axe/stone,
+/obj/item/rogueweapon/axe/stone,
+/obj/item/rogueweapon/axe/stone,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "rM" = (
@@ -3320,7 +3320,7 @@
 /area/rogue)
 "In" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/indoors/bandit_lair)
 "Ip" = (
@@ -3788,7 +3788,7 @@
 /area/rogue)
 "Pf" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/stoneaxe,
+/obj/item/rogueweapon/axe/stone,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/bandit_lair)
 "Ph" = (
@@ -3796,7 +3796,7 @@
 /area/rogue/outdoors)
 "Pk" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/stoneaxe,
+/obj/item/rogueweapon/axe/stone,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog/inhumen_camp)
 "Po" = (

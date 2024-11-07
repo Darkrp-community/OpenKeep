@@ -184,7 +184,7 @@
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/spear,
 /obj/item/rogueweapon/sword/iron,
-/obj/item/rogueweapon/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "ajW" = (
@@ -7744,7 +7744,7 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
-/obj/item/rogueweapon/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /obj/item/rogueweapon/spear{
 	pixel_x = -20;
 	pixel_y = -14
@@ -22465,8 +22465,8 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
 "wmq" = (
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
 /obj/structure/rack/rogue,
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"

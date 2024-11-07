@@ -2075,7 +2075,7 @@
 /obj/effect/decal/cleanable/dirt/cobweb,
 /obj/structure/closet/crate/roguecloset/inn/chest,
 /obj/item/flashlight/flare/torch/lantern,
-/obj/item/rogueweapon/stoneaxe/woodcut/steel,
+/obj/item/rogueweapon/axe/iron/steel,
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/cave/spider)
 "cte" = (
@@ -5566,7 +5566,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood/old,
-/obj/item/rogueweapon/stoneaxe/woodcut/steel,
+/obj/item/rogueweapon/axe/iron/steel,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/rtfield)
 "ghO" = (
@@ -6187,7 +6187,7 @@
 	})
 "gPa" = (
 /obj/structure/fluff/grindwheel,
-/obj/item/rogueweapon/stoneaxe/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/town/dwarf)
 "gQS" = (
@@ -11583,7 +11583,7 @@
 	icon_state = "largetable";
 	dir = 9
 	},
-/obj/item/rogueweapon/stoneaxe/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
 "mIZ" = (
@@ -15153,7 +15153,7 @@
 /area/rogue/outdoors/exposed/dwarf)
 "qiW" = (
 /obj/structure/bed/rogue/shit,
-/obj/item/rogueweapon/stoneaxe,
+/obj/item/rogueweapon/axe/stone,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "qjp" = (
@@ -19504,7 +19504,7 @@
 	icon_state = "cart-empty";
 	dir = 4
 	},
-/obj/item/rogueweapon/stoneaxe/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/shelter/town/dwarf)
 "uFZ" = (

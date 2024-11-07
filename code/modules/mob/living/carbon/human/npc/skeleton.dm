@@ -111,7 +111,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 	switch(loadout)
 		if(1) //Axe Warrior
-			r_hand = /obj/item/rogueweapon/woodcut
+			r_hand = /obj/item/rogueweapon/axe/iron
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			head = /obj/item/clothing/head/roguetown/knitcap
 		if(2) //Long Stick Fighter

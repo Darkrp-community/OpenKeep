@@ -262,7 +262,7 @@
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Stolen Tool armed raider
-			r_hand = /obj/item/rogueweapon/woodcut
+			r_hand = /obj/item/rogueweapon/axe/iron
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 		if(2) //Stolen Tool armed raider
 			r_hand = /obj/item/rogueweapon/thresher
@@ -314,7 +314,7 @@
 			else
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
-				r_hand = /obj/item/rogueweapon/battle
+				r_hand = /obj/item/rogueweapon/axe/battle
 			if(prob(50))
 				r_hand = /obj/item/rogueweapon/sword/iron
 				l_hand = /obj/item/rogueweapon/shield/wood
@@ -359,8 +359,8 @@
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Dual Axe Warrior
-			r_hand = /obj/item/rogueweapon/stoneaxe
-			l_hand = /obj/item/rogueweapon/stoneaxe
+			r_hand = /obj/item/rogueweapon/axe/stone
+			l_hand = /obj/item/rogueweapon/axe/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 		if(2) //Long Club Caveman
@@ -418,7 +418,7 @@
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/leather
 		if(2) //Marauder with Axe and Shield
-			r_hand = /obj/item/rogueweapon/woodcut
+			r_hand = /obj/item/rogueweapon/axe/iron
 			l_hand = /obj/item/rogueweapon/shield/wood
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
@@ -448,7 +448,7 @@
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				cloak = /obj/item/clothing/cloak/raincloak/brown
 			if(prob(30))
-				r_hand = /obj/item/rogueweapon/woodcut
+				r_hand = /obj/item/rogueweapon/axe/iron
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				cloak = /obj/item/clothing/cloak/raincloak/brown
@@ -487,12 +487,12 @@
 	switch(loadout)
 		if(1) //Marauder with Sword and Shield
 			r_hand = /obj/item/rogueweapon/sword/iron
-			l_hand = /obj/item/rogueweapon/woodcut
+			l_hand = /obj/item/rogueweapon/axe/iron
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 		if(2) //Marauder with Axe and Shield
-			r_hand = /obj/item/rogueweapon/battle
+			r_hand = /obj/item/rogueweapon/axe/battle
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/orc

@@ -266,7 +266,7 @@
 	var/loadout = rand(1,6)
 	switch(loadout)
 		if(1) //Axe Warrior
-			r_hand = /obj/item/rogueweapon/woodcut
+			r_hand = /obj/item/rogueweapon/axe/iron
 		if(2) //Long Stick Fighter
 			r_hand = /obj/item/rogueweapon/woodstaff
 		if(3) //Club Caveman
@@ -477,7 +477,7 @@
 			cloak = /obj/item/clothing/cloak/stabard/guard
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(5) //zizombie Warrior
-			r_hand =/obj/item/rogueweapon/woodcut
+			r_hand =/obj/item/rogueweapon/axe/iron
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 			belt = /obj/item/storage/belt/rogue/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
@@ -565,7 +565,7 @@
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 		if(5) //zizombie Warrior
-			r_hand = /obj/item/rogueweapon/battle
+			r_hand = /obj/item/rogueweapon/axe/battle
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves

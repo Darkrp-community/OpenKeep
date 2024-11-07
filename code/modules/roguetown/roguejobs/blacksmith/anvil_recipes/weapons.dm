@@ -54,7 +54,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/ingot/copper)
-	created_item = /obj/item/rogueweapon/copperaxe
+	created_item = /obj/item/rogueweapon/axe/copper
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cbludgeon
@@ -134,7 +134,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/item/rogueweapon/woodcut
+	created_item = /obj/item/rogueweapon/axe/iron
 
 /datum/anvil_recipe/weapons/bardiche
 	name = "Bardiche (2) (+w)"
@@ -319,7 +319,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/item/rogueweapon/woodcut/steel
+	created_item = /obj/item/rogueweapon/axe/steel
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/warhammer
@@ -337,7 +337,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/battle
+	created_item = /obj/item/rogueweapon/axe/battle
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/billhook

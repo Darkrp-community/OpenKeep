@@ -7195,7 +7195,7 @@
 	},
 /area/rogue/indoors/town/dwarfin)
 "yD" = (
-/obj/item/rogueweapon/stoneaxe/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
 "yE" = (

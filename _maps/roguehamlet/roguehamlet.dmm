@@ -9274,8 +9274,8 @@
 	dir = 5
 	},
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town/garrison)
 "jIv" = (
@@ -15743,7 +15743,7 @@
 /area/rogue/outdoors/exposed/dwarf)
 "qiW" = (
 /obj/structure/bed/rogue/shit,
-/obj/item/rogueweapon/stoneaxe,
+/obj/item/rogueweapon/axe/stone,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "qjp" = (
@@ -15754,7 +15754,7 @@
 /obj/structure/table/wood/treestump{
 	pixel_x = -7
 	},
-/obj/item/rogueweapon/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/town)
 "qka" = (
@@ -20072,8 +20072,8 @@
 /area/rogue/indoors/town/bath/redhouse)
 "uBq" = (
 /obj/structure/closet/crate/roguecloset/inn/chest,
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/town/dwarf)
 "uBA" = (

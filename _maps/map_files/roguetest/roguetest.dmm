@@ -681,9 +681,9 @@
 	icon_state = "tablewood2";
 	dir = 10
 	},
-/obj/item/rogueweapon/stoneaxe,
-/obj/item/rogueweapon/stoneaxe,
-/obj/item/rogueweapon/stoneaxe,
+/obj/item/rogueweapon/axe/stone,
+/obj/item/rogueweapon/axe/stone,
+/obj/item/rogueweapon/axe/stone,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
 "bN" = (
@@ -691,12 +691,12 @@
 	icon_state = "tablewood2";
 	dir = 10
 	},
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
 "bO" = (
@@ -704,11 +704,11 @@
 	icon_state = "tablewood2";
 	dir = 10
 	},
-/obj/item/rogueweapon/battle,
-/obj/item/rogueweapon/battle,
-/obj/item/rogueweapon/battle,
-/obj/item/rogueweapon/battle,
-/obj/item/rogueweapon/battle,
+/obj/item/rogueweapon/axe/battle,
+/obj/item/rogueweapon/axe/battle,
+/obj/item/rogueweapon/axe/battle,
+/obj/item/rogueweapon/axe/battle,
+/obj/item/rogueweapon/axe/battle,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
 "bP" = (

@@ -128,7 +128,7 @@
 			var/obj/item/rogueweapon/sword/short/P = new()
 			H.put_in_hands(P, forced = TRUE)
 		if (2)
-			var/obj/item/rogueweapon/copperaxe/P = new()
+			var/obj/item/rogueweapon/axe/copper/P = new()
 			H.put_in_hands(P, forced = TRUE)
 		if (3)
 			var/obj/item/rogueweapon/mace/P = new()

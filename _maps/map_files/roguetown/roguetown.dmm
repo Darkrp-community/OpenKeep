@@ -5879,7 +5879,7 @@
 /area/rogue/indoors/town/tavern)
 "gHO" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "gIk" = (
@@ -11895,8 +11895,8 @@
 /area/rogue/outdoors/rtfield)
 "nAS" = (
 /obj/structure/closet/crate/chest/old_crate,
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
 /obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw"

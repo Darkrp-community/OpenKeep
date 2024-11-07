@@ -5863,7 +5863,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "tO" = (
-/obj/item/rogueweapon/stoneaxe/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "tP" = (
@@ -7197,7 +7197,7 @@
 	},
 /area/rogue/indoors/town/dwarfin)
 "yD" = (
-/obj/item/rogueweapon/stoneaxe/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
 "yE" = (

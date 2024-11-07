@@ -1,3 +1,10 @@
+// ===== WEAPON DAMAGE DEFINES =======
+#define DAMAGE_AXE 20
+#define DAMAGE_AXE_WIELD 25
+#define DAMAGE_HEAVYAXE_WIELD 30
+#define DAMAGE_BAD_AXE 13
+#define DAMAGE_BAD_AXE_WIELD 18
+
 #define DAMAGE_WEAK_FLAIL 17
 #define DAMAGE_NORMAL_FLAIL 23
 #define DAMAGE_GOOD_FLAIL 28
@@ -8,10 +15,16 @@
 #define DAMAGE_MACE_WIELD 25
 #define DAMAGE_HEAVYCLUB_WIELD 30
 
+// ===== AP DEFINES =======
+#define AP_AXE_CUT 5
+#define AP_AXE_CHOP 15
+#define AP_HEAVYAXE_CHOP 25
+#define AP_HEAVYAXE_STAB 40
 #define AP_FLAIL_STRIKE 5
 #define AP_CLUB_STRIKE 20
 #define AP_FLAIL_SMASH 70
 #define AP_CLUB_SMASH 30
+
 
 //wdefense defines
 #define TERRIBLE_PARRY -1
@@ -33,9 +46,9 @@
 	name = ""
 	desc = ""
 	icon_state = "sabre"
-	item_state = "sabre"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	icon = 'icons/roguetown/weapons/32.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/rogue_righthand.dmi'
 	force = 15
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL

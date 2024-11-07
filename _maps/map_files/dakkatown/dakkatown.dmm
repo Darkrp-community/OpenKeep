@@ -1568,7 +1568,7 @@
 /area/rogue/outdoors/town)
 "fR" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw";
 	dir = 1

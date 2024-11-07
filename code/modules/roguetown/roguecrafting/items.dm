@@ -97,7 +97,7 @@
 
 /datum/crafting_recipe/roguetown/stoneaxe
 	name = "stone axe"
-	result = /obj/item/rogueweapon/stoneaxe
+	result = /obj/item/rogueweapon/axe/stone
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/stone = 1)
 

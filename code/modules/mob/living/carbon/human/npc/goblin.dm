@@ -294,7 +294,7 @@
 			r_hand = /obj/item/rogueweapon/spear/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
 		if(2) //tribal axe
-			r_hand = /obj/item/rogueweapon/stoneaxe
+			r_hand = /obj/item/rogueweapon/axe/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
 		if(3) //tribal club
 			r_hand = /obj/item/rogueweapon/mace/woodclub

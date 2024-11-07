@@ -985,8 +985,8 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue)
 "LU" = (
-/obj/item/rogueweapon/woodcut,
-/obj/item/rogueweapon/woodcut,
+/obj/item/rogueweapon/axe/iron,
+/obj/item/rogueweapon/axe/iron,
 /obj/structure/rack/rogue,
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
