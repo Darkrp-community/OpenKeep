@@ -104,7 +104,7 @@
 	name = "goblin"
 	id = "goblin"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
-	inherent_traits = list(TRAIT_NOROGSTAM,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE, TRAIT_EASYDISMEMBER, TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE, TRAIT_INHUMENCAMP)
+	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE, TRAIT_EASYDISMEMBER, TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE)
 	no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS, SLOT_S_STORE)
 	nojumpsuit = 1
 	sexes = 1
@@ -222,7 +222,6 @@
 	real_name = "goblin"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 //	ADD_TRAIT(src, TRAIT_NOBREATH, TRAIT_GENERIC)
 //	blue breathes underwater, need a new specific one for this maybe organ cheque
@@ -393,6 +392,8 @@
 		new /mob/living/carbon/human/species/goblin/npc(get_turf(src))
 	gobs++
 	update_icon()
+	if(living_player_count() < 10)
+		maxgobs = 1
 	if(gobs < maxgobs)
 		spawn_gob()
 
