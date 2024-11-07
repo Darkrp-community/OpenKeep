@@ -798,8 +798,6 @@
 /area/rogue/indoors/vampire_manor)
 "ca" = (
 /obj/structure/bookcase,
-/obj/item/book/rogue/manners,
-/obj/item/book/rogue/sword,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/vampire_manor)
 "cc" = (
@@ -11640,7 +11638,7 @@ yE
 cJ
 Ba
 Ba
-Yt
+dN
 yE
 yE
 yE
