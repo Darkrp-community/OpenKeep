@@ -1224,6 +1224,10 @@
 	var/brightness_on = 4 //less than a torch; basically good for one person.
 	var/on = FALSE
 
+/obj/item/clothing/head/roguetown/helmet/leather/minershelm/Initialize()
+	. = ..()
+	update_icon()
+
 /obj/item/clothing/head/roguetown/helmet/leather/minershelm/attack_self(mob/living/user)
 	toggle_helmet_light(user)
 
