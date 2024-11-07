@@ -21961,6 +21961,10 @@
 /obj/structure/flora/roguetree/burnt,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
+"vzW" = (
+/obj/machinery/simple_dye_bin,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/town)
 "vzY" = (
 /obj/machinery/light/rogue/oven/south,
 /turf/open/floor/rogue/tile{
@@ -61767,7 +61771,7 @@ xqr
 xqr
 xqr
 irq
-hvn
+vzW
 wse
 gog
 pJn
