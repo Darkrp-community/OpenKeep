@@ -415,6 +415,14 @@
 	smeltresult = /obj/item/ash
 	sellprice = 5
 
+
+//................ Villager Knife ............... //
+/obj/item/rogueweapon/knife/villager
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
+	name = "villager knife"
+	desc = "The loyal companion of simple peasants, able to cut hard bread and carve wood. A versatile kitchen utensil and tool."
+	icon_state = "villagernife"
+
 /obj/item/rogueweapon/knife/copper
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	name = "copper dagger"
@@ -428,9 +436,4 @@
 	smeltresult = /obj/item/ash
 	sellprice = 10
 
-/obj/item/rogueweapon/knife/villager
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
-	name = "villager knife"
-	desc = "The loyal companion of simple peasants, able to cut hard bread and carve wood. A versatile kitchen utensil and tool."
-	icon_state = "villagernife"
 

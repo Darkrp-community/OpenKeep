@@ -2,7 +2,7 @@
 ==========================================================*/
 
 /obj/item/rogueweapon/polearm
-	throwforce = 25
+	throwforce = DAMAGE_STAFF
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
 	pixel_x = -16
