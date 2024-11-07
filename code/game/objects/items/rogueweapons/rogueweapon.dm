@@ -15,6 +15,16 @@
 #define DAMAGE_MACE_WIELD 25
 #define DAMAGE_HEAVYCLUB_WIELD 30
 
+#define DAMAGE_KNIFE 10
+#define DAMAGE_DAGGER 12
+
+#define DAMAGE_STAFF 10
+#define DAMAGE_STAFF_WIELD 15
+#define DAMAGE_SPEAR 15
+#define DAMAGE_SPEARPLUS 18
+#define DAMAGE_SPEAR_WIELD 25
+#define DAMAGE_HALBERD_WIELD 35
+
 // ===== AP DEFINES =======
 #define AP_AXE_CUT 5
 #define AP_AXE_CHOP 15
@@ -24,7 +34,7 @@
 #define AP_CLUB_STRIKE 20
 #define AP_FLAIL_SMASH 70
 #define AP_CLUB_SMASH 30
-
+#define AP_HEAVY_SMASH 40
 
 //wdefense defines
 #define TERRIBLE_PARRY -1

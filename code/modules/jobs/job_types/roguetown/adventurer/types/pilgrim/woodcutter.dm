@@ -37,7 +37,7 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 	beltr = /obj/item/rogueweapon/axe/iron
-	beltl = /obj/item/rogueweapon/huntingknife/villager
+	beltl = /obj/item/rogueweapon/knife/villager
 	backpack_contents = list(/obj/item/flint = 1)
 	H.change_stat("strength", 1)
 	H.change_stat("endurance", 1) // Tree chopping builds endurance

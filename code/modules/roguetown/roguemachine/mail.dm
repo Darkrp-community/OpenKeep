@@ -400,7 +400,7 @@
 			max_purchases = 3
 		),
 		"Silver Dagger (4)" = list(
-			list(type = /obj/item/rogueweapon/huntingknife/idagger/silver, count = 1),
+			list(type = /obj/item/rogueweapon/knife/dagger/silver, count = 1),
 			cost = 2,
 			max_purchases = 4
 		)

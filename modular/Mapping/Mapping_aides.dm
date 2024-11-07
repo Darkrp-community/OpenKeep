@@ -6,10 +6,10 @@
 /obj/effect/spawner/roguemap/loot/common
 	spawned = list(
 		/obj/item/roguecoin/copper/pile = 15,
-		/obj/item/rogueweapon/huntingknife = 10,
-		/obj/item/rogueweapon/huntingknife/idagger = 8,
-		/obj/item/rogueweapon/huntingknife/idagger/steel = 4,
-		/obj/item/rogueweapon/huntingknife/idagger/silver = 2,
+		/obj/item/rogueweapon/knife/hunting = 10,
+		/obj/item/rogueweapon/knife/dagger = 8,
+		/obj/item/rogueweapon/knife/dagger/steel = 4,
+		/obj/item/rogueweapon/knife/dagger/silver = 2,
 		/obj/item/rogueweapon/sword/iron = 3,
 		/obj/item/rogueweapon/axe/iron = 10,
 		/obj/item/rogueweapon/mace = 5,

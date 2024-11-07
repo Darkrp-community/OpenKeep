@@ -82,7 +82,7 @@
 	hitsound = list('sound/combat/hits/blunt/woodblunt (1).ogg', 'sound/combat/hits/blunt/woodblunt (2).ogg')
 
 /datum/intent/mace/smash/heavy
-	penfactor = AP_CLUB_SMASH+10
+	penfactor = AP_HEAVY_SMASH
 	damfactor = 1.2
 	chargetime = 3
 	swingdelay = 3

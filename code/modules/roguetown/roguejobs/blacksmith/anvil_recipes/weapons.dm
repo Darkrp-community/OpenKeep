@@ -10,7 +10,7 @@
 	recipe_name = "a Silver Dagger"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/silver
-	created_item = /obj/item/rogueweapon/huntingknife/idagger/silver
+	created_item = /obj/item/rogueweapon/knife/dagger/silver
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/sword_silver
@@ -71,7 +71,7 @@
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
-	created_item = /obj/item/rogueweapon/copperdagger
+	created_item = /obj/item/rogueweapon/knife/copper
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 0
@@ -100,7 +100,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/copperspear
+	created_item = /obj/item/rogueweapon/polearm/spear/stone/copper
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 0
@@ -142,7 +142,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/halberd/bardiche
+	created_item = /obj/item/rogueweapon/polearm/halberd/bardiche
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/woodcutter
@@ -151,7 +151,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/halberd/bardiche/woodcutter
+	created_item = /obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/warcutter
@@ -160,7 +160,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/halberd/bardiche/warcutter
+	created_item = /obj/item/rogueweapon/polearm/halberd/bardiche/warcutter
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/bolts
@@ -191,7 +191,7 @@
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/huntingknife/idagger
+	created_item = /obj/item/rogueweapon/knife/dagger
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 0 // To train with
@@ -201,7 +201,7 @@
 	recipe_name = "three peasantry knives"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/huntingknife/villager
+	created_item = /obj/item/rogueweapon/knife/villager
 	createmultiple = TRUE
 	createditem_num = 2
 	craftdiff = 0
@@ -220,7 +220,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/eaglebeak/lucerne
+	created_item = /obj/item/rogueweapon/polearm/eaglebeak/lucerne
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/sledgehammer
@@ -251,7 +251,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/spear
+	created_item = /obj/item/rogueweapon/polearm/spear
 	createmultiple = TRUE
 	createditem_num = 1
 
@@ -346,7 +346,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/spear/billhook
+	created_item = /obj/item/rogueweapon/polearm/spear/billhook
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/cleaver
@@ -354,7 +354,7 @@
 	recipe_name = "a Cleaver"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/huntingknife/cleaver
+	created_item = /obj/item/rogueweapon/knife/cleaver
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/crossbow_eng
@@ -379,7 +379,7 @@
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/huntingknife/idagger/steel
+	created_item = /obj/item/rogueweapon/knife/dagger/steel
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 2
@@ -417,7 +417,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/eaglebeak
+	created_item = /obj/item/rogueweapon/polearm/eaglebeak
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/flail_steel
@@ -452,7 +452,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/halberd
+	created_item = /obj/item/rogueweapon/polearm/halberd
 	craftdiff = 4
 
 /datum/anvil_recipe/weapons/huntknife
@@ -460,7 +460,7 @@
 	recipe_name = "a Hunting Knife"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/huntingknife
+	created_item = /obj/item/rogueweapon/knife/hunting
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/kiteshield

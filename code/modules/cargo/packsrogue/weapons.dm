@@ -36,17 +36,17 @@
 /datum/supply_pack/rogue/weapons/huntingknife
 	name = "Iron Hunting Knife"
 	cost = 12
-	contains = /obj/item/rogueweapon/huntingknife
+	contains = /obj/item/rogueweapon/knife/hunting
 
 /datum/supply_pack/rogue/weapons/dagger
 	name = "Iron Dagger"
 	cost = 10
-	contains = /obj/item/rogueweapon/huntingknife/idagger
+	contains = /obj/item/rogueweapon/knife/dagger
 
 /datum/supply_pack/rogue/weapons/spear
 	name = "Iron Spear"
 	cost = 22
-	contains = /obj/item/rogueweapon/spear
+	contains = /obj/item/rogueweapon/polearm/spear
 
 /datum/supply_pack/rogue/weapons/flail
 	name = "Iron Flail"

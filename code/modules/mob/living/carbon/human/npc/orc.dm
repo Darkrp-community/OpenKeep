@@ -287,8 +287,8 @@
 				head = /obj/item/clothing/head/roguetown/helmet/leather
 			if(prob(23))
 				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
-				r_hand = /obj/item/rogueweapon/huntingknife/idagger
-				l_hand = /obj/item/rogueweapon/huntingknife/idagger
+				r_hand = /obj/item/rogueweapon/knife/dagger
+				l_hand = /obj/item/rogueweapon/knife/dagger
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 				head = /obj/item/clothing/head/roguetown/helmet/leather
 			if(prob(80))
@@ -364,7 +364,7 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 		if(2) //Long Club Caveman
-			r_hand = /obj/item/rogueweapon/woodstaff
+			r_hand = /obj/item/rogueweapon/polearm/woodstaff
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 		if(3) //Club Caveman
@@ -374,10 +374,10 @@
 		if(4) //dagger fighter
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
-			r_hand = /obj/item/rogueweapon/huntingknife/stoneknife
-			l_hand = /obj/item/rogueweapon/huntingknife/stoneknife
+			r_hand = /obj/item/rogueweapon/knife/stone
+			l_hand = /obj/item/rogueweapon/knife/stone
 		if(5) //Spear hunter
-			r_hand = /obj/item/rogueweapon/spear/stone
+			r_hand = /obj/item/rogueweapon/polearm/spear/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 
@@ -508,7 +508,7 @@
 			l_hand = /obj/item/rogueweapon/shield/tower
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 		if(5) //Marauder Ironblade
-			r_hand = /obj/item/rogueweapon/halberd/bardiche
+			r_hand = /obj/item/rogueweapon/polearm/halberd/bardiche
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/orc
@@ -543,7 +543,7 @@
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Halberd Warlord
-			r_hand = /obj/item/rogueweapon/halberd
+			r_hand = /obj/item/rogueweapon/polearm/halberd
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc/warlord
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(2) //Greatsword Warlord

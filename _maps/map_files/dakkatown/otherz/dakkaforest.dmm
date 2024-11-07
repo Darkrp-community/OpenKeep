@@ -535,7 +535,7 @@
 /area/rogue/indoors)
 "oV" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/spear,
+/obj/item/rogueweapon/polearm/spear,
 /obj/item/rogueweapon/shield/wood,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors)
@@ -1323,7 +1323,7 @@
 /area/rogue/outdoors/rtfield)
 "Lb" = (
 /obj/structure/table/wood/plain,
-/obj/item/rogueweapon/huntingknife,
+/obj/item/rogueweapon/knife/hunting,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors)
 "Le" = (

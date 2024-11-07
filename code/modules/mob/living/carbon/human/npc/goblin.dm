@@ -291,7 +291,7 @@
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //tribal spear
-			r_hand = /obj/item/rogueweapon/spear/stone
+			r_hand = /obj/item/rogueweapon/polearm/spear/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
 		if(2) //tribal axe
 			r_hand = /obj/item/rogueweapon/axe/stone
@@ -309,8 +309,8 @@
 			if(prob(30))
 				l_hand = /obj/item/rogueweapon/shield/wood
 			if(prob(23))
-				r_hand = /obj/item/rogueweapon/huntingknife/stoneknife
-				l_hand = /obj/item/rogueweapon/huntingknife/stoneknife
+				r_hand = /obj/item/rogueweapon/knife/stone
+				l_hand = /obj/item/rogueweapon/knife/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/goblin
 			if(prob(80))
 				head = /obj/item/clothing/head/roguetown/helmet/leather/goblin

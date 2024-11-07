@@ -469,10 +469,10 @@
 	dir = 1;
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/halberd/bardiche,
-/obj/item/rogueweapon/halberd/bardiche,
-/obj/item/rogueweapon/halberd/bardiche,
-/obj/item/rogueweapon/halberd/bardiche,
+/obj/item/rogueweapon/polearm/halberd/bardiche,
+/obj/item/rogueweapon/polearm/halberd/bardiche,
+/obj/item/rogueweapon/polearm/halberd/bardiche,
+/obj/item/rogueweapon/polearm/halberd/bardiche,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "bd" = (
@@ -1203,7 +1203,7 @@
 	dir = 10;
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/huntingknife/cleaver{
+/obj/item/rogueweapon/knife/cleaver{
 	pixel_x = 8;
 	pixel_y = 12
 	},
@@ -1538,11 +1538,11 @@
 	dir = 1;
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/spear,
-/obj/item/rogueweapon/spear,
-/obj/item/rogueweapon/spear,
-/obj/item/rogueweapon/spear,
-/obj/item/rogueweapon/spear,
+/obj/item/rogueweapon/polearm/spear,
+/obj/item/rogueweapon/polearm/spear,
+/obj/item/rogueweapon/polearm/spear,
+/obj/item/rogueweapon/polearm/spear,
+/obj/item/rogueweapon/polearm/spear,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "hA" = (
@@ -1938,10 +1938,10 @@
 	dir = 1;
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/halberd,
-/obj/item/rogueweapon/halberd,
-/obj/item/rogueweapon/halberd,
-/obj/item/rogueweapon/halberd,
+/obj/item/rogueweapon/polearm/halberd,
+/obj/item/rogueweapon/polearm/halberd,
+/obj/item/rogueweapon/polearm/halberd,
+/obj/item/rogueweapon/polearm/halberd,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "nQ" = (
@@ -1949,10 +1949,10 @@
 	dir = 5;
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/spear/billhook,
-/obj/item/rogueweapon/spear/billhook,
-/obj/item/rogueweapon/spear/billhook,
-/obj/item/rogueweapon/spear/billhook,
+/obj/item/rogueweapon/polearm/spear/billhook,
+/obj/item/rogueweapon/polearm/spear/billhook,
+/obj/item/rogueweapon/polearm/spear/billhook,
+/obj/item/rogueweapon/polearm/spear/billhook,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "nS" = (
@@ -2280,7 +2280,7 @@
 /area/rogue)
 "rY" = (
 /obj/structure/table/wood/plain,
-/obj/item/rogueweapon/huntingknife/cleaver,
+/obj/item/rogueweapon/knife/cleaver,
 /turf/open/floor/rogue/tile/checker_green,
 /area/rogue)
 "sb" = (
@@ -2719,7 +2719,7 @@
 /area/rogue/indoors/bandit_lair)
 "yq" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/huntingknife/idagger,
+/obj/item/rogueweapon/knife/dagger,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/indoors/bandit_lair)
 "yv" = (
@@ -2818,9 +2818,9 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "zC" = (
-/obj/item/rogueweapon/eaglebeak,
-/obj/item/rogueweapon/eaglebeak,
-/obj/item/rogueweapon/eaglebeak,
+/obj/item/rogueweapon/polearm/eaglebeak,
+/obj/item/rogueweapon/polearm/eaglebeak,
+/obj/item/rogueweapon/polearm/eaglebeak,
 /obj/structure/table/wood{
 	dir = 1;
 	icon_state = "largetable"
@@ -3249,10 +3249,10 @@
 	dir = 5;
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/huntingknife/stoneknife,
-/obj/item/rogueweapon/huntingknife/stoneknife,
-/obj/item/rogueweapon/huntingknife/stoneknife,
-/obj/item/rogueweapon/huntingknife/stoneknife,
+/obj/item/rogueweapon/knife/stone,
+/obj/item/rogueweapon/knife/stone,
+/obj/item/rogueweapon/knife/stone,
+/obj/item/rogueweapon/knife/stone,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "Hv" = (
@@ -3330,10 +3330,10 @@
 	dir = 1;
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/copperdagger,
-/obj/item/rogueweapon/copperdagger,
-/obj/item/rogueweapon/copperdagger,
-/obj/item/rogueweapon/copperdagger,
+/obj/item/rogueweapon/knife/copper,
+/obj/item/rogueweapon/knife/copper,
+/obj/item/rogueweapon/knife/copper,
+/obj/item/rogueweapon/knife/copper,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "Ir" = (
@@ -3439,10 +3439,10 @@
 	dir = 1;
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/huntingknife/idagger/silver,
-/obj/item/rogueweapon/huntingknife/idagger/silver,
-/obj/item/rogueweapon/huntingknife/idagger/silver,
-/obj/item/rogueweapon/huntingknife/idagger/silver,
+/obj/item/rogueweapon/knife/dagger/silver,
+/obj/item/rogueweapon/knife/dagger/silver,
+/obj/item/rogueweapon/knife/dagger/silver,
+/obj/item/rogueweapon/knife/dagger/silver,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "JQ" = (
@@ -3737,11 +3737,11 @@
 	dir = 1;
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/huntingknife/idagger,
-/obj/item/rogueweapon/huntingknife/idagger,
-/obj/item/rogueweapon/huntingknife/idagger,
-/obj/item/rogueweapon/huntingknife/idagger,
-/obj/item/rogueweapon/huntingknife/idagger,
+/obj/item/rogueweapon/knife/dagger,
+/obj/item/rogueweapon/knife/dagger,
+/obj/item/rogueweapon/knife/dagger,
+/obj/item/rogueweapon/knife/dagger,
+/obj/item/rogueweapon/knife/dagger,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "On" = (
@@ -3762,11 +3762,11 @@
 	dir = 1;
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/eaglebeak/lucerne,
-/obj/item/rogueweapon/eaglebeak/lucerne,
-/obj/item/rogueweapon/eaglebeak/lucerne,
-/obj/item/rogueweapon/eaglebeak/lucerne,
-/obj/item/rogueweapon/eaglebeak/lucerne,
+/obj/item/rogueweapon/polearm/eaglebeak/lucerne,
+/obj/item/rogueweapon/polearm/eaglebeak/lucerne,
+/obj/item/rogueweapon/polearm/eaglebeak/lucerne,
+/obj/item/rogueweapon/polearm/eaglebeak/lucerne,
+/obj/item/rogueweapon/polearm/eaglebeak/lucerne,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "OQ" = (
@@ -3777,11 +3777,11 @@
 	dir = 1;
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/huntingknife,
-/obj/item/rogueweapon/huntingknife,
-/obj/item/rogueweapon/huntingknife,
-/obj/item/rogueweapon/huntingknife,
-/obj/item/rogueweapon/huntingknife,
+/obj/item/rogueweapon/knife/hunting,
+/obj/item/rogueweapon/knife/hunting,
+/obj/item/rogueweapon/knife/hunting,
+/obj/item/rogueweapon/knife/hunting,
+/obj/item/rogueweapon/knife/hunting,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "Pf" = (
@@ -3878,11 +3878,11 @@
 	dir = 1;
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/huntingknife/idagger/steel,
-/obj/item/rogueweapon/huntingknife/idagger/steel,
-/obj/item/rogueweapon/huntingknife/idagger/steel,
-/obj/item/rogueweapon/huntingknife/idagger/steel,
-/obj/item/rogueweapon/huntingknife/idagger/steel,
+/obj/item/rogueweapon/knife/dagger/steel,
+/obj/item/rogueweapon/knife/dagger/steel,
+/obj/item/rogueweapon/knife/dagger/steel,
+/obj/item/rogueweapon/knife/dagger/steel,
+/obj/item/rogueweapon/knife/dagger/steel,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "Qy" = (
@@ -4144,7 +4144,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/vampire_manor)
 "TM" = (
-/obj/item/rogueweapon/woodstaff{
+/obj/item/rogueweapon/polearm/woodstaff{
 	name = "Staff of the Wizend Wizard"
 	},
 /obj/structure/table/wood/fancy/royalblue,
@@ -4384,10 +4384,10 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods_safe)
 "Wj" = (
-/obj/item/rogueweapon/huntingknife/idagger/steel/profane,
-/obj/item/rogueweapon/huntingknife/idagger/steel/profane,
-/obj/item/rogueweapon/huntingknife/idagger/steel/profane,
-/obj/item/rogueweapon/huntingknife/idagger/steel/profane,
+/obj/item/rogueweapon/knife/dagger/steel/profane,
+/obj/item/rogueweapon/knife/dagger/steel/profane,
+/obj/item/rogueweapon/knife/dagger/steel/profane,
+/obj/item/rogueweapon/knife/dagger/steel/profane,
 /obj/structure/table/wood{
 	dir = 9;
 	icon_state = "largetable"

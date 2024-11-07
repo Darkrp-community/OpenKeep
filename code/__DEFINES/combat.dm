@@ -139,9 +139,9 @@
 #define AXE_CUT				/datum/intent/axe/cut
 #define AXE_CHOP			/datum/intent/axe/chop
 
-#define SPEAR_THRUST		/datum/intent/spear/thrust
-#define SPEAR_BASH			/datum/intent/spear/bash
-#define SPEAR_CUT			/datum/intent/spear/cut
+#define SPEAR_THRUST		/datum/intent/polearm/thrust
+#define SPEAR_BASH			/datum/intent/polearm/bash
+#define SPEAR_CUT			/datum/intent/polearm/cut
 
 #define MESSER_CHOP			/datum/intent/sword/chop/messer
 

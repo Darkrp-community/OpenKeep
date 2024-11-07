@@ -237,7 +237,7 @@
 
 
 //................ Woodcutter Axe ............... //
-/obj/item/rogueweapon/halberd/bardiche/woodcutter
+/obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter
 	slot_flags = ITEM_SLOT_BACK
 	bigboy = TRUE
 	force = DAMAGE_AXE
@@ -275,7 +275,7 @@
 
 //................ War Axe ............... //
 //attempting to fix transformation issues//it worked wohoo, don't touch it.
-/obj/item/rogueweapon/halberd/bardiche/warcutter
+/obj/item/rogueweapon/polearm/halberd/bardiche/warcutter
 	slot_flags = ITEM_SLOT_BACK
 	force = DAMAGE_AXE
 	force_wielded = DAMAGE_AXE_WIELD
@@ -301,7 +301,7 @@
 
 
 
-/obj/item/rogueweapon/halberd/bardiche/warcutter/getonmobprop(tag)
+/obj/item/rogueweapon/polearm/halberd/bardiche/warcutter/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)

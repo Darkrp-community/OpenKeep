@@ -279,7 +279,7 @@
 /area/rogue)
 "abg" = (
 /obj/structure/closet/crate/roguecloset/dark,
-/obj/item/rogueweapon/huntingknife/idagger,
+/obj/item/rogueweapon/knife/dagger,
 /obj/item/rogueweapon/mace/woodclub/train_sword,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
@@ -1504,7 +1504,7 @@
 /area/rogue)
 "afb" = (
 /obj/structure/closet/crate/chest,
-/obj/item/rogueweapon/huntingknife/cleaver,
+/obj/item/rogueweapon/knife/cleaver,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "afc" = (
@@ -4058,7 +4058,7 @@
 /area/rogue)
 "amV" = (
 /obj/structure/fluff/psycross,
-/obj/item/rogueweapon/woodstaff/aries,
+/obj/item/rogueweapon/polearm/woodstaff/aries,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "amW" = (
@@ -4241,7 +4241,7 @@
 /area/rogue)
 "anx" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/huntingknife/idagger/steel,
+/obj/item/rogueweapon/knife/dagger/steel,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -5263,7 +5263,7 @@
 /area/rogue)
 "aqw" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/spear,
+/obj/item/rogueweapon/polearm/spear,
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "aqx" = (
@@ -5336,7 +5336,7 @@
 	dir = 5
 	},
 /obj/machinery/light/rogue/wallfire/candle,
-/obj/item/rogueweapon/huntingknife/stoneknife,
+/obj/item/rogueweapon/knife/stone,
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "aqI" = (
@@ -5853,7 +5853,7 @@
 /area/rogue)
 "asj" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/spear,
+/obj/item/rogueweapon/polearm/spear,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "ask" = (
@@ -5932,7 +5932,7 @@
 /turf/closed/wall/mineral/rogue/wood,
 /area/rogue)
 "asy" = (
-/obj/item/rogueweapon/huntingknife,
+/obj/item/rogueweapon/knife/hunting,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw";
 	dir = 1
@@ -6771,7 +6771,7 @@
 /area/rogue)
 "auY" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/huntingknife/idagger,
+/obj/item/rogueweapon/knife/dagger,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "auZ" = (
@@ -7635,7 +7635,7 @@
 /area/rogue)
 "axL" = (
 /obj/structure/closet/crate/chest,
-/obj/item/rogueweapon/huntingknife,
+/obj/item/rogueweapon/knife/hunting,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "axM" = (
@@ -7751,7 +7751,7 @@
 /area/rogue)
 "aye" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/huntingknife/cleaver,
+/obj/item/rogueweapon/knife/cleaver,
 /turf/open/floor/rogue/blocks{
 	icon_state = "greenblocks"
 	},
@@ -11366,7 +11366,7 @@
 /area/rogue/outdoors/town)
 "aKe" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/spear,
+/obj/item/rogueweapon/polearm/spear,
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/town)
 "aKf" = (

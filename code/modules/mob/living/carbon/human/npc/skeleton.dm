@@ -115,7 +115,7 @@
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			head = /obj/item/clothing/head/roguetown/knitcap
 		if(2) //Long Stick Fighter
-			r_hand = /obj/item/rogueweapon/woodstaff
+			r_hand = /obj/item/rogueweapon/polearm/woodstaff
 		if(3) //Club Caveman
 			r_hand = /obj/item/rogueweapon/mace/woodclub
 		if(4) //Stabbity Stabbity your Knight is now horizontality
@@ -232,7 +232,7 @@
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap
 		if(4) //Skeleton Warrior
-			r_hand =/obj/item/rogueweapon/spear
+			r_hand =/obj/item/rogueweapon/polearm/spear
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
@@ -241,7 +241,7 @@
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(5) //Skeleton Warrior
 			r_hand = /obj/item/rogueweapon/sword/sabre
-			l_hand = /obj/item/rogueweapon/huntingknife/idagger
+			l_hand = /obj/item/rogueweapon/knife/dagger
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 			pants = /obj/item/clothing/under/roguetown/tights/vagrant
@@ -250,7 +250,7 @@
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(6) //Skeleton Warrior
 			r_hand = /obj/item/rogueweapon/sword/iron/messer
-			l_hand = /obj/item/rogueweapon/huntingknife/idagger
+			l_hand = /obj/item/rogueweapon/knife/dagger
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 			pants = /obj/item/clothing/under/roguetown/tights/vagrant
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
