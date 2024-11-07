@@ -80,11 +80,7 @@
 	name = "tribal shoes"
 	result = list(/obj/item/clothing/shoes/roguetown/tribal)
 
-/datum/crafting_recipe/roguetown/leather/furlinedanklets
-	name = "fur lined anklets"
-	reqs = list(/obj/item/natural/hide = 1,
-				/obj/item/natural/fur = 1)
-	result = /obj/item/clothing/shoes/roguetown/boots/furlinedanklets
+
 
 /*.............. recipes requiring skill 1 ..............*/
 
@@ -145,13 +141,6 @@
 	name = "leather whip"
 	result = /obj/item/rogueweapon/whip
 	reqs = list(/obj/item/natural/hide = 2)
-	craftdiff = 1
-
-/datum/crafting_recipe/roguetown/leather/furlinedboots
-	name = "fur lined boots"
-	result = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
-	reqs = 	list(/obj/item/natural/hide = 2,
-				/obj/item/natural/fur = 2)
 	craftdiff = 1
 
 

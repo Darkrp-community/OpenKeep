@@ -27,7 +27,6 @@
 			/obj/item/clothing/head/roguetown/chaperon,
 			/obj/item/clothing/head/roguetown/cookhat,
 			/obj/item/clothing/neck/roguetown/coif/cloth,
-			/obj/item/clothing/neck/roguetown/keffiyeh,
 			/obj/item/clothing/cloak/apron/cook,
 			/obj/item/clothing/cloak/apron/waist,
 			/obj/item/storage/belt/rogue/leather/rope,
