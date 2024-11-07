@@ -72,6 +72,7 @@
 	verbage = "braid"
 	verbage_tp = "braids"
 
+/*
 /datum/crafting_recipe/roguetown/net
 	name = "net"
 	result = /obj/item/net
@@ -80,7 +81,7 @@
 				/obj/item/natural/stone = 3)
 	verbage = "braid"
 	verbage_tp = "braids"
-
+*/
 
 /datum/crafting_recipe/roguetown/torch
 	name = "torch"
@@ -253,7 +254,7 @@
 	name = "sweetbait (b)"
 	result = /obj/item/bait/sweet
 	reqs = list(/obj/item/storage/roguebag = 1,
-				/obj/item/reagent_containers/food/snacks/produce/berries/rogue = 2)
+				/obj/item/reagent_containers/food/snacks/produce/jacksberry = 2)
 	req_table = FALSE
 	subtype_reqs = TRUE
 
@@ -310,15 +311,6 @@
 	reqs = list(/obj/item/natural/fibers = 4)
 	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/book_crafting_kit
-	name = "book crafting kit"
-	result = /obj/item/book_crafting_kit
-	reqs = list(
-			/obj/item/natural/hide = 2,
-			/obj/item/natural/cloth = 1)
-	tools = list(/obj/item/needle = 1)
-	req_table = TRUE
-
 /datum/crafting_recipe/roguetown/mantrap
 	name = "mantrap"
 	result = list(/obj/item/restraints/legcuffs/beartrap,
@@ -343,7 +335,7 @@
 	name = "poison arrow"
 	result = /obj/item/ammo_casing/caseless/rogue/arrow/poison
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/arrow = 1,
-				/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison = 1)
+				/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison = 1)
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/poisonarrow/alt
@@ -368,7 +360,7 @@
 	name = "poison bolt"
 	result = /obj/item/ammo_casing/caseless/rogue/bolt/poison
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/bolt = 1,
-				/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison = 1)
+				/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison = 1)
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/poisonbolt/alt
@@ -549,6 +541,14 @@
 	req_table = TRUE
 	result = list(/obj/item/rogueweapon/mace/cudgel/carpenter, /obj/item/rogueweapon/mace/cudgel/carpenter)
 	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/wickercloak
+	name = "wickercloak"
+	result = /obj/item/clothing/cloak/wickercloak
+	reqs = list(/obj/item/natural/dirtclod = 1,
+				/obj/item/grown/log/tree/stick = 5,
+				/obj/item/natural/fibers = 3)
+	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/earnecklace
 	name = "ear necklace"

@@ -32,10 +32,11 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(1,1,2), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/reading, pick(0,1,1), TRUE)
 
 	if(H.gender == FEMALE)
 		H.underwear = "Femleotard"
-		H.underwear_color = CLOTHING_BLACK
+		H.underwear_color = CLOTHING_SOOT_BLACK
 		H.update_body()
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	gloves = /obj/item/clothing/gloves/roguetown/leather

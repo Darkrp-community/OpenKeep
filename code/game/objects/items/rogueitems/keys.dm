@@ -67,6 +67,12 @@
 	icon_state = "mazekey"
 	lockid = "manor"
 
+/obj/item/roguekey/guest
+	name = "guest key"
+	desc = "The key to the manor's guest room. Given to visiting nobles."
+	icon_state = "greenkey"
+	lockid = "guest"
+
 /obj/item/roguekey/butler // intended for chests, crates, cellar doors, NOT kitchen access
 	name = "servants key"
 	desc = "The key to the pantrys and cellars of the manor."
@@ -345,7 +351,7 @@
 	icon_state = "brownkey"
 	lockid = "house7"
 
-/obj/item/roguekey/houses/house8
+/obj/item/roguekey/houses/house8 //Not currently in use on Dun_Manor
 	name = "house VIII key"
 	icon_state = "brownkey"
 	lockid = "house8"

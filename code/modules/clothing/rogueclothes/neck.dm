@@ -106,6 +106,32 @@
 					H.update_inv_neck()
 					H.update_inv_head()
 
+/obj/item/clothing/neck/roguetown/keffiyeh/red
+	color = COLOR_MAROON
+
+/obj/item/clothing/neck/roguetown/keffiyeh/yellow
+	color = CLOTHING_PEAR_YELLOW
+
+/obj/item/clothing/neck/roguetown/keffiyeh/orange
+	color = CLOTHING_FYRITIUS_DYE
+
+/obj/item/clothing/neck/roguetown/keffiyeh/green
+	color = CLOTHING_BOG_GREEN
+
+/obj/item/clothing/neck/roguetown/keffiyeh/blue
+	color = CLOTHING_MAGE_BLUE
+
+/obj/item/clothing/neck/roguetown/keffiyeh/purple
+	color = CLOTHING_ROYAL_PURPLE
+
+/obj/item/clothing/neck/roguetown/keffiyeh/teal
+	color = CLOTHING_ROYAL_TEAL
+
+/obj/item/clothing/neck/roguetown/keffiyeh/black
+	color = CLOTHING_ROYAL_BLACK
+
+/obj/item/clothing/neck/roguetown/keffiyeh/white
+	color = CLOTHING_ASH_GREY
 
 /obj/item/clothing/neck/roguetown/coif/cloth
 	name = "padded coif"
@@ -314,8 +340,21 @@
 
 /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 	name = "amulet of Pestra"
-	desc = "A Pestran amulet depicting her fabled walking staff, encrusted in this trinket is a venomous serpent. Believed to ward off disease and lessen poisons to devoted worshippers of the wise hag."
+	desc = "When pure, alcohol is best used as a cleanser of wounds and a cleanser of the palate."
 	icon_state = "pestra"
+	resistance_flags = FIRE_PROOF
+
+
+/obj/item/clothing/neck/roguetown/psycross/silver/malum
+	name = "amulet of Malum"
+	desc = "Blessed be our works, made in His name."
+	icon_state = "malum"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psycross/silver/malum_steel
+	name = "amulet of Malum"
+	desc = "Let the tools that guide thee be thy hands."
+	icon_state = "malum_alt"
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psycross/g
