@@ -516,7 +516,7 @@
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //zizombie Warrior
-			r_hand = /obj/item/rogueweapon/greatsword/zwei
+			r_hand = /obj/item/rogueweapon/sword/long/greatsword/zwei
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves

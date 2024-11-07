@@ -811,9 +811,9 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	new /obj/item/clothing/cloak/half/shadowcloak/cult(C)
 	new /obj/item/clothing/cloak/half/shadowcloak/cult(C)
 
-	new /obj/item/rogueweapon/sword(C)
+	new /obj/item/rogueweapon/sword/sabre/messer(C)
 	new /obj/item/rogueweapon/knife/hunting(C)
-	new /obj/item/rogueweapon/knife/hunting(C)
+	new /obj/item/rogueweapon/mace/spiked(C)
 
 	new /obj/item/rope/chain(C)
 	new /obj/item/rope/chain(C)

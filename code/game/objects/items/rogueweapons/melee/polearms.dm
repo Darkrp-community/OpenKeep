@@ -51,7 +51,7 @@
 	chargetime = 1
 	warnie = "mobwarning"
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-	penfactor = 50
+	penfactor = AP_POLEARM_THRUST
 	swingdelay = 1
 	misscost = 10
 
@@ -64,7 +64,7 @@
 	icon_state = "inbash"
 	attack_verb = list("bashes", "strikes")
 	hitsound = list('sound/combat/hits/blunt/woodblunt (1).ogg', 'sound/combat/hits/blunt/woodblunt (2).ogg')
-	penfactor = 10
+	penfactor = AP_POLEARM_BASH
 	damfactor = 0.8
 	swingdelay = 1
 	misscost = 5
@@ -102,7 +102,7 @@
 	animname = "chop"
 	blade_class = BCLASS_CHOP
 	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
-	penfactor = 25
+	penfactor = AP_POLEARM_CHOP
 	chargetime = 1.5
 	damfactor = 1.2
 	swingdelay = 2

@@ -16,7 +16,7 @@
 /datum/supply_pack/rogue/weapons/greatsword
 	name = "Iron Greatsword"
 	cost = 54
-	contains = /obj/item/rogueweapon/greatsword/zwei
+	contains = /obj/item/rogueweapon/sword/long/greatsword/zwei
 
 /datum/supply_pack/rogue/weapons/mace
 	name = "Iron Mace"

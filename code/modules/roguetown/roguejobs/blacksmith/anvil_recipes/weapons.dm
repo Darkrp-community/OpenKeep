@@ -21,14 +21,6 @@
 	created_item = /obj/item/rogueweapon/sword/silver
 	craftdiff = 3
 
-/datum/anvil_recipe/weapons/shortsword_silver
-	name = "Silver Shortsword"
-	recipe_name = "a Silver Short Sword"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/silver
-	created_item = /obj/item/rogueweapon/sword/short/silver
-	craftdiff = 2
-
 /datum/anvil_recipe/weapons/rapier_silver
 	name = "Silver Rapier"
 	recipe_name = "a Silver Rapier"
@@ -308,7 +300,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron, /obj/item/ingot/iron)
-	created_item = /obj/item/rogueweapon/greatsword/zwei
+	created_item = /obj/item/rogueweapon/sword/long/greatsword/zwei
 	craftdiff = 3
 
 // STEEL GEAR - Fancy shit for Knights
@@ -443,7 +435,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/greatsword
+	created_item = /obj/item/rogueweapon/sword/long/greatsword
 	craftdiff = 4
 
 /datum/anvil_recipe/weapons/halberd
@@ -529,7 +521,7 @@
 	recipe_name = "a Short Sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/sword/short
+	created_item = /obj/item/rogueweapon/sword/iron/short
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/sword_steel
@@ -537,7 +529,7 @@
 	recipe_name = "a Sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/sword
+	created_item = /obj/item/rogueweapon/sword/arming
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/scimitar_steel

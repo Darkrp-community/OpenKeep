@@ -8361,7 +8361,7 @@
 /obj/structure/closet/crate/roguecloset,
 /obj/item/scomstone,
 /obj/item/clothing/shoes/roguetown/nobleboot,
-/obj/item/rogueweapon/greatsword,
+/obj/item/rogueweapon/sword/long/greatsword,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "EU" = (

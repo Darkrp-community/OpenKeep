@@ -547,12 +547,12 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc/warlord
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(2) //Greatsword Warlord
-			r_hand = /obj/item/rogueweapon/greatsword
+			r_hand = /obj/item/rogueweapon/sword/long/greatsword
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc/warlord
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(3) // WE DON'T WANNA GO TO WAR TODAY BUT THE LORD OF THE LASH SAYS "NAY NAY NAY!!" WE'RE GONNA MARCH ALL DAE, ALL DAE, ALL DAE! WHERE THERE'S A WHIP THERE'S A WAY!!
 			r_hand = /obj/item/rogueweapon/whip/antique
-			l_hand = /obj/item/rogueweapon/sword/short
+			l_hand = /obj/item/rogueweapon/sword/iron/short
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc/warlord
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(4) // Big Sword and Big Shield

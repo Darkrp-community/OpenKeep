@@ -73,7 +73,7 @@
 /area/rogue/outdoors/mountains)
 "afz" = (
 /obj/structure/closet/crate/chest/gold,
-/obj/item/rogueweapon/sword/short/silver,
+/obj/item/rogueweapon/sword/silver,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cave)
 "afF" = (

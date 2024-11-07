@@ -508,9 +508,9 @@
 	icon_state = "tablewood2";
 	dir = 10
 	},
-/obj/item/rogueweapon/greatsword/zwei,
-/obj/item/rogueweapon/greatsword/zwei,
-/obj/item/rogueweapon/greatsword/zwei,
+/obj/item/rogueweapon/sword/long/greatsword/zwei,
+/obj/item/rogueweapon/sword/long/greatsword/zwei,
+/obj/item/rogueweapon/sword/long/greatsword/zwei,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
 "bu" = (
@@ -768,10 +768,10 @@
 	icon_state = "tablewood2";
 	dir = 10
 	},
-/obj/item/rogueweapon/greatsword,
-/obj/item/rogueweapon/greatsword,
-/obj/item/rogueweapon/greatsword,
-/obj/item/rogueweapon/greatsword,
+/obj/item/rogueweapon/sword/long/greatsword,
+/obj/item/rogueweapon/sword/long/greatsword,
+/obj/item/rogueweapon/sword/long/greatsword,
+/obj/item/rogueweapon/sword/long/greatsword,
 /obj/item/roguekey/lord,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)

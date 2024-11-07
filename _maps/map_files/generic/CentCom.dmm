@@ -372,9 +372,9 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue)
 "aS" = (
-/obj/item/rogueweapon/greatsword/zwei,
-/obj/item/rogueweapon/greatsword/zwei,
-/obj/item/rogueweapon/greatsword/zwei,
+/obj/item/rogueweapon/sword/long/greatsword/zwei,
+/obj/item/rogueweapon/sword/long/greatsword/zwei,
+/obj/item/rogueweapon/sword/long/greatsword/zwei,
 /obj/structure/table/wood{
 	icon_state = "largetable"
 	},
@@ -391,11 +391,11 @@
 /obj/structure/table/wood{
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/greatsword,
-/obj/item/rogueweapon/greatsword,
-/obj/item/rogueweapon/greatsword,
-/obj/item/rogueweapon/greatsword,
-/obj/item/rogueweapon/greatsword,
+/obj/item/rogueweapon/sword/long/greatsword,
+/obj/item/rogueweapon/sword/long/greatsword,
+/obj/item/rogueweapon/sword/long/greatsword,
+/obj/item/rogueweapon/sword/long/greatsword,
+/obj/item/rogueweapon/sword/long/greatsword,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "aV" = (
@@ -411,9 +411,9 @@
 /obj/structure/table/wood{
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/greatsword/elfgsword,
-/obj/item/rogueweapon/greatsword/elfgsword,
-/obj/item/rogueweapon/greatsword/elfgsword,
+/obj/item/rogueweapon/sword/long/greatsword/elfgsword,
+/obj/item/rogueweapon/sword/long/greatsword/elfgsword,
+/obj/item/rogueweapon/sword/long/greatsword/elfgsword,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "aX" = (
@@ -1908,9 +1908,9 @@
 /turf/open/floor/rogue/tile/checker_green,
 /area/rogue)
 "nA" = (
-/obj/item/rogueweapon/sword/short,
-/obj/item/rogueweapon/sword/short,
-/obj/item/rogueweapon/sword/short,
+/obj/item/rogueweapon/sword/iron/short,
+/obj/item/rogueweapon/sword/iron/short,
+/obj/item/rogueweapon/sword/iron/short,
 /obj/structure/table/wood/large/corner_blue{
 	dir = 10
 	},
