@@ -72,6 +72,7 @@
 	verbage = "braid"
 	verbage_tp = "braids"
 
+/*
 /datum/crafting_recipe/roguetown/net
 	name = "net"
 	result = /obj/item/net
@@ -80,7 +81,7 @@
 				/obj/item/natural/stone = 3)
 	verbage = "braid"
 	verbage_tp = "braids"
-
+*/
 
 /datum/crafting_recipe/roguetown/torch
 	name = "torch"
@@ -540,6 +541,14 @@
 	req_table = TRUE
 	result = list(/obj/item/rogueweapon/mace/cudgel/carpenter, /obj/item/rogueweapon/mace/cudgel/carpenter)
 	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/wickercloak
+	name = "wickercloak"
+	result = /obj/item/clothing/cloak/wickercloak
+	reqs = list(/obj/item/natural/dirtclod = 1,
+				/obj/item/grown/log/tree/stick = 5,
+				/obj/item/natural/fibers = 3)
+	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/earnecklace
 	name = "ear necklace"
