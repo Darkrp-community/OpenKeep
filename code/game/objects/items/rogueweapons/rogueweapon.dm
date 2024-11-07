@@ -35,20 +35,20 @@
 
 // ===== AP DEFINES =======
 #define AP_AXE_CUT 5
-#define AP_AXE_CHOP 15
+#define AP_AXE_CHOP 10
 #define AP_HEAVYAXE_CHOP 25
-#define AP_HEAVYAXE_STAB 40
+#define AP_HEAVYAXE_STAB 35
 #define AP_FLAIL_STRIKE 5
 #define AP_CLUB_STRIKE 20
-#define AP_FLAIL_SMASH 70
-#define AP_CLUB_SMASH 30
-#define AP_HEAVY_SMASH 40
-#define AP_POLEARM_THRUST 25
+#define AP_FLAIL_SMASH 60
+#define AP_CLUB_SMASH 25
+#define AP_HEAVY_SMASH 35
+#define AP_SPEAR_THRUST 20
 #define AP_POLEARM_THRUST 40
-#define AP_POLEARM_BASH 10
+#define AP_POLEARM_BASH 5
 #define AP_POLEARM_CHOP 20
 #define AP_SWORD_THRUST 20
-#define AP_SWORD_CHOP 10
+#define AP_SWORD_CHOP 5
 
 //wdefense defines
 #define TERRIBLE_PARRY -1

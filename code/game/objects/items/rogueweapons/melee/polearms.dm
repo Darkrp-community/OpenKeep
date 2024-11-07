@@ -56,7 +56,7 @@
 	misscost = 10
 
 /datum/intent/polearm/thrust/spear
-	penfactor = AP_POLEARM_THRUST
+	penfactor = AP_SPEAR_THRUST
 
 /*------------\
 | Bash intent |
