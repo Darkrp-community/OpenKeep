@@ -44,7 +44,7 @@
 
 /obj/item/roguestatue/steel/Initialize()
 	. = ..()
-	icon_state = "ststatue[pick(1,2,3,4)]"
+	icon_state = "ststatue[pick(1,2)]"
 
 /obj/item/roguestatue/iron
 	name = "iron statue"
