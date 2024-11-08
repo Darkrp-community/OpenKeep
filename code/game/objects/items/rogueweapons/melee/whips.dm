@@ -79,6 +79,7 @@
 /obj/item/rogueweapon/whip/antique/silver
 	name = "Contemptum"
 	desc = "An extremely well maintained whip, with a gleaming silver tip and gilded handle. Both bane and punishment."
+	var/last_used = 0
 
 /obj/item/rogueweapon/whip/antique/silver/pickup(mob/user)
 	. = ..()
