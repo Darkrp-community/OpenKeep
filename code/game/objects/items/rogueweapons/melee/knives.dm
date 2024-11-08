@@ -196,6 +196,7 @@
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
 			H.Knockdown(20)
+			H.Paralyze(1)
 			H.adjustFireLoss(40)
 			H.fire_act(1,5)
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
@@ -203,6 +204,7 @@
 			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
 				H.Knockdown(10)
+				H.Paralyze(1)
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	. = ..()

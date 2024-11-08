@@ -40,6 +40,7 @@
 	resistance_flags = FIRE_PROOF
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 50
+	var/last_used = 0
 
 /obj/item/rogueweapon/whip/antique/pickup(mob/user)
 	. = ..()
@@ -48,6 +49,7 @@
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
 			H.Knockdown(30)
+			H.Paralyze(1)
 			H.adjustFireLoss(40)
 			H.fire_act(1,5)
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
@@ -55,6 +57,7 @@
 			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
 				H.Knockdown(10)
+				H.Paralyze(1)
 
 /obj/item/rogueweapon/whip/antique/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
 	if(world.time < src.last_used + 100)
