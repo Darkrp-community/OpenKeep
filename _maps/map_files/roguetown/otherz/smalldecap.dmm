@@ -91,7 +91,7 @@
 /area/rogue/indoors/town/dwarfin)
 "bR" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cavelava)
 "ce" = (
@@ -194,7 +194,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/caves)
 "fa" = (
-/obj/machinery/light/rogue/firebowl/standing/blue,
+/obj/machinery/light/rogue/firebowl/standing,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavelava)
@@ -430,7 +430,7 @@
 /area/rogue/indoors/town/dwarfin)
 "lD" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/under/cavelava)
 "lV" = (
@@ -441,7 +441,7 @@
 /area/rogue/outdoors/mountains/decap)
 "mf" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/blue/l,
+/obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cavelava)
 "mi" = (
@@ -491,7 +491,7 @@
 /area/rogue/under/cavelava)
 "nN" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavelava)
 "nS" = (
@@ -641,7 +641,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/cavelava)
 "rA" = (
-/obj/machinery/light/rogue/firebowl/standing/blue,
+/obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavelava)
 "rP" = (
@@ -703,7 +703,7 @@
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/suit/roguetown/armor/chainmail,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/blue/l,
+/obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/under/cavelava)
 "ua" = (
@@ -1129,7 +1129,7 @@
 "Gd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood,
-/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/cavelava)
 "Gg" = (
@@ -1440,7 +1440,7 @@
 /area/rogue/outdoors/mountains/decap)
 "NT" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/cavelava)
 "Oc" = (
@@ -1666,7 +1666,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavelava)
 "Tz" = (
-/obj/machinery/light/rogue/wallfire/candle/blue/l,
+/obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavelava)
 "TD" = (
@@ -1734,7 +1734,7 @@
 /obj/structure/table/wood/reinforced,
 /obj/item/book/rogue/advice_farming,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/blue/l,
+/obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/cavelava)
 "UX" = (
@@ -1848,7 +1848,7 @@
 /area/rogue/under/cavelava)
 "Ye" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/blue/l,
+/obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/cavelava)
 "Yi" = (
