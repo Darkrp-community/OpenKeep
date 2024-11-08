@@ -27,6 +27,7 @@
 		H.virginity = TRUE
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdressprimary
+		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
 	else
 		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/tunicprimary
 		pants = /obj/item/clothing/under/roguetown/tights

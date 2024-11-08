@@ -316,6 +316,52 @@
 	color = pick(CLOTHING_WINESTAIN_RED, CLOTHING_SKY_BLUE, CLOTHING_SALMON	, CLOTHING_SOOT_BLACK)
 	..()
 
+/obj/item/clothing/suit/roguetown/shirt/belldress
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
+	name = "bell dress"
+	desc = "A fancy dress for the ladies."
+	body_parts_covered = CHEST|GROIN|VITALS
+	icon_state = "bdress"
+	sleevetype = "bdress"
+	allowed_sex = list(FEMALE)
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+
+/obj/item/clothing/suit/roguetown/shirt/belldress/yellow
+	name = "yellow bell dress"
+	icon_state = "ydress"
+	sleevetype = "ydress"
+
+/obj/item/clothing/suit/roguetown/shirt/belldress/red
+	name = "red bell dress"
+	icon_state = "rdress"
+	sleevetype = "rdress"
+
+/obj/item/clothing/suit/roguetown/shirt/belldress/cyan
+	name = "cyan bell dress"
+	icon_state = "cdress"
+	sleevetype = "cdress"
+
+/obj/item/clothing/suit/roguetown/shirt/belldress/purple
+	name = "purple bell dress"
+	icon_state = "pdress"
+	sleevetype = "pdress"
+
+/obj/item/clothing/suit/roguetown/shirt/belldress/white
+	name = "white bell dress"
+	icon_state = "wdress"
+	sleevetype = "wdress"
+
+/obj/item/clothing/suit/roguetown/shirt/belldress/black
+	name = "black bell dress"
+	icon_state = "bldress"
+	sleevetype = "bldress"
+
+/obj/item/clothing/suit/roguetown/shirt/belldress/queen
+	name = "queens dress"
+	icon_state = "queen"
+	sleevetype = "queen"
+
 /obj/item/clothing/suit/roguetown/shirt/undershirt/webs
 	name = "webbed shirt"
 	desc = "Exotic silk finely woven into.. this? Might as well be wearing a spiderweb."

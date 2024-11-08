@@ -19,7 +19,7 @@
 	display_order = JDO_LADY
 	bypass_lastclass = TRUE
 	give_bank_account = 500
-	min_pq = 4
+	min_pq = -4
 	cmode_music = 'sound/music/combat_noble.ogg'
 
 /datum/outfit/job/roguetown/lady/pre_equip(mob/living/carbon/human/H)
@@ -30,9 +30,9 @@
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	beltl = /obj/item/keyring/queen
-	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
+	armor = /obj/item/clothing/suit/roguetown/shirt/belldress/queen
+	head = /obj/item/clothing/head/roguetown/crown/nyle
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/clothing/head/roguetown/crown/circlet = 1)
 	if(SSticker.rulertype == "Queen")
 		head = /obj/item/clothing/head/roguetown/crown/serpcrown
 		SSroguemachine.crown = head
@@ -53,10 +53,9 @@
 			H.change_stat("speed", 2)
 			H.change_stat("perception", 2)
 			H.change_stat("fortune", 5)
-	if(prob(66))
-		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt
 	id = /obj/item/clothing/ring/silver
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
+	pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)

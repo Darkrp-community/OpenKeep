@@ -17,6 +17,41 @@
 	craftdiff = 1
 	sellprice = 9
 
+/datum/crafting_recipe/roguetown/weaving/stockings_white_silk
+	name = "white silk stockings"
+	result = list(/obj/item/clothing/under/roguetown/tights/stockings/silk/white)
+	reqs = list(/obj/item/natural/silk = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/weaving/stockings_black_silk
+	name = "black silk stockings"
+	result = list(/obj/item/clothing/under/roguetown/tights/stockings/silk/black)
+	reqs = list(/obj/item/natural/silk = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/weaving/stockings_blue_silk
+	name = "blue silk stockings"
+	result = list(/obj/item/clothing/under/roguetown/tights/stockings/silk/blue)
+	reqs = list(/obj/item/natural/silk = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/weaving/stockings_red_silk
+	name = "red silk stockings"
+	result = list(/obj/item/clothing/under/roguetown/tights/stockings/silk/red)
+	reqs = list(/obj/item/natural/silk = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/weaving/stockings_purple_silk
+	name = "purple silk stockings"
+	result = list(/obj/item/clothing/under/roguetown/tights/stockings/silk/purple)
+	reqs = list(/obj/item/natural/silk = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2
+
 /datum/crafting_recipe/roguetown/weaving/cloak
 	name = "silk half cloak"
 	result = list(/obj/item/clothing/cloak/half)
@@ -158,3 +193,52 @@
 				/obj/item/natural/hide = 1)
 	craftdiff = 4
 	sellprice = 80
+
+/datum/crafting_recipe/roguetown/weaving/bell_dress
+	name = "bell dress"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/belldress)
+	reqs = list(/obj/item/natural/silk = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/weaving/bell_dress_yellow
+	name = "yellow bell dress"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/belldress/yellow)
+	reqs = list(/obj/item/natural/silk = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/weaving/bell_dress_red
+	name = "red bell dress"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/belldress/red)
+	reqs = list(/obj/item/natural/silk = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/weaving/bell_dress_cyan
+	name = "cyan bell dress"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/belldress/cyan)
+	reqs = list(/obj/item/natural/silk = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/weaving/bell_dress_purple
+	name = "purple bell dress"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/belldress/purple)
+	reqs = list(/obj/item/natural/silk = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/weaving/dress_white
+	name = "white bell dress"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/belldress/white)
+	reqs = list(/obj/item/natural/silk = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/weaving/bell_dress_black
+	name = "black bell dress"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/belldress/black)
+	reqs = list(/obj/item/natural/silk = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
