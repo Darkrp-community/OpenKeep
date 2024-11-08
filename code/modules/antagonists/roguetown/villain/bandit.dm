@@ -102,7 +102,7 @@
 
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			beltr = /obj/item/clothing/mask/rogue/shepherd/rag
-			beltl = /obj/item/rogueweapon/huntingknife
+			beltl = /obj/item/rogueweapon/knife/hunting
 
 			if(H.age == AGE_OLD) //old deserters are experts with polearms
 				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
@@ -126,9 +126,9 @@
 			var/weapon2choose = pickweight(list("Spear" = 2, "Bardiche" = 1))
 			switch(weapon2choose)
 				if("Spear")
-					backr = /obj/item/rogueweapon/spear
+					backr = /obj/item/rogueweapon/polearm/spear
 				if("Bardiche")
-					backr = /obj/item/rogueweapon/halberd/bardiche
+					backr = /obj/item/rogueweapon/polearm/halberd/bardiche
 
 			switch(pick(1,2))
 				if (1) //worse leg protection, better neck protection, and a face mask
@@ -159,7 +159,7 @@
 
 			armor = /obj/item/clothing/suit/roguetown/armor/gambeson
 			pants = /obj/item/clothing/under/roguetown/trou/leather
-			beltr = /obj/item/rogueweapon/huntingknife
+			beltr = /obj/item/rogueweapon/knife/hunting
 			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 			beltl = /obj/item/quiver/arrows
 			mask = /obj/item/clothing/mask/rogue/shepherd/rag
@@ -181,11 +181,11 @@
 
 			switch(pick(1,2,3))
 				if (1)
-					beltr = /obj/item/rogueweapon/huntingknife
+					beltr = /obj/item/rogueweapon/knife/hunting
 				if (2)
-					beltr = /obj/item/rogueweapon/huntingknife/cleaver
+					beltr = /obj/item/rogueweapon/knife/cleaver
 				if (3)
-					beltr = /obj/item/rogueweapon/huntingknife/idagger
+					beltr = /obj/item/rogueweapon/knife/dagger
 
 		if("Brigand") //good sword skill, shield skill, flail skill, mace skill, slightly speedy. Kind of an all rounder.
 			H.set_blindness(0)
@@ -236,7 +236,7 @@
 				if (3)
 					beltr = /obj/item/rogueweapon/mace
 				if (4)
-					beltr = /obj/item/rogueweapon/sword/iron/messer
+					beltr = /obj/item/rogueweapon/sword/scimitar/messer
 
 	H.cure_blind("TRAIT_GENERIC")
 

@@ -47,7 +47,7 @@
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	beltl = /obj/item/quiver/bolts
 	neck = /obj/item/clothing/neck/roguetown/coif
-	backpack_contents = list(/obj/item/lockpick = 1, /obj/item/rogueweapon/huntingknife/idagger/steel)
+	backpack_contents = list(/obj/item/lockpick = 1, /obj/item/rogueweapon/knife/dagger/steel)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)		//Rogues are known for commonly lacking standard morals, as well as seeing fucked-shit, so - this tracks.
 	H.change_stat("strength", -1)

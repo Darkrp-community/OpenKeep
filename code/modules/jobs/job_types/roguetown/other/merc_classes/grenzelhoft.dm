@@ -44,7 +44,7 @@
 	head = /obj/item/clothing/head/roguetown/helmet/skullcap/grenzelhoft
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/greatsword/zwei
+	backr = /obj/item/rogueweapon/sword/long/greatsword/zwei
 	if(!H.has_language(/datum/language/oldpsydonic))
 		H.grant_language(/datum/language/oldpsydonic)
 		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
