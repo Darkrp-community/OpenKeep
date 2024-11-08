@@ -232,7 +232,7 @@
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
 	possible_item_intents = list(/datum/intent/pick)
-	gripped_intents = list(TILL_INTENT,/datum/intent/pick,SPEAR_BASH)
+	gripped_intents = list(TILL_INTENT,/datum/intent/pick,POLEARM_BASH)
 	associated_skill = /datum/skill/combat/polearms
 
 	force = 5
@@ -341,8 +341,8 @@
 	minstr = 6
 	var/list/forked = list()
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
-	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH)
-	gripped_intents = list(DUMP_INTENT,SPEAR_BASH,SPEAR_THRUST)
+	possible_item_intents = list(POLEARM_THRUST, POLEARM_BASH)
+	gripped_intents = list(DUMP_INTENT,POLEARM_BASH,POLEARM_THRUST)
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
 	thrown_bclass = BCLASS_STAB

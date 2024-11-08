@@ -58,10 +58,10 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 	beltl = /obj/item/keyring/mguard
 	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/rogueweapon/sword
+	beltr = /obj/item/rogueweapon/sword/arming
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/rogueweapon/shield/tower/metal
-	r_hand = /obj/item/rogueweapon/halberd
+	r_hand = /obj/item/rogueweapon/polearm/halberd
 	if(prob(30))
 		head = /obj/item/clothing/head/roguetown/helmet/visored/knight
 	else

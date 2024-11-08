@@ -20,7 +20,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/leather/vest
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	beltl = /obj/item/rogueweapon/huntingknife/stoneknife
+	beltl = /obj/item/rogueweapon/knife/stone
 	backl = /obj/item/rogueweapon/mace/goden/shillelagh
 
 	H.change_stat("strength", 1)

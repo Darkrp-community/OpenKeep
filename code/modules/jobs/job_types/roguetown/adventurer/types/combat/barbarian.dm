@@ -57,7 +57,7 @@
 			beltr = /obj/item/rogueweapon/mace/woodclub
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		if("Axe")
-			beltr = /obj/item/rogueweapon/woodcut
+			beltr = /obj/item/rogueweapon/axe/iron
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
