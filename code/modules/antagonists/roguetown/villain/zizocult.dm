@@ -805,8 +805,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	S.set_up(1, 1, C)
 	S.start()
 
-	new /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous/cult(C)
-	new /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous/cult(C)
+	new /obj/item/clothing/head/roguetown/helmet/skullcap/cult(C)
+	new /obj/item/clothing/head/roguetown/helmet/skullcap/cult(C)
 
 	new /obj/item/clothing/cloak/half/shadowcloak/cult(C)
 	new /obj/item/clothing/cloak/half/shadowcloak/cult(C)

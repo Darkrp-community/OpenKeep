@@ -225,7 +225,7 @@
 					armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 
 			if(H.age == AGE_OLD) //old brigands have been in the business for so long that they have managed to pick up some better gear along the way
-				armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+				armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 				mask = /obj/item/clothing/mask/rogue/facemask
 
 			switch(pick(1,2,3,4))

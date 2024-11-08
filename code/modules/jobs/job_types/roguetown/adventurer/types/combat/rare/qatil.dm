@@ -44,7 +44,7 @@
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	belt = /obj/item/storage/belt/rogue/leather/shalal
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	backl = /obj/item/storage/backpack/rogue/satchel
 	head = /obj/item/clothing/neck/roguetown/keffiyeh
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/lockpick)

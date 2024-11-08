@@ -88,7 +88,7 @@
 /datum/outfit/job/roguetown/adept/rthief/pre_equip(mob/living/carbon/human/H)
 	..()
 	//Armor for class
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	beltl = /obj/item/rogueweapon/mace/cudgel
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
