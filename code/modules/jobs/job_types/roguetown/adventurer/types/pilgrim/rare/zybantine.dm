@@ -27,7 +27,7 @@
 	cloak = /obj/item/clothing/cloak/raincloak/purple
 	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/arming
 	belt = /obj/item/storage/belt/rogue/leather/shalal
-	beltl = /obj/item/rogueweapon/sword/long/marlin
+	beltl = /obj/item/rogueweapon/sword/sabre/shalal
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	backr = /obj/item/storage/backpack/rogue/satchel
 	id = /obj/item/clothing/ring/gold/guild_mercator

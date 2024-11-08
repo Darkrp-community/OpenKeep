@@ -62,7 +62,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/roguekey/soilson
-		beltl = /obj/item/rogueweapon/huntingknife/villager
+		beltl = /obj/item/rogueweapon/knife/villager
 	else
 		head = /obj/item/clothing/head/roguetown/armingcap
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
@@ -70,4 +70,4 @@
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/roguekey/soilson
-		beltl = /obj/item/rogueweapon/huntingknife/villager
+		beltl = /obj/item/rogueweapon/knife/villager

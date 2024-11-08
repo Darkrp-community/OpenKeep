@@ -43,7 +43,7 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/needle = 1, /obj/item/storage/belt/rogue/pouch/coins/rich = 1 )
 
-	var/obj/item/rogueweapon/woodstaff/aries/P = new()
+	var/obj/item/rogueweapon/polearm/woodstaff/aries/P = new()
 	H.put_in_hands(P, forced = TRUE)
 
 	if((H.dna.species.id == "aasimar" || H.dna.species.id == "dwarf"))
