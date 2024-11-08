@@ -24,7 +24,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather/rope
-	backpack_contents = list(/obj/item/rogueweapon/pick = 1, /obj/item/rogueweapon/huntingknife = 1, /obj/item/lockpickring/mundane)
+	backpack_contents = list(/obj/item/rogueweapon/pick = 1, /obj/item/rogueweapon/knife/hunting = 1, /obj/item/lockpickring/mundane)
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless
 	cloak = /obj/item/clothing/cloak/raincloak/mortus
 	armor = /obj/item/clothing/suit/roguetown/armor/leather
