@@ -53,7 +53,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-	backl = /obj/item/rogueweapon/spear
+	backl = /obj/item/rogueweapon/polearm/spear
 	head = /obj/item/clothing/head/roguetown/helmet/leather
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	if(prob(33))

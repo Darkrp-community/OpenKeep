@@ -1,6 +1,6 @@
 /obj/item/fishingrod
 	force = 12
-	possible_item_intents = list(SPEAR_BASH,ROD_CAST)
+	possible_item_intents = list(POLEARM_BASH,ROD_CAST)
 	name = "fishing rod"
 	desc = ""
 	icon_state = "rod"
@@ -63,7 +63,7 @@
 	var/sl = user.mind.get_skill_level(/datum/skill/labor/fishing) // User's skill level
 	var/ft = 120 //Time to get a catch, in ticks
 	var/fpp =  100 - (40 + (sl * 10)) // Fishing power penalty based on fishing skill level
-	if(user.used_intent.type == SPEAR_BASH)
+	if(user.used_intent.type == POLEARM_BASH)
 		return ..()
 
 	if(!check_allowed_items(target,target_self=1))
