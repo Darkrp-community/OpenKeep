@@ -73,12 +73,14 @@
 	cost = 40
 	contains = /obj/item/bomb/homemade
 
+/*
 /datum/supply_pack/rogue/weapons/nets
 	name = "Throwing Net"
 	cost = 15
 	contains = list(/obj/item/net,
 			/obj/item/net,
 			/obj/item/net)
+*/
 
 /datum/supply_pack/rogue/weapons/crossbow
 	name = "Crossbow"
