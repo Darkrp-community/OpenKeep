@@ -28,7 +28,7 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	head = /obj/item/clothing/head/roguetown/helmet/leather/inquisitor
 	gloves = /obj/item/clothing/gloves/roguetown/leather
-	beltl = /obj/item/rogueweapon/whip/antique
+	beltl = /obj/item/rogueweapon/whip/antique/silver
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 
 	if(H.mind)

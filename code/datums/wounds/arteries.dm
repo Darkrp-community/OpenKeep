@@ -85,7 +85,7 @@
 	if(affected.mind.has_antag_datum(/datum/antagonist/vampirelord/))
 		var/datum/antagonist/vampirelord/VL = affected.mind.has_antag_datum(/datum/antagonist/vampirelord)
 		VL.handle_vitae(-2000)
-		to_chat(VL, "<span class='userdanger'>["MY VITAE GUSHES OUT!"]</span>")
+		to_chat(src, "<span class='userdanger'>MY VITAE GUSHES OUT!</span>")
 
 /datum/wound/artery/chest/on_life()
 	. = ..()

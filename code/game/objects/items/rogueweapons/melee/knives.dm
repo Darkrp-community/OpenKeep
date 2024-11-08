@@ -71,7 +71,6 @@
 /*------------\
 | Pick intent |	great AP. Not actually used anywhere.
 \------------*/
-/*
 /datum/intent/dagger/thrust/pick
 	name = "thrust"
 	attack_verb = list("stabs", "impales")
@@ -80,7 +79,6 @@
 	clickcd = CLICK_CD_MELEE
 	swingdelay = 1
 	blade_class = BCLASS_PICK
-*/
 
 /*------------\
 | Chop intent |	small AP, bonus damage

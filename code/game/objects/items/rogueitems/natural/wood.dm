@@ -134,12 +134,12 @@
 	blade_dulling = 0
 	max_integrity = 20
 	associated_skill = /datum/skill/combat/knives
-	wdefense = BAD_PARRY
+	wdefense = 0
 	static_debris = null
 	obj_flags = null
 	wlength = WLENGTH_SHORT
 	w_class = WEIGHT_CLASS_SMALL
-	wbalance = HARD_TO_DODGE
+	wbalance = 1
 	twohands_required = FALSE
 	gripped_intents = null
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP

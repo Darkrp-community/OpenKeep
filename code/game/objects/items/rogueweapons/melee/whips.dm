@@ -98,7 +98,7 @@
 				H.Knockdown(10)
 				H.Paralyze(1)
 
-/obj/item/rogueweapon/whip/antique/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
+/obj/item/rogueweapon/whip/antique/silver/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
 	if(world.time < src.last_used + 100)
 		to_chat(user, "<span class='notice'>The silver effect is on cooldown.</span>")
 		return
