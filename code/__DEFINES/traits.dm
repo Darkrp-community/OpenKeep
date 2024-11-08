@@ -50,6 +50,7 @@
 #define TRAIT_BANDITCAMP "banditcamp"
 #define TRAIT_KNOWBANDITS "knowbandits"
 #define TRAIT_VAMPMANSION "vampiremansion"
+#define TRAIT_INHUMENCAMP "inhumencamp"
 #define TRAIT_LIMPDICK "limp_dick"
 #define TRAIT_SEXPASS "sexpass"
 #define TRAIT_INTRAINING "intraining" //allows certain roles to bypass the average skill limitation of training dummies

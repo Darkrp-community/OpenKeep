@@ -98,10 +98,10 @@
 
 /datum/crafting_recipe/roguetown/cooking/raisins
 	name = "raisins"
-	reqs = list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue = 1)
+	reqs = list(/obj/item/reagent_containers/food/snacks/produce/jacksberry = 1)
 	parts = list(
-		/obj/item/reagent_containers/food/snacks/produce/berries/rogue = 1)
-	blacklist = list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison)
+		/obj/item/reagent_containers/food/snacks/produce/jacksberry = 1)
+	blacklist = list(/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison)
 	result = /obj/item/reagent_containers/food/snacks/rogue/raisins
 	structurecraft = /obj/structure/fluff/dryingrack
 	req_table = FALSE
@@ -110,9 +110,9 @@
 
 /datum/crafting_recipe/roguetown/cooking/raisins_poison
 	name = "raisins"
-	reqs = list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison = 1)
+	reqs = list(/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison = 1)
 	parts = list(
-		/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison = 1)
+		/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison = 1)
 	result = /obj/item/reagent_containers/food/snacks/rogue/raisins/poison
 	structurecraft = /obj/structure/fluff/dryingrack
 	req_table = FALSE
