@@ -30,7 +30,6 @@
 	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/ambush)
 	aggressive=1
 	mode = AI_IDLE
@@ -167,7 +166,6 @@
 	faction = list("orcs")
 	name = "orc"
 	real_name = "orc"
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
@@ -255,7 +253,7 @@
 
 /datum/outfit/job/roguetown/npc/orc/ambush/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.STASTR = 12
+	H.STASTR = 13
 	H.STASPD = 12
 	H.STACON = 13
 	H.STAEND = 13
@@ -341,7 +339,6 @@
 	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/tribal)
 	aggressive=1
 	mode = AI_IDLE
@@ -352,8 +349,8 @@
 
 /datum/outfit/job/roguetown/npc/orc/tribal/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.STASTR = 12
-	H.STASPD = 12
+	H.STASTR = 13
+	H.STASPD = 13
 	H.STACON = 13
 	H.STAEND = 13
 	var/loadout = rand(1,5)
@@ -394,7 +391,6 @@
 	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/warrior)
 	aggressive=1
 	mode = AI_IDLE
@@ -405,10 +401,10 @@
 
 /datum/outfit/job/roguetown/npc/orc/warrior/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.STASTR = 12
-	H.STASPD = 12
-	H.STACON = 13
-	H.STAEND = 13
+	H.STASTR = 13
+	H.STASPD = 13
+	H.STACON = 14
+	H.STAEND = 14
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Marauder with Sword and Shield
@@ -468,7 +464,6 @@
 	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/marauder)
 	aggressive=1
 	mode = AI_IDLE
@@ -525,7 +520,6 @@
 	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/warlord)
 	aggressive=1
 	mode = AI_IDLE
@@ -538,8 +532,8 @@
 	..()
 	H.STASTR = 14
 	H.STASPD = 14
-	H.STACON = 13
-	H.STAEND = 13
+	H.STACON = 14
+	H.STAEND = 14
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Halberd Warlord
@@ -570,7 +564,6 @@
 	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/warlord)
 	aggressive=1
 	mode = AI_IDLE
