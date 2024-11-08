@@ -171,6 +171,35 @@
 	resistance_flags = FLAMMABLE
 	sellprice = 10
 
+/obj/item/clothing/shoes/roguetown/boots/furlinedboots
+	name = "fur lined boots"
+	desc = "Leather boots lined with fur."
+	gender = PLURAL
+	icon_state = "furlinedboots"
+	item_state = "furlinedboots"
+	sewrepair = TRUE
+	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/shoes/roguetown/boots/furlinedanklets
+	name = "fur lined anklets"
+	desc = "Leather anklets lined with fur, foot remains bare."
+	gender = PLURAL
+	icon_state = "furlinedanklets"
+	item_state = "furlinedanklets"
+	sewrepair = TRUE
+	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	is_barefoot = TRUE
+
+/obj/item/clothing/shoes/roguetown/boots/clothlinedanklets
+	name = "cloth lined anklets"
+	desc = "Cloth anklets lined with with fibers, foot remains bare."
+	gender = PLURAL
+	icon_state = "clothlinedanklets"
+	item_state = "furlinedanklets"
+	is_barefoot = TRUE
+	sewrepair = TRUE
+	armor = list("blunt" = 5, "slash" = 5, "stab" = 5, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //Thinks its fair for a piece of cloth and fiber.
+
 /obj/item/clothing/shoes/roguetown/jester
 	name = "funny shoes"
 	desc = "Shoes typically worn by a Jester."

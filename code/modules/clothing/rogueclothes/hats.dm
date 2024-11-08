@@ -923,7 +923,15 @@
 	name = "pestran helmet"
 	desc = "A great helmet made of coarse, tainted steel. It is modeled after a plagued carrion, a blessed abomination of Pestra."
 	icon_state = "pestrahelm"
-	item_state = "pestraahelm"
+	item_state = "pestrahelm"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+
+//................ Malum Helmet ............. //
+/obj/item/clothing/head/roguetown/helmet/heavy/malumhelm
+	name = "malumite helmet"
+	desc = "A great helmet of sturdy dark steel. Its chiseled countenance reminds the viewer of Malum's stern gaze."
+	icon_state = "malumhelm"
+	item_state = "malumhelm"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 
 
