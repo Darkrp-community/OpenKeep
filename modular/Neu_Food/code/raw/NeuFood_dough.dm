@@ -17,7 +17,7 @@
 	icon_state = "dough_base"
 	w_class = WEIGHT_CLASS_NORMAL
 	rotprocess = SHELFLIFE_LONG
-	simplest_skillcheck = TRUE
+//	simplest_skillcheck = TRUE
 	skill_lacking = "Even making a simple dough is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/dough_base/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -122,7 +122,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("dough" = 1)
 	rotprocess = SHELFLIFE_LONG
-	simplest_skillcheck = TRUE
+//	simplest_skillcheck = TRUE
 	skill_lacking = "Complicated bun-manipulation is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/doughslice/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -493,7 +493,7 @@
 	rotprocess = SHELFLIFE_LONG
 	dropshrink = 0.8
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/breadslice
-	simplest_skillcheck = TRUE
+//	simplest_skillcheck = TRUE
 	skill_lacking = "Lack the skill to even garnish a slice of bread. Shameful."
 /obj/item/reagent_containers/food/snacks/rogue/breadslice/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
@@ -543,7 +543,7 @@
 	cooked_type = null
 	bitesize = 2
 	rotprocess = null
-	simplest_skillcheck = TRUE
+//	simplest_skillcheck = TRUE
 	skill_lacking = "Lack the skill to even butter a toast. Shameful."
 /obj/item/reagent_containers/food/snacks/rogue/breadslice/toast/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
@@ -773,7 +773,7 @@
 	bitesize = 2
 	rotprocess = SHELFLIFE_EXTREME
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/bun
-	simplest_skillcheck = TRUE
+//	simplest_skillcheck = TRUE
 	skill_lacking = "Complicated bun-manipulation is beyond your skills."
 /obj/item/reagent_containers/food/snacks/rogue/bun/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
