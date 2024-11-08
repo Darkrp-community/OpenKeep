@@ -139,7 +139,7 @@
 	blocksound = PLATEHIT
 	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 500
-	armor_class = ARMOR_CLASS_HEAVY
+	armor_class = AC_HEAVY
 	clothing_flags = CANT_SLEEP_IN
 	anvilrepair = /datum/skill/craft/armorsmithing
 	resistance_flags = FIRE_PROOF
@@ -156,7 +156,7 @@
 	desc = "Lightly armored boots made from iron offering protection against both melee and ranged attacks."
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 250
-	armor_class = ARMOR_CLASS_MEDIUM
+	armor_class = AC_MEDIUM
 	sellprice = 20
 
 /obj/item/clothing/shoes/roguetown/boots/leather
