@@ -33,7 +33,7 @@
 		if(H.gender == FEMALE) //Melee defense-oriented brute, heavy lean towards non-lethal takedowns and capture.
 			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/shadowplate
 			gloves = /obj/item/clothing/gloves/roguetown/chain/iron/shadowgauntlets
-			wrists = /obj/item/net //Only chance against dodgers. Males getting this would be busted.
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			mask = /obj/item/clothing/mask/rogue/facemask/shadowfacemask
 			neck = /obj/item/clothing/neck/roguetown/gorget
 			backr = /obj/item/rogueweapon/shield/tower/spidershield
