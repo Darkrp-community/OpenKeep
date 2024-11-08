@@ -19,7 +19,7 @@
 	display_order = JDO_LADY
 	bypass_lastclass = TRUE
 	give_bank_account = 500
-	min_pq = -4
+	min_pq = 4
 	cmode_music = 'sound/music/combat_noble.ogg'
 
 /datum/outfit/job/roguetown/lady/pre_equip(mob/living/carbon/human/H)
