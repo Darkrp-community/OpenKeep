@@ -42,10 +42,10 @@
 			beltl = /obj/item/rogueweapon/sword/khopesh
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 		if("Spear")
-			backr = /obj/item/rogueweapon/spear/hoplite
+			backr = /obj/item/rogueweapon/polearm/spear/hoplite
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
 		if("WingedSpear")
-			backr = /obj/item/rogueweapon/spear/hoplite/winged
+			backr = /obj/item/rogueweapon/polearm/spear/hoplite/winged
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
 
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

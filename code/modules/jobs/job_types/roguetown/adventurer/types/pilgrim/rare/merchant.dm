@@ -32,7 +32,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/black
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	backl = /obj/item/storage/backpack/rogue/backpack
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel)
+	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel)
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	id = /obj/item/clothing/ring/silver
 	if(H.gender == FEMALE)

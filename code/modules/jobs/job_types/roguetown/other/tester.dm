@@ -37,7 +37,7 @@
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltr = /obj/item/rogueweapon/sword/sabre
 	if(prob(50))
-		beltr = /obj/item/rogueweapon/sword
+		beltr = /obj/item/rogueweapon/sword/arming
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	neck = /obj/item/clothing/neck/roguetown/gorget
