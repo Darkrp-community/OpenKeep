@@ -16,7 +16,7 @@
 
 /datum/antagonist/villain/on_gain()
 	owner.special_role = "Maniac"
-	var/yea = pick(/obj/item/rogueweapon/huntingknife)
+	var/yea = pick(/obj/item/rogueweapon/knife/hunting)
 	owner.special_items["Jack"] = yea
 	if(ishuman(owner.current))
 		var/mob/living/carbon/human/H = owner.current

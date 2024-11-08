@@ -43,7 +43,7 @@
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	beltr = /obj/item/cooking/pan
-	beltl = /obj/item/rogueweapon/huntingknife/cleaver
+	beltl = /obj/item/rogueweapon/knife/cleaver
 	H.change_stat("intelligence", 3)
 	H.change_stat("constitution", 2)
 	if(H.age == AGE_OLD)

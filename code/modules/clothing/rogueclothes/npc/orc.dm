@@ -4,7 +4,7 @@
 	desc = "Fearsome armor which covers nearly the entire body."
 	icon_state = "warlord_armor"
 	item_state = "warlord_armor"
-	armor = ARMOR_IRON_BAD
+	armor = ARMOR_PLATE_BAD
 
 /obj/item/clothing/suit/roguetown/armor/plate/orc
 	name = "crude breastplate"
@@ -14,8 +14,8 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = NO_MARKET_VALUE
 
-	armor_class = ARMOR_CLASS_MEDIUM
-	armor = ARMOR_COPPER
+	armor_class = AC_MEDIUM
+	armor = ARMOR_PADDED_GOOD
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	max_integrity = INTEGRITY_POOR
 
@@ -26,7 +26,7 @@
 	allowed_race = list("orc")
 	sellprice = NO_MARKET_VALUE
 
-	armor_class = ARMOR_CLASS_MEDIUM
+	armor_class = AC_MEDIUM
 	armor = list("melee" = 25, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	prevent_crits = ALL_EXCEPT_BLUNT

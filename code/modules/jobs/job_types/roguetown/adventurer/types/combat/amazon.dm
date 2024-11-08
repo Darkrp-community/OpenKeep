@@ -24,7 +24,7 @@
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 	neck = /obj/item/storage/belt/rogue/pouch/amazon
-	backl = /obj/item/rogueweapon/spear
+	backl = /obj/item/rogueweapon/polearm/spear
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/gun/ballistic/revolver/grenadelauncher/blowgun
