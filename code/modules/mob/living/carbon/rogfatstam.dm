@@ -1,7 +1,5 @@
 /mob/living/proc/update_rogfat() //update hud and regen after last_fatigued delay on taking
-	maxrogfat = round(100 * (rogstam/maxrogstam))
-	if(maxrogfat < 5)
-		maxrogfat = 5
+	maxrogfat = maxrogstam / 10
 
 	if(world.time > last_fatigued + 20) //regen fatigue
 		var/added = rogstam / maxrogstam
@@ -137,7 +135,7 @@
 		var/matrix/skew = matrix()
 		skew.Scale(2)
 		//skew.Translate(-224,0)
-		var/matrix/newmatrix = skew 
+		var/matrix/newmatrix = skew
 		for(var/C in hud_used.plane_masters)
 			var/atom/movable/screen/plane_master/whole_screen = hud_used.plane_masters[C]
 			if(whole_screen.plane == HUD_PLANE)
