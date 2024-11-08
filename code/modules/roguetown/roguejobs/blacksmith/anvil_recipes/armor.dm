@@ -10,8 +10,6 @@
 	recipe_name = "a mask of copper"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/clothing/mask/rogue/facemask/copper
-	createmultiple = TRUE
-	createditem_num = 0
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/copperbracers
@@ -19,8 +17,6 @@
 	recipe_name = "a couple of copper Vambraces"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/clothing/wrists/roguetown/bracers/copper
-	createmultiple = TRUE
-	createditem_num = 0
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/coppercap
@@ -28,26 +24,20 @@
 	recipe_name = "a copper cap"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/clothing/head/roguetown/helmet/coppercap
-	createmultiple = TRUE
-	createditem_num = 0
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/gorgetcopper
-	name = "Gorget"
-	recipe_name = "a Gorget made out of copper"
+	name = "Copper neck protector"
+	recipe_name = "a neck protector"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/clothing/neck/roguetown/gorget/copper
-	createmultiple = TRUE
-	createditem_num = 0
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/copperchest
-	name = "Copper heart protector (2)"
+	name = "Copper heart protector"
 	recipe_name = "a very simple armor piece for the chest"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/clothing/suit/roguetown/armor/cuirass/copperchest
-	additional_items = list(/obj/item/ingot/copper)
-	createditem_num = 0
 	craftdiff = 0
 
 // --------- IRON -----------
@@ -106,8 +96,8 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/armor/platemask
-	name = "Face mask x2"
-	recipe_name = "a pair of Face Masks"
+	name = "Face mask"
+	recipe_name = "a Face Mask"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/mask/rogue/facemask
 	createmultiple = TRUE

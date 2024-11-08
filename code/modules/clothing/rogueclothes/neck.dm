@@ -222,7 +222,7 @@
 	max_integrity = INTEGRITY_STRONG
 
 /obj/item/clothing/neck/roguetown/gorget/copper
-	name = "copper gorget"
+	name = "neck protector"
 	icon_state = "copperneck"
 	desc = "An antique and simple protection for the neck, used more as an accessory by the common folk. But poor protection is still better than nothing."
 	smeltresult = /obj/item/ingot/copper
