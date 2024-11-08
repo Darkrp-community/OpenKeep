@@ -43,7 +43,7 @@
 	beltl = /obj/item/keyring/guard
 	beltr = /obj/item/quiver/arrows
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
+	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special = 1)
 	if(prob(30))
 		head = /obj/item/clothing/head/roguetown/helmet/kettle
 	else

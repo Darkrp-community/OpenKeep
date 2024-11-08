@@ -28,7 +28,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/backpack
-	backr = /obj/item/rogueweapon/woodstaff
+	backr = /obj/item/rogueweapon/polearm/woodstaff
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
