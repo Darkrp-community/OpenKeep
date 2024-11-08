@@ -13,6 +13,14 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/iron
 
+
+//..................................................................................................................................
+/*---------------\
+|			 	 |
+|  Light Armor	 |
+|			 	 |
+\---------------*/
+
 /obj/item/clothing/neck/roguetown/coif
 	name = "leather coif"
 	desc = "A simple coif made of boiled leather, not that good as armor itself but mostly useful as padding for proper helmets."
@@ -25,16 +33,18 @@
 	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
-	body_parts_covered = NECK|HAIR|EARS|HEAD
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT)
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
-	max_integrity = 150
 	sewrepair = TRUE
 	anvilrepair = null
 	resistance_flags = FLAMMABLE // Made of leather
 	smeltresult = /obj/item/ash
+
+	armor = ARMOR_LEATHER
+	body_parts_covered = NECK|HAIR|EARS|HEAD
+	max_integrity = INTEGRITY_POOR
+	prevent_crits = CUT_AND_MINOR_CRITS
+
 
 /obj/item/clothing/neck/roguetown/coif/AdjustClothes(mob/user)
 	if(loc == user)
@@ -77,14 +87,15 @@
 	body_parts_covered = NECK|HAIR|EARS|HEAD
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
-	max_integrity = 150
 	sewrepair = TRUE
 	anvilrepair = null
 	resistance_flags = FLAMMABLE // Made of leather
 	smeltresult = /obj/item/ash
 
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	armor = ARMOR_PADDED
+	prevent_crits = MINOR_CRITICALS
+	armor = ARMOR_LEATHER_GOOD
+	max_integrity = INTEGRITY_WORST
 
 /obj/item/clothing/neck/roguetown/keffiyeh/AdjustClothes(mob/user)
 	if(loc == user)
@@ -137,28 +148,32 @@
 	name = "padded coif"
 	desc = "A simple coif made of cloth. Not very effective armor, but may soften weak blows and keeps the head and neck warm."
 	icon_state = "ccoif"
-	item_state = "ccoif"
 	flags_inv = HIDEEARS|HIDEHAIR
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
 	blocksound = SOFTHIT
-	body_parts_covered = NECK|HAIR|EARS|HEAD
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
+
+	armor = ARMOR_PADDED
+	body_parts_covered = NECK|HAIR|EARS|HEAD
+	prevent_crits = MINOR_CRITICALS
+
+
+//..................................................................................................................................
+/*---------------\
+|			 	 |
+|  Medium Armor	 |
+|			 	 |
+\---------------*/
 
 /obj/item/clothing/neck/roguetown/chaincoif
 	name = "chain coif"
 	desc = "A coif made of interwoven steel rings, made to protect against arrows and blades. \
 			Generally used as padding, but serviceable enough on its own."
 	icon_state = "chaincoif"
-	item_state = "chaincoif"
 	flags_inv = HIDEEARS|HIDEHAIR
-	armor = list("melee" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FIRE_PROOF
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
-	body_parts_covered = NECK|HAIR|EARS|HEAD
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
 	pickup_sound = 'sound/foley/equip/equip_armor_chain.ogg'
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
 	break_sound = 'sound/foley/breaksound.ogg'
@@ -167,6 +182,12 @@
 	blocksound = CHAINHIT
 	smeltresult = null
 	clothing_flags = CANT_SLEEP_IN
+
+	armor = ARMOR_MAILLE
+	body_parts_covered = NECK|HAIR|EARS|HEAD
+	max_integrity = INTEGRITY_STRONGEST
+	prevent_crits = ALL_EXCEPT_BLUNT
+
 
 /obj/item/clothing/neck/roguetown/chaincoif/AdjustClothes(mob/user)
 	if(loc == user)
@@ -195,26 +216,46 @@
 	name = "iron chain coif"
 	desc = "A chain coif made of interwoven iron rings. Affordable protection against arrows and blades, \
 			but should be used as padding rather than relied upon as armor."
-	armor = list("melee" = 60, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = null
+
+	armor = ARMOR_MAILLE_IRON
+	max_integrity = INTEGRITY_STRONG
+
+/obj/item/clothing/neck/roguetown/gorget/copper
+	name = "neck protector"
+	icon_state = "copperneck"
+	desc = "An antique and simple protection for the neck, used more as an accessory by the common folk. But poor protection is still better than nothing."
+	smeltresult = /obj/item/ingot/copper
+
+	armor = ARMOR_LEATHER_GOOD
+	max_integrity = INTEGRITY_POOR
+
+
+//..................................................................................................................................
+/*---------------\
+|			 	 |
+|  Heavy Armor	 |
+|			 	 |
+\---------------*/
 
 /obj/item/clothing/neck/roguetown/bevor
 	name = "bevor"
 	desc = "A piece of plate armor meant to protect the throat and neck of its wearer against decapitation, extending the protection of armor plates."
 	icon_state = "bervor"
 	flags_inv = HIDEFACIALHAIR
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/steel
 	equip_sound = 'sound/foley/equip/equip_armor.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	break_sound = 'sound/foley/breaksound.ogg'
-	max_integrity = 300
 	slot_flags = ITEM_SLOT_NECK
-	body_parts_covered = NECK|EARS|MOUTH|NOSE
-	// Realistically, it should also prevent stab crits. But for balance purposes let's not powercreep chainmail coifs for that purpose.
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
 	clothing_flags = CANT_SLEEP_IN
+
+	armor_class = AC_HEAVY
+	armor = ARMOR_PLATE
+	body_parts_covered = NECK|EARS|MOUTH|NOSE
+	max_integrity = INTEGRITY_STRONGEST
+	prevent_crits = ALL_EXCEPT_STAB
 
 /obj/item/clothing/neck/roguetown/gorget
 	name = "gorget"
@@ -222,27 +263,30 @@
 	desc = "An affordable piece of iron armor meant to protect one's neck against chopping. \
 			Fits comfortably beneath chest armor, despite its weight."
 	flags_inv = HIDEFACIALHAIR
-	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	max_integrity = 150
 	resistance_flags = FIRE_PROOF
 	slot_flags = ITEM_SLOT_NECK
-	body_parts_covered = NECK
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
-	clothing_flags = CANT_SLEEP_IN
 	equip_sound = 'sound/foley/equip/equip_armor.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	break_sound = 'sound/foley/breaksound.ogg'
 	smeltresult = /obj/item/ingot/iron
+	clothing_flags = CANT_SLEEP_IN
+
+	armor_class = AC_HEAVY
+	armor = ARMOR_PLATE_BAD
+	body_parts_covered = NECK
+	max_integrity = INTEGRITY_STRONG
+	prevent_crits = ALL_EXCEPT_STAB
 
 /obj/item/clothing/neck/roguetown/gorget/hoplite // Better than an iron gorget, not quite as good as a steel bevor
-	name = "ancient gorget"
-	desc = "A heavy collar of bronze alloy, meant to protect the neck."
+	name = "bronze gorget"
+	desc = "A heavy collar of great age, meant to protect the neck."
 	icon_state = "aasimarneck"
-	item_state = "aasimarneck"
-	armor = list("melee" = 90, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	max_integrity = 250
 	smeltresult = null // No bronze ingots yet
+	armor = ARMOR_MAILLE_GOOD
+
+
+
 
 // PSYCROSSES
 
@@ -408,13 +452,7 @@
 	item_state = "surgcollar"
 	sellprice = 15
 
-/obj/item/clothing/neck/roguetown/gorget/copper
-	name = "copper gorget"
-	icon_state = "copperneck"
-	desc = "An antique and simple protection for the neck, used more as an accessory by the common folk. But poor protection is still better than nothing."
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	max_integrity = 100
-	smeltresult = /obj/item/ingot/copper
+
 
 /obj/item/clothing/neck/roguetown/mercmedal
 	name = "mercenary medal"

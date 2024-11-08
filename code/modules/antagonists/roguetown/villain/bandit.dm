@@ -84,7 +84,7 @@
 	var/classchoice = input("Choose your background", "Available backgrounds") as anything in classes
 
 	switch(classchoice)
-	
+
 		if("Deserter") //well armored, polearm skill, shield skill. The heavy melee class.
 			H.set_blindness(0)
 			to_chat(H, span_warning("You were once a soldier employed under a lord, and left illegally. You're capable with armor, shields, and polearms."))
@@ -225,7 +225,7 @@
 					armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 
 			if(H.age == AGE_OLD) //old brigands have been in the business for so long that they have managed to pick up some better gear along the way
-				armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+				armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 				mask = /obj/item/clothing/mask/rogue/facemask
 
 			switch(pick(1,2,3,4))
@@ -288,7 +288,7 @@
 		else
 			to_chat(world, "[the_name] was a bandit. He stole [amt] triumphs worth of loot.")
 	return
-/* 
+/*
 	var/traitorwin = TRUE
 
 	var/count = 0
