@@ -1,5 +1,5 @@
 /obj/item/rogueweapon/whip
-	force = 20
+	force = 25
 	possible_item_intents = list(/datum/intent/whip/crack, /datum/intent/whip/lash)
 	name = "whip"
 	desc = "A leather whip, intertwining rope, leather and a fanged tip to inflict enormous pain. Favored by slavers and beast-tamers."
@@ -32,14 +32,74 @@
 
 
 /obj/item/rogueweapon/whip/antique
-	force = 25
+	force = 28
 	name = "Repenta En"
-	desc = "An extremely well maintained whip, with a polished steel tip and gilded handle"
+	desc = "An extremely well maintained whip, with a polished silver tip and gilded handle."
 	minstr = 7
 	icon_state = "gwhip"
 	resistance_flags = FIRE_PROOF
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 50
+
+/obj/item/rogueweapon/whip/antique/pickup(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(ishuman(H))
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
+			H.Knockdown(30)
+			H.adjustFireLoss(40)
+			H.fire_act(1,5)
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
+			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
+				H.Knockdown(10)
+
+/obj/item/rogueweapon/whip/antique/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
+	if(world.time < src.last_used + 100)
+		to_chat(user, "<span class='notice'>The silver effect is on cooldown.</span>")
+		return
+
+	. = ..()
+	if(ishuman(target))
+		var/mob/living/carbon/human/s_user = user
+		var/mob/living/carbon/human/H = target
+		var/datum/antagonist/vampirelord/lesser/V = FALSE
+		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+			V = H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+		var/datum/antagonist/vampirelord/V_lord = FALSE
+		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/))
+			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(V)
+			if(V.disguised)
+				H.visible_message("<font color='white'>The silver weapon undoes [H]'s wicked disguise!</font>")
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(40)
+				H.Knockdown(30)
+				H.fire_act(1,5)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+				src.last_used = world.time
+			else
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(40)
+				H.Knockdown(30)
+				H.fire_act(1,5)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+				src.last_used = world.time
+		if(V_lord)
+			if(V_lord.vamplevel < 4 && !V)
+				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
+				H.adjustFireLoss(30)
+				H.Knockdown(20)
+				H.fire_act(1,4)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse) // Lesser curse applied still
+				src.last_used = world.time
+			if(V_lord.vamplevel == 4 && !V)
+				if(prob(25))
+					H.fire_act(1,3)
+				to_chat(s_user, "<font color='red'> The silver weapon barely works against such an abomination!</font>")
+				H.visible_message(H, "<span class='userdanger'>This feeble metal can't stop me, I HAVE TRANSCENDED!</span>")
 
 
 /datum/intent/whip/lash
