@@ -23,6 +23,7 @@
 	wdefense = MEDIOCHRE_PARRY
 	wbalance = HARD_TO_DODGE
 	smeltresult = /obj/item/ingot/steel
+	sharpness = IS_SHARP
 	sellprice = 30
 
 /obj/item/rogueweapon/knife/getonmobprop(tag)
