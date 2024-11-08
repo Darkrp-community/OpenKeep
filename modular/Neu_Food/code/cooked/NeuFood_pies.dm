@@ -254,7 +254,7 @@
 			qdel(I)
 			return
 
-	if(istype(I, /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison))
+	if(istype(I, /obj/item/reagent_containers/food/snacks/produce/jacksberry/poison))
 		if (process_step > 4)
 			return
 		playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
@@ -283,7 +283,7 @@
 			qdel(I)
 			return
 
-	else if(istype(I, /obj/item/reagent_containers/food/snacks/produce/berries/rogue))
+	else if(istype(I, /obj/item/reagent_containers/food/snacks/produce/jacksberry))
 		if (process_step > 4)
 			return
 		playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
