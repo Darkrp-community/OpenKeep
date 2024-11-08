@@ -2063,7 +2063,7 @@
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/indoors/town/manor)
 "clY" = (
-/obj/structure/fluff/clock,
+/obj/structure/fluff/wallclock,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/tavern)
 "cms" = (
@@ -13775,9 +13775,7 @@
 /area/rogue/indoors/town/manor)
 "pco" = (
 /obj/machinery/light/rogue/wallfire/candle,
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
-	},
+/obj/structure/table/wood/plain,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -21162,7 +21160,7 @@
 /obj/structure/fluff/railing/border{
 	dir = 8
 	},
-/turf/open/floor/rogue/tile/tilerg,
+/turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/tavern)
 "xqJ" = (
 /obj/structure/chair/bench/coucha/r,
@@ -55486,7 +55484,7 @@ jKq
 qjV
 rVN
 rVN
-tvQ
+vjs
 ycL
 vum
 wQi
@@ -78566,9 +78564,9 @@ sUi
 sUi
 hRn
 qwa
-oiP
-oiP
-oiP
+aCf
+aCf
+aCf
 aEi
 bit
 oTc
@@ -78723,9 +78721,9 @@ wXr
 wXr
 hkH
 vQk
-oiP
-oiP
-oiP
+aCf
+aCf
+aCf
 vQk
 vYc
 oTc
@@ -80129,7 +80127,7 @@ tfO
 oiP
 oiP
 oiP
-oiP
+sjf
 xvr
 vGy
 sUi
@@ -80286,7 +80284,7 @@ tfO
 oiP
 oiP
 oiP
-oiP
+sjf
 lWk
 psV
 sUi
@@ -81550,9 +81548,9 @@ muD
 vQk
 gaU
 vQk
-nfu
-nfu
 clY
+nfu
+nfu
 vQk
 vwE
 mPS
@@ -82176,11 +82174,11 @@ oiP
 oiP
 oiP
 oiP
-oiP
-oiP
-oiP
-oiP
-oiP
+xRY
+xRY
+xRY
+xRY
+xRY
 oiP
 oiP
 oiP
