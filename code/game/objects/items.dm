@@ -121,7 +121,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	//If you want to have something unrelated to blocking/armour piercing etc. Maybe not needed, but trying to think ahead/allow more freedom
 	var/hit_reaction_chance = 0
 	// Number of tiles for how far this weapon can reach. 1 is adjacent (default)
-	var/reach = 1 
+	var/reach = 1
 
 	//The list of slots by priority. equip_to_appropriate_slot() uses this list. Doesn't matter if a mob type doesn't have a slot.
 	var/list/slot_equipment_priority = null // for default list, see /mob/proc/equip_to_appropriate_slot()
@@ -169,7 +169,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	var/wlength = WLENGTH_NORMAL		//each weapon length class has its own inherent dodge properties
 	var/wbalance = 0
-	var/wdefense = 0 //better at defending
+	var/wdefense = 0 //better at defending. Each points gives a flat 10% bonus to parry
 	var/minstr = 0  //for weapons
 
 	var/sleeved = null
@@ -223,7 +223,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	var/list/onprop = list()
 	var/force_reupdate_inhand = TRUE
-	
+
 	// Boolean sanity var for smelteries to avoid runtimes. Is this is a bar smelted through ore for exp gain?
 	var/smelted = FALSE
 	// Can this be used against a training dummy to learn skills? Prevents dumb exploits.
@@ -238,7 +238,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if(!pixel_x && !pixel_y && !bigboy)
 		pixel_x = rand(-5,5)
 		pixel_y = rand(-5,5)
-	
+
 	if(twohands_required)
 		has_inspect_verb = TRUE
 	// Initalize addon for the var for custom inhands 32x32.

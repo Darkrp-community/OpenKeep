@@ -33,7 +33,7 @@
 		belt = /obj/item/storage/belt/rogue/leather
 		backl = /obj/item/fishingrod
 		beltr = /obj/item/cooking/pan
-		beltl = /obj/item/rogueweapon/huntingknife
+		beltl = /obj/item/rogueweapon/knife/hunting
 		backpack_contents = list(/obj/item/natural/worms = 2,/obj/item/rogueweapon/shovel/small=1)
 		if(H.mind)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
@@ -61,7 +61,7 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 		belt = /obj/item/storage/belt/rogue/leather
 		beltr = /obj/item/fishingrod
-		beltl = /obj/item/rogueweapon/huntingknife
+		beltl = /obj/item/rogueweapon/knife/hunting
 		backpack_contents = list(/obj/item/natural/worms = 2,/obj/item/rogueweapon/shovel/small=1)
 		if(H.mind)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
