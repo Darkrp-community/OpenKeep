@@ -117,14 +117,14 @@
 			if(V.disguised)
 				H.visible_message("<font color='white'>The silver weapon undoes [H]'s wicked disguise!</font>")
 				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(40)
+				H.adjustFireLoss(30)
 				H.Knockdown(30)
 				H.fire_act(1,5)
 				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
 				src.last_used = world.time
 			else
 				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(40)
+				H.adjustFireLoss(30)
 				H.Knockdown(30)
 				H.fire_act(1,5)
 				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
@@ -132,7 +132,7 @@
 		if(V_lord)
 			if(V_lord.vamplevel < 4 && !V)
 				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(30)
+				H.adjustFireLoss(20)
 				H.Knockdown(20)
 				H.fire_act(1,4)
 				H.apply_status_effect(/datum/status_effect/debuff/silver_curse) // Lesser curse applied still
@@ -142,6 +142,10 @@
 					H.fire_act(1,3)
 				to_chat(s_user, "<font color='red'> The silver weapon barely works against such an abomination!</font>")
 				H.visible_message(H, "<span class='userdanger'>This feeble metal can't stop me, I HAVE TRANSCENDED!</span>")
+			return
+	if((target.mob_biotypes & MOB_UNDEAD))
+		target.adjustFireLoss(25)
+		return
 
 //................ Lashkiss Whip ............... //
 /obj/item/rogueweapon/whip/spiderwhip

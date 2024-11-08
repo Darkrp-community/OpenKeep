@@ -252,14 +252,12 @@
 			if(V.disguised)
 				H.visible_message("<font color='white'>The silver weapon manifests the [H] curse!</font>")
 				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(20)
 				H.Knockdown(20)
 				H.fire_act(1,4)
 				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
 				src.last_used = world.time
 			else
 				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(20)
 				H.Knockdown(20)
 				H.fire_act(1,4)
 				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
@@ -267,7 +265,6 @@
 		if(V_lord)
 			if(V_lord.vamplevel < 4 && !V)
 				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(15)
 				H.Knockdown(10)
 				H.fire_act(1,4)
 				src.last_used = world.time
