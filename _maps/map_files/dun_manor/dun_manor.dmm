@@ -1382,11 +1382,15 @@
 	lockid = "butler"
 	},
 /obj/item/alch/earthdust,
+/obj/item/alch/earthdust,
 /obj/item/alch/firedust,
-/obj/item/alch/magicdust,
+/obj/item/alch/firedust,
+/obj/item/alch/waterdust,
 /obj/item/alch/waterdust,
 /obj/item/alch/airdust,
-/obj/item/alch/feaudust,
+/obj/item/alch/airdust,
+/obj/item/alch/runedust,
+/obj/item/alch/runedust,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "biU" = (
@@ -2148,14 +2152,16 @@
 "bZm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/roguecloset/dark,
+/obj/item/alch/waterdust,
+/obj/item/alch/waterdust,
 /obj/item/alch/earthdust,
-/obj/item/alch/airdust,
-/obj/item/alch/waterdust,
-/obj/item/alch/waterdust,
+/obj/item/alch/earthdust,
 /obj/item/alch/firedust,
-/obj/item/alch/magicdust,
-/obj/item/alch/bone,
-/obj/item/alch/sinew,
+/obj/item/alch/firedust,
+/obj/item/alch/airdust,
+/obj/item/alch/airdust,
+/obj/item/alch/runedust,
+/obj/item/alch/runedust,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -4193,12 +4199,22 @@
 "dVM" = (
 /obj/structure/closet/crate/chest/crate,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/alch/waterdust,
-/obj/item/alch/earthdust,
-/obj/item/alch/firedust,
-/obj/item/alch/airdust,
+/obj/item/alch/sinew,
+/obj/item/alch/sinew,
 /obj/item/alch/sinew,
 /obj/item/alch/bone,
+/obj/item/alch/bone,
+/obj/item/alch/bone,
+/obj/item/alch/airdust,
+/obj/item/alch/airdust,
+/obj/item/alch/earthdust,
+/obj/item/alch/earthdust,
+/obj/item/alch/firedust,
+/obj/item/alch/firedust,
+/obj/item/alch/waterdust,
+/obj/item/alch/waterdust,
+/obj/item/alch/magicdust,
+/obj/item/alch/magicdust,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "dVP" = (
@@ -4449,7 +4465,6 @@
 /area/rogue/indoors/town/dwarfin)
 "ehD" = (
 /obj/structure/closet/crate/roguecloset/dark,
-/obj/item/reagent_containers/glass/bottle/formaldehyde,
 /obj/item/reagent_containers/powder/spice,
 /obj/item/reagent_containers/powder/spice,
 /obj/item/reagent_containers/food/snacks/produce/swampweed_dried,
@@ -5507,6 +5522,9 @@
 /obj/item/reagent_containers/powder/spice,
 /obj/item/reagent_containers/powder/spice,
 /obj/item/neuFarm/seed/poppy,
+/obj/item/natural/chaff/wheat,
+/obj/item/natural/chaff/wheat,
+/obj/item/clothing/mask/cigarette/pipe/crafted,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
 "fmZ" = (
@@ -5942,17 +5960,22 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
 "fKY" = (
-/obj/item/reagent_containers/food/snacks/produce/apple,
-/obj/item/reagent_containers/food/snacks/produce/apple,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/chest/neu,
 /obj/item/reagent_containers/food/snacks/produce/apple,
-/obj/item/reagent_containers/food/snacks/produce/wheat,
-/obj/item/reagent_containers/food/snacks/produce/wheat,
-/obj/item/reagent_containers/food/snacks/produce/wheat,
+/obj/item/reagent_containers/food/snacks/produce/apple,
+/obj/item/reagent_containers/food/snacks/produce/apple,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /obj/item/reagent_containers/powder/salt,
+/obj/item/alch/sinew,
+/obj/item/alch/sinew,
+/obj/item/alch/sinew,
+/obj/item/alch/bone,
+/obj/item/alch/bone,
+/obj/item/alch/bone,
+/obj/item/natural/chaff/wheat,
+/obj/item/natural/chaff/wheat,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -12243,9 +12266,9 @@
 /obj/structure/rack/rogue,
 /obj/item/reagent_containers/glass/bottle/rogue/manapot,
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot,
+/obj/item/reagent_containers/glass/bottle,
+/obj/item/reagent_containers/glass/bottle,
 /obj/item/reagent_containers/glass/bucket/wooden,
-/obj/item/reagent_containers/glass/bottle,
-/obj/item/reagent_containers/glass/bottle,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -23884,6 +23907,12 @@
 /obj/structure/closet/crate/coffin,
 /obj/item/alch/bone,
 /obj/item/alch/bone,
+/obj/item/alch/bone,
+/obj/item/alch/sinew,
+/obj/item/alch/sinew,
+/obj/item/alch/sinew,
+/obj/item/natural/chaff/wheat,
+/obj/item/natural/chaff/wheat,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "xtI" = (
