@@ -945,6 +945,20 @@
 						/turf/open/floor/rogue/snow/patchy,
 						/turf/open/floor/rogue/snow/rough)
 
+/turf/open/floor/rogue/cobble/alt
+	icon_state = "cobblestonealt1"
+
+/turf/open/floor/rogue/cobble/alt/Initialize()
+	. = ..()
+	icon_state = "cobblestonealt[rand(1,3)]"
+
+/turf/open/floor/rogue/cobblerock/alt
+	icon_state = "cobblealt"
+
+/obj/effect/decal/cobbleedge/alt
+	icon_state = "cobblestonealt_edges"
+
+
 /*	..................   Miscellany   ................... */
 /turf/open/floor/rogue/tile/masonic
 	icon_state = "masonic"
