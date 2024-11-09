@@ -53,18 +53,23 @@
 
 /obj/item/clothing/suit/roguetown/shirt/robe/eora
 	name = "eoran robe"
-	desc = "Holy robes, intended for use by followers of Eora"
+	desc = "The cloth of a follower of Eora."
 	icon_state = "eorarobes"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/eora/alt
 	name = "eoran straps"
-	desc = "Sanctified, form fitting straps. Used by more radical followers of the Eoran Church"
+	desc = "Sanctified, form fitting straps. Used by more radical followers of Eora."
 	icon_state = "eorastraps"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/necra
 	name = "mourning robe"
 	desc = "Black robes which cover the body not unlike those in depictions of the Carriageman himself."
 	icon_state = "necrarobe"
+
+/obj/item/clothing/suit/roguetown/shirt/robe/malum
+	name = "craftsman robe"
+	desc = "A sturdy robe worn by followers of Malum."
+	icon_state = "malumtabard"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	name = "solar vestments"
