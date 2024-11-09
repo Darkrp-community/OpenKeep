@@ -1920,13 +1920,6 @@
 /obj/machinery/anvil,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/dwarfin)
-"chq" = (
-/obj/structure/rack/rogue,
-/obj/item/reagent_containers/glass/bottle/vial/conpot,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "horzw"
-	},
-/area/rogue/indoors/town/magician)
 "chM" = (
 /obj/effect/decal/cobbleedge{
 	dir = 9
@@ -2597,6 +2590,13 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)
+"cVe" = (
+/obj/structure/rack/rogue,
+/obj/item/reagent_containers/glass/bottle/rogue/strongmanapot,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "horzw"
+	},
+/area/rogue/indoors/town/magician)
 "cVh" = (
 /obj/effect/landmark/start/butler,
 /obj/structure/bed/rogue/hay,
@@ -4791,13 +4791,6 @@
 /obj/structure/flora/roguetree/burnt,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
-"ftM" = (
-/obj/structure/rack/rogue,
-/obj/item/reagent_containers/glass/bottle/vial/intpot,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "horzw"
-	},
-/area/rogue/indoors/town/magician)
 "ftR" = (
 /obj/structure/table/wood,
 /obj/item/ship_in_a_bottle,
@@ -6082,6 +6075,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
+"gNn" = (
+/obj/structure/rack/rogue,
+/obj/item/reagent_containers/glass/bottle/vial/conpot,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "horzw"
+	},
+/area/rogue/indoors/town/magician)
 "gNr" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
@@ -6873,6 +6873,7 @@
 /obj/item/neuFarm/seed/westleach,
 /obj/item/neuFarm/seed/westleach,
 /obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/sunflower,
 /turf/open/floor/rogue/ruinedwood{
 	dir = 1;
 	icon_state = "vertw"
@@ -9440,7 +9441,8 @@
 "kGu" = (
 /obj/structure/mineral_door/wood{
 	icon_state = "wcr";
-	lockid = "sheriff"
+	lockid = "sheriff";
+	name = "Roof Access"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
@@ -9807,13 +9809,6 @@
 /obj/item/clothing/under/roguetown/tights/black,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town)
-"lem" = (
-/obj/structure/rack/rogue,
-/obj/item/reagent_containers/glass/bottle/rogue/strongmanapot,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "horzw"
-	},
-/area/rogue/indoors/town/magician)
 "lfg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood{
@@ -19293,6 +19288,13 @@
 /obj/item/cooking/platter,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"vOY" = (
+/obj/structure/rack/rogue,
+/obj/item/reagent_containers/glass/bottle/vial/intpot,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "horzw"
+	},
+/area/rogue/indoors/town/magician)
 "vOZ" = (
 /obj/structure/chair/wood/rogue/fancy,
 /turf/open/floor/rogue/wood,
@@ -108387,7 +108389,7 @@ qaY
 jYf
 icd
 icd
-ftM
+vOY
 cTX
 cTX
 iFl
@@ -108698,8 +108700,8 @@ gAw
 iiw
 icd
 ued
-lem
-chq
+cVe
+gNn
 iiw
 wpL
 wpL
