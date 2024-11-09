@@ -67,6 +67,13 @@
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/green
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
+		if("Malum")
+			head = /obj/item/clothing/head/roguetown/roguehood/brown
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/malum
+			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
+			pants = /obj/item/clothing/under/roguetown/tights/black
+			shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/roguehood/random
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver
@@ -86,6 +93,11 @@
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
+		if("Pestra")
+			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 4, TRUE)
+		if("Malum")
+			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 2) // For casting lots of spells, and working long hours without sleep at the church
 		H.change_stat("perception", -1)
