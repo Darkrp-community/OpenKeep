@@ -293,3 +293,6 @@
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 120
 	update_icon()
+
+/obj/structure/roguemachine/vendor/nitemaster
+	keycontrol = "niteman"
