@@ -41,6 +41,8 @@
 
 /turf/open/floor/rogue/ruinedwood/spiral
 	icon_state = "weird1"
+/turf/open/floor/rogue/ruinedwood/spiralfade
+	icon_state = "weird3"
 /turf/open/floor/rogue/ruinedwood/chevron
 	icon_state = "weird2"
 
@@ -1111,6 +1113,9 @@
 
 /turf/open/floor/rogue/carpet/lord/right
 	icon_state = "carpet_r"
+
+/turf/open/floor/rogue/carpet/green
+	icon_state = "carpet_inn"
 
 /turf/open/floor/rogue/shroud
 	name = "treetop"
