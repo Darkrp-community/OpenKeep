@@ -88,6 +88,10 @@
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/open/floor/rogue/wood/nosmooth,/turf/open/floor/carpet)
 
+/turf/open/floor/rogue/wood/nosmooth/saiga
+	smooth_icon = 'icons/turf/floors/woodalt.dmi'
+	canSmoothWith = list(/turf/open/floor/rogue/wood/nosmooth/saiga,/turf/open/floor/carpet)
+
 /turf/open/floor/rogue/woodturned
 	smooth_icon = 'icons/turf/floors/wood_turned.dmi'
 	icon_state = "wooden_floor2t"
@@ -102,6 +106,10 @@
 	icon_state = "wooden_floort"
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/open/floor/rogue/woodturned/nosmooth,/turf/open/floor/carpet)
+
+/turf/open/floor/rogue/woodturned/nosmooth/saiga
+	smooth_icon = 'icons/turf/floors/woodalt.dmi'
+	canSmoothWith = list(/turf/open/floor/rogue/woodturned/nosmooth/saiga,/turf/open/floor/carpet)
 
 /turf/open/floor/rogue/rooftop
 	name = "roof"
@@ -1122,3 +1130,7 @@
 
 /turf/open/floor/rogue/plank/h
 	icon_state = "plank2"
+
+/turf/open/floor/rogue/tile/checker_green
+	icon_state = "tile"
+	color = "#94df5b"
