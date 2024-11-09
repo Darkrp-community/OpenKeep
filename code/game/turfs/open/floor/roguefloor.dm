@@ -110,7 +110,7 @@
 	canSmoothWith = list(/turf/open/floor/rogue/woodturned/nosmooth,/turf/open/floor/carpet)
 
 /turf/open/floor/rogue/woodturned/nosmooth/saiga
-	smooth_icon = 'icons/turf/floors/woodalt.dmi'
+	smooth_icon = 'icons/turf/floors/woodalt_turned.dmi'
 	canSmoothWith = list(/turf/open/floor/rogue/woodturned/nosmooth/saiga,/turf/open/floor/carpet)
 
 /turf/open/floor/rogue/rooftop
