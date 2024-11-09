@@ -4442,9 +4442,11 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/tavern)
 "eQx" = (
-/obj/machinery/light/rogue/firebowl,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/town/roofs)
+/obj/structure/closet/crate/drawer/inn{
+	pixel_y = 9
+	},
+/turf/open/floor/carpet/red,
+/area/rogue/indoors/town/tavern)
 "eRi" = (
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/cobblerock,
@@ -4607,6 +4609,10 @@
 	icon_state = "linoleum"
 	},
 /area/rogue/indoors/town/vault)
+"eZX" = (
+/obj/structure/flora/roguegrass/thorn_bush,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/rtfield)
 "fak" = (
 /obj/structure/fluff/statue/gargoyle/moss,
 /turf/open/floor/rogue/dirt,
@@ -5729,12 +5735,6 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
-"guF" = (
-/obj/structure/closet/crate/drawer/inn{
-	pixel_y = 9
-	},
-/turf/open/floor/carpet/red,
-/area/rogue/indoors/town/tavern)
 "guT" = (
 /obj/structure/bars/pipe{
 	dir = 1
@@ -8648,7 +8648,9 @@
 	lockid = "tavern";
 	name = "Kitchen"
 	},
-/turf/open/floor/rogue/blocks/stonered,
+/turf/open/floor/rogue/tile{
+	icon_state = "tavern"
+	},
 /area/rogue/indoors/town/tavern)
 "jKR" = (
 /obj/structure/chair/wood/rogue{
@@ -10899,6 +10901,10 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors/town/shop)
+"mfR" = (
+/obj/structure/fluff/traveltile/inhumen,
+/turf/open/water/swamp,
+/area/rogue/outdoors/rtfield)
 "mgu" = (
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/dwarfin)
@@ -14778,7 +14784,6 @@
 /area/rogue/under/town/basement)
 "qjV" = (
 /obj/structure/table/wood,
-/obj/structure/bars/alt,
 /obj/structure/bars/passage/shutter{
 	redstone_id = "warehouse_inn01"
 	},
@@ -16245,7 +16250,9 @@
 	locked = 1;
 	lockid = "tavern"
 	},
-/turf/open/floor/rogue/blocks/stonered,
+/turf/open/floor/rogue/tile{
+	icon_state = "tavern"
+	},
 /area/rogue/indoors/town/tavern)
 "rRG" = (
 /obj/machinery/light/rogue/torchholder{
@@ -20023,6 +20030,10 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
+"wbH" = (
+/obj/machinery/light/rogue/firebowl,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/town/roofs)
 "wbS" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -57214,7 +57225,7 @@ bNX
 nfu
 lci
 vjs
-ntM
+vuz
 mUe
 owC
 iKX
@@ -65909,6 +65920,8 @@ uGB
 awA
 awA
 uGB
+jSD
+jSD
 uGB
 uGB
 uGB
@@ -65918,9 +65931,7 @@ uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
+jSD
 uGB
 uGB
 uGB
@@ -66059,27 +66070,27 @@ uGB
 uGB
 uGB
 uGB
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
 uGB
+jSD
+uGB
+uGB
+uGB
+uGB
+jSD
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
+jSD
+jSD
 uGB
 uGB
 uGB
@@ -66102,7 +66113,7 @@ rSN
 jSD
 fLk
 fLk
-jSD
+eZX
 bFf
 bFf
 "}
@@ -66216,27 +66227,27 @@ uGB
 uGB
 uGB
 uGB
+jSD
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
+jSD
+jSD
 uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
+jSD
+jSD
 uGB
 uGB
 uGB
@@ -66259,8 +66270,8 @@ bFf
 bFf
 bFf
 bFf
-bFf
-bFf
+uGB
+uGB
 bFf
 "}
 (128,1,2) = {"
@@ -66371,6 +66382,17 @@ uGB
 uGB
 uGB
 uGB
+jSD
+uGB
+uGB
+uGB
+uGB
+uGB
+uGB
+uGB
+uGB
+jSD
+jSD
 uGB
 uGB
 uGB
@@ -66386,18 +66408,7 @@ uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
+jSD
 jSD
 jSD
 jSD
@@ -66415,9 +66426,9 @@ bFf
 bFf
 bFf
 bFf
-bFf
-bFf
-bFf
+uGB
+uGB
+uGB
 bFf
 "}
 (129,1,2) = {"
@@ -66528,6 +66539,17 @@ uGB
 uGB
 uGB
 uGB
+jSD
+jSD
+uGB
+uGB
+uGB
+uGB
+uGB
+uGB
+uGB
+uGB
+jSD
 uGB
 uGB
 uGB
@@ -66543,18 +66565,7 @@ uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
+jSD
 jSD
 jXY
 jSD
@@ -66571,9 +66582,9 @@ bFf
 bFf
 bFf
 bFf
-bFf
-bFf
-bFf
+uGB
+uGB
+uGB
 bFf
 bFf
 "}
@@ -66680,6 +66691,23 @@ jSD
 rSN
 fLk
 jSD
+jSD
+jSD
+jSD
+uGB
+uGB
+uGB
+uGB
+uGB
+uGB
+uGB
+jSD
+uGB
+uGB
+uGB
+uGB
+jSD
+jSD
 uGB
 uGB
 uGB
@@ -66692,25 +66720,8 @@ uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
+jSD
+jSD
 uGB
 jSD
 jSD
@@ -66728,8 +66739,8 @@ bFf
 bFf
 bFf
 bFf
-bFf
-bFf
+uGB
+uGB
 bFf
 bFf
 bFf
@@ -66838,29 +66849,29 @@ fLk
 fLk
 jSD
 uGB
+jSD
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
 uGB
+jSD
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
+jSD
+jSD
 uGB
 uGB
 uGB
@@ -66885,8 +66896,8 @@ bFf
 bFf
 bFf
 bFf
-bFf
-bFf
+uGB
+uGB
 bFf
 bFf
 bFf
@@ -67010,15 +67021,15 @@ uGB
 uGB
 uGB
 uGB
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
+jSD
+jSD
 uGB
 uGB
 uGB
@@ -67043,9 +67054,9 @@ bFf
 bFf
 bFf
 bFf
-bFf
-bFf
-bFf
+uGB
+uGB
+mfR
 bFf
 "}
 (133,1,2) = {"
@@ -67165,16 +67176,16 @@ uGB
 uGB
 uGB
 uGB
+jSD
+jSD
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
-uGB
+jSD
 uGB
 uGB
 uGB
@@ -67200,9 +67211,9 @@ bFf
 bFf
 bFf
 bFf
-bFf
-bFf
-bFf
+uGB
+uGB
+mfR
 bFf
 "}
 (134,1,2) = {"
@@ -67322,22 +67333,22 @@ uGB
 uGB
 uGB
 uGB
+jSD
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
 uGB
+jSD
+jSD
 uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
+jSD
+jSD
 uGB
 uGB
 uGB
@@ -67465,6 +67476,24 @@ jSD
 jSD
 fLk
 uca
+jSD
+uGB
+uGB
+uGB
+uGB
+jSD
+jSD
+uGB
+uGB
+uGB
+uGB
+uGB
+uGB
+uGB
+jSD
+jSD
+jSD
+jSD
 uGB
 uGB
 uGB
@@ -67476,26 +67505,8 @@ uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
+jSD
+jSD
 uGB
 uGB
 uGB
@@ -67622,6 +67633,24 @@ jSD
 jSD
 fLk
 fLk
+jSD
+uGB
+uGB
+uGB
+jSD
+jSD
+jSD
+uGB
+uGB
+jSD
+uGB
+uGB
+uGB
+uGB
+uGB
+uGB
+uGB
+jSD
 uGB
 uGB
 uGB
@@ -67633,25 +67662,7 @@ uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
+jSD
 uGB
 uGB
 uGB
@@ -67783,28 +67794,28 @@ uGB
 uGB
 uGB
 uGB
+jSD
+jSD
+jSD
+uGB
+jSD
+jSD
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
 uGB
+jSD
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
-uGB
+jSD
 uGB
 uGB
 uGB
@@ -67954,15 +67965,15 @@ uGB
 uGB
 uGB
 uGB
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
-uGB
+jSD
+jSD
+jSD
 uGB
 uGB
 uGB
@@ -68100,7 +68111,7 @@ uGB
 uGB
 uGB
 uGB
-uGB
+jSD
 uGB
 uGB
 uGB
@@ -68111,16 +68122,16 @@ uGB
 uGB
 uGB
 uGB
+jSD
+jSD
 uGB
 uGB
 uGB
 uGB
 uGB
-uGB
-uGB
-uGB
-uGB
-uGB
+jSD
+jSD
+jSD
 uGB
 uGB
 uGB
@@ -68408,7 +68419,7 @@ bFf
 jSD
 jSD
 uGB
-uGB
+jSD
 uGB
 uGB
 uGB
@@ -68566,11 +68577,11 @@ bFf
 bFf
 uGB
 uGB
+jSD
 uGB
 uGB
 uGB
-uGB
-uGB
+jSD
 uca
 uca
 uGB
@@ -68723,7 +68734,7 @@ bFf
 bFf
 uGB
 uGB
-uGB
+jSD
 uGB
 uGB
 uca
@@ -79828,7 +79839,7 @@ sUi
 hRn
 vQk
 xRO
-guF
+aNW
 aEi
 oiP
 aWn
@@ -80133,7 +80144,7 @@ xvr
 vGy
 sUi
 sUi
-gaU
+sUi
 xKa
 bRH
 nXZ
@@ -80141,7 +80152,7 @@ nNL
 bzP
 sUi
 vQk
-aNW
+eQx
 aNW
 vQk
 oiP
@@ -80604,7 +80615,7 @@ erZ
 lun
 vQk
 sUi
-gaU
+sUi
 alz
 iaM
 wKg
@@ -105885,7 +105896,7 @@ sjf
 sjf
 rJt
 oPY
-oPY
+wbH
 oPY
 kQf
 fJn
@@ -106199,7 +106210,7 @@ oiP
 sjf
 rJt
 veN
-eQx
+oPY
 veN
 kQf
 fJn
