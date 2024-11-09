@@ -304,4 +304,3 @@
 	if(istype(other, /datum/wound/scarring) && (type == other.type))
 		return FALSE
 	return TRUE
-	
