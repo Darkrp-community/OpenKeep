@@ -958,6 +958,13 @@
 /obj/effect/decal/cobbleedge/alt
 	icon_state = "cobblestonealt_edges"
 
+/turf/open/floor/rogue/cobble/mossy/alt
+	icon_state = "mossystonealt1"
+
+/turf/open/floor/rogue/cobble/mossy/alt/Initialize()
+	. = ..()
+	icon_state = "mossystonealt[rand(1,3)]"
+
 
 /*	..................   Miscellany   ................... */
 /turf/open/floor/rogue/tile/masonic
