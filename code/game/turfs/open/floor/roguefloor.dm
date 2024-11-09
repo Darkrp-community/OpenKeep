@@ -1083,6 +1083,9 @@
 /turf/open/floor/rogue/carpet/lord/right
 	icon_state = "carpet_r"
 
+/turf/open/floor/rogue/carpet/green
+	icon_state = "carpet_inn"
+
 /turf/open/floor/rogue/shroud
 	name = "treetop"
 	icon_state = "treetop1"
