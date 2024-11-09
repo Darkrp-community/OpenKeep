@@ -2,15 +2,16 @@
 /datum/component/footstep
 	///How many steps the parent has taken since the last time a footstep was played.
 	var/steps = 0
-	///Volume determines the extra volume of the footstep. This is multiplied by the base volume, should there be one.
+	///volume determines the extra volume of the footstep. This is multiplied by the base volume, should there be one.
 	var/volume
-	///E_range stands for extra range - aka how far the sound can be heard. This is added to the base value and ignored if there isn't a base value.
+	///e_range stands for extra range - aka how far the sound can be heard. This is added to the base value and ignored if there isn't a base value.
 	var/e_range
-	///Footstep_type is a define which determines what kind of sounds should get chosen.
+	///footstep_type is a define which determines what kind of sounds should get chosen.
 	var/footstep_type
 	///This can be a list OR a soundfile OR null. Determines whatever sound gets played.
 	var/footstep_sounds
 	var/last_sound
+	var/turf_footstep
 
 /datum/component/footstep/Initialize(footstep_type_ = FOOTSTEP_MOB_BAREFOOT, volume_ = 0.5, e_range_ = -1)
 	if(!isliving(parent))
@@ -53,13 +54,13 @@
 		if(!C.get_bodypart(BODY_ZONE_L_LEG) && !C.get_bodypart(BODY_ZONE_R_LEG))
 			return
 		if(C.m_intent == MOVE_INTENT_SNEAK && !T.footstepstealth)
-			return // stealth
+			return// stealth
 	steps++
 
 	if(steps >= 6)
 		steps = 0
 
-	if(steps % 2)
+	if(steps % 3)	// How many tiles the mob must travel before firing one footstep sound. Raised from 2 to see it if helps with the looping sound bug.
 		return
 
 	if(steps != 0 && !LM.has_gravity(T)) // don't need to step as often when you hop around
@@ -73,7 +74,6 @@
 	if(isfile(footstep_sounds) || istext(footstep_sounds))
 		playsound(T, footstep_sounds, volume)
 		return
-	var/turf_footstep
 	switch(footstep_type)
 		if(FOOTSTEP_MOB_CLAW)
 			turf_footstep = T.clawfootstep
@@ -87,7 +87,7 @@
 		return
 	//SANITY CHECK, WILL NOT PLAY A SOUND IF THE LIST IS INVALID
 	if(!footstep_sounds[turf_footstep] || (LAZYLEN(footstep_sounds) < 3))
-		testing("SOME silly guy GAVE AN INVALID FOOTSTEP [footstep_type] VALUE ([turf_footstep]) TO [T.type]!!! FIX THIS SHIT!!!")
+		testing("SOME silly guy GAVE AN INVALID FOOTSTEP VALUE ([T.footstep]) TO [T.type]!!! FIX THIS SHIT!!!")
 		return
 	playsound(T, pick(footstep_sounds[turf_footstep][1]), footstep_sounds[turf_footstep][2], FALSE, footstep_sounds[turf_footstep][3] + e_range)
 
@@ -96,16 +96,16 @@
 	if(!T)
 		return
 	var/mob/living/carbon/human/H = parent
+
 	var/feetCover = (H.wear_armor && (H.wear_armor.body_parts_covered & FEET)) || (H.wear_pants && (H.wear_pants.body_parts_covered & FEET))
 
 	var/used_sound
 	var/list/used_footsteps
-	var/obj/item/clothing/shoes/humshoes = H.shoes
 
-	if((humshoes && !humshoes?.is_barefoot) || feetCover) //are we wearing shoes, and do they actually cover the sole
+	if(H.shoes || feetCover) //are we wearing shoes
 		//SANITY CHECK, WILL NOT PLAY A SOUND IF THE LIST IS INVALID
 		if(!GLOB.footstep[T.footstep] || (LAZYLEN(GLOB.footstep[T.footstep]) < 3))
-			testing("SOME silly guy GAVE AN INVALID FOOTSTEP VALUE ([T.footstep]) TO [T.type]!!! FIX THIS SHIT!!!")
+			testing("SOME silly guy GAVE AN INVALID FOOTSTEP [footstep_type] VALUE ([turf_footstep]) TO [T.type]!!! FIX THIS SHIT!!!")
 			return
 		used_footsteps = GLOB.footstep[T.footstep][1]
 		used_footsteps = used_footsteps.Copy()
