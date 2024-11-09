@@ -9822,13 +9822,6 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
-"kRY" = (
-/obj/structure/mineral_door/wood{
-	lockid = "fancyroomi";
-	name = "Fancy Room I"
-	},
-/turf/open/floor/rogue/woodturned,
-/area/rogue/indoors/town/tavern)
 "kSf" = (
 /obj/item/candle/skull/lit,
 /obj/structure/table/wood{
@@ -78399,7 +78392,7 @@ oiP
 oAK
 aEi
 aEi
-kRY
+aEi
 aEi
 aEi
 oAK
