@@ -4,7 +4,7 @@
 /obj/item/rogueweapon/knife
 	force = DAMAGE_KNIFE
 	throwforce = DAMAGE_KNIFE
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	icon = 'icons/roguetown/weapons/32.dmi'
 	gripsprite = FALSE
@@ -23,6 +23,7 @@
 	wdefense = MEDIOCHRE_PARRY
 	wbalance = HARD_TO_DODGE
 	smeltresult = /obj/item/ingot/steel
+	sharpness = IS_SHARP
 	sellprice = 30
 
 /obj/item/rogueweapon/knife/getonmobprop(tag)
@@ -40,7 +41,6 @@
 /*-----------\
 | Cut intent |	small AP, fast
 \-----------*/
-
 /datum/intent/dagger/cut
 	name = "cut"
 	icon_state = "incut"
@@ -166,6 +166,7 @@
 
 //................ Iron Dagger ............... //
 /obj/item/rogueweapon/knife/dagger
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	name = "iron dagger"
 	desc = "Thin, sharp, pointed death."
 	icon_state = "idagger"

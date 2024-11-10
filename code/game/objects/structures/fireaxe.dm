@@ -150,3 +150,80 @@
 /obj/structure/fireaxecabinet/south
 	dir = SOUTH
 	pixel_y = 32
+
+
+
+/*	..................   The Drunken Saiga   ................... */
+/obj/structure/innkeep_rack
+	name = "the last word "
+	desc = "Here, the Innkeeper keeps their final recourse to any disupte with drunken patrons."
+	icon = 'icons/roguetown/misc/64x32.dmi'
+	icon_state = "innrack"
+	anchored = TRUE
+	density = FALSE
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 0, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50)
+	max_integrity = 150
+	integrity_failure = 0.33
+	var/obj/item/rogueweapon/mace/goden/shillelagh/heirloom
+
+/obj/structure/innkeep_rack/Initialize()
+	. = ..()
+	heirloom = new /obj/item/rogueweapon/mace/goden/shillelagh
+	update_icon()
+
+/obj/structure/innkeep_rack/Destroy()
+	if(heirloom)
+		QDEL_NULL(heirloom)
+	return ..()
+
+/obj/structure/innkeep_rack/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/rogueweapon/mace/goden/shillelagh) && !heirloom)
+		var/obj/item/rogueweapon/mace/goden/shillelagh/F = I
+		if(F.wielded)
+			to_chat(user, "<span class='warning'>Unwield the [F.name] first.</span>")
+			return
+		if(!user.transferItemToLoc(F, src))
+			return
+		heirloom = F
+		to_chat(user, "<span class='notice'>I place the [F.name] back in the [name].</span>")
+		update_icon()
+		return
+	else
+		return ..()
+
+/obj/structure/innkeep_rack/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			playsound(loc, 'sound/blank.ogg', 90, TRUE)
+		if(BURN)
+			playsound(src.loc, 'sound/blank.ogg', 100, TRUE)
+/*
+/obj/structure/innkeep_rack/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
+	. = ..()
+	if(.)
+		update_icon()
+
+/obj/structure/innkeep_rack/obj_break(damage_flag)
+	..()
+*/
+/obj/structure/innkeep_rack/attack_hand(mob/user)
+	. = ..()
+	if(.)
+		return
+	if(heirloom)
+		user.put_in_hands(heirloom)
+		heirloom = null
+		to_chat(user, "<span class='notice'>I take the club from the [name].</span>")
+		src.add_fingerprint(user)
+		update_icon()
+		return
+
+/obj/structure/innkeep_rack/attack_paw(mob/living/user)
+	return attack_hand(user)
+
+/obj/structure/innkeep_rack/update_icon()
+	cut_overlays()
+	if(heirloom)
+		add_overlay("club")
+
+
