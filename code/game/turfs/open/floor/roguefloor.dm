@@ -975,10 +975,10 @@
 /turf/open/floor/rogue/cobblerock/alto
 	icon_state = "cobblealt2"
 
-/obj/effect/decal/cobblerock/alt_edges
+/obj/effect/decal/cobbleedge/rockalt_edge
 	icon_state = "cobblealt_edges"
 
-/obj/effect/decal/cobblerock/alt_corners
+/obj/effect/decal/cobbleedge/rockalt_corners
 	icon_state = "cobblealt_corners"
 
 /obj/effect/decal/cobbleedge/alt
