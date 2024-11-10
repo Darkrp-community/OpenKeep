@@ -73,7 +73,7 @@
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
 			pants = /obj/item/clothing/under/roguetown/tights/black
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/malum
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/roguehood/random
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver
