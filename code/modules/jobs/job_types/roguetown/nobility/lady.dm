@@ -30,7 +30,7 @@
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	beltl = /obj/item/keyring/queen
-	armor = /obj/item/clothing/suit/roguetown/shirt/belldress/queen
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
 	head = /obj/item/clothing/head/roguetown/crown/nyle
 	backr = /obj/item/storage/backpack/rogue/satchel
 	if(SSticker.rulertype == "Queen")
@@ -53,6 +53,8 @@
 			H.change_stat("speed", 2)
 			H.change_stat("perception", 2)
 			H.change_stat("fortune", 5)
+	if(prob(66))
+		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt
 	id = /obj/item/clothing/ring/silver
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
