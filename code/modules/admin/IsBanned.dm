@@ -34,7 +34,7 @@ GLOBAL_VAR(last_connection)
 //				return list("reason"="server congestion", "desc"="Error: The queue is congested. Try connecting again.")
 
 	var/client/C = GLOB.directory[ckey]
-
+/*
 	//Whitelist
 	if(!real_bans_only && !C && CONFIG_GET(flag/usewhitelist))
 		if(!check_whitelist(ckey))
@@ -46,6 +46,7 @@ GLOBAL_VAR(last_connection)
 			else
 				log_access("Failed Login: [key] - Not on whitelist")
 				return list("reason"="whitelist", "desc" = "\nBecome whitelisted! discord.gg/stonekeep")
+				*/
 /*
 #ifdef MATURESERVER
 	if(!check_whitelist(ckey))
