@@ -82,15 +82,68 @@
 
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE) // They get this and a wooden staff to defend themselves
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
+		switch(A.name)
+			if("Astrata")
+				H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE) // They get this and a wooden staff to defend themselves
+				H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
+			if("Necra")
+				H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE) // replacing axe mace skill
+				H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE) // long hours spent digging GRAAAAAAAAVES
+				H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
+			if("Eora")
+				H.mind.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE) // creative pursuits!
+				H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE) // to me eorans have always given the vibe of 'wrestle someone into submission' rather than beat them with sticks.
+				H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE) // i like to think they have lakeside parties.
+				H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
+			if("Noc")
+				H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE) // wimpy nerd arms
+				H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE) // in exchange for their lack of physical skills, they can learn arcane magic
+				H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
+			if("Pestra")
+				H.mind.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/medicine, 4, TRUE) // capable of doing actual surgery, supplemented by their miracles
+				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE) // to compensate for them being pretty skilled at sewing and medicine, they're now too habitually drunk to wrestle
+				H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
+			if("Malum")
+				H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 3, TRUE) // in lieu of more conventional acolyte stuff, gets to be a gear support role
+				H.mind.adjust_skillrank(/datum/skill/craft/smelting, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/craft/engineering, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE) // a free window-repairer for the church
+				H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
 		H.change_stat("intelligence", 1)
