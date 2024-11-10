@@ -85,7 +85,6 @@
 
 /mob/living/carbon/human/species/skeleton/npc/peasant/after_creation()
 	..()
-	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
@@ -136,7 +135,6 @@
 ///////////////////////////////////////////////////////////// EVENTMIN SKELETONGS
 /mob/living/carbon/human/species/skeleton/npc/ambush/after_creation()
 	..()
-	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
@@ -178,7 +176,6 @@
 
 /mob/living/carbon/human/species/skeleton/npc/warrior/after_creation()
 	..()
-	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
@@ -261,7 +258,6 @@
 
 /mob/living/carbon/human/species/skeleton/npc/warrior/skilled/after_creation()
 	..()
-	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)

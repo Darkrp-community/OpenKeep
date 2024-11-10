@@ -136,11 +136,3 @@
 	desc = "I need to pray to my Patron, their blessings are stronger."
 	time = 40 MINUTES
 	needsate_text = "Time to pray."
-
-/// LOVE-FIEND
-
-/datum/charflaw/addiction/lovefiend
-	name = "Love-Fiend"
-	desc = "I must make love!"
-	time = 50 MINUTES
-	needsate_text = "Time to get happy."

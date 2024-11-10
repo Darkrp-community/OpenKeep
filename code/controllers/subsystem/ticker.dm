@@ -306,9 +306,10 @@ SUBSYSTEM_DEF(ticker)
 			continue
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			amt_ready++
+/*
 	if(amt_ready < 2)
 		to_chat(world, "<span class='purple'>[amt_ready]/2 players ready.</span>")
-/*		failedstarts++
+		failedstarts++
 		if(failedstarts > 7)
 			to_chat(world, "<span class='purple'>[failedstarts]/13</span>")
 		if(failedstarts >= 13)
