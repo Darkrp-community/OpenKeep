@@ -2211,8 +2211,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "tannin-stricken wine"
 	color = "#571111"
 
-/datum/reagent/consumable/ethanol/beer/jackberrywine
-	name = "Jackberry Wine"
+/datum/reagent/consumable/ethanol/beer/jacksberrywine
+	name = "Jacksberry Wine"
 	boozepwr = 15
 	taste_description = "sickly sweet young wine"
 	color = "#3b2342"
