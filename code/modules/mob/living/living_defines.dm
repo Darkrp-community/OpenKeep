@@ -154,8 +154,6 @@
 	var/obj/item/grabbing/r_grab = null
 	var/obj/item/grabbing/l_grab = null
 
-	var/datum/sex_controller/sexcon
-
 	var/slowdown
 
 	var/last_dir_change = 0

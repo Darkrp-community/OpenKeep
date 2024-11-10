@@ -269,9 +269,10 @@
 	var/ckey = lowertext(M.ckey)
 	var/admin = lowertext(usr.key)
 
-	if(ckey == admin)
+	/*if(ckey == admin)
 		to_chat(src, "<span class='boldwarning'>That's you!</span>")
 		return
+	*/
 	if(!fexists("data/player_saves/[copytext(ckey,1,2)]/[ckey]/preferences.sav"))
 		to_chat(src, "<span class='boldwarning'>User does not exist.</span>")
 		return
