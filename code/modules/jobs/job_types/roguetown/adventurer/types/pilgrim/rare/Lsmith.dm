@@ -24,7 +24,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/rogueweapon/huntingknife
+	beltl = /obj/item/rogueweapon/knife/hunting
 	cloak = /obj/item/clothing/cloak/apron/brown
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/tongs=1, /obj/item/rogueore/coal=1, /obj/item/rogueore/iron=1)

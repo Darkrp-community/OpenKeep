@@ -17,7 +17,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	neck = /obj/item/clothing/neck/roguetown/gorget
-	armor = /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/hand
+	armor = /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	gloves = /obj/item/clothing/gloves/roguetown/leather/black
 	beltl = /obj/item/rogueweapon/sword/decorated

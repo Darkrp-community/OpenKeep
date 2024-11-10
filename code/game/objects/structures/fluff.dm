@@ -392,6 +392,11 @@
 /obj/structure/bars/chainlink
 	icon_state = "chainlink"
 
+/obj/structure/bars/alt
+	icon_state = "bars_alt"
+	plane = -3
+	layer = WALL_OBJ_LAYER+0.05
+
 /*
 /obj/structure/bars/CheckExit(atom/movable/O, turf/target)
 	if(istype(O) && (O.pass_flags & PASSGRILLE))
@@ -1042,7 +1047,7 @@
 							I = new /obj/item/clothing/head/roguetown/helmet/horned(user.loc)
 						if(6)
 							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2)
-								I = new /obj/item/rogueweapon/spear/billhook(user.loc)
+								I = new /obj/item/rogueweapon/polearm/spear/billhook(user.loc)
 							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2)
 								I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
 							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2)
