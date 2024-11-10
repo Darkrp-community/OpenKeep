@@ -1038,8 +1038,8 @@
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/mountains/decap)
 "Dh" = (
-/obj/machinery/light/rogue/firebowl/stump,
-/turf/open/floor/rogue/dirt/road,
+/obj/machinery/light/rogue/torchholder,
+/turf/closed/wall/mineral/rogue/stone,
 /area/rogue/outdoors/mountains/decap)
 "Dl" = (
 /turf/open/transparent/openspace,
@@ -1357,7 +1357,6 @@
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/cavelava)
 "Mi" = (
-/obj/item/rogueweapon/huntingknife/villager,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors/town/dwarfin)
@@ -1746,10 +1745,6 @@
 /area/rogue/under/cavelava)
 "UY" = (
 /obj/item/clothing/head/roguetown/brimmed,
-/turf/open/floor/rogue/ruinedwood/turned/darker,
-/area/rogue/indoors/town/dwarfin)
-"Va" = (
-/obj/item/rogueweapon/huntingknife/stoneknife,
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors/town/dwarfin)
 "Vx" = (
@@ -33107,7 +33102,7 @@ Po
 Mq
 UY
 KV
-Va
+PI
 LD
 LD
 Mi
