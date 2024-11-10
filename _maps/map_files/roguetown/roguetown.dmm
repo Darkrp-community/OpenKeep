@@ -8159,6 +8159,10 @@
 /obj/item/clothing/under/roguetown/tights/random,
 /turf/open/floor/rogue/blocks/paving,
 /area/rogue/indoors/town/dwarfin)
+"joq" = (
+/obj/structure/roguemachine/scomm,
+/turf/open/floor/rogue/blocks,
+/area/rogue/indoors/town/manor)
 "joL" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -57519,7 +57523,7 @@ iUq
 iUq
 iUq
 kyR
-gjF
+joq
 wmP
 wmP
 wmP
