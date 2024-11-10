@@ -56,7 +56,7 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
 			cloak = /obj/item/clothing/cloak/raincloak/red
 			backl = /obj/item/storage/backpack/rogue/satchel
-			beltr = /obj/item/rogueweapon/huntingknife/idagger/steel/special
+			beltr = /obj/item/rogueweapon/knife/dagger/steel/special
 			beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 			backpack_contents = list(/obj/item/flint)
 			if(H.dna?.species)
@@ -84,14 +84,14 @@
 				shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 				neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 				head = /obj/item/clothing/head/roguetown/fisherhat
-				mouth = /obj/item/rogueweapon/huntingknife
+				mouth = /obj/item/rogueweapon/knife/hunting
 				armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 				backl = /obj/item/storage/backpack/rogue/satchel
 				belt = /obj/item/storage/belt/rogue/leather/assassin
 				backr = /obj/item/fishingrod
 				beltr = /obj/item/cooking/pan
 				beltl = /obj/item/flint
-				backpack_contents = list(/obj/item/rogueweapon/huntingknife = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)
+				backpack_contents = list(/obj/item/rogueweapon/knife/hunting = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)
 			else
 				shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 				armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
@@ -103,7 +103,7 @@
 				belt = /obj/item/storage/belt/rogue/leather/assassin
 				beltr = /obj/item/cooking/pan
 				beltl = /obj/item/flint
-				backpack_contents = list(/obj/item/rogueweapon/huntingknife = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)
+				backpack_contents = list(/obj/item/rogueweapon/knife/hunting = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)
 		if("Hunter")
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE) //The assassin trades their crossbow abilities to match their disguise.
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, -2, TRUE)
@@ -117,7 +117,7 @@
 			belt = /obj/item/storage/belt/rogue/leather/assassin
 			beltr = /obj/item/quiver/arrows
 			beltl = /obj/item/flashlight/flare/torch/lantern
-			backpack_contents = list(/obj/item/flint = 1, /obj/item/bait = 1, /obj/item/rogueweapon/huntingknife = 1)
+			backpack_contents = list(/obj/item/flint = 1, /obj/item/bait = 1, /obj/item/rogueweapon/knife/hunting = 1)
 			gloves = /obj/item/clothing/gloves/roguetown/leather
 		if("Miner")
 			H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
@@ -133,7 +133,7 @@
 			beltl = /obj/item/rogueweapon/pick
 			backr = /obj/item/rogueweapon/shovel
 			backl = /obj/item/storage/backpack/rogue/backpack
-			backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/huntingknife = 1)
+			backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/knife/hunting = 1)
 		if("Noble")
 			var/prev_real_name = H.real_name
 			var/prev_name = H.name
@@ -165,7 +165,7 @@
 				head = /obj/item/clothing/head/roguetown/hatfur
 				cloak = /obj/item/clothing/cloak/raincloak/furcloak
 				backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-				beltr = /obj/item/rogueweapon/huntingknife/idagger/steel/special
+				beltr = /obj/item/rogueweapon/knife/dagger/steel/special
 				beltl = /obj/item/quiver/arrows
 				backpack_contents = list(/obj/item/reagent_containers/glass/bottle/rogue/wine = 1, /obj/item/reagent_containers/glass/cup/silver = 1)
 		if("Peasant")
@@ -189,7 +189,7 @@
 				armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 				shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 				pants = null
-			backpack_contents = list(/obj/item/neuFarm/seed/wheat=1,/obj/item/neuFarm/seed/apple=1,/obj/item/ash=1,/obj/item/rogueweapon/huntingknife/villager=1)
+			backpack_contents = list(/obj/item/neuFarm/seed/wheat=1,/obj/item/neuFarm/seed/apple=1,/obj/item/ash=1,/obj/item/rogueweapon/knife/villager=1)
 		if("Woodcutter")
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE) //Use the axe...
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, -2, TRUE)
@@ -202,8 +202,8 @@
 			neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
-			beltr = /obj/item/rogueweapon/woodcut
-			beltl = /obj/item/rogueweapon/huntingknife
+			beltr = /obj/item/rogueweapon/axe/iron
+			beltl = /obj/item/rogueweapon/knife/hunting
 			backpack_contents = list(/obj/item/flint = 1)
 
 	H.cure_blind("TRAIT_GENERIC")

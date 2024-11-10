@@ -885,6 +885,23 @@
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = list("human", "tiefling", "elf", "aasimar")
 
+/obj/item/clothing/cloak/half/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/storage/concrete)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		STR.max_combined_w_class = 3
+		STR.max_w_class = WEIGHT_CLASS_NORMAL
+		STR.max_items = 1
+
+/obj/item/clothing/cloak/half/dropped(mob/living/carbon/human/user)
+	..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		var/list/things = STR.contents()
+		for(var/obj/item/I in things)
+			STR.remove_from_storage(I, get_turf(src))
+
 /obj/item/clothing/cloak/half/shadowcloak
 	name = "stalker cloak"
 	desc = "A heavy leather cloak held together by a gilded pin. The pin depicts a spider with disconnected legs."
@@ -897,7 +914,7 @@
 	desc = "Those who wear, thy should beware, for those who do; never come back as who they once were again."
 	allowed_race = ALL_RACES_LIST
 	body_parts_covered = ARMS|CHEST
-	armor = ARMOR_STEEL_BAD
+	armor = ARMOR_MAILLE_GOOD
 
 /obj/item/clothing/cloak/half/brown
 	color = CLOTHING_BARK_BROWN
@@ -1017,3 +1034,16 @@
 	nodismemsleeves = TRUE
 	inhand_mod = FALSE
 	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
+
+/obj/item/clothing/cloak/wickercloak
+	name = "wicker cloak"
+	desc = "A makeshift cloak constructed with mud, sticks and fibers."
+	icon_state = "wicker_cloak"
+	item_state = "wicker_cloak"
+	alternate_worn_layer = CLOAK_BEHIND_LAYER
+	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	inhand_mod = TRUE
+	allowed_race = list("human", "tiefling", "elf", "aasimar")

@@ -241,3 +241,22 @@
 	layer = ABOVE_MOB_LAYER
 	pixel_x = 8
 	pixel_y = 24
+
+/*	..................   The Drunken Saiga   ................... */
+/obj/structure/fluff/walldeco/innsign/saiga
+	name = "The Drunken Saiga"
+	icon_state = "bar_saiga"
+	plane = -1
+	pixel_x = 3
+	pixel_y = 16
+
+/obj/structure/fluff/walldeco/innsign/trophy
+	name = "saiga trophy"
+	icon_state = "saiga_trophy"
+	pixel_y = 32
+
+/*	..................   Feldsher Sign   ................... */
+/obj/structure/fluff/walldeco/feldshersign
+	name = "feldsher sign"
+	icon_state = "feldsher"
+	pixel_y = 32
