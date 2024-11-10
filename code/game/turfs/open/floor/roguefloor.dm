@@ -113,7 +113,6 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/rogue/woodturned/nosmooth
-	icon_state = "woodalt"
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/open/floor/rogue/woodturned/nosmooth,/turf/open/floor/carpet)
 
@@ -971,7 +970,16 @@
 	icon_state = "cobblestonealt[rand(1,3)]"
 
 /turf/open/floor/rogue/cobblerock/alt
-	icon_state = "cobblealt"
+	icon_state = "cobblealt1"
+
+/turf/open/floor/rogue/cobblerock/alto
+	icon_state = "cobblealt2"
+
+/obj/effect/decal/cobblerock/alt_edges
+	icon_state = "cobblealt_edges"
+
+/obj/effect/decal/cobblerock/alt_corners
+	icon_state = "cobblealt_corners"
 
 /obj/effect/decal/cobbleedge/alt
 	icon_state = "cobblestonealt_edges"
