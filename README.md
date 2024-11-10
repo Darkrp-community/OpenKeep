@@ -4,9 +4,9 @@
 
 | Website                   | Link                                           |
 |---------------------------|------------------------------------------------|
-| Discord          | [https://discord.gg/stonekeep](https://discord.gg/stonekeep) |
-| Code                      | [https://github.com/Darkrp-community/OpenKeep](https://github.com/Darkrp-community/OpenKeep)    |
-| Wiki                      | Under Construction |
+| Discord | [https://discord.com/invite/monkestation](https://discord.com/invite/monkestation) |
+| Code    | [https://github.com/Vanderlin-Tales-Of-Wine/Vanderlin](https://github.com/Vanderlin-Tales-Of-Wine/Vanderlin)    |
+| Wiki    | N/A |
 
 ## LICENSE
 
