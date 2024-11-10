@@ -94,7 +94,7 @@
 	icon_state = "woodalt"
 	icon = 'icons/turf/floors/woodalt.dmi'
 	smooth_icon = 'icons/turf/floors/woodalt.dmi'
-	canSmoothWith = list(/turf/open/floor/rogue/wood/nosmooth/saiga,/turf/open/floor/carpet)
+	canSmoothWith = list(/turf/open/floor/rogue/wood/saiga,/turf/open/floor/carpet)
 
 /turf/open/floor/rogue/wood/nosmooth/saiga
 	icon_state = "woodalt"

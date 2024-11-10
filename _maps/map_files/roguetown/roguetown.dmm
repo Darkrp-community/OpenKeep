@@ -7255,7 +7255,7 @@
 /area/rogue/indoors/town)
 "hXc" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
-/turf/open/floor/rogue/wood/nosmooth/saiga,
+/turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town/tavern)
 "hXB" = (
 /obj/machinery/light/rogue/firebowl/standing/blue,
@@ -9879,8 +9879,10 @@
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/magician)
 "kRk" = (
-/obj/structure/table/wood/plain,
-/turf/open/floor/rogue/wood/nosmooth/saiga,
+/obj/structure/chair/wood/rogue{
+	dir = 4
+	},
+/turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town/tavern)
 "kRR" = (
 /obj/effect/decal/cobbleedge{
@@ -10211,7 +10213,7 @@
 "lov" = (
 /obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/cloth,
-/turf/open/floor/rogue/wood/nosmooth/saiga,
+/turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town/tavern)
 "lpa" = (
 /turf/open/water/cleanshallow,
@@ -11343,9 +11345,7 @@
 /obj/machinery/light/rogue/wallfire/candle{
 	pixel_x = 31
 	},
-/turf/open/floor/rogue/tile{
-	icon_state = "tile"
-	},
+/turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/tavern)
 "mvu" = (
 /obj/structure/table/wood/counter/end{
@@ -12554,9 +12554,7 @@
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
-/turf/open/floor/rogue/tile{
-	icon_state = "tile"
-	},
+/turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/tavern)
 "nNL" = (
 /obj/structure/fluff/railing/border,
@@ -55845,7 +55843,7 @@ tDt
 iUq
 rVN
 urF
-oZX
+jYn
 oZX
 oZX
 oZX
@@ -56002,7 +56000,7 @@ tDt
 iUq
 rVN
 muZ
-oZX
+jYn
 oZX
 oZX
 oZX
@@ -56159,7 +56157,7 @@ tDt
 iUq
 rVN
 jYn
-oZX
+jYn
 oSW
 oZX
 oZX
@@ -79407,8 +79405,8 @@ nNL
 koZ
 hzV
 hXc
-jaH
-kgD
+nRY
+kRk
 vQk
 oiP
 aWn
@@ -79563,9 +79561,9 @@ yfz
 nNL
 koZ
 vQk
-jaH
+nRY
 lov
-kRk
+duP
 vQk
 oiP
 aWn
