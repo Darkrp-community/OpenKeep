@@ -88,23 +88,6 @@
 	climbdiff = 1
 	damage_deflection = 10
 
-/turf/closed/wall/mineral/rogue/craftstone/dungeon
-	name = "stone wall"
-	desc = "A wall of smooth, unyielding stone."
-	icon = 'icons/turf/walls/stone_wall.dmi'
-	icon_state = "stone"
-	smooth = SMOOTH_MORE
-	blade_dulling = DULLING_BASH
-	max_integrity = 9999
-	sheet_type = /obj/item/natural/stone
-	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
-	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
-	canSmoothWith = list(/turf/closed/wall/mineral/rogue/craftstone)
-	above_floor = /turf/open/floor/rogue/blocks
-	baseturfs = list(/turf/open/floor/rogue/blocks)
-	neighborlay = "dirtedge"
-	climbdiff = 1
-	damage_deflection = 10
 
 /turf/closed/wall/mineral/rogue/stonebrick
 	name = "brick wall"
