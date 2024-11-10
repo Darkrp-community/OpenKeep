@@ -392,6 +392,11 @@
 /obj/structure/bars/chainlink
 	icon_state = "chainlink"
 
+/obj/structure/bars/alt
+	icon_state = "bars_alt"
+	plane = -3
+	layer = WALL_OBJ_LAYER+0.05
+
 /*
 /obj/structure/bars/CheckExit(atom/movable/O, turf/target)
 	if(istype(O) && (O.pass_flags & PASSGRILLE))
