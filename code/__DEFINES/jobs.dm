@@ -119,6 +119,7 @@
 #define CLERIC		(1<<1)
 #define PURITAN		(1<<2)
 #define MONK		(1<<3)
+#define GRAVEDIGGER	(1<<4)
 
 #define SERFS			(1<<3)
 
@@ -136,9 +137,8 @@
 #define BEASTMASTER	(1<<2)
 #define FISHER		(1<<4)
 #define LUMBERJACK	(1<<5)
-#define GRAVEDIGGER	(1<<6)
-#define MINER		(1<<7)
-#define BUTLER		(1<<8)
+#define MINER		(1<<6)
+#define BUTLER		(1<<7)
 #define JESTER		(1<<8)
 #define ADVENTURER	(1<<9)
 #define COOK		(1<<10)
