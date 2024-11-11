@@ -7881,7 +7881,7 @@
 /turf/open/floor/rogue/blocks/paving,
 /area/rogue/indoors/town/dwarfin)
 "iuK" = (
-/obj/structure/roguemachine/vendor,
+/obj/structure/roguemachine/vendor/steward,
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors/town/bath)
 "ivy" = (
@@ -9447,12 +9447,12 @@
 /obj/item/reagent_containers/food/snacks/produce/onion,
 /obj/item/reagent_containers/food/snacks/produce/cabbage,
 /obj/item/reagent_containers/food/snacks/rogue/cheddar,
-/obj/item/reagent_containers/honeycomb,
 /obj/item/reagent_containers/food/snacks/produce/potato,
 /obj/item/reagent_containers/food/snacks/produce/potato,
 /obj/item/reagent_containers/food/snacks/rogue/truffles,
 /obj/item/reagent_containers/food/snacks/rogue/truffles,
 /obj/item/reagent_containers/food/snacks/produce/onion,
+/obj/item/reagent_containers/food/snacks/rogue/honey,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "kjw" = (
