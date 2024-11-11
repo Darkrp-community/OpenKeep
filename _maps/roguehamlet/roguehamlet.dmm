@@ -2111,7 +2111,7 @@
 /obj/item/reagent_containers/glass/cup/wooden,
 /obj/item/reagent_containers/glass/cup/wooden,
 /obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter,
-/obj/item/kitchen/rollingpin,
+/obj/item/rogueweapon/mace/woodclub/rollingpin,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors)
 "cqW" = (
@@ -3593,7 +3593,7 @@
 /obj/item/reagent_containers/peppermill{
 	pixel_y = 30
 	},
-/obj/item/kitchen/rollingpin{
+/obj/item/rogueweapon/mace/woodclub/rollingpin{
 	pixel_x = -3;
 	pixel_y = 2
 	},
@@ -21495,7 +21495,7 @@
 /obj/item/rogueweapon/knife/cleaver{
 	pixel_x = 8
 	},
-/obj/item/kitchen/rollingpin{
+/obj/item/rogueweapon/mace/woodclub/rollingpin{
 	pixel_x = -5
 	},
 /turf/open/floor/rogue/cobble,
