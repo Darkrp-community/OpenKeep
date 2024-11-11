@@ -92,7 +92,7 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/lobster/fillet
 	rotprocess = SHELFLIFE_TINY
 
-obj/item/reagent_containers/food/snacks/rogue/meat/lobster/fillet
+/obj/item/reagent_containers/food/snacks/rogue/meat/lobster/fillet
 	name = "crawler fillet"
 	ingredient_size = 2
 	icon_state = "lobsterfillet"
