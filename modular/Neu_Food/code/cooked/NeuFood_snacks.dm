@@ -203,7 +203,7 @@
 	desc = "tasty, now that the stench of decay has been cooked out of it."
 	rotprocess = SHELFLIFE_TINY //eat it quick
 
-  /obj/item/reagent_containers/food/snacks/rogue/meat/lobster/fillet/fried
+/obj/item/reagent_containers/food/snacks/rogue/meat/lobster/fillet/fried
 	name = "creeper fillet"
 	desc = "Finely minced and fried creeper fillet, it smells so good, you forget that the creeper probably ate human before."
 	rotprocess = SHELFLIFE_TINY //eat it quick
