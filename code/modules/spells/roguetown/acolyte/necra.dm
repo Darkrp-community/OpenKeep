@@ -118,7 +118,6 @@
 			P.loc = user.loc
 			capturedsoul = P
 			P.invisibility = INVISIBILITY_OBSERVER
-			user.grant_language(/datum/language_holder/abyssal)
 			for(var/obj/item/I in P.held_items) // this is big ass, will revisit later
 				. |= P.dropItemToGround(I)
 				if(istype(I, /obj/item/underworld/coin))
@@ -142,6 +141,5 @@
 					if(I == "lamp")
 						var/obj/item/flashlight/lantern/shrunken/L = new
 						capturedsoul.put_in_hands(L)
-			user.remove_language(/datum/language_holder/abyssal)
 		to_chat(user, "<font color='blue'>I feel a cold chill run down my spine, a presence has arrived.</font>")
 		capturedsoul.Paralyze(1200)
