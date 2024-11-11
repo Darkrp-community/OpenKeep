@@ -56,6 +56,7 @@
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		H.change_stat("constitution", 2)
 
+
 /datum/outfit/job/roguetown/cook
 	var/reminder = "<br><br><font color='#3d8985'><span class='bold'>If the Inkeep is around, they´re your boss. If not, run the Inn as you best can!</span></font><br><br>"
 

@@ -39,29 +39,24 @@
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots
+	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
+	belt = /obj/item/storage/belt/rogue/leather
+	beltl = /obj/item/keyring/innkeep
+	beltr = /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/random
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
-		shoes = /obj/item/clothing/shoes/roguetown/shortboots
-		belt = /obj/item/storage/belt/rogue/leather
-		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
-		beltr = /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
-		neck = /obj/item/keyring/innkeep
 		cloak = /obj/item/clothing/cloak/apron/waist
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 1)
 	else
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress
-		shoes = /obj/item/clothing/shoes/roguetown/shortboots
-		neck = /obj/item/storage/belt/rogue/pouch/coins/mid
-		belt = /obj/item/storage/belt/rogue/leather
-		beltl = /obj/item/keyring/innkeep
-		beltr = /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)
 
 /datum/outfit/job/roguetown/innkeep
-	var/reminder = "<br><br><font color='#3d8985'><span class='bold'>Keys to the finer rooms are kept separate from the Peddlar. Make sure to charge for meals so you can hire mercenaries if needed, they may lodge at your Inn but they won't help without pay.</span></font><br><br>"
+	var/reminder = "<br><br><font color='#3d8985'><span class='bold'>Remember the keys to the finer rooms are kept separate from the peddlar.</span></font><br><br>"
 
 /datum/outfit/job/roguetown/innkeep/post_equip(mob/living/carbon/human/H)
 	..()

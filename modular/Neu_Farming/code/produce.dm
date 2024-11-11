@@ -182,9 +182,9 @@
 	. += ..()
 	if(farminglvl >= 3 && poisonous == TRUE)
 		. += "These berries appear to be poisonous."
-	if(user.mind.assigned_role == "Cook")
+	if(user.mind.assigned_role == "Cook"&& poisonous == TRUE)
 		. += "These berries appear to be poisonous."
-	if(user.mind.assigned_role == "Master Chef")
+	if(user.mind.assigned_role == "Master Chef"&& poisonous == TRUE)
 		. += "These berries are POISONOUS."
 
 
