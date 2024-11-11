@@ -121,7 +121,7 @@
 				H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
 			if("Malum")
 				H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 3, TRUE) // in lieu of more conventional acolyte stuff, gets to be a gear support role
+				H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 2, TRUE) // in lieu of more conventional acolyte stuff, gets to be a gear support role
 				H.mind.adjust_skillrank(/datum/skill/craft/smelting, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/craft/engineering, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE) // a free window-repairer for the church
