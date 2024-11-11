@@ -36,6 +36,9 @@
 		if("Ravox")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
+		if("Malum")
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/malumhelm
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/malum_steel
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver

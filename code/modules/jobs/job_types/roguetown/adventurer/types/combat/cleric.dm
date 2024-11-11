@@ -63,6 +63,10 @@
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
 			neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+		if("Malum")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/malum_steel
+			cloak = /obj/item/clothing/cloak/stabard/templar/malum
+			neck = /obj/item/clothing/neck/roguetown/gorget // glorious beard can't be held in a chain coif, if you're a dorf
 		else // Failsafe
 			cloak = /obj/item/clothing/cloak/tabard/crusader // Give us a generic crusade tabard
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver // Give us a silver psycross for protection against lickers

@@ -4,7 +4,7 @@
 	department_flag = CHURCHMEN
 	faction = "Station"
 	total_positions = 3
-	spawn_positions = 4
+	spawn_positions = 3
 
 	allowed_races = list(
 		"Humen",
@@ -34,7 +34,6 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/roguekey/church
-	backl = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff
 	backpack_contents = list(/obj/item/needle)
 	switch(A.name)
 		if("Astrata")
@@ -43,11 +42,13 @@
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
+			backl = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff
 		if("Eora")
 			head = /obj/item/clothing/head/roguetown/padded/rabbetvisage
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/eora
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
+			backl = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff
 			H.virginity = FALSE
 		if("Noc")
 			head = /obj/item/clothing/head/roguetown/roguehood/nochood
@@ -55,12 +56,14 @@
 			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
+			backl = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff
 		if("Pestra")
 			head = /obj/item/clothing/head/roguetown/roguehood/brown
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/green
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
+			backl = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff
 		if("Malum")
 			head = /obj/item/clothing/head/roguetown/roguehood/brown
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/malum
@@ -68,6 +71,7 @@
 			pants = /obj/item/clothing/under/roguetown/tights/black
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/malum
+			backl = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff/iron
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/roguehood/random
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver
@@ -75,7 +79,7 @@
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/plain
 
 	if(H.mind)
-		switch(A.name)
+		switch(A.name) // sorry, shitcode
 			if("Astrata")
 				H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
@@ -121,9 +125,9 @@
 				H.mind.adjust_skillrank(/datum/skill/craft/smelting, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/craft/engineering, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE) // a free window-repairer for the church
-				H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
