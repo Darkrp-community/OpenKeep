@@ -43,12 +43,6 @@
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
-		if("Necra")
-			head = /obj/item/clothing/head/roguetown/padded/deathshroud
-			neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra
-			shoes = /obj/item/clothing/shoes/roguetown/boots
-			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
 		if("Eora")
 			head = /obj/item/clothing/head/roguetown/padded/rabbetvisage
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/eora
@@ -80,7 +74,6 @@
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/plain
 
-
 	if(H.mind)
 		switch(A.name)
 			if("Astrata")
@@ -91,16 +84,6 @@
 				H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
-			if("Necra")
-				H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE) // replacing axe mace skill
-				H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE) // long hours spent digging GRAAAAAAAAVES
 				H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
 			if("Eora")
