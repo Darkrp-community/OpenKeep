@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/lobster
 	icon = 'icons/roguetown/mob/monster/lobsters.dmi'
 	name = "marsh crawler"
-	desc = "A swamp-dwelling creacher with a hardened carapace and pinching claws A relatively harmless scavenger, they eat detritus from the bog."
+	desc = "A swamp-dwelling creacher with a hardened carapace and pinching claws. A relatively harmless scavenger, they eat detritus from the bog."
 	icon_state = "marshcrawler"
 	icon_living = "marshcrawler"
 	icon_dead = "marshcrawler_dead"
@@ -68,6 +68,8 @@
 	STASTR = 7
 	STASPD = 6
 	STAEND = 10
+	retreat_distance = 0
+	minimum_distance = 0
 	body_eater = TRUE
 
 

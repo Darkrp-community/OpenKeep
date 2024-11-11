@@ -86,7 +86,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/lobster  //tastes good but has little sustenance, luxury good. Just dont ask what the lobsters eat
 	name = "crawler flesh"
 	slices_num = 2
-	icon_state = "meatcutlet"
+	icon_state = "lobstermeat"
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/lobster
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/lobster/fried
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/lobster/fillet
