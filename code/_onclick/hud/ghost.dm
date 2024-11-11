@@ -117,10 +117,6 @@
 	using.hud = src
 	static_inventory += using
 
-	using = new /atom/movable/screen/grain
-	using.hud = src
-	static_inventory += using
-
 	scannies = new /atom/movable/screen/scannies
 	scannies.hud = src
 	static_inventory += scannies
@@ -155,10 +151,6 @@
 	using.hud = src
 	static_inventory += using
 
-	using = new /atom/movable/screen/grain
-	using.hud = src
-	static_inventory += using
-
 	scannies = new /atom/movable/screen/scannies
 	scannies.hud = src
 	static_inventory += scannies
@@ -186,10 +178,6 @@
 	var/atom/movable/screen/using
 
 	using =  new /atom/movable/screen/backhudl/obs()
-	using.hud = src
-	static_inventory += using
-
-	using = new /atom/movable/screen/grain
 	using.hud = src
 	static_inventory += using
 

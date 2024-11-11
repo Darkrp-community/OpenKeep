@@ -1906,19 +1906,6 @@
 	screen_loc = rogueui_fat
 	layer = HUD_LAYER+0.1
 
-/atom/movable/screen/grain
-	icon = 'icons/grain.dmi'
-	icon_state = "grain"
-	name = ""
-	screen_loc = "1,1"
-	mouse_opacity = 0
-	alpha = 50
-//	layer = 20.5
-//	plane = 20
-	layer = 13
-	plane = 0
-	blend_mode = 4
-
 /atom/movable/screen/scannies
 	icon = 'icons/mob/roguehudback2.dmi'
 	icon_state = "crt"
