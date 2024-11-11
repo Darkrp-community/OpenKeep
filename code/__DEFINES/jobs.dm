@@ -185,46 +185,45 @@
 #define JDO_CLERIC 13
 #define JDO_MONK 14
 #define JDO_CHURCHLING 15
+#define JDO_GRAVEMAN 16
 
-#define JDO_PURITAN 16
-#define JDO_SHEPHERD 17
-#define JDO_TEMPLAR 17.1
+#define JDO_PURITAN 17
+#define JDO_SHEPHERD 18
+#define JDO_TEMPLAR 18.1
 
-#define JDO_MERCHANT 18
-#define JDO_TAILOR 18.1
-#define JDO_GRABBER 19
+#define JDO_MERCHANT 19
+#define JDO_TAILOR 19.1
+#define JDO_GRABBER 20
 
-#define JDO_ARMORER 20
-#define JDO_WSMITH 21
-#define JDO_BAPP 22
+#define JDO_ARMORER 21
+#define JDO_WSMITH 22
+#define JDO_BAPP 23
 
-#define JDO_MASON 23
+#define JDO_MASON 24
 
-#define JDO_BUTLER 24
-#define JDO_SERVANT 25
+#define JDO_BUTLER 25
+#define JDO_SERVANT 26
 
-#define JDO_INNKEEP 26
-#define JDO_COOK 27
+#define JDO_INNKEEP 27
+#define JDO_COOK 28
 
-#define JDO_BUTCHER 27.1
-#define JDO_SOILSON 27.2
+#define JDO_BUTCHER 29.1
+#define JDO_SOILSON 29.2
 
-#define JDO_GRAVEMAN 28
+#define JDO_NITEMAN 30.1
+#define JDO_NITEMAIDEN 30.2
 
-#define JDO_NITEMAN 28.1
-#define JDO_NITEMAIDEN 28.2
+#define JDO_JESTER 31
+#define JDO_PRISONER 32
 
-#define JDO_JESTER 29
-#define JDO_PRISONER 30
+#define JDO_CHIEF 33
+#define JDO_VILLAGER 33
 
-#define JDO_CHIEF 31
-#define JDO_VILLAGER 32
+#define JDO_ADVENTURER 34.1
+#define JDO_PILGRIM 34.2
+#define JDO_DRIFTER 34.3
 
-#define JDO_ADVENTURER 32.1
-#define JDO_PILGRIM 32.2
-#define JDO_DRIFTER 32.3
+#define JDO_MERCENARY 35
 
-#define JDO_MERCENARY 33
-
-#define JDO_VAGRANT 34
-#define JDO_ORPHAN 35
+#define JDO_VAGRANT 36
+#define JDO_ORPHAN 37
