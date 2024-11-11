@@ -4727,6 +4727,7 @@
 /area/rogue/under/town/basement)
 "eZG" = (
 /obj/structure/table/wood/plain_alt,
+/obj/item/clothing/mask/cigarette/rollie,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/under/town/basement)
 "eZH" = (
@@ -6351,6 +6352,15 @@
 /area/rogue/under/town/basement)
 "gNr" = (
 /obj/structure/closet/crate/chest/neu,
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison{
+	name = "strange berries"
+	},
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison{
+	name = "strange berries"
+	},
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison{
+	name = "strange berries"
+	},
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/under/town/basement)
 "gNt" = (
@@ -33419,7 +33429,7 @@ xug
 xug
 xug
 xug
-xug
+cuY
 xug
 xug
 xug
@@ -37812,7 +37822,7 @@ xug
 xug
 xug
 xug
-xug
+cuY
 xug
 xug
 xug
