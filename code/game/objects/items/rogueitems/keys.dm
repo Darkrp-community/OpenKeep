@@ -148,36 +148,42 @@
 	desc = "The key to the first room."
 	icon_state = "brownkey"
 	lockid = "roomi"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomii
 	name = "room II key"
 	desc = "The key to the second room."
 	icon_state = "brownkey"
 	lockid = "roomii"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomiii
 	name = "room III key"
 	desc = "The key to the third room."
 	icon_state = "brownkey"
 	lockid = "roomiii"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomiv
 	name = "room IV key"
 	desc = "The key to the fourth room."
 	icon_state = "brownkey"
 	lockid = "roomiv"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomv
 	name = "room V key"
 	desc = "The key to the fifth room."
 	icon_state = "brownkey"
 	lockid = "roomv"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomvi
 	name = "room VI key"
 	desc = "The key to the sixth room."
 	icon_state = "brownkey"
 	lockid = "roomvi"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomhunt
 	name = "room HUNT key"
