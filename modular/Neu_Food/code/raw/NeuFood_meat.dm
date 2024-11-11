@@ -34,7 +34,7 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef
 	slice_bclass = BCLASS_CHOP
 
-/*	.............   Pork, spidermeat, birdmeat   ................ */
+/*	.............   Pork, spidermeat, birdmeat, crawler/lobster meat   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/meat/fatty //pork
 	name = "raw pigflesh"
 	icon_state = "meatcutlet"
@@ -82,6 +82,21 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/mince/poultry
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/chickenleg
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/lobster  //tastes good but has little sustenance, luxury good. Just dont ask what the lobsters eat
+	name = "crawler flesh"
+	slices_num = 2
+	icon_state = "meatcutlet"
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/lobster
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/lobster/fried
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/lobster/fillet
+	rotprocess = SHELFLIFE_TINY
+
+obj/item/reagent_containers/food/snacks/rogue/meat/lobster/fillet
+	name = "crawler fillet"
+	ingredient_size = 2
+	icon_state = "lobsterfillet"
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/lobter/fillet
 
 /*	........   Fish sounds   ................ */
 /obj/item/reagent_containers/food/snacks/fish

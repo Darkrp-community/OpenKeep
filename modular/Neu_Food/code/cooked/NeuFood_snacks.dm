@@ -27,7 +27,7 @@
 		return FALSE
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(mill))
 		if(!mill.reagents.has_reagent(/datum/reagent/consumable/blackpepper, 1))
 			to_chat(user, "There's not enough black pepper to make anything with.")
@@ -72,7 +72,7 @@
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/friedegg))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
@@ -96,7 +96,7 @@
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/cheddarwedge))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
@@ -123,7 +123,7 @@
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_baked))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
@@ -166,7 +166,7 @@
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
@@ -197,7 +197,16 @@
 	rotprocess = SHELFLIFE_DECENT
 
 
+/*	.............   bogsteak   ................ */
+ /obj/item/reagent_containers/food/snacks/rogue/meat/lobster/fried
+ 	name = "bogsteak"
+ 	desc = "tasty, now that the stench of decay has been cooked out of it."
+ 	rotprocess = SHELFLIFE_TINY //eat it quick
 
+  /obj/item/reagent_containers/food/snacks/rogue/meat/lobster/fillet/fried
+ 	name = "creeper fillet"
+ 	desc = "Finely minced and fried creeper fillet, it smells so good, you forget that the creeper probably ate human before."
+ 	rotprocess = SHELFLIFE_TINY //eat it quick
 /*---------------\
 | Sausage snacks |
 \---------------*/
@@ -215,7 +224,7 @@
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/preserved/cabbage_fried))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
@@ -269,7 +278,7 @@
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
@@ -294,7 +303,7 @@
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
@@ -315,7 +324,7 @@
 				qdel(src)
 	else
 		return ..()
-	
+
 
 /*	.............   Fried onions   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/preserved/onion_fried
@@ -330,7 +339,7 @@
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
@@ -356,7 +365,7 @@
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
