@@ -34,10 +34,57 @@
 		/obj/item/roguecoin/copper = 5,
 		/obj/effect/gibspawner/generic = 5,
 		/obj/effect/decal/remains/bigrat = 5,
-		/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 1,
+		/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 2,
 		)
 
+/obj/effect/spawner/roguemap/cheapinnroomencounter
+	icon_state = "paperwizard"
+	icon = 'icons/mob/simple_human.dmi'
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/item/reagent_containers/food/snacks/smallrat = 15,
+		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
+		/obj/item/roguecoin/copper = 50,
+		/mob/living/carbon/human/species/human/northern/bum/ambush  = 25,
+		)
 
+/obj/structure/mineral_door/wood/red/i
+	name = "Room I"
+	lockid = "roomi"
+	locked = TRUE
+/obj/structure/mineral_door/wood/red/ii	// the cheap shitty room that starts unlocked and might have a nasty surprise
+	name = "Room II"
+	desc = "The lock is a bit loose on this door."
+	lockid = "roomii"
+/obj/structure/mineral_door/wood/red/iii
+	name = "Room III"
+	lockid = "roomiii"
+	locked = TRUE
+/obj/structure/mineral_door/wood/red/iv
+	name = "Room IV"
+	lockid = "roomiv"
+	locked = TRUE
+/obj/structure/mineral_door/wood/red/v
+	name = "Room V"
+	lockid = "roomv"
+	locked = TRUE
+/obj/structure/mineral_door/wood/red/vi
+	name = "Room VI"
+	lockid = "roomvi"
+	locked = TRUE
+/obj/structure/mineral_door/wood/green/merc
+	name = "Mercenary Lodgings"
+	lockid = "mercenary"
+	locked = TRUE
+/obj/structure/mineral_door/wood/violet/roomhunt
+	name = "Room HUNT"
+	lockid = "roomhunt"
+	locked = TRUE
+/obj/structure/mineral_door/wood/violet/roomroyal
+	name = "Room ROYAL"
+	lockid = "roomroyal"
+	locked = TRUE
 
 /*	..................   Hauntz randomizer   ................... */
 /obj/effect/spawner/roguemap/hauntz_random
