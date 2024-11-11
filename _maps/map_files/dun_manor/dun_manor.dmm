@@ -5285,7 +5285,6 @@
 	},
 /area/rogue/indoors/town/magician)
 "few" = (
-/obj/structure/fluff/traveltile/inhumen,
 /turf/open/water/swamp,
 /area/rogue/outdoors/rtfield)
 "feH" = (
@@ -14236,7 +14235,8 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/dwarfin)
 "nYa" = (
-/turf/open/water/swamp,
+/obj/structure/flora/roguegrass/thorn_bush,
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "nYu" = (
 /turf/open/floor/rogue/twig,
@@ -22498,6 +22498,10 @@
 "wof" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town)
+"woj" = (
+/obj/structure/fluff/traveltile/inhumen,
+/turf/open/water/swamp,
+/area/rogue/outdoors/rtfield)
 "wom" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/blocks/stonered/tiny,
@@ -54131,9 +54135,9 @@ sKt
 eUz
 eUz
 eUz
-eUz
-eUz
-eUz
+few
+few
+woj
 eUz
 eUz
 eUz
@@ -54287,10 +54291,10 @@ sKt
 sKt
 sKt
 eUz
-eUz
-eUz
-eUz
-eUz
+few
+few
+few
+woj
 eUz
 eUz
 eUz
@@ -54444,8 +54448,8 @@ jIk
 sKt
 sKt
 eUz
-eUz
-eUz
+few
+few
 eUz
 eUz
 eUz
@@ -54601,9 +54605,9 @@ jIk
 sKt
 sKt
 sKt
-sKt
-eUz
-eUz
+few
+few
+few
 eUz
 eUz
 eUz
@@ -54759,8 +54763,8 @@ jIk
 sKt
 sKt
 sKt
-sKt
-eUz
+few
+few
 eUz
 eUz
 eUz
@@ -54916,8 +54920,8 @@ jIk
 jIk
 sKt
 sKt
-sKt
-sKt
+few
+few
 eUz
 eUz
 eUz
@@ -55073,7 +55077,7 @@ xmW
 jIk
 jIk
 xmW
-sKt
+nYa
 sKt
 sKt
 eUz
@@ -64824,11 +64828,11 @@ xOC
 "}
 (101,1,2) = {"
 eUz
-few
-nYa
 eUz
-nYa
-nYa
+eUz
+eUz
+eUz
+eUz
 eUz
 eUz
 eUz
@@ -64981,12 +64985,12 @@ xOC
 "}
 (102,1,2) = {"
 eUz
-few
-nYa
-nYa
-nYa
-nYa
-nYa
+eUz
+eUz
+eUz
+eUz
+eUz
+eUz
 eUz
 eUz
 omo
@@ -65139,13 +65143,13 @@ xOC
 (103,1,2) = {"
 eUz
 eUz
-nYa
-nYa
 eUz
 eUz
-nYa
-nYa
-nYa
+eUz
+eUz
+eUz
+eUz
+eUz
 jIk
 jIk
 jIk
