@@ -1,5 +1,5 @@
-#define ARROW_DAMAGE		30
-#define BOLT_DAMAGE			40
+#define ARROW_DAMAGE		33
+#define BOLT_DAMAGE			44
 #define BULLET_DAMAGE		80
 #define ARROW_PENETRATION	25
 #define BOLT_PENETRATION	50

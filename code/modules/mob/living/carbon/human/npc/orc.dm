@@ -260,7 +260,7 @@
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Stolen Tool armed raider
-			r_hand = /obj/item/rogueweapon/woodcut
+			r_hand = /obj/item/rogueweapon/axe/iron
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 		if(2) //Stolen Tool armed raider
 			r_hand = /obj/item/rogueweapon/thresher
@@ -285,8 +285,8 @@
 				head = /obj/item/clothing/head/roguetown/helmet/leather
 			if(prob(23))
 				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
-				r_hand = /obj/item/rogueweapon/huntingknife/idagger
-				l_hand = /obj/item/rogueweapon/huntingknife/idagger
+				r_hand = /obj/item/rogueweapon/knife/dagger
+				l_hand = /obj/item/rogueweapon/knife/dagger
 				pants = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 				head = /obj/item/clothing/head/roguetown/helmet/leather
 			if(prob(80))
@@ -300,8 +300,8 @@
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			else
-				r_hand = /obj/item/rogueweapon/sword/iron/short
-				l_hand = /obj/item/rogueweapon/sword/iron/short
+				r_hand = /obj/item/rogueweapon/sword/short
+				l_hand = /obj/item/rogueweapon/sword/short
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			if(prob(80))
@@ -312,7 +312,7 @@
 			else
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
-				r_hand = /obj/item/rogueweapon/battle
+				r_hand = /obj/item/rogueweapon/axe/battle
 			if(prob(50))
 				r_hand = /obj/item/rogueweapon/sword/iron
 				l_hand = /obj/item/rogueweapon/shield/wood
@@ -324,7 +324,7 @@
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			if(prob(30))
-				r_hand = /obj/item/rogueweapon/sword/iron/messer
+				r_hand = /obj/item/rogueweapon/sword/scimitar/messer
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 
@@ -356,12 +356,12 @@
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Dual Axe Warrior
-			r_hand = /obj/item/rogueweapon/stoneaxe
-			l_hand = /obj/item/rogueweapon/stoneaxe
+			r_hand = /obj/item/rogueweapon/axe/stone
+			l_hand = /obj/item/rogueweapon/axe/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 		if(2) //Long Club Caveman
-			r_hand = /obj/item/rogueweapon/woodstaff
+			r_hand = /obj/item/rogueweapon/polearm/woodstaff
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 		if(3) //Club Caveman
@@ -371,10 +371,10 @@
 		if(4) //dagger fighter
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
-			r_hand = /obj/item/rogueweapon/huntingknife/stoneknife
-			l_hand = /obj/item/rogueweapon/huntingknife/stoneknife
+			r_hand = /obj/item/rogueweapon/knife/stone
+			l_hand = /obj/item/rogueweapon/knife/stone
 		if(5) //Spear hunter
-			r_hand = /obj/item/rogueweapon/spear/stone
+			r_hand = /obj/item/rogueweapon/polearm/spear/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 
@@ -414,14 +414,14 @@
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/leather
 		if(2) //Marauder with Axe and Shield
-			r_hand = /obj/item/rogueweapon/woodcut
+			r_hand = /obj/item/rogueweapon/axe/iron
 			l_hand = /obj/item/rogueweapon/shield/wood
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/leather
 		if(3) //Club Caveman
 			r_hand = /obj/item/rogueweapon/flail
-			l_hand = /obj/item/rogueweapon/sword/iron/messer
+			l_hand = /obj/item/rogueweapon/sword/scimitar/messer
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/leather
@@ -429,7 +429,7 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			r_hand = /obj/item/rogueweapon/sword/iron
-			l_hand = /obj/item/rogueweapon/sword/iron/short
+			l_hand = /obj/item/rogueweapon/sword/short
 			head = /obj/item/clothing/head/roguetown/helmet/leather
 		if(5) //Marauder Ironblade
 			if(prob(50))
@@ -439,12 +439,12 @@
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 			else
 				r_hand = /obj/item/rogueweapon/mace/spiked
-				l_hand = /obj/item/rogueweapon/sword/iron/messer
+				l_hand = /obj/item/rogueweapon/sword/scimitar/messer
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				cloak = /obj/item/clothing/cloak/raincloak/brown
 			if(prob(30))
-				r_hand = /obj/item/rogueweapon/woodcut
+				r_hand = /obj/item/rogueweapon/axe/iron
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 				head = /obj/item/clothing/head/roguetown/helmet/orc
 				cloak = /obj/item/clothing/cloak/raincloak/brown
@@ -482,12 +482,12 @@
 	switch(loadout)
 		if(1) //Marauder with Sword and Shield
 			r_hand = /obj/item/rogueweapon/sword/iron
-			l_hand = /obj/item/rogueweapon/woodcut
+			l_hand = /obj/item/rogueweapon/axe/iron
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 		if(2) //Marauder with Axe and Shield
-			r_hand = /obj/item/rogueweapon/battle
+			r_hand = /obj/item/rogueweapon/axe/battle
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/orc
@@ -503,7 +503,7 @@
 			l_hand = /obj/item/rogueweapon/shield/tower
 			head = /obj/item/clothing/head/roguetown/helmet/orc
 		if(5) //Marauder Ironblade
-			r_hand = /obj/item/rogueweapon/halberd/bardiche
+			r_hand = /obj/item/rogueweapon/polearm/halberd/bardiche
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc
 			cloak = /obj/item/clothing/cloak/raincloak/brown
 			head = /obj/item/clothing/head/roguetown/helmet/orc
@@ -537,11 +537,11 @@
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Halberd Warlord
-			r_hand = /obj/item/rogueweapon/halberd
+			r_hand = /obj/item/rogueweapon/polearm/halberd
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc/warlord
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(2) //Greatsword Warlord
-			r_hand = /obj/item/rogueweapon/greatsword
+			r_hand = /obj/item/rogueweapon/sword/long/greatsword
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc/warlord
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(3) // WE DON'T WANNA GO TO WAR TODAY BUT THE LORD OF THE LASH SAYS "NAY NAY NAY!!" WE'RE GONNA MARCH ALL DAE, ALL DAE, ALL DAE! WHERE THERE'S A WHIP THERE'S A WAY!!
@@ -551,7 +551,7 @@
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(4) // Big Sword and Big Shield
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/orc/warlord
-			r_hand = /obj/item/rogueweapon/sword/sabre/messer
+			r_hand = /obj/item/rogueweapon/sword/scimitar/falchion
 			l_hand = /obj/item/rogueweapon/shield/tower
 			head = /obj/item/clothing/head/roguetown/helmet/orc/warlord
 		if(5) //Anti Knight STR Build

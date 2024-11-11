@@ -23,7 +23,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/quiver/bolts
-	beltl = /obj/item/rogueweapon/sword/cutlass
+	beltl = /obj/item/rogueweapon/sword/sabre/cutlass
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
