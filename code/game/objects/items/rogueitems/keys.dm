@@ -181,9 +181,15 @@
 
 /obj/item/roguekey/roomhunt
 	name = "room HUNT key"
-	desc = "The key to the most luxurious Inn room."
+	desc = "The key to one of the most luxurious Inn room."
 	icon_state = "brownkey"
 	lockid = "roomhunt"
+
+/obj/item/roguekey/roomroyal
+	name = "room ROYAL key"
+	desc = "The key to one of the most luxurious Inn room."
+	icon_state = "brownkey"
+	lockid = "roomroyal"
 
 //vampire mansion//
 /obj/item/roguekey/vampire
