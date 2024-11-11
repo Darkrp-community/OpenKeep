@@ -694,9 +694,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor)
 "aNE" = (
-/obj/structure/table/wood{
-	icon_state = "tablewood3"
-	},
+/obj/structure/table/wood/nice/decorated_alt,
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
 /obj/item/natural/feather,
@@ -1450,14 +1448,40 @@
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/tavern)
 "bEj" = (
-/obj/item/candle/yellow,
-/obj/item/candle/yellow,
-/obj/item/candle/yellow,
-/obj/item/candle/yellow,
-/obj/item/candle/yellow,
-/obj/item/candle/yellow,
-/obj/item/flint,
+/obj/item/candle/yellow{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/candle/yellow{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/candle/yellow{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/candle/yellow{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/candle/yellow{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/candle/yellow{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/flint{
+	pixel_x = -4
+	},
 /obj/structure/rack/rogue,
+/obj/item/natural/bundle/stick{
+	pixel_y = -7
+	},
+/obj/item/natural/bundle/stick{
+	pixel_y = -7
+	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/town/basement)
 "bEE" = (
@@ -1627,6 +1651,7 @@
 /obj/item/storage/roguebag,
 /obj/item/storage/roguebag,
 /obj/structure/rack/rogue,
+/obj/machinery/light/rogue/wallfire/candle/weak,
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/town/basement)
 "bNO" = (
@@ -7499,6 +7524,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/wood,
 /area/rogue/under/town/basement)
+"igm" = (
+/obj/machinery/light/rogue/wallfire/candle/weak{
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/town/basement)
 "igy" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle,
 /area/rogue/indoors/town/shop)
@@ -11801,8 +11833,8 @@
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/church)
 "mPS" = (
-/obj/structure/chair/wood{
-	dir = 1
+/obj/structure/chair/wood/rogue/chair_noble{
+	dir = 8
 	},
 /turf/open/floor/rogue/woodturned/saiga,
 /area/rogue/indoors/town/tavern)
@@ -13184,7 +13216,9 @@
 	},
 /area/rogue/outdoors/mountains)
 "okR" = (
-/obj/machinery/light/rogue/hearth,
+/obj/machinery/light/rogue/hearth{
+	fueluse = 56000
+	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/tavern)
 "olg" = (
@@ -16593,8 +16627,7 @@
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town)
 "sev" = (
-/obj/structure/bed/rogue/inn/double,
-/obj/item/bedsheet/rogue/double_pelt,
+/obj/structure/table/wood/nice/decorated_alt,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "sfg" = (
@@ -17082,6 +17115,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/town/basement)
+"sIR" = (
+/obj/structure/bed/rogue/inn/double,
+/obj/item/bedsheet/rogue/double_pelt,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "sJY" = (
 /turf/closed/wall/mineral/rogue/decostone/cand,
 /area/rogue/indoors/town/church/chapel)
@@ -19671,9 +19709,6 @@
 	},
 /area/rogue/under/town/basement)
 "vum" = (
-/obj/machinery/light/rogue/wallfire/candle{
-	pixel_y = -32
-	},
 /obj/structure/table/wood/reinf_long{
 	dir = 8
 	},
@@ -30932,7 +30967,7 @@ xPr
 xPr
 aWn
 aNX
-vfb
+igm
 vfb
 dUI
 cWI
@@ -103157,7 +103192,7 @@ oiP
 oiP
 vQk
 sev
-fJM
+sIR
 fJM
 fJM
 bAm
