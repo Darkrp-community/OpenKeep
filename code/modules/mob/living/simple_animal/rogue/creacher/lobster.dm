@@ -5,7 +5,7 @@
 	icon_state = "marshcrawler"
 	icon_living = "marshcrawler"
 	icon_dead = "marshcrawler_dead"
-	emote_see = list("snaps it's claws.","piches the air.")
+	emote_see = list("snaps it's claws.","pinches the air.")
 	density = FALSE
 	faction = list("neutral") //these shouldnt be aggressive
 	pass_flags = PASSTABLE | PASSMOB
@@ -56,7 +56,7 @@
 	name = "blood crawler"
 	desc = "A swamp-dwelling creacher with a hardened carapace and pinching claws. They have developed a taste for flesh, and they no longer wait for their meal to die first."
 	icon_state = "bloodcrawler"
-	icon_living = "bloodhcrawler"
+	icon_living = "bloodcrawler"
 	icon_dead = "bloodcrawler_dead"
 	health =  VOLF_HEALTH //110hp
 	maxHealth =  VOLF_HEALTH
