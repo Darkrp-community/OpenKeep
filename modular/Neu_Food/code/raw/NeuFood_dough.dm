@@ -63,7 +63,7 @@
 				qdel(src)
 		else
 			to_chat(user, span_warning("Put [src] on a table before working it!"))
-	if(istype(I, /obj/item/kitchen/rollingpin))
+	if(istype(I, /obj/item/rogueweapon/mace/woodclub/rollingpin))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'modular/Neu_Food/sound/rollingpin.ogg', 100, TRUE, -1)
 			to_chat(user, span_notice("Rolling [src] into cracker dough."))
@@ -202,7 +202,7 @@
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
 		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
-	if(istype(I, /obj/item/kitchen/rollingpin))
+	if(istype(I, /obj/item/rogueweapon/mace/woodclub/rollingpin))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'modular/Neu_Food/sound/rollingpin.ogg', 100, TRUE, -1)
 			to_chat(user, "<span class='notice'>Flattening [src]...</span>")

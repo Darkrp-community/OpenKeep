@@ -135,7 +135,7 @@
 /obj/item/reagent_containers/glass/cup/wooden,
 /obj/item/reagent_containers/glass/cup,
 /obj/item/reagent_containers/glass/cup/silver,
-/obj/item/kitchen/rollingpin,
+/obj/item/rogueweapon/mace/woodclub/rollingpin,
 /obj/item/reagent_containers/peppermill,
 /obj/item/kitchen/spoon,
 /turf/open/floor/rogue/woodturned,
@@ -2379,7 +2379,7 @@
 /obj/item/natural/bundle/stick{
 	pixel_y = 37
 	},
-/obj/item/kitchen/rollingpin,
+/obj/item/rogueweapon/mace/woodclub/rollingpin,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/tavern)
 "cnf" = (
@@ -11209,7 +11209,7 @@
 	},
 /area/rogue/indoors/town)
 "kTZ" = (
-/obj/item/kitchen/rollingpin,
+/obj/item/rogueweapon/mace/woodclub/rollingpin,
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/storage/eggbasket,
 /turf/open/floor/rogue/cobble,
@@ -12234,7 +12234,7 @@
 	icon_state = "longtable"
 	},
 /obj/item/rogueweapon/knife/cleaver,
-/obj/item/kitchen/rollingpin,
+/obj/item/rogueweapon/mace/woodclub/rollingpin,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/church/chapel)
 "lQC" = (
@@ -20620,7 +20620,7 @@
 /obj/item/rogueweapon/knife/cleaver{
 	pixel_x = 7
 	},
-/obj/item/kitchen/rollingpin,
+/obj/item/rogueweapon/mace/woodclub/rollingpin,
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/indoors/town/church/chapel)
 "uhw" = (
