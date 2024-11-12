@@ -1,12 +1,13 @@
-/* WEAVING - is just sewing recipes requiring loom, because they use silk usually, are worth more than normal and should be rarer
+/* WEAVING	-	sewing skill
 ==========================================================*/
+// The only ingridients these recipes can require is SILK and CLOTH
+// They all require a loom
 
 /datum/crafting_recipe/roguetown/weaving
 	structurecraft = /obj/machinery/loom
 	skillcraft = /datum/skill/misc/sewing
 	subtype_reqs = TRUE // so you can use any subtype of fur
-	reqs = list(/obj/item/natural/fibers = 1,
-				/obj/item/natural/silk = 2)
+	reqs = list(/obj/item/natural/silk = 2)
 	craftdiff = 1
 
 /*========= SKILL LEVEL: 1 REQUIRED ==========*/
@@ -38,8 +39,7 @@
 /datum/crafting_recipe/roguetown/weaving/paddedgambeson
 	name = "padded gambeson"
 	result = list(/obj/item/clothing/suit/roguetown/armor/gambeson/heavy)
-	reqs = list(/obj/item/natural/cloth = 6,
-				/obj/item/natural/fibers = 4)
+	reqs = list(/obj/item/natural/cloth = 8)
 	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/weaving/shirt
@@ -67,8 +67,7 @@
 	name = "silk coat"
 	result = list (/obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat)
 	reqs = list(/obj/item/natural/silk = 4,
-				/obj/item/natural/fibers = 1,
-				/obj/item/natural/hide = 1)
+				/obj/item/natural/cloth = 1)
 	craftdiff = 4
 	sellprice = 60
 
@@ -76,66 +75,60 @@
 	name = "padded dress"
 	result = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
 	reqs = list(/obj/item/natural/silk = 4,
-				/obj/item/natural/fibers = 1,
-				/obj/item/natural/hide = 1)
+				/obj/item/natural/cloth = 1)
 	craftdiff = 4
 	sellprice = 80
 
 /datum/crafting_recipe/roguetown/weaving/nunhood
 	name = "nun hood"
 	result = list(/obj/item/clothing/head/roguetown/nun)
+	reqs = list(/obj/item/natural/cloth = 2)
 	craftdiff = 4
 	sellprice = 20
 
 /datum/crafting_recipe/roguetown/weaving/nunrobe
 	name = "nun robe"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/nun)
-	reqs = list(/obj/item/natural/fibers = 1,
-				/obj/item/natural/silk = 3)
+	reqs = list(/obj/item/natural/cloth = 4)
 	craftdiff = 4
 	sellprice = 20
 
 /datum/crafting_recipe/roguetown/weaving/astratarobe
 	name = "astrata robes"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/astrata)
-	reqs = list(/obj/item/natural/fibers = 1,
-				/obj/item/natural/cloth = 3)
+	reqs = list(/obj/item/natural/cloth = 4)
 	craftdiff = 4
 	sellprice = 25
 
 /datum/crafting_recipe/roguetown/weaving/astratahood
 	name = "solar hood"
 	result = list(/obj/item/clothing/head/roguetown/roguehood/astrata)
-	reqs = list(/obj/item/natural/fibers = 1,
-				/obj/item/natural/cloth = 2)
+	reqs = list(/obj/item/natural/cloth = 2)
 	craftdiff = 4
 	sellprice = 25
 
 /datum/crafting_recipe/roguetown/weaving/dendorrobe
 	name = "dendor robes"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/dendor)
-	reqs = list(/obj/item/natural/fibers = 1,
-				/obj/item/natural/cloth = 3)
+	reqs = list(/obj/item/natural/cloth = 4)
 	craftdiff = 4
 	sellprice = 25
 
 /datum/crafting_recipe/roguetown/weaving/necrarobe
 	name = "necra robes"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/necra)
-	reqs = list(/obj/item/natural/fibers = 1,
-				/obj/item/natural/cloth = 3)
+	reqs = list(/obj/item/natural/cloth = 4)
 	craftdiff = 4
 	sellprice = 25
 
 /datum/crafting_recipe/roguetown/weaving/necrahood
 	name = "necra hood"
 	result = list(/obj/item/clothing/head/roguetown/padded/deathshroud)
-	reqs = list(/obj/item/natural/fibers = 1,
-				/obj/item/natural/cloth = 2)
+	reqs = list(/obj/item/natural/cloth = 2)
 	craftdiff = 4
 	sellprice = 20
 
-/datum/crafting_recipe/roguetown/weaving/eoramask
+/datum/crafting_recipe/roguetown/weaving/eoramask // should not be a weaving recipe, does not follow the rules. TO DO
 	name = "eora hood"
 	result = list(/obj/item/clothing/head/roguetown/roguehood/eora)
 	reqs = list(/obj/item/ingot/silver,
@@ -146,16 +139,14 @@
 /datum/crafting_recipe/roguetown/weaving/eorarobes
 	name = "eora robes"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/eora)
-	reqs = list(/obj/item/natural/fibers = 1,
-				/obj/item/natural/cloth = 3)
+	reqs = list(/obj/item/natural/cloth = 3)
 	craftdiff = 4
 	sellprice = 20
 
 /datum/crafting_recipe/roguetown/weaving/eorastraps
 	name = "eora straps"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/eora/alt)
-	reqs = list(/obj/item/natural/fibers = 1,
-				/obj/item/natural/silk = 3)
+	reqs = list(/obj/item/natural/silk = 3)
 	craftdiff = 4
 	sellprice = 50
 

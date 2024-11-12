@@ -1,3 +1,8 @@
+/* SEWING	-	sewing skill
+==========================================================*/
+// The only ingridients these recipes can require is CLOTH and FIBRE
+// They all require a needle
+
 /datum/crafting_recipe/roguetown/sewing
 	tools = list(/obj/item/needle)
 	skillcraft = /datum/skill/misc/sewing

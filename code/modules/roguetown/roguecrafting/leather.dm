@@ -1,4 +1,7 @@
-// LEATHER AND FUR CRAFTING RECIPES
+/* SKINCRAFT	-	skincraft skill
+==========================================================*/
+// The only ingridients these recipes can require is HIDE and FUR
+// They all require a needle and a drying rack
 
 /datum/crafting_recipe/roguetown/leather
 	tools = list(/obj/item/needle)
@@ -61,7 +64,7 @@
 /datum/crafting_recipe/roguetown/leather/quiver
 	name = "quiver"
 	result = /obj/item/quiver
-	reqs = list(/obj/item/natural/hide = 2, /obj/item/natural/fibers = 2)
+	reqs = list(/obj/item/natural/hide = 2)
 
 /datum/crafting_recipe/roguetown/leather/tribal_cloak
 	name = "tribal pelt"
@@ -96,7 +99,7 @@
 
 /*========= SKILL LEVEL: 1 REQUIRED ==========*/
 /datum/crafting_recipe/roguetown/leather/saddle
-	name = "saddle"
+	name = "leather saddle"
 	result = /obj/item/natural/saddle
 	reqs = list(/obj/item/natural/hide = 2)
 	craftdiff = 1
@@ -104,19 +107,17 @@
 /datum/crafting_recipe/roguetown/leather/satchel
 	name = "leather satchel"
 	result = /obj/item/storage/backpack/rogue/satchel
-	reqs = list(/obj/item/natural/hide = 2,
-				/obj/item/natural/fibers = 1)
+	reqs = list(/obj/item/natural/hide = 3)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/meatbag
 	name = "game satchel"
 	result = /obj/item/storage/meatbag
-	reqs = list(/obj/item/natural/hide = 1,
-				/obj/item/natural/cloth = 1)
+	reqs = list(/obj/item/natural/hide = 3)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/heavygloves
-	name = "heavy leather gloves"
+	name = "fur-lined gloves"
 	result = /obj/item/clothing/gloves/roguetown/angle
 	reqs = list(/obj/item/natural/hide = 1,
 				/obj/item/natural/fur = 1)
@@ -153,12 +154,11 @@
 /datum/crafting_recipe/roguetown/leather/backpack
 	name = "leather backpack"
 	result = /obj/item/storage/backpack/rogue/backpack
-	reqs = list(/obj/item/natural/hide = 3,
-				/obj/item/natural/fibers = 2)
+	reqs = list(/obj/item/natural/hide = 4)
 	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/leather/hidearmor
-	name = "hide armor"
+	name = "fur-lined armor"
 	result = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	reqs = list(/obj/item/natural/hide = 2,
 				/obj/item/natural/fur = 1)
@@ -173,7 +173,7 @@
 /datum/crafting_recipe/roguetown/leather/volfmantle
 	name = "volf mantle"
 	result = /obj/item/clothing/cloak/volfmantle
-	reqs = list(/obj/item/natural/fur/volf = 2,
+	reqs = list(/obj/item/natural/fur/volf = 1,
 	/obj/item/natural/head/volf = 1)
 	craftdiff = 2
 
