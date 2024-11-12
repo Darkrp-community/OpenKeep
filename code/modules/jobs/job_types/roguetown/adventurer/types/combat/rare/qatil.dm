@@ -39,14 +39,14 @@
 		H.change_stat("endurance", 1)
 
 	pants = /obj/item/clothing/under/roguetown/trou/leather
-	beltr = /obj/item/rogueweapon/huntingknife/idagger/steel/special
+	beltr = /obj/item/rogueweapon/knife/dagger/steel/special
 	shoes = /obj/item/clothing/shoes/roguetown/shalal
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	belt = /obj/item/storage/belt/rogue/leather/shalal
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	backl = /obj/item/storage/backpack/rogue/satchel
-	head = /obj/item/clothing/neck/roguetown/keffiyeh
+	head = /obj/item/clothing/neck/roguetown/keffiyeh/red
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/lockpick)
 	if(!H.has_language(/datum/language/zybantine))
 		H.grant_language(/datum/language/zybantine)

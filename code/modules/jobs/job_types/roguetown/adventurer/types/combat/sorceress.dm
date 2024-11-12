@@ -23,7 +23,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	backr = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/reagent_containers/glass/bottle/rogue/manapot
-	r_hand = /obj/item/rogueweapon/woodstaff
+	r_hand = /obj/item/rogueweapon/polearm/woodstaff
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE)
@@ -37,8 +37,6 @@
 		H.change_stat("constitution", -1)
 		H.change_stat("endurance", -1)
 		H.change_stat("speed", -2)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
+		H.mind.adjust_spellpoints(7)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/learnspell)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)

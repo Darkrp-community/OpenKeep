@@ -6,15 +6,15 @@
 /obj/effect/spawner/roguemap/loot/common
 	spawned = list(
 		/obj/item/roguecoin/copper/pile = 15,
-		/obj/item/rogueweapon/huntingknife = 10,
-		/obj/item/rogueweapon/huntingknife/idagger = 8,
-		/obj/item/rogueweapon/huntingknife/idagger/steel = 4,
-		/obj/item/rogueweapon/huntingknife/idagger/silver = 2,
+		/obj/item/rogueweapon/knife/hunting = 10,
+		/obj/item/rogueweapon/knife/dagger = 8,
+		/obj/item/rogueweapon/knife/dagger/steel = 4,
+		/obj/item/rogueweapon/knife/dagger/silver = 2,
 		/obj/item/rogueweapon/sword/iron = 3,
-		/obj/item/rogueweapon/woodcut = 10,
+		/obj/item/rogueweapon/axe/iron = 10,
 		/obj/item/rogueweapon/mace = 5,
 		/obj/item/quiver/arrows = 5,
-		/obj/item/rogueweapon/sword/iron/short = 5,
+		/obj/item/rogueweapon/sword/short = 5,
 		/obj/item/clothing/suit/roguetown/armor/leather = 10,
 		/obj/item/clothing/suit/roguetown/armor/gambeson = 15,
 		/obj/item/clothing/gloves/roguetown/chain/iron = 3,
@@ -34,10 +34,57 @@
 		/obj/item/roguecoin/copper = 5,
 		/obj/effect/gibspawner/generic = 5,
 		/obj/effect/decal/remains/bigrat = 5,
-		/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 1,
+		/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 2,
 		)
 
+/obj/effect/spawner/roguemap/cheapinnroomencounter
+	icon_state = "paperwizard"
+	icon = 'icons/mob/simple_human.dmi'
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/item/reagent_containers/food/snacks/smallrat = 15,
+		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
+		/obj/item/roguecoin/copper = 50,
+		/mob/living/carbon/human/species/human/northern/bum/ambush  = 25,
+		)
 
+/obj/structure/mineral_door/wood/red/i
+	name = "Room I"
+	lockid = "roomi"
+	locked = TRUE
+/obj/structure/mineral_door/wood/red/ii	// the cheap shitty room that starts unlocked and might have a nasty surprise
+	name = "Room II"
+	desc = "The lock is a bit loose on this door."
+	lockid = "roomii"
+/obj/structure/mineral_door/wood/red/iii
+	name = "Room III"
+	lockid = "roomiii"
+	locked = TRUE
+/obj/structure/mineral_door/wood/red/iv
+	name = "Room IV"
+	lockid = "roomiv"
+	locked = TRUE
+/obj/structure/mineral_door/wood/red/v
+	name = "Room V"
+	lockid = "roomv"
+	locked = TRUE
+/obj/structure/mineral_door/wood/red/vi
+	name = "Room VI"
+	lockid = "roomvi"
+	locked = TRUE
+/obj/structure/mineral_door/wood/green/merc
+	name = "Mercenary Lodgings"
+	lockid = "mercenary"
+	locked = TRUE
+/obj/structure/mineral_door/wood/violet/roomhunt
+	name = "Room HUNT"
+	lockid = "roomhunt"
+	locked = TRUE
+/obj/structure/mineral_door/wood/violet/roomroyal
+	name = "Room ROYAL"
+	lockid = "roomroyal"
+	locked = TRUE
 
 /*	..................   Hauntz randomizer   ................... */
 /obj/effect/spawner/roguemap/hauntz_random
@@ -514,6 +561,16 @@
 	pixel_y = 32
 
 
+/obj/structure/fluff/shipssprote
+	name = ""
+	desc = ""
+	icon = 'icons/obj/atmospherics/pipes/disposal.dmi'
+	icon_state = "pipe"
+	mouse_opacity = 0
+	color = "#5a4621"
+	pixel_y = -16
+
+
 /obj/structure/fluff/walldeco/bath/random
 	icon_state = "bath"
 	pixel_y = 32
@@ -536,18 +593,45 @@
 	pixel_y = 32
 
 
-/*	..................   Red brick Walls   ................... */
-/turf/closed/wall/mineral/rogue/stonebrick/reddish
-	color = "#e0b7af"
+/*	..................   Innocent Bush   ................... */
+/obj/structure/innocent_bush
+	name = "bush"
+	desc = "These large bushes are known to be well-liked by silkworms who make their nests in their dark depths."
+	icon = 'icons/roguetown/mob/monster/Trolls.dmi'
+	icon_state = "Trolls"
+	pixel_x = -16
+	layer = ABOVE_ALL_MOB_LAYER
+	max_integrity = 500
+	density = TRUE
 
-/turf/closed/wall/mineral/rogue/decostone/fluffstone/reddish
-	color = "#fbc5bc"
+/obj/structure/innocent_bush/attack_hand(mob/living/carbon/human/user)
+//	playsound(src.loc, "plantcross", 80, FALSE, -1)
+//	user.visible_message(span_noticesmall("[user] searches through [src]."))
+//	shake_camera(user, 2, 2)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/trollbog (get_turf(src))
+	qdel(src)
 
-/turf/closed/wall/mineral/rogue/decostone/cand/reddish
-	color = "#fbd2cb"
+/obj/structure/innocent_bush/attackby(obj/item, /mob/living/user, params)
+//	playsound(src.loc, "plantcross", 80, FALSE, -1)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+//	shake_camera(user, 2, 2)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/trollbog (get_turf(src))
+	qdel(src)
 
-/obj/structure/stairs/stone/reddish
-	color = "#ffddd7"
+/obj/structure/innocent_bush/Bumped(atom/movable/AM)
+	playsound(src.loc, "plantcross", 80, FALSE, -1)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/trollbog (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_bush/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	playsound(src.loc, "plantcross", 80, FALSE, -1)
+	sleep(4)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/trollbog (get_turf(src))
+	qdel(src)
+
 
 
 /obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
@@ -561,11 +645,6 @@
 
 
 /*	..................   Misc   ................... */
-/obj/structure/bars/alt
-	icon_state = "bars_alt"
-	plane = -3
-	layer = WALL_OBJ_LAYER+0.05
-
 /obj/item/roguebin/alt
 	icon_state = "washbin2"
 
@@ -577,34 +656,6 @@
 	desc = "A literal gnome, turned to stone mid-step and put on a matching stone platform. Rather unsettling."
 	smeltresult = null
 	color = "#617163"
-
-
-
-/*	..................   The Drunken Saiga   ................... */
-/obj/structure/fluff/walldeco/innsign/saiga
-	name = "The Drunken Saiga"
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "bar_saiga"
-	plane = -1
-	pixel_x = 3
-	pixel_y = 16
-
-/obj/structure/fluff/walldeco/innsign/trophy
-	name = "saiga trophy"
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "saiga_trophy"
-	pixel_y = 32
-
-/obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep
-	name = "padded vest"
-	desc = "Dyed green, belongs to the owner of the Drunken Saiga inn."
-	icon_state = "striped"
-	color = "#638b45"
-
-/turf/open/floor/rogue/tile/checker_green
-	icon_state = "tile"
-	color = "#94df5b"
-
 
 
 /*	..................   Areas to play with the music a bit   ................... */
@@ -625,16 +676,16 @@
 	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
 
 
-/*	..................   Traveltiles   ................... */ // these are the ones on centcom, where the actual lair is
-/obj/structure/fluff/traveltile/bandit_lair
+/*	..................   Traveltiles   ................... */ // these are the ones on centcom, where the actual lair is, to reduce varedits onmap
+/obj/structure/fluff/traveltile/exit_bandit		// mus NOT be a traveltile/bandit child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
 	aportalid = "banditin"
 	aportalgoesto = "banditexit"
 
-/obj/structure/fluff/traveltile/vampire_lair
+/obj/structure/fluff/traveltile/exit_vampire	// mus NOT be a traveltile/vampire child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
 	aportalid = "vampin"
 	aportalgoesto = "vampexit"
 
-/obj/structure/fluff/traveltile/inhumen_lair
+/obj/structure/fluff/traveltile/exit_inhumen
 	aportalid = "inhumenin"
 	aportalgoesto = "inhumenexit"
 
@@ -643,6 +694,18 @@
 	name = "to the Deep Bog"
 	aportalid = "inhumenexit"
 	aportalgoesto = "inhumenin"
+
+
+/*	..................   Toll randomizer (poor mans coin generator, cheaper workload is all)  ................... */
+/obj/effect/spawner/roguemap/tollrandom
+	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
+	icon_state = "soultoken_floor"
+	probby = 25
+	color = "#ff0000"
+	spawned = list(
+		/obj/item/underworld/coin = 1,
+		)
+
 
 /* moved to main. leave this be for now, I want to be able to find the additions I make easily for tweaking
 /*	..................   More chairs   ................... */

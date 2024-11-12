@@ -34,7 +34,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/roguekey/church
-	backl = /obj/item/rogueweapon/woodstaff/quarterstaff
+	backl = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff
 	backpack_contents = list(/obj/item/needle)
 	switch(A.name)
 		if("Astrata")
@@ -80,6 +80,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE) // They get this and a wooden staff to defend themselves
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)

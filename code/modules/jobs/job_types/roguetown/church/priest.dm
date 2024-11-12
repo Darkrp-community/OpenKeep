@@ -39,20 +39,33 @@
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	beltl = /obj/item/keyring/priest
 	belt = /obj/item/storage/belt/rogue/leather/rope
-	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
-	id = /obj/item/clothing/ring/active/nomag
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/needle)
+	backpack_contents = list(/obj/item/needle = 1, /obj/item/storage/belt/rogue/pouch/coins/rich = 1 )
+
+	var/obj/item/rogueweapon/polearm/woodstaff/aries/P = new()
+	H.put_in_hands(P, forced = TRUE)
+
+	if((H.dna.species.id == "aasimar" || H.dna.species.id == "dwarf"))
+		head = /obj/item/clothing/head/roguetown/roguehood/priest
+
+	else
+		id = /obj/item/clothing/ring/active/nomag
+
 	if(H.mind)
+		if(H.patron != /datum/patron/divine/dendor)					// Astratans rule the church
+			H.patron = GLOB.patronlist[/datum/patron/divine/astrata]
+
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) // Privilege of being the SECOND biggest target in the game, and arguably the worse of the two targets to lose
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
@@ -68,11 +81,8 @@
 	H.verbs |= /mob/living/carbon/human/proc/coronate_lord
 	H.verbs |= /mob/living/carbon/human/proc/churchexcommunicate
 	H.verbs |= /mob/living/carbon/human/proc/churchannouncement
-//	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-//		H.underwear = "Femleotard"
-//		H.underwear_color = CLOTHING_BLACK
-//		H.update_body()
 
+	H.update_icons()
 
 /mob/living/carbon/human/proc/coronate_lord()
 	set name = "Coronate"

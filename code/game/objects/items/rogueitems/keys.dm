@@ -67,6 +67,12 @@
 	icon_state = "mazekey"
 	lockid = "manor"
 
+/obj/item/roguekey/guest
+	name = "guest key"
+	desc = "The key to the manor's guest room. Given to visiting nobles."
+	icon_state = "greenkey"
+	lockid = "guest"
+
 /obj/item/roguekey/butler // intended for chests, crates, cellar doors, NOT kitchen access
 	name = "servants key"
 	desc = "The key to the pantrys and cellars of the manor."
@@ -142,42 +148,54 @@
 	desc = "The key to the first room."
 	icon_state = "brownkey"
 	lockid = "roomi"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomii
 	name = "room II key"
 	desc = "The key to the second room."
 	icon_state = "brownkey"
 	lockid = "roomii"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomiii
 	name = "room III key"
 	desc = "The key to the third room."
 	icon_state = "brownkey"
 	lockid = "roomiii"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomiv
 	name = "room IV key"
 	desc = "The key to the fourth room."
 	icon_state = "brownkey"
 	lockid = "roomiv"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomv
 	name = "room V key"
 	desc = "The key to the fifth room."
 	icon_state = "brownkey"
 	lockid = "roomv"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomvi
 	name = "room VI key"
 	desc = "The key to the sixth room."
 	icon_state = "brownkey"
 	lockid = "roomvi"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomhunt
 	name = "room HUNT key"
-	desc = "The key to the most luxurious Inn room."
+	desc = "The key to one of the most luxurious Inn room."
 	icon_state = "brownkey"
 	lockid = "roomhunt"
+
+/obj/item/roguekey/roomroyal
+	name = "room ROYAL key"
+	desc = "The key to one of the most luxurious Inn room."
+	icon_state = "brownkey"
+	lockid = "roomroyal"
 
 //vampire mansion//
 /obj/item/roguekey/vampire
@@ -345,7 +363,7 @@
 	icon_state = "brownkey"
 	lockid = "house7"
 
-/obj/item/roguekey/houses/house8
+/obj/item/roguekey/houses/house8 //Not currently in use on Dun_Manor
 	name = "house VIII key"
 	icon_state = "brownkey"
 	lockid = "house8"

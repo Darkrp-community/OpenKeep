@@ -42,13 +42,13 @@
 
 /datum/crafting_recipe/roguetown/sewing/shortshirt
 	name = "cloth short shirt"
-	result = list(/obj/item/clothing/suit/roguetown/shirt/shortshirt)
+	result = list(/obj/item/clothing/suit/roguetown/shirt/shortshirt/uncolored)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 
 /datum/crafting_recipe/roguetown/sewing/clothshirt
 	name = "cloth shirt"
-	result = list(/obj/item/clothing/suit/roguetown/shirt/undershirt)
+	result = list(/obj/item/clothing/suit/roguetown/shirt/undershirt/uncolored)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 
@@ -60,7 +60,7 @@
 
 /datum/crafting_recipe/roguetown/sewing/clothtights
 	name = "cloth tights"
-	result = list(/obj/item/clothing/under/roguetown/tights)
+	result = list(/obj/item/clothing/under/roguetown/tights/uncolored)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 
@@ -86,6 +86,12 @@
 	result = list(/obj/item/clothing/mask/rogue/shepherd/clothmask)
 	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 1)
 	tools = list(/obj/item/needle)
+
+/datum/crafting_recipe/roguetown/sewing/linedanklet
+	name = "cloth anklet"
+	result = list(/obj/item/clothing/shoes/roguetown/boots/clothlinedanklets)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 2)
 
 /datum/crafting_recipe/roguetown/sewing/zigbox
 	name = "zigbox"

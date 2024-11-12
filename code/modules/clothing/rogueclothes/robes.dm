@@ -19,10 +19,10 @@
 	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/suit/roguetown/shirt/robe/plain
-	color = "#7c6d5c"
+	color = CLOTHING_LINEN
 
 /obj/item/clothing/suit/roguetown/shirt/robe/black
-	color = CLOTHING_BLACK_WARM
+	color = CLOTHING_DARK_INK
 
 /obj/item/clothing/suit/roguetown/shirt/robe/white
 
@@ -70,10 +70,12 @@
 	name = "solar vestments"
 	desc = "Holy vestments sanctified by divine hands. Caution is advised if not a faithful."
 	icon_state = "priestrobe"
+	dropshrink = 0.8
 
 /obj/item/clothing/suit/roguetown/shirt/robe/priest/pickup(mob/living/user)
 	if((user.job != "Priest") && (user.job != "Priestess"))
-		to_chat(user, "<font color='yellow'>UNWORTHY HANDS TOUCH THE VESTMENTS, CEASE OR BE PUNISHED</font>")
+		user.visible_message(span_reallybig("UNWORTHY HANDS TOUCH MY VISAGE, CEASE OR BE PUNISHED"))
+		playsound(user, 'sound/misc/astratascream.ogg', 80,  falloff = 0.2)
 		spawn(30)
 			if(loc == user)
 				user.adjust_fire_stacks(5)
@@ -84,10 +86,10 @@
 
 //................ Wizard Robes ............... //
 /obj/item/clothing/suit/roguetown/shirt/robe/courtmage
-	color = "#6c6c6c"
+	color = CLOTHING_ASH_GREY
 
 /obj/item/clothing/suit/roguetown/shirt/robe/mage/Initialize()
-	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
+	color = pick( CLOTHING_PEASANT_BROWN, CLOTHING_SPRING_GREEN, CLOTHING_CHESTNUT, CLOTHING_YELLOW_OCHRE)
 	. = ..()
 
 /obj/item/clothing/suit/roguetown/shirt/robe/wizard

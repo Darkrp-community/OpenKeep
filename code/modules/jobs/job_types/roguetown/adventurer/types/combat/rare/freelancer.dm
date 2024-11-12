@@ -28,11 +28,11 @@
 	var/randy = rand(1,5)
 	switch(randy)
 		if(1 to 2)
-			backr = /obj/item/rogueweapon/halberd/bardiche
+			backr = /obj/item/rogueweapon/polearm/halberd/bardiche
 		if(3 to 4)
-			backr = /obj/item/rogueweapon/eaglebeak
+			backr = /obj/item/rogueweapon/polearm/eaglebeak
 		if(5)
-			backr = /obj/item/rogueweapon/spear/billhook
+			backr = /obj/item/rogueweapon/polearm/spear/billhook
 
 
 	pants = /obj/item/clothing/under/roguetown/tights/black

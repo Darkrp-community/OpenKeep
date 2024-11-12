@@ -20,8 +20,7 @@
 		var/mob/living/target = targets[1]
 		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
 			target.visible_message("<span class='danger'>[target] is burned by holy light!</span>", "<span class='userdanger'>I'm burned by holy light!</span>")
-			target.adjustFireLoss(50)
-			target.Paralyze(30)
+			target.adjustFireLoss(30)
 			target.fire_act(1,5)
 			return TRUE
 		if(target.real_name in GLOB.excommunicated_players)
