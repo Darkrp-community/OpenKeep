@@ -63,7 +63,7 @@
 	animname = "stab"
 	blade_class = BCLASS_STAB
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-	penfactor = 30
+	penfactor = AP_DAGGER_STAB
 	chargetime = 0
 	clickcd = CLICK_CD_FAST
 	swingdelay = 1
@@ -75,7 +75,7 @@
 	name = "thrust"
 	attack_verb = list("stabs", "impales")
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-	penfactor = 50
+	penfactor = AP_DAGGER_PICK
 	clickcd = CLICK_CD_MELEE
 	swingdelay = 1
 	blade_class = BCLASS_PICK
@@ -399,8 +399,8 @@
 	desc = "A tool favored by the wood-elves, easy to make, useful for skinning the flesh of beast and man alike."
 	icon_state = "stone_knife"
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
-	max_integrity = 15
-	max_blade_int = 15
+	max_integrity = 30
+	max_blade_int = 30
 	wdefense = TERRIBLE_PARRY
 	smeltresult = /obj/item/ash
 	sellprice = 5
