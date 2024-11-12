@@ -263,7 +263,7 @@
 		return
 	if(zFall(A, ++levels))
 		return FALSE
-	if(isliving(A)) 
+	if(isliving(A))
 		var/mob/living/O = A
 		var/dex_save = O.mind?.get_skill_level(/datum/skill/misc/climbing)
 		if(dex_save >= 5)
@@ -635,8 +635,6 @@
 /turf/acid_act(acidpwr, acid_volume)
 	. = 1
 	var/acid_type = /obj/effect/acid
-	if(acidpwr >= 200) //alien acid power
-		acid_type = /obj/effect/acid/alien
 	var/has_acid_effect = FALSE
 	for(var/obj/O in src)
 		if(intact && O.level == 1) //hidden under the floor

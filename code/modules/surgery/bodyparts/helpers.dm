@@ -125,11 +125,11 @@
 /mob/living/carbon/get_missing_limbs()
 	RETURN_TYPE(/list)
 	var/list/full = list(
-		BODY_ZONE_HEAD, 
-		BODY_ZONE_CHEST, 
-		BODY_ZONE_R_ARM, 
-		BODY_ZONE_L_ARM, 
-		BODY_ZONE_R_LEG, 
+		BODY_ZONE_HEAD,
+		BODY_ZONE_CHEST,
+		BODY_ZONE_R_ARM,
+		BODY_ZONE_L_ARM,
+		BODY_ZONE_R_LEG,
 		BODY_ZONE_L_LEG,
 	)
 	for(var/zone in full)
@@ -139,7 +139,7 @@
 
 /mob/living/carbon/alien/larva/get_missing_limbs()
 	var/list/full = list(
-		BODY_ZONE_HEAD, 
+		BODY_ZONE_HEAD,
 		BODY_ZONE_CHEST,
 	)
 	for(var/zone in full)
@@ -152,11 +152,11 @@
 
 /mob/living/carbon/get_disabled_limbs()
 	var/list/full = list(
-		BODY_ZONE_HEAD, 
-		BODY_ZONE_CHEST, 
-		BODY_ZONE_R_ARM, 
-		BODY_ZONE_L_ARM, 
-		BODY_ZONE_R_LEG, 
+		BODY_ZONE_HEAD,
+		BODY_ZONE_CHEST,
+		BODY_ZONE_R_ARM,
+		BODY_ZONE_L_ARM,
+		BODY_ZONE_R_LEG,
 		BODY_ZONE_L_LEG,
 	)
 	var/list/disabled = list()
@@ -168,7 +168,7 @@
 
 /mob/living/carbon/alien/larva/get_disabled_limbs()
 	var/list/full = list(
-		BODY_ZONE_HEAD, 
+		BODY_ZONE_HEAD,
 		BODY_ZONE_CHEST,
 	)
 	var/list/disabled = list()
@@ -220,42 +220,6 @@
 		if(robotic)
 			L.change_bodypart_status(BODYPART_ROBOTIC)
 	. = L
-
-/mob/living/carbon/alien/larva/newBodyPart(zone, robotic, fixed_icon)
-	var/obj/item/bodypart/L
-	switch(zone)
-		if(BODY_ZONE_HEAD)
-			L = new /obj/item/bodypart/head/larva()
-		if(BODY_ZONE_CHEST)
-			L = new /obj/item/bodypart/chest/larva()
-	if(L)
-		L.update_limb(fixed_icon, src)
-		if(robotic)
-			L.change_bodypart_status(BODYPART_ROBOTIC)
-	. = L
-
-/mob/living/carbon/alien/humanoid/newBodyPart(zone, robotic, fixed_icon)
-	var/obj/item/bodypart/L
-	switch(zone)
-		if(BODY_ZONE_L_ARM)
-			L = new /obj/item/bodypart/l_arm/alien()
-		if(BODY_ZONE_R_ARM)
-			L = new /obj/item/bodypart/r_arm/alien()
-		if(BODY_ZONE_HEAD)
-			L = new /obj/item/bodypart/head/alien()
-		if(BODY_ZONE_L_LEG)
-			L = new /obj/item/bodypart/l_leg/alien()
-		if(BODY_ZONE_R_LEG)
-			L = new /obj/item/bodypart/r_leg/alien()
-		if(BODY_ZONE_CHEST)
-			L = new /obj/item/bodypart/chest/alien()
-	if(L)
-		L.update_limb(fixed_icon, src)
-		if(robotic)
-			L.change_bodypart_status(BODYPART_ROBOTIC)
-	. = L
-
-
 
 /mob/living/carbon/proc/Digitigrade_Leg_Swap(swap_back)
 	var/body_plan_changed = FALSE
