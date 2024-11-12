@@ -49,7 +49,7 @@
 	cloak = /obj/item/clothing/cloak/apron/waist/brown
 	pants = /obj/item/clothing/under/roguetown/trou
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/green//gave them the guild tunic they have on the map, blacksmiths get them too
-	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes/buckle
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots//shortboots for worker roles
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/hammer/claw
