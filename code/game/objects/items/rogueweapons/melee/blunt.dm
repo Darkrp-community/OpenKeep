@@ -186,6 +186,16 @@
 	if(icon_state == "club1")
 		icon_state = "club[rand(1,2)]"
 
+//................ Rolling Pin ............... //
+/obj/item/rogueweapon/mace/woodclub/rollingpin
+	name = "rolling pin"
+	desc = "For rolling dough or teaching beggars who steal a lesson."
+	icon = 'modular/Neu_Food/icons/cooking.dmi'
+	icon_state = "rolling_pin"
+	item_state = "rolling_pin"
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
+	experimental_inhand = FALSE
 
 //................ Cudgel ............... //
 /obj/item/rogueweapon/mace/cudgel

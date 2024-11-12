@@ -38,7 +38,6 @@
 			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
 		if("Dendor")	// good helmet but no money
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 			neck = /obj/item/clothing/neck/roguetown/coif
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 			cloak = /obj/item/clothing/cloak/raincloak/furcloak

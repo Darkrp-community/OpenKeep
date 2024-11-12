@@ -46,6 +46,9 @@
 
 /datum/outfit/job/roguetown/adept/bzealot/pre_equip(mob/living/carbon/human/H)
 	..()
+	if(H.patron != /datum/patron/divine/astrata)
+		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+
 	//Armor for class
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
 	cloak = /obj/item/clothing/cloak/tabard/adept
@@ -87,6 +90,8 @@
 
 /datum/outfit/job/roguetown/adept/rthief/pre_equip(mob/living/carbon/human/H)
 	..()
+	if(H.patron != /datum/patron/divine/astrata)
+		H.patron = GLOB.patronlist[/datum/patron/forgotten]
 	//Armor for class
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	neck = /obj/item/clothing/neck/roguetown/gorget
