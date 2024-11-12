@@ -19,7 +19,7 @@
 	smeltresult = null
 	associated_skill = /datum/skill/combat/whipsflails
 	possible_item_intents = list(MACE_STRIKE)
-	gripped_intents = list(/datum/intent/flailthresh,/datum/intent/mace/strike/wood/long)
+	gripped_intents = list(/datum/intent/flailthresh,/datum/intent/flail/strike/long)
 
 	force = 10
 	force_wielded = 14
