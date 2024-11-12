@@ -36,9 +36,9 @@
 		H.invisibility = INVISIBILITY_MAXIMUM
 		H.become_blind("advsetup")
 
-/datum/outfit/job/roguetown/mercenary // Reminder message
-	var/tutorial = "<br><br><font color='#855b14'><span class='bold'>Your sponsor, the Merchant, representing the MGE guild, might have work for you todae, go find out.</span></font><br><br>"
+/datum/outfit/job/roguetown/mercenary
+	var/reminder = "<br><br><font color='#855b14'><span class='bold'>Your sponsor, the Merchant, representing the MGE guild, might have work for you todae, go find out.</span></font><br><br>"
 
 /datum/outfit/job/roguetown/mercenary/post_equip(mob/living/carbon/human/H)
 	..()
-	to_chat(H, tutorial)
+	to_chat(H, reminder)

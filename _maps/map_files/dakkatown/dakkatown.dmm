@@ -3813,7 +3813,7 @@
 "oy" = (
 /obj/structure/table/wood/plain,
 /obj/item/storage/roguebag,
-/obj/item/kitchen/rollingpin,
+/obj/item/rogueweapon/mace/woodclub/rollingpin,
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors/town/tavern)
 "oz" = (
@@ -12630,7 +12630,7 @@
 /area/rogue/indoors/town/shop)
 "VX" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/rollingpin,
+/obj/item/rogueweapon/mace/woodclub/rollingpin,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor)
 "VY" = (
