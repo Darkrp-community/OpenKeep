@@ -350,7 +350,7 @@
 /datum/outfit/job/roguetown/npc/orc/tribal/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.STASTR = 12
-	H.STASPD = 1
+	H.STASPD = 12
 	H.STACON = 13
 	H.STAEND = 13
 	var/loadout = rand(1,5)
