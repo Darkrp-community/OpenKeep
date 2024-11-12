@@ -177,11 +177,16 @@
 	update_icon()
 	..()
 
-/obj/item/reagent_containers/food/snacks/produce/jacksberry/examine(mob/user)
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/examine(mob/living/carbon/user)
 	var/farminglvl = user.mind?.get_skill_level(/datum/skill/labor/farming)
 	. += ..()
 	if(farminglvl >= 3 && poisonous == TRUE)
 		. += "These berries appear to be poisonous."
+	if(user.mind.assigned_role == "Cook"&& poisonous == TRUE)
+		. += "These berries appear to be poisonous."
+	if(user.mind.assigned_role == "Master Chef"&& poisonous == TRUE)
+		. += "These berries are POISONOUS."
+
 
 /obj/item/reagent_containers/food/snacks/produce/jacksberry/On_Consume(mob/living/eater)
 	..()

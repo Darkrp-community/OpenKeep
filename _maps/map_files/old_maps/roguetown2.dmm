@@ -1572,7 +1572,7 @@
 /obj/item/flint{
 	pixel_y = 40
 	},
-/obj/item/kitchen/rollingpin,
+/obj/item/rogueweapon/mace/woodclub/rollingpin,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "fK" = (

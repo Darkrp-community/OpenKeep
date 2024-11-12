@@ -174,7 +174,7 @@
 
 /datum/crafting_recipe/roguetown/rollingpin
 	name = "wooden rollingpin"
-	result = /obj/item/kitchen/rollingpin
+	result = /obj/item/rogueweapon/mace/woodclub/rollingpin
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
 /datum/crafting_recipe/roguetown/woodbucket
