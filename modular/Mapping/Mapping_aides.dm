@@ -351,146 +351,77 @@
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
 
-/obj/machinery/light/rogue/wallfire/big_fireplace
-	icon_state = "fireplace1"
-	base_state = "fireplace"
-	icon = 'icons/roguetown/misc/fireplace64.dmi'
-
-/obj/machinery/light/rogue/hearth/big_fireplace
-	name = "fireplace"
-	icon_state = "fireplace1"
-	base_state = "fireplace"
-	icon = 'icons/roguetown/misc/fireplace64.dmi'
-	fueluse = -1
-	pixel_x = -16
-	climb_offset = 4
-
 
 /*	..................   Colony Spider Net   ................... */
 /obj/structure/innocent_net
 	name = ""
 	desc = ""
 	icon = 'icons/roguetown/misc/tallstructure.dmi'
-	icon_state = "colonyspider"
+	icon_state = "innocentweb1"
 	layer = ABOVE_ALL_MOB_LAYER
 	density = FALSE
 	max_integrity = 35
 	climbable = FALSE
 	dir = SOUTH
-	debris = list(/obj/item/natural/silk = 2)
-	prob2findstuff = 18
+	debris = list(/obj/item/natural/silk = 1)
+	var/lucky_escape
 
-/obj/structure/innocent_net/attack_hand(mob/living/carbon/human/user)
-	user.visible_message(span_noticesmall("[user] touches the sticky web..."))
+/obj/structure/innocent_net/Initialize()
+	. = ..()
+	icon_state = "innocentweb[rand(1,2)]"
+	return ..()
+
+/obj/structure/innocent_net/attack_hand()
 	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
 	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
 	qdel(src)
 
-/obj/structure/innocent_net/attackby(obj/item, /mob/living/user, params)
-	to_chat(H, "<span class='danger'>[user] destroys the [src].</span>")
+/obj/structure/innocent_net/attackby(obj/item, /mob/user, params)
 	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
 	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
 	qdel(src)
 
 /obj/structure/innocent_net/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	to_chat(H, "<span class='danger'>[user] destroys the [src].</span>")
 	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
 	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
 	qdel(src)
 
-/*
-/obj/structure/innocent_net/Initialize()
-	if(silky)
-		goodie = /obj/item/reagent_containers/food/snacks/grub/silk
-	if(prob(70))
-		debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/natural/thorn = 1)
-	return ..()
-*/
-
-// bush crossing
 /obj/structure/innocent_net/Crossed(atom/movable/AM)
 	..()
 	if(isliving(AM))
-		var/mob/living/L = AM
+		var/mob/living/carbon/human/L = AM
+		lucky_escape = ( L.STALUC * 4 )
 		L.Immobilize(5)
 		if(L.m_intent == MOVE_INTENT_WALK)
 			L.Immobilize(10)
-				if(prob(50))
-					playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
-					new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-					qdel(src)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
 		if(L.m_intent == MOVE_INTENT_RUN)
-			if(!ishuman(L))
-				to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
-				L.Immobilize(20)
-				if(prob(50))
-					playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
-					new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-					qdel(src)
+			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
+			L.Immobilize(20)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
 			else
-				var/mob/living/carbon/human/H = L
-				if(prob(20))
-					L.Paralyze(10)
-				if(prob(50))
-					playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
-					new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-					qdel(src)
-
-/obj/structure/innocent_net/attack_hand(mob/living/user)
-	var/mob/living/L = user
-
-
-	user.changeNext_move(CLICK_CD_MELEE)
-	playsound(src.loc, "plantcross", 80, FALSE, -1)
-	prob2findstuff = prob2findstuff + ( user.STAPER * 4 )
-	prob2findgoodie = prob2findgoodie + ( user.STALUC * 2 ) + ( user.STAPER * 2 )
-	luckydouble = ( user.STALUC * 2 )
-	user.visible_message(span_noticesmall("[user] searches through [src]."))
-
-	if(do_after(L, rand(5,20), target = src))
-
-		if(islooted)
-			to_chat(user, span_warning("Picked clean."))
-			return
-
-		if(prob(prob2findstuff))
-
-			if(prob(prob2findgoodie))
-				var/obj/item/B = goodie
-				if(B)
-					B = new B(user.loc)
-					user.put_in_hands(B)
-					user.visible_message(span_notice("[user] finds [B] in [src]."))
-					if(HAS_TRAIT(user, TRAIT_MIRACULOUS_FORAGING))
-						if(prob(35))
-							return
-					if(prob(luckydouble))
-						return
-					else
-						islooted = TRUE
-						add_overlay("bush_empty_overlay")
-					return
-			else
-				var/obj/item/B = trashie
-				if(B)
-					B = new B(user.loc)
-					user.put_in_hands(B)
-					user.visible_message(span_notice("[user] finds [B] in [src]."))
-					if(HAS_TRAIT(user, TRAIT_MIRACULOUS_FORAGING))
-						if(prob(35))
-							return
-					if(prob(luckydouble))
-						return
-					else
-						islooted = TRUE
-						add_overlay("bush_empty_overlay")
-					return
-
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
 		else
-			to_chat(user, span_noticesmall("Didn't find anything."))
-	prob2findstuff = 18
-	prob2findgoodie = 15
-	luckydouble	= 3
+			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
+			L.Immobilize(5)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
+
 
 /*	..................   Wizard Shenanigans   ................... */
 
