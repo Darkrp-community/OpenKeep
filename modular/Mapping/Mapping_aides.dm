@@ -286,12 +286,10 @@
 	spawned = list(	/obj/structure/trap/xylix_healing = 10, /obj/structure/trap/xylix = 10)
 
 /obj/structure/fluff/walldeco/xylfrown
-	icon = 'modular/Mapping/icons/decoration.dmi'
 	icon_state = "wall_sad"
 	pixel_y = 32
 
 /obj/structure/fluff/walldeco/xylsmile
-	icon = 'modular/Mapping/icons/decoration.dmi'
 	icon_state = "wall_funny"
 	pixel_y = 32
 
@@ -367,6 +365,132 @@
 	pixel_x = -16
 	climb_offset = 4
 
+
+/*	..................   Colony Spider Net   ................... */
+/obj/structure/innocent_net
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "colonyspider"
+	layer = ABOVE_ALL_MOB_LAYER
+	density = FALSE
+	max_integrity = 35
+	climbable = FALSE
+	dir = SOUTH
+	debris = list(/obj/item/natural/silk = 2)
+	prob2findstuff = 18
+
+/obj/structure/innocent_net/attack_hand(mob/living/carbon/human/user)
+	user.visible_message(span_noticesmall("[user] touches the sticky web..."))
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_net/attackby(obj/item, /mob/living/user, params)
+	to_chat(H, "<span class='danger'>[user] destroys the [src].</span>")
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_net/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	to_chat(H, "<span class='danger'>[user] destroys the [src].</span>")
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/*
+/obj/structure/innocent_net/Initialize()
+	if(silky)
+		goodie = /obj/item/reagent_containers/food/snacks/grub/silk
+	if(prob(70))
+		debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/natural/thorn = 1)
+	return ..()
+*/
+
+// bush crossing
+/obj/structure/innocent_net/Crossed(atom/movable/AM)
+	..()
+	if(isliving(AM))
+		var/mob/living/L = AM
+		L.Immobilize(5)
+		if(L.m_intent == MOVE_INTENT_WALK)
+			L.Immobilize(10)
+				if(prob(50))
+					playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+					new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+					qdel(src)
+		if(L.m_intent == MOVE_INTENT_RUN)
+			if(!ishuman(L))
+				to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
+				L.Immobilize(20)
+				if(prob(50))
+					playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+					new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+					qdel(src)
+			else
+				var/mob/living/carbon/human/H = L
+				if(prob(20))
+					L.Paralyze(10)
+				if(prob(50))
+					playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+					new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+					qdel(src)
+
+/obj/structure/innocent_net/attack_hand(mob/living/user)
+	var/mob/living/L = user
+
+
+	user.changeNext_move(CLICK_CD_MELEE)
+	playsound(src.loc, "plantcross", 80, FALSE, -1)
+	prob2findstuff = prob2findstuff + ( user.STAPER * 4 )
+	prob2findgoodie = prob2findgoodie + ( user.STALUC * 2 ) + ( user.STAPER * 2 )
+	luckydouble = ( user.STALUC * 2 )
+	user.visible_message(span_noticesmall("[user] searches through [src]."))
+
+	if(do_after(L, rand(5,20), target = src))
+
+		if(islooted)
+			to_chat(user, span_warning("Picked clean."))
+			return
+
+		if(prob(prob2findstuff))
+
+			if(prob(prob2findgoodie))
+				var/obj/item/B = goodie
+				if(B)
+					B = new B(user.loc)
+					user.put_in_hands(B)
+					user.visible_message(span_notice("[user] finds [B] in [src]."))
+					if(HAS_TRAIT(user, TRAIT_MIRACULOUS_FORAGING))
+						if(prob(35))
+							return
+					if(prob(luckydouble))
+						return
+					else
+						islooted = TRUE
+						add_overlay("bush_empty_overlay")
+					return
+			else
+				var/obj/item/B = trashie
+				if(B)
+					B = new B(user.loc)
+					user.put_in_hands(B)
+					user.visible_message(span_notice("[user] finds [B] in [src]."))
+					if(HAS_TRAIT(user, TRAIT_MIRACULOUS_FORAGING))
+						if(prob(35))
+							return
+					if(prob(luckydouble))
+						return
+					else
+						islooted = TRUE
+						add_overlay("bush_empty_overlay")
+					return
+
+		else
+			to_chat(user, span_noticesmall("Didn't find anything."))
+	prob2findstuff = 18
+	prob2findgoodie = 15
+	luckydouble	= 3
 
 /*	..................   Wizard Shenanigans   ................... */
 
@@ -496,69 +620,16 @@
 	.  = ..()
 	icon_state = "bathtile_pool_mid"
 
-/*	..................   Wall decorations   ................... */
-/obj/structure/fluff/walldeco/bath // suggestive stonework
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "bath1"
-	pixel_x = -32
-	alpha = 210
-
-/obj/structure/fluff/walldeco/bath/two
-	icon_state = "bath2"
-	pixel_x = -29
-
-/obj/structure/fluff/walldeco/bath/three
-	icon_state = "bath3"
-	pixel_x = -29
-
-/obj/structure/fluff/walldeco/bath/four
-	icon_state = "bath4"
-	pixel_y = 32
-	pixel_x = 0
-
-/obj/structure/fluff/walldeco/bath/five
-	icon_state = "bath5"
-	pixel_x = -29
-
-/obj/structure/fluff/walldeco/bath/six
-	icon_state = "bath6"
-	pixel_x = -29
-
-/obj/structure/fluff/walldeco/bath/seven
-	icon_state = "bath7"
-	pixel_x = 32
-
-/obj/structure/fluff/walldeco/bath/gents
-	icon_state = "gents"
-	pixel_x = 0
-	pixel_y = 32
-
-/obj/structure/fluff/walldeco/bath/ladies
-	icon_state = "ladies"
-	pixel_x = 0
-	pixel_y = 32
-
-/obj/structure/fluff/walldeco/bath/wallrope
-	icon_state = "wallrope"
-	layer = WALL_OBJ_LAYER+0.1
-	pixel_x = 0
-	pixel_y = 0
-	color = "#d66262"
 
 /obj/effect/decal/shadow_floor
 	name = ""
 	desc = ""
-	icon = 'modular/Mapping/icons/decoration.dmi'
 	icon_state = "shadow_floor"
 	mouse_opacity = 0
 
 /obj/effect/decal/shadow_floor/corner
 	icon_state = "shad_floorcorn"
 
-/obj/structure/fluff/walldeco/bath/wallpipes
-	icon_state = "wallpipe"
-	pixel_x = 0
-	pixel_y = 32
 
 
 /obj/structure/fluff/shipssprote
@@ -569,29 +640,6 @@
 	mouse_opacity = 0
 	color = "#5a4621"
 	pixel_y = -16
-
-
-/obj/structure/fluff/walldeco/bath/random
-	icon_state = "bath"
-	pixel_y = 32
-/obj/structure/fluff/walldeco/bath/random/Initialize()
-	. = ..()
-	if(icon_state == "bath")
-		icon_state = "bath[rand(1,8)]"
-
-/obj/structure/fluff/walldeco/vinez // overlay vines for more flexibile mapping
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "vinez"
-
-/obj/structure/fluff/walldeco/vinez/l
-	pixel_x = -32
-/obj/structure/fluff/walldeco/vinez/r
-	pixel_x = 32
-
-/obj/structure/fluff/walldeco/vinez/offset
-	icon_state = "vinez"
-	pixel_y = 32
-
 
 /*	..................   Innocent Bush   ................... */
 /obj/structure/innocent_bush
@@ -636,7 +684,6 @@
 
 /obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
 	name = "candle lamp"
-	icon = 'modular/Mapping/icons/decoration.dmi'
 	icon_state = "candle"
 	base_state = "candle"
 	layer = WALL_OBJ_LAYER+0.1
@@ -768,22 +815,6 @@
 	pixel_x = 32
 	pixel_y = 0
 
-
-// Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
-/obj/structure/bed/rogue/bear
-	desc = "A hide of a slain bear. It looks like someone sleeps on it often."
-	icon = 'icons/turf/floors/bear.dmi'
-	icon_state = "bear"
-	pixel_x = -16
-	pixel_y = -27
-
-/obj/structure/fluff/walldeco/skullspike // for ground really
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "skullspike"
-	plane = -1
-	layer = ABOVE_MOB_LAYER
-	pixel_x = 8
-	pixel_y = 24
 
 /*	..................   Floors   ................... */
 /turf/open/floor/rogue/ruinedwood/darker
