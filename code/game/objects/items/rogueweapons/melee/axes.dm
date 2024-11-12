@@ -75,6 +75,7 @@
 	max_blade_int = 80
 	max_integrity = 80
 	wdefense = BAD_PARRY
+	axe_cut = 15
 
 	wbalance = EASY_TO_DODGE
 	wlength = WLENGTH_SHORT
@@ -137,6 +138,7 @@
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	parrysound = "sword"
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	axe_cut = 18
 
 	wdefense = MEDIOCHRE_PARRY
 	minstr = 6
@@ -190,7 +192,7 @@
 	wdefense = AVERAGE_PARRY
 	minstr = 6
 	sellprice = 35
-	axe_cut = 15 // Better than iron
+	axe_cut = 20
 
 /obj/item/rogueweapon/axe/iron/getonmobprop(tag)
 	. = ..()
