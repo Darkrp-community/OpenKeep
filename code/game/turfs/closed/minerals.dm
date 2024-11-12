@@ -609,12 +609,12 @@
 /turf/closed/mineral/random/rogue/med
 	icon_state = "minrandmed"
 	mineralChance = 50
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 20, /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/coal = 20, /turf/closed/mineral/rogue/copper = 10, /turf/closed/mineral/rogue/gemeralds = 1)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 20, /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/coal = 20, /turf/closed/mineral/rogue/copper = 10, /turf/closed/mineral/rogue/silver = 1)//, /turf/closed/mineral/rogue/gemeralds = 1)
 
 /turf/closed/mineral/random/rogue/high
 	icon_state = "minrandhigh"
 	mineralChance = 60
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/gold = 15 , /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/silver = 15, /turf/closed/mineral/rogue/gemeralds = 10)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/gold = 15 , /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/silver = 15)//, /turf/closed/mineral/rogue/gemeralds = 10)
 
 
 //begin actual mineral turfs

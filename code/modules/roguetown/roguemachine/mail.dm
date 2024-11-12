@@ -10,6 +10,8 @@
 	pixel_y = 32
 	var/coin_loaded = FALSE
 	var/ournum
+	var/mailtag
+	var/obfuscated = FALSE
 
 /obj/structure/roguemachine/mail/attack_hand(mob/user)
 	if(SSroguemachine.hermailermaster && ishuman(user))
@@ -246,9 +248,32 @@
 		add_overlay(mutable_appearance(icon, "mail-s"))
 		set_light(1, 1, "#1b7bf1")
 
+/obj/structure/roguemachine/mail/examine(mob/user)
+	. = ..()
+	. += "<a href='?src=[REF(src)];directory=1'>Directory:</a> [mailtag]"
 
+/obj/structure/roguemachine/mail/Topic(href, href_list)
+	..()
 
+	if(!usr)
+		return
 
+	if(href_list["directory"])
+		view_directory(usr)
+
+/obj/structure/roguemachine/mail/proc/view_directory(mob/user)
+	var/dat
+	for(var/obj/structure/roguemachine/mail/X in SSroguemachine.hermailers)
+		if(X.obfuscated)
+			continue
+		if(X.mailtag)
+			dat += "#[X.ournum] [X.mailtag]<br>"
+		else
+			dat += "#[X.ournum] [capitalize(get_area_name(X))]<br>"
+
+	var/datum/browser/popup = new(user, "hermes_directory", "<center>HERMES DIRECTORY</center>", 387, 420)
+	popup.set_content(dat)
+	popup.open(FALSE)
 
 /obj/item/roguemachine/mastermail
 	name = "MASTER OF MAILS"
@@ -400,7 +425,7 @@
 			max_purchases = 3
 		),
 		"Silver Dagger (4)" = list(
-			list(type = /obj/item/rogueweapon/huntingknife/idagger/silver, count = 1),
+			list(type = /obj/item/rogueweapon/knife/dagger/silver, count = 1),
 			cost = 2,
 			max_purchases = 4
 		)

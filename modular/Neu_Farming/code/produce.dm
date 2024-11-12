@@ -158,7 +158,7 @@
 	dropshrink = 0.75
 	var/color_index = "good"
 	can_distill = TRUE
-	distill_reagent = /datum/reagent/consumable/ethanol/beer/jackberrywine
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/jacksberrywine
 	rotprocess = SHELFLIFE_SHORT
 	sellprice = 0 // spoil too quickly to export
 	var/poisonous = FALSE

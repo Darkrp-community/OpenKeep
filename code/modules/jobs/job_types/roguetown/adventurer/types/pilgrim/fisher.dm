@@ -44,7 +44,7 @@
 		backr = /obj/item/fishingrod
 		beltr = /obj/item/cooking/pan
 		beltl = /obj/item/flint
-		backpack_contents = list(/obj/item/rogueweapon/huntingknife/villager = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)
+		backpack_contents = list(/obj/item/rogueweapon/knife/villager = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)
 
 	else
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
@@ -57,4 +57,4 @@
 		belt = /obj/item/storage/belt/rogue/leather
 		beltr = /obj/item/cooking/pan
 		beltl = /obj/item/flint
-		backpack_contents = list(/obj/item/rogueweapon/huntingknife = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)
+		backpack_contents = list(/obj/item/rogueweapon/knife/hunting = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)

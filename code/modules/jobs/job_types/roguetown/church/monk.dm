@@ -34,7 +34,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/roguekey/church
-	backl = /obj/item/rogueweapon/woodstaff/quarterstaff
+	backl = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff
 	backpack_contents = list(/obj/item/needle)
 	switch(A.name)
 		if("Astrata")

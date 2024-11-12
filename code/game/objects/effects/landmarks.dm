@@ -384,10 +384,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Atmospheric Technician"
 	icon_state = "Atmospheric Technician"
 
-/obj/effect/landmark/start/cook
-	name = "Cook"
-	icon_state = "Cook"
-
 /obj/effect/landmark/start/shaft_miner
 	name = "Shaft Miner"
 	icon_state = "Shaft Miner"

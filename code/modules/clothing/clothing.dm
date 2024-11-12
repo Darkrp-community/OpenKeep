@@ -1,7 +1,7 @@
 #define ARMOR_CLASS_NONE 0
-#define ARMOR_CLASS_LIGHT 1
-#define ARMOR_CLASS_MEDIUM 2
-#define ARMOR_CLASS_HEAVY 3
+#define AC_LIGHT 1
+#define AC_MEDIUM 2
+#define AC_HEAVY 3
 
 /obj/item/clothing
 	name = "clothing"
@@ -76,11 +76,11 @@
 	if(href_list["inspect"])
 		if(!usr.canUseTopic(src, be_close=TRUE))
 			return
-		if(armor_class == ARMOR_CLASS_HEAVY)
+		if(armor_class == AC_HEAVY)
 			to_chat(usr, "AC: <b>HEAVY</b>")
-		if(armor_class == ARMOR_CLASS_MEDIUM)
+		if(armor_class == AC_MEDIUM)
 			to_chat(usr, "AC: <b>MEDIUM</b>")
-		if(armor_class == ARMOR_CLASS_LIGHT)
+		if(armor_class == AC_LIGHT)
 			to_chat(usr, "AC: <b>LIGHT</b>")
 
 /obj/item/proc/get_detail_tag() //this is for extra layers on clothes

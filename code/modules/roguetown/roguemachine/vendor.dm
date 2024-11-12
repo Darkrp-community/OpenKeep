@@ -260,16 +260,16 @@
 
 /obj/structure/roguemachine/vendor/inn/Initialize()
 	. = ..()
-	for(var/X in list(/obj/item/roguekey/roomi,/obj/item/roguekey/roomii,/obj/item/roguekey/roomiii))
+	for(var/X in list(/obj/item/roguekey/roomii))
+		var/obj/P = new X(src)
+		held_items[P] = list()
+		held_items[P]["NAME"] = P.name
+		held_items[P]["PRICE"] = 15
+	for(var/X in list(/obj/item/roguekey/roomi,/obj/item/roguekey/roomiii,/obj/item/roguekey/roomiv,/obj/item/roguekey/roomv,/obj/item/roguekey/roomvi))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 20
-	for(var/X in list(/obj/item/roguekey/roomhunt))
-		var/obj/P = new X(src)
-		held_items[P] = list()
-		held_items[P]["NAME"] = P.name
-		held_items[P]["PRICE"] = 40
 	update_icon()
 
 /obj/structure/roguemachine/vendor/steward
@@ -287,9 +287,12 @@
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 100
-	for(var/X in list(/obj/item/roguekey/houses/house7,/obj/item/roguekey/houses/house8))
+	for(var/X in list(/obj/item/roguekey/houses/house7))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 120
 	update_icon()
+
+/obj/structure/roguemachine/vendor/nitemaster
+	keycontrol = "nightman"

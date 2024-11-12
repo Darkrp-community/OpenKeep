@@ -84,7 +84,7 @@
 	max_blade_int = 50
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/knives
-	
+
 
 /obj/item/rogueweapon/sickle/attack_turf(turf/T, mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -109,7 +109,7 @@
 	force = 10
 	force_wielded = 15
 	possible_item_intents = list(/datum/intent/pick)
-	gripped_intents = list(/datum/intent/pick,SPEAR_BASH,TILL_INTENT)
+	gripped_intents = list(/datum/intent/pick,POLEARM_BASH,TILL_INTENT)
 	name = "hoe"
 	desc = ""
 	icon_state = "hoe"
@@ -221,8 +221,8 @@
 
 	force = 10
 	force_wielded = 20
-	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH)
-	gripped_intents = list(SPEAR_BASH,SPEAR_THRUST,DUMP_INTENT)
+	possible_item_intents = list(POLEARM_THRUST, POLEARM_BASH)
+	gripped_intents = list(POLEARM_BASH,POLEARM_THRUST,DUMP_INTENT)
 	name = "pitchfork"
 	desc = ""
 	icon_state = "pitchfork"
@@ -311,13 +311,13 @@
 		icon_state = initial(icon_state)
 	..()
 */
-//copper tools 
+//copper tools
 
 /obj/item/rogueweapon/hoe/copper
 	force = 10
 	force_wielded = 15
 	possible_item_intents = list(/datum/intent/pick)
-	gripped_intents = list(/datum/intent/pick,SPEAR_BASH,TILL_INTENT)
+	gripped_intents = list(/datum/intent/pick,POLEARM_BASH,TILL_INTENT)
 	name = "copper hoe"
 	desc = ""
 	icon = 'icons/roguetown/weapons/tools.dmi'
@@ -337,8 +337,8 @@
 /obj/item/rogueweapon/pitchfork/copper
 	force = 10
 	force_wielded = 15
-	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH)
-	gripped_intents = list(SPEAR_BASH,SPEAR_THRUST,DUMP_INTENT)
+	possible_item_intents = list(POLEARM_THRUST, POLEARM_BASH)
+	gripped_intents = list(POLEARM_BASH,POLEARM_THRUST,DUMP_INTENT)
 	name = "copper fork"
 	desc = "A simple and rustic tool for working the fields, not a very effective weapon."
 	icon_state = "cfork"

@@ -16,7 +16,7 @@
 		"Aasimar"
 	)
 
-	tutorial = "Being a stevedore is one of the lowest yet most needed positions in a Merchants posse, as they are expected to aid the Merchant in hauling materials and goods while also keeping a guarding eye on the Guild for the safety of the items and the Merchant kept within."
+	tutorial = "Being a stevedore is one of the lowest yet most needed positions in town, as they are expected to aid the Merchant, Steward, Masons, and Blacksmiths in hauling materials and goods while keeping a guarding eye on the town's warehouses for the safety of the items stashed within."
 
 	outfit = /datum/outfit/job/roguetown/grabber
 	give_bank_account = TRUE
@@ -44,7 +44,7 @@
 		head = /obj/item/clothing/head/roguetown/headband/red
 		beltr = /obj/item/rogueweapon/mace/cudgel
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		neck = /obj/item/keyring/stevedore
+		neck = /obj/item/roguekey/warehouse
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
@@ -56,7 +56,7 @@
 		pants = /obj/item/clothing/under/roguetown/tights/sailor
 		beltr = /obj/item/rogueweapon/mace/cudgel
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		neck = /obj/item/keyring/stevedore
+		neck = /obj/item/roguekey/warehouse
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea

@@ -392,6 +392,11 @@
 /obj/structure/bars/chainlink
 	icon_state = "chainlink"
 
+/obj/structure/bars/alt
+	icon_state = "bars_alt"
+	plane = -3
+	layer = WALL_OBJ_LAYER+0.05
+
 /*
 /obj/structure/bars/CheckExit(atom/movable/O, turf/target)
 	if(istype(O) && (O.pass_flags & PASSGRILLE))
@@ -818,11 +823,6 @@
 	icon_state = "astrata"
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 
-/obj/structure/fluff/statue/astrata/decorated
-	name = "decorated statue of Astrata"
-	desc = "Astrata, the Sun Queen, reigns over light, order, and conquest. She is worshipped and feared in equal measure. This particular statue of the Goddess is decorated with golden jewelry."
-	icon_state = "astrata_bling"
-
 /obj/structure/fluff/statue/knight/r
 	icon_state = "knightstatue_r"
 
@@ -1047,7 +1047,7 @@
 							I = new /obj/item/clothing/head/roguetown/helmet/horned(user.loc)
 						if(6)
 							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2)
-								I = new /obj/item/rogueweapon/spear/billhook(user.loc)
+								I = new /obj/item/rogueweapon/polearm/spear/billhook(user.loc)
 							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2)
 								I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
 							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2)

@@ -2,7 +2,7 @@
 	force = 5
 	force_wielded = 12
 	possible_item_intents = list(/datum/intent/mace/strike/shovel)
-	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop/stone)
+	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop)
 	name = "shovel"
 	desc = ""
 	icon_state = "shovel"
