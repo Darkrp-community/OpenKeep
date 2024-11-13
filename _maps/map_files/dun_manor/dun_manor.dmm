@@ -9644,6 +9644,9 @@
 /obj/structure/fluff/railing/border{
 	dir = 4
 	},
+/obj/item/natural/bundle/glass,
+/obj/item/natural/bundle/glass,
+/obj/item/natural/bundle/glass,
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
 	},
