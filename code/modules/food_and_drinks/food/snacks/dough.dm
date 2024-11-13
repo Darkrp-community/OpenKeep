@@ -16,7 +16,7 @@
 
 // Dough + rolling pin = flat dough
 /obj/item/reagent_containers/food/snacks/dough/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/kitchen/rollingpin))
+	if(istype(I, /obj/item/rogueweapon/mace/woodclub/rollingpin))
 		if(isturf(loc))
 			new /obj/item/reagent_containers/food/snacks/flatdough(loc)
 			to_chat(user, "<span class='notice'>I flatten [src].</span>")
@@ -88,7 +88,7 @@
 /*
 // Cake batter + rolling pin = pie dough
 /obj/item/reagent_containers/food/snacks/cakebatter/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/kitchen/rollingpin))
+	if(istype(I, /obj/item/rogueweapon/mace/woodclub/rollingpin))
 		if(isturf(loc))
 			new /obj/item/reagent_containers/food/snacks/piedough(loc)
 			to_chat(user, "<span class='notice'>I flatten [src].</span>")
