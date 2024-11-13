@@ -563,7 +563,7 @@
 
 /datum/crafting_recipe/roguetown/structure/window
 	name = "solid window"
-	result = /obj/structure/roguewindow
+	result = /obj/structure/roguewindow/solid
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/glass = 1)
 	craftsound = 'sound/foley/Building-01.ogg'

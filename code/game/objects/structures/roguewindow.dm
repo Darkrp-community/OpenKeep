@@ -1,9 +1,8 @@
 
 /obj/structure/roguewindow
 	name = "window"
-	desc = "A window of simple paned glass."
+	desc = "Wrong window type! You shouldn't be seeing this."
 	icon = 'icons/roguetown/misc/structure.dmi'
-	icon_state = "window-solid"
 	layer = TABLE_LAYER
 	density = TRUE
 	anchored = TRUE
@@ -105,6 +104,13 @@
 	density = FALSE
 	. = step(user,get_dir(user,src.loc))
 	density = TRUE
+
+/obj/structure/roguewindow/solid
+	name = "window"
+	desc = "A window of simple paned glass."
+	icon_state = "window-solid"
+	integrity_failure = 0.5
+	opacity = TRUE
 
 /obj/structure/roguewindow/stained
 	icon_state = "stained-silver"
