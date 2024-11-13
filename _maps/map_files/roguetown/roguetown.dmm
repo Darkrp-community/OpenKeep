@@ -9925,7 +9925,7 @@
 /area/rogue/indoors/town/shop)
 "kIj" = (
 /obj/structure/fluff/statue{
-	name = "The Veiled Lady"
+	name = "The Undermaiden"
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/rogue/dirt/road,

@@ -12879,7 +12879,7 @@
 /area/rogue/indoors/town/shop)
 "mCu" = (
 /obj/structure/fluff/statue{
-	name = "The Veiled Lady"
+	name = "The Undermaiden"
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/rogue/dirt/road,
@@ -50497,8 +50497,8 @@ fsP
 fsP
 jIk
 jIk
-xmW
-xmW
+jIk
+jIk
 sKt
 sKt
 sKt
@@ -51126,7 +51126,7 @@ jIk
 jIk
 jIk
 omo
-xmW
+jIk
 jIk
 xmW
 jIk
@@ -51245,7 +51245,7 @@ fsP
 fsP
 fsP
 fsP
-xmW
+jIk
 eUz
 eUz
 eUz
@@ -51402,14 +51402,14 @@ fsP
 fsP
 xmW
 jIk
-xmW
-jIk
-omo
-xmW
-jIk
 jIk
 jIk
 omo
+xmW
+jIk
+jIk
+jIk
+omo
 jIk
 jIk
 jIk
@@ -51427,8 +51427,8 @@ jIk
 jIk
 jIk
 jIk
-xmW
-xmW
+jIk
+jIk
 ymg
 ymg
 cHT
@@ -51541,7 +51541,7 @@ jIk
 jIk
 omo
 jIk
-xmW
+jIk
 jIk
 xmW
 omo
@@ -51563,7 +51563,7 @@ jIk
 xmW
 jIk
 jIk
-xmW
+jIk
 jIk
 omo
 jIk
@@ -51700,7 +51700,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -51720,7 +51720,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 xmW
@@ -51735,7 +51735,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -51858,7 +51858,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -51873,7 +51873,6 @@ jIk
 jIk
 jIk
 jIk
-xmW
 jIk
 jIk
 jIk
@@ -51895,9 +51894,10 @@ jIk
 jIk
 jIk
 jIk
-xmW
 jIk
 xmW
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -51991,7 +51991,7 @@ eUz
 eUz
 xmW
 xmW
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -52007,7 +52007,7 @@ jIk
 jIk
 xmW
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -52167,7 +52167,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 xmW
 jIk
@@ -52304,16 +52304,16 @@ eUz
 eUz
 jIk
 jIk
-xmW
-xmW
 jIk
 jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 xmW
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -52469,8 +52469,8 @@ omo
 jIk
 xmW
 xmW
-xmW
-xmW
+jIk
+jIk
 pHC
 jIk
 jIk
@@ -52480,12 +52480,7 @@ omo
 omo
 jIk
 jIk
-xmW
-xmW
 jIk
-jIk
-omo
-xmW
 jIk
 jIk
 jIk
@@ -52493,6 +52488,11 @@ omo
 jIk
 jIk
 jIk
+jIk
+omo
+jIk
+jIk
+jIk
 xmW
 jIk
 jIk
@@ -52512,8 +52512,8 @@ xmW
 xmW
 jIk
 jIk
-kpC
-xmW
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -52815,7 +52815,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 xmW
 jIk
@@ -52941,7 +52941,7 @@ xmW
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 omo
 omo
@@ -53098,7 +53098,7 @@ xmW
 xmW
 xmW
 jIk
-xmW
+jIk
 omo
 fsP
 jIk
@@ -53442,7 +53442,7 @@ jIk
 xmW
 jIk
 jIk
-xmW
+jIk
 jIk
 xmW
 xmW
@@ -53561,7 +53561,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -54279,7 +54279,7 @@ ymg
 jIk
 xmW
 jIk
-xmW
+jIk
 jIk
 omo
 omo
@@ -54345,8 +54345,8 @@ jRf
 jRf
 xWK
 xfD
-xmW
-xmW
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -54818,7 +54818,7 @@ hnK
 fsP
 jIk
 jIk
-xmW
+jIk
 jIk
 fsP
 xOC
@@ -55064,7 +55064,7 @@ ymg
 ymg
 xmW
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -55076,7 +55076,7 @@ ylN
 fsP
 xmW
 jIk
-xmW
+jIk
 jIk
 jIk
 xmW
@@ -55113,7 +55113,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 omo
 omo
@@ -55222,7 +55222,7 @@ ymg
 jIk
 jIk
 omo
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -55428,7 +55428,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 xmW
 jIk
@@ -55448,7 +55448,7 @@ xWK
 jIk
 jIk
 xmW
-xmW
+jIk
 fsP
 xOC
 xOC
@@ -55736,7 +55736,7 @@ biI
 eUz
 eUz
 eUz
-xmW
+jIk
 jIk
 jIk
 xmW
@@ -55848,7 +55848,7 @@ ymg
 ymg
 cHT
 ymg
-xmW
+jIk
 jIk
 jIk
 omo
@@ -55893,7 +55893,7 @@ oTz
 eUz
 eUz
 eUz
-xmW
+jIk
 omo
 jIk
 jIk
@@ -55919,7 +55919,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 fsP
 xOC
 xOC
@@ -56076,7 +56076,7 @@ jIk
 jIk
 xmW
 jIk
-xmW
+jIk
 fsP
 xOC
 xOC
@@ -56371,7 +56371,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 omo
 jIk
 jIk
@@ -56388,7 +56388,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 fsP
 xOC
@@ -56543,7 +56543,7 @@ xmW
 hXE
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -56676,7 +56676,7 @@ omo
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 omo
 jIk
@@ -57012,13 +57012,13 @@ ylN
 jIk
 jIk
 hXE
-xmW
 jIk
 jIk
 jIk
 jIk
 jIk
-xmW
+jIk
+jIk
 fsP
 xOC
 xOC
@@ -57331,7 +57331,7 @@ xmW
 xmW
 jIk
 jIk
-xmW
+jIk
 fsP
 xOC
 xOC
@@ -57432,7 +57432,7 @@ ylN
 xmW
 jIk
 omo
-xmW
+jIk
 fsP
 fsP
 fsP
@@ -57587,7 +57587,7 @@ ylN
 ylN
 ylN
 jIk
-xmW
+jIk
 jIk
 jIk
 fsP
@@ -57630,7 +57630,7 @@ omo
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -57955,7 +57955,7 @@ omo
 omo
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 omo
@@ -58100,8 +58100,8 @@ jIk
 xmW
 omo
 jIk
-xmW
-xmW
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -58268,11 +58268,11 @@ ylN
 ylN
 jIk
 xmW
-xmW
 jIk
 jIk
-xmW
-xmW
+jIk
+jIk
+jIk
 pHC
 jIk
 fsP
@@ -58731,7 +58731,7 @@ jIk
 xmW
 pHC
 jIk
-xmW
+jIk
 xmW
 ylN
 ylN
@@ -58901,7 +58901,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 fsP
 xOC
 xOC
@@ -59214,7 +59214,7 @@ jIk
 aLh
 jIk
 jIk
-xmW
+jIk
 xmW
 jPw
 xOC
@@ -59515,7 +59515,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 fsP
 fsP
@@ -59525,7 +59525,7 @@ xmW
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 nPK
 fsP
@@ -60455,7 +60455,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 fsP
 fsP
@@ -60918,7 +60918,7 @@ fsP
 eUz
 eUz
 eUz
-xmW
+jIk
 jIk
 jIk
 omo
@@ -61085,7 +61085,7 @@ xOC
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 fsP
@@ -61390,7 +61390,7 @@ eUz
 eUz
 eUz
 eUz
-xmW
+jIk
 jIk
 xmW
 jIk
@@ -61869,9 +61869,9 @@ jIk
 omo
 omo
 jIk
-xmW
 jIk
-xmW
+jIk
+jIk
 fsP
 xOC
 xOC
@@ -62904,7 +62904,7 @@ ctF
 ctF
 kga
 qya
-udt
+qya
 qya
 qya
 qya
@@ -62961,7 +62961,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -63117,12 +63117,12 @@ aLh
 jIk
 jIk
 jIk
-xmW
 jIk
 jIk
 jIk
 jIk
-xmW
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -63278,7 +63278,7 @@ jIk
 omo
 xmW
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -63374,7 +63374,7 @@ ctF
 ctF
 kga
 qya
-udt
+qya
 qya
 qya
 xIM
@@ -63531,7 +63531,7 @@ ctF
 ctF
 kga
 qya
-udt
+qya
 qya
 udt
 xIM
@@ -63746,7 +63746,7 @@ jIk
 omo
 jIk
 omo
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -64160,7 +64160,7 @@ ctF
 ctF
 kga
 dff
-udt
+qya
 qya
 xIM
 xIM
@@ -64224,8 +64224,8 @@ jIk
 jIk
 jIk
 jIk
-xmW
-xmW
+jIk
+jIk
 fsP
 xOC
 xOC
@@ -64317,7 +64317,7 @@ ctF
 ctF
 kga
 dff
-udt
+qya
 qya
 xIM
 xIM
@@ -64369,7 +64369,7 @@ eUz
 eUz
 eUz
 eUz
-xmW
+jIk
 jIk
 jIk
 omo
@@ -64526,8 +64526,8 @@ eUz
 eUz
 eUz
 eUz
-xmW
-xmW
+jIk
+jIk
 jIk
 omo
 omo
@@ -65572,7 +65572,7 @@ qya
 qya
 qya
 qya
-udt
+qya
 kga
 fKR
 cSe
@@ -65636,7 +65636,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 xmW
 jIk
 pHC
@@ -65728,8 +65728,8 @@ kga
 wgk
 qya
 qya
-udt
-udt
+qya
+qya
 fKR
 xOC
 xOC
@@ -65792,7 +65792,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 xmW
 jIk
@@ -66421,7 +66421,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -66577,7 +66577,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -67208,7 +67208,7 @@ mIn
 fsP
 mIn
 mIn
-xmW
+jIk
 fsP
 xOC
 xOC
@@ -67365,7 +67365,7 @@ xeY
 mIn
 fsP
 fsP
-xmW
+jIk
 fsP
 xOC
 xOC
