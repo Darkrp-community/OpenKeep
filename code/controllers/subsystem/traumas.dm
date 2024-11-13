@@ -13,7 +13,7 @@ SUBSYSTEM_DEF(traumas)
 /datum/controller/subsystem/traumas/Initialize()
 	//phobia types is to pull from randomly for brain traumas, e.g. conspiracies is for special assignment only
 	phobia_types = sortList(list("spiders", "space", "security", "clowns", "greytide", "lizards",
-						"skeletons", "snakes", "robots", "doctors", "authority", "the supernatural",
+						"skeletons", "snakes", "doctors", "authority", "the supernatural",
 						"strangers", "birds", "falling", "anime"))
 
 	phobia_words = list(
@@ -25,7 +25,6 @@ SUBSYSTEM_DEF(traumas)
 		"lizards"   = strings(PHOBIA_FILE, "lizards"),
 		"skeletons" = strings(PHOBIA_FILE, "skeletons"),
 		"snakes"	= strings(PHOBIA_FILE, "snakes"),
-		"robots"	= strings(PHOBIA_FILE, "robots"),
 		"doctors"	= strings(PHOBIA_FILE, "doctors"),
 		"authority"	= strings(PHOBIA_FILE, "authority"),
 		"the supernatural"	= strings(PHOBIA_FILE, "the supernatural"),
@@ -42,8 +41,6 @@ SUBSYSTEM_DEF(traumas)
 		"lizards"          = typecacheof(list(/mob/living/simple_animal/hostile/lizard)),
 		"skeletons"        = typecacheof(list(/mob/living/simple_animal/hostile/skeleton)),
 		"snakes"           = typecacheof(list(/mob/living/simple_animal/hostile/retaliate/poison/snake)),
-		"robots"           = typecacheof(list(/mob/living/silicon/robot, /mob/living/silicon/ai,
-												/mob/living/simple_animal/drone, /mob/living/simple_animal/bot, /mob/living/simple_animal/hostile/swarmer)),
 		"doctors"          = typecacheof(list(/mob/living/simple_animal/bot/medbot)),
 		"the supernatural" = typecacheof(list(/mob/living/simple_animal/hostile/construct,
 												/mob/living/simple_animal/revenant, /mob/living/simple_animal/shade)),
@@ -76,8 +73,6 @@ SUBSYSTEM_DEF(traumas)
 		"skeletons" = typecacheof(list(/obj/item/organ/tongue/bone, /obj/item/clothing/suit/armor/bone, /obj/item/stack/sheet/bone,
 										/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/skeleton,
 										/obj/effect/decal/remains/human)),
-		"robots"   = typecacheof(list(/obj/machinery/computer/upload, /obj/item/aiModule/, /obj/machinery/recharge_station,
-										/obj/item/aicard, /obj/item/deactivated_swarmer, /obj/effect/mob_spawn/swarmer)),
 
 		"doctors"   = typecacheof(list(/obj/item/clothing/under/rank/medical,
 										/obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill/, /obj/item/reagent_containers/hypospray,
@@ -126,7 +121,6 @@ SUBSYSTEM_DEF(traumas)
 	phobia_species = list(
 		"lizards" = typecacheof(list(/datum/species/lizard)),
 		"skeletons" = typecacheof(list(/datum/species/skeleton, /datum/species/plasmaman)),
-		"robots" = typecacheof(list(/datum/species/android)),
 		"the supernatural" = typecacheof(list(/datum/species/golem/runic)),
 		"anime" = typecacheof(list(/datum/species/human/felinid))
 	)
