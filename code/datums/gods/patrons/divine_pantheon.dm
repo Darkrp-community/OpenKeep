@@ -51,7 +51,7 @@
 /datum/patron/divine/necra
 	name = "Necra"
 	domain = "Force of Death and Decay"
-	desc = "The Veiled Lady, a feared but respected Force and keeper of the dead."
+	desc = "The Undermaiden, a feared but respected Force and keeper of the dead."
 	flaws = "Unchanging, Apathetic, Strict"
 	worshippers = "Dark Elves, Gravekeepers, Mourners"
 	sins = "Undeath"

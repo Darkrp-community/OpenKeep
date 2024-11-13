@@ -49,6 +49,48 @@
 		/mob/living/carbon/human/species/human/northern/bum/ambush  = 25,
 		)
 
+/obj/effect/spawner/roguemap/ancientskellyguardmaybe
+	icon = 'icons/roguetown/mob/skeleton_male.dmi'
+	icon_state = "z"
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/structure/idle_enemy/ancient_skeleton_guard = 100
+		)
+
+/datum/component/spawner/ancient_skeleton_guard
+	mob_types = list(/mob/living/carbon/human/species/skeleton/npc/ancient)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
+/obj/structure/idle_enemy
+	name = ""
+	icon = 'icons/roguetown/mob/skeleton_male.dmi'
+	icon_state = ""
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	anchored = TRUE
+	layer = BELOW_OBJ_LAYER
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/obj/structure/idle_enemy/ancient_skeleton_guard
+
+/obj/structure/idle_enemy/ancient_skeleton_guard/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/ancient_skeleton_guard)
+
+
+/obj/item/rogueweapon/sword/scimitar/falx
+	name = "falx"
+	desc = "Ancient curved blade for chopping and little else."
+	icon = 'icons/roguetown/weapons/custom.dmi'
+	icon_state = "falx"
+	max_blade_int = 200
+	max_integrity = INTEGRITY_STANDARD
+
+
 /obj/structure/mineral_door/wood/red/i
 	name = "Room I"
 	lockid = "roomi"
@@ -678,204 +720,9 @@
 /obj/effect/spawner/roguemap/tollrandom
 	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
 	icon_state = "soultoken_floor"
-	probby = 25
+	probby = 35
 	color = "#ff0000"
 	spawned = list(
 		/obj/item/underworld/coin = 1,
 		)
 
-
-/* moved to main. leave this be for now, I want to be able to find the additions I make easily for tweaking
-/*	..................   More chairs   ................... */
-/obj/structure/chair/wood/rogue/chair_noble
-	name = "fine chair"
-	icon_state = "chair_green"
-	icon = 'icons/roguetown/misc/structure.dmi'
-	item_chair = /obj/item/chair/rogue/chair_nobles
-	blade_dulling = DULLING_BASHCHOP
-	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
-	attacked_sound = "woodimpact"
-/obj/item/chair/rogue/chair_nobles
-	icon_state = "chair_green"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble
-
-/obj/structure/chair/wood/rogue/chair_noble/purple
-	icon_state = "chair_purple"
-	item_chair = /obj/item/chair/rogue/chair_nobles/purple
-/obj/item/chair/rogue/chair_nobles/purple
-	icon_state = "chair_purple"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble/purple
-
-/obj/structure/chair/wood/rogue/chair_noble/red
-	icon_state = "chair_red"
-	item_chair = /obj/item/chair/rogue/chair_nobles/red
-/obj/item/chair/rogue/chair_nobles/red
-	icon_state = "chair_purple"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble/red
-
-/obj/structure/chair/bench/couch/redleft
-	icon_state = "redcouch_alt"
-/obj/structure/chair/bench/couch/redright
-	icon_state = "redcouch2_alt"
-
-
-/*	..................   Lights   ................... */
-/obj/item/candle/yellow/lit/infinite
-	light_power = 1
-	light_range = 4
-	start_lit = TRUE
-	infinite = TRUE
-	icon_state = "candle1_lit"
-	anchored = TRUE
-
-/obj/item/candle/yellow/lit/infinite/strong
-	light_power = 2
-	light_range = 4
-	pixel_x = 4
-
-/obj/machinery/light/rogue/campfire/longlived
-	fueluse = 180 MINUTES
-
-/obj/machinery/light/rogue/wallfire/candle/weak
-	light_power = 0.9
-	light_range = 6
-/obj/machinery/light/rogue/wallfire/candle/weak/l
-	pixel_x = -32
-	pixel_y = 0
-/obj/machinery/light/rogue/wallfire/candle/weak/r
-	pixel_x = 32
-	pixel_y = 0
-
-
-/*	..................   Floors   ................... */
-/turf/open/floor/rogue/ruinedwood/darker
-	color = "#d9c9b0"
-/turf/open/floor/rogue/ruinedwood/turned/darker
-	color = "#d9c9b0"
-
-/turf/open/floor/rogue/tile/kitchen
-	icon_state = "tavern"
-
-
-/obj/structure/roguetent/preopen
-	density = FALSE
-
-/obj/structure/fluff/clock/dense
-	density = TRUE
-
-
-/obj/structure/closet/crate/chest/crate
-	name = "crate"
-	base_icon_state = "woodchest"
-	icon_state = "woodchest"
-
-/obj/structure/closet/crate/chest/wicker
-	name = "wicker basket"
-	desc = "Fibers interwoven to make a cheap storage bin."
-	base_icon_state = "wicker"
-	icon_state = "wicker"
-	open_sound = 'sound/items/book_open.ogg'
-	open_sound = 'sound/items/book_close.ogg'
-	close_sound = 'sound/items/book_close.ogg'
-
-/obj/structure/closet/crate/chest/neu
-	name = "sturdy oak chest"
-	icon_state = "chest_neu"
-	base_icon_state = "chest_neu"
-
-/obj/structure/closet/crate/chest/neu_iron
-	name = "reinforced chest"
-	icon_state = "chestiron_neu"
-	base_icon_state = "chestiron_neu"
-
-/obj/structure/closet/crate/chest/neu_fancy
-	name = "fancy chest"
-	icon_state = "chestfancy_neu"
-	base_icon_state = "chestfancy_neu"
-
-/obj/structure/closet/crate/chest/old_crate
-	name = "old crate"
-	base_icon_state = "woodchestalt"
-	icon_state = "woodchestalt"
-
-/obj/structure/closet/crate/drawer/random
-	icon_state = "drawer1"
-	base_icon_state = "drawer1"
-	pixel_y = 8
-
-/obj/structure/closet/crate/drawer/random/Initialize()
-	. = ..()
-	if(icon_state == "drawer1")
-		base_icon_state = "drawer[rand(1,4)]"
-		icon_state = "[base_icon_state]"
-	else
-		base_icon_state = "drawer1"
-		pixel_y = 8
-
-/obj/structure/mineral_door/wood/deadbolt/shutter
-	name = "serving hatch"
-	desc = "Can be locked from the inside."
-	icon_state = "serving"
-	base_state = "serving"
-	max_integrity = 250
-	over_state = "servingopen"
-	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
-	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
-	dir = NORTH
-	locked = TRUE
-
-/obj/structure/closet/crate/chest/wicker
-	name = "wicker basket"
-	desc = "Fibers interwoven to make a cheap storage bin."
-	base_icon_state = "wicker"
-	icon_state = "wicker"
-	open_sound = 'sound/items/book_open.ogg'
-	open_sound = 'sound/items/book_close.ogg'
-	close_sound = 'sound/items/book_close.ogg'
-
-/obj/structure/closet/crate/chest/neu
-	name = "sturdy oak chest"
-	icon_state = "chest_neu"
-	base_icon_state = "chest_neu"
-
-/obj/structure/closet/crate/chest/neu_iron
-	name = "reinforced chest"
-	icon_state = "chestiron_neu"
-	base_icon_state = "chestiron_neu"
-
-/obj/structure/closet/crate/chest/neu_fancy
-	name = "fancy chest"
-	icon_state = "chestfancy_neu"
-	base_icon_state = "chestfancy_neu"
-
-/obj/structure/closet/crate/chest/old_crate
-	name = "old crate"
-	base_icon_state = "woodchestalt"
-	icon_state = "woodchestalt"
-
-/obj/structure/closet/crate/drawer/random
-	icon_state = "drawer1"
-	base_icon_state = "drawer1"
-	pixel_y = 8
-
-/obj/structure/closet/crate/drawer/random/Initialize()
-	. = ..()
-	if(icon_state == "drawer1")
-		base_icon_state = "drawer[rand(1,4)]"
-		icon_state = "[base_icon_state]"
-	else
-		base_icon_state = "drawer1"
-		pixel_y = 8
-
-/obj/structure/mineral_door/wood/deadbolt/shutter
-	name = "serving hatch"
-	desc = "Can be locked from the inside."
-	icon_state = "serving"
-	base_state = "serving"
-	max_integrity = 250
-	over_state = "servingopen"
-	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
-	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
-	dir = NORTH
-	locked = TRUE
-*/
