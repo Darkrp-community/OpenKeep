@@ -286,12 +286,10 @@
 	spawned = list(	/obj/structure/trap/xylix_healing = 10, /obj/structure/trap/xylix = 10)
 
 /obj/structure/fluff/walldeco/xylfrown
-	icon = 'modular/Mapping/icons/decoration.dmi'
 	icon_state = "wall_sad"
 	pixel_y = 32
 
 /obj/structure/fluff/walldeco/xylsmile
-	icon = 'modular/Mapping/icons/decoration.dmi'
 	icon_state = "wall_funny"
 	pixel_y = 32
 
@@ -353,19 +351,76 @@
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
 
-/obj/machinery/light/rogue/wallfire/big_fireplace
-	icon_state = "fireplace1"
-	base_state = "fireplace"
-	icon = 'icons/roguetown/misc/fireplace64.dmi'
 
-/obj/machinery/light/rogue/hearth/big_fireplace
-	name = "fireplace"
-	icon_state = "fireplace1"
-	base_state = "fireplace"
-	icon = 'icons/roguetown/misc/fireplace64.dmi'
-	fueluse = -1
-	pixel_x = -16
-	climb_offset = 4
+/*	..................   Colony Spider Net   ................... */
+/obj/structure/innocent_net
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "innocentweb1"
+	layer = ABOVE_ALL_MOB_LAYER
+	density = FALSE
+	max_integrity = 35
+	climbable = FALSE
+	dir = SOUTH
+	debris = list(/obj/item/natural/silk = 1)
+	var/lucky_escape
+
+/obj/structure/innocent_net/Initialize()
+	. = ..()
+	icon_state = "innocentweb[rand(1,2)]"
+	return ..()
+
+/obj/structure/innocent_net/attack_hand()
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_net/attackby(obj/item, /mob/user, params)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_net/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_net/Crossed(atom/movable/AM)
+	..()
+	if(isliving(AM))
+		var/mob/living/carbon/human/L = AM
+		lucky_escape = ( L.STALUC * 4 )
+		L.Immobilize(5)
+		if(L.m_intent == MOVE_INTENT_WALK)
+			L.Immobilize(10)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
+		if(L.m_intent == MOVE_INTENT_RUN)
+			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
+			L.Immobilize(20)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
+		else
+			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
+			L.Immobilize(5)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
 
 
 /*	..................   Wizard Shenanigans   ................... */
@@ -496,69 +551,16 @@
 	.  = ..()
 	icon_state = "bathtile_pool_mid"
 
-/*	..................   Wall decorations   ................... */
-/obj/structure/fluff/walldeco/bath // suggestive stonework
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "bath1"
-	pixel_x = -32
-	alpha = 210
-
-/obj/structure/fluff/walldeco/bath/two
-	icon_state = "bath2"
-	pixel_x = -29
-
-/obj/structure/fluff/walldeco/bath/three
-	icon_state = "bath3"
-	pixel_x = -29
-
-/obj/structure/fluff/walldeco/bath/four
-	icon_state = "bath4"
-	pixel_y = 32
-	pixel_x = 0
-
-/obj/structure/fluff/walldeco/bath/five
-	icon_state = "bath5"
-	pixel_x = -29
-
-/obj/structure/fluff/walldeco/bath/six
-	icon_state = "bath6"
-	pixel_x = -29
-
-/obj/structure/fluff/walldeco/bath/seven
-	icon_state = "bath7"
-	pixel_x = 32
-
-/obj/structure/fluff/walldeco/bath/gents
-	icon_state = "gents"
-	pixel_x = 0
-	pixel_y = 32
-
-/obj/structure/fluff/walldeco/bath/ladies
-	icon_state = "ladies"
-	pixel_x = 0
-	pixel_y = 32
-
-/obj/structure/fluff/walldeco/bath/wallrope
-	icon_state = "wallrope"
-	layer = WALL_OBJ_LAYER+0.1
-	pixel_x = 0
-	pixel_y = 0
-	color = "#d66262"
 
 /obj/effect/decal/shadow_floor
 	name = ""
 	desc = ""
-	icon = 'modular/Mapping/icons/decoration.dmi'
 	icon_state = "shadow_floor"
 	mouse_opacity = 0
 
 /obj/effect/decal/shadow_floor/corner
 	icon_state = "shad_floorcorn"
 
-/obj/structure/fluff/walldeco/bath/wallpipes
-	icon_state = "wallpipe"
-	pixel_x = 0
-	pixel_y = 32
 
 
 /obj/structure/fluff/shipssprote
@@ -569,29 +571,6 @@
 	mouse_opacity = 0
 	color = "#5a4621"
 	pixel_y = -16
-
-
-/obj/structure/fluff/walldeco/bath/random
-	icon_state = "bath"
-	pixel_y = 32
-/obj/structure/fluff/walldeco/bath/random/Initialize()
-	. = ..()
-	if(icon_state == "bath")
-		icon_state = "bath[rand(1,8)]"
-
-/obj/structure/fluff/walldeco/vinez // overlay vines for more flexibile mapping
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "vinez"
-
-/obj/structure/fluff/walldeco/vinez/l
-	pixel_x = -32
-/obj/structure/fluff/walldeco/vinez/r
-	pixel_x = 32
-
-/obj/structure/fluff/walldeco/vinez/offset
-	icon_state = "vinez"
-	pixel_y = 32
-
 
 /*	..................   Innocent Bush   ................... */
 /obj/structure/innocent_bush
@@ -636,7 +615,6 @@
 
 /obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
 	name = "candle lamp"
-	icon = 'modular/Mapping/icons/decoration.dmi'
 	icon_state = "candle"
 	base_state = "candle"
 	layer = WALL_OBJ_LAYER+0.1
@@ -768,22 +746,6 @@
 	pixel_x = 32
 	pixel_y = 0
 
-
-// Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
-/obj/structure/bed/rogue/bear
-	desc = "A hide of a slain bear. It looks like someone sleeps on it often."
-	icon = 'icons/turf/floors/bear.dmi'
-	icon_state = "bear"
-	pixel_x = -16
-	pixel_y = -27
-
-/obj/structure/fluff/walldeco/skullspike // for ground really
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "skullspike"
-	plane = -1
-	layer = ABOVE_MOB_LAYER
-	pixel_x = 8
-	pixel_y = 24
 
 /*	..................   Floors   ................... */
 /turf/open/floor/rogue/ruinedwood/darker
