@@ -766,6 +766,17 @@
 						pot.reagents.add_reagent(/datum/reagent/consumable/soup/stew/meat, 32)
 						pot.reagents.remove_reagent(/datum/reagent/water, 1)
 
+			if(istype(W, /obj/item/natural/head/saiga) || istype(W, /obj/item/natural/head/volf)|| istype(W, /obj/item/natural/trollheart))
+				if(do_after(user,2 SECONDS, target = src))
+					user.visible_message("<span class='info'>[user] places the [W] into the pot.</span>")
+					playsound(src.loc, 'sound/items/Fish_out.ogg', 20, TRUE)
+					pot.reagents.remove_reagent(/datum/reagent/water, 32)
+					qdel(W)
+					sleep(800)
+					playsound(src, "bubbles", 30, TRUE)
+					pot.reagents.add_reagent(/datum/reagent/consumable/soup/stew/meat, 32)
+					pot.reagents.remove_reagent(/datum/reagent/water, 1)
+
 			if(istype(W, /obj/item/reagent_containers/food/snacks/egg))
 				if(do_after(user,2 SECONDS, target = src))
 					user.visible_message("<span class='info'>[user] places the [W] into the pot.</span>")

@@ -56,6 +56,13 @@
 	icon_state = "saigahead"
 	layer = 3.1
 
+/obj/item/natural/trollheart
+	name = "troll heart"
+	desc = "Big-hearted, but small-brained."
+	icon_state = "trollheart"
+	layer = 3.1
+	sellprice = 40
+
 //RTD make this a storage item and make clickign on animals with things put it in storage
 /obj/item/natural/saddle
 	name = "saddle"
