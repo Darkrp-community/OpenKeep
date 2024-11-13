@@ -64,7 +64,7 @@
 
 /datum/intent/sword/cut/short
 	clickcd = 10
-	damfactor = 0.85
+	damfactor = 1
 
 /*------------\
 | Chop intent |
@@ -105,6 +105,7 @@
 	penfactor = AP_SWORD_THRUST-2
 
 /datum/intent/sword/thrust/short
+	damfactor = 1.25
 	clickcd = 10
 	penfactor = AP_SWORD_THRUST+2
 
