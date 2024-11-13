@@ -106,13 +106,13 @@
 	density = TRUE
 
 /obj/structure/roguewindow/solid
-	name = "window"
 	desc = "A window of simple paned glass."
 	icon_state = "window-solid"
 	integrity_failure = 0.5
 	opacity = TRUE
 
 /obj/structure/roguewindow/stained
+	desc = "A stained-glass window filigreed in silver."
 	icon_state = "stained-silver"
 	base_state = "stained-silver"
 	opacity = TRUE
@@ -123,6 +123,7 @@
 	repair_cost_second = /obj/item/natural/stone
 
 /obj/structure/roguewindow/openclose
+	desc = "It opens and closes."
 	icon_state = "woodwindowdir"
 	base_state = "woodwindow"
 	opacity = TRUE

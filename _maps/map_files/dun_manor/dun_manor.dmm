@@ -212,7 +212,7 @@
 	},
 /area/rogue/under/town/basement)
 "akV" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -303,7 +303,7 @@
 /turf/closed/indestructible/wooddark/hull,
 /area/rogue/indoors/ship)
 "arI" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/effect/decal/cobbleedge{
 	dir = 6
 	},
@@ -5165,7 +5165,7 @@
 /turf/open/water/swamp,
 /area/rogue/under/cave)
 "eZI" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -6069,7 +6069,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
 "fTZ" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -7004,7 +7004,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "gNq" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/curtain/bounty,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
@@ -8156,7 +8156,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "hTE" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)
 "hTH" = (
@@ -9386,7 +9386,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)
 "jeY" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -9414,7 +9414,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "jfC" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
 "jfK" = (
@@ -9444,7 +9444,7 @@
 	},
 /area/rogue/indoors/town/manor)
 "jiD" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "jiG" = (
@@ -11388,7 +11388,7 @@
 	},
 /area/rogue/indoors/town/tavern)
 "lbf" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/bars{
 	icon_state = "barsbent";
 	layer = 2.81
@@ -14216,7 +14216,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
 "nXm" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/bars/passage/shutter{
 	redstone_id = "weaponsmith_shutter"
 	},
@@ -15455,7 +15455,7 @@
 	},
 /area/rogue/outdoors/rtfield)
 "pfY" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/curtain/bounty,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -15898,11 +15898,11 @@
 	},
 /area/rogue/indoors/town)
 "pxM" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "pya" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/closed,
 /area/rogue/indoors/soilsons)
 "pyj" = (
@@ -15997,7 +15997,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "pCC" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "pCF" = (
@@ -16817,7 +16817,7 @@
 	},
 /area/rogue/indoors/town/magician)
 "qsr" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/closed/wall/mineral/rogue/wooddark/window,
 /area/rogue/indoors/town/tavern)
 "qsO" = (
@@ -18614,7 +18614,7 @@
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town/tavern)
 "sjt" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "sjE" = (
@@ -19239,7 +19239,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/tavern)
 "sQT" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
 "sRc" = (
@@ -20350,7 +20350,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "tSz" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
 "tTu" = (
@@ -20495,7 +20495,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/tavern)
 "tZb" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors/town)
 "tZq" = (
@@ -20856,7 +20856,7 @@
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/shop)
 "uul" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/bars/passage/shutter{
 	redstone_id = "armourer_shutter"
 	},
@@ -21960,7 +21960,7 @@
 /turf/open/floor/rogue/dirt/ambush,
 /area/rogue/outdoors/town)
 "vGh" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -24174,7 +24174,7 @@
 	},
 /area/rogue/indoors/soilsons)
 "xKj" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},

@@ -41,7 +41,7 @@
 /turf/closed/wall/mineral/rogue/decostone/fluffstone,
 /area/rogue/outdoors/town/roofs)
 "acA" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town)
 "ada" = (
@@ -927,7 +927,7 @@
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
 	})
 "bct" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors)
 "bcP" = (
@@ -1787,7 +1787,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/exposed/church)
 "bXK" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/shelter/bog)
 "bXT" = (
@@ -1929,7 +1929,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/town)
 "ciJ" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
 	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
@@ -2392,7 +2392,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/cell)
 "cLh" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/indoors/town/shop)
 "cLS" = (
@@ -3587,7 +3587,7 @@
 	first_time_text = "PLAGUE DISTRICT"
 	})
 "ebW" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town/shop)
 "ecu" = (
@@ -3667,7 +3667,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "egz" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/tavern)
 "ehg" = (
@@ -4698,11 +4698,11 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
 "fgL" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town/tavern)
 "fgN" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
 	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
@@ -6673,7 +6673,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/mountains)
 "hyL" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/indoors/town)
 "hzg" = (
@@ -7263,7 +7263,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/exposed/town)
 "ibq" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"
@@ -8124,7 +8124,7 @@
 /turf/open/floor/rogue/tile/masonic/spiral,
 /area/rogue/indoors/town/bath)
 "iYv" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison)
 "iYO" = (
@@ -8765,7 +8765,7 @@
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/bog)
 "jGD" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
@@ -8966,7 +8966,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "jUp" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"
@@ -10925,7 +10925,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/shelter/rtfield)
 "lUI" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town)
 "lVe" = (
@@ -11530,7 +11530,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "mFh" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "mFn" = (
@@ -11973,7 +11973,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/bog)
 "ndb" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "ndi" = (
@@ -13028,7 +13028,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "okj" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
 "oko" = (
@@ -13314,7 +13314,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town/cell)
 "owy" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
 "owT" = (
@@ -13409,7 +13409,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/town)
 "oAV" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
 "oBO" = (
@@ -14117,7 +14117,7 @@
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
 	})
 "pef" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/bars/passage/shutter/open{
 	redstone_id = "merchant"
 	},
@@ -15961,7 +15961,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/under/basement)
 "qZr" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/bars/passage/shutter/open{
 	redstone_id = "merchant"
 	},
@@ -16163,7 +16163,7 @@
 /turf/open/water/sewer,
 /area/rogue/outdoors/exposed/under/sewer)
 "rkT" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors)
 "rlm" = (
@@ -21622,7 +21622,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/shelter/town/dwarf)
 "wRi" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "wRr" = (
@@ -21731,7 +21731,7 @@
 	},
 /area/rogue/outdoors/exposed/manorgarri)
 "wUC" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/magician)
 "wUT" = (
