@@ -339,6 +339,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 
+/obj/effect/landmark/start/colonist
+	name = "Colonist"
+	icon_state = "arrow"
+
 /obj/effect/landmark/start/evilskeleton	// Trying to make EVIL SKELTON actually spawn
 	name = "Skeleton"
 	icon = 'icons/mob/actions/roguespells.dmi'
@@ -383,10 +387,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/atmospheric_technician
 	name = "Atmospheric Technician"
 	icon_state = "Atmospheric Technician"
-
-/obj/effect/landmark/start/cook
-	name = "Cook"
-	icon_state = "Cook"
 
 /obj/effect/landmark/start/shaft_miner
 	name = "Shaft Miner"

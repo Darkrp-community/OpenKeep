@@ -3341,7 +3341,7 @@
 /area/rogue)
 "Is" = (
 /obj/structure/table/wood/plain,
-/obj/item/kitchen/rollingpin,
+/obj/item/rogueweapon/mace/woodclub/rollingpin,
 /turf/open/floor/rogue/tile/checker_green,
 /area/rogue)
 "Iu" = (

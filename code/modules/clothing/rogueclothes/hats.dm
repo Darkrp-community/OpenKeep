@@ -167,8 +167,8 @@
 	icon_state = "fancyhat"
 	sellprice = VALUE_FINE_CLOTHING
 
-/obj/item/clothing/head/roguetown/courtierhat
-	name = "fancy hat"
+/obj/item/clothing/head/roguetown/fashionablehat
+	name = "fashionable hat"
 	icon_state = "courtier"
 	flags_inv = HIDEEARS
 	sellprice = VALUE_FINE_CLOTHING

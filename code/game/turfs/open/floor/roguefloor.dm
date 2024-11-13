@@ -90,7 +90,15 @@
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/open/floor/rogue/wood/nosmooth,/turf/open/floor/carpet)
 
+/turf/open/floor/rogue/wood/saiga
+	icon_state = "woodalt"
+	icon = 'icons/turf/floors/woodalt.dmi'
+	smooth_icon = 'icons/turf/floors/woodalt.dmi'
+	canSmoothWith = list(/turf/open/floor/rogue/wood/saiga,/turf/open/floor/carpet)
+
 /turf/open/floor/rogue/wood/nosmooth/saiga
+	icon_state = "woodalt"
+	icon = 'icons/turf/floors/woodalt.dmi'
 	smooth_icon = 'icons/turf/floors/woodalt.dmi'
 	canSmoothWith = list(/turf/open/floor/rogue/wood/nosmooth/saiga,/turf/open/floor/carpet)
 
@@ -105,11 +113,18 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/rogue/woodturned/nosmooth
-	icon_state = "wooden_floort"
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/open/floor/rogue/woodturned/nosmooth,/turf/open/floor/carpet)
 
+/turf/open/floor/rogue/woodturned/saiga
+	icon_state = "woodalt"
+	icon = 'icons/turf/floors/woodalt_turned.dmi'
+	smooth_icon = 'icons/turf/floors/woodalt_turned.dmi'
+	canSmoothWith = list(/turf/open/floor/rogue/woodturned/saiga,/turf/open/floor/carpet)
+
 /turf/open/floor/rogue/woodturned/nosmooth/saiga
+	icon_state = "woodalt"
+	icon = 'icons/turf/floors/woodalt_turned.dmi'
 	smooth_icon = 'icons/turf/floors/woodalt_turned.dmi'
 	canSmoothWith = list(/turf/open/floor/rogue/woodturned/nosmooth/saiga,/turf/open/floor/carpet)
 
@@ -955,17 +970,36 @@
 	icon_state = "cobblestonealt[rand(1,3)]"
 
 /turf/open/floor/rogue/cobblerock/alt
-	icon_state = "cobblealt"
+	icon_state = "cobblealt1"
+
+/turf/open/floor/rogue/cobblerock/alto
+	icon_state = "cobblealt2"
+
+/obj/effect/decal/cobbleedge/rockalt_edge
+	icon_state = "cobblealt_edges"
+
+/obj/effect/decal/cobbleedge/rockalt_corners
+	icon_state = "cobblealt_corners"
 
 /obj/effect/decal/cobbleedge/alt
 	icon_state = "cobblestonealt_edges"
 
+/obj/effect/decal/cobbleedge/alt_small
+	icon_state = "cobblestonealt_smalledges"
+
 /turf/open/floor/rogue/cobble/mossy/alt
-	icon_state = "mossystonealt1"
+	icon_state = "mossyalt1"
 
 /turf/open/floor/rogue/cobble/mossy/alt/Initialize()
 	. = ..()
-	icon_state = "mossystonealt[rand(1,3)]"
+	icon_state = "mossyalt[rand(1,3)]"
+
+/obj/effect/decal/cobbleedge/mossy
+	icon_state = "mossyalt_edges"
+
+/obj/effect/decal/cobbleedge/mossy_small
+	icon_state = "mossyalt_smalledges"
+
 
 
 /*	..................   Miscellany   ................... */
