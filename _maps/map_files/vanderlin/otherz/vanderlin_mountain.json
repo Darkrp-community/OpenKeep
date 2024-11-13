@@ -1,0 +1,6 @@
+{
+    "map_name": "Vanderlin Mountain",
+    "map_path": "map_files/vanderlin/otherz",
+    "map_file": "vanderlin_mountain.dmm",
+	"traits": [{"Up": 1}, {"Down": -1}]
+}
