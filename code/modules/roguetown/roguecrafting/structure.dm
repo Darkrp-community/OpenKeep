@@ -558,3 +558,33 @@
 	verbage_tp = "crafts"
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/masonry
+
+// Windows
+
+/datum/crafting_recipe/roguetown/structure/window
+	name = "solid window"
+	result = /obj/structure/roguewindow
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/natural/glass = 1)
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/structure/windowopen
+	name = "openable window"
+	result = /obj/structure/roguewindow/openclose
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/natural/glass = 1,
+				/obj/item/ingot/iron = 1)
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/structure/windowstained
+	name = "stained glass window (silver)"
+	result = /obj/structure/roguewindow/stained
+	reqs = list(/obj/item/natural/stone = 3,
+				/obj/item/natural/glass = 2,
+				/obj/item/ingot/silver = 1)
+	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 2
