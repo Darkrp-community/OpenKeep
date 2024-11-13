@@ -42,8 +42,10 @@
 	stackname = "glass"
 	stacktype = /obj/item/natural/glass
 	maxamount = 3
-	icon1step = 1
-	icon2step = 2
+	icon1 = "glasspane1"
+	icon1step = 2
+	icon2 = "glasspane2"
+	icon2step = 3
 
 /obj/item/natural/glass/shard
 	name = "shard"
