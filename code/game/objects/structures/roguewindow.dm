@@ -128,7 +128,11 @@
 	base_state = "woodwindow"
 	opacity = TRUE
 	max_integrity = 100
-	integrity_failure = 0.9
+	integrity_failure = 0.5
+
+/obj/structure/roguewindow/OnCrafted(dirin)
+	dir = turn(dirin, 180)
+	lockdir = dir
 
 /obj/structure/roguewindow/openclose/Initialize()
 	lockdir = dir
