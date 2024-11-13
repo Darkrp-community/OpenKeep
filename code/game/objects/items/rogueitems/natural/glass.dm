@@ -5,6 +5,7 @@
 	possible_item_intents = list(/datum/intent/use)
 	force = 10
 	throwforce = 12
+	throw_range = 5
 	obj_flags = null
 	max_integrity = 20
 	w_class = WEIGHT_CLASS_BULKY
@@ -35,6 +36,7 @@
 	possible_item_intents = list(/datum/intent/use)
 	force = 15
 	throwforce = 18
+	throw_range = 2
 	firefuel = null
 	resistance_flags = null
 	firemod = null
