@@ -275,7 +275,6 @@
 	icon_state = "swordshort"
 	possible_item_intents = list(/datum/intent/sword/thrust/short, /datum/intent/sword/cut/short)
 	gripped_intents = null
-	smeltresult = /obj/item/ingot/iron
 	minstr = 4
 	wdefense = GOOD_PARRY
 	wbalance = HARD_TO_DODGE
@@ -286,6 +285,7 @@
 	desc = "A crude iron sword of shortened design, a reduced grip for primarily single hand use."
 	icon_state = "iswordshort"
 	max_integrity = INTEGRITY_STRONG
+	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 200
 	sellprice = 15
 
