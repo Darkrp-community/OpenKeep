@@ -24,7 +24,6 @@
 	max_blade_int = 50
 
 /obj/item/rogueweapon/chisel
-
 	name = "chisel"
 	desc = ""
 	icon_state = "chisel"
