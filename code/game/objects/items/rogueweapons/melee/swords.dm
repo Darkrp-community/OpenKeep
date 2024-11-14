@@ -380,6 +380,7 @@
 \----------*/
 /obj/item/rogueweapon/sword/scimitar
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop)
 	name = "scimitar"
 	desc = "A Zybantu design for swords, these curved blades are a common sight in the lands of the Ziggurat."
 	icon_state = "scimitar"
@@ -388,6 +389,7 @@
 
 /obj/item/rogueweapon/sword/scimitar/falchion
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
 	name = "falchion"
 	desc = "Broad blade, excellent steel, a design inspired by Malum the dwarves claim."
 	icon_state = "falchion_old"
@@ -400,7 +402,7 @@
 	desc = "Straight iron blade, simple cutting edge, no nonsense and a popular northern blade."
 	icon_state = "imesser"
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
-	minstr = 8 // Heavy blade used by orcs
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop, /datum/intent/sword/thrust)
 	wbalance = EASY_TO_DODGE
 	sellprice = 20
 
