@@ -86,7 +86,7 @@
 		L.update_inv_cloak()
 
 /obj/item/clothing/cloak/tabard/knight
-	color = CLOTHING_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/tabard/knight/attack_right(mob/user)
 	return
@@ -124,11 +124,11 @@
 		detail_color = "#b5b004"
 		color = "#249589"
 	if(design == "BlackGold")
-		detail_color = CLOTHING_YELLOW
-		color = CLOTHING_BLACK
+		detail_color = CLOTHING_MUSTARD_YELLOW
+		color = CLOTHING_SOOT_BLACK
 	if(design == "BlackWhite")
 		detail_color = CLOTHING_WHITE
-		color = CLOTHING_BLACK
+		color = CLOTHING_SOOT_BLACK
 	update_icon()
 	if(ismob(loc))
 		var/mob/L = loc
@@ -145,11 +145,11 @@
 	if(world.time > (the_time + 30 SECONDS))
 		return
 	if(design == "RedBlack")
-		detail_color = CLOTHING_BLACK
-		color = CLOTHING_RED
+		detail_color = CLOTHING_SOOT_BLACK
+		color = CLOTHING_BLOOD_RED
 	if(design == "BlackRed")
-		detail_color = CLOTHING_RED
-		color = CLOTHING_BLACK
+		detail_color = CLOTHING_BLOOD_RED
+		color = CLOTHING_SOOT_BLACK
 	update_icon()
 	if(ismob(loc))
 		var/mob/L = loc
@@ -158,9 +158,9 @@
 
 /obj/item/clothing/cloak/tabard/knight/guard
 	desc = "A tabard with the lord's heraldic colors."
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 	detail_tag = "_spl"
-	detail_color = CLOTHING_PURPLE
+	detail_color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/tabard/knight/guard/attack_right(mob/user)
 	if(picked)
@@ -216,7 +216,7 @@
 
 /obj/item/clothing/cloak/tabard/adept
 	detail_tag = "_psy"
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 	detail_color = CLOTHING_WHITE
 
 /obj/item/clothing/cloak/tabard/adept/Initialize()
@@ -280,9 +280,9 @@
 
 /obj/item/clothing/cloak/stabard/guard
 	desc = "A tabard with the lord's heraldic colors. This one is worn typically by guards."
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 	detail_tag = "_spl"
-	detail_color = CLOTHING_PURPLE
+	detail_color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/stabard/guard/attack_right(mob/user)
 	if(picked)
@@ -337,7 +337,7 @@
 	return ..()
 
 /obj/item/clothing/cloak/stabard/dungeon
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/cloak/stabard/dungeon/attack_right(mob/user)
 	return
@@ -473,9 +473,9 @@
 
 /obj/item/clothing/cloak/stabard/surcoat/guard
 	desc = "A surcoat with the lord's heraldic colors."
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 	detail_tag = "_quad"
-	detail_color = CLOTHING_PURPLE
+	detail_color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/stabard/surcoat/guard/attack_right(mob/user)
 	if(picked)
@@ -537,7 +537,7 @@
 //	allowed_sex = list("male")
 	allowed_race = list("human", "tiefling", "elf", "aasimar")
 	detail_tag = "_det"
-	detail_color = CLOTHING_PURPLE
+	detail_color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/lordcloak/update_icon()
 	cut_overlays()
@@ -595,7 +595,7 @@
 	boobed = TRUE
 
 /obj/item/clothing/cloak/apron/brown
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 
 /obj/item/clothing/cloak/apron/waist
 	name = "apron"
@@ -607,7 +607,7 @@
 	boobed = FALSE
 
 /obj/item/clothing/cloak/apron/waist/brown
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 
 /obj/item/clothing/cloak/apron/waist/bar
 	color = "#251f1d"
@@ -677,27 +677,27 @@
 
 
 /obj/item/clothing/cloak/raincloak/red
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/cloak/raincloak/purple
-	color = CLOTHING_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/raincloak/mortus
 	name = "funeral cloak"
 	desc = "You're always shrouded by death."
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/cloak/raincloak/brown
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 
 /obj/item/clothing/cloak/raincloak/green
-	color = CLOTHING_GREEN
+	color = CLOTHING_FOREST_GREEN
 
 /obj/item/clothing/cloak/raincloak/blue
-	color = CLOTHING_BLUE
+	color = CLOTHING_SKY_BLUE
 
 /obj/item/clothing/cloak/raincloak/random/Initialize()
-	color = pick(CLOTHING_RED, CLOTHING_PURPLE, CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_BLUE)
+	color = pick(CLOTHING_BLOOD_RED, CLOTHING_PLUM_PURPLE, CLOTHING_SOOT_BLACK, CLOTHING_BARK_BROWN, CLOTHING_FOREST_GREEN, CLOTHING_SKY_BLUE)
 	..()
 
 /obj/item/clothing/head/hooded/rainhood
@@ -732,10 +732,10 @@
 		color = pick("#685542","#66564d")
 
 /obj/item/clothing/cloak/raincloak/furcloak/brown
-	color = "#685542"
+	color = CLOTHING_MUD_BROWN
 
 /obj/item/clothing/cloak/raincloak/furcloak/black
-	color = "#66564d"
+	color = CLOTHING_ASH_GREY
 
 /obj/item/clothing/head/hooded/rainhood/furhood
 	icon_state = "fur_hood"
@@ -756,10 +756,10 @@
 	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
 
 /obj/item/clothing/cloak/cape/knight
-	color = CLOTHING_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/cape/guard
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 /obj/item/clothing/cloak/cape/guard/Initialize()
 	. = ..()
 	if(GLOB.lordprimary)
@@ -779,7 +779,7 @@
 
 /obj/item/clothing/cloak/cape/archivist
 	icon_state = "puritan_cape"
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
 
 /obj/item/clothing/cloak/cape/rogue
@@ -881,9 +881,26 @@
 	inhand_mod = TRUE
 	hoodtype = null
 	toggle_icon_state = FALSE
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = list("human", "tiefling", "elf", "aasimar")
+
+/obj/item/clothing/cloak/half/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/storage/concrete)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		STR.max_combined_w_class = 3
+		STR.max_w_class = WEIGHT_CLASS_NORMAL
+		STR.max_items = 1
+
+/obj/item/clothing/cloak/half/dropped(mob/living/carbon/human/user)
+	..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		var/list/things = STR.contents()
+		for(var/obj/item/I in things)
+			STR.remove_from_storage(I, get_turf(src))
 
 /obj/item/clothing/cloak/half/shadowcloak
 	name = "stalker cloak"
@@ -897,18 +914,18 @@
 	desc = "Those who wear, thy should beware, for those who do; never come back as who they once were again."
 	allowed_race = ALL_RACES_LIST
 	body_parts_covered = ARMS|CHEST
-	armor = ARMOR_STEEL_BAD
+	armor = ARMOR_MAILLE_GOOD
 
 /obj/item/clothing/cloak/half/brown
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 
 /obj/item/clothing/cloak/half/red
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/cloak/half/vet
 	name = "town watch cloak"
 	icon_state = "guardcloak"
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 	allowed_sex = list(MALE)
 	allowed_race = list("human", "tiefling", "aasimar")
 	inhand_mod = FALSE
@@ -925,7 +942,7 @@
 	return ..()
 
 /obj/item/clothing/cloak/half/random/Initialize()
-	color = pick(CLOTHING_RED, CLOTHING_PURPLE, CLOTHING_BLACK, CLOTHING_BROWN, CLOTHING_GREEN, CLOTHING_BLUE)
+	color = pick(CLOTHING_WINESTAIN_RED, CLOTHING_MUSTARD_YELLOW, CLOTHING_SOOT_BLACK, CLOTHING_BARK_BROWN, CLOTHING_FOREST_GREEN, CLOTHING_BERRY_BLUE)
 	..()
 
 //............... Battle Nun ........................... (unique kit for the role, tabard for aesthetics)
@@ -1017,3 +1034,16 @@
 	nodismemsleeves = TRUE
 	inhand_mod = FALSE
 	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
+
+/obj/item/clothing/cloak/wickercloak
+	name = "wicker cloak"
+	desc = "A makeshift cloak constructed with mud, sticks and fibers."
+	icon_state = "wicker_cloak"
+	item_state = "wicker_cloak"
+	alternate_worn_layer = CLOAK_BEHIND_LAYER
+	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	inhand_mod = TRUE
+	allowed_race = list("human", "tiefling", "elf", "aasimar")

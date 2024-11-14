@@ -11,6 +11,7 @@
 	force = 5
 	associated_skill = /datum/skill/misc/reading
 	var/random_cover
+	var/category = null
 
 /obj/item/book/rogue/getonmobprop(tag)
 	. = ..()
@@ -253,7 +254,6 @@
 	base_icon_state = "lawtome"
 	bookfile = "law.json"
 
-		//no more theif stole the books
 /obj/item/book/rogue/knowledge1
 	name = "Book of Knowledge"
 	desc = ""
@@ -266,13 +266,11 @@
 	desc = "{<font color='red'><blink>An ominous book with untold powers.</blink></font>}"
 	icon_state ="xylix_0"
 	base_icon_state = "xylix"
+	icon_state ="spellbookmimic_0"
+	base_icon_state = "pellbookmimic"
 	bookfile = "xylix.json"
 
 /obj/item/book/rogue/xylix/attack_self(mob/user)
-	if(!open)
-		attack_right(user)
-		return
-	..()
 	user.update_inv_hands()
 	to_chat(user, "<span class='notice'>You feel laughter echo in your head.</span>")
 
@@ -382,6 +380,12 @@
 	base_icon_state = "book8"
 	bookfile = "tales14.json"
 
+/obj/item/book/rogue/mysticalfog
+	name = "Studie of the Etheral Foge phenomenon"
+	desc = "By Roubert the Elder"
+	icon_state ="book7_0"
+	base_icon_state = "book8"
+	bookfile = "tales15.json"
 
 /obj/item/book/rogue/playerbook
 	var/player_book_text = "moisture in the air or water leaks have rendered the carefully written caligraphy of this book unreadable"

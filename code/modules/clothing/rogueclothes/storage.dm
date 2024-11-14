@@ -58,7 +58,7 @@
 //Assassin's belt starts with their unique dagger, a vial of highly-deadly poison, and a lockpick.
 /obj/item/storage/belt/rogue/leather/assassin/PopulateContents()
 	new /obj/item/reagent_containers/glass/bottle/rogue/poison(src)
-	new /obj/item/rogueweapon/huntingknife/idagger/steel/profane(src)
+	new /obj/item/rogueweapon/knife/dagger/steel/profane(src)
 	new /obj/item/lockpick(src)
 
 //Bandit's belt starts with a simple needle and a key to their hideout.
@@ -252,7 +252,7 @@
 
 
 /obj/item/storage/backpack/rogue/satchel/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/storage/backpack/rogue/satchel/ComponentInitialize()
 	. = ..()

@@ -602,19 +602,19 @@
 	turf_type = /turf/open/floor/rogue/naturalstone
 	above_floor = /turf/open/floor/rogue/naturalstone
 	baseturfs = list(/turf/open/floor/rogue/naturalstone)
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 20, /turf/closed/mineral/rogue/copper = 15, /turf/closed/mineral/rogue/iron = 5)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 20, /turf/closed/mineral/rogue/copper = 15, /turf/closed/mineral/rogue/iron = 5, /turf/closed/mineral/rogue/coal = 5)
 	mineralChance = 30
 	max_integrity = 400
 
 /turf/closed/mineral/random/rogue/med
 	icon_state = "minrandmed"
 	mineralChance = 50
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 20, /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/coal = 20, /turf/closed/mineral/rogue/copper = 10)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 20, /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/coal = 20, /turf/closed/mineral/rogue/copper = 10, /turf/closed/mineral/rogue/silver = 1)//, /turf/closed/mineral/rogue/gemeralds = 1)
 
 /turf/closed/mineral/random/rogue/high
 	icon_state = "minrandhigh"
-	mineralChance = 50
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/gold = 10 , /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/silver = 10)
+	mineralChance = 60
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/gold = 15 , /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/silver = 15)//, /turf/closed/mineral/rogue/gemeralds = 10)
 
 
 //begin actual mineral turfs
@@ -687,6 +687,14 @@
 	rockType = /obj/item/natural/rock/coal
 	spreadChance = 3
 	spread = 4
+
+/turf/closed/mineral/rogue/gemeralds
+	icon_state = "mingold"
+	desc = "there is an strange light on the stone?"
+	mineralType = /obj/item/roguegem/random
+	rockType = /obj/item/natural/rock/gemerald
+	spreadChance = 3
+	spread = 2
 
 /turf/closed/mineral/rogue/bedrock
 	name = "rock"

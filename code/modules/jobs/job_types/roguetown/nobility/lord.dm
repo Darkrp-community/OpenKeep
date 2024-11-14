@@ -19,7 +19,7 @@
 	give_bank_account = 500
 	selection_color = "#7851A9"
 
-	cmode_music = 'sound/music/combat_noble.ogg'	
+	cmode_music = 'sound/music/combat_noble.ogg'
 
 /datum/job/roguetown/lord/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -36,12 +36,12 @@
 		head = /obj/item/clothing/head/roguetown/crown/serpcrown
 		pants = /obj/item/clothing/under/roguetown/tights/black
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black
+		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/arming
 		cloak = /obj/item/clothing/cloak/lordcloak
 		shoes = /obj/item/clothing/shoes/roguetown/boots
 		backr = /obj/item/storage/backpack/rogue/satchel
 		belt = /obj/item/storage/belt/rogue/leather/plaquegold
-		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
+		backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special = 1)
 		id = /obj/item/clothing/ring/active/nomag
 		l_hand = /obj/item/rogueweapon/lordscepter
 		if(H.mind)

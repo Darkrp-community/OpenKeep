@@ -31,12 +31,12 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/tunicprimary
 		pants = /obj/item/clothing/under/roguetown/tights
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
+	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes/buckle
 	head = /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltr = /obj/item/keyring/steward
-	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
+	beltl = /obj/item/rogueweapon/knife/dagger/steel
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1, /obj/item/lockpickring/mundane = 1)
 

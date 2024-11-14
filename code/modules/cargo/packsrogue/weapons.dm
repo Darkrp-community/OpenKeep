@@ -6,7 +6,7 @@
 /datum/supply_pack/rogue/weapons/shortsword
 	name = "Iron Short Sword"
 	cost = 15
-	contains = /obj/item/rogueweapon/sword/iron/short
+	contains = /obj/item/rogueweapon/sword/short
 
 /datum/supply_pack/rogue/weapons/sword
 	name = "Iron Sword"
@@ -16,7 +16,7 @@
 /datum/supply_pack/rogue/weapons/greatsword
 	name = "Iron Greatsword"
 	cost = 54
-	contains = /obj/item/rogueweapon/greatsword/zwei
+	contains = /obj/item/rogueweapon/sword/long/greatsword/zwei
 
 /datum/supply_pack/rogue/weapons/mace
 	name = "Iron Mace"
@@ -31,22 +31,22 @@
 /datum/supply_pack/rogue/weapons/axe
 	name = "Iron Axe"
 	cost = 20
-	contains = /obj/item/rogueweapon/woodcut
+	contains = /obj/item/rogueweapon/axe/iron
 
 /datum/supply_pack/rogue/weapons/huntingknife
 	name = "Iron Hunting Knife"
 	cost = 12
-	contains = /obj/item/rogueweapon/huntingknife
+	contains = /obj/item/rogueweapon/knife/hunting
 
 /datum/supply_pack/rogue/weapons/dagger
 	name = "Iron Dagger"
 	cost = 10
-	contains = /obj/item/rogueweapon/huntingknife/idagger
+	contains = /obj/item/rogueweapon/knife/dagger
 
 /datum/supply_pack/rogue/weapons/spear
 	name = "Iron Spear"
 	cost = 22
-	contains = /obj/item/rogueweapon/spear
+	contains = /obj/item/rogueweapon/polearm/spear
 
 /datum/supply_pack/rogue/weapons/flail
 	name = "Iron Flail"
@@ -73,12 +73,14 @@
 	cost = 40
 	contains = /obj/item/bomb/homemade
 
+/*
 /datum/supply_pack/rogue/weapons/nets
 	name = "Throwing Net"
 	cost = 15
 	contains = list(/obj/item/net,
 			/obj/item/net,
 			/obj/item/net)
+*/
 
 /datum/supply_pack/rogue/weapons/crossbow
 	name = "Crossbow"

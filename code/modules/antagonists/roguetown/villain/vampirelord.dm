@@ -48,7 +48,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	C.vampires |= owner
 	. = ..()
 	owner.special_role = name
-	ADD_TRAIT(owner.current, TRAIT_CRITICAL_WEAKNESS, "[type]") //half assed but necessary otherwise these guys be invincible
+	//ADD_TRAIT(owner.current, TRAIT_CRITICAL_WEAKNESS, "[type]") unnecessary as they die to decapitation
 	ADD_TRAIT(owner.current, TRAIT_STRONGBITE, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOROGSTAM, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOHUNGER, "[type]")
@@ -608,8 +608,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 					if(do_after(user, 100))
 						lord.handle_vitae(-1500)
 						new /obj/item/clothing/under/roguetown/platelegs/vampire (src.loc)
-						new /obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire (src.loc)
-						new /obj/item/clothing/suit/roguetown/armor/plate/vampire (src.loc)
+						new /obj/item/clothing/suit/roguetown/armor/haubergon_vampire (src.loc)
+						new /obj/item/clothing/suit/roguetown/armor/cuirass/vampire (src.loc)
 						new /obj/item/clothing/shoes/roguetown/boots/armor/vampire (src.loc)
 						new /obj/item/clothing/head/roguetown/helmet/heavy/savoyard (src.loc)
 						one_time_armor = FALSE

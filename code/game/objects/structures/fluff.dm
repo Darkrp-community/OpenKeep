@@ -392,6 +392,11 @@
 /obj/structure/bars/chainlink
 	icon_state = "chainlink"
 
+/obj/structure/bars/alt
+	icon_state = "bars_alt"
+	plane = -3
+	layer = WALL_OBJ_LAYER+0.05
+
 /*
 /obj/structure/bars/CheckExit(atom/movable/O, turf/target)
 	if(istype(O) && (O.pass_flags & PASSGRILLE))
@@ -1042,7 +1047,7 @@
 							I = new /obj/item/clothing/head/roguetown/helmet/horned(user.loc)
 						if(6)
 							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2)
-								I = new /obj/item/rogueweapon/spear/billhook(user.loc)
+								I = new /obj/item/rogueweapon/polearm/spear/billhook(user.loc)
 							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2)
 								I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
 							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2)
@@ -1140,7 +1145,110 @@
 	desc = "The life force of a Saiga has consecrated this holy place.<br/> Present jacksberries, westleach leaves, and silk grubs for crafting a worthy sacrifice."
 	icon_state = "shrine_dendor_saiga"
 
-/obj/structure/fluff/psycross/attackby(obj/item/W, mob/user, params)
+/obj/structure/fluff/psycross/attackby(obj/item/W, mob/living/carbon/human/user, params)
+	if(user.mind)
+		if((user.mind.assigned_role == "Priest")	||	(user.mind.assigned_role == "Acolyte") && (user.patron.type == /datum/patron/divine/eora))
+
+			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/apple))
+				if(!istype(get_area(user), /area/rogue/indoors/town/church/chapel))
+					to_chat(user, "<span class='warning'>I need to do this in the chapel.</span>")
+					return FALSE
+				var/marriage
+				var/obj/item/reagent_containers/food/snacks/produce/apple/A = W
+
+				//The MARRIAGE TEST BEGINS
+				if(A.bitten_names.len)
+					if(A.bitten_names.len == 2)
+						//Groom provides the surname that the bride will take
+						var/mob/living/carbon/human/thegroom
+						var/mob/living/carbon/human/thebride
+						//Did anyone get cold feet on the wedding?
+						for(var/mob/M in viewers(src, 7))
+							testing("check [M]")
+							if(thegroom && thebride)
+								break
+							if(!ishuman(M))
+								continue
+							var/mob/living/carbon/human/C = M
+							/*
+							* This is for making the first biters name
+							* always be applied to the groom.
+							* second. This seems to be the best way
+							* to use the least amount of variables.
+							*/
+							var/name_placement = 1
+							for(var/X in A.bitten_names)
+								//I think that guy is dead.
+								if(C.stat == DEAD)
+									continue
+								//That person is not a player or afk.
+								if(!C.client)
+									continue
+								//Gotta get a divorce first
+								if(C.IsWedded())
+									continue
+								if(C.real_name == X)
+									//I know this is very sloppy but its alot less code.
+									switch(name_placement)
+										if(1)
+											if(thegroom)
+												continue
+											thegroom = C
+										if(2)
+											if(thebride)
+												continue
+											thebride = C
+									testing("foundbiter [C.real_name]")
+								name_placement++
+
+						//WE FOUND THEM LETS GET THIS SHOW ON THE ROAD!
+						if(!thegroom || !thebride)
+							testing("fail22")
+							return
+						//Alright now for the boring surname formatting.
+						var/surname2use
+						var/index = findtext(thegroom.real_name, " ")
+						var/bridefirst
+						thegroom.original_name = thegroom.real_name
+						thebride.original_name = thebride.real_name
+						if(!index)
+							surname2use = thegroom.dna.species.random_surname()
+						else
+							/*
+							* This code prevents inheriting the last name of
+							* " of wolves" or " the wolf"
+							* remove this if you want "Skibbins of wolves" to
+							* have his bride become "Sarah of wolves".
+							*/
+							if(findtext(thegroom.real_name, " of ") || findtext(thegroom.real_name, " the "))
+								surname2use = thegroom.dna.species.random_surname()
+								thegroom.change_name(copytext(thegroom.real_name, 1,index))
+							else
+								surname2use = copytext(thegroom.real_name, index)
+								thegroom.change_name(copytext(thegroom.real_name, 1,index))
+						index = findtext(thebride.real_name, " ")
+						if(index)
+							thebride.change_name(copytext(thebride.real_name, 1,index))
+						bridefirst = thebride.real_name
+						thegroom.change_name(thegroom.real_name + surname2use)
+						thebride.change_name(thebride.real_name + surname2use)
+						thegroom.MarryTo(thebride)
+						thegroom.adjust_triumphs(1)
+						thebride.adjust_triumphs(1)
+						//Bite the apple first if you want to be the groom.
+						priority_announce("[thegroom.real_name] has married [bridefirst]!", title = "Holy Union!", sound = 'sound/misc/bell.ogg')
+						marriage = TRUE
+						qdel(A)
+
+				if(!marriage)
+					playsound(src.loc, 'sound/misc/frying.ogg', 60, FALSE)
+					A.burn()
+					return
+	return ..()
+
+
+/*
+/obj/structure/fluff/psycross/attackby(obj/item/W, mob/living/carbon/human/user, params)
 	if(user.mind)
 		if(user.mind.assigned_role == "Priest")
 			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/apple))
@@ -1237,8 +1345,107 @@
 				if(!marriage)
 					A.burn()
 					return
+*/
+/*
+		if(user.mind.assigned_role == "Acolyte"  && user.patron.type == /datum/patron/divine/eora)
+			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/apple))
+				if(!istype(get_area(user), /area/rogue/indoors/town/church/chapel))
+					to_chat(user, "<span class='warning'>I need to do this in the chapel.</span>")
+					return FALSE
+				var/marriage
+				var/obj/item/reagent_containers/food/snacks/produce/apple/A = W
+
+				//The MARRIAGE TEST BEGINS
+				if(A.bitten_names.len)
+					if(A.bitten_names.len == 2)
+						//Groom provides the surname that the bride will take
+						var/mob/living/carbon/human/thegroom
+						var/mob/living/carbon/human/thebride
+						//Did anyone get cold feet on the wedding?
+						for(var/mob/M in viewers(src, 7))
+							testing("check [M]")
+							if(thegroom && thebride)
+								break
+							if(!ishuman(M))
+								continue
+							var/mob/living/carbon/human/C = M
+							/*
+							* This is for making the first biters name
+							* always be applied to the groom.
+							* second. This seems to be the best way
+							* to use the least amount of variables.
+							*/
+							var/name_placement = 1
+							for(var/X in A.bitten_names)
+								//I think that guy is dead.
+								if(C.stat == DEAD)
+									continue
+								//That person is not a player or afk.
+								if(!C.client)
+									continue
+								//Gotta get a divorce first
+								if(C.IsWedded())
+									continue
+								if(C.real_name == X)
+									//I know this is very sloppy but its alot less code.
+									switch(name_placement)
+										if(1)
+											if(thegroom)
+												continue
+											thegroom = C
+										if(2)
+											if(thebride)
+												continue
+											thebride = C
+									testing("foundbiter [C.real_name]")
+								name_placement++
+
+						//WE FOUND THEM LETS GET THIS SHOW ON THE ROAD!
+						if(!thegroom || !thebride)
+							testing("fail22")
+							return
+						//Alright now for the boring surname formatting.
+						var/surname2use
+						var/index = findtext(thegroom.real_name, " ")
+						var/bridefirst
+						thegroom.original_name = thegroom.real_name
+						thebride.original_name = thebride.real_name
+						if(!index)
+							surname2use = thegroom.dna.species.random_surname()
+						else
+							/*
+							* This code prevents inheriting the last name of
+							* " of wolves" or " the wolf"
+							* remove this if you want "Skibbins of wolves" to
+							* have his bride become "Sarah of wolves".
+							*/
+							if(findtext(thegroom.real_name, " of ") || findtext(thegroom.real_name, " the "))
+								surname2use = thegroom.dna.species.random_surname()
+								thegroom.change_name(copytext(thegroom.real_name, 1,index))
+							else
+								surname2use = copytext(thegroom.real_name, index)
+								thegroom.change_name(copytext(thegroom.real_name, 1,index))
+						index = findtext(thebride.real_name, " ")
+						if(index)
+							thebride.change_name(copytext(thebride.real_name, 1,index))
+						bridefirst = thebride.real_name
+						thegroom.change_name(thegroom.real_name + surname2use)
+						thebride.change_name(thebride.real_name + surname2use)
+						thegroom.MarryTo(thebride)
+						thegroom.adjust_triumphs(1)
+						thebride.adjust_triumphs(1)
+						//Bite the apple first if you want to be the groom.
+						priority_announce("[thegroom.real_name] has married [bridefirst]!", title = "Holy Union!", sound = 'sound/misc/bell.ogg')
+						marriage = TRUE
+						qdel(A)
+
+				if(!marriage)
+					A.burn()
+					return
+
 	return ..()
 
+*/
 
 
 /obj/structure/fluff/psycross/copper/Destroy()

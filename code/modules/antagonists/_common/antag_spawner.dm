@@ -146,7 +146,7 @@
 	if(creator_op)
 		M.mind.add_antag_datum(new_op,creator_op.nuke_team)
 		M.mind.special_role = "Nuclear Operative"
-
+/*
 //////CLOWN OP
 /obj/item/antag_spawner/nuke_ops/clown
 	name = "clown operative teleporter"
@@ -166,7 +166,7 @@
 		M.mind.add_antag_datum(new_op, creator_op.nuke_team)
 		M.mind.special_role = "Clown Operative"
 
-
+*/
 //////SYNDICATE BORG
 /obj/item/antag_spawner/nuke_ops/borg_tele
 	name = "syndicate cyborg teleporter"

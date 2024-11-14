@@ -16,18 +16,14 @@
 	aggro_vision_range = 9
 
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
-						/obj/item/natural/fur/volf = 1,
-						/obj/item/alch/bone = 1)
+						/obj/item/natural/fur/volf = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
-						/obj/item/natural/hide = 1,
 						/obj/item/natural/fur/volf = 2,
-						/obj/item/alch/sinew = 2,
-						/obj/item/alch/bone = 1)
+						/obj/item/alch/sinew = 2)
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
 						/obj/item/natural/hide = 1,
 						/obj/item/natural/fur/volf = 3,
 						/obj/item/alch/sinew = 2,
-						/obj/item/alch/bone = 1,
 						/obj/item/natural/head/volf = 1)
 
 	health = VOLF_HEALTH
@@ -44,7 +40,7 @@
 	STACON = 6
 	STASTR = 6
 	STASPD = 12
-
+	simple_detect_bonus = 20
 	retreat_distance = 0
 	minimum_distance = 0
 	deaggroprob = 0

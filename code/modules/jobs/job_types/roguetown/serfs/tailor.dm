@@ -19,7 +19,7 @@
 	..()
 
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
-	head = /obj/item/clothing/head/roguetown/fancyhat
+	head = /obj/item/clothing/head/roguetown/fashionablehat
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, pick(3,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, pick(3,4), TRUE)

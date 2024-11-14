@@ -82,6 +82,10 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	if(.)
 		if(new_owner.current == SSticker.rulermob)
 			return FALSE
+		if(new_owner.assigned_role in GLOB.noble_positions)
+			return FALSE
+		if(new_owner.assigned_role in GLOB.garrison_positions)
+			return FALSE
 		if(new_owner.assigned_role in GLOB.church_positions)
 			return FALSE
 		if(new_owner.unconvertable)
@@ -669,7 +673,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 /datum/ritual/darksunmark
 	name = "Dark Sun's Mark"
 	circle = "Servantry"
-	center_requirement = /obj/item/rogueweapon/huntingknife/idagger // Requires a combat dagger. Can be iron, steel or silver.
+	center_requirement = /obj/item/rogueweapon/knife/dagger // Requires a combat dagger. Can be iron, steel or silver.
 
 	function = /proc/darksunmark
 
@@ -685,14 +689,14 @@ GLOBAL_LIST_EMPTY(ritualslist)
 					if (HAS_TRAIT(carbon, TRAIT_ASSASSIN) && !(carbon.stat == DEAD)) //Check if they are an assassin and alive
 						found_assassin = TRUE
 						for(var/obj/item/I in carbon) // Checks to see if the assassin has their dagger on them. If so, the dagger will let them know of a new target.
-							if(istype(I, /obj/item/rogueweapon/huntingknife/idagger/steel/profane)) // Checks to see if the assassin has their dagger on them.
+							if(istype(I, /obj/item/rogueweapon/knife/dagger/steel/profane)) // Checks to see if the assassin has their dagger on them.
 								carbon.visible_message("profane dagger whispers, <span class='danger'>\"The terrible Zizo has called for our aid. Hunt and strike down our common foe, [HL.real_name]!\"</span>")
 				if(found_assassin == TRUE)
 					ADD_TRAIT(HL, TRAIT_ZIZOID_HUNTED, TRAIT_GENERIC) // Gives the victim a trait to track that they are wanted dead.
 					log_hunted("[key_name(HL)] playing as [HL] had the hunted flaw by Zizoid curse.")
 					to_chat(HL, "<span class='danger'>My hair stands on end. Has someone just said my name? I should watch my back.</span>")
 					to_chat(user, "<span class='warning'>Your target has been marked, your profane call answered. [HL.real_name] will surely perish!</span>")
-					for(var/obj/item/rogueweapon/huntingknife/idagger/D in C.contents) // Get rid of the dagger used as a sacrifice.
+					for(var/obj/item/rogueweapon/knife/dagger/D in C.contents) // Get rid of the dagger used as a sacrifice.
 						qdel(D)
 					qdel(P) // Get rid of the paper with the name on it too.
 					HL.playsound_local(HL.loc, 'sound/magic/marked.ogg', 100)
@@ -801,15 +805,15 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	S.set_up(1, 1, C)
 	S.start()
 
-	new /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous/cult(C)
-	new /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous/cult(C)
+	new /obj/item/clothing/head/roguetown/helmet/skullcap/cult(C)
+	new /obj/item/clothing/head/roguetown/helmet/skullcap/cult(C)
 
 	new /obj/item/clothing/cloak/half/shadowcloak/cult(C)
 	new /obj/item/clothing/cloak/half/shadowcloak/cult(C)
 
-	new /obj/item/rogueweapon/sword(C)
-	new /obj/item/rogueweapon/huntingknife(C)
-	new /obj/item/rogueweapon/huntingknife(C)
+	new /obj/item/rogueweapon/sword/scimitar/falchion(C)
+	new /obj/item/rogueweapon/knife/hunting(C)
+	new /obj/item/rogueweapon/mace/spiked(C)
 
 	new /obj/item/rope/chain(C)
 	new /obj/item/rope/chain(C)

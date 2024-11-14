@@ -47,7 +47,7 @@
 
 /obj/item/dmusicbox/attackby(obj/item/P, mob/user, params)
 	if(!loaded)
-		if(istype(P, /obj/item/reagent_containers/food/snacks/rogue/honey))
+		if(istype(P, /obj/item/roguecoin/gold))
 			loaded=TRUE
 			qdel(P)
 			update_icon()
@@ -74,9 +74,9 @@
 		if(world.time < lastfilechange + 3 MINUTES)
 			say("NOT YET!")
 			return
-//	if(!loaded)
-//		say("FEED ME SPIDER MILK!")
-//		return
+	if(!loaded)
+		say("A GOLD COIN FOR A CAROL!")
+		return
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	var/infile = input(user, "CHOOSE A NEW SONG", src) as null|file
 

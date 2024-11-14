@@ -104,7 +104,7 @@
 	name = "goblin"
 	id = "goblin"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
-	inherent_traits = list(TRAIT_NOROGSTAM,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE, TRAIT_EASYDISMEMBER, TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE)
+	inherent_traits = list(TRAIT_NOROGSTAM,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE, TRAIT_EASYDISMEMBER, TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE, TRAIT_INHUMENCAMP)
 	no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS, SLOT_S_STORE)
 	nojumpsuit = 1
 	sexes = 1
@@ -281,9 +281,9 @@
 	if(is_species(H, /datum/species/goblin/moon))
 		H.STASPD = 15
 	else
-		H.STASPD = 12
+		H.STASPD = 10
 	H.STACON = 6
-	H.STAEND = 10
+	H.STAEND = 8
 	if(is_species(H, /datum/species/goblin/moon))
 		H.STAINT = 8
 	else
@@ -291,10 +291,10 @@
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //tribal spear
-			r_hand = /obj/item/rogueweapon/spear/stone
+			r_hand = /obj/item/rogueweapon/polearm/spear/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
 		if(2) //tribal axe
-			r_hand = /obj/item/rogueweapon/stoneaxe
+			r_hand = /obj/item/rogueweapon/axe/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
 		if(3) //tribal club
 			r_hand = /obj/item/rogueweapon/mace/woodclub
@@ -309,8 +309,8 @@
 			if(prob(30))
 				l_hand = /obj/item/rogueweapon/shield/wood
 			if(prob(23))
-				r_hand = /obj/item/rogueweapon/huntingknife/stoneknife
-				l_hand = /obj/item/rogueweapon/huntingknife/stoneknife
+				r_hand = /obj/item/rogueweapon/knife/stone
+				l_hand = /obj/item/rogueweapon/knife/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/goblin
 			if(prob(80))
 				head = /obj/item/clothing/head/roguetown/helmet/leather/goblin
@@ -393,6 +393,8 @@
 		new /mob/living/carbon/human/species/goblin/npc(get_turf(src))
 	gobs++
 	update_icon()
+	if(living_player_count() < 10)
+		maxgobs = 1
 	if(gobs < maxgobs)
 		spawn_gob()
 

@@ -20,7 +20,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/leather/vest
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	beltl = /obj/item/rogueweapon/huntingknife/stoneknife
+	beltl = /obj/item/rogueweapon/knife/stone
 	backl = /obj/item/rogueweapon/mace/goden/shillelagh
 
 	H.change_stat("strength", 1)
@@ -40,7 +40,7 @@
 		H.mind.adjust_skillrank(/datum/skill/labor/taming, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
@@ -104,8 +104,8 @@
 	name = "green sacrifice to Dendor (unique)"
 	structurecraft = /obj/structure/fluff/psycross/crafted/shrine/dendor_saiga
 	reqs = list(/obj/item/reagent_containers/food/snacks/grub/silk = 1,
-				/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed = 1,
-				/obj/item/reagent_containers/food/snacks/produce/berries = 1)
+				/obj/item/reagent_containers/food/snacks/produce/westleach = 1,
+				/obj/item/reagent_containers/food/snacks/produce/jacksberry = 1)
 	result = /obj/item/blessing_of_dendor_prey
 	verbage = "make"
 	verbage_tp = "make"

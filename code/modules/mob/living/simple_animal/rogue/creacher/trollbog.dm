@@ -2,9 +2,10 @@
 	icon = 'icons/roguetown/mob/monster/trolls.dmi'
 	name = "bog troll"
 	desc = "Elven legends say these monsters were servants of Dendor tasked to guard his realm; nowadays they are sometimes found in the company of orcs."
-	icon_state = "Troll"
+	icon_state = "Trolls"
 	icon_living = "Troll"
 	icon_dead = "Trolld"
+	pixel_x = -16
 
 	faction = list("orcs")
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -15,6 +16,7 @@
 	verb_exclaim = "roars"
 	verb_yell = "roars"
 
+	wander = FALSE		// bog trolls are ambush predators
 	turns_per_move = 4
 	see_in_dark = 10
 	move_to_delay = 7
@@ -23,16 +25,19 @@
 
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
 						/obj/item/natural/hide = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
-						/obj/item/natural/hide = 2)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+						/obj/item/natural/trollheart = 1,
 						/obj/item/natural/hide = 3)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 3,
+						/obj/item/natural/trollheart = 1,
+						/obj/item/natural/hide = 4)
 
 	health = BOGTROLL_HEALTH
 	maxHealth = BOGTROLL_HEALTH
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat,
 					/obj/item/bodypart,
-					/obj/item/organ)
+					/obj/item/organ,
+					/obj/item/reagent_containers/food/snacks/rogue/truffles)
 
 	base_intents = list(/datum/intent/simple/headbutt, /datum/intent/simple/bigbite)
 	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
@@ -40,10 +45,10 @@
 	melee_damage_upper = 50
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 
-	STACON = 15
+	STACON = 16
 	STASTR = 16
 	STASPD = 3
-	STAEND = 14
+	STAEND = 15
 
 	retreat_distance = 0
 	minimum_distance = 0
@@ -104,11 +109,17 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/LoseTarget()
 	..()
 	if(health > 0)
-		icon_state = "Trolls"
+		icon_state = "Trollso"
+
+/mob/living/simple_animal/hostile/retaliate/rogue/trollbog/Moved()
+	. = ..()
+	if(!icon_state == "Troll")
+		icon_state = "Troll"
+
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/GiveTarget()
 	..()
-	icon_state = "Troll"
+	icon_state = "Trolla"
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/simple_limb_hit(zone)
 	if(!zone)

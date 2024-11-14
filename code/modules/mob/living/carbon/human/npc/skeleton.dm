@@ -69,7 +69,13 @@
 		var/datum/outfit/OU = new skel_outfit
 		if(OU)
 			equipOutfit(OU)
-
+	QDEL_NULL(sexcon)
+//	aggressive=1		should already be handled in the parent
+//	mode = AI_IDLE
+	dodgetime = 15
+	canparry = TRUE
+	flee_in_pain = FALSE
+//	wander = TRUE
 
 /datum/outfit/job/roguetown/npc/skeleton/random/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -85,19 +91,7 @@
 
 /mob/living/carbon/human/species/skeleton/npc/peasant/after_creation()
 	..()
-	QDEL_NULL(sexcon)
-	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/peasant)
-	aggressive=1
-	mode = AI_IDLE
-	dodgetime = 15
-	canparry = TRUE
-	flee_in_pain = FALSE
-	wander = TRUE
 
 /datum/outfit/job/roguetown/species/skeleton/npc/peasant/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -107,15 +101,22 @@
 	H.STAEND = 8
 	var/loadout = rand(1,7)
 	head = /obj/item/clothing/head/roguetown/roguehood/random
-	pants = /obj/item/clothing/under/roguetown/tights/vagrant
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+	if(prob(50))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+	if(prob(50))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
+
+	if(prob(50))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant
+	if(prob(50))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
 	switch(loadout)
 		if(1) //Axe Warrior
-			r_hand = /obj/item/rogueweapon/woodcut
+			r_hand = /obj/item/rogueweapon/axe/iron
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			head = /obj/item/clothing/head/roguetown/knitcap
 		if(2) //Long Stick Fighter
-			r_hand = /obj/item/rogueweapon/woodstaff
+			r_hand = /obj/item/rogueweapon/polearm/woodstaff
 		if(3) //Club Caveman
 			r_hand = /obj/item/rogueweapon/mace/woodclub
 		if(4) //Stabbity Stabbity your Knight is now horizontality
@@ -136,35 +137,23 @@
 ///////////////////////////////////////////////////////////// EVENTMIN SKELETONGS
 /mob/living/carbon/human/species/skeleton/npc/ambush/after_creation()
 	..()
-	QDEL_NULL(sexcon)
-	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/random)
-	aggressive=1
-	mode = AI_IDLE
-	dodgetime = 15
-	canparry = TRUE
-	flee_in_pain = FALSE
-	wander = TRUE
 
 /datum/outfit/job/roguetown/species/skeleton/npc/random/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(prob(50))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+	if(prob(50))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
+
+	if(prob(50))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant
+	if(prob(50))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
+	if(prob(50))
 		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	if(prob(50))
 		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-	if(prob(30))
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-		if(prob(50))
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
-	if(prob(50))
-		pants = /obj/item/clothing/under/roguetown/tights/vagrant
-		if(prob(50))
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
 	if(prob(50))
 		head = /obj/item/clothing/head/roguetown/helmet/leather
 	if(prob(50))
@@ -178,20 +167,7 @@
 
 /mob/living/carbon/human/species/skeleton/npc/warrior/after_creation()
 	..()
-	QDEL_NULL(sexcon)
-	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/warrior)
-	aggressive=1
-	mode = AI_IDLE
-	dodgetime = 15
-	canparry = TRUE
-	flee_in_pain = FALSE
-	wander = TRUE
 
 /datum/outfit/job/roguetown/species/skeleton/npc/warrior/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -200,79 +176,102 @@
 	H.STACON = 10
 	H.STAEND = 10
 	var/loadout = rand(1,6)
+	belt = /obj/item/storage/belt/rogue/leather
+	if(prob(50))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+	if(prob(50))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
+
+	if(prob(50))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant
+	if(prob(50))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
 	switch(loadout)
 		if(1) //Skeleton Warrior
 			r_hand = /obj/item/rogueweapon/sword/iron
 			l_hand = /obj/item/rogueweapon/shield/wood
-			belt = /obj/item/storage/belt/rogue/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(2)//Skeleton Warrior
 			r_hand = /obj/item/rogueweapon/mace
 			l_hand = /obj/item/rogueweapon/shield/wood
-			belt = /obj/item/storage/belt/rogue/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(3) //Skeleton Warrior
 			r_hand = /obj/item/rogueweapon/flail
 			l_hand = /obj/item/rogueweapon/shield/wood
-			belt = /obj/item/storage/belt/rogue/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap
 		if(4) //Skeleton Warrior
-			r_hand =/obj/item/rogueweapon/spear
+			r_hand =/obj/item/rogueweapon/polearm/spear
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(5) //Skeleton Warrior
 			r_hand = /obj/item/rogueweapon/sword/sabre
-			l_hand = /obj/item/rogueweapon/huntingknife/idagger
+			l_hand = /obj/item/rogueweapon/knife/dagger
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(6) //Skeleton Warrior
-			r_hand = /obj/item/rogueweapon/sword/iron/messer
-			l_hand = /obj/item/rogueweapon/huntingknife/idagger
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
+			r_hand = /obj/item/rogueweapon/sword/scimitar/messer
+			l_hand = /obj/item/rogueweapon/knife/dagger
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap
 
 
+// ====================		ANCIENT SKELLY		==========================
+/mob/living/carbon/human/species/skeleton/npc/ancient/after_creation()
+	..()
+	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/ancient)
+
+/datum/outfit/job/roguetown/species/skeleton/npc/ancient/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.STASTR = 10
+	H.STASPD = 7
+	H.STACON = 10
+	H.STAEND = 10
+	var/loadout = rand(1,3)
+	if(prob(20))
+		armor = /obj/item/clothing/suit/roguetown/armor/cuirass/copperchest
+	if(prob(10))
+		armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/rust
+	if(prob(30))
+		armor = /obj/item/clothing/suit/roguetown/shirt/robe/plain
+
+	if(prob(20))
+		head = /obj/item/clothing/head/roguetown/helmet/coppercap
+	if(prob(10))
+		head = /obj/item/clothing/head/roguetown/helmet/heavy/rust
+	if(prob(20))
+		neck = /obj/item/clothing/neck/roguetown/gorget/copper
+
+	switch(loadout)
+		if(1)
+			r_hand = /obj/item/rogueweapon/sword/coppermesser
+		if(2)
+			r_hand = /obj/item/rogueweapon/mace/cudgel/bludgeon
+			l_hand = /obj/item/rogueweapon/shield/wood
+		if(3)
+			r_hand = /obj/item/rogueweapon/polearm/spear/stone/copper
+			l_hand = /obj/item/rogueweapon/shield/tower/hoplite
+
+
+// ====================		SKILLED SKELLY		==========================
 /mob/living/carbon/human/species/skeleton/npc/warrior/skilled/after_creation()
 	..()
-	QDEL_NULL(sexcon)
-	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/warrior)
-	aggressive=1
-	mode = AI_IDLE
 	d_intent = INTENT_PARRY //these ones will parry instead of dodge, making them much more dangerous
-	canparry = TRUE
-	flee_in_pain = FALSE
-	wander = TRUE
 	configure_mind()
 
 /mob/living/carbon/human/species/skeleton/npc/warrior/skilled/proc/configure_mind()

@@ -1,7 +1,7 @@
 /datum/job/roguetown/skeleton
 	title = "skeleton"
 	flag = GRAVEDIGGER
-	department_flag = PEASANTS
+//	department_flag = PEASANTS
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 0
@@ -9,7 +9,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Elf", 
+		"Elf",
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
@@ -78,6 +78,8 @@
 		ADD_TRAIT(H, TRAIT_SHOCKIMMUNE, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
+		H.silent = TRUE		// makes them unable to audible emote or speak, no more sexy moan zombies
+		H.grant_language(/datum/language/hellspeak)
 
 /datum/outfit/job/roguetown/skeleton/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -85,26 +87,66 @@
 	if(prob(50))
 		wrists = /obj/item/clothing/wrists/roguetown/bracers
 	belt = /obj/item/storage/belt/rogue/leather
-	if(prob(40))
+	if(prob(10))
+		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light
+	if(prob(10))
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
+	if(prob(10))
 		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	if(prob(10))
-		head = /obj/item/clothing/head/roguetown/helmet
+		armor = /obj/item/clothing/suit/roguetown/armor/cuirass/copperchest
 	if(prob(10))
-		head = /obj/item/clothing/head/roguetown/helmet/skullcap
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	if(prob(10))
-		head = /obj/item/clothing/head/roguetown/helmet/horned
-	if(prob(10))
-		head = /obj/item/clothing/head/roguetown/helmet/kettle
-	if(prob(50))
-		beltr = /obj/item/rogueweapon/sword
-		if(H.gender == FEMALE)
-			beltr = /obj/item/rogueweapon/sword/sabre
-	if(H.gender == FEMALE)
-		H.STASTR = 8
-	else
-		H.STASTR = 10
+		armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/rust
+
+	switch(pick(1,9))
+		if (1)
+			head = /obj/item/clothing/head/roguetown/helmet/kettle
+		if (2)
+			head = /obj/item/clothing/head/roguetown/helmet/winged
+		if (3)
+			head = /obj/item/clothing/head/roguetown/helmet/leather/conical
+		if (4)
+			head = /obj/item/clothing/head/roguetown/helmet/coppercap
+		if (5)
+			neck = /obj/item/clothing/neck/roguetown/coif/cloth
+		if (6)
+			neck = /obj/item/clothing/neck/roguetown/coif
+		if (7)
+			head = /obj/item/clothing/head/roguetown/helmet/horned
+		if (8)
+			head = /obj/item/clothing/head/roguetown/helmet/skullcap
+		if (9)
+			head = /obj/item/clothing/head/roguetown/helmet
+
+	if(prob(20))
+		backr = /obj/item/rogueweapon/shield/wood
+
+	switch(pick(1,6))
+		if (1)
+			var/obj/item/rogueweapon/sword/short/P = new()
+			H.put_in_hands(P, forced = TRUE)
+		if (2)
+			var/obj/item/rogueweapon/axe/copper/P = new()
+			H.put_in_hands(P, forced = TRUE)
+		if (3)
+			var/obj/item/rogueweapon/mace/P = new()
+			H.put_in_hands(P, forced = TRUE)
+		if (4)
+			var/obj/item/rogueweapon/polearm/spear/P = new()
+			H.put_in_hands(P, forced = TRUE)
+		if (5)
+			var/obj/item/rogueweapon/sword/long/rider/copper/P = new()
+			H.put_in_hands(P, forced = TRUE)
+		if (6)
+			var/obj/item/rogueweapon/flail/militia/P = new()
+			H.put_in_hands(P, forced = TRUE)
+
+	H.STASTR = rand(8,10)
 	H.STASPD = rand(7,10)
 	H.STAINT = 1
 	H.STACON = 3
 	var/datum/antagonist/new_antag = new /datum/antagonist/skeleton()
 	H.mind.add_antag_datum(new_antag)
+

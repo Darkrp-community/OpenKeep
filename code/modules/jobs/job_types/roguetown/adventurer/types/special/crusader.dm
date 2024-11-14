@@ -20,7 +20,7 @@
 /datum/outfit/job/roguetown/adventurer/crusader/pre_equip(mob/living/carbon/human/H)
 	..()
 
-	head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader_totod
 	neck = /obj/item/clothing/neck/roguetown/coif/cloth
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	cloak = /obj/item/clothing/cloak/cape/crusader
@@ -95,7 +95,7 @@
 	if(H.gender == FEMALE)
 		head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
 		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-		beltl = /obj/item/rogueweapon/huntingknife/idagger/silver
+		beltl = /obj/item/rogueweapon/knife/dagger/silver
 		beltr = /obj/item/quiver/bolts
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
@@ -140,14 +140,22 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/crusader
 	name = "bucket helm"
-	desc = "An ornate bucket helmet, adorned in golden regalia denoting the faith of the Forgotten God. Some Astratan sects have adopted the style to venerate the sun-goddess in recent times."
-	icon_state = "crusader_helm"
-	icon = 'icons/roguetown/clothing/special/crusader.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/crusader.dmi'
+	icon_state = "totodhelm"
 
 /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
 	desc = "A silver gilded bucket helm, inscriptions in old Psydonic are found embezzeled on every inch of silver. Grenzelhoft specializes in these helmets, the Totod order has been purchasing them en-masse."
 	icon_state = "crusader_helmt2"
+	icon = 'icons/roguetown/clothing/special/crusader.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/crusader.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/heavy/crusader_totod
+	desc = "Proud knights of the Totod order displays their faith and their allegiance openly."
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+
 
 /obj/item/clothing/cloak/cape/crusader/ComponentInitialize()
 	. = ..()

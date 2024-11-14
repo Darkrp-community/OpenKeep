@@ -15,8 +15,8 @@
 	devotion_cost = -15
 
 /obj/effect/proc_holder/spell/targeted/burialrite/cast(list/targets,mob/user = usr)
-	if(user.is_holding_item_of_type(/obj/item/rogueweapon/huntingknife/idagger/steel/profane)) // If you are holding an assassin's cursed dagger, break it and free the souls contained within, sending them into the lukewarm arms of Necra.
-		var/obj/item/rogueweapon/huntingknife/idagger/steel/profane/held_profane = user.is_holding_item_of_type(/obj/item/rogueweapon/huntingknife/idagger/steel/profane)
+	if(user.is_holding_item_of_type(/obj/item/rogueweapon/knife/dagger/steel/profane)) // If you are holding an assassin's cursed dagger, break it and free the souls contained within, sending them into the lukewarm arms of Necra.
+		var/obj/item/rogueweapon/knife/dagger/steel/profane/held_profane = user.is_holding_item_of_type(/obj/item/rogueweapon/knife/dagger/steel/profane)
 		var/saved_souls = held_profane.release_profane_souls(user) // Releases the trapped souls and breaks the dagger. Gets the number of souls saved by destroying the dagger.
 		user.adjust_triumphs(saved_souls) // Every soul saved earns you a big fat triumph.
 	for(var/obj/structure/closet/dirthole/H in view(1))
@@ -69,7 +69,7 @@
 				iszombie = TRUE
 			if(L.mind.special_role == "Vampire Lord")
 				user.visible_message("<span class='warning'>[L] overpowers being churned!</span>", "<span class='userdanger'>[L] is too strong, I am churned!</span>")
-				user.Stun(50)
+				user.Knockdown(50)
 				user.throw_at(get_ranged_target_turf(user, get_dir(user,L), 7), 7, 1, L, spin = FALSE)
 				return
 		if((L.mob_biotypes & MOB_UNDEAD) || isvampire || iszombie)
@@ -80,7 +80,7 @@
 			if(prob(undead_prob))
 				L.visible_message("<span class='warning'>[L] HAS BEEN CHURNED BY NECRA'S GRIP!</span>", "<span class='danger'>I'VE BEEN CHURNED BY NECRA'S GRIP!</span>")
 				explosion(get_turf(L), light_impact_range = 1, flame_range = 1, smoke = FALSE)
-				L.Stun(50)
+				L.Knockdown(50)
 			else
 				L.visible_message("<span class='warning'>[L] resists being churned!</span>", "<span class='userdanger'>I resist being churned!</span>")
 	..()

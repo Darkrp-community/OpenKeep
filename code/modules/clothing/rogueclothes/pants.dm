@@ -22,6 +22,7 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	dropshrink = 0.8
+	max_integrity = INTEGRITY_WORST
 
 /obj/item/clothing/under/roguetown/AdjustClothes(mob/user)
 #ifdef MATURESERVER
@@ -53,27 +54,30 @@
 //	adjustable = CAN_CADJUST
 
 /obj/item/clothing/under/roguetown/tights/random/Initialize()
-	color = pick("#544236", "#435436", "#543836", "#79763f")
+	color = RANDOM_PEASANT_DYES
 	..()
 
+/obj/item/clothing/under/roguetown/tights/uncolored
+	color = CLOTHING_LINEN
+
 /obj/item/clothing/under/roguetown/tights/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/under/roguetown/tights/red
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/under/roguetown/tights/purple
-	color = CLOTHING_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/under/roguetown/tights/green
-	color = "#3c693c"
+	color = CLOTHING_FOREST_GREEN
 
 /obj/item/clothing/under/roguetown/tights/jester
 	desc = "Funny tights!"
-	color = "#1E3B20"
+	color = CLOTHING_SALMON
 
 /obj/item/clothing/under/roguetown/tights/lord
-	color = "#865c9c"
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/under/roguetown/tights/vagrant
 	r_sleeve_status = SLEEVE_TORN
@@ -101,27 +105,6 @@
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
 
-/obj/item/clothing/under/roguetown/trou
-	name = "work trousers"
-	desc = "Padded pants for hardy workers."
-	gender = PLURAL
-	icon_state = "trou"
-	item_state = "trou"
-//	adjustable = CAN_CADJUST
-	sewrepair = TRUE
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_LASHING, BCLASS_BITE)
-	blocksound = SOFTHIT
-	blade_dulling = DULLING_BASHCHOP
-	r_sleeve_status = SLEEVE_NORMAL
-	l_sleeve_status = SLEEVE_NORMAL
-
-/obj/item/clothing/under/roguetown/trou/leather
-	name = "leather trousers"
-	desc = "Standard leather pants for hardy workers."
-	icon_state = "leathertrou"
-	armor = ARMOR_LEATHER
-
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
 	desc = "Dark trousers worn by morticians while performing burial rites."
@@ -134,66 +117,6 @@
 	icon_state = "shadowpants"
 	allowed_race = list("elf", "dark elf")
 
-/obj/item/clothing/under/roguetown/chainlegs
-	name = "chain chausses"
-	desc = "Chain mail chausses made of exquisite steel rings boasting superior protection."
-	gender = PLURAL
-	icon_state = "chain_legs"
-	item_state = "chain_legs"
-//	adjustable = CAN_CADJUST
-	sewrepair = FALSE
-	armor = list("melee" = 100, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	max_integrity = 300
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Chainmail is meant to stop cuts, stabs and arrows, not blunt
-	armor_class = ARMOR_CLASS_MEDIUM
-	resistance_flags = FIRE_PROOF
-	blocksound = CHAINHIT
-	equip_delay_self = 25
-	unequip_delay_self = 25
-	var/do_sound = FALSE
-	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
-	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
-	pickup_sound = "rustle"
-	break_sound = 'sound/foley/breaksound.ogg'
-	anvilrepair = /datum/skill/craft/armorsmithing
-	r_sleeve_status = SLEEVE_NOMOD
-	l_sleeve_status = SLEEVE_NOMOD
-	clothing_flags = CANT_SLEEP_IN
-
-/obj/item/clothing/under/roguetown/chainlegs/iron
-	icon_state = "ichain_legs"
-	name = "iron chain chausses"
-	desc = "Chain mail chausses made of iron rings woven together, offering protection against cuts and stabs."
-	max_integrity = 200
-	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-/obj/item/clothing/under/roguetown/platelegs
-	name = "plated chausses"
-	desc = "Cuisses made of plated steel, offering additional protection against blunt force."
-	gender = PLURAL
-	icon_state = "heavyleggies" // Finally a sprite
-	item_state = "heavyleggies"
-	// adjustable = CAN_CADJUST
-	sewrepair = FALSE
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	max_integrity = 500
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
-	armor_class = ARMOR_CLASS_HEAVY
-	blocksound = PLATEHIT
-	equip_delay_self = 30
-	unequip_delay_self = 30
-	resistance_flags = FIRE_PROOF
-	var/do_sound = FALSE
-	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
-	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
-	pickup_sound = "rustle"
-	break_sound = 'sound/foley/breaksound.ogg'
-	anvilrepair = /datum/skill/craft/armorsmithing
-	smeltresult = null
-	r_sleeve_status = SLEEVE_NOMOD
-	l_sleeve_status = SLEEVE_NOMOD
-	clothing_flags = CANT_SLEEP_IN
-
 /obj/item/clothing/under/roguetown/loincloth
 	name = "loincloth"
 	desc = "Protects your modesty, but not much else."
@@ -204,10 +127,41 @@
 	l_sleeve_status = SLEEVE_NOMOD
 
 /obj/item/clothing/under/roguetown/loincloth/brown
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 
 /obj/item/clothing/under/roguetown/loincloth/pink
 	color = "#b98ae3"
+
+
+//..................................................................................................................................
+/*---------------\
+|			 	 |
+|  Light Armor	 |
+|			 	 |
+\---------------*/
+
+/obj/item/clothing/under/roguetown/trou
+	name = "work trousers"
+	desc = "Padded pants for hardy workers."
+	gender = PLURAL
+	icon_state = "trou"
+	item_state = "trou"
+//	adjustable = CAN_CADJUST
+	sewrepair = TRUE
+	blocksound = SOFTHIT
+	blade_dulling = DULLING_BASHCHOP
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+
+	armor = ARMOR_PADDED_BAD
+	prevent_crits = MINOR_CRITICALS
+
+/obj/item/clothing/under/roguetown/trou/leather
+	name = "leather trousers"
+	desc = "Standard leather pants for hardy workers."
+	icon_state = "leathertrou"
+	armor = ARMOR_LEATHER_WORST
+	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/under/roguetown/grenzelpants
 	name = "grenzelhoftian paumpers"
@@ -216,9 +170,10 @@
 	item_state = "grenzelpants"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	detail_tag = "_detail"
-	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_BITE, BCLASS_LASHING, BCLASS_TWIST)
 	colorgrenz = TRUE
+	armor = ARMOR_PADDED
+	prevent_crits = MINOR_CRITICALS
+	max_integrity = INTEGRITY_STANDARD
 
 /obj/item/clothing/under/roguetown/grenzelpants/update_icon()
 	cut_overlays()
@@ -228,3 +183,84 @@
 		if(get_detail_color())
 			pic.color = get_detail_color()
 		add_overlay(pic)
+
+
+//..................................................................................................................................
+/*---------------\
+|			 	 |
+|  Medium Armor	 |
+|			 	 |
+\---------------*/
+
+/obj/item/clothing/under/roguetown/chainlegs
+	name = "chain chausses"
+	desc = "Chain mail chausses made of exquisite steel rings boasting superior protection."
+	gender = PLURAL
+	icon_state = "chain_legs"
+	item_state = "chain_legs"
+//	adjustable = CAN_CADJUST
+	sewrepair = FALSE
+	resistance_flags = FIRE_PROOF
+	blocksound = CHAINHIT
+	equip_delay_self = 25
+	unequip_delay_self = 25
+	var/do_sound = FALSE
+	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
+	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+	pickup_sound = "rustle"
+	break_sound = 'sound/foley/breaksound.ogg'
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	r_sleeve_status = SLEEVE_NOMOD
+	l_sleeve_status = SLEEVE_NOMOD
+
+	armor_class = AC_MEDIUM
+	armor = ARMOR_MAILLE
+	max_integrity = INTEGRITY_STRONGEST
+	prevent_crits = ALL_EXCEPT_BLUNT
+
+
+/obj/item/clothing/under/roguetown/chainlegs/iron
+	icon_state = "ichain_legs"
+	name = "iron chain chausses"
+	desc = "Chain mail chausses made of iron rings woven together, offering protection against cuts and stabs."
+	smeltresult = /obj/item/ingot/iron
+	armor = ARMOR_MAILLE_IRON
+	max_integrity = INTEGRITY_STRONG
+
+
+//..................................................................................................................................
+/*---------------\
+|			 	 |
+|  Heavy Armor	 |
+|			 	 |
+\---------------*/
+
+/obj/item/clothing/under/roguetown/platelegs
+	name = "plated chausses"
+	desc = "Cuisses made of plated steel, offering additional protection against blunt force."
+	gender = PLURAL
+	icon_state = "heavyleggies" // Finally a sprite
+	item_state = "heavyleggies"
+	// adjustable = CAN_CADJUST
+	sewrepair = FALSE
+	blocksound = PLATEHIT
+	equip_delay_self = 30
+	unequip_delay_self = 30
+	resistance_flags = FIRE_PROOF
+	var/do_sound = FALSE
+	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	pickup_sound = "rustle"
+	break_sound = 'sound/foley/breaksound.ogg'
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	r_sleeve_status = SLEEVE_NOMOD
+	l_sleeve_status = SLEEVE_NOMOD
+	clothing_flags = CANT_SLEEP_IN
+
+	armor_class = AC_HEAVY
+	armor = ARMOR_PLATE
+	max_integrity = INTEGRITY_STRONGEST
+	prevent_crits = ALL_EXCEPT_STAB
+
