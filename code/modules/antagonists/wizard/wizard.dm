@@ -100,12 +100,6 @@
 				survive_objective.owner = owner
 				objectives += survive_objective
 
-		else
-			if (!(locate(/datum/objective/hijack) in objectives))
-				var/datum/objective/hijack/hijack_objective = new
-				hijack_objective.owner = owner
-				objectives += hijack_objective
-
 /datum/antagonist/wizard/on_removal()
 	unregister()
 	owner.RemoveAllSpells() // TODO keep track which spells are wizard spells which innate stuff

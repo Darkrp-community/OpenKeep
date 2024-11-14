@@ -302,54 +302,6 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 	name = "protect nonhuman"
 	human_check = FALSE
 
-/datum/objective/hijack
-	name = "hijack"
-	explanation_text = "Hijack the shuttle to ensure no loyalist Nanotrasen crew escape alive and out of custody."
-	team_explanation_text = "Hijack the shuttle to ensure no loyalist Nanotrasen crew escape alive and out of custody. Leave no team member behind."
-	martyr_compatible = 0 //Technically you won't get both anyway.
-
-/datum/objective/hijack/check_completion() // Requires all owners to escape.
-	if(!SSshuttle.emergency)
-		return FALSE
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return FALSE
-	var/list/datum/mind/owners = get_owners()
-	for(var/datum/mind/M in owners)
-		if(!considered_alive(M) || !SSshuttle.emergency.shuttle_areas[get_area(M.current)])
-			return FALSE
-	return SSshuttle.emergency.is_hijacked()
-
-/datum/objective/block
-	name = "no organics on shuttle"
-	explanation_text = "Do not allow any organic lifeforms to escape on the shuttle alive."
-	martyr_compatible = 1
-
-/datum/objective/block/check_completion()
-	if(!SSshuttle.emergency)
-		return FALSE
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return TRUE
-	for(var/mob/living/player in GLOB.player_list)
-		if(player.mind && player.stat != DEAD)
-			if(get_area(player) in SSshuttle.emergency.shuttle_areas)
-				return FALSE
-	return TRUE
-
-/datum/objective/purge
-	name = "no mutants on shuttle"
-	explanation_text = "Ensure no mutant humanoid species are present aboard the escape shuttle."
-	martyr_compatible = 1
-
-/datum/objective/purge/check_completion()
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return TRUE
-	for(var/mob/living/player in GLOB.player_list)
-		if((get_area(player) in SSshuttle.emergency.shuttle_areas) && player.mind && player.stat != DEAD && ishuman(player))
-			var/mob/living/carbon/human/H = player
-			if(H.dna.species.id != "human")
-				return FALSE
-	return TRUE
-
 /datum/objective/escape/prisoner
 	name = "survive"
 	explanation_text = "Escape the prison."
@@ -756,7 +708,6 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 		/datum/objective/maroon,
 		/datum/objective/debrain,
 		/datum/objective/protect,
-		/datum/objective/hijack,
 		/datum/objective/escape,
 		/datum/objective/survive,
 		/datum/objective/martyr,

@@ -31,21 +31,11 @@ SUBSYSTEM_DEF(shuttle)
 	var/emergencyNoEscape
 	var/emergencyNoRecall = FALSE
 	var/list/hostileEnvironments = list() //Things blocking escape shuttle from leaving
-	var/list/tradeBlockade = list() //Things blocking cargo from leaving.
-	var/supplyBlocked = FALSE
 
-		//supply shuttle stuff
-	var/obj/docking_port/mobile/supply/supply
 	var/ordernum = 1					//order number given to next order
 	var/points = 5000					//number of trade-points we have
 	var/centcom_message = ""			//Remarks from CentCom on how well you checked the last order.
 	var/list/discoveredPlants = list()	//Typepaths for unusual plants we've already sent CentCom, associated with their potencies
-
-	var/list/supply_packs = list()
-	var/list/supply_cats = list()
-	var/list/shoppinglist = list()
-	var/list/requestlist = list()
-	var/list/orderhistory = list()
 
 	var/list/hidden_shuttle_turfs = list() //all turfs hidden from navigation computers associated with a list containing the image hiding them and the type of the turf they are pretending to be
 	var/list/hidden_shuttle_turf_images = list() //only the images from the above list
@@ -67,24 +57,10 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/Initialize(timeofday)
 	ordernum = rand(1, 9000)
 
-	for(var/pack in subtypesof(/datum/supply_pack/rogue))
-		var/datum/supply_pack/P = new pack()
-		if(!P.contains)
-			continue
-		supply_packs[P.type] = P
-		if(!(P.group in supply_cats))
-			supply_cats += P.group
-
 	initial_load()
 
-	if(!arrivals)
-		WARNING("No /obj/docking_port/mobile/arrivals placed on the map!")
 	if(!emergency)
 		WARNING("No /obj/docking_port/mobile/emergency placed on the map!")
-	if(!backup_shuttle)
-		WARNING("No /obj/docking_port/mobile/emergency/backup placed on the map!")
-	if(!supply)
-		WARNING("No /obj/docking_port/mobile/supply placed on the map!")
 	return ..()
 
 /datum/controller/subsystem/shuttle/proc/initial_load()
@@ -299,30 +275,6 @@ SUBSYSTEM_DEF(shuttle)
 	hostileEnvironments -= bad
 	checkHostileEnvironment()
 
-
-/datum/controller/subsystem/shuttle/proc/registerTradeBlockade(datum/bad)
-	tradeBlockade[bad] = TRUE
-	checkTradeBlockade()
-
-/datum/controller/subsystem/shuttle/proc/clearTradeBlockade(datum/bad)
-	tradeBlockade -= bad
-	checkTradeBlockade()
-
-
-/datum/controller/subsystem/shuttle/proc/checkTradeBlockade()
-	for(var/datum/d in tradeBlockade)
-		if(!istype(d) || QDELETED(d))
-			tradeBlockade -= d
-	supplyBlocked = tradeBlockade.len
-
-	if(supplyBlocked && (supply.mode == SHUTTLE_IGNITING))
-		supply.mode = SHUTTLE_STRANDED
-		supply.timer = null
-		//Make all cargo consoles speak up
-	if(!supplyBlocked && (supply.mode == SHUTTLE_STRANDED))
-		supply.mode = SHUTTLE_DOCKED
-		//Make all cargo consoles speak up
-
 /datum/controller/subsystem/shuttle/proc/checkHostileEnvironment()
 	for(var/datum/d in hostileEnvironments)
 		if(!istype(d) || QDELETED(d))
@@ -497,18 +449,8 @@ SUBSYSTEM_DEF(shuttle)
 	if (istype(SSshuttle.hostileEnvironments))
 		hostileEnvironments = SSshuttle.hostileEnvironments
 
-	if (istype(SSshuttle.supply))
-		supply = SSshuttle.supply
-
 	if (istype(SSshuttle.discoveredPlants))
 		discoveredPlants = SSshuttle.discoveredPlants
-
-	if (istype(SSshuttle.shoppinglist))
-		shoppinglist = SSshuttle.shoppinglist
-	if (istype(SSshuttle.requestlist))
-		requestlist = SSshuttle.requestlist
-	if (istype(SSshuttle.orderhistory))
-		orderhistory = SSshuttle.orderhistory
 
 	if (istype(SSshuttle.shuttle_purchase_requirements_met))
 		shuttle_purchase_requirements_met = SSshuttle.shuttle_purchase_requirements_met
