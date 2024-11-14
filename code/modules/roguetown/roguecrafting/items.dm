@@ -22,7 +22,7 @@
 
 /datum/crafting_recipe/roguetown/plank
 	name = "wooden plank"
-	result = list(/obj/item/natural/plank = 2)
+	result = list(/obj/item/natural/plank,/obj/item/natural/plank)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	tools = list(/obj/item/rogueweapon/handsaw)
 	skillcraft = /datum/skill/craft/carpentry
@@ -42,7 +42,7 @@
 	result = list(/obj/item/natural/stoneblock = 2)
 	reqs = list(/obj/item/natural/stone = 1)
 	tools = list(/obj/item/rogueweapon/chisel)
-	skillcraft = /datum/skill/craft/carpentry
+	skillcraft = /datum/skill/craft/masonry
 	craftdiff = 1
 	verbage = "chisel"
 	verbage_tp = "chisels"
