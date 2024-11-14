@@ -1,13 +1,45 @@
 
 
 /datum/crafting_recipe/roguetown/turfs/woodfloor
-	name = "wooden floor"
+	name = "rough wooden floor"
 	result = /turf/open/floor/rogue/ruinedwood
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/turfs/woodfloor/TurfCheck(mob/user, turf/T)
+	if(isclosedturf(T))
+		return
+	if(!istype(T, /turf/open/floor/rogue/dirt))
+		if(!istype(T, /turf/open/transparent/openspace))
+			if(!istype(T, /turf/open/floor/rogue/grass))
+				return
+	return TRUE
+
+/datum/crafting_recipe/roguetown/turfs/woodfloorplank
+	name = "wooden floor"
+	result = /turf/open/floor/rogue/ruinedwood/spiral
+	reqs = list(/obj/item/natural/plank = 1)
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/turfs/woodfloorplank/TurfCheck(mob/user, turf/T)
+	if(isclosedturf(T))
+		return
+	if(!istype(T, /turf/open/floor/rogue/dirt))
+		if(!istype(T, /turf/open/transparent/openspace))
+			if(!istype(T, /turf/open/floor/rogue/grass))
+				return
+	return TRUE
+
+/datum/crafting_recipe/roguetown/turfs/woodfloorchevron
+	name = "patterned wooden floor"
+	result = /turf/open/floor/rogue/ruinedwood/spiral
+	reqs = list(/obj/item/natural/plankshort = 2)
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/turfs/woodfloorchevron/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
 		return
 	if(!istype(T, /turf/open/floor/rogue/dirt))
