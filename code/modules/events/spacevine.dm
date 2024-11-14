@@ -90,8 +90,6 @@
 	quality = NEGATIVE
 
 /datum/spacevine_mutation/toxicity/on_cross(obj/structure/spacevine/holder, mob/living/crosser)
-	if(issilicon(crosser))
-		return
 	if(prob(severity) && istype(crosser) && !isvineimmune(crosser))
 		to_chat(crosser, "<span class='alert'>I accidentally touch the vine and feel a strange sensation.</span>")
 		crosser.adjustToxLoss(5)
