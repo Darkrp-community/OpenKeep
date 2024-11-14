@@ -520,7 +520,7 @@
 
 //bows
 /datum/crafting_recipe/roguetown/bowyer
-	tools = list(/obj/item/rogueweapon/huntingknife)
+	tools = list(/obj/item/rogueweapon/knife)
 	skillcraft = /datum/skill/craft/carpentry
 
 /datum/crafting_recipe/roguetown/bowstring
