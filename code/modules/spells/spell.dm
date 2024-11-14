@@ -478,7 +478,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 		// New proc made to consume devotion upon cast. Better than using negative numbers.
 		D.consume_devotion(devotion_cost)
 		// Refund a percentage of devotion cost per every level of Holy magic we got, minimum of 5. We also gain 10 points towards cleric progression levels.
-		D.update_devotion(floor(devotion_cost * miracle_refund, 5), 10)
+		D.update_devotion(round(devotion_cost * miracle_refund, 5), 10)
 	return
 
 /obj/effect/proc_holder/spell/proc/view_or_range(distance = world.view, center=usr, type="view")
