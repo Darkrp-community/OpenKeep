@@ -963,6 +963,7 @@
 #include "code\game\objects\lighting\_base_light.dm"
 #include "code\game\objects\lighting\lantern_post.dm"
 #include "code\game\objects\lighting\roguelighting.dm"
+#include "code\game\objects\lighting\sunlight.dm"
 #include "code\game\objects\structures\artstuff.dm"
 #include "code\game\objects\structures\barricades.dm"
 #include "code\game\objects\structures\barsigns.dm"

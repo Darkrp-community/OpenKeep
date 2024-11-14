@@ -12,82 +12,6 @@
 #define BROKEN_SPARKS_MIN (30 SECONDS)
 #define BROKEN_SPARKS_MAX (90 SECONDS)
 
-/obj/item/wallframe/light_fixture
-	name = "light fixture frame"
-	desc = ""
-	icon = 'icons/obj/lighting.dmi'
-	icon_state = "tube-construct-item"
-	result_path = /obj/structure/light_construct
-	inverse = TRUE
-
-/obj/item/wallframe/light_fixture/small
-	name = "small light fixture frame"
-	icon_state = "bulb-construct-item"
-	result_path = /obj/structure/light_construct/small
-	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
-
-/obj/item/wallframe/light_fixture/try_build(turf/on_wall, user)
-	if(!..())
-		return
-	var/area/A = get_area(user)
-	if(!IS_DYNAMIC_LIGHTING(A))
-		to_chat(user, "<span class='warning'>I cannot place [src] in this area!</span>")
-		return
-	return TRUE
-
-
-/obj/structure/light_construct
-	name = "light fixture frame"
-	desc = ""
-	icon = 'icons/obj/lighting.dmi'
-	icon_state = "tube-construct-stage1"
-	anchored = TRUE
-	layer = WALL_OBJ_LAYER
-	max_integrity = 200
-	armor = list("melee" = 50, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 50)
-
-	var/stage = 1
-	var/fixture_type = "tube"
-	var/sheets_refunded = 2
-	var/obj/machinery/light/newlight = null
-
-/obj/structure/light_construct/Initialize(mapload, ndir, building)
-	. = ..()
-	if(building)
-		setDir(ndir)
-
-/obj/structure/light_construct/Destroy()
-	return ..()
-
-
-/obj/structure/light_construct/examine(mob/user)
-	. = ..()
-	switch(stage)
-		if(1)
-			. += "It's an empty frame."
-		if(2)
-			. += "It's wired."
-		if(3)
-			. += "The casing is closed."
-
-/obj/structure/light_construct/blob_act(obj/structure/blob/B)
-	if(B && B.loc == loc)
-		qdel(src)
-
-
-/obj/structure/light_construct/deconstruct(disassembled = TRUE)
-	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/stack/sheet/metal(loc, sheets_refunded)
-	qdel(src)
-
-/obj/structure/light_construct/small
-	name = "small light fixture frame"
-	icon_state = "bulb-construct-stage1"
-	fixture_type = "bulb"
-	sheets_refunded = 1
-
-
-
 // the standard tube light fixture
 /obj/machinery/light
 	name = "light fixture"
@@ -366,28 +290,6 @@
 		return ..()
 
 /obj/machinery/light/deconstruct(disassembled = TRUE)
-	if(!(flags_1 & NODECONSTRUCT_1))
-		var/obj/structure/light_construct/newlight = null
-		var/cur_stage = 2
-		if(!disassembled)
-			cur_stage = 1
-		switch(fitting)
-			if("tube")
-				newlight = new /obj/structure/light_construct(src.loc)
-				newlight.icon_state = "tube-construct-stage[cur_stage]"
-
-			if("bulb")
-				newlight = new /obj/structure/light_construct/small(src.loc)
-				newlight.icon_state = "bulb-construct-stage[cur_stage]"
-		newlight.setDir(src.dir)
-		newlight.stage = cur_stage
-		if(!disassembled)
-			newlight.obj_integrity = newlight.max_integrity * 0.5
-			if(status != LIGHT_BROKEN)
-				break_light_tube()
-			if(status != LIGHT_EMPTY)
-				drop_light_tube()
-		transfer_fingerprints_to(newlight)
 	qdel(src)
 
 /obj/machinery/light/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
