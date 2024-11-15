@@ -186,36 +186,6 @@
 			if (prob(20))
 				affected_mob.say(pick("beep, beep!", "Boop bop boop beep.", "kkkiiiill mmme", "I wwwaaannntt tttoo dddiiieeee..."), forced = "robotic transformation")
 
-
-/datum/disease/transformation/slime
-	name = "Advanced Mutation Transformation"
-	cure_text = "frost oil"
-	cures = list(/datum/reagent/consumable/frostoil)
-	cure_chance = 80
-	agent = "Advanced Mutation Toxin"
-	desc = ""
-	severity = DISEASE_SEVERITY_BIOHAZARD
-	visibility_flags = 0
-	stage1	= list("You don't feel very well.")
-	stage2	= list("Your skin feels a little slimy.")
-	stage3	= list("<span class='danger'>My appendages are melting away.</span>", "<span class='danger'>My limbs begin to lose their shape.</span>")
-	stage4	= list("<span class='danger'>I are turning into a slime.</span>")
-	stage5	= list("<span class='danger'>I have become a slime.</span>")
-	new_form = /mob/living/simple_animal/slime/random
-
-/datum/disease/transformation/slime/stage_act()
-	..()
-	switch(stage)
-		if(1)
-			if(ishuman(affected_mob) && affected_mob.dna)
-				if(affected_mob.dna.species.id == "slime" || affected_mob.dna.species.id == "stargazer" || affected_mob.dna.species.id == "lum")
-					stage = 5
-		if(3)
-			if(ishuman(affected_mob))
-				var/mob/living/carbon/human/human = affected_mob
-				if(human.dna.species.id != "slime" && affected_mob.dna.species.id != "stargazer" && affected_mob.dna.species.id != "lum")
-					human.set_species(/datum/species/jelly/slime)
-
 /datum/disease/transformation/corgi
 	name = "The Barkening"
 	cure_text = "Death"

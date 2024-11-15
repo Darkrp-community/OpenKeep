@@ -57,7 +57,6 @@
 		/obj/item/clothing/gloves,
 		/obj/item/forcefield_projector,
 		/obj/item/lightreplacer,
-		/obj/item/plunger
 		))
 
 /obj/item/storage/belt/utility/chief
@@ -127,7 +126,6 @@
 		/obj/item/extinguisher/mini,
 		/obj/item/reagent_containers/hypospray,
 		/obj/item/clothing/gloves/,
-		/obj/item/lazarus_injector,
 		/obj/item/bikehorn/rubberducky,
 		/obj/item/clothing/mask/surgical,
 		/obj/item/clothing/mask/breath,
@@ -153,8 +151,6 @@
 		/obj/item/implantcase,
 		/obj/item/implant,
 		/obj/item/implanter,
-		/obj/item/pinpointer/crew,
-		/obj/item/plunger
 		))
 
 /obj/item/storage/belt/security
@@ -228,9 +224,7 @@
 		/obj/item/analyzer,
 		/obj/item/extinguisher/mini,
 		/obj/item/clothing/gloves,
-		/obj/item/resonator,
 		/obj/item/pickaxe,
-		/obj/item/shovel,
 		/obj/item/stack/sheet/animalhide,
 		/obj/item/stack/sheet/sinew,
 		/obj/item/stack/sheet/bone,
@@ -246,10 +240,7 @@
 		/obj/item/storage/pill_bottle,
 		/obj/item/stack/ore,
 		/obj/item/reagent_containers/food/drinks,
-		/obj/item/organ/regenerative_core,
-		/obj/item/wormhole_jaunter,
 		/obj/item/storage/bag/plants,
-		/obj/item/stack/marker_beacon
 		))
 
 /obj/item/storage/belt/mining/alt
