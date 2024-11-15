@@ -36,8 +36,6 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		/atom/movable/screen/credit,
 		//invalid without mob/living passed
 		/obj/shapeshift_holder,
-		//abstract type, should not be spawned but subtypes are okay
-		/mob/living/silicon/robot/modules,
 		//explodes when deleted
 		/obj/structure/checkoutmachine,
 		//spawns a bunch of swarmers that wander off and damage stuff that gets spawned

@@ -461,7 +461,6 @@
 		/obj/item/key/janitor,
 		/obj/item/clothing/gloves,
 		/obj/item/melee/flyswatter,
-		/obj/item/assembly/mousetrap,
 		/obj/item/paint/paint_remover
 		))
 

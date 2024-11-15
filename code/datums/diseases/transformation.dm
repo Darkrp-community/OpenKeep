@@ -152,40 +152,6 @@
 	if(affected_mob && !is_monkey_leader(affected_mob.mind))
 		visibility_flags = NONE
 
-
-
-/datum/disease/transformation/robot
-
-	name = "Robotic Transformation"
-	cure_text = "An injection of copper."
-	cures = list(/datum/reagent/copper)
-	cure_chance = 5
-	agent = "R2D2 Nanomachines"
-	desc = ""
-	severity = DISEASE_SEVERITY_BIOHAZARD
-	visibility_flags = 0
-	stage1	= list()
-	stage2	= list("Your joints feel stiff.", "<span class='danger'>Beep...boop..</span>")
-	stage3	= list("<span class='danger'>My joints feel very stiff.</span>", "Your skin feels loose.", "<span class='danger'>I can feel something move...inside.</span>")
-	stage4	= list("<span class='danger'>My skin feels very loose.</span>", "<span class='danger'>I can feel... something...inside you.</span>")
-	stage5	= list("<span class='danger'>My skin feels as if it's about to burst off!</span>")
-	new_form = /mob/living/silicon/robot
-	infectable_biotypes = MOB_ORGANIC|MOB_UNDEAD|MOB_ROBOTIC
-	bantype = "Cyborg"
-
-/datum/disease/transformation/robot/stage_act()
-	..()
-	switch(stage)
-		if(3)
-			if (prob(8))
-				affected_mob.say(pick("Beep, boop", "beep, beep!", "Boop...bop"), forced = "robotic transformation")
-			if (prob(4))
-				to_chat(affected_mob, "<span class='danger'>I feel a stabbing pain in my head.</span>")
-				affected_mob.Unconscious(40)
-		if(4)
-			if (prob(20))
-				affected_mob.say(pick("beep, beep!", "Boop bop boop beep.", "kkkiiiill mmme", "I wwwaaannntt tttoo dddiiieeee..."), forced = "robotic transformation")
-
 /datum/disease/transformation/corgi
 	name = "The Barkening"
 	cure_text = "Death"
