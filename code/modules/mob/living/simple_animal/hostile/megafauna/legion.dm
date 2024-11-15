@@ -307,7 +307,7 @@
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "legion_turret"
 	light_power = 0.5
-	light_range = 2
+	light_outer_range =  2
 	max_integrity = 80
 	luminosity = 6
 	anchored = TRUE

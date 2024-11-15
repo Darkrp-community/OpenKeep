@@ -2299,7 +2299,7 @@
 	pixel_y = 2
 	},
 /obj/item/candle/yellow/lit/infinite{
-	light_range = 1;
+	light_outer_range =  1;
 	pixel_x = 14;
 	pixel_y = 5
 	},
