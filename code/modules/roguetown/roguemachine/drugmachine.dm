@@ -44,7 +44,7 @@
 		set_light(0)
 		return
 	w_class = WEIGHT_CLASS_GIGANTIC
-	set_light(2, 2, "#9C37B5")
+	set_light(2, 2, 2, l_color =  "#9C37B5")
 
 /obj/item/roguemachine/drugtrade/Initialize()
 	. = ..()
@@ -131,7 +131,7 @@
 	if(obj_broken)
 		set_light(0)
 		return
-	set_light(1, 1, "#8f06b5")
+	set_light(1, 1, 1, l_color =  "#8f06b5")
 	add_overlay(mutable_appearance(icon, "vendor-merch"))
 
 

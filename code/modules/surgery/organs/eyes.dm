@@ -213,26 +213,6 @@
 	tint = INFINITY
 	var/obj/item/flashlight/eyelight/eye
 
-/obj/item/organ/eyes/robotic/flashlight/emp_act(severity)
-	return
-
-/obj/item/organ/eyes/robotic/flashlight/Insert(mob/living/carbon/M, special = FALSE, drop_if_replaced = FALSE)
-	..()
-	if(!eye)
-		eye = new /obj/item/flashlight/eyelight()
-	eye.on = TRUE
-	eye.forceMove(M)
-	eye.update_brightness(M)
-	M.become_blind("flashlight_eyes")
-
-
-/obj/item/organ/eyes/robotic/flashlight/Remove(mob/living/carbon/M, special = 0)
-	eye.on = FALSE
-	eye.update_brightness(M)
-	eye.forceMove(src)
-	M.cure_blind("flashlight_eyes")
-	..()
-
 // Welding shield implant
 /obj/item/organ/eyes/robotic/shield
 	name = "shielded robotic eyes"
@@ -408,9 +388,9 @@
 /obj/item/organ/eyes/robotic/glow/proc/sync_light_effects()
 	for(var/I in eye_lighting)
 		var/obj/effect/abstract/eye_lighting/L = I
-		L.set_light(light_object_range, light_object_power, current_color_string)
+		L.set_light(light_object_range, light_inner_range, light_object_power, l_color =  current_color_string)
 	if(on_mob)
-		on_mob.set_light(1, 1, current_color_string)
+		on_mob.set_light(1, 1, 1, l_color = current_color_string)
 
 /obj/effect/abstract/eye_lighting
 	var/obj/item/organ/eyes/robotic/glow/parent

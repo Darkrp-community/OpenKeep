@@ -323,7 +323,6 @@ SUBSYSTEM_DEF(ticker)
 				SStitle.splash_turf.icon = ikon
 			for(var/mob/dead/new_player/player in GLOB.player_list)
 				player.playsound_local(player, 'sound/music/wartitle.ogg', 100, TRUE)*/
-		return FALSE
 	job_change_locked = TRUE
 	return TRUE
 

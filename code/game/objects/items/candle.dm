@@ -111,7 +111,7 @@
 
 /obj/item/candle/yellow/lit/infinite
 	light_power = 1
-	light_range = 4
+	light_outer_range =  4
 	start_lit = TRUE
 	infinite = TRUE
 	icon_state = "candle1_lit"
@@ -119,7 +119,7 @@
 
 /obj/item/candle/yellow/lit/infinite/strong
 	light_power = 2
-	light_range = 4
+	light_outer_range =  4
 	pixel_x = 4
 
 /obj/item/candle/yellow/lit/infinite/strong/skull

@@ -594,7 +594,7 @@
 	base_state = "candle"
 	layer = WALL_OBJ_LAYER+0.1
 	light_power = 0.9
-	light_range = 6
+	light_outer_range =  6
 
 
 /*	..................   Misc   ................... */
@@ -697,7 +697,7 @@
 /*	..................   Lights   ................... */
 /obj/item/candle/yellow/lit/infinite
 	light_power = 1
-	light_range = 4
+	light_outer_range =  4
 	start_lit = TRUE
 	infinite = TRUE
 	icon_state = "candle1_lit"
@@ -705,7 +705,7 @@
 
 /obj/item/candle/yellow/lit/infinite/strong
 	light_power = 2
-	light_range = 4
+	light_outer_range =  4
 	pixel_x = 4
 
 /obj/machinery/light/rogue/campfire/longlived
@@ -713,7 +713,7 @@
 
 /obj/machinery/light/rogue/wallfire/candle/weak
 	light_power = 0.9
-	light_range = 6
+	light_outer_range =  6
 /obj/machinery/light/rogue/wallfire/candle/weak/l
 	pixel_x = -32
 	pixel_y = 0
