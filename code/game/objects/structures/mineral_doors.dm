@@ -364,7 +364,7 @@
 				user.visible_message(span_notice("[user] repaired [src]."), \
 				span_notice("I repaired [src]."))
 
-/obj/structure/mineral_door/proc/trykeylock(obj/item/I, mob/user)
+/obj/structure/mineral_door/proc/trykeylock(obj/item/I, mob/user, is_right = FALSE)
 	if(door_opened || isSwitchingStates)
 		return
 	if(!keylock)
@@ -395,7 +395,7 @@
 	else
 		var/obj/item/roguekey/K = I
 		if(K.lockhash == lockhash)
-			lock_toggle(user)
+			lock_toggle(user, is_right)
 			return
 		else
 			playsound(src, rattlesound, 100)
@@ -404,6 +404,13 @@
 			animate(pixel_x = oldx-1, time = 0.5)
 			animate(pixel_x = oldx, time = 0.5)
 		return
+
+/obj/structure/mineral_door/attack_right(mob/user)
+	if(istype(user.get_active_held_item(), /obj/item/roguekey))
+		var/obj/item/roguekey/held = user.get_active_held_item()
+		trykeylock(held, user, TRUE)
+		return
+	. = ..()
 
 /obj/structure/mineral_door/proc/trypicklock(obj/item/I, mob/user)
 	if(door_opened || isSwitchingStates)
@@ -464,15 +471,15 @@
 				continue
 		return
 
-/obj/structure/mineral_door/proc/lock_toggle(mob/user)
+/obj/structure/mineral_door/proc/lock_toggle(mob/user, is_right = FALSE)
 	if(isSwitchingStates || door_opened)
 		return
-	if(locked)
+	if(locked && is_right)
 		user.visible_message(span_warning("[user] unlocks [src]."), \
 			span_notice("I unlock [src]."))
 		playsound(src, unlocksound, 100)
 		locked = 0
-	else
+	else if(!is_right && !locked)
 		user.visible_message(span_warning("[user] locks [src]."), \
 			span_notice("I lock [src]."))
 		playsound(src, locksound, 100)
