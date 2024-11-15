@@ -196,17 +196,6 @@
 	required_container = /obj/item/slime_extract/blue
 	required_other = TRUE
 
-/datum/chemical_reaction/slime/slimestabilizer
-	name = "Slime Stabilizer"
-	id = "m_slimestabilizer"
-	required_reagents = list(/datum/reagent/blood = 1)
-	required_container = /obj/item/slime_extract/blue
-	required_other = TRUE
-
-/datum/chemical_reaction/slime/slimestabilizer/on_reaction(datum/reagents/holder)
-	new /obj/item/slimepotion/slime/stabilizer(get_turf(holder.my_atom))
-	..()
-
 /datum/chemical_reaction/slime/slimefoam
 	name = "Slime Foam"
 	id = "m_foam"
@@ -319,18 +308,6 @@
 	new /obj/item/flashlight/slime(T)
 	..()
 
-//Purple
-/datum/chemical_reaction/slime/slimepsteroid
-	name = "Slime Steroid"
-	id = "m_steroid"
-	required_reagents = list(/datum/reagent/toxin/plasma = 1)
-	required_container = /obj/item/slime_extract/purple
-	required_other = TRUE
-
-/datum/chemical_reaction/slime/slimepsteroid/on_reaction(datum/reagents/holder)
-	new /obj/item/slimepotion/slime/steroid(get_turf(holder.my_atom))
-	..()
-
 /datum/chemical_reaction/slime/slimeregen
 	name = "Slime Regen"
 	id = "m_regen"
@@ -351,59 +328,6 @@
 	new /obj/item/stack/sheet/mineral/plasma(get_turf(holder.my_atom), 3)
 	..()
 
-//Red
-/datum/chemical_reaction/slime/slimemutator
-	name = "Slime Mutator"
-	id = "m_slimemutator"
-	required_reagents = list(/datum/reagent/toxin/plasma = 1)
-	required_container = /obj/item/slime_extract/red
-	required_other = TRUE
-
-/datum/chemical_reaction/slime/slimemutator/on_reaction(datum/reagents/holder)
-	new /obj/item/slimepotion/slime/mutator(get_turf(holder.my_atom))
-	..()
-
-/datum/chemical_reaction/slime/slimebloodlust
-	name = "Bloodlust"
-	id = "m_bloodlust"
-	required_reagents = list(/datum/reagent/blood = 1)
-	required_container = /obj/item/slime_extract/red
-	required_other = TRUE
-
-/datum/chemical_reaction/slime/slimebloodlust/on_reaction(datum/reagents/holder)
-	for(var/mob/living/simple_animal/slime/slime in viewers(get_turf(holder.my_atom), null))
-		if(slime.docile) //Undoes docility, but doesn't make rabid.
-			slime.visible_message("<span class='danger'>[slime] forgets its training, becoming wild once again!</span>")
-			slime.docile = FALSE
-			slime.update_name()
-			continue
-		slime.rabid = 1
-		slime.visible_message("<span class='danger'>The [slime] is driven into a frenzy!</span>")
-	..()
-
-/datum/chemical_reaction/slime/slimespeed
-	name = "Slime Speed"
-	id = "m_speed"
-	required_reagents = list(/datum/reagent/water = 1)
-	required_container = /obj/item/slime_extract/red
-	required_other = TRUE
-
-/datum/chemical_reaction/slime/slimespeed/on_reaction(datum/reagents/holder)
-	new /obj/item/slimepotion/speed(get_turf(holder.my_atom))
-	..()
-
-//Pink
-/datum/chemical_reaction/slime/docility
-	name = "Docility Potion"
-	id = "m_potion"
-	required_reagents = list(/datum/reagent/toxin/plasma = 1)
-	required_container = /obj/item/slime_extract/pink
-	required_other = TRUE
-
-/datum/chemical_reaction/slime/docility/on_reaction(datum/reagents/holder)
-	new /obj/item/slimepotion/slime/docility(get_turf(holder.my_atom))
-	..()
-
 /datum/chemical_reaction/slime/gender
 	name = "Gender Potion"
 	id = "m_gender"
@@ -414,15 +338,6 @@
 /datum/chemical_reaction/slime/gender/on_reaction(datum/reagents/holder)
 	new /obj/item/slimepotion/genderchange(get_turf(holder.my_atom))
 	..()
-
-//Black
-/datum/chemical_reaction/slime/slimemutate2
-	name = "Advanced Mutation Toxin"
-	id = "mutationtoxin2"
-	results = list(/datum/reagent/aslimetoxin = 1)
-	required_reagents = list(/datum/reagent/toxin/plasma = 1)
-	required_other = TRUE
-	required_container = /obj/item/slime_extract/black
 
 //Oil
 /datum/chemical_reaction/slime/slimeexplosion
@@ -604,26 +519,6 @@
 /datum/chemical_reaction/slime/slimecrayon/on_reaction(datum/reagents/holder)
 	var/chosen = pick(difflist(subtypesof(/obj/item/toy/crayon),typesof(/obj/item/toy/crayon/spraycan)))
 	new chosen(get_turf(holder.my_atom))
-	..()
-
-//Rainbow :o)
-/datum/chemical_reaction/slime/slimeRNG
-	name = "Random Core"
-	id = "slimerng"
-	required_reagents = list(/datum/reagent/toxin/plasma = 1)
-	required_other = TRUE
-	required_container = /obj/item/slime_extract/rainbow
-
-/datum/chemical_reaction/slime/slimeRNG/on_reaction(datum/reagents/holder, created_volume)
-	if(created_volume >= 5)
-		var/obj/item/grenade/clusterbuster/slime/S = new (get_turf(holder.my_atom))
-		S.visible_message("<span class='danger'>Infused with plasma, the core begins to expand uncontrollably!</span>")
-		S.icon_state = "[S.base_state]_active"
-		S.active = TRUE
-		addtimer(CALLBACK(S, TYPE_PROC_REF(/obj/item/grenade, prime)), rand(15,60))
-	else
-		var/mob/living/simple_animal/slime/random/S = new (get_turf(holder.my_atom))
-		S.visible_message("<span class='danger'>Infused with plasma, the core begins to quiver and grow, and a new baby slime emerges from it!</span>")
 	..()
 
 /datum/chemical_reaction/slime/slimebomb

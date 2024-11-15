@@ -175,19 +175,6 @@ Regenerative extracts:
 	to_chat(target, "<span class='notice'>I feel... <i>faster.</i></span>")
 	target.reagents.add_reagent(/datum/reagent/medicine/ephedrine,3)
 
-/obj/item/slimecross/regenerative/green
-	colour = "green"
-	effect_desc = ""
-
-/obj/item/slimecross/regenerative/green/core_effect(mob/living/target, mob/user)
-	if(isslime(target))
-		target.visible_message("<span class='warning'>The [target] suddenly changes color!</span>")
-		var/mob/living/simple_animal/slime/S = target
-		S.random_colour()
-	if(isjellyperson(target))
-		target.reagents.add_reagent(/datum/reagent/mutationtoxin/jelly,5)
-
-
 /obj/item/slimecross/regenerative/pink
 	colour = "pink"
 	effect_desc = ""

@@ -150,13 +150,10 @@
 
 	var/mob/living/new_mob
 
-	var/randomize = pick("monkey","slime","humanoid","animal")
+	var/randomize = pick("monkey","humanoid","animal")
 	switch(randomize)
 		if("monkey")
 			new_mob = new /mob/living/carbon/monkey(M.loc)
-
-		if("slime")
-			new_mob = new /mob/living/simple_animal/slime/random(M.loc)
 
 		if("animal")
 			var/path = pick(/mob/living/simple_animal/hostile/carp,
@@ -170,8 +167,6 @@
 							/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
 							/mob/living/simple_animal/hostile/carp/ranged,
 							/mob/living/simple_animal/hostile/carp/ranged/chaos,
-							/mob/living/simple_animal/hostile/stickman,
-							/mob/living/simple_animal/hostile/stickman/dog,
 							/mob/living/simple_animal/hostile/gorilla,
 							/mob/living/simple_animal/parrot,
 							/mob/living/simple_animal/pet/dog/corgi,
