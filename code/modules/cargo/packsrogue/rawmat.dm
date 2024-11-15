@@ -101,3 +101,16 @@
 		/obj/item/alch/sinew,
 		/obj/item/alch/sinew
 	)
+
+/datum/supply_pack/rogue/rawmats/glass
+	name = "Glass Panes"
+	cost = 50
+	contains = list(
+		/obj/item/natural/glass,
+		/obj/item/natural/glass,
+		/obj/item/natural/glass,
+		/obj/item/natural/glass,
+		/obj/item/natural/glass,
+		/obj/item/natural/glass
+	)
+
