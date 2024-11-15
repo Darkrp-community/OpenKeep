@@ -41,51 +41,6 @@
 		log_game("DYNAMIC: Checking if we can turn someone into a traitor.")
 		mode.picking_specific_rule(/datum/dynamic_ruleset/midround/autotraitor)
 
-//////////////////////////////////////////////
-//                                          //
-//               WIZARDS                    //
-//                                          //
-//////////////////////////////////////////////
-
-// Dynamic is a wonderful thing that adds wizards to every round and then adds even more wizards during the round.
-/datum/dynamic_ruleset/roundstart/wizard
-	name = "Wizard"
-	antag_flag = ROLE_WIZARD
-	antag_datum = /datum/antagonist/wizard
-	minimum_required_age = 14
-	restricted_roles = list("Head of Security", "Captain") // Just to be sure that a wizard getting picked won't ever imply a Captain or HoS not getting drafted
-	required_candidates = 1
-	weight = 2
-	cost = 30
-	requirements = list(90,90,70,40,30,20,10,10,10,10)
-	high_population_requirement = 10
-	var/list/roundstart_wizards = list()
-
-/datum/dynamic_ruleset/roundstart/wizard/acceptable(population=0, threat=0)
-	if(GLOB.wizardstart.len == 0)
-		log_admin("Cannot accept Wizard ruleset. Couldn't find any wizard spawn points.")
-		message_admins("Cannot accept Wizard ruleset. Couldn't find any wizard spawn points.")
-		return FALSE
-	return ..()
-
-/datum/dynamic_ruleset/roundstart/wizard/pre_execute()
-	if(GLOB.wizardstart.len == 0)
-		return FALSE
-	mode.antags_rolled += 1
-	var/mob/M = pick_n_take(candidates)
-	if (M)
-		assigned += M.mind
-		M.mind.assigned_role = ROLE_WIZARD
-		M.mind.special_role = ROLE_WIZARD
-
-	return TRUE
-
-/datum/dynamic_ruleset/roundstart/wizard/execute()
-	for(var/datum/mind/M in assigned)
-		M.current.forceMove(pick(GLOB.wizardstart))
-		M.add_antag_datum(new antag_datum())
-	return TRUE
-
 // Admin only rulesets. The threat requirement is 101 so it is not possible to roll them.
 
 //////////////////////////////////////////////

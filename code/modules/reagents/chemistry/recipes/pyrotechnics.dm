@@ -145,16 +145,6 @@
 	if(created_volume >= 150)
 		playsound(get_turf(holder.my_atom), 'sound/blank.ogg', 80, FALSE, round(created_volume/48))
 		strengthdiv = 8
-		for(var/mob/living/simple_animal/revenant/R in get_hearers_in_view(7,get_turf(holder.my_atom)))
-			var/deity
-			if(GLOB.deity)
-				deity = GLOB.deity
-			else
-				deity = "Christ"
-			to_chat(R, "<span class='danger'>The power of [deity] compels you!</span>")
-			R.stun(20)
-			R.reveal(100)
-			R.adjustHealth(50)
 	..()
 
 

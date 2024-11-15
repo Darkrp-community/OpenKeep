@@ -54,10 +54,6 @@
 	landing_zone.height = height
 	landing_zone.setDir(lz_dir)
 
-	for(var/obj/machinery/computer/shuttle/S in GLOB.machines)
-		if(S.shuttleId == shuttle_id)
-			S.possible_destinations = "[landing_zone.id]"
-
 	to_chat(user, "<span class='notice'>Landing zone set.</span>")
 
 	qdel(src)
