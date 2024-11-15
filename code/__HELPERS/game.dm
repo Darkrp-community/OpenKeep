@@ -558,7 +558,6 @@ block( \
 
 /proc/ispipewire(item)
 	var/static/list/pire_wire = list(
-		/obj/machinery/atmospherics,
 		/obj/structure/disposalpipe,
 	)
 	return (is_type_in_list(item, pire_wire))

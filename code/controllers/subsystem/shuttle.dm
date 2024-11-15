@@ -58,7 +58,6 @@ SUBSYSTEM_DEF(shuttle)
 	ordernum = rand(1, 9000)
 
 	initial_load()
-
 	return ..()
 
 /datum/controller/subsystem/shuttle/proc/initial_load()
@@ -88,7 +87,6 @@ SUBSYSTEM_DEF(shuttle)
 			var/not_in_use = (!T.get_docked())
 			if(idle && not_centcom_evac && not_in_use)
 				qdel(T, force=TRUE)
-	CheckAutoEvac()
 
 	if(!SSmapping.clearing_reserved_turfs)
 		while(transit_requesters.len)
@@ -103,33 +101,6 @@ SUBSYSTEM_DEF(shuttle)
 					M.transit_failure()
 			if(MC_TICK_CHECK)
 				break
-
-/datum/controller/subsystem/shuttle/proc/CheckAutoEvac()
-	if(emergencyNoEscape || emergencyNoRecall || !emergency || !SSticker.HasRoundStarted())
-		return
-
-	var/threshold = CONFIG_GET(number/emergency_shuttle_autocall_threshold)
-	if(!threshold)
-		return
-
-	var/alive = 0
-	for(var/I in GLOB.player_list)
-		var/mob/M = I
-		if(M.stat != DEAD)
-			++alive
-
-	var/total = GLOB.joined_player_list.len
-	if(total <= 0)
-		return //no players no autoevac
-
-	if(alive / total <= threshold)
-		var/msg = "Automatically dispatching shuttle due to crew death."
-		message_admins(msg)
-		log_game("[msg] Alive: [alive], Roundstart: [total], Threshold: [threshold]")
-		emergencyNoRecall = TRUE
-		priority_announce("Catastrophic casualties detected: crisis shuttle protocols activated - jamming recall signals across all frequencies.")
-		if(emergency.timeLeft(1) > emergencyCallTime * 0.4)
-			emergency.request(null, set_coefficient = 0.4)
 
 /datum/controller/subsystem/shuttle/proc/block_recall(lockout_timer)
 	emergencyNoRecall = TRUE
@@ -245,25 +216,6 @@ SUBSYSTEM_DEF(shuttle)
 	if(emergency.timeLeft(1) < emergencyCallTime)
 		return
 	return 1
-
-/datum/controller/subsystem/shuttle/proc/autoEvac()
-	if (!SSticker.IsRoundInProgress())
-		return
-
-	var/callShuttle = 1
-
-	for(var/thing in GLOB.shuttle_caller_list)
-
-		var/turf/T = get_turf(thing)
-		if(T && is_station_level(T.z))
-			callShuttle = 0
-			break
-
-	if(callShuttle)
-		if(EMERGENCY_IDLE_OR_RECALLED)
-			emergency.request(null, set_coefficient = 2.5)
-			log_game("There is no means of calling the shuttle anymore. Shuttle automatically called.")
-			message_admins("All the communications consoles were destroyed and all AIs are inactive. Shuttle called.")
 
 /datum/controller/subsystem/shuttle/proc/registerHostileEnvironment(datum/bad)
 	hostileEnvironments[bad] = TRUE
@@ -446,9 +398,6 @@ SUBSYSTEM_DEF(shuttle)
 
 	if (istype(SSshuttle.hostileEnvironments))
 		hostileEnvironments = SSshuttle.hostileEnvironments
-
-	if (istype(SSshuttle.supply))
-		supply = SSshuttle.supply
 
 	if (istype(SSshuttle.discoveredPlants))
 		discoveredPlants = SSshuttle.discoveredPlants

@@ -356,40 +356,6 @@ SUBSYSTEM_DEF(air)
 /turf/open/space/resolve_active_graph()
 	return list()
 
-/datum/controller/subsystem/air/proc/setup_atmos_machinery()
-	for (var/obj/machinery/atmospherics/AM in atmos_machinery)
-		AM.atmosinit()
-		CHECK_TICK
-
-//this can't be done with setup_atmos_machinery() because
-//	all atmos machinery has to initalize before the first
-//	pipenet can be built.
-/datum/controller/subsystem/air/proc/setup_pipenets()
-	for (var/obj/machinery/atmospherics/AM in atmos_machinery)
-		AM.build_network()
-		CHECK_TICK
-
-/datum/controller/subsystem/air/proc/setup_template_machinery(list/atmos_machines)
-	for(var/A in atmos_machines)
-		var/obj/machinery/atmospherics/AM = A
-		AM.atmosinit()
-		CHECK_TICK
-
-	for(var/A in atmos_machines)
-		var/obj/machinery/atmospherics/AM = A
-		AM.build_network()
-		CHECK_TICK
-
-/datum/controller/subsystem/air/proc/get_init_dirs(type, dir)
-	if(!pipe_init_dirs_cache[type])
-		pipe_init_dirs_cache[type] = list()
-
-	if(!pipe_init_dirs_cache[type]["[dir]"])
-		var/obj/machinery/atmospherics/temp = new type(null, FALSE, dir)
-		pipe_init_dirs_cache[type]["[dir]"] = temp.GetInitDirections()
-		qdel(temp)
-
-	return pipe_init_dirs_cache[type]["[dir]"]
 
 /datum/controller/subsystem/air/proc/generate_atmos()
 	atmos_gen = list()
