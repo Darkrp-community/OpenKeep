@@ -904,11 +904,9 @@
 	name = "puzzling chest"
 
 /obj/structure/closet/crate/necropolis/puzzle/PopulateContents()
-	var/loot = rand(1,3)
+	var/loot = rand(1,2)
 	switch(loot)
 		if(1)
 			new /obj/item/soulstone/anybody(src)
 		if(2)
 			new /obj/item/wisp_lantern(src)
-		if(3)
-			new /obj/item/prisoncube(src)
