@@ -80,7 +80,7 @@
 	if(!density) //lets cats and similar avoid death by falling
 		visible_message("<span class='notice'>The creature lands unharmed...</span>")
 		return
-	adjustBruteLoss((levels * 5) ** 1.5)
+	adjustBruteLoss((levels * 10) ** 1.5)
 	AdjustStun(levels * 20)
 	AdjustKnockdown(levels * 20)
 
