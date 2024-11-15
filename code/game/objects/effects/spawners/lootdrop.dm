@@ -144,15 +144,6 @@
 	name = "8 x maintenance loot spawner"
 	lootcount = 8
 
-/obj/effect/spawner/lootdrop/crate_spawner
-	name = "lootcrate spawner" //USE PROMO CODE "SELLOUT" FOR 20% OFF!
-	lootdoubles = FALSE
-
-	loot = list(
-				/obj/structure/closet/crate/secure/loot = 20,
-				"" = 80
-				)
-
 /obj/effect/spawner/lootdrop/costume
 	name = "random costume spawner"
 

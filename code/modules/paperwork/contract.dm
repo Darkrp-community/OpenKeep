@@ -272,8 +272,6 @@
 	if(!user.dna)
 		return -1
 	user.dna.add_mutation(HULK)
-	var/obj/item/organ/regenerative_core/organ = new /obj/item/organ/regenerative_core
-	organ.Insert(user)
 	return ..()
 
 /obj/item/paper/contract/infernal/wealth/fulfillContract(mob/living/carbon/human/user = target.current, blood = 0)

@@ -42,7 +42,6 @@ SUBSYSTEM_DEF(traumas)
 	)
 
 	phobia_objs = list(
-		"snakes" = typecacheof(list(/obj/item/rod_of_asclepius)),
 		"spiders"   = typecacheof(list(/obj/structure/spider)),
 
 		"lizards"   = typecacheof(list(/obj/item/toy/plush/lizardplushie, /obj/item/reagent_containers/food/snacks/kebab/tail,
@@ -62,7 +61,7 @@ SUBSYSTEM_DEF(traumas)
 
 	phobia_turfs = list(
 		"the supernatural" = typecacheof(list(/turf/open/floor/plasteel/cult, /turf/closed/wall/mineral/cult)),
-		"falling" = typecacheof(list(/turf/open/chasm, /turf/open/floor/fakepit))
+		"falling" = typecacheof(list(/turf/open/floor/fakepit))
 	)
 
 	phobia_species = list(
