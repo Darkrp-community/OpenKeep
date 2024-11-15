@@ -6,6 +6,7 @@ GLOBAL_PROTECT(admin_verbs_default)
 /world/proc/AVerbsDefault()
 	return list(
 	/client/proc/check_pq,
+	/client/proc/spawn_pollution,
 	/client/proc/adjust_pq,
 	/client/proc/hearallasghost,
 	/client/proc/admin_ghost,
