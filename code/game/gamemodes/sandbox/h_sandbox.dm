@@ -120,7 +120,6 @@ GLOBAL_VAR_INIT(hsboxspawn, TRUE)
 					P.wear_armor.layer = initial(P.wear_armor.layer)
 					P.wear_armor.plane = initial(P.wear_armor.plane)
 					P.wear_armor = null
-				P.wear_armor = new/obj/item/clothing/suit/space(P)
 				P.wear_armor.layer = ABOVE_HUD_LAYER
 				P.wear_armor.plane = ABOVE_HUD_PLANE
 				P.update_inv_wear_suit()

@@ -125,15 +125,6 @@ SUBSYSTEM_DEF(shuttle)
 	if(!emergency)
 		WARNING("requestEvac(): There is no emergency shuttle, but the \
 			shuttle was called. Using the backup shuttle instead.")
-		if(!backup_shuttle)
-			CRASH("requestEvac(): There is no emergency shuttle, \
-			or backup shuttle! The game will be unresolvable. This is \
-			possibly a mapping error, more likely a bug with the shuttle \
-			manipulation system, or badminry. It is possible to manually \
-			resolve this problem by loading an emergency shuttle template \
-			manually, and then calling register() on the mobile docking port. \
-			Good luck.")
-		emergency = backup_shuttle
 	var/srd = CONFIG_GET(number/shuttle_refuel_delay)
 	if(world.time - SSticker.round_start_time < srd)
 //		to_chat(user, "<span class='warning'>There is no response.</span>")
@@ -195,13 +186,6 @@ SUBSYSTEM_DEF(shuttle)
 	if(!admiral_message)
 		admiral_message = pick(GLOB.admiral_messages)
 
-// Called when an emergency shuttle mobile docking port is
-// destroyed, which will only happen with admin intervention
-/datum/controller/subsystem/shuttle/proc/emergencyDeregister()
-	// When a new emergency shuttle is created, it will override the
-	// backup shuttle.
-	src.emergency = src.backup_shuttle
-
 /datum/controller/subsystem/shuttle/proc/cancelEvac(mob/user)
 	if(canRecall())
 		emergency.cancel(get_area(user))
@@ -236,7 +220,6 @@ SUBSYSTEM_DEF(shuttle)
 	if(emergencyNoEscape && (emergency.mode == SHUTTLE_IGNITING))
 		emergency.mode = SHUTTLE_STRANDED
 		emergency.timer = null
-		emergency.sound_played = FALSE
 		priority_announce("Hostile environment detected. \
 			Departure has been postponed indefinitely pending \
 			conflict resolution.", null, 'sound/blank.ogg', "Priority")
@@ -390,8 +373,6 @@ SUBSYSTEM_DEF(shuttle)
 		emergency = SSshuttle.emergency
 	if (istype(SSshuttle.arrivals))
 		arrivals = SSshuttle.arrivals
-	if (istype(SSshuttle.backup_shuttle))
-		backup_shuttle = SSshuttle.backup_shuttle
 
 	if (istype(SSshuttle.emergencyLastCallLoc))
 		emergencyLastCallLoc = SSshuttle.emergencyLastCallLoc
@@ -748,12 +729,7 @@ SUBSYSTEM_DEF(shuttle)
 					preview_template = S
 					user.forceMove(get_turf(preview_shuttle))
 		if("load")
-			if(existing_shuttle == backup_shuttle)
-				// TODO make the load button disabled
-				WARNING("The shuttle that the selected shuttle will replace \
-					is the backup shuttle. Backup shuttle is required to be \
-					intact for round sanity.")
-			else if(S)
+			if(S)
 				. = TRUE
 				// If successful, returns the mobile docking port
 				var/obj/docking_port/mobile/mdp = action_load(S)
