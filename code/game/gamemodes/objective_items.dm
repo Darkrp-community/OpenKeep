@@ -110,17 +110,6 @@
 			return TRUE
 	return FALSE
 
-/datum/objective_item/steal/slime
-	name = "an unused sample of slime extract."
-	targetitem = /obj/item/slime_extract
-	difficulty = 3
-	excludefromjob = list("Research Director","Scientist")
-
-/datum/objective_item/steal/slime/check_special_completion(obj/item/slime_extract/E)
-	if(E.Uses > 0)
-		return 1
-	return 0
-
 //Unique Objectives
 /datum/objective_item/unique/docs_red
 	name = "the \"Red\" secret documents."

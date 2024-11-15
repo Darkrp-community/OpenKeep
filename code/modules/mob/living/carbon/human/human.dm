@@ -1035,18 +1035,6 @@
 /mob/living/carbon/human/species/golem/soviet
 	race = /datum/species/golem/soviet
 
-/mob/living/carbon/human/species/jelly
-	race = /datum/species/jelly
-
-/mob/living/carbon/human/species/jelly/slime
-	race = /datum/species/jelly/slime
-
-/mob/living/carbon/human/species/jelly/stargazer
-	race = /datum/species/jelly/stargazer
-
-/mob/living/carbon/human/species/jelly/luminescent
-	race = /datum/species/jelly/luminescent
-
 /mob/living/carbon/human/species/lizard
 	race = /datum/species/lizard
 

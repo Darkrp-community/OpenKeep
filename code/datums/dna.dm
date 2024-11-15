@@ -597,7 +597,7 @@
 				corgize()
 			if(3)
 				to_chat(src, span_notice("Oh, I actually feel quite alright!"))
-			if(4)
+			if(4 to 5)
 				to_chat(src, span_notice("Oh, I actually feel quite alright!")) //you thought
 				physiology.damage_resistance = -20000
 			if(6)
