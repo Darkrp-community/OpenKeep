@@ -143,12 +143,6 @@
 	GLOB.possible_items_special -= src
 	return ..()
 
-//Old ninja objectives.
-/datum/objective_item/special/pinpointer/nuke
-	name = "the captain's pinpointer."
-	targetitem = /obj/item/pinpointer
-	difficulty = 10
-
 /datum/objective_item/special/boh
 	name = "a bag of holding."
 	targetitem = /obj/item/storage/backpack/holding

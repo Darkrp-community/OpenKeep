@@ -323,11 +323,6 @@
 		spell.friend = L
 		spell.charge_counter = spell.charge_max
 		L.mind.hasSoul = FALSE
-		var/mob/living/carbon/human/H = L
-		var/obj/item/worn = H.wear_ring
-		var/obj/item/card/id/id = worn.GetID()
-		id.registered_name = L.real_name
-		id.update_label()
 	else
 		to_chat(L, "<span class='danger'>My owner is already dead! You will soon perish.</span>")
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, dust), 150)) //Give em a few seconds as a mercy.
@@ -338,7 +333,6 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	back = /obj/item/storage/backpack
 	implants = list(/obj/item/implant/mindshield) //No revolutionaries, he's MY friend.
-	id = /obj/item/card/id
 
 /obj/effect/mob_spawn/human/syndicate
 	name = "Syndicate Operative"
@@ -426,7 +420,6 @@
 	Work as a team with my fellow survivors and do not abandon them.</b>"
 	uniform = /obj/item/clothing/under/rank/security/officer
 	shoes = /obj/item/clothing/shoes/jackboots
-	id = /obj/item/card/id/away/old/sec
 	r_pocket = /obj/item/restraints/handcuffs
 	assignedrole = "Ancient Crew"
 
@@ -450,7 +443,6 @@
 	Work as a team with my fellow survivors and do not abandon them.</b>"
 	uniform = /obj/item/clothing/under/rank/engineering/engineer
 	shoes = /obj/item/clothing/shoes/workboots
-	id = /obj/item/card/id/away/old/eng
 	gloves = /obj/item/clothing/gloves/color/fyellow/old
 	l_pocket = /obj/item/tank/internals/emergency_oxygen
 	assignedrole = "Ancient Crew"
@@ -475,7 +467,6 @@
 	Work as a team with my fellow survivors and do not abandon them.</b>"
 	uniform = /obj/item/clothing/under/rank/rnd/scientist
 	shoes = /obj/item/clothing/shoes/laceup
-	id = /obj/item/card/id/away/old/sci
 	l_pocket = /obj/item/stack/medical/bruise_pack
 	assignedrole = "Ancient Crew"
 

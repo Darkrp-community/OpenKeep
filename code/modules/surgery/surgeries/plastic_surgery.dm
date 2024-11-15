@@ -60,9 +60,6 @@
 		display_results(user, target, "<span class='notice'>I alter [oldname]'s appearance completely, [target.p_they()] is now [target.real_name].</span>",
 			"<span class='notice'>[user] alters [oldname]'s appearance completely, [target.p_they()] is now [target.real_name]!</span>",
 			"<span class='notice'>[user] finishes the operation on [target]'s face.</span>")
-	if(ishuman(target))
-		var/mob/living/carbon/human/human_target = target
-		human_target.sec_hud_set_ID()
 	return TRUE
 
 /datum/surgery_step/reshape_face/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent, success_prob)

@@ -52,8 +52,6 @@ GLOBAL_LIST_EMPTY(possible_gifts)
 
 /obj/item/a_gift/proc/get_gift_type()
 	var/gift_type_list = list(/obj/item/sord,
-		/obj/item/storage/wallet,
-
 		/obj/item/clothing/suit/poncho/red,
 		/obj/item/clothing/suit/snowman,
 		/obj/item/clothing/head/snowman,

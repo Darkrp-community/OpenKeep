@@ -280,27 +280,6 @@
 	user.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/summon_wealth(null))
 	return ..()
 
-/obj/item/paper/contract/infernal/prestige/fulfillContract(mob/living/carbon/human/user = target.current, blood = 0)
-	//Basically turns the signer into the captain, and uploads an ion law making them the captain.
-	var/obj/item/worn = user.wear_ring
-	var/obj/item/card/id/id = null
-	if(worn)
-		id = worn.GetID()
-	if(id)
-		id.icon_state = "gold"
-		id.uses_overlays = TRUE
-		id.access = get_all_accesses()+get_all_centcom_access()
-		id.assignment = "Captain"
-		id.update_label()
-	else
-		id = new /obj/item/card/id/gold(user.loc)
-		id.registered_name = user.real_name
-		id.access = get_all_accesses()+get_all_centcom_access()
-		id.assignment = "Captain"
-		id.update_label()
-
-	return ..()
-
 /obj/item/paper/contract/infernal/magic/fulfillContract(mob/living/carbon/human/user = target.current, blood = 0)
 	if(!istype(user) || !user.mind)
 		return -1

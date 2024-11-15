@@ -53,7 +53,6 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("reflector frame", /obj/structure/reflector, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe("iron door", /obj/structure/mineral_door/iron, 20, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("voting box", /obj/structure/votebox, 15, time = 50)
 ))
 
 /obj/item/stack/sheet/metal
@@ -347,7 +346,6 @@ GLOBAL_LIST_INIT(cardboard_recipes, list (														\
 		new /datum/stack_recipe("bean bag ammo box", /obj/item/storage/box/beanbag),			\
 		new /datum/stack_recipe("flashbang box", /obj/item/storage/box/flashbangs),				\
 		new /datum/stack_recipe("handcuffs box", /obj/item/storage/box/handcuffs),				\
-		new /datum/stack_recipe("ID card box", /obj/item/storage/box/ids),						\
 		null,																					\
 
 		new /datum/stack_recipe("pillbottle box", /obj/item/storage/box/pillbottles),			\

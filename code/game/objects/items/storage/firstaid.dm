@@ -90,7 +90,6 @@
 		/obj/item/implantcase,
 		/obj/item/implant,
 		/obj/item/implanter,
-		/obj/item/pinpointer/crew,
 		))
 
 /obj/item/storage/firstaid/medical/PopulateContents()

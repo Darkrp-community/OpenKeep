@@ -2832,7 +2832,6 @@
 /obj/item/roguecoin/gold/pile,
 /obj/item/roguecoin/gold/pile,
 /obj/item/roguecoin/gold/pile,
-/obj/item/card/id/gold,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue)
 "Ae" = (
