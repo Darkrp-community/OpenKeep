@@ -79,7 +79,8 @@
 		to_chat(src, "<span class='warning'>[pulledby] is restraining my arm!</span>")
 		return
 
-	A.attack_right(src, params)
+	if(!A.pre_attack_right(A, src, params))
+		A.attack_right(src, params)
 
 /mob/living/attack_right(mob/user, params)
 	. = ..()
