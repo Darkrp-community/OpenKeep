@@ -73,6 +73,10 @@
 	..()
 	update_icon()
 
+/mob/living/simple_animal/hostile/retaliate/rogue/bigrat/find_food()
+	. = ..()
+	if(!.)
+		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/update_icon()
 	cut_overlays()

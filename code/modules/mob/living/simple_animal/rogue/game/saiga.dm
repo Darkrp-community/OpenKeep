@@ -12,6 +12,13 @@
 			var/mutable_appearance/mounted = mutable_appearance(icon, "saiga_mounted", 4.3)
 			add_overlay(mounted)
 
+/mob/living/simple_animal/hostile/retaliate/rogue/saiga/find_food()
+	..()
+	var/obj/structure/spacevine/SV = locate(/obj/structure/spacevine) in loc
+	if(SV)
+		SV.eat(src)
+		food = max(food + 30, 100)
+
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/tamed(mob/user)
 	..()
 	deaggroprob = 30

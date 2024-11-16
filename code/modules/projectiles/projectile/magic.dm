@@ -228,51 +228,6 @@
 	qdel(M)
 	return new_mob
 
-/obj/projectile/magic/animate
-	name = "bolt of animation"
-	icon_state = "red_1"
-	damage = 0
-	damage_type = BURN
-	nodamage = TRUE
-
-/obj/projectile/magic/animate/on_hit(atom/target, blocked = FALSE)
-	target.animate_atom_living(firer)
-	..()
-
-/atom/proc/animate_atom_living(mob/living/owner = null)
-	if((isitem(src) || isstructure(src)) && !is_type_in_list(src, GLOB.protected_objects))
-		if(istype(src, /obj/structure/statue/petrified))
-			var/obj/structure/statue/petrified/P = src
-			if(P.petrified_mob)
-				var/mob/living/L = P.petrified_mob
-				var/mob/living/simple_animal/hostile/statue/S = new(P.loc, owner)
-				S.name = "statue of [L.name]"
-				if(owner)
-					S.faction = list("[REF(owner)]")
-				S.icon = P.icon
-				S.icon_state = P.icon_state
-				S.copy_overlays(P, TRUE)
-				S.color = P.color
-				S.atom_colours = P.atom_colours.Copy()
-				if(L.mind)
-					L.mind.transfer_to(S)
-					if(owner)
-						to_chat(S, "<span class='danger'>I are an animate statue. You cannot move when monitored, but are nearly invincible and deadly when unobserved! Do not harm [owner], my creator.</span>")
-				P.forceMove(S)
-				return
-		else
-			var/obj/O = src
-			if(istype(O, /obj/item/gun))
-				new /mob/living/simple_animal/hostile/mimic/copy/ranged(loc, src, owner)
-			else
-				new /mob/living/simple_animal/hostile/mimic/copy(loc, src, owner)
-
-	else if(istype(src, /mob/living/simple_animal/hostile/mimic/copy))
-		// Change our allegiance!
-		var/mob/living/simple_animal/hostile/mimic/copy/C = src
-		if(owner)
-			C.ChangeOwner(owner)
-
 /obj/projectile/magic/spellblade
 	name = "blade energy"
 	icon_state = "lavastaff"

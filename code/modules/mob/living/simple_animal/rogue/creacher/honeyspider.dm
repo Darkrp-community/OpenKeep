@@ -74,6 +74,11 @@
 		if(L.reagents)
 			L.reagents.add_reagent(/datum/reagent/toxin/venom, 1)
 
+/mob/living/simple_animal/hostile/retaliate/rogue/spider/find_food()
+	. = ..()
+	if(!.)
+		return eat_bodies()
+
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/death(gibbed)
 	..()
 	update_icon()
