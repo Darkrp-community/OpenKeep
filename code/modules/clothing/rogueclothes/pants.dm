@@ -213,7 +213,7 @@
 	name = "leather trousers"
 	desc = "Standard leather pants for hardy workers."
 	icon_state = "leathertrou"
-	armor = ARMOR_LEATHER
+	armor = ARMOR_LEATHER_WORST
 	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/under/roguetown/grenzelpants

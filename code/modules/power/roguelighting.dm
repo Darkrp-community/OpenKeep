@@ -483,6 +483,20 @@
 	pixel_x = 32
 	pixel_y = 0
 
+/obj/machinery/light/rogue/wallfire/big_fireplace
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+
+/obj/machinery/light/rogue/hearth/big_fireplace
+	name = "fireplace"
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+	fueluse = -1
+	pixel_x = -16
+	climb_offset = 4
+
 /obj/machinery/light/rogue/torchholder
 	name = "sconce"
 	icon_state = "torchwall1"
@@ -751,6 +765,17 @@
 						playsound(src, "bubbles", 30, TRUE)
 						pot.reagents.add_reagent(/datum/reagent/consumable/soup/stew/meat, 32)
 						pot.reagents.remove_reagent(/datum/reagent/water, 1)
+
+			if(istype(W, /obj/item/natural/head/saiga) || istype(W, /obj/item/natural/head/volf)|| istype(W, /obj/item/natural/trollheart))
+				if(do_after(user,2 SECONDS, target = src))
+					user.visible_message("<span class='info'>[user] places the [W] into the pot.</span>")
+					playsound(src.loc, 'sound/items/Fish_out.ogg', 20, TRUE)
+					pot.reagents.remove_reagent(/datum/reagent/water, 32)
+					qdel(W)
+					sleep(800)
+					playsound(src, "bubbles", 30, TRUE)
+					pot.reagents.add_reagent(/datum/reagent/consumable/soup/stew/meat, 32)
+					pot.reagents.remove_reagent(/datum/reagent/water, 1)
 
 			if(istype(W, /obj/item/reagent_containers/food/snacks/egg))
 				if(do_after(user,2 SECONDS, target = src))
