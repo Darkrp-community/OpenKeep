@@ -24,17 +24,16 @@
 
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
 						/obj/item/alch/horn = 2)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
-						/obj/item/natural/hide = 2,
-						/obj/item/alch/horn = 2)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider= 2,
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
 						/obj/item/natural/hide = 3,
+						/obj/item/alch/horn = 2)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider= 3,
+						/obj/item/natural/hide = 4,
 						/obj/item/alch/horn = 2)
 
 	health = TROLL_HEALTH
 	maxHealth = TROLL_HEALTH
-	food_type = list(
-					/obj/item/bodypart,
+	food_type = list(/obj/item/bodypart,
 					/obj/item/organ)
 
 	base_intents = list(/datum/intent/unarmed/wwolf, /datum/intent/simple/bigbite)

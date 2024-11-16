@@ -25,16 +25,19 @@
 
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
 						/obj/item/natural/hide = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+						/obj/item/natural/trollheart = 1,
 						/obj/item/natural/hide = 3)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 3,
+						/obj/item/natural/trollheart = 1,
 						/obj/item/natural/hide = 4)
 
 	health = BOGTROLL_HEALTH
 	maxHealth = BOGTROLL_HEALTH
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat,
 					/obj/item/bodypart,
-					/obj/item/organ)
+					/obj/item/organ,
+					/obj/item/reagent_containers/food/snacks/rogue/truffles)
 
 	base_intents = list(/datum/intent/simple/headbutt, /datum/intent/simple/bigbite)
 	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
