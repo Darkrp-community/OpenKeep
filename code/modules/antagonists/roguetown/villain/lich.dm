@@ -9,6 +9,7 @@
 		"YOU CANNOT KILL ME!",
 	)
 	var/list/phylacteries = list()
+	var/out_of_lives = FALSE
 
 /datum/antagonist/lich/on_gain()
 	var/datum/game_mode/C = SSticker.mode
@@ -19,10 +20,12 @@
 	equip_lich()
 	greet()
 	return ..()
+
 /datum/antagonist/lich/greet()
 	to_chat(owner.current, span_userdanger("The secret of immortality is mine, but this is not enough. The Azurean lands need a new ruler. One that will reign eternal."))
 	owner.announce_objectives()
 	..()
+
 /datum/antagonist/lich/proc/skele_look()
 	var/mob/living/carbon/human/L = owner.current
 	L.hairstyle = "Bald"
@@ -30,6 +33,7 @@
 	L.update_body()
 	L.update_hair()
 	L.update_body_parts(redraw = TRUE)
+
 /datum/antagonist/lich/proc/equip_lich()
 	owner.unknow_all_people()
 	for(var/datum/mind/MF in get_minds())
@@ -42,13 +46,16 @@
 	ADD_TRAIT(L, TRAIT_TOXIMMUNE, "[type]")
 	ADD_TRAIT(L, TRAIT_STEELHEARTED, "[type]")
 	ADD_TRAIT(L, TRAIT_NOSLEEP, "[type]")
-	ADD_TRAIT(L, TRAIT_LIMPDICK, "[type]")
 	ADD_TRAIT(L, TRAIT_VAMPMANSION, "[type]")
 	ADD_TRAIT(L, TRAIT_NOMOOD, "[type]")
 	ADD_TRAIT(L, TRAIT_NOLIMBDISABLE, "[type]")
 	ADD_TRAIT(L, TRAIT_SHOCKIMMUNE, "[type]")
 	ADD_TRAIT(L, TRAIT_LIMBATTACHMENT, "[type]")
 	ADD_TRAIT(L, TRAIT_SEEPRICES, "[type]")
+	ADD_TRAIT(L, TRAIT_CRITICAL_RESISTANCE, "[type]")
+	ADD_TRAIT(L, TRAIT_HEAVYARMOR, "[type]")
+	ADD_TRAIT(L, TRAIT_CABAL, "[type]")
+	ADD_TRAIT(L, TRAIT_DEATHSIGHT, "[type]")
 	L.cmode_music = 'sound/music/combat_cult.ogg'
 	L.faction = list("undead")
 	if(L.charflaw)
@@ -64,6 +71,7 @@
 		B.skeletonize(FALSE)
 	L.equipOutfit(/datum/outfit/job/roguetown/lich)
 	L.set_patron(/datum/patron/inhumen/zizo)
+
 /datum/outfit/job/roguetown/lich/pre_equip(mob/living/carbon/human/H)
 	..()
 	pants = /obj/item/clothing/under/roguetown/chainlegs
@@ -93,20 +101,25 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+
 	H.change_stat("strength", -1)
 	H.change_stat("intelligence", 5)
 	H.change_stat("constitution", 5)
 	H.change_stat("endurance", -1)
 	H.change_stat("speed", -1)
+
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/bonechill)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/raise_undead)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/sickness)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/raise_lesser_undead)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/bloodlightning)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/suicidebomb)
 	H.ambushable = FALSE
+
 	addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, choose_name_popup), "LICH"), 5 SECONDS)
+
 /datum/outfit/job/roguetown/lich/post_equip(mob/living/carbon/human/H)
 	..()
 	var/datum/antagonist/lich/lichman = H.mind.has_antag_datum(/datum/antagonist/lich)
@@ -115,16 +128,20 @@
 		lichman.phylacteries += new_phylactery
 		new_phylactery.possessor = lichman
 		H.equip_to_slot_or_del(new_phylactery,SLOT_IN_BACKPACK, TRUE)
-/datum/antagonist/lich/proc/consume_phylactery()
+
+/datum/antagonist/lich/proc/consume_phylactery(timer = 10 SECONDS)
 	for(var/obj/item/phylactery/phyl in phylacteries)
-		phyl.be_consumed()
+		phyl.be_consumed(timer)
 		phylacteries -= phyl
 		return TRUE
+
 /datum/antagonist/lich/proc/rise_anew()
 	var/mob/living/carbon/human/bigbad = owner.current
 	bigbad.revive(TRUE, TRUE)
+
 	for(var/obj/item/bodypart/B in bigbad.bodyparts)
 		B.skeletonize(FALSE)
+
 	bigbad.faction = list("undead")
 	if(bigbad.charflaw)
 		QDEL_NULL(bigbad.charflaw)
@@ -146,16 +163,26 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	layer = HIGH_OBJ_LAYER
 	w_class = WEIGHT_CLASS_TINY
+	light_system = MOVABLE_LIGHT
+	light_outer_range = 3
+	light_color = "#003300"
 	var/datum/antagonist/lich/possessor
 
-/obj/item/phylactery/Initialize()
-	..()
+	var/resurrections = 0
+	var/datum/mind/mind
+	var/respawn_time = 1800
+
+	var/static/active_phylacteries = 0
+
+/obj/item/phylactery/Initialize(mapload, datum/mind/newmind)
+	. = ..()
 	filters += filter(type="drop_shadow", x=0, y=0, size=1, offset=2, color=rgb(rand(1,255),rand(1,255),rand(1,255)))
-/obj/item/phylactery/proc/be_consumed()
+
+/obj/item/phylactery/proc/be_consumed(timer)
 	var/offset = prob(50) ? -2 : 2
 	animate(src, pixel_x = pixel_x + offset, time = 0.2, loop = -1) //start shaking
 	visible_message(span_warning("[src] begins to glow and shake violently!"))
-	spawn(100)
+	spawn(timer)
 		possessor.owner.current.forceMove(get_turf(src))
 		possessor.rise_anew()
 		qdel(src)
