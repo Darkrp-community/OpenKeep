@@ -214,4 +214,3 @@
 		if(WIND_DOWN_STAGE)
 			return end_overlay
 	return "" //thsi bugs out when rain falls then u set off a bomb
-	return weather_overlay
