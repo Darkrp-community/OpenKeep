@@ -818,6 +818,10 @@
 	icon_state = base_state
 
 /obj/structure/mineral_door/wood/deadbolt/attack_right(mob/user)
+	if(istype(user.get_active_held_item(), /obj/item/roguekey))
+		var/obj/item/roguekey/held = user.get_active_held_item()
+		trykeylock(held, user, TRUE)
+		return
 	if(door_opened || isSwitchingStates)
 		return
 	if(lockbroken)
@@ -860,6 +864,10 @@
 	repair_skill = /datum/skill/craft/masonry
 
 /obj/structure/mineral_door/wood/donjon/stone/attack_right(mob/user)
+	if(istype(user.get_active_held_item(), /obj/item/roguekey))
+		var/obj/item/roguekey/held = user.get_active_held_item()
+		trykeylock(held, user, TRUE)
+		return
 	return
 
 /obj/structure/mineral_door/wood/donjon/stone/view_toggle(mob/user)
@@ -871,6 +879,10 @@
 	..()
 
 /obj/structure/mineral_door/wood/donjon/attack_right(mob/user)
+	if(istype(user.get_active_held_item(), /obj/item/roguekey))
+		var/obj/item/roguekey/held = user.get_active_held_item()
+		trykeylock(held, user, TRUE)
+		return
 	if(door_opened || isSwitchingStates)
 		return
 	if(brokenstate)
