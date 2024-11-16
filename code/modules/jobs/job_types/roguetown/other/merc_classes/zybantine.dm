@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/zybantine
 	name = "Zybantu Desert Rider"
-	tutorial = "A cutthroat from the western countries, you've Mastered the Art of Swordfighting alongside Polearms and Shields to storm enemy positions."
+	tutorial = "A cutthroat from the western countries, you've Mastered the art of swordfighting alongside polearms and shields to storm enemy positions."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",

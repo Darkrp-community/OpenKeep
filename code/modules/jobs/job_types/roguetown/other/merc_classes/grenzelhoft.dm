@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/grenzelhoft
 	name = "Grenzelhoftter Greatswordsman"
-	tutorial = "A mercenary from the Grenzelhoft Empire's Mercenary Guild. Their only care is coin, and the procurement of coin, they use a Heavy Iron Zweihander as Main Weapon, aim well every devastating hit with this heavy weapon."
+	tutorial = "A mercenary from the Grenzelhoft Empire's Mercenary Guild. Their only care is coin, and the procurement of coin, they use a heavy iron zweihander as main weapon, aim well every devastating hit with this heavy weapon."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -8,7 +8,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/grenzelhoft
 	category_tags = list(CTAG_MERCENARY)
-	maximum_possible_slots = 5
+	maximum_possible_slots = 4
 
 	cmode_music = 'sound/music/combat_grenzelhoft.ogg'
 
@@ -50,7 +50,7 @@
 		H.grant_language(/datum/language/oldpsydonic)
 		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 
-	H.merctype = 5
+	H.merctype = 4
 
 	H.change_stat("strength", 2) // They need this to roll at least min STR for the Zwei.
 	H.change_stat("endurance", 1)
