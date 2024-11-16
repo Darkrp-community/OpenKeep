@@ -86,15 +86,9 @@
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	desc = "A beacon."
-	light_outer_range = 2			// luminosity when on
-
-/obj/item/flashlight/lantern/shrunken/update_brightness(mob/user = null)
-	if(on)
-		icon_state = "[initial(icon_state)]-on"
-		set_light(3, 3, 20, l_color = LIGHT_COLOR_BLOOD_MAGIC)
-	else
-		icon_state = initial(icon_state)
-		set_light(0)
+	light_outer_range = 3			// luminosity when on
+	light_power = 20
+	light_color = LIGHT_COLOR_BLOOD_MAGIC
 
 
 /obj/structure/underworld/carriageman
