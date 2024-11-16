@@ -248,16 +248,6 @@
 		to_chat(user, "<span class='warning'>[src] is missing that.</span>")
 		return FALSE
 
-	for(var/thing in diseases)
-		var/datum/disease/D = thing
-		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
-			user.ContactContractDisease(D)
-
-	for(var/thing in user.diseases)
-		var/datum/disease/D = thing
-		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
-			ContactContractDisease(D)
-
 	if(!user.cmode)
 		var/try_to_fail = !istype(user.rmb_intent, /datum/rmb_intent/weak)
 		var/list/possible_steps = list()
@@ -288,25 +278,11 @@
 
 
 /mob/living/carbon/attack_paw(mob/living/carbon/monkey/M)
-	if(can_inject(M, TRUE))
-		for(var/thing in diseases)
-			var/datum/disease/D = thing
-			if((D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN) && prob(85))
-				M.ContactContractDisease(D)
-
-	for(var/thing in M.diseases)
-		var/datum/disease/D = thing
-		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
-			ContactContractDisease(D)
-
 	if(M.used_intent.type == INTENT_HELP)
 		help_shake_act(M)
 		return 0
 
 	if(..()) //successful monkey bite.
-		for(var/thing in M.diseases)
-			var/datum/disease/D = thing
-			ForceContractDisease(D)
 		return 1
 
 /mob/living/carbon/proc/dismembering_strike(mob/living/attacker, dam_zone)
