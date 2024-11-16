@@ -5,7 +5,7 @@
 	alpha = 155 //so its easier to tell apart
 	var/datum/outfit/outfit_to_equip
 
-/obj/effect/mapping_helpers/ianbirthday/admin/LateInitialize()
+/obj/effect/mapping_helpers/outfit_handler/LateInitialize()
 	if(!outfit_to_equip)
 		qdel(src)
 		return
