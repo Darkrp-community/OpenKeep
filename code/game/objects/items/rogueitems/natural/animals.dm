@@ -90,4 +90,3 @@
 /mob/living/simple_animal
 	var/can_saddle = FALSE
 	var/obj/item/ssaddle
-

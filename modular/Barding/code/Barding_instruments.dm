@@ -31,6 +31,8 @@
 	if(playing && user.get_active_held_item() != src)
 		playing = FALSE
 		soundloop.stop()
+		user.remove_status_effect(/datum/status_effect/buff/playing_music)
+
 	// Prevents an exploit
 	for(var/mob/living/carbon/L in viewers(7))
 		var/mob/living/carbon/buffed = L
@@ -57,10 +59,11 @@
 	soundloop = new(list(src), FALSE)
 	. = ..()
 
-/obj/item/rogue/instrument/dropped()
+/obj/item/rogue/instrument/dropped(mob/living/user, silent)
 	..()
 	if(soundloop)
 		soundloop.stop()
+		user.remove_status_effect(/datum/status_effect/buff/playing_music)
 	// Prevents an exploit
 	for(var/mob/living/carbon/L in viewers(7))
 		var/mob/living/carbon/buffed = L
@@ -82,6 +85,7 @@
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(!playing)
+		var/note_color = "#7f7f7f" // uses MMO item rarity color grading
 		var/curfile = input(user, "Which song do you want to play?", "Pick a song", name) as null|anything in song_list
 		if(!user)
 			return
@@ -91,33 +95,46 @@
 				if(1)
 					stressevent = /datum/stressevent/music
 				if(2)
+					note_color = "#ffffff"
 					stressevent = /datum/stressevent/music/two
 				if(3)
+					note_color = "#1eff00"
 					stressevent = /datum/stressevent/music/three
 				if(4)
+					note_color = "#0070dd"
 					stressevent = /datum/stressevent/music/four
 				if(5)
+					note_color = "#a335ee"
 					stressevent = /datum/stressevent/music/five
 				if(6)
+					note_color = "#ff8000"
 					stressevent = /datum/stressevent/music/six
+
+		if(playing)
+			playing = FALSE
+			soundloop.stop()
+			user.remove_status_effect(/datum/status_effect/buff/playing_music)
+			return
 
 		if(!(src in user.held_items))
 			return
-		
+
 		if(user.get_inactive_held_item())
 			playing = FALSE
 			soundloop.stop()
+			user.remove_status_effect(/datum/status_effect/buff/playing_music)
 			if(dynamic_icon)
 				lower_from_mouth()
 				update_icon()
 			return
-		
+
 		if(curfile)
 			curfile = song_list[curfile]
 			playing = TRUE
 			soundloop.mid_sounds = list(curfile)
 			soundloop.cursound = null
 			soundloop.start()
+			user.apply_status_effect(/datum/status_effect/buff/playing_music, stressevent, note_color)
 			if(dynamic_icon)
 				lift_to_mouth()
 				update_icon()
@@ -128,9 +145,6 @@
 						step_towards(I, user)
 						sleep(2)
 						step_towards(I, user)
-			for(var/mob/living/carbon/L in viewers(7)) // Fix: Apply the music buff only if you didn't cancel song selection.
-				if(L.can_hear()) // Only people who can hear music will get buffed
-					L.add_stress(stressevent)
 
 		// BARDIC BUFFS CODE START //
 
@@ -208,10 +222,11 @@
 			var/boon = user?.mind?.get_learning_boon(/datum/skill/misc/music)
 			user?.mind?.adjust_experience(/datum/skill/misc/music, ceil((user.STAINT*0.2) * boon))
 			sleep(10 * world.tick_lag) // Gain exp every 1 second delay of playing
-	
+
 	else
 		playing = FALSE
 		soundloop.stop()
+		user.remove_status_effect(/datum/status_effect/buff/playing_music)
 		if(dynamic_icon)
 			lower_from_mouth()
 			update_icon()
@@ -335,12 +350,12 @@
 	"Song 4" = 'modular/Barding/sound/instruments/guitar (4).ogg',
 	"Song 5" = 'modular/Barding/sound/instruments/guitar (5).ogg',
 	"Song 6" = 'modular/Barding/sound/instruments/guitar (6).ogg',
-	"Sunset ballad" = 'modular/Barding/sound/instruments/guitar (7).ogg',	
-	"Romanza" = 'modular/Barding/sound/instruments/guitar (8).ogg',	
+	"Sunset ballad" = 'modular/Barding/sound/instruments/guitar (7).ogg',
+	"Romanza" = 'modular/Barding/sound/instruments/guitar (8).ogg',
 	"Malaguena" = 'modular/Barding/sound/instruments/guitar (9).ogg',
-	"Song of the Archer" = 'modular/Barding/sound/instruments/guitar (10).ogg',	
+	"Song of the Archer" = 'modular/Barding/sound/instruments/guitar (10).ogg',
 	"The Mask" = 'modular/Barding/sound/instruments/guitar (11).ogg',
-	"Evolvado" = 'modular/Barding/sound/instruments/guitar (12).ogg',	
+	"Evolvado" = 'modular/Barding/sound/instruments/guitar (12).ogg',
 	"Asturias" = 'modular/Barding/sound/instruments/guitar (13).ogg',
 	"The Fools Journey" = 'modular/Barding/sound/instruments/guitar (14).ogg',
 	"Prelude to Sorrow" = 'modular/Barding/sound/instruments/guitar (15).ogg'

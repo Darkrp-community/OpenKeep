@@ -8,9 +8,6 @@
 /obj/item/ammo_casing/magic/change
 	projectile_type = /obj/projectile/magic/change
 
-/obj/item/ammo_casing/magic/animate
-	projectile_type = /obj/projectile/magic/animate
-
 /obj/item/ammo_casing/magic/heal
 	projectile_type = /obj/projectile/magic/resurrection
 	harmful = FALSE

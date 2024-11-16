@@ -12,14 +12,6 @@
 	icon_state = "staffofchange"
 	item_state = "staffofchange"
 
-/obj/item/gun/magic/staff/animate
-	name = "staff of animation"
-	desc = ""
-	fire_sound = 'sound/blank.ogg'
-	ammo_type = /obj/item/ammo_casing/magic/animate
-	icon_state = "staffofanimation"
-	item_state = "staffofanimation"
-
 /obj/item/gun/magic/staff/healing
 	name = "staff of healing"
 	desc = ""
@@ -41,7 +33,7 @@
 	max_charges = 10
 	recharge_rate = 2
 	no_den_usage = 1
-	var/allowed_projectile_types = list(/obj/projectile/magic/change, /obj/projectile/magic/animate, /obj/projectile/magic/resurrection,
+	var/allowed_projectile_types = list(/obj/projectile/magic/change, /obj/projectile/magic/resurrection,
 	/obj/projectile/magic/death, /obj/projectile/magic/teleport, /obj/projectile/magic/aoe/fireball,
 	/obj/projectile/magic/spellblade, /obj/projectile/magic/arcane_barrage, /obj/projectile/magic/locker, /obj/projectile/magic/flying,
 	/obj/projectile/magic/bounty, /obj/projectile/magic/antimagic, /obj/projectile/magic/fetch, /obj/projectile/magic/sapping,

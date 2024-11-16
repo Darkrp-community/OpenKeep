@@ -8,6 +8,13 @@
 	..()
 	GLOB.farm_animals = max(GLOB.farm_animals - 1, 0)
 
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/find_food()
+	..()
+	var/obj/structure/spacevine/SV = locate(/obj/structure/spacevine) in loc
+	if(SV)
+		SV.eat(src)
+		food = max(food + 30, 100)
+
 /mob/living/simple_animal/hostile/retaliate/rogue/goat/tamed(mob/user)
 	..()
 	deaggroprob = 50
