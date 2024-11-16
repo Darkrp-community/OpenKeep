@@ -6,20 +6,20 @@
 #define GET_PARENT (parent_attached_to || parent)
 
 /**
-  * Movable atom overlay-based lighting component.
-  *
-  * * Component works by applying a visual object to the parent target.
-  *
-  * * The component tracks the parent's loc to determine the current_holder.
-  * * The current_holder is either the parent or its loc, whichever is on a turf. If none, then the current_holder is null and the light is not visible.
-  *
-  * * Lighting works at its base by applying a dark overlay and "cutting" said darkness with light, adding (possibly colored) transparency.
-  * * This component uses the visible_mask visual object to apply said light mask on the darkness.
-  *
-  * * The main limitation of this system is that it uses a limited number of pre-baked geometrical shapes, but for most uses it does the job.
-  *
-  * * Another limitation is for big lights: you only see the light if you see the object emiting it.
-  * * For small objects this is good (you can't see them behind a wall), but for big ones this quickly becomes prety clumsy.
+	 * Movable atom overlay-based lighting component.
+	 *
+	 * * Component works by applying a visual object to the parent target.
+	 *
+	 * * The component tracks the parent's loc to determine the current_holder.
+	 * * The current_holder is either the parent or its loc, whichever is on a turf. If none, then the current_holder is null and the light is not visible.
+	 *
+	 * * Lighting works at its base by applying a dark overlay and "cutting" said darkness with light, adding (possibly colored) transparency.
+	 * * This component uses the visible_mask visual object to apply said light mask on the darkness.
+	 *
+	 * * The main limitation of this system is that it uses a limited number of pre-baked geometrical shapes, but for most uses it does the job.
+	 *
+	 * * Another limitation is for big lights: you only see the light if you see the object emiting it.
+	 * * For small objects this is good (you can't see them behind a wall), but for big ones this quickly becomes prety clumsy.
 */
 /datum/component/overlay_lighting
 	///How far the light reaches, float.
@@ -175,13 +175,13 @@
 		var/atom/movable/old_parent_attached_to = .
 		UnregisterSignal(old_parent_attached_to, list(COMSIG_PARENT_QDELETING, COMSIG_MOVABLE_MOVED))
 		if(old_parent_attached_to == current_holder)
-			RegisterSignal(old_parent_attached_to, COMSIG_PARENT_QDELETING, .proc/on_holder_qdel)
-			RegisterSignal(old_parent_attached_to, COMSIG_MOVABLE_MOVED, .proc/on_holder_moved)
+			RegisterSignal(old_parent_attached_to, COMSIG_PARENT_QDELETING, PROC_REF(on_holder_qdel))
+			RegisterSignal(old_parent_attached_to, COMSIG_MOVABLE_MOVED, PROC_REF(on_holder_moved))
 	if(parent_attached_to)
 		if(parent_attached_to == current_holder)
 			UnregisterSignal(current_holder, list(COMSIG_PARENT_QDELETING, COMSIG_MOVABLE_MOVED))
-		RegisterSignal(parent_attached_to, COMSIG_PARENT_QDELETING, .proc/on_parent_attached_to_qdel)
-		RegisterSignal(parent_attached_to, COMSIG_MOVABLE_MOVED, .proc/on_parent_attached_to_moved)
+		RegisterSignal(parent_attached_to, COMSIG_PARENT_QDELETING, PROC_REF(on_parent_attached_to_qdel))
+		RegisterSignal(parent_attached_to, COMSIG_MOVABLE_MOVED, PROC_REF(on_parent_attached_to_moved))
 	check_holder()
 
 
@@ -201,8 +201,8 @@
 	if(overlay_lighting_flags & LIGHTING_ON)
 		add_dynamic_lumi(new_holder)
 	if(new_holder != parent && new_holder != parent_attached_to)
-		RegisterSignal(new_holder, COMSIG_PARENT_QDELETING, .proc/on_holder_qdel)
-		RegisterSignal(new_holder, COMSIG_MOVABLE_MOVED, .proc/on_holder_moved)
+		RegisterSignal(new_holder, COMSIG_PARENT_QDELETING, PROC_REF(on_holder_qdel))
+		RegisterSignal(new_holder, COMSIG_MOVABLE_MOVED, PROC_REF(on_holder_moved))
 
 
 ///Used to determine the new valid current_holder from the parent's loc.
