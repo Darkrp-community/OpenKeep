@@ -75,6 +75,17 @@
 	body_parts_covered = COVERAGE_FULL
 	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
 
+//................ Crimson Marauder ............... //
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/sea/marauder
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "Jinete's Linothorax"
+	desc = "An equipment styled in the shape of the skirmisher tiefling nomads of the Crimsonlands, a modified version of the ancestral craft of the original tiefling equipment of the Apotheosis war. Most of the armor has been stripped in favor of limberness and ease of replacement. The stained leather bears a red devil face making a war cry, a horrid ancestor of some blood-thirsty tiefling, no doubt."
+	icon_state = "crimson_armor"
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	armor = ARMOR_LEATHER_GOOD
+	body_parts_covered = CHEST|GROIN|LEGS|VITALS
+
 /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	name = "light gambeson"
 	desc = "Thin and the maker skimped on the padding, typically worn by the peasantry to give some protection against cold for the whole body."
