@@ -151,20 +151,6 @@
 	max_integrity = 300
 
 
-//................ Copper bludgeon ............... //
-/obj/item/rogueweapon/mace/copperbludgeon
-	force = DAMAGE_CLUB
-	force_wielded = DAMAGE_CLUB_WIELD
-	name = "copper bludgeon"
-	desc = "An extremely crude weapon for cruder bastards."
-	icon_state = "cbludgeon"
-	max_integrity = 80
-	minstr = 5
-	smeltresult = /obj/item/ingot/copper
-	sellprice = 10
-	wdefense = MEDIOCHRE_PARRY
-
-
 //................ Club ............... //
 /obj/item/rogueweapon/mace/woodclub
 	force = DAMAGE_CLUB
@@ -186,6 +172,16 @@
 	if(icon_state == "club1")
 		icon_state = "club[rand(1,2)]"
 
+//................ Rolling Pin ............... //
+/obj/item/rogueweapon/mace/woodclub/rollingpin
+	name = "rolling pin"
+	desc = "For rolling dough or teaching beggars who steal a lesson."
+	icon = 'modular/Neu_Food/icons/cooking.dmi'
+	icon_state = "rolling_pin"
+	item_state = "rolling_pin"
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
+	experimental_inhand = FALSE
 
 //................ Cudgel ............... //
 /obj/item/rogueweapon/mace/cudgel
@@ -219,6 +215,15 @@
 	name = "peasant cudgel"
 	icon_state = "carpentercudgel"
 	desc = "A stubby club reinforced with iron bits, popular among village watchmen and peasant militias. Despite being reinforced and hard-hitting, it still cannot compare to a proper mace."
+
+//................ Bludgeon ............... // (Copper cudgel)
+/obj/item/rogueweapon/mace/cudgel/bludgeon
+	name = "bludgeon"
+	icon = 'icons/roguetown/weapons/custom.dmi'
+	icon_state = "bludgeon"
+	desc = "Old wooden club with copper nails in it."
+	max_integrity = INTEGRITY_POOR
+	sellprice = VALUE_DIRT_CHEAP
 
 
 //................ Wooden sword ............... //
@@ -358,6 +363,21 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+
+
+// Obsolete
+//................ Copper bludgeon ............... //
+/obj/item/rogueweapon/mace/copperbludgeon
+	force = DAMAGE_CLUB
+	force_wielded = DAMAGE_CLUB_WIELD
+	name = "copper bludgeon"
+	desc = "An extremely crude weapon for cruder bastards."
+	icon_state = "cbludgeon"
+	max_integrity = 80
+	minstr = 5
+	smeltresult = /obj/item/ingot/copper
+	sellprice = 10
+	wdefense = MEDIOCHRE_PARRY
 
 //................ Copper goden ............... //
 /obj/item/rogueweapon/mace/goden/copper

@@ -41,6 +41,8 @@
 
 /turf/open/floor/rogue/ruinedwood/spiral
 	icon_state = "weird1"
+/turf/open/floor/rogue/ruinedwood/spiralfade
+	icon_state = "weird3"
 /turf/open/floor/rogue/ruinedwood/chevron
 	icon_state = "weird2"
 
@@ -88,6 +90,18 @@
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/open/floor/rogue/wood/nosmooth,/turf/open/floor/carpet)
 
+/turf/open/floor/rogue/wood/saiga
+	icon_state = "woodalt"
+	icon = 'icons/turf/floors/woodalt.dmi'
+	smooth_icon = 'icons/turf/floors/woodalt.dmi'
+	canSmoothWith = list(/turf/open/floor/rogue/wood/saiga,/turf/open/floor/carpet)
+
+/turf/open/floor/rogue/wood/nosmooth/saiga
+	icon_state = "woodalt"
+	icon = 'icons/turf/floors/woodalt.dmi'
+	smooth_icon = 'icons/turf/floors/woodalt.dmi'
+	canSmoothWith = list(/turf/open/floor/rogue/wood/nosmooth/saiga,/turf/open/floor/carpet)
+
 /turf/open/floor/rogue/woodturned
 	smooth_icon = 'icons/turf/floors/wood_turned.dmi'
 	icon_state = "wooden_floor2t"
@@ -99,9 +113,20 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/rogue/woodturned/nosmooth
-	icon_state = "wooden_floort"
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/open/floor/rogue/woodturned/nosmooth,/turf/open/floor/carpet)
+
+/turf/open/floor/rogue/woodturned/saiga
+	icon_state = "woodalt"
+	icon = 'icons/turf/floors/woodalt_turned.dmi'
+	smooth_icon = 'icons/turf/floors/woodalt_turned.dmi'
+	canSmoothWith = list(/turf/open/floor/rogue/woodturned/saiga,/turf/open/floor/carpet)
+
+/turf/open/floor/rogue/woodturned/nosmooth/saiga
+	icon_state = "woodalt"
+	icon = 'icons/turf/floors/woodalt_turned.dmi'
+	smooth_icon = 'icons/turf/floors/woodalt_turned.dmi'
+	canSmoothWith = list(/turf/open/floor/rogue/woodturned/nosmooth/saiga,/turf/open/floor/carpet)
 
 /turf/open/floor/rogue/rooftop
 	name = "roof"
@@ -946,6 +971,46 @@
 						/turf/open/floor/rogue/snow/patchy,
 						/turf/open/floor/rogue/snow/rough)
 
+/turf/open/floor/rogue/cobble/alt
+	icon_state = "cobblestonealt1"
+
+/turf/open/floor/rogue/cobble/alt/Initialize()
+	. = ..()
+	icon_state = "cobblestonealt[rand(1,3)]"
+
+/turf/open/floor/rogue/cobblerock/alt
+	icon_state = "cobblealt1"
+
+/turf/open/floor/rogue/cobblerock/alto
+	icon_state = "cobblealt2"
+
+/obj/effect/decal/cobbleedge/rockalt_edge
+	icon_state = "cobblealt_edges"
+
+/obj/effect/decal/cobbleedge/rockalt_corners
+	icon_state = "cobblealt_corners"
+
+/obj/effect/decal/cobbleedge/alt
+	icon_state = "cobblestonealt_edges"
+
+/obj/effect/decal/cobbleedge/alt_small
+	icon_state = "cobblestonealt_smalledges"
+
+/turf/open/floor/rogue/cobble/mossy/alt
+	icon_state = "mossyalt1"
+
+/turf/open/floor/rogue/cobble/mossy/alt/Initialize()
+	. = ..()
+	icon_state = "mossyalt[rand(1,3)]"
+
+/obj/effect/decal/cobbleedge/mossy
+	icon_state = "mossyalt_edges"
+
+/obj/effect/decal/cobbleedge/mossy_small
+	icon_state = "mossyalt_smalledges"
+
+
+
 /*	..................   Miscellany   ................... */
 /turf/open/floor/rogue/tile/masonic
 	icon_state = "masonic"
@@ -1092,6 +1157,9 @@
 /turf/open/floor/rogue/carpet/lord/right
 	icon_state = "carpet_r"
 
+/turf/open/floor/rogue/carpet/green
+	icon_state = "carpet_inn"
+
 /turf/open/floor/rogue/shroud
 	name = "treetop"
 	icon_state = "treetop1"
@@ -1131,3 +1199,7 @@
 
 /turf/open/floor/rogue/plank/h
 	icon_state = "plank2"
+
+/turf/open/floor/rogue/tile/checker_green
+	icon_state = "tile"
+	color = "#94df5b"

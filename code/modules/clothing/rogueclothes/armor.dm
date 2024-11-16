@@ -209,7 +209,7 @@
 	sleevetype = null
 	sleeved = null
 
-	armor = ARMOR_LEATHER_BAD
+	armor = ARMOR_LEATHER_WORST
 	body_parts_covered = COVERAGE_VEST
 	prevent_crits = CUT_AND_MINOR_CRITS
 
@@ -240,6 +240,12 @@
 /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 	color = CLOTHING_DARK_INK
 
+/obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep // repath to correct padded vest some day
+	name = "padded vest"
+	desc = "Dyed green, belongs to the owner of the Drunken Saiga inn."
+	icon_state = "striped"
+	color = "#638b45"
+
 
 //................ Jacket ............... //	- Has a small storage space
 /obj/item/clothing/suit/roguetown/armor/leather/jacket
@@ -247,6 +253,7 @@
 	icon_state = "leatherjacketo"
 	desc = "A heavy leather jacket with wooden buttons, favored by workers who can afford it."
 
+	armor = ARMOR_LEATHER_WORST
 	body_parts_covered = COVERAGE_SHIRT
 
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/ComponentInitialize()
@@ -266,6 +273,9 @@
 		for(var/obj/item/I in things)
 			STR.remove_from_storage(I, get_turf(src))
 
+//................ Leather Jacket ............... //
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/toggle // hehe...should be toggleable
+
 //................ Sea Jacket ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 	slot_flags = ITEM_SLOT_ARMOR
@@ -274,7 +284,7 @@
 	icon_state = "sailorvest"
 	sleevetype = "shirt"
 
-	armor = ARMOR_LEATHER
+	armor = ARMOR_LEATHER_BAD
 	body_parts_covered = COVERAGE_VEST
 
 //................ Silk Coat ............... //
@@ -286,6 +296,7 @@
 	allowed_sex = list(FEMALE)
 	sellprice = VALUE_LEATHER_ARMOR_LORD
 
+	armor = ARMOR_LEATHER_BAD
 	body_parts_covered = COVERAGE_ALL_BUT_ARMS
 	prevent_crits = CUT_AND_MINOR_CRITS
 

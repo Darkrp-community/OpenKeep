@@ -358,6 +358,8 @@
 /mob/living/carbon/human/verb/ReturnFamilyList()
 	set name = "List Family"
 	set category = "Memory"
+	if(spouse_name)
+		to_chat(src, span_info("[spouse_name] is the name of your lover."))
 	if(family_datum)
 		family_datum.ListFamily(src)
 	else

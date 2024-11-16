@@ -81,6 +81,8 @@
 		if(prob(prob2break))
 			playsound(src,'sound/items/seedextract.ogg', 100, FALSE)
 			qdel(src)
+			if (L.alpha == 0 && L.rogue_sneaking) // not anymore you're not
+				L.update_sneak_invis(TRUE)
 			L.consider_ambush()
 
 /obj/item/grown/log/tree/stick/Initialize()
@@ -124,17 +126,22 @@
 
 /obj/item/grown/log/tree/stake
 	name = "stake"
-	desc = "A sharpened piece of wood, fantastic for piercing"
+	desc = "A sharpened piece of wood, fantastic for piercing."
 	icon_state = "stake"
-	force = 2
-	throwforce = 2
-	possible_item_intents = list(/datum/intent/stab, /datum/intent/pick)
+	force = 4
+	throwforce = 4
+	thrown_bclass = BCLASS_STAB
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick)
 	firefuel = 1 MINUTES
 	blade_dulling = 0
 	max_integrity = 20
+	associated_skill = /datum/skill/combat/knives
+	wdefense = 0
 	static_debris = null
 	obj_flags = null
+	wlength = WLENGTH_SHORT
 	w_class = WEIGHT_CLASS_SMALL
+	wbalance = 1
 	twohands_required = FALSE
 	gripped_intents = null
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP

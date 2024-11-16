@@ -167,8 +167,8 @@
 	icon_state = "fancyhat"
 	sellprice = VALUE_FINE_CLOTHING
 
-/obj/item/clothing/head/roguetown/courtierhat
-	name = "fancy hat"
+/obj/item/clothing/head/roguetown/fashionablehat
+	name = "fashionable hat"
 	icon_state = "courtier"
 	flags_inv = HIDEEARS
 	sellprice = VALUE_FINE_CLOTHING
@@ -242,12 +242,6 @@
 					H.update_inv_head()
 		user.update_fov_angles()
 
-//................ Keffiyeh ............... //
-/obj/item/clothing/head/roguetown/roguehood/shalal
-	name = "keffiyeh"
-	desc = "An eastern scarf usually worn around the head and neck."
-	icon_state = "shalal"
-	dropshrink = 0.8
 
 
 /*------------\
