@@ -23,9 +23,7 @@
 
 	health = SPIDER_HEALTH
 	maxHealth = SPIDER_HEALTH
-	food_type = list(/obj/item/bodypart,
-					/obj/item/organ,
-					/obj/item/reagent_containers/food/snacks/rogue/meat)
+	food_type = list(/obj/item/organ)
 
 	base_intents = list(/datum/intent/simple/bite)
 	attack_sound = list('sound/vo/mobs/spider/attack (1).ogg','sound/vo/mobs/spider/attack (2).ogg','sound/vo/mobs/spider/attack (3).ogg','sound/vo/mobs/spider/attack (4).ogg')
@@ -163,3 +161,12 @@
 			return "foreleg"
 	return ..()
 
+
+/mob/living/simple_animal/hostile/retaliate/rogue/spider/colony // colony spider
+	name = "hairy spider"
+	desc = "The forest canopies hides more than leaves...These creachers make honey from flowers and spin silk from their abdomen, when not consuming prey."
+	icon_state = "spider"
+	icon_living = "spider"
+	icon_dead = "spider-dead"
+	retreat_distance = 1
+	move_to_delay = 3

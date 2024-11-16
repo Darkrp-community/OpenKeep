@@ -55,7 +55,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/item/rogueweapon/mace/copperbludgeon
+	created_item = /obj/item/rogueweapon/mace/cudgel/bludgeon
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cdagger

@@ -69,7 +69,7 @@
 				iszombie = TRUE
 			if(L.mind.special_role == "Vampire Lord")
 				user.visible_message("<span class='warning'>[L] overpowers being churned!</span>", "<span class='userdanger'>[L] is too strong, I am churned!</span>")
-				user.Stun(50)
+				user.Knockdown(50)
 				user.throw_at(get_ranged_target_turf(user, get_dir(user,L), 7), 7, 1, L, spin = FALSE)
 				return
 		if((L.mob_biotypes & MOB_UNDEAD) || isvampire || iszombie)
@@ -80,7 +80,7 @@
 			if(prob(undead_prob))
 				L.visible_message("<span class='warning'>[L] HAS BEEN CHURNED BY NECRA'S GRIP!</span>", "<span class='danger'>I'VE BEEN CHURNED BY NECRA'S GRIP!</span>")
 				explosion(get_turf(L), light_impact_range = 1, flame_range = 1, smoke = FALSE)
-				L.Stun(50)
+				L.Knockdown(50)
 			else
 				L.visible_message("<span class='warning'>[L] resists being churned!</span>", "<span class='userdanger'>I resist being churned!</span>")
 	..()

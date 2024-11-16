@@ -563,7 +563,7 @@
 					to_chat(user, "<span class='warning'>I cannot drain vitae from a fellow nitewalker.</span>")
 					return
 				else if(C.vitae_pool > 500)
-					C.blood_volume = max(C.blood_volume-45, 0)
+					C.blood_volume = max(C.blood_volume-20, 0)
 					if(ishuman(C))
 						var/mob/living/carbon/human/H = C
 						if(H.virginity)
@@ -602,7 +602,7 @@
 		if(user.mind) // We're drinking from a mob or a person who disconnected from the game
 			if(user.mind.has_antag_datum(/datum/antagonist/vampirelord))
 				var/datum/antagonist/vampirelord/VDrinker = user.mind.has_antag_datum(/datum/antagonist/vampirelord)
-				C.blood_volume = max(C.blood_volume-45, 0)
+				C.blood_volume = max(C.blood_volume-20, 0)
 				if(C.vitae_pool >= 250)
 					if(VDrinker.isspawn)
 						VDrinker.handle_vitae(250, 250)
@@ -611,7 +611,7 @@
 				else
 					to_chat(user, "<span class='warning'>And yet, not enough vitae can be extracted from them... Tsk.</span>")
 
-	C.blood_volume = max(C.blood_volume-5, 0)
+	C.blood_volume = max(C.blood_volume-60, 0)
 	C.handle_blood()
 
 	playsound(user.loc, 'sound/misc/drink_blood.ogg', 100, FALSE, -4)
