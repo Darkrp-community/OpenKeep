@@ -41,17 +41,17 @@
 	backr = /obj/item/storage/backpack/rogue/satchel	// lack of satchel requires dealing with the merchant to correct, which requires entering town; not ideal. N.
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE) // Allow reading notes passed to the literate noble prisoner, or writing reports. N. See peasants\prisoner.dm.
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE) // Allow reading notes passed to the literate noble prisoner, or writing reports. N. See peasants\prisoner.dm.
+		H?.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
 		H.change_stat("strength", 2)
 		H.change_stat("intelligence", -2)
 		H.change_stat("endurance", 2)

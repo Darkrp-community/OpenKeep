@@ -23,17 +23,17 @@
 /datum/outfit/job/roguetown/adventurer/mastercarpenter/pre_equip(mob/living/carbon/human/H)
 	..()
 
-	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE) // They work at great heights.
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 6, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE) // They work at great heights.
+	H?.mind.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/craft/carpentry, 6, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 
 	head = /obj/item/clothing/head/roguetown/hatfur
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket

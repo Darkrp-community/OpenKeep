@@ -72,19 +72,19 @@
 			cloak = /obj/item/clothing/cloak/stabard/crusader // Gold version regardless of gender or patron
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver
 
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+	H?.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.change_stat("endurance", 2)
 	H.change_stat("constitution", 2)
 	H.change_stat("strength", 1)
@@ -97,12 +97,12 @@
 		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 		beltl = /obj/item/rogueweapon/knife/dagger/silver
 		beltr = /obj/item/quiver/bolts
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	// Males are sword and shield based
 	else
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H?.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
 	// Finally, grant us the language
 
 	if(!H.has_language(/datum/language/oldpsydonic))
