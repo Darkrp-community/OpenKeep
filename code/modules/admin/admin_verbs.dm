@@ -173,7 +173,6 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/test_snap_UI,
 	/client/proc/debugNatureMapGenerator,
 	/client/proc/check_bomb_impacts,
-	/client/proc/populate_world,
 	/client/proc/get_dynex_power,		//*debug verbs for dynex explosions.
 	/client/proc/get_dynex_range,		//*debug verbs for dynex explosions.
 	/client/proc/set_dynex_scale,
@@ -642,21 +641,6 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 			message_admins("<span class='adminnotice'>[key_name_admin(usr)] removed the spell [S] from [key_name_admin(T)].</span>")
 			SSblackbox.record_feedback("tally", "admin_verb", 1, "Remove Spell") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/give_disease(mob/living/T in GLOB.mob_living_list)
-	set category = "Fun"
-	set name = "Give Disease"
-	set desc = ""
-	if(!istype(T))
-		to_chat(src, "<span class='notice'>I can only give a disease to a mob of type /mob/living.</span>")
-		return
-	var/datum/disease/D = input("Choose the disease to give to that guy", "ACHOO") as null|anything in sortList(SSdisease.diseases, GLOBAL_PROC_REF(cmp_typepaths_asc))
-	if(!D)
-		return
-	T.ForceContractDisease(new D, FALSE, TRUE)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Give Disease") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-	log_admin("[key_name(usr)] gave [key_name(T)] the disease [D].")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] gave [key_name_admin(T)] the disease [D].</span>")
-
 /client/proc/object_say(obj/O in world)
 	set category = "Special Verbs"
 	set name = "OSay"
@@ -720,40 +704,6 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	message_admins("[src] re-adminned themselves.")
 	log_admin("[src] re-adminned themselves.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Readmin")
-
-/client/proc/populate_world(amount = 50 as num)
-	set name = "Populate World"
-	set category = "Debug"
-	set desc = ""
-
-	if (amount > 0)
-		var/area/area
-		var/list/candidates
-		var/turf/open/floor/tile
-		var/j,k
-
-		for (var/i = 1 to amount)
-			j = 100
-
-			do
-				area = pick(GLOB.the_station_areas)
-
-				if (area)
-
-					candidates = get_area_turfs(area)
-
-					if (candidates.len)
-						k = 100
-
-						do
-							tile = pick(candidates)
-						while ((!tile || !istype(tile)) && --k > 0)
-
-						if (tile)
-							var/mob/living/carbon/human/hooman = new(tile)
-							hooman.equipOutfit(pick(subtypesof(/datum/outfit)))
-							testing("Spawned test mob at [COORD(tile)]")
-			while (!area && --j > 0)
 
 /client/proc/toggle_AI_interact()
 	set name = "Toggle Admin AI Interact"

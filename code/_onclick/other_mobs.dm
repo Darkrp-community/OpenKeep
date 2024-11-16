@@ -596,9 +596,6 @@
 			to_chat(name, "<span class='danger'>I bite [ML]!</span>")
 			if(armor >= 2)
 				return
-			for(var/thing in diseases)
-				var/datum/disease/D = thing
-				ML.ForceContractDisease(D)
 		else
 			ML.visible_message("<span class='danger'>[src]'s bite misses [ML]!</span>", \
 							"<span class='danger'>I avoid [src]'s bite!</span>", "<span class='hear'>I hear jaws snapping shut!</span>", COMBAT_MESSAGE_RANGE, src)

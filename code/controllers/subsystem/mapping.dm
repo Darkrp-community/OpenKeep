@@ -15,8 +15,6 @@ SUBSYSTEM_DEF(mapping)
 	var/list/map_load_marks = list() //The game scans thru the map and looks for marks, then adds them to this list for caching
 
 	var/list/ruins_templates = list()
-	var/list/space_ruins_templates = list()
-	var/list/lava_ruins_templates = list()
 	var/datum/space_level/isolated_ruins_z //Created on demand during ruin loading.
 
 	var/list/shuttle_templates = list()
@@ -24,7 +22,6 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/areas_in_z = list()
 
-	var/loading_ruins = FALSE
 	var/list/turf/unused_turfs = list()				//Not actually unused turfs they're unused but reserved for use for whatever requests them. "[zlevel_of_turf]" = list(turfs)
 	var/list/datum/turf_reservations		//list of turf reservations
 	var/list/used_turfs = list()				//list of turf = datum/turf_reservation
@@ -77,26 +74,12 @@ SUBSYSTEM_DEF(mapping)
 	if(CONFIG_GET(flag/roundstart_away))
 		createRandomZlevel()
 
-	// Generate mining ruins
-	loading_ruins = TRUE
-	var/list/lava_ruins = levels_by_trait(ZTRAIT_LAVA_RUINS)
-	if (lava_ruins.len)
-		seedRuins(lava_ruins, CONFIG_GET(number/lavaland_budget), /area/lavaland/surface/outdoors/unexplored, lava_ruins_templates)
-		for (var/lava_z in lava_ruins)
-			spawn_rivers(lava_z)
-
-	// Generate deep space ruins
-	var/list/space_ruins = levels_by_trait(ZTRAIT_SPACE_RUINS)
-	if (space_ruins.len)
-		seedRuins(space_ruins, CONFIG_GET(number/space_budget), /area/space, space_ruins_templates)
-	loading_ruins = FALSE
 #endif
 	// Add the transit level
 	transit = add_new_zlevel("Transit/Reserved", list(ZTRAIT_RESERVED = TRUE))
 	repopulate_sorted_areas()
 	// Set up Z-level transitions.
 	setup_map_transitions()
-	generate_station_area_list()
 	initialize_reserved_level(transit.z_value)
 	return ..()
 
@@ -155,8 +138,6 @@ SUBSYSTEM_DEF(mapping)
 	initialized = SSmapping.initialized
 	map_templates = SSmapping.map_templates
 	ruins_templates = SSmapping.ruins_templates
-	space_ruins_templates = SSmapping.space_ruins_templates
-	lava_ruins_templates = SSmapping.lava_ruins_templates
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
 	unused_turfs = SSmapping.unused_turfs
@@ -292,23 +273,6 @@ SUBSYSTEM_DEF(mapping)
 		fdel("_maps/custom/[config.map_file]")
 		// And as the file is now removed set the next map to default.
 		next_map_config = load_map_config(default_to_box = TRUE)
-
-GLOBAL_LIST_EMPTY(the_station_areas)
-
-/datum/controller/subsystem/mapping/proc/generate_station_area_list()
-	var/list/station_areas_blacklist = typecacheof(list(/area/space, /area/mine, /area/ruin, /area/asteroid/nearstation))
-	for(var/area/A in world)
-		if (is_type_in_typecache(A, station_areas_blacklist))
-			continue
-		if (!A.contents.len || !A.unique)
-			continue
-		var/turf/picked = A.contents[1]
-		if (is_station_level(picked.z))
-			GLOB.the_station_areas += A.type
-
-	if(!GLOB.the_station_areas.len)
-		log_world("ERROR: Station areas list failed to generate!")
-
 
 
 /datum/controller/subsystem/mapping/proc/maprotate()
