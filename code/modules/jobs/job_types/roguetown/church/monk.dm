@@ -75,17 +75,17 @@
 
 
 	if(H.mind)
-		H?.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H?.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
-		H?.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE) // They get this and a wooden staff to defend themselves
-		H?.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H?.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H?.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-		H?.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-		H?.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-		H?.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE) // They get this and a wooden staff to defend themselves
+		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
 		if(H.age == AGE_OLD)
-			H?.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
+			H.mind?.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 2) // For casting lots of spells, and working long hours without sleep at the church
 		H.change_stat("perception", -1)

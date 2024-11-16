@@ -21,11 +21,11 @@
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
 	head = /obj/item/clothing/head/roguetown/courtierhat
 	if(H.mind)
-		H?.mind.adjust_skillrank(/datum/skill/misc/sewing, pick(3,4), TRUE)
-		H?.mind.adjust_skillrank(/datum/skill/craft/tanning, pick(3,4), TRUE)
-		H?.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
-		H?.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
-		H?.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/sewing, pick(3,4), TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/tanning, pick(3,4), TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/red

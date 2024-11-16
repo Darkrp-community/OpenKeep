@@ -31,13 +31,13 @@
 	neck = /obj/item/clothing/neck/roguetown/phys
 	r_hand = /obj/item/storage/backpack/rogue/satchel/surgbag
 
-	H?.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-	H?.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-	H?.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-	H?.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-	H?.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
 	if(H.age == AGE_OLD)
-		H?.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
 	H.change_stat("intelligence", 2)
 	H.change_stat("speed", 1)
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
