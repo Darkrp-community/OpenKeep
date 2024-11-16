@@ -26,6 +26,15 @@
 	var/downgrade_wave
 	/// If defined, this will be the wave type to increment for purposes of checking `max_spawns`
 	var/shared_wave_type = null
+		/// Whether we want to spawn people on the rolled location, this may not be desired for bandits or other things that set the location
+	var/spawn_on_location = TRUE
+
+/datum/migrant_wave/proc/get_roles_amount()
+	var/amount = 0
+	for(var/role_type in roles)
+		amount += roles[role_type]
+	return amount
+
 /datum/migrant_wave/pilgrim
 	name = "Pilgrimage"
 	downgrade_wave = /datum/migrant_wave/pilgrim_down_one
@@ -33,6 +42,7 @@
 		/datum/migrant_role/pilgrim = 4,
 	)
 	greet_text = "Fleeing from misfortune and hardship, you and a handful of survivors get closer to Rockhill, looking for refuge and work, finally almost being there, almost..."
+
 /datum/migrant_wave/pilgrim_down_one
 	name = "Pilgrimage"
 	downgrade_wave = /datum/migrant_wave/pilgrim_down_two
@@ -41,6 +51,7 @@
 		/datum/migrant_role/pilgrim = 3,
 	)
 	greet_text = "Fleeing from misfortune and hardship, you and a handful of survivors get closer to Rockhill, looking for refuge and work, finally almost being there, almost..."
+
 /datum/migrant_wave/pilgrim_down_two
 	name = "Pilgrimage"
 	downgrade_wave = /datum/migrant_wave/pilgrim_down_three
@@ -49,6 +60,7 @@
 		/datum/migrant_role/pilgrim = 2,
 	)
 	greet_text = "Fleeing from misfortune and hardship, you and a handful of survivors get closer to Rockhill, looking for refuge and work, finally almost being there, almost..."
+
 /datum/migrant_wave/pilgrim_down_three
 	name = "Pilgrimage"
 	can_roll = FALSE
@@ -56,6 +68,7 @@
 		/datum/migrant_role/pilgrim = 1,
 	)
 	greet_text = "Fleeing from misfortune and hardship, you and a handful of survivors get closer to Rockhill, looking for refuge and work, finally almost being there, almost..."
+
 /datum/migrant_wave/adventurer
 	name = "Adventure Party"
 	downgrade_wave = /datum/migrant_wave/adventurer_down_one
@@ -63,6 +76,7 @@
 		/datum/migrant_role/adventurer = 4,
 	)
 	greet_text = "Together with a party of trusted friends we decided to venture out, seeking thrills, glory and treasure, ending up in the misty and damp bog underneath Rockhill, perhaps getting ourselves into more than what we bargained for."
+
 /datum/migrant_wave/adventurer_down_one
 	name = "Adventure Party"
 	downgrade_wave = /datum/migrant_wave/adventurer_down_two
@@ -71,6 +85,7 @@
 		/datum/migrant_role/adventurer = 3,
 	)
 	greet_text = "Together with a party of trusted friends we decided to venture out, seeking thrills, glory and treasure, ending up in the misty and damp bog underneath Rockhill, perhaps getting ourselves into more than what we bargained for."
+
 /datum/migrant_wave/adventurer_down_two
 	name = "Adventure Party"
 	downgrade_wave = /datum/migrant_wave/adventurer_down_three
@@ -79,6 +94,7 @@
 		/datum/migrant_role/adventurer = 2,
 	)
 	greet_text = "Together with a party of trusted friends we decided to venture out, seeking thrills, glory and treasure, ending up in the misty and damp bog underneath Rockhill, perhaps getting ourselves into more than what we bargained for."
+
 /datum/migrant_wave/adventurer_down_three
 	name = "Adventure Party"
 	can_roll = FALSE
@@ -86,13 +102,15 @@
 		/datum/migrant_role/adventurer = 1,
 	)
 	greet_text = "Together with a party of trusted friends we decided to venture out, seeking thrills, glory and treasure, ending up in the misty and damp bog underneath Rockhill, perhaps getting ourselves into more than what we bargained for."
+
 /datum/migrant_wave/bandit
 	name = "Bandit Raid"
 	downgrade_wave = /datum/migrant_wave/bandit_down_one
-	weight = 5
+	weight = 8
 	roles = list(
 		/datum/migrant_role/bandit = 4,
 	)
+
 /datum/migrant_wave/bandit_down_one
 	name = "Bandit Raid"
 	downgrade_wave = /datum/migrant_wave/bandit_down_two
@@ -100,6 +118,7 @@
 	roles = list(
 		/datum/migrant_role/bandit = 3,
 	)
+
 /datum/migrant_wave/bandit_down_two
 	name = "Bandit Raid"
 	downgrade_wave = /datum/migrant_wave/bandit_down_three
@@ -107,6 +126,7 @@
 	roles = list(
 		/datum/migrant_role/bandit = 2,
 	)
+
 /datum/migrant_wave/bandit_down_three
 	name = "Bandit Raid"
 	can_roll = FALSE

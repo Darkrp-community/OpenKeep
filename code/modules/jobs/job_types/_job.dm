@@ -120,6 +120,7 @@
 */
 	var/list/advclass_cat_rolls
 
+	var/wanderer_examine = FALSE
 
 /datum/job/proc/special_job_check(mob/dead/new_player/player)
 	return TRUE
