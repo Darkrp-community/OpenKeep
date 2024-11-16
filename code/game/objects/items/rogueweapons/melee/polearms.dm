@@ -408,3 +408,27 @@
 	thrown_bclass = BCLASS_CUT
 	throwforce = 25
 	sellprice = 10
+
+/obj/item/rogueweapon/spear/bonespear
+	force = 18
+	force_wielded = 22
+	name = "bone spear"
+	desc = "A spear made of bones..."
+	icon_state = "bonespear"
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
+	wlength = WLENGTH_GREAT
+	w_class = WEIGHT_CLASS_BULKY
+	minstr = 6
+	max_blade_int = 70
+	smeltresult = null
+	associated_skill = /datum/skill/combat/polearms
+	blade_dulling = DULLING_BASHCHOP
+	walking_stick = TRUE
+	wdefense = 4
+	max_integrity = 60
+	throwforce = 20

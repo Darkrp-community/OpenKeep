@@ -571,3 +571,37 @@
 				/obj/item/grown/log/tree/stick = 3,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/skullmask
+	name = "skull mask"
+	result = /obj/item/clothing/mask/rogue/skullmask
+	reqs = list(/obj/item/alch/bone = 3,
+				/obj/item/natural/fibers = 1)
+	sellprice = 10
+	verbage = "crafted"
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/antlerhood
+	name = "antlerhood"
+	result = /obj/item/clothing/head/roguetown/antlerhood
+	reqs = list(/obj/item/natural/hide = 1,
+				/obj/item/alch/bone = 2)
+	sellprice = 12
+	tools = list(/obj/item/needle)
+	skillcraft = /datum/skill/misc/sewing
+	verbage = "sews"
+	craftdiff = 0
+/datum/crafting_recipe/roguetown/bonespear
+	name = "bone spear"
+	result = /obj/item/rogueweapon/spear/bonespear
+	reqs = list(/obj/item/rogueweapon/polearm/woodstaff = 1,
+				/obj/item/alch/bone = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
+/datum/crafting_recipe/roguetown/boneaxe
+	name = "bone axe"
+	result = /obj/item/rogueweapon/axe/boneaxe
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/alch/bone = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2

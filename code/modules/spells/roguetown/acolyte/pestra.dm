@@ -16,6 +16,14 @@
 	miracle = TRUE
 	devotion_cost = 5 //come on, this is very basic
 
+/obj/effect/proc_holder/spell/invoked/diagnose/secular
+	name = "Secular Diagnosis"
+	overlay_state = "diagnose"
+	range = 1
+	associated_skill = /datum/skill/misc/medicine
+	miracle = FALSE
+	devotion_cost = 0 //Doctors are not clerics
+
 /obj/effect/proc_holder/spell/invoked/diagnose/cast(list/targets, mob/living/user)
 	if(ishuman(targets[1]))
 		var/mob/living/carbon/human/human_target = targets[1]
