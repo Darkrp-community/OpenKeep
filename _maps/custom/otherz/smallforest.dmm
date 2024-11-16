@@ -168,12 +168,6 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"fA" = (
-/turf/open/water/river{
-	icon_state = "rockwd";
-	dir = 4
-	},
-/area/rogue/outdoors/woods)
 "fZ" = (
 /obj/structure/flora/newtree,
 /obj/structure/flora/newtree,
@@ -248,12 +242,6 @@
 /obj/structure/flora/newtree,
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/woods)
-"yH" = (
-/turf/open/water/river{
-	icon_state = "rockwd";
-	dir = 8
-	},
 /area/rogue/outdoors/woods)
 "zN" = (
 /obj/machinery/light/rogue/firebowl/stump,
@@ -1300,8 +1288,8 @@ vV
 Vh
 Vh
 Vh
-fA
-fA
+Vh
+Vh
 Lu
 ub
 Bm
@@ -1430,8 +1418,8 @@ Vh
 Vh
 Vh
 Vh
-fA
-fA
+Vh
+Vh
 Lu
 ub
 Jc
@@ -1560,8 +1548,8 @@ Jc
 Jc
 Jc
 Lu
-fA
-fA
+Vh
+Vh
 Lu
 ub
 Jc
@@ -1690,8 +1678,8 @@ Jc
 Jc
 Jc
 Jc
-fA
-fA
+Vh
+Vh
 Lu
 ub
 ub
@@ -1820,8 +1808,8 @@ Lu
 Lu
 Jc
 Lu
-fA
-fA
+Vh
+Vh
 Lu
 Lu
 Lu
@@ -1952,8 +1940,8 @@ Vh
 Vh
 Vh
 Vh
-fA
-fA
+Vh
+Vh
 Lu
 Lu
 Lu
@@ -2082,8 +2070,8 @@ Vh
 Vh
 Vh
 Vh
-fA
-fA
+Vh
+Vh
 Lu
 Lu
 Lu
@@ -2212,8 +2200,8 @@ Vh
 Vh
 Hc
 Vh
-fA
-fA
+Vh
+Vh
 Vh
 Vh
 Vh
@@ -2225,8 +2213,8 @@ Hc
 Vh
 Vh
 Vh
-fA
-fA
+Vh
+Vh
 Lu
 ub
 Jc
@@ -2355,8 +2343,8 @@ Vh
 Vh
 Vh
 Vh
-fA
-fA
+Vh
+Vh
 Lu
 ub
 ub
@@ -2485,8 +2473,8 @@ Vh
 Vh
 Vh
 Vh
-fA
-fA
+Vh
+Vh
 Lu
 Lu
 Lu
@@ -2621,7 +2609,7 @@ Vh
 Vh
 Vh
 Vh
-fA
+Vh
 Lu
 Nk
 ub
@@ -2751,9 +2739,9 @@ Vh
 Vh
 Vh
 Vh
-fA
 Vh
-fA
+Vh
+Vh
 Lu
 HH
 ub
@@ -2883,7 +2871,7 @@ Vh
 Vh
 Vh
 Vh
-fA
+Vh
 Lu
 HH
 ub
@@ -3014,7 +3002,7 @@ Vh
 Vh
 Vh
 Vh
-fA
+Vh
 HH
 HH
 HH
@@ -3049,7 +3037,7 @@ Vh
 Vh
 Vh
 Vh
-fA
+Vh
 Lu
 Lu
 Lu
@@ -3144,7 +3132,7 @@ Vh
 Vh
 Vh
 Vh
-fA
+Vh
 HH
 HH
 HH
@@ -3179,7 +3167,7 @@ Hc
 Vh
 Vh
 Vh
-fA
+Vh
 Lu
 Lu
 PA
@@ -3286,7 +3274,7 @@ Vh
 Vh
 Vh
 Vh
-yH
+Vh
 Lu
 Vh
 Vh
@@ -3338,7 +3326,7 @@ Vh
 Vh
 Vh
 Vh
-fA
+Vh
 Lu
 Lu
 Lu
@@ -3416,7 +3404,7 @@ Vh
 Vh
 Vh
 Vh
-yH
+Vh
 ub
 PA
 Lu
@@ -3475,7 +3463,7 @@ Vh
 Vh
 Vh
 Vh
-fA
+Vh
 Lu
 Lu
 Lu
@@ -3546,7 +3534,7 @@ Vh
 Vh
 Vh
 Vh
-yH
+Vh
 ub
 Jc
 Jc
@@ -3605,10 +3593,10 @@ Vh
 Vh
 Vh
 Vh
-fA
 Vh
 Vh
-fA
+Vh
+Vh
 Lu
 Lu
 Lu
@@ -3744,7 +3732,7 @@ Vh
 Vh
 Vh
 Vh
-fA
+Vh
 Lu
 ub
 dI
@@ -3874,7 +3862,7 @@ Vh
 Hc
 Vh
 Vh
-fA
+Vh
 Lu
 Lu
 dI
