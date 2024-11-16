@@ -27,13 +27,13 @@
 	H.real_name = "[honorary] [prev_real_name]"
 	H.name = "[honorary] [prev_name]"
 
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/music, rand(1,2), TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/misc/music, rand(1,2), TRUE)
 	H.change_stat("intelligence", 1)
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel
@@ -42,8 +42,8 @@
 	id = /obj/item/clothing/ring/silver
 	if(H.gender == FEMALE)
 		H.change_stat("speed", 1)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random
 		head = /obj/item/clothing/head/roguetown/hatfur
 		cloak = /obj/item/clothing/cloak/raincloak/furcloak
@@ -53,8 +53,8 @@
 		backpack_contents = list(/obj/item/reagent_containers/glass/bottle/rogue/wine = 1, /obj/item/reagent_containers/glass/cup/silver = 1)
 	if(H.gender == MALE)
 		H.change_stat("constitution", 1)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		pants = /obj/item/clothing/under/roguetown/tights/black
 		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/random
 		cloak = /obj/item/clothing/cloak/raincloak/furcloak

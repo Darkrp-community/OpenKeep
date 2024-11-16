@@ -31,14 +31,14 @@
 	backr = /obj/item/rogueweapon/polearm/woodstaff
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, pick(1,1,2), TRUE) // Wood staff
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/polearms, pick(1,1,2), TRUE) // Wood staff
+		H.mind?.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
 
 		H.change_stat("strength", 3)
 		H.change_stat("constitution", 2)

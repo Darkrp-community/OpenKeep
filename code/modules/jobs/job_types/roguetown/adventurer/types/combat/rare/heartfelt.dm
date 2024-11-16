@@ -8,7 +8,7 @@
 	min_pq = 2
 	maximum_possible_slots = 1
 	pickprob = 50
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 
 /datum/outfit/job/roguetown/adventurer/heartfeltlord/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -26,18 +26,18 @@
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	beltl = /obj/item/rogueweapon/sword/long
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.change_stat("strength", 1)
 		H.change_stat("intelligence", 3)
 		H.change_stat("endurance", 3)

@@ -105,20 +105,20 @@
 	H.STAINT = 1
 
 	//light labor skills for skeleton manual labor and some warrior-adventurer skills, equipment is still bad probably
-	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/masonry, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/craft/masonry, 1, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 
 	H.set_patron(/datum/patron/inhumen/zizo)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

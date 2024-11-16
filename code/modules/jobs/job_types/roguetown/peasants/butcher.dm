@@ -48,14 +48,14 @@
 	H.change_stat("intelligence", -1)
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE) // Not a trained cook, but knows a thing or two
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/labor/taming, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE) // Better than a soilson, but doesn't outshine a hunter or a weaver
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 5, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE) // Not a trained cook, but knows a thing or two
+		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/labor/taming, 5, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE) // Better than a soilson, but doesn't outshine a hunter or a weaver
+		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/labor/butchering, 5, TRUE)
 
