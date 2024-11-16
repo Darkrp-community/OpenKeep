@@ -334,6 +334,11 @@
 	debris = list(/obj/item/grown/log/tree/small = 1)
 	climb_offset = 10
 
+/obj/structure/table/wood/bar
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	flags_1 = NODECONSTRUCT_1
+	max_integrity = 1000
+
 /obj/structure/table/wood/crafted/Initialize()
 	. = ..()
 	icon_state = pick("tablewood2", "tablewood1")

@@ -279,11 +279,6 @@
 	},
 /area/shuttle/supply/sell)
 "D" = (
-/obj/docking_port/mobile/supply{
-	dwidth = 9;
-	height = 4;
-	width = 17
-	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw";
 	dir = 1
