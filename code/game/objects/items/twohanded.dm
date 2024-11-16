@@ -692,36 +692,6 @@
 	user.visible_message("<span class='suicide'>[user] impales [user.p_them()]self in [user.p_their()] abdomen with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (BRUTELOSS)
 
-/obj/item/twohanded/pitchfork/demonic/pickup(mob/living/user)
-	. = ..()
-	if(isliving(user) && user.mind && user.owns_soul() && !is_devil(user))
-		var/mob/living/U = user
-		U.visible_message("<span class='warning'>As [U] picks [src] up, [U]'s arms briefly catch fire.</span>", \
-			"<span class='warning'>\"As you pick up [src] your arms ignite, reminding you of all your past sins.\"</span>")
-		if(ishuman(U))
-			var/mob/living/carbon/human/H = U
-			H.apply_damage(rand(force/2, force), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-		else
-			U.adjustFireLoss(rand(force/2,force))
-
-/obj/item/twohanded/pitchfork/demonic/attack(mob/target, mob/living/carbon/human/user)
-	if(user.mind && user.owns_soul() && !is_devil(user))
-		to_chat(user, "<span class='warning'>[src] burns in your hands.</span>")
-		user.apply_damage(rand(force/2, force), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-	..()
-
-/obj/item/twohanded/pitchfork/demonic/ascended/afterattack(atom/target, mob/user, proximity)
-	. = ..()
-	if(!proximity || !wielded)
-		return
-	if(iswallturf(target))
-		var/turf/closed/wall/W = target
-		user.visible_message("<span class='danger'>[user] blasts \the [target] with \the [src]!</span>")
-		playsound(target, 'sound/blank.ogg', 100, TRUE)
-		W.break_wall()
-		W.ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
-		return
-
 //HF blade
 
 /obj/item/twohanded/vibro_weapon

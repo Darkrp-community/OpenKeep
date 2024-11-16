@@ -392,53 +392,6 @@
 			else
 				priority_announce("The NAP has been revoked.", null, 'sound/blank.ogg')
 
-
-
-
-		if("guns")
-			if(!check_rights(R_FUN))
-				return
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Summon Guns"))
-			var/survivor_probability = 0
-			switch(alert("Do you want this to create survivors antagonists?",,"No Antags","Some Antags","All Antags!"))
-				if("Some Antags")
-					survivor_probability = 25
-				if("All Antags!")
-					survivor_probability = 100
-
-			rightandwrong(SUMMON_GUNS, usr, survivor_probability)
-
-		if("magic")
-			if(!check_rights(R_FUN))
-				return
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Summon Magic"))
-			var/survivor_probability = 0
-			switch(alert("Do you want this to create survivors antagonists?",,"No Antags","Some Antags","All Antags!"))
-				if("Some Antags")
-					survivor_probability = 25
-				if("All Antags!")
-					survivor_probability = 100
-
-			rightandwrong(SUMMON_MAGIC, usr, survivor_probability)
-
-		if("events")
-			if(!check_rights(R_FUN))
-				return
-			if(!SSevents.wizardmode)
-				if(alert("Do you want to toggle summon events on?",,"Yes","No") == "Yes")
-					summonevents()
-					SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Summon Events", "Activate"))
-
-			else
-				switch(alert("What would you like to do?",,"Intensify Summon Events","Turn Off Summon Events","Nothing"))
-					if("Intensify Summon Events")
-						summonevents()
-						SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Summon Events", "Intensify"))
-					if("Turn Off Summon Events")
-						SSevents.toggleWizardmode()
-						SSevents.resetFrequency()
-						SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Summon Events", "Disable"))
-
 		if("dorf")
 			if(!check_rights(R_FUN))
 				return

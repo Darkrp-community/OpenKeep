@@ -57,7 +57,6 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_MONKEY = /datum/game_mode/monkey,
 	ROLE_REVENANT,
 	ROLE_ABDUCTOR,
-	ROLE_DEVIL = /datum/game_mode/devil,
 //	ROLE_INTERNAL_AFFAIRS = /datum/game_mode/traitor/internal_affairs,
 	ROLE_SENTIENCE
 ))
