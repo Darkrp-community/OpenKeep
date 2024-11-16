@@ -626,6 +626,8 @@
 #include "code\datums\particle_weathers\datum_types\rain.dm"
 #include "code\datums\particle_weathers\datum_types\snow_storm.dm"
 #include "code\datums\particle_weathers\sounds\looping_sounds.dm"
+#include "code\datums\pollutants\foods.dm"
+#include "code\datums\pollutants\generic.dm"
 #include "code\datums\skills\_skill.dm"
 #include "code\datums\skills\combat.dm"
 #include "code\datums\skills\craft.dm"
