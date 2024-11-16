@@ -1428,7 +1428,6 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town)
 "bFC" = (
-/obj/item/reagent_containers/glass/bottle/anxiety,
 /obj/item/reagent_containers/glass/bottle/rogue/strongpoison,
 /obj/structure/closet/crate/chest/neu_iron{
 	locked = 1;
@@ -4005,7 +4004,6 @@
 /obj/structure/rack/rogue{
 	pixel_y = 16
 	},
-/obj/item/keyring/guardcastle,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town/garrison)
 "erc" = (
@@ -4180,7 +4178,7 @@
 	})
 "eyB" = (
 /obj/item/candle/yellow/lit/infinite{
-	light_outer_range =  1;
+	light_outer_range = 1;
 	pixel_x = 8;
 	pixel_y = 5
 	},
@@ -8083,11 +8081,6 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/exposed/under/sewer)
-"izd" = (
-/obj/structure/bed/rogue/shit,
-/obj/item/clothing/head/roguetown/puritan,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/rtfield)
 "izo" = (
 /obj/structure/fluff/walldeco/vinez/l,
 /turf/open/water/sewer,
@@ -8140,7 +8133,6 @@
 /area/rogue/indoors/town/shop)
 "iDr" = (
 /obj/structure/rack/rogue,
-/obj/item/keyring/guardcastle,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town/garrison)
 "iDN" = (
@@ -8899,12 +8891,6 @@
 "jsn" = (
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains)
-"jtc" = (
-/obj/structure/disposalpipe/broken{
-	dir = 4
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/town/roofs)
 "jtB" = (
 /obj/machinery/light/rogue/firebowl,
 /turf/open/floor/rogue/dirt/road,
@@ -14621,12 +14607,6 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
-"pfY" = (
-/obj/structure/disposalpipe/broken{
-	dir = 8
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/town/roofs)
 "pgB" = (
 /obj/structure/mineral_door/wood/fancywood{
 	lockid = "nightmaiden";
@@ -14999,7 +14979,6 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "pwX" = (
-/obj/structure/bookcase/random/reference,
 /obj/item/book/rogue/secret/xylix,
 /obj/item/book/rogue/law,
 /turf/open/floor/rogue/tile{
@@ -15050,10 +15029,6 @@
 "pyU" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/exposed/dwarf)
-"pzz" = (
-/obj/structure/kneestingers,
-/turf/open/water/sewer,
-/area/rogue/outdoors/exposed/under/sewer)
 "pzV" = (
 /turf/open/floor/rogue/rooftop/green{
 	dir = 1
@@ -18423,7 +18398,7 @@
 /area/rogue/under/town/basement)
 "tez" = (
 /obj/item/candle/yellow/lit/infinite{
-	light_outer_range =  1;
+	light_outer_range = 1;
 	pixel_x = -8;
 	pixel_y = 5
 	},
@@ -21941,7 +21916,6 @@
 /obj/item/candle/yellow,
 /obj/item/candle/yellow,
 /obj/item/candle/yellow,
-/obj/item/keyring/servant,
 /obj/item/soap,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/under/basement)
@@ -33859,7 +33833,7 @@ qio
 gtw
 hsL
 psp
-pzz
+sYX
 ijK
 psp
 psp
@@ -34634,7 +34608,7 @@ nSS
 tvZ
 hsL
 psp
-pzz
+sYX
 ijK
 ijK
 qLT
@@ -38514,7 +38488,7 @@ aRI
 aRI
 aRI
 psp
-pzz
+sYX
 ijK
 qLT
 xnA
@@ -52630,7 +52604,7 @@ wdV
 wdV
 uzs
 uzs
-izd
+oMj
 bSo
 uzs
 uzs
@@ -83531,7 +83505,7 @@ qqw
 qqw
 mpi
 aCN
-pfY
+aCN
 lta
 lNV
 aHT
@@ -83725,7 +83699,7 @@ qqw
 mpi
 mpi
 aCN
-jtc
+aCN
 lta
 vgI
 aHT
