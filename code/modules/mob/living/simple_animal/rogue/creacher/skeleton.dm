@@ -86,8 +86,16 @@
 	minimum_distance = 5
 	ranged_cooldown_time = 60
 	check_friendly_fire = 1
-	loot = list(/obj/item/alch/bone,	/obj/item/alch/bone, /obj/item/alch/bone, /obj/item/skull, /obj/item/gun/ballistic/revolver/grenadelauncher/bow,
-			 /obj/item/ammo_casing/caseless/rogue/arrow,  /obj/item/ammo_casing/caseless/rogue/arrow,  /obj/item/ammo_casing/caseless/rogue/arrow)
+	loot = list(
+		/obj/item/alch/bone,
+		/obj/item/alch/bone,
+		/obj/item/alch/bone,
+		/obj/item/skull,
+		/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
+		/obj/item/ammo_casing/caseless/rogue/arrow,
+		/obj/item/ammo_casing/caseless/rogue/arrow,
+		/obj/item/ammo_casing/caseless/rogue/arrow
+	)
 
 /mob/living/simple_animal/hostile/rogue/skeleton/get_sound(input)
 	switch(input)

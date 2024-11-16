@@ -12,10 +12,10 @@
 	possible_rmb_intents = list()
 
 /mob/living/carbon/human/species/skeleton/npc/no_equipment
-    skel_outfit = null
+	skel_outfit = null
 
 /mob/living/carbon/human/species/skeleton/no_equipment
-    skel_outfit = null
+	skel_outfit = null
 
 /mob/living/carbon/human/species/skeleton/npc
 	aggressive = 1
