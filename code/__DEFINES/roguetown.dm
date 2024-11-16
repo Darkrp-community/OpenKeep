@@ -114,16 +114,6 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_ADEPT			"CAT_ADEPT" // Used for Adept class selection
 
 /*
-	String category tags
-	This time for the drifter waves, used for sorting and scheduling purposes
-*/
-#define DTAG_ALLWAVES		"CAT_ALLWAVES"		// Another define for jus the basic allclass
-#define DTAG_DISABLED		"CAT_DISABLED"		// Disabled, do not use
-#define DTAG_FILLERS		"CAT_FILLER"		// If we have nothing better to do, time for filler
-#define DTAG_ANTAGS			"CAT_ANTAGS"		// A catchall for antag groups
-#define DTAG_BANDITS		"CAT_BANDITS"		// some bandits I guess 	<- Disabled; issues with spawning bandits as drifters
-
-/*
 	Defines for the triumph buy datum categories
 */
 #define TRIUMPH_CAT_ROUND_EFX "ROUND-EFX"

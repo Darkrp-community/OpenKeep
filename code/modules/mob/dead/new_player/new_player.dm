@@ -173,12 +173,11 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	if(href_list["refresh"])
 		winshow(src, "stonekeep_prefwin", FALSE)
 		src << browse(null, "window=preferences_browser")
-//		src << browse(null, "window=playersetup") //closes the player setup window
 		new_player_panel()
 
-//	if(href_list["rpprompt"])
-//		do_rp_prompt()
-//		return
+	if(client && client.prefs.is_active_migrant())
+		to_chat(usr, span_boldwarning("You are in the migrant queue."))
+		return
 
 	if(href_list["late_join"])
 		if(!SSticker?.IsRoundInProgress())
@@ -188,11 +187,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 		if(href_list["late_join"] == "override")
 			LateChoices()
 			return
-/*#ifdef MATURESERVER
-		if(key && (world.time < GLOB.respawntimes[key] + RESPAWNTIME))
-			to_chat(usr, "<span class='warning'>I can return in [GLOB.respawntimes[key] + RESPAWNTIME - world.time].</span>")
-			return
-#else*/
+
 
 
 		var/timetojoin = 5 MINUTES
@@ -249,6 +244,10 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 			if((living_player_count() >= relevant_cap) || (src != SSticker.queued_players[1]))
 				to_chat(usr, "<span class='warning'>Server is full.</span>")
 				return
+
+		if(client && client.prefs.is_active_migrant())
+			to_chat(usr, span_boldwarning("You are in the migrant queue."))
+			return
 
 		AttemptLateSpawn(href_list["SelectedJob"])
 		return
@@ -452,10 +451,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	//Remove the player from the join queue if he was in one and reset the timer
 	SSticker.queued_players -= src
 	SSticker.queue_delay = 4
-
-	// Jus remove them from drifter queue if they were in it.
-	// This shit shouldn't be firing before the round starts anyways sooo this is one of the only ways in
-	SSrole_class_handler.cleanup_drifter_queue(client)
 
 	testing("basedtest 1")
 
@@ -697,7 +692,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	src << browse(null, "window=latechoices") //closes late job selection
 
 	SStriumphs.remove_triumph_buy_menu(client)
-	SSrole_class_handler.cleanup_drifter_queue(client)
 
 	winshow(src, "stonekeep_prefwin", FALSE)
 	src << browse(null, "window=preferences_browser")

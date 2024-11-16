@@ -8,7 +8,7 @@
 	min_pq = 2
 	maximum_possible_slots = 1
 	pickprob = 50
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 
 /datum/outfit/job/roguetown/adventurer/heartfeltlord/pre_equip(mob/living/carbon/human/H)
 	..()
