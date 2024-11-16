@@ -38,8 +38,6 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		/obj/shapeshift_holder,
 		//explodes when deleted
 		/obj/structure/checkoutmachine,
-		//spawns a bunch of swarmers that wander off and damage stuff that gets spawned
-		/mob/living/simple_animal/hostile/megafauna/swarmer_swarm_beacon,
 		// requires a pod passed
 		/obj/effect/DPfall,
 		/obj/effect/DPtarget,

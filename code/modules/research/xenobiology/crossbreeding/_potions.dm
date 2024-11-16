@@ -43,9 +43,6 @@ Slimecrossing Potions
 	if(!isliving(M) || M.stat == DEAD)
 		to_chat(user, "<span class='warning'>The pacification potion only works on the living.</span>")
 		return ..()
-	if(istype(M, /mob/living/simple_animal/hostile/megafauna))
-		to_chat(user, "<span class='warning'>The pacification potion does not work on beings of pure evil!</span>")
-		return ..()
 	if(M != user)
 		M.visible_message("<span class='danger'>[user] starts to feed [M] a pacification potion!</span>",
 			"<span class='danger'>[user] starts to feed you a pacification!</span>")
