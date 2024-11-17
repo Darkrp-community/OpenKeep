@@ -49,7 +49,7 @@
 	if(!produce_ready)
 		return
 	apply_farming_fatigue(user, 4)
-	add_sleep_experience(user, /datum/skill/labor/farming, user.STAINT * 2)  sleepxp not a thing, get regular
+	add_sleep_experience(user, /datum/skill/labor/farming, user.STAINT * 2)
 
 	var/farming_skill = user.mind.get_skill_level(/datum/skill/labor/farming)
 	var/chance_to_ruin = 50 - (farming_skill * 25)
@@ -70,7 +70,7 @@
 
 	to_chat(user, span_notice(feedback))
 	yield_produce(modifier)
-	user.mind.adjust_experience(/datum/skill/labor/farming, FARMING_XPGAIN, FALSE)
+	//user.mind.adjust_experience(/datum/skill/labor/farming, FARMING_XPGAIN, FALSE)
 
 /obj/structure/soil/proc/try_handle_harvest(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/rogueweapon/sickle))
