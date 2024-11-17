@@ -1750,7 +1750,6 @@
 /area/rogue/indoors/town/garrison)
 "gB" = (
 /obj/structure/table/wood/plain,
-/obj/item/reagent_containers/food/snacks/grown/garlic,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/apothecary)
 "gC" = (

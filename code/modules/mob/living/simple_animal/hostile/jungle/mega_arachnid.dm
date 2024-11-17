@@ -27,7 +27,6 @@
 	faction = list("bugs")
 	ranged_cooldown_time = 20
 	base_intents = list(/datum/intent/simple/stab, /datum/intent/simple/bigbite)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/spider = 1, /obj/item/reagent_containers/food/snacks/spiderleg = 8)
 	projectiletype = /obj/projectile/mega_arachnid
 	projectilesound = 'sound/foley/flesh_rem2.ogg'
 	alpha = 50

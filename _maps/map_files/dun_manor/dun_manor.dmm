@@ -816,10 +816,6 @@
 	dir = 1;
 	icon_state = "crow"
 	},
-/obj/item/reagent_containers/food/snacks/cracker{
-	pixel_x = -14;
-	pixel_y = -10
-	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "aMc" = (
@@ -1094,11 +1090,6 @@
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/chapel)
 "aVK" = (
-/obj/item/reagent_containers/food/snacks/cracker{
-	pixel_x = 6;
-	pixel_y = 15
-	},
-/obj/item/reagent_containers/food/snacks/cracker,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "aVR" = (

@@ -335,54 +335,6 @@
 			if(M && stat != DEAD)
 				emote("me", 1, "hisses!")
 
-/mob/living/simple_animal/pet/cat/cak //I told you I'd do it, Remie
-	name = "Keeki"
-	desc = ""
-	icon_state = "cak"
-	icon_living = "cak"
-	icon_dead = "cak_dead"
-	health = 50
-	maxHealth = 50
-	gender = FEMALE
-	harm_intent_damage = 10
-	butcher_results = list(/obj/item/organ/brain = 1, /obj/item/organ/heart = 1, /obj/item/reagent_containers/food/snacks/cakeslice/birthday = 3,  \
-	/obj/item/reagent_containers/food/snacks/meat/slab = 2)
-	response_harm_continuous = "takes a bite out of"
-	response_harm_simple = "take a bite out of"
-	attacked_sound = 'sound/blank.ogg'
-	deathmessage = "loses its false life and collapses!"
-	deathsound = "bodyfall"
-
-/mob/living/simple_animal/pet/cat/cak/CheckParts(list/parts)
-	..()
-	var/obj/item/organ/brain/B = locate(/obj/item/organ/brain) in contents
-	if(!B || !B.brainmob || !B.brainmob.mind)
-		return
-	B.brainmob.mind.transfer_to(src)
-	to_chat(src, "<span class='big bold'>I are a cak!</span><b> You're a harmless cat/cake hybrid that everyone loves. People can take bites out of you if they're hungry, but you regenerate health \
-	so quickly that it generally doesn't matter. You're remarkably resilient to any damage besides this and it's hard for you to really die at all. You should go around and bring happiness and \
-	free cake to the station!</b>")
-	var/new_name = stripped_input(src, "Enter my name, or press \"Cancel\" to stick with Keeki.", "Name Change")
-	if(new_name)
-		to_chat(src, "<span class='notice'>My name is now <b>\"new_name\"</b>!</span>")
-		name = new_name
-
-/mob/living/simple_animal/pet/cat/cak/Life()
-	..()
-	if(stat)
-		return
-	if(health < maxHealth)
-		adjustBruteLoss(-8) //Fast life regen
-	for(var/obj/item/reagent_containers/food/snacks/donut/D in range(1, src)) //Frosts nearby donuts!
-		if(!D.is_decorated)
-			D.decorate_donut()
-
-/mob/living/simple_animal/pet/cat/cak/attack_hand(mob/living/L)
-	..()
-	if(L.used_intent.type == INTENT_HARM && L.reagents && !stat)
-		L.reagents.add_reagent(/datum/reagent/consumable/nutriment, 0.4)
-		L.reagents.add_reagent(/datum/reagent/consumable/nutriment/vitamin, 0.4)
-
 
 
 /mob/living/simple_animal/pet/cat/rogue/attack_hand(mob/living/carbon/human/M) // Gato Basado - not all pets are welcome
