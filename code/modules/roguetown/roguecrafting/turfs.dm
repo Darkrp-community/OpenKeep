@@ -8,7 +8,7 @@
 	result = /turf/open/floor/rogue/ruinedwood
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	skillcraft = /datum/skill/craft/carpentry
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/turfs/woodfloor/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
@@ -33,7 +33,7 @@
 	result = /turf/closed/wall/mineral/rogue/wood
 	reqs = list(/obj/item/grown/log/tree/small = 2)
 	skillcraft = /datum/skill/craft/carpentry
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/turfs/woodwall/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
@@ -47,7 +47,7 @@
 	result = /turf/closed/wall/mineral/rogue/wood/window
 	reqs = list(/obj/item/grown/log/tree/small = 2)
 	skillcraft = /datum/skill/craft/carpentry
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/turfs/woodwindow/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
@@ -63,7 +63,7 @@
 	result = /turf/open/floor/rogue/blocks
 	reqs = list(/obj/item/natural/stone = 1)
 	skillcraft = /datum/skill/craft/masonry
-	craftdiff = 1
+	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/turfs/stonefloor/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
@@ -79,7 +79,7 @@
 	result = /turf/closed/wall/mineral/rogue/stone
 	reqs = list(/obj/item/natural/stone = 2)
 	skillcraft = /datum/skill/craft/masonry
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/turfs/stonewall/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
@@ -93,7 +93,7 @@
 	result = /turf/closed/wall/mineral/rogue/stone/window
 	reqs = list(/obj/item/natural/stone = 2)
 	skillcraft = /datum/skill/craft/masonry
-	craftdiff = 2
+	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/turfs/stonewindow/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
@@ -103,8 +103,6 @@
 	return TRUE
 
 /*========= CRAFTING SKILL ==========*/
-
-// Twig floors and tent walls are easier to make than wood and stone walls/floors.
 
 /datum/crafting_recipe/roguetown/turfs/twig
 	name = "twig floor"

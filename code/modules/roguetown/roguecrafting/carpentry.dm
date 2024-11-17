@@ -46,6 +46,16 @@
 				/obj/item/cooking/platter)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
+/datum/crafting_recipe/roguetown/carpentry/rod
+	name = "fishing rod"
+	result = /obj/item/fishingrod/crafted
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+		/obj/item/natural/fibers = 2)
+	craftdiff = 0
+
+/obj/item/fishingrod/crafted
+	sellprice = 8
+
 /*========= SKILL LEVEL: 1 REQUIRED ==========*/
 
 /datum/crafting_recipe/roguetown/carpentry/woodsword
@@ -73,16 +83,6 @@
 	tools = list(/obj/item/rogueweapon/knife/hunting)
 	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/carpentry/rod
-	name = "fishing rod"
-	result = /obj/item/fishingrod/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-		/obj/item/natural/fibers = 2)
-	craftdiff = 1
-
-/obj/item/fishingrod/crafted
-	sellprice = 8
-
 /datum/crafting_recipe/roguetown/woodspade
 	name = "wood spade"
 	result = /obj/item/rogueweapon/shovel/small
@@ -92,6 +92,13 @@
 
 /obj/item/rogueweapon/shovel/small/crafted
 	sellprice = 5
+
+/datum/crafting_recipe/roguetown/carpentry/recurve
+	name = "recurve bow"
+	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve)
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+	/obj/item/natural/fibers = 4)
+	craftdiff = 1
 
 /*========= SKILL LEVEL: 2 REQUIRED ==========*/
 
@@ -137,13 +144,6 @@
 	/obj/item/roguegear = 1)
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/carpentry/recurve
-	name = "recurve bow"
-	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/obj/item/natural/fibers = 4)
-	craftdiff = 3
-
 /datum/crafting_recipe/roguetown/carpentry/longbow
 	name = "longbow"
 	result = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long)
@@ -171,7 +171,7 @@
 	result = list(/obj/item/rogueweapon/thresher)
 	craftdiff = 3
 
-// Admittedly not too sure why some of these recipes require carpentry skill for steel stuff. You'd have to ask Dromkii.
+// These are so these items don't receive the smithing modifiers.
 
 /datum/crafting_recipe/roguetown/carpentry/steelstaff
 	name = "steel quarterstaff"
