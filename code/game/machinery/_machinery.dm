@@ -243,10 +243,6 @@
 	else
 		if(interaction_flags_machine & INTERACT_MACHINE_REQUIRES_SILICON)
 			return FALSE
-		if(!Adjacent(user))
-			var/mob/living/carbon/H = user
-			if(!(istype(H) && H.has_dna() && H.dna.check_mutation(TK)))
-				return FALSE
 	return TRUE
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -420,15 +416,6 @@
 
 /obj/machinery/proc/can_be_overridden()
 	. = 1
-
-/obj/machinery/tesla_act(power, tesla_flags, shocked_objects)
-	..()
-	if(prob(85) && (tesla_flags & TESLA_MACHINE_EXPLOSIVE) && !(resistance_flags & INDESTRUCTIBLE))
-		explosion(src, 1, 2, 4, flame_range = 2, adminlog = FALSE, smoke = FALSE)
-	if(tesla_flags & TESLA_OBJ_DAMAGE)
-		take_damage(power/2000, BURN, "energy")
-		if(prob(40))
-			emp_act(EMP_LIGHT)
 
 /obj/machinery/Exited(atom/movable/AM, atom/newloc)
 	. = ..()

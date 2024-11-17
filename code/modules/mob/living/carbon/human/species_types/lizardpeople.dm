@@ -21,7 +21,6 @@
 	exotic_bloodtype = "L"
 	disliked_food = GRAIN | DAIRY
 	liked_food = GROSS | MEAT
-	inert_mutation = FIREBREATH
 	deathsound = 'sound/blank.ogg'
 	wings_icon = "Dragon"
 

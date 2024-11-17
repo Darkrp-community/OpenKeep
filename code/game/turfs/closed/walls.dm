@@ -85,20 +85,6 @@
 		dismantle_wall(1)
 		return
 
-/turf/closed/wall/attack_hulk(mob/user)
-	..()
-	if(prob(hardness))
-		playsound(src, 'sound/blank.ogg', 100, TRUE)
-		user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
-		dismantle_wall(1)
-	else
-		playsound(src, 'sound/blank.ogg', 50, TRUE)
-		add_dent(WALL_DENT_HIT)
-		user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
-					"<span class='danger'>I smash \the [src]!</span>", \
-					"<span class='hear'>I hear a booming smash!</span>")
-	return TRUE
-
 /turf/closed/wall/attack_hand(mob/user)
 	. = ..()
 	if(.)

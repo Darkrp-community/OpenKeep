@@ -26,9 +26,6 @@
 	else
 		return QDEL_HINT_LETMELIVE
 
-/obj/structure/stone_tile/singularity_pull()
-	return
-
 /obj/structure/stone_tile/Crossed(atom/movable/AM)
 	if(falling || fallen)
 		return

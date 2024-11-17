@@ -42,11 +42,6 @@
 		for(var/datum/antagonist/A in mind.antag_datums)
 			A.on_life(src)
 
-	if(!IS_IN_STASIS(src))
-		if(stat < 3) //not dead
-			for(var/datum/mutation/human/HM in dna.mutations) // Handle active genes
-				HM.on_life()
-
 		if(mode == AI_OFF)
 			if(stat)
 				if(health > 0)

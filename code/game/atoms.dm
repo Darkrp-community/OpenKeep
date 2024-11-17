@@ -312,12 +312,6 @@
 
 	return FALSE
 
-
-
-///This atom has been hit by a hulkified mob in hulk mode (user)
-/atom/proc/attack_hulk(mob/living/carbon/human/user)
-	SEND_SIGNAL(src, COMSIG_ATOM_HULK_ATTACK, user)
-
 /**
  * Ensure a list of atoms/reagents exists inside this atom
  *
@@ -640,18 +634,6 @@
 ///Called when gravity returns after floating I think
 /atom/proc/handle_fall()
 	return
-
-///Respond to the singularity eating this atom
-/atom/proc/singularity_act()
-	return
-
-/**
- * Respond to the singularity pulling on us
- *
- * Default behaviour is to send COMSIG_ATOM_SING_PULL and return
- */
-/atom/proc/singularity_pull()
-
 
 /**
  * Respond to acid being used on our atom
