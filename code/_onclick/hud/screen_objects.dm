@@ -1528,20 +1528,20 @@
 		var/mob/living/carbon/human/H = usr
 		if(!HAS_TRAIT(H, TRAIT_NOMOOD))
 			var/stress_amt = H.get_stress_amount()
-			if(stress_amt > 0)
+			if(stress_amt > STRESS_BAD)
 				state2use = "stress2"
-			if(stress_amt >= 5)
+			if(stress_amt >= STRESS_VBAD)
 				state2use = "stress3"
-			if(stress_amt >= 15)
+			if(stress_amt == STRESS_INSANE)
 				state2use = "stress4"
-			if(stress_amt >= 25)
+			if(stress_amt >= STRESS_INSANE)
 				state2use = "stress5"
 		if(H.has_status_effect(/datum/status_effect/buff/drunk))
 			state2use = "mood_drunk"
 		if(H.has_status_effect(/datum/status_effect/buff/druqks))
 			state2use = "mood_drunk"
 		if(H.InFullCritical())
-			state2use = "stress4"
+			state2use = "mood_fear"
 		if(H.mind)
 			if(H.mind.has_antag_datum(/datum/antagonist/zombie))
 				state2use = "mood_fear"
