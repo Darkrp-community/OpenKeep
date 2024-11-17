@@ -107,7 +107,7 @@
 				target.visible_message(span_info("Vital energies are sapped towards [target]!"), span_notice("The life around me pales as I am restored!"))
 				// set up a ritual pile of bones (or just cast near a stack of bones whatever) around us for massive bonuses, cap at 50 for 75 healing total (wowie)
 				situational_bonus = 0
-				for (var/obj/item/stack/sheet/bone/O in oview(5, user))
+				for (var/obj/item/alch/bone/O in oview(5, user))
 					situational_bonus = min(situational_bonus + 5, 50)
 				if (situational_bonus > 0)
 					conditional_buff = TRUE

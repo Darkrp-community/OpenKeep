@@ -92,25 +92,9 @@
 
 /obj/item/reagent_containers/food/snacks/grown/attackby(obj/item/O, mob/user, params)
 	..()
-	if (istype(O, /obj/item/plant_analyzer))
-		var/msg = "<span class='info'>*---------*\n This is \a <span class='name'>[src]</span>.\n"
-		if(seed)
-			msg += seed.get_analyzer_text()
-		var/reag_txt = ""
-		if(seed)
-			for(var/reagent_id in seed.reagents_add)
-				var/datum/reagent/R  = GLOB.chemical_reagents_list[reagent_id]
-				var/amt = reagents.get_reagent_amount(reagent_id)
-				reag_txt += "\n<span class='info'>- [R.name]: [amt]</span>"
-
-		if(reag_txt)
-			msg += reag_txt
-			msg += "<br><span class='info'>*---------*</span>"
-		to_chat(user, msg)
-	else
-		if(seed)
-			for(var/datum/plant_gene/trait/T in seed.genes)
-				T.on_attackby(src, O, user)
+	if(seed)
+		for(var/datum/plant_gene/trait/T in seed.genes)
+			T.on_attackby(src, O, user)
 
 
 // Various gene procs
@@ -230,7 +214,7 @@
 	if(cotton.amount > old_cotton_amount)
 		to_chat(user, "<span class='notice'>I add the newly-formed [cotton_name] to the stack. It now contains [cotton.amount] [cotton_name].</span>")
 	qdel(src)
-	
+
 
 /obj/item/grown/novaflower Could be rerolled to fyrtius flowers I suppose, could be useful inspiration
 	name = "novaflower"
@@ -276,7 +260,7 @@
 	..()
 	if(!user.gloves)
 		to_chat(user, "<span class='danger'>The [name] burns my bare hand!</span>")
-		user.adjustFireLoss(rand(1, 5))	
+		user.adjustFireLoss(rand(1, 5))
 
 // corpse flower effect, another worth saving
 /obj/item/seeds/starthistle/corpse_flower/process()

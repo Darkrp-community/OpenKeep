@@ -25,7 +25,7 @@
 	icon = 'modular/Neu_Food/icons/food.dmi'
 	name = "cackleberry"
 	desc = ""
-	icon_state = "egg" 
+	icon_state = "egg"
 	list_reagents = list(/datum/reagent/consumable/eggyolk = 5)
 	cooked_type = null
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/friedegg
@@ -62,38 +62,6 @@
 
 	var/color = mix_color_from_reagents(reagents.reagent_list)
 	add_atom_colour(color, FIXED_COLOUR_PRIORITY)
-
-/obj/item/reagent_containers/food/snacks/egg/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	if(!..()) //was it caught by a mob?
-		var/turf/T = get_turf(hit_atom)
-		var/obj/O = new /obj/effect/decal/cleanable/food/egg_smudge(T)
-		O.pixel_x = rand(-8,8)
-		O.pixel_y = rand(-8,8)
-		if(prob(1)) //Roughly (1%) chance to make a chick, as in Minecraft. I decided not to include the chances for the creation of multiple chicks from the impact of one egg, since that'd probably require nested prob()s or something (and people might think that it was a bug, anyway).
-			if(chick_count < MAX_CHICKENS) //Chicken code uses this MAX_CHICKENS variable, so I figured that I'd use it again here. Even this check and the check in chicken code both use the MAX_CHICKENS variable, they use independent counter variables and thus are independent of each other.
-				new /mob/living/simple_animal/chick(T)
-				chick_count++
-		reagents.reaction(hit_atom, TOUCH)
-		qdel(src)
-
-/obj/item/reagent_containers/food/snacks/egg/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/toy/crayon))
-		var/obj/item/toy/crayon/C = W
-		var/clr = C.crayon_color
-
-		if(!(clr in list("blue", "green", "mime", "orange", "purple", "rainbow", "red", "yellow")))
-			to_chat(usr, "<span class='notice'>[src] refuses to take on this colour!</span>")
-			return
-
-		to_chat(usr, "<span class='notice'>I colour [src] with [W].</span>")
-		icon_state = "egg-[clr]"
-	else if(istype(W, /obj/item/stamp/clown))
-		var/clowntype = pick("grock", "grimaldi", "rainbow", "chaos", "joker", "sexy", "standard", "bobble", "krusty", "bozo", "pennywise", "ronald", "jacobs", "kelly", "popov", "cluwne")
-		icon_state = "egg-clown-[clowntype]"
-		desc = ""
-		to_chat(usr, "<span class='notice'>I stamp [src] with [W], creating an artistic and not remotely horrifying likeness of clown makeup.</span>")
-	else
-		..()
 
 /obj/item/reagent_containers/food/snacks/egg/blue
 	icon_state = "egg-blue"

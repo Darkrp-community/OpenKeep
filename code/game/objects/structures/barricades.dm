@@ -79,23 +79,6 @@
 	icon_state = "woodenbarricade_r2"
 	max_integrity = 40
 
-/obj/structure/barricade/wooden/attackby(obj/item/I, mob/user)
-	if(istype(I,/obj/item/stack/sheet/mineral/wood))
-		var/obj/item/stack/sheet/mineral/wood/W = I
-		if(W.amount < 5)
-			to_chat(user, "<span class='warning'>I need at least five wooden planks to make a wall!</span>")
-			return
-		else
-			to_chat(user, "<span class='notice'>I start adding [I] to [src]...</span>")
-			if(do_after(user, 50, target=src))
-				W.use(5)
-				var/turf/T = get_turf(src)
-				T.PlaceOnTop(/turf/closed/wall/mineral/wood/nonmetal)
-				qdel(src)
-				return
-	return ..()
-
-
 /obj/structure/barricade/wooden/crude
 	name = "crude plank barricade"
 	desc = ""
@@ -108,9 +91,6 @@
 	desc = ""
 	icon_state = "woodenbarricade-snow-old"
 	max_integrity = 75
-
-/obj/structure/barricade/wooden/make_debris()
-	new /obj/item/stack/sheet/mineral/wood(get_turf(src), drop_amount)
 
 #undef SINGLE
 #undef VERTICAL

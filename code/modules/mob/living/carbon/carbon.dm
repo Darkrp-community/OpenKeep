@@ -285,10 +285,6 @@
 
 	dat += "<BR><B>Back:</B> <A href='?src=[REF(src)];item=[SLOT_BACK]'>[back ? back : "Nothing"]</A>"
 
-
-	if(istype(wear_mask, /obj/item/clothing/mask) && istype(back, /obj/item/tank))
-		dat += "<BR><A href='?src=[REF(src)];internal=1'>[internal ? "Disable Internals" : "Set Internals"]</A>"
-
 	if(handcuffed)
 		dat += "<BR><A href='?src=[REF(src)];item=[SLOT_HANDCUFFED]'>Handcuffed</A>"
 	if(legcuffed)
@@ -589,11 +585,10 @@
 		else
 			if(message)
 				visible_message("<span class='danger'>[src] pukes!</span>", "<span class='danger'>I puke!</span>")
-				if(!isflyperson(src))
-					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomit)
-					if(iscarbon(src))
-						var/mob/living/carbon/C = src
-						C.add_stress(/datum/stressevent/vomit)
+				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomit)
+				if(iscarbon(src))
+					var/mob/living/carbon/C = src
+					C.add_stress(/datum/stressevent/vomit)
 	else
 		if(NOBLOOD in dna?.species?.species_traits)
 			return TRUE

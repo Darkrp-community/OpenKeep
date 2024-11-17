@@ -28,8 +28,6 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		/obj/machinery/launchpad/briefcase,
 		/obj/item/storage/box/syndicate/bundle_A, // can contain a launchpad briefcase
 		//template types
-		/obj/item/gun/magic,
-		/obj/item/gun/magic/staff,
 		//template type again
 		/obj/item/storage/fancy,
 		//needs a mob passed to view it

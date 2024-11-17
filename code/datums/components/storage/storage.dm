@@ -551,11 +551,7 @@
 
 //This proc is called when you want to place an item into the storage item.
 /datum/component/storage/proc/attackby(datum/source, obj/item/I, mob/M, params)
-	if(istype(I, /obj/item/hand_labeler))
-		var/obj/item/hand_labeler/labeler = I
-		if(labeler.mode)
-			return FALSE
-//	. = TRUE //no afterattack
+
 	if(!can_be_inserted(I, FALSE, M))
 		var/atom/real_location = real_location()
 		if(real_location.contents.len >= max_items) //don't use items on the backpack if they don't fit

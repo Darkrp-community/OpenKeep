@@ -255,21 +255,6 @@
 	else
 		. = expected_damage
 
-/datum/spacevine_mutation/flowering
-	name = "flowering"
-	hue = "#0A480D"
-	quality = NEGATIVE
-	severity = 10
-
-/datum/spacevine_mutation/flowering/on_grow(obj/structure/spacevine/holder)
-	if(holder.energy == 2 && prob(severity) && !locate(/obj/structure/alien/resin/flower_bud_enemy) in range(5,holder))
-		new/obj/structure/alien/resin/flower_bud_enemy(get_turf(holder))
-
-/datum/spacevine_mutation/flowering/on_cross(obj/structure/spacevine/holder, mob/living/crosser)
-	if(prob(25))
-		holder.entangle(crosser)
-
-
 // SPACE VINES (Note that this code is very similar to Biomass code)
 /obj/structure/spacevine
 	name = "weepvine"

@@ -110,27 +110,6 @@ SUBSYSTEM_DEF(mapping)
 		returning += M
 		qdel(T, TRUE)
 
-/*	Nuke threats, for making the blue tiles on the station go RED
-	Used by the AI doomsday and the self destruct nuke.
-*/
-
-/datum/controller/subsystem/mapping/proc/add_nuke_threat(datum/nuke)
-	nuke_threats[nuke] = TRUE
-	check_nuke_threats()
-
-/datum/controller/subsystem/mapping/proc/remove_nuke_threat(datum/nuke)
-	nuke_threats -= nuke
-	check_nuke_threats()
-
-/datum/controller/subsystem/mapping/proc/check_nuke_threats()
-	for(var/datum/d in nuke_threats)
-		if(!istype(d) || QDELETED(d))
-			nuke_threats -= d
-
-	for(var/N in nuke_tiles)
-		var/turf/open/floor/circuit/C = N
-		C.update_icon()
-
 /datum/controller/subsystem/mapping/Recover()
 	flags |= SS_NO_INIT
 	initialized = SSmapping.initialized

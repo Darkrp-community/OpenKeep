@@ -523,12 +523,6 @@
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 	return(2)
 
-/turf/proc/can_have_cabling()
-	return TRUE
-
-/turf/proc/can_lay_cable()
-	return can_have_cabling() & !intact
-
 /turf/proc/burn_tile()
 
 /turf/proc/is_shielded()

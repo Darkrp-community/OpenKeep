@@ -12,7 +12,7 @@
 
 
 /obj/item/paper/scroll/attackby(obj/item/P, mob/living/carbon/human/user, params)
-	if(istype(P, /obj/item/pen) || istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
+	if(istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
 		if(!open)
 			to_chat(user, "<span class='warning'>Open me.</span>")
 			return
@@ -201,7 +201,7 @@
 		to_chat(user, "<span class='warning'>The paper resists my attempts to write upon it!</span>")
 		return
 
-/obj/item/paper/confession/update_icon_state() 
+/obj/item/paper/confession/update_icon_state()
 	if(mailer)
 		icon_state = "paper_prep"
 		name = "letter"
@@ -271,7 +271,7 @@
 	var/signed = 0
 
 /obj/item/merctoken/attackby(obj/item/P, mob/living/carbon/human/user, params)
-	if(istype(P, /obj/item/pen) || istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
+	if(istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
 		if(!user.can_read(src))
 			to_chat(user, "<span class='warning'>Even a reader would find these verba incomprehensible.</span>")
 			return

@@ -290,14 +290,7 @@
 	if((AM.anchored && !push_anchored) || (force < (AM.move_resist * MOVE_FORCE_PUSH_RATIO)))
 		now_pushing = FALSE
 		return
-	if (istype(AM, /obj/structure/window))
-		var/obj/structure/window/W = AM
-		if(W.fulltile)
-			for(var/obj/structure/window/win in get_step(W,t))
-				now_pushing = FALSE
-				return
-//	if(pulling == AM)
-//		stop_pulling()
+
 	var/current_dir
 	if(isliving(AM))
 		current_dir = AM.dir
@@ -380,18 +373,6 @@
 
 	changeNext_move(CLICK_CD_GRABBING)
 
-//	if(AM.pulledby && AM.pulledby != src)
-//		if(AM == src)
-//			to_chat(src, "<span class='warning'>I'm being grabbed by something!</span>")
-//			return FALSE
-//		else
-//			if(!supress_message)
-//				AM.visible_message("<span class='danger'>[src] has pulled [AM] from [AM.pulledby]'s grip.</span>", "<span class='danger'>[src] has pulled me from [AM.pulledby]'s grip.</span>", null, null, src)
-//
-//				to_chat(src, "<span class='notice'>I pull [AM] from [AM.pulledby]'s grip!</span>")
-//			log_combat(AM, AM.pulledby, "pulled from", src)
-//			AM.pulledby.stop_pulling() //an object can't be pulled by two mobs at once.
-
 	if(AM != src)
 		pulling = AM
 		AM.pulledby = src
@@ -473,40 +454,6 @@
 
 /mob/living/proc/set_pull_offsets(mob/living/M, grab_state = GRAB_PASSIVE)
 	return //rtd fix not updating because no dirchange
-/* 	if(M == src)
-		return
-	if(M.wallpressed)
-		return
-	if(M.buckled)
-		return //don't make them change direction or offset them if they're buckled into something.
-	var/offset = 0
-	switch(grab_state)
-		if(GRAB_PASSIVE)
-			offset = GRAB_PIXEL_SHIFT_PASSIVE
-		if(GRAB_AGGRESSIVE)
-			offset = GRAB_PIXEL_SHIFT_AGGRESSIVE
-		if(GRAB_NECK)
-			offset = GRAB_PIXEL_SHIFT_NECK
-		if(GRAB_KILL)
-			offset = GRAB_PIXEL_SHIFT_NECK
-	M.setDir(get_dir(M, src))
-	switch(M.dir)
-		if(NORTH)
-			M.set_mob_offsets("pulledby", _x = 0, _y = offset)
-		if(SOUTH)
-			M.set_mob_offsets("pulledby", _x = 0, _y = -offset)
-		if(EAST)
-			if(M.lying == 270) //update the dragged dude's direction if we've turned
-				M.lying = 90
-				M.update_transform() //force a transformation update, otherwise it'll take a few ticks for update_mobility() to do so
-				M.lying_prev = M.lying
-			M.set_mob_offsets("pulledby", _x = offset, _y = 0)
-		if(WEST)
-			if(M.lying == 90)
-				M.lying = 270
-				M.update_transform()
-				M.lying_prev = M.lying
-			M.set_mob_offsets("pulledby", _x = offset, _y = 0) */
 
 /mob/living
 	var/list/mob_offsets = list()
@@ -516,16 +463,11 @@
 		if(mob_offsets[index])
 			reset_offsets(index)
 		mob_offsets[index] = list("x" = _x, "y" = _y)
-//		pixel_x = pixel_x + mob_offsets[index]["x"]
-//		pixel_y = pixel_y + mob_offsets[index]["y"]
 	update_transform()
 
 /mob/living/proc/reset_offsets(index)
 	if(index)
 		if(mob_offsets[index])
-//			animate(src, pixel_x = pixel_x - mob_offsets[index]["x"], pixel_y = pixel_y - mob_offsets[index]["y"], 1)
-//			pixel_x = pixel_x - mob_offsets[index]["x"]
-//			pixel_y = pixel_y - mob_offsets[index]["y"]
 			mob_offsets[index] = null
 	update_transform()
 
@@ -723,8 +665,6 @@
 	for(var/i in ret.Copy())			//iterate storage objects
 		var/atom/A = i
 		SEND_SIGNAL(A, COMSIG_TRY_STORAGE_RETURN_INVENTORY, ret)
-	for(var/obj/item/folder/F in ret.Copy())		//very snowflakey-ly iterate folders
-		ret |= F.contents
 	return ret
 
 // Living mobs use can_inject() to make sure that the mob is not syringe-proof in general.

@@ -337,64 +337,6 @@
 /obj/item/seeds/proc/on_chem_reaction(datum/reagents/S)  //in case seeds have some special interaction with special chems
 	return
 
-/obj/item/seeds/attackby(obj/item/O, mob/user, params)
-	if (istype(O, /obj/item/plant_analyzer))
-		to_chat(user, "<span class='info'>*---------*\n This is \a <span class='name'>[src]</span>.</span>")
-		var/text = get_analyzer_text()
-		if(text)
-			to_chat(user, "<span class='notice'>[text]</span>")
-
-		return
-
-/*	if(istype(O, /obj/item/pen))
-		var/choice = input("What would you like to change?") in list("Plant Name", "Seed Description", "Product Description", "Cancel")
-		if(!user.canUseTopic(src, BE_CLOSE))
-			return
-		switch(choice)
-			if("Plant Name")
-				var/newplantname = reject_bad_text(stripped_input(user, "Write a new plant name:", name, plantname))
-				if(!user.canUseTopic(src, BE_CLOSE))
-					return
-				if (length(newplantname) > 20)
-					to_chat(user, "<span class='warning'>That name is too long!</span>")
-					return
-				if(!newplantname)
-					to_chat(user, "<span class='warning'>That name is invalid.</span>")
-					return
-				else
-					name = "[lowertext(newplantname)]"
-					plantname = newplantname
-			if("Seed Description")
-				var/newdesc = stripped_input(user, "Write a new description:", name, desc)
-				if(!user.canUseTopic(src, BE_CLOSE))
-					return
-				if (length(newdesc) > 180)
-					to_chat(user, "<span class='warning'>That description is too long!</span>")
-					return
-				if(!newdesc)
-					to_chat(user, "<span class='warning'>That description is invalid.</span>")
-					return
-				else
-					desc = newdesc
-			if("Product Description")
-				if(product && !productdesc)
-					productdesc = initial(product.desc)
-				var/newproductdesc = stripped_input(user, "Write a new description:", name, productdesc)
-				if(!user.canUseTopic(src, BE_CLOSE))
-					return
-				if (length(newproductdesc) > 180)
-					to_chat(user, "<span class='warning'>That description is too long!</span>")
-					return
-				if(!newproductdesc)
-					to_chat(user, "<span class='warning'>That description is invalid.</span>")
-					return
-				else
-					productdesc = newproductdesc
-			else
-				return
-*/
-	..() // Fallthrough to item/attackby() so that bags can pick seeds up
-
 // Checks plants for broken tray icons. Use Advanced Proc Call to activate.
 // Maybe some day it would be used as unit test.
 /proc/check_plants_growth_stages_icons()
