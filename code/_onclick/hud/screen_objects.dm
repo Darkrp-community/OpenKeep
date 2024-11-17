@@ -1520,36 +1520,33 @@
 	icon = 'icons/mob/roguehud.dmi'
 	icon_state = "stressback"
 
+
 /atom/movable/screen/stress/update_icon()
 	cut_overlays()
 	var/state2use = "stress1"
-	if(ishuman(hud.mymob))
-		var/mob/living/carbon/H = hud.mymob
-		if(H.stress)
-			state2use = "stress1"
-			if(H.stress == STRESS_VGOOD)
-				state2use = "stress1"
-			if(H.stress >= STRESS_GOOD)
-				state2use = "stress1"
-			if(H.stress >= STRESS_BAD)
+	if(ishuman(usr))
+		var/mob/living/carbon/human/H = usr
+		if(!HAS_TRAIT(H, TRAIT_NOMOOD))
+			var/stress_amt = H.get_stress_amount()
+			if(stress_amt > 0)
 				state2use = "stress2"
-			if(H.stress >= STRESS_VBAD)
+			if(stress_amt >= 5)
 				state2use = "stress3"
-			if(H.stress == STRESS_INSANE)
+			if(stress_amt >= 15)
 				state2use = "stress4"
-			if(H.stress > STRESS_INSANE)
+			if(stress_amt >= 25)
 				state2use = "stress5"
-			if(H.has_status_effect(/datum/status_effect/buff/drunk))
-				state2use = "mood_drunk"
-			if(H.has_status_effect(/datum/status_effect/buff/druqks))
-				state2use = "mood_high"
-			if(H.InFullCritical())
+		if(H.has_status_effect(/datum/status_effect/buff/drunk))
+			state2use = "mood_drunk"
+		if(H.has_status_effect(/datum/status_effect/buff/druqks))
+			state2use = "mood_drunk"
+		if(H.InFullCritical())
+			state2use = "stress4"
+		if(H.mind)
+			if(H.mind.has_antag_datum(/datum/antagonist/zombie))
 				state2use = "mood_fear"
-			if(H.mind)
-				if(H.mind.has_antag_datum(/datum/antagonist/zombie))
-					state2use = "mood_fear"
-			if(H.stat == DEAD)
-				state2use = "mood_dead"
+		if(H.stat == DEAD)
+			state2use = "mood_dead"
 	add_overlay(state2use)
 
 /atom/movable/screen/stress/Click(location,control,params)
@@ -1563,11 +1560,12 @@
 				to_chat(M, "<span class='info'>[M.charflaw.desc]</span>")
 			to_chat(M, "*--------*")
 			var/list/already_printed = list()
-			for(var/datum/stressevent/S in M.positive_stressors)
+			var/list/pos_stressors = M.positive_stressors
+			for(var/datum/stressevent/S in pos_stressors)
 				if(S in already_printed)
 					continue
 				var/cnt = 1
-				for(var/datum/stressevent/CS in M.positive_stressors)
+				for(var/datum/stressevent/CS in pos_stressors)
 					if(CS == S)
 						continue
 					if(CS.type == S.type)
@@ -1580,11 +1578,12 @@
 					to_chat(M, "• [ddesc] (x[cnt])")
 				else
 					to_chat(M, "• [ddesc]")
-			for(var/datum/stressevent/S in M.negative_stressors)
+			var/list/neg_stressors = M.negative_stressors
+			for(var/datum/stressevent/S in neg_stressors)
 				if(S in already_printed)
 					continue
 				var/cnt = 1
-				for(var/datum/stressevent/CS in M.negative_stressors)
+				for(var/datum/stressevent/CS in neg_stressors)
 					if(CS == S)
 						continue
 					if(CS.type == S.type)

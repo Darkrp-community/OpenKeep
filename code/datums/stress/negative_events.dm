@@ -1,7 +1,7 @@
 /datum/stressevent/vice
 	timer = 5 MINUTES
 	stressadd = 5
-	desc = list("<span class='red'>I don't indulge my vice.</span>","<span class='red'>I need to sate my vice.</span>")
+	desc = list(span_boldred("I don't indulge my vice."),span_boldred("I need to sate my vice."))
 
 /datum/stressevent/vice1
 	timer = 5 MINUTES
@@ -27,7 +27,7 @@
 */
 /datum/stressevent/miasmagas
 	timer = 10 SECONDS
-	stressadd = 1
+	stressadd = 2
 	desc = "<span class='red'>Smells like death here.</span>"
 
 /datum/stressevent/peckish
@@ -42,7 +42,7 @@
 
 /datum/stressevent/starving
 	timer = 10 MINUTES
-	stressadd = 3
+	stressadd = 5
 	desc = "<span class='red'>I'm starving.</span>"
 
 /datum/stressevent/drym
@@ -52,7 +52,7 @@
 
 /datum/stressevent/thirst
 	timer = 10 MINUTES
-	stressadd = 2
+	stressadd = 3
 	desc = "<span class='red'>I'm thirsty.</span>"
 
 /datum/stressevent/parched
@@ -102,10 +102,20 @@
 	stressadd = 1
 	desc = list("<span class='red'>I think I'm bleeding.</span>","<span class='red'>I'm bleeding.</span>")
 
+/datum/stressevent/bleeding/can_apply(mob/living/user)
+	if(user.has_flaw(/datum/charflaw/masochist))
+		return FALSE
+	return TRUE
+
 /datum/stressevent/painmax
 	timer = 1 MINUTES
 	stressadd = 2
 	desc = "<span class='red'>THE PAIN!</span>"
+
+/datum/stressevent/painmax/can_apply(mob/living/user)
+	if(user.has_flaw(/datum/charflaw/masochist))
+		return FALSE
+	return TRUE
 
 /datum/stressevent/freakout
 	timer = 15 SECONDS
@@ -156,23 +166,15 @@
 	timer = 3 MINUTES
 	stressadd = 2
 	max_stacks = 3
+	stressadd_per_extra_stack = 2
 	desc = "<span class='red'>I puked!</span>"
 
 /datum/stressevent/vomitself
 	timer = 3 MINUTES
 	stressadd = 2
 	max_stacks = 3
+	stressadd_per_extra_stack = 2
 	desc = "<span class='red'>I puked on myself!</span>"
-
-/datum/stressevent/cumbad
-	timer = 5 MINUTES
-	stressadd = 5
-	desc = "<span class='red'>I was violated.</span>"
-
-/datum/stressevent/cumcorpse
-	timer = 1 MINUTES
-	stressadd = 20
-	desc = "<span class='red'>What have I done?</span>"
 
 /datum/stressevent/blueb
 	timer = 1 MINUTES
@@ -239,7 +241,7 @@
 	stressadd = 1
 //	desc = "<span class='red'>My head is cold and ugly.</span>"
 
-/datum/stressevent/sleeptime
+/datum/stressevent/sleepytime
 	timer = 0
 	stressadd = 1
 	desc = "<span class='red'>I'm tired.</span>"
