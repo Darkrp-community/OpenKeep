@@ -45,6 +45,7 @@
 	STASTR = 6
 	STASPD = 12
 
+	simple_detect_bonus = 20
 	retreat_distance = 0
 	minimum_distance = 0
 	deaggroprob = 0

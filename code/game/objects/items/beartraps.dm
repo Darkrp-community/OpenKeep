@@ -48,6 +48,7 @@
 			BP.add_wound(/datum/wound/fracture)
 			BP.update_disabled()
 			C.apply_damage(trap_damage, BRUTE, def_zone, C.run_armor_check(def_zone, "melee", damage = trap_damage))
+			C.update_sneak_invis(TRUE)
 			C.consider_ambush()
 			return FALSE
 		else
@@ -73,6 +74,7 @@
 				BP.add_wound(/datum/wound/fracture)
 				BP.update_disabled()
 				C.apply_damage(trap_damage, BRUTE, def_zone, C.run_armor_check(def_zone, "melee", damage = trap_damage))
+				C.update_sneak_invis(TRUE)
 				C.consider_ambush()
 				return FALSE
 	..()
@@ -85,6 +87,7 @@
 		close_trap()
 		if(isliving(user))
 			var/mob/living/L = user
+			L.update_sneak_invis(TRUE)
 			L.consider_ambush()
 		return
 	..()
