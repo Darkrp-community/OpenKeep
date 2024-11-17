@@ -18,7 +18,6 @@
 	owner.special_role = "Bandit"
 	forge_objectives()
 	. = ..()
-	move_to_spawnpoint()
 	finalize_bandit()
 	equip_bandit()
 
@@ -64,19 +63,9 @@
 		owner.i_know_person(MF)
 		owner.person_knows_me(MF)
 
-	var/mob/living/carbon/human/H = owner.current
-	if(H.mobid in GLOB.character_list)
-		GLOB.character_list[H.mobid] = null
-	GLOB.chosen_names -= H.real_name
-	H.cmode_music = list('sound/music/combat_bandit.ogg', 'sound/music/combat_bandit2.ogg', 'sound/music/combat_bandit3.ogg')
-
-	addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, choose_name_popup), "BANDIT"), 5 SECONDS)
-//	H.job = "Bandit"
-//	H.advjob = pick("Cheesemaker", "Mercenary", "Barbarian", "Ranger", "Rogue")
-	H.equipOutfit(/datum/outfit/job/roguetown/bandit)
-
 	return TRUE
 
+/*
 /datum/outfit/job/roguetown/bandit/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.become_blind("TRAIT_GENERIC")
@@ -95,7 +84,6 @@
 			H.mind?.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 			H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 			H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			H.change_stat("strength", 2)
 			H.change_stat("endurance", 1)
 			H.change_stat("constitution", 1)
@@ -275,6 +263,7 @@
 		B.sellprice = rand(44, 88)
 
 	H.ambushable = FALSE
+*/
 
 /datum/antagonist/bandit/roundend_report()
 	if(owner?.current)
