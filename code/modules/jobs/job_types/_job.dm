@@ -130,7 +130,7 @@
 /datum/job/proc/special_job_check(mob/dead/new_player/player)
 	return TRUE
 
-/client/proc/job_greet(var/datum/job/greeting_job)
+/client/proc/job_greet(datum/job/greeting_job)
 	if(mob.job == greeting_job.title)
 		greeting_job.greet(mob)
 
