@@ -278,17 +278,6 @@
 	icon_state = "weird1"
 	},
 /area/shuttle/supply/sell)
-"D" = (
-/obj/docking_port/mobile/supply{
-	dwidth = 9;
-	height = 4;
-	width = 17
-	},
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
-	},
-/area/shuttle/supply)
 "E" = (
 /obj/structure/fluff/buysign,
 /turf/open/floor/rogue/ruinedwood,
@@ -368,7 +357,7 @@ k
 k
 i
 k
-D
+k
 "}
 (11,1,1) = {"
 k
