@@ -13115,7 +13115,7 @@
 /area/rogue/indoors/town/manor)
 "mRQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)
 "mSm" = (
