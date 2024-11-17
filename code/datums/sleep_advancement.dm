@@ -126,7 +126,7 @@
 
 	retained_dust = dream_dust_modulo
 
-	sleep_adv_points += dream_points
+	sleep_adv_points += dream_points + 1
 	sleep_adv_cycle++
 
 	show_ui(mind.current)

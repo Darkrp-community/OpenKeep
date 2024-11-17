@@ -289,10 +289,6 @@
 							if(amt2raise > 0)
 								user.mind.add_sleep_experience(R.skillcraft, amt2raise, FALSE)
 					return
-//				if(isitem(I))
-//					user.put_in_hands(I)
-//				if(send_feedback)
-//					SSblackbox.record_feedback("tally", "object_crafted", 1, I.type)
 				return 0
 			return "."
 		to_chat(usr, "<span class='warning'>I'm missing a tool.</span>")
