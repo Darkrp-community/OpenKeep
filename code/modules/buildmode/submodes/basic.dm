@@ -21,14 +21,8 @@
 
 	if(istype(object,/turf) && left_click && !alt_click && !ctrl_click)
 		var/turf/T = object
-		if(isspaceturf(object))
-			T.PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
-		else if(isplatingturf(object))
-			T.PlaceOnTop(/turf/open/floor/plasteel, flags = CHANGETURF_INHERIT_AIR)
-		else if(isfloorturf(object))
-			T.PlaceOnTop(/turf/closed/wall)
-		else if(iswallturf(object))
-			T.PlaceOnTop(/turf/closed/wall/r_wall)
+		if(isfloorturf(object))
+			T.PlaceOnTop(/turf/closed/wall/mineral/rogue/decowood)
 		log_admin("Build Mode: [key_name(c)] built [T] at [AREACOORD(T)]")
 		return
 	else if(right_click)
@@ -39,11 +33,3 @@
 		else if(isobj(object))
 			qdel(object)
 		return
-	else if(istype(object,/turf) && ctrl_click && left_click)
-		var/obj/structure/window/reinforced/window
-		if(BM.build_dir == NORTHWEST)
-			window = new /obj/structure/window/reinforced/fulltile(get_turf(object))
-		else
-			window = new /obj/structure/window/reinforced(get_turf(object))
-		window.setDir(BM.build_dir)
-		log_admin("Build Mode: [key_name(c)] built a window at [AREACOORD(object)]")

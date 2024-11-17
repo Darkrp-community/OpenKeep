@@ -27,8 +27,6 @@
 	return (BRUTELOSS)
 
 /obj/item/seeds/kudzu/proc/plant(mob/user)
-	if(isspaceturf(user.loc))
-		return
 	if(!isturf(user.loc))
 		to_chat(user, "<span class='warning'>I need more space to plant [src].</span>")
 		return FALSE

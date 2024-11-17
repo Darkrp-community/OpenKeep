@@ -8041,7 +8041,6 @@
 	lockid = "mage";
 	name = "secret projectes"
 	},
-/obj/item/ship_in_a_bottle,
 /obj/item/bomb{
 	pixel_x = 3;
 	pixel_y = 3
@@ -12880,10 +12879,10 @@
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
-/obj/item/reagent_containers/food/snacks/egg/loaded,
-/obj/item/reagent_containers/food/snacks/egg/loaded,
-/obj/item/reagent_containers/food/snacks/egg/loaded,
-/obj/item/reagent_containers/food/snacks/egg/loaded,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry,
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
@@ -18811,7 +18810,7 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "tAx" = (
 /obj/structure/fluff/nest,
-/obj/item/reagent_containers/food/snacks/egg/loaded,
+/obj/item/reagent_containers/food/snacks/egg,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
 "tAK" = (

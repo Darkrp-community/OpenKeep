@@ -11,7 +11,6 @@
 	randomspread = 1
 	spread = 0
 	can_parry = FALSE
-	pin = /obj/item/firing_pin
 	force = 10
 	var/cocked = FALSE
 	cartridge_wording = "dart"

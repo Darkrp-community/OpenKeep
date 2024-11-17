@@ -73,7 +73,7 @@
 	if(locate(/mob/living/carbon) in get_turf(src))
 		sleep(1)
 		dir = pick(GLOB.alldirs)
-		step(src, dir)	
+		step(src, dir)
 		personal_space()
 	else
 		return
@@ -84,10 +84,10 @@
 	STASPD = 5
 	var/isracist = TRUE // Hisses at dark elves if they try to pet it
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 							/obj/item/alch/sinew = 1,
 							/obj/item/alch/bone = 1)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 							/obj/item/alch/sinew = 2,
 							/obj/item/alch/bone = 1)
 
@@ -110,10 +110,10 @@
 	emote_see = list("brings their ears alert.", "scratches their ear with a hindleg.")
 	childtype = list() // TODO: puppy cabbits =:3
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 							/obj/item/alch/sinew = 1,
 							/obj/item/alch/bone = 1)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 							/obj/item/alch/sinew = 2,
 							/obj/item/alch/bone = 1,
 							/obj/item/natural/fur/cabbit = 1)
@@ -266,11 +266,6 @@
 					movement_target = null
 					stop_automated_movement = 0
 					break
-			for(var/obj/item/toy/cattoy/T in view(1,src))
-				if (T.cooldown < (world.time - 400))
-					emote("me", 1, "bats \the [T] around with its paw!")
-					T.cooldown = world.time
-
 	..()
 
 	make_babies()
@@ -311,7 +306,7 @@
 						stop_automated_movement = 0
 						break
 
-	
+
 
 
 

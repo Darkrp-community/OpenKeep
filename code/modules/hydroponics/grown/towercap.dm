@@ -41,30 +41,12 @@
 	throw_speed = 2
 	throw_range = 3
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
-	var/plank_type = /obj/item/stack/sheet/mineral/wood
 	var/plank_name = "wooden planks"
 	var/static/list/accepted = typecacheof(list(/*/obj/item/reagent_containers/food/snacks/grown/tobacco,
 	/obj/item/reagent_containers/food/snacks/grown/tea,
 	/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
 	/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus,
 	/obj/item/reagent_containers/food/snacks/produce/wheat*/))
-
-///obj/item/grown/log/attackby(obj/item/W, mob/user, params)
-//	if(W.get_sharpness())
-//		user.show_message("<span class='notice'>I make [plank_name] out of \the [src]!</span>", MSG_VISUAL)
-//		var/seed_modifier = 0
-//		if(seed)
-//			seed_modifier = round(seed.potency / 25)
-//		var/obj/item/stack/plank = new plank_type(user.loc, 1 + seed_modifier)
-//		var/old_plank_amount = plank.amount
-//		for(var/obj/item/stack/ST in user.loc)
-//			if(ST != plank && istype(ST, plank_type) && ST.amount < ST.max_amount)
-//				ST.attackby(plank, user) //we try to transfer all old unfinished stacks to the new stack we created.
-//		if(plank.amount > old_plank_amount)
-//			to_chat(user, "<span class='notice'>I add the newly-formed [plank_name] to the stack. It now contains [plank.amount] [plank_name].</span>")
-//		qdel(src)
-//	else
-//		return ..()
 
 /obj/item/grown/log/proc/CheckAccepted(obj/item/I)
 	return is_type_in_typecache(I, accepted)
@@ -74,7 +56,6 @@
 	name = "steel-cap log"
 	desc = ""
 	icon_state = "steellogs"
-	plank_type = /obj/item/stack/rods
 	plank_name = "rods"
 
 /obj/item/grown/log/steel/CheckAccepted(obj/item/I)
@@ -103,7 +84,6 @@
 	name = "bamboo log"
 	desc = ""
 	icon_state = "bamboo"
-	plank_type = /obj/item/stack/sheet/mineral/bamboo
 	plank_name = "bamboo sticks"
 
 /obj/item/grown/log/bamboo/CheckAccepted(obj/item/I)
@@ -154,25 +134,6 @@
 	return ..()
 
 /obj/structure/bonfire/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/stack/rods) && !can_buckle && !grill)
-		var/obj/item/stack/rods/R = W
-		var/choice = input(user, "What would you like to construct?", "Bonfire") as null|anything in list("Stake","Grill")
-		switch(choice)
-			if("Stake")
-				R.use(1)
-				can_buckle = TRUE
-				buckle_requires_restraints = TRUE
-				to_chat(user, "<span class='notice'>I add a rod to \the [src].</span>")
-				var/mutable_appearance/rod_underlay = mutable_appearance('icons/obj/hydroponics/equipment.dmi', "bonfire_rod")
-				rod_underlay.pixel_y = 16
-				underlays += rod_underlay
-			if("Grill")
-				R.use(1)
-				grill = TRUE
-				to_chat(user, "<span class='notice'>I add a grill to \the [src].</span>")
-				add_overlay("bonfire_grill")
-			else
-				return ..()
 	if(W.get_temperature())
 		StartBurning()
 	if(grill)
@@ -202,8 +163,6 @@
 			var/obj/item/grown/log/L = new /obj/item/grown/log(src.loc)
 			L.pixel_x += rand(1,4)
 			L.pixel_y += rand(1,4)
-		if(can_buckle || grill)
-			new /obj/item/stack/rods(loc, 1)
 		qdel(src)
 		return
 

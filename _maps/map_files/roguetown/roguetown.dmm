@@ -2299,7 +2299,7 @@
 	pixel_y = 2
 	},
 /obj/item/candle/yellow/lit/infinite{
-	light_outer_range =  1;
+	light_outer_range = 1;
 	pixel_x = 14;
 	pixel_y = 5
 	},
@@ -4091,7 +4091,7 @@
 /area/rogue/indoors/town/manor)
 "eGP" = (
 /obj/structure/flora/ausbushes/leafybush,
-/obj/structure/flora/bush,
+/obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "eHb" = (
@@ -4759,7 +4759,6 @@
 /area/rogue/outdoors/town)
 "ftR" = (
 /obj/structure/table/wood,
-/obj/item/ship_in_a_bottle,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/magician)
 "fup" = (

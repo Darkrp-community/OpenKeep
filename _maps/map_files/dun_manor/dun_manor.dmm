@@ -362,12 +362,6 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town)
 "auw" = (
-/obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = -5;
-	pixel_y = 3
-	},
-/obj/item/kitchen/spoon/plastic,
 /obj/structure/rack/rogue/shelf/big{
 	icon_state = "shelf_biggest";
 	pixel_y = 0
@@ -7868,7 +7862,7 @@
 /area/rogue/outdoors/rtfield)
 "hEt" = (
 /obj/item/candle/yellow/lit/infinite{
-	light_outer_range =  1;
+	light_outer_range = 1;
 	pixel_x = -8;
 	pixel_y = 5
 	},
@@ -10598,7 +10592,7 @@
 /area/rogue/outdoors/town/roofs)
 "ktR" = (
 /obj/item/candle/yellow/lit/infinite{
-	light_outer_range =  1;
+	light_outer_range = 1;
 	pixel_x = 8;
 	pixel_y = 5
 	},

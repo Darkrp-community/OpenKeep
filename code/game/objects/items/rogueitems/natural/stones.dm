@@ -49,7 +49,7 @@
 	gripped_intents = list(INTENT_GENERIC)
 	w_class = WEIGHT_CLASS_HUGE
 	twohands_required = TRUE
-	var/obj/item/stack/ore/mineralType = null
+	var/obj/item/rogueore/mineralType = null
 	var/mineralAmt = 1
 	blade_dulling = DULLING_BASH
 	max_integrity = 50

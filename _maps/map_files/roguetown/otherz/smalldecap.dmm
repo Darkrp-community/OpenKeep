@@ -946,7 +946,6 @@
 /area/rogue/outdoors/mountains/decap)
 "Ko" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/ship_in_a_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/mountains/decap)

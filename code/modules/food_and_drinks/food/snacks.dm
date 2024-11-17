@@ -534,7 +534,7 @@ All foods are distributed among various categories. Use common sense.
 	. = ..()
 	if(!dunkable || !proximity)
 		return
-	if(istype(M, /obj/item/reagent_containers/glass) || istype(M, /obj/item/reagent_containers/food/drinks))	//you can dunk dunkable snacks into beakers or drinks
+	if(istype(M, /obj/item/reagent_containers/glass))	//you can dunk dunkable snacks into beakers or drinks
 		if(!M.is_drainable())
 			to_chat(user, "<span class='warning'>[M] is unable to be dunked in!</span>")
 			return
