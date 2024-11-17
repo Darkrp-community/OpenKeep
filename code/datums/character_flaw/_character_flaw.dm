@@ -1,5 +1,6 @@
 
-GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alcoholic,
+GLOBAL_LIST_INIT(character_flaws, list(
+	"Alcoholic"=/datum/charflaw/addiction/alcoholic,
 	"Devout Follower"=/datum/charflaw/addiction/godfearing,
 	"Smoker"=/datum/charflaw/addiction/smoker,
 	"Junkie"=/datum/charflaw/addiction/junkie,
@@ -8,7 +9,6 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	"Greedy"=/datum/charflaw/greedy,
 	"Narcoleptic"=/datum/charflaw/narcoleptic,
 	"Masochist"=/datum/charflaw/masochist,
-	"Paranoid"=/datum/charflaw/paranoid,
 	"Wooden Arm (R)"=/datum/charflaw/limbloss/arm_r,
 	"Wooden Arm (L)"=/datum/charflaw/limbloss/arm_l,
 	"Bad Sight"=/datum/charflaw/badsight,

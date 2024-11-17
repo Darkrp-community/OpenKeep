@@ -1203,7 +1203,7 @@
 //............... Volf Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	name = "volf helmet"
-	desc = "Bandit initiation rites often involve the slaying of a volf. This such helmet is produced after the hunt, as proof of having passed the test."
+	desc = "A leather helmet fashioned from a volf's pelt."
 	icon_state = "volfhead"
 
 	body_parts_covered = HEAD|HAIR|EARS
