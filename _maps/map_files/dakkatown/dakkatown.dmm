@@ -5710,9 +5710,6 @@
 /area/rogue/indoors/town)
 "vM" = (
 /obj/structure/closet/crate/roguecloset,
-/obj/item/clothing/suit/bio_suit/plaguedoctorsuit,
-/obj/item/clothing/mask/gas/plaguedoctor,
-/obj/item/clothing/head/plaguedoctorhat,
 /obj/item/roguekey/apothecary,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/apothecary)
@@ -11285,7 +11282,6 @@
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/outdoors/town)
 "QW" = (
-/turf/open/space/basic,
 /area/rogue/outdoors/town)
 "QX" = (
 /turf/open/floor/rogue/church,
