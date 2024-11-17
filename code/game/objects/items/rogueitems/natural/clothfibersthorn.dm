@@ -395,8 +395,10 @@
 	icon1step = 2
 	icon2 = "bonestack2"
 	icon2step = 4
+
 /obj/item/natural/bundle/bone/full
 	amount = 6
+
 /*/obj/item/alch/bone/attackby(obj/item/I, mob/living/user, params)
 	var/mob/living/carbon/human/H = user
 	user.changeNext_move(CLICK_CD_MELEE)
