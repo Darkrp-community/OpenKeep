@@ -6135,7 +6135,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/town)
 "Ga" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "Gb" = (
@@ -6416,7 +6416,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/basement)
 "HF" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/metal/barograte,
 /area/rogue/indoors/town/magician)
 "HG" = (

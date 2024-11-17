@@ -893,7 +893,7 @@
 /turf/open/floor/rogue/blocks/paving,
 /area/rogue/indoors/vampire_manor)
 "ct" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/fluff/walldeco/maidendrape{
 	pixel_y = 0
 	},
@@ -3960,7 +3960,7 @@
 /turf/closed/wall/mineral/rogue/wood,
 /area/rogue/indoors)
 "Rw" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/bandit_lair)
 "RB" = (
