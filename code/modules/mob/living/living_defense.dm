@@ -349,12 +349,6 @@
 							"<span class='danger'>I avoid [M.name]'s bite!</span>", "<span class='hear'>I hear the sound of jaws snapping shut!</span>", COMBAT_MESSAGE_RANGE, M)
 			to_chat(M, "<span class='warning'>My bite misses [src]!</span>")
 	return FALSE
-/mob/living/attack_hulk(mob/living/carbon/human/user)
-	..()
-	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='warning'>I don't want to hurt [src]!</span>")
-		return FALSE
-	return TRUE
 
 /mob/living/ex_act(severity, target, origin)
 	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))

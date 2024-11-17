@@ -126,16 +126,6 @@
 		next_attack_msg.Cut()
 		return TRUE
 
-/mob/living/simple_animal/attack_hulk(mob/living/carbon/human/user)
-	. = ..()
-	if(!.)
-		return
-	playsound(loc, "punch", 25, TRUE, -1)
-	visible_message("<span class='danger'>[user] punches [src]!</span>", \
-					"<span class='danger'>You're punched by [user]!</span>", null, COMBAT_MESSAGE_RANGE, user)
-	to_chat(user, "<span class='danger'>I punch [src]!</span>")
-	adjustBruteLoss(15)
-
 /mob/living/simple_animal/attack_paw(mob/living/carbon/monkey/M)
 	if(..()) //successful monkey bite.
 		if(stat != DEAD)
