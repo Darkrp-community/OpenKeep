@@ -917,17 +917,8 @@
 /mob/living/carbon/human/species/ethereal
 	race = /datum/species/ethereal
 
-/mob/living/carbon/human/species/shadow
-	race = /datum/species/shadow
-
-/mob/living/carbon/human/species/shadow/nightmare
-	race = /datum/species/shadow/nightmare
-
 /mob/living/carbon/human/species/snail
 	race = /datum/species/snail
-
-/mob/living/carbon/human/species/vampire
-	race = /datum/species/vampire
 
 /mob/living/carbon/human/species/zombie
 	race = /datum/species/zombie
