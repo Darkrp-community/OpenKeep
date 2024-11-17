@@ -19,10 +19,6 @@
 		icon = smooth_icon
 	. = ..()
 
-/turf/open/floor/rogue/dirt
-	icon = 'icons/turf/floors.dmi'
-	icon_state = "greenerdirt"
-
 /*	..................   Wooden Floors   ................... */
 /turf/open/floor/rogue/ruinedwood
 	icon_state = "wooden_floor"
