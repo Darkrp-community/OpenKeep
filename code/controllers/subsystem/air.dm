@@ -293,9 +293,6 @@ SUBSYSTEM_DEF(air)
 		if (!ET.excited)
 			ET.excited = 1
 			. += ET
-/turf/open/space/resolve_active_graph()
-	return list()
-
 
 /datum/controller/subsystem/air/proc/generate_atmos()
 	atmos_gen = list()

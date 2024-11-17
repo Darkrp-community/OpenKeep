@@ -637,13 +637,6 @@
 		return FALSE
 	return add_blood_DNA(blood_dna)
 
-///Is this atom in space
-/atom/proc/isinspace()
-	if(isspaceturf(get_turf(src)))
-		return TRUE
-	else
-		return FALSE
-
 ///Called when gravity returns after floating I think
 /atom/proc/handle_fall()
 	return
@@ -1230,9 +1223,6 @@
 		for(var/i in forced_gravity)
 			max_grav = max(max_grav, i)
 		return max_grav
-
-	if(isspaceturf(T)) // Turf never has gravity
-		return 0
 
 	var/area/A = get_area(T)
 	if(A.has_gravity) // Areas which always has gravity

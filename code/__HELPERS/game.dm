@@ -555,9 +555,8 @@ block( \
 			if (!istype(turf_area, specific_area))
 				continue
 
-		if (!isspaceturf(found_turf))
-			if (!is_blocked_turf(found_turf))
-				possible_loc.Add(found_turf)
+		if (!is_blocked_turf(found_turf))
+			possible_loc.Add(found_turf)
 
 	// Need at least one free location.
 	if (possible_loc.len < 1)

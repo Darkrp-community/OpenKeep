@@ -78,8 +78,6 @@ SUBSYSTEM_DEF(mapping)
 	// Add the transit level
 	transit = add_new_zlevel("Transit/Reserved", list(ZTRAIT_RESERVED = TRUE))
 	repopulate_sorted_areas()
-	// Set up Z-level transitions.
-	setup_map_transitions()
 	initialize_reserved_level(transit.z_value)
 	return ..()
 

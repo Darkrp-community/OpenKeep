@@ -25,10 +25,7 @@
 	for(var/obj/effect/landmark/R in GLOB.landmarks_list)
 		if(R.name != "blobspawn")
 			if(prob(35))
-				if(isspaceturf(R.loc))
-					new /mob/living/simple_animal/chicken/rabbit/space(R.loc)
-				else
-					new /mob/living/simple_animal/chicken/rabbit(R.loc)
+				new /mob/living/simple_animal/chicken/rabbit(R.loc)
 
 /mob/living/simple_animal/chicken/rabbit
 	name = "\improper rabbit"

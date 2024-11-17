@@ -133,33 +133,13 @@
 /datum/reagent/water/reaction_turf(turf/open/T, reac_volume)
 	if(!istype(T))
 		return
-//	var/CT = cooling_temperature
-
 	if(reac_volume >= 5)
-//		T.MakeSlippery(TURF_WET_WATER, reac_volume*1.5 SECONDS, reac_volume*1.5 SECONDS)
-		T.add_water(reac_volume * 3) //nuproc
-
-//	for(var/mob/living/simple_animal/slime/M in T)
-//		M.apply_water()
-
-//	if(reac_volume >= 100)
-//		for(var/obj/effect/decal/cleanable/blood/target in T)
-//			qdel(target)
-//		for(var/obj/effect/decal/cleanable/trail_holder/target in T)
-//			qdel(target)
+		T.add_water(reac_volume * 3) //nuprocet)
 
 	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
-	if(hotspot && !isspaceturf(T))
-//		if(T.air)
-//			var/datum/gas_mixture/G = T.air
-//			G.temperature = max(min(G.temperature-(CT*1000),G.temperature/CT),TCMB)
-//			G.react(src)
+	if(hotspot)
 		new /obj/effect/temp_visual/small_smoke(T)
 		qdel(hotspot)
-	//fixed
-//	var/obj/effect/acid/A = (locate(/obj/effect/acid) in T)
-//	if(A)
-//		A.acid_level = max(A.acid_level - reac_volume*50, 0)
 
 /*
  *	Water reaction to an object
@@ -664,7 +644,7 @@
 	taste_mult = 0 // apparently tasteless.
 
 /datum/reagent/mercury/on_mob_life(mob/living/carbon/M)
-	if((M.mobility_flags & MOBILITY_MOVE) && !isspaceturf(M.loc))
+	if((M.mobility_flags & MOBILITY_MOVE))
 		step(M, pick(GLOB.cardinals))
 	if(prob(5))
 		M.emote(pick("twitch","drool","moan"))
@@ -686,10 +666,9 @@
 	taste_description = "sour chalk"
 
 /datum/reagent/carbon/reaction_turf(turf/T, reac_volume)
-	if(!isspaceturf(T))
-		var/obj/effect/decal/cleanable/dirt/D = locate() in T.contents
-		if(!D)
-			new /obj/effect/decal/cleanable/dirt(T)
+	var/obj/effect/decal/cleanable/dirt/D = locate() in T.contents
+	if(!D)
+		new /obj/effect/decal/cleanable/dirt(T)
 
 /datum/reagent/chlorine
 	name = "Chlorine"
@@ -737,7 +716,7 @@
 	taste_description = "metal"
 
 /datum/reagent/lithium/on_mob_life(mob/living/carbon/M)
-	if((M.mobility_flags & MOBILITY_MOVE) && !isspaceturf(M.loc))
+	if((M.mobility_flags & MOBILITY_MOVE))
 		step(M, pick(GLOB.cardinals))
 	if(prob(5))
 		M.emote(pick("twitch","drool","moan"))
@@ -796,11 +775,10 @@
 
 /datum/reagent/uranium/reaction_turf(turf/T, reac_volume)
 	if(reac_volume >= 3)
-		if(!isspaceturf(T))
-			var/obj/effect/decal/cleanable/greenglow/GG = locate() in T.contents
-			if(!GG)
-				GG = new/obj/effect/decal/cleanable/greenglow(T)
-			GG.reagents.add_reagent(type, reac_volume)
+		var/obj/effect/decal/cleanable/greenglow/GG = locate() in T.contents
+		if(!GG)
+			GG = new/obj/effect/decal/cleanable/greenglow(T)
+		GG.reagents.add_reagent(type, reac_volume)
 
 /datum/reagent/uranium/radium
 	name = "Radium"

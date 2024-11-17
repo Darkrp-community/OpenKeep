@@ -217,7 +217,7 @@
 			return FALSE
 		else if(isitem(AM) && !HAS_TRAIT(AM, TRAIT_NODROP))
 			return TRUE
-		else if(!allow_objects && !istype(AM, /obj/effect/dummy/chameleon))
+		else if(!allow_objects)
 			return FALSE
 //		for(var/mob/living/M in contents)
 //			return FALSE

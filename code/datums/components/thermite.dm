@@ -6,7 +6,6 @@
 
 	var/static/list/blacklist = typecacheof(list(
 		/turf/open/lava,
-		/turf/open/space,
 		/turf/open/water)
 		)
 

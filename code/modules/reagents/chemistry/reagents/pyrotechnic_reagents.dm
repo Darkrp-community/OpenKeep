@@ -261,7 +261,7 @@
 			F.lifetime = initial(F.lifetime) //reduce object churn a little bit when using smoke by keeping existing foam alive a bit longer
 
 	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
-	if(hotspot && !isspaceturf(T))
+	if(hotspot)
 		if(T.air)
 			var/datum/gas_mixture/G = T.air
 			if(G.temperature > T20C)
