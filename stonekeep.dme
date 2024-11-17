@@ -3444,7 +3444,6 @@
 #include "modular\Neu_Farming\code\bin.dm"
 #include "modular\Neu_Farming\code\chaff.dm"
 #include "modular\Neu_Farming\code\composter.dm"
-#include "modular\Neu_Farming\code\crafting_recipes.dm"
 #include "modular\Neu_Farming\code\fermenting_barrel.dm"
 #include "modular\Neu_Farming\code\helpers.dm"
 #include "modular\Neu_Farming\code\plant_def.dm"
