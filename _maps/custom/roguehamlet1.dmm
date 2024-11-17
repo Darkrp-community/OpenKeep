@@ -5496,8 +5496,8 @@
 	},
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
-/obj/item/reagent_containers/food/snacks/egg/loaded,
-/obj/item/reagent_containers/food/snacks/egg/loaded,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
 /obj/item/rogueweapon/knife/cleaver,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
@@ -12477,12 +12477,12 @@
 	first_time_text = "Blackwine Manor"
 	})
 "nBX" = (
-/obj/item/reagent_containers/food/snacks/egg/loaded,
+/obj/item/reagent_containers/food/snacks/egg,
 /obj/structure/closet/crate/roguecloset/inn/chest,
-/obj/item/reagent_containers/food/snacks/egg/loaded,
-/obj/item/reagent_containers/food/snacks/egg/loaded,
-/obj/item/reagent_containers/food/snacks/egg/loaded,
-/obj/item/reagent_containers/food/snacks/egg/loaded,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "nCg" = (
@@ -18375,7 +18375,7 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "tAx" = (
 /obj/structure/fluff/nest,
-/obj/item/reagent_containers/food/snacks/egg/loaded,
+/obj/item/reagent_containers/food/snacks/egg,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
 "tAK" = (
