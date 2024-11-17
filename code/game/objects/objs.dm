@@ -202,8 +202,6 @@
 /obj/proc/hide(h)
 	return
 
-/obj/singularity_pull()
-
 /obj/get_dumping_location(datum/component/storage/source,mob/user)
 	return get_turf(src)
 

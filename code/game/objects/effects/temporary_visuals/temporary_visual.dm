@@ -19,12 +19,6 @@
 	. = ..()
 	deltimer(timerid)
 
-/obj/effect/temp_visual/singularity_act()
-	return
-
-/obj/effect/temp_visual/singularity_pull()
-	return
-
 /obj/effect/temp_visual/ex_act()
 	return
 

@@ -635,18 +635,6 @@
 /atom/proc/handle_fall()
 	return
 
-///Respond to the singularity eating this atom
-/atom/proc/singularity_act()
-	return
-
-/**
- * Respond to the singularity pulling on us
- *
- * Default behaviour is to send COMSIG_ATOM_SING_PULL and return
- */
-/atom/proc/singularity_pull()
-
-
 /**
  * Respond to acid being used on our atom
  *

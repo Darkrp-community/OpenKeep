@@ -86,10 +86,6 @@
 	if(!QDELETED(src)) //Bullet on_hit effect might have already destroyed this object
 		take_damage(P.damage, P.damage_type, P.flag, 0, turn(P.dir, 180), P.armor_penetration)
 
-///Called to get the damage that hulks will deal to the obj.
-/obj/proc/hulk_damage()
-	return 150 //the damage hulks do on punches to this object, is affected by melee armor
-
 /obj/proc/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, armor_penetration = 0) //used by attack_alien, attack_animal, and attack_slime
 	user.do_attack_animation(src)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -120,13 +116,6 @@
 /obj/proc/collision_damage(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)
 	var/amt = max(0, ((force - (move_resist * MOVE_FORCE_CRUSH_RATIO)) / (move_resist * MOVE_FORCE_CRUSH_RATIO)) * 10)
 	take_damage(amt, BRUTE)
-
-/obj/singularity_act()
-	ex_act(EXPLODE_DEVASTATE)
-	if(src && !QDELETED(src))
-		qdel(src)
-	return 2
-
 
 ///// ACID
 
@@ -192,10 +181,6 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 		SSfire_burning.processing -= src
 		if(fire_burn_start)
 			fire_burn_start = null
-
-///Called when the obj is hit by a tesla bolt.
-/obj/proc/tesla_act(power, tesla_flags, shocked_targets)
-	return
 
 //The surgeon general warns that being buckled to certain objects receiving powerful shocks is greatly hazardous to your health
 ///Only tesla coils and grounding rods currently call this because mobs are already targeted over all other objects, but this might be useful for more things later.

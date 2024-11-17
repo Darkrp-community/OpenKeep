@@ -117,9 +117,6 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
 
-/obj/projectile/beam/emitter/singularity_pull()
-	return //don't want the emitters to miss
-
 /obj/projectile/beam/instakill
 	name = "instagib laser"
 	icon_state = "purple_laser"

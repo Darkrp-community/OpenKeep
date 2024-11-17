@@ -74,12 +74,6 @@
 	var/sound
 	var/walks_left = 50 //prevents the game from hanging in extreme cases (such as minigun fire)
 
-/obj/effect/cross_action/singularity_act()
-	return
-
-/obj/effect/cross_action/singularity_pull()
-	return
-
 /obj/effect/cross_action/spacetime_dist/Initialize(mapload)
 	. = ..()
 	setDir(pick(GLOB.cardinals))

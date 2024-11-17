@@ -63,12 +63,6 @@
 /obj/effect/countdown/ex_act(severity, target) //immune to explosions
 	return
 
-/obj/effect/countdown/singularity_pull()
-	return
-
-/obj/effect/countdown/singularity_act()
-	return
-
 /obj/effect/countdown/hourglass
 	name = "hourglass countdown"
 
