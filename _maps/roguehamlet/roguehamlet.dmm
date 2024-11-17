@@ -8109,7 +8109,6 @@
 	lockid = "mage";
 	name = "secret projectes"
 	},
-/obj/item/ship_in_a_bottle,
 /obj/item/bomb{
 	pixel_x = 3;
 	pixel_y = 3

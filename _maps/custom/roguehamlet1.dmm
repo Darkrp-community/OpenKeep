@@ -2689,7 +2689,6 @@
 /area/rogue/indoors/town/church/chapel)
 "dht" = (
 /obj/structure/closet/crate/roguecloset/dark,
-/obj/item/ship_in_a_bottle,
 /obj/item/bomb{
 	pixel_x = 3;
 	pixel_y = 3
