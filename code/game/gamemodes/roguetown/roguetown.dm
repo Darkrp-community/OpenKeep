@@ -198,9 +198,10 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 	"Priest")
 	var/num_bandits = 0
 	if(num_players() >= 10)
-		//num_bandits = CLAMP(round(num_players() / 2), 4, 6)
-		num_bandits = 0 //bandits disabled for now
-		//banditgoal += (num_bandits * rand(200,400))
+		var/datum/job/bandit_job = SSjob.GetJob("Bandit")
+		bandit_job.total_positions = num_bandits
+		bandit_job.spawn_positions = num_bandits
+		banditgoal += (num_bandits * rand(200,400))
 
 	if(num_bandits)
 		//antag_candidates = get_players_for_role(ROLE_BANDIT, pre_do=TRUE) //pre_do checks for their preferences since they don't have a job yet
@@ -242,8 +243,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 				allantags -= bandaids
 				pre_bandits += bandaids
 
-				bandaids.assigned_role = "Bandit"
-				bandaids.special_role = ROLE_BANDIT
+				SSjob.AssignRole(bandaids.current, "Bandit")
 
 				bandaids.restricted_roles = restricted_jobs.Copy() // For posterities sake
 				testing("[key_name(bandaids)] has been selected as a bandit")
