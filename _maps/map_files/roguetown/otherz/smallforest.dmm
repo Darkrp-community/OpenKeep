@@ -316,7 +316,7 @@
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/indoors)
 "rk" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors)
 "ru" = (
@@ -329,7 +329,7 @@
 	},
 /area/rogue/indoors)
 "sc" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/transparent/openspace,
 /area/rogue/indoors)
 "sk" = (
@@ -507,7 +507,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "KY" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
