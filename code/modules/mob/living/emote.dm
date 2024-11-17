@@ -35,7 +35,7 @@
 			return TRUE
 		to_chat(src, "<span class='danger'>I need a nearby Pantheon Cross for my prayers to be heard...</span>")
 		return FALSE
-	
+
 	if(istype(src.patron, /datum/patron/inhumen))
 		var/found = FALSE
 		for(var/obj/structure/fluff/psycross/P in view(7, get_turf(L)) )
@@ -51,7 +51,7 @@
 			return TRUE
 		to_chat(src, "<span class='danger'>I can not talk to Him... I need His cross on my neck!</span>")
 		return FALSE
-	
+
 	return TRUE // If you have any different god then I guess just pray whereever
 
 /datum/emote/living/pray/run_emote(mob/user, params, type_override, intentional)
@@ -425,10 +425,6 @@
 	key = ""
 	key_third_person = ""
 	message = "gasps out their last breath."
-	message_robot = "shudders violently for a moment before falling still, its eyes slowly darkening."
-	message_AI = "screeches, its screen flickering as its systems slowly halt."
-	message_alien = "lets out a waning guttural screech, and collapses onto the floor..."
-	message_larva = "lets out a sickly hiss of air and falls limply to the floor..."
 	message_monkey = "lets out a faint chimper as it collapses and stops moving..."
 	message_simple =  "falls limp."
 	stat_allowed = UNCONSCIOUS

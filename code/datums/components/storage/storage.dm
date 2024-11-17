@@ -319,7 +319,7 @@
 
 	if(istype(T, /turf/closed)) // Is there an impassible turf in the way? Don't dump the sack out on that
 		to_chat(user, "<span class='warning'>Something in the way.</span>")
-		return		
+		return
 
 	for(var/obj/item/I in things) // If the above aren't true, dump the sack onto the tile in front of us
 		things -= I
@@ -556,8 +556,6 @@
 		if(labeler.mode)
 			return FALSE
 //	. = TRUE //no afterattack
-	if(iscyborg(M))
-		return
 	if(!can_be_inserted(I, FALSE, M))
 		var/atom/real_location = real_location()
 		if(real_location.contents.len >= max_items) //don't use items on the backpack if they don't fit

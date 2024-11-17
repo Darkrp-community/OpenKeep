@@ -178,9 +178,11 @@
 		if(!selection)
 			return
 		theykey = selection
+	/*
 	if(theykey == ckey)
 		to_chat(src, "<span class='boldwarning'>That's you!</span>")
 		return
+	*/
 	if(!fexists("data/player_saves/[copytext(theykey,1,2)]/[theykey]/preferences.sav"))
 		to_chat(src, "<span class='boldwarning'>User does not exist.</span>")
 		return
