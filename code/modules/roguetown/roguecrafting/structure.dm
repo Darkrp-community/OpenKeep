@@ -41,7 +41,6 @@
 	name = "composter"
 	result = /obj/structure/composter
 	reqs = list(/obj/item/grown/log/tree/small = 1)
-	craftdiff = 0
 	time = 2 SECONDS
 	craftdiff = 1
 
