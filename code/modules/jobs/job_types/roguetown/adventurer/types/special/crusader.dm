@@ -10,7 +10,7 @@
 		"Humen",
 		"Dwarf"
 	)
-	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/necra, /datum/patron/forgotten)
+	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/necra, /datum/patron/psydon)
 	outfit = /datum/outfit/job/roguetown/adventurer/crusader
 	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 1
@@ -42,17 +42,17 @@
 	if(H.patron == /datum/patron/godless)
 		H.patron = GLOB.patronlist[/datum/patron/divine/necra]
 	if(H.patron == /datum/patron/divine/pestra)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.patron = GLOB.patronlist[/datum/patron/psydon]
 	if(H.patron == /datum/patron/divine/dendor)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.patron = GLOB.patronlist[/datum/patron/psydon]
 	if(H.patron == /datum/patron/divine/malum)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.patron = GLOB.patronlist[/datum/patron/psydon]
 	if(H.patron == /datum/patron/divine/xylix)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.patron = GLOB.patronlist[/datum/patron/psydon]
 	if(H.patron == /datum/patron/divine/ravox)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.patron = GLOB.patronlist[/datum/patron/psydon]
 	if(H.patron == /datum/patron/divine/abyssor)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.patron = GLOB.patronlist[/datum/patron/psydon]
 
 	// Now we equip according to patron.
 	switch(H.patron?.name)

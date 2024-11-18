@@ -13,11 +13,11 @@
 	name = "Humen"
 	id = "human"
 	desc = "<b>Humen</b><br>\
-	Humenity is the 'perfected race' of the weeping god. Noted for their \
-	tenacity and overwhelming population, humens tend to outnumber the other races drastically. \
-	Humens come from a vast swathe of cultures and ethnicities all around Grimoria, most of which \
-	have historically been at odds with one another and other races. \
-	Humens tend to find fortune easier than the other races, and are so diverse that no other racial trait \
+	Humenity, creation in Psydon's image. \
+	With their tenacity and overwhelming population, humens tend to outnumber the other species drastically. \
+	Humens come from a vast swathe of cultures and ethnicities all around Psydonia, most of which \
+	have historically been at odds with one another and other species. \
+	Humens tend to find fortune easier than the other species, and are so diverse that no other trait \
 	are dominant in their species..."
 
 	skin_tone_wording = "Ancestry"
