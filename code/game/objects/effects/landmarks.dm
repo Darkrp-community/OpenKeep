@@ -457,16 +457,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.emergencyresponseteamspawn += loc
 	return INITIALIZE_HINT_QDEL
 
-//ninja energy nets teleport victims here
-/obj/effect/landmark/holding_facility
-	name = "Holding Facility"
-	icon_state = "holding_facility"
-
-/obj/effect/landmark/holding_facility/Initialize(mapload)
-	..()
-	GLOB.holdingfacility += loc
-	return INITIALIZE_HINT_QDEL
-
 /obj/effect/landmark/thunderdome/observe
 	name = "tdomeobserve"
 	icon_state = "tdome_observer"

@@ -14,8 +14,6 @@
 	integrity_failure = 0.5
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 50)
 	CanAtmosPass = ATMOS_PASS_DENSITY
-	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
-	rad_insulation = RAD_MEDIUM_INSULATION
 
 	var/ridethrough = FALSE
 

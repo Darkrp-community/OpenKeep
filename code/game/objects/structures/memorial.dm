@@ -38,8 +38,10 @@ So should you read this and should you get the chance, raise a glass in his memo
 That’s how he would have wanted it.
 */
 /obj/item/clothing/accessory/medal/gold/ordom
-	name = "\proper The OrdoM Memorial Medal For Excellence in Paperwork"
-	desc = "Awarded for outstanding excellence in paperwork, administration, and bureaucracy."
-	icon_state = "medal_paperwork"
-	medaltype = "medal-gold"
-	custom_materials = list(/datum/material/gold=HALF_SHEET_MATERIAL_AMOUNT)
+	name = "Tomb of the Paperwork Employee"
+	desc = ""
+	icon = 'icons/obj/tomb.dmi'
+	icon_state = "memorial"
+	density = TRUE
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
