@@ -736,16 +736,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		. = "<span class='notice'>After some fiddling, [user] manages to light [A] with [src].</span>"
 
 
-/obj/item/lighter/slime
-	name = "slime zippo"
-	desc = ""
-	icon_state = "slighter"
-	heat = 3000 //Blue flame!
-	light_color = LIGHT_COLOR_CYAN
-	overlay_state = "slime"
-	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/medicine/pyroxadone = 5)
-
-
 ///////////
 //ROLLING//
 ///////////
