@@ -17,7 +17,7 @@
 	desc = "<b>Aasimar</b><br> \
 	Immortal offspring sculpted by one of the gods. \
 	Aasimar are often revered due to their celestial origin, but face great solitude \
-	as not many of their kind exist.
+	as not many of their kind exist. "
 
 	skin_tone_wording = "Crafted With"
 	nutrition_mod = 2 // 200% higher hunger rate. Hungry, hungry aasimar

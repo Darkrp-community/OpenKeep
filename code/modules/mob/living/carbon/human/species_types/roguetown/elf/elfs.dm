@@ -20,7 +20,7 @@
 	leading the remaining tribes to live in fear and paranoia of suffering the same fate. \
 	Many elves sought safety through mixing culture, positioning themselves under the watchful guard of their stronger humen counterparts. \
 	A longstanding fued remains between elves and dwarves. Elven kind has never forgiven the dwarves for their destruction of homeland and \
-	pillaging of natural resources within the former snow-elf territory. To elves, it was the greatest signifier of disrespect for those lost.
+	pillaging of natural resources within the former snow-elf territory. To elves, it was the greatest signifier of disrespect for those lost. "
 
 	skin_tone_wording = "Tribal Identity"
 

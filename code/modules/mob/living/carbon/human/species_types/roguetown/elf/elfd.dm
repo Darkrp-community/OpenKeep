@@ -18,7 +18,7 @@
 	the vast majority hoping to one day achieve such power and domination for themselves. \
 	To most in Psydonia, a dark elf is nothing more than a servant of Zizo waiting to betray for power, \
 	leading most dark elves to remain within their safe underground strongholds. Those who breach the surface \
-	rarely receive fair treatment.
+	rarely receive fair treatment. "
 
 	skin_tone_wording = "Parent House"
 
