@@ -232,10 +232,6 @@
 	var/obj/item/gun/magic/hook/bounty/hook
 	var/toggled = FALSE
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/hook/Initialize()
-	. = ..()
-	hook = new /obj/item/gun/magic/hook/bounty(src)
-
 /obj/item/gun/ballistic/shotgun/doublebarrel/hook/AltClick(mob/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
@@ -253,9 +249,3 @@
 		. += "<span class='notice'>Alt-click to switch to the shotgun.</span>"
 	else
 		. += "<span class='notice'>Alt-click to switch to the hook.</span>"
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/hook/afterattack(atom/target, mob/living/user, flag, params)
-	if(toggled)
-		hook.afterattack(target, user, flag, params)
-	else
-		return ..()

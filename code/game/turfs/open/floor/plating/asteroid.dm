@@ -252,33 +252,7 @@
 	if(is_mining_level(z))
 		SpawnFlora(T)	//No space mushrooms, cacti.
 	// SpawnTerrain(T)
-	SpawnMonster(T)		//Checks for danger area.
 	T.ChangeTurf(turf_type, null, CHANGETURF_IGNORE_AIR)
-
-/turf/open/floor/plating/asteroid/airless/cave/proc/SpawnMonster(turf/T)
-	if(prob(30))
-		if(istype(loc, /area/mine/explored) || !istype(loc, /area/lavaland/surface/outdoors/unexplored))
-			return
-		var/randumb = pickweight(mob_spawn_list)
-		while(randumb == SPAWN_MEGAFAUNA)
-			if(istype(loc, /area/lavaland/surface/outdoors/unexplored/danger)) //this is danger. it's boss time.
-				var/maybe_boss = pickweight(megafauna_spawn_list)
-				if(megafauna_spawn_list[maybe_boss])
-					randumb = maybe_boss
-			else //this is not danger, don't spawn a boss, spawn something else
-				randumb = pickweight(mob_spawn_list)
-
-		for(var/thing in urange(12, T)) //prevents mob clumps
-			if(!ishostile(thing) && !istype(thing, /obj/structure/spawner))
-				continue
-			if((ispath(randumb, /mob/living/simple_animal/hostile/megafauna) || ismegafauna(thing)) && get_dist(src, thing) <= 7)
-				return //if there's a megafauna within standard view don't spawn anything at all
-			if(ispath(randumb, /mob/living/simple_animal/hostile/asteroid) || istype(thing, /mob/living/simple_animal/hostile/asteroid))
-				return //if the random is a standard mob, avoid spawning if there's another one within 12 tiles
-			if((ispath(randumb, /obj/structure/spawner/lavaland) || istype(thing, /obj/structure/spawner/lavaland)) && get_dist(src, thing) <= 2)
-				return //prevents tendrils spawning in each other's collapse range
-
-		new randumb(T)
 
 /turf/open/floor/plating/asteroid/airless/cave/proc/SpawnFlora(turf/T)
 	if(prob(12))

@@ -166,12 +166,6 @@
 	energy_coeff = 1
 	synchronizer_coeff = 1
 
-/datum/mutation/human/void/on_life()
-	if(!isturf(owner.loc))
-		return
-	if(prob((0.5+((100-dna.stability)/20))) * GET_MUTATION_SYNCHRONIZER(src)) //very rare, but enough to annoy you hopefully. +0.5 probability for every 10 points lost in stability
-		new /obj/effect/immortality_talisman/void(get_turf(owner), owner)
-
 /obj/effect/proc_holder/spell/self/void
 	name = "Convoke Void" //magic the gathering joke here
 	desc = ""
@@ -186,10 +180,6 @@
 	. = ..()
 	if(!isturf(user.loc))
 		return FALSE
-
-/obj/effect/proc_holder/spell/self/void/cast(mob/user = usr)
-	. = ..()
-	new /obj/effect/immortality_talisman/void(get_turf(user), user)
 
 /datum/mutation/human/self_amputation
 	name = "Autotomy"
