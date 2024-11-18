@@ -168,26 +168,20 @@
 /datum/reagent/medicine/C2/seiver //a bit of a gray joke
 	name = "Seiver"
 	description = "A medicine that shifts functionality based on temperature. Colder temperatures incurs radiation removal while hotter temperatures promote antitoxicity. Damages the heart." //CHEM HOLDER TEMPS, NOT AIR TEMPS
-	var/radbonustemp = (T0C - 100) //being below this number gives you 10% off rads.
 
 /datum/reagent/medicine/C2/seiver/on_mob_metabolize(mob/living/carbon/human/M)
 	. = ..()
-	radbonustemp = rand(radbonustemp - 50, radbonustemp + 50) // Basically this means 50K and below will always give the percent heal, and upto 150K could. Calculated once.
 
 /datum/reagent/medicine/C2/seiver/on_mob_life(mob/living/carbon/human/M)
 	var/chemtemp = min(M.reagents?.chem_temp, 1000)
 	chemtemp = chemtemp ? chemtemp : 273 //why do you have null sweaty
-	var/healypoints = 0 //5 healypoints = 1 heart damage; 5 rads = 1 tox damage healed for the purpose of healypoints
+	var/healypoints = 0 //5 healypoints = 1 heart damage;
 
 	//you're hot
 	var/toxcalc = min(round((chemtemp-1000)/175+5,0.1),5) //max 5 tox healing a tick
 	if(toxcalc > 0)
 		M.adjustToxLoss(toxcalc*-1)
 		healypoints += toxcalc
-
-	//and you're cold
-	var/radcalc = round((T0C-chemtemp)/6,0.1) //max ~45 rad loss unless you've hit below 0K. if so, wow.
-
 
 	//you're yes and... oh no!
 	healypoints = round(healypoints,0.1)

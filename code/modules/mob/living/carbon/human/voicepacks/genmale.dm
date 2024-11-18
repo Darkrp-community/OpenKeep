@@ -29,8 +29,6 @@
 				used = list('sound/vo/male/gen/drown (1).ogg','sound/vo/male/gen/drown (2).ogg','sound/vo/male/gen/drown (3).ogg')
 			if("embed")
 				used = list('sound/vo/male/gen/embed (1).ogg','sound/vo/male/gen/embed (2).ogg','sound/vo/male/gen/embed (3).ogg')
-			if("fart")
-				used = list('sound/vo/fart1.ogg','sound/vo/fart2.ogg','sound/vo/fart3.ogg','sound/vo/fart4.ogg')
 			if("fatigue")
 				used = 'sound/vo/male/gen/fatigue.ogg'
 			if("firescream")

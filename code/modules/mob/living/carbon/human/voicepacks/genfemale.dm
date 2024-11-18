@@ -31,8 +31,6 @@
 				used = list('sound/vo/female/gen/drown (1).ogg','sound/vo/female/gen/drown (2).ogg','sound/vo/female/gen/drown (3).ogg')
 			if("embed")
 				used = list('sound/vo/female/gen/embed (1).ogg','sound/vo/female/gen/embed (2).ogg','sound/vo/female/gen/embed (3).ogg','sound/vo/female/gen/embed (4).ogg')
-			if("fart")
-				used = list('sound/vo/fart1.ogg','sound/vo/fart2.ogg','sound/vo/fart3.ogg','sound/vo/fart4.ogg')
 			if("fatigue")
 				used = list('sound/vo/female/gen/fatigue (1).ogg','sound/vo/female/gen/fatigue (2).ogg','sound/vo/female/gen/fatigue (3).ogg')
 			if("firescream")

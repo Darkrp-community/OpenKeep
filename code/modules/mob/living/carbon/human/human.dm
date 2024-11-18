@@ -155,12 +155,7 @@
 			if(statpanel("Status"))
 				stat("Confessions sent: [GLOB.confessors.len]")
 
-	return //RTchange
-/*
-	if(statpanel("Status"))
-//		stat(null, "Intent: [used_intent]")
-//		stat(null, "Move Mode: [m_intent]")
- */
+	return
 
 /mob/living/carbon/human/show_inv(mob/user)
 	user.set_machine(src)
