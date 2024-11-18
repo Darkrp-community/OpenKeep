@@ -156,26 +156,6 @@
 
 	speech_args[SPEECH_MESSAGE] = jointext(message_list, " ")
 
-/obj/item/organ/tongue/alien
-	name = "alien tongue"
-	desc = ""
-	icon_state = "tonguexeno"
-	say_mod = "hisses"
-	taste_sensitivity = 10 // LIZARDS ARE ALIENS CONFIRMED
-	modifies_speech = TRUE // not really, they just hiss
-	var/static/list/languages_possible_alien = typecacheof(list(
-		/datum/language/xenocommon,
-		/datum/language/common,
-		/datum/language/draconic,
-		/datum/language/monkey))
-
-/obj/item/organ/tongue/alien/Initialize(mapload)
-	. = ..()
-	languages_possible = languages_possible_alien
-
-/obj/item/organ/tongue/alien/handle_speech(datum/source, list/speech_args)
-	playsound(owner, "hiss", 25, TRUE, TRUE)
-
 /obj/item/organ/tongue/bone
 	name = "bone \"tongue\""
 	desc = ""

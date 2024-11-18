@@ -127,13 +127,6 @@
 		if(!findname(.))
 			break
 
-/proc/random_unique_moth_name(attempts_to_find_unique_name=10)
-	for(var/i in 1 to attempts_to_find_unique_name)
-		. = capitalize(pick(GLOB.moth_first)) + " " + capitalize(pick(GLOB.moth_last))
-
-		if(!findname(.))
-			break
-
 
 GLOBAL_LIST_INIT(skin_tones, sortList(list(
 	"skin1" = "ffe0d1",

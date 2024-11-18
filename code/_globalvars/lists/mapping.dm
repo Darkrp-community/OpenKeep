@@ -18,38 +18,23 @@ GLOBAL_LIST_EMPTY(department_security_spawns)	//list of all department security 
 GLOBAL_LIST_EMPTY(generic_event_spawns)			//handles clockwork portal+eminence teleport destinations
 GLOBAL_LIST_EMPTY(jobspawn_overrides)			//These will take precedence over normal spawnpoints if created.
 
-GLOBAL_LIST_EMPTY(wizardstart)
-GLOBAL_LIST_EMPTY(nukeop_start)
 GLOBAL_LIST_EMPTY(bandit_starts)
 GLOBAL_LIST_EMPTY(vlord_starts)
 GLOBAL_LIST_EMPTY(vspawn_starts)
 GLOBAL_LIST_EMPTY(dknight_starts)
 GLOBAL_LIST_EMPTY(vlordspawn_starts)
 GLOBAL_LIST_EMPTY(delf_starts)
-GLOBAL_LIST_EMPTY(nukeop_leader_start)
 GLOBAL_LIST_EMPTY(newplayer_start)
 GLOBAL_LIST_EMPTY(prisonwarp)	//admin prisoners go to these
-GLOBAL_LIST_EMPTY(holdingfacility)	//captured people go here (ninja energy net)
-GLOBAL_LIST_EMPTY(tdome1)
-GLOBAL_LIST_EMPTY(tdome2)
-GLOBAL_LIST_EMPTY(tdomeobserve)
-GLOBAL_LIST_EMPTY(tdomeadmin)
 GLOBAL_LIST_EMPTY(prisonwarped)	//list of players already warped
-GLOBAL_LIST_EMPTY(blobstart) //stationloving objects, blobs, santa, respawning devils
 GLOBAL_LIST_EMPTY(underworldspawn)
 GLOBAL_LIST_EMPTY(underworldcoinspawns)
 GLOBAL_LIST_EMPTY(underworldcoins)
 GLOBAL_LIST_EMPTY(hauntstart)
 GLOBAL_LIST_EMPTY(testportals)
 GLOBAL_LIST_EMPTY(traveltiles)
-GLOBAL_LIST_EMPTY(secequipment) //sec equipment lockers that scale with the number of sec players
-GLOBAL_LIST_EMPTY(deathsquadspawn)
 GLOBAL_LIST_EMPTY(emergencyresponseteamspawn)
 GLOBAL_LIST_EMPTY(ruin_landmarks)
-
-	//away missions
-GLOBAL_LIST_EMPTY(awaydestinations)	//a list of landmarks that the warpgate can take you to
-GLOBAL_LIST_EMPTY(vr_spawnpoints)
 
 	//used by jump-to-area etc. Updated by area/updateName()
 GLOBAL_LIST_EMPTY(sortedAreas)
