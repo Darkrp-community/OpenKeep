@@ -56,7 +56,7 @@
 
 /////BARRICADE TYPES///////
 
-/obj/structure/barricade/wooden
+/obj/structure/barricade
 	name = "wooden barricade"
 	desc = ""
 	icon = 'icons/obj/structures.dmi'
@@ -64,7 +64,7 @@
 	bar_material = WOOD
 	var/drop_amount = 3
 
-/obj/structure/barricade/wooden/rogue
+/obj/structure/barricade/rogue
 	name = "wooden barricade"
 	desc = ""
 	icon = 'icons/roguetown/misc/structure.dmi'
@@ -73,13 +73,13 @@
 	bar_material = WOOD
 	drop_amount = 0
 
-/obj/structure/barricade/wooden/rogue/crude
+/obj/structure/barricade/rogue/crude
 	name = "crude plank barricade"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "woodenbarricade_r2"
 	max_integrity = 40
 
-/obj/structure/barricade/wooden/crude
+/obj/structure/barricade/crude
 	name = "crude plank barricade"
 	desc = ""
 	icon_state = "woodenbarricade-old"
@@ -87,7 +87,7 @@
 	max_integrity = 50
 	proj_pass_rate = 65
 
-/obj/structure/barricade/wooden/crude/snow
+/obj/structure/barricade/crude/snow
 	desc = ""
 	icon_state = "woodenbarricade-snow-old"
 	max_integrity = 75

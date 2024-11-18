@@ -4008,8 +4008,8 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
 "eCo" = (
-/obj/structure/barricade/wooden/rogue,
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/town/sewer)
 "eCq" = (

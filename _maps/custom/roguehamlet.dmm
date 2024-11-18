@@ -5123,7 +5123,7 @@
 	dir = 8;
 	icon_state = "woodwindowdir"
 	},
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/garrison)
 "fqY" = (
