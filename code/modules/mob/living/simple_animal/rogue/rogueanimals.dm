@@ -36,7 +36,7 @@
 
 	botched_butcher_results = list(/obj/item/alch/bone = 1) // 50% chance to get if skill 0 in butchery
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 1)
-	perfect_butcher_results = list(/obj/item/natural/hide = 1) // level 5 butchery bonus
+	perfect_butcher_results = list(/obj/item/natural/hide = 1) // chance to get this instead if high level
 
 	health = 40
 	maxHealth = 40

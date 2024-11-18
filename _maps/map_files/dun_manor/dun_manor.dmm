@@ -212,7 +212,7 @@
 	},
 /area/rogue/under/town/basement)
 "akV" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -303,7 +303,7 @@
 /turf/closed/indestructible/wooddark/hull,
 /area/rogue/indoors/ship)
 "arI" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/effect/decal/cobbleedge{
 	dir = 6
 	},
@@ -5165,7 +5165,7 @@
 /turf/open/water/swamp,
 /area/rogue/under/cave)
 "eZI" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -6069,7 +6069,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
 "fTZ" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -7004,7 +7004,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "gNq" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/curtain/bounty,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
@@ -8156,7 +8156,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "hTE" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)
 "hTH" = (
@@ -9386,7 +9386,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)
 "jeY" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -9414,7 +9414,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "jfC" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
 "jfK" = (
@@ -9444,7 +9444,7 @@
 	},
 /area/rogue/indoors/town/manor)
 "jiD" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "jiG" = (
@@ -9644,6 +9644,9 @@
 /obj/structure/fluff/railing/border{
 	dir = 4
 	},
+/obj/item/natural/bundle/glass,
+/obj/item/natural/bundle/glass,
+/obj/item/natural/bundle/glass,
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
 	},
@@ -11388,7 +11391,7 @@
 	},
 /area/rogue/indoors/town/tavern)
 "lbf" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/bars{
 	icon_state = "barsbent";
 	layer = 2.81
@@ -12876,7 +12879,7 @@
 /area/rogue/indoors/town/shop)
 "mCu" = (
 /obj/structure/fluff/statue{
-	name = "The Veiled Lady"
+	name = "The Undermaiden"
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/rogue/dirt/road,
@@ -14216,7 +14219,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
 "nXm" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/bars/passage/shutter{
 	redstone_id = "weaponsmith_shutter"
 	},
@@ -15455,7 +15458,7 @@
 	},
 /area/rogue/outdoors/rtfield)
 "pfY" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/curtain/bounty,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -15898,11 +15901,11 @@
 	},
 /area/rogue/indoors/town)
 "pxM" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "pya" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/closed,
 /area/rogue/indoors/soilsons)
 "pyj" = (
@@ -15997,7 +16000,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "pCC" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "pCF" = (
@@ -16817,7 +16820,7 @@
 	},
 /area/rogue/indoors/town/magician)
 "qsr" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/closed/wall/mineral/rogue/wooddark/window,
 /area/rogue/indoors/town/tavern)
 "qsO" = (
@@ -18614,7 +18617,7 @@
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town/tavern)
 "sjt" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "sjE" = (
@@ -19239,7 +19242,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/tavern)
 "sQT" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
 "sRc" = (
@@ -20350,7 +20353,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "tSz" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
 "tTu" = (
@@ -20495,7 +20498,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/tavern)
 "tZb" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors/town)
 "tZq" = (
@@ -20856,7 +20859,7 @@
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/shop)
 "uul" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /obj/structure/bars/passage/shutter{
 	redstone_id = "armourer_shutter"
 	},
@@ -21960,7 +21963,7 @@
 /turf/open/floor/rogue/dirt/ambush,
 /area/rogue/outdoors/town)
 "vGh" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -24174,7 +24177,7 @@
 	},
 /area/rogue/indoors/soilsons)
 "xKj" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -50494,8 +50497,8 @@ fsP
 fsP
 jIk
 jIk
-xmW
-xmW
+jIk
+jIk
 sKt
 sKt
 sKt
@@ -51123,7 +51126,7 @@ jIk
 jIk
 jIk
 omo
-xmW
+jIk
 jIk
 xmW
 jIk
@@ -51242,7 +51245,7 @@ fsP
 fsP
 fsP
 fsP
-xmW
+jIk
 eUz
 eUz
 eUz
@@ -51399,14 +51402,14 @@ fsP
 fsP
 xmW
 jIk
-xmW
-jIk
-omo
-xmW
-jIk
 jIk
 jIk
 omo
+xmW
+jIk
+jIk
+jIk
+omo
 jIk
 jIk
 jIk
@@ -51424,8 +51427,8 @@ jIk
 jIk
 jIk
 jIk
-xmW
-xmW
+jIk
+jIk
 ymg
 ymg
 cHT
@@ -51538,7 +51541,7 @@ jIk
 jIk
 omo
 jIk
-xmW
+jIk
 jIk
 xmW
 omo
@@ -51560,7 +51563,7 @@ jIk
 xmW
 jIk
 jIk
-xmW
+jIk
 jIk
 omo
 jIk
@@ -51697,7 +51700,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -51717,7 +51720,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 xmW
@@ -51732,7 +51735,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -51855,7 +51858,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -51870,7 +51873,6 @@ jIk
 jIk
 jIk
 jIk
-xmW
 jIk
 jIk
 jIk
@@ -51892,9 +51894,10 @@ jIk
 jIk
 jIk
 jIk
-xmW
 jIk
 xmW
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -51988,7 +51991,7 @@ eUz
 eUz
 xmW
 xmW
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -52004,7 +52007,7 @@ jIk
 jIk
 xmW
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -52164,7 +52167,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 xmW
 jIk
@@ -52301,16 +52304,16 @@ eUz
 eUz
 jIk
 jIk
-xmW
-xmW
 jIk
 jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 xmW
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -52466,8 +52469,8 @@ omo
 jIk
 xmW
 xmW
-xmW
-xmW
+jIk
+jIk
 pHC
 jIk
 jIk
@@ -52477,12 +52480,7 @@ omo
 omo
 jIk
 jIk
-xmW
-xmW
 jIk
-jIk
-omo
-xmW
 jIk
 jIk
 jIk
@@ -52490,6 +52488,11 @@ omo
 jIk
 jIk
 jIk
+jIk
+omo
+jIk
+jIk
+jIk
 xmW
 jIk
 jIk
@@ -52509,8 +52512,8 @@ xmW
 xmW
 jIk
 jIk
-kpC
-xmW
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -52812,7 +52815,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 xmW
 jIk
@@ -52938,7 +52941,7 @@ xmW
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 omo
 omo
@@ -53095,7 +53098,7 @@ xmW
 xmW
 xmW
 jIk
-xmW
+jIk
 omo
 fsP
 jIk
@@ -53439,7 +53442,7 @@ jIk
 xmW
 jIk
 jIk
-xmW
+jIk
 jIk
 xmW
 xmW
@@ -53558,7 +53561,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -54276,7 +54279,7 @@ ymg
 jIk
 xmW
 jIk
-xmW
+jIk
 jIk
 omo
 omo
@@ -54342,8 +54345,8 @@ jRf
 jRf
 xWK
 xfD
-xmW
-xmW
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -54815,7 +54818,7 @@ hnK
 fsP
 jIk
 jIk
-xmW
+jIk
 jIk
 fsP
 xOC
@@ -55061,7 +55064,7 @@ ymg
 ymg
 xmW
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -55073,7 +55076,7 @@ ylN
 fsP
 xmW
 jIk
-xmW
+jIk
 jIk
 jIk
 xmW
@@ -55110,7 +55113,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 omo
 omo
@@ -55219,7 +55222,7 @@ ymg
 jIk
 jIk
 omo
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -55425,7 +55428,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 xmW
 jIk
@@ -55445,7 +55448,7 @@ xWK
 jIk
 jIk
 xmW
-xmW
+jIk
 fsP
 xOC
 xOC
@@ -55733,7 +55736,7 @@ biI
 eUz
 eUz
 eUz
-xmW
+jIk
 jIk
 jIk
 xmW
@@ -55845,7 +55848,7 @@ ymg
 ymg
 cHT
 ymg
-xmW
+jIk
 jIk
 jIk
 omo
@@ -55890,7 +55893,7 @@ oTz
 eUz
 eUz
 eUz
-xmW
+jIk
 omo
 jIk
 jIk
@@ -55916,7 +55919,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 fsP
 xOC
 xOC
@@ -56073,7 +56076,7 @@ jIk
 jIk
 xmW
 jIk
-xmW
+jIk
 fsP
 xOC
 xOC
@@ -56368,7 +56371,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 omo
 jIk
 jIk
@@ -56385,7 +56388,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 fsP
 xOC
@@ -56540,7 +56543,7 @@ xmW
 hXE
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -56673,7 +56676,7 @@ omo
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 omo
 jIk
@@ -57009,13 +57012,13 @@ ylN
 jIk
 jIk
 hXE
-xmW
 jIk
 jIk
 jIk
 jIk
 jIk
-xmW
+jIk
+jIk
 fsP
 xOC
 xOC
@@ -57328,7 +57331,7 @@ xmW
 xmW
 jIk
 jIk
-xmW
+jIk
 fsP
 xOC
 xOC
@@ -57429,7 +57432,7 @@ ylN
 xmW
 jIk
 omo
-xmW
+jIk
 fsP
 fsP
 fsP
@@ -57584,7 +57587,7 @@ ylN
 ylN
 ylN
 jIk
-xmW
+jIk
 jIk
 jIk
 fsP
@@ -57627,7 +57630,7 @@ omo
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -57952,7 +57955,7 @@ omo
 omo
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 omo
@@ -58097,8 +58100,8 @@ jIk
 xmW
 omo
 jIk
-xmW
-xmW
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -58265,11 +58268,11 @@ ylN
 ylN
 jIk
 xmW
-xmW
 jIk
 jIk
-xmW
-xmW
+jIk
+jIk
+jIk
 pHC
 jIk
 fsP
@@ -58728,7 +58731,7 @@ jIk
 xmW
 pHC
 jIk
-xmW
+jIk
 xmW
 ylN
 ylN
@@ -58898,7 +58901,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 fsP
 xOC
 xOC
@@ -59211,7 +59214,7 @@ jIk
 aLh
 jIk
 jIk
-xmW
+jIk
 xmW
 jPw
 xOC
@@ -59512,7 +59515,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 fsP
 fsP
@@ -59522,7 +59525,7 @@ xmW
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 nPK
 fsP
@@ -60452,7 +60455,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 fsP
 fsP
@@ -60915,7 +60918,7 @@ fsP
 eUz
 eUz
 eUz
-xmW
+jIk
 jIk
 jIk
 omo
@@ -61082,7 +61085,7 @@ xOC
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 fsP
@@ -61387,7 +61390,7 @@ eUz
 eUz
 eUz
 eUz
-xmW
+jIk
 jIk
 xmW
 jIk
@@ -61866,9 +61869,9 @@ jIk
 omo
 omo
 jIk
-xmW
 jIk
-xmW
+jIk
+jIk
 fsP
 xOC
 xOC
@@ -62901,7 +62904,7 @@ ctF
 ctF
 kga
 qya
-udt
+qya
 qya
 qya
 qya
@@ -62958,7 +62961,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -63114,12 +63117,12 @@ aLh
 jIk
 jIk
 jIk
-xmW
 jIk
 jIk
 jIk
 jIk
-xmW
+jIk
+jIk
 jIk
 jIk
 jIk
@@ -63275,7 +63278,7 @@ jIk
 omo
 xmW
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -63371,7 +63374,7 @@ ctF
 ctF
 kga
 qya
-udt
+qya
 qya
 qya
 xIM
@@ -63528,7 +63531,7 @@ ctF
 ctF
 kga
 qya
-udt
+qya
 qya
 udt
 xIM
@@ -63743,7 +63746,7 @@ jIk
 omo
 jIk
 omo
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -64157,7 +64160,7 @@ ctF
 ctF
 kga
 dff
-udt
+qya
 qya
 xIM
 xIM
@@ -64221,8 +64224,8 @@ jIk
 jIk
 jIk
 jIk
-xmW
-xmW
+jIk
+jIk
 fsP
 xOC
 xOC
@@ -64314,7 +64317,7 @@ ctF
 ctF
 kga
 dff
-udt
+qya
 qya
 xIM
 xIM
@@ -64366,7 +64369,7 @@ eUz
 eUz
 eUz
 eUz
-xmW
+jIk
 jIk
 jIk
 omo
@@ -64523,8 +64526,8 @@ eUz
 eUz
 eUz
 eUz
-xmW
-xmW
+jIk
+jIk
 jIk
 omo
 omo
@@ -65569,7 +65572,7 @@ qya
 qya
 qya
 qya
-udt
+qya
 kga
 fKR
 cSe
@@ -65633,7 +65636,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 xmW
 jIk
 pHC
@@ -65725,8 +65728,8 @@ kga
 wgk
 qya
 qya
-udt
-udt
+qya
+qya
 fKR
 xOC
 xOC
@@ -65789,7 +65792,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 xmW
 jIk
@@ -66418,7 +66421,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -66574,7 +66577,7 @@ jIk
 jIk
 jIk
 jIk
-xmW
+jIk
 jIk
 jIk
 jIk
@@ -67205,7 +67208,7 @@ mIn
 fsP
 mIn
 mIn
-xmW
+jIk
 fsP
 xOC
 xOC
@@ -67362,7 +67365,7 @@ xeY
 mIn
 fsP
 fsP
-xmW
+jIk
 fsP
 xOC
 xOC
