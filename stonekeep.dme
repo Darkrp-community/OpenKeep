@@ -1549,7 +1549,6 @@
 #include "code\modules\reagents\reagent_containers\patch.dm"
 #include "code\modules\reagents\reagent_containers\pill.dm"
 #include "code\modules\reagents\reagent_containers\powderspice.dm"
-#include "code\modules\reagents\reagent_containers\syringes.dm"
 #include "code\modules\roguetown\mapgen\ambushmarkers.dm"
 #include "code\modules\roguetown\mapgen\beach.dm"
 #include "code\modules\roguetown\mapgen\bog.dm"

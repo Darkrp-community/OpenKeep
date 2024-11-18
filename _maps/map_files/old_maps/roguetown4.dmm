@@ -11600,10 +11600,6 @@
 "Wv" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /obj/structure/rack/rogue,
-/obj/item/reagent_containers/syringe,
-/obj/item/reagent_containers/syringe,
-/obj/item/reagent_containers/syringe,
-/obj/item/reagent_containers/syringe,
 /turf/open/floor/rogue/blocks/paving/vert,
 /area/rogue/under/town/basement)
 "Wx" = (
