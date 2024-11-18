@@ -10753,6 +10753,7 @@
 /area/rogue/indoors/town/garrison)
 "mlB" = (
 /obj/machinery/artificer_table,
+/obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/outdoors/town/roofs)
 "mlW" = (
@@ -16818,6 +16819,7 @@
 	icon_state = "longtable";
 	dir = 4
 	},
+/obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town/roofs)
 "tfX" = (
