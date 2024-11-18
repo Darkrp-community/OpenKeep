@@ -37,7 +37,6 @@
 	STASPD = 3
 	STACON = 3
 	var/turns_since_scan = 0
-	var/mob/living/simple_animal/mouse/movement_target
 	gold_core_spawnable = FRIENDLY_SPAWN
 
 	footstep_type = FOOTSTEP_MOB_CLAW
@@ -250,39 +249,9 @@
 				set_resting(FALSE)
 			else
 				emote("me", 1, pick("grooms its fur.", "twitches its whiskers.", "shakes out its coat."))
-
-	//MICE!
-	if((src.loc) && isturf(src.loc))
-		if(!stat && !resting && !buckled)
-			for(var/mob/living/simple_animal/mouse/M in view(1,src))
-				if(!M.stat && Adjacent(M))
-					emote("me", 1, "splats \the [M]!")
-					M.splat()
-					movement_target = null
-					stop_automated_movement = 0
-					break
 	..()
 
 	make_babies()
-
-	if(!stat && !resting && !buckled)
-		turns_since_scan++
-		if(turns_since_scan > 5)
-			walk_to(src,0)
-			turns_since_scan = 0
-			if((movement_target) && !(isturf(movement_target.loc) || ishuman(movement_target.loc) ))
-				movement_target = null
-				stop_automated_movement = 0
-			if( !movement_target || !(movement_target.loc in oview(src, 3)) )
-				movement_target = null
-				stop_automated_movement = 0
-				for(var/mob/living/simple_animal/mouse/snack in oview(src,3))
-					if(isturf(snack.loc) && !snack.stat)
-						movement_target = snack
-						break
-			if(movement_target)
-				stop_automated_movement = 1
-				walk_to(src,movement_target,0,3)
 
 // Life proc inherent to roguecats only
 /mob/living/simple_animal/pet/cat/rogue/Life()
@@ -297,7 +266,6 @@
 						sleep(3)
 						visible_message("<span class='notice'>\The [src] kills the rat!</span>")
 						M.obj_destruction()
-						movement_target = null
 						stop_automated_movement = 0
 						break
 

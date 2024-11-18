@@ -20449,7 +20449,6 @@
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/indoors/town/magician)
 "uQj" = (
-/obj/item/reagent_containers/food/snacks/deadmouse,
 /obj/effect/decal/cleanable/food/tomato_smudge,
 /obj/item/cooking/pan,
 /turf/open/floor/rogue/blocks,

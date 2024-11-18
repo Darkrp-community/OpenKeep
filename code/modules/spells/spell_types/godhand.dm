@@ -43,30 +43,3 @@
 	if(attached_spell)
 		attached_spell.on_hand_destroy(src)
 	return ..()
-
-/obj/item/melee/touch_attack/fleshtostone
-	name = "\improper petrifying touch"
-	desc = ""
-	catchphrase = "STAUN EI!!"
-	on_use_sound = 'sound/blank.ogg'
-	icon_state = "fleshtostone"
-	item_state = "fleshtostone"
-
-/obj/item/melee/touch_attack/fleshtostone/afterattack(atom/target, mob/living/carbon/user, proximity)
-	if(!proximity || target == user || !isliving(target) || !iscarbon(user)) //getting hard after touching myself would also be bad
-		return
-	if(!(user.mobility_flags & MOBILITY_USE))
-		to_chat(user, "<span class='warning'>I can't reach out!</span>")
-		return
-	if(!user.can_speak_vocal())
-		to_chat(user, "<span class='warning'>I can't get the words out!</span>")
-		return
-	var/mob/living/M = target
-	if(M.anti_magic_check())
-		to_chat(user, "<span class='warning'>The spell can't seem to affect [M]!</span>")
-		to_chat(M, "<span class='warning'>I feel your flesh turn to stone for a moment, then revert back!</span>")
-		..()
-		return
-	M.Stun(40)
-	M.petrify()
-	return ..()
