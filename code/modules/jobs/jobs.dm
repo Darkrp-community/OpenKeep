@@ -99,7 +99,7 @@ GLOBAL_LIST_INIT(serf_positions, list(
 	"Weaponsmith",
 	"Tailor",
 	"Alchemist",
-	"Mason",
+	"Artificier",
 	"Scribe",
 	))
 

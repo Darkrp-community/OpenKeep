@@ -8,7 +8,6 @@
 	force = 2
 	force_wielded = 4
 	throwforce = 1
-	obj_flags = null
 	firefuel = 10 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_BACK

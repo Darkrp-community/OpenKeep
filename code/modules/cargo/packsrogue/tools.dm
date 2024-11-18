@@ -146,24 +146,24 @@
 	contains = /obj/item/natural/worms/grubs
 
 /datum/supply_pack/rogue/tools/prarml
-	name = "Wooden Arm LEFT"
+	name = "Prosthetic Left Wooden Arm"
 	cost = 15
-	contains = /obj/item/bodypart/l_arm/rproesthetic
+	contains = /obj/item/bodypart/l_arm/prosthetic/wood
 
 /datum/supply_pack/rogue/tools/prarmr
-	name = "Wooden Arm RIGHT"
+	name = "Prosthetic Right Wooden Arm"
 	cost = 15
-	contains = /obj/item/bodypart/r_arm/rproesthetic
+	contains = /obj/item/bodypart/r_arm/prosthetic/wood
 
 /datum/supply_pack/rogue/tools/prlegl
-	name = "Pegleg LEFT"
+	name = "Pegleg Left Leg"
 	cost = 15
-	contains = /obj/item/bodypart/l_leg/rproesthetic
+	contains = /obj/item/bodypart/l_leg/prosthetic/wood
 
 /datum/supply_pack/rogue/tools/prlegr
-	name = "Pegleg RIGHT"
+	name = "Pegleg Right Leg"
 	cost = 15
-	contains = /obj/item/bodypart/r_leg/rproesthetic
+	contains = /obj/item/bodypart/r_leg/prosthetic/wood
 
 /datum/supply_pack/rogue/tools/surgerybag
 	name = "Set of Surgical Tools"

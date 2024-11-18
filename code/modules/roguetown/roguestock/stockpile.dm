@@ -4,6 +4,17 @@
 	item_type = /obj/item/grown/log/tree/small
 	held_items = 3
 	payout_price = 2
+	withdraw_price = 4
+	//transport_fee = 2
+	export_price = 4
+	importexport_amt = 10
+
+/datum/roguestock/stockpile/wood/plank
+	name = "Wood Plank"
+	desc = "Wooden planks ready to be worked."
+	item_type = /obj/item/natural/wood/plank
+	held_items = list(2, 0)
+	payout_price = 4
 	withdraw_price = 6
 	export_price = 4
 	importexport_amt = 20
@@ -112,4 +123,26 @@
 	payout_price = 5
 	withdraw_price = 10
 	export_price = 12
+	importexport_amt = 10
+
+/datum/roguestock/stockpile/tin
+	name = "Raw Tin"
+	desc = "Chunks of tin used for smithing and alloying."
+	item_type = /obj/item/rogueore/tin
+	held_items = list(6, 0)
+	payout_price = 4
+	withdraw_price = 5
+	//transport_fee = 4
+	export_price = 5
+	importexport_amt = 10
+
+/datum/roguestock/stockpile/silver
+	name = "Raw Silver"
+	desc = "Chunks of unrefined silver."
+	item_type = /obj/item/rogueore/silver
+	held_items = list(0, 0)
+	payout_price = 75
+	withdraw_price = 100
+	//transport_fee = 10
+	export_price = 100
 	importexport_amt = 10

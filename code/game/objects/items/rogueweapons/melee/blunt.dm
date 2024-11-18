@@ -231,6 +231,7 @@
 	wbalance = 0
 	associated_skill = /datum/skill/combat/swords
 	wdefense = ULTMATE_PARRY
+	metalizer_result = /obj/item/rogueweapon/sword/iron
 
 /obj/item/rogueweapon/mace/woodclub/train_sword/getonmobprop(tag)
 	. = ..()
@@ -296,6 +297,7 @@
 //	slowdown = 1
 	sellprice = 60
 	wbalance = DODGE_CHANCE_NORMAL
+	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/mace/goden/steel/getonmobprop(tag)
 	. = ..()
