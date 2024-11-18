@@ -20,12 +20,6 @@
 	required_reagents = list(/datum/reagent/fuel/oil = 1, /datum/reagent/ammonia = 1, /datum/reagent/oxygen = 1)
 	required_temp = 380
 
-/datum/chemical_reaction/itching_powder
-	name = "Itching Powder"
-	id = /datum/reagent/toxin/itching_powder
-	results = list(/datum/reagent/toxin/itching_powder = 3)
-	required_reagents = list(/datum/reagent/fuel = 1, /datum/reagent/ammonia = 1, /datum/reagent/medicine/C2/multiver = 1)
-
 /datum/chemical_reaction/facid
 	name = "Fluorosulfuric acid"
 	id = /datum/reagent/toxin/acid/fluacid
@@ -87,12 +81,6 @@
 	id = /datum/reagent/toxin/ghoulpowder
 	results = list(/datum/reagent/toxin/ghoulpowder = 2)
 	required_reagents = list(/datum/reagent/toxin/zombiepowder = 1, /datum/reagent/medicine/epinephrine = 1)
-
-/datum/chemical_reaction/mindbreaker
-	name = "Mindbreaker Toxin"
-	id = /datum/reagent/toxin/mindbreaker
-	results = list(/datum/reagent/toxin/mindbreaker = 5)
-	required_reagents = list(/datum/reagent/silicon = 1, /datum/reagent/hydrogen = 1, /datum/reagent/medicine/C2/multiver = 1)
 
 /datum/chemical_reaction/heparin
 	name = "Heparin"

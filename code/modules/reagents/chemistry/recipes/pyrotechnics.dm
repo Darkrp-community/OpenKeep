@@ -123,13 +123,6 @@
 	required_temp = 550 + rand(-49,49)
 
 
-/datum/chemical_reaction/reagent_explosion/penthrite_explosion
-	name = "Penthrite explosion"
-	id = "penthrite_explosion"
-	required_reagents = list(/datum/reagent/medicine/C2/penthrite = 1, /datum/reagent/phenol = 1, /datum/reagent/acetone_oxide = 1)
-	required_temp = 315
-	strengthdiv = 5
-
 /datum/chemical_reaction/reagent_explosion/potassium_explosion
 	name = "Explosion"
 	id = "potassium_explosion"
@@ -152,7 +145,7 @@
 	name = "Gunpowder"
 	id = /datum/reagent/gunpowder
 	results = list(/datum/reagent/gunpowder = 3)
-	required_reagents = list(/datum/reagent/saltpetre = 1, /datum/reagent/medicine/C2/multiver = 1, /datum/reagent/sulfur = 1)
+	required_reagents = list(/datum/reagent/saltpetre = 1, /datum/reagent/charcoal = 1, /datum/reagent/sulfur = 1)
 
 /datum/chemical_reaction/reagent_explosion/gunpowder_explosion
 	name = "Gunpowder Kaboom"

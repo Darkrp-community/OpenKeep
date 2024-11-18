@@ -128,15 +128,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	desc = ""
 	list_reagents = list(/datum/reagent/medicine/mannitol = 30)
 
-/obj/item/reagent_containers/glass/bottle/multiver
-	name = "multiver bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/medicine/C2/multiver = 30)
-
-/obj/item/reagent_containers/glass/bottle/syriniver
-	name = "syriniver bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/medicine/C2/syriniver = 30)
 
 /obj/item/reagent_containers/glass/bottle/mutagen
 	name = "unstable mutagen bottle"

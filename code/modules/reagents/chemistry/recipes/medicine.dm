@@ -18,20 +18,6 @@
 	results = list(/datum/reagent/medicine/spaceacillin = 2)
 	required_reagents = list(/datum/reagent/cryptobiolin = 1, /datum/reagent/medicine/epinephrine = 1)
 
-/datum/chemical_reaction/oculine
-	name = "Oculine"
-	id = /datum/reagent/medicine/oculine
-	results = list(/datum/reagent/medicine/oculine = 3)
-	required_reagents = list(/datum/reagent/medicine/C2/multiver = 1, /datum/reagent/carbon = 1, /datum/reagent/hydrogen = 1)
-	mix_message = "The mixture bubbles noticeably and becomes a dark grey color!"
-
-/datum/chemical_reaction/inacusiate
-	name = /datum/reagent/medicine/inacusiate
-	id = /datum/reagent/medicine/inacusiate
-	results = list(/datum/reagent/medicine/inacusiate = 2)
-	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/carbon = 1, /datum/reagent/medicine/C2/multiver = 1)
-	mix_message = "The mixture sputters loudly and becomes a light grey color!"
-
 /datum/chemical_reaction/synaptizine
 	name = "Synaptizine"
 	id = /datum/reagent/medicine/synaptizine
@@ -55,12 +41,6 @@
 	id = /datum/reagent/medicine/mine_salve
 	results = list(/datum/reagent/medicine/mine_salve = 15)
 	required_reagents = list(/datum/reagent/toxin/plasma = 5, /datum/reagent/iron = 5, /datum/reagent/consumable/sugar = 1) // A sheet of plasma, a twinkie and a sheet of metal makes four of these
-
-/datum/chemical_reaction/instabitaluri
-	name = "Synthflesh (Instabitaluri)"
-	id = /datum/reagent/medicine/C2/instabitaluri
-	results = list(/datum/reagent/medicine/C2/instabitaluri = 3)
-	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/carbon = 1, /datum/reagent/medicine/C2/libital = 1)
 
 /datum/chemical_reaction/calomel
 	name = "Calomel"
@@ -150,12 +130,6 @@
 	results = list(/datum/reagent/medicine/mutadone = 3)
 	required_reagents = list(/datum/reagent/toxin/mutagen = 1, /datum/reagent/acetone = 1, /datum/reagent/bromine = 1)
 
-/datum/chemical_reaction/antihol
-	name = /datum/reagent/medicine/antihol
-	id = /datum/reagent/medicine/antihol
-	results = list(/datum/reagent/medicine/antihol = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/medicine/C2/multiver = 1, /datum/reagent/copper = 1)
-
 /datum/chemical_reaction/cryoxadone
 	name = "Cryoxadone"
 	id = /datum/reagent/medicine/cryoxadone
@@ -233,17 +207,3 @@
 	results = list(/datum/reagent/medicine/granibitaluri = 1)
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/space_cleaner/sterilizine = 1) //haha guys totally not some sort of saline reference!
 	required_temp = 373
-
-/datum/chemical_reaction/medsuture
-	name = "Medicated Suture"
-	id = "med_suture"
-	required_reagents = list(/datum/reagent/cellulose = 10, /datum/reagent/toxin/formaldehyde = 30, /datum/reagent/medicine/polypyr = 30) //This might be a bit much, reagent cost should be reviewed after implementation.
-
-/datum/chemical_reaction/medsuture/on_reaction(datum/reagents/holder, created_volume)
-	var/location = get_turf(holder.my_atom)
-	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/stack/medical/suture/medicated(location)
-	return
-
-
-
