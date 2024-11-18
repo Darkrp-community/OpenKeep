@@ -10,18 +10,15 @@
 /datum/species/tieberian
 	name = "Tiefling"
 	id = "tiefling"
-	desc = "<b>Tiefling</b><br>\
-	Tieflings, also known as Infernal-Spawn, are a relatively new species in Grimoria\
-	Having shown up during the time of the Apotheosis War, \
-	descendants of mortals that willingly served and married Zizo Spawn in unholy union, \
-	they served as the chattel army under the forces of Zizo and Graggar. \
-	Due to their defeat and conversion, Tieflings have since been accepted, begrudgingly, as a proper Pantheon worshipping race. \
-	Their species has suffered vast tragedy throughout their short history, \
-	facing scrutiny, misjudgement and even genocide in the past. Wounding many tiefling psyche \
-	and leading to most seeking a solitary and nomadic life outside the watchful eyes of others. \
-	Tieflings can reproduce with mortals, but only produce more tieflings due to their strong Zizo taint, so no half-breeds exist. \
-	They also tend to be extremely perceptive and paranoid, as luck is rarely on their side \
-	and their unique anatomy makes them extremely susceptible to injury."
+	desc = "<b>Tiefling</b><br> \
+	Tieflings, also known as Infernal-Spawn.\
+	Tieflings cannot reproduce with mortals, and are the spawn of either devils, demons, or other tieflings. \
+	Their treatment ranges from shunning to distrust, depending on the region. Shopkeeps and merchants always keep a wary eye out when \
+	a tiefling passes by. The resentment feed into itself, leading to higher rates of tiefling ire and thievery against other species. \
+	Many tieflings resign to seeking a solitary and nomadic life, huddled in groups outside the watchful eyes of others. \
+	They also tend to be extremely perceptive and paranoid, as luck is rarely on their side. \
+	Oddly positioned scales, hollow bones, and other varying oddities that may appear in a tiefling's biology \
+	make them considerably fragile. If to make matters worse, their hellish progenitors have left them a destiny of misfortune. \
 
 	skin_tone_wording = "Progenitor"
 

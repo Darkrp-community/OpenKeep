@@ -13,20 +13,14 @@
 	name = "Dwarf"
 	id = "dwarf"
 	desc = "<b>Dwarf</b><br>\
-	A proud and robust race of stunted folk, \
+	A proud and robust species of stunted folk, \
 	the dwarves are known for their pride in martial strength \
 	and their tenacity towards their ancient customs. \
 	A Dwarf, much like the rock that they carve their fortress out of \
-	is stubborn and ancient, much like their Patron founder the Saint Malum \
-	during the time of the weeping god. They, like stone: also rarely change \
-	and are stubborn to a fault. \
-	A Dwarf tends to his ancestorial heritage for posterity and guidance on \
-	the various challenges their people will face. Even if, in some irony: this behaviour \
-	leads the race towards technological innovation as they continue \
-	to improve their craft through powerful mechanization and forging. \
-	While also impeding their civilizational growth beyond Grimorias mountain ranges due to \
-	constant infighting regarding 'true' doctrines, traditions, customs. \
-	Dwarves are hearty, stout and prone to severe mood swings, but are not known for their speed or eyesight..."
+	is stubborn and ancient. They are revered craftsmen, sculptors, smiths, \
+	and miners. As an old saying goes, 'If you want it done right, lose 2 feet and grow a beard.' \
+	Despite their cultural praise, a long-standing fued remains between dwarves and elves \
+	stemming from old industrial practices.
 
 	skin_tone_wording = "Ore Attunement"
 

@@ -14,22 +14,20 @@
 	name = "Elf"
 	id = "elf"
 	desc = "<b>Elf</b><br>\
-	Elves, the first race of Grimoria is characterized by lengthened age, \
+	Elves, the first species of Psydonia, is characterized by lengthened age, \
 	low fertility, and magical aptitude originating from a vast array of tribal cultures and sub-races. \
-	Previously immortal, now mortal as punishment by the Forgotten God for their crimes \
-	against the other races in their pre-historic days: enslavement, \
-	hunting as a game, and other horrendous acts. \
-	Elves have since been in rapid decline due to their divine judgment, \
-	enclaves are few and scattered around the various realms of their ancestral homeland of Grimoria. \
-	Now, the Elves have integrated into the multiple races realms in the known world, \
-	some forming relationships and strong bonds."
+	With the ascension of Zizo, the entire culture of snow-elves was all but destroyed, \
+	leading the remaining tribes to live in fear and paranoia of suffering the same fate. \
+	Many elves sought safety through mixing culture, positioning themselves under the watchful guard of their stronger humen counterparts. \
+	A longstanding fued remains between elves and dwarves. Elven kind has never forgiven the dwarves for their destruction of homeland and \
+	pillaging of natural resources within the former snow-elf territory. To elves, it was the greatest signifier of disrespect for those lost.
 
 	skin_tone_wording = "Tribal Identity"
 
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
-	default_features = list("mcolor" = "FFF", "ears" = "Elf", "wings" = "None")
+	default_features = list("mcolor" = "FFF", "ears" = "ElfW", "wings" = "None")
 	use_skintones = 1
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
@@ -85,7 +83,7 @@
 
 /datum/species/elf/snow/get_skin_list()
 	return sortList(list(
-		"Snow Elf" = SKIN_COLOR_SNOW_ELF,
+		//"Snow Elf" = SKIN_COLOR_SNOW_ELF, These bitches are DEAD!
 		"Plain Elf" = SKIN_COLOR_PLAIN_ELF,
 		"Mountain Elf" = SKIN_COLOR_MOUNTAIN_ELF,
 		"Coastal Elf" = SKIN_COLOR_COASTAL_ELF,
