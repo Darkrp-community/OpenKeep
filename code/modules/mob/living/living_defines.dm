@@ -43,8 +43,6 @@
 	var/incorporeal_move = FALSE //FALSE is off, INCORPOREAL_MOVE_BASIC is normal, INCORPOREAL_MOVE_SHADOW is for ninjas
 								//and INCORPOREAL_MOVE_JAUNT is blocked by holy water/salt
 
-	var/list/roundstart_quirks
-
 	var/list/surgeries //a list of surgery steps. generally empty, they're added when the player is performing them.
 
 	var/now_pushing = null //used by living/Bump() and living/PushAM() to prevent potential infinite loop.
@@ -164,9 +162,9 @@
 
 	var/list/mob_descriptors
 	var/list/custom_descriptors
-	
+
 	var/rogue_sneaking = FALSE
-	
+
 	var/rogue_sneaking_light_threshhold = 0.15
 
 	var/voice_pitch = 1
