@@ -71,10 +71,6 @@
 /obj/structure/closet/supplypod/proc/specialisedPod()
 	return 1
 
-/obj/structure/closet/supplypod/extractionpod/specialisedPod(atom/movable/holder)
-	holder.forceMove(pick(GLOB.holdingfacility)) // land in ninja jail
-	open(holder, forced = TRUE)
-
 /obj/structure/closet/supplypod/Initialize()
 	. = ..()
 	setStyle(style, TRUE) //Upon initialization, give the supplypod an iconstate, name, and description based on the "style" variable. This system is important for the centcom_podlauncher to function correctly
@@ -346,12 +342,3 @@
 		M.forceMove(pod)
 	pod.preOpen() //Begin supplypod open procedures. Here effects like explosions, damage, and other dangerous (and potentially admin-caused, if the centcom_podlauncher datum was used) memes will take place
 	qdel(src) //The target's purpose is complete. It can rest easy now
-
-//------------------------------------UPGRADES-------------------------------------//
-/obj/item/disk/cargo/bluespace_pod //Disk that can be inserted into the Express Console to allow for Advanced Bluespace Pods
-	name = "Bluespace Drop Pod Upgrade"
-	desc = ""
-	icon = 'icons/obj/module.dmi'
-	icon_state = "cargodisk"
-	item_state = "card-id"
-	w_class = WEIGHT_CLASS_SMALL

@@ -2249,6 +2249,10 @@
 "cyz" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
+"cyQ" = (
+/obj/structure/closet/crate/roguecloset/inn/south,
+/turf/open/floor/rogue/woodturned,
+/area/rogue/outdoors/town/roofs)
 "cyS" = (
 /obj/structure/rack/rogue,
 /obj/item/quiver/arrows,
@@ -2359,6 +2363,21 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
+"cGj" = (
+/obj/structure/table/wood{
+	dir = 8;
+	icon_state = "longtable"
+	},
+/obj/item/candle/yellow/lit{
+	pixel_x = -11;
+	pixel_y = -6
+	},
+/obj/item/paper{
+	pixel_y = 14;
+	pixel_x = -1
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/outdoors/town/roofs)
 "cGA" = (
 /obj/structure/chair/wood/rogue{
 	dir = 4
@@ -3429,7 +3448,7 @@
 "dVG" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "mason"
+	lockid = "artificer"
 	},
 /turf/open/floor/rogue/blocks/newstone/alt,
 /area/rogue/indoors/town/dwarfin)
@@ -3989,8 +4008,8 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
 "eCo" = (
-/obj/structure/barricade/wooden/rogue,
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/town/sewer)
 "eCq" = (
@@ -5991,7 +6010,7 @@
 /obj/item/roguekey/dungeon,
 /obj/item/roguekey/graveyard,
 /obj/item/roguekey/garrison,
-/obj/item/roguekey/mason,
+/obj/item/roguekey/artificer,
 /obj/item/roguekey/mercenary,
 /obj/item/roguekey/tavern,
 /obj/item/roguekey/doctor,
@@ -6188,6 +6207,9 @@
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/town/sargoth)
+"gXP" = (
+/turf/open/floor/rogue/woodturned,
+/area/rogue/outdoors/town/roofs)
 "gYg" = (
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/carpet,
@@ -9050,6 +9072,13 @@
 /obj/effect/landmark/start/sapprentice,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
+"knV" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	pixel_y = -1
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/outdoors/town/roofs)
 "koF" = (
 /obj/item/roguebin/water,
 /obj/machinery/light/rogue/torchholder/l,
@@ -10722,6 +10751,11 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
+"mlB" = (
+/obj/machinery/artificer_table,
+/obj/machinery/light/rogue/wallfire/candle/l,
+/turf/open/floor/rogue/woodturned,
+/area/rogue/outdoors/town/roofs)
 "mlW" = (
 /obj/structure/roguewindow/solid,
 /turf/closed/wall/mineral/rogue/roofwall/middle{
@@ -11186,7 +11220,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town)
 "mGx" = (
-/obj/effect/landmark/start/mason,
+/obj/effect/landmark/start/artificer,
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/blocks/paving,
 /area/rogue/indoors/town/dwarfin)
@@ -11405,7 +11439,7 @@
 "mUO" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "mason";
+	lockid = "artificer";
 	name = "Mason's Quarters"
 	},
 /turf/open/floor/rogue/tile,
@@ -11933,6 +11967,12 @@
 /obj/structure/flora/roguetree,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
+"nAv" = (
+/obj/structure/fluff/railing/wood{
+	dir = 4
+	},
+/turf/open/floor/rogue/woodturned,
+/area/rogue/outdoors/town/roofs)
 "nAS" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/rogueweapon/axe/iron,
@@ -14692,6 +14732,26 @@
 	icon_state = "tavern"
 	},
 /area/rogue/indoors/town/tavern)
+"qDd" = (
+/obj/structure/fluff/railing/wood{
+	dir = 4
+	},
+/obj/structure/rack/rogue/shelf{
+	density = 0
+	},
+/obj/item/contraption{
+	pixel_y = 37;
+	pixel_x = 5
+	},
+/obj/item/contraption{
+	pixel_y = 37;
+	pixel_x = -7
+	},
+/obj/structure/closet/crate/chest/old_crate{
+	pixel_y = 10
+	},
+/turf/open/floor/rogue/woodturned,
+/area/rogue/outdoors/town/roofs)
 "qDp" = (
 /obj/structure/roguewindow/openclose{
 	dir = 4
@@ -16754,6 +16814,14 @@
 /obj/item/rogue/instrument/accord,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/town/basement)
+"tfS" = (
+/obj/structure/table/wood{
+	icon_state = "longtable";
+	dir = 4
+	},
+/obj/machinery/light/rogue/wallfire/candle/l,
+/turf/open/floor/rogue/wood,
+/area/rogue/outdoors/town/roofs)
 "tfX" = (
 /obj/structure/ladder,
 /turf/open/floor/rogue/metal,
@@ -18474,7 +18542,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/town/basement)
 "uXI" = (
-/obj/effect/landmark/start/mason,
+/obj/effect/landmark/start/artificer,
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/blocks/paving,
 /area/rogue/indoors/town/dwarfin)
@@ -79266,11 +79334,11 @@ oiP
 sjf
 sjf
 hJb
-oiP
-oiP
-oiP
-oiP
-oiP
+mlB
+gXP
+gXP
+tfS
+cGj
 hJb
 aCf
 doW
@@ -79423,11 +79491,11 @@ oiP
 sjf
 sjf
 hJb
-oiP
-oiP
-oiP
-oiP
-oiP
+cyQ
+gXP
+gXP
+aNE
+aNE
 hJb
 aCf
 doW
@@ -79580,11 +79648,11 @@ oiP
 sjf
 sjf
 hJb
-oiP
-oiP
-oiP
-oiP
-oiP
+qDd
+nAv
+nAv
+aNE
+aNE
 hJb
 aCf
 doW
@@ -79740,8 +79808,8 @@ hJb
 oiP
 oiP
 oiP
-oiP
-oiP
+knV
+aNE
 hJb
 aCf
 doW
@@ -79897,8 +79965,8 @@ hJb
 oiP
 oiP
 oiP
-oiP
-oiP
+knV
+aNE
 hJb
 aCf
 doW

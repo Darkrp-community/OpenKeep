@@ -995,7 +995,7 @@
 	icon_state = "woodwindowdir";
 	dir = 4
 	},
-/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/crude,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/rtfield)
 "bgN" = (
@@ -1470,7 +1470,7 @@
 /obj/machinery/light/rogue/wallfire{
 	pixel_y = 32
 	},
-/obj/effect/landmark/start/mason{
+/obj/effect/landmark/start/artificer{
 	dir = 1
 	},
 /turf/open/floor/rogue/cobble,
@@ -4659,7 +4659,7 @@
 /area/rogue/under/town/basement)
 "fbU" = (
 /obj/effect/spawner/roguemap/tree,
-/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/crude,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
@@ -5248,7 +5248,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "fKJ" = (
-/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/crude,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "fKK" = (
@@ -5675,7 +5675,7 @@
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
 	})
 "gkO" = (
-/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/crude,
 /turf/open/water/swamp,
 /area/rogue/indoors)
 "gkW" = (
@@ -5815,7 +5815,7 @@
 	})
 "grD" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/mason{
+/obj/effect/landmark/start/artificer{
 	dir = 8
 	},
 /turf/open/floor/rogue/woodturned/nosmooth,
@@ -8053,7 +8053,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/sewer)
 "iRJ" = (
-/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/crude,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/shelter/rtfield)
 "iRU" = (
@@ -8792,7 +8792,7 @@
 /area/rogue/outdoors/bog)
 "jGD" = (
 /obj/structure/roguewindow/solid,
-/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/crude,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
 "jGG" = (
@@ -10358,7 +10358,7 @@
 /area/rogue/outdoors/exposed/under/basement)
 "lsi" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/mason,
+/obj/effect/landmark/start/artificer,
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/indoors/shelter/town/dwarf)
 "lsL" = (
@@ -10752,7 +10752,7 @@
 "lKU" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "mason"
+	lockid = "artificer"
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/shelter/town/dwarf)
@@ -10892,7 +10892,7 @@
 "lQT" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "mason"
+	lockid = "artificer"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/town/dwarf)
@@ -14141,7 +14141,7 @@
 /obj/structure/bars/passage/shutter/open{
 	redstone_id = "merchant"
 	},
-/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/crude,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/shop)
 "peo" = (
@@ -15648,7 +15648,7 @@
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/graveyard,
 /obj/item/roguekey/manor,
-/obj/item/roguekey/mason,
+/obj/item/roguekey/artificer,
 /obj/item/roguekey/merchant,
 /obj/item/roguekey/shop,
 /obj/item/roguekey/tavern,
@@ -18018,7 +18018,7 @@
 "tfY" = (
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
-	lockid = "mason";
+	lockid = "artificer";
 	name = "STONE"
 	},
 /turf/open/floor/rogue/cobble,
@@ -19404,7 +19404,7 @@
 	first_time_text = "Blackwine Manor"
 	})
 "uCJ" = (
-/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/crude,
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
@@ -19590,7 +19590,7 @@
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/magician)
 "uJT" = (
-/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/crude,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
 	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
@@ -20133,7 +20133,6 @@
 /area/rogue/outdoors/exposed/manorgarri)
 "vlr" = (
 /obj/structure/closet/crate/coffin,
-/obj/item/clothing/head/helmet/skull,
 /obj/item/scythe,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet{
@@ -22880,7 +22879,7 @@
 	})
 "xZi" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/crude,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
 	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);

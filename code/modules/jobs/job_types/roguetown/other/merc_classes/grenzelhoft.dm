@@ -55,4 +55,4 @@
 	H.change_stat("endurance", 1)
 	H.change_stat("constitution", 2)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-	H.patron = GLOB.patronlist[/datum/patron/forgotten] // SCREAM IF YOU LOVE THE FORGOTTEN GOD
+	H.patron = GLOB.patronlist[/datum/patron/psydon] // SCREAM IF YOU LOVE THE FORGOTTEN GOD

@@ -10,6 +10,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	max_integrity = 300
 	drag_slowdown = 2
+	metalizer_result = /obj/item/reagent_containers/glass/bucket/pot
 	var/open = FALSE
 	var/speed_multiplier = 1 //How fast it distills. Defaults to 100% (1.0). Lower is better.
 

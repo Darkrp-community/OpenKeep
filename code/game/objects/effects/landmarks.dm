@@ -229,9 +229,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Alchemist"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/mason
-	name = "Mason"
-	icon_state = "arrow"
+/obj/effect/landmark/start/artificer
+	name = "Artificer"
 
 /obj/effect/landmark/start/scribe
 	name = "Scribe"
@@ -341,24 +340,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 //Antagonist spawns
 
-/obj/effect/landmark/start/wizard
-	name = "wizard"
-	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "wiznerd_spawn"
-
-/obj/effect/landmark/start/wizard/Initialize()
-	. = ..()
-	GLOB.wizardstart += loc
-
-/obj/effect/landmark/start/nukeop
-	name = "nukeop"
-	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "snukeop_spawn"
-
-/obj/effect/landmark/start/nukeop/Initialize()
-	. = ..()
-	GLOB.nukeop_start += loc
-
 /obj/effect/landmark/start/bandit
 	name = "bandit"
 	icon = 'icons/mob/landmarks.dmi'
@@ -377,16 +358,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/delf/Initialize()
 	. = ..()
 	GLOB.delf_starts += loc
-
-
-/obj/effect/landmark/start/nukeop_leader
-	name = "nukeop leader"
-	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "snukeop_leader_spawn"
-
-/obj/effect/landmark/start/nukeop_leader/Initialize()
-	. = ..()
-	GLOB.nukeop_leader_start += loc
 
 // Must be immediate because players will
 // join before SSatom initializes everything.
@@ -417,26 +388,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Observer-Start"
 	icon_state = "x"
 
-//objects with the stationloving component (nuke disk) respawn here.
-//also blobs that have their spawn forcemoved (running out of time when picking their spawn spot), santa and respawning devils
-/obj/effect/landmark/blobstart
-	name = "blobstart"
-	icon_state = "blob_start"
-
-/obj/effect/landmark/blobstart/Initialize(mapload)
-	..()
-	GLOB.blobstart += loc
-	return INITIALIZE_HINT_QDEL
-
-//spawns sec equipment lockers depending on the number of sec officers
-/obj/effect/landmark/secequipment
-	name = "secequipment"
-	icon_state = "secequipment"
-
-/obj/effect/landmark/secequipment/Initialize(mapload)
-	..()
-	GLOB.secequipment += loc
-	return INITIALIZE_HINT_QDEL
 
 //players that get put in admin jail show up here
 /obj/effect/landmark/prisonwarp
@@ -457,51 +408,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.emergencyresponseteamspawn += loc
 	return INITIALIZE_HINT_QDEL
 
-//ninja energy nets teleport victims here
-/obj/effect/landmark/holding_facility
-	name = "Holding Facility"
-	icon_state = "holding_facility"
-
-/obj/effect/landmark/holding_facility/Initialize(mapload)
-	..()
-	GLOB.holdingfacility += loc
-	return INITIALIZE_HINT_QDEL
-
-/obj/effect/landmark/thunderdome/observe
-	name = "tdomeobserve"
-	icon_state = "tdome_observer"
-
-/obj/effect/landmark/thunderdome/observe/Initialize(mapload)
-	..()
-	GLOB.tdomeobserve += loc
-	return INITIALIZE_HINT_QDEL
-
-/obj/effect/landmark/thunderdome/one
-	name = "tdome1"
-	icon_state = "tdome_t1"
-
-/obj/effect/landmark/thunderdome/one/Initialize(mapload)
-	..()
-	GLOB.tdome1	+= loc
-	return INITIALIZE_HINT_QDEL
-
-/obj/effect/landmark/thunderdome/two
-	name = "tdome2"
-	icon_state = "tdome_t2"
-
-/obj/effect/landmark/thunderdome/two/Initialize(mapload)
-	..()
-	GLOB.tdome2 += loc
-	return INITIALIZE_HINT_QDEL
-
-/obj/effect/landmark/thunderdome/admin
-	name = "tdomeadmin"
-	icon_state = "tdome_admin"
-
-/obj/effect/landmark/thunderdome/admin/Initialize(mapload)
-	..()
-	GLOB.tdomeadmin += loc
-	return INITIALIZE_HINT_QDEL
 
 //generic event spawns
 /obj/effect/landmark/event_spawn

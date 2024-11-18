@@ -1342,8 +1342,8 @@
 /obj/item/storage/belt/rogue/leather/rope,
 /obj/item/storage/belt/rogue/leather/plaquesilver,
 /obj/item/storage/belt/rogue/leather/plaquegold,
-/obj/item/storage/belt/rogue/leather/hand,
-/obj/item/storage/belt/rogue/leather/hand,
+/obj/item/storage/belt/rogue/leather/steel,
+/obj/item/storage/belt/rogue/leather/steel,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "eq" = (

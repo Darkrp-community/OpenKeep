@@ -11,6 +11,7 @@
 	use_power = NO_POWER_USE
 	var/datum/looping_sound/soundloop
 	pass_flags = LETPASSTHROW
+	smeltresult = /obj/item/ingot/bronze
 
 /obj/machinery/light/roguestreet/midlamp
 	icon = 'icons/roguetown/misc/64x64.dmi'

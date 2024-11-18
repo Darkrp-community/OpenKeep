@@ -128,7 +128,7 @@
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.patron = GLOB.patronlist[/datum/patron/psydon]
 		H.verbs |= /mob/living/carbon/human/proc/torture_victim
 
 /datum/job/roguetown/adept/after_spawn(mob/living/carbon/human/H, mob/M, latejoin = TRUE)

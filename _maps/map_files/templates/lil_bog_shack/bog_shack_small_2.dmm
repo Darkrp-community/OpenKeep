@@ -57,7 +57,7 @@
 "l" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "mason"
+	lockid = "artificer"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"

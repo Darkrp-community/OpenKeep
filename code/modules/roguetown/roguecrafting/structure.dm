@@ -184,6 +184,13 @@
 	verbage_tp = "constructs"
 	craftsound = null
 
+/datum/crafting_recipe/roguetown/structure/art_table
+	name = "artificer table"
+	result = /obj/machinery/artificer_table
+	reqs = list(/obj/item/natural/wood/plank = 1)
+	skillcraft = /datum/skill/craft/engineering
+	verbage = "creates"
+
 /datum/crafting_recipe/roguetown/structure/loom
 	name = "loom"
 	result = /obj/machinery/loom

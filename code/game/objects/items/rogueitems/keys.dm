@@ -249,11 +249,11 @@
 	icon_state = "rustkey"
 	lockid = "graveyard"
 
-/obj/item/roguekey/mason
-	name = "mason's key"
-	desc = "This bronze key should open the mason's doors within the Maker's Guild."
+/obj/item/roguekey/artificer
+	name = "artificer's key"
+	desc = "This bronze key should open the Artificer's guild."
 	icon_state = "brownkey"
-	lockid = "mason"
+	lockid = "artificer"
 
 /obj/item/roguekey/niteman
 	name = "nitemaster's key"

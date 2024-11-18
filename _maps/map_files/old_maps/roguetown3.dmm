@@ -4600,7 +4600,7 @@
 /area/rogue)
 "aoz" = (
 /obj/structure/bed/rogue/shit,
-/obj/effect/landmark/start/mason{
+/obj/effect/landmark/start/artificer{
 	icon_state = "arrow";
 	dir = 8
 	},
@@ -4640,7 +4640,7 @@
 "aoF" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "mason"
+	lockid = "artificer"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue)

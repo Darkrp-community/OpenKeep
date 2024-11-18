@@ -3,29 +3,29 @@
 	associated_faith = /datum/faith/inhumen_pantheon
 	confess_lines = list(
 		"PSYDON IS THE DEMIURGE!",
-		"THE NINE ARE WORTHLESS COWARDS!",
-		"THE NINE ARE DECEIVERS!"
+		"THE TEN ARE WORTHLESS COWARDS!",
+		"THE TEN ARE DECEIVERS!"
 	)
 
 /datum/patron/inhumen/zizo
 	name = "Zizo"
-	domain = "The Eternal Beast of Chaos"
-	desc = "Z-Who-Must-Not-Be-Named, the true creator and force behind all reality!"
-	flaws = "ZIZOZIZOZIZO"
-	worshippers = "Apostates, Anarchists, Psychopaths"
-	sins = "None; Zizo Embraces All"
+	domain = "Ascended Goddess of Forbidden Magic, Domination, and Power"
+	desc = "Snow Elf who slaughtered Her kind in ascension, conquered and remade the Dark Elven empires in Her name. She proves that any with will can achieve divinity... though at a cost."
+	flaws = "Hubris, Superiority, Fury"
+	worshippers = "Dark Elves, Aspirants, Necromancers"
+	sins = "Resistance, Deceit, Wastefulness"
 	confess_lines = list(
-		"PRAISE ZIZO!",
-		"LONG LIVE ZIZO!",
-		"ZIZO WITH TRIUMPH!",
+		"I FOLLOW THE PATH OF ZIZO!",
+		"LONG LIVE QUEEN ZIZO!",
+		"ZIZO SHOWED ME THE WAY!",
 	)
 
 /datum/patron/inhumen/graggar
 	name = "Graggar"
-	domain = "The Dark Sini-Star of Murder, Defilement, and Hatred"
-	desc = "The Father of Orcs and Goblins, a brutal tyrant bent to destruction."
+	domain = "Ascended God, the Dark Sini-Star of Unnatural Beasts, Unsated Consumption, and Unbridled Hatred"
+	desc = "Became the first orc upon ascension through His habit of consuming the bodies of those He conquered. His forces continue to ravage the lands in His name. Through him, one may achieve true strength."
 	flaws = "Rage, Hatred, Bloodthirst"
-	worshippers = "Greenskins, Murderers, Sadists"
+	worshippers = "Greenskins, The Revenge-Driven, Sadists"
 	sins = "Compassion, Frailty, Servility"
 	confess_lines = list(
 		"GRAGGAR IS THE BEAST I WORSHIP!",
@@ -33,12 +33,12 @@
 		"GRAGGAR BRINGS UNHOLY DESTRUCTION!"
 	)
 
-/datum/patron/inhumen/matthios 
+/datum/patron/inhumen/matthios
 	name = "Matthios"
-	domain = "God of Thievery, Ill-Gotten Gains, and Wealth"
-	desc = "Once a man who stole a spark of the divine, becoming a powerful yet shunned Saint. Gifted his lessons of thievery and subversion to his devoted followers."
+	domain = "God of Thievery, Ill-Gotten Gains, and Highwaymen"
+	desc = "Legendary humen bandit whose greatest thievery was a spark of divinity through which He ascended himself. It is because of He that nobles clutch their coin purses to their chests in town."
 	flaws = "Pride, Greed, Orneryness"
-	worshippers = "Outlaws, Robbers, Downtrodden Peasantry"
+	worshippers = "Outlaws, Noble-Haters, Downtrodden Peasantry"
 	sins = "Clumsiness, Stupidity, Humility"
 	confess_lines = list(
 		"Matthios steal my pain, and take me away from these HEATHENS!",
@@ -46,28 +46,15 @@
 		"I am a devoted of Matthios, I will sooner martyr than REPENT!",
 	)
 
-/datum/patron/inhumen/ananshor
-	name = "Ananshor"
-	domain = "Spider-Empress, Demon Lord of Plots and Cruelty"
-	desc = "Cursed and cast out by her elven kin and lurking in the dark, she encourages elves to backstab each other."
-	flaws = "Spite, Arrogance, Pettiness"
-	worshippers = "Corrupted Elves, Schemers, Torturers"
-	sins = "Hesitation, Male Dominance, Mercy"
+/datum/patron/inhumen/baotha
+	name = "Baotha"
+	domain = "Goddess of Drugs, Self-Preservation, and Remorseless Joy"
+	desc = "Ascended, formerly disgraced tiefling consort notorious for having a mind elsewhere. Through Her envy and callous distaste, she traded her family's life for a shipment of powder. As she preaches to her followers, 'Joy at all costs!'"
+	flaws = "Enviousness, Self-Destruction, Willingness to Sacrifice Others"
+	worshippers = "Addicts, Gamblers, the Motherless and Maidenless"
+	sins = "Sobriety, Self-Sacrifice, Faltering Willpower"
 	confess_lines = list(
-		"Ananshor be praised!",
-		"May Ananshor bind the world in her webs!",
-		"All are slaves to Ananshor!",
-	)
-
-/datum/patron/inhumen/zastaris
-	name = "Zastaris"
-	domain = "Queen of Swords, Demon Lord of Secret Murder and Ambition"
-	desc = "Patroness of succubi, soaked in blood and crowned with desire. She demands her followers kill the powerful and topple their thrones."
-	flaws = "Vindictiveness, Lack of Empathy, Manipulation"
-	worshippers = "Assassins, Anarchists, Would-Be Conquerors"
-	sins = "Timidity, Humility, Brutishness"
-	confess_lines = list(
-		"I prostrate myself to Zastaris alone!",
-		"Zastaris, take my blood and bone!",
-		"You will all bow before Zastaris!",
+		"LIVE, LAUGH, LOVE! IN BAOTHA'S NAME!",
+		"JOY AT ALL COSTS! BAOTHA'S TEACHINGS REIGN!",
+		"BAOTHA'S WHISPERS CALM MY MIND!",
 	)

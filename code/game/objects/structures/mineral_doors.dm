@@ -573,6 +573,7 @@
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
 	repair_skill = /datum/skill/craft/carpentry
+	metalizer_result = /obj/structure/mineral_door/wood/donjon
 
 /obj/structure/mineral_door/wood/Initialize()
 	if(icon_state =="woodhandle")
@@ -635,6 +636,7 @@
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
 	repair_skill = /datum/skill/craft/carpentry
+	metalizer_result = null
 
 /obj/structure/mineral_door/wood/window
 	opacity = FALSE
@@ -702,6 +704,8 @@
 	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
 	repair_cost_second = /obj/item/ingot/iron
 	repair_skill = /datum/skill/craft/carpentry
+	metalizer_result = null
+	smeltresult = /obj/item/ingot/iron
 
 /obj/structure/mineral_door/wood/donjon/stone
 	desc = ""
@@ -714,6 +718,7 @@
 	repair_cost_first = /obj/item/natural/stone
 	repair_cost_second = /obj/item/natural/stone
 	repair_skill = /datum/skill/craft/masonry
+	smeltresult = null
 
 /obj/structure/mineral_door/wood/donjon/stone/attack_right(mob/user)
 	if(istype(user.get_active_held_item(), /obj/item/roguekey))

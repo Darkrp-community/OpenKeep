@@ -1510,7 +1510,7 @@
 /obj/machinery/light/rogue/wallfire{
 	pixel_y = 32
 	},
-/obj/effect/landmark/start/mason{
+/obj/effect/landmark/start/artificer{
 	dir = 1
 	},
 /turf/open/floor/rogue/cobble,
@@ -5123,7 +5123,7 @@
 	dir = 8;
 	icon_state = "woodwindowdir"
 	},
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/garrison)
 "fqY" = (
@@ -6060,7 +6060,7 @@
 	})
 "grD" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/mason{
+/obj/effect/landmark/start/artificer{
 	dir = 8
 	},
 /turf/open/floor/rogue/woodturned/nosmooth,
@@ -10755,7 +10755,7 @@
 /area/rogue/outdoors/exposed/under/basement)
 "lsi" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/mason,
+/obj/effect/landmark/start/artificer,
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/indoors/shelter/town/dwarf)
 "lsL" = (
@@ -11153,7 +11153,7 @@
 "lKU" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "mason"
+	lockid = "artificer"
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/shelter/town/dwarf)
@@ -11283,7 +11283,7 @@
 "lQT" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "mason"
+	lockid = "artificer"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/town/dwarf)
@@ -16098,7 +16098,7 @@
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/graveyard,
 /obj/item/roguekey/manor,
-/obj/item/roguekey/mason,
+/obj/item/roguekey/artificer,
 /obj/item/roguekey/merchant,
 /obj/item/roguekey/shop,
 /obj/item/roguekey/tavern,
@@ -18453,7 +18453,7 @@
 "tfY" = (
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
-	lockid = "mason";
+	lockid = "artificer";
 	name = "STONE"
 	},
 /turf/open/floor/rogue/cobble,
