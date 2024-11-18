@@ -161,7 +161,7 @@
 /obj/item/clothing/suit/roguetown/shirt/tunic
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "tunic"
-	desc = ""
+	desc = "A unisex linen tunic."
 	body_parts_covered = CHEST|GROIN|VITALS
 	boobed = FALSE
 	icon_state = "tunic"
@@ -217,7 +217,7 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/gen
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "dress"
-	desc = ""
+	desc = "A simple dress that can be worn with many accessories to change one's style."
 	body_parts_covered = CHEST|GROIN|LEGS|VITALS
 	icon_state = "dressgen"
 	item_state = "dressgen"
@@ -258,7 +258,7 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "chemise"
-	desc = "Comfortable yet elegant, it offers both style and comfort for everyday wear"
+	desc = "Simple yet elegant, it offers both style and comfort for everyday wear."
 	body_parts_covered = CHEST|GROIN|LEGS|VITALS
 	icon_state = "silkdress"
 	color = CLOTHING_LINEN
@@ -304,7 +304,7 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "dress"
-	desc = ""
+	desc = "A short, tight dress of thin and silky fabric."
 	body_parts_covered = null
 	icon_state = "sexydress"
 	item_state = "sexydress"
@@ -316,6 +316,12 @@
 	color = pick(CLOTHING_WINESTAIN_RED, CLOTHING_SKY_BLUE, CLOTHING_SALMON	, CLOTHING_SOOT_BLACK)
 	..()
 
+/obj/item/clothing/suit/roguetown/shirt/dress/valorian
+	name = "valorian dress"
+	desc = "A simple deep-blue frock worn in many cities of Valoria."
+	icon_state = "valorian"
+	item_state = "valorian"
+
 /obj/item/clothing/suit/roguetown/shirt/undershirt/webs
 	name = "webbed shirt"
 	desc = "Exotic silk finely woven into.. this? Might as well be wearing a spiderweb."
@@ -325,7 +331,6 @@
 	l_sleeve_status = SLEEVE_NORMAL
 	body_parts_covered = CHEST|ARMS|VITALS
 	color = null
-
 
 /obj/item/clothing/suit/roguetown/shirt/robe/archivist
 	name = "archivist's robe"
