@@ -38,7 +38,7 @@
 	armor = armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
 	backl = /obj/item/rogueweapon/shield/tower/buckleriron
 	backr = /obj/item/storage/backpack/rogue/satchel
-	H.merctype = 4
+
 	H.change_stat("strength", 1)
 	H.change_stat("endurance", 1)
 	H.change_stat("speed", 1)

@@ -36,7 +36,7 @@
 	neck = /obj/item/clothing/neck/roguetown/coif
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/rogueweapon/knife/hunting = 1)
-	H.merctype = 4
+
 	H.change_stat("perception", 1)
 	H.change_stat("endurance", 1)
 	H.change_stat("speed", 1)

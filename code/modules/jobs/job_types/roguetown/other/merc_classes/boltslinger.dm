@@ -49,7 +49,6 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 
-		H.merctype = 5
 
 		H.change_stat("perception", 3)
 		H.change_stat("endurance", 1)

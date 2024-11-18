@@ -158,8 +158,8 @@
 	coverage = 55
 
 /obj/item/rogueweapon/shield/tower/rider
-	name = "Desert Rider shield"
-	desc = "A iron reinforced shield that covers the entire chest, a design of the ziggurat popular on the desert mercenaries."
+	name = "desert rider shield"
+	desc = "A shield of Zybantine design, reinforced with iron and made to protect the upper body."
 	icon_state = "desert_rider"
 	force = 15
 	wdefense = 5

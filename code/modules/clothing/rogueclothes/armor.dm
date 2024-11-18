@@ -78,8 +78,8 @@
 //................ Crimson Marauder ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea/marauder
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "Jinete's Linothorax"
-	desc = "An equipment styled in the shape of the skirmisher tiefling nomads of the Crimsonlands, a modified version of the ancestral craft of the original tiefling equipment of the Apotheosis war. Most of the armor has been stripped in favor of limberness and ease of replacement. The stained leather bears a red devil face making a war cry, a horrid ancestor of some blood-thirsty tiefling, no doubt."
+	name = "jinete's linothorax"
+	desc = "A stained leather cuirass bearing the snarling face of a demon. The tiefling nomads of the Crimsonlands shape this armor to hearken to that which their ancestors wore."
 	icon_state = "crimson_armor"
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE

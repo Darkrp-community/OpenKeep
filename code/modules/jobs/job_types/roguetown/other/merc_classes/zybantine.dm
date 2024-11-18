@@ -49,7 +49,6 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)//so they can heal themselves, after all they didn't survived the mercenary life without know how to sew their wou
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)//the desert riders didn't knew how to ride... until now
 
-		H.merctype = 4
 
 		H.change_stat("strength", 1)
 		H.change_stat("constitution", 1)//so they get 3 stat points like anyone else
