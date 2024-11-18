@@ -7,6 +7,8 @@
 			used = pick('sound/vo/mobs/gob/aggro (1).ogg','sound/vo/mobs/gob/aggro (2).ogg','sound/vo/mobs/gob/aggro (3).ogg','sound/vo/mobs/gob/aggro (4).ogg')
 		if("deathgurgle")
 			used = pick('sound/vo/mobs/gob/death (1).ogg','sound/vo/mobs/gob/death (2).ogg')
+		if("fart")
+			used = list('sound/vo/fart1.ogg','sound/vo/fart2.ogg','sound/vo/fart3.ogg','sound/vo/fart4.ogg')
 		if("idle")
 			used = pick('sound/vo/mobs/gob/idle (1).ogg','sound/vo/mobs/gob/idle (2).ogg','sound/vo/mobs/gob/idle (3).ogg','sound/vo/mobs/gob/idle (4).ogg','sound/vo/mobs/gob/idle (5).ogg')
 		if("pain")

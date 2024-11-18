@@ -31,6 +31,8 @@
 				used = list('sound/vo/female/gen/drown (1).ogg','sound/vo/female/gen/drown (2).ogg','sound/vo/female/gen/drown (3).ogg')
 			if("embed")
 				used = list('sound/vo/female/gen/embed (1).ogg','sound/vo/female/gen/embed (2).ogg','sound/vo/female/gen/embed (3).ogg','sound/vo/female/gen/embed (4).ogg')
+			if("fart")
+				used = list('sound/vo/fart1.ogg','sound/vo/fart2.ogg','sound/vo/fart3.ogg','sound/vo/fart4.ogg')
 			if("fatigue")
 				used = list('sound/vo/female/gen/fatigue (1).ogg','sound/vo/female/gen/fatigue (2).ogg','sound/vo/female/gen/fatigue (3).ogg')
 			if("firescream")
@@ -87,10 +89,6 @@
 				used = 'sound/vo/attn.ogg'
 			if("psst")
 				used = 'sound/vo/psst.ogg'
-			if("sexmoanlight")
-				used = list('sound/vo/female/gen/se/sexlight (1).ogg','sound/vo/female/gen/se/sexlight (2).ogg','sound/vo/female/gen/se/sexlight (3).ogg','sound/vo/female/gen/se/sexlight (4).ogg','sound/vo/female/gen/se/sexlight (5).ogg','sound/vo/female/gen/se/sexlight (6).ogg','sound/vo/female/gen/se/sexlight (7).ogg')
-			if("sexmoanhvy")
-				used = list('sound/vo/female/gen/se/sex (1).ogg','sound/vo/female/gen/se/sex (2).ogg','sound/vo/female/gen/se/sex (3).ogg','sound/vo/female/gen/se/sex (4).ogg','sound/vo/female/gen/se/sex (5).ogg','sound/vo/female/gen/se/sex (6).ogg','sound/vo/female/gen/se/sex (7).ogg','sound/vo/female/gen/se/sex (8).ogg')
 			if("moan")
 				used = list('sound/vo/female/gen/moan (1).ogg','sound/vo/female/gen/moan (2).ogg','sound/vo/female/gen/moan (3).ogg')
 

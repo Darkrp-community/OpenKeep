@@ -111,7 +111,6 @@
 
 	var/can_be_held = FALSE	//whether this can be picked up and held.
 
-	var/radiation = 0 //If the mob is irradiated.
 	var/ventcrawl_layer = PIPING_LAYER_DEFAULT
 	var/losebreath = 0
 
@@ -164,9 +163,9 @@
 
 	var/list/mob_descriptors
 	var/list/custom_descriptors
-	
+
 	var/rogue_sneaking = FALSE
-	
+
 	var/rogue_sneaking_light_threshhold = 0.15
 
 	var/voice_pitch = 1

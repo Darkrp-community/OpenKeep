@@ -28,26 +28,6 @@
 			else
 				walk_to(src,0)
 
-/mob/living/carbon/monkey/handle_mutations_and_radiation()
-	if(radiation)
-		if(radiation > RAD_MOB_KNOCKDOWN && prob(RAD_MOB_KNOCKDOWN_PROB))
-			if(!IsParalyzed())
-				emote("collapse")
-			Paralyze(RAD_MOB_KNOCKDOWN_AMOUNT)
-			to_chat(src, "<span class='danger'>I feel weak.</span>")
-		if(radiation > RAD_MOB_MUTATE)
-			if(prob(1))
-				to_chat(src, "<span class='danger'>I mutate!</span>")
-				emote("gasp")
-				domutcheck()
-
-				if(radiation > RAD_MOB_MUTATE * 2 && prob(50))
-					gorillize()
-					return
-		if(radiation > RAD_MOB_VOMIT && prob(RAD_MOB_VOMIT_PROB))
-			vomit(10, TRUE)
-	return ..()
-
 /mob/living/carbon/monkey/handle_environment(datum/gas_mixture/environment)
 	if(!environment)
 		return
