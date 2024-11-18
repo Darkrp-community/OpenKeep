@@ -676,6 +676,7 @@
 #include "code\game\objects\items\cosmetics.dm"
 #include "code\game\objects\items\courtroom.dm"
 #include "code\game\objects\items\debug_items.dm"
+#include "code\game\objects\items\dice.dm"
 #include "code\game\objects\items\flight_potion.dm"
 #include "code\game\objects\items\granters.dm"
 #include "code\game\objects\items\honeycomb.dm"
