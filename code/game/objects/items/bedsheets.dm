@@ -22,22 +22,61 @@ LINEN BINS
 
 	dog_fashion = /datum/dog_fashion/head/ghost
 	var/list/dream_messages = list("white")
+	var/datum/weakref/signal_sleeper //this is our goldylocks
 
-/obj/item/bedsheet/attack_self(mob/user)
+/obj/item/bedsheet/Initialize()
+	. = ..()
+	AddElement(/datum/element/bed_tuckable, 0, 0, 0)
+
+/obj/item/bedsheet/attack_self(mob/living/user)
 	if(!user.CanReach(src))		//No telekenetic grabbing.
+		return
+	if(!user.resting)
 		return
 	if(!user.dropItemToGround(src))
 		return
-	if(layer == initial(layer))
-		layer = ABOVE_MOB_LAYER
-		to_chat(user, "<span class='notice'>I cover myself with [src].</span>")
-		pixel_x = 0
-		pixel_y = 0
-	else
-		layer = initial(layer)
-		to_chat(user, "<span class='notice'>I smooth [src] out beneath you.</span>")
+	coverup(user)
 	add_fingerprint(user)
-	return
+
+/obj/item/bedsheet/proc/coverup(mob/living/sleeper)
+	layer = ABOVE_MOB_LAYER
+	plane = -2
+	pixel_x = 0
+	pixel_y = 0
+	to_chat(sleeper, "<span class='notice'>I cover myself with [src].</span>")
+	var/angle = sleeper.lying_prev
+	dir = angle2dir(angle + 180) // 180 flips it to be the same direction as the mob
+
+	signal_sleeper = WEAKREF(sleeper)
+	RegisterSignal(src, COMSIG_ITEM_PICKUP, PROC_REF(on_pickup))
+	RegisterSignal(sleeper, COMSIG_MOVABLE_MOVED, PROC_REF(smooth_sheets))
+	RegisterSignal(sleeper, COMSIG_LIVING_SET_RESTING, PROC_REF(smooth_sheets))
+	RegisterSignal(sleeper, COMSIG_PARENT_QDELETING, PROC_REF(smooth_sheets))
+
+/obj/item/bedsheet/proc/smooth_sheets(mob/living/sleeper)
+	SIGNAL_HANDLER
+
+	UnregisterSignal(src, COMSIG_ITEM_PICKUP)
+	UnregisterSignal(sleeper, COMSIG_MOVABLE_MOVED)
+	UnregisterSignal(sleeper, COMSIG_LIVING_SET_RESTING)
+	UnregisterSignal(sleeper, COMSIG_PARENT_QDELETING)
+	to_chat(sleeper, "<span class='notice'>I smooth [src] out beneath you.</span>")
+	layer = initial(layer)
+	plane = initial(plane)
+	signal_sleeper = null
+
+// We need to do this in case someone picks up a bedsheet while a mob is covered up
+// otherwise the bedsheet will disappear while in our hands if the sleeper signals get activated by moving
+/obj/item/bedsheet/proc/on_pickup(datum/source, mob/grabber)
+	SIGNAL_HANDLER
+
+	var/mob/living/sleeper = signal_sleeper?.resolve()
+
+	UnregisterSignal(src, COMSIG_ITEM_PICKUP)
+	UnregisterSignal(sleeper, COMSIG_MOVABLE_MOVED)
+	UnregisterSignal(sleeper, COMSIG_LIVING_SET_RESTING)
+	UnregisterSignal(sleeper, COMSIG_PARENT_QDELETING)
+	signal_sleeper = null
 
 /obj/item/bedsheet/rogue/cloth
 	desc = ""
