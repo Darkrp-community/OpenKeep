@@ -6734,7 +6734,7 @@
 "gAM" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "mason";
+	lockid = "artificer";
 	name = "Maker's Guild"
 	},
 /turf/open/floor/rogue/tile{
@@ -8642,7 +8642,7 @@
 "ivz" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "mason";
+	lockid = "artificer";
 	name = "Mason's Room"
 	},
 /turf/open/floor/rogue/ruinedwood{
@@ -8888,7 +8888,7 @@
 /obj/item/roguekey/dungeon,
 /obj/item/roguekey/graveyard,
 /obj/item/roguekey/garrison,
-/obj/item/roguekey/mason,
+/obj/item/roguekey/artificer,
 /obj/item/roguekey/mercenary,
 /obj/item/roguekey/tavern,
 /obj/item/roguekey/merchant,
@@ -15274,7 +15274,7 @@
 /area/rogue/under/town/basement)
 "oXN" = (
 /obj/structure/bed/rogue,
-/obj/effect/landmark/start/mason,
+/obj/effect/landmark/start/artificer,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},

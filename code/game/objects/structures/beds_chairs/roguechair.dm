@@ -9,6 +9,7 @@
 	sleepy = 0.5
 //	pixel_y = 10
 	layer = OBJ_LAYER
+	metalizer_result = /obj/item/roguestatue/iron/deformed
 
 /obj/structure/chair/bench/church
 	icon_state = "church_benchleft"
@@ -116,6 +117,7 @@
 	blade_dulling = DULLING_BASHCHOP
 	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
 	attacked_sound = "woodimpact"
+	metalizer_result = /obj/item/roguestatue/iron/deformed
 
 /obj/structure/chair/wood/rogue/chair3
 	icon_state = "chair3"
@@ -267,6 +269,7 @@
 	blade_dulling = DULLING_BASHCHOP
 	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
 	attacked_sound = "woodimpact"
+	metalizer_result = /obj/item/cooking/pan
 
 /obj/item/chair/stool/bar/rogue
 	name = "stool"
@@ -303,7 +306,7 @@
 	pixel_y = 5
 	sleepy = 2
 	debris = list(/obj/item/grown/log/tree/small = 1)
-
+	metalizer_result = /obj/machinery/anvil/crafted
 
 // ------------ GOOD BEDS ----------------------
 /obj/structure/bed/rogue/inn
@@ -360,6 +363,7 @@
 /obj/structure/bed/rogue/mediocre
 	icon_state = "shitbed2"
 	sleepy = 1
+	metalizer_result = null
 
 // Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
 /obj/structure/bed/rogue/bear
@@ -376,6 +380,7 @@
 	name = "uncomfortable bed"
 	icon_state = "shitbed"
 	sleepy = 0.5
+	metalizer_result = null
 
 /obj/structure/bed/rogue/sleepingbag
 	name = "sleepcloth"

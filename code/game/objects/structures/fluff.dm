@@ -352,6 +352,7 @@
 	blade_dulling = DULLING_BASHCHOP
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
 	attacked_sound = list('sound/combat/hits/onmetal/grille (1).ogg', 'sound/combat/hits/onmetal/grille (2).ogg', 'sound/combat/hits/onmetal/grille (3).ogg')
+	smeltresult = /obj/item/ingot/bronze
 	var/togg = FALSE
 
 /obj/structure/bars/pipe/left
@@ -382,6 +383,7 @@
 	var/broke = FALSE
 	var/datum/looping_sound/clockloop/soundloop
 	drag_slowdown = 3
+	metalizer_result = /obj/item/roguegear
 
 /obj/structure/fluff/clock/Initialize()
 	soundloop = new(list(src), FALSE)
@@ -452,6 +454,7 @@
 	attacked_sound = 'sound/combat/hits/onglass/glasshit.ogg'
 	var/broke = FALSE
 	pixel_y = 32
+	metalizer_result = /obj/item/roguegear
 
 /obj/structure/fluff/wallclock/Destroy()
 	if(soundloop)

@@ -6,7 +6,6 @@
 	force = 10
 	throwforce = 12
 	throw_range = 5
-	obj_flags = null
 	max_integrity = 20
 	w_class = WEIGHT_CLASS_BULKY
 	bundletype = /obj/item/natural/bundle/glass

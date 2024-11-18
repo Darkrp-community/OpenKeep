@@ -373,6 +373,14 @@
 	sellprice = 150 // A noble collector would love to get his/her hands on one of these spears
 
 
+/obj/item/rogueweapon/polearm/spear/bronze
+	name = "Bronze Spear"
+	desc = "A spear forged of bronze. Expensive but more durable than a regular iron one."
+	icon_state = "bronzespear"
+	max_blade_int = 200
+	smeltresult = /obj/item/ingot/bronze
+	force = 20
+	force_wielded = 25
 
 
 //scythe

@@ -40,7 +40,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand
 	shoes = /obj/item/clothing/shoes/roguetown/boots
-	belt = /obj/item/storage/belt/rogue/leather/hand
+	belt = /obj/item/storage/belt/rogue/leather/steel
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel = 1, /obj/item/keyring/hand = 1)
 	if(H.mind)

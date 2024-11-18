@@ -122,17 +122,17 @@
 	craftdiff = 0
 
 
-/datum/crafting_recipe/roguetown/rproesthetic
-	name = "wood arm (L)"
-	result = list(/obj/item/bodypart/l_arm/rproesthetic)
+/datum/crafting_recipe/roguetown/prosthetic/wood/left
+	name = "wooden left arm"
+	result = list(/obj/item/bodypart/l_arm/prosthetic/wood)
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 	/obj/item/roguegear = 1)
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/rproesthetic
-	name = "wood arm (R)"
-	result = list(/obj/item/bodypart/r_arm/rproesthetic)
+/datum/crafting_recipe/roguetown/prosthetic/wood/right
+	name = "wooden right arm"
+	result = list(/obj/item/bodypart/r_arm/prosthetic/wood)
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 	/obj/item/roguegear = 1)
 	skillcraft = /datum/skill/craft/carpentry

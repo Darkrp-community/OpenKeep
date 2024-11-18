@@ -407,7 +407,8 @@
 \--------*/
 /obj/item/rogueweapon/sword/rapier
 	name = "rapier"
-	desc = "A precise rapier, favored by the small, eloquent and bloodthirsty."
+	desc = "A duelist's weapon derived from western battlefield instruments, it features a tapered \
+	blade with a specialized stabbing tip."
 	icon_state = "rapier"
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
@@ -416,13 +417,6 @@
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 6
 	wbalance = VERY_HARD_TO_DODGE
-
-/obj/item/rogueweapon/sword/rapier/ironestoc
-	name = "estoc"
-	desc = "A precise iron estoc, favored by the skilled duelists of Valoria."
-	icon_state = "estoc"
-	smeltresult = /obj/item/ingot/iron
-	wbalance = HARD_TO_DODGE
 
 /obj/item/rogueweapon/sword/rapier/dec
 	icon_state = "decrapier"
@@ -1030,3 +1024,123 @@
 	sellprice = 25//lets make the two bars worth it
 
 
+
+
+/obj/item/rogueweapon/sword/rapier/ironestoc
+	name = "estoc"
+	desc = "A sword possessed of a quite long and tapered blade that is intended to be thrust between the \
+	gaps in an opponent's armor. The hilt is wrapped tight in black leather."
+	icon_state = "estoc"
+	force = 12
+	force_wielded = 25
+	icon = 'icons/roguetown/weapons/64.dmi'
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	possible_item_intents = list(
+		/datum/intent/sword/chop,
+		/datum/intent/sword/strike,
+	)
+	gripped_intents = list(
+		/datum/intent/sword/thrust/estoc,
+		/datum/intent/sword/lunge,
+		/datum/intent/sword/chop,
+		/datum/intent/sword/strike,
+	)
+	bigboy = TRUE
+	gripsprite = TRUE
+	wlength = WLENGTH_GREAT
+	w_class = WEIGHT_CLASS_BULKY
+	minstr = 8
+	smeltresult = /obj/item/ingot/steel
+	associated_skill = /datum/skill/combat/swords
+	max_blade_int = 300
+	wdefense = 5
+
+/obj/item/rogueweapon/estoc/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list(
+					"shrink" = 0.6,
+					"sx" = -6,
+					"sy" = 7,
+					"nx" = 6,
+					"ny" = 8,
+					"wx" = 0,
+					"wy" = 6,
+					"ex" = -1,
+					"ey" = 8,
+					"northabove" = 0,
+					"southabove" = 1,
+					"eastabove" = 1,
+					"westabove" = 0,
+					"nturn" = -50,
+					"sturn" = 40,
+					"wturn" = 50,
+					"eturn" = -50,
+					"nflip" = 0,
+					"sflip" = 8,
+					"wflip" = 8,
+					"eflip" = 0,
+					)
+			if("wielded")
+				return list(
+					"shrink" = 0.6,
+					"sx" = 3,
+					"sy" = 5,
+					"nx" = -3,
+					"ny" = 5,
+					"wx" = -9,
+					"wy" = 4,
+					"ex" = 9,
+					"ey" = 1,
+					"northabove" = 0,
+					"southabove" = 1,
+					"eastabove" = 1,
+					"westabove" = 0,
+					"nturn" = 0,
+					"sturn" = 0,
+					"wturn" = 0,
+					"eturn" = 15,
+					"nflip" = 8,
+					"sflip" = 0,
+					"wflip" = 8,
+					"eflip" = 0,
+					)
+
+/datum/intent/sword/thrust/estoc
+	name = "thrust"
+	penfactor = 50
+	recovery = 20
+	clickcd = 10
+
+
+/datum/intent/sword/lunge
+	name = "lunge"
+	icon_state = "inimpale"
+	attack_verb = list("lunges")
+	animname = "stab"
+	blade_class = BCLASS_STAB
+	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
+	reach = 2
+	penfactor = 30
+	damfactor = 1.2
+	chargetime = 5
+	recovery = 20
+	clickcd = 10
+
+
+/obj/item/rogueweapon/sword/gladius
+	force = 22
+	name = "Gladius"
+	desc = "A bronze short sword with a slightly wider end, and no guard. Compliments a shield."
+	icon_state = "gladius"
+	gripped_intents = null
+	smeltresult = /obj/item/ingot/bronze
+	max_blade_int = 100
+	max_integrity = 200
+	dropshrink = 0.80
+	wdefense = 2

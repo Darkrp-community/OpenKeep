@@ -239,3 +239,10 @@
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	experimental_onhip = TRUE
 	smeltresult = /obj/item/alch/bone
+
+/obj/item/clothing/mask/rogue/facemask/goldmask
+	name = "Gold Mask"
+	icon_state = "goldmask"
+	max_integrity = 150
+	sellprice = 100
+	smeltresult = /obj/item/ingot/gold
