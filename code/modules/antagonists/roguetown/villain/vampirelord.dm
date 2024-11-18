@@ -113,7 +113,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			H.set_species(/datum/species/elf/snow) //setspecies randomizes body
 		H.after_creation()
 	H.equipOutfit(/datum/outfit/job/roguetown/vamplord)
-	H.patron = GLOB.patronlist[/datum/patron/forgotten] //Servant forever of he who is forgotten.
+	H.patron = GLOB.patronlist[/datum/patron/psydon] //Servant forever of he who is forgotten.
 
 	return TRUE
 
