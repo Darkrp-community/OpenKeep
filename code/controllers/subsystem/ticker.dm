@@ -305,7 +305,7 @@ SUBSYSTEM_DEF(ticker)
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			amt_ready++
 
-	if(amt_ready > amt_ready_needed)
+	if(amt_ready < amt_ready_needed)
 		to_chat(world, "<span class='purple'>Not enough players to start the game</span>")
 	/*	failedstarts++
 		if(failedstarts >= 13) // this stuff is for rougewar, a team deathmatch mode I guess.
