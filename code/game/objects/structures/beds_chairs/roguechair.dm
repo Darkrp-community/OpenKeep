@@ -302,7 +302,7 @@
 	buckle_lying = 90
 	pixel_y = 5
 	sleepy = 2
-	debris = list(/obj/item/grown/log/tree/small = 1)
+	debris = list(/obj/item/natural/plank = 1)
 
 
 // ------------ GOOD BEDS ----------------------
@@ -314,7 +314,7 @@
 	icon_state = "double"
 	pixel_y = 0
 	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/small = 2)
+	debris = list(/obj/item/natural/plank = 2)
 //////WIP  This will essentially allow for multiple mobs to buckle, just needs to change mousedrop function
 /obj/structure/bed/rogue/inn/double
 //	var/list/buckled_mobs = list()  shouldnts be needed
@@ -348,7 +348,7 @@
 	icon_state = "double_wool"
 	pixel_y = 0
 	sleepy = 2
-	debris = list(/obj/item/grown/log/tree/small = 2)
+	debris = list(/obj/item/natural/plank = 2)
 
 
 // ------------ ACCEPTABLE BEDS ----------------------
@@ -360,6 +360,7 @@
 /obj/structure/bed/rogue/mediocre
 	icon_state = "shitbed2"
 	sleepy = 1
+	debris = list(/obj/item/grown/log/tree/small = 1)
 
 // Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
 /obj/structure/bed/rogue/bear
@@ -376,6 +377,7 @@
 	name = "uncomfortable bed"
 	icon_state = "shitbed"
 	sleepy = 0.5
+	debris = list(/obj/item/grown/log/tree/small = 1)
 
 /obj/structure/bed/rogue/sleepingbag
 	name = "sleepcloth"

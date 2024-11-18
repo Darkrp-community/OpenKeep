@@ -101,7 +101,7 @@
 /datum/crafting_recipe/roguetown/structure/dye_bin_luxury
 	name = "luxury dye bin"
 	result = /obj/machinery/dye_bin
-	reqs = list(/obj/item/grown/log/tree/small = 1,
+	reqs = list(/obj/item/natural/plank = 2,
 	/obj/item/reagent_containers/food/snacks/produce/fyritius = 3,
 	/obj/item/reagent_containers/food/snacks/produce/pear = 3,
 	/obj/item/reagent_containers/food/snacks/produce/sunflower = 3,)
@@ -228,7 +228,7 @@
 /datum/crafting_recipe/roguetown/structure/stairsd
 	name = "stairs"
 	result = /obj/structure/stairs/d
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/natural/plank = 1)
 	skillcraft = /datum/skill/craft/carpentry
 	verbage = "construct"
 	verbage_tp = "constructs"
@@ -278,7 +278,17 @@
 /datum/crafting_recipe/roguetown/structure/chest
 	name = "chest"
 	result = /obj/structure/closet/crate/chest/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/natural/plank = 1)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/structure/chest/log //same output, but uses 4x more wood, for levelling up without a handsaw
+	name = "log chest"
+	result = /obj/structure/closet/crate/chest/crafted
+	reqs = list(/obj/item/grown/log/tree/small = 2)
 	verbage = "construct"
 	verbage_tp = "constructs"
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -295,7 +305,7 @@
 /datum/crafting_recipe/roguetown/structure/closet
 	name = "closet"
 	result = /obj/structure/closet/crate/roguecloset/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 2)
+	reqs = list(/obj/item/natural/plank = 1)
 	verbage = "construct"
 	verbage_tp = "constructs"
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -307,7 +317,7 @@
 /datum/crafting_recipe/roguetown/structure/coffin
 	name = "wooden coffin"
 	result = /obj/structure/closet/crate/coffin
-	reqs = list(/obj/item/grown/log/tree/small = 2)
+	reqs = list(/obj/item/natural/plank = 2)
 	verbage = "construct"
 	verbage_tp = "constructs"
 	skillcraft = /datum/skill/craft/carpentry
@@ -378,7 +388,7 @@
 /datum/crafting_recipe/roguetown/structure/nicebed
 	name = "nice bed"
 	result = /obj/structure/bed/rogue
-	reqs = list(/obj/item/grown/log/tree/small = 1,
+	reqs = list(/obj/item/natural/plank = 1,
 				/obj/item/natural/cloth = 1)
 	tools = list(/obj/item/needle)
 	verbage = "carpent"
@@ -390,7 +400,7 @@
 /datum/crafting_recipe/roguetown/structure/table
 	name = "wooden table"
 	result = /obj/structure/table/wood/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/natural/plank = 1)
 	verbage = "carpent"
 	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
