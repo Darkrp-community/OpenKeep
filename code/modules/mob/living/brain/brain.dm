@@ -34,12 +34,6 @@
 		ghostize(drawskip=TRUE)		//Ghostize checks for key so nothing else is necessary.
 	return ..()
 
-/mob/living/brain/update_mobility()
-	if(in_contents_of(/obj/mecha))
-		mobility_flags = MOBILITY_FLAGS_DEFAULT
-	else
-		mobility_flags = NONE
-
 /mob/living/brain/ex_act() //you cant blow up brainmobs because it makes transfer_to() freak out when borgs blow up.
 	return
 

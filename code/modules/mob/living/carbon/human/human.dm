@@ -1134,9 +1134,6 @@
 /mob/living/carbon/human/species/synth/military
 	race = /datum/species/synth/military
 
-/mob/living/carbon/human/species/vampire
-	race = /datum/species/vampire
-
 /mob/living/carbon/human/species/zombie
 	race = /datum/species/zombie
 

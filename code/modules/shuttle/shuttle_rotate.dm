@@ -44,17 +44,6 @@ If ever any of these procs are useful for non-shuttles, rename it to proc/rotate
 	. = ..()
 	update_icon()
 
-/************************************Structure rotate procs************************************/
-
-//Fixes dpdir on shuttle rotation
-/obj/structure/disposalpipe/shuttleRotate(rotation, params)
-	. = ..()
-	var/new_dpdir = 0
-	for(var/D in GLOB.cardinals)
-		if(dpdir & D)
-			new_dpdir = new_dpdir | angle2dir(rotation+dir2angle(D))
-	dpdir = new_dpdir
-
 
 /obj/structure/alien/weeds/shuttleRotate(rotation, params)
 	params &= ~ROTATE_OFFSET

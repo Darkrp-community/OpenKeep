@@ -431,6 +431,5 @@
 	STR.insert_preposition = "in"
 	STR.set_holdable(list(
 		/obj/item/stack/ore/bluespace_crystal,
-		/obj/item/assembly,
 		/obj/item/reagent_containers/glass/beaker,
 	))

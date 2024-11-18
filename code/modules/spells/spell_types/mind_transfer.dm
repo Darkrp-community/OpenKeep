@@ -40,11 +40,6 @@ Also, you never added distance checking after target is selected. I've went ahea
 			to_chat(user, "<span class='warning'>[t_He] [t_is] too far away!</span>")
 		return
 
-	if(ismegafauna(target))
-		if(!silent)
-			to_chat(user, "<span class='warning'>This creature is too powerful to control!</span>")
-		return
-
 	if(target.stat == DEAD)
 		if(!silent)
 			to_chat(user, "<span class='warning'>I don't particularly want to be dead!</span>")

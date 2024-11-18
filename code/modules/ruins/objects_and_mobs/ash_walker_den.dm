@@ -42,9 +42,6 @@
 			for(var/obj/item/W in H)
 				if(!H.dropItemToGround(W))
 					qdel(W)
-			if(ismegafauna(H))
-				meat_counter += 20
-			else
 				meat_counter++
 			H.gib()
 			obj_integrity = min(obj_integrity + max_integrity*0.05,max_integrity)//restores 5% hp of tendril
