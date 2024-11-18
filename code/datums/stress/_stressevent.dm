@@ -3,10 +3,18 @@
 	var/stressadd
 	var/desc
 	var/time_added
-	var/max_stacks = 0 //if higher than 0, can stack
+	var/stacks = 0
+	var/max_stacks = 1
+	var/stressadd_per_extra_stack = 0
 
 /datum/stressevent/proc/get_desc(mob/living/user)
 	return desc
+
+/datum/stressevent/proc/can_apply(mob/living/user)
+	return TRUE
+
+/datum/stressevent/proc/get_stress(mob/living/user)
+	return stressadd + ((stacks - 1) * stressadd_per_extra_stack)
 
 /datum/stressevent/test
 	timer = 5 SECONDS
