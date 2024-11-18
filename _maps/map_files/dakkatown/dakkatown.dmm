@@ -8768,7 +8768,7 @@
 	},
 /area/rogue/indoors/town/dwarfin)
 "HD" = (
-/obj/item/bodypart/l_arm/rproesthetic,
+/obj/item/bodypart/l_arm/prosthetic/wood,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/sewer)
 "HE" = (
