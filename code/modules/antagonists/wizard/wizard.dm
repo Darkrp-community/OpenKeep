@@ -61,7 +61,7 @@
 	owner.current.forceMove(pick(GLOB.wizardstart))
 
 /datum/antagonist/wizard/proc/create_objectives()
-	switch(rand(1,100))
+	switch(rand(1,85))
 		if(1 to 30)
 			var/datum/objective/assassinate/kill_objective = new
 			kill_objective.owner = owner
