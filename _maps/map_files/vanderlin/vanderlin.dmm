@@ -758,7 +758,7 @@
 /area/rogue/under/town/basement)
 "dw" = (
 /obj/effect/landmark/hammer/dev_text{
-	dev_text = "Do we really want an armory in the keep? <br>Could do away with it and give the smiths<br>more works"
+	name = "Do we really want an armory in the keep? <br>Could do away with it and give the smiths<br>more works"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -2756,7 +2756,7 @@
 /area/rogue/indoors/town/church)
 "mh" = (
 /obj/effect/landmark/hammer/dev_text{
-	dev_text = "This is working perfectly"
+	name = "This is working perfectly"
 	},
 /turf/open/floor/rogue/tile/masonic,
 /area/rogue/indoors/town/manor)
@@ -4904,7 +4904,7 @@
 /area/rogue/indoors/town/garrison)
 "wH" = (
 /obj/effect/landmark/hammer/dev_text{
-	dev_text = "Needs finishing"
+	name = "Needs finishing"
 	},
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/under/town/caverogue)
@@ -5874,7 +5874,7 @@
 /area/rogue/indoors/town/manor)
 "AS" = (
 /obj/effect/landmark/hammer/dev_text{
-	dev_text = "Need to do something about the lack of shit up here."
+	name = "Need to do something about the lack of shit up here."
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison)
@@ -6208,7 +6208,7 @@
 /area/rogue/under/town/basement)
 "Cv" = (
 /obj/effect/landmark/hammer/dev_text{
-	dev_text = "This is to be the outer guard house."<br>1 Outer Village Sheriff<br>3 Outer Village Guardsmen<br>This could just be a guard outpost who knows."
+	name = "This is to be the outer guard house.<br>1 Outer Village Sheriff<br>3 Outer Village Guardsmen<br>This could just be a guard outpost who knows."
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
@@ -6401,7 +6401,7 @@
 /area/rogue/indoors/soilsons)
 "Dj" = (
 /obj/effect/landmark/hammer/dev_text{
-	dev_text = "Heavy WIP, need finshied. also missing bell"
+	name = "Heavy WIP, need finshied. also missing bell"
 	},
 /turf/open/floor/rogue/church,
 /area/rogue/outdoors/town)
@@ -7380,7 +7380,7 @@
 /area/rogue/indoors/town/manor)
 "HK" = (
 /obj/effect/landmark/hammer/dev_text{
-	dev_text = "Put the tavern here, put the merchants at the docks"
+	name = "Put the tavern here, put the merchants at the docks"
 	},
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/outdoors/town)
@@ -9653,7 +9653,7 @@
 /area/rogue/under/town/caverogue)
 "RR" = (
 /obj/effect/landmark/hammer/dev_text{
-	dev_text = "Merchant shuttle dock"
+	name = "Merchant shuttle dock"
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/under/cavewet)
