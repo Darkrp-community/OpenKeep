@@ -46,7 +46,7 @@
 		to_chat(src, "<span class='danger'>That accursed cross won't let me commune with the Forbidden One!</span>")
 		return FALSE
 
-	if(istype(src.patron, /datum/patron/forgotten))
+	if(istype(src.patron, /datum/patron/psydon))
 		if(istype(wear_neck, /obj/item/clothing/neck/roguetown/psycross))
 			return TRUE
 		to_chat(src, "<span class='danger'>I can not talk to Him... I need His cross on my neck!</span>")
