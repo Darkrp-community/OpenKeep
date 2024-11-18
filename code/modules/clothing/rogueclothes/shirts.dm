@@ -321,6 +321,7 @@
 	desc = "A simple deep-blue frock worn in many cities of Valoria."
 	icon_state = "valorian"
 	item_state = "valorian"
+	allowed_race = list("human", "tiefling", "aasimar", "elf")
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/webs
 	name = "webbed shirt"
