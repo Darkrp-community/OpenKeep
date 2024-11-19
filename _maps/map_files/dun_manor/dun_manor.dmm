@@ -9163,10 +9163,7 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/bath)
 "iSJ" = (
-/obj/structure/fluff/walldeco/innsign/trophy{
-	desc = "A somewhat unfitting sign for a physician's office.";
-	name = "Medicae Office"
-	},
+/obj/structure/fluff/walldeco/feldshersign,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "iSP" = (
