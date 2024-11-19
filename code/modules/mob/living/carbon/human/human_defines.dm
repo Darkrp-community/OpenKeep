@@ -110,6 +110,7 @@
 	//I dont know how to do UI huds so this will have to do for now.
 	var/family_UI = FALSE
 	var/mob/living/carbon/spouse_mob
+	var/image/spouse_indicator
 	var/setspouse
 	var/familytree_pref = FAMILY_NONE
 	var/datum/heritage/family_datum
