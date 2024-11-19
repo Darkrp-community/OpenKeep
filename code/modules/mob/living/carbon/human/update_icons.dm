@@ -60,11 +60,11 @@ There are several things that need to be remembered:
 
 //HAIR OVERLAY
 /mob/living/carbon/human/update_hair()
-	dna.species.handle_hair(src)
+	dna?.species?.handle_hair(src)
 
 //used when putting/removing clothes that hide certain mutant body parts to just update those and not update the whole body.
 /mob/living/carbon/human/proc/update_mutant_bodyparts()
-	dna.species.handle_mutant_bodyparts(src)
+	dna?.species?.handle_mutant_bodyparts(src)
 
 
 /mob/living/carbon/human/update_body()
@@ -75,7 +75,7 @@ There are several things that need to be remembered:
 	if(fire_stacks < 10)
 		return ..("Generic_mob_burning")
 	else
-		var/burning = dna.species.enflamed_icon
+		var/burning = dna?.species?.enflamed_icon
 		if(!burning)
 			return ..("widefire")
 		return ..(burning)
@@ -85,7 +85,7 @@ There are several things that need to be remembered:
 	START_PROCESSING(SSdamoverlays,src)
 
 /mob/living/carbon/human/proc/update_damage_overlays_real()
-	if(dna.species)
+	if(dna?.species)
 		if(dna.species.update_damage_overlays(src))
 			return
 	remove_overlay(DAMAGE_LAYER)
