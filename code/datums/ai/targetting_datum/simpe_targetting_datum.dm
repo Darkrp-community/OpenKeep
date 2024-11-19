@@ -26,14 +26,23 @@
 	if(living_mob.see_invisible < the_target.invisibility)//Target's invisible to us, forget it
 		return FALSE
 
-	if(living_mob.z != the_target.z)
+	if(isturf(the_target.loc) && living_mob.z != the_target.z)
 		return FALSE
 
 	if(isliving(the_target)) //Targetting vs living mobs
 		var/mob/living/L = the_target
-		var/faction_check = living_mob.faction_check_mob(L)
-		if(faction_check || L.stat)
+		if(faction_check(living_mob, L) || L.stat)
 			return FALSE
 		return TRUE
 
+	return FALSE
+
+/datum/targetting_datum/basic/proc/faction_check(mob/living/living_mob, mob/living/the_target)
+	return living_mob.faction_check_mob(the_target, exact_match = FALSE)
+
+/// Subtype which doesn't care about faction
+/// Mobs which retaliate but don't otherwise target seek should just attack anything which annoys them
+/datum/targetting_datum/basic/ignore_faction
+
+/datum/targetting_datum/basic/ignore_faction/faction_check(mob/living/living_mob, mob/living/the_target)
 	return FALSE
