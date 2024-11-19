@@ -7,6 +7,10 @@
 /mob/proc/update_stress()
 	return TRUE
 
+
+/mob/proc/get_stress_amount()
+	return 0
+
 /mob/proc/adjust_stress(amt)
 	return TRUE
 
@@ -73,6 +77,12 @@
 			if(hud_used.stressies)
 				hud_used.stressies.update_icon()
 	oldstress = stress
+
+
+/mob/living/carbon/get_stress_amount()
+	if(HAS_TRAIT(src, TRAIT_NOMOOD))
+		return 0
+	return stress
 
 /mob/living/carbon/has_stress(event)
 	var/amount

@@ -4171,7 +4171,7 @@
 /obj/item/roguekey/dungeon,
 /obj/item/roguekey/graveyard,
 /obj/item/roguekey/garrison,
-/obj/item/roguekey/mason,
+/obj/item/roguekey/artificer,
 /obj/item/roguekey/mercenary,
 /obj/item/roguekey/nightmaiden,
 /obj/item/roguekey/tavern,
@@ -6767,7 +6767,7 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/dwarfin)
 "xl" = (
-/obj/effect/landmark/start/mason,
+/obj/effect/landmark/start/artificer,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/dwarfin)
 "xm" = (
@@ -7069,7 +7069,7 @@
 "yk" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "mason"
+	lockid = "artificer"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/dwarfin)

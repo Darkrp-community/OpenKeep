@@ -26,6 +26,7 @@
 	H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/misc/athletics, pick(3,3,4), TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+	H.mind?.adjust_skillrank(/datum/skill/labor/lumberjacking, 3, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	pants = /obj/item/clothing/under/roguetown/trou
@@ -38,6 +39,6 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 	beltr = /obj/item/rogueweapon/axe/iron
 	beltl = /obj/item/rogueweapon/knife/villager
-	backpack_contents = list(/obj/item/flint = 1)
+	backpack_contents = list(/obj/item/flint = 1, /obj/item/roguekey/artificer = 1)
 	H.change_stat("strength", 1)
 	H.change_stat("endurance", 1) // Tree chopping builds endurance

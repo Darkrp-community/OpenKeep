@@ -10,7 +10,6 @@
 	force = 10
 	throwforce = 15
 	slot_flags = ITEM_SLOT_MOUTH
-	obj_flags = null
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/natural/stone/Initialize()
@@ -130,6 +129,9 @@
 
 /obj/item/natural/rock/copper
 	mineralType = /obj/item/rogueore/copper
+
+/obj/item/natural/rock/tin
+	mineralType = /obj/item/rogueore/tin
 
 /obj/item/natural/rock/gemerald
 	mineralType = /obj/item/natural/rock/gemerald

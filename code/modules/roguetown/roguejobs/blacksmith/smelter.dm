@@ -1,7 +1,3 @@
-
-/obj/item
-	var/smeltresult
-
 /obj/machinery/light/rogue/smelter
 	icon = 'icons/roguetown/misc/forge.dmi'
 	name = "stone furnace"
@@ -66,8 +62,8 @@
 				if(smelter_exp < 6)
 					ore[W] = floor(rand(smelter_exp*15, max(63, smelter_exp*25))/25) // Math explained below
 				else
-					ore[W] = floor(min(3, smelter_exp)) // Guarantees a return of 3 no matter how extra experience past 3000 you have. 
-				/*  
+					ore[W] = floor(min(3, smelter_exp)) // Guarantees a return of 3 no matter how extra experience past 3000 you have.
+				/*
 				RANDOMLY PICKED NUMBER ACCORDING TO SMELTER SKILL:
 					NO SKILL: 		between 00 and 63
 					WEAK:	 		between 15 and 63
@@ -76,7 +72,7 @@
 					EXPERT: 		between 60 and 100
 					MASTER: 		between 75 and 125
 					LEGENDARY: 		between 90 and 150
-				
+
 				PICKED NUMBER GETS DIVIDED BY 25 AND ROUNDED DOWN TO CLOSEST INTEGER.
 				RESULT DETERMINES QUALITY OF BAR. SEE code/__DEFINES/skills.dm
 					0 = SPOILED
@@ -159,20 +155,39 @@
 				actively_smelting = TRUE
 			else
 				if(cooking == 30)
-					var/alloy
+					var/alloy //moving each alloy to it's own var allows for possible additions later
+					var/steelalloy
+					var/bronzealloy
+					var/blacksteelalloy
+
 					for(var/obj/item/I in ore)
 						if(I.smeltresult == /obj/item/rogueore/coal)
-							alloy = alloy + 1
+							steelalloy = steelalloy + 1
 						if(I.smeltresult == /obj/item/ingot/iron)
-							alloy = alloy + 2
-					if(alloy == 7)
-						testing("ALLOYED")
+							steelalloy = steelalloy + 2
+						if(I.smeltresult == /obj/item/ingot/tin)
+							bronzealloy = bronzealloy + 1
+						if(I.smeltresult == /obj/item/ingot/copper)
+							bronzealloy = bronzealloy + 2
+						if(I.smeltresult == /obj/item/ingot/silver)
+							blacksteelalloy = blacksteelalloy + 1
+						if(I.smeltresult == /obj/item/ingot/steel)
+							blacksteelalloy = blacksteelalloy + 2
+
+					if(steelalloy == 7)
+						testing("STEEL ALLOYED")
 						alloy = /obj/item/ingot/steel
+					else if(bronzealloy == 7)
+						testing("BRONZE ALLOYED")
+						alloy = /obj/item/ingot/bronze
+					else if(blacksteelalloy == 7)
+						testing("BLACKSTEEL ALLOYED")
+						alloy = /obj/item/ingot/blacksteel
 					else
 						alloy = null
 					if(alloy)
 						// The smelting quality of all ores added together, divided by the number of ores, and then rounded to the lowest integer (this isn't done until after the for loop)
-						var/floor_mean_quality = SMELTERY_LEVEL_SPOIL 
+						var/floor_mean_quality = SMELTERY_LEVEL_SPOIL
 						var/ore_deleted = 0
 						for(var/obj/item/I in ore)
 							floor_mean_quality += ore[I]

@@ -6734,7 +6734,7 @@
 "gAM" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "mason";
+	lockid = "artificer";
 	name = "Maker's Guild"
 	},
 /turf/open/floor/rogue/tile{
@@ -8642,7 +8642,7 @@
 "ivz" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "mason";
+	lockid = "artificer";
 	name = "Mason's Room"
 	},
 /turf/open/floor/rogue/ruinedwood{
@@ -8888,7 +8888,7 @@
 /obj/item/roguekey/dungeon,
 /obj/item/roguekey/graveyard,
 /obj/item/roguekey/garrison,
-/obj/item/roguekey/mason,
+/obj/item/roguekey/artificer,
 /obj/item/roguekey/mercenary,
 /obj/item/roguekey/tavern,
 /obj/item/roguekey/merchant,
@@ -9106,8 +9106,8 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/rtfield)
 "iRl" = (
-/obj/structure/barricade/wooden/rogue,
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
 "iRJ" = (
@@ -10085,8 +10085,8 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/outdoors/town/roofs)
 "jRv" = (
-/obj/structure/barricade/wooden/rogue,
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/under/town/sewer)
 "jRH" = (
@@ -15274,7 +15274,7 @@
 /area/rogue/under/town/basement)
 "oXN" = (
 /obj/structure/bed/rogue,
-/obj/effect/landmark/start/mason,
+/obj/effect/landmark/start/artificer,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -16429,7 +16429,7 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
 "pWb" = (
-/obj/structure/barricade/wooden/rogue,
+/obj/structure/barricade/rogue,
 /turf/open/floor/rogue/rooftop{
 	dir = 2;
 	icon_state = "roofg"
@@ -23794,8 +23794,8 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "xuG" = (
-/obj/structure/barricade/wooden/rogue,
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "xuI" = (
@@ -23873,8 +23873,8 @@
 /obj/structure/fluff/railing/wood{
 	dir = 8
 	},
-/obj/structure/barricade/wooden/rogue,
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/rooftop{
 	dir = 2;
 	icon_state = "roofg"

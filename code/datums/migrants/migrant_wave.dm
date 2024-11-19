@@ -133,3 +133,34 @@
 	roles = list(
 		/datum/migrant_role/bandit = 1,
 	)
+
+/datum/migrant_wave/merc
+	name = "Band of Mercenaries"
+	downgrade_wave = /datum/migrant_wave/merc_down_one
+	weight = 8
+	roles = list(
+		/datum/migrant_role/mercenary = 4,
+	)
+
+/datum/migrant_wave/merc_down_one
+	name = "Band of Mercenaries"
+	downgrade_wave = /datum/migrant_wave/merc_down_two
+	can_roll = FALSE
+	roles = list(
+		/datum/migrant_role/mercenary = 3,
+	)
+
+/datum/migrant_wave/merc_down_two
+	name = "Band of Mercenaries"
+	downgrade_wave = /datum/migrant_wave/merc_down_three
+	can_roll = FALSE
+	roles = list(
+		/datum/migrant_role/mercenary = 2,
+	)
+
+/datum/migrant_wave/merc_down_three
+	name = "Band of Mercenaries"
+	can_roll = FALSE
+	roles = list(
+		/datum/migrant_role/mercenary = 1,
+	)

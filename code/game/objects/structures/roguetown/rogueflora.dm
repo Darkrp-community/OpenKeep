@@ -19,6 +19,8 @@
 	static_debris = list(/obj/item/grown/log/tree = 1)
 	alpha = 200
 	var/stump_type = /obj/structure/table/wood/treestump
+	metalizer_result = /obj/machinery/light/roguestreet
+	smeltresult = /obj/item/rogueore/coal
 
 /obj/structure/flora/roguetree/attack_right(mob/user)
 	if(user.mind && isliving(user))
@@ -119,6 +121,7 @@
 	icon_state = "t1"
 	stump_type = /obj/structure/table/wood/treestump/burnt
 	pixel_x = -32
+	metalizer_result = /obj/machinery/anvil
 
 /obj/structure/flora/roguetree/burnt/Initialize()
 	. = ..()
@@ -151,6 +154,7 @@
 	debris = null
 	climb_offset = 14
 	var/isunburnt = TRUE // Var needed for the burnt stump
+	metalizer_result = /obj/machinery/anvil
 
 /obj/structure/table/wood/treestump/Initialize()
 	. = ..()

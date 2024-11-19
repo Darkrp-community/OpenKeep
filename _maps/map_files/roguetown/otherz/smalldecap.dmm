@@ -54,8 +54,8 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains/decap)
 "cD" = (
-/obj/structure/barricade/wooden/rogue,
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/decap)
 "cE" = (
@@ -266,8 +266,8 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/mountains/decap)
 "jM" = (
-/obj/structure/barricade/wooden/rogue,
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains/decap)
 "ke" = (
@@ -286,8 +286,8 @@
 /area/rogue/outdoors/mountains/decap)
 "kS" = (
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage,
-/obj/structure/barricade/wooden/rogue/crude,
-/obj/structure/barricade/wooden/rogue,
+/obj/structure/barricade/rogue/crude,
+/obj/structure/barricade/rogue,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/structure/mineral_door/wood/green{
@@ -330,8 +330,8 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/decap)
 "nT" = (
-/obj/structure/barricade/wooden/rogue,
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue,
+/obj/structure/barricade/rogue/crude,
 /obj/structure/mineral_door/wood/green{
 	name = "Old Door";
 	locked = 1
@@ -550,8 +550,8 @@
 /area/rogue/outdoors/mountains/decap)
 "uC" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/barricade/wooden/rogue,
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/outdoors/mountains/decap)
 "vf" = (
@@ -631,7 +631,7 @@
 /obj/structure/bars/passage{
 	redstone_id = "sewerruin1"
 	},
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue/crude,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains/decap)
@@ -1048,8 +1048,8 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/mountains/decap)
 "Qu" = (
-/obj/structure/barricade/wooden/rogue,
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains/decap)
 "Qx" = (
@@ -1146,8 +1146,8 @@
 /area/rogue/outdoors/mountains/decap)
 "SZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/barricade/wooden/rogue,
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains/decap)
 "Tk" = (

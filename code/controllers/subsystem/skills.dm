@@ -20,4 +20,6 @@ SUBSYSTEM_DEF(skills)
 /datum/controller/subsystem/skills/proc/InitializeSkills(timeofday)
 	for(var/type in subtypesof(/datum/skill))
 		var/datum/skill/ref = new type
+		if(is_abstract(type))
+			continue
 		all_skills[type] = ref

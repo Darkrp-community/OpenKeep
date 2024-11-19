@@ -102,7 +102,7 @@
 	icon_state = "silverplaque"
 	sellprice = 30
 
-/obj/item/storage/belt/rogue/leather/hand
+/obj/item/storage/belt/rogue/leather/steel
 	name = "steel belt"
 	desc = "A belt with a steel plate on its front."
 	icon_state = "steelplaque"

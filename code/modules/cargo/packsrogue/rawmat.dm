@@ -26,6 +26,16 @@
 		/obj/item/rogueore/copper
 	)
 
+/datum/supply_pack/rogue/rawmats/tin
+	name = "Tin Ore"
+	cost = 80
+	contains = list(/obj/item/rogueore/tin,
+		/obj/item/rogueore/tin,
+		/obj/item/rogueore/tin,
+		/obj/item/rogueore/tin,
+		/obj/item/rogueore/tin
+	)
+
 /datum/supply_pack/rogue/rawmats/iron
 	name = "Iron Ore"
 	cost = 80

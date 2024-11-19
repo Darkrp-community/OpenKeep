@@ -14,18 +14,10 @@
 /datum/species/aasimar
 	name = "Aasimar"
 	id = "aasimar"
-	desc = "<b>Aasimar</b><br>\
-	Immortal offspring created through unknown means by command of the goddess Astrata, \
-	used as soldiers to fight in the Apotheosis God-War. \
-	They quickly earned scorn and fear from the mortal races they fought alongside \
-	for their indifference to the suffering of their allies and unquestioning brutality. \
-	The aasimar who survived the war have been abandoned by Astrata, \
-	left to face an uncertain fate alongside the other races of Grimoria. \
-	It has been long since the Apotheosis and memories of their violent legacy have faded, \
-	but many still view these aasimar survivors as emotionally dull, stubborn, and simple-minded brutes... \
-	though this is not always the case. \
-	Aasimar are known for their incredible strength and resilience, and are a prized addition to any shield wall. \
-	However, they possess less capacity for independent thought due to their wartime construction."
+	desc = "<b>Aasimar</b><br> \
+	Immortal offspring sculpted by one of the gods. \
+	Aasimar are often revered due to their celestial origin, but face great solitude \
+	as not many of their kind exist. "
 
 	skin_tone_wording = "Crafted With"
 	nutrition_mod = 2 // 200% higher hunger rate. Hungry, hungry aasimar

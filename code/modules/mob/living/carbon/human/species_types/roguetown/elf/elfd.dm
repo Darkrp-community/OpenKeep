@@ -13,21 +13,18 @@
 	name = "Dark Elf"
 	id = "elf"
 	desc = "<b>Dark Elf</b><br>\
-	Descending from a perversion of false immortality, Dark Elves are a unique and young species \
-	that have only recently found themselves a staple of daily life. \
-	They boast a proud, beauty-centric culture that compensates their cursed that ranges \
-	from skin tints to extreme deformations, with anyone falling behind their cripplingly high standards \
-	refered to as a Homonculus. While less graceful terms such as \
-	stitchface, zombie or corpsewalker are most commonly thrown out by the elder races \
-	Dark Elves tend to be extremely arrogant of others plights, with selfishness \
-	being seen as a massive boon in their societies, leading to storng rivalries among their enclaves. \
-	They are academic and usually well taught through are noted to suffer from their anatomy, which tends to be weak and brittle."
+	Conquered by Zizo, these elves hail from an underground expanse of \
+	newly-reborn empires. They lead harsh, matriarchal lives under the watchful guide of Zizo, \
+	the vast majority hoping to one day achieve such power and domination for themselves. \
+	To most in Psydonia, a dark elf is nothing more than a servant of Zizo waiting to betray for power, \
+	leading most dark elves to remain within their safe underground strongholds. Those who breach the surface \
+	rarely receive fair treatment. "
 
-	skin_tone_wording = "Curse Affliction"
+	skin_tone_wording = "Parent House"
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
-	default_features = list("mcolor" = "FFF", "ears" = "ElfW", "wings" = "None")
+	default_features = list("mcolor" = "FFF", "ears" = "Elf", "wings" = "None")
 	use_skintones = 1
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE

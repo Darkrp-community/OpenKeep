@@ -207,12 +207,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 			switch(role)
 				if("human")
 					newname = random_unique_name(gender)
-				if("clown")
-					newname = pick(GLOB.clown_names)
-				if("mime")
-					newname = pick(GLOB.mime_names)
-				if("ai")
-					newname = pick(GLOB.ai_names)
 				else
 					return FALSE
 
@@ -731,10 +725,9 @@ will handle it, but:
 Checks if that loc and dir has an item on the wall
 */
 GLOBAL_LIST_INIT(WALLITEMS, typecacheof(list(
-	/obj/structure/sign,
 	/obj/structure/noticeboard,
-	/obj/structure/mirror, /obj/structure/fireaxecabinet,
-	/obj/structure/sign/picture_frame
+	/obj/structure/mirror,
+	/obj/structure/fireaxecabinet,
 	)))
 
 GLOBAL_LIST_INIT(WALLITEMS_EXTERNAL, typecacheof(list(

@@ -5,7 +5,6 @@
 	possible_item_intents = list(/datum/intent/use)
 	force = 0
 	throwforce = 0
-	obj_flags = null
 	color = "#454032"
 	firefuel = 5 MINUTES
 	resistance_flags = FLAMMABLE
@@ -41,7 +40,6 @@
 	desc = "Silken strands. Their usage in clothing is exotic in all places save the underdark"
 	force = 0
 	throwforce = 0
-	obj_flags = null
 	color = "#e6e3db"
 	firefuel = 5 MINUTES
 	resistance_flags = FLAMMABLE
@@ -94,7 +92,6 @@
 	possible_item_intents = list(/datum/intent/use)
 	force = 0
 	throwforce = 0
-	obj_flags = null
 	firefuel = 5 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP
@@ -244,7 +241,6 @@
 	force = 0
 	throwforce = 0
 	maxamount = 6
-	obj_flags = null
 	color = "#454032"
 	firefuel = 5 MINUTES
 	resistance_flags = FLAMMABLE
@@ -270,7 +266,6 @@
 	force = 0
 	throwforce = 0
 	maxamount = 6
-	obj_flags = null
 	color = "#e6e3db"
 	firefuel = 5 MINUTES
 	resistance_flags = FLAMMABLE
@@ -291,7 +286,6 @@
 	force = 0
 	throwforce = 0
 	maxamount = 10
-	obj_flags = null
 	firefuel = 5 MINUTES
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_TINY
@@ -311,7 +305,6 @@
 	maxamount = 10
 	force = 0
 	throwforce = 0
-	obj_flags = null
 	firefuel = 5 MINUTES
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_TINY
@@ -331,7 +324,6 @@
 	possible_item_intents = list(/datum/intent/use)
 	force = 0
 	throwforce = 0
-	obj_flags = null
 	color = COLOR_BEIGE
 	firefuel = 5 MINUTES
 	resistance_flags = FLAMMABLE
@@ -380,7 +372,6 @@
 	force = 0
 	throwforce = 0
 	maxamount = 6
-	obj_flags = null
 	color = null
 	firefuel = null
 	resistance_flags = FLAMMABLE
@@ -395,8 +386,10 @@
 	icon1step = 2
 	icon2 = "bonestack2"
 	icon2step = 4
+
 /obj/item/natural/bundle/bone/full
 	amount = 6
+
 /*/obj/item/alch/bone/attackby(obj/item/I, mob/living/user, params)
 	var/mob/living/carbon/human/H = user
 	user.changeNext_move(CLICK_CD_MELEE)

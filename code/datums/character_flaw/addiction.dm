@@ -9,17 +9,23 @@
 	if(istype(charflaw, /datum/charflaw/addiction))
 		var/datum/charflaw/addiction/A = charflaw
 //		remove_stress(list(/datum/stressevent/vice1,/datum/stressevent/vice2,/datum/stressevent/vice3))
+		if(!A.sated)
+			to_chat(src, span_blue(A.sated_text))
 		A.sated = TRUE
 		A.time = initial(A.time) //reset roundstart sate offset to standard
 		A.next_sate = world.time + A.time
+		remove_stress(/datum/stressevent/vice)
+		if(A.debuff)
+			remove_status_effect(A.debuff)
 
 /datum/charflaw/addiction
 	var/next_sate = 0
 	var/sated = TRUE
 	var/time = 5 MINUTES
 //	var/debuff = /datum/status_effect/debuff/addiction
-	var/debuff //so heroin junkies can have big problems
+	var/debuff = /datum/status_effect/debuff/addiction
 	var/needsate_text
+	var/sated_text = "That's much better..."
 	var/unsate_time
 
 
@@ -44,17 +50,18 @@
 	if(sated != oldsated)
 		unsate_time = world.time
 		if(needsate_text)
-			to_chat(user, "<span class='warning'>[needsate_text]</span>")
+			to_chat(user, span_boldwarning("[needsate_text]"))
 	if(!sated)
 		var/mob/living/carbon/V = user
+		/*
 		switch(world.time - unsate_time)
 			if(0 to 5 MINUTES)
 				V.add_stress(/datum/stressevent/vice1)
 			if(5 MINUTES to 15 MINUTES)
 				V.add_stress(/datum/stressevent/vice2)
 			if(15 MINUTES to INFINITY)
-				V.add_stress(/datum/stressevent/vice3)
-		// V.add_stress(/datum/stressevent/vice)
+				V.add_stress(/datum/stressevent/vice3)*/
+		V.add_stress(/datum/stressevent/vice)
 		if(debuff)
 			H.apply_status_effect(debuff)
 

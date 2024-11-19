@@ -8,6 +8,11 @@
 	subtype_reqs = TRUE // so you can use any subtype of fur
 	reqs = list(/obj/item/natural/hide = 1)
 
+/datum/crafting_recipe/roguetown/leather/volfhelm
+	name = "volf helm"
+	result = list(/obj/item/clothing/head/roguetown/helmet/leather/volfhelm)
+	reqs = list(/obj/item/natural/hide = 3, /obj/item/natural/fur = 2,)
+	sellprice = 20
 
 /*.............. recipes requiring no skill..............*/
 
