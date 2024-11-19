@@ -252,7 +252,7 @@
 
 /obj/effect/proc_holder/spell/invoked/projectile/spitfire
 	name = "Spitfire"
-	desc = "Shoot out a low-powered ball of fire that shines brightly on impact, potentially blinding a target."
+	desc = "Shoot out a of low-powered ball of fire that shines brightly on impact, potentially blinding a target."
 	clothes_req = FALSE
 	range = 8
 	projectile_type = /obj/projectile/magic/aoe/fireball/rogue2
@@ -283,7 +283,7 @@
 	flag = "magic"
 	hitsound = 'sound/blank.ogg'
 	aoe_range = 0
-	speed = 2.5
+	speed = 3.5
 
 /obj/projectile/magic/aoe/fireball/rogue2/on_hit(target)
 	. = ..()
@@ -295,9 +295,9 @@
 			qdel(src)
 			return BULLET_ACT_BLOCK
 
-/obj/effect/proc_holder/spell/invoked/projectile/arcanebolt
-	name = "Arcane Bolt"
-	desc = "Shoot out rapid bolts of arcane magic, that firmly hits on impact."
+/obj/effect/proc_holder/spell/invoked/projectile/arcynebolt
+	name = "Arcyne Bolt"
+	desc = "Shoot out rapid bolts of arcyne magic, that firmly hits on impact."
 	clothes_req = FALSE
 	range = 12
 	projectile_type = /obj/projectile/energy/rogue3
@@ -317,15 +317,16 @@
 	cost = 2
 
 /obj/projectile/energy/rogue3
-	name = "Arcane Bolt"
+	name = "Arcyne Bolt"
 	icon_state = "arcane_barrage"
-	damage = 30
+	damage = 45
 	damage_type = BRUTE
 	armor_penetration = 10
+	woundclass = BCLASS_STAB
 	nodamage = FALSE
 	flag = "bullet"
 	hitsound = 'sound/blank.ogg'
-	speed = 2
+	speed = 1
 
 /obj/projectile/energy/rogue3/on_hit(target)
 	. = ..()
@@ -574,13 +575,14 @@
 //		/obj/effect/proc_holder/spell/targeted/ethereal_jaunt,
 //		/obj/effect/proc_holder/spell/aoe_turf/knock,
 		/obj/effect/proc_holder/spell/targeted/touch/darkvision,// 2 cost
-		/obj/effect/proc_holder/spell/invoked/message,
+		/obj/effect/proc_holder/spell/self/message,
 		/obj/effect/proc_holder/spell/invoked/blade_burst,
 		/obj/effect/proc_holder/spell/invoked/projectile/fetch,
-		/obj/effect/proc_holder/spell/invoked/projectile/arcanebolt,
+		/obj/effect/proc_holder/spell/invoked/projectile/arcynebolt,
 		/obj/effect/proc_holder/spell/targeted/touch/nondetection, // 1 cost
 		/obj/effect/proc_holder/spell/targeted/touch/prestidigitation,
 		/obj/effect/proc_holder/spell/invoked/featherfall,
+		/obj/effect/proc_holder/spell/invoked/longstrider,
 	)
 	for(var/i = 1, i <= spell_choices.len, i++)
 		choices["[spell_choices[i].name]: [spell_choices[i].cost]"] = spell_choices[i]
@@ -641,7 +643,7 @@
 	CanAtmosPass = ATMOS_PASS_DENSITY
 	climbable = TRUE
 	climb_time = 0
-	var/timeleft = 20 SECONDS
+	var/timeleft = 10 SECONDS
 
 /obj/structure/forcefield_weak/Initialize()
 	. = ..()
@@ -735,26 +737,22 @@
 /obj/effect/temp_visual/slowdown_spell_aoe/long
 	duration = 3 SECONDS
 
-/obj/effect/proc_holder/spell/invoked/message
+/obj/effect/proc_holder/spell/self/message
 	name = "Message"
 	desc = "Latch onto the mind of one who is familiar to you, whispering a message into their head."
 	cost = 2
 	releasedrain = 30
-	chargedrain = 1
-	chargetime = 5 SECONDS
 	charge_max = 60 SECONDS
 	warnie = "spellwarning"
-	no_early_release = TRUE
-	movement_interrupt = TRUE
-	charging_slowdown = 3
-	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	overlay_state = "message"
+	var/identify_difficulty = 15 //the stat threshold needed to pass the identify check
 
-/obj/effect/proc_holder/spell/invoked/message/cast(list/targets, mob/user)
+/obj/effect/proc_holder/spell/self/message/cast(list/targets, mob/user)
 	. = ..()
 	var/input = input(user, "Who are you trying to contact?")
 	if(!input)
+		revert_cast()
 		return
 	if(!user.key)
 		to_chat(user, span_warning("I sense a body, but the mind does not seem to be there."))
@@ -768,13 +766,28 @@
 		if(HL.real_name == input)
 			var/message = input(user, "You make a connection. What are you trying to say?")
 			if(!message)
+				revert_cast()
 				return
-			to_chat(HL, "Arcyne whispers fill the back of my head, resolving into a clear, if distant, voice: </span><font color=#7246ff>\"[message]\"</font>")
+			if(alert(user, "Send anonymously?", "", "Yes", "No") == "No") //yes or no popup, if you say No run this code
+				identify_difficulty = 0 //anyone can clear this
+
+			var/identified = FALSE
+			if(HL.STAPER >= identify_difficulty) //quick stat check
+				if(HL.mind)
+					if(HL.mind.do_i_know(name=user.real_name)) //do we know who this person is?
+						identified = TRUE // we do
+						to_chat(HL, "Arcyne whispers fill the back of my head, resolving into [user]'s voice: </span><font color=#7246ff>\"[message]\"</font>")
+
+			if(!identified) //we failed the check OR we just dont know who that is
+				to_chat(HL, "Arcyne whispers fill the back of my head, resolving into an unknown [user.gender == FEMALE ? "woman" : "man"]'s voice: </span><font color=#7246ff>\"[message]\"</font>")
+
+			user.whisper(message)
 			log_game("[key_name(user)] sent a message to [key_name(HL)] with contents [message]")
 			// maybe an option to return a message, here?
 			return TRUE
 	to_chat(user, span_warning("I seek a mental connection, but can't find [input]."))
 	revert_cast()
+	return
 
 /obj/effect/proc_holder/spell/invoked/push_spell
 	name = "Repulse"
@@ -1020,11 +1033,11 @@
 /obj/effect/proc_holder/spell/invoked/haste
 	name = "Haste"
 	desc = "Cause a target to be magically hastened."
-	cost = 3
-	releasedrain = 25
+	cost = 2
+	releasedrain = 50
 	chargedrain = 1
-	chargetime = 4 SECONDS
-	charge_max = 5 MINUTES
+	chargetime = 2 SECONDS
+	charge_max = 2.5 MINUTES
 	warnie = "spellwarning"
 	school = "transmutation"
 	no_early_release = TRUE
@@ -1051,6 +1064,30 @@
 
 	return TRUE
 
+/obj/effect/proc_holder/spell/invoked/longstrider
+	name = "Longstrider"
+	desc = "Grant yourself and any creatures adjacent to you free movement through rough terrain."
+	cost = 1
+	school = "transmutation"
+	releasedrain = 50
+	chargedrain = 0
+	chargetime = 4 SECONDS
+	charge_max = 2 MINUTES
+	warnie = "spellwarning"
+	overlay_state = "jump"
+	no_early_release = TRUE
+	charging_slowdown = 1
+	chargedloop = /datum/looping_sound/invokegen
+	associated_skill = /datum/skill/magic/arcane
+
+/obj/effect/proc_holder/spell/invoked/longstrider/cast(list/targets, mob/user = usr)
+
+	user.visible_message("[user] mutters an incantation and a dim pulse of light radiates out from them.")
+
+	for(var/mob/living/L in range(1, usr))
+		L.apply_status_effect(/datum/status_effect/buff/longstrider)
+
+	return TRUE
 
 #undef PRESTI_CLEAN
 #undef PRESTI_SPARK
