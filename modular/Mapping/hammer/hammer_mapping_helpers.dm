@@ -8,9 +8,9 @@
 /obj/effect/landmark/hammer/Initialize()
 	. = ..()
 	invisibility = 101
-	#ifdef TESTING
+#ifdef TESTING
 	invisibility = 0
-	#endif
+#endif
 
 
 // dev_text, it's only visible in game when "TESTING" is defined in _compile_options.dm
@@ -21,9 +21,9 @@
 	desc = "Assign the dev_text to the name var. <br> to linebreak if needed."
 /obj/effect/landmark/hammer/dev_text/Initialize()
 	. = ..()
-	#ifndef TESTING
-		qdel(src)
-	#endif
+#ifndef TESTING
+	qdel(src)
+#endif
 	src.maptext = "[src.name]"
 	src.maptext_width = 500
 	src.maptext_x = 32
