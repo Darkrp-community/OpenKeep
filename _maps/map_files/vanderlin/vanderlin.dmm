@@ -2791,7 +2791,7 @@
 "lZ" = (
 /obj/structure/lever/wall{
 	dir = 4;
-	lockid = "mercenarySewerPassage"
+	redstone_id = "mercenarySewerPassage"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
@@ -9315,7 +9315,7 @@
 /area/rogue/outdoors/town)
 "OX" = (
 /obj/structure/gate/bars{
-	lockid = "mercenarySewerPassage"
+	redstone_id = "mercenarySewerPassage"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
