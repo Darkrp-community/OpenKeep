@@ -2106,10 +2106,6 @@
 /obj/item/cooking/pan,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
-"bYN" = (
-/obj/structure/closet/crate/roguecloset/dark,
-/turf/open/floor/rogue/cobble,
-/area/rogue/under/town/basement)
 "bYR" = (
 /obj/structure/bed/rogue/shit,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6001,14 +5997,6 @@
 	icon_state = "greenstone"
 	},
 /area/rogue/indoors/town/magician)
-"fQF" = (
-/obj/structure/table/wood{
-	dir = 10;
-	icon_state = "tablewood2"
-	},
-/obj/item/clothing/neck/roguetown/psycross/silver/necra,
-/turf/open/floor/rogue/cobble,
-/area/rogue/under/town/basement)
 "fQK" = (
 /obj/machinery/light/rogue/torchholder/c,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12015,13 +12003,9 @@
 	},
 /area/rogue/indoors/town/dwarfin)
 "lHa" = (
-/obj/effect/landmark/start/gravedigger{
-	dir = 8
-	},
-/obj/structure/bed/rogue,
 /obj/machinery/light/rogue/wallfire/candle/blue,
-/turf/open/floor/rogue/cobble,
-/area/rogue/under/town/basement)
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/under/cave)
 "lHe" = (
 /obj/machinery/light/rogue/firebowl/standing,
 /obj/structure/fluff/railing/border{
@@ -31597,8 +31581,8 @@ gdw
 dgV
 gdw
 gdw
-gdw
-gdw
+pNQ
+pNQ
 pNQ
 pmA
 cVE
@@ -31754,9 +31738,9 @@ hsb
 bBD
 tqP
 gdw
-bYN
-gdw
-gdw
+pNQ
+pNQ
+pNQ
 pmA
 cVE
 cVE
@@ -31910,10 +31894,10 @@ pjw
 rCp
 bBD
 bBD
-dgV
-bBD
-fQF
 gdw
+pNQ
+pNQ
+pNQ
 ppJ
 oGK
 vrR
@@ -32069,8 +32053,8 @@ bBD
 bBD
 gdw
 lHa
-gdw
-gdw
+pNQ
+pNQ
 pNQ
 pNQ
 pmA
@@ -32225,8 +32209,8 @@ sHU
 eDv
 bBD
 gdw
-gdw
-gdw
+pNQ
+pNQ
 pNQ
 pNQ
 pNQ
