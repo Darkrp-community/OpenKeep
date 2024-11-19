@@ -12,6 +12,8 @@
 		/datum/ai_planning_subtree/basic_melee_attack_subtree,
 	)
 
+	idle_behavior = /datum/idle_behavior/idle_random_walk
+
 /datum/ai_controller/testing_orc_ranged
 	move_delay = 0.5 SECONDS
 
@@ -25,3 +27,5 @@
 		/datum/ai_planning_subtree/simple_find_target,
 		/datum/ai_planning_subtree/basic_ranged_attack_subtree,
 	)
+
+	idle_behavior = /datum/idle_behavior/idle_random_walk

@@ -11,6 +11,8 @@ have ways of interacting with a specific atom and control it. They posses a blac
 	var/list/current_behaviors
 	///Current actions and their respective last time ran as an assoc list.
 	var/list/behavior_cooldowns = list()
+	///The idle behavior this AI performs when it has no actions.
+	var/datum/idle_behavior/idle_behavior = null
 	///Current status of AI (OFF/ON/IDLE)
 	var/ai_status
 	///Current movement target of the AI, generally set by decision making.
@@ -49,6 +51,9 @@ have ways of interacting with a specific atom and control it. They posses a blac
 /datum/ai_controller/New(atom/new_pawn)
 	change_ai_movement_type(ai_movement)
 	init_subtrees()
+
+	if(idle_behavior)
+		idle_behavior = new idle_behavior()
 
 	PossessPawn(new_pawn)
 
@@ -122,15 +127,21 @@ have ways of interacting with a specific atom and control it. They posses a blac
 		walk(pawn, 0) //stop moving
 		return //this should remove them from processing in the future through event-based stuff.
 
-	if(!LAZYLEN(current_behaviors))
-		PerformIdleBehavior(delta_time) //Do some stupid shit while we have nothing to do
+	if(!LAZYLEN(current_behaviors) && idle_behavior)
+		idle_behavior.perform_idle_behavior(delta_time, src) //Do some stupid shit while we have nothing to do
 		return
 
-	if(current_movement_target && get_dist(pawn, current_movement_target) > max_target_distance) //The distance is out of range
-		CancelActions()
-		return
-	for(var/i in current_behaviors)
-		var/datum/ai_behavior/current_behavior = i
+	if(current_movement_target)
+		if(!isatom(current_movement_target))
+			stack_trace("[pawn]'s current movement target is not an atom, rather a [current_movement_target.type]! Did you accidentally set it to a weakref?")
+			CancelActions()
+			return
+
+		if(get_dist(pawn, current_movement_target) > max_target_distance) //The distance is out of range
+			CancelActions()
+			return
+
+	for(var/datum/ai_behavior/current_behavior as anything in current_behaviors)
 		// Convert the current behaviour action cooldown to realtime seconds from deciseconds.current_behavior
 		// Then pick the max of this and the delta_time passed to ai_controller.process()
 		// Action cooldowns cannot happen faster than delta_time, so delta_time should be the value used in this scenario.
@@ -162,10 +173,6 @@ have ways of interacting with a specific atom and control it. They posses a blac
 				continue
 			ProcessBehavior(action_delta_time, current_behavior)
 			return
-
-///Perform some dumb idle behavior.
-/datum/ai_controller/proc/PerformIdleBehavior(delta_time)
-	return
 
 ///This is where you decide what actions are taken by the AI.
 /datum/ai_controller/proc/SelectBehaviors(delta_time)

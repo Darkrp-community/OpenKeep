@@ -9,6 +9,8 @@
 	)
 	ai_movement = /datum/ai_movement/basic_avoidance
 
+	idle_behavior = /datum/idle_behavior/idle_random_walk/hostile_tameable
+
 	var/ride_penalty_movement = 1 SECONDS
 
 	COOLDOWN_DECLARE(command_cooldown)
@@ -59,15 +61,6 @@
 		return
 
 	return simple_pawn.lock_hashes
-
-/datum/ai_controller/hostile_friend/PerformIdleBehavior(delta_time)
-	var/mob/living/living_pawn = pawn
-	if(!isturf(living_pawn.loc) || living_pawn.pulledby || length(living_pawn.buckled_mobs))
-		return
-
-	if(prob(5 * delta_time) && (living_pawn.mobility_flags & MOBILITY_MOVE))
-		var/move_dir = pick(GLOB.alldirs)
-		living_pawn.Move(get_step(living_pawn, move_dir), move_dir)
 
 /datum/ai_controller/hostile_friend/proc/on_ridden_driver_move(atom/movable/movable_parent, mob/living/user, direction)
 	SIGNAL_HANDLER
@@ -192,3 +185,6 @@
 			pawn.visible_message(span_danger("[pawn] [blackboard[BB_HOSTILE_ATTACK_WORD]] at [commander]'s command, and [pawn.p_they()] growl[pawn.p_s()] intensely.")) // imagine getting intimidated by a corgi
 			CancelActions()
 			blackboard[BB_HOSTILE_ORDER_MODE] = HOSTILE_COMMAND_ATTACK
+
+/datum/idle_behavior/idle_random_walk/hostile_tameable
+	walk_chance = 5
