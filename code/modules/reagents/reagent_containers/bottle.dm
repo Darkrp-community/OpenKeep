@@ -154,11 +154,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	extra_reagent = pick(/datum/reagent/toxin/histamine, /datum/reagent/toxin/formaldehyde, /datum/reagent/toxin/venom, /datum/reagent/toxin/fentanyl, /datum/reagent/toxin/cyanide)
 	reagents.add_reagent(extra_reagent, 3)
 
-/obj/item/reagent_containers/glass/bottle/magillitis
-	name = "magillitis bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/magillitis = 5)
-
 /obj/item/reagent_containers/glass/bottle/venom
 	name = "venom bottle"
 	desc = ""
