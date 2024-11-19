@@ -13,20 +13,12 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		//Needs a seed passed, but subtypes set one by default
 		/obj/item/grown,
 		/obj/item/reagent_containers/food/snacks/grown,
-		//And another
-		/obj/item/slimecross/recurring,
-		//This should be obvious
-		/obj/machinery/doomsday_device,
 		//Template type
 		/obj/effect/mob_spawn,
 		//Singleton
 		/mob/dview,
 		//Template type
 		/obj/item/bodypart,
-		//briefcase launchpads erroring
-		/obj/item/storage/briefcase/launchpad,
-		/obj/machinery/launchpad/briefcase,
-		/obj/item/storage/box/syndicate/bundle_A, // can contain a launchpad briefcase
 		//template types
 		//template type again
 		/obj/item/storage/fancy,
@@ -34,15 +26,11 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		/atom/movable/screen/credit,
 		//invalid without mob/living passed
 		/obj/shapeshift_holder,
-		//explodes when deleted
-		/obj/structure/checkoutmachine,
 		// requires a pod passed
 		/obj/effect/DPfall,
 		/obj/effect/DPtarget,
 		// prompts loc for input
 		/obj/item/clothing/suit/roguetown/shirt/grenzelhoft,
-		// maploading
-		/obj/item/hilbertshotel,
 	)
 	//these are VERY situational and need info passed
 	ignore += typesof(/obj/effect/abstract)
@@ -50,76 +38,29 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	ignore += typesof(/obj/item/phylactery)
 	//cba to fix hitscans erroring in Destroy, so just ignore all projectiles
 	ignore += typesof(/obj/projectile)
-	//needs an owner to work
-	ignore += typesof(/obj/item/paper/contract)
-	//needs a spell to work
-	ignore += typesof(/obj/item/melee/blood_magic)
-	//Doesn't work on our map setup
-	ignore += typesof(/obj/item/disk/nuclear)
 	//Say it with me now, type template
 	ignore += typesof(/obj/effect/mapping_helpers)
 	//This turf existing is an error in and of itself
 	ignore += typesof(/turf/baseturf_skipover)
 	ignore += typesof(/turf/baseturf_bottom)
-	//This one demands a computer, so we'll let it off easy
-	ignore += typesof(/obj/item/modular_computer/processor)
-	//Very finiky, blacklisting to make things easier
-	ignore += typesof(/obj/item/poster/wanted)
 	//Needs a client / mob / hallucination to observe it to exist.
 	ignore += typesof(/obj/effect/hallucination)
-	ignore += typesof(/obj/projectile/hallucination)
 	//Can't pass in a thing to glow
 	ignore += typesof(/obj/effect/abstract/eye_lighting)
 	//We have a baseturf limit of 10, adding more than 10 baseturf helpers will kill CI, so here's a future edge case to fix.
 	ignore += typesof(/obj/effect/baseturf_helper)
 	//No trauma to pass in
 	ignore += typesof(/mob/camera/imaginary_friend)
-	//No linked console
-	ignore += typesof(/mob/camera/aiEye/remote/base_construction)
-	//See above
-	ignore += typesof(/mob/camera/aiEye/remote/shuttle_docker)
-	//No one to be friends with :(
-	ignore += typesof(/obj/effect/mob_spawn/human/demonic_friend)
-	//Hangs a ref post invoke async, which we don't support. Could put a qdeleted check but it feels hacky
-	ignore += typesof(/obj/effect/anomaly/grav/high)
 	//See above
 	ignore += typesof(/obj/effect/timestop)
-	//this boi spawns turf changing stuff, and it stacks and causes pain. Let's just not
-	ignore += typesof(/obj/effect/sliding_puzzle)
 	//Our system doesn't support it without warning spam from unregister calls on things that never registered
 	ignore += typesof(/obj/docking_port)
-	//Asks for a shuttle that may not exist, let's leave it alone
-	ignore += typesof(/obj/item/pinpointer/shuttle)
 	//Expects a mob to holderize, we have nothing to give
 	ignore += typesof(/obj/item/clothing/head/mob_holder)
 	//Needs cards passed into the initilazation args
 	ignore += typesof(/obj/item/toy/cards/cardhand)
-	//Needs a holodeck area linked to it which is not guarenteed to exist and technically is supposed to have a 1:1 relationship with computer anyway.
-	ignore += typesof(/obj/machinery/computer/holodeck)
-	//invalid without start and end
-	ignore += typesof(/obj/effect/immovablerod)
-	//invoke async + explosion in init + all sorts of nastiness on subtypes
-	ignore += typesof(/obj/effect/temp_visual/hierophant)
-	//these explode when Destroy()ed
-	ignore += typesof(/obj/machinery/vending/custom)
-	ignore += typesof(/obj/vehicle/sealed)
-	ignore += typesof(/obj/mecha)
-	//spawns a mech, which as above, explodes when deleted
-	ignore += typesof(/mob/living/simple_animal/hostile/syndicate/mecha_pilot)
-	//these also like to explode if anything else is on their turf or nearby
-	ignore += typesof(/obj/effect/meteor)
-	//ENDS THE FUCKING WORLD.
-	ignore += typesof(/obj/singularity/narsie)
 	//needs multiple atoms passed
 	ignore += typesof(/obj/effect/buildmode_line)
-	//needs a fried item passed
-	ignore += typesof(/obj/item/reagent_containers/food/snacks/deepfryholder)
-	// requires other parts
-	ignore += typesof(/obj/machinery/gravity_generator)
-	// requires a generator
-	ignore += typesof(/obj/structure/projected_forcefield)
-	// genuinely just too lazy to get this one working
-	ignore += typesof(/obj/structure/bodycontainer)
 
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/baseturf_count = length(spawn_at.baseturfs)
@@ -129,7 +70,7 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		if(ispath(type_path, /turf))
 			spawn_at.ChangeTurf(type_path, /turf/baseturf_skipover)
 			//We change it back to prevent pain, please don't ask
-			spawn_at.ChangeTurf(/turf/open/floor/wood, /turf/baseturf_skipover)
+			spawn_at.ChangeTurf(/turf/open/floor/rogue/wood, /turf/baseturf_skipover)
 			if(baseturf_count != length(spawn_at.baseturfs))
 				Fail("[type_path] changed the amount of baseturfs we have [baseturf_count] -> [length(spawn_at.baseturfs)]")
 				baseturf_count = length(spawn_at.baseturfs)
