@@ -21,7 +21,7 @@
 		Your cheap tricks and illusions of intelligence will only work for so long, \
 		and someday you'll find yourself at the end of something sharper than you."
 
-	spells = list(/obj/effect/proc_holder/spell/self/telljoke,/obj/effect/proc_holder/spell/self/telltragedy)
+	spells = list(/obj/effect/proc_holder/spell/self/telljoke,/obj/effect/proc_holder/spell/self/telltragedy,/obj/effect/proc_holder/spell/self/fart)
 	outfit = /datum/outfit/job/roguetown/jester
 	display_order = JDO_JESTER
 	bypass_lastclass = TRUE
