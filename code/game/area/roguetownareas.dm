@@ -528,6 +528,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/soilsons
 	name = "soilsons"
 
+/area/rogue/indoors/butchershop
+	name = "butcher shop"
+
+/area/rogue/indoors/villagegarrison
+	name = "village garrison"
+
 /area/rogue/indoors/ship
 	name = "the ship"
 	ambientsounds = AMB_BEACH
