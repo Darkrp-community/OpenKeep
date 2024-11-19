@@ -38,12 +38,12 @@
 "bq" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/item/roguegem{
-	name = "Chaos Gemerald";
-	desc = "It feels warm to the touch."
+	desc = "It feels warm to the touch.";
+	name = "Chaos Gemerald"
 	},
 /obj/item/roguegem/green{
-	name = "Chaos Gemerald";
-	desc = "It feels warm to the touch."
+	desc = "It feels warm to the touch.";
+	name = "Chaos Gemerald"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/concrete,
@@ -64,8 +64,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/structure/mineral_door/wood/green{
-	name = "Old Door";
-	locked = 1
+	locked = 1;
+	name = "Old Door"
 	},
 /obj/structure/bars/passage{
 	redstone_id = "sewerruin1"
@@ -191,8 +191,8 @@
 /area/rogue/under/cavelava)
 "fh" = (
 /obj/structure/mineral_door/wood/green{
-	name = "Old Door";
-	locked = 1
+	locked = 1;
+	name = "Old Door"
 	},
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage,
 /turf/open/floor/rogue/cobble,
@@ -209,8 +209,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/mineral_door/wood/green{
-	name = "Old Door";
-	locked = 1
+	locked = 1;
+	name = "Old Door"
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/cavelava)
@@ -237,7 +237,6 @@
 "gm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood,
-/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/cavelava)
 "gx" = (
@@ -312,8 +311,8 @@
 "hF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/mineral_door/wood/green{
-	name = "Old Door";
-	locked = 1
+	locked = 1;
+	name = "Old Door"
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/cavelava)
@@ -498,11 +497,6 @@
 "mu" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/dwarfin)
-"mz" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/r,
-/turf/open/floor/rogue/herringbone,
-/area/rogue/under/cavelava)
 "mG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old{
@@ -609,8 +603,8 @@
 /area/rogue/outdoors/mountains/deception)
 "oH" = (
 /obj/structure/mineral_door/wood/green{
-	name = "Old Door";
-	locked = 1
+	locked = 1;
+	name = "Old Door"
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/cavelava)
@@ -917,8 +911,8 @@
 "yg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/mineral_door/wood/green{
-	name = "Old Door";
-	locked = 1
+	locked = 1;
+	name = "Old Door"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cavelava)
@@ -988,8 +982,8 @@
 /obj/structure/barricade/wooden/rogue,
 /obj/structure/barricade/wooden/rogue/crude,
 /obj/structure/mineral_door/wood/green{
-	name = "Old Door";
-	locked = 1
+	locked = 1;
+	name = "Old Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage,
@@ -1159,8 +1153,8 @@
 /area/rogue/under/cavelava)
 "FZ" = (
 /obj/structure/mineral_door/wood/green{
-	name = "Old Door";
-	locked = 1
+	locked = 1;
+	name = "Old Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/herringbone,
@@ -1259,11 +1253,6 @@
 /obj/item/rope,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
-"IH" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/r,
-/turf/open/floor/rogue/cobble,
-/area/rogue/under/cavelava)
 "II" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/alch/waterdust,
@@ -1503,11 +1492,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/rogue/cobble,
-/area/rogue/under/cavelava)
-"Pg" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/r,
-/turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/under/cavelava)
 "Ps" = (
 /obj/structure/bed/rogue/sleepingbag,
@@ -1892,11 +1876,6 @@
 /obj/structure/fluff/walldeco/customflag,
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/mountains/deception)
-"Zv" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/r,
-/turf/open/floor/rogue/dirt,
-/area/rogue/under/cavelava)
 "ZA" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/suit/roguetown/armor/cuirass/iron,
@@ -7010,7 +6989,7 @@ Aa
 Aa
 GP
 sg
-IH
+sg
 DH
 sg
 Ui
@@ -16116,7 +16095,7 @@ Qi
 Qi
 xc
 xc
-Zv
+xc
 Yt
 xc
 xm
@@ -17803,7 +17782,7 @@ Aa
 Qi
 LT
 qv
-mz
+qv
 qv
 JL
 JL
@@ -17819,7 +17798,7 @@ Qi
 Qi
 cJ
 Mj
-Pg
+Mj
 Mj
 qp
 Mj
