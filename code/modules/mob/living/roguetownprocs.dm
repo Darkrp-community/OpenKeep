@@ -1,7 +1,7 @@
 // PARRY AND DODGE FORMULA DEFINES : for easy adjustments. These multipliers are integrated into the formulas, can be set to different values to adjust desired outcome likelihoods
-#define PARRY_SKILL_WEIGHT 18				// was 20
+#define PARRY_SKILL_WEIGHT 20
 #define WEAPON_DEFENSE_WEIGHT 10
-#define SPEED_WEIGHT_FOR_DODGE_EXPERT 11	// was 12
+#define SPEED_WEIGHT_FOR_DODGE_EXPERT 12
 #define SPEED_WEIGHT_FOR_DODGE 10
 
 
