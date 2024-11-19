@@ -551,11 +551,6 @@
 /obj/machinery/light/rogue/oven/east,
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/indoors/town/church/chapel)
-"aCz" = (
-/obj/structure/flora/roguegrass,
-/obj/effect/landmark/start/orphan,
-/turf/open/floor/rogue/twig,
-/area/rogue/outdoors/rtfield)
 "aCC" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -3049,10 +3044,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rogue/indoors/town/bath)
-"cQZ" = (
-/obj/effect/landmark/start/orphan,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/rtfield)
 "cRF" = (
 /obj/effect/decal/cobbleedge{
 	dir = 9
@@ -69082,7 +69073,7 @@ fsP
 fsP
 fsP
 fsP
-cQZ
+fsP
 ylN
 ylN
 ylN
@@ -69244,7 +69235,7 @@ ylN
 ylN
 ylN
 cBY
-aCz
+kOY
 kOY
 hnK
 fsP
