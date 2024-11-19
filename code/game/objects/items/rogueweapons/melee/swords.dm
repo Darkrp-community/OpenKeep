@@ -64,7 +64,7 @@
 
 /datum/intent/sword/cut/short
 	clickcd = 10
-	damfactor = 0.85
+	damfactor = 1
 
 /*------------\
 | Chop intent |
@@ -105,6 +105,7 @@
 	penfactor = AP_SWORD_THRUST-2
 
 /datum/intent/sword/thrust/short
+	damfactor = 1.25
 	clickcd = 10
 	penfactor = AP_SWORD_THRUST+2
 
@@ -265,21 +266,28 @@
 	max_integrity = INTEGRITY_STRONG
 	wdefense = GOOD_PARRY
 
+//................ Short Swords ............... //
+
 /obj/item/rogueweapon/sword/short
 	force = DAMAGE_SHORTSWORD
 	name = "short sword"
-	desc = "An iron sword of shortened design, a reduced grip for primarily single hand use."
-	icon_state = "iswordshort"
-	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
+	desc = "A steel sword of shortened design, a reduced grip for primarily single hand use."
+	icon_state = "swordshort"
+	possible_item_intents = list(/datum/intent/sword/thrust/short, /datum/intent/sword/cut/short)
 	gripped_intents = null
-	smeltresult = /obj/item/ingot/iron
-	max_integrity = INTEGRITY_STANDARD
 	minstr = 4
 	wdefense = GOOD_PARRY
 	wbalance = HARD_TO_DODGE
+	sellprice = 30
+
+/obj/item/rogueweapon/sword/short/iron
+	force = DAMAGE_SHORTSWORD-1
+	desc = "A crude iron sword of shortened design, a reduced grip for primarily single hand use."
+	icon_state = "iswordshort"
+	max_integrity = INTEGRITY_STRONG
+	smeltresult = /obj/item/ingot/iron
+	max_blade_int = 200
 	sellprice = 15
-
-
 
 /*-------\
 | Sabres |	Onehanded, slightly weaker thrust, better for parries. Think rapier but cutting focus.

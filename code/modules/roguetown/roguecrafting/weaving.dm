@@ -60,6 +60,11 @@
 	craftdiff = 3
 	sellprice = 27
 
+/datum/crafting_recipe/roguetown/weaving/valorian
+	name = "valorian dress"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/dress/valorian)
+	craftdiff = 3
+	sellprice = 20
 
 /*========= SKILL LEVEL: 4 REQUIRED ==========*/
 

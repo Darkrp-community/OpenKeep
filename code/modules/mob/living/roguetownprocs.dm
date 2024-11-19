@@ -1,3 +1,10 @@
+// PARRY AND DODGE FORMULA DEFINES : for easy adjustments. These multipliers are integrated into the formulas, can be set to different values to adjust desired outcome likelihoods
+#define PARRY_SKILL_WEIGHT 20
+#define WEAPON_DEFENSE_WEIGHT 10
+#define SPEED_WEIGHT_FOR_DODGE_EXPERT 12
+#define SPEED_WEIGHT_FOR_DODGE 10
+
+
 /proc/accuracy_check(zone, mob/living/user, mob/living/target, associated_skill, datum/intent/used_intent, obj/item/I)
 	if(!zone)
 		return
@@ -144,12 +151,12 @@
 
 			if(mainhand)
 				if(mainhand.can_parry)
-					mainhand_defense += (H.mind ? (H.mind.get_skill_level(mainhand.associated_skill) * 20) : 20)
-					mainhand_defense += (mainhand.wdefense * 10)
+					mainhand_defense += (H.mind ? (H.mind.get_skill_level(mainhand.associated_skill) * PARRY_SKILL_WEIGHT) : 20)
+					mainhand_defense += (mainhand.wdefense * WEAPON_DEFENSE_WEIGHT)
 			if(offhand)
 				if(offhand.can_parry)
-					offhand_defense += (H.mind ? (H.mind.get_skill_level(offhand.associated_skill) * 20) : 20)
-					offhand_defense += (offhand.wdefense * 10)
+					offhand_defense += (H.mind ? (H.mind.get_skill_level(offhand.associated_skill) * PARRY_SKILL_WEIGHT) : 20)
+					offhand_defense += (offhand.wdefense * WEAPON_DEFENSE_WEIGHT)
 					if(istype(offhand, /obj/item/rogueweapon/shield))
 						force_shield = TRUE
 			if(!force_shield)
@@ -372,16 +379,18 @@
 			return FALSE
 		if(L)
 			if(H?.check_dodge_skill())
-				prob2defend = prob2defend + (L.STASPD * 12)
+				prob2defend = prob2defend + (L.STASPD * SPEED_WEIGHT_FOR_DODGE_EXPERT)
 			else
-				prob2defend = prob2defend + (L.STASPD * 10)
+				prob2defend = prob2defend + (L.STASPD * SPEED_WEIGHT_FOR_DODGE)
 		if(U)
-			prob2defend = prob2defend - (U.STASPD * 10)
+			prob2defend = prob2defend - (U.STASPD * SPEED_WEIGHT_FOR_DODGE)
 		if(I)
+			prob2defend = prob2defend - ( I.wbalance * 10)	// so slow weapon gives +10 % chance to dodge and fast the opposite. So it doesnt get multiplied too by the dodge bonus of being faster.
 			if(I.wbalance > 0 && U.STASPD > L.STASPD) //nme weapon is quick, so they get a bonus based on spddiff
-				prob2defend = prob2defend - ( I.wbalance * ((U.STASPD - L.STASPD) * 10) )
+				prob2defend = prob2defend - (((U.STASPD - L.STASPD) * 8) )
 			if(I.wbalance < 0 && L.STASPD > U.STASPD) //nme weapon is slow, so its easier to dodge if we're faster
-				prob2defend = prob2defend + ( I.wbalance * ((U.STASPD - L.STASPD) * 10) )
+				prob2defend = prob2defend + (((U.STASPD - L.STASPD) * 8) )
+
 			if(UH?.mind)
 				prob2defend = prob2defend - (UH.mind.get_skill_level(I.associated_skill) * 10)
 		if(H)
@@ -477,3 +486,9 @@
 	var/datum/atom_hud/antag/hud = GLOB.huds[antag_hud_type]
 	hud.leave_hud(src)
 	set_antag_hud(src, null)
+
+
+#undef PARRY_SKILL_WEIGHT
+#undef WEAPON_DEFENSE_WEIGHT
+#undef SPEED_WEIGHT_FOR_DODGE_EXPERT
+#undef SPEED_WEIGHT_FOR_DODGE
