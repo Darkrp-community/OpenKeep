@@ -1,7 +1,7 @@
 /datum/job/roguetown/undertaker
 	title = "Gravekeeper"
-	flag = CHURCHMEN
-	department_flag = PEASANTS
+	flag = GRAVEDIGGER
+	department_flag = CHURCHMEN
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
@@ -16,7 +16,7 @@
 		"Aasimar"
 	)
 	tutorial = "As a servant of Necra, you live among worms and maggots, ensuring the dead rest peacefully. You are the bane of grave robbers and necromancers, and your holy magic puts undead back into the ground where they belong."
-
+	allowed_patrons = list(/datum/patron/divine/necra)
 	outfit = /datum/outfit/job/roguetown/undertaker
 	display_order = JDO_GRAVEMAN
 	min_pq = -10
