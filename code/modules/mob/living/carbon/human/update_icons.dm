@@ -68,7 +68,7 @@ There are several things that need to be remembered:
 
 
 /mob/living/carbon/human/update_body()
-	dna.species.handle_body(src)
+	dna?.species?.handle_body(src) //create destroy moment
 	..()
 
 /mob/living/carbon/human/update_fire()
