@@ -323,7 +323,7 @@
 	damage_type = BRUTE
 	armor_penetration = 10
 	nodamage = FALSE
-	flag = "bullet"
+	flag =  "piercing"
 	hitsound = 'sound/blank.ogg'
 	speed = 2
 

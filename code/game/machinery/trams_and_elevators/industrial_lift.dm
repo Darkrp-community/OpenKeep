@@ -70,11 +70,6 @@ GLOBAL_LIST_INIT(all_radial_directions, list(
 	/// A lazylist of REFs to all mobs which have a radial open currently
 	var/list/current_operators
 
-/datum/armor/structure_industrial_lift
-	melee = 50
-	fire = 80
-	acid = 50
-
 /obj/structure/industrial_lift/Initialize(mapload)
 	. = ..()
 	GLOB.lifts.Add(src)

@@ -54,6 +54,7 @@
 	swingdelay = 0
 	icon_state = "instrike"
 	misscost = 5
+	item_damage_type = "blunt"
 
 /datum/intent/shovelscoop
 	name = "scoop"
@@ -63,6 +64,7 @@
 	candodge = FALSE
 	misscost = 10
 	no_attack = TRUE
+	item_damage_type = "blunt"
 
 /obj/item/rogueweapon/shovel/attack(mob/living/M, mob/living/user)
 	. = ..()

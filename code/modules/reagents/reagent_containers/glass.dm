@@ -215,7 +215,7 @@
 	obj_flags = CAN_BE_HIT
 	gripped_intents = list(INTENT_POUR)
 	resistance_flags = NONE
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 50) //Weak melee protection, because you can wear it on your head
+	armor = list("blunt" = 10, "slash" = 10, "stab" = 10,  "piercing" = 0, "fire" = 75, "acid" = 50) //Weak melee protection, because you can wear it on your head
 	slot_equipment_priority = list( \
 		SLOT_BACK, SLOT_RING,\
 		SLOT_PANTS, SLOT_ARMOR,\
@@ -259,7 +259,7 @@
 	custom_materials = null
 	force = 5
 	throwforce = 10
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
+	armor = list("blunt" = 10, "slash" = 10, "stab" = 10,  "piercing" = 0, "fire" = 0, "acid" = 50)
 	resistance_flags = FLAMMABLE
 	dropshrink = 0.8
 	slot_flags = null

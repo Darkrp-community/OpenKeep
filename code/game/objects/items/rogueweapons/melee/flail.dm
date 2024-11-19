@@ -45,6 +45,7 @@
 	misscost = 5
 	attack_verb = list("strikes", "hits")
 	penfactor = AP_FLAIL_STRIKE
+	item_damage_type = "slash"
 
 /datum/intent/flail/strike/long
 	reach = 2
@@ -67,6 +68,7 @@
 	attack_verb = list("smashes")
 	damfactor = 1.2
 	penfactor = AP_FLAIL_SMASH
+	item_damage_type = "slash"
 
 /datum/intent/flail/strike/smash/long
 	reach = 2

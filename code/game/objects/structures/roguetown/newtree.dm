@@ -5,7 +5,7 @@
 	icon_state = "tree1"
 	var/tree_type = 1
 	var/base_state
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = -100, "acid" = 50)
+	armor = list("blunt" = 0, "slash" = 0, "stab" = 0,  "piercing" = 0, "fire" = -100, "acid" = 50)
 	blade_dulling = DULLING_CUT
 	opacity = 1
 	density = 1

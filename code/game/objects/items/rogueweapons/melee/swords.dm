@@ -51,20 +51,24 @@
 	blade_class = BCLASS_CUT
 	hitsound = list('sound/combat/hits/bladed/genslash (1).ogg', 'sound/combat/hits/bladed/genslash (2).ogg', 'sound/combat/hits/bladed/genslash (3).ogg')
 	misscost = 4
+	item_damage_type = "slash"
 
 /datum/intent/sword/cut/zwei
 	name = "cut"
 	damfactor = 0.8
 	reach = 1
 	swingdelay = 1
+	item_damage_type = "slash"
 
 /datum/intent/sword/cut/rapier
 	chargetime = 0
 	damfactor = 0.8
+	item_damage_type = "slash"
 
 /datum/intent/sword/cut/short
 	clickcd = 10
 	damfactor = 0.85
+	item_damage_type = "slash"
 
 /*------------\
 | Chop intent |
@@ -80,6 +84,7 @@
 	damfactor = 1.1
 	swingdelay = 1
 	misscost = 8
+	item_damage_type = "slash"
 
 /datum/intent/sword/chop/long
 	damfactor = 1.1
@@ -87,6 +92,7 @@
 	swingdelay = 1.5
 	misscost = 12
 	warnie = "mobwarning"
+	item_damage_type = "slash"
 
 /*------------\
 | Stab intent |
@@ -100,6 +106,7 @@
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
 	penfactor = AP_SWORD_THRUST
 	misscost = 5
+	item_damage_type = "stab"
 
 /datum/intent/sword/thrust/curved
 	penfactor = AP_SWORD_THRUST-2
@@ -136,6 +143,7 @@
 	penfactor = AP_CLUB_SMASH
 	swingdelay = 1
 	damfactor = 0.8
+	item_damage_type = "slash"
 
 
 

@@ -218,7 +218,6 @@
 	VV_DROPDOWN_OPTION("", "---")
 	VV_DROPDOWN_OPTION(VV_HK_MASS_DEL_TYPE, "Delete all of type")
 	VV_DROPDOWN_OPTION(VV_HK_OSAY, "Object Say")
-	VV_DROPDOWN_OPTION(VV_HK_ARMOR_MOD, "Modify armor values")
 
 /obj/vv_do_topic(list/href_list)
 	if(!(. = ..()))
@@ -226,31 +225,6 @@
 	if(href_list[VV_HK_OSAY])
 		if(check_rights(R_FUN, FALSE))
 			usr.client.object_say(src)
-	if(href_list[VV_HK_ARMOR_MOD])
-		var/list/pickerlist = list()
-		var/list/armorlist = armor.getList()
-
-		for (var/i in armorlist)
-			pickerlist += list(list("value" = armorlist[i], "name" = i))
-
-		var/list/result = presentpicker(usr, "Modify armor", "Modify armor: [src]", Button1="Save", Button2 = "Cancel", Timeout=FALSE, inputtype = "text", values = pickerlist)
-
-		if (islist(result))
-			if (result["button"] != 2) // If the user pressed the cancel button
-				// text2num conveniently returns a null on invalid values
-				armor = armor.setRating(
-					melee = text2num(result["values"]["melee"]),\
-					bullet = text2num(result["values"]["bullet"]),\
-					laser = text2num(result["values"]["laser"]),\
-					energy = text2num(result["values"]["energy"]),\
-					bomb = text2num(result["values"]["bomb"]),\
-					bio = text2num(result["values"]["bio"]),\
-					rad = text2num(result["values"]["rad"]),\
-					fire = text2num(result["values"]["fire"]),\
-					acid = text2num(result["values"]["acid"])\
-				)
-				log_admin("[key_name(usr)] modified the armor on [src] ([type]) to melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]")
-				message_admins("<span class='notice'>[key_name_admin(usr)] modified the armor on [src] ([type]) to melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]</span>")
 	if(href_list[VV_HK_MASS_DEL_TYPE])
 		if(check_rights(R_DEBUG|R_SERVER))
 			var/action_type = alert("Strict type ([type]) or type and all subtypes?",,"Strict type","Type and subtypes","Cancel")
