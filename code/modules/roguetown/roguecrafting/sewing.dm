@@ -13,6 +13,15 @@
 
 /*========= NO SKILL LEVEL REQUIRED ==========*/
 
+/datum/crafting_recipe/roguetown/sewing/bag
+	name = "bag"
+	result = /obj/item/storage/roguebag/crafted
+	reqs = list(/obj/item/natural/fibers = 1,
+				/obj/item/natural/cloth = 1)
+
+/obj/item/storage/roguebag/crafted
+	sellprice = 4
+
 /datum/crafting_recipe/roguetown/sewing/rags
 	name = "rags"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/rags)
