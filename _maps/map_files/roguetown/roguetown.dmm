@@ -19240,7 +19240,6 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)
 "vOG" = (
-/obj/item/kitchen/fork,
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/item/reagent_containers/glass/bowl,
 /obj/item/reagent_containers/glass/bowl,
@@ -19254,6 +19253,7 @@
 /obj/item/cooking/platter,
 /obj/item/cooking/platter,
 /obj/item/cooking/platter,
+/obj/item/kitchen/ironfork,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "vOZ" = (

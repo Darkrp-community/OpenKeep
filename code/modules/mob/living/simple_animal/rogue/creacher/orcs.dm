@@ -38,6 +38,7 @@
 	faction = list("orcs")
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	del_on_death = TRUE
+
 /mob/living/simple_animal/hostile/rogue/orc/orc2
 	icon_state = "savageorc2"
 	icon_living = "savageorc2"
@@ -45,6 +46,7 @@
 	loot = list(/obj/effect/mob_spawn/human/orc/corpse/savageorc2,
 			/obj/item/rogueweapon/axe/boneaxe,
 			/obj/effect/decal/cleanable/blood)
+
 /mob/living/simple_animal/hostile/rogue/orc/orc_marauder
 	name = "Orc Marauder"
 	icon_state = "orcmarauder"
@@ -58,6 +60,7 @@
 	loot = list(/obj/effect/mob_spawn/human/orc/corpse/orcmarauder,
 			/obj/item/rogueweapon/sword/scimitar/messer,
 			/obj/effect/decal/cleanable/blood)
+
 /mob/living/simple_animal/hostile/rogue/orc/orc_marauder/spear
 	icon_state = "orcmarauder_spear"
 	icon_living = "orcmarauder_spear"
@@ -66,6 +69,7 @@
 	loot = list(/obj/effect/mob_spawn/human/orc/corpse/orcmarauder,
 			/obj/item/rogueweapon/spear,
 			/obj/effect/decal/cleanable/blood)
+
 /mob/living/simple_animal/hostile/rogue/orc/orc_marauder/ravager
 	icon_state = "orcravager"
 	icon_living = "orcravager"
@@ -78,6 +82,7 @@
 	loot = list(/obj/effect/mob_spawn/human/orc/corpse/orcravager,
 			/obj/item/rogueweapon/polearm/halberd/bardiche,
 			/obj/effect/decal/cleanable/blood)
+
 /mob/living/simple_animal/hostile/rogue/orc/spear
 	icon_state = "savageorc_spear"
 	icon_living = "savageorc_spear"
@@ -93,6 +98,7 @@
 			/obj/item/rogueweapon/spear/bonespear,
 			/obj/effect/decal/cleanable/blood)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
+
 /mob/living/simple_animal/hostile/rogue/orc/spear2
 	icon_state = "savageorc_spear2"
 	icon_living = "savageorc_spear2"
@@ -100,6 +106,7 @@
 	loot = list(/obj/effect/mob_spawn/human/orc/corpse/savageorc2,
 			/obj/item/rogueweapon/spear/bonespear,
 			/obj/effect/decal/cleanable/blood)
+
 /mob/living/simple_animal/hostile/rogue/orc/get_sound(input)
 	switch(input)
 		if("aggro")
@@ -111,15 +118,18 @@
 			'sound/vo/mobs/simple_orcs/orc_death6.ogg')
 		if("idle")
 			return pick('sound/vo/mobs/simple_orcs/orc_idle.ogg','sound/vo/mobs/simple_orcs/orc_idle2.ogg','sound/vo/mobs/simple_orcs/orc_idle3.ogg','sound/vo/mobs/simple_orcs/orc_idle4.ogg')
+
 /mob/living/simple_animal/hostile/rogue/orc/Life()
 	. = ..()
 	if(!target)
 		if(prob(3))
 			emote(pick("idle"), TRUE)
+
 /mob/living/simple_animal/hostile/rogue/orc/taunted(mob/user)
 	emote("aggro")
 	GiveTarget(user)
 	return
+
 /mob/living/simple_animal/hostile/rogue/orc/simple_limb_hit(zone)
 	if(!zone)
 		return ""
@@ -161,6 +171,7 @@
 		if(BODY_ZONE_L_ARM)
 			return "foreleg"
 	return ..()
+
 /obj/projectile/bullet/reusable/arrow/orc
 	damage = 20
 	damage_type = BRUTE
@@ -174,6 +185,7 @@
 	woundclass = BCLASS_STAB
 	flag =  "piercing"
 	speed = 0.2
+
 /mob/living/simple_animal/hostile/rogue/orc/ranged
 	name = "savage orc archer"
 	desc = ""
@@ -193,3 +205,12 @@
 			/obj/effect/decal/cleanable/blood)
 	maxHealth = 50
 	health = 50
+
+/mob/living/simple_animal/hostile/rogue/orc/basic_test
+	can_have_ai = FALSE //disable native ai
+	ai_controller = /datum/ai_controller/testing_orc
+
+
+/mob/living/simple_animal/hostile/rogue/orc/ranged/basic_test
+	can_have_ai = FALSE //disable native ai
+	ai_controller = /datum/ai_controller/testing_orc_ranged
