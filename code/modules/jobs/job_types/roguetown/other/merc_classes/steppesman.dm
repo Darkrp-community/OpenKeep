@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/steppesman
 	name = "Steppesman Archer"
-	tutorial = "A mercenary from hailing from the wild frontier steppes. There are three things you value most; saigas, freedom, and coin They Use a bow for quick attacks alongside a sabre for close encounters"
+	tutorial = "A mercenary from hailing from the wild frontier steppes. There are three things you value most; saigas, freedom, and coin they use a bow for quick attacks alongside a sabre for close encounters"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",

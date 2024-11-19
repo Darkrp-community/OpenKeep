@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/grenzelhoft
 	name = "Grenzelhoftter Greatswordsman"
-	tutorial = "A mercenary from the Grenzelhoft Empire's Mercenary Guild. Their only care is coin, and the procurement of coin, they use a heavy iron zweihander as main weapon, aim well every devastating hit with this heavy weapon."
+	tutorial = "A mercenary from the Grenzelhoft Empire's Mercenary Guild. Their only care is coin, and the procurement of coin, they use a heavy iron zweihander as a main weapon, aim well... every devastating hit with this heavy weapon."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
