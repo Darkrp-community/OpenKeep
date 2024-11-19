@@ -234,7 +234,7 @@
 
 /obj/item/burial_shroud
 	name = "winding sheet"
-	desc = ""
+	desc = "A sheet used to carry dead bodies and shield them from the elements."
 	icon = 'icons/obj/bodybag.dmi'
 	icon_state = "shroud_folded"
 	w_class = WEIGHT_CLASS_SMALL

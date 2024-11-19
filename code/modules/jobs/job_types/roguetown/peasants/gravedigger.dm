@@ -19,6 +19,7 @@
 	allowed_patrons = list(/datum/patron/divine/necra)
 	outfit = /datum/outfit/job/roguetown/undertaker
 	display_order = JDO_GRAVEMAN
+	give_bank_account = TRUE
 	min_pq = -10
 	bypass_lastclass = TRUE
 
@@ -28,11 +29,10 @@
 	neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 	pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
-	cloak = /obj/item/clothing/cloak/raincloak/mortus
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather/rope
-	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/keyring/gravedigger
+	backr = /obj/item/rogueweapon/shovel
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE) // these are basically the acolyte skills with a bit of other stuff
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
