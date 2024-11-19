@@ -52,6 +52,7 @@
 	penfactor = AP_POLEARM_THRUST
 	swingdelay = 1
 	misscost = 10
+	item_damage_type = "stab"
 
 /datum/intent/polearm/thrust/spear
 	penfactor = AP_SPEAR_THRUST
@@ -69,6 +70,7 @@
 	damfactor = 0.8
 	swingdelay = 1
 	misscost = 5
+	item_damage_type = "blunt"
 
 /*-------------\
 | Swing intent |
@@ -78,6 +80,7 @@
 	attack_verb = list("bashes", "strikes", "swings")
 	reach = 2
 	chargetime = 1
+	item_damage_type = "slash"
 
 /*-----------\
 | Cut intent |
@@ -92,6 +95,7 @@
 	reach = 2
 	swingdelay = 1
 	misscost = 10
+	item_damage_type = "slash"
 
 /*------------\
 | Chop intent |
@@ -109,6 +113,7 @@
 	swingdelay = 2
 	misscost = 20
 	warnie = "mobwarning"
+	item_damage_type = "slash"
 
 
 //................ Wooden Staff ............... //

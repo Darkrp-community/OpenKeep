@@ -28,11 +28,13 @@
 	penfactor = AP_AXE_CHOP
 	swingdelay = 1
 	misscost = 5
+	item_damage_type = "slash"
 
 /datum/intent/axe/chop/great//unique long attack for axes, basically you swing really really hard, stills worse than a polearm like the bardiche or spear
 	penfactor = AP_HEAVYAXE_CHOP
 	reach = 2
 	chargetime = 1
+	item_damage_type = "slash"
 
 
 /*------------\
@@ -49,6 +51,7 @@
 	penfactor = AP_AXE_CUT
 	swingdelay = 0
 	misscost = 5
+	item_damage_type = "slash"
 
 /*--------------\
 | Impale intent |	big AP
@@ -67,6 +70,7 @@
 	penfactor = AP_HEAVYAXE_STAB
 	swingdelay = 1
 	misscost = 10
+	item_damage_type = "stab"
 
 //................ Stone Axe ............... //
 /obj/item/rogueweapon/axe/stone

@@ -14,7 +14,7 @@
 	body_parts_covered = ARMS
 	icon_state = "bracers"
 	item_state = "bracers"
-	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 80, "slash" = 80, "stab" = 80,  "piercing" = 60, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
 	resistance_flags = FIRE_PROOF
@@ -26,7 +26,7 @@
 	desc = "Boiled leather bracers typically worn by archers to protect their forearms."
 	icon_state = "lbracers"
 	item_state = "lbracers"
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 30, "slash" = 30, "stab" = 30,  "piercing" = 15, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT)
 	resistance_flags = null
 	blocksound = SOFTHIT
@@ -56,7 +56,7 @@
 	desc = "Stalwart bronze bracers, from an age long past."
 	icon_state = "aasimarwrist"
 	item_state = "aasimarwrist"
-	armor = list("melee" = 70, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) // Less protection than steel
+	armor = list("blunt" = 70, "slash" = 70, "stab" = 70,  "piercing" = 50, "fire" = 0, "acid" = 0) // Less protection than steel
 
 //copper bracers
 
@@ -66,7 +66,7 @@
 	body_parts_covered = ARMS
 	icon_state = "copperarm"
 	item_state = "copperarm"
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 50, "slash" = 50, "stab" = 50,  "piercing" = 60, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	smeltresult = /obj/item/ingot/copper
 	blocksound = PLATEHIT

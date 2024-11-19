@@ -95,6 +95,7 @@
 	chargetime = 0.5
 	chargedrain = 1
 	charging_slowdown = 1
+	item_damage_type = "piercing"
 
 /datum/intent/shoot/blowgun/can_charge()
 	if(mastermob)

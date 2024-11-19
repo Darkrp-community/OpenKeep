@@ -25,6 +25,7 @@
 	icon_state = "inbash"
 	attack_verb = list("bashes", "strikes")
 	penfactor = 10
+	item_damage_type = "blunt"
 
 /datum/intent/lord_electrocute
 	name = "electrocute"
