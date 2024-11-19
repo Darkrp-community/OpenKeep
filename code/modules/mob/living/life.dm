@@ -30,8 +30,6 @@
 		return
 
 	if(!IS_IN_STASIS(src))
-		//Mutations and radiation
-		handle_mutations_and_radiation()
 		//Breathing, if applicable
 		handle_breathing(times_fired)
 		if(HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
@@ -92,10 +90,6 @@
 		handle_inwater(loc)
 
 /mob/living/proc/handle_breathing(times_fired)
-	return
-
-/mob/living/proc/handle_mutations_and_radiation()
-	radiation = 0 //so radiation don't accumulate in simple animals
 	return
 
 /mob/living/proc/handle_random_events()
