@@ -208,9 +208,11 @@
 
 /mob/living/simple_animal/hostile/rogue/orc/basic_test
 	can_have_ai = FALSE //disable native ai
+	AIStatus = AI_OFF
 	ai_controller = /datum/ai_controller/testing_orc
 
 
 /mob/living/simple_animal/hostile/rogue/orc/ranged/basic_test
 	can_have_ai = FALSE //disable native ai
+	AIStatus = AI_OFF
 	ai_controller = /datum/ai_controller/testing_orc_ranged

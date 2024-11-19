@@ -182,15 +182,18 @@ have ways of interacting with a specific atom and control it. They posses a blac
 				var/mob/living/living_pawn = pawn
 				var/mob/living/living_target = current_movement_target
 				if(living_target.rogue_sneaking)
-					if(!living_pawn.npc_detect_sneak(living_target, extra_chance))
+					if(!living_pawn.npc_detect_sneak(living_target, 0))
 						failed_sneak_check++
 				else
 					failed_sneak_check = 0
 
 			if(((can_reach && current_behavior.required_distance >= get_dist(moving_pawn, current_movement_target))) || failed_sneak_check > 4) ///Are we close
-				failed_sneak_check = 0
 				if(ai_movement.moving_controllers[src] == current_movement_target) //We are close enough, if we're moving stop.
 					ai_movement.stop_moving_towards(src)
+
+				if(failed_sneak_check > 4)
+					ai_movement.stop_moving_towards(src)
+				failed_sneak_check = 0
 
 				if(behavior_cooldowns[current_behavior] > world.time) //Still on cooldown
 					continue
