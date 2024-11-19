@@ -20,7 +20,7 @@
 
 /obj/structure/well/climb_up
 	desc = "A rope at the bottom of a well, you can climb up it if you want."
-	well_climb = "DOWN"
+	well_climb = "UP"
 
 /obj/structure/well/fountain
 	name = "water fountain"

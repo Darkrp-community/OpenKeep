@@ -6,9 +6,10 @@
 	anchored = 1
 	plane = ABOVE_LIGHTING_PLANE
 /obj/effect/landmark/hammer/Initialize()
-	..()
+	. = ..()
+	invisibility = 101
 	#ifdef TESTING
-		invisibility = 0
+	invisibility = 0
 	#endif
 
 
@@ -19,7 +20,7 @@
 	name = "Put your<br>text here!"
 	desc = "Assign the dev_text to the name var. <br> to linebreak if needed."
 /obj/effect/landmark/hammer/dev_text/Initialize()
-	..()
+	. = ..()
 	#ifndef TESTING
 		qdel(src)
 	#endif
