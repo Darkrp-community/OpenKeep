@@ -11,7 +11,7 @@
 
 /datum/ai_movement/proc/start_moving_towards(datum/ai_controller/controller, atom/current_movement_target, min_distance)
 	controller.pathing_attempts = 0
-	controller.blackboard[BB_CURRENT_MIN_MOVE_DISTANCE] = min_distance
+	controller.set_blackboard_key(BB_CURRENT_MIN_MOVE_DISTANCE, min_distance)
 	if(!moving_controllers.len && requires_processing)
 		START_PROCESSING(SSai_movement, src)
 	moving_controllers[controller] = current_movement_target
