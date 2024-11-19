@@ -57,7 +57,8 @@
 	sins = "Undeath"
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
-	t2 = /obj/effect/proc_holder/spell/targeted/churn
+	t2 = /obj/effect/proc_holder/spell/targeted/soulspeak
+	t3 = /obj/effect/proc_holder/spell/targeted/churn
 
 // ............ SAINTS ..................
 /datum/patron/divine/ravox
