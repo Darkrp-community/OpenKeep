@@ -123,6 +123,9 @@
 		var/list/benis = hitsound
 		if(benis)
 			masteritem.hitsound = benis
+	if(istype(mastermob, /mob/living/simple_animal))
+		var/mob/living/simple_animal/master = mastermob
+		master.damage_type = item_damage_type
 	return
 
 /datum/intent/proc/height2limb(height as num)

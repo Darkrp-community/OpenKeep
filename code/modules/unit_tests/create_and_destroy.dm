@@ -62,6 +62,9 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	//needs multiple atoms passed
 	ignore += typesof(/obj/effect/buildmode_line)
 
+	ignore += typesof(/obj/effect/spawner)
+	ignore += typesof(/atom/movable/screen)
+
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/baseturf_count = length(spawn_at.baseturfs)
 
