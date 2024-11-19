@@ -130,8 +130,7 @@ GLOBAL_LIST_INIT(apprentices_positions, list(
 	"Smithy Apprentice",
 	"Magician's Apprentice",
 	"Churchling",
-	"Servant",
-	"Orphan"
+	"Servant"
 	))
 
 GLOBAL_LIST_INIT(allmig_positions, list(
