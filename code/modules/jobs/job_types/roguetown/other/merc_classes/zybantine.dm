@@ -23,7 +23,7 @@
 	head = /obj/item/clothing/head/roguetown/helmet/sallet/zybantine
 	gloves = /obj/item/clothing/gloves/roguetown/leather//their best armor is the coat of plates/kalah helmet, no other leg or arm armor
 	belt = /obj/item/storage/belt/rogue/leather/mercenary/shalal
-	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates
+	armor = /obj/item/clothing/suit/roguetown/armor/medium/coatplates
 	beltr = /obj/item/rogueweapon/sword/long/rider
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	pants = /obj/item/clothing/under/roguetown/tights/red

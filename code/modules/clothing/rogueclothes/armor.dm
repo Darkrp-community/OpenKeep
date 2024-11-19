@@ -545,6 +545,17 @@
 
 	body_parts_covered = COVERAGE_FULL
 
+//................ Coat of Plate ............... //
+/obj/item/clothing/suit/roguetown/armor/medium/coatplates
+	name = "coat of plates"
+	desc = "Armor in the zybantine fashion with thick leather and rows of little steel plates covering vital organs,\
+			allowing for more movement than full plate but still giving good protection. Not as durable as maille."
+	icon_state = "coat_of_plates"
+	blocksound = PLATEHIT
+	sellprice = VALUE_SNOWFLAKE_STEEL
+
+	armor = ARMOR_MAILLE_GOOD
+
 
 
 
@@ -622,7 +633,7 @@
 //................ Brigandine ............... //
 /obj/item/clothing/suit/roguetown/armor/brigandine
 	name = "brigandine"
-	desc = "A coat with plates concealed inside an exterior fabric. Protects the user from melee impacts and also ranged attacks to an extent."
+	desc = "A heavy coat with plates concealed inside an exterior fabric. Protects the user from melee impacts and also ranged attacks to an extent."
 	icon_state = "brigandine"
 	blocksound = SOFTHIT
 	equip_delay_self = 4 SECONDS
@@ -671,17 +682,6 @@
 /obj/item/clothing/suit/roguetown/armor/brigandine/captain/Destroy()
 	GLOB.lordcolor -= src
 	return ..()
-
-//................ Coat of Plate ............... //
-/obj/item/clothing/suit/roguetown/armor/brigandine/coatplates
-	name = "coat of plates"
-	desc = "A Zybantine leather coat with steel scales woven with miniscule threads of adamantine, \
-			ensuring the wearer an optimal defence with forgiving breathability and mobility."
-	icon_state = "coat_of_plates"
-	blocksound = PLATEHIT
-	sellprice = VALUE_SNOWFLAKE_STEEL
-
-	max_integrity = INTEGRITY_STRONG
 
 
 //................ Snowflake Plate ............... //
