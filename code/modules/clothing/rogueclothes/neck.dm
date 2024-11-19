@@ -366,7 +366,7 @@
 
 /obj/item/clothing/neck/roguetown/psycross/silver/necra
 	name = "amulet of Necra"
-	desc = "Where, grave, thy victory? I triumph still while the Veiled Lady abides by me."
+	desc = "Where, grave, thy victory? I triumph still while the Undermaiden abides by me."
 	icon_state = "necra"
 	resistance_flags = FIRE_PROOF
 

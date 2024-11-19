@@ -128,7 +128,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
 "aaB" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/herringbone,
 /area/rogue)
 "aaC" = (
@@ -3346,7 +3346,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue)
 "akN" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
 "akO" = (
@@ -3638,7 +3638,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
 "alM" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "alN" = (
@@ -5129,7 +5129,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "aqa" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "aqb" = (
@@ -9161,7 +9161,7 @@
 	},
 /area/rogue)
 "aCN" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw";
 	dir = 1
@@ -9435,7 +9435,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue)
 "aDD" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks,
 /area/rogue)
 "aDE" = (
@@ -10182,7 +10182,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "aFS" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor)
 "aFT" = (
@@ -11803,7 +11803,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/beach)
 "dmH" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw"
 	},
@@ -12482,7 +12482,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
 "iRS" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "iXT" = (
@@ -12601,7 +12601,7 @@
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/outdoors/rtfield)
 "kji" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
 "kjj" = (
@@ -13008,7 +13008,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/beach)
 "ojs" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "omQ" = (
@@ -13443,7 +13443,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "rxb" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -13523,7 +13523,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cave)
 "rUg" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
