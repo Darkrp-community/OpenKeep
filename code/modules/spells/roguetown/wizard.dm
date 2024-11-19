@@ -649,6 +649,7 @@
 		QDEL_IN(src, timeleft) //delete after it runs out
 
 /obj/effect/proc_holder/spell/invoked/forcewall_weak/cast(list/targets,mob/user = usr)
+	. = ..()
 	var/turf/front = get_step(user, user.dir)
 	new wall_type(front, user)
 	if(user.dir == SOUTH || user.dir == NORTH)
@@ -703,6 +704,7 @@
 	var/delay = 0.8 SECONDS
 
 /obj/effect/proc_holder/spell/invoked/slowdown_spell_aoe/cast(list/targets, mob/user = usr)
+	. = ..()
 	var/turf/T = get_turf(targets[1])
 
 	for(var/turf/affected_turf in view(area_of_effect, T))
@@ -796,6 +798,7 @@
 	var/push_range = 1
 
 /obj/effect/proc_holder/spell/invoked/push_spell/cast(list/targets, mob/user)
+	. = ..()
 	var/list/thrownatoms = list()
 	var/atom/throwtarget
 	var/distfromcaster
@@ -867,6 +870,7 @@
 	layer = ABOVE_ALL_MOB_LAYER
 
 /obj/effect/proc_holder/spell/invoked/blade_burst/cast(list/targets, mob/user)
+	. = ..()
 	var/turf/T = get_turf(targets[1])
 	var/play_cleave = FALSE
 	new /obj/effect/temp_visual/trap(T)
@@ -1005,7 +1009,7 @@
 	overlay_state = "jump"
 
 /obj/effect/proc_holder/spell/invoked/featherfall/cast(list/targets, mob/user = usr)
-
+	. = ..()
 	user.visible_message("[user] mutters an incantation and a dim pulse of light radiates out from them.")
 
 	for(var/mob/living/L in range(1, usr))
@@ -1030,6 +1034,7 @@
 	associated_skill = /datum/skill/magic/arcane
 
 /obj/effect/proc_holder/spell/invoked/haste/cast(list/targets, mob/user)
+	. = ..()
 	var/atom/A = targets[1]
 	if(!isliving(A))
 		revert_cast()

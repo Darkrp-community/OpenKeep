@@ -18,6 +18,7 @@
 	charge_max = 60 SECONDS
 
 /obj/effect/proc_holder/spell/invoked/bud/cast(list/targets, mob/living/user)
+	. = ..()
 	var/turf/T = get_turf(targets[1])
 	if(!isclosedturf(T))
 		new /obj/item/clothing/head/peaceflower(T)
