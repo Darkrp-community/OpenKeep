@@ -117,7 +117,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/musicvol = 50
 	var/mastervol = 50
 
-	var/anonymize = TRUE
+	var/anonymize = FALSE
 
 	var/lastclass
 
