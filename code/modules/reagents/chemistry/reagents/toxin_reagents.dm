@@ -360,18 +360,6 @@
 	..()
 	. = 1
 
-/datum/reagent/toxin/polonium
-	name = "Polonium"
-	description = "An extremely radioactive material in liquid form. Ingestion results in fatal irradiation."
-	reagent_state = LIQUID
-	color = "#787878"
-	metabolization_rate = 0.125 * REAGENTS_METABOLISM
-	toxpwr = 0
-
-/datum/reagent/toxin/polonium/on_mob_life(mob/living/carbon/M)
-	M.radiation += 4
-	..()
-
 /datum/reagent/toxin/histamine
 	name = "Histamine"
 	description = "Histamine's effects become more dangerous depending on the dosage amount. They range from mildly annoying to incredibly lethal."

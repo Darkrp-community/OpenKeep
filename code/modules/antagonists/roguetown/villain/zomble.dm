@@ -90,7 +90,6 @@
 	zombie.STASPD = 2
 	zombie.STAINT = 1
 	cmode_music = zombie.cmode_music
-	zombie.silent = TRUE		// makes them unable to audible emote or speak, no more sexy moan zombies
 //	cmode_music ='sound/music/combat_weird.ogg'
 	zombie.vitae_pool = 0 // Deadites have no vitae to drain from
 	zombie.remove_all_languages()

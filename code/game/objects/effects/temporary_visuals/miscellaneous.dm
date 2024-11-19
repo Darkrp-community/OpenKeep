@@ -83,12 +83,6 @@
 	icon_state = "shieldsparkles"
 	duration = 3
 
-/obj/effect/temp_visual/dir_setting/ninja
-	name = "ninja shadow"
-	icon = 'icons/mob/mob.dmi'
-	icon_state = "uncloak"
-	duration = 9
-
 /obj/effect/temp_visual/dir_setting/ninja/cloak
 	icon_state = "cloak"
 
