@@ -30,8 +30,6 @@ have ways of interacting with a specific atom and control it. They posses a blac
 	var/atom/current_movement_target
 	///Identifier for what last touched our movement target, so it can be cleared conditionally
 	var/movement_target_source
-	///Delay between atom movements, if this is not a multiplication of the delay in
-	var/move_delay
 	///Stored arguments for behaviors given during their initial creation
 	var/list/behavior_args = list()
 	///Tracks recent pathing attempts, if we fail too many in a row we fail our current plans.

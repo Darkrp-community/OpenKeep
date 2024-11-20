@@ -1,16 +1,18 @@
-/datum/ai_controller/volf
-	movement_delay = 0.4 SECONDS
+/datum/ai_controller/big_rat
+	movement_delay = 0.2 SECONDS
 
 	ai_movement = /datum/ai_movement/basic_avoidance
 
 	blackboard = list(
-		BB_TARGETTING_DATUM = new /datum/targetting_datum/basic()
+		BB_TARGETTING_DATUM = new /datum/targetting_datum/basic/allow_items()
+
 	)
 
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/flee_target,
 
 		/datum/ai_planning_subtree/simple_find_target,
+		/datum/ai_planning_subtree/find_food,
 		/datum/ai_planning_subtree/basic_melee_attack_subtree,
 
 		/datum/ai_planning_subtree/find_food/dead_bodies,

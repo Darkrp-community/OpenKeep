@@ -468,3 +468,16 @@
 		user.Immobilize(1 SECONDS)
 		user.changeNext_move(1 SECONDS)
 
+
+/mob/living/simple_animal/hostile/retaliate/rogue/UnarmedAttack(atom/A)
+	. = ..()
+	if(!is_type_in_list(A, food_type))
+		return
+
+	if(!src.CanReach(A))
+		return
+
+	face_atom(A)
+	playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
+	qdel(A)
+	food = max(food + 30, 100)
