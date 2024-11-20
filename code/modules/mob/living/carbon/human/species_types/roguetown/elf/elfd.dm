@@ -93,7 +93,7 @@
 		"Jackpoison" = SKIN_COLOR_JACKPOISON,
 		"Homunculus" = SKIN_COLOR_HOMUNCULUS,
 		"Arachnid Ichor" = SKIN_COLOR_ARACHNID_ICHOR,
-		"Snow Elf" = SKIN_COLOR_SNOW_ELF,
+		"Zizo Descendant" = SKIN_COLOR_SNOW_ELF,
 	))
 
 /datum/species/elf/dark/get_hairc_list()
