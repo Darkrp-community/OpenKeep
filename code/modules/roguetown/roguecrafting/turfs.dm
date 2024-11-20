@@ -171,7 +171,7 @@
 	skillcraft = /datum/skill/craft/masonry
 	craftdiff = 2
 
-datum/crafting_recipe/roguetown/turfs/stonewallbrick/TurfCheck(mob/user, turf/T)
+/datum/crafting_recipe/roguetown/turfs/stonewallbrick/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
 		return
 	if(!istype(T, /turf/open/floor/rogue))
