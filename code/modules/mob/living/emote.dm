@@ -485,15 +485,6 @@
 		else
 			L.Knockdown(10)
 
-/datum/emote/living/carbon/human/fart
-	key = "fart"
-	key_third_person = "farts"
-	emote_type = EMOTE_AUDIBLE
-/mob/living/carbon/human/verb/emote_fart()
-	set name = "Fart"
-	set category = "Noises"
-	emote("fart", intentional = TRUE)
-
 /datum/emote/living/flap
 	key = "flap"
 	key_third_person = "flaps"

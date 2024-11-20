@@ -385,7 +385,7 @@
 /*	.................   Bread   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/bread
 	name = "bread loaf"
-	desc = "One of the staple foods of the world, with the decline of magic, the loss of bread-duplication has led to mass famines around Grimoria."
+	desc = "One of the staple foods of the world, with the decline of magic, the loss of bread-duplication has led to mass famines around Psydonia."
 	icon_state = "loaf6"
 	slices_num = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/breadslice
@@ -968,5 +968,5 @@
 	trash = /obj/item/cooking/platter
 
 /* maybe split up spider honey cake WIP
-	desc = "A cake glazed with spider-honey, a favorite dish among the Dark Elf nobility in Grimoria. Symbol of authority, a delicious residue covers the sweet cake which causes playful stinging and numbness in the mouth."
+	desc = "A cake glazed with spider-honey, a favorite dish among the Dark Elf nobility in Psydonia. Symbol of authority, a delicious residue covers the sweet cake which causes playful stinging and numbness in the mouth."
 */
