@@ -1,6 +1,6 @@
 /datum/advclass/combat/hoplite
 	name = "Immortal Bulwark"
-	tutorial = "You have marched and fought in formations since the ancient war that nearly destroyed Grimoria. There are few in the world who can match your expertise in a shield wall, but all you have ever known is battle and obedience..."
+	tutorial = "You have marched and fought in formations since the ancient war that nearly destroyed Psydonia. There are few in the world who can match your expertise in a shield wall, but all you have ever known is battle and obedience..."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list("Aasimar")
 	outfit = /datum/outfit/job/roguetown/adventurer/hoplite
