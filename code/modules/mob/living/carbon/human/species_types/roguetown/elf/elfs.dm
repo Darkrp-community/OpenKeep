@@ -83,7 +83,6 @@
 
 /datum/species/elf/snow/get_skin_list()
 	return sortList(list(
-		//"Snow Elf" = SKIN_COLOR_SNOW_ELF, These bitches are DEAD!
 		"Plain Elf" = SKIN_COLOR_PLAIN_ELF,
 		"Mountain Elf" = SKIN_COLOR_MOUNTAIN_ELF,
 		"Coastal Elf" = SKIN_COLOR_COASTAL_ELF,

@@ -743,7 +743,7 @@
 
 /obj/structure/fluff/globe
 	name = "globe"
-	desc = "A model representing the known world of Grimoria."
+	desc = "A model representing the known world of Psydonia."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "globe"
 	density = TRUE
