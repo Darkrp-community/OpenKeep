@@ -182,7 +182,7 @@
 				close_trap()
 				L.visible_message("<span class='danger'>[L] triggers \the [src].</span>", \
 						"<span class='danger'>I trigger \the [src]!</span>")
-				if(L.apply_damage(trap_damage, BRUTE, def_zone, L.run_armor_check(def_zone, "melee", damage = trap_damage)))
+				if(L.apply_damage(trap_damage, BRUTE, def_zone, L.run_armor_check(def_zone, "stab", damage = trap_damage)))
 					L.Stun(80)
 				L.consider_ambush()
 	..()

@@ -175,7 +175,7 @@ have ways of interacting with a specific atom and control it. They posses a blac
 				return //This can cause issues, so don't let these slide.
 
 			///Stops pawns from performing such actions that should require the target to be adjacent.
-			var/atom/movable/moving_pawn = pawn
+			var/mob/living/moving_pawn = pawn
 			var/can_reach = !(current_behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_REACH) || moving_pawn.CanReach(current_movement_target)
 
 			if(isliving(current_movement_target))
@@ -186,6 +186,9 @@ have ways of interacting with a specific atom and control it. They posses a blac
 						failed_sneak_check++
 				else
 					failed_sneak_check = 0
+
+			if(prob(8))
+				moving_pawn.emote("cidle")
 
 			if(((can_reach && current_behavior.required_distance >= get_dist(moving_pawn, current_movement_target))) || failed_sneak_check > 4) ///Are we close
 				if(ai_movement.moving_controllers[src] == current_movement_target) //We are close enough, if we're moving stop.

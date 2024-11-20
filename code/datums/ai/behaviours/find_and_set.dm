@@ -81,4 +81,6 @@
 		if(mob.stat == CONSCIOUS)
 			continue
 		found |= mob
+	if(!length(found))
+		return null
 	return pick(found)
