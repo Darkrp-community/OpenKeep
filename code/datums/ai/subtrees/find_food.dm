@@ -16,7 +16,7 @@
 /datum/ai_planning_subtree/find_food/dead_bodies/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
 	if(istype(controller.pawn, /mob/living/simple_animal))
-		var/mob/living/simple_animal/mob = controller.pawn
+		var/mob/living/simple_animal/hostile/retaliate/rogue/mob = controller.pawn
 		if(mob.food == mob.food_max && !mob.eat_forever)
 			return // not hungry
 
