@@ -310,12 +310,10 @@ GLOBAL_VAR(restart_counter)
 
 /world/proc/update_status()
 	var/s = ""
-	s += "<center><a href=\"https://discord.gg/stonekeep\">"
+	s += "<center><a href=\"https://discord.gg/zNAGFDcQ\">"
 #ifdef MATURESERVER
-	s += "<big><b>STONEKEEP (18+) (Immersive RP)</b></big></a><br>"
+	s += "<big><b>Vanderlin(Immersive RP)</b></big></a><br>"
 	s += "<b>Dark Medieval Fantasy Roleplay<b><br>"
-	s += "<b>New Map: Dun Manor<b><br>"
-	s += "<b>Whitelist Enabled: discord.gg/stonekeep</b></center><br>"
 	//s += "<b>Powerbottoms Welcome</b><br>"
 #else
 	s += "<big><b>ROGUEWORLD</b></big></a><br>"

@@ -146,6 +146,7 @@
 				qdel(F)
 				food = max(food + 30, 100)
 				return TRUE
+
 	for(var/obj/item/F in foundfood)
 		if(is_type_in_list(F, food_type))
 			var/turf/T = get_turf(F)

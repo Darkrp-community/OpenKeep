@@ -18,9 +18,9 @@
 	hub = "Exadv1.spacestation13"
 	hub_password = "zX1svaLpIhl70uii"
 #ifdef ROGUEWORLD
-	name = "STONEKEEP (18+)"
+	name = "Vanderlin"
 #else
-	name = "STONEKEEP (18+)"
+	name = "Vanderlin"
 #endif
 	fps = 20
 #ifdef FIND_REF_NO_CHECK_TICK

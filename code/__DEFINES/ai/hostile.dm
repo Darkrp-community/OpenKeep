@@ -37,6 +37,7 @@
 #define BB_BASIC_MOB_CURRENT_TARGET "BB_basic_current_target"
 #define BB_BASIC_MOB_CURRENT_TARGET_HIDING_LOCATION "BB_basic_current_target_hiding_location"
 #define BB_TARGETTING_DATUM "targetting_datum"
+#define BB_BASIC_MOB_FOOD_TARGET "BB_basic_food_target"
 
 ///list of foods this mob likes
 #define BB_BASIC_FOODS "BB_basic_foods"
