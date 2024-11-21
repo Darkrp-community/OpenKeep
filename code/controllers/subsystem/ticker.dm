@@ -262,7 +262,7 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/checkreqroles()
 	var/list/readied_jobs = list()
-	var/list/required_jobs = list()
+	var/list/required_jobs = list("King", "Queen", "Hand")
 #ifdef DEPLOY_TEST
 	required_jobs = list()
 	readied_jobs = list("King")
@@ -284,9 +284,9 @@ SUBSYSTEM_DEF(ticker)
 	if(("King" in readied_jobs) || ("Queen" in readied_jobs) || ("Hand" in readied_jobs))
 		if("King" in readied_jobs)
 			rulertype = "King"
-		if("Queen" in readied_jobs)
+		else if("Queen" in readied_jobs)
 			rulertype = "Queen"
-		if("Hand" in readied_jobs)
+		else if("Hand" in readied_jobs)
 			rulertype = "Hand"
 /*	else
 		var/list/stuffy = list("Set a Ruler to 'high' in your class preferences to start the game!", "PLAY Ruler NOW!", "A Ruler is required to start.", "Pray for a Ruler.", "One day, there will be a Ruler.", "Just try playing Ruler.", "If you don't play Ruler, the game will never start.", "We need at least one Ruler to start the game.", "We're waiting for you to pick Ruler to start.", "Still no Ruler is readied..", "I'm going to lose my mind if we don't get a Ruler readied up.","No. The game will not start because there is no Ruler.","What's the point of ROGUETOWN without a Ruler?")
@@ -576,6 +576,13 @@ SUBSYSTEM_DEF(ticker)
 					continue
 				if(Q.job == "Queen")
 					rulermob = Q
+					return
+		if("Hand")
+			for(var/mob/living/carbon/human/H in world)
+				if(istype(H, /mob/living/carbon/human/dummy))
+					continue
+				if(H.job == "Hand")
+					rulermob = H
 					return
 
 /datum/controller/subsystem/ticker/proc/collect_minds()
