@@ -24,8 +24,6 @@ GLOBAL_LIST_EMPTY(preference_patrons)
 	var/preference_accessible = TRUE
 	/// Some gods have related confessions, if they're evil and such
 	var/list/confess_lines
-	/// Some patrons have related traits, why not?
-	var/list/mob_traits
 	/// Tier 0 spell
 	var/t0
 	/// Tier 1 spell
@@ -35,10 +33,13 @@ GLOBAL_LIST_EMPTY(preference_patrons)
 	/// Final tier spell
 	var/t3
 
+	///our traits thats applied by set_patron and removed when changed
+	var/list/added_traits
+
 /datum/patron/proc/on_gain(mob/living/pious)
-	for(var/trait in mob_traits)
+	for(var/trait in added_traits)
 		ADD_TRAIT(pious, trait, "[type]")
 
-/datum/patron/proc/on_loss(mob/living/pious)
-	for(var/trait in mob_traits)
+/datum/patron/proc/on_remove(mob/living/pious)
+	for(var/trait in added_traits)
 		REMOVE_TRAIT(pious, trait, "[type]")

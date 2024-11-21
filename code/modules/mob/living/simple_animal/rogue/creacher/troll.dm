@@ -62,6 +62,11 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/troll
 	body_eater = TRUE
+
+	ai_controller = /datum/ai_controller/troll
+	AIStatus = AI_OFF
+	can_have_ai = FALSE
+
 	var/critvuln = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/Initialize()
