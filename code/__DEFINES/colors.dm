@@ -64,15 +64,15 @@
 // Expensive dyes ==========================
 #define EXPENSIVE_DYES			list("Ash Grey","Chalk White","Cream","White","Blood Red","Plum Purple","Dark Ink","Forest Green","Sky Blue","Mustard Yellow", "Salmon", "Russet", "Maroon","Red Ochre", "Dunked in Water" )
 
-#define CLOTHING_DARK_INK		"#392f2f"
-#define CLOTHING_PLUM_PURPLE	"#582c73"
+#define CLOTHING_DARK_INK		"#4f4343"
+#define CLOTHING_PLUM_PURPLE	"#683786"
 #define CLOTHING_SALMON			"#a56176"
 #define CLOTHING_BLOOD_RED		"#9c1919"
 
 #define CLOTHING_MAROON			"#672c0d"
-#define CLOTHING_RED_OCHRE		"#6f2d28"
+#define CLOTHING_RED_OCHRE		"#783530"
 #define CLOTHING_RUSSET			"#8a4b1c"
-#define CLOTHING_MUSTARD_YELLOW	"#979044"
+#define CLOTHING_MUSTARD_YELLOW	"#b0a850"
 #define CLOTHING_YELLOW_OCHRE	"#9b7a02"
 #define CLOTHING_FOREST_GREEN	"#427e2c"
 #define CLOTHING_SKY_BLUE		"#2f4a7c"
