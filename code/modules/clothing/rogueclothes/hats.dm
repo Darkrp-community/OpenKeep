@@ -424,7 +424,6 @@
 	else
 		. = ..()
 
-
 //................ Solar Visage (old) ............... //		- Old priest hat
 /obj/item/clothing/head/roguetown/priestmask
 	name = "solar visage"
