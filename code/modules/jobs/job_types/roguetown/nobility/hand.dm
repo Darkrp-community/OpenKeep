@@ -19,20 +19,11 @@
 	bypass_lastclass = TRUE
 	whitelist_req = FALSE
 	give_bank_account = 120
-	min_pq = 0
+	min_pq = 2
 	cmode_music = 'sound/music/combat_noble.ogg'
 
-/datum/job/roguetown/hand/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
-	..()
-	if(SSticker.rulertype == "Hand")
-		SSticker.select_ruler()
-		if(L)
-			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Regent of Rockhill.</span></span></b>")
-			to_chat(world, "<br>")
-			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
-
 /datum/outfit/job/roguetown/hand/pre_equip(mob/living/carbon/human/H)
-	..()
+	. = ..()
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand
@@ -75,3 +66,12 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
+
+/datum/job/roguetown/hand/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+	..()
+	if(SSticker.rulertype == "Hand")
+		SSticker.select_ruler()
+		if(L)
+			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Regent of Rockhill.</span></span></b>")
+			to_chat(world, "<br>")
+			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
