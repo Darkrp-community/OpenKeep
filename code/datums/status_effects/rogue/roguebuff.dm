@@ -95,13 +95,13 @@
 
 /atom/movable/screen/alert/status_effect/buff/druqks
 	name = "High"
-	desc = span_nicegreen("I am tripping balls.")
+	desc = span_nicegreen("Holy shit, I am tripping balls.")
 	icon_state = "acid"
 
 /datum/status_effect/buff/ozium
 	id = "ozium"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/druqks
-	effectedstats = list("speed" = -99)
+	effectedstats = list("speed" = -5, "perception" = 2)
 	duration = 2 MINUTES
 
 /datum/status_effect/buff/ozium/on_apply()
@@ -122,7 +122,7 @@
 	id = "moondust"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/druqks
 	effectedstats = list("speed" = 3, "endurance" = 3)
-	duration = 2 MINUTES
+	duration = 1 MINUTES
 
 /datum/status_effect/buff/moondust/nextmove_modifier()
 	return 0.5
@@ -142,8 +142,8 @@
 /datum/status_effect/buff/moondust_purest
 	id = "purest moondust"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/druqks
-	effectedstats = list("speed" = 6, "endurance" = 6)
-	duration = 3 MINUTES
+	effectedstats = list("speed" = 5, "endurance" = 5)
+	duration = 2 MINUTES
 
 /datum/status_effect/buff/moondust_purest/nextmove_modifier()
 	return 0.5

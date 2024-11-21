@@ -14,6 +14,7 @@
 	flaws = "Hubris, Superiority, Fury"
 	worshippers = "Dark Elves, Aspirants, Necromancers"
 	sins = "Resistance, Deceit, Wastefulness"
+	boons = "You know other followers of Zizo when you see them."
 	added_traits = list(TRAIT_CABAL)
 	confess_lines = list(
 		"I FOLLOW THE PATH OF ZIZO!",
@@ -28,6 +29,7 @@
 	flaws = "Rage, Hatred, Bloodthirst"
 	worshippers = "Greenskins, The Revenge-Driven, Sadists"
 	sins = "Compassion, Frailty, Servility"
+	boons = "You are drawn to the flavour of raw flesh and organs, and may consume without worry."
 	added_traits = list(TRAIT_ORGAN_EATER)
 	confess_lines = list(
 		"GRAGGAR IS THE BEAST I WORSHIP!",
@@ -42,6 +44,7 @@
 	flaws = "Pride, Greed, Orneryness"
 	worshippers = "Outlaws, Noble-Haters, Downtrodden Peasantry"
 	sins = "Clumsiness, Stupidity, Humility"
+	boons = "None... yet."
 	confess_lines = list(
 		"Matthios steal my pain, and take me away from these HEATHENS!",
 		"Matthios is my true lord, he WILL steal me away from YOU!",
@@ -55,6 +58,7 @@
 	flaws = "Enviousness, Self-Destruction, Willingness to Sacrifice Others"
 	worshippers = "Addicts, Gamblers, the Motherless and Maidenless"
 	sins = "Sobriety, Self-Sacrifice, Faltering Willpower"
+	boons = "You will never overdose on drugs."
 	added_traits = list(TRAIT_CRACKHEAD)
 	confess_lines = list(
 		"LIVE, LAUGH, LOVE! IN BAOTHA'S NAME!",
