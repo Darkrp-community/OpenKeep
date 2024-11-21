@@ -1682,6 +1682,8 @@ Slots: [job.spawn_positions]</span>
 						to_chat(user, "<font color='purple'>Flawed aspects: [selected_patron.flaws]</font>")
 						to_chat(user, "<font color='purple'>Likely Worshippers: [selected_patron.worshippers]</font>")
 						to_chat(user, "<font color='red'>Considers these to be Sins: [selected_patron.sins]</font>")
+						to_chat(user, "<font color='white'>Blessed with boon(s): [selected_patron.boons]</font>")
+
 
 				if("hair")
 					var/new_hair
