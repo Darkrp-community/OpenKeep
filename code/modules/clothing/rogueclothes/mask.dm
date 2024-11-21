@@ -35,7 +35,7 @@
 
 /obj/item/clothing/mask/rogue/spectacles/Crossed(mob/crosser)
 	if(isliving(crosser) && !obj_broken)
-		take_damage(11, BRUTE, "melee", 1)
+		take_damage(11, BRUTE, "blunt", 1)
 	..()
 
 /obj/item/clothing/mask/rogue/equipped(mob/user, slot)

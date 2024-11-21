@@ -57,7 +57,7 @@
 				else
 					user.visible_message("<span class='warning'>[user] damages [I]!</span>")
 					playsound(src,'sound/items/bsmithfail.ogg', 100, FALSE)
-					I.take_damage(5, BRUTE, "melee")
+					I.take_damage(5, BRUTE, "blunt")
 				return
 			else // Stop iiit, he's already... fixed?
 				to_chat(user, "\The [I] is already fully repaired!")

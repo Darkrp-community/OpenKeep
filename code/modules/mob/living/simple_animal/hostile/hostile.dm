@@ -573,15 +573,6 @@
 	if (!T)
 		return
 
-//	if (!length(SSmobs.clients_by_zlevel[T.z])) // It's fine to use .len here but doesn't compile on 511
-//		toggle_ai(AI_Z_OFF)
-//		return
-
-//	var/cheap_search = isturf(T) && !is_station_level(T.z)
-//	if (cheap_search)
-//		tlist = ListTargetsLazy(T.z)
-//	else
-
 	if(world.time < next_seek)
 		return
 	next_seek = world.time + 3 SECONDS
@@ -589,8 +580,6 @@
 	var/list/tlist = ListTargets()
 
 	if(AIStatus == AI_IDLE && FindTarget(tlist, 1))
-//		if(cheap_search) //Try again with full effort
-//			FindTarget()
 		toggle_ai(AI_ON)
 		testing("becomeidle [src]")
 

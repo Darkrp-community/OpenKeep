@@ -29,7 +29,7 @@
 
 ///returns the damage value of the attack after processing the obj's various armor protections
 /obj/proc/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir, armor_penetration = 0)
-	if(damage_flag == "melee" && damage_amount < damage_deflection)
+	if(damage_flag == "blunt" && damage_amount < damage_deflection)
 		testing("damtest55")
 		return 1
 	if(damage_type != BRUTE && damage_type != BURN)

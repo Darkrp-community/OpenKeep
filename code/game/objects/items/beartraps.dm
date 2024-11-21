@@ -47,7 +47,7 @@
 			C.Stun(80)
 			BP.add_wound(/datum/wound/fracture)
 			BP.update_disabled()
-			C.apply_damage(trap_damage, BRUTE, def_zone, C.run_armor_check(def_zone, "melee", damage = trap_damage))
+			C.apply_damage(trap_damage, BRUTE, def_zone, C.run_armor_check(def_zone, "stab", damage = trap_damage))
 			C.update_sneak_invis(TRUE)
 			C.consider_ambush()
 			return FALSE
@@ -73,7 +73,7 @@
 				C.emote("agony")
 				BP.add_wound(/datum/wound/fracture)
 				BP.update_disabled()
-				C.apply_damage(trap_damage, BRUTE, def_zone, C.run_armor_check(def_zone, "melee", damage = trap_damage))
+				C.apply_damage(trap_damage, BRUTE, def_zone, C.run_armor_check(def_zone, "stab", damage = trap_damage))
 				C.update_sneak_invis(TRUE)
 				C.consider_ambush()
 				return FALSE
@@ -182,7 +182,7 @@
 				close_trap()
 				L.visible_message("<span class='danger'>[L] triggers \the [src].</span>", \
 						"<span class='danger'>I trigger \the [src]!</span>")
-				if(L.apply_damage(trap_damage, BRUTE, def_zone, L.run_armor_check(def_zone, "melee", damage = trap_damage)))
+				if(L.apply_damage(trap_damage, BRUTE, def_zone, L.run_armor_check(def_zone, "stab", damage = trap_damage)))
 					L.Stun(80)
 				L.consider_ambush()
 	..()

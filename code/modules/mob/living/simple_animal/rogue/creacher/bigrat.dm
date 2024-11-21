@@ -50,6 +50,10 @@
 	remains_type = /obj/effect/decal/remains/bigrat
 	body_eater = TRUE
 
+	AIStatus = AI_OFF
+	can_have_ai = FALSE
+	ai_controller = /datum/ai_controller/big_rat
+
 /obj/effect/decal/remains/bigrat
 	name = "remains"
 	gender = PLURAL
@@ -60,6 +64,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/Initialize()
 	. = ..()
+
 	gender = MALE
 	if(prob(33))
 		gender = FEMALE
@@ -68,6 +73,9 @@
 		icon_living = "Frat"
 		icon_dead = "Frat1"
 	update_icon()
+
+	AddElement(/datum/element/ai_flee_while_injured, 0.75, retreat_health)
+	ai_controller.set_blackboard_key(BB_BASIC_FOODS, food_type)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/death(gibbed)
 	..()

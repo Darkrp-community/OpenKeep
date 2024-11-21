@@ -573,7 +573,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	if(user.mind.special_role != "Vampire Lord")
 		to_chat(user, "Only the master of the nite can operate this!")
 		return
-	var/choice = input(user,"What to do?", "STONEKEEP") as anything in useoptions|null
+	var/choice = input(user,"What to do?", "Vanderlin") as anything in useoptions|null
 	switch(choice)
 		if("Grow Power")
 			if(lord.vamplevel == 4)
