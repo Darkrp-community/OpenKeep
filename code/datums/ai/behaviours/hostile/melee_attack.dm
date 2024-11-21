@@ -38,7 +38,7 @@
 
 	if(sidesteps_after && prob(33)) //this is so fucking hacky, but going off og code this is exactly how it goes ignoring movetimers
 		if(!target || !isturf(target.loc) || !isturf(basic_mob.loc) || basic_mob.stat == DEAD)
-		return
+			return
 		var/target_dir = get_dir(basic_mob,target)
 
 		var/static/list/cardinal_sidestep_directions = list(-90,-45,0,45,90)
