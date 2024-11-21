@@ -16,7 +16,7 @@
 						/obj/item/natural/hide = 10, /obj/item/natural/bundle/bone/full = 2)
 	faction = list("caves")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 300
+	health = 400
 	maxHealth = 400
 	melee_damage_lower = 45
 	melee_damage_upper = 70
@@ -25,7 +25,11 @@
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	retreat_distance = 0
 	minimum_distance = 0
-	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
+	food_type = list(
+		/obj/item/reagent_containers/food/snacks/rogue/meat,
+		/obj/item/bodypart,
+		/obj/item/organ
+	)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	pooptype = null
 	STACON = 19
@@ -42,6 +46,14 @@
 	aggressive = TRUE
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/item/rogueweapon/axe/battle
+
+	ai_controller = /datum/ai_controller/minotaur
+	AIStatus = AI_OFF
+	can_have_ai = FALSE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/Initialize()
+	. = ..()
+	ai_controller.set_blackboard_key(BB_BASIC_FOODS, food_type)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/minotaur/death(gibbed)
 	..()

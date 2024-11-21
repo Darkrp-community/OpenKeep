@@ -1,5 +1,5 @@
-/datum/ai_controller/big_rat
-	movement_delay = 0.5 SECONDS
+/datum/ai_controller/bog_bug
+	movement_delay = 0.2 SECONDS
 
 	ai_movement = /datum/ai_movement/basic_avoidance
 
@@ -11,8 +11,8 @@
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/flee_target,
 
-		/datum/ai_planning_subtree/simple_find_target/rat,
-		/datum/ai_planning_subtree/find_food/rat,
+		/datum/ai_planning_subtree/simple_find_target,
+		/datum/ai_planning_subtree/find_food,
 		/datum/ai_planning_subtree/basic_melee_attack_subtree,
 
 		/datum/ai_planning_subtree/find_dead_bodies,

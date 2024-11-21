@@ -112,7 +112,7 @@
 			user.do_attack_animation(src)
 		visible_message("<span class='warning'>[user] slams \the [W] against \the [src]!</span>",
 						"<span class='warning'>I slam \the [W] against \the [src]!</span>",null ,COMBAT_MESSAGE_RANGE)
-		W.take_damage(10, BRUTE, "melee")
+		W.take_damage(10, BRUTE, "blunt")
 		return
 
 	return ..()

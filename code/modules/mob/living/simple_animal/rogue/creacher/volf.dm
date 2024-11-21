@@ -73,7 +73,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/Initialize()
 	. = ..()
-	AddElement(/datum/element/ai_flee_while_injured, 0.75, 0.4)
+	AddElement(/datum/element/ai_flee_while_injured, 0.75, retreat_health)
 
 	gender = MALE
 	if(prob(33))

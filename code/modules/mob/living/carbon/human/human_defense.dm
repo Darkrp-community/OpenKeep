@@ -313,7 +313,7 @@
 			if(check_shields(M, damage, "the [M.name]"))
 				return 0
 			if(stat != DEAD)
-				apply_damage(damage, BRUTE, affecting, run_armor_check(affecting, "melee", damage = damage))
+				apply_damage(damage, BRUTE, affecting, run_armor_check(affecting, "blunt", damage = damage))
 		return 1
 
 
