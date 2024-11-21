@@ -1978,10 +1978,14 @@ Slots: [job.spawn_positions]</span>
 						accessory = "Nothing"
 
 				if("charflaw")
-					var/list/flawslist = GLOB.character_flaws.Copy()
-					var/result = input(user, "Select a flaw", "Roguetown") as null|anything in flawslist
+					var/list/coom = GLOB.character_flaws.Copy()
+					var/result = input(user, "Select a flaw", "Roguetown") as null|anything in coom
 					if(result)
-						result = flawslist[result]
+						if(result == "Love-Fiend")
+							if(!user.can_do_sex())
+								coom -= "Love-Fiend"
+								result = pick(coom)
+						result = coom[result]
 						var/datum/charflaw/C = new result()
 						charflaw = C
 						if(charflaw.desc)

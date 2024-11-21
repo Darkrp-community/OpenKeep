@@ -46,7 +46,6 @@ GLOBAL_VAR(last_connection)
 			else
 				log_access("Failed Login: [key] - Not on whitelist")
 				return list("reason"="whitelist", "desc" = "\nBecome whitelisted! discord.gg/stonekeep")
-
 /*
 #ifdef MATURESERVER
 	if(!check_whitelist(ckey))

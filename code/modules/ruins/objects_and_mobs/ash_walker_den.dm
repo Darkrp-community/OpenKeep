@@ -27,6 +27,7 @@
 	START_PROCESSING(SSprocessing, src)
 
 /obj/structure/lavaland/ash_walker/deconstruct(disassembled)
+	new /obj/item/assembly/signaler/anomaly (get_step(loc, pick(GLOB.alldirs)))
 	new	/obj/effect/collapse(loc)
 	return ..()
 
@@ -42,6 +43,9 @@
 			for(var/obj/item/W in H)
 				if(!H.dropItemToGround(W))
 					qdel(W)
+			if(ismegafauna(H))
+				meat_counter += 20
+			else
 				meat_counter++
 			H.gib()
 			obj_integrity = min(obj_integrity + max_integrity*0.05,max_integrity)//restores 5% hp of tendril

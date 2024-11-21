@@ -45,4 +45,7 @@
 	M.visible_message("<span class='notice'>[M] stops to inspect [parent].</span>", \
 						"<span class='notice'>I take in [parent], inspecting the fine craftsmanship of the proletariat.</span>")
 
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artbad", /datum/mood_event/artbad)
+	if(M.mind && M.mind.has_antag_datum(/datum/antagonist/rev))
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artgreat", /datum/mood_event/artgreat)
+	else
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artbad", /datum/mood_event/artbad)

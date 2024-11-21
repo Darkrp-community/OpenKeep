@@ -207,6 +207,9 @@
 		if(!roundstart_template)
 			CRASH("Invalid path ([sid]/[roundstart_template]) passed to docking port.")
 
+	if(roundstart_template)
+		SSshuttle.action_load(roundstart_template, src)
+
 //returns first-found touching shuttleport
 /obj/docking_port/stationary/get_docked()
 	. = locate(/obj/docking_port/mobile) in loc
@@ -517,6 +520,10 @@
 		ripple_turfs += T1
 
 	return ripple_turfs
+
+/obj/docking_port/mobile/proc/check_poddoors()
+	for(var/obj/machinery/door/poddoor/shuttledock/pod in GLOB.airlocks)
+		pod.check()
 
 /obj/docking_port/mobile/proc/dock_id(id)
 	var/port = SSshuttle.getDock(id)
