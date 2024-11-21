@@ -65,6 +65,7 @@
 #define SPAN_SAND "sandspeak"
 #define SPAN_DELF "delf"
 #define SPAN_HELL "hellspeak"
+#define SPAN_ORC "orc"
 #define SPAN_BEAST "beast"
 
 //bitflag #defines for return value of the radio() proc.

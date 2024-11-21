@@ -116,8 +116,6 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Butler",
 	"Towner",
 	"Mercenary",
-	"Niteman",
-	"Nitemaiden",
 	"Prisoner",
 	"Beggar",
 	"Adventurer",

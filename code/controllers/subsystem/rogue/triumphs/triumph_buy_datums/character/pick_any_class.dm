@@ -38,7 +38,8 @@
 	"Dwarf",
 	"Tiefling",
 	"Dark Elf",
-	"Aasimar"
+	"Aasimar",
+	"Half-Orc"
 	)
 	maximum_possible_slots = 0
 

@@ -46,11 +46,6 @@
 	var/obj/item/rogueweapon/polearm/woodstaff/aries/P = new()
 	H.put_in_hands(P, forced = TRUE)
 
-	if((H.dna.species.id == "aasimar" || H.dna.species.id == "dwarf"))
-		head = /obj/item/clothing/head/roguetown/roguehood/priest
-
-	else
-		id = /obj/item/clothing/ring/active/nomag
 
 	if(H.mind)
 		if(H.patron != /datum/patron/divine/dendor)					// Astratans rule the church

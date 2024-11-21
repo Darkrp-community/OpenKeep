@@ -10,6 +10,7 @@
 	flaws = "Tyrannical, Ill-Tempered, Uncompromising"
 	worshippers = "Nobles, Zealots, Commoners"
 	sins = "Betrayal, Sloth, Witchcraft"
+	boons = "None... yet."
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	t2 = /obj/effect/proc_holder/spell/invoked/heal
@@ -22,6 +23,7 @@
 	flaws = "Close-minded, Vindictive, Haughty"
 	worshippers = "Magic Practitioners, Scholars, Scribes"
 	sins = "Ignorance, Burning Books, Rashness"
+	boons = "None... yet."
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/blindness
 	t2 = null
@@ -34,6 +36,8 @@
 	flaws = "Madness, Rebelliousness, Disorderliness"
 	worshippers = "Druids, Beasts, Madmen"
 	sins = "Deforestation, Overhunting, Disrespecting Nature"
+	boons = "Immunity to kneestingers."
+	added_traits = list(TRAIT_KNEESTINGER_IMMUNITY)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/self/beastsense
 	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
@@ -46,6 +50,8 @@
 	flaws= "Reckless, Stubborn, Destructive"
 	worshippers = "Sailors of the Sea and Sky, Horrid Sea-Creachers, Fog Islanders"
 	sins = "Fear, Hubris, Forgetfulness"
+	boons = "Leeches will not latch onto you in murk."
+	added_traits = list(TRAIT_LEECHIMMUNE)
 
 /datum/patron/divine/necra
 	name = "Necra"
@@ -54,6 +60,8 @@
 	flaws = "Unchanging, Apathetic, Easy to bore"
 	worshippers = "Orderlies, Gravekeepers, Mourners"
 	sins = "Heretical Magic, Untimely Death, Disturbance of Rest"
+	boons = "You may see the presence of a soul in a body."
+	added_traits = list(TRAIT_SOUL_EXAMINE)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/churn
@@ -65,6 +73,7 @@
 	flaws = "Carelessness, Aggression, Pride"
 	worshippers = "Warriors, Sellswords, Guardsmen"
 	sins = "Cowardice, Cruelty, Stagnation"
+	boons = "None... yet."
 
 /datum/patron/divine/xylix
 	name = "Xylix"
@@ -73,6 +82,8 @@
 	flaws = "Petulance, Deception, Gambling-Prone"
 	worshippers = "Cheats, Performers, the Hopeless"
 	sins = "Boredom, Predictability, Routine"
+	boons = "You know the exact prices of items."
+	added_traits = list(TRAIT_SEEPRICES)
 
 /datum/patron/divine/pestra
 	name = "Pestra"
@@ -81,6 +92,8 @@
 	flaws = "Drunkenness, Crudeness, Irresponsibility"
 	worshippers = "The Ill and Infirm, Alchemists, Physicians"
 	sins = "´Curing´ Abnormalities, Refusing to Help Unfortunates, Groveling"
+	boons = "You may consume rotten food, and you seem to understand people better."
+	added_traits = list(TRAIT_EMPATH, TRAIT_ROT_EATER)
 	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
 	t1 = /obj/effect/proc_holder/spell/invoked/heal
 	t2 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
@@ -93,6 +106,7 @@
 	flaws = "Obsessive, Exacting, Overbearing"
 	worshippers = "Smiths, Miners, Sculptors"
 	sins = "Cheating, Shoddy Work, Suicide"
+	boons = "None... yet."
 
 /datum/patron/divine/eora
 	name = "Eora"
@@ -101,6 +115,7 @@
 	flaws= "Naivete, Impulsiveness, Ignorance"
 	worshippers = "Mothers, Artists, Married Couples"
 	sins = "Sadism, Abandonment, Ruining Beauty"
+	boons = "None... yet."
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/bud
 	t2 = /obj/effect/proc_holder/spell/invoked/projectile/eoracurse

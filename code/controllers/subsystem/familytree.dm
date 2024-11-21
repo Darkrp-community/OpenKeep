@@ -53,6 +53,7 @@ SUBSYSTEM_DEF(familytree)
 		/datum/species/elf/snow,
 		/datum/species/dwarf/mountain,
 		/datum/species/tieberian,
+		/datum/species/halforc
 		)
 
 /datum/controller/subsystem/familytree/Initialize()

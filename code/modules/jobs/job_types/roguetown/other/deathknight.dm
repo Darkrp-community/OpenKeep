@@ -13,7 +13,8 @@
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
-		"Dark Elf"
+		"Dark Elf",
+		"Half-Orc"
 	)
 	tutorial = ""
 

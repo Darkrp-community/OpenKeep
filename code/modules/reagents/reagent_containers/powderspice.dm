@@ -207,9 +207,9 @@
 /datum/reagent/ozium/on_mob_life(mob/living/carbon/M)
 	if(M.has_flaw(/datum/charflaw/addiction/junkie))
 		M.sate_addiction()
-	if(prob(10))
-		M.playsound_local(get_turf(M), 'sound/misc/jumpscare (2).ogg', 25)
-		M.flash_fullscreen("hey")
+	//if(prob(10))
+	//	M.playsound_local(get_turf(M), 'sound/misc/jumpscare (2).ogg', 25)
+	//	M.flash_fullscreen("hey")														WHAT THE HELL? WHY?
 	if(prob(20))
 		M.flash_fullscreen("whiteflash")
 	M.apply_status_effect(/datum/status_effect/buff/ozium)

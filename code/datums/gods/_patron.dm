@@ -18,6 +18,8 @@ GLOBAL_LIST_EMPTY(preference_patrons)
 	var/flaws = "This spagetti code"
 	///Strong that represents what this god views as sins
 	var/sins = "Codersocks"
+	/// What boons the god may offer:______qdel_list_wrapper(list/L)
+	var/boons = "Code errors"
 	/// Faith this god belongs to
 	var/datum/faith/associated_faith = /datum/faith
 	/// Whether or not we are accessible in preferences

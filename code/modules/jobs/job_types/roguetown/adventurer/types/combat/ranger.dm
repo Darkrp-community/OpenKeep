@@ -9,7 +9,8 @@
 		"Half-Elf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Half-Orc"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/ranger
 	min_pq = 0

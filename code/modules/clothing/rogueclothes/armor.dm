@@ -716,7 +716,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/rare/grenzelplate
 	name = "grenzelhoftian plate regalia"
-	desc = "Engraved on this masterwork of humen metallurgy lies \"Thrice Slain, Thrice Risen, Thrice Pronged\" alongside the symbol of The Forgotten God in its neck guard."
+	desc = "Engraved on this masterwork of humen metallurgy lies \"Thrice Slain, Thrice Risen, Thrice Pronged\" alongside the symbol of Psydon in its neck guard."
 	icon_state = "human_swordchest"
 	allowed_race = list("human")
 	allowed_sex = list(MALE)
