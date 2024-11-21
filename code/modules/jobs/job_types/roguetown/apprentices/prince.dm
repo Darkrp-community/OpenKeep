@@ -11,6 +11,11 @@
 		"Humen",
 		"Half-Elf"
 	)
+
+	spells = list(
+		/obj/effect/proc_holder/spell/self/grant_title,
+	)
+
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT)
 	cmode_music = 'sound/music/combat_noble.ogg'

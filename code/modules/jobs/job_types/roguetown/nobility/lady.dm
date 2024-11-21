@@ -7,6 +7,11 @@
 	spawn_positions = 1
 
 	allowed_sexes = list(FEMALE)
+
+	spells = list(
+		/obj/effect/proc_holder/spell/self/grant_title,
+	)
+
 	allowed_races = list(
 		"Humen",
 		"Elf",
