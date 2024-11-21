@@ -38,19 +38,27 @@
 #define AP_AXE_CHOP 15
 #define AP_HEAVYAXE_CHOP 25
 #define AP_HEAVYAXE_STAB 35
+
 #define AP_FLAIL_STRIKE 5
-#define AP_CLUB_STRIKE 25
 #define AP_FLAIL_SMASH 60
+#define AP_CLUB_STRIKE 25
 #define AP_CLUB_SMASH 35
 #define AP_HEAVY_SMASH 45
+
 #define AP_SPEAR_POKE 20
 #define AP_POLEARM_THRUST 45
 #define AP_POLEARM_BASH 5
 #define AP_POLEARM_CHOP 30 //Slightly less AP than a heavy axe's chop, still represents the ease with which a halberd or similar chop could get through earlier maille.
+
 #define AP_SWORD_THRUST 20
 #define AP_SWORD_CHOP 5
+#define AP_SABRE_CUT 18
+#define AP_SABRE_CHOP 13
+#define AP_RAPIER_THRUST 30
+
 #define AP_DAGGER_STAB 30
 #define AP_DAGGER_PICK 40
+#define AP_PICK 45
 
 //wdefense defines
 #define TERRIBLE_PARRY -1

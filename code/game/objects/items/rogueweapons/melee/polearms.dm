@@ -191,7 +191,7 @@
 	force = DAMAGE_SPEAR
 	force_wielded = DAMAGE_SPEAR_WIELD
 	throwforce = DAMAGE_SPEAR_WIELD
-	possible_item_intents = list(SPEAR_POKE, POLEARM_BASH) //bash is for nonlethal takedowns, only targets limbs
+	possible_item_intents = list(SPEAR_POKE, POLEARM_BASH)
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_POKE, POLEARM_BASH)
 	name = "spear"
 	desc = "The humble spear, use the pointy end."
@@ -219,7 +219,7 @@
 	name = "billhook"
 	desc = "A polearm with a curved krag, a Valorian design for dismounting mounted warriors and to strike down monstrous beasts."
 	icon_state = "billhook"
-	possible_item_intents = list(POLEARM_THRUST, POLEARM_BASH) //bash is for nonlethal takedowns, only targets limbs
+	possible_item_intents = list(POLEARM_THRUST, POLEARM_BASH) 
 	gripped_intents = list(POLEARM_THRUST, SPEAR_CUT, /datum/intent/polearm/chop, POLEARM_BASH)
 	resistance_flags = FIRE_PROOF
 	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
@@ -275,13 +275,12 @@
 /obj/item/rogueweapon/polearm/halberd
 	force = DAMAGE_SPEAR
 	force_wielded = DAMAGE_HALBERD_WIELD
-//	slowdown = 1 More an annoyance than anything else, since it does nothing when held in hand. Misleading as a balance factor. Either make it not go on the back slot or remove this.
 	possible_item_intents = list(POLEARM_THRUST, POLEARM_BASH)
 	gripped_intents = list(POLEARM_THRUST, SPEAR_CUT, /datum/intent/polearm/chop, POLEARM_BASH)
 	name = "halberd"
 	desc = "A reinforced polearm for clobbering ordained with a crested ax head, pick and sharp point, a royal arm for defence and aggression."
 	icon_state = "halberd"
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = FALSE
 	max_blade_int = 300
 	max_integrity = INTEGRITY_STRONGEST
 	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
@@ -327,8 +326,7 @@
 /obj/item/rogueweapon/polearm/eaglebeak
 	force = DAMAGE_SPEAR
 	force_wielded = DAMAGE_SPEAR_WIELD+3 //Same as billhook. Worse damage than a dedicated two-handed mace, added flexibility.
-	slowdown = 1
-	possible_item_intents = list(POLEARM_BASH, /datum/intent/polearm/chop) //bash is for nonlethal takedowns, only targets limbs
+	possible_item_intents = list(POLEARM_BASH, /datum/intent/polearm/chop)
 	gripped_intents = list(POLEARM_BASH, POLEARM_THRUST, /datum/intent/mace/smash/heavy,/datum/intent/polearm/chop)
 	name = "eagle's beak"
 	desc = "A reinforced pole affixed with an ornate steel eagle's head, of which it's beak is intended to pierce with great harm."
