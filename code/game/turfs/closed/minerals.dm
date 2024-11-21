@@ -95,8 +95,6 @@
 //			else
 //				H.mind.adjust_experience(/datum/skill/mining, 4)
 
-	for(var/obj/effect/temp_visual/mining_overlay/M in src)
-		qdel(M)
 	var/flags = NONE
 	if(defer_change) // TODO: make the defer change var a var for any changeturf flag
 		flags = CHANGETURF_DEFER_CHANGE
@@ -109,12 +107,6 @@
 		gets_drilled(user)
 	..()
 
-/turf/closed/mineral/attack_alien(mob/living/carbon/alien/M)
-	to_chat(M, "<span class='notice'>I start digging into the rock...</span>")
-	playsound(src, 'sound/blank.ogg', 50, TRUE)
-	if(do_after(M, 40, target = src))
-		to_chat(M, "<span class='notice'>I tunnel into the rock.</span>")
-		gets_drilled(M)
 /*
 /turf/closed/mineral/Bumped(atom/movable/AM)
 	..()
@@ -461,12 +453,6 @@
 /turf/closed/mineral/gibtonite/Initialize()
 	det_time = rand(8,10) //So you don't know exactly when the hot potato will explode
 	. = ..()
-
-/turf/closed/mineral/gibtonite/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/mining_scanner) || istype(I, /obj/item/t_scanner/adv_mining_scanner) && stage == 1)
-		user.visible_message("<span class='notice'>[user] holds [I] to [src]...</span>", "<span class='notice'>I use [I] to locate where to cut off the chain reaction and attempt to stop it...</span>")
-		defuse()
-	..()
 
 /turf/closed/mineral/gibtonite/proc/explosive_reaction(mob/user = null, triggered_by_explosion = 0)
 	if(stage == GIBTONITE_UNSTRUCK)
