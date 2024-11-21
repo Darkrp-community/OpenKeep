@@ -23,7 +23,7 @@
 	return ..()
 
 /obj/structure/fireaxecabinet/attackby(obj/item/I, mob/user, params)
-	if(I.tool_behaviour == TOOL_MULTITOOL)
+	if(iscyborg(user) || I.tool_behaviour == TOOL_MULTITOOL)
 		toggle_lock(user)
 	else if(I.tool_behaviour == TOOL_WELDER && user.used_intent.type == INTENT_HELP && !broken)
 		if(obj_integrity < max_integrity)
@@ -99,6 +99,10 @@
 
 /obj/structure/fireaxecabinet/attack_paw(mob/living/user)
 	return attack_hand(user)
+
+/obj/structure/fireaxecabinet/attack_ai(mob/user)
+	toggle_lock(user)
+	return
 
 /obj/structure/fireaxecabinet/attack_tk(mob/user)
 	if(locked)

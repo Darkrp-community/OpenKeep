@@ -306,6 +306,17 @@
 	empulse(get_turf(holder.my_atom), 3, 7)
 	..()
 
+/datum/chemical_reaction/slime/slimecell
+	name = "Slime Powercell"
+	id = "m_cell"
+	required_reagents = list(/datum/reagent/toxin/plasma = 1)
+	required_container = /obj/item/slime_extract/yellow
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/slimecell/on_reaction(datum/reagents/holder, created_volume)
+	new /obj/item/stock_parts/cell/high/slime(get_turf(holder.my_atom))
+	..()
+
 /datum/chemical_reaction/slime/slimeglow
 	name = "Slime Glow"
 	id = "m_glow"
@@ -523,6 +534,17 @@
 	BC.visible_message("<span class='notice'>The [BC.name] appears out of thin air!</span>")
 	..()
 
+/datum/chemical_reaction/slime/slimeradio
+	name = "Slime Radio"
+	id = "m_radio"
+	required_reagents = list(/datum/reagent/water = 1)
+	required_container = /obj/item/slime_extract/bluespace
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/slimeradio/on_reaction(datum/reagents/holder, created_volume)
+	new /obj/item/slimepotion/slime/slimeradio(get_turf(holder.my_atom))
+	..()
+
 //Cerulean
 /datum/chemical_reaction/slime/slimepsteroid2
 	name = "Slime Steroid 2"
@@ -569,6 +591,18 @@
 			if(lastheld && !lastheld.equip_to_slot_if_possible(extract, SLOT_HANDS, disable_warning = TRUE))
 				extract.forceMove(get_turf(lastheld))
 	qdel(src)
+
+/datum/chemical_reaction/slime/slimecamera
+	name = "Slime Camera"
+	id = "m_camera"
+	required_reagents = list(/datum/reagent/water = 1)
+	required_container = /obj/item/slime_extract/sepia
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/slimecamera/on_reaction(datum/reagents/holder)
+	new /obj/item/camera(get_turf(holder.my_atom))
+	new /obj/item/camera_film(get_turf(holder.my_atom))
+	..()
 
 /datum/chemical_reaction/slime/slimefloor
 	name = "Sepia Floor"
@@ -658,4 +692,15 @@
 
 /datum/chemical_reaction/slime/slime_transfer/on_reaction(datum/reagents/holder)
 	new /obj/item/slimepotion/transference(get_turf(holder.my_atom))
+	..()
+
+/datum/chemical_reaction/slime/flight_potion
+	name = "Flight Potion"
+	id = /datum/reagent/flightpotion
+	required_reagents = list(/datum/reagent/water/holywater = 5, /datum/reagent/uranium = 5)
+	required_other = TRUE
+	required_container = /obj/item/slime_extract/rainbow
+
+/datum/chemical_reaction/slime/flight_potion/on_reaction(datum/reagents/holder)
+	new /obj/item/reagent_containers/glass/bottle/potion/flight(get_turf(holder.my_atom))
 	..()

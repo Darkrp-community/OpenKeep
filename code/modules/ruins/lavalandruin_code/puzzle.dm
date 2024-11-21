@@ -254,6 +254,18 @@
 	var/icon/I = new(puzzle_icon,puzzle_state)
 	return I
 
+//Ruin version
+/obj/effect/sliding_puzzle/lavaland
+	reward_type = /obj/structure/closet/crate/necropolis/puzzle
+
+/obj/effect/sliding_puzzle/lavaland/dispense_reward()
+	if(prob(25))
+		//If it's not roaming somewhere else already.
+		var/mob/living/simple_animal/hostile/megafauna/bubblegum/B = locate() in GLOB.mob_list
+		if(!B)
+			reward_type = /mob/living/simple_animal/hostile/megafauna/bubblegum
+	return ..()
+
 //Prison cube version
 /obj/effect/sliding_puzzle/prison
 	auto_setup = FALSE //This will be done by cube proc

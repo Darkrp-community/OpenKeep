@@ -154,7 +154,7 @@
 		if(user.mind.assigned_role == "Inquisitor" || user.mind.assigned_role == "Adept") // Only Inquisitors and Adepts can sumbit confessions.
 			process_confession(user, P)
 			return
-	if(istype(P, /obj/item/paper))
+	if(istype(P, /obj/item/paper) || istype(P, /obj/item/smallDelivery))
 		if(P.w_class >= WEIGHT_CLASS_BULKY)
 			return
 		if(alert(user, "Send Mail?",,"YES","NO") == "YES")
