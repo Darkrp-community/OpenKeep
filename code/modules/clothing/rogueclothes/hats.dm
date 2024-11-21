@@ -1148,6 +1148,7 @@
 	name = "buckled hat"
 	desc = "A black top hat with a buckle on top, favored by Witch Hunters and Inquisitors."
 	icon_state = "puritan_hat"
+	body_parts_covered = HEAD|HAIR
 
 //............... Ominous Hood ............... //
 /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous // a leather coif locked to headslot since you cannot pull it back. Crit prevent between armor items a little weird, this is leather coif, compare to helmet
