@@ -527,7 +527,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	swingsound = list('sound/combat/wooshes/blunt/shovel_swing.ogg','sound/combat/wooshes/blunt/shovel_swing2.ogg')
 	drop_sound = 'sound/foley/dropsound/shovel_drop.ogg'
-//	var/obj/item/natural/dirtclod/heldclod
+	var/obj/item/natural/dirtclod/heldclod
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
 	max_blade_int = 50
