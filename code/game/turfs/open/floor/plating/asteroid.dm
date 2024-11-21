@@ -133,12 +133,9 @@
 #define SPAWN_MEGAFAUNA "bluh bluh huge boss"
 #define SPAWN_BUBBLEGUM 6
 
-GLOBAL_LIST_INIT(megafauna_spawn_list, list(/mob/living/simple_animal/hostile/megafauna/dragon = 4, /mob/living/simple_animal/hostile/megafauna/colossus = 2, /mob/living/simple_animal/hostile/megafauna/bubblegum = SPAWN_BUBBLEGUM))
-
 /turf/open/floor/plating/asteroid/airless/cave
 	var/length = 100
 	var/list/mob_spawn_list
-	var/list/megafauna_spawn_list
 	var/list/flora_spawn_list
 	var/list/terrain_spawn_list
 	var/sanity = 1
@@ -170,8 +167,6 @@ GLOBAL_LIST_INIT(megafauna_spawn_list, list(/mob/living/simple_animal/hostile/me
 /turf/open/floor/plating/asteroid/airless/cave/Initialize()
 	if (!mob_spawn_list)
 		mob_spawn_list = list(/mob/living/simple_animal/hostile/asteroid/goldgrub = 1, /mob/living/simple_animal/hostile/asteroid/goliath = 5, /mob/living/simple_animal/hostile/asteroid/basilisk = 4, /mob/living/simple_animal/hostile/asteroid/hivelord = 3)
-	if (!megafauna_spawn_list)
-		megafauna_spawn_list = GLOB.megafauna_spawn_list
 	if (!flora_spawn_list)
 		flora_spawn_list = list(/obj/structure/flora/ash/leaf_shroom = 2 , /obj/structure/flora/ash/cap_shroom = 2 , /obj/structure/flora/ash/stem_shroom = 2 , /obj/structure/flora/ash/cacti = 1, /obj/structure/flora/ash/tall_shroom = 2)
 	if(!terrain_spawn_list)
@@ -257,39 +252,7 @@ GLOBAL_LIST_INIT(megafauna_spawn_list, list(/mob/living/simple_animal/hostile/me
 	if(is_mining_level(z))
 		SpawnFlora(T)	//No space mushrooms, cacti.
 	// SpawnTerrain(T)
-	SpawnMonster(T)		//Checks for danger area.
 	T.ChangeTurf(turf_type, null, CHANGETURF_IGNORE_AIR)
-
-/turf/open/floor/plating/asteroid/airless/cave/proc/SpawnMonster(turf/T)
-	if(prob(30))
-		if(istype(loc, /area/mine/explored) || !istype(loc, /area/lavaland/surface/outdoors/unexplored))
-			return
-		var/randumb = pickweight(mob_spawn_list)
-		while(randumb == SPAWN_MEGAFAUNA)
-			if(istype(loc, /area/lavaland/surface/outdoors/unexplored/danger)) //this is danger. it's boss time.
-				var/maybe_boss = pickweight(megafauna_spawn_list)
-				if(megafauna_spawn_list[maybe_boss])
-					randumb = maybe_boss
-			else //this is not danger, don't spawn a boss, spawn something else
-				randumb = pickweight(mob_spawn_list)
-
-		for(var/thing in urange(12, T)) //prevents mob clumps
-			if(!ishostile(thing) && !istype(thing, /obj/structure/spawner))
-				continue
-			if((ispath(randumb, /mob/living/simple_animal/hostile/megafauna) || ismegafauna(thing)) && get_dist(src, thing) <= 7)
-				return //if there's a megafauna within standard view don't spawn anything at all
-			if(ispath(randumb, /mob/living/simple_animal/hostile/asteroid) || istype(thing, /mob/living/simple_animal/hostile/asteroid))
-				return //if the random is a standard mob, avoid spawning if there's another one within 12 tiles
-			if((ispath(randumb, /obj/structure/spawner/lavaland) || istype(thing, /obj/structure/spawner/lavaland)) && get_dist(src, thing) <= 2)
-				return //prevents tendrils spawning in each other's collapse range
-
-		if(ispath(randumb, /mob/living/simple_animal/hostile/megafauna/bubblegum)) //there can be only one bubblegum, so don't waste spawns on it
-			megafauna_spawn_list.Remove(randumb)
-
-		new randumb(T)
-
-#undef SPAWN_MEGAFAUNA
-#undef SPAWN_BUBBLEGUM
 
 /turf/open/floor/plating/asteroid/airless/cave/proc/SpawnFlora(turf/T)
 	if(prob(12))

@@ -90,9 +90,9 @@
 	if(!silent && owner.current)
 		to_chat(owner.current,"<span class='danger'>I am no longer a [job_rank]!</span>")
 	owner.special_role = null
-	if(!isnull(batform))
+/*	if(!isnull(batform))
 		owner.current.RemoveSpell(batform)
-		QDEL_NULL(batform)
+		QDEL_NULL(batform) */
 	return ..()
 
 /datum/antagonist/vampire/proc/add_objective(datum/objective/O)

@@ -200,30 +200,11 @@
 	unique_reskin = null
 	var/slung = FALSE
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/attackby(obj/item/A, mob/user, params)
-	..()
-	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
-		var/obj/item/stack/cable_coil/C = A
-		if(C.use(10))
-			slot_flags = ITEM_SLOT_BACK
-			to_chat(user, "<span class='notice'>I tie the lengths of cable to the shotgun, making a sling.</span>")
-			slung = TRUE
-			update_icon()
-		else
-			to_chat(user, "<span class='warning'>I need at least ten lengths of cable if you want to make a sling!</span>")
-
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/update_icon()
 	..()
 	if(slung)
 		add_overlay("ishotgunsling")
 		item_state = "ishotgunsling"
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawoff(mob/user)
-	. = ..()
-	if(. && slung) //sawing off the gun removes the sling
-		new /obj/item/stack/cable_coil(get_turf(src), 10)
-		slung = 0
-		update_icon()
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn
 	name = "sawn-off improvised shotgun"
@@ -251,10 +232,6 @@
 	var/obj/item/gun/magic/hook/bounty/hook
 	var/toggled = FALSE
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/hook/Initialize()
-	. = ..()
-	hook = new /obj/item/gun/magic/hook/bounty(src)
-
 /obj/item/gun/ballistic/shotgun/doublebarrel/hook/AltClick(mob/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
@@ -272,9 +249,3 @@
 		. += "<span class='notice'>Alt-click to switch to the shotgun.</span>"
 	else
 		. += "<span class='notice'>Alt-click to switch to the hook.</span>"
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/hook/afterattack(atom/target, mob/living/user, flag, params)
-	if(toggled)
-		hook.afterattack(target, user, flag, params)
-	else
-		return ..()

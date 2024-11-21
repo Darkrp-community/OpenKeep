@@ -113,16 +113,13 @@
 	desc = "A window of simple paned glass."
 	icon_state = "window-solid"
 	integrity_failure = 0.5
-	opacity = TRUE
 
 /obj/structure/roguewindow/stained
 	desc = "A stained-glass window filigreed in silver."
 	icon_state = "stained-silver"
 	base_state = "stained-silver"
-	opacity = TRUE
 	max_integrity = 100
 	integrity_failure = 0.75
-	repairable = TRUE
 	repair_cost_first = /obj/item/natural/glass
 	repair_cost_second = /obj/item/natural/stone
 
@@ -130,7 +127,6 @@
 	desc = "It opens and closes."
 	icon_state = "woodwindowdir"
 	base_state = "woodwindow"
-	opacity = TRUE
 	max_integrity = 100
 	integrity_failure = 0.5
 
@@ -180,18 +176,16 @@
 	else
 		to_chat(user, "<span class='warning'>The window doesn't close from this side.</span>")
 
-/obj/structure/roguewindow/proc/open_up(mob/user)
+/obj/structure/roguewindow/openclose/proc/open_up(mob/user)
 	visible_message("<span class='info'>[user] opens [src].</span>")
 	playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
 	climbable = TRUE
-	opacity = FALSE
 	update_icon()
 
-/obj/structure/roguewindow/proc/close_up(mob/user)
+/obj/structure/roguewindow/openclose/proc/close_up(mob/user)
 	visible_message("<span class='info'>[user] closes [src].</span>")
 	playsound(src, 'sound/foley/doors/windowdown.ogg', 100, FALSE)
 	climbable = FALSE
-	opacity = TRUE
 	update_icon()
 
 /obj/structure/roguewindow/CanPass(atom/movable/mover, turf/target)
@@ -213,10 +207,9 @@
 			return !density
 	return ..()
 
-/obj/structure/roguewindow/proc/force_open()
+/obj/structure/roguewindow/openclose/proc/force_open()
 	playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
 	climbable = TRUE
-	opacity = FALSE
 	update_icon()
 
 /obj/structure/roguewindow/attackby(obj/item/W, mob/user, params)
@@ -247,6 +240,5 @@
 		new /obj/item/natural/glass/shard (get_turf(src))
 		climbable = TRUE
 		brokenstate = TRUE
-		opacity = FALSE
 	update_icon()
 	..()
