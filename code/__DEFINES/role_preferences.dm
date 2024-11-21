@@ -14,6 +14,7 @@
 #define ROLE_DELF				"Dark Elf"
 #define ROLE_PREBEL				"Peasant Rebel"
 #define ROLE_ZIZOIDCULTIST		"Zizoid Cultist"
+#define ROLE_LICH				"Lich"
 
 #define ROLE_SYNDICATE			"Syndicate"
 #define ROLE_TRAITOR			"Traitor"
@@ -45,6 +46,8 @@
 #define ROLE_LAVALAND			"Lavaland"
 #define ROLE_INTERNAL_AFFAIRS	"Internal Affairs Agent"
 
+#define ROLE_NECRO_SKELETON		"Necromancer Skeleton"
+
 //Missing assignment means it's not a gamemode specific role, IT'S NOT A BUG OR ERROR.
 //The gamemode specific ones are just so the gamemodes can query whether a player is old enough
 //(in game days played) to play that role
@@ -75,7 +78,8 @@ GLOBAL_LIST_INIT(special_roles_rogue, list(
 	ROLE_BANDIT = /datum/antagonist/bandit,
 	ROLE_ZIZOIDCULTIST = /datum/antagonist/zizocultist,
 //	ROLE_WEREWOLF = /datum/antagonist/werewolf,
-	ROLE_NBEAST = /datum/antagonist/vampirelord
+	ROLE_NBEAST = /datum/antagonist/vampirelord,
+	ROLE_LICH = /datum/antagonist/lich
 ))
 
 //Job defines for what happens when you fail to qualify for any job during job selection
