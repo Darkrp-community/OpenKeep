@@ -7,7 +7,7 @@
 	telegraph_sound = 'sound/ambience/rainin.ogg'
 
 	weather_message = ""
-	weather_overlay = "rain1"
+	weather_overlay = "rain"
 	weather_duration_lower = 5 MINUTES
 	weather_duration_upper = 12 MINUTES
 	weather_sound = 'sound/ambience/rain.ogg'
@@ -52,7 +52,7 @@
 			return "bla1"
 //			return telegraph_overlay
 		if(MAIN_STAGE)
-			return pick("rain1", "rain2", "rain3", "rain4")
+			return pick("rain")
 		if(WIND_DOWN_STAGE)
 			return "bla2"
 	return "bla3"
