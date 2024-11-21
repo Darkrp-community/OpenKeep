@@ -101,6 +101,20 @@
 	craftdiff = 3
 	sellprice = 20
 
+/datum/crafting_recipe/roguetown/weaving/silkpantaloons
+	name = "silk pantaloons"
+	result = list (/obj/item/clothing/under/roguetown/pantaloons/random)
+	craftdiff = 3
+	sellprice = 20
+
+/datum/crafting_recipe/roguetown/weaving/cape_silk
+	name = "silk cape"
+	result = list(/obj/item/clothing/cloak/cape/silk/random)
+	reqs = list(/obj/item/natural/silk = 3)
+	craftdiff = 3
+	sellprice = 40
+
+
 /*========= SKILL LEVEL: 4 REQUIRED ==========*/
 
 /datum/crafting_recipe/roguetown/weaving/silkcoat

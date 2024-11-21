@@ -1047,3 +1047,34 @@
 	nodismemsleeves = TRUE
 	inhand_mod = TRUE
 	allowed_race = list("human", "tiefling", "elf", "aasimar")
+
+//................ Silk Cape ............... //
+/obj/item/clothing/cloak/cape/silk
+	name = "silk cape"
+	color = CLOTHING_WET
+	icon_state = "cape_silk"
+	item_state = "cape_silk"
+	boobed = TRUE
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+
+/obj/item/clothing/cloak/cape/silk/random/Initialize()
+	color = RANDOM_NOBLE_DYES
+	add_overlay(mutable_appearance('icons/roguetown/clothing/cloaks.dmi', "clasp"))
+	..()
+
+
+//................ Silk Pantaloons ............... //
+/obj/item/clothing/under/roguetown/pantaloons
+	name = "silk pantaloons"
+	icon_state = "pantaloons"
+	item_state = "pantaloons"
+	color = CLOTHING_WET
+	r_sleeve_status = SLEEVE_NOMOD
+	l_sleeve_status = SLEEVE_NOMOD
+	adjustable = FALSE
+
+/obj/item/clothing/under/roguetown/pantaloons/random/Initialize()
+	color = RANDOM_NOBLE_DYES
+	..()
