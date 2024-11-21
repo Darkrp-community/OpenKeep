@@ -4,7 +4,7 @@
 /mob/living/simple_animal/hostile/gorilla
 	name = "Gorilla"
 	desc = ""
-	icon = 'icons/mob/gorilla.dmi'
+	icon = 'icons/mob/simple/gorilla.dmi'
 	icon_state = "crawling"
 	icon_living = "crawling"
 	icon_dead = "dead"
