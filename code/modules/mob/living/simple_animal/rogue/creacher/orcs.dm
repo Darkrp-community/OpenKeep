@@ -14,8 +14,8 @@
 	STACON = 9
 	STASTR = 14
 	STASPD = 13
-	maxHealth = 100
-	health = 100
+	maxHealth = 200
+	health = 200
 	harm_intent_damage = 15
 	melee_damage_lower = 25
 	melee_damage_upper = 30
@@ -38,6 +38,11 @@
 	faction = list("orcs")
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	del_on_death = TRUE
+
+	can_have_ai = FALSE //disable native ai
+	AIStatus = AI_OFF
+	ai_controller = /datum/ai_controller/orc
+
 
 /mob/living/simple_animal/hostile/rogue/orc/orc2
 	icon_state = "savageorc2"
@@ -203,16 +208,9 @@
 			/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
 			/obj/item/ammo_casing/caseless/rogue/arrow = 3,
 			/obj/effect/decal/cleanable/blood)
-	maxHealth = 50
-	health = 50
+	maxHealth = 100
+	health = 100
 
-/mob/living/simple_animal/hostile/rogue/orc/basic_test
 	can_have_ai = FALSE //disable native ai
 	AIStatus = AI_OFF
-	ai_controller = /datum/ai_controller/testing_orc
-
-
-/mob/living/simple_animal/hostile/rogue/orc/ranged/basic_test
-	can_have_ai = FALSE //disable native ai
-	AIStatus = AI_OFF
-	ai_controller = /datum/ai_controller/testing_orc_ranged
+	ai_controller = /datum/ai_controller/orc_ranged

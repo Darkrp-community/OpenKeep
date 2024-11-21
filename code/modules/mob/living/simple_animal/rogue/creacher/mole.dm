@@ -60,18 +60,11 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/mole
 	body_eater = TRUE
-/*
-/mob/living/simple_animal/hostile/retaliate/rogue/mole/greater
-	name = "Greater Brown Mole"
-	desc = "Holy Moley"
-	health = 400
-	maxHealth = 400
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 4,
-						/obj/item/natural/hide = 3,
-						/obj/item/natural/fur/mole = 2)
-	melee_damage_lower = 50
-	melee_damage_upper = 60
-*/
+
+	ai_controller = /datum/ai_controller/mole
+	AIStatus = AI_OFF
+	can_have_ai = FALSE
+
 /obj/effect/decal/remains/mole
 	name = "remains"
 	gender = PLURAL
@@ -84,6 +77,7 @@
 	if(prob(33))
 		gender = FEMALE
 	update_icon()
+	AddElement(/datum/element/ai_flee_while_injured, 0.75, retreat_health)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mole/death(gibbed)
 	..()
