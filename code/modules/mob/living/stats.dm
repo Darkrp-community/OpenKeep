@@ -20,7 +20,7 @@
 	var/datum/patron/patron = /datum/patron/godless
 
 /mob/living/proc/init_faith()
-	set_patron(/datum/patron/godless)
+	patron = GLOB.patronlist[/datum/patron/godless]
 
 /mob/living/proc/set_patron(datum/patron/new_patron)
 	if(!new_patron)
@@ -29,7 +29,7 @@
 		new_patron = GLOB.patronlist[new_patron]
 	if(!istype(new_patron))
 		return TRUE
-	if(patron)
+	if(patron && !ispath(patron))
 		patron.on_remove(src)
 	patron = new_patron
 	patron.on_gain(src)
