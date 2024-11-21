@@ -20,7 +20,7 @@
 	var/datum/patron/patron = /datum/patron/godless
 
 /mob/living/proc/init_faith()
-	patron = GLOB.patronlist[/datum/patron/godless]
+	set_patron(/datum/patron/godless)
 
 /mob/living/proc/set_patron(datum/patron/new_patron)
 	if(!new_patron)

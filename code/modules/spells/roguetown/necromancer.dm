@@ -188,7 +188,7 @@
 
 	cmode_music = 'sound/music/combat_cult.ogg'
 
-	patron = master.patron
+	set_patron(master.patron)
 	mob_biotypes = MOB_UNDEAD
 	faction = list("undead")
 	ambushable = FALSE

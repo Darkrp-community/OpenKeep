@@ -16,7 +16,7 @@
 /datum/antagonist/assassin/on_gain()
 	owner.current.cmode_music = list('sound/music/combat_assassin.ogg', 'sound/music/combat_assassin2.ogg')
 	if(owner.current.job != "Drifter") // This code only runs if the assassin is assigned midround and is not a drifter.
-		owner.current.patron = GLOB.patronlist[/datum/patron/inhumen/graggar]
+		owner.current.set_patron(/datum/patron/inhumen/graggar)
 		ADD_TRAIT(owner.current, TRAIT_ASSASSIN, TRAIT_GENERIC)
 		ADD_TRAIT(owner.current, TRAIT_NOSTINK, TRAIT_GENERIC)
 		ADD_TRAIT(owner.current, TRAIT_VILLAIN, TRAIT_GENERIC)
