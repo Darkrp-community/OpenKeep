@@ -24,7 +24,7 @@
 				var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(spawn_loc)
 				O.livingname = mob.name
 				O.ckey = ckey
-				O.patron = prefs.selected_patron
+				O.set_patron(prefs.selected_patron)
 				SSdroning.area_entered(get_area(O), O.client)
 			verbs -= /client/proc/descend
 		if("No")

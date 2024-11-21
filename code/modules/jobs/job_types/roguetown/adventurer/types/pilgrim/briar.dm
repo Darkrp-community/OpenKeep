@@ -29,7 +29,7 @@
 
 	if(H.mind)
 		if(H.patron != /datum/patron/divine/dendor)
-			H.patron = GLOB.patronlist[/datum/patron/divine/dendor]
+			H.set_patron(/datum/patron/divine/dendor)
 
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
