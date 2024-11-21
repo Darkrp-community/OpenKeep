@@ -64,18 +64,18 @@
 // Expensive dyes ==========================
 #define EXPENSIVE_DYES			list("Ash Grey","Chalk White","Cream","White","Blood Red","Plum Purple","Dark Ink","Forest Green","Sky Blue","Mustard Yellow", "Salmon", "Russet", "Maroon","Red Ochre", "Dunked in Water" )
 
-#define CLOTHING_DARK_INK		"#392f2f"
-#define CLOTHING_PLUM_PURPLE	"#4b2265"
+#define CLOTHING_DARK_INK		"#4f4343"
+#define CLOTHING_PLUM_PURPLE	"#683786"
 #define CLOTHING_SALMON			"#a56176"
-#define CLOTHING_BLOOD_RED		"#770d0d"
+#define CLOTHING_BLOOD_RED		"#9c1919"
 
 #define CLOTHING_MAROON			"#672c0d"
-#define CLOTHING_RED_OCHRE		"#6f2d28"
-#define CLOTHING_RUSSET			"#733f18"
-#define CLOTHING_MUSTARD_YELLOW	"#979044"
+#define CLOTHING_RED_OCHRE		"#783530"
+#define CLOTHING_RUSSET			"#8a4b1c"
+#define CLOTHING_MUSTARD_YELLOW	"#b0a850"
 #define CLOTHING_YELLOW_OCHRE	"#9b7a02"
-#define CLOTHING_FOREST_GREEN	"#3f8b24"
-#define CLOTHING_SKY_BLUE		"#1b3c7a"
+#define CLOTHING_FOREST_GREEN	"#427e2c"
+#define CLOTHING_SKY_BLUE		"#2f4a7c"
 #define CLOTHING_MAGE_BLUE		"#4756d8"
 #define CLOTHING_MAGE_GREEN		"#759259"
 #define CLOTHING_MAGE_ORANGE	"#ad5e29"
@@ -111,7 +111,7 @@
 #define CLOTHING_WHITE			"#ffffff"
 #define CLOTHING_WET			"#bbbbbb"
 #define RANDOM_PEASANT_DYES		pick(CLOTHING_BARK_BROWN , CLOTHING_PEASANT_BROWN, CLOTHING_MUD_BROWN , CLOTHING_BOG_GREEN , CLOTHING_SPRING_GREEN , CLOTHING_PEAR_YELLOW )
-#define RANDOM_NOBLE_DYES		pick(CLOTHING_BLOOD_RED , CLOTHING_FOREST_GREEN , CLOTHING_SKY_BLUE , CLOTHING_MUSTARD_YELLOW , CLOTHING_ROYAL_TEAL , CLOTHING_FYRITIUS_DYE, CLOTHING_YELLOW_OCHRE )
+#define RANDOM_NOBLE_DYES		pick( CLOTHING_DARK_INK, CLOTHING_PLUM_PURPLE, CLOTHING_SALMON, CLOTHING_RED_OCHRE, CLOTHING_YELLOW_OCHRE, CLOTHING_MAROON, CLOTHING_RUSSET, CLOTHING_MUSTARD_YELLOW, CLOTHING_FOREST_GREEN, CLOTHING_SKY_BLUE)
 
 #define CLOTHING_COLOR_NAMES	list("Ash Grey","Chalk White","Cream","White","Dark Ink","Plum Purple","Salmon","Blood Red", "Maroon","Red Ochre","Russet","Chestnut","Mustard Yellow","Yellow Ochre","Forest Green","Sky Blue","Teal", "Royal Black","Soot Black","Winestain Red","Royal Red","Royal Majenta","Fyritius Orange","Bark Brown","Peasant Brown","Mud Brown","Pear Yellow","Spring Green","Bog Green","Royal Teal","Berry Blue", "Royal Blue", "Royal Purple","Dunked in Water" )
 
