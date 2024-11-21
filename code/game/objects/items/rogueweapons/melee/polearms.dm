@@ -232,7 +232,7 @@
 	force_wielded = DAMAGE_SPEAR+2
 	throwforce = DAMAGE_SPEAR
 	name = "simple spear"
-	desc = "With this weapon, the tribes of humenity became the chosen people of the Forgotten God."
+	desc = "With this weapon, the tribes of humenity became the chosen people of Psydon."
 	icon_state = "stonespear"
 	minstr = 6
 	max_blade_int = 50
