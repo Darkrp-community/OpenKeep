@@ -5,7 +5,7 @@
 	flaws = "Stubborn, Unrelenting, Misguided"
 	worshippers = "Egomaniacs, Heretics, the Ignorant"
 	sins = "Idolatry, Worship, Blind Faith"
-	boons = "None, you godless heathen.
+	boons = "None, you godless heathen."
 	associated_faith = /datum/faith/godless
 	confess_lines = list(
 		"No Gods, No Masters! There is only ME!",
