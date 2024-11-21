@@ -18083,7 +18083,6 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "rLC" = (
-/obj/effect/decal/cleanable/coom,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/sewer)
 "rLD" = (
