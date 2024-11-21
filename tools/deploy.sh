@@ -14,7 +14,7 @@ mkdir -p \
     $1/icons/effects \
     $1/icons/mob/clothing \
     $1/icons/mob/inhands \
-    $1/icons/mob/simple \
+    $1/icons/mob/ \
     $1/icons/obj \
     $1/strings \
 
@@ -29,7 +29,7 @@ cp -r icons/*_title.dmi $1/icons/
 cp -r icons/effects/* $1/icons/effects/
 cp -r icons/mob/clothing/* $1/icons/mob/clothing/
 cp -r icons/mob/inhands/* $1/icons/mob/inhands/
-cp -r icons/mob/simple/* $1/icons/mob/simple/
+cp -r icons/mob/* $1/icons/mob/
 cp -r icons/obj/* $1/icons/obj/
 cp -r strings/* $1/strings/
 
