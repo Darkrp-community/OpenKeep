@@ -285,17 +285,6 @@
 	chargetime = 0
 	swingdelay = 0
 
-/datum/intent/pick
-	penfactor = AP_PICK //This is used in some actual weapons, so giving it some AP is likely wise. Hefty swing delay means it is impractical in combat.
-	name = "pick"
-	icon_state = "inpick"
-	attack_verb = list("picks","impales")
-	hitsound = list('sound/combat/hits/pick/genpick (1).ogg', 'sound/combat/hits/pick/genpick (2).ogg')
-	animname = "strike"
-	blade_class = BCLASS_PICK
-	chargetime = 0
-	swingdelay = 3
-
 /datum/intent/shoot //shooting crossbows or other guns, no parrydrain
 	name = "shoot"
 	icon_state = "inshoot"
