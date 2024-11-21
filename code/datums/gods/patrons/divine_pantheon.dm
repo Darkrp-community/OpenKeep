@@ -76,6 +76,7 @@
 	flaws = "Petulance, Deception, Gambling-Prone"
 	worshippers = "Cheats, Performers, the Hopeless"
 	sins = "Boredom, Predictability, Routine"
+	added_traits = list(TRAIT_SEEPRICES)
 
 /datum/patron/divine/pestra
 	name = "Pestra"

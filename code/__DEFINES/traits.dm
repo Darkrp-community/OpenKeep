@@ -4,7 +4,6 @@
 #define TRAIT_ZJUMP 					"High Jumping"
 #define TRAIT_NOSEGRAB 				"Intimidating"
 #define TRAIT_NUTCRACKER 				"Nutcracker"
-#define TRAIT_SEEPRICES				"Golden Blood"
 #define TRAIT_STRONGBITE				"Strong Bite"
 #define TRAIT_HATEWOMEN				"Ladykiller"
 #define TRAIT_GOODLOVER				"Fabled Lover"
@@ -46,10 +45,12 @@
 #define TRAIT_ROT_EATER					"Blessing of Pestra" //can eat rotten food
 #define TRAIT_KNEESTINGER_IMMUNITY		"Blessing of Dendor" //Can move through kneestingers.
 #define TRAIT_LEECHIMMUNE				"Unleechable" //leeches wont attach in bog squares + Abyssor boon.
+#define TRAIT_SEEPRICES				    "Golden Blood" //See prices + Xylix boon
 
 // Inhumen patron trait bonuses:
 #define TRAIT_ORGAN_EATER				"Blessing of Graggar"//Can eat organs (duh.)
 #define TRAIT_CRACKHEAD					"Blessing of Baotha" //No overdose on drugs.
+#define TRAIT_CABAL                     "Of the Cabal" //Zizo cultists recognize each other too
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -65,7 +66,7 @@
 #define TRAIT_IWASREVIVED "iwasrevived" //prevents PQ gain from reviving the same person twice
 #define TRAIT_IWASUNZOMBIFIED "iwasunzombified" //prevents PQ gain from curing a zombie twice
 #define TRAIT_ZIZOID_HUNTED "zizoidhunted" // Used to signal character has been marked by death by the Zizoid cult
-#define TRAIT_CABAL "Of the Cabal" //Zizo cultists recognize each other too
+
 
 // JOB RELATED TRAITS
 

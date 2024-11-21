@@ -14,6 +14,7 @@
 	flaws = "Hubris, Superiority, Fury"
 	worshippers = "Dark Elves, Aspirants, Necromancers"
 	sins = "Resistance, Deceit, Wastefulness"
+	added_traits = list(TRAIT_CABAL)
 	confess_lines = list(
 		"I FOLLOW THE PATH OF ZIZO!",
 		"LONG LIVE QUEEN ZIZO!",
