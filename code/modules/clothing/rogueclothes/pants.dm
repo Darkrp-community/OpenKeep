@@ -132,6 +132,59 @@
 /obj/item/clothing/under/roguetown/loincloth/pink
 	color = "#b98ae3"
 
+/obj/item/clothing/under/roguetown/tights/stockings
+	name = "stockings"
+	desc = "A legwear made just for the pure aesthetics. Popular in courts and brothels alike."
+	icon_state = "stockings"
+	r_sleeve_status = SLEEVE_NOMOD
+	l_sleeve_status = SLEEVE_NOMOD
+	body_parts_covered = null
+	flags_inv = null
+
+/obj/item/clothing/under/roguetown/tights/stockings/random/Initialize()
+	color = RANDOM_PEASANT_DYES
+	..()
+
+/obj/item/clothing/under/roguetown/tights/stockings/white
+	color = CLOTHING_WHITE
+
+/obj/item/clothing/under/roguetown/tights/stockings/black
+	color = CLOTHING_SOOT_BLACK
+
+/obj/item/clothing/under/roguetown/tights/stockings/blue
+	color = CLOTHING_BERRY_BLUE
+
+/obj/item/clothing/under/roguetown/tights/stockings/red
+	color = CLOTHING_WINESTAIN_RED
+
+/obj/item/clothing/under/roguetown/tights/stockings/green
+	color = CLOTHING_SPRING_GREEN
+
+//Silk variants
+
+/obj/item/clothing/under/roguetown/tights/stockings/silk
+	name = "silk stockings"
+	desc = "A legwear made just for the pure aesthetics. Made out of thin silk. Popular among nobles."
+	icon_state = "silk"
+
+/obj/item/clothing/under/roguetown/tights/stockings/silk/random/Initialize()
+	color = RANDOM_NOBLE_DYES
+	..()
+
+/obj/item/clothing/under/roguetown/tights/stockings/silk/white
+	color = CLOTHING_CHALK_WHITE
+
+/obj/item/clothing/under/roguetown/tights/stockings/silk/black
+	color = CLOTHING_DARK_INK
+
+/obj/item/clothing/under/roguetown/tights/stockings/silk/blue
+	color = CLOTHING_SKY_BLUE
+
+/obj/item/clothing/under/roguetown/tights/stockings/silk/red
+	color = CLOTHING_BLOOD_RED
+
+/obj/item/clothing/under/roguetown/tights/stockings/silk/purple
+	color = CLOTHING_PLUM_PURPLE
 
 //..................................................................................................................................
 /*---------------\
