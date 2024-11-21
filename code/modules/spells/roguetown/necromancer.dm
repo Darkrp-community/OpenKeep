@@ -78,12 +78,12 @@
 
 
 /**
-  * Raises a minion from a corpse. Prioritizing ownership to original player > ghosts > npc.
-  *
-  * Vars:
-  * * targets: list of mobs that are targetted.
-  * * user: spell caster.
-  */
+ * Raises a minion from a corpse. Prioritizing ownership to original player > ghosts > npc.
+ *
+ * Vars:
+ * * targets: list of mobs that are targetted.
+ * * user: spell caster.
+ */
 /obj/effect/proc_holder/spell/invoked/raise_undead/cast(list/targets, mob/living/carbon/human/user)
 	. = ..()
 
