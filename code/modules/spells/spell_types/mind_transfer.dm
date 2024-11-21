@@ -40,11 +40,6 @@ Also, you never added distance checking after target is selected. I've went ahea
 			to_chat(user, "<span class='warning'>[t_He] [t_is] too far away!</span>")
 		return
 
-	if(ismegafauna(target))
-		if(!silent)
-			to_chat(user, "<span class='warning'>This creature is too powerful to control!</span>")
-		return
-
 	if(target.stat == DEAD)
 		if(!silent)
 			to_chat(user, "<span class='warning'>I don't particularly want to be dead!</span>")
@@ -61,7 +56,7 @@ Also, you never added distance checking after target is selected. I've went ahea
 		return
 
 	var/datum/mind/TM = target.mind
-	if((target.anti_magic_check(TRUE, FALSE) || TM.has_antag_datum(/datum/antagonist/wizard) || TM.has_antag_datum(/datum/antagonist/cult) || TM.has_antag_datum(/datum/antagonist/changeling) || TM.has_antag_datum(/datum/antagonist/rev)) || cmptext(copytext(target.key,1,2),"@"))
+	if((target.anti_magic_check(TRUE, FALSE) || TM.has_antag_datum(/datum/antagonist/wizard) || cmptext(copytext(target.key,1,2),"@")))
 		if(!silent)
 			to_chat(user, "<span class='warning'>[target.p_their(TRUE)] mind is resisting your spell!</span>")
 		return
