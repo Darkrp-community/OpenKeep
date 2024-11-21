@@ -308,7 +308,7 @@
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
 		var/datum/game_mode/chaosmode/C = SSticker.mode
-		if(C.check_for_lord)
+/*		if(C.check_for_lord)
 			if(!C.check_for_lord())
 				end_reason = pick("Without a Monarch, they were doomed to become slaves of Zizo.",
 								"Without a Monarch, they were doomed to be eaten by nite creachers.",
@@ -317,8 +317,8 @@
 								"Without a Monarch, the Lich made them his playthings.",
 								"Without a Monarch, some jealous rival reigned in tyranny.",
 								"Without a Monarch, the town was abandoned.")
-//		if(C.not_enough_players)
-//			end_reason = "The town was abandoned."
+		if(C.not_enough_players)
+			end_reason = "The town was abandoned." */
 
 		if(C.vampire_werewolf() == "vampire")
 			end_reason = "When the Vampires finished sucking the town dry, they moved on to the next one."

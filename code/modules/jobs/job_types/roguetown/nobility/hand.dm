@@ -19,20 +19,17 @@
 	bypass_lastclass = TRUE
 	whitelist_req = FALSE
 	give_bank_account = 120
-	min_pq = 2
+	min_pq = 0
 	cmode_music = 'sound/music/combat_noble.ogg'
 
-/*
-/datum/job/roguetown/hand/special_job_check(mob/dead/new_player/player)
-	if(!player)
-		return
-	if(!player.ckey)
-		return
-	for(var/mob/dead/new_player/Lord in GLOB.player_list)
-		if(Lord.mind.assigned_role == "King")
-			if(Lord.brohand == player.ckey)
-				return TRUE
-*/
+/datum/job/roguetown/hand/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+	..()
+	if(SSticker.rulertype == "Hand")
+		SSticker.select_ruler()
+		if(L)
+			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Regent of Rockhill.</span></span></b>")
+			to_chat(world, "<br>")
+			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
 
 /datum/outfit/job/roguetown/hand/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -43,6 +40,17 @@
 	belt = /obj/item/storage/belt/rogue/leather/hand
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel = 1, /obj/item/keyring/hand = 1)
+	if(SSticker.rulertype == "Hand")
+		head = /obj/item/clothing/head/roguetown/crown/serpcrown
+		SSroguemachine.crown = head
+		pants = /obj/item/clothing/under/roguetown/tights/black
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand
+		shoes = /obj/item/clothing/shoes/roguetown/boots
+		belt = /obj/item/storage/belt/rogue/leather/hand
+		backr = /obj/item/storage/backpack/rogue/satchel
+		backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel = 1, /obj/item/keyring/hand = 1)
+		l_hand = /obj/item/rogueweapon/lordscepter
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
