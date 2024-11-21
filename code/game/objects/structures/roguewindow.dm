@@ -93,16 +93,13 @@
 	desc = "A window of simple paned glass."
 	icon_state = "window-solid"
 	integrity_failure = 0.5
-	opacity = TRUE
 
 /obj/structure/roguewindow/stained
 	desc = "A stained-glass window filigreed in silver."
 	icon_state = "stained-silver"
 	base_state = "stained-silver"
-	opacity = TRUE
 	max_integrity = 100
 	integrity_failure = 0.75
-	repairable = TRUE
 	repair_cost_first = /obj/item/natural/glass
 	repair_cost_second = /obj/item/natural/stone
 
@@ -110,7 +107,6 @@
 	desc = "It opens and closes."
 	icon_state = "woodwindowdir"
 	base_state = "woodwindow"
-	opacity = TRUE
 	max_integrity = 100
 	integrity_failure = 0.5
 
@@ -227,6 +223,5 @@
 		new /obj/item/natural/glass/shard (get_turf(src))
 		climbable = TRUE
 		brokenstate = TRUE
-		opacity = FALSE
 	update_icon()
 	..()
