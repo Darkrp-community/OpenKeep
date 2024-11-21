@@ -150,13 +150,13 @@
 	return FALSE
 
 /**
-  * Turns a mob into a skeletonized minion. Used for raising undead minions.
-  * If a ckey is provided, the minion will be controlled by the player, NPC otherwise.
-  *
-  * Vars:
-  * * master: master of the minion.
-  * * ckey (optional): ckey of the player that will control the minion.
-  */
+ * Turns a mob into a skeletonized minion. Used for raising undead minions.
+ * If a ckey is provided, the minion will be controlled by the player, NPC otherwise.
+ *
+ * Vars:
+ * * master: master of the minion.
+ * * ckey (optional): ckey of the player that will control the minion.
+ */
 /mob/living/carbon/human/proc/turn_to_minion(mob/living/carbon/human/master, ckey)
 
 	if(!master)
