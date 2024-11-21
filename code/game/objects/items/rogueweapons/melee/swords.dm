@@ -7,7 +7,7 @@
 	force_wielded = DAMAGE_SWORD_WIELD
 	throwforce = 10
 	slot_flags = ITEM_SLOT_HIP
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike) //No reason why an arming sword can't pommel strike.
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	name = "sword"
 	desc = "A trustworthy blade design, the first dedicated tool of war since before the age of history."
@@ -44,13 +44,17 @@
 | Cut intent |
 \-----------*/
 /datum/intent/sword/cut
-	name = "strike"
+	name = "cut"
 	icon_state = "incut"
 	attack_verb = list("cuts", "slashes")
 	animname = "cut"
 	blade_class = BCLASS_CUT
 	hitsound = list('sound/combat/hits/bladed/genslash (1).ogg', 'sound/combat/hits/bladed/genslash (2).ogg', 'sound/combat/hits/bladed/genslash (3).ogg')
 	misscost = 4
+
+/datum/intent/sword/cut/sabre
+	penfactor = AP_SWORD_CHOP+13 //23 combined AP, enough that it actually slices through gambesons and leather with little to medium impediment. Not a multiple of 5, heresy, I know.
+	
 
 /datum/intent/sword/cut/zwei
 	name = "cut"
@@ -59,8 +63,8 @@
 	swingdelay = 1
 
 /datum/intent/sword/cut/rapier
-	chargetime = 0
 	damfactor = 0.8
+	clickcd = 10 //Some saving grace, still don't know why you'd choose this.
 
 /datum/intent/sword/cut/short
 	clickcd = 10
@@ -78,13 +82,25 @@
 	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
 	penfactor = AP_SWORD_CHOP
 	damfactor = 1.1
-	swingdelay = 1
+	swingdelay = 0 //swingdelay 1 was too punishing here for very little benefit. Already balanced out by inferior crits, higher miss cost and opportunity cost compared to other intents.
 	misscost = 8
+	
+/datum/intent/sword/chop/sabre
+	penfactor = AP_SWORD_CHOP+8 //18 AP. Slightly better if penetrating the armor is not an option, since it has slightly more damage.
 
 /datum/intent/sword/chop/long
-	damfactor = 1.1
+	damfactor = 1.2 //Charged attack, gives it some reasoning to use over the otherwise vastly superior thrust.
 	chargetime = 1.2
-	swingdelay = 1.5
+	misscost = 10
+	warnie = "mobwarning"
+
+/datum/intent/sword/chop/great
+	name = "cleave"
+	attack_verb = list("cleaves", "splits")
+	damfactor = 1.4 //At 13 strenght, on a greatsword (35 damage), this will deal 63 damage. Yes. Still worse against armor, on average, than a halberd's stab or a greataxe's chop.
+	chargetime = 1.5 //Same as halberd chop.
+	swingdelay = 1
+	penfactor = AP_SWORD_CHOP+10 //20 combined AP.
 	misscost = 12
 	warnie = "mobwarning"
 
@@ -110,7 +126,7 @@
 	penfactor = AP_SWORD_THRUST+2
 
 /datum/intent/sword/thrust/rapier
-	penfactor = AP_SWORD_THRUST+5
+	penfactor = AP_SWORD_THRUST+10 //30 AP, dagger tier, down from its past throne at 40 AP.
 
 /datum/intent/sword/thrust/zwei
 	name = "thrust"
@@ -134,7 +150,7 @@
 	blade_class = BCLASS_BLUNT
 	hitsound = list('sound/combat/hits/blunt/metalblunt (1).ogg', 'sound/combat/hits/blunt/metalblunt (2).ogg', 'sound/combat/hits/blunt/metalblunt (3).ogg')
 	chargetime = 0
-	penfactor = AP_CLUB_SMASH
+	penfactor = AP_CLUB_STRIKE
 	swingdelay = 1
 	damfactor = 0.8
 
@@ -273,7 +289,7 @@
 	name = "short sword"
 	desc = "A steel sword of shortened design, a reduced grip for primarily single hand use."
 	icon_state = "swordshort"
-	possible_item_intents = list(/datum/intent/sword/thrust/short, /datum/intent/sword/cut/short)
+	possible_item_intents = list(/datum/intent/sword/thrust/short, /datum/intent/sword/cut/short, /datum/intent/sword/strike)
 	gripped_intents = null
 	minstr = 4
 	wdefense = GOOD_PARRY
@@ -296,12 +312,13 @@
 	name = "sabre"
 	desc = "A swift sabre, favored by duelists and cut-throats alike."
 	icon_state = "saber"
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/curved)
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/curved, /datum/intent/sword/chop/sabre)
 	gripped_intents = null
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 5
 	wdefense = ULTMATE_PARRY
+	wbalance = HARD_TO_DODGE
 
 /obj/item/rogueweapon/sword/sabre/dec
 	name = "decorated sabre"
@@ -310,7 +327,7 @@
 	sellprice = 140
 
 /obj/item/rogueweapon/sword/sabre/stalker
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/short)
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/short) //This thing is *insanely* strong by current standards due to inheriting the 1.25 damage fast thrust from the shortsword. Just saying.
 	name = "stalker sabre"
 	desc = "A once elegant blade of mythril, diminishing under the suns gaze"
 	icon_state = "spidersaber"
@@ -319,15 +336,16 @@
 /obj/item/rogueweapon/sword/sabre/cutlass
 	name = "cutlass"
 	desc = "Both tool and weapon of war, favored by Abyssor cultists and sailors for seafaring battle."
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/curved, /datum/intent/sword/chop/sabre, /datum/intent/sword/strike) //Unique weapon, added versatility.
 	icon_state = "cutlass"
 	minstr = 6
-	wbalance = HARD_TO_DODGE
 
 //................ Kings Sword ............... //
 /obj/item/rogueweapon/sword/sabre/lord
 	force = DAMAGE_SWORD_WIELD
 	name = "Kings Sword"
 	desc = "Passed down through the ages, a weapon that once carved a kingdom out now relegated to a decorative piece."
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/curved, /datum/intent/sword/chop/sabre, /datum/intent/sword/strike) //Unique weapon, added versatility.
 	icon_state = "lordrap"
 	sellprice = 200
 	max_blade_int = 400
@@ -335,7 +353,7 @@
 //................ Shalal Sabre ............... //
 /obj/item/rogueweapon/sword/sabre/shalal
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop/long, /datum/intent/sword/thrust/long)
+	gripped_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/strike, /datum/intent/sword/chop/sabre) //This thing is a sabre that can be wielded for +5 damage.
 	icon_state = "marlin"
 	name = "shalal sabre"
 	desc = "A fine weapon of Zybantu origin in the style of the Shalal tribesfolk, renowned for their defiance against magic and mastery of mounted swordsmanship."
@@ -379,8 +397,8 @@
 | Scimitars |	Normal swords with a strong cutting emphasis.
 \----------*/
 /obj/item/rogueweapon/sword/scimitar
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop)
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/chop/sabre)
+	gripped_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/chop/sabre) //Curved blade, cuts better.
 	name = "scimitar"
 	desc = "A Zybantu design for swords, these curved blades are a common sight in the lands of the Ziggurat."
 	icon_state = "scimitar"
@@ -388,13 +406,14 @@
 	wdefense = AVERAGE_PARRY
 
 /obj/item/rogueweapon/sword/scimitar/falchion
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/chop/sabre)
+	gripped_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/chop/sabre)
 	name = "falchion"
 	desc = "Broad blade, excellent steel, a design inspired by Malum the dwarves claim."
 	icon_state = "falchion_old"
 	swingsound = BLADEWOOSH_HUGE
 	wbalance = EASY_TO_DODGE
+	wdefense = GREAT_PARRY //Some reason to use it over the scimitar, now that both have proper cutting edges.
 	sellprice = 100
 
 /obj/item/rogueweapon/sword/scimitar/messer
@@ -423,9 +442,9 @@
 	minstr = 6
 	wbalance = VERY_HARD_TO_DODGE
 
-/obj/item/rogueweapon/sword/rapier/ironestoc
-	name = "estoc"
-	desc = "A precise iron estoc, favored by the skilled duelists of Valoria."
+/obj/item/rogueweapon/sword/rapier/iron
+	name = "florete" 
+	desc = "A precise iron florete, favored by the skilled duelists of Valoria."
 	icon_state = "estoc"
 	smeltresult = /obj/item/ingot/iron
 	wbalance = HARD_TO_DODGE
@@ -558,7 +577,7 @@
 /obj/item/rogueweapon/sword/long
 	force_wielded = DAMAGE_LONGSWORD_WIELD
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
 	icon_state = "longsword"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
@@ -594,22 +613,20 @@
 //................ Heirloom Sword ............... //
 /obj/item/rogueweapon/sword/long/heirloom
 	force = DAMAGE_SWORD-2
-	force_wielded = DAMAGE_SWORD_WIELD-2
+	force_wielded = DAMAGE_SWORD_WIELD
 	icon_state = "heirloom"
 	name = "old sword"
 	desc = "An old steel sword with a heraldic green leather grip, mouldered by years of neglect."
 	max_blade_int = 180 // Neglected, unused
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONG-50
 	static_price = TRUE
 	sellprice = 45 // Old and chipped
 
 
 // Repurposing this unused sword for the Paladin job as a heavy counter against vampires.
 /obj/item/rogueweapon/sword/long/judgement// this sprite is a one handed sword, not a longsword.
-	force = 15
-	force_wielded = 30
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
+	force = DAMAGE_SWORD
+	force_wielded = DAMAGE_LONGSWORD_WIELD+2
 	icon_state = "judgement"
 	name = "judgement"
 	desc = "A sword with a silvered grip, a jeweled hilt and a honed blade; a design fit for nobility."
@@ -711,8 +728,8 @@
 				H.visible_message(H, "<span class='userdanger'>This feeble metal can't stop me, I HAVE TRANSCENDED!</span>")
 
 /obj/item/rogueweapon/sword/long/vlord // this sprite is a one handed sword, not a longsword.
-	force = 18
-	force_wielded = 30
+	force = DAMAGE_SWORD
+	force_wielded = DAMAGE_LONGSWORD_WIELD+2
 	icon_state = "vlord"
 	name = "Jaded Fang"
 	desc = "An ancestral long blade with an ominous glow, serrated with barbs along it's edges. Stained with a strange green tint."
@@ -731,8 +748,8 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogueweapon/sword/long/rider
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
 	icon_state = "tabi"
 	name = "kilij scimitar"
 	desc = "A curved blade of Zybantu origin meaning 'curved one'. The standard sword that saw the conquest of the Zybantine continent and peoples."
@@ -751,8 +768,8 @@
 
 
 /obj/item/rogueweapon/sword/long/forgotten
-	force = 16 // Damage is .9 of a steel sword
-	force_wielded = 25
+	force = DAMAGE_SWORD-2
+	force_wielded = DAMAGE_LONGSWORD_WIELD-2
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
 	icon_state = "forgotten"
@@ -845,15 +862,17 @@
 
 //................ Greatsword ............... //
 /obj/item/rogueweapon/sword/long/greatsword
+	force = DAMAGE_SWORD_WIELD //If someone can one-hand this, props to them.
 	force_wielded = DAMAGE_GREATSWORD_WIELD
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
+	possible_item_intents = list(/datum/intent/sword/chop, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/chop, /datum/intent/sword/chop/great, /datum/intent/sword/strike) //You get chop, bigger chop, and half-swording.
 	name = "greatsword"
-	desc = "An oversized hunk of metal designed for putting fear into men and killing beasts."
+	desc = "An oversized hunk of steel designed for putting fear into the hearts of men and felling beasts." //MY BROTHER, COME JOIN ME.
 	icon_state = "gsw"
 	swingsound = BLADEWOOSH_HUGE
 	wlength = WLENGTH_GREAT
 	slot_flags = ITEM_SLOT_BACK
-	minstr = 11
+	minstr = 13 //Requirement is halved when wielded in two hands either way. No sane person should be thinking of using this one-handed.
 	wbalance = EASY_TO_DODGE
 	sellprice = 90
 
@@ -873,12 +892,13 @@
 	name = "flamberge"
 	desc = "Commonly known as a flame-bladed sword, this weapon has an undulating blade. It's wave-like form distributes force better, and is less likely to break on impact."
 	icon_state = "flamberge"
-	wbalance = DODGE_CHANCE_NORMAL
+	wbalance = DODGE_CHANCE_NORMAL //Leaving this here, but it stops it from benefitting from having higher strenght when parried.
 	sellprice = 120
 
 /obj/item/rogueweapon/sword/long/greatsword/zwei
 	possible_item_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/strike, /datum/intent/sword/chop/great) //I don't know why this doesn't already use zweihander specific intents so I'm leaving it here. Also it can thrust which a normal greatsword cannot.
+	force = DAMAGE_SWORD
 	force_wielded = DAMAGE_LONGSWORD_WIELD
 	name = "zweihander"
 	desc = "Sometimes known as a doppelhander or beidhander, this weapon's size is so impressive that it's handling properties are more akin to that of a polearm than a sword."
@@ -886,6 +906,7 @@
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 150 // Iron tier
 	max_integrity = 300
+	minstr = 11
 	sellprice = 60
 
 /obj/item/rogueweapon/sword/long/greatsword/zwei/getonmobprop(tag)
@@ -900,12 +921,12 @@
 				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
 //................ Kriegsmesser ............... //
-/obj/item/rogueweapon/sword/long/greatsword/elfgsword
+/obj/item/rogueweapon/sword/long/greatsword/elfgsword 
 	name = "elven kriegsmesser"
 	desc = "A huge, curved elven blade. It's metal is of a high quality, yet still light, crafted by the greatest elven bladesmiths."
 	icon_state = "kriegsmesser"
 	wdefense = ULTMATE_PARRY
-	minstr = 10
+	minstr = 11
 	sellprice = 120
 
 /obj/item/rogueweapon/sword/long/greatsword/elfgsword/getonmobprop(tag)

@@ -35,7 +35,7 @@
 	blade_dulling = DULLING_BASHCHOP
 	resistance_flags = FLAMMABLE // Made of leather
 
-	armor = ARMOR_PADDED_BAD
+	armor = ARMOR_LEATHER_BAD
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_POOR
 
@@ -80,7 +80,7 @@
 
 	armor = ARMOR_LEATHER
 	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
-	max_integrity = INTEGRITY_STANDARD
+	max_integrity = INTEGRITY_STRONG
 
 /obj/item/clothing/gloves/roguetown/angle/grenzel
 	name = "grenzelhoft gloves"
@@ -115,14 +115,16 @@
 	armor_class = AC_MEDIUM
 	armor = ARMOR_MAILLE
 	prevent_crits = ALL_EXCEPT_BLUNT
-	max_integrity = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONG-50 //250 Integrity, good for 7~ halberd stabs. With stab crit protection, still invaluable.
 
 /obj/item/clothing/gloves/roguetown/chain/iron
 	name = "iron chain gauntlets"
 	icon_state = "icgloves"
 	desc = "Gauntlets made out of interwoven iron chains. Decent melee protection, but are better suited to stop arrows than blades."
+	
 	armor = ARMOR_MAILLE_IRON
-	max_integrity = INTEGRITY_STRONG
+	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB //Non-riveted, iron chain can be broken apart with a powerful thrust.
+	max_integrity = INTEGRITY_STANDARD //200 Integrity, good for 5~ halberd stabs.
 
 /obj/item/clothing/gloves/roguetown/chain/iron/shadowgauntlets
 	name = "darkplate gauntlets"
@@ -158,7 +160,7 @@
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE
 	prevent_crits = ALL_EXCEPT_STAB
-	max_integrity = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONG-50 //250 Integrity, good for 7~ halberd stabs.
 
 /obj/item/clothing/gloves/roguetown/rare
 	icon = 'icons/roguetown/clothing/Racial_Armour.dmi'
@@ -178,8 +180,8 @@
 
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE_GOOD
-	max_integrity = INTEGRITY_STRONGEST
-	prevent_crits = ALL_CRITICAL_HITS
+	max_integrity = INTEGRITY_STRONG
+	prevent_crits = ALL_CRITICAL_HITS //Full crit protection, very unlikely to be penetrated, takes 8 halberd stabs to break.
 
 /obj/item/clothing/gloves/roguetown/rare/elfplate
 	name = "dark elf plate gauntlets"

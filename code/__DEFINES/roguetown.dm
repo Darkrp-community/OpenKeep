@@ -298,9 +298,9 @@ Thing can move up or down an armor class by significant changes to coverage & cr
 #define ARMOR_SCALE			list("melee" = 65, "bullet" = 65, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 // Heavy AC
-#define ARMOR_PLATE_BAD		list("melee" = 70, "bullet" = 50, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_PLATE			list("melee" = 85, "bullet" = 70, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_PLATE_GOOD	list("melee" = 90, "bullet" = 85, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_PLATE_BAD		list("melee" = 65, "bullet" = 50, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_PLATE			list("melee" = 80, "bullet" = 70, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_PLATE_GOOD	list("melee" = 85, "bullet" = 85, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 
 /*-----------------------\

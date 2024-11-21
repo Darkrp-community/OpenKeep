@@ -27,8 +27,15 @@
 	penfactor = AP_AXE_CHOP
 	swingdelay = 1
 	misscost = 5
+	
+/datum/intent/axe/chop/charged //Charged chop for the battleaxe and bearded axe.
+	name = "overhead chop"
+	penfactor = AP_HEAVYAXE_CHOP
+	chargetime = 1
 
 /datum/intent/axe/chop/great//unique long attack for axes, basically you swing really really hard, stills worse than a polearm like the bardiche or spear
+	name = "great chop"
+	damfactor = 1.2 //Charged attack.
 	penfactor = AP_HEAVYAXE_CHOP
 	reach = 2
 	chargetime = 1
@@ -103,7 +110,7 @@
 	icon_state = "battleaxe"
 	max_blade_int = 500
 	smeltresult = /obj/item/ingot/steel
-	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/charged)
 	parrysound = "sword"
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	minstr = 10 //meant to be a orc weapon or barbarian weapon
@@ -181,9 +188,9 @@
 	name = "steel axe"
 	desc = "A bearded steel axe revered by dwarf, humen and elf alike. Performs much better than its iron counterpart."
 	icon_state = "saxe"
-	force = DAMAGE_AXE
-	force_wielded = DAMAGE_AXE_WIELD
-	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	force = DAMAGE_AXE+3 //Superior as an one-handed option.
+	force_wielded = DAMAGE_AXE_WIELD+2
+	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop,/datum/intent/axe/chop/charged)
 	max_blade_int = INTEGRITY_STRONGEST
 	max_integrity = INTEGRITY_STRONG
 	smeltresult = /obj/item/ingot/steel

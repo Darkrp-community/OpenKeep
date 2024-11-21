@@ -53,8 +53,14 @@
 	swingdelay = 1
 	misscost = 10
 
+/datum/intent/polearm/thrust/poke
+	name = "poke"
+	penfactor = AP_SPEAR_POKE
+	chargetime = 0
+	misscost = 7
+	
 /datum/intent/polearm/thrust/spear
-	penfactor = AP_SPEAR_THRUST
+	penfactor = AP_POLEARM_THRUST-10
 
 /*------------\
 | Bash intent |
@@ -66,7 +72,7 @@
 	attack_verb = list("bashes", "strikes")
 	hitsound = list('sound/combat/hits/blunt/woodblunt (1).ogg', 'sound/combat/hits/blunt/woodblunt (2).ogg')
 	penfactor = AP_POLEARM_BASH
-	damfactor = 0.8
+	damfactor = 0.8 //Bashing with a weapon not meant for it.
 	swingdelay = 1
 	misscost = 5
 
@@ -76,6 +82,8 @@
 /datum/intent/polearm/bash/swing//AYAYAYAYA BONK BONK BONK
 	name = "swing"
 	attack_verb = list("bashes", "strikes", "swings")
+	penfactor = AP_CLUB_STRIKE //30 combined AP, for reference an iron maille is 50 armor.
+	damfactor = 1 //Full-power, charged 2-range swings. The gimmick intent of quarterstaffs.
 	reach = 2
 	chargetime = 1
 
@@ -114,9 +122,9 @@
 //................ Wooden Staff ............... //
 /obj/item/rogueweapon/polearm/woodstaff
 	force =  DAMAGE_STAFF
-	force_wielded =  DAMAGE_STAFF_WIELD-1
+	force_wielded =  DAMAGE_STAFF_WIELD-3 //20 damage, at the threshold where 9 strenght makes it significantly worse.
 	possible_item_intents = list(POLEARM_BASH)
-	gripped_intents = list(POLEARM_BASH,/datum/intent/mace/smash/wood)
+	gripped_intents = list(POLEARM_BASH, /datum/intent/mace/smash/wood)
 	name = "wooden staff"
 	desc = "The ultimate tool of travel for weary wanderers, support your weight or crack the heads that don't support you."
 	icon_state = "woodstaff"
@@ -142,16 +150,17 @@
 //................ Quarterstaff ............... //!
 /obj/item/rogueweapon/polearm/woodstaff/quarterstaff
 	force_wielded =  DAMAGE_STAFF_WIELD
+	gripped_intents = list(POLEARM_SWING, POLEARM_BASH, /datum/intent/mace/smash/wood)
 	name = "wooden quarterstaff"
 	desc = "A staff that makes any journey easier. Durable and swift, capable of bludgeoning stray volves and ruffians alike."
 	icon_state = "quarterstaff"
 	max_integrity = INTEGRITY_STRONG
 	sellprice = 10
+	
 
 //................ Iron-shod Staff ............... //
 /obj/item/rogueweapon/polearm/woodstaff/quarterstaff/iron
-	force_wielded =  DAMAGE_STAFF_WIELD
-	gripped_intents = list(POLEARM_BASH,/datum/intent/mace/smash)
+	force_wielded =  DAMAGE_STAFF_WIELD+1
 	name = "iron quarterstaff"
 	desc = "A perfect tool for bounty hunters who prefer their prisoners broken and bruised but not slain. This reinforced staff is capable of clubbing even an armed opponent into submission with some carefully placed strikes."
 	icon_state = "ironstaff"
@@ -159,8 +168,7 @@
 	max_integrity = INTEGRITY_STRONG
 
 /obj/item/rogueweapon/polearm/woodstaff/quarterstaff/steel
-	force_wielded =  DAMAGE_STAFF_WIELD+1
-	gripped_intents = list(POLEARM_BASH,/datum/intent/mace/smash)
+	force_wielded =  DAMAGE_STAFF_WIELD+2 //25 damage. Still a bit gimmicky of a weapon.
 	name = "steel quarterstaff"
 	desc = "An unusual sight, a knightly combat staff made out of worked steel and reinforced wood. It is a heavy and powerful weapon, more than capable of beating the living daylights out of any brigand."
 	icon_state = "steelstaff"
@@ -169,7 +177,7 @@
 
 //................ Staff of the Testimonium ............... //
 /obj/item/rogueweapon/polearm/woodstaff/aries
-	force_wielded =  DAMAGE_STAFF_WIELD+1
+	force_wielded =  DAMAGE_STAFF_WIELD
 	name = "staff of the testimonium"
 	desc = "A symbolic staff, granted to graduating acolyte's who have achieved and bear witnessed to the miracles of the Gods."
 	icon_state = "aries"
@@ -183,8 +191,8 @@
 	force = DAMAGE_SPEAR
 	force_wielded = DAMAGE_SPEAR_WIELD
 	throwforce = DAMAGE_SPEAR_WIELD
-	possible_item_intents = list(SPEAR_THRUST, POLEARM_BASH) //bash is for nonlethal takedowns, only targets limbs
-	gripped_intents = list(POLEARM_THRUST, SPEAR_CUT, POLEARM_BASH)
+	possible_item_intents = list(SPEAR_POKE, POLEARM_BASH) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_POKE, POLEARM_BASH)
 	name = "spear"
 	desc = "The humble spear, use the pointy end."
 	icon_state = "spear"
@@ -206,6 +214,8 @@
 
 //................ Billhook ............... //
 /obj/item/rogueweapon/polearm/spear/billhook
+	force_wielded = DAMAGE_SPEAR_WIELD+3 //28 damage VS the halberd's 35. Just a little extra something, in addition to the proper polearm thrust.
+	throwforce = DAMAGE_SPEAR //Unbalanced for throwing.
 	name = "billhook"
 	desc = "A polearm with a curved krag, a Valorian design for dismounting mounted warriors and to strike down monstrous beasts."
 	icon_state = "billhook"
@@ -265,8 +275,8 @@
 /obj/item/rogueweapon/polearm/halberd
 	force = DAMAGE_SPEAR
 	force_wielded = DAMAGE_HALBERD_WIELD
-	slowdown = 1
-	possible_item_intents = list(POLEARM_THRUST, POLEARM_BASH) //bash is for nonlethal takedowns, only targets limbs
+//	slowdown = 1 More an annoyance than anything else, since it does nothing when held in hand. Misleading as a balance factor. Either make it not go on the back slot or remove this.
+	possible_item_intents = list(POLEARM_THRUST, POLEARM_BASH)
 	gripped_intents = list(POLEARM_THRUST, SPEAR_CUT, /datum/intent/polearm/chop, POLEARM_BASH)
 	name = "halberd"
 	desc = "A reinforced polearm for clobbering ordained with a crested ax head, pick and sharp point, a royal arm for defence and aggression."
@@ -296,7 +306,7 @@
 //................ Bardiche ............... //
 /obj/item/rogueweapon/polearm/halberd/bardiche
 	force = DAMAGE_AXE
-	force_wielded = DAMAGE_AXE_WIELD
+	force_wielded = DAMAGE_HEAVYAXE_WIELD
 	possible_item_intents = list(/datum/intent/axe/cut)
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop/great, /datum/intent/axe/thrust)
 	name = "bardiche"
@@ -316,7 +326,7 @@
 //................ Eagle Beak ............... //
 /obj/item/rogueweapon/polearm/eaglebeak
 	force = DAMAGE_SPEAR
-	force_wielded = DAMAGE_SPEAR_WIELD
+	force_wielded = DAMAGE_SPEAR_WIELD+3 //Same as billhook. Worse damage than a dedicated two-handed mace, added flexibility.
 	slowdown = 1
 	possible_item_intents = list(POLEARM_BASH, /datum/intent/polearm/chop) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(POLEARM_BASH, POLEARM_THRUST, /datum/intent/mace/smash/heavy,/datum/intent/polearm/chop)
@@ -377,8 +387,8 @@
 
 //scythe
 /obj/item/rogueweapon/sickle/scythe
-	force = 10
-	force_wielded = 20
+	force = 12
+	force_wielded = 25 //The only intent on this thing has a 0.8 damage factor, so 20 damage in practice. Worth noting the intent has no AP attached either.
 	possible_item_intents = list(SPEAR_CUT) //truly just a long knife
 	gripped_intents = list(SPEAR_CUT)
 	name = "scythe"

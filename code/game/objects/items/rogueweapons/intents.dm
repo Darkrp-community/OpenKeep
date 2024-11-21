@@ -286,6 +286,7 @@
 	swingdelay = 0
 
 /datum/intent/pick
+	penfactor = 50 //This is used in some actual weapons, so giving it some AP is likely wise. Hefty swing delay means it is impractical in combat.
 	name = "pick"
 	icon_state = "inpick"
 	attack_verb = list("picks","impales")
