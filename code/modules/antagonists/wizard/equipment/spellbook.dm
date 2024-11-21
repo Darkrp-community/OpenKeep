@@ -110,6 +110,10 @@
 	name = "Spell Cards"
 	spell_type = /obj/effect/proc_holder/spell/aimed/spell_cards
 
+/datum/spellbook_entry/rod_form
+	name = "Rod Form"
+	spell_type = /obj/effect/proc_holder/spell/targeted/rod_form
+
 /datum/spellbook_entry/magicm
 	name = "Magic Missile"
 	spell_type = /obj/effect/proc_holder/spell/targeted/projectile/magic_missile
@@ -206,6 +210,11 @@
 	name = "Tesla Blast"
 	spell_type = /obj/effect/proc_holder/spell/targeted/tesla
 
+/datum/spellbook_entry/lightningbolt
+	name = "Lightning Bolt"
+	spell_type = /obj/effect/proc_holder/spell/aimed/lightningbolt
+	cost = 3
+
 /datum/spellbook_entry/lightningbolt/Buy(mob/living/carbon/human/user,obj/item/spellbook/book) //return TRUE on success
 	. = ..()
 	user.flags_1 |= TESLA_IGNORE_1
@@ -230,6 +239,11 @@
 	name = "Barnyard Curse"
 	spell_type = /obj/effect/proc_holder/spell/targeted/barnyardcurse
 
+/datum/spellbook_entry/charge
+	name = "Charge"
+	spell_type = /obj/effect/proc_holder/spell/targeted/charge
+	category = "Assistance"
+	cost = 1
 
 /datum/spellbook_entry/shapeshift
 	name = "Wild Shapeshift"
@@ -298,6 +312,13 @@
 	desc = ""
 	item_path = /obj/item/gun/magic/staff/spellblade
 
+/datum/spellbook_entry/item/staffdoor
+	name = "Staff of Door Creation"
+	desc = ""
+	item_path = /obj/item/gun/magic/staff/door
+	cost = 1
+	category = "Mobility"
+
 /datum/spellbook_entry/item/staffhealing
 	name = "Staff of Healing"
 	desc = ""
@@ -341,6 +362,12 @@
 	item_path = /obj/item/storage/belt/wands/full
 	category = "Defensive"
 
+/datum/spellbook_entry/item/armor
+	name = "Mastercrafted Armor Set"
+	desc = ""
+	item_path = /obj/item/clothing/suit/space/hardsuit/wizard
+	category = "Defensive"
+
 /datum/spellbook_entry/item/armor/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
 	. = ..()
 	if(.)
@@ -365,6 +392,27 @@
 	if(.)
 		new /obj/item/paper/guides/antag/guardian/wizard(get_turf(user))
 
+/datum/spellbook_entry/item/bloodbottle
+	name = "Bottle of Blood"
+	desc = ""
+	item_path = /obj/item/antag_spawner/slaughter_demon
+	limit = 3
+	category = "Assistance"
+
+/datum/spellbook_entry/item/hugbottle
+	name = "Bottle of Tickles"
+	desc = "A bottle of magically infused fun, the smell of which will \
+		attract adorable extradimensional beings when broken. These beings \
+		are similar to slaughter demons, but they do not permamently kill \
+		their victims, instead putting them in an extradimensional hugspace, \
+		to be released on the demon's death. Chaotic, but not ultimately \
+		damaging. The crew's reaction to the other hand could be very \
+		destructive."
+	item_path = /obj/item/antag_spawner/slaughter_demon/laughter
+	cost = 1 //non-destructive; it's just a jape, sibling!
+	limit = 3
+	category = "Assistance"
+
 /datum/spellbook_entry/item/mjolnir
 	name = "Mjolnir"
 	desc = ""
@@ -374,6 +422,20 @@
 	name = "Singularity Hammer"
 	desc = ""
 	item_path = /obj/item/twohanded/singularityhammer
+
+/datum/spellbook_entry/item/battlemage
+	name = "Battlemage Armour"
+	desc = ""
+	item_path = /obj/item/clothing/suit/space/hardsuit/shielded/wizard
+	limit = 1
+	category = "Defensive"
+
+/datum/spellbook_entry/item/battlemage_charge
+	name = "Battlemage Armour Charges"
+	desc = ""
+	item_path = /obj/item/wizard_armour_charge
+	category = "Defensive"
+	cost = 1
 
 /datum/spellbook_entry/item/warpwhistle
 	name = "Warp Whistle"
@@ -552,6 +614,18 @@
 				if(!isnull(CT.limit))
 					CT.limit++
 			qdel(O)
+	else if(istype(O, /obj/item/antag_spawner/slaughter_demon))
+		to_chat(user, "<span class='notice'>On second thought, maybe summoning a demon is a bad idea. You refund your points.</span>")
+		if(istype(O, /obj/item/antag_spawner/slaughter_demon/laughter))
+			uses += 1
+			for(var/datum/spellbook_entry/item/hugbottle/HB in entries)
+				if(!isnull(HB.limit))
+					HB.limit++
+		else
+			uses += 2
+			for(var/datum/spellbook_entry/item/bloodbottle/BB in entries)
+				if(!isnull(BB.limit))
+					BB.limit++
 		qdel(O)
 
 /obj/item/spellbook/proc/GetCategoryHeader(category)

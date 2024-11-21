@@ -122,6 +122,12 @@
 
 	return FALSE
 
+/mob/living/carbon/spirit/proc/stuff_mob_in()
+	if(bodyDisposal && target && Adjacent(bodyDisposal))
+		bodyDisposal.stuff_mob_in(target, src)
+	disposing_body = FALSE
+	back_to_idle()
+
 /mob/living/carbon/spirit/proc/back_to_idle()
 
 	if(pulling)

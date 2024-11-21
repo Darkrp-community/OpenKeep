@@ -128,13 +128,13 @@
 		if(C.orders.len > 4)
 			to_chat(user, "<span class='warning'>Too much order.</span>")
 			return
-		var/picked_cat = input(user, "Categories", "Shipping Ledger") as null|anything in sortList(SSmerchant.supply_cats)
+		var/picked_cat = input(user, "Categories", "Shipping Ledger") as null|anything in sortList(SSshuttle.supply_cats)
 		if(!picked_cat)
 			testing("yeye")
 			return
 		var/list/pax = list()
-		for(var/pack in SSmerchant.supply_packs)
-			var/datum/supply_pack/PA = SSmerchant.supply_packs[pack]
+		for(var/pack in SSshuttle.supply_packs)
+			var/datum/supply_pack/PA = SSshuttle.supply_packs[pack]
 			if(PA.group == picked_cat)
 				pax += PA
 		var/picked_pack = input(user, "Shipments", "Shipping Ledger") as null|anything in sortList(pax)
@@ -158,12 +158,12 @@
 		if(P.info)
 			to_chat(user, "<span class='warning'>Something is written here already.</span>")
 			return
-		var/picked_cat = input(user, "Categories", "Shipping Ledger") as null|anything in sortList(SSmerchant.supply_cats)
+		var/picked_cat = input(user, "Categories", "Shipping Ledger") as null|anything in sortList(SSshuttle.supply_cats)
 		if(!picked_cat)
 			return
 		var/list/pax = list()
-		for(var/pack in SSmerchant.supply_packs)
-			var/datum/supply_pack/PA = SSmerchant.supply_packs[pack]
+		for(var/pack in SSshuttle.supply_packs)
+			var/datum/supply_pack/PA = SSshuttle.supply_packs[pack]
 			if(PA.group == picked_cat)
 				pax += PA
 		var/picked_pack = input(user, "Shipments", "Shipping Ledger") as null|anything in sortList(pax)

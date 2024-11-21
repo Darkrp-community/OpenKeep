@@ -4,6 +4,10 @@
 	//check if it doesn't require any access at all
 	if(src.check_access(null))
 		return TRUE
+	if(issilicon(M))
+		if(ispAI(M))
+			return FALSE
+		return TRUE	//AI can do whatever it wants
 	if(IsAdminGhost(M))
 		//Access can't stop the abuse
 		return TRUE
@@ -14,7 +18,7 @@
 		//if they are holding or wearing a card that has access, that works
 		if(check_access(H.get_active_held_item()) || src.check_access(H.wear_ring))
 			return TRUE
-	else if(ismonkey(M))
+	else if(ismonkey(M) || isalienadult(M))
 		var/mob/living/carbon/george = M
 		//they can only hold things :(
 		if(check_access(george.get_active_held_item()))
@@ -85,6 +89,9 @@
 				return TRUE
 		return FALSE
 	return TRUE
+
+/obj/proc/check_access_ntnet(datum/netdata/data)
+	return check_access_list(data.passkey)
 
 /proc/get_centcom_access(job)
 	switch(job)

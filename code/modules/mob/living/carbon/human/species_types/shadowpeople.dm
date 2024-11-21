@@ -183,9 +183,15 @@
 		if(isethereal(AM))
 			AM.emp_act(EMP_LIGHT)
 
-		for(var/obj/item/O in AM)
-			if(O.light_range && O.light_power)
-				disintegrate(O)
+		if(iscyborg(AM))
+			var/mob/living/silicon/robot/borg = AM
+			if(!borg.lamp_cooldown)
+				borg.update_headlamp(TRUE, INFINITY)
+				to_chat(borg, "<span class='danger'>My headlamp is fried! You'll need a human to help replace it.</span>")
+		else
+			for(var/obj/item/O in AM)
+				if(O.light_range && O.light_power)
+					disintegrate(O)
 		if(L.pulling && L.pulling.light_range && isitem(L.pulling))
 			disintegrate(L.pulling)
 	else if(isitem(AM))
@@ -194,9 +200,16 @@
 			disintegrate(I)
 
 /obj/item/light_eater/proc/disintegrate(obj/item/O)
-
-	visible_message("<span class='danger'>[O] is disintegrated by [src]!</span>")
-	O.burn()
+	if(istype(O, /obj/item/pda))
+		var/obj/item/pda/PDA = O
+		PDA.set_light(0)
+		PDA.fon = FALSE
+		PDA.f_lum = 0
+		PDA.update_icon()
+		visible_message("<span class='danger'>The light in [PDA] shorts out!</span>")
+	else
+		visible_message("<span class='danger'>[O] is disintegrated by [src]!</span>")
+		O.burn()
 	playsound(src, 'sound/blank.ogg', 50, TRUE)
 
 #undef HEART_SPECIAL_SHADOWIFY
