@@ -637,7 +637,7 @@
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE_BAD
 	body_parts_covered = COVERAGE_ALL_BUT_LEGS
-	max_integrity = INTEGRITY_STRONG+50 //This at 500 integrity was a crime. You can buy it at the Goldface, it shouldn't take 13 halberd stabs to break through.
+	max_integrity = INTEGRITY_STRONG
 	prevent_crits = ALL_EXCEPT_STAB
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/Initialize()

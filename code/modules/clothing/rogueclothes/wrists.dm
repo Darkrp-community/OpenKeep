@@ -21,7 +21,7 @@
 	
 	armor = ARMOR_PLATE
 	prevent_crits = ALL_EXCEPT_STAB
-	max_integrity = INTEGRITY_STRONG //Most plate chestpieces will be protecting arms as well.
+	max_integrity = INTEGRITY_STRONGER
 
 /obj/item/clothing/wrists/roguetown/bracers/leather
 	name = "leather bracers"

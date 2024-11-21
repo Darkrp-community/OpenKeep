@@ -218,7 +218,7 @@
 	smeltresult = null
 
 	armor = ARMOR_MAILLE_IRON
-	max_integrity = INTEGRITY_STRONG-50
+	max_integrity = INTEGRITY_STRONG
 	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB //Non-riveted, iron chain can be broken apart with a powerful thrust.
 
 /obj/item/clothing/neck/roguetown/gorget/copper
@@ -254,7 +254,7 @@
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE
 	body_parts_covered = NECK|EARS|MOUTH|NOSE
-	max_integrity = INTEGRITY_STRONG //300 integrity is enough to take 8~ halberd stabs (40 damage hits) before breaking.
+	max_integrity = INTEGRITY_STRONGER
 	prevent_crits = ALL_EXCEPT_STAB
 
 /obj/item/clothing/neck/roguetown/gorget
@@ -283,7 +283,7 @@
 	desc = "A heavy collar of great age, meant to protect the neck."
 	icon_state = "aasimarneck"
 	smeltresult = null // No bronze ingots yet
-	armor = ARMOR_MAILLE_GOOD
+	max_integrity = INTEGRITY_STRONGER //Aasimar craftsmanship.
 
 
 

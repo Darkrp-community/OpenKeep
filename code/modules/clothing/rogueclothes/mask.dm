@@ -123,7 +123,7 @@
 	
 	armor = ARMOR_PLATE_BAD //Still thin.
 	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB
-	max_integrity = INTEGRITY_STRONG-50 //250 Integrity, added chop protection. Still worse than a proper visored helmet.
+	max_integrity = INTEGRITY_STRONG //250 Integrity, added chop protection. Still worse than a proper visored helmet.
 
 /obj/item/clothing/mask/rogue/facemask/shadowfacemask
 	name = "anthraxi war mask"

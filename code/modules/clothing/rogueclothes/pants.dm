@@ -219,7 +219,7 @@
 
 	armor_class = AC_MEDIUM
 	armor = ARMOR_MAILLE
-	max_integrity = INTEGRITY_STRONG //300 Integrity, good for 8 halberd stabs.
+	max_integrity = INTEGRITY_STRONGER //300 Integrity, good for 8 halberd stabs.
 	prevent_crits = ALL_EXCEPT_BLUNT
 
 
@@ -230,7 +230,7 @@
 	smeltresult = /obj/item/ingot/iron
 	
 	armor = ARMOR_MAILLE_IRON
-	max_integrity = INTEGRITY_STRONG-50 //250 Integrity.
+	max_integrity = INTEGRITY_STRONG //250 Integrity.
 	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB //Non-riveted, iron chain can be broken apart with a powerful thrust.
 	
 
@@ -266,6 +266,6 @@
 
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE
-	max_integrity = INTEGRITY_STRONG+50 //350 Integrity, middle ground between bulky chestpieces and peripheral pieces.
+	max_integrity = INTEGRITY_STRONGER //350 Integrity, middle ground between bulky chestpieces and peripheral pieces.
 	prevent_crits = ALL_EXCEPT_STAB
 

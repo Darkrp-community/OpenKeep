@@ -43,9 +43,9 @@
 	item_state = "nobleboots"
 	sellprice = 10
 
-	armor = ARMOR_LEATHER
+	armor = ARMOR_LEATHER_BAD
 	prevent_crits = CUT_AND_MINOR_CRITS
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER //Durable.
 	
 /obj/item/clothing/shoes/roguetown/shortboots
 	name = "shortboots"
@@ -68,9 +68,9 @@
 	item_state = "ridingboots"
 	sellprice = 10
 	
-	armor = ARMOR_LEATHER_GOOD
+	armor = ARMOR_LEATHER
 	prevent_crits = CUT_AND_MINOR_CRITS
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 ///obj/item/clothing/shoes/roguetown/ridingboots/Initialize()
 //	. = ..()
@@ -194,7 +194,7 @@
 	
 	armor = ARMOR_LEATHER
 	prevent_crits = CUT_AND_MINOR_CRITS
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STANDARD //Slightly thicker, less durable than riding or noble boots.
 
 /obj/item/clothing/shoes/roguetown/boots/furlinedboots
 	name = "fur lined boots"
@@ -217,7 +217,7 @@
 	sewrepair = TRUE
 	is_barefoot = TRUE
 	
-	armor = ARMOR_LEATHER
+	armor = ARMOR_LEATHER_BAD
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_POOR
 	
@@ -272,7 +272,7 @@
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE_GOOD
 	prevent_crits = ALL_EXCEPT_STAB
-	max_integrity = INTEGRITY_STRONG //Peripheral piece, still good for 8~ halberd stabs.
+	max_integrity = INTEGRITY_STRONGER //Peripheral piece, still good for 8~ halberd stabs.
 
 /obj/item/clothing/shoes/roguetown/boots/rare/elfplate
 	name = "dark elvish plated boots"

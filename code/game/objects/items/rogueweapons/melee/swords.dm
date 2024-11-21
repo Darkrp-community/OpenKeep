@@ -52,8 +52,8 @@
 	hitsound = list('sound/combat/hits/bladed/genslash (1).ogg', 'sound/combat/hits/bladed/genslash (2).ogg', 'sound/combat/hits/bladed/genslash (3).ogg')
 	misscost = 4
 
-/datum/intent/sword/cut/sabre
-	penfactor = AP_SWORD_CHOP+13 //23 combined AP, enough that it actually slices through gambesons and leather with little to medium impediment. Not a multiple of 5, heresy, I know.
+/datum/intent/sword/cut/sabre //Don't give this to anything with longsword damage or it'll start cutting through iron chainmail. Save that for the katanas /s
+	penfactor = AP_SABRE_CUT //23 combined AP, enough that it actually slices through gambesons and leather with little to medium impediment. Not a multiple of 5, heresy, I know.
 	
 
 /datum/intent/sword/cut/zwei
@@ -86,7 +86,7 @@
 	misscost = 8
 	
 /datum/intent/sword/chop/sabre
-	penfactor = AP_SWORD_CHOP+8 //18 AP. Slightly better if penetrating the armor is not an option, since it has slightly more damage.
+	penfactor = AP_SABRE_CHOP //18 AP. Slightly better if penetrating the armor is not an option, since it has slightly more damage.
 
 /datum/intent/sword/chop/long
 	damfactor = 1.2 //Charged attack, gives it some reasoning to use over the otherwise vastly superior thrust.
@@ -126,7 +126,7 @@
 	penfactor = AP_SWORD_THRUST+2
 
 /datum/intent/sword/thrust/rapier
-	penfactor = AP_SWORD_THRUST+10 //30 AP, dagger tier, down from its past throne at 40 AP.
+	penfactor = AP_RAPIER_THRUST //30 AP, dagger tier, down from its past throne at 40 AP.
 
 /datum/intent/sword/thrust/zwei
 	name = "thrust"
@@ -327,7 +327,7 @@
 	sellprice = 140
 
 /obj/item/rogueweapon/sword/sabre/stalker
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/short) //This thing is *insanely* strong by current standards due to inheriting the 1.25 damage fast thrust from the shortsword. Just saying.
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/short) //This thing is *insanely* strong by current standards due to inheriting the 1.25 damage fast thrust from the shortsword. Just saying.
 	name = "stalker sabre"
 	desc = "A once elegant blade of mythril, diminishing under the suns gaze"
 	icon_state = "spidersaber"
@@ -547,7 +547,7 @@
 	name = "ancient khopesh"
 	desc = "A bronze weapon of war from the era of Apotheosis. This blade is older than a few elven generations, but has been very well-maintained and still keeps a good edge."
 	force = 22 // Unique weapon from rare job, slightly more force than most one-handers
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop, /datum/intent/sword/strike)
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/chop/sabre, /datum/intent/sword/strike)
 	gripped_intents = null
 	icon = 'icons/roguetown/weapons/64.dmi'
 	icon_state = "khopesh"
@@ -944,7 +944,7 @@
 //................ Executioners Sword ............... //
 /obj/item/rogueweapon/sword/long/exe
 	possible_item_intents = list(/datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/chop)
+	gripped_intents = list(/datum/intent/sword/chop) //This is using the quicker, normal sword chop, but I'll pretend it's a feature.
 	icon_state = "exe"
 	name = "executioner's sword"
 	desc = "An ancient blade of ginormous stature, with a round ended tip. The pride and joy of Roguetown's greatest pastime, executions."

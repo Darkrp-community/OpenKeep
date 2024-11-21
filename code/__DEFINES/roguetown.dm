@@ -245,7 +245,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 | ARMOR BASIC CONCEPT |
 \--------------------*/
 /*
-Valid until the day someoen adds blunt/stab/cut damage defines from Blackstone
+Valid until the day someone adds blunt/stab/cut damage defines from Blackstone.
 
 Five general types of armor with some general outlines.
 *With current system armor less than 25 vs arrows is pretty much zero.
@@ -266,8 +266,9 @@ Thing can move up or down an armor class by significant changes to coverage & cr
 | ARMOR INTEGRITY DEFINES |	- So armor makes sense
 \------------------------*/
 
-#define INTEGRITY_STRONGEST		500		// STEEL
-#define INTEGRITY_STRONG		300		// IRON
+#define INTEGRITY_STRONGEST		400		// STEEL CHESTPIECES
+#define INTEGRITY_STRONGER		300		// STEEL
+#define INTEGRITY_STRONG		250		// IRON/PERIPHERAL
 #define INTEGRITY_STANDARD		200		// LEATHER
 #define INTEGRITY_POOR			150		// GAMBESON, COPPER
 #define INTEGRITY_WORST			100
@@ -300,7 +301,7 @@ Thing can move up or down an armor class by significant changes to coverage & cr
 // Heavy AC
 #define ARMOR_PLATE_BAD		list("melee" = 65, "bullet" = 50, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 #define ARMOR_PLATE			list("melee" = 80, "bullet" = 70, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_PLATE_GOOD	list("melee" = 85, "bullet" = 85, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_PLATE_GOOD	list("melee" = 90, "bullet" = 85, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 
 /*-----------------------\

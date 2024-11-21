@@ -115,7 +115,7 @@
 	armor_class = AC_MEDIUM
 	armor = ARMOR_MAILLE
 	prevent_crits = ALL_EXCEPT_BLUNT
-	max_integrity = INTEGRITY_STRONG-50 //250 Integrity, good for 7~ halberd stabs. With stab crit protection, still invaluable.
+	max_integrity = INTEGRITY_STRONG //250 Integrity, good for 7~ halberd stabs. With stab crit protection, still invaluable.
 
 /obj/item/clothing/gloves/roguetown/chain/iron
 	name = "iron chain gauntlets"
@@ -131,6 +131,7 @@
 	desc = "Gauntlets with gilded fingers fashioned into talons. The tips are all too dull to be of harm."
 	icon_state = "shadowgauntlets"
 	allowed_race = list("elf", "dark elf")
+	max_integrity = INTEGRITY_STRONG
 
 
 //..................................................................................................................................
@@ -160,7 +161,7 @@
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE
 	prevent_crits = ALL_EXCEPT_STAB
-	max_integrity = INTEGRITY_STRONG-50 //250 Integrity, good for 7~ halberd stabs.
+	max_integrity = INTEGRITY_STRONG //250 Integrity, good for 7~ halberd stabs.
 
 /obj/item/clothing/gloves/roguetown/rare
 	icon = 'icons/roguetown/clothing/Racial_Armour.dmi'
