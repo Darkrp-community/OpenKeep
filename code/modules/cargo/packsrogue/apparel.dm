@@ -113,6 +113,16 @@
 	cost = 60
 	contains = /obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat
 
+/datum/supply_pack/rogue/apparel/stockings
+	name = "Stockings"
+	cost = 10
+	contains = /obj/item/clothing/under/roguetown/tights/stockings/random
+
+/datum/supply_pack/rogue/apparel/stockings_silk
+	name = "Silk Stockings"
+	cost = 20
+	contains = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
+
 /datum/supply_pack/rogue/apparel/undershirt_random
 	name = "Undershirt"
 	cost = 4

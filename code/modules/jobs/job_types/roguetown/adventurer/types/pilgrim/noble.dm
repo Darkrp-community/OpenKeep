@@ -45,6 +45,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random
+		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
 		head = /obj/item/clothing/head/roguetown/hatfur
 		cloak = /obj/item/clothing/cloak/raincloak/furcloak
 		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow

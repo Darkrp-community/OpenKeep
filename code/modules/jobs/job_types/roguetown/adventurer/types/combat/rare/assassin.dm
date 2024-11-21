@@ -162,6 +162,7 @@
 				H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE) //Female nobles get the male noble's bow, but are less trained than an Assassin disguising as a Hunter. Balance.
 				H.mind.adjust_skillrank(/datum/skill/combat/crossbows, -1, TRUE)
 				shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random
+				pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
 				head = /obj/item/clothing/head/roguetown/hatfur
 				cloak = /obj/item/clothing/cloak/raincloak/furcloak
 				backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
