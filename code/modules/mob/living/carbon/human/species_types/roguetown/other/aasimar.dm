@@ -17,7 +17,9 @@
 	desc = "<b>Aasimar</b><br> \
 	Immortal offspring sculpted by one of the gods. \
 	Aasimar are often revered due to their celestial origin, but face great solitude \
-	as not many of their kind exist. "
+	as not many of their kind exist. An aasimar may be crafted with any number of materials. \
+	Many resemble sculptures of stones or ceramic in skin, but their insides are just as mortal as \
+	any other. "
 
 	skin_tone_wording = "Crafted With"
 	nutrition_mod = 2 // 200% higher hunger rate. Hungry, hungry aasimar
@@ -34,8 +36,8 @@
 	possible_ages = list(AGE_IMMORTAL)
 	max_age = "Unknown"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt_muscular.dmi'
-	limbs_icon_f = 'icons/roguetown/mob/bodies/f/ft_muscular.dmi'
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mm.dmi'
+	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	use_m = TRUE

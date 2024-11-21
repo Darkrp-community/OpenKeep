@@ -23,14 +23,10 @@
 #define TRAIT_NOSLEEP				"Fatal Insomnia" //for thralls
 #define TRAIT_FASTSLEEP 			"Fast Sleeper"
 #define TRAIT_NUDIST					"Nudist" //you can't wear most clothes
-#define TRAIT_KNEESTINGER_IMMUNITY		"Blessing of Dendor"
 #define TRAIT_RETARD_ANATOMY			"Inhumen Anatomy" //can't wear hats and shoes
 #define TRAIT_NASTY_EATER 				"Inhumen Digestion" //can eat rotten food, organs, poison berries, and drink murky water
 #define TRAIT_NOFALLDAMAGE1 		"Minor fall damage immunity"
 #define TRAIT_DEATHSIGHT "Veiled Whispers" // Is notified when a player character dies, but not told exactly where or how.
-#define TRAIT_ROT_EATER				"Blessing of Pestra" //can eat rotten food
-#define TRAIT_ORGAN_EATER				"Blessing of Graggar"
-#define TRAIT_SOUL_EXAMINE				"Blessing of Necra" //can check bodies to see if they have departed
 #define TRAIT_CYCLOPS_LEFT				"Cyclops (Left)" //poked left eye
 #define TRAIT_CYCLOPS_RIGHT				"Cyclops (Right)" //poked right eye
 #define TRAIT_LEECHIMMUNE				"Unleechable" //leeches wont attach in bog squares
@@ -45,6 +41,15 @@
 #define TRAIT_ANTIMAGIC					"Anti-Magic"
 #define TRAIT_ANTISCRYING				"Anti-Scrying"
 #define TRAIT_SHOCKIMMUNE				"Shock Immunity"
+
+// Divine patron trait bonuses:
+#define TRAIT_SOUL_EXAMINE				"Blessing of Necra"  //can check bodies to see if they have departed
+#define TRAIT_ROT_EATER					"Blessing of Pestra" //can eat rotten food
+#define TRAIT_KNEESTINGER_IMMUNITY		"Blessing of Dendor" //Can move through kneestingers.
+
+// Inhumen patron trait bonuses:
+#define TRAIT_ORGAN_EATER				"Blessing of Graggar"//Can eat organs (duh.)
+#define TRAIT_CRACKHEAD					"Blessing of Baotha" //No overdose on drugs.
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -96,6 +101,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NOFALLDAMAGE1 = span_warning("I can easily handle minor falls."),
 	TRAIT_ROT_EATER = span_necrosis("I can eat rotten food."),
 	TRAIT_ORGAN_EATER = span_bloody("I can eat organs and raw flesh."),
+	TRAIT_CRACKHEAD = span_love("I can use drugs as much as I want!"),
 	TRAIT_SOUL_EXAMINE = span_deadsay("I know when someone's soul has departed."),
 	TRAIT_CYCLOPS_LEFT = span_warning("My left eye has been poked out..."),
 	TRAIT_CYCLOPS_RIGHT = span_warning("My right eye has been poked out..."),

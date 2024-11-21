@@ -34,6 +34,7 @@
 	flaws = "Madness, Rebelliousness, Disorderliness"
 	worshippers = "Druids, Beasts, Madmen"
 	sins = "Deforestation, Overhunting, Disrespecting Nature"
+	mob_traits = list(TRAIT_KNEESTINGER_IMMUNITY)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/self/beastsense
 	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
@@ -46,6 +47,7 @@
 	flaws= "Reckless, Stubborn, Destructive"
 	worshippers = "Sailors of the Sea and Sky, Horrid Sea-Creachers, Fog Islanders"
 	sins = "Fear, Hubris, Forgetfulness"
+	mob_traits = list(TRAIT_LEECHIMMUNE)
 
 /datum/patron/divine/necra
 	name = "Necra"
@@ -54,6 +56,7 @@
 	flaws = "Unchanging, Apathetic, Easy to bore"
 	worshippers = "Orderlies, Gravekeepers, Mourners"
 	sins = "Heretical Magic, Untimely Death, Disturbance of Rest"
+	mob_traits = list(TRAIT_SOUL_EXAMINE)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/churn
@@ -81,6 +84,7 @@
 	flaws = "Drunkenness, Crudeness, Irresponsibility"
 	worshippers = "The Ill and Infirm, Alchemists, Physicians"
 	sins = "´Curing´ Abnormalities, Refusing to Help Unfortunates, Groveling"
+	mob_traits = list(TRAIT_EMPATH, TRAIT_ROT_EATER)
 	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
 	t1 = /obj/effect/proc_holder/spell/invoked/heal
 	t2 = /obj/effect/proc_holder/spell/invoked/attach_bodypart

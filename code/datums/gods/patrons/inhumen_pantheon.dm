@@ -27,6 +27,7 @@
 	flaws = "Rage, Hatred, Bloodthirst"
 	worshippers = "Greenskins, The Revenge-Driven, Sadists"
 	sins = "Compassion, Frailty, Servility"
+	mob_traits = list(TRAIT_ORGAN_EATER)
 	confess_lines = list(
 		"GRAGGAR IS THE BEAST I WORSHIP!",
 		"GRAGGAR WILL RAVAGE YOU!",
@@ -53,6 +54,7 @@
 	flaws = "Enviousness, Self-Destruction, Willingness to Sacrifice Others"
 	worshippers = "Addicts, Gamblers, the Motherless and Maidenless"
 	sins = "Sobriety, Self-Sacrifice, Faltering Willpower"
+	mob_traits = list(TRAIT_CRACKHEAD)
 	confess_lines = list(
 		"LIVE, LAUGH, LOVE! IN BAOTHA'S NAME!",
 		"JOY AT ALL COSTS! BAOTHA'S TEACHINGS REIGN!",
