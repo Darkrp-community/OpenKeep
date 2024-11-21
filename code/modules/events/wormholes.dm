@@ -64,7 +64,8 @@ GLOBAL_LIST_EMPTY(all_wormholes) // So we can pick wormholes to teleport to
 	if(iseffect(M))	//sparks don't teleport
 		return
 	if(M.anchored)
-		return
+		if(!(ismecha(M) && mech_sized))
+			return
 
 	if(ismovableatom(M))
 		if(GLOB.all_wormholes.len)

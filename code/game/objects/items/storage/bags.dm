@@ -48,6 +48,7 @@
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 	STR.max_combined_w_class = 30
 	STR.max_items = 30
+	STR.set_holdable(null, list(/obj/item/disk/nuclear))
 
 /obj/item/storage/bag/trash/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] puts [src] over [user.p_their()] head and starts chomping at the insides! Disgusting!</span>")
@@ -198,7 +199,24 @@
 		/obj/item/reagent_containers/food/snacks/grown,
 		/obj/item/seeds,
 		/obj/item/grown,
+		/obj/item/reagent_containers/honeycomb,
+		/obj/item/disk/plantgene
 		))
+////////
+
+/obj/item/storage/bag/plants/portaseeder
+	name = "portable seed extractor"
+	desc = ""
+	icon_state = "portaseeder"
+
+/obj/item/storage/bag/plants/portaseeder/verb/dissolve_contents()
+	set name = "Activate Seed Extraction"
+	set hidden = 1
+	set desc = ""
+	if(usr.incapacitated())
+		return
+	for(var/obj/item/O in contents)
+		seedify(O, 1)
 
 // -----------------------------
 //        Sheet Snatcher
@@ -431,5 +449,11 @@
 	STR.insert_preposition = "in"
 	STR.set_holdable(list(
 		/obj/item/stack/ore/bluespace_crystal,
+		/obj/item/assembly,
+		/obj/item/stock_parts,
 		/obj/item/reagent_containers/glass/beaker,
-	))
+		/obj/item/stack/cable_coil,
+		/obj/item/circuitboard,
+		/obj/item/electronics,
+		/obj/item/wallframe/camera
+		))
