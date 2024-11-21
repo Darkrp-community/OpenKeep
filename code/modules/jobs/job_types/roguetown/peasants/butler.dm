@@ -6,7 +6,7 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	f_title = "Housekeeper"
+	f_title = "Maid"
 	allowed_races = list(
 		"Humen",
 		"Elf",
