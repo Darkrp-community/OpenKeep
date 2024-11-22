@@ -808,7 +808,7 @@
 "aSn" = (
 /obj/structure/bookcase,
 /obj/item/book/rogue/law,
-/obj/item/book/rogue/ledger,
+/obj/item/book/rogue/secret/ledger,
 /obj/item/book/rogue/noc,
 /obj/item/book/rogue/yeoldecookingmanual,
 /turf/open/floor/rogue/tile{
@@ -14657,7 +14657,7 @@
 /area/rogue/indoors/town)
 "qaz" = (
 /obj/structure/bookcase,
-/obj/item/book/rogue/ledger,
+/obj/item/book/rogue/secret/ledger,
 /obj/item/book/rogue/magicaltheory,
 /obj/item/book/rogue/yeoldecookingmanual,
 /turf/open/floor/rogue/carpet,
