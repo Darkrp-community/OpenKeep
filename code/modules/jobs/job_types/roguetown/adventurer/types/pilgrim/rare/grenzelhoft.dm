@@ -60,4 +60,3 @@
 		H.change_stat("endurance", 2)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-		H.set_patron(/datum/patron/psydon) // SCREAM IF YOU LOVE Psydon

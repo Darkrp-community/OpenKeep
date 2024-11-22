@@ -64,5 +64,4 @@
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	if(H.dna?.species)
 		H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
-	if(H.patron != /datum/patron/divine/ravox)
-		H.set_patron(/datum/patron/divine/ravox)
+

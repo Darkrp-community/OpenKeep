@@ -48,5 +48,4 @@
 
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 
-	if(H.patron != /datum/patron/divine/ravox)
-		H.set_patron(/datum/patron/divine/ravox)
+
