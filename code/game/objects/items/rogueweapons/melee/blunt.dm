@@ -319,7 +319,7 @@
 	name = "shillelagh"
 	desc = "Big old oak branch, carved to a deadly weapon."
 	icon_state = "shillelagh"
-	icon = 'icons/roguetown/weapons/shillelagh.dmi'
+	icon = 'icons/roguetown/weapons/custom.dmi'
 	pixel_y = 0
 	pixel_x = 0
 	bigboy = FALSE
