@@ -1,11 +1,11 @@
 /datum/job/roguetown/niteman
-	title = "Niteman"
+	title = "Apothecary"
 	flag = NIGHTMAN
 	department_flag = NOBLEMEN
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	f_title = "Nitematron"
+	f_title = "Apothecary"
 
 	allowed_races = list(
 		"Humen",
@@ -14,10 +14,11 @@
 		"Half-Elf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Half-Orc"
 	)
 
-	tutorial = "You are renting out the bath-house in a joint operation with the Innkeep. Providing security for the bathwenches and helping them find work, or a troublemaking rake that the others hate to tolerate."
+	tutorial = "You are a dealer of all things drugs. You operate on the dark side of town, a necessary evil to maintain sanity. Having moved into an old bathhouse, you have set up shop to trade substances... whether you import them or concoct them yourself."
 
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/niteman
@@ -33,18 +34,20 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/keyring/niteman
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	if(H.mind)
-		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE) // Need the strongarm to wrestle people out of the baths
-		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)	// Don't make me regret these levels.
+		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE) // Need the strongarm to wrestle people out of the baths
+		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)	// Don't make me regret these levels.
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-		H.change_stat("strength", 1)
-		H.change_stat("intelligence", -1)
+		H.mind?.adjust_skillrank(/datum/skill/craft/alchemy, 4, TRUE)
+		H.change_stat("strength", -1)
+		H.change_stat("intelligence", 1)
 
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou/leather

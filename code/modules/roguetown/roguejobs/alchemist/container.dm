@@ -26,6 +26,9 @@
 /obj/item/reagent_containers/glass/bottle/rogue/strongpoison
 	list_reagents = list(/datum/reagent/strongpoison = 15)
 
+/obj/item/reagent_containers/glass/bottle/rogue/killersice
+	list_reagents = list(/datum/reagent/killersice = 15)
+
 /obj/item/reagent_containers/glass/bottle/rogue/wine
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/wine = 45)
 

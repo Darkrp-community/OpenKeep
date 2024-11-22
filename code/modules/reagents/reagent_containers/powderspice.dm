@@ -11,7 +11,7 @@
 
 /obj/item/reagent_containers/powder/spice
 	name = "spice"
-	desc = ""
+	desc = "A potent powder that opens the mind to previously unseen possibilities..."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "spice"
 	item_state = "spice"
@@ -53,7 +53,7 @@
 	show_when_dead = FALSE
 
 /datum/reagent/druqks/overdose_start(mob/living/M)
-	M.flash_fullscreen("hey")
+	//M.flash_fullscreen("hey") NO. NONE OF THAT.
 	M.visible_message("<span class='warning'>Blood runs from [M]'s nose.</span>")
 
 /datum/reagent/druqks/overdose_process(mob/living/M)

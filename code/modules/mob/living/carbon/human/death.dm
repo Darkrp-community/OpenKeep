@@ -110,7 +110,8 @@
 
 		if(yeae)
 			if(mind)
-//				if((mind.assigned_role == "King") || (mind.assigned_role == "Priest"))
+				if((mind.assigned_role == "King"))
+					addomen("nolord")			// Re-adding at Ook's request.
 				if(mind.assigned_role == "Priest")
 					addomen("importantdeath")	// message changed to reflect only priest for now, change it if more roles added. (Priest dying causes Bad Omen)
 
