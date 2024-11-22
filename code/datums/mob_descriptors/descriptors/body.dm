@@ -20,14 +20,9 @@
 /datum/mob_descriptor/body/bulky
 	name = "Bulky"
 
-/datum/mob_descriptor/body/bottomheavy
-	name = "Bottom Heavy"
 
 /datum/mob_descriptor/body/bowleg
 	name = "Bow-legged"
-
-/datum/mob_descriptor/body/curvy
-	name = "Curvy"
 
 /datum/mob_descriptor/body/decrepit
 	name = "Decrepit"
