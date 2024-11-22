@@ -18,7 +18,7 @@
 		"Half-Orc"
 	)
 
-	tutorial = "You are a dealer of all things drugs. You operate on the dark side of town, a necessary evil to maintain sanity."
+	tutorial = "You are a dealer of all things drugs. You operate on the dark side of town, a necessary evil to maintain sanity. Having moved into an old bathhouse, you have set up shop to trade substances... whether you import them or concoct them yourself."
 
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/niteman
