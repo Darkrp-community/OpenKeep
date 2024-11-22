@@ -28,6 +28,41 @@
 
 /*========= SKILL LEVEL: 2 REQUIRED ==========*/
 
+/datum/crafting_recipe/roguetown/weaving/stockings_white_silk
+	name = "white silk stockings"
+	result = list(/obj/item/clothing/under/roguetown/tights/stockings/silk/white)
+	reqs = list(/obj/item/natural/silk = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/weaving/stockings_black_silk
+	name = "black silk stockings"
+	result = list(/obj/item/clothing/under/roguetown/tights/stockings/silk/black)
+	reqs = list(/obj/item/natural/silk = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/weaving/stockings_blue_silk
+	name = "blue silk stockings"
+	result = list(/obj/item/clothing/under/roguetown/tights/stockings/silk/blue)
+	reqs = list(/obj/item/natural/silk = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/weaving/stockings_red_silk
+	name = "red silk stockings"
+	result = list(/obj/item/clothing/under/roguetown/tights/stockings/silk/red)
+	reqs = list(/obj/item/natural/silk = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/weaving/stockings_purple_silk
+	name = "purple silk stockings"
+	result = list(/obj/item/clothing/under/roguetown/tights/stockings/silk/purple)
+	reqs = list(/obj/item/natural/silk = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2
+
 /datum/crafting_recipe/roguetown/weaving/cloak
 	name = "silk half cloak"
 	result = list(/obj/item/clothing/cloak/half)
@@ -65,6 +100,20 @@
 	result = list(/obj/item/clothing/suit/roguetown/shirt/dress/valorian)
 	craftdiff = 3
 	sellprice = 20
+
+/datum/crafting_recipe/roguetown/weaving/silkpantaloons
+	name = "silk pantaloons"
+	result = list (/obj/item/clothing/under/roguetown/pantaloons/random)
+	craftdiff = 3
+	sellprice = 20
+
+/datum/crafting_recipe/roguetown/weaving/cape_silk
+	name = "silk cape"
+	result = list(/obj/item/clothing/cloak/cape/silk/random)
+	reqs = list(/obj/item/natural/silk = 3)
+	craftdiff = 3
+	sellprice = 40
+
 
 /*========= SKILL LEVEL: 4 REQUIRED ==========*/
 

@@ -285,16 +285,6 @@
 	chargetime = 0
 	swingdelay = 0
 
-/datum/intent/pick
-	name = "pick"
-	icon_state = "inpick"
-	attack_verb = list("picks","impales")
-	hitsound = list('sound/combat/hits/pick/genpick (1).ogg', 'sound/combat/hits/pick/genpick (2).ogg')
-	animname = "strike"
-	blade_class = BCLASS_PICK
-	chargetime = 0
-	swingdelay = 3
-
 /datum/intent/shoot //shooting crossbows or other guns, no parrydrain
 	name = "shoot"
 	icon_state = "inshoot"

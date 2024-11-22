@@ -319,7 +319,7 @@
 	name = "shillelagh"
 	desc = "Big old oak branch, carved to a deadly weapon."
 	icon_state = "shillelagh"
-	icon = 'icons/roguetown/weapons/shillelagh.dmi'
+	icon = 'icons/roguetown/weapons/custom.dmi'
 	pixel_y = 0
 	pixel_x = 0
 	bigboy = FALSE
@@ -349,6 +349,7 @@
 	desc = "A great dwarven warhammer made of stern steel, enscratched with oaths of battle and time."
 	icon_state = "warhammer"
 	wlength = WLENGTH_GREAT
+	wdefense = GREAT_PARRY //Signature weapon.
 	swingsound = BLUNTWOOSH_HUGE
 	sellprice = 100
 
