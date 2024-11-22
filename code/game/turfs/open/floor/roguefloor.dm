@@ -46,14 +46,6 @@
 /turf/open/floor/rogue/ruinedwood/chevron
 	icon_state = "weird2"
 
-/*	..................   Darker version   ................... */
-/turf/open/floor/rogue/ruinedwood/darker // here problem was opposite, too bright wood for bandit lair
-	color = "#d9c9b0"
-/turf/open/floor/rogue/ruinedwood/turned/darker
-	color = "#d9c9b0"
-
-/turf/open/floor/rogue/tile/kitchen // faded kitchen, too dark floors look bad IMO, this much nicer
-	icon_state = "tavern"
 
 /turf/open/floor/rogue/twig
 	icon_state = "twig"
@@ -973,16 +965,15 @@
 
 /turf/open/floor/rogue/cobble/alt
 	icon_state = "cobblestonealt1"
-
 /turf/open/floor/rogue/cobble/alt/Initialize()
 	. = ..()
 	icon_state = "cobblestonealt[rand(1,3)]"
 
 /turf/open/floor/rogue/cobblerock/alt
 	icon_state = "cobblealt1"
-
-/turf/open/floor/rogue/cobblerock/alto
-	icon_state = "cobblealt2"
+/turf/open/floor/rogue/cobblerock/alt/Initialize()
+	. = ..()
+	icon_state = "cobblealt[rand(1,3)]"
 
 /obj/effect/decal/cobbleedge/rockalt_edge
 	icon_state = "cobblealt_edges"
@@ -1200,6 +1191,30 @@
 /turf/open/floor/rogue/plank/h
 	icon_state = "plank2"
 
+/*	..................   Misc   ................... */
+/turf/open/floor/rogue/ruinedwood/darker // here problem was opposite, too bright wood for bandit lair
+	color = "#d9c9b0"
+/turf/open/floor/rogue/ruinedwood/turned/darker
+	color = "#d9c9b0"
+
+/turf/open/floor/rogue/tile/kitchen // faded kitchen, too dark floors look bad IMO, this much nicer
+	icon_state = "tavern"
+
+
 /turf/open/floor/rogue/tile/checker_green
 	icon_state = "tile"
 	color = "#94df5b"
+
+/turf/open/water/bath/pool
+	desc = "Clear water, pleasant temperature. Soothing."
+	icon_state = "bathtile_pool"
+/turf/open/water/bath/pool/Initialize()
+	.  = ..()
+	icon_state = "bathtile_pool"
+
+/turf/open/water/bath/pool/mid
+	icon_state = "bathtile_pool_mid"
+/turf/open/water/bath/pool/mid/Initialize()
+	.  = ..()
+	icon_state = "bathtile_pool_mid"
+/*	................................................ */
