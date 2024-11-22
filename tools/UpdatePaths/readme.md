@@ -4,7 +4,7 @@
 
 Drag one of the scripts in the “Scripts” folder onto the .bat file “Update Paths” to open it with the `.bat` file (or use the Python script directly depending on your operating system). Let the script run to completion.
 
-Use this tool before using MapMerge2 or opening the map in an map editor. This is because the map editor may discard any unknown paths not found in the /tg/station environment (or what it builds after parsing `stonekeep.dme`).
+Use this tool before using MapMerge2 or opening the map in an map editor. This is because the map editor may discard any unknown paths not found in the /tg/station environment (or what it builds after parsing `tgstation.dme`).
 
 ## Scriptmaking:
 
@@ -134,7 +134,7 @@ Presto, like it never existed. Note how both the "a" and "b" files were able to 
 
 ### Multiple Path Output
 
-UpdatePaths has the powerful ability to output multiple paths from a single input path. Let's say that you have a snowflake turf (`/turf/open/floor/iron/i_like_spawning_mobs`) with some behavior that you atomize out into some spawner `/obj/mob_spawner` that can work on every single turf. So, let's script that out.
+UpdatePaths has the powerful ability to output multiple paths from a single input path. Let's say that you have a snowflake turf (`/turf/open/floor/iron/i_like_spawning_mobs`) with some behavior that you atomize out into some spawner `/obj/mob_spawner` that can work on every single turf. So, let's script that out. 
 
 ```txt
 /turf/open/floor/iron/i_like_spawning_mobs : /obj/mob_spawner, /turf/open/floor/iron
