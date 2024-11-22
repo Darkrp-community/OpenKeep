@@ -30,7 +30,7 @@
 /area/rogue/outdoors/river)
 "ai" = (
 /obj/structure/fluff/signage{
-	name = "Stonekeep"
+	name = "Vanderlin"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
