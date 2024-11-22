@@ -81,6 +81,11 @@
 /obj/effect/spawner/roguemap/tollrandom,
 /turf/open/floor/rogue/churchrough,
 /area/rogue/underworld)
+"x" = (
+/obj/effect/spawner/roguemap/tollrandom,
+/obj/effect/spawner/roguemap/tollrandom,
+/turf/open/floor/rogue/churchrough,
+/area/rogue/underworld)
 "C" = (
 /obj/effect/landmark/underworldcoin,
 /turf/open/floor/rogue/underworld/road,
@@ -4675,7 +4680,7 @@ e
 n
 n
 n
-e
+V
 e
 e
 n
@@ -4923,12 +4928,12 @@ n
 n
 e
 e
+V
 e
 e
 e
 e
-e
-e
+V
 e
 e
 e
@@ -5067,7 +5072,7 @@ e
 e
 e
 e
-e
+V
 e
 e
 e
@@ -5080,7 +5085,7 @@ n
 n
 n
 n
-e
+V
 e
 e
 e
@@ -5316,7 +5321,7 @@ e
 e
 e
 e
-e
+V
 e
 e
 e
@@ -5325,7 +5330,7 @@ e
 e
 n
 n
-e
+V
 e
 e
 e
@@ -5464,7 +5469,7 @@ n
 n
 n
 n
-e
+V
 e
 e
 n
@@ -5704,7 +5709,7 @@ n
 e
 e
 e
-e
+V
 e
 e
 e
@@ -5724,7 +5729,7 @@ e
 e
 e
 e
-e
+V
 e
 e
 e
@@ -5858,7 +5863,7 @@ e
 e
 e
 e
-e
+V
 e
 e
 e
@@ -5969,7 +5974,7 @@ e
 e
 e
 e
-e
+V
 e
 e
 e
@@ -6106,7 +6111,7 @@ n
 n
 n
 v
-k
+x
 e
 e
 e
@@ -6777,7 +6782,7 @@ n
 n
 n
 e
-e
+V
 e
 e
 n
@@ -7017,7 +7022,7 @@ e
 n
 e
 e
-e
+V
 e
 e
 n
@@ -9097,7 +9102,7 @@ e
 n
 e
 e
-e
+V
 V
 e
 e
@@ -9222,7 +9227,7 @@ e
 n
 n
 n
-e
+V
 e
 n
 n
@@ -9740,7 +9745,7 @@ n
 e
 e
 e
-e
+V
 e
 n
 n
@@ -10002,7 +10007,7 @@ e
 e
 e
 e
-e
+V
 e
 e
 e
@@ -10388,7 +10393,7 @@ e
 e
 e
 e
-e
+V
 e
 e
 e
@@ -10643,7 +10648,7 @@ n
 n
 e
 e
-e
+V
 e
 e
 e
@@ -10779,7 +10784,7 @@ e
 e
 e
 e
-e
+V
 e
 e
 e
@@ -10911,7 +10916,7 @@ e
 e
 e
 e
-e
+V
 e
 e
 e
@@ -11032,7 +11037,7 @@ n
 n
 e
 e
-e
+V
 e
 n
 n
@@ -11175,7 +11180,7 @@ e
 n
 n
 n
-e
+V
 e
 e
 e
@@ -11422,7 +11427,15 @@ n
 n
 n
 e
+V
 e
+e
+e
+e
+e
+V
+e
+V
 e
 e
 e
@@ -11442,15 +11455,7 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
-e
-e
+V
 e
 e
 e
@@ -11572,7 +11577,7 @@ e
 e
 e
 e
-e
+V
 e
 e
 e
