@@ -55,7 +55,6 @@
 		/obj/item/extinguisher/mini,
 		/obj/item/clothing/gloves,
 		/obj/item/forcefield_projector,
-		/obj/item/lightreplacer,
 		/obj/item/plunger
 		))
 
@@ -463,7 +462,6 @@
 	STR.max_items = 6
 	STR.max_w_class = WEIGHT_CLASS_BULKY // Set to this so the  light replacer can fit.
 	STR.set_holdable(list(
-		/obj/item/lightreplacer,
 		/obj/item/flashlight,
 		/obj/item/reagent_containers/spray,
 		/obj/item/soap,
@@ -475,7 +473,6 @@
 		))
 
 /obj/item/storage/belt/janitor/full/PopulateContents()
-	new /obj/item/lightreplacer(src)
 	new /obj/item/reagent_containers/spray/cleaner(src)
 	new /obj/item/soap/nanotrasen(src)
 	new /obj/item/melee/flyswatter(src)

@@ -297,7 +297,6 @@
 	backpack_contents = list(/obj/item/storage/box=1,\
 		/obj/item/ammo_box/a357=1,\
 		/obj/item/storage/firstaid/regular=1,\
-		/obj/item/storage/box/flashbangs=1,\
 		/obj/item/flashlight=1)
 
 /datum/outfit/death_commando/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -332,7 +331,6 @@
 	id = /obj/item/card/id/ert
 	suit_store = /obj/item/tank/internals/oxygen
 	back = /obj/item/storage/backpack/holding
-	box = /obj/item/storage/box/debugtools
 	internals_slot = SLOT_S_STORE
 	backpack_contents = list(
 		/obj/item/gun/magic/wand/resurrection/debug=1,\

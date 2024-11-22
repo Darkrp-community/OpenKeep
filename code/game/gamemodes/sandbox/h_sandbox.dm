@@ -35,7 +35,6 @@ GLOBAL_VAR_INIT(hsboxspawn, TRUE)
 			"Standard Tools",
 			"Spawn Flashlight"					= "hsbspawn&path=[/obj/item/flashlight]",
 			"Spawn Toolbox"						= "hsbspawn&path=[/obj/item/storage/toolbox/mechanical]",
-			"Spawn Light Replacer"				= "hsbspawn&path=[/obj/item/lightreplacer]",
 			"Spawn Medical Kit"					= "hsbspawn&path=[/obj/item/storage/firstaid/regular]",
 			"Spawn All-Access ID"				= "hsbaaid",
 

@@ -274,13 +274,6 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 			to_chat(M, "<span class='warning'>[src] cuts into your hand!</span>")
 			M.apply_damage(force*0.5, BRUTE, hit_hand)
 
-
-/obj/item/shard/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/lightreplacer))
-		I.attackby(src, user)
-	else
-		return ..()
-
 /obj/item/shard/welder_act(mob/living/user, obj/item/I)
 	..()
 	if(I.use_tool(src, user, 0, volume=50))

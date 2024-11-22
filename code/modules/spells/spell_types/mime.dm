@@ -66,44 +66,6 @@
 			A.setDir(user.dir)
 			A.buckle_mob(user)
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/mime_box
-	name = "Invisible Box"
-	desc = ""
-	school = "mime"
-	panel = "Mime"
-	summon_type = list(/obj/item/storage/box/mime)
-	invocation_type = "emote"
-	invocation_emote_self = "<span class='notice'>I conjure up an invisible box, large enough to store a few things.</span>"
-	summon_lifespan = 500
-	charge_max = 300
-	clothes_req = FALSE
-	antimagic_allowed = TRUE
-	range = 0
-	cast_sound = null
-	human_req = TRUE
-
-	action_icon = 'icons/mob/actions/actions_mime.dmi'
-	action_icon_state = "invisible_box"
-	action_background_icon_state = "bg_mime"
-
-/obj/effect/proc_holder/spell/aoe_turf/conjure/mime_box/cast(list/targets,mob/user = usr)
-	..()
-	var/turf/T = user.loc
-	for (var/obj/item/storage/box/mime/B in T)
-		user.put_in_hands(B)
-		B.alpha = 255
-		addtimer(CALLBACK(B, TYPE_PROC_REF(/obj/item/storage/box/mime, emptyStorage), FALSE), (summon_lifespan - 1))
-
-/obj/effect/proc_holder/spell/aoe_turf/conjure/mime_box/Click()
-	if(usr && usr.mind)
-		if(!usr.mind.miming)
-			to_chat(usr, "<span class='warning'>I must dedicate myself to silence first!</span>")
-			return
-		invocation = "<B>[usr.real_name]</B> moves [usr.p_their()] hands in the shape of a cube, pressing a box out of the air."
-	else
-		invocation_type ="none"
-	..()
-
 
 /obj/effect/proc_holder/spell/targeted/mime/speak
 	name = "Speech"

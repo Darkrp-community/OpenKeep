@@ -108,8 +108,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 		/obj/effect/proc_holder/spell/targeted/sintouch,
 		/obj/effect/proc_holder/spell/targeted/sintouch/ascended,
 		/obj/effect/proc_holder/spell/targeted/summon_contract,
-		/obj/effect/proc_holder/spell/targeted/conjure_item/violin,
-		/obj/effect/proc_holder/spell/targeted/summon_dancefloor))
+		/obj/effect/proc_holder/spell/targeted/conjure_item/violin))
 	var/ascendable = FALSE
 
 /datum/antagonist/devil/can_be_owned(datum/mind/new_owner)
@@ -325,8 +324,6 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/summon_contract(null))
 	if(obligation == OBLIGATION_FIDDLE)
 		owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/conjure_item/violin(null))
-	else if(obligation == OBLIGATION_DANCEOFF)
-		owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/summon_dancefloor(null))
 
 /datum/antagonist/devil/proc/give_appropriate_spells()
 	remove_spells()

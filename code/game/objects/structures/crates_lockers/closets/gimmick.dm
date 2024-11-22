@@ -65,8 +65,6 @@
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/suit/armor/tdome/red(src)
 	for(var/i in 1 to 3)
-		new /obj/item/storage/box/flashbangs(src)
-	for(var/i in 1 to 3)
 		new /obj/item/clothing/head/helmet/thunderdome(src)
 
 /obj/structure/closet/thunderdome/tdgreen
@@ -77,8 +75,6 @@
 	..()
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/suit/armor/tdome/green(src)
-	for(var/i in 1 to 3)
-		new /obj/item/storage/box/flashbangs(src)
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/head/helmet/thunderdome(src)
 

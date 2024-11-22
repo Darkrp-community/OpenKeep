@@ -64,12 +64,6 @@
 			update_icon()
 		else
 			to_chat(user, fail_msg)
-	else if(istype(I, /obj/item/lightreplacer))
-		if(!myreplacer)
-			var/obj/item/lightreplacer/l=I
-			l.janicart_insert(user,src)
-		else
-			to_chat(user, fail_msg)
 	else if(istype(I, /obj/item/clothing/suit/caution))
 		if(signs < max_signs)
 			put_in_cart(I, user)
@@ -100,8 +94,6 @@
 		dat += "<a href='?src=[REF(src)];mop=1'>[mymop.name]</a><br>"
 	if(myspray)
 		dat += "<a href='?src=[REF(src)];spray=1'>[myspray.name]</a><br>"
-	if(myreplacer)
-		dat += "<a href='?src=[REF(src)];replacer=1'>[myreplacer.name]</a><br>"
 	if(signs)
 		dat += "<a href='?src=[REF(src)];sign=1'>[signs] sign\s</a><br>"
 	var/datum/browser/popup = new(user, "janicart", name, 240, 160)
@@ -130,11 +122,6 @@
 			user.put_in_hands(myspray)
 			to_chat(user, "<span class='notice'>I take [myspray] from [src].</span>")
 			myspray = null
-	if(href_list["replacer"])
-		if(myreplacer)
-			user.put_in_hands(myreplacer)
-			to_chat(user, "<span class='notice'>I take [myreplacer] from [src].</span>")
-			myreplacer = null
 	if(href_list["sign"])
 		if(signs)
 			var/obj/item/clothing/suit/caution/Sign = locate() in src
@@ -158,8 +145,6 @@
 		add_overlay("cart_mop")
 	if(myspray)
 		add_overlay("cart_spray")
-	if(myreplacer)
-		add_overlay("cart_replacer")
 	if(signs)
 		add_overlay("cart_sign[signs]")
 	if(reagents.total_volume > 0)

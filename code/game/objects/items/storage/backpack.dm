@@ -499,7 +499,6 @@
 	new /obj/item/reagent_containers/spray/chemsprayer/bioterror(src)
 	new /obj/item/gun/syringe/syndicate(src)
 	new /obj/item/gun/ballistic/automatic/c20r/toy(src)
-	new /obj/item/storage/box/syringes(src)
 	new /obj/item/ammo_box/foambox/riot(src)
 	if(prob(5))
 		new /obj/item/reagent_containers/food/snacks/pizza/pineapple(src)
