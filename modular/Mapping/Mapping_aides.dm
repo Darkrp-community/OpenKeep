@@ -264,6 +264,30 @@
 
 
 /*	..................   Spider stuff   ................... */
+
+/obj/structure/spider/stickyweb
+	name = "web"
+	icon = 'modular/Mapping/icons/webbing.dmi'
+	icon_state = "stickyweb1"
+	resistance_flags = FLAMMABLE
+	alpha = 109
+	opacity = TRUE
+
+/obj/structure/spider/stickyweb/CanPass(atom/movable/mover, turf/target)
+	if(isliving(mover))
+		if(prob(50) && !HAS_TRAIT(mover, TRAIT_WEBWALK))
+			to_chat(mover, "<span class='danger'>I get stuck in \the [src] for a moment.</span>")
+			return FALSE
+	else if(istype(mover, /obj/projectile))
+		return prob(30)
+	return TRUE
+
+/obj/structure/spider/stickyweb/fire_act(added, maxstacks)
+	visible_message("<span class='warning'>[src] catches fire!</span>")
+	var/turf/T = get_turf(src)
+	qdel(src)
+	new /obj/effect/hotspot(T)
+
 /obj/structure/spider/stickyweb/solo
 	icon_state = "stickyweb3"
 

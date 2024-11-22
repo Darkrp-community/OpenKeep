@@ -43,8 +43,6 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 		if(!GLOB.forecast)
 			switch(GLOB.tod)
 				if("dawn")
-					if(prob(12))
-						GLOB.forecast = "fog"
 					if(prob(13))
 						GLOB.forecast = "rain"
 				if("day")
@@ -54,22 +52,15 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 					if(prob(13))
 						GLOB.forecast = "rain"
 				if("night")
-					if(prob(5))
-						GLOB.forecast = "fog"
 					if(prob(21))
 						GLOB.forecast = "rain"
 			if(GLOB.forecast == "rain")
 				var/foundnd
-				for(var/datum/weather/rain/R in SSweather.curweathers)
-					foundnd = TRUE
+				for(var/datum/particle_weather/weather in SSParticleWeather.runningWeather)
+					if(weather.target_trait == PARTICLEWEATHER_RAIN)
+						foundnd = TRUE
 				if(!foundnd)
-					SSweather.run_weather(/datum/weather/rain, 1)
-			if(GLOB.forecast == "fog")
-				var/foundnd
-				for(var/datum/weather/fog/R in SSweather.curweathers)
-					foundnd = TRUE
-				if(!foundnd)
-					SSweather.run_weather(/datum/weather/fog, 1)
+					SSParticleWeather.run_weather(pick(/datum/particle_weather/rain_gentle, /datum/particle_weather/rain_storm))
 		else
 			switch(GLOB.forecast) //end the weather now
 				if("rain")
@@ -78,8 +69,6 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 					else
 						GLOB.forecast = null
 				if("rainbow")
-					GLOB.forecast = null
-				if("fog")
 					GLOB.forecast = null
 
 	if(GLOB.tod != oldtod)
