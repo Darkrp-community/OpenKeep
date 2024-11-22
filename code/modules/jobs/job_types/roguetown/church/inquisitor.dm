@@ -7,7 +7,11 @@
 	spawn_positions = 1
 
 	allowed_races = list(
-		"Humen"
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Aasimar"
 	)
 	allowed_sexes = list(MALE, FEMALE)
 
