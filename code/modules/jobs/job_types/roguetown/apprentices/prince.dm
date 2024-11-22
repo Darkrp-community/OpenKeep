@@ -60,6 +60,7 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
+		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
 		belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 		beltl = /obj/item/roguekey/manor
 		backr = /obj/item/storage/backpack/rogue/satchel
