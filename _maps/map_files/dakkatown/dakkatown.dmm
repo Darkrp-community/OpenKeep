@@ -2032,7 +2032,7 @@
 /area/rogue/indoors/town/garrison)
 "hG" = (
 /obj/structure/roguemachine/musicbox,
-/obj/structure/table/wood/plain/alto,
+/obj/structure/table/wood/plain/alt,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/bath)
 "hH" = (
@@ -7053,7 +7053,7 @@
 /area/rogue/outdoors/town)
 "Ba" = (
 /obj/structure/roguemachine/musicbox,
-/obj/structure/table/wood/plain/alto,
+/obj/structure/table/wood/plain/alt,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/tavern)
 "Bb" = (
