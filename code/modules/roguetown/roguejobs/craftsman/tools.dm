@@ -45,13 +45,9 @@
 //	inhand_x_dimension = 64
 //	inhand_y_dimension = 64
 //	bigboy = TRUE
-	wlength = WLENGTH_LONG
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
 	swingsound = list('sound/combat/wooshes/blunt/shovel_swing.ogg','sound/combat/wooshes/blunt/shovel_swing2.ogg')
 	drop_sound = 'sound/foley/dropsound/shovel_drop.ogg'
-	smeltresult = /obj/item/ingot/iron
-	associated_skill = /datum/skill/combat/polearms
+	associated_skill = /datum/skill/combat/knives
 	max_blade_int = 50
 
 /obj/item/natural/plank
@@ -72,6 +68,25 @@
 	max_integrity = 20
 	muteinmouth = TRUE
 	w_class = WEIGHT_CLASS_BULKY
+	bundletype = /obj/item/natural/bundle/plank
+
+/obj/item/natural/plank/attack_right(mob/user)
+	to_chat(user, "<span class='warning'>I start to collect [src]...</span>")
+	if(move_after(user, 5 SECONDS, target = src))
+		var/plankcount = 0
+		for(var/obj/item/natural/plank/F in get_turf(src))
+			plankcount++
+		while(plankcount > 0)
+			if(plankcount == 1)
+				new /obj/item/natural/plank(get_turf(user))
+				plankcount--
+			else if(plankcount >= 2)
+				var/obj/item/natural/bundle/plank/B = new(get_turf(user))
+				B.amount = clamp(plankcount, 2, 3)
+				B.update_bundle()
+				plankcount -= clamp(plankcount, 2, 3)
+		for(var/obj/item/natural/plank/F in get_turf(src))
+			qdel(F)
 
 /obj/item/natural/plankshort
 	name = "short wooden plank"
@@ -79,6 +94,7 @@
 	force = 8
 	throwforce = 8
 	icon_state = "shortplank"
+	icon = 'icons/roguetown/items/crafting.dmi'
 	firefuel = 10 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = null
@@ -86,7 +102,27 @@
 	experimental_onhip = TRUE
 	max_integrity = 15
 	muteinmouth = TRUE
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
+	bundletype = /obj/item/natural/bundle/plankshort
+
+/obj/item/natural/plankshort/attack_right(mob/user)
+	to_chat(user, "<span class='warning'>I start to collect [src]...</span>")
+	if(move_after(user, 5 SECONDS, target = src))
+		var/splankcount = 0
+		for(var/obj/item/natural/plank/F in get_turf(src))
+			splankcount++
+		while(splankcount > 0)
+			if(splankcount == 1)
+				new /obj/item/natural/plankshort(get_turf(user))
+				splankcount--
+			else if(splankcount >= 2)
+				var/obj/item/natural/bundle/plankshort/B = new(get_turf(user))
+				B.amount = clamp(splankcount, 2, 3)
+				B.update_bundle()
+				splankcount -= clamp(splankcount, 2, 3)
+		for(var/obj/item/natural/plankshort/F in get_turf(src))
+			qdel(F)
+
 
 /obj/item/natural/stoneblock
 	name = "stone block"
@@ -97,16 +133,35 @@
 	dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)
 	force = 12
-	throwforce = 20 //brick is valid wea
+	throwforce = 20 //brick is valid weapon
 	slot_flags = null
 	obj_flags = null
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
+	bundletype = /obj/item/natural/bundle/stoneblock
 
+/obj/item/natural/stoneblock/attack_right(mob/user)
+	to_chat(user, "<span class='warning'>I start to collect [src]...</span>")
+	if(move_after(user, 5 SECONDS, target = src))
+		var/blockcount = 0
+		for(var/obj/item/natural/stoneblock/F in get_turf(src))
+			blockcount++
+		while(blockcount > 0)
+			if(blockcount == 1)
+				new /obj/item/natural/stoneblock(get_turf(user))
+				blockcount--
+			else if(blockcount >= 2)
+				var/obj/item/natural/bundle/stoneblock/B = new(get_turf(user))
+				B.amount = clamp(blockcount, 2, 3)
+				B.update_bundle()
+				blockcount -= clamp(blockcount, 2, 3)
+		for(var/obj/item/natural/stoneblock/F in get_turf(src))
+			qdel(F)
 
 /obj/item/natural/bundle/plank
 	name = "stack of wooden planks"
 	desc = "A stack of wooden planks."
 	icon_state = "woodplankbundle1"
+	icon = 'icons/roguetown/items/crafting.dmi'
 	possible_item_intents = list(/datum/intent/use)
 	force = 15
 	throwforce = 18
@@ -115,7 +170,7 @@
 	resistance_flags = null
 	firemod = null
 	w_class = WEIGHT_CLASS_HUGE
-	stackname = "glass"
+	stackname = "plank"
 	stacktype = /obj/item/natural/plank
 	maxamount = 3
 	icon1 = "woodplankbundle1"
@@ -123,10 +178,11 @@
 	icon2 = "woodplankbundle2"
 	icon2step = 3
 
-/obj/item/natural/bundle/shortplank
+/obj/item/natural/bundle/plankshort
 	name = "stack of short wooden planks"
 	desc = "A stack of short wooden planks."
 	icon_state = "shortplankbundle1"
+	icon = 'icons/roguetown/items/crafting.dmi'
 	possible_item_intents = list(/datum/intent/use)
 	force = 15
 	throwforce = 18
@@ -136,7 +192,7 @@
 	firemod = null
 	w_class = WEIGHT_CLASS_HUGE
 	stackname = "planks"
-	stacktype = /obj/item/natural/plank
+	stacktype = /obj/item/natural/plankshort
 	maxamount = 3
 	icon1 = "shortplankbundle1"
 	icon1step = 2
@@ -147,6 +203,7 @@
 	name = "stack of stone blocks"
 	desc = "A stack of stone blocks."
 	icon_state = "stoneblockbundle1"
+	icon = 'icons/roguetown/items/crafting.dmi'
 	possible_item_intents = list(/datum/intent/use)
 	force = 15
 	throwforce = 18
@@ -155,10 +212,10 @@
 	resistance_flags = null
 	firemod = null
 	w_class = WEIGHT_CLASS_HUGE
-	stackname = "stine blocks"
+	stackname = "stone blocks"
 	stacktype = /obj/item/natural/stoneblock
 	maxamount = 3
 	icon1 = "stoneblockbundle1"
 	icon1step = 2
-	icon2 = "sstoneblockbundle2"
+	icon2 = "stoneblockbundle2"
 	icon2step = 3
