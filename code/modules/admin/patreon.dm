@@ -232,7 +232,6 @@ GLOBAL_LIST_EMPTY(anonymize)
 /mob/dead/new_player/verb/anonymize()
 	set category = "Options"
 	set name = "Anonymize"
-	set hidden = 0
 	if(!client)
 		return
 	if(get_playerquality(client.ckey) <= -5)
@@ -243,20 +242,18 @@ GLOBAL_LIST_EMPTY(anonymize)
 //	if(!check_whitelist(client.ckey))
 //		to_chat(src, "<span class='warning'>Whitelisted players only.</span>")
 //		return
-	if(alert(src, "Enable Anonymize? This will hide your BYOND name from anyone except \
-	Dungeon Masters while playing here, useful for dealing with negative OOC bias or \
-	maintaining privacy from other BYOND users.", "ROGUETOWN", "NO", "YES") == "YES")
-		if(GLOB.respawncounts[client.ckey])
-			to_chat(src, "<span class='warning'>You have already spawned.</span>")
-			return
-		client.prefs.anonymize = TRUE
-		client.prefs.save_preferences()
-		to_chat(src, "Anonymous... OK")
-		GLOB.anonymize |= client.ckey
+	if(client.prefs.anonymize == TRUE)
 	else
-		client.prefs.anonymize = FALSE
-		client.prefs.save_preferences()
-		to_chat(src, "Anonymous... Will be gone next round.")
+		if(alert(src, "Enable Anonymize? This will hide your BYOND name from anyone except \
+		Dungeon Masters while playing here, useful for dealing with negative OOC bias or \
+		maintaining privacy from other BYOND users.", "ROGUETOWN", "YES", "NO") == "YES")
+			if(GLOB.respawncounts[client.ckey])
+				to_chat(src, "<span class='warning'>You have already spawned.</span>")
+				return
+			client.prefs.anonymize = TRUE
+			client.prefs.save_preferences()
+			to_chat(src, "Anonymous... OK")
+			GLOB.anonymize |= client.ckey
 
 GLOBAL_LIST_EMPTY(temporary_donators)
 
