@@ -257,8 +257,8 @@
 
 /datum/crafting_recipe/roguetown/plankshort
 	name = "short wooden plank"
-	result = /obj/item/natural/plankshort
-	reqs = list(/datum/crafting_recipe/roguetown/plank = 1)
+	result = list(/obj/item/natural/plankshort, /obj/item/natural/plankshort)
+	reqs = list(/obj/item/natural/plank = 1)
 	tools = list(/obj/item/rogueweapon/handsaw)
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 1
@@ -267,7 +267,7 @@
 
 /datum/crafting_recipe/roguetown/stoneblock
 	name = "stone block"
-	result = list(/obj/item/natural/stoneblock = 2)
+	result = list(/obj/item/natural/stoneblock, /obj/item/natural/stoneblock)
 	reqs = list(/obj/item/natural/stone = 1)
 	tools = list(/obj/item/rogueweapon/chisel)
 	skillcraft = /datum/skill/craft/masonry

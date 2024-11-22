@@ -101,3 +101,64 @@
 	slot_flags = null
 	obj_flags = null
 	w_class = WEIGHT_CLASS_TINY
+
+
+/obj/item/natural/bundle/plank
+	name = "stack of wooden planks"
+	desc = "A stack of wooden planks."
+	icon_state = "woodplankbundle1"
+	possible_item_intents = list(/datum/intent/use)
+	force = 15
+	throwforce = 18
+	throw_range = 2
+	firefuel = null
+	resistance_flags = null
+	firemod = null
+	w_class = WEIGHT_CLASS_HUGE
+	stackname = "glass"
+	stacktype = /obj/item/natural/plan
+	maxamount = 3
+	icon1 = "woodplankbundle1"
+	icon1step = 2
+	icon2 = "woodplankbundle2"
+	icon2step = 3
+
+/obj/item/natural/bundle/shortplank
+	name = "stack of short wooden planks"
+	desc = "A stack of short wooden planks."
+	icon_state = "shortplankbundle1"
+	possible_item_intents = list(/datum/intent/use)
+	force = 15
+	throwforce = 18
+	throw_range = 2
+	firefuel = null
+	resistance_flags = null
+	firemod = null
+	w_class = WEIGHT_CLASS_HUGE
+	stackname = "planks"
+	stacktype = /obj/item/natural/plank
+	maxamount = 3
+	icon1 = "shortplankbundle1"
+	icon1step = 2
+	icon2 = "shortplankbundle2"
+	icon2step = 3
+
+/obj/item/natural/bundle/stoneblock
+	name = "stack of stone blocks"
+	desc = "A stack of stone blocks."
+	icon_state = "stoneblockbundle1"
+	possible_item_intents = list(/datum/intent/use)
+	force = 15
+	throwforce = 18
+	throw_range = 2
+	firefuel = null
+	resistance_flags = null
+	firemod = null
+	w_class = WEIGHT_CLASS_HUGE
+	stackname = "stine blocks"
+	stacktype = /obj/item/natural/stoneblock
+	maxamount = 3
+	icon1 = "stoneblockbundle1"
+	icon1step = 2
+	icon2 = "sstoneblockbundle2"
+	icon2step = 3

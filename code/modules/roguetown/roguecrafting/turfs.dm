@@ -31,7 +31,7 @@
 /datum/crafting_recipe/roguetown/turfs/woodwall
 	name = "wooden wall"
 	result = /turf/closed/wall/mineral/rogue/wood
-	reqs = list(/datum/crafting_recipe/roguetown/plank = 2)
+	reqs = list(/obj/item/natural/plank = 2)
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 1
 
@@ -45,7 +45,7 @@
 /datum/crafting_recipe/roguetown/turfs/woodwindow
 	name = "wooden murder hole"
 	result = /turf/closed/wall/mineral/rogue/wood/window
-	reqs = list(/datum/crafting_recipe/roguetown/plank = 2)
+	reqs = list(/obj/item/natural/plank = 2)
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 1
 
