@@ -92,6 +92,7 @@
 	"brown - oats" = "584a3b",
 	"brown - grain" = "58433b",
 	"brown - soil" = "48322a",
+	"brown - bark" = "2d1300",
 
 	"black - oil" = "181a1d",
 	"black - cave" = "201616",
