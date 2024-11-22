@@ -410,13 +410,6 @@
 			door_rattle()
 		return
 
-/obj/structure/mineral_door/attack_right(mob/user)
-	if(istype(user.get_active_held_item(), /obj/item/roguekey))
-		var/obj/item/roguekey/held = user.get_active_held_item()
-		trykeylock(held, user, TRUE)
-		return
-	. = ..()
-
 /obj/structure/mineral_door/proc/trypicklock(obj/item/I, mob/user)
 	if(door_opened || isSwitchingStates)
 		to_chat(user, span_warning("This cannot be picked while it is open."))
@@ -681,9 +674,14 @@
 	icon_state = base_state
 
 /obj/structure/mineral_door/wood/deadbolt/attack_right(mob/user)
-	if(istype(user.get_active_held_item(), /obj/item/roguekey))
-		var/obj/item/roguekey/held = user.get_active_held_item()
-		trykeylock(held, user, TRUE)
+	user.changeNext_move(CLICK_CD_FAST)
+	var/obj/item = user.get_active_held_item()
+	if(istype(item, /obj/item/roguekey) || istype(item, /obj/item/keyring))
+		if(locked)
+			to_chat(user, span_warning("It won't turn this way. Try turning to the left."))
+			door_rattle()
+			return
+		trykeylock(item, user)
 		return
 	if(door_opened || isSwitchingStates)
 		return
@@ -730,9 +728,14 @@
 	smeltresult = null
 
 /obj/structure/mineral_door/wood/donjon/stone/attack_right(mob/user)
-	if(istype(user.get_active_held_item(), /obj/item/roguekey))
-		var/obj/item/roguekey/held = user.get_active_held_item()
-		trykeylock(held, user, TRUE)
+	user.changeNext_move(CLICK_CD_FAST)
+	var/obj/item = user.get_active_held_item()
+	if(istype(item, /obj/item/roguekey) || istype(item, /obj/item/keyring))
+		if(locked)
+			to_chat(user, span_warning("It won't turn this way. Try turning to the left."))
+			door_rattle()
+			return
+		trykeylock(item, user)
 		return
 	return
 
@@ -745,9 +748,14 @@
 	..()
 
 /obj/structure/mineral_door/wood/donjon/attack_right(mob/user)
-	if(istype(user.get_active_held_item(), /obj/item/roguekey))
-		var/obj/item/roguekey/held = user.get_active_held_item()
-		trykeylock(held, user, TRUE)
+	user.changeNext_move(CLICK_CD_FAST)
+	var/obj/item = user.get_active_held_item()
+	if(istype(item, /obj/item/roguekey) || istype(item, /obj/item/keyring))
+		if(locked)
+			to_chat(user, span_warning("It won't turn this way. Try turning to the left."))
+			door_rattle()
+			return
+		trykeylock(item, user)
 		return
 	if(door_opened || isSwitchingStates)
 		return
