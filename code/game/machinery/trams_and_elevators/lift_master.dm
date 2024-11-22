@@ -655,7 +655,9 @@ GLOBAL_LIST_EMPTY(active_lifts_by_type)
 	new /obj/item/roguecoin/copper(location, copper)
 	total_coin_value -= copper
 
-	new /obj/structure/closet/crate/chest(location)
+	var/obj/structure/closet/crate/chest/chest = new /obj/structure/closet/crate/chest(location)
+	chest.open() //teehee
+	chest.close()
 
 /datum/lift_master/tram/proc/check_living()
 	for(var/obj/structure/industrial_lift/tram/platform in lift_platforms)
