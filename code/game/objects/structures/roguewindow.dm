@@ -160,14 +160,12 @@
 	visible_message("<span class='info'>[user] opens [src].</span>")
 	playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
 	climbable = TRUE
-	opacity = FALSE
 	update_icon()
 
 /obj/structure/roguewindow/proc/close_up(mob/user)
 	visible_message("<span class='info'>[user] closes [src].</span>")
 	playsound(src, 'sound/foley/doors/windowdown.ogg', 100, FALSE)
 	climbable = FALSE
-	opacity = TRUE
 	update_icon()
 
 /obj/structure/roguewindow/CanPass(atom/movable/mover, turf/target)
