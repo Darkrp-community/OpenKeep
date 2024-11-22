@@ -45,7 +45,6 @@
 		if(isobserver(user))
 			used_name = real_name
 		var/used_title = get_role_title()
-		if(GLOB.lord_titles[real_name])
 		var/display_as_wanderer = FALSE
 		var/is_returning = FALSE
 		if(migrant_type)

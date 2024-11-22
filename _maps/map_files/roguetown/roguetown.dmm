@@ -21790,6 +21790,7 @@
 /area/rogue/under/town/basement)
 "ycR" = (
 /obj/structure/fluff/railing/wood,
+/obj/structure/dock_bell,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
