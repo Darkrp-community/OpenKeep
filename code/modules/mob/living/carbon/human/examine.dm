@@ -64,6 +64,9 @@
 		else
 			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name].")
 
+		if(GLOB.lord_titles[real_name])
+			. +=  span_smallgreen(GLOB.lord_titles[real_name])
+
 		if(dna.species.use_skintones)
 			var/skin_tone_wording = dna.species.skin_tone_wording ? lowertext(dna.species.skin_tone_wording) : "skin tone"
 			var/list/skin_tones = dna.species.get_skin_list()

@@ -81,5 +81,6 @@
 
 
 /obj/effect/landmark/tram/queued_path/cargo_map_exit/tram_reached_travel_point(datum/source, datum/lift_master/tram/tram)
+	tram.try_process_order()
 	tram.hide_tram()
 	. = ..()

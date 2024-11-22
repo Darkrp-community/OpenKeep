@@ -43,7 +43,7 @@
 
 /obj/item/ammo_casing/update_icon()
 	..()
-	icon_state = "[initial(icon_state)][BB ? "-live" : ""]"
+	icon_state = "[initial(icon_state)]"
 	desc = ""
 
 //proc to magically refill a casing with a new projectile
