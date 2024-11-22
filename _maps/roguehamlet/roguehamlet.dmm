@@ -9400,7 +9400,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/sewer)
 "jPX" = (
-/obj/item/flashlight/lantern/shrunken,
+/obj/item/flashlight/flare/torch/lantern/shrunken,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave)
 "jRb" = (

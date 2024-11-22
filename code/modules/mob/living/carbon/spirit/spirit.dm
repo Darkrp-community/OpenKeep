@@ -50,7 +50,7 @@
 	create_bodyparts()
 	create_internal_organs()
 	. = ..()
-	var/L = new /obj/item/flashlight/lantern/shrunken(src.loc)
+	var/L = new /obj/item/flashlight/flare/torch/lantern/shrunken(src.loc)
 	put_in_hands(L)
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_BAREFOOT, 1, 2)
 	addtimer(CALLBACK(src, PROC_REF(give_patron_toll)), 8 MINUTES)

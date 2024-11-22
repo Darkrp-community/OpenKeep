@@ -79,7 +79,7 @@
 */
 
 // shit that eventually will need moved elsewhere
-/obj/item/flashlight/lantern/shrunken
+/obj/item/flashlight/flare/torch/lantern/shrunken
 	name = "shrunken lamp"
 	icon_state = "shrunkenlamp"
 	item_state = "shrunkenlamp"
