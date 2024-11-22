@@ -63,7 +63,7 @@
 /datum/status_effect/buff/druqks
 	id = "druqks"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/druqks
-	effectedstats = list("endurance" = 3,"speed" = 3,"fortune" = -5)
+	effectedstats = list("intelligence" = 5,"speed" = 3,"fortune" = -5)
 	duration = 2 MINUTES
 
 /datum/status_effect/buff/druqks/on_apply()
@@ -95,7 +95,7 @@
 
 /atom/movable/screen/alert/status_effect/buff/druqks
 	name = "High"
-	desc = span_nicegreen("Holy shit, I am tripping balls.")
+	desc = span_nicegreen("Holy shit, I am tripping balls!")
 	icon_state = "acid"
 
 /datum/status_effect/buff/ozium

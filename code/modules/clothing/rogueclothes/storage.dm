@@ -216,11 +216,6 @@
 	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
 
 
-//Nitemaiden pouch
-/obj/item/storage/belt/rogue/pouch/nitemaiden/PopulateContents()
-	new /obj/item/natural/cloth(src)
-	new /obj/item/bath/soap(src)
-	new /obj/item/roguecoin/copper/pile(src)
 
 //Amazon pouch
 /obj/item/storage/belt/rogue/pouch/amazon/PopulateContents()
