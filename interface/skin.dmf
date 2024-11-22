@@ -49,7 +49,7 @@ window "mainwindow"
 window "mapwindow"
 	elem "mapwindow"
 		type = MAIN
-		pos = 291,0
+		pos = 0,0
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
@@ -70,17 +70,13 @@ window "mapwindow"
 window "infowindow"
 	elem "infowindow"
 		type = MAIN
-		pos = 291,0
+		pos = 281,0
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		background-color = #000000
 		saved-params = "pos;size"
 		is-pane = true
-		outer-size = 656x538
-		outer-pos = 291,0
-		inner-pos = 8,31
-		screen-size = 1920x1040
 	elem "info"
 		type = CHILD
 		pos = 0,5
@@ -97,18 +93,13 @@ window "infowindow"
 window "outputwindow"
 	elem "outputwindow"
 		type = MAIN
-		pos = 291,0
+		pos = 0,0
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		background-color = #000000
 		saved-params = "pos;size"
 		is-pane = true
-		image-mode = tile
-		outer-size = 656x538
-		outer-pos = 291,0
-		inner-pos = 8,31
-		screen-size = 1920x1040
 	elem "browseroutput"
 		type = BROWSER
 		pos = 0,0
@@ -129,26 +120,25 @@ window "outputwindow"
 		is-default = true
 		saved-params = "max-lines"
 		enable-http-images = true
-		max-lines = 50
-		image = 'interface\\chatbg.png'
+		max-lines = 200
 	elem "input"
 		type = INPUT
-		pos = 5,449
-		size = 630x24
+		pos = 0,445
+		size = 630x25
 		anchor1 = 0,100
 		anchor2 = 100,100
 		font-size = 12
 		text-color = #ad9eb4
 		background-color = #000000
 		is-default = true
-		border = line
+		border = sunken
 		saved-params = ""
 		command = "say"
 
 window "statwindow"
 	elem "statwindow"
 		type = MAIN
-		pos = 291,0
+		pos = 0,0
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
@@ -156,11 +146,6 @@ window "statwindow"
 		background-color = #000000
 		saved-params = "pos;size"
 		is-pane = true
-		image = 'interface\\chatbg.png'
-		outer-size = 656x538
-		outer-pos = 291,0
-		inner-pos = 8,31
-		screen-size = 1920x1040
 	elem "stat"
 		type = INFO
 		pos = 0,0
@@ -169,6 +154,7 @@ window "statwindow"
 		anchor2 = 100,100
 		font-family = "Pterra"
 		font-size = 12
+		font-style = "6"
 		text-color = #d6dbd5
 		background-color = #000000
 		is-default = true
@@ -176,29 +162,23 @@ window "statwindow"
 		highlight-color = #f9bb00
 		tab-text-color = #d6dbd5
 		tab-background-color = #000000
-		tab-font-family = "Pterra"
-		tab-font-size = 16
+		tab-font-family = "Blackmoor LET"
+		tab-font-size = 20
 		prefix-color = #f9bb00
 		suffix-color = #d6dbd5
 
 window "popupwindow"
 	elem "popupwindow"
 		type = MAIN
-		pos = 291,0
+		pos = 281,150
 		size = 120x120
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
 		can-resize = false
 		icon = 'icons\\tg_32.png'
-		outer-size = 136x159
-		outer-pos = 291,0
-		inner-size = 120x120
-		inner-pos = 8,31
-		screen-size = 1920x1040
 
 window "stonekeep_prefwin"
 	elem "stonekeep_prefwin"
@@ -218,7 +198,7 @@ window "stonekeep_prefwin"
 		outer-pos = 291,0
 		inner-size = 700x530
 		inner-pos = 8,31
-		screen-size = 1920x1040
+		screen-size = 1920x1032
 	elem "preferences_browser"
 		type = BROWSER
 		pos = 0,0
