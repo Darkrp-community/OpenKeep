@@ -70,7 +70,7 @@
 	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/under/roguetown/tights/green
-	color = CLOTHING_FOREST_GREEN
+	color = CLOTHING_SPRING_GREEN
 
 /obj/item/clothing/under/roguetown/tights/jester
 	desc = "Funny tights!"

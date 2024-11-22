@@ -120,7 +120,7 @@
 /datum/anvil_recipe/armor/iron/nasal_helmet
 	name = "Nasal helmet"
 	recipe_name = "a Nasal helmet"
-	created_item = /obj/item/clothing/head/roguetown/helmet
+	created_item = /obj/item/clothing/head/roguetown/helmet/nasal
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/iron/skullcap
