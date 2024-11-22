@@ -123,11 +123,17 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 		playsound_local(src, 'sound/misc/newday.ogg', 70, FALSE)
 		animate(T, alpha = 255, time = 10, easing = EASE_IN)
 		addtimer(CALLBACK(src, PROC_REF(clear_area_text), T), 35)
+	else if(GLOB.tod == "day")
+		playsound_local(src, 'sound/misc/midday.ogg', 70, FALSE)
+	else if(GLOB.tod == "night")
+		playsound_local(src, 'sound/misc/nightfall.ogg', 70, FALSE)
+
 	var/atom/movable/screen/daynight/D = new()
 	D.alpha = 0
 	client.screen += D
 	animate(D, alpha = 255, time = 20, easing = EASE_IN)
 	addtimer(CALLBACK(src, PROC_REF(clear_time_icon), D), 30)
+
 
 /proc/station_time_debug(force_set)
 	if(isnum(force_set))
