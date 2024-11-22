@@ -1,3 +1,4 @@
+/*
 /datum/job/roguetown/nitemaiden
 	title = "Nitemaiden"
 	flag = JESTER
@@ -8,7 +9,7 @@
 
 	allowed_races =  ALL_PLAYER_RACES_BY_NAME
 
-	tutorial = "Nobody would envy your lot in life, for the role of the bathwench is not something so idly taken. It comes from a place of desperation, least usually: for any with true compassion or skill would seek position with a nunnery or the medical trade. Launder clothes and soothe wounds, that is your loathsome creed."
+	tutorial = "You should not see this.."
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	outfit = /datum/outfit/job/roguetown/nitemaiden
@@ -43,7 +44,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
-
+*/
 // Washing Implements
 
 /obj/item/bath/soap

@@ -256,13 +256,13 @@
 	lockid = "artificer"
 
 /obj/item/roguekey/niteman
-	name = "nitemaster's key"
+	name = "apothecary's key"
 	desc = "The master key of Eora's House."
 	icon_state = "greenkey"
 	lockid = "nightman"
 
 /obj/item/roguekey/nitemaiden
-	name = "nitemaiden's key"
+	name = "bathhouse key"
 	desc = "This brownish key opens a few doors within the pleasure house."
 	icon_state = "brownkey"
 	lockid = "nightmaiden"

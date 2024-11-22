@@ -291,7 +291,6 @@
 	foodtype = VEGETABLES
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	rotprocess = SHELFLIFE_LONG
-	dropshrink = 0.8
 	slices_num = 3
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/cabbage_sliced
 	chopping_sound = TRUE
@@ -313,7 +312,6 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/onion
 	distill_amt = 6
 	chopping_sound = TRUE
-	dropshrink = 0.9
 	rotprocess = SHELFLIFE_LONG
 
 /*/obj/item/reagent_containers/food/snacks/produce/onion/slice(obj/item/W, mob/user) I cant do it. Below causes a runtime its true but its so tiny! And this new one is so damn boring.
@@ -351,7 +349,6 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/voddena
 	distill_amt = 8
 	rotprocess = null
-	dropshrink = 0.9
 
 /*	..................  Pear   ................... */ // for cider or eating raw
 /obj/item/reagent_containers/food/snacks/produce/pear

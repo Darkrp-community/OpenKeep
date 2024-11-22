@@ -5,3 +5,5 @@
 	flaws = "Grudge-Holding, Judgemental, Self-Sacrificing"
 	worshippers = "Grenzelhofters, Inquisitors, Heroes"
 	sins = "Apostasy, Demon Worship, Betraying thy Father"
+	boons = "None... yet."
+	associated_faith = /datum/faith/psydon

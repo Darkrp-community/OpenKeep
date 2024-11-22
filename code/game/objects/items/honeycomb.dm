@@ -2,8 +2,8 @@
 /obj/item/reagent_containers/honeycomb
 	name = "honeycomb"
 	desc = ""
-	icon = 'icons/obj/hydroponics/harvest.dmi'
-	icon_state = "honeycomb"
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "honey"
 	possible_transfer_amounts = list()
 	spillable = FALSE
 	disease_amount = 0

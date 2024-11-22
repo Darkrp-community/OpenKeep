@@ -204,7 +204,7 @@
 	return ..()
 
 
-//Poisons			
+//Poisons
 /* Tested this quite a bit. Heres the deal. Metabolism REAGENTS_SLOW_METABOLISM is 0.1 and needs to be that so poison isnt too fast working but
 still is dangerous. Toxloss of 3 at metabolism 0.1 puts you in dying early stage then stops for reference of these values.
 A dose of ingested potion is defined as 5u, projectile deliver at most 2u, you already do damage with projectile, a bolt can only feasible hold a tiny amount of poison, so much easier to deliver than ingested and so on.
@@ -246,6 +246,33 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 		else
 			M.add_nausea(6) //So a poison bolt (2u) will eventually cause puking at least once
 			M.adjustToxLoss(4.5) // just enough so 5u will kill you dead with no help
+	return ..()
+
+/datum/reagent/organpoison
+	name = "Organ Poison"
+	description = ""
+	reagent_state = LIQUID
+	color = "#2c1818"
+	taste_description = "sour meat"
+	metabolization_rate = REAGENTS_SLOW_METABOLISM
+
+/datum/reagent/organpoison/on_mob_life(mob/living/carbon/M)
+	if(!HAS_TRAIT(M, TRAIT_NASTY_EATER) && !HAS_TRAIT(M, TRAIT_ORGAN_EATER))
+		M.add_nausea(9)
+		M.adjustToxLoss(2)
+	return ..()
+
+/datum/reagent/killersice
+	name = "Killer's Ice"
+	description = ""
+	reagent_state = LIQUID
+	color = "#c8c9e9"
+	taste_description = "cold needles"
+	metabolization_rate = REAGENTS_SLOW_METABOLISM
+
+/datum/reagent/killersice/on_mob_life(mob/living/carbon/M)
+	if(!HAS_TRAIT(M, TRAIT_NASTY_EATER) && !HAS_TRAIT(M, TRAIT_ORGAN_EATER))
+		M.adjustToxLoss(5)
 	return ..()
 
 
@@ -296,3 +323,4 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 		M.adjust_fire_stacks(1)
 		M.IgniteMob()
 	return ..()
+

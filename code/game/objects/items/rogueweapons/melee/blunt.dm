@@ -292,7 +292,7 @@
 /obj/item/rogueweapon/mace/goden/steel
 	gripped_intents = list(/datum/intent/mace/smash/heavy) // It's a 2h flanged mace, not a goedendag.
 	name = "grand mace"
-	desc = "A casted polearm, rumored to be the weapon-design used by the Forgotten God himself."
+	desc = "A casted polearm, rumored to be the weapon-design used by Psydon himself."
 	icon_state = "polemace"
 	resistance_flags = FIRE_PROOF
 	smeltresult = /obj/item/ingot/steel

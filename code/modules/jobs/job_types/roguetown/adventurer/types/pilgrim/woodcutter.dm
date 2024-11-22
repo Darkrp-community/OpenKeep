@@ -7,7 +7,8 @@
 	"Half-Elf",
 	"Tiefling",
 	"Dwarf",
-	"Aasimar"
+	"Aasimar",
+	"Half-Orc"
 
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/woodcutter

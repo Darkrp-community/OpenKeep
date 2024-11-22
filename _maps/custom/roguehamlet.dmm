@@ -14396,7 +14396,7 @@
 "oXb" = (
 /obj/structure/fluff/statue/psy{
 	desc = "A precious relic from before The Weeping. One year ago the eyes of the statue wept real tears.";
-	name = "The Forgotten God"
+	name = "Psydon"
 	},
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/floor/rogue/blocks,

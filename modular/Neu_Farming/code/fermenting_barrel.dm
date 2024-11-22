@@ -97,24 +97,24 @@
 	icon_state = "pbarrel1"
 /obj/structure/fermenting_barrel/random/water/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/water, rand(0,300))
+	reagents.add_reagent(/datum/reagent/water, rand(0,900))
 
 /obj/structure/fermenting_barrel/random/beer
 	icon_state = "barrel_alt"
 /obj/structure/fermenting_barrel/random/beer/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/consumable/ethanol/beer, rand(0,300))
+	reagents.add_reagent(/datum/reagent/consumable/ethanol/beer, rand(0,900))
 
 /obj/structure/fermenting_barrel/water
 	name = "water barrel"
 	icon_state = "pbarrel1"
 /obj/structure/fermenting_barrel/water/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/water,300)
+	reagents.add_reagent(/datum/reagent/water,900)
 
 /obj/structure/fermenting_barrel/beer/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/consumable/ethanol/beer,300)
+	reagents.add_reagent(/datum/reagent/consumable/ethanol/beer,900)
 
 /obj/item/roguebin/water/Initialize()
 	. = ..()

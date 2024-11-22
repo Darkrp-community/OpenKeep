@@ -5,7 +5,8 @@
 	allowed_races = list(
 		"Humen",
 		"Half-Elf",
-		"Tiefling"
+		"Tiefling",
+		"Half-Orc"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/barbarian
 	min_pq = 0

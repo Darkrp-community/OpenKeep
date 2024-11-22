@@ -3,7 +3,7 @@
 	tutorial = "The Crusaders are knights who have pledged \
 	their wealth and lands to the Church, taking up the banner \
 	of the Totod Order dedicated to retaking Valoria. \
-	Three cults provide knights for the Order: Astrata, Necra and the Forgotten God. \
+	Three cults provide knights for the Order: Astrata, Necra and Psydon. \
 	You were sent to Enigma by the Order to get any and all assistance from the faithful for the Crusade."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -62,7 +62,7 @@
 		if("Necra")
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
-		if("Forgotten God")
+		if("Psydon")
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver
 			if(H.gender == FEMALE) // Silver for female, gold for male
 				cloak = /obj/item/clothing/cloak/stabard/crusader/t
@@ -119,7 +119,7 @@
 
 /obj/item/clothing/cloak/stabard/crusader
 	name = "surcoat of the golden order"
-	desc = "A surcoat drenched in charcoal water, golden thread stitched in the style of the Forgotten God's Knights of Old Psydonia."
+	desc = "A surcoat drenched in charcoal water, golden thread stitched in the style of Psydon's Knights of Old Psydonia."
 	icon_state = "crusader_surcoat"
 	icon = 'icons/roguetown/clothing/special/crusader.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/crusader.dmi'
@@ -127,7 +127,7 @@
 
 /obj/item/clothing/cloak/stabard/crusader/t
 	name = "surcoat of the silver order"
-	desc = "A surcoat drenched in charcoal water, white cotton stitched in the symbol of the Forgotten God."
+	desc = "A surcoat drenched in charcoal water, white cotton stitched in the symbol of Psydon."
 	icon_state = "crusader_surcoatt2"
 
 /obj/item/clothing/cloak/cape/crusader
