@@ -63,13 +63,12 @@
 	if(in_range(user, src) || isobserver(user))
 		user.hud_used.reads.icon_state = "scroll"
 		user.hud_used.reads.show()
-		var/dat = {"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
-					<html><head><style type=\"text/css\">
-					body { background-image:url('book.png');background-repeat: repeat; }</style></head><body scroll=yes>"}
-		dat += "[info]<br>"
-		dat += "<a href='?src=[REF(src)];close=1' style='position:absolute;right:50px'>Close</a>"
-		dat += "</body></html>"
-		user << browse(dat, "window=reading;size=460x300;can_close=0;can_minimize=0;can_maximize=0;can_resize=0;titlebar=0")
+		user.hud_used.reads.maptext = info
+		user.hud_used.reads.maptext_width = 230
+		user.hud_used.reads.maptext_height = 200
+		user.hud_used.reads.maptext_y = 150
+		user.hud_used.reads.maptext_x = 120
+
 		onclose(user, "reading", src)
 	else
 		return "<span class='warning'>I'm too far away to read it.</span>"
@@ -169,21 +168,22 @@
 
 /obj/item/paper/scroll/cargo/proc/rebuild_info()
 	info = null
-	info += "<h2>Shipping Order</h2>"
+	info += "<div style='vertical-align:top'>"
+	info += "<h2 style='color:#06080F;font-family:\"Segoe Script\"'>Shipping Order</h2>"
 	info += "<hr/>"
 
 	if(orders.len)
-		info += "Orders: <br/>"
 		info += "<ul>"
 		for(var/datum/supply_pack/A in orders)
-			info += "<li>[A.name] - [A.cost]</li><br/>"
+			info += "<li style='color:#06080F;font-size:11px;font-family:\"Segoe Script\"'>[A.name] - [A.cost] mammons</li><br/>"
 		info += "</ul>"
 
 	info += "<br/></font>"
 
 	if(signedname)
-		info += "SIGNED,<br/>"
-		info += "<font face=\"[FOUNTAIN_PEN_FONT]\" color=#27293f>[signedname] the [signedjob] of Rockhill</font>"
+		info += "<font size=\"2\" face=\"[FOUNTAIN_PEN_FONT]\" color=#27293f>[signedname] the [signedjob] of Rockhill</font>"
+
+	info += "</div>"
 
 /obj/item/paper/confession
 	name = "confession"

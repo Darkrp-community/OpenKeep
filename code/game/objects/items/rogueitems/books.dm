@@ -125,7 +125,7 @@
 			to_chat(user, "<span class='info'>Open me first.</span>")
 			return FALSE
 		var/obj/item/paper/scroll/cargo/C = I
-		if(C.orders.len > 4)
+		if(C.orders.len > 6)
 			to_chat(user, "<span class='warning'>Too much order.</span>")
 			return
 		var/picked_cat = input(user, "Categories", "Shipping Ledger") as null|anything in sortList(SSmerchant.supply_cats)
