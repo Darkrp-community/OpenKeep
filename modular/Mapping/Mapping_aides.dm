@@ -304,6 +304,30 @@
 			static_debris = list(/obj/item/natural/silk = 1)
 	. = ..()
 
+/obj/structure/spider/cocoon
+	name = "cocoon"
+	desc = ""
+	icon_state = "cocoon1"
+	max_integrity = 40
+
+/obj/structure/spider/cocoon/container_resist(mob/living/user)
+	var/breakout_time = 600
+	user.changeNext_move(CLICK_CD_BREAKOUT)
+	user.last_special = world.time + CLICK_CD_BREAKOUT
+	to_chat(user, "<span class='notice'>I struggle against the tight bonds... (This will take about [DisplayTimeText(breakout_time)].)</span>")
+	visible_message("<span class='notice'>I see something struggling and writhing in \the [src]!</span>")
+	if(do_after(user,(breakout_time), target = src))
+		if(!user || user.stat != CONSCIOUS || user.loc != src)
+			return
+		qdel(src)
+
+/obj/structure/spider/cocoon/Destroy()
+	var/turf/T = get_turf(src)
+	src.visible_message("<span class='warning'>\The [src] splits open.</span>")
+	for(var/atom/movable/A in contents)
+		A.forceMove(T)
+	return ..()
+
 /obj/structure/spider/cocoon/Initialize()
 	switch(pick(1,2,3,4,5))
 		if (1)

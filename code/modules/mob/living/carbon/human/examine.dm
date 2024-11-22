@@ -45,6 +45,7 @@
 		if(isobserver(user))
 			used_name = real_name
 		var/used_title = get_role_title()
+		if(GLOB.lord_titles[real_name])
 		var/display_as_wanderer = FALSE
 		var/is_returning = FALSE
 		if(migrant_type)
@@ -63,6 +64,9 @@
 			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [is_returning ? "returning " : ""][race_name] [used_title].")
 		else
 			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name].")
+
+		if(GLOB.lord_titles[real_name])
+			. +=  span_smallgreen(GLOB.lord_titles[real_name])
 
 		if(dna.species.use_skintones)
 			var/skin_tone_wording = dna.species.skin_tone_wording ? lowertext(dna.species.skin_tone_wording) : "skin tone"

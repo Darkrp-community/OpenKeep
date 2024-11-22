@@ -584,6 +584,11 @@ GLOBAL_LIST_EMPTY(active_lifts_by_type)
 			movable.density = FALSE
 			movable.alpha = 0
 
+		for(var/obj/structure/industrial_lift/tram/moving_platform in platform.moving_lifts)
+			moving_platform.horizontal_speed = 0.1
+			moving_platform.obj_flags &= ~BLOCK_Z_OUT_DOWN
+			moving_platform.alpha = 0
+
 /datum/lift_master/tram/proc/show_tram()
 	ignore_pathing_obstacles = FALSE
 	for(var/obj/structure/industrial_lift/tram/platform in lift_platforms)
@@ -597,3 +602,8 @@ GLOBAL_LIST_EMPTY(active_lifts_by_type)
 			REMOVE_TRAIT(movable, TRAIT_I_AM_INVISIBLE_ON_A_BOAT, REF(src))
 			objects_pre_alpha -= movable
 			movable.density = initial(movable.density)
+
+		for(var/obj/structure/industrial_lift/tram/moving_platform in platform.moving_lifts)
+			moving_platform.horizontal_speed = 4
+			moving_platform.obj_flags |= BLOCK_Z_OUT_DOWN
+			moving_platform.alpha = 255
