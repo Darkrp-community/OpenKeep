@@ -278,6 +278,7 @@
 	force_wielded = DAMAGE_SWORD_WIELD-1
 	desc = "A simple iron sword with a tested edge, sharp and true."
 	icon_state = "isword"
+	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 200
 	max_integrity = INTEGRITY_STRONG
 	wdefense = GOOD_PARRY
@@ -422,6 +423,7 @@
 	icon_state = "imesser"
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop, /datum/intent/sword/thrust)
+	smeltresult = /obj/item/ingot/iron
 	wbalance = EASY_TO_DODGE
 	sellprice = 20
 
