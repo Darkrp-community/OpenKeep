@@ -116,7 +116,7 @@
 	firemod = null
 	w_class = WEIGHT_CLASS_HUGE
 	stackname = "glass"
-	stacktype = /obj/item/natural/plan
+	stacktype = /obj/item/natural/plank
 	maxamount = 3
 	icon1 = "woodplankbundle1"
 	icon1step = 2
