@@ -260,7 +260,7 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/checkreqroles()
 	var/list/readied_jobs = list()
-	var/list/required_jobs = list("Queen","King")
+	var/list/required_jobs = list("King", "Queen", "Hand")
 #ifdef DEPLOY_TEST
 	required_jobs = list()
 	readied_jobs = list("King")
@@ -279,16 +279,17 @@ SUBSYSTEM_DEF(ticker)
 							to_chat(player, "<span class='warning'>You cannot be [V] and thus are not considered.</span>")
 							continue
 					readied_jobs.Add(V)
-
-	if(("King" in readied_jobs) || ("Queen" in readied_jobs))
+	if(("King" in readied_jobs) || ("Queen" in readied_jobs) || ("Hand" in readied_jobs))
 		if("King" in readied_jobs)
 			rulertype = "King"
-		else
+		else if("Queen" in readied_jobs)
 			rulertype = "Queen"
-	else
+		else if("Hand" in readied_jobs)
+			rulertype = "Hand"
+/*	else
 		var/list/stuffy = list("Set a Ruler to 'high' in your class preferences to start the game!", "PLAY Ruler NOW!", "A Ruler is required to start.", "Pray for a Ruler.", "One day, there will be a Ruler.", "Just try playing Ruler.", "If you don't play Ruler, the game will never start.", "We need at least one Ruler to start the game.", "We're waiting for you to pick Ruler to start.", "Still no Ruler is readied..", "I'm going to lose my mind if we don't get a Ruler readied up.","No. The game will not start because there is no Ruler.","What's the point of ROGUETOWN without a Ruler?")
 		to_chat(world, "<span class='purple'>[pick(stuffy)]</span>")
-		return FALSE
+		return FALSE */
 
 /*
 #ifdef DEPLOY_TEST
@@ -306,7 +307,6 @@ SUBSYSTEM_DEF(ticker)
 			continue
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			amt_ready++
-
 	if(amt_ready > amt_ready_needed)
 		to_chat(world, "<span class='purple'>Not enough players to start the game</span>")
 	*/
@@ -575,6 +575,13 @@ SUBSYSTEM_DEF(ticker)
 					continue
 				if(Q.job == "Queen")
 					rulermob = Q
+					return
+		if("Hand")
+			for(var/mob/living/carbon/human/H in world)
+				if(istype(H, /mob/living/carbon/human/dummy))
+					continue
+				if(H.job == "Hand")
+					rulermob = H
 					return
 
 /datum/controller/subsystem/ticker/proc/collect_minds()
