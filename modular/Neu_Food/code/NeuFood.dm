@@ -78,7 +78,7 @@
 
 /obj/item/reagent_containers/food/snacks/rotten/meat
 	name = "rotten meat"
-	icon_state = "meatslab"
+	icon_state = "meatcutlet"
 /obj/item/reagent_containers/food/snacks/rotten/bacon
 	name = "rotten meat"
 	icon_state = "bacon"
