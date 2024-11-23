@@ -37,7 +37,8 @@
 	if(user == src)
 		if(get_num_arms(FALSE) < 1)
 			return
-		/* // No undies removing
+		if(!can_do_sex())
+			return
 		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 			if(get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
 				if(underwear == "Nude")
@@ -53,7 +54,6 @@
 						U = new/obj/item/undies/f(get_turf(src))
 					U.color = underwear_color
 					user.put_in_hands(U)
-		*/
 #endif
 
 /mob/living/carbon/human/Initialize()
@@ -132,6 +132,7 @@
 		AddComponent(/datum/component/mood)
 
 /mob/living/carbon/human/Destroy()
+	QDEL_NULL(sexcon)
 	STOP_PROCESSING(SShumannpc, src)
 	QDEL_NULL(physiology)
 	GLOB.human_list -= src
@@ -336,6 +337,12 @@
 		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_SHOES]'>[(shoes && !(shoes.item_flags & ABSTRACT)) ? shoes : "<font color=grey>Boots</font>"]</A></td></tr>"
 
 	dat += "<tr><td><hr></td></tr>"
+
+#ifdef MATURESERVER
+	if(get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
+		if(can_do_sex())
+			dat += "<tr><td><BR><B>Underwear:</B> <A href='?src=[REF(src)];undiesthing=1'>[underwear == "Nude" ? "Nothing" : "Remove"]</A></td></tr>"
+#endif
 
 	dat += {"</table>"}
 
