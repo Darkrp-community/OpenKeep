@@ -61,7 +61,7 @@
 	owner.current.forceMove(pick(GLOB.wizardstart))
 
 /datum/antagonist/wizard/proc/create_objectives()
-	switch(rand(1,100))
+	switch(rand(1,85))
 		if(1 to 30)
 			var/datum/objective/assassinate/kill_objective = new
 			kill_objective.owner = owner
@@ -99,12 +99,6 @@
 				var/datum/objective/survive/survive_objective = new
 				survive_objective.owner = owner
 				objectives += survive_objective
-
-		else
-			if (!(locate(/datum/objective/hijack) in objectives))
-				var/datum/objective/hijack/hijack_objective = new
-				hijack_objective.owner = owner
-				objectives += hijack_objective
 
 /datum/antagonist/wizard/on_removal()
 	unregister()

@@ -127,6 +127,14 @@
 					added_wound = /datum/wound/slash
 				if(1 to 10)
 					added_wound = /datum/wound/slash/small
+		if(BCLASS_LASHING)
+			switch(dam)
+				if(20 to INFINITY)
+					added_wound = /datum/wound/lashing/large
+				if(10 to 20)
+					added_wound = /datum/wound/lashing
+				if(1 to 10)
+					added_wound = /datum/wound/lashing/small
 		if(BCLASS_STAB, BCLASS_PICK)
 			switch(dam)
 				if(20 to INFINITY)

@@ -17,7 +17,6 @@
 /*------------\
 | Chop intent |	small AP, fewer protect vs this crit (more delimb?)
 \------------*/
-
 /datum/intent/axe/chop
 	name = "chop"
 	icon_state = "inchop"
@@ -28,8 +27,15 @@
 	penfactor = AP_AXE_CHOP
 	swingdelay = 1
 	misscost = 5
+	
+/datum/intent/axe/chop/charged //Charged chop for the battleaxe and bearded axe.
+	name = "overhead chop"
+	penfactor = AP_HEAVYAXE_CHOP
+	chargetime = 1
 
 /datum/intent/axe/chop/great//unique long attack for axes, basically you swing really really hard, stills worse than a polearm like the bardiche or spear
+	name = "great chop"
+	damfactor = 1.2 //Charged attack.
 	penfactor = AP_HEAVYAXE_CHOP
 	reach = 2
 	chargetime = 1
@@ -38,7 +44,6 @@
 /*------------\
 | Cut intent |	small AP
 \------------*/
-
 /datum/intent/axe/cut
 	name = "cut"
 	icon_state = "incut"
@@ -53,7 +58,6 @@
 /*--------------\
 | Impale intent |	big AP
 \--------------*/
-
 /datum/intent/axe/thrust
 	name = "impale"
 	blade_class = BCLASS_STAB
@@ -67,6 +71,17 @@
 	penfactor = AP_HEAVYAXE_STAB
 	swingdelay = 1
 	misscost = 10
+	
+/datum/intent/pick
+	penfactor = AP_PICK //This is used in some actual weapons, so giving it some AP is likely wise. Hefty swing delay means it is impractical in combat.
+	name = "pick"
+	icon_state = "inpick"
+	attack_verb = list("picks","impales")
+	hitsound = list('sound/combat/hits/pick/genpick (1).ogg', 'sound/combat/hits/pick/genpick (2).ogg')
+	animname = "strike"
+	blade_class = BCLASS_PICK
+	chargetime = 0
+	swingdelay = 3
 
 //................ Stone Axe ............... //
 /obj/item/rogueweapon/axe/stone
@@ -75,9 +90,10 @@
 	name = "stone axe"
 	desc = "Hewn wood, steadfast thread, a chipped stone. A recipe to bend nature to your will."
 	icon_state = "stoneaxe"
-	max_blade_int = 50
-	max_integrity = 50
+	max_blade_int = 80
+	max_integrity = 80
 	wdefense = BAD_PARRY
+	axe_cut = 15
 
 	wbalance = EASY_TO_DODGE
 	wlength = WLENGTH_SHORT
@@ -105,7 +121,7 @@
 	icon_state = "battleaxe"
 	max_blade_int = 500
 	smeltresult = /obj/item/ingot/steel
-	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/charged)
 	parrysound = "sword"
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	minstr = 10 //meant to be a orc weapon or barbarian weapon
@@ -134,12 +150,13 @@
 	name = "iron axe"
 	desc = "Tool, weapon, loyal iron companion."
 	icon_state = "axe"
-	max_blade_int = 200
+	max_blade_int = INTEGRITY_STRONG
 	max_integrity = INTEGRITY_STANDARD
 	smeltresult = /obj/item/ingot/iron
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	parrysound = "sword"
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	axe_cut = 18
 
 	wdefense = MEDIOCHRE_PARRY
 	minstr = 6
@@ -160,7 +177,7 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/pick)
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	wlength = WLENGTH_NORMAL
-	max_blade_int = 300
+	max_blade_int = INTEGRITY_STRONGEST
 	max_integrity = INTEGRITY_STRONGEST
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
 	associated_skill = /datum/skill/combat/axesmaces
@@ -182,18 +199,18 @@
 	name = "steel axe"
 	desc = "A bearded steel axe revered by dwarf, humen and elf alike. Performs much better than its iron counterpart."
 	icon_state = "saxe"
-	force = DAMAGE_AXE
-	force_wielded = DAMAGE_AXE_WIELD
-	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
-	max_blade_int = 300
-	max_integrity = INTEGRITY_STRONGEST
+	force = DAMAGE_AXE+3 //Superior as an one-handed option.
+	force_wielded = DAMAGE_AXE_WIELD+2
+	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop,/datum/intent/axe/chop/charged)
+	max_blade_int = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONG
 	smeltresult = /obj/item/ingot/steel
 	resistance_flags = FIRE_PROOF
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	wdefense = AVERAGE_PARRY
 	minstr = 6
 	sellprice = 35
-	axe_cut = 15 // Better than iron
+	axe_cut = 20
 
 /obj/item/rogueweapon/axe/iron/getonmobprop(tag)
 	. = ..()

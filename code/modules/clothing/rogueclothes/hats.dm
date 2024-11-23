@@ -167,8 +167,8 @@
 	icon_state = "fancyhat"
 	sellprice = VALUE_FINE_CLOTHING
 
-/obj/item/clothing/head/roguetown/courtierhat
-	name = "fancy hat"
+/obj/item/clothing/head/roguetown/fashionablehat
+	name = "fashionable hat"
 	icon_state = "courtier"
 	flags_inv = HIDEEARS
 	sellprice = VALUE_FINE_CLOTHING
@@ -654,7 +654,7 @@
 
 	armor =  ARMOR_PLATE
 	body_parts_covered = COVERAGE_HEAD
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 //................ Elf Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet/elven	// blackoak merc helmet
@@ -687,7 +687,7 @@
 	sellprice = VALUE_STEEL_HELMET
 
 	body_parts_covered = COVERAGE_HEAD
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 
 
@@ -712,7 +712,7 @@
 
 	armor = ARMOR_PLATE
 	body_parts_covered = FULL_HEAD
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/visored/AdjustClothes(mob/user)
@@ -861,7 +861,7 @@
 
 	armor = ARMOR_PLATE
 	prevent_crits = ALL_CRITICAL_HITS_VAMP
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 
 //............... Frog Helmet ............... //
@@ -1148,6 +1148,7 @@
 	name = "buckled hat"
 	desc = "A black top hat with a buckle on top, favored by Witch Hunters and Inquisitors."
 	icon_state = "puritan_hat"
+	body_parts_covered = HEAD|HAIR
 
 //............... Ominous Hood ............... //
 /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous // a leather coif locked to headslot since you cannot pull it back. Crit prevent between armor items a little weird, this is leather coif, compare to helmet
@@ -1300,7 +1301,7 @@
 	armor = ARMOR_PLATE_GOOD
 	armor_class = AC_HEAVY
 	prevent_crits = ALL_CRITICAL_HITS
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 
 //............... Bladesinger Helmet ............... //

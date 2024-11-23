@@ -43,6 +43,7 @@
 #define TRAIT_ANTIMAGIC					"Anti-Magic"
 #define TRAIT_ANTISCRYING				"Anti-Scrying"
 #define TRAIT_SHOCKIMMUNE				"Shock Immunity"
+#define TRAIT_LONGSTRIDER 				"Longstrider"
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"

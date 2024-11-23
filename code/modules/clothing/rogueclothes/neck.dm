@@ -94,7 +94,6 @@
 
 	armor = ARMOR_PADDED
 	prevent_crits = MINOR_CRITICALS
-	armor = ARMOR_LEATHER_GOOD
 	max_integrity = INTEGRITY_WORST
 
 /obj/item/clothing/neck/roguetown/keffiyeh/AdjustClothes(mob/user)
@@ -118,7 +117,7 @@
 					H.update_inv_head()
 
 /obj/item/clothing/neck/roguetown/keffiyeh/red
-	color = COLOR_MAROON
+	color = CLOTHING_MAROON
 
 /obj/item/clothing/neck/roguetown/keffiyeh/yellow
 	color = CLOTHING_PEAR_YELLOW
@@ -139,7 +138,8 @@
 	color = CLOTHING_ROYAL_TEAL
 
 /obj/item/clothing/neck/roguetown/keffiyeh/black
-	color = CLOTHING_ROYAL_BLACK
+	color = CLOTHING_ROYAL_RED
+//	color = CLOTHING_ROYAL_BLACK
 
 /obj/item/clothing/neck/roguetown/keffiyeh/white
 	color = CLOTHING_ASH_GREY
@@ -185,7 +185,7 @@
 
 	armor = ARMOR_MAILLE
 	body_parts_covered = NECK|HAIR|EARS|HEAD
-	max_integrity = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONG
 	prevent_crits = ALL_EXCEPT_BLUNT
 
 
@@ -220,6 +220,7 @@
 
 	armor = ARMOR_MAILLE_IRON
 	max_integrity = INTEGRITY_STRONG
+	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB //Non-riveted, iron chain can be broken apart with a powerful thrust.
 
 /obj/item/clothing/neck/roguetown/gorget/copper
 	name = "neck protector"
@@ -254,7 +255,7 @@
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE
 	body_parts_covered = NECK|EARS|MOUTH|NOSE
-	max_integrity = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONGER
 	prevent_crits = ALL_EXCEPT_STAB
 
 /obj/item/clothing/neck/roguetown/gorget
@@ -275,7 +276,7 @@
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE_BAD
 	body_parts_covered = NECK
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STANDARD //Balance consideration, protects more but breaks more easily than a steel chain coif.
 	prevent_crits = ALL_EXCEPT_STAB
 
 /obj/item/clothing/neck/roguetown/gorget/hoplite // Better than an iron gorget, not quite as good as a steel bevor
@@ -283,7 +284,7 @@
 	desc = "A heavy collar of great age, meant to protect the neck."
 	icon_state = "aasimarneck"
 	smeltresult = null // No bronze ingots yet
-	armor = ARMOR_MAILLE_GOOD
+	max_integrity = INTEGRITY_STRONGER //Aasimar craftsmanship.
 
 
 
@@ -366,7 +367,7 @@
 
 /obj/item/clothing/neck/roguetown/psycross/silver/necra
 	name = "amulet of Necra"
-	desc = "Where, grave, thy victory? I triumph still while the Veiled Lady abides by me."
+	desc = "Where, grave, thy victory? I triumph still while the Undermaiden abides by me."
 	icon_state = "necra"
 	resistance_flags = FIRE_PROOF
 

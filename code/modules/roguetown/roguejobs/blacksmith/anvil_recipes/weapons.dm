@@ -55,7 +55,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/item/rogueweapon/mace/copperbludgeon
+	created_item = /obj/item/rogueweapon/mace/cudgel/bludgeon
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cdagger
@@ -262,11 +262,11 @@
 	created_item = /obj/item/rogueweapon/sword/iron
 
 /datum/anvil_recipe/weapons/sword_iron
-	name = "Estoc"
+	name = "Florete"
 	recipe_name = "a Duelist Sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/sword/rapier/ironestoc
+	created_item = /obj/item/rogueweapon/sword/rapier/iron
 
 /datum/anvil_recipe/weapons/towershield
 	name = "Tower Shield (+w)"

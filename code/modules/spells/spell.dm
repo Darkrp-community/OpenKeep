@@ -177,8 +177,8 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	var/req_inhand = null			//required inhand to cast
 	var/base_icon_state = "spell"
 	var/associated_skill = /datum/skill/magic/arcane
-	var/miracle = FALSE
-	var/devotion_cost = 0
+	var/miracle = FALSE			// Boolean. If the spell being cast counts as a miracle, for devotion draining costs.
+	var/devotion_cost = 0		// Amount of devotion that costs to cast a spell. Takes positive numbers, which get deducted. Has to be minimum 12 (rounded up to 15) to avoid refund exploits.
 	var/ignore_cockblock = FALSE //whether or not to ignore TRAIT_SPELLCOCKBLOCK
 
 	action_icon_state = "spell0"
@@ -279,10 +279,10 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 
 		if(clothes_req) //clothes check
 			if(!is_type_in_typecache(H.wear_armor, casting_clothes))
-				to_chat(H, "<span class='warning'>I don't feel strong enough without your robe!</span>")
+				to_chat(H, "<span class='warning'>You don't feel strong enough without your robe!</span>")
 				return FALSE
 			if(!is_type_in_typecache(H.head, casting_clothes))
-				to_chat(H, "<span class='warning'>I don't feel strong enough without your hat!</span>")
+				to_chat(H, "<span class='warning'>You don't feel strong enough without your hat!</span>")
 				return FALSE
 		if(miracle)
 			var/datum/devotion/cleric_holder/D = H.cleric
@@ -456,10 +456,17 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 
 
 /obj/effect/proc_holder/spell/proc/cast(list/targets,mob/user = usr)
+	var/mob/living/carbon/human/H = usr // The caster
+	var/datum/devotion/cleric_holder/D = H.cleric // The caster that is a cleric
+	var/boon = H.mind?.get_learning_boon(associated_skill)
+	var/amt2raise = H.STAINT*2
+	var/miracle_refund = H.mind?.get_skill_level(associated_skill) / 10
+	H.mind?.adjust_experience(associated_skill, floor(amt2raise * boon), FALSE) // Now you get to level your magic, little by little
 	if(miracle)
-		var/mob/living/carbon/human/C = user
-		var/datum/devotion/cleric_holder/D = C.cleric
-		D.update_devotion(devotion_cost)
+		// New proc made to consume devotion upon cast. Better than using negative numbers.
+		D.consume_devotion(devotion_cost)
+		// Refund a percentage of devotion cost per every level of Holy magic we got, minimum of 5. We also gain 10 points towards cleric progression levels.
+		D.update_devotion(round(devotion_cost * miracle_refund, 5), 10)
 	return
 
 /obj/effect/proc_holder/spell/proc/view_or_range(distance = world.view, center=usr, type="view")

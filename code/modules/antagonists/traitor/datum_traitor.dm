@@ -73,14 +73,6 @@
 	for(var/i = objective_count, i < toa, i++)
 		forge_single_objective()
 
-	if(is_hijacker && objective_count <= toa) //Don't assign hijack if it would exceed the number of objectives set in config.traitor_objectives_amount
-		if (!(locate(/datum/objective/hijack) in objectives))
-			var/datum/objective/hijack/hijack_objective = new
-			hijack_objective.owner = owner
-			add_objective(hijack_objective)
-			return
-
-
 	var/martyr_compatibility = 1 //You can't succeed in stealing if you're dead.
 	for(var/datum/objective/O in objectives)
 		if(!O.martyr_compatible)
@@ -147,14 +139,6 @@
 	.=1
 	var/special_pick = rand(1,4)
 	switch(special_pick)
-		if(1)
-			var/datum/objective/block/block_objective = new
-			block_objective.owner = owner
-			add_objective(block_objective)
-		if(2)
-			var/datum/objective/purge/purge_objective = new
-			purge_objective.owner = owner
-			add_objective(purge_objective)
 		if(4) //Protect and strand a target
 			var/datum/objective/protect/yandere_one = new
 			yandere_one.owner = owner

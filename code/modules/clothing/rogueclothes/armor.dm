@@ -117,7 +117,7 @@
 //................ Arming Jacket ............... //
 /obj/item/clothing/suit/roguetown/armor/gambeson/arming
 	name = "arming jacket"
-	desc = "Thick quilted cloth, a gambesson for the discerning knight. it is meant to be used under heavier armor."
+	desc = "Thick quilted cloth, a gambesson for the discerning knight. It is meant to be used under heavier armor."
 	icon_state = "arming"
 	sellprice = VALUE_GAMBESSON+BONUS_VALUE_MODEST
 
@@ -209,7 +209,7 @@
 	sleevetype = null
 	sleeved = null
 
-	armor = ARMOR_LEATHER_BAD
+	armor = ARMOR_LEATHER_WORST
 	body_parts_covered = COVERAGE_VEST
 	prevent_crits = CUT_AND_MINOR_CRITS
 
@@ -253,6 +253,7 @@
 	icon_state = "leatherjacketo"
 	desc = "A heavy leather jacket with wooden buttons, favored by workers who can afford it."
 
+	armor = ARMOR_LEATHER_WORST
 	body_parts_covered = COVERAGE_SHIRT
 
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/ComponentInitialize()
@@ -272,6 +273,9 @@
 		for(var/obj/item/I in things)
 			STR.remove_from_storage(I, get_turf(src))
 
+//................ Leather Jacket ............... //
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/toggle // hehe...should be toggleable
+
 //................ Sea Jacket ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 	slot_flags = ITEM_SLOT_ARMOR
@@ -280,7 +284,7 @@
 	icon_state = "sailorvest"
 	sleevetype = "shirt"
 
-	armor = ARMOR_LEATHER
+	armor = ARMOR_LEATHER_BAD
 	body_parts_covered = COVERAGE_VEST
 
 //................ Silk Coat ............... //
@@ -292,6 +296,7 @@
 	allowed_sex = list(FEMALE)
 	sellprice = VALUE_LEATHER_ARMOR_LORD
 
+	armor = ARMOR_LEATHER_BAD
 	body_parts_covered = COVERAGE_ALL_BUT_ARMS
 	prevent_crits = CUT_AND_MINOR_CRITS
 
@@ -332,7 +337,7 @@
 	armor_class = AC_LIGHT
 	armor = ARMOR_LEATHER_GOOD
 	body_parts_covered = COVERAGE_TORSO
-	prevent_crits = ALL_EXCEPT_BLUNT
+	prevent_crits = ALL_EXCEPT_BLUNT //This having stab crit protection as a bikini is extremely funny so I will just leave it here.
 
 
 //................ Copper Heart-protector ............... //
@@ -391,6 +396,7 @@
 	armor = ARMOR_MAILLE_IRON
 	body_parts_covered = COVERAGE_TORSO
 	max_integrity = INTEGRITY_STANDARD
+	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB //Non-riveted, iron chain can be broken apart with a powerful thrust.
 
 
 //................ Hauberk ............... //
@@ -423,6 +429,7 @@
 	item_state = "cuirass"
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
+	clothing_flags = CANT_SLEEP_IN
 	boobed = FALSE
 	sellprice = VALUE_STEEL_ARMOR
 
@@ -529,6 +536,17 @@
 
 	body_parts_covered = COVERAGE_FULL
 
+//................ Coat of Plate ............... //
+/obj/item/clothing/suit/roguetown/armor/medium/coatplates
+	name = "coat of plates"
+	desc = "Armor in the zybantine fashion with thick leather and rows of little steel plates covering vital organs,\
+			allowing for more movement than full plate but still giving good protection. Not as durable as maille."
+	icon_state = "coat_of_plates"
+	blocksound = PLATEHIT
+	sellprice = VALUE_SNOWFLAKE_STEEL
+
+	armor = ARMOR_MAILLE_GOOD
+
 
 
 
@@ -606,7 +624,7 @@
 //................ Brigandine ............... //
 /obj/item/clothing/suit/roguetown/armor/brigandine
 	name = "brigandine"
-	desc = "A coat with plates concealed inside an exterior fabric. Protects the user from melee impacts and also ranged attacks to an extent."
+	desc = "A heavy coat with plates concealed inside an exterior fabric. Protects the user from melee impacts and also ranged attacks to an extent."
 	icon_state = "brigandine"
 	blocksound = SOFTHIT
 	equip_delay_self = 4 SECONDS
@@ -619,7 +637,7 @@
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE_BAD
 	body_parts_covered = COVERAGE_ALL_BUT_LEGS
-	max_integrity = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONG
 	prevent_crits = ALL_EXCEPT_STAB
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/Initialize()
@@ -655,17 +673,6 @@
 /obj/item/clothing/suit/roguetown/armor/brigandine/captain/Destroy()
 	GLOB.lordcolor -= src
 	return ..()
-
-//................ Coat of Plate ............... //
-/obj/item/clothing/suit/roguetown/armor/brigandine/coatplates
-	name = "coat of plates"
-	desc = "A Zybantine leather coat with steel scales woven with miniscule threads of adamantine, \
-			ensuring the wearer an optimal defence with forgiving breathability and mobility."
-	icon_state = "coat_of_plates"
-	blocksound = PLATEHIT
-	sellprice = VALUE_SNOWFLAKE_STEEL
-
-	max_integrity = INTEGRITY_STRONG
 
 
 //................ Snowflake Plate ............... //

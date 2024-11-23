@@ -63,7 +63,7 @@
 	animname = "stab"
 	blade_class = BCLASS_STAB
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-	penfactor = 30
+	penfactor = AP_DAGGER_STAB
 	chargetime = 0
 	clickcd = CLICK_CD_FAST
 	swingdelay = 1
@@ -71,16 +71,14 @@
 /*------------\
 | Pick intent |	great AP. Not actually used anywhere.
 \------------*/
-/*
 /datum/intent/dagger/thrust/pick
 	name = "thrust"
 	attack_verb = list("stabs", "impales")
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-	penfactor = 50
+	penfactor = AP_DAGGER_PICK
 	clickcd = CLICK_CD_MELEE
 	swingdelay = 1
 	blade_class = BCLASS_PICK
-*/
 
 /*------------\
 | Chop intent |	small AP, bonus damage
@@ -103,7 +101,7 @@
 
 //................ Hunting Knife ............... //
 /obj/item/rogueweapon/knife/hunting
-	force = DAMAGE_DAGGER
+	force = DAMAGE_KNIFE+1
 	throwforce = DAMAGE_KNIFE
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	name = "hunting knife"
@@ -144,7 +142,7 @@
 /obj/item/rogueweapon/knife/cleaver/combat
 	name = "hack-knife"
 	desc = "A short blade that even the weakest of hands can aspire to do harm with."
-	force = 10
+	force = DAMAGE_KNIFE
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	icon_state = "combatknife"
 	throwforce = 16
@@ -166,7 +164,8 @@
 
 //................ Iron Dagger ............... //
 /obj/item/rogueweapon/knife/dagger
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
+	force = DAMAGE_DAGGER
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut) //Stabbing is the first intent, for convenience.
 	name = "iron dagger"
 	desc = "Thin, sharp, pointed death."
 	icon_state = "idagger"
@@ -175,16 +174,19 @@
 
 //................ Steel Dagger ............... //
 /obj/item/rogueweapon/knife/dagger/steel
+	force = DAMAGE_DAGGER+2
 	name = "steel dagger"
 	desc = "A dagger made of refined steel."
 	icon_state = "sdagger"
 	smeltresult = null
 	wdefense = AVERAGE_PARRY
 	wbalance = VERY_HARD_TO_DODGE
+	sellprice = 20
 
 /obj/item/rogueweapon/knife/dagger/steel/special
 	icon_state = "sdaggeralt"
 	desc = "A dagger of refined steel, and even more refined appearance."
+	sellprice = 25
 
 //................ Fanged dagger ............... //
 /obj/item/rogueweapon/knife/dagger/steel/dirk
@@ -211,15 +213,15 @@
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
 			H.Knockdown(20)
-			H.adjustFireLoss(60)
-			H.Paralyze(20)
+			H.Paralyze(1)
+			H.adjustFireLoss(40)
 			H.fire_act(1,5)
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
 			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
 				H.Knockdown(10)
-				H.Paralyze(10)
+				H.Paralyze(1)
 
 /obj/item/rogueweapon/knife/dagger/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	. = ..()
@@ -230,13 +232,11 @@
 			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			H.Knockdown(20)
-			H.adjustFireLoss(60)
-			H.Paralyze(20)
+			H.adjustFireLoss(40)
 			H.fire_act(1,5)
 		if(V_lord)
 			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 				H.Knockdown(10)
-				H.Paralyze(10)
 
 /obj/item/rogueweapon/knife/dagger/silver/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
 	if(world.time < src.last_used + 100)
@@ -255,33 +255,26 @@
 			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 		if(V)
 			if(V.disguised)
-				H.Stun(20)
 				H.visible_message("<font color='white'>The silver weapon manifests the [H] curse!</font>")
 				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(30)
-				H.Paralyze(20)
+				H.Knockdown(20)
 				H.fire_act(1,4)
 				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
 				src.last_used = world.time
 			else
-				H.Stun(20)
 				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(30)
-				H.Paralyze(20)
+				H.Knockdown(20)
 				H.fire_act(1,4)
 				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
 				src.last_used = world.time
 		if(V_lord)
 			if(V_lord.vamplevel < 4 && !V)
-				H.Stun(10)
 				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(25)
-				H.Paralyze(10)
+				H.Knockdown(10)
 				H.fire_act(1,4)
 				src.last_used = world.time
 			if(V_lord.vamplevel == 4 && !V)
-				s_user.Stun(10)
-				s_user.Paralyze(10)
+				s_user.Knockdown(10)
 				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
 				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I HAVE TRANSCENDED!</span>")
 		return
@@ -410,8 +403,8 @@
 	desc = "A tool favored by the wood-elves, easy to make, useful for skinning the flesh of beast and man alike."
 	icon_state = "stone_knife"
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
-	max_integrity = 15
-	max_blade_int = 15
+	max_integrity = 30
+	max_blade_int = 30
 	wdefense = TERRIBLE_PARRY
 	smeltresult = /obj/item/ash
 	sellprice = 5

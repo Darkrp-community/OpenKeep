@@ -14,6 +14,16 @@
 	possible_rmb_intents = list()
 	vitae_pool = 250 // Small, frail creechers with not so much vitality to gain from.
 
+/datum/species/goblin/after_creation(mob/living/carbon/C)
+	..()
+	C.grant_language(/datum/language/orcish)
+	to_chat(C, "<span class='info'>I can speak Orcish with ,g before my speech.</span>")
+
+/datum/species/goblin/on_species_loss(mob/living/carbon/C)
+	. = ..()
+	UnregisterSignal(C, COMSIG_MOB_SAY)
+	C.remove_language(/datum/language/orcish)
+
 /mob/living/carbon/human/species/goblin/npc
 	aggressive=1
 	mode = AI_IDLE
@@ -104,7 +114,7 @@
 	name = "goblin"
 	id = "goblin"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE, TRAIT_EASYDISMEMBER, TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE, TRAIT_INHUMENCAMP)
+	inherent_traits = list(TRAIT_NOROGSTAM,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE, TRAIT_EASYDISMEMBER, TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE, TRAIT_INHUMENCAMP)
 	no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS, SLOT_S_STORE)
 	nojumpsuit = 1
 	sexes = 1
@@ -221,6 +231,7 @@
 	real_name = "goblin"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 //	ADD_TRAIT(src, TRAIT_NOBREATH, TRAIT_GENERIC)
 //	blue breathes underwater, need a new specific one for this maybe organ cheque
@@ -279,9 +290,9 @@
 	if(is_species(H, /datum/species/goblin/moon))
 		H.STASPD = 15
 	else
-		H.STASPD = 12
+		H.STASPD = 10
 	H.STACON = 6
-	H.STAEND = 10
+	H.STAEND = 8
 	if(is_species(H, /datum/species/goblin/moon))
 		H.STAINT = 8
 	else
