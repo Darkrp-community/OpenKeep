@@ -5381,10 +5381,10 @@
 /area/rogue/indoors/town/church/chapel)
 "fje" = (
 /obj/structure/rack/rogue/shelf/biggest,
-/obj/item/clothing/mask/cigarette/rollie/nicotine{
+/obj/item/clothing/mask/cigarette/rollie/mindbreaker{
 	pixel_y = 8
 	},
-/obj/item/clothing/mask/cigarette/rollie/nicotine{
+/obj/item/clothing/mask/cigarette/rollie/mindbreaker{
 	pixel_y = 8
 	},
 /obj/item/clothing/mask/cigarette/pipe/crafted{
@@ -16602,11 +16602,11 @@
 /obj/structure/table/wood{
 	icon_state = "longtable"
 	},
-/obj/item/clothing/mask/cigarette/rollie/nicotine{
+/obj/item/clothing/mask/cigarette/rollie{
 	pixel_x = 9;
 	pixel_y = 6
 	},
-/obj/item/clothing/mask/cigarette/rollie/nicotine{
+/obj/item/clothing/mask/cigarette/rollie{
 	pixel_x = 9;
 	pixel_y = 6
 	},
