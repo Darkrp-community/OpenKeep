@@ -22,7 +22,7 @@
 		/obj/item/clothing/shoes/roguetown/gladiator = 5
 		)
 
-
+/*	..................   Random Seeds   ................... */
 /obj/effect/spawner/roguemap/seeds	// all random
 	icon = 'modular/Neu_Farming/icons/produce.dmi'
 	icon_state = "seeds"
@@ -69,23 +69,32 @@
 		/obj/item/neuFarm/seed/fyritius = 10,
 		/obj/item/neuFarm/seed/poppy = 20 )
 
-/obj/item/reagent_containers/glass/bottle/rogue/beer
-/obj/item/reagent_containers/glass/bottle/rogue/beer/spottedhen
-/obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
-/obj/item/reagent_containers/glass/bottle/rogue/beer/ratkept
-/obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter
-/obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian
-/obj/item/reagent_containers/glass/bottle/rogue/beer/fireleaf
-/obj/item/reagent_containers/glass/bottle/rogue/beer/butterhairs
-/obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve
-/obj/item/reagent_containers/glass/bottle/rogue/beer/voddena
+/*	..................   Random Alcohol   ................... */
+/obj/effect/spawner/roguemap/alcohol	// random beer
+	icon = 'icons/roguetown/items/cooking.dmi'
+	icon_state = "clear_bottle1"
+	color = "#06b606"
+	probby = 100
+	spawned = list(
+		/obj/item/reagent_containers/glass/bottle/rogue/beer = 50,
+		/obj/item/reagent_containers/glass/bottle/rogue/beer/spottedhen = 15,
+		/obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat = 10,
+		/obj/item/reagent_containers/glass/bottle/rogue/beer/ratkept = 5,
+		/obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter = 10,
+		/obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian = 5,
+		/obj/item/reagent_containers/glass/bottle/rogue/beer/fireleaf = 5,
+		/obj/item/reagent_containers/glass/bottle/rogue/beer/butterhairs = 5,
+		/obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve = 5,
+		/obj/item/reagent_containers/glass/bottle/rogue/beer/voddena = 5 )
 
-/obj/item/reagent_containers/glass/bottle/rogue/wine
-/obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine
-/obj/item/reagent_containers/glass/bottle/rogue/redwine
-/obj/item/reagent_containers/glass/bottle/rogue/whitewine
-/obj/item/reagent_containers/glass/bottle/rogue/elfred
-/obj/item/reagent_containers/glass/bottle/rogue/elfblue
+/obj/effect/spawner/roguemap/alcohol/wine
+	spawned = list(
+		/obj/item/reagent_containers/glass/bottle/rogue/wine = 50,
+		/obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine =10,
+		/obj/item/reagent_containers/glass/bottle/rogue/redwine = 20,
+		/obj/item/reagent_containers/glass/bottle/rogue/whitewine = 20,
+		/obj/item/reagent_containers/glass/bottle/rogue/elfred = 5,
+		/obj/item/reagent_containers/glass/bottle/rogue/elfblue = 5 )
 
 
 /*	..................   Random Gem spawner   ................... */
@@ -98,6 +107,7 @@
 	/obj/item/roguegem/violet = 2,
 	/obj/item/roguegem/diamond = 1)
 
+// ===================================================================================
 /*	..................   Sewer Danger   ................... */
 /obj/effect/spawner/roguemap/sewerencounter
 	icon_state = "srat"
@@ -138,12 +148,15 @@
 		)
 
 /*	..................   Beggar Danger   ................... */
-/obj/effect/spawner/roguemap/hostile_bum_maybe
+/obj/effect/spawner/roguemap/hostile_beggar_danger
 	icon_state = "faceless"
 	icon = 'icons/mob/simple_human.dmi'
-	probby = 50
+	probby = 100 // temp to find out if decal vomit spawns
 	color = "#ff0000"
 	spawned = list(
+		/obj/effect/decal/cleanable/vomit = 100,
+		/obj/item/clothing/mask/cigarette/rollie = 10,
+		/obj/item/rogueweapon/knife/stone = 10,
 		/obj/structure/idle_enemy/hostile_bum = 100	)
 
 /*	..................   Mines Danger   ................... */
@@ -251,6 +264,37 @@
 
 // ===================================================================================
 
+
+/area/rogue/under/catacombs
+	name = "catacombs"
+	icon_state = "cavewet"
+	first_time_text = "The Catacombs"
+	ambientsounds = AMB_CAVEWATER
+	ambientnight = AMB_CAVEWATER
+	spookysounds = SPOOKY_CAVE
+	spookynight = SPOOKY_CAVE
+	droning_sound = 'sound/music/area/caves.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	ambush_times = list("night","dawn","dusk","day")
+	ambush_types = list(
+				/turf/open/water/swamp)
+	ambush_mobs = list(
+				/mob/living/carbon/human/species/skeleton/npc/catacomb = 30,
+				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10)
+	converted_type = /area/rogue/outdoors/caves
+
+
+/area/rogue/under/cave/abandoned_mine
+	name = "abandoned mine"
+	first_time_text = "Abandoned Mine"
+	ambush_types = list(
+				/turf/open/floor/rogue/dirt)
+	ambush_mobs = list(
+				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30,
+				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 20)
+
+// ===================================================================================
 /obj/structure/mineral_door/wood/red/i
 	name = "Room I"
 	lockid = "roomi"
@@ -909,6 +953,7 @@
 		)
 
 
+// ====================		NEW WEAPONS		==========================
 /obj/item/rogueweapon/sword/scimitar/falx
 	name = "falx"
 	desc = "Ancient curved blade for chopping and little else."
@@ -1018,3 +1063,39 @@
 	icon = 'icons/roguetown/weapons/custom_64.dmi'
 	slot_flags = FALSE
 	dropshrink = 0.9
+
+
+// ====================		CATACOMB SKELLY		========================== (weak)
+/mob/living/carbon/human/species/skeleton/npc/catacomb/after_creation()
+	..()
+	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/catacomb)
+
+/datum/outfit/job/roguetown/species/skeleton/npc/catacomb/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.STASTR = 8
+	H.STASPD = 7
+	H.STACON = 10
+	H.STAEND = 10
+	var/loadout = rand(1,3)
+
+	if(prob(15))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+	if(prob(15))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
+	if(prob(15))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/rags
+
+	if(prob(10))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant
+	if(prob(10))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
+	if(prob(10))
+		pants = /obj/item/clothing/under/roguetown/tights/sailor
+
+	switch(loadout)
+		if(1)
+			r_hand = /obj/item/natural/stone
+		if(2)
+			r_hand = /obj/item/rogueweapon/knife/stone
+		if(3)
+			r_hand = /obj/item/rogueweapon/mace/woodclub
