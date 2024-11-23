@@ -669,7 +669,7 @@
 
 	armor =  ARMOR_PLATE
 	body_parts_covered = COVERAGE_HEAD
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 //................ Elf Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet/elven	// blackoak merc helmet
@@ -702,7 +702,7 @@
 	sellprice = VALUE_STEEL_HELMET
 
 	body_parts_covered = COVERAGE_HEAD
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 
 
@@ -727,7 +727,7 @@
 
 	armor = ARMOR_PLATE
 	body_parts_covered = FULL_HEAD
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/visored/AdjustClothes(mob/user)
@@ -876,7 +876,7 @@
 
 	armor = ARMOR_PLATE
 	prevent_crits = ALL_CRITICAL_HITS_VAMP
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 
 //............... Frog Helmet ............... //
@@ -1316,7 +1316,7 @@
 	armor = ARMOR_PLATE_GOOD
 	armor_class = AC_HEAVY
 	prevent_crits = ALL_CRITICAL_HITS
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 
 //............... Bladesinger Helmet ............... //

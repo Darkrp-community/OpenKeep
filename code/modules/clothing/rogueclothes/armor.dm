@@ -128,7 +128,7 @@
 //................ Arming Jacket ............... //
 /obj/item/clothing/suit/roguetown/armor/gambeson/arming
 	name = "arming jacket"
-	desc = "Thick quilted cloth, a gambesson for the discerning knight. it is meant to be used under heavier armor."
+	desc = "Thick quilted cloth, a gambesson for the discerning knight. It is meant to be used under heavier armor."
 	icon_state = "arming"
 	sellprice = VALUE_GAMBESSON+BONUS_VALUE_MODEST
 
@@ -348,7 +348,7 @@
 	armor_class = AC_LIGHT
 	armor = ARMOR_LEATHER_GOOD
 	body_parts_covered = COVERAGE_TORSO
-	prevent_crits = ALL_EXCEPT_BLUNT
+	prevent_crits = ALL_EXCEPT_BLUNT //This having stab crit protection as a bikini is extremely funny so I will just leave it here.
 
 
 //................ Copper Heart-protector ............... //
@@ -407,6 +407,7 @@
 	armor = ARMOR_MAILLE_IRON
 	body_parts_covered = COVERAGE_TORSO
 	max_integrity = INTEGRITY_STANDARD
+	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB //Non-riveted, iron chain can be broken apart with a powerful thrust.
 
 
 //................ Hauberk ............... //
@@ -439,6 +440,7 @@
 	item_state = "cuirass"
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
+	clothing_flags = CANT_SLEEP_IN
 	boobed = FALSE
 	sellprice = VALUE_STEEL_ARMOR
 
@@ -646,7 +648,7 @@
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE_BAD
 	body_parts_covered = COVERAGE_ALL_BUT_LEGS
-	max_integrity = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONG
 	prevent_crits = ALL_EXCEPT_STAB
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/Initialize()

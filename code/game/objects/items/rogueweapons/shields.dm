@@ -62,6 +62,7 @@
 	return 0
 
 /datum/intent/shield/bash
+	penfactor = AP_CLUB_STRIKE
 	name = "bash"
 	icon_state = "inbash"
 	hitsound = list('sound/combat/shieldbash_wood.ogg')

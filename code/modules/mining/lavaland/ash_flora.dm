@@ -112,7 +112,7 @@
 	icon_state = "t_mushroom"
 	name = "numerous mushrooms"
 	desc = ""
-	light_range = 1.5
+	light_outer_range =  1.5
 	light_power = 2.1
 	harvested_name = "tiny mushrooms"
 	harvested_desc = ""

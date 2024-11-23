@@ -339,11 +339,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	desc = "Buds from exotic flowers, distilled and left to settle for a decade. This is the result. The unpleasant effects on the drinker are best countered with alcohol the label says."
 	spawned_disease = /datum/disease/anxiety
 
-/obj/item/reagent_containers/glass/bottle/beesease
-	name = "Beesease culture bottle"
-	desc = ""
-	spawned_disease = /datum/disease/beesease
-
 /obj/item/reagent_containers/glass/bottle/fluspanish
 	name = "Spanish flu culture bottle"
 	desc = ""

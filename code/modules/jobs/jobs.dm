@@ -87,6 +87,7 @@ GLOBAL_LIST_INIT(garrison_positions, list(
 GLOBAL_LIST_INIT(church_positions, list(
 	"Priest",
 	"Acolyte",
+	"Gravekeeper",
 	"Inquisitor",
 	"Confessor",
 	"Templar",
@@ -129,9 +130,7 @@ GLOBAL_LIST_INIT(apprentices_positions, list(
 	"Squire",
 	"Smithy Apprentice",
 	"Magician's Apprentice",
-	"Churchling",
-	"Servant",
-	"Orphan"
+	"Servant"
 	))
 
 GLOBAL_LIST_INIT(allmig_positions, list(
