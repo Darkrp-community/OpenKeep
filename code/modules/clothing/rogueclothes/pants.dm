@@ -213,7 +213,9 @@
 	name = "leather trousers"
 	desc = "Standard leather pants for hardy workers."
 	icon_state = "leathertrou"
-	armor = ARMOR_LEATHER_WORST
+	
+	armor = ARMOR_LEATHER_BAD
+	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/under/roguetown/grenzelpants
@@ -224,6 +226,7 @@
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	detail_tag = "_detail"
 	colorgrenz = TRUE
+	
 	armor = ARMOR_PADDED
 	prevent_crits = MINOR_CRITICALS
 	max_integrity = INTEGRITY_STANDARD
@@ -269,7 +272,7 @@
 
 	armor_class = AC_MEDIUM
 	armor = ARMOR_MAILLE
-	max_integrity = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONGER //300 Integrity, good for 8 halberd stabs.
 	prevent_crits = ALL_EXCEPT_BLUNT
 
 
@@ -278,9 +281,11 @@
 	name = "iron chain chausses"
 	desc = "Chain mail chausses made of iron rings woven together, offering protection against cuts and stabs."
 	smeltresult = /obj/item/ingot/iron
+	
 	armor = ARMOR_MAILLE_IRON
-	max_integrity = INTEGRITY_STRONG
-
+	max_integrity = INTEGRITY_STRONG //250 Integrity.
+	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB //Non-riveted, iron chain can be broken apart with a powerful thrust.
+	
 
 //..................................................................................................................................
 /*---------------\
@@ -314,6 +319,6 @@
 
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE
-	max_integrity = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONGER //350 Integrity, middle ground between bulky chestpieces and peripheral pieces.
 	prevent_crits = ALL_EXCEPT_STAB
 
