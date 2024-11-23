@@ -188,7 +188,6 @@
 	if(href_list["withdraw"])
 		var/datum/roguestock/D = locate(href_list["withdraw"]) in SStreasury.stockpile_datums
 
-		var/source_stockpile = stockpile_index
 		var/total_price = D.withdraw_price
 
 		if(!D)

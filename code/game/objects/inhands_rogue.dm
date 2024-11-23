@@ -2,6 +2,8 @@
 // They're basically red square sprites placed on the floor so spriters can adjust their sprites properly
 // Used on admin testing area only.
 
+GLOBAL_LIST_INIT(IconStates_cache, list())
+
 // 32x32 in-hand helper item
 /obj/item/inhand_tester
 	icon = 'icons/roguetown/items/misc.dmi'
@@ -68,9 +70,13 @@
 	var/icon/blended
 	var/skipoverlays = FALSE
 	if(behind)
-		var/icon/J = new(icon)
-		var/list/istates = J.IconStates()
-		if(istates.Find("[icon_state]_behind"))
+		if(!(icon in GLOB.IconStates_cache))
+			var/icon/J = new(icon)
+			var/list/istates = J.IconStates()
+			GLOB.IconStates_cache |= icon
+			GLOB.IconStates_cache[icon] = istates
+
+		if("[icon_state]_behind" in GLOB.IconStates_cache[icon])
 			blended=icon("icon"=icon, "icon_state"="[icon_state]_behind")
 			skipoverlays = TRUE
 		else
