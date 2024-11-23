@@ -101,23 +101,11 @@
 	var/mob/dead/observer/G = usr
 	G.dead_tele()
 
-/atom/movable/screen/ghost/pai
-	name = "pAI Candidate"
-	icon_state = "pai"
-
-/atom/movable/screen/ghost/pai/Click()
-	var/mob/dead/observer/G = usr
-	G.register_pai()
-
 /datum/hud/ghost/New(mob/owner)
 	..()
 	var/atom/movable/screen/using
 
 	using =  new /atom/movable/screen/backhudl/ghost()
-	using.hud = src
-	static_inventory += using
-
-	using = new /atom/movable/screen/grain
 	using.hud = src
 	static_inventory += using
 
@@ -155,10 +143,6 @@
 	using.hud = src
 	static_inventory += using
 
-	using = new /atom/movable/screen/grain
-	using.hud = src
-	static_inventory += using
-
 	scannies = new /atom/movable/screen/scannies
 	scannies.hud = src
 	static_inventory += scannies
@@ -186,10 +170,6 @@
 	var/atom/movable/screen/using
 
 	using =  new /atom/movable/screen/backhudl/obs()
-	using.hud = src
-	static_inventory += using
-
-	using = new /atom/movable/screen/grain
 	using.hud = src
 	static_inventory += using
 

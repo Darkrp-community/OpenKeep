@@ -104,6 +104,12 @@
 	blend_mode = BLEND_MULTIPLY
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
+/atom/movable/screen/plane_master/Initialize()
+	. = ..()
+	filters += filter(type="alpha", render_source = EMISSIVE_RENDER_TARGET, flags = MASK_INVERSE)
+	filters += filter(type="alpha", render_source = EMISSIVE_UNBLOCKABLE_RENDER_TARGET, flags = MASK_INVERSE)
+	filters += filter(type="alpha", render_source = O_LIGHTING_VISUAL_RENDER_TARGET, flags = MASK_INVERSE)
+
 /atom/movable/screen/plane_master/parallax
 	name = "parallax plane master"
 //	screen_loc = "CENTER-2"
@@ -188,3 +194,11 @@
 	render_target = FIELD_OF_VISION_BLOCKER_RENDER_TARGET
 	mouse_opacity = 0
 	appearance_flags = PLANE_MASTER
+
+/atom/movable/screen/plane_master/o_light_visual
+	name = "overlight light visual plane master"
+	layer = O_LIGHTING_VISUAL_LAYER
+	plane = O_LIGHTING_VISUAL_PLANE
+	render_target = O_LIGHTING_VISUAL_RENDER_TARGET
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	blend_mode = BLEND_MULTIPLY
