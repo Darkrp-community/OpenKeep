@@ -124,10 +124,8 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/river)
 "aJ" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 1
-	},
-/turf/open/floor/rogue/cobblerock,
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/river)
 "aK" = (
 /turf/open/floor/rogue/dirt/road,
@@ -187,6 +185,12 @@
 "da" = (
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/woods)
+"df" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 1
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/woods)
 "dI" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/woods)
@@ -221,10 +225,6 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
-"gF" = (
-/obj/machinery/light/rogue/firebowl/stump,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/woods)
 "gI" = (
 /obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/twig,
@@ -256,10 +256,6 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"iT" = (
-/obj/machinery/light/rogue/firebowl/stump,
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/river)
 "jc" = (
 /obj/effect/spawner/roguemap/stump,
 /turf/open/floor/rogue/dirt,
@@ -328,9 +324,9 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors)
 "ru" = (
-/obj/effect/landmark/start/adventurerlate,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/river)
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
 "rB" = (
 /turf/closed/wall/mineral/rogue/wooddark/end{
 	dir = 8
@@ -345,10 +341,6 @@
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/woods)
 "sN" = (
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/woods)
-"tg" = (
-/obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "tM" = (
@@ -403,10 +395,6 @@
 /obj/structure/stairs/stone{
 	dir = 4
 	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/river)
-"yf" = (
-/obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/river)
 "zC" = (
@@ -468,11 +456,9 @@
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/outdoors/woods)
 "Ep" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 4
-	},
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/river)
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "FT" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/dirt/road,
@@ -505,8 +491,8 @@
 /area/rogue/outdoors/woods)
 "IW" = (
 /obj/machinery/light/rogue/firebowl/stump,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/woods)
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/river)
 "IZ" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/natural/cloth,
@@ -560,11 +546,9 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/woods)
 "NV" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 4
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/river)
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "Ob" = (
 /turf/open/transparent/openspace,
 /area/rogue/indoors)
@@ -830,7 +814,7 @@ ak
 al
 al
 pu
-Ep
+pu
 pu
 al
 al
@@ -880,7 +864,7 @@ ak
 ak
 al
 az
-NV
+az
 az
 al
 ak
@@ -896,7 +880,7 @@ ak
 al
 al
 pu
-Ep
+pu
 pu
 aa
 aa
@@ -911,7 +895,7 @@ ac
 ag
 pu
 pu
-Ep
+pu
 pu
 ak
 ak
@@ -929,7 +913,7 @@ ag
 ag
 ag
 pu
-Ep
+pu
 pu
 ag
 ag
@@ -1205,7 +1189,7 @@ aa
 "}
 (5,1,1) = {"
 pu
-ru
+pu
 pu
 ae
 pu
@@ -1422,12 +1406,12 @@ ak
 al
 ak
 al
-ag
+pu
 ac
-ac
+pu
 ac
 al
-al
+ZU
 ae
 ae
 pu
@@ -1552,12 +1536,12 @@ ag
 ak
 al
 al
-ag
-ac
-ac
-ag
-ag
-ag
+pu
+pu
+pu
+pu
+pu
+pu
 ae
 ag
 ag
@@ -1682,7 +1666,7 @@ ag
 ak
 al
 ag
-ag
+DK
 ac
 aC
 ag
@@ -1808,10 +1792,10 @@ al
 al
 ag
 ag
-ag
+pu
+pu
 al
-al
-ag
+pu
 ac
 ac
 ag
@@ -1939,7 +1923,7 @@ ag
 az
 al
 ak
-ag
+DK
 ag
 ac
 ac
@@ -2007,7 +1991,7 @@ ag
 ad
 ad
 ac
-yf
+aJ
 ae
 ae
 ae
@@ -2110,7 +2094,7 @@ pu
 ae
 ae
 pu
-aJ
+pu
 pu
 "}
 (12,1,1) = {"
@@ -2675,7 +2659,7 @@ ac
 ae
 ae
 au
-yf
+aJ
 ae
 pu
 ae
@@ -4501,7 +4485,7 @@ ak
 ag
 ag
 ae
-iT
+IW
 al
 al
 ak
@@ -5279,7 +5263,7 @@ Lg
 Jc
 sN
 Jc
-tg
+ru
 Nb
 Nb
 sN
@@ -5802,7 +5786,7 @@ Bm
 Jc
 Nb
 ub
-IW
+NV
 Jc
 Jc
 Jc
@@ -6584,7 +6568,7 @@ Jc
 Jc
 ab
 ab
-IW
+NV
 Jc
 ab
 ab
@@ -7239,7 +7223,7 @@ Jc
 ab
 Jc
 ab
-IW
+NV
 Bm
 Bm
 Bm
@@ -8405,7 +8389,7 @@ Jc
 Jc
 sN
 Bm
-IW
+NV
 ab
 ub
 ab
@@ -8539,7 +8523,7 @@ Jc
 ab
 ab
 ab
-tg
+ru
 Jc
 ub
 Jc
@@ -9705,7 +9689,7 @@ aH
 sN
 Lg
 Lg
-tg
+ru
 ab
 ab
 ab
@@ -11009,7 +10993,7 @@ sN
 ab
 ab
 Jc
-IW
+NV
 Jc
 sN
 sN
@@ -11915,7 +11899,7 @@ aA
 sN
 sN
 sN
-IW
+NV
 ab
 ab
 ab
@@ -12309,7 +12293,7 @@ Jc
 ab
 ub
 ab
-IW
+NV
 sN
 sN
 Jc
@@ -12448,7 +12432,7 @@ ab
 ab
 ab
 Jc
-IW
+NV
 Jc
 sN
 Jc
@@ -12462,7 +12446,7 @@ sN
 Jc
 Jc
 Jc
-IW
+NV
 Jc
 sN
 Jc
@@ -12603,7 +12587,7 @@ Jc
 Jc
 Jc
 sN
-tg
+ru
 sN
 sN
 Jc
@@ -12833,7 +12817,7 @@ sN
 sN
 Jc
 ub
-IW
+NV
 Jc
 Jc
 Jc
@@ -12976,7 +12960,7 @@ sN
 sN
 sN
 sN
-IW
+NV
 Jc
 sN
 sN
@@ -12986,7 +12970,7 @@ Jc
 Jc
 sN
 sN
-IW
+NV
 Jc
 ab
 ab
@@ -13129,7 +13113,7 @@ sN
 sN
 sN
 sN
-IW
+NV
 Jc
 Jc
 ab
@@ -13401,7 +13385,7 @@ Bm
 Bm
 Bm
 Jc
-tg
+ru
 sN
 sN
 sN
@@ -13524,7 +13508,7 @@ sN
 sN
 Jc
 aH
-tg
+ru
 sN
 sN
 sN
@@ -13806,8 +13790,8 @@ Jc
 sN
 sN
 Jc
-Jc
-Jc
+NV
+ab
 sN
 Jc
 Jc
@@ -13933,15 +13917,15 @@ Jc
 sN
 sN
 sN
-sN
-sN
-Jc
-sN
-sN
-sN
+ab
 sN
 Jc
-dI
+ab
+sN
+ab
+ab
+ab
+ab
 "}
 (103,1,1) = {"
 dI
@@ -14062,16 +14046,16 @@ sN
 Lg
 sN
 sN
-sN
+ab
 Jc
-Jc
+ab
+Bm
+ab
 Bm
 Jc
-Bm
-Jc
-sN
-sN
-dI
+ab
+df
+ab
 "}
 (104,1,1) = {"
 dI
@@ -14181,7 +14165,7 @@ sN
 sN
 sN
 Jc
-IW
+NV
 Jc
 ab
 ab
@@ -14199,9 +14183,9 @@ Bm
 Bm
 Bm
 sN
-Jc
-Jc
-dI
+ab
+ab
+ab
 "}
 (105,1,1) = {"
 dI
@@ -14319,17 +14303,17 @@ ab
 ab
 ab
 Jc
-tg
+ru
 sN
 Jc
-Jc
+ab
 Bm
 Bm
 Bm
 Bm
 Bm
 Jc
-Jc
+NV
 Bm
 dI
 "}
@@ -14450,9 +14434,9 @@ ab
 ab
 Jc
 sN
+ab
 sN
-sN
-Jc
+NV
 Bm
 Bm
 Bm
@@ -15101,13 +15085,13 @@ aQ
 Lg
 Lg
 Jc
-tg
+ru
 ab
 ab
 sN
 sN
 sN
-tg
+ru
 Bm
 Bm
 Bm
@@ -15886,7 +15870,7 @@ Vh
 Lu
 Lu
 Lu
-IW
+NV
 Jc
 ub
 ab
@@ -16800,7 +16784,7 @@ Lu
 ub
 ab
 ab
-gF
+Ep
 dI
 "}
 (125,1,1) = {"
