@@ -12,7 +12,7 @@
 	invocation = "Undermaiden grant thee passage forth and spare the trials of the forgotten."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
-	devotion_cost = 15
+	devotion_cost = -5
 
 /obj/effect/proc_holder/spell/targeted/burialrite/cast(list/targets,mob/user = usr)
 	. = ..()
@@ -34,6 +34,64 @@
 			for(var/mob/living/carbon/human/B in C.contents)
 				B.funeral = TRUE
 
+/obj/effect/proc_holder/spell/targeted/soulspeak
+	name = "Speak with Soul"
+	range = 5
+	overlay_state = "speakwithdead"
+	releasedrain = 30
+	charge_max = 30 SECONDS
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/necra)
+	max_targets = 0
+	cast_without_targets = TRUE
+	sound = 'sound/magic/churn.ogg'
+	associated_skill = /datum/skill/magic/holy
+	invocation = "Speak and be heard, by the Will of the Undermaiden."
+	invocation_type = "whisper" //can be none, whisper, emote and shout
+	miracle = TRUE
+	devotion_cost = -40
+
+/obj/effect/proc_holder/spell/targeted/soulspeak/cast(list/targets,mob/user = usr)
+	var/mob/living/carbon/spirit/capturedsoul = null
+	var/list/souloptions = list()
+	var/list/itemstorestore = list()
+	for(var/mob/living/carbon/spirit/S in GLOB.mob_list)
+		souloptions += S.livingname
+	var/pickedsoul = input(user, "Which soul should I commune with?", "Available Souls") as null|anything in souloptions
+	if(!pickedsoul)
+		return
+	for(var/mob/living/carbon/spirit/P in GLOB.carbon_list)
+		if(P.livingname == pickedsoul)
+			to_chat(P, "You feel yourself being pulled out of the underworld.")
+			sleep(2 SECONDS)
+			P.loc = user.loc
+			capturedsoul = P
+			P.invisibility = INVISIBILITY_OBSERVER
+			for(var/obj/item/I in P.held_items) // this is big ass, will revisit later
+				. |= P.dropItemToGround(I)
+				if(istype(I, /obj/item/underworld/coin))
+					itemstorestore |= "token"
+				if(istype(I, /obj/item/flashlight/lantern/shrunken))
+					itemstorestore |= "lamp"
+				qdel(I)
+			break
+		to_chat(P, "[itemstorestore]")
+	if(capturedsoul)
+		spawn(2 MINUTES)
+			to_chat(user, "The soul returns to the underworld.")
+			to_chat(capturedsoul, "You feel yourself being pulled back to the underworld.")
+			for(var/obj/effect/landmark/underworld/A in GLOB.landmarks_list)
+				capturedsoul.loc = A.loc
+				capturedsoul.invisibility = initial(capturedsoul.invisibility)
+				for(var/I in itemstorestore)
+					if(I == "token")
+						var/obj/item/underworld/coin/C = new
+						capturedsoul.put_in_hands(C)
+					if(I == "lamp")
+						var/obj/item/flashlight/lantern/shrunken/L = new
+						capturedsoul.put_in_hands(L)
+		to_chat(user, "<font color='blue'>I feel a cold chill run down my spine, a presence has arrived.</font>")
+		capturedsoul.Paralyze(1200)
+
 /obj/effect/proc_holder/spell/targeted/churn
 	name = "Churn Undead"
 	range = 8
@@ -48,7 +106,7 @@
 	invocation = "The Undermaiden rebukes!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	miracle = TRUE
-	devotion_cost = 50
+	devotion_cost = -50
 
 /obj/effect/proc_holder/spell/targeted/churn/cast(list/targets,mob/living/user = usr)
 	. = ..()
@@ -56,7 +114,7 @@
 	if(user && user.mind)
 		prob2explode = 0
 		for(var/i in 1 to user.mind.get_skill_level(/datum/skill/magic/holy))
-			prob2explode += 80
+			prob2explode += 20
 	for(var/mob/living/L in targets)
 		var/isvampire = FALSE
 		var/iszombie = FALSE
@@ -84,6 +142,7 @@
 				explosion(get_turf(L), light_impact_range = 1, flame_range = 1, smoke = FALSE)
 				L.Knockdown(50)
 			else
+				L.take_overall_damage(burn = 4 * user.mind.get_skill_level(/datum/skill/magic/holy))
 				L.visible_message("<span class='warning'>[L] resists being churned!</span>", "<span class='userdanger'>I resist being churned!</span>")
 	..()
 	return TRUE

@@ -22,7 +22,7 @@
 
 /obj/emitters/weather/rain
 	particles 	= new/particles/rain
-//	alpha = 190
+	alpha = 190
 
 /atom/movable/screen/weather/fog
 	alpha = 180
