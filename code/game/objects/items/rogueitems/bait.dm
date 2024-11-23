@@ -13,7 +13,7 @@
 									/mob/living/simple_animal/hostile/retaliate/rogue/chicken = 55,
 									/mob/living/simple_animal/hostile/retaliate/rogue/goat = 33,
 									/mob/living/simple_animal/hostile/retaliate/rogue/goatmale = 33,
-									/mob/living/simple_animal/pet/cat/rogue/cabbit = 10
+									/mob/living/simple_animal/pet/cat/rogue/cabbit = 10,
 									/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10)
 	var/attraction_chance = 100
 	var/deployed = 0
