@@ -542,6 +542,9 @@
 	light_outer_range =  4
 	light_color = "#3FBAFD"
 
+	icon = 'icons/roguetown/items/lighting.dmi'
+	icon_state = "wisp"
+
 //A spell to choose new spells, upon spawning or gaining levels
 /obj/effect/proc_holder/spell/self/learnspell
 	name = "Attempt to learn a new spell"

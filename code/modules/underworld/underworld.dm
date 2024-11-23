@@ -81,6 +81,7 @@
 // shit that eventually will need moved elsewhere
 /obj/item/flashlight/flare/torch/lantern/shrunken
 	name = "shrunken lamp"
+	icon = 'icons/obj/lighting.dmi'
 	icon_state = "shrunkenlamp"
 	item_state = "shrunkenlamp"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'

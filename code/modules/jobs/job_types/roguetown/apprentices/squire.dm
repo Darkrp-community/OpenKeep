@@ -25,36 +25,6 @@
 	selection_color = "#304529"
 	advclass_cat_rolls = list(CTAG_SQUIRE = 20)
 
-/datum/outfit/job/roguetown/squire/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	ADD_TRAIT(H, TRAIT_INTRAINING, TRAIT_GENERIC) // An exception to the average combat skill cap on training dummies, since we are a combat role in training... we can get up to skilled! Hooray!
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-
-	H.virginity = TRUE
-
-	H.change_stat("perception", 1)
-	H.change_stat("constitution", 1)
-	H.change_stat("speed", 1)
-
-	H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	if(H.gender == MALE && H.dna?.species)
-		H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
-
-
 /datum/outfit/job/roguetown/squire
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	pants = /obj/item/clothing/under/roguetown/chainlegs/iron

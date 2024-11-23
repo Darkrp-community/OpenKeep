@@ -19,12 +19,6 @@
 	if(GLOB.rogue_round_id)
 		to_chat(src, "<span class='info'>ROUND ID: [GLOB.rogue_round_id]</span>")
 
-	if(CONFIG_GET(flag/usewhitelist))
-		if(!client.whitelisted())
-			to_chat(src, "<span class='info'>You are not on the whitelist.</span>")
-		else
-			to_chat(src, "<span class='info'>You are on the whitelist.</span>")
-
 //	if(motd)
 //		to_chat(src, "<B>If this is your first time here,</B> <a href='byond://?src=[REF(src)];rpprompt=1'>read this lore primer.</a>", handle_whitespace=FALSE)
 

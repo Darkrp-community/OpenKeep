@@ -504,10 +504,6 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	else
 		toggle_fullscreeny(FALSE)
 
-	if(prefs.anonymize)
-		if(get_playerquality(ckey) > -5)
-			GLOB.anonymize |= ckey
-
 	if(ckey in GLOB.clientmessages)
 		for(var/message in GLOB.clientmessages[ckey])
 			to_chat(src, message)
@@ -689,7 +685,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	var/datum/DBQuery/query_get_client_age = SSdbcore.NewQuery(
 		"SELECT firstseen, DATEDIFF(Now(),firstseen), accountjoindate, DATEDIFF(Now(),accountjoindate) FROM [format_table_name("player")] WHERE ckey = :ckey",
 		list("ckey" = ckey)
-	)	
+	)
 	if(!query_get_client_age.Execute())
 		qdel(query_get_client_age)
 		return
