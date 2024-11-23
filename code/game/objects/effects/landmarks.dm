@@ -257,7 +257,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/gravedigger
-	name = "Gravedigger"
+	name = "Gravekeeper"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/mercenary
@@ -324,14 +324,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/servant
 	name = "Servant"
-	icon_state = "arrow"
-
-/obj/effect/landmark/start/churchling
-	name = "Churchling"
-	icon_state = "arrow"
-
-/obj/effect/landmark/start/orphan
-	name = "Orphan"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/sapprentice
