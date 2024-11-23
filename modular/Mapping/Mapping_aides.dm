@@ -22,6 +22,83 @@
 		/obj/item/clothing/shoes/roguetown/gladiator = 5
 		)
 
+
+/obj/effect/spawner/roguemap/seeds	// all random
+	icon = 'modular/Neu_Farming/icons/produce.dmi'
+	icon_state = "seeds"
+	color = "#06b606"
+	probby = 100
+	spawned = list(
+		/obj/item/neuFarm/seed/wheat = 20,
+		/obj/item/neuFarm/seed/cabbage = 10,
+		/obj/item/neuFarm/seed/oat = 10,
+		/obj/item/neuFarm/seed/potato = 10,
+		/obj/item/neuFarm/seed/turnip = 10,
+		/obj/item/neuFarm/seed/apple = 10,
+		/obj/item/neuFarm/seed/onion = 10,
+		/obj/item/neuFarm/seed/berryrogue = 15,
+		/obj/item/neuFarm/seed/westleach = 10,
+		/obj/item/neuFarm/seed/sunflower = 10,
+		/obj/item/neuFarm/seed/swampleaf = 5,
+		/obj/item/neuFarm/seed/pear = 5,
+		/obj/item/neuFarm/seed/poppy = 5,
+		/obj/item/neuFarm/seed/poison_berries = 5,
+		/obj/item/neuFarm/seed/fyritius = 5 )
+
+/obj/effect/spawner/roguemap/seeds/common
+	spawned = list(
+		/obj/item/neuFarm/seed/wheat = 25,
+		/obj/item/neuFarm/seed/cabbage = 15,
+		/obj/item/neuFarm/seed/oat = 10,
+		/obj/item/neuFarm/seed/potato = 10,
+		/obj/item/neuFarm/seed/turnip = 10,
+		/obj/item/neuFarm/seed/apple = 10,
+		/obj/item/neuFarm/seed/onion = 10 )
+
+/obj/effect/spawner/roguemap/seeds/uncommon
+	spawned = list(
+		/obj/item/neuFarm/seed/berryrogue = 40,
+		/obj/item/neuFarm/seed/westleach = 25,
+		/obj/item/neuFarm/seed/swampleaf = 15,
+		/obj/item/neuFarm/seed/pear = 15,
+		/obj/item/neuFarm/seed/poison_berries = 5 )
+
+/obj/effect/spawner/roguemap/seeds/flowers
+	spawned = list(
+		/obj/item/neuFarm/seed/sunflower = 70,
+		/obj/item/neuFarm/seed/fyritius = 10,
+		/obj/item/neuFarm/seed/poppy = 20 )
+
+/obj/item/reagent_containers/glass/bottle/rogue/beer
+/obj/item/reagent_containers/glass/bottle/rogue/beer/spottedhen
+/obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
+/obj/item/reagent_containers/glass/bottle/rogue/beer/ratkept
+/obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter
+/obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian
+/obj/item/reagent_containers/glass/bottle/rogue/beer/fireleaf
+/obj/item/reagent_containers/glass/bottle/rogue/beer/butterhairs
+/obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve
+/obj/item/reagent_containers/glass/bottle/rogue/beer/voddena
+
+/obj/item/reagent_containers/glass/bottle/rogue/wine
+/obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine
+/obj/item/reagent_containers/glass/bottle/rogue/redwine
+/obj/item/reagent_containers/glass/bottle/rogue/whitewine
+/obj/item/reagent_containers/glass/bottle/rogue/elfred
+/obj/item/reagent_containers/glass/bottle/rogue/elfblue
+
+
+/*	..................   Random Gem spawner   ................... */
+/obj/effect/spawner/roguemap/loot/random_gem
+	spawned = list(
+	/obj/item/roguegem = 25,
+	/obj/item/roguegem/green = 12,
+	/obj/item/roguegem/blue = 6,
+	/obj/item/roguegem/yellow = 3,
+	/obj/item/roguegem/violet = 2,
+	/obj/item/roguegem/diamond = 1)
+
+/*	..................   Sewer Danger   ................... */
 /obj/effect/spawner/roguemap/sewerencounter
 	icon_state = "srat"
 	icon = 'icons/roguetown/mob/monster/rat.dmi'
@@ -34,9 +111,10 @@
 		/obj/item/roguecoin/copper = 5,
 		/obj/effect/gibspawner/generic = 5,
 		/obj/effect/decal/remains/bigrat = 5,
-		/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 2,
+		/obj/structure/idle_enemy/bigrat = 2,
 		)
 
+/*	..................   Cheap Room Danger   ................... */
 /obj/effect/spawner/roguemap/cheapinnroomencounter
 	icon_state = "paperwizard"
 	icon = 'icons/mob/simple_human.dmi'
@@ -49,6 +127,7 @@
 		/mob/living/carbon/human/species/human/northern/bum/ambush  = 25,
 		)
 
+/*	..................   Ancient Tomb Danger   ................... */
 /obj/effect/spawner/roguemap/ancientskellyguardmaybe
 	icon = 'icons/roguetown/mob/skeleton_male.dmi'
 	icon_state = "z"
@@ -58,14 +137,45 @@
 		/obj/structure/idle_enemy/ancient_skeleton_guard = 100
 		)
 
-/datum/component/spawner/ancient_skeleton_guard
-	mob_types = list(/mob/living/carbon/human/species/skeleton/npc/ancient)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
+/*	..................   Beggar Danger   ................... */
+/obj/effect/spawner/roguemap/hostile_bum_maybe
+	icon_state = "faceless"
+	icon = 'icons/mob/simple_human.dmi'
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/structure/idle_enemy/hostile_bum = 100	)
 
+/*	..................   Mines Danger   ................... */
+/obj/effect/spawner/roguemap/mine_mole_maybe
+	icon = 'icons/roguetown/mob/monster/mole.dmi'
+	icon_state = "mole"
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/effect/decal/remains/mole = 20,
+		/obj/item/natural/rock = 10,
+		/obj/item/natural/stone = 10,
+		/obj/item/roguegem/yellow = 10,
+		/obj/structure/idle_enemy/mole = 50	)
+
+/*	..................   Crypt Danger   ................... */
+/obj/effect/spawner/roguemap/crypt_randomdanger
+	icon = 'icons/roguetown/mob/skeleton_male.dmi'
+	icon_state = "z"
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/item/roguecoin/silver = 5,
+		/obj/item/reagent_containers/food/snacks/grub/silk = 5,
+		/obj/item/natural/worms = 20,
+		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
+		/obj/structure/idle_enemy/bigrat = 10,
+		/obj/structure/idle_enemy/weak_skelly = 50	)
+
+
+// ===================================================================================
+/*	..................   Idle Enemy Spawner   ................... */
 /obj/structure/idle_enemy
 	name = ""
 	icon = 'icons/roguetown/mob/skeleton_male.dmi'
@@ -76,20 +186,70 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/structure/idle_enemy/ancient_skeleton_guard
-
 /obj/structure/idle_enemy/ancient_skeleton_guard/Initialize()
 	. = ..()
 	AddComponent(/datum/component/spawner/ancient_skeleton_guard)
+/datum/component/spawner/ancient_skeleton_guard
+	mob_types = list(/mob/living/carbon/human/species/skeleton/npc/ancient)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
 
+/*	..................   Big Rat Spawner   ................... */
+/obj/structure/idle_enemy/bigrat
+/obj/structure/idle_enemy/bigrat/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/bigrat)
+/datum/component/spawner/bigrat
+	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/bigrat)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
 
-/obj/item/rogueweapon/sword/scimitar/falx
-	name = "falx"
-	desc = "Ancient curved blade for chopping and little else."
-	icon = 'icons/roguetown/weapons/custom.dmi'
-	icon_state = "falx"
-	max_blade_int = 200
-	max_integrity = INTEGRITY_STANDARD
+/*	..................   Hostile Bum Spawner   ................... */
+/obj/structure/idle_enemy/hostile_bum
+/obj/structure/idle_enemy/hostile_bum/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/hostile_bum)
+/datum/component/spawner/hostile_bum
+	mob_types = list(/mob/living/carbon/human/species/human/northern/bum/ambush)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
 
+/*	..................   Lesser Mole Spawner   ................... */
+/obj/structure/idle_enemy/mole
+/obj/structure/idle_enemy/mole/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/mole)
+/datum/component/spawner/mole
+	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/mole)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
+/*	..................   Weak Skelly Spawner   ................... */
+/obj/structure/idle_enemy/weak_skelly
+/obj/structure/idle_enemy/weak_skelly/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/weak_skelly)
+/datum/component/spawner/weak_skelly
+	mob_types = list(/mob/living/carbon/human/species/skeleton/npc/catacomb)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
+// ===================================================================================
 
 /obj/structure/mineral_door/wood/red/i
 	name = "Room I"
@@ -730,6 +890,14 @@
 	aportalgoesto = "inhumenin"
 
 
+
+/obj/effect/decal/remains/human/old
+	name = "remains"
+	color = "#d6b3a5"
+
+
+
+
 /*	..................   Toll randomizer (poor mans coin generator, cheaper workload is all)  ................... */
 /obj/effect/spawner/roguemap/tollrandom
 	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
@@ -740,3 +908,113 @@
 		/obj/item/underworld/coin = 1,
 		)
 
+
+/obj/item/rogueweapon/sword/scimitar/falx
+	name = "falx"
+	desc = "Ancient curved blade for chopping and little else."
+	icon = 'icons/roguetown/weapons/custom.dmi'
+	icon_state = "falx"
+	max_blade_int = 200
+	max_integrity = INTEGRITY_STANDARD
+
+
+/obj/item/rogueweapon/sword/scimitar/messer/neu
+	icon = 'icons/roguetown/weapons/custom.dmi'
+/obj/item/rogueweapon/sword/scimitar/messer/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.5,"sx" = -10,"sy" = -8,"nx" = 11,"ny" = -8,"wx" = -7,"wy" = -6,"ex" = 6,"ey" = -7,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 90,"sturn" = -80,"wturn" = -60,"eturn" = 71,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 3,"sy" = 3,"nx" = -1,"ny" = 4,"wx" = -7,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 10,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/pick/paxe/neu
+	icon = 'icons/roguetown/weapons/custom.dmi'
+/obj/item/rogueweapon/pick/paxe/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.7,"sx" = -9,"sy" = 0,"nx" = 12,"ny" = 1,"wx" = -6,"wy" = 0,"ex" = 5,"ey" = -1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.4,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+/obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = 0,"nx" = 7,"ny" = 2,"wx" = -2,"wy" = 0,"ex" = 1,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -4,"ny" = -2,"wx" = -3,"wy" = -2,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/polearm/woodstaff/aries/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+	dropshrink = 0.9
+/obj/item/rogueweapon/polearm/woodstaff/aries/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = -1,"nx" = 8,"ny" = 0,"wx" = -4,"wy" = 0,"ex" = 2,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -23,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 4,"sy" = -3,"nx" = -3,"ny" = -2,"wx" = -3,"wy" = -1,"ex" = 3,"ey" = -3,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+
+/obj/item/rogueweapon/mace/goden/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+/obj/item/rogueweapon/mace/goden/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = 1,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -28,"sturn" = 27,"wturn" = 30,"eturn" = -20,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+
+/obj/item/rogueweapon/polearm/halberd/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+/obj/item/rogueweapon/polearm/halberd/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -7,"sy" = 2,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/polearm/spear/billhook/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+	dropshrink = 0.9
+/obj/item/rogueweapon/polearm/spear/billhook/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -7,"sy" = 4,"nx" = 7,"ny" = 5,"wx" = -2,"wy" = 3,"ex" = 1,"ey" = 3,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+
+/obj/item/rogueweapon/polearm/woodstaff/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+	dropshrink = 0.9
