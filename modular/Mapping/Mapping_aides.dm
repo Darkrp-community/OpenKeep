@@ -393,6 +393,19 @@
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
 
+/obj/machinery/light/rogue/wallfire/big_fireplace
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+
+/obj/machinery/light/rogue/hearth/big_fireplace
+	name = "fireplace"
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+	fueluse = -1
+	pixel_x = -16
+	climb_offset = 4
 
 /*	..................   Colony Spider Net   ................... */
 /obj/structure/innocent_net
