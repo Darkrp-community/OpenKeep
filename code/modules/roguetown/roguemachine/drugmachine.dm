@@ -44,7 +44,7 @@
 		set_light(0)
 		return
 	w_class = WEIGHT_CLASS_GIGANTIC
-	set_light(2, 2, "#9C37B5")
+	set_light(2, 2, 2, l_color =  "#9C37B5")
 
 /obj/item/roguemachine/drugtrade/Initialize()
 	. = ..()
@@ -131,7 +131,7 @@
 	if(obj_broken)
 		set_light(0)
 		return
-	set_light(1, 1, "#8f06b5")
+	set_light(1, 1, 1, l_color =  "#8f06b5")
 	add_overlay(mutable_appearance(icon, "vendor-merch"))
 
 
@@ -253,8 +253,8 @@
 		contents += "<center>[current_cat]<BR></center>"
 		contents += "<center><a href='?src=[REF(src)];changecat=1'>\[RETURN\]</a><BR><BR></center>"
 		var/list/pax = list()
-		for(var/pack in SSshuttle.supply_packs)
-			var/datum/supply_pack/PA = SSshuttle.supply_packs[pack]
+		for(var/pack in SSmerchant.supply_packs)
+			var/datum/supply_pack/PA = SSmerchant.supply_packs[pack]
 			if(PA.group == current_cat)
 				pax += PA
 		for(var/datum/supply_pack/PA in sortList(pax))

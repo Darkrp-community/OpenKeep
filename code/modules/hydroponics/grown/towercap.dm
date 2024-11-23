@@ -256,7 +256,7 @@
 			L.IgniteMob()
 		else if(istype(A, /obj/item) && prob(20))
 			var/obj/item/O = A
-			O.microwave_act()
+			O.heating_act()
 
 /obj/structure/bonfire/process()
 	if(!CheckOxygen())

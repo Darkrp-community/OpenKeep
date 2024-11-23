@@ -241,10 +241,15 @@ SUBSYSTEM_DEF(mapping)
 	otherZ += load_map_config("_maps/map_files/dakkatown/otherz/dakkamountain.json")
 	otherZ += load_map_config("_maps/map_files/dakkatown/otherz/dakkaswamp.json")*/
 
-	//For Rogue map
-	otherZ += load_map_config("_maps/map_files/roguetown/otherz/smallforest.json")
-	otherZ += load_map_config("_maps/map_files/roguetown/otherz/smalldecap.json")
-	otherZ += load_map_config("_maps/map_files/roguetown/otherz/smallswamp.json")
+	if(config.map_name == "Vanderlin") // Vanderlin
+		otherZ += load_map_config("_maps/map_files/vanderlin/otherz/vanderlin_forest.json")
+		otherZ += load_map_config("_maps/map_files/vanderlin/otherz/vanderlin_mountain.json")
+		otherZ += load_map_config("_maps/map_files/vanderlin/otherz/vanderlin_bog.json")
+		// Add dungeon map files here later, maybe we can pick from a list of them?
+	else //For Rogue map
+		otherZ += load_map_config("_maps/map_files/roguetown/otherz/smallforest.json")
+		otherZ += load_map_config("_maps/map_files/roguetown/otherz/smalldecap.json")
+		otherZ += load_map_config("_maps/map_files/roguetown/otherz/smallswamp.json")
 
 	//For all maps
 	otherZ += load_map_config("_maps/map_files/roguetown/otherz/underworld.json")
