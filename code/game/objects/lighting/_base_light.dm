@@ -314,11 +314,16 @@
 		if(BURN)
 			playsound(src.loc, 'sound/blank.ogg', 100, TRUE)
 
+// returns if the light has power /but/ is manually turned off
+// if a light is turned off, it won't activate emergency power
+/obj/machinery/light/proc/turned_off()
+	var/area/A = get_area(src)
+	return !A.lightswitch && A.power_light || flickering
+
 // returns whether this light has power
 // true if area has power and lightswitch is on
 /obj/machinery/light/proc/has_power()
 	return TRUE
-
 
 /obj/machinery/light/proc/flicker(amount = rand(10, 20))
 	set waitfor = 0
