@@ -41,6 +41,7 @@
 	OFFSET_NECK_F = list(0,1), OFFSET_MOUTH_F = list(0,1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
 	specstats = list("strength" = 1, "perception" = -2, "intelligence" = -2, "constitution" = 2, "endurance" = 1, "speed" = 0, "fortune" = 0)
+	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = -2, "constitution" = 2, "endurance" = 1, "speed" = 0, "fortune" = 0)
 	enflamed_icon = "widefire"
 
 /datum/species/halforc/check_roundstart_eligible()
@@ -104,10 +105,13 @@
 
 /datum/species/halforc/get_hairc_list()
 	return sortList(list(
-	"Minotaur" = "58433b",
-	"Volf" = "48322a",
-	"Maneater" = "458745",
-	"Mud" = "201616",
+	"brown - minotaur" = "58433b",
+	"brown - volf" = "48322a",
+	"brown - bark" = "2d1300",
+
+	"green - maneater" = "458745",
+
+	"black - charcoal" = "201616"
 	))
 
 /datum/species/halforc/random_name(gender,unique,lastname)

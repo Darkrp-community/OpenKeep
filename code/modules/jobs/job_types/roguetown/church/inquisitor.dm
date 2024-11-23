@@ -7,9 +7,13 @@
 	spawn_positions = 1
 
 	allowed_races = list(
-		"Humen"
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Aasimar"
 	)
-	allowed_sexes = list(MALE)
+	allowed_sexes = list(MALE, FEMALE)
 
 	tutorial = "A recent arrival from Grenzelhoft, the Inquisitor is a member of the secretive lodges that have held to the service of Psydon since the Apotheosis War. They have formed an alliance with the local Priest against the increasing number of heretics and monsters infiltrating the town."
 	whitelist_req = FALSE

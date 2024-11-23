@@ -108,6 +108,7 @@
 	"brown - oats" = "7a4e1e",
 	"brown - grain" = "58433b",
 	"brown - soil" = "48322a",
+	"brown - bark" = "2d1300",
 
 	"red - berry" = "b23434",
 	"red - wine" = "b87f77",
