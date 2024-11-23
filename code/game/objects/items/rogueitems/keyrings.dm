@@ -269,6 +269,9 @@
 /obj/item/keyring/shepherd
 	keys = list(/obj/item/roguekey/inquisition, /obj/item/roguekey/church)
 
+/obj/item/keyring/gravedigger
+	keys = list(/obj/item/roguekey/church, /obj/item/roguekey/graveyard)
+
 /obj/item/keyring/niteman
 	keys = list(/obj/item/roguekey/niteman, /obj/item/roguekey/nitemaiden)
 
