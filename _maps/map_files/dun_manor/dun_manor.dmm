@@ -14,6 +14,13 @@
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
+"aaH" = (
+/obj/structure/rack/rogue,
+/obj/item/rogueweapon/knife/dagger/silver,
+/turf/open/floor/rogue/tile{
+	icon_state = "linoleum"
+	},
+/area/rogue/indoors/town/vault)
 "abV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/roguemachine/mail/r,
@@ -2419,7 +2426,6 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/garrison)
 "cpF" = (
-/obj/machinery/light/rogue/wallfire/candle/blue,
 /turf/open/floor/rogue/tile{
 	icon_state = "glyph4"
 	},
@@ -4454,7 +4460,7 @@
 /turf/open/water/sewer,
 /area/rogue/under/town/basement)
 "ekq" = (
-/obj/structure/closet/crate/chest/neu_fancy,
+/obj/structure/rack/rogue,
 /obj/item/roguecoin/gold/pile,
 /turf/open/floor/rogue/tile{
 	icon_state = "linoleum"
@@ -8563,6 +8569,13 @@
 /obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/chapel)
+"iqM" = (
+/obj/structure/rack/rogue,
+/obj/item/reagent_containers/glass/cup/golden,
+/turf/open/floor/rogue/tile{
+	icon_state = "linoleum"
+	},
+/area/rogue/indoors/town/vault)
 "iqT" = (
 /obj/structure/fluff/railing/border{
 	dir = 6;
@@ -9043,7 +9056,8 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/church/chapel)
 "iNR" = (
-/obj/item/roguecoin/gold/pile,
+/obj/structure/rack/rogue,
+/obj/item/roguegem/violet,
 /turf/open/floor/rogue/tile{
 	icon_state = "linoleum"
 	},
@@ -11104,9 +11118,6 @@
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/outdoors/town)
 "kQf" = (
-/obj/structure/fluff/walldeco/painting{
-	pixel_y = 32
-	},
 /turf/open/floor/rogue/tile{
 	icon_state = "glyph6"
 	},
@@ -11900,6 +11911,14 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
+"lAC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/rack/rogue,
+/obj/item/roguestatue/gold/loot,
+/turf/open/floor/rogue/tile{
+	icon_state = "linoleum"
+	},
+/area/rogue/indoors/town/vault)
 "lAK" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -13130,6 +13149,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/tavern)
+"mUf" = (
+/obj/item/roguegem/yellow,
+/obj/structure/rack/rogue,
+/turf/open/floor/rogue/tile{
+	icon_state = "linoleum"
+	},
+/area/rogue/indoors/town/vault)
 "mUJ" = (
 /obj/structure/table/wood{
 	dir = 5;
@@ -13318,6 +13344,12 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors/soilsons)
+"nbX" = (
+/obj/structure/rack/rogue,
+/turf/open/floor/rogue/tile{
+	icon_state = "linoleum"
+	},
+/area/rogue/indoors/town/vault)
 "ncc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/mineral_door/wood{
@@ -14381,7 +14413,7 @@
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/ship)
 "ofl" = (
-/obj/item/roguestatue/gold/loot,
+/obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/tile{
 	icon_state = "linoleum"
 	},
@@ -15103,7 +15135,11 @@
 /turf/closed/indestructible/wooddark,
 /area/rogue/indoors/ship)
 "oQa" = (
-/obj/item/rogue/painting/queen,
+/obj/structure/table/wood/nice/decorated,
+/obj/item/clothing/head/roguetown/crown/serpcrown/surplus,
+/obj/structure/fluff/walldeco/painting{
+	pixel_y = 32
+	},
 /turf/open/floor/rogue/tile{
 	icon_state = "glyph5"
 	},
@@ -15505,10 +15541,11 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "pjc" = (
-/obj/item/roguecoin/silver/pile,
-/obj/structure/closet/crate/chest/neu_fancy,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/rack/rogue,
+/obj/item/roguegem/blue,
 /turf/open/floor/rogue/tile{
-	icon_state = "chess"
+	icon_state = "linoleum"
 	},
 /area/rogue/indoors/town/vault)
 "pjj" = (
@@ -22020,6 +22057,13 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
+"vJc" = (
+/obj/item/roguecoin/gold/pile,
+/obj/structure/rack/rogue,
+/turf/open/floor/rogue/tile{
+	icon_state = "linoleum"
+	},
+/area/rogue/indoors/town/vault)
 "vJu" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/tile{
@@ -22545,15 +22589,11 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/soilsons)
 "wqG" = (
-/obj/item/roguegem,
-/obj/item/roguegem,
-/obj/item/roguegem/violet,
-/obj/item/roguegem/yellow,
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/roguegem/green,
-/obj/item/roguegem/blue,
-/obj/structure/closet/crate/chest/neu_fancy,
+/obj/structure/rack/rogue,
 /turf/open/floor/rogue/tile{
-	icon_state = "chess"
+	icon_state = "linoleum"
 	},
 /area/rogue/indoors/town/vault)
 "wqJ" = (
@@ -23308,6 +23348,7 @@
 "wWu" = (
 /obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /obj/item/roguecoin/gold/pile,
+/obj/structure/rack/rogue,
 /turf/open/floor/rogue/tile{
 	icon_state = "linoleum"
 	},
@@ -42859,9 +42900,9 @@ pNQ
 pNQ
 gdw
 gdw
-rdI
-rdI
-xlI
+pjc
+wqG
+mUf
 iNR
 gdw
 gdw
@@ -43015,12 +43056,12 @@ pNQ
 pNQ
 pNQ
 gdw
+lAC
 rdI
-rdI
-wqG
+dzt
 dzt
 xlI
-xlI
+nbX
 gdw
 gdw
 iSP
@@ -43800,7 +43841,7 @@ qOY
 pNQ
 pNQ
 gdw
-xlI
+ofl
 dzt
 dzt
 dzt
@@ -43960,9 +44001,9 @@ gdw
 wWu
 xlI
 dzt
-pjc
+dzt
 rdI
-iNR
+vJc
 gdw
 gdw
 rwZ
@@ -44115,9 +44156,9 @@ pNQ
 pNQ
 gdw
 gdw
-xlI
-xlI
-xlI
+iqM
+aaH
+nbX
 ekq
 nze
 nze
