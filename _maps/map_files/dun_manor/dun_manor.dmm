@@ -7867,7 +7867,7 @@
 /area/rogue/outdoors/rtfield)
 "hEt" = (
 /obj/item/candle/yellow/lit/infinite{
-	light_range = 1;
+	light_outer_range =  1;
 	pixel_x = -8;
 	pixel_y = 5
 	},
@@ -10597,7 +10597,7 @@
 /area/rogue/outdoors/town/roofs)
 "ktR" = (
 /obj/item/candle/yellow/lit/infinite{
-	light_range = 1;
+	light_outer_range =  1;
 	pixel_x = 8;
 	pixel_y = 5
 	},

@@ -158,7 +158,7 @@
 	desc = ""
 	icon = 'icons/roguetown/items/lighting.dmi'
 	icon_state = "wisp"
-	light_range = 6
+	light_outer_range =  6
 	layer = ABOVE_ALL_MOB_LAYER
 	var/sight_flags = SEE_MOBS
 	var/lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE

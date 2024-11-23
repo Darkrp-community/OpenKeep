@@ -39,7 +39,7 @@
 	trail = TRUE
 	trail_lifespan = 5
 	light_color = "#f407f8"
-	light_range = 2
+	light_outer_range =  2
 
 
 /obj/projectile/magic/spell/magic_missile/on_hit(target)

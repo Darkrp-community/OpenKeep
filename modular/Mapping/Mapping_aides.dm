@@ -662,7 +662,7 @@
 	base_state = "candle"
 	layer = WALL_OBJ_LAYER+0.1
 	light_power = 0.9
-	light_range = 6
+	light_outer_range =  6
 
 
 /*	..................   Misc   ................... */
