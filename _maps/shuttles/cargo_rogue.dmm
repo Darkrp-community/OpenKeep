@@ -288,6 +288,13 @@
 	icon_state = "weird1"
 	},
 /area/shuttle/supply/sell)
+"T" = (
+/obj/docking_port/mobile,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "vertw";
+	dir = 1
+	},
+/area/shuttle/supply)
 
 (1,1,1) = {"
 a
@@ -353,7 +360,7 @@ j
 k
 "}
 (10,1,1) = {"
-k
+T
 k
 i
 k
