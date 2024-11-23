@@ -46,6 +46,7 @@
 		H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/alchemy, 4, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/labor/farming, 3, TRUE)
 		H.change_stat("strength", -1)
 		H.change_stat("intelligence", 1)
 
