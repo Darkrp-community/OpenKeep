@@ -69,15 +69,15 @@
 		return
 	..() //contents explosion
 	if(target == src)
-		take_damage(INFINITY, BRUTE, "bomb", 0)
+		take_damage(INFINITY, BRUTE, "blunt", 0)
 		return
 	switch(severity)
 		if(1)
-			take_damage(INFINITY, BRUTE, "bomb", 0)
+			take_damage(INFINITY, BRUTE, "blunt", 0)
 		if(2)
-			take_damage(rand(100, 250), BRUTE, "bomb", 0)
+			take_damage(rand(100, 250), BRUTE, "blunt", 0)
 		if(3)
-			take_damage(rand(10, 90), BRUTE, "bomb", 0)
+			take_damage(rand(10, 90), BRUTE, "blunt", 0)
 
 /obj/bullet_act(obj/projectile/P)
 	. = ..()
