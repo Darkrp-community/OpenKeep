@@ -7977,7 +7977,7 @@
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
 	})
 "iNR" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/light/rogue/wallfire/candle,
 /obj/item/keyring/steward,
 /obj/item/storage/box/matches,
@@ -11447,7 +11447,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
 "mzB" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /turf/open/floor/rogue/tile/checkeralt,
 /area/rogue/indoors/town/tavern)
 "mzQ" = (
