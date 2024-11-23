@@ -3679,7 +3679,6 @@
 "nW" = (
 /obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/wool,
-/obj/effect/landmark/start/churchling,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town/church)
 "nX" = (

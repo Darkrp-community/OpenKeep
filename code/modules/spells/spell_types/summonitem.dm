@@ -69,13 +69,6 @@
 							break
 					if(ismob(item_to_retrieve.loc)) //If its on someone, properly drop it
 						var/mob/M = item_to_retrieve.loc
-
-						if(issilicon(M)) //Items in silicons warp the whole silicon
-							M.loc.visible_message("<span class='warning'>[M] suddenly disappears!</span>")
-							M.forceMove(L.loc)
-							M.loc.visible_message("<span class='warning'>[M] suddenly appears!</span>")
-							item_to_retrieve = null
-							break
 						M.dropItemToGround(item_to_retrieve)
 
 						if(iscarbon(M)) //Edge case housekeeping
