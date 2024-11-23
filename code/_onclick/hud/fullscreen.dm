@@ -140,7 +140,7 @@
 	name = "NECRA"
 //	layer = 20.09
 	layer = 20.512
-	plane = FULLSCREEN_PLANE
+	plane = ABOVE_HUD_PLANE
 	mouse_opacity = 1
 	nomouseover = FALSE
 
@@ -149,11 +149,7 @@
 		var/mob/living/L = usr
 		if(L.stat != DEAD)
 			if(alert("Are you done living?", "", "Yes", "No") == "Yes")
-				if(!L.succumb_timer || (world.time < L.succumb_timer + 111 SECONDS) )
-					var/ttime =  round(((L.succumb_timer + 111 SECONDS) - world.time) / 10)
-					to_chat(L, "<span class='redtext'>I'm not dead enough yet. [ttime]</span>")
-				else
-					L.succumb(reaper = TRUE)
+				L.succumb(reaper = TRUE)
 
 /atom/movable/screen/fullscreen/crit/death
 	icon_state = "DD"
