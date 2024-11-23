@@ -4,7 +4,7 @@ TIMER_SUBSYSTEM_DEF(runechat)
 
 	var/list/datum/callback/message_queue = list()
 
-/datum/controller/subsystem/runechat/fire(resumed)
+/datum/controller/subsystem/timer/runechat/fire(resumed)
 	while(message_queue.len)
 		var/datum/callback/queued_message = message_queue[message_queue.len]
 		queued_message.Invoke()
