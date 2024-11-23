@@ -2,7 +2,7 @@
 	category = CATEGORY_ADMIN
 	weight = WEIGHT_ADMIN
 
-/*
+
 /datum/keybinding/admin/admin_say
 	hotkey_keys = list("F3")
 	name = "admin_say"
@@ -72,4 +72,4 @@
 /datum/keybinding/admin/deadsay/down(client/user)
 	user.get_dead_say()
 	return TRUE
-*/
+

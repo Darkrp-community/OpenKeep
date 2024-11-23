@@ -266,15 +266,8 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 /turf/closed/indestructible/hoteldoor/attack_hulk(mob/living/carbon/human/user)
 	promptExit(user)
 
-/turf/closed/indestructible/hoteldoor/attack_larva(mob/user)
-	promptExit(user)
-
 /turf/closed/indestructible/hoteldoor/attack_slime(mob/user)
 	promptExit(user)
-
-/turf/closed/indestructible/hoteldoor/attack_robot(mob/user)
-	if(get_dist(get_turf(src), get_turf(user)) <= 1)
-		promptExit(user)
 
 /turf/closed/indestructible/hoteldoor/AltClick(mob/user)
 	. = ..()
