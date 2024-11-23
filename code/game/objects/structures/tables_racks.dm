@@ -394,7 +394,7 @@
 /obj/structure/table/wood/plain/alt
 	icon_state = "tablewood2"
 
-/obj/structure/table/wood/plain/alt
+/obj/structure/table/wood/plain/alto
 	icon_state = "tablewood3"
 
 /obj/structure/table/wood/reinforced

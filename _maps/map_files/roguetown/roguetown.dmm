@@ -2776,7 +2776,7 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/town/basement)
 "cYn" = (
-/obj/structure/table/wood/plain/alt,
+/obj/structure/table/wood/plain/alto,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/tavern)
 "cYE" = (
