@@ -18423,7 +18423,7 @@
 /area/rogue/under/town/basement)
 "tez" = (
 /obj/item/candle/yellow/lit/infinite{
-	light_outer_range =  1;
+	light_outer_range = 1;
 	pixel_x = -8;
 	pixel_y = 5
 	},
