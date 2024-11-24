@@ -21,7 +21,7 @@
 	var/lumber_amount = 1
 
 /obj/item/grown/log/tree/attacked_by(obj/item/I, mob/living/user) //This serves to reward woodcutting
-	if(user.used_intent.blade_class == BCLASS_CHOP && lumber_amount)
+	if(user.used_intent.blade_class == BCLASS_CHOP && lumber_amount && lumber)
 		var/skill_level = user.mind.get_skill_level(/datum/skill/labor/lumberjacking)
 		var/lumber_time = (40 - (skill_level * 5))
 		var/minimum = 1
@@ -86,8 +86,8 @@
 	gripped_intents = null
 	w_class = WEIGHT_CLASS_BULKY
 	smeltresult = /obj/item/rogueore/coal
-	lumber = null
-	lumber_amount = 0
+	lumber = /obj/item/grown/log/tree/lumber
+	lumber_amount = 2
 
 /obj/item/grown/log/tree/stick
 	seed = null
@@ -103,6 +103,7 @@
 	gripped_intents = null
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP
 	lumber_amount = 0
+	lumber = null
 
 /obj/item/grown/log/tree/stick/Crossed(mob/living/L)
 	. = ..()
@@ -173,6 +174,8 @@
 	twohands_required = FALSE
 	gripped_intents = null
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP
+	lumber = null
+	lumber_amount = 0
 
 /obj/item/grown/log/tree/lumber
 	seed = null
@@ -183,6 +186,8 @@
 	blade_dulling = 0
 	max_integrity = 50
 	firefuel = 5 MINUTES
+	lumber = null
+	lumber_amount = 0
 
 /obj/item/natural/wood/plank
 	name = "wood plank"
