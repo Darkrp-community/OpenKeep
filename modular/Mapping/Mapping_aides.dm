@@ -5,6 +5,23 @@
 
 /obj/effect/spawner/roguemap/loot/common
 	spawned = list(
+		/obj/item/roguecoin/copper = 5,
+		/obj/item/roguecoin/copper/pile = 15,
+		/obj/item/natural/cloth = 10,
+		/obj/item/storage/belt/rogue/pouch = 5,
+		/obj/item/storage/belt/rogue/pouch/coins/poor = 5,
+		/obj/item/storage/belt/rogue/leather/rope = 10,
+		/obj/item/natural/bundle/stick = 10,
+		/obj/item/grown/log/tree/small = 15,
+		/obj/item/natural/hide = 4,
+		/obj/item/clothing/shoes/roguetown/gladiator = 5,
+		/obj/item/kitchen/spoon = 1,
+		/obj/item/reagent_containers/glass/bowl = 1,
+
+		)
+
+/obj/effect/spawner/roguemap/loot/weapon
+	spawned = list(
 		/obj/item/roguecoin/copper/pile = 15,
 		/obj/item/rogueweapon/knife/hunting = 10,
 		/obj/item/rogueweapon/knife/dagger = 8,
@@ -21,6 +38,8 @@
 		/obj/item/clothing/neck/roguetown/coif = 3,
 		/obj/item/clothing/shoes/roguetown/gladiator = 5
 		)
+
+
 
 /*	..................   Random Seeds   ................... */
 /obj/effect/spawner/roguemap/seeds	// all random
@@ -187,6 +206,7 @@
 		/obj/structure/idle_enemy/weak_skelly = 50	)
 
 
+
 // ===================================================================================
 /*	..................   Idle Enemy Spawner   ................... */
 /obj/structure/idle_enemy
@@ -293,6 +313,50 @@
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30,
 				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 20)
+
+// ===================================================================================
+
+
+/*	..................   Catacomb Skelly (weak)   ................... */
+/mob/living/carbon/human/species/skeleton/npc/catacomb/after_creation()
+	..()
+	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/catacomb)
+
+/datum/outfit/job/roguetown/species/skeleton/npc/catacomb/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.STASTR = 8
+	H.STASPD = 7
+	H.STACON = 10
+	H.STAEND = 10
+	var/loadout = rand(1,3)
+
+	if(prob(15))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+	if(prob(15))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
+	if(prob(15))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/rags
+
+	if(prob(10))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant
+	if(prob(10))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
+	if(prob(10))
+		pants = /obj/item/clothing/under/roguetown/tights/sailor
+
+	switch(loadout)
+		if(1)
+			r_hand = /obj/item/natural/stone
+		if(2)
+			r_hand = /obj/item/rogueweapon/knife/stone
+		if(3)
+			r_hand = /obj/item/rogueweapon/mace/woodclub
+
+/*	..................   Hostile Bum   ................... */
+/mob/living/carbon/human/species/human/northern/bum/ambush/Initialize()
+	. = ..()
+	name = pick("Madman", "Creep", "Lunatic", "Leper")
+
 
 // ===================================================================================
 /obj/structure/mineral_door/wood/red/i
@@ -1065,37 +1129,4 @@
 	dropshrink = 0.9
 
 
-// ====================		CATACOMB SKELLY		========================== (weak)
-/mob/living/carbon/human/species/skeleton/npc/catacomb/after_creation()
-	..()
-	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/catacomb)
 
-/datum/outfit/job/roguetown/species/skeleton/npc/catacomb/pre_equip(mob/living/carbon/human/H)
-	..()
-	H.STASTR = 8
-	H.STASPD = 7
-	H.STACON = 10
-	H.STAEND = 10
-	var/loadout = rand(1,3)
-
-	if(prob(15))
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-	if(prob(15))
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
-	if(prob(15))
-		shirt = /obj/item/clothing/suit/roguetown/shirt/rags
-
-	if(prob(10))
-		pants = /obj/item/clothing/under/roguetown/tights/vagrant
-	if(prob(10))
-		pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
-	if(prob(10))
-		pants = /obj/item/clothing/under/roguetown/tights/sailor
-
-	switch(loadout)
-		if(1)
-			r_hand = /obj/item/natural/stone
-		if(2)
-			r_hand = /obj/item/rogueweapon/knife/stone
-		if(3)
-			r_hand = /obj/item/rogueweapon/mace/woodclub
