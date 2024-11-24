@@ -1,63 +1,390 @@
-/proc/accuracy_check(zone, mob/living/user, mob/living/target, associated_skill, datum/intent/used_intent, obj/item/I)
+/proc/accuracy_check(zone, mob/living/user, mob/living/target, obj/item/I, associated_skill, datum/intent/used_intent)
+	var/hit = "Hit"
+	used_intent = user.used_intent
+	if(!zone)
+		zone = user.zone_selected									//Double enforcing the target body part, just in case
+		if(!zone)
+			zone = zone_simpmob_target(zone)						//Else, have a random body part selected
+	if(user == target)
+		return list(zone, hit)
+	if(zone == BODY_ZONE_CHEST)										//Targeting the chest always hits
+		return list(zone, hit)
+	if(used_intent.type == INTENT_GRAB)
+		if(!(target.mobility_flags & MOBILITY_STAND))				//If they're grounded, you can just grab them
+			return list(zone, hit)
+		if(user.grab_state <= GRAB_AGGRESSIVE)
+			return list(zone, hit)
+
+	var/ace_mod = zone_ace_mod(zone)								//Sub-location hit modifier
+	var/chance2hit = 0
+	var/chance2acehit = 0
+	var/strmod = (user.STASTR - I.minstr)
+	var/facing = relative_angular_facing(user, target)				//Which side of the target you are attacking
+
+	if(user.mind)													//15 points per skill level, 95 bonus at Legendary
+		chance2hit += (user.mind.get_skill_level(associated_skill) * 15)
+
+	if(target.grabbedby == user)									//If you are grabbing or being grabbed, there is a To-Hit bonus
+		if(used_intent.reach == 1)
+			chance2hit += 30
+	if(user.grabbedby == target)
+		if(used_intent.reach == 1)
+			chance2hit += 30
+
+	if(user.simpmob_attack >= 1)									//To compensate for NPCs lack of skills
+		chance2hit += (user.simpmob_attack)							//Not to be confused with actual SimpleAnimals, which use their own variant of accuracy
+
+	if(user.domhand != user.active_hand_index)						//Attacking with your offhand will penalize your To-Hit
+		chance2hit -= 25
+
+	if(used_intent)
+		if(used_intent.blade_class == BCLASS_STAB)					//Thrusting attacks are the most accurate
+			chance2hit += round(user.STAPER * 1.5)
+		else if(used_intent.blade_class == BCLASS_CUT)				//Slashing is still semi-aimed
+			chance2hit += user.STAPER
+		else if(used_intent.blade_class == BCLASS_PUNCH)			//It is easiest to aim your fists
+			chance2hit += (20 + user.STAPER)
+		else if(used_intent == INTENT_GRAB)
+			chance2hit += (20 + user.STAPER)
+		else if(used_intent == INTENT_KICK)
+			chance2hit += (10 + user.STAPER)
+		else if(used_intent == INTENT_BITE)
+			chance2hit += (20 + user.STAPER)
+		else if(used_intent.reach >= 2)								//Using a polearm's reach attack at close range reduces the To-Hit chance
+			if(get_dist(user, target) <= 1)
+				chance2hit -= 35
+
+	if(!(target.mobility_flags & MOBILITY_STAND))					//If they're grounded, you get a bonus to your To-Hit
+		chance2hit += 40
+
+	if(I)
+		if(I.wlength == WLENGTH_SHORT)								//Small weapons like daggers are easier to aim
+			chance2hit += 25
+		if(I.wbalance > 0)
+			chance2hit += user.STASPD
+		if(I.minstr > 0)											//Using a weapon while below minimum strength requirement will penalize your To-Hit
+			if(strmod <= 0)
+				chance2hit += (strmod * 2)
+		if(I.wielded)												//Two Handing a weapon will add part of your Strength score to your To-Hit
+			chance2hit += (user.STASTR * 1.5)
+		chance2hit += (user.STAPER / 2)								//Using weapons gives you half your Perception as a To-Hit bonus
+
+	if(user.mob_size != target.mob_size)							//Size modifier. Easier to hit bigger enemies, harder to hit smaller enemies.
+		chance2hit += ((target.mob_size - user.mob_size) * 10)
+
+	if(istype(user.rmb_intent, /datum/rmb_intent/aimed))			//Taking time to aim attacks gives Perception + 10
+		chance2hit += (user.STAPER + 10)
+	if(istype(user.rmb_intent, /datum/rmb_intent/swift))			//Swinging as fast as you can reduces your To-Hit
+		chance2hit -= (30 - user.STASPD)
+
+	var/facing_zone = facing_zone(zone)
+	if(facing == NORTH)												//Attacks from the front, normal
+	else if(facing == NORTHEAST) 									//Attacks from the fore-right
+		if(facing_zone == BODY_ZONE_FACING_FRONT)
+			ace_mod = (ace_mod / 1.5)
+		if(zone == BODY_ZONE_PRECISE_EARS)
+			ace_mod = (ace_mod * 1.5)
+		if(facing_zone == BODY_ZONE_FACING_L_ARM)
+			zone = BODY_ZONE_CHEST
+		if(facing_zone == BODY_ZONE_FACING_L_LEG)
+			chance2hit = (chance2hit / 2)
+	else if(facing == EAST)											//Attacks from the right
+		if(facing_zone == BODY_ZONE_FACING_FRONT)
+			ace_mod = (ace_mod / 2)										//Side attacks halve To-Hit to the face
+		if(zone == BODY_ZONE_PRECISE_EARS)
+			ace_mod = (ace_mod * 2)										//Side attacks double To-Hit to the ears
+		if(facing_zone == BODY_ZONE_FACING_L_ARM)
+			zone = BODY_ZONE_R_ARM										//Targeting the far arm or leg will hit the near arm or leg instead
+		if(facing_zone == BODY_ZONE_FACING_L_LEG)
+			zone = BODY_ZONE_R_LEG
+	else if(facing == SOUTHEAST)									//Attacks from the aft-right
+		if(facing_zone == BODY_ZONE_FACING_FRONT)						//The face can not be attacked from behind
+			ace_mod = 0
+		if(zone == BODY_ZONE_PRECISE_EARS)
+			ace_mod = (ace_mod * 1.5)
+		if(facing_zone == BODY_ZONE_FACING_L_ARM)
+			zone = BODY_ZONE_CHEST
+		if(facing_zone == BODY_ZONE_FACING_L_LEG)
+			chance2hit = (chance2hit / 2)
+	else if(facing == SOUTH)										//Attacks from the rear
+		if(facing_zone == BODY_ZONE_FACING_FRONT)
+			ace_mod = (ace_mod * 0)
+	else if(facing == SOUTHWEST)									//Attacks from the aft-left
+		if(facing_zone == BODY_ZONE_FACING_FRONT)
+			ace_mod = 0
+		if(zone == BODY_ZONE_PRECISE_EARS)
+			ace_mod = (ace_mod * 1.5)
+		if(facing_zone == BODY_ZONE_FACING_R_ARM)
+			zone = BODY_ZONE_CHEST
+		if(facing_zone == BODY_ZONE_FACING_R_LEG)
+			chance2hit = (chance2hit / 2)
+	else if(facing == WEST)											//Attacks from the left
+		if(facing_zone == BODY_ZONE_FACING_FRONT)
+			ace_mod = (ace_mod / 2)
+		if(zone == BODY_ZONE_PRECISE_EARS)
+			ace_mod = (ace_mod * 2)
+		if(facing_zone == BODY_ZONE_FACING_R_ARM)
+			zone = BODY_ZONE_L_ARM
+		if(facing_zone == BODY_ZONE_FACING_R_LEG)
+			zone = BODY_ZONE_L_LEG
+	else if(facing == NORTHWEST)									//Attacks from the fore-left
+		if(facing_zone == BODY_ZONE_FACING_FRONT)
+			ace_mod = (ace_mod / 1.5)
+		if(zone == BODY_ZONE_PRECISE_EARS)
+			ace_mod = (ace_mod * 1.5)
+		if(facing_zone == BODY_ZONE_FACING_R_ARM)
+			zone = BODY_ZONE_CHEST
+		if(facing_zone == BODY_ZONE_FACING_R_LEG)
+			chance2hit = (chance2hit / 2)
+
+	chance2acehit = CLAMP((round(chance2hit * ace_mod)), 0, 100) 	//Ability to hit sub-locations
+	chance2hit = CLAMP((round(chance2hit)), 0, 100) 				//Ability to hit the target
+	var/tohit = rand(1,100)
+	if(tohit <= chance2acehit)
+		if(user.client?.prefs.showrolls)
+			var/subzone = check_subzone(zone)
+			if(subzone)
+				to_chat(user, span_greentext("Good Hit!!"))
+			if(GLOB.Debug2)
+				if(!subzone)
+					to_chat(user, span_nicegreen("Hit!"))
+				to_chat(user, span_smallgreen("Roll under [chance2acehit] to Ace Hit: [tohit]"))
+				to_chat(target, span_smallred("They rolled [tohit] against [chance2acehit]%"))
+		hit = "Hit"
+		return list(zone, hit)
+	else
+		if(tohit <= chance2hit)
+			if(user.client?.prefs.showrolls && GLOB.Debug2)
+				to_chat(user, span_nicegreen("Hit!"))
+				to_chat(user, span_smallgreen("Roll under [chance2hit] to Hit: [tohit]"))
+				to_chat(target, span_smallred("They rolled [tohit] against [chance2hit]%"))
+			hit = "Hit"
+			zone = check_zone(zone)
+			return list(zone, hit)
+		else
+			if(user.client?.prefs.showrolls)
+				to_chat(user, span_warning("I Missed!"))
+				if(GLOB.Debug2)
+					to_chat(user, span_smallgreen("Roll under [chance2hit] to Hit: [tohit]"))
+					to_chat(target, span_smallred("They rolled [tohit] against [chance2hit]%"))
+			user.aftermiss()
+			hit = "Miss"
+			zone = check_zone(zone)
+			return list(zone, hit)
+
+/proc/simple_accuracy_check(zone, mob/living/simple_animal/user, mob/living/target, datum/intent/used_intent)
+	var/hit = "Hit"
+	used_intent = user.used_intent
 	if(!zone)
 		return
 	if(user == target)
-		return zone
+		return list(zone, hit)
 	if(zone == BODY_ZONE_CHEST)
-		return zone
-	if(target.grabbedby == user)
-		if(user.grab_state >= GRAB_AGGRESSIVE)
-			return zone
-	if(target.lying)
-		return zone
-	if( (target.dir == turn(get_dir(target,user), 180)))
-		return zone
+		return list(zone, hit)
 
-	var/chance2hit = 0
+	var/ace_mod = zone_ace_mod(zone)
+	var/chance2hit = (user.simpmob_attack)
+	var/chance2acehit = 0
 
-	if(check_zone(zone) == zone)
-		chance2hit += 10
+	chance2hit += (user.STAPER + (user.STASTR / 2))
 
-	if(user.mind)
-		chance2hit += (user.mind.get_skill_level(associated_skill) * 5)
+	if(user.grabbedby == target)									//To-Hit penalty if you are being grabbed while shooting
+		chance2hit -= 20
 
-	if(used_intent)
-		if(used_intent.blade_class == BCLASS_STAB)
-			chance2hit += 20
-		if(used_intent.blade_class == BCLASS_CUT)
-			chance2hit += 12
+	if(user.mob_size != target.mob_size)							//Size modifier. Easier to hit bigger enemies, harder to hit smaller enemies.
+		chance2hit += ((target.mob_size - user.mob_size) * 10)
 
-	if(I)
-		if(I.wlength == WLENGTH_SHORT)
-			chance2hit += 10
+	if(!(target.mobility_flags & MOBILITY_STAND))					//If they're grounded, you get a bonus to your To-Hit
+		chance2hit += 40
 
-	if(user.STAPER > 10)
-		chance2hit += ((user.STAPER-10)*3)
-
-	if(user.STAPER < 10)
-		chance2hit -= ((10-user.STAPER)*3)
-
-	if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
-		chance2hit += 20
-	if(istype(user.rmb_intent, /datum/rmb_intent/swift))
-		chance2hit -= 40
-
-	chance2hit = CLAMP(chance2hit, 5, 99)
-
-	if(prob(chance2hit))
-		return zone
+	chance2acehit = CLAMP((round(chance2hit * ace_mod)), 0, 100)	//Ability to hit sub-locations
+	chance2hit = CLAMP((round(chance2hit)), 0, 100)					//Ability to hit the target
+	var/tohit = rand(1,100)
+	if(tohit <= chance2acehit)
+		if(GLOB.Debug2)
+			to_chat(target,span_danger("[user] cleanly hit me!! ") + span_warning("Rolled [tohit] against [chance2acehit]%"))
+		hit = "Hit"
+		return list(zone, hit)
 	else
-		if(prob(chance2hit+5))
-			if(check_zone(zone) == zone)
-				return zone
+		if(tohit <= chance2hit)
+			if(GLOB.Debug2)
+				to_chat(target, span_smallred("[user] hit me! ") + span_warning("Rolled [tohit] against [chance2hit]%"))
+			hit = "Hit"
+			zone = check_zone(zone)
+			return list(zone, hit)
+		else
+			target.visible_message(span_warning("[user] missed!"))
+			if(GLOB.Debug2)
+				to_chat(target, span_warning("Rolled [tohit] against [chance2hit]%"))
+			playsound(get_turf(user), pick(user.attack_sound), 100, FALSE)
+			playsound(get_turf(user), pick(used_intent.miss_sound), 100, FALSE)
+			hit = "Miss"
+			zone = check_zone(zone)
+			return list(zone, hit)
+
+/proc/projectile_accuracy_check(zone, obj/projectile/P, mob/living/target)
+	var/mob/living/user = P.firer
+	var/associated_skill
+	if(P.fired_from)												//Checking if the projectile is from a weapon
+		if(ispath(/obj/item))
+			var/obj/item/I = P.fired_from
+			associated_skill = I.associated_skill
+	if(user.ranged_ability && !P.fired_from)						//Checking if the projectile is from a spell and NOT a weapon
+		if(ispath(/obj/effect/proc_holder/spell))
+			var/obj/effect/proc_holder/spell/invoked/projectile/S = user.ranged_ability
+			associated_skill = S.associated_skill
+	var/hit = "Hit"
+	if(!zone)
+		zone = user.zone_selected									//Double enforcing the target body part (for spells)
+		if(!zone)
+			zone = zone_simpmob_target(zone)						//Else, have a random body part selected
+	if(user == target)
+		return list(zone, hit)
+
+	var/ace_mod = zone_ace_mod(zone)								//Sub-location hit modifier
+	var/chance2hit = ((user.STAPER * 2) + user.STASPD + 20)
+	var/chance2acehit = 0
+	var/datum/point/vector/previous = P.trajectory.return_vector_after_increments(1,-1)		//Backstepping the projectile to better account for angular attack vectors
+	var/projlast = previous.return_turf()
+	var/facing = relative_angular_facing(projlast, target)			//Which side of the target you are attacking
+	var/dist = abs(P.range - P.decayedRange)
+
+	if(P.ricochets >= 1)											//In the event of a ricochet hit
+		var/luck = (rand(1, 20) + (user.STALUC))					//Opposed 1d20+Luck rolls
+		var/luckcheck = (rand(1, 20) + (target.STALUC))
+		if(luck < luckcheck)
+			hit = "Hit"
+			zone = zone_simpmob_target(zone)						//Random body part hit by ricochet strikes
+			return list(zone, hit)
+		else
+			hit = "Miss"
+			zone = check_zone(zone)
+			return list(zone, hit)
+
+	if(user.mind)													//10 points per skill level, 60 bonus at Legendary
+		chance2hit += (user.mind.get_skill_level(associated_skill) * 10)
+
+	if(user.mob_size != target.mob_size)							//Size modifier. Easier to hit bigger enemies, harder to hit smaller enemies.
+		chance2hit += ((target.mob_size - user.mob_size) * 10)
+
+	if(user.active_hand_index)
+		if(associated_skill == /datum/skill/combat/bows)
+			if(user.domhand == user.active_hand_index)				//Bows go in your offhand, primehand for drawing and aiming
+				chance2hit -= 25
+		else if(user.domhand != user.active_hand_index)				//Attacking with your offhand will penalize your To-Hit
+			chance2hit -= 25
+
+	if(!(target.mobility_flags & MOBILITY_STAND))					//If they're grounded nearby, you get a bonus to your To-Hit
+		chance2hit += (30 - (dist * 10))								//Bonus inversely scales by distance, neutral at 4 tiles distance and negative beyond
+
+	if(user.grabbedby())											//Attack penalty if you are being grabbed
+		chance2hit -= (60 - (user.STASTR * 3))
+
+	if(istype(user.used_intent, /datum/intent/arc))
+		dist *= 1.5
+
+	chance2hit -= (dist * (6 - ((user.mind.get_skill_level(associated_skill)) * 1)))
+
+	var/facing_zone = facing_zone(zone)
+	if(facing == NORTH)												//Attacks from the front, normal
+	else if(facing == NORTHEAST) 									//Attacks from the fore-right
+		if(facing_zone == BODY_ZONE_FACING_FRONT)
+			ace_mod = (ace_mod / 1.5)
+		if(zone == BODY_ZONE_PRECISE_EARS)
+			ace_mod = (ace_mod * 1.5)
+		if(facing_zone == BODY_ZONE_FACING_L_ARM)
+			zone = BODY_ZONE_CHEST
+		if(facing_zone == BODY_ZONE_FACING_L_LEG)
+			chance2hit = (chance2hit / 2)
+	else if(facing == EAST)											//Attacks from the right
+		if(facing_zone == BODY_ZONE_FACING_FRONT)
+			ace_mod = (ace_mod / 2)										//Side attacks halve To-Hit to the face
+		if(zone == BODY_ZONE_PRECISE_EARS)
+			ace_mod = (ace_mod * 2)										//Side attacks double To-Hit to the ears
+		if(facing_zone == BODY_ZONE_FACING_L_ARM)
+			zone = BODY_ZONE_R_ARM										//Targeting the far arm or leg will hit the near arm or leg instead
+		if(facing_zone == BODY_ZONE_FACING_L_LEG)
+			zone = BODY_ZONE_R_LEG
+	else if(facing == SOUTHEAST)									//Attacks from the aft-right
+		if(facing_zone == BODY_ZONE_FACING_FRONT)						//The face can not be attacked from behind
+			ace_mod = 0
+		if(zone == BODY_ZONE_PRECISE_EARS)
+			ace_mod = (ace_mod * 1.5)
+		if(facing_zone == BODY_ZONE_FACING_L_ARM)
+			zone = BODY_ZONE_CHEST
+		if(facing_zone == BODY_ZONE_FACING_L_LEG)
+			chance2hit = (chance2hit / 2)
+	else if(facing == SOUTH)										//Attacks from the rear
+		if(facing_zone == BODY_ZONE_FACING_FRONT)
+			ace_mod = (ace_mod * 0)
+	else if(facing == SOUTHWEST)									//Attacks from the aft-left
+		if(facing_zone == BODY_ZONE_FACING_FRONT)
+			ace_mod = 0
+		if(zone == BODY_ZONE_PRECISE_EARS)
+			ace_mod = (ace_mod * 1.5)
+		if(facing_zone == BODY_ZONE_FACING_R_ARM)
+			zone = BODY_ZONE_CHEST
+		if(facing_zone == BODY_ZONE_FACING_R_LEG)
+			chance2hit = (chance2hit / 2)
+	else if(facing == WEST)											//Attacks from the left
+		if(facing_zone == BODY_ZONE_FACING_FRONT)
+			ace_mod = (ace_mod / 2)
+		if(zone == BODY_ZONE_PRECISE_EARS)
+			ace_mod = (ace_mod * 2)
+		if(facing_zone == BODY_ZONE_FACING_R_ARM)
+			zone = BODY_ZONE_L_ARM
+		if(facing_zone == BODY_ZONE_FACING_R_LEG)
+			zone = BODY_ZONE_L_LEG
+	else if(facing == NORTHWEST)									//Attacks from the fore-left
+		if(facing_zone == BODY_ZONE_FACING_FRONT)
+			ace_mod = (ace_mod / 1.5)
+		if(zone == BODY_ZONE_PRECISE_EARS)
+			ace_mod = (ace_mod * 1.5)
+		if(facing_zone == BODY_ZONE_FACING_R_ARM)
+			zone = BODY_ZONE_CHEST
+		if(facing_zone == BODY_ZONE_FACING_R_LEG)
+			chance2hit = (chance2hit / 2)
+
+	chance2acehit = CLAMP((round(chance2hit * ace_mod)), 0, 100)		//Ability to hit sub-locations
+	chance2hit = CLAMP((round(chance2hit)), 0, 100)						//Ability to hit the target
+	var/scatterhit = CLAMP((round(chance2hit * 1.5)), 0, 100)			//Chance to hit a random part on a miss
+	var/tohit = rand(1,100)
+	if(tohit <= chance2acehit)
+		if(user.client?.prefs.showrolls)
+			var/subzone = check_subzone(zone)
+			if(subzone)
+				to_chat(user, span_greentext("Good Hit!!"))
+			if(GLOB.Debug2)
+				if(!subzone)
+					to_chat(user, span_nicegreen("Hit!"))
+				to_chat(user, span_smallgreen("Roll under [chance2acehit] to Ace Hit... [tohit]"))
+		hit = "Hit"
+		return list(zone, hit)
+	else
+		if(tohit <= chance2hit)
+			if(user.client?.prefs.showrolls && GLOB.Debug2)
+				to_chat(user, span_nicegreen("Hit!"))
+				to_chat(user, span_smallgreen("Roll under [chance2hit] to Hit... [tohit]"))
+			hit = "Hit"
+			zone = check_zone(zone)
+			return list(zone, hit)
+		else
+			if(tohit <= scatterhit)
+				if(user.client?.prefs.showrolls)
+					to_chat(user, span_smallgreen("I managed to hit them."))
+					if(GLOB.Debug2)
+						to_chat(user, span_smallgreen("Roll under [scatterhit] to Scatter: [tohit]"))
+				hit = "Hit"
+				zone = zone_simpmob_target(zone)
+				return list(zone, hit)
 			else
 				if(user.client?.prefs.showrolls)
-					to_chat(user, "<span class='warning'>Accuracy fail! [chance2hit]%</span>")
-				return check_zone(zone)
-		else
-			if(user.client?.prefs.showrolls)
-				to_chat(user, "<span class='warning'>Ultra accuracy fail! [chance2hit]%</span>")
-			return BODY_ZONE_CHEST
+					to_chat(user, span_warning("Missed!!"))
+					if(GLOB.Debug2)
+						to_chat(user, span_smallgreen("Roll under [chance2hit] to Hit: [tohit]"))
+				hit = "Miss"
+				zone = check_zone(zone)
+				return list(zone, hit)
 
 /mob/proc/get_generic_parry_drain()
 	return 30
@@ -355,96 +682,129 @@
 
 
 /mob/proc/do_dodge(mob/user, turf/turfy)
-	if(!dodgecd)
-		var/mob/living/L = src
-		var/mob/living/U = user
-		var/mob/living/carbon/human/H
-		var/mob/living/carbon/human/UH
-		var/obj/item/I
-		var/drained = 10
-		if(ishuman(src))
-			H = src
-		if(ishuman(user))
-			UH = user
-			I = UH.used_intent.masteritem
-		var/prob2defend = U.defprob
-		if(L.rogfat >= L.maxrogfat)
-			return FALSE
-		if(L)
-			if(H?.check_dodge_skill())
-				prob2defend = prob2defend + (L.STASPD * 12)
-			else
-				prob2defend = prob2defend + (L.STASPD * 10)
-		if(U)
-			prob2defend = prob2defend - (U.STASPD * 10)
-		if(I)
-			if(I.wbalance > 0 && U.STASPD > L.STASPD) //nme weapon is quick, so they get a bonus based on spddiff
-				prob2defend = prob2defend - ( I.wbalance * ((U.STASPD - L.STASPD) * 10) )
-			if(I.wbalance < 0 && L.STASPD > U.STASPD) //nme weapon is slow, so its easier to dodge if we're faster
-				prob2defend = prob2defend + ( I.wbalance * ((U.STASPD - L.STASPD) * 10) )
-			if(UH?.mind)
-				prob2defend = prob2defend - (UH.mind.get_skill_level(I.associated_skill) * 10)
-		if(H)
-			if(!H?.check_armor_skill())
-				H.Knockdown(1)
-				return FALSE
-			if(H?.check_dodge_skill())
-				drained = drained - 2
-//			if(H.mind)
-//				drained = drained + max((H.checkwornweight() * 10)-(mind.get_skill_level(/datum/skill/misc/athletics) * 10),0)
-//			else
-//				drained = drained + (H.checkwornweight() * 10)
-			if(I) //the enemy attacked us with a weapon
-				if(!I.associated_skill) //the enemy weapon doesn't have a skill because its improvised, so penalty to attack
-					prob2defend = prob2defend + 10
-				else
-					if(H.mind)
-						prob2defend = prob2defend + (H.mind.get_skill_level(I.associated_skill) * 10)
-//				var/thing = H.encumbrance
-//				if(thing > 0)
-//					drained = drained + (thing * 10)
-			else //the enemy attacked us unarmed or is nonhuman
-				if(UH)
-					if(UH.used_intent.unarmed)
-						if(UH.mind)
-							prob2defend = prob2defend - (UH.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
-						if(H.mind)
-							prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
-			if(!(L.mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 50% defense malus if so
-				prob2defend *= 0.5
-			prob2defend = clamp(prob2defend, 5, 95)
-			if(client?.prefs.showrolls)
-				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")
-			if(!prob(prob2defend))
-				return FALSE
-			if(!H.rogfat_add(max(drained,5)))
-				to_chat(src, "<span class='warning'>I'm too tired to dodge!</span>")
-				return FALSE
-		else //we are a non human
-			if(client?.prefs.showrolls)
-				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")
-			prob2defend = clamp(prob2defend, 5, 95)
-			if(!prob(prob2defend))
-				return FALSE
-		dodgecd = TRUE
-		throw_at(turfy, 1, 2, src, FALSE)
-		if(drained > 0)
-			src.visible_message("<span class='warning'><b>[src]</b> dodges [user]'s attack!</span>")
+	if(dodgecd)
+		return FALSE
+	var/mob/living/D = src
+	var/mob/living/A = user
+	var/mob/living/carbon/human/DH
+	var/mob/living/carbon/human/AH
+	var/obj/item/I
+	var/obj/item/DI = D.get_active_held_item()
+	var/drained = 5
+	var/dodge_speed = floor(D.STASPD / 2)
+	if(ishuman(src))
+		DH = src
+	if(ishuman(user))
+		AH = user
+		I = AH.used_intent.masteritem
+	var/dodge_score = D.simpmob_defend
+	if(D.rogfat >= D.maxrogfat)
+		return FALSE
+	if(!(D.mobility_flags & MOBILITY_STAND))							//Can't dodge when knocked down
+		return FALSE
+	if(D)
+		if(D?.check_dodge_skill())
+			dodge_score += ((D.STASPD * 15) + (D.STAPER * 4))
 		else
-			src.visible_message("<span class='warning'><b>[src]</b> easily dodges [user]'s attack!</span>")
-		dodgecd = null
+			dodge_score += ((D.STASPD * 10) + (D.STAPER * 4))
+	if(A)
+		dodge_score -= (A.mind ? (A.STASPD * 5) : A.simpmob_attack)
+	if(AH?.mind)
+		dodge_score -= (AH.mind.get_skill_level(I.associated_skill) * 10)
+
+	if(I.wbalance > 0)													//Enemy weapon is quick, so they get a bonus based on spddiff
+		dodge_score -= ((A.STASPD - D.STASPD) * 5)
+
+	dodge_score += (D.rmb_intent.def_bonus)								//Dodge bonus from Poise
+
+				//// ADD WEAPON INTENT MODIFIERS HERE ////
+	if(istype(DI, /obj/item/rogueweapon))
+		switch(DI.wlength)
+			if(WLENGTH_NORMAL)
+				dodge_score -= 5
+				drained += 2
+			if(WLENGTH_LONG)
+				dodge_score -= 10
+				drained += 5
+			if(WLENGTH_GREAT)
+				dodge_score -= 15
+				dodge_speed = floor(dodge_speed * 0.8)
+				drained += 8
+		dodge_score += (DI.wdodgebonus)
+
+	dodge_score += (D.used_intent.idodgebonus)							//Some weapon intents help with dodging
+
+	if(DH)
+		if(!DH?.check_armor_skill() || DH?.legcuffed)
+			DH.Knockdown(1)
+			return FALSE
+		if(I)															//Attacker attacked us with a weapon
+			if(!I.associated_skill)										//Attacker's weapon doesn't have a skill because its improvised, so penalty to attack
+				dodge_score += 10
+			else
+				if(DH.mind)
+					dodge_score += (DH.mind.get_skill_level(I.associated_skill) * 10)
+
+		else //the enemy attacked us unarmed or is nonhuman
+			if(AH)
+				if(AH.used_intent.unarmed)
+					if(AH.mind)
+						dodge_score -= (AH.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
+					if(DH.mind)
+						dodge_score += (DH.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
+
+		switch(DH.worn_armor_class)
+			if(AC_LIGHT)
+				dodge_speed -= 10
+				drained += 5
+			if(AC_MEDIUM)
+				dodge_score *= 0.5
+				dodge_speed = floor(dodge_speed * 0.5)
+				drained += 10
+			if(AC_HEAVY)
+				dodge_score *= 0.2
+				dodge_speed = floor(dodge_speed * 0.25)
+				drained += 20
+
+		dodge_score = clamp(dodge_score, 0, 95)
+		var/dodgeroll = rand(1, 100)
+
+		if(D.client?.prefs.showrolls && GLOB.Debug2)
+			to_chat(src, span_info("Roll under [dodge_score] to dodge... [dodgeroll]"))
+		if(dodgeroll > dodge_score)
+			return FALSE
+		if(!DH.rogfat_add(max(drained, 5)))
+			to_chat(src, span_warning("I'm too tired to dodge!"))
+			return FALSE
+	else																//Defender is non human
+		dodge_score = clamp(dodge_score, 0, 95)
+		var/dodgeroll = rand(1, 100)
+
+		if(D.client?.prefs.showrolls && GLOB.Debug2)
+			to_chat(src, span_info("Roll under [dodge_score] to dodge... [dodgeroll]"))
+		if(dodgeroll > dodge_score)
+			return FALSE
+	dodgecd = TRUE
+	dodge_speed = (11 - dodge_speed)
+	playsound(src, 'sound/combat/dodge.ogg', 100, FALSE)
+	throw_at(turfy, 1, dodge_speed, src, FALSE)
+	if(drained > 0)
+		src.visible_message(span_warning("<b>[src]</b> dodges [user]'s attack!"))
+	else
+		src.visible_message(span_warning("<b>[src]</b> easily dodges [user]'s attack!"))
+	dodgecd = FALSE
 //		if(H)
 //			if(H.IsOffBalanced())
 //				H.Knockdown(1)
 //				to_chat(H, "<span class='danger'>I tried to dodge off-balance!</span>")
-		playsound(src, 'sound/combat/dodge.ogg', 100, FALSE)
+//		playsound(src, 'sound/combat/dodge.ogg', 100, FALSE)
 //		if(isturf(loc))
 //			var/turf/T = loc
 //			if(T.landsound)
 //				playsound(T, T.landsound, 100, FALSE)
-		return TRUE
-	else
-		return FALSE
+	return TRUE
+//	else
+		//return FALSE
 
 /mob/proc/food_tempted(/obj/item/W, mob/user)
 	return

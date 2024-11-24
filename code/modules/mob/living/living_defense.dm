@@ -43,9 +43,13 @@
 /mob/living/proc/on_hit(obj/projectile/P)
 	return BULLET_ACT_HIT
 
-/mob/living/bullet_act(obj/projectile/P, def_zone = BODY_ZONE_CHEST)
-	if(!prob(P.accuracy + P.bonus_accuracy)) //if your accuracy check fails, you wont hit your intended target
-		def_zone = ran_zone(BODY_ZONE_CHEST, 65)//Hits a random part of the body, geared towards the chest
+/mob/living/bullet_act(obj/projectile/P, def_zone)
+	var/mob/living/target = src
+	var/list/projacc = projectile_accuracy_check(def_zone, P, target)
+	def_zone = projacc[1]
+	var/goodhit = projacc[2]
+	if(goodhit == "Miss")
+		return BULLET_ACT_MISS
 
 	var/armor = run_armor_check(def_zone, P.flag, "", "",P.armor_penetration, damage = P.damage)
 

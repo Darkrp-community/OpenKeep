@@ -189,7 +189,11 @@
 
 /mob/living/carbon/attacked_by(obj/item/I, mob/living/user)
 	var/obj/item/bodypart/affecting
-	var/useder = user.zone_selected
+	var/list/accuracy_check = accuracy_check(user.zone_selected, user, src, I, I.associated_skill, user.used_intent)
+	var/useder = accuracy_check[1]
+	var/goodhit = accuracy_check[2]
+	if(goodhit == "Miss")
+		return FALSE
 	if(user.tempatarget)
 		useder = user.tempatarget
 		user.tempatarget = null

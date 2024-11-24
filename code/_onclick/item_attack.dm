@@ -9,8 +9,20 @@
  */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
 	if(user.check_arm_grabbed(user.active_hand_index))
-		to_chat(user, "<span class='notice'>I can't move my arm!</span>")
-		return
+		var/mob/living/G = user.pulledby
+		var/mob/living/U = user
+		var/userskill = 1
+		if(U?.mind?.get_skill_level(/datum/skill/combat/wrestling))
+			userskill = ((U.mind.get_skill_level(/datum/skill/combat/wrestling) * 0.1) + 1)
+		var/grabberskill = 1
+		if(G?.mind?.get_skill_level(/datum/skill/combat/wrestling))
+			grabberskill = ((G.mind.get_skill_level(/datum/skill/combat/wrestling) * 0.1) + 1)
+		if(((U.STASTR + rand(1, 6)) * userskill) < ((G.STASTR + rand(1, 6)) * grabberskill))
+			to_chat(user, span_notice("I can't move my arm!"))
+			user.changeNext_move(CLICK_CD_GRABBING)
+			return
+		else
+			user.resist_grab()
 	if(!user.has_hand_for_held_index(user.active_hand_index, TRUE)) //we obviously have a hadn, but we need to check for fingers/prosthetics
 		to_chat(user, "<span class='warning'>I can't move the fingers.</span>")
 		return
@@ -63,7 +75,7 @@
 /mob/living/attackby(obj/item/I, mob/living/user, params)
 	if(..())
 		return TRUE
-	var/adf = user.used_intent.clickcd
+	var/adf = ((user.used_intent.clickcd + 8) - round((user.STASPD - 10) / 2))
 	if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 		adf = round(adf * 1.4)
 	if(istype(user.rmb_intent, /datum/rmb_intent/swift))
@@ -237,18 +249,17 @@
 		used_str--
 	//Your max STR is 20.
 	used_str = CLAMP(used_str, 1, 20)
-	if(used_str >= 11)
-		newforce = newforce + (newforce * ((used_str - 10) * 0.1))
-	else if(used_str <= 9)
-		newforce = newforce - (newforce * ((10 - used_str) * 0.1))
+	if(I.wielded)
+		used_str *= 1.2
+	newforce = (newforce * (used_str / 10))
 
 	if(I.minstr)
 		var/effective = I.minstr
 		if(I.wielded)
-			effective = max(I.minstr / 2, 1)
+			effective = max(round(I.minstr / 1.5), 1)
 		//Strength influence is reduced to 30%
 		if(effective > user.STASTR)
-			newforce = max(newforce*0.3, 1)
+			newforce = max(newforce * ((used_str / effective) / 1.5), 1)
 
 	//Blade Dulling Starts here.
 	switch(blade_dulling)
@@ -343,7 +354,8 @@
 	*/
 	newforce = (newforce * user.used_intent.damfactor) * dullfactor
 	if(user.used_intent.get_chargetime() && user.client?.chargedprog < 100)
-		newforce = newforce * 0.5
+		newforce = newforce * round(user.client?.chargedprog / 100, 0.1)
+	newforce = round(newforce, 1)
 	if(!(user.mobility_flags & MOBILITY_STAND))
 		newforce *= 0.5
 	// newforce is rounded upto the nearest intiger.
@@ -411,56 +423,21 @@
 /mob/living/proc/simple_limb_hit(zone)
 	if(!zone)
 		return ""
-	switch(zone)
-		if(BODY_ZONE_HEAD)
-			return "body"
-		if(BODY_ZONE_CHEST)
-			return "body"
-		if(BODY_ZONE_R_LEG)
-			return "body"
-		if(BODY_ZONE_L_LEG)
-			return "body"
-		if(BODY_ZONE_R_ARM)
-			return "body"
-		if(BODY_ZONE_L_ARM)
-			return "body"
-		if(BODY_ZONE_PRECISE_R_EYE)
-			return "body"
-		if(BODY_ZONE_PRECISE_L_EYE)
-			return "body"
-		if(BODY_ZONE_PRECISE_NOSE)
-			return "body"
-		if(BODY_ZONE_PRECISE_MOUTH)
-			return "body"
-		if(BODY_ZONE_PRECISE_SKULL)
-			return "body"
-		if(BODY_ZONE_PRECISE_EARS)
-			return "body"
-		if(BODY_ZONE_PRECISE_NECK)
-			return "body"
-		if(BODY_ZONE_PRECISE_L_HAND)
-			return "body"
-		if(BODY_ZONE_PRECISE_R_HAND)
-			return "body"
-		if(BODY_ZONE_PRECISE_L_FOOT)
-			return "body"
-		if(BODY_ZONE_PRECISE_R_FOOT)
-			return "body"
-		if(BODY_ZONE_PRECISE_STOMACH)
-			return "body"
-		if(BODY_ZONE_PRECISE_GROIN)
-			return "body"
-		if(BODY_ZONE_PRECISE_R_INHAND)
-			return "body"
-		if(BODY_ZONE_PRECISE_L_INHAND)
-			return "body"
-	return "body"
+	if(istype(src, /mob/living/simple_animal))
+		zone = src.simple_limb_hit(zone)
+		return zone
+	else
+		return "body"
 
 /obj/item/proc/funny_attack_effects(mob/living/target, mob/living/user, nodmg)
 	return
 
 /mob/living/attacked_by(obj/item/I, mob/living/user)
-	var/hitlim = simple_limb_hit(user.zone_selected)
+	var/list/accuracy_check = accuracy_check(user.zone_selected, user, src, I, I.associated_skill, user.used_intent)
+	var/goodhit = accuracy_check[2]
+	if(goodhit == "Miss")
+		return FALSE
+	var/hitlim = accuracy_check[1]
 	testing("[src] attacked_by")
 	I.funny_attack_effects(src, user)
 	if(I.force)
@@ -469,6 +446,7 @@
 		if(I.damtype == BRUTE)
 			next_attack_msg.Cut()
 			if(HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
+				hitlim = simple_limb_hit(accuracy_check[1])
 				var/datum/wound/crit_wound  = simple_woundcritroll(user.used_intent.blade_class, newforce, user, hitlim)
 				if(should_embed_weapon(crit_wound, I))
 					// throw_alert("embeddedobject", /atom/movable/screen/alert/embeddedobject)
@@ -501,12 +479,12 @@
 
 // Proximity_flag is 1 if this afterattack was called on something adjacent, in your square, or on your person.
 // Click parameters is the params string from byond Click() code, see that documentation.
-/obj/item/proc/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+/obj/item/proc/afterattack(atom/target, mob/living/user, proximity_flag, click_parameters)
 	SEND_SIGNAL(src, COMSIG_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
 	if(force && !user.used_intent.tranged && !user.used_intent.tshield)
 		if(proximity_flag && isopenturf(target) && !user.used_intent?.noaa)
-			var/adf = user.used_intent.clickcd
+			var/adf = ((user.used_intent.clickcd + 8) - round((user.STASPD - 10) / 2))
 			if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 				adf = round(adf * 1.4)
 			if(istype(user.rmb_intent, /datum/rmb_intent/swift))
@@ -516,7 +494,7 @@
 			playsound(get_turf(src), pick(swingsound), 100, FALSE, -1)
 			user.aftermiss()
 		if(!proximity_flag && ismob(target) && !user.used_intent?.noaa) //this block invokes miss cost clicking on seomone who isn't adjacent to you
-			var/adf = user.used_intent.clickcd
+			var/adf = ((user.used_intent.clickcd + 8) - round((user.STASPD - 10) / 2))
 			if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 				adf = round(adf * 1.4)
 			if(istype(user.rmb_intent, /datum/rmb_intent/swift))

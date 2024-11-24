@@ -9,7 +9,11 @@
 	var/skel_outfit = /datum/outfit/job/roguetown/npc/skeleton
 	ambushable = FALSE
 	rot_type = null
-	possible_rmb_intents = list()
+	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw)
+	a_intent = INTENT_HELP
+	possible_mmb_intents = list(INTENT_STEAL, INTENT_JUMP, INTENT_KICK, INTENT_BITE)
+	possible_rmb_intents = list(/datum/rmb_intent/feint, /datum/rmb_intent/aimed, /datum/rmb_intent/strong, /datum/rmb_intent/weak)
+	stand_attempts = 4
 
 /mob/living/carbon/human/species/skeleton/npc/no_equipment
 	skel_outfit = null
@@ -21,6 +25,23 @@
 	aggressive = 1
 	mode = AI_IDLE
 	wander = TRUE
+	simpmob_attack = 40
+	simpmob_defend = 0
+	wander = TRUE
+	attack_speed = -10
+
+/obj/item/bodypart/chest/skeleton
+	max_damage = 450
+/obj/item/bodypart/head/skeleton
+	max_damage = 400
+/obj/item/bodypart/l_arm/skeleton
+	max_damage = 300
+/obj/item/bodypart/r_arm/skeleton
+	max_damage = 300
+/obj/item/bodypart/r_leg/skeleton
+	max_damage = 360
+/obj/item/bodypart/l_leg/skeleton
+	max_damage = 360
 
 /mob/living/carbon/human/species/skeleton/Initialize()
 	. = ..()

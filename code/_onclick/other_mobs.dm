@@ -16,6 +16,7 @@
 
 	if(check_arm_grabbed(used_hand))
 		to_chat(src, "<span class='warning'>Someone is grabbing my arm!</span>")
+		resist_grab()
 		return
 
 	// Special glove functions:
@@ -305,6 +306,7 @@
 					return
 				if(pulledby && pulledby != src)
 					to_chat(src, "<span class='warning'>I'm being grabbed.</span>")
+					resist_grab()
 					return
 				if(IsOffBalanced())
 					to_chat(src, "<span class='warning'>I haven't regained my balance yet.</span>")
