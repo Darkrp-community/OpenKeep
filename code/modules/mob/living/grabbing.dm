@@ -144,7 +144,7 @@
 		return FALSE
 	if(!valid_check())
 		return FALSE
-	user.changeNext_move((CLICK_CD_MELEE * (((user.STASPD - 10) / 20) + 1)) + 4)	//12 deciseconds, modified by User Speed, plus 4 for buffer
+	user.changeNext_move(CLICK_CD_MELEE)	//12 deciseconds, modified by User Speed, plus 4 for buffer
 	var/skill_diff = 0
 	var/combat_modifier = 1
 	if(user.mind)
