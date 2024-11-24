@@ -312,7 +312,7 @@ GLOBAL_VAR(restart_counter)
 	var/s = ""
 	s += "<center><a href=\"https://discord.gg/zNAGFDcQ\">"
 #ifdef MATURESERVER
-	s += "<big><b>Vanderlin (Hosted by Monkestation)</b></big></a><br>"
+	s += "<big><b>Vanderlin - IN-DEVELOPMENT PLAYTEST (Hosted by Monkestation)</b></big></a><br>"
 	s += "<b>Dark Medieval Fantasy Roleplay<b><br>"
 
 #else

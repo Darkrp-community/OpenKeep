@@ -37,18 +37,18 @@ SUBSYSTEM_DEF(ambience)
 		ambience_listening_clients -= to_process
 		return
 
-	var/sexy_ambience = null
+	var/spooky_ambience = null
 	if(GLOB.tod == "night")
 		if(current_area.spookynight)
-			sexy_ambience = pick(current_area.spookynight)
-	else	
+			spooky_ambience = pick(current_area.spookynight)
+	else
 		if(current_area.spookysounds)
-			sexy_ambience = pick(current_area.spookysounds)
+			spooky_ambience = pick(current_area.spookysounds)
 
-	if(!sexy_ambience)
+	if(!spooky_ambience)
 		return
 
-	SEND_SOUND(to_process.mob, sound(sexy_ambience, repeat = 0, wait = 0, volume = 10, channel = CHANNEL_AMBIENCE))
+	SEND_SOUND(to_process.mob, sound(spooky_ambience, repeat = 0, wait = 0, volume = 10, channel = CHANNEL_AMBIENCE))
 
 	ambience_listening_clients[to_process] = world.time + rand(current_area.min_ambience_cooldown, current_area.max_ambience_cooldown)
 

@@ -86,7 +86,7 @@ SUBSYSTEM_DEF(ticker)
 	var/gibbs = 0 // gibs been
 	var/snort = 0 // drugs snorted
 	var/beardshavers = 0 // beards shaven, includes  more than dwarves
-	var/list/cuckers = list()
+	// var/list/cuckers = list()
 
 	var/end_party = FALSE
 	var/last_lobby = 0

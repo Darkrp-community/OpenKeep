@@ -4,9 +4,7 @@
 /proc/curse2trait(curse)
 	if(!curse)
 		return
-	switch(curse)
-		if("brokedick")
-			return TRAIT_LIMPDICK
+	return
 
 /proc/has_player_curse(key,curse)
 	if(!key)

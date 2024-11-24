@@ -2424,7 +2424,9 @@ Slots: [job.spawn_positions]</span>
 		var/list/L = get_player_curses(parent.ckey)
 		if(L)
 			for(var/X in L)
-				ADD_TRAIT(character, curse2trait(X), TRAIT_GENERIC)
+				var/curse = curse2trait(X)
+				if (curse)
+					ADD_TRAIT(character, curse2trait(X), TRAIT_GENERIC)
 
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
