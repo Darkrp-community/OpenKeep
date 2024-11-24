@@ -15,8 +15,9 @@
 	name = "Aasimar"
 	id = "aasimar"
 	desc = "<b>Aasimar</b><br> \
-	Immortal offspring sculpted by one of the gods. \
-	Aasimar are often revered due to their celestial origin, but face great solitude \
+	Immortal offspring sculpted by one of the gods for use in servitude. \
+	Aasimar roaming alone on Psydonia often are those abandoned after serving their purpose. \
+	This species is often revered due to their celestial origin, but face great solitude \
 	as not many of their kind exist. An aasimar may be crafted with any number of materials. \
 	Many resemble sculptures of stones or ceramic in skin, but their insides are just as mortal as \
 	any other. "
@@ -54,8 +55,8 @@
 	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,-1), OFFSET_BACK_F = list(0,-1), \
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
-	specstats = list("strength" = 1, "perception" = 0, "intelligence" = -2, "constitution" = 3, "endurance" = 1, "speed" = 0, "fortune" = -1)
-	specstats_f = list("strength" = 1, "perception" = 0, "intelligence" = -2, "constitution" = 3, "endurance" = 1, "speed" = 0, "fortune" = -1)
+	specstats = list("strength" = 0, "perception" = 0, "intelligence" = 2, "constitution" = 1, "endurance" = 1, "speed" = 0, "fortune" = 0)
+	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 2, "constitution" = 1, "endurance" = 1, "speed" = 0, "fortune" = 0)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
