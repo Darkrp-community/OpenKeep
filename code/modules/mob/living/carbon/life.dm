@@ -175,12 +175,20 @@
 			adjustOxyLoss(5)
 	if(isopenturf(loc))
 		var/turf/open/T = loc
+		if(reagents&& T.pollution)
+			T.pollution.breathe_act(src)
+			if(next_smell <= world.time)
+				next_smell = world.time + 30 SECONDS
+				T.pollution.smell_act(src)
+/* Previous version had reagent transfer too
+	if(isopenturf(loc))
+		var/turf/open/T = loc
 		if(reagents&& T.pollutants)
 			var/obj/effect/pollutant_effect/P = T.pollutants
 			for(var/datum/pollutant/X in P.pollute_list)
 				for(var/A in X.reagents_on_breathe)
 					reagents.add_reagent(A, X.reagents_on_breathe[A])
-
+*/
 /mob/living/proc/handle_inwater(turf/open/water/W)
 	ExtinguishMob()
 
