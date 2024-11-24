@@ -1121,11 +1121,19 @@
 /obj/structure/fluff/statue/tdummy,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors)
+"qG" = (
+/obj/effect/landmark/observer_start,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors)
 "rh" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "ss" = (
 /turf/open/transparent/openspace,
+/area/rogue/outdoors)
+"sK" = (
+/obj/effect/landmark/shuttle_import,
+/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors)
 "vV" = (
 /obj/structure/ladder,
@@ -1134,9 +1142,23 @@
 "vW" = (
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/warehouse)
+"xh" = (
+/obj/effect/landmark/start,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors)
+"Fo" = (
+/obj/effect/landmark/start/lady,
+/turf/open/floor/rogue/carpet/lord/left,
+/area/rogue/indoors)
 "QR" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
+"Ty" = (
+/obj/effect/landmark/start/lord{
+	dir = 8
+	},
+/turf/open/floor/rogue/carpet/lord/right,
+/area/rogue/indoors)
 "Uv" = (
 /turf/closed,
 /area/rogue)
@@ -7003,7 +7025,7 @@ cN
 ab
 aj
 cU
-cU
+Fo
 cU
 cM
 qw
@@ -7265,7 +7287,7 @@ cV
 aJ
 aJ
 aJ
-aJ
+qG
 al
 aL
 al
@@ -7517,7 +7539,7 @@ cN
 ab
 aj
 cW
-cX
+Ty
 cX
 aJ
 aJ
@@ -8813,7 +8835,7 @@ aJ
 cI
 aJ
 aJ
-aJ
+sK
 aJ
 aJ
 cm
@@ -9069,7 +9091,7 @@ aJ
 aJ
 aJ
 aJ
-aJ
+xh
 aJ
 aJ
 aJ
