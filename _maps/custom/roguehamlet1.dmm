@@ -1808,7 +1808,7 @@
 	})
 "bYh" = (
 /obj/structure/bed/rogue/shit,
-/obj/item/clothing/mask/cigarette/rollie/mindbreaker,
+/obj/item/clothing/mask/cigarette/rollie/nicotine,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
 "bYY" = (
@@ -4389,7 +4389,7 @@
 /area/rogue/indoors/town)
 "eOs" = (
 /obj/structure/bed/rogue/shit,
-/obj/item/clothing/mask/cigarette/rollie/mindbreaker,
+/obj/item/clothing/mask/cigarette/rollie/nicotine,
 /obj/structure/fluff/walldeco/wantedposter,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/under/basement)
@@ -10646,7 +10646,7 @@
 /obj/item/paper/scroll,
 /obj/item/rogueweapon/knife/dagger/steel,
 /obj/item/reagent_containers/glass/bottle/rogue/poison,
-/obj/item/clothing/mask/cigarette/rollie/mindbreaker,
+/obj/item/clothing/mask/cigarette/rollie/nicotine,
 /obj/item/reagent_containers/food/snacks/produce/jacksberry/poison,
 /obj/item/keyring/nightman,
 /turf/open/floor/rogue/ruinedwood/chevron,
@@ -15256,7 +15256,7 @@
 	})
 "qlN" = (
 /obj/structure/rack/rogue,
-/obj/item/clothing/mask/cigarette/rollie/mindbreaker,
+/obj/item/clothing/mask/cigarette/rollie/nicotine,
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/magician)
 "qlR" = (
