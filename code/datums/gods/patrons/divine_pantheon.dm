@@ -26,7 +26,7 @@
 	boons = "None... yet."
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/blindness
-	t2 = null
+	t2 = /obj/effect/proc_holder/spell/invoked/invisibility
 	t3 = null
 
 /datum/patron/divine/dendor
@@ -38,7 +38,7 @@
 	sins = "Deforestation, Overhunting, Disrespecting Nature"
 	boons = "Immunity to kneestingers."
 	added_traits = list(TRAIT_KNEESTINGER_IMMUNITY)
-	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
+	t0 = /obj/effect/proc_holder/spell/targeted/blesscrop
 	t1 = /obj/effect/proc_holder/spell/self/beastsense
 	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
 	t3 = /obj/effect/proc_holder/spell/targeted/conjure_kneestingers
