@@ -155,7 +155,7 @@
 		if(HAS_TRAIT(user, TRAIT_BASHDOORS))
 			if(locked)
 				user.visible_message(span_warning("[user] bashes into [src]!"))
-				take_damage(200, "brute", "blunt", 1)
+				take_damage(200, "brute", "melee", 1)
 			else
 				playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
 				force_open()
@@ -164,7 +164,7 @@
 		if(HAS_TRAIT(user, TRAIT_ROTMAN))
 			if(locked)
 				user.visible_message(span_warning("The deadite bashes into [src]!"))
-				take_damage(50, "brute", "blunt", 1)
+				take_damage(50, "brute", "melee", 1)
 			else
 				playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 90)
 				force_open()
@@ -198,7 +198,7 @@
 		if( user.used_intent.type == /datum/intent/unarmed/claw )
 			user.changeNext_move(CLICK_CD_MELEE)
 			to_chat(user, "<span class='warning'>The deadite claws at the door!!</span>")
-			take_damage(40, "brute", "slash", 1)
+			take_damage(40, "brute", "melee", 1)
 			return
 		if(isliving(user))
 			var/mob/living/L = user
