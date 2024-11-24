@@ -86,8 +86,8 @@
 	gripped_intents = null
 	w_class = WEIGHT_CLASS_BULKY
 	smeltresult = /obj/item/rogueore/coal
-	lumber = /obj/item/grown/log/tree/lumber
-	lumber_amount = 2
+	lumber = null
+	lumber_amount = 0
 
 /obj/item/grown/log/tree/stick
 	seed = null
