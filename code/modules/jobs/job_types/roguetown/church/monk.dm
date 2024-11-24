@@ -61,6 +61,13 @@
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/green
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
+		if("Malum")
+			head = /obj/item/clothing/head/roguetown/roguehood/black
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/malum
+			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
+			pants = /obj/item/clothing/under/roguetown/tights/red
+			shoes = /obj/item/clothing/shoes/roguetown/boots
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/malum
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/roguehood/random
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver

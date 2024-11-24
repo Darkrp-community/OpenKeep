@@ -160,6 +160,17 @@
 /obj/item/rogueweapon/mace/woodclub/crafted
 	sellprice = 8
 
+/datum/crafting_recipe/roguetown/rod
+	name = "fishing rod"
+	result = /obj/item/fishingrod/crafted
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+		/obj/item/natural/fibers = 2)
+	tools = list(/obj/item/rogueweapon/knife)
+	craftdiff = 0
+
+/obj/item/fishingrod/crafted
+	sellprice = 8
+
 /datum/crafting_recipe/roguetown/bait
 	name = "bait"
 	result = /obj/item/bait
@@ -237,6 +248,8 @@
 				/obj/item/natural/fibers = 2)
 	craftdiff = 1
 
+/*========= MISCELLANY ==========*/
+
 /datum/crafting_recipe/roguetown/pestle
 	name = "pestle"
 	result = /obj/item/pestle
@@ -244,8 +257,7 @@
 	tools = list(/obj/item/rogueweapon/knife/hunting)
 	verbage = "crafts"
 	skillcraft = /datum/skill/craft/masonry
-
-/*========= MISCELLANY ==========*/
+	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/mortar
 	name = "stone mortar"
