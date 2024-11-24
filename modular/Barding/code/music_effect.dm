@@ -10,9 +10,9 @@
 	if(set_color)
 		add_atom_colour(set_color, FIXED_COLOUR_PRIORITY)
 	. = ..()
-	alpha = 180
-	pixel_x = rand(-12, 12)
-	pixel_y = rand(-9, 0)
+	alpha = 150
+	pixel_x = rand(-13, 13)
+	pixel_y = rand(-9, 3)
 
 /atom/movable/screen/alert/status_effect/buff/playing_music
 	name = "Playing Music"
