@@ -4,12 +4,6 @@
 /proc/curse2trait(curse)
 	if(!curse)
 		return
-	// switch(curse)
-	// 	if("brokedick")
-	// 		return TRAIT_LIMPDICK
-
-	// Yeah. that was the only curse. limpdick. come up with something new. - Flleeppyy
-
 	return
 
 /proc/has_player_curse(key,curse)
