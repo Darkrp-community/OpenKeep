@@ -46,16 +46,6 @@
 				/obj/item/cooking/platter)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
-/datum/crafting_recipe/roguetown/carpentry/rod
-	name = "fishing rod"
-	result = /obj/item/fishingrod/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-		/obj/item/natural/fibers = 2)
-	craftdiff = 0
-
-/obj/item/fishingrod/crafted
-	sellprice = 8
-
 /*========= SKILL LEVEL: 1 REQUIRED ==========*/
 
 /datum/crafting_recipe/roguetown/carpentry/woodsword
