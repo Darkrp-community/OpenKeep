@@ -8209,6 +8209,7 @@
 /obj/item/alch/viscera,
 /obj/item/alch/bone,
 /obj/item/alch/bone,
+/obj/item/alch/horn,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/magician)
 "iSx" = (
@@ -19939,6 +19940,7 @@
 /area/rogue/under/town/basement)
 "vyw" = (
 /obj/structure/table/wood,
+/obj/item/book/rogue/mysticalfog,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
