@@ -1752,11 +1752,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		to_chat(user, "<span class='warning'>My grab at [target] was blocked!</span>")
 		return FALSE
 
-	var/list/accuracy_check = accuracy_check(user.zone_selected, user, target, /datum/skill/combat/wrestling, user.used_intent)
-	var/goodhit = accuracy_check[2]
-	if(goodhit == "Miss")
-		return FALSE
-
 	if(attacker_style && attacker_style.grab_act(user,target))
 		return TRUE
 	else
@@ -1835,11 +1830,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			log_combat(user, target, "attempted to punch")
 			return FALSE
 */
-		var/list/accuracy_check = accuracy_check(user.zone_selected, user, target, /datum/skill/combat/unarmed, user.used_intent)
-		var/selzone = accuracy_check[1]
-		var/goodhit = accuracy_check[2]
-		if(goodhit == "Miss")
-			return FALSE
+		var/selzone = accuracy_check(user.zone_selected, user, target, /datum/skill/combat/unarmed, user.used_intent)
 
 		var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(selzone))
 
@@ -2072,11 +2063,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			target.lastattackerckey = user.ckey
 			if(target.mind)
 				target.mind.attackedme[user.real_name] = world.time
-			var/list/accuracy_check = accuracy_check(user.zone_selected, user, target, /datum/skill/combat/unarmed, user.used_intent)
-			var/selzone = accuracy_check[1]
-			var/goodhit = accuracy_check[2]
-			if(goodhit == "Miss")
-				return FALSE
+			var/selzone = accuracy_check(user.zone_selected, user, target, /datum/skill/combat/unarmed, user.used_intent)
 			var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(selzone))
 			var/damage = (user.get_punch_dmg() * 1.4)
 			if(user.shoes)
@@ -2181,8 +2168,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			to_chat(user, "<span class='danger'>I kick [target.name]!</span>")
 			log_combat(user, target, "kicked")
 
-		var/list/accuracy_check = accuracy_check(user.zone_selected, user, target, /datum/skill/combat/unarmed, user.used_intent)
-		var/selzone = accuracy_check[1]
+		var/selzone = accuracy_check(user.zone_selected, user, target, /datum/skill/combat/unarmed, user.used_intent)
 		var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(selzone))
 		if(!affecting)
 			affecting = target.get_bodypart(BODY_ZONE_CHEST)
@@ -2254,11 +2240,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/hit_area
 
-	var/list/accuracy_check = accuracy_check(user.zone_selected, user, H, I, I.associated_skill, user.used_intent)
-	selzone = accuracy_check[1]
-	var/goodhit = accuracy_check[2]
-	if(goodhit == "Miss")
-		return 0
+	selzone = accuracy_check(user.zone_selected, user, H, I.associated_skill, user.used_intent, I)
 	affecting = H.get_bodypart(check_zone(selzone))
 
 	if(!affecting)

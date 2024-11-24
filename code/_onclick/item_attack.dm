@@ -249,17 +249,18 @@
 		used_str--
 	//Your max STR is 20.
 	used_str = CLAMP(used_str, 1, 20)
-	if(I.wielded)
-		used_str *= 1.2
-	newforce = (newforce * (used_str / 10))
+	if(used_str >= 11)
+		newforce = newforce + (newforce * ((used_str - 10) * 0.1))
+	else if(used_str <= 9)
+		newforce = newforce - (newforce * ((10 - used_str) * 0.1))
 
 	if(I.minstr)
 		var/effective = I.minstr
 		if(I.wielded)
-			effective = max(round(I.minstr / 1.5), 1)
+			effective = max(I.minstr / 2, 1)
 		//Strength influence is reduced to 30%
 		if(effective > user.STASTR)
-			newforce = max(newforce * ((used_str / effective) / 1.5), 1)
+			newforce = max(newforce*0.3, 1)
 
 	//Blade Dulling Starts here.
 	switch(blade_dulling)
@@ -432,11 +433,7 @@
 	return
 
 /mob/living/attacked_by(obj/item/I, mob/living/user)
-	var/list/accuracy_check = accuracy_check(user.zone_selected, user, src, I, I.associated_skill, user.used_intent)
-	var/goodhit = accuracy_check[2]
-	if(goodhit == "Miss")
-		return FALSE
-	var/hitlim = accuracy_check[1]
+	var/hitlim = simple_limb_hit(user.zone_selected)
 	testing("[src] attacked_by")
 	I.funny_attack_effects(src, user)
 	if(I.force)
@@ -445,7 +442,6 @@
 		if(I.damtype == BRUTE)
 			next_attack_msg.Cut()
 			if(HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
-				hitlim = simple_limb_hit(accuracy_check[1])
 				var/datum/wound/crit_wound  = simple_woundcritroll(user.used_intent.blade_class, newforce, user, hitlim)
 				if(should_embed_weapon(crit_wound, I))
 					// throw_alert("embeddedobject", /atom/movable/screen/alert/embeddedobject)
