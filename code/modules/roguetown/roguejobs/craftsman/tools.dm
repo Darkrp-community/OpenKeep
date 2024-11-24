@@ -3,7 +3,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike/shovel)
 	gripped_intents = null
 	name = "handsaw"
-	desc = ""
+	desc = "an iron saw for sawing wood."
 	icon_state = "handsaw"
 	icon = 'icons/roguetown/items/crafting.dmi'
 	sharpness = IS_SHARP
@@ -22,6 +22,17 @@
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
 	max_blade_int = 50
+
+/obj/item/rogueweapon/handsaw/crude
+	name = "crude sawing tool"
+	desc = "a serrated piece of flint with a bone handle."
+	icon_state = "stonesaw"
+	wlength = WLENGTH_LONG
+	w_class = WEIGHT_CLASS_BULKY
+	force = 5
+	smeltresult =  /obj/item/ash
+	firefuel = 5 MINUTES
+	toolspeed = 3
 
 /obj/item/rogueweapon/chisel
 	name = "chisel"
