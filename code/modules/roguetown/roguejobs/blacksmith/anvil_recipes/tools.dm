@@ -209,7 +209,7 @@
 
 /datum/anvil_recipe/tools/chisel
 	name = "chisel (+s) x2"
-	recipe_name = " handsaw"
+	recipe_name = " chisel"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/chisel
