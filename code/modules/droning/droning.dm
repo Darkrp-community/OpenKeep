@@ -158,18 +158,18 @@ SUBSYSTEM_DEF(droning)
 	//kill the previous looping
 	kill_loop(dreamer)
 
-	var/retard = null
+	var/amb_sound_list = null
 	if(area_entered.loopniqqa)
 		if(GLOB.tod == "night")
 			if(area_entered.ambientnight)
-				retard = area_entered.ambientnight
+				amb_sound_list = area_entered.ambientnight
 		else
 			if(area_entered.ambientsounds)
-				retard = area_entered.ambientsounds
+				amb_sound_list = area_entered.ambientsounds
 
-	if(!retard)
+	if(!amb_sound_list)
 		return
-	var/sound/loop_sound = sound(pick(retard), repeat = TRUE, wait = 0, channel = CHANNEL_MUSIC, volume = dreamer?.prefs.musicvol)
+	var/sound/loop_sound = sound(pick(amb_sound_list), repeat = TRUE, wait = 0, channel = CHANNEL_MUSIC, volume = dreamer?.prefs.musicvol)
 	SEND_SOUND(dreamer, loop_sound)
 	dreamer.loop_sound = TRUE
 
@@ -190,12 +190,12 @@ SUBSYSTEM_DEF(droning)
 		return
 	kill_rain(dreamer)
 
-	var/retard = null
+	var/amb_sound_list = null
 	if(area_entered.ambientrain)
-		retard = area_entered.ambientrain
+		amb_sound_list = area_entered.ambientrain
 
-	if(!retard)
+	if(!amb_sound_list)
 		return
-	var/sound/loop_sound = sound(pick(retard), repeat = TRUE, wait = 0, channel = CHANNEL_RAIN, volume = dreamer?.prefs.musicvol)
+	var/sound/loop_sound = sound(pick(amb_sound_list), repeat = TRUE, wait = 0, channel = CHANNEL_RAIN, volume = dreamer?.prefs.musicvol)
 	SEND_SOUND(dreamer, loop_sound)
 	dreamer.rain_sound = TRUE

@@ -93,7 +93,6 @@
 		C.visible_message("<span class='info'>A purple haze shrouds [target]!</span>", "<span class='notice'>I feel like I've been drinking incredible amounts of wine...</span>")
 		C.reagents.add_reagent(/datum/reagent/berrypoison, 3)
 		C.apply_status_effect(/datum/status_effect/buff/drunk)
-		C.apply_status_effect(/datum/status_effect/debuff/pintledestruction)
 //		C.reagents.add_reagent(/datum/reagent/moondust, 3)
 //		C.reagents.add_reagent(/datum/reagent/consumable/ethanol/beer/wine, 3)
 		return
@@ -140,7 +139,6 @@
 			var/mob/living/carbon/C = L
 			C.reagents.add_reagent(/datum/reagent/berrypoison, 3)
 			C.apply_status_effect(/datum/status_effect/buff/drunk)
-			C.apply_status_effect(/datum/status_effect/debuff/pintledestruction)
 			C.visible_message("<span class='info'>A purple haze shrouds [L]!</span>", "<span class='notice'>I feel incredibly drunk...</span>")
 //		if(isanimal(L))
 //			var/mob/living/simple_animal/A = L
