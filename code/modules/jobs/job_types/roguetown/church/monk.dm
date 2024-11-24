@@ -68,7 +68,7 @@
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
 		if("Dendor")
-			head = /obj/item/clothing/head/roguetown/padded/briarthorns
+			head = /obj/item/clothing/mask/rogue/druid
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/green
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
