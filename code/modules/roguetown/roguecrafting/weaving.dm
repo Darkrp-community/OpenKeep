@@ -204,7 +204,12 @@
 	craftdiff = 4
 	sellprice = 50
 
-
+/datum/crafting_recipe/roguetown/weaving/malumrobe
+	name = "malum robe"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/malum)
+	reqs = list(/obj/item/natural/cloth = 3)
+	craftdiff = 4
+	sellprice = 50
 
 /*========= SKILL LEVEL: 5 REQUIRED ==========*/
 
