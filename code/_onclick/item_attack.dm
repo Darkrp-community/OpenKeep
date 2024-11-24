@@ -75,7 +75,7 @@
 /mob/living/attackby(obj/item/I, mob/living/user, params)
 	if(..())
 		return TRUE
-	var/adf = ((user.used_intent.clickcd + 8) - round((user.STASPD - 10) / 2))
+	var/adf = user.used_intent.clickcd
 	if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 		adf = round(adf * 1.4)
 	if(istype(user.rmb_intent, /datum/rmb_intent/swift))
@@ -424,7 +424,6 @@
 	if(!zone)
 		return ""
 	if(istype(src, /mob/living/simple_animal))
-		zone = src.simple_limb_hit(zone)
 		return zone
 	else
 		return "body"
@@ -484,7 +483,7 @@
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
 	if(force && !user.used_intent.tranged && !user.used_intent.tshield)
 		if(proximity_flag && isopenturf(target) && !user.used_intent?.noaa)
-			var/adf = ((user.used_intent.clickcd + 8) - round((user.STASPD - 10) / 2))
+			var/adf = user.used_intent.clickcd
 			if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 				adf = round(adf * 1.4)
 			if(istype(user.rmb_intent, /datum/rmb_intent/swift))
@@ -494,7 +493,7 @@
 			playsound(get_turf(src), pick(swingsound), 100, FALSE, -1)
 			user.aftermiss()
 		if(!proximity_flag && ismob(target) && !user.used_intent?.noaa) //this block invokes miss cost clicking on seomone who isn't adjacent to you
-			var/adf = ((user.used_intent.clickcd + 8) - round((user.STASPD - 10) / 2))
+			var/adf = user.used_intent.clickcd
 			if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 				adf = round(adf * 1.4)
 			if(istype(user.rmb_intent, /datum/rmb_intent/swift))

@@ -21,8 +21,8 @@
 	var/strmod = (user.STASTR - I.minstr)
 	var/facing = relative_angular_facing(user, target)				//Which side of the target you are attacking
 
-	if(user.mind)													//15 points per skill level, 95 bonus at Legendary
-		chance2hit += (user.mind.get_skill_level(associated_skill) * 15)
+	if(user.mind)													//20 points per skill level, 120 bonus at Legendary
+		chance2hit += (user.mind.get_skill_level(associated_skill) * 20)
 
 	if(target.grabbedby == user)									//If you are grabbing or being grabbed, there is a To-Hit bonus
 		if(used_intent.reach == 1)
@@ -704,18 +704,19 @@
 		return FALSE
 	if(D)
 		if(D?.check_dodge_skill())
-			dodge_score += ((D.STASPD * 15) + (D.STAPER * 4))
+			dodge_score += (D.STASPD * 12)
 		else
-			dodge_score += ((D.STASPD * 10) + (D.STAPER * 4))
+			dodge_score += ((D.STASPD * 10))
 	if(A)
 		dodge_score -= (A.mind ? (A.STASPD * 5) : A.simpmob_attack)
-	if(AH?.mind)
-		dodge_score -= (AH.mind.get_skill_level(I.associated_skill) * 10)
+	if(I)
+		if(AH?.mind)
+			dodge_score -= (AH.mind.get_skill_level(I.associated_skill) * 10) //this means at legendary -60 dodge rating
 
 	if(I.wbalance > 0)													//Enemy weapon is quick, so they get a bonus based on spddiff
 		dodge_score -= ((A.STASPD - D.STASPD) * 5)
 
-	dodge_score += (D.rmb_intent.def_bonus)								//Dodge bonus from Poise
+	dodge_score += (D.rmb_intent?.def_bonus)								//Dodge bonus from Poise
 
 				//// ADD WEAPON INTENT MODIFIERS HERE ////
 	if(istype(DI, /obj/item/rogueweapon))
