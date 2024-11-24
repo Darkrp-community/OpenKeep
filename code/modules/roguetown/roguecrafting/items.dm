@@ -275,6 +275,15 @@
 	verbage = "chisel"
 	verbage_tp = "chisels"
 
+/datum/crafting_recipe/roguetown/stonesaw
+	name = "crude saw"
+	result = /obj/item/rogueweapon/handsaw/crude
+	reqs = list(/obj/item/natural/stone = 2, /obj/item/alch/bone = 1)
+	tools = /obj/item/rogueweapon/knife
+	craftdiff = 1
+	verbage = "hew"
+	verbage_tp = "hews"
+
 /*========= MISCELLANY ==========*/
 
 /datum/crafting_recipe/roguetown/mortar

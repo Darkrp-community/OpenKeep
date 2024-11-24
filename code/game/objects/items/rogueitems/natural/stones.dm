@@ -2,7 +2,7 @@
 
 /obj/item/natural/stone
 	name = "stone"
-	desc = "A piece of rough ground stone."
+	desc = "A piece of rough ground stone. It could be chiseled into a shape more conducive to construction. "
 	icon_state = "stone1"
 	gripped_intents = null
 	dropshrink = 0.75
