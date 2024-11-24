@@ -6172,11 +6172,6 @@
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town)
-"gBy" = (
-/obj/machinery/light/rogue/firebowl/stump,
-/obj/structure/fluff/railing/fence,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield)
 "gBN" = (
 /obj/effect/decal/cobbleedge/mossy{
 	dir = 5
@@ -10002,13 +9997,6 @@
 	dir = 1;
 	icon_state = "vertw"
 	},
-/area/rogue/outdoors/rtfield)
-"kMm" = (
-/obj/structure/fluff/railing/fence,
-/obj/effect/decal/cobbleedge/rockalt_edge{
-	dir = 4
-	},
-/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "kMD" = (
 /obj/machinery/light/rogue/firebowl/standing/blue,
@@ -13895,12 +13883,6 @@
 	icon_state = "tile"
 	},
 /area/rogue/indoors/town/tavern)
-"oPc" = (
-/obj/structure/fluff/railing/fence{
-	dir = 8
-	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/rtfield)
 "oPd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/wood,
@@ -16011,12 +15993,6 @@
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
-"rkx" = (
-/obj/structure/fluff/railing/fence{
-	dir = 4
-	},
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield)
 "rkA" = (
 /obj/structure/mineral_door/wood/fancywood{
 	lockid = "woodsm"
@@ -18486,13 +18462,6 @@
 	dir = 4
 	},
 /area/rogue/outdoors/town)
-"tYF" = (
-/obj/structure/fluff/railing/fence{
-	dir = 4
-	},
-/obj/structure/fluff/railing/fence,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield)
 "tYM" = (
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/ruinedwood{
@@ -18739,13 +18708,6 @@
 "ulA" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/under/town/sewer)
-"ulE" = (
-/obj/structure/fluff/railing/fence,
-/obj/structure/fluff/railing/fence{
-	dir = 8
-	},
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield)
 "ulH" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/outdoors/town/roofs)
@@ -20848,10 +20810,6 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town)
-"wsZ" = (
-/obj/structure/fluff/railing/fence,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield)
 "wtj" = (
 /obj/structure/chair/wood/rogue,
 /turf/open/floor/rogue/woodturned,
@@ -22105,11 +22063,6 @@
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
-"xNU" = (
-/obj/structure/flora/roguetree/burnt,
-/obj/structure/fluff/railing/fence,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/rtfield)
 "xPr" = (
 /turf/open/water/river{
 	dir = 8
@@ -51328,18 +51281,18 @@ bFf
 bFf
 deS
 bvy
-kMm
 jWH
 jWH
-oPc
-oPc
-oPc
-oPc
-oPc
-oPc
-oPc
-oPc
-ulE
+jWH
+uca
+uca
+uca
+uca
+uca
+uca
+uca
+uca
+fLk
 iXu
 iXu
 iXu
@@ -51485,7 +51438,7 @@ bFf
 bFf
 bFf
 bFf
-drn
+uca
 uca
 uca
 uca
@@ -51496,7 +51449,7 @@ fLk
 fLk
 fLk
 fLk
-wsZ
+fLk
 iXu
 iXu
 iXu
@@ -51642,7 +51595,7 @@ bFf
 bFf
 bFf
 bFf
-drn
+uca
 jSD
 jSD
 jSD
@@ -51653,7 +51606,7 @@ dDh
 lGB
 fLk
 uca
-wsZ
+fLk
 iXu
 tsc
 iXu
@@ -51799,7 +51752,7 @@ bFf
 bFf
 bFf
 bFf
-drn
+uca
 jSD
 jSD
 jSD
@@ -51810,7 +51763,7 @@ sZV
 dDh
 fLk
 uca
-wsZ
+fLk
 iXu
 iXu
 iXu
@@ -51956,7 +51909,7 @@ bFf
 bFf
 bFf
 bFf
-drn
+uca
 jSD
 jSD
 jSD
@@ -51967,7 +51920,7 @@ sZV
 dDh
 fLk
 fLk
-drn
+uca
 iXu
 iXu
 iXu
@@ -52113,7 +52066,7 @@ bFf
 bFf
 bFf
 bFf
-drn
+uca
 jSD
 jSD
 jSD
@@ -52124,7 +52077,7 @@ hKS
 dDh
 jSD
 fLk
-drn
+uca
 iXu
 iXu
 iXu
@@ -52270,7 +52223,7 @@ bFf
 bFf
 bFf
 uca
-drn
+uca
 jSD
 jSD
 jSD
@@ -52281,7 +52234,7 @@ dDh
 lGB
 jSD
 fLk
-wsZ
+fLk
 iXu
 iXu
 iXu
@@ -52427,7 +52380,7 @@ bFf
 bFf
 uca
 uca
-pTM
+jSD
 jSD
 jSD
 jSD
@@ -52438,7 +52391,7 @@ uca
 jSD
 jSD
 uca
-wsZ
+fLk
 iXu
 iXu
 iXu
@@ -52584,7 +52537,7 @@ bFf
 uca
 uca
 uca
-pTM
+jSD
 jSD
 jSD
 jSD
@@ -52595,7 +52548,7 @@ dDh
 dDh
 lGB
 jSD
-wsZ
+fLk
 iXu
 iXu
 iXu
@@ -52741,7 +52694,7 @@ uca
 uca
 uca
 uca
-pTM
+jSD
 jSD
 ewS
 jSD
@@ -52752,7 +52705,7 @@ oAL
 ePj
 dDh
 jSD
-gBy
+gef
 iXu
 iXu
 iXu
@@ -52898,7 +52851,7 @@ nzX
 uca
 uca
 uca
-pTM
+jSD
 jSD
 aSc
 jSD
@@ -52909,7 +52862,7 @@ cAB
 ePj
 dDh
 jSD
-wsZ
+fLk
 iXu
 iXu
 iXu
@@ -53055,7 +53008,7 @@ uca
 uca
 uca
 uca
-pTM
+jSD
 jSD
 ewS
 jSD
@@ -53066,7 +53019,7 @@ dDh
 dDh
 lGB
 jSD
-wsZ
+fLk
 iXu
 iXu
 iXu
@@ -53212,7 +53165,7 @@ fLk
 fLk
 uca
 uca
-xNU
+lOR
 jSD
 jSD
 jSD
@@ -53223,7 +53176,7 @@ uca
 uca
 fsZ
 uca
-wsZ
+fLk
 wlE
 iXu
 iXu
@@ -53369,18 +53322,18 @@ fLk
 uca
 uca
 uca
-drn
-ahz
-rkx
-rkx
-rkx
-ahz
-ahz
-ahz
-ahz
-ahz
-ahz
-tYF
+uca
+uca
+fLk
+fLk
+fLk
+uca
+uca
+uca
+uca
+uca
+uca
+fLk
 wlE
 wlE
 wlE
