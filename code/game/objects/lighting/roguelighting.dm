@@ -262,6 +262,7 @@
 	dir = SOUTH
 	crossfire = TRUE
 	fueluse = 0
+	light_outer_range = 9
 
 /obj/machinery/light/rogue/firebowl/CanPass(atom/movable/mover, turf/target)
 	if(istype(mover) && (mover.pass_flags & PASSTABLE))
