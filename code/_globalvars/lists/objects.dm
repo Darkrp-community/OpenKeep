@@ -12,6 +12,7 @@ GLOBAL_LIST_EMPTY(materials_list)				//list of all /datum/material datums indexe
 GLOBAL_LIST_EMPTY(crafting_recipes)				//list of all table craft recipes
 GLOBAL_LIST_EMPTY(anvil_recipes)				//list of all anvil crafted recipes
 GLOBAL_LIST_EMPTY(artificer_recipes)			//list of all artificer recipes
+GLOBAL_LIST_EMPTY(alchemy_recipes)				//list of all alchemy cauldron recipes
 GLOBAL_LIST_EMPTY(poi_list)					//list of points of interest for observe/follow
 GLOBAL_LIST_EMPTY(pinpointer_list)			//list of all pinpointers. Used to change stuff they are pointing to all at once.
 GLOBAL_LIST_EMPTY(zombie_infection_list) 		// A list of all zombie_infection organs, for any mass "animation"

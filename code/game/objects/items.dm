@@ -229,8 +229,6 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/istrainable = FALSE
 	// Takes an item path. What it turns into after being grinded by a mortar and pestle.
 	var/dust_result
-	// Takes a text string. What weight will this item give towards a given potion result when used on an alchemy cauldron
-	var/possible_potion
 
 /obj/item/Initialize()
 	. = ..()

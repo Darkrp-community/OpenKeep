@@ -38,7 +38,6 @@
 			dust_result = /obj/item/alch/waterdust
 		if("com")
 			name = "common [initial(name)]"
-			possible_potion = "conpot"
 	if(!dead)
 		START_PROCESSING(SSobj, src)
 

@@ -111,7 +111,6 @@
 	sellprice = 0 // spoil too quickly to export
 	var/equippedloc = null
 	var/list/bitten_names = list()
-	possible_potion = "endpot"
 
 /obj/item/reagent_containers/food/snacks/produce/apple/On_Consume(mob/living/eater)
 	..()
@@ -162,7 +161,6 @@
 	rotprocess = SHELFLIFE_SHORT
 	sellprice = 0 // spoil too quickly to export
 	var/poisonous = FALSE
-	possible_potion = "antidote"
 
 /obj/item/reagent_containers/food/snacks/produce/jacksberry/Initialize()
 	if(GLOB.berrycolors[color_index])
@@ -210,7 +208,6 @@
 	grind_results = list(/datum/reagent/berrypoison = 5)
 	color_index = "bad"
 	poisonous = TRUE
-	possible_potion = "poison"
 
 /*	..................   Swamp weed   ................... */
 /obj/item/reagent_containers/food/snacks/produce/swampweed
@@ -225,7 +222,6 @@
 	tastes = list("sweet" = 1,"bitterness" = 1)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
-	possible_potion = "poison"
 	dust_result = /obj/item/alch/swampdust
 	sellprice = 0 // only dried has value
 
@@ -240,7 +236,6 @@
 	grind_results = list(/datum/reagent/drug/space_drugs = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = null
-	possible_potion = "poison"
 	dust_result = /obj/item/alch/swampdust
 	sellprice = 2
 
@@ -259,7 +254,6 @@
 	grind_results = list(/datum/reagent/drug/nicotine = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
-	possible_potion = "poison"
 	dust_result = /obj/item/alch/tobaccodust
 	sellprice = 0 // only dried has value
 
@@ -274,7 +268,6 @@
 	list_reagents = list(/datum/reagent/drug/nicotine = 5, /datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/drug/nicotine = 10)
 	rotprocess = null
-	possible_potion = "poison"
 	dust_result = /obj/item/alch/tobaccodust
 	sellprice = 1
 
