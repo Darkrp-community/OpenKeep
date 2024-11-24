@@ -55,7 +55,7 @@
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/noc
 			cloak = /obj/item/clothing/cloak/stabard/templar/noc
 		if("Malum")
-			neck = /obj/item/clothing/neck/roguetown/psycross/malum_steel
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/malum_steel
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/malumhelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/malum
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
