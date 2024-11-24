@@ -594,4 +594,6 @@
 	if(!length(L))
 		return null
 	var/index = 1 + (value * (length(L) - 1)) / (max - min)
+	if(index > length(L))
+		index = length(L)
 	return L[index]
