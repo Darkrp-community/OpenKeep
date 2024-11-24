@@ -173,7 +173,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	var/associated_skill = /datum/skill/magic/arcane
 	var/miracle = FALSE
 	var/devotion_cost = 0
-	var/ignore_cockblock = FALSE //whether or not to ignore TRAIT_SPELLCOCKBLOCK
+	var/ignore_cockblock = FALSE //whether or not to ignore TRAIT_SPELLBLOCK
 
 	action_icon_state = "spell0"
 	action_icon = 'icons/mob/actions/roguespells.dmi'
@@ -244,7 +244,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 		to_chat(user, "<span class='warning'>Not when you're incapacitated!</span>")
 		return FALSE
 
-	if(!ignore_cockblock && HAS_TRAIT(user, TRAIT_SPELLCOCKBLOCK))
+	if(!ignore_cockblock && HAS_TRAIT(user, TRAIT_SPELLBLOCK))
 		return FALSE
 
 	if(!antimagic_allowed)
@@ -613,7 +613,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	if(user.stat && !stat_allowed)
 		return FALSE
 
-	if(!ignore_cockblock && HAS_TRAIT(user, TRAIT_SPELLCOCKBLOCK))
+	if(!ignore_cockblock && HAS_TRAIT(user, TRAIT_SPELLBLOCK))
 		return FALSE
 
 	if(!antimagic_allowed && user.anti_magic_check(TRUE, FALSE, FALSE, 0, TRUE))
