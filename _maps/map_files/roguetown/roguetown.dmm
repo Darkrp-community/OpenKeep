@@ -11836,6 +11836,10 @@
 /obj/item/pestle,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
+"mJt" = (
+/obj/structure/flora/roguegrass/bush_meagre,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/town)
 "mJK" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/paper,
@@ -12866,6 +12870,10 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors/town/dwarfin)
+"nQo" = (
+/obj/structure/bookcase/random/eoratica,
+/turf/open/floor/rogue/woodturned/nosmooth,
+/area/rogue/indoors/town/bath)
 "nQG" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -55494,12 +55502,12 @@ iUq
 iUq
 yhO
 cyz
+mJt
 cyz
+fJE
+eSf
 cyz
-cyz
-cyz
-cyz
-cyz
+eSf
 cyz
 uQz
 rru
@@ -55654,8 +55662,8 @@ cyz
 cyz
 cyz
 cyz
-cyz
-cyz
+mJt
+mJt
 cyz
 cyz
 rru
@@ -83888,7 +83896,7 @@ ulH
 ulH
 ulH
 oEQ
-bGl
+swi
 yhr
 yhr
 yhr
@@ -90651,7 +90659,7 @@ doW
 doW
 doW
 bjg
-hao
+nQo
 nFc
 bFU
 mYU
