@@ -14871,7 +14871,8 @@
 /area/rogue/indoors/town/tavern)
 "pRP" = (
 /obj/structure/mineral_door/wood/deadbolt{
-	dir = 8
+	dir = 8;
+	name = "Farming Storage"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
@@ -19230,6 +19231,10 @@
 	locked = 1;
 	lockid = "vault";
 	name = "Vault"
+	},
+/obj/structure/mineral_door/bars{
+	locked = 1;
+	lockid = "dungeon"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
