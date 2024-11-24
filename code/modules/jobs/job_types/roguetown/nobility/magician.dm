@@ -13,7 +13,7 @@
 		"Dwarf",
 		"Aasimar"
 	)
-	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
+	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_MAGICIAN
 	allowed_patrons = list(/datum/patron/divine/noc)
