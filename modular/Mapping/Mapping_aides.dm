@@ -40,6 +40,30 @@
 		)
 
 
+/obj/effect/spawner/roguemap/loot/jewelry
+	icon = 'modular/Neu_Food/icons/cooking.dmi'
+	icon_state = "golden"
+	color = "#06b606"
+	spawned = list(
+		/obj/item/roguestatue/iron = 8,
+		/obj/item/roguestatue/steel = 8,
+		/obj/item/ingot/gold = 7,
+		/obj/item/roguestatue/silver = 8,
+		/obj/item/clothing/ring/silver = 7,
+		/obj/item/reagent_containers/glass/cup/silver = 7,
+		/obj/item/storage/belt/rogue/leather/plaquesilver = 7,
+		/obj/item/clothing/ring/gold = 5,
+		/obj/item/ingot/gold = 5,
+		/obj/item/reagent_containers/glass/cup/golden = 4,
+		/obj/item/storage/belt/rogue/leather/plaquegold = 4,
+		/obj/item/clothing/mask/rogue/spectacles/golden = 3,
+		/obj/item/clothing/head/roguetown/crown/circlet = 3,
+		/obj/item/roguestatue/gold/loot=2,
+		/obj/item/clothing/head/roguetown/helmet/heavy/decorated/golden = 1,
+		/obj/item/clothing/head/roguetown/crown/nyle = 1,
+		/obj/item/roguestatue/gold = 1,
+		)
+
 
 /*	..................   Random Seeds   ................... */
 /obj/effect/spawner/roguemap/seeds	// all random
@@ -205,6 +229,29 @@
 		/obj/structure/idle_enemy/bigrat = 10,
 		/obj/structure/idle_enemy/weak_skelly = 50	)
 
+/*	..................   Rat Danger   ................... */
+/obj/effect/spawner/roguemap/rat_danger
+	icon = 'icons/roguetown/mob/monster/bigrat.dmi'
+	icon_state = "rat"
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/effect/decal/remains/bigrat = 20,
+		/obj/item/reagent_containers/food/snacks/smallrat = 20,
+		/obj/item/natural/worms = 10,
+		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
+		/obj/structure/idle_enemy/bigrat = 40)
+
+/*	..................   Maneater Danger   ................... */
+/obj/effect/spawner/roguemap/maneater_danger
+	icon = 'icons/roguetown/mob/monster/lamia.dmi'
+	icon_state = "headless"
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/structure/idle_enemy/lamia = 50,
+		/obj/structure/idle_enemy/headless = 50)
+
 
 
 // ===================================================================================
@@ -282,8 +329,40 @@
 	range = 11
 	spawn_text = ""
 
+/*	..................   Lamia Spawner   ................... */
+/obj/structure/idle_enemy/lamia
+/obj/structure/idle_enemy/lamia/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/lamia)
+/datum/component/spawner/lamia
+	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/lamia)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 10
+	spawn_text = ""
+
+/*	..................   Headless Spawner   ................... */
+/obj/structure/idle_enemy/headless
+/obj/structure/idle_enemy/headless/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/headless)
+/datum/component/spawner/headless
+	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/headless)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 10
+	spawn_text = ""
+
+
+
+
 // ===================================================================================
 
+/area/rogue/under/town/caverogue/saltmine
+	name = "salt mine"
+	first_time_text = "Salt Mine"
 
 /area/rogue/under/catacombs
 	name = "catacombs"
@@ -304,6 +383,14 @@
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10)
 	converted_type = /area/rogue/outdoors/caves
 
+/area/rogue/under/catacombs/dwarfoutpost
+	name = "catacombs"
+	first_time_text = "Underrock Outpost"
+	ambush_types = list(
+				/turf/open/water/swamp)
+	ambush_mobs = list(
+				/mob/living/simple_animal/hostile/retaliate/rogue/lamia = 30,
+				/mob/living/simple_animal/hostile/retaliate/rogue/headless = 20)
 
 /area/rogue/under/cave/abandoned_mine
 	name = "abandoned mine"
