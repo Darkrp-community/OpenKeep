@@ -575,7 +575,7 @@
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
 	repair_skill = /datum/skill/craft/carpentry
-//	metalizer_result = /obj/structure/mineral_door/wood/donjon
+//	metalizer_result = /obj/structure/mineral_door/wood/donjon	TO DO removed for simplicity, re-enable perhaps in future
 
 /obj/structure/mineral_door/wood/Initialize()
 	if(icon_state =="woodhandle")
