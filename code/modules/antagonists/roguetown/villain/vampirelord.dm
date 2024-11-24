@@ -546,7 +546,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /obj/structure/vampire/portal/Initialize()
 	. = ..()
-	set_light(3, 20, LIGHT_COLOR_BLOOD_MAGIC)
+	set_light(3, 3, 20, l_color = LIGHT_COLOR_BLOOD_MAGIC)
 	playsound(loc, 'sound/misc/portalopen.ogg', 100, FALSE, pressure_affected = FALSE)
 	addtimer(CALLBACK(src, PROC_REF(close_portal)), 1 MINUTES)
 
@@ -561,7 +561,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /obj/structure/vampire/bloodpool/Initialize()
 	. = ..()
-	set_light(3, 20, LIGHT_COLOR_BLOOD_MAGIC)
+	set_light(3, 3, 20, l_color = LIGHT_COLOR_BLOOD_MAGIC)
 
 /obj/structure/vampire/bloodpool/examine(mob/user)
 	. = ..()
@@ -870,7 +870,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/infiltrate/one/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/churchjobs = list("Priest", "Priestess", "Cleric", "Acolyte", "Churchling", "Crusader")
+	var/list/churchjobs = list("Priest", "Priestess", "Cleric", "Acolyte", "Crusader")
 	for(var/datum/mind/V in C.vampires)
 		if(V.current.job in churchjobs)
 			return TRUE

@@ -204,7 +204,7 @@
 	return
 
 ///This proc triggers when the tray processes and a roll is sucessful, the success chance scales with production.
-/datum/plant_gene/trait/proc/on_grow(obj/machinery/hydroponics/H)
+/datum/plant_gene/trait/proc/on_grow()
 	return
 
 /datum/plant_gene/trait/squash
@@ -262,20 +262,7 @@
 			C.electrocute_act(round(power), G, 1, SHOCK_NOGLOVES)
 
 /datum/plant_gene/trait/cell_charge/on_consume(obj/item/reagent_containers/food/snacks/grown/G, mob/living/carbon/target)
-	if(!G.reagents.total_volume)
-		var/batteries_recharged = 0
-		for(var/obj/item/stock_parts/cell/C in target.GetAllContents())
-			var/newcharge = min(G.seed.potency*0.01*C.maxcharge, C.maxcharge)
-			if(C.charge < newcharge)
-				C.charge = newcharge
-				if(isobj(C.loc))
-					var/obj/O = C.loc
-					O.update_icon() //update power meters and such
-				C.update_icon()
-				batteries_recharged = 1
-		if(batteries_recharged)
-			to_chat(target, "<span class='notice'>My batteries are recharged!</span>")
-
+	return
 
 
 /datum/plant_gene/trait/glow
@@ -379,36 +366,13 @@
 /datum/plant_gene/trait/repeated_harvest/can_add(obj/item/seeds/S)
 	if(!..())
 		return FALSE
-	if(istype(S, /obj/item/seeds/replicapod))
-		return FALSE
 	return TRUE
 
 /datum/plant_gene/trait/battery
 	name = "Capacitive Cell Production"
 
 /datum/plant_gene/trait/battery/on_attackby(obj/item/reagent_containers/food/snacks/grown/G, obj/item/I, mob/user)
-	if(istype(I, /obj/item/stack/cable_coil))
-		var/obj/item/stack/cable_coil/C = I
-		if(C.use(5))
-			to_chat(user, "<span class='notice'>I add some cable to [G] and slide it inside the battery encasing.</span>")
-			var/obj/item/stock_parts/cell/potato/pocell = new /obj/item/stock_parts/cell/potato(user.loc)
-			pocell.icon_state = G.icon_state
-			pocell.maxcharge = G.seed.potency * 20
-
-			// The secret of potato supercells!
-			var/datum/plant_gene/trait/cell_charge/CG = G.seed.get_gene(/datum/plant_gene/trait/cell_charge)
-			if(CG) // Cell charge max is now 40MJ or otherwise known as 400KJ (Same as bluespace powercells)
-				pocell.maxcharge *= CG.rate*100
-			pocell.charge = pocell.maxcharge
-			pocell.name = "[G.name] battery"
-			pocell.desc = ""
-
-			if(G.reagents.has_reagent(/datum/reagent/toxin/plasma, 2))
-				pocell.rigged = TRUE
-
-			qdel(G)
-		else
-			to_chat(user, "<span class='warning'>I need five lengths of cable to make a [G] battery!</span>")
+	return
 
 
 /datum/plant_gene/trait/stinging
@@ -454,25 +418,8 @@
 /datum/plant_gene/trait/invasive
 	name = "Invasive Spreading"
 
-/datum/plant_gene/trait/invasive/on_grow(obj/machinery/hydroponics/H)
-	for(var/step_dir in GLOB.alldirs)
-		var/obj/machinery/hydroponics/HY = locate() in get_step(H, step_dir)
-		if(HY && prob(15))
-			if(HY.myseed) // check if there is something in the tray.
-				if(HY.myseed.type == H.myseed.type && HY.dead != 0)
-					continue //It should not destroy its owm kind.
-				qdel(HY.myseed)
-				HY.myseed = null
-			HY.myseed = H.myseed.Copy()
-			HY.age = 0
-			HY.dead = 0
-			HY.plant_health = HY.myseed.endurance
-			HY.lastcycle = world.time
-			HY.harvest = 0
-			HY.weedlevel = 0 // Reset
-			HY.pestlevel = 0 // Reset
-			HY.update_icon()
-			HY.visible_message("<span class='warning'>The [H.myseed.plantname] spreads!</span>")
+/datum/plant_gene/trait/invasive/on_grow()
+	return
 
 /datum/plant_gene/trait/plant_type // Parent type
 	name = "you shouldn't see this"

@@ -2394,7 +2394,7 @@
 	pixel_y = 2
 	},
 /obj/item/candle/yellow/lit/infinite{
-	light_range = 1;
+	light_outer_range = 1;
 	pixel_x = 14;
 	pixel_y = 5
 	},
@@ -2735,7 +2735,7 @@
 /obj/structure/table/wood{
 	icon_state = "largetable"
 	},
-/obj/item/toy/cards/deck/syndicate,
+/obj/item/toy/cards/deck,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/tavern)
 "cWq" = (
@@ -6300,7 +6300,6 @@
 	dir = 8;
 	icon_state = "largetable"
 	},
-/obj/effect/holodeck_effect/cards,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "gJY" = (
@@ -7917,9 +7916,6 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/manor)
-"izr" = (
-/turf/open/floor/rogue/cobblerock/alto,
-/area/rogue/outdoors/rtfield)
 "izG" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 8
@@ -8628,10 +8624,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood{
 	icon_state = "longtable"
-	},
-/obj/effect/holodeck_effect/cards{
-	pixel_x = -7;
-	pixel_y = 11
 	},
 /obj/item/storage/belt/rogue/pouch{
 	pixel_y = 8
@@ -10380,10 +10372,6 @@
 /area/rogue/indoors)
 "lji" = (
 /obj/structure/rack/rogue,
-/obj/item/throwing_star/ninja,
-/obj/item/throwing_star/ninja,
-/obj/item/throwing_star/ninja,
-/obj/item/throwing_star/ninja,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
 "ljn" = (
@@ -12882,10 +12870,10 @@
 /area/rogue/indoors/town)
 "nQR" = (
 /obj/structure/rack/rogue/shelf/biggest,
-/obj/item/clothing/mask/cigarette/rollie/mindbreaker{
+/obj/item/clothing/mask/cigarette/rollie/nicotine{
 	pixel_y = 8
 	},
-/obj/item/clothing/mask/cigarette/rollie/mindbreaker{
+/obj/item/clothing/mask/cigarette/rollie/nicotine{
 	pixel_y = 8
 	},
 /obj/item/clothing/mask/cigarette/pipe/crafted{
@@ -13009,7 +12997,6 @@
 /area/rogue/indoors/town/tavern)
 "nUM" = (
 /obj/structure/table/wood/plain,
-/obj/effect/holodeck_effect/cards,
 /turf/open/floor/rogue/ruinedwood{
 	dir = 1;
 	icon_state = "vertw"
@@ -50344,7 +50331,7 @@ bFf
 uca
 qQp
 hVa
-izr
+iXu
 ciy
 fxX
 jSD
@@ -50816,8 +50803,8 @@ bFf
 bFf
 deS
 wMy
-izr
-izr
+iXu
+iXu
 iXu
 vfP
 aya
@@ -50972,17 +50959,17 @@ bFf
 bFf
 bHI
 giM
-izr
-iXu
-izr
 iXu
 iXu
 iXu
-izr
 iXu
 iXu
-izr
-izr
+iXu
+iXu
+iXu
+iXu
+iXu
+iXu
 iXu
 iXu
 iXu
@@ -51132,29 +51119,29 @@ giM
 iXu
 iXu
 iXu
-izr
-izr
+iXu
+iXu
 iXu
 iXu
 lUk
 leP
 iXu
 iXu
-izr
 iXu
-izr
+iXu
+iXu
 iXu
 qSx
 fLk
-izr
 iXu
 iXu
 iXu
-izr
-izr
 iXu
 iXu
-izr
+iXu
+iXu
+iXu
+iXu
 qSx
 aya
 aya
@@ -51300,22 +51287,22 @@ oPc
 oPc
 ulE
 iXu
-izr
-izr
-iXu
-izr
 iXu
 iXu
-izr
+iXu
+iXu
+iXu
+iXu
+iXu
 lUk
 iXu
-izr
-izr
 iXu
-izr
-izr
 iXu
-izr
+iXu
+iXu
+iXu
+iXu
+iXu
 vfP
 kMh
 kMh
@@ -51459,21 +51446,21 @@ wsZ
 iXu
 iXu
 iXu
-izr
-iXu
-izr
 iXu
 iXu
 iXu
-izr
+iXu
+iXu
+iXu
+iXu
 lUk
-izr
 iXu
 iXu
 iXu
-izr
 iXu
-izr
+iXu
+iXu
+iXu
 kMh
 kMh
 kMh
@@ -51616,10 +51603,10 @@ wsZ
 iXu
 tsc
 iXu
-izr
 iXu
-izr
-izr
+iXu
+iXu
+iXu
 ols
 uca
 jWH
@@ -51771,8 +51758,8 @@ fLk
 uca
 wsZ
 iXu
-izr
-izr
+iXu
+iXu
 iXu
 ddB
 opi
@@ -51927,7 +51914,7 @@ dDh
 fLk
 fLk
 drn
-izr
+iXu
 iXu
 iXu
 tvf
@@ -52084,7 +52071,7 @@ dDh
 jSD
 fLk
 drn
-izr
+iXu
 iXu
 iXu
 fov
@@ -52241,7 +52228,7 @@ lGB
 jSD
 fLk
 wsZ
-izr
+iXu
 iXu
 iXu
 fov
@@ -52400,7 +52387,7 @@ uca
 wsZ
 iXu
 iXu
-izr
+iXu
 fov
 fLk
 fLk
@@ -52556,7 +52543,7 @@ lGB
 jSD
 wsZ
 iXu
-izr
+iXu
 iXu
 eCr
 eCr
@@ -52714,7 +52701,7 @@ jSD
 gBy
 iXu
 iXu
-izr
+iXu
 lNp
 hKY
 ivQ
@@ -52869,8 +52856,8 @@ ePj
 dDh
 jSD
 wsZ
-izr
-izr
+iXu
+iXu
 iXu
 eCr
 cMa
@@ -53027,7 +53014,7 @@ lGB
 jSD
 wsZ
 iXu
-izr
+iXu
 iXu
 gsX
 cMa
@@ -53185,7 +53172,7 @@ uca
 wsZ
 wlE
 iXu
-izr
+iXu
 eCr
 cMa
 uVl
