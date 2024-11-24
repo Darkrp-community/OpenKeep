@@ -53,10 +53,6 @@
 		return FALSE
 	if(get_playerquality(client.ckey) <= -10)
 		return FALSE
-//	if(!client.whitelisted())
-//		if(!client.patreonlevel())
-//			can_do_sex = 0
-//			return can_do_sex
 	if(client.blacklisted())
 		can_do_sex = 0
 		return can_do_sex
@@ -116,7 +112,7 @@
 		if(user.gender == MALE)
 			if(ourgroin && theirgroin)
 				what2do += "love"
-				what2do += "zodomy"
+				what2do += "buggery"
 		if(user.gender == FEMALE)
 			if(ourgroin && theirgroin)
 				if(!user.lying && src.lying)
@@ -141,9 +137,9 @@
 				user.sexcon.begin_mouthride(src)
 			if("use chest")
 				user.sexcon.begin_titfuck(src)
-			if("zodomy")
+			if("buggery")
 				user.sexcon.begin_assfuck(src)
-			if("love")
+			if("taffing")
 				user.sexcon.begin_fuck(src)
 			if("service")
 				if(G)
@@ -272,7 +268,7 @@
 	if(user.cmode)
 		user.emote("embed", forced = TRUE)
 	playsound(owner, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
-	owner.visible_message("<span class='[!user.cmode ? "love" : "warning"]'>[owner] zodomizes [user].</span>")
+	owner.visible_message("<span class='[!user.cmode ? "love" : "warning"]'>[owner] buggers [user].</span>")
 	START_PROCESSING(SSsex, user.sexcon)
 	START_PROCESSING(SSsex, src)
 
@@ -656,21 +652,7 @@
 		return TRUE
 
 /datum/sex_controller/proc/can_change_dir()
-	if(fucking)
-		return FALSE
-	if(inass)
-		return FALSE
-	if(inpussy)
-		return FALSE
-	if(ontits)
-		return FALSE
-	if(inmouth)
-		return FALSE
-	if(weeating)
-		return FALSE
-	if(riding)
-		return FALSE
-	if(fapping && fapping.grabbee != owner)
+	if((fucking) || (inass) || (inpussy) || (ontits) || (inmouth) || (weeating) || (riding) || (fapping && fapping.grabbee != owner))
 		return FALSE
 	return TRUE
 
@@ -793,7 +775,7 @@
 					if(fucking)
 						playsound(owner, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 						if(prob(33))
-							fucking.visible_message("<span class='[!D.owner.cmode ? "love" : "warning"]'>[owner] zodomizes [fucking].</span>")
+							fucking.visible_message("<span class='[!D.owner.cmode ? "love" : "warning"]'>[owner] buggers [fucking].</span>")
 //						D.owner.Immobilize(10)
 						var/usedsource = "insideass"
 						if(D.owner.stat == DEAD)
@@ -817,7 +799,7 @@
 					if(fucking)
 						playsound(owner, 'sound/misc/mat/fap.ogg', 30, TRUE, -2, ignore_walls = FALSE)
 						if(prob(33))
-							fucking.visible_message("<span class='[!D.owner.cmode ? "love" : "warning"]'>[owner] uses [fucking]'s chest.</span>")
+							fucking.visible_message("<span class='[!D.owner.cmode ? "love" : "warning"]'>[owner] taffs [fucking]'s chest.</span>")
 						var/usedsource = "ontits"
 						if(D.owner.stat == DEAD)
 							usedsource = "fuckcorpse"
@@ -838,7 +820,7 @@
 						else
 							playsound(fucking, pick('sound/misc/mat/guymouth (1).ogg','sound/misc/mat/guymouth (2).ogg','sound/misc/mat/guymouth (3).ogg','sound/misc/mat/guymouth (4).ogg','sound/misc/mat/guymouth (5).ogg'), 20, TRUE, ignore_walls = FALSE)
 						if(prob(33))
-							fucking.visible_message("<span class='[!D.owner.cmode ? "love" : "warning"]'>[owner] feeds [fucking].</span>")
+							fucking.visible_message("<span class='[!D.owner.cmode ? "love" : "warning"]'>[owner] thrusts in [fucking]'s mouth.</span>")
 //						D.owner.Immobilize(10)
 						var/usedsource = "fuckmouth"
 						if(D.owner.stat == DEAD)
@@ -1086,9 +1068,6 @@
 				C.add_stress(/datum/stressevent/cumok)
 			else
 				C.add_stress(/datum/stressevent/cumbad)
-		if("fuckcorpse")
-			C.add_stress(/datum/stressevent/cumcorpse)
-			C.freak_out()
 
 /datum/sex_controller/male/cum(source)
 	..()
