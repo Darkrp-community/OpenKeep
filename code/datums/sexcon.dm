@@ -942,67 +942,6 @@
 
 /datum/sex_controller/female/handle_sex()
 	. = ..()
-/*	if(world.time > last_silence_check + 10 SECONDS)
-		if(iscarbon(owner))
-			var/mob/living/carbon/C = owner
-			if(C.silent || !C.canspeak())
-				if(curplaying)
-					curplaying = null
-					if(femmoans)
-						femmoans.stop()
-				return
-	if(owner.stat)
-		if(curplaying)
-			curplaying = null
-			if(femmoans)
-				femmoans.stop()
-	if(draining)
-		if(curplaying)
-			curplaying = null
-			if(femmoans)
-				femmoans.stop()
-/	else
-		if(owner.r_intent == SUBMIT_INTENT && owner.stat == CONSCIOUS)
-			if(horny > 200)
-				if(curplaying != "hvy")
-					if(femmoans)
-						femmoans.stop()
-					if(prob(50))
-						femmoans = new /datum/looping_sound/femhornyhvy(list(owner), FALSE)
-					else
-						femmoans = new /datum/looping_sound/femhornyhvyalt(list(owner), FALSE)
-					femmoans.start()
-					curplaying = "hvy"
-			else if(horny > 150)
-				if(curplaying != "med")
-					if(femmoans)
-						femmoans.stop()
-					if(prob(50))
-						femmoans = new /datum/looping_sound/femhornymed(list(owner), FALSE)
-					else
-						femmoans = new /datum/looping_sound/femhornymedalt(list(owner), FALSE)
-					femmoans.start()
-					curplaying = "med"
-			else if(horny > 50)
-				if(curplaying != "lite")
-					if(femmoans)
-						femmoans.stop()
-					if(prob(50))
-						femmoans = new /datum/looping_sound/femhornylite(list(owner), FALSE)
-					else
-						femmoans = new /datum/looping_sound/femhornylitealt(list(owner), FALSE)
-					femmoans.start()
-					curplaying = "lite"
-			else
-				if(curplaying)
-					curplaying = null
-					if(femmoans)
-						femmoans.stop()
-		else
-			if(curplaying)
-				curplaying = null
-				if(femmoans)
-					femmoans.stop()*/
 
 /datum/sex_controller/proc/adjust_horny(amt, source)
 	if(!amt)
