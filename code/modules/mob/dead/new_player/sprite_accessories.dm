@@ -634,7 +634,6 @@
 	gender = FEMALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc")
 
-
 //////////////////////////////
 // UNISEX Hair Definitions  //
 //////////////////////////////
