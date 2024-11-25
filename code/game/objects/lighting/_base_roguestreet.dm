@@ -6,7 +6,7 @@
 	//nightshift_allowed = FALSE
 	fueluse = 0
 	bulb_colour = "#f9e080"
-	bulb_power = 0.85
+	bulb_power = 1
 	max_integrity = 0
 	use_power = NO_POWER_USE
 	pass_flags = LETPASSTHROW
