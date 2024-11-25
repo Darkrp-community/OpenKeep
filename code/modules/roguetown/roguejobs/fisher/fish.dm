@@ -81,7 +81,7 @@
 	icon_state = "carp"
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/carp
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/carp
-
+	cooked_smell = /datum/pollutant/food/baked_carp
 
 /obj/item/reagent_containers/food/snacks/fish/clownfish
 	name = "clownfish"
@@ -89,7 +89,7 @@
 	sellprice = 40
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish
-
+	cooked_smell = /datum/pollutant/food/baked_clownfish
 
 /obj/item/reagent_containers/food/snacks/fish/angler
 	name = "anglerfish"
@@ -97,7 +97,7 @@
 	sellprice = 15
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler
-
+	cooked_smell = /datum/pollutant/food/baked_angler
 
 /obj/item/reagent_containers/food/snacks/fish/eel
 	name = "eel"
@@ -105,7 +105,7 @@
 	sellprice = 5
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel
-
+	cooked_smell = /datum/pollutant/food/baked_eel
 
 /obj/item/reagent_containers/food/snacks/rogue/fryfish
 	icon = 'icons/roguetown/misc/fish.dmi'

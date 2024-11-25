@@ -346,6 +346,7 @@
 	slices_num = 1
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/potato_sliced
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_baked
+	cooked_smell = /datum/pollutant/food/baked_potato
 	eat_effect = null
 	foodtype = VEGETABLES
 	chopping_sound = TRUE
@@ -403,6 +404,7 @@
 	dropshrink = 0.8
 	rotprocess = null
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/roastseeds
+	cooked_smell = /datum/pollutant/food/roasted_seeds
 
 
 /*	..................   Fyritius Flower   ................... */ // some sort of funni fire flowers. Dunno just moving them here for consistency.
