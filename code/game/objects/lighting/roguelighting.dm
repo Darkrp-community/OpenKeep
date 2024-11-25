@@ -443,6 +443,7 @@
 	if(!lacks_torch)
 		torchy = new /obj/item/flashlight/flare/torch(src)
 		torchy.spark_act()
+	. = ..()
 
 /obj/machinery/light/rogue/torchholder/process()
 	if(on)

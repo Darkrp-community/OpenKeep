@@ -144,7 +144,9 @@
 						step_towards(I, user)
 						sleep(2)
 						step_towards(I, user)
-
+//			for(var/mob/living/carbon/L in viewers(7)) // Fix: Apply the music buff only if you didn't cancel song selection.
+//				if(L.can_hear()) // Only people who can hear music will get buffed
+//					L.add_stress(stressevent)
 
 		// BARDIC BUFFS CODE START //
 
