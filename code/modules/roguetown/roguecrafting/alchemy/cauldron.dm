@@ -59,22 +59,45 @@
 	if(on)
 		if(ingredients.len)
 			if(brewing < 20)
-				if(prob(10))
-					playsound(src, "bubbles", 100, FALSE)
-				brewing++
+				if(src.reagents.has_reagent(/datum/reagent/water,90))
+					brewing++
+					if(prob(10))
+						playsound(src, "bubbles", 100, FALSE)
 			else if(brewing == 20)
-				var/datum/alchemy_recipe/found_recipe = find_recipe()
-				if(found_recipe != null)
+				var/list/outcomes = list()
+				for(var/obj/item/ing in src.ingredients)
+					if(!istype(ing,/obj/item/alch))
+						continue
+					var/obj/item/alch/alching = ing
+					if(alching.major_pot != null)
+						if(outcomes[alching.major_pot] != null)
+							outcomes[alching.major_pot] += 3
+						else
+							outcomes[alching.major_pot] = 3
+					if(alching.med_pot != null)
+						if(outcomes[alching.med_pot] != null)
+							outcomes[alching.med_pot] += 2
+						else
+							outcomes[alching.med_pot] = 2
+					if(alching.minor_pot != null)
+						if(outcomes[alching.minor_pot] != null)
+							outcomes[alching.minor_pot] += 1
+						else
+							outcomes[alching.minor_pot] = 1
+				sortList(outcomes,cmp=/proc/cmp_numeric_dsc)
+				if(outcomes[1] >= 5)
+					var/datum/alch_cauldron_recipe/found_recipe = new outcomes[1]
 					for(var/obj/item/ing in src.ingredients)
 						qdel(ing)
 					if(reagents)
-						var/in_cauldron = src.reagents.get_reagent_amount(found_recipe.required_base)
-						src.reagents.remove_reagent(found_recipe.required_base, in_cauldron)
+						var/in_cauldron = src.reagents.get_reagent_amount(/datum/reagent/water)
+						src.reagents.remove_reagent(/datum/reagent/water, in_cauldron)
 					if(found_recipe.output_reagents.len)
 						src.reagents.add_reagent_list(found_recipe.output_reagents)
 					if(found_recipe.output_items.len)
 						for(var/itempath in found_recipe.output_items)
 							new itempath(get_turf(src))
+					qdel(found_recipe)
 					//handle player perception and reset for next time
 					src.visible_message("<span class='info'>The cauldron finishes boiling with a faint [found_recipe.smells_like] smell.</span>")
 					//give xp for /datum/skill/craft/alchemy
@@ -89,25 +112,6 @@
 					brewing = 0
 					src.visible_message("<span class='info'>The ingredients in the [src] fail to meld together at all...</span>")
 					playsound(src,'sound/misc/smelter_fin.ogg', 30, FALSE)
-
-///Loops through all alch recipes and returns the first it finds that matches.
-/obj/machinery/light/rogue/cauldron/proc/find_recipe()
-	for(var/datum/alchemy_recipe/possible_recipe in GLOB.alchemy_recipes)
-		if(!src.reagents.has_reagent(possible_recipe.required_base,possible_recipe.required_base_amount))
-			continue
-		for(var/needed in possible_recipe.required_items)
-			var/found = 0
-			var/total_needed = possible_recipe.required_items[needed]
-			if(!total_needed)
-				total_needed = 1 //We're gonna assume they just needed one.
-			for(var/obj/item/in_caul in src.ingredients)
-				if(istype(in_caul,needed))
-					found++
-			if(found < total_needed)
-				continue
-		//everything matches up, this is probably it.
-		return possible_recipe
-	return null //we didnt find anything....
 
 /obj/machinery/light/rogue/cauldron/attackby(obj/item/I, mob/user, params)
 	if(!istype(I,/obj/item/reagent_containers/glass)) //I hate this.

@@ -222,7 +222,6 @@
 	tastes = list("sweet" = 1,"bitterness" = 1)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
-	dust_result = /obj/item/alch/swampdust
 	sellprice = 0 // only dried has value
 
 /obj/item/reagent_containers/food/snacks/produce/swampweed_dried
@@ -236,7 +235,6 @@
 	grind_results = list(/datum/reagent/drug/space_drugs = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = null
-	dust_result = /obj/item/alch/swampdust
 	sellprice = 2
 
 
@@ -254,7 +252,6 @@
 	grind_results = list(/datum/reagent/drug/nicotine = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
-	dust_result = /obj/item/alch/tobaccodust
 	sellprice = 0 // only dried has value
 
 /obj/item/reagent_containers/food/snacks/produce/dry_westleach
@@ -268,7 +265,6 @@
 	list_reagents = list(/datum/reagent/drug/nicotine = 5, /datum/reagent/consumable/nutriment = 1)
 	grind_results = list(/datum/reagent/drug/nicotine = 10)
 	rotprocess = null
-	dust_result = /obj/item/alch/tobaccodust
 	sellprice = 1
 
 
@@ -403,7 +399,6 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/fyritiusnectar = 5)
 	dropshrink = 0.8
 	rotprocess = null
-	dust_result = /obj/item/alch/firedust
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 1
 	throw_range = 3
@@ -422,7 +417,6 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 0)
 	dropshrink = 0.5
 	rotprocess = null
-	dust_result = /obj/item/reagent_containers/powder/ozium
 
 /*
 /obj/item/reagent_containers/food/snacks/produce/garlic

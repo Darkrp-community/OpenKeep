@@ -227,8 +227,6 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/smelted = FALSE
 	// Can this be used against a training dummy to learn skills? Prevents dumb exploits.
 	var/istrainable = FALSE
-	// Takes an item path. What it turns into after being grinded by a mortar and pestle.
-	var/dust_result
 
 /obj/item/Initialize()
 	. = ..()

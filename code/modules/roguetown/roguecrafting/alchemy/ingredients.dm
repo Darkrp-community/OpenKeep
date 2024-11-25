@@ -4,26 +4,14 @@
 	icon = 'icons/roguetown/misc/alchemy.dmi'
 	icon_state = "irondust"
 	w_class = WEIGHT_CLASS_TINY
-	dust_result = null
-
-// rune dust results
-
-/obj/item/rune/spell/fire_rune
-	dust_result = /obj/item/alch/firedust
-
-/obj/item/rune/spell/air_rune
-	dust_result = /obj/item/alch/airdust
-
-/obj/item/rune/spell/water_rune
-	dust_result = /obj/item/alch/waterdust
-
-/obj/item/rune/spell/earth_rune
-	dust_result = /obj/item/alch/earthdust
-
-/obj/item/rune/spell/blank_rune
-	dust_result = /obj/item/alch/runedust
-
-//potion ingredients, sorted by potion
+	/*
+		So, you're here about potions: TLDR - the cauldron takes up to 4 items, from this, makes 1 recipe. Major gives 3 points, med 2 points,minor 1 point.
+		If no recipe gets above 5 points, it makes nothing,otherwise It then makes the recipe with the HIGHEST POINTS.
+		all 3 of the below variables should be NULL or the type-path of the recipe to make.
+	*/
+	var/major_pot = null
+	var/med_pot = null
+	var/minor_pot = null
 
 /obj/item/alch/viscera
 	name = "viscera"
@@ -60,12 +48,14 @@
 /obj/item/alch/firedust
 	name = "fire rune dust"
 	icon_state = "runedust"
+	major_pot = /datum/alch_cauldron_recipe/str_potion
+	med_pot = /datum/alch_cauldron_recipe/con_potion
+	minor_pot = /datum/alch_cauldron_recipe/spd_potion
 
 /obj/item/alch/sinew
 	name = "sinew"
 	icon_state = "sinew"
 	dropshrink = 0.5
-	dust_result = /obj/item/alch/viscera
 
 /obj/item/alch/irondust
 	name = "iron dust"
@@ -94,7 +84,6 @@
 	force = 7
 	throwforce = 5
 	w_class = WEIGHT_CLASS_SMALL
-	dust_result = /obj/item/alch/bonemeal
 
 /obj/item/alch/horn
 	name = "troll horn"
@@ -103,7 +92,6 @@
 	force = 7
 	throwforce = 5
 	w_class = WEIGHT_CLASS_NORMAL
-	dust_result = /obj/item/alch/earthdust
 
 //Modifier ingredients
 /obj/item/alch/golddust
