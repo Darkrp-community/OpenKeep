@@ -622,6 +622,18 @@
 	gender = FEMALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc")
 
+/datum/sprite_accessory/hair/singlebraid
+	name = "Single braid"
+	icon_state = "singlebraid"
+	gender = FEMALE
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc")
+
+/datum/sprite_accessory/hair/shorthime
+	name = "Hime Cut (Short)"
+	icon_state = "shorthime"
+	gender = FEMALE
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc")
+
 
 //////////////////////////////
 // UNISEX Hair Definitions  //

@@ -122,6 +122,7 @@
 		"Vaquero" = SKIN_COLOR_VAQUERO,
 		"Zanguine" = SKIN_COLOR_ZANGUINE,
 		"Ash" = SKIN_COLOUR_ASH,
+		"Arlenneth" = SKIN_COLOR_ARLENNETH,
 	))
 
 /datum/species/tieberian/get_hairc_list()
