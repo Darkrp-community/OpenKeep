@@ -282,11 +282,11 @@
 		return
 	if(known_skills[S] >= old_level)
 		if(known_skills[S] > old_level)
-			to_chat(current, "<span class='nicegreen'>My proficiency in [S.name] grows!</span>")
+			to_chat(current, span_nicegreen("My proficiency in [S.name] grows to [SSskills.level_names[known_skills[S]]]!"))
 		if(skill == /datum/skill/magic/arcane)
 			adjust_spellpoints(1)
 	else
-		to_chat(current, "<span class='warning'>My [S.name] has weakened!</span>")
+		to_chat(current, span_warning("My [S.name] has weakened to [SSskills.level_names[known_skills[S]]]!"))
 
 /datum/mind/proc/adjust_skillrank(skill, amt, silent = FALSE)
 	var/datum/skill/S = GetSkillRef(skill)
@@ -331,9 +331,9 @@
 	if(silent)
 		return
 	if(known_skills[S] >= old_level)
-		to_chat(current, "<span class='nicegreen'>I feel like I've become more proficient at [S.name]!</span>")
+		to_chat(current, span_nicegreen("I feel like I've become more proficient at [S.name]!"))
 	else
-		to_chat(current, "<span class='warning'>I feel like I've become worse at [S.name]!</span>")
+		to_chat(current, span_warning("I feel like I've become worse at [S.name]!"))
 
 // adjusts the amount of available spellpoints
 /datum/mind/proc/adjust_spellpoints(points)
@@ -363,13 +363,12 @@
 		if(known_skills[i]) //Do we actually have a level in this?
 			shown_skills += i
 	if(!length(shown_skills))
-		to_chat(user, "<span class='warning'>I don't have any skills.</span>")
+		to_chat(user, span_warning("I don't have any skills."))
 		return
 	var/msg = ""
-	msg += "<span class='info'>*---------*\n</span>"
+	msg += span_info("*---------*\n")
 	for(var/i in shown_skills)
 		msg += "[i] - [SSskills.level_names[known_skills[i]]]\n"
-	msg += "</span>"
 	to_chat(user, msg)
 
 
@@ -469,7 +468,7 @@
 
 	if(creator.mind.special_role)
 		message_admins("[ADMIN_LOOKUPFLW(current)] has been created by [ADMIN_LOOKUPFLW(creator)], an antagonist.")
-		to_chat(current, "<span class='danger'>Despite my creators current allegiances, my true master remains [creator.real_name]. If their loyalties change, so do yours. This will never change unless my creator's body is destroyed.</span>")
+		to_chat(current, span_danger("Despite my creators current allegiances, my true master remains [creator.real_name]. If their loyalties change, so do yours. This will never change unless my creator's body is destroyed."))
 
 /datum/mind/proc/show_memory(mob/recipient, window=1)
 	if(!recipient)
@@ -523,7 +522,7 @@
 	if(href_list["remove_antag"])
 		var/datum/antagonist/A = locate(href_list["remove_antag"]) in antag_datums
 		if(!istype(A))
-			to_chat(usr,"<span class='warning'>Invalid antagonist ref to be removed.</span>")
+			to_chat(usr, span_warning("Invalid antagonist ref to be removed."))
 			return
 		A.admin_remove(usr)
 
@@ -659,7 +658,7 @@
 
 /datum/mind/proc/announce_objectives()
 	var/obj_count = 1
-	to_chat(current, "<span class='notice'>My current objectives:</span>")
+	to_chat(current, span_notice("My current objectives:"))
 	for(var/objective in get_all_objectives())
 		var/datum/objective/O = objective
 		O.update_explanation_text()
