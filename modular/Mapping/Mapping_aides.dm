@@ -356,10 +356,8 @@
 	spawn_text = ""
 
 
-
-
 // ===================================================================================
-
+/*	..................   Areas   ................... */
 /area/rogue/under/town/caverogue/saltmine
 	name = "salt mine"
 	first_time_text = "Salt Mine"
@@ -401,9 +399,25 @@
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30,
 				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 20)
 
+/*	..................   Areas to play with the music a bit   ................... */
+/area/rogue/indoors/town/bath/redhouse // lets try something different
+	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
+	converted_type = /area/rogue/outdoors/exposed/bath/redhouse
+
+/area/rogue/outdoors/exposed/bath/redhouse
+	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
+
+/area/rogue/indoors/town/tavern/saiga
+	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
+	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
+	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
+
+/area/rogue/outdoors/exposed/tavern/saiga
+	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
+	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
+
+
 // ===================================================================================
-
-
 /*	..................   Catacomb Skelly (weak)   ................... */
 /mob/living/carbon/human/species/skeleton/npc/catacomb/after_creation()
 	..()
@@ -491,6 +505,47 @@
 	probby = 50
 	spawned = list(	/obj/effect/landmark/events/haunts = 100	)
 
+/*	..................   Malum Shrine (Dromkis revenge)   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/malum
+	name = "statue of Malum"
+	desc = ""
+	icon = 'icons/roguetown/misc/tallandwide.dmi'
+	icon_state = "malum"
+	bound_width = 64
+
+/*	..................   Astrata Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/astrata
+	name = "The Sun Queen"
+	desc = ""
+	icon = 'icons/roguetown/misc/tallandwide.dmi'
+	icon_state = "astrata"
+	pixel_x = -16
+
+/*	..................   Necra Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/necra
+	name = "The Undermaiden"
+	desc = ""
+	icon = 'icons/roguetown/misc/tallandwide.dmi'
+	icon_state = "necra"
+	pixel_x = -16
+
+/*	..................   Dendor Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/dendor
+	name = "The Tree Father"
+	desc = ""
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	icon_state = "mystical"
+	pixel_x = -10
+
+/*	..................   Abyssor Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/abyssor
+	name = "The World Whale"
+	desc = ""
+	icon = 'icons/roguetown/misc/96x96.dmi'
+	icon_state = "abyssor"
+	bound_width = 64
+	pixel_x = -25
+
 /*	..................   Dungeon stuff   ................... */
 /obj/structure/fluff/statue/xylix
 	desc = "Some mad God no doubt."
@@ -502,14 +557,60 @@
 /obj/structure/fluff/statue/xylix/frown
 	icon_state = "xylix_frown"
 
+// ==============================================================
+/*	..................   Turfs   ................... */
 /turf/open/floor/rogue/sandstone
 	icon_state = "sandstone"
 	footstep = FOOTSTEP_STONE
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	landsound = 'sound/foley/jumpland/grassland.wav'
+	landsound = 'sound/foley/jumpland/stoneland.wav'
+	smooth = SMOOTH_MORE
+	canSmoothWith = list(/turf/closed/mineral/rogue,
+						/turf/open/floor/rogue/herringbone,
+						/turf/closed/mineral,
+						/turf/closed/wall/mineral/rogue/stonebrick,
+						/turf/closed/wall/mineral/rogue/wood,
+						/turf/closed/wall/mineral/rogue/wooddark,
+						/turf/closed/wall/mineral/rogue/stone,
+						/turf/closed/wall/mineral/rogue/stone/moss,
+						/turf/open/floor/rogue/cobble,
+						/turf/open/floor/rogue/dirt,
+						/turf/open/floor/rogue/grass,
+						/turf/open/floor/rogue/grass/red,
+						/turf/open/floor/rogue/grass/yel,
+						/turf/open/floor/rogue/grass/cold,
+						/turf/open/floor/rogue/snow,
+						/turf/open/floor/rogue/snow/patchy,
+						/turf/open/floor/rogue/snow/rough,
+						/turf/open/floor/rogue/sandstone,
+						/turf/open/floor/rogue/sandstone/temple)
 
+/turf/open/floor/rogue/sandstone/shaded
+	color = "#c8c8c8"
+
+/turf/open/floor/rogue/sandstone/temple
+	icon_state = "temple"
+/turf/open/floor/rogue/sandstone/temple/Initialize()
+	dir = pick(GLOB.cardinals)
+	. = ..()
+
+/turf/open/water/bath/pool
+	desc = "Clear water, pleasant temperature. Soothing."
+	icon_state = "bathtile_pool"
+/turf/open/water/bath/pool/Initialize()
+	.  = ..()
+	icon_state = "bathtile_pool"
+
+/turf/open/water/bath/pool/mid
+	icon_state = "bathtile_pool_mid"
+/turf/open/water/bath/pool/mid/Initialize()
+	.  = ..()
+	icon_state = "bathtile_pool_mid"
+
+
+// ==============================================================
 /obj/effect/spawner/roguemap/xylixlabyrinth
 	icon = 'icons/mob/actions/roguespells.dmi'
 	icon_state = "raiseskele"
@@ -762,79 +863,10 @@
 	pixel_x = -16
 	climb_offset = 4
 
-/*	..................   Colony Spider Net   ................... */
-/obj/structure/innocent_net
-	name = ""
-	desc = ""
-	icon = 'icons/roguetown/misc/tallstructure.dmi'
-	icon_state = "innocentweb1"
-	layer = ABOVE_ALL_MOB_LAYER
-	density = FALSE
-	max_integrity = 35
-	climbable = FALSE
-	dir = SOUTH
-	debris = list(/obj/item/natural/silk = 1)
-	var/lucky_escape
-
-/obj/structure/innocent_net/Initialize()
-	. = ..()
-	icon_state = "innocentweb[rand(1,2)]"
-	return ..()
-
-/obj/structure/innocent_net/attack_hand()
-	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
-	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-	qdel(src)
-
-/obj/structure/innocent_net/attackby(obj/item, /mob/user, params)
-	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
-	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-	qdel(src)
-
-/obj/structure/innocent_net/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
-	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-	qdel(src)
-
-/obj/structure/innocent_net/Crossed(atom/movable/AM)
-	..()
-	if(isliving(AM))
-		var/mob/living/carbon/human/L = AM
-		lucky_escape = ( L.STALUC * 4 )
-		L.Immobilize(5)
-		if(L.m_intent == MOVE_INTENT_WALK)
-			L.Immobilize(10)
-			if(prob(lucky_escape))
-				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
-				qdel(src)
-			else
-				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
-				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-				qdel(src)
-		if(L.m_intent == MOVE_INTENT_RUN)
-			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
-			L.Immobilize(20)
-			if(prob(lucky_escape))
-				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
-				qdel(src)
-			else
-				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
-				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-				qdel(src)
-		else
-			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
-			L.Immobilize(5)
-			if(prob(lucky_escape))
-				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
-				qdel(src)
-			else
-				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
-				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-				qdel(src)
 
 
+// ======================================================================
 /*	..................   Wizard Shenanigans   ................... */
-
 /obj/structure/circle_protection
 	name = "circle of protection"
 	icon = 'modular/Mapping/icons/96x96.dmi'
@@ -932,6 +964,7 @@
 		return
 	else
 		to_chat(user, "<span class='notice'>Noc looks angry with me...</span>")
+// ======================================================================
 
 
 /*	..................   Floor decoration   ................... */
@@ -948,18 +981,6 @@
 	desc = "Pelt of a young animal, made into a mat."
 	icon_state = "fur_alt"
 
-/turf/open/water/bath/pool
-	desc = "Clear water, pleasant temperature. Soothing."
-	icon_state = "bathtile_pool"
-/turf/open/water/bath/pool/Initialize()
-	.  = ..()
-	icon_state = "bathtile_pool"
-
-/turf/open/water/bath/pool/mid
-	icon_state = "bathtile_pool_mid"
-/turf/open/water/bath/pool/mid/Initialize()
-	.  = ..()
-	icon_state = "bathtile_pool_mid"
 
 
 /obj/effect/decal/shadow_floor
@@ -983,6 +1004,7 @@
 	color = "#5a4621"
 	pixel_y = -16
 
+// ======================================================================
 /*	..................   Innocent Bush   ................... */
 /obj/structure/innocent_bush
 	name = "bush"
@@ -1023,7 +1045,77 @@
 	qdel(src)
 
 
+/*	..................   Colony Spider Net   ................... */
+/obj/structure/innocent_net
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "innocentweb1"
+	layer = ABOVE_ALL_MOB_LAYER
+	density = FALSE
+	max_integrity = 35
+	climbable = FALSE
+	dir = SOUTH
+	debris = list(/obj/item/natural/silk = 1)
+	var/lucky_escape
 
+/obj/structure/innocent_net/Initialize()
+	. = ..()
+	icon_state = "innocentweb[rand(1,2)]"
+	return ..()
+
+/obj/structure/innocent_net/attack_hand()
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_net/attackby(obj/item, /mob/user, params)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_net/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_net/Crossed(atom/movable/AM)
+	..()
+	if(isliving(AM))
+		var/mob/living/carbon/human/L = AM
+		lucky_escape = ( L.STALUC * 4 )
+		L.Immobilize(5)
+		if(L.m_intent == MOVE_INTENT_WALK)
+			L.Immobilize(10)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
+		if(L.m_intent == MOVE_INTENT_RUN)
+			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
+			L.Immobilize(20)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
+		else
+			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
+			L.Immobilize(5)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
+
+// ======================================================================
 /obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
 	name = "candle lamp"
 	icon_state = "candle"
@@ -1047,22 +1139,7 @@
 	color = "#617163"
 
 
-/*	..................   Areas to play with the music a bit   ................... */
-/area/rogue/indoors/town/bath/redhouse // lets try something different
-	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
-	converted_type = /area/rogue/outdoors/exposed/bath/redhouse
 
-/area/rogue/outdoors/exposed/bath/redhouse
-	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
-
-/area/rogue/indoors/town/tavern/saiga
-	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
-	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
-	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
-
-/area/rogue/outdoors/exposed/tavern/saiga
-	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
-	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
 
 
 /*	..................   Traveltiles   ................... */ // these are the ones on centcom, where the actual lair is, to reduce varedits onmap
