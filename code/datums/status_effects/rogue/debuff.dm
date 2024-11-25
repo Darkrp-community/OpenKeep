@@ -397,3 +397,14 @@
 	name = "Vicious Mockery"
 	desc = "<span class='warning'>THAT SPOONY BARD! ARGH!</span>\n"
 	icon_state = "muscles"
+
+/datum/status_effect/debuff/chilled
+	id = "chilled"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/chilled
+	effectedstats = list("speed" = -5, "strength" = -2, "endurance" = -2)
+	duration = 15 SECONDS
+
+/atom/movable/screen/alert/status_effect/debuff/chilled
+	name = "Chilled"
+	desc = "I can barely feel my limbs!"
+	icon_state = "chilled"

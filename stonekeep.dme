@@ -2548,6 +2548,7 @@
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
 #include "modular\Barding\code\Barding_instruments.dm"
+#include "modular\Barding\code\music_effect.dm"
 #include "modular\Mapping\Mapping_aides.dm"
 #include "modular\Neu_Farming\code\bin.dm"
 #include "modular\Neu_Farming\code\chaff.dm"
