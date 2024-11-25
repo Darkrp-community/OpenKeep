@@ -150,6 +150,30 @@
 	/obj/item/roguegem/violet = 2,
 	/obj/item/roguegem/diamond = 1)
 
+/*	..................   Spooky Village loot   ................... */
+/obj/effect/spawner/roguemap/spooky_village_stuff
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "generic_event"
+	probby = 50
+	spawned = list(
+		/obj/item/clothing/head/roguetown/armingcap = 10,
+		/obj/item/clothing/head/roguetown/fisherhat = 10,
+		/obj/item/clothing/shoes/roguetown/simpleshoes/buckle = 10,
+		/obj/item/roguekey/spooky_village  = 30,
+		/obj/item/roguecoin/copper/pile = 10,
+		)
+
+
+/*	..................   Toll randomizer (poor mans coin generator, cheaper workload is all)  ................... */
+/obj/effect/spawner/roguemap/tollrandom
+	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
+	icon_state = "soultoken_floor"
+	probby = 35
+	color = "#ff0000"
+	spawned = list(
+		/obj/item/underworld/coin = 1,
+		)
+
 // ===================================================================================
 /*	..................   Sewer Danger   ................... */
 /obj/effect/spawner/roguemap/sewerencounter
@@ -252,6 +276,32 @@
 		/obj/structure/idle_enemy/lamia = 50,
 		/obj/structure/idle_enemy/headless = 50)
 
+/*	..................   Zizombie Farmer Danger   ................... */
+/obj/effect/spawner/roguemap/zizombie_farmer_maybe
+	icon = 'icons/roguetown/mob/monster/zizombie.dmi'
+	icon_state = "zizombie_decap"
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/structure/idle_enemy/zizombie_farmer = 100	)
+
+/*	..................   Hairy Spider Danger   ................... */
+/obj/effect/spawner/roguemap/hairy_spider_maybe
+	icon = 'icons/roguetown/mob/monster/spider.dmi'
+	icon_state = "spider"
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/structure/idle_enemy/hairy_spider = 100	)
+
+/*	..................   Haunts Danger   ................... */
+/obj/effect/spawner/roguemap/haunts_maybe
+	icon = 'icons/roguetown/mob/monster/wraith.dmi'
+	icon_state = "hauntpile"
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/structure/bonepile = 100	)
 
 
 // ===================================================================================
@@ -355,6 +405,30 @@
 	range = 10
 	spawn_text = ""
 
+/*	..................   Zizombie Farmer Danger   ................... */
+/obj/structure/idle_enemy/zizombie_farmer
+/obj/structure/idle_enemy/zizombie_farmer/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/zizombie_farmer)
+/datum/component/spawner/zizombie_farmer
+	mob_types = list(/mob/living/carbon/human/species/zizombie/npc/peasant)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+/*	..................   Hairy Spider Danger   ................... */
+/obj/structure/idle_enemy/hairy_spider
+/obj/structure/idle_enemy/hairy_spider/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/hairy_spider)
+/datum/component/spawner/hairy_spider
+	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/spider/colony)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
 
 // ===================================================================================
 /*	..................   Areas   ................... */
@@ -416,6 +490,18 @@
 	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
 	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
 
+
+/area/rogue/outdoors/woods/haunted
+	ambush_types = list(
+				/turf/open/floor/rogue/grass)
+	ambush_mobs = list(
+				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 20,
+				/mob/living/simple_animal/hostile/retaliate/rogue/spider/colony = 20,
+				/mob/living/simple_animal/hostile/rogue/haunt = 20,
+				/mob/living/carbon/human/species/skeleton/npc/ambush = 30,
+				/mob/living/simple_animal/hostile/retaliate/rogue/mole = 20)
+	first_time_text = "THE HAUNTED FOREST"
+	converted_type = /area/rogue/indoors/shelter/woods
 
 // ===================================================================================
 /*	..................   Catacomb Skelly (weak)   ................... */
@@ -608,6 +694,25 @@
 /turf/open/water/bath/pool/mid/Initialize()
 	.  = ..()
 	icon_state = "bathtile_pool_mid"
+
+/turf/open/floor/rogue/grass/yelmix
+	name = "grass"
+	icon_state = "grass_yelmix"
+	smooth = SMOOTH_FALSE
+	neighborlay = ""
+
+/turf/open/floor/rogue/grass/near_tree
+	color = "#ff0000"
+/turf/open/floor/rogue/grass/near_tree/Initialize()
+	color = "#ffffff"
+	. = ..()
+
+/turf/open/floor/rogue/oak	// new oak
+	icon_state = "oak"
+/turf/open/floor/rogue/oak/broken
+	icon_state = "oak_broken"
+/turf/open/floor/rogue/oak/stage
+	icon_state = "stageoak_bl"
 
 
 // ==============================================================
@@ -862,6 +967,54 @@
 	fueluse = -1
 	pixel_x = -16
 	climb_offset = 4
+// ======================================================================
+
+/*	..................   Pigflowers   ................... */
+/obj/structure/flora/rogueflower // ausbushes recolored
+	icon = 'icons/roguetown/misc/pigflora.dmi'
+	icon_state = "reedbush_1"
+
+/obj/structure/flora/rogueflower/reedbush
+	icon_state = "reedbush_1"
+
+/obj/structure/flora/rogueflower/reedbush/Initialize()
+	icon_state = "reedbush_[rand(1, 4)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/lavendergrass
+	icon_state = "lavendergrass_1"
+
+/obj/structure/flora/rogueflower/lavendergrass/Initialize()
+	icon_state = "lavendergrass_[rand(1, 4)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/ywflowers
+	icon_state = "ywflowers_1"
+
+/obj/structure/flora/rogueflower/ywflowers/Initialize()
+	icon_state = "ywflowers_[rand(1, 3)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/brflowers
+	icon_state = "brflowers_1"
+
+/obj/structure/flora/rogueflower/brflowers/Initialize()
+	icon_state = "brflowers_[rand(1, 3)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/ppflowers
+	icon_state = "ppflowers_1"
+
+/obj/structure/flora/rogueflower/ppflowers/Initialize()
+	icon_state = "ppflowers_[rand(1, 3)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/stalkybush
+	icon_state = "stalkybush_1"
+
+/obj/structure/flora/rogueflower/stalkybush/Initialize()
+	icon_state = "stalkybush_[rand(1, 3)]"
+	. = ..()
 
 
 
@@ -1168,17 +1321,12 @@
 	color = "#d6b3a5"
 
 
+/obj/item/roguekey/spooky_village
+	icon_state = "rustkey"
+	lockid = "spooky_village"
 
 
-/*	..................   Toll randomizer (poor mans coin generator, cheaper workload is all)  ................... */
-/obj/effect/spawner/roguemap/tollrandom
-	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
-	icon_state = "soultoken_floor"
-	probby = 35
-	color = "#ff0000"
-	spawned = list(
-		/obj/item/underworld/coin = 1,
-		)
+
 
 
 // ====================		NEW WEAPONS		==========================
