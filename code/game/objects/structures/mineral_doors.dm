@@ -328,6 +328,7 @@
 			door_rattle()
 			return
 		trykeylock(item, user)
+		return
 	else
 		return ..()
 
