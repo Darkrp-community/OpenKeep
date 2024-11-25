@@ -414,6 +414,7 @@
 	crossfire = FALSE
 	plane = GAME_PLANE_UPPER
 	cookonme = FALSE
+	var/lacks_torch
 
 /obj/machinery/light/rogue/torchholder/c
 	pixel_y = 32
@@ -439,9 +440,9 @@
 				return TRUE
 
 /obj/machinery/light/rogue/torchholder/Initialize()
-	torchy = new /obj/item/flashlight/flare/torch(src)
-	torchy.spark_act()
-	. = ..()
+	if(!lacks_torch)
+		torchy = new /obj/item/flashlight/flare/torch(src)
+		torchy.spark_act()
 
 /obj/machinery/light/rogue/torchholder/process()
 	if(on)
@@ -517,6 +518,10 @@
 			playsound(src.loc, 'sound/foley/torchfixtureput.ogg', 70)
 		return
 	. = ..()
+
+/obj/machinery/light/rogue/torchholder/cold
+	lacks_torch = TRUE
+	pixel_y = 32
 
 /obj/machinery/light/rogue/chand
 	name = "chandelier"
