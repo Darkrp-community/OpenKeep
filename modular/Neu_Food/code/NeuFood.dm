@@ -97,6 +97,12 @@
 /obj/item/reagent_containers/food/snacks/rotten/egg
 	name = "rotted cackleberry"
 	icon_state = "egg"
+/obj/item/reagent_containers/food/snacks/rotten/lobster
+	name = "rotten creeper flesh"
+	icon_state = "lobstermeat"
+/obj/item/reagent_containers/food/snacks/rotten/lobter/fillet
+	name = "rotten creeper fillet"
+	icon_state = "lobsterfillet"
 /obj/item/reagent_containers/food/snacks/rotten/egg/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
 	if(!..()) //was it caught by a mob?
 		var/turf/T = get_turf(hit_atom)
