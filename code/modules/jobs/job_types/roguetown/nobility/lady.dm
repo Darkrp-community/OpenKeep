@@ -23,6 +23,7 @@
 
 	cmode_music = 'sound/music/combat_noble.ogg'
 
+/datum/job/roguetown/lady/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	if(L.gender == FEMALE)
 		SSfamilytree.AddRoyal(L, FAMILY_MOTHER)
 	else
@@ -63,9 +64,7 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/arming
 	else
 		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
-		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
-			if(prob(66))
-				armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt
+		armor = pick(/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress, /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt)
 
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
