@@ -25,12 +25,10 @@
 	..()
 
 
-/obj/structure/spawner/syndicate
+/obj/structure/spawner/syndicate // TO DO obsolete
 	name = "warp beacon"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "syndbeacon"
-	spawn_text = "warps in from"
-	mob_types = list(/mob/living/simple_animal/hostile/syndicate/ranged)
 	faction = list(ROLE_SYNDICATE)
 
 /obj/structure/spawner/skeleton // TO DO obsolete

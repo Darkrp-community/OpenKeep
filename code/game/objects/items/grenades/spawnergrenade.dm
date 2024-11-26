@@ -26,9 +26,6 @@
 	return
 
 /obj/item/grenade/spawnergrenade/manhacks
-	name = "viscerator delivery grenade"
-	spawner_type = /mob/living/simple_animal/hostile/viscerator
-	deliveryamt = 10
 
 /obj/item/grenade/spawnergrenade/spesscarp
 	name = "carp delivery grenade"
