@@ -167,8 +167,11 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 	var/wlength = WLENGTH_NORMAL		//each weapon length class has its own inherent dodge properties
 	var/wbalance = 0
-	var/wdefense = 0 //better at defending. Each points gives a flat 10% bonus to parry
-	var/minstr = 0  //for weapons
+	var/wdefense = 0					//Flat bonus to defense
+	var/wdodgebonus = 0					//Bonus for dodging
+	var/wparrybonus = 0					//Bonus to parrying
+	var/wparryspeed = 0					//Minor reduction in parry cooldown time, for
+	var/minstr = 0						//for weapons
 
 	var/sleeved = null
 	var/sleevetype = null
@@ -1056,7 +1059,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 	if(tool_behaviour == TOOL_MINING && ishuman(user))
 		var/mob/living/carbon/human/H = user
-		skill_modifier = H.mind.get_skill_speed_modifier(/datum/skill/mining)
+		skill_modifier = H.mind.get_skill_speed_modifier(/datum/skill/labor/mining)
 
 	delay *= toolspeed * skill_modifier
 

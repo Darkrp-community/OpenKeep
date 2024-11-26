@@ -121,23 +121,6 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	craftdiff = 0
 
-
-/datum/crafting_recipe/roguetown/prosthetic/wood/left
-	name = "wooden left arm"
-	result = list(/obj/item/bodypart/l_arm/prosthetic/wood)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/obj/item/roguegear = 1)
-	skillcraft = /datum/skill/craft/carpentry
-	craftdiff = 3
-
-/datum/crafting_recipe/roguetown/prosthetic/wood/right
-	name = "wooden right arm"
-	result = list(/obj/item/bodypart/r_arm/prosthetic/wood)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/obj/item/roguegear = 1)
-	skillcraft = /datum/skill/craft/carpentry
-	craftdiff = 3
-
 /obj/item/rogueweapon/mace/woodclub/crafted
 	sellprice = 8
 
@@ -147,21 +130,6 @@
 	/obj/item/rogueweapon/polearm/woodstaff,
 	/obj/item/rogueweapon/polearm/woodstaff)
 	reqs = list(/obj/item/grown/log/tree = 1)
-
-/datum/crafting_recipe/roguetown/woodsword
-	name = "wood sword"
-	result = list(/obj/item/rogueweapon/mace/woodclub/train_sword,
-					/obj/item/rogueweapon/mace/woodclub/train_sword)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 1
-
-/datum/crafting_recipe/roguetown/woodshield
-	name = "wooden shield"
-	result = /obj/item/rogueweapon/shield/wood/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-				/obj/item/natural/hide = 1)
-	skillcraft = /datum/skill/craft/carpentry
 
 /obj/item/rogueweapon/shield/wood/crafted
 	sellprice = 6

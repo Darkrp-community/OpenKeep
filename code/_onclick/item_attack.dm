@@ -9,8 +9,20 @@
  */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
 	if(user.check_arm_grabbed(user.active_hand_index))
-		to_chat(user, "<span class='notice'>I can't move my arm!</span>")
-		return
+		var/mob/living/G = user.pulledby
+		var/mob/living/U = user
+		var/userskill = 1
+		if(U?.mind?.get_skill_level(/datum/skill/combat/wrestling))
+			userskill = ((U.mind.get_skill_level(/datum/skill/combat/wrestling) * 0.1) + 1)
+		var/grabberskill = 1
+		if(G?.mind?.get_skill_level(/datum/skill/combat/wrestling))
+			grabberskill = ((G.mind.get_skill_level(/datum/skill/combat/wrestling) * 0.1) + 1)
+		if(((U.STASTR + rand(1, 6)) * userskill) < ((G.STASTR + rand(1, 6)) * grabberskill))
+			to_chat(user, span_notice("I can't move my arm!"))
+			user.changeNext_move(CLICK_CD_GRABBING)
+			return
+		else
+			user.resist_grab()
 	if(!user.has_hand_for_held_index(user.active_hand_index, TRUE)) //we obviously have a hadn, but we need to check for fingers/prosthetics
 		to_chat(user, "<span class='warning'>I can't move the fingers.</span>")
 		return
@@ -343,7 +355,8 @@
 	*/
 	newforce = (newforce * user.used_intent.damfactor) * dullfactor
 	if(user.used_intent.get_chargetime() && user.client?.chargedprog < 100)
-		newforce = newforce * 0.5
+		newforce = newforce * round(user.client?.chargedprog / 100, 0.1)
+	newforce = round(newforce, 1)
 	if(!(user.mobility_flags & MOBILITY_STAND))
 		newforce *= 0.5
 	// newforce is rounded upto the nearest intiger.
@@ -411,50 +424,10 @@
 /mob/living/proc/simple_limb_hit(zone)
 	if(!zone)
 		return ""
-	switch(zone)
-		if(BODY_ZONE_HEAD)
-			return "body"
-		if(BODY_ZONE_CHEST)
-			return "body"
-		if(BODY_ZONE_R_LEG)
-			return "body"
-		if(BODY_ZONE_L_LEG)
-			return "body"
-		if(BODY_ZONE_R_ARM)
-			return "body"
-		if(BODY_ZONE_L_ARM)
-			return "body"
-		if(BODY_ZONE_PRECISE_R_EYE)
-			return "body"
-		if(BODY_ZONE_PRECISE_L_EYE)
-			return "body"
-		if(BODY_ZONE_PRECISE_NOSE)
-			return "body"
-		if(BODY_ZONE_PRECISE_MOUTH)
-			return "body"
-		if(BODY_ZONE_PRECISE_SKULL)
-			return "body"
-		if(BODY_ZONE_PRECISE_EARS)
-			return "body"
-		if(BODY_ZONE_PRECISE_NECK)
-			return "body"
-		if(BODY_ZONE_PRECISE_L_HAND)
-			return "body"
-		if(BODY_ZONE_PRECISE_R_HAND)
-			return "body"
-		if(BODY_ZONE_PRECISE_L_FOOT)
-			return "body"
-		if(BODY_ZONE_PRECISE_R_FOOT)
-			return "body"
-		if(BODY_ZONE_PRECISE_STOMACH)
-			return "body"
-		if(BODY_ZONE_PRECISE_GROIN)
-			return "body"
-		if(BODY_ZONE_PRECISE_R_INHAND)
-			return "body"
-		if(BODY_ZONE_PRECISE_L_INHAND)
-			return "body"
-	return "body"
+	if(istype(src, /mob/living/simple_animal))
+		return zone
+	else
+		return "body"
 
 /obj/item/proc/funny_attack_effects(mob/living/target, mob/living/user, nodmg)
 	return
@@ -501,7 +474,7 @@
 
 // Proximity_flag is 1 if this afterattack was called on something adjacent, in your square, or on your person.
 // Click parameters is the params string from byond Click() code, see that documentation.
-/obj/item/proc/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+/obj/item/proc/afterattack(atom/target, mob/living/user, proximity_flag, click_parameters)
 	SEND_SIGNAL(src, COMSIG_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
 	if(force && !user.used_intent.tranged && !user.used_intent.tshield)

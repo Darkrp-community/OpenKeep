@@ -11,6 +11,9 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 	status_flags = CANPUSH
 
+	simpmob_attack = 45
+	simpmob_defend = 45
+
 	var/icon_living = ""
 	///Icon when the animal is dead. Don't use animated icons for this.
 	var/icon_dead = ""

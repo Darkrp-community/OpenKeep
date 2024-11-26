@@ -53,7 +53,7 @@
 //	if(WW)
 //		W.mind.add_antag_datum(WW)
 
-	W.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/wwolf)
+	W.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/simple/wereclaw, /datum/intent/simple/werebite)
 	W.update_a_intents()
 	W.name = "WEREWOLF"
 	W.real_name = "WEREWOLF"

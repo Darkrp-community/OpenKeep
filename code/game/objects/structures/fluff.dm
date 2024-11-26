@@ -386,7 +386,7 @@
 	metalizer_result = /obj/item/roguegear
 
 /obj/structure/fluff/clock/Initialize()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 	soundloop.start()
 	. = ..()
 
@@ -468,7 +468,7 @@
 		. += "(Round Time: [gameTimestamp("hh:mm:ss", REALTIMEOFDAY - SSticker.round_start_irl)].)"
 
 /obj/structure/fluff/wallclock/Initialize()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 	soundloop.start()
 	. = ..()
 
@@ -902,9 +902,9 @@
 							I = new /obj/item/clothing/under/roguetown/chainlegs(user.loc)
 					if(I)
 						I.sellprice = 0
-					playsound(loc,'sound/items/carvgood.ogg', 50, TRUE)
+					playsound(loc,'sound/items/matidol2.ogg', 50, TRUE)
 				else
-					playsound(loc,'sound/items/carvty.ogg', 50, TRUE)
+					playsound(loc,'sound/items/matidol1.ogg', 50, TRUE)
 				playsound(loc,'sound/misc/eat.ogg', rand(30,60), TRUE)
 				qdel(W)
 				return
