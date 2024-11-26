@@ -1,4 +1,4 @@
-/datum/job/roguetown/lady
+/datum/job/roguetown/consort
 	title = "Consort"
 	flag = CONSORT
 	department_flag = NOBLEMEN
@@ -14,7 +14,7 @@
 	)
 	tutorial = "Yours was a marriage of political convenience rather than love, yet you have remained the ruling monarch's good friend and confidant throughout your marriage. But your love and loyalty will be tested, for daggers are equally pointed at your throat."
 
-	outfit = /datum/outfit/job/roguetown/lady
+	outfit = /datum/outfit/job/roguetown/consort
 
 	display_order = JDO_CONSORT
 	bypass_lastclass = TRUE
@@ -23,13 +23,13 @@
 
 	cmode_music = 'sound/music/combat_noble.ogg'
 
-/datum/job/roguetown/lady/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+/datum/job/roguetown/consort/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	if(L.gender == FEMALE)
 		SSfamilytree.AddRoyal(L, FAMILY_MOTHER)
 	else
 		SSfamilytree.AddRoyal(L, FAMILY_FATHER)
 
-/datum/outfit/job/roguetown/lady/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/consort/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	head = /obj/item/clothing/head/roguetown/crown/nyle
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
