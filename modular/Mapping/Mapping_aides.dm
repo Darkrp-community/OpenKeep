@@ -472,12 +472,12 @@
 /datum/map_template/dwarf_outpost_i
 	name = "Dwarf Outpost Orc"
 	id = "Dwarf_Outpost_1"
-	mappath = "_maps/map_files/templates/haunted_forest/Spooky_village_1.dmm"
+	mappath = "_maps/map_files/templates/dwarf_outpost/Dwarf_Outpost_1.dmm"
 
 /datum/map_template/dwarf_outpost_ii
 	name = "Dwarf Outpost Beastmen"
 	id = "Dwarf_Outpost_2"
-	mappath = "_maps/map_files/templates/haunted_forest/Spooky_village_2.dmm"
+	mappath = "_maps/map_files/templates/dwarf_outpost/Dwarf_Outpost_1.dmm"
 
 
 
@@ -1345,6 +1345,7 @@
 // ======================================================================
 /obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
 	name = "candle lamp"
+	icon = 'icons/roguetown/misc/decoration.dmi'
 	icon_state = "candle"
 	base_state = "candle"
 	layer = WALL_OBJ_LAYER+0.1

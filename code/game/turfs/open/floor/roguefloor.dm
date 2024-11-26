@@ -989,6 +989,7 @@
 
 /turf/open/floor/rogue/cobble/mossy/alt
 	icon_state = "mossyalt1"
+	canSmoothWith = list(/turf/open/floor/rogue/cobble/mossy/alt)
 
 /turf/open/floor/rogue/cobble/mossy/alt/Initialize()
 	. = ..()
