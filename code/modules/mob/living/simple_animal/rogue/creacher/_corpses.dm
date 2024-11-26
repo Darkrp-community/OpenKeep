@@ -3,7 +3,7 @@
 /obj/effect/mob_spawn/human/orc/corpse/savageorc
 	mob_name = "Savage Orc"
 	name = "Savage Orc"
-	skin_tone = SKIN_COLOR_GROONN
+	skin_tone = "#50715C"
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"
 	outfit = /datum/outfit/savageorc
@@ -11,18 +11,18 @@
 /obj/effect/mob_spawn/human/orc/corpse/savageorc2
 	mob_name = "Savage Orc"
 	name = "Savage Orc"
-	skin_tone = SKIN_COLOR_GROONN
+	skin_tone = "#50715C"
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"
 	outfit = /datum/outfit/savageorc2
 
 /datum/outfit/savageorc
-	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
+//	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag	Vanderlin clothing
 	pants =	/obj/item/clothing/under/roguetown/loincloth/brown
 	shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedanklets
 
 /datum/outfit/savageorc2
-	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
+//	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
 	pants =	/obj/item/clothing/under/roguetown/loincloth/brown
 	shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedanklets
 	head = /obj/item/clothing/head/roguetown/helmet/leather
@@ -30,7 +30,7 @@
 /obj/effect/mob_spawn/human/orc/corpse/orcmarauder
 	mob_name = "Orc Marauder"
 	name = "Orc Marauder"
-	skin_tone = SKIN_COLOR_GROONN
+	skin_tone = "#50715C"
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"
 	outfit = /datum/outfit/orcmarauder
@@ -44,7 +44,7 @@
 /obj/effect/mob_spawn/human/orc/corpse/orcravager
 	mob_name = "Orc Ravager"
 	name = "Orc Ravager"
-	skin_tone = SKIN_COLOR_GROONN
+	skin_tone = "#50715C"
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"
 	outfit = /datum/outfit/orcravager
@@ -56,4 +56,4 @@
 	head = /obj/item/clothing/head/roguetown/helmet/skullcap
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	mask = /obj/item/clothing/mask/rogue/skullmask
+///	mask = /obj/item/clothing/mask/rogue/skullmask	Vanderlin clothing TO DO review it

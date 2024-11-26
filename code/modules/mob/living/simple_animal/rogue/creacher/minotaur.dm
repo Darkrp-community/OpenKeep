@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/minotaur
-	icon = 'icons/mob/newminotaur.dmi'
+	icon = 'icons/roguetown/mob/monster/newminotaur.dmi'
 	name = "Minotaur"
 	icon_state = "MinotaurMale"
 	icon_living = "MinotaurMale"
@@ -13,7 +13,7 @@
 	move_to_delay = 3
 	base_intents = list(/datum/intent/simple/minotaur_unarmed)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 10,
-						/obj/item/natural/hide = 10, /obj/item/natural/bundle/bone/full = 2)
+						/obj/item/natural/hide = 10)
 	faction = list("caves")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	health = 500
@@ -147,7 +147,7 @@
 	swingdelay = 3
 	candodge = TRUE
 	canparry = TRUE
-	item_damage_type = "stab"
+//	item_damage_type = "stab"
 
 /datum/intent/simple/minotaur_axe
 	name = "minotaur axe"
@@ -161,4 +161,4 @@
 	swingdelay = 3
 	candodge = TRUE
 	canparry = TRUE
-	item_damage_type = "stab"
+//	item_damage_type = "stab"

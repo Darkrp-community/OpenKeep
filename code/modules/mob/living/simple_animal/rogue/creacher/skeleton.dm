@@ -58,7 +58,7 @@
 	icon_living = "skeleton_spear"
 	icon_dead = ""
 	attack_sound = 'sound/foley/pierce.ogg'
-	loot = list(/obj/item/alch/bone,	/obj/item/alch/bone, /obj/item/alch/bone,	/obj/item/rogueweapon/spear, /obj/item/skull)
+	loot = list(/obj/item/alch/bone,	/obj/item/alch/bone, /obj/item/alch/bone,	/obj/item/rogueweapon/polearm/spear, /obj/item/skull)
 
 /mob/living/simple_animal/hostile/rogue/skeleton/guard
 	name = "Skeleton"
@@ -128,8 +128,8 @@
 	return
 
 /mob/living/simple_animal/hostile/rogue/skeleton/proc/can_control(mob/user)
-	if(!(user.mind?.has_antag_datum(/datum/antagonist/lich)))
-		return FALSE
+//	if(!(user.mind?.has_antag_datum(/datum/antagonist/lich)))	commented out since lich not yet in TO DO
+//		return FALSE
 	if (!(user.name in friends))
 		return FALSE
 
