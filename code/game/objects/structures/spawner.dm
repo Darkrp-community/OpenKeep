@@ -33,7 +33,7 @@
 	mob_types = list(/mob/living/simple_animal/hostile/syndicate/ranged)
 	faction = list(ROLE_SYNDICATE)
 
-/obj/structure/spawner/skeleton
+/obj/structure/spawner/skeleton // TO DO obsolete
 	name = "bone pit"
 	desc = ""
 	icon_state = "hole"
@@ -41,7 +41,7 @@
 	max_integrity = 150
 	max_mobs = 15
 	spawn_time = 150
-	mob_types = list(/mob/living/simple_animal/hostile/skeleton)
+//	mob_types =
 	spawn_text = "climbs out of"
 	faction = list("skeleton")
 
