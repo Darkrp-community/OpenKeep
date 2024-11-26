@@ -54,7 +54,7 @@
 
 	if(H.mind)
 		if(H.patron != /datum/patron/divine/astrata)					// Astratans rule the church
-			H.set_patron[/datum/patron/divine/astrata]
+			H.set_patron(/datum/patron/divine/astrata)
 
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
