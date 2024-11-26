@@ -8,7 +8,6 @@ GLOBAL_LIST_EMPTY(navbeacons)					    //list of all bot nagivation beacons, used
 
 GLOBAL_LIST(chemical_reactions_list)				//list of all /datum/chemical_reaction datums. Used during chemical reactions
 GLOBAL_LIST(chemical_reagents_list)				//list of all /datum/reagent datums indexed by reagent id. Used by chemistry stuff
-GLOBAL_LIST_EMPTY(materials_list)				//list of all /datum/material datums indexed by material id.
 GLOBAL_LIST_EMPTY(crafting_recipes)				//list of all table craft recipes
 GLOBAL_LIST_EMPTY(anvil_recipes)				//list of all anvil crafted recipes
 GLOBAL_LIST_EMPTY(artificer_recipes)			//list of all artificer recipes
