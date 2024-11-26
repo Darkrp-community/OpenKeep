@@ -6,7 +6,6 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	f_title = "Consort"
 	allowed_races = list(
 		"Humen",
 		"Elf",
