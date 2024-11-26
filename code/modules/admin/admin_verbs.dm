@@ -8,6 +8,7 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/check_pq,
 	/client/proc/spawn_pollution,
 	/client/proc/adjust_pq,
+	/client/proc/stop_restart,
 	/client/proc/hearallasghost,
 	/client/proc/admin_ghost,
 	/client/proc/ghost_up,
