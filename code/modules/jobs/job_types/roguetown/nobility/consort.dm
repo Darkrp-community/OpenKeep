@@ -183,6 +183,10 @@
 		neck = /obj/item/clothing/neck/roguetown/horus
 		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
 
+	if(!H.has_language(/datum/language/zybantine))
+		H.grant_language(/datum/language/zybantine)
+		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
+
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
