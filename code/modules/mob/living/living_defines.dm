@@ -133,6 +133,11 @@
 
 	var/surrendering = 0
 
+
+	/// Combat bonuses for Simple Mobs
+	var/simpmob_attack = 0
+	var/simpmob_defend = 0
+
 	var/defprob = 50 //base chance to defend against this mob's attacks, for simple mob combat
 	var/defdrain = 5
 	var/encumbrance = 0
@@ -167,3 +172,5 @@
 	var/rogue_sneaking_light_threshhold = 0.15
 
 	var/voice_pitch = 1
+
+	var/domhand = 0

@@ -87,28 +87,15 @@
 	desc = "My BANE!"
 	icon_state = "hunger3"
 
-//BROKEN CELIBACY
-
-/datum/status_effect/debuff/chastity
-	id = "chastity"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/chastity
-	effectedstats = list("fortune" = -6)
-	duration = 999 MINUTES
-
-/atom/movable/screen/alert/status_effect/debuff/chastity
-	name = "Pantheons Curse"
-	desc = "I have broken my oath of celibacy... what have I done"
-	icon_state = "hunger3"
-
 /datum/status_effect/debuff/wiz
 	id = "wiz"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/wiz
 	effectedstats = list("intelligence" = -5)
-	duration = 999 MINUTES
+	duration = -1
 
 /atom/movable/screen/alert/status_effect/debuff/wiz
 	name = "Fading Power"
-	desc = "My magical power wanes as I defile my body"
+	desc = "My magical power wanes..."
 	icon_state = "hunger3"
 ////////////////////
 
@@ -213,7 +200,7 @@
 
 /atom/movable/alert/status_effect/debuff/badmeal
 	name = "Foul Food!"
-	desc = "<span class='warning'>That tasted like zcum!"
+	desc = "<span class='warning'>That tasted vile!"
 	icon_state = "badmeal"
 
 /datum/status_effect/debuff/badmeal/on_apply()

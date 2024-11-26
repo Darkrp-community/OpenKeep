@@ -140,17 +140,35 @@
 	hostagetaker = null
 
 /obj/item/grabbing/attack(mob/living/M, mob/living/user)
+	if(M != grabbed)
+		return FALSE
 	if(!valid_check())
 		return FALSE
-	if(M != grabbed)
-		if(!istype(limb_grabbed, /obj/item/bodypart/head))
-			return FALSE
-		if(M != user)
-			return FALSE
-		user.changeNext_move(CLICK_CD_RESIST)
-		headbutt(user)
-		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_MELEE)	//12 deciseconds, modified by User Speed, plus 4 for buffer
+	var/skill_diff = 0
+	var/combat_modifier = 1
+	if(user.mind)
+		skill_diff += (user.mind.get_skill_level(/datum/skill/combat/wrestling))
+	if(M.mind)
+		skill_diff -= (M.mind.get_skill_level(/datum/skill/combat/wrestling))
+
+	if(M.surrendering)																//If the target has surrendered
+		combat_modifier = 2
+
+	if(M.restrained())																//If the target is restrained
+		combat_modifier += 0.25
+
+	if(!(M.mobility_flags & MOBILITY_STAND) && user.mobility_flags & MOBILITY_STAND) //We are on the ground, target is not
+		combat_modifier += 0.1
+
+	if(user.cmode && !M.cmode)
+		combat_modifier += 0.3
+	else if(!user.cmode && M.cmode)
+		combat_modifier -= 0.3
+
+
+	combat_modifier *= ((skill_diff * 0.1) + 1)
+
 	switch(user.used_intent.type)
 		if(/datum/intent/grab/upgrade)
 			if(!(M.status_flags & CANPUSH) || HAS_TRAIT(M, TRAIT_PUSHIMMUNE))
