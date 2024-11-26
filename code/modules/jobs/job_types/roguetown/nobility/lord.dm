@@ -8,7 +8,7 @@
 
 	f_title = "Queen"
 	allowed_races = list(
-		"Humen"
+		"Humen",
 		"Elf",
 		"Half-Elf"
 	)
@@ -30,7 +30,10 @@
 		to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Ruler of Rockhill.</span></span></b>")
 		to_chat(world, "<br>")
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
-	SSfamilytree.AddRoyal(L, FAMILY_FATHER)
+	if(L.gender == MALE)
+		SSfamilytree.AddRoyal(L, FAMILY_FATHER)
+	else
+		SSfamilytree.AddRoyal(L, FAMILY_MOTHER)
 
 /datum/outfit/job/roguetown/lord/pre_equip(mob/living/carbon/human/H)
 	..()

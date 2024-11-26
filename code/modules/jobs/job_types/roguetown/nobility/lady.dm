@@ -23,7 +23,10 @@
 
 	cmode_music = 'sound/music/combat_noble.ogg'
 
-	SSfamilytree.AddRoyal(L, FAMILY_MOTHER)
+	if(L.gender == FEMALE)
+		SSfamilytree.AddRoyal(L, FAMILY_MOTHER)
+	else
+		SSfamilytree.AddRoyal(L, FAMILY_FATHER)
 
 /datum/outfit/job/roguetown/lady/pre_equip(mob/living/carbon/human/H)
 	. = ..()
