@@ -279,12 +279,10 @@ SUBSYSTEM_DEF(ticker)
 							to_chat(player, "<span class='warning'>You cannot be [V] and thus are not considered.</span>")
 							continue
 					readied_jobs.Add(V)
-	if(("King" in readied_jobs) || ("Queen" in readied_jobs) || ("Hand" in readied_jobs))
+	if(("King" in readied_jobs) || ("Hand" in readied_jobs))
 		if("King" in readied_jobs)
 			rulertype = "King"
-		else if("Queen" in readied_jobs)
-			rulertype = "Queen"
-		else if("Hand" in readied_jobs)
+		else
 			rulertype = "Hand"
 /*	else
 		var/list/stuffy = list("Set a Ruler to 'high' in your class preferences to start the game!", "PLAY Ruler NOW!", "A Ruler is required to start.", "Pray for a Ruler.", "One day, there will be a Ruler.", "Just try playing Ruler.", "If you don't play Ruler, the game will never start.", "We need at least one Ruler to start the game.", "We're waiting for you to pick Ruler to start.", "Still no Ruler is readied..", "I'm going to lose my mind if we don't get a Ruler readied up.","No. The game will not start because there is no Ruler.","What's the point of ROGUETOWN without a Ruler?")
@@ -568,13 +566,6 @@ SUBSYSTEM_DEF(ticker)
 					continue
 				if(K.job == "King")
 					rulermob = K
-					return
-		if("Queen")
-			for(var/mob/living/carbon/human/Q in world)
-				if(istype(Q, /mob/living/carbon/human/dummy))
-					continue
-				if(Q.job == "Queen")
-					rulermob = Q
 					return
 		if("Hand")
 			for(var/mob/living/carbon/human/H in world)
