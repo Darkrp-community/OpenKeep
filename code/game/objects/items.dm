@@ -980,7 +980,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		. = ""
 
 /obj/item/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
-	return SEND_SIGNAL(src, COMSIG_ATOM_HITBY, AM, skipcatch, hitpush, blocked, throwingdatum, damage_type)
+	return
+//	return SEND_SIGNAL(src, COMSIG_ATOM_HITBY, AM, skipcatch, hitpush, blocked, throwingdatum, damage_type)  TO DO enable when damage type fixed I guess
 
 /obj/item/attack_hulk(mob/living/carbon/human/user)
 	return FALSE
