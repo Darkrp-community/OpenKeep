@@ -1,9 +1,3 @@
-/datum/slapcraft_recipe/sewing
-	abstract_type = /datum/slapcraft_recipe/sewing
-	skillcraft = /datum/skill/misc/sewing
-	category = SLAP_CAT_SEWING
-	subcategory = SLAP_SUBCAT_CLOTHING
-
 /datum/slapcraft_recipe/carpentry
 	abstract_type = /datum/slapcraft_recipe/carpentry
 	skillcraft = /datum/skill/craft/carpentry
@@ -19,10 +13,6 @@
 	if(istype(T,/turf/open/transparent/openspace))
 		return FALSE
 	return ..()
-
-/datum/slapcraft_recipe/carpentry/item
-	abstract_type = /datum/slapcraft_recipe/carpentry/item
-	subcategory = SLAP_SUBCAT_ITEM
 
 
 /datum/slapcraft_recipe/masonry
