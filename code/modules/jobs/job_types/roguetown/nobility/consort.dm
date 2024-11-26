@@ -38,7 +38,6 @@
 /datum/outfit/job/roguetown/consort // Default equipment regardless of class.
 	head = /obj/item/clothing/head/roguetown/crown/nyle
 	shoes = /obj/item/clothing/shoes/roguetown/boots
-	backr = /obj/item/storage/backpack/rogue/satchel
 	id = /obj/item/clothing/ring/silver
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/keyring/consort
@@ -104,6 +103,7 @@
 	else
 		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
 		armor = pick(/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress, /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt)
+		cloak = /obj/item/clothing/cloak/raincloak/furcloak
 
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
