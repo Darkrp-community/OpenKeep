@@ -34,7 +34,7 @@
 	var/curvol = 100
 
 /obj/item/dmusicbox/Initialize()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 //	soundloop.start()
 	update_icon()
 	. = ..()
