@@ -96,6 +96,7 @@
 		"Homunculus" = SKIN_COLOR_HOMUNCULUS,
 		"Arachnid Ichor" = SKIN_COLOR_ARACHNID_ICHOR,
 		"Zizo Descendant" = SKIN_COLOR_SNOW_ELF,
+		"Gloomhaven" = SKIN_COLOR_GLOOMHAVEN,
 	))
 
 /datum/species/elf/dark/get_hairc_list()
