@@ -12,7 +12,42 @@
 	var/major_pot = null
 	var/med_pot = null
 	var/minor_pot = null
+	//Dont worry, these 3 are just to cache the 'smell' of their pot on initialization to not have to re-look every examine.
+	//No need to set them.
+	var/major_smell
+	var/med_smell
+	var/minor_smell
 
+/obj/item/alch/Initialize()
+	. = ..()
+	if(!isnull(major_pot))
+		var/datum/alch_cauldron_recipe/rec = locate(major_pot) in GLOB.alch_cauldron_recipes
+		major_smell = rec.smells_like
+	if(!isnull(med_pot))
+		var/datum/alch_cauldron_recipe/rec = locate(med_pot) in GLOB.alch_cauldron_recipes
+		med_smell = rec.smells_like
+	if(!isnull(minor_pot))
+		var/datum/alch_cauldron_recipe/rec = locate(minor_pot) in GLOB.alch_cauldron_recipes
+		minor_smell = rec.smells_like
+
+/obj/item/alch/examine(mob/user)
+	if(user.mind)
+		var/alch_skill = user.mind.get_skill_level(/datum/skill/craft/alchemy)
+		var/perint = 0
+		if(isliving(user))
+			var/mob/living/lmob = user
+			perint = FLOOR((lmob.STAPER + lmob.STAINT)/2,1)
+		desc = initial(desc)
+		if(!isnull(major_smell))
+			if(alch_skill >= SKILL_LEVEL_NOVICE || perint >= 6)
+				desc += span_notice(" Smells strongly of [major_smell].")
+		if(!isnull(med_smell))
+			if(alch_skill >= SKILL_LEVEL_APPRENTICE || perint >= 10)
+				desc += span_notice(" Smells slightly of [med_smell].")
+		if(!isnull(minor_smell))
+			if(alch_skill >= SKILL_LEVEL_EXPERT || perint >= 16)
+				desc += span_notice(" Smells weakly of [minor_smell].")
+	. = ..()
 /obj/item/alch/viscera
 	name = "viscera"
 	icon_state = "viscera"
@@ -143,7 +178,6 @@
 	med_pot = /datum/alch_cauldron_recipe/con_potion
 	minor_pot = /datum/alch_cauldron_recipe/end_potion
 
-//Modifier ingredients
 /obj/item/alch/golddust
 	name = "gold dust"
 	icon_state = "golddust"
