@@ -305,6 +305,7 @@
 	tools = list(/obj/item/rogueweapon/knife/hunting)
 	verbage = "crafts"
 	skillcraft = /datum/skill/craft/masonry
+
 /datum/crafting_recipe/roguetown/mortar
 	name = "stone mortar"
 	result = /obj/item/reagent_containers/glass/mortar
