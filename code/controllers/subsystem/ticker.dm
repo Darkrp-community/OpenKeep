@@ -179,6 +179,7 @@ SUBSYSTEM_DEF(ticker)
 	if(reboot_anyway)
 		if(world.time > reboot_anyway)
 			SSticker.Reboot("Restart vote successful and gamemaster did not want to stop the restart.", "restart vote")
+			reboot_anyway = null
 	switch(current_state)
 		if(GAME_STATE_STARTUP)
 			for(var/client/C in GLOB.clients)

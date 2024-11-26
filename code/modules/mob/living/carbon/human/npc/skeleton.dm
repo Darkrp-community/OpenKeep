@@ -30,19 +30,6 @@
 	wander = TRUE
 	attack_speed = -10
 
-/obj/item/bodypart/chest/skeleton
-	max_damage = 450
-/obj/item/bodypart/head/skeleton
-	max_damage = 400
-/obj/item/bodypart/l_arm/skeleton
-	max_damage = 300
-/obj/item/bodypart/r_arm/skeleton
-	max_damage = 300
-/obj/item/bodypart/r_leg/skeleton
-	max_damage = 360
-/obj/item/bodypart/l_leg/skeleton
-	max_damage = 360
-
 /mob/living/carbon/human/species/skeleton/Initialize()
 	. = ..()
 	cut_overlays()
