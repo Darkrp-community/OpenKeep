@@ -2,7 +2,7 @@
     "map_name": "Roguetown",
     "map_path": "map_files/roguetown",
     "map_file": "roguetown.dmm",
-	"traits": [{"Up": 1}, {"Up": 1, "Down": -1}, {"Up": 1, "Down": -1}, {"Down": -1}],
+	"traits": [{"Up": 1}, {"Up": 1, "Down": -1, "Baseturf": "/turf/open/transparent/openspace"}, {"Up": 1, "Down": -1, "Baseturf": "/turf/open/transparent/openspace"}, {"Down": -1, "Baseturf": "/turf/open/transparent/openspace"}],
 	"minetype": null,
 	"space_empty_levels": 0,
 	"space_ruin_levels": 0,
