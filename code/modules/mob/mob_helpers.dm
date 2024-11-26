@@ -1043,6 +1043,6 @@
 		if(!J)
 			return "unknown"
 		used_title = J.title
-		if(J.f_title)
+		if((gender == FEMALE) && J.f_title)
 			used_title = J.f_title
 	return used_title
