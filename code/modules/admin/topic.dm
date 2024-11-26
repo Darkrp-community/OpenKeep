@@ -1453,6 +1453,12 @@
 			if(lowertext(C.key) == lowertext(mob_client.ckey))
 				to_chat(C, "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message linkify\">Your PQ has been adjusted by [amt2change] by [usr.key] for reason: [raisin]</span></span>")
 				return
+	else if(href_list["showpq"])
+		if(!check_rights(R_ADMIN))
+			return
+		var/mob/M = locate(href_list["mob"]) in GLOB.mob_list
+		var/client/mob_client = M.client
+		check_pq_menu(mob_client.key)
 
 	else if(href_list["slowquery"])
 		if(!check_rights(R_ADMIN))

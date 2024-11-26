@@ -56,6 +56,8 @@
 		var/pq_num = get_playerquality(M.ckey, FALSE)
 		body += "<br><br>Player Quality: [pq] ([pq_num])"
 		body += "<br><a href='?_src_=holder;[HrefToken()];editpq=add;mob=[REF(M)]'>\[Modify PQ\]</a> "
+		body += "<a href='?_src_=holder;[HrefToken()];showpq=add;mob=[REF(M)]'>\[Check PQ\]</a> "
+		body += "<br>"
 
 		var/full_version = "Unknown"
 		if(M.client.byond_version)
