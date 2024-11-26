@@ -1,4 +1,7 @@
-
+/obj/effect/mob_spawn/human/orc/corpse
+	icon = 'icons/effects/blood.dmi'
+	icon_state = "remains"
+	color = "#aa9b00"
 
 /obj/effect/mob_spawn/human/orc/corpse/savageorc
 	mob_name = "Savage Orc"
@@ -57,3 +60,23 @@
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 ///	mask = /obj/item/clothing/mask/rogue/skullmask	Vanderlin clothing TO DO review it
+
+/*	..................   Dwarf Underdweller Corpse   ................... */
+/obj/effect/mob_spawn/human/corpse/damaged/underdweller
+	icon = 'icons/effects/blood.dmi'
+	icon_state = "remains"
+	color = "#aa9b00"
+	mob_type = /mob/living/carbon/human/species/dwarf/mountain
+	mob_name = "Dwarf Underdweller"
+	name = "Dwarf Underdweller"
+	hairstyle = "Miner"
+	facial_hairstyle = "Pick"
+	outfit = /datum/outfit/deadunderdweller
+
+/datum/outfit/deadunderdweller
+	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
+	pants = /obj/item/clothing/under/roguetown/trou/leather
+	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes/buckle
+	backl = /obj/item/storage/backpack/rogue/backpack
+	head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm

@@ -294,6 +294,15 @@
 	spawned = list(
 		/obj/structure/idle_enemy/hairy_spider = 100	)
 
+/*	..................   Orc Warband Danger   ................... */
+/obj/effect/spawner/roguemap/orc_warrior_maybe
+	icon = 'icons/roguetown/mob/monster/simple_orcs.dmi'
+	icon_state = "orcmarauder_spear"
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/structure/idle_enemy/hairy_spider = 100	)
+
 /*	..................   Haunts Danger   ................... */
 /obj/effect/spawner/roguemap/haunts_maybe
 	icon = 'icons/roguetown/mob/monster/wraith.dmi'
@@ -372,7 +381,7 @@
 	. = ..()
 	AddComponent(/datum/component/spawner/weak_skelly)
 /datum/component/spawner/weak_skelly
-	mob_types = list(/mob/living/carbon/human/species/skeleton/npc/catacomb)
+	mob_types = list(/mob/living/simple_animal/hostile/rogue/skeleton)
 	spawn_time = 0
 	spawn_delay = 0
 	max_mobs = 1
@@ -429,6 +438,48 @@
 	max_mobs = 1
 	range = 11
 	spawn_text = ""
+/*	..................   Orc Warband Dangers   ................... */
+/obj/structure/idle_enemy/orc_warrior
+/obj/structure/idle_enemy/orc_warrior/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/orc_warrior)
+/datum/component/spawner/orc_warrior
+	mob_types = list(/mob/living/simple_animal/hostile/rogue/orc/orc_marauder)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
+/obj/structure/idle_enemy/orc_spearman
+/obj/structure/idle_enemy/orc_spearman/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/orc_spearman)
+/datum/component/spawner/orc_spearman
+	mob_types = list(/mob/living/simple_animal/hostile/rogue/orc/orc_marauder/spear)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
+// ===================================================================================
+/*	..................   Dwarf Outpost   ................... */
+/obj/effect/landmark/map_load_mark/dwarf_outpost
+	name = "Dwarf Outpost"
+	templates = list( "Dwarf_Outpost_1","Dwarf_Outpost_2" )
+
+/datum/map_template/dwarf_outpost_i
+	name = "Dwarf Outpost Orc"
+	id = "Dwarf_Outpost_1"
+	mappath = "_maps/map_files/templates/haunted_forest/Spooky_village_1.dmm"
+
+/datum/map_template/dwarf_outpost_ii
+	name = "Dwarf Outpost Beastmen"
+	id = "Dwarf_Outpost_2"
+	mappath = "_maps/map_files/templates/haunted_forest/Spooky_village_2.dmm"
+
+
 
 // ===================================================================================
 /*	..................   Areas   ................... */
@@ -456,13 +507,19 @@
 	converted_type = /area/rogue/outdoors/caves
 
 /area/rogue/under/catacombs/dwarfoutpost
-	name = "catacombs"
+	name = "Underrock Outpost"
 	first_time_text = "Underrock Outpost"
 	ambush_types = list(
 				/turf/open/water/swamp)
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/lamia = 30,
 				/mob/living/simple_animal/hostile/retaliate/rogue/headless = 20)
+
+/area/rogue/under/catacombs/dwarfoutpost/orcy
+	ambush_types = list(
+				/turf/open/floor/rogue/blocks/newstone/alt)
+	ambush_mobs = list(
+				/mob/living/simple_animal/hostile/rogue/orc/orc_marauder = 50)
 
 /area/rogue/under/cave/abandoned_mine
 	name = "abandoned mine"
@@ -958,6 +1015,15 @@
 
 
 /*	..................   Various mapping aides   ................... */
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/broken
+	desc = "A long shirt of maille, this one is made for a short man it seems."
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/broken/Initialize()
+	. = ..()
+	obj_break()
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/battered
+	desc = "A good quality haubergon, but weakened by many blows."
+	max_integrity = INTEGRITY_STANDARD
 
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
