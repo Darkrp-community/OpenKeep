@@ -1,12 +1,12 @@
 /datum/job/roguetown/lady
-	title = "Lord-Consort"
-	flag = LADY
+	title = "Consort"
+	flag = CONSORT
 	department_flag = NOBLEMEN
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 
-	f_title = "Lady-Consort"
+	f_title = "Consort"
 	allowed_races = list(
 		"Humen",
 		"Elf",
@@ -16,7 +16,7 @@
 
 	outfit = /datum/outfit/job/roguetown/lady
 
-	display_order = JDO_LADY
+	display_order = JDO_CONSORT
 	bypass_lastclass = TRUE
 	min_pq = 4
 	give_bank_account = 500
@@ -37,7 +37,7 @@
 	backr = /obj/item/storage/backpack/rogue/satchel
 	id = /obj/item/clothing/ring/silver
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/keyring/queen
+	beltl = /obj/item/keyring/consort
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)

@@ -83,9 +83,9 @@
 	icon_state = "mazekey"
 	lockid = "banditcamp"
 
-/obj/item/roguekey/queen
-	name = "lady key"
-	desc = "The Lady's key."
+/obj/item/roguekey/consort
+	name = "consort key"
+	desc = "The royal consort's key."
 	icon_state = "mazekey"
 	lockid = "lord"
 
