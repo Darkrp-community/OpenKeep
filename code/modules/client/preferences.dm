@@ -147,6 +147,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/descriptor_entries = list()
 	var/list/custom_descriptors = list()
 
+	var/list/preference_message_list = list()
+
 
 /datum/preferences/New(client/C)
 	parent = C
