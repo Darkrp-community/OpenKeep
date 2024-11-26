@@ -33,7 +33,7 @@
 	var/persistent_loop = FALSE //we stay in the client's played_loops so we keep updating volume even when out of range
 	var/cursound
 	var/list/thingshearing = list()
-	var/ignore_wallz = TRUE
+	var/ignore_walls = TRUE
 	var/timerid
 	/// Has the looping started yet?
 	var/loop_started = FALSE
@@ -99,7 +99,7 @@
 	if(!istype(S))
 		S = sound(soundfile)
 	if(direct)
-		S.channel = channel || open_sound_channel()
+		S.channel = channel || SSsounds.random_available_channel()
 		S.volume = volume
 	for(var/i in 1 to atoms_cache.len)
 		var/atom/thing = atoms_cache[i]
@@ -108,7 +108,7 @@
 				var/mob/mob = thing
 				mob.playsound_local(get_turf(mob), soundfile, volume, vary, frequency, falloff, repeat = src, channel = channel)
 		else
-			var/list/R = playsound(thing, soundfile, volume, vary, extra_range, falloff, frequency, ignore_walls = ignore_wallz, repeat = src, channel = channel)
+			var/list/R = playsound(thing, soundfile, volume, vary, extra_range, falloff, frequency, ignore_walls = ignore_walls, repeat = src, channel = channel)
 			if(!R || !R.len)
 				R = list()
 			for(var/mob/M in thingshearing)
