@@ -6,7 +6,6 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
-		"Tiefling",
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/briar
 	category_tags = list(CTAG_PILGRIM)
