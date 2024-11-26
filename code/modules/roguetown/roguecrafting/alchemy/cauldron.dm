@@ -84,9 +84,10 @@
 							outcomes[alching.minor_pot] += 1
 						else
 							outcomes[alching.minor_pot] = 1
-				sortList(outcomes,cmp=/proc/cmp_numeric_dsc)
-				if(outcomes[1] >= 5)
-					var/datum/alch_cauldron_recipe/found_recipe = new outcomes[1]
+				sortTim(outcomes,cmp=/proc/cmp_numeric_dsc,associative = 1)
+				if(outcomes[outcomes[1]] >= 5)
+					var/result_path = outcomes[1]
+					var/datum/alch_cauldron_recipe/found_recipe = new result_path
 					for(var/obj/item/ing in src.ingredients)
 						qdel(ing)
 					if(reagents)
@@ -97,7 +98,6 @@
 					if(found_recipe.output_items.len)
 						for(var/itempath in found_recipe.output_items)
 							new itempath(get_turf(src))
-					qdel(found_recipe)
 					//handle player perception and reset for next time
 					src.visible_message("<span class='info'>The cauldron finishes boiling with a faint [found_recipe.smells_like] smell.</span>")
 					//give xp for /datum/skill/craft/alchemy
@@ -108,6 +108,7 @@
 					playsound(src,'sound/misc/smelter_fin.ogg', 30, FALSE)
 					ingredients = list()
 					brewing = 21
+					qdel(found_recipe)
 				else
 					brewing = 0
 					src.visible_message("<span class='info'>The ingredients in the [src] fail to meld together at all...</span>")
