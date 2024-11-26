@@ -4,13 +4,13 @@
 
 	telegraph_duration = 10 SECONDS
 	telegraph_message = span_warning("")	// still spams at start, TO DO
-	telegraph_sound = 'sound/ambience/rainin.ogg'
+	telegraph_sound = null
 
 	weather_message = ""
 	weather_overlay = "rain"
 	weather_duration_lower = 5 MINUTES
 	weather_duration_upper = 12 MINUTES
-	weather_sound = 'sound/ambience/rain.ogg'
+	weather_sound = null
 	weather_alpha = 200
 
 	probability = 3
