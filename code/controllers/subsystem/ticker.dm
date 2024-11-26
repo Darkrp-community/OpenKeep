@@ -300,31 +300,15 @@ SUBSYSTEM_DEF(ticker)
 	amt_ready = 999
 #endif
 
-
-	/*
 	for(var/mob/dead/new_player/player in GLOB.player_list)
 		if(!player)
 			continue
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			amt_ready++
-	if(amt_ready > amt_ready_needed)
-		to_chat(world, "<span class='purple'>Not enough players to start the game</span>")
-	*/
-
-
-	/*	failedstarts++
-		if(failedstarts >= 13) // this stuff is for rougewar, a team deathmatch mode I guess.
-			to_chat(world, "<span class='greentext'>Starting ROGUEFIGHT...</span>")
-			var/icon/ikon
-			var/file_path = "icons/roguefight_title.dmi"
-			ASSERT(fexists(file_path))
-			ikon = new(fcopy_rsc(file_path))
-			if(SStitle.splash_turf && ikon)
-				SStitle.splash_turf.icon = ikon
-			for(var/mob/dead/new_player/player in GLOB.player_list)
-				player.playsound_local(player, 'sound/music/wartitle.ogg', 100, TRUE)*/
+	if(amt_ready < amt_ready_needed)
+		to_chat(world, "<span class='purple'>Not enough players to start the game.</span>")
 	job_change_locked = TRUE
-	return TRUE
+	return FALSE // If you ever want to stop the game from starting without a ruler, then just uncomment that block of code up there. Right now, this stops the game from starting if there's only one person readied.
 
 /datum/controller/subsystem/ticker
 	var/isroguefight = FALSE
