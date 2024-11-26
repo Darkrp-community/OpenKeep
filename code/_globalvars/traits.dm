@@ -87,7 +87,6 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Nutcracker" = TRAIT_NUTCRACKER,
 		"Strong Bite" = TRAIT_STRONGBITE,
 		"Ladykiller" = TRAIT_HATEWOMEN,
-		"Fabled Lover" = TRAIT_GOODLOVER,
 		"Seed Knower" = TRAIT_SEEDKNOW,
 		"Noble Blooded" = TRAIT_NOBLE,
 		"Empath" = TRAIT_EMPATH,
