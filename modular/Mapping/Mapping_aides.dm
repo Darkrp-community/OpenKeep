@@ -674,7 +674,7 @@
 						/turf/open/floor/rogue/sandstone/temple)
 
 /turf/open/floor/rogue/sandstone/shaded
-	color = "#c8c8c8"
+	color = "#e5dfdf"
 
 /turf/open/floor/rogue/sandstone/temple
 	icon_state = "temple"
