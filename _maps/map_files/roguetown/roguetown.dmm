@@ -6603,6 +6603,13 @@
 /obj/item/natural/poo,
 /turf/open/floor/rogue/tile,
 /area/rogue/under/town/basement)
+"hmm" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
+/area/rogue/indoors/town)
 "hmS" = (
 /turf/open/water/sewer,
 /area/rogue/under/town/basement)
@@ -20956,9 +20963,9 @@
 	},
 /area/rogue/under/town/sewer)
 "wZQ" = (
-/obj/structure/chair/stool/rogue,
 /obj/structure/fluff/wallclock/r,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/ladder,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -57489,7 +57496,7 @@ lxr
 kxk
 gwA
 mqa
-lfg
+hmm
 uNu
 fMz
 fZo

@@ -174,21 +174,30 @@
 	if(!mind)
 		mind_initialize()
 
-	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-	mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
-	mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-	mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	mind.current.job = null
 
 	dna.species.species_traits |= NOBLOOD
 	dna.species.soundpack_m = new /datum/voicepack/skeleton()
 	dna.species.soundpack_f = new /datum/voicepack/skeleton()
 
+	src.STASTR = 6
+	src.STAPER = 8
+	src.STAEND = 8
+	src.STACON = 8
+	src.STAINT = 4
+	src.STASPD = 9
+	src.STALUC = 6
+
 
 	cmode_music = 'sound/music/combat_cult.ogg'
 
 	set_patron(master.patron)
+	copy_known_languages_from(master,FALSE)
 	mob_biotypes = MOB_UNDEAD
 	faction = list("undead")
 	ambushable = FALSE
