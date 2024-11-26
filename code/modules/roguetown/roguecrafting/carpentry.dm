@@ -56,22 +56,14 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/carpentry/woodstaff
-	name = "wood staff"
-	result = list(/obj/item/rogueweapon/polearm/woodstaff,
-	/obj/item/rogueweapon/polearm/woodstaff,
-	/obj/item/rogueweapon/polearm/woodstaff)
-	reqs = list(/obj/item/grown/log/tree = 1)
-	craftdiff = 1
-
-/datum/crafting_recipe/roguetown/quarterstaff
+/datum/crafting_recipe/roguetown/carpentry/quarterstaff//elaborated quarterstaff only carpenters can do
 	name = "wooden quarterstaff"
 	result = list(/obj/item/rogueweapon/polearm/woodstaff/quarterstaff,
 	/obj/item/rogueweapon/polearm/woodstaff/quarterstaff)
 	reqs = list(/obj/item/grown/log/tree = 1)
 	req_table = TRUE
-	tools = list(/obj/item/rogueweapon/knife/hunting)
-	craftdiff = 1
+	tools = list(/obj/item/rogueweapon/knife)
+	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/woodspade
 	name = "wood spade"

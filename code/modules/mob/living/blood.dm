@@ -67,7 +67,7 @@
 		remove_status_effect(/datum/status_effect/debuff/bleeding)
 		remove_status_effect(/datum/status_effect/debuff/bleedingworse)
 		remove_status_effect(/datum/status_effect/debuff/bleedingworst)
-		
+
 	if(bleed_rate)
 		bleed(bleed_rate)
 
@@ -354,6 +354,7 @@
 		W.update_icon()
 		return
 	new /obj/effect/decal/cleanable/blood/splatter(T, get_static_viruses())
+	T?.pollute_turf(/datum/pollutant/metallic_scent, 30)
 
 /mob/living/proc/add_drip_floor(turf/T, amt)
 	if(!iscarbon(src))

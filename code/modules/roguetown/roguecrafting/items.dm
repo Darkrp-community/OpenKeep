@@ -134,6 +134,14 @@
 	verbage_tp = "braids"
 */
 
+/datum/crafting_recipe/roguetown/woodstaff//this is the simple staff anyone can make
+	name = "wood staff"
+	result = list(/obj/item/rogueweapon/polearm/woodstaff,
+	/obj/item/rogueweapon/polearm/woodstaff,
+	/obj/item/rogueweapon/polearm/woodstaff)
+	reqs = list(/obj/item/grown/log/tree = 1)
+	craftdiff = 1
+
 /datum/crafting_recipe/roguetown/stoneaxe
 	name = "stone axe"
 	result = /obj/item/rogueweapon/axe/stone
