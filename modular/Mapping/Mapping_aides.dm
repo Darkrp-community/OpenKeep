@@ -740,3 +740,18 @@
 		/obj/item/underworld/coin = 1,
 		)
 
+
+/mob/living/simple_animal/hostile/retaliate/rogue/spider/colony // colony spider
+	name = "hairy spider"
+	desc = "The forest canopies hides more than leaves...These creachers make honey from flowers and spin silk from their abdomen, when not consuming prey."
+	icon_state = "spider"
+	icon_living = "spider"
+	icon_dead = "spider-dead"
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
+							/obj/item/natural/silk = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+							/obj/item/reagent_containers/food/snacks/rogue/honey = 1,
+							/obj/item/natural/silk = 2)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+							/obj/item/reagent_containers/food/snacks/rogue/honey = 2,
+							/obj/item/natural/silk = 3)

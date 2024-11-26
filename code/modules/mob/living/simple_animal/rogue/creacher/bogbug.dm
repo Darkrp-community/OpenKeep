@@ -16,7 +16,7 @@
 	aggro_vision_range = 9
 
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider= 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcutlet/xeno = 1,
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider= 1,
 						/obj/item/natural/hide = 1)
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
 						/obj/item/natural/hide = 2)
@@ -52,6 +52,10 @@
 	remains_type = /obj/effect/decal/remains/bogbug
 	body_eater = TRUE
 
+	ai_controller = /datum/ai_controller/bog_bug
+	AIStatus = AI_OFF
+	can_have_ai = FALSE
+
 /obj/effect/decal/remains/bogbug
 	name = "remains"
 	gender = PLURAL
@@ -61,6 +65,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/bogbug/Initialize()
 	. = ..()
 	gender = MALE
+	ai_controller.set_blackboard_key(BB_BASIC_FOODS, food_type)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bogbug/death(gibbed)
 	..()
