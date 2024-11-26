@@ -68,6 +68,7 @@
 		if(D.masterkey)
 			lockhash = D.lockhash
 
+
 /obj/item/roguekey/lord/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
 	lockhash = GLOB.lockids[lockid]
