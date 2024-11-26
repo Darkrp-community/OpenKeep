@@ -503,6 +503,14 @@
 	first_time_text = "THE HAUNTED FOREST"
 	converted_type = /area/rogue/indoors/shelter/woods
 
+
+/area/rogue/outdoors/rtfield/plague_district
+	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50)
+	first_time_text = "PLAGUE DISTRICT"
+	icon_state = "yellow"
+	name = "plague district"
+
+
 // ===================================================================================
 /*	..................   Catacomb Skelly (weak)   ................... */
 /mob/living/carbon/human/species/skeleton/npc/catacomb/after_creation()
