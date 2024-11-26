@@ -86,7 +86,7 @@
 	gripped_intents = null
 	w_class = WEIGHT_CLASS_BULKY
 	smeltresult = /obj/item/rogueore/coal
-	lumber = /obj/item/grown/log/tree/lumber
+	lumber = /obj/item/natural/wood/plank
 	lumber_amount = 2
 
 /obj/item/grown/log/tree/stick
@@ -174,18 +174,6 @@
 	twohands_required = FALSE
 	gripped_intents = null
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP
-	lumber = null
-	lumber_amount = 0
-
-/obj/item/grown/log/tree/lumber
-	seed = null
-	name = "lumber"
-	desc = "This is some lumber."
-	icon_state = "lumber"
-	attacked_sound = 'sound/misc/woodhit.ogg'
-	blade_dulling = 0
-	max_integrity = 50
-	firefuel = 5 MINUTES
 	lumber = null
 	lumber_amount = 0
 

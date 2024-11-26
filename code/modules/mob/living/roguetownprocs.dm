@@ -446,7 +446,7 @@
 		dodge_score = clamp(dodge_score, 0, 95)
 		var/dodgeroll = rand(1, 100)
 
-		if(D.client?.prefs.showrolls && GLOB.Debug2)
+		if(D.client?.prefs.showrolls)
 			to_chat(src, span_info("Roll under [dodge_score] to dodge... [dodgeroll]"))
 		if(dodgeroll > dodge_score)
 			return FALSE
@@ -457,7 +457,7 @@
 		dodge_score = clamp(dodge_score, 0, 95)
 		var/dodgeroll = rand(1, 100)
 
-		if(D.client?.prefs.showrolls && GLOB.Debug2)
+		if(D.client?.prefs.showrolls)
 			to_chat(src, span_info("Roll under [dodge_score] to dodge... [dodgeroll]"))
 		if(dodgeroll > dodge_score)
 			return FALSE
