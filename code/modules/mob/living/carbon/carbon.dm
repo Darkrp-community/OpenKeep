@@ -474,8 +474,6 @@
 	dropItemToGround(I)
 
 	var/modifier = 0
-	if(HAS_TRAIT(src, TRAIT_CLUMSY))
-		modifier -= 40 //Clumsy people are more likely to hit themselves -Honk!
 
 	switch(rand(1,100)+modifier) //91-100=Nothing special happens
 		if(-INFINITY to 0) //attack yourself

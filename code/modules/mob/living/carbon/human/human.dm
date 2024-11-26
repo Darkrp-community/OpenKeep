@@ -784,36 +784,3 @@
 	. = ..()
 	if(race)
 		set_species(race)
-
-/mob/living/carbon/human/species/abductor
-	race = /datum/species/abductor
-
-/mob/living/carbon/human/species/android
-	race = /datum/species/android
-
-/mob/living/carbon/human/species/corporate
-	race = /datum/species/corporate
-
-/mob/living/carbon/human/species/dullahan
-	race = /datum/species/dullahan
-
-/mob/living/carbon/human/species/felinid
-	race = /datum/species/human/felinid
-
-/mob/living/carbon/human/species/lizard
-	race = /datum/species/lizard
-
-/mob/living/carbon/human/species/ethereal
-	race = /datum/species/ethereal
-
-/mob/living/carbon/human/species/snail
-	race = /datum/species/snail
-
-/mob/living/carbon/human/species/zombie
-	race = /datum/species/zombie
-
-/mob/living/carbon/human/species/zombie/infectious
-	race = /datum/species/zombie/infectious
-
-/mob/living/carbon/human/species/zombie/krokodil_addict
-	race = /datum/species/krokodil_addict
