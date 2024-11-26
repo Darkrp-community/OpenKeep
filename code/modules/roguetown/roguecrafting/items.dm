@@ -255,7 +255,7 @@
 				/obj/item/grown/log/tree/stick = 3,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 1
-  
+	
 /datum/crafting_recipe/roguetown/plank
 	name = "wooden plank"
 	result = list(/obj/item/natural/plank,/obj/item/natural/plank)
