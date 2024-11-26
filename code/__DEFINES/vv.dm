@@ -96,7 +96,6 @@
 #define VV_HK_DROP_ALL "dropall"
 #define VV_HK_REGEN_ICONS "regen_icons"
 #define VV_HK_PLAYER_PANEL "player_panel"
-#define VV_HK_BUILDMODE "buildmode"
 #define VV_HK_DIRECT_CONTROL "direct_control"
 #define VV_HK_OFFER_GHOSTS "offer_ghosts"
 

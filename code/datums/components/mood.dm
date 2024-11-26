@@ -314,10 +314,7 @@
 		return FALSE //no mood events for nutrition
 	switch(L.nutrition)
 		if(NUTRITION_LEVEL_FULL to INFINITY)
-			if (!HAS_TRAIT(L, TRAIT_VORACIOUS))
-				add_event(null, "nutrition", /datum/mood_event/fat)
-			else
-				add_event(null, "nutrition", /datum/mood_event/wellfed) // round and full
+			add_event(null, "nutrition", /datum/mood_event/fat)
 		if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
 			add_event(null, "nutrition", /datum/mood_event/wellfed)
 		if( NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
@@ -352,14 +349,6 @@
 	if(A.outdoors) //if we're outside, we don't care.
 		clear_event(null, "area_beauty")
 		return FALSE
-	if(HAS_TRAIT(parent, TRAIT_SNOB))
-		switch(A.beauty)
-			if(-INFINITY to BEAUTY_LEVEL_HORRID)
-				add_event(null, "area_beauty", /datum/mood_event/horridroom)
-				return
-			if(BEAUTY_LEVEL_HORRID to BEAUTY_LEVEL_BAD)
-				add_event(null, "area_beauty", /datum/mood_event/badroom)
-				return
 	switch(A.beauty)
 		if(BEAUTY_LEVEL_BAD to BEAUTY_LEVEL_DECENT)
 			clear_event(null, "area_beauty")
