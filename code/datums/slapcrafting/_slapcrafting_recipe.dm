@@ -213,21 +213,21 @@
 			prob2craft += ((10-L.STAINT)*-1)*2
 	if(prob2craft < 1)
 		to_chat(user, "<span class='danger'>I lack the skills for this...</span>")
-		dispose_assembly(assembly)
+		breakdown_assembly(assembly)
 		return
 	else
 		prob2craft = CLAMP(prob2craft, 5, 99)
 		if(prob(prob2fail))
 			to_chat(user, "<span class='danger'>MISTAKE! I've failed to craft [name]!</span>")
-			dispose_assembly(assembly)
+			breakdown_assembly(assembly)
 			return
 		if(!prob(prob2craft))
 			if(user.client?.prefs.showrolls)
 				to_chat(user, "<span class='danger'>I've failed to craft [name]. (Success chance: [prob2craft]%)</span>")
-				dispose_assembly(assembly)
+				breakdown_assembly(assembly)
 				return
 			to_chat(user, "<span class='danger'>I've failed to craft [name].</span>")
-			dispose_assembly(assembly)
+			breakdown_assembly(assembly)
 			return
 
 	if(show_finish_text)
@@ -307,6 +307,10 @@
 /// Here is the proc to get rid of the assembly, should one want to override it to handle that differently.
 /datum/slapcraft_recipe/proc/dispose_assembly(obj/item/slapcraft_assembly/assembly)
 	qdel(assembly)
+
+/// Here is the proc to get rid of the assembly, should one want to override it to handle that differently.
+/datum/slapcraft_recipe/proc/breakdown_assembly(obj/item/slapcraft_assembly/assembly)
+	assembly.disassemble()
 
 /datum/slapcraft_recipe/proc/check_craft_requirements(mob/user, turf/T)
 	return TRUE
