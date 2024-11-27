@@ -89,6 +89,11 @@
 /obj/machinery/light/rogue/firebowl/standing/blue,
 /turf/open/floor/rogue/underworld/road,
 /area/rogue/underworld)
+"z" = (
+/obj/structure/rack/rogue/underworld,
+/obj/structure/rack/rogue/underworld,
+/turf/open/floor/rogue/churchrough,
+/area/rogue)
 "C" = (
 /obj/effect/landmark/underworldcoin,
 /turf/open/floor/rogue/underworld/road,
@@ -249,6 +254,10 @@
 /obj/item/underworld/coin,
 /turf/open/floor/rogue/churchrough,
 /area/rogue/underworld)
+"K" = (
+/obj/machinery/light/rogue/wallfire/candle/blue,
+/turf/open/floor/rogue/underworld/arena,
+/area/rogue)
 "O" = (
 /obj/item/underworld/coin,
 /obj/item/underworld/coin,
@@ -405,7 +414,7 @@
 /turf/open/floor/rogue/churchrough,
 /area/rogue/underworld)
 "Y" = (
-/obj/structure/rack/rogue,
+/obj/structure/rack/rogue/underworld,
 /turf/open/floor/rogue/churchrough,
 /area/rogue)
 "Z" = (
@@ -8032,7 +8041,7 @@ a
 x
 G
 x
-Q
+K
 Q
 Q
 Q
@@ -9340,7 +9349,7 @@ Y
 S
 S
 S
-Y
+z
 x
 G
 x
