@@ -1827,6 +1827,7 @@
 #include "code\modules\language\roguetown\elf.dm"
 #include "code\modules\language\roguetown\fae.dm"
 #include "code\modules\language\roguetown\hellspeak.dm"
+#include "code\modules\language\roguetown\newvalorian.dm"
 #include "code\modules\language\roguetown\oldpsydonic.dm"
 #include "code\modules\language\roguetown\orc.dm"
 #include "code\modules\language\roguetown\sandspeak.dm"
