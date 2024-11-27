@@ -3,7 +3,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike/shovel)
 	gripped_intents = null
 	name = "handsaw"
-	desc = "an iron saw for sawing wood."
+	desc = "An iron saw for sawing wood."
 	icon_state = "handsaw"
 	icon = 'icons/roguetown/items/crafting.dmi'
 	sharpness = IS_SHARP
@@ -25,7 +25,7 @@
 
 /obj/item/rogueweapon/handsaw/crude
 	name = "crude sawing tool"
-	desc = "a serrated piece of flint with a bone handle."
+	desc = "A serrated piece of flint with a bone handle."
 	icon_state = "stonesaw"
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
@@ -63,7 +63,7 @@
 
 /obj/item/natural/plank
 	name = "wooden plank"
-	desc = "a smooth wooden plank."
+	desc = "A smooth wooden plank."
 	icon = 'icons/roguetown/items/crafting.dmi'
 	icon_state = "woodplank"
 	possible_item_intents = list(/datum/intent/use)
@@ -101,7 +101,7 @@
 
 /obj/item/natural/plankshort
 	name = "short wooden plank"
-	desc = "a smooth wooden plank that has been cut short."
+	desc = "A smooth wooden plank that has been cut short."
 	force = 8
 	throwforce = 8
 	icon_state = "shortplank"
