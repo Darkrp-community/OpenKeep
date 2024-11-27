@@ -81,15 +81,15 @@
 
 /datum/species/dwarf/mountain/get_skin_list()
 	return sortList(list(
-		"Platinum - (White 1)" = SKIN_COLOR_PLATINUM,
-		"Aurum - (White 2)" = SKIN_COLOR_AURUM,
-		"Quicksilver - (White 3)" = SKIN_COLOR_QUICKSILVER,
-		"Brass - (White 4)" = SKIN_COLOR_BRASS,
-		"Iron - (Tan)" = SKIN_COLOR_IRON,
-		"Malachite - (Middle-Eastern)" = SKIN_COLOR_MALACHITE,
-		"Obsidian - (Black)" = SKIN_COLOR_OBSIDIAN,
-		"Brimstone - (Black 2)" = SKIN_COLOR_BRIMSTONE,
-		"Cerargyrite - (Purple)" =	SKIN_COLOR_CERARGYRITE,
+		"Platinum" = SKIN_COLOR_PLATINUM, // - (White 1)
+		"Aurum" = SKIN_COLOR_AURUM, // - (White 2)
+		"Quicksilver" = SKIN_COLOR_QUICKSILVER, // - (White 3)
+		"Brass" = SKIN_COLOR_BRASS, // - (White 4)
+		"Iron" = SKIN_COLOR_IRON, // - (Tan)
+		"Malachite" = SKIN_COLOR_MALACHITE, // - (Middle-Eastern)
+		"Obsidian" = SKIN_COLOR_OBSIDIAN, // - (Black)
+		"Brimstone" = SKIN_COLOR_BRIMSTONE, // - (Black 2)
+		"Cerargyrite" =	SKIN_COLOR_CERARGYRITE, // - (Purple)
 	))
 
 /datum/species/dwarf/mountain/get_hairc_list()

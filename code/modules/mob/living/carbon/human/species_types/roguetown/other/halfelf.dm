@@ -71,16 +71,16 @@
 
 /datum/species/human/halfelf/get_skin_list()
 	return sortList(list(
-		"Zizo-Cursed - (Pale)" = SKIN_COLOR_ZIZO_CURSED,
-		"Timber-Gronn - (White 1)" = SKIN_COLOR_TIMBER_GRONN,
-		"Solar-Hue - (White 2)" = SKIN_COLOR_SOLAR_HUE,
-		"Walnut-Stine - (White 3)" = SKIN_COLOR_WALNUT_STINE,
-		"Amber-Stained - (White 4)" = SKIN_COLOR_AMBER_STAINED,
-		"Joshua-Aligned - (Middle-Eastern)" = SKIN_COLOR_JOSHUA_ALIGNED,
-		"Arid-Birthed - (Black)" = SKIN_COLOR_ARID_BIRTHED,
-		"Parasite-Taineted - (Light purple)" = SKIN_COLOUR_PARASITE_TAINTED,
-		"Mushroom-Minded - (Mid purple)" = SKIN_COLOR_MUSHROOM_MINDED,
-		"Cave-Attuned - (Deep purple)" = SKIN_COLOR_CAVE_ATTUNED,
+		"Zizo-Cursed" = SKIN_COLOR_ZIZO_CURSED, // - (Pale)
+		"Timber-Gronn" = SKIN_COLOR_TIMBER_GRONN, // - (White 1)
+		"Solar-Hue" = SKIN_COLOR_SOLAR_HUE, // - (White 2)
+		"Walnut-Stine" = SKIN_COLOR_WALNUT_STINE, // - (White 3)
+		"Amber-Stained" = SKIN_COLOR_AMBER_STAINED, // - (White 4)
+		"Joshua-Aligned" = SKIN_COLOR_JOSHUA_ALIGNED, // - (Middle-Eastern)
+		"Arid-Birthed" = SKIN_COLOR_ARID_BIRTHED, // - (Black)
+		"Parasite-Taineted" = SKIN_COLOUR_PARASITE_TAINTED, // - (Light purple)
+		"Mushroom-Minded" = SKIN_COLOR_MUSHROOM_MINDED, // - (Mid purple)
+		"Cave-Attuned" = SKIN_COLOR_CAVE_ATTUNED, // - (Deep purple)
 	))
 
 /datum/species/human/halfelf/get_hairc_list()
