@@ -5,8 +5,8 @@ SUBSYSTEM_DEF(death_arena)
 	flags = SS_NO_INIT
 	priority = 1
 
-	var/obj/effect/landmark/death_arena/first_spawn
-	var/obj/effect/landmark/death_arena/second/second_spawn
+	var/turf/first_spawn
+	var/turf/second_spawn
 	var/list/waiting_fighters = list()
 	///this is just so I can easily reference the head later
 	var/list/fighters_heads = list()
@@ -94,6 +94,13 @@ SUBSYSTEM_DEF(death_arena)
 			continue
 		G.close()
 
+/datum/controller/subsystem/death_arena/proc/assign_death_spawn(atom/movable/movable)
+	if(!first_spawn)
+		first_spawn = get_turf(movable)
+		return
+	if(!second_spawn)
+		second_spawn = get_turf(movable)
+		return
 /datum/outfit/job/roguetown/arena_skeleton/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	..()
 	H.change_stat("strength", 1)

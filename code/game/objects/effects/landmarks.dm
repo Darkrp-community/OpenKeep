@@ -458,5 +458,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/death_arena
 	name = "Death arena spawn 1"
 
+/obj/effect/landmark/death_arena/Initialize()
+	. = ..()
+	SSdeath_arena.assign_death_spawn(src)
+	return INITIALIZE_HINT_QDEL
+
 /obj/effect/landmark/death_arena/second
 	name = "Death arena spawn 2"
