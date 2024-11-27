@@ -25,6 +25,7 @@
 				O.livingname = mob.name
 				O.ckey = ckey
 				O.set_patron(prefs.selected_patron)
+				SSdeath_arena.add_fighter(O)
 				SSdroning.area_entered(get_area(O), O.client)
 			verbs -= /client/proc/descend
 		if("No")
