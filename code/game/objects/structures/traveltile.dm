@@ -179,3 +179,22 @@
 			to_chat(user, "<b>It is a dead end.</b>")
 			return FALSE
 
+
+/*	..................   Traveltiles   ................... */ // these are the ones on centcom, where the actual lair is, to reduce varedits onmap
+/obj/structure/fluff/traveltile/exit_bandit		// mus NOT be a traveltile/bandit child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
+	aportalid = "banditin"
+	aportalgoesto = "banditexit"
+
+/obj/structure/fluff/traveltile/exit_vampire	// mus NOT be a traveltile/vampire child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
+	aportalid = "vampin"
+	aportalgoesto = "vampexit"
+
+/obj/structure/fluff/traveltile/exit_inhumen
+	aportalid = "inhumenin"
+	aportalgoesto = "inhumenexit"
+
+
+/obj/structure/fluff/traveltile/to_inhumen_tribe
+	name = "to the Deep Bog"
+	aportalid = "inhumenexit"
+	aportalgoesto = "inhumenin"
