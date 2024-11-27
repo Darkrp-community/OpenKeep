@@ -104,7 +104,7 @@
 	export_price = 8
 	withdraw_price = 8
 	importexport_amt = 5
-
+/*
 /datum/roguestock/stockpile/poultry
 	name = "Bird Meat"
 	desc = "Edible flesh harvested from birds."
@@ -194,7 +194,7 @@
 	export_price = 3
 	withdraw_price = 3
 	importexport_amt = 10
-
+*/
 /datum/roguestock/stockpile/turnip
 	name = "Turnips"
 	desc = "The spine of many communities."

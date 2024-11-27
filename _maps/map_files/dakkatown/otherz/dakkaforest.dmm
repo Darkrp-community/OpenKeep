@@ -693,7 +693,7 @@
 	},
 /area/rogue/indoors)
 "tx" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
 "tO" = (

@@ -101,7 +101,7 @@
 
 //................ Hunting Knife ............... //
 /obj/item/rogueweapon/knife/hunting
-	force = DAMAGE_DAGGER
+	force = DAMAGE_KNIFE+1
 	throwforce = DAMAGE_KNIFE
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	name = "hunting knife"
@@ -142,7 +142,7 @@
 /obj/item/rogueweapon/knife/cleaver/combat
 	name = "hack-knife"
 	desc = "A short blade that even the weakest of hands can aspire to do harm with."
-	force = 10
+	force = DAMAGE_KNIFE
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	icon_state = "combatknife"
 	throwforce = 16
@@ -164,7 +164,8 @@
 
 //................ Iron Dagger ............... //
 /obj/item/rogueweapon/knife/dagger
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
+	force = DAMAGE_DAGGER
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut) //Stabbing is the first intent, for convenience.
 	name = "iron dagger"
 	desc = "Thin, sharp, pointed death."
 	icon_state = "idagger"
@@ -173,16 +174,19 @@
 
 //................ Steel Dagger ............... //
 /obj/item/rogueweapon/knife/dagger/steel
+	force = DAMAGE_DAGGER+2
 	name = "steel dagger"
 	desc = "A dagger made of refined steel."
 	icon_state = "sdagger"
 	smeltresult = null
 	wdefense = AVERAGE_PARRY
 	wbalance = VERY_HARD_TO_DODGE
+	sellprice = 20
 
 /obj/item/rogueweapon/knife/dagger/steel/special
 	icon_state = "sdaggeralt"
 	desc = "A dagger of refined steel, and even more refined appearance."
+	sellprice = 25
 
 //................ Fanged dagger ............... //
 /obj/item/rogueweapon/knife/dagger/steel/dirk

@@ -67,6 +67,7 @@
 	return TRUE
 
 /obj/effect/proc_holder/spell/aimed/cast(list/targets, mob/living/user)
+	. = ..()
 	var/target = targets[1]
 	var/turf/T = user.loc
 	var/turf/U = get_step(user, user.dir) // Get the tile infront of the move, based on their direction
@@ -95,23 +96,6 @@
 
 /obj/effect/proc_holder/spell/aimed/proc/ready_projectile(obj/projectile/P, atom/target, mob/user, iteration)
 	return
-
-/obj/effect/proc_holder/spell/aimed/lightningbolt// not the one used by RT
-	name = "Lightning Bolt"
-	desc = ""
-	school = "evocation"
-	charge_max = 200
-	clothes_req = TRUE
-	invocation = "UN'LTD P'WAH"
-	invocation_type = "shout"
-	cooldown_min = 30
-	base_icon_state = "lightning"
-	sound = 'sound/blank.ogg'
-	active = FALSE
-	projectile_var_overrides = list("tesla_range" = 15, "tesla_power" = 20000, "tesla_flags" = TESLA_MOB_DAMAGE)
-	active_msg = "You energize your hand with arcane lightning!"
-	deactive_msg = "You let the energy flow out of your hands back into myself..."
-	projectile_type = /obj/projectile/magic/aoe/lightning
 
 /obj/effect/proc_holder/spell/aimed/fireball // not the one used by RT
 	name = "Fireball"

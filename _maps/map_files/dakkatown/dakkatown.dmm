@@ -575,7 +575,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave)
 "ce" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "cf" = (
@@ -916,7 +916,7 @@
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor)
 "dA" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
 "dB" = (
@@ -2114,7 +2114,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/garrison)
 "hV" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "hW" = (
@@ -3679,7 +3679,6 @@
 "nW" = (
 /obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/wool,
-/obj/effect/landmark/start/churchling,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town/church)
 "nX" = (
@@ -8267,7 +8266,7 @@
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/garrison)
 "FD" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/church/chapel)
 "FE" = (
@@ -10552,7 +10551,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "Om" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
 "On" = (
@@ -11563,7 +11562,7 @@
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor)
 "RX" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor)
 "RY" = (

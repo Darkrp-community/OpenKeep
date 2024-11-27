@@ -178,21 +178,18 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 //Template Stuff
 /datum/map_template/hilbertshotel
 	name = "Hilbert's Hotel Room"
-	mappath = '_maps/templates/hilbertshotel.dmm'
 	var/landingZoneRelativeX = 2
 	var/landingZoneRelativeY = 8
 
 /datum/map_template/hilbertshotel/empty
 	name = "Empty Hilbert's Hotel Room"
-	mappath = '_maps/templates/hilbertshotelempty.dmm'
 
 /datum/map_template/hilbertshotel/lore
 	name = "Doctor Hilbert's Deathbed"
-	mappath = '_maps/templates/hilbertshotellore.dmm'
 
 /datum/map_template/hilbertshotelstorage
 	name = "Hilbert's Hotel Storage"
-	mappath = '_maps/templates/hilbertshotelstorage.dmm'
+
 
 
 //Turfs and Areas
@@ -269,15 +266,8 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 /turf/closed/indestructible/hoteldoor/attack_hulk(mob/living/carbon/human/user)
 	promptExit(user)
 
-/turf/closed/indestructible/hoteldoor/attack_larva(mob/user)
-	promptExit(user)
-
 /turf/closed/indestructible/hoteldoor/attack_slime(mob/user)
 	promptExit(user)
-
-/turf/closed/indestructible/hoteldoor/attack_robot(mob/user)
-	if(get_dist(get_turf(src), get_turf(user)) <= 1)
-		promptExit(user)
 
 /turf/closed/indestructible/hoteldoor/AltClick(mob/user)
 	. = ..()

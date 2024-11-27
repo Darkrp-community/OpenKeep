@@ -47,6 +47,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/truffles/cooked
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/truffles/cooked
+	cooked_smell = /datum/pollutant/food/truffles
 	color = "#ab7d6f"
 	tastes = list("mushroom" = 1)
 	sellprice = 30
@@ -67,6 +68,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms/cooked
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms/cooked
+	cooked_smell = /datum/pollutant/food/truffles
 	color = "#ab7d6f"
 	tastes = list("mushroom" = 1)
 /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms/cooked

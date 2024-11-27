@@ -9,13 +9,14 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = null
+	light_system = MOVABLE_LIGHT
+	light_outer_range = 5
+	light_power = 1
 	slot_flags = ITEM_SLOT_BELT
 	possible_item_intents = list(INTENT_GENERIC)
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 //	actions_types = list(/datum/action/item_action/toggle_light)
 	var/on = FALSE
-	var/brightness_on = 40 //range of light when on
-	var/flashlight_power = 1 //strength of the light when on
 
 /obj/item/flashlight/Initialize()
 	. = ..()
@@ -26,13 +27,9 @@
 /obj/item/flashlight/proc/update_brightness(mob/user = null)
 	if(on)
 		icon_state = "[initial(icon_state)]-on"
-		if(flashlight_power)
-			set_light(l_range = brightness_on, l_power = flashlight_power)
-		else
-			set_light(brightness_on)
 	else
 		icon_state = initial(icon_state)
-		set_light(0)
+	set_light_on(on)
 
 /obj/item/flashlight/attack_self(mob/user)
 	on = !on
@@ -169,7 +166,7 @@
 	icon_state = "penlight"
 	item_state = ""
 	flags_1 = CONDUCT_1
-	brightness_on = 2
+	light_outer_range = 2
 	var/holo_cooldown = 0
 
 /obj/item/flashlight/pen/afterattack(atom/target, mob/user, proximity_flag)
@@ -205,7 +202,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	force = 9 // Not as good as a stun baton.
-	brightness_on = 5 // A little better than the standard flashlight.
+	light_outer_range = 5 // A little better than the standard flashlight.
 	hitsound = 'sound/blank.ogg'
 
 // the desk lamps are a bit special
@@ -217,7 +214,7 @@
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	force = 10
-	brightness_on = 5
+	light_outer_range = 5
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1
 	custom_materials = null
@@ -253,7 +250,7 @@
 	name = "flare"
 	desc = ""
 	w_class = WEIGHT_CLASS_SMALL
-	brightness_on = 7 // Pretty bright.
+	light_outer_range = 7 // Pretty bright.
 	icon_state = "flare"
 	item_state = "flare"
 	actions_types = list()
@@ -323,14 +320,14 @@
 	name = "torch"
 	desc = ""
 	w_class = WEIGHT_CLASS_NORMAL
-	brightness_on = 6
+	light_outer_range = 6
 	force = 1
 	icon = 'icons/roguetown/items/lighting.dmi'
 	icon_state = "torch"
 	item_state = "torch"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
-	light_color = "#da8c45"
+	light_color = "#f19d30"
 	on_damage = 2
 	flags_1 = null
 	possible_item_intents = list(/datum/intent/hit, /datum/intent/use)
@@ -353,7 +350,7 @@
 
 /obj/item/flashlight/flare/torch/Initialize()
 	. = ..()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 
 /obj/item/flashlight/flare/torch/process()
 	open_flame(heat)
@@ -449,7 +446,7 @@
 	name = "torch"
 	force = 1
 	icon_state = "mtorch"
-	brightness_on = 6
+	light_outer_range = 6
 	fuel = 120 MINUTES
 	should_self_destruct = TRUE
 
@@ -473,7 +470,7 @@
 	name = "lamptern"
 	icon_state = "lamp"
 	desc = "A light to guide the way."
-	brightness_on = 7
+	light_outer_range = 7
 	on = FALSE
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_HIP
@@ -515,7 +512,7 @@
 	name = "copper lamptern"
 	icon_state = "clamp"
 	desc = "A simple and cheap lamptern."
-	brightness_on = 7
+	light_outer_range = 7
 	on = FALSE
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_HIP
@@ -541,21 +538,21 @@
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	desc = ""
-	brightness_on = 6			// luminosity when on
+	light_outer_range = 6			// luminosity when on
 
 
 
 /obj/item/flashlight/lantern/heirloom_moth
 	name = "old lantern"
 	desc = ""
-	brightness_on = 4
+	light_outer_range = 4
 
 /obj/item/flashlight/lantern/syndicate
 	name = "suspicious lantern"
 	desc = ""
 	icon_state = "syndilantern"
 	item_state = "syndilantern"
-	brightness_on = 10
+	light_outer_range = 10
 
 /obj/item/flashlight/slime
 	gender = PLURAL
@@ -567,7 +564,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = null
-	brightness_on = 6 //luminosity when on
+	light_outer_range = 6 //luminosity when on
 
 /obj/item/flashlight/emp
 	var/emp_max_charges = 4
@@ -628,7 +625,7 @@
 	desc = ""
 	custom_price = 10
 	w_class = WEIGHT_CLASS_SMALL
-	brightness_on = 4
+	light_outer_range = 4
 	color = LIGHT_COLOR_GREEN
 	icon_state = "glowstick"
 	item_state = "glowstick"
@@ -667,7 +664,7 @@
 		glowstick_overlay.color = color
 		add_overlay(glowstick_overlay)
 		item_state = "glowstick-on"
-		set_light(brightness_on)
+		set_light(light_outer_range)
 	else
 		icon_state = "glowstick"
 		cut_overlays()
@@ -735,8 +732,8 @@
 	desc = ""
 	icon_state = null
 	light_color = null
-	brightness_on = 0
-	light_range = 0
+	light_outer_range = 0
+	light_outer_range =  0
 	light_power = 10
 	alpha = 0
 	layer = 0
@@ -744,20 +741,3 @@
 	anchored = TRUE
 	var/range = null
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-
-/obj/item/flashlight/flashdark
-	name = "flashdark"
-	desc = ""
-	icon_state = "flashdark"
-	item_state = "flashdark"
-	brightness_on = 2.5
-	flashlight_power = -3
-
-/obj/item/flashlight/eyelight
-	name = "eyelight"
-	desc = ""
-	brightness_on = 15
-	flashlight_power = 1
-	flags_1 = CONDUCT_1
-	item_flags = DROPDEL
-	actions_types = list()

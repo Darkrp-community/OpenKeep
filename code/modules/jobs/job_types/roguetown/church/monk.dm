@@ -43,12 +43,6 @@
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
-		if("Necra")
-			head = /obj/item/clothing/head/roguetown/padded/deathshroud
-			neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra
-			shoes = /obj/item/clothing/shoes/roguetown/boots
-			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
 		if("Eora")
 			head = /obj/item/clothing/head/roguetown/padded/rabbetvisage
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/eora
@@ -67,6 +61,13 @@
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/green
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
+		if("Malum")
+			head = /obj/item/clothing/head/roguetown/roguehood/black
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/malum
+			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
+			pants = /obj/item/clothing/under/roguetown/tights/red
+			shoes = /obj/item/clothing/shoes/roguetown/boots
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/malum
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/roguehood/random
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver

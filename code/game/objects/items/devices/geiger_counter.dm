@@ -21,7 +21,7 @@
 	custom_materials = list(/datum/material/iron = 150, /datum/material/glass = 150)
 
 	var/grace = RAD_GRACE_PERIOD
-	var/datum/looping_sound/geiger/soundloop
+//	var/datum/looping_sound/geiger/soundloop
 
 	var/scanning = FALSE
 	var/radiation_count = 0
@@ -34,7 +34,7 @@
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
-	soundloop = new(list(src), FALSE)
+//	soundloop = new(src, FALSE)
 
 /obj/item/geiger_counter/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -109,15 +109,15 @@
 	..()
 
 /obj/item/geiger_counter/proc/update_sound()
-	var/datum/looping_sound/geiger/loop = soundloop
+//	var/datum/looping_sound/geiger/loop = soundloop
 	if(!scanning)
-		loop.stop()
+//		loop.stop()
 		return
 	if(!radiation_count)
-		loop.stop()
+//		loop.stop()
 		return
-	loop.last_radiation = radiation_count
-	loop.start()
+//	loop.last_radiation = radiation_count
+//	loop.start()
 
 /obj/item/geiger_counter/rad_act(amount)
 	. = ..()
@@ -199,34 +199,6 @@
 		return 0
 	to_chat(user, "<span class='warning'>I override [src]'s radiation storing protocols. It will now generate small doses of radiation, and stored rads are now projected into creatures you scan.</span>")
 	obj_flags |= EMAGGED
-
-
-
-/obj/item/geiger_counter/cyborg
-	var/mob/listeningTo
-
-/obj/item/geiger_counter/cyborg/cyborg_unequip(mob/user)
-	if(!scanning)
-		return
-	scanning = FALSE
-	update_icon()
-
-/obj/item/geiger_counter/cyborg/equipped(mob/user)
-	. = ..()
-	if(listeningTo == user)
-		return
-	if(listeningTo)
-		UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)
-	RegisterSignal(user, COMSIG_ATOM_RAD_ACT, PROC_REF(redirect_rad_act))
-	listeningTo = user
-
-/obj/item/geiger_counter/cyborg/proc/redirect_rad_act(datum/source, amount)
-	rad_act(amount)
-
-/obj/item/geiger_counter/cyborg/dropped()
-	. = ..()
-	if(listeningTo)
-		UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)
 
 #undef RAD_LEVEL_NORMAL
 #undef RAD_LEVEL_MODERATE

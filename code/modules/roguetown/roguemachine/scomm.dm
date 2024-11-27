@@ -61,8 +61,10 @@
 	var/contents
 	if(SSticker.rulertype == "King")
 		contents += "<center>KING'S DECREES<BR>"
-	else
+	else if(SSticker.rulertype == "Queen")
 		contents += "<center>QUEEN'S DECREES<BR>"
+	else if(SSticker.rulertype == "Hand")
+		contents += "<center>REGENT'S DECREES<BR>"
 	contents += "-----------<BR><BR></center>"
 	for(var/i = GLOB.lord_decrees.len to 1 step -1)
 		contents += "[i]. <span class='info'>[GLOB.lord_decrees[i]]</span><BR>"

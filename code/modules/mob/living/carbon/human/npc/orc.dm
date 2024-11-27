@@ -14,6 +14,16 @@
 	possible_rmb_intents = list()
 	vitae_pool = 1000 // Not as much vitae from them as humans to avoid vampires cheesing mobs
 
+/datum/species/orc/after_creation(mob/living/carbon/C)
+	..()
+	C.grant_language(/datum/language/orcish)
+	to_chat(C, "<span class='info'>I can speak Orcish with ,g before my speech.</span>")
+
+/datum/species/orc/on_species_loss(mob/living/carbon/C)
+	. = ..()
+	UnregisterSignal(C, COMSIG_MOB_SAY)
+	C.remove_language(/datum/language/orcish)
+
 /mob/living/carbon/human/species/orc/npc
 	aggressive=1
 	mode = AI_IDLE
@@ -187,7 +197,7 @@
 	nojumpsuit = 1
 	sexes = 1
 	damage_overlay_type = ""
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	var/raceicon = "orc"
 
 /datum/species/orc/update_damage_overlays(mob/living/carbon/human/H)

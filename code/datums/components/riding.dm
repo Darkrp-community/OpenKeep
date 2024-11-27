@@ -186,6 +186,7 @@
 		handle_vehicle_offsets()
 	else
 		to_chat(user, "<span class='warning'>You'll need the keys in one of my hands to [drive_verb] [AM].</span>")
+	SEND_SIGNAL(AM, COMSIG_RIDDEN_DRIVER_MOVE, user, direction)
 	return TRUE
 
 /datum/component/riding/proc/Unbuckle(atom/movable/M)
@@ -274,10 +275,6 @@
 	var/atom/movable/AM = parent
 	if(user.incapacitated())
 		var/kick = TRUE
-		if(iscyborg(AM))
-			var/mob/living/silicon/robot/R = AM
-			if(R.module && R.module.ride_allow_incapacitated)
-				kick = FALSE
 		if(kick)
 			to_chat(user, "<span class='danger'>I fall off of [AM]!</span>")
 			Unbuckle(user)
@@ -307,13 +304,7 @@
 	if(AM.has_buckled_mobs())
 		for(var/mob/living/M in AM.buckled_mobs)
 			M.setDir(AM.dir)
-			if(iscyborg(AM))
-				var/mob/living/silicon/robot/R = AM
-				if(istype(R.module))
-					M.pixel_x = R.module.ride_offset_x[dir2text(AM.dir)]
-					M.pixel_y = R.module.ride_offset_y[dir2text(AM.dir)]
-			else
-				..()
+			..()
 
 /datum/component/riding/cyborg/force_dismount(mob/living/M)
 	var/atom/movable/AM = parent

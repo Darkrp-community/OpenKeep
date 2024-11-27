@@ -30,6 +30,7 @@
 	icon_state = "meatcutlet"
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried
+	cooked_smell = /datum/pollutant/food/fried_meat
 	slices_num = 2
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef
 	slice_bclass = BCLASS_CHOP
@@ -50,6 +51,7 @@
 	slices_num = 0
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried
+	cooked_smell = /datum/pollutant/food/bacon
 	filling_color = "#8a0000"
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/bacon
 
@@ -58,6 +60,7 @@
 	icon_state = "spidermeat"
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/spider/fried
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/spider/fried
+	cooked_smell = /datum/pollutant/food/fried_meat
 	slice_path = null
 	slices_num = 0
 
@@ -66,6 +69,7 @@
 	icon_state = "halfchicken"
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked
+	cooked_smell = /datum/pollutant/food/fried_chicken
 	fried_type = null
 	slices_num = 2
 	slice_sound = TRUE
@@ -81,6 +85,7 @@
 	slice_bclass = BCLASS_CHOP
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/mince/poultry
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried
+	cooked_smell = /datum/pollutant/food/fried_chicken
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/chickenleg
 
 /*	........   Fish sounds   ................ */
@@ -157,6 +162,7 @@
 	ingredient_size = 1
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked
+	cooked_smell = /datum/pollutant/food/sausage
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/sausage
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/wiener
@@ -165,6 +171,7 @@
 	ingredient_size = 1
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked/wiener
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked/wiener
+	cooked_smell = /datum/pollutant/food/sausage
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/sausage
 
 

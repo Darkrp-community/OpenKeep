@@ -47,7 +47,7 @@
 	icon = 'icons/effects/fire.dmi'
 	icon_state = "1"
 	layer = GASFIRE_LAYER
-	light_range = LIGHT_RANGE_FIRE
+	light_outer_range =  LIGHT_RANGE_FIRE
 	light_color = LIGHT_COLOR_FIRE
 	blend_mode = BLEND_ADD
 
@@ -187,7 +187,7 @@
 
 	perform_exposure()
 	return
-/* 
+/*
 	if(location.excited_group)
 		location.excited_group.reset_cooldowns()
 
@@ -269,6 +269,6 @@
 /obj/effect/dummy/lighting_obj/moblight/fire
 	name = "fire"
 	light_color = LIGHT_COLOR_FIRE
-	light_range = LIGHT_RANGE_FIRE
+	light_outer_range =  LIGHT_RANGE_FIRE
 
 #undef INSUFFICIENT

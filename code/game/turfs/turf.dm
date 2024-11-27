@@ -76,7 +76,6 @@
 	levelupdate()
 	if(smooth)
 		queue_smooth(src)
-	visibilityChanged()
 
 	for(var/atom/movable/AM in src)
 		Entered(AM)
@@ -89,7 +88,7 @@
 		CALCULATE_ADJACENT_TURFS(src)
 		SSair.add_to_active(src)
 
-	if (light_power && light_range)
+	if (light_power && (light_outer_range || light_inner_range))
 		update_light()
 
 	if(turf_integrity == null)
@@ -103,7 +102,8 @@
 	if(T)
 		T.multiz_turf_new(src, UP)
 		SEND_SIGNAL(T, COMSIG_TURF_MULTIZ_NEW, src, UP)
-
+	if(!mapload)
+		reassess_stack()
 	if (opacity)
 		has_opaque_atom = TRUE
 
@@ -140,7 +140,6 @@
 			B.vars[I] = null
 		return
 	SSair.remove_from_active(src)
-	visibilityChanged()
 	QDEL_LIST(blueprint_data)
 	flags_1 &= ~INITIALIZED_1
 	requires_activation = FALSE
@@ -229,8 +228,10 @@
 	user.Move_Pulled(src)
 
 /turf/proc/multiz_turf_del(turf/T, dir)
+	reassess_stack()
 
 /turf/proc/multiz_turf_new(turf/T, dir)
+	reassess_stack()
 
 //zPassIn doesn't necessarily pass an atom!
 //direction is direction of travel of air
@@ -263,7 +264,7 @@
 		return
 	if(zFall(A, ++levels))
 		return FALSE
-	if(isliving(A)) 
+	if(isliving(A))
 		var/mob/living/O = A
 		var/dex_save = O.mind?.get_skill_level(/datum/skill/misc/climbing)
 		if(dex_save >= 5)
@@ -318,36 +319,9 @@
 	target.zImpact(A, levels, src)
 	return TRUE
 
-/turf/proc/handleRCL(obj/item/twohanded/rcl/C, mob/user)
-	if(C.loaded)
-		for(var/obj/structure/pipe_cleaner/LC in src)
-			if(!LC.d1 || !LC.d2)
-				LC.handlecable(C, user)
-				return
-		C.loaded.place_turf(src, user)
-		if(C.wiring_gui_menu)
-			C.wiringGuiUpdate(user)
-		C.is_empty(user)
-
 /turf/attackby(obj/item/C, mob/user, params)
 	if(..())
 		return TRUE
-	if(can_lay_cable() && istype(C, /obj/item/stack/cable_coil))
-		var/obj/item/stack/cable_coil/coil = C
-		coil.place_turf(src, user)
-		return TRUE
-	else if(can_have_cabling() && istype(C, /obj/item/stack/pipe_cleaner_coil))
-		var/obj/item/stack/pipe_cleaner_coil/coil = C
-		for(var/obj/structure/pipe_cleaner/LC in src)
-			if(!LC.d1 || !LC.d2)
-				LC.attackby(C, user)
-				return
-		coil.place_turf(src, user)
-		return TRUE
-
-	else if(istype(C, /obj/item/twohanded/rcl))
-		handleRCL(C, user)
-
 	return FALSE
 
 /turf/CanPass(atom/movable/mover, turf/target)
@@ -562,17 +536,6 @@
 /turf/proc/can_lay_cable()
 	return can_have_cabling() & !intact
 
-/turf/proc/visibilityChanged()
-	GLOB.cameranet.updateVisibility(src)
-	// The cameranet usually handles this for us, but if we've just been
-	// recreated we should make sure we have the cameranet vis_contents.
-	var/datum/camerachunk/C = GLOB.cameranet.chunkGenerated(x, y, z)
-	if(C)
-		if(C.obscuredTurfs[src])
-			vis_contents += GLOB.cameranet.vis_contents_objects
-		else
-			vis_contents -= GLOB.cameranet.vis_contents_objects
-
 /turf/proc/burn_tile()
 
 /turf/proc/is_shielded()
@@ -635,8 +598,6 @@
 /turf/acid_act(acidpwr, acid_volume)
 	. = 1
 	var/acid_type = /obj/effect/acid
-	if(acidpwr >= 200) //alien acid power
-		acid_type = /obj/effect/acid/alien
 	var/has_acid_effect = FALSE
 	for(var/obj/O in src)
 		if(intact && O.level == 1) //hidden under the floor

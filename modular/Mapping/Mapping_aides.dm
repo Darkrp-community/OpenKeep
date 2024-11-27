@@ -393,6 +393,19 @@
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
 
+/obj/machinery/light/rogue/wallfire/big_fireplace
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+
+/obj/machinery/light/rogue/hearth/big_fireplace
+	name = "fireplace"
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+	fueluse = -1
+	pixel_x = -16
+	climb_offset = 4
 
 /*	..................   Colony Spider Net   ................... */
 /obj/structure/innocent_net
@@ -597,6 +610,7 @@
 /obj/effect/decal/shadow_floor
 	name = ""
 	desc = ""
+	icon = 'icons/roguetown/misc/decoration.dmi'
 	icon_state = "shadow_floor"
 	mouse_opacity = 0
 
@@ -661,7 +675,7 @@
 	base_state = "candle"
 	layer = WALL_OBJ_LAYER+0.1
 	light_power = 0.9
-	light_range = 6
+	light_outer_range =  6
 
 
 /*	..................   Misc   ................... */
@@ -726,3 +740,18 @@
 		/obj/item/underworld/coin = 1,
 		)
 
+
+/mob/living/simple_animal/hostile/retaliate/rogue/spider/colony // colony spider
+	name = "hairy spider"
+	desc = "The forest canopies hides more than leaves...These creachers make honey from flowers and spin silk from their abdomen, when not consuming prey."
+	icon_state = "spider"
+	icon_living = "spider"
+	icon_dead = "spider-dead"
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
+							/obj/item/natural/silk = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+							/obj/item/reagent_containers/food/snacks/rogue/honey = 1,
+							/obj/item/natural/silk = 2)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+							/obj/item/reagent_containers/food/snacks/rogue/honey = 2,
+							/obj/item/natural/silk = 3)

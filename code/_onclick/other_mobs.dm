@@ -79,7 +79,13 @@
 		to_chat(src, "<span class='warning'>[pulledby] is restraining my arm!</span>")
 		return
 
-	A.attack_right(src, params)
+	//TODO VANDERLIN: Refactor this into melee_attack_chain_right so that items can more dynamically work with RMB
+	var/obj/item/held_item = get_active_held_item()
+	if(held_item)
+		if(!held_item.pre_attack_right(A, src, params))
+			A.attack_right(src, params)
+	else
+		A.attack_right(src, params)
 
 /mob/living/attack_right(mob/user, params)
 	. = ..()
@@ -545,7 +551,7 @@
 	A.attack_animal(src)
 
 /atom/proc/attack_animal(mob/user)
-	return
+	SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_ANIMAL, user)
 
 /mob/living/RestrainedClickOn(atom/A)
 	return
@@ -597,26 +603,6 @@
 			ML.visible_message("<span class='danger'>[src]'s bite misses [ML]!</span>", \
 							"<span class='danger'>I avoid [src]'s bite!</span>", "<span class='hear'>I hear jaws snapping shut!</span>", COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, "<span class='danger'>My bite misses [ML]!</span>")
-
-/*
-	Aliens
-	Defaults to same as monkey in most places
-*/
-/mob/living/carbon/alien/UnarmedAttack(atom/A)
-	A.attack_alien(src)
-
-/atom/proc/attack_alien(mob/living/carbon/alien/user)
-	attack_paw(user)
-	return
-
-/mob/living/carbon/alien/RestrainedClickOn(atom/A)
-	return
-
-// Babby aliens
-/mob/living/carbon/alien/larva/UnarmedAttack(atom/A)
-	A.attack_larva(src)
-/atom/proc/attack_larva(mob/user)
-	return
 
 
 /*
