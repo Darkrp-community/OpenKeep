@@ -59,6 +59,9 @@ SUBSYSTEM_DEF(death_arena)
 	qdel(first)
 	qdel(second)
 
+	if(!first_skeleton.ckey && !second_skeleton.ckey)
+		end_fight_no_client()
+
 	fight_force_end = world.time + 10 MINUTES
 
 /datum/controller/subsystem/death_arena/proc/try_end_fight(obj/item/bodypart/head/head, mob/living/carbon/user)
@@ -96,6 +99,14 @@ SUBSYSTEM_DEF(death_arena)
 	for(var/mob/living/carbon/carbon in fighters)
 		fighters -= carbon
 		carbon.returntolobby()
+		qdel(carbon)
+	fight_force_end = null
+	fighting = FALSE
+
+/datum/controller/subsystem/death_arena/proc/end_fight_no_client()
+	fighters_heads = list()
+	for(var/mob/living/carbon/carbon in fighters)
+		fighters -= carbon
 		qdel(carbon)
 	fight_force_end = null
 	fighting = FALSE
