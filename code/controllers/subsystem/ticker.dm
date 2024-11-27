@@ -299,6 +299,17 @@ SUBSYSTEM_DEF(ticker)
 #ifdef ROGUEWORLD
 	amt_ready = 999
 #endif
+	/*	failedstarts++
+		if(failedstarts >= 13) // this stuff is for rougewar, a team deathmatch mode I guess.
+			to_chat(world, "<span class='greentext'>Starting ROGUEFIGHT...</span>")
+			var/icon/ikon
+			var/file_path = "icons/roguefight_title.dmi"
+			ASSERT(fexists(file_path))
+			ikon = new(fcopy_rsc(file_path))
+			if(SStitle.splash_turf && ikon)
+				SStitle.splash_turf.icon = ikon
+			for(var/mob/dead/new_player/player in GLOB.player_list)
+				player.playsound_local(player, 'sound/music/wartitle.ogg', 100, TRUE)*/
 
 	for(var/mob/dead/new_player/player in GLOB.player_list)
 		if(!player)
