@@ -1,3 +1,52 @@
+// ======================================================================
+
+/*	..................   Pigflowers   ................... */
+/obj/structure/flora/rogueflower // ausbushes recolored
+	icon = 'icons/roguetown/misc/pigflora.dmi'
+	icon_state = "reedbush_1"
+
+/obj/structure/flora/rogueflower/reedbush
+	icon_state = "reedbush_1"
+
+/obj/structure/flora/rogueflower/reedbush/Initialize()
+	icon_state = "reedbush_[rand(1, 4)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/lavendergrass
+	icon_state = "lavendergrass_1"
+
+/obj/structure/flora/rogueflower/lavendergrass/Initialize()
+	icon_state = "lavendergrass_[rand(1, 4)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/ywflowers
+	icon_state = "ywflowers_1"
+
+/obj/structure/flora/rogueflower/ywflowers/Initialize()
+	icon_state = "ywflowers_[rand(1, 3)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/brflowers
+	icon_state = "brflowers_1"
+
+/obj/structure/flora/rogueflower/brflowers/Initialize()
+	icon_state = "brflowers_[rand(1, 3)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/ppflowers
+	icon_state = "ppflowers_1"
+
+/obj/structure/flora/rogueflower/ppflowers/Initialize()
+	icon_state = "ppflowers_[rand(1, 3)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/stalkybush
+	icon_state = "stalkybush_1"
+
+/obj/structure/flora/rogueflower/stalkybush/Initialize()
+	icon_state = "stalkybush_[rand(1, 3)]"
+	. = ..()
+
 // ===================================================================================
 /*	..................   Dwarf Outpost   ................... */
 /obj/effect/landmark/map_load_mark/dwarf_outpost
@@ -16,19 +65,7 @@
 
 
 // ===================================================================================
-/*	..................   Catacomb Skelly (weak)   ................... */
-/mob/living/carbon/human/species/skeleton/npc/catacomb/after_creation()
-	..()
-	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/catacomb)
-
-/datum/outfit/job/roguetown/species/skeleton/npc/catacomb/pre_equip(mob/living/carbon/human/H)
-	..()
-	H.STASTR = 8
-	H.STASPD = 7
-	H.STACON = 10
-	H.STAEND = 10
-	var/loadout = rand(1,3)
-
+/*
 	if(prob(15))
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 	if(prob(15))
@@ -50,12 +87,7 @@
 			r_hand = /obj/item/rogueweapon/knife/stone
 		if(3)
 			r_hand = /obj/item/rogueweapon/mace/woodclub
-
-/*	..................   Hostile Bum   ................... */
-/mob/living/carbon/human/species/human/northern/bum/ambush/Initialize()
-	. = ..()
-	name = pick("Madman", "Creep", "Lunatic", "Leper")
-
+*/
 
 // ===================================================================================
 /obj/structure/mineral_door/wood/red/i
