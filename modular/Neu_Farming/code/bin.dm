@@ -252,3 +252,6 @@
 
 /obj/item/roguebin/trash/StorageBlock(obj/item/I, mob/user)
 	return FALSE
+
+/obj/item/roguebin/alt
+	icon_state = "washbin2"
