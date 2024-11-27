@@ -963,6 +963,78 @@
 						/turf/open/floor/rogue/snow/patchy,
 						/turf/open/floor/rogue/snow/rough)
 
+
+// ==============================================================
+/*	..................   PigTurfs   ................... */
+/turf/open/floor/rogue/sandstone
+	icon_state = "sandstone"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	landsound = 'sound/foley/jumpland/stoneland.wav'
+	smooth = SMOOTH_MORE
+	canSmoothWith = list(/turf/closed/mineral/rogue,
+						/turf/open/floor/rogue/herringbone,
+						/turf/closed/mineral,
+						/turf/closed/wall/mineral/rogue/stonebrick,
+						/turf/closed/wall/mineral/rogue/wood,
+						/turf/closed/wall/mineral/rogue/wooddark,
+						/turf/closed/wall/mineral/rogue/stone,
+						/turf/closed/wall/mineral/rogue/stone/moss,
+						/turf/open/floor/rogue/cobble,
+						/turf/open/floor/rogue/dirt,
+						/turf/open/floor/rogue/grass,
+						/turf/open/floor/rogue/grass/red,
+						/turf/open/floor/rogue/grass/yel,
+						/turf/open/floor/rogue/grass/cold,
+						/turf/open/floor/rogue/snow,
+						/turf/open/floor/rogue/snow/patchy,
+						/turf/open/floor/rogue/snow/rough,
+						/turf/open/floor/rogue/sandstone,
+						/turf/open/floor/rogue/sandstone/temple)
+
+/turf/open/floor/rogue/sandstone/shaded
+	color = "#e5dfdf"
+
+/turf/open/floor/rogue/sandstone/temple
+	icon_state = "temple"
+/turf/open/floor/rogue/sandstone/temple/Initialize()
+	dir = pick(GLOB.cardinals)
+	. = ..()
+
+/turf/open/water/bath/pool
+	desc = "Clear water, pleasant temperature. Soothing."
+	icon_state = "bathtile_pool"
+/turf/open/water/bath/pool/Initialize()
+	.  = ..()
+	icon_state = "bathtile_pool"
+
+/turf/open/water/bath/pool/mid
+	icon_state = "bathtile_pool_mid"
+/turf/open/water/bath/pool/mid/Initialize()
+	.  = ..()
+	icon_state = "bathtile_pool_mid"
+
+/turf/open/floor/rogue/grass/yelmix
+	name = "grass"
+	icon_state = "grass_yelmix"
+	smooth = SMOOTH_FALSE
+	neighborlay = ""
+
+/turf/open/floor/rogue/grass/near_tree
+	color = "#ff0000"
+/turf/open/floor/rogue/grass/near_tree/Initialize()
+	color = "#ffffff"
+	. = ..()
+
+/turf/open/floor/rogue/oak	// new oak
+	icon_state = "oak"
+/turf/open/floor/rogue/oak/broken
+	icon_state = "oak_broken"
+/turf/open/floor/rogue/oak/stage
+	icon_state = "stageoak_bl"
+
 /turf/open/floor/rogue/cobble/alt
 	icon_state = "cobblestonealt1"
 /turf/open/floor/rogue/cobble/alt/Initialize()
@@ -1001,7 +1073,7 @@
 	icon_state = "mossyalt_smalledges"
 
 
-
+// ==============================================================
 /*	..................   Miscellany   ................... */
 /turf/open/floor/rogue/tile/masonic
 	icon_state = "masonic"

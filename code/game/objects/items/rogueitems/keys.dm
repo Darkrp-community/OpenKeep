@@ -674,3 +674,7 @@
 				KE.name = src.holdname
 			to_chat(user, "<span class='notice'>You add [src] to [K].</span>")
 			qdel(src)
+
+/obj/item/roguekey/spooky_village
+	icon_state = "rustkey"
+	lockid = "spooky_village"
