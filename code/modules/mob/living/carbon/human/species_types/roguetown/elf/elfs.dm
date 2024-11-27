@@ -88,7 +88,7 @@
 		"Coastal Elf - (White 4)" = SKIN_COLOR_COASTAL_ELF,
 		"Wood Elf - (Mediterranean 1)" = SKIN_COLOR_WOOD_ELF,
 		"Sea Elf - (Mediterranean 2)" = SKIN_COLOR_SEA_ELF,
-		"Jungle Elf - (Latin)" = SKIN_COLOR_JUNGLE_ELF
+		"Jungle Elf - (Latin)" = SKIN_COLOR_JUNGLE_ELF,
 		"Savannah Elf - (Middle-Eastern)" = SKIN_COLOR_SAVANNAH_ELF,
 		"Sand Elf - (Black 1)" = SKIN_COLOR_SAND_ELF,
 		"Crimson Elf - (Black2)" = SKIN_COLOR_CRIMSON_ELF,
