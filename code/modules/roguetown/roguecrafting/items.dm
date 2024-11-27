@@ -421,81 +421,6 @@
 	name = "master's guide to literature"
 	result = list(/obj/item/literary/master)
 	craftdiff = 6
-  
-//weapons
-
-/datum/crafting_recipe/roguetown/quarterstaff
-	name = "wooden quarterstaff"
-	result = list(/obj/item/rogueweapon/polearm/woodstaff/quarterstaff,
-	/obj/item/rogueweapon/polearm/woodstaff/quarterstaff)
-	reqs = list(/obj/item/grown/log/tree = 1)
-	req_table = TRUE
-	tools = list(/obj/item/rogueweapon/knife/hunting)
-	skillcraft = /datum/skill/craft/carpentry
-
-/datum/crafting_recipe/roguetown/steelstaff
-	name = "steel quarterstaff"
-	skillcraft = /datum/skill/craft/carpentry
-	reqs = list(/obj/item/rogueweapon/polearm/woodstaff/quarterstaff = 1, /obj/item/ingot/steel = 2)
-	result = list(/obj/item/rogueweapon/polearm/woodstaff/quarterstaff/steel)
-	craftdiff = 3
-
-/datum/crafting_recipe/roguetown/ironstaff
-	name = "iron quarterstaff"
-	skillcraft = /datum/skill/craft/carpentry
-	reqs = list(/obj/item/rogueweapon/polearm/woodstaff/quarterstaff = 1, /obj/item/ingot/iron = 1)
-	tools = list(/obj/item/rogueweapon/hammer)
-	result = list(/obj/item/rogueweapon/polearm/woodstaff/quarterstaff/iron)
-	craftdiff = 2
-
-/datum/crafting_recipe/roguetown/woodflail
-	name = "wooden flail x2"
-	skillcraft = /datum/skill/craft/carpentry
-	reqs = list(/obj/item/rope/chain = 1,
-			/obj/item/grown/log/tree/stick = 1, /obj/item/grown/log/tree/small = 1)
-	tools = list(/obj/item/rogueweapon/hammer)
-	req_table = TRUE
-	result = list(/obj/item/rogueweapon/flail/towner, /obj/item/rogueweapon/flail/towner)
-	craftdiff = 2
-
-/datum/crafting_recipe/roguetown/militia_flail
-	name = "militia flail"
-	skillcraft = /datum/skill/craft/carpentry
-	reqs = list(/obj/item/rogueweapon/flail/towner = 1, /obj/item/ingot/iron = 1)
-	tools = list(/obj/item/rogueweapon/hammer)
-	req_table = TRUE
-	result = list(/obj/item/rogueweapon/flail/militia)
-	craftdiff = 3
-
-/datum/crafting_recipe/roguetown/woodengreatflail
-	name = "great wooden flail"
-	skillcraft = /datum/skill/craft/carpentry
-	reqs = list(/obj/item/rope = 1,
-			/obj/item/grown/log/tree/stick = 1, /obj/item/grown/log/tree/small = 1)
-	tools = list(/obj/item/rogueweapon/hammer)
-	req_table = TRUE
-	result = list(/obj/item/rogueweapon/thresher)
-	craftdiff = 2
-
-/datum/crafting_recipe/roguetown/bigflail
-	name = "great militia flail"
-	skillcraft = /datum/skill/craft/carpentry
-	reqs = list(/obj/item/rope/chain = 1,
-			/obj/item/rogueweapon/thresher = 1, /obj/item/ingot/iron = 1)
-	tools = list(/obj/item/rogueweapon/hammer)
-	req_table = TRUE
-	result = list(/obj/item/rogueweapon/thresher/military)
-	craftdiff = 3
-
-
-/datum/crafting_recipe/roguetown/ironcudgel
-	name = "peasant cudgels x2"
-	skillcraft = /datum/skill/craft/carpentry
-	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/ingot/iron = 1)
-	tools = list(/obj/item/rogueweapon/hammer)
-	req_table = TRUE
-	result = list(/obj/item/rogueweapon/mace/cudgel/carpenter, /obj/item/rogueweapon/mace/cudgel/carpenter)
-	craftdiff = 3
 
 //bows
 /datum/crafting_recipe/roguetown/bowyer
@@ -531,7 +456,7 @@
 	/obj/item/reagent_containers/food/snacks/fat)
 	structurecraft = /obj/machinery/light/rogue/campfire
 	craftdiff = 3
-  
+
 //other
 
 /datum/crafting_recipe/roguetown/wickercloak
