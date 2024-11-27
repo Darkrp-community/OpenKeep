@@ -51,7 +51,15 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/mockery) // Mock people to your heart's content!
 		H.STAINT = rand(1, 20)
 		H.STALUC = rand(1, 20)
-		H.cmode_music = 'sound/music/combat_jester.ogg'
+
+		if(H.STASTR > 16)
+ 			H.cmode_music = 'sound/music/combat_jester3'
+		else
+ 			H.cmode_music = pick(
+    	    "sound/music/combat_jester.ogg",
+    	    "sound/music/combat_jester2.ogg"
+		)
+
 /*		if(H.gender == MALE)
 			if(H.dna?.species)
 				if(H.dna.species.id == "human")
