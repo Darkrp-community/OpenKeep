@@ -60,6 +60,8 @@
 						var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(spawn_loc)
 						O.livingname = G.name
 						O.ckey = G.ckey
+						ADD_TRAIT(O, TRAIT_PACIFISM, TRAIT_GENERIC)
+						SSdeath_arena.add_fighter(O)
 						SSdroning.area_entered(get_area(O), O.client)
 					verbs -= /client/proc/descend
 				return
