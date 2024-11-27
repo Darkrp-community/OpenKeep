@@ -93,7 +93,7 @@
 
 	dat += "</table>"
 
-	var/datum/browser/popup = new(user, "slapcraft_handbook", "Slapcraft Handbook", 600, 800)
+	var/datum/browser/noclose/popup = new(user, "slapcraft_handbook", "Slapcraft Handbook", 600, 800)
 	popup.set_content(dat.Join())
 	popup.open()
 	return
@@ -130,7 +130,7 @@
 	dat += print_recipe(recipe)
 	dat += "</table>"
 
-	var/datum/browser/popup = new(user, "[recipe_type]_popup", "[recipe.category] - [recipe.subcategory] - [recipe.name]", 500, 200)
+	var/datum/browser/noclose/popup = new(user, "[recipe_type]_popup", "[recipe.category] - [recipe.subcategory] - [recipe.name]", 500, 200)
 	popup.set_content(dat.Join())
 	popup.open()
 	return
