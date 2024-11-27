@@ -137,7 +137,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	converted_type = /area/rogue/indoors/shelter/rtfield
 
 /area/rogue/outdoors/rtfield/plague_district
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50)
+//	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50) to do the proper mob
 	first_time_text = "PLAGUE DISTRICT"
 	icon_state = "yellow"
 	name = "plague district"

@@ -342,8 +342,6 @@
 			new /obj/item/clothing/head/roguetown/jester(src)
 
 
-
-
 /*	..................   Spider stuff   ................... */
 /obj/structure/spider/stickyweb/solo
 	icon_state = "stickyweb3"
@@ -383,41 +381,46 @@
 
 
 /*	..................   Various mapping aides   ................... */
-
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
 
 
-
-
 // ======================================================================
+/*	..................   Colony Spider Web   ................... */
+/obj/structure/innocent_web
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "innocentweb1"
+	layer = ABOVE_ALL_MOB_LAYER
+	density = FALSE
+	max_integrity = 35
+	climbable = FALSE
+	dir = SOUTH
+	debris = list(/obj/item/natural/silk = 1)
+	var/lucky_escape
 
-/*	..................   Neuflowers   ................... */
-/obj/structure/flora/rogueflower // ausbushes recolored
-	icon = 'icons/roguetown/misc/pigflora.dmi'
-	icon_state = "reedbush_1"
-
-/obj/structure/innocent_net/Initialize()
+/obj/structure/innocent_web/Initialize()
 	. = ..()
 	icon_state = "innocentweb[rand(1,2)]"
 	return ..()
 
-/obj/structure/innocent_net/attack_hand()
+/obj/structure/innocent_web/attack_hand()
 	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
 	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
 	qdel(src)
 
-/obj/structure/innocent_net/attackby(obj/item, /mob/user, params)
+/obj/structure/innocent_web/attackby(obj/item, /mob/user, params)
 	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
 	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
 	qdel(src)
 
-/obj/structure/innocent_net/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+/obj/structure/innocent_web/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
 	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
 	qdel(src)
 
-/obj/structure/innocent_net/Crossed(atom/movable/AM)
+/obj/structure/innocent_web/Crossed(atom/movable/AM)
 	..()
 	if(isliving(AM))
 		var/mob/living/carbon/human/L = AM
@@ -649,62 +652,6 @@
 	qdel(src)
 
 
-
-/obj/structure/innocent_net/Initialize()
-	. = ..()
-	icon_state = "innocentweb[rand(1,2)]"
-	return ..()
-
-/obj/structure/innocent_net/attack_hand()
-	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
-	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-	qdel(src)
-
-/obj/structure/innocent_net/attackby(obj/item, /mob/user, params)
-	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
-	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-	qdel(src)
-
-/obj/structure/innocent_net/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
-	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-	qdel(src)
-
-/obj/structure/innocent_net/Crossed(atom/movable/AM)
-	..()
-	if(isliving(AM))
-		var/mob/living/carbon/human/L = AM
-		lucky_escape = ( L.STALUC * 4 )
-		L.Immobilize(5)
-		if(L.m_intent == MOVE_INTENT_WALK)
-			L.Immobilize(10)
-			if(prob(lucky_escape))
-				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
-				qdel(src)
-			else
-				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
-				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-				qdel(src)
-		if(L.m_intent == MOVE_INTENT_RUN)
-			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
-			L.Immobilize(20)
-			if(prob(lucky_escape))
-				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
-				qdel(src)
-			else
-				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
-				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-				qdel(src)
-		else
-			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
-			L.Immobilize(5)
-			if(prob(lucky_escape))
-				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
-				qdel(src)
-			else
-				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
-				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-				qdel(src)
 
 /*	..................   Misc   ................... */
 /obj/item/roguestatue/silver/gnome
