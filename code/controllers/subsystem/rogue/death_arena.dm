@@ -12,8 +12,12 @@ SUBSYSTEM_DEF(death_arena)
 	var/list/fighters_heads = list()
 	var/list/fighters = list()
 	var/fighting = FALSE
+	var/fight_force_end = null
 
 /datum/controller/subsystem/death_arena/fire(resumed = 0)
+	if(fight_force_end)
+		if(fight_force_end < world.time)
+			force_end_fight()
 	if(!first_spawn || !second_spawn)
 		return
 	if(fighting)
@@ -55,6 +59,8 @@ SUBSYSTEM_DEF(death_arena)
 	qdel(first)
 	qdel(second)
 
+	fight_force_end = world.time + 10 MINUTES
+
 /datum/controller/subsystem/death_arena/proc/try_end_fight(obj/item/bodypart/head/head, mob/living/carbon/user)
 	if(!istype(head))
 		return FALSE
@@ -83,6 +89,20 @@ SUBSYSTEM_DEF(death_arena)
 
 	fighting = FALSE
 	close_death_gate()
+	fight_force_end = null
+
+/datum/controller/subsystem/death_arena/proc/force_end_fight()
+	for(var/mob/living/carbon/carbon in fighters)
+		fighters -= carbon
+		if(carbon != user)
+			var/turf/spawn_loc = pick(GLOB.underworldcoinspawns)
+			var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(spawn_loc)
+			O.livingname = carbon.name
+			O.ckey = carbon.ckey
+			ADD_TRAIT(O, TRAIT_PACIFISM, TRAIT_GENERIC)
+			add_fighter(O)
+		qdel(carbon)
+	fight_force_end = null
 
 /datum/controller/subsystem/death_arena/proc/open_death_gate()
 	for(var/obj/structure/gate/G in GLOB.biggates)
