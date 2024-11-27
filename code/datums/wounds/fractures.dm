@@ -185,7 +185,9 @@
 
 /datum/wound/fracture/neck/on_mob_gain(mob/living/affected)
 	. = ..()
-	ADD_TRAIT(affected, TRAIT_PARALYSIS, "[type]")
+	//fuck this is stupid
+	if(!istype(affected, /mob/living/carbon/human/species/skeleton/death_arena))
+		ADD_TRAIT(affected, TRAIT_PARALYSIS, "[type]")
 	if(iscarbon(affected))
 		var/mob/living/carbon/carbon_affected = affected
 		carbon_affected.update_disabled_bodyparts()
