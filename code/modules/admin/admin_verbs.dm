@@ -348,12 +348,12 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Adminverbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
-/client/proc/toggle_context_menu()
+/client/proc/toggle_context_menu(always_true = FALSE) //arg is only used for a stupid test in bindings_carbon.dm
 	set category = "Admin"
 	set name = "Right-click Menu"
 	if(!holder)
 		return
-	if(show_popup_menus == FALSE)
+	if(show_popup_menus == FALSE || always_true == TRUE)
 		show_popup_menus = TRUE
 		log_admin("[key_name(usr)] toggled context menu ON.")
 	else
