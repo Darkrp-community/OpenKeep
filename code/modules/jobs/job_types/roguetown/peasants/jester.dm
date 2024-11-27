@@ -56,9 +56,9 @@
  			H.cmode_music = 'sound/music/combat_jester3'
 		else
  			H.cmode_music = pick(
-    	    "sound/music/combat_jester.ogg",
-    	    "sound/music/combat_jester2.ogg"
-		)
+    	   	 "sound/music/combat_jester.ogg",
+    	   	 "sound/music/combat_jester2.ogg"
+			)
 
 /*		if(H.gender == MALE)
 			if(H.dna?.species)
