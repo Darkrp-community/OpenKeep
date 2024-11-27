@@ -128,7 +128,7 @@ SUBSYSTEM_DEF(death_arena)
 	H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 
-	r_hand = /obj/item/rogueweapon/mace/iron
+	r_hand = /obj/item/rogueweapon/mace/steel
 	l_hand = /obj/item/rogueweapon/shield/wood
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/axe/iron
