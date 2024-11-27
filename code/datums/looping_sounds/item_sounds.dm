@@ -15,6 +15,7 @@
 	volume = 100
 	extra_range = -1
 	vary = TRUE
+	//sound_group = /datum/sound_group/torches
 
 /datum/looping_sound/boneloop
 	mid_sounds = list('sound/vo/mobs/ghost/skullpile_loop.ogg')
@@ -28,6 +29,7 @@
 	volume = 100
 	extra_range = -2
 	vary = TRUE
+	sound_group = /datum/sound_group/fire_loop
 
 /datum/looping_sound/boilloop
 	mid_sounds = list('sound/misc/boiling.ogg')
