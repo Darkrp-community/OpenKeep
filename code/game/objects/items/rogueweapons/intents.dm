@@ -147,7 +147,7 @@
 	if(mastermob)
 		if(chargedloop)
 			if(!istype(chargedloop))
-				chargedloop = new chargedloop(list(mastermob))
+				chargedloop = new chargedloop(mastermob)
 
 /datum/intent/proc/on_charge_start() //what the fuck is going on here lol
 	if(mastermob.curplaying)
@@ -155,10 +155,10 @@
 		mastermob.curplaying = null
 	if(chargedloop)
 		if(!istype(chargedloop, /datum/looping_sound))
-			chargedloop = new chargedloop(list(mastermob))
+			chargedloop = new chargedloop(mastermob)
 		else
 			chargedloop.stop()
-		chargedloop.start(chargedloop.output_atoms)
+		chargedloop.start(chargedloop.parent)
 		mastermob.curplaying = src
 
 /datum/intent/proc/on_mouse_up()
@@ -574,3 +574,31 @@
 	candodge = TRUE
 	canparry = TRUE
 	miss_text = "stabs the air!"
+
+/datum/intent/simple/axe
+	name = "hack"
+	icon_state = "instrike"
+	attack_verb = list("hacks at", "chops at", "bashes")
+	animname = "blank22"
+	blade_class = BCLASS_CUT
+	hitsound = list("genchop", "genslash")
+	chargetime = 0
+	penfactor = 0
+	swingdelay = 3
+	candodge = TRUE
+	canparry = TRUE
+//	item_damage_type = "slash"
+
+/datum/intent/simple/spear
+	name = "spear"
+	icon_state = "instrike"
+	attack_verb = list("stabs", "skewers", "bashes")
+	animname = "blank22"
+	blade_class = BCLASS_CUT
+	hitsound = list("genthrust", "genstab")
+	chargetime = 0
+	penfactor = 0
+	swingdelay = 3
+	candodge = TRUE
+	canparry = TRUE
+//	item_damage_type = "stab"

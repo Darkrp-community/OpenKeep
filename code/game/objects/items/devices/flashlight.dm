@@ -10,7 +10,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = null
 	light_system = MOVABLE_LIGHT
-	light_outer_range = 4
+	light_outer_range = 5
 	light_power = 1
 	slot_flags = ITEM_SLOT_BELT
 	possible_item_intents = list(INTENT_GENERIC)
@@ -320,14 +320,14 @@
 	name = "torch"
 	desc = ""
 	w_class = WEIGHT_CLASS_NORMAL
-	light_outer_range = 5
+	light_outer_range = 6
 	force = 1
 	icon = 'icons/roguetown/items/lighting.dmi'
 	icon_state = "torch"
 	item_state = "torch"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
-	light_color = "#ff7b00"
+	light_color = "#f19d30"
 	on_damage = 2
 	flags_1 = null
 	possible_item_intents = list(/datum/intent/hit, /datum/intent/use)
@@ -350,7 +350,7 @@
 
 /obj/item/flashlight/flare/torch/Initialize()
 	. = ..()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 
 /obj/item/flashlight/flare/torch/process()
 	open_flame(heat)

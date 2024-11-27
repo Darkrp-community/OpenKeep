@@ -50,7 +50,7 @@
 /obj/machinery/light/roguestreet/Initialize()
 	soundloop = pick(/datum/looping_sound/streetlamp1,/datum/looping_sound/streetlamp2,/datum/looping_sound/streetlamp3)
 	if(soundloop)
-		soundloop = new soundloop(list(src), FALSE)
+		soundloop = new soundloop(src, FALSE)
 		soundloop.start()
 	GLOB.streetlamp_list += src
 	update_icon()
@@ -78,7 +78,7 @@
 
 /obj/machinery/light/rogue/Initialize()
 	if(soundloop)
-		soundloop = new soundloop(list(src), FALSE)
+		soundloop = new soundloop(src, FALSE)
 		soundloop.start()
 	GLOB.fires_list += src
 	if(fueluse)
@@ -565,7 +565,7 @@
 	var/rawegg = FALSE
 
 /obj/machinery/light/rogue/hearth/Initialize()
-	boilloop = new(list(src), FALSE)
+	boilloop = new(src, FALSE)
 	. = ..()
 
 /obj/machinery/light/rogue/hearth/attackby(obj/item/W, mob/living/user, params)
