@@ -29,17 +29,21 @@ SUBSYSTEM_DEF(death_arena)
 	waiting_fighters -= fighter
 
 /datum/controller/subsystem/death_arena/proc/start_fight()
+	fighting = TRUE
+
 	var/mob/living/carbon/spirit/first = pick(waiting_fighters)
 	remove_fighter(first)
 	var/mob/living/carbon/human/species/skeleton/first_skeleton = new /mob/living/carbon/human/species/skeleton(get_turf(first_spawn))
 	first_skeleton.name = first.livingname
 	first_skeleton.equipOutfit(new /datum/outfit/job/roguetown/arena_skeleton)
+	RegisterSignal(first_skeleton, COMSIG_LIVING_DEATH, PROC_REF(open_death_gate))
 
 	var/mob/living/carbon/spirit/second = pick(waiting_fighters)
 	remove_fighter(second)
 	var/mob/living/carbon/human/species/skeleton/second_skeleton = new /mob/living/carbon/human/species/skeleton(get_turf(second_spawn))
 	second_skeleton.name = first.livingname
 	second_skeleton.equipOutfit(new /datum/outfit/job/roguetown/arena_skeleton)
+	RegisterSignal(second_skeleton, COMSIG_LIVING_DEATH, PROC_REF(open_death_gate))
 
 	fighters = list(first_skeleton, second_skeleton)
 
@@ -50,8 +54,6 @@ SUBSYSTEM_DEF(death_arena)
 
 	qdel(first)
 	qdel(second)
-
-	fighting = TRUE
 
 /datum/controller/subsystem/death_arena/proc/try_end_fight(obj/item/bodypart/head/head, mob/living/carbon/user)
 	if(!istype(head))
@@ -78,6 +80,19 @@ SUBSYSTEM_DEF(death_arena)
 	fighters = list()
 
 	fighting = FALSE
+	close_death_gate()
+
+/datum/controller/subsystem/death_arena/proc/open_death_gate()
+	for(var/obj/structure/gate/G in GLOB.biggates)
+		if(G.gid != "death")
+			continue
+		G.open()
+
+/datum/controller/subsystem/death_arena/proc/close_death_gate()
+	for(var/obj/structure/gate/G in GLOB.biggates)
+		if(G.gid != "death")
+			continue
+		G.close()
 
 /datum/outfit/job/roguetown/arena_skeleton/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	..()
@@ -97,6 +112,6 @@ SUBSYSTEM_DEF(death_arena)
 	desc = "It awaits an offering of your triumphs"
 
 /obj/structure/table/wood/fine/altar/after_added_effects(obj/item/item, mob/user)
-	if(!istype(item, obj/item/bodypart/head))
+	if(!istype(item, /obj/item/bodypart/head))
 		return
-	process_fight_end(item, user)
+	SSdeath_arena.process_fight_end(item, user)
