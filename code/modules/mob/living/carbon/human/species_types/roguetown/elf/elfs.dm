@@ -83,12 +83,15 @@
 
 /datum/species/elf/snow/get_skin_list()
 	return sortList(list(
-		"Plain Elf" = SKIN_COLOR_PLAIN_ELF,
-		"Mountain Elf" = SKIN_COLOR_MOUNTAIN_ELF,
-		"Coastal Elf" = SKIN_COLOR_COASTAL_ELF,
-		"Wood Elf" = SKIN_COLOR_WOOD_ELF,
-		"Sea Elf" = SKIN_COLOR_SEA_ELF,
-		"Sand Elf" = SKIN_COLOR_SAND_ELF,
+		"Plain Elf" = SKIN_COLOR_PLAIN_ELF, // - (White 2)
+		"Mountain Elf" = SKIN_COLOR_MOUNTAIN_ELF, // - (White 3)
+		"Coastal Elf" = SKIN_COLOR_COASTAL_ELF, // - (White 4)
+		"Wood Elf" = SKIN_COLOR_WOOD_ELF, // - (Mediterranean 1)
+		"Sea Elf" = SKIN_COLOR_SEA_ELF, // - (Mediterranean 2)
+		"Jungle Elf" = SKIN_COLOR_JUNGLE_ELF, // - (Latin)
+		"Savannah Elf" = SKIN_COLOR_SAVANNAH_ELF, // - (Middle-Eastern)
+		"Sand Elf" = SKIN_COLOR_SAND_ELF, // - (Black 1)
+		"Crimson Elf" = SKIN_COLOR_CRIMSON_ELF, // - (Black2)
 	))
 
 /datum/species/elf/snow/get_hairc_list()

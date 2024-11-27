@@ -111,18 +111,19 @@
 
 /datum/species/tieberian/get_skin_list()
 	return sortList(list(
-		"Crimson Land" = SKIN_COLOR_CRIMSON_LAND,
-		"Sun Stained" = SKIN_COLOR_SUNSTAINED,
-		"Sundered" = SKIN_COLOR_SUNDERED,
-		"Zarkana" = SKIN_COLOUR_ARCANA,
-		"Zarconum" = SKIN_COLOUR_ZARCONUM,
-		"Abyssium" = SKIN_COLOUR_ABYSS,
-		"Castillian" = SKIN_COLOR_CASTILLIAN,
-		"Asturias" = SKIN_COLOR_ASTURIAS,
-		"Vaquero" = SKIN_COLOR_VAQUERO,
-		"Zanguine" = SKIN_COLOR_ZANGUINE,
-		"Ash" = SKIN_COLOUR_ASH,
-		"Arlenneth" = SKIN_COLOR_ARLENNETH,
+		"Crimson Land" = SKIN_COLOR_CRIMSON_LAND, // - (Bright red)
+		"Sun Stained" = SKIN_COLOR_SUNSTAINED, // - (Dark orange)
+		"Sundered" = SKIN_COLOR_SUNDERED, //  - (Orange)
+		"Zarkana" = SKIN_COLOR_ARCANA, // - (Dark violet)
+		"Zarconum" = SKIN_COLOR_ZARCONUM, // - (Pink)
+		"Flayer" = SKIN_COLOR_FLAYER, // - (Purple)
+		"Abyssium" = SKIN_COLOR_ABYSS, // - (Navy blue)
+		"Castillian" = SKIN_COLOR_CASTILLIAN, // - (Pale red)
+		"Asturias" = SKIN_COLOR_ASTURIAS, // - (Clay red)
+		"Vaquero" = SKIN_COLOR_VAQUERO, // - (Earthly red)
+		"Zanguine" = SKIN_COLOR_ZANGUINE, // - (Dark violet)
+		"Ash" = SKIN_COLOR_ASH, // - (Pale blue)
+		"Arlenneth" = SKIN_COLOR_ARLENNETH, // - (Lavender blue)
 	))
 
 /datum/species/tieberian/get_hairc_list()

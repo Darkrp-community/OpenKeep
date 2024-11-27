@@ -8,6 +8,7 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/check_pq,
 	/client/proc/spawn_pollution,
 	/client/proc/adjust_pq,
+	/client/proc/stop_restart,
 	/client/proc/hearallasghost,
 	/client/proc/admin_ghost,
 	/client/proc/ghost_up,
@@ -126,8 +127,6 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/admin_change_sec_level,
 	/client/proc/run_weather,
 	/client/proc/run_particle_weather,
-	/client/proc/mass_zombie_infection,
-	/client/proc/mass_zombie_cure,
 	/client/proc/show_tip,
 	/client/proc/smite,
 	))

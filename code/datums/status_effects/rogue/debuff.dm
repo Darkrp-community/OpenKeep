@@ -240,7 +240,7 @@
 
 /datum/status_effect/debuff/rotfood/on_apply()
 	. = ..()
-	if(iscarbon(owner))
+	if(iscarbon(owner) && !(HAS_TRAIT(owner, TRAIT_ROT_EATER)))
 		var/mob/living/carbon/C = owner
 		C.add_nausea(200)
 		C.add_stress(/datum/stressevent/rotfood)

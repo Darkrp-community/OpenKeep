@@ -30,19 +30,6 @@
 	wander = TRUE
 	attack_speed = -10
 
-/obj/item/bodypart/chest/skeleton
-	max_damage = 450
-/obj/item/bodypart/head/skeleton
-	max_damage = 400
-/obj/item/bodypart/l_arm/skeleton
-	max_damage = 300
-/obj/item/bodypart/r_arm/skeleton
-	max_damage = 300
-/obj/item/bodypart/r_leg/skeleton
-	max_damage = 360
-/obj/item/bodypart/l_leg/skeleton
-	max_damage = 360
-
 /mob/living/carbon/human/species/skeleton/Initialize()
 	. = ..()
 	cut_overlays()
@@ -358,3 +345,8 @@
 	mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+
+/mob/living/carbon/human/species/skeleton/death_arena/after_creation()
+	..()
+	equipOutfit(new /datum/outfit/job/roguetown/arena_skeleton)
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)

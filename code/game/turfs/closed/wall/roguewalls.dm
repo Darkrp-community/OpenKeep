@@ -378,3 +378,20 @@
 	baseturfs = list(/turf/open/floor/rogue/concrete)
 	climbdiff = 1
 	damage_deflection = 20
+
+/turf/closed/wall/mineral/rogue/underbrick
+	name = "erebus stone wall"
+	desc = "The toils of hard-working shades."
+	icon = 'icons/turf/underbrick.dmi'
+	icon_state = "box"
+	smooth = SMOOTH_MORE
+	wallclimb = FALSE
+	blade_dulling = DULLING_BASH
+	max_integrity = 99999
+	sheet_type = null
+	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
+	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
+	above_floor = /turf/open/floor/rogue/church
+	baseturfs = list(/turf/open/floor/rogue/church)
+	neighborlay = "dirtedge"
+	climbdiff = 6
