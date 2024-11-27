@@ -789,3 +789,61 @@
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
 							/obj/item/reagent_containers/food/snacks/rogue/honey = 2,
 							/obj/item/natural/silk = 3)
+
+// ===================================================================================
+/*	..................   Malum Shrine (Dromkis revenge)   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/malum
+	name = "statue of Malum"
+	desc = ""
+	icon = 'icons/roguetown/misc/tallandwide.dmi'
+	icon_state = "malum"
+	bound_width = 64
+
+/*	..................   Astrata Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/astrata
+	name = "The Sun Queen"
+	desc = ""
+	icon = 'icons/roguetown/misc/tallandwide.dmi'
+	icon_state = "astrata"
+	pixel_x = -16
+
+/*	..................   Necra Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/necra
+	name = "The Undermaiden"
+	desc = ""
+	icon = 'icons/roguetown/misc/tallandwide.dmi'
+	icon_state = "necra"
+	pixel_x = -16
+
+/*	..................   Dendor Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/dendor
+	name = "The Tree Father"
+	desc = ""
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	icon_state = "mystical"
+	pixel_x = -10
+
+/*	..................   Abyssor Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/abyssor
+	name = "The World Whale"
+	desc = ""
+	icon = 'icons/roguetown/misc/96x96.dmi'
+	icon_state = "abyssor"
+	bound_width = 64
+	pixel_x = -25
+
+// ==============================================================
+/*	..................   Various mapping aides   ................... */
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/broken
+	desc = "A long shirt of maille, this one is made for a short man it seems."
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/broken/Initialize()
+	. = ..()
+	obj_break()
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/battered
+	desc = "A good quality haubergon, but weakened by many blows."
+	max_integrity = INTEGRITY_STANDARD
+
+/obj/structure/roguethrone/statues
+	icon = 'modular/Mapping/icons/96x96.dmi'
+

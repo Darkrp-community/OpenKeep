@@ -384,7 +384,8 @@
 	probby = 50
 	color = "#ff0000"
 	spawned = list(
-		/obj/structure/idle_enemy/hairy_spider = 100	)
+		/obj/structure/idle_enemy/orc_warrior = 65,
+		/obj/structure/idle_enemy/orc_spearman = 35	)
 
 /*	..................   Haunts Danger   ................... */
 /obj/effect/spawner/roguemap/haunts_maybe

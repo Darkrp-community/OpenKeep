@@ -616,6 +616,9 @@
 /obj/structure/flora/roguegrass,
 /obj/structure/flora/rock/pile,
 /obj/item/natural/stone,
+/obj/machinery/light/rogue/firebowl/stump{
+	pixel_y = 8
+	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/town)
 "aJh" = (
@@ -1088,6 +1091,13 @@
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/church/chapel)
+"bkq" = (
+/obj/structure/flora/roguegrass,
+/obj/machinery/light/rogue/firebowl/stump{
+	pixel_y = 8
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/exposed/town)
 "bld" = (
 /obj/structure/flora/roguegrass,
 /obj/structure/fluff/railing/wood,
@@ -2584,9 +2594,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/under/basement)
 "cYF" = (
-/obj/structure/closet/dirthole/grave,
-/mob/living/simple_animal/hostile/zombie,
-/turf/open/floor/rogue/grass,
+/obj/structure/flora/newleaf/corner{
+	dir = 9
+	},
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
 	})
@@ -2989,11 +3000,11 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/under/basement)
 "dwS" = (
-/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
+/obj/structure/flora/roguegrass,
+/obj/structure/flora/rogueflower/ppflowers,
+/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
-	})
+/area/rogue/indoors/town/church/chapel)
 "dxk" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/exposed/under/basement)
@@ -5566,6 +5577,7 @@
 /obj/structure/table/wood/reinforced_alt{
 	name = "altar of Warfare"
 	},
+/obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/sandstone,
 /area/rogue/indoors/town/church/chapel)
 "fYS" = (
@@ -6383,6 +6395,7 @@
 /obj/structure/table/wood/reinforced_alt{
 	name = "altar of Knowledge"
 	},
+/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/sandstone,
 /area/rogue/indoors/town/church/chapel)
 "gSV" = (
@@ -7607,6 +7620,14 @@
 	icon_state = "greenstone"
 	},
 /area/rogue/indoors)
+"ijA" = (
+/obj/machinery/light/rogue/firebowl/stump{
+	pixel_y = 8
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/rtfield{
+	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
+	})
 "ijC" = (
 /obj/structure/stairs{
 	dir = 1;
@@ -7768,6 +7789,13 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/garrison)
+"ism" = (
+/obj/item/candle/yellow/lit/infinite/strong{
+	pixel_x = 0;
+	pixel_y = 4
+	},
+/turf/closed/wall/mineral/rogue/decowood,
+/area/rogue/indoors/town/tavern/saiga)
 "iso" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
@@ -8458,6 +8486,12 @@
 /obj/structure/bars/pipe,
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/indoors/shelter/town/dwarf)
+"jeq" = (
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/floor/rogue/oak,
+/area/rogue/indoors/town/entrance{
+	first_time_text = "Rockhamlet"
+	})
 "jes" = (
 /obj/structure/flora/roguegrass,
 /obj/effect/decal/cobbleedge/mossy_small{
@@ -8817,6 +8851,15 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/church)
+"jxi" = (
+/obj/structure/flora/roguegrass,
+/obj/machinery/light/rogue/firebowl/stump{
+	pixel_y = 8
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/rtfield{
+	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
+	})
 "jyq" = (
 /obj/effect/decal/cleanable/dirt/cobweb{
 	dir = 1
@@ -9151,13 +9194,9 @@
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
 	})
 "jMn" = (
-/obj/structure/fluff/psycross/crafted,
-/obj/structure/flora/roguegrass,
-/obj/effect/decal/cleanable/blood/old,
+/obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
-	})
+/area/rogue/outdoors/town)
 "jMp" = (
 /obj/structure/stairs/stone{
 	dir = 4;
@@ -10399,6 +10438,10 @@
 /obj/structure/ladder,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/under/basement)
+"lfe" = (
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/floor/rogue/metal,
+/area/rogue/outdoors/town)
 "lfg" = (
 /obj/effect/decal/remains/human/old,
 /turf/open/floor/rogue/dirt,
@@ -11031,7 +11074,7 @@
 /obj/structure/fluff/psycross/crafted/shrine/abyssor{
 	pixel_x = -25
 	},
-/turf/open/floor/rogue/sandstone,
+/turf/open/water/cleanshallow,
 /area/rogue/indoors/town/church/chapel)
 "lNb" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
@@ -12088,7 +12131,7 @@
 /area/rogue/outdoors/exposed/dwarf)
 "mWp" = (
 /obj/item/storage/belt/rogue/pouch,
-/turf/open/floor/rogue/grass,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
 	})
@@ -12744,6 +12787,10 @@
 	},
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town)
+"nHt" = (
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/town)
 "nHQ" = (
 /obj/structure/roguemachine/scomm{
 	pixel_y = -32
@@ -15711,7 +15758,7 @@
 	})
 "qGH" = (
 /obj/structure/flora/roguegrass/water,
-/obj/structure/flora/ausbushes/fernybush,
+/obj/machinery/light/rogue/lanternpost/fixed,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/exposed/manorgarri)
 "qGI" = (
@@ -17048,7 +17095,7 @@
 /area/rogue/indoors/shelter/mountains)
 "rYy" = (
 /obj/structure/well{
-	name = "well of man-eating ghouls"
+	icon_state = "well"
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/rtfield{
@@ -20307,14 +20354,9 @@
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
 	})
 "voT" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 8;
-	icon_state = "torchwall1"
-	},
-/turf/open/floor/rogue/oak,
-/area/rogue/indoors/town/entrance{
-	first_time_text = "Rockhamlet"
-	})
+/obj/machinery/light/rogue/wallfire/candle,
+/turf/open/floor/rogue/sandstone/temple,
+/area/rogue/indoors/town/church)
 "voW" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 1
@@ -22050,7 +22092,9 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town/roofs)
 "xgZ" = (
-/obj/structure/well,
+/obj/structure/well{
+	icon_state = "well"
+	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/exposed/town)
 "xhq" = (
@@ -22663,6 +22707,12 @@
 /obj/structure/bars,
 /turf/closed/mineral/rogue,
 /area/rogue/indoors/shelter/town/dwarf)
+"xPp" = (
+/obj/machinery/light/rogue/firebowl/standing,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/rtfield{
+	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
+	})
 "xPs" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/cloak/half/red,
@@ -51022,7 +51072,7 @@ wdV
 wdV
 wdV
 wdV
-nuo
+lif
 bXs
 wdV
 lcy
@@ -52013,9 +52063,9 @@ bXs
 iNQ
 bXs
 lif
-dwS
-uTy
-nAp
+lif
+lif
+lif
 bXs
 bXs
 wdV
@@ -52191,7 +52241,7 @@ hBb
 jWp
 iEP
 iEP
-nfz
+rPy
 nAp
 bXs
 bXs
@@ -52201,21 +52251,21 @@ rQl
 fie
 bXs
 uTy
-dgN
+uTy
 nAp
 lzl
 dgN
 lzl
 nAp
-kjb
-bXs
-lif
+uTy
+uTy
+uTy
 mWp
 aKZ
 uTy
 nAp
-bXs
-nuo
+uTy
+xXs
 lif
 wdV
 wdV
@@ -52402,8 +52452,8 @@ lif
 lif
 bXs
 bXs
-lif
-jMn
+nAp
+bXs
 bXs
 bXs
 ptr
@@ -52993,8 +53043,8 @@ bXs
 wdV
 wdV
 lif
-bXs
-bXs
+uTy
+uTy
 wdV
 wdV
 bXs
@@ -53383,7 +53433,7 @@ qnw
 wdV
 wdV
 nAp
-bXs
+uTy
 lif
 wdV
 bXs
@@ -53967,7 +54017,7 @@ qnw
 wdV
 bXs
 nAp
-bXs
+uTy
 wdV
 qnw
 wdV
@@ -54550,7 +54600,7 @@ wdV
 qnw
 wdV
 nAp
-bXs
+uTy
 lif
 wdV
 bXs
@@ -55323,7 +55373,7 @@ bXs
 wdV
 bXs
 wdV
-wdV
+jlO
 ddL
 grn
 mGz
@@ -55516,8 +55566,8 @@ wdV
 wdV
 wdV
 qnw
-wdV
-wYX
+jlO
+cYF
 kDH
 tfH
 dew
@@ -55568,7 +55618,7 @@ qjp
 dsq
 qbM
 ueO
-bXs
+xPp
 bXs
 bXs
 xEi
@@ -55709,8 +55759,8 @@ wdV
 prU
 prU
 prU
-wdV
-wdV
+jlO
+jlO
 tfH
 vIO
 hij
@@ -55902,7 +55952,7 @@ nAp
 uTy
 nAp
 uTy
-lif
+xXs
 uTy
 uTy
 agk
@@ -57543,7 +57593,7 @@ uTy
 nAp
 uTy
 fNt
-bXs
+ijA
 uTy
 uTy
 qVA
@@ -59844,9 +59894,9 @@ pKw
 oSt
 aeu
 suQ
+jeq
 bMJ
 bMJ
-voT
 wbA
 tXt
 bXs
@@ -60978,12 +61028,12 @@ vQY
 lfI
 ozQ
 lfI
-lfI
+jMn
 uXz
 pKw
 pKw
 smY
-pKw
+nHt
 xrF
 xHC
 xrF
@@ -61007,7 +61057,7 @@ dZd
 dZd
 dZd
 pjU
-rqR
+lfe
 lfI
 cvO
 pms
@@ -61018,16 +61068,16 @@ lJr
 lJr
 lJr
 cDD
-vWP
-vWP
-vWP
-xkE
-vWP
-xkE
+bkq
 vWP
 vWP
 xkE
 vWP
+xkE
+vWP
+vWP
+xkE
+bkq
 vqa
 dZq
 dZq
@@ -61052,7 +61102,7 @@ lif
 lif
 bXs
 nAp
-lif
+jxi
 bXs
 lif
 bXs
@@ -61766,7 +61816,7 @@ pSa
 pSa
 non
 mzB
-pSa
+ism
 rec
 myP
 myP
@@ -62522,7 +62572,7 @@ slK
 lfI
 jcR
 vwC
-uxS
+vwC
 uxS
 ezb
 uxS
@@ -62729,7 +62779,7 @@ dUL
 aDZ
 oEb
 pKw
-pKw
+nHt
 pKw
 dxL
 egz
@@ -63309,7 +63359,7 @@ cNZ
 hCf
 sph
 sph
-pdp
+voT
 pdp
 pdp
 kvS
@@ -63493,7 +63543,7 @@ lif
 jcR
 vAR
 ggI
-gkW
+dwS
 jJQ
 uuL
 sph
@@ -66380,7 +66430,7 @@ xKg
 sVV
 sVV
 sVV
-cYF
+jGG
 jjF
 lif
 bXs
@@ -76516,12 +76566,12 @@ rGj
 rGj
 rGj
 rGj
-tRN
-tRN
-tRN
-tRN
-tRN
-tRN
+rGj
+rGj
+rGj
+rGj
+rGj
+rGj
 rGj
 rGj
 rGj
@@ -76710,12 +76760,12 @@ rGj
 rGj
 rGj
 rGj
-tRN
 rGj
-tRN
-tRN
-tRN
-tRN
+rGj
+rGj
+rGj
+rGj
+rGj
 rGj
 rGj
 rGj
@@ -76904,12 +76954,12 @@ rGj
 rGj
 rGj
 rGj
-hUT
-hUT
-hUT
-hUT
-hUT
-hUT
+rGj
+rGj
+rGj
+rGj
+rGj
+rGj
 rGj
 rGj
 rGj
@@ -77098,12 +77148,12 @@ rGj
 rGj
 rGj
 rGj
-hUT
-hUT
-hUT
 rGj
-hUT
-hUT
+rGj
+rGj
+rGj
+rGj
+rGj
 rGj
 rGj
 rGj

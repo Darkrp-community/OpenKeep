@@ -600,7 +600,7 @@
 	canSmoothWith = list(/turf/open/floor/rogue,
 						/turf/closed/mineral,
 						/turf/closed/wall/mineral)
-	slowdown = 0
+//	slowdown = 0
 
 /turf/open/floor/rogue/underworld/road/Initialize()
 	. = ..()
@@ -1061,7 +1061,7 @@
 
 /turf/open/floor/rogue/cobble/mossy/alt
 	icon_state = "mossyalt1"
-	canSmoothWith = list(/turf/open/floor/rogue/cobble/mossy/alt)
+	canSmoothWith = FALSE
 
 /turf/open/floor/rogue/cobble/mossy/alt/Initialize()
 	. = ..()
