@@ -136,11 +136,44 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 	converted_type = /area/rogue/indoors/shelter/rtfield
 
+/area/rogue/outdoors/rtfield/hamlet
+	name = "hamlet surroundings"
+	ambush_times = list("night","dusk")
+	ambush_types = list(
+				/turf/open/floor/rogue/grass/peril)
+	ambush_mobs = list(
+				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 60,
+				/mob/living/carbon/human/species/goblin/npc/ambush = 50,
+				/mob/living/simple_animal/pet/cat/rogue/cabbit = 10)
+	first_time_text = "ROCKHILL BASIN"
+
 /area/rogue/outdoors/rtfield/plague_district
-//	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50) to do the proper mob
+	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/ambush = 50)
 	first_time_text = "PLAGUE DISTRICT"
-	icon_state = "yellow"
+	color = "#d4da75"
 	name = "plague district"
+	ambush_types = list(
+				/turf/open/floor/rogue/cobblerock)
+
+/area/rogue/outdoors/rtfield/outlaw
+	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/ambush = 50)
+	name = "outlaw hideout"
+	color = "#e9baa3"
+
+/area/rogue/outdoors/rtfield/boggish
+	ambush_mobs = list(/mob/living/carbon/human/species/goblin/npc/sea = 50)
+	name = "bog approaches"
+	color = "#7db36e"
+
+/area/rogue/outdoors/rtfield/woodish
+	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50)
+	name = "woods approaches"
+	color = "#7db36e"
+
+/area/rogue/outdoors/rtfield/spooky
+	ambush_mobs = list(/mob/living/simple_animal/hostile/rogue/haunt = 50)
+	name = "spooky place"
+	color = "#9294d3"
 
 /area/rogue/indoors/shelter/rtfield
 	icon_state = "rtfield"

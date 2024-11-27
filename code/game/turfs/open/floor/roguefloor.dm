@@ -1028,6 +1028,12 @@
 	color = "#ffffff"
 	. = ..()
 
+/turf/open/floor/rogue/grass/peril	// for ambushes
+	color = "#d89d9d"
+/turf/open/floor/rogue/grass/peril/Initialize()
+	color = "#ffffff"
+	. = ..()
+
 /turf/open/floor/rogue/oak	// new oak
 	icon_state = "oak"
 /turf/open/floor/rogue/oak/broken

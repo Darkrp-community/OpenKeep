@@ -40,12 +40,16 @@
 	icon_state = "ppflowers_[rand(1, 3)]"
 	. = ..()
 
-/obj/structure/flora/rogueflower/stalkybush
-	icon_state = "stalkybush_1"
+/obj/structure/flora/roguegrass/stalky
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/misc/pigflora.dmi'
+	icon_state = "stalkygrass"
+	opacity = FALSE
 
-/obj/structure/flora/rogueflower/stalkybush/Initialize()
-	icon_state = "stalkybush_[rand(1, 3)]"
-	. = ..()
+/obj/structure/flora/roguegrass/stalky/update_icon()
+	dir = pick(GLOB.cardinals)
+
 
 // ===================================================================================
 /*	..................   Dwarf Outpost   ................... */
@@ -805,7 +809,7 @@
 	desc = ""
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 	icon_state = "astrata"
-	pixel_x = -16
+	pixel_x = -18
 
 /*	..................   Necra Shrine   ................... */
 /obj/structure/fluff/psycross/crafted/shrine/necra

@@ -2,6 +2,7 @@
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "remains"
 	color = "#aa9b00"
+	mob_type = /mob/living/carbon/human/species/orc
 
 /obj/effect/mob_spawn/human/orc/corpse/savageorc
 	mob_name = "Savage Orc"

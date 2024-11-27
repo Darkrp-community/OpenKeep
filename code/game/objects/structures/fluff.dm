@@ -853,6 +853,7 @@
 	icon_state = "elfs"
 
 /obj/structure/fluff/statue/pillar
+	name = "wooden support"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "pillar"
 
