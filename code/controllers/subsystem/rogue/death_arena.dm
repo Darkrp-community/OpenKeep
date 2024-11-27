@@ -11,10 +11,23 @@ SUBSYSTEM_DEF(death_arena)
 	///this is just so I can easily reference the head later
 	var/list/fighters_heads = list()
 	var/list/fighters = list()
+	///we check if spirits here aswell
+	var/list/tollless_clients = list()
 	var/fighting = FALSE
 	var/fight_force_end = null
 
 /datum/controller/subsystem/death_arena/fire(resumed = 0)
+	for(var/client/client  as anything in tollless_clients)
+		if(QDELETED(client))
+			tollless_clients -= client
+			continue
+		if(world.time > tollless_clients[client])
+			if(istype(client.mob, /mob/living/carbon/spirit))
+				var/mob/living/carbon/spirit/spirit = client.mob
+				spirit.give_patron_toll()
+				remove_fighter(spirit)
+				tollless_clients -= client
+
 	if(fight_force_end)
 		if(fight_force_end < world.time)
 			force_end_fight()
@@ -28,6 +41,7 @@ SUBSYSTEM_DEF(death_arena)
 
 /datum/controller/subsystem/death_arena/proc/add_fighter(mob/living/fighter)
 	waiting_fighters += fighter
+	tollless_clients[fighter.client] = world.time + 8 MINUTES
 
 /datum/controller/subsystem/death_arena/proc/remove_fighter(mob/living/fighter)
 	waiting_fighters -= fighter
@@ -77,6 +91,7 @@ SUBSYSTEM_DEF(death_arena)
 
 	fighters_heads = list()
 	user.returntolobby()
+	tollless_clients -= user.client
 
 	for(var/mob/living/carbon/carbon in fighters)
 		fighters -= carbon

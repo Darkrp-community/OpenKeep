@@ -186,6 +186,10 @@
 /obj/machinery/light/rogue/firebowl/standing/blue,
 /turf/open/floor/rogue/churchrough,
 /area/rogue/underworld)
+"Jx" = (
+/obj/item/underworld/coin,
+/turf/open/floor/rogue/underworld/road,
+/area/rogue/underworld)
 "Kf" = (
 /obj/machinery/light/rogue/firebowl/standing/blue,
 /turf/open/floor/rogue/underworld/road,
@@ -23628,7 +23632,7 @@ xn
 xn
 xn
 Bj
-Lk
+Jx
 Lk
 Lk
 Lk
@@ -25837,7 +25841,7 @@ xn
 PP
 IP
 Lk
-Wt
+Lk
 Lk
 Lk
 Xt
@@ -25967,7 +25971,7 @@ xn
 xn
 PP
 PP
-Wt
+PP
 IP
 Lk
 Lk
@@ -26097,10 +26101,10 @@ xn
 xn
 PP
 PP
-Wt
 PP
 PP
-IP
+PP
+Bj
 sz
 Wt
 ol
@@ -26228,12 +26232,12 @@ xn
 PP
 PP
 Wt
-Lk
-Kf
-PP
-PP
-sz
-Sp
+Wt
+Wt
+Wt
+Wt
+Wt
+ol
 ol
 RL
 Bj
@@ -27676,7 +27680,7 @@ IP
 Lk
 Lk
 PP
-Lk
+Jx
 Lk
 PP
 PP
@@ -27934,7 +27938,7 @@ Lk
 Lk
 PP
 PP
-Lk
+Jx
 Lk
 Lk
 Lk
@@ -28325,7 +28329,7 @@ PP
 PP
 PP
 PP
-PP
+Lk
 PP
 PP
 PP
@@ -28716,7 +28720,7 @@ Lk
 PP
 PP
 Lk
-Lk
+Jx
 PP
 PP
 PP
@@ -29358,7 +29362,7 @@ kH
 kH
 kH
 kH
-Lk
+PP
 Lk
 PP
 Lk
@@ -29470,7 +29474,7 @@ PP
 Lk
 Lk
 Lk
-Lk
+PP
 kH
 kH
 kH
@@ -29488,7 +29492,7 @@ kH
 kH
 kH
 kH
-Lk
+PP
 Lk
 Lk
 Lk
@@ -29600,7 +29604,7 @@ PP
 Lk
 Lk
 Lk
-Lk
+PP
 kH
 kH
 kH
@@ -29886,7 +29890,7 @@ Lk
 Lk
 Lk
 Lk
-Lk
+Jx
 Lk
 Lk
 PP
@@ -30007,7 +30011,7 @@ kH
 kH
 kH
 kH
-Lk
+PP
 Lk
 PP
 PP
@@ -30116,7 +30120,7 @@ Lk
 PP
 Lk
 Lk
-Lk
+Jx
 Lk
 Lk
 PP
@@ -30136,7 +30140,7 @@ kH
 kH
 kH
 kH
-Lk
+PP
 Lk
 PP
 PP
@@ -30393,7 +30397,7 @@ kH
 kH
 kH
 kH
-Lk
+PP
 Lk
 Lk
 Lk
@@ -30649,7 +30653,7 @@ kH
 kH
 kH
 kH
-Lk
+PP
 Lk
 Lk
 Lk
@@ -30775,10 +30779,10 @@ Lk
 Lk
 PP
 PP
-Lk
-Lk
-Lk
-Lk
+PP
+PP
+PP
+PP
 PP
 PP
 PP
@@ -30786,7 +30790,7 @@ PP
 Lk
 Lk
 Lk
-Lk
+Jx
 Lk
 Lk
 Lk
@@ -30896,7 +30900,7 @@ Lk
 Lk
 Lk
 Lk
-Lk
+Jx
 Lk
 Lk
 Lk
@@ -31963,7 +31967,7 @@ Lk
 Lk
 Lk
 Lk
-Lk
+Jx
 Lk
 Lk
 PP
@@ -32066,14 +32070,14 @@ PP
 Lk
 Lk
 Lk
+Jx
 Lk
 Lk
 Lk
 Lk
 Lk
 Lk
-Lk
-Lk
+Jx
 Lk
 Lk
 Lk
@@ -32217,7 +32221,7 @@ Lk
 PP
 PP
 Lk
-Lk
+Jx
 Lk
 Lk
 Lk
@@ -32342,7 +32346,7 @@ Lk
 Lk
 PP
 PP
-Lk
+Jx
 Lk
 PP
 PP
