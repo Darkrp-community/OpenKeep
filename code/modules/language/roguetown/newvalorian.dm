@@ -9,7 +9,7 @@
 	space_chance = 55
 	default_priority = 80
 	icon_state = "asse"
-	spans = list(SPAN_GEN)
+	spans = list(SPAN_NEWVALORIAN)
 	syllables = list(
 "la",
 "ne",
