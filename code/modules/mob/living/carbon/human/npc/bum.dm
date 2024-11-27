@@ -17,6 +17,11 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 
 	wander = TRUE
 
+/*	..................   Hostile Bum   ................... */
+/mob/living/carbon/human/species/human/northern/bum/ambush/Initialize()
+	. = ..()
+	name = pick("Madman", "Creep", "Lunatic", "Leper")
+
 /mob/living/carbon/human/species/human/northern/bum/retaliate(mob/living/L)
 	var/newtarg = target
 	.=..()

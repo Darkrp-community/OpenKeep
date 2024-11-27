@@ -1,467 +1,51 @@
-/*	..................   Loot spawners   ................... */
-/obj/effect/spawner/roguemap/loot
-	icon_state = "loot"
-	probby = 50
+// ======================================================================
 
-/obj/effect/spawner/roguemap/loot/common
-	spawned = list(
-		/obj/item/roguecoin/copper = 5,
-		/obj/item/roguecoin/copper/pile = 15,
-		/obj/item/natural/cloth = 10,
-		/obj/item/storage/belt/rogue/pouch = 5,
-		/obj/item/storage/belt/rogue/pouch/coins/poor = 5,
-		/obj/item/storage/belt/rogue/leather/rope = 10,
-		/obj/item/natural/bundle/stick = 10,
-		/obj/item/grown/log/tree/small = 15,
-		/obj/item/natural/hide = 4,
-		/obj/item/clothing/shoes/roguetown/gladiator = 5,
-		/obj/item/kitchen/spoon = 1,
-		/obj/item/reagent_containers/glass/bowl = 1,
+/*	..................   Pigflowers   ................... */
+/obj/structure/flora/rogueflower // ausbushes recolored
+	icon = 'icons/roguetown/misc/pigflora.dmi'
+	icon_state = "reedbush_1"
 
-		)
+/obj/structure/flora/rogueflower/reedbush
+	icon_state = "reedbush_1"
 
-/obj/effect/spawner/roguemap/loot/weapon
-	spawned = list(
-		/obj/item/roguecoin/copper/pile = 15,
-		/obj/item/rogueweapon/knife/hunting = 10,
-		/obj/item/rogueweapon/knife/dagger = 8,
-		/obj/item/rogueweapon/knife/dagger/steel = 4,
-		/obj/item/rogueweapon/knife/dagger/silver = 2,
-		/obj/item/rogueweapon/sword/iron = 3,
-		/obj/item/rogueweapon/axe/iron = 10,
-		/obj/item/rogueweapon/mace = 5,
-		/obj/item/quiver/arrows = 5,
-		/obj/item/rogueweapon/sword/short = 5,
-		/obj/item/clothing/suit/roguetown/armor/leather = 10,
-		/obj/item/clothing/suit/roguetown/armor/gambeson = 15,
-		/obj/item/clothing/gloves/roguetown/chain/iron = 3,
-		/obj/item/clothing/neck/roguetown/coif = 3,
-		/obj/item/clothing/shoes/roguetown/gladiator = 5
-		)
-
-
-/obj/effect/spawner/roguemap/loot/jewelry
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
-	icon_state = "golden"
-	color = "#06b606"
-	spawned = list(
-		/obj/item/roguestatue/iron = 8,
-		/obj/item/roguestatue/steel = 8,
-		/obj/item/ingot/gold = 7,
-		/obj/item/roguestatue/silver = 8,
-		/obj/item/clothing/ring/silver = 7,
-		/obj/item/reagent_containers/glass/cup/silver = 7,
-		/obj/item/storage/belt/rogue/leather/plaquesilver = 7,
-		/obj/item/clothing/ring/gold = 5,
-		/obj/item/ingot/gold = 5,
-		/obj/item/reagent_containers/glass/cup/golden = 4,
-		/obj/item/storage/belt/rogue/leather/plaquegold = 4,
-		/obj/item/clothing/mask/rogue/spectacles/golden = 3,
-		/obj/item/clothing/head/roguetown/crown/circlet = 3,
-		/obj/item/roguestatue/gold/loot=2,
-		/obj/item/clothing/head/roguetown/helmet/heavy/decorated/golden = 1,
-		/obj/item/clothing/head/roguetown/crown/nyle = 1,
-		/obj/item/roguestatue/gold = 1,
-		)
-
-
-/*	..................   Random Seeds   ................... */
-/obj/effect/spawner/roguemap/seeds	// all random
-	icon = 'modular/Neu_Farming/icons/produce.dmi'
-	icon_state = "seeds"
-	color = "#06b606"
-	probby = 100
-	spawned = list(
-		/obj/item/neuFarm/seed/wheat = 20,
-		/obj/item/neuFarm/seed/cabbage = 10,
-		/obj/item/neuFarm/seed/oat = 10,
-		/obj/item/neuFarm/seed/potato = 10,
-		/obj/item/neuFarm/seed/turnip = 10,
-		/obj/item/neuFarm/seed/apple = 10,
-		/obj/item/neuFarm/seed/onion = 10,
-		/obj/item/neuFarm/seed/berryrogue = 15,
-		/obj/item/neuFarm/seed/westleach = 10,
-		/obj/item/neuFarm/seed/sunflower = 10,
-		/obj/item/neuFarm/seed/swampleaf = 5,
-		/obj/item/neuFarm/seed/pear = 5,
-		/obj/item/neuFarm/seed/poppy = 5,
-		/obj/item/neuFarm/seed/poison_berries = 5,
-		/obj/item/neuFarm/seed/fyritius = 5 )
-
-/obj/effect/spawner/roguemap/seeds/common
-	spawned = list(
-		/obj/item/neuFarm/seed/wheat = 25,
-		/obj/item/neuFarm/seed/cabbage = 15,
-		/obj/item/neuFarm/seed/oat = 10,
-		/obj/item/neuFarm/seed/potato = 10,
-		/obj/item/neuFarm/seed/turnip = 10,
-		/obj/item/neuFarm/seed/apple = 10,
-		/obj/item/neuFarm/seed/onion = 10 )
-
-/obj/effect/spawner/roguemap/seeds/uncommon
-	spawned = list(
-		/obj/item/neuFarm/seed/berryrogue = 40,
-		/obj/item/neuFarm/seed/westleach = 25,
-		/obj/item/neuFarm/seed/swampleaf = 15,
-		/obj/item/neuFarm/seed/pear = 15,
-		/obj/item/neuFarm/seed/poison_berries = 5 )
-
-/obj/effect/spawner/roguemap/seeds/flowers
-	spawned = list(
-		/obj/item/neuFarm/seed/sunflower = 70,
-		/obj/item/neuFarm/seed/fyritius = 10,
-		/obj/item/neuFarm/seed/poppy = 20 )
-
-/*	..................   Random Alcohol   ................... */
-/obj/effect/spawner/roguemap/alcohol	// random beer
-	icon = 'icons/roguetown/items/cooking.dmi'
-	icon_state = "clear_bottle1"
-	color = "#06b606"
-	probby = 100
-	spawned = list(
-		/obj/item/reagent_containers/glass/bottle/rogue/beer = 50,
-		/obj/item/reagent_containers/glass/bottle/rogue/beer/spottedhen = 15,
-		/obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat = 10,
-		/obj/item/reagent_containers/glass/bottle/rogue/beer/ratkept = 5,
-		/obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter = 10,
-		/obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian = 5,
-		/obj/item/reagent_containers/glass/bottle/rogue/beer/fireleaf = 5,
-		/obj/item/reagent_containers/glass/bottle/rogue/beer/butterhairs = 5,
-		/obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve = 5,
-		/obj/item/reagent_containers/glass/bottle/rogue/beer/voddena = 5 )
-
-/obj/effect/spawner/roguemap/alcohol/wine
-	spawned = list(
-		/obj/item/reagent_containers/glass/bottle/rogue/wine = 50,
-		/obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine =10,
-		/obj/item/reagent_containers/glass/bottle/rogue/redwine = 20,
-		/obj/item/reagent_containers/glass/bottle/rogue/whitewine = 20,
-		/obj/item/reagent_containers/glass/bottle/rogue/elfred = 5,
-		/obj/item/reagent_containers/glass/bottle/rogue/elfblue = 5 )
-
-
-/*	..................   Random Gem spawner   ................... */
-/obj/effect/spawner/roguemap/loot/random_gem
-	spawned = list(
-	/obj/item/roguegem = 25,
-	/obj/item/roguegem/green = 12,
-	/obj/item/roguegem/blue = 6,
-	/obj/item/roguegem/yellow = 3,
-	/obj/item/roguegem/violet = 2,
-	/obj/item/roguegem/diamond = 1)
-
-/*	..................   Spooky Village loot   ................... */
-/obj/effect/spawner/roguemap/spooky_village_stuff
-	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "generic_event"
-	probby = 50
-	spawned = list(
-		/obj/item/clothing/head/roguetown/armingcap = 10,
-		/obj/item/clothing/head/roguetown/fisherhat = 10,
-		/obj/item/clothing/shoes/roguetown/simpleshoes/buckle = 10,
-		/obj/item/roguekey/spooky_village  = 30,
-		/obj/item/roguecoin/copper/pile = 10,
-		)
-
-
-/*	..................   Toll randomizer (poor mans coin generator, cheaper workload is all)  ................... */
-/obj/effect/spawner/roguemap/tollrandom
-	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
-	icon_state = "soultoken_floor"
-	probby = 35
-	color = "#ff0000"
-	spawned = list(
-		/obj/item/underworld/coin = 1,
-		)
-
-// ===================================================================================
-/*	..................   Sewer Danger   ................... */
-/obj/effect/spawner/roguemap/sewerencounter
-	icon_state = "srat"
-	icon = 'icons/roguetown/mob/monster/rat.dmi'
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/item/reagent_containers/food/snacks/smallrat = 30,
-		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
-		/obj/item/organ/guts = 5,
-		/obj/item/roguecoin/copper = 5,
-		/obj/effect/gibspawner/generic = 5,
-		/obj/effect/decal/remains/bigrat = 5,
-		/obj/structure/idle_enemy/bigrat = 2,
-		)
-
-/*	..................   Cheap Room Danger   ................... */
-/obj/effect/spawner/roguemap/cheapinnroomencounter
-	icon_state = "paperwizard"
-	icon = 'icons/mob/simple_human.dmi'
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/item/reagent_containers/food/snacks/smallrat = 15,
-		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
-		/obj/item/roguecoin/copper = 50,
-		/mob/living/carbon/human/species/human/northern/bum/ambush  = 25,
-		)
-
-/*	..................   Ancient Tomb Danger   ................... */
-/obj/effect/spawner/roguemap/ancientskellyguardmaybe
-	icon = 'icons/roguetown/mob/skeleton_male.dmi'
-	icon_state = "z"
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/structure/idle_enemy/ancient_skeleton_guard = 100
-		)
-
-/*	..................   Beggar Danger   ................... */
-/obj/effect/spawner/roguemap/hostile_beggar_danger
-	icon_state = "faceless"
-	icon = 'icons/mob/simple_human.dmi'
-	probby = 100 // temp to find out if decal vomit spawns
-	color = "#ff0000"
-	spawned = list(
-		/obj/effect/decal/cleanable/vomit = 100,
-		/obj/item/clothing/mask/cigarette/rollie = 10,
-		/obj/item/rogueweapon/knife/stone = 10,
-		/obj/structure/idle_enemy/hostile_bum = 100	)
-
-/*	..................   Mines Danger   ................... */
-/obj/effect/spawner/roguemap/mine_mole_maybe
-	icon = 'icons/roguetown/mob/monster/mole.dmi'
-	icon_state = "mole"
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/effect/decal/remains/mole = 20,
-		/obj/item/natural/rock = 10,
-		/obj/item/natural/stone = 10,
-		/obj/item/roguegem/yellow = 10,
-		/obj/structure/idle_enemy/mole = 50	)
-
-/*	..................   Crypt Danger   ................... */
-/obj/effect/spawner/roguemap/crypt_randomdanger
-	icon = 'icons/roguetown/mob/skeleton_male.dmi'
-	icon_state = "z"
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/item/roguecoin/silver = 5,
-		/obj/item/reagent_containers/food/snacks/grub/silk = 5,
-		/obj/item/natural/worms = 20,
-		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
-		/obj/structure/idle_enemy/bigrat = 10,
-		/obj/structure/idle_enemy/weak_skelly = 50	)
-
-/*	..................   Rat Danger   ................... */
-/obj/effect/spawner/roguemap/rat_danger
-	icon = 'icons/roguetown/mob/monster/bigrat.dmi'
-	icon_state = "rat"
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/effect/decal/remains/bigrat = 20,
-		/obj/item/reagent_containers/food/snacks/smallrat = 20,
-		/obj/item/natural/worms = 10,
-		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
-		/obj/structure/idle_enemy/bigrat = 40)
-
-/*	..................   Maneater Danger   ................... */
-/obj/effect/spawner/roguemap/maneater_danger
-	icon = 'icons/roguetown/mob/monster/lamia.dmi'
-	icon_state = "headless"
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/structure/idle_enemy/lamia = 50,
-		/obj/structure/idle_enemy/headless = 50)
-
-/*	..................   Zizombie Farmer Danger   ................... */
-/obj/effect/spawner/roguemap/zizombie_farmer_maybe
-	icon = 'icons/roguetown/mob/monster/zizombie.dmi'
-	icon_state = "zizombie_decap"
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/structure/idle_enemy/zizombie_farmer = 100	)
-
-/*	..................   Hairy Spider Danger   ................... */
-/obj/effect/spawner/roguemap/hairy_spider_maybe
-	icon = 'icons/roguetown/mob/monster/spider.dmi'
-	icon_state = "spider"
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/structure/idle_enemy/hairy_spider = 100	)
-
-/*	..................   Orc Warband Danger   ................... */
-/obj/effect/spawner/roguemap/orc_warrior_maybe
-	icon = 'icons/roguetown/mob/monster/simple_orcs.dmi'
-	icon_state = "orcmarauder_spear"
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/structure/idle_enemy/hairy_spider = 100	)
-
-/*	..................   Haunts Danger   ................... */
-/obj/effect/spawner/roguemap/haunts_maybe
-	icon = 'icons/roguetown/mob/monster/wraith.dmi'
-	icon_state = "hauntpile"
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/structure/bonepile = 100	)
-
-
-// ===================================================================================
-/*	..................   Idle Enemy Spawner   ................... */
-/obj/structure/idle_enemy
-	name = ""
-	icon = 'icons/roguetown/mob/skeleton_male.dmi'
-	icon_state = ""
-	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	anchored = TRUE
-	layer = BELOW_OBJ_LAYER
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
-/obj/structure/idle_enemy/ancient_skeleton_guard
-/obj/structure/idle_enemy/ancient_skeleton_guard/Initialize()
+/obj/structure/flora/rogueflower/reedbush/Initialize()
+	icon_state = "reedbush_[rand(1, 4)]"
 	. = ..()
-	AddComponent(/datum/component/spawner/ancient_skeleton_guard)
-/datum/component/spawner/ancient_skeleton_guard
-	mob_types = list(/mob/living/carbon/human/species/skeleton/npc/ancient)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
 
-/*	..................   Big Rat Spawner   ................... */
-/obj/structure/idle_enemy/bigrat
-/obj/structure/idle_enemy/bigrat/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/bigrat)
-/datum/component/spawner/bigrat
-	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/bigrat)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
+/obj/structure/flora/rogueflower/lavendergrass
+	icon_state = "lavendergrass_1"
 
-/*	..................   Hostile Bum Spawner   ................... */
-/obj/structure/idle_enemy/hostile_bum
-/obj/structure/idle_enemy/hostile_bum/Initialize()
+/obj/structure/flora/rogueflower/lavendergrass/Initialize()
+	icon_state = "lavendergrass_[rand(1, 4)]"
 	. = ..()
-	AddComponent(/datum/component/spawner/hostile_bum)
-/datum/component/spawner/hostile_bum
-	mob_types = list(/mob/living/carbon/human/species/human/northern/bum/ambush)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
 
-/*	..................   Lesser Mole Spawner   ................... */
-/obj/structure/idle_enemy/mole
-/obj/structure/idle_enemy/mole/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/mole)
-/datum/component/spawner/mole
-	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/mole)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
+/obj/structure/flora/rogueflower/ywflowers
+	icon_state = "ywflowers_1"
 
-/*	..................   Weak Skelly Spawner   ................... */
-/obj/structure/idle_enemy/weak_skelly
-/obj/structure/idle_enemy/weak_skelly/Initialize()
+/obj/structure/flora/rogueflower/ywflowers/Initialize()
+	icon_state = "ywflowers_[rand(1, 3)]"
 	. = ..()
-	AddComponent(/datum/component/spawner/weak_skelly)
-/datum/component/spawner/weak_skelly
-	mob_types = list(/mob/living/simple_animal/hostile/rogue/skeleton)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
 
-/*	..................   Lamia Spawner   ................... */
-/obj/structure/idle_enemy/lamia
-/obj/structure/idle_enemy/lamia/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/lamia)
-/datum/component/spawner/lamia
-	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/lamia)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 10
-	spawn_text = ""
+/obj/structure/flora/rogueflower/brflowers
+	icon_state = "brflowers_1"
 
-/*	..................   Headless Spawner   ................... */
-/obj/structure/idle_enemy/headless
-/obj/structure/idle_enemy/headless/Initialize()
+/obj/structure/flora/rogueflower/brflowers/Initialize()
+	icon_state = "brflowers_[rand(1, 3)]"
 	. = ..()
-	AddComponent(/datum/component/spawner/headless)
-/datum/component/spawner/headless
-	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/headless)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 10
-	spawn_text = ""
 
-/*	..................   Zizombie Farmer Danger   ................... */
-/obj/structure/idle_enemy/zizombie_farmer
-/obj/structure/idle_enemy/zizombie_farmer/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/zizombie_farmer)
-/datum/component/spawner/zizombie_farmer
-	mob_types = list(/mob/living/carbon/human/species/zizombie/npc/peasant)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
-/*	..................   Hairy Spider Danger   ................... */
-/obj/structure/idle_enemy/hairy_spider
-/obj/structure/idle_enemy/hairy_spider/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/hairy_spider)
-/datum/component/spawner/hairy_spider
-	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/spider/colony)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
-/*	..................   Orc Warband Dangers   ................... */
-/obj/structure/idle_enemy/orc_warrior
-/obj/structure/idle_enemy/orc_warrior/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/orc_warrior)
-/datum/component/spawner/orc_warrior
-	mob_types = list(/mob/living/simple_animal/hostile/rogue/orc/orc_marauder)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
+/obj/structure/flora/rogueflower/ppflowers
+	icon_state = "ppflowers_1"
 
-/obj/structure/idle_enemy/orc_spearman
-/obj/structure/idle_enemy/orc_spearman/Initialize()
+/obj/structure/flora/rogueflower/ppflowers/Initialize()
+	icon_state = "ppflowers_[rand(1, 3)]"
 	. = ..()
-	AddComponent(/datum/component/spawner/orc_spearman)
-/datum/component/spawner/orc_spearman
-	mob_types = list(/mob/living/simple_animal/hostile/rogue/orc/orc_marauder/spear)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
+
+/obj/structure/flora/rogueflower/stalkybush
+	icon_state = "stalkybush_1"
+
+/obj/structure/flora/rogueflower/stalkybush/Initialize()
+	icon_state = "stalkybush_[rand(1, 3)]"
+	. = ..()
 
 // ===================================================================================
 /*	..................   Dwarf Outpost   ................... */
@@ -480,108 +64,8 @@
 	mappath = "_maps/map_files/templates/dwarf_outpost/Dwarf_Outpost_1.dmm"
 
 
-
 // ===================================================================================
-/*	..................   Areas   ................... */
-/area/rogue/under/town/caverogue/saltmine
-	name = "salt mine"
-	first_time_text = "Salt Mine"
-
-/area/rogue/under/catacombs
-	name = "catacombs"
-	icon_state = "cavewet"
-	first_time_text = "The Catacombs"
-	ambientsounds = AMB_CAVEWATER
-	ambientnight = AMB_CAVEWATER
-	spookysounds = SPOOKY_CAVE
-	spookynight = SPOOKY_CAVE
-	droning_sound = 'sound/music/area/caves.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = null
-	ambush_times = list("night","dawn","dusk","day")
-	ambush_types = list(
-				/turf/open/water/swamp)
-	ambush_mobs = list(
-				/mob/living/carbon/human/species/skeleton/npc/catacomb = 30,
-				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10)
-	converted_type = /area/rogue/outdoors/caves
-
-/area/rogue/under/catacombs/dwarfoutpost
-	name = "Underrock Outpost"
-	first_time_text = "Underrock Outpost"
-	ambush_types = list(
-				/turf/open/water/swamp)
-	ambush_mobs = list(
-				/mob/living/simple_animal/hostile/retaliate/rogue/lamia = 30,
-				/mob/living/simple_animal/hostile/retaliate/rogue/headless = 20)
-
-/area/rogue/under/catacombs/dwarfoutpost/orcy
-	ambush_types = list(
-				/turf/open/floor/rogue/blocks/newstone/alt)
-	ambush_mobs = list(
-				/mob/living/simple_animal/hostile/rogue/orc/orc_marauder = 50)
-
-/area/rogue/under/cave/abandoned_mine
-	name = "abandoned mine"
-	first_time_text = "Abandoned Mine"
-	ambush_types = list(
-				/turf/open/floor/rogue/dirt)
-	ambush_mobs = list(
-				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30,
-				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 20)
-
-/*	..................   Areas to play with the music a bit   ................... */
-/area/rogue/indoors/town/bath/redhouse // lets try something different
-	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
-	converted_type = /area/rogue/outdoors/exposed/bath/redhouse
-
-/area/rogue/outdoors/exposed/bath/redhouse
-	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
-
-/area/rogue/indoors/town/tavern/saiga
-	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
-	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
-	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
-
-/area/rogue/outdoors/exposed/tavern/saiga
-	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
-	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
-
-
-/area/rogue/outdoors/woods/haunted
-	ambush_types = list(
-				/turf/open/floor/rogue/grass)
-	ambush_mobs = list(
-				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 20,
-				/mob/living/simple_animal/hostile/retaliate/rogue/spider/colony = 20,
-				/mob/living/simple_animal/hostile/rogue/haunt = 20,
-				/mob/living/carbon/human/species/skeleton/npc/ambush = 30,
-				/mob/living/simple_animal/hostile/retaliate/rogue/mole = 20)
-	first_time_text = "THE HAUNTED FOREST"
-	converted_type = /area/rogue/indoors/shelter/woods
-
-
-/area/rogue/outdoors/rtfield/plague_district
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50)
-	first_time_text = "PLAGUE DISTRICT"
-	icon_state = "yellow"
-	name = "plague district"
-
-
-// ===================================================================================
-/*	..................   Catacomb Skelly (weak)   ................... */
-/mob/living/carbon/human/species/skeleton/npc/catacomb/after_creation()
-	..()
-	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/catacomb)
-
-/datum/outfit/job/roguetown/species/skeleton/npc/catacomb/pre_equip(mob/living/carbon/human/H)
-	..()
-	H.STASTR = 8
-	H.STASPD = 7
-	H.STACON = 10
-	H.STAEND = 10
-	var/loadout = rand(1,3)
-
+/*
 	if(prob(15))
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 	if(prob(15))
@@ -603,12 +87,7 @@
 			r_hand = /obj/item/rogueweapon/knife/stone
 		if(3)
 			r_hand = /obj/item/rogueweapon/mace/woodclub
-
-/*	..................   Hostile Bum   ................... */
-/mob/living/carbon/human/species/human/northern/bum/ambush/Initialize()
-	. = ..()
-	name = pick("Madman", "Creep", "Lunatic", "Leper")
-
+*/
 
 // ===================================================================================
 /obj/structure/mineral_door/wood/red/i
@@ -656,47 +135,6 @@
 	probby = 50
 	spawned = list(	/obj/effect/landmark/events/haunts = 100	)
 
-/*	..................   Malum Shrine (Dromkis revenge)   ................... */
-/obj/structure/fluff/psycross/crafted/shrine/malum
-	name = "statue of Malum"
-	desc = ""
-	icon = 'icons/roguetown/misc/tallandwide.dmi'
-	icon_state = "malum"
-	bound_width = 64
-
-/*	..................   Astrata Shrine   ................... */
-/obj/structure/fluff/psycross/crafted/shrine/astrata
-	name = "The Sun Queen"
-	desc = ""
-	icon = 'icons/roguetown/misc/tallandwide.dmi'
-	icon_state = "astrata"
-	pixel_x = -16
-
-/*	..................   Necra Shrine   ................... */
-/obj/structure/fluff/psycross/crafted/shrine/necra
-	name = "The Undermaiden"
-	desc = ""
-	icon = 'icons/roguetown/misc/tallandwide.dmi'
-	icon_state = "necra"
-	pixel_x = -16
-
-/*	..................   Dendor Shrine   ................... */
-/obj/structure/fluff/psycross/crafted/shrine/dendor
-	name = "The Tree Father"
-	desc = ""
-	icon = 'icons/roguetown/misc/foliagetall.dmi'
-	icon_state = "mystical"
-	pixel_x = -10
-
-/*	..................   Abyssor Shrine   ................... */
-/obj/structure/fluff/psycross/crafted/shrine/abyssor
-	name = "The World Whale"
-	desc = ""
-	icon = 'icons/roguetown/misc/96x96.dmi'
-	icon_state = "abyssor"
-	bound_width = 64
-	pixel_x = -25
-
 /*	..................   Dungeon stuff   ................... */
 /obj/structure/fluff/statue/xylix
 	desc = "Some mad God no doubt."
@@ -708,76 +146,6 @@
 /obj/structure/fluff/statue/xylix/frown
 	icon_state = "xylix_frown"
 
-// ==============================================================
-/*	..................   Turfs   ................... */
-/turf/open/floor/rogue/sandstone
-	icon_state = "sandstone"
-	footstep = FOOTSTEP_STONE
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	landsound = 'sound/foley/jumpland/stoneland.wav'
-	smooth = SMOOTH_MORE
-	canSmoothWith = list(/turf/closed/mineral/rogue,
-						/turf/open/floor/rogue/herringbone,
-						/turf/closed/mineral,
-						/turf/closed/wall/mineral/rogue/stonebrick,
-						/turf/closed/wall/mineral/rogue/wood,
-						/turf/closed/wall/mineral/rogue/wooddark,
-						/turf/closed/wall/mineral/rogue/stone,
-						/turf/closed/wall/mineral/rogue/stone/moss,
-						/turf/open/floor/rogue/cobble,
-						/turf/open/floor/rogue/dirt,
-						/turf/open/floor/rogue/grass,
-						/turf/open/floor/rogue/grass/red,
-						/turf/open/floor/rogue/grass/yel,
-						/turf/open/floor/rogue/grass/cold,
-						/turf/open/floor/rogue/snow,
-						/turf/open/floor/rogue/snow/patchy,
-						/turf/open/floor/rogue/snow/rough,
-						/turf/open/floor/rogue/sandstone,
-						/turf/open/floor/rogue/sandstone/temple)
-
-/turf/open/floor/rogue/sandstone/shaded
-	color = "#e5dfdf"
-
-/turf/open/floor/rogue/sandstone/temple
-	icon_state = "temple"
-/turf/open/floor/rogue/sandstone/temple/Initialize()
-	dir = pick(GLOB.cardinals)
-	. = ..()
-
-/turf/open/water/bath/pool
-	desc = "Clear water, pleasant temperature. Soothing."
-	icon_state = "bathtile_pool"
-/turf/open/water/bath/pool/Initialize()
-	.  = ..()
-	icon_state = "bathtile_pool"
-
-/turf/open/water/bath/pool/mid
-	icon_state = "bathtile_pool_mid"
-/turf/open/water/bath/pool/mid/Initialize()
-	.  = ..()
-	icon_state = "bathtile_pool_mid"
-
-/turf/open/floor/rogue/grass/yelmix
-	name = "grass"
-	icon_state = "grass_yelmix"
-	smooth = SMOOTH_FALSE
-	neighborlay = ""
-
-/turf/open/floor/rogue/grass/near_tree
-	color = "#ff0000"
-/turf/open/floor/rogue/grass/near_tree/Initialize()
-	color = "#ffffff"
-	. = ..()
-
-/turf/open/floor/rogue/oak	// new oak
-	icon_state = "oak"
-/turf/open/floor/rogue/oak/broken
-	icon_state = "oak_broken"
-/turf/open/floor/rogue/oak/stage
-	icon_state = "stageoak_bl"
 
 
 // ==============================================================
@@ -974,8 +342,6 @@
 			new /obj/item/clothing/head/roguetown/jester(src)
 
 
-
-
 /*	..................   Spider stuff   ................... */
 /obj/structure/spider/stickyweb/solo
 	icon_state = "stickyweb3"
@@ -1015,85 +381,84 @@
 
 
 /*	..................   Various mapping aides   ................... */
-/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/broken
-	desc = "A long shirt of maille, this one is made for a short man it seems."
-/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/broken/Initialize()
-	. = ..()
-	obj_break()
-
-/obj/item/clothing/suit/roguetown/armor/chainmail/battered
-	desc = "A good quality haubergon, but weakened by many blows."
-	max_integrity = INTEGRITY_STANDARD
-
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
 
-/obj/machinery/light/rogue/wallfire/big_fireplace
-	icon_state = "fireplace1"
-	base_state = "fireplace"
-	icon = 'icons/roguetown/misc/fireplace64.dmi'
-
-/obj/machinery/light/rogue/hearth/big_fireplace
-	name = "fireplace"
-	icon_state = "fireplace1"
-	base_state = "fireplace"
-	icon = 'icons/roguetown/misc/fireplace64.dmi'
-	fueluse = -1
-	pixel_x = -16
-	climb_offset = 4
-// ======================================================================
-
-/*	..................   Pigflowers   ................... */
-/obj/structure/flora/rogueflower // ausbushes recolored
-	icon = 'icons/roguetown/misc/pigflora.dmi'
-	icon_state = "reedbush_1"
-
-/obj/structure/flora/rogueflower/reedbush
-	icon_state = "reedbush_1"
-
-/obj/structure/flora/rogueflower/reedbush/Initialize()
-	icon_state = "reedbush_[rand(1, 4)]"
-	. = ..()
-
-/obj/structure/flora/rogueflower/lavendergrass
-	icon_state = "lavendergrass_1"
-
-/obj/structure/flora/rogueflower/lavendergrass/Initialize()
-	icon_state = "lavendergrass_[rand(1, 4)]"
-	. = ..()
-
-/obj/structure/flora/rogueflower/ywflowers
-	icon_state = "ywflowers_1"
-
-/obj/structure/flora/rogueflower/ywflowers/Initialize()
-	icon_state = "ywflowers_[rand(1, 3)]"
-	. = ..()
-
-/obj/structure/flora/rogueflower/brflowers
-	icon_state = "brflowers_1"
-
-/obj/structure/flora/rogueflower/brflowers/Initialize()
-	icon_state = "brflowers_[rand(1, 3)]"
-	. = ..()
-
-/obj/structure/flora/rogueflower/ppflowers
-	icon_state = "ppflowers_1"
-
-/obj/structure/flora/rogueflower/ppflowers/Initialize()
-	icon_state = "ppflowers_[rand(1, 3)]"
-	. = ..()
-
-/obj/structure/flora/rogueflower/stalkybush
-	icon_state = "stalkybush_1"
-
-/obj/structure/flora/rogueflower/stalkybush/Initialize()
-	icon_state = "stalkybush_[rand(1, 3)]"
-	. = ..()
-
-
 
 // ======================================================================
+/*	..................   Colony Spider Web   ................... */
+/obj/structure/innocent_web
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "innocentweb1"
+	layer = ABOVE_ALL_MOB_LAYER
+	density = FALSE
+	max_integrity = 35
+	climbable = FALSE
+	dir = SOUTH
+	debris = list(/obj/item/natural/silk = 1)
+	var/lucky_escape
+
+/obj/structure/innocent_web/Initialize()
+	. = ..()
+	icon_state = "innocentweb[rand(1,2)]"
+	return ..()
+
+/obj/structure/innocent_web/attack_hand()
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_web/attackby(obj/item, /mob/user, params)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_web/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_web/Crossed(atom/movable/AM)
+	..()
+	if(isliving(AM))
+		var/mob/living/carbon/human/L = AM
+		lucky_escape = ( L.STALUC * 4 )
+		L.Immobilize(5)
+		if(L.m_intent == MOVE_INTENT_WALK)
+			L.Immobilize(10)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
+		if(L.m_intent == MOVE_INTENT_RUN)
+			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
+			L.Immobilize(20)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
+		else
+			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
+			L.Immobilize(5)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
+
+
 /*	..................   Wizard Shenanigans   ................... */
+
 /obj/structure/circle_protection
 	name = "circle of protection"
 	icon = 'modular/Mapping/icons/96x96.dmi'
@@ -1191,7 +556,6 @@
 		return
 	else
 		to_chat(user, "<span class='notice'>Noc looks angry with me...</span>")
-// ======================================================================
 
 
 /*	..................   Floor decoration   ................... */
@@ -1208,6 +572,18 @@
 	desc = "Pelt of a young animal, made into a mat."
 	icon_state = "fur_alt"
 
+/turf/open/water/bath/pool
+	desc = "Clear water, pleasant temperature. Soothing."
+	icon_state = "bathtile_pool"
+/turf/open/water/bath/pool/Initialize()
+	.  = ..()
+	icon_state = "bathtile_pool"
+
+/turf/open/water/bath/pool/mid
+	icon_state = "bathtile_pool_mid"
+/turf/open/water/bath/pool/mid/Initialize()
+	.  = ..()
+	icon_state = "bathtile_pool_mid"
 
 
 /obj/effect/decal/shadow_floor
@@ -1221,6 +597,9 @@
 	icon_state = "shad_floorcorn"
 
 
+/obj/effect/decal/remains/human/old
+	name = "remains"
+	color = "#d6b3a5"
 
 /obj/structure/fluff/shipssprote
 	name = ""
@@ -1230,6 +609,7 @@
 	mouse_opacity = 0
 	color = "#5a4621"
 	pixel_y = -16
+
 
 // ======================================================================
 /*	..................   Innocent Bush   ................... */
@@ -1272,136 +652,13 @@
 	qdel(src)
 
 
-/*	..................   Colony Spider Net   ................... */
-/obj/structure/innocent_net
-	name = ""
-	desc = ""
-	icon = 'icons/roguetown/misc/tallstructure.dmi'
-	icon_state = "innocentweb1"
-	layer = ABOVE_ALL_MOB_LAYER
-	density = FALSE
-	max_integrity = 35
-	climbable = FALSE
-	dir = SOUTH
-	debris = list(/obj/item/natural/silk = 1)
-	var/lucky_escape
-
-/obj/structure/innocent_net/Initialize()
-	. = ..()
-	icon_state = "innocentweb[rand(1,2)]"
-	return ..()
-
-/obj/structure/innocent_net/attack_hand()
-	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
-	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-	qdel(src)
-
-/obj/structure/innocent_net/attackby(obj/item, /mob/user, params)
-	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
-	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-	qdel(src)
-
-/obj/structure/innocent_net/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
-	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-	qdel(src)
-
-/obj/structure/innocent_net/Crossed(atom/movable/AM)
-	..()
-	if(isliving(AM))
-		var/mob/living/carbon/human/L = AM
-		lucky_escape = ( L.STALUC * 4 )
-		L.Immobilize(5)
-		if(L.m_intent == MOVE_INTENT_WALK)
-			L.Immobilize(10)
-			if(prob(lucky_escape))
-				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
-				qdel(src)
-			else
-				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
-				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-				qdel(src)
-		if(L.m_intent == MOVE_INTENT_RUN)
-			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
-			L.Immobilize(20)
-			if(prob(lucky_escape))
-				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
-				qdel(src)
-			else
-				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
-				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-				qdel(src)
-		else
-			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
-			L.Immobilize(5)
-			if(prob(lucky_escape))
-				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
-				qdel(src)
-			else
-				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
-				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
-				qdel(src)
-
-// ======================================================================
-/obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
-	name = "candle lamp"
-	icon = 'icons/roguetown/misc/decoration.dmi'
-	icon_state = "candle"
-	base_state = "candle"
-	layer = WALL_OBJ_LAYER+0.1
-	light_power = 0.9
-	light_outer_range =  6
-
 
 /*	..................   Misc   ................... */
-/obj/item/roguebin/alt
-	icon_state = "washbin2"
-
-/obj/structure/mirror/alt
-	icon_state = "mirror_alt"
-
 /obj/item/roguestatue/silver/gnome
 	name = "petrified gnome"
 	desc = "A literal gnome, turned to stone mid-step and put on a matching stone platform. Rather unsettling."
 	smeltresult = null
 	color = "#617163"
-
-
-
-
-
-/*	..................   Traveltiles   ................... */ // these are the ones on centcom, where the actual lair is, to reduce varedits onmap
-/obj/structure/fluff/traveltile/exit_bandit		// mus NOT be a traveltile/bandit child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
-	aportalid = "banditin"
-	aportalgoesto = "banditexit"
-
-/obj/structure/fluff/traveltile/exit_vampire	// mus NOT be a traveltile/vampire child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
-	aportalid = "vampin"
-	aportalgoesto = "vampexit"
-
-/obj/structure/fluff/traveltile/exit_inhumen
-	aportalid = "inhumenin"
-	aportalgoesto = "inhumenexit"
-
-
-/obj/structure/fluff/traveltile/to_inhumen_tribe
-	name = "to the Deep Bog"
-	aportalid = "inhumenexit"
-	aportalgoesto = "inhumenin"
-
-
-
-/obj/effect/decal/remains/human/old
-	name = "remains"
-	color = "#d6b3a5"
-
-
-/obj/item/roguekey/spooky_village
-	icon_state = "rustkey"
-	lockid = "spooky_village"
-
-
-
 
 
 // ====================		NEW WEAPONS		==========================

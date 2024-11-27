@@ -21,7 +21,7 @@
 	custom_materials = list(/datum/material/iron = 150, /datum/material/glass = 150)
 
 	var/grace = RAD_GRACE_PERIOD
-	var/datum/looping_sound/geiger/soundloop
+//	var/datum/looping_sound/geiger/soundloop
 
 	var/scanning = FALSE
 	var/radiation_count = 0
@@ -34,7 +34,7 @@
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
-	soundloop = new(list(src), FALSE)
+//	soundloop = new(src, FALSE)
 
 /obj/item/geiger_counter/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -109,15 +109,15 @@
 	..()
 
 /obj/item/geiger_counter/proc/update_sound()
-	var/datum/looping_sound/geiger/loop = soundloop
+//	var/datum/looping_sound/geiger/loop = soundloop
 	if(!scanning)
-		loop.stop()
+//		loop.stop()
 		return
 	if(!radiation_count)
-		loop.stop()
+//		loop.stop()
 		return
-	loop.last_radiation = radiation_count
-	loop.start()
+//	loop.last_radiation = radiation_count
+//	loop.start()
 
 /obj/item/geiger_counter/rad_act(amount)
 	. = ..()

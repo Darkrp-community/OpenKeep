@@ -310,3 +310,7 @@
 
 /obj/structure/mirror/magic/proc/curse(mob/living/user)
 	return
+
+
+/obj/structure/mirror/alt
+	icon_state = "mirror_alt"
