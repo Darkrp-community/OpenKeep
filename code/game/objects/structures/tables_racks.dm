@@ -522,6 +522,12 @@
 /obj/structure/rack/rogue/deconstruct(disassembled = TRUE)
 	qdel(src)
 
+/obj/structure/rack/rogue/underworld
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "rack_underworld"
+	climbable = TRUE
+	climb_offset = 10
+
 /obj/structure/rack/rogue/shelf
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "shelf"

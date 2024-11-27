@@ -590,6 +590,49 @@
 	. = ..()
 	dir = rand(0,8)
 
+/turf/open/floor/rogue/underworld/arena
+	name = "sandy ash"
+	desc = "This has been pranced upon by countless skeletal fighters."
+	icon_state = "ash3"
+	layer = MID_TURF_LAYER
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SOFT_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	landsound = 'sound/foley/jumpland/dirtland.wav'
+	smooth = SMOOTH_TRUE
+	canSmoothWith = list(/turf/open/floor/rogue,
+						/turf/closed/mineral,
+						/turf/closed/wall/mineral)
+	slowdown = 0
+
+/turf/open/floor/rogue/underworld/arena/Initialize()
+	. = ..()
+	//dir = rand(0,8)   Need to add variants.
+
+/turf/open/floor/rogue/underworld/space
+	name = "void"
+	desc = "The shifting blanket of Necra's realm."
+	icon_state = "undervoid"
+	layer = MID_TURF_LAYER
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SOFT_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	landsound = 'sound/foley/jumpland/dirtland.wav'
+	smooth = SMOOTH_FALSE
+	slowdown = 50
+
+/turf/open/floor/rogue/underworld/space/sparkle_quiet
+	name = "void"
+	desc = "The shifting blanket of Necra's realm."
+	icon_state = "undervoid2"
+
+/turf/open/floor/rogue/underworld/space/quiet
+	name = "void"
+	desc = "The shifting blanket of Necra's realm."
+	icon_state = "undervoid3"
+
 /turf/open/floor/rogue/volcanic
 	name = "dirt"
 	desc = "The dirt is pocked with the scars of countless steps."
