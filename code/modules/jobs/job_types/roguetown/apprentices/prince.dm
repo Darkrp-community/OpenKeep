@@ -6,7 +6,6 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	f_title = "Princess"
 	allowed_races = list(
 		"Humen",
 		"Half-Elf"
