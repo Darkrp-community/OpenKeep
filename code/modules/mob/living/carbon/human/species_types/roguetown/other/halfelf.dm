@@ -18,10 +18,11 @@
 	Half-Elves are extremely diverse, as they bring in humen and elvish culture\
 	and it is widely considered that Half-Elf culture is simply a melting pot of \
 	various others condensing into one vibrant entity. \
+	Their longevity spanning too long for a human and short for an elf lead them to congregate together. \
 	Due to their heritage, Half-Elves tend to gain racial traits depending on how strong their fathers, or mothers, genes were. \
-	Half-Elves also typically try to find identity, in a world that sees them primarly as perversions."
+	Half-Elves also typically try to find identity."
 
-	skin_tone_wording = "Halfling Identity"
+	skin_tone_wording = "Half-Elven Identity"
 
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
