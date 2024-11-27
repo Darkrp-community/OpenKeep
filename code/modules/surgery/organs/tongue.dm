@@ -15,6 +15,7 @@
 		/datum/language/elvish,
 		/datum/language/oldpsydonic,
 		/datum/language/zybantine,
+		/datum/language/newvalorian,
 		/datum/language/celestial,
 		/datum/language/hellspeak,
 		/datum/language/beast,

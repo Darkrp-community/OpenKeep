@@ -62,6 +62,7 @@
 #define SPAN_ELF "elf"
 #define SPAN_OLDPSYDONIC "oldpsydonic"
 #define SPAN_ZYBANTINE "zybantine"
+#define SPAN_NEWVALORIAN "newvalorian"
 #define SPAN_SAND "sandspeak"
 #define SPAN_DELF "delf"
 #define SPAN_HELL "hellspeak"
