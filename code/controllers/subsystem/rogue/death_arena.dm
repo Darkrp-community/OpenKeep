@@ -92,11 +92,13 @@ SUBSYSTEM_DEF(death_arena)
 	fight_force_end = null
 
 /datum/controller/subsystem/death_arena/proc/force_end_fight()
+	fighters_heads = list()
 	for(var/mob/living/carbon/carbon in fighters)
 		fighters -= carbon
 		carbon.returntolobby()
 		qdel(carbon)
 	fight_force_end = null
+	fighting = FALSE
 
 /datum/controller/subsystem/death_arena/proc/open_death_gate()
 	for(var/obj/structure/gate/G in GLOB.biggates)
