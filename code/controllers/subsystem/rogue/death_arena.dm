@@ -94,13 +94,7 @@ SUBSYSTEM_DEF(death_arena)
 /datum/controller/subsystem/death_arena/proc/force_end_fight()
 	for(var/mob/living/carbon/carbon in fighters)
 		fighters -= carbon
-		if(carbon != user)
-			var/turf/spawn_loc = pick(GLOB.underworldcoinspawns)
-			var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(spawn_loc)
-			O.livingname = carbon.name
-			O.ckey = carbon.ckey
-			ADD_TRAIT(O, TRAIT_PACIFISM, TRAIT_GENERIC)
-			add_fighter(O)
+		carbon.returntolobby()
 		qdel(carbon)
 	fight_force_end = null
 
