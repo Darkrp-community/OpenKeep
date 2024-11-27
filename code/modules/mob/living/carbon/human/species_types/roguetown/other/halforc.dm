@@ -92,7 +92,7 @@
 
 /datum/species/halforc/get_skin_list()
 	return list(
-		"Shellcrest" = SKIN_COLOR_SHELLCREST,
+		"Shellcrest - ()" = SKIN_COLOR_SHELLCREST,
 		"Bloodaxe" = SKIN_COLOR_BLOOD_AXE,
 		"Splitjaw" = SKIN_COLOR_GROONN, //Changed name from Gronn, which no longer aligned with lore here or elsewhere.
 		"Blackhammer" = SKIN_COLOR_BLACK_HAMMER,

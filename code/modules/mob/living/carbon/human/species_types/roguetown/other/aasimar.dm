@@ -112,15 +112,15 @@
 
 /datum/species/aasimar/get_skin_list()
 	return sortList(list(
-		"Planetar" = SKIN_COLOR_PLANETAR,
-		"Deva"	   = SKIN_COLOR_DEVA,
-		"Solar" = SKIN_COLOR_SOLAR,
-		"Empyrea" = SKIN_COLOR_EMPYREA,
-		"Gaeia" = SKIN_COLOR_GAEIA,
-		"Celestial" = SKIN_COLOR_CELESTIAL,
-		"Olympia" = SKIN_COLOR_OLYMPIA,
-		"Necral" = SKIN_COLOR_NECRAL,
-		"Abyssal" = SKIN_COLOR_ABYSSAL,
+		"Planetar - (Gold)" = SKIN_COLOR_PLANETAR,
+		"Deva - (Sky blue)"	   = SKIN_COLOR_DEVA,
+		"Solar - (White stone)" = SKIN_COLOR_SOLAR,
+		"Empyrea - (Periwinkle blue)" = SKIN_COLOR_EMPYREA,
+		"Gaeia - (Orange)" = SKIN_COLOR_GAEIA,
+		"Celestial - (Yellow)" = SKIN_COLOR_CELESTIAL,
+		"Olympia - (Seafoam green)" = SKIN_COLOR_OLYMPIA,
+		"Necral - (Black onyx)" = SKIN_COLOR_NECRAL,
+		"Abyssal - (Deep blue)" = SKIN_COLOR_ABYSSAL,
 	))
 
 /datum/species/aasimar/get_hairc_list()
