@@ -88,15 +88,15 @@
 
 /datum/species/elf/dark/get_skin_list()
 	return sortList(list(
-		"Maggot" = SKIN_COLOR_MAGGOT,
-		"Cocoon" = SKIN_COLOR_COCOON,
-		"Ashen" = SKIN_COLOR_ASHEN,
-		"Spider Venom" = SKIN_COLOR_SPIDER_VENOM,
-		"Jackpoison" = SKIN_COLOR_JACKPOISON,
-		"Homunculus" = SKIN_COLOR_HOMUNCULUS,
-		"Arachnid Ichor" = SKIN_COLOR_ARACHNID_ICHOR,
-		"Zizo Descendant" = SKIN_COLOR_SNOW_ELF,
-		"Gloomhaven" = SKIN_COLOR_GLOOMHAVEN,
+		"Maggot - (Pale blue)" = SKIN_COLOR_MAGGOT,
+		"Cocoon - (Pale purple)" = SKIN_COLOR_COCOON,
+		"Ashen - (Pale grey)" = SKIN_COLOR_ASHEN,
+		"Spider Venom - (Deep grey)" = SKIN_COLOR_SPIDER_VENOM,
+		"Jackpoison - (Grey-purple)" = SKIN_COLOR_JACKPOISON,
+		"Homunculus - (Grey-blue)" = SKIN_COLOR_HOMUNCULUS,
+		"Arachnid Ichor - (Black-blue)" = SKIN_COLOR_ARACHNID_ICHOR,
+		"Zizo Descendant - (Pale white)" = SKIN_COLOR_SNOW_ELF,
+		"Gloomhaven - (Pink)" = SKIN_COLOR_GLOOMHAVEN,
 	))
 
 /datum/species/elf/dark/get_hairc_list()

@@ -71,11 +71,16 @@
 
 /datum/species/human/halfelf/get_skin_list()
 	return sortList(list(
-		"Timber-Gronn" = SKIN_COLOR_TIMBER_GRONN,
-		"Solar-Hue" = SKIN_COLOR_SOLAR_HUE,
-		"Walnut-Stine" = SKIN_COLOR_WALNUT_STINE,
-		"Amber-Stained" = SKIN_COLOR_AMBER_STAINED,
-		"Ebon-Born" = SKIN_COLOR_EBON_BORN,
+		"Zizo-Cursed - (Pale)" = SKIN_COLOR_ZIZO_CURSED,
+		"Timber-Gronn - (White 1)" = SKIN_COLOR_TIMBER_GRONN,
+		"Solar-Hue - (White 2)" = SKIN_COLOR_SOLAR_HUE,
+		"Walnut-Stine - (White 3)" = SKIN_COLOR_WALNUT_STINE,
+		"Amber-Stained - (White 4)" = SKIN_COLOR_AMBER_STAINED,
+		"Joshua-Aligned - (Middle-Eastern)" = SKIN_COLOR_JOSHUA_ALIGNED,
+		"Arid-Birthed - (Black)" = SKIN_COLOR_ARID_BIRTHED,
+		"Parasite-Taineted - (Light purple)" = SKIN_COLOUR_PARASITE_TAINTED,
+		"Mushroom-Minded - (Mid purple)" = SKIN_COLOR_MUSHROOM_MINDED,
+		"Cave-Attuned - (Deep purple)" = SKIN_COLOR_CAVE_ATTUNED,
 	))
 
 /datum/species/human/halfelf/get_hairc_list()
@@ -104,7 +109,9 @@
 	"green - leaf" = "2f3c2e",
 	"green - moss" = "3b3c2a",
 
-	"white - ice" = "f4f4f4"
+	"white - ice" = "f4f4f4",
+	"white - cavedew" = "dee9ed",
+	"white - spiderweb" = "f4f4f4"
 
 	))
 
