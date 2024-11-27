@@ -633,8 +633,6 @@
 	desc = "The shifting blanket of Necra's realm."
 	icon_state = "undervoid3"
 
-
-
 /turf/open/floor/rogue/volcanic
 	name = "dirt"
 	desc = "The dirt is pocked with the scars of countless steps."
