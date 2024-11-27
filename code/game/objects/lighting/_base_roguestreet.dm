@@ -8,7 +8,6 @@
 	bulb_colour = "#f9e080"
 	bulb_power = 1
 	max_integrity = 0
-	use_power = NO_POWER_USE
 	pass_flags = LETPASSTHROW
 	smeltresult = /obj/item/ingot/bronze
 

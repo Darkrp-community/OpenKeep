@@ -436,7 +436,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				if(HAIR in pref_species.species_traits)
 					dat += "<b>Hairstyle:</b> <a href='?_src_=prefs;preference=hairstyle;task=input'>[hairstyle]</a>"
 					dat += "<br>"
-					if(gender == MALE)
+					if(gender == MALE || istype(pref_species, /datum/species/dwarf))
 						dat += "<b>Facial Hair:</b> <a href='?_src_=prefs;preference=facial_hairstyle;task=input'>[facial_hairstyle]</a>"
 						dat += "<br>"
 					dat += "<b>Hair Color: </b>  <a href='?_src_=prefs;preference=hair;task=input'>Change</a>"
