@@ -194,6 +194,120 @@
 	med_pot = /datum/alch_cauldron_recipe/big_mana_potion
 	minor_pot = /datum/alch_cauldron_recipe/disease_cure
 
+//BEGIN THE HERBS
+
+/obj/item/alch/atropa
+	name = "atropa"
+	icon_state = "atropa"
+
+	major_pot = /datum/alch_cauldron_recipe/doompoison
+	med_pot = /datum/alch_cauldron_recipe/berrypoison
+	minor_pot = /datum/alch_cauldron_recipe/int_potion
+
+/obj/item/alch/matricaria
+	name = "matricaria"
+	icon_state = "matricaria"
+
+	major_pot = /datum/alch_cauldron_recipe/berrypoison
+	med_pot = /datum/alch_cauldron_recipe/per_potion
+	minor_pot = /datum/alch_cauldron_recipe/doompoison
+
+/obj/item/alch/symphitum
+	name = "symphitum"
+	icon_state = "symphitum"
+
+	major_pot = /datum/alch_cauldron_recipe/health_potion
+	med_pot = /datum/alch_cauldron_recipe/mana_potion
+	minor_pot = /datum/alch_cauldron_recipe/antidote
+
+/obj/item/alch/taraxacum
+	name = "taraxacum"
+	icon_state = "taraxacum"
+
+	major_pot = /datum/alch_cauldron_recipe/berrypoison
+	med_pot = /datum/alch_cauldron_recipe/health_potion
+	minor_pot = /datum/alch_cauldron_recipe/antidote
+
+/obj/item/alch/euphrasia
+	name = "euphrasia"
+	icon_state = "euphrasia"
+
+	major_pot = /datum/alch_cauldron_recipe/spd_potion
+	med_pot = /datum/alch_cauldron_recipe/per_potion
+	minor_pot = /datum/alch_cauldron_recipe/int_potion
+
+/obj/item/alch/paris
+	name = "paris"
+	icon_state = "paris"
+
+	major_pot = /datum/alch_cauldron_recipe/berrypoison
+	med_pot = /datum/alch_cauldron_recipe/doompoison
+	minor_pot = /datum/alch_cauldron_recipe/end_potion
+
+/obj/item/alch/calendula
+	name = "calendula"
+	icon_state = "calendula"
+
+	major_pot = /datum/alch_cauldron_recipe/big_health_potion
+	med_pot = /datum/alch_cauldron_recipe/end_potion
+	minor_pot = /datum/alch_cauldron_recipe/health_potion
+
+/obj/item/alch/mentha
+	name = "mentha"
+	icon_state = "mentha"
+
+	major_pot = /datum/alch_cauldron_recipe/per_potion
+	med_pot = /datum/alch_cauldron_recipe/int_potion
+	minor_pot = /datum/alch_cauldron_recipe/mana_potion
+
+/obj/item/alch/urtica
+	name = "urtica"
+	icon_state = "urtica"
+
+	major_pot = /datum/alch_cauldron_recipe/health_potion
+	med_pot = /datum/alch_cauldron_recipe/spd_potion
+	minor_pot = /datum/alch_cauldron_recipe/mana_potion
+
+/obj/item/alch/salvia
+	name = "salvia"
+	icon_state = "salvia"
+
+	major_pot = /datum/alch_cauldron_recipe/str_potion
+	med_pot = /datum/alch_cauldron_recipe/con_potion
+	minor_pot = /datum/alch_cauldron_recipe/end_potion
+
+/obj/item/alch/hypericum
+	name = "hypericum"
+	icon_state = "hypericum"
+
+	major_pot = /datum/alch_cauldron_recipe/mana_potion
+	med_pot = /datum/alch_cauldron_recipe/big_mana_potion
+	minor_pot = /datum/alch_cauldron_recipe/antidote
+
+/obj/item/alch/benedictus
+	name = "benedictus"
+	icon_state = "benedictus"
+
+	major_pot = /datum/alch_cauldron_recipe/big_mana_potion
+	med_pot = /datum/alch_cauldron_recipe/mana_potion
+	minor_pot = /datum/alch_cauldron_recipe/int_potion
+
+/obj/item/alch/valeriana
+	name = "valeriana"
+	icon_state = "valeriana"
+
+	major_pot = /datum/alch_cauldron_recipe/health_potion
+	med_pot = /datum/alch_cauldron_recipe/spd_potion
+	minor_pot = /datum/alch_cauldron_recipe/mana_potion
+
+/obj/item/alch/artemisia
+	name = "artemisia"
+	icon_state = "artemisia"
+
+	major_pot = /datum/alch_cauldron_recipe/str_potion
+	med_pot = /datum/alch_cauldron_recipe/spd_potion
+	minor_pot = /datum/alch_cauldron_recipe/health_potion
+
 //dust mix crafting
 /datum/crafting_recipe/roguetown/alch/feaudust
 	name = "feau dust"
