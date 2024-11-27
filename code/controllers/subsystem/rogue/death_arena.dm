@@ -76,6 +76,8 @@ SUBSYSTEM_DEF(death_arena)
 			var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(spawn_loc)
 			O.livingname = carbon.name
 			O.ckey = carbon.ckey
+			ADD_TRAIT(O, TRAIT_PACIFISM, TRAIT_GENERIC)
+			add_fighter(O)
 		qdel(carbon)
 	fighters = list()
 
