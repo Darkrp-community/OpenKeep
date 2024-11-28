@@ -145,7 +145,7 @@
 /datum/slapcraft_step/proc/step_replace_text(msg, mob/living/user, obj/item/item, obj/item/slapcraft_assembly/assembly)
 	msg = replacetext(msg,"%USER%","[user]")
 	msg = replacetext(msg,"%ITEM%","\improper [item]")
-	msg = replacetext(msg,"%TARGET%","\improper [assembly]")
+	msg = replacetext(msg,"%TARGET%","\improper \the [assembly]")
 	return msg
 
 /// Below are virtual procs I allow steps to override for their specific behaviours.
@@ -226,27 +226,27 @@
 /// Makes a description for the visible message of finishing a step.
 /datum/slapcraft_step/proc/make_finish_msg()
 	if(insert_item)
-		return "%USER% inserts %ITEM% into \the %TARGET%."
+		return "%USER% inserts %ITEM% into %TARGET%."
 	else
-		return "%USER% uses %ITEM% on \the %TARGET%."
+		return "%USER% uses %ITEM% on %TARGET%."
 
 /// Makes a description for the visible message of starting a step that requires some time to perform.
 /datum/slapcraft_step/proc/make_start_msg()
 	if(insert_item)
-		return "%USER% begins inserting %ITEM% into \the %TARGET%."
+		return "%USER% begins inserting %ITEM% into %TARGET%."
 	else
-		return "%USER% begins using %ITEM% on \the %TARGET%."
+		return "%USER% begins using %ITEM% on %TARGET%."
 
 /// Makes a personalized description for the visible message of finishing a step.
 /datum/slapcraft_step/proc/make_finish_msg_self()
 	if(insert_item)
-		return "You insert %ITEM% into \the %TARGET%."
+		return "You insert %ITEM% into %TARGET%."
 	else
-		return "You use %ITEM% on \the %TARGET%."
+		return "You use %ITEM% on %TARGET%."
 
 /// Makes a personalized description for the visible message of starting a step that requires some time to perform.
 /datum/slapcraft_step/proc/make_start_msg_self()
 	if(insert_item)
-		return "You begin inserting %ITEM% into \the %TARGET%."
+		return "You begin inserting %ITEM% into %TARGET%."
 	else
-		return "You begin using %ITEM% on \the %TARGET%."
+		return "You begin using %ITEM% on %TARGET%."
