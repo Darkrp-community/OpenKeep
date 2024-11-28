@@ -259,9 +259,13 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	QDEL_NULL(spawners_menu)
 	return ..()
 
+/mob/dead/observer/rogue/Destroy()
+    . = ..()
+    if(_list_find(verbs, /client/proc/descend) == TRUE) //sanity check
+        verbs -= /client/proc/descend
+
 /mob/dead/CanPass(atom/movable/mover, turf/target)
 	return 1
-
 
 /mob/dead/observer/rogue/CanPass(atom/movable/mover, turf/target)
 	if(!isinhell)
