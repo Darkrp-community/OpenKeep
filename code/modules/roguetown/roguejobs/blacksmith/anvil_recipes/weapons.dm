@@ -303,10 +303,10 @@
 	created_item = /obj/item/rogueweapon/sword/long/greatsword/zwei
 	craftdiff = 3
 
-// STEEL GEAR - Fancy shit for Knights
+// STEEL GEAR - Fancy gear for Knights
 
 /datum/anvil_recipe/weapons/steel/axe_steel
-	name = "Axe (+s)"
+	name = "Steel Axe (+Stick)"
 	recipe_name = "an Axe"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -315,16 +315,17 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/steel/warhammer
-	name = "Warhammer(+s)"
+	name = "Steel Warhammer (+Small Log)"
 	recipe_name = "a big warhammer"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = 	/obj/item/rogueweapon/hammer/sledgehammer/war
+	craftdiff = 2
 
 
 /datum/anvil_recipe/weapons/steel/battleaxe
-	name = "Battle Axe (2)"
+	name = "Battle Axe (+Bar x2)"
 	recipe_name = "a Battle Axe"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -333,7 +334,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/steel/billhook
-	name = "Billhook (+w)"
+	name = "Billhook (+Small Log)"
 	recipe_name = "a Billhook"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -350,7 +351,7 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/steel/crossbow_eng
-	name = "Crossbow (+w) (+f)"
+	name = "Crossbow (+Small Log, +Fibers)"
 	recipe_name = "a Crossbow"
 	appro_skill = /datum/skill/craft/engineering
 	req_bar = /obj/item/ingot/steel
@@ -367,7 +368,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/steel/dagger_steel
-	name = "Dagger x2"
+	name = "2x Steel Daggers"
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -377,7 +378,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/steel/decsaber
-	name = "Decorated sabre (+g)"
+	name = "Decorated Sabre (+Gold Bar)"
 	recipe_name = "a Decorated Sabre"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -386,7 +387,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/steel/decsword
-	name = "Decorated sword (+g)"
+	name = "Decorated Sword (+Gold Bar)"
 	recipe_name = "a Decorated Sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -395,7 +396,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/steel/decrapier
-	name = "Decorated rapier (+g)"
+	name = "Decorated Rapier (+Gold Bar)"
 	recipe_name = "a Decorated Rapier"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -404,7 +405,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/steel/eaglebeak
-	name = "Eagle's Beak (2) (+w)"
+	name = "Eagle's Beak (+Bar, +Small Log)"
 	recipe_name = "an Eagle's Beak"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -413,7 +414,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/steel/flail_steel
-	name = "Flail (+c) (+s)"
+	name = "Steel Flail (+Chain, +Stick)"
 	recipe_name = "a Flail"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/stick)
@@ -421,7 +422,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/steel/grandmace
-	name = "Grand Mace (+w)"
+	name = "Grand Mace (+Small Log)"
 	recipe_name = "a Grand Mace"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -430,7 +431,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/steel/greatsword
-	name = "Greatsword (3)"
+	name = "Greatsword (+Bar x2)"
 	recipe_name = "a Greatsword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -439,7 +440,7 @@
 	craftdiff = 4
 
 /datum/anvil_recipe/weapons/steel/halberd
-	name = "Halberd (2) (+w)"
+	name = "Halberd (+Bar, +Small Log)"
 	recipe_name = "a Halberd"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -448,7 +449,7 @@
 	craftdiff = 4
 
 /datum/anvil_recipe/weapons/steel/huntknife
-	name = "Hunting knife"
+	name = "Hunting Knife"
 	recipe_name = "a Hunting Knife"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -456,7 +457,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/steel/kiteshield
-	name = "Kite Shield (2) (+h)"
+	name = "Kite Shield (+Bar, +Hide)"
 	recipe_name = "a Kite Shield"
 	appro_skill = /datum/skill/craft/armorsmithing
 	req_bar = /obj/item/ingot/steel
@@ -465,7 +466,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/steel/longsword
-	name = "Longsword (2)"
+	name = "Longsword (+Bar)"
 	recipe_name = "a Longsword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -474,7 +475,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/steel/mace_steel
-	name = "Mace (2)"
+	name = "Steel Mace (+Bar)"
 	recipe_name = "a Mace"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -492,7 +493,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/steel/paxe
-	name = "Pick-Axe (2) (+s)"
+	name = "Pick-Axe (+Bar, +Stick)"
 	recipe_name = "a Pick that is also an Axe"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
@@ -516,16 +517,8 @@
 	created_item = /obj/item/rogueweapon/sword/sabre
 	craftdiff = 2
 
-/datum/anvil_recipe/weapons/steel/shortsword
-	name = "Shortsword"
-	recipe_name = "a Short Sword"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/sword/short
-	craftdiff = 1
-
 /datum/anvil_recipe/weapons/steel/sword_steel
-	name = "Sword"
+	name = "Arming Sword"
 	recipe_name = "a Sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel

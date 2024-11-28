@@ -33,7 +33,7 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/tools/cogstee
-	name = "Cog x4"
+	name = "4x Cogs"
 	recipe_name = "four Cogs"
 	req_bar = /obj/item/ingot/steel
 	appro_skill = /datum/skill/craft/engineering // To train engineering
@@ -58,7 +58,7 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/tools/gobletsteel
-	name = "Goblets x3"
+	name = "3x Goblets"
 	recipe_name = "three Goblets"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/reagent_containers/glass/cup/steel

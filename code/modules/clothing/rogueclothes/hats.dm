@@ -1028,6 +1028,10 @@
 	name = "hounskull"
 	desc = "A lavish hounskull which allows a crest to be mounted on top."
 	icon_state = "decorated_hounskull"
+	armor = ARMOR_PLATE_GOOD
+	max_integrity = INTEGRITY_STRONG
+	prevent_crits = ALL_CRITICAL_HITS
+
 
 /obj/item/clothing/head/roguetown/helmet/heavy/decorated/hounskull/attack_right(mob/user)
 	..()
@@ -1048,6 +1052,7 @@
 	name = "great helm"
 	desc = "A lavish great helm which allows a crest to be mounted on top."
 	icon_state = "decorated_bucket"
+	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/heavy/decorated/bucket/attack_right(mob/user)
 	..()
@@ -1068,6 +1073,7 @@
 	name = "gold helm"
 	desc = "A lavish gold-trimmed greathelm which allows a crest to be mounted on top."
 	icon_state = "decorated_gbucket"
+	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/heavy/decorated/golden/attack_right(mob/user)
 	..()
