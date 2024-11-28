@@ -28,7 +28,7 @@
 		return
 	if(!istype(src, /obj/item/grabbing))
 		if(HAS_TRAIT(user, TRAIT_CHUNKYFINGERS))
-			to_chat(user, "<span class='warning'>...What?</span>")
+			to_chat(user, span_warning("...What?"))
 			return
 	if(tool_behaviour && target.tool_act(user, src, tool_behaviour))
 		return
