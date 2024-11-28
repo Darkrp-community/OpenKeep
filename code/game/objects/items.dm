@@ -226,6 +226,9 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/damage_type = "blunt"
 	var/force_reupdate_inhand = TRUE
 
+	var/is_silver = FALSE
+	var/last_used = 0
+
 	// Boolean sanity var for smelteries to avoid runtimes. Is this is a bar smelted through ore for exp gain?
 	var/smelted = FALSE
 	// Can this be used against a training dummy to learn skills? Prevents dumb exploits.
