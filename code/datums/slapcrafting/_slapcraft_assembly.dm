@@ -29,7 +29,7 @@
 		. += span_boldnotice(next_step.todo_desc)
 	// And tell them if it can be disassembled back into the components aswell.
 	if(recipe.can_disassemble)
-		. += span_boldnotice("Use in hand to disassemble this back into components.")
+		. += span_boldnotice("Right click to disassemble this back into components.")
 
 /obj/item/slapcraft_assembly/attackby(obj/item/item, mob/user, params)
 	// Get the next step
@@ -50,9 +50,9 @@
 		component_overlay.overlays = component.overlays
 		. += component_overlay
 
-/obj/item/slapcraft_assembly/attack_self(mob/user)
+/obj/item/slapcraft_assembly/attack_right(mob/user)
 	if(recipe.can_disassemble)
-		to_chat(user, span_notice("You take apart \the [src]"))
+		to_chat(user, span_notice("You take apart \the [src]."))
 		disassemble()
 	else
 		to_chat(user, span_warning("You can't take this apart!"))
@@ -123,7 +123,7 @@
 	step_states[step_datum.type] = TRUE
 
 	if(recipe.is_finished(step_states))
-		if(!recipe.check_craft_requirements(user, get_turf(src)))
+		if(!recipe.check_craft_requirements(user, recipe.get_result_location(src, user)))
 			to_chat(user, "<span class='warning'>I can't craft here.</span>")
 			step_states[step_datum.type] = FALSE
 			return
@@ -133,10 +133,10 @@
 /obj/item/slapcraft_assembly/proc/set_recipe(datum/slapcraft_recipe/set_recipe)
 	recipe = set_recipe
 	w_class = recipe.assembly_weight_class
-	if(recipe.in_place_craft)
+	if(recipe.anchor_craft)
 		anchored = TRUE
 	name = "[set_recipe.assembly_name_prefix] [set_recipe.name]"
-	desc = "This seems to be a work in progress \the [set_recipe.name]"
+	desc = "This seems to be a work in progress [set_recipe.name]"
 
 	// Set step states for this recipe.
 	step_states = list()
