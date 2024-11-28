@@ -125,7 +125,7 @@
 	)
 /datum/supply_pack/rogue/rawmats/riddle_of_steel
 	name = "Riddle of Steel"
-	cost = 900
+	cost = 1500
 	contains = list(
 		/obj/item/riddleofsteel
 	)
