@@ -232,14 +232,14 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/steel/helmetkettle
-	name = "Kettle helmet"
+	name = "Kettle Helmet"
 	recipe_name = "a Kettle Helmet"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/roguetown/helmet/kettle
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/steel/helmetslitkettle
-	name = "Slitted Kettle helmet"
+	name = "Slitted Kettle Helmet"
 	recipe_name = "a slitted kettle helmets"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/roguetown/helmet/kettle/slit
@@ -253,7 +253,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/steel/helmetknight
-	name = "Knight's helmet (2)"
+	name = "Knight's helmet (+Bar)"
 	recipe_name = "a Knight's Helmet"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
@@ -262,7 +262,7 @@
 
 
 /datum/anvil_recipe/armor/steel/hounskull
-	name = "Hounskull helmet (+Bar x2)"
+	name = "Hounskull Helmet (+Bar x2)"
 	recipe_name = "a Hounskull Helmet"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
@@ -270,7 +270,7 @@
 	craftdiff = 4
 
 /datum/anvil_recipe/armor/steel/platefull
-	name = "Plate armor (4)"
+	name = "Plate Armor (+Bar x3)"
 	recipe_name = "a Full-Plate Armor"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel,/obj/item/ingot/steel)
@@ -278,23 +278,21 @@
 	craftdiff = 4
 
 /datum/anvil_recipe/armor/steel/platebracer
-	name = "Plate vambraces"
+	name = "Plate Vambraces"
 	recipe_name = "Plate Vambraces"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/wrists/roguetown/bracers
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/steel/plateleg
-	name = "Plate chausses x2"
-	recipe_name = "a couple of Plate Chausses"
+	name = "Plate Chausses"
+	recipe_name = "a pair of Plate Chausses"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/under/roguetown/platelegs
-	createmultiple = TRUE
-	createditem_num = 1
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/steel/plateglove
-	name = "Plate gauntlets"
+	name = "Plate Gauntlets"
 	recipe_name = "a pair of Plate Gauntlets"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/gloves/roguetown/plate
