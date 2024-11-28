@@ -4,9 +4,6 @@
 	craftdiff = 1
 
 // --------- COPPER -----------
-/datum/anvil_recipe/armor/copper
-	req_bar = /obj/item/ingot/copper
-
 /datum/anvil_recipe/armor/copper/mask
 	name = "Copper mask"
 	recipe_name = "a mask of copper"
@@ -46,9 +43,7 @@
 //This way, we can avoid having to name things in strange ways and can simply have iron/cuirass, stee/cuirass, blacksteel/cuirass->
 //-> and not messy names like ibreastplate and hplate
 
-// --------- IRON RECIPES -----------
-
-
+// --------- IRON -----------
 /datum/anvil_recipe/armor/iron
 	req_bar = /obj/item/ingot/iron
 	craftdiff = 0
@@ -145,10 +140,6 @@
 	craftdiff = 1
 
 // --------- STEEL -----------
-/datum/anvil_recipe/armor/steel
-	req_bar = /obj/item/ingot/steel
-	craftdiff = 2
-
 /datum/anvil_recipe/armor/steel/bevor
 	name = "Bevor"
 	recipe_name = "a Bevor"
@@ -260,7 +251,6 @@
 	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/knight)
 	craftdiff = 3
 
-
 /datum/anvil_recipe/armor/steel/hounskull
 	name = "Hounskull Helmet (+Bar x2)"
 	recipe_name = "a Hounskull Helmet"
@@ -371,20 +361,14 @@
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decorated/bascinet
 	craftdiff = 2
 
-/datum/anvil_recipe/armor/gold
-	req_bar = /obj/item/ingot/gold
-	craftdiff = 1
-
+// --------- GOLD -----------
 /datum/anvil_recipe/armor/gold/mask
 	name = "Gold Mask"
 	req_bar = /obj/item/ingot/gold
 	created_item = /obj/item/clothing/mask/rogue/facemask/goldmask
+	craftdiff = 1
 
-// --------- BLACKSTEEL RECIPES-----------
-/datum/anvil_recipe/armor/blacksteel
-	req_bar = /obj/item/ingot/blacksteel
-	craftdiff = 3
-
+// --------- BLACKSTEEL -----------
 /datum/anvil_recipe/armor/blacksteel/platechest
 	name = "Blacksteel Plate Armor (4)"
 	req_bar = /obj/item/ingot/blacksteel
@@ -396,19 +380,23 @@
 	req_bar = /obj/item/ingot/blacksteel
 	additional_items = list(/obj/item/ingot/blacksteel)
 	created_item = /obj/item/clothing/under/roguetown/platelegs/blk
+	craftdiff = 3
 
 /datum/anvil_recipe/armor/blacksteel/bucket
 	name = "Blacksteel Bucket Helmet (2)"
 	req_bar = /obj/item/ingot/blacksteel
 	additional_items = list(/obj/item/ingot/blacksteel)
 	created_item = /obj/item/clothing/head/roguetown/helmet/blacksteel/bucket
+	craftdiff = 3
 
 /datum/anvil_recipe/armor/blacksteel/plategloves
 	name = "Blacksteel Plate Gauntlets"
 	req_bar = /obj/item/ingot/blacksteel
 	created_item = /obj/item/clothing/gloves/roguetown/plate/blk
+	craftdiff = 3
 
 /datum/anvil_recipe/armor/blacksteel/plateboots
 	name = "Blacksteel Plate Boots"
 	req_bar = /obj/item/ingot/blacksteel
 	created_item = /obj/item/clothing/shoes/roguetown/boots/armor/blkknight
+	craftdiff = 3

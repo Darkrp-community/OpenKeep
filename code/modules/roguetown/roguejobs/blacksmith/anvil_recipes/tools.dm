@@ -67,7 +67,7 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/tools/gobletgold
-	name = "Goblets x3"
+	name = "3x Golden Goblets"
 	recipe_name = "three Goblets"
 	req_bar = /obj/item/ingot/gold
 	created_item = /obj/item/reagent_containers/glass/cup/golden
