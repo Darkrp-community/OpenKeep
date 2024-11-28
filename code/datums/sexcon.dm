@@ -40,8 +40,6 @@
 
 /datum/sex_controller/female
 	gender = FEMALE
-	var/curplaying
-	var/datum/looping_sound/femmoans
 
 /mob
 	var/can_do_sex = 2
@@ -77,7 +75,7 @@
 			if(G.limb_grabbed == chest)
 				if(G.grabbee == user)
 					if(G.sublimb_grabbed == BODY_ZONE_PRECISE_GROIN)
-						var/yea = list("fap")
+						var/yea = list("pleasure self")
 						var/td = input(user, "pleasures","") as null|anything in yea
 						if(td == "fap")
 							sexcon.begin_fapping(G, user)
@@ -202,7 +200,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.virginity)
-			user.visible_message("<span class='warning'>[user] loses her purity!</span>")
+			user.visible_message("<span class='warning'>[user] loses their purity!</span>")
 			H.flash_fullscreen("redflash3")
 			H.on_virgin_loss()
 	START_PROCESSING(SSsex, user.sexcon)
@@ -652,7 +650,7 @@
 		return TRUE
 
 /datum/sex_controller/proc/can_change_dir()
-	if((fucking) || (inass) || (inpussy) || (ontits) || (inmouth) || (weeating) || (riding) || (fapping && fapping.grabbee != owner))
+	if(fucking || inass || inpussy || ontits || inmouth || weeating || riding || (fapping && fapping.grabbee != owner))
 		return FALSE
 	return TRUE
 
@@ -739,9 +737,6 @@
 						if(prob(33))
 							fucking.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[fucking] rides [owner].</span>")
 						var/usedsource = "insidepussy"
-						if(D.owner.stat == DEAD)
-							usedsource = "fuckcorpse"
-							stop_fucking()
 						D.adjust_horny(4, "pussyfucked")
 						if(adjust_horny(3, usedsource))
 							D.adjust_horny(50, "pussyfucked")
@@ -755,12 +750,8 @@
 						if(prob(33))
 							fucking.visible_message("<span class='[!D.owner.cmode ? "love" : "warning"]'>[owner] taffs [fucking].</span>")
 						var/usedsource = "insidepussy"
-						if(D.owner.stat == DEAD)
-							usedsource = "fuckcorpse"
-							stop_fucking()
-						else
-							if(D.owner.stat != CONSCIOUS)
-								usedsource = "sleepingbeauty"
+						if(D.owner.stat != CONSCIOUS)
+							usedsource = "sleepingbeauty"
 						if(D.owner.cmode)
 							D.owner.flash_fullscreen("redflash1")
 						D.adjust_horny(4, "pussyfucked")
@@ -778,9 +769,6 @@
 							fucking.visible_message("<span class='[!D.owner.cmode ? "love" : "warning"]'>[owner] taffs [fucking] from behind.</span>")
 //						D.owner.Immobilize(10)
 						var/usedsource = "insideass"
-						if(D.owner.stat == DEAD)
-							usedsource = "fuckcorpse"
-							stop_fucking()
 						if(D.owner.cmode)
 							D.owner.flash_fullscreen("redflash1")
 						if(D.owner.cmode)
@@ -801,9 +789,6 @@
 						if(prob(33))
 							fucking.visible_message("<span class='[!D.owner.cmode ? "love" : "warning"]'>[owner] taffs [fucking]'s chest.</span>")
 						var/usedsource = "ontits"
-						if(D.owner.stat == DEAD)
-							usedsource = "fuckcorpse"
-							stop_fucking()
 						if(adjust_horny(2, usedsource))
 							stop_fucking()
 //						D.owner.Immobilize(10)
@@ -823,9 +808,6 @@
 							fucking.visible_message("<span class='[!D.owner.cmode ? "love" : "warning"]'>[owner] thrusts in [fucking]'s mouth.</span>")
 //						D.owner.Immobilize(10)
 						var/usedsource = "fuckmouth"
-						if(D.owner.stat == DEAD)
-							usedsource = "fuckcorpse"
-							stop_fucking()
 						if(adjust_horny(3, usedsource))
 							stop_fucking()
 	if(riding)
@@ -1033,18 +1015,6 @@
 			playsound(owner, pick('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg'), 100, FALSE, ignore_walls = FALSE)
 			owner.visible_message("<span class='notice'>[owner] feeds [fucking]!</span>")
 			add_cum_floor(get_turf(fucking))
-			if(fucking && fucking.sexcon.weeating == owner)
-				if(fucking.cmode)
-					if(ishuman(owner))
-						var/mob/living/carbon/human/H = owner
-						var/wuzantag
-						if(H.mind)
-							if(H.mind.antag_datums)
-								if(H.mind.antag_datums.len)
-									wuzantag = TRUE
-						if(!wuzantag)
-							adjust_playerquality(-2, H.ckey, reason="Raped as a non villain.")
-					addtimer(CALLBACK(eatingus, TYPE_PROC_REF(/mob, emote), "gag"), rand(10,20))
 		if("insideass")
 			if(owner.has_flaw(/datum/charflaw/addiction/lovefiend))
 				owner.sate_addiction()
@@ -1189,49 +1159,9 @@
 		owner.visible_message("<span class='notice'>[owner] tightens in pleasure!</span>")
 	else
 		owner.visible_message("<span class='notice'>[owner] tightens in release!</span>")
-	if(curplaying)
-		curplaying = null
-		if(femmoans)
-			femmoans.stop()
 
 /datum/sex_controller/proc/add_cum_floor(turfu)
 	if(!turfu || !isturf(turfu))
 		return
 	var/turf/T = turfu
 	new /obj/effect/decal/cleanable/coom(T)
-
-/datum/looping_sound/femhornylite
-	mid_sounds = list('sound/vo/female/gen/se/horny1loop (1).ogg')
-	mid_length = 470
-	volume = 20
-	extra_range = -4
-
-/datum/looping_sound/femhornylitealt
-	mid_sounds = list('sound/vo/female/gen/se/horny1loop (2).ogg')
-	mid_length = 360
-	volume = 20
-	extra_range = -4
-
-/datum/looping_sound/femhornymed
-	mid_sounds = list('sound/vo/female/gen/se/horny2loop (1).ogg')
-	mid_length = 420
-	volume = 20
-	extra_range = -4
-
-/datum/looping_sound/femhornymedalt
-	mid_sounds = list('sound/vo/female/gen/se/horny2loop (2).ogg')
-	mid_length = 350
-	volume = 20
-	extra_range = -4
-
-/datum/looping_sound/femhornyhvy
-	mid_sounds = list('sound/vo/female/gen/se/horny3loop (1).ogg')
-	mid_length = 440
-	volume = 20
-	extra_range = -4
-
-/datum/looping_sound/femhornyhvyalt
-	mid_sounds = list('sound/vo/female/gen/se/horny3loop (2).ogg')
-	mid_length = 390
-	volume = 20
-	extra_range = -4
