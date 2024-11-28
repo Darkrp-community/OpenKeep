@@ -145,7 +145,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 60,
 				/mob/living/carbon/human/species/goblin/npc/ambush = 50,
 				/mob/living/simple_animal/pet/cat/rogue/cabbit = 10)
-	first_time_text = "VALLEY OF SAINTS"
+	first_time_text = "STONEHILL VALLEY"
 
 /area/rogue/outdoors/rtfield/plague_district
 	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/ambush = 50)
