@@ -47,7 +47,6 @@
 - Highborn: The "default" class, a typical Enigman noble. Decent with swords and a knife. Can sew and read pretty good. A little squishy.
 - Courtesan: Ex-classy or not-so-classy prostitute. Concerningly good with that knife and sneaking around. A little dumb.
 - Lowborn: A good wholesome peasant spouse. Can cook and swing a pitchfork good. Not so smart or perceptive.
-- Zybantine: Mostly the same as the Highborn with bow skill instead of wrestling and unarmed.
 */
 
 /datum/advclass/consort/highborn
@@ -163,47 +162,4 @@
 	H.change_stat("speed", -1)
 	H.change_stat("fortune", 1)
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-
-/datum/advclass/consort/zybantine
-	name = "Zybantine Noble"
-	tutorial = "Your family yearns to peruse the secrets of Enigma's magicks, and so you were wed to build an alliance between your Zybantine kingdom and the isle. Just like your family, you intend to make the most of this opportunity for learning, despite the circumstances."
-	outfit = /datum/outfit/job/roguetown/consort/zybantine
-
-	category_tags = list(CTAG_CONSORT)
-
-/datum/outfit/job/roguetown/consort/zybantine/pre_equip(mob/living/carbon/human/H)
-	. = ..()
-	if(H.gender == MALE)
-		neck = /obj/item/clothing/neck/roguetown/horus
-		pants = /obj/item/clothing/under/roguetown/tights/red
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/arming
-	else
-		neck = /obj/item/clothing/neck/roguetown/horus
-		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
-
-	if(!H.has_language(/datum/language/zybantine))
-		H.grant_language(/datum/language/zybantine)
-		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
-
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
-	if(H.age == AGE_OLD)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-	H.change_stat("intelligence", 3)
-	H.change_stat("endurance", 1)
-	H.change_stat("perception", 3)
-	H.change_stat("speed", 1)
-	H.change_stat("fortune", 5)
-	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
