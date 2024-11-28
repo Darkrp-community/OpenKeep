@@ -675,7 +675,7 @@
 	specuse = ALL_RACES_LIST
 
 /datum/sprite_accessory/facial_hair/shaved
-	name = "None"
+	name = "Shaved"
 	icon_state = "facial_shaven"
 	gender = MALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
