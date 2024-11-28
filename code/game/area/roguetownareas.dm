@@ -145,7 +145,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 60,
 				/mob/living/carbon/human/species/goblin/npc/ambush = 50,
 				/mob/living/simple_animal/pet/cat/rogue/cabbit = 10)
-	first_time_text = "ROCKHILL BASIN"
+	first_time_text = "VALLEY OF SAINTS"
 
 /area/rogue/outdoors/rtfield/plague_district
 	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/ambush = 50)
@@ -159,21 +159,25 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/ambush = 50)
 	name = "outlaw hideout"
 	color = "#e9baa3"
+	first_time_text = null
 
 /area/rogue/outdoors/rtfield/boggish
 	ambush_mobs = list(/mob/living/carbon/human/species/goblin/npc/sea = 50)
 	name = "bog approaches"
 	color = "#7db36e"
+	first_time_text = null
 
 /area/rogue/outdoors/rtfield/woodish
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50)
 	name = "woods approaches"
 	color = "#7db36e"
+	first_time_text = null
 
 /area/rogue/outdoors/rtfield/spooky
 	ambush_mobs = list(/mob/living/simple_animal/hostile/rogue/haunt = 50)
 	name = "spooky place"
 	color = "#9294d3"
+	first_time_text = null
 
 /area/rogue/indoors/shelter/rtfield
 	icon_state = "rtfield"

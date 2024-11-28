@@ -600,10 +600,20 @@
 /obj/effect/decal/shadow_floor/corner
 	icon_state = "shad_floorcorn"
 
+/obj/effect/decal/miasma
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/mob/rotten.dmi'
+	icon_state = "deadite"
+	mouse_opacity = 0
 
 /obj/effect/decal/remains/human/old
 	name = "remains"
 	color = "#d6b3a5"
+
+/obj/effect/decal/remains/human/old/small
+	icon_state = "remainslarva"
+
 
 /obj/structure/fluff/shipssprote
 	name = ""

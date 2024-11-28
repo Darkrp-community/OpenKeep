@@ -304,10 +304,10 @@
 	probby = 100 // temp to find out if decal vomit spawns
 	color = "#ff0000"
 	spawned = list(
-		/obj/effect/decal/cleanable/vomit = 100,
+		/obj/effect/decal/cleanable/vomit = 10,
 		/obj/item/clothing/mask/cigarette/rollie = 10,
 		/obj/item/rogueweapon/knife/stone = 10,
-		/obj/structure/idle_enemy/hostile_bum = 100	)
+		/obj/structure/idle_enemy/hostile_bum = 25	)
 
 /*	..................   Mines Danger   ................... */
 /obj/effect/spawner/roguemap/mine_mole_maybe
