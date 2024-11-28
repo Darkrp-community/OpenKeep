@@ -87,7 +87,7 @@
 					continue
 				if(!(I.type in accepted_items))
 					continue
-				var/prize = I.get_real_price() * 5 // Increase price by 500% Keep in mind drug sell prices are pretty cheap to encourage more trade with the baths, also drugs are expensive.
+				var/prize = I.get_real_price() * 2 // Increase price by 500% Keep in mind drug sell prices are pretty cheap to encourage more trade with the baths, also drugs are expensive.
 				if(prize >= 1)
 					play_sound=TRUE
 					budgie += prize

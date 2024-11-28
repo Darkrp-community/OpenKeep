@@ -110,8 +110,6 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	ignore += typesof(/obj/machinery/vending/custom)
 	ignore += typesof(/obj/vehicle/sealed)
 	ignore += typesof(/obj/mecha)
-	//spawns a mech, which as above, explodes when deleted
-	ignore += typesof(/mob/living/simple_animal/hostile/syndicate/mecha_pilot)
 	//these also like to explode if anything else is on their turf or nearby
 	ignore += typesof(/obj/effect/meteor)
 	//ENDS THE FUCKING WORLD.

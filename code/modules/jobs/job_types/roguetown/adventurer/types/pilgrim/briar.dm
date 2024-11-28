@@ -1,7 +1,12 @@
 /datum/advclass/pilgrim/briar
 	name = "Briar"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = ALL_PLAYER_RACES_BY_NAME
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+	)
 	outfit = /datum/outfit/job/roguetown/adventurer/briar
 	category_tags = list(CTAG_PILGRIM)
 	tutorial = "Stoic gardeners or flesh-eating predators, all can follow Dendors path. <br>His Briars scorn civilized living, many embracing their animal nature, being fickle and temperamental."
@@ -29,7 +34,7 @@
 
 	if(H.mind)
 		if(H.patron != /datum/patron/divine/dendor)
-			H.patron = GLOB.patronlist[/datum/patron/divine/dendor]
+			H.set_patron(/datum/patron/divine/dendor)
 
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)

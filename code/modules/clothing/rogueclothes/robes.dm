@@ -66,6 +66,13 @@
 	desc = "Black robes which cover the body not unlike those in depictions of the Carriageman himself."
 	icon_state = "necrarobe"
 
+/obj/item/clothing/suit/roguetown/shirt/robe/malum
+	name = "craftsman's robes"
+	desc = "The sturdy robes of a maker-monk of Malum."
+	icon_state = "malumrobe"
+	sleeved = null
+	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 0) // I just wanted to give Malumite robes a tiny bit of fire protection because they're craftspeople.
+
 /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	name = "solar vestments"
 	desc = "Holy vestments sanctified by divine hands. Caution is advised if not a faithful."

@@ -186,6 +186,7 @@
 		handle_vehicle_offsets()
 	else
 		to_chat(user, "<span class='warning'>You'll need the keys in one of my hands to [drive_verb] [AM].</span>")
+	SEND_SIGNAL(AM, COMSIG_RIDDEN_DRIVER_MOVE, user, direction)
 	return TRUE
 
 /datum/component/riding/proc/Unbuckle(atom/movable/M)

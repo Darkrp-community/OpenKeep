@@ -69,3 +69,89 @@
 	spawnableAtoms = list(/obj/structure/flora/roguegrass/water = 20,
 		                    /obj/structure/flora/roguegrass/water/reeds = 12,
 	                        /obj/structure/kneestingers = 3)
+
+
+// ----------------		ROUGE HAMLET 2.0	--------------------
+/obj/effect/landmark/mapGenerator/rogue/roguetown_hamlet
+	mapGeneratorType = /datum/mapGenerator/roguetown_hamlet
+	endTurfX = 128
+	endTurfY = 192
+	startTurfX = 1
+	startTurfY = 1
+
+/datum/mapGenerator/roguetown_hamlet
+	modules = list(
+		/datum/mapGeneratorModule/roguehamlet,
+		/datum/mapGeneratorModule/roguehamlet/roadturf,
+		/datum/mapGeneratorModule/roguehamlet/bonus_grassturfs,
+		/datum/mapGeneratorModule/roguehamlet_grassturf,
+		/datum/mapGeneratorModule/roguehamlet_swampturf,
+		/datum/mapGeneratorModule/roguehamlet_waterturf,
+		/datum/mapGeneratorModule/ambushing/hamlet)
+
+/datum/mapGeneratorModule/roguehamlet
+	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
+	allowed_turfs = list(/turf/open/floor/rogue/dirt)
+	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
+	spawnableAtoms = list(
+							/obj/structure/flora/roguegrass/bush_meagre = 10,
+							/obj/structure/flora/roguegrass = 20,
+							/obj/item/natural/stone = 5,
+							/obj/item/natural/rock = 3,
+							/obj/item/grown/log/tree/stick = 2,
+							/obj/structure/closet/dirthole/closed/loot=4)
+	spawnableTurfs = list(/turf/open/floor/rogue/dirt/road=5)
+	allowed_areas = list(/area/rogue/outdoors/rtfield)
+
+/datum/mapGeneratorModule/roguehamlet/roadturf
+	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
+	allowed_turfs = list(/turf/open/floor/rogue/dirt/road)
+	excluded_turfs = list()
+	spawnableAtoms = list(/obj/item/natural/stone = 3,
+							/obj/item/grown/log/tree/stick = 2)
+	allowed_areas = list(/area/rogue/outdoors/rtfield)
+
+/datum/mapGeneratorModule/roguehamlet/bonus_grassturfs
+	clusterCheckFlags = CLUSTER_CHECK_NONE
+	allowed_turfs = list(/turf/open/floor/rogue/dirt)
+	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
+	spawnableTurfs = list(/turf/open/floor/rogue/grass = 5)
+	allowed_areas = list(/area/rogue/outdoors/rtfield)
+
+/datum/mapGeneratorModule/roguehamlet_grassturf
+	clusterCheckFlags = CLUSTER_CHECK_NONE
+	allowed_turfs = list(/turf/open/floor/rogue/grass)
+	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
+	spawnableAtoms = list(/obj/structure/flora/roguegrass = 20,
+							/obj/item/natural/stone = 5,
+							/obj/item/grown/log/tree/stick = 2)
+	allowed_areas = list(/area/rogue/outdoors/town,/area/rogue/outdoors/rtfield)
+
+/datum/mapGeneratorModule/roguehamlet_swampturf
+	clusterCheckFlags = CLUSTER_CHECK_SAME_ATOMS
+	allowed_turfs = list(/turf/open/water/cleanshallow)
+	excluded_turfs = list()
+	allowed_areas = list(/area/rogue/outdoors/rtfield)
+	spawnableAtoms = list(/obj/structure/flora/roguegrass/water = 12,
+	                        /obj/structure/flora/roguegrass/water/reeds = 8,
+							/obj/structure/flora/roguegrass/stalky = 4,
+	                        /obj/structure/kneestingers = 4,
+							/obj/structure/flora/roguegrass/maneater/real = 1)
+
+/datum/mapGeneratorModule/roguehamlet_waterturf
+	clusterCheckFlags = CLUSTER_CHECK_NONE
+	allowed_turfs = list(/turf/open/water/swamp)
+	excluded_turfs = list()
+	allowed_areas = list(/area/rogue/outdoors/rtfield)
+	spawnableAtoms = list(/obj/structure/flora/roguegrass/water = 8,
+	                        /obj/structure/flora/roguegrass/water/reeds = 4)
+
+/datum/mapGeneratorModule/ambushing/hamlet
+	spawnableAtoms = list(/obj/effect/landmark/ambush=50)
+	spawnableTurfs = list()
+	clusterMax = 3
+	clusterMin = 1
+	checkdensity = FALSE
+	allowed_areas = list(/area/rogue/outdoors)
+	allowed_turfs = list(/turf/open/floor/rogue/dirt/ambush)
+	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)

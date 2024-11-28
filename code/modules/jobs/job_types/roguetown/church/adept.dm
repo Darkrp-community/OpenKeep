@@ -47,7 +47,7 @@
 /datum/outfit/job/roguetown/adept/bzealot/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.patron != /datum/patron/divine/astrata)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 
 	//Armor for class
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
@@ -91,7 +91,7 @@
 /datum/outfit/job/roguetown/adept/rthief/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.patron != /datum/patron/divine/astrata)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 	//Armor for class
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	neck = /obj/item/clothing/neck/roguetown/gorget
@@ -133,7 +133,7 @@
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 		H.verbs |= /mob/living/carbon/human/proc/torture_victim
 
 /datum/job/roguetown/adept/after_spawn(mob/living/carbon/human/H, mob/M, latejoin = TRUE)

@@ -57,6 +57,18 @@
 		if(D.masterkey)
 			lockhash = D.lockhash
 
+/obj/item/roguekey/lord/pre_attack_right(target, user, params)
+	. = ..()
+	if(istype(target, /obj/structure/closet))
+		var/obj/structure/closet/C = target
+		if(C.masterkey)
+			lockhash = C.lockhash
+	if(istype(target, /obj/structure/mineral_door))
+		var/obj/structure/mineral_door/D = target
+		if(D.masterkey)
+			lockhash = D.lockhash
+
+
 /obj/item/roguekey/lord/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
 	lockhash = GLOB.lockids[lockid]
@@ -662,3 +674,7 @@
 				KE.name = src.holdname
 			to_chat(user, "<span class='notice'>You add [src] to [K].</span>")
 			qdel(src)
+
+/obj/item/roguekey/spooky_village
+	icon_state = "rustkey"
+	lockid = "spooky_village"

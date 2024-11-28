@@ -44,6 +44,7 @@
 	slice_batch = TRUE
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/doughslice
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/bread
+	cooked_smell = /datum/pollutant/food/bread
 	w_class = WEIGHT_CLASS_NORMAL
 	rotprocess = SHELFLIFE_LONG
 	slice_sound = TRUE
@@ -103,6 +104,7 @@
 	icon_state = "doughslice"
 	slices_num = 0
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/bun
+	cooked_smell = /datum/pollutant/food/bun
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("dough" = 1)
 	rotprocess = SHELFLIFE_LONG
@@ -194,6 +196,7 @@
 	slices_num = 0
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/frybread
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pastry
+	cooked_smell = /datum/pollutant/food/pastry
 	w_class = WEIGHT_CLASS_NORMAL
 	rotprocess = SHELFLIFE_LONG
 // Dough + rolling pin on table = flat dough. RT got some similar proc for this.
@@ -257,6 +260,7 @@
 	desc = "The beginning of greater things to come."
 	icon_state = "piedough"
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom
+	cooked_smell = /datum/pollutant/food/pie_base
 	w_class = WEIGHT_CLASS_NORMAL
 	rotprocess = SHELFLIFE_LONG
 /obj/item/reagent_containers/food/snacks/rogue/piedough/attackby(obj/item/I, mob/user, params)
@@ -419,6 +423,7 @@
 	icon_state = "loaf_slice"
 	w_class = WEIGHT_CLASS_NORMAL
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/breadslice/toast
+	cooked_smell = /datum/pollutant/food/toast
 	bitesize = 2
 	rotprocess = SHELFLIFE_LONG
 	dropshrink = 0.8
@@ -716,6 +721,7 @@
 	icon_state = "cheesebun_raw"
 	color = "#ecce61"
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/cheesebun
+	cooked_smell = /datum/pollutant/food/cheese_bun
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | DAIRY
@@ -766,6 +772,7 @@
 	icon_state = "biscuit_raw"
 	color = "#ecce61"
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/biscuit
+	cooked_smell = /datum/pollutant/food/biscuit
 	w_class = WEIGHT_CLASS_NORMAL
 	eat_effect = null
 	rotprocess = SHELFLIFE_EXTREME
@@ -786,6 +793,7 @@
 	icon_state = "biscuit_raw"
 	color = "#ecce61"
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/biscuit_poison
+	cooked_smell = /datum/pollutant/food/biscuit
 	w_class = WEIGHT_CLASS_NORMAL
 	eat_effect = null
 	rotprocess = SHELFLIFE_EXTREME
@@ -871,6 +879,7 @@
 	icon_state = "honeycakeuncook"
 	slices_num = 0
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/hcake
+	cooked_smell = /datum/pollutant/food/cheese_cake
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | DAIRY | SUGAR
