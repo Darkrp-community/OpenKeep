@@ -46,7 +46,7 @@
 /* ! ! ! CONSORT CLASSES ! ! !
 - Highborn: The "default" class, a typical Enigman noble. Decent with swords and a knife. Can sew and read pretty good. A little squishy.
 - Courtesan: Ex-classy or not-so-classy prostitute. Concerningly good with that knife and sneaking around. A little dumb.
-- Peasant: A good wholesome peasant spouse. Can cook and swing a pitchfork good. Not so smart or perceptive.
+- Lowborn: A good wholesome peasant spouse. Can cook and swing a pitchfork good. Not so smart or perceptive.
 - Zybantine: Mostly the same as the Highborn with bow skill instead of wrestling and unarmed.
 */
 
@@ -126,14 +126,14 @@
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 
-/datum/advclass/consort/peasant
-	name = "Peasant"
+/datum/advclass/consort/lowborn
+	name = "Lowborn"
 	tutorial = "You never could have dreamed your life would be like this. Though your origins are humble, something special about you - whether it was your good looks, your kind heart, or your bravery - has brought you into Rockhill Keep."
-	outfit = /datum/outfit/job/roguetown/consort/peasant
+	outfit = /datum/outfit/job/roguetown/consort/lowborn
 
 	category_tags = list(CTAG_CONSORT)
 
-/datum/outfit/job/roguetown/consort/peasant/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/consort/lowborn/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/green
