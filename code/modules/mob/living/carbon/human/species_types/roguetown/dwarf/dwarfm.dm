@@ -20,7 +20,7 @@
 	is stubborn and ancient. They are revered craftsmen, sculptors, smiths, \
 	and miners. As an old saying goes, 'If you want it done right, lose 2 feet and grow a beard.' \
 	Despite their cultural praise, a long-standing fued remains between dwarves and elves \
-	stemming from old industrial practices. "
+	stemming from old industrial practices. Dwarves hold a strong alliance with humenkind."
 
 	skin_tone_wording = "Ore Attunement"
 

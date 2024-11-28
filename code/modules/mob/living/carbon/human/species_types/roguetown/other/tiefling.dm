@@ -11,16 +11,19 @@
 	name = "Tiefling"
 	id = "tiefling"
 	desc = "<b>Tiefling</b><br> \
-	Tieflings, also known as Infernal-Spawn.\
-	Tieflings cannot reproduce with mortals, and are the spawn of either devils, demons, or other tieflings. \
+	Tieflings; also known as Infernal-Spawn, Hell-Bloods, Surface-Devils, and perhaps most humourously, thief-lings.\
+	Tieflings cannot reproduce with mortals, and thus are spawn of either devils, demons, or other tieflings. \
 	Their treatment ranges from shunning to distrust, depending on the region. Shopkeeps and merchants always keep a wary eye out when \
 	a tiefling passes by. The resentment feed into itself, leading to higher rates of tiefling ire and thievery against other species. \
 	Many tieflings resign to seeking a solitary and nomadic life, huddled in groups outside the watchful eyes of others. \
 	They also tend to be extremely perceptive and paranoid, as luck is rarely on their side. \
 	Oddly positioned scales, hollow bones, and other varying oddities that may appear in a tiefling's biology \
 	make them considerably fragile. If to make matters worse, their hellish progenitors have left them a destiny of misfortune. \
+	A tiefling may develop any number of hellish features, a wide range of horns, potential hooves, odd spines and spikes, or scales. \
+	It is not uncommon for a tiefling to be generally unpleasant to look at. \
 	\
-	THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
+	THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK.\
+	CHALLENGE RACE: LOW STATS + DISCRIMINATION"
 
 	skin_tone_wording = "Progenitor"
 
