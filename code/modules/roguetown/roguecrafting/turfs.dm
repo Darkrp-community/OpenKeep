@@ -91,7 +91,7 @@
 
 /datum/crafting_recipe/roguetown/turfs/stonefloor
 	name = "rough stone floor"
-	result = /turf/open/floor/rogue/blocks
+	result = /turf/open/floor/rogue/cobble
 	reqs = list(/obj/item/natural/stone = 1)
 	skillcraft = /datum/skill/craft/masonry
 	craftdiff = 0
@@ -113,6 +113,22 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/turfs/stoneblockfloor/TurfCheck(mob/user, turf/T)
+	if(isclosedturf(T))
+		return
+	if(!istype(T, /turf/open/floor/rogue/dirt))
+		if(!istype(T, /turf/open/transparent/openspace))
+			if(!istype(T, /turf/open/floor/rogue/grass))
+				return
+	return TRUE
+
+/datum/crafting_recipe/roguetown/turfs/stoneherring
+	name = "herringstone floor"
+	result = /turf/open/floor/rogue/herringbone
+	reqs = list(/obj/item/natural/stoneblock = 1)
+	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/turfs/stoneherring/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
 		return
 	if(!istype(T, /turf/open/floor/rogue/dirt))
