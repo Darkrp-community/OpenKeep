@@ -260,9 +260,9 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	return ..()
 
 /mob/dead/observer/rogue/Destroy()
-    . = ..()
-    if(_list_find(verbs, /client/proc/descend) == TRUE) //sanity check
-        verbs -= /client/proc/descend
+	. = ..()
+	if(_list_find(verbs, /client/proc/descend) == TRUE) //sanity check
+		verbs -= /client/proc/descend
 
 /mob/dead/CanPass(atom/movable/mover, turf/target)
 	return 1
