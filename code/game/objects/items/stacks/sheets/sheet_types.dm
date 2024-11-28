@@ -52,7 +52,6 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("meatspike frame", /obj/structure/kitchenspike_frame, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("reflector frame", /obj/structure/reflector, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
-	new/datum/stack_recipe("iron door", /obj/structure/mineral_door/iron, 20, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("voting box", /obj/structure/votebox, 15, time = 50)
 ))
 
@@ -530,10 +529,7 @@ GLOBAL_LIST_INIT(plastic_recipes, list(
 	. = ..()
 	. += GLOB.plastic_recipes
 
-GLOBAL_LIST_INIT(paperframe_recipes, list(
-new /datum/stack_recipe("paper frame separator", /obj/structure/window/paperframe, 2, one_per_turf = TRUE, on_floor = TRUE, time = 10), \
-new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperframe, 3, one_per_turf = TRUE, on_floor = TRUE, time = 10 )))
-
+GLOBAL_LIST_INIT(paperframe_recipes, list())
 /obj/item/stack/sheet/paperframes
 	name = "paper frames"
 	desc = ""

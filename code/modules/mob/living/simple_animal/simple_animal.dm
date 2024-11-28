@@ -81,6 +81,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	var/armor_penetration = 0
 	///Damage type of a simple mob's melee attack, should it do damage.
 	var/melee_damage_type = BRUTE
+	///Type of melee attack
+	var/damage_type = "slash"
 	/// 1 for full damage , 0 for none , -1 for 1:1 heal from that source.
 	var/list/damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
 	///Attacking verb in present continuous tense.
@@ -109,8 +111,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	var/breedchildren = 3
 
 	///Simple_animal access.
-	///Innate access uses an internal ID card.
-	var/obj/item/card/id/access_card = null
+	var/list/lock_hashes
 	///In the event that you want to have a buffing effect on the mob, but don't want it to stack with other effects, any outside force that applies a buff to a simple mob should at least set this to 1, so we have something to check against.
 	var/buffed = 0
 	///If the mob can be spawned with a gold slime core. HOSTILE_SPAWN are spawned with plasma, FRIENDLY_SPAWN are spawned with blood.
@@ -290,8 +291,10 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	if(stat != DEAD)
 		if(health <= 0)
 			death()
+			SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, DEAD)
 			return
 	med_hud_set_status()
+	SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, stat)
 	if(footstep_type)
 		AddComponent(/datum/component/footstep, footstep_type)
 
@@ -695,9 +698,6 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			return
 	sync_lighting_plane_alpha()
 
-/mob/living/simple_animal/get_idcard(hand_first)
-	return access_card
-
 /mob/living/simple_animal/can_hold_items()
 	return dextrous
 
@@ -725,13 +725,6 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		return ..()
 	if(!hand_index)
 		hand_index = (active_hand_index % held_items.len)+1
-	var/obj/item/held_item = get_active_held_item()
-	if(held_item)
-		if(istype(held_item, /obj/item/twohanded))
-			var/obj/item/twohanded/T = held_item
-			if(T.wielded == 1)
-				to_chat(usr, "<span class='warning'>My other hand is too busy holding [T].</span>")
-				return FALSE
 	var/oindex = active_hand_index
 	active_hand_index = hand_index
 	if(hud_used)

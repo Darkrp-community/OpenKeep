@@ -536,7 +536,7 @@
 	drag_slowdown = 3
 
 /obj/structure/fluff/clock/Initialize()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 	soundloop.start()
 	. = ..()
 
@@ -624,7 +624,7 @@
 //				. += "<span class='warning'>The last boat will leave in [round(SSshuttle.emergency.timeLeft()/600)] minutes.</span>"
 
 /obj/structure/fluff/wallclock/Initialize()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 	soundloop.start()
 	. = ..()
 
@@ -853,6 +853,7 @@
 	icon_state = "elfs"
 
 /obj/structure/fluff/statue/pillar
+	name = "wooden support"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "pillar"
 

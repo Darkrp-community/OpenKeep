@@ -50,7 +50,7 @@
 /obj/machinery/light/roguestreet/Initialize()
 	soundloop = pick(/datum/looping_sound/streetlamp1,/datum/looping_sound/streetlamp2,/datum/looping_sound/streetlamp3)
 	if(soundloop)
-		soundloop = new soundloop(list(src), FALSE)
+		soundloop = new soundloop(src, FALSE)
 		soundloop.start()
 	GLOB.streetlamp_list += src
 	update_icon()
@@ -78,7 +78,7 @@
 
 /obj/machinery/light/rogue/Initialize()
 	if(soundloop)
-		soundloop = new soundloop(list(src), FALSE)
+		soundloop = new soundloop(src, FALSE)
 		soundloop.start()
 	GLOB.fires_list += src
 	if(fueluse)
@@ -262,6 +262,7 @@
 	dir = SOUTH
 	crossfire = TRUE
 	fueluse = 0
+	light_outer_range = 9
 
 /obj/machinery/light/rogue/firebowl/CanPass(atom/movable/mover, turf/target)
 	if(istype(mover) && (mover.pass_flags & PASSTABLE))
@@ -413,6 +414,7 @@
 	crossfire = FALSE
 	plane = GAME_PLANE_UPPER
 	cookonme = FALSE
+	var/lacks_torch
 
 /obj/machinery/light/rogue/torchholder/c
 	pixel_y = 32
@@ -438,8 +440,9 @@
 				return TRUE
 
 /obj/machinery/light/rogue/torchholder/Initialize()
-	torchy = new /obj/item/flashlight/flare/torch(src)
-	torchy.spark_act()
+	if(!lacks_torch)
+		torchy = new /obj/item/flashlight/flare/torch(src)
+		torchy.spark_act()
 	. = ..()
 
 /obj/machinery/light/rogue/torchholder/process()
@@ -517,6 +520,10 @@
 		return
 	. = ..()
 
+/obj/machinery/light/rogue/torchholder/cold
+	lacks_torch = TRUE
+	pixel_y = 32
+
 /obj/machinery/light/rogue/chand
 	name = "chandelier"
 	icon_state = "chand1"
@@ -558,7 +565,7 @@
 	var/rawegg = FALSE
 
 /obj/machinery/light/rogue/hearth/Initialize()
-	boilloop = new(list(src), FALSE)
+	boilloop = new(src, FALSE)
 	. = ..()
 
 /obj/machinery/light/rogue/hearth/attackby(obj/item/W, mob/living/user, params)
@@ -899,6 +906,7 @@
 	fueluse = 15 MINUTES
 	bulb_colour = "#da5e21"
 	cookonme = TRUE
+	light_outer_range = 7
 
 /obj/machinery/light/rogue/campfire/process()
 	..()
@@ -982,3 +990,27 @@
 
 /obj/machinery/light/rogue/campfire/longlived
 	fueluse = 180 MINUTES
+
+// ======================================================================
+/obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
+	name = "candle lamp"
+	icon = 'icons/roguetown/misc/decoration.dmi'
+	icon_state = "candle"
+	base_state = "candle"
+	layer = WALL_OBJ_LAYER+0.1
+	light_power = 0.9
+	light_outer_range =  6
+
+/obj/machinery/light/rogue/wallfire/big_fireplace
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+
+/obj/machinery/light/rogue/hearth/big_fireplace
+	name = "fireplace"
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+	fueluse = -1
+	pixel_x = -16
+	climb_offset = 4

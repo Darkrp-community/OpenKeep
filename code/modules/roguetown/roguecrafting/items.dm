@@ -134,6 +134,14 @@
 	verbage_tp = "braids"
 */
 
+/datum/crafting_recipe/roguetown/woodstaff//this is the simple staff anyone can make
+	name = "wood staff"
+	result = list(/obj/item/rogueweapon/polearm/woodstaff,
+	/obj/item/rogueweapon/polearm/woodstaff,
+	/obj/item/rogueweapon/polearm/woodstaff)
+	reqs = list(/obj/item/grown/log/tree = 1)
+	craftdiff = 1
+
 /datum/crafting_recipe/roguetown/stoneaxe
 	name = "stone axe"
 	result = /obj/item/rogueweapon/axe/stone
@@ -158,6 +166,17 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
 /obj/item/rogueweapon/mace/woodclub/crafted
+	sellprice = 8
+
+/datum/crafting_recipe/roguetown/rod
+	name = "fishing rod"
+	result = /obj/item/fishingrod/crafted
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+		/obj/item/natural/fibers = 2)
+	tools = list(/obj/item/rogueweapon/knife)
+	craftdiff = 0
+
+/obj/item/fishingrod/crafted
 	sellprice = 8
 
 /datum/crafting_recipe/roguetown/bait
@@ -237,6 +256,8 @@
 				/obj/item/natural/fibers = 2)
 	craftdiff = 1
 
+/*========= MISCELLANY ==========*/
+
 /datum/crafting_recipe/roguetown/pestle
 	name = "pestle"
 	result = /obj/item/pestle
@@ -244,8 +265,7 @@
 	tools = list(/obj/item/rogueweapon/knife/hunting)
 	verbage = "crafts"
 	skillcraft = /datum/skill/craft/masonry
-
-/*========= MISCELLANY ==========*/
+	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/mortar
 	name = "stone mortar"

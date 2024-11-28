@@ -49,7 +49,7 @@
 	if(!produce_ready)
 		return
 	apply_farming_fatigue(user, 4)
-//	add_sleep_experience(user, /datum/skill/labor/farming, user.STAINT * 2)  sleepxp not a thing, get regular
+//	add_sleep_experience(user, /datum/skill/labor/farming, user.STAINT * 2)
 
 	var/farming_skill = user.mind.get_skill_level(/datum/skill/labor/farming)
 	var/chance_to_ruin = 50 - (farming_skill * 25)
@@ -301,11 +301,18 @@
 
 /obj/structure/soil/Initialize()
 	START_PROCESSING(SSprocessing, src)
+	GLOB.weather_act_upon_list += src
 	. = ..()
 
 /obj/structure/soil/Destroy()
 	STOP_PROCESSING(SSprocessing, src)
+	GLOB.weather_act_upon_list -= src
 	. = ..()
+
+/obj/structure/soil/weather_act_on(weather_trait, severity)
+	if(weather_trait != PARTICLEWEATHER_RAIN)
+		return
+	water = min(MAX_PLANT_WATER, water + min(5, severity / 4))
 
 /obj/structure/soil/process()
 	var/dt = 10
