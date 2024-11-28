@@ -166,7 +166,7 @@
 
 /// Behaviour to move the item into the assembly. Stackable items may want to change how they do this.
 /datum/slapcraft_step/proc/move_item_to_assembly(mob/living/user, obj/item/item, obj/item/slapcraft_assembly/assembly)
-	item.forceMove(assembly)
+	user.transferItemToLoc(item, assembly, TRUE, TRUE)
 	if(insert_item_into_result)
 		assembly.items_to_place_in_result += item
 
@@ -212,9 +212,9 @@
 /// Makes a todo description for the step.
 /datum/slapcraft_step/proc/make_todo_desc()
 	if(insert_item)
-		return "You could insert a [list_desc] into the assembly."
+		return "You need to add \a [list_desc] into the assembly."
 	else
-		return "You could use a [list_desc] on the assembly"
+		return "You need to use \a [list_desc] on the assembly."
 
 /// Makes a list description for the item.
 /datum/slapcraft_step/proc/make_list_desc()
@@ -226,27 +226,27 @@
 /// Makes a description for the visible message of finishing a step.
 /datum/slapcraft_step/proc/make_finish_msg()
 	if(insert_item)
-		return "%USER% inserts %ITEM% into the %TARGET%."
+		return "%USER% inserts %ITEM% into \the %TARGET%."
 	else
-		return "%USER% uses %ITEM% on the %TARGET%."
+		return "%USER% uses %ITEM% on \the %TARGET%."
 
 /// Makes a description for the visible message of starting a step that requires some time to perform.
 /datum/slapcraft_step/proc/make_start_msg()
 	if(insert_item)
-		return "%USER% begins inserting %ITEM% into the %TARGET%."
+		return "%USER% begins inserting %ITEM% into \the %TARGET%."
 	else
-		return "%USER% begins using %ITEM% on the %TARGET%."
+		return "%USER% begins using %ITEM% on \the %TARGET%."
 
 /// Makes a personalized description for the visible message of finishing a step.
 /datum/slapcraft_step/proc/make_finish_msg_self()
 	if(insert_item)
-		return "You insert %ITEM% into the %TARGET%."
+		return "You insert %ITEM% into \the %TARGET%."
 	else
-		return "You use %ITEM% on the %TARGET%."
+		return "You use %ITEM% on \the %TARGET%."
 
 /// Makes a personalized description for the visible message of starting a step that requires some time to perform.
 /datum/slapcraft_step/proc/make_start_msg_self()
 	if(insert_item)
-		return "You begin inserting %ITEM% into the %TARGET%."
+		return "You begin inserting %ITEM% into \the %TARGET%."
 	else
-		return "You begin using %ITEM% on the %TARGET%."
+		return "You begin using %ITEM% on \the %TARGET%."

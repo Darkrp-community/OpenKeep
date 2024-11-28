@@ -8,8 +8,10 @@
 	use_power = NO_POWER_USE
 	var/datum/looping_sound/soundloop = /datum/looping_sound/fireloop
 	pass_flags = LETPASSTHROW
+	flags_1 = NODECONSTRUCT_1
 	var/cookonme = FALSE
 	var/crossfire = TRUE
+	var/can_damage = FALSE
 
 /obj/machinery/light/rogue/Initialize()
 	if(soundloop)
@@ -26,13 +28,10 @@
 	if(W==/datum/weather/rain)
 		START_PROCESSING(SSweather,src)
 
-/obj/machinery/light/rogue/attack_hand(mob/living/carbon/human/user)
+/obj/machinery/light/rogue/OnCrafted(dirin)
 	. = ..()
-	if(.)
-		return
-	user.changeNext_move(CLICK_CD_MELEE)
-	add_fingerprint(user)
-
+	can_damage = TRUE
+	burn_out()
 
 /obj/machinery/light/rogue/examine(mob/user)
 	. = ..()
@@ -152,7 +151,7 @@
 	if(W.firefuel)
 		if(initial(fueluse))
 			if(fueluse > initial(fueluse) - 5 SECONDS)
-				to_chat(user, "<span class='warning'>Full.</span>")
+				to_chat(user, "<span class='warning'>[src] is fully fueled.</span>")
 				return
 		else
 			if(!on)
@@ -179,7 +178,19 @@
 				return
 			if(user.used_intent?.type != INTENT_SPLASH)
 				W.spark_act()
-	..()
+	. = ..()
 
 /obj/machinery/light/rogue/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
-	return
+	if(!can_damage)
+		return
+	. = ..()
+
+/obj/machinery/light/rogue/break_light_tube(skip_sound_and_sparks = 0)
+	if(status == LIGHT_EMPTY || status == LIGHT_BROKEN)
+		return
+	if(!skip_sound_and_sparks)
+		if(status == LIGHT_OK || status == LIGHT_BURNED)
+			playsound(src.loc, 'sound/blank.ogg', 75, TRUE)
+		if(on)
+			do_sparks(3, TRUE, src)
+	update()
