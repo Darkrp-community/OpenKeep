@@ -109,7 +109,7 @@
 // IRON GEAR - Middle Tier, what most disgusting Men at Arms have
 
 /datum/anvil_recipe/weapons/iron/arrows
-	name = "Arrows x5 (+s)"
+	name = "5x Arrows (+Stick)"
 	recipe_name = "five Arrows"
 	appro_skill = /datum/skill/craft/engineering
 	req_bar = /obj/item/ingot/iron
@@ -121,7 +121,7 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/iron/axe_iron
-	name = "Axe (+s)"
+	name = "Iron Axe (+Stick)"
 	recipe_name = "an Axe"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
@@ -129,7 +129,7 @@
 	created_item = /obj/item/rogueweapon/axe/iron
 
 /datum/anvil_recipe/weapons/iron/bardiche
-	name = "Bardiche (2) (+w)"
+	name = "Bardiche (+Bar, +Small Log)"
 	recipe_name = "a Bardiche"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
@@ -138,7 +138,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/iron/woodcutter
-	name = "woodcutter great axe (+w)"
+	name = "Woodcutter Axe (+Small Log)"
 	recipe_name = "a great axe for woodcutters"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
@@ -147,7 +147,7 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/iron/warcutter
-	name = "War axe (2) (+w)"
+	name = "Footman War Axe (+Bar, +Small Log)"
 	recipe_name = "a war greataxe"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
@@ -156,7 +156,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/iron/bolts
-	name = "Crossbow Bolt x5 (+s)"
+	name = "5x Crossbow Bolts (+Stick)"
 	recipe_name = "five Crossbow Bolts"
 	appro_skill = /datum/skill/craft/engineering
 	req_bar = /obj/item/ingot/iron
@@ -168,7 +168,7 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/iron/bullets
-	name = "Lead Bullets x5 (+s)"
+	name = "5x Lead Bullets"
 	recipe_name = "five Lead Bullets"
 	appro_skill = /datum/skill/craft/engineering
 	req_bar = /obj/item/ingot/iron
@@ -176,7 +176,7 @@
 	createmultiple = TRUE
 	createditem_num = 4
 	i_type = "Ammo"
-	craftdiff = 0
+	craftdiff = 1
 
 /datum/anvil_recipe/weapons/iron/dagger_iron
 	name = "Dagger x2"
@@ -189,7 +189,7 @@
 	craftdiff = 0 // To train with
 
 /datum/anvil_recipe/weapons/iron/dagger_iron
-	name = "peasant knife x3"
+	name = "3x Villager Knives"
 	recipe_name = "three peasantry knives"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
@@ -199,7 +199,7 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/iron/flail_iron
-	name = "Militia flail (+c) (+s)"
+	name = "Militia flail (+Chain, +Stick)"
 	recipe_name = "a militia flail"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/stick)
@@ -207,7 +207,7 @@
 
 
 /datum/anvil_recipe/weapons/iron/lucerne
-	name = "Lucerne (2) (+w)"
+	name = "Lucerne (+Bar, +Small Log)"
 	recipe_name = "a Lucerne"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
@@ -216,7 +216,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/iron/sledgehammer
-	name = "Sledgehammer(+s)"
+	name = "Sledgehammer (+Small Log)"
 	recipe_name = "a big hammer"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
@@ -224,7 +224,7 @@
 	created_item = 	/obj/item/rogueweapon/hammer/sledgehammer
 
 /datum/anvil_recipe/weapons/iron/mace_iron
-	name = "Mace (+s)"
+	name = "Iron Mace (+Stick)"
 	recipe_name = "a Mace"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
@@ -238,7 +238,7 @@
 	created_item = /obj/item/rogueweapon/sword/scimitar/messer
 
 /datum/anvil_recipe/weapons/iron/spear_iron
-	name = "Spear x2 (+w)"
+	name = "2x Spears (+Small Log)"
 	recipe_name = "a couple Spears"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
@@ -248,7 +248,7 @@
 	createditem_num = 1
 
 /datum/anvil_recipe/weapons/iron/shortsword_iron
-	name = "Short sword"
+	name = "Short Sword"
 	recipe_name = "a Short Sword"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/sword/short
@@ -269,7 +269,7 @@
 	created_item = /obj/item/rogueweapon/sword/rapier/ironestoc
 
 /datum/anvil_recipe/weapons/iron/towershield
-	name = "Tower Shield (+w)"
+	name = "Tower Shield (+Small Log)"
 	recipe_name = "a Tower Shield"
 	appro_skill = /datum/skill/craft/armorsmithing
 	req_bar = /obj/item/ingot/iron
@@ -278,7 +278,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/iron/ironbuckler
-	name = "Buckler"
+	name = "Iron Buckler"
 	recipe_name = "a small Shield"
 	appro_skill = /datum/skill/craft/armorsmithing
 	req_bar = /obj/item/ingot/iron
@@ -286,7 +286,7 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/iron/warclub
-	name = "Warclub (+w)"
+	name = "Warclub (+Small Log)"
 	recipe_name = "a Warclub"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
@@ -295,7 +295,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/iron/zweihander
-	name = "Zweihander (3)"
+	name = "Zweihander (+Bar x2)"
 	recipe_name = "a Zweihander"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
@@ -483,7 +483,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/steel/peasant_flail
-	name = "Peasant Flail (+c) (+w)"
+	name = "Peasant Flail (+Chain, +Small Log)"
 	recipe_name = "a two-handed flail"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
