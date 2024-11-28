@@ -37,14 +37,15 @@
 	skin_tone = "#50715C"
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"
-	outfit = /datum/outfit/orcmarauder
-
+//	outfit = /datum/outfit/orcmarauder  doesnt actually equip this TO DO
+	mob_type = /mob/living/carbon/human/species/orc/marauder
+/*
 /datum/outfit/orcmarauder
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
 	pants =	/obj/item/clothing/under/roguetown/chainlegs
 	shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
 	head = /obj/item/clothing/head/roguetown/helmet/leather
-
+*/
 /obj/effect/mob_spawn/human/orc/corpse/orcravager
 	mob_name = "Orc Ravager"
 	name = "Orc Ravager"

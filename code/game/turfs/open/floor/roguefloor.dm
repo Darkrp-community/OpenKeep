@@ -1043,6 +1043,7 @@
 
 /turf/open/floor/rogue/cobble/alt
 	icon_state = "cobblestonealt1"
+	canSmoothWith = FALSE
 /turf/open/floor/rogue/cobble/alt/Initialize()
 	. = ..()
 	icon_state = "cobblestonealt[rand(1,3)]"

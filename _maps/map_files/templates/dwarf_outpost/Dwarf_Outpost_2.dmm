@@ -41,7 +41,6 @@
 /obj/effect/decal/cleanable/dirt/cobweb{
 	dir = 1
 	},
-/obj/structure/spider/eggcluster,
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/catacombs/dwarfoutpost)
 "eM" = (
@@ -271,7 +270,6 @@
 	},
 /area/rogue/under/catacombs/dwarfoutpost)
 "yo" = (
-/obj/structure/spider/eggcluster,
 /obj/structure/flora/roguegrass/water/reeds,
 /turf/open/water/swamp/deep,
 /area/rogue/under/catacombs/dwarfoutpost)
@@ -284,10 +282,6 @@
 /obj/item/flashlight/flare/torch/lantern,
 /obj/item/rogueweapon/mace/goden/steel/warhammer,
 /turf/open/floor/rogue/herringbone,
-/area/rogue/under/catacombs/dwarfoutpost)
-"zR" = (
-/obj/structure/spider/eggcluster,
-/turf/open/water/swamp,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Ap" = (
 /obj/item/chair/stool/bar/rogue,
@@ -330,10 +324,6 @@
 /obj/structure/flora/rock/pile,
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/catacombs/dwarfoutpost)
-"EF" = (
-/obj/structure/spider/eggcluster,
-/turf/open/floor/rogue/dirt,
-/area/rogue/under/catacombs/dwarfoutpost)
 "EJ" = (
 /obj/item/ingot/steel,
 /turf/closed/mineral/rogue,
@@ -342,10 +332,6 @@
 /obj/item/natural/stone,
 /obj/structure/kneestingers,
 /turf/open/floor/rogue/dirt,
-/area/rogue/under/catacombs/dwarfoutpost)
-"Gw" = (
-/obj/structure/spider/eggcluster,
-/turf/open/floor/rogue/concrete,
 /area/rogue/under/catacombs/dwarfoutpost)
 "GA" = (
 /obj/structure/bed/rogue/mediocre,
@@ -651,7 +637,7 @@ wG
 eB
 UA
 eB
-EF
+iB
 IM
 IM
 IM
@@ -719,7 +705,7 @@ IM
 IM
 IM
 eM
-EF
+iB
 IM
 fV
 Pl
@@ -928,9 +914,9 @@ fV
 fV
 Tm
 uW
-EF
+iB
 Pl
-Gw
+fV
 IM
 fV
 fV
@@ -998,11 +984,11 @@ IM
 IM
 Tm
 eE
-EF
-EF
+iB
+iB
 fV
 YV
-EF
+iB
 IM
 vf
 iS
@@ -1514,7 +1500,7 @@ gl
 gl
 gl
 gl
-zR
+BW
 "}
 (28,1,1) = {"
 gl
