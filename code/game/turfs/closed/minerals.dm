@@ -686,7 +686,7 @@
 	name = "rock"
 	desc = "seems too hard"
 	icon_state = "rockyashbed"
-//	smooth_icon = 'icons/turf/walls/hardrock.dmi'
+	smooth_icon = 'icons/turf/walls/hardrock.dmi'
 	max_integrity = 900
 	above_floor = /turf/closed/mineral/rogue/bedrock
 
@@ -694,3 +694,8 @@
 	..()
 	to_chat(user, "<span class='warning'>TOO HARD!</span>")
 	turf_integrity = max_integrity
+
+/turf/closed/mineral/rogue/bedrock/Initialize()
+	. = ..()
+	color = "#c6d9c6"
+

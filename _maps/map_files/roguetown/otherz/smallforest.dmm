@@ -143,14 +143,14 @@
 /area/rogue/outdoors/river)
 "aK" = (
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/under/town/caverogue)
+/area/rogue/outdoors/woods_safe)
 "aL" = (
 /obj/structure/fluff/traveltile/vampire{
 	aportalgoesto = "vampin";
 	aportalid = "vampexit"
 	},
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/under/town/caverogue)
+/area/rogue/outdoors/woods_safe)
 "aN" = (
 /obj/structure/fluff/statue/gargoyle/moss,
 /turf/open/floor/rogue/dirt,
@@ -453,7 +453,7 @@
 	aportalid = "banditexit"
 	},
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/under/town/caverogue)
+/area/rogue/outdoors/woods_safe)
 "DK" = (
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt,
@@ -627,7 +627,7 @@
 /area/rogue/under/town/caverogue)
 "Ut" = (
 /turf/open/floor/rogue/dirt,
-/area/rogue/under/town/caverogue)
+/area/rogue/outdoors/woods_safe)
 "UJ" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/goat,
 /turf/open/floor/rogue/dirt,
@@ -649,7 +649,7 @@
 /area/rogue/outdoors/woods)
 "Ws" = (
 /turf/open/floor/rogue/grass,
-/area/rogue/under/town/caverogue)
+/area/rogue/outdoors/woods_safe)
 "WH" = (
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors)
