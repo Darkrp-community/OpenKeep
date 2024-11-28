@@ -64,4 +64,4 @@
 	if(H.dna?.species)
 		H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
 //	if(H.patron != /datum/patron/divine/ravox)						commented out because meant to be superceded by the allowedpatrons but since multiclass that doesnt work.
-//		H.patron = GLOB.patronlist[/datum/patron/divine/ravox]
+//		H.set_patron(/datum/patron/divine/ravox)

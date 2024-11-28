@@ -31,7 +31,7 @@ SUBSYSTEM_DEF(traumas)
 		"spiders"          = typecacheof(list(/mob/living/simple_animal/hostile/poison/giant_spider)),
 
 		"lizards"          = typecacheof(list(/mob/living/simple_animal/hostile/lizard)),
-		"skeletons"        = typecacheof(list(/mob/living/simple_animal/hostile/skeleton)),
+		"skeletons"        = typecacheof(list(/mob/living/simple_animal/hostile/rogue/skeleton)),
 		"snakes"           = typecacheof(list(/mob/living/simple_animal/hostile/retaliate/poison/snake)),
 		"the supernatural" = typecacheof(list(/mob/living/simple_animal/hostile/construct,
 												/mob/living/simple_animal/revenant, /mob/living/simple_animal/shade)),

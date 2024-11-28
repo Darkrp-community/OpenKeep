@@ -50,7 +50,7 @@
 /obj/machinery/light/roguestreet/Initialize()
 	soundloop = pick(/datum/looping_sound/streetlamp1,/datum/looping_sound/streetlamp2,/datum/looping_sound/streetlamp3)
 	if(soundloop)
-		soundloop = new soundloop(list(src), FALSE)
+		soundloop = new soundloop(src, FALSE)
 		soundloop.start()
 	GLOB.streetlamp_list += src
 	update_icon()
@@ -78,7 +78,7 @@
 
 /obj/machinery/light/rogue/Initialize()
 	if(soundloop)
-		soundloop = new soundloop(list(src), FALSE)
+		soundloop = new soundloop(src, FALSE)
 		soundloop.start()
 	GLOB.fires_list += src
 	if(fueluse)
@@ -565,7 +565,7 @@
 	var/rawegg = FALSE
 
 /obj/machinery/light/rogue/hearth/Initialize()
-	boilloop = new(list(src), FALSE)
+	boilloop = new(src, FALSE)
 	. = ..()
 
 /obj/machinery/light/rogue/hearth/attackby(obj/item/W, mob/living/user, params)
@@ -989,3 +989,27 @@
 
 /obj/machinery/light/rogue/campfire/longlived
 	fueluse = 180 MINUTES
+
+// ======================================================================
+/obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
+	name = "candle lamp"
+	icon = 'icons/roguetown/misc/decoration.dmi'
+	icon_state = "candle"
+	base_state = "candle"
+	layer = WALL_OBJ_LAYER+0.1
+	light_power = 0.9
+	light_outer_range =  6
+
+/obj/machinery/light/rogue/wallfire/big_fireplace
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+
+/obj/machinery/light/rogue/hearth/big_fireplace
+	name = "fireplace"
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+	fueluse = -1
+	pixel_x = -16
+	climb_offset = 4

@@ -21,7 +21,7 @@
 			return TRUE
 	else if(isanimal(M))
 		var/mob/living/simple_animal/A = M
-		if(check_access(A.get_active_held_item()) || check_access(A.access_card))
+		if(check_access(A.get_active_held_item()))
 			return TRUE
 	return FALSE
 
