@@ -18,6 +18,7 @@
 	fillsounds = list('sound/items/fillcup.ogg')
 	poursounds = list('sound/items/fillbottle.ogg')
 	experimental_onhip = TRUE
+	sellprice = 1
 
 
 /*
@@ -68,6 +69,7 @@
 				addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, amount_per_transfer_from_this, TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
 				playsound(M.loc,pick(drinksounds), 100, TRUE)
 				return
+
 /obj/item/reagent_containers/glass/alchemical/attack_obj(obj/target, mob/living/user)
 	if(user.used_intent.type == INTENT_GENERIC)
 		return ..()

@@ -9,6 +9,11 @@
 	smells_like = "purity"
 	output_reagents = list(/datum/reagent/medicine/diseasecure = 81)
 
+/datum/alch_cauldron_recipe/antidote
+	recipe_name = "Malicebane"
+	smells_like = "wet moss"
+	output_reagents = list(/datum/reagent/medicine/antidote = 81)
+
 /datum/alch_cauldron_recipe/berrypoison
 	recipe_name = "Liquid Malice"
 	smells_like = "death"
@@ -19,10 +24,15 @@
 	smells_like = "doom"
 	output_reagents = list(/datum/reagent/berrypoison = 81,/datum/reagent/additive = 81)
 
-/datum/alch_cauldron_recipe/antidote
-	recipe_name = "Malicebane"
-	smells_like = "wet moss"
-	output_reagents = list(/datum/reagent/medicine/antidote = 81)
+/datum/alch_cauldron_recipe/stam_poison
+	recipe_name = "Liquid Malice"
+	smells_like = "a slow breeze"
+	output_reagents = list(/datum/reagent/stampoison = 81)
+
+/datum/alch_cauldron_recipe/big_stam_poison
+	recipe_name = "Liquid Doom"
+	smells_like = "stagnant air"
+	output_reagents = list(/datum/reagent/stampoison = 81,/datum/reagent/additive = 81)
 
 //Healing potions
 /datum/alch_cauldron_recipe/health_potion
@@ -44,6 +54,16 @@
 	recipe_name = "Powerful Arcane Elixir"
 	smells_like = "fear"
 	output_reagents = list(/datum/reagent/medicine/manapot = 81,/datum/reagent/additive = 81)
+
+/datum/alch_cauldron_recipe/stamina_potion
+	recipe_name = "Stamina Elixir"
+	smells_like = "fresh air"
+	output_reagents = list(/datum/reagent/medicine/stampot = 81)
+
+/datum/alch_cauldron_recipe/big_stamina_potion
+	recipe_name = "Powerful Stamina Elixir"
+	smells_like = "clean winds"
+	output_reagents = list(/datum/reagent/medicine/stampot = 81,/datum/reagent/additive = 81)
 
 //S.P.E.C.I.A.L. potions
 /datum/alch_cauldron_recipe/str_potion

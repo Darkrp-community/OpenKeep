@@ -72,8 +72,8 @@
 /obj/item/alch/seeddust
 	name = "seed dust"
 	icon_state = "seeddust"
-	major_pot = /datum/alch_cauldron_recipe/big_mana_potion
-	med_pot = /datum/alch_cauldron_recipe/mana_potion
+	major_pot = /datum/alch_cauldron_recipe/big_stamina_potion
+	med_pot = /datum/alch_cauldron_recipe/stamina_potion
 	minor_pot = /datum/alch_cauldron_recipe/disease_cure
 
 /obj/item/alch/runedust
@@ -100,7 +100,7 @@
 /obj/item/alch/magicdust
 	name = "magicdust"
 	//icon_state = "magicdust"
-	major_pot = /datum/alch_cauldron_recipe/int_potion
+	major_pot = /datum/alch_cauldron_recipe/big_mana_potion
 	med_pot = /datum/alch_cauldron_recipe/end_potion
 	minor_pot = /datum/alch_cauldron_recipe/con_potion
 
@@ -130,21 +130,21 @@
 	name = "air rune dust"
 	icon_state = "runedust"
 	major_pot = /datum/alch_cauldron_recipe/spd_potion
-	med_pot = /datum/alch_cauldron_recipe/per_potion
+	med_pot = /datum/alch_cauldron_recipe/stamina_potion
 	minor_pot = /datum/alch_cauldron_recipe/int_potion
 
 /obj/item/alch/swampdust
 	name = "swampweed dust"
 	icon_state = "tobaccodust"
 	major_pot = /datum/alch_cauldron_recipe/berrypoison
-	med_pot = /datum/alch_cauldron_recipe/str_potion
+	med_pot = /datum/alch_cauldron_recipe/big_stam_poison
 	minor_pot = /datum/alch_cauldron_recipe/end_potion
 
 /obj/item/alch/tobaccodust
 	name = "tobacco dust"
 	icon_state = "tobaccodust"
 	major_pot = /datum/alch_cauldron_recipe/per_potion
-	med_pot = /datum/alch_cauldron_recipe/berrypoison
+	med_pot = /datum/alch_cauldron_recipe/stamina_potion
 	minor_pot = /datum/alch_cauldron_recipe/spd_potion
 
 /obj/item/alch/earthdust
@@ -202,7 +202,7 @@
 
 	major_pot = /datum/alch_cauldron_recipe/doompoison
 	med_pot = /datum/alch_cauldron_recipe/berrypoison
-	minor_pot = /datum/alch_cauldron_recipe/int_potion
+	minor_pot = /datum/alch_cauldron_recipe/stam_poison
 
 /obj/item/alch/matricaria
 	name = "matricaria"
@@ -217,14 +217,14 @@
 	icon_state = "symphitum"
 
 	major_pot = /datum/alch_cauldron_recipe/health_potion
-	med_pot = /datum/alch_cauldron_recipe/mana_potion
+	med_pot = /datum/alch_cauldron_recipe/stam_poison
 	minor_pot = /datum/alch_cauldron_recipe/antidote
 
 /obj/item/alch/taraxacum
 	name = "taraxacum"
 	icon_state = "taraxacum"
 
-	major_pot = /datum/alch_cauldron_recipe/berrypoison
+	major_pot = /datum/alch_cauldron_recipe/stam_poison
 	med_pot = /datum/alch_cauldron_recipe/health_potion
 	minor_pot = /datum/alch_cauldron_recipe/antidote
 
@@ -233,16 +233,16 @@
 	icon_state = "euphrasia"
 
 	major_pot = /datum/alch_cauldron_recipe/spd_potion
-	med_pot = /datum/alch_cauldron_recipe/per_potion
+	med_pot = /datum/alch_cauldron_recipe/stam_poison
 	minor_pot = /datum/alch_cauldron_recipe/int_potion
 
 /obj/item/alch/paris
 	name = "paris"
 	icon_state = "paris"
 
-	major_pot = /datum/alch_cauldron_recipe/berrypoison
-	med_pot = /datum/alch_cauldron_recipe/doompoison
-	minor_pot = /datum/alch_cauldron_recipe/end_potion
+	major_pot = /datum/alch_cauldron_recipe/big_stam_poison
+	med_pot = /datum/alch_cauldron_recipe/stam_poison
+	minor_pot = /datum/alch_cauldron_recipe/stam_poison
 
 /obj/item/alch/calendula
 	name = "calendula"
@@ -258,7 +258,7 @@
 
 	major_pot = /datum/alch_cauldron_recipe/per_potion
 	med_pot = /datum/alch_cauldron_recipe/int_potion
-	minor_pot = /datum/alch_cauldron_recipe/mana_potion
+	minor_pot = /datum/alch_cauldron_recipe/stamina_potion
 
 /obj/item/alch/urtica
 	name = "urtica"
@@ -266,21 +266,21 @@
 
 	major_pot = /datum/alch_cauldron_recipe/health_potion
 	med_pot = /datum/alch_cauldron_recipe/spd_potion
-	minor_pot = /datum/alch_cauldron_recipe/mana_potion
+	minor_pot = /datum/alch_cauldron_recipe/stamina_potion
 
 /obj/item/alch/salvia
 	name = "salvia"
 	icon_state = "salvia"
 
-	major_pot = /datum/alch_cauldron_recipe/str_potion
-	med_pot = /datum/alch_cauldron_recipe/con_potion
+	major_pot = /datum/alch_cauldron_recipe/con_potion
+	med_pot = /datum/alch_cauldron_recipe/str_potion
 	minor_pot = /datum/alch_cauldron_recipe/end_potion
 
 /obj/item/alch/hypericum
 	name = "hypericum"
 	icon_state = "hypericum"
 
-	major_pot = /datum/alch_cauldron_recipe/mana_potion
+	major_pot = /datum/alch_cauldron_recipe/stamina_potion
 	med_pot = /datum/alch_cauldron_recipe/big_mana_potion
 	minor_pot = /datum/alch_cauldron_recipe/antidote
 
@@ -288,8 +288,8 @@
 	name = "benedictus"
 	icon_state = "benedictus"
 
-	major_pot = /datum/alch_cauldron_recipe/big_mana_potion
-	med_pot = /datum/alch_cauldron_recipe/mana_potion
+	major_pot = /datum/alch_cauldron_recipe/big_stamina_potion
+	med_pot = /datum/alch_cauldron_recipe/stamina_potion
 	minor_pot = /datum/alch_cauldron_recipe/int_potion
 
 /obj/item/alch/valeriana
@@ -298,7 +298,7 @@
 
 	major_pot = /datum/alch_cauldron_recipe/health_potion
 	med_pot = /datum/alch_cauldron_recipe/spd_potion
-	minor_pot = /datum/alch_cauldron_recipe/mana_potion
+	minor_pot = /datum/alch_cauldron_recipe/stam_poison
 
 /obj/item/alch/artemisia
 	name = "artemisia"
