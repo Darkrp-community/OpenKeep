@@ -108,11 +108,11 @@
 			if(user.gender == MALE)
 				if(gender == FEMALE)
 					if(get_location_accessible(src, BODY_ZONE_CHEST))
-						what2do += "use chest"
+						what2do += "taff chest"
 		if(user.gender == MALE)
 			if(ourgroin && theirgroin)
-				what2do += "love"
-				what2do += "buggery"
+				what2do += "taff the front"
+				what2do += "taff the back"
 		if(user.gender == FEMALE)
 			if(ourgroin && theirgroin)
 				if(!user.lying && src.lying)
@@ -137,9 +137,9 @@
 				user.sexcon.begin_mouthride(src)
 			if("use chest")
 				user.sexcon.begin_titfuck(src)
-			if("buggery")
+			if("taff back")
 				user.sexcon.begin_assfuck(src)
-			if("taffing")
+			if("taff front")
 				user.sexcon.begin_fuck(src)
 			if("service")
 				if(G)
@@ -268,7 +268,7 @@
 	if(user.cmode)
 		user.emote("embed", forced = TRUE)
 	playsound(owner, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
-	owner.visible_message("<span class='[!user.cmode ? "love" : "warning"]'>[owner] buggers [user].</span>")
+	owner.visible_message("<span class='[!user.cmode ? "love" : "warning"]'>[owner] taffs [user] from behind.</span>")
 	START_PROCESSING(SSsex, user.sexcon)
 	START_PROCESSING(SSsex, src)
 
@@ -775,7 +775,7 @@
 					if(fucking)
 						playsound(owner, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 						if(prob(33))
-							fucking.visible_message("<span class='[!D.owner.cmode ? "love" : "warning"]'>[owner] buggers [fucking].</span>")
+							fucking.visible_message("<span class='[!D.owner.cmode ? "love" : "warning"]'>[owner] taffs [fucking] from behind.</span>")
 //						D.owner.Immobilize(10)
 						var/usedsource = "insideass"
 						if(D.owner.stat == DEAD)
@@ -858,9 +858,9 @@
 					playsound(eatingus, pick('sound/misc/mat/guymouth (1).ogg','sound/misc/mat/guymouth (2).ogg','sound/misc/mat/guymouth (3).ogg','sound/misc/mat/guymouth (4).ogg','sound/misc/mat/guymouth (5).ogg'), 100, TRUE, -2, ignore_walls = FALSE)
 				if(prob(33))
 					if(owner.gender == MALE)
-						owner.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[eatingus] sucks [owner].</span>")
+						owner.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[eatingus] sucks off [owner].</span>")
 					else
-						owner.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[eatingus] eats [owner].</span>")
+						owner.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[eatingus] eats out [owner].</span>")
 				if(adjust_horny(3, "suckedoff"))
 					stop_eating_us()
 	if(fapping)
@@ -877,7 +877,7 @@
 					if(fapping)
 						playsound(owner, 'sound/misc/mat/fap.ogg', 30, TRUE, -2, ignore_walls = FALSE)
 						if(prob(33))
-							owner.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[owner] faps.</span>")
+							owner.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[owner] pleasures themself.</span>")
 						if(adjust_horny(1, "fapself"))
 							stop_fapping()
 				else
