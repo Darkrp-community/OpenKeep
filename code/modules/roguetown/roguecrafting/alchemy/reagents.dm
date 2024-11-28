@@ -35,7 +35,7 @@
 
 /datum/reagent/medicine/stronghealth/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
-		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
+		M.blood_volume = min(M.blood_volume+80, BLOOD_VOLUME_MAXIMUM)
 		M.adjustBruteLoss(-15*REM, 0)
 		M.adjustFireLoss(-15*REM, 0)
 		M.adjustOxyLoss(-6, 0)
@@ -300,7 +300,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 
 /datum/reagent/stampoison/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOROGSTAM))
-		M.rogstam_add(-15) //Slowly leech stamina
+		M.rogstam_add(-25) //Slowly leech stamina
 	return ..()
 
 /datum/reagent/strongstampoison
@@ -309,11 +309,11 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	reagent_state = LIQUID
 	color = "#041d0e"
 	taste_description = "frozen air"
-	metabolization_rate = REAGENTS_SLOW_METABOLISM
+	metabolization_rate = REAGENTS_SLOW_METABOLISM * 3
 
 /datum/reagent/strongstampoison/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOROGSTAM))
-		M.rogstam_add(-35) //Rapidly leech stamina
+		M.rogstam_add(-150) //Rapidly leech stamina
 	return ..()
 
 

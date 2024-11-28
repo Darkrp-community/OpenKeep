@@ -1594,6 +1594,7 @@
 #include "code\modules\roguetown\roguecrafting\alchemy\reagents.dm"
 #include "code\modules\roguetown\roguejobs\alchemist\container.dm"
 #include "code\modules\roguetown\roguejobs\alchemist\herb_flora.dm"
+#include "code\modules\roguetown\roguejobs\alchemist\herb_seeds.dm"
 #include "code\modules\roguetown\roguejobs\artifcier\artifcier_recipes.dm"
 #include "code\modules\roguetown\roguejobs\artifcier\artifcier_table.dm"
 #include "code\modules\roguetown\roguejobs\artifcier\contraption.dm"

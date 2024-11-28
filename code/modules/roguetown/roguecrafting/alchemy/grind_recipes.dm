@@ -92,6 +92,11 @@
 	valid_outputs = list(/obj/item/alch/seeddust = 1)
 	bonus_chance_outputs = list(/obj/item/alch/airdust =25,/obj/item/alch/earthdust = 25)
 
+/datum/alch_grind_recipe/ozium
+	valid_input = /obj/item/reagent_containers/powder/ozium
+	valid_outputs = list(/obj/item/alch/ozium = 1)
+	bonus_chance_outputs = list(/obj/item/alch/airdust =25,/obj/item/alch/ozium = 25)
+
 //Ores -> dust
 /datum/alch_grind_recipe/gold_ore
 	valid_input = /obj/item/rogueore/gold
@@ -127,3 +132,60 @@
 	valid_input = /obj/item/ingot/iron
 	valid_outputs = list(/obj/item/alch/irondust = 1)
 	bonus_chance_outputs = list(/obj/item/alch/irondust = 33)
+
+//Herb -> Herbseed
+/datum/alch_grind_recipe/atropa_seed
+	valid_input = /obj/item/alch/atropa
+	valid_outputs = list(/obj/item/herbseed/atropa = 1)
+
+/datum/alch_grind_recipe/matricaria_seed
+	valid_input = /obj/item/alch/matricaria
+	valid_outputs = list(/obj/item/herbseed/matricaria = 1)
+
+/datum/alch_grind_recipe/symphitum_seed
+	valid_input = /obj/item/alch/symphitum
+	valid_outputs = list(/obj/item/herbseed/symphitum = 1)
+
+/datum/alch_grind_recipe/taraxacum_seed
+	valid_input = /obj/item/alch/taraxacum
+	valid_outputs = list(/obj/item/herbseed/taraxacum = 1)
+
+/datum/alch_grind_recipe/euphrasia_seed
+	valid_input = /obj/item/alch/euphrasia
+	valid_outputs = list(/obj/item/herbseed/euphrasia = 1)
+
+/datum/alch_grind_recipe/paris_seed
+	valid_input = /obj/item/alch/paris
+	valid_outputs = list(/obj/item/herbseed/paris = 1)
+
+/datum/alch_grind_recipe/calendula_seed
+	valid_input = /obj/item/alch/calendula
+	valid_outputs = list(/obj/item/herbseed/calendula = 1)
+
+/datum/alch_grind_recipe/mentha_seed
+	valid_input = /obj/item/alch/mentha
+	valid_outputs = list(/obj/item/herbseed/mentha = 1)
+
+/datum/alch_grind_recipe/urtica_seed
+	valid_input = /obj/item/alch/urtica
+	valid_outputs = list(/obj/item/herbseed/urtica = 1)
+
+/datum/alch_grind_recipe/salvia_seed
+	valid_input = /obj/item/alch/salvia
+	valid_outputs = list(/obj/item/herbseed/salvia = 1)
+
+/datum/alch_grind_recipe/hypericum_seed
+	valid_input = /obj/item/alch/hypericum
+	valid_outputs = list(/obj/item/herbseed/hypericum = 1)
+
+/datum/alch_grind_recipe/benedictus_seed
+	valid_input = /obj/item/alch/benedictus
+	valid_outputs = list(/obj/item/herbseed/benedictus = 1)
+
+/datum/alch_grind_recipe/valeriana_seed
+	valid_input = /obj/item/alch/valeriana
+	valid_outputs = list(/obj/item/herbseed/valeriana = 1)
+
+/datum/alch_grind_recipe/artemisia_seed
+	valid_input = /obj/item/alch/artemisia
+	valid_outputs = list(/obj/item/herbseed/artemisia = 1)

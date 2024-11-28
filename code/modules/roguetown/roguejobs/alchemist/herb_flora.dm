@@ -37,14 +37,13 @@
 /obj/structure/flora/roguegrass/herb/proc/loot_replenish()
 	if(herbtype)
 		looty += herbtype
-	looty += /obj/item/natural/fibers
 
 /obj/structure/flora/roguegrass/herb/random
 	name = "random herb"
 	desc = "Haha, im in danger."
 
 /obj/structure/flora/roguegrass/herb/random/Initialize()
-	var/type = pick(list(/obj/structure/flora/roguegrass/herb/atropa,/obj/structure/flora/roguegrass/herb/,
+	var/type = pick(list(/obj/structure/flora/roguegrass/herb/atropa,/obj/structure/flora/roguegrass/herb/matricaria,
 	/obj/structure/flora/roguegrass/herb/symphitum,/obj/structure/flora/roguegrass/herb/taraxacum,
 	/obj/structure/flora/roguegrass/herb/euphrasia,/obj/structure/flora/roguegrass/herb/paris,
 	/obj/structure/flora/roguegrass/herb/calendula,/obj/structure/flora/roguegrass/herb/mentha,

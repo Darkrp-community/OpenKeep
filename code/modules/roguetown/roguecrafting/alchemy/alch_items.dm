@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/glass/alchemical
-	name = "alchemical flask"
+	name = "alchemical vial"
 	desc = "A cute bottle, conviniently holding 3 swigs of a fluid."
 	icon = 'icons/roguetown/misc/alchemy.dmi'
 	icon_state = "vial_bottle"

@@ -95,3 +95,8 @@
 	recipe_name = "Potion of Fleet Foot"
 	smells_like = "clean air"
 	output_reagents = list(/datum/reagent/buff/speed = 27)
+
+/datum/alch_cauldron_recipe/lck_potion
+	recipe_name = "Potion of Seven Clovers"
+	smells_like = "calming"
+	output_reagents = list(/datum/reagent/buff/fortune = 27)

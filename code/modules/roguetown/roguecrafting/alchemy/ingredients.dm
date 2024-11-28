@@ -115,7 +115,7 @@
 	name = "sinew"
 	icon_state = "sinew"
 	dropshrink = 0.5
-	major_pot = /datum/alch_cauldron_recipe/str_potion
+	major_pot = /datum/alch_cauldron_recipe/stam_poison
 	med_pot = /datum/alch_cauldron_recipe/end_potion
 	minor_pot = /datum/alch_cauldron_recipe/health_potion
 
@@ -193,6 +193,15 @@
 	major_pot = /datum/alch_cauldron_recipe/spd_potion
 	med_pot = /datum/alch_cauldron_recipe/big_mana_potion
 	minor_pot = /datum/alch_cauldron_recipe/disease_cure
+
+/obj/item/alch/ozium
+	name = "alchemical ozium"
+	desc = "Alchemical processing has left it unfit for consumption."
+	icon_state = "whitepowder"
+
+	major_pot = /datum/alch_cauldron_recipe/big_stamina_potion
+	med_pot = /datum/alch_cauldron_recipe/lck_potion
+	minor_pot = /datum/alch_cauldron_recipe/int_potion
 
 //BEGIN THE HERBS
 
@@ -304,7 +313,7 @@
 	name = "artemisia"
 	icon_state = "artemisia"
 
-	major_pot = /datum/alch_cauldron_recipe/str_potion
+	major_pot = /datum/alch_cauldron_recipe/lck_potion
 	med_pot = /datum/alch_cauldron_recipe/spd_potion
 	minor_pot = /datum/alch_cauldron_recipe/health_potion
 

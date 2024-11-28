@@ -18,8 +18,8 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(to_grind)
 		var/obj/item/N = to_grind
-		N.loc = src.loc
-		to_chat(user, "<span class='notice'>I remove the [to_grind] from the mortar.</span>")
+		N.forceMove(get_turf(user))
+		to_chat(user, "<span class='notice'>I remove [to_grind] from the mortar.</span>")
 		to_grind = null
 		return
 	to_chat(user, "<span class='notice'>It's empty.</span>")
@@ -55,7 +55,7 @@
 				user.mind.adjust_experience(/datum/skill/craft/alchemy, user.STAINT * user.mind.get_learning_boon(/datum/skill/craft/alchemy), FALSE)
 		return
 	if(to_grind)
-		to_chat(user, "<span class='warning'>The mortar is full.</span>")
+		to_chat(user, "<span class='warning'>[src] is full!</span>")
 		return
 	if(!user.transferItemToLoc(I,src))
 		to_chat(user, "<span class='warning'>[I] is stuck to my hand!</span>")

@@ -1,6 +1,6 @@
 /obj/machinery/light/rogue/cauldron
 	name = "cauldron"
-	desc = "Double, double toil and trouble. A great iron cauldron for brewing potions."
+	desc = "Bubble, Bubble, toil and trouble. A great iron cauldron for brewing potions."
 	icon = 'icons/roguetown/misc/alchemy.dmi'
 	icon_state = "cauldron1"
 	base_state = "cauldron"
@@ -115,13 +115,16 @@
 					playsound(src,'sound/misc/smelter_fin.ogg', 30, FALSE)
 
 /obj/machinery/light/rogue/cauldron/attackby(obj/item/I, mob/user, params)
-	if(!istype(I,/obj/item/reagent_containers/glass)) //I hate this.
+	if(istype(I,/obj/item/alch))
 		if(ingredients.len >= maxingredients)
 			to_chat(user, "<span class='warning'>Nothing else can fit.</span>")
-			return TRUE
+			return FALSE
+		if(!isnull(locate(I.type) in ingredients))
+			to_chat(user, "<span class='warning'>There is already \a [I] in [src]! That would ruin the mixture!</span>")
+			return FALSE
 		if(!user.transferItemToLoc(I,src))
 			to_chat(user, "<span class='warning'>[I] is stuck to my hand!</span>")
-			return TRUE
+			return FALSE
 		to_chat(user, "<span class='info'>I add [I] to [src].</span>")
 		ingredients += I
 		brewing = 0
@@ -161,7 +164,8 @@
 		for(var/obj/item/in_caul in ingredients)
 			ingredients -= in_caul
 			in_caul.forceMove(get_turf(user))
+	if(reagents)
 		chem_splash(loc, 2, list(reagents))
-		user.visible_message("<span class='info'>[user] kicks [src],spilling it's contents!</span>")
+	user.visible_message("<span class='info'>[user] kicks [src],spilling it's contents!</span>")
 	playsound(src, 'sound/items/beartrap2.ogg', 100, FALSE)
 	return ..()
