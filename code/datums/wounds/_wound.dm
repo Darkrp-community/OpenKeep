@@ -158,11 +158,11 @@ GLOBAL_LIST_INIT(primordial_wounds, init_primordial_wounds())
 	else if(owner)
 		remove_from_mob()
 	LAZYADD(affected.wounds, src)
-	sortList(affected.wounds, GLOBAL_PROC_REF(cmp_wound_severity_dsc))
+	sortTim(affected.wounds, GLOBAL_PROC_REF(cmp_wound_severity_dsc))
 	bodypart_owner = affected
 	owner = bodypart_owner.owner
 	on_bodypart_gain(affected)
-	on_mob_gain(affected.owner)
+	INVOKE_ASYNC(src, PROC_REF(on_mob_gain, affected.owner) //this is literally a fucking lint error like new species cannot possible spawn with wounds until after its ass
 	if(crit_message)
 		var/message = get_crit_message(affected.owner, affected)
 		if(message)
@@ -172,6 +172,7 @@ GLOBAL_LIST_INIT(primordial_wounds, init_primordial_wounds())
 		if(sounding)
 			playsound(affected.owner, sounding, 100, vary = FALSE)
 	return TRUE
+
 
 /// Effects when a wound is gained on a bodypart
 /datum/wound/proc/on_bodypart_gain(obj/item/bodypart/affected)
