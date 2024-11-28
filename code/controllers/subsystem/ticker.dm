@@ -300,8 +300,7 @@ SUBSYSTEM_DEF(ticker)
 	amt_ready = 999
 #endif
 
-
-
+#ifndef UNIT_TESTS
 	for(var/mob/dead/new_player/player in GLOB.player_list)
 		if(!player)
 			continue
@@ -310,7 +309,7 @@ SUBSYSTEM_DEF(ticker)
 	if(amt_ready < amt_ready_needed)
 		to_chat(world, "<span class='purple'>Not enough players to start the game</span>")
 		return FALSE
-
+#endif
 
 	/*	failedstarts++
 		if(failedstarts >= 13) // this stuff is for rougewar, a team deathmatch mode I guess.
