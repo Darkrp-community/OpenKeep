@@ -217,7 +217,7 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/tools/hoe/copper
-	name = "Hoe (+2s)"
+	name = "Copper Hoe (+Stick x2)"
 	recipe_name = "a gardening Hoe"
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
@@ -225,7 +225,7 @@
 	i_type = "Tools"
 
 /datum/anvil_recipe/tools/sickle/copper
-	name = "Sickle (+s)"
+	name = "Copper Sickle (+Stick)"
 	recipe_name = "a Sickle"
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/stick)
@@ -233,7 +233,7 @@
 	i_type = "Tools"
 
 /datum/anvil_recipe/tools/pitchfork/copper
-	name = "Pitchfork (+2s)"
+	name = "Copper Pitchfork (+Stick x2)"
 	recipe_name = "a Pitchfork"
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
@@ -241,7 +241,7 @@
 	i_type = "Tools"
 
 /datum/anvil_recipe/tools/pick/copper
-	name = "Pick (+s)"
+	name = "Copper Pick (+Stick)"
 	recipe_name = "a digging Pick"
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/stick)
@@ -249,13 +249,13 @@
 	i_type = "Tools"
 
 /datum/anvil_recipe/tools/lamptern/copper
-	name = "Lamptern"
+	name = "Copper Lamptern"
 	recipe_name = "a Lamptern"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/flashlight/flare/torch/lantern/copper
 
 /datum/anvil_recipe/tools/hammer/copper
-	name = "Hammer (+s)"
+	name = "Copper Hammer (+Stick)"
 	req_bar = /obj/item/ingot/copper
 	recipe_name = "a blacksmithing Hammer"
 	additional_items = list(/obj/item/grown/log/tree/stick)

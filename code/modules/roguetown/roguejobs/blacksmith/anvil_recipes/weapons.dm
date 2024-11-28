@@ -41,7 +41,7 @@
 // COPPER TIER - TODO: Move these to redsmithing in future
 
 /datum/anvil_recipe/weapons/copper/caxe
-	name = "Axe (2)"
+	name = "Copper Hatchet (+Bar)"
 	recipe_name = "an Axe"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
@@ -50,7 +50,7 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/copper/cbludgeon
-	name = "Bludgeon (+s)"
+	name = "Copper Bludgeon (+Stick)"
 	recipe_name = "a Bludgeon"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
@@ -59,7 +59,7 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/copper/cdagger
-	name = "Dagger x2"
+	name = "x2 Copper Daggers"
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
@@ -78,7 +78,7 @@
 //	craftdiff = 0
 
 /datum/anvil_recipe/weapons/copper/cmesser
-	name = "Messer (+1s)"
+	name = "Copper Messer (+Stick)"
 	recipe_name = "a Messer"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
@@ -87,7 +87,7 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/copper/cspears
-	name = "Spear x2 (+w)"
+	name = "2x Copper Javelins (+Small Log)"
 	recipe_name = "two Spears"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
@@ -98,7 +98,7 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/copper/cfalx
-	name = "Copper Falx (2)"
+	name = "Copper Falx (+Bar)"
 	recipe_name = "a great copper sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
