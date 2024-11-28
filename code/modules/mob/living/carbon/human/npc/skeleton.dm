@@ -311,39 +311,3 @@
 	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
 
-
-
-// ====================		CATACOMB SKELLY		========================== (weak)
-/mob/living/carbon/human/species/skeleton/npc/catacomb/after_creation()
-	..()
-	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/catacomb)
-
-/datum/outfit/job/roguetown/species/skeleton/npc/catacomb/pre_equip(mob/living/carbon/human/H)
-	..()
-	H.STASTR = 8
-	H.STASPD = 7
-	H.STACON = 10
-	H.STAEND = 10
-	var/loadout = rand(1,3)
-
-	if(prob(15))
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-	if(prob(15))
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
-	if(prob(15))
-		shirt = /obj/item/clothing/suit/roguetown/shirt/rags
-
-	if(prob(10))
-		pants = /obj/item/clothing/under/roguetown/tights/vagrant
-	if(prob(10))
-		pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
-	if(prob(10))
-		pants = /obj/item/clothing/under/roguetown/tights/sailor
-
-	switch(loadout)
-		if(1)
-			r_hand = /obj/item/natural/stone
-		if(2)
-			r_hand = /obj/item/rogueweapon/knife/stone
-		if(3)
-			r_hand = /obj/item/rogueweapon/mace/woodclub
