@@ -30,7 +30,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/silver/forgotten
-	name = "Forgotten Blade (2)"
+	name = "Forgotten Blade (+Bar)"
 	recipe_name = "a Forgotten Blade"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/silver
