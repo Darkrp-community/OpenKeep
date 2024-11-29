@@ -2417,6 +2417,10 @@ Slots: [job.spawn_positions]</span>
 			O.drop_limb()
 		character.regenerate_limb(BODY_ZONE_R_ARM)
 		character.regenerate_limb(BODY_ZONE_L_ARM)
+		var/datum/job/target_job = SSjob.GetJob(parent.mob?.mind?.assigned_role)
+		if(target_job?.forced_flaw)
+			charflaw = target_job.forced_flaw
+
 		character.charflaw = new charflaw.type()
 		character.charflaw.on_mob_creation(character)
 

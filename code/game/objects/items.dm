@@ -226,14 +226,13 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/damage_type = "blunt"
 	var/force_reupdate_inhand = TRUE
 
+	var/is_silver = FALSE
+	var/last_used = 0
+
 	// Boolean sanity var for smelteries to avoid runtimes. Is this is a bar smelted through ore for exp gain?
 	var/smelted = FALSE
 	// Can this be used against a training dummy to learn skills? Prevents dumb exploits.
 	var/istrainable = FALSE
-	// Takes an item path. What it turns into after being grinded by a mortar and pestle.
-	var/dust_result
-	// Takes a text string. What weight will this item give towards a given potion result when used on an alchemy cauldron
-	var/possible_potion
 
 /obj/item/Initialize()
 	. = ..()
