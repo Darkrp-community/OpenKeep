@@ -14,6 +14,12 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
+"bi" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 4
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
 "bs" = (
 /obj/structure/fluff/railing/stonehedge,
 /turf/open/floor/rogue/dirt,
@@ -395,6 +401,20 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
+"rp" = (
+/obj/effect/landmark/start/adventurer,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "horzw"
+	},
+/area/rogue/indoors)
+"rH" = (
+/obj/effect/landmark/start/adventurer{
+	dir = 1
+	},
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "horzw"
+	},
+/area/rogue/indoors)
 "sM" = (
 /obj/structure/fluff/railing/fence{
 	dir = 8
@@ -415,6 +435,12 @@
 	dir = 4
 	},
 /turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
+"tF" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 1
+	},
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "tJ" = (
 /obj/item/reagent_containers/glass/bucket/pot,
@@ -450,6 +476,12 @@
 /obj/structure/bed/rogue/sleepingbag,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/cave)
+"wf" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 1
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
 "wl" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -468,6 +500,10 @@
 /obj/machinery/light/rogue/campfire/longlived,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/cave)
+"wK" = (
+/obj/structure/stairs/stone,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "wX" = (
 /obj/structure/stairs/stone{
 	dir = 1;
@@ -497,6 +533,13 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
+"yI" = (
+/obj/structure/stairs/stone{
+	dir = 1;
+	icon_state = "stonestairs"
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
 "zb" = (
 /obj/effect/spawner/roguemap/stump,
 /turf/open/floor/rogue/dirt,
@@ -514,6 +557,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/outdoors/mountains)
+"zN" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "zW" = (
 /obj/structure/stairs/stone{
 	dir = 1;
@@ -541,6 +588,10 @@
 	icon_state = "roofg"
 	},
 /area/rogue/indoors)
+"Aq" = (
+/obj/structure/stairs/stone,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
 "Aw" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/chicken{
 	name = "vanderlin forest"
@@ -652,6 +703,16 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
+"Ib" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/woods)
+"Ig" = (
+/obj/structure/stairs{
+	dir = 4
+	},
+/turf/closed,
+/area/rogue/indoors)
 "Ir" = (
 /obj/structure/roguetent,
 /turf/open/floor/rogue/dirt,
@@ -676,6 +737,10 @@
 "Jg" = (
 /obj/structure/gravemarker,
 /turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
+"JE" = (
+/obj/effect/landmark/start/adventurerlate,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "JG" = (
 /obj/structure/closet/crate/roguecloset,
@@ -833,7 +898,7 @@
 	},
 /area/rogue/indoors)
 "Qb" = (
-/obj/effect/landmark/start/adventurer,
+/obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "Qg" = (
@@ -971,6 +1036,10 @@
 "UX" = (
 /obj/structure/flora/roguetree/wise,
 /turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
+"Vq" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "Vz" = (
 /turf/closed/wall/mineral/rogue/wooddark/end{
@@ -3221,7 +3290,7 @@ WT
 DO
 WT
 WT
-WT
+bi
 WT
 WT
 WT
@@ -5471,7 +5540,7 @@ Tp
 fp
 Tp
 fp
-fp
+JE
 Tp
 fp
 fp
@@ -9159,7 +9228,7 @@ WT
 NT
 NT
 WT
-WT
+wf
 WT
 NT
 WT
@@ -10962,15 +11031,15 @@ DO
 DO
 WT
 WT
-NT
-DO
+wK
+ch
 mT
 hv
 bR
 bR
 mT
-WT
-NT
+ch
+zW
 WT
 NT
 WT
@@ -11219,20 +11288,20 @@ Wn
 Fg
 DO
 WT
-NT
-WT
+wK
+ch
 mT
 hv
 bR
 bR
 mT
-Iy
-WT
+ch
+yI
 WT
 WT
 WT
 NT
-NT
+TS
 WT
 NT
 WT
@@ -11476,15 +11545,15 @@ DO
 WT
 DO
 DO
-DO
-NT
+Aq
+ch
 mT
 bR
 bR
 bR
 mT
-WT
-WT
+ch
+yI
 DO
 WT
 WT
@@ -12011,17 +12080,17 @@ WT
 WT
 WT
 NT
-NT
-NT
+wK
+ch
 mT
 hv
 bR
 bR
 bR
 mT
+ch
+yI
 WT
-DO
-DO
 WT
 WT
 WT
@@ -12268,17 +12337,17 @@ DO
 NT
 NT
 NT
-NT
-WT
+wK
+ch
 mT
 hv
 bR
 bR
 mT
 WT
-Fg
-Fg
-DO
+ch
+zW
+WT
 WT
 DO
 NT
@@ -12525,16 +12594,16 @@ DO
 DO
 WT
 NT
-WT
-WT
+Aq
+ch
 mT
 hv
 bR
 bR
 mT
 WT
-Fg
-Fg
+ch
+zW
 NT
 WT
 Fg
@@ -12791,7 +12860,7 @@ bR
 mT
 WT
 NT
-DO
+WT
 WT
 NT
 DO
@@ -13047,8 +13116,8 @@ bR
 mT
 DO
 WT
-DO
-DO
+WT
+WT
 WT
 WT
 WT
@@ -13304,7 +13373,7 @@ mT
 mT
 Fg
 NT
-DO
+WT
 WT
 WT
 NT
@@ -15946,7 +16015,7 @@ NT
 NT
 NT
 WT
-WT
+bi
 WT
 WT
 NT
@@ -18457,7 +18526,7 @@ NT
 WT
 WT
 WT
-WT
+bi
 NT
 NT
 WT
@@ -28580,14 +28649,14 @@ fp
 Fg
 Fg
 WT
-WT
+Qb
 fp
 Tp
 Tp
 fp
 fp
 fp
-Tp
+Ib
 Fg
 Fg
 ch
@@ -29105,7 +29174,7 @@ Tp
 Tp
 fp
 Tp
-fp
+tF
 Tp
 fp
 "}
@@ -34210,7 +34279,7 @@ Aw
 rf
 NT
 NT
-NT
+zN
 fp
 Tp
 Tp
@@ -59365,7 +59434,7 @@ WT
 WT
 NT
 WT
-WT
+Qb
 fp
 Tp
 Tp
@@ -59714,7 +59783,7 @@ WT
 UX
 WT
 WT
-WT
+wf
 WT
 NT
 Fg
@@ -59887,7 +59956,7 @@ WT
 WT
 WT
 NT
-NT
+zN
 WT
 WT
 WT
@@ -60156,7 +60225,7 @@ WT
 WT
 WT
 fp
-fp
+Vq
 NT
 NT
 WT
@@ -61179,7 +61248,7 @@ WT
 fp
 fp
 WT
-NT
+zN
 NT
 DO
 DO
@@ -61430,7 +61499,7 @@ Fg
 Fg
 DO
 WT
-WT
+Qb
 Tp
 Tp
 WT
@@ -62973,7 +63042,7 @@ DO
 DO
 DO
 Fg
-NT
+zN
 fp
 WT
 WT
@@ -64262,7 +64331,7 @@ fp
 Tp
 Tp
 Tp
-WT
+Qb
 NT
 NT
 NT
@@ -65290,7 +65359,7 @@ Qb
 fp
 Tp
 fp
-TS
+NT
 Fg
 DO
 DO
@@ -76499,13 +76568,13 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
-UR
-UR
-UR
-UR
+Fb
+YK
+YK
+YK
+YK
+YK
+KM
 UR
 UR
 UR
@@ -76756,13 +76825,13 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
-UR
-UR
-UR
-UR
+Fb
+YK
+YK
+YK
+YK
+YK
+KM
 UR
 UR
 UR
@@ -77013,13 +77082,13 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
-UR
-UR
-UR
-UR
+Fb
+YK
+YK
+YK
+YK
+YK
+KM
 UR
 UR
 UR
@@ -77548,14 +77617,14 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
-UR
-UR
-UR
-UR
-UR
+Fb
+YK
+YK
+YK
+YK
+YK
+YK
+KM
 UR
 UR
 UR
@@ -77805,14 +77874,14 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
-UR
-UR
-UR
-UR
-UR
+Fb
+YK
+YK
+YK
+YK
+YK
+YK
+KM
 UR
 UR
 UR
@@ -78062,14 +78131,14 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
-UR
-UR
-UR
-UR
-UR
+Fb
+YK
+YK
+YK
+YK
+YK
+YK
+KM
 UR
 UR
 UR
@@ -102460,9 +102529,9 @@ oE
 ek
 XJ
 yx
+rp
 BC
-BC
-BC
+rH
 yx
 XJ
 ek
@@ -167743,7 +167812,7 @@ ir
 ir
 ir
 BC
-MB
+Ig
 Sb
 UR
 WJ
