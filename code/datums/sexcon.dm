@@ -40,6 +40,8 @@
 
 /datum/sex_controller/female
 	gender = FEMALE
+	var/curplaying
+	var/datum/looping_sound/femmoans
 
 /mob
 	var/can_do_sex = 2
@@ -1159,9 +1161,49 @@
 		owner.visible_message("<span class='notice'>[owner] tightens in pleasure!</span>")
 	else
 		owner.visible_message("<span class='notice'>[owner] tightens in release!</span>")
+	if(curplaying)
+		curplaying = null
+		if(femmoans)
+			femmoans.stop()
 
 /datum/sex_controller/proc/add_cum_floor(turfu)
 	if(!turfu || !isturf(turfu))
 		return
 	var/turf/T = turfu
 	new /obj/effect/decal/cleanable/coom(T)
+
+/datum/looping_sound/femhornylite
+	mid_sounds = list('sound/vo/female/gen/se/horny1loop (1).ogg')
+	mid_length = 470
+	volume = 20
+	extra_range = -4
+
+/datum/looping_sound/femhornylitealt
+	mid_sounds = list('sound/vo/female/gen/se/horny1loop (2).ogg')
+	mid_length = 360
+	volume = 20
+	extra_range = -4
+
+/datum/looping_sound/femhornymed
+	mid_sounds = list('sound/vo/female/gen/se/horny2loop (1).ogg')
+	mid_length = 420
+	volume = 20
+	extra_range = -4
+
+/datum/looping_sound/femhornymedalt
+	mid_sounds = list('sound/vo/female/gen/se/horny2loop (2).ogg')
+	mid_length = 350
+	volume = 20
+	extra_range = -4
+
+/datum/looping_sound/femhornyhvy
+	mid_sounds = list('sound/vo/female/gen/se/horny3loop (1).ogg')
+	mid_length = 440
+	volume = 20
+	extra_range = -4
+
+/datum/looping_sound/femhornyhvyalt
+	mid_sounds = list('sound/vo/female/gen/se/horny3loop (2).ogg')
+	mid_length = 390
+	volume = 20
+	extra_range = -4
