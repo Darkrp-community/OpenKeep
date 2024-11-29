@@ -591,3 +591,15 @@
 	range = 11
 	spawn_text = ""
 
+
+// ===================================================================================
+/*	..................   Metal bars (weakened or normal?)  ................... */
+/obj/effect/spawner/roguemap/metal_bars
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "bars"
+	probby = 100
+	color = "#d5cb89"
+	spawned = list(
+		/obj/structure/bars/weakened = 30,
+		/obj/structure/bars/weakened = 70,
+		)
