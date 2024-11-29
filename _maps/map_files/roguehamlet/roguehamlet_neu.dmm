@@ -379,13 +379,6 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/exposed/under/basement)
-"avf" = (
-/obj/structure/closet/crate/chest/old_crate,
-/obj/machinery/light/rogue/torchholder/c{
-	pixel_y = -32
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/soilsons)
 "avq" = (
 /obj/structure/fluff/railing/stonehedge{
 	dir = 4
@@ -1759,6 +1752,13 @@
 /obj/structure/roguemachine/camera/left,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/town/hamlet)
+"bOX" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/machinery/light/rogue/torchholder/c{
+	pixel_y = -32
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/soilsons)
 "bOY" = (
 /obj/item/clothing/head/roguetown/cookhat,
 /obj/structure/closet/crate/chest/crate,
@@ -6636,8 +6636,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/hamlet)
 "gGO" = (
-/obj/structure/flora/roguegrass/maneater/real,
-/turf/open/floor/rogue/grass,
+/obj/effect/decal/turfedge_neu/road{
+	dir = 5
+	},
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield/hamlet)
 "gHs" = (
 /obj/structure/rack/rogue,
@@ -7962,11 +7964,6 @@
 /obj/effect/spawner/roguemap/treeorbush,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
-"ifk" = (
-/obj/structure/bed/rogue/hay,
-/obj/machinery/light/rogue/torchholder/c,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/soilsons)
 "ifq" = (
 /obj/effect/sunlight,
 /obj/effect/decal/remains/wolf,
@@ -8809,13 +8806,6 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/mountains)
-"iXU" = (
-/obj/structure/fluff/railing/border{
-	dir = 4;
-	icon_state = "border"
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/soilsons)
 "iYv" = (
 /obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -11220,6 +11210,13 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield/plague_district)
+"lww" = (
+/obj/structure/fluff/railing/border{
+	dir = 4;
+	icon_state = "border"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/soilsons)
 "lwL" = (
 /obj/structure/fluff/walldeco/vinez/l{
 	dir = 10
@@ -16169,12 +16166,6 @@
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/carpet/red,
 /area/rogue/outdoors/exposed/under/basement)
-"qrp" = (
-/obj/effect/decal/turfedge_neu/road{
-	dir = 5
-	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/rtfield/hamlet)
 "qrD" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/naturalstone,
@@ -17332,6 +17323,11 @@
 	},
 /turf/open/floor/rogue/underworld/road,
 /area/rogue/indoors/town/church/chapel)
+"rxV" = (
+/obj/structure/bed/rogue/hay,
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/soilsons)
 "rye" = (
 /obj/structure/chair/stool/rogue,
 /obj/effect/landmark/start/watchman{
@@ -55210,7 +55206,7 @@ khd
 dHw
 fyl
 oHv
-qGx
+fyl
 fyl
 pYz
 fyl
@@ -61029,7 +61025,7 @@ hZX
 xuL
 sAV
 sAV
-pxU
+sAV
 iXi
 rCn
 bkp
@@ -61068,7 +61064,7 @@ fyl
 fyl
 fyl
 fyl
-gGO
+fyl
 fyl
 fyl
 fyl
@@ -62229,7 +62225,7 @@ fyl
 fyl
 fyl
 oHv
-gGO
+fyl
 fyl
 fyl
 oHv
@@ -62242,7 +62238,7 @@ dHw
 fyl
 fyl
 oHv
-gGO
+fyl
 fyl
 fyl
 oHv
@@ -68457,7 +68453,7 @@ let
 let
 oHv
 fyl
-qrp
+gGO
 bsm
 fyl
 fyl
@@ -84125,7 +84121,7 @@ hZX
 hZX
 hZX
 bZQ
-ifk
+rxV
 pAW
 pAW
 him
@@ -84710,7 +84706,7 @@ bZQ
 hPF
 pAW
 pAW
-avf
+bOX
 bZQ
 hvS
 hvS
@@ -85095,10 +85091,10 @@ hZX
 hZX
 hZX
 oRq
-iXU
-iXU
-iXU
-iXU
+lww
+lww
+lww
+lww
 bZQ
 hvS
 hvS

@@ -411,9 +411,9 @@
 /obj/structure/table/wood{
 	icon_state = "largetable"
 	},
-/obj/item/rogueweapon/sword/long/greatsword/elfgsword,
-/obj/item/rogueweapon/sword/long/greatsword/elfgsword,
-/obj/item/rogueweapon/sword/long/greatsword/elfgsword,
+/obj/item/rogueweapon/sword/long/kriegsmesser,
+/obj/item/rogueweapon/sword/long/kriegsmesser,
+/obj/item/rogueweapon/sword/long/kriegsmesser,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "aX" = (

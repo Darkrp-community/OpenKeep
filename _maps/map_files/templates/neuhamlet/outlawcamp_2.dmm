@@ -68,8 +68,8 @@
 /area/rogue/outdoors/rtfield/outlaw)
 "ta" = (
 /obj/effect/spawner/roguemap/hostile_beggar_danger,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield/outlaw)
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors/shelter/rtfield)
 "tV" = (
 /obj/structure/bed/rogue/sleepingbag,
 /turf/open/floor/rogue/dirt/road,
@@ -160,6 +160,10 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/fluff/dryingrack,
 /turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield/outlaw)
+"VF" = (
+/obj/effect/spawner/roguemap/volf_maybe,
+/turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/outlaw)
 "VP" = (
 /turf/closed/wall/mineral/rogue/tent,
@@ -263,7 +267,7 @@ VP
 mK
 mK
 Ry
-ta
+wv
 VP
 Ft
 mK
@@ -403,7 +407,7 @@ wv
 wv
 xd
 VP
-mK
+ta
 mK
 mK
 mK
@@ -542,7 +546,7 @@ cr
 mK
 XA
 VP
-wv
+VF
 "}
 (18,1,1) = {"
 wv
