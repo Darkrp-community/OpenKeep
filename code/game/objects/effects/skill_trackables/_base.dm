@@ -47,7 +47,7 @@
 
 	var/static/list/mobs_with_trait = list()
 
-/obj/effect/skill_tracker/Initialize(atom/parent)
+/obj/effect/skill_tracker/Initialize(mapload, atom/parent)
 	. = ..()
 	real_image = image(icon, parent, real_icon_state, ABOVE_OPEN_TURF_LAYER) //Default image in case manually created.
 	if(always_revealed_trait)
