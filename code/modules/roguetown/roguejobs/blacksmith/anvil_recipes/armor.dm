@@ -5,7 +5,6 @@
 
 // --------- COPPER -----------
 /datum/anvil_recipe/armor/copper
-	req_bar = /obj/item/ingot/copper
 
 /datum/anvil_recipe/armor/copper/mask
 	name = "Copper mask"
