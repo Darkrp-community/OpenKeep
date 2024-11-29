@@ -27,7 +27,7 @@
 
 
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
-	beltl = /obj/item/rogueweapon/sword/rapier/ironestoc
+	beltl = /obj/item/rogueweapon/sword/rapier/iron
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	pants = /obj/item/clothing/under/roguetown/tights/green
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
