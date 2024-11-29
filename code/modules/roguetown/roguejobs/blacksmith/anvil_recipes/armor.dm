@@ -318,7 +318,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/steel/helmetsallv
-	name = "Visored sallet (2)"
+	name = "Visored sallet (+Bar)"
 	recipe_name = "a Visored Sallet"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
