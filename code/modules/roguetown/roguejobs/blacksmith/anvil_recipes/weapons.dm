@@ -548,7 +548,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/bronze/spear
-	name = "Bronze Spear (+1 Bronze, +1 Small Log)"
+	name = "Bronze Spear (+Bar, +Small Log)"
 	req_bar = /obj/item/ingot/bronze
 	additional_items = list(/obj/item/ingot/bronze, /obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/polearm/spear/bronze
