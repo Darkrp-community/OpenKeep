@@ -4,6 +4,9 @@
 	craftdiff = 1
 
 // --------- COPPER -----------
+
+/datum/anvil_recipe/armor/copper
+
 /datum/anvil_recipe/armor/copper/mask
 	name = "Copper mask"
 	recipe_name = "a mask of copper"
