@@ -3289,7 +3289,7 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "dGK" = (
 /obj/structure/chair/wood/rogue/chair_noble,
-/obj/effect/landmark/start/consort,
+/obj/effect/landmark/start/queen,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"
