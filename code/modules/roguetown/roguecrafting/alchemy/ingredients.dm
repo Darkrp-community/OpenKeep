@@ -250,7 +250,7 @@
 	icon_state = "paris"
 
 	major_pot = /datum/alch_cauldron_recipe/big_stam_poison
-	med_pot = /datum/alch_cauldron_recipe/stam_poison
+	med_pot = /datum/alch_cauldron_recipe/berrypoison
 	minor_pot = /datum/alch_cauldron_recipe/stam_poison
 
 /obj/item/alch/calendula
