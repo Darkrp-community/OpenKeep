@@ -17,6 +17,13 @@ SUBSYSTEM_DEF(death_arena)
 	var/fight_force_end = null
 
 /datum/controller/subsystem/death_arena/fire(resumed = 0)
+	var/list/waiting = list()
+	for(var/atom in waiting_fighters)
+		if(isnull(atom))
+			return
+		waiting |= atom
+	waiting_fighters = waiting
+
 	for(var/client/client  as anything in tollless_clients)
 		if(QDELETED(client))
 			tollless_clients -= client
