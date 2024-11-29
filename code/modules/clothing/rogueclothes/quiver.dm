@@ -50,7 +50,7 @@
 						C.attackby(BT, loc, params)
 						break
 					else
-						to_chat(loc, span_warning("The ammunition doesn't fit [C]!"))
+						to_chat(user, span_warning("The ammunition doesn't fit [C]!"))
 						return
 				update_icon()
 		else
