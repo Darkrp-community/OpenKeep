@@ -164,7 +164,7 @@
 	allowed_turfs = list(/turf/open/floor/rogue/dirt/ambush)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 
-//genstuff
+//bandaid sunlight
 /obj/effect/landmark/mapGenerator/sunlights/bandaid
 	mapGeneratorType = /datum/mapGenerator/sunlights/bandaid
 	endTurfX = 128
