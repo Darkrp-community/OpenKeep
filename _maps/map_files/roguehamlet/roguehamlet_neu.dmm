@@ -7347,6 +7347,7 @@
 /area/rogue/indoors/town/shop)
 "hBY" = (
 /obj/item/rogueweapon/hammer{
+	anchored = 1;
 	pixel_y = 5
 	},
 /obj/structure/table/wood/reinforced_alt{
@@ -91191,7 +91192,7 @@ psp
 ezG
 koX
 tvc
-hZX
+tvc
 hZX
 eoL
 hZX
@@ -91385,7 +91386,7 @@ psp
 iXr
 koX
 aDu
-hZX
+psp
 hZX
 hZX
 hZX
@@ -145507,9 +145508,9 @@ psp
 psp
 psp
 psp
-psp
-psp
-psp
+cZM
+cZM
+cZM
 nOp
 nOp
 nOp
@@ -145702,7 +145703,7 @@ psp
 psp
 psp
 cZM
-cZM
+xYD
 cZM
 kAz
 psp
@@ -145896,7 +145897,7 @@ psp
 psp
 psp
 cZM
-xYD
+eOG
 cZM
 nsE
 waO
