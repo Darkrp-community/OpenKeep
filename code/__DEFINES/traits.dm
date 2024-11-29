@@ -38,7 +38,7 @@
 #define TRAIT_ANTIMAGIC					"Anti-Magic"
 #define TRAIT_ANTISCRYING				"Anti-Scrying"
 #define TRAIT_SHOCKIMMUNE				"Shock Immunity"
-#define TRAIT_LEGENDARY_ALCHEMIST		"Legendary Alchemist"
+#define TRAIT_LEGENDARY_ALCHEMIST		"Expert Herb Finder"
 
 // Divine patron trait bonuses:
 #define TRAIT_SOUL_EXAMINE				"Blessing of Necra"  //can check bodies to see if they have departed
@@ -118,7 +118,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
 	TRAIT_DEATHSIGHT = span_info("I can feel when someone nearby draws the Undermaiden's attention, a tiny voice whispering 'Someone has died,' in my ear."),
 	TRAIT_CABAL = span_info("In secret, I have studied the ways of Her ascension, and know of others of the Cabal."),
-	TRAIT_LEGENDARY_ALCHEMIST = span_info("A master of your craft, you have reached the pinnacle of alchemy."),
+	TRAIT_LEGENDARY_ALCHEMIST = span_info("An expert in the art of finding herbs in the wild."),
 	))
 
 // trait accessor defines
