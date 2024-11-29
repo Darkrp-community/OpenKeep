@@ -246,7 +246,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/raisins,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "anm" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -284,7 +284,9 @@
 	icon_state = "largetable"
 	},
 /turf/open/floor/rogue/tile/tilerg,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "ary" = (
 /obj/effect/decal/turfedge_neu{
 	dir = 10
@@ -318,7 +320,7 @@
 "asj" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "asE" = (
 /obj/item/reagent_containers/food/snacks/produce/apple,
@@ -369,7 +371,7 @@
 "auy" = (
 /turf/closed/wall/mineral/rogue/wood,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "auJ" = (
 /obj/effect/decal/turfedge_neu{
@@ -395,7 +397,9 @@
 "avV" = (
 /obj/structure/chair/wood/rogue/chair_noble,
 /turf/open/floor/rogue/tile/tilerg,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "avZ" = (
 /obj/structure/bookcase,
 /obj/item/book/rogue/beardling,
@@ -464,7 +468,7 @@
 /obj/structure/fluff/statue/knight,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "azz" = (
 /obj/structure/handcart{
@@ -593,7 +597,7 @@
 /obj/structure/ladder,
 /turf/open/floor/rogue/cobble/alt,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "aFF" = (
 /obj/effect/decal/turfedge_neu{
@@ -613,7 +617,7 @@
 /obj/structure/fluff/walldeco/customflag,
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "aHa" = (
 /turf/open/floor/rogue/dirt,
@@ -630,7 +634,7 @@
 	},
 /turf/open/floor/rogue/carpet/lord/center,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "aHB" = (
 /obj/structure/flora/roguegrass/water/reeds,
@@ -784,7 +788,7 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "aQX" = (
 /obj/structure/table/wood/large/corner_new{
@@ -871,7 +875,7 @@
 /obj/item/bedsheet/rogue/double_pelt,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "aUr" = (
 /turf/open/floor/rogue/rooftop,
@@ -904,7 +908,7 @@
 /obj/effect/decal/cleanable/food/egg_smudge,
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "aXu" = (
 /obj/structure/fluff/railing/border{
@@ -1068,7 +1072,7 @@
 /obj/item/natural/bundle/stick,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bdl" = (
 /obj/structure/bars/pipe{
@@ -1155,7 +1159,7 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bhP" = (
 /obj/structure/roguemachine/mail{
@@ -1164,7 +1168,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bic" = (
 /obj/structure/flora/roguegrass,
@@ -1234,13 +1238,13 @@
 /obj/structure/chair/bench/couch/redright,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bmA" = (
 /obj/item/chair/rogue,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bnl" = (
 /obj/structure/closet/crate/roguecloset/dark,
@@ -1412,7 +1416,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bxB" = (
 /turf/open/floor/rogue/dirt,
@@ -1421,7 +1425,7 @@
 /obj/item/roguebin/water/gross,
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "byi" = (
 /obj/structure/bookcase,
@@ -1452,7 +1456,7 @@
 /obj/item/natural/rock,
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "byY" = (
 /turf/closed/wall/mineral/rogue/wooddark,
@@ -1464,7 +1468,7 @@
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bAk" = (
 /obj/structure/rack/rogue,
@@ -1485,7 +1489,9 @@
 	pixel_y = 18
 	},
 /turf/open/floor/rogue/tile/tilerg,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "bCf" = (
 /obj/structure/mineral_door/wood/donjon{
 	dir = 4;
@@ -1515,7 +1521,7 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bDY" = (
 /obj/item/roguemachine/mastermail,
@@ -1557,16 +1563,11 @@
 /obj/item/reagent_containers/glass/cup/wooden,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/shelter/mountains)
-"bGr" = (
-/turf/open/floor/rogue/hexstone,
-/area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
-	})
 "bGv" = (
 /obj/structure/fluff/nest,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bGy" = (
 /obj/structure/bed/rogue/shit,
@@ -1579,7 +1580,7 @@
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bHN" = (
 /obj/structure/fluff/railing/fence{
@@ -1698,7 +1699,7 @@
 /obj/item/reagent_containers/glass/cup,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bNi" = (
 /obj/item/candle/yellow/lit/infinite{
@@ -1762,7 +1763,7 @@
 /obj/structure/closet/crate/chest/crate,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bPb" = (
 /obj/machinery/light/rogue/torchholder{
@@ -1856,7 +1857,7 @@
 /obj/item/storage/belt/rogue/pouch/coins/mid,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bRT" = (
 /obj/structure/roguewindow/openclose,
@@ -1924,7 +1925,7 @@
 /obj/item/rogueweapon/knife/cleaver,
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "bUr" = (
 /obj/structure/closet/crate/chest/neu,
@@ -2106,7 +2107,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "ceG" = (
 /obj/effect/spawner/roguemap/loot/common,
@@ -2183,7 +2184,9 @@
 /area/rogue/outdoors/exposed/under/basement)
 "cjj" = (
 /turf/open/floor/rogue/hexstone,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "cjz" = (
 /obj/structure/closet/dirthole/closed,
 /obj/structure/flora/roguegrass,
@@ -2399,7 +2402,7 @@
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "czR" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
@@ -2434,7 +2437,7 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "cCc" = (
 /obj/structure/bed/rogue/wool,
@@ -2598,7 +2601,7 @@
 /obj/item/reagent_containers/powder/salt,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "cIP" = (
 /obj/structure/plough,
@@ -2623,7 +2626,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "cKB" = (
 /obj/structure/rack/rogue,
@@ -2650,7 +2653,7 @@
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/cobble/alt,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "cMu" = (
 /turf/closed/wall/mineral/rogue/wooddark,
@@ -2694,7 +2697,7 @@
 	},
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "cPt" = (
 /obj/effect/decal/turfedge_neu{
@@ -2731,7 +2734,7 @@
 /obj/item/paper/scroll,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "cRV" = (
 /obj/structure/fluff/railing/border{
@@ -2756,7 +2759,7 @@
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "cSj" = (
 /obj/structure/mineral_door/wood/fancywood{
@@ -2887,7 +2890,7 @@
 	},
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "dbJ" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -2995,7 +2998,7 @@
 /obj/structure/chair/bench/couch/redleft,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "dir" = (
 /obj/effect/decal/turfedge_neu{
@@ -3020,7 +3023,7 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "dln" = (
 /obj/structure/flora/roguegrass,
@@ -3141,7 +3144,7 @@
 "dsB" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "dsK" = (
 /obj/structure/fluff/railing/border,
@@ -3441,7 +3444,7 @@
 /obj/effect/landmark/start/lady,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "dHw" = (
 /obj/structure/flora/roguetree/burnt,
@@ -3475,7 +3478,7 @@
 "dJZ" = (
 /turf/closed/wall/mineral/rogue/stone/window/moss,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "dKI" = (
 /turf/open/floor/rogue/grass,
@@ -3566,7 +3569,7 @@
 /obj/effect/landmark/start/servant,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "dOQ" = (
 /obj/structure/bars/pipe{
@@ -3636,7 +3639,7 @@
 /obj/structure/fluff/railing/border,
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "dTc" = (
 /obj/structure/fluff/walldeco/wantedposter,
@@ -3678,7 +3681,7 @@
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "dUL" = (
 /turf/open/floor/rogue/sandstone/shaded,
@@ -3760,7 +3763,7 @@
 	},
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "dXl" = (
 /obj/structure/flora/roguegrass/thorn_bush,
@@ -3815,7 +3818,7 @@
 /obj/structure/ladder,
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "eaT" = (
 /obj/structure/bed/rogue/shit,
@@ -3922,7 +3925,7 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "egc" = (
 /obj/effect/decal/turfedge_neu{
@@ -3935,7 +3938,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "egz" = (
 /obj/structure/roguewindow/solid,
@@ -4030,7 +4033,7 @@
 /obj/effect/landmark/start/prince,
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "ekn" = (
 /obj/structure/mineral_door/bars{
@@ -4102,7 +4105,7 @@
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "emS" = (
 /obj/structure/fluff/clock/dense,
@@ -4171,7 +4174,7 @@
 /obj/item/natural/cloth,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "eqM" = (
 /obj/structure/flora/roguegrass,
@@ -4189,7 +4192,7 @@
 /obj/structure/fluff/walldeco/bigpainting,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "erc" = (
 /obj/structure/fermenting_barrel,
@@ -4230,7 +4233,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "euk" = (
 /turf/open/floor/rogue/tile/masonic/single,
@@ -4253,7 +4256,7 @@
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "evm" = (
 /obj/structure/bars/cemetery{
@@ -4436,7 +4439,7 @@
 	},
 /turf/open/floor/rogue/cobble/alt,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "eAI" = (
 /obj/structure/chair/wood/rogue{
@@ -4617,7 +4620,7 @@
 "eJx" = (
 /turf/closed/wall/mineral/rogue/decostone/cand,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "eJH" = (
 /obj/structure/table/wood/large/corner_new{
@@ -4639,7 +4642,7 @@
 /obj/structure/fluff/statue/knight,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "eLe" = (
 /obj/structure/roguewindow/openclose{
@@ -4791,7 +4794,7 @@
 "eRB" = (
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "eRH" = (
 /obj/machinery/light/rogue/wallfire{
@@ -4863,12 +4866,12 @@
 /obj/structure/fluff/walldeco/customflag,
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "eUo" = (
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "eUw" = (
 /obj/structure/table/wood/reinf_long,
@@ -5000,7 +5003,7 @@
 	},
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "fbw" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -5075,7 +5078,7 @@
 	},
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "feV" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -5116,7 +5119,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "fgY" = (
 /turf/closed/wall/mineral/rogue/wooddark,
@@ -5158,7 +5161,7 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "fiK" = (
 /obj/structure/rack/rogue,
@@ -5234,7 +5237,7 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "fnK" = (
 /obj/structure/roguewindow/openclose{
@@ -5301,7 +5304,7 @@
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "fpX" = (
 /obj/structure/fluff/railing/border{
@@ -5466,7 +5469,7 @@
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "fwx" = (
 /obj/structure/fluff/railing/border{
@@ -5479,7 +5482,7 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "fwO" = (
 /obj/effect/decal/turfedge_neu{
@@ -5499,7 +5502,9 @@
 "fwR" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/tile/tilerg,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "fxC" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border{
@@ -5550,7 +5555,7 @@
 "fBu" = (
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "fCb" = (
 /obj/structure/closet/dirthole/closed/loot,
@@ -5681,7 +5686,9 @@
 	icon_state = "largetable"
 	},
 /turf/open/floor/rogue/tile/tilerg,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "fKJ" = (
 /obj/effect/decal/cleanable/dirt/cobweb{
 	dir = 1
@@ -5849,7 +5856,7 @@
 	},
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "fVL" = (
 /turf/closed/mineral/random/rogue,
@@ -5923,7 +5930,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "fYO" = (
 /obj/item/rogueweapon/sword/scimitar/messer/neu{
@@ -6033,7 +6040,7 @@
 /obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "gdM" = (
 /turf/closed/wall/mineral/rogue/wooddark/end,
@@ -6208,7 +6215,7 @@
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "gnE" = (
 /obj/structure/bars/pipe{
@@ -6250,7 +6257,7 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "goZ" = (
 /obj/structure/fluff/railing/stonehedge,
@@ -6267,7 +6274,7 @@
 /obj/structure/toilet,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "gpy" = (
 /obj/structure/fluff/railing/border{
@@ -6324,7 +6331,7 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "gtg" = (
 /obj/structure/fluff/railing/border{
@@ -6367,7 +6374,7 @@
 "guL" = (
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "gvh" = (
 /turf/open/floor/rogue/concrete,
@@ -6629,7 +6636,7 @@
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "gIz" = (
 /obj/structure/table/wood{
@@ -6760,7 +6767,7 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "gSx" = (
 /obj/item/reagent_containers/food/snacks/crow,
@@ -6853,13 +6860,13 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "gXo" = (
 /obj/structure/fluff/walldeco/bigpainting/lake,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "gXJ" = (
 /obj/effect/landmark/start/shepherd,
@@ -6889,7 +6896,9 @@
 	icon_state = "map4"
 	},
 /turf/open/floor/rogue/carpet/lord/center,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "hbj" = (
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/magician)
@@ -6999,9 +7008,6 @@
 	},
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town)
-"hfe" = (
-/turf/open/floor/rogue/carpet/lord/left,
-/area/rogue/indoors/town/manor)
 "hfN" = (
 /obj/structure/flora/roguegrass,
 /obj/effect/decal/turfedge_neu/road{
@@ -7112,7 +7118,7 @@
 "hom" = (
 /turf/open/floor/rogue/cobble/mossy/alt,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "hpx" = (
 /turf/open/floor/rogue/dirt/road,
@@ -7141,7 +7147,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "hrp" = (
 /obj/structure/fermenting_barrel/random/beer,
@@ -7232,7 +7238,9 @@
 	},
 /obj/item/paper/scroll,
 /turf/open/floor/rogue/carpet/lord/center,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "hxl" = (
 /obj/structure/flora/rock/pile,
 /obj/structure/fluff/railing/stonehedge{
@@ -7331,7 +7339,7 @@
 /obj/structure/fluff/statue/knight/r,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "hCf" = (
 /obj/item/natural/worms/leech{
@@ -7430,7 +7438,7 @@
 /obj/item/paper/scroll,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "hGL" = (
 /obj/effect/decal/shadow_floor{
@@ -7451,7 +7459,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "hHf" = (
 /obj/effect/decal/turfedge_neu/road{
@@ -7554,7 +7562,7 @@
 /obj/structure/ladder,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "hLN" = (
 /obj/structure/roguetent/preopen,
@@ -7570,7 +7578,7 @@
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "hML" = (
 /obj/structure/fermenting_barrel,
@@ -7590,12 +7598,12 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "hOg" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "hOu" = (
 /obj/machinery/light/rogue/wallfire/candle/weak/l,
@@ -7864,7 +7872,7 @@
 /obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "ibE" = (
 /obj/structure/roguemachine/mail,
@@ -7995,7 +8003,7 @@
 	},
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "iiz" = (
 /turf/open/floor/rogue/wood/nosmooth/saiga,
@@ -8008,9 +8016,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/bath/redhouse)
-"ije" = (
-/turf/open/floor/rogue/carpet/lord/right,
-/area/rogue/indoors/town/manor)
 "ijA" = (
 /obj/machinery/light/rogue/firebowl/stump{
 	pixel_y = 8
@@ -8127,7 +8132,9 @@
 	},
 /obj/item/natural/feather,
 /turf/open/floor/rogue/carpet/lord/center,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "ipX" = (
 /obj/item/roguebin/water/gross,
 /obj/structure/bars/pipe{
@@ -8183,14 +8190,14 @@
 /obj/structure/fluff/clock,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "isc" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/sword/sabre/dec,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "isk" = (
 /obj/structure/mineral_door/wood{
@@ -8271,7 +8278,7 @@
 	},
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "iwo" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -8302,7 +8309,7 @@
 	},
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "iwS" = (
 /obj/structure/bars/pipe{
@@ -8474,7 +8481,7 @@
 /obj/item/clothing/mask/pig,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "iEe" = (
 /obj/item/roguestatue/silver,
@@ -8540,7 +8547,7 @@
 /obj/item/reagent_containers/food/snacks/produce/apple,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "iGU" = (
 /obj/machinery/light/rogue/torchholder{
@@ -8555,7 +8562,7 @@
 "iHy" = (
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "iIc" = (
 /obj/structure/flora/roguegrass,
@@ -8568,7 +8575,7 @@
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "iIw" = (
 /turf/open/water/swamp,
@@ -8920,7 +8927,7 @@
 /obj/structure/toilet,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "jeY" = (
 /obj/machinery/light/rogue/campfire,
@@ -8987,7 +8994,7 @@
 /obj/structure/roguemachine/scomm,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "jiZ" = (
 /turf/open/floor/rogue/metal{
@@ -9122,7 +9129,7 @@
 /obj/structure/roguemachine/scomm/l,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "jrk" = (
 /obj/structure/closet/crate/chest/neu_fancy,
@@ -9195,7 +9202,7 @@
 /obj/item/bedsheet/rogue/pelt,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "jvY" = (
 /obj/item/reagent_containers/food/snacks/fat/salo,
@@ -9419,7 +9426,7 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "jFj" = (
 /obj/effect/decal/turfedge_neu/alt{
@@ -9666,7 +9673,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "jQM" = (
 /obj/structure/fluff/walldeco/steward{
@@ -9745,7 +9752,7 @@
 /obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "jUD" = (
 /obj/structure/mineral_door/wood{
@@ -9895,7 +9902,7 @@
 "kbl" = (
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "kcx" = (
 /obj/structure/roguemachine/scomm/r,
@@ -9953,7 +9960,7 @@
 /obj/effect/landmark/start/manorguardsman,
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "kfF" = (
 /obj/effect/decal/turfedge_neu/mossy_small{
@@ -10104,7 +10111,7 @@
 	},
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "kmR" = (
 /turf/closed/wall/mineral/rogue/wooddark,
@@ -10116,7 +10123,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "koW" = (
 /obj/effect/decal/turfedge_neu{
@@ -10307,7 +10314,7 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "kxE" = (
 /obj/structure/bed/rogue/hay,
@@ -10349,7 +10356,7 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "kAp" = (
 /turf/open/floor/carpet/royalblack,
@@ -10409,7 +10416,7 @@
 /obj/item/paper/scroll,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "kCF" = (
 /obj/structure/fluff/railing/stonehedge{
@@ -10451,7 +10458,7 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "kFZ" = (
 /obj/structure/mirror/alt,
@@ -10504,7 +10511,7 @@
 /obj/structure/ladder,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "kJT" = (
 /obj/item/reagent_containers/food/snacks/crow{
@@ -10522,7 +10529,7 @@
 	},
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "kKd" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -10595,7 +10602,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "kPs" = (
 /obj/structure/bed/rogue/wool,
@@ -10660,7 +10667,9 @@
 "kRg" = (
 /obj/structure/chair/wood/rogue/chair_noble/purple,
 /turf/open/floor/rogue/carpet/lord/center,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "kRE" = (
 /obj/structure/chair/wood/rogue{
 	dir = 4;
@@ -10699,7 +10708,7 @@
 /obj/structure/fluff/wallclock,
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "kWe" = (
 /obj/structure/chair/bench/ancientlog,
@@ -10726,7 +10735,7 @@
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "kXd" = (
 /obj/item/restraints/legcuffs/beartrap/armed,
@@ -10750,7 +10759,7 @@
 /obj/machinery/light/rogue/oven/south,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "kXJ" = (
 /obj/structure/closet/dirthole/grave,
@@ -11031,7 +11040,7 @@
 "llW" = (
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "lmb" = (
 /obj/structure/flora/roguegrass,
@@ -11049,7 +11058,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "lok" = (
 /obj/structure/chair/stool/rogue,
@@ -11284,7 +11293,7 @@
 /obj/item/reagent_containers/powder/salt,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "lDJ" = (
 /obj/structure/mirror/alt{
@@ -11373,7 +11382,7 @@
 /obj/structure/closet/crate/chest/crate,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "lHd" = (
 /obj/structure/fluff/walldeco/painting/seraphina{
@@ -11381,7 +11390,7 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "lHe" = (
 /turf/closed/wall/shroud,
@@ -11575,7 +11584,7 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "lOS" = (
 /obj/structure/bars/pipe{
@@ -11741,7 +11750,7 @@
 "lYN" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "lYY" = (
 /obj/structure/flora/rock/pile,
@@ -11773,7 +11782,7 @@
 /obj/machinery/light/rogue/chand,
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "lZL" = (
 /obj/structure/floordoor/gatehatch/outer{
@@ -11942,7 +11951,9 @@
 /area/rogue/indoors/town/church)
 "mlU" = (
 /turf/open/floor/rogue/tile/tilerg,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "mmm" = (
 /obj/structure/stairs{
 	dir = 8;
@@ -12053,7 +12064,7 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "msB" = (
 /obj/structure/table/wood/reinf_long{
@@ -12272,7 +12283,7 @@
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "mFx" = (
 /obj/item/natural/stone,
@@ -12368,7 +12379,7 @@
 /obj/structure/fluff/railing/border,
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "mMV" = (
 /obj/structure/flora/roguegrass,
@@ -12620,7 +12631,7 @@
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "mVX" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -12637,7 +12648,7 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "mWI" = (
 /turf/open/floor/rogue/cobble/alt,
@@ -12728,12 +12739,12 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "ncP" = (
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "ndb" = (
 /obj/structure/roguewindow/solid,
@@ -12860,7 +12871,7 @@
 "njK" = (
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "njU" = (
 /obj/effect/spawner/roguemap/tree,
@@ -12923,7 +12934,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "nmF" = (
 /obj/structure/fluff/railing/border{
@@ -12963,7 +12974,7 @@
 	},
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "nnB" = (
 /obj/structure/bars/pipe{
@@ -13072,7 +13083,7 @@
 	},
 /turf/open/floor/rogue/carpet/lord/center,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "nvR" = (
 /obj/structure/fluff/railing/border{
@@ -13097,7 +13108,9 @@
 	pixel_y = 32
 	},
 /turf/open/floor/rogue/tile/tilerg,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "nxX" = (
 /obj/structure/fluff/walldeco/wantedposter{
 	pixel_x = -31;
@@ -13128,7 +13141,7 @@
 	},
 /turf/open/floor/rogue/cobble/mossy/alt,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "nyp" = (
 /turf/closed/wall/mineral/rogue/decostone,
@@ -13191,7 +13204,7 @@
 /obj/structure/fluff/walldeco/customflag,
 /turf/closed/wall/mineral/rogue/decostone/fluffstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "nBj" = (
 /obj/effect/decal/turfedge_neu/alt{
@@ -13225,7 +13238,7 @@
 /obj/structure/toilet,
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "nDJ" = (
 /obj/effect/spawner/roguemap/treeorbush,
@@ -13349,7 +13362,7 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "nMn" = (
 /obj/machinery/light/rogue/wallfire{
@@ -13379,7 +13392,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "nOp" = (
 /obj/structure/flora/roguegrass/thorn_bush,
@@ -13449,7 +13462,7 @@
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "nRT" = (
 /turf/open/floor/rogue/woodturned/nosmooth,
@@ -13485,7 +13498,7 @@
 /obj/structure/closet/crate/chest/neu,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "nTe" = (
 /turf/open/floor/rogue/cobblerock,
@@ -13505,7 +13518,9 @@
 	icon_state = "map3"
 	},
 /turf/open/floor/rogue/carpet/lord/center,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "nUh" = (
 /obj/structure/chair/stool/rogue,
 /obj/structure/flora/roguegrass,
@@ -13559,7 +13574,7 @@
 /obj/structure/roguewindow/stained,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "nXi" = (
 /obj/item/candle/yellow/lit/infinite{
@@ -13700,7 +13715,7 @@
 	},
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "ogX" = (
 /obj/structure/giantfur,
@@ -13720,13 +13735,13 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "oiA" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "oiJ" = (
 /obj/effect/decal/turfedge_neu{
@@ -13859,7 +13874,7 @@
 /obj/structure/fluff/railing/border,
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "onX" = (
 /turf/open/floor/rogue/grass,
@@ -14026,7 +14041,7 @@
 /obj/structure/fluff/walldeco/bigpainting,
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "ovm" = (
 /obj/item/reagent_containers/glass/cup/wooden,
@@ -14115,7 +14130,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "ozI" = (
 /obj/structure/flora/roguegrass/stalky,
@@ -14263,7 +14278,7 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "oFq" = (
 /obj/structure/fluff/railing/border{
@@ -14366,7 +14381,7 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "oIj" = (
 /obj/structure/bars/pipe{
@@ -14459,7 +14474,7 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "oNh" = (
 /obj/item/gavelblock,
@@ -14711,7 +14726,7 @@
 /obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "oXy" = (
 /obj/structure/fluff/walldeco/med5{
@@ -14786,7 +14801,7 @@
 /obj/item/roguebin/water/gross,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "oZT" = (
 /turf/open/floor/rogue/ruinedwood/chevron,
@@ -14804,7 +14819,7 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "paT" = (
 /obj/structure/stairs/stone{
@@ -14881,7 +14896,7 @@
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "peW" = (
 /obj/effect/decal/cleanable/dirt/cobweb,
@@ -15035,12 +15050,14 @@
 	dir = 8
 	},
 /turf/open/floor/rogue/carpet/lord/right,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "plV" = (
 /obj/structure/roguewindow/stained,
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "pmr" = (
 /obj/effect/decal/shadow_floor{
@@ -15121,7 +15138,7 @@
 /obj/effect/decal/cleanable/food/flour,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "ppa" = (
 /obj/effect/spawner/roguemap/hauntz_random,
@@ -15273,7 +15290,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "pwa" = (
 /obj/structure/fluff/dryingrack,
@@ -15381,7 +15398,7 @@
 /obj/item/reagent_containers/glass/bowl,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "pBw" = (
 /obj/structure/fluff/railing/border{
@@ -15410,7 +15427,7 @@
 	},
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "pCp" = (
 /obj/effect/decal/turfedge_neu/alt{
@@ -15438,7 +15455,7 @@
 /obj/structure/fluff/statue/knight/r,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "pDj" = (
 /obj/effect/spawner/roguemap/tree,
@@ -15538,9 +15555,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/exposed/town/hamlet)
-"pKW" = (
-/turf/open/floor/rogue/carpet/lord/center,
-/area/rogue/indoors/town/manor)
 "pLb" = (
 /turf/closed/wall/mineral/rogue/wooddark/horizontal,
 /area/rogue/indoors/town)
@@ -15700,7 +15714,7 @@
 /obj/effect/landmark/start/manorguardsman,
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "pVK" = (
 /obj/structure/roguemachine/scomm/r,
@@ -15821,7 +15835,7 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qcx" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -15881,7 +15895,7 @@
 /obj/item/natural/cloth,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qfT" = (
 /turf/open/floor/rogue/naturalstone,
@@ -15932,7 +15946,7 @@
 /obj/item/natural/rock,
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qij" = (
 /turf/open/floor/rogue/twig,
@@ -16193,7 +16207,7 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qwu" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
@@ -16221,13 +16235,13 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qxr" = (
 /obj/structure/ladder,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qxw" = (
 /obj/item/roguebin/water/gross,
@@ -16253,7 +16267,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qyS" = (
 /obj/structure/handcart{
@@ -16308,7 +16322,7 @@
 	},
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qEt" = (
 /obj/effect/decal/turfedge_neu/rockalt_corners,
@@ -16397,7 +16411,7 @@
 /obj/item/bath/soap,
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qJn" = (
 /obj/effect/decal/turfedge_neu{
@@ -16408,7 +16422,7 @@
 "qJt" = (
 /turf/closed/wall/mineral/rogue/decostone/chimney,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qJB" = (
 /obj/structure/closet/crate/roguecloset/lord{
@@ -16509,7 +16523,7 @@
 /obj/structure/rack/rogue,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qNk" = (
 /turf/open/water/swamp,
@@ -16563,7 +16577,7 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qPV" = (
 /obj/item/grown/log/tree/small,
@@ -16612,7 +16626,7 @@
 /obj/item/clothing/mask/cigarette/pipe,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qSx" = (
 /obj/machinery/light/rogue/lanternpost/fixed{
@@ -16624,7 +16638,7 @@
 "qSW" = (
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qSX" = (
 /turf/open/floor/rogue/naturalstone,
@@ -16687,7 +16701,7 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "qVO" = (
 /obj/item/natural/dirtclod,
@@ -16942,13 +16956,13 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "riA" = (
 /obj/effect/landmark/start/servant,
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "riE" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -17333,7 +17347,7 @@
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "rDz" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -17588,7 +17602,7 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "rQE" = (
 /obj/effect/spawner/roguemap/tree,
@@ -17656,7 +17670,9 @@
 	pixel_y = 32
 	},
 /turf/open/floor/rogue/tile/tilerg,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "rWR" = (
 /obj/structure/bars/cemetery,
 /obj/structure/flora/roguegrass,
@@ -17675,7 +17691,9 @@
 	dir = 4
 	},
 /turf/open/floor/rogue/carpet/lord/left,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "rXp" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle{
 	dir = 4
@@ -17864,7 +17882,7 @@
 "siG" = (
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "sje" = (
 /obj/effect/spawner/roguemap/tree,
@@ -17910,7 +17928,7 @@
 /obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "skw" = (
 /obj/effect/decal/turfedge_neu/road{
@@ -17925,7 +17943,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "slK" = (
 /turf/open/transparent/openspace,
@@ -17938,7 +17956,7 @@
 /obj/item/cooking/pan,
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "smq" = (
 /obj/structure/table/wood/large/corner_new{
@@ -18060,7 +18078,7 @@
 "ssC" = (
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "sto" = (
 /turf/closed/wall/mineral/rogue/roofwall/outercorner{
@@ -18212,7 +18230,7 @@
 /obj/item/soap,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "szE" = (
 /obj/machinery/light/rogue/wallfire{
@@ -18292,7 +18310,7 @@
 	},
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "sGM" = (
 /obj/structure/fluff/statue/knight/r,
@@ -18365,7 +18383,7 @@
 /obj/effect/decal/turfedge_neu,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "sMh" = (
 /obj/structure/stairs/stone{
@@ -18447,7 +18465,7 @@
 /obj/structure/rogue/trophy/deer,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "sPk" = (
 /obj/structure/fluff/railing/border{
@@ -18654,7 +18672,9 @@
 	pixel_y = 18
 	},
 /turf/open/floor/rogue/carpet/lord/center,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "sZD" = (
 /obj/structure/flora/roguegrass/bush/wall/tall,
 /turf/open/floor/rogue/grass,
@@ -18672,7 +18692,7 @@
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "tbe" = (
 /turf/open/floor/rogue/tile/kitchen,
@@ -18790,7 +18810,7 @@
 /obj/item/rogueweapon/sickle,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "tfJ" = (
 /obj/item/reagent_containers/food/snacks/smallrat,
@@ -18898,7 +18918,7 @@
 /obj/item/storage/box/matches,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "tmw" = (
 /turf/open/floor/rogue/rooftop/green,
@@ -18936,7 +18956,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "tpB" = (
 /turf/open/floor/rogue/rooftop{
@@ -19038,7 +19058,7 @@
 	},
 /turf/open/floor/rogue/cobble/mossy/alt,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "tvZ" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -19252,7 +19272,7 @@
 /obj/structure/mineral_door/swing_door,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "tGP" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -19473,7 +19493,7 @@
 "tRx" = (
 /turf/closed/wall/mineral/rogue/wooddark/window,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "tRE" = (
 /obj/item/reagent_containers/glass/cup/skull,
@@ -19550,7 +19570,7 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "tUC" = (
 /obj/structure/flora/roguegrass/thorn_bush,
@@ -19561,7 +19581,7 @@
 "tUQ" = (
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "tUZ" = (
 /obj/effect/decal/turfedge_neu{
@@ -19708,7 +19728,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "ubM" = (
 /obj/structure/chair/stool/rogue,
@@ -19729,7 +19749,7 @@
 	},
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "ucI" = (
 /obj/effect/spawner/roguemap/treeorbush,
@@ -19766,7 +19786,7 @@
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "udU" = (
 /obj/structure/fluff/railing/stonehedge{
@@ -19816,7 +19836,7 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "ugo" = (
 /obj/structure/flora/rock/pile,
@@ -19855,7 +19875,7 @@
 "uhn" = (
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "uhR" = (
 /turf/open/floor/carpet/royalblack,
@@ -19933,7 +19953,7 @@
 /obj/structure/mineral_door/wood/fancywood,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "uog" = (
 /obj/structure/closet/crate/drawer/random{
@@ -19958,7 +19978,7 @@
 /obj/structure/bars/cemetery,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "uoY" = (
 /turf/open/floor/rogue/ruinedwood/spiralfade,
@@ -20074,7 +20094,7 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "uvu" = (
 /obj/structure/fluff/clodpile,
@@ -20208,7 +20228,9 @@
 	dir = 8
 	},
 /turf/open/floor/rogue/tile/tilerg,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "uzs" = (
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/indoors/shelter/rtfield)
@@ -20280,7 +20302,7 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "uCR" = (
 /obj/structure/mineral_door/wood/donjon{
@@ -20350,7 +20372,7 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "uFo" = (
 /obj/item/reagent_containers/food/snacks/crow,
@@ -20512,7 +20534,9 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/carpet/lord/center,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "uMw" = (
 /obj/item/clothing/shoes/roguetown/shortboots,
 /turf/open/floor/rogue/grass,
@@ -20582,7 +20606,7 @@
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "uPg" = (
 /obj/item/reagent_containers/food/snacks/crow{
@@ -20692,7 +20716,7 @@
 /obj/item/clothing/suit/roguetown/armor/medium/scale,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "uSU" = (
 /obj/structure/fluff/clodpile,
@@ -20730,7 +20754,7 @@
 	},
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "uVp" = (
 /turf/open/floor/rogue/dirt,
@@ -20741,7 +20765,7 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "uWg" = (
 /obj/structure/closet/crate/chest/crate,
@@ -20826,7 +20850,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "uZe" = (
 /obj/structure/fluff/railing/border{
@@ -20887,7 +20911,7 @@
 /obj/structure/stairs/stone,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "vdK" = (
 /obj/structure/mineral_door/bars{
@@ -20909,7 +20933,7 @@
 "vdO" = (
 /turf/closed/wall/mineral/rogue/decostone/fluffstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "vec" = (
 /obj/structure/mineral_door/wood/donjon/stone{
@@ -20943,7 +20967,7 @@
 /obj/structure/mineral_door/wood/fancywood,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "vfj" = (
 /obj/structure/closet/crate/chest/old_crate,
@@ -20964,7 +20988,7 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "vfR" = (
 /obj/structure/stairs{
@@ -21178,7 +21202,7 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "vuN" = (
 /obj/structure/bed/rogue/wooldouble,
@@ -21190,7 +21214,7 @@
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "vvy" = (
 /turf/open/floor/rogue/rooftop/green,
@@ -21237,7 +21261,7 @@
 "vyP" = (
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "vyQ" = (
 /obj/effect/decal/turfedge_neu/rockalt_corners,
@@ -21296,13 +21320,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "vBb" = (
 /obj/structure/fluff/statue/gargoyle/moss,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "vBC" = (
 /obj/structure/chair/stool/rogue,
@@ -21383,7 +21407,7 @@
 "vFV" = (
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "vGb" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle{
@@ -21751,7 +21775,7 @@
 "vYf" = (
 /turf/open/floor/rogue/carpet/lord/center,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "vYp" = (
 /obj/structure/fluff/railing/border{
@@ -21765,7 +21789,7 @@
 /obj/structure/rack/rogue,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "vYV" = (
 /obj/structure/chair/wood/rogue/chair_noble/red{
@@ -21795,7 +21819,7 @@
 "wao" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "waO" = (
 /obj/structure/flora/roguegrass,
@@ -21860,7 +21884,7 @@
 "wdf" = (
 /turf/open/floor/rogue/cobble/alt,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "wdq" = (
 /obj/machinery/light/rogue/firebowl/stump,
@@ -22039,7 +22063,7 @@
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "wkk" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -22108,7 +22132,7 @@
 "wox" = (
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "woM" = (
 /obj/structure/closet/crate/chest/old_crate,
@@ -22131,7 +22155,7 @@
 	},
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "wrs" = (
 /obj/effect/decal/turfedge_neu/alt{
@@ -22142,7 +22166,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "wrV" = (
 /obj/structure/mineral_door/wood/donjon{
@@ -22275,7 +22299,7 @@
 /obj/structure/fluff/wallclock/l,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "wzF" = (
 /obj/structure/chair/stool/rogue,
@@ -22405,7 +22429,7 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "wGK" = (
 /obj/structure/flora/roguegrass,
@@ -22459,7 +22483,7 @@
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "wJw" = (
 /obj/structure/fluff/walldeco/painting/queen{
@@ -22467,7 +22491,7 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "wKh" = (
 /obj/item/rogueweapon/polearm/woodstaff/neu,
@@ -22494,7 +22518,7 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "wLN" = (
 /obj/effect/decal/cleanable/dirt/cobweb,
@@ -22513,7 +22537,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "wMU" = (
 /obj/structure/flora/roguegrass,
@@ -22895,7 +22919,7 @@
 /obj/item/reagent_containers/food/snacks/produce/wheat,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "xhr" = (
 /obj/effect/decal/turfedge_neu{
@@ -23019,7 +23043,7 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "xoR" = (
 /turf/closed/wall/mineral/rogue/wooddark/window,
@@ -23195,7 +23219,9 @@
 	icon_state = "largetable"
 	},
 /turf/open/floor/rogue/tile/tilerg,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "xwf" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/splatter,
@@ -23238,7 +23264,7 @@
 /obj/structure/closet/crate/chest/neu,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "xyW" = (
 /obj/machinery/light/rogue/wallfire/candle/r,
@@ -23311,7 +23337,7 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "xDL" = (
 /turf/open/transparent/openspace,
@@ -23401,7 +23427,7 @@
 /obj/structure/roguemachine/camera/left,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "xIG" = (
 /obj/effect/decal/remains/human,
@@ -23517,7 +23543,9 @@
 	icon_state = "map1"
 	},
 /turf/open/floor/rogue/carpet/lord/center,
-/area/rogue/indoors/town/manor)
+/area/rogue/indoors/town/manor{
+	first_time_text = "STONEHILL CASTLE"
+	})
 "xOs" = (
 /obj/structure/mineral_door/wood/donjon{
 	dir = 8;
@@ -23547,12 +23575,12 @@
 	},
 /turf/open/floor/rogue/carpet/lord/center,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "xPz" = (
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "xPD" = (
 /obj/structure/bars/pipe{
@@ -23659,7 +23687,7 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "xTE" = (
 /obj/structure/flora/roguegrass,
@@ -23702,7 +23730,7 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "xWa" = (
 /obj/effect/decal/shadow_floor{
@@ -23784,7 +23812,7 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "yaI" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/mole,
@@ -23819,7 +23847,7 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "ycJ" = (
 /turf/closed/wall/mineral/rogue/wooddark/end,
@@ -23853,7 +23881,7 @@
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
-	first_time_text = "Blackwine Manor"
+	first_time_text = "STONEHILL CASTLE"
 	})
 "yeS" = (
 /obj/structure/stairs{
@@ -58913,8 +58941,8 @@ fyl
 vFV
 dUz
 bhP
-bGr
-bGr
+cjj
+cjj
 jqW
 iIo
 vFV
@@ -59105,12 +59133,12 @@ hZX
 hZX
 mDZ
 vFV
-bGr
-bGr
-bGr
-bGr
-bGr
-bGr
+cjj
+cjj
+cjj
+cjj
+cjj
+cjj
 pas
 fBu
 eJx
@@ -59300,11 +59328,11 @@ hZX
 fyl
 vFV
 gXo
-hfe
+tUQ
 rXj
 rXj
-hfe
-bGr
+tUQ
+cjj
 vFV
 tUq
 fVn
@@ -59493,12 +59521,12 @@ hZX
 hZX
 vFV
 vFV
-bGr
-pKW
+cjj
+vYf
 hbe
 xOi
 uLK
-bGr
+cjj
 vFV
 fBu
 iHy
@@ -59687,12 +59715,12 @@ hZX
 hZX
 vFV
 bhL
-bGr
+cjj
 kRg
 hxi
 sZA
 uLK
-bGr
+cjj
 vFV
 fBu
 iHy
@@ -59881,12 +59909,12 @@ hZX
 eZd
 vFV
 vFV
-bGr
-pKW
+cjj
+vYf
 ipR
 nUg
 uLK
-bGr
+cjj
 vFV
 fBu
 cKt
@@ -60076,11 +60104,11 @@ mDZ
 fyl
 vFV
 erb
-ije
+kbl
 plT
 plT
-ije
-bGr
+kbl
+cjj
 vFV
 qwU
 oiA
@@ -60270,10 +60298,10 @@ ljs
 xsw
 vFV
 fio
-bGr
-bGr
-bGr
-bGr
+cjj
+cjj
+cjj
+cjj
 fio
 vFV
 vFV
@@ -60657,13 +60685,13 @@ fyl
 vFV
 azg
 nmu
-bGr
+cjj
 eKW
 nNJ
-bGr
-bGr
+cjj
+cjj
 jPX
-bGr
+cjj
 vcP
 vFV
 vFV
@@ -60852,12 +60880,12 @@ iHy
 jih
 knM
 nAH
-bGr
-bGr
-bGr
+cjj
+cjj
+cjj
 nAH
-bGr
-bGr
+cjj
+cjj
 xTB
 uYU
 vFV
@@ -62017,11 +62045,11 @@ vuZ
 knM
 nAH
 tpk
-bGr
-bGr
+cjj
+cjj
 nAH
-bGr
-bGr
+cjj
+cjj
 lmR
 cey
 vFV
@@ -62209,13 +62237,13 @@ mDZ
 vFV
 hCd
 egc
-bGr
+cjj
 pCW
 fYv
-bGr
-bGr
+cjj
+cjj
 ozH
-bGr
+cjj
 vcP
 vFV
 vFV
