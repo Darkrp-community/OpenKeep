@@ -379,6 +379,13 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/exposed/under/basement)
+"avf" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/machinery/light/rogue/torchholder/c{
+	pixel_y = -32
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/soilsons)
 "avq" = (
 /obj/structure/fluff/railing/stonehedge{
 	dir = 4
@@ -7955,6 +7962,11 @@
 /obj/effect/spawner/roguemap/treeorbush,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
+"ifk" = (
+/obj/structure/bed/rogue/hay,
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/soilsons)
 "ifq" = (
 /obj/effect/sunlight,
 /obj/effect/decal/remains/wolf,
@@ -8797,6 +8809,13 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/mountains)
+"iXU" = (
+/obj/structure/fluff/railing/border{
+	dir = 4;
+	icon_state = "border"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/soilsons)
 "iYv" = (
 /obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -10511,7 +10530,7 @@
 	desc = "The olde district hath been cursed by Pestra and the sinners who dwell therein art proscribed by laws of both Gods and Men.";
 	name = "FORBIDEN!"
 	},
-/turf/open/floor/rogue/grass,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield/hamlet)
 "kJB" = (
 /obj/structure/roguewindow/openclose,
@@ -13859,6 +13878,9 @@
 /obj/item/neuFarm/seed/wheat,
 /obj/item/neuFarm/seed/wheat,
 /obj/item/neuFarm/seed/wheat,
+/obj/machinery/light/rogue/torchholder/c{
+	pixel_y = -32
+	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/soilsons)
 "omY" = (
@@ -16147,6 +16169,12 @@
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/carpet/red,
 /area/rogue/outdoors/exposed/under/basement)
+"qrp" = (
+/obj/effect/decal/turfedge_neu/road{
+	dir = 5
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield/hamlet)
 "qrD" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/naturalstone,
@@ -67052,22 +67080,22 @@ fPj
 lep
 bsm
 bsm
-hQx
-hQx
-hQx
-hQx
-hQx
-hQx
-hQx
-hQx
-hQx
-hQx
-hQx
-hQx
-hQx
-hQx
-hQx
-hQx
+bsm
+bsm
+bsm
+bsm
+bsm
+bsm
+bsm
+bsm
+bsm
+bsm
+bsm
+bsm
+bsm
+bsm
+bsm
+bsm
 mDZ
 mDZ
 oHv
@@ -67244,7 +67272,7 @@ bsm
 bsm
 bsm
 bsm
-hQx
+bsm
 hQx
 jJi
 cUw
@@ -67261,9 +67289,9 @@ hQx
 hQx
 bsm
 fyl
-hHf
-hQx
-hQx
+bsm
+bsm
+bsm
 mDZ
 mDZ
 oHv
@@ -67434,7 +67462,7 @@ mDZ
 kQr
 bsm
 bsm
-hQx
+bsm
 hQx
 oDV
 kZP
@@ -67456,8 +67484,8 @@ cUw
 fyl
 fyl
 fyl
-fyl
-hQx
+bsm
+bsm
 hQx
 mDZ
 fyl
@@ -67626,7 +67654,7 @@ fyl
 fyl
 mDZ
 bsm
-hQx
+bsm
 hQx
 ikT
 mDZ
@@ -67652,7 +67680,7 @@ let
 bTR
 bTR
 hHf
-hQx
+bsm
 oHv
 fyl
 oHv
@@ -67846,8 +67874,8 @@ xYU
 let
 fpJ
 fyl
-hQx
-hQx
+bsm
+bsm
 mDZ
 fyl
 fNt
@@ -68013,7 +68041,7 @@ fyl
 fyl
 lep
 bsm
-hQx
+bsm
 fyl
 fyl
 oHv
@@ -68041,7 +68069,7 @@ let
 let
 fyl
 kgO
-hQx
+bsm
 bsm
 osA
 fNt
@@ -68206,7 +68234,7 @@ fyl
 oHv
 lep
 bsm
-hQx
+bsm
 wwD
 fyl
 fyl
@@ -68236,7 +68264,7 @@ xYU
 fyl
 mDZ
 hQx
-hQx
+bsm
 mDZ
 fNt
 vKe
@@ -68399,7 +68427,7 @@ let
 fyl
 lep
 bsm
-hQx
+bsm
 wPK
 fyl
 fyl
@@ -68429,8 +68457,8 @@ let
 let
 oHv
 fyl
-hHf
-hQx
+qrp
+bsm
 fyl
 fyl
 fNt
@@ -68591,7 +68619,7 @@ fpJ
 let
 let
 hQx
-hQx
+bsm
 bsm
 wwD
 fyl
@@ -68623,7 +68651,7 @@ fyl
 oHv
 fyl
 fyl
-mDZ
+lmG
 hQx
 fyl
 oHv
@@ -68784,7 +68812,7 @@ fyl
 fyl
 lep
 hQx
-hQx
+bsm
 bsm
 wwD
 fyl
@@ -68976,7 +69004,7 @@ lmG
 fyl
 hgo
 hQx
-hQx
+bsm
 bsm
 bsm
 wwD
@@ -69345,8 +69373,8 @@ bsm
 bsm
 rmW
 nGT
-hQx
-hQx
+bsm
+bsm
 hQx
 bsm
 bsm
@@ -69540,7 +69568,7 @@ rog
 sfJ
 eoE
 kGQ
-mDZ
+lmG
 cUw
 cUw
 kZP
@@ -84097,7 +84125,7 @@ hZX
 hZX
 hZX
 bZQ
-dXC
+ifk
 pAW
 pAW
 him
@@ -84682,7 +84710,7 @@ bZQ
 hPF
 pAW
 pAW
-ghW
+avf
 bZQ
 hvS
 hvS
@@ -85067,10 +85095,10 @@ hZX
 hZX
 hZX
 oRq
-kqA
-kqA
-kqA
-kqA
+iXU
+iXU
+iXU
+iXU
 bZQ
 hvS
 hvS
