@@ -370,10 +370,11 @@
 
 // --------- BLACKSTEEL -----------
 /datum/anvil_recipe/armor/blacksteel/platechest
-	name = "Blacksteel Plate Armor (4)"
+	name = "Blacksteel Plate Armor (+Bar x3)"
 	req_bar = /obj/item/ingot/blacksteel
 	additional_items = list(/obj/item/ingot/blacksteel, /obj/item/ingot/blacksteel, /obj/item/ingot/blacksteel)
 	created_item = /obj/item/clothing/suit/roguetown/armor/plate/blkknight
+	craftdiff = 3
 
 /datum/anvil_recipe/armor/blacksteel/platelegs
 	name = "Blacksteel Plate Chausses (2)"
@@ -383,7 +384,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/blacksteel/bucket
-	name = "Blacksteel Bucket Helmet (2)"
+	name = "Blacksteel Great Helm (+Bar)"
 	req_bar = /obj/item/ingot/blacksteel
 	additional_items = list(/obj/item/ingot/blacksteel)
 	created_item = /obj/item/clothing/head/roguetown/helmet/blacksteel/bucket
