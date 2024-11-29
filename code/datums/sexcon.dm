@@ -200,7 +200,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.virginity)
-			user.visible_message("<span class='warning'>[user] loses their purity!</span>")
+			user.visible_message("<span class='warning'>[user] loses her purity!</span>")
 			H.flash_fullscreen("redflash3")
 			H.on_virgin_loss()
 	START_PROCESSING(SSsex, user.sexcon)
