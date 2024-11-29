@@ -163,3 +163,22 @@
 	allowed_areas = list(/area/rogue/outdoors)
 	allowed_turfs = list(/turf/open/floor/rogue/dirt/ambush)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
+
+//bandaid sunlight
+/obj/effect/landmark/mapGenerator/sunlights/bandaid
+	mapGeneratorType = /datum/mapGenerator/sunlights/bandaid
+	endTurfX = 128
+	endTurfY = 192
+	startTurfX = 1
+	startTurfY = 1
+
+/datum/mapGenerator/sunlights/bandaid
+	modules = list(/datum/mapGeneratorModule/sunlights/bandaid)
+
+/datum/mapGeneratorModule/sunlights/bandaid
+	spawnableAtoms = list(/obj/effect/sunlight = 100)
+	spawnableTurfs = list()
+	clusterMax = 7
+	clusterMin = 7
+	checkdensity = FALSE
+	allowed_areas = list(/area/rogue/outdoors)
