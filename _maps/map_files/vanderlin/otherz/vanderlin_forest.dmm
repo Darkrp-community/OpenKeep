@@ -1,8 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aj" = (
-/obj/structure/stairs/stone,
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/mountains)
+"ad" = (
+/turf/open/water/river{
+	dir = 4
+	},
+/area/rogue/outdoors/woods)
 "aS" = (
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/dirt/road,
@@ -13,11 +14,6 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"bh" = (
-/turf/open/water/river{
-	dir = 8
-	},
-/area/rogue/outdoors/woods)
 "bs" = (
 /obj/structure/fluff/railing/stonehedge,
 /turf/open/floor/rogue/dirt,
@@ -37,11 +33,17 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
-"bU" = (
+"bR" = (
 /turf/open/water/river{
-	dir = 1
+	dir = 8
 	},
 /area/rogue/outdoors/woods)
+"cb" = (
+/obj/structure/fluff/railing/fence{
+	dir = 8
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors)
 "cg" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -51,6 +53,16 @@
 "ch" = (
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/outdoors/woods)
+"ck" = (
+/turf/closed/wall/mineral/rogue/tent,
+/area/rogue/indoors/cave)
+"cl" = (
+/obj/structure/table/wood/plain,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave)
+"cB" = (
+/turf/closed/wall/mineral/rogue/wooddark,
+/area/rogue/indoors/cave)
 "cW" = (
 /obj/structure/fluff/railing/fence{
 	dir = 8
@@ -87,12 +99,6 @@
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"ew" = (
-/obj/structure/fluff/railing/fence{
-	dir = 1
-	},
-/turf/open/floor/rogue/twig,
-/area/rogue/indoors)
 "ey" = (
 /obj/structure/closet/crate/chest/neu,
 /obj/item/rogueweapon/mace/woodclub/train_sword,
@@ -136,30 +142,18 @@
 "fp" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
-"fF" = (
-/obj/structure/roguewindow/solid,
-/turf/open/floor/rogue/grass,
-/area/rogue/indoors)
-"fN" = (
-/turf/closed/wall/mineral/rogue/tent,
-/area/rogue/indoors/cave)
 "gx" = (
 /obj/structure/fluff/railing/stonehedge{
 	dir = 1
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"gM" = (
-/obj/structure/stairs/stone{
-	dir = 1;
-	icon_state = "stonestairs"
+"gR" = (
+/obj/structure/fluff/railing/border{
+	dir = 2
 	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/woods)
-"gS" = (
-/obj/structure/roguetent,
-/turf/open/floor/rogue/grass,
-/area/rogue/indoors/cave)
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors)
 "gW" = (
 /obj/structure/fluff/railing/stonehedge,
 /obj/structure/fluff/railing/stonehedge{
@@ -170,6 +164,12 @@
 "hm" = (
 /turf/closed/mineral/random/rogue/high,
 /area/rogue/indoors/cave)
+"ho" = (
+/obj/structure/fluff/railing/fence{
+	dir = 8
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors)
 "hv" = (
 /turf/open/water/river,
 /area/rogue/outdoors/woods)
@@ -178,6 +178,9 @@
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
+/area/rogue/indoors)
+"hZ" = (
+/turf/open/floor/rogue/grass,
 /area/rogue/indoors)
 "ij" = (
 /obj/structure/fluff/railing/border{
@@ -211,6 +214,12 @@
 "iW" = (
 /turf/closed/mineral/rogue,
 /area/rogue/outdoors/woods)
+"jc" = (
+/turf/closed/wall/mineral/rogue/wooddark/end{
+	icon_state = "endwooddark";
+	dir = 1
+	},
+/area/rogue/indoors)
 "jh" = (
 /obj/structure/fluff/railing/fence{
 	dir = 4
@@ -226,6 +235,20 @@
 /area/rogue/indoors)
 "jq" = (
 /turf/open/floor/rogue/twig,
+/area/rogue/indoors)
+"jr" = (
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "horzw"
+	},
+/area/rogue/indoors)
+"jM" = (
+/obj/structure/bed/rogue/inn,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "horzw"
+	},
 /area/rogue/indoors)
 "jP" = (
 /turf/open/floor/rogue/naturalstone,
@@ -243,10 +266,10 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"kr" = (
-/obj/structure/stairs/stone,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/woods)
+"kw" = (
+/obj/structure/roguewindow/solid,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors)
 "kD" = (
 /obj/structure/flora/roguetree,
 /turf/open/floor/rogue/dirt,
@@ -263,10 +286,6 @@
 "lz" = (
 /turf/closed/mineral/random/rogue/med,
 /area/rogue/indoors/cave)
-"lD" = (
-/obj/structure/stairs/stone,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/woods)
 "lM" = (
 /obj/structure/fluff/railing/fence{
 	dir = 1
@@ -275,12 +294,12 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"mS" = (
-/obj/structure/bed/rogue/inn,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "horzw"
-	},
-/area/rogue/indoors)
+"mh" = (
+/obj/structure/flora/newtree,
+/obj/structure/flora/newtree,
+/obj/structure/flora/newtree,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
 "mT" = (
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/woods)
@@ -314,14 +333,6 @@
 /obj/structure/chair/wood/rogue,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors)
-"oa" = (
-/obj/structure/roguerock,
-/turf/open/water/cleanshallow,
-/area/rogue/outdoors/woods)
-"oq" = (
-/obj/structure/bed/rogue/sleepingbag,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave)
 "oE" = (
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/outdoors/mountains)
@@ -335,13 +346,13 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
-"qd" = (
-/obj/structure/fluff/railing/fence{
-	dir = 8
+"pG" = (
+/obj/structure/roguetent,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "horzw"
 	},
-/turf/open/floor/rogue/grass,
 /area/rogue/indoors)
-"qe" = (
+"pX" = (
 /obj/structure/stairs/stone{
 	dir = 1;
 	icon_state = "stonestairs"
@@ -354,6 +365,12 @@
 /area/rogue/indoors)
 "qo" = (
 /obj/structure/chair/wood/rogue{
+	dir = 1
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors)
+"qE" = (
+/obj/structure/fluff/railing/fence{
 	dir = 1
 	},
 /turf/open/floor/rogue/twig,
@@ -378,22 +395,6 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"rw" = (
-/obj/structure/stairs/stone{
-	dir = 1;
-	icon_state = "stonestairs"
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/mountains)
-"rD" = (
-/turf/closed/wall/mineral/rogue/wooddark/end{
-	icon_state = "endwooddark";
-	dir = 1
-	},
-/area/rogue/indoors)
-"sx" = (
-/turf/open/floor/rogue/dirt,
-/area/rogue/indoors)
 "sM" = (
 /obj/structure/fluff/railing/fence{
 	dir = 8
@@ -409,10 +410,6 @@
 "ti" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/mountains)
-"tj" = (
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave)
 "tB" = (
 /obj/structure/fluff/railing/fence{
 	dir = 4
@@ -428,6 +425,13 @@
 /obj/structure/roguetent/preopen,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
+"ui" = (
+/obj/structure/closet/crate/chest,
+/obj/item/reagent_containers/food/snacks/produce/wheat,
+/obj/item/reagent_containers/food/snacks/produce/wheat,
+/obj/item/reagent_containers/food/snacks/produce/wheat,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave)
 "uu" = (
 /obj/structure/flora/roguetree,
 /turf/open/floor/rogue/grass,
@@ -442,10 +446,10 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods)
-"wf" = (
-/obj/structure/mineral_door/wood/deadbolt,
-/turf/open/floor/rogue/grass,
-/area/rogue/indoors)
+"vt" = (
+/obj/structure/bed/rogue/sleepingbag,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave)
 "wl" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -453,29 +457,24 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/outdoors/mountains)
-"ww" = (
-/obj/structure/bed/rogue/hay,
+"wn" = (
+/obj/structure/flora/newtree,
+/obj/structure/flora/newtree,
+/obj/structure/flora/newtree,
+/obj/structure/flora/newtree,
 /turf/open/floor/rogue/dirt,
-/area/rogue/indoors)
-"xh" = (
-/obj/structure/table/wood/plain,
+/area/rogue/outdoors/woods)
+"wo" = (
+/obj/machinery/light/rogue/campfire/longlived,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/cave)
-"xp" = (
-/obj/structure/bed/rogue/mediocre,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "horzw"
+"wX" = (
+/obj/structure/stairs/stone{
+	dir = 1;
+	icon_state = "stonestairs"
 	},
-/area/rogue/indoors)
-"xr" = (
-/turf/open/floor/rogue/grass,
-/area/rogue/indoors)
-"xE" = (
-/obj/structure/fluff/railing/fence{
-	dir = 8
-	},
-/turf/open/floor/rogue/twig,
-/area/rogue/indoors)
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "xI" = (
 /obj/structure/closet/dirthole/closed,
 /turf/open/floor/rogue/grass,
@@ -502,12 +501,6 @@
 /obj/effect/spawner/roguemap/stump,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"ze" = (
-/obj/structure/chair/wood/rogue/chair3{
-	dir = 8
-	},
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave)
 "zx" = (
 /obj/machinery/light/rogue/campfire/longlived,
 /turf/open/floor/rogue/grass,
@@ -521,6 +514,13 @@
 	},
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/outdoors/mountains)
+"zW" = (
+/obj/structure/stairs/stone{
+	dir = 1;
+	icon_state = "stonestairs"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "Ad" = (
 /obj/structure/fluff/railing/stonehedge{
 	dir = 4
@@ -530,6 +530,12 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
+"Aj" = (
+/obj/structure/bed/rogue/mediocre,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "horzw"
+	},
+/area/rogue/indoors)
 "Ao" = (
 /turf/open/floor/rogue/rooftop{
 	icon_state = "roofg"
@@ -541,6 +547,10 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
+"Be" = (
+/obj/structure/mineral_door/wood/deadbolt,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors)
 "Bt" = (
 /obj/structure/fluff/railing/fence{
 	dir = 4
@@ -552,6 +562,16 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
+"BT" = (
+/obj/structure/fluff/railing/fence{
+	dir = 8
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors)
+"BX" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave)
 "CC" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/twig,
@@ -568,16 +588,6 @@
 /obj/structure/flora/roguetree,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"Ds" = (
-/obj/structure/fluff/railing/fence{
-	dir = 1
-	},
-/turf/open/floor/rogue/dirt,
-/area/rogue/indoors)
-"DA" = (
-/obj/structure/roguetent,
-/turf/open/floor/rogue/grass,
-/area/rogue/indoors)
 "DO" = (
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/grass,
@@ -589,10 +599,6 @@
 /obj/structure/well,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"EH" = (
-/obj/machinery/light/rogue/campfire/longlived,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave)
 "EJ" = (
 /obj/structure/chair/wood/rogue{
 	dir = 1
@@ -601,6 +607,10 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
+"Fb" = (
+/obj/structure/stairs/stone,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/mountains)
 "Fe" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/twig,
@@ -617,9 +627,17 @@
 /obj/structure/bed/rogue/sleepingbag,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/woods)
+"Go" = (
+/obj/structure/roguerock,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/woods)
 "GK" = (
 /obj/structure/fluff/railing/fence,
 /turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
+"GQ" = (
+/obj/structure/stairs/stone,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "GT" = (
 /obj/structure/fluff/railing/border{
@@ -628,12 +646,6 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/outdoors/mountains)
-"GX" = (
-/obj/structure/fluff/railing/border{
-	dir = 2
-	},
-/turf/open/floor/rogue/twig,
-/area/rogue/indoors)
 "HP" = (
 /obj/structure/fluff/railing/fence{
 	dir = 8
@@ -644,6 +656,12 @@
 /obj/structure/roguetent,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
+"It" = (
+/obj/structure/chair/wood/rogue/chair3{
+	dir = 4
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave)
 "Iw" = (
 /obj/structure/fluff/railing/stonehedge{
 	dir = 8
@@ -667,7 +685,13 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"JH" = (
+"Kd" = (
+/obj/structure/chair/wood/rogue/chair3{
+	dir = 8
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave)
+"KA" = (
 /obj/structure/stairs{
 	dir = 4;
 	icon_state = "stairs"
@@ -676,7 +700,7 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"Kl" = (
+"KD" = (
 /obj/structure/fluff/railing/fence{
 	dir = 4
 	},
@@ -685,6 +709,13 @@
 "KK" = (
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/woods)
+"KM" = (
+/obj/structure/stairs/stone{
+	dir = 1;
+	icon_state = "stonestairs"
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/mountains)
 "LC" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -708,9 +739,10 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"Ml" = (
-/obj/structure/flora/newtree,
-/turf/open/water/cleanshallow,
+"Mj" = (
+/turf/open/water/river{
+	dir = 1
+	},
 /area/rogue/outdoors/woods)
 "Ms" = (
 /obj/structure/fluff/railing/border{
@@ -762,12 +794,6 @@
 "NT" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"NU" = (
-/obj/structure/fluff/railing/fence{
-	dir = 8
-	},
-/turf/open/floor/rogue/dirt,
-/area/rogue/indoors)
 "NV" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 1
@@ -778,25 +804,15 @@
 /obj/effect/spawner/roguemap/stump,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
-"OA" = (
-/obj/structure/mineral_door/wood/deadbolt,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "horzw"
-	},
-/area/rogue/indoors)
 "OB" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 8
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors)
-"OO" = (
-/obj/structure/stairs/stone{
-	dir = 1;
-	icon_state = "stonestairs"
-	},
+"OR" = (
 /turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/woods)
+/area/rogue/indoors)
 "OV" = (
 /obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/twig,
@@ -816,16 +832,6 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"PP" = (
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/mountains)
-"PX" = (
-/obj/structure/flora/newtree,
-/obj/structure/flora/newtree,
-/obj/structure/flora/newtree,
-/obj/structure/flora/newtree,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/woods)
 "Qb" = (
 /obj/effect/landmark/start/adventurer,
 /turf/open/floor/rogue/grass,
@@ -838,12 +844,10 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"Qu" = (
-/obj/structure/flora/newtree,
-/obj/structure/flora/newtree,
-/obj/structure/flora/newtree,
+"Qp" = (
+/obj/structure/roguetent,
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/woods)
+/area/rogue/indoors)
 "Rb" = (
 /obj/machinery/light/rogue/torchholder{
 	pixel_y = 26
@@ -859,18 +863,6 @@
 	pixel_y = 12;
 	pixel_x = 10
 	},
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "horzw"
-	},
-/area/rogue/indoors)
-"RH" = (
-/obj/structure/chair/wood/rogue/chair3{
-	dir = 4
-	},
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave)
-"RK" = (
-/obj/structure/roguetent,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -932,15 +924,19 @@
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors)
-"SX" = (
-/obj/structure/fluff/railing/fence{
-	dir = 4
-	},
+"Ta" = (
+/obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
 "Tp" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
+"TC" = (
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors)
 "TH" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -965,6 +961,10 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
+"Uq" = (
+/obj/structure/flora/newtree,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/woods)
 "UR" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
@@ -972,23 +972,17 @@
 /obj/structure/flora/roguetree/wise,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
-"Vd" = (
-/turf/open/water/river{
-	dir = 4
-	},
-/area/rogue/outdoors/woods)
 "Vz" = (
 /turf/closed/wall/mineral/rogue/wooddark/end{
 	dir = 4
 	},
 /area/rogue/indoors)
-"VG" = (
-/obj/structure/closet/crate/chest,
-/obj/item/reagent_containers/food/snacks/produce/wheat,
-/obj/item/reagent_containers/food/snacks/produce/wheat,
-/obj/item/reagent_containers/food/snacks/produce/wheat,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave)
+"VJ" = (
+/obj/structure/stairs/stone{
+	dir = 8
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "VW" = (
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/outdoors/woods)
@@ -1013,14 +1007,6 @@
 "WF" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains)
-"WH" = (
-/obj/structure/fluff/railing/fence{
-	dir = 4
-	},
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "horzw"
-	},
-/area/rogue/indoors)
 "WJ" = (
 /obj/structure/fluff/railing/border{
 	dir = 2
@@ -1033,6 +1019,13 @@
 "Xb" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
+"Xu" = (
+/obj/structure/stairs/stone{
+	dir = 4;
+	icon_state = "stonestairs"
+	},
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "Xw" = (
 /obj/structure/fluff/railing/border{
@@ -1063,6 +1056,10 @@
 "Yd" = (
 /turf/closed/wall/mineral/rogue/wooddark/end,
 /area/rogue/indoors)
+"Yk" = (
+/obj/structure/stairs/stone,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/woods)
 "Yt" = (
 /obj/structure/fluff/railing/fence,
 /obj/structure/fluff/railing/fence{
@@ -1070,18 +1067,34 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
+"YC" = (
+/obj/structure/fluff/railing/fence{
+	dir = 1
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors)
+"YK" = (
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains)
 "Zb" = (
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors)
+"Zw" = (
+/obj/structure/mineral_door/wood/deadbolt,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "horzw"
+	},
+/area/rogue/indoors)
+"ZQ" = (
+/obj/structure/roguetent,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/cave)
 "ZR" = (
 /obj/structure/fluff/railing/border{
 	dir = 10
 	},
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/outdoors/mountains)
-"ZU" = (
-/turf/closed/wall/mineral/rogue/wooddark,
-/area/rogue/indoors/cave)
 
 (1,1,1) = {"
 dr
@@ -8133,7 +8146,7 @@ mT
 hv
 hv
 hv
-bh
+bR
 hv
 hv
 hv
@@ -8387,10 +8400,10 @@ WT
 WT
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 hv
 hv
 hv
@@ -8603,7 +8616,7 @@ fp
 NT
 NT
 ek
-xE
+BT
 eC
 eC
 ek
@@ -8644,8 +8657,8 @@ WT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 FP
@@ -8863,7 +8876,7 @@ eC
 BC
 BC
 OV
-ew
+qE
 WT
 WT
 NT
@@ -8900,9 +8913,9 @@ WT
 DO
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 mT
 mT
@@ -9107,18 +9120,18 @@ NT
 WT
 NT
 lM
-ww
+Ta
 jq
 BC
-RK
+pG
 NT
 NT
 Tp
 WT
 WT
-RK
+pG
 jq
-sx
+OR
 BC
 eC
 NT
@@ -9157,8 +9170,8 @@ WT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 NT
@@ -9365,9 +9378,9 @@ WT
 NT
 eC
 BC
-sx
+OR
 BC
-ew
+qE
 NT
 fp
 Tp
@@ -9413,8 +9426,8 @@ NT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 WT
@@ -9435,7 +9448,7 @@ hv
 hv
 hv
 hv
-bh
+bR
 hv
 hv
 hv
@@ -9670,8 +9683,8 @@ WT
 DO
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 WT
@@ -9691,9 +9704,9 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 hv
 hv
 hv
@@ -9878,8 +9891,8 @@ NT
 WT
 WT
 ek
-WH
-WH
+jr
+jr
 eC
 ek
 NT
@@ -9926,8 +9939,8 @@ NT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 Fg
@@ -9948,9 +9961,9 @@ mT
 mT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 hv
 hv
 hv
@@ -10145,8 +10158,8 @@ fp
 ek
 eC
 eC
-qd
-NU
+ho
+cb
 ek
 WT
 WT
@@ -10183,8 +10196,8 @@ Fg
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 Fg
 Fg
@@ -10202,12 +10215,12 @@ NT
 NT
 NT
 NT
-Fg
+mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 hv
 hv
 hv
@@ -10402,9 +10415,9 @@ fp
 eC
 BC
 BC
-xr
+hZ
 BC
-Ds
+YC
 Ol
 WT
 WT
@@ -10439,9 +10452,9 @@ DO
 Fg
 DO
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 DO
@@ -10459,11 +10472,11 @@ DO
 NT
 Fg
 NT
-NT
+mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 mT
 mT
@@ -10696,8 +10709,8 @@ NT
 DO
 Fg
 mT
-bh
-bh
+bR
+bR
 mT
 WT
 Fg
@@ -10716,11 +10729,11 @@ DO
 WT
 WT
 WT
-DO
+mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 Fg
@@ -10903,8 +10916,8 @@ Fg
 WT
 ek
 eC
-xE
-xE
+BT
+BT
 ek
 WT
 WT
@@ -10913,7 +10926,7 @@ NT
 fp
 fp
 NT
-OA
+Zw
 BC
 BC
 jq
@@ -10953,8 +10966,8 @@ NT
 DO
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 NT
@@ -10973,11 +10986,11 @@ DO
 DO
 DO
 WT
-WT
+mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -11159,7 +11172,7 @@ Fg
 Fg
 WT
 eC
-sx
+OR
 jq
 BC
 eC
@@ -11170,9 +11183,9 @@ NT
 fp
 fp
 NT
-Ds
-sx
-xr
+YC
+OR
+hZ
 BC
 BC
 eC
@@ -11210,8 +11223,8 @@ NT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 Iy
 WT
@@ -11230,11 +11243,11 @@ NT
 NT
 Fg
 NT
-WT
+mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -11429,8 +11442,8 @@ fp
 NT
 ek
 ek
-xr
-xr
+hZ
+hZ
 ek
 ek
 NT
@@ -11466,9 +11479,9 @@ DO
 DO
 NT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 WT
@@ -11487,10 +11500,10 @@ NT
 NT
 WT
 NT
-WT
+mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 NT
@@ -11672,11 +11685,11 @@ NT
 NT
 WT
 NT
-ew
+qE
 BC
 BC
-sx
-DA
+OR
+Qp
 NT
 NT
 NT
@@ -11723,8 +11736,8 @@ DO
 Fg
 DO
 mT
-bh
-bh
+bR
+bR
 mT
 WT
 NT
@@ -11744,10 +11757,10 @@ Fg
 NT
 NT
 NT
-WT
+mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 WT
@@ -11931,8 +11944,8 @@ WT
 NT
 eC
 OV
-sx
-sx
+OR
+OR
 eC
 NT
 NT
@@ -11980,8 +11993,8 @@ DO
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 NT
@@ -12000,11 +12013,11 @@ WT
 NT
 NT
 NT
-WT
+mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 DO
@@ -12237,8 +12250,8 @@ NT
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 DO
 NT
@@ -12257,10 +12270,10 @@ NT
 NT
 NT
 WT
-WT
+mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 Fg
@@ -12457,8 +12470,8 @@ Tp
 Tp
 WT
 ek
-sx
-xr
+OR
+hZ
 ek
 eC
 eC
@@ -12493,9 +12506,9 @@ NT
 Fg
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 Fg
 DO
@@ -12514,10 +12527,10 @@ WT
 NT
 WT
 WT
-WT
+mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 Fg
@@ -12713,14 +12726,14 @@ Tp
 fp
 Tp
 WT
-fF
+kw
 jq
-xr
-xr
+hZ
+hZ
 jq
 BC
 BC
-rD
+jc
 WT
 WT
 WT
@@ -12750,9 +12763,9 @@ Fg
 DO
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 DO
@@ -12770,11 +12783,11 @@ WT
 NT
 WT
 WT
-WT
+mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 NT
@@ -12970,11 +12983,11 @@ Tp
 Tp
 Tp
 WT
-fF
-sx
+kw
+OR
 BC
 jq
-xr
+hZ
 BC
 BC
 Sb
@@ -13007,8 +13020,8 @@ DO
 DO
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 DO
 Fg
@@ -13026,11 +13039,11 @@ WT
 WT
 DO
 WT
-WT
+mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 WT
@@ -13227,13 +13240,13 @@ fp
 Tp
 fp
 WT
-wf
+Be
 BC
 BC
 BC
 BC
-xr
-JH
+hZ
+KA
 XJ
 WT
 Ol
@@ -13264,8 +13277,8 @@ WT
 Fg
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 NT
@@ -13282,11 +13295,11 @@ WT
 WT
 WT
 DO
-WT
+mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 Fg
@@ -13484,9 +13497,9 @@ fp
 Tp
 fp
 WT
-fF
-xr
-xr
+kw
+hZ
+hZ
 jq
 BC
 BC
@@ -13521,8 +13534,8 @@ DO
 Fg
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 WT
@@ -13538,11 +13551,11 @@ WT
 WT
 WT
 DO
-DO
+mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 WT
@@ -13744,10 +13757,10 @@ WT
 ek
 eC
 eC
-Kl
-SX
+KD
+TC
 eC
-SX
+TC
 ek
 WT
 NT
@@ -13777,8 +13790,8 @@ NT
 DO
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 DO
 WT
@@ -13795,11 +13808,11 @@ Fg
 Fg
 WT
 DO
-WT
+mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 WT
@@ -14034,8 +14047,8 @@ NT
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 DO
 DO
@@ -14052,10 +14065,10 @@ DO
 DO
 WT
 WT
-WT
-bh
-bh
-bh
+mT
+bR
+bR
+bR
 mT
 DO
 DO
@@ -14291,8 +14304,8 @@ NT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 NT
@@ -14308,11 +14321,11 @@ WT
 WT
 DO
 WT
-WT
+mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 DO
 DO
@@ -14548,8 +14561,8 @@ NT
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 WT
@@ -14565,10 +14578,10 @@ WT
 WT
 NT
 WT
-WT
-bh
-bh
-bh
+mT
+bR
+bR
+bR
 mT
 WT
 DO
@@ -14804,8 +14817,8 @@ NT
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 DO
@@ -14821,10 +14834,10 @@ DO
 DO
 DO
 WT
-WT
+mT
 hv
-bh
-bh
+bR
+bR
 mT
 Fg
 NT
@@ -15061,8 +15074,8 @@ WT
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 WT
@@ -15077,11 +15090,11 @@ NT
 DO
 DO
 Fg
-WT
+mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 DO
 WT
@@ -15318,8 +15331,8 @@ WT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 WT
@@ -15334,10 +15347,10 @@ NT
 DO
 Fg
 NT
-WT
+mT
 hv
-bh
-bh
+bR
+bR
 mT
 Fg
 Fg
@@ -15574,8 +15587,8 @@ Fg
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 WT
@@ -15590,10 +15603,10 @@ NT
 WT
 Fg
 DO
-NT
+mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 WT
@@ -15831,8 +15844,8 @@ Fg
 DO
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 WT
@@ -15846,11 +15859,11 @@ NT
 NT
 NT
 DO
-WT
+mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 WT
@@ -15876,7 +15889,7 @@ lz
 lz
 lz
 jP
-oq
+vt
 lz
 lz
 lz
@@ -16088,8 +16101,8 @@ Wn
 Fg
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 DO
@@ -16102,10 +16115,10 @@ NT
 WT
 WT
 WT
-WT
+mT
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 NT
@@ -16131,10 +16144,10 @@ WT
 lz
 lz
 lz
-oq
+vt
 jP
 jP
-oq
+vt
 lz
 lz
 lz
@@ -16345,8 +16358,8 @@ DO
 DO
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 DO
@@ -16357,11 +16370,11 @@ DO
 DO
 WT
 WT
-NT
-NT
+mT
+mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 NT
@@ -16392,7 +16405,7 @@ jP
 jP
 jP
 jP
-VG
+ui
 lz
 lz
 lz
@@ -16602,8 +16615,8 @@ DO
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 DO
 Fg
@@ -16612,12 +16625,12 @@ DO
 NT
 DO
 WT
-WT
-NT
+mT
+mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 NT
@@ -16644,11 +16657,11 @@ Fg
 lz
 lz
 jP
-tj
+BX
 jP
 jP
-RH
-RH
+It
+It
 jP
 lz
 lz
@@ -16710,17 +16723,17 @@ mT
 mT
 mT
 mT
-Vd
-Vd
-Vd
-Vd
-Vd
+ad
+ad
+ad
+ad
+ad
 mT
 mT
 hv
 hv
 hv
-bh
+bR
 hv
 hv
 hv
@@ -16858,8 +16871,8 @@ NT
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 WT
@@ -16868,12 +16881,12 @@ WT
 DO
 WT
 WT
-WT
+mT
 hv
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 NT
@@ -16900,12 +16913,12 @@ WT
 Fg
 lz
 jP
-tj
-EH
-tj
+BX
+wo
+BX
 jP
-xh
-xh
+cl
+cl
 jP
 lz
 lz
@@ -16963,10 +16976,10 @@ WT
 WT
 WT
 mT
-Vd
-Vd
-Vd
-Vd
+ad
+ad
+ad
+ad
 hv
 hv
 hv
@@ -16976,8 +16989,8 @@ hv
 hv
 hv
 hv
-bh
-bh
+bR
+bR
 hv
 hv
 hv
@@ -17115,8 +17128,8 @@ NT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 Fg
 WT
@@ -17127,9 +17140,9 @@ WT
 mT
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 WT
@@ -17156,15 +17169,15 @@ DO
 DO
 DO
 DO
-ZU
+cB
 jP
-tj
+BX
 jP
 jP
-ze
-ze
+Kd
+Kd
 jP
-ZU
+cB
 lz
 lz
 lz
@@ -17219,7 +17232,7 @@ mT
 mT
 mT
 mT
-Vd
+ad
 hv
 hv
 hv
@@ -17232,9 +17245,9 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 hv
 FP
@@ -17371,9 +17384,9 @@ Fg
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 Fg
 Fg
@@ -17383,8 +17396,8 @@ WT
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 NT
@@ -17414,13 +17427,13 @@ WT
 Fg
 DO
 NT
-fN
+ck
 jP
 jP
 jP
 jP
 jP
-fN
+ck
 WT
 WT
 lz
@@ -17471,11 +17484,11 @@ WT
 Fg
 mT
 mT
-Vd
-Vd
-Vd
-Vd
-Vd
+ad
+ad
+ad
+ad
+ad
 hv
 hv
 hv
@@ -17488,9 +17501,9 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 mT
 mT
@@ -17628,9 +17641,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 Fg
@@ -17638,9 +17651,9 @@ Fg
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 DO
@@ -17672,11 +17685,11 @@ WT
 DO
 DO
 WT
-ZU
-fN
-gS
-fN
-ZU
+cB
+ck
+ZQ
+ck
+cB
 NT
 WT
 WT
@@ -17726,24 +17739,24 @@ DO
 mT
 mT
 mT
-Vd
-Vd
+ad
+ad
 hv
 hv
 hv
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 mT
 mT
 mT
 mT
-Ml
+Uq
 mT
-Ml
+Uq
 DO
 mT
 mT
@@ -17885,17 +17898,17 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 DO
 mT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 WT
@@ -17980,17 +17993,17 @@ Fg
 WT
 mT
 mT
-Vd
-Vd
-Vd
+ad
+ad
+ad
 hv
 hv
 hv
-bh
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
+bR
 mT
 mT
 mT
@@ -18142,16 +18155,16 @@ Fg
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 DO
 DO
@@ -18235,15 +18248,15 @@ Fg
 Fg
 WT
 mT
-Vd
-Vd
+ad
+ad
 hv
 hv
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 mT
 mT
@@ -18399,15 +18412,15 @@ Fg
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 DO
@@ -18491,13 +18504,13 @@ DO
 DO
 WT
 mT
-Vd
+ad
 hv
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 mT
 mT
@@ -18656,14 +18669,14 @@ DO
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 WT
@@ -18747,12 +18760,12 @@ NT
 WT
 mT
 mT
-Vd
+ad
 hv
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 WT
@@ -18913,12 +18926,12 @@ NT
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 hv
 hv
-bh
+bR
 mT
 mT
 NT
@@ -19002,13 +19015,13 @@ Fg
 NT
 WT
 mT
-Vd
-Vd
+ad
+ad
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 WT
 WT
@@ -19170,11 +19183,11 @@ WT
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 hv
 hv
-bh
+bR
 mT
 NT
 DO
@@ -19258,11 +19271,11 @@ Fg
 DO
 mT
 mT
-Vd
+ad
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 mT
@@ -19426,11 +19439,11 @@ WT
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 hv
-bh
+bR
 mT
 mT
 WT
@@ -19513,12 +19526,12 @@ Fg
 WT
 mT
 mT
-Vd
-Vd
+ad
+ad
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 WT
@@ -19683,11 +19696,11 @@ NT
 DO
 mT
 hv
-bh
-bh
+bR
+bR
 hv
-bh
-bh
+bR
+bR
 mT
 DO
 DO
@@ -19768,12 +19781,12 @@ NT
 NT
 NT
 mT
-Vd
-Vd
+ad
+ad
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 NT
@@ -19940,10 +19953,10 @@ WT
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 hv
-bh
+bR
 mT
 mT
 NT
@@ -20024,12 +20037,12 @@ DO
 WT
 mT
 mT
-Vd
+ad
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 mT
 NT
@@ -20197,8 +20210,8 @@ WT
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 NT
@@ -20279,12 +20292,12 @@ Fg
 Fg
 Fg
 mT
-Vd
-Vd
+ad
+ad
 hv
 hv
 hv
-bh
+bR
 mT
 NT
 WT
@@ -20454,8 +20467,8 @@ DO
 Fg
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 NT
@@ -20535,12 +20548,12 @@ NT
 DO
 mT
 mT
-Vd
+ad
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 WT
@@ -20710,9 +20723,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 Fg
@@ -20790,12 +20803,12 @@ WT
 WT
 WT
 mT
-Vd
-Vd
+ad
+ad
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 WT
@@ -20967,9 +20980,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -21046,11 +21059,11 @@ mT
 mT
 mT
 mT
-Vd
+ad
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 mT
@@ -21224,9 +21237,9 @@ Fg
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -21299,14 +21312,14 @@ WT
 NT
 NT
 mT
-Vd
-Vd
-Vd
-Vd
+ad
+ad
+ad
+ad
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 WT
@@ -21481,9 +21494,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 WT
@@ -21555,14 +21568,14 @@ mT
 mT
 mT
 mT
-Vd
+ad
 hv
 hv
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 Fg
 NT
@@ -21737,9 +21750,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -21795,9 +21808,9 @@ DO
 Fg
 WT
 WT
-NT
-NT
-NT
+Xu
+Xu
+Xu
 WT
 NT
 WT
@@ -21808,16 +21821,16 @@ mT
 mT
 mT
 mT
-Vd
-Vd
-Vd
-Vd
+ad
+ad
+ad
+ad
 hv
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 mT
 WT
@@ -21994,9 +22007,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 WT
@@ -22052,28 +22065,28 @@ Fg
 Fg
 WT
 WT
-NT
-NT
-NT
+ch
+ch
+ch
 WT
 NT
 NT
 mT
 mT
 mT
-Vd
-Vd
-Vd
-Vd
+ad
+ad
+ad
+ad
 hv
 hv
 hv
 hv
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 NT
 WT
@@ -22251,9 +22264,9 @@ WT
 DO
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -22315,9 +22328,9 @@ mT
 mT
 mT
 mT
-Vd
-Vd
-Vd
+ad
+ad
+ad
 hv
 hv
 hv
@@ -22326,9 +22339,9 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 mT
 WT
@@ -22508,8 +22521,8 @@ Fg
 DO
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 Fg
 NT
@@ -22561,17 +22574,17 @@ Fg
 WT
 DO
 mT
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 hv
 hv
 hv
@@ -22579,11 +22592,11 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
+bR
 mT
 mT
 WT
@@ -22765,8 +22778,8 @@ Fg
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 Fg
 Fg
@@ -22817,7 +22830,7 @@ mT
 mT
 mT
 mT
-Vd
+ad
 hv
 hv
 hv
@@ -22832,11 +22845,11 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
+bR
 mT
 mT
 mT
@@ -23021,9 +23034,9 @@ DO
 Fg
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 WT
@@ -23062,18 +23075,18 @@ mT
 mT
 mT
 mT
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 hv
 hv
 hv
@@ -23088,9 +23101,9 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 mT
 mT
@@ -23278,9 +23291,9 @@ Fg
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 WT
@@ -23311,14 +23324,14 @@ mT
 mT
 mT
 mT
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 hv
 hv
 hv
@@ -23332,21 +23345,21 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
 mT
 DO
 Fg
@@ -23534,9 +23547,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -23559,14 +23572,14 @@ NT
 NT
 Fg
 mT
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
-Vd
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 hv
 hv
 hv
@@ -23587,23 +23600,23 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+Mj
 mT
 Fg
 DO
@@ -23791,9 +23804,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 DO
@@ -23815,7 +23828,7 @@ mT
 mT
 mT
 mT
-Vd
+ad
 hv
 hv
 hv
@@ -23833,18 +23846,18 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
 mT
 mT
 mT
@@ -23857,10 +23870,10 @@ mT
 mT
 mT
 mT
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 DO
 NT
@@ -24047,10 +24060,10 @@ DO
 WT
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 NT
 WT
@@ -24068,10 +24081,10 @@ NT
 WT
 NT
 mT
-Vd
-Vd
-Vd
-Vd
+ad
+ad
+ad
+ad
 hv
 hv
 hv
@@ -24081,16 +24094,16 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
 mT
 mT
 mT
@@ -24108,16 +24121,16 @@ NT
 NT
 WT
 NT
-NT
-NT
-WT
+ch
+ch
+ch
 DO
 NT
 mT
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -24304,10 +24317,10 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 NT
 WT
@@ -24324,21 +24337,21 @@ WT
 NT
 NT
 mT
-Vd
+ad
 hv
 hv
 hv
 hv
 hv
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
 mT
 mT
 mT
@@ -24365,16 +24378,16 @@ NT
 WT
 WT
 NT
-NT
-NT
-NT
+VJ
+VJ
+VJ
 WT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -24560,11 +24573,11 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
+bR
 mT
 NT
 NT
@@ -24580,16 +24593,16 @@ WT
 WT
 NT
 mT
-Vd
+ad
 hv
 hv
-bh
-bh
-bh
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
+bR
+bR
+bR
 mT
 mT
 mT
@@ -24628,10 +24641,10 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 WT
 DO
@@ -24817,11 +24830,11 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
+bR
 mT
 NT
 NT
@@ -24836,12 +24849,12 @@ WT
 WT
 WT
 mT
-Vd
+ad
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 mT
 mT
@@ -24885,9 +24898,9 @@ WT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 Fg
 NT
@@ -25074,10 +25087,10 @@ NT
 Fg
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 WT
 NT
@@ -25092,12 +25105,12 @@ WT
 NT
 WT
 mT
-Vd
+ad
 hv
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 WT
@@ -25142,9 +25155,9 @@ Fg
 mT
 hv
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 Fg
 WT
@@ -25331,10 +25344,10 @@ Fg
 Fg
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 WT
 Fg
@@ -25348,12 +25361,12 @@ NT
 NT
 WT
 mT
-Vd
+ad
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -25399,9 +25412,9 @@ NT
 mT
 hv
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 DO
 WT
@@ -25588,10 +25601,10 @@ Fg
 Fg
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 NT
 Fg
@@ -25604,12 +25617,12 @@ NT
 WT
 NT
 mT
-Vd
+ad
 hv
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 NT
@@ -25655,10 +25668,10 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -25845,9 +25858,9 @@ NT
 Fg
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -25860,12 +25873,12 @@ Fg
 NT
 mT
 mT
-Vd
+ad
 hv
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 NT
@@ -25911,11 +25924,11 @@ Fg
 NT
 mT
 hv
-bh
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -26102,9 +26115,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 NT
@@ -26115,13 +26128,13 @@ NT
 DO
 WT
 mT
-Vd
-Vd
+ad
+ad
 hv
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 DO
 DO
@@ -26168,11 +26181,11 @@ Fg
 DO
 mT
 hv
-bh
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+bR
+Mj
 mT
 WT
 DO
@@ -26359,10 +26372,10 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 NT
 NT
@@ -26371,12 +26384,12 @@ WT
 NT
 NT
 mT
-Vd
+ad
 hv
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 NT
@@ -26425,11 +26438,11 @@ Fg
 Fg
 mT
 hv
-bh
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+bR
+Mj
 mT
 DO
 DO
@@ -26616,10 +26629,10 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 NT
 NT
@@ -26627,12 +26640,12 @@ NT
 NT
 NT
 mT
-Vd
+ad
 hv
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 NT
@@ -26682,11 +26695,11 @@ WT
 Fg
 mT
 hv
-bh
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+bR
+Mj
 mT
 DO
 DO
@@ -26873,22 +26886,22 @@ NT
 DO
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 mT
 mT
 mT
 mT
 mT
-Vd
+ad
 hv
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 WT
@@ -26939,10 +26952,10 @@ WT
 NT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -27130,23 +27143,23 @@ DO
 Fg
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 hv
 hv
 hv
 hv
 hv
-Vd
+ad
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
-Ml
+Uq
 Fg
 WT
 WT
@@ -27197,9 +27210,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -27387,10 +27400,10 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 hv
 hv
 hv
@@ -27398,7 +27411,7 @@ hv
 hv
 hv
 hv
-bh
+bR
 mT
 mT
 mT
@@ -27454,9 +27467,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -27644,15 +27657,15 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 hv
 hv
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 mT
@@ -27711,9 +27724,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -27901,14 +27914,14 @@ NT
 WT
 WT
 mT
-bh
-bh
+bR
+bR
 hv
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 Fg
 NT
@@ -27968,9 +27981,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 DO
 WT
@@ -28158,11 +28171,11 @@ DO
 WT
 WT
 mT
-bh
-bh
+bR
+bR
 hv
-bh
-bh
+bR
+bR
 mT
 mT
 mT
@@ -28225,9 +28238,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 DO
 Fg
@@ -28415,10 +28428,10 @@ WT
 WT
 WT
 mT
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 NT
 WT
@@ -28482,9 +28495,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 DO
 Fg
@@ -28672,10 +28685,10 @@ WT
 DO
 WT
 mT
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 WT
 NT
@@ -28739,8 +28752,8 @@ NT
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 WT
@@ -28844,7 +28857,7 @@ dr
 NT
 NT
 WT
-Qu
+mh
 Fg
 Fg
 Fg
@@ -28929,10 +28942,10 @@ NT
 WT
 WT
 mT
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 NT
 NT
@@ -28995,9 +29008,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -29101,7 +29114,7 @@ dr
 NT
 NT
 DO
-Qu
+mh
 Fg
 Fg
 Fg
@@ -29186,10 +29199,10 @@ WT
 WT
 WT
 mT
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 NT
 NT
@@ -29252,9 +29265,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -29358,7 +29371,7 @@ dr
 NT
 NT
 Wn
-Qu
+mh
 DO
 DO
 DO
@@ -29443,10 +29456,10 @@ WT
 WT
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 WT
 WT
@@ -29509,9 +29522,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 DO
 NT
@@ -29700,10 +29713,10 @@ WT
 WT
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 NT
 NT
@@ -29765,9 +29778,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -29957,10 +29970,10 @@ WT
 WT
 mT
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 NT
 NT
@@ -30021,10 +30034,10 @@ Fg
 NT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -30214,9 +30227,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 WT
@@ -30277,11 +30290,11 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -30471,9 +30484,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -30533,11 +30546,11 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+bR
+Mj
 mT
 WT
 Fg
@@ -30728,9 +30741,9 @@ WT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -30790,10 +30803,10 @@ WT
 NT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -30985,9 +30998,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -31046,11 +31059,11 @@ WT
 NT
 mT
 hv
-bh
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -31155,7 +31168,7 @@ dr
 (118,1,1) = {"
 dr
 Nx
-Qu
+mh
 Fg
 WT
 WT
@@ -31242,9 +31255,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -31303,11 +31316,11 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -31418,7 +31431,7 @@ WT
 NT
 Nx
 Nx
-PX
+wn
 Wn
 WT
 WT
@@ -31495,16 +31508,16 @@ WT
 WT
 NT
 fp
-kr
+GQ
 ch
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 ch
-qe
+pX
 Eq
 Eq
 Eq
@@ -31560,10 +31573,10 @@ NT
 Fg
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -31752,16 +31765,16 @@ Tp
 Tp
 fp
 fp
-lD
+Yk
 ch
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 ch
-gM
+wX
 Eq
 Eq
 WT
@@ -31817,10 +31830,10 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -32009,16 +32022,16 @@ fp
 Tp
 fp
 Tp
-lD
+Yk
 ch
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 ch
-OO
+zW
 Eq
 WT
 WT
@@ -32074,10 +32087,10 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -32271,8 +32284,8 @@ NT
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 Fg
@@ -32331,10 +32344,10 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 lz
@@ -32528,8 +32541,8 @@ NT
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 NT
@@ -32587,10 +32600,10 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -32784,9 +32797,9 @@ Fg
 mT
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -32844,10 +32857,10 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 Fg
 NT
@@ -33041,9 +33054,9 @@ WT
 mT
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 DO
@@ -33101,10 +33114,10 @@ WT
 Fg
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 DO
 DO
@@ -33298,8 +33311,8 @@ WT
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 WT
@@ -33358,10 +33371,10 @@ Fg
 Fg
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 DO
 Fg
@@ -33554,9 +33567,9 @@ WT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 Fg
@@ -33616,10 +33629,10 @@ NT
 Fg
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 Fg
 Fg
@@ -33811,9 +33824,9 @@ NT
 mT
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 Fg
 Fg
@@ -33873,10 +33886,10 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -34068,8 +34081,8 @@ WT
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 Fg
 Fg
@@ -34130,10 +34143,10 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -34325,7 +34338,7 @@ NT
 mT
 hv
 hv
-bh
+bR
 mT
 NT
 Fg
@@ -34387,10 +34400,10 @@ Fg
 Fg
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -34582,7 +34595,7 @@ WT
 mT
 hv
 hv
-bh
+bR
 mT
 NT
 NT
@@ -34644,10 +34657,10 @@ Fg
 WT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -34838,8 +34851,8 @@ WT
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 NT
@@ -34901,10 +34914,10 @@ Fg
 DO
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 Fg
@@ -35095,8 +35108,8 @@ DO
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 Fg
 Fg
@@ -35158,10 +35171,10 @@ Fg
 Fg
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 WT
 Fg
@@ -35352,7 +35365,7 @@ DO
 mT
 hv
 hv
-bh
+bR
 mT
 DO
 NT
@@ -35415,11 +35428,11 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+bR
+Mj
 mT
 NT
 Fg
@@ -35608,8 +35621,8 @@ WT
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 WT
@@ -35672,11 +35685,11 @@ DO
 Fg
 mT
 hv
-bh
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -35864,9 +35877,9 @@ WT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 WT
@@ -35929,11 +35942,11 @@ DO
 Fg
 mT
 hv
-bh
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -36121,8 +36134,8 @@ WT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 NT
@@ -36185,11 +36198,11 @@ Fg
 DO
 mT
 hv
-bh
-bh
-bh
-bU
-bU
+bR
+bR
+bR
+Mj
+Mj
 mT
 Fg
 WT
@@ -36378,8 +36391,8 @@ WT
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 NT
@@ -36442,10 +36455,10 @@ NT
 Fg
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 Fg
 DO
@@ -36634,8 +36647,8 @@ WT
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 WT
@@ -36699,10 +36712,10 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -36891,8 +36904,8 @@ WT
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 DO
 WT
@@ -36956,10 +36969,10 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 CJ
 NT
@@ -37147,8 +37160,8 @@ NT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 Fg
 DO
@@ -37213,10 +37226,10 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 WT
 DO
@@ -37404,8 +37417,8 @@ NT
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 DO
 Fg
@@ -37470,10 +37483,10 @@ Fg
 DO
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -37660,9 +37673,9 @@ NT
 mT
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 Fg
 DO
@@ -37727,10 +37740,10 @@ Fg
 DO
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -37916,9 +37929,9 @@ NT
 mT
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 WT
@@ -37984,10 +37997,10 @@ Fg
 WT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 Fg
 Fg
@@ -38173,8 +38186,8 @@ NT
 mT
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 DO
@@ -38241,10 +38254,10 @@ NT
 NT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 DO
 Fg
@@ -38430,8 +38443,8 @@ WT
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 DO
 DO
@@ -38498,10 +38511,10 @@ NT
 Fg
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 Fg
 Fg
@@ -38687,8 +38700,8 @@ WT
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 Fg
 DO
@@ -38756,9 +38769,9 @@ DO
 DO
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 Fg
 DO
@@ -38943,9 +38956,9 @@ Fg
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 DO
@@ -39013,8 +39026,8 @@ Fg
 WT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 WT
 DO
@@ -39200,9 +39213,9 @@ WT
 mT
 hv
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -39270,8 +39283,8 @@ WT
 WT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 WT
@@ -39457,9 +39470,9 @@ WT
 mT
 hv
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -39527,8 +39540,8 @@ NT
 WT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 NT
@@ -39714,9 +39727,9 @@ mT
 hv
 hv
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -39784,8 +39797,8 @@ NT
 NT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 NT
@@ -39970,9 +39983,9 @@ DO
 mT
 hv
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 DO
 Fg
@@ -40040,8 +40053,8 @@ NT
 NT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 DO
 Fg
@@ -40227,9 +40240,9 @@ Fg
 DO
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -40297,8 +40310,8 @@ NT
 NT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 WT
 NT
@@ -40484,9 +40497,9 @@ Fg
 NT
 WT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 Fg
@@ -40553,9 +40566,9 @@ WT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 DO
 Fg
@@ -40741,9 +40754,9 @@ NT
 WT
 NT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 DO
@@ -40810,8 +40823,8 @@ WT
 NT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 Fg
 DO
@@ -40998,9 +41011,9 @@ WT
 WT
 Fg
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -41066,8 +41079,8 @@ WT
 WT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 WT
 NT
@@ -41255,9 +41268,9 @@ NT
 NT
 DO
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -41323,8 +41336,8 @@ NT
 Fg
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 DO
 NT
@@ -41512,9 +41525,9 @@ WT
 DO
 Fg
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -41579,8 +41592,8 @@ WT
 Fg
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 Fg
 NT
@@ -41769,9 +41782,9 @@ WT
 DO
 Fg
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -41797,7 +41810,7 @@ Eq
 Eq
 mT
 mT
-oa
+Go
 mT
 mT
 mT
@@ -41835,8 +41848,8 @@ NT
 NT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 Fg
 NT
@@ -42027,9 +42040,9 @@ NT
 NT
 NT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -42091,8 +42104,8 @@ WT
 NT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 WT
 NT
@@ -42284,9 +42297,9 @@ WT
 NT
 WT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -42347,9 +42360,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -42541,9 +42554,9 @@ WT
 NT
 WT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 NT
@@ -42604,8 +42617,8 @@ NT
 NT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 Fg
@@ -42798,9 +42811,9 @@ Fg
 DO
 WT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 DO
 DO
@@ -42860,9 +42873,9 @@ WT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -43055,9 +43068,9 @@ DO
 DO
 WT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 Fg
 Fg
@@ -43117,8 +43130,8 @@ WT
 WT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 DO
 DO
@@ -43312,9 +43325,9 @@ NT
 Fg
 Fg
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 Fg
 DO
@@ -43373,8 +43386,8 @@ Fg
 NT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 Fg
 Fg
@@ -43569,9 +43582,9 @@ NT
 NT
 Fg
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -43630,8 +43643,8 @@ Fg
 Fg
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 NT
@@ -43826,9 +43839,9 @@ NT
 NT
 NT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -43859,7 +43872,7 @@ mT
 mT
 mT
 mT
-oa
+Go
 mT
 mT
 NT
@@ -43887,8 +43900,8 @@ Fg
 Fg
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 Fg
@@ -44083,10 +44096,10 @@ DO
 WT
 WT
 mT
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 Fg
 Fg
@@ -44143,9 +44156,9 @@ WT
 WT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 Fg
 Fg
@@ -44340,10 +44353,10 @@ DO
 Fg
 WT
 mT
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -44363,7 +44376,7 @@ NT
 mT
 mT
 mT
-oa
+Go
 mT
 mT
 mT
@@ -44400,8 +44413,8 @@ WT
 WT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 WT
@@ -44598,9 +44611,9 @@ DO
 DO
 WT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -44625,7 +44638,7 @@ mT
 mT
 mT
 mT
-oa
+Go
 mT
 mT
 mT
@@ -44657,8 +44670,8 @@ WT
 WT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 Fg
 NT
@@ -44855,9 +44868,9 @@ WT
 Fg
 NT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -44908,14 +44921,14 @@ WT
 NT
 Eq
 Eq
-lD
+Yk
 ch
 Tp
 mT
 ch
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 Fg
 WT
@@ -45112,9 +45125,9 @@ WT
 WT
 NT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -45165,14 +45178,14 @@ WT
 WT
 Eq
 Eq
-kr
+GQ
 ch
 Tp
 mT
 hv
-bh
+bR
 ch
-bU
+Mj
 mT
 WT
 WT
@@ -45350,7 +45363,7 @@ NT
 WT
 WT
 NT
-Qu
+mh
 Fg
 Fg
 Fg
@@ -45369,9 +45382,9 @@ WT
 NT
 WT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 DO
@@ -45422,16 +45435,16 @@ Fg
 NT
 WT
 Eq
-kr
+GQ
 ch
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 ch
-gM
+wX
 Eq
 Eq
 WT
@@ -45626,9 +45639,9 @@ NT
 NT
 WT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -45683,12 +45696,12 @@ WT
 mT
 hv
 ch
-bh
-bU
+bR
+Mj
 mT
 Tp
 ch
-gM
+wX
 Eq
 Eq
 Eq
@@ -45864,7 +45877,7 @@ WT
 WT
 WT
 Wn
-Qu
+mh
 DO
 DO
 Fg
@@ -45883,10 +45896,10 @@ NT
 NT
 WT
 mT
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 NT
 Fg
@@ -45939,13 +45952,13 @@ NT
 NT
 mT
 hv
-bh
-bU
-bU
+bR
+Mj
+Mj
 ch
 WT
 ch
-gM
+wX
 Eq
 Eq
 Eq
@@ -46141,9 +46154,9 @@ WT
 WT
 WT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 Fg
 Fg
@@ -46195,9 +46208,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -46398,9 +46411,9 @@ NT
 WT
 NT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 DO
 DO
@@ -46452,8 +46465,8 @@ NT
 NT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 NT
@@ -46627,7 +46640,7 @@ Fg
 Iy
 WT
 Nx
-Qu
+mh
 Fg
 WT
 NT
@@ -46655,9 +46668,9 @@ WT
 WT
 WT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 WT
@@ -46708,9 +46721,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 Fg
@@ -46913,8 +46926,8 @@ WT
 NT
 WT
 mT
-bh
-bh
+bR
+bR
 mT
 WT
 WT
@@ -46965,8 +46978,8 @@ NT
 NT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 NT
@@ -47169,9 +47182,9 @@ Fg
 NT
 NT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -47222,8 +47235,8 @@ NT
 Fg
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 NT
@@ -47426,9 +47439,9 @@ DO
 NT
 WT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 Fg
@@ -47479,8 +47492,8 @@ WT
 Fg
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 NT
@@ -47683,9 +47696,9 @@ Fg
 NT
 WT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 WT
@@ -47736,8 +47749,8 @@ NT
 WT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 NT
@@ -47940,9 +47953,9 @@ NT
 WT
 WT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 DO
@@ -47993,8 +48006,8 @@ DO
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 WT
 NT
@@ -48197,9 +48210,9 @@ NT
 WT
 Fg
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 WT
@@ -48250,8 +48263,8 @@ WT
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 Fg
@@ -48454,9 +48467,9 @@ WT
 DO
 DO
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 NT
@@ -48507,8 +48520,8 @@ mT
 hv
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 DO
 DO
@@ -48711,9 +48724,9 @@ DO
 Fg
 NT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 DO
@@ -48763,8 +48776,8 @@ DO
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 DO
 Fg
@@ -48968,9 +48981,9 @@ Fg
 Fg
 Fg
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 Fg
@@ -49019,8 +49032,8 @@ DO
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 WT
 NT
@@ -49225,9 +49238,9 @@ DO
 Fg
 Fg
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 NT
@@ -49276,7 +49289,7 @@ mT
 hv
 hv
 hv
-bU
+Mj
 mT
 NT
 DO
@@ -49482,9 +49495,9 @@ NT
 Fg
 WT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 WT
@@ -49532,8 +49545,8 @@ mT
 hv
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 Fg
 Fg
@@ -49739,9 +49752,9 @@ WT
 WT
 WT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 NT
@@ -49788,8 +49801,8 @@ DO
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 DO
@@ -49996,9 +50009,9 @@ WT
 DO
 NT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 NT
@@ -50044,8 +50057,8 @@ NT
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 NT
@@ -50253,9 +50266,9 @@ WT
 DO
 NT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 DO
@@ -50301,8 +50314,8 @@ NT
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 WT
 WT
@@ -50510,9 +50523,9 @@ DO
 DO
 Fg
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 Fg
 DO
@@ -50558,7 +50571,7 @@ mT
 hv
 hv
 hv
-bU
+Mj
 mT
 NT
 WT
@@ -50767,9 +50780,9 @@ Fg
 DO
 Fg
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 WT
@@ -50812,10 +50825,10 @@ WT
 NT
 mT
 hv
-bh
-bh
-bU
-bU
+bR
+bR
+Mj
+Mj
 mT
 NT
 WT
@@ -51024,9 +51037,9 @@ DO
 DO
 DO
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 DO
@@ -51069,9 +51082,9 @@ NT
 mT
 hv
 hv
-bh
-bU
-bU
+bR
+Mj
+Mj
 mT
 WT
 NT
@@ -51281,9 +51294,9 @@ Fg
 DO
 WT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 NT
@@ -51325,9 +51338,9 @@ Fg
 mT
 hv
 hv
-bh
-bU
-bU
+bR
+Mj
+Mj
 mT
 WT
 NT
@@ -51538,9 +51551,9 @@ DO
 WT
 WT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 WT
@@ -51581,8 +51594,8 @@ WT
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 mT
 WT
@@ -51795,9 +51808,9 @@ WT
 WT
 WT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -51837,8 +51850,8 @@ NT
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 WT
 WT
@@ -52052,9 +52065,9 @@ DO
 NT
 WT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 Fg
@@ -52093,9 +52106,9 @@ WT
 mT
 hv
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -52309,9 +52322,9 @@ WT
 NT
 NT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 Fg
 Fg
@@ -52349,9 +52362,9 @@ Fg
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -52566,8 +52579,8 @@ NT
 DO
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 NT
@@ -52606,8 +52619,8 @@ WT
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 Fg
 Fg
@@ -52823,8 +52836,8 @@ WT
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 WT
@@ -52862,8 +52875,8 @@ NT
 mT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 NT
 NT
@@ -53079,9 +53092,9 @@ Fg
 DO
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 WT
@@ -53118,8 +53131,8 @@ Fg
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 Fg
 NT
@@ -53336,9 +53349,9 @@ DO
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 Fg
 NT
@@ -53374,8 +53387,8 @@ NT
 mT
 hv
 hv
-bh
-bU
+bR
+Mj
 mT
 WT
 DO
@@ -53593,8 +53606,8 @@ WT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 WT
 NT
@@ -53630,9 +53643,9 @@ WT
 mT
 hv
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -53849,9 +53862,9 @@ DO
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 NT
@@ -53886,9 +53899,9 @@ NT
 NT
 mT
 hv
-bh
-bU
-bU
+bR
+Mj
+Mj
 mT
 NT
 WT
@@ -54106,8 +54119,8 @@ WT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 NT
@@ -54142,8 +54155,8 @@ mT
 mT
 mT
 hv
-bh
-bU
+bR
+Mj
 mT
 mT
 Fg
@@ -54362,9 +54375,9 @@ WT
 DO
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -54398,9 +54411,9 @@ hv
 hv
 hv
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 DO
 DO
 DO
@@ -54619,8 +54632,8 @@ WT
 NT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 NT
@@ -54654,9 +54667,9 @@ hv
 hv
 hv
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 DO
@@ -54876,8 +54889,8 @@ NT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 WT
@@ -54907,12 +54920,12 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
-bh
-bU
-bU
+bR
+bR
+bR
+bR
+Mj
+Mj
 mT
 NT
 WT
@@ -55132,8 +55145,8 @@ WT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 NT
@@ -55160,10 +55173,10 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 mT
 mT
@@ -55388,9 +55401,9 @@ WT
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 DO
@@ -55413,10 +55426,10 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 mT
 mT
@@ -55645,9 +55658,9 @@ WT
 DO
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 NT
@@ -55667,10 +55680,10 @@ NT
 mT
 hv
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 mT
 mT
@@ -55902,9 +55915,9 @@ WT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 NT
@@ -55922,9 +55935,9 @@ WT
 mT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 mT
 mT
@@ -56159,9 +56172,9 @@ WT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 NT
 WT
 WT
@@ -56179,7 +56192,7 @@ mT
 hv
 hv
 hv
-bh
+bR
 mT
 mT
 WT
@@ -56415,9 +56428,9 @@ WT
 Fg
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -56435,8 +56448,8 @@ mT
 hv
 hv
 hv
-bh
-bh
+bR
+bR
 mT
 Fg
 NT
@@ -56672,9 +56685,9 @@ Fg
 DO
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 mT
 mT
@@ -56689,10 +56702,10 @@ hv
 hv
 hv
 hv
-bh
+bR
 hv
-bh
-bh
+bR
+bR
 mT
 NT
 WT
@@ -56928,9 +56941,9 @@ DO
 mT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 hv
 hv
@@ -56946,9 +56959,9 @@ hv
 hv
 hv
 hv
-bh
+bR
 hv
-bh
+bR
 mT
 NT
 NT
@@ -57184,9 +57197,9 @@ NT
 mT
 hv
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 hv
 hv
 hv
@@ -57201,10 +57214,10 @@ hv
 hv
 hv
 hv
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 NT
 NT
@@ -57439,27 +57452,27 @@ Fg
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 hv
 hv
 hv
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
 mT
 mT
 Fg
@@ -57695,25 +57708,25 @@ NT
 Fg
 mT
 hv
-bh
-bh
+bR
+bR
 hv
 hv
 hv
 hv
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
+bR
 mT
 mT
 mT
@@ -57952,12 +57965,12 @@ WT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 hv
 hv
 hv
-bh
+bR
 mT
 mT
 mT
@@ -58209,11 +58222,11 @@ WT
 Fg
 mT
 hv
-bh
+bR
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 DO
@@ -58468,7 +58481,7 @@ mT
 hv
 hv
 hv
-bh
+bR
 mT
 mT
 NT
@@ -58722,9 +58735,9 @@ NT
 NT
 mT
 hv
-bh
+bR
 hv
-bh
+bR
 mT
 WT
 NT
@@ -58978,10 +58991,10 @@ WT
 WT
 mT
 hv
-bh
-bh
+bR
+bR
 hv
-bh
+bR
 mT
 NT
 NT
@@ -59235,9 +59248,9 @@ DO
 mT
 hv
 hv
-bh
+bR
 hv
-bh
+bR
 mT
 NT
 NT
@@ -59491,9 +59504,9 @@ DO
 DO
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 WT
@@ -59748,9 +59761,9 @@ DO
 DO
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 WT
@@ -60005,9 +60018,9 @@ Fg
 Fg
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 Fg
 NT
@@ -60261,9 +60274,9 @@ NT
 Fg
 Fg
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 Fg
 Iy
@@ -60518,9 +60531,9 @@ WT
 NT
 NT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 DO
@@ -60774,9 +60787,9 @@ kD
 WT
 NT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 WT
 WT
@@ -61031,9 +61044,9 @@ NT
 NT
 WT
 mT
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 WT
@@ -61288,9 +61301,9 @@ NT
 NT
 WT
 mT
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 CJ
@@ -61545,9 +61558,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -61802,9 +61815,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 WT
@@ -62058,9 +62071,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 NT
@@ -62315,9 +62328,9 @@ WT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -62572,9 +62585,9 @@ WT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -62828,9 +62841,9 @@ NT
 NT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 WT
 WT
@@ -63085,9 +63098,9 @@ WT
 WT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 NT
 DO
@@ -63342,9 +63355,9 @@ WT
 DO
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 DO
 DO
@@ -63599,9 +63612,9 @@ DO
 WT
 mT
 hv
-bh
-bh
-bU
+bR
+bR
+Mj
 mT
 DO
 DO
@@ -63855,10 +63868,10 @@ WT
 WT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 Fg
 Fg
@@ -64111,10 +64124,10 @@ WT
 WT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 Fg
 Fg
@@ -64368,10 +64381,10 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
-bU
+bR
+bR
+bR
+Mj
 mT
 WT
 DO
@@ -64625,9 +64638,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 WT
@@ -64882,9 +64895,9 @@ Fg
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 DO
 DO
@@ -65139,9 +65152,9 @@ WT
 NT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -65396,9 +65409,9 @@ NT
 WT
 mT
 hv
-bh
-bh
-bh
+bR
+bR
+bR
 mT
 NT
 NT
@@ -65652,10 +65665,10 @@ WT
 WT
 DO
 mT
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 DO
 WT
@@ -65909,10 +65922,10 @@ NT
 Fg
 Fg
 mT
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 Fg
 Fg
@@ -66166,10 +66179,10 @@ NT
 Fg
 WT
 mT
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 mT
 WT
 Fg
@@ -66423,10 +66436,10 @@ dr
 dr
 dr
 dr
-bh
-bh
-bh
-bh
+bR
+bR
+bR
+bR
 dr
 dr
 dr
@@ -77993,12 +78006,12 @@ UR
 UR
 UR
 ek
-mS
+jM
 BC
 Vz
 jq
 ek
-xp
+Aj
 ek
 UR
 UR
@@ -78252,7 +78265,7 @@ UR
 Sb
 BC
 BC
-OA
+Zw
 BC
 Pr
 BC
@@ -78509,7 +78522,7 @@ UR
 Sb
 BC
 BC
-ew
+qE
 BC
 ek
 ek
@@ -78768,7 +78781,7 @@ XJ
 XJ
 ek
 BC
-GX
+gR
 ir
 Sb
 UR
@@ -79023,10 +79036,10 @@ UR
 Sb
 BC
 BC
-OA
+Zw
 BC
 yz
-JH
+KA
 Sb
 UR
 UR
@@ -79278,7 +79291,7 @@ UR
 UR
 UR
 ek
-mS
+jM
 BC
 Zb
 jq
@@ -87845,9 +87858,9 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
+YK
+YK
+YK
 UR
 UR
 UR
@@ -88102,9 +88115,9 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
+YK
+YK
+YK
 UR
 UR
 UR
@@ -88359,9 +88372,9 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
+YK
+YK
+YK
 UR
 UR
 UR
@@ -88616,9 +88629,9 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
+YK
+YK
+YK
 UR
 UR
 UR
@@ -88873,9 +88886,9 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
+YK
+YK
+YK
 UR
 UR
 UR
@@ -89130,9 +89143,9 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
+YK
+YK
+YK
 UR
 UR
 UR
@@ -89387,9 +89400,9 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
+YK
+YK
+YK
 UR
 UR
 UR
@@ -97032,14 +97045,14 @@ UR
 UR
 UR
 UR
-aj
-PP
-PP
-PP
-PP
-PP
-PP
-rw
+Fb
+YK
+YK
+YK
+YK
+YK
+YK
+KM
 UR
 UR
 UR
@@ -97289,14 +97302,14 @@ UR
 UR
 UR
 UR
-aj
-PP
-PP
-PP
-PP
-PP
-PP
-rw
+Fb
+YK
+YK
+YK
+YK
+YK
+YK
+KM
 UR
 UR
 UR
@@ -97546,14 +97559,14 @@ UR
 UR
 UR
 UR
-aj
-PP
-PP
-PP
-PP
-PP
-PP
-rw
+Fb
+YK
+YK
+YK
+YK
+YK
+YK
+KM
 UR
 UR
 UR
@@ -110445,10 +110458,10 @@ UR
 UR
 UR
 UR
-aj
-PP
-PP
-PP
+Fb
+YK
+YK
+YK
 UR
 UR
 UR
@@ -110702,12 +110715,12 @@ UR
 UR
 UR
 UR
-aj
-PP
-PP
-PP
-PP
-PP
+Fb
+YK
+YK
+YK
+YK
+YK
 UR
 UR
 UR
@@ -110959,14 +110972,14 @@ UR
 UR
 UR
 UR
-aj
-PP
-PP
-PP
-PP
-PP
-PP
-rw
+Fb
+YK
+YK
+YK
+YK
+YK
+YK
+KM
 UR
 UR
 UR
@@ -111218,12 +111231,12 @@ UR
 UR
 UR
 UR
-PP
-PP
-PP
-PP
-PP
-rw
+YK
+YK
+YK
+YK
+YK
+KM
 UR
 UR
 UR
@@ -111478,9 +111491,9 @@ UR
 UR
 UR
 UR
-PP
-PP
-rw
+YK
+YK
+KM
 UR
 UR
 UR
