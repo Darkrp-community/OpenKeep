@@ -317,12 +317,12 @@
 /datum/crafting_recipe/bandit_volfhelm
 	name = "(Bandit) Volfhelm"
 	time = 4 SECONDS
-	reqs = list(/obj/item/natural/fur/volf = 2)
+	reqs = list(/obj/item/natural/head/volf = 1)
 	result = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	category = CAT_NONE
 
 /datum/crafting_recipe/cult_hood
-	name = "(Cult) Ominous Hood"
+	name = "(Bandit) Ominous Hood"
 	time = 4 SECONDS
 	reqs = list(/obj/item/natural/hide = 1)
 	result = /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous

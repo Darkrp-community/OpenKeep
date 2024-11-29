@@ -3990,10 +3990,7 @@
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/rtfield/boggish)
 "eoL" = (
-/obj/effect/landmark/mapGenerator/sunlights{
-	endTurfX = 128;
-	endTurfY = 192
-	},
+/obj/effect/landmark/mapGenerator/sunlights/bandaid,
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue)
 "epf" = (
