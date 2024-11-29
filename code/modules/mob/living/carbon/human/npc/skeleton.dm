@@ -310,3 +310,4 @@
 	mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+
