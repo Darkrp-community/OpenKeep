@@ -50,9 +50,8 @@
 /obj/effect/skill_tracker/Initialize(mapload, atom/parent)
 	. = ..()
 	real_image = image(icon, parent, real_icon_state, ABOVE_OPEN_TURF_LAYER) //Default image in case manually created.
+	SStrackables.add_new_trackable(src)
 	if(always_revealed_trait)
-		RegisterSignal(SSdcs, COMSIG_ATOM_ADD_TRAIT, PROC_REF(check_add_trait))
-		RegisterSignal(SSdcs, COMSIG_ATOM_REMOVE_TRAIT, PROC_REF(check_remove_trait))
 		check_for_users()
 
 /obj/effect/skill_tracker/Destroy(force)
@@ -65,6 +64,7 @@
 	if(deletion_timer)
 		deltimer(deletion_timer)
 		deletion_timer = null
+	SStrackables.remove_trackable(src)
 	return ..()
 
 /obj/effect/skill_tracker/proc/check_for_users()
@@ -73,21 +73,6 @@
 		if(QDELETED(living) || !living)
 			continue
 		add_knower(living, ANALYSIS_PERFECT)
-
-/obj/effect/skill_tracker/proc/check_add_trait(datum/source, mob/living/target, trait)
-	if(!istype(target) || trait != always_revealed_trait || !target.client)
-		return
-	add_knower(target, ANALYSIS_PERFECT)
-	if(!(always_revealed_trait in mobs_with_trait))
-		mobs_with_trait |= always_revealed_trait
-		mobs_with_trait[always_revealed_trait] = list()
-	mobs_with_trait[always_revealed_trait] |= WEAKREF(target)
-
-/obj/effect/skill_tracker/proc/check_remove_trait(datum/source, mob/living/target, trait)
-	if(!istype(target) || trait != always_revealed_trait || !target.client)
-		return
-	remove_knower(target, ANALYSIS_PERFECT)
-	mobs_with_trait[always_revealed_trait] -= WEAKREF(target)
 
 ///Handles checks for if a mob can reveal this. Also returns FALSE if already known to mob.
 /obj/effect/skill_tracker/proc/check_reveal(mob/living/user)
