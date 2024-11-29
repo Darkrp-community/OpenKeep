@@ -43,6 +43,7 @@
 			cloak = /obj/item/clothing/cloak/raincloak/furcloak
 			beltr = /obj/item/rogueweapon/knife/stone
 		if("Necra")
+			head = /obj/item/clothing/head/roguetown/padded/deathface
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
 			neck = /obj/item/clothing/neck/roguetown/gorget

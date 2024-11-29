@@ -68,6 +68,36 @@
 	mappath = "_maps/map_files/templates/dwarf_outpost/Dwarf_Outpost_1.dmm"
 
 
+/*	..................   Roadblock   ................... */
+/obj/effect/landmark/map_load_mark/hamlet_roadblock
+	name = "Roadblock"
+	templates = list( "roadblock_1","roadblock_2" )
+
+/datum/map_template/roadblock_i
+	name = "Roadblock"
+	id = "roadblock_1"
+	mappath = "_maps/map_files/templates/neuhamlet/roadblock_1.dmm"
+
+/datum/map_template/roadblock_ii
+	name = "No roadblock"
+	id = "roadblock_2"
+	mappath = "_maps/map_files/templates/neuhamlet/roadblock_2.dmm"
+
+/*	..................   Outlaw camp   ................... */
+/obj/effect/landmark/map_load_mark/hamlet_outlaws
+	name = "Outlaw camp"
+	templates = list( "outlawcamp_1","outlawcamp_2" )
+
+/datum/map_template/outlawcamp_i
+	name = "Outlaw camp"
+	id = "outlawcamp_1"
+	mappath = "_maps/map_files/templates/neuhamlet/outlawcamp_1.dmm"
+
+/datum/map_template/outlawcamp_ii
+	name = "Empty outlaw camp"
+	id = "outlawcamp_2"
+	mappath = "_maps/map_files/templates/neuhamlet/outlawcamp_2.dmm"
+
 // ===================================================================================
 /*
 	if(prob(15))
@@ -804,47 +834,6 @@
 							/obj/item/reagent_containers/food/snacks/rogue/honey = 2,
 							/obj/item/natural/silk = 3)
 
-// ===================================================================================
-/*	..................   Malum Shrine (Dromkis revenge)   ................... */
-/obj/structure/fluff/psycross/crafted/shrine/malum
-	name = "statue of Malum"
-	desc = ""
-	icon = 'icons/roguetown/misc/tallandwide.dmi'
-	icon_state = "malum"
-	bound_width = 64
-
-/*	..................   Astrata Shrine   ................... */
-/obj/structure/fluff/psycross/crafted/shrine/astrata
-	name = "The Sun Queen"
-	desc = ""
-	icon = 'icons/roguetown/misc/tallandwide.dmi'
-	icon_state = "astrata"
-	pixel_x = -18
-
-/*	..................   Necra Shrine   ................... */
-/obj/structure/fluff/psycross/crafted/shrine/necra
-	name = "The Undermaiden"
-	desc = ""
-	icon = 'icons/roguetown/misc/tallandwide.dmi'
-	icon_state = "necra"
-	pixel_x = -16
-
-/*	..................   Dendor Shrine   ................... */
-/obj/structure/fluff/psycross/crafted/shrine/dendor
-	name = "The Tree Father"
-	desc = ""
-	icon = 'icons/roguetown/misc/foliagetall.dmi'
-	icon_state = "mystical"
-	pixel_x = -10
-
-/*	..................   Abyssor Shrine   ................... */
-/obj/structure/fluff/psycross/crafted/shrine/abyssor
-	name = "The World Whale"
-	desc = ""
-	icon = 'icons/roguetown/misc/96x96.dmi'
-	icon_state = "abyssor"
-	bound_width = 64
-	pixel_x = -25
 
 // ==============================================================
 /*	..................   Various mapping aides   ................... */

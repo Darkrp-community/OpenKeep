@@ -159,7 +159,8 @@
 						/turf/open/floor/rogue/grass/cold,
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snow/patchy,
-						/turf/open/floor/rogue/snow/rough)
+						/turf/open/floor/rogue/snow/rough,
+						/turf/open/floor/rogue/dirt)
 
 /turf/open/floor/rogue/grass/Initialize()
 	dir = pick(GLOB.cardinals)
@@ -499,7 +500,8 @@
 	smooth = SMOOTH_TRUE
 	canSmoothWith = list(/turf/open/floor/rogue,
 						/turf/closed/mineral,
-						/turf/closed/wall/mineral)
+						/turf/closed/wall/mineral,
+						/turf/open/floor/rogue/dirt)
 	neighborlay = "dirtedge"
 	slowdown = 0
 
@@ -930,7 +932,7 @@
 /turf/open/floor/rogue/cobblerock/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)
 
-/obj/effect/decal/cobbleedge
+/obj/effect/decal/turfedge_neu
 	name = ""
 	desc = ""
 	icon = 'icons/turf/roguefloor.dmi'
@@ -1055,16 +1057,16 @@
 	. = ..()
 	icon_state = "cobblealt[rand(1,3)]"
 
-/obj/effect/decal/cobbleedge/rockalt_edge
+/obj/effect/decal/turfedge_neu/rockalt_edge
 	icon_state = "cobblealt_edges"
 
-/obj/effect/decal/cobbleedge/rockalt_corners
+/obj/effect/decal/turfedge_neu/rockalt_corners
 	icon_state = "cobblealt_corners"
 
-/obj/effect/decal/cobbleedge/alt
+/obj/effect/decal/turfedge_neu/alt
 	icon_state = "cobblestonealt_edges"
 
-/obj/effect/decal/cobbleedge/alt_small
+/obj/effect/decal/turfedge_neu/alt_small
 	icon_state = "cobblestonealt_smalledges"
 
 /turf/open/floor/rogue/cobble/mossy/alt
@@ -1075,12 +1077,20 @@
 	. = ..()
 	icon_state = "mossyalt[rand(1,3)]"
 
-/obj/effect/decal/cobbleedge/mossy
+/obj/effect/decal/turfedge_neu/mossy
 	icon_state = "mossyalt_edges"
 
-/obj/effect/decal/cobbleedge/mossy_small
+/obj/effect/decal/turfedge_neu/mossy_small
 	icon_state = "mossyalt_smalledges"
 
+/obj/effect/decal/turfedge_neu/road
+	icon_state = "roadedges_manual1"
+/obj/effect/decal/turfedge_neu/road/Initialize()
+	icon_state = "roadedges_manual[rand(1,2)]"
+	. = ..()
+
+/obj/effect/decal/turfedge_neu/road_big
+	icon_state = "roadedges_manual_34"
 
 // ==============================================================
 /*	..................   Miscellany   ................... */
