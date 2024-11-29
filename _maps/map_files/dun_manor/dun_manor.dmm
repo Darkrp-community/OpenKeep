@@ -1388,7 +1388,7 @@
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/chapel)
 "blC" = (
-/datum/roguestock/import/crackerss,
+/obj/structure/closet/crate/chest/crate/steward/hardtack,
 /turf/open/floor/rogue/tile/kitchen,
 /area/rogue/indoors/town/church/chapel)
 "blR" = (
