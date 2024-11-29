@@ -173,7 +173,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	color = "#7db36e"
 	first_time_text = null
 
-/area/rogue/outdoors/rtfield/spooky
+/area/rogue/outdoors/rtfield/spooky		// haunts ambush and dug down hidden treasure
 	ambush_mobs = list(/mob/living/simple_animal/hostile/rogue/haunt = 50)
 	name = "spooky place"
 	color = "#9294d3"

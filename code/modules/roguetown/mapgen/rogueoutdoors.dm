@@ -87,6 +87,7 @@
 		/datum/mapGeneratorModule/roguehamlet_grassturf,
 		/datum/mapGeneratorModule/roguehamlet_swampturf,
 		/datum/mapGeneratorModule/roguehamlet_waterturf,
+		/datum/mapGeneratorModule/roguehamlet_buriedtreasure,
 		/datum/mapGeneratorModule/ambushing/hamlet)
 
 /datum/mapGeneratorModule/roguehamlet
@@ -98,8 +99,7 @@
 							/obj/structure/flora/roguegrass = 20,
 							/obj/item/natural/stone = 5,
 							/obj/item/natural/rock = 3,
-							/obj/item/grown/log/tree/stick = 2,
-							/obj/structure/closet/dirthole/closed/loot=4)
+							/obj/item/grown/log/tree/stick = 2)
 	spawnableTurfs = list(/turf/open/floor/rogue/dirt/road=5)
 	allowed_areas = list(/area/rogue/outdoors/rtfield)
 
@@ -118,6 +118,14 @@
 	spawnableTurfs = list(/turf/open/floor/rogue/grass = 5)
 	allowed_areas = list(/area/rogue/outdoors/rtfield)
 
+/datum/mapGeneratorModule/roguehamlet_buriedtreasure
+	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
+	allowed_turfs = list(/turf/open/floor/rogue/dirt)
+	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
+	spawnableAtoms = list(
+							/obj/structure/closet/dirthole/closed/loot=2)		// add more stuff I guess
+	allowed_areas = list(/area/rogue/outdoors/rtfield/spooky, /area/rogue/outdoors/rtfield/outlaw)
+
 /datum/mapGeneratorModule/roguehamlet_grassturf
 	clusterCheckFlags = CLUSTER_CHECK_NONE
 	allowed_turfs = list(/turf/open/floor/rogue/grass)
@@ -129,7 +137,7 @@
 
 /datum/mapGeneratorModule/roguehamlet_swampturf
 	clusterCheckFlags = CLUSTER_CHECK_SAME_ATOMS
-	allowed_turfs = list(/turf/open/water/cleanshallow)
+	allowed_turfs = list(/turf/open/water/swamp)
 	excluded_turfs = list()
 	allowed_areas = list(/area/rogue/outdoors/rtfield)
 	spawnableAtoms = list(/obj/structure/flora/roguegrass/water = 12,
@@ -140,7 +148,7 @@
 
 /datum/mapGeneratorModule/roguehamlet_waterturf
 	clusterCheckFlags = CLUSTER_CHECK_NONE
-	allowed_turfs = list(/turf/open/water/swamp)
+	allowed_turfs = list(/turf/open/water/cleanshallow)
 	excluded_turfs = list()
 	allowed_areas = list(/area/rogue/outdoors/rtfield)
 	spawnableAtoms = list(/obj/structure/flora/roguegrass/water = 8,
