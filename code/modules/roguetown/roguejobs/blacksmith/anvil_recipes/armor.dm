@@ -377,7 +377,7 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/blacksteel/platelegs
-	name = "Blacksteel Plate Chausses (2)"
+	name = "Blacksteel Plate Chausses (+Bar)"
 	req_bar = /obj/item/ingot/blacksteel
 	additional_items = list(/obj/item/ingot/blacksteel)
 	created_item = /obj/item/clothing/under/roguetown/platelegs/blk
