@@ -6,7 +6,7 @@
 	outfit = /datum/outfit/job/roguetown/mercenary/marauder
 	category_tags = list(CTAG_MERCENARY)
 	maximum_possible_slots = 4
-	cmode_music = 'sound/music/unused/combat_old.ogg'//soul
+	cmode_music = 'sound/music/combat_old.ogg'//soul
 /datum/outfit/job/roguetown/mercenary/marauder/pre_equip(mob/living/carbon/human/H)//new skirmisher merc class, 4 weapon skills like other merc classes and dodge expert
 	..()
 	if(H.mind)
