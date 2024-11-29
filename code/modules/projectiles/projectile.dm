@@ -562,7 +562,7 @@
 	else
 		var/mob/living/L = target
 		if(!direct_target)
-			//If they're able to 1. stand or 2. use items or 3. move, AND they are not softcrit,  they are not stunned enough to dodge projectiles passing over.
+			//If they're able to 1. stand or 2. use items or 3. move, AND they are not softcrit,  they are able to avoid indirect projectiles passing over.
 			//If they're dead they shouldn't be getting hit by indirect fire
 			if((CHECK_BITFIELD(L.mobility_flags, MOBILITY_USE | MOBILITY_STAND | MOBILITY_MOVE) && L.stat == CONSCIOUS) || L.stat == DEAD)
 				return FALSE

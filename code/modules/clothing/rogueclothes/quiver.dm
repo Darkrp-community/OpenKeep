@@ -18,14 +18,14 @@
 	var/max_storage = 20
 	var/list/ammo_list = list()
 
-/obj/item/quiver/attackby(obj/A, loc, params)
+/obj/item/quiver/attackby(obj/A,  mob/living/user, params)
 	if(A.type in subtypesof(/obj/item/ammo_casing/caseless/rogue))
 		if(ammo_list.len < max_storage)
-			A.forceMove(src)
+			user.transferItemToLoc(A, src, TRUE, TRUE)
 			ammo_list += A
 			update_icon()
 		else
-			to_chat(loc, "<span class='warning'>Full!</span>")
+			to_chat(user, span_warning("\The [src] is full!"))
 		return
 	if(istype(A, /obj/item/gun/ballistic/revolver/grenadelauncher/bow))
 		var/obj/item/gun/ballistic/revolver/grenadelauncher/bow/B = A
@@ -33,11 +33,12 @@
 			for(var/AR in ammo_list)
 				if(istype(AR, /obj/item/ammo_casing/caseless/rogue/arrow))
 					ammo_list -= AR
-					B.attackby(AR, loc, params)
+					B.attackby(AR, user, params)
 					break
 				else
-					to_chat(loc, "<span class='warning'>Wrong ammunition kind!</span>")
+					to_chat(user, span_warning("The ammunition doesn't fit [B]!"))
 					return
+			update_icon()
 		return
 	if(istype(A, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow))
 		var/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/C = A
@@ -49,12 +50,13 @@
 						C.attackby(BT, loc, params)
 						break
 					else
-						to_chat(loc, "<span class='warning'>Wrong ammunition kind!</span>")
+						to_chat(loc, span_warning("The ammunition doesn't fit [C]!"))
 						return
+				update_icon()
 		else
-			to_chat(loc, "<span class='warning'>I need to cock the crossbow first.</span>")
+			to_chat(loc, span_warning("I need to cock \the [src] first."))
 			return
-	..()
+	. = ..()
 
 /obj/item/quiver/attack_right(mob/user)
 	if(ammo_list.len)
@@ -68,7 +70,7 @@
 /obj/item/quiver/examine(mob/user)
 	. = ..()
 	if(ammo_list.len)
-		. += "<span class='notice'>[ammo_list.len] inside.</span>"
+		. += span_notice("[ammo_list.len] inside.")
 
 /obj/item/quiver/update_icon()
 	if(ammo_list.len)
