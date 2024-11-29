@@ -84,12 +84,12 @@
 		/datum/mapGeneratorModule/roguehamlet,
 		/datum/mapGeneratorModule/roguehamlet/roadturf,
 		/datum/mapGeneratorModule/roguehamlet/bonus_grassturfs,
+		/datum/mapGeneratorModule/roguehamlet/bonus_ambushsturfs,
 		/datum/mapGeneratorModule/roguehamlet_grassturf,
 		/datum/mapGeneratorModule/roguehamlet_swampturf,
 		/datum/mapGeneratorModule/roguehamlet_waterturf,
 		/datum/mapGeneratorModule/roguehamlet_buriedtreasure,
-		/datum/mapGeneratorModule/ambushing/hamlet,
-		/datum/mapGeneratorModule/ambushing/hamlet_spooky)
+		/datum/mapGeneratorModule/ambushing/hamlet)
 
 /datum/mapGeneratorModule/roguehamlet
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
@@ -118,6 +118,12 @@
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 	spawnableTurfs = list(/turf/open/floor/rogue/grass = 4)
 	allowed_areas = list(/area/rogue/outdoors/rtfield)
+
+/datum/mapGeneratorModule/roguehamlet/bonus_ambushsturfs
+	allowed_areas = list(/area/rogue/outdoors/rtfield/spooky,/area/rogue/outdoors/rtfield/plague_district)
+	spawnableTurfs = list(/turf/open/floor/rogue/dirt/ambush = 3)
+	allowed_turfs = list(/turf/open/floor/rogue/dirt)
+	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 
 /datum/mapGeneratorModule/roguehamlet_buriedtreasure
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
@@ -170,15 +176,6 @@
 	allowed_turfs = list(/turf/open/floor/rogue/dirt/ambush)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 
-/datum/mapGeneratorModule/ambushing/hamlet_spooky
-	spawnableAtoms = list(/obj/effect/landmark/ambush=50)
-	spawnableTurfs = list()
-	clusterMax = 3
-	clusterMin = 1
-	checkdensity = FALSE
-	allowed_areas = list(/area/rogue/outdoors/rtfield/spooky,/area/rogue/outdoors/rtfield/plague_district)
-	allowed_turfs = list(/turf/open/floor/rogue/cobblerock)
-	excluded_turfs = list(/turf/open/floor/rogue/cobblerock/alt)
 
 //bandaid sunlight
 /obj/effect/landmark/mapGenerator/sunlights/bandaid
