@@ -600,7 +600,7 @@
 	canSmoothWith = list(/turf/open/floor/rogue,
 						/turf/closed/mineral,
 						/turf/closed/wall/mineral)
-	slowdown = 0
+//	slowdown = 0
 
 /turf/open/floor/rogue/underworld/road/Initialize()
 	. = ..()
@@ -1028,6 +1028,12 @@
 	color = "#ffffff"
 	. = ..()
 
+/turf/open/floor/rogue/grass/peril	// for ambushes
+	color = "#d89d9d"
+/turf/open/floor/rogue/grass/peril/Initialize()
+	color = "#ffffff"
+	. = ..()
+
 /turf/open/floor/rogue/oak	// new oak
 	icon_state = "oak"
 /turf/open/floor/rogue/oak/broken
@@ -1037,6 +1043,8 @@
 
 /turf/open/floor/rogue/cobble/alt
 	icon_state = "cobblestonealt1"
+	canSmoothWith = FALSE
+	smooth = SMOOTH_FALSE
 /turf/open/floor/rogue/cobble/alt/Initialize()
 	. = ..()
 	icon_state = "cobblestonealt[rand(1,3)]"
@@ -1061,7 +1069,8 @@
 
 /turf/open/floor/rogue/cobble/mossy/alt
 	icon_state = "mossyalt1"
-
+	canSmoothWith = FALSE
+	smooth = SMOOTH_FALSE
 /turf/open/floor/rogue/cobble/mossy/alt/Initialize()
 	. = ..()
 	icon_state = "mossyalt[rand(1,3)]"

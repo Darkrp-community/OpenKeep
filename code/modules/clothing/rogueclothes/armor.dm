@@ -293,7 +293,6 @@
 	desc = "An expertly padded coat made from the finest silks. Long may live the nobility that dons it."
 	icon_state = "bliaut"
 	sleevetype = "shirt"
-	allowed_sex = list(FEMALE)
 	sellprice = VALUE_LEATHER_ARMOR_LORD
 
 	armor = ARMOR_LEATHER_BAD

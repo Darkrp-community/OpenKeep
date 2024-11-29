@@ -304,10 +304,10 @@
 	probby = 100 // temp to find out if decal vomit spawns
 	color = "#ff0000"
 	spawned = list(
-		/obj/effect/decal/cleanable/vomit = 100,
+		/obj/effect/decal/cleanable/vomit = 10,
 		/obj/item/clothing/mask/cigarette/rollie = 10,
 		/obj/item/rogueweapon/knife/stone = 10,
-		/obj/structure/idle_enemy/hostile_bum = 100	)
+		/obj/structure/idle_enemy/hostile_bum = 25	)
 
 /*	..................   Mines Danger   ................... */
 /obj/effect/spawner/roguemap/mine_mole_maybe
@@ -384,7 +384,8 @@
 	probby = 50
 	color = "#ff0000"
 	spawned = list(
-		/obj/structure/idle_enemy/hairy_spider = 100	)
+		/obj/structure/idle_enemy/orc_warrior = 65,
+		/obj/structure/idle_enemy/orc_spearman = 35	)
 
 /*	..................   Haunts Danger   ................... */
 /obj/effect/spawner/roguemap/haunts_maybe
@@ -394,6 +395,25 @@
 	color = "#ff0000"
 	spawned = list(
 		/obj/structure/bonepile = 100	)
+
+/*	..................   Outlaw Danger (starving desperate peasants)  ................... */
+/obj/effect/spawner/roguemap/outlaw_maybe
+	icon_state = "faceless"
+	icon = 'icons/mob/simple_human.dmi'
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/structure/idle_enemy/outlaw = 100	)
+
+/*	..................   Volf Danger  ................... */
+/obj/effect/spawner/roguemap/volf_maybe
+	icon = 'icons/roguetown/mob/monster/vol.dmi'
+	icon_state = "vv"
+	probby = 50
+	color = "#ff0000"
+	spawned = list(
+		/obj/structure/idle_enemy/volf= 100	)
+
 
 // ===================================================================================
 /*	..................   Idle Enemy Spawner   ................... */
@@ -496,7 +516,7 @@
 	range = 10
 	spawn_text = ""
 
-/*	..................   Zizombie Farmer Danger   ................... */
+/*	..................   Zizombie Farmer Spawner   ................... */
 /obj/structure/idle_enemy/zizombie_farmer
 /obj/structure/idle_enemy/zizombie_farmer/Initialize()
 	. = ..()
@@ -508,7 +528,7 @@
 	max_mobs = 1
 	range = 11
 	spawn_text = ""
-/*	..................   Hairy Spider Danger   ................... */
+/*	..................   Hairy Spider Spawner   ................... */
 /obj/structure/idle_enemy/hairy_spider
 /obj/structure/idle_enemy/hairy_spider/Initialize()
 	. = ..()
@@ -520,7 +540,7 @@
 	max_mobs = 1
 	range = 11
 	spawn_text = ""
-/*	..................   Orc Warband Dangers   ................... */
+/*	..................   Orc Warband Spawner   ................... */
 /obj/structure/idle_enemy/orc_warrior
 /obj/structure/idle_enemy/orc_warrior/Initialize()
 	. = ..()
@@ -544,3 +564,30 @@
 	max_mobs = 1
 	range = 11
 	spawn_text = ""
+
+/*	..................   Volf Spawner   ................... */
+/obj/structure/idle_enemy/volf
+/obj/structure/idle_enemy/volf/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/volf)
+/datum/component/spawner/volf
+	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf )
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
+/*	..................   Outlaw Spawner   ................... */
+/obj/structure/idle_enemy/outlaw
+/obj/structure/idle_enemy/outlaw/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/outlaw)
+/datum/component/spawner/outlaw
+	mob_types = list(/mob/living/carbon/human/species/human/northern/bum/outlaw )
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
