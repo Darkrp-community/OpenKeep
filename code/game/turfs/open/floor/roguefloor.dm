@@ -159,7 +159,8 @@
 						/turf/open/floor/rogue/grass/cold,
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snow/patchy,
-						/turf/open/floor/rogue/snow/rough)
+						/turf/open/floor/rogue/snow/rough,
+						/turf/open/floor/rogue/dirt)
 
 /turf/open/floor/rogue/grass/Initialize()
 	dir = pick(GLOB.cardinals)
@@ -499,7 +500,8 @@
 	smooth = SMOOTH_TRUE
 	canSmoothWith = list(/turf/open/floor/rogue,
 						/turf/closed/mineral,
-						/turf/closed/wall/mineral)
+						/turf/closed/wall/mineral,
+						/turf/open/floor/rogue/dirt)
 	neighborlay = "dirtedge"
 	slowdown = 0
 
@@ -1082,7 +1084,13 @@
 	icon_state = "mossyalt_smalledges"
 
 /obj/effect/decal/turfedge_neu/road
-	icon_state = "roadedges_manual"
+	icon_state = "roadedges_manual1"
+/obj/effect/decal/turfedge_neu/road/Initialize()
+	icon_state = "roadedges_manual[rand(1,2)]"
+	. = ..()
+
+/obj/effect/decal/turfedge_neu/road_big
+	icon_state = "roadedges_manual_34"
 
 // ==============================================================
 /*	..................   Miscellany   ................... */

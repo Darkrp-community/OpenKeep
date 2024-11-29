@@ -88,7 +88,8 @@
 		/datum/mapGeneratorModule/roguehamlet_swampturf,
 		/datum/mapGeneratorModule/roguehamlet_waterturf,
 		/datum/mapGeneratorModule/roguehamlet_buriedtreasure,
-		/datum/mapGeneratorModule/ambushing/hamlet)
+		/datum/mapGeneratorModule/ambushing/hamlet,
+		/datum/mapGeneratorModule/ambushing/hamlet_spooky)
 
 /datum/mapGeneratorModule/roguehamlet
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
@@ -115,7 +116,7 @@
 	clusterCheckFlags = CLUSTER_CHECK_NONE
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
-	spawnableTurfs = list(/turf/open/floor/rogue/grass = 5)
+	spawnableTurfs = list(/turf/open/floor/rogue/grass = 4)
 	allowed_areas = list(/area/rogue/outdoors/rtfield)
 
 /datum/mapGeneratorModule/roguehamlet_buriedtreasure
@@ -130,9 +131,13 @@
 	clusterCheckFlags = CLUSTER_CHECK_NONE
 	allowed_turfs = list(/turf/open/floor/rogue/grass)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
-	spawnableAtoms = list(/obj/structure/flora/roguegrass = 20,
-							/obj/item/natural/stone = 5,
-							/obj/item/grown/log/tree/stick = 2)
+	spawnableAtoms = list(/obj/structure/flora/roguegrass = 15,
+							/obj/item/natural/stone = 6,
+							/obj/item/grown/log/tree/stick = 2,
+							/obj/structure/flora/rogueflower/lavendergrass = 1,
+							/obj/structure/flora/rogueflower/ywflowers = 1,
+							/obj/structure/flora/rogueflower/brflowers = 1,
+							/obj/structure/flora/rogueflower/ppflowers = 1)
 	allowed_areas = list(/area/rogue/outdoors/town,/area/rogue/outdoors/rtfield)
 
 /datum/mapGeneratorModule/roguehamlet_swampturf
@@ -144,6 +149,7 @@
 	                        /obj/structure/flora/roguegrass/water/reeds = 8,
 							/obj/structure/flora/roguegrass/stalky = 4,
 	                        /obj/structure/kneestingers = 4,
+							/obj/structure/flora/rogueflower/reedbush = 2,
 							/obj/structure/flora/roguegrass/maneater/real = 1)
 
 /datum/mapGeneratorModule/roguehamlet_waterturf
@@ -163,6 +169,16 @@
 	allowed_areas = list(/area/rogue/outdoors)
 	allowed_turfs = list(/turf/open/floor/rogue/dirt/ambush)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
+
+/datum/mapGeneratorModule/ambushing/hamlet_spooky
+	spawnableAtoms = list(/obj/effect/landmark/ambush=50)
+	spawnableTurfs = list()
+	clusterMax = 3
+	clusterMin = 1
+	checkdensity = FALSE
+	allowed_areas = list(/area/rogue/outdoors/rtfield/spooky,/area/rogue/outdoors/rtfield/plague_district)
+	allowed_turfs = list(/turf/open/floor/rogue/cobblerock)
+	excluded_turfs = list(/turf/open/floor/rogue/cobblerock/alt)
 
 //bandaid sunlight
 /obj/effect/landmark/mapGenerator/sunlights/bandaid
