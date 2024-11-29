@@ -723,6 +723,8 @@
 #include "code\game\objects\effects\effect_system\effects_sparks.dm"
 #include "code\game\objects\effects\effect_system\effects_water.dm"
 #include "code\game\objects\effects\particles\weather.dm"
+#include "code\game\objects\effects\skill_trackables\_base.dm"
+#include "code\game\objects\effects\skill_trackables\alchemy_plants.dm"
 #include "code\game\objects\effects\spawners\gibspawner.dm"
 #include "code\game\objects\effects\spawners\lootdrop.dm"
 #include "code\game\objects\effects\spawners\roguemapgen.dm"

@@ -1387,6 +1387,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	else if(isatom(target))
 		var/atom/the_atom2 = target
 		ADD_TRAIT(the_atom2,trait,source)
+	SEND_GLOBAL_SIGNAL(COMSIG_ATOM_ADD_TRAIT, target, trait)
 
 ///DO NOT USE ___TraitAdd OR ___TraitRemove as a replacement for ADD_TRAIT / REMOVE_TRAIT defines. To be used explicitly for callback.
 /proc/___TraitRemove(target,trait,source)
@@ -1401,6 +1402,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	else if(isatom(target))
 		var/atom/the_atom2 = target
 		REMOVE_TRAIT(the_atom2,trait,source)
+	SEND_GLOBAL_SIGNAL(COMSIG_ATOM_REMOVE_TRAIT, target, trait)
 
 /proc/get_random_food()
 	var/list/blocked = list(

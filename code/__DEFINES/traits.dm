@@ -38,6 +38,7 @@
 #define TRAIT_ANTIMAGIC					"Anti-Magic"
 #define TRAIT_ANTISCRYING				"Anti-Scrying"
 #define TRAIT_SHOCKIMMUNE				"Shock Immunity"
+#define TRAIT_LEGENDARY_ALCHEMIST		"Legendary Alchemist"
 
 // Divine patron trait bonuses:
 #define TRAIT_SOUL_EXAMINE				"Blessing of Necra"  //can check bodies to see if they have departed
@@ -117,6 +118,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
 	TRAIT_DEATHSIGHT = span_info("I can feel when someone nearby draws the Undermaiden's attention, a tiny voice whispering 'Someone has died,' in my ear."),
 	TRAIT_CABAL = span_info("In secret, I have studied the ways of Her ascension, and know of others of the Cabal."),
+	TRAIT_LEGENDARY_ALCHEMIST = span_info("A master of your craft, you have reached the pinnacle of alchemy."),
 	))
 
 // trait accessor defines
@@ -127,6 +129,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 			target.status_traits = list(); \
 			_L = target.status_traits; \
 			_L[trait] = list(source); \
+			SEND_GLOBAL_SIGNAL(COMSIG_ATOM_ADD_TRAIT, target, trait); \
 		} else { \
 			_L = target.status_traits; \
 			if (_L[trait]) { \
@@ -134,6 +137,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 			} else { \
 				_L[trait] = list(source); \
 			} \
+			SEND_GLOBAL_SIGNAL(COMSIG_ATOM_ADD_TRAIT, target, trait);\
 		} \
 	} while (0)
 #define REMOVE_TRAIT(target, trait, sources) \
@@ -152,7 +156,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 				} \
 			};\
 			if (!length(_L[trait])) { \
-				_L -= trait \
+				_L -= trait; \
+				SEND_GLOBAL_SIGNAL(COMSIG_ATOM_REMOVE_TRAIT, target, trait); \
 			}; \
 			if (!length(_L)) { \
 				target.status_traits = null \
