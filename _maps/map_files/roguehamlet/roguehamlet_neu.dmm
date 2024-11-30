@@ -6752,7 +6752,6 @@
 /area/rogue/outdoors/rtfield/hamlet)
 "gPa" = (
 /obj/structure/fluff/grindwheel,
-/obj/item/rogueweapon/sword/scimitar/messer/neu,
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/shelter/town/dwarf)
 "gQA" = (
@@ -10217,8 +10216,8 @@
 /turf/open/transparent/openspace,
 /area/rogue/indoors/soilsons)
 "krw" = (
-/turf/closed/wall/mineral/rogue/decostone/fluffstone,
-/area/rogue/outdoors)
+/turf/open/floor/rogue/woodturned/saiga,
+/area/rogue/outdoors/town/roofs)
 "krS" = (
 /turf/open/floor/rogue/rooftop/green{
 	dir = 1
@@ -11281,7 +11280,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/shop)
 "lzE" = (
-/obj/structure/closet/crate/roguecloset/inn/chest,
+/obj/structure/closet/crate/chest/crate,
 /obj/item/flashlight/flare/torch/lantern,
 /obj/item/flint{
 	pixel_x = -1
@@ -11713,7 +11712,10 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/shelter/rtfield)
 "lVe" = (
-/obj/structure/mineral_door/wood,
+/obj/structure/mineral_door/wood{
+	lockid = "tailor";
+	name = "tailor"
+	},
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town)
 "lVj" = (
@@ -11985,9 +11987,6 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/town/dwarf)
-"mlL" = (
-/turf/closed/wall/mineral/rogue/decostone/fluffstone,
-/area/rogue/outdoors/exposed/manorgarri)
 "mlS" = (
 /obj/item/natural/bundle/stick{
 	pixel_y = 40
@@ -13633,7 +13632,7 @@
 /area/rogue/indoors/town/tavern/saiga)
 "nVH" = (
 /obj/structure/mineral_door/wood/donjon/stone{
-	lockid = "church";
+	lockid = "priest";
 	name = "sleeping hall"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -15226,7 +15225,8 @@
 /area/rogue/outdoors/exposed/town/hamlet)
 "ppd" = (
 /obj/structure/mineral_door/wood/fancywood{
-	lockid = "church";
+	locked = 1;
+	lockid = "hpriest";
 	name = "priest office"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -18026,7 +18026,6 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
-/obj/item/roguekey/shop,
 /obj/item/clothing/mask/cigarette/rollie/nicotine,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/shop)
@@ -107995,7 +107994,7 @@ tsd
 bNO
 tsd
 bNO
-mlL
+fXS
 tsd
 bNO
 tsd
@@ -108398,11 +108397,11 @@ tsd
 sdp
 iiz
 bNO
-qxN
-qxN
-qxN
-qxN
-qxN
+krw
+krw
+krw
+krw
+krw
 fbL
 bvj
 wvR
@@ -108767,7 +108766,7 @@ sEn
 sEn
 sEn
 sEn
-mlL
+fXS
 sEn
 sEn
 sEn
@@ -108961,7 +108960,7 @@ sEn
 sEn
 sEn
 cfr
-mlL
+fXS
 sEn
 sEn
 sEn
@@ -108971,7 +108970,7 @@ sEn
 sEn
 sEn
 sEn
-mlL
+fXS
 sEn
 sEn
 sEn
@@ -132828,7 +132827,7 @@ hZX
 hZX
 hZX
 hZX
-krw
+pZn
 hZX
 hZX
 hZX
@@ -133804,7 +133803,7 @@ hZX
 hZX
 hZX
 hZX
-krw
+pZn
 hZX
 hZX
 hZX
