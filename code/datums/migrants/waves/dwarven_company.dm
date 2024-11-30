@@ -17,6 +17,12 @@
 	backl = /obj/item/rogueweapon/sword/scimitar/falchion
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
+	H.change_stat("strength", 3)
+	H.change_stat("perception", 2)
+	H.change_stat("intelligence", 1)
+	H.change_stat("constitution", 2)
+	H.change_stat("endurance", 3)
+	H.change_stat("speed", 2)
 
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
@@ -37,12 +43,6 @@
 		H.mind?.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-		H.change_stat("strength", 3)
-		H.change_stat("perception", 2)
-		H.change_stat("intelligence", 1)
-		H.change_stat("constitution", 2)
-		H.change_stat("endurance", 3)
-		H.change_stat("speed", 2)
 		ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
 
 /datum/migrant_role/dwarven_company/weaponsmith
