@@ -37,9 +37,8 @@
 			break
 	if(growed)
 		visible_message("<FONT COLOR='green'>[usr] blesses the crop with Dendor's Favour!</FONT><BR>")
-	return growed
-
-
+		return ..()
+	return FALSE
 //===========================================================================================
 
 // ---------------------- BESTIAL SENSES ----------------------------
@@ -63,7 +62,7 @@
 	sleep(20)
 	if((iself(user)))	// already got night vision so lets not fuck it up, instead get +1 PER
 		user.apply_status_effect(/datum/status_effect/buff/beastsense_elf)
-		return
+		return ..()
 	user.apply_status_effect(/datum/status_effect/buff/beastsense)
 
 
@@ -121,28 +120,15 @@
 	var/turf/T = user.loc
 	var/already_grown = locate(/obj/structure/kneestingers) in (T)
 	var/area/area = get_area(T)
-
 	if(!area.outdoors)
 		to_chat(user, span_notice("The open air is more suited for Dendors miracles..."))
-		return ..()
-
+		return FALSE
 	if(already_grown)
 		to_chat(user, span_notice("There are too many mycelia here already..."))
-		return ..()
-
-	sleep(10)
+		return FALSE
 	playsound(get_turf(user), 'sound/foley/gross.ogg', 90, TRUE)
 	new /obj/structure/kneestingers/decaying(T)
-
-/* The old terrible version made by YuiY1997 that spwans 4 kneestingers. Don't use.
-/obj/effect/proc_holder/spell/targeted/conjure_kneestingers/cast(list/targets,mob/user = usr)
-	var/turf/T = user.loc
-	for(var/X in GLOB.cardinals)
-		var/turf/TT = get_step(T, X)
-		if(!isclosedturf(TT) && !locate(/obj/structure/kneestingers) in TT)
-			new /obj/structure/kneestingers(TT)
-	return TRUE
-*/
+	return ..()
 
 
 //===========================================================================================
@@ -155,7 +141,7 @@
 	overlay_state = "trollshape"
 	charge_max = 30 MINUTES // cast once every 30 minutes, lasts for 3 minutes
 	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/dendor)
-	invocation = "DENDOR LEND ME YOUR POWER!!"
+	invocation = "DENDOR; LEND ME YOUR POWER!!"
 	invocation_type = "shout"
 	cooldown_min = 25 MINUTES
 	releasedrain = 100
@@ -164,20 +150,21 @@
 	user.emote("rage", forced = TRUE)
 	playsound(get_turf(user), 'sound/vo/smokedrag.ogg', 100, TRUE)
 	user.Immobilize(30)
-	sleep(30)
-	playsound(get_turf(user), 'sound/foley/sewflesh.ogg', 100, TRUE)
-	user.emote("pain", forced = TRUE)
-	to_chat(user, span_warning("My body is transforming, growing! Unbearable pain, Dendor has answered your prayers!"))
-	user.do_jitter_animation(40)
-	user.Immobilize(40)
-	sleep(40)
-	playsound(get_turf(user), 'sound/gore/flesh_eat_03.ogg', 100, TRUE)
-	user.emote("pain", forced = TRUE)
-	user.Immobilize(20)
-	user.do_jitter_animation(20)
-	sleep(20)
-	playsound(get_turf(user), 'sound/vo/mobs/troll/idle1.ogg', 100, TRUE)
-	playsound(get_turf(user), 'sound/gore/flesh_eat_03.ogg', 140, TRUE)
-	user.apply_status_effect(/datum/status_effect/buff/trollshape)
-	to_chat(user, span_warning("For a time, I manifest the power of a troll!"))
-
+	if(do_after(user,30))
+		playsound(get_turf(user), 'sound/foley/sewflesh.ogg', 100, TRUE)
+		user.emote("pain", forced = TRUE)
+		to_chat(user, span_warning("My body is transforming, growing! Unbearable pain, Dendor has answered your prayers!"))
+		user.do_jitter_animation(40)
+		user.Immobilize(40)
+		if(do_after(user,40))
+			playsound(get_turf(user), 'sound/gore/flesh_eat_03.ogg', 100, TRUE)
+			user.emote("pain", forced = TRUE)
+			user.Immobilize(20)
+			user.do_jitter_animation(20)
+			if(do_after(user,20))
+				playsound(get_turf(user), 'sound/vo/mobs/troll/idle1.ogg', 100, TRUE)
+				playsound(get_turf(user), 'sound/gore/flesh_eat_03.ogg', 140, TRUE)
+				user.apply_status_effect(/datum/status_effect/buff/trollshape)
+				to_chat(user, span_warning("For a time, I manifest the power of a troll!"))
+				return ..()
+	return FALSE

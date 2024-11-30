@@ -5,32 +5,32 @@
 	var/list/output_items = list() //List of paths for new items that should be created, [path = chance to be created]
 
 /datum/alch_cauldron_recipe/disease_cure
-	recipe_name = "Rotbane"
+	recipe_name = "Disease Cure"
 	smells_like = "purity"
 	output_reagents = list(/datum/reagent/medicine/diseasecure = 81)
 
 /datum/alch_cauldron_recipe/antidote
-	recipe_name = "Malicebane"
+	recipe_name = "Antidote"
 	smells_like = "wet moss"
 	output_reagents = list(/datum/reagent/medicine/antidote = 81)
 
 /datum/alch_cauldron_recipe/berrypoison
-	recipe_name = "Liquid Malice"
+	recipe_name = "Poison"
 	smells_like = "death"
 	output_reagents = list(/datum/reagent/berrypoison = 81)
 
 /datum/alch_cauldron_recipe/doompoison
-	recipe_name = "Liquid Doom"
+	recipe_name = "Strong Poison"
 	smells_like = "doom"
 	output_reagents = list(/datum/reagent/berrypoison = 81,/datum/reagent/additive = 81)
 
 /datum/alch_cauldron_recipe/stam_poison
-	recipe_name = "Liquid Malice"
+	recipe_name = "Stamina Poison"
 	smells_like = "a slow breeze"
 	output_reagents = list(/datum/reagent/stampoison = 81)
 
 /datum/alch_cauldron_recipe/big_stam_poison
-	recipe_name = "Liquid Doom"
+	recipe_name = "Strong Stamina Poison"
 	smells_like = "stagnant air"
 	output_reagents = list(/datum/reagent/stampoison = 81,/datum/reagent/additive = 81)
 

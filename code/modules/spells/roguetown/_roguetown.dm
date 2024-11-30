@@ -82,7 +82,7 @@
 	user.newtonian_move(get_dir(U, T))
 	update_icon()
 	start_recharge()
-	return TRUE
+	return ..()
 
 /obj/effect/proc_holder/spell/invoked/projectile/proc/fire_projectile(mob/living/user, atom/target)
 	current_amount--

@@ -25,8 +25,8 @@
 	sins = "Ignorance, Burning Books, Rashness"
 	boons = "None... yet."
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/invoked/blindness
-	t2 = /obj/effect/proc_holder/spell/invoked/invisibility
+	t1 = /obj/effect/proc_holder/spell/invoked/invisibility
+	t2 = /obj/effect/proc_holder/spell/invoked/blindness
 	t3 = null
 
 /datum/patron/divine/dendor
@@ -38,10 +38,10 @@
 	sins = "Deforestation, Overhunting, Disrespecting Nature"
 	boons = "Immunity to kneestingers."
 	added_traits = list(TRAIT_KNEESTINGER_IMMUNITY)
-	t0 = /obj/effect/proc_holder/spell/targeted/blesscrop
-	t1 = /obj/effect/proc_holder/spell/self/beastsense
-	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
-	t3 = /obj/effect/proc_holder/spell/targeted/conjure_kneestingers
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
+	t1 = /obj/effect/proc_holder/spell/targeted/blesscrop
+	t2 = /obj/effect/proc_holder/spell/self/beastsense
+	t3 = /obj/effect/proc_holder/spell/targeted/beasttame
 
 /datum/patron/divine/abyssor
 	name = "Abyssor"
@@ -52,7 +52,10 @@
 	sins = "Fear, Hubris, Forgetfulness"
 	boons = "Leeches will not latch onto you in murk."
 	added_traits = list(TRAIT_LEECHIMMUNE)
-
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
+	t1 = null
+	t2 = null
+	t3 = null
 /datum/patron/divine/necra
 	name = "Necra"
 	domain = "Mother Goddess of Death and Decay"

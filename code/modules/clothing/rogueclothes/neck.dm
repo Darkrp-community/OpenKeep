@@ -364,6 +364,12 @@
 	icon_state = "dendor"
 	resistance_flags = FIRE_PROOF
 
+/obj/item/clothing/neck/roguetown/psycross/silver/abyssor
+	name = "amulet of Abyssor"
+	desc = "Oceanshaper and guardian of the seas, make them remember his name."
+	icon_state = "malum_alt"
+	resistance_flags = FIRE_PROOF
+
 /obj/item/clothing/neck/roguetown/psycross/silver/necra
 	name = "amulet of Necra"
 	desc = "Where, grave, thy victory? I triumph still while the Veiled Lady abides by me."

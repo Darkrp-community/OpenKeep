@@ -21,6 +21,7 @@ SUBSYSTEM_DEF(death_arena)
 	listclearnulls(tollless_clients)
 
 	for(var/client as anything in tollless_clients)
+
 		if(world.time > tollless_clients[client])
 			for(var/mob/living/carbon/spirit/spirit in waiting_fighters)
 				if(!spirit.client.key == client)

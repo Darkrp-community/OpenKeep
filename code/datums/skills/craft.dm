@@ -24,6 +24,9 @@
 
 /datum/skill/craft/carpentry
 	name = "Carpentry"
+	dreams = list(
+		"...in the bitter cold, you stay in your cabin... in the dreary fire, the chair you made burns... the effort wasted, and yet you live..."
+	)
 
 /datum/skill/craft/masonry
 	name = "Masonry"

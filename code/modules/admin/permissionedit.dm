@@ -290,7 +290,7 @@
 	D.deactivate() //after logs so the deadmined admin can see the message.
 
 /datum/admins/proc/auto_deadmin()
-	to_chat(owner, "<span class='interface'>I are now a normal player.</span>")
+	to_chat(owner, "<span class='interface'>I am now a normal player.</span>")
 	var/old_owner = owner
 	deactivate()
 	message_admins("[old_owner] deadmined via auto-deadmin config.")
