@@ -239,8 +239,8 @@
 /obj/item/keyring/captain
 	keys = list(/obj/item/roguekey/captain, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/guest)
 
-/obj/item/keyring/queen
-	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/queen, /obj/item/roguekey/guest)
+/obj/item/keyring/consort
+	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/consort, /obj/item/roguekey/guest)
 
 /obj/item/keyring/guard
 	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls)
