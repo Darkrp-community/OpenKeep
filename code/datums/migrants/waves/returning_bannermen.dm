@@ -36,7 +36,7 @@
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
     	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	    ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	  	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 		if(H.age == AGE_OLD)
 			H.change_stat("strength", 3)
 			H.change_stat("perception", 1)
