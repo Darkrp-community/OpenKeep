@@ -12,9 +12,9 @@
 	health = 220
 	melee_damage_lower = 15
 	melee_damage_upper = 18
-	STASTR = 20
-	STAEND = 20
-	STASPD = 20
+	STASTR = 10
+	STAEND = 10
+	STASPD = 10
 	obj_damage = 20
 	environment_smash = ENVIRONMENT_SMASH_WALLS
 	attack_sound = BLADEWOOSH_LARGE

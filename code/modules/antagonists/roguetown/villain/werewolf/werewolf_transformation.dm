@@ -118,9 +118,9 @@
 	W.mind.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)
 	W.mind.adjust_skillrank(/datum/skill/misc/climbing, 6, TRUE)
 
-	W.STASTR = 20
-	W.STACON = 20
-	W.STAEND = 20
+	W.STASTR = 10
+	W.STACON = 10
+	W.STAEND = 10
 
 	W.AddSpell(new /obj/effect/proc_holder/spell/self/howl)
 	W.AddSpell(new /obj/effect/proc_holder/spell/self/claws)
