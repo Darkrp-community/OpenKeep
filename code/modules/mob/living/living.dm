@@ -1449,6 +1449,7 @@
 	else
 		mobility_flags |= MOBILITY_STAND
 		lying = 0
+	update_cone_show()
 
 /*
 	if(should_be_lying || restrained || incapacitated())

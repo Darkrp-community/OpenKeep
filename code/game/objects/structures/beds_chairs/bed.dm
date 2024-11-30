@@ -38,3 +38,11 @@
 		deconstruct(TRUE)
 	else
 		return ..()
+
+/obj/strucutre/bed/post_buckle_mob(mob/living/M)
+	. = ..()
+	M.update_cone_show()
+
+/obj/structure/bed/post_unbuckle_mob(mob/living/M)
+	. = ..()
+	M.update_cone_show()

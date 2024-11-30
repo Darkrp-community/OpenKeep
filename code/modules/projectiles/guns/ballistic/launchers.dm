@@ -13,7 +13,7 @@
 	var/damfactor = 1 // Multiplier for projectile damage. Used by bows and crossbows.
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/attackby(obj/item/A, mob/user, params)
-	..()
+	. = ..()
 	if(istype(A, /obj/item/ammo_box) || istype(A, /obj/item/ammo_casing))
 		chamber_round()
 
