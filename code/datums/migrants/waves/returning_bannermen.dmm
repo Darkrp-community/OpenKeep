@@ -1,6 +1,6 @@
 /datum/migrant_role/sergeant_at_arms
 	name = "Sergeant at arms"
-	greet_text = "You are an itinerant Knight, you have embarked alongside your squire on a voyage to fullfil your knightly vows."
-	outfit = /datum/outfit/job/roguetown/itinerant_knight
+	greet_text = "You were apart of an expedition sent by the King to Kingsfield, you and the mens under your command have returned upon fullfiling your task."
+	outfit = /datum/outfit/job/roguetown/sergeant_at_arms
 	allowed_races = list("Humen")
 	grant_lit_torch = TRUE
