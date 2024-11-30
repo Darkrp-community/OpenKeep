@@ -568,6 +568,7 @@
 #include "code\datums\migrants\migrant_role.dm"
 #include "code\datums\migrants\migrant_wave.dm"
 #include "code\datums\migrants\waves\heartfell_wave.dm"
+#include "code\datums\migrants\waves\itinerant_knight_wave.dm"
 #include "code\datums\mob_descriptors\mob_descriptor.dm"
 #include "code\datums\mob_descriptors\descriptors\body.dm"
 #include "code\datums\mob_descriptors\descriptors\face.dm"
