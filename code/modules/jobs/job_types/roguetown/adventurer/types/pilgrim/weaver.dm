@@ -40,7 +40,7 @@
 	category_tags = list(CTAG_TOWNER)
 	outfit = /datum/outfit/job/roguetown/adventurer/weaver_towner
 
-/datum/outfit/job/roguetown/adventurer/seamstress/weaver_towner/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/adventurer/weaver_towner/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
