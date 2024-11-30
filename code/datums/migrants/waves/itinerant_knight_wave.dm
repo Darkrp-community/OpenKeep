@@ -90,7 +90,7 @@
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 
 /datum/migrant_wave/knight
-	name = "The itinerant Knight"
+	name = "The Knightly journey"
 	max_spawns = 1
 	weight = 35
 	roles = list(
