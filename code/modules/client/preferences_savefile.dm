@@ -608,6 +608,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		init_keybindings()
 	for(var/key in GLOB.hotkey_keybinding_list_by_key)
 		var/list/key_name = GLOB.hotkey_keybinding_list_by_key[key]
+		if(!length(key_name))
+			continue
 		if(!(key_name[1] in keybind_names))
 			if(key in used_keys)
 				preference_message_list |= span_bold("[key_name[1]] is unbound and the default key is in use, please set the keybind yourself!")

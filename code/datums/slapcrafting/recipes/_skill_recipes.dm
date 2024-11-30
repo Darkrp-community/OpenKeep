@@ -5,13 +5,25 @@
 
 /datum/slapcraft_recipe/carpentry/structure
 	abstract_type = /datum/slapcraft_recipe/carpentry/structure
-	in_place_craft = TRUE
+	anchor_craft = TRUE
 	subcategory = SLAP_SUBCAT_STRUCTURE
 	craftsound = 'sound/foley/Building-01.ogg'
 
 /datum/slapcraft_recipe/carpentry/structure/check_craft_requirements(mob/user, turf/T)
 	if(istype(T,/turf/open/transparent/openspace))
 		return FALSE
+	if(istype(T, /turf/open/water))
+		return FALSE
+	if(istype(T, /turf/open/lava))
+		return FALSE
+	for(var/obj/structure/fluff/traveltile/TT in range(7, T))
+		return FALSE
+	for(var/obj/machinery/M in T)
+		if(M.density)
+			return FALSE
+	for(var/obj/structure/S in T)
+		if(S.density)
+			return FALSE
 	return ..()
 
 
@@ -22,13 +34,25 @@
 
 /datum/slapcraft_recipe/masonry/structure
 	abstract_type = /datum/slapcraft_recipe/masonry/structure
-	in_place_craft = TRUE
+	anchor_craft = TRUE
 	subcategory = SLAP_SUBCAT_STRUCTURE
 	craftsound = 'sound/foley/Building-01.ogg'
 
 /datum/slapcraft_recipe/masonry/structure/check_craft_requirements(mob/user, turf/T)
 	if(istype(T,/turf/open/transparent/openspace))
 		return FALSE
+	if(istype(T, /turf/open/water))
+		return FALSE
+	if(istype(T, /turf/open/lava))
+		return FALSE
+	for(var/obj/structure/fluff/traveltile/TT in range(7, T))
+		return FALSE
+	for(var/obj/machinery/M in T)
+		if(M.density)
+			return FALSE
+	for(var/obj/structure/S in T)
+		if(S.density)
+			return FALSE
 	return ..()
 
 /datum/slapcraft_recipe/engineering
@@ -38,11 +62,23 @@
 
 /datum/slapcraft_recipe/engineering/structure
 	abstract_type = /datum/slapcraft_recipe/engineering/structure
-	in_place_craft = TRUE
+	anchor_craft = TRUE
 	subcategory = SLAP_SUBCAT_STRUCTURE
 	craftsound = 'sound/foley/Building-01.ogg'
 
 /datum/slapcraft_recipe/engineering/structure/check_craft_requirements(mob/user, turf/T)
 	if(istype(T,/turf/open/transparent/openspace))
 		return FALSE
+	if(istype(T, /turf/open/water))
+		return FALSE
+	if(istype(T, /turf/open/lava))
+		return FALSE
+	for(var/obj/structure/fluff/traveltile/TT in range(7, T))
+		return FALSE
+	for(var/obj/machinery/M in T)
+		if(M.density)
+			return FALSE
+	for(var/obj/structure/S in T)
+		if(S.density)
+			return FALSE
 	return ..()
