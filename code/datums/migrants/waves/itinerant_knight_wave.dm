@@ -1,5 +1,5 @@
 /datum/migrant_role/itinerant_knight
-	name = "The itinerant Knight"
+	name = "Itinerant Knight"
 	greet_text = "You are an itinerant Knight, you have embarked alongside your squire on a voyage to fullfil your knightly vows."
 	outfit = /datum/outfit/job/roguetown/itinerant_knight
 	allowed_races = list("Humen")
@@ -48,7 +48,7 @@
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 
 /datum/migrant_role/itinerant_squire
-	name = "The itinerant Squire"
+	name = "Itinerant Squire"
 	greet_text = "You are the squire of an itinerant knight, they have taken you under their custody as you have shown great talents, if you keep it on, you might become a knight yourself."
 	outfit = /datum/outfit/job/roguetown/itinerant_squire
 	allowed_races = list("Humen")
