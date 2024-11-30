@@ -89,7 +89,7 @@
 		H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 
-/datum/migrant_wave/itinerant_knight
+/datum/migrant_wave/knight
 	name = "The itinerant Knight"
 	max_spawns = 1
 	weight = 35
