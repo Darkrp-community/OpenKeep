@@ -26,18 +26,10 @@
 
 /datum/outfit/job/roguetown/archivist/pre_equip(mob/living/carbon/human/H)
 	..()
-	if(H.dna.species.id == "Dwarf")
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
-		pants = /obj/item/clothing/under/roguetown/tights/black
-	else
-		if(H.gender == FEMALE)
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe/archivist
-		else
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe/archivist
-			pants = /obj/item/clothing/under/roguetown/tights/black
 	H.virginity = TRUE
+	armor = /obj/item/clothing/suit/roguetown/shirt/robe/archivist
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
+	pants = /obj/item/clothing/under/roguetown/tights/black
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/keyring/archivist
