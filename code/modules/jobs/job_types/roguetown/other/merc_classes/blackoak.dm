@@ -37,7 +37,6 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 
-		H.merctype = 4
 
 		H.change_stat("endurance", 2)
 		H.change_stat("strength", 1)

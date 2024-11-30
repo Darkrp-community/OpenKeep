@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/steppesman
-	name = "Steppesman"
-	tutorial = "A mercenary from hailing from the wild frontier steppes. There are three things you value most; saigas, freedom, and coin."
+	name = "Steppesman Archer"
+	tutorial = "A mercenary from hailing from the wild frontier steppes. There are three things you value most; saigas, freedom, and coin they use a bow for quick attacks alongside a sabre for close encounters"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -26,22 +26,22 @@
 	beltl= /obj/item/quiver/arrows
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	pants = /obj/item/clothing/under/roguetown/tights/red
-	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
+	neck = /obj/item/clothing/neck/roguetown/coif//some light neck and head armor
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/rogueweapon/knife/hunting = 1)
-	if(H.mind)
+	backpack_contents = list(/obj/item/rogueweapon/knife/hunting = 1, /obj/item/storage/belt/rogue/pouch/coins/poor = 1)
+	if(H.mind)//quick fighter that has Dodge Expert and a bow for ranged attacks, 4 weapon skills
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)

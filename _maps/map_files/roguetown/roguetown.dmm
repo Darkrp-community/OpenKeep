@@ -6155,6 +6155,7 @@
 	},
 /obj/structure/rack/rogue,
 /obj/item/clothing/neck/roguetown/talkstone,
+/obj/item/scrying,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},

@@ -270,7 +270,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 
 /datum/game_mode/chaosmode/proc/pick_maniac()
 	restricted_jobs = list("King",
-	"Queen",
+	"Consort",
 	"Merchant",
 	"Priest")
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
@@ -299,7 +299,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 /datum/game_mode/chaosmode/proc/pick_cultist()
 	var/remaining = 3 // 1 leader, 2 lackeys :)
 	restricted_jobs = list("King",
-	"Queen",
+	"Consort",
 	"Merchant",
 	"Priest")
 	antag_candidates = get_players_for_role(ROLE_ZIZOIDCULTIST)
