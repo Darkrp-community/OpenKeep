@@ -755,6 +755,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
 	icon_state = "tabi"
 	name = "kilij scimitar"
+	force = DAMAGE_SWORD-2
 	desc = "A curved blade of Zybantu origin meaning 'curved one'. The standard sword that saw the conquest of the Zybantine continent and peoples."
 	sellprice = 80
 
