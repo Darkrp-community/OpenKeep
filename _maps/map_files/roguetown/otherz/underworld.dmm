@@ -94,7 +94,7 @@
 /turf/open/floor/rogue/underworld/space,
 /area/rogue/underworld)
 "xG" = (
-/obj/effect/landmark/underworldcoin,
+/obj/effect/landmark/underworld_spawnpoint,
 /turf/open/floor/rogue/church,
 /area/rogue/underworld)
 "yn" = (
@@ -15064,7 +15064,7 @@ sO
 sO
 sO
 sO
-sO
+rm
 sO
 sO
 sO
@@ -25482,7 +25482,7 @@ kH
 Bj
 ol
 ol
-Wt
+xG
 Bj
 Lk
 Lk
@@ -25742,7 +25742,7 @@ kH
 Bj
 ol
 ol
-Wt
+xG
 Bj
 Lk
 Lk
