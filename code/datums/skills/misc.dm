@@ -6,7 +6,7 @@
 /datum/skill/misc/athletics
 	name = "Athletics"
 	dreams = list(
-		"...your heart beats wildly as your swords strike eachothers, you parry your opponent and finish him off with a decisive slash..."
+		"...you look behind you, and you can see their faces lessen, their silhouettes shrink - until they're only a spec on the horizon..."
 	)
 
 /datum/skill/misc/climbing
