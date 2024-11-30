@@ -373,7 +373,7 @@
 		AH = user
 		I = AH.used_intent.masteritem
 
-	var/dodge_score = D.simpmob_defend
+	var/dodge_score = D.defprob
 	if(D.rogfat >= D.maxrogfat)
 		return FALSE
 	if(!(D.mobility_flags & MOBILITY_STAND))							//Can't dodge when knocked down
@@ -384,7 +384,7 @@
 		else
 			dodge_score += ((D.STASPD * 10))
 	if(A)
-		dodge_score -= (A.mind ? (A.STASPD * 5) : A.simpmob_attack)
+		dodge_score -= A.STASPD * 5
 	if(I)
 		if(AH?.mind)
 			dodge_score -= (AH.mind.get_skill_level(I.associated_skill) * 10) //this means at legendary -60 dodge rating
