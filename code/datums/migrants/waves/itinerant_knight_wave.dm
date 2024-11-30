@@ -17,11 +17,9 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	belt = /obj/item/storage/belt/rogue/leather/steel
-		backpack_contents = list(
-		/obj/item/clothing/neck/roguetown/psycross/silver,
-		)
 	backr = /obj/item/storage/backpack/rogue/satchel/black
 	backl = /obj/item/rogueweapon/sword/long/greatsword
+	backpack_contents = list(/obj/item/clothing/neck/roguetown/psycross/silver)
 
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
