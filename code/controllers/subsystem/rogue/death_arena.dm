@@ -17,6 +17,13 @@ SUBSYSTEM_DEF(death_arena)
 	var/fight_force_end = null
 
 /datum/controller/subsystem/death_arena/fire(resumed = 0)
+	var/list/waiting = list()
+	for(var/atom in waiting_fighters)
+		if(isnull(atom))
+			return
+		waiting |= atom
+	waiting_fighters = waiting
+
 	for(var/client/client  as anything in tollless_clients)
 		if(QDELETED(client))
 			tollless_clients -= client
@@ -163,8 +170,35 @@ SUBSYSTEM_DEF(death_arena)
 /obj/structure/table/wood/fine/altar
 	name = "Ravox's sacrifical altar"
 	desc = "It awaits an offering of your triumphs"
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "ravox_altar"
 
 /obj/structure/table/wood/fine/altar/after_added_effects(obj/item/item, mob/user)
 	if(!istype(item, /obj/item/bodypart/head))
 		return
 	SSdeath_arena.process_fight_end(item, user)
+
+/obj/structure/underworld/ravox
+	name = "Ravox"
+	desc = "Ravox, God of Warfare, Justice, and Bravery. He finds solice in his friendship with Necra and his retreat to the Underworld. Upon your gaze, he gives you a respectful nod. Damn, he's cool.."
+	icon = 'icons/roguetown/underworld/ravox.dmi'
+	icon_state = "ravox"
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
+	anchored = TRUE
+	density = TRUE
+
+
+/obj/structure/underworld/necra
+	name = "Necra"
+	desc = "The Undermaiden herself, in her true form. The most ancient of living gods. She observes your battles gleefully, gratitude in her eyes to be relieved from the arduousness of eternity. Her close friend and confidant, Ravox, sits by her side. The two must have worked hard to restructure the underworld like this. They seem pleased with their work."
+	icon = 'icons/roguetown/underworld/necra.dmi'
+	icon_state = "necra"
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
+	anchored = TRUE
+	density = TRUE
+
+/obj/structure/underworld/necra/Initialize()
+	. = ..()
+	set_light(5, 4, 30, l_color = LIGHT_COLOR_BLUE)

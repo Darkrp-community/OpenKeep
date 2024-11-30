@@ -84,6 +84,12 @@
 	},
 /turf/open/floor/rogue/churchrough,
 /area/rogue/underworld)
+"xe" = (
+/obj/structure/underworld/necra{
+	pixel_x = -64
+	},
+/turf/open/floor/rogue/underworld/space,
+/area/rogue/underworld)
 "xn" = (
 /turf/open/floor/rogue/underworld/space,
 /area/rogue/underworld)
@@ -163,10 +169,10 @@
 /turf/closed/indestructible/wooddark/mast,
 /area/rogue)
 "GV" = (
-/obj/structure/underworld/carriageman{
-	pixel_x = -32;
-	pixel_y = -20;
-	name = "Necra PLACEHOLDER"
+/obj/structure/underworld/ravox{
+	layer = 4.82;
+	pixel_x = 7;
+	pixel_y = -6
 	},
 /turf/open/floor/rogue/church,
 /area/rogue/underworld)
@@ -25577,9 +25583,9 @@ xn
 xn
 xn
 xn
-xn
-GV
+xe
 Wt
+GV
 lw
 Wt
 Wt

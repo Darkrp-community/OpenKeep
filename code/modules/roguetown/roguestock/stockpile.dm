@@ -22,7 +22,7 @@
 /datum/roguestock/stockpile/stone
 	name = "Stone"
 	desc = "High quality rocks of stone used for construction."
-	item_type = /obj/item/natural/rock
+	item_type = /obj/item/natural/stone
 	held_items = 2
 	payout_price = 1
 	withdraw_price = 6
@@ -129,7 +129,7 @@
 	name = "Raw Tin"
 	desc = "Chunks of tin used for smithing and alloying."
 	item_type = /obj/item/rogueore/tin
-	held_items = list(6, 0)
+	held_items = 6
 	payout_price = 4
 	withdraw_price = 5
 	//transport_fee = 4
@@ -140,9 +140,9 @@
 	name = "Raw Silver"
 	desc = "Chunks of unrefined silver."
 	item_type = /obj/item/rogueore/silver
-	held_items = list(0, 0)
-	payout_price = 75
-	withdraw_price = 100
+	held_items = 0
+	payout_price = 45
+	withdraw_price = 50
 	//transport_fee = 10
-	export_price = 100
+	export_price = 50
 	importexport_amt = 10
