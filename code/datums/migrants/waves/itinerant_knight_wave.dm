@@ -89,3 +89,12 @@
 		H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 
+/datum/migrant_wave/itinerant_knight
+	name = "The itinerant Knight"
+	max_spawns = 1
+	weight = 35
+	roles = list(
+		/datum/migrant_role/itinerant_knight = 1,
+		/datum/migrant_role/itinerant_squire = 1,
+	)
+	greet_text = "The weight of Psydon's cross is heavy, the vows you have undertaken heavier, a Knight and their squire has took to the road to fullfill them."
