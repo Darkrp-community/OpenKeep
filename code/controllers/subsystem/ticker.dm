@@ -260,7 +260,7 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/checkreqroles()
 	var/list/readied_jobs = list()
-	var/list/required_jobs = list("King", "Queen", "Hand")
+	var/list/required_jobs = list("King", "Hand")
 #ifdef DEPLOY_TEST
 	required_jobs = list()
 	readied_jobs = list("King")

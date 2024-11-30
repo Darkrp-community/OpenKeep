@@ -108,17 +108,17 @@
 			if(HL.job == "King")
 				HL.job = "Ex-King"
 			if(HL.mind)
-				if(HL.mind.assigned_role == "Queen")
-					HL.mind.assigned_role = "Ex-Queen"
-			if(HL.job == "Queen")
-				HL.job = "Ex-Queen"
+				if(HL.mind.assigned_role == "Consort")
+					HL.mind.assigned_role = "Ex-Consort"
+			if(HL.job == "Consort")
+				HL.job = "Ex-Consort"
 		switch(HU.gender)
 			if("male")
 				HU.mind.assigned_role = "King"
 				HU.job = "King"
 			if("female")
-				HU.mind.assigned_role = "Queen"
-				HU.job = "Queen"
+				HU.mind.assigned_role = "Consort"
+				HU.job = "Consort"
 		SSticker.rulermob = HU
 		var/dispjob = mind.assigned_role
 		GLOB.badomens -= "nolord"
