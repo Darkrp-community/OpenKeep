@@ -512,7 +512,8 @@
 		if(user.mind)
 			if(user.mind.has_antag_datum(/datum/antagonist/werewolf))
 				var/mob/living/carbon/human/human = user
-				caused_wound?.werewolf_infect_attempt()
+				if(istype(caused_wound))
+					caused_wound?.werewolf_infect_attempt()
 				if(prob(30))
 					human.werewolf_feed(C)
 			if(user.mind.has_antag_datum(/datum/antagonist/zombie))
