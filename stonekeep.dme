@@ -1662,6 +1662,7 @@
 #include "code\modules\spells\roguetown\spider.dm"
 #include "code\modules\spells\roguetown\vampire.dm"
 #include "code\modules\spells\roguetown\wizard.dm"
+#include "code\modules\spells\roguetown\acolyte\abyssor.dm"
 #include "code\modules\spells\roguetown\acolyte\astrata.dm"
 #include "code\modules\spells\roguetown\acolyte\dendor.dm"
 #include "code\modules\spells\roguetown\acolyte\eora.dm"

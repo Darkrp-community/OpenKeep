@@ -32,6 +32,7 @@
 		for(var/obj/structure/closet/crate/coffin/C)
 			for(var/mob/living/carbon/human/B in C.contents)
 				B.funeral = TRUE
+	return ..()
 
 /obj/effect/proc_holder/spell/targeted/churn
 	name = "Churn Undead"
