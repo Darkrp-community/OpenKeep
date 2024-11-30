@@ -569,6 +569,8 @@
 #include "code\datums\migrants\migrant_wave.dm"
 #include "code\datums\migrants\waves\dark_itinerant_knight_wave.dm"
 #include "code\datums\migrants\waves\dwarven_company.dm"
+#include "code\datums\migrants\waves\dwarven_company.dm"
+#include "code\datums\migrants\waves\dwarven_company.dm"
 #include "code\datums\migrants\waves\returning_bannermen.dm"
 #include "code\datums\migrants\waves\heartfell_wave.dm"
 #include "code\datums\mob_descriptors\mob_descriptor.dm"
