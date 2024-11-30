@@ -35,8 +35,6 @@
 		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/blacksmithing, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/armorsmithing, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/smelting, 2, TRUE)
