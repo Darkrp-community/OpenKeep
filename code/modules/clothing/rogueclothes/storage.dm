@@ -66,13 +66,13 @@
 	new /obj/item/needle/thorn(src)
 	new /obj/item/roguekey/bandit(src)
 
-//Bandit's belt starts with a bandage and a key to their guildhall.
+//Mercs belt starts with a bandage and a key to their guildhall.
 /obj/item/storage/belt/rogue/leather/mercenary/PopulateContents()
 	new /obj/item/natural/cloth(src)
 	new /obj/item/roguekey/mercenary(src)
 
-/obj/item/storage/belt/rogue/leather/blacksmith/PopulateContents()
-	new /obj/item/roguekey/blacksmith(src)
+/obj/item/storage/belt/rogue/leather/mason/PopulateContents()
+	new /obj/item/roguekey/mercenary(src)
 
 /obj/item/storage/belt/rogue/leather/mercenary/shalal
 	name = "shalal belt"
@@ -118,6 +118,10 @@
 	item_state = "rope"
 	color = "#b9a286"
 	heldz_items = 1
+
+/obj/item/storage/belt/rogue/leather/rope/apprentice
+	desc = "A rope dyed yellow serves as a belt for Makers Guilds apprentices."
+	color = "#ac9a15"
 
 /obj/item/storage/belt/rogue/leather/cloth
 	name = "cloth sash"

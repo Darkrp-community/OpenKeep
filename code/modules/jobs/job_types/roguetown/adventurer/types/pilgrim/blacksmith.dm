@@ -1,5 +1,5 @@
 /datum/advclass/pilgrim/blacksmith
-	name = "Blacksmith"
+	name = "Wandering smith"
 	tutorial = "Hardy worksmen that are at home in the forge, dedicating their lives \
 	to ceaselessly toil in dedication to Malum."
 	allowed_sexes = list(MALE, FEMALE)
@@ -18,15 +18,12 @@
 /datum/outfit/job/roguetown/adventurer/blacksmith/pre_equip(mob/living/carbon/human/H)
 	..()
 	belt = /obj/item/storage/belt/rogue/leather
-
 	beltr = /obj/item/rogueweapon/hammer
 	beltl = /obj/item/rogueweapon/tongs
-
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	cloak = /obj/item/clothing/cloak/apron/brown
 	pants = /obj/item/clothing/under/roguetown/trou
-
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueore/coal=1, /obj/item/rogueore/iron=1, /obj/item/rogueweapon/knife/villager = 1)
 
@@ -36,6 +33,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(0,0,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
@@ -67,13 +65,4 @@
 	if(H.dna.species.id == "dwarf")
 		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
 		H.cmode_music = 'sound/music/combat_dwarf.ogg'
-
-
-/datum/advclass/pilgrim/blacksmith/towner
-	category_tags = list(CTAG_TOWNER)
-	outfit = /datum/outfit/job/roguetown/adventurer/blacksmith/towner
-
-/datum/outfit/job/roguetown/adventurer/blacksmith/towner/pre_equip(mob/living/carbon/human/H)
-	..()
-	belt = /obj/item/storage/belt/rogue/leather/blacksmith
 
