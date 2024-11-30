@@ -72,6 +72,11 @@
 /obj/structure/bars/grille,
 /turf/open/water/swamp,
 /area/rogue/under/catacombs/dwarfoutpost)
+"hi" = (
+/obj/structure/flora/roguegrass/water/reeds,
+/obj/item/rogueweapon/pick/paxe/neu,
+/turf/open/water/swamp,
+/area/rogue/under/catacombs/dwarfoutpost)
 "hz" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/pick/paxe/neu,
@@ -1374,7 +1379,7 @@ gl
 tq
 fV
 BW
-XT
+hi
 BW
 BW
 Pj
