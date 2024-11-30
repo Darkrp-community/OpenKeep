@@ -5524,13 +5524,6 @@
 /obj/item/grown/log/tree/stick,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/shelter/rtfield)
-"sa" = (
-/obj/structure/fluff/traveltile{
-	aportalgoesto = "vanderlin-mountain_town-town";
-	aportalid = "vanderlin-mountain_town-mountain"
-	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/under/cavelava)
 "sb" = (
 /obj/structure/bed/rogue/inn/double,
 /obj/item/bedsheet/rogue/double_pelt,
@@ -146225,7 +146218,7 @@ Uk
 Uk
 lW
 lW
-sa
+oX
 oX
 qh
 qh

@@ -11,4 +11,4 @@ vanderlin_bog.dmm
 	The Duke of Ook
 
 vanderlin_mountain.dmm
-	Nobody
+	Mow (KM-Catman)
