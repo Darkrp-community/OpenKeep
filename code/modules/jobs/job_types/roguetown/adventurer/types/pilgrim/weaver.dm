@@ -9,7 +9,7 @@
 	"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/tailor
-	category_tags = list(CTAG_PILGRIM)
+//	category_tags = list(CTAG_PILGRIM)	Actually these guys are pure bloat, pilgrims need to have their own take on stuff, not be carbon copies.
 
 /datum/outfit/job/roguetown/adventurer/tailor/pre_equip(mob/living/carbon/human/H)
 	..()
