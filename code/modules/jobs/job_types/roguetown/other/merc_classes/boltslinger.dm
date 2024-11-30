@@ -1,5 +1,5 @@
 /datum/advclass/mercenary/boltslinger
-	name = "Boltslinger Sharpshooter"
+	name = "Vagabond Boltslinger"
 	tutorial = "A cutthroat and a soldier of fortune, your mastery of the crossbow has brought you to many battlefields, all in pursuit of mammon, you don't stay behind from being a good fighter with one handed swords either."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(

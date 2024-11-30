@@ -1,5 +1,5 @@
 /datum/advclass/mercenary/crimson
-	name = "Crimson Marauder"
+	name = "Bloodsworn Skirmisher"
 	tutorial = "You come from the far-off savage realm of the Crimsonlands, your people are renown marauders, engaging in various ranged skirmishes before committing terrifiying charges against your whittled down foe. Fear, munitions and brutality are the way of the Jinetes, and this place is willing to pay top mammon for a warrior of your ability, you have been trained to use effectively the spear and shield, alongside your trusty knife."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list("Tiefling")
