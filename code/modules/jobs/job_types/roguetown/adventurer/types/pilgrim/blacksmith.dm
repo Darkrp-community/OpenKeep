@@ -13,7 +13,7 @@
 		"Aasimar"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/blacksmith
-	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
+	category_tags = list(CTAG_PILGRIM)
 
 /datum/outfit/job/roguetown/adventurer/blacksmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -67,3 +67,13 @@
 	if(H.dna.species.id == "dwarf")
 		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
 		H.cmode_music = 'sound/music/combat_dwarf.ogg'
+
+
+/datum/advclass/pilgrim/blacksmith/towner
+	category_tags = list(CTAG_TOWNER)
+	outfit = /datum/outfit/job/roguetown/adventurer/blacksmith/towner
+
+/datum/outfit/job/roguetown/adventurer/blacksmith/towner/pre_equip(mob/living/carbon/human/H)
+	..()
+	belt = /obj/item/storage/belt/rogue/leather/blacksmith
+

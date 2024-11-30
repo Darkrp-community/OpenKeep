@@ -71,6 +71,9 @@
 	new /obj/item/natural/cloth(src)
 	new /obj/item/roguekey/mercenary(src)
 
+/obj/item/storage/belt/rogue/leather/blacksmith/PopulateContents()
+	new /obj/item/roguekey/blacksmith(src)
+
 /obj/item/storage/belt/rogue/leather/mercenary/shalal
 	name = "shalal belt"
 	icon_state = "shalal"
