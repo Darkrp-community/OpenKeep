@@ -13,6 +13,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	associated_skill = /datum/skill/combat/axesmaces
 	smeltresult = /obj/item/ingot/iron
+	var/can_smith = TRUE
 
 /obj/proc/unbreak()
 	return
@@ -187,8 +188,9 @@
 	name = "wooden mallet"
 	desc = "A wooden mallet is an artificers second best friend! But it may also come in handy to a smith..."
 	icon_state = "whammer"
-	force = 16
+	force = 4
 	smeltresult = null
+	can_smith = FALSE
 
 /obj/item/rogueweapon/hammer/copper
 	force = 8

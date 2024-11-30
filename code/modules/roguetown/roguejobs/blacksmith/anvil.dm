@@ -56,6 +56,9 @@
 			return
 
 	if(istype(W, /obj/item/rogueweapon/hammer))
+		var/obj/item/rogueweapon/hammer/hammer = W
+		if(!hammer.can_smith)
+			return
 		user.changeNext_move(CLICK_CD_MELEE)
 		if(!hingot)
 			return
