@@ -243,7 +243,7 @@
 		var/mob/living/carbon/human/B = user
 		switch(B.dna.species.id)
 			if("human") // Half elves too
-				switch(pick(1,2,3,4,5))
+				switch(rand(1,5))
 					if(1)
 						user.say("Your mother was a Rous, and your father smelled of jacksberries!", forced = "spell")
 					if(2)
@@ -256,7 +256,7 @@
 						user.say("I shall ne'er desist from thee, nor shall I ever disappoint thee much~", forced = "spell")
 
 			if("elf")
-				switch(pick(1,2,3,4,5))
+				switch(rand(1,5))
 					if(1)
 						user.say("As graceful as a drunken mole, I see!", forced = "spell")
 					if(2)
@@ -269,7 +269,7 @@
 						user.say("Uncultured churls, barely worth my words!", forced = "spell")
 
 			if("dwarf")
-				switch(pick(1,2,3,4,5))
+				switch(rand(1,5))
 					if(1)
 						user.say("If yer mind was as sharp as yer ears, we wouldn't be in this mess!", forced = "spell")
 					if(2)

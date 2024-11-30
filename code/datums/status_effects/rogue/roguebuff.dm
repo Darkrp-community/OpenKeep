@@ -353,13 +353,13 @@
 	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
 	if (!eyes || eyes.lighting_alpha)
 		return
-	ADD_TRAIT(owner, TRAIT_BESTIALSENSE)
+	ADD_TRAIT(owner, TRAIT_BESTIALSENSE, src)
 	owner.update_sight()
 
 /datum/status_effect/buff/beastsense/on_remove()
 	. = ..()
 	to_chat(owner, span_warning("Darkness shrouds your senses once more."))
-	REMOVE_TRAIT(owner, BESTIALSENSE)
+	REMOVE_TRAIT(owner, TRAIT_BESTIALSENSE, src)
 	owner.update_sight()
 
 /datum/status_effect/buff/beastsense_elf
@@ -403,7 +403,7 @@
 		to_chat(C, span_warning("Dendors transformation fades, flesh shrinking back. My body aches..."))
 		C.adjustBruteLoss(10)
 		C.apply_status_effect(/datum/status_effect/debuff/barbfalter)
-		C.resize = 0.85
+		C.resize = 1
 		C.update_transform()
 		C.AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, 2)
 

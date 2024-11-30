@@ -15,6 +15,7 @@
 	sound = 'sound/magic/whiteflame.ogg'
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
+	miracle = TRUE
 	charge_max = 120 SECONDS
 	devotion_cost = -40
 
@@ -22,7 +23,7 @@
 	name = "Swordfish"
 	desc = "But one enactor of Abyssor's wrath."
 	icon = 'icons/roguetown/misc/fish.dmi'
-	icon_state = "Swordfish"
+	icon_state = "swordfish"
 	force = 10
 	dropshrink = 0.8
 	possible_item_intents = list(/datum/intent/dagger/thrust)
@@ -31,14 +32,33 @@
 	name = "Swordfish"
 	desc = "But one enactor of Abyssor's wrath."
 	damage = 30
+	nodamage = FALSE
 	damage_type = BRUTE
 	icon = 'icons/roguetown/misc/fish.dmi'
-	icon_state = "SwordfishProjectile"
-	ammo_type = /obj/item/reagent_containers/food/snacks/fish/swordfish
+	icon_state = "swordfish_proj"
 	range = 10
+	dropped = /obj/item/reagent_containers/food/snacks/fish/swordfish
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
 	embedchance = 100
 	armor_penetration = 100
 	woundclass = BCLASS_STAB
 	flag =  "piercing"
-	speed = 0.6
+	speed = 0.4
+
+/obj/projectile/magic/swordfish/on_hit(atom/target, blocked)
+	. = ..()
+	if(ismob(target))
+		var/mob/hit = target
+		if(hit.anti_magic_check())
+			hit.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			return BULLET_ACT_BLOCK
+	handle_drop()
+
+
+/obj/projectile/magic/swordfish/handle_drop()
+	var/turf/T = get_turf(src)
+	dropped = new dropped(T)
+
+/obj/projectile/magic/swordfish/on_range()
+	handle_drop()
+	..()

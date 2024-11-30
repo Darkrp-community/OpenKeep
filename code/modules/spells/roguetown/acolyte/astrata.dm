@@ -28,14 +28,14 @@
 		L.adjust_fire_stacks(5)
 		L.IgniteMob()
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, ExtinguishMob)), 7 SECONDS)
-		return TRUE
+		return ..()
 
 	// Spell interaction with ignitable objects (burn wooden things, light torches up)
 	else if(isobj(targets[1]))
 		var/obj/O = targets[1]
 		if(O.fire_act())
 			user.visible_message("<font color='yellow'>[user] points at [O], igniting it with sacred flames!</font>")
-			return TRUE
+			return ..()
 		else
 			to_chat(user, "<span class='warning'>You point at [O], but it fails to catch fire.</span>")
 			return FALSE
@@ -79,7 +79,7 @@
 		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
 			target.visible_message("<span class='danger'>[target] is unmade by holy light!</span>", "<span class='userdanger'>I'm unmade by holy light!</span>")
 			target.gib()
-			return TRUE
+			return ..()
 		if(!target.revive(full_heal = FALSE))
 			to_chat(user, "<span class='warning'>Nothing happens.</span>")
 			return FALSE
@@ -99,7 +99,7 @@
 		if(target.mind && revive_pq && !HAS_TRAIT(target, TRAIT_IWASREVIVED) && user?.ckey)
 			adjust_playerquality(revive_pq, user.ckey)
 			ADD_TRAIT(target, TRAIT_IWASREVIVED, "[type]")
-		return TRUE
+		return ..()
 	return FALSE
 
 /obj/effect/proc_holder/spell/invoked/revive/cast_check(skipcharge = 0,mob/user = usr)

@@ -84,5 +84,4 @@
 				L.Stun(50)
 			else
 				L.visible_message("<span class='warning'>[L] resists being churned!</span>", "<span class='userdanger'>I resist being churned!</span>")
-	..()
-	return TRUE
+	return ..()
