@@ -8,6 +8,7 @@
 /datum/outfit/job/roguetown/itinerant_knight/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/helmet/visored/sallet
+	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	gloves = /obj/item/clothing/gloves/roguetown/plate
 	pants = /obj/item/clothing/under/roguetown/platelegs
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
