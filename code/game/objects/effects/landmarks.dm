@@ -443,13 +443,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/underworld
 	name = "underworld spawn"
 
-/obj/effect/landmark/underworldcoin
-	name = "ferryman coin"
+/obj/effect/landmark/underworld_spawnpoint
+	name = "underworld spawnpoint"
 
 /obj/effect/landmark/underworldsafe // To prevent demons spawn camping will save a lot of ear rape.
 	name = "safe zone"
 
-/obj/effect/landmark/underworldcoin/Initialize(mapload)
+/obj/effect/landmark/underworld_spawnpoint/Initialize(mapload)
 	SHOULD_CALL_PARENT(FALSE)
 	GLOB.underworldcoinspawns += loc
 	return INITIALIZE_HINT_QDEL

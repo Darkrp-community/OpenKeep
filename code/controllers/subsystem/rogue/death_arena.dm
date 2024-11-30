@@ -20,13 +20,12 @@ SUBSYSTEM_DEF(death_arena)
 	listclearnulls(waiting_fighters)
 	listclearnulls(tollless_clients)
 
-	for(var/client/client  as anything in tollless_clients)
-		if(QDELETED(client))
-			tollless_clients -= client
-			continue
+	for(var/client as anything in tollless_clients)
+
 		if(world.time > tollless_clients[client])
-			if(istype(client.mob, /mob/living/carbon/spirit))
-				var/mob/living/carbon/spirit/spirit = client.mob
+			for(var/mob/living/carbon/spirit/spirit in waiting_fighters)
+				if(!spirit.client.key == client)
+					continue
 				spirit.give_patron_toll()
 				remove_fighter(spirit)
 				tollless_clients -= client
@@ -44,7 +43,7 @@ SUBSYSTEM_DEF(death_arena)
 
 /datum/controller/subsystem/death_arena/proc/add_fighter(mob/living/fighter)
 	waiting_fighters += fighter
-	tollless_clients[fighter.client] = world.time + 8 MINUTES
+	tollless_clients[fighter.client.key] = world.time + 8 MINUTES
 	RegisterSignal(fighter, COMSIG_PARENT_QDELETING, PROC_REF(remove_fighter), fighter)
 
 /datum/controller/subsystem/death_arena/proc/remove_fighter(mob/living/fighter)
@@ -95,7 +94,7 @@ SUBSYSTEM_DEF(death_arena)
 
 	fighters_heads = list()
 	user.returntolobby()
-	tollless_clients -= user.client
+	tollless_clients -= user.client.key
 
 	for(var/mob/living/carbon/carbon in fighters)
 		fighters -= carbon
