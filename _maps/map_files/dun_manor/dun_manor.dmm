@@ -8420,6 +8420,7 @@
 "iim" = (
 /obj/structure/closet/crate/chest/neu_iron,
 /obj/item/clothing/neck/roguetown/talkstone,
+/obj/item/scrying,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/magician)
 "iiy" = (

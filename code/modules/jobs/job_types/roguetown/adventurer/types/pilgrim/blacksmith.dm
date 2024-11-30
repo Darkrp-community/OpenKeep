@@ -38,9 +38,9 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(0,0,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(1,2,2), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/masonry, pick(1,1,2), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, pick(1,1,2), TRUE) // For the bin
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 2, TRUE) // For the bin
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE) // For craftable beartraps
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
