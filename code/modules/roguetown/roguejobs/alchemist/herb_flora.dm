@@ -9,6 +9,12 @@
 	dir = SOUTH
 	var/list/looty = list()
 	var/herbtype
+	var/obj/effect/skill_tracker/alchemy_plants/alchemy_effect
+
+/obj/structure/flora/roguegrass/herb/Initialize()
+	. = ..()
+	desc = "An herb. This one looks like [name]."
+	alchemy_effect = new(get_turf(src), src)
 
 /obj/structure/flora/roguegrass/herb/update_icon()
 	return
