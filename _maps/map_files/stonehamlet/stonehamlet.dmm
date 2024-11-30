@@ -5714,9 +5714,8 @@
 	icon_state = "tablewood2"
 	},
 /obj/item/candle/yellow,
-/obj/item/roguekey/blacksmith{
-	pixel_x = -9
-	},
+/obj/item/keyring/blacksmith,
+/obj/item/keyring/blacksmith,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
 "fMh" = (
@@ -13023,6 +13022,12 @@
 /obj/structure/kneestingers,
 /turf/open/water/sewer,
 /area/rogue/outdoors/exposed/under/sewer)
+"nop" = (
+/obj/effect/landmark/start/armorsmith{
+	dir = 8
+	},
+/turf/open/floor/rogue/wood/saiga,
+/area/rogue/indoors/shelter/town/dwarf)
 "noC" = (
 /obj/structure/fluff/railing/border{
 	dir = 1;
@@ -13185,7 +13190,6 @@
 "nzc" = (
 /obj/item/natural/stone,
 /obj/structure/fluff/customsign{
-	desc = "The olde district hath been cursed by Pestra and the sinners who dwell therein art proscribed by laws of both Gods and Men.";
 	name = "CAVE-IN SHAFT CLOSED";
 	pixel_y = 18
 	},
@@ -13582,6 +13586,9 @@
 /obj/structure/fluff/railing/border{
 	dir = 6;
 	icon_state = "border"
+	},
+/obj/effect/landmark/start/weaponsmith{
+	dir = 4
 	},
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
@@ -31987,7 +31994,7 @@ xAF
 xAF
 oWJ
 woM
-woM
+oPj
 lOZ
 lOZ
 mzh
@@ -32371,8 +32378,8 @@ ikE
 cmZ
 kuQ
 oXJ
-woM
-oPj
+oXJ
+oXJ
 oXJ
 ioS
 sjL
@@ -82622,7 +82629,7 @@ hZX
 hZX
 xvb
 orz
-sFy
+nop
 sFy
 iGU
 xvb
