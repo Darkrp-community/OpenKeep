@@ -3,8 +3,8 @@
 	flag = BLACKSMITH
 	department_flag = SERFS
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 
 	allowed_races = list(
 		"Humen",
@@ -74,8 +74,8 @@
 	flag = BLACKSMITH
 	department_flag = SERFS
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 
 	allowed_races = list(
 		"Humen",
