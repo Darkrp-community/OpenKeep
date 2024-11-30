@@ -2,6 +2,7 @@
 
 /*	..................   Pigflowers   ................... */
 /obj/structure/flora/rogueflower // ausbushes recolored
+	name = "flowers"
 	icon = 'icons/roguetown/misc/pigflora.dmi'
 	icon_state = "reedbush_1"
 
