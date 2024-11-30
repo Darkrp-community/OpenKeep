@@ -2,6 +2,7 @@
 
 /*	..................   Pigflowers   ................... */
 /obj/structure/flora/rogueflower // ausbushes recolored
+	name = "flowers"
 	icon = 'icons/roguetown/misc/pigflora.dmi'
 	icon_state = "reedbush_1"
 
@@ -76,12 +77,12 @@
 /datum/map_template/roadblock_i
 	name = "Roadblock"
 	id = "roadblock_1"
-	mappath = "_maps/map_files/templates/neuhamlet/roadblock_1.dmm"
+	mappath = "_maps/map_files/templates/stonehamlet/roadblock_1.dmm"
 
 /datum/map_template/roadblock_ii
 	name = "No roadblock"
 	id = "roadblock_2"
-	mappath = "_maps/map_files/templates/neuhamlet/roadblock_2.dmm"
+	mappath = "_maps/map_files/templates/stonehamlet/roadblock_2.dmm"
 
 /*	..................   Outlaw camp   ................... */
 /obj/effect/landmark/map_load_mark/hamlet_outlaws
@@ -91,12 +92,12 @@
 /datum/map_template/outlawcamp_i
 	name = "Outlaw camp"
 	id = "outlawcamp_1"
-	mappath = "_maps/map_files/templates/neuhamlet/outlawcamp_1.dmm"
+	mappath = "_maps/map_files/templates/stonehamlet/outlawcamp_1.dmm"
 
 /datum/map_template/outlawcamp_ii
 	name = "Empty outlaw camp"
 	id = "outlawcamp_2"
-	mappath = "_maps/map_files/templates/neuhamlet/outlawcamp_2.dmm"
+	mappath = "_maps/map_files/templates/stonehamlet/outlawcamp_2.dmm"
 
 // ===================================================================================
 /*

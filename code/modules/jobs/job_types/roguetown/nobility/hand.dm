@@ -15,7 +15,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/hand
 	display_order = JDO_HAND
-	tutorial = "You owe everything to your liege. Once, you were just a humble friend- now you are one of the most important men within the kingdom itself. You have played spymaster and confidant to the Noble-Family for so long that you are a vault of intrigue, something you exploit with potent conviction. Let no man ever forget whose ear you whisper into. Youve killed more men with those lips than any blademaster could ever claim to."
+	tutorial = "Once, you were a mere childhood friend of the monarch of Rockhill; now, you are one of the most important people in the kingdom. Your roles are right-hand man, confidant, and spymaster alike, and you have killed more with your whispers than with a blade."
 	bypass_lastclass = TRUE
 	whitelist_req = FALSE
 	give_bank_account = 120

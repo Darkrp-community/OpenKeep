@@ -589,6 +589,7 @@
 	swingsound = BLADEWOOSH_LARGE
 	parrysound = "largeblade"
 	pickup_sound = "brandish_blade"
+	minstr = 9
 	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	gripsprite = TRUE
@@ -754,7 +755,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
 	icon_state = "tabi"
 	name = "kilij scimitar"
-	force = DAMAGE_SWORD-2
 	desc = "A curved blade of Zybantu origin meaning 'curved one'. The standard sword that saw the conquest of the Zybantine continent and peoples."
 	sellprice = 80
 
@@ -924,15 +924,15 @@
 				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
 //................ Kriegsmesser ............... //
-/obj/item/rogueweapon/sword/long/greatsword/elfgsword
+/obj/item/rogueweapon/sword/long/kriegsmesser
 	name = "elven kriegsmesser"
-	desc = "A huge, curved elven blade. It's metal is of a high quality, yet still light, crafted by the greatest elven bladesmiths."
+	desc = "A long, curved elven blade. It's metal is of a high quality, yet still light, crafted by the greatest elven bladesmiths."
 	icon_state = "kriegsmesser"
 	wdefense = ULTMATE_PARRY
-	minstr = 11
+	minstr = 10
 	sellprice = 120
 
-/obj/item/rogueweapon/sword/long/greatsword/elfgsword/getonmobprop(tag)
+/obj/item/rogueweapon/sword/long/kriegsmesser/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)

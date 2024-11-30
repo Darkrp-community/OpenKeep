@@ -125,6 +125,12 @@
 /obj/item/storage/belt/rogue/leather/cloth/lady
 	color = "#575160"
 
+/obj/item/storage/belt/rogue/leather/cloth/tailor
+	color = "#756889"
+/obj/item/storage/belt/rogue/leather/cloth/tailor/Initialize()
+	. = ..()
+	new /obj/item/roguekey/tailor(src)
+
 /obj/item/storage/belt/rogue/leather/cloth/bandit
 	color = "#ff0000"
 

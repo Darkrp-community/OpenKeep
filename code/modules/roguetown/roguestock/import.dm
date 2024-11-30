@@ -53,13 +53,13 @@
 /datum/roguestock/import/iron
 	name = "Iron scrap import"
 	desc = "These ingots come at a steep price."
-	item_type = /obj/structure/closet/crate/chest/crate/steward/wheat
+	item_type = /obj/structure/closet/crate/chest/crate/steward/iron
 	export_price = 150
 	importexport_amt = 1
 
-/obj/structure/closet/crate/chest/crate/steward/wheat/PopulateContents()
+/obj/structure/closet/crate/chest/crate/steward/iron/PopulateContents()
 	for(var/i in 1 to 5)
-		new /obj/item/reagent_containers/food/snacks/produce/wheat(src)
+		new /obj/item/rogueore/iron(src)
 
 // ---------- Mining Tools ----------------
 /datum/roguestock/import/miningtools
