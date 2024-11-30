@@ -649,6 +649,19 @@
 	range = 11
 	spawn_text = ""
 
+/*	..................   Cabbit Boss Spawner   ................... */
+/obj/structure/idle_enemy/cabbit_boss
+/obj/structure/idle_enemy/cabbit_boss/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/cabbit_boss)
+/datum/component/spawner/cabbit_boss
+	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/troll/caerbannog)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
 
 // ===================================================================================
 /*	..................   Metal bars (weakened or normal?)  ................... */

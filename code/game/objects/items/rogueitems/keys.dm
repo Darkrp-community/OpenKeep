@@ -270,7 +270,7 @@
 
 /obj/item/roguekey/niteman
 	name = "nitemaster's key"
-	desc = "The master key of Eora's House."
+	desc = "The master key of the bathhouse."
 	icon_state = "greenkey"
 	lockid = "nightman"
 
@@ -321,6 +321,11 @@
 	desc = "This key is used by the Physickers."
 	icon_state = "birdkey"
 	lockid = "doctor"
+
+/obj/item/roguekey/tailor
+	name = "tailors key"
+	icon_state = "brownkey"
+	lockid = "tailor"
 
 //grenchensnacker
 /obj/item/roguekey/porta
