@@ -92,6 +92,7 @@
 /datum/migrant_wave/knight
 	name = "The Knightly journey"
 	max_spawns = 1
+	shared_wave_type = /datum/migrant_wave/knight
 	weight = 35
 	roles = list(
 		/datum/migrant_role/itinerant_knight = 1,
