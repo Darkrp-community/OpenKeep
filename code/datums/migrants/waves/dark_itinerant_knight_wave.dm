@@ -49,7 +49,7 @@
 /datum/migrant_role/dark_itinerant_squire
 	name = "Dark itinerant Squire"
 	greet_text = "You are the squire of an evil knight, they have taken you under their custody as you were the only one who didn't object to their dubious ethics."
-	outfit = /datum/outfit/job/roguetown/dark_itinerant_squireitinerant_squire
+	outfit = /datum/outfit/job/roguetown/dark_itinerant_squire
 	allowed_races = list("tiefling")
 	grant_lit_torch = TRUE
 
