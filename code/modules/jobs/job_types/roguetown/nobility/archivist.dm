@@ -28,7 +28,7 @@
 	..()
 	H.virginity = TRUE
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/archivist
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/lord
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
