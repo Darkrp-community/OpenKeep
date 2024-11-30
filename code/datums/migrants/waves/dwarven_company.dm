@@ -47,7 +47,7 @@
 
 /datum/migrant_role/dwarven_company/weaponsmith
 	name = "Weapon Smith"
-	greet_text = " You are the weapon smith of a dwarven expedition, obey your foremand as they lead you in Matthios steps into the tomb of Malum."
+	greet_text = " You are the weaponsmith of a dwarven expedition, obey your foremand as they lead you in Matthios steps into the tomb of Malum."
 	outfit = /datum/outfit/job/roguetown/dwarven_company/weaponsmith
 
 	allowed_races = list("Dwarf")
@@ -105,7 +105,7 @@
 
 /datum/migrant_role/dwarven_company/armorsmith
 	name = "Weapon Smith"
-	greet_text = " You are the weapon smith of a dwarven expedition, obey your foremand as they lead you in Matthios steps into the tomb of Malum."
+	greet_text = " You are the armorsmith of a dwarven expedition, obey your foremand as they lead you in Matthios steps into the tomb of Malum."
 	outfit = /datum/outfit/job/roguetown/dwarven_company/armorsmith
 
 	allowed_races = list("Dwarf")
