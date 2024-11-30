@@ -71,27 +71,27 @@
 	                        /obj/structure/kneestingers = 3)
 
 
-// ----------------		ROUGE HAMLET 2.0	--------------------
-/obj/effect/landmark/mapGenerator/rogue/roguetown_hamlet
-	mapGeneratorType = /datum/mapGenerator/roguetown_hamlet
+// ----------------		STONEHAMLET	--------------------
+/obj/effect/landmark/mapGenerator/rogue/stonehamlet
+	mapGeneratorType = /datum/mapGenerator/stonehamlet
 	endTurfX = 128
 	endTurfY = 192
 	startTurfX = 1
 	startTurfY = 1
 
-/datum/mapGenerator/roguetown_hamlet
+/datum/mapGenerator/stonehamlet
 	modules = list(
-		/datum/mapGeneratorModule/roguehamlet,
-		/datum/mapGeneratorModule/roguehamlet/roadturf,
-		/datum/mapGeneratorModule/roguehamlet/bonus_grassturfs,
-		/datum/mapGeneratorModule/roguehamlet/bonus_ambushsturfs,
-		/datum/mapGeneratorModule/roguehamlet_grassturf,
-		/datum/mapGeneratorModule/roguehamlet_swampturf,
-		/datum/mapGeneratorModule/roguehamlet_waterturf,
-		/datum/mapGeneratorModule/roguehamlet_buriedtreasure,
+		/datum/mapGeneratorModule/stonehamlet,
+		/datum/mapGeneratorModule/stonehamlet/roadturf,
+		/datum/mapGeneratorModule/stonehamlet/bonus_grassturfs,
+		/datum/mapGeneratorModule/stonehamlet/bonus_ambushsturfs,
+		/datum/mapGeneratorModule/stonehamlet_grassturf,
+		/datum/mapGeneratorModule/stonehamlet_swampturf,
+		/datum/mapGeneratorModule/stonehamlet_waterturf,
+		/datum/mapGeneratorModule/stonehamlet_buriedtreasure,
 		/datum/mapGeneratorModule/ambushing/hamlet)
 
-/datum/mapGeneratorModule/roguehamlet
+/datum/mapGeneratorModule/stonehamlet
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
@@ -104,7 +104,7 @@
 	spawnableTurfs = list(/turf/open/floor/rogue/dirt/road=5)
 	allowed_areas = list(/area/rogue/outdoors/rtfield)
 
-/datum/mapGeneratorModule/roguehamlet/roadturf
+/datum/mapGeneratorModule/stonehamlet/roadturf
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	allowed_turfs = list(/turf/open/floor/rogue/dirt/road)
 	excluded_turfs = list()
@@ -112,20 +112,20 @@
 							/obj/item/grown/log/tree/stick = 2)
 	allowed_areas = list(/area/rogue/outdoors/rtfield)
 
-/datum/mapGeneratorModule/roguehamlet/bonus_grassturfs
+/datum/mapGeneratorModule/stonehamlet/bonus_grassturfs
 	clusterCheckFlags = CLUSTER_CHECK_NONE
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 	spawnableTurfs = list(/turf/open/floor/rogue/grass = 4)
 	allowed_areas = list(/area/rogue/outdoors/rtfield)
 
-/datum/mapGeneratorModule/roguehamlet/bonus_ambushsturfs
+/datum/mapGeneratorModule/stonehamlet/bonus_ambushsturfs
 	allowed_areas = list(/area/rogue/outdoors/rtfield/spooky,/area/rogue/outdoors/rtfield/plague_district)
 	spawnableTurfs = list(/turf/open/floor/rogue/dirt/ambush = 3)
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 
-/datum/mapGeneratorModule/roguehamlet_buriedtreasure
+/datum/mapGeneratorModule/stonehamlet_buriedtreasure
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
@@ -133,7 +133,7 @@
 							/obj/structure/closet/dirthole/closed/loot=2)		// add more stuff I guess
 	allowed_areas = list(/area/rogue/outdoors/rtfield/spooky, /area/rogue/outdoors/rtfield/outlaw)
 
-/datum/mapGeneratorModule/roguehamlet_grassturf
+/datum/mapGeneratorModule/stonehamlet_grassturf
 	clusterCheckFlags = CLUSTER_CHECK_NONE
 	allowed_turfs = list(/turf/open/floor/rogue/grass)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
@@ -146,7 +146,7 @@
 							/obj/structure/flora/rogueflower/ppflowers = 1)
 	allowed_areas = list(/area/rogue/outdoors/town,/area/rogue/outdoors/rtfield)
 
-/datum/mapGeneratorModule/roguehamlet_swampturf
+/datum/mapGeneratorModule/stonehamlet_swampturf
 	clusterCheckFlags = CLUSTER_CHECK_SAME_ATOMS
 	allowed_turfs = list(/turf/open/water/swamp)
 	excluded_turfs = list()
@@ -158,7 +158,7 @@
 							/obj/structure/flora/rogueflower/reedbush = 2,
 							/obj/structure/flora/roguegrass/maneater/real = 1)
 
-/datum/mapGeneratorModule/roguehamlet_waterturf
+/datum/mapGeneratorModule/stonehamlet_waterturf
 	clusterCheckFlags = CLUSTER_CHECK_NONE
 	allowed_turfs = list(/turf/open/water/cleanshallow)
 	excluded_turfs = list()
