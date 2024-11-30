@@ -318,6 +318,7 @@
 
 /obj/structure/bed/rogue/inn/double
 	icon_state = "double"
+	max_buckled_mobs = 2
 	pixel_y = 0
 	sleepy = 3
 	debris = list(/obj/item/grown/log/tree/small = 2)
@@ -327,13 +328,12 @@
 /obj/structure/bed/rogue/inn/double/post_buckle_mob(mob/living/target)
 	. = ..()
 	if(length(buckled_mobs) > 1 && !goldilocks) //  Push the second buckled mob a bit higher from the normal lying position
-		target.pixel_y += 14
+		target.set_mob_offsets("bed_buckle", _x = 0, _y = 12)
 		goldilocks = target
 
 /obj/structure/bed/rogue/inn/double/post_unbuckle_mob(mob/living/target)
 	. = ..()
 	if(target == goldilocks)
-		target.pixel_y -= 14
 		goldilocks = null
 
 // ------------ DECENT BEDS ----------------------
