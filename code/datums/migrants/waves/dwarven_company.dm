@@ -98,6 +98,7 @@
 		cloak = /obj/item/clothing/cloak/apron/brown
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		backr = /obj/item/rogueweapon/axe/steel
+		backl = /obj/item/rogueweapon/pick/paxe
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", -1)
@@ -142,6 +143,7 @@
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		cloak = /obj/item/clothing/cloak/apron/brown
 		backr = /obj/item/rogueweapon/axe/steel
+		backl = /obj/item/rogueweapon/pick/paxe
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", -1)
