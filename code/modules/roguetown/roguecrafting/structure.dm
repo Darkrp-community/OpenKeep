@@ -7,9 +7,6 @@
 		return FALSE
 	return ..()
 
-/obj/structure/fermenting_barrel/crafted
-	sellprice = 6
-
 /datum/crafting_recipe/roguetown/structure/dye_bin_luxury
 	name = "luxury dye bin"
 	result = /obj/machinery/dye_bin
@@ -24,12 +21,6 @@
 	craftdiff = 0
 	subtype_reqs = TRUE // so you can use any subtype of the berries and swampweed
 
-/obj/item/chair/rogue/crafted
-	sellprice = 6
-
-/obj/item/chair/stool/bar/rogue/crafted
-	sellprice = 6
-
 /datum/crafting_recipe/roguetown/structure/anvil
 	name = "anvil"
 	result = /obj/machinery/anvil
@@ -38,17 +29,6 @@
 	verbage = "build"
 	verbage_tp = "builds"
 	craftsound = 'sound/foley/Building-01.ogg'
-
-
-/obj/structure/closet/crate/chest/crafted
-	name = "sturdy chest"
-	icon_state = "chest_neu"
-	base_icon_state = "chest_neu"
-	keylock = FALSE
-	sellprice = 6
-
-/obj/structure/closet/crate/roguecloset/crafted
-	sellprice = 6
 
 /datum/crafting_recipe/roguetown/structure/campfire
 	name = "campfire"
@@ -67,7 +47,7 @@
 	verbage_tp = "builds"
 
 /datum/crafting_recipe/roguetown/structure/cookpit
-	name = "cookpit"
+	name = "hearth"
 	result = /obj/machinery/light/rogue/hearth
 	reqs = list(/obj/item/grown/log/tree/stick = 1,
 				/obj/item/natural/stone = 3)
@@ -82,6 +62,22 @@
 				/obj/item/rogueore/coal = 1)
 	verbage = "build"
 	verbage_tp = "builds"
+
+/datum/crafting_recipe/roguetown/structure/standing
+	name = "standing fire"
+	result = /obj/machinery/light/rogue/firebowl/standing
+	reqs = list(/obj/item/natural/stone = 1,
+				/obj/item/rogueore/coal = 1)
+	verbage = "build"
+	verbage_tp = "builds"
+
+/datum/crafting_recipe/roguetown/structure/rack
+	name = "rack"
+	result = /obj/structure/rack/rogue
+	reqs = list(/obj/item/grown/log/tree/stick = 3)
+	verbage = "construct"
+	verbage_tp = "constructs"
+	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/structure/dryingrack
 	name = "drying rack"
@@ -109,3 +105,23 @@
 	verbage_tp = "masons"
 	craftsound = null
 	skillcraft = /datum/skill/craft/masonry
+
+/datum/crafting_recipe/roguetown/structure/torchholder
+	name = "sconce"
+	result = /obj/machinery/light/rogue/torchholder
+	reqs = list(/obj/item/natural/stone = 2)
+	verbage = "build"
+	verbage_tp = "builds"
+	skillcraft = /datum/skill/craft/masonry
+	wallcraft = TRUE
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/structure/wallcandle
+	name = "wall candles"
+	result = /obj/machinery/light/rogue/wallfire/candle
+	reqs = list(/obj/item/natural/stone = 1, /obj/item/candle/yellow = 1)
+	verbage = "build"
+	verbage_tp = "builds"
+	skillcraft = /datum/skill/craft/masonry
+	wallcraft = TRUE
+	craftdiff = 0

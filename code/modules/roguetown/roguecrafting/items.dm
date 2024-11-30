@@ -91,8 +91,9 @@
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/candle
-	name = "candle"
-	result = /obj/item/candle/yellow
+	name = "candle (x2)"
+	result = list(/obj/item/candle/yellow,
+				/obj/item/candle/yellow)
 	reqs = list(/obj/item/reagent_containers/food/snacks/fat = 1)
 
 /datum/crafting_recipe/roguetown/stoneaxe
@@ -151,18 +152,29 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
 /datum/crafting_recipe/roguetown/woodbowl
-	name = "wooden bowl"
+	name = "wooden bowls (x3)"
 	result = list(/obj/item/reagent_containers/glass/bowl,
+				/obj/item/reagent_containers/glass/bowl,
 				/obj/item/reagent_containers/glass/bowl)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
-
 /datum/crafting_recipe/roguetown/woodcup
-	name = "wooden cups"
+	name = "wooden cups (x3)"
 	result = list(/obj/item/reagent_containers/glass/cup/wooden/crafted,
 				/obj/item/reagent_containers/glass/cup/wooden/crafted,
 				/obj/item/reagent_containers/glass/cup/wooden/crafted)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+
+/datum/crafting_recipe/roguetown/woodtray
+	name = "wooden trays (x2)"
+	result = list(/obj/item/storage/bag/tray,
+				/obj/item/storage/bag/tray)
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+
+/datum/crafting_recipe/roguetown/pot
+	name = "stone pot"
+	result = /obj/item/reagent_containers/glass/bucket/pot
+	reqs = list(/obj/item/natural/stone = 2)
 
 /obj/item/reagent_containers/glass/cup/wooden/crafted
 	sellprice = 3
@@ -211,7 +223,7 @@
 	subtype_reqs = TRUE
 
 /datum/crafting_recipe/roguetown/sbaita
-	name = "sweetbait (a)"
+	name = "sweetbait (apple)"
 	result = /obj/item/bait/sweet
 	reqs = list(/obj/item/storage/roguebag = 1,
 				/obj/item/reagent_containers/food/snacks/produce/apple = 2)
@@ -219,7 +231,7 @@
 	subtype_reqs = TRUE
 
 /datum/crafting_recipe/roguetown/sbait
-	name = "sweetbait (b)"
+	name = "sweetbait (berry)"
 	result = /obj/item/bait/sweet
 	reqs = list(/obj/item/storage/roguebag = 1,
 				/obj/item/reagent_containers/food/snacks/produce/jacksberry = 2)
@@ -297,6 +309,18 @@
 	result = /obj/item/ammo_casing/caseless/rogue/arrow/stone
 	reqs = list(/obj/item/grown/log/tree/stick = 1,
 				/obj/item/natural/stone = 1)
+	req_table = TRUE
+
+/datum/crafting_recipe/roguetown/stonearrow_five
+	name = "stone arrow (x5)"
+	result = list(
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone,
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone,
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone,
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone,
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone)
+	reqs = list(/obj/item/grown/log/tree/stick = 5,
+				/obj/item/natural/stone = 5)
 	req_table = TRUE
 
 /datum/crafting_recipe/roguetown/poisonarrow
@@ -593,3 +617,9 @@
 				/obj/item/cart_upgrade/level_1 = 1,
 				/obj/item/ingot/iron = 1)
 	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/wood_hammer
+	name = "wooden mallet"
+	result = /obj/item/rogueweapon/hammer/wood
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	craftdiff = 0

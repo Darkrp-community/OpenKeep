@@ -297,7 +297,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 						spec_hair += X
 		if(FEMALE)
 			for(var/O in GLOB.facial_hairstyles_female_list)
-				X = GLOB.facial_hairstyles_list[O]
+				if(!istype(src, /datum/species/dwarf))
+					X = null
+				else
+					X = GLOB.facial_hairstyles_list[O]
 				if(X)
 					if(id in X.specuse)
 						spec_hair += X

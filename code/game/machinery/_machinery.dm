@@ -133,8 +133,6 @@
 		take_damage(4, BRUTE, "blunt", 1)
 
 /obj/machinery/_try_interact(mob/user)
-	if((interaction_flags_machine & INTERACT_MACHINE_WIRES_IF_OPEN))
-		return TRUE
 	return ..()
 
 /obj/machinery/CheckParts(list/parts_list)

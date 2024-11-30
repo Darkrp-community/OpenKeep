@@ -508,11 +508,14 @@
 	if(C.apply_damage(damage, BRUTE, limb_grabbed, armor_block))
 		playsound(C.loc, "smallslash", 100, FALSE, -1)
 		limb_grabbed.bodypart_attacked_by(BCLASS_BITE, damage, user, sublimb_grabbed, crit_message = TRUE)
+		var/datum/wound/caused_wound = limb_grabbed.bodypart_attacked_by(BCLASS_BITE, damage, user, sublimb_grabbed, crit_message = TRUE)
 		if(user.mind)
-			if(ishuman(C) && user.mind.has_antag_datum(/datum/antagonist/werewolf))
-				var/mob/living/carbon/human/H = C
-				if(prob(25))
-					addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_infect)), 3 MINUTES)
+			if(user.mind.has_antag_datum(/datum/antagonist/werewolf))
+				var/mob/living/carbon/human/human = user
+				if(istype(caused_wound))
+					caused_wound?.werewolf_infect_attempt()
+				if(prob(30))
+					human.werewolf_feed(C)
 			if(user.mind.has_antag_datum(/datum/antagonist/zombie))
 				var/mob/living/carbon/human/H = C
 				if(istype(H))
