@@ -28,15 +28,27 @@
 
 /datum/skill/labor/taming
 	name = "Taming"
+	dreams = list(
+		"...the water is stillborne, quiet... pristine, as if untouched... the line bobs down, and you let it writhe as you stare down at your reflection..."
+	)
 
 /datum/skill/labor/mathematics
 	name = "Mathematics"
+	dreams = list(
+		"...arches... mathematically perfect... ah..."
+	)
 
 /datum/skill/labor/fishing
 	name = "Fishing"
+	dreams = list(
+		"...my only friend, the worm upon my hook. wriggling, writhing, struggling to surmount the mortal pointlessness that permeates this barren world. i am alone. i am empty. and yet, i fish. ..."
+	)
 
 /datum/skill/labor/butchering
 	name = "Butchering"
+	dreams = list(
+		"...you dream of chiseling a marble statue, a small rabbit... and when you open your eyes, the skin is seperated from the flesh..."
+	)
 
 /datum/skill/labor/lumberjacking
 	name = "Lumberjacking"
