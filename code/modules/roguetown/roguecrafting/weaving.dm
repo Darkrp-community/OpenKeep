@@ -177,7 +177,7 @@
 
 /datum/crafting_recipe/roguetown/weaving/necrahood
 	name = "necra hood"
-	result = list(/obj/item/clothing/head/roguetown/padded/deathshroud)
+	result = list(/obj/item/clothing/mask/roguetown/padded/deathshroud)
 	reqs = list(/obj/item/natural/cloth = 2)
 	craftdiff = 4
 	sellprice = 20

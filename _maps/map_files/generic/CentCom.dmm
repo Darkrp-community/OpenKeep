@@ -4104,7 +4104,6 @@
 	icon_state = "longtable"
 	},
 /obj/item/clothing/head/roguetown/menacing,
-/obj/item/clothing/head/roguetown/padded/deathshroud,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "Tz" = (
@@ -4545,12 +4544,6 @@
 /obj/machinery/light/rogue/hearth,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/bandit_lair)
-"Yt" = (
-/obj/structure/bookcase,
-/obj/item/book/rogue/nitebeast,
-/obj/item/book/rogue/yeoldecookingmanual,
-/turf/open/floor/rogue/metal/barograte,
-/area/rogue/indoors/vampire_manor)
 "Yv" = (
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt/road,

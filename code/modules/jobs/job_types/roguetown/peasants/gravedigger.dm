@@ -25,7 +25,7 @@
 
 /datum/outfit/job/roguetown/undertaker/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/padded/deathshroud
+	mask = /obj/item/clothing/mask/roguetown/padded/deathshroud
 	neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 	pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra

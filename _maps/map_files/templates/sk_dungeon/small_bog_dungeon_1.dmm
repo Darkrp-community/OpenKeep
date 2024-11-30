@@ -138,7 +138,6 @@
 "vG" = (
 /obj/structure/closet/crate/coffin,
 /obj/item/clothing/suit/roguetown/shirt/robe/necra,
-/obj/item/clothing/head/roguetown/padded/deathshroud,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/bog)
 "wa" = (

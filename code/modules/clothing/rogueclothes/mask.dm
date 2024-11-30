@@ -222,6 +222,16 @@
 	armor = ARMOR_WEAK
 	prevent_crits = MINOR_CRITICALS
 
+//................ Death Shroud ............... //	- Necra headwear that conceals indentity
+/obj/item/clothing/mask/roguetown/padded/deathshroud
+	name = "death shroud"
+	desc = "Worn by the faithful of Necra, or less savory individuals."
+	icon = 'icons/roguetown/clothing/masks.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/masks.dmi'
+	icon_state = "necrahood"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
+
 //................ Druids Mask ............... //
 /obj/item/clothing/mask/rogue/druid
 	name = "druids mask"
