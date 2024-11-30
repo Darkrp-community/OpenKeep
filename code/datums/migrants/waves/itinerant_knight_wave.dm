@@ -17,7 +17,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	belt = /obj/item/storage/belt/rogue/leather/steel
-	backr = /obj/item/storage/backpack/rogue/satchel/black
+	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/clothing/neck/roguetown/psycross/silver)
 	backl = /obj/item/rogueweapon/sword/long/greatsword
 
