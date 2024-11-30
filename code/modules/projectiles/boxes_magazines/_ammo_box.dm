@@ -92,7 +92,7 @@
 	if(istype(A, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/AC = A
 		if(give_round(AC, replace_spent))
-			user.transferItemToLoc(AC, src, TRUE)
+			user.update_inv_hands() //give_round already forcemoves round into ammo box
 			num_loaded++
 
 	if(num_loaded)
