@@ -92,7 +92,7 @@
 		if(MALE)
 			return pick(GLOB.facial_hairstyles_male_list)
 		if(FEMALE)
-			return pick(GLOB.facial_hairstyles_female_list)
+			return "None"
 		else
 			return pick(GLOB.facial_hairstyles_list)
 
