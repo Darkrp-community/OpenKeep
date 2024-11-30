@@ -63,7 +63,7 @@
 	sleep(20)
 	if((iself(user)))	// already got night vision so lets not fuck it up, instead get +1 PER
 		user.apply_status_effect(/datum/status_effect/buff/beastsense_elf)
-		return
+		return ..()
 	user.apply_status_effect(/datum/status_effect/buff/beastsense)
 
 
