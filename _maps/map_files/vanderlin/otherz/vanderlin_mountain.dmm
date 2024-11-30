@@ -854,7 +854,7 @@
 /area/rogue)
 "NM" = (
 /obj/structure/fluff/signage{
-	name = s"Abandon all hope ye who enter here"
+	name = "Abandon all hope ye who enter here"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue)
