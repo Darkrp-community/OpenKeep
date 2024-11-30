@@ -321,29 +321,20 @@
 	pixel_y = 0
 	sleepy = 3
 	debris = list(/obj/item/grown/log/tree/small = 2)
-//////WIP  This will essentially allow for multiple mobs to buckle, just needs to change mousedrop function
-/obj/structure/bed/rogue/inn/double
-//	var/list/buckled_mobs = list()  shouldnts be needed
-/*
-/obj/structure/bed/rogue/inn/double/post_buckle_mob(mob/living/M)
+	/// The mob who buckled to this bed second, to avoid other mobs getting pixel-shifted before they unbuckle.
+	var/mob/living/goldilocks
+
+/obj/structure/bed/rogue/inn/double/post_buckle_mob(mob/living/target)
 	. = ..()
-	if(!buckled_mobs)
-		buckled_mobs = list()
-	buckled_mobs += M
-	M.set_mob_offsets("bed_buckle", _x = buckled_mobs.len * 10, _y = 5)
+	if(length(buckled_mobs) > 1 && !goldilocks) //  Push the second buckled mob a bit higher from the normal lying position
+		target.pixel_y += 14
+		goldilocks = target
 
-/obj/structure/bed/rogue/inn/double/post_unbuckle_mob(mob/living/M)
+/obj/structure/bed/rogue/inn/double/post_unbuckle_mob(mob/living/target)
 	. = ..()
-	if(M in buckled_mobs)
-		buckled_mobs -= M
-	M.reset_offsets("bed_buckle")
-
-	var/x_offset = 0
-	for(var/mob/living/buckled_mob in buckled_mobs)
-		buckled_mob.set_mob_offsets("bed_buckle", _x = x_offset, _y = 5)
-		x_offset += 10
-*/
-
+	if(target == goldilocks)
+		target.pixel_y -= 14
+		goldilocks = null
 
 // ------------ DECENT BEDS ----------------------
 /obj/structure/bed/rogue/wool
