@@ -34,11 +34,11 @@
 				if(B)
 					B = new B(user.loc)
 					user.put_in_hands(B)
-					user.visible_message("<span class='notice'>[user] finds [B] in [src].</span>")
+					user.visible_message(span_notice("[user] finds [B] in [src]."))
 					return
-			user.visible_message("<span class='warning'>[user] searches through [src].</span>")
+			user.visible_message(span_notice("[user] searches through [src]."))
 			if(!looty.len)
-				to_chat(user, "<span class='warning'>Picked clean;but looks healthy. I should try later.</span>")
+				to_chat(user, span_warning("Picked clean; but looks healthy. I should try again later."))
 
 /obj/structure/flora/roguegrass/herb/proc/loot_replenish()
 	if(herbtype)

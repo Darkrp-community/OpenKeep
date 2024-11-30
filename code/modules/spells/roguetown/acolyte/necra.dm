@@ -32,6 +32,7 @@
 		for(var/obj/structure/closet/crate/coffin/C)
 			for(var/mob/living/carbon/human/B in C.contents)
 				B.funeral = TRUE
+	return ..()
 
 /obj/effect/proc_holder/spell/targeted/churn
 	name = "Churn Undead"
@@ -83,5 +84,4 @@
 				L.Stun(50)
 			else
 				L.visible_message("<span class='warning'>[L] resists being churned!</span>", "<span class='userdanger'>I resist being churned!</span>")
-	..()
-	return TRUE
+	return ..()

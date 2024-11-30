@@ -28,7 +28,7 @@
 					return BULLET_ACT_BLOCK
 				if(L.revive(full_heal = TRUE, admin_revive = TRUE))
 					L.grab_ghost(force = TRUE) // even suicides
-					to_chat(L, "<span class='notice'>I rise with a start, you're undead!!!</span>")
+					to_chat(L, "<span class='notice'>I rise with a start, I'm undead!!!</span>")
 				else if(L.stat != DEAD)
 					to_chat(L, "<span class='notice'>I feel great!</span>")
 			else
@@ -366,7 +366,7 @@
 		return
 	if(LAZYLEN(candidates))
 		var/mob/dead/observer/C = pick(candidates)
-		to_chat(M, "<span class='boldnotice'>I have been noticed by a ghost and it has possessed you!</span>")
+		to_chat(M, span_boldnotice("I have been noticed by a ghost and it has possessed me!"))
 		var/oldkey = M.key
 		M.ghostize(0)
 		M.key = C.key
