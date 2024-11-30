@@ -1502,7 +1502,7 @@
 /obj/structure/closet/crate/coffin,
 /obj/structure/fluff/walldeco/maidendrape,
 /obj/item/clothing/suit/roguetown/shirt/robe/necra,
-/obj/item/clothing/head/roguetown/padded/deathshroud,
+/obj/item/clothing/mask/roguetown/padded/deathshroud,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
 "bFf" = (
