@@ -173,7 +173,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	color = "#7db36e"
 	first_time_text = null
 
-/area/rogue/outdoors/rtfield/spooky
+/area/rogue/outdoors/rtfield/spooky		// haunts ambush and dug down hidden treasure
 	ambush_mobs = list(/mob/living/simple_animal/hostile/rogue/haunt = 50)
 	name = "spooky place"
 	color = "#9294d3"
@@ -399,7 +399,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	converted_type = /area/rogue/outdoors/caves
 
 /area/rogue/under/catacombs/dwarfoutpost
-	name = "Underrock Outpost"
+	name = "underrock outpost"
 	first_time_text = "Underrock Outpost"
 	ambush_types = list(
 				/turf/open/water/swamp)
@@ -487,6 +487,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = null
 //	droning_sound_night = 'sound/music/area/night.ogg'
 
+/area/rogue/outdoors/exposed/town/hamlet
+	icon_state = "town"
+	droning_sound = 'sound/music/area/towngen.ogg'
+	droning_sound_dusk = null
+	first_time_text = "STONEHILL HAMLET"
+
 /area/rogue/indoors/town/manor
 	name = "Manor"
 	icon_state = "manor"
@@ -495,6 +501,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 	first_time_text = "THE KEEP OF ROCKHILL"
+
+/area/rogue/indoors/town/manor/hamlet
+	first_time_text = "STONEHILL CASTLE"
 
 /area/rogue/outdoors/exposed/manorgarri
 	icon_state = "manorgarri"

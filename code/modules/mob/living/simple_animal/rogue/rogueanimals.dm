@@ -443,6 +443,7 @@
 
 //................. UDDER (GOTE).......................//
 /obj/item/gudder
+	name = "gote"
 
 /obj/item/gudder/Initialize()
 	create_reagents(100)
