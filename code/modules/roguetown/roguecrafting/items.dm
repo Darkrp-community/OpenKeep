@@ -617,3 +617,9 @@
 				/obj/item/cart_upgrade/level_1 = 1,
 				/obj/item/ingot/iron = 1)
 	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/wood_hammer
+	name = "wooden mallet"
+	result = /obj/item/rogueweapon/hammer/wood
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	craftdiff = 0
