@@ -61,6 +61,7 @@
 					armor = /obj/item/clothing/suit/roguetown/shirt/robe/wizard
 					H.dna.species.soundpack_m = new /datum/voicepack/male/wizard()
 		ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_LEGENDARY_ALCHEMIST, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 		H.virginity = TRUE
 		H.change_stat("strength", -2)
