@@ -301,7 +301,7 @@
 /obj/effect/spawner/roguemap/hostile_beggar_danger
 	icon_state = "faceless"
 	icon = 'icons/mob/simple_human.dmi'
-	probby = 100 // temp to find out if decal vomit spawns
+	probby = 50 // temp to find out if decal vomit spawns
 	color = "#ff0000"
 	spawned = list(
 		/obj/effect/decal/cleanable/vomit = 10,
