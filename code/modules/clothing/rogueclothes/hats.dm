@@ -260,17 +260,6 @@
 	armor = ARMOR_WEAK
 	prevent_crits = MINOR_CRITICALS
 
-
-//................ Death Face ............... //
-/obj/item/clothing/head/roguetown/padded/deathface
-	name = "death shroud"
-	desc = "When inducted into the cult of Necra, the supplicant must make a talisman from the remains of a deceased loved one. Many favor a chin-guard made from a jawbone."
-	icon_state = "deathface"
-	flags_inv = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
-
-	armor = ARMOR_WEAK
-	prevent_crits = MINOR_CRITICALS
-
 //................ Death Shroud ............... //	- Necra headwear that conceals indentity
 /obj/item/clothing/head/roguetown/padded/deathshroud
 	name = "death shroud"

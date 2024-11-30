@@ -87,7 +87,7 @@
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	clothing_flags = CANT_SLEEP_IN
-	
+
 	armor = ARMOR_PLATE_BAD
 	prevent_crits = CUT_AND_MINOR_CRITS //No stab, blunt or chop crit flags. If a chopping weapon can get through 70 armor, it's probably carrying enough force to mess up your face behind a flimsy mask.
 	max_integrity = INTEGRITY_STANDARD //Flimsier than a proper visor/helmet.
@@ -120,7 +120,7 @@
 	name = "steel mask"
 	icon_state = "smask"
 	desc = "A knightly steel mask that both conceals and protects the face. Usually paired with a bascinet."
-	
+
 	armor = ARMOR_PLATE_BAD //Still thin.
 	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB
 	max_integrity = INTEGRITY_STRONG //250 Integrity, added chop protection. Still worse than a proper visored helmet.
@@ -206,8 +206,21 @@
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/copper
-	
+
 	max_integrity = INTEGRITY_WORST //Really flimsy, still good for a few blows.
+
+
+	//................ Death Face ............... //
+/obj/item/clothing/mask/roguetown/padded/deathface
+	name = "death shroud"
+	desc = "When inducted into the cult of Necra, the supplicant must make a talisman from the remains of a deceased loved one. Many favor a chin-guard made from a jawbone."
+	icon = 'icons/roguetown/clothing/masks.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/masks.dmi'
+	icon_state = "deathface"
+	flags_inv = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
+
+	armor = ARMOR_WEAK
+	prevent_crits = MINOR_CRITICALS
 
 //................ Druids Mask ............... //
 /obj/item/clothing/mask/rogue/druid
@@ -225,3 +238,5 @@
 
 	armor = ARMOR_WEAK
 	prevent_crits = CUT_AND_MINOR_CRITS
+
+
