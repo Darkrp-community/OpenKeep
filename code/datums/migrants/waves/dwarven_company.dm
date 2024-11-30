@@ -111,7 +111,7 @@
 	allowed_races = list("Dwarf")
 	grant_lit_torch = TRUE
 
-	/datum/outfit/job/roguetown/dwarven_company/armorsmith/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/dwarven_company/armorsmith/pre_equip(mob/living/carbon/human/H)
 	..()
 	id = /obj/item/clothing/ring/silver/makers_guild
 	head = /obj/item/clothing/head/roguetown/hatfur
