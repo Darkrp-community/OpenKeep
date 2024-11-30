@@ -22,7 +22,7 @@
 /datum/roguestock/stockpile/stone
 	name = "Stone"
 	desc = "High quality rocks of stone used for construction."
-	item_type = /obj/item/natural/rock
+	item_type = /obj/item/natural/stone
 	held_items = 2
 	payout_price = 1
 	withdraw_price = 6
