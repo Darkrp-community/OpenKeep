@@ -56,7 +56,7 @@
 
 /datum/outfit/job/roguetown/itinerant_squire/pre_equip(mob/living/carbon/human/H)
 	..()
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
+	shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/black
 	pants = /obj/item/clothing/under/roguetown/chainlegs/iron
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
