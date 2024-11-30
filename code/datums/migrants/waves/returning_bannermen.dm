@@ -1,9 +1,13 @@
 /datum/migrant_role/sergeant_at_arms
 	name = "Serjeant at arms"
 	greet_text = "You were apart of an expedition sent by the King to Kingsfield, you and the mens under your command have returned upon fullfiling your task."
-	outfit = /datum/outfit/job/roguetown/serjeant_at_arms
-	allowed_races = list("Humen","Dwarf","Aasimar")
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list(
+		"Humen",
+		"Dwarf",
+		"Aasimar")
 	grant_lit_torch = TRUE
+	outfit = /datum/outfit/job/roguetown/serjeant_at_arms
 
 /datum/outfit/job/roguetown/serjeant_at_arms/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -36,15 +40,15 @@
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 	if(H.age == AGE_OLD)
-		H.change_stat("strength", 3)
-		H.change_stat("perception", 1)
-		H.change_stat("intelligence", 2)
-		H.change_stat("endurance", 2)
-		H.change_stat("speed", 1)
+			H.change_stat("strength", 3)
+			H.change_stat("perception", 1)
+			H.change_stat("intelligence", 2)
+			H.change_stat("endurance", 2)
+			H.change_stat("speed", 1)
 		else
-		H.change_stat("strength", 2)
-		H.change_stat("intelligence", 2)
-		H.change_stat("endurance", 2)
+			H.change_stat("strength", 2)
+			H.change_stat("intelligence", 2)
+			H.change_stat("endurance", 2)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 
@@ -91,8 +95,8 @@
 		H.change_stat("perception", 2)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", 2)
-		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-		ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 
 /datum/migrant_role/crossbow_bannerman
 	name = "Bannermen Crossboman"
@@ -137,8 +141,8 @@
 		H.change_stat("perception", 2)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", 2)
-		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-		ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 
 /datum/migrant_role/footman_bannerman
 	name = "Bannermen Footman"
@@ -157,20 +161,20 @@
 	beltr = /obj/item/rogueweapon/sword/scimitar/messer
 	beltl = /obj/item/rogueweapon/mace
 	backpack_contents = list(/obj/item/keyring/guard)
-
-	H.mind?.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.change_stat("strength", 1)
-	H.change_stat("endurance", 2)
-	H.change_stat("constitution", 1)
+	if(H.mind)
+		H.mind?.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+		H.change_stat("strength", 1)
+		H.change_stat("endurance", 2)
+		H.change_stat("constitution", 1)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
@@ -191,22 +195,23 @@
 	beltr = /obj/item/rogueweapon/sword/scimitar/messer
 	backpack_contents = list(/obj/item/keyring/guard)
 
-	H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.change_stat("strength", 2)
-	H.change_stat("endurance", 1)
-	H.change_stat("constitution", 1)
-	H.change_stat("speed", -1)
+	if(H.mind)
+		H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+		H.change_stat("strength", 2)
+		H.change_stat("endurance", 1)
+		H.change_stat("constitution", 1)
+		H.change_stat("speed", -1)
+		H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
-	H.verbs |= /mob/proc/haltyell
 
 	var/weapontype = pickweight(list("Spear" = 6, "Bardiche" = 4))
 	switch(weapontype)
