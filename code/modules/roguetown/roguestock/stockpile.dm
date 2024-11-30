@@ -141,8 +141,8 @@
 	desc = "Chunks of unrefined silver."
 	item_type = /obj/item/rogueore/silver
 	held_items = 0
-	payout_price = 75
-	withdraw_price = 100
+	payout_price = 45
+	withdraw_price = 50
 	//transport_fee = 10
-	export_price = 100
+	export_price = 50
 	importexport_amt = 10
