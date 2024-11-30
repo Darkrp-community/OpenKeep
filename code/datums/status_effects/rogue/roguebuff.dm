@@ -353,13 +353,13 @@
 	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
 	if (!eyes || eyes.lighting_alpha)
 		return
-	ADD_TRAIT(owner, TRAIT_BESTIALSENSE, src)
+	ADD_TRAIT(owner, TRAIT_BESTIALSENSE, REF(src))
 	owner.update_sight()
 
 /datum/status_effect/buff/beastsense/on_remove()
 	. = ..()
 	to_chat(owner, span_warning("Darkness shrouds your senses once more."))
-	REMOVE_TRAIT(owner, TRAIT_BESTIALSENSE, src)
+	REMOVE_TRAIT(owner, TRAIT_BESTIALSENSE, REF(src))
 	owner.update_sight()
 
 /datum/status_effect/buff/beastsense_elf
