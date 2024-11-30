@@ -121,7 +121,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/attack_self(mob/living/user)
 	if(chambered)
-		..()
+		. = ..()
 	else
 		if(!cocked)
 			to_chat(user, "<span class='info'>I step on the stirrup and use all my might...</span>")
@@ -136,7 +136,7 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/attackby(obj/item/A, mob/user, params)
 	if(istype(A, /obj/item/ammo_box) || istype(A, /obj/item/ammo_casing))
 		if(cocked)
-			..()
+			. = ..()
 		else
 			to_chat(user, "<span class='warning'>I need to cock the crossbow first.</span>")
 
@@ -162,7 +162,7 @@
 		BB.damage *= damfactor // Apply damfactor multiplier regardless of PER.
 		BB.bonus_accuracy += (user.mind.get_skill_level(/datum/skill/combat/crossbows) * 3) //+3 accuracy per level in crossbows
 	cocked = FALSE
-	..()
+	. = ..()
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/update_icon()
 	. = ..()
