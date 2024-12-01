@@ -1221,7 +1221,6 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town)
 "bst" = (
-/obj/effect/landmark/start/stevedore,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "btq" = (
@@ -4227,7 +4226,6 @@
 	},
 /area/rogue/indoors)
 "eAq" = (
-/obj/effect/landmark/start/stevedore,
 /turf/open/floor/rogue/blocks/bluestone,
 /area/rogue/indoors/town)
 "eAU" = (

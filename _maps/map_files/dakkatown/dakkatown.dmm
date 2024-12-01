@@ -783,9 +783,7 @@
 /area/rogue/under/town/basement)
 "cY" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/stevedore{
-	dir = 8
-	},
+/obj/effect/landmark/start/stevedore,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town)
 "cZ" = (

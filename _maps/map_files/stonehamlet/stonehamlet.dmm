@@ -2434,11 +2434,13 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/town/hamlet)
 "cCm" = (
-/obj/structure/closet/crate/roguecloset/inn,
-/obj/item/clothing/suit/roguetown/armor/leather/vest,
-/obj/item/clothing/mask/rogue/facemask/steel,
-/obj/item/clothing/cloak/apron/brown,
-/obj/item/rogue/instrument/accord,
+/obj/structure/table/wood{
+	dir = 10;
+	icon_state = "tablewood2"
+	},
+/obj/item/candle/yellow,
+/obj/item/keyring/blacksmith,
+/obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
 "cCn" = (
@@ -4075,7 +4077,8 @@
 /turf/open/floor/rogue/rooftop,
 /area/rogue/outdoors/town/roofs)
 "eob" = (
-/turf/open/transparent/openspace,
+/obj/structure/closet/crate/chest/neu_iron,
+/turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
 "eoj" = (
 /obj/structure/chair/stool/rogue,
@@ -5666,14 +5669,12 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/outlaw)
 "fLn" = (
-/obj/structure/table/wood{
-	dir = 10;
-	icon_state = "tablewood2"
+/obj/structure/stairs/stone{
+	dir = 4;
+	icon_state = "stonestairs"
 	},
-/obj/item/candle/yellow,
-/obj/item/keyring/blacksmith,
-/turf/open/floor/rogue/wood/saiga,
-/area/rogue/indoors/shelter/town/dwarf)
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/dwarfin)
 "fMh" = (
 /obj/effect/decal/turfedge_neu/mossy_small,
 /turf/open/floor/rogue/dirt/road,
@@ -6520,8 +6521,12 @@
 "gFI" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 4;
-	icon_state = "torchwall1"
+	pixel_x = -10
 	},
+/obj/structure/closet/crate/chest/neu_iron,
+/obj/item/grown/log/tree/small,
+/obj/item/grown/log/tree/small,
+/obj/item/grown/log/tree/small,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/dwarfin)
 "gFR" = (
@@ -12970,10 +12975,10 @@
 /turf/open/water/sewer,
 /area/rogue/outdoors/exposed/under/sewer)
 "nop" = (
-/obj/effect/landmark/start/armorsmith{
-	dir = 8
+/obj/structure/stairs{
+	dir = 1
 	},
-/turf/open/floor/rogue/wood/saiga,
+/turf/open/floor/rogue/cobble,
 /area/rogue/indoors/shelter/town/dwarf)
 "noC" = (
 /obj/structure/fluff/railing/border{
@@ -13524,12 +13529,11 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/town/hamlet)
 "nUi" = (
-/obj/structure/fluff/railing/border{
-	dir = 6;
-	icon_state = "border"
-	},
 /obj/effect/landmark/start/weaponsmith{
 	dir = 4
+	},
+/obj/structure/fluff/railing/border{
+	dir = 10
 	},
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
@@ -13998,7 +14002,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/hamlet)
 "orz" = (
-/obj/structure/bed/rogue/hay,
+/obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
 "orW" = (
@@ -14561,13 +14565,13 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/exposed/town/hamlet)
 "oPj" = (
-/obj/structure/closet/crate/chest/neu_iron,
-/obj/item/grown/log/tree/small,
-/obj/item/grown/log/tree/stick,
-/obj/item/grown/log/tree/small,
-/obj/item/grown/log/tree/small,
-/turf/open/floor/rogue/hexstone,
-/area/rogue/indoors/town/dwarfin)
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "armorsmith";
+	name = "blacksmiths quarters"
+	},
+/turf/open/floor/rogue/wood/saiga,
+/area/rogue/indoors/town)
 "oPp" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -17114,15 +17118,11 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "rpx" = (
-/obj/structure/fluff/railing/border{
-	dir = 10;
-	icon_state = "border"
+/obj/structure/stairs{
+	dir = 1
 	},
-/obj/machinery/light/rogue/torchholder{
-	pixel_y = 26
-	},
-/turf/open/floor/rogue/hexstone,
-/area/rogue/indoors/town/dwarfin)
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town)
 "rpA" = (
 /turf/closed/wall/mineral/rogue/wooddark/window,
 /area/rogue/outdoors/exposed/magiciantower)
@@ -17945,11 +17945,11 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/shop)
 "sjL" = (
-/obj/structure/stairs/stone{
-	dir = 4;
-	icon_state = "stonestairs"
+/obj/structure/fluff/railing/border{
+	dir = 10;
+	icon_state = "border"
 	},
-/turf/open/floor/rogue/cobble,
+/turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/dwarfin)
 "sjZ" = (
 /obj/structure/ladder/earth,
@@ -19474,13 +19474,11 @@
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/outdoors/exposed/manorgarri)
 "tPt" = (
-/obj/structure/mineral_door/wood{
-	locked = 1;
-	lockid = "armorsmith";
-	name = "blacksmiths quarters"
+/obj/structure/roguewindow/openclose{
+	dir = 4
 	},
 /turf/open/floor/rogue/wood/saiga,
-/area/rogue/indoors/town)
+/area/rogue/indoors/shelter/town/dwarf)
 "tPA" = (
 /obj/item/reagent_containers/glass/bucket/wooden,
 /turf/open/floor/rogue/blocks,
@@ -19998,11 +19996,10 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave/abandoned_mine)
 "uoo" = (
-/obj/structure/stairs/stone{
-	dir = 1
-	},
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/town)
+/obj/structure/bed/rogue/wool,
+/obj/item/bedsheet/rogue/pelt,
+/turf/open/floor/rogue/wood/saiga,
+/area/rogue/indoors/shelter/town/dwarf)
 "uoO" = (
 /obj/effect/landmark/start/sapprentice,
 /turf/open/floor/rogue/concrete,
@@ -20545,11 +20542,10 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains)
 "uKI" = (
-/obj/structure/stairs/stone{
-	dir = 4;
-	icon_state = "stonestairs"
+/obj/machinery/light/rogue/wallfire{
+	pixel_y = -21
 	},
-/turf/open/floor/rogue/cobblerock,
+/turf/open/floor/rogue/woodturned/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
 "uKS" = (
 /obj/structure/flora/roguegrass,
@@ -21838,8 +21834,10 @@
 	first_time_text = "STONEHILL CASTLE"
 	})
 "vYp" = (
-/obj/structure/fluff/railing/border,
-/turf/open/floor/rogue/woodturned/saiga,
+/obj/effect/landmark/start/armorsmith{
+	dir = 8
+	},
+/turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
 "vYJ" = (
 /obj/item/natural/saddle,
@@ -22074,7 +22072,11 @@
 /turf/open/floor/rogue/sandstone/shaded,
 /area/rogue/indoors/town/church/chapel)
 "wjq" = (
-/obj/structure/closet/crate/chest/neu_iron,
+/obj/structure/closet/crate/roguecloset/inn,
+/obj/item/clothing/suit/roguetown/armor/leather/vest,
+/obj/item/clothing/mask/rogue/facemask/steel,
+/obj/item/clothing/cloak/apron/brown,
+/obj/item/rogue/instrument/accord,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
 "wjH" = (
@@ -22166,9 +22168,8 @@
 	first_time_text = "STONEHILL CASTLE"
 	})
 "woM" = (
-/obj/structure/closet/crate/chest/neu_iron,
-/turf/open/floor/rogue/hexstone,
-/area/rogue/indoors/town/dwarfin)
+/turf/open/transparent/openspace,
+/area/rogue/indoors/shelter/town/dwarf)
 "wpE" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
@@ -22683,10 +22684,12 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/under/basement)
 "wRZ" = (
-/obj/machinery/light/rogue/wallfire{
-	pixel_y = 32
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "armorsmith";
+	name = "blacksmiths quarters"
 	},
-/turf/open/floor/rogue/woodturned/saiga,
+/turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
 "wSj" = (
 /obj/machinery/light/rogue/firebowl/church,
@@ -31904,9 +31907,9 @@ xAF
 xAF
 xAF
 oWJ
-woM
-oPj
-lOZ
+oXJ
+oXJ
+oXJ
 lOZ
 mzh
 ijK
@@ -32099,8 +32102,8 @@ oXJ
 oXJ
 oXJ
 oXJ
-oXJ
-lOZ
+ioS
+fLn
 lOZ
 mzh
 ijK
@@ -32292,7 +32295,7 @@ oXJ
 oXJ
 oXJ
 oXJ
-ioS
+oXJ
 sjL
 lOZ
 psp
@@ -32486,7 +32489,7 @@ uCR
 mzh
 lOZ
 lOZ
-rpx
+iap
 lOZ
 lOZ
 lOZ
@@ -57319,7 +57322,7 @@ iGn
 ueO
 pgK
 xUr
-xUr
+oPj
 jMp
 vWi
 pgK
@@ -57706,9 +57709,9 @@ oOB
 rsE
 ydz
 pgK
-uoo
-tPt
-xUr
+tFN
+tFN
+rpx
 pgK
 pgK
 tQC
@@ -81570,9 +81573,9 @@ xLU
 phY
 iGU
 xvb
+tPt
 xvb
 iGU
-hZX
 hZX
 hZX
 hZX
@@ -81765,8 +81768,8 @@ xde
 xvb
 wjq
 nUi
+uoo
 xvb
-iGU
 hZX
 hZX
 hZX
@@ -82151,10 +82154,10 @@ sIe
 wcF
 wcF
 xvb
-fLn
-vYp
+sFy
+sFy
 uKI
-lHQ
+eXI
 hZX
 hZX
 hZX
@@ -82344,10 +82347,10 @@ hZX
 hZX
 hZX
 hZX
-eXI
+xvb
 wRZ
-lSz
-sFy
+xvb
+xvb
 xvb
 hZX
 hZX
@@ -82541,7 +82544,7 @@ hZX
 xvb
 orz
 nop
-sFy
+woM
 iGU
 xvb
 xvb
@@ -106986,7 +106989,7 @@ hZX
 urU
 qxN
 dxA
-dxA
+pNY
 hZX
 hZX
 hZX
@@ -107177,7 +107180,7 @@ hZX
 hZX
 hZX
 hZX
-pNY
+urU
 qxN
 dxA
 dxA
