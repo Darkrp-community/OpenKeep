@@ -218,25 +218,30 @@
 	to_chat(owner, span_warning("The feeling of lightness fades."))
 	REMOVE_TRAIT(owner, TRAIT_NOFALLDAMAGE1, MAGIC_TRAIT)
 
-/atom/movable/screen/alert/status_effect/buff/darkvision
-	name = "Darkvision"
-	desc = "I can see in the dark somewhat."
-	icon_state = "buff"
-
 /datum/status_effect/buff/darkvision
 	id = "darkvision"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/darkvision
 	duration = 10 MINUTES
 
+/atom/movable/screen/alert/status_effect/buff/darkvision
+	name = "Darkvision"
+	desc = span_nicegreen("I can see in the dark.")
+	icon_state = "buff"
+
 /datum/status_effect/buff/darkvision/on_apply()
 	. = ..()
-	to_chat(owner, span_warning("The darkness fades somewhat."))
+	var/mob/living/carbon/human/H = owner
+	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
+	if (!eyes || eyes.lighting_alpha)
+		return
 	ADD_TRAIT(owner, TRAIT_DARKVISION, MAGIC_TRAIT)
+	owner.update_sight()
 
 /datum/status_effect/buff/darkvision/on_remove()
 	. = ..()
-	to_chat(owner, span_warning("The darkness returns to normal."))
+	to_chat(owner, span_warning("Darkness shrouds your senses once more."))
 	REMOVE_TRAIT(owner, TRAIT_DARKVISION, MAGIC_TRAIT)
+	owner.update_sight()
 
 /atom/movable/screen/alert/status_effect/buff/haste
 	name = "Haste"
@@ -346,24 +351,16 @@
 	. = ..()
 	var/mob/living/carbon/human/H = owner
 	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
-	if(!eyes || eyes.lighting_alpha)
+	if (!eyes || eyes.lighting_alpha)
 		return
-	eyes.see_in_dark = 4
-	eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+	ADD_TRAIT(owner, TRAIT_BESTIALSENSE, REF(src))
 	owner.update_sight()
 
 /datum/status_effect/buff/beastsense/on_remove()
 	. = ..()
-	var/mob/living/carbon/human/H = owner
-	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
-	if(!eyes)
-		return
-	if((iself(owner)))
-		return
-	eyes.see_in_dark = 0
-	eyes.lighting_alpha = null
+	to_chat(owner, span_warning("Darkness shrouds your senses once more."))
+	REMOVE_TRAIT(owner, TRAIT_BESTIALSENSE, REF(src))
 	owner.update_sight()
-
 
 /datum/status_effect/buff/beastsense_elf
 	id = "beastsenself"
@@ -406,7 +403,7 @@
 		to_chat(C, span_warning("Dendors transformation fades, flesh shrinking back. My body aches..."))
 		C.adjustBruteLoss(10)
 		C.apply_status_effect(/datum/status_effect/debuff/barbfalter)
-		C.resize = 0.85
+		C.resize = 1
 		C.update_transform()
 		C.AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, 2)
 

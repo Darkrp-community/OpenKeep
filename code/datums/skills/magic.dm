@@ -6,6 +6,9 @@
 
 /datum/skill/magic/holy
 	name = "Miracles"
+	dreams = list(
+		"...water, fire... air... and-... and dirt..."
+	)
 
 /datum/skill/magic/blood
 	name = "Blood Sorcery"

@@ -94,7 +94,7 @@
 /turf/open/floor/rogue/underworld/space,
 /area/rogue/underworld)
 "xG" = (
-/obj/effect/landmark/underworldcoin,
+/obj/effect/landmark/underworld_spawnpoint,
 /turf/open/floor/rogue/church,
 /area/rogue/underworld)
 "yn" = (
@@ -259,6 +259,10 @@
 "Sp" = (
 /obj/machinery/light/rogue/wallfire/candle/blue,
 /turf/open/floor/rogue/churchmarble,
+/area/rogue/underworld)
+"Tb" = (
+/obj/structure/underworld/barrier,
+/turf/open/floor/rogue/underworld/road,
 /area/rogue/underworld)
 "Td" = (
 /obj/machinery/light/rogue/wallfire/candle/blue{
@@ -15064,7 +15068,7 @@ sO
 sO
 sO
 sO
-sO
+rm
 sO
 sO
 sO
@@ -25199,7 +25203,7 @@ PP
 PP
 PP
 IP
-Lk
+Tb
 Lk
 fC
 Wt
@@ -25979,7 +25983,7 @@ PP
 PP
 PP
 IP
-Lk
+Tb
 Lk
 fC
 Wt

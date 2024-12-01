@@ -30,7 +30,7 @@
 	simpmob_attack = 35
 	simpmob_defend = 25
 	wander = TRUE
-	attack_speed = 10
+	attack_speed = 2
 
 /mob/living/carbon/human/species/goblin/hell
 	name = "hell goblin"

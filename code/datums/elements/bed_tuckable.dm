@@ -43,6 +43,8 @@
 	tucked.dir = target_bed.dir
 	tucked.pixel_x = target_bed.dir & EAST ? -x_offset : x_offset
 	tucked.pixel_y = y_offset
+	tucked.layer = ABOVE_MOB_LAYER
+	tucked.plane = -2
 	if(starting_angle)
 		rotation_degree = target_bed.dir & EAST ? starting_angle + 180 : starting_angle
 		tucked.transform = turn(tucked.transform, rotation_degree)
@@ -59,4 +61,6 @@
 	SIGNAL_HANDLER
 
 	tucked.transform = turn(tucked.transform, -rotation_degree)
+	tucked.layer = initial(tucked.layer)
+	tucked.plane = initial(tucked.plane)
 	UnregisterSignal(tucked, COMSIG_ITEM_PICKUP)
