@@ -726,7 +726,7 @@
 	lockid = "shop";
 	name = "stevedore lodgings"
 	},
-/turf/open/floor/rogue/wood/nosmooth,
+/turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/shop)
 "aMR" = (
 /obj/effect/decal/turfedge_neu/mossy{
@@ -1727,10 +1727,6 @@
 /obj/structure/flora/roguetree/burnt,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/boggish)
-"bOM" = (
-/obj/structure/roguemachine/camera/left,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/exposed/town/hamlet)
 "bOX" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/machinery/light/rogue/torchholder/c{
@@ -2532,7 +2528,6 @@
 /obj/effect/decal/cleanable/dirt/cobweb{
 	icon_state = "cobweb2"
 	},
-/obj/item/roguekey/merchant,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/shop)
 "cHm" = (
@@ -3627,6 +3622,14 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/exposed/manorgarri)
+"dUc" = (
+/obj/structure/flora/roguegrass,
+/obj/structure/fluff/railing/stonehedge{
+	dir = 4;
+	icon_state = "stonehedge5"
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/exposed/town/hamlet)
 "dUz" = (
 /obj/structure/closet/crate/chest/neu,
 /obj/item/paper,
@@ -5361,6 +5364,9 @@
 /obj/item/rogueweapon/knife/dagger/steel/special,
 /obj/structure/closet/crate/chest/neu_iron,
 /obj/item/rogueweapon/knife/dagger,
+/obj/machinery/light/rogue/torchholder/c{
+	pixel_y = -32
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/shop)
 "ftC" = (
@@ -6254,7 +6260,7 @@
 /area/rogue/outdoors/exposed/church)
 "gqM" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber{
+/obj/effect/landmark/start/stevedore{
 	dir = 8
 	},
 /turf/open/floor/rogue/twig,
@@ -7791,6 +7797,7 @@
 /area/rogue/indoors/town/dwarfin)
 "iaC" = (
 /obj/structure/fermenting_barrel/random/water,
+/obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
 "ibl" = (
@@ -11779,6 +11786,14 @@
 "mbn" = (
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/indoors/town/garrison)
+"mbu" = (
+/obj/structure/fluff/railing/stonehedge{
+	dir = 4;
+	icon_state = "stonehedge5"
+	},
+/obj/structure/flora/roguegrass,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/exposed/town/hamlet)
 "mcG" = (
 /obj/item/roguebin/water/gross,
 /turf/open/floor/rogue/blocks,
@@ -13849,9 +13864,7 @@
 	lockid = "shop";
 	name = "shop backdoor"
 	},
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
 "onA" = (
 /obj/structure/bed/rogue/inn/double,
@@ -14188,7 +14201,9 @@
 "oDe" = (
 /obj/item/roguegem/green,
 /obj/structure/closet/crate/chest/neu{
-	lockid = "merchant"
+	locked = 1;
+	lockid = "merchant";
+	max_integrity = 2000
 	},
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot,
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot,
@@ -17985,7 +18000,9 @@
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/tavern/saiga)
 "sny" = (
-/obj/machinery/light/rogue/wallfire/candle,
+/obj/machinery/light/rogue/torchholder{
+	pixel_y = 32
+	},
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/shop)
 "snE" = (
@@ -19207,10 +19224,6 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/under/town/basement)
 "tCf" = (
-/obj/item/roguekey/merchant{
-	pixel_x = 5;
-	pixel_y = 1
-	},
 /obj/structure/closet/crate/chest/neu_iron,
 /obj/item/roguekey/warehouse,
 /turf/open/floor/carpet/royalblack,
@@ -19628,7 +19641,7 @@
 /area/rogue/under/cave/abandoned_mine)
 "tWr" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber,
+/obj/effect/landmark/start/stevedore,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/shop)
 "tWT" = (
@@ -23201,6 +23214,7 @@
 "xuD" = (
 /obj/structure/mineral_door/wood{
 	icon_state = "wcv";
+	locked = 1;
 	lockid = "merchant";
 	name = "merchants room"
 	},
@@ -58302,7 +58316,7 @@ lhw
 lhw
 lhw
 lhw
-lhw
+dUc
 fyl
 hQx
 rYy
@@ -61374,7 +61388,7 @@ iDy
 iDy
 iDy
 iDy
-bOM
+wAB
 dZq
 dZq
 dZq
@@ -61994,7 +62008,7 @@ dZq
 hKo
 tCz
 fcg
-fcg
+mbu
 dZq
 aSZ
 tCz

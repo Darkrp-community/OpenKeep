@@ -144,7 +144,7 @@
 #define JESTER		(1<<8)
 #define ADVENTURER	(1<<9)
 #define COOK		(1<<10)
-#define GRABBER		(1<<11)
+#define STEVEDORE	(1<<11)
 #define WAVE_DRIFTER (1<<16)
 #define GRAVEDIGGER	(1<<18)
 
@@ -194,7 +194,7 @@
 
 #define JDO_MERCHANT 18
 #define JDO_TAILOR 18.1
-#define JDO_GRABBER 19
+#define JDO_STEVEDORE 19
 
 #define JDO_ARMORER 20
 #define JDO_WSMITH 21

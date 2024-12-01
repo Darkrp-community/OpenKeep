@@ -7661,13 +7661,13 @@
 	},
 /area/rogue/indoors/town/shop)
 "BQ" = (
-/obj/effect/landmark/start/grabber{
+/obj/effect/landmark/start/stevedore{
 	name = "Hauler"
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "BR" = (
-/obj/effect/landmark/start/grabber{
+/obj/effect/landmark/start/stevedore{
 	name = "Hauler"
 	},
 /turf/open/floor/rogue/blocks/bluestone,

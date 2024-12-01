@@ -4529,7 +4529,7 @@
 /obj/effect/decal/turfedge_neu{
 	dir = 9
 	},
-/obj/effect/landmark/start/grabber{
+/obj/effect/landmark/start/stevedore{
 	dir = 4;
 	name = "Stevedore"
 	},
@@ -20758,7 +20758,7 @@
 /area/rogue/indoors/town)
 "upc" = (
 /obj/structure/bed/rogue/hay,
-/obj/effect/landmark/start/grabber{
+/obj/effect/landmark/start/stevedore{
 	name = "Stevedore"
 	},
 /turf/open/floor/rogue/twig,

@@ -1221,7 +1221,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town)
 "bst" = (
-/obj/effect/landmark/start/grabber{
+/obj/effect/landmark/start/stevedore{
 	name = "Hauler"
 	},
 /turf/open/floor/rogue/ruinedwood,
@@ -4229,7 +4229,7 @@
 	},
 /area/rogue/indoors)
 "eAq" = (
-/obj/effect/landmark/start/grabber{
+/obj/effect/landmark/start/stevedore{
 	name = "Hauler"
 	},
 /turf/open/floor/rogue/blocks/bluestone,

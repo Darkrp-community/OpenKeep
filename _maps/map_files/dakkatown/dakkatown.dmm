@@ -783,7 +783,7 @@
 /area/rogue/under/town/basement)
 "cY" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber{
+/obj/effect/landmark/start/stevedore{
 	dir = 8
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
@@ -5882,7 +5882,7 @@
 /area/rogue/outdoors/river)
 "ww" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber{
+/obj/effect/landmark/start/stevedore{
 	dir = 4
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
@@ -9563,7 +9563,7 @@
 /area/rogue/outdoors/exposed/manorgarri)
 "Kt" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber,
+/obj/effect/landmark/start/stevedore,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "Ku" = (
