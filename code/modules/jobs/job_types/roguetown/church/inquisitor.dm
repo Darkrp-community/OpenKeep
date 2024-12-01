@@ -1,7 +1,7 @@
 /datum/job/roguetown/inquisitor
 	title = "Inquisitor"
 	flag = PURITAN
-	department_flag = CHURCHMEN
+	department_flag = TEMPLE
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1

@@ -1030,10 +1030,6 @@
 "bbK" = (
 /obj/structure/flora/roguegrass,
 /obj/item/storage/roguebag,
-/obj/structure/fluff/railing/fence{
-	dir = 8;
-	icon_state = "fence"
-	},
 /obj/item/storage/roguebag,
 /obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/dirt/road,
@@ -5715,7 +5711,6 @@
 	},
 /obj/item/candle/yellow,
 /obj/item/keyring/blacksmith,
-/obj/item/keyring/blacksmith,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
 "fMh" = (
@@ -9629,8 +9624,13 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/shelter/rtfield)
 "jNH" = (
-/turf/closed/wall/mineral/rogue/wood/window,
-/area/rogue/indoors)
+/obj/structure/fluff/railing/stonehedge,
+/obj/structure/fluff/walldeco/vinez{
+	dir = 1;
+	pixel_y = -15
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/rtfield/hamlet)
 "jNI" = (
 /obj/item/roguebin/water/gross,
 /obj/structure/fluff/walldeco/bath/wallpipes{
@@ -11085,13 +11085,14 @@
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/shelter/rtfield)
 "lpb" = (
-/obj/structure/flora/roguegrass,
-/obj/structure/fluff/railing/fence{
-	dir = 8;
-	icon_state = "fence"
+/obj/structure/fluff/railing/stonehedge,
+/obj/structure/fluff/walldeco/vinez/offset,
+/obj/structure/fluff/walldeco/vinez{
+	dir = 1;
+	pixel_y = -15
 	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/exposed/town/hamlet)
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/rtfield/hamlet)
 "lpf" = (
 /turf/closed/wall/mineral/rogue/decostone/cand,
 /area/rogue/indoors/shelter/rtfield)
@@ -11251,6 +11252,8 @@
 	pixel_x = -1
 	},
 /obj/item/clothing/mask/cigarette/rollie/nicotine,
+/obj/item/roguekey/mason,
+/obj/item/roguekey/mason,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
 "lzR" = (
@@ -12207,12 +12210,17 @@
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/tavern/saiga)
 "mAz" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 4;
-	lockid = "farm"
+/obj/structure/fluff/railing/stonehedge{
+	dir = 1
 	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/exposed/town/hamlet)
+/obj/structure/fluff/walldeco/vinez{
+	dir = 1
+	},
+/obj/structure/fluff/walldeco/vinez{
+	dir = 1
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/rtfield/hamlet)
 "mAN" = (
 /obj/structure/table/wood{
 	dir = 10;
@@ -13165,9 +13173,8 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/sewer)
 "nyj" = (
-/obj/structure/fluff/railing/fence,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/exposed/town/hamlet)
+/turf/open/floor/rogue/oak,
+/area/rogue/outdoors/town/roofs)
 "nym" = (
 /obj/machinery/light/rogue/firebowl/standing/blue,
 /obj/effect/decal/turfedge_neu/alt{
@@ -13359,7 +13366,7 @@
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 1
 	},
-/turf/open/floor/rogue/wood/nosmooth/saiga,
+/turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town)
 "nHQ" = (
 /obj/structure/roguemachine/scomm{
@@ -15297,14 +15304,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/under/town/sewer)
-"pru" = (
-/obj/structure/fluff/railing/fence,
-/obj/structure/fluff/railing/fence{
-	dir = 8;
-	icon_state = "fence"
-	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/exposed/town/hamlet)
 "prL" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -15396,14 +15395,6 @@
 /obj/effect/spawner/roguemap/tree,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/hamlet)
-"pxg" = (
-/obj/structure/fluff/railing/fence{
-	dir = 8;
-	icon_state = "fence"
-	},
-/obj/structure/fluff/railing/fence,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/exposed/town/hamlet)
 "pxn" = (
 /obj/effect/decal/cleanable/food/tomato_smudge,
 /turf/open/floor/rogue/blocks,
@@ -17240,7 +17231,7 @@
 /area/rogue/indoors/town/magician)
 "rrZ" = (
 /obj/machinery/light/rogue/torchholder/c,
-/turf/open/floor/rogue/ruinedwood/spiral,
+/turf/open/floor/rogue/oak,
 /area/rogue/outdoors/town/roofs)
 "rsd" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/goatmale,
@@ -18159,18 +18150,6 @@
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/shelter/rtfield)
-"ssy" = (
-/obj/structure/fluff/railing/fence{
-	dir = 1;
-	icon_state = "fence"
-	},
-/obj/structure/flora/roguegrass,
-/obj/structure/fluff/railing/fence{
-	dir = 8;
-	icon_state = "fence"
-	},
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/exposed/town/hamlet)
 "ssC" = (
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/indoors/town/manor{
@@ -31793,7 +31772,7 @@ hCF
 qWm
 uoO
 xAF
-oXJ
+jLa
 onR
 nSF
 xAF
@@ -54708,7 +54687,7 @@ xYU
 let
 vJm
 vJm
-khd
+jNH
 oHv
 fyl
 qGx
@@ -54902,7 +54881,7 @@ bTR
 rnl
 mDZ
 mDZ
-khd
+jNH
 fyl
 qGx
 qGx
@@ -55096,7 +55075,7 @@ let
 let
 mDZ
 oHv
-khd
+jNH
 mDZ
 fyl
 mDZ
@@ -56664,7 +56643,7 @@ fyl
 fyl
 fyl
 vJQ
-cYJ
+mAz
 fyl
 kRc
 bsm
@@ -56858,7 +56837,7 @@ fyl
 oHv
 fyl
 mDZ
-wlM
+cYJ
 fyl
 pnA
 bsm
@@ -57036,7 +57015,7 @@ fyl
 fyl
 bsm
 tdl
-goZ
+lpb
 fyl
 qGx
 mDZ
@@ -57230,7 +57209,7 @@ tpB
 kmf
 iEP
 uzs
-goZ
+lpb
 fyl
 oHv
 fyl
@@ -57424,7 +57403,7 @@ fyl
 iEP
 oMj
 tdl
-khd
+jNH
 fyl
 mDZ
 mDZ
@@ -57618,7 +57597,7 @@ tdl
 tdl
 tdl
 uzs
-khd
+jNH
 fyl
 mDZ
 mDZ
@@ -58022,7 +58001,7 @@ fyl
 fyl
 fyl
 fyl
-qIo
+vCv
 fyl
 kRc
 bsm
@@ -58396,16 +58375,16 @@ vQx
 gcU
 ycJ
 hDi
-fyl
-fyl
-fyl
-fyl
-osA
-fyl
-fyl
-mDZ
-mDZ
-mDZ
+lhw
+lhw
+lhw
+lhw
+lhw
+lhw
+lhw
+lhw
+lhw
+lhw
 fyl
 hQx
 rYy
@@ -58590,16 +58569,16 @@ ncr
 xtI
 dXB
 ksi
-lpb
+pxU
 bbK
-lpb
-pru
-mAz
-ssy
-lpb
-lpb
-pxg
-hQx
+pxU
+pxU
+dZq
+pxU
+pxU
+pxU
+dZq
+nJr
 hQx
 bsm
 bsm
@@ -58612,7 +58591,7 @@ dZq
 qVA
 hDi
 jDF
-jNH
+jDF
 jDF
 hDi
 aDC
@@ -58792,7 +58771,7 @@ dZq
 dZq
 nwa
 dZq
-nyj
+dZq
 byY
 bZQ
 bZQ
@@ -58998,7 +58977,7 @@ oZl
 dZq
 dZq
 vWP
-jNH
+jDF
 dKI
 dKI
 dKI
@@ -87096,7 +87075,7 @@ dZd
 owy
 dZd
 pjU
-qxN
+nyj
 mRM
 pVp
 fbL
@@ -87290,7 +87269,7 @@ cjO
 khl
 fCq
 dZd
-qxN
+nyj
 mRM
 pVp
 wdq
@@ -87484,7 +87463,7 @@ khl
 khl
 trq
 dZd
-qxN
+nyj
 mRM
 pVp
 qxN
@@ -87678,7 +87657,7 @@ wks
 clK
 iLY
 nHO
-qxN
+nyj
 mRM
 pVp
 qxN
@@ -88066,7 +88045,7 @@ cjO
 nRE
 lRi
 dZd
-qxN
+nyj
 wWn
 aJh
 qxN
@@ -88260,7 +88239,7 @@ khl
 khl
 trq
 dZd
-qxN
+nyj
 dXV
 qxN
 qxN
@@ -88454,7 +88433,7 @@ wks
 iLY
 iLY
 nHO
-qxN
+nyj
 dXV
 qxN
 oGx

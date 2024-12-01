@@ -1,7 +1,7 @@
 /datum/job/roguetown/adept
 	title = "Adept"
-	flag = MONK
-	department_flag = CHURCHMEN
+	flag = ADEPT
+	department_flag = TEMPLE
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2

@@ -1,7 +1,7 @@
-/datum/job/roguetown/undertaker
+/datum/job/roguetown/gravekeeper
 	title = "Gravekeeper"
-	flag = GRAVEDIGGER
-	department_flag = CHURCHMEN
+	flag = GRAVEKEEPER
+	department_flag = TEMPLE
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
@@ -17,13 +17,13 @@
 	)
 	tutorial = "As a servant of Necra, you live among worms and maggots, ensuring the dead rest peacefully. You are the bane of grave robbers and necromancers, and your holy magic puts undead back into the ground where they belong."
 	allowed_patrons = list(/datum/patron/divine/necra)
-	outfit = /datum/outfit/job/roguetown/undertaker
+	outfit = /datum/outfit/job/roguetown/gravekeeper
 	display_order = JDO_GRAVEMAN
 	give_bank_account = TRUE
 	min_pq = -10
 	bypass_lastclass = TRUE
 
-/datum/outfit/job/roguetown/undertaker/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/gravekeeper/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/padded/deathshroud
 	neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra

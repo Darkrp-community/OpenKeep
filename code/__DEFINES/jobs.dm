@@ -113,13 +113,15 @@
 #define WATCHMAN	(1<<2)
 #define MAYOR       (1<<3)
 
-#define CHURCHMEN		(1<<2)
+#define TEMPLE		(1<<2)
 
 #define PRIEST		(1<<0)
-#define CLERIC		(1<<1)
-#define PURITAN		(1<<2)
-#define MONK		(1<<3)
-#define GRAVEDIGGER	(1<<4)
+#define ACOLYTE		(1<<1)
+#define TEMPLAR		(1<<2)
+#define GRAVEKEEPER	(1<<3)
+#define PURITAN		(1<<4)
+#define ADEPT		(1<<5)
+
 
 #define SERFS			(1<<3)
 
@@ -144,6 +146,7 @@
 #define COOK		(1<<10)
 #define GRABBER		(1<<11)
 #define WAVE_DRIFTER (1<<16)
+#define GRAVEDIGGER	(1<<18)
 
 #define APPRENTICES		(1<<5)
 

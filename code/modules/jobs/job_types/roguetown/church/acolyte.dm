@@ -1,7 +1,7 @@
 /datum/job/roguetown/monk
 	title = "Acolyte"
-	flag = MONK
-	department_flag = CHURCHMEN
+	flag = ACOLYTE
+	department_flag = TEMPLE
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 4
