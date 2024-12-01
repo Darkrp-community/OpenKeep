@@ -126,16 +126,21 @@
 #define MERCHANT	(1<<0)
 #define STEVEDORE	(1<<1)
 
-#define SERFS			(1<<4)
+#define MAKERS_GUILD	(1<<4)
+
+#define BLACKSMITH	(1<<0)
+#define MASON		(1<<1)
+
+#define SERFS			(1<<5)
 
 #define INNKEEP		(1<<0)
-#define BLACKSMITH	(1<<2)
 #define ALCHEMIST	(1<<3)
-#define MASON		(1<<4)
+
 #define TAILOR		(1<<5)
 #define SCRIBE		(1<<7)
+#define COOK		(1<<10)
 
-#define PEASANTS		(1<<5)
+#define PEASANTS		(1<<6)
 
 #define HUNTER		(1<<0)
 #define FARMER		(1<<1)
@@ -146,11 +151,11 @@
 #define BUTLER		(1<<7)
 #define JESTER		(1<<8)
 #define ADVENTURER	(1<<9)
-#define COOK		(1<<10)
+
 #define WAVE_DRIFTER (1<<16)
 #define GRAVEDIGGER	(1<<18)
 
-#define APPRENTICES		(1<<6)
+#define APPRENTICES		(1<<7)
 
 #define APPRENTICE	(1<<0)
 #define SQUIRE		(1<<1)
@@ -175,8 +180,8 @@
 
 #define JDO_MAGICIAN 4
 #define JDO_WAPP 5
-
-#define JDO_FELDSHER 6
+#define JDO_ARCHIVIST 6
+#define JDO_FELDSHER 6.1
 
 #define JDO_CAPTAIN 7
 #define JDO_ROYALGUARD 7.1
@@ -184,7 +189,7 @@
 #define JDO_GARRISONARCHER 9
 #define JDO_DUNGEONEER 10
 #define JDO_SQUIRE 11
-#define JDO_VET 11.1
+
 
 #define JDO_PRIEST 12
 #define JDO_CLERIC 13
@@ -195,31 +200,31 @@
 #define JDO_ADEPT 17
 
 #define JDO_MERCHANT 18
-#define JDO_TAILOR 18.1
 #define JDO_STEVEDORE 19
 
 #define JDO_ARMORER 20
 #define JDO_WSMITH 21
 #define JDO_BAPP 22
-
 #define JDO_MASON 23
 
 #define JDO_BUTLER 24
 #define JDO_SERVANT 25
 
+#define JDO_TAILOR 25.1
+
 #define JDO_INNKEEP 26
 #define JDO_COOK 27
 
-#define JDO_BUTCHER 27.1
-#define JDO_SOILSON 27.2
+#define JDO_CHIEF 27.1
+#define JDO_VET 27.2
+#define JDO_BUTCHER 27.3
+#define JDO_SOILSON 27.4
 
 #define JDO_NITEMAN 28.1
 #define JDO_NITEMAIDEN 28.2
 
 #define JDO_JESTER 29
 #define JDO_PRISONER 30
-
-#define JDO_CHIEF 31
 #define JDO_VILLAGER 32
 
 #define JDO_ADVENTURER 32.1

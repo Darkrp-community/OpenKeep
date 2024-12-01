@@ -14215,7 +14215,7 @@
 /obj/item/roguegem/green,
 /obj/structure/closet/crate/chest/neu{
 	locked = 1;
-	lockid = "merchant";
+	lockid = "mercator";
 	max_integrity = 20000
 	},
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot,
@@ -18750,6 +18750,12 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/town/hamlet)
+"tbB" = (
+/obj/item/storage/backpack/rogue/satchel{
+	pixel_y = 43
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/indoors/town/dwarfin)
 "tbC" = (
 /obj/structure/rack/rogue,
 /obj/item/clothing/cloak/raincloak/makers_guild,
@@ -33480,7 +33486,7 @@ rJP
 rJP
 mzh
 oYY
-xAF
+tbB
 xAF
 tjp
 lOZ

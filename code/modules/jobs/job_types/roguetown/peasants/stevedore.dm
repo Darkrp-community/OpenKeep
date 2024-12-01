@@ -38,16 +38,17 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 
+	head = /obj/item/clothing/head/roguetown/headband/red
 	neck = /obj/item/roguekey/shop
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
 	pants = /obj/item/clothing/under/roguetown/tights/sailor
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
+	H.change_stat("strength", 1)
 	if(H.gender == MALE)
-		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-		head = /obj/item/clothing/head/roguetown/headband/red
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)
 		H.change_stat("strength", 1)//thug bodytype
@@ -58,4 +59,4 @@
 		H.change_stat("endurance", 1)
 		H.change_stat("intelligence", 1)
 		H.change_stat("speed", 1)
-	H.change_stat("strength", 1)
+

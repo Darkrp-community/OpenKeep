@@ -143,6 +143,13 @@
 	icon_state = "cheesekey"
 	lockid = "merchant"
 
+/obj/item/roguekey/mercator
+	name = "mercator key"
+	desc = "A key to some special treasure."
+	icon_state = "cheesekey"
+	lockid = "mercator"
+	color = CLOTHING_FYRITIUS_DYE
+
 /obj/item/roguekey/shop
 	name = "shop key"
 	desc = "This key opens and closes a shop door."

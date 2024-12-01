@@ -23,7 +23,7 @@
 	outfit = /datum/outfit/job/roguetown/merchant
 	bypass_lastclass = TRUE
 	give_bank_account = 100
-	min_pq = 1
+	min_pq = 0
 	selection_color = "#4657ec"
 
 /datum/outfit/job/roguetown/merchant/pre_equip(mob/living/carbon/human/H)
@@ -55,7 +55,7 @@
 	H.change_stat("strength", -1)
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
