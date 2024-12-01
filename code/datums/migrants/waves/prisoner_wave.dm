@@ -67,7 +67,6 @@
 		"Half-Orc")
 
 		cmode_music = 'sound/music/combat_bum.ogg'
-
 /datum/outfit/job/roguetown/mig_prisoner/pre_equip(mob/living/carbon/human/H)
 ..()
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
@@ -100,7 +99,7 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 
 /datum/migrant_role/prisoner_guard
-	name = "Prisoners guard"
+	name = "Guard"
 	greet_text = "You are apart of a convoy returning prisoners to Vanderlin. Obey the gaoler and ensure the prisoners get back to the dungeons."
 	outfit = /datum/outfit/job/roguetown/footman_bannerman
 	allowed_races = list("Humen","Dwarf","Aasimar")
