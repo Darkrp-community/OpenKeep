@@ -13,8 +13,8 @@
 		"Dwarf",
 		"Dark Elf",
 	)
-	allowed_sexes = list(MALE)
-	tutorial = "You were a convicted criminal, the lowest scum of Rockhill. Your master, the Inquisitor, saved you from the gallows and has given you true purpose in service to the Forgotten God. You will not let him down."
+
+	tutorial = "You were a convicted criminal, the lowest scum of Rockhill. Your master, the Inquisitor, saved you from the gallows and has given you true purpose in service to the Forgotten God. You will not let them down."
 
 	outfit = /datum/outfit/job/roguetown/adept
 	advclass_cat_rolls = list(CTAG_ADEPT = 20)
@@ -38,7 +38,7 @@
 // Brutal Zealot, a class balanced to town guard, with 1 more strength but less intelligence and perception. Axe/Mace and shield focus.
 /datum/advclass/adept/bzealot
 	name = "Brutal Zealot"
-	tutorial = "You are a former thug who has been given a chance to redeem yourself by the Inquisitor. You serve him and the Forgotten God with your physical strength and zeal."
+	tutorial = "You are a former thug who has been given a chance to redeem yourself by the Inquisitor. You serve them and the Forgotten God with your physical strength and zeal."
 	outfit = /datum/outfit/job/roguetown/adept/bzealot
 
 	category_tags = list(CTAG_ADEPT)
@@ -82,7 +82,7 @@
 // Reformed Thief, a class balanced to rogue. Axe and crossbow focus.
 /datum/advclass/adept/rthief
 	name = "Reformed Thief"
-	tutorial = "You are a former thief who has been given a chance to redeem yourself by the Inquisitor. You serve him and the Forgotten God with your stealth and cunning."
+	tutorial = "You are a former thief who has been given a chance to redeem yourself by the Inquisitor. You serve them and the Forgotten God with your stealth and cunning."
 	outfit = /datum/outfit/job/roguetown/adept/rthief
 
 	category_tags = list(CTAG_ADEPT)
