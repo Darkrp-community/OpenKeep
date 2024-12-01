@@ -7661,15 +7661,11 @@
 	},
 /area/rogue/indoors/town/shop)
 "BQ" = (
-/obj/effect/landmark/start/stevedore{
-	name = "Hauler"
-	},
+/obj/effect/landmark/start/stevedore,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "BR" = (
-/obj/effect/landmark/start/stevedore{
-	name = "Hauler"
-	},
+/obj/effect/landmark/start/stevedore,
 /turf/open/floor/rogue/blocks/bluestone,
 /area/rogue/indoors/town)
 "BS" = (
