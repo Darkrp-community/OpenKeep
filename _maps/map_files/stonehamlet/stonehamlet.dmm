@@ -6527,6 +6527,8 @@
 /obj/item/grown/log/tree/small,
 /obj/item/grown/log/tree/small,
 /obj/item/grown/log/tree/small,
+/obj/item/grown/log/tree/small,
+/obj/item/grown/log/tree/small,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/dwarfin)
 "gFR" = (
@@ -7789,6 +7791,13 @@
 "hZX" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors)
+"hZZ" = (
+/obj/structure/handcart{
+	dir = 4;
+	icon_state = "cart-empty"
+	},
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors/town/dwarfin)
 "iaf" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/knife/dagger/silver,
@@ -15654,15 +15663,27 @@
 /area/rogue/outdoors/mountains)
 "pTJ" = (
 /obj/structure/roguemachine/stockpile,
+/obj/item/rogueore/coal{
+	pixel_x = 10;
+	pixel_y = -2
+	},
+/obj/item/rogueore/coal{
+	pixel_y = -8
+	},
+/obj/item/rogueore/coal{
+	pixel_x = -10
+	},
 /obj/item/rogueore/coal,
-/obj/item/rogueore/coal,
-/obj/item/rogueore/coal,
-/obj/item/rogueore/coal,
-/obj/item/rogueweapon/shovel/small,
+/obj/item/rogueweapon/shovel/small{
+	pixel_x = 5;
+	pixel_y = 9
+	},
 /obj/structure/bars/pipe{
 	dir = 1;
 	icon_state = "pipe"
 	},
+/obj/item/rogueore/coal,
+/obj/item/rogueore/coal,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/dwarfin)
 "pTV" = (
@@ -34234,7 +34255,7 @@ tWT
 cPH
 lrh
 lOZ
-oXJ
+hZZ
 oXJ
 qcx
 lOZ
