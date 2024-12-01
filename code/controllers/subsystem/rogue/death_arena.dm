@@ -24,7 +24,10 @@ SUBSYSTEM_DEF(death_arena)
 
 		if(world.time > tollless_clients[client])
 			for(var/mob/living/carbon/spirit/spirit in waiting_fighters)
-				if(!spirit.client.key == client)
+				if(!spirit?.client)
+					remove_fighter(spirit)
+					continue
+				if(spirit?.client.key != client)
 					continue
 				spirit.give_patron_toll()
 				remove_fighter(spirit)
