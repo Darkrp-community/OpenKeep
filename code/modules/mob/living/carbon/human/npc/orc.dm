@@ -14,16 +14,6 @@
 	possible_rmb_intents = list()
 	vitae_pool = 1000 // Not as much vitae from them as humans to avoid vampires cheesing mobs
 
-/datum/species/orc/after_creation(mob/living/carbon/C)
-	..()
-	C.grant_language(/datum/language/orcish)
-	to_chat(C, "<span class='info'>I can speak Orcish with ,g before my speech.</span>")
-
-/datum/species/orc/on_species_loss(mob/living/carbon/C)
-	. = ..()
-	UnregisterSignal(C, COMSIG_MOB_SAY)
-	C.remove_language(/datum/language/orcish)
-
 /mob/living/carbon/human/species/orc/npc
 	aggressive=1
 	mode = AI_IDLE
@@ -188,6 +178,16 @@
 //		if(O)
 //			equipOutfit(O)
 
+/datum/species/orc/after_creation(mob/living/carbon/C)
+	..()
+	C.grant_language(/datum/language/orcish)
+	to_chat(C, "<span class='info'>I can speak Orcish with ,g before my speech.</span>")
+
+/datum/species/orc/on_species_loss(mob/living/carbon/C)
+	. = ..()
+	UnregisterSignal(C, COMSIG_MOB_SAY)
+	C.remove_language(/datum/language/orcish)
+
 /datum/species/orc
 	name = "orc"
 	id = "orc"
@@ -346,7 +346,6 @@
 
 /mob/living/carbon/human/species/orc/tribal/after_creation()
 	..()
-	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/tribal)
@@ -359,8 +358,8 @@
 
 /datum/outfit/job/roguetown/npc/orc/tribal/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.STASTR = 12
-	H.STASPD = 12
+	H.STASTR = 13
+	H.STASPD = 13
 	H.STACON = 13
 	H.STAEND = 13
 	var/loadout = rand(1,5)
@@ -398,10 +397,8 @@
 
 /mob/living/carbon/human/species/orc/warrior/after_creation()
 	..()
-	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/warrior)
 	aggressive=1
 	mode = AI_IDLE
@@ -412,10 +409,10 @@
 
 /datum/outfit/job/roguetown/npc/orc/warrior/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.STASTR = 12
-	H.STASPD = 12
-	H.STACON = 13
-	H.STAEND = 13
+	H.STASTR = 13
+	H.STASPD = 13
+	H.STACON = 14
+	H.STAEND = 14
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //Marauder with Sword and Shield
@@ -472,10 +469,8 @@
 
 /mob/living/carbon/human/species/orc/marauder/after_creation()
 	..()
-	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/marauder)
 	aggressive=1
 	mode = AI_IDLE
@@ -529,10 +524,8 @@
 
 /mob/living/carbon/human/species/orc/warlord/after_creation()
 	..()
-	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/warlord)
 	aggressive=1
 	mode = AI_IDLE
@@ -543,8 +536,8 @@
 
 /datum/outfit/job/roguetown/npc/orc/warlord/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.STASTR = 13
-	H.STASPD = 13
+	H.STASTR = 14
+	H.STASPD = 14
 	H.STACON = 14
 	H.STAEND = 14
 	var/loadout = rand(1,5)
@@ -574,10 +567,8 @@
 
 /mob/living/carbon/human/species/orc/warlord/skilled/after_creation() //these ones dont parry, but still get good weapon skills
 	..()
-	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/warlord)
 	aggressive=1
 	mode = AI_IDLE

@@ -17,11 +17,6 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 
 	wander = TRUE
 
-/*	..................   Hostile Bum   ................... */
-/mob/living/carbon/human/species/human/northern/bum/ambush/Initialize()
-	. = ..()
-	name = pick("Madman", "Creep", "Lunatic", "Leper")
-
 /mob/living/carbon/human/species/human/northern/bum/retaliate(mob/living/L)
 	var/newtarg = target
 	.=..()
@@ -70,7 +65,6 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 		say(pick(GLOB.bum_quotes))
 	if(prob(3))
 		emote(pick("laugh","burp","yawn","grumble","mumble","blink_r","clap"))
-
 
 /mob/living/carbon/human/species/human/northern/bum/outlaw/after_creation()
 	aggressive= TRUE
@@ -153,7 +147,7 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 		if(1)
 			r_hand = /obj/item/rogueweapon/axe/iron
 		if(2)
-			r_hand = /obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter
+			r_hand = /obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter/neu
 		if(3)
 			r_hand = /obj/item/rogueweapon/mace/cudgel/bludgeon
 		if(4)
@@ -162,4 +156,3 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 			r_hand = /obj/item/rogueweapon/thresher
 		if(6)
 			r_hand = /obj/item/rogueweapon/sword/short/iron
-
