@@ -110,10 +110,13 @@
 //Handle any extras after buckling
 //Called on buckle_mob()
 /atom/movable/proc/post_buckle_mob(mob/living/M)
-
+	if(buckle_lying)
+		M.update_cone_show()
+		M.layer = BELOW_MOB_LAYER
 //same but for unbuckle
 /atom/movable/proc/post_unbuckle_mob(mob/living/M)
-
+	if(buckle_lying)
+		M.update_cone_show()
 //Wrapper procs that handle sanity and user feedback
 /atom/movable/proc/user_buckle_mob(mob/living/M, mob/user, check_loc = TRUE)
 	if(!in_range(user, src) || !isturf(user.loc) || user.incapacitated() || M.anchored)

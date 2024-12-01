@@ -12,7 +12,8 @@ LINEN BINS
 	righthand_file = 'icons/mob/inhands/misc/bedsheet_righthand.dmi'
 	icon_state = "sheetwhite"
 	item_state = "sheetwhite"
-	layer = MOB_LAYER
+	layer = OBJ_LAYER
+	plane = GAME_PLANE_UPPER
 	throwforce = 0
 	throw_speed = 1
 	throw_range = 2
