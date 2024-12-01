@@ -14,8 +14,6 @@
 		"Aasimar",
 		"Half-Orc")
 
-	cmode_music = 'sound/music/combat_weird.ogg'
-
 /datum/outfit/job/roguetown/gaoler/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/menacing
@@ -66,7 +64,6 @@
 		"Aasimar",
 		"Half-Orc")
 
-		cmode_music = 'sound/music/combat_bum.ogg'
 /datum/outfit/job/roguetown/mig_prisoner/pre_equip(mob/living/carbon/human/H)
 ..()
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
