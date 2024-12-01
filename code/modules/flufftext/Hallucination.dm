@@ -139,7 +139,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	..()
 	var/turf/source = random_far_turf()
 	if(!battle_type)
-		battle_type = pick("laser","disabler","esword","gun","stunprod","harmbaton","bomb")
+		battle_type = pick("laser","disabler","esword","gun","stunprod","harmbaton","blunt")
 	feedback_details += "Type: [battle_type]"
 	switch(battle_type)
 		if("laser")
