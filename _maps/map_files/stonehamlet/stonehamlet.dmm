@@ -16791,10 +16791,6 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/town/hamlet)
-"qZe" = (
-/obj/item/restraints/legcuffs/beartrap/armed,
-/turf/open/floor/rogue/tile/kitchen,
-/area/rogue/outdoors/exposed/under/basement)
 "qZn" = (
 /obj/effect/decal/turfedge_neu/mossy{
 	dir = 9
@@ -36925,7 +36921,7 @@ aVE
 dBO
 aVE
 wOS
-qZe
+tbe
 tbe
 fvn
 sMX
