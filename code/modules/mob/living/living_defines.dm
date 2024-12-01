@@ -4,7 +4,7 @@
 	see_invisible = SEE_INVISIBLE_LIVING
 	sight = 0
 	see_in_dark = 8
-	hud_possible = list(HEALTH_HUD,STATUS_HUD,ANTAG_HUD,NANITE_HUD,DIAG_NANITE_FULL_HUD)
+	hud_possible = list(ANTAG_HUD)
 	pressure_resistance = 10
 
 	var/resize = 1 //Badminnery resize
@@ -42,8 +42,6 @@
 	//Allows mobs to move through dense areas without restriction. For instance, in space or out of holder objects.
 	var/incorporeal_move = FALSE //FALSE is off, INCORPOREAL_MOVE_BASIC is normal, INCORPOREAL_MOVE_SHADOW is for ninjas
 								//and INCORPOREAL_MOVE_JAUNT is blocked by holy water/salt
-
-	var/list/roundstart_quirks
 
 	var/list/surgeries //a list of surgery steps. generally empty, they're added when the player is performing them.
 
@@ -111,7 +109,6 @@
 
 	var/can_be_held = FALSE	//whether this can be picked up and held.
 
-	var/radiation = 0 //If the mob is irradiated.
 	var/ventcrawl_layer = PIPING_LAYER_DEFAULT
 	var/losebreath = 0
 
@@ -136,6 +133,11 @@
 
 	var/surrendering = 0
 
+
+	/// Combat bonuses for Simple Mobs
+	var/simpmob_attack = 0
+	var/simpmob_defend = 0
+
 	var/defprob = 50 //base chance to defend against this mob's attacks, for simple mob combat
 	var/defdrain = 5
 	var/encumbrance = 0
@@ -154,8 +156,6 @@
 	var/obj/item/grabbing/r_grab = null
 	var/obj/item/grabbing/l_grab = null
 
-	var/datum/sex_controller/sexcon
-
 	var/slowdown
 
 	var/last_dir_change = 0
@@ -166,9 +166,15 @@
 
 	var/list/mob_descriptors
 	var/list/custom_descriptors
-	
+
 	var/rogue_sneaking = FALSE
-	
+
 	var/rogue_sneaking_light_threshhold = 0.15
 
 	var/voice_pitch = 1
+
+	var/domhand = 0
+
+	var/datum/sex_controller/sexcon
+	var/radiation = 0 //If the mob is irradiated.
+	var/list/roundstart_quirks
