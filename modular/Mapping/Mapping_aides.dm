@@ -851,3 +851,43 @@
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
 
+/*	..................   For premapped blood skipping timers, diseases etc   ................... */
+/obj/effect/decal/cleanable/blood_neu
+	name = "blood"
+	desc = ""
+	icon = 'icons/effects/blood.dmi'
+	icon_state = "floor1"
+	alpha = 200
+	nomouseover = TRUE
+	nomouseover = TRUE
+	var/wash_precent = 0
+	COOLDOWN_DECLARE(wash_cooldown)
+
+/obj/effect/decal/cleanable/blood_neu/weather_act_on(weather_trait, severity)
+	if(weather_trait != PARTICLEWEATHER_RAIN || !COOLDOWN_FINISHED(src, wash_cooldown))
+		return
+	wash_precent += min(10, severity / 4)
+	alpha = 255 *((100 - wash_precent) * 0.01)
+	if(wash_precent >= 100)
+		qdel(src)
+	COOLDOWN_START(src, wash_cooldown, 15 SECONDS)
+
+/obj/effect/decal/cleanable/blood_neu/Initialize(mapload)
+	. = ..()
+	if(. == INITIALIZE_HINT_QDEL)
+		return .
+	pixel_x = rand(-5,5)
+	pixel_y = rand(5,5)
+	GLOB.weather_act_upon_list += src
+
+/obj/effect/decal/cleanable/blood_neu/Destroy()
+	GLOB.weather_act_upon_list -= src
+	return ..()
+
+/obj/effect/decal/cleanable/blood_neu/random/Initialize(mapload)
+	. = ..()
+	icon_state = pick("floor1", "floor2", "floor3", "floor4", "floor5", "floor6", "splatter1", "splatter2", "splatter3", "splatter4", "splatter5", "splatter6", "gibl1", "gibl2", "gibl3", "gibl4", "gibl5")
+
+/obj/effect/decal/cleanable/blood_neu/tracks
+	icon_state = "tracks"
+
