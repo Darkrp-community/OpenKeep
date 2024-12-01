@@ -6260,7 +6260,9 @@
 /area/rogue/outdoors/exposed/church)
 "gqM" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/stevedore,
+/obj/effect/landmark/start/stevedore{
+	dir = 8
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/shop)
 "gqY" = (
