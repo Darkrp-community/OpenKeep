@@ -2406,7 +2406,7 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/town/sewer)
 "jf" = (
-/obj/effect/landmark/start/barkeep{
+/obj/effect/landmark/start/innkeep{
 	dir = 1
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,

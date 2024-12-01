@@ -24140,7 +24140,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/magician)
 "xHq" = (
-/obj/effect/landmark/start/barkeep{
+/obj/effect/landmark/start/innkeep{
 	dir = 4
 	},
 /turf/open/floor/rogue/ruinedwood,

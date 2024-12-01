@@ -20808,7 +20808,7 @@
 	icon_state = "chair2";
 	dir = 8
 	},
-/obj/effect/landmark/start/barkeep{
+/obj/effect/landmark/start/innkeep{
 	dir = 8
 	},
 /turf/open/floor/rogue/wood/nosmooth,

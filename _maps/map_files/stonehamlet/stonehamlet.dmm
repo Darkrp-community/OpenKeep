@@ -5403,7 +5403,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/soilsons)
 "fvh" = (
-/obj/effect/landmark/start/barkeep,
+/obj/effect/landmark/start/innkeep,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/tavern/saiga)
 "fvn" = (
@@ -12843,7 +12843,7 @@
 "njt" = (
 /obj/structure/bed/rogue/inn/double,
 /obj/item/bedsheet/rogue/double_pelt,
-/obj/effect/landmark/start/barkeep,
+/obj/effect/landmark/start/innkeep,
 /turf/open/floor/rogue/carpet/green,
 /area/rogue/indoors/town/tavern/saiga)
 "njE" = (

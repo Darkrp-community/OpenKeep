@@ -3388,7 +3388,7 @@
 	},
 /obj/structure/bed/rogue/inn,
 /obj/item/bedsheet/rogue/fabric,
-/obj/effect/landmark/start/barkeep,
+/obj/effect/landmark/start/innkeep,
 /turf/open/floor/rogue/carpet/green,
 /area/rogue/under/town/basement)
 "dGM" = (

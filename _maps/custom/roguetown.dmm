@@ -13398,7 +13398,7 @@
 	},
 /area/rogue/indoors/town)
 "YH" = (
-/obj/effect/landmark/start/barkeep,
+/obj/effect/landmark/start/innkeep,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
 "YI" = (
