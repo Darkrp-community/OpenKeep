@@ -1,6 +1,6 @@
 /datum/migrant_role/sergeant_at_arms
 	name = "Serjeant at arms"
-	greet_text = "You were apart of an expedition sent by the King to Kingsfield, you and the mens under your command have returned upon fullfiling your task."
+	greet_text = "You were apart of an expedition sent by the King of Vanderlin to Kingsfield, you and the mens under your command have returned upon fullfiling your task."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -18,7 +18,6 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/medium/scale
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	shoes = /obj/item/clothing/shoes/roguetown/boots
-	beltl = /obj/item/keyring/veteran
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/sword/arming
 	backl = /obj/item/storage/backpack/rogue/satchel
@@ -54,7 +53,7 @@
 
 /datum/migrant_role/archer_bannerman
 	name = "Bannermen Archer"
-	greet_text = "You were apart of an expedition sent by the King to Kingsfield, you and your serjeant-at-arms have returned upon fullfiling your task."
+	greet_text = "You were apart of an expedition sent by the King of Vanderlin to Kingsfield, you and your serjeant-at-arms have returned upon fullfiling your task."
 	outfit = /datum/outfit/job/roguetown/archer_bannerman
 	allowed_races = list("Humen","Dwarf","Aasimar")
 	grant_lit_torch = TRUE
@@ -100,7 +99,7 @@
 
 /datum/migrant_role/crossbow_bannerman
 	name = "Bannermen Crossboman"
-	greet_text = "You were apart of an expedition sent by the King to Kingsfield, you and your serjeant-at-arms have returned upon fullfiling your task."
+	greet_text = "You were apart of an expedition sent by the King of Vanderlin to Kingsfield, you and your serjeant-at-arms have returned upon fullfiling your task."
 	outfit = /datum/outfit/job/roguetown/crossbow_bannerman
 	allowed_races = list("Humen","Dwarf","Aasimar")
 	grant_lit_torch = TRUE
@@ -114,8 +113,9 @@
 	cloak = /obj/item/clothing/cloak/stabard/guard
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
+	pants = /obj/item/clothing/under/roguetown/trou/leather
 	beltl = /obj/item/keyring/guard
-	beltr = /obj/item/quiver/arrows
+	beltr = /obj/item/quiver/bolts
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special = 1)
 	if(prob(30))
@@ -146,7 +146,7 @@
 
 /datum/migrant_role/footman_bannerman
 	name = "Bannermen Footman"
-	greet_text = "You were apart of an expedition sent by the King to Kingsfield, you and your serjeant-at-arms have returned upon fullfiling your task."
+	greet_text = "You were apart of an expedition sent by the King of Vanderlin to Kingsfield, you and your serjeant-at-arms have returned upon fullfiling your task."
 	outfit = /datum/outfit/job/roguetown/footman_bannerman
 	allowed_races = list("Humen","Dwarf","Aasimar")
 	grant_lit_torch = TRUE
@@ -160,6 +160,10 @@
 	backr = /obj/item/rogueweapon/shield/wood
 	beltr = /obj/item/rogueweapon/sword/scimitar/messer
 	beltl = /obj/item/rogueweapon/mace
+	pants = /obj/item/clothing/under/roguetown/trou/leather
+	cloak = /obj/item/clothing/cloak/stabard/guard
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+	belt = /obj/item/storage/belt/rogue/leather
 	backpack_contents = list(/obj/item/keyring/guard)
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
@@ -193,6 +197,10 @@
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/helmet/kettle
 	beltr = /obj/item/rogueweapon/sword/scimitar/messer
+	pants = /obj/item/clothing/under/roguetown/trou/leather
+	cloak = /obj/item/clothing/cloak/stabard/guard
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+	belt = /obj/item/storage/belt/rogue/leather
 	backpack_contents = list(/obj/item/keyring/guard)
 
 	if(H.mind)
@@ -233,7 +241,7 @@
 		/datum/migrant_role/archer_bannerman = 1,
 		/datum/migrant_role/crossbow_bannerman = 1
 	)
-	greet_text = "You were apart of an expedition sent by the King to Kingsfield, as it is done, you now return."
+	greet_text = "You were apart of an expedition sent by the King of Vanderlin to Kingsfield, as it is done, you now return."
 
 /datum/migrant_wave/returning_bannermen_down
 	name = "The Bannermen's return"
@@ -247,7 +255,7 @@
 		/datum/migrant_role/pikeman_bannerman = 1,
 		/datum/migrant_role/archer_bannerman = 1,
 	)
-	greet_text = "You were apart of an expedition sent by the King to Kingsfield, as it is done, you now return."
+	greet_text = "You were apart of an expedition sent by the King of Vanderlin to Kingsfield, as it is done, you now return."
 
 /datum/migrant_wave/returning_bannermen_down_one
 	name = "The Bannermen's return"
@@ -262,7 +270,7 @@
 		/datum/migrant_role/archer_bannerman = 1,
 		/datum/migrant_role/crossbow_bannerman = 1
 	)
-	greet_text = "You were apart of an expedition sent by the King to Kingsfield, as it is done, you now return."
+	greet_text = "You were apart of an expedition sent by the King of Vanderlin to Kingsfield, as it is done, you now return."
 
 /datum/migrant_wave/returning_bannermen_down_two
 	name = "The Bannermen's return"
@@ -275,7 +283,7 @@
 		/datum/migrant_role/footman_bannerman = 1,
 		/datum/migrant_role/pikeman_bannerman = 1,
 	)
-	greet_text = "You were apart of an expedition sent by the King to Kingsfield, as it is done, you now return."
+	greet_text = "You were apart of an expedition sent by the King of Vanderlin to Kingsfield, as it is done, you now return."
 
 /datum/migrant_wave/returning_bannermen_down_three
 	name = "The Bannermen's return"
@@ -287,7 +295,7 @@
 		/datum/migrant_role/sergeant_at_arms = 1,
 		/datum/migrant_role/footman_bannerman = 1,
 	)
-	greet_text = "You were apart of an expedition sent by the King to Kingsfield, as it is done, you now return."
+	greet_text = "You were apart of an expedition sent by the King of Vanderlin to Kingsfield, as it is done, you now return."
 
 /datum/migrant_wave/returning_bannermen_down_four
 	name = "The Bannermen's return"
