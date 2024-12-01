@@ -35,7 +35,7 @@
 
 /obj/effect/explosion/Initialize()
 	. = ..()
-	QDEL_IN(src, 10)
+	QDEL_IN(src, 1.2 SECONDS)
 
 /datum/effect_system/explosion
 

@@ -81,7 +81,7 @@
 /turf/closed/mineral/turf_destruction(damage_flag)
 	if(!(istype(src, /turf/closed)))
 		return
-	if(damage_flag == "bomb")
+	if(damage_flag == "blunt")
 		var/obj/item/explo_mineral = mineralType
 		var/explo_mineral_amount = mineralAmt
 		var/obj/item/natural/rock/explo_rock = rockType
@@ -160,7 +160,7 @@
 
 	if(fodist == 0)
 		brute_loss *= 2
-	take_damage(brute_loss, BRUTE, "bomb", 0)
+	take_damage(brute_loss, BRUTE, "blunt", 0)
 
 	if(fdist && !QDELETED(src))
 		var/stacks = ((fdist - fodist) * 2)

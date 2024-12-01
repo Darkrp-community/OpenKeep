@@ -85,7 +85,7 @@
 		if(EXPLODE_LIGHT)
 			brute_loss = ((25 * ldist) - (25 * fodist))
 
-	take_damage(brute_loss, BRUTE, "bomb", 0)
+	take_damage(brute_loss, BRUTE, "blunt", 0)
 
 	if(fdist && !QDELETED(src))
 		var/stacks = ((fdist - fodist) * 2)

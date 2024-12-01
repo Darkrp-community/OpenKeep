@@ -362,7 +362,7 @@
 	var/brute_loss = 0
 	var/burn_loss = 0
 	var/dmgmod = round(rand(0.5, 1.5), 0.1)
-	var/bomb_armor = getarmor(null, "bomb")
+	var/bomb_armor = 0
 
 	if(fdist)
 		var/stacks = ((fdist - fodist) * 2)
@@ -375,7 +375,7 @@
 			if(bomb_armor)
 				brute_loss = ((100 * (2 - round(bomb_armor*0.01, 0.05)) * ddist) - ((100 * (2 - round(bomb_armor*0.01, 0.05))) * fodist) * dmgmod)
 				burn_loss = brute_loss
-			damage_clothes(max(brute_loss - bomb_armor, 0), BRUTE, "bomb")
+			damage_clothes(max(brute_loss - bomb_armor, 0), BRUTE, "blunt")
 //				if (!istype(ears, /obj/item/clothing/ears/earmuffs))
 //					adjustEarDamage(30, 120)
 			Unconscious((50 * ddist) - (15 * fodist))
@@ -387,7 +387,7 @@
 			if(bomb_armor)
 				brute_loss = ((30 * (2 - round(bomb_armor*0.01, 0.05)) * hdist) - ((30 * (2 - round(bomb_armor*0.01, 0.05))) * fodist) * dmgmod)
 				burn_loss = brute_loss
-			damage_clothes(max(brute_loss - bomb_armor, 0), BRUTE, "bomb")
+			damage_clothes(max(brute_loss - bomb_armor, 0), BRUTE, "blunt")
 //				if (!istype(ears, /obj/item/clothing/ears/earmuffs))
 //					adjustEarDamage(30, 120)
 			Unconscious((10 * hdist) - (5 * fodist))
@@ -397,7 +397,7 @@
 			brute_loss = ((10 * ldist) - (10 * fodist) * dmgmod)
 			if(bomb_armor)
 				brute_loss = (10 * (2 - round(bomb_armor*0.01, 0.05)) * ldist) - ((10 * (2 - round(bomb_armor*0.01, 0.05))) * fodist)
-				damage_clothes(max(brute_loss - bomb_armor, 0), BRUTE, "bomb")
+				damage_clothes(max(brute_loss - bomb_armor, 0), BRUTE, "blunt")
 //				if (!istype(ears, /obj/item/clothing/ears/earmuffs))
 //					adjustEarDamage(15,60)
 
@@ -408,7 +408,7 @@
 		var/max_limb_loss = rand(0, floor(3/severity))
 		for(var/X in bodyparts)
 			var/obj/item/bodypart/BP = X
-			if(prob(25/severity) && !prob(getarmor(BP, "bomb")) && BP.body_zone != BODY_ZONE_HEAD && BP.body_zone != BODY_ZONE_CHEST)
+			if(prob(25/severity) && !prob(15) && BP.body_zone != BODY_ZONE_HEAD && BP.body_zone != BODY_ZONE_CHEST)
 				BP.brute_dam = BP.max_damage
 				BP.dismember()
 				max_limb_loss--

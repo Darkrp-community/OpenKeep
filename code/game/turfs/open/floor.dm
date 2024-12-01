@@ -62,7 +62,7 @@
 		return
 	if(target == src)
 		ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
-		take_damage(INFINITY, BRUTE, "bomb", 0)
+		take_damage(INFINITY, BRUTE, "blunt", 0)
 		return
 	var/ddist = devastation_range
 	var/hdist = heavy_impact_range
@@ -82,7 +82,7 @@
 		if(EXPLODE_LIGHT)
 			brute_loss = ((25 * ldist) - (25 * fodist) * dmgmod)
 
-	take_damage(brute_loss, BRUTE, "bomb", 0)
+	take_damage(brute_loss, BRUTE, "blunt", 0)
 
 	if(fdist && !QDELETED(src))
 		var/stacks = ((fdist - fodist) * 2)

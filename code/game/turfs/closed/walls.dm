@@ -48,7 +48,7 @@
 /turf/closed/wall/ex_act(severity, target, epicenter, devastation_range, heavy_impact_range, light_impact_range, flame_range)
 	if(target == src)
 		dismantle_wall(1,1)
-		take_damage(INFINITY, BRUTE, "bomb", 0)
+		take_damage(INFINITY, BRUTE, "blunt", 0)
 		return
 	var/ddist = devastation_range
 	var/hdist = heavy_impact_range
@@ -70,7 +70,7 @@
 
 	if(fodist == 0)
 		brute_loss *= 2
-	take_damage(brute_loss, BRUTE, "bomb", 0)
+	take_damage(brute_loss, BRUTE, "blunt", 0)
 
 	if(fdist && !QDELETED(src))
 		var/stacks = ((fdist - fodist) * 2)
