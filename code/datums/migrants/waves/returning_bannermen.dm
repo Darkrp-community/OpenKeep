@@ -185,7 +185,7 @@
 
 /datum/migrant_role/pikeman_bannerman
 	name = "Bannermen Pikeman"
-	greet_text = "You were apart of an expedition sent by the King to Kingsfield, you and your serjeant-at-arms have returned upon fullfiling your task."
+	greet_text = "You were apart of an expedition sent by the King of Vanderlin to Kingsfield, you and your serjeant-at-arms have returned upon fullfiling your task."
 	outfit = /datum/outfit/job/roguetown/pikeman_bannerman
 	allowed_races = list("Humen","Dwarf","Aasimar")
 	grant_lit_torch = TRUE
