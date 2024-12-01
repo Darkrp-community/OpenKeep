@@ -253,7 +253,7 @@
 /turf/closed/mineral/rogue/gemeralds
 	icon_state = "mingold"
 	desc = "there is an strange light on the stone?"
-	mineralType = /obj/item/roguegem/random
+	mineralType = /obj/item/roguegem
 	rockType = /obj/item/natural/rock/gemerald
 	spreadChance = 3
 	spread = 2
@@ -267,6 +267,15 @@
 	above_floor = /turf/closed/mineral/rogue/bedrock
 
 /turf/closed/mineral/rogue/bedrock/attackby(obj/item/I, mob/user, params)
-	..()
-	to_chat(user, "<span class='warning'>TOO HARD!</span>")
-	turf_integrity = max_integrity
+	to_chat(user, span_warning("This is far to sturdy to be destroyed!"))
+	return FALSE
+
+/turf/closed/mineral/rogue/bedrock/TerraformTurf(path, new_baseturf, flags, defer_change = FALSE, ignore_air = FALSE)
+	return
+
+/turf/closed/mineral/rogue/bedrock/acid_act(acidpwr, acid_volume, acid_id)
+	return 0
+
+/turf/closed/mineral/rogue/bedrock/Melt()
+	to_be_destroyed = FALSE
+	return src

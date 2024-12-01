@@ -1,8 +1,8 @@
 
 /obj/item/roguegem
-	name = "rontz"
-	desc = "Its facets shine so brightly."
-	icon_state = "ruby_cut"
+	name = "random gem"
+	desc = "If you find this, yell at coderbus"
+	icon_state = "aros"
 	icon = 'icons/roguetown/items/gems.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
@@ -10,9 +10,35 @@
 	slot_flags = ITEM_SLOT_MOUTH
 	dropshrink = 0.4
 	drop_sound = 'sound/items/gem.ogg'
-	sellprice = 100
+	///I am leaving this here as a note. If you leave the price null on subtypes, you're eating the infinite recursion pill.
+	///I dont care if its negative just DONT LEAVE IT 0
+	sellprice = 0
 	static_price = FALSE
+	///For Mappers; gem_path = weight
+	var/list/valid_gems = list()
 
+/obj/item/roguegem/Initialize()
+	. = ..()
+	if(sellprice == 0)
+		var/new_gem
+		if(length(valid_gems))
+			new_gem = pickweight(valid_gems)
+		else
+			new_gem = pick(subtypesof(/obj/item/roguegem))
+		var/obj/item/roguegem/spawned = new new_gem(get_turf(src))
+		///This is a switch incase anyone would like to add more...
+		switch(rand(1,2))
+			if(1)
+				spawned.icon_state = "d_cut"
+			if(2)
+				spawned.icon_state = "e_cut"
+		return INITIALIZE_HINT_QDEL
+	else if(icon_state == "aros")
+		switch(rand(1,2))
+			if(1)
+				icon_state = "d_cut"
+			if(2)
+				icon_state = "e_cut"
 /obj/item/roguegem/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -29,32 +55,38 @@
 /obj/item/roguegem/green
 	name = "gemerald"
 	desc = "Glints with verdant brilliance."
-	icon_state = "emerald_cut"
-	sellprice = 22
+	color = "#15af15ff"
+	sellprice = 44
 
 /obj/item/roguegem/blue
 	name = "blortz"
 	desc = "Pale blue, like a frozen tear."
-	icon_state = "quartz_cut"
+	color = "#1ca5aaff"
 	sellprice = 88
 
 /obj/item/roguegem/yellow
 	name = "toper"
 	desc = "Its amber hues remind you of the sunset."
-	icon_state = "topaz_cut"
-	sellprice = 14
+	color = "#e6c408ff"
+	sellprice = 25
 
 /obj/item/roguegem/violet
 	name = "saffira"
 	desc = "This gem is admired by many wizards."
-	icon_state = "sapphire_cut"
+	color = "#1733b3ff"
 	sellprice = 56
 
 /obj/item/roguegem/diamond
 	name = "dorpel"
 	desc = "Beautifully clear, it demands respect."
-	icon_state = "diamond_cut"
+	color = "#ffffff33"
 	sellprice = 121
+
+/obj/item/roguegem/red
+	name = "rubor"
+	desc = "Glistening with unkempt rage"
+	color = "#ff0000e0"
+	sellprice = 100
 
 /// riddle
 
@@ -75,15 +107,3 @@
 /obj/item/riddleofsteel/Initialize()
 	. = ..()
 	set_light(2, 2, 1, l_color = "#ff0d0d")
-
-/obj/item/roguegem/random
-	name = "random gem"
-	desc = "no way i fucked the code"
-	icon_state = null
-
-/obj/item/roguegem/random/Initialize()
-	..()
-	var/newgem = list(/obj/item/roguegem = 5, /obj/item/roguegem/green = 10, /obj/item/roguegem/blue = 10, /obj/item/roguegem/yellow = 20, /obj/item/roguegem/violet = 10, /obj/item/roguegem/diamond = 5, /obj/item/natural/rock/coal = 1)//you thought you had found gems, but it was COAL...
-	var/pickgem = pickweight(newgem)
-	new pickgem(get_turf(src))
-	qdel(src)
