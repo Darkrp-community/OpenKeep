@@ -355,7 +355,9 @@
 						/turf/open/floor/rogue/grass/cold,
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snow/patchy,
-						/turf/open/floor/rogue/snow/rough)
+						/turf/open/floor/rogue/snow/rough,
+						/turf/open/water/swamp,
+						/turf/open/water/cleanshallow)
 	neighborlay = "dirtedge"
 	var/muddy = FALSE
 	var/bloodiness = 20

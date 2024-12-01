@@ -20,7 +20,7 @@
 	allowed_patrons = list(/datum/patron/divine/noc)
 
 	outfit = /datum/outfit/job/roguetown/archivist
-	display_order = 19
+	display_order = JDO_ARCHIVIST
 	give_bank_account = 100
 	min_pq = 1
 

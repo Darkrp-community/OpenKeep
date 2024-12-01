@@ -130,7 +130,7 @@
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 	spawnableAtoms = list(
-							/obj/structure/closet/dirthole/closed/loot=2)		// add more stuff I guess
+							/obj/structure/closet/dirthole/closed/loot=5)		// add more stuff I guess
 	allowed_areas = list(/area/rogue/outdoors/rtfield/spooky, /area/rogue/outdoors/rtfield/outlaw)
 
 /datum/mapGeneratorModule/stonehamlet_grassturf
@@ -150,7 +150,7 @@
 	clusterCheckFlags = CLUSTER_CHECK_SAME_ATOMS
 	allowed_turfs = list(/turf/open/water/swamp)
 	excluded_turfs = list()
-	allowed_areas = list(/area/rogue/outdoors/rtfield)
+	allowed_areas = list(/area/rogue/outdoors/rtfield/boggish)
 	spawnableAtoms = list(/obj/structure/flora/roguegrass/water = 12,
 	                        /obj/structure/flora/roguegrass/water/reeds = 8,
 							/obj/structure/flora/roguegrass/stalky = 4,

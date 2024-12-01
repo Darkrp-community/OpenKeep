@@ -123,7 +123,7 @@
 
 /obj/item/clothing/suit/roguetown/shirt/robe/merchant
 	name = "guilder jacket"
-	desc = "A fancy jacket common with members of the Mercator Guild."
+	desc = "A fancy jacket common with members of the Mercator guild."
 	icon_state = "merrobe"
 	sellprice = 30
 

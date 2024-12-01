@@ -58,7 +58,6 @@ GLOBAL_LIST_INIT(rod_jobs, list(
 	"Court Magician",
 	"Butler",
 	"Archivist",
-	"Stevedore",
 	"Jester",
 	"Prisoner",
 	"Feldsher",
