@@ -133,8 +133,6 @@
 /mob/living/proc/stat_difference_to(mob/living/opponent,stat_key)
 	if(!opponent || !stat_key)
 		return
-	var/opponent_stat
-	var/our_stat
 	switch(stat_key)
 		if(STATKEY_STR)
 			return STASTR - opponent.STASTR
