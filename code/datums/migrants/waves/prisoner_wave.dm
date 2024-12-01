@@ -101,11 +101,11 @@
 /datum/migrant_role/prisoner_guard
 	name = "Guard"
 	greet_text = "You are apart of a convoy returning prisoners to Vanderlin. Obey the gaoler and ensure the prisoners get back to the dungeons."
-	outfit = /datum/outfit/job/roguetown/footman_bannerman
+	outfit = /datum/outfit/job/roguetown/guard
 	allowed_races = list("Humen","Dwarf","Aasimar")
 	grant_lit_torch = TRUE
 
-/datum/outfit/job/roguetown/footman_bannerman/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/guard/pre_equip(mob/living/carbon/human/H)
 	..()
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
