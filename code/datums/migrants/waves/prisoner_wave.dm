@@ -68,10 +68,6 @@
 ..()
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	mask = /obj/item/clothing/mask/rogue/facemask/prisoner
-	if(H.wear_mask)
-		var/obj/I = H.wear_mask
-		H.dropItemToGround(H.wear_mask, TRUE)
-		qdel(I)
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
