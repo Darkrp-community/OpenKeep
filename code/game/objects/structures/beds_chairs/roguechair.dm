@@ -417,7 +417,7 @@
 
 /obj/structure/bed/rogue/post_buckle_mob(mob/living/M)
 	..()
-	M.set_mob_offsets("bed_buckle", _x = 0, _y = 5)
+	M.set_mob_offsets("bed_buckle", _x = 0 + src.pixel_x, _y = 5 + src.pixel_y)
 
 /obj/structure/bed/rogue/post_unbuckle_mob(mob/living/M)
 	..()
