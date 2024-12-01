@@ -18,6 +18,7 @@
 	metalizer_result = /obj/structure/bars/pipe
 	var/quality = SMELTERY_LEVEL_NORMAL // For it not to ruin recipes that need it
 	var/lumber = /obj/item/grown/log/tree/small //These are solely for lumberjack calculations
+	var/lumber_alt
 	var/lumber_amount = 1
 
 /obj/item/grown/log/tree/attacked_by(obj/item/I, mob/living/user) //This serves to reward woodcutting
@@ -41,6 +42,41 @@
 					playsound(src,pick('sound/items/gem.ogg'), 100, FALSE)
 			else
 				new lumber(get_turf(src))
+		if(!skill_level)
+			to_chat(user, span_info("My poor skill has me ruin some of the timber..."))
+		user.mind.add_sleep_experience(/datum/skill/labor/lumberjacking, (user.STAINT*0.5))
+		playsound(src, destroy_sound, 100, TRUE)
+		qdel(src)
+		return TRUE
+	..()
+
+
+/obj/item/grown/log/tree/attack_right(mob/living/user)
+	. = ..()
+	var/obj/item/I = user.get_active_held_item()
+	if(!I)
+		return
+
+	if(user.used_intent.blade_class == BCLASS_CHOP && lumber_amount && lumber_alt)
+		var/skill_level = user.mind.get_skill_level(/datum/skill/labor/lumberjacking)
+		var/lumber_time = (40 - (skill_level * 5))
+		var/minimum = 1
+		playsound(src, 'sound/misc/woodhit.ogg', 100, TRUE)
+		if(!do_after(user, lumber_time, target = user))
+			return
+		if(skill_level > 0) // If skill level is 1 or higher, we get more minimum wood!
+			minimum = 2
+		lumber_amount = rand(minimum, max(round(skill_level), minimum))
+		var/essense_sound_played = FALSE //This is here so the sound wont play multiple times if the essense itself spawns multiple times
+		for(var/i = 0; i < lumber_amount; i++)
+			if(prob(skill_level+ user.goodluck(2)))
+				new /obj/item/grown/log/tree/small/essence(get_turf(src))
+				if(!essense_sound_played)
+					essense_sound_played = TRUE
+					to_chat(user, span_warning("Dendor watches over us..."))
+					playsound(src,pick('sound/items/gem.ogg'), 100, FALSE)
+			else
+				new lumber_alt(get_turf(src))
 		if(!skill_level)
 			to_chat(user, span_info("My poor skill has me ruin some of the timber..."))
 		user.mind.add_sleep_experience(/datum/skill/labor/lumberjacking, (user.STAINT*0.5))
@@ -87,6 +123,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	smeltresult = /obj/item/rogueore/coal
 	lumber = /obj/item/natural/wood/plank
+	lumber_alt = /obj/item/grown/log/tree/stick
 	lumber_amount = 2
 
 /obj/item/grown/log/tree/stick

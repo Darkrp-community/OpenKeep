@@ -19,7 +19,9 @@
 /turf/open/floor/rogue/churchrough,
 /area/rogue/underworld)
 "fC" = (
-/obj/structure/bars,
+/obj/structure/bars{
+	max_integrity = 700000
+	},
 /turf/open/floor/rogue/church,
 /area/rogue/underworld)
 "ip" = (
@@ -97,9 +99,11 @@
 /obj/effect/landmark/underworld_spawnpoint,
 /turf/open/floor/rogue/church,
 /area/rogue/underworld)
-"yd" = (
-/obj/structure/underworld/barrier,
-/turf/open/transparent/openspace,
+"xS" = (
+/obj/structure/bars{
+	max_integrity = 700000
+	},
+/turf/open/floor/rogue/churchrough,
 /area/rogue/underworld)
 "yn" = (
 /turf/closed/wall/mineral/rogue/underbrick{
@@ -116,8 +120,10 @@
 /turf/open/floor/rogue/churchrough,
 /area/rogue/underworld)
 "zx" = (
-/obj/structure/underworld/barrier,
-/turf/open/floor/rogue/church,
+/obj/structure/stairs/stone/church{
+	dir = 1
+	},
+/turf/open/transparent/openspace,
 /area/rogue/underworld)
 "AF" = (
 /obj/structure/underworld/carriage{
@@ -147,6 +153,9 @@
 /turf/open/floor/rogue/church,
 /area/rogue/underworld)
 "DM" = (
+/obj/structure/stairs/stone/church{
+	dir = 1
+	},
 /obj/machinery/light/rogue/wallfire/candle/blue{
 	pixel_x = 32;
 	pixel_y = 0
@@ -206,6 +215,9 @@
 /turf/open/floor/rogue/underworld/road,
 /area/rogue/underworld)
 "LG" = (
+/obj/structure/stairs/stone/church{
+	dir = 1
+	},
 /obj/machinery/light/rogue/wallfire/candle/blue{
 	pixel_y = 0;
 	pixel_x = -32
@@ -287,7 +299,8 @@
 /area/rogue/underworld)
 "Vp" = (
 /obj/structure/gate/bars{
-	gid = "death"
+	gid = "death";
+	max_integrity = 5000000
 	},
 /turf/open/floor/rogue/churchrough,
 /area/rogue/underworld)
@@ -8689,8 +8702,8 @@ KU
 sz
 sz
 sz
-Eh
-Eh
+sz
+sz
 Eh
 Eh
 Eh
@@ -8819,8 +8832,8 @@ KU
 sz
 sz
 sz
+sz
 Qn
-df
 dF
 df
 df
@@ -8949,8 +8962,8 @@ KU
 sz
 sz
 sz
+sz
 Qn
-df
 df
 df
 df
@@ -9079,8 +9092,8 @@ KU
 sz
 sz
 sz
+sz
 Qn
-df
 wY
 df
 df
@@ -9209,8 +9222,8 @@ KU
 sz
 sz
 sz
-Eh
-Eh
+sz
+sz
 Eh
 Eh
 Eh
@@ -25329,8 +25342,8 @@ IP
 Lk
 Lk
 Lk
+Lk
 Xt
-Eh
 Eh
 IH
 Sp
@@ -25454,14 +25467,14 @@ xn
 xn
 xn
 xn
-zx
 Wt
 Wt
 Wt
 Wt
-Df
+Wt
+Wt
 LG
-yd
+kH
 fC
 ol
 ol
@@ -25584,14 +25597,14 @@ xn
 xn
 xn
 xe
-zx
+Wt
 GV
 lw
 Wt
 Wt
-Df
+Wt
+zx
 kH
-yd
 fC
 ol
 ol
@@ -25714,14 +25727,14 @@ xn
 xn
 xn
 xn
-zx
 Wt
 Wt
 Wt
 Wt
-Df
+Wt
+Wt
 DM
-yd
+kH
 fC
 ol
 ol
@@ -25849,8 +25862,8 @@ IP
 Lk
 Lk
 Lk
+Lk
 Xt
-Eh
 Eh
 IH
 Sp
@@ -26110,7 +26123,7 @@ PP
 PP
 PP
 PP
-Bj
+xS
 sz
 Wt
 ol
