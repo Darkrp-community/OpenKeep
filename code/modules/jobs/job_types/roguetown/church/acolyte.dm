@@ -18,7 +18,7 @@
 	allowed_patrons = ALL_TEMPLE_PATRONS
 	outfit = /datum/outfit/job/roguetown/monk
 
-	display_order = JDO_MONK
+	display_order = JDO_ACOLYTE
 	give_bank_account = TRUE
 	min_pq = -10
 	bypass_lastclass = TRUE

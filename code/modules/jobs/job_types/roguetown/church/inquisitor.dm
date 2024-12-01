@@ -1,6 +1,6 @@
 /datum/job/roguetown/inquisitor
 	title = "Inquisitor"
-	flag = PURITAN
+	flag = INQUISITOR
 	department_flag = TEMPLE
 	faction = "Station"
 	total_positions = 1
@@ -15,7 +15,7 @@
 	whitelist_req = FALSE
 
 	outfit = /datum/outfit/job/roguetown/inquisitor
-	display_order = JDO_PURITAN
+	display_order = JDO_INQUISITOR
 	min_pq = 4
 	bypass_lastclass = TRUE
 

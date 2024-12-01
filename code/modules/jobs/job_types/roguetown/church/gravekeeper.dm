@@ -18,7 +18,7 @@
 	tutorial = "As a servant of Necra, you live among worms and maggots, ensuring the dead rest peacefully. You are the bane of grave robbers and necromancers, and your holy magic puts undead back into the ground where they belong."
 	allowed_patrons = list(/datum/patron/divine/necra)
 	outfit = /datum/outfit/job/roguetown/gravekeeper
-	display_order = JDO_GRAVEMAN
+	display_order = JDO_GRAVEKEEPER
 	give_bank_account = TRUE
 	min_pq = -10
 	bypass_lastclass = TRUE

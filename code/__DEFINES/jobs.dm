@@ -119,7 +119,7 @@
 #define ACOLYTE		(1<<1)
 #define TEMPLAR		(1<<2)
 #define GRAVEKEEPER	(1<<3)
-#define PURITAN		(1<<4)
+#define INQUISITOR	(1<<4)
 #define ADEPT		(1<<5)
 
 
@@ -186,12 +186,12 @@
 
 #define JDO_PRIEST 12
 #define JDO_CLERIC 13
-#define JDO_MONK 14
-#define JDO_GRAVEMAN 15
+#define JDO_ACOLYTE 14
+#define JDO_GRAVEKEEPER 15
 
-#define JDO_PURITAN 16
+#define JDO_TEMPLAR 15.1
+#define JDO_INQUISITOR 16
 #define JDO_SHEPHERD 17
-#define JDO_TEMPLAR 17.1
 
 #define JDO_MERCHANT 18
 #define JDO_TAILOR 18.1
