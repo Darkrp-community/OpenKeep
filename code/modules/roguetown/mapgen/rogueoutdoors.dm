@@ -130,7 +130,7 @@
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 	spawnableAtoms = list(
-							/obj/structure/closet/dirthole/closed/loot=2)		// add more stuff I guess
+							/obj/structure/closet/dirthole/closed/loot=5)		// add more stuff I guess
 	allowed_areas = list(/area/rogue/outdoors/rtfield/spooky, /area/rogue/outdoors/rtfield/outlaw)
 
 /datum/mapGeneratorModule/stonehamlet_grassturf

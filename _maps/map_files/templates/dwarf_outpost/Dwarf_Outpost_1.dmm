@@ -101,8 +101,7 @@
 	},
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "iS" = (
-/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
-/obj/structure/mineral_door/wood/donjon/stone,
+/obj/effect/spawner/roguemap/beartrap,
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "jk" = (
@@ -365,8 +364,7 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Hh" = (
-/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
-/obj/effect/decal/cleanable/blood/old,
+/obj/effect/spawner/roguemap/beartrap,
 /turf/open/floor/rogue/metal{
 	icon_state = "plating2"
 	},
@@ -1059,7 +1057,7 @@ gl
 vf
 Zs
 Zs
-Zs
+iS
 Zs
 eB
 eB
@@ -1103,7 +1101,7 @@ YV
 Zj
 CC
 vf
-iS
+ik
 vf
 dA
 TE
@@ -1341,9 +1339,9 @@ Jw
 Zs
 qz
 QF
-Hh
+iA
 NG
-QF
+Hh
 UK
 Yt
 Ro
