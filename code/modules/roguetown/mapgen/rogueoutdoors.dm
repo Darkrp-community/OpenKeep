@@ -140,10 +140,10 @@
 	spawnableAtoms = list(/obj/structure/flora/roguegrass = 15,
 							/obj/item/natural/stone = 6,
 							/obj/item/grown/log/tree/stick = 2,
-							/obj/structure/flora/rogueflower/lavendergrass = 1,
-							/obj/structure/flora/rogueflower/ywflowers = 1,
-							/obj/structure/flora/rogueflower/brflowers = 1,
-							/obj/structure/flora/rogueflower/ppflowers = 1)
+							/obj/structure/flora/rogueflower/lavendergrass = 0.5,
+							/obj/structure/flora/rogueflower/ywflowers = 0.5,
+							/obj/structure/flora/rogueflower/brflowers = 0.5,
+							/obj/structure/flora/rogueflower/ppflowers = 0.5)
 	allowed_areas = list(/area/rogue/outdoors/town,/area/rogue/outdoors/rtfield)
 
 /datum/mapGeneratorModule/stonehamlet_swampturf

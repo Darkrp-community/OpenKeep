@@ -296,6 +296,12 @@
 /obj/item/keyring/armorsmith
 	keys = list(/obj/item/roguekey/armorsmith, /obj/item/roguekey/blacksmith)
 
+/obj/item/keyring/blacksmith
+	keys = list(/obj/item/roguekey/blacksmith_home, /obj/item/roguekey/blacksmith, /obj/item/roguekey/makers_guild)
+
+/obj/item/keyring/mason
+	keys = list(/obj/item/roguekey/mason, /obj/item/roguekey/makers_guild)
+
 /obj/item/keyring/mayor
 	keys = list(/obj/item/roguekey/veteran, /obj/item/roguekey/walls, /obj/item/roguekey/elder, /obj/item/roguekey/butcher, /obj/item/roguekey/soilson, /obj/item/roguekey/manor)
 
