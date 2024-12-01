@@ -45,6 +45,7 @@
 	STASTR = 6
 	STASPD = 12
 
+	simple_detect_bonus = 20
 	retreat_distance = 0
 	minimum_distance = 0
 	deaggroprob = 0
@@ -59,6 +60,11 @@
 	remains_type = /obj/effect/decal/remains/wolf
 	body_eater = TRUE
 
+	///this mob was updated to new ai
+	AIStatus = AI_OFF
+	can_have_ai = FALSE
+	ai_controller = /datum/ai_controller/volf
+
 /obj/effect/decal/remains/wolf
 	name = "remains"
 	gender = PLURAL
@@ -67,6 +73,8 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/Initialize()
 	. = ..()
+	AddElement(/datum/element/ai_flee_while_injured, 0.75, retreat_health)
+
 	gender = MALE
 	if(prob(33))
 		gender = FEMALE
@@ -111,6 +119,12 @@
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
+
+
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf/find_food()
+	. = ..()
+	if(!.)
+		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/simple_limb_hit(zone)
 	if(!zone)

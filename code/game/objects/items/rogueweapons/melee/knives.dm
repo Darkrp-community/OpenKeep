@@ -1,42 +1,46 @@
+/* KNIVES - Low damage, bad parry, ok AP
+==========================================================*/
 
-
-/obj/item/rogueweapon/huntingknife
-	force = 12
+/obj/item/rogueweapon/knife
+	force = DAMAGE_KNIFE
+	throwforce = DAMAGE_KNIFE
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
-	name = "hunting knife"
-	desc = "Loyal companion to hunters and poachers, from humble bone to truest steel, disembowel your prey with glee."
-	icon_state = "huntingknife"
 	icon = 'icons/roguetown/weapons/32.dmi'
-	item_state = "bone_dagger"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	gripsprite = FALSE
-	dropshrink = 0.75
-	slot_flags = ITEM_SLOT_HIP
+	dropshrink = 0.8
 	thrown_bclass = BCLASS_CUT
 	wlength = WLENGTH_SHORT
 	w_class = WEIGHT_CLASS_SMALL
 	parrysound = list('sound/combat/parry/bladed/bladedsmall (1).ogg','sound/combat/parry/bladed/bladedsmall (2).ogg','sound/combat/parry/bladed/bladedsmall (3).ogg')
 	swingsound = list('sound/combat/wooshes/bladed/wooshmed (1).ogg','sound/combat/wooshes/bladed/wooshmed (2).ogg','sound/combat/wooshes/bladed/wooshmed (3).ogg')
 	max_blade_int = 140
-	max_integrity = 300
-	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
+	max_integrity = INTEGRITY_STANDARD
 	associated_skill = /datum/skill/combat/knives
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
 	equip_sound = 'sound/foley/dropsound/holster_sword.ogg'
 	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
-	throwforce = 12
-	wdefense = 3
-	wbalance = 1 // All knives are swift, bonus to SPD
+	wdefense = MEDIOCHRE_PARRY
+	wbalance = HARD_TO_DODGE
 	smeltresult = /obj/item/ingot/steel
+	sharpness = IS_SHARP
 	sellprice = 30
 
-
+/obj/item/rogueweapon/knife/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.4,"sx" = -8,"sy" = 0,"nx" = 9,"ny" = 0,"wx" = -4,"wy" = 0,"ex" = 2,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /datum/intent/dagger
 	clickcd = 8
 
+/*-----------\
+| Cut intent |	small AP, fast
+\-----------*/
 /datum/intent/dagger/cut
 	name = "cut"
 	icon_state = "incut"
@@ -47,8 +51,11 @@
 	penfactor = 10
 	chargetime = 0
 	swingdelay = 1
-	clickcd = 10
+	clickcd = 10	// between normal and fast
 
+/*------------\
+| Stab intent |	good AP, fast
+\---------.--*/
 /datum/intent/dagger/thrust
 	name = "stab"
 	icon_state = "instab"
@@ -56,30 +63,26 @@
 	animname = "stab"
 	blade_class = BCLASS_STAB
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-	penfactor = 30
+	penfactor = AP_DAGGER_STAB
 	chargetime = 0
-	clickcd = 8
+	clickcd = CLICK_CD_FAST
 	swingdelay = 1
 
+/*------------\
+| Pick intent |	great AP. Not actually used anywhere.
+\------------*/
 /datum/intent/dagger/thrust/pick
 	name = "thrust"
 	attack_verb = list("stabs", "impales")
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-	penfactor = 50
+	penfactor = AP_DAGGER_PICK
 	clickcd = CLICK_CD_MELEE
 	swingdelay = 1
 	blade_class = BCLASS_PICK
 
-/obj/item/rogueweapon/huntingknife/getonmobprop(tag)
-	. = ..()
-	if(tag)
-		switch(tag)
-			if("gen")
-				return list("shrink" = 0.4,"sx" = -8,"sy" = 0,"nx" = 9,"ny" = 0,"wx" = -4,"wy" = 0,"ex" = 2,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
-			if("onbelt")
-				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-
-
+/*------------\
+| Chop intent |	small AP, bonus damage
+\------------*/
 /datum/intent/dagger/chop
 	name = "chop"
 	icon_state = "inchop"
@@ -92,7 +95,28 @@
 	swingdelay = 1
 	clickcd = CLICK_CD_MELEE
 
-/obj/item/rogueweapon/huntingknife/cleaver
+/datum/intent/dagger/chop/cleaver
+	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
+	damfactor = 2
+
+//................ Hunting Knife ............... //
+/obj/item/rogueweapon/knife/hunting
+	force = DAMAGE_KNIFE+1
+	throwforce = DAMAGE_KNIFE
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
+	name = "hunting knife"
+	desc = "Loyal companion to hunters and poachers, from humble bone to truest steel, disembowel your prey with glee."
+	icon_state = "huntingknife"
+	max_blade_int = 140
+	max_integrity = INTEGRITY_STRONG
+	wdefense = MEDIOCHRE_PARRY
+	wbalance = HARD_TO_DODGE
+	smeltresult = /obj/item/ingot/steel
+	sellprice = 30
+
+
+//................ Cleaver ............... //
+/obj/item/rogueweapon/knife/cleaver
 	name = "cleaver"
 	desc = "A chef's tool turned armament, cleave off cumbersome flesh with rudimentary ease."
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
@@ -114,28 +138,22 @@
 	wbalance = 0 // Except this one, too huge and used to chop
 	dropshrink = 0.9
 
-/obj/item/rogueweapon/huntingknife/cleaver/combat
-	name = "knife"
+//................ Hack-Knife ............... //
+/obj/item/rogueweapon/knife/cleaver/combat
+	name = "hack-knife"
 	desc = "A short blade that even the weakest of hands can aspire to do harm with."
-	force = 10
+	force = DAMAGE_KNIFE
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	icon_state = "combatknife"
-	icon = 'icons/roguetown/weapons/32.dmi'
-	experimental_inhand = TRUE
-	experimental_onhip = TRUE
-	experimental_onback = TRUE
-	parrysound = list('sound/combat/parry/bladed/bladedmedium (1).ogg','sound/combat/parry/bladed/bladedmedium (2).ogg','sound/combat/parry/bladed/bladedmedium (3).ogg')
-	swingsound = list('sound/combat/wooshes/bladed/wooshmed (1).ogg','sound/combat/wooshes/bladed/wooshmed (2).ogg','sound/combat/wooshes/bladed/wooshmed (3).ogg')
 	throwforce = 16
 	max_integrity = 180
 	slot_flags = ITEM_SLOT_HIP
-	thrown_bclass = BCLASS_CHOP
 	w_class = WEIGHT_CLASS_NORMAL
 	smeltresult = /obj/item/ingot/iron
 	wbalance = 1
 	sellprice = 15
 
-/obj/item/rogueweapon/huntingknife/cleaver/combat/getonmobprop(tag)
+/obj/item/rogueweapon/knife/cleaver/combat/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)
@@ -144,44 +162,43 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-
-/datum/intent/dagger/chop/cleaver
-	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
-	penfactor = 30
-
-/obj/item/rogueweapon/huntingknife/idagger
-	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut)
+//................ Iron Dagger ............... //
+/obj/item/rogueweapon/knife/dagger
+	force = DAMAGE_DAGGER
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut) //Stabbing is the first intent, for convenience.
 	name = "iron dagger"
 	desc = "Thin, sharp, pointed death."
-	force = 10
 	icon_state = "idagger"
 	smeltresult = null
 	sellprice = 15
 
-/obj/item/rogueweapon/huntingknife/idagger/steel
+//................ Steel Dagger ............... //
+/obj/item/rogueweapon/knife/dagger/steel
+	force = DAMAGE_DAGGER+2
 	name = "steel dagger"
 	desc = "A dagger made of refined steel."
-	force = 14
 	icon_state = "sdagger"
 	smeltresult = null
+	wdefense = AVERAGE_PARRY
+	wbalance = VERY_HARD_TO_DODGE
+	sellprice = 20
 
-/obj/item/rogueweapon/huntingknife/idagger/steel/special
+/obj/item/rogueweapon/knife/dagger/steel/special
 	icon_state = "sdaggeralt"
 	desc = "A dagger of refined steel, and even more refined appearance."
+	sellprice = 25
 
-/obj/item/rogueweapon/huntingknife/idagger/steel/dirk
+//................ Fanged dagger ............... //
+/obj/item/rogueweapon/knife/dagger/steel/dirk
 	name = "fanged dagger"
 	desc = "A dagger modeled after the fang of an anthrax spider."
-	experimental_inhand = TRUE
-	experimental_onhip = TRUE
-	experimental_onback = TRUE
 	icon_state = "spiderdagger"
 	smeltresult = null
 
-/obj/item/rogueweapon/huntingknife/idagger/silver
+//................ Silver Dagger ............... //
+/obj/item/rogueweapon/knife/dagger/silver
 	name = "silver dagger"
 	desc = "A dagger made of fine silver, the bane of the undead."
-	force = 13 // .9 of steel
 	icon_state = "sildagger"
 	smeltresult = null
 	max_blade_int = 112 // .8 of steel
@@ -189,24 +206,24 @@
 	sellprice = 45
 	var/last_used = 0
 
-/obj/item/rogueweapon/huntingknife/idagger/silver/pickup(mob/user)
+/obj/item/rogueweapon/knife/dagger/silver/pickup(mob/user)
 	. = ..()
 	var/mob/living/carbon/human/H = user
 	if(ishuman(H))
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
 			H.Knockdown(20)
-			H.adjustFireLoss(60)
-			H.Paralyze(20)
+			H.Paralyze(1)
+			H.adjustFireLoss(40)
 			H.fire_act(1,5)
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
 			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
 				H.Knockdown(10)
-				H.Paralyze(10)
+				H.Paralyze(1)
 
-/obj/item/rogueweapon/huntingknife/idagger/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
+/obj/item/rogueweapon/knife/dagger/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	. = ..()
 	if(ishuman(M))
 		var/datum/antagonist/vampirelord/V_lord = FALSE
@@ -215,20 +232,16 @@
 			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 		if(H.mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			H.Knockdown(20)
-			H.adjustFireLoss(60)
-			H.Paralyze(20)
+			H.adjustFireLoss(40)
 			H.fire_act(1,5)
 		if(V_lord)
 			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 				H.Knockdown(10)
-				H.Paralyze(10)
 
-/obj/item/rogueweapon/huntingknife/idagger/silver/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
+/obj/item/rogueweapon/knife/dagger/silver/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
 	if(world.time < src.last_used + 100)
 		to_chat(user, "<span class='notice'>The silver effect is on cooldown.</span>")
 		return
-
-
 
 	. = ..()
 	if(ishuman(target))
@@ -242,33 +255,26 @@
 			V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 		if(V)
 			if(V.disguised)
-				H.Stun(20)
 				H.visible_message("<font color='white'>The silver weapon manifests the [H] curse!</font>")
 				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(30)
-				H.Paralyze(20)
+				H.Knockdown(20)
 				H.fire_act(1,4)
 				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
 				src.last_used = world.time
 			else
-				H.Stun(20)
 				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(30)
-				H.Paralyze(20)
+				H.Knockdown(20)
 				H.fire_act(1,4)
 				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
 				src.last_used = world.time
 		if(V_lord)
 			if(V_lord.vamplevel < 4 && !V)
-				H.Stun(10)
 				to_chat(H, "<span class='userdanger'>I'm hit by my BANE!</span>")
-				H.adjustFireLoss(25)
-				H.Paralyze(10)
+				H.Knockdown(10)
 				H.fire_act(1,4)
 				src.last_used = world.time
 			if(V_lord.vamplevel == 4 && !V)
-				s_user.Stun(10)
-				s_user.Paralyze(10)
+				s_user.Knockdown(10)
 				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
 				H.visible_message(H, "<span class='userdanger'>This feeble metal can't hurt me, I HAVE TRANSCENDED!</span>")
 		return
@@ -278,15 +284,16 @@
 		target.adjustFireLoss(25)
 		return
 
-/obj/item/rogueweapon/huntingknife/idagger/steel/profane
-	name = "profane dagger"
-	desc = "A dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
+//................ Profane Dagger ............... //
+/obj/item/rogueweapon/knife/dagger/steel/profane
+//	name = "profane dagger"
+	desc = "A profane dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
 	sellprice = 250
 	icon_state = "pdagger"
 	smeltresult = null
 	embedding = list("embed_chance" = 0) // Embedding the cursed dagger has the potential to cause duping issues. Keep it like this unless you want to do a lot of bug hunting.
 
-/obj/item/rogueweapon/huntingknife/idagger/steel/profane/pickup(mob/living/M)
+/obj/item/rogueweapon/knife/dagger/steel/profane/pickup(mob/living/M)
 	. = ..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -299,7 +306,8 @@
 				"<span class='danger'>It's cold...</span>",
 				"<span class='danger'>Free us...please...</span>",
 				"<span class='danger'>Necra...deliver...us...</span>")
-			H.visible_message("profane dagger whispers, \"[message]\"")
+//			H.visible_message("profane dagger whispers, \"[message]\"")
+			to_chat(M, ">profane dagger whispers,<span class='danger' \"[message]\"</span>")
 		else
 			var/message = pick(
 				"<span class='danger'>Why...</span>",
@@ -313,16 +321,17 @@
 				"<span class='danger'>Wait...don't I know you?</span>",
 				"<span class='danger'>I thought you were...my friend...</span>",
 				"<span class='danger'>How long have I been in here...</span>")
-			H.visible_message("profane dagger whispers, \"[message]\"")
+//			H.visible_message("profane dagger whispers, \"[message]\"")
+			to_chat(M, ">profane dagger whispers,<span class='danger' \"[message]\"</span>")
 
-/obj/item/rogueweapon/huntingknife/idagger/steel/profane/pre_attack(mob/living/carbon/human/target, mob/living/user = usr, params)
+/obj/item/rogueweapon/knife/dagger/steel/profane/pre_attack(mob/living/carbon/human/target, mob/living/user = usr, params)
 	if(target.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(target, TRAIT_ZIZOID_HUNTED)) // Check to see if the dagger will do 20 damage or 14
 		force = 20
 	else
 		force = 14
 	return FALSE
 
-/obj/item/rogueweapon/huntingknife/idagger/steel/profane/afterattack(mob/living/carbon/human/target, mob/living/user = usr, proximity)
+/obj/item/rogueweapon/knife/dagger/steel/profane/afterattack(mob/living/carbon/human/target, mob/living/user = usr, proximity)
 	. = ..()
 	if(target.stat == DEAD || (target.health < target.crit_threshold)) // Trigger soul steal if the target is either dead or in crit
 		if(target.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(target, TRAIT_ZIZOID_HUNTED)) // The profane dagger only thirsts for those who are hunted, by flaw or by zizoid curse.
@@ -333,7 +342,7 @@
 				user.adjust_triumphs(1)
 				init_profane_soul(target, user) //If they are still in their body, send them to the dagger!
 
-/obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/init_profane_soul(mob/living/carbon/human/target, mob/user)
+/obj/item/rogueweapon/knife/dagger/steel/profane/proc/init_profane_soul(mob/living/carbon/human/target, mob/user)
 	var/mob/dead/observer/profane/S = new /mob/dead/observer/profane(src)
 	S.AddComponent(/datum/component/profaned, src)
 	S.name = "soul of [target.real_name]"
@@ -347,7 +356,7 @@
 	src.blade_int = src.max_blade_int // Stealing a soul successfully sharpens the blade.
 	src.obj_integrity = src.max_integrity // And fixes the dagger. No blacksmith required!
 
-/obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/get_profane_ghost(mob/living/carbon/human/target, mob/user)
+/obj/item/rogueweapon/knife/dagger/steel/profane/proc/get_profane_ghost(mob/living/carbon/human/target, mob/user)
 	var/mob/dead/observer/chosen_ghost
 	var/mob/living/carbon/spirit/underworld_spirit = target.get_spirit() //Check if a soul has already gone to the underworld
 	if(underworld_spirit) // If they are in the underworld, pull them back to the real world and make them a normal ghost. Necra can't save you now!
@@ -362,7 +371,7 @@
 	qdel(target) // Get rid of that ghost!
 	return TRUE
 
-/obj/item/rogueweapon/huntingknife/idagger/steel/profane/proc/release_profane_souls(mob/user) // For ways to release the souls trapped within a profane dagger, such as a Necrite burial rite. Returns the number of freed souls.
+/obj/item/rogueweapon/knife/dagger/steel/profane/proc/release_profane_souls(mob/user) // For ways to release the souls trapped within a profane dagger, such as a Necrite burial rite. Returns the number of freed souls.
 	var/freed_souls = 0
 	for(var/mob/dead/observer/profane/A in src) // for every trapped soul in the dagger, whether they have left the game or not
 		to_chat(A, "<b>I have been freed from my vile prison, I await Necra's cold grasp. Salvation!</b>")
@@ -385,61 +394,40 @@
 
 	S.forceMove(container)
 
-/obj/item/rogueweapon/huntingknife/stoneknife
+//................ Stone Knife ............... //
+/obj/item/rogueweapon/knife/stone
+	force = DAMAGE_KNIFE
+	throwforce = DAMAGE_KNIFE
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)
 	name = "stone knife"
 	desc = "A tool favored by the wood-elves, easy to make, useful for skinning the flesh of beast and man alike."
 	icon_state = "stone_knife"
-	force = 8
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
-	max_integrity = 15
-	max_blade_int = 15
-	wdefense = 1
+	max_integrity = 30
+	max_blade_int = 30
+	wdefense = TERRIBLE_PARRY
 	smeltresult = /obj/item/ash
 	sellprice = 5
 
-/obj/item/rogueweapon/copperdagger
-	force = 8
+
+//................ Villager Knife ............... //
+/obj/item/rogueweapon/knife/villager
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
-	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
+	name = "villager knife"
+	desc = "The loyal companion of simple peasants, able to cut hard bread and carve wood. A versatile kitchen utensil and tool."
+	icon_state = "villagernife"
+
+/obj/item/rogueweapon/knife/copper
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	name = "copper dagger"
 	desc = "A dagger of an older design, the copper serves decent enough."
 	icon_state = "cdagger"
-	icon = 'icons/roguetown/weapons/32.dmi'
-	item_state = "cdagger"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	gripsprite = FALSE
-	slot_flags = ITEM_SLOT_HIP
-	thrown_bclass = BCLASS_CUT
-	wlength = WLENGTH_SHORT
-	w_class = WEIGHT_CLASS_SMALL
-	parrysound = list('sound/combat/parry/bladed/bladedsmall (1).ogg','sound/combat/parry/bladed/bladedsmall (2).ogg','sound/combat/parry/bladed/bladedsmall (3).ogg')
-	swingsound = list('sound/combat/wooshes/bladed/wooshmed (1).ogg','sound/combat/wooshes/bladed/wooshmed (2).ogg','sound/combat/wooshes/bladed/wooshmed (3).ogg')
 	max_blade_int = 50
 	max_integrity = 50
 	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
 	associated_skill = /datum/skill/combat/knives
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
-	throwforce = 12
-	wdefense = 3
 	smeltresult = /obj/item/ash
 	sellprice = 10
 
-/obj/item/rogueweapon/copperdagger/getonmobprop(tag)
-	. = ..()
-	if(tag)
-		switch(tag)
-			if("gen")
-				return list("shrink" = 0.4,"sx" = -8,"sy" = 0,"nx" = 9,"ny" = 0,"wx" = -4,"wy" = 0,"ex" = 2,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
-			if("onbelt")
-				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-
-/obj/item/rogueweapon/huntingknife/villager
-	force = 8
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
-	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
-	name = "villager knife"
-	desc = "The loyal companion of simple peasants, able to cut hard bread and carve wood. A versatile kitchen utensil and tool."
-	icon_state = "villagernife"
 

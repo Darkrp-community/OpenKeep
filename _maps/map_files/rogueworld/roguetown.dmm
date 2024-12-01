@@ -994,8 +994,8 @@
 /area/rogue/under/town/basement)
 "dz" = (
 /obj/structure/closet/crate/roguecloset/dark,
-/obj/item/rogueweapon/huntingknife/idagger,
-/obj/item/rogueweapon/mace/wsword,
+/obj/item/rogueweapon/knife/dagger,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "dA" = (
@@ -1282,7 +1282,7 @@
 "ew" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/suit/roguetown/shirt/rags,
-/obj/item/rogueweapon/mace/wsword,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "ex" = (
@@ -1362,7 +1362,7 @@
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/town)
 "eN" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor)
 "eO" = (
@@ -1785,7 +1785,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
 "gw" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -1819,7 +1819,7 @@
 	},
 /area/rogue/indoors/town/manor)
 "gA" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -2700,21 +2700,21 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "jv" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "jw" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/manor)
 "jx" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -2722,7 +2722,7 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/manor)
 "jy" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -2747,7 +2747,7 @@
 	icon_state = "chair2";
 	dir = 4
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -2758,7 +2758,7 @@
 	icon_state = "largetable";
 	dir = 9
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -3081,7 +3081,7 @@
 /area/rogue/indoors/town/manor)
 "kw" = (
 /obj/structure/closet/crate/chest,
-/obj/item/rogueweapon/huntingknife/cleaver,
+/obj/item/rogueweapon/knife/cleaver,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "kx" = (
@@ -3986,7 +3986,7 @@
 /area/rogue/indoors/town/manor)
 "nE" = (
 /obj/structure/chair/bench/throne,
-/obj/effect/landmark/start/lady,
+/obj/effect/landmark/start/consort,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "nF" = (
@@ -4802,14 +4802,14 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
 "qs" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
 "qt" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -4987,7 +4987,7 @@
 	},
 /area/rogue/indoors/town)
 "qW" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw";
 	dir = 1
@@ -5126,7 +5126,7 @@
 	icon_state = "longtable"
 	},
 /obj/item/reagent_containers/powder/flour,
-/obj/item/rogueweapon/huntingknife/cleaver,
+/obj/item/rogueweapon/knife/cleaver,
 /turf/open/floor/rogue/tile{
 	icon_state = "tile"
 	},
@@ -5361,9 +5361,9 @@
 /area/rogue/indoors/town/tavern)
 "sb" = (
 /obj/structure/closet/crate/chest,
-/obj/item/rogueweapon/huntingknife/idagger/steel,
-/obj/item/rogueweapon/huntingknife/idagger/silver,
-/obj/item/rogueweapon/huntingknife/cleaver/combat,
+/obj/item/rogueweapon/knife/dagger/steel,
+/obj/item/rogueweapon/knife/dagger/silver,
+/obj/item/rogueweapon/knife/cleaver/combat,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/shop)
 "sc" = (
@@ -5410,7 +5410,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
 "sj" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town)
 "sk" = (
@@ -5550,7 +5550,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "sM" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "sN" = (
@@ -6597,7 +6597,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/dwarfin)
 "ww" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/dwarfin)
 "wx" = (
@@ -6920,7 +6920,7 @@
 	},
 /area/rogue/indoors/town/dwarfin)
 "xK" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -7195,7 +7195,7 @@
 	},
 /area/rogue/indoors/town/dwarfin)
 "yD" = (
-/obj/item/rogueweapon/stoneaxe/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
 "yE" = (
@@ -7239,7 +7239,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "yL" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/dwarfin)
 "yM" = (
@@ -7308,7 +7308,7 @@
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town)
 "yY" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "yZ" = (
@@ -9199,7 +9199,7 @@
 	},
 /area/rogue/indoors/town/church/chapel)
 "Fq" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -9368,7 +9368,7 @@
 /area/rogue/indoors/town/garrison)
 "FV" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/huntingknife/idagger/steel,
+/obj/item/rogueweapon/knife/dagger/steel,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -9648,7 +9648,7 @@
 	dir = 5
 	},
 /obj/machinery/light/rogue/wallfire/candle,
-/obj/item/rogueweapon/huntingknife/stoneknife,
+/obj/item/rogueweapon/knife/stone,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "GZ" = (
@@ -10386,7 +10386,7 @@
 	},
 /area/rogue/indoors/town/church)
 "Js" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/warehouse)
 "Jt" = (
@@ -10411,7 +10411,7 @@
 /turf/closed/wall/mineral/rogue/pipe,
 /area/rogue/indoors/town/warehouse)
 "Jz" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -10862,7 +10862,7 @@
 	},
 /area/rogue/indoors/town)
 "Lh" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -11029,7 +11029,7 @@
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/mountains)
 "LS" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/magician)
 "LT" = (
@@ -11261,7 +11261,7 @@
 /area/rogue/indoors/town/magician)
 "MD" = (
 /obj/structure/fluff/psycross,
-/obj/item/rogueweapon/woodstaff/aries,
+/obj/item/rogueweapon/polearm/woodstaff/aries,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church)
 "ME" = (
@@ -11422,7 +11422,7 @@
 /turf/open/floor/rogue/churchrough,
 /area/rogue/indoors/town/church)
 "Ni" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/churchrough,
 /area/rogue/indoors/town/church)
 "Nj" = (

@@ -1,9 +1,8 @@
 
 /obj/structure/roguewindow
 	name = "window"
-	desc = "A window of simple paned glass."
+	desc = "Wrong window type! You shouldn't be seeing this."
 	icon = 'icons/roguetown/misc/structure.dmi'
-	icon_state = "window-solid"
 	layer = TABLE_LAYER
 	density = TRUE
 	anchored = TRUE
@@ -21,6 +20,12 @@
 	break_sound = "glassbreak"
 	destroy_sound = 'sound/combat/hits/onwood/destroywalldoor.ogg'
 
+	var/repairable = TRUE
+	var/repair_state = 0
+	var/obj/item/repair_cost_first = /obj/item/natural/glass
+	var/obj/item/repair_cost_second = /obj/item/grown/log/tree/small
+	var/repair_skill = /datum/skill/craft/masonry // i copypasted this code from the repairable doors and now it's got defines in the base type
+
 /obj/structure/roguewindow/Initialize()
 	update_icon()
 	..()
@@ -31,24 +36,99 @@
 		return
 	icon_state = "[base_state]"
 
+/obj/structure/roguewindow/OnCrafted(dirin)
+	dir = turn(dirin, 180)
+	lockdir = dir
+
+/obj/structure/roguewindow/examine(mob/user)
+	. = ..()
+	if(repairable)
+		var/obj/cast_repair_cost_first = repair_cost_first
+		var/obj/cast_repair_cost_second = repair_cost_second
+		if((repair_state == 0) && (obj_integrity < max_integrity))
+			. += span_notice("A [initial(cast_repair_cost_first.name)] can be used to repair it.")
+			if(brokenstate)
+				. += span_notice("An additional [initial(cast_repair_cost_second.name)] is needed to finish repairs.")
+		if(repair_state == 1)
+			. += span_notice("An additional [initial(cast_repair_cost_second.name)] is needed to finish repairs.")
+
+/obj/structure/roguewindow/attackby(obj/item/I, mob/user)
+	if(repairable && (user.mind.get_skill_level(repair_skill) > 0) && ((istype(I, repair_cost_first)) || (istype(I, repair_cost_second)))) // At least 1 skill level needed
+		repairwindow(I,user)
+	else
+		return ..()
+
+/obj/structure/roguewindow/proc/repairwindow(obj/item/I, mob/user)
+	if(brokenstate)
+		switch(repair_state)
+			if(0)
+				if(istype(I, repair_cost_first))
+					user.visible_message(span_notice("[user] starts repairing [src]."), \
+					span_notice("I start repairing [src]."))
+					playsound(user, 'sound/misc/wood_saw.ogg', 100, TRUE)
+					if(do_after(user, (300 / user.mind.get_skill_level(repair_skill)), target = src)) // 1 skill = 30 secs, 2 skill = 15 secs etc.
+						qdel(I)
+						playsound(user, 'sound/misc/wood_saw.ogg', 100, TRUE)
+						repair_state = 1
+						var/obj/cast_repair_cost_second = repair_cost_second
+						to_chat(user, span_notice("An additional [initial(cast_repair_cost_second.name)] is needed to finish the job."))
+			if(1)
+				if(istype(I, repair_cost_second))
+					user.visible_message(span_notice("[user] starts repairing [src]."), \
+					span_notice("I start repairing [src]."))
+					playsound(user, 'sound/misc/wood_saw.ogg', 100, TRUE)
+					if(do_after(user, (300 / user.mind.get_skill_level(repair_skill)), target = src)) // 1 skill = 30 secs, 2 skill = 15 secs etc.
+						qdel(I)
+						playsound(user, 'sound/misc/wood_saw.ogg', 100, TRUE)
+						icon_state = "[base_state]"
+						density = TRUE
+						opacity = TRUE
+						brokenstate = FALSE
+						obj_broken = FALSE
+						obj_integrity = max_integrity
+						repair_state = 0
+						user.visible_message(span_notice("[user] repaired [src]."), \
+						span_notice("I repaired [src]."))
+	else
+		if(obj_integrity < max_integrity && istype(I, repair_cost_first))
+			to_chat(user, span_warning("[obj_integrity]"))
+			user.visible_message(span_notice("[user] starts repairing [src]."), \
+			span_notice("I start repairing [src]."))
+			playsound(user, 'sound/misc/wood_saw.ogg', 100, TRUE)
+			if(do_after(user, (300 / user.mind.get_skill_level(repair_skill)), target = src)) // 1 skill = 30 secs, 2 skill = 15 secs etc.
+				qdel(I)
+				playsound(user, 'sound/misc/wood_saw.ogg', 100, TRUE)
+				obj_integrity = obj_integrity + (max_integrity/2)
+				if(obj_integrity > max_integrity)
+					obj_integrity = max_integrity
+				user.visible_message(span_notice("[user] repaired [src]."), \
+				span_notice("I repaired [src]."))
+
 /obj/structure/roguewindow/attack_ghost(mob/dead/observer/user)	// lets ghosts click on windows to transport across
 	density = FALSE
 	. = step(user,get_dir(user,src.loc))
 	density = TRUE
 
+/obj/structure/roguewindow/solid
+	desc = "A window of simple paned glass."
+	icon_state = "window-solid"
+	integrity_failure = 0.5
+
 /obj/structure/roguewindow/stained
+	desc = "A stained-glass window filigreed in silver."
 	icon_state = "stained-silver"
 	base_state = "stained-silver"
-	opacity = TRUE
 	max_integrity = 100
 	integrity_failure = 0.75
+	repair_cost_first = /obj/item/natural/glass
+	repair_cost_second = /obj/item/natural/stone
 
 /obj/structure/roguewindow/openclose
+	desc = "It opens and closes."
 	icon_state = "woodwindowdir"
 	base_state = "woodwindow"
-	opacity = TRUE
 	max_integrity = 100
-	integrity_failure = 0.9
+	integrity_failure = 0.5
 
 /obj/structure/roguewindow/openclose/Initialize()
 	lockdir = dir
@@ -96,18 +176,16 @@
 	else
 		to_chat(user, "<span class='warning'>The window doesn't close from this side.</span>")
 
-/obj/structure/roguewindow/proc/open_up(mob/user)
+/obj/structure/roguewindow/openclose/proc/open_up(mob/user)
 	visible_message("<span class='info'>[user] opens [src].</span>")
 	playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
 	climbable = TRUE
-	opacity = FALSE
 	update_icon()
 
-/obj/structure/roguewindow/proc/close_up(mob/user)
+/obj/structure/roguewindow/openclose/proc/close_up(mob/user)
 	visible_message("<span class='info'>[user] closes [src].</span>")
 	playsound(src, 'sound/foley/doors/windowdown.ogg', 100, FALSE)
 	climbable = FALSE
-	opacity = TRUE
 	update_icon()
 
 /obj/structure/roguewindow/CanPass(atom/movable/mover, turf/target)
@@ -129,10 +207,9 @@
 			return !density
 	return ..()
 
-/obj/structure/roguewindow/proc/force_open()
+/obj/structure/roguewindow/openclose/proc/force_open()
 	playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
 	climbable = TRUE
-	opacity = FALSE
 	update_icon()
 
 /obj/structure/roguewindow/attackby(obj/item/W, mob/user, params)
@@ -160,9 +237,8 @@
 /obj/structure/roguewindow/obj_break(damage_flag)
 	if(!brokenstate)
 		attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
-		new /obj/item/shard (get_turf(src))
+		new /obj/item/natural/glass/shard (get_turf(src))
 		climbable = TRUE
 		brokenstate = TRUE
-		opacity = FALSE
 	update_icon()
 	..()

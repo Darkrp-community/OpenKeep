@@ -29,7 +29,10 @@
 		new_patron = GLOB.patronlist[new_patron]
 	if(!istype(new_patron))
 		return TRUE
+	if(patron && !ispath(patron))
+		patron.on_remove(src)
 	patron = new_patron
+	patron.on_gain(src)
 	return TRUE
 
 /datum/species

@@ -121,7 +121,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	//If you want to have something unrelated to blocking/armour piercing etc. Maybe not needed, but trying to think ahead/allow more freedom
 	var/hit_reaction_chance = 0
 	// Number of tiles for how far this weapon can reach. 1 is adjacent (default)
-	var/reach = 1 
+	var/reach = 1
 
 	//The list of slots by priority. equip_to_appropriate_slot() uses this list. Doesn't matter if a mob type doesn't have a slot.
 	var/list/slot_equipment_priority = null // for default list, see /mob/proc/equip_to_appropriate_slot()
@@ -169,7 +169,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	var/wlength = WLENGTH_NORMAL		//each weapon length class has its own inherent dodge properties
 	var/wbalance = 0
-	var/wdefense = 0 //better at defending
+	var/wdefense = 0 //better at defending. Each points gives a flat 10% bonus to parry
 	var/minstr = 0  //for weapons
 
 	var/sleeved = null
@@ -223,7 +223,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	var/list/onprop = list()
 	var/force_reupdate_inhand = TRUE
-	
+
 	// Boolean sanity var for smelteries to avoid runtimes. Is this is a bar smelted through ore for exp gain?
 	var/smelted = FALSE
 	// Can this be used against a training dummy to learn skills? Prevents dumb exploits.
@@ -238,7 +238,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if(!pixel_x && !pixel_y && !bigboy)
 		pixel_x = rand(-5,5)
 		pixel_y = rand(-5,5)
-	
+
 	if(twohands_required)
 		has_inspect_verb = TRUE
 	// Initalize addon for the var for custom inhands 32x32.
@@ -614,26 +614,6 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if(!user.put_in_active_hand(src, FALSE, FALSE))
 		user.dropItemToGround(src)
 
-/obj/item/attack_alien(mob/user)
-	var/mob/living/carbon/alien/A = user
-
-	if(!A.has_fine_manipulation)
-		if(src in A.contents) // To stop Aliens having items stuck in their pockets
-			A.dropItemToGround(src)
-		to_chat(user, "<span class='warning'>My claws aren't capable of such fine manipulation!</span>")
-		return
-	attack_paw(A)
-
-/obj/item/attack_ai(mob/user)
-	if(istype(src.loc, /obj/item/robot_module))
-		//If the item is part of a cyborg module, equip it
-		if(!iscyborg(user))
-			return
-		var/mob/living/silicon/robot/R = user
-		if(!R.low_power_mode) //can't equip modules with an empty cell.
-			R.activate_module(src)
-			R.hud_used.update_robot_modules_display()
-
 /obj/item/proc/GetDeconstructableContents()
 	return GetAllContents() - src
 
@@ -785,10 +765,6 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		to_chat(user, "<span class='warning'>You're going to need to remove [M.p_their()] eye protection first!</span>")
 		return
 
-	if(isalien(M))//Aliens don't have eyes./N     slimes also don't have eyes!
-		to_chat(user, "<span class='warning'>I cannot locate any eyes on this creature!</span>")
-		return
-
 	if(isbrain(M))
 		to_chat(user, "<span class='warning'>I cannot locate any organic eyes on this brain!</span>")
 		return
@@ -841,12 +817,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 			M.become_blind(EYE_DAMAGE)
 			to_chat(M, "<span class='danger'>I go blind!</span>")
 
-/obj/item/singularity_pull(S, current_size)
-	..()
-	if(current_size >= STAGE_FOUR)
-		throw_at(S,14,3, spin=0)
-	else
-		return
+/obj/item/singularity_pull()
 
 /obj/item/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	if(hit_atom && !QDELETED(hit_atom))
@@ -1010,6 +981,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 /obj/item/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	return
+//	return SEND_SIGNAL(src, COMSIG_ATOM_HITBY, AM, skipcatch, hitpush, blocked, throwingdatum, damage_type)  TO DO enable when damage type fixed I guess
 
 /obj/item/attack_hulk(mob/living/carbon/human/user)
 	return FALSE
@@ -1017,9 +989,6 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 /obj/item/attack_animal(mob/living/simple_animal/M)
 	if (obj_flags & CAN_BE_HIT)
 		return ..()
-	return 0
-
-/obj/item/mech_melee_attack(obj/mecha/M)
 	return 0
 
 /obj/item/burn()
@@ -1041,13 +1010,12 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		MO.desc = ""
 		..()
 
-/obj/item/proc/microwave_act(obj/machinery/microwave/M)
-	if(istype(M) && M.dirty < 100)
-		M.dirty++
+/obj/item/proc/heating_act()
+	return
 
 /obj/item/proc/on_mob_death(mob/living/L, gibbed)
 
-/obj/item/proc/grind_requirements(obj/machinery/reagentgrinder/R) //Used to check for extra requirements for grinding an object
+/obj/item/proc/grind_requirements() //Used to check for extra requirements for grinding an object
 	return TRUE
 
 //Called BEFORE the object is ground up - use this to change grind results based on conditions

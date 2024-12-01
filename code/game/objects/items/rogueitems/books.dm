@@ -11,6 +11,7 @@
 	force = 5
 	associated_skill = /datum/skill/misc/reading
 	var/random_cover
+	var/category = null
 
 /obj/item/book/rogue/getonmobprop(tag)
 	. = ..()
@@ -127,13 +128,13 @@
 		if(C.orders.len > 4)
 			to_chat(user, "<span class='warning'>Too much order.</span>")
 			return
-		var/picked_cat = input(user, "Categories", "Shipping Ledger") as null|anything in sortList(SSshuttle.supply_cats)
+		var/picked_cat = input(user, "Categories", "Shipping Ledger") as null|anything in sortList(SSmerchant.supply_cats)
 		if(!picked_cat)
 			testing("yeye")
 			return
 		var/list/pax = list()
-		for(var/pack in SSshuttle.supply_packs)
-			var/datum/supply_pack/PA = SSshuttle.supply_packs[pack]
+		for(var/pack in SSmerchant.supply_packs)
+			var/datum/supply_pack/PA = SSmerchant.supply_packs[pack]
 			if(PA.group == picked_cat)
 				pax += PA
 		var/picked_pack = input(user, "Shipments", "Shipping Ledger") as null|anything in sortList(pax)
@@ -157,12 +158,12 @@
 		if(P.info)
 			to_chat(user, "<span class='warning'>Something is written here already.</span>")
 			return
-		var/picked_cat = input(user, "Categories", "Shipping Ledger") as null|anything in sortList(SSshuttle.supply_cats)
+		var/picked_cat = input(user, "Categories", "Shipping Ledger") as null|anything in sortList(SSmerchant.supply_cats)
 		if(!picked_cat)
 			return
 		var/list/pax = list()
-		for(var/pack in SSshuttle.supply_packs)
-			var/datum/supply_pack/PA = SSshuttle.supply_packs[pack]
+		for(var/pack in SSmerchant.supply_packs)
+			var/datum/supply_pack/PA = SSmerchant.supply_packs[pack]
 			if(PA.group == picked_cat)
 				pax += PA
 		var/picked_pack = input(user, "Shipments", "Shipping Ledger") as null|anything in sortList(pax)
@@ -253,7 +254,6 @@
 	base_icon_state = "lawtome"
 	bookfile = "law.json"
 
-		//no more theif stole the books
 /obj/item/book/rogue/knowledge1
 	name = "Book of Knowledge"
 	desc = ""
@@ -266,13 +266,11 @@
 	desc = "{<font color='red'><blink>An ominous book with untold powers.</blink></font>}"
 	icon_state ="xylix_0"
 	base_icon_state = "xylix"
+	icon_state ="spellbookmimic_0"
+	base_icon_state = "pellbookmimic"
 	bookfile = "xylix.json"
 
 /obj/item/book/rogue/xylix/attack_self(mob/user)
-	if(!open)
-		attack_right(user)
-		return
-	..()
 	user.update_inv_hands()
 	to_chat(user, "<span class='notice'>You feel laughter echo in your head.</span>")
 

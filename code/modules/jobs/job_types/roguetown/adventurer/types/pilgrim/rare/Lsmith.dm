@@ -2,12 +2,14 @@
 
 /datum/advclass/pilgrim/rare/masterblacksmith
 	name = "Master Blacksmith"
-	tutorial = "Dwarves, and humen who trained extensively under them in the art of smithing, \
+	tutorial = "Dwarves, humen, tieflings and drows who trained extensively under them in the art of smithing, \
 	become the most legendary smiths at their craft, gaining reputation beyond compare."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Dwarf"
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/masterblacksmith
 	maximum_possible_slots = 1
@@ -24,7 +26,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/rogueweapon/huntingknife
+	beltl = /obj/item/rogueweapon/knife/hunting
 	cloak = /obj/item/clothing/cloak/apron/brown
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/tongs=1, /obj/item/rogueore/coal=1, /obj/item/rogueore/iron=1)

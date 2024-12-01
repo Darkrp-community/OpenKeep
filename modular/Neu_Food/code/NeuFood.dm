@@ -39,31 +39,12 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	rotprocess = SHELFLIFE_EXTREME
 
-/obj/item/reagent_containers/food/snacks/proc/changefood(path, mob/living/eater)
-	if(!path || !eater)
-		return
-	var/turf/T = get_turf(eater)
-	if(eater.dropItemToGround(src))
-		qdel(src)
-	var/obj/item/I = new path(T)
-	eater.put_in_active_hand(I)
-
 /obj/effect/decal/cleanable/food/mess // decal applied when throwing minced meat for example
 	name = "mess"
 	desc = ""
 	color = "#ab9d9d"
 	icon_state = "tomato_floor1"
 	random_icon_states = list("tomato_floor1", "tomato_floor2", "tomato_floor3")
-
-/obj/item/reagent_containers/food/snacks/attackby(obj/item/W, mob/user, params)
-	if(user.used_intent.blade_class == slice_bclass && W.wlength == WLENGTH_SHORT)
-		if(slice_bclass == BCLASS_CHOP)
-			user.visible_message("<span class='notice'>[user] chops [src]!</span>")
-			slice(W, user)
-			return 1
-		else if(slice(W, user))
-			return 1
-	..()
 
 /obj/effect/decal/cleanable/food/mess/soup
 	color = "#496538"
@@ -147,12 +128,6 @@
 	icon_state = "spoon"
 	force = 0
 	w_class = WEIGHT_CLASS_TINY
-
-/obj/item/kitchen/rollingpin
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
-	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
-	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
-	experimental_inhand = FALSE
 
 /obj/item/reagent_containers/glass/bowl
 	name = "wooden bowl"

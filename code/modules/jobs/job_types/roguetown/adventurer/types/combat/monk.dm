@@ -28,7 +28,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/backpack
-	backr = /obj/item/rogueweapon/woodstaff
+	backr = /obj/item/rogueweapon/polearm/woodstaff
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
@@ -49,4 +49,4 @@
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 
 	if(H.patron != /datum/patron/divine/ravox)
-		H.patron = GLOB.patronlist[/datum/patron/divine/ravox]
+		H.set_patron(/datum/patron/divine/ravox)

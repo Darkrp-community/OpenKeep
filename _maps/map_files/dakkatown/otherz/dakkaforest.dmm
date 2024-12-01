@@ -535,7 +535,7 @@
 /area/rogue/indoors)
 "oV" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/spear,
+/obj/item/rogueweapon/polearm/spear,
 /obj/item/rogueweapon/shield/wood,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors)
@@ -693,7 +693,7 @@
 	},
 /area/rogue/indoors)
 "tx" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
 "tO" = (
@@ -1038,8 +1038,8 @@
 /area/rogue/outdoors/rtfield)
 "Eu" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/mace/wsword,
-/obj/item/rogueweapon/mace/wsword,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors)
 "Ew" = (
@@ -1323,7 +1323,7 @@
 /area/rogue/outdoors/rtfield)
 "Lb" = (
 /obj/structure/table/wood/plain,
-/obj/item/rogueweapon/huntingknife,
+/obj/item/rogueweapon/knife/hunting,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors)
 "Le" = (

@@ -11,10 +11,10 @@
 	min_pq = 0
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/combat_barbarian.ogg'
-
+/*	Multiclass means this actually does nothing
 /datum/outfit/job/roguetown/adventurer/barbarian
 	allowed_patrons = list(/datum/patron/divine/ravox, /datum/patron/divine/abyssor, /datum/patron/divine/necra, /datum/patron/divine/dendor, /datum/patron/godless, /datum/patron/inhumen/graggar)
-
+*/
 /datum/outfit/job/roguetown/adventurer/barbarian/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
@@ -57,11 +57,11 @@
 			beltr = /obj/item/rogueweapon/mace/woodclub
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		if("Axe")
-			beltr = /obj/item/rogueweapon/woodcut
+			beltr = /obj/item/rogueweapon/axe/iron
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	if(H.dna?.species)
 		H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
-	if(H.patron != /datum/patron/divine/ravox)
-		H.patron = GLOB.patronlist[/datum/patron/divine/ravox]
+//	if(H.patron != /datum/patron/divine/ravox)						commented out because meant to be superceded by the allowedpatrons but since multiclass that doesnt work.
+//		H.set_patron(/datum/patron/divine/ravox)

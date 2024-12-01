@@ -18,10 +18,10 @@
 
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1,
-						/obj/item/natural/fur/rous = 1)
+						/obj/item/natural/fur/rous = 1, /obj/item/alch/bone = 2)
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 						/obj/item/alch/sinew = 1,
-						/obj/item/natural/fur/rous = 1)
+						/obj/item/natural/fur/rous = 1, /obj/item/alch/bone = 4)
 
 	health = ROUS_HEALTH
 	maxHealth = ROUS_HEALTH
@@ -50,6 +50,10 @@
 	remains_type = /obj/effect/decal/remains/bigrat
 	body_eater = TRUE
 
+	AIStatus = AI_OFF
+	can_have_ai = FALSE
+	ai_controller = /datum/ai_controller/big_rat
+
 /obj/effect/decal/remains/bigrat
 	name = "remains"
 	gender = PLURAL
@@ -60,6 +64,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/Initialize()
 	. = ..()
+
 	gender = MALE
 	if(prob(33))
 		gender = FEMALE
@@ -69,10 +74,17 @@
 		icon_dead = "Frat1"
 	update_icon()
 
+	AddElement(/datum/element/ai_flee_while_injured, 0.75, retreat_health)
+	ai_controller.set_blackboard_key(BB_BASIC_FOODS, food_type)
+
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/death(gibbed)
 	..()
 	update_icon()
 
+/mob/living/simple_animal/hostile/retaliate/rogue/bigrat/find_food()
+	. = ..()
+	if(!.)
+		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/update_icon()
 	cut_overlays()

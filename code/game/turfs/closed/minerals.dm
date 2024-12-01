@@ -95,8 +95,6 @@
 //			else
 //				H.mind.adjust_experience(/datum/skill/mining, 4)
 
-	for(var/obj/effect/temp_visual/mining_overlay/M in src)
-		qdel(M)
 	var/flags = NONE
 	if(defer_change) // TODO: make the defer change var a var for any changeturf flag
 		flags = CHANGETURF_DEFER_CHANGE
@@ -109,12 +107,6 @@
 		gets_drilled(user)
 	..()
 
-/turf/closed/mineral/attack_alien(mob/living/carbon/alien/M)
-	to_chat(M, "<span class='notice'>I start digging into the rock...</span>")
-	playsound(src, 'sound/blank.ogg', 50, TRUE)
-	if(do_after(M, 40, target = src))
-		to_chat(M, "<span class='notice'>I tunnel into the rock.</span>")
-		gets_drilled(M)
 /*
 /turf/closed/mineral/Bumped(atom/movable/AM)
 	..()
@@ -462,12 +454,6 @@
 	det_time = rand(8,10) //So you don't know exactly when the hot potato will explode
 	. = ..()
 
-/turf/closed/mineral/gibtonite/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/mining_scanner) || istype(I, /obj/item/t_scanner/adv_mining_scanner) && stage == 1)
-		user.visible_message("<span class='notice'>[user] holds [I] to [src]...</span>", "<span class='notice'>I use [I] to locate where to cut off the chain reaction and attempt to stop it...</span>")
-		defuse()
-	..()
-
 /turf/closed/mineral/gibtonite/proc/explosive_reaction(mob/user = null, triggered_by_explosion = 0)
 	if(stage == GIBTONITE_UNSTRUCK)
 		activated_overlay = mutable_appearance('icons/turf/smoothrocks.dmi', "rock_Gibtonite_active", ON_EDGED_TURF_LAYER)
@@ -609,12 +595,12 @@
 /turf/closed/mineral/random/rogue/med
 	icon_state = "minrandmed"
 	mineralChance = 50
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 20, /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/coal = 20, /turf/closed/mineral/rogue/copper = 10, /turf/closed/mineral/rogue/gemeralds = 1)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 20, /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/coal = 20, /turf/closed/mineral/rogue/copper = 10, /turf/closed/mineral/rogue/silver = 1)//, /turf/closed/mineral/rogue/gemeralds = 1)
 
 /turf/closed/mineral/random/rogue/high
 	icon_state = "minrandhigh"
 	mineralChance = 60
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/gold = 15 , /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/silver = 15, /turf/closed/mineral/rogue/gemeralds = 10)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/gold = 15 , /turf/closed/mineral/rogue/iron = 25, /turf/closed/mineral/rogue/silver = 15)//, /turf/closed/mineral/rogue/gemeralds = 10)
 
 
 //begin actual mineral turfs
@@ -700,7 +686,7 @@
 	name = "rock"
 	desc = "seems too hard"
 	icon_state = "rockyashbed"
-//	smooth_icon = 'icons/turf/walls/hardrock.dmi'
+	smooth_icon = 'icons/turf/walls/hardrock.dmi'
 	max_integrity = 900
 	above_floor = /turf/closed/mineral/rogue/bedrock
 
@@ -708,3 +694,8 @@
 	..()
 	to_chat(user, "<span class='warning'>TOO HARD!</span>")
 	turf_integrity = max_integrity
+
+/turf/closed/mineral/rogue/bedrock/Initialize()
+	. = ..()
+	color = "#c6d9c6"
+

@@ -1,5 +1,5 @@
 
-/obj/item/bait
+/obj/item/bait				// mostly chicken or gote
 	name = "bag of bait"
 	desc = "Horrid smell to me, wonderful smell to big game."
 	icon_state = "bait"
@@ -9,11 +9,12 @@
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 0
 	var/check_counter = 0
-	var/list/attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10,
-										/mob/living/simple_animal/hostile/retaliate/rogue/goat = 33,
+	var/list/attracted_types = list(
+									/mob/living/simple_animal/hostile/retaliate/rogue/chicken = 55,
+									/mob/living/simple_animal/hostile/retaliate/rogue/goat = 33,
 									/mob/living/simple_animal/hostile/retaliate/rogue/goatmale = 33,
-									/mob/living/simple_animal/pet/cat/rogue/cabbit = 33,
-									/mob/living/simple_animal/hostile/retaliate/rogue/chicken = 55)
+									/mob/living/simple_animal/pet/cat/rogue/cabbit = 10,
+									/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10)
 	var/attraction_chance = 100
 	var/deployed = 0
 	resistance_flags = FLAMMABLE
@@ -89,25 +90,24 @@
 						qdel(src)
 	..()
 
-/obj/item/bait/sweet
+/obj/item/bait/sweet		// mostly saiga or cabbit
 	name = "bag of sweetbait"
 	desc = "This bait doesn't smell as bad. I might even try a bite.."
 	icon_state = "baitp"
-	attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/goat = 33,
-							/mob/living/simple_animal/hostile/retaliate/rogue/goatmale = 33,
-							/mob/living/simple_animal/pet/cat/rogue/cabbit = 50, // Rabbits love sweet things
-							/mob/living/simple_animal/hostile/retaliate/rogue/saiga = 20,
-							/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck = 20,
+	attracted_types = list(	/mob/living/simple_animal/hostile/retaliate/rogue/saiga = 30,
+							/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck = 30,
+							/mob/living/simple_animal/pet/cat/rogue/cabbit = 20,
+							/mob/living/simple_animal/hostile/retaliate/rogue/goat = 15,
+							/mob/living/simple_animal/hostile/retaliate/rogue/goatmale = 15,
 							/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 10)
 
 
-/obj/item/bait/bloody
+/obj/item/bait/bloody		// mostly volf
 	name = "bag of bloodbait"
 	desc = "A deployable bag of bait used by hunters to attract predators within the wilds."
 	icon_state = "baitb"
-	attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 33,
-						/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10,
+	attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 45,
+						/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 15,
 						/mob/living/simple_animal/hostile/retaliate/rogue/mole = 15,
-						/mob/living/simple_animal/hostile/retaliate/rogue/troll = 5,
-						/mob/living/simple_animal/hostile/retaliate/rogue/trollbog = 5,
-						/mob/living/simple_animal/hostile/retaliate/rogue/troll/caerbannog = 2.5)
+						/mob/living/simple_animal/hostile/retaliate/rogue/troll = 2,
+						/mob/living/simple_animal/hostile/retaliate/rogue/troll/caerbannog = 1)

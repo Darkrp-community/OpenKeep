@@ -201,7 +201,7 @@
 	if(!(SLOT_GLASSES in obscured))
 		if(glasses)
 			. += "[m3] [glasses.get_examine_string(user)] covering [m2] eyes."
-		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
+		else if(eye_color == BLOODCULT_EYE)
 			. += "<span class='warning'><B>[m2] eyes are glowing an unnatural red!</B></span>"
 
 	//ears
@@ -472,7 +472,7 @@
 	// The Assassin's profane dagger can sniff out their targets, even masked.
 	if(HAS_TRAIT(user, TRAIT_ASSASSIN) && (has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(src, TRAIT_ZIZOID_HUNTED)))
 		for(var/obj/item/I in user)
-			if(istype(I, /obj/item/rogueweapon/huntingknife/idagger/steel/profane))
+			if(istype(I, /obj/item/rogueweapon/knife/dagger/steel/profane))
 				user.visible_message("profane dagger whispers, <span class='danger'>\"That's [real_name]! Strike their heart!\"</span>")
 
 	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)

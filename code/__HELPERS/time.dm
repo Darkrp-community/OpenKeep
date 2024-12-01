@@ -60,10 +60,10 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 						GLOB.forecast = "rain"
 			if(GLOB.forecast == "rain")
 				var/foundnd
-				for(var/datum/weather/rain/R in SSweather.curweathers)
+				if(SSParticleWeather?.runningWeather?.target_trait == PARTICLEWEATHER_RAIN)
 					foundnd = TRUE
 				if(!foundnd)
-					SSweather.run_weather(/datum/weather/rain, 1)
+					SSParticleWeather?.run_weather(pick(/datum/particle_weather/rain_gentle, /datum/particle_weather/rain_storm))
 			if(GLOB.forecast == "fog")
 				var/foundnd
 				for(var/datum/weather/fog/R in SSweather.curweathers)

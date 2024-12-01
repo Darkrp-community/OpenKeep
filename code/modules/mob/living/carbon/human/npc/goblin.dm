@@ -14,6 +14,16 @@
 	possible_rmb_intents = list()
 	vitae_pool = 250 // Small, frail creechers with not so much vitality to gain from.
 
+/datum/species/goblin/after_creation(mob/living/carbon/C)
+	..()
+	C.grant_language(/datum/language/orcish)
+	to_chat(C, "<span class='info'>I can speak Orcish with ,g before my speech.</span>")
+
+/datum/species/goblin/on_species_loss(mob/living/carbon/C)
+	. = ..()
+	UnregisterSignal(C, COMSIG_MOB_SAY)
+	C.remove_language(/datum/language/orcish)
+
 /mob/living/carbon/human/species/goblin/npc
 	aggressive=1
 	mode = AI_IDLE
@@ -110,7 +120,7 @@
 	sexes = 1
 	offset_features = list(OFFSET_HANDS = list(0,-4), OFFSET_HANDS_F = list(0,-4))
 	damage_overlay_type = ""
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	var/raceicon = "goblin"
 
 /datum/species/goblin/regenerate_icons(mob/living/carbon/human/H)
@@ -281,9 +291,9 @@
 	if(is_species(H, /datum/species/goblin/moon))
 		H.STASPD = 15
 	else
-		H.STASPD = 12
+		H.STASPD = 10
 	H.STACON = 6
-	H.STAEND = 10
+	H.STAEND = 8
 	if(is_species(H, /datum/species/goblin/moon))
 		H.STAINT = 8
 	else
@@ -291,10 +301,10 @@
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //tribal spear
-			r_hand = /obj/item/rogueweapon/spear/stone
+			r_hand = /obj/item/rogueweapon/polearm/spear/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
 		if(2) //tribal axe
-			r_hand = /obj/item/rogueweapon/stoneaxe
+			r_hand = /obj/item/rogueweapon/axe/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
 		if(3) //tribal club
 			r_hand = /obj/item/rogueweapon/mace/woodclub
@@ -309,8 +319,8 @@
 			if(prob(30))
 				l_hand = /obj/item/rogueweapon/shield/wood
 			if(prob(23))
-				r_hand = /obj/item/rogueweapon/huntingknife/stoneknife
-				l_hand = /obj/item/rogueweapon/huntingknife/stoneknife
+				r_hand = /obj/item/rogueweapon/knife/stone
+				l_hand = /obj/item/rogueweapon/knife/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/goblin
 			if(prob(80))
 				head = /obj/item/clothing/head/roguetown/helmet/leather/goblin
@@ -357,7 +367,7 @@
 
 /obj/structure/gob_portal/Initialize()
 	. = ..()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 	soundloop.start()
 	spawn_gob()
 
@@ -393,6 +403,8 @@
 		new /mob/living/carbon/human/species/goblin/npc(get_turf(src))
 	gobs++
 	update_icon()
+	if(living_player_count() < 10)
+		maxgobs = 1
 	if(gobs < maxgobs)
 		spawn_gob()
 

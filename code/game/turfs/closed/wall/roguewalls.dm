@@ -307,7 +307,8 @@
 /turf/closed/wall/mineral/rogue/decostone/fluffstone
 	icon_state = "fluffstone"
 
-
+/turf/closed/wall/mineral/rogue/decostone/chimney
+	icon_state = "chimney"
 
 
 /turf/closed/wall/shroud //vines

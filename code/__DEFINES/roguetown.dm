@@ -3,9 +3,9 @@
 
 #define ALL_PLAYER_RACES_BY_NAME		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Dwarf","Tiefling", "Aasimar")
 
-#define ALL_TEMPLE_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/necra, /datum/patron/divine/pestra)
-#define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/necra, /datum/patron/divine/pestra, /datum/patron/divine/dendor)
-#define ALL_TEMPLAR_PATRONS 	list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/necra, /datum/patron/divine/pestra)
+#define ALL_TEMPLE_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/pestra, /datum/patron/divine/malum)
+#define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/necra, /datum/patron/divine/pestra, /datum/patron/divine/dendor, /datum/patron/divine/malum)
+#define ALL_TEMPLAR_PATRONS 	list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/necra, /datum/patron/divine/pestra, /datum/patron/divine/malum)
 
 #define PLATEHIT "plate"
 #define CHAINHIT "chain"
@@ -111,7 +111,8 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_CHALLENGE 		"CAT_CHALLENGE"  	// Challenge class - Meant to be free for everyone
 #define CTAG_MERCENARY		"CAT_MERCENARY"
 #define CTAG_GARRISON		"CAT_GARRISON"
-#define CTAG_ADEPT			"CAT_ADEPT" // Used for Adept class selection
+#define CTAG_ADEPT			"CAT_ADEPT" 		// Used for Adept class selection
+#define CTAG_CONSORT		"CAT_CONSORT"		// Consort classes
 
 /*
 	String category tags
@@ -237,8 +238,94 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define VALUE_MAGIC_ITEM_STRONG	VALUE_MAGIC_ITEM_WEAK+BONUS_VALUE_BIG
 
 
+
+
+
+
+/*--------------------\
+| ARMOR BASIC CONCEPT |
+\--------------------*/
+/*
+Valid until the day someone adds blunt/stab/cut damage defines from Blackstone.
+
+Five general types of armor with some general outlines.
+*With current system armor less than 25 vs arrows is pretty much zero.
+Armor values aren´t %
+Differences between similar armorsets mostly about coverage or crit, small variation in armor value for non-smithed ones
+
+Type					Melee/Arrow		Integrity		AC
+Minor					10/0*			varies			varies (light)
+Padded					25/30			low  			light
+Leather					35/0*			medium			light
+Mail/Scale/Medium		60/35			medium 			medium
+Heavy Plate/Layered		90/70			good			heavy
+
+Thing can move up or down an armor class by significant changes to coverage & crit protection. Like cuirass gets plate, but only covers torso, gets Medium AC instead of Heavy AC.
+*/
+
+/*------------------------\
+| ARMOR INTEGRITY DEFINES |	- So armor makes sense
+\------------------------*/
+
+#define INTEGRITY_STRONGEST		400		// STEEL CHESTPIECES
+#define INTEGRITY_STRONGER		300		// STEEL
+#define INTEGRITY_STRONG		250		// IRON/PERIPHERAL
+#define INTEGRITY_STANDARD		200		// LEATHER
+#define INTEGRITY_POOR			150		// GAMBESON, COPPER
+#define INTEGRITY_WORST			100
+
+
+/*--------------------\
+| ARMOR VALUE DEFINES |	- So armor makes sense. Basic arrow got 25 AP so less than 25 "bullet" does nothing vs arrows generally
+\--------------------*/
+
+// Light AC
+#define ARMOR_MINIMAL		list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_WEAK			list("melee" = 10, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+#define ARMOR_PADDED_BAD	list("melee" = 15, "bullet" = 15, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_PADDED		list("melee" = 25, "bullet" = 30, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_PADDED_GOOD	list("melee" = 30, "bullet" = 35, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+#define ARMOR_LEATHER_WORST	list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_LEATHER_BAD	list("melee" = 30, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_LEATHER		list("melee" = 35, "bullet" = 15, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define	ARMOR_LEATHER_GOOD	list("melee" = 40, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+// Medium AC
+#define ARMOR_MAILLE_IRON	list("melee" = 50, "bullet" = 30, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_MAILLE		list("melee" = 55, "bullet" = 40, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_MAILLE_GOOD	list("melee" = 60, "bullet" = 45, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+#define ARMOR_SCALE			list("melee" = 65, "bullet" = 65, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+// Heavy AC
+#define ARMOR_PLATE_BAD		list("melee" = 65, "bullet" = 50, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_PLATE			list("melee" = 80, "bullet" = 70, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_PLATE_GOOD	list("melee" = 90, "bullet" = 85, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+
+/*-----------------------\
+| COVERAGE ARMOR DEFINES |
+\-----------------------*/
+
+#define COVERAGE_HEAD_NOSE		( HEAD | HAIR | EARS | NOSE )
+#define COVERAGE_HEAD			( HEAD | HAIR | EARS )
+#define COVERAGE_NASAL			( HEAD | HAIR | NOSE )
+#define COVERAGE_SKULL			( HEAD | HAIR )
+
+#define COVERAGE_VEST			( CHEST | VITALS )
+#define COVERAGE_SHIRT			( CHEST | VITALS | ARMS )
+#define COVERAGE_TORSO			( CHEST | GROIN | VITALS )
+#define COVERAGE_ALL_BUT_ARMS	( CHEST | GROIN | VITALS | LEGS )
+#define COVERAGE_ALL_BUT_LEGS	( CHEST | GROIN | VITALS | ARMS )
+#define COVERAGE_FULL			( CHEST | GROIN | VITALS | LEGS | ARMS )
+
+#define COVERAGE_PANTS			( GROIN | LEGS )
+#define COVERAGE_FULL_LEG		( LEGS | FEET )
+
 /*-----------------------------\
-| CRITICAL HIT DEFENSE DEFINES |	- So armor makes sense
+| CRITICAL HIT DEFENSE DEFINES |
 \-----------------------------*/
 
 #define ALL_CRITICAL_HITS list(\
@@ -314,108 +401,9 @@ BCLASS_TWIST)
 
 
 
-/*------------------------\
-| ARMOR INTEGRITY DEFINES |	- So armor makes sense
-\------------------------*/
-
-#define INTEGRITY_STRONGEST		500
-#define INTEGRITY_STRONG		300
-#define INTEGRITY_STANDARD		200
-#define INTEGRITY_POOR			150
-#define INTEGRITY_WORST			100
-
-
-/*--------------------\
-| ARMOR VALUE DEFINES |	- So armor makes sense. Basic arrow got 25 AP so less than 25 "bullet" does nothing vs arrows generally
-\--------------------*/
-
-#define MELEE_5___ARROW_NOTHING list(\
-"melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define MELEE_10___ARROW_5 list(\
-"melee" = 10, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-// Light Gambesson/padded cloth
-#define MELEE_15___ARROW_NOTHING list(\
-"melee" = 15, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-// Gambesson
-#define MELEE_20___ARROW_30 list(\
-"melee" = 20, "bullet" = 30, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-// Thick Gambesson
-#define MELEE_30___ARROW_35 list(\
-"melee" = 30, "bullet" = 35, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-// Leather and Silk armor
-#define MELEE_40___ARROW_20 list(\
-"melee" = 40, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-// Fur armor or boiled leather
-#define MELEE_50___ARROW_25 list(\
-"melee" = 50, "bullet" = 25, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-// Splint mail (leather + little plates partial)
-#define MELEE_60___ARROW_30 list(\
-"melee" = 60, "bullet" = 30, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-// Thick partial plates
-#define MELEE_50___ARROW_NOTHING list(\
-"melee" = 50, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define MELEE_70___ARROW_NOTHING list(\
-"melee" = 70, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define MELEE_45___ARROW_65 list(\
-"melee" = 45, "bullet" = 65, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define MELEE_60___ARROW_50 list(\
-"melee" = 60, "bullet" = 50, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-// Maille
-#define MELEE_80___ARROW_90 list(\
-"melee" = 80, "bullet" = 90, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-// Iron armor
-#define MELEE_70___ARROW_50 list(\
-"melee" = 70, "bullet" = 50, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-// Partial plates, basic open helmet
-#define MELEE_80___ARROW_60 list(\
-"melee" = 80, "bullet" = 60, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-
-#define MELEE_85___ARROW_65 list(\
-"melee" = 85, "bullet" = 65, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-#define MELEE_90___ARROW_75 list(\
-"melee" = 90, "bullet" = 75, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-#define MELEE_90___ARROW_90 list(\
-"melee" = 90, "bullet" = 90, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-#define MELEE_95___ARROW_95 list(\
-"melee" = 95, "bullet" = 95, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-#define MELEE_100___ARROW_100 list(\
-"melee" = 100, "bullet" = 100, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-#define ARMOR_MINIMAL		MELEE_5___ARROW_NOTHING
-#define ARMOR_MINOR				MELEE_10___ARROW_5
-
-#define ARMOR_GAMBESON_BAD	MELEE_15___ARROW_NOTHING
-#define ARMOR_GAMBESON		MELEE_20___ARROW_30
-#define ARMOR_GAMBESON_GOOD	MELEE_30___ARROW_35
-
-#define ARMOR_LEATHER		MELEE_40___ARROW_20
-#define ARMOR_LEATHER_GOOD	MELEE_50___ARROW_25
-#define ARMOR_LEATHER_BEST	MELEE_60___ARROW_30
-
-#define ARMOR_MAILLE_IRON	MELEE_45___ARROW_65
-#define ARMOR_MAILLE		MELEE_80___ARROW_90
-#define ARMOR_MAILLE_GOOD	MELEE_80___ARROW_100
-
-#define ARMOR_COPPER		MELEE_50___ARROW_NOTHING
-
-#define ARMOR_IRON_BAD		MELEE_60___ARROW_50
-#define ARMOR_IRON			MELEE_70___ARROW_50
-#define ARMOR_IRON_GOOD		MELEE_80___ARROW_60
-
-#define ARMOR_STEEL_BAD		MELEE_85___ARROW_65
-#define ARMOR_STEEL_PARTIAL	MELEE_90___ARROW_75
-#define ARMOR_STEEL			MELEE_90___ARROW_90
-#define ARMOR_STEEL_BEST	MELEE_100___ARROW_100
+/*-----------------------\
+| Decorated Helmet Lists |
+\-----------------------*/
 
 #define HELMET_KNIGHT_DECORATIONS list(\
 		"Basic"="basic_decoration",\

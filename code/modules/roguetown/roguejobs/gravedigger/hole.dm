@@ -222,9 +222,6 @@
 			user.visible_message("<span class='notice'>[user] stuffs [O] into [src].</span>", \
 								"<span class='notice'>I stuff [O] into [src].</span>", \
 								"<span class='hear'>I hear a loud bang.</span>")
-			var/mob/living/L = O
-			if(!issilicon(L))
-				L.Paralyze(40)
 			O.forceMove(T)
 			user_buckle_mob(O, user)
 	else
@@ -260,7 +257,7 @@
 			var/mob/living/carbon/human/B = A
 			B.buried = FALSE
 	..()
-	
+
 /obj/structure/closet/dirthole/open(mob/living/user)
 	if(opened)
 		return

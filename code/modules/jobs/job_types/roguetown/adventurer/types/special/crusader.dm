@@ -20,7 +20,7 @@
 /datum/outfit/job/roguetown/adventurer/crusader/pre_equip(mob/living/carbon/human/H)
 	..()
 
-	head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader_totod
 	neck = /obj/item/clothing/neck/roguetown/coif/cloth
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	cloak = /obj/item/clothing/cloak/cape/crusader
@@ -36,23 +36,23 @@
 
 	// Run this first so that patron gets changed before assigning gear.
 	if(H.patron == /datum/patron/divine/noc)
-		H.patron = GLOB.patronlist[/datum/patron/divine/astrata]
+		H.set_patron(/datum/patron/divine/astrata)
 	if(H.patron == /datum/patron/divine/eora)
-		H.patron = GLOB.patronlist[/datum/patron/divine/necra]
+		H.set_patron(/datum/patron/divine/necra)
 	if(H.patron == /datum/patron/godless)
-		H.patron = GLOB.patronlist[/datum/patron/divine/necra]
+		H.set_patron(/datum/patron/divine/necra)
 	if(H.patron == /datum/patron/divine/pestra)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 	if(H.patron == /datum/patron/divine/dendor)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 	if(H.patron == /datum/patron/divine/malum)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 	if(H.patron == /datum/patron/divine/xylix)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 	if(H.patron == /datum/patron/divine/ravox)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 	if(H.patron == /datum/patron/divine/abyssor)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 
 	// Now we equip according to patron.
 	switch(H.patron?.name)
@@ -95,7 +95,7 @@
 	if(H.gender == FEMALE)
 		head = /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
 		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-		beltl = /obj/item/rogueweapon/huntingknife/idagger/silver
+		beltl = /obj/item/rogueweapon/knife/dagger/silver
 		beltr = /obj/item/quiver/bolts
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
@@ -140,19 +140,22 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/crusader
 	name = "bucket helm"
-	desc = "Proud knights of the Totod order displays their faith and their allegiance openly."
 	icon_state = "totodhelm"
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
-	bloody_icon = 'icons/effects/blood64x64.dmi'
-	bloody_icon_state = "helmetblood_big"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
 
 /obj/item/clothing/head/roguetown/helmet/heavy/crusader/t
 	desc = "A silver gilded bucket helm, inscriptions in old Psydonic are found embezzeled on every inch of silver. Grenzelhoft specializes in these helmets, the Totod order has been purchasing them en-masse."
 	icon_state = "crusader_helmt2"
 	icon = 'icons/roguetown/clothing/special/crusader.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/crusader.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/heavy/crusader_totod
+	desc = "Proud knights of the Totod order displays their faith and their allegiance openly."
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+
 
 /obj/item/clothing/cloak/cape/crusader/ComponentInitialize()
 	. = ..()

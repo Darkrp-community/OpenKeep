@@ -43,6 +43,7 @@
 #define TRAIT_ANTIMAGIC					"Anti-Magic"
 #define TRAIT_ANTISCRYING				"Anti-Scrying"
 #define TRAIT_SHOCKIMMUNE				"Shock Immunity"
+#define TRAIT_LONGSTRIDER 				"Longstrider"
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -192,7 +193,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_IGNOREDAMAGESLOWDOWN "ignoredamageslowdown"
 #define TRAIT_DEATHCOMA			"deathcoma" //Causes death-like unconsciousness
 #define TRAIT_FAKEDEATH			"fakedeath" //Makes the owner appear as dead to most forms of medical examination
-#define TRAIT_XENO_HOST			"xeno_host"	//Tracks whether we're gonna be a baby alien's mummy.
 #define TRAIT_STUNIMMUNE		"stun_immunity"
 #define TRAIT_STUNRESISTANCE    "stun_resistance"
 #define TRAIT_SLEEPIMMUNE		"sleep_immunity"

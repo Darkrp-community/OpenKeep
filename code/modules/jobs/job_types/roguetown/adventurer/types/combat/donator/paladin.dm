@@ -16,6 +16,8 @@
 	..()
 	H.virginity = TRUE
 
+	cloak = /obj/item/clothing/cloak/tabard/crusader
+
 	switch(H.patron?.name)
 		if("Astrata")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/astrata
@@ -30,6 +32,10 @@
 		if("Noc")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/noc
 			wrists = /obj/item/clothing/neck/roguetown/psycross/noc
+		if("Dendor")
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
+			cloak = /obj/item/clothing/cloak/stabard/templar/dendor
 		if("Pestra")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
@@ -46,7 +52,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/hand
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	id = /obj/item/clothing/ring/silver
-	cloak = /obj/item/clothing/cloak/tabard/crusader
+
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	if(H.mind)

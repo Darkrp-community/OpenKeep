@@ -10,7 +10,7 @@
 	recipe_name = "a Silver Dagger"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/silver
-	created_item = /obj/item/rogueweapon/huntingknife/idagger/silver
+	created_item = /obj/item/rogueweapon/knife/dagger/silver
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/sword_silver
@@ -20,14 +20,6 @@
 	req_bar = /obj/item/ingot/silver
 	created_item = /obj/item/rogueweapon/sword/silver
 	craftdiff = 3
-
-/datum/anvil_recipe/weapons/shortsword_silver
-	name = "Silver Shortsword"
-	recipe_name = "a Silver Short Sword"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/silver
-	created_item = /obj/item/rogueweapon/sword/short/silver
-	craftdiff = 2
 
 /datum/anvil_recipe/weapons/rapier_silver
 	name = "Silver Rapier"
@@ -54,7 +46,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/ingot/copper)
-	created_item = /obj/item/rogueweapon/copperaxe
+	created_item = /obj/item/rogueweapon/axe/copper
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cbludgeon
@@ -63,7 +55,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/item/rogueweapon/mace/copperbludgeon
+	created_item = /obj/item/rogueweapon/mace/cudgel/bludgeon
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/cdagger
@@ -71,7 +63,7 @@
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
-	created_item = /obj/item/rogueweapon/copperdagger
+	created_item = /obj/item/rogueweapon/knife/copper
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 0
@@ -100,7 +92,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/copper
 	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/copperspear
+	created_item = /obj/item/rogueweapon/polearm/spear/stone/copper
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 0
@@ -134,7 +126,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/item/rogueweapon/woodcut
+	created_item = /obj/item/rogueweapon/axe/iron
 
 /datum/anvil_recipe/weapons/bardiche
 	name = "Bardiche (2) (+w)"
@@ -142,7 +134,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/halberd/bardiche
+	created_item = /obj/item/rogueweapon/polearm/halberd/bardiche
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/woodcutter
@@ -151,7 +143,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/halberd/bardiche/woodcutter
+	created_item = /obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/warcutter
@@ -160,7 +152,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/halberd/bardiche/warcutter
+	created_item = /obj/item/rogueweapon/polearm/halberd/bardiche/warcutter
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/bolts
@@ -191,7 +183,7 @@
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/huntingknife/idagger
+	created_item = /obj/item/rogueweapon/knife/dagger
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 0 // To train with
@@ -201,10 +193,10 @@
 	recipe_name = "three peasantry knives"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/huntingknife/villager
+	created_item = /obj/item/rogueweapon/knife/villager
 	createmultiple = TRUE
 	createditem_num = 2
-	craftdiff = 0 
+	craftdiff = 0
 
 /datum/anvil_recipe/weapons/flail_iron
 	name = "Militia flail (+c) (+s)"
@@ -220,7 +212,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/eaglebeak/lucerne
+	created_item = /obj/item/rogueweapon/polearm/eaglebeak/lucerne
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/sledgehammer
@@ -243,7 +235,7 @@
 	name = "Messer"
 	recipe_name = "a Messer"
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/sword/iron/messer
+	created_item = /obj/item/rogueweapon/sword/scimitar/messer
 
 /datum/anvil_recipe/weapons/spear_iron
 	name = "Spear x2 (+w)"
@@ -251,7 +243,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/spear
+	created_item = /obj/item/rogueweapon/polearm/spear
 	createmultiple = TRUE
 	createditem_num = 1
 
@@ -259,7 +251,7 @@
 	name = "Short sword"
 	recipe_name = "a Short Sword"
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/sword/iron/short
+	created_item = /obj/item/rogueweapon/sword/short
 	craftdiff = 0
 
 /datum/anvil_recipe/weapons/sword_iron
@@ -270,11 +262,11 @@
 	created_item = /obj/item/rogueweapon/sword/iron
 
 /datum/anvil_recipe/weapons/sword_iron
-	name = "Estoc"
+	name = "Florete"
 	recipe_name = "a Duelist Sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/sword/rapier/ironestoc
+	created_item = /obj/item/rogueweapon/sword/rapier/iron
 
 /datum/anvil_recipe/weapons/towershield
 	name = "Tower Shield (+w)"
@@ -308,7 +300,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron, /obj/item/ingot/iron)
-	created_item = /obj/item/rogueweapon/greatsword/zwei
+	created_item = /obj/item/rogueweapon/sword/long/greatsword/zwei
 	craftdiff = 3
 
 // STEEL GEAR - Fancy shit for Knights
@@ -319,7 +311,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/item/rogueweapon/woodcut/steel
+	created_item = /obj/item/rogueweapon/axe/steel
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/warhammer
@@ -337,7 +329,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/battle
+	created_item = /obj/item/rogueweapon/axe/battle
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/billhook
@@ -346,7 +338,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/spear/billhook
+	created_item = /obj/item/rogueweapon/polearm/spear/billhook
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/cleaver
@@ -354,7 +346,7 @@
 	recipe_name = "a Cleaver"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/huntingknife/cleaver
+	created_item = /obj/item/rogueweapon/knife/cleaver
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/crossbow_eng
@@ -371,7 +363,7 @@
 	recipe_name = "a Cutlass"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/sword/cutlass
+	created_item = /obj/item/rogueweapon/sword/sabre/cutlass
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/dagger_steel
@@ -379,7 +371,7 @@
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/huntingknife/idagger/steel
+	created_item = /obj/item/rogueweapon/knife/dagger/steel
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 2
@@ -417,7 +409,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/eaglebeak
+	created_item = /obj/item/rogueweapon/polearm/eaglebeak
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/flail_steel
@@ -443,7 +435,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/greatsword
+	created_item = /obj/item/rogueweapon/sword/long/greatsword
 	craftdiff = 4
 
 /datum/anvil_recipe/weapons/halberd
@@ -452,7 +444,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/halberd
+	created_item = /obj/item/rogueweapon/polearm/halberd
 	craftdiff = 4
 
 /datum/anvil_recipe/weapons/huntknife
@@ -460,7 +452,7 @@
 	recipe_name = "a Hunting Knife"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/huntingknife
+	created_item = /obj/item/rogueweapon/knife/hunting
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/kiteshield
@@ -494,7 +486,7 @@
 	name = "Peasant Flail (+c) (+w)"
 	recipe_name = "a two-handed flail"
 	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/steel
+	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/flail/peasant
 	craftdiff = 3
@@ -537,7 +529,7 @@
 	recipe_name = "a Sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/sword
+	created_item = /obj/item/rogueweapon/sword/arming
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/scimitar_steel
@@ -553,5 +545,5 @@
 	recipe_name = "a heavy one handed sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/sword/sabre/messer
+	created_item = /obj/item/rogueweapon/sword/scimitar/falchion
 	craftdiff = 2

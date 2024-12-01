@@ -158,7 +158,7 @@
 	dropshrink = 0.75
 	var/color_index = "good"
 	can_distill = TRUE
-	distill_reagent = /datum/reagent/consumable/ethanol/beer/jackberrywine
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/jacksberrywine
 	rotprocess = SHELFLIFE_SHORT
 	sellprice = 0 // spoil too quickly to export
 	var/poisonous = FALSE
@@ -177,11 +177,16 @@
 	update_icon()
 	..()
 
-/obj/item/reagent_containers/food/snacks/produce/jacksberry/examine(mob/user)
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/examine(mob/living/carbon/user)
 	var/farminglvl = user.mind?.get_skill_level(/datum/skill/labor/farming)
 	. += ..()
 	if(farminglvl >= 3 && poisonous == TRUE)
 		. += "These berries appear to be poisonous."
+	if(user.mind.assigned_role == "Cook"&& poisonous == TRUE)
+		. += "These berries appear to be poisonous."
+	if(user.mind.assigned_role == "Master Chef"&& poisonous == TRUE)
+		. += "These berries are POISONOUS."
+
 
 /obj/item/reagent_containers/food/snacks/produce/jacksberry/On_Consume(mob/living/eater)
 	..()
@@ -341,6 +346,7 @@
 	slices_num = 1
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/potato_sliced
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_baked
+	cooked_smell = /datum/pollutant/food/baked_potato
 	eat_effect = null
 	foodtype = VEGETABLES
 	chopping_sound = TRUE
@@ -398,6 +404,7 @@
 	dropshrink = 0.8
 	rotprocess = null
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/roastseeds
+	cooked_smell = /datum/pollutant/food/roasted_seeds
 
 
 /*	..................   Fyritius Flower   ................... */ // some sort of funni fire flowers. Dunno just moving them here for consistency.

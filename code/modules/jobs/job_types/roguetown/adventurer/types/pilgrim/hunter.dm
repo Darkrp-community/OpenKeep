@@ -29,7 +29,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/quiver/arrows
 	beltl = /obj/item/storage/meatbag
-	backpack_contents = list(/obj/item/flint = 1, /obj/item/bait = 1, /obj/item/rogueweapon/huntingknife = 1, /obj/item/flashlight/flare/torch/lantern = 1)
+	backpack_contents = list(/obj/item/flint = 1, /obj/item/bait = 1, /obj/item/rogueweapon/knife/hunting = 1, /obj/item/flashlight/flare/torch/lantern = 1)
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
@@ -47,6 +47,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)

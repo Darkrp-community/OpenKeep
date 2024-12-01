@@ -21,7 +21,7 @@
 	invocation = "The Treefather commands thee, be fruitful!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	miracle = TRUE
-	devotion_cost = -15
+	devotion_cost = 15
 
 /obj/effect/proc_holder/spell/targeted/blesscrop/cast(list/targets,mob/user = usr)
 	. = ..()
@@ -86,7 +86,7 @@
 	invocation = "Be still and calm, brotherbeast."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
-	devotion_cost = -60
+	devotion_cost = 60
 
 /obj/effect/proc_holder/spell/targeted/beasttame/cast(list/targets,mob/user = usr)
 	playsound(get_turf(user), 'sound/vo/smokedrag.ogg', 100, TRUE)

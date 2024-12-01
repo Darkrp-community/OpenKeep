@@ -4,8 +4,13 @@
 	name = "Grandmaster Mason"
 	tutorial = "A Grandmaster mason, you built castles and entire cities with your own hands. \
 	There is nothing in this world that you can't build, your creed and hardwork has revealed all the secrets of the stone."
+	allowed_races = list(
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf"
+	)
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list("Dwarf")
+
 	outfit = /datum/outfit/job/roguetown/adventurer/grandmastermason
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 	maximum_possible_slots = 1
@@ -27,6 +32,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	head = /obj/item/clothing/head/roguetown/hatblu
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
 	cloak = /obj/item/clothing/cloak/apron/waist/bar
@@ -36,7 +42,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/pick
-	backr = /obj/item/rogueweapon/woodcut/steel
+	backr = /obj/item/rogueweapon/axe/steel
 	backl = /obj/item/storage/backpack/rogue/backpack
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", 2)

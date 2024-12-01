@@ -319,12 +319,10 @@
 		return FALSE
 	for(var/mob/living/carbon/human/H in family_icons)
 		if(toggle_true)
-			iconer.family_UI = FALSE
 			iconer.client.images.Remove(family_icons[H])
 			continue
 		if(!H || H == iconer)
 			continue
-		iconer.family_UI = TRUE
 		iconer.client.images.Add(family_icons[H])
 
 //Sloppy bandaid way to apply latejoin family member icons.
@@ -354,10 +352,28 @@
 	if(famrole == FAMILY_ADOPTED)
 		return "adopted"
 
+/*
+* I made a attempt to put spouse mob into family datum
+* but the complications of creating new families when
+* people get married during the round and merging families
+* just complicated it too much. -IP
+*/
+/mob/living/carbon/human/proc/ApplySpouseUI(toggle_true = FALSE)
+	if(!spouse_mob)
+		return
+	if(!spouse_indicator)
+		spouse_indicator = new('icons/relations.dmi', loc = spouse_mob, icon_state = "related")
+	if(toggle_true)
+		client.images.Remove(spouse_indicator)
+		return
+	client.images.Add(spouse_indicator)
+
 //Lists the users family. Unsure where to put this other than here.
 /mob/living/carbon/human/verb/ReturnFamilyList()
 	set name = "List Family"
 	set category = "Memory"
+	if(spouse_mob)
+		to_chat(src, span_info("[spouse_mob.real_name] is the name of your lover."))
 	if(family_datum)
 		family_datum.ListFamily(src)
 	else
@@ -367,8 +383,14 @@
 /mob/living/carbon/human/verb/ToggleFamilyUI()
 	set name = "Toggle Family UI"
 	set category = "Memory"
+	if(spouse_mob)
+		ApplySpouseUI(family_UI)
 	if(family_datum)
 		family_datum.ApplyUI(src, family_UI)
-		to_chat(src, "FamilyUI Toggled [family_UI ? "On" : "Off"]")
 	else
 		to_chat(src, "Your not part of any notable family.")
+	if(family_UI)
+		family_UI = FALSE
+	else
+		family_UI = TRUE
+	to_chat(src, "FamilyUI Toggled [family_UI ? "On" : "Off"]")

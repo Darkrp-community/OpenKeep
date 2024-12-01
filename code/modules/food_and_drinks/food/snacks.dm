@@ -86,6 +86,7 @@ All foods are distributed among various categories. Use common sense.
 	var/can_distill = FALSE //If FALSE, this object cannot be distilled into an alcohol.
 	var/distill_reagent //If NULL and this object can be distilled, it uses a generic fruit_wine reagent and adjusts its variables.
 	var/distill_amt = 12
+	var/cooked_smell
 
 /datum/intent/food
 	name = "feed"
@@ -164,16 +165,18 @@ All foods are distributed among various categories. Use common sense.
 		if(cooking < cooktime)
 			cooking = cooking + input
 			if(cooking >= cooktime)
-				return microwave_act(A)
+				return heating_act(A)
 			warming = 5 MINUTES
 			return
 	burning(input)
 
-/obj/item/reagent_containers/food/snacks/microwave_act(atom/A)
+/obj/item/reagent_containers/food/snacks/heating_act(atom/A)
 	if(istype(A,/obj/machinery/light/rogue/oven))
 		var/obj/item/result
 		if(cooked_type)
 			result = new cooked_type(A)
+			if(cooked_smell)
+				result.AddComponent(/datum/component/temporary_pollution_emission, cooked_smell, 20, 5 MINUTES)
 		else
 			result = new /obj/item/reagent_containers/food/snacks/badrecipe(A)
 		initialize_cooked_food(result, 1)
@@ -182,6 +185,8 @@ All foods are distributed among various categories. Use common sense.
 		var/obj/item/result
 		if(fried_type)
 			result = new fried_type(A)
+			if(cooked_smell)
+				result.AddComponent(/datum/component/temporary_pollution_emission, cooked_smell, 20, 5 MINUTES)
 		else
 			result = new /obj/item/reagent_containers/food/snacks/badrecipe(A)
 		initialize_cooked_food(result, 1)
@@ -238,7 +243,6 @@ All foods are distributed among various categories. Use common sense.
 
 /obj/item/reagent_containers/food/snacks/attack_self(mob/user)
 	return
-
 
 /obj/item/reagent_containers/food/snacks/attack(mob/living/M, mob/living/user, def_zone)
 	if(user.used_intent.type == INTENT_HARM)
@@ -367,18 +371,20 @@ All foods are distributed among various categories. Use common sense.
 			var/obj/item/reagent_containers/food/snacks/customizable/C = new custom_food_type(get_turf(src))
 			C.initialize_custom_food(src, S, user)
 			return 0
-	if(user.used_intent.blade_class == slice_bclass && W.wlength == WLENGTH_SHORT)
+*/
+
+	if(W.get_sharpness() && W.wlength == WLENGTH_SHORT)
 		if(slice_bclass == BCLASS_CHOP)
-			//	RTD meat chopping noise  The 66% random bit is just annoying
-			if(prob(66))
-				user.visible_message("<span class='warning'>[user] chops [src]!</span>")
-				return 0
-		else
-				user.visible_message("<span class='notice'>[user] chops [src]!</span>")
-				slice(W, user)
+			user.visible_message("<span class='notice'>[user] chops [src]!</span>")
+			slice(W, user)
+			return 1
+		if(slice_bclass == BCLASS_CUT)
+			user.visible_message("<span class='notice'>[user] slices [src]!</span>")
+			slice(W, user)
 			return 1
 		else if(slice(W, user))
-			return 1*/
+			return 1
+
 	..()
 //Called when you finish tablecrafting a snack.
 /obj/item/reagent_containers/food/snacks/CheckParts(list/parts_list, datum/crafting_recipe/food/R)
@@ -492,25 +498,15 @@ All foods are distributed among various categories. Use common sense.
 				S.reagents.add_reagent(r_id, amount)
 	S.filling_color = filling_color
 	S.update_snack_overlays(src)
-/*
-/obj/item/reagent_containers/food/snacks/microwave_act(obj/machinery/microwave/M)
-	var/turf/T = get_turf(src)
-	var/obj/item/result
 
-	if(cooked_type)
-		result = new cooked_type(T)
-		if(istype(M))
-			initialize_cooked_food(result, M.efficiency)
-		else
-			initialize_cooked_food(result, 1)
-		SSblackbox.record_feedback("tally", "food_made", 1, result.type)
-	else
-		result = new /obj/item/reagent_containers/food/snacks/badrecipe(T)
-		if(istype(M) && M.dirty < 100)
-			M.dirty++
-	qdel(src)
-
-	return result*/
+/obj/item/reagent_containers/food/snacks/proc/changefood(path, mob/living/eater)
+	if(!path || !eater)
+		return
+	var/turf/T = get_turf(eater)
+	if(eater.dropItemToGround(src))
+		qdel(src)
+	var/obj/item/I = new path(T)
+	eater.put_in_active_hand(I)
 
 /obj/item/reagent_containers/food/snacks/Destroy()
 	STOP_PROCESSING(SSobj, src)

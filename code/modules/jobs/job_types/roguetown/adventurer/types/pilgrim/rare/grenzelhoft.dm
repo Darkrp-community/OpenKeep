@@ -17,9 +17,9 @@
 /datum/outfit/job/roguetown/adventurer/grenzelhoft/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/grenzelhoft
-	gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
 	wrists = /obj/item/clothing/neck/roguetown/psycross/g
-	head = /obj/item/clothing/head/roguetown/grenzelhofthat
+	head = /obj/item/clothing/head/roguetown/helmet/skullcap/grenzelhoft
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/rogueweapon/sword/sabre/dec
@@ -60,4 +60,4 @@
 		H.change_stat("endurance", 2)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten] // SCREAM IF YOU LOVE THE FORGOTTEN GOD
+		H.set_patron(/datum/patron/forgotten) // SCREAM IF YOU LOVE THE FORGOTTEN GOD

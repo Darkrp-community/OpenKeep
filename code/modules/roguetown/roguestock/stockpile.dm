@@ -87,6 +87,114 @@
 	withdraw_price = 5
 	importexport_amt = 20
 
+/datum/roguestock/stockpile/oat
+	name = "Oats"
+	desc = "A cereal grain."
+	item_type = /obj/item/reagent_containers/food/snacks/produce/oat
+	payout_price = 2
+	export_price = 3
+	withdraw_price = 3
+	importexport_amt = 10
+
+/datum/roguestock/stockpile/meat
+	name = "Meat"
+	desc = "Edible flesh harvested from animals."
+	item_type = /obj/item/reagent_containers/food/snacks/rogue/meat/steak
+	payout_price = 5
+	export_price = 8
+	withdraw_price = 8
+	importexport_amt = 5
+/*
+/datum/roguestock/stockpile/poultry
+	name = "Bird Meat"
+	desc = "Edible flesh harvested from birds."
+	item_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry
+	payout_price = 5
+	export_price = 8
+	withdraw_price = 8
+	importexport_amt = 5
+
+/datum/roguestock/stockpile/fat
+	name = "Fat"
+	desc = "Greasy flesh from an animal."
+	item_type = /obj/item/reagent_containers/food/snacks/fat
+	payout_price = 3
+	export_price = 5
+	withdraw_price = 5
+	importexport_amt = 5
+
+/datum/roguestock/stockpile/egg
+	name = "Cackleberry"
+	desc = "Cackleberry laid by a hen."
+	item_type = /obj/item/reagent_containers/food/snacks/egg
+	payout_price = 3
+	export_price = 5
+	withdraw_price = 5
+	importexport_amt = 5
+
+/datum/roguestock/stockpile/butter
+	name = "Butter"
+	desc = "The product of milk and salt."
+	item_type = /obj/item/reagent_containers/food/snacks/butter
+	payout_price = 9
+	export_price = 13
+	withdraw_price = 13
+	importexport_amt = 5
+
+/datum/roguestock/stockpile/cheese
+	name = "Cheese"
+	desc = "The product of milk and salt."
+	item_type = /obj/item/reagent_containers/food/snacks/rogue/cheese
+	payout_price = 3
+	export_price = 5
+	withdraw_price = 5
+	importexport_amt = 5
+
+/datum/roguestock/stockpile/apple
+	name = "Apple"
+	desc = "Harvested produce."
+	item_type = /obj/item/reagent_containers/food/snacks/produce/apple
+	payout_price = 3
+	export_price = 5
+	withdraw_price = 5
+	importexport_amt = 5
+
+/datum/roguestock/stockpile/jacksberry
+	name = "Jacksberries"
+	desc = "Sweet berries, prime for winemaking."
+	item_type = /obj/item/reagent_containers/food/snacks/produce/jacksberry
+	payout_price = 2
+	export_price = 3
+	withdraw_price = 3
+	importexport_amt = 10
+
+/datum/roguestock/stockpile/onion
+	name = "Onion"
+	desc = "A bulb vegetable."
+	item_type = /obj/item/reagent_containers/food/snacks/produce/onion
+	payout_price = 2
+	export_price = 3
+	withdraw_price = 3
+	importexport_amt = 10
+
+/datum/roguestock/stockpile/cabbage
+	name = "Cabbage"
+	desc = "A leafy vegetable."
+	item_type = /obj/item/reagent_containers/food/snacks/produce/cabbage
+	payout_price = 2
+	export_price = 3
+	withdraw_price = 3
+	importexport_amt = 10
+
+/datum/roguestock/stockpile/potato
+	name = "Potato"
+	desc = "An interesting tuber."
+	item_type = /obj/item/reagent_containers/food/snacks/produce/potato
+	payout_price = 2
+	export_price = 3
+	withdraw_price = 3
+	importexport_amt = 10
+*/
 /datum/roguestock/stockpile/turnip
 	name = "Turnips"
 	desc = "The spine of many communities."
@@ -95,15 +203,6 @@
 	export_price = 4
 	withdraw_price = 3
 	importexport_amt = 20
-
-/datum/roguestock/stockpile/iron
-	name = "Iron Ore"
-	desc = "Raw unrefined iron ore."
-	item_type = /obj/item/rogueore/iron
-	payout_price = 5
-	withdraw_price = 15
-	export_price = 12
-	importexport_amt = 10
 
 /datum/roguestock/stockpile/copper
 	name = "Copper Ingot"
