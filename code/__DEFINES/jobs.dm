@@ -102,7 +102,6 @@
 #define WIZARD		(1<<4)
 #define CAPTAIN		(1<<5)
 #define ARCHIVIST   (1<<6)
-#define MERCHANT	(1<<7)
 #define FELDSHER    (1<<8)
 #define NIGHTMAN    (1<<9)
 
@@ -113,7 +112,7 @@
 #define WATCHMAN	(1<<2)
 #define MAYOR       (1<<3)
 
-#define TEMPLE		(1<<2)
+#define TEMPLE			(1<<2)
 
 #define PRIEST		(1<<0)
 #define ACOLYTE		(1<<1)
@@ -122,8 +121,12 @@
 #define INQUISITOR	(1<<4)
 #define ADEPT		(1<<5)
 
+#define MERCATOR_GUILD	(1<<3)
 
-#define SERFS			(1<<3)
+#define MERCHANT	(1<<0)
+#define STEVEDORE	(1<<1)
+
+#define SERFS			(1<<4)
 
 #define INNKEEP		(1<<0)
 #define BLACKSMITH	(1<<2)
@@ -132,7 +135,7 @@
 #define TAILOR		(1<<5)
 #define SCRIBE		(1<<7)
 
-#define PEASANTS		(1<<4)
+#define PEASANTS		(1<<5)
 
 #define HUNTER		(1<<0)
 #define FARMER		(1<<1)
@@ -144,11 +147,10 @@
 #define JESTER		(1<<8)
 #define ADVENTURER	(1<<9)
 #define COOK		(1<<10)
-#define STEVEDORE	(1<<11)
 #define WAVE_DRIFTER (1<<16)
 #define GRAVEDIGGER	(1<<18)
 
-#define APPRENTICES		(1<<5)
+#define APPRENTICES		(1<<6)
 
 #define APPRENTICE	(1<<0)
 #define SQUIRE		(1<<1)

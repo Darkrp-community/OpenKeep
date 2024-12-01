@@ -597,6 +597,8 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 					cat_name = "Nobles"
 				if (GARRISON)
 					cat_name = "Garrison"
+				if (MERCATOR_GUILD)
+					cat_name = "Mercator guild"
 				if (SERFS)
 					cat_name = "Subjects"
 				if (TEMPLE)

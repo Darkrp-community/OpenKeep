@@ -6260,9 +6260,7 @@
 /area/rogue/outdoors/exposed/church)
 "gqM" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/stevedore{
-	dir = 8
-	},
+/obj/effect/landmark/start/stevedore,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/shop)
 "gqY" = (
@@ -14203,7 +14201,7 @@
 /obj/structure/closet/crate/chest/neu{
 	locked = 1;
 	lockid = "merchant";
-	max_integrity = 2000
+	max_integrity = 20000
 	},
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot,
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot,
