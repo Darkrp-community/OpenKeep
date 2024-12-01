@@ -1829,10 +1829,10 @@
 "gQ" = (
 /obj/structure/table/wood/plain,
 /obj/machinery/light/rogue/torchholder/r,
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 9
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 9
 	},
 /obj/item/reagent_containers/glass/bowl,
@@ -2491,7 +2491,7 @@
 	locked = 1;
 	name = "Oubliettes"
 	},
-/obj/effect/decal/cobbleedge,
+/obj/effect/decal/turfedge_neu,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/cell)
 "jv" = (
@@ -2768,7 +2768,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "kA" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 10
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -3267,7 +3267,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/ruin)
 "mt" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 10
 	},
 /turf/open/floor/rogue/herringbone,
@@ -3717,7 +3717,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "og" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -3768,7 +3768,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/town/basement)
 "op" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 4;
 	icon_state = "borderfall"
 	},
@@ -3865,7 +3865,7 @@
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/shelter/town/sargoth)
 "oJ" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 9
 	},
 /turf/open/floor/rogue/herringbone,
@@ -4069,7 +4069,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "pt" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 5
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -4952,7 +4952,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/town)
 "sT" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 6
 	},
 /obj/structure/fluff/railing/border,
@@ -5223,7 +5223,7 @@
 /turf/open/floor/rogue/rooftop/green,
 /area/rogue/outdoors/town/roofs)
 "tT" = (
-/obj/effect/decal/cobbleedge,
+/obj/effect/decal/turfedge_neu,
 /obj/structure/bars/passage{
 	name = "Cell Bars";
 	redstone_id = "dungeon_cell"
@@ -5406,7 +5406,7 @@
 /turf/open/water/sewer,
 /area/rogue/under/town/sewer)
 "uH" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -5849,7 +5849,7 @@
 /area/rogue/indoors/town/dwarfin)
 "wp" = (
 /obj/structure/bars,
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 8
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -6052,7 +6052,7 @@
 /area/rogue/indoors/town/church)
 "wX" = (
 /obj/machinery/light/rogue/hearth,
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -6080,7 +6080,7 @@
 /obj/item/reagent_containers/food/snacks/smallrat{
 	name = "Tim"
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 9
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -7095,7 +7095,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "Bj" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -9164,7 +9164,7 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
 "IY" = (
-/obj/effect/decal/cobbleedge,
+/obj/effect/decal/turfedge_neu,
 /obj/structure/mineral_door/wood/donjon{
 	lockid = "manor";
 	locked = 1;
@@ -9794,7 +9794,7 @@
 	},
 /area/rogue/indoors/town/dwarfin)
 "Lu" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 5
 	},
 /obj/structure/mineral_door/bars{
@@ -9939,7 +9939,7 @@
 /area/rogue/indoors/town/manor)
 "LV" = (
 /obj/structure/chair/bench/throne,
-/obj/effect/landmark/start/lady,
+/obj/effect/landmark/start/consort,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "LW" = (
@@ -10303,7 +10303,7 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/dwarfin)
 "Nm" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 6
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -10319,7 +10319,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
 "Np" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 8
 	},
 /obj/structure/mineral_door/wood/donjon{
@@ -10742,7 +10742,7 @@
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/garrison)
 "OT" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -10837,7 +10837,7 @@
 	locked = 1;
 	name = "Prison Tower"
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 8
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -11275,7 +11275,7 @@
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town/dwarfin)
 "QU" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 9
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -12053,7 +12053,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town)
 "TK" = (
-/obj/effect/decal/cobbleedge,
+/obj/effect/decal/turfedge_neu,
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/under/cave)
 "TL" = (
@@ -12422,7 +12422,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/church)
 "Vh" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -12439,7 +12439,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
 "Vk" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 5
 	},
 /obj/structure/mineral_door/bars{
@@ -12739,7 +12739,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "Ws" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 4
 	},
 /obj/structure/mineral_door/wood/donjon{
@@ -13374,7 +13374,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/theatre)
 "YQ" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -13609,7 +13609,7 @@
 /turf/open/floor/rogue/blocks/newstone/alt,
 /area/rogue/indoors/town)
 "ZE" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},

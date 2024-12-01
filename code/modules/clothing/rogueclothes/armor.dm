@@ -75,6 +75,17 @@
 	body_parts_covered = COVERAGE_FULL
 	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
 
+//................ Crimson Marauder ............... //
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/sea/marauder
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "jinete's linothorax"
+	desc = "A stained leather cuirass bearing the snarling face of a demon. The tiefling nomads of the Crimsonlands shape this armor to hearken to that which their ancestors wore."
+	icon_state = "crimson_armor"
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	armor = ARMOR_LEATHER_GOOD
+	body_parts_covered = CHEST|GROIN|LEGS|VITALS
+
 /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	name = "light gambeson"
 	desc = "Thin and the maker skimped on the padding, typically worn by the peasantry to give some protection against cold for the whole body."

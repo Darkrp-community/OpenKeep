@@ -14,8 +14,9 @@
 	..()
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather//arm armor since they don't get heavy gloves like other mercs do
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
-	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes/buckle
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather//mercenary/fighters should get the boots since they give light protection
 	belt = /obj/item/storage/belt/rogue/leather/mercenary
 	beltr = /obj/item/rogueweapon/knife/hunting
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
@@ -30,7 +31,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
@@ -48,9 +49,10 @@
 		backr = /obj/item/rogueweapon/shield/wood
 	else // No miner's helm for Delves as they haven nitevision now.
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+		backr = /obj/item/rogueweapon/shield/wood
 
 		beltl = /obj/item/rogueweapon/sword/sabre // Dark elves get a sabre as their primary weapon and swords skill, who woulda thought
 
-	H.merctype = 3
 
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)

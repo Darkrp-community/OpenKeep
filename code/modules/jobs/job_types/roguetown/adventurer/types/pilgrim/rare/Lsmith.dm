@@ -2,12 +2,14 @@
 
 /datum/advclass/pilgrim/rare/masterblacksmith
 	name = "Master Blacksmith"
-	tutorial = "Dwarves, and humen who trained extensively under them in the art of smithing, \
+	tutorial = "Dwarves, humen, tieflings and drows who trained extensively under them in the art of smithing, \
 	become the most legendary smiths at their craft, gaining reputation beyond compare."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Dwarf"
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/masterblacksmith
 	maximum_possible_slots = 1

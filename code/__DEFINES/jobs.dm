@@ -96,7 +96,7 @@
 #define NOBLEMEN		(1<<0)
 
 #define LORD		(1<<0)
-#define LADY		(1<<1)
+#define CONSORT		(1<<1)
 #define HAND		(1<<2)
 #define STEWARD		(1<<3)
 #define WIZARD		(1<<4)
@@ -163,7 +163,7 @@
 // job display orders //
 
 #define JDO_LORD 1
-#define JDO_LADY 1.1
+#define JDO_CONSORT 1.1
 #define JDO_PRINCE 1.2
 #define JDO_HAND 2
 #define JDO_STEWARD 3

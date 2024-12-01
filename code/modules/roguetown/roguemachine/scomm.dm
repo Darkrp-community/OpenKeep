@@ -60,9 +60,7 @@
 	var/canread = user.can_read(src, TRUE)
 	var/contents
 	if(SSticker.rulertype == "King")
-		contents += "<center>KING'S DECREES<BR>"
-	else if(SSticker.rulertype == "Queen")
-		contents += "<center>QUEEN'S DECREES<BR>"
+		contents += "<center>MONARCH'S DECREES<BR>"
 	else if(SSticker.rulertype == "Hand")
 		contents += "<center>REGENT'S DECREES<BR>"
 	contents += "-----------<BR><BR></center>"

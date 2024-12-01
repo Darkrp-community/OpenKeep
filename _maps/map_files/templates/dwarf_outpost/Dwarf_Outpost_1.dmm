@@ -32,8 +32,7 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "et" = (
-/obj/effect/spawner/roguemap/orc_warrior_maybe,
-/obj/effect/decal/cleanable/blood/old,
+/obj/effect/spawner/roguemap/orc_warrior_carbon_maybe,
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "eB" = (
@@ -332,6 +331,10 @@
 "Dt" = (
 /turf/open/floor/rogue/metal,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
+"DR" = (
+/obj/effect/spawner/roguemap/orc_warrior_carbon_maybe,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Fw" = (
 /obj/structure/fluff/walldeco/stone{
 	pixel_x = 0;
@@ -433,6 +436,11 @@
 "MK" = (
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/blocks/newstone/alt,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
+"MX" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/spawner/roguemap/orc_warrior_carbon_maybe,
+/turf/open/floor/rogue/metal,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "NG" = (
 /obj/effect/mob_spawn/human/orc/corpse/orcmarauder,
@@ -580,14 +588,14 @@
 /turf/open/water/swamp,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Wz" = (
-/obj/effect/spawner/roguemap/orc_warrior_maybe,
+/obj/effect/spawner/roguemap/orc_warrior_carbon_maybe,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "WD" = (
-/obj/effect/spawner/roguemap/orc_warrior_maybe,
+/obj/effect/spawner/roguemap/orc_warlord_carbon,
 /turf/open/floor/rogue/metal{
 	icon_state = "plating2"
 	},
@@ -840,7 +848,7 @@ gl
 gl
 vf
 Zs
-uW
+et
 vf
 vf
 vf
@@ -960,7 +968,7 @@ bS
 WT
 im
 Ap
-UA
+DR
 Zs
 Zs
 sz
@@ -979,7 +987,7 @@ gl
 (10,1,1) = {"
 gl
 vf
-uW
+et
 dV
 vf
 vf
@@ -1201,7 +1209,7 @@ Zs
 Pl
 pV
 Dt
-Zs
+et
 Pl
 Zs
 Ra
@@ -1304,8 +1312,8 @@ vf
 Zs
 dV
 Pk
-et
-UK
+pV
+MX
 Cw
 Zs
 pV
@@ -1446,7 +1454,7 @@ vf
 co
 pV
 Pp
-uW
+et
 XT
 vf
 jt

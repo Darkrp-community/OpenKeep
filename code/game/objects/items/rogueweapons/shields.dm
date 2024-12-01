@@ -134,7 +134,7 @@
 			update_icon()
 		else
 			return
-	
+
 /obj/item/rogueweapon/shield/tower
 	name = "tower shield"
 	desc = "A gigantic, iron reinforced shield that covers the entire body, a design-copy of the Aasimar shields of an era gone by."
@@ -157,6 +157,14 @@
 	desc = "A bulky shield of spike-like lengths molten together. The motifs evoke anything but safety and protection."
 	icon_state = "spidershield"
 	coverage = 55
+
+/obj/item/rogueweapon/shield/tower/rider
+	name = "desert rider shield"
+	desc = "A shield of Zybantine design, reinforced with iron and made to protect the upper body."
+	icon_state = "desert_rider"
+	force = 15
+	wdefense = 5
+	coverage = 50
 
 /obj/item/rogueweapon/shield/tower/getonmobprop(tag)
 	. = ..()

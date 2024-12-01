@@ -297,3 +297,11 @@
 	name = "plumed hat"
 	result = list(/obj/item/clothing/head/roguetown/bardhat)
 	craftdiff = 4
+
+/*========= ROLE LOCKED RECIPES ==========*/
+/datum/crafting_recipe/roguetown/sewing/tunic
+	name = "well-made tunic"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/tunic/ucolored)
+	reqs = list(/obj/item/natural/cloth = 2)
+	always_availible = FALSE
+	craftdiff = 1

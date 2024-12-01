@@ -61,7 +61,7 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 
 GLOBAL_LIST_INIT(noble_positions, list(
 	"King",
-	"Queen",
+	"Consort",
 	"Hand",
 	"Prince",
 	"Captain",
@@ -96,6 +96,7 @@ GLOBAL_LIST_INIT(church_positions, list(
 
 GLOBAL_LIST_INIT(serf_positions, list(
 	"Innkeep",
+	"Blacksmith",
 	"Armorer",
 	"Weaponsmith",
 	"Tailor",
