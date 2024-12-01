@@ -19535,7 +19535,7 @@
 "tPt" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "blacksmith_private";
+	lockid = "armorsmith";
 	name = "blacksmiths quarters"
 	},
 /turf/open/floor/rogue/wood/saiga,

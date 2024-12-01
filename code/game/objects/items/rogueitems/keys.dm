@@ -231,7 +231,7 @@
 	name = "blacksmith home key"
 	desc = "This key opens a blacksmiths home."
 	icon_state = "rustkey"
-	lockid = "blacksmith_private"
+	lockid = "armorsmith" // used to maintain compatibility with older maps and make it easier to switch the classses on/off
 
 /obj/item/roguekey/butcher
 	name = "butcher key"
