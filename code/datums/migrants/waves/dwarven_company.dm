@@ -162,8 +162,9 @@
 
 /datum/migrant_wave/dwarven_company
 	name = "Dwarven's expedition"
-	max_spawns = 2
+	max_spawns = 4
 	shared_wave_type = /datum/migrant_wave/dwarven_company
+	downgrade_wave = /datum/migrant_wave/dwarven_company_down
 	weight = 15
 	roles = list(
 		/datum/migrant_role/dwarven_company/captain = 1,
@@ -173,8 +174,8 @@
 	greet_text = "Matthios opened the way, Malum's tomb await all dwarves bold enough to go for it, which will be us."
 
 /datum/migrant_wave/dwarven_company_down
-	name = "The Unknightly journey"
-	max_spawns = 2
+	name = "Dwarven's expedition"
+	max_spawns = 4
 	shared_wave_type = /datum/migrant_wave/dwarven_company
 	can_roll = FALSE
 	roles = list(

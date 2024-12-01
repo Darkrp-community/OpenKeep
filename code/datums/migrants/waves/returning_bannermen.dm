@@ -224,6 +224,7 @@
 	name = "The Bannermen's return"
 	max_spawns = 1
 	shared_wave_type = /datum/migrant_wave/knight
+	downgrade_wave = /datum/migrant_wave/returning_bannermen_down
 	weight = 15
 	roles = list(
 		/datum/migrant_role/sergeant_at_arms = 1,
@@ -236,8 +237,8 @@
 
 /datum/migrant_wave/returning_bannermen_down
 	name = "The Bannermen's return"
-	max_spawns = 1
 	shared_wave_type = /datum/migrant_wave/returning_bannermen
+	downgrade_wave = /datum/migrant_wave/returning_bannermen_down_one
 	can_roll = FALSE
 	weight = 15
 	roles = list(
@@ -245,6 +246,56 @@
 		/datum/migrant_role/footman_bannerman = 1,
 		/datum/migrant_role/pikeman_bannerman = 1,
 		/datum/migrant_role/archer_bannerman = 1,
+	)
+	greet_text = "You were apart of an expedition sent by the King to Kingsfield, as it is done, you now return."
+
+/datum/migrant_wave/returning_bannermen_down_one
+	name = "The Bannermen's return"
+	shared_wave_type = /datum/migrant_wave/returning_bannermen
+	downgrade_wave = /datum/migrant_wave/returning_bannermen_down_two
+	can_roll = FALSE
+	weight = 15
+	roles = list(
+		/datum/migrant_role/sergeant_at_arms = 1,
+		/datum/migrant_role/footman_bannerman = 1,
+		/datum/migrant_role/pikeman_bannerman = 1,
+		/datum/migrant_role/archer_bannerman = 1,
+		/datum/migrant_role/crossbow_bannerman = 1
+	)
+	greet_text = "You were apart of an expedition sent by the King to Kingsfield, as it is done, you now return."
+
+/datum/migrant_wave/returning_bannermen_down_two
+	name = "The Bannermen's return"
+	shared_wave_type = /datum/migrant_wave/returning_bannermen
+	downgrade_wave = /datum/migrant_wave/returning_bannermen_down_three
+	can_roll = FALSE
+	weight = 15
+	roles = list(
+		/datum/migrant_role/sergeant_at_arms = 1,
+		/datum/migrant_role/footman_bannerman = 1,
+		/datum/migrant_role/pikeman_bannerman = 1,
+	)
+	greet_text = "You were apart of an expedition sent by the King to Kingsfield, as it is done, you now return."
+
+/datum/migrant_wave/returning_bannermen_down_three
+	name = "The Bannermen's return"
+	shared_wave_type = /datum/migrant_wave/returning_bannermen
+	downgrade_wave = /datum/migrant_wave/returning_bannermen_down_four
+	can_roll = FALSE
+	weight = 15
+	roles = list(
+		/datum/migrant_role/sergeant_at_arms = 1,
+		/datum/migrant_role/footman_bannerman = 1,
+	)
+	greet_text = "You were apart of an expedition sent by the King to Kingsfield, as it is done, you now return."
+
+/datum/migrant_wave/returning_bannermen_down_four
+	name = "The Bannermen's return"
+	shared_wave_type = /datum/migrant_wave/returning_bannermen
+	can_roll = FALSE
+	weight = 15
+	roles = list(
+		/datum/migrant_role/sergeant_at_arms = 1,
 	)
 	greet_text = "You were apart of an expedition sent by the King to Kingsfield, as it is done, you now return."
 

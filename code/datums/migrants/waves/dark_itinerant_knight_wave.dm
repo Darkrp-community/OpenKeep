@@ -92,6 +92,7 @@
 	name = "The Unknightly journey"
 	max_spawns = 1
 	shared_wave_type = /datum/migrant_wave/evil_knight
+	downgrade_wave = /datum/migrant_wave/evil_knight_down
 	weight = 8
 	roles = list(
 		/datum/migrant_role/dark_itinerant_knight = 1,
@@ -101,7 +102,6 @@
 
 /datum/migrant_wave/evil_knight_down
 	name = "The Unknightly journey"
-	max_spawns = 1
 	shared_wave_type = /datum/migrant_wave/evil_knight
 	can_roll = FALSE
 	weight = 35
