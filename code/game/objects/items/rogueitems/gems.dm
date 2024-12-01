@@ -4,8 +4,6 @@
 	desc = "If you find this, yell at coderbus"
 	icon_state = "aros"
 	icon = 'icons/roguetown/items/gems.dmi'
-	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	slot_flags = ITEM_SLOT_MOUTH
 	dropshrink = 0.4
@@ -67,7 +65,7 @@
 /obj/item/roguegem/yellow
 	name = "toper"
 	desc = "Its amber hues remind you of the sunset."
-	color = "#e6c408ff"
+	color = "#e6a008ff"
 	sellprice = 25
 
 /obj/item/roguegem/violet
@@ -78,14 +76,20 @@
 
 /obj/item/roguegem/diamond
 	name = "dorpel"
-	desc = "Beautifully clear, it demands respect."
-	color = "#ffffff33"
+	desc = "Beautifully pure, it demands respect."
+	color = "#ffffff8c"
 	sellprice = 121
 
 /obj/item/roguegem/red
 	name = "rubor"
-	desc = "Glistening with unkempt rage"
-	color = "#ff0000e0"
+	desc = "Glistening with unkempt rage."
+	color = "#ff0000ff"
+	sellprice = 100
+
+/obj/item/roguegem/black
+	name = "onyxa"
+	desc = "Dark as nite."
+	color = "#200013ff"
 	sellprice = 100
 
 /// riddle
