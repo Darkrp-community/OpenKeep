@@ -72,7 +72,7 @@
 
 
 /obj/machinery/dye_bin/Destroy()
-	inserted?.forceMove(drop_location())
+	inserted?.forceMove(get_turf(src))
 	return ..()
 
 /obj/machinery/dye_bin/Destroy()
@@ -106,8 +106,12 @@
 		user.visible_message("<span class='notice'>[user] inserts [I] into [src].</span>")
 
 		inserted = I
+		return
 	else
 		return ..()
+
+/obj/machinery/dye_bin/attack_hand(mob/living/user)
+	ui_interact(user)
 
 /obj/machinery/dye_bin/AllowDrop()
 	return FALSE
@@ -136,7 +140,7 @@
 	menu.open()
 
 /obj/machinery/dye_bin/Topic(href, href_list)
-	if((. = ..()))
+	if(!(. = ..()))
 		return
 
 	add_fingerprint(usr)
@@ -169,7 +173,7 @@
 	if(href_list["eject"])
 		if(!inserted)
 			return
-		inserted.forceMove(drop_location())
+		inserted.forceMove(get_turf(usr))
 		inserted = null
 		updateUsrDialog()
 
@@ -295,6 +299,9 @@
 /obj/machinery/simple_dye_bin/AllowDrop()
 	return FALSE
 
+/obj/machinery/simple_dye_bin/attack_hand(mob/living/user)
+	ui_interact(user)
+
 /obj/machinery/simple_dye_bin/ui_interact(mob/user)
 	if( user.used_intent.type == /datum/intent/grab )
 		return
@@ -319,7 +326,7 @@
 	menu.open()
 
 /obj/machinery/simple_dye_bin/Topic(href, href_list)
-	if((. = ..()))
+	if(!(. = ..()))
 		return
 
 	add_fingerprint(usr)
@@ -352,7 +359,7 @@
 	if(href_list["eject"])
 		if(!inserted)
 			return
-		inserted.forceMove(drop_location())
+		inserted.forceMove(get_turf(usr))
 		inserted = null
 		updateUsrDialog()
 

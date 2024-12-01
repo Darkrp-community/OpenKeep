@@ -17,37 +17,51 @@
 	var/major_smell
 	var/med_smell
 	var/minor_smell
+	///Same as the smells, just caching what the potion name is
+	var/major_name
+	var/med_name
+	var/minor_name
 
 /obj/item/alch/Initialize()
 	. = ..()
 	if(!isnull(major_pot))
 		var/datum/alch_cauldron_recipe/rec = locate(major_pot) in GLOB.alch_cauldron_recipes
 		major_smell = rec.smells_like
+		major_name = rec.recipe_name
 	if(!isnull(med_pot))
 		var/datum/alch_cauldron_recipe/rec = locate(med_pot) in GLOB.alch_cauldron_recipes
 		med_smell = rec.smells_like
+		med_name = rec.recipe_name
 	if(!isnull(minor_pot))
 		var/datum/alch_cauldron_recipe/rec = locate(minor_pot) in GLOB.alch_cauldron_recipes
 		minor_smell = rec.smells_like
+		minor_name = rec.recipe_name
 
 /obj/item/alch/examine(mob/user)
+	. = ..()
 	if(user.mind)
 		var/alch_skill = user.mind.get_skill_level(/datum/skill/craft/alchemy)
 		var/perint = 0
 		if(isliving(user))
 			var/mob/living/lmob = user
 			perint = FLOOR((lmob.STAPER + lmob.STAINT)/2,1)
-		desc = initial(desc)
-		if(!isnull(major_smell))
-			if(alch_skill >= SKILL_LEVEL_NOVICE || perint >= 6)
-				desc += span_notice(" Smells strongly of [major_smell].")
-		if(!isnull(med_smell))
-			if(alch_skill >= SKILL_LEVEL_APPRENTICE || perint >= 10)
-				desc += span_notice(" Smells slightly of [med_smell].")
-		if(!isnull(minor_smell))
-			if(alch_skill >= SKILL_LEVEL_EXPERT || perint >= 16)
-				desc += span_notice(" Smells weakly of [minor_smell].")
-	. = ..()
+		if(HAS_TRAIT(user,TRAIT_LEGENDARY_ALCHEMIST))
+			if(!isnull(major_name))
+				. += span_notice(" Strongly attuned to making [major_name].")
+			if(!isnull(med_name))
+				. += span_notice(" Moderately attuned to making [med_name].")
+			if(!isnull(minor_name))
+				. += span_notice(" Minorly attuned to making [minor_name].")
+		else
+			if(!isnull(major_smell))
+				if(alch_skill >= SKILL_LEVEL_NOVICE || perint >= 6)
+					. += span_notice(" Smells strongly of [major_smell].")
+			if(!isnull(med_smell))
+				if(alch_skill >= SKILL_LEVEL_APPRENTICE || perint >= 10)
+					. += span_notice(" Smells slightly of [med_smell].")
+			if(!isnull(minor_smell))
+				if(alch_skill >= SKILL_LEVEL_EXPERT || perint >= 16)
+					. += span_notice(" Smells weakly of [minor_smell].")
 /obj/item/alch/viscera
 	name = "viscera"
 	icon_state = "viscera"
