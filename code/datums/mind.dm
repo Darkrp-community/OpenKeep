@@ -808,7 +808,7 @@
 /datum/mind/proc/get_learning_boon(skill)
 	var/mob/living/carbon/human/H = current
 	if(!istype(H))
-		return
+		return 1
 	var/boon = H.age == AGE_OLD ? 0.8 : 1 // Can't teach an old dog new tricks. Most old jobs start with higher skill too.
 	boon += get_skill_level(skill) / 10
 	return boon
