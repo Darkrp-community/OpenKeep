@@ -75,6 +75,9 @@ SUBSYSTEM_DEF(death_arena)
 
 	first_skeleton.forceMove(get_turf(first_spawn))
 	second_skeleton.forceMove(get_turf(second_spawn))
+	var/necramessage = span_boldannounce("DECAPITATE YOUR OPPONENT AND BRING IT TO THE ALTAR ABOVE.")
+	to_chat(first_skeleton,necramessage)
+	to_chat(second_skeleton,necramessage)
 
 	qdel(first)
 	qdel(second)
@@ -186,6 +189,7 @@ SUBSYSTEM_DEF(death_arena)
 	plane = GAME_PLANE_UPPER
 	anchored = TRUE
 	density = TRUE
+	resistance_flags = INDESTRUCTIBLE
 
 
 /obj/structure/underworld/necra
@@ -197,6 +201,7 @@ SUBSYSTEM_DEF(death_arena)
 	plane = GAME_PLANE_UPPER
 	anchored = TRUE
 	density = TRUE
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/underworld/necra/Initialize()
 	. = ..()

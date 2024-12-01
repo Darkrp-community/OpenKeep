@@ -135,6 +135,7 @@
 	icon_state = "screaming1"
 	opacity = 1
 	density = 1
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/flora/roguetree/underworld/Initialize()
 	. = ..()

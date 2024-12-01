@@ -260,6 +260,10 @@
 /obj/machinery/light/rogue/wallfire/candle/blue,
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/underworld)
+"Tb" = (
+/obj/structure/underworld/barrier,
+/turf/open/floor/rogue/underworld/road,
+/area/rogue/underworld)
 "Td" = (
 /obj/machinery/light/rogue/wallfire/candle/blue{
 	pixel_y = -32
@@ -25199,7 +25203,7 @@ PP
 PP
 PP
 IP
-Lk
+Tb
 Lk
 fC
 Wt
@@ -25979,7 +25983,7 @@ PP
 PP
 PP
 IP
-Lk
+Tb
 Lk
 fC
 Wt
