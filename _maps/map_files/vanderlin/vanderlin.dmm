@@ -4438,7 +4438,6 @@
 /area/rogue/indoors/town/manor)
 "fUA" = (
 /obj/structure/lever{
-	gid = "garrisontable";
 	id = "garrisontable"
 	},
 /turf/open/floor/rogue/cobble,
