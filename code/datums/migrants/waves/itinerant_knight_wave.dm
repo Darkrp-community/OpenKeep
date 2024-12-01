@@ -13,7 +13,7 @@
 	pants = /obj/item/clothing/under/roguetown/platelegs
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
-	armor = /obj/item/clothing/suit/roguetown/armor/rare/elfplate
+	armor = /obj/item/clothing/suit/roguetown/armor/rare/plate
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	belt = /obj/item/storage/belt/rogue/leather/steel
