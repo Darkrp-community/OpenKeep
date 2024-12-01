@@ -228,9 +228,9 @@
 	roles = list(
 		/datum/migrant_role/sergeant_at_arms = 1,
 		/datum/migrant_role/footman_bannerman = 2,
-    	/datum/migrant_role/pikeman_bannerman = 2,
-    	/datum/migrant_role/archer_bannerman = 1,
-    	/datum/migrant_role/crossbow_bannerman = 1
+		/datum/migrant_role/pikeman_bannerman = 2,
+		/datum/migrant_role/archer_bannerman = 1,
+		/datum/migrant_role/crossbow_bannerman = 1
 	)
 	greet_text = "You were apart of an expedition sent by the King to Kingsfield, as it is done, you now return."
 
