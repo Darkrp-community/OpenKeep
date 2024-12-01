@@ -97,6 +97,10 @@
 /obj/effect/landmark/underworld_spawnpoint,
 /turf/open/floor/rogue/church,
 /area/rogue/underworld)
+"yd" = (
+/obj/structure/underworld/barrier,
+/turf/open/transparent/openspace,
+/area/rogue/underworld)
 "yn" = (
 /turf/closed/wall/mineral/rogue/underbrick{
 	icon_state = "end";
@@ -112,10 +116,8 @@
 /turf/open/floor/rogue/churchrough,
 /area/rogue/underworld)
 "zx" = (
-/obj/structure/stairs/stone/church{
-	dir = 1
-	},
-/turf/open/transparent/openspace,
+/obj/structure/underworld/barrier,
+/turf/open/floor/rogue/church,
 /area/rogue/underworld)
 "AF" = (
 /obj/structure/underworld/carriage{
@@ -145,9 +147,6 @@
 /turf/open/floor/rogue/church,
 /area/rogue/underworld)
 "DM" = (
-/obj/structure/stairs/stone/church{
-	dir = 1
-	},
 /obj/machinery/light/rogue/wallfire/candle/blue{
 	pixel_x = 32;
 	pixel_y = 0
@@ -207,9 +206,6 @@
 /turf/open/floor/rogue/underworld/road,
 /area/rogue/underworld)
 "LG" = (
-/obj/structure/stairs/stone/church{
-	dir = 1
-	},
 /obj/machinery/light/rogue/wallfire/candle/blue{
 	pixel_y = 0;
 	pixel_x = -32
@@ -8693,8 +8689,8 @@ KU
 sz
 sz
 sz
-sz
-sz
+Eh
+Eh
 Eh
 Eh
 Eh
@@ -8823,8 +8819,8 @@ KU
 sz
 sz
 sz
-sz
 Qn
+df
 dF
 df
 df
@@ -8953,8 +8949,8 @@ KU
 sz
 sz
 sz
-sz
 Qn
+df
 df
 df
 df
@@ -9083,8 +9079,8 @@ KU
 sz
 sz
 sz
-sz
 Qn
+df
 wY
 df
 df
@@ -9213,8 +9209,8 @@ KU
 sz
 sz
 sz
-sz
-sz
+Eh
+Eh
 Eh
 Eh
 Eh
@@ -25333,8 +25329,8 @@ IP
 Lk
 Lk
 Lk
-Lk
 Xt
+Eh
 Eh
 IH
 Sp
@@ -25458,14 +25454,14 @@ xn
 xn
 xn
 xn
+zx
 Wt
 Wt
 Wt
 Wt
-Wt
-Wt
+Df
 LG
-kH
+yd
 fC
 ol
 ol
@@ -25588,14 +25584,14 @@ xn
 xn
 xn
 xe
-Wt
+zx
 GV
 lw
 Wt
 Wt
-Wt
-zx
+Df
 kH
+yd
 fC
 ol
 ol
@@ -25718,14 +25714,14 @@ xn
 xn
 xn
 xn
+zx
 Wt
 Wt
 Wt
 Wt
-Wt
-Wt
+Df
 DM
-kH
+yd
 fC
 ol
 ol
@@ -25853,8 +25849,8 @@ IP
 Lk
 Lk
 Lk
-Lk
 Xt
+Eh
 Eh
 IH
 Sp

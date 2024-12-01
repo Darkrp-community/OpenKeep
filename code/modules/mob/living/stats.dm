@@ -2,21 +2,11 @@
 /mob/living
 	var/STASTR = 10
 	var/STAPER = 10
-	var/STAINT = 10
-	var/STACON = 10
 	var/STAEND = 10
+	var/STACON = 10
+	var/STAINT = 10
 	var/STASPD = 10
 	var/STALUC = 10
-	//buffers, the 'true' amount of each stat
-	var/BUFSTR = 0
-	var/BUFPER = 0
-	var/BUFINT = 0
-	var/BUFCON = 0
-	var/BUFEND = 0
-	var/BUFSPE = 0
-	var/BUFLUC = 0
-	var/statbuf = FALSE
-	var/list/statindex = list()
 	var/datum/patron/patron = /datum/patron/godless
 
 /mob/living/proc/init_faith()
@@ -36,24 +26,15 @@
 	return TRUE
 
 /datum/species
-	var/list/specstats = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 0, "endurance" = 0, "speed" = 0, "fortune" = 0)
-	var/list/specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 0, "endurance" = 0, "speed" = 0, "fortune" = 0)
+	///Statkey = bonus stat, - for malice.
+	var/list/specstats = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_END = 0,STATKEY_CON = 0, STATKEY_INT = 0, STATKEY_SPD = 0, STATKEY_LCK = 0)
+	///Statkey = bonus stat, - for malice.
+	var/list/specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_END = 0,STATKEY_CON = 0, STATKEY_INT = 0, STATKEY_SPD = 0, STATKEY_LCK = 0)
 
 /mob/living/proc/roll_stats()
-	STASTR = 10
-	STAPER = 10
-	STAINT = 10
-	STACON = 10
-	STAEND = 10
-	STASPD = 10
-	STALUC = 10
-	for(var/S in MOBSTATS)
+	for(var/stat in MOBSTATS)
 		if(prob(33))
-			switch(pick(1,2))
-				if(1)
-					change_stat(S, 1)
-				if(2)
-					change_stat(S, -1)
+			change_stat(stat,rand(-2,2))
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
 		if(H.dna.species)
@@ -65,357 +46,177 @@
 					change_stat(S, H.dna.species.specstats[S])
 		switch(H.age)
 			if(AGE_MIDDLEAGED)
-				change_stat("speed", -1)
-				change_stat("endurance", 1)
+				change_stat(STATKEY_SPD, -1)
+				change_stat(STATKEY_END, 1)
 			if(AGE_OLD)
-				change_stat("strength", -2)
-				change_stat("speed", -1)
-				change_stat("perception", 2)
-				change_stat("constitution", -1)
-				change_stat("intelligence", 2)
-				change_stat("endurance", -1)
-				change_stat("fortune", 1)
+				change_stat(STATKEY_STR, -2)
+				change_stat(STATKEY_SPD, -1)
+				change_stat(STATKEY_PER, 2)
+				change_stat(STATKEY_CON, -1)
+				change_stat(STATKEY_INT, 2)
+				change_stat(STATKEY_END, -1)
+				change_stat(STATKEY_LCK, 1)
 		if(key)
-			if(check_blacklist(ckey(key)))
-				change_stat("strength", -5)
-				change_stat("speed", -20)
-				change_stat("endurance", -2)
-				change_stat("constitution", -2)
-				change_stat("intelligence", -20)
-				change_stat("fortune", -20)
+			if(check_blacklist(ckey(key))) //You're boutta have a reaaaal bad dae....
+				change_stat(STATKEY_STR, 1,TRUE)
+				change_stat(STATKEY_PER, 1,TRUE)
+				change_stat(STATKEY_END, 1,TRUE)
+				change_stat(STATKEY_CON, 1,TRUE)
+				change_stat(STATKEY_INT, 1,TRUE)
+				change_stat(STATKEY_SPD, 1,TRUE)
+				change_stat(STATKEY_LCK, 1,TRUE)
 			if(check_psychokiller(ckey(key)))
 				testing("foundpsych")
 				H.eye_color = "ff0000"
 				H.voice_color = "ff0000"
-
-/mob/living/proc/change_stat(stat, amt, index)
-	if(!stat)
+/// Adjusts stat values of mobs. set_stat == true to set directly and clampvals == false to ignore min stat 1 max stat 20
+/mob/living/proc/change_stat(stat_key, adjust_amount, set_stat = FALSE, clampvals = TRUE)
+	if(!stat_key || !adjust_amount)
 		return
-	if(amt == 0 && index)
-		if(statindex[index])
-			change_stat(statindex[index]["stat"], -1*statindex[index]["amt"])
-			statindex[index] = null
-			return
-	if(!amt)
+	switch(stat_key)
+		if(STATKEY_STR)
+			if(set_stat)
+				STASTR = adjust_amount
+			else
+				STASTR += adjust_amount
+			if(clampvals)
+				STASTR = clamp(STASTR,1,20)
+		if(STATKEY_PER)
+			if(set_stat)
+				STAPER = adjust_amount
+			else
+				STAPER += adjust_amount
+			if(clampvals)
+				STAPER = clamp(STAPER,1,20)
+		if(STATKEY_END)
+			if(set_stat)
+				STAEND = adjust_amount
+			else
+				STAEND += adjust_amount
+			if(clampvals)
+				STAEND = clamp(STAEND,1,20)
+		if(STATKEY_CON)
+			if(set_stat)
+				STACON = adjust_amount
+			else
+				STACON += adjust_amount
+			if(clampvals)
+				STACON = clamp(STACON,1,20)
+		if(STATKEY_INT)
+			if(set_stat)
+				STAINT = adjust_amount
+			else
+				STAINT += adjust_amount
+			if(clampvals)
+				STAINT = clamp(STAINT,1,20)
+		if(STATKEY_SPD)
+			if(set_stat)
+				STASPD = adjust_amount
+			else
+				STASPD += adjust_amount
+			if(clampvals)
+				STASPD = clamp(STASPD,1,20)
+		if(STATKEY_LCK)
+			if(set_stat)
+				STALUC = adjust_amount
+			else
+				STALUC += adjust_amount
+			if(clampvals)
+				STALUC = clamp(STALUC,1,20)
+	return
+///Returns: STR,PER,END,CON,INT,SPD,LCK in a list, in that order
+/mob/living/proc/get_stats()
+	return list(STASTR,STAPER,STAEND,STACON,STAINT,STASPD,STALUC)
+
+///Returns: the difference in value between the opponents stat key and ours.
+///EG: Check opponents Endurace VS our Endurance
+/mob/living/proc/stat_difference_to(mob/living/opponent,stat_key)
+	if(!opponent || !stat_key)
 		return
-	if(index)
-		if(statindex[index])
-			return //we cannot make a new index
-		else
-			statindex[index] = list("stat" = stat, "amt" = amt)
-//			statindex[index]["stat"] = stat
-//			statindex[index]["amt"] = amt
-	var/newamt = 0
-	switch(stat)
-		if("strength")
-			newamt = STASTR + amt
-			if(BUFSTR < 0)
-				BUFSTR = BUFSTR + amt
-				if(BUFSTR > 0)
-					newamt = STASTR + BUFSTR
-					BUFSTR = 0
-			if(BUFSTR > 0)
-				BUFSTR = BUFSTR + amt
-				if(BUFSTR < 0)
-					newamt = STASTR + BUFSTR
-					BUFSTR = 0
-			while(newamt < 1)
-				newamt++
-				BUFSTR--
-			while(newamt > 20)
-				newamt--
-				BUFSTR++
-			STASTR = newamt
+	var/opponent_stat
+	var/our_stat
+	switch(stat_key)
+		if(STATKEY_STR)
+			opponent_stat = opponent.STASTR
+			our_stat = STASTR
+		if(STATKEY_PER)
+			opponent_stat = opponent.STAPER
+			our_stat = STAPER
+		if(STATKEY_END)
+			opponent_stat = opponent.STAEND
+			our_stat = STAEND
+		if(STATKEY_CON)
+			opponent_stat = opponent.STACON
+			our_stat = STACON
+		if(STATKEY_INT)
+			opponent_stat = opponent.STAINT
+			our_stat = STAINT
+		if(STATKEY_SPD)
+			opponent_stat = opponent.STASPD
+			our_stat = STASPD
+		if(STATKEY_LCK)
+			opponent_stat = opponent.STALUC
+			our_stat = STALUC
+	return our_stat - opponent_stat
+///Returns: Difference betwen our_stat and opponents opp_stat.
+///EG: check opponents endurance VS our strength
+/mob/living/proc/stat_fight(mob/living/opponent, opp_stat_key, our_stat_key)
+	if(!opponent || !opp_stat_key || !our_stat_key)
+		return
+	var/opponent_stat
+	var/our_stat
+	switch(opp_stat_key)
+		if(STATKEY_STR)
+			opponent_stat = opponent.STASTR
+		if(STATKEY_PER)
+			opponent_stat = opponent.STAPER
+		if(STATKEY_END)
+			opponent_stat = opponent.STAEND
+		if(STATKEY_CON)
+			opponent_stat = opponent.STACON
+		if(STATKEY_INT)
+			opponent_stat = opponent.STAINT
+		if(STATKEY_SPD)
+			opponent_stat = opponent.STASPD
+		if(STATKEY_LCK)
+			opponent_stat = opponent.STALUC
+	switch(our_stat_key)
+		if(STATKEY_STR)
+			our_stat = STASTR
+		if(STATKEY_PER)
+			our_stat = STAPER
+		if(STATKEY_END)
+			our_stat = STAEND
+		if(STATKEY_CON)
+			our_stat = STACON
+		if(STATKEY_INT)
+			our_stat = STAINT
+		if(STATKEY_SPD)
+			our_stat = STASPD
+		if(STATKEY_LCK)
+			our_stat = STALUC
+	return our_stat - opponent_stat
 
-		/*	var/obj/item/bodypart/armr = get_bodypart(BODY_ZONE_R_ARM)
-			if(armr)
-				if(STASTR <= 10)
-					armr.sellprice = STASTR
-				if(STASTR > 10)
-					armr.sellprice = STASTR*2
-					if(STASTR > 12)
-						armr.sellprice = STASTR*4 //generally going to be harder to sell limbs off dead bodies, since prior bloodloss will tank stat and price
-						if(STASTR > 14)
-							armr.sellprice = STASTR*6
-							if(STASTR > 16) //VL
-								armr.sellprice = STASTR*10.
-
-			var/obj/item/bodypart/arml = get_bodypart(BODY_ZONE_L_ARM)
-			if(arml)
-				if(STASTR <= 10)
-					arml.sellprice = STASTR
-				if(STASTR > 10)
-					arml.sellprice = STASTR*2
-					if(STASTR > 12)
-						arml.sellprice = STASTR*4
-						if(STASTR > 14)
-							arml.sellprice = STASTR*6
-							if(STASTR > 16)
-								arml.sellprice = STASTR*10		Commented out since no gating to fix goblins etc being farmed for truly ludicrous amounts*/
-
-		if("perception")
-			newamt = STAPER + amt
-			if(BUFPER < 0)
-				BUFPER = BUFPER + amt
-				if(BUFPER > 0)
-					newamt = STAPER + BUFPER
-					BUFPER = 0
-			if(BUFPER > 0)
-				BUFPER = BUFPER + amt
-				if(BUFPER < 0)
-					newamt = STAPER + BUFPER
-					BUFPER = 0
-			while(newamt < 1)
-				newamt++
-				BUFPER--
-			while(newamt > 20)
-				newamt--
-				BUFPER++
-			STAPER = newamt
-
-		/*	var/obj/item/organ/eyes/eyes = getorganslot(ORGAN_SLOT_EYES)
-			if(eyes)
-				if(STAPER <= 10)
-					eyes.sellprice = STAPER
-				if(STAPER > 10)
-					eyes.sellprice = STAPER*2
-					if(STAPER > 12) //PER is harder to max out and buff
-						eyes.sellprice = STAPER*4
-						if(STAPER > 14) //tiefling boltslinger basically
-							eyes.sellprice = STAPER*6	*/
-
-			update_fov_angles()
-
-		if("intelligence")
-			newamt = STAINT + amt
-			if(BUFINT < 0)
-				BUFINT = BUFINT + amt
-				if(BUFINT > 0)
-					newamt = STAINT + BUFINT
-					BUFINT = 0
-			if(BUFINT > 0)
-				BUFINT = BUFINT + amt
-				if(BUFINT < 0)
-					newamt = STAINT + BUFINT
-					BUFINT = 0
-			while(newamt < 1)
-				newamt++
-				BUFINT--
-			while(newamt > 20)
-				newamt--
-				BUFINT++
-			STAINT = newamt
-
-		/*	var/obj/item/organ/brain/brain = getorganslot(ORGAN_SLOT_BRAIN)
-			if(brain)
-				if(STAINT <= 10)
-					brain.sellprice = STAINT
-				if(STAINT > 10)
-					brain.sellprice = STAINT*2
-					if(STAINT > 11)
-						brain.sellprice = STAINT*4
-						if(STAINT > 13)
-							brain.sellprice = STAINT*6
-							if(STAINT > 15) //15+ needs a special job - baseline old age elf is 14.
-								brain.sellprice += STAINT*10  "smartest" human npcs rn are zizombies and orcs at 10 INT - galaxy brains are player-exclusive.	*/
-
-
-		if("constitution")
-			newamt = STACON + amt
-			if(BUFCON < 0)
-				BUFCON = BUFCON + amt
-				if(BUFCON > 0)
-					newamt = STACON + BUFCON
-					BUFCON = 0
-			if(BUFCON > 0)
-				BUFCON = BUFCON + amt
-				if(BUFCON < 0)
-					newamt = STACON + BUFCON
-					BUFCON = 0
-			while(newamt < 1)
-				newamt++
-				BUFCON--
-			while(newamt > 20)
-				newamt--
-				BUFCON++
-			STACON = newamt
-
-		/*	var/obj/item/organ/liver/liver = getorganslot(ORGAN_SLOT_LIVER)
-			if(liver)
-				if(STACON >= 10)
-					liver.sellprice = STACON
-				if(STACON < 10)
-					liver.sellprice = STACON*2
-					if(STACON > 11)
-						liver.sellprice = STACON*3
-						if(STACON > 13)
-							liver.sellprice = STACON*4
-							if(STACON > 15)
-								liver.sellprice += STACON*5
-
-			var/obj/item/organ/stomach = getorganslot(ORGAN_SLOT_STOMACH)
-			if(stomach)
-				if(STACON >= 10)
-					stomach.sellprice = STACON
-				if(STACON < 10)
-					stomach.sellprice = STACON*2
-					if(STACON > 11)
-						stomach.sellprice = STACON*3
-						if(STACON > 13)
-							stomach.sellprice = STACON*4
-							if(STACON > 15)
-								stomach.sellprice += STACON*5
-
-			var/obj/item/organ/guts/guts = getorganslot(ORGAN_SLOT_STOMACH_AID)
-			if(guts)
-				if(STACON >= 10)
-					guts.sellprice = STACON
-				if(STACON < 10)
-					guts.sellprice = STACON*2
-					if(STACON > 11)
-						guts.sellprice = STACON*3
-						if(STACON > 13)
-							guts.sellprice = STACON*4
-							if(STACON > 15)
-								guts.sellprice += STACON*5	Commented out since no gating to fix goblins etc being farmed for truly ludicrous amounts*/
-
-
-		if("endurance")
-			newamt = STAEND + amt
-			if(BUFEND < 0)
-				BUFEND = BUFEND + amt
-				if(BUFEND > 0)
-					newamt = STAEND + BUFEND
-					BUFEND = 0
-			if(BUFEND > 0)
-				BUFEND = BUFEND + amt
-				if(BUFEND < 0)
-					newamt = STAEND + BUFEND
-					BUFEND = 0
-			while(newamt < 1)
-				newamt++
-				BUFEND--
-			while(newamt > 20)
-				newamt--
-				BUFEND++
-			STAEND = newamt
-
-		/*	var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
-			if(heart)
-				if(STAEND <= 10)
-					heart.sellprice = STAEND
-				if(STAEND > 10)
-					heart.sellprice = STAEND*2
-					if(STAEND > 12)
-						heart.sellprice = STAEND*3
-						if(STAEND > 14)
-							heart.sellprice = STAEND*5
-							if(STAEND > 16)
-								heart.sellprice += STAEND*7
-
-			var/obj/item/organ/lungs/lungs = getorganslot(ORGAN_SLOT_LUNGS)
-			if(lungs)
-				if(STAEND <= 10)
-					lungs.sellprice = STAEND
-				if(STAEND > 10)
-					lungs.sellprice = STAEND*2
-					if(STAEND > 12)
-						lungs.sellprice = STAEND*3
-						if(STAEND > 14)
-							lungs.sellprice = STAEND*5
-							if(STAEND > 16)
-								lungs.sellprice += STAEND*7	Commented out since no gating to fix goblins etc being farmed for truly ludicrous amounts*/
-
-		if("speed")
-			newamt = STASPD + amt
-			if(BUFSPE < 0)
-				BUFSPE = BUFSPE + amt
-				if(BUFSPE > 0)
-					newamt = STASPD + BUFSPE
-					BUFSPE = 0
-			if(BUFSPE > 0)
-				BUFSPE = BUFSPE + amt
-				if(BUFSPE < 0)
-					newamt = STASPD + BUFSPE
-					BUFSPE = 0
-			while(newamt < 1)
-				newamt++
-				BUFSPE--
-			while(newamt > 20)
-				newamt--
-				BUFSPE++
-			STASPD = newamt
-
-		/*	var/obj/item/bodypart/legr = get_bodypart(BODY_ZONE_R_LEG)
-			if(legr)
-				if(STASPD <= 10)
-					legr.sellprice = STASPD
-				if(STASPD > 10)
-					legr.sellprice = STASPD*2
-					if(STASPD > 12)
-						legr.sellprice = STASPD*4
-						if(STASPD > 15)
-							legr.sellprice = STASPD*6
-							if(STASPD > 17)
-								legr.sellprice += STASPD*8
-
-			var/obj/item/bodypart/legl = get_bodypart(BODY_ZONE_L_LEG)
-			if(legl)
-				if(STASPD <= 10)
-					legl.sellprice = STASPD
-				if(STASPD > 10)
-					legl.sellprice = STASPD*2
-					if(STASPD > 12)
-						legl.sellprice = STASPD*4
-						if(STASPD > 15)
-							legl.sellprice = STASPD*6
-							if(STASPD > 17)
-								legl.sellprice += STASPD*8	Commented out since no gating to fix goblins etc being farmed for truly ludicrous amounts*/
-
-			update_move_intent_slowdown()
-
-		if("fortune")
-			newamt = STALUC + amt
-			if(BUFLUC < 0)
-				BUFLUC = BUFLUC + amt
-				if(BUFLUC > 0)
-					newamt = STALUC + BUFLUC
-					BUFLUC = 0
-			if(BUFLUC > 0)
-				BUFLUC = BUFLUC + amt
-				if(BUFLUC < 0)
-					newamt = STALUC + BUFLUC
-					BUFLUC = 0
-			while(newamt < 1)
-				newamt++
-				BUFLUC--
-			while(newamt > 20)
-				newamt--
-				BUFLUC++
-			STALUC = newamt
-
-		/*	var/obj/item/organ/tongue/tongue = getorganslot(ORGAN_SLOT_TONGUE) //Superstition? also only really beggars and jesters can be farmed for this
-			if(tongue)
-				if(STALUC <= 10)
-					tongue.sellprice = STALUC
-				if(STALUC > 10)
-					tongue.sellprice = STALUC*2
-					if(STALUC > 12)
-						tongue.sellprice = STALUC*4
-						if(STALUC > 14)
-							tongue.sellprice = STALUC*6	Commented out since no gating to fix goblins etc being farmed for truly ludicrous amounts*/
-
-/proc/generic_stat_comparison(userstat as num, targetstat as num)
-	var/difference = userstat - targetstat
-	if(difference > 1 || difference < -1)
-		return difference * 10
-	else
-		return 0
-
-/mob/living/proc/badluck(multi = 3)
-	if(STALUC < 10)
-		return prob((10 - STALUC) * multi)
-
-/mob/living/proc/goodluck(multi = 3)
-	if(STALUC > 10)
-		return prob((STALUC - 10) * multi)
+///Effectively rolls a d20, with each point in the stat being a chance_per_point% chance to succeed per point in the stat. If no stat is provided, just returns 0.
+///dee_cee is a difficulty mod, a positive value makes the check harder, a negative value makes it easier.
+///EG: A person with 10 luck and a dc of -10 effectively has a 100% chance of success.
+/mob/living/proc/stat_roll(stat_key,chance_per_point = 5, dee_cee = null)
+	if(!stat_key)
+		return FALSE
+	var/tocheck
+	switch(stat_key)
+		if(STATKEY_STR)
+			tocheck = STASTR
+		if(STATKEY_PER)
+			tocheck = STAPER
+		if(STATKEY_END)
+			tocheck = STAEND
+		if(STATKEY_CON)
+			tocheck = STACON
+		if(STATKEY_INT)
+			tocheck = STAINT
+		if(STATKEY_SPD)
+			tocheck = STASPD
+		if(STATKEY_LCK)
+			tocheck = STALUC
+	return isnull(dee_cee) ? prob(tocheck * chance_per_point) : prob(clamp((tocheck - dee_cee) * chance_per_point,0,100))
