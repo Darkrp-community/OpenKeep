@@ -1,5 +1,5 @@
 /datum/migrant_role/dark_itinerant_knight
-	name = "Dark itinerant Knight"
+	name = "Drow Knight"
 	greet_text = "You are an evil itinerant Knight, you have embarked alongside your squire on a voyage to engulf chaos within these lands."
 	outfit = /datum/outfit/job/roguetown/dark_itinerant_knight
 	allowed_races = list("Dark Elf")
