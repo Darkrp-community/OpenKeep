@@ -348,9 +348,7 @@
 			to_chat(M, "<span class='warning'>My bite misses [src]!</span>")
 	return FALSE
 
-/mob/living/ex_act(severity, target, origin)
-	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))
-		return
+/mob/living/ex_act(severity, target)
 	..()
 
 /mob/living/attack_paw(mob/living/carbon/monkey/M)
