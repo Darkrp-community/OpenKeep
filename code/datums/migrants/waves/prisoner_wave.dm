@@ -65,7 +65,7 @@
 		"Half-Orc")
 
 /datum/outfit/job/roguetown/mig_prisoner/pre_equip(mob/living/carbon/human/H)
-..()
+	..()
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	mask = /obj/item/clothing/mask/rogue/facemask/prisoner
 	if(H.mind)
