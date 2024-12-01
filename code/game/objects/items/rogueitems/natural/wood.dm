@@ -33,7 +33,7 @@
 		lumber_amount = rand(minimum, max(round(skill_level), minimum))
 		var/essense_sound_played = FALSE //This is here so the sound wont play multiple times if the essense itself spawns multiple times
 		for(var/i = 0; i < lumber_amount; i++)
-			if(user.stat_roll(STATKEY_LCK,5,10))
+			if(user.stat_roll(STATKEY_LCK,2,10))
 				new /obj/item/grown/log/tree/small/essence(get_turf(src))
 				if(!essense_sound_played)
 					essense_sound_played = TRUE

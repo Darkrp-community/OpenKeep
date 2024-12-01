@@ -129,7 +129,7 @@
 	return list(STASTR,STAPER,STAEND,STACON,STAINT,STASPD,STALUC)
 
 ///Returns: the difference in value between the opponents stat key and ours.
-///EG: Check opponents Endurace VS our Endurance
+///EG: Our endurace - opp endurance.
 /mob/living/proc/stat_difference_to(mob/living/opponent,stat_key)
 	if(!opponent || !stat_key)
 		return
@@ -137,29 +137,22 @@
 	var/our_stat
 	switch(stat_key)
 		if(STATKEY_STR)
-			opponent_stat = opponent.STASTR
-			our_stat = STASTR
+			return STASTR - opponent.STASTR
 		if(STATKEY_PER)
-			opponent_stat = opponent.STAPER
-			our_stat = STAPER
+			return STAPER - opponent.STAPER
 		if(STATKEY_END)
-			opponent_stat = opponent.STAEND
-			our_stat = STAEND
+			return STAEND - opponent.STAEND
 		if(STATKEY_CON)
-			opponent_stat = opponent.STACON
-			our_stat = STACON
+			return STACON - opponent.STACON
 		if(STATKEY_INT)
-			opponent_stat = opponent.STAINT
-			our_stat = STAINT
+			return STAINT - opponent.STAINT
 		if(STATKEY_SPD)
-			opponent_stat = opponent.STASPD
-			our_stat = STASPD
+			return STASPD - opponent.STASPD
 		if(STATKEY_LCK)
-			opponent_stat = opponent.STALUC
-			our_stat = STALUC
-	return our_stat - opponent_stat
+			return STALUC - opponent.STALUC
+	return
 ///Returns: Difference betwen our_stat and opponents opp_stat.
-///EG: check opponents endurance VS our strength
+///EG: Our STR - opp CON
 /mob/living/proc/stat_fight(mob/living/opponent, opp_stat_key, our_stat_key)
 	if(!opponent || !opp_stat_key || !our_stat_key)
 		return
@@ -199,8 +192,9 @@
 
 ///Effectively rolls a d20, with each point in the stat being a chance_per_point% chance to succeed per point in the stat. If no stat is provided, just returns 0.
 ///dee_cee is a difficulty mod, a positive value makes the check harder, a negative value makes it easier.
-///EG: A person with 10 luck and a dc of -10 effectively has a 100% chance of success.
-/mob/living/proc/stat_roll(stat_key,chance_per_point = 5, dee_cee = null)
+///invert_dc changes it from stat - dc to dc - stat, for inverted checks.
+///EG: A person with 10 luck and a dc of -10 effectively has a 100% chance of success. Or an inverted DC with 10 means 0% chance of success.
+/mob/living/proc/stat_roll(stat_key,chance_per_point = 5, dee_cee = null, invert_dc = FALSE)
 	if(!stat_key)
 		return FALSE
 	var/tocheck
@@ -219,4 +213,7 @@
 			tocheck = STASPD
 		if(STATKEY_LCK)
 			tocheck = STALUC
-	return isnull(dee_cee) ? prob(tocheck * chance_per_point) : prob(clamp((tocheck - dee_cee) * chance_per_point,0,100))
+	if(invert_dc)
+		return isnull(dee_cee) ? prob(tocheck * chance_per_point) : prob(clamp((dee_cee - tocheck) * chance_per_point,0,100))
+	else
+		return isnull(dee_cee) ? prob(tocheck * chance_per_point) : prob(clamp((tocheck - dee_cee) * chance_per_point,0,100))
