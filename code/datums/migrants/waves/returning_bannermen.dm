@@ -222,7 +222,7 @@
 
 /datum/migrant_wave/returning_bannermen
 	name = "The Bannermen's return"
-	max_spawns = 1
+	max_spawns = 2
 	shared_wave_type = /datum/migrant_wave/knight
 	downgrade_wave = /datum/migrant_wave/returning_bannermen_down
 	weight = 15
