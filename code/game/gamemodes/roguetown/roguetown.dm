@@ -77,12 +77,12 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 	if(headrebdecree)
 		return TRUE
 
-	check_for_lord()
+//	check_for_lord()
 
 	if(ttime > 280 MINUTES) //3 hour cutoff
 		return TRUE
 
-/datum/game_mode/chaosmode/proc/check_for_lord()
+/* /datum/game_mode/chaosmode/proc/check_for_lord()
 	if(world.time < next_check_lord)
 		return
 	next_check_lord = world.time + 1 MINUTES
@@ -106,7 +106,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 			addomen("nolord")
 		return FALSE
 	else
-		return TRUE
+		return TRUE */
 
 /datum/game_mode/chaosmode/pre_setup()
 	if(allmig || roguefight)
@@ -270,7 +270,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 
 /datum/game_mode/chaosmode/proc/pick_maniac()
 	restricted_jobs = list("King",
-	"Queen",
+	"Consort",
 	"Merchant",
 	"Priest")
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
@@ -299,7 +299,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 /datum/game_mode/chaosmode/proc/pick_cultist()
 	var/remaining = 3 // 1 leader, 2 lackeys :)
 	restricted_jobs = list("King",
-	"Queen",
+	"Consort",
 	"Merchant",
 	"Priest")
 	antag_candidates = get_players_for_role(ROLE_ZIZOIDCULTIST)

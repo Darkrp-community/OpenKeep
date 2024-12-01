@@ -32,7 +32,7 @@
 		H.name = "[honorary] [prev_name]"
 
 	pants = /obj/item/clothing/under/roguetown/tights/black
-	backr = /obj/item/rogueweapon/greatsword/flamberge
+	backr = /obj/item/rogueweapon/sword/long/greatsword/flamberge
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	shoes = /obj/item/clothing/shoes/roguetown/boots/rare/grenzelplate
 	gloves = /obj/item/clothing/gloves/roguetown/rare/grenzelplate
@@ -48,4 +48,4 @@
 		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	H.patron = GLOB.patronlist[/datum/patron/forgotten] // SCREAM IF YOU LOVE THE FORGOTTEN GOD
+	H.set_patron(/datum/patron/forgotten) // SCREAM IF YOU LOVE THE FORGOTTEN GOD

@@ -94,10 +94,7 @@
 
 			playsound(loc, cuffsound, 30, TRUE, -2)
 			if(do_mob(user, C, 30) && (C.get_num_arms(FALSE) >= 2 || C.get_arm_ignore()))
-				if(iscyborg(user))
-					apply_cuffs(C, user, TRUE)
-				else
-					apply_cuffs(C, user)
+				apply_cuffs(C, user)
 				C.visible_message("<span class='notice'>[user] handcuffs [C].</span>", \
 									"<span class='danger'>[user] handcuffs you.</span>")
 				SSblackbox.record_feedback("tally", "handcuffs", 1, type)
@@ -282,6 +279,7 @@
 			BP.add_wound(/datum/wound/fracture)
 			BP.update_disabled()
 			C.apply_damage(trap_damage, BRUTE, def_zone, C.run_armor_check(def_zone, "melee", damage = trap_damage))
+			C.update_sneak_invis(TRUE)
 			C.consider_ambush()
 			return FALSE
 		else
@@ -307,6 +305,7 @@
 				BP.add_wound(/datum/wound/fracture)
 				BP.update_disabled()
 				C.apply_damage(trap_damage, BRUTE, def_zone, C.run_armor_check(def_zone, "melee", damage = trap_damage))
+				C.update_sneak_invis(TRUE)
 				C.consider_ambush()
 				return FALSE
 	..()
@@ -319,6 +318,7 @@
 		close_trap()
 		if(isliving(user))
 			var/mob/living/L = user
+			L.update_sneak_invis(TRUE)
 			L.consider_ambush()
 		return
 	..()

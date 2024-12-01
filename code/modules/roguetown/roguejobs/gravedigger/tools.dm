@@ -2,12 +2,12 @@
 	force = 5
 	force_wielded = 12
 	possible_item_intents = list(/datum/intent/mace/strike/shovel)
-	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop/stone)
+	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop)
 	name = "shovel"
 	desc = ""
 	icon_state = "shovel"
-	icon = 'modular/Neu_Farming/icons/farmtools.dmi'
-//	icon = 'icons/roguetown/weapons/64.dmi'
+//icon = 'modular/Neu_Farming/icons/farmtools.dmi'
+	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT
 	dropshrink = 0.9
 	wdefense = 1
@@ -201,7 +201,7 @@
 	possible_item_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel)
 	name = "spade"
 	icon_state = "spade"
-//	icon = 'icons/roguetown/weapons/tools.dmi'
+	icon = 'icons/roguetown/weapons/tools.dmi'
 	bigboy = FALSE
 	sharpness = IS_BLUNT
 	dropshrink = 1
@@ -234,7 +234,7 @@
 
 /obj/item/burial_shroud
 	name = "winding sheet"
-	desc = ""
+	desc = "A sheet used to carry dead bodies and shield them from the elements."
 	icon = 'icons/obj/bodybag.dmi'
 	icon_state = "shroud_folded"
 	w_class = WEIGHT_CLASS_SMALL

@@ -151,7 +151,7 @@
 /area/rogue/outdoors/mountains/deception)
 "zC" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/spear,
+/obj/item/rogueweapon/polearm/spear,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors)
 "Ak" = (
@@ -186,7 +186,7 @@
 /area/rogue/under/cave)
 "Cf" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/woodcut/steel,
+/obj/item/rogueweapon/axe/steel,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors)
 "Cv" = (
@@ -230,7 +230,7 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors)
 "GN" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
 "Hs" = (

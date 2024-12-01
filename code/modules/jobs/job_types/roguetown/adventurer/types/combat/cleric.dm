@@ -38,12 +38,12 @@
 			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
 		if("Dendor")	// good helmet but no money
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 			neck = /obj/item/clothing/neck/roguetown/coif
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 			cloak = /obj/item/clothing/cloak/raincloak/furcloak
-			beltr = /obj/item/rogueweapon/huntingknife/stoneknife
+			beltr = /obj/item/rogueweapon/knife/stone
 		if("Necra")
+			head = /obj/item/clothing/head/roguetown/padded/deathface
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 			cloak = /obj/item/clothing/cloak/stabard/templar/necra
 			neck = /obj/item/clothing/neck/roguetown/gorget
@@ -63,6 +63,10 @@
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
 			neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+		if("Malum")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/malum_steel
+			cloak = /obj/item/clothing/cloak/stabard/templar/malum
+			neck = /obj/item/clothing/neck/roguetown/gorget
 		else // Failsafe
 			cloak = /obj/item/clothing/cloak/tabard/crusader // Give us a generic crusade tabard
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver // Give us a silver psycross for protection against lickers

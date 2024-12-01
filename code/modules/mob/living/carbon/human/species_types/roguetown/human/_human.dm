@@ -1,7 +1,7 @@
 /datum/species/human
 	name = "Humanb"
 	id = "human"
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 
 /datum/species/human/check_roundstart_eligible()
 	return FALSE

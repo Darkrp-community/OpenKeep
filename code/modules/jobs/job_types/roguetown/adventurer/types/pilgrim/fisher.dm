@@ -25,6 +25,7 @@
 		H.mind.adjust_skillrank(/datum/skill/labor/fishing, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/labor/fishing, 1, TRUE)
 			H.change_stat("constitution", 1)
@@ -43,7 +44,7 @@
 		backr = /obj/item/fishingrod
 		beltr = /obj/item/cooking/pan
 		beltl = /obj/item/flint
-		backpack_contents = list(/obj/item/rogueweapon/huntingknife/villager = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)
+		backpack_contents = list(/obj/item/rogueweapon/knife/villager = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)
 
 	else
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
@@ -56,4 +57,4 @@
 		belt = /obj/item/storage/belt/rogue/leather
 		beltr = /obj/item/cooking/pan
 		beltl = /obj/item/flint
-		backpack_contents = list(/obj/item/rogueweapon/huntingknife = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)
+		backpack_contents = list(/obj/item/rogueweapon/knife/hunting = 1, /obj/item/natural/worms = 1, /obj/item/rogueweapon/shovel/small = 1)

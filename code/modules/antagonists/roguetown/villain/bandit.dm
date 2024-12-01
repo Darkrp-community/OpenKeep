@@ -29,7 +29,7 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_VILLAIN, TRAIT_GENERIC)
-	H.patron = GLOB.patronlist[/datum/patron/inhumen/matthios]
+	H.set_patron(/datum/patron/inhumen/matthios)
 
 /datum/antagonist/bandit/greet()
 	to_chat(owner.current, "<span class='alertsyndie'>I am a BANDIT!</span>")
@@ -84,7 +84,7 @@
 	var/classchoice = input("Choose your background", "Available backgrounds") as anything in classes
 
 	switch(classchoice)
-	
+
 		if("Deserter") //well armored, polearm skill, shield skill. The heavy melee class.
 			H.set_blindness(0)
 			to_chat(H, span_warning("You were once a soldier employed under a lord, and left illegally. You're capable with armor, shields, and polearms."))
@@ -102,7 +102,7 @@
 
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			beltr = /obj/item/clothing/mask/rogue/shepherd/rag
-			beltl = /obj/item/rogueweapon/huntingknife
+			beltl = /obj/item/rogueweapon/knife/hunting
 
 			if(H.age == AGE_OLD) //old deserters are experts with polearms
 				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
@@ -126,9 +126,9 @@
 			var/weapon2choose = pickweight(list("Spear" = 2, "Bardiche" = 1))
 			switch(weapon2choose)
 				if("Spear")
-					backr = /obj/item/rogueweapon/spear
+					backr = /obj/item/rogueweapon/polearm/spear
 				if("Bardiche")
-					backr = /obj/item/rogueweapon/halberd/bardiche
+					backr = /obj/item/rogueweapon/polearm/halberd/bardiche
 
 			switch(pick(1,2))
 				if (1) //worse leg protection, better neck protection, and a face mask
@@ -159,7 +159,7 @@
 
 			armor = /obj/item/clothing/suit/roguetown/armor/gambeson
 			pants = /obj/item/clothing/under/roguetown/trou/leather
-			beltr = /obj/item/rogueweapon/huntingknife
+			beltr = /obj/item/rogueweapon/knife/hunting
 			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 			beltl = /obj/item/quiver/arrows
 			mask = /obj/item/clothing/mask/rogue/shepherd/rag
@@ -181,11 +181,11 @@
 
 			switch(pick(1,2,3))
 				if (1)
-					beltr = /obj/item/rogueweapon/huntingknife
+					beltr = /obj/item/rogueweapon/knife/hunting
 				if (2)
-					beltr = /obj/item/rogueweapon/huntingknife/cleaver
+					beltr = /obj/item/rogueweapon/knife/cleaver
 				if (3)
-					beltr = /obj/item/rogueweapon/huntingknife/idagger
+					beltr = /obj/item/rogueweapon/knife/dagger
 
 		if("Brigand") //good sword skill, shield skill, flail skill, mace skill, slightly speedy. Kind of an all rounder.
 			H.set_blindness(0)
@@ -225,7 +225,7 @@
 					armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 
 			if(H.age == AGE_OLD) //old brigands have been in the business for so long that they have managed to pick up some better gear along the way
-				armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+				armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 				mask = /obj/item/clothing/mask/rogue/facemask
 
 			switch(pick(1,2,3,4))
@@ -236,7 +236,7 @@
 				if (3)
 					beltr = /obj/item/rogueweapon/mace
 				if (4)
-					beltr = /obj/item/rogueweapon/sword/iron/messer
+					beltr = /obj/item/rogueweapon/sword/scimitar/messer
 
 	H.cure_blind("TRAIT_GENERIC")
 
@@ -288,7 +288,7 @@
 		else
 			to_chat(world, "[the_name] was a bandit. He stole [amt] triumphs worth of loot.")
 	return
-/* 
+/*
 	var/traitorwin = TRUE
 
 	var/count = 0
@@ -317,12 +317,12 @@
 /datum/crafting_recipe/bandit_volfhelm
 	name = "(Bandit) Volfhelm"
 	time = 4 SECONDS
-	reqs = list(/obj/item/natural/fur/volf = 2)
+	reqs = list(/obj/item/natural/head/volf = 1)
 	result = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	category = CAT_NONE
 
 /datum/crafting_recipe/cult_hood
-	name = "(Cult) Ominous Hood"
+	name = "(Bandit) Ominous Hood"
 	time = 4 SECONDS
 	reqs = list(/obj/item/natural/hide = 1)
 	result = /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous

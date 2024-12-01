@@ -47,7 +47,7 @@
 	backl = /obj/item/rogueweapon/sword/long/forgotten
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	neck = /obj/item/clothing/neck/roguetown/bevor
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	backpack_contents = list(/obj/item/keyring/inquisitor = 1)
 	var/prev_real_name = H.real_name
 	var/prev_name = H.name
@@ -86,7 +86,7 @@
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)

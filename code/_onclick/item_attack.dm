@@ -40,6 +40,9 @@
 		return TRUE
 	return FALSE //return TRUE to avoid calling attackby after this proc does stuff
 
+/atom/proc/pre_attack_right(atom/A, mob/living/user, params)
+	return FALSE
+
 // No comment
 /atom/proc/attackby(obj/item/W, mob/user, params)
 	if(user.used_intent.tranged)
@@ -319,7 +322,7 @@
 			if(istype(I, /obj/item/rogueweapon/pick))
 				var/obj/item/rogueweapon/pick/P = I
 				newforce *= P.pickmult
-			shake_camera(user, 1, 1)
+			shake_camera(user, 1, 0.1)
 			miner.mind.adjust_experience(/datum/skill/labor/mining, (miner.STAINT*0.2))
 	/*
 	* Ill be honest this final thing is extremely confusing.
@@ -335,6 +338,8 @@
 	newforce = (newforce * user.used_intent.damfactor) * dullfactor
 	if(user.used_intent.get_chargetime() && user.client?.chargedprog < 100)
 		newforce = newforce * 0.5
+	if(!(user.mobility_flags & MOBILITY_STAND))
+		newforce *= 0.5
 	// newforce is rounded upto the nearest intiger.
 	newforce = round(newforce,1)
 	//This is returning the maximum of the arguments meaning this is to prevent negative values.

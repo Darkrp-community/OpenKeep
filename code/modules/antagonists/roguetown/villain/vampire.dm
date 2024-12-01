@@ -55,7 +55,7 @@
 		owner.adjust_skillrank(/datum/skill/combat/unarmed, 6, TRUE)
 		ADD_TRAIT(owner.current, TRAIT_NOBLE, TRAIT_GENERIC)
 	owner.special_role = name
-	owner.current.patron = GLOB.patronlist[/datum/patron/divine/noc] // Spurned by the scorching light of Astrata, the Moon Prince Noc has taken you under his wing.
+	owner.current.set_patron(/datum/patron/divine/noc) // Spurned by the scorching light of Astrata, the Moon Prince Noc has taken you under his wing.
 	ADD_TRAIT(owner.current, TRAIT_STRONGBITE, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_NOBREATH, TRAIT_GENERIC)
@@ -421,7 +421,8 @@
 	var/boon = usr.mind?.get_learning_boon(/datum/skill/magic/blood)
 	var/amt2raise = licker.STAINT*2
 	usr.mind.adjust_experience(/datum/skill/magic/blood, floor(amt2raise * boon), FALSE)
-	fully_heal(admin_revive = TRUE)
+	fully_heal()
+	regenerate_limbs()
 	cooldown = TRUE
 	sleep(cooldown_time)
 	to_chat(src, "<span class='info'>My [name] ability is ready to be casted again.</span>")

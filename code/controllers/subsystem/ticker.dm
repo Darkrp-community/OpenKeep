@@ -36,6 +36,7 @@ SUBSYSTEM_DEF(ticker)
 
 	var/timeLeft						//pregame timer
 	var/start_at
+	var/timeDelayAdd = 120
 	//576000 dusk
 	//376000 day
 	var/gametime_offset = 288001		//Deciseconds to add to world.time for station time.
@@ -57,6 +58,9 @@ SUBSYSTEM_DEF(ticker)
 	var/late_join_disabled
 
 	var/roundend_check_paused = FALSE
+
+	var/amt_ready = 0 // Total count of players that are ready
+	var/amt_ready_needed = 1 // Total count of players that are needed ready to start the game
 
 	var/round_start_time = 0
 	var/round_start_irl = 0
@@ -211,14 +215,8 @@ SUBSYSTEM_DEF(ticker)
 
 			if(timeLeft <= 0)
 				if(!checkreqroles())
-/*					if(failedstarts >= 13)
-						current_state = GAME_STATE_SETTING_UP
-						Master.SetRunLevel(RUNLEVEL_SETUP)
-						if(start_immediately)
-							fire()
-					else*/
 					current_state = GAME_STATE_STARTUP
-					start_at = world.time + 600
+					start_at = world.time + timeDelayAdd
 					timeLeft = null
 					Master.SetRunLevel(RUNLEVEL_LOBBY)
 				else
@@ -232,7 +230,7 @@ SUBSYSTEM_DEF(ticker)
 			if(!setup())
 				//setup failed
 				current_state = GAME_STATE_STARTUP
-				start_at = world.time + 600
+				start_at = world.time + timeDelayAdd
 				timeLeft = null
 				Master.SetRunLevel(RUNLEVEL_LOBBY)
 
@@ -262,7 +260,7 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/checkreqroles()
 	var/list/readied_jobs = list()
-	var/list/required_jobs = list("Queen","King")
+	var/list/required_jobs = list("King", "Hand")
 #ifdef DEPLOY_TEST
 	required_jobs = list()
 	readied_jobs = list("King")
@@ -281,37 +279,38 @@ SUBSYSTEM_DEF(ticker)
 							to_chat(player, "<span class='warning'>You cannot be [V] and thus are not considered.</span>")
 							continue
 					readied_jobs.Add(V)
-	if(("King" in readied_jobs) || ("Queen" in readied_jobs))
+	if(("King" in readied_jobs) || ("Hand" in readied_jobs))
 		if("King" in readied_jobs)
 			rulertype = "King"
 		else
-			rulertype = "Queen"
-	else
+			rulertype = "Hand"
+/*	else
 		var/list/stuffy = list("Set a Ruler to 'high' in your class preferences to start the game!", "PLAY Ruler NOW!", "A Ruler is required to start.", "Pray for a Ruler.", "One day, there will be a Ruler.", "Just try playing Ruler.", "If you don't play Ruler, the game will never start.", "We need at least one Ruler to start the game.", "We're waiting for you to pick Ruler to start.", "Still no Ruler is readied..", "I'm going to lose my mind if we don't get a Ruler readied up.","No. The game will not start because there is no Ruler.","What's the point of ROGUETOWN without a Ruler?")
 		to_chat(world, "<span class='purple'>[pick(stuffy)]</span>")
-		return FALSE
+		return FALSE */
 
+/*
 #ifdef DEPLOY_TEST
-	var/amt_ready = 999
-#else
-	var/amt_ready = 0
+	amt_ready = 999
 #endif
-
+*/
 #ifdef ROGUEWORLD
 	amt_ready = 999
 #endif
 
+#ifndef UNIT_TESTS
 	for(var/mob/dead/new_player/player in GLOB.player_list)
 		if(!player)
 			continue
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			amt_ready++
-	if(amt_ready < 2)
-		to_chat(world, "<span class='purple'>[amt_ready]/2 players ready.</span>")
-/*		failedstarts++
-		if(failedstarts > 7)
-			to_chat(world, "<span class='purple'>[failedstarts]/13</span>")
-		if(failedstarts >= 13)
+	if(amt_ready < amt_ready_needed)
+		to_chat(world, "<span class='purple'>Not enough players to start the game</span>")
+		return FALSE
+#endif
+
+	/*	failedstarts++
+		if(failedstarts >= 13) // this stuff is for rougewar, a team deathmatch mode I guess.
 			to_chat(world, "<span class='greentext'>Starting ROGUEFIGHT...</span>")
 			var/icon/ikon
 			var/file_path = "icons/roguefight_title.dmi"
@@ -321,7 +320,6 @@ SUBSYSTEM_DEF(ticker)
 				SStitle.splash_turf.icon = ikon
 			for(var/mob/dead/new_player/player in GLOB.player_list)
 				player.playsound_local(player, 'sound/music/wartitle.ogg', 100, TRUE)*/
-		return FALSE
 	job_change_locked = TRUE
 	return TRUE
 
@@ -568,12 +566,12 @@ SUBSYSTEM_DEF(ticker)
 				if(K.job == "King")
 					rulermob = K
 					return
-		if("Queen")
-			for(var/mob/living/carbon/human/Q in world)
-				if(istype(Q, /mob/living/carbon/human/dummy))
+		if("Hand")
+			for(var/mob/living/carbon/human/H in world)
+				if(istype(H, /mob/living/carbon/human/dummy))
 					continue
-				if(Q.job == "Queen")
-					rulermob = Q
+				if(H.job == "Hand")
+					rulermob = H
 					return
 
 /datum/controller/subsystem/ticker/proc/collect_minds()
@@ -871,7 +869,6 @@ SUBSYSTEM_DEF(ticker)
 		world.Reboot()
 
 /datum/controller/subsystem/ticker/Shutdown()
-	gather_newscaster() //called here so we ensure the log is created even upon admin reboot
 	save_admin_data()
 	update_everything_flag_in_db()
 

@@ -96,7 +96,7 @@
 #define NOBLEMEN		(1<<0)
 
 #define LORD		(1<<0)
-#define LADY		(1<<1)
+#define CONSORT		(1<<1)
 #define HAND		(1<<2)
 #define STEWARD		(1<<3)
 #define WIZARD		(1<<4)
@@ -119,6 +119,7 @@
 #define CLERIC		(1<<1)
 #define PURITAN		(1<<2)
 #define MONK		(1<<3)
+#define GRAVEDIGGER	(1<<4)
 
 #define SERFS			(1<<3)
 
@@ -136,9 +137,8 @@
 #define BEASTMASTER	(1<<2)
 #define FISHER		(1<<4)
 #define LUMBERJACK	(1<<5)
-#define GRAVEDIGGER	(1<<6)
-#define MINER		(1<<7)
-#define BUTLER		(1<<8)
+#define MINER		(1<<6)
+#define BUTLER		(1<<7)
 #define JESTER		(1<<8)
 #define ADVENTURER	(1<<9)
 #define COOK		(1<<10)
@@ -163,7 +163,7 @@
 // job display orders //
 
 #define JDO_LORD 1
-#define JDO_LADY 1.1
+#define JDO_CONSORT 1.1
 #define JDO_PRINCE 1.2
 #define JDO_HAND 2
 #define JDO_STEWARD 3
@@ -184,7 +184,7 @@
 #define JDO_PRIEST 12
 #define JDO_CLERIC 13
 #define JDO_MONK 14
-#define JDO_CHURCHLING 15
+#define JDO_GRAVEMAN 15
 
 #define JDO_PURITAN 16
 #define JDO_SHEPHERD 17
@@ -209,8 +209,6 @@
 #define JDO_BUTCHER 27.1
 #define JDO_SOILSON 27.2
 
-#define JDO_GRAVEMAN 28
-
 #define JDO_NITEMAN 28.1
 #define JDO_NITEMAIDEN 28.2
 
@@ -227,4 +225,3 @@
 #define JDO_MERCENARY 33
 
 #define JDO_VAGRANT 34
-#define JDO_ORPHAN 35

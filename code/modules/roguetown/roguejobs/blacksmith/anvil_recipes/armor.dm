@@ -10,8 +10,6 @@
 	recipe_name = "a mask of copper"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/clothing/mask/rogue/facemask/copper
-	createmultiple = TRUE
-	createditem_num = 0
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/copperbracers
@@ -19,8 +17,6 @@
 	recipe_name = "a couple of copper Vambraces"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/clothing/wrists/roguetown/bracers/copper
-	createmultiple = TRUE
-	createditem_num = 0
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/coppercap
@@ -28,51 +24,43 @@
 	recipe_name = "a copper cap"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/clothing/head/roguetown/helmet/coppercap
-	createmultiple = TRUE
-	createditem_num = 0
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/gorgetcopper
-	name = "Gorget"
-	recipe_name = "a Gorget made out of copper"
+	name = "Copper neck protector"
+	recipe_name = "a neck protector"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/clothing/neck/roguetown/gorget/copper
-	createmultiple = TRUE
-	createditem_num = 0
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/copperchest
-	name = "Copper heart protector (2)"
+	name = "Copper heart protector"
 	recipe_name = "a very simple armor piece for the chest"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/clothing/suit/roguetown/armor/cuirass/copperchest
-	additional_items = list(/obj/item/ingot/copper)
-	createditem_num = 0
 	craftdiff = 0
 
 // --------- IRON -----------
 
+/datum/anvil_recipe/armor/iron
+	req_bar = /obj/item/ingot/iron
+	craftdiff = 0
+
 /datum/anvil_recipe/armor/ichainleg
-	name = "Chain chausses x2"
+	name = "Chain chausses"
 	recipe_name = "a pair of Chain Chausses"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/under/roguetown/chainlegs/iron
-	createmultiple = TRUE
-	createditem_num = 1
 	craftdiff = 0
 
-/datum/anvil_recipe/armor/ichaincoif
-	name = "Chain coif x2"
-	recipe_name = "a pair of Chain Coifs"
-	req_bar = /obj/item/ingot/iron
+/datum/anvil_recipe/armor/iron/chaincoif
+	name = "Chain coif"
+	recipe_name = "a Chain Coif"
 	created_item = /obj/item/clothing/neck/roguetown/chaincoif/iron
-	createmultiple = TRUE
-	createditem_num = 1
-	craftdiff = 0
 
 /datum/anvil_recipe/armor/ichainglove
-	name = "Chain gauntlets x2"
-	recipe_name = "a pair of Chain Gauntlets"
+	name = "Chain gauntlets (x2)"
+	recipe_name = "two pairs of Chain Gauntlets"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/gloves/roguetown/chain/iron
 	createmultiple = TRUE
@@ -81,37 +69,35 @@
 
 /datum/anvil_recipe/armor/ichainmail
 	name = "Chainmail"
-	recipe_name = "a Chainmail"
+	recipe_name = "maille shirt"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 
 
 /datum/anvil_recipe/armor/iplate
 	name = "Plate armor (3)"
-	recipe_name = "a heavy plate armor"
+	recipe_name = "heavy armor made of iron plates"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/ingot/iron)
 	created_item = /obj/item/clothing/suit/roguetown/armor/plate/iron
 	craftdiff = 1
 
-/datum/anvil_recipe/armor/iplatehelmet
+/datum/anvil_recipe/armor/iron/platehelmet
 	name = "Plate helmet (2)"
-	recipe_name = "a face guarded iron helmet"
-	req_bar = /obj/item/ingot/iron
+	recipe_name = "a heavy iron helmet"
 	additional_items = list(/obj/item/ingot/iron)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/ironplate
 	craftdiff = 1
 
-/datum/anvil_recipe/armor/ipothelmet
+/datum/anvil_recipe/armor/iron/pothelmet
 	name = "Pot helmet"
-	recipe_name = "a heavy iron helmet"
-	req_bar = /obj/item/ingot/iron
+	recipe_name = "a sturdy iron helmet"
 	created_item = /obj/item/clothing/head/roguetown/helmet/ironpot
 	craftdiff = 1
 
 /datum/anvil_recipe/armor/platemask
-	name = "Face mask x2"
-	recipe_name = "a pair of Face Masks"
+	name = "Face mask"
+	recipe_name = "a Face Mask"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/mask/rogue/facemask
 	createmultiple = TRUE
@@ -119,36 +105,35 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/gorget
-	name = "Gorget x2"
-	recipe_name = "a pair of Gorgets"
+	name = "Gorget"
+	recipe_name = "a gorget"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/neck/roguetown/gorget
-	createmultiple = TRUE
-	createditem_num = 1
 	craftdiff = 0
 
 /datum/anvil_recipe/armor/platebootlight
-	name = "Light plate boots x2"
+	name = "Light plate boots"
 	recipe_name = "a pair of Light Plate Boots"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/shoes/roguetown/boots/armor/light
-	createmultiple = TRUE
-	createditem_num = 1
 
-/datum/anvil_recipe/armor/skullcap
-	name = "Skullcap x2"
-	recipe_name = "a pair of Skullcaps"
-	req_bar = /obj/item/ingot/iron
+/datum/anvil_recipe/armor/iron/nasal_helmet
+	name = "Nasal helmet"
+	recipe_name = "a Nasal helmet"
+	created_item = /obj/item/clothing/head/roguetown/helmet/nasal
+	craftdiff = 2
+
+/datum/anvil_recipe/armor/iron/skullcap
+	name = "Skullcap"
+	recipe_name = "a skullcap"
 	created_item = /obj/item/clothing/head/roguetown/helmet/skullcap
-	createmultiple = TRUE
-	createditem_num = 1
 
-/datum/anvil_recipe/armor/studdedleather
-	name = "Studded leather (2h)"
-	recipe_name = "a Studded Leather Armor"
+/datum/anvil_recipe/armor/splint
+	name = "Splint Armor (2h)"
+	recipe_name = "durable light armor"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/natural/hide, /obj/item/natural/hide)
-	created_item = /obj/item/clothing/suit/roguetown/armor/leather/studded
+	created_item = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	craftdiff = 1
 
 // --------- STEEL -----------
@@ -176,26 +161,22 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/chainleg
-	name = "Chain chausses x2"
+	name = "Chain chausses"
 	recipe_name = "a pair of Chain Chausses"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/under/roguetown/chainlegs
-	createmultiple = TRUE
-	createditem_num = 1
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/chaincoif
-	name = "Chain coif x2"
-	recipe_name = "a pair of Chain Coifs"
+	name = "Chain coif"
+	recipe_name = "a Chain Coif"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/neck/roguetown/chaincoif
-	createmultiple = TRUE
-	createditem_num = 1
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/chainglove
 	name = "Chain gauntlets x2"
-	recipe_name = "a pair of Chain Gauntlets"
+	recipe_name = "two pairs of Chain Gauntlets"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/gloves/roguetown/chain
 	createmultiple = TRUE
@@ -240,21 +221,17 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/helmetkettle
-	name = "Kettle helmet x2"
-	recipe_name = "a pair of Kettle Helmets"
+	name = "Kettle helmet"
+	recipe_name = "a Kettle Helmet"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/roguetown/helmet/kettle
-	createmultiple = TRUE
-	createditem_num = 1
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/helmetslitkettle
-	name = "Slitted Kettle helmet x2"
-	recipe_name = "a pair of slitted kettle helmets"
+	name = "Slitted Kettle helmet"
+	recipe_name = "a slitted kettle helmets"
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/clothing/head/roguetown/helmet/slitkettle
-	createmultiple = TRUE
-	createditem_num = 1
+	created_item = /obj/item/clothing/head/roguetown/helmet/kettle/slit
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/froghelmet
@@ -272,14 +249,6 @@
 	created_item = (/obj/item/clothing/head/roguetown/helmet/visored/knight)
 	craftdiff = 3
 
-/datum/anvil_recipe/armor/helmetnasal
-	name = "Nasal helmet x2"
-	recipe_name = "a pair of Nasal Helmets"
-	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/clothing/head/roguetown/helmet
-	createmultiple = TRUE
-	createditem_num = 1
-	craftdiff = 2
 
 /datum/anvil_recipe/armor/hounskull
 	name = "Hounskull helmet (3)"
@@ -298,12 +267,10 @@
 	craftdiff = 4
 
 /datum/anvil_recipe/armor/platebracer
-	name = "Plate vambraces x2"
-	recipe_name = "a couple of Plate Vambraces"
+	name = "Plate vambraces"
+	recipe_name = "Plate Vambraces"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/wrists/roguetown/bracers
-	createmultiple = TRUE
-	createditem_num = 1
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/plateleg
@@ -317,7 +284,7 @@
 
 /datum/anvil_recipe/armor/plateglove
 	name = "Plate gauntlets"
-	recipe_name = "some Plate Gauntlets"
+	recipe_name = "a pair of Plate Gauntlets"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/gloves/roguetown/plate
 	craftdiff = 3

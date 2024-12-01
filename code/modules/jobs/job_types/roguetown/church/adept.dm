@@ -46,6 +46,9 @@
 
 /datum/outfit/job/roguetown/adept/bzealot/pre_equip(mob/living/carbon/human/H)
 	..()
+	if(H.patron != /datum/patron/divine/astrata)
+		H.set_patron(/datum/patron/forgotten)
+
 	//Armor for class
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
 	cloak = /obj/item/clothing/cloak/tabard/adept
@@ -53,7 +56,7 @@
 	beltl = /obj/item/rogueweapon/mace/spiked
 	backr = /obj/item/rogueweapon/shield/wood/adept
 	gloves = /obj/item/clothing/gloves/roguetown/leather
-	backpack_contents = list(/obj/item/keyring/shepherd = 1, /obj/item/rogueweapon/huntingknife/idagger/silver = 1)
+	backpack_contents = list(/obj/item/keyring/shepherd = 1, /obj/item/rogueweapon/knife/dagger/silver = 1)
 
 	//Stats for class
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
@@ -87,15 +90,17 @@
 
 /datum/outfit/job/roguetown/adept/rthief/pre_equip(mob/living/carbon/human/H)
 	..()
+	if(H.patron != /datum/patron/divine/astrata)
+		H.set_patron(/datum/patron/forgotten)
 	//Armor for class
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	beltl = /obj/item/rogueweapon/mace/cudgel
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	backl = /obj/item/quiver/bolts
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	cloak = /obj/item/clothing/cloak/raincloak/brown
-	backpack_contents = list(/obj/item/lockpick = 1, /obj/item/keyring/shepherd = 1, /obj/item/rogueweapon/huntingknife/idagger/silver = 1)
+	backpack_contents = list(/obj/item/lockpick = 1, /obj/item/keyring/shepherd = 1, /obj/item/rogueweapon/knife/dagger/silver = 1)
 
 	//Stats for class
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
@@ -128,7 +133,7 @@
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 		H.verbs |= /mob/living/carbon/human/proc/torture_victim
 
 /datum/job/roguetown/adept/after_spawn(mob/living/carbon/human/H, mob/M, latejoin = TRUE)

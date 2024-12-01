@@ -3,7 +3,7 @@
 	flag = GRAVEDIGGER
 //	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 2
+	total_positions = 0
 	spawn_positions = 0
 
 	allowed_sexes = list(MALE, FEMALE)
@@ -118,7 +118,7 @@
 		if (8)
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap
 		if (9)
-			head = /obj/item/clothing/head/roguetown/helmet
+			head = /obj/item/clothing/head/roguetown/helmet/nasal
 
 	if(prob(20))
 		backr = /obj/item/rogueweapon/shield/wood
@@ -128,13 +128,13 @@
 			var/obj/item/rogueweapon/sword/short/P = new()
 			H.put_in_hands(P, forced = TRUE)
 		if (2)
-			var/obj/item/rogueweapon/copperaxe/P = new()
+			var/obj/item/rogueweapon/axe/copper/P = new()
 			H.put_in_hands(P, forced = TRUE)
 		if (3)
 			var/obj/item/rogueweapon/mace/P = new()
 			H.put_in_hands(P, forced = TRUE)
 		if (4)
-			var/obj/item/rogueweapon/spear/P = new()
+			var/obj/item/rogueweapon/polearm/spear/P = new()
 			H.put_in_hands(P, forced = TRUE)
 		if (5)
 			var/obj/item/rogueweapon/sword/long/rider/copper/P = new()

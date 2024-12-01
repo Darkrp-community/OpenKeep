@@ -26,6 +26,7 @@
 	if(H.gender == FEMALE)
 		H.virginity = TRUE
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/silkdressprimary
 	else
 		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/tunicprimary
@@ -36,7 +37,7 @@
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltr = /obj/item/keyring/steward
-	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
+	beltl = /obj/item/rogueweapon/knife/dagger/steel
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1, /obj/item/lockpickring/mundane = 1)
 

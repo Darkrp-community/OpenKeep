@@ -43,18 +43,18 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/needle = 1, /obj/item/storage/belt/rogue/pouch/coins/rich = 1 )
 
-	var/obj/item/rogueweapon/woodstaff/aries/P = new()
+	var/obj/item/rogueweapon/polearm/woodstaff/aries/P = new()
 	H.put_in_hands(P, forced = TRUE)
 
-	if((H.dna.species.id == "aasimar" || H.dna.species.id == "dwarf"))
+	if((H.dna.species.id == "aasimar" || H.dna.species.id == "dwarf"|| H.dna.species.id == "human"))
 		head = /obj/item/clothing/head/roguetown/roguehood/priest
 
 	else
 		id = /obj/item/clothing/ring/active/nomag
 
 	if(H.mind)
-		if(H.patron != /datum/patron/divine/dendor)					// Astratans rule the church
-			H.patron = GLOB.patronlist[/datum/patron/divine/astrata]
+		if(H.patron != /datum/patron/divine/astrata)					// Astratans rule the church
+			H.set_patron(/datum/patron/divine/astrata)
 
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
@@ -108,17 +108,17 @@
 			if(HL.job == "King")
 				HL.job = "Ex-King"
 			if(HL.mind)
-				if(HL.mind.assigned_role == "Queen")
-					HL.mind.assigned_role = "Ex-Queen"
-			if(HL.job == "Queen")
-				HL.job = "Ex-Queen"
+				if(HL.mind.assigned_role == "Consort")
+					HL.mind.assigned_role = "Ex-Consort"
+			if(HL.job == "Consort")
+				HL.job = "Ex-Consort"
 		switch(HU.gender)
 			if("male")
 				HU.mind.assigned_role = "King"
 				HU.job = "King"
 			if("female")
-				HU.mind.assigned_role = "Queen"
-				HU.job = "Queen"
+				HU.mind.assigned_role = "Consort"
+				HU.job = "Consort"
 		SSticker.rulermob = HU
 		var/dispjob = mind.assigned_role
 		GLOB.badomens -= "nolord"

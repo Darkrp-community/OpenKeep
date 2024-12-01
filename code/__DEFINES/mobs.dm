@@ -79,8 +79,6 @@
 #define DEFAULT_BODYPART_ICON_ROBOTIC 'icons/mob/augmentation/augments.dmi'
 
 #define MONKEY_BODYPART "monkey"
-#define ALIEN_BODYPART "alien"
-#define LARVA_BODYPART "larva"
 #define DEVIL_BODYPART "devil"
 /*see __DEFINES/inventory.dm for bodypart bitflag defines*/
 
@@ -379,8 +377,6 @@
 #define MIRROR_PRIDE  (1<<2)
 //Race swap wizard event
 #define RACE_SWAP     (1<<3)
-//ERT spawn template (avoid races that don't function without correct gear)
-#define ERT_SPAWN     (1<<4)
 //xenobio black crossbreed
 #define SLIME_EXTRACT (1<<5)
 //Wabbacjack staff projectiles
@@ -413,6 +409,7 @@
 #define SKIN_COLOR_JACKPOISON "6a616d"
 #define SKIN_COLOR_HOMUNCULUS "5f5f70"
 #define SKIN_COLOR_ARACHNID_ICHOR "2F2F38"
+#define SKIN_COLOR_SCORPION "B8CEAD"
 
 //ELF SKIN TONES
 #define SKIN_COLOR_SNOW_ELF "fff0e9"

@@ -5,10 +5,7 @@
 	min_players = 15
 	earliest_start = 30 MINUTES
 
-/datum/round_event/portal_storm/syndicate_shocktroop
-	boss_types = list(/mob/living/simple_animal/hostile/syndicate/melee/space/stormtrooper = 2)
-	hostile_types = list(/mob/living/simple_animal/hostile/syndicate/melee/space = 8,\
-						/mob/living/simple_animal/hostile/syndicate/ranged/space = 2)
+/datum/round_event/portal_storm/syndicate_shocktroop // TO DO obsolete
 
 /datum/round_event_control/portal_storm_narsie
 	name = "Portal Storm: Constructs"

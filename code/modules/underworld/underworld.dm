@@ -86,12 +86,13 @@
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	desc = "A beacon."
-	brightness_on = 2			// luminosity when on
+	light_outer_range = 2			// luminosity when on
+	light_color = LIGHT_COLOR_BLOOD_MAGIC
 
 /obj/item/flashlight/lantern/shrunken/update_brightness(mob/user = null)
 	if(on)
 		icon_state = "[initial(icon_state)]-on"
-		set_light(3, 20, LIGHT_COLOR_BLOOD_MAGIC)
+		set_light(3, 3, 20, l_color = LIGHT_COLOR_BLOOD_MAGIC)
 	else
 		icon_state = initial(icon_state)
 		set_light(0)
@@ -109,7 +110,7 @@
 
 /obj/structure/underworld/carriageman/Initialize()
 	. = ..()
-	set_light(5, 30, LIGHT_COLOR_BLUE)
+	set_light(5, 4, 30, l_color = LIGHT_COLOR_BLUE)
 
 /obj/structure/underworld/carriageman/attack_hand(mob/living/carbon/spirit/user)
 	if(!user.paid)
@@ -156,7 +157,7 @@
 
 /obj/structure/underworld/carriage/Initialize()
 	. = ..()
-	set_light(5, 30, LIGHT_COLOR_BLUE)
+	set_light(5, 3, 30, l_color = LIGHT_COLOR_BLUE)
 
 /obj/structure/underworld/carriage/attack_hand(mob/living/carbon/spirit/user)
 	if(user.paid)
@@ -298,7 +299,7 @@
 
 /mob/living/simple_animal/hostile/rogue/demon/Initialize()
 	. = ..()
-	set_light(2, 2, "#c0523f")
+	set_light(2, 2, 2, l_color =  "#c0523f")
 	ADD_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOPAINSTUN, TRAIT_GENERIC)
 

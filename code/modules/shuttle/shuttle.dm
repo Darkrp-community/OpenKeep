@@ -484,7 +484,7 @@
 		var/turf/T = t
 		for(var/mob/living/M in T.GetAllContents())
 			// If they have a mind and they're not in the brig, they escaped
-			if(M.mind && !istype(t, /turf/open/floor/plasteel/shuttle/red) && !istype(t, /turf/open/floor/mineral/plastitanium/red/brig))
+			if(M.mind && !istype(t, /turf/open/floor/plasteel) && !istype(t, /turf/open/floor/mineral/plastitanium/red/brig))
 				M.mind.force_escaped = TRUE
 			// Ghostize them and put them in nullspace stasis (for stat & possession checks)
 			M.notransform = TRUE
@@ -520,10 +520,6 @@
 		ripple_turfs += T1
 
 	return ripple_turfs
-
-/obj/docking_port/mobile/proc/check_poddoors()
-	for(var/obj/machinery/door/poddoor/shuttledock/pod in GLOB.airlocks)
-		pod.check()
 
 /obj/docking_port/mobile/proc/dock_id(id)
 	var/port = SSshuttle.getDock(id)
