@@ -420,3 +420,14 @@
 	baseturfs = list(/turf/open/floor/rogue/church)
 	neighborlay = "dirtedge"
 	climbdiff = 6
+
+//NO. BAD SKELETONS
+/turf/closed/wall/mineral/rogue/underbrick/TerraformTurf(path, new_baseturf, flags, defer_change = FALSE, ignore_air = FALSE)
+	return
+
+/turf/closed/wall/mineral/rogue/underbrick/acid_act(acidpwr, acid_volume, acid_id)
+	return 0
+
+/turf/closed/wall/mineral/rogue/underbrick/Melt()
+	to_be_destroyed = FALSE
+	return src
