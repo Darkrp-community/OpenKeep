@@ -150,7 +150,7 @@
 	clusterCheckFlags = CLUSTER_CHECK_SAME_ATOMS
 	allowed_turfs = list(/turf/open/water/swamp)
 	excluded_turfs = list()
-	allowed_areas = list(/area/rogue/outdoors/rtfield)
+	allowed_areas = list(/area/rogue/outdoors/rtfield/boggish)
 	spawnableAtoms = list(/obj/structure/flora/roguegrass/water = 12,
 	                        /obj/structure/flora/roguegrass/water/reeds = 8,
 							/obj/structure/flora/roguegrass/stalky = 4,
