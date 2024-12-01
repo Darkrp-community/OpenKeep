@@ -3070,6 +3070,10 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
+"ebt" = (
+/obj/item/rogueweapon/mace/woodclub/train_sword,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/town)
 "ebF" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -4438,7 +4442,7 @@
 /area/rogue/indoors/town/manor)
 "fUA" = (
 /obj/structure/lever{
-	id = "garrisontable"
+	redstone_id = "garrisontable"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
@@ -8035,7 +8039,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "manor";
-	name = dungeoneer's quarters
+	name = dungeoneer'squarters
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
@@ -9573,8 +9577,7 @@
 	alpha = 190
 	},
 /obj/structure/bars/passage/shutter/open{
-	redstone_id = "garrisontable";
-	gid = "garrisontable"
+	redstone_id = "garrisontable"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
@@ -11969,7 +11972,7 @@
 /obj/effect/landmark/hammer/dev_text{
 	name = "This is to be the outer guard house.<br>1 Outer Village Sheriff<br>3 Outer Village Guardsmen<br>This could just be a guard outpost who knows."
 	},
-/turf/open/floor/rogue/grass,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "qZo" = (
 /obj/machinery/light/rogue/firebowl/church,
@@ -12659,9 +12662,9 @@
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/vault)
 "rZO" = (
-/obj/machinery/light/rogue/campfire/longlived,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/rtfield)
+/obj/item/rogueweapon/mace/woodclub/train_sword,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/town)
 "rZU" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/outdoors/rtfield)
@@ -105953,7 +105956,7 @@ sBG
 sBG
 mGV
 sBG
-sBG
+qau
 sBG
 sBG
 qau
@@ -106210,7 +106213,7 @@ sBG
 qau
 sBG
 sBG
-sBG
+qau
 sBG
 sBG
 sEQ
@@ -106466,7 +106469,7 @@ qau
 qau
 sBG
 qau
-sBG
+qau
 sBG
 sBG
 sBG
@@ -106722,8 +106725,8 @@ qau
 sBG
 qau
 sBG
-sBG
-sBG
+qau
+qau
 sBG
 sBG
 sEQ
@@ -107224,10 +107227,10 @@ qau
 qau
 qau
 sBG
-lIi
+mXJ
 sEQ
-sBG
-sBG
+sEQ
+sEQ
 sBG
 sBG
 sBG
@@ -107480,17 +107483,17 @@ sBG
 sIZ
 qau
 sBG
-sBG
+sEQ
 sEQ
 sEQ
 qYK
+sEQ
+qau
+sBG
 qau
 qau
-sBG
-sBG
-sBG
-sBG
-sBG
+qau
+qau
 sBG
 sBG
 qau
@@ -107741,10 +107744,10 @@ sEQ
 sEQ
 sEQ
 sEQ
+sEQ
 sBG
 sBG
 qau
-sBG
 sBG
 sBG
 sBG
@@ -107998,10 +108001,10 @@ sEQ
 sEQ
 sEQ
 sEQ
+sEQ
+sBG
 qau
-qau
-qau
-qau
+sBG
 qau
 lIi
 sBG
@@ -108257,8 +108260,8 @@ sEQ
 sEQ
 sEQ
 sBG
-sBG
 qau
+sBG
 qau
 qau
 qau
@@ -108514,8 +108517,8 @@ sEQ
 sEQ
 sEQ
 sBG
-qau
-sEQ
+sBG
+sBG
 qau
 sBG
 sEQ
@@ -108772,7 +108775,7 @@ sEQ
 sEQ
 sEQ
 sBG
-sEQ
+sBG
 sBG
 sEQ
 sEQ
@@ -109028,7 +109031,7 @@ sEQ
 sEQ
 sEQ
 sEQ
-sEQ
+sBG
 sEQ
 sEQ
 sEQ
@@ -111834,7 +111837,7 @@ iSk
 iSk
 cld
 thz
-vnF
+rZO
 vnF
 vnF
 vnF
@@ -112351,7 +112354,7 @@ mog
 vnF
 vnF
 kVE
-jdk
+ebt
 xyY
 gyK
 gyK
@@ -113121,7 +113124,7 @@ cUD
 jdk
 vnF
 vnF
-vnF
+rZO
 vDY
 eCc
 gyK
@@ -113375,7 +113378,7 @@ iSk
 iSk
 iSk
 xyY
-jdk
+ebt
 vnF
 cvS
 jdk
@@ -118805,7 +118808,7 @@ sEQ
 sEQ
 sEQ
 sBG
-rZO
+sBG
 iae
 uZt
 uyW
@@ -119060,7 +119063,7 @@ edj
 dEl
 sEQ
 sEQ
-sEQ
+mXJ
 sEQ
 sBG
 iae
