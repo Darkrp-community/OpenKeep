@@ -1,4 +1,4 @@
-/datum/job/roguetown/monk
+/datum/job/roguetown/acolyte
 	title = "Acolyte"
 	flag = ACOLYTE
 	department_flag = TEMPLE
@@ -16,18 +16,18 @@
 	)
 	tutorial = "Chores, exercise, prayer... and more chores. You are a humble acolyte at the temple in Rockhill, not yet a trained guardian or an ordained priest. But who else would keep the fires lit and the floors clean?"
 	allowed_patrons = ALL_TEMPLE_PATRONS
-	outfit = /datum/outfit/job/roguetown/monk
+	outfit = /datum/outfit/job/roguetown/acolyte
 
 	display_order = JDO_ACOLYTE
 	give_bank_account = TRUE
 	min_pq = -10
 	bypass_lastclass = TRUE
 
-/datum/outfit/job/roguetown/monk
+/datum/outfit/job/roguetown/acolyte
 	name = "Acolyte"
-	jobtype = /datum/job/roguetown/monk
+	jobtype = /datum/job/roguetown/acolyte
 
-/datum/outfit/job/roguetown/monk/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/acolyte/pre_equip(mob/living/carbon/human/H)
 	..()
 	var/datum/patron/A = H.patron
 	H.virginity = TRUE

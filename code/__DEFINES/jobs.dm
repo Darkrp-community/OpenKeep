@@ -188,10 +188,9 @@
 #define JDO_CLERIC 13
 #define JDO_ACOLYTE 14
 #define JDO_GRAVEKEEPER 15
-
 #define JDO_TEMPLAR 15.1
 #define JDO_INQUISITOR 16
-#define JDO_SHEPHERD 17
+#define JDO_ADEPT 17
 
 #define JDO_MERCHANT 18
 #define JDO_TAILOR 18.1

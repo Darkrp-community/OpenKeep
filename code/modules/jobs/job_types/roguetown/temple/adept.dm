@@ -18,7 +18,7 @@
 
 	outfit = /datum/outfit/job/roguetown/adept
 	advclass_cat_rolls = list(CTAG_ADEPT = 20)
-	display_order = JDO_SHEPHERD
+	display_order = JDO_ADEPT
 	bypass_lastclass = TRUE
 	min_pq = 0
 
