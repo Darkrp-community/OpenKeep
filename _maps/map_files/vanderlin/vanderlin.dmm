@@ -8039,7 +8039,7 @@
 /obj/structure/mineral_door/wood{
 	locked = 1;
 	lockid = "manor";
-	name = dungeoneer'squarters
+	name = "dungeoneer's quarters"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
