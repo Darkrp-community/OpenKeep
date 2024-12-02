@@ -12,7 +12,7 @@
 	invocation = "Undermaiden grant thee passage forth and spare the trials of the forgotten."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
-	devotion_cost = -15
+	devotion_cost = 15
 
 /obj/effect/proc_holder/spell/targeted/burialrite/cast(list/targets,mob/user = usr)
 	if(user.is_holding_item_of_type(/obj/item/rogueweapon/knife/dagger/steel/profane)) // If you are holding an assassin's cursed dagger, break it and free the souls contained within, sending them into the lukewarm arms of Necra.
@@ -48,7 +48,7 @@
 	invocation = "The Undermaiden rebukes!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	miracle = TRUE
-	devotion_cost = -60
+	devotion_cost = 60
 
 /obj/effect/proc_holder/spell/targeted/churn/cast(list/targets,mob/living/user = usr)
 	var/prob2explode = 100

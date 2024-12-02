@@ -17,7 +17,7 @@
 	antimagic_allowed = TRUE
 	miracle = TRUE
 	charge_max = 120 SECONDS
-	devotion_cost = -40
+	devotion_cost = 40
 
 /obj/item/reagent_containers/food/snacks/fish/swordfish
 	name = "Swordfish"

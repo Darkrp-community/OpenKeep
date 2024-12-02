@@ -13,7 +13,7 @@
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	charge_max = 10 SECONDS
-	devotion_cost = -25
+	devotion_cost = 25
 
 /obj/effect/proc_holder/spell/invoked/lesser_heal/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
@@ -150,7 +150,7 @@
 			target.adjustFireLoss(-healing)
 		target.adjustToxLoss(-healing)
 		target.adjustOxyLoss(-healing)
-		return TRUE
+		return ..()
 	return FALSE
 
 // Miracle
@@ -172,7 +172,7 @@
 	antimagic_allowed = TRUE
 	charge_max = 20 SECONDS
 	miracle = TRUE
-	devotion_cost = -45
+	devotion_cost = 45
 
 /obj/effect/proc_holder/spell/invoked/heal/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
@@ -198,7 +198,7 @@
 		target.adjustToxLoss(-50)
 		target.adjustOxyLoss(-50)
 		target.blood_volume += BLOOD_VOLUME_SURVIVE
-		return TRUE
+		return ..()
 	return FALSE
 
 // RAVOX
@@ -233,10 +233,7 @@
 			if(listener?.mind?.has_antag_datum(/datum/antagonist))
 				if(!listener?.mind?.isactuallygood())
 					listener.apply_status_effect(/datum/status_effect/debuff/viciousmockery)
-				else
-					return // No debuff for good guys
-			else
-				return // No debuff for good guys
+	..()
 
 /obj/effect/proc_holder/spell/invoked/mockery/invocation(mob/user = usr)
 	if(ishuman(user))
@@ -249,7 +246,7 @@
 					if(2)
 						user.say("What are you going to do for a face when the monkey wants his arse back?!", forced = "spell")
 					if(3)
-						user.say("Wandought thine blades stand, much like thine loving parts!", forced = "spell")
+						user.say("I pass wind at thy general vacinity!", forced = "spell")
 					if(4)
 						user.say("That's a face not even Graggar could love!", forced = "spell")
 					if(5)
@@ -260,7 +257,7 @@
 					if(1)
 						user.say("As graceful as a drunken mole, I see!", forced = "spell")
 					if(2)
-						user.say("I've fought zads more fiercer than you!", forced = "spell")
+						user.say("I've fought zads more fierce than you!", forced = "spell")
 					if(3)
 						user.say("You're making this so easy, I'm losing confidence in myself... barely!", forced = "spell")
 					if(4)
@@ -303,6 +300,6 @@
 					if(3)
 						user.say("Your name shall be stricken down from the annals of history.", forced = "spell")
 					if(4)
-						user.say("I wouldn't sing your praises even if you forged me to!", forced = "spell")
+						user.say("I couldn't sing your praises even if you forged me to!", forced = "spell")
 					if(5)
 						user.say("What manner of blabbering creecher art thou?", forced = "spell")

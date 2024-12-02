@@ -14,7 +14,7 @@
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	charge_max = 2 MINUTES
-	devotion_cost = -30
+	devotion_cost = 30
 
 /obj/effect/proc_holder/spell/invoked/blindness/cast(list/targets, mob/user = usr)
 	if(isliving(targets[1]))
@@ -24,7 +24,7 @@
 		target.visible_message("<span class='warning'>[user] points at [target]'s eyes!</span>","<span class='warning'>My eyes are covered in darkness!</span>")
 		target.blind_eyes(3)
 		return ..()
-	return TRUE
+	return FALSE
 
 /obj/effect/proc_holder/spell/invoked/invisibility
 	name = "Invisibility"
@@ -42,7 +42,7 @@
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	miracle = TRUE
-	devotion_cost = -60
+	devotion_cost = 60
 
 /obj/effect/proc_holder/spell/invoked/invisibility/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
@@ -66,7 +66,7 @@
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	charge_max = 15 MINUTES
-	devotion_cost = -40
+	devotion_cost = 40
 
 /obj/effect/proc_holder/spell/self/darkvision/cast(list/targets, mob/living/user)
 	playsound(get_turf(user), 'sound/magic/charged.ogg', 100, TRUE)
@@ -75,4 +75,4 @@
 		playsound(get_turf(user), 'sound/magic/magic_nulled.ogg', 60, TRUE, -1)
 		user.apply_status_effect(/datum/status_effect/buff/darkvision)
 		return ..()
-	return
+	return FALSE
