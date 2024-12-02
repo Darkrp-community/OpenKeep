@@ -1,7 +1,7 @@
 /datum/job/roguetown/mason
 	title = "Mason"
 	flag = MASON
-	department_flag = SERFS
+	department_flag = MAKERS_GUILD
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2

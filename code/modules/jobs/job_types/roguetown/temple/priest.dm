@@ -2,7 +2,7 @@
 /datum/job/roguetown/priest
 	title = "Priest"
 	flag = PRIEST
-	department_flag = CHURCHMEN
+	department_flag = TEMPLE
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
