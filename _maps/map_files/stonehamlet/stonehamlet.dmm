@@ -2459,10 +2459,6 @@
 /area/rogue/indoors/town/manor{
 	first_time_text = "STONEHILL CASTLE"
 	})
-"cCc" = (
-/obj/structure/bed/rogue/wool,
-/turf/open/floor/rogue/wood/saiga,
-/area/rogue/indoors/shelter/town/dwarf)
 "cCk" = (
 /obj/effect/decal/turfedge_neu{
 	dir = 1;
@@ -17071,7 +17067,6 @@
 /obj/effect/decal/turfedge_neu/alt{
 	dir = 10
 	},
-/obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/cobble/mossy/alt,
 /area/rogue/indoors/town/tavern/saiga)
 "rej" = (
@@ -23894,8 +23889,6 @@
 "xQe" = (
 /obj/structure/bookcase,
 /obj/item/book/rogue/law,
-/obj/item/book/rogue/random_book,
-/obj/item/book/rogue/random_book,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/shop)
 "xQi" = (
@@ -24018,11 +24011,6 @@
 	},
 /turf/open/floor/rogue/tile/bath,
 /area/rogue/indoors/town/bath/redhouse)
-"xWl" = (
-/obj/effect/spawner/roguemap/tree,
-/obj/structure/flora/roguegrass,
-/turf/open/floor/rogue/grass/peril,
-/area/rogue/outdoors/rtfield/hamlet/unsafe)
 "xWm" = (
 /obj/structure/fluff/railing/border{
 	dir = 10;
@@ -62179,7 +62167,7 @@ wSZ
 gVW
 vFV
 btB
-dJZ
+vFV
 dJZ
 vFV
 vJB
@@ -83564,9 +83552,9 @@ hZX
 hZX
 xvb
 ecu
-cCc
+uoo
 lzE
-cCc
+uoo
 xvb
 hZX
 hZX
