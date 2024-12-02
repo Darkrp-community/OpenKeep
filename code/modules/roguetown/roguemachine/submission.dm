@@ -111,14 +111,14 @@ GLOBAL_VAR(feeding_hole_reset_timer)
 			//WIP for now it does really nothing, but people will be gaslighted into thinking it does.
 /obj/structure/feedinghole
 	name = "FEEDING HOLE"
-	desc = ""
+	desc = "Keep the HERMES rats fed and hard working."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "feedinghole"
 	density = FALSE
 	pixel_y = 32
 
 /obj/structure/feedinghole/attackby(obj/item/P, mob/user, params)
-	if(istype(P, /obj/item/reagent_containers/food/snacks/produce/wheat))
+	if(istype(P, /obj/item/reagent_containers/food/snacks/produce))
 		qdel(P)
 /*		if(!GLOB.feeding_hole_reset_timer || world.time > GLOB.feeding_hole_reset_timer)
 			GLOB.feeding_hole_wheat_count = 0
