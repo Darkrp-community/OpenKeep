@@ -147,6 +147,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/pet/cat/rogue/cabbit = 10)
 	first_time_text = "STONEHILL VALLEY"
 
+/area/rogue/outdoors/rtfield/hamlet/unsafe	// just so there isnt unusable ambush spots placed in safe areas causing annoying screenshake but no effect
+
 /area/rogue/outdoors/rtfield/plague_district
 	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/ambush = 50)
 	first_time_text = "PLAGUE DISTRICT"
