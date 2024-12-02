@@ -28,6 +28,8 @@
 
 	//What categories we are going to sort it in
 	var/list/category_tags = list(CTAG_DISABLED)
+	//Show the sub-class title
+	var/displays_adv_job = TRUE
 
 /datum/advclass/proc/equipme(mob/living/carbon/human/H)
 	// input sleeps....
@@ -38,7 +40,10 @@
 	if(outfit)
 		H.equipOutfit(outfit)
 
-	H.advjob = "Adventurer"
+	if(displays_adv_job)
+		H.advjob = "Adventurer"
+		if(name)
+			H.advjob = name
 
 	var/turf/TU = get_turf(H)
 	if(TU)
