@@ -31,7 +31,8 @@
 	///Statkey = bonus stat, - for malice.
 	var/list/specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_END = 0,STATKEY_CON = 0, STATKEY_INT = 0, STATKEY_SPD = 0, STATKEY_LCK = 0)
 
-/mob/living/proc/roll_stats()
+///Rolls random stats base 10, +-2, for SPECIAL, and applies species stats and age stats.
+/mob/living/proc/roll_mob_stats()
 	for(var/stat in MOBSTATS)
 		if(prob(33))
 			change_stat(stat,rand(-2,2))
@@ -88,6 +89,7 @@
 				STAPER += adjust_amount
 			if(clampvals)
 				STAPER = clamp(STAPER,1,20)
+			update_fov_angles()
 		if(STATKEY_END)
 			if(set_stat)
 				STAEND = adjust_amount
@@ -116,6 +118,7 @@
 				STASPD += adjust_amount
 			if(clampvals)
 				STASPD = clamp(STASPD,1,20)
+			update_move_intent_slowdown()
 		if(STATKEY_LCK)
 			if(set_stat)
 				STALUC = adjust_amount
