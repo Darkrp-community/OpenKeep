@@ -403,7 +403,7 @@
 		to_chat(C, span_warning("Dendors transformation fades, flesh shrinking back. My body aches..."))
 		C.adjustBruteLoss(10)
 		C.apply_status_effect(/datum/status_effect/debuff/barbfalter)
-		C.resize = 1
+		C.resize = (1/1.2)
 		C.update_transform()
 		C.AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, 2)
 
