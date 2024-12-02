@@ -37,7 +37,6 @@
 		if(selection == "BRONZE") mod = 1
 		var/coin_amt = input(user, "There is [SStreasury.treasury_value] mammon in the treasury. You may withdraw [amt/mod] [selection] COINS from your account.", src) as null|num
 		coin_amt = round(coin_amt)
-		coin_amt = min(20, coin_amt)
 		if(coin_amt < 1)
 			return
 		amt = SStreasury.bank_accounts[H]
