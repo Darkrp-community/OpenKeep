@@ -93,6 +93,8 @@
 		if(OU)
 			equipOutfit(OU)
 
+/datum/outfit/job/roguetown/npc/skeleton
+
 /datum/outfit/job/roguetown/species/skeleton/npc/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.STASTR = rand(6,8)
