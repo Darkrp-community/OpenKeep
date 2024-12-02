@@ -13822,6 +13822,7 @@
 "nYt" = (
 /obj/item/chair/stool/bar/rogue,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/shadow_floor,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/town/basement)
