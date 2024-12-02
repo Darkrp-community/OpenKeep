@@ -7193,15 +7193,6 @@
 "hpx" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield/hamlet)
-"hpV" = (
-/obj/effect/turf_decal/stripes{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1
-	},
-/turf/open/floor/rogue/cobblerock/alt,
-/area/rogue/indoors/town)
 "hqF" = (
 /obj/effect/decal/shadow_floor,
 /obj/effect/decal/shadow_floor{
@@ -10015,8 +10006,6 @@
 	dir = 8;
 	icon_state = "border"
 	},
-/obj/effect/turf_decal/stripes/red,
-/obj/effect/turf_decal/stripes/red/line,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "jZz" = (
@@ -11821,15 +11810,6 @@
 "lRz" = (
 /turf/closed/wall/mineral/rogue/roofwall/outercorner,
 /area/rogue/indoors/town)
-"lSl" = (
-/obj/effect/turf_decal/stripes{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
-	},
-/turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/town/shop)
 "lSo" = (
 /turf/closed/wall/mineral/rogue/wooddark/window,
 /area/rogue/indoors)
@@ -14229,12 +14209,6 @@
 /area/rogue/outdoors/rtfield/hamlet)
 "oqv" = (
 /obj/machinery/light/rogue/firebowl/standing/blue,
-/obj/effect/turf_decal/stripes{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
-	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/shop)
 "oqz" = (
@@ -15660,12 +15634,6 @@
 	redstone_id = "balloon_shutter"
 	},
 /obj/structure/closet/crate/chest/neu,
-/obj/effect/turf_decal/stripes{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
-	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/shop)
 "pxU" = (
@@ -18046,15 +18014,6 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/town/sewer)
-"rWo" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/red/corner{
-	dir = 4
-	},
-/turf/open/floor/rogue/cobblerock/alt,
-/area/rogue/indoors/town)
 "rWD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/herringbone,
@@ -18206,15 +18165,6 @@
 "sdU" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/indoors/shelter/rtfield)
-"sek" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/red/corner{
-	dir = 1
-	},
-/turf/open/floor/rogue/cobblerock/alt,
-/area/rogue/indoors/town)
 "seB" = (
 /obj/effect/decal/shadow_floor,
 /turf/open/floor/rogue/dirt/road,
@@ -58057,7 +58007,7 @@ fyl
 pLb
 jWx
 eOe
-rWo
+iId
 aUb
 pkV
 czT
@@ -58251,7 +58201,7 @@ fyl
 pLb
 mdE
 qZt
-hpV
+iId
 iId
 shd
 czT
@@ -58445,7 +58395,7 @@ fyl
 pLb
 mdE
 qZt
-hpV
+iId
 boQ
 fDx
 mVy
@@ -58639,7 +58589,7 @@ fyl
 pLb
 mdE
 qZt
-hpV
+iId
 iId
 kux
 xEd
@@ -58833,7 +58783,7 @@ fyl
 pLb
 mdE
 qZt
-hpV
+iId
 iId
 kux
 xEd
@@ -59027,7 +58977,7 @@ czT
 pLb
 aCw
 mVE
-sek
+iId
 iwZ
 fDx
 vCa
@@ -110657,7 +110607,7 @@ tEi
 wnB
 dxA
 wnB
-lSl
+dSD
 pxM
 oqv
 wnB
