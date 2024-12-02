@@ -10,7 +10,7 @@
 	name = "Crusaders"
 	greet_text = "Crusader of the True faith, you came from Grenzelhoft under the command of the Inquisitor, obey them as he lead you to smite the heatens."
 	outfit = /datum/outfit/job/roguetown/adventurer/crusader
-		allowed_races = list("Humen","Dwarf")
+	allowed_races = list("Humen","Dwarf")
 
 /datum/migrant_wave/crusade
 	name = "The Holy Crusade"
