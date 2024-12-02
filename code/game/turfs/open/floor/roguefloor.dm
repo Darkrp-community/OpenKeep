@@ -19,6 +19,9 @@
 		icon = smooth_icon
 	. = ..()
 
+/turf/open/floor/rogue/turf_destruction(damage_flag)
+	return //Ignores destruction if not set
+
 /*	..................   Wooden Floors   ................... */
 /turf/open/floor/rogue/ruinedwood
 	icon_state = "wooden_floor"
@@ -63,6 +66,8 @@
 	tiled_dirt = FALSE
 	landsound = 'sound/foley/jumpland/grassland.wav'
 	slowdown = 0
+	damage_deflection = 6
+	max_integrity = 300
 
 /turf/open/floor/rogue/twig/Initialize()
 	dir = pick(GLOB.cardinals)
@@ -84,11 +89,18 @@
 	landsound = 'sound/foley/jumpland/woodland.wav'
 	canSmoothWith = list(/turf/open/floor/rogue/wood,
 						/turf/open/floor/carpet)
+	damage_deflection = 8
+	max_integrity = 600
 
 /turf/open/floor/rogue/wood/nosmooth //these are here so we can put wood floors next to each other but not have them smooth
 	icon_state = "wooden_floor"
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/open/floor/rogue/wood/nosmooth,/turf/open/floor/carpet)
+
+
+/turf/open/floor/rogue/wood/turf_destruction(damage_flag)
+	. = ..()
+	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
 /turf/open/floor/rogue/wood/nosmooth/saiga
 	smooth_icon = 'icons/turf/floors/woodalt.dmi'
@@ -103,6 +115,12 @@
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	damage_deflection = 8
+	max_integrity = 600
+
+/turf/open/floor/rogue/woodturned/turf_destruction(damage_flag)
+	. = ..()
+	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
 /turf/open/floor/rogue/woodturned/nosmooth
 	icon_state = "wooden_floort"
@@ -121,10 +139,16 @@
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+	damage_deflection = 8
+	max_integrity = 800
 
 /turf/open/floor/rogue/rooftop/Initialize()
 	. = ..()
 	icon_state = "roof"
+
+/turf/open/floor/rogue/rooftop/turf_destruction(damage_flag)
+	. = ..()
+	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
 /turf/open/floor/rogue/rooftop/green
 	icon_state = "roofg-arw"
@@ -153,11 +177,18 @@
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snow/patchy,
 						/turf/open/floor/rogue/snow/rough)
+	max_integrity = 1200
 
 /turf/open/floor/rogue/grass/Initialize()
 	dir = pick(GLOB.cardinals)
 //	GLOB.dirt_list += src
 	. = ..()
+
+/turf/open/floor/rogue/grass/turf_destruction(damage_flag)
+	. = ..()
+	ChangeTurf(/turf/open/floor/rogue/dirt, flags = CHANGETURF_INHERIT_AIR)
+
+
 
 /turf/open/floor/rogue/grass/red
 	name = "red grass"
@@ -676,6 +707,8 @@
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snow/patchy,
 						/turf/open/floor/rogue/snow/rough)
+	damage_deflection = 10
+	max_integrity = 2800
 
 /turf/open/floor/rogue/blocks/Initialize()
 	. = ..()
@@ -727,6 +760,8 @@
 						/turf/open/floor/rogue/cobble,
 						/turf/open/floor/rogue/dirt,
 						/turf/open/floor/rogue/grass)
+	damage_deflection = 10
+	max_integrity = 800
 
 /turf/open/floor/rogue/hexstone/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)
@@ -734,6 +769,10 @@
 /turf/open/floor/rogue/hexstone/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
+
+/turf/open/floor/rogue/hexstone/turf_destruction(damage_flag)
+	. = ..()
+	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
 /*	..................   Church Floors   ................... */
 
@@ -757,12 +796,19 @@
 						/turf/open/floor/rogue/dirt,
 						/turf/open/floor/rogue/grass)
 
+	damage_deflection = 10
+	max_integrity = 800
+
 /turf/open/floor/rogue/churchmarble/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)
 
 /turf/open/floor/rogue/churchmarble/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
+
+/turf/open/floor/rogue/churchmarble/turf_destruction(damage_flag)
+	. = ..()
+	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
 /turf/open/floor/rogue/church
 	icon_state = "church"
@@ -789,6 +835,12 @@
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snow/patchy,
 						/turf/open/floor/rogue/snow/rough)
+	damage_deflection = 10
+	max_integrity = 800
+
+/turf/open/floor/rogue/church/turf_destruction(damage_flag)
+	. = ..()
+	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
 /turf/open/floor/rogue/church/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)
@@ -822,6 +874,12 @@
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snow/patchy,
 						/turf/open/floor/rogue/snow/rough)
+	damage_deflection = 10
+	max_integrity = 800
+
+/turf/open/floor/rogue/churchbrick/turf_destruction(damage_flag)
+	. = ..()
+	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
 /turf/open/floor/rogue/churchbrick/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)
@@ -855,6 +913,12 @@
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snow/patchy,
 						/turf/open/floor/rogue/snow/rough)
+	damage_deflection = 10
+	max_integrity = 800
+
+/turf/open/floor/rogue/churchrough/turf_destruction(damage_flag)
+	. = ..()
+	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
 /turf/open/floor/rogue/churchrough/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)
@@ -882,6 +946,13 @@
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snow/patchy,
 						/turf/open/floor/rogue/snow/rough)
+	damage_deflection = 10
+	max_integrity = 800
+
+
+/turf/open/floor/rogue/herringbone/turf_destruction(damage_flag)
+	. = ..()
+	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
 /turf/open/floor/rogue/herringbone/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)
@@ -902,6 +973,14 @@
 	smooth = SMOOTH_TRUE
 	canSmoothWith = list(/turf/open/floor/rogue/dirt,
 						/turf/open/floor/rogue/grass)
+	max_integrity = 1200
+
+/turf/open/floor/rogue/cobble/turf_destruction(damage_flag)
+	. = ..()
+	ChangeTurf(/turf/open/floor/rogue/dirt, flags = CHANGETURF_INHERIT_AIR)
+	new /obj/item/natural/stone(src)
+
+
 
 /turf/open/floor/rogue/cobble/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)
@@ -1012,6 +1091,11 @@
 
 
 /*	..................   Miscellany   ................... */
+
+/turf/open/floor/rogue/tile/turf_destruction(damage_flag)
+	. = ..()
+	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
+
 /turf/open/floor/rogue/tile/masonic
 	icon_state = "masonic"
 /turf/open/floor/rogue/tile/masonic/single
@@ -1056,6 +1140,13 @@
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snow/patchy,
 						/turf/open/floor/rogue/snow/rough)
+	damage_deflection = 10
+	max_integrity = 1200
+
+/turf/open/floor/rogue/concrete/turf_destruction(damage_flag)
+	. = ..()
+	src.ChangeTurf(/turf/open/floor/rogue/dirt, flags = CHANGETURF_INHERIT_AIR)
+	new /obj/item/natural/stone(src)
 
 /turf/open/floor/rogue/concrete/Initialize()
 	. = ..()
@@ -1087,6 +1178,13 @@
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snow/patchy,
 						/turf/open/floor/rogue/snow/rough)
+	damage_deflection = 16
+	max_integrity = 1400
+
+
+/turf/open/floor/rogue/metal/turf_destruction(damage_flag)
+	. = ..()
+	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
 /turf/open/floor/rogue/metal/Initialize()
 	. = ..()
@@ -1121,6 +1219,12 @@
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snow/patchy,
 						/turf/open/floor/rogue/snow/rough)
+	damage_deflection = 10
+	max_integrity = 800
+
+/turf/open/floor/rogue/carpet/turf_destruction(damage_flag)
+	. = ..()
+	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
 /turf/open/floor/rogue/carpet/lord
 	icon_state = ""
@@ -1203,3 +1307,8 @@
 /turf/open/floor/rogue/tile/checker_green
 	icon_state = "tile"
 	color = "#94df5b"
+
+
+/turf/open/floor/rogue/naturalstone/turf_destruction(damage_flag)
+	. = ..()
+	return

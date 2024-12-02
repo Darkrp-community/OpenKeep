@@ -99,8 +99,7 @@ SUBSYSTEM_DEF(death_arena)
 		return
 
 	fighters_heads = list()
-	user.returntolobby()
-	tollless_clients -= user.client.key
+	tollless_clients -= user?.client?.key
 
 	for(var/mob/living/carbon/carbon in fighters)
 		fighters -= carbon
@@ -111,7 +110,9 @@ SUBSYSTEM_DEF(death_arena)
 			O.ckey = carbon.ckey
 			ADD_TRAIT(O, TRAIT_PACIFISM, TRAIT_GENERIC)
 			add_fighter(O)
-		qdel(carbon)
+			qdel(carbon)
+		else
+			carbon.returntolobby()
 	fighters = list()
 
 	fighting = FALSE
@@ -174,6 +175,7 @@ SUBSYSTEM_DEF(death_arena)
 	desc = "It awaits an offering of your triumphs"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "ravox_altar"
+	max_integrity = 1000000000
 
 /obj/structure/table/wood/fine/altar/after_added_effects(obj/item/item, mob/user)
 	if(!istype(item, /obj/item/bodypart/head))
@@ -189,6 +191,7 @@ SUBSYSTEM_DEF(death_arena)
 	plane = GAME_PLANE_UPPER
 	anchored = TRUE
 	density = TRUE
+	max_integrity = 1000000000
 	resistance_flags = INDESTRUCTIBLE
 
 
@@ -201,6 +204,7 @@ SUBSYSTEM_DEF(death_arena)
 	plane = GAME_PLANE_UPPER
 	anchored = TRUE
 	density = TRUE
+	max_integrity = 1000000000
 	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/underworld/necra/Initialize()

@@ -1058,12 +1058,6 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"We" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/chicken{
-	name = "vanderlin forest"
-	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/woods)
 "Wn" = (
 /obj/structure/flora/newtree,
 /obj/structure/flora/newtree,
@@ -65129,7 +65123,7 @@ Fg
 Fg
 WT
 fp
-We
+fp
 fp
 NT
 Fg
