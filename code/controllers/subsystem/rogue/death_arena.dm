@@ -98,8 +98,7 @@ SUBSYSTEM_DEF(death_arena)
 		return
 
 	fighters_heads = list()
-	user.returntolobby()
-	tollless_clients -= user.client.key
+	tollless_clients -= user?.client?.key
 
 	for(var/mob/living/carbon/carbon as anything in fighters)
 		fighters -= carbon
@@ -110,7 +109,9 @@ SUBSYSTEM_DEF(death_arena)
 			O.ckey = carbon.ckey
 			ADD_TRAIT(O, TRAIT_PACIFISM, TRAIT_GENERIC)
 			add_fighter(O)
-		qdel(carbon)
+			qdel(carbon)
+		else
+			carbon.returntolobby()
 	fighters = list()
 
 	fighting = FALSE
