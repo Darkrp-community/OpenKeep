@@ -4,6 +4,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	grant_lit_torch = TRUE
 	outfit = /datum/outfit/job/roguetown/gaoler
+	show_wanderer_examine = FALSE
 	allowed_races = list(
 		"Humen",
 		"Elf",
@@ -93,6 +94,7 @@
 	outfit = /datum/outfit/job/roguetown/mig_guard
 	allowed_races = list("Humen","Dwarf","Aasimar")
 	grant_lit_torch = TRUE
+	show_wanderer_examine = FALSE
 
 /datum/outfit/job/roguetown/mig_guard/pre_equip(mob/living/carbon/human/H)
 	..()

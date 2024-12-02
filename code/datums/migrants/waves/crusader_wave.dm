@@ -3,6 +3,7 @@
 	greet_text = "These lands have forfeited Psydon and the Tens, you came with a troop of devouts from Grenzelhoft to restore the True faith to them."
 	antag_datum = /datum/antagonist/purishep
 	outfit = /datum/outfit/job/roguetown/inquisitor
+	show_wanderer_examine = FALSE
 	allowed_races = list("Humen","Dwarf")
 
 /datum/migrant_role/crusader
