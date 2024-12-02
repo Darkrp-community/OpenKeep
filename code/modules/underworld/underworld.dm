@@ -103,6 +103,7 @@
 	plane = GAME_PLANE_UPPER
 	anchored = TRUE
 	density = TRUE
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/underworld/carriageman/Initialize()
 	. = ..()
@@ -139,6 +140,7 @@
 	icon_state = "spiritpart"
 	density = TRUE
 	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/underworld/carriage
 	name = "Carriage"
@@ -149,6 +151,7 @@
 	plane = GAME_PLANE_UPPER
 	anchored = TRUE
 	density = TRUE
+	resistance_flags = INDESTRUCTIBLE
 
 
 /obj/structure/underworld/carriage/Initialize()
@@ -162,7 +165,7 @@
 				playsound(user, 'sound/misc/deadbell.ogg', 50, TRUE, -2, ignore_walls = TRUE)
 				user.returntolobby()
 			if("No")
-				usr << "You delay fate."
+				to_chat(user,span_notice("You delay fate."))
 	else
 		to_chat(user, "<B><font size=3 color=red>It's LOCKED.</font></B>")
 
