@@ -719,7 +719,7 @@
 					set_resting(FALSE, FALSE)
 					return TRUE
 			else	
-				src.visible_message("<span class='notice'>[src] stands up.</span>")
+				src.visible_message("<span class='info'>[src] stands up.</span>")
 				if(move_after(src, 20, target = src))
 					set_resting(FALSE, FALSE)
 					return TRUE
