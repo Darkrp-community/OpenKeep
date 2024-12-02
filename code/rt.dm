@@ -5,7 +5,7 @@
 #endif
 
 #ifdef FASTLOAD
-	#define FORCE_MAP "_maps/dun_manor.json"
+	#define FORCE_MAP "_maps/stonehamlet.json"
 #endif
 
 //#define WARTIME

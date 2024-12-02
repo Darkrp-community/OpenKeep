@@ -11,7 +11,7 @@
 	show_in_roundend = FALSE
 	isgoodguy = TRUE // Previous townies, still should get buffs, make chaos.
 	confess_lines = list(
-		"VIVA!", 
+		"VIVA!",
 		"DEATH TO THE NOBLES!",
 		"STICK IT TO THE MAN!",
 		"NO GODS, NO MASTERS!",
@@ -47,6 +47,8 @@
 		if(new_owner.assigned_role in GLOB.noble_positions)
 			return FALSE
 		if(new_owner.assigned_role in GLOB.garrison_positions)
+			return FALSE
+		if(new_owner.assigned_role in GLOB.no_antag_positions)
 			return FALSE
 		if(new_owner.unconvertable)
 			return FALSE

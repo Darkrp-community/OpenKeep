@@ -783,9 +783,6 @@
 /area/rogue/under/town/basement)
 "cY" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber{
-	dir = 8
-	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town)
 "cZ" = (
@@ -2409,7 +2406,7 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/town/sewer)
 "jf" = (
-/obj/effect/landmark/start/barkeep{
+/obj/effect/landmark/start/innkeep{
 	dir = 1
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -5882,9 +5879,6 @@
 /area/rogue/outdoors/river)
 "ww" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber{
-	dir = 4
-	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town)
 "wx" = (
@@ -9563,7 +9557,6 @@
 /area/rogue/outdoors/exposed/manorgarri)
 "Kt" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "Ku" = (

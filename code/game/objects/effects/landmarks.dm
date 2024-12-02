@@ -204,11 +204,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Merchant"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/grabber
-	name = "Grabber"
+/obj/effect/landmark/start/stevedore
+	name = "Stevedore"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/barkeep //Go figure someone breaks something
+/obj/effect/landmark/start/innkeep
 	name = "Innkeep"
 	icon_state = "arrow"
 

@@ -6042,7 +6042,7 @@
 /area/rogue/outdoors/mountains)
 "gqM" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber{
+/obj/effect/landmark/start/stevedore{
 	dir = 8
 	},
 /turf/open/floor/rogue/twig,
@@ -19301,7 +19301,7 @@
 /area/rogue)
 "tWr" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber,
+/obj/effect/landmark/start/stevedore,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/shop)
 "tWT" = (
@@ -21424,7 +21424,7 @@
 	dir = 8;
 	icon_state = "chair2"
 	},
-/obj/effect/landmark/start/barkeep{
+/obj/effect/landmark/start/innkeep{
 	dir = 8
 	},
 /turf/open/floor/rogue/wood/nosmooth,
