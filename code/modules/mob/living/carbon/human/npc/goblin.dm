@@ -21,7 +21,7 @@
 /mob/living/carbon/human/species/goblin/npc
 	aggressive=1
 	mode = AI_IDLE
-	dodgetime = 30 //they can dodge easily, but have a cooldown on it
+	dodgetime = 5 SECONDS
 	flee_in_pain = TRUE
 
 	wander = FALSE

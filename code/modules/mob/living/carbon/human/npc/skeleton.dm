@@ -22,7 +22,7 @@
 	skel_outfit = null
 
 /mob/living/carbon/human/species/skeleton/npc
-	aggressive = 1
+	aggressive = TRUE
 	mode = AI_IDLE
 	wander = TRUE
 	simpmob_attack = 40
@@ -36,10 +36,17 @@
 	spawn(10)
 		after_creation()
 
-//	addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)  fired loadout equip again, leading to duping inhands. Unclear why its here.
-
 /mob/living/carbon/human/species/skeleton/after_creation()
 	..()
+	QDEL_NULL(sexcon)
+
+	dodgetime = 3 SECONDS
+	aggressive = TRUE
+	mode = AI_IDLE
+	canparry = TRUE
+	flee_in_pain = FALSE
+	wander = TRUE
+
 	if(src.dna && src.dna.species)
 		src.dna.species.species_traits |= NOBLOOD
 		src.dna.species.soundpack_m = new /datum/voicepack/skeleton()
@@ -80,21 +87,19 @@
 	ADD_TRAIT(src, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_LIMBATTACHMENT, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	if(skel_outfit)
 		var/datum/outfit/OU = new skel_outfit
 		if(OU)
 			equipOutfit(OU)
 
-
-/datum/outfit/job/roguetown/npc/skeleton/random/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/species/skeleton/npc/pre_equip(mob/living/carbon/human/H)
 	..()
-
-	H.STASTR = 6
-	H.STASPD = 10
-	H.STACON = 8
-	H.STAEND = 8
+	H.STASTR = rand(6,8)
+	H.STASPD = rand(8,10)
+	H.STACON = rand(8,10)
+	H.STAEND = 12
 	H.STAINT = 1
-
 
 /datum/outfit/job/roguetown/greater_skeleton/pre_equip(mob/living/carbon/human/H) //equipped onto Summon Greater Undead player skeletons only after the mind is added
 	..()
@@ -108,11 +113,9 @@
 	head = /obj/item/clothing/head/roguetown/helmet/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 
-	H.STASTR = rand(14,16)
-	H.STASPD = 8
-	H.STACON = 9
-	H.STAEND = 15
-	H.STAINT = 1
+	H.STASTR = rand(12,14)
+	H.STASPD = 10
+	H.STACON = 12
 
 	//light labor skills for skeleton manual labor and some warrior-adventurer skills, equipment is still bad probably
 	H.mind?.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
@@ -131,7 +134,6 @@
 	H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 
 	H.set_patron(/datum/patron/inhumen/zizo)
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 
 	H.possible_rmb_intents = list(/datum/rmb_intent/feint,\
 	/datum/rmb_intent/aimed,\
@@ -150,26 +152,10 @@
 
 /mob/living/carbon/human/species/skeleton/npc/peasant/after_creation()
 	..()
-	QDEL_NULL(sexcon)
-	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/peasant)
-	aggressive=1
-	mode = AI_IDLE
-	dodgetime = 15
-	canparry = TRUE
-	flee_in_pain = FALSE
-	wander = TRUE
 
 /datum/outfit/job/roguetown/species/skeleton/npc/peasant/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.STASTR = 6
-	H.STASPD = 8
-	H.STACON = 8
-	H.STAEND = 8
 	var/loadout = rand(1,7)
 	head = /obj/item/clothing/head/roguetown/roguehood/random
 	pants = /obj/item/clothing/under/roguetown/tights/vagrant
@@ -201,20 +187,7 @@
 ///////////////////////////////////////////////////////////// EVENTMIN SKELETONGS
 /mob/living/carbon/human/species/skeleton/npc/ambush/after_creation()
 	..()
-	QDEL_NULL(sexcon)
-	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/random)
-	aggressive=1
-	mode = AI_IDLE
-	dodgetime = 15
-	canparry = TRUE
-	flee_in_pain = FALSE
-	wander = TRUE
 
 /datum/outfit/job/roguetown/species/skeleton/npc/random/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -243,26 +216,12 @@
 
 /mob/living/carbon/human/species/skeleton/npc/warrior/after_creation()
 	..()
-	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/warrior)
-	aggressive=1
-	mode = AI_IDLE
-	dodgetime = 15
-	canparry = TRUE
-	flee_in_pain = FALSE
-	wander = TRUE
 
 /datum/outfit/job/roguetown/species/skeleton/npc/warrior/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.STASTR = 10
-	H.STASPD = 7
-	H.STACON = 10
-	H.STAEND = 10
+	H.STACON = 11
 	var/loadout = rand(1,6)
 	belt = /obj/item/storage/belt/rogue/leather
 	if(prob(50))
@@ -335,18 +294,8 @@
 
 /mob/living/carbon/human/species/skeleton/npc/warrior/skilled/after_creation()
 	..()
-	QDEL_NULL(sexcon)
-	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/warrior)
-	aggressive=1
-	mode = AI_IDLE
 	d_intent = INTENT_PARRY //these ones will parry instead of dodge, making them much more dangerous
-	canparry = TRUE
-	flee_in_pain = FALSE
-	wander = TRUE
 	configure_mind()
 
 /mob/living/carbon/human/species/skeleton/npc/warrior/skilled/proc/configure_mind()
