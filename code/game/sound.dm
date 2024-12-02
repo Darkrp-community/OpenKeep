@@ -36,10 +36,10 @@
 	if(!ignore_walls) //these sounds don't carry through walls
 		listeners = listeners & hearers(maxdistance,turf_source)
 
-		if(above_turf && istransparentturf(above_turf))
+		if(above_turf)
 			muffled_listeners += hearers(maxdistance,above_turf)
 
-		if(below_turf && istransparentturf(turf_source))
+		if(below_turf)
 			muffled_listeners += hearers(maxdistance,below_turf)
 
 	else
