@@ -13,7 +13,7 @@
 	pin = /obj/item/firing_pin
 	force = 10
 	experimental_inhand = FALSE
-	experimental_onback = FALSE 
+	experimental_onback = FALSE
 	var/click_delay = 0.5
 	var/obj/item/ramrod/rod
 	cartridge_wording = "ball"
@@ -32,6 +32,7 @@
 	slot_flags = ITEM_SLOT_HIP
 	w_class = WEIGHT_CLASS_NORMAL
 	sellprice = 200 // This kind of equipment is very hard to come by in Rockhill.
+	istrainable = FALSE
 	var/cocked = FALSE
 	var/ramrod_inserted = TRUE
 	var/powdered = FALSE
@@ -94,7 +95,7 @@
 		to_chat(user, "<span class='info'>I wind \the [src]'s mechanism.</span>")
 		playsound(src.loc, 'sound/foley/winding.ogg', 100, FALSE)
 		wound = TRUE
-		
+
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/MiddleClick(mob/user, params)
 	. = ..()
@@ -165,7 +166,7 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/attackby(obj/item/I, mob/user, params)
 	var/ramtime = 5.5
 	ramtime = ramtime - (user.mind.get_skill_level(/datum/skill/combat/firearms) / 2)
-	
+
 	// Check if the item used is a ramrod
 	if(istype(I, /obj/item/ramrod))
 		if(user.mind.get_skill_level(/datum/skill/combat/firearms) <= 0)
