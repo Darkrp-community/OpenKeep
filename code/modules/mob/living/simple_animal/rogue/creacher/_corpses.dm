@@ -63,6 +63,32 @@
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 ///	mask = /obj/item/clothing/mask/rogue/skullmask	Vanderlin clothing TO DO review it
 
+/obj/effect/mob_spawn/human/orc/corpse/dwarfinvasion
+	color = "#82aa00"
+	mob_type = /mob/living/carbon/human/species/orc/dwarfinvasion
+
+/mob/living/carbon/human/species/orc/dwarfinvasion/after_creation()
+	..()
+	equipOutfit(new /datum/outfit/job/roguetown/npc/orc/dead_invader)
+
+/datum/outfit/job/roguetown/npc/orc/dead_invader/pre_equip(mob/living/carbon/human/H)
+	..()
+	var/loadout = rand(1,5)
+	switch(loadout)
+		if(1)
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+		if(2)
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+			cloak = /obj/item/clothing/cloak/raincloak/brown
+		if(3)
+			cloak = /obj/item/clothing/cloak/raincloak/brown
+		if(4)
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+			cloak = /obj/item/clothing/cloak/raincloak/brown
+		if(5)
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/orc
+			cloak = /obj/item/clothing/cloak/raincloak/brown
+
 /*	..................   Dwarf Underdweller Corpse   ................... */
 /obj/effect/mob_spawn/human/corpse/damaged/underdweller
 	icon = 'icons/effects/blood.dmi'
