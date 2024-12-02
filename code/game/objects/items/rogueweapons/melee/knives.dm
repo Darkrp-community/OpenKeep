@@ -265,7 +265,7 @@
 				"<span class='danger'>Free us...please...</span>",
 				"<span class='danger'>Necra...deliver...us...</span>")
 //			H.visible_message("profane dagger whispers, \"[message]\"")
-			to_chat(M, ">profane dagger whispers,<span class='danger' \"[message]\"</span>")
+			to_chat(M, ">profane dagger whispers, \"[message]\"")
 		else
 			var/message = pick(
 				"<span class='danger'>Why...</span>",
@@ -280,7 +280,7 @@
 				"<span class='danger'>I thought you were...my friend...</span>",
 				"<span class='danger'>How long have I been in here...</span>")
 //			H.visible_message("profane dagger whispers, \"[message]\"")
-			to_chat(M, ">profane dagger whispers,<span class='danger' \"[message]\"</span>")
+			to_chat(M, ">profane dagger whispers, \"[message]\"")
 
 /obj/item/rogueweapon/knife/dagger/steel/profane/pre_attack(mob/living/carbon/human/target, mob/living/user = usr, params)
 	if(target.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(target, TRAIT_ZIZOID_HUNTED)) // Check to see if the dagger will do 20 damage or 14
