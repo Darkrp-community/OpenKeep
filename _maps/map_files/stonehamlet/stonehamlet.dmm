@@ -6965,7 +6965,6 @@
 /obj/effect/landmark/start/mercenary{
 	dir = 4
 	},
-/obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/cobble/alt,
 /area/rogue/indoors/town/tavern/saiga)
 "heG" = (
@@ -8208,18 +8207,6 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/garrison)
-"ism" = (
-/obj/machinery/light/rogue/wallfire/candle/blue{
-	pixel_y = -32
-	},
-/obj/structure/fluff/railing/border{
-	dir = 1;
-	icon_state = "border"
-	},
-/turf/open/floor/rogue/metal{
-	icon_state = "plating2"
-	},
-/area/rogue/indoors/town)
 "iso" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
@@ -9025,6 +9012,9 @@
 	first_time_text = "STONEHILL CASTLE"
 	})
 "jiZ" = (
+/obj/machinery/light/rogue/wallfire/candle/blue{
+	pixel_y = -32
+	},
 /obj/structure/fluff/railing/border{
 	dir = 1;
 	icon_state = "border"
@@ -10877,10 +10867,8 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/under/basement)
 "ldB" = (
-/obj/structure/chair/stool/rogue,
-/obj/structure/fluff/walldeco/innsign/trophy{
-	pixel_y = 0;
-	pixel_x = 32
+/obj/machinery/light/rogue/torchholder/c{
+	pixel_y = -32
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/tavern/saiga)
@@ -11306,10 +11294,6 @@
 	},
 /turf/open/floor/rogue/cobble/alt,
 /area/rogue/indoors/town/magician)
-"lCm" = (
-/obj/machinery/light/rogue/wallfire/candle/blue,
-/turf/open/floor/rogue/carpet,
-/area/rogue/indoors/town/shop)
 "lCP" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -11451,6 +11435,15 @@
 	},
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/under/town/basement)
+"lIh" = (
+/obj/structure/fluff/railing/border{
+	dir = 1;
+	icon_state = "border"
+	},
+/turf/open/floor/rogue/metal{
+	icon_state = "plating2"
+	},
+/area/rogue/indoors/town)
 "lIB" = (
 /obj/structure/closet/crate/chest/neu,
 /obj/item/clothing/cloak/raincloak/blue,
@@ -11574,12 +11567,6 @@
 	icon_state = "greenstone"
 	},
 /area/rogue/under/town/basement)
-"lNV" = (
-/obj/machinery/light/rogue/torchholder/c{
-	pixel_y = -32
-	},
-/turf/open/floor/rogue/twig,
-/area/rogue/indoors/town/tavern/saiga)
 "lNY" = (
 /obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt,
@@ -11664,6 +11651,11 @@
 /area/rogue/indoors/town/shop)
 "lRz" = (
 /turf/closed/wall/mineral/rogue/roofwall/outercorner,
+/area/rogue/indoors/town)
+"lSl" = (
+/obj/structure/bed/rogue/mediocre,
+/obj/item/bedsheet/rogue/cloth,
+/turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town)
 "lSo" = (
 /turf/closed/wall/mineral/rogue/wooddark/window,
@@ -12227,7 +12219,7 @@
 /area/rogue/outdoors/rtfield/hamlet)
 "mBr" = (
 /obj/structure/fluff/railing/border{
-	dir = 4;
+	dir = 5;
 	icon_state = "border"
 	},
 /turf/open/floor/rogue/metal,
@@ -12970,9 +12962,11 @@
 	first_time_text = "STONEHILL CASTLE"
 	})
 "nmF" = (
-/obj/structure/bed/rogue/mediocre,
-/obj/item/bedsheet/rogue/cloth,
-/turf/open/floor/rogue/wood/nosmooth/saiga,
+/obj/structure/fluff/railing/border{
+	dir = 4;
+	icon_state = "border"
+	},
+/turf/open/floor/rogue/metal,
 /area/rogue/indoors/town)
 "nmL" = (
 /obj/structure/fluff/railing/border{
@@ -17616,12 +17610,9 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/cell)
 "rIo" = (
-/obj/structure/fluff/railing/border{
-	dir = 5;
-	icon_state = "border"
-	},
-/turf/open/floor/rogue/metal,
-/area/rogue/indoors/town)
+/obj/machinery/light/rogue/wallfire/candle/blue,
+/turf/open/floor/rogue/carpet,
+/area/rogue/indoors/town/shop)
 "rIq" = (
 /obj/effect/decal/turfedge_neu/road{
 	dir = 6
@@ -17950,6 +17941,14 @@
 "sdU" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/indoors/shelter/rtfield)
+"sek" = (
+/obj/structure/chair/stool/rogue,
+/obj/structure/fluff/walldeco/innsign/trophy{
+	pixel_y = 0;
+	pixel_x = 32
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/town/tavern/saiga)
 "seB" = (
 /obj/effect/decal/shadow_floor,
 /turf/open/floor/rogue/dirt/road,
@@ -19816,9 +19815,6 @@
 /obj/effect/landmark/start/mercenary{
 	dir = 1
 	},
-/obj/machinery/light/rogue/torchholder/c{
-	pixel_y = -32
-	},
 /turf/open/floor/rogue/cobble/alt,
 /area/rogue/indoors/town/tavern/saiga)
 "uan" = (
@@ -21184,6 +21180,7 @@
 /obj/effect/decal/turfedge_neu{
 	dir = 10
 	},
+/obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/tavern/saiga)
 "viq" = (
@@ -62641,7 +62638,7 @@ wAB
 pSa
 rSm
 rtp
-lNV
+ldB
 pSa
 myP
 myP
@@ -63422,7 +63419,7 @@ tLK
 uoY
 uoY
 ecO
-ldB
+sek
 lIK
 rqW
 hXk
@@ -82611,8 +82608,8 @@ hZX
 pLb
 sbg
 jDX
+nmF
 mBr
-rIo
 pLb
 hZX
 hZX
@@ -82806,7 +82803,7 @@ pLb
 dOQ
 qZV
 qZV
-jiZ
+lIh
 pLb
 uAc
 uAc
@@ -83000,7 +82997,7 @@ pLb
 dOQ
 qZV
 qZV
-jiZ
+lIh
 pLb
 hZX
 hZX
@@ -83194,7 +83191,7 @@ pLb
 dOQ
 qZV
 qZV
-ism
+jiZ
 pLb
 hZX
 wvR
@@ -83388,7 +83385,7 @@ pLb
 dOQ
 qZV
 qZV
-jiZ
+lIh
 pLb
 hZX
 wvR
@@ -83582,7 +83579,7 @@ pLb
 dOQ
 qZV
 qZV
-jiZ
+lIh
 pLb
 hZX
 wvR
@@ -84957,7 +84954,7 @@ hZX
 hZX
 dxA
 wnB
-lCm
+rIo
 uwk
 gzx
 wnB
@@ -87684,7 +87681,7 @@ pSa
 pSa
 pSa
 rSm
-nmF
+lSl
 clK
 iLY
 nHO
@@ -88460,7 +88457,7 @@ wIl
 ePF
 wIl
 pSa
-nmF
+lSl
 iLY
 iLY
 nHO
