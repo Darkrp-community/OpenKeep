@@ -1,5 +1,5 @@
 {
-	
+
     "universal": {
 		"friday": "freyjasdae",
 		"saturday": "saturnsdae",
@@ -25,8 +25,12 @@
 		"gmyza": "OINK OINK",
 		"copetti": "OINK OINK",
 		"day": "dae",
+		"days": "daes",
+		"daylight": "daelight",
 		"today": "todae",
 		"night": "nite",
+		"nightly": "nitely",
+		"tonight": "tonite",
 		"goodnight": "goodnite",
 		"years": "yils",
 		"wolf": "volf",
@@ -51,8 +55,8 @@
 		"cuck": "wittol",
 		"poop": "nitesoil",
 		"goat": "gote",
-		"shylock": "Miester"
+		"shylock": "meister"
 		}
-	
-	
+
+
 }
