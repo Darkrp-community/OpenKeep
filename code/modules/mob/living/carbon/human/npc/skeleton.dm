@@ -14,6 +14,7 @@
 	possible_mmb_intents = list(INTENT_STEAL, INTENT_JUMP, INTENT_KICK, INTENT_BITE)
 	possible_rmb_intents = list(/datum/rmb_intent/feint, /datum/rmb_intent/aimed, /datum/rmb_intent/strong, /datum/rmb_intent/weak)
 	stand_attempts = 4
+	cmode_music = 'sound/music/antag/combatskeleton.ogg'
 
 /mob/living/carbon/human/species/skeleton/npc/no_equipment
 	skel_outfit = null
