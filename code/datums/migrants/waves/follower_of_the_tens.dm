@@ -13,7 +13,7 @@
 	)
 
 /datum/migrant_wave/acolytes
-	name = "The Unknightly journey"
+	name = "The Holy voyage"
 	shared_wave_type = /datum/migrant_wave/acolytes
 	downgrade_wave = /datum/migrant_wave/acolytes_down
 	weight = 20
@@ -23,7 +23,7 @@
 	greet_text = "The Tens have decreed that this land needs additional persons of faith, so here you are."
 
 /datum/migrant_wave/acolytes_down
-	name = "The Unknightly journey"
+	name = "The Holy voyage"
 	shared_wave_type = /datum/migrant_wave/acolytes
 	downgrade_wave = /datum/migrant_wave/acolytes_down_one
 	weight = 20
@@ -33,7 +33,7 @@
 	greet_text = "The Tens have decreed that this land needs additional persons of faith, so here you are."
 
 /datum/migrant_wave/acolytes_down_one
-	name = "The Unknightly journey"
+	name = "The Holy voyage"
 	shared_wave_type = /datum/migrant_wave/acolytes
 	downgrade_wave = /datum/migrant_wave/acolytes_down_two
 	weight = 20
@@ -43,7 +43,7 @@
 	greet_text = "The Tens have decreed that this land needs additional persons of faith, so here you are."
 
 /datum/migrant_wave/acolytes_down_two
-	name = "The Unknightly journey"
+	name = "The Holy voyage"
 	shared_wave_type = /datum/migrant_wave/acolytes
 	weight = 20
 	roles = list(
