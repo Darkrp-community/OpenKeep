@@ -14,6 +14,9 @@
 
 
 /*========= NO SKILL LEVEL REQUIRED ==========*/
+/datum/crafting_recipe/roguetown/leather/belt
+	name = "leather belt"
+	result = list(/obj/item/storage/belt/rogue/leather)
 
 /datum/crafting_recipe/roguetown/leather/pouch
 	name = "leather pouch"
