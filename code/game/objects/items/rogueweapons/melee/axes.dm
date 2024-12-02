@@ -27,7 +27,7 @@
 	penfactor = AP_AXE_CHOP
 	swingdelay = 1
 	misscost = 5
-	
+
 /datum/intent/axe/chop/charged //Charged chop for the battleaxe and bearded axe.
 	name = "overhead chop"
 	penfactor = AP_HEAVYAXE_CHOP
@@ -71,7 +71,7 @@
 	penfactor = AP_HEAVYAXE_STAB
 	swingdelay = 1
 	misscost = 10
-	
+
 /datum/intent/pick
 	penfactor = AP_PICK //This is used in some actual weapons, so giving it some AP is likely wise. Hefty swing delay means it is impractical in combat.
 	name = "pick"
@@ -186,7 +186,7 @@
 	resistance_flags = FIRE_PROOF
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	swingsound = BLADEWOOSH_MED
-	wdefense = MEDIOCHRE_PARRY
+	wdefense = AVERAGE_PARRY
 	minstr = 6
 	sellprice = 50
 	pickmult = 1.2 // It's a pick...

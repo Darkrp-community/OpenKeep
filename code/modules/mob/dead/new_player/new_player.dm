@@ -561,6 +561,8 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	omegalist += list(GLOB.noble_positions)
 	omegalist += list(GLOB.garrison_positions)
 	omegalist += list(GLOB.church_positions)
+	omegalist += list(GLOB.mercatorguild_positions)
+	omegalist += list(GLOB.makersguild_positions)
 	omegalist += list(GLOB.peasant_positions)
 	omegalist += list(GLOB.apprentices_positions)
 	omegalist += list(GLOB.serf_positions)
@@ -597,10 +599,14 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 					cat_name = "Nobles"
 				if (GARRISON)
 					cat_name = "Garrison"
+				if (MERCATOR_GUILD)
+					cat_name = "Mercator guild"
+				if (MAKERS_GUILD)
+					cat_name = "Makers guild"
 				if (SERFS)
 					cat_name = "Subjects"
-				if (CHURCHMEN)
-					cat_name = "Churchmen"
+				if (TEMPLE)
+					cat_name = "Temple"
 				if (PEASANTS)
 					cat_name = "Peasants"
 				if (APPRENTICES)

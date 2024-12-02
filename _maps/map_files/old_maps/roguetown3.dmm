@@ -4912,7 +4912,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "apu" = (
-/obj/effect/landmark/start/barkeep,
+/obj/effect/landmark/start/innkeep,
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "apv" = (

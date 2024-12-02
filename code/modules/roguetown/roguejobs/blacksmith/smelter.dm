@@ -18,7 +18,7 @@
 	var/maxore = 1
 	var/cooking = 0
 	var/actively_smelting = FALSE // Are we currently smelting?
-	fueluse = 5 MINUTES
+	fueluse = 30 MINUTES
 	crossfire = FALSE
 
 /obj/machinery/light/rogue/smelter/attackby(obj/item/W, mob/living/user, params)
@@ -66,8 +66,8 @@
 				if(smelter_exp < 6)
 					ore[W] = floor(rand(smelter_exp*15, max(63, smelter_exp*25))/25) // Math explained below
 				else
-					ore[W] = floor(min(3, smelter_exp)) // Guarantees a return of 3 no matter how extra experience past 3000 you have. 
-				/*  
+					ore[W] = floor(min(3, smelter_exp)) // Guarantees a return of 3 no matter how extra experience past 3000 you have.
+				/*
 				RANDOMLY PICKED NUMBER ACCORDING TO SMELTER SKILL:
 					NO SKILL: 		between 00 and 63
 					WEAK:	 		between 15 and 63
@@ -76,7 +76,7 @@
 					EXPERT: 		between 60 and 100
 					MASTER: 		between 75 and 125
 					LEGENDARY: 		between 90 and 150
-				
+
 				PICKED NUMBER GETS DIVIDED BY 25 AND ROUNDED DOWN TO CLOSEST INTEGER.
 				RESULT DETERMINES QUALITY OF BAR. SEE code/__DEFINES/skills.dm
 					0 = SPOILED
@@ -172,7 +172,7 @@
 						alloy = null
 					if(alloy)
 						// The smelting quality of all ores added together, divided by the number of ores, and then rounded to the lowest integer (this isn't done until after the for loop)
-						var/floor_mean_quality = SMELTERY_LEVEL_SPOIL 
+						var/floor_mean_quality = SMELTERY_LEVEL_SPOIL
 						var/ore_deleted = 0
 						for(var/obj/item/I in ore)
 							floor_mean_quality += ore[I]

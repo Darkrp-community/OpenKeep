@@ -4529,10 +4529,6 @@
 /obj/effect/decal/turfedge_neu{
 	dir = 9
 	},
-/obj/effect/landmark/start/grabber{
-	dir = 4;
-	name = "Stevedore"
-	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "epe" = (
@@ -20758,9 +20754,6 @@
 /area/rogue/indoors/town)
 "upc" = (
 /obj/structure/bed/rogue/hay,
-/obj/effect/landmark/start/grabber{
-	name = "Stevedore"
-	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "upl" = (
@@ -24147,7 +24140,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/magician)
 "xHq" = (
-/obj/effect/landmark/start/barkeep{
+/obj/effect/landmark/start/innkeep{
 	dir = 4
 	},
 /turf/open/floor/rogue/ruinedwood,

@@ -55,11 +55,12 @@
 /obj/item/reagent_containers/food/snacks/rogue/truffles/cooked
 	eat_effect = /datum/status_effect/buff/foodbuff
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	icon_state = "mushroom1_full"
 	color = "#835b4f"
 	tastes = list("delicious truffles" = 1)
-/obj/item/reagent_containers/food/snacks/rogue/truffles/Initialize()
-	icon_state = pick("mushroom1_full","mushroom1_full","mushroom1_full")
-	. = ..()
+//obj/item/reagent_containers/food/snacks/rogue/truffles/Initialize()
+//	icon_state = pick("mushroom1_full","mushroom1_full","mushroom1_full")
+//	. = ..()
 
 /obj/item/reagent_containers/food/snacks/rogue/toxicshrooms
 	name = "truffles"

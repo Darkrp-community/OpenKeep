@@ -1,10 +1,10 @@
 /datum/job/roguetown/armorsmith
 	title = "Armorer"
 	flag = BLACKSMITH
-	department_flag = SERFS
+	department_flag = MAKERS_GUILD
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 
 	allowed_races = list(
 		"Humen",
@@ -21,6 +21,7 @@
 	bypass_lastclass = TRUE
 	give_bank_account = 30
 	min_pq = 0
+	selection_color = "#d68e08"
 
 /datum/outfit/job/roguetown/armorsmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -72,10 +73,10 @@
 /datum/job/roguetown/weaponsmith
 	title = "Weaponsmith"
 	flag = BLACKSMITH
-	department_flag = SERFS
+	department_flag = MAKERS_GUILD
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 
 	allowed_races = list(
 		"Humen",
@@ -91,6 +92,7 @@
 	display_order = JDO_WSMITH
 	give_bank_account = 30
 	min_pq = 0
+	selection_color = "#d68e08"
 
 /datum/outfit/job/roguetown/weaponsmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -143,10 +145,10 @@
 /datum/job/roguetown/blacksmith
 	title = "Blacksmith"
 	flag = BLACKSMITH
-	department_flag = SERFS
+	department_flag = MAKERS_GUILD
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 2
+	spawn_positions = 2
 
 	allowed_races = ALL_PLAYER_RACES_BY_NAME
 
@@ -157,6 +159,7 @@
 	bypass_lastclass = TRUE
 	give_bank_account = 30
 	min_pq = 0
+	selection_color = "#d68e08"
 
 /datum/outfit/job/roguetown/blacksmith/pre_equip(mob/living/carbon/human/H)
 	..()

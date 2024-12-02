@@ -7661,15 +7661,11 @@
 	},
 /area/rogue/indoors/town/shop)
 "BQ" = (
-/obj/effect/landmark/start/grabber{
-	name = "Hauler"
-	},
+/obj/effect/landmark/start/stevedore,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "BR" = (
-/obj/effect/landmark/start/grabber{
-	name = "Hauler"
-	},
+/obj/effect/landmark/start/stevedore,
 /turf/open/floor/rogue/blocks/bluestone,
 /area/rogue/indoors/town)
 "BS" = (
@@ -13402,7 +13398,7 @@
 	},
 /area/rogue/indoors/town)
 "YH" = (
-/obj/effect/landmark/start/barkeep,
+/obj/effect/landmark/start/innkeep,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
 "YI" = (
