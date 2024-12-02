@@ -58,7 +58,6 @@
 			fallback = recipe.type
 			continue
 		recipe_type = recipe.type
-		break
 
 	if(!recipe_type)
 		recipe_type = fallback
@@ -268,14 +267,14 @@
 /datum/pot_recipe/yuck_soup/organ
 	required_items = list(/obj/item/organ = 1)
 
-/datum/pot_recipe/yuck_soup/dead_rat
+/datum/pot_recipe/yuck_soup/living_rat
 	required_items = list(/obj/item/reagent_containers/food/snacks/smallrat = 1)
 	fallback = TRUE
 
 /datum/pot_recipe/gross_stew
 	cooking_time = 60 SECONDS
-	produced_reagent = /datum/reagent/yuck/cursed_soup
+	produced_reagent = /datum/reagent/consumable/soup/stew/gross
 	required_items = list(/obj/item/reagent_containers/food/snacks/smallrat/dead = 1)
 
 /datum/pot_recipe/gross_stew/bad_recipe
-	required_items = list( /obj/item/reagent_containers/food/snacks/badrecipe = 1)
+	required_items = list(/obj/item/reagent_containers/food/snacks/badrecipe = 1)
