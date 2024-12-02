@@ -164,7 +164,6 @@
 	cloak = /obj/item/clothing/cloak/stabard/guard
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
-	backpack_contents = list(/obj/item/keyring/guard)
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
@@ -201,7 +200,6 @@
 	cloak = /obj/item/clothing/cloak/stabard/guard
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
-	backpack_contents = list(/obj/item/keyring/guard)
 
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)

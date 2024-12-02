@@ -103,6 +103,10 @@
 	backr = /obj/item/rogueweapon/shield/wood
 	beltr = /obj/item/rogueweapon/sword/scimitar/messer
 	beltl = /obj/item/rogueweapon/mace
+	pants = /obj/item/clothing/under/roguetown/trou/leather
+	cloak = /obj/item/clothing/cloak/stabard/guard
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+	belt = /obj/item/storage/belt/rogue/leather
 	backpack_contents = list(/obj/item/keyring/guard)
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
