@@ -135,6 +135,8 @@
 	var/cooking = FALSE
 	///are we a fallback recipe (only picked if no recipe at all left)
 	var/fallback = FALSE
+	///the amount we pollute
+	var/pollute_amount = 600
 
 /datum/pot_recipe/proc/start_cooking(obj/item/reagent_containers/glass/bucket/pot, mob/living/user)
 	cooking_pot = pot
@@ -162,7 +164,7 @@
 
 	var/turf/pot_turf = get_turf(cooking_pot)
 	if(finished_smell)
-		pot_turf.pollute_turf(finished_smell, 600)
+		pot_turf.pollute_turf(finished_smell, pollute_amount)
 	playsound(pot_turf, "bubbles", 30, TRUE)
 
 	cooking_pot.processing_amount -= water_volume
@@ -178,37 +180,43 @@
 /datum/pot_recipe/oatmeal
 	produced_reagent = /datum/reagent/consumable/soup/oatmeal
 	required_items = list(/obj/item/reagent_containers/food/snacks/produce/oat = 1)
-
+	finished_smell = /datum/pollutant/food/oatmeal
 
 /datum/pot_recipe/potato_stew
 	cooking_time = 80 SECONDS
 	produced_reagent = /datum/reagent/consumable/soup/veggie/potato
 	required_items = list(/obj/item/reagent_containers/food/snacks/rogue/veg/potato_sliced = 1)
+	finished_smell = /datum/pollutant/food/potato_stew
 
 /datum/pot_recipe/onion_stew
 	cooking_time = 60 SECONDS
 	produced_reagent = /datum/reagent/consumable/soup/veggie/onion
 	required_items = list(/obj/item/reagent_containers/food/snacks/rogue/veg/onion_sliced = 1)
+	finished_smell = /datum/pollutant/food/onion_stew
 
 /datum/pot_recipe/cabbage_stew
 	cooking_time = 70 SECONDS
 	produced_reagent = /datum/reagent/consumable/soup/veggie/cabbage
 	required_items = list(/obj/item/reagent_containers/food/snacks/rogue/veg/cabbage_sliced = 1)
+	finished_smell = /datum/pollutant/food/cabbage_stew
 
 /datum/pot_recipe/turnip_stew
 	cooking_time = 70 SECONDS
 	produced_reagent = /datum/reagent/consumable/soup/veggie/turnip
 	required_items = list(/obj/item/reagent_containers/food/snacks/rogue/veg/turnip_sliced = 1)
+	finished_smell = /datum/pollutant/food/turnip_stew
 
 /datum/pot_recipe/fish_stew
 	cooking_time = 80 SECONDS
 	produced_reagent = /datum/reagent/consumable/soup/stew/fish
 	required_items = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince/fish = 1)
+	finished_smell = /datum/pollutant/food/fish_stew
 
 /datum/pot_recipe/chicken_stew
 	cooking_time = 90 SECONDS
 	produced_reagent = /datum/reagent/consumable/soup/stew/chicken
 	required_items = list(/obj/item/reagent_containers/food/snacks/rogue/meat/mince/poultry = 1)
+	finished_smell = /datum/pollutant/food/chicken_stew
 
 /datum/pot_recipe/chicken_stew/cutlet
 	required_items = list(/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet = 1)
@@ -217,27 +225,32 @@
 	cooking_time = 90 SECONDS
 	produced_reagent = /datum/reagent/consumable/soup/stew/gross
 	required_items = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1)
+	finished_smell = /datum/pollutant/food/potato_stew
 
 /datum/pot_recipe/generic_meat_stew
 	cooking_time = 90 SECONDS
 	produced_reagent = /datum/reagent/consumable/soup/stew/meat
 	required_items = list(/obj/item/reagent_containers/food/snacks/rogue/meat = 1)
+	finished_smell = /datum/pollutant/food/meat_stew
 	fallback = TRUE
 
 /datum/pot_recipe/egg_soup
 	cooking_time = 80 SECONDS
 	produced_reagent = /datum/reagent/consumable/soup/egg
 	required_items = list(/obj/item/reagent_containers/food/snacks/egg = 1)
+	finished_smell = /datum/pollutant/food/egg_soup
 
 /datum/pot_recipe/truffle_stew
 	cooking_time = 80 SECONDS
 	produced_reagent = /datum/reagent/consumable/soup/stew/truffle
 	required_items = list(/obj/item/reagent_containers/food/snacks/rogue/truffles = 1)
+	finished_smell = /datum/pollutant/food/truffle_stew
 
 /datum/pot_recipe/cheese_soup
 	cooking_time = 80 SECONDS
 	produced_reagent = /datum/reagent/consumable/soup/cheese
 	required_items = list(/obj/item/reagent_containers/food/snacks/rogue/cheese = 1)
+	finished_smell = /datum/pollutant/food/cheese_soup
 
 /datum/pot_recipe/cheese_soup/wedge
 	required_items = list(/obj/item/reagent_containers/food/snacks/rogue/cheddarwedge = 1)
@@ -247,6 +260,8 @@
 	water_conversion = 0.45
 	produced_reagent = /datum/reagent/druqks
 	required_items = list(/obj/item/reagent_containers/powder/spice = 1)
+	finished_smell = /datum/pollutant/food/druqks
+	pollute_amount = 100
 
 /datum/pot_recipe/drugs/post_recipe()
 	var/remaining_water = water_volume - CEILING(water_volume * water_conversion, 1)
