@@ -444,7 +444,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		detail		= sanitize_inlist(detail, GLOB.detail_m)
 	else if(gender == FEMALE)
 		hairstyle			= sanitize_inlist(hairstyle, GLOB.hairstyles_female_list)
-		facial_hairstyle			= sanitize_inlist(facial_hairstyle, GLOB.facial_hairstyles_female_list)
+		if(istype(pref_species, /datum/species/dwarf))
+			facial_hairstyle			= sanitize_inlist(facial_hairstyle, GLOB.facial_hairstyles_female_list)
+		else
+			facial_hairstyle			= sanitize_inlist(facial_hairstyle, list("None"))
 		underwear		= sanitize_inlist(underwear, GLOB.underwear_f)
 		undershirt		= sanitize_inlist(undershirt, GLOB.undershirt_f)
 		accessory		= sanitize_inlist(accessory, GLOB.accessories_f)
