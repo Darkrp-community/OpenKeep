@@ -24,19 +24,18 @@
 		else
 			new_gem = pick(subtypesof(/obj/item/roguegem))
 		var/obj/item/roguegem/spawned = new new_gem(get_turf(src))
-		///This is a switch incase anyone would like to add more...
-		switch(rand(1,2))
-			if(1)
-				spawned.icon_state = "d_cut"
-			if(2)
-				spawned.icon_state = "e_cut"
+		spawned.update_icon_state()
 		return INITIALIZE_HINT_QDEL
-	else if(icon_state == "aros")
+
+///This is a switch incase anyone would like to add more...
+/obj/item/roguegem/update_icon_state()
+	if(icon_state == "aros")
 		switch(rand(1,2))
 			if(1)
 				icon_state = "d_cut"
 			if(2)
 				icon_state = "e_cut"
+	return
 /obj/item/roguegem/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -90,7 +89,7 @@
 	name = "onyxa"
 	desc = "Dark as nite."
 	color = "#200013ff"
-	sellprice = 100
+	sellprice = 76
 
 /// riddle
 
