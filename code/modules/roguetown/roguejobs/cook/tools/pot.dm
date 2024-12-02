@@ -41,7 +41,7 @@
 				recipe.required_items -= required_type
 			break
 		if(!length(recipe.required_items) && !recipe.cooking)
-			recipe.start_cooking(src)
+			recipe.start_cooking(src, user)
 			return TRUE
 
 	var/datum/pot_recipe/fallback
@@ -75,7 +75,7 @@
 	if(created_recipe.required_items[first_type] <= 0)
 		created_recipe.required_items -= first_type
 	if(!length(created_recipe.required_items) && !created_recipe.cooking)
-		created_recipe.start_cooking(src)
+		created_recipe.start_cooking(src, user)
 		return TRUE
 	return TRUE
 
@@ -136,9 +136,14 @@
 	///are we a fallback recipe (only picked if no recipe at all left)
 	var/fallback = FALSE
 
-/datum/pot_recipe/proc/start_cooking(obj/item/reagent_containers/glass/bucket/pot)
+/datum/pot_recipe/proc/start_cooking(obj/item/reagent_containers/glass/bucket/pot, mob/living/user)
 	cooking_pot = pot
 	RegisterSignal(cooking_pot, COMSIG_PARENT_QDELETING, PROC_REF(end_recipe))
+
+	var/real_cooking_time = cooking_time
+	if(user.mind)
+		real_cooking_time /= 1 + (user.mind.get_skill_level(/datum/skill/craft/cooking) * 0.5)
+		real_cooking_time = round(real_cooking_time)
 
 	cooking = TRUE
 	cooking_pot.processing_amount += water_volume
