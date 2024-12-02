@@ -3190,17 +3190,6 @@
 "dub" = (
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/magician)
-"dud" = (
-/obj/structure/fluff/railing/border{
-	dir = 10;
-	icon_state = "border"
-	},
-/obj/structure/fluff/railing/border{
-	dir = 6;
-	icon_state = "border"
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/exposed/dwarf)
 "duq" = (
 /obj/structure/fluff/buysign{
 	desc = "TUNNEL CLOSED"
@@ -57847,7 +57836,7 @@ ydz
 ydz
 ydz
 oOB
-dud
+rsE
 ydz
 pgK
 xUr
