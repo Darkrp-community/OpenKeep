@@ -7,6 +7,8 @@
 		user.add_stress(/datum/stressevent/tieb)
 	if(user.has_flaw(/datum/charflaw/paranoid) && (STASTR - user.STASTR) > 1)
 		user.add_stress(/datum/stressevent/parastr)
+	if(HAS_TRAIT(src, TRAIT_BEAUTIFUL))
+		user.add_stress(/datum/stressevent/beautiful)
 
 /mob/living/carbon/human/examine(mob/user)
 //this is very slightly better than it was because you can use it more places. still can't do \his[src] though.

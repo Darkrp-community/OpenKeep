@@ -689,10 +689,16 @@
 		return
 	if(resting)
 		if(!IsKnockdown() && !IsStun() && !IsParalyzed())
-			src.visible_message("<span class='notice'>[src] stands up.</span>")
-			if(move_after(src, 20, target = src))
-				set_resting(FALSE, FALSE)
-				return TRUE
+			if(HAS_TRAIT(src, TRAIT_KICKUP))
+				src.visible_message("<span class='notice'>[src] jumps to their feet!</span>")
+				if(move_after(src, 5, target = src))
+					set_resting(FALSE, FALSE)
+					return TRUE
+			else	
+				src.visible_message("<span class='notice'>[src] stands up.</span>")
+				if(move_after(src, 20, target = src))
+					set_resting(FALSE, FALSE)
+					return TRUE
 		else
 			src.visible_message("<span class='warning'>[src] tries to stand up.</span>")
 
@@ -707,9 +713,16 @@
 		return
 	if(resting)
 		if(!IsKnockdown() && !IsStun() && !IsParalyzed())
-			src.visible_message("<span class='info'>[src] stands up.</span>")
-			if(move_after(src, 20, target = src))
-				set_resting(FALSE, FALSE)
+			if(HAS_TRAIT(src, TRAIT_KICKUP))
+				src.visible_message("<span class='notice'>[src] jumps to their feet!</span>")
+				if(move_after(src, 5, target = src)) //This still respects the knockdown time, so it's usually longer than half a second regardless.
+					set_resting(FALSE, FALSE)
+					return TRUE
+			else	
+				src.visible_message("<span class='notice'>[src] stands up.</span>")
+				if(move_after(src, 20, target = src))
+					set_resting(FALSE, FALSE)
+					return TRUE
 		else
 			src.visible_message("<span class='warning'>[src] tries to stand up.</span>")
 	else

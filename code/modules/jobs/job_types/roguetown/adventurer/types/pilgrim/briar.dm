@@ -18,6 +18,7 @@
 	..()
 	ADD_TRAIT(H, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_LONGSTRIDER, TRAIT_GENERIC)
 
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	head = /obj/item/clothing/head/roguetown/padded/briarthorns

@@ -309,7 +309,7 @@
 				if(IsOffBalanced())
 					to_chat(src, "<span class='warning'>I haven't regained my balance yet.</span>")
 					return
-				if(lying)
+				if(lying && !HAS_TRAIT(src, TRAIT_LEAPER)) //Jesters can jump while laying down.
 					to_chat(src, "<span class='warning'>I should stand up first.</span>")
 					return
 				if(!ismob(A) && !isturf(A))
@@ -327,14 +327,17 @@
 				var/jrange
 				var/jextra = FALSE
 				if(m_intent == MOVE_INTENT_RUN)
-					OffBalance(30)
 					jadded = 15
 					jrange = 3
-					jextra = TRUE
+					if(!HAS_TRAIT(src, TRAIT_LEAPER))
+						jextra = TRUE
 				else
-					OffBalance(20)
 					jadded = 10
 					jrange = 2
+				if(HAS_TRAIT(src, TRAIT_LEAPER))
+					OffBalance(10)
+				else
+					OffBalance(20)
 				if(ishuman(src))
 					var/mob/living/carbon/human/H = src
 					jadded += H.get_complex_pain()/50

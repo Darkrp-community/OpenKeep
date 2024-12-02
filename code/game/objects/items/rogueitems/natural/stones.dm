@@ -64,7 +64,7 @@
 
 /obj/item/natural/rock/Crossed(mob/living/L)
 	if(istype(L) && !L.throwing)
-		if(L.m_intent == MOVE_INTENT_RUN)
+		if(L.m_intent == MOVE_INTENT_RUN && !HAS_TRAIT(L, TRAIT_SWIFTRUNNER))
 			L.visible_message("<span class='warning'>[L] trips over the rock!</span>","<span class='warning'>I trip over the rock!</span>")
 			L.Knockdown(10)
 			L.consider_ambush()

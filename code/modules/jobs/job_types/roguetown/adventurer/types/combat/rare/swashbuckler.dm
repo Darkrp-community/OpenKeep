@@ -50,5 +50,6 @@
 		H.update_body()
 	shirt = pick(/obj/item/clothing/suit/roguetown/shirt/undershirt/sailor, /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KICKUP, TRAIT_GENERIC) //Yarr.
 	H.change_stat("strength", 1)
 	H.change_stat("speed", 2)

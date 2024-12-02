@@ -87,3 +87,4 @@
 	H.change_stat("constitution", 1)
 	H.change_stat("intelligence", -1) // Muscle brains
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) // MEDIUM armor training only, this is not a rare drifter, they shouldn't have more armor training than a garrison guard
+	ADD_TRAIT(H, TRAIT_BREADY, TRAIT_GENERIC)

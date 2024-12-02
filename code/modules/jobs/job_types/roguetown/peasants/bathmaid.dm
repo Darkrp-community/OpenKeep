@@ -27,6 +27,8 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/roguekey/nitemaiden
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
+	if(prob(33))
+		ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE) // To wrestle people out of the baths
