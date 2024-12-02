@@ -6247,6 +6247,12 @@
 	},
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors/town)
+"gmh" = (
+/obj/structure/mineral_door/wood/deadbolt{
+	dir = 1
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors)
 "gnk" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 8
@@ -7284,6 +7290,10 @@
 "hvS" = (
 /turf/open/floor/rogue/rooftop,
 /area/rogue/outdoors)
+"hwt" = (
+/obj/machinery/light/rogue/torchholder/cold,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/rtfield/hamlet)
 "hxi" = (
 /obj/structure/table/wood{
 	icon_state = "map5"
@@ -14452,9 +14462,8 @@
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot,
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot,
 /obj/item/reagent_containers/glass/bottle/rogue/antidote,
-/obj/item/gun/ballistic/revolver/grenadelauncher/pistol,
-/obj/item/storage/belt/rogue/pouch/bullets,
-/obj/item/reagent_containers/glass/bottle/rogue/aflask,
+/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow,
+/obj/item/quiver/bolts,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/shop)
 "oDm" = (
@@ -14974,7 +14983,9 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield/hamlet)
 "oVX" = (
-/obj/machinery/light/rogue/campfire,
+/obj/machinery/light/rogue/hearth{
+	fueluse = 1
+	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "oWe" = (
@@ -17654,8 +17665,8 @@
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/shelter/rtfield)
 "rCi" = (
-/obj/structure/mineral_door/wood/deadbolt,
-/turf/open/floor/rogue/grass,
+/obj/machinery/light/rogue/torchholder/cold,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "rCn" = (
 /obj/structure/fluff/railing/stonehedge{
@@ -65616,7 +65627,7 @@ kGN
 iyr
 voW
 xpT
-gcU
+mmT
 bsm
 qAe
 iJO
@@ -65810,7 +65821,7 @@ hIX
 dVD
 gcU
 ksW
-gcU
+wEq
 bGy
 bsm
 gcU
@@ -66004,7 +66015,7 @@ gcU
 gcU
 hDi
 hQx
-hDi
+tVv
 gcU
 gcU
 hDi
@@ -66399,7 +66410,7 @@ bsm
 iIc
 hQx
 gcU
-cke
+rCi
 bGy
 gcU
 mDZ
@@ -66592,10 +66603,10 @@ gcU
 gcU
 hDi
 bsm
-rCi
-cke
-wsP
 gcU
+cke
+cke
+gmh
 fyl
 fyl
 bsm
@@ -66983,8 +66994,8 @@ hQx
 hDi
 gcU
 gcU
-tVv
-fyl
+hDi
+hwt
 bsm
 hQx
 bsm
@@ -67562,10 +67573,10 @@ hDi
 mDZ
 fyl
 bsm
-evu
+gcU
 cke
 gxJ
-wEq
+gmh
 fyl
 kRc
 hQx
@@ -67954,7 +67965,7 @@ oVX
 cke
 gcU
 hDi
-fyl
+hwt
 pnA
 bsm
 bsm
