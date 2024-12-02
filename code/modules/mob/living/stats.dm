@@ -1,5 +1,7 @@
 
 /mob/living
+
+	///Stats are clamped 1-20, and should be used for most caculations
 	var/STASTR = 10
 	var/STAPER = 10
 	var/STAEND = 10
@@ -8,6 +10,14 @@
 	var/STASPD = 10
 	var/STALUC = 10
 	var/datum/patron/patron = /datum/patron/godless
+	///These aren't. The "True" stat if you will.
+	var/TOTALSTR = 0
+	var/TOTALPER = 0
+	var/TOTALEND = 0
+	var/TOTALCON = 0
+	var/TOTALINT = 0
+	var/TOTALSPD = 0
+	var/TOTALLUC = 0
 
 /mob/living/proc/init_faith()
 	patron = GLOB.patronlist[/datum/patron/godless]
@@ -59,73 +69,69 @@
 				change_stat(STATKEY_LCK, 1)
 		if(key)
 			if(check_blacklist(ckey(key))) //You're boutta have a reaaaal bad dae....
-				change_stat(STATKEY_STR, 1,TRUE)
-				change_stat(STATKEY_PER, 1,TRUE)
-				change_stat(STATKEY_END, 1,TRUE)
-				change_stat(STATKEY_CON, 1,TRUE)
-				change_stat(STATKEY_INT, 1,TRUE)
-				change_stat(STATKEY_SPD, 1,TRUE)
-				change_stat(STATKEY_LCK, 1,TRUE)
+				change_stat(STATKEY_STR, -10,TRUE)
+				change_stat(STATKEY_PER, -10,TRUE)
+				change_stat(STATKEY_END, -10,TRUE)
+				change_stat(STATKEY_CON, -10,TRUE)
+				change_stat(STATKEY_INT, -10,TRUE)
+				change_stat(STATKEY_SPD, -10,TRUE)
+				change_stat(STATKEY_LCK, -10,TRUE)
 			if(check_psychokiller(ckey(key)))
 				testing("foundpsych")
 				H.eye_color = "ff0000"
 				H.voice_color = "ff0000"
-/// Adjusts stat values of mobs. set_stat == true to set directly and clampvals == false to ignore min stat 1 max stat 20
-/mob/living/proc/change_stat(stat_key, adjust_amount, set_stat = FALSE, clampvals = TRUE)
+/// Adjusts stat values of mobs. set_stat == true to set directly
+/mob/living/proc/change_stat(stat_key, adjust_amount, set_stat = FALSE)
 	if(!stat_key || !adjust_amount)
 		return
 	switch(stat_key)
 		if(STATKEY_STR)
 			if(set_stat)
-				STASTR = adjust_amount
+				TOTALSTR = adjust_amount
 			else
-				STASTR += adjust_amount
-			if(clampvals)
-				STASTR = clamp(STASTR,1,20)
+				TOTALSTR += adjust_amount
+			STASTR = CLAMP(TOTALSTR,1,20)
 		if(STATKEY_PER)
 			if(set_stat)
-				STAPER = adjust_amount
+				TOTALPER = adjust_amount
 			else
-				STAPER += adjust_amount
-			if(clampvals)
-				STAPER = clamp(STAPER,1,20)
-			update_fov_angles()
+				TOTALPER += adjust_amount
+			STAPER = CLAMP(TOTALPER,1,20)
 		if(STATKEY_END)
 			if(set_stat)
-				STAEND = adjust_amount
+				TOTALEND = adjust_amount
 			else
-				STAEND += adjust_amount
-			if(clampvals)
-				STAEND = clamp(STAEND,1,20)
+				TOTALEND += adjust_amount
+			STAEND = CLAMP(TOTALEND,1,20)
 		if(STATKEY_CON)
 			if(set_stat)
-				STACON = adjust_amount
+				TOTALCON = adjust_amount
 			else
-				STACON += adjust_amount
-			if(clampvals)
-				STACON = clamp(STACON,1,20)
+				TOTALCON += adjust_amount
+			STACON = CLAMP(TOTALCON,1,20)
 		if(STATKEY_INT)
 			if(set_stat)
-				STAINT = adjust_amount
+				TOTALINT = adjust_amount
 			else
-				STAINT += adjust_amount
-			if(clampvals)
-				STAINT = clamp(STAINT,1,20)
+				TOTALINT += adjust_amount
+			STAINT = CLAMP(TOTALINT,1,20)
 		if(STATKEY_SPD)
 			if(set_stat)
-				STASPD = adjust_amount
+				TOTALSPD = adjust_amount
 			else
-				STASPD += adjust_amount
-			if(clampvals)
-				STASPD = clamp(STASPD,1,20)
+				TOTALSPD += adjust_amount
+			STASPD = CLAMP(TOTALSPD,1,20)
 			update_move_intent_slowdown()
 		if(STATKEY_LCK)
 			if(set_stat)
-				STALUC = adjust_amount
+				TOTALLUC = adjust_amount
 			else
-				STALUC += adjust_amount
-			if(clampvals)
-				STALUC = clamp(STALUC,1,20)
+				TOTALLUC += adjust_amount
+			STALUC = CLAMP(TOTALLUC,1,20)
+	return
+
+/mob/living/proc/adjust_stat_buffer(stat_key,amount)
+
 	return
 ///Returns: STR,PER,END,CON,INT,SPD,LCK in a list, in that order
 /mob/living/proc/get_stats()
