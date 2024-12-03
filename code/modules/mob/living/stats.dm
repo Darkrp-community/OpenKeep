@@ -11,13 +11,13 @@
 	var/STALUC = 10
 	var/datum/patron/patron = /datum/patron/godless
 	///These aren't. The "True" stat if you will.
-	var/TOTALSTR = 0
-	var/TOTALPER = 0
-	var/TOTALEND = 0
-	var/TOTALCON = 0
-	var/TOTALINT = 0
-	var/TOTALSPD = 0
-	var/TOTALLUC = 0
+	var/TOTALSTR = 10
+	var/TOTALPER = 10
+	var/TOTALEND = 10
+	var/TOTALCON = 10
+	var/TOTALINT = 10
+	var/TOTALSPD = 10
+	var/TOTALLUC = 10
 
 	var/has_rolled_for_stats = FALSE
 
@@ -43,7 +43,7 @@
 	///Statkey = bonus stat, - for malice.
 	var/list/specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_END = 0,STATKEY_CON = 0, STATKEY_INT = 0, STATKEY_SPD = 0, STATKEY_LCK = 0)
 
-///Rolls random stats base 10, +-2, for SPECIAL, and applies species stats and age stats.
+///Rolls random stats base 10, +-1, for SPECIAL, and applies species stats and age stats.
 /mob/living/proc/roll_mob_stats()
 	if(has_rolled_for_stats)
 		return FALSE
@@ -61,15 +61,15 @@
 					change_stat(S, H.dna.species.specstats[S])
 		switch(H.age)
 			if(AGE_MIDDLEAGED)
-				change_stat(STATKEY_SPD, -1)
 				change_stat(STATKEY_END, 1)
+				change_stat(STATKEY_SPD, -1)
 			if(AGE_OLD)
 				change_stat(STATKEY_STR, -2)
-				change_stat(STATKEY_SPD, -1)
 				change_stat(STATKEY_PER, 2)
+				change_stat(STATKEY_END, -1)
 				change_stat(STATKEY_CON, -1)
 				change_stat(STATKEY_INT, 2)
-				change_stat(STATKEY_END, -1)
+				change_stat(STATKEY_SPD, -1)
 				change_stat(STATKEY_LCK, 1)
 		if(key)
 			if(check_blacklist(ckey(key))) //You're boutta have a reaaaal bad dae....
