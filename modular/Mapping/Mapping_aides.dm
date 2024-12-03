@@ -874,8 +874,6 @@
 
 /obj/effect/decal/cleanable/blood_neu/Initialize(mapload)
 	. = ..()
-	if(. == INITIALIZE_HINT_QDEL)
-		return .
 	pixel_x = rand(-5,5)
 	pixel_y = rand(5,5)
 	GLOB.weather_act_upon_list += src
